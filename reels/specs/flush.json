@@ -6,16 +6,20 @@
  "bpm": 88,
  "phrases": [
   [
-   "Your toilet doesn't **push** waste away. It **sucks** it out.",
-   "Your toilet doesn't push waste away. It sucks it out."
+   "Your toilet doesn't **push** the water down. It **sucks** it.",
+   "Your toilet doesn't push the water down. It sucks it."
+  ],
+  [
+   "But there's **no pump.** So how?",
+   "But there's no pump. So, how?"
   ],
   [
    "Plumbers say a **bucket of water,** poured in fast, can flush it with **no handle at all.**",
    "Plumbers say a bucket of water, poured in fast, can flush it with no handle at all."
   ],
   [
-   "Here's why. Behind the bowl hides a curved pipe: the **trapway.**",
-   "Here's why. Behind the bowl hides a curved pipe, called the trapway."
+   "In most North American toilets, a curved pipe hides behind the bowl: the **trapway.**",
+   "In most North American toilets, a curved pipe hides behind the bowl. The trapway."
   ],
   [
    "It climbs **up, over a hump,** then drops down to the drain.",
@@ -86,12 +90,13 @@
   0,
   1,
   2,
-  5,
-  9,
-  12,
-  14,
+  3,
+  6,
+  10,
+  13,
   15,
   16,
-  17
+  17,
+  18
  ]
 }

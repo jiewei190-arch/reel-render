@@ -2,7 +2,7 @@
 // 1080x1920 Canvas2D, deterministic. Field-sketchbook pages; water levels are computed from one state function.
 import { createFB, W, H, C, clamp, lerp, ramp, ss, eo, bo, hash } from './styles/fieldbook/fieldbook.js';
 await Promise.all(['400 40px "Kalam"', '700 40px "Kalam"', '400 20px "Courier Prime"', '700 20px "Courier Prime"', '500 40px "Nunito"', '700 40px "Nunito"'].map(f => document.fonts.load(f)));
-const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
+const TL = window.TL, PH = TL.p, M = i => i >= 1 ? i + 1 : i, s = i => PH[M(i)].start, e = i => PH[M(i)].end;   // M: v2 added the 'but' line at 1
 const F = createFB(document.getElementById('c')), g = F.g;
 const R = ramp;
 
@@ -104,16 +104,19 @@ function chapter(t, p, label, head, t0) { F.label(label, 80, TOP, t - t0); F.hea
 function page1(t) {
   F.txt('A FIELD SKETCHBOOK  ·  PLUMBING NOTES', 80, TOP, { size: 25, f: 'mono', wt: 700, ls: 3, col: '#45454c', alpha: .9 });
   F.line(80, TOP + 16, 760, TOP + 16, { w: 1, alpha: .5, wob: .3 });
-  F.txt('The Flush', 74, 330, { size: 150, f: 'hand', rot: -.015, write: t < .02 ? 1 : 1 });
-  F.line(84, 372, 640, 366, { col: C.red, w: 2.6, draw: ss(R(t, .2, .8)), wob: .6 });
+  // hook caption, burned in from frame 0 (the demo's big handwritten headline)
+  const wIt = F.txt('It ', 74, 310, { size: 140, f: 'hand', rot: -.015 }); F.txt('sucks,', 74 + wIt, 306, { size: 140, f: 'hand', col: C.red, rot: -.015 }); F.txt('not pushes.', 74, 450, { size: 140, f: 'hand', rot: -.015 });
+  F.line(84, 482, 700, 476, { col: C.red, w: 2.6, draw: ss(R(t, 0, .6)), wob: .6 });
   F.seal('FLUSH', 830, 262, ss(R(t, .5, .35)), { size: 38, f: 'mono', fs: 40 });
-  caption(t, 80, 466, { size: 50 });
+  caption(t, 80, 570, { size: 48 });
   // big red hatched circle behind the drawing (the demo's sun), then the toilet draws on in front
-  const cx = 600, cy = 1220, r = 310 * eo(R(t, -.6, 1.2)); const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([cx + Math.cos(a) * r * (1 + Math.sin(a * 5) * .01), cy + Math.sin(a) * r]); }
+  const cx = 600, cy = 1220, r = 310; const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([cx + Math.cos(a) * r * (1 + Math.sin(a * 5) * .01), cy + Math.sin(a) * r]); }
   if (r > 5) { F.hatch(ring, 'red', { alpha: .75 }); F.pencil(ring, { col: C.red, w: 2.2, seed: 2 }); }
-  g.save(); g.translate(190, 610); g.scale(.75, .75); const st = { ...water(0), k: ss(R(t, -.2, 2.6)), t };
+  g.save(); g.translate(190, 610); g.scale(.75, .75); const st = { ...water(0), k: 1, t };
+  if (t < s(1)) { const d = ss(R(t, 0, s(1) - .3)); st.up = 0; st.dB = 1; st.L = lerp(905, 1130, d); if (t > s(1) - .6) { const a = ss(R(t, s(1) - .6, .5)); st.dA = a; st.up = lerp(0, 1160, a); } }
+  else if (t < s(1) + 1.2) { const r2 = ss(R(t, PH[1].start, 1.6)); st.L = lerp(1150, WEIR, r2); st.up = st.L; }
   if (t > s(1)) { const pour = ss(R(t, s(1) + 1.2, 2.2)); st.L = lerp(WEIR, 915, pour) ; st.up = st.L; if (t > s(1) + 2.6) { const f = ss(R(t, s(1) + 2.6, 1.2)); st.up = lerp(st.L, 0, f); st.dB = f; st.L = lerp(915, 1100, ss(R(t, s(1) + 3.2, 1.6))); } }
-  toilet(st); g.restore();
+  toilet(st); if (t < s(1) - .5) { flowArrows(t, 1, CLd, 5); for (let i = 0; i < 3; i++) { const a0 = t * 3 + i * 2.1; const P = []; for (let j = 0; j <= 12; j++) { const a = a0 + j * .16; P.push([380 + Math.cos(a) * (130 - i * 30), st.L + 14 + Math.sin(a) * 12]); } F.pencil(P, { col: C.red, w: 2.6, alpha: .85, wob: .3 }); } } g.restore();
   // the bucket: tips over the bowl and pours
   if (t > s(1) - .2) { const k = ss(R(t, s(1) - .2, .7)), tip = ss(R(t, s(1) + .8, .6)) * (1 - ss(R(t, s(2) - .6, .4)) * .0);
     g.save(); g.translate(lerp(-160, 250, k), 1010); g.rotate(tip * 1.25); const bk = [[-70, -90], [70, -90], [52, 60], [-52, 60]];
@@ -263,6 +266,14 @@ function scene(t) {
   if (t > s(18)) { const a = ss(R(t, s(18) + .5, 3)) * .28; const vg = g.createRadialGradient(W / 2, H / 2, H * .3, W / 2, H / 2, H * .75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, `rgba(40,30,15,${a})`); g.fillStyle = vg; g.fillRect(0, 0, W, H); }
 }
 window.DUR = TL.total;
-window.seek = t => { scene(t); const fade = Math.min(1, .9 + t / .4 * .1) * Math.min(1, (TL.total - t) / .4); if (fade < 1) { g.save(); g.globalAlpha = 1 - fade; g.fillStyle = C.dark; g.fillRect(0, 0, W, H); g.restore(); } };
+window.seek = t => { scene(t); const fade = Math.min(1, (TL.total - t) / .4); if (fade < 1) { g.save(); g.globalAlpha = 1 - fade; g.fillStyle = C.dark; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
+// thumbnail / cover (rule 11): hook text big inside y 300-1620, siphon running in the cutaway, the demo's red sun behind
+window.thumb = () => { F.begin(); F.footer(1); const t = 1.3;
+  F.txt('A FIELD SKETCHBOOK  ·  PLUMBING NOTES', 80, 330, { size: 25, f: 'mono', wt: 700, ls: 3, col: '#45454c', alpha: .9 });
+  const wIt = F.txt('It ', 70, 500, { size: 190, f: 'hand', rot: -.02 }); F.txt('sucks,', 70 + wIt, 494, { size: 190, f: 'hand', col: C.red, rot: -.02 }); F.txt('not pushes.', 70, 690, { size: 170, f: 'hand', rot: -.02 });
+  F.line(84, 730, 860, 720, { col: C.red, w: 3.5, wob: .6 }); F.seal('FLUSH', 950, 420, 1, { size: 40, f: 'mono', fs: 42 });
+  const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([600 + Math.cos(a) * 330, 1260 + Math.sin(a) * 330]); } F.hatch(ring, 'red', { alpha: .75 }); F.pencil(ring, { col: C.red, w: 2.2 });
+  g.save(); g.translate(170, 640); g.scale(.78, .78); const st = { ...water(0), k: 1, t, up: 0, dB: 1, L: 960 }; toilet(st); flowArrows(t, 1, CLd, 5); g.restore();
+  };
 window.seek(0); window.ready = true; window.READY = true;
