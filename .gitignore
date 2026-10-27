@@ -1,0 +1,5 @@
+tts/*.onnx
+tts/*.bin
+reels/frames/
+reels/out/
+*.wav
