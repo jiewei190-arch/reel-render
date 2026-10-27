@@ -12,6 +12,8 @@ Workers build ONE reel each, push the finished mp4 + caption + sources to `jobs/
 - Encode: `reels/enc_hq.sh <name>` (2-pass, about 9.6 MB) after `reels/rq.sh <name> 9301 9302` renders to out/<name>.mp4. Delete frames/<name> when done (disk is limited). Only 2 CPUs: one render at a time.
 - Caption file `caption_<name>.md`: description + "Sources: ..." + "Follow for more of how it really works." + 5 hashtags ending #reels (no #fyp).
 
+- CLOSING LINE (required): the LAST spoken phrase and on-screen end card of every reel must be exactly "Follow for more of **how it really works.**" (see specs/leaf.json, specs/boot.json). The total must still be 86 s or less including it.
+
 ## Style repos (clone each shallow into /home/claude/styles-src/ yourself; all public)
 - https://github.com/Vincentwei1021/mg-styles-15
 - https://github.com/ItsssssJack/claude-video-2
