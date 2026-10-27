@@ -1,6 +1,6 @@
 # flush: How a toilet flushes (the siphon)
 
-- Template: #18 handdrawn "Japan heat wave" (demo101, owner's choice). Duration 75.8 s, 1080x1920, af_heart 0.97, music crayon 88 bpm.
+- Template: #18 handdrawn "Japan heat wave" (demo101, owner's choice). Duration 79.2 s (v2), 1080x1920, af_heart 0.97, music crayon 88 bpm.
 - Why: a field-notebook page of annotated cross-sections and measurement boxes fits a plumbing cutaway, and the demo's "rain gauge" chart fits gallons per flush.
 - Code: reels/styles/fieldbook/fieldbook.js (new module), reels/t_flush.js, t_flush.html, specs/flush.json, ev_flush.json.
 
@@ -25,3 +25,10 @@
 - Rim holes only; many bowls also have a siphon jet at the bottom (left out for simplicity).
 - "Outside the Americas most toilets are washdown types" is from Wikipedia ("most common form ... outside the Americas"); not every North American toilet is siphonic.
 - Drawing is schematic, not to scale. Audio: human ear check still pending.
+
+## v2 (Oct 27): owner feedback + HOOKS.md
+- Hook: "Your toilet doesn't push the water down. It sucks it." (10 words) + "But there's no pump. So how?" by 5 s; "most North American toilets" added to the trapway line. Sourcing for "sucks": Explain That Stuff calls it a "siphon (sucking) effect"; Wikipedia describes the siphonic action.
+- Frame 0: the cutaway is already drawn with the siphon running (full pipe, red flow arrows, swirl), the burned-in caption "It sucks, not pushes." replaces the title.
+- Clean cream paper (blotches removed, fine grain), English seals (FLUSH, SEAL, AIR, END), a "flush cycle" timeline strip in the bottom margin of pages 2-4, cross-dissolve page turns (no blank frames), end line fully written ~1.3 s into the end card.
+- Thumbnail: thumb_flush.jpg ("It sucks, not pushes." + the siphon cutaway on the red sun), checked in the 3:4 grid crop.
+- Mix: new mix2.py (effects at half level, ducked under the voice). Encoded size 10.1 MB (slightly above the ~9.6 MB target).
