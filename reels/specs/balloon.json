@@ -1,0 +1,27 @@
+{
+ "name": "balloon",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "lantern",
+ "bpm": 72,
+ "lead": 0.6,
+ "phrases": [
+  ["How does a bag of **hot air** lift people into the sky?", "How does a bag of hot air lift people into the sky?"],
+  ["In **1783**, two men made the first free flight with people aboard, over **Paris.**", "In seventeen eighty-three, two men made the first free flight with people aboard, over Paris."],
+  ["The balloon is a big bag called an **envelope.**", "The balloon is a big bag called an envelope."],
+  ["Below it, a **burner** shoots a flame inside and heats the air.", "Below it, a burner shoots a flame inside and heats the air."],
+  ["Heat makes the air **molecules** move faster,", "Heat makes the air molecules move faster,"],
+  ["so **fewer molecules** fill the same space.", "so fewer molecules fill the same space."],
+  ["Fewer molecules means **less mass.** The hot air is **less dense** than the cold air outside.", "Fewer molecules means less mass. The hot air is less dense than the cold air outside."],
+  ["The balloon and basket push aside cooler air that is **heavier** than they are.", "The balloon and basket push aside cooler air that is heavier than they are."],
+  ["**Archimedes** found the rule: the upward push equals the weight of the fluid pushed aside.", "Archimedes found the rule: the upward push equals the weight of the fluid pushed aside."],
+  ["That push is called **buoyancy,** and it lifts the whole balloon.", "That push is called buoyancy, and it lifts the whole balloon."],
+  ["Lift depends mostly on how much **hotter** the inside air is than the outside.", "Lift depends mostly on how much hotter the inside air is than the outside."],
+  ["On a warm day, a balloon can't lift as much as on a **cool day.**", "On a warm day, a balloon can't lift as much as on a cool day."],
+  ["That's why balloons tend to fly in the **morning,** when the air is cool.", "That's why balloons tend to fly in the morning, when the air is cool."],
+  ["Heat a **2,800 m³** balloon to **99 °C**, and it can lift about **720 kg.**", "Heat a twenty-eight-hundred cubic meter balloon to ninety-nine degrees Celsius, and it can lift about seven hundred twenty kilograms."],
+  ["Climb higher, and lift drops about **3 percent** every thousand meters.", "Climb higher, and lift drops about three percent every thousand meters."],
+  ["So: **heat** the air, it gets **lighter,** and up you go.", "So: heat the air, it gets lighter, and up you go."],
+  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ ]
+}

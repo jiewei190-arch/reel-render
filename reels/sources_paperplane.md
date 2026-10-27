@@ -1,0 +1,18 @@
+# Sources: paperplane (how a paper airplane flies)
+
+Every claim below was checked against the fetched page text.
+
+| Claim in script | Source (fetched) |
+|---|---|
+| A paper plane has no engine; paper planes are technically gliders | Smithsonian Magazine, "Beat the winter blues by learning how to fly Smithsonian paper airplanes" — "paper airplanes are technically gliders: heavier-than-air flying machines built to move through the air without engines." https://www.smithsonianmag.com/blogs/smithsonian-books/2026/01/08/beat-the-winter-blues-by-learning-how-to-fly-smithsonian-paper-airplanes-with-your-kids/ |
+| Four forces: lift, weight, thrust, drag; weight = gravity; lift pushes up; drag acts opposite to the motion | same Smithsonian page ("Weight is a measure of the force of gravity…", "Lift is the opposite of weight—it pushes a plane up.", "Drag is the force that acts opposite to the direction of motion.", "the balance of the four forces of flight") |
+| Thrust comes from the throw (your arm) and is only temporary | same Smithsonian page — "A paper airplane gets its thrust from the throw, but the thrust is only temporary." |
+| With no throw and no wind it would simply fall | UAF physics page "Thrust and Drag" — "If there was no wind and you let an airplane go, it would simply fall to the ground." https://ffden-2.phys.uaf.edu/211_fall2013.web.dir/Cody_Gaines/Thrust%20and%20Drag.html |
+| Paper wings are flat, not a classic (curved) airfoil; they make lift with the angle of attack, the angle at which oncoming air meets the wing | Smithsonian How Things Fly, "Paper airplanes don't have a classic airfoil shape, so how do they fly?" — "They use the angle of attack of their flat wings to create lift." https://howthingsfly.si.edu/ask-an-explainer/paper-airplanes-dont-have-classic-airfoil-shape-so-how-do-they-fly |
+| Lift comes from turning the flow of air; the flow is turned one way, lift goes the opposite way (action and reaction) | NASA Glenn, "What is Lift?" — "Lift occurs when a moving flow of gas is turned by a solid object." / "The flow is turned in one direction, and the lift is generated in the opposite direction" (Newton's third law). https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/what-is-lift/ |
+| More tilt gives more lift (at small angles); too much tilt, the flow separates and the wing stalls | NASA Glenn, "Inclination Effects on Lift" — "For thin airfoils, the lift is directly proportional to the angle of attack for small angles"; "The separation of the boundary layer explains why aircraft wings will abruptly lose lift at high angles to the flow." https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/foilinc/ |
+| Researchers at NYU and Cornell tested balance (centre of mass) | Futurity, "Paper airplanes show off new aerodynamic effects" — Leif Ristroph (NYU Courant) and Jane Wang (Cornell), Journal of Fluid Mechanics. https://www.futurity.org/?p=2704682 |
+| Weight near the middle → flutters/tumbles; pushed too far toward the front edge → dives and crashes; a sweet spot gives stable gliding, the aerodynamic force pushes it back toward level | same Futurity page ("Weight at the wing's center or only slightly off it caused fluttering or tumbling"; too far toward one edge "made the plane dive and crash"; "a 'sweet spot' for the center of mass that gave stable gliding") |
+| This is a property of thin, flat wings and why a paper plane needs no tail | same Futurity page — "the shifting of the center of pressure thus seems to be a unique property of thin, flat wings" … why a paper plane needs no separate tail stabilizer |
+
+Note: "too far forward" = the study's weight displaced too far toward the leading edge (the edge the plane flies toward).

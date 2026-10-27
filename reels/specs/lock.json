@@ -1,0 +1,77 @@
+{
+"name": "lock",
+"voice": "af_heart",
+"speed": 0.97,
+"music": "blueprint",
+"bpm": 108,
+"phrases": [
+[
+"Why does only **one key** open your lock?",
+"Why does only one key open your lock?"
+],
+[
+"Inside is a cylinder called the **plug.** The key turns it.",
+"Inside the lock is a cylinder called the plug, and the key turns it."
+],
+[
+"The plug sits in a casing. Where they meet is the **shear line.**",
+"The plug sits inside an outer casing, and where they meet is called the shear line."
+],
+[
+"Drilled into the plug: a row of holes, typically **five or six.**",
+"Drilled into the plug is a row of holes, typically five or six of them."
+],
+[
+"Each hole holds a **key pin,** rounded so the key slides over it.",
+"Each hole holds a key pin, rounded so the key can slide over it."
+],
+[
+"The key pins come in **different lengths.**",
+"And the key pins come in different lengths."
+],
+[
+"Above each one sits a spring-loaded **driver pin.**",
+"Above each key pin sits a spring-loaded driver pin."
+],
+[
+"The springs push every pin **down into the plug.**",
+"The springs push every pin down into the plug."
+],
+[
+"No key? The pins **straddle the shear line.** The plug can't turn.",
+"With no key, the pins straddle the shear line, so the plug can't turn."
+],
+[
+"Now slide in the **right key.**",
+"Now slide in the right key."
+],
+[
+"Its cuts lift each pin to **exactly** the right height.",
+"Its cuts lift each pin stack to exactly the right height."
+],
+[
+"Every pin lines up on the **shear line.**",
+"Every gap between key pin and driver pin lines up on the shear line."
+],
+[
+"Nothing blocks the plug, so it **turns.** The lock opens.",
+"Nothing blocks the plug anymore, so it turns, and the lock opens."
+],
+[
+"A wrong key lifts pins **too high or too low.**",
+"A wrong key lifts the pins too high or too low."
+],
+[
+"The pins stay misaligned, and the plug **stays locked.**",
+"The pins stay misaligned, and the plug stays locked."
+],
+[
+"Next time you turn a key, picture those pins **lining up.**",
+"Next time you turn a key, picture those little pins lining up."
+],
+[
+"Follow for more of **how it really works.**",
+"Follow for more of how it really works."
+]
+]
+}

@@ -1,0 +1,73 @@
+{
+"name": "creditscore",
+"voice": "af_heart",
+"speed": 0.97,
+"music": "pulse",
+"bpm": 112,
+"phrases": [
+[
+"Can you guess the **biggest part** of your credit score?",
+"Can you guess the biggest part of your credit score?"
+],
+[
+"A credit score is a **number** from 300 to 850.",
+"A credit score is a number, typically from three hundred to eight hundred fifty."
+],
+[
+"It estimates how likely you are to **repay on time.**",
+"It estimates how likely you are to repay loans on time."
+],
+[
+"Think of it as a **report card** for your bills.",
+"Think of it as a report card, but the grades are your bills."
+],
+[
+"Step one: your **credit report** shows late bills.",
+"Step one: your credit report shows whether you paid your bills late."
+],
+[
+"Step two: **lenders report** your account activity to the bureaus.",
+"Step two: lenders report your account activity to the credit bureaus that keep those reports."
+],
+[
+"Step three: a **scoring model** turns that report into a number.",
+"Step three: a scoring model turns that report into a number."
+],
+[
+"But here's the **weird part:** you don't have just one credit score.",
+"But here's the weird part: you don't have just one credit score."
+],
+[
+"Different lenders can use **different versions** of a model.",
+"Different lenders can use different versions of a model, so your number can vary."
+],
+[
+"The **FICO model** weighs five factors. The biggest is **payment history,** at 35%.",
+"The FICO model weighs five factors. The biggest is payment history, at thirty five percent."
+],
+[
+"**Amounts owed,** 30%: total debt and how much credit you use.",
+"Amounts owed, thirty percent, covers total debt and how much credit you use."
+],
+[
+"**Length of history,** 15%: how old your accounts are.",
+"Length of history, fifteen percent, looks at how old your accounts are."
+],
+[
+"**New credit,** 10%: several accounts opened in a short time.",
+"New credit, ten percent, looks at several accounts opened in a short time."
+],
+[
+"**Credit mix,** 10%: the variety of account types you have.",
+"Credit mix, also ten percent, is the variety of account types you have."
+],
+[
+"So the score **changes** when your report changes.",
+"So the score is a model reading your report, and it changes when the report does."
+],
+[
+"Follow for more of **how it really works.**",
+"Follow for more of how it really works."
+]
+]
+}

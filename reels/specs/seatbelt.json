@@ -1,0 +1,77 @@
+{
+"name": "seatbelt",
+"voice": "af_heart",
+"speed": 0.97,
+"music": "blueprint",
+"bpm": 108,
+"phrases": [
+[
+"Pull your seatbelt slowly, it slides. **Yank it, it locks.**",
+"Pull your seatbelt slowly and it slides. Yank it, and it locks."
+],
+[
+"Here's the little machine **inside the reel.**",
+"Here's the little machine hiding inside the reel."
+],
+[
+"The belt is stored on a **spring-loaded reel** called a retractor.",
+"The belt is stored on a spring-loaded reel, called a retractor."
+],
+[
+"The spring keeps the belt **taut,** so you can still move around.",
+"The spring keeps the belt taut, so you can still move around freely."
+],
+[
+"Each end of the spool has **ratchet teeth.**",
+"Each end of the spool has a ring of ratchet teeth."
+],
+[
+"Beside them waits a **locking pawl.**",
+"Right beside them waits a locking pawl."
+],
+[
+"When the pawl catches a tooth, the belt **can't come out.**",
+"When the pawl catches a tooth, the reel locks, and the belt can't come out."
+],
+[
+"So what moves the pawl? **Two sensors.**",
+"So what moves the pawl? There are two kinds of sensor."
+],
+[
+"Sensor one: a **pendulum.**",
+"Sensor one is a pendulum."
+],
+[
+"Brake hard, and it **swings** away from plumb.",
+"Brake hard, or roll over, and it swings away from plumb."
+],
+[
+"That swing drives the pawl into the teeth. **The reel locks.**",
+"That swing drives the pawl into the teeth, and the reel locks."
+],
+[
+"Sensor two watches the belt: a **centrifugal clutch.**",
+"Sensor two watches the belt itself. It's a centrifugal clutch."
+],
+[
+"Pull slowly, and the belt pays out. **Jerk it, and the reel locks.**",
+"Pull the belt slowly, and it pays out. Jerk it fast, and the clutch locks the reel."
+],
+[
+"Many newer cars add a **pretensioner:** a small charge that removes slack.",
+"Many newer cars also add a pretensioner. In a crash, a small charge tightens the belt to remove slack."
+],
+[
+"The modern three-point belt: **Nils Bohlin, for Volvo, 1959.**",
+"The modern three-point belt was developed by Nils Bohlin for Volvo, and introduced in 1959."
+],
+[
+"Next time your belt snaps tight, you'll know **what just happened.**",
+"Next time your belt snaps tight on a hard stop, you'll know what just happened."
+],
+[
+"Follow for more of **how it really works.**",
+"Follow for more of how it really works."
+]
+]
+}
