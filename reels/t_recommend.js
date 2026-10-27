@@ -141,4 +141,8 @@ function scene(t) { const i = idx(t), u = R(t, SC[i][0], .22); g.setTransform(1,
 window.DUR = TOT;
 window.seek = t => { scene(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - f; g.fillStyle = '#1b1410'; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
+// thumbnail / cover: blueprint funnel pouring into a phone + ransom-note "WHY YOU SAW THIS"
+window.thumb = () => { g.setTransform(1, 0, 0, 1, 0, 0); AD.clear(); sceneB(s(1) + .3);
+  [['WHY YOU', 300, 140], ['SAW THIS', 490, 140]].forEach(([w, y, sz], li) => { const step = sz * .74, tw = w.length * step; [...w].forEach((ch, i) => { if (ch !== ' ') AD.ransom(ch, 540 - tw / 2 + step / 2 + i * step, y, sz, li * 41 + i * 9 + 5, 1); }); });
+  AD.ransom('?', 540, 690, 150, 77, 1); AD.blit({}); AD.finish(); };
 window.seek(0); window.ready = true; window.READY = true;
