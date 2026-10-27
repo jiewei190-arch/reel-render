@@ -73,7 +73,7 @@ const PC = 10, GM = 10.9 * 4, V0 = 2.0, R0 = 10.9;
 function simShot(vf, T = 48, dt = .004) { const out = []; let x = 0, y = R0, vx = V0 * vf, vy = 0; for (let t = 0; t <= T; t += dt) { out.push([x, y]); const r2 = x * x + y * y, r = Math.sqrt(r2); if (r < PC + .02 && t > .05) { break; } const ax = -GM * x / (r2 * r), ay = -GM * y / (r2 * r); vx += ax * dt; vy += ay * dt; x += vx * dt; y += vy * dt; } return out; }
 const SHOTS = [simShot(.42), simShot(.74), simShot(1.0, 36)];
 def('B', SC[1], SC[2], g => {
-  const earth = makeEarth(PC, 1.0); g.add(earth); const mtn = new THREE.Mesh(new THREE.ConeGeometry(1.3, 1.1, 7), M('#6b6256', .95, 0)); mtn.position.set(0, PC + .12, 0); mtn.castShadow = true; mtn.receiveShadow = true; g.add(mtn);
+  const earth = makeEarth(PC, 0); earth.rotation.z = Math.PI / 2; g.add(earth); const mtn = new THREE.Mesh(new THREE.ConeGeometry(1.3, 1.1, 7), M('#6b6256', .95, 0)); mtn.position.set(0, PC + .12, 0); mtn.castShadow = true; mtn.receiveShadow = true; g.add(mtn);
   const base = new THREE.Mesh(new THREE.BoxGeometry(.5, .25, .4), M('#4c4f58', .7, .5)); base.position.set(0, R0 - .5, 0); base.castShadow = true; g.add(base); const barrel = new THREE.Mesh(new THREE.CylinderGeometry(.11, .15, .8, 18), M('#23252b', .35, .85)); barrel.rotation.z = -Math.PI / 2; barrel.position.set(.3, R0 - .33, 0); barrel.castShadow = true; g.add(barrel);
   const wh = new THREE.Mesh(new THREE.CylinderGeometry(.18, .18, .08, 16), M('#6b4a2b', .8, 0)); wh.rotation.x = Math.PI / 2; wh.position.set(-.05, R0 - .6, .22); g.add(wh);
   const ball = new THREE.Mesh(new THREE.SphereGeometry(.14, 20, 16), M('#d8dbe2', .25, .9)); ball.castShadow = true; g.add(ball); const bglow = glow('#ffcf8a', 1.3, .8); g.add(bglow);

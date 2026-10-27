@@ -1,0 +1,99 @@
+{
+ "name": "sleep",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  3,
+  4,
+  6,
+  7,
+  9,
+  10,
+  11,
+  13,
+  14,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "When you sleep, your brain doesn't switch **off.**",
+   "When you sleep, your brain doesn't switch off."
+  ],
+  [
+   "It runs through a **cycle,** again and again, all night.",
+   "It runs through a cycle, again and again, all night."
+  ],
+  [
+   "Each cycle lasts about **80 to 100 minutes.**",
+   "Each cycle lasts about eighty to a hundred minutes."
+  ],
+  [
+   "Most people go through **four to six** of them a night.",
+   "Most people go through four to six of them a night."
+  ],
+  [
+   "First comes **non-REM sleep,** in three stages.",
+   "First comes non-REM sleep, in three stages."
+  ],
+  [
+   "You drift off, then fall properly asleep, then sink into **deep, slow-wave sleep.**",
+   "You drift off, then fall properly asleep, then sink into deep, slow-wave sleep."
+  ],
+  [
+   "Deep sleep happens mostly in the **first part** of the night.",
+   "Deep sleep happens mostly in the first part of the night."
+  ],
+  [
+   "During non-REM sleep, your **heart rate** and blood pressure fall.",
+   "During non-REM sleep, your heart rate and blood pressure fall."
+  ],
+  [
+   "Sleep also helps with **learning,** and forming long-term memories.",
+   "Sleep also helps with learning, and forming long-term memories."
+  ],
+  [
+   "Skimp on it, and it's harder to **focus** and think clearly.",
+   "Skimp on it, and it's harder to focus and think clearly."
+  ],
+  [
+   "In mice, researchers found the brain clears **waste** faster during sleep.",
+   "In mice, researchers found the brain clears waste faster during sleep."
+  ],
+  [
+   "Later in the night, you get more **REM sleep.**",
+   "Later in the night, you get more REM sleep."
+  ],
+  [
+   "Your eyes dart around, and your brain is about as **active** as when you're awake.",
+   "Your eyes dart around, and your brain is about as active as when you're awake."
+  ],
+  [
+   "**Dreaming** usually happens during REM.",
+   "Dreaming usually happens during REM."
+  ],
+  [
+   "But your muscles go **limp,** so you don't act out your dreams.",
+   "But your muscles go limp, so you don't act out your dreams."
+  ],
+  [
+   "Newborns spend even **more** of their sleep in REM.",
+   "Newborns spend even more of their sleep in REM."
+  ],
+  [
+   "Scientists are still debating exactly **why** we dream.",
+   "Scientists are still debating exactly why we dream."
+  ],
+  [
+   "So sleep isn't downtime. It's your brain's **night shift.**",
+   "So sleep isn't downtime. It's your brain's night shift."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

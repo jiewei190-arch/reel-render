@@ -115,5 +115,5 @@ const capUp = captions(document.getElementById('cap'));
 const paperN = document.createElement('canvas'); paperN.width = paperN.height = 128; { const x = paperN.getContext('2d'); const im = x.createImageData(128, 128); const R = rnd(3); for (let i = 0; i < 128 * 128; i++) { const v = 215 + R() * 40; im.data[i * 4] = v; im.data[i * 4 + 1] = v - 6; im.data[i * 4 + 2] = v - 22; im.data[i * 4 + 3] = 40; } x.putImageData(im, 0, 0); }
 await Promise.all([document.fonts.load('700 40px Caveat'), document.fonts.load('400 40px Caveat')]);
 window.seek = t => { BOIL = Math.floor(t * 8) % 3; ctx.setTransform(2, 0, 0, 2, 0, 0); ctx.fillStyle = PAPER; ctx.fillRect(0, 0, W, H); ctx.fillStyle = ctx.createPattern(paperN, 'repeat'); ctx.fillRect(0, 0, W, H);
-  sc.forEach(o => { if (t >= o.a && t < o.b) { ctx.save(); o.fn(t); ctx.restore(); } }); capUp(t); };
+  sc.forEach(o => { if (t >= o.a && t < o.b) { ctx.save(); o.fn(t + .45); ctx.restore(); } }); capUp(t); };
 window.ready = true;
