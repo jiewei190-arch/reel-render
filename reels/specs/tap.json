@@ -1,0 +1,20 @@
+{"name":"tap","voice":"af_heart","speed":0.97,"music":"crayon","bpm":88,
+"breath":[0,2,4,6,8,10,12,14],
+"phrases":[
+["A contactless card has **no battery.** So how does it pay when you tap?","A contactless card has no battery. So how does it pay when you tap?"],
+["The terminal isn't just reading it. It's **powering it.**","The terminal isn't just reading it. It's powering it."],
+["Inside the terminal is a coil of wire, making a **magnetic field** that flips back and forth about thirteen and a half million times a second.","Inside the terminal is a coil of wire, making a magnetic field that flips back and forth about thirteen and a half million times a second."],
+["Your card has its own coil. The changing field **pushes a tiny current** through it.","Your card has its own coil. The changing field pushes a tiny current through it."],
+["That's just enough to wake the chip, like a **wireless transformer.**","That's just enough to wake the chip, like a wireless transformer."],
+["It only works up close: about **four centimeters** or less.","It only works up close: about four centimeters or less."],
+["Now the two can talk, and the chip must **prove** the card is genuine.","Now the two can talk, and the chip must prove the card is genuine."],
+["Every payment includes a **one-time security code** that can't be reused.","Every payment includes a one-time security code that can't be reused."],
+["So a thief who records the radio signal gets a code that's **already used up.**","So a thief who records the radio signal gets a code that's already used up."],
+["Phone wallets go further, sending a **stand-in number** instead of your real card number.","Phone wallets go further, sending a stand-in number instead of your real card number."],
+["And the field fades fast with distance, so a terminal across the room **can't power your card.**","And the field fades fast with distance, so a terminal across the room can't power your card."],
+["Bigger purchases may ask for a **PIN.** The limit depends on your country and bank.","Bigger purchases may ask for a PIN. The limit depends on your country and bank."],
+["Contactless uses the **same fraud protections** as chip-and-PIN cards.","Contactless uses the same fraud protections as chip-and-PIN cards."],
+["So a tap is a tiny radio conversation, **powered by the terminal,** locked by a code that works once.","So a tap is a tiny radio conversation, powered by the terminal, locked by a code that works once."],
+["Send this to someone who still **inserts their card.**","Send this to someone who still inserts their card."],
+["Follow for more of **how it really works.**","Follow for more of how it really works."]
+]}
