@@ -11,8 +11,10 @@ const Rr = L.map(p => [...p].map(b => b === '0' ? '1' : '0').join(''));
 const BITS = '101' + [...DIG.slice(0, 6)].map(d => L[+d]).join('') + '01010' + [...DIG.slice(6)].map(d => Rr[+d]).join('') + '101';
 const NB = BITS.length; // 95
 // ---- primitives
-function rect(c, x, y, w, h) { ctx.fillStyle = c; ctx.fillRect(x, y, w, h); }
-function T(str, x, y, size, c, o = {}) { ctx.save(); ctx.translate(x, y); if (o.rot) ctx.rotate(o.rot); if (o.sc) ctx.scale(o.sc, o.sc); ctx.globalAlpha = o.a ?? 1; ctx.font = `${o.w ?? 400} ${size}px ${o.f ?? A}`; ctx.textAlign = o.al ?? 'center'; ctx.textBaseline = 'alphabetic'; ctx.fillStyle = c; ctx.letterSpacing = (o.ls ?? 0) + 'px'; ctx.fillText(str, 0, 0); ctx.restore(); }
+let curBG = INK;
+function rect(c, x, y, w, h) { if (w === W && h === H) curBG = c; ctx.fillStyle = c; ctx.fillRect(x, y, w, h); }
+function T(str, x, y, size, c, o = {}) { ctx.save(); ctx.translate(x, y); if (o.rot) ctx.rotate(o.rot); if (o.sc) ctx.scale(o.sc, o.sc); ctx.globalAlpha = o.a ?? 1; if (!o.f || o.f === A) { ctx.font = `400 ${size}px ${A}`; ctx.letterSpacing = (o.ls ?? 0) + 'px'; const mw = ctx.measureText(str).width; if (mw > (o.maxw ?? 490)) size *= (o.maxw ?? 490) / mw; }
+  ctx.font = `${o.w ?? 400} ${size}px ${o.f ?? A}`; ctx.textAlign = o.al ?? 'center'; ctx.textBaseline = 'alphabetic'; ctx.fillStyle = c; ctx.letterSpacing = (o.ls ?? 0) + 'px'; ctx.fillText(str, 0, 0); ctx.restore(); }
 // snap-in word: scale-down slam with a little overshoot, hard on the beat
 function slam(str, x, y, size, c, t, t0, o = {}) { const k = t - t0; if (k < 0) return; const u = clamp(k / .14); const sc = 1 + (1 - eo(u)) * .45; T(str, x, y, size, c, { ...o, sc, a: (o.a ?? 1) * clamp(k / .05) }); }
 // wipe-in word (mask from left)
@@ -47,8 +49,8 @@ function laserBarcode(t, t0, dur, bg = INK) { const p = clamp((t - t0) / dur); c
   ctx.save(); const g = ctx.createLinearGradient(lx - 50, 0, lx + 50, 0); g.addColorStop(0, 'rgba(255,45,31,0)'); g.addColorStop(.5, 'rgba(255,45,31,.55)'); g.addColorStop(1, 'rgba(255,45,31,0)'); ctx.fillStyle = g; ctx.fillRect(lx - 50, BY - 70, 100, BH + 140); ctx.fillStyle = RED; ctx.fillRect(lx - 1.5, BY - 70, 3, BH + 140); ctx.restore(); return { p, lx }; }
 scn(s(5) - .05, s(6) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(5) + .05; slam('LASER', 270, 230, 190, RED, k, .05); laserBarcode(t, s(5) + .3, 1.2); slam('SWEEP', 270, 760, 110, PAPER, t, s(5) + .5); });
 // 6 absorb / bounce
-scn(s(6) - .05, s(7) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(6) + .05; const w1 = e(6) - 2.8; const sw = (t - s(6)) * .35 % 1; slam('BLACK', 140, 200, 120, PAPER, k, .05); T('= ABSORB', 330, 200, 64, GREY, { a: ramp(k, .3, .1) });
-  slam('WHITE', 140, 330, 120, PAPER, t, s(6) + 1.3); T('= BOUNCE', 330, 330, 64, RED, { a: ramp(t, s(6) + 1.5, .1) });
+scn(s(6) - .05, s(7) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(6) + .05; const w1 = e(6) - 2.8; const sw = (t - s(6)) * .35 % 1; slam('BLACK', 30, 200, 100, PAPER, k, .05, { al: 'left', maxw: 195 }); slam('ABSORB', 510, 200, 100, GREY, k, .3, { al: 'right', maxw: 255 });
+  slam('WHITE', 30, 320, 100, PAPER, t, s(6) + 1.3, { al: 'left', maxw: 195 }); slam('BOUNCE', 510, 320, 100, RED, t, s(6) + 1.5, { al: 'right', maxw: 255 });
   laserBarcode(t, s(6) - .05, 3.0); const gp = clamp((t - s(6)) / 3.0); const idx = Math.min(NB - 1, Math.floor(gp * NB)); const bit = BITS[idx]; ctx.fillStyle = bit === '1' ? INK : RED; ctx.fillRect(BX, 620, BW, 14); const lvl = bit === '1' ? .12 : .9; rect(PAPER, BX, 660, BW * .0 + 20, 0); T(bit === '1' ? 'DARK: LIGHT LOST' : 'LIGHT: BOUNCES BACK', 270, 700, 30, bit === '1' ? GREY : RED, { f: MONO, w: 700 }); });
 // 7 signal
 scn(s(7) - .05, s(8) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(7) + .05; slam('SIGNAL', 270, 230, 210, INK, k, 0);
@@ -67,27 +69,28 @@ scn(s(9) - .05, s(10) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(9) 
 // 10 backwards
 scn(s(10) - .05, s(11) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(10) + .05; slam('BACKWARDS?', 270, 220, 130, PAPER, k, 0); const rt = e(10) - 1.9; const a = ease(ramp(t, rt, .9)) * Math.PI; ctx.save(); ctx.translate(270, 480); ctx.rotate(a); rect(PAPER, -BW / 2 - 12, -BH / 2 - 12, BW + 24, BH + 24); bars(-BW / 2, -BH / 2, BW, BH, 0, NB, INK); ctx.restore(); slam('OK.', 270, 760, 150, RED, t, rt + .8); T('UPSIDE DOWN TOO', 270, 810 - 40, 24, PAPER, { f: MONO, w: 700, a: ramp(t, rt + 1, .2) }); });
 // 11 check digit
-scn(s(11) - .05, s(12) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(11) + .05; slam('CHECK', 270, 220, 200, INK, k, 0); slam('DIGIT', 270, 400, 200, RED, k, .15); digits(25, 560, 490, 40, INK, 1); const bk = ramp(t, s(11) + 1.2, .25); ctx.globalAlpha = bk; ctx.strokeStyle = RED; ctx.lineWidth = 5; ctx.strokeRect(25 + 490 / 12 * 11 - 6, 520, 490 / 12 + 12, 62); ctx.globalAlpha = 1; T('LAST ONE', 270 + 490 / 12 * 5.5 + 0, 640, 26, RED, { f: MONO, w: 700, a: bk }); });
+scn(s(11) - .05, s(12) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(11) + .05; slam('CHECK', 270, 220, 200, INK, k, 0); slam('DIGIT', 270, 400, 200, RED, k, .15); digits(25, 560, 490, 40, INK, 1); const bk = ramp(t, s(11) + 1.2, .25); ctx.globalAlpha = bk; ctx.strokeStyle = RED; ctx.lineWidth = 5; ctx.strokeRect(25 + 490 / 12 * 11 - 6, 520, 490 / 12 + 12, 62); ctx.globalAlpha = 1; T('LAST ONE', 505, 640, 26, RED, { f: MONO, w: 700, a: bk, al: 'right' }); });
 // 12 math + reject
 scn(s(12) - .05, s(13) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(12) + .05; const st = i => ramp(t, s(12) + .3 + i * .9, .2);
   T('03600029145', 270, 140, 56, PAPER, { f: MONO, w: 700 }); T('(first eleven digits)', 270, 175, 16, GREY, { f: MONO, w: 500, a: st(0) });
   slam('ODD  0+6+0+2+1+5 = 14', 270, 260, 30, PAPER, t, s(12) + .3, { f: MONO, w: 700 }); slam('14 × 3 = 42', 270, 330, 52, RED, t, s(12) + 1.2); slam('EVEN  3+0+0+9+4 = 16', 270, 400, 30, PAPER, t, s(12) + 2.2, { f: MONO, w: 700 }); slam('42 + 16 = 58', 270, 470, 52, RED, t, s(12) + 3.0); slam('58 + 2 = 60', 270, 560, 70, PAPER, t, s(12) + 3.7); const ok = ramp(t, s(12) + 3.9, .2); T('✓ ENDS IN 0', 270, 610, 28, RED, { f: MONO, w: 700, a: ok });
-  const rj = e(12) - 1.3; if (t > rj) { rect(RED, 0, 650, W, 150); slam('REJECTED', 270, 770, 140, PAPER, t, rj); } });
+  const rj = e(12) - 1.3; if (t > rj) { rect(RED, 0, 650, W, 130); slam('REJECTED', 270, 755, 130, PAPER, t, rj); } });
 // 13 smudge caught
 scn(s(13) - .05, s(14) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(13) + .05; slam('CAUGHT', 270, 250, 200, RED, k, 0); rect(INK, BX - 12, 330, BW + 24, 190); rect(PAPER, BX - 6, 336, BW + 12, 178); bars(BX, 345, BW, 150, 0, NB, INK);
   const sm = ramp(t, s(13) + .6, .25); ctx.fillStyle = '#1a1a1a'; ctx.globalAlpha = sm; ctx.beginPath(); ctx.ellipse(300, 430, 70 * sm + 10, 52 * sm + 8, .4, 0, 7); ctx.fill(); ctx.globalAlpha = 1; T('SMUDGE', 300, 445, 24, PAPER, { f: MONO, w: 700, a: sm });
   const xk = pop(ramp(t, s(13) + 1.3, .4)); if (xk > 0) { ctx.save(); ctx.translate(270, 600); ctx.scale(xk, xk); ctx.strokeStyle = RED; ctx.lineWidth = 16; ctx.lineCap = 'butt'; ctx.beginPath(); ctx.moveTo(-50, -50); ctx.lineTo(50, 50); ctx.moveTo(50, -50); ctx.lineTo(-50, 50); ctx.stroke(); ctx.restore(); }
   slam('NOT WRONG ITEM', 270, 760, 70, INK, t, s(13) + 2.2); });
 // 14 gum
-scn(s(14) - .05, s(15) - .05, t => { rect(RED, 0, 0, W, H); const k = t - s(14) + .05; slam('GUM', 270, 380, 380, PAPER, k, .05); const pk = pop(ramp(t, s(14) + 1.0, .5)); ctx.save(); ctx.translate(270, 600); ctx.rotate(-.05); ctx.scale(pk, pk); rect(PAPER, -100, -50, 200, 100); rect(INK, -100, -50, 200, 18); rect(INK, -100, 32, 200, 18); T('GUM', -50, 14, 38, INK, {}); bars(10, -22, 80, 44, 0, NB, INK); ctx.restore(); });
+scn(s(14) - .05, s(15) - .05, t => { rect(RED, 0, 0, W, H); const k = t - s(14) + .05; slam('GUM', 270, 380, 380, PAPER, k, .05); const pk = pop(ramp(t, s(14) + 1.0, .5)); ctx.save(); ctx.translate(270, 620); ctx.rotate(-.05); ctx.scale(pk * 1.5, pk * 1.5); rect(PAPER, -100, -50, 200, 100); rect(INK, -100, -50, 200, 18); rect(INK, -100, 32, 200, 18); T('GUM', -50, 14, 38, INK, {}); bars(10, -22, 80, 44, 0, NB, INK); ctx.restore(); });
 // 15 date
 scn(s(15) - .05, s(16) - .05, t => { rect(INK, 0, 0, W, H); const k = t - s(15) + .05; slam('JUNE 26', 270, 230, 170, PAPER, t, s(15) + .1); slam('1974', 270, 430, 250, RED, t, s(15) + 1.6); slam('TROY, OHIO', 270, 550, 100, PAPER, t, s(15) + 2.9); slam('JUICY FRUIT', 270, 690, 120, RED, t, s(15) + 4.2); });
 // 16 light and dark
-scn(s(16) - .05, s(17) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(16) + .05; const fl = ramp(t, s(16) + 1.6, .5); stripe(t * .3, PAPER, PAPER); bars(30, 190, 480, 220, 0, NB, INK); const pk = pulse(t); slam('LIGHT', 150, 540, 140, INK, k, .05); slam('& DARK', 330, 690, 140, RED, t, s(16) + 1.0); const m = ramp(t, s(16) + 1.7, .5); digits(25, 450, 490, 44, INK, m); });
+scn(s(16) - .05, s(17) - .05, t => { rect(PAPER, 0, 0, W, H); const k = t - s(16) + .05; const fl = ramp(t, s(16) + 1.6, .5); stripe(t * .3, PAPER, PAPER); bars(30, 190, 480, 220, 0, NB, INK); const pk = pulse(t); slam('LIGHT', 270, 600, 130, INK, k, .05); slam('& DARK', 270, 730, 130, RED, t, s(16) + 1.0); const m = ramp(t, s(16) + 1.7, .5); digits(25, 465, 490, 44, INK, m); });
 // 17 end
 scn(s(17) - .05, 1e9, t => { rect(RED, 0, 0, W, H); const k = t - s(17) + .05; slam('FOLLOW', 270, 300, 210, PAPER, k, .05); slam('FOR MORE OF', 270, 430, 80, INK, k, .3); slam('HOW IT', 270, 560, 150, PAPER, k, .5); slam('REALLY WORKS.', 270, 690, 100, INK, k, .7); });
 const capUp = captions(document.getElementById('cap'));
 window.seek = t => { ctx.setTransform(2, 0, 0, 2, 0, 0); sc.forEach(o => { if (t >= o.a && t < o.b) { ctx.save(); o.fn(t); ctx.restore(); } });
   // caption chip colours adapt: draw a backing bar
-  const cp = document.getElementById('cap'); capUp(t); };
+  const cp = document.getElementById('cap'); cp.style.color = curBG === PAPER ? INK : PAPER; capUp(t); };
+await Promise.all([document.fonts.load('100px Anton'), document.fonts.load('700 20px "JetBrains Mono"'), document.fonts.load('500 20px "JetBrains Mono"')]);
 window.ready = true;

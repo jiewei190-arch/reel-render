@@ -1,0 +1,94 @@
+{
+ "name": "barcode",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  3,
+  4,
+  6,
+  8,
+  10,
+  11,
+  13,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "A barcode doesn't hold the **price.**",
+   "A barcode doesn't hold the price."
+  ],
+  [
+   "It doesn't hold the **name** either.",
+   "It doesn't hold the name either."
+  ],
+  [
+   "All it holds is a **number:** on most U.S. products, **twelve digits.**",
+   "All it holds is a number: on most U.S. products, twelve digits."
+  ],
+  [
+   "The store's **computer** looks that number up. That's where the price lives.",
+   "The store's computer looks that number up. That's where the price lives."
+  ],
+  [
+   "So how does a scanner read digits from **stripes?**",
+   "So how does a scanner read digits from stripes?"
+  ],
+  [
+   "A **laser** sweeps across the code.",
+   "A laser sweeps across the code."
+  ],
+  [
+   "**Black bars** soak up the light. **White gaps** bounce it back.",
+   "Black bars soak up the light. White gaps bounce it back."
+  ],
+  [
+   "A sensor turns that flicker into a **signal.**",
+   "A sensor turns that flicker into a signal."
+  ],
+  [
+   "Each digit is a pattern of bars and gaps, built from **seven thin slices.**",
+   "Each digit is a pattern of bars and gaps, built from seven thin slices."
+  ],
+  [
+   "The left half and the right half use **opposite patterns.**",
+   "The left half and the right half use opposite patterns."
+  ],
+  [
+   "So the scanner can tell when it's reading **backwards.** Upside down works too.",
+   "So the scanner can tell when it's reading backwards. Upside down works too."
+  ],
+  [
+   "Now the clever part: the last digit is a **check digit.**",
+   "Now the clever part: the last digit is a check digit."
+  ],
+  [
+   "The scanner does a little **math** on the other digits. If the answer doesn't match, the scan is **rejected.**",
+   "The scanner does a little math on the other digits. If the answer doesn't match, the scan is rejected."
+  ],
+  [
+   "That's how a smudged code gets **caught,** instead of ringing up the wrong thing.",
+   "That's how a smudged code gets caught, instead of ringing up the wrong thing."
+  ],
+  [
+   "The first one ever scanned was on a pack of **gum.**",
+   "The first one ever scanned was on a pack of gum."
+  ],
+  [
+   "**June 26, 1974,** in Troy, Ohio: a ten-pack of Juicy Fruit.",
+   "June twenty sixth, nineteen seventy four, in Troy, Ohio: a ten pack of Juicy Fruit."
+  ],
+  [
+   "A barcode is just a number, written in **light and dark.**",
+   "A barcode is just a number, written in light and dark."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
