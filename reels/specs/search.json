@@ -5,19 +5,23 @@
  "music": "crayon",
  "bpm": 88,
  "breath": [
-  0,
-  2,
-  4,
-  6,
+  1,
+  3,
+  5,
   7,
-  9,
-  11,
-  12
+  8,
+  10,
+  12,
+  13
  ],
  "phrases": [
   [
-   "When you search, Google doesn't go out and **search the web.** It already did that, before you asked.",
-   "When you search, Google doesn't go out and search the web. It already did that, before you asked."
+   "When you hit search, Google doesn't **search the web.**",
+   "When you hit search, Google doesn't search the web."
+  ],
+  [
+   "It already did that, **before you asked.**",
+   "It already did that, before you asked."
   ],
   [
    "All day, programs called **crawlers** visit pages and **follow their links** to find new ones.",

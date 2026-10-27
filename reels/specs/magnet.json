@@ -5,6 +5,7 @@
  "music": "crayon",
  "bpm": 88,
  "breath": [
+  0,
   1,
   2,
   4,
@@ -16,12 +17,12 @@
  ],
  "phrases": [
   [
-   "Cut a magnet in half, and you don't get a **north piece** and a **south piece.**",
-   "Cut a magnet in half, and you don't get a north piece and a south piece."
+   "Cut a magnet in half, and you get **two magnets.**",
+   "Cut a magnet in half, and you get two magnets."
   ],
   [
-   "You get **two magnets.** Cut again, and every piece still has **both poles.**",
-   "You get two magnets. Cut again, and every piece still has both poles."
+   "Never a **north piece** and a **south piece.** Cut again, and every piece still has **both poles.**",
+   "Never a north piece and a south piece. Cut again, and every piece still has both poles."
   ],
   [
    "Because a magnet was never one big magnet. It's built from **billions of tiny ones.**",

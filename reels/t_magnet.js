@@ -37,9 +37,9 @@ const HL = []; {
   pg.fillStyle = C.blue; pg.font = D.font('serif', 104, 700); pg.fillText('4.1', 40, 130); const w41 = pg.measureText('4.1 ').width; pg.fillStyle = C.ink; pg.fillText('Magnets', 40 + w41, 130);
   pg.font = D.font('serif', 60, 400); LINES.forEach((ln, i) => pg.fillText(ln, 40, 300 + i * 100));
   const find = (li, w, col, t0) => { const x = pg.measureText(LINES[li].slice(0, LINES[li].indexOf(w))).width + 40; HL.push({ x, y: 300 + li * 100 - 52, w: pg.measureText(w).width, h: 68, col, t0, word: w }); };
-  find(1, 'north piece', C.greenL, s(0) + 2.2); find(2, 'south piece', C.pinkL, s(0) + 3.0); find(2, 'two magnets', C.hlBlue, s(1) + .25); find(4, 'both poles', C.greenL, s(1) + 2.7);
+  find(5, 'one big magnet', C.pinkL, s(2) + .5); find(6, 'billions of tiny ones', C.greenL, s(2) + 1.5);
 }
-const pageM = t => { const z = 1.12 + .1 * ss(R(t, 0, 5)); return { tx: 70 - 30 * ss(R(t, 0, 5)), ty: 520, z, rot: -.075 }; };
+const PG0 = s(2) - .25; const pageM = t => { t = t - PG0; const z = 1.12 + .1 * ss(R(t, 0, 5)); return { tx: 70 - 30 * ss(R(t, 0, 5)), ty: 520, z, rot: -.075 }; };
 const pagePt = (t, x, y) => { const m = pageM(t), c = Math.cos(m.rot), sn = Math.sin(m.rot); return [m.tx + (x * c - y * sn) * m.z, m.ty + (x * sn + y * c) * m.z]; };
 function sceneA(t) { const T = D.T, tg = D.tg; tg.setTransform(1, 0, 0, 1, 0, 0); tg.clearRect(0, 0, W, H); const m = pageM(t);
   tg.translate(m.tx, m.ty); tg.rotate(m.rot); tg.scale(m.z, m.z); D.use(tg); HL.forEach(h => D.marker(h.x, h.y, h.w, h.h, h.col, R(t, h.t0, .45))); tg.drawImage(P, 0, 0); D.use(lg);
@@ -48,21 +48,21 @@ function sceneA(t) { const T = D.T, tg = D.tg; tg.setTransform(1, 0, 0, 1, 0, 0)
   band(0, 520, 7); band(520, 640, 3); band(640, 1080, 0); band(1080, 1190, 3); band(1190, H, 8); }
 
 // ---------- B: cut the magnet ----------
-const MX = 180, MY = 780, MW = 720, MH = 190;
-function cutLevel(t) { const c1 = s(1) + .45, c2 = s(1) + 1.75; if (t < c1) return [0, 1, 0]; if (t < c2) return [1, ex(R(t, c1 + .25, .8)), R(t, c1, .35)]; return [2, ex(R(t, c2 + .25, .8)), R(t, c2, .35)]; }
+const MX = 160, MY = 960, MW = 760, MH = 230;
+function cutLevel(t) { const c1 = -.3, c2 = s(1) + 2.3; if (t < c1) return [0, 1, 0]; if (t < c2) return [1, ex(R(t, c1 + .25, .8)), R(t, c1, .35)]; return [2, ex(R(t, c2 + .25, .8)), R(t, c2, .35)]; }
 function sceneB(t) {
   const [lv, sep, cutk] = cutLevel(t), k0 = R(t, s(1) - .2, .8);
+  if (t < .9) D.text('\u2702', 540, MY - 70 - 40 * ex(R(t, -.3, .5)), { f: 'sans', size: 110, align: 'center', col: C.red, a: 1 - R(t, .5, .4) });
   if (lv === 0) barMagnet(MX, MY, MW, MH, k0, { seed: 2 });
   else { const n = 2 ** lv, pw = MW / n, gap = 70 / lv * 1.3; if (sep < .02) for (let i = 1; i < n; i++) if (lv === 1 || i % 2) D.ink(D.seg(MX + i * pw, MY - 50, MX + i * pw, MY + MH + 50, 8), { w: 4, dash: [16, 12], prog: cutk, wob: 0 });
     for (let i = 0; i < n; i++) { const x = MX + i * pw + (i - (n - 1) / 2) * gap * sep - (lv === 2 ? 0 : 0); const segs = [0, 1].map(hh => { const j = i * 2 + hh, own = j % 2 ? SCOL : NCOL, par = Math.floor(j / 2) % 2 ? SCOL : NCOL; return [par, own]; });
       barMagnet(x, MY + (lv === 2 ? (i % 2 ? 26 : -26) * sep : 0), pw, MH * (lv === 2 ? .82 : 1), 1, { segs, u: sep, seed: i + lv * 4, la: clamp(sep * 2) }); } }
   // flown words -> labels with strike scribble
-  const fly = R(t, s(1) - .35, .7);
-  [[HL[0], 300], [HL[1], 780]].forEach(([h, lx], n) => { const [px, py] = pagePt(s(1) - .35, h.x, h.y + 50); const u = ex(fly), x = lerp(px, lx, u), y = lerp(py, MY - 90, u);
-    if (u < .98) D.text(h.word, x, y, { f: 'serif', size: lerp(60 * 1.2, 46, u), align: u > .5 ? 'center' : 'left', a: 1 - u * .3 }); else label([h.word], lx, y, 1, { size: 50, a: 1 - R(t, s(1) + 1.9, .4) });
-    const st = R(t, s(1) + .35 + n * .12, .35); if (st > 0 && t < s(1) + 2.3) D.ink(D.seg(lx - 120, MY - 104, lx + 120, MY - 100, 6), { w: 6, col: C.red, prog: st, seed: 40 + n, a: 1 - R(t, s(1) + 1.9, .4) }); });
-  const k1 = R(t, s(1) + .9, .6); if (k1 > 0 && t < s(1) + 1.9) label(['two ', { s: 'magnets!', col: C.blue }], 540, 1170, k1, { size: 58, a: 1 - R(t, s(1) + 1.7, .3) });
-  const k2 = R(t, s(1) + 2.6, .7); if (k2 > 0) { label(['every piece: ', { s: 'N', col: NCOL }, ' + ', { s: 'S', col: C.blue }], 540, 1230, k2, { size: 62 }); wavyArrow(540, 1150, 540, 1060, R(t, s(1) + 3.0, .4), 7); }
+  // hook headline (Distilbook bold stack), on screen from frame 0
+  const hk = 1 - R(t, s(1) + 2.2, .4); if (hk > 0) { D.text('Cut it in half', 90, 400, { f: 'sans', size: 116, wt: 800, a: hk, track: -4 }); D.marker(86, 466, 640, 38, C.hlBlue, R(t, .6, .5) * hk, .8); D.text('= two magnets.', 90, 530, { f: 'sans', size: 116, wt: 800, col: C.blue, a: hk * (t < .01 ? 1 : R(t, .2, .3)), track: -4 }); }
+  [['north piece', 300], ['south piece', 780]].forEach(([w, lx], n) => { const a = R(t, s(1) + n * .5, .4) * (1 - R(t, s(1) + 2.1, .3)); if (a <= 0) return; label([w], lx, MY - 90, 1, { size: 50, a });
+    D.ink(D.seg(lx - 120, MY - 104, lx + 120, MY - 100, 6), { w: 6, col: C.red, prog: R(t, s(1) + 1.1 + n * .15, .35), seed: 40 + n, a }); });
+  const k2 = R(t, s(1) + 3.4, .7); if (k2 > 0) { label(['every piece: ', { s: 'N', col: NCOL }, ' + ', { s: 'S', col: C.blue }], 540, 1420, k2, { size: 66 }); wavyArrow(540, 1340, 540, 1250, R(t, s(1) + 3.8, .4), 7); }
 }
 
 // ---------- C: never one big magnet ----------
@@ -192,7 +192,7 @@ function sceneM(t) { const t0 = s(15) - .2, c = lg; const u = ex(R(t, t0, .7));
 }
 
 // ---------- compositor ----------
-const SC = [[0, sceneA, 0], [s(1) - .35, sceneB, 0], [s(2) - .25, sceneC, 0], [s(3) - .3, sceneD, 0], [s(4) - .25, sceneE, 0], [s(5) - .3, sceneF, 0], [s(6) - .3, sceneG, 0],
+const SC = [[0, sceneB, 0], [s(2) - .25, sceneA, 0], [s(2) + 2.3, sceneC, 0], [s(3) - .3, sceneD, 0], [s(4) - .25, sceneE, 0], [s(5) - .3, sceneF, 0], [s(6) - .3, sceneG, 0],
   [s(7) - .3, sceneH, 0], [s(8) - .2, sceneI, 0], [s(10) - .3, sceneJ, 1], [s(11) - .3, sceneK, 0], [s(13) - .3, sceneL, 1], [s(15) - .35, sceneM, 0]];
 const TR = .45;
 function idx(t) { let i = 0; for (let k = 0; k < SC.length; k++) if (t >= SC[k][0]) i = k; return i; }

@@ -9,20 +9,21 @@
   1,
   2,
   4,
-  6,
-  8,
+  5,
+  7,
   9,
-  11,
-  12
+  10,
+  12,
+  13
  ],
  "phrases": [
   [
-   "Back in 2011, YouTube learned something awkward: a **click** doesn't mean you actually **watched.**",
-   "Back in twenty eleven, YouTube learned something awkward. A click doesn't mean you actually watched."
+   "Out of **millions** of videos, only a **few dozen** reach your screen.",
+   "Out of millions of videos, only a few dozen reach your screen."
   ],
   [
-   "So how does it pick your next video? Its engineers described a **funnel.**",
-   "So how does it pick your next video? Its engineers described a funnel."
+   "So who picks them? YouTube's engineers described a **funnel.**",
+   "So who picks them? YouTube's engineers described a funnel."
   ],
   [
    "At the top: **millions** of videos. Far too many to judge one by one.",
@@ -33,8 +34,12 @@
    "First, it pulls out a few hundred, using what viewers with habits like yours watched."
   ],
   [
-   "Then a second system **scores** each one, and only a few **dozen** reach your screen.",
-   "Then a second system scores each one, and only a few dozen reach your screen."
+   "Then a second system **scores** each one, and only the winners reach you.",
+   "Then a second system scores each one, and only the winners reach you."
+  ],
+  [
+   "But scored on what? Back in 2011, YouTube learned a **click** doesn't mean you **watched.**",
+   "But scored on what? Back in twenty eleven, YouTube learned a click doesn't mean you watched."
   ],
   [
    "In their 2016 paper, the score was a **prediction:** how long will you **watch?**",
