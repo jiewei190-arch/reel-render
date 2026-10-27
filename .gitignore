@@ -3,3 +3,8 @@ tts/*.bin
 reels/frames/
 reels/out/
 *.wav
+reels/*.log
+reels/*.done
+reels/contact_*.jpg
+reels/stills/
+reels/up/*.mp4
