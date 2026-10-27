@@ -21,10 +21,11 @@ export function createFB(canvas) {
   // ---------- cached paper ----------
   const paper = document.createElement('canvas'); paper.width = W; paper.height = H; const p = paper.getContext('2d');
   p.fillStyle = C.paper; p.fillRect(0, 0, W, H);
-  for (let i = 0; i < 40; i++) { const x = hash(i * 1.3) * W, y = hash(i * 2.1) * H, r = 200 + hash(i * 3.7) * 420; const rg = p.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, hash(i * 5.3) > .5 ? 'rgba(255,250,236,.10)' : 'rgba(200,180,140,.035)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); p.fillStyle = rg; p.fillRect(x - r, y - r, 2 * r, 2 * r); }
+  for (let i = 0; i < 0; i++) { const x = hash(i * 1.3) * W, y = hash(i * 2.1) * H, r = 200 + hash(i * 3.7) * 420; const rg = p.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, hash(i * 5.3) > .5 ? 'rgba(255,250,236,.10)' : 'rgba(200,180,140,.035)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); p.fillStyle = rg; p.fillRect(x - r, y - r, 2 * r, 2 * r); }
   for (let i = 0; i < 160; i++) { const x = hash(i * 7.7) * W; p.fillStyle = `rgba(${hash(i) > .5 ? '255,255,250' : '150,130,100'},${.012 + hash(i * 4.4) * .02})`; p.fillRect(x, 0, 1 + hash(i * 1.9) * 3, H); }   // faint laid lines
   for (let i = 0; i < 2600; i++) { const x = hash(i * 1.7) * W, y = hash(i * 2.9) * H, a = hash(i * 4.1) * TAU, l = 3 + hash(i * 6.1) * 10; p.strokeStyle = `rgba(120,100,70,${.03 + hash(i * 8.3) * .05})`; p.lineWidth = .8; p.beginPath(); p.moveTo(x, y); p.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l); p.stroke(); }
-  const vg = p.createRadialGradient(W / 2, H * .46, H * .25, W / 2, H / 2, H * .78); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(90,70,40,.20)'); p.fillStyle = vg; p.fillRect(0, 0, W, H);
+  const vg = p.createRadialGradient(W / 2, H * .46, H * .25, W / 2, H / 2, H * .78); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(110,85,50,.12)'); p.fillStyle = vg; p.fillRect(0, 0, W, H);
+  for (let i = 0; i < 9000; i++) { p.fillStyle = `rgba(${hash(i * 1.1) > .5 ? '120,100,70' : '255,255,248'},${.05 + hash(i * 2.3) * .07})`; p.fillRect(hash(i * 3.7) * W, hash(i * 4.9) * H, 1.2, 1.2); }   // fine grain
   // crop marks + centre targets (printed furniture)
   p.strokeStyle = 'rgba(60,60,60,.55)'; p.lineWidth = 1.4;
   [[44, 44], [W - 44, 44], [44, H - 44], [W - 44, H - 44]].forEach(([x, y]) => { p.beginPath(); p.moveTo(x - 22, y); p.lineTo(x + 22, y); p.moveTo(x, y - 22); p.lineTo(x, y + 22); p.stroke(); });
@@ -88,10 +89,10 @@ export function createFB(canvas) {
     let shown = tS * cps; lines.forEach((l, li) => { const lw = l.reduce((a, t) => a + t.ww + sp, -sp); let xx = align === 'center' ? x - lw / 2 : x; l.forEach(tk => { const nch = Math.min(tk.w.length, shown); if (nch > 0) F.txt(tk.w, xx, y + li * size * lh, { size, f: 'body', wt: tk.b ? 700 : 500, col: tk.b ? C.red : '#3a3a40', type: nch, alpha }); shown -= tk.w.length + 1; xx += tk.ww + sp; }); });
     return lines.length * size * lh; };
   // red seal: square (carved, vertical chars) or round; stamps in with overshoot; knock-out speckle
-  F.seal = (chars, x, y, k, o = {}) => { if (k <= .01 || S.A <= 0) return; const { size = 64, round = false, rot = .03, f = 'cjk' } = o; const sc = 1 + (1 - ss(k)) * .7; g.save(); g.translate(x, y); g.rotate(rot); g.scale(sc, sc); g.globalAlpha = S.A * clamp(k * 3) * .92;
+  F.seal = (chars, x, y, k, o = {}) => { if (k <= .01 || S.A <= 0) return; const { size = 64, round = false, rot = .03, f = 'cjk', fs = size } = o; const sc = 1 + (1 - ss(k)) * .7; g.save(); g.translate(x, y); g.rotate(rot); g.scale(sc, sc); g.globalAlpha = S.A * clamp(k * 3) * .92;
     const n = chars.length, w = round ? size * 1.5 : size * 1.25, h = round ? size * 1.5 : size * (n * 1.05 + .35); g.fillStyle = C.red;
     if (round) { g.beginPath(); g.arc(0, 0, w / 2, 0, TAU); g.fill(); } else { g.fillRect(-w / 2, -h / 2, w, h); }
-    g.globalCompositeOperation = 'destination-out'; g.fillStyle = '#000'; g.font = font(f, size, 700); g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.globalCompositeOperation = 'destination-out'; g.fillStyle = '#000'; g.font = font(f, fs, 700); g.textAlign = 'center'; g.textBaseline = 'middle';
     if (round) { g.lineWidth = 3; g.strokeStyle = '#000'; g.beginPath(); g.arc(0, 0, w / 2 - 7, 0, TAU); g.stroke(); g.fillText(chars, 0, 3); }
     else { g.lineWidth = 3; g.strokeStyle = '#000'; g.strokeRect(-w / 2 + 7, -h / 2 + 7, w - 14, h - 14); for (let i = 0; i < n; i++) g.fillText(chars[i], 0, -h / 2 + size * (.7 + i * 1.05)); }
     for (let i = 0; i < 140; i++) { g.globalAlpha = .5; g.fillRect((hash(i * 3.3) - .5) * w, (hash(i * 5.7) - .5) * h, 1.5 + hash(i) * 3, 1 + hash(i + 1) * 2.5); } g.restore(); };

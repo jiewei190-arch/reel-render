@@ -9,7 +9,7 @@ const R = ramp;
 // ---------- pages: [start, end, page no] ; ink fades off before each change ----------
 const PG = [[0, s(2) - .05, 1], [s(2) - .05, s(6) - .1, 2], [s(6) - .1, s(13) - .1, 3], [s(13) - .1, s(15) - .1, 4], [s(15) - .1, s(16) - .1, 5], [s(16) - .1, s(18) - .1, 6], [s(18) - .1, TL.total + 1, 7]];
 const pageAt = t => PG.find(p => t >= p[0] && t < p[1]) || PG[PG.length - 1];
-const inkA = (t, p) => (1 - ss(R(t, p[1] - .45, .35))) * (p[2] === 1 ? 1 : ss(R(t, p[0] + .05, .2)));
+const inkA = (t, p) => p[2] === 1 ? 1 : ss(R(t, p[0], .35));
 
 // ---------- toilet geometry (base units, about x 145..910, y 420..1400) ----------
 const BODY = [[150, 815], [612, 815], [770, 905], [775, 1400], [300, 1400], [322, 1262], [232, 1162], [166, 1012], [146, 892]];
@@ -36,7 +36,7 @@ function toilet(st) {
   const pa = ss(R(k, .08, .25)); stroke(CLd, HW * 2 + 2, F.paperPat(), pa);                                             // hollow trapway
   g.save(); F.path(BOWL.concat([[562, 815], [200, 815]])); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A * pa; g.fill(); g.restore();
   // tank interior
-  const [tx0, ty0, tx1, ty1] = TANK; g.save(); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A * pa; g.fillRect(tx0, ty0, tx1 - tx0, ty1 - ty0); g.restore();
+  const [tx0, ty0, tx1, ty1] = TANK; g.save(); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A * ss(R(k, .5, .2)); g.fillRect(tx0, ty0, tx1 - tx0, ty1 - ty0); g.restore();
   // ---- water ----
   const wa = ss(R(k, .55, .3));
   if (wa > 0) {
@@ -98,7 +98,7 @@ function water(t) {
 
 // ---------- pages ----------
 const TOP = 160, HEAD = 268, CAPY = 1545;
-function caption(t, x = 80, y = CAPY, o = {}) { let ci = -1; PH.forEach((p, k) => { if (t >= p.start - .05) ci = k; }); if (ci < 0) return; const p = pageAt(t); if (PH[ci].start < p[0] - .1) return; F.body(PH[ci].cap, x, y, o.maxW || 920, t - PH[ci].start + .05, o); }
+function caption(t, x = 80, y = CAPY, o = {}) { if (PREV) return; let ci = -1; PH.forEach((p, k) => { if (t >= p.start - .05) ci = k; }); if (ci < 0) return; const p = pageAt(t); if (PH[ci].start < p[0] - .1) return; F.body(PH[ci].cap, x, y, o.maxW || 920, t - PH[ci].start + .05, o); }
 function chapter(t, p, label, head, t0) { F.label(label, 80, TOP, t - t0); F.head(head, 76, HEAD, t - t0 - .35); }
 
 function page1(t) {
@@ -106,7 +106,7 @@ function page1(t) {
   F.line(80, TOP + 16, 760, TOP + 16, { w: 1, alpha: .5, wob: .3 });
   F.txt('The Flush', 74, 330, { size: 150, f: 'hand', rot: -.015, write: t < .02 ? 1 : 1 });
   F.line(84, 372, 640, 366, { col: C.red, w: 2.6, draw: ss(R(t, .2, .8)), wob: .6 });
-  F.seal('水洗', 800, 268, ss(R(t, .5, .35)), { size: 62 }); F.txt('suisen · "flush"', 850, 400, { size: 22, f: 'mono', col: '#5d5d62', type: (t - 1) * 30 });
+  F.seal('FLUSH', 830, 262, ss(R(t, .5, .35)), { size: 38, f: 'mono', fs: 40 });
   caption(t, 80, 466, { size: 50 });
   // big red hatched circle behind the drawing (the demo's sun), then the toilet draws on in front
   const cx = 600, cy = 1220, r = 310 * eo(R(t, -.6, 1.2)); const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([cx + Math.cos(a) * r * (1 + Math.sin(a * 5) * .01), cy + Math.sin(a) * r]); }
@@ -142,13 +142,13 @@ function page2(t, p) {
     F.pencil([[690, 1100], [762, 1150]], { col: C.red, w: 4, draw: ss(R(t, s(5) + 1.2, .3)) }); F.pencil([[762, 1100], [690, 1150]], { col: C.red, w: 4, draw: ss(R(t, s(5) + 1.4, .3)) });
     note('sewer gas', 800, 1290, 745, 1250, R(t, s(5) + .8, .8), { size: 34, col: '#8a6a22' }); }
   g.restore();
-  if (t > s(5) - .1) { F.box(90, 400, 380, 170, ss(R(t, s(5), .6))); F.seal('封', 150, 486, ss(R(t, s(5) + .3, .3)), { size: 50, rot: -.04 }); F.txt('water seal', 210, 470, { size: 40, f: 'hand', col: C.red, write: ss(R(t, s(5) + .5, .6)) }); F.txt('fū · "seal"', 212, 520, { size: 21, f: 'mono', col: '#5d5d62', type: (t - s(5) - .9) * 30 }); }
+  if (t > s(5) - .1) { F.box(90, 400, 380, 170, ss(R(t, s(5), .6))); F.seal('SEAL', 150, 486, ss(R(t, s(5) + .3, .3)), { size: 50, rot: -.08, round: true, f: 'mono', fs: 21 }); F.txt('water seal', 210, 470, { size: 40, f: 'hand', col: C.red, write: ss(R(t, s(5) + .5, .6)) }); }
   caption(t);
 }
 
 function page3(t, p) {
   const sw = s(10) - .2; const a1 = 1 - ss(R(t, sw, .3)), a2 = ss(R(t, sw + .35, .2));
-  if (a1 > 0) { F.alpha(F.S.A * a1); chapter(t, p, 'NO. 02 — THE FLUSH  ·  fig. b', 'Too fast to spill over.', p[0]); F.alpha(inkA(t, p)); }
+  if (a1 > 0) { F.alpha(F.S.A * a1); chapter(t, p, 'NO. 02 — THE FLUSH  ·  fig. b', 'Too fast to spill over.', p[0]); F.alpha(BASE); }
   if (a2 > 0) { chapter(t, p, 'NO. 03 — THE SIPHON  ·  fig. c', 'A full pipe pulls.', sw + .3); }
   const st = { ...water(t), k: ss(R(t, p[0] + .2, 1.6)) };
   g.save(); g.translate(14, 0); toilet(st);
@@ -165,8 +165,8 @@ function page3(t, p) {
   g.restore();
   if (t > s(10) + .2 && t < s(13)) { const a = ss(R(t, s(10) + .2, .5)) * (1 - ss(R(t, s(13) - .5, .3))); F.box(80, 390, 400, 170, a); F.alpha(F.S.A * a);
     F.txt(t < s(12) + .3 ? 'pipe: FULL' : 'pipe: AIR IN', 108, 450, { size: 30, f: 'mono', wt: 700, col: t < s(12) + .3 ? C.navy : C.red });
-    F.txt(t < s(12) + .3 ? 'siphon running' : 'siphon broken', 108, 520, { size: 40, f: 'hand', col: t < s(12) + .3 ? C.ink : C.red }); F.alpha(inkA(t, p)); }
-  if (t > s(12) + 1.2) F.seal('止', 430, 400, ss(R(t, s(12) + 1.2, .3)), { size: 46, round: true });
+    F.txt(t < s(12) + .3 ? 'siphon running' : 'siphon broken', 108, 520, { size: 40, f: 'hand', col: t < s(12) + .3 ? C.ink : C.red }); F.alpha(BASE); }
+  if (t > s(12) + 1.2) F.seal('AIR', 430, 400, ss(R(t, s(12) + 1.2, .3)), { size: 46, round: true, f: 'mono', fs: 24 });
   caption(t);
 }
 
@@ -184,7 +184,7 @@ function page4(t, p) {
   const lv = Math.round(clamp((762 - st.tank) / (762 - 520)) * 100), bl = Math.round(clamp((1150 - st.L) / (1150 - WEIR)) * 100);
   F.box(80, 360, 440, 260, ss(R(t, p[0] + .6, .6))); F.txt('TANK', 112, 412, { size: 24, f: 'mono', wt: 700, ls: 3, col: '#5d5d62' }); F.txt(lv + '%', 112, 500, { size: 84, f: 'hand', col: C.navy });
   F.txt('BOWL SEAL', 300, 412, { size: 24, f: 'mono', wt: 700, ls: 2, col: '#5d5d62' }); F.txt(bl + '%', 300, 500, { size: 84, f: 'hand', col: bl >= 99 ? C.red : C.navy });
-  if (t > s(14) + 1.6) { F.seal('封', 470, 580, ss(R(t, s(14) + 1.6, .3)), { size: 44, round: true }); F.txt('sealed again', 112, 584, { size: 40, f: 'hand', col: C.red, write: ss(R(t, s(14) + 1.8, .6)) }); }
+  if (t > s(14) + 1.6) { F.seal('SEAL', 470, 580, ss(R(t, s(14) + 1.6, .3)), { size: 44, round: true, f: 'mono', fs: 19 }); F.txt('sealed again', 112, 584, { size: 40, f: 'hand', col: C.red, write: ss(R(t, s(14) + 1.8, .6)) }); }
   caption(t);
 }
 
@@ -232,21 +232,33 @@ function page6(t, p) {
 function page7(t, p) {
   const t0 = p[0];
   F.body('Siphons **pull.** Washdowns **push.**', 540, 520, 940, t - t0, { size: 50, align: 'center', cps: 40 });
-  F.txt('Follow for more of', 540, 700, { size: 92, f: 'hand', align: 'center', write: ss(R(t, t0 + .4, .9)) });
-  F.txt('how it really works.', 540, 810, { size: 92, f: 'hand', align: 'center', col: C.red, write: ss(R(t, t0 + 1.1, 1.0)) });
+  F.txt('Follow for more of', 540, 700, { size: 92, f: 'hand', align: 'center', write: ss(R(t, t0 + .15, .6)) });
+  F.txt('how it really works.', 540, 810, { size: 92, f: 'hand', align: 'center', col: C.red, write: ss(R(t, t0 + .6, .7)) });
   F.txt('@howitreallyworkstudio', 540, 900, { size: 30, f: 'mono', align: 'center', col: '#5d5d62', type: (t - t0 - 1.5) * 34 });
-  F.seal('終', 880, 1060, ss(R(t, t0 + 1.6, .3)), { size: 54, round: true });
+  F.seal('END', 880, 1060, ss(R(t, t0 + 1.4, .3)), { size: 54, round: true, f: 'mono', fs: 28 });
   // setting half-disc on a horizon (demo end page), now a water drop
   const k = ss(R(t, t0 + .2, 1.2)); const y0 = 1260, P = []; for (let i = 0; i <= 30; i++) { const a = Math.PI + i / 30 * Math.PI; P.push([540 + Math.cos(a) * 120, y0 + Math.sin(a) * 120 * k]); }
   if (k > .05) { F.hatch(P, 'red', { alpha: .75 }); F.pencil(P, { col: C.red, w: 2.2 }); } F.line(260, y0, 820, y0, { w: 1.6, draw: ss(R(t, t0, .8)) }); for (let i = 1; i < 4; i++) F.line(420 + i * 20, y0 + i * 14, 660 - i * 20, y0 + i * 14, { w: 1, col: C.redL, alpha: .6 * k });
   F.txt('SOURCES', 80, 1520, { size: 20, f: 'mono', wt: 700, ls: 3, col: '#5d5d62', type: (t - t0 - .6) * 40 });
   ['Wikipedia: Flush toilet; Low-flush toilet', 'US EPA WaterSense toilet documents', 'Explain That Stuff: How toilets work', 'Plumbing guides on bucket flushing'].forEach((l, i) => F.txt(l, 80, 1560 + i * 32, { size: 20, f: 'mono', col: '#6a6a6e', type: (t - t0 - .9 - i * .3) * 50 }));
 }
+
+// bottom margin device (the demo's thin timeline strips): the flush cycle with a red marker riding along in time
+const CYC = [['REST', s(2)], ['FLUSH', s(6)], ['FULL PIPE', s(9)], ['SIPHON', s(10)], ['GURGLE', s(12)], ['REFILL', s(13)], ['SEALED', s(14) + 1.6]];
+function cycleStrip(t, a) { if (a <= 0) return; F.alpha(a); const x0 = 90, x1 = 990, y = 1772, n = CYC.length;
+  F.txt('THE FLUSH CYCLE', x0, y - 46, { size: 21, f: 'mono', wt: 700, ls: 3, col: '#5d5d62' }); F.line(x0, y, x1, y, { w: 1.4, col: C.graph, wob: .3 });
+  let k = 0; CYC.forEach(([, t0], i) => { if (t >= t0) k = i; });
+  CYC.forEach(([lab], i) => { const x = lerp(x0, x1, i / (n - 1)); F.line(x, y - 9, x, y + 9, { w: 1.4, col: C.graph, wob: .2 }); F.txt(lab, x, y + 42, { size: 26, f: 'hand', align: 'center', col: i === k ? C.red : '#6a6a70' }); });
+  const nx = k < n - 1 ? CYC[k + 1][1] : CYC[k][1] + 1, u = k < n - 1 ? clamp((t - CYC[k][1]) / (nx - CYC[k][1])) : 0, mx = lerp(lerp(x0, x1, k / (n - 1)), lerp(x0, x1, Math.min(k + 1, n - 1) / (n - 1)), u);
+  F.hatch([[mx - 13, y - 34], [mx + 13, y - 34], [mx, y - 12]], 'red', { alpha: 1 }); F.pencil([[mx - 13, y - 34], [mx + 13, y - 34], [mx, y - 12]], { close: true, col: C.red, w: 1.8, wob: .3 }); F.alpha(1); }
+let BASE = 1, PREV = false;
 const PAGES = { 1: page1, 2: page2, 3: page3, 4: page4, 5: page5, 6: page6, 7: page7 };
 
 function scene(t) {
   F.begin(); const p = pageAt(t); F.footer(p[2]);
-  F.alpha(inkA(t, p)); PAGES[p[2]](t, p); F.alpha(1);
+  const pi = PG.indexOf(p); if (pi > 0 && t < p[0] + .35) { const q = PG[pi - 1]; BASE = 1 - ss(R(t, p[0], .35)); F.alpha(BASE); PREV = true; PAGES[q[2]](Math.min(t, q[1] - .01), q); PREV = false; F.alpha(1); }
+  BASE = inkA(t, p); F.alpha(BASE); PAGES[p[2]](t, p); F.alpha(1); BASE = 1;
+  if (p[2] >= 2 && p[2] <= 4) cycleStrip(t, p[2] === 2 ? ss(R(t, p[0] + .3, .5)) : p[2] === 4 ? 1 - ss(R(t, p[1] - .3, .25)) : 1);
   // end: the sheet darkens at the edges like the demo's last page
   if (t > s(18)) { const a = ss(R(t, s(18) + .5, 3)) * .28; const vg = g.createRadialGradient(W / 2, H / 2, H * .3, W / 2, H / 2, H * .75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, `rgba(40,30,15,${a})`); g.fillStyle = vg; g.fillRect(0, 0, W, H); }
 }
