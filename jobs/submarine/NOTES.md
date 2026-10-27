@@ -1,6 +1,6 @@
 # submarine: How a submarine dives and surfaces (ballast tanks, buoyancy)
 
-- Template: #16 cinematic3d "Christmas story" (demo99). Duration 71.1 s, 1080x1920, af_heart 0.97, music crayon 88 bpm.
+- Template: #16 cinematic3d "Christmas story" (demo99). Duration 73.4 s (v2), 1080x1920, af_heart 0.97, music crayon 88 bpm.
 - Why: the demo's night-time silhouettes with warm glowing windows and its sepia-to-blue grade map onto a surface-to-depth story: sepia above water, blue-lavender once the sub goes under, the lit tanks of air as the "windows".
 - Code: reels/styles/cinefilm/cinefilm.js (new module), reels/t_submarine.js, t_submarine.html, specs/submarine.json, ev_submarine.json.
 
@@ -18,3 +18,9 @@
 - "Many fish" (bony fish only have swim bladders). "Every trick at once" paraphrases Wikipedia's "all depth and trim control methods are used simultaneously".
 - Visual liberties: portholes and lit tanks are stylised (real subs have no windows); tank layout is schematic.
 - Audio: human ear check still pending.
+
+## v2 (Oct 27): HOOKS.md
+- Hook: "To dive, a submarine lets the ocean in on purpose." (10 words, HOOKS.md option 1) + "But then, how does it ever come back up?" by 5 s; the gap is closed by the compressed-air blow at ~46-56 s.
+- Frame 0: the cutaway sub on the surface with vents already popping, air geysering out and sea flooding the tanks; burned-in italic caption "Let the ocean in." (then "How does it come back up?"). This replaces the demo's slow pull-back from a single glowing light (HOOKS.md rule 2: no slow zoom from empty space).
+- Thumbnail: thumb_submarine.jpg ("Let the ocean in." over the flooding cutaway in the film look), checked in the 3:4 grid crop.
+- Mix: new mix2.py (effects at half level, ducked under the voice).

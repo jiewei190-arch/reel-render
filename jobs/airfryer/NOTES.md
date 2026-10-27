@@ -1,6 +1,6 @@
 # airfryer: How an air fryer cooks (a small convection oven, not frying)
 
-- Template: #9 scifi-toon (lemo-opuscar/styles/scifi-toon). Duration 71.9 s, 1080x1920, af_heart 0.97, music crayon 88 bpm.
+- Template: #9 scifi-toon (lemo-opuscar/styles/scifi-toon). Duration 74.9 s (v2), 1080x1920, af_heart 0.97, music crayon 88 bpm.
 - Why: the template's grammar ("a tiny, mundane goal pursued with absurdly large sci-fi means", one palette per world, parallel worlds) turns "what is an air fryer really" into a trip through worlds: the oil world, inside the fryer, the boundary-layer blanket, browning, and a suspiciously normal oven.
 - Code: reels/styles/scifitoon/ (toon.js + lib.js copied from lemo-opuscar, MIT; cast_af.js is new), reels/t_airfryer.js, t_airfryer.html, lip_airfryer.js (lip-sync envelope from the voice), specs/airfryer.json, ev_airfryer.json.
 
@@ -25,3 +25,9 @@
 - "Some reviewers say air frying is basically convection baking" is attributed opinion.
 - No health or fat claims. "Fred van der Weij" is spoken "van der Vey" (TTS approximation of the Dutch).
 - Audio: human ear check still pending.
+
+## v2 (Oct 27): HOOKS.md
+- Line 1 kept ("Your air fryer has never fried anything.", 7 words, passes the checklist). Added the "but" line by 5 s: "But the fries still come out crispy. How?" (the gap is answered by the boundary layer + Maillard section at ~27-50 s).
+- Frame 0 rebuilt: an insert close-up with fries already tumbling in the basket and hot-air arrows; a pot of oil slides in and gets stamped NOT THIS. The title lockup stays as the burned-in caption ("NOT A FRYER").
+- Thumbnail: thumb_airfryer.jpg (lockup "IT DOESN'T FRY" over the inside-the-fryer world with a golden Spud), checked in the 3:4 grid crop.
+- Mix: new mix2.py (effects at half level, ducked under the voice).
