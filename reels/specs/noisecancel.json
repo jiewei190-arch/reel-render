@@ -1,0 +1,101 @@
+{
+ "name": "noisecancel",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Noise-cancelling headphones don't **block** noise. They **add** more.",
+   "Noise-cancelling headphones don't block noise. They add more."
+  ],
+  [
+   "Sound is a **pressure wave:** air squeezed high, then stretched low, again and again.",
+   "Sound is a pressure wave: air squeezed high, then stretched low, again and again."
+  ],
+  [
+   "Tiny **microphones** listen to the noise around you.",
+   "Tiny microphones listen to the noise around you."
+  ],
+  [
+   "A small circuit makes an **upside-down copy** of that wave.",
+   "A small circuit makes an upside-down copy of that wave."
+  ],
+  [
+   "Where the noise goes **up,** the copy goes **down.**",
+   "Where the noise goes up, the copy goes down."
+  ],
+  [
+   "The speaker plays that copy. It's called **anti-noise.**",
+   "The speaker plays that copy. It's called anti-noise."
+  ],
+  [
+   "Both waves reach your ear **together.** A squeeze meets a stretch, and they **cancel.**",
+   "Both waves reach your ear together. A squeeze meets a stretch, and they cancel."
+  ],
+  [
+   "Scientists call this **destructive interference.**",
+   "Scientists call this destructive interference."
+  ],
+  [
+   "The idea was patented in **1936.** The first commercial headsets came in the **late 1980s.**",
+   "The idea was patented in 1936. The first commercial headsets came in the late 1980s."
+  ],
+  [
+   "But here's the **weird part.**",
+   "But here's the weird part."
+  ],
+  [
+   "It works best on **steady, low hums,** like an airplane engine.",
+   "It works best on steady, low hums, like an airplane engine."
+  ],
+  [
+   "A steady hum **repeats,** so the circuit can predict what's next.",
+   "A steady hum repeats, so the circuit can predict what's next."
+  ],
+  [
+   "A sudden sound, like **speech** or breaking glass, is **irregular,** so it's much harder to cancel.",
+   "A sudden sound, like speech or breaking glass, is irregular, so it's much harder to cancel."
+  ],
+  [
+   "High pitches are tricky too. Their waves are **short,** so the timing must be **perfect.**",
+   "High pitches are tricky too. Their waves are short, so the timing must be perfect."
+  ],
+  [
+   "So headphones add a second trick: **passive isolation.**",
+   "So headphones add a second trick: passive isolation."
+  ],
+  [
+   "Soft padding and a tight seal **physically block** sound, especially high pitches.",
+   "Soft padding and a tight seal physically block sound, especially high pitches."
+  ],
+  [
+   "Padding handles the **highs.** Anti-noise handles the **lows.**",
+   "Padding handles the highs. Anti-noise handles the lows."
+  ],
+  [
+   "So: **listen, flip, play,** and the waves cancel.",
+   "So: listen, flip, play, and the waves cancel."
+  ],
+  [
+   "Next time a plane goes quiet, thank a **mirror wave.**",
+   "Next time a plane goes quiet, thank a mirror wave."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  5,
+  7,
+  8,
+  9,
+  12,
+  14,
+  16,
+  17
+ ]
+}
