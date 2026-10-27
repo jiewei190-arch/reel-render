@@ -16,6 +16,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
 8. Do not ask the owner to fetch websites or send links; do the research yourself (WebSearch/WebFetch).
 9. Workers NEVER post, schedule or touch the owner's computer. Build, check, push, stop.
 11. THUMBNAIL (owner, Oct 27): every reel gets `jobs/<n>/thumb_<n>.jpg`, 1080x1920, designed in the reel's own template (same type, palette, HUD, a key visual). Big 2-4 word text that matches the hook, inside y 300-1620 so it survives the Instagram 3:4 grid crop (y 240-1680). Make it with `window.thumb()` in t_<n>.js and `PORT=9321 python3 -I reels/thumb.py <n>`. Use it as the YouTube custom thumbnail and the Instagram cover.
+12. SOUND MIX (owner, Oct 27): sound effects must never overpower the voice-over. reels/mix2.py now plays effects at 0.5 of their old level and ducks them a further 40% while the voice speaks (spec key "fx_gain" can lower it further; never raise it above 0.5). Do an ear check on the first 10 s of every mix.
 10. Caption format (`caption_<name>.md`): description + blank line + "Sources: ..." + blank line + "Follow for more of how it really works." + 5 hashtags ending `#reels` (no #fyp). YouTube metadata uses #Shorts instead of #reels.
 
 ## 3. Pipeline (see reels/ in this repo)
