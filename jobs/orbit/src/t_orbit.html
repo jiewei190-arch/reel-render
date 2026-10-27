@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<style>
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#02030a;font-family:'Inter',sans-serif}
+#gl{position:absolute;left:0;top:0;width:540px;height:960px}
+.ov{position:absolute;inset:0;pointer-events:none}
+#grade{background:linear-gradient(180deg,rgba(255,168,90,.16) 0%,rgba(40,80,160,.0) 45%,rgba(10,40,110,.28) 100%);mix-blend-mode:soft-light}
+#vig{background:radial-gradient(ellipse at 50% 46%,rgba(0,0,0,0) 48%,rgba(0,0,6,.62) 100%)}
+#grain{opacity:.16;mix-blend-mode:overlay;background-size:256px 256px}
+#dip{background:#000;opacity:0}
+#title{position:absolute;left:34px;top:70px;color:#eaf1ff;font-weight:300;letter-spacing:.34em;font-size:13px;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+#title b{font-weight:600;color:#ffb36b;margin-right:.9em}
+#num{position:absolute;left:34px;top:108px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.65)}
+#num .n{font-weight:200;font-size:76px;line-height:1;letter-spacing:-.02em}
+#num .u{font-weight:500;font-size:16px;letter-spacing:.3em;color:#ffb36b;text-transform:uppercase;margin-top:4px}
+#cap{position:absolute;left:36px;right:36px;top:782px;text-align:center;font-size:27px;font-weight:500;line-height:1.22;color:#f2f6ff;text-shadow:0 2px 16px rgba(0,0,10,.95),0 1px 2px rgba(0,0,10,.9)}
+#cap i{font-style:normal;font-weight:700;color:#ffc27d}
+#end{position:absolute;left:0;right:0;top:560px;text-align:center;color:#fff;opacity:0;text-shadow:0 2px 22px rgba(0,0,10,.9)}
+#end .a{font-weight:300;font-size:26px;letter-spacing:.06em}
+#end .b{font-weight:700;font-size:40px;color:#ffc27d;margin-top:6px}
+</style></head><body>
+<canvas id="gl" width="1080" height="1920"></canvas>
+<div class="ov" id="grade"></div><div class="ov" id="vig"></div><div class="ov" id="grain"></div>
+<div id="title"></div><div id="num"><div class="n"></div><div class="u"></div></div><div id="end"><div class="a">Follow for more of</div><div class="b">how it really works.</div></div><div id="cap"></div>
+<div class="ov" id="dip"></div>
+<script src="tl_orbit.js"></script><script type="module" src="t_orbit.js"></script></body></html>
