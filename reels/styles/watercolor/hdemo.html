@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.ttf);font-weight:400 700}
+@font-face{font-family:'Cormorant Garamond';src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic;font-weight:300 700}
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#f3ead9}canvas{display:block}
+</style></head><body><canvas id="c"></canvas>
+<script type="module">
+import { createWC, W, H, clamp, lerp, seg, ss, eo, backOut, hash, mix, rgba, PAL, PAPER, INK, INK2, leafPoly, shrinkPoly } from './watercolor.js';
+const scene = new URLSearchParams(location.search).get('scene') || 'hook';
+await Promise.all([document.fonts.load('600 60px Caveat'), document.fonts.load('italic 600 54px "Cormorant Garamond"')]);
+const R = createWC(document.getElementById('c')), g = R.g;
+
+
+const blob = (cx, cy, r, n = 14, sd = 1, sq = 1) => { const o = []; for (let i = 0; i < n; i++) { const a = i / n * 6.2832, k = 1 + (hash(sd * 7 + i * 3.1) - .5) * .32; o.push([cx + Math.cos(a) * r * k, cy + Math.sin(a) * r * k * sq]); } return o; };
+const SEA = '#4f9db5', DSEA = '#2c6f86', SUN = '#f4a43a', STORM = '#8d97ae', STORM2 = '#c3cadb', SHADE = '#59608a';
+function face(x, y, s, mood, t, seed) {
+  g.save(); g.translate(x, y); const ex = s * .24, fy = -s * .02;
+  for (const k of [-1, 1]) { g.fillStyle = rgba(INK, .9); g.beginPath(); g.ellipse(k * ex, fy, s * .06, s * .08, 0, 0, 6.3); g.fill(); g.fillStyle = rgba(PAPER, .95); g.beginPath(); g.arc(k * ex + 4, fy - 6, s * .02, 0, 6.3); g.fill();
+    R.wash([[k * ex * 1.5 - s * .1, fy + s * .17], [k * ex * 1.5, fy + s * .1], [k * ex * 1.5 + s * .1, fy + s * .17], [k * ex * 1.5, fy + s * .24]], PAL.pink, { a: .5, seed: seed + k, jit: 3, blooms: 0, edge: 1 }); }
+  if (mood === 'happy') R.stroke(R.bezier(-s * .13, fy + s * .2, 0, fy + s * .36, s * .13, fy + s * .2), { w: 8, col: INK, a: .85, seed: seed + 5, bristles: 0 });
+  else if (mood === 'sleepy') { R.stroke(R.bezier(-s * .13, fy, -s * .1, fy + s * .03, -s * .05, fy), { w: 7, col: INK, a: .8, seed, bristles: 0 }); R.stroke(R.bezier(s * .05, fy, s * .1, fy + s * .03, s * .13, fy), { w: 7, col: INK, a: .8, seed: seed + 1, bristles: 0 }); }
+  else { g.fillStyle = rgba(INK, .85); g.beginPath(); g.ellipse(0, fy + s * .24, s * .05, s * .07, 0, 0, 6.3); g.fill(); }
+  g.restore();
+}
+function sea(t, top, prog = 1) {
+  const pts = []; for (let i = 0; i <= 16; i++) pts.push([i * W / 16, top + Math.sin(i * 1.1 + t * .8) * 16 + (i % 2) * 8]); pts.push([W, H], [0, H]);
+  R.wash(pts, SEA, { a: .8, seed: 31, blooms: 9, by0: top, br: 220, alpha: prog });
+  R.wash(pts.map(([x, y]) => [x, y + (y > top + 200 ? 0 : 150)]), DSEA, { a: .3, seed: 32, blooms: 6, by0: top + 300, br: 240, alpha: prog });
+  for (let k = 0; k < 7; k++) { const x = 120 + (k * 157) % 880, y = top + 90 + (k * 113) % 420; R.stroke(R.bezier(x - 70, y, x - 30, y - 22, x, y), { w: 7, col: '#e9f4f7', a: .75, seed: 40 + k, bristles: 0, prog }); R.stroke(R.bezier(x, y, x + 30, y + 20, x + 70, y), { w: 7, col: '#e9f4f7', a: .75, seed: 60 + k, bristles: 0, prog }); }
+}
+function storm(cx, cy, rad, t, reveal) {
+  // three log-spiral arms of painted cloud blobs, outer ones paler, eyewall ring dense
+  const arms = 3;
+  for (let a = 0; a < arms; a++) for (let i = 0; i < 17; i++) {
+    const u = i / 16, k = ss(seg(reveal, u * .6, u * .6 + .4)); if (k <= 0) continue;
+    const ang = a * 2.0944 + u * 4.3 + t * .28, r = rad * (.2 + .82 * u), x = cx + Math.cos(ang) * r, y = cy + Math.sin(ang) * r * .96, s = rad * (.2 - .09 * u);
+    R.wash(blob(x, y, s * k, 12, a * 17 + i), mix(STORM2, STORM, .55 - u * .5), { a: .55 - .2 * u, seed: a * 31 + i, blooms: 2, br: s * .8, jit: 4, edge: 2.4 });
+  }
+  for (let i = 0; i < 14; i++) { const ang = i / 14 * 6.2832 + t * .5, x = cx + Math.cos(ang) * rad * .27, y = cy + Math.sin(ang) * rad * .27, k = ss(seg(reveal, 0, .3)); R.wash(blob(x, y, rad * .12 * k, 10, 90 + i), mix(STORM2, SHADE, .35), { a: .75, seed: 90 + i, blooms: 1, br: 60, jit: 3, edge: 2.6 }); }
+  R.wash(blob(cx, cy, rad * .16 * ss(seg(reveal, 0, .25)), 14, 7), SEA, { a: .7, seed: 8, blooms: 2, br: 50, jit: 3 });
+}
+const SC = {
+  hook: { dur: 5, draw(t) {
+    R.text('How does a\nhurricane form?', W / 2, 250, { size: 128, col: INK, reveal: seg(t, .15, 1.3) });
+    R.wash([[300, 470], [790, 455], [810, 482], [310, 498]], SUN, { a: .6, seed: 15, blooms: 0, jit: 3, alpha: seg(t, 1.3, 1.8) });
+    const k = backOut(seg(t, .4, 1.4));
+    g.save(); g.translate(540, 900); g.scale(k, k); g.translate(-540, -900);
+    for (let i = 0; i < 12; i++) { const a = i / 12 * 6.2832; R.stroke([[540 + Math.cos(a) * 250, 900 + Math.sin(a) * 250], [540 + Math.cos(a) * 335, 900 + Math.sin(a) * 335]], { w: 16, col: SUN, a: .75, seed: 200 + i, bristles: 1 }); }
+    R.wash(blob(540, 900, 220, 18, 4), SUN, { a: .88, seed: 4, blooms: 6, br: 120, jit: 6 }); R.wash(blob(520, 860, 130, 14, 5), '#f9d56a', { a: .5, seed: 5, blooms: 2, br: 70, jit: 4, edge: 1.5 });
+    face(540, 900, 440, 'happy', t, 9); g.restore();
+    sea(t, 1180, ss(seg(t, 1.0, 2.2)));
+    for (let i = 0; i < 5; i++) { const x = 250 + i * 140, p = seg(t, 2.2 + i * .15, 3.4 + i * .15); R.stroke([[x, 1200], [x + 18, 1140], [x - 14, 1090], [x + 16, 1030]], { w: 12, col: '#e4eef2', a: .85, seed: 300 + i, prog: ss(p), bristles: 1, prof: u => 1 - .5 * u }); }
+    R.subtitle('A hurricane is a giant engine, and its fuel is warm ocean water.', 1640, seg(t, 2.4, 3.2));
+  } },
+  spiral: { dur: 6, draw(t) {
+    R.text('Spin it up', W / 2, 220, { size: 128, col: INK, reveal: seg(t, .1, 1) });
+    R.wash([[360, 262], [740, 252], [752, 278], [368, 290]], SUN, { a: .6, seed: 16, blooms: 0, jit: 3, alpha: seg(t, .9, 1.4) });
+    storm(540, 1020, 470, t, seg(t, .3, 2.6));
+    const fa = seg(t, 2.2, 3); if (fa > 0) { g.save(); g.globalAlpha = fa; face(540, 1020, 220, 'sleepy', t, 12); g.restore(); }
+    R.text('the eye:\ncalm & clear', 190, 560, { size: 58, col: DSEA, reveal: seg(t, 3, 3.7), rot: -.05, a: .95 });
+    R.leader(R.bezier(260, 660, 340, 800, 470, 960), seg(t, 3.3, 3.9), DSEA);
+    R.text('eyewall:\nfastest winds', 880, 1620, { size: 58, col: SHADE, reveal: seg(t, 3.8, 4.5), rot: .04, a: .95 });
+    R.leader(R.bezier(840, 1540, 770, 1400, 700, 1260), seg(t, 4.1, 4.8), SHADE);
+    R.subtitle("Earth's rotation bends that inflow into a spin.", 1760, seg(t, 3.0, 3.8));
+  } },
+  end: { dur: 4, draw(t) {
+    const k = backOut(seg(t, .1, 1)); g.save(); g.translate(540, 760); g.scale(k, k); g.translate(-540, -760);
+    R.wash(blob(540, 760, 190, 16, 21), SUN, { a: .88, seed: 21, blooms: 6, br: 100, jit: 5 }); face(540, 760, 380, 'happy', t, 22); g.restore();
+    sea(t, 1180, 1);
+    R.text('Follow for more of', W / 2, 1060, { size: 76, col: INK, reveal: seg(t, .8, 1.5) });
+    R.text('how it really works.', W / 2, 1170, { size: 96, col: PAL.orange, reveal: seg(t, 1.3, 2.2), a: .95 });
+  } }
+};
+const S = SC[scene]; window.DUR = S.dur;
+window.seek = t => { R.begin(t); S.draw(t); R.finish(); };
+window.seek(0); window.ready = true; window.READY = true;
+</script></body></html>
