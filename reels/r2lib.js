@@ -16,8 +16,8 @@ export const cur = t => { let c = 0; for (let k = 0; k < P.length; k++) { if (t 
 
 // wrapped caption with **highlight** words. opt: font, size, y, w, color, hl, weight, lh, shadow, bg(fn), align
 export function caption(g, t, o = {}) {
-  const ci = cur(t); if (ci < 0 || t > P[ci].end + .5) return;
-  const k = t - P[ci].start, a = clamp((k + .02) / .12) * clamp((P[ci].end + .5 - t) / .2);
+  const ci = cur(t), last = ci === P.length - 1; if (ci < 0 || (!last && t > P[ci].end + .5)) return;
+  const k = t - P[ci].start, a = clamp((k + .02) / .12) * (last ? 1 : clamp((P[ci].end + .5 - t) / .2));
   const size = o.size ?? 32, lh = (o.lh ?? 1.2) * size, maxW = o.w ?? 460;
   g.save(); g.globalAlpha = a; g.textBaseline = 'middle';
   // tokenise
