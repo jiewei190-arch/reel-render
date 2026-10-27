@@ -190,7 +190,7 @@ chip('which one? ?', 'b', 270, 690, s(15) + .3, s(16) - .4);
 chip('P wave<small>fast · gentle</small>', 'g', 130, 270, s(16) + .6, s(18) - .4);
 chip('ALERT!<small>seconds before shaking</small>', 'y', 0, -80, G0 + 3.2, G0 + 3.2 + 3.7, () => new THREE.Vector3(2.4, 1.2, 2.6));
 chip('S wave<small>slow · strong</small>', 'c', 400, 270, s(17) + .4, s(18) - .4);
-chip('FOLLOW<small>for more of how it really works</small>', 'y', 270, 680, e(18) - 2.2, 1e9);
+chip('Follow for more of<br><b style="font-size:30px">how it really works.</b>', 'y', 270, 660, s(19) - .05, 1e9);
 const capUp = captions(document.getElementById('cap'));
 const camSet = c => { const az = c.az * Math.PI / 180, el = c.el * Math.PI / 180; const d = 80; const dir = new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el)); const asp = W / H; const Z = c.z * 1.3; cam.top = Z / 2; cam.bottom = -Z / 2; cam.left = -Z / 2 * asp; cam.right = Z / 2 * asp; cam.updateProjectionMatrix(); const tgt = new THREE.Vector3(c.tx, c.ty, c.tz); cam.position.copy(tgt).addScaledVector(dir, d); cam.lookAt(tgt); cam.updateMatrixWorld(); const up = new THREE.Vector3().setFromMatrixColumn(cam.matrixWorld, 1); cam.position.addScaledVector(up, -Z * .02); };
 let shake = 0;
