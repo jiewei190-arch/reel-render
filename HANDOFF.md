@@ -15,6 +15,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
 7. Topics are researched with a "this can blow up on YouTube and Instagram" lens. Beginner friendly, a surprising first 3 seconds, a question at the end. Prefer topics nobody on the channel covered yet.
 8. Do not ask the owner to fetch websites or send links; do the research yourself (WebSearch/WebFetch).
 9. Workers NEVER post, schedule or touch the owner's computer. Build, check, push, stop.
+11. THUMBNAIL (owner, Oct 27): every reel gets `jobs/<n>/thumb_<n>.jpg`, 1080x1920, designed in the reel's own template (same type, palette, HUD, a key visual). Big 2-4 word text that matches the hook, inside y 300-1620 so it survives the Instagram 3:4 grid crop (y 240-1680). Make it with `window.thumb()` in t_<n>.js and `PORT=9321 python3 -I reels/thumb.py <n>`. Use it as the YouTube custom thumbnail and the Instagram cover.
 10. Caption format (`caption_<name>.md`): description + blank line + "Sources: ..." + blank line + "Follow for more of how it really works." + 5 hashtags ending `#reels` (no #fyp). YouTube metadata uses #Shorts instead of #reels.
 
 ## 3. Pipeline (see reels/ in this repo)
@@ -34,7 +35,7 @@ See TEMPLATES.md for per-template notes. Built and APPROVED by the owner on Oct 
 - Duration 66-86 s, 1080x1920, ~9.6 MB.
 - Every fact in the script is in `sources_<name>.md` with a source; softened claims listed.
 - Audio: voice af_heart, no clipping; a human ear check is still pending unless noted.
-- Files: `up/<n>.mp4`, `caption_<n>.md`, `sources_<n>.md`, row in `tracking.csv`, `NOTES.md` (template, why, caveats).
+- Files: `up/<n>.mp4`, `thumb_<n>.jpg` (template-styled cover, checked in the 3:4 crop), `caption_<n>.md`, `sources_<n>.md`, row in `tracking.csv`, `NOTES.md` (template, why, caveats).
 
 ## 6. Lessons already paid for
 - Never run newreel.py (or any generator) on an existing `t_<name>.js`; it overwrites. Use `--force` knowingly.

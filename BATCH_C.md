@@ -27,3 +27,7 @@ Per reel:
 7. Push jobs/<n>/{<n>.mp4, caption_<n>.md, sources_<n>.md, NOTES.md}. NOTES.md must list the template, what was copied, softened claims and caveats. Also push the style code under reels/styles/ and t_<n>.js/specs.
 8. Delete frames/<n>.
 Work on your own branch. When all 3 are pushed, stop and report.
+
+UPDATE (owner, Oct 27):
+1. THUMBNAILS: every reel needs jobs/<n>/thumb_<n>.jpg. Add window.thumb() to t_<n>.js: a composed cover in the reel's template style, with big 2-4 word text matching the hook, inside y 300-1620. Render it with `PORT=9321 python3 -I reels/thumb.py <n>` and check stills/gridcrop_<n>.jpg. See t_magnet.js and t_search.js for examples.
+2. HOOKS: apply HOOKS.md (coming soon) to every reel's first line and first frame.
