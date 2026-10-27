@@ -21,7 +21,7 @@ export function createFB(canvas) {
   // ---------- cached paper ----------
   const paper = document.createElement('canvas'); paper.width = W; paper.height = H; const p = paper.getContext('2d');
   p.fillStyle = C.paper; p.fillRect(0, 0, W, H);
-  for (let i = 0; i < 40; i++) { const x = hash(i * 1.3) * W, y = hash(i * 2.1) * H, r = 200 + hash(i * 3.7) * 420; const rg = p.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, hash(i * 5.3) > .5 ? 'rgba(255,252,242,.18)' : 'rgba(190,170,130,.04)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); p.fillStyle = rg; p.fillRect(x - r, y - r, 2 * r, 2 * r); }
+  for (let i = 0; i < 40; i++) { const x = hash(i * 1.3) * W, y = hash(i * 2.1) * H, r = 200 + hash(i * 3.7) * 420; const rg = p.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, hash(i * 5.3) > .5 ? 'rgba(255,250,236,.10)' : 'rgba(200,180,140,.035)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); p.fillStyle = rg; p.fillRect(x - r, y - r, 2 * r, 2 * r); }
   for (let i = 0; i < 160; i++) { const x = hash(i * 7.7) * W; p.fillStyle = `rgba(${hash(i) > .5 ? '255,255,250' : '150,130,100'},${.012 + hash(i * 4.4) * .02})`; p.fillRect(x, 0, 1 + hash(i * 1.9) * 3, H); }   // faint laid lines
   for (let i = 0; i < 2600; i++) { const x = hash(i * 1.7) * W, y = hash(i * 2.9) * H, a = hash(i * 4.1) * TAU, l = 3 + hash(i * 6.1) * 10; p.strokeStyle = `rgba(120,100,70,${.03 + hash(i * 8.3) * .05})`; p.lineWidth = .8; p.beginPath(); p.moveTo(x, y); p.lineTo(x + Math.cos(a) * l, y + Math.sin(a) * l); p.stroke(); }
   const vg = p.createRadialGradient(W / 2, H * .46, H * .25, W / 2, H / 2, H * .78); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(90,70,40,.20)'); p.fillStyle = vg; p.fillRect(0, 0, W, H);

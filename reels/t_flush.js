@@ -33,10 +33,10 @@ function toilet(st) {
   const k = st.k ?? 1, t = st.t || 0;
   // ceramic body: light graphite hatching (like the demo's shaded Fuji flank) then outline
   F.hatch(BODY, 'graph', { k: ss(R(k, .25, .5)), alpha: .35, dir: 'up' });
-  stroke(CLd, HW * 2 + 2, F.paperPat());                                             // hollow trapway
-  g.save(); F.path(BOWL.concat([[562, 815], [200, 815]])); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A; g.fill(); g.restore();
+  const pa = ss(R(k, .08, .25)); stroke(CLd, HW * 2 + 2, F.paperPat(), pa);                                             // hollow trapway
+  g.save(); F.path(BOWL.concat([[562, 815], [200, 815]])); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A * pa; g.fill(); g.restore();
   // tank interior
-  const [tx0, ty0, tx1, ty1] = TANK; g.save(); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A; g.fillRect(tx0, ty0, tx1 - tx0, ty1 - ty0); g.restore();
+  const [tx0, ty0, tx1, ty1] = TANK; g.save(); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A * pa; g.fillRect(tx0, ty0, tx1 - tx0, ty1 - ty0); g.restore();
   // ---- water ----
   const wa = ss(R(k, .55, .3));
   if (wa > 0) {
@@ -109,9 +109,9 @@ function page1(t) {
   F.seal('水洗', 800, 268, ss(R(t, .5, .35)), { size: 62 }); F.txt('suisen · "flush"', 850, 400, { size: 22, f: 'mono', col: '#5d5d62', type: (t - 1) * 30 });
   caption(t, 80, 466, { size: 50 });
   // big red hatched circle behind the drawing (the demo's sun), then the toilet draws on in front
-  const cx = 600, cy = 1220, r = 310 * eo(R(t, .1, 1.2)); const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([cx + Math.cos(a) * r * (1 + Math.sin(a * 5) * .01), cy + Math.sin(a) * r]); }
+  const cx = 600, cy = 1220, r = 310 * eo(R(t, -.6, 1.2)); const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([cx + Math.cos(a) * r * (1 + Math.sin(a * 5) * .01), cy + Math.sin(a) * r]); }
   if (r > 5) { F.hatch(ring, 'red', { alpha: .75 }); F.pencil(ring, { col: C.red, w: 2.2, seed: 2 }); }
-  g.save(); g.translate(190, 610); g.scale(.75, .75); const st = { ...water(0), k: ss(R(t, .3, 2.6)), t };
+  g.save(); g.translate(190, 610); g.scale(.75, .75); const st = { ...water(0), k: ss(R(t, -.2, 2.6)), t };
   if (t > s(1)) { const pour = ss(R(t, s(1) + 1.2, 2.2)); st.L = lerp(WEIR, 915, pour) ; st.up = st.L; if (t > s(1) + 2.6) { const f = ss(R(t, s(1) + 2.6, 1.2)); st.up = lerp(st.L, 0, f); st.dB = f; st.L = lerp(915, 1100, ss(R(t, s(1) + 3.2, 1.6))); } }
   toilet(st); g.restore();
   // the bucket: tips over the bowl and pours
@@ -176,7 +176,7 @@ function page4(t, p) {
   g.save(); g.translate(14, 0); toilet(st);
   const fl = ss(R(t, s(13) + .4, 2.5)) * (1 - ss(R(t, e(14), .4)));
   flowArrows(t, fl, [[857, 470], [857, 498], [790, 492], [732, 520], [728, 600]], 2, C.navy);
-  note('float', 740, 470 - 60, 790, clamp(st.tank - 22, 480, 760), R(t, s(13) + .6, .8), { col: C.red, size: 34 });
+  note('float', 930, 700, 822, clamp(st.tank, 500, 760), R(t, s(13) + .6, .8), { col: C.red, size: 34 });
   note('fill valve', 880, 420 - 20, 858, 520, R(t, s(13) + 1.3, .8), { size: 30 });
   note('refill tube', 690, 395, 760, 494, R(t, s(14) + .1, .8), { size: 30 });
   g.restore();
@@ -211,15 +211,17 @@ function page6(t, p) {
   g.save(); g.translate(20, 330); g.scale(.5, .5); const st = { ...water(0), k: ss(R(t, p[0] + .3, 1.5)), t }; toilet(st); flowArrows(t, ss(R(t, p[0] + 1.5, .5)), CLd, 3); g.restore();
   F.txt('siphonic', 80, 1180, { size: 54, f: 'hand', write: ss(R(t, p[0] + 1.0, .6)) }); F.txt('PULLS · common in', 80, 1225, { size: 21, f: 'mono', col: '#5d5d62', type: (t - p[0] - 1.5) * 34 });
   // washdown sketch
-  const k2 = ss(R(t, s(16) + 1.2, 1.4)); g.save(); g.translate(600, 560); g.scale(.85, .85); const bowl = [[10, 40], [24, 140], [70, 250], [140, 330], [200, 350], [250, 340], [272, 300], [290, 180], [300, 40]];
-  const trap = [[200, 350], [205, 420], [260, 460], [330, 440], [350, 520], [350, 640]];
-  F.hatch([[205, 300], [280, 300], [282, 350], [240, 345], [200, 355]].concat([]), 'navy', { k: k2, alpha: .8 });
-  F.hatch([[-20, 30], [330, 30], [400, 120], [410, 640], [120, 640], [140, 520], [40, 420], [-10, 200]], 'graph', { k: ss(R(k2, .4, .6)), alpha: .3 });
-  g.save(); F.path(bowl.concat([[300, 30], [10, 30]])); g.fillStyle = F.paperPat(); g.fill(); g.restore(); F.hatch([[150, 300], [285, 300], [285, 345], [200, 355], [150, 335]], 'navy', { k: k2, alpha: .85 });
-  F.pencil([[-20, 30], [330, 30], [400, 120], [410, 640], [120, 640], [140, 520], [40, 420], [-10, 200]], { close: true, w: 2.2, draw: k2, seed: 3 });
-  F.pencil(bowl, { w: 2.2, draw: k2, seed: 4 }); F.pencil(trap, { w: 2, draw: k2, seed: 5 }); F.pencil(trap.map(([x, y]) => [x + 50, y - 10]), { w: 2, draw: k2, seed: 6 });
-  F.pencil([[-30, 640], [440, 640]], { w: 1.4, draw: k2 });
-  if (t > s(16) + 2.4) { const a = ss(R(t, s(16) + 2.4, .5)); F.arrow([[60, 60], [90, 220], [190, 320], [240, 420], [320, 470], [370, 600]], { col: C.red, w: 3.4, draw: ss(R(t, s(16) + 2.5, 1.2)) * a }); }
+  const k2 = ss(R(t, s(16) + 1.2, 1.4)); g.save(); g.translate(600, 560); g.scale(.95, .95);
+  const body = [[0, 40], [380, 40], [400, 110], [392, 640], [110, 640], [130, 520], [40, 400], [10, 200]];
+  const fw = [[22, 52], [42, 200], [92, 330], [150, 400]], bot = [[150, 400], [232, 402], [262, 382]], bw = [[332, 382], [336, 300], [342, 52]];
+  const bowl = fw.concat(bot, bw), trL = [[262, 382], [264, 470], [302, 520], [302, 640]], trR = [[332, 382], [342, 452], [372, 502], [372, 640]];
+  F.hatch(body, 'graph', { k: ss(R(k2, .4, .6)), alpha: .3 });
+  g.save(); F.path(bowl); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A; g.fill(); F.path(trL.concat(trR.slice().reverse())); g.fill(); g.restore();
+  g.save(); F.path(bowl); g.clip(); g.globalAlpha = F.S.A * ss(R(k2, .5, .5)); g.fillStyle = F.pat('navy'); g.fillRect(0, 352, 400, 100); g.restore();
+  F.pencil(body, { close: true, w: 2.2, draw: k2, seed: 3 }); F.pencil([[-8, 38], [388, 38]], { w: 3, draw: k2 });
+  F.pencil(fw.concat(bot), { w: 2.2, draw: k2, seed: 4 }); F.pencil(bw.slice().reverse(), { w: 2.2, draw: k2, seed: 5 }); F.pencil(trL, { w: 2, draw: k2, seed: 6 }); F.pencil(trR, { w: 2, draw: k2, seed: 7 });
+  F.pencil([[-30, 642], [440, 642]], { w: 1.4, draw: k2 });
+  if (t > s(16) + 2.4) F.arrow([[60, 90], [82, 240], [160, 350], [282, 392], [310, 480], [338, 620]], { col: C.red, w: 3.4, draw: ss(R(t, s(16) + 2.5, 1.2)) });
   g.restore();
   F.txt('N. America', 80, 1255, { size: 21, f: 'mono', col: '#5d5d62', type: (t - p[0] - 2.0) * 34 }); F.txt('washdown', 600, 1180, { size: 54, f: 'hand', write: ss(R(t, s(16) + 2.0, .6)) }); F.txt('PUSHES · common outside', 600, 1225, { size: 21, f: 'mono', col: '#5d5d62', type: (t - s(16) - 2.4) * 34 }); F.txt('the Americas', 600, 1255, { size: 21, f: 'mono', col: '#5d5d62', type: (t - s(16) - 3.3) * 34 });
   // the question, tally boxes like the demo's day counters
@@ -249,6 +251,6 @@ function scene(t) {
   if (t > s(18)) { const a = ss(R(t, s(18) + .5, 3)) * .28; const vg = g.createRadialGradient(W / 2, H / 2, H * .3, W / 2, H / 2, H * .75); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, `rgba(40,30,15,${a})`); g.fillStyle = vg; g.fillRect(0, 0, W, H); }
 }
 window.DUR = TL.total;
-window.seek = t => { scene(t); const fade = Math.min(1, .8 + t / .5 * .2) * Math.min(1, (TL.total - t) / .4); if (fade < 1) { g.save(); g.globalAlpha = 1 - fade; g.fillStyle = C.dark; g.fillRect(0, 0, W, H); g.restore(); } };
+window.seek = t => { scene(t); const fade = Math.min(1, .9 + t / .4 * .1) * Math.min(1, (TL.total - t) / .4); if (fade < 1) { g.save(); g.globalAlpha = 1 - fade; g.fillStyle = C.dark; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
 window.seek(0); window.ready = true; window.READY = true;
