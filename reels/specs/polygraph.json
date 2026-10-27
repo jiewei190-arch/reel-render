@@ -1,0 +1,100 @@
+{
+ "name": "polygraph",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "The lie detector **doesn't detect lies.**",
+   "The lie detector doesn't detect lies."
+  ],
+  [
+   "It never measures **lying** at all.",
+   "It never measures lying at all."
+  ],
+  [
+   "So what is it actually measuring?",
+   "So what is it actually measuring?"
+  ],
+  [
+   "A polygraph records **breathing, heart rate, blood pressure,** and **sweat.**",
+   "A polygraph records breathing, heart rate, blood pressure, and sweat."
+  ],
+  [
+   "These are **body responses.** An examiner has to interpret them.",
+   "These are body responses. An examiner has to interpret them."
+  ],
+  [
+   "A common method is the **control question test.**",
+   "A common method is the control question test."
+  ],
+  [
+   "It compares reactions to **specific questions** about the case with **general ones** meant to provoke concern.",
+   "It compares reactions to specific questions about the case with general ones meant to provoke concern."
+  ],
+  [
+   "It assumes an innocent person reacts **more to the general ones,** and a guilty person **more to the specific ones.**",
+   "It assumes an innocent person reacts more to the general ones, and a guilty person more to the specific ones."
+  ],
+  [
+   "That's an **assumption.**",
+   "That's an assumption."
+  ],
+  [
+   "In 2003, the **National Academies** reviewed the research.",
+   "In 2003, the National Academies reviewed the research."
+  ],
+  [
+   "Their verdict: the evidence is **scanty and scientifically weak.**",
+   "Their verdict: the evidence is scanty and scientifically weak."
+  ],
+  [
+   "It can tell lies from truth well above chance, though **well below perfection.**",
+   "It can tell lies from truth well above chance, though well below perfection."
+  ],
+  [
+   "The evidence **doesn't allow** any precise accuracy number.",
+   "The evidence doesn't allow any precise accuracy number."
+  ],
+  [
+   "And countermeasures may let trained people **beat the test.**",
+   "And countermeasures may let trained people beat the test."
+  ],
+  [
+   "Errors cut both ways: loyal people can be **wrongly flagged,** and threats can be missed.",
+   "Errors cut both ways: loyal people can be wrongly flagged, and threats can be missed."
+  ],
+  [
+   "The report called it an **unacceptable choice** for screening Energy Department employees.",
+   "The report called it an unacceptable choice for screening Energy Department employees."
+  ],
+  [
+   "In 1998, the Supreme Court said there's **no consensus** that polygraph evidence is reliable.",
+   "In 1998, the Supreme Court said there's no consensus that polygraph evidence is reliable."
+  ],
+  [
+   "Here's a **hypothetical:** a test that catches **8 of 10 spies** could still flag about **1,598 innocent people.**",
+   "Here's a hypothetical: a test that catches 8 of 10 spies could still flag about 1,598 innocent people."
+  ],
+  [
+   "Subscribe for more of **how it really works.**",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}

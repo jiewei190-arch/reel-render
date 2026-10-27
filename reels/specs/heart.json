@@ -1,0 +1,116 @@
+{
+ "name": "heart",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Your heart is only the size of your **fist.**",
+   "Your heart is only the size of your fist."
+  ],
+  [
+   "But it beats about **100,000 times** every day.",
+   "But it beats about one hundred thousand times every day."
+  ],
+  [
+   "Over a lifetime, that adds up to roughly **3 billion** beats.",
+   "Over a lifetime, that adds up to roughly three billion beats."
+  ],
+  [
+   "So how does it **really** work?",
+   "So how does it really work?"
+  ],
+  [
+   "Let's follow **one drop of blood.**",
+   "Let's follow one drop of blood."
+  ],
+  [
+   "The heart has **four rooms,** called chambers.",
+   "The heart has four rooms, called chambers."
+  ],
+  [
+   "Two **on top,** two on the bottom.",
+   "Two on top, two on the bottom."
+  ],
+  [
+   "Our drop arrives on the **right side,** low on oxygen.",
+   "Our drop arrives on the right side, low on oxygen."
+  ],
+  [
+   "The right side pumps it to the **lungs.**",
+   "The right side pumps it to the lungs."
+  ],
+  [
+   "There, it picks up **fresh oxygen.**",
+   "There, it picks up fresh oxygen."
+  ],
+  [
+   "Then it swings back to the **left side.**",
+   "Then it swings back to the left side."
+  ],
+  [
+   "And the left side pumps it out to **your whole body.**",
+   "And the left side pumps it out to your whole body."
+  ],
+  [
+   "It delivers oxygen and nutrients, and carries **carbon dioxide** back to the lungs.",
+   "It delivers oxygen and nutrients, and carries carbon dioxide back to the lungs."
+  ],
+  [
+   "Along the way, **valves** work like little one-way doors.",
+   "Along the way, valves work like little one-way doors."
+  ],
+  [
+   "They keep the blood from flowing **backward.**",
+   "They keep the blood from flowing backward."
+  ],
+  [
+   "Those doors closing make the sound you hear: **lub-dub.**",
+   "Those doors closing make the sound you hear. Lub dub."
+  ],
+  [
+   "Each beat starts with a tiny **electrical signal** from the heart's natural pacemaker.",
+   "Each beat starts with a tiny electrical signal from the heart's natural pacemaker."
+  ],
+  [
+   "The **top rooms** squeeze first, pushing blood down.",
+   "The top rooms squeeze first, pushing blood down."
+  ],
+  [
+   "Then the **bottom rooms** squeeze, and the blood moves on.",
+   "Then the bottom rooms squeeze, and the blood moves on."
+  ],
+  [
+   "Out to the body, back to the heart, over and over. **It's a loop.**",
+   "Out to the body, back to the heart, over and over. It's a loop."
+  ],
+  [
+   "In one minute, it moves about **1.5 gallons** of blood.",
+   "In one minute, it moves about one and a half gallons of blood."
+  ],
+  [
+   "Two sides, four rooms, and **one never-ending loop.**",
+   "Two sides, four rooms, and one never ending loop."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  8,
+  10,
+  11,
+  13,
+  14,
+  16,
+  17,
+  19,
+  20
+ ]
+}

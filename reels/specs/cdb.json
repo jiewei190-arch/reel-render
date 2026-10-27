@@ -1,0 +1,218 @@
+{
+ "name": "cdb",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "root": 58,
+ "bpm": 100,
+ "arp": [
+  261.6,
+  329.6,
+  392,
+  523.3,
+  392,
+  329.6,
+  349.2,
+  440
+ ],
+ "phrases": [
+  [
+   "Last year, about **3 million cats** ended up in U.S. shelters.",
+   "Last year, about three million cats ended up in U.S. shelters."
+  ],
+  [
+   "That's a big reason **National Cat Day** exists.",
+   "That's a big reason National Cat Day exists."
+  ],
+  [
+   "It happens every year on **October 29th.**",
+   "It happens every year on October twenty-ninth."
+  ],
+  [
+   "It was started in **2005** by **Colleen Paige,**",
+   "It was started in two thousand five by Colleen Paige,"
+  ],
+  [
+   "a pet expert and **animal welfare** advocate.",
+   "a pet expert and animal welfare advocate."
+  ],
+  [
+   "Her goal: get people to **notice** how many cats need rescuing.",
+   "Her goal: get people to notice how many cats need rescuing."
+  ],
+  [
+   "Quick definition. A **shelter** takes in lost or unwanted animals",
+   "Quick definition. A shelter takes in lost or unwanted animals"
+  ],
+  [
+   "and tries to find them a **new home.**",
+   "and tries to find them a new home."
+  ],
+  [
+   "Think of it like a **waiting room.** Every cat is waiting for its name to be called.",
+   "Think of it like a waiting room. Every cat is waiting for its name to be called."
+  ],
+  [
+   "The good news? About **2.2 million** cats were **adopted** last year.",
+   "The good news? About two point two million cats were adopted last year."
+  ],
+  [
+   "The hard part? About **277,000** were **put to sleep.**",
+   "The hard part? About two hundred seventy-seven thousand were put to sleep."
+  ],
+  [
+   "So the day pushes **three** simple things.",
+   "So the day pushes three simple things."
+  ],
+  [
+   "One. **Adopt,** don't shop.",
+   "One. Adopt, don't shop."
+  ],
+  [
+   "Two. **Spay and neuter.** It's a quick vet surgery so fewer kittens are born with no home.",
+   "Two. Spay and neuter. It's a quick vet surgery, so fewer kittens are born with no home."
+  ],
+  [
+   "Three. **Help** your local shelter. Donate, volunteer, or just share.",
+   "Three. Help your local shelter. Donate, volunteer, or just share."
+  ],
+  [
+   "Fun fact: **Japan** has its own Cat Day, **February 22nd.**",
+   "Fun fact: Japan has its own Cat Day, February twenty-second."
+  ],
+  [
+   "Because 2, 2, 2 sounds like **nyan, nyan, nyan.** Meow, meow, meow.",
+   "Because two, two, two sounds like nyan, nyan, nyan. Meow, meow, meow."
+  ],
+  [
+   "Quick recap. **October 29th.** Started in **2005.**",
+   "Quick recap. October twenty-ninth. Started in two thousand five."
+  ],
+  [
+   "Goal: get more cats **out of shelters** and **into homes.**",
+   "Goal: get more cats out of shelters, and into homes."
+  ],
+  [
+   "Got a cat? Give them an **extra treat** today.",
+   "Got a cat? Give them an extra treat today."
+  ],
+  [
+   "Want one? Check your **local shelter** first.",
+   "Want one? Check your local shelter first."
+  ]
+ ],
+ "sfx": [
+  [
+   "thud",
+   0,
+   0.1
+  ],
+  [
+   "chime",
+   1,
+   0.2,
+   1174,
+   0.8,
+   0.1
+  ],
+  [
+   "blip",
+   2,
+   0.2,
+   1400,
+   0.07
+  ],
+  [
+   "whoosh",
+   3,
+   -0.3
+  ],
+  [
+   "whoosh",
+   6,
+   -0.3
+  ],
+  [
+   "chime",
+   8,
+   0.3,
+   988,
+   0.8,
+   0.1
+  ],
+  [
+   "riser",
+   9,
+   -0.2,
+   0.8,
+   0.09
+  ],
+  [
+   "thud",
+   10,
+   0.1
+  ],
+  [
+   "whoosh",
+   11,
+   -0.3
+  ],
+  [
+   "blip",
+   12,
+   0.1,
+   1100,
+   0.08
+  ],
+  [
+   "blip",
+   13,
+   0.1,
+   1250,
+   0.08
+  ],
+  [
+   "blip",
+   14,
+   0.1,
+   1400,
+   0.08
+  ],
+  [
+   "whoosh",
+   15,
+   -0.3
+  ],
+  [
+   "chime",
+   16,
+   0.4,
+   1568,
+   0.9,
+   0.1
+  ],
+  [
+   "whoosh",
+   17,
+   -0.3
+  ],
+  [
+   "chime",
+   20,
+   0.6,
+   1318,
+   1.0,
+   0.1
+  ]
+ ],
+ "breath": [
+  1,
+  5,
+  8,
+  10,
+  11,
+  14,
+  16,
+  18
+ ],
+ "gapscale": 0.9
+}

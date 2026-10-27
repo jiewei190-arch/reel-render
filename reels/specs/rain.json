@@ -1,0 +1,103 @@
+{
+ "name": "rain",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "A single raindrop is made from **millions** of tiny cloud droplets.",
+   "A single raindrop is made from millions of tiny cloud droplets."
+  ],
+  [
+   "Let's watch one get **built.**",
+   "Let's watch one get built."
+  ],
+  [
+   "It starts with **evaporation.**",
+   "It starts with evaporation."
+  ],
+  [
+   "**Heat** turns liquid water into invisible vapor.",
+   "Heat turns liquid water into invisible vapor."
+  ],
+  [
+   "About **90 percent** of the moisture in the air came from oceans, seas, lakes and rivers.",
+   "About ninety percent of the moisture in the air came from oceans, seas, lakes and rivers."
+  ],
+  [
+   "That moist air **rises.**",
+   "That moist air rises."
+  ],
+  [
+   "Up high, it **expands** and cools.",
+   "Up high, it expands and cools."
+  ],
+  [
+   "As it cools, the vapor **condenses** into tiny drops of liquid.",
+   "As it cools, the vapor condenses into tiny drops of liquid."
+  ],
+  [
+   "But the vapor needs something to **grab onto.**",
+   "But the vapor needs something to grab onto."
+  ],
+  [
+   "Tiny specks of **dust, salt or smoke.**",
+   "Tiny specks of dust, salt or smoke."
+  ],
+  [
+   "Droplets gather on them, and together they make a **cloud.**",
+   "Droplets gather on them, and together they make a cloud."
+  ],
+  [
+   "Each droplet is so light that **rising air keeps it floating.**",
+   "Each droplet is so light that rising air keeps it floating."
+  ],
+  [
+   "So how does a cloud ever drop **rain?**",
+   "So how does a cloud ever drop rain?"
+  ],
+  [
+   "The droplets **bump into each other.**",
+   "The droplets bump into each other."
+  ],
+  [
+   "When two collide, the bigger one **swallows** the smaller one.",
+   "When two collide, the bigger one swallows the smaller one."
+  ],
+  [
+   "Keep going, and it grows to about **half a millimeter.** That's a raindrop.",
+   "Keep going, and it grows to about half a millimeter. That's a raindrop."
+  ],
+  [
+   "Now it's too heavy for the cloud to hold up, **so it falls.**",
+   "Now it's too heavy for the cloud to hold up, so it falls."
+  ],
+  [
+   "Rain is the main way water **returns to the ground.**",
+   "Rain is the main way water returns to the ground."
+  ],
+  [
+   "So every drop is **millions of droplets,** grown into one.",
+   "So every drop is millions of droplets, grown into one."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  1,
+  4,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

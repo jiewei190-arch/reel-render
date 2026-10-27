@@ -1,0 +1,97 @@
+{
+ "name": "hiccup",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  4,
+  7,
+  10,
+  13,
+  15,
+  18
+ ],
+ "phrases": [
+  [
+   "Why do we get **hiccups?**",
+   "Why do we get hiccups?"
+  ],
+  [
+   "It starts with a big muscle under your lungs: the **diaphragm.**",
+   "It starts with a big muscle under your lungs. The diaphragm."
+  ],
+  [
+   "Normally it pulls down **smoothly,** and you breathe in without noticing.",
+   "Normally it pulls down smoothly, and you breathe in without noticing."
+  ],
+  [
+   "A hiccup is when it suddenly **spasms** and jerks downward.",
+   "A hiccup is when it suddenly spasms, and jerks downward."
+  ],
+  [
+   "Air rushes in, then the **glottis** snaps shut. That's the gap between your vocal cords.",
+   "Air rushes in, then the glottis snaps shut. That's the gap between your vocal cords."
+  ],
+  [
+   "That snap is the **\"hic\"** sound.",
+   "That snap is the hic sound."
+  ],
+  [
+   "So a hiccup is a **tug,** then a **slam,** all in a split second.",
+   "So a hiccup is a tug, then a slam, all in a split second."
+  ],
+  [
+   "What sets it off? A signal loop called a **reflex arc.**",
+   "What sets it off? A signal loop called a reflex arc."
+  ],
+  [
+   "Nerves, like the **vagus** and **phrenic,** carry signals between your body and brain, and back out to the muscles.",
+   "Nerves, like the vagus and phrenic, carry signals between your body and brain, and back out to the muscles."
+  ],
+  [
+   "Irritate that loop, and the diaphragm can fire **without asking you.**",
+   "Irritate that loop, and the diaphragm can fire without asking you."
+  ],
+  [
+   "Common triggers: **eating fast,** fizzy drinks, spicy food, alcohol, even excitement.",
+   "Common triggers: eating fast, fizzy drinks, spicy food, alcohol, even excitement."
+  ],
+  [
+   "But often there's **no clear cause** at all.",
+   "But often there's no clear cause at all."
+  ],
+  [
+   "Most hiccups fade in **minutes.**",
+   "Most hiccups fade in minutes."
+  ],
+  [
+   "Why do we even have them? Honestly, **nobody knows.**",
+   "Why do we even have them? Honestly, nobody knows."
+  ],
+  [
+   "One idea: a **leftover** from before birth, maybe training a baby's breathing muscles. It's a theory, not proof.",
+   "One idea: a leftover from before birth, maybe training a baby's breathing muscles. It's a theory, not proof."
+  ],
+  [
+   "Now the famous cures: **holding your breath,** cold water, a spoonful of sugar, a paper bag.",
+   "Now the famous cures. Holding your breath, cold water, a spoonful of sugar, a paper bag."
+  ],
+  [
+   "Health sources call them **unproven.**",
+   "Health sources call them unproven."
+  ],
+  [
+   "They may work by nudging the **vagus nerve** or raising carbon dioxide, but that's a guess.",
+   "They may work by nudging the vagus nerve, or raising carbon dioxide, but that's a guess."
+  ],
+  [
+   "If hiccups last over **two days,** ask a doctor.",
+   "If hiccups last over two days, ask a doctor."
+  ],
+  [
+   "A tug, a slam, and a nerve loop we **don't fully understand.**",
+   "A tug, a slam, and a nerve loop we don't fully understand."
+  ]
+ ]
+}

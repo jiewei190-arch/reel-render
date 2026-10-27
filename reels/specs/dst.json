@@ -1,0 +1,99 @@
+{
+ "name": "dst",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "music": "iso",
+ "bpm": 104,
+ "phrases": [
+  [
+   "This **Sunday, November 1st,** your clocks go back one hour.",
+   "This Sunday, November first, your clocks go back one hour."
+  ],
+  [
+   "It happens at **2 a.m.,** when the time jumps back to **1 a.m.**",
+   "It happens at two a.m., when the time jumps back to one a.m."
+  ],
+  [
+   "People call it **fall back.**",
+   "People call it fall back."
+  ],
+  [
+   "That means the hour between **1 and 2 a.m.** happens **twice.**",
+   "That means the hour between one and two a.m. happens twice."
+  ],
+  [
+   "Many people call it an **extra hour of sleep.**",
+   "Many people call it an extra hour of sleep."
+  ],
+  [
+   "But Harvard Health Publishing says many people **don't actually get it.**",
+   "But Harvard Health Publishing says many people don't actually get it."
+  ],
+  [
+   "What really changes: **sunrise and sunset** both come an hour earlier by the clock.",
+   "What really changes? Sunrise and sunset both come an hour earlier by the clock."
+  ],
+  [
+   "**Lighter mornings,** but **earlier evening darkness.**",
+   "Lighter mornings, but earlier evening darkness."
+  ],
+  [
+   "So why do we do this at all?",
+   "So why do we do this at all?"
+  ],
+  [
+   "It began in **World War I.** Germany tried it in **1916** to **save fuel.**",
+   "It began in World War One. Germany tried it in nineteen sixteen to save fuel."
+  ],
+  [
+   "The U.S. followed in **1918.**",
+   "The U.S. followed in nineteen eighteen."
+  ],
+  [
+   "A **1966 law** made it the same across the country, but let states **opt out.**",
+   "A nineteen sixty six law made it the same across the country, but let states opt out."
+  ],
+  [
+   "Today it starts the **second Sunday in March** and ends the **first Sunday in November.**",
+   "Today it starts the second Sunday in March and ends the first Sunday in November."
+  ],
+  [
+   "Not everywhere plays along. **Hawaii** and most of **Arizona** never change their clocks.",
+   "Not everywhere plays along. Hawaii and most of Arizona never change their clocks."
+  ],
+  [
+   "Neither do **Puerto Rico,** Guam and other U.S. territories.",
+   "Neither do Puerto Rico, Guam and other U.S. territories."
+  ],
+  [
+   "Does it save energy? A U.S. Department of Energy report found only about **0.03%** of yearly electricity.",
+   "Does it save energy? A U.S. Department of Energy report found only about zero point zero three percent of yearly electricity."
+  ],
+  [
+   "So before bed Saturday, **turn back** any clock that won't do it itself.",
+   "So before bed Saturday, turn back any clock that won't do it itself."
+  ],
+  [
+   "One hour back, and the sun comes up **earlier by the clock.**",
+   "One hour back, and the sun comes up earlier by the clock."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  1,
+  2,
+  5,
+  7,
+  8,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

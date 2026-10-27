@@ -1,0 +1,104 @@
+{
+ "name": "chip",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Your phone's chip starts as **sand.**",
+   "Your phone's chip starts as sand."
+  ],
+  [
+   "Silicon, the stuff in sand, is the **second most common** element in Earth's crust.",
+   "Silicon, the stuff in sand, is the second most common element in Earth's crust."
+  ],
+  [
+   "Intel says it's purified to under **one stray atom** per billion.",
+   "Intel says it's purified to under one stray atom per billion."
+  ],
+  [
+   "Then it's grown into one giant **crystal,** about 300 millimeters wide.",
+   "Then it's grown into one giant crystal, about three hundred millimeters wide."
+  ],
+  [
+   "That crystal is sliced into thin round **wafers,** about 12 inches across.",
+   "That crystal is sliced into thin round wafers, about twelve inches across."
+  ],
+  [
+   "Making one chip takes **hundreds of steps.**",
+   "Making one chip takes hundreds of steps."
+  ],
+  [
+   "The key step is called **photolithography.**",
+   "The key step is called photolithography."
+  ],
+  [
+   "The wafer gets a coating that reacts to **light.**",
+   "The wafer gets a coating that reacts to light."
+  ],
+  [
+   "Light shines through a **mask,** like a stencil, and exposes the coating.",
+   "Light shines through a mask, like a stencil, and exposes the coating."
+  ],
+  [
+   "Then it repeats, with a **different mask** for every layer.",
+   "Then it repeats, with a different mask for every layer."
+  ],
+  [
+   "A S M L says up to **100 layers,** lined up to nanometer precision.",
+   "A S M L says a chip can have up to a hundred layers, lined up to nanometer precision."
+  ],
+  [
+   "The finest layers use **extreme ultraviolet** light, just 13.5 nanometers long.",
+   "The finest layers use extreme ultraviolet light, just thirteen point five nanometers long."
+  ],
+  [
+   "To make it, lasers hit falling **tin droplets,** creating a glowing plasma.",
+   "To make it, lasers hit falling tin droplets, creating a glowing plasma."
+  ],
+  [
+   "Air absorbs that light, so its whole path runs in a **vacuum.**",
+   "Air absorbs that light, so its whole path runs in a vacuum."
+  ],
+  [
+   "It all happens in a cleanroom, about **10,000 times cleaner** than outside air.",
+   "It all happens in a cleanroom, about ten thousand times cleaner than outside air."
+  ],
+  [
+   "The result: **billions** of tiny switches called transistors.",
+   "The result: billions of tiny switches called transistors."
+  ],
+  [
+   "Some chips now hold **tens of billions,** in an area the size of a fingernail.",
+   "Some chips now hold tens of billions, in an area the size of a fingernail."
+  ],
+  [
+   "One twist: names like \"5 nanometer\" are **marketing names.**",
+   "One twist: names like five nanometer are marketing names."
+  ],
+  [
+   "They no longer measure any **physical feature** on the chip.",
+   "They no longer measure any physical feature on the chip."
+  ],
+  [
+   "Subscribe for more of **how it really works.**",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}

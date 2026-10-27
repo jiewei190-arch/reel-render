@@ -1,0 +1,98 @@
+{
+ "name": "elev",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  6,
+  8,
+  9,
+  10,
+  12,
+  13,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "How does an **elevator** really work?",
+   "How does an elevator really work?"
+  ],
+  [
+   "Here's a surprise: the car has a **hidden partner.**",
+   "Here's a surprise. The car has a hidden partner."
+  ],
+  [
+   "The car hangs from **strong ropes.**",
+   "The car hangs from strong ropes."
+  ],
+  [
+   "The ropes loop over a grooved wheel at the top, called a **sheave.**",
+   "The ropes loop over a grooved wheel at the top, called a sheave."
+  ],
+  [
+   "On the other end of the ropes hangs a heavy **counterweight.**",
+   "On the other end of the ropes hangs a heavy counterweight."
+  ],
+  [
+   "When the car goes **up,** the counterweight comes **down.** Like a see-saw.",
+   "When the car goes up, the counterweight comes down. Like a see-saw."
+  ],
+  [
+   "It weighs about the same as the empty car, **plus half a full load.**",
+   "It weighs about the same as the empty car, plus half a full load."
+  ],
+  [
+   "So the motor doesn't lift the whole weight. It just **tips the balance.**",
+   "So the motor doesn't lift the whole weight. It just tips the balance."
+  ],
+  [
+   "The motor turns the wheel, and the grooves **grip the ropes.** That grip is the **traction.**",
+   "The motor turns the wheel, and the grooves grip the ropes. That grip is the traction."
+  ],
+  [
+   "But what if a rope **breaks?**",
+   "But what if a rope breaks?"
+  ],
+  [
+   "First, there are **several ropes,** each built about **ten times** stronger than it needs to be.",
+   "First, there are several ropes, each built about ten times stronger than it needs to be."
+  ],
+  [
+   "Second, a **governor** watches the speed. Too fast, and it **locks,** setting the **safety brakes** against the rails.",
+   "Second, a governor watches the speed. Too fast, and it locks, setting the safety brakes against the rails."
+  ],
+  [
+   "That idea goes back to **1854,** when Elisha Otis showed his safety brake at a New York fair.",
+   "That idea goes back to eighteen fifty four, when Elisha Otis showed his safety brake at a New York fair."
+  ],
+  [
+   "He rode a platform up, the **rope was cut,** and the catch **held.**",
+   "He rode a platform up, the rope was cut, and the catch held."
+  ],
+  [
+   "Spring-loaded pads, held back by the rope, **snapped into notched rails.**",
+   "Spring loaded pads, held back by the rope, snapped into notched rails."
+  ],
+  [
+   "Today a governor triggers the grip, but the idea is the same: **rope breaks, brake bites.**",
+   "Today a governor triggers the grip, but the idea is the same. Rope breaks, brake bites."
+  ],
+  [
+   "So an elevator is a **see-saw** with a **safety net.**",
+   "So an elevator is a see-saw with a safety net."
+  ],
+  [
+   "Next time you ride, remember: you're **balanced** against a hidden weight.",
+   "Next time you ride, remember, you're balanced against a hidden weight."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

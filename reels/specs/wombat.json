@@ -1,0 +1,93 @@
+{
+ "name": "wombat",
+ "voice": "am_michael",
+ "speed": 1.0,
+ "music": "popup",
+ "bpm": 108,
+ "phrases": [
+  [
+   "Wombats poop **cubes.** Real ones.",
+   "Wombats poop cubes. Real ones."
+  ],
+  [
+   "Each one is about **two centimeters** wide, almost an inch.",
+   "Each one is about two centimeters wide, almost an inch."
+  ],
+  [
+   "And a wombat can make up to **a hundred** a day.",
+   "And a wombat can make up to a hundred a day."
+  ],
+  [
+   "So how does a squishy body make a **square?**",
+   "So how does a squishy body make a square?"
+  ],
+  [
+   "The answer is hiding in the wombat's **intestine.**",
+   "The answer is hiding in the wombat's intestine."
+  ],
+  [
+   "It's about **thirty-three feet** long, ten times the size of the wombat.",
+   "It's about thirty-three feet long, ten times the size of the wombat."
+  ],
+  [
+   "And digestion takes about **four times** as long as it does for us.",
+   "And digestion takes about four times as long as it does for us."
+  ],
+  [
+   "All that time, the intestine keeps **squeezing** the poop along.",
+   "All that time, the intestine keeps squeezing the poop along."
+  ],
+  [
+   "The cube shape forms near the very **end** of the trip.",
+   "The cube shape forms near the very end of the trip."
+  ],
+  [
+   "The walls there have **stiffer** parts and **stretchier** parts.",
+   "The walls there have stiffer parts and stretchier parts."
+  ],
+  [
+   "They contract at **different speeds,** and that creates the corners.",
+   "They contract at different speeds, and that creates the corners."
+  ],
+  [
+   "It takes over **forty thousand** contractions to sharpen them.",
+   "It takes over forty thousand contractions to sharpen them."
+  ],
+  [
+   "Round blob in. **Sharp cube** out.",
+   "Round blob in. Sharp cube out."
+  ],
+  [
+   "So why bother? Wombats leave cubes on rocks and logs around their **territory.**",
+   "So why bother? Wombats leave cubes on rocks and logs around their territory."
+  ],
+  [
+   "Scientists think it may help them **send messages,** or attract mates.",
+   "Scientists think it may help them send messages, or attract mates."
+  ],
+  [
+   "They also suspect cubes **won't easily roll away.**",
+   "They also suspect cubes won't easily roll away."
+  ],
+  [
+   "So a wombat's cube isn't a fluke. It's shaped by its **gut.**",
+   "So a wombat's cube isn't a fluke. It's shaped by its gut."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  3,
+  4,
+  7,
+  8,
+  9,
+  12,
+  13,
+  15,
+  16
+ ]
+}

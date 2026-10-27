@@ -1,0 +1,126 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>popup demo</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>html,body{margin:0;background:#8e5e37;overflow:hidden}canvas{width:540px;height:960px;display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import * as P from './popup.js';
+const { PAL, W, H, BOOK, card, pop, foldTab, desk, book, board, sign, subtitle, label, ink, crescent, wobble, bez, ramp, ease, back, lerp, clamp, hash } = P;
+const g = P.ctx2d(document.getElementById('c'));
+const scene = new URLSearchParams(location.search).get('scene') || 'hook';
+
+// ---------- art ----------
+function skyBoard(c, w, h) {            // the standing back board: sky, sun, far hills, drawn inside a paper rectangle
+  const gr = c.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, PAL.sky); gr.addColorStop(1, PAL.sky2);
+  ink(c, [[6, 6], [w - 6, 6], [w - 6, h - 6], [6, h - 6]], { fill: gr, w: 7 });
+  c.save(); c.beginPath(); c.rect(6, 6, w - 12, h - 12); c.clip();
+  c.fillStyle = PAL.sun; c.beginPath(); c.arc(w * .76, h * .24, 78, 0, 7); c.fill(); c.strokeStyle = PAL.ink; c.lineWidth = 6; c.stroke();
+  for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; c.strokeStyle = PAL.sun; c.lineWidth = 9; c.lineCap = 'round'; c.beginPath(); c.moveTo(w * .76 + Math.cos(a) * 100, h * .24 + Math.sin(a) * 100); c.lineTo(w * .76 + Math.cos(a) * 128, h * .24 + Math.sin(a) * 128); c.stroke(); }
+  // clouds
+  const cloud = (x, y, s) => { c.fillStyle = '#fff'; c.strokeStyle = PAL.ink; c.lineWidth = 5; c.beginPath(); [[0, 0, 44], [46, -14, 56], [100, 0, 44], [50, 16, 50]].forEach(([dx, dy, r]) => c.arc(x + dx * s, y + dy * s, r * s, 0, 7)); c.fill(); };
+  cloud(w * .12, h * .2, .9); cloud(w * .44, h * .1, .7);
+  const hill = (y0, amp, col, ph) => { c.fillStyle = col; c.beginPath(); c.moveTo(0, h); for (let x = 0; x <= w; x += 20) c.lineTo(x, y0 + Math.sin(x * .006 + ph) * amp + Math.sin(x * .017 + ph * 2) * amp * .25); c.lineTo(w, h); c.closePath(); c.fill(); c.strokeStyle = PAL.ink; c.lineWidth = 6; c.stroke(); };
+  hill(h * .62, 36, PAL.hill1, 1); hill(h * .8, 30, PAL.hill2, 3);
+  c.restore();
+}
+function insideBoard(c, w, h) {          // warm pink tissue backdrop for the "inside" page
+  const gr = c.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, '#ffd9d2'); gr.addColorStop(1, '#ffc2bd');
+  ink(c, [[6, 6], [w - 6, 6], [w - 6, h - 6], [6, h - 6]], { fill: gr, w: 7 });
+  c.save(); c.beginPath(); c.rect(6, 6, w - 12, h - 12); c.clip();
+  for (let i = 0; i < 26; i++) { c.fillStyle = `rgba(255,255,255,${.1 + hash(i) * .12})`; c.beginPath(); c.arc(hash(i + 1) * w, hash(i + 2) * h, 18 + hash(i + 3) * 46, 0, 7); c.fill(); }
+  c.restore();
+}
+function wombatArt(c, w, h) {
+  const cx = w / 2;
+  // small round ears set wide on the top corners of the head
+  [-1, 1].forEach(s => { ink(c, wobble(cx + s * 128, 118, 30, 34, 5 + s, .05, 24), { fill: PAL.wombat, w: 6 }); ink(c, wobble(cx + s * 128, 122, 14, 17, 8 + s, .05, 20), { fill: PAL.cheek, w: 0 }); });
+  // stubby feet
+  [-1, 1].forEach(s => ink(c, wobble(cx + s * 108, h - 36, 72, 36, 20 + s, .05, 28), { fill: PAL.wombatShade, w: 6 }));
+  // low, wide, barrel body
+  crescent(c, wobble(cx, 350, 205, 170, 3, .03, 56), PAL.wombat, PAL.wombatShade, 18, -14);
+  ink(c, wobble(cx, 395, 116, 105, 4, .04, 40), { fill: PAL.belly, w: 0 });
+  // stubby arms with claws
+  [-1, 1].forEach(s => { ink(c, wobble(cx + s * 158, 410, 38, 54, 40 + s, .05, 24), { fill: PAL.wombat, w: 6 }); [0, 1, 2].forEach(k => { c.strokeStyle = PAL.ink; c.lineWidth = 4; c.lineCap = 'round'; c.beginPath(); c.moveTo(cx + s * 158 + (k - 1) * 13, 448); c.lineTo(cx + s * 158 + (k - 1) * 13, 462); c.stroke(); }); });
+  // wide flat head, sitting low on the body
+  crescent(c, wobble(cx, 205, 178, 104, 7, .025, 52), PAL.wombat, PAL.wombatShade, 14, -10);
+  // broad dark nose with two nostrils and a lighter muzzle under it
+  ink(c, wobble(cx, 248, 70, 38, 9, .04, 34), { fill: PAL.belly, w: 0 });
+  ink(c, wobble(cx, 214, 62, 36, 10, .05, 32), { fill: PAL.nose, w: 5 });
+  c.fillStyle = 'rgba(0,0,0,.45)'; [-1, 1].forEach(s => { c.beginPath(); c.ellipse(cx + s * 22, 222, 9, 6, 0, 0, 7); c.fill(); });
+  c.fillStyle = 'rgba(255,255,255,.5)'; c.beginPath(); c.ellipse(cx - 20, 202, 13, 6, -.2, 0, 7); c.fill();
+  // tiny, wide-set eyes + blush cheeks
+  [-1, 1].forEach(s => { c.fillStyle = PAL.ink; c.beginPath(); c.ellipse(cx + s * 98, 186, 11, 15, 0, 0, 7); c.fill(); c.fillStyle = '#fff'; c.beginPath(); c.arc(cx + s * 98 - 3, 180, 4.5, 0, 7); c.fill(); c.fillStyle = 'rgba(244,165,143,.85)'; c.beginPath(); c.ellipse(cx + s * 120, 236, 24, 15, 0, 0, 7); c.fill(); });
+  c.strokeStyle = PAL.ink; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(cx - 22, 262); c.quadraticCurveTo(cx, 278, cx + 22, 262); c.stroke();
+}
+function cubeArt(c, w, h) {              // a cute paper poop cube (iso-ish), with a shine and a tiny face-less look
+  const s = Math.min(w, h) * .6, x = w / 2, y = h * .62;
+  const top = [[x, y - s * .9], [x + s * .8, y - s * .5], [x, y - s * .1], [x - s * .8, y - s * .5]];
+  const left = [[x - s * .8, y - s * .5], [x, y - s * .1], [x, y + s * .8], [x - s * .8, y + s * .4]];
+  const right = [[x + s * .8, y - s * .5], [x, y - s * .1], [x, y + s * .8], [x + s * .8, y + s * .4]];
+  ink(c, left, { fill: PAL.poop2, w: 6 }); ink(c, right, { fill: PAL.poop, w: 6 }); ink(c, top, { fill: '#9a6c45', w: 6 });
+  c.strokeStyle = 'rgba(255,255,255,.35)'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(x - s * .45, y - s * .5); c.lineTo(x - s * .05, y - s * .7); c.stroke();
+}
+function treeArt(c, w, h) {
+  ink(c, [[w / 2 - 16, h], [w / 2 - 12, h * .5], [w / 2 + 12, h * .5], [w / 2 + 16, h]], { fill: '#8a6240', w: 6 });
+  [[.5, .38, 100], [.34, .52, 74], [.68, .5, 78]].forEach(([fx, fy, r], i) => ink(c, wobble(w * fx, h * fy, r, r * .8, 60 + i, .05, 30), { fill: i ? PAL.hill3 : PAL.hill2, w: 6 }));
+}
+function tuftArt(c, w, h) { [[.25, .55], [.5, 1], [.75, .65]].forEach(([fx, fh], i) => ink(c, [[w * fx - 18, h], [w * fx, h * (1 - fh * .9)], [w * fx + 18, h]], { fill: i === 1 ? PAL.hill1 : PAL.hill2, w: 5 })); }
+function tubeArt(c, w, h) {              // intestine cross-section flap: stretchy + stiff segments, a cube forming
+  const cy = h * .5, wid = 210, seg = [PAL.soft, PAL.stiff, PAL.soft, PAL.stiff, PAL.soft];
+  const cl = x => cy + Math.sin(x / w * Math.PI * 2.2 + .3) * 34;
+  const xs = [34, 210, 340, 520, 640, w - 34];
+  ink(c, [[0, 0], [w, 0], [w, h], [0, h]], { fill: 'rgba(255,255,255,0)', w: 0 });
+  for (let i = 0; i < 5; i++) {
+    const a = xs[i], b = xs[i + 1], up = [], dn = [];
+    for (let x = a; x <= b; x += 8) { up.push([x, cl(x) - wid / 2]); dn.push([x, cl(x) + wid / 2]); }
+    ink(c, up.concat(dn.reverse()), { fill: seg[i], w: 6 });
+    if (seg[i] === PAL.stiff) for (let x = a + 22; x < b - 10; x += 26) { c.strokeStyle = 'rgba(255,255,255,.4)'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(x, cl(x) - wid / 2 + 14); c.lineTo(x, cl(x) - wid / 2 + 36); c.moveTo(x, cl(x) + wid / 2 - 36); c.lineTo(x, cl(x) + wid / 2 - 14); c.stroke(); }
+    else { c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = 6; c.lineCap = 'round'; c.beginPath(); for (let x = a + 10; x <= b - 10; x += 8) { const yy = cl(x) - wid / 2 + 18 + Math.sin(x * .09) * 4; x === a + 10 ? c.moveTo(x, yy) : c.lineTo(x, yy); } c.stroke(); }
+  }
+  // the poop inside: round -> squarish -> sharp cube
+  [[120, 34, 30], [275, 42, 20], [430, 52, 12], [580, 60, 6], [w - 100, 66, 2]].forEach(([x, s, r], i) => {
+    const y = cl(x), pts = []; const R = (a2) => r; void R;
+    const rect = [[x - s, y - s], [x + s, y - s], [x + s, y + s], [x - s, y + s]];
+    c.save(); c.beginPath(); const rad = Math.min(r, s);
+    c.moveTo(x - s + rad, y - s); c.arcTo(x + s, y - s, x + s, y + s, rad); c.arcTo(x + s, y + s, x - s, y + s, rad); c.arcTo(x - s, y + s, x - s, y - s, rad); c.arcTo(x - s, y - s, x + s, y - s, rad); c.closePath();
+    c.fillStyle = PAL.poop; c.fill(); c.strokeStyle = PAL.ink; c.lineWidth = 6; c.lineJoin = 'round'; c.stroke();
+    c.clip(); c.fillStyle = PAL.poop2; c.fillRect(x - s, y + s * .35, s * 2, s); c.restore();
+    c.strokeStyle = 'rgba(255,255,255,.35)'; c.lineWidth = 5; c.lineCap = 'round'; c.beginPath(); c.moveTo(x - s * .55, y - s * .5); c.lineTo(x - s * .15, y - s * .66); c.stroke();
+  });
+  // intestine end cap + arrow of travel
+  c.fillStyle = PAL.ink; c.beginPath(); c.moveTo(w - 4, cl(w - 34) - 24); c.lineTo(w + 16, cl(w - 34)); c.lineTo(w - 4, cl(w - 34) + 24); c.fill();
+}
+
+// ---------- scenes ----------
+const trees = [[210, 1062, 1.0, .55], [860, 1056, .9, .65], [95, 1130, .8, .8]];
+function hook(t) {
+  desk(g); book(g);
+  const kb = back(ramp(t, .25, .9)); board(g, 'sky', skyBoard, kb);
+  foldTab(g, 540, BOOK.fold, 820, kb);
+  trees.forEach(([x, y, s, d], i) => { const k = back(ramp(t, d + .4, .6)); const cd = card('tree' + i, 230, 320, treeArt); foldTab(g, x, y, 90, k); pop(g, cd, x, y, k, { scale: s, sway: Math.sin(t * 1.3 + i) * .015 * k }); });
+  const wk = back(ramp(t, 1.5, .8)); const wc = card('wombat', 460, 520, wombatArt);
+  foldTab(g, 540, 1440, 330, wk); pop(g, wc, 540, 1440, wk, { scale: 1.12, sway: Math.sin(t * 2) * .01 });
+  [[210, 1480, .0], [880, 1500, .12]].forEach(([x, y, o], i) => { const cd = card('cube' + i, 150, 150, cubeArt); const k = back(ramp(t, 2.0 + o, .5)); foldTab(g, x, y, 60, k); pop(g, cd, x, y, k, { scale: 1.1 - i * .1 }); });
+  [[130, 1560], [420, 1590], [700, 1575], [940, 1590]].forEach(([x, y], i) => { const k = back(ramp(t, 1.8 + i * .08, .45)); pop(g, card('tuft', 140, 110, tuftArt), x, y, k, { scale: 1.1, sway: Math.sin(t * 1.6 + i) * .02 * k }); });
+  const sk = ramp(t, 2.3, .9); if (sk > 0) sign(g, 'title', 'Why is wombat\npoop a CUBE?', 540, 130, 330, 760, 230, Math.sin(ease(sk) * 3.5) * (1 - sk) * .12);
+  subtitle(g, 'Wombats poop in **cubes**. Here’s how.', { a: ramp(t, 3.0, .3) });
+}
+function inside(t) {
+  desk(g); book(g);
+  const kb = back(ramp(t, .1, .8)); board(g, 'inside', insideBoard, kb);
+  foldTab(g, 540, BOOK.fold, 820, kb);
+  const sk = ramp(t, .5, .8); if (sk > 0) sign(g, 'inside', 'The last stretch\nof the gut', 540, 130, 330, 740, 230, Math.sin(ease(sk) * 3.5) * (1 - sk) * .1);
+  const tk = back(ramp(t, 1.0, .9)); const tc = card('tube', 860, 380, tubeArt, { border: 12 });
+  foldTab(g, 540, 1330, 700, tk); pop(g, tc, 540, 1330, tk, { shadowA: .34 });
+  label(g, 'stretchy', 214, 1010, { col: PAL.soft, a: ramp(t, 2.0, .3) });
+  label(g, 'stiff', 540, 1000, { col: '#f5a0b3', a: ramp(t, 2.2, .3), sub: '' });
+  label(g, 'stretchy', 836, 1010, { col: PAL.soft, a: ramp(t, 2.4, .3) });
+  label(g, 'squeezed at different speeds', 540, 1520, { a: ramp(t, 2.8, .3), col: PAL.cream, sub: 'corners get sharper' });
+  [[210, 1590], [410, 1600], [620, 1590], [820, 1600]].forEach(([x, y], i) => { const k = back(ramp(t, 3.2 + i * .1, .45)); void k; });
+  subtitle(g, 'Some parts are **stiff**, some **stretch**.', { a: ramp(t, 3.3, .3), y: 1745 });
+}
+window.DUR = 6;
+window.seek = t => { g.clearRect(0, 0, W, H); (scene === 'inside' ? inside : hook)(t); };
+await document.fonts.load('600 60px Fredoka'); await document.fonts.load('500 30px Fredoka');
+window.seek(0); window.ready = true; window.READY = true;
+</script></body></html>

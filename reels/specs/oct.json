@@ -1,0 +1,108 @@
+{
+ "name": "oct",
+ "voice": "am_michael",
+ "speed": 1.0,
+ "music": "iso",
+ "bpm": 104,
+ "phrases": [
+  [
+   "An octopus has **three hearts.**",
+   "An octopus has three hearts."
+  ],
+  [
+   "And its blood is **blue.**",
+   "And its blood is blue."
+  ],
+  [
+   "Let's look **inside.**",
+   "Let's look inside."
+  ],
+  [
+   "Two of the hearts sit by the **gills.**",
+   "Two of the hearts sit by the gills."
+  ],
+  [
+   "Their only job: push blood through the gills, where it picks up **oxygen.**",
+   "Their only job: push blood through the gills, where it picks up oxygen."
+  ],
+  [
+   "The third heart is the **main one.**",
+   "The third heart is the main one."
+  ],
+  [
+   "It sends that oxygen-rich blood to the **rest of the body.**",
+   "It sends that oxygen rich blood to the rest of the body."
+  ],
+  [
+   "So: one heart for the body, **two for the gills.**",
+   "So, one heart for the body, two for the gills."
+  ],
+  [
+   "Here's the weird part.",
+   "Here's the weird part."
+  ],
+  [
+   "When an octopus swims, that main heart **stops beating.**",
+   "When an octopus swims, that main heart stops beating."
+  ],
+  [
+   "Swimming wears it out, so octopuses would rather **crawl.**",
+   "Swimming wears it out, so octopuses would rather crawl."
+  ],
+  [
+   "Honestly? **Relatable.**",
+   "Honestly? Relatable."
+  ],
+  [
+   "Now, the **blue blood.**",
+   "Now, the blue blood."
+  ],
+  [
+   "Our blood uses **hemoglobin,** built around **iron.** That makes it red.",
+   "Our blood uses hemoglobin, built around iron. That makes it red."
+  ],
+  [
+   "Octopus blood uses **hemocyanin,** built around **copper.** That makes it blue.",
+   "Octopus blood uses hemocyanin, built around copper. That makes it blue."
+  ],
+  [
+   "In cold, deep water with little oxygen, it carries oxygen **better.**",
+   "In cold, deep water with little oxygen, it carries oxygen better."
+  ],
+  [
+   "But it makes the blood **thick,** so it needs extra pumping power.",
+   "But it makes the blood thick, so it needs extra pumping power."
+  ],
+  [
+   "That's why: **three hearts.**",
+   "That's why. Three hearts."
+  ],
+  [
+   "Quick recap: two gill hearts, one main heart, and **copper blood that's blue.**",
+   "Quick recap. Two gill hearts, one main heart, and copper blood that's blue."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  1,
+  2,
+  3,
+  4,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18
+ ]
+}

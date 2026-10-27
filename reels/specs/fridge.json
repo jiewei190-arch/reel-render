@@ -1,0 +1,108 @@
+{
+ "name": "fridge",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Your fridge does not make **cold**.",
+   "Your fridge does not make cold."
+  ],
+  [
+   "It moves **heat**. Out of the box, into your kitchen.",
+   "It moves heat. Out of the box, and into your kitchen."
+  ],
+  [
+   "Cold is just **less heat**.",
+   "Cold is just less heat."
+  ],
+  [
+   "But heat only flows from **hot to cold** by itself.",
+   "But heat only flows from hot to cold by itself."
+  ],
+  [
+   "Pushing it the other way takes **work**.",
+   "Pushing it the other way takes work."
+  ],
+  [
+   "A liquid called **refrigerant** loops through sealed pipes.",
+   "A liquid called refrigerant loops through sealed pipes."
+  ],
+  [
+   "The **compressor** squeezes the gas, so it gets hot and high pressure.",
+   "The compressor squeezes the gas, so it gets hot, and high pressure."
+  ],
+  [
+   "The hot gas flows through coils called the **condenser**.",
+   "The hot gas flows through coils called the condenser, on the back or underneath."
+  ],
+  [
+   "Room air is cooler, so heat flows **out**, and the gas becomes liquid.",
+   "Room air is cooler, so heat flows out, and the gas becomes liquid."
+  ],
+  [
+   "Next, the liquid squeezes through the **expansion valve**.",
+   "Next, the liquid squeezes through a tiny opening, the expansion valve."
+  ],
+  [
+   "Pressure drops. Some of it flashes to vapor, and it turns **colder than your food**.",
+   "Pressure drops. Some liquid flashes to vapor, and the mix turns colder than your food."
+  ],
+  [
+   "The cold mix flows through the **evaporator**, inside the fridge.",
+   "The cold mix flows through the evaporator, inside the fridge."
+  ],
+  [
+   "Your food is warmer, so heat flows **in**, and the refrigerant boils.",
+   "Your food is warmer, so heat flows into the refrigerant, and it boils."
+  ],
+  [
+   "Boiling soaks up a lot of heat **without getting hotter**.",
+   "Boiling soaks up a lot of heat, without getting any hotter."
+  ],
+  [
+   "The cool gas returns to the compressor. **The loop repeats.**",
+   "The cool gas returns to the compressor, and the loop repeats."
+  ],
+  [
+   "Heat **in** at the evaporator. Heat **out** at the condenser.",
+   "Heat in at the evaporator. Heat out at the condenser."
+  ],
+  [
+   "Heat out = heat from inside + the compressor's **work**.",
+   "The heat released equals the heat taken from inside, plus the work of the compressor."
+  ],
+  [
+   "So an open door **warms** your room.",
+   "So with the door open, the room gets warmer, not cooler."
+  ],
+  [
+   "A **thermostat** switches the compressor on and off.",
+   "A thermostat turns the compressor on when it's too warm, and off when it's cold enough."
+  ],
+  [
+   "Food safety: fridge **40\u00b0F or below**, freezer **0\u00b0F**.",
+   "For food safety, keep the fridge at forty degrees Fahrenheit or below, and the freezer at zero."
+  ],
+  [
+   "Your fridge is a **heat mover**.",
+   "So your fridge is a heat mover, from your food to your kitchen."
+  ]
+ ]
+}

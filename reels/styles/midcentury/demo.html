@@ -1,0 +1,99 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>midcentury demo</title>
+<style>
+@font-face{font-family:'Alfa Slab One';src:url(fonts/AlfaSlabOne-Regular.ttf)}
+@font-face{font-family:'Oleo Script';font-weight:700;src:url(fonts/OleoScript-Bold.ttf)}
+@font-face{font-family:'Jost';font-weight:100 900;src:url(fonts/Jost.ttf)}
+html,body{margin:0;background:#f6ead3;overflow:hidden}
+canvas{width:540px;height:960px;display:block}
+</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import { createMC, PAL, ellipsePts, rrectPts, capsulePts, smooth, quad, hash, clamp, lerp, ramp, easeOut, backOut } from './midcentury.js';
+const M = createMC(document.getElementById('c')), g = M.g, INK = PAL.ink;
+const scene = new URLSearchParams(location.search).get('scene') || 'hook';
+const pop = (t, t0, d = .3) => backOut(ramp(t, t0, d));
+
+// ── props (original geometric drawings) ──
+function turkey(x, y, s, t) { // roast on a platter; origin = platter centre
+  g.save(); g.translate(x, y); g.scale(s, s);
+  const plat = ellipsePts(0, 40, 250, 52); M.shadow(plat, [10, 16]); M.cel(plat, PAL.paper2, { w: 4, seed: 11, off: [6, 6] });
+  M.ink(ellipsePts(0, 36, 205, 36), { w: 3, seed: 12 });
+  [[-196, -4, 1], [196, -4, -1]].forEach(([lx, ly, sd], i) => { // drumsticks
+    const leg = smooth([[lx - sd * 40, ly - 48], [lx + sd * 36, ly - 66], [lx + sd * 112, ly - 20], [lx + sd * 70, ly + 22], [lx - sd * 20, ly + 16]], 6, true);
+    M.cel(leg, PAL.roast, { w: 4.4, seed: 20 + i, off: [7, 6], shade: { col: 'rgba(110,40,10,.28)', draw: gg => gg.fillRect(-400, ly + 2, 800, 200) } });
+    M.cel(capsulePts(lx + sd * 108, ly - 28, lx + sd * 132, ly - 36, 20), PAL.paper2, { w: 3.6, seed: 22 + i, off: [4, 4] });
+    M.cel(ellipsePts(lx + sd * 138, ly - 44, 15, 15, 20), PAL.paper2, { w: 3.6, seed: 24 + i, off: [4, 4] }); M.cel(ellipsePts(lx + sd * 140, ly - 20, 14, 14, 20), PAL.paper2, { w: 3.6, seed: 26 + i, off: [4, 4] }); });
+  const body = smooth([[-150, -20], [-140, -118], [-60, -184], [30, -190], [120, -140], [152, -40], [100, 22], [-80, 26]], 7, true);
+  M.cel(body, PAL.roast, { w: 4.6, seed: 30, off: [8, 7], shade: { col: 'rgba(110,40,10,.30)', draw: gg => { gg.beginPath(); gg.ellipse(40, 0, 230, 90, 0, 0, 7); gg.rect(-400, -40, 800, 200); gg.fill(); } } });
+  M.clipped(body, gg => { gg.fillStyle = 'rgba(255,214,140,.55)'; gg.beginPath(); gg.ellipse(-30, -130, 70, 26, -.3, 0, 7); gg.fill(); }, { seed: 31 });
+  [[-70, -60, -.5], [10, -80, -.1], [80, -56, .4]].forEach(([cx, cy, r], i) => M.ink(quad([cx - 30, cy + 14], [cx, cy - 12], [cx + 30, cy + 14], 8), { w: 3.4, seed: 40 + i, breaks: false }));
+  [[-220, 22], [-196, 46], [226, 20], [204, 44], [-170, 60]].forEach(([px, py], i) => M.cel(ellipsePts(px, py, 17, 13, 16), i % 2 ? PAL.olive : '#6f8a3a', { w: 3, seed: 50 + i, off: [3, 3] }));
+  g.restore(); }
+function zees(x, y, t, col) { [0, 1, 2].forEach(i => { const k = ramp(t, 0 + i * .35, .35), fl = (t * .8 + i * .33) % 1; if (k <= 0) return; M.text('Z', x + i * 40 + fl * 12, y - i * 50 - fl * 12, { font: 'Oleo Script', weight: 700, size: 70 + i * 22, col: INK, plate: col, po: [4, 4], alpha: k }); }); }
+function loaf(x, y, s) { g.save(); g.translate(x, y); g.scale(s, s); const b = smooth([[-96, 24], [-104, -26], [-60, -58], [10, -66], [74, -50], [104, -6], [90, 28]], 7, true);
+  M.cel(b, '#d99a3f', { w: 4.4, seed: 60, off: [7, 6], shade: { col: 'rgba(120,70,10,.28)', draw: gg => gg.fillRect(-300, 6, 700, 100) } });
+  [-46, 0, 46].forEach((sx, i) => M.cel(capsulePts(sx - 14, -34, sx + 6, -4, 13), PAL.paper2, { w: 3, seed: 61 + i, off: [3, 3] })); g.restore(); }
+function plate(x, y, s) { g.save(); g.translate(x, y); g.scale(s, s); const p = ellipsePts(0, 14, 108, 34); M.cel(p, PAL.paper2, { w: 4, seed: 70, off: [6, 6] });
+  [[-42, -4, 32, PAL.tomato], [14, -14, 38, PAL.olive], [58, -2, 28, PAL.mustard], [-6, 0, 26, PAL.roast]].forEach(([cx, cy, r, c], i) => M.cel(ellipsePts(cx, cy, r, r * .8, 22), c, { w: 3.4, seed: 71 + i, off: [4, 4] })); g.restore(); }
+function glass(x, y, s) { g.save(); g.translate(x, y); g.scale(s, s); const bowl = smooth([[-52, -70], [52, -70], [44, -14], [0, 12], [-44, -14]], 6, true);
+  M.cel(bowl, PAL.paper2, { w: 4, seed: 80, off: [5, 5] }); M.clipped(bowl, gg => { gg.fillStyle = PAL.plum; gg.fillRect(-100, -44, 200, 90); }, { seed: 81 });
+  M.cel(capsulePts(0, 8, 0, 60, 12), PAL.paper2, { w: 3.4, seed: 82, off: [4, 4] }); M.cel(ellipsePts(0, 68, 44, 11, 20), PAL.paper2, { w: 3.6, seed: 83, off: [4, 4] }); g.restore(); }
+function sleepyFace(x, y, r, t) { const pulse = 1 + .03 * Math.sin(t * 3); g.save(); g.translate(x, y); g.scale(pulse, pulse);
+  M.burst(0, 0, r * 1.18, r * 1.38, 14, PAL.mustard, { rot: t * .3, seed: 90 }); M.cel(ellipsePts(0, 0, r, r, 56), PAL.tealL, { w: 4.6, seed: 91, off: [8, 7] });
+  M.ink(quad([-62, -10], [-42, 8], [-22, -10], 8), { w: 5, seed: 92, breaks: false }); M.ink(quad([22, -10], [42, 8], [62, -10], 8), { w: 5, seed: 93, breaks: false });
+  M.cel(ellipsePts(0, 52, 15, 20, 20), '#7a2b22', { w: 3.6, seed: 94, off: [3, 3] });
+  const cap = [[-r * .78, -r * .55], [-r * .2, -r * .9], [r * .45, -r * .82], [r * 1.0, -r * .1], [r * .2, -r * .98], [-r * .45, -r * .98]]; M.cel(smooth(cap, 5, true), PAL.tomato, { w: 4, seed: 95, off: [5, 5] }); M.cel(ellipsePts(r * 1.0, -r * .1, 19, 19, 18), PAL.paper2, { w: 3.4, seed: 96, off: [3, 3] }); g.restore(); }
+function arrowDown(x, y0, y1, k) { const yy = lerp(y0, y1, k); M.ink([[x, y0], [x, yy]], { w: 8, seed: 120, breaks: false }); if (k > .85) M.cel([[x - 26, yy - 8], [x + 26, yy - 8], [x, yy + 34]], PAL.tomato, { w: 4, seed: 121, off: [3, 3] }); }
+
+// ── scenes ──
+const SCENES = {
+  hook: { dur: 5, draw(t) {
+    M.set(PAL.tealL, '#4e9c98', 1530);
+    M.rays(540, 900, 1500, 24, '#ffffff', .22, t * .06);
+    M.dots(40, 40, 1040, 520, 46, 4, '#ffffff', .32);
+    // table + roast
+    const tb = ramp(t, .4, .3), ty = (1 - backOut(tb)) * 300;
+    M.cel(rrectPts(36, 1360 + ty, 540, 42, 10), PAL.olive, { w: 4.4, seed: 100, off: [6, 6] }); M.ink([[80, 1402 + ty], [70, 1530]], { w: 4.4, seed: 101, breaks: false }); M.ink([[532, 1402 + ty], [544, 1530]], { w: 4.4, seed: 102, breaks: false });
+    turkey(306, 1290 + ty, 1.0 * (.6 + .4 * backOut(tb)), t);
+    zees(200, 1120, t - 3.0, PAL.mustard);
+    // presenter: held body, acting hand points at the roast with a stick; mouth talks
+    const pp = pop(t, .15, .35), talk = t > .6 && t < 3.7 ? (Math.sin(t * 17) > .1 ? .75 : .2) : 0, pt = ramp(t, .9, .35);
+    M.presenter(790, 1330 + (1 - pp) * 500, 1.04, { flip: true, hand: [lerp(960, 700, easeOut(pt)), lerp(1250, 1280, pt)], stick: [lerp(850, 470, easeOut(pt)), lerp(1300, 1250, pt)], kind: 'point', mouth: talk, look: [-.6, .2], brow: t > 1.6 ? 1 : 0, blink: (t * 1.7) % 1 > .96 });
+    // title: slab letters printed in colour plates
+    const a = easeOut(ramp(t, .1, .4)); M.text('Everybody says…', 540, 150 + (1 - a) * -40, { font: 'Oleo Script', weight: 700, size: 78, col: PAL.tomato, alpha: a, reg: true });
+    M.text('TURKEY MAKES', 540, 282 + (1 - a) * -50, { size: 106, col: INK, plate: PAL.mustard, po: [8, 7], alpha: a }); M.text('YOU SLEEPY?', 540, 404 + (1 - a) * -50, { size: 106, col: INK, plate: PAL.mustard, po: [8, 7], alpha: a });
+    // MYTH stamp slams in
+    const st = ramp(t, 2.0, .3); if (st > 0) { const sc = lerp(2.6, 1, easeOut(st)) * (1 + .05 * Math.sin(ramp(t, 2.3, .4) * Math.PI * 3) * (1 - ramp(t, 2.3, .4))), sh = t > 2.3 && t < 2.55 ? (hash(Math.floor(t * 40)) - .5) * 14 : 0;
+      M.stamp('MYTH', 540 + sh, 690 + sh, { size: 205, col: PAL.tomato, rot: -.13, scale: sc, alpha: st > .15 ? 1 : st / .15 });
+      if (t > 2.3) [[110, 560], [980, 560], [90, 860], [560, 940]].forEach(([sx, sy], i) => { const k = ramp(t, 2.3 + i * .06, .25); if (k > 0) M.sparkle(sx, sy, 44 * backOut(k), t * .8 + i, i % 2 ? PAL.tomato : PAL.paper2); }); }
+    M.capCard([[['So…is it ', INK], ['really', PAL.tomato], [' the turkey?', INK]]], { y: 1640, alpha: ramp(t, 3.0, .25), rise: (1 - easeOut(ramp(t, 3.0, .25))) * 30 });
+  } },
+  reveal: { dur: 6, draw(t) {
+    M.set(PAL.coral, '#d98a68', 1500);
+    M.rays(540, 640, 1500, 28, '#ffffff', .18, -t * .05);
+    const h = easeOut(ramp(t, .05, .4)); M.text('Not the bird…', 540, 126 - (1 - h) * 50, { font: 'Oleo Script', weight: 700, size: 70, col: PAL.plum, alpha: h });
+    M.text('THE REAL CULPRITS', 540, 236 - (1 - h) * 60, { size: 74, col: INK, plate: PAL.teal, po: [8, 7], alpha: h });
+    const rows = [['1', 'BIG MEAL', 'a lot of food all at once', plate, 340], ['2', 'CARBS', 'bread, stuffing, pie', loaf, 330], ['3', 'BOOZE', 'alcohol makes you drowsy', glass, 330]];
+    rows.forEach(([n, ttl, sub, icon, ix], i) => { const k = pop(t, .5 + i * .42, .35); if (k <= 0) return; const y0 = 320 + i * 258, cx = 540, sc = .55 + .45 * k; g.save(); g.translate(cx, y0 + 105); g.scale(sc, sc); g.translate(-cx, -(y0 + 105));
+      const card = rrectPts(70, y0, 940, 210, 34); M.shadow(card, [14, 16]); M.cel(card, PAL.paper2, { w: 4.6, seed: 130 + i, off: [10, 9], shade: null });
+      M.clipped(card, gg => { gg.fillStyle = [PAL.mustard, PAL.tomato, PAL.teal][i]; gg.globalAlpha = .9; gg.fillRect(60, y0, 120, 220); gg.globalAlpha = 1; }, { seed: 140 + i, off: [0, 0] });
+      M.ink([[180, y0 + 10], [180, y0 + 200]], { w: 4, seed: 150 + i, breaks: false });
+      M.text(n, 124, y0 + 140, { size: 112, col: PAL.paper2, plate: INK, po: [5, 5] });
+      icon(i === 0 ? 300 : i === 1 ? 290 : 296, y0 + (i === 2 ? 96 : 118), .92);
+      M.text(ttl, 400, y0 + 98, { size: 74, col: INK, plate: [PAL.mustard, PAL.tomato, PAL.teal][i], po: [6, 5], align: 'left' });
+      M.text(sub, 402, y0 + 156, { font: 'Jost', weight: 600, size: 38, col: '#6a554a', align: 'left', reg: false }); g.restore(); });
+    // result: arrow + sleepy face, and the presenter pointing at it
+    const ak = ramp(t, 2.0, .4); if (ak > 0) arrowDown(700, 1090, 1150, easeOut(ak));
+    const fk = pop(t, 2.5, .4); if (fk > 0) sleepyFace(700, 1320, 128 * fk, t);
+    zees(850, 1230, t - 3.0, PAL.mustard);
+    const pp = pop(t, .05, .35), talk = t > .5 && t < 5.2 ? (Math.sin(t * 15) > .1 ? .8 : .2) : 0, pt = ramp(t, 2.0, .4);
+    M.presenter(215, 1415 + (1 - pp) * 400, .66, { hand: [lerp(330, 470, easeOut(pt)), lerp(1300, 1290, pt)], stick: [lerp(420, 570, easeOut(pt)), lerp(1330, 1320, pt)], kind: 'point', mouth: talk, look: [.7, .1], brow: 0, blink: (t * 1.3) % 1 > .96 });
+    M.capCard([[['The real culprits: a ', INK], ['huge meal', PAL.tomato], [', lots of ', INK], ['carbs', PAL.tomato], [',', INK]], [[' and a ', INK], ['drink or two', PAL.tomato], ['.', INK]]], { y: 1590, size: 40, alpha: ramp(t, 3.6, .25), rise: (1 - easeOut(ramp(t, 3.6, .25))) * 24 });
+  } },
+};
+const S = SCENES[scene]; window.DUR = S.dur;
+window.seek = t => { M.begin(t); S.draw(t); M.end(); }; window.render = window.seek;
+await Promise.all([document.fonts.load('400 100px "Alfa Slab One"'), document.fonts.load('700 70px "Oleo Script"'), document.fonts.load('600 40px "Jost"')]);
+window.seek(0); window.ready = true; window.READY = true;
+</script></body></html>

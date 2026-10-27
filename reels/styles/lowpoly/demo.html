@@ -1,0 +1,102 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/fonts.css">
+<script type="importmap">{"imports":{"three":"../../node_modules/three/build/three.module.js"}}</script>
+<style>
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#9FD4FF;font-family:'Fredoka',sans-serif}
+#root{position:absolute;inset:0;overflow:hidden}
+#gl{position:absolute;inset:0}
+.t{position:absolute;left:0;right:0;text-align:center;color:#FFF6E6;text-shadow:0 3px 0 rgba(48,42,110,.38),0 8px 18px rgba(48,42,110,.25)}
+#kick{top:70px;font-size:19px;font-weight:600;letter-spacing:.24em}
+#big{top:96px;font-size:62px;font-weight:600;line-height:1;white-space:nowrap}
+#big span{display:inline-block}
+#big b{color:#FFD166;font-weight:600}
+#chip{position:absolute;left:0;right:0;top:180px;display:flex;justify-content:center;align-items:center;gap:12px}
+.dg{background:#FFF6E6;border-radius:16px;padding:6px 16px 8px;font-size:34px;font-weight:600;color:#3A3560;box-shadow:0 4px 0 rgba(48,42,110,.35);min-width:130px;text-align:center}
+.dg small{font-size:15px;margin-left:4px;color:#8A7FB8}
+.dg.on{background:#FFD166}
+#arrow{font-size:30px;color:#FFF6E6;text-shadow:0 3px 0 rgba(48,42,110,.38)}
+#sub{position:absolute;left:30px;right:30px;bottom:74px;display:flex;align-items:center;gap:12px;justify-content:center;font-size:25px;font-weight:600;line-height:1.18;color:#FFF6E6;text-shadow:0 2px 0 rgba(36,30,96,.6),0 5px 14px rgba(36,30,96,.55);text-align:center}
+#sub i{display:inline-block;width:17px;height:17px;flex:none;transform:rotate(45deg);border-radius:3px;background:linear-gradient(135deg,#FFE9A8 50%,#F4B04E 50%)}
+</style></head>
+<body><div id="root"><div id="gl"></div>
+<div class="t" id="kick">DAYLIGHT SAVING ENDS</div>
+<div class="t" id="big"></div>
+<div id="chip"><div class="dg" id="d1">2:00<small>AM</small></div><div id="arrow">&#10140;</div><div class="dg" id="d2">1:00<small>AM</small></div></div>
+<div id="sub"><i></i><span id="subt"></span></div>
+</div>
+<script type="module">
+import { THREE, makeStage, makeIsland, house, tree, clockTower, makeSun, placeSun, cloud, sparkles, arrivePop, arriveDrop, applySky, todMix, TOD, PAL, ramp, ease, lerp, clamp, pop, hexPos } from './lowpoly.js';
+const $ = id => document.getElementById(id);
+const st = makeStage($('gl')); const S = st.scene;
+await document.fonts.load('600 40px "Fredoka"'); await document.fonts.ready;
+
+// World
+const world = new THREE.Group(); S.add(world);
+const island = makeIsland(); world.add(island);
+const { tiles, top, rock } = island.userData;
+// Props placed on hex positions (q,r).
+const P = (q, r) => { const [x, z] = hexPos(q, r); return [x, z]; };
+const props = [];
+const add = (o, q, r, ry = 0, y = .0, t0 = 1.3, kind = 'pop', dx = 0, dz = 0) => { const [x, z] = P(q, r); o.position.set(x + dx, y, z + dz); o.rotation.y = ry; top.add(o); props.push({ o, t0, kind, baseY: y }); return o; };
+const tower = clockTower(); add(tower, 0, -1, .0, 0, 1.0, 'drop');
+add(house(PAL.wall[1], PAL.roof[0]), -1, -1 + 0, .2, 0, 1.55, 'drop', .1, .35);
+add(house(PAL.wall[0], PAL.roof[1], 1.0, .9, .75), 1, -1, -.25, 0, 1.75, 'drop', .15, -.1);
+add(house(PAL.wall[2], PAL.roof[2], 1.0, .95, .7), -2, 1, .5, 0, 1.95, 'drop', .1, .1);
+add(house(PAL.wall[3], PAL.roof[3], .9, .9, .65), 2, 0, -.5, 0, 2.15, 'drop');
+add(tree(1.2), -2, 0, 0, 0, 2.3, 'pop', .1, -.3); add(tree(1), -1, 2, 0, 0, 2.38, 'pop', .1, .1);
+add(tree(1.1, false), 1, -2, 0, 0, 2.46, 'pop', .2, .2); add(tree(.9), 2, -1, 0, 0, 2.54, 'pop', .15, .3);
+add(tree(1.05), 0, 1, 0, 0, 2.62, 'pop', -.3, -.2); add(tree(.9, false), -1, 1, 0, 0, 2.7, 'pop', .0, .0);
+
+const sun = makeSun(); S.add(sun);
+const clouds = [cloud(1.2), cloud(.9), cloud(1.0)]; clouds.forEach(c => S.add(c));
+const spark = sparkles(12); world.add(spark);
+
+// Words
+const big = $('big'); let letters = [];
+function setBig(html) { big.innerHTML = ''; letters = []; const tmp = document.createElement('div'); tmp.innerHTML = html;
+  const walk = (node, cls) => node.childNodes.forEach(n => { if (n.nodeType === 3) [...n.textContent].forEach(ch => { const s = document.createElement('span'); s.textContent = ch === ' ' ? ' ' : ch; if (cls) s.style.color = cls; big.appendChild(s); letters.push(s); }); else walk(n, n.tagName === 'B' ? '#FFD166' : cls); });
+  walk(tmp, null); }
+let bigKey = '';
+const showBig = (key, html, t, t0) => { if (bigKey !== key) { setBig(html); bigKey = key; }
+  letters.forEach((s, i) => { const k = pop(ramp(t, t0 + i * .035, .5)); s.style.opacity = clamp(ramp(t, t0 + i * .035, .15)); s.style.transform = `translateY(${(1 - k) * 34}px) scale(${.6 + .4 * k})`; }); };
+
+window.DUR = 10;
+window.seek = (t) => {
+  // Time: clock minutes. 2:00 at t<=4.2, then rewinds one hour (counter-clockwise turn) by t=6.6.
+  const rw = ease(ramp(t, 4.2, 2.4)); const minutes = 120 - 60 * rw;
+  tower.userData.setMinutes(minutes);
+  // Sky and light follow: day -> late -> dusk as the hour goes back and the sun slips earlier by the clock.
+  const k = ramp(t, 4.2, 3.4);
+  const tod = k < .5 ? todMix(TOD.noon, TOD.late, k * 2) : todMix(TOD.late, TOD.dusk, (k - .5) * 2);
+  applySky($('root'), tod); st.setTod(tod);
+  st.sunLight.position.set(lerp(-6, 9, k), lerp(14, 5, k), lerp(9, 5, k));
+  // Camera: wide on the arrival, then a push toward the tower for the rewind, with a small drift.
+  const push = ease(ramp(t, 3.4, 1.6));
+  st.setCam(lerp(18.4, 16.6, push), 0, lerp(-.2, .6, push), 0, lerp(-.2, -.4, push), 0);
+  // Island: rise from below with a bounce, tiles in order, strata after; gentle bob.
+  const bob = Math.sin(t * 1.4) * .08;
+  const rise = ramp(t, .0, 1.0); world.position.y = bob + (1 - pop(rise)) * -5; world.rotation.y = Math.sin(t * .35) * .02;
+  tiles.forEach(tl => { const a = ramp(t, .1 + tl.userData.order * .1, .45); tl.scale.setScalar(Math.max(.001, pop(a))); tl.visible = a > 0; });
+  rock.scale.setScalar(Math.max(.001, pop(ramp(t, .5, .8)))); rock.visible = t > .5;
+  props.forEach(p => { const a = ramp(t, p.t0, p.kind === 'drop' ? .75 : .5); if (p.kind === 'drop') { arriveDrop(p.o, a, 5, p.baseY); } else arrivePop(p.o, a); });
+  // Sun slips down and to the right (earlier by the clock) as the hour goes back.
+  const sa = ramp(t, 4.2, 3.4); const ssc = pop(ramp(t, .6, .8));
+  placeSun(st, sun, lerp(-3.3, 3.1, ease(sa)), lerp(3.2, 1.3, ease(sa)) + Math.sin(t * 1.1) * .08);
+  sun.scale.setScalar(Math.max(.001, ssc)); sun.userData.halo.scale.setScalar(1 + .06 * Math.sin(t * 2));
+  sun.userData.core.material.color.set(colorMix(sa)); sun.userData.core.rotation.y = t * .3;
+  clouds.forEach((c, i) => { placeSun(st, c, ((t * .14 + i * 3.3) % 11) - 5.5, [2.9, 1.0, 3.7][i], 14 + i * 3); c.scale.setScalar(([1.2, .9, 1.0])[i]); });
+  spark.userData.update(t);
+  // Words
+  const kicker = t < 3.9 ? 'DAYLIGHT SAVING ENDS' : 'FALL BACK';
+  $('kick').textContent = kicker; $('kick').style.opacity = ramp(t, .5, .5);
+  if (t < 3.9) showBig('a', 'Nov 1 · <b>2 AM</b>', t, .7); else showBig('b', 'Clocks go <b>BACK</b>', t, 4.0);
+  const ck = pop(ramp(t, 2.6, .6)); $('chip').style.opacity = clamp(ramp(t, 2.6, .3)); $('chip').style.transform = `scale(${.7 + .3 * ck})`;
+  $('d2').classList.toggle('on', rw >= 1); $('d1').style.opacity = rw >= 1 ? .5 : 1;
+  const sub = t < 3.9 ? 'On Sunday, Nov 1 at 2 a.m., clocks go back one hour.' : 'Sunrise and sunset come an hour earlier by the clock.';
+  $('subt').textContent = sub; $('sub').style.opacity = clamp(ramp(t, 1.4, .4));
+  st.renderer.render(S, st.cam);
+};
+function colorMix(k) { const a = new THREE.Color('#FFC861'), b = new THREE.Color('#FF9A63'); return a.lerp(b, clamp(k)); }
+window.seek(0); window.ready = true;
+</script></body></html>

@@ -1,0 +1,104 @@
+{
+ "name": "skyscr",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "This is **Taipei 101.** It stands **508 meters** tall.",
+   "This is Taipei 101. It stands 508 meters tall."
+  ],
+  [
+   "And it's built to **sway** on purpose.",
+   "And it's built to sway on purpose."
+  ],
+  [
+   "So how does a skyscraper really **stay up?**",
+   "So how does a skyscraper really stay up?"
+  ],
+  [
+   "Start underneath. **380 piles** are driven deep into the ground.",
+   "Start underneath. Three hundred eighty piles are driven deep into the ground."
+  ],
+  [
+   "Some reach into solid **bedrock.**",
+   "Some reach into solid bedrock."
+  ],
+  [
+   "In the middle, a strong **core** carries the weight.",
+   "In the middle, a strong core carries the weight."
+  ],
+  [
+   "Every **eight floors,** steel trusses tie the core to **giant outer columns.**",
+   "Every eight floors, steel trusses tie the core to giant outer columns."
+  ],
+  [
+   "Together they make one stiff **backbone.**",
+   "Together they make one stiff backbone."
+  ],
+  [
+   "But the real challenge is **wind.**",
+   "But the real challenge is wind."
+  ],
+  [
+   "Taipei 101 is designed for gales up to **216 kilometers per hour.**",
+   "Taipei 101 is designed for gales up to two hundred sixteen kilometers per hour."
+  ],
+  [
+   "Wind pushes it sideways, so the tower **sways.**",
+   "Wind pushes it sideways, so the tower sways."
+  ],
+  [
+   "The Burj Khalifa moves about **1.5 meters** at the top.",
+   "The Burj Khalifa moves about one point five meters at the top."
+  ],
+  [
+   "So engineers hang a giant **steel ball** inside.",
+   "So engineers hang a giant steel ball inside."
+  ],
+  [
+   "It weighs **660 tonnes,** and hangs near the top, between floors **87 and 92.**",
+   "It weighs six hundred sixty tonnes, and hangs near the top, between floors eighty seven and ninety two."
+  ],
+  [
+   "When the tower leans one way, the ball swings the **opposite way.**",
+   "When the tower leans one way, the ball swings the opposite way."
+  ],
+  [
+   "Hydraulic dampers turn that motion into **heat.**",
+   "Hydraulic dampers turn that motion into heat."
+  ],
+  [
+   "It can cut the movement by up to **40 percent.**",
+   "It can cut the movement by up to forty percent."
+  ],
+  [
+   "In **2015,** Typhoon Soudelor swung it **one meter,** its biggest move ever.",
+   "In twenty fifteen, Typhoon Soudelor swung it one meter, its biggest move ever."
+  ],
+  [
+   "Visitors can even **see it** hanging inside.",
+   "Visitors can even see it hanging inside."
+  ],
+  [
+   "A skyscraper stays up by **anchoring deep,** sharing the load, and **swaying smartly.**",
+   "A skyscraper stays up by anchoring deep, sharing the load, and swaying smartly."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

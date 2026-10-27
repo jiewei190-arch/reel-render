@@ -1,0 +1,21 @@
+{"name":"boot","voice":"af_heart","speed":0.97,"music":"crt","bpm":88,"breath":[1,5,9,13,16],
+"phrases":[
+["You press **one button.** What happens next?","You press one button. What happens next?"],
+["The power supply turns wall power into **steady low voltages.**","The power supply turns wall power into steady low voltages."],
+["Then it waits at least a tenth of a second, and sends a **power good** signal.","Then it waits at least a tenth of a second, and sends a power good signal."],
+["That lets the processor leave **reset** and start.","That lets the processor leave reset, and start."],
+["On x86 chips, it jumps to one **fixed address,** where the firmware lives.","On x86 chips, it jumps to one fixed address, where the firmware lives."],
+["That firmware is **UEFI.** It sets up the basics, like memory.","That firmware is U E F I. It sets up the basics, like memory."],
+["Next is the **power-on self-test.** Is the processor okay? The memory?","Next is the power-on self-test. Is the processor okay? The memory?"],
+["On many PCs, **one short beep** means all clear. Codes vary by maker.","On many PCs, one short beep means all clear. Codes vary by maker."],
+["UEFI loads **drivers** so it can talk to your disk and screen.","UEFI loads drivers, so it can talk to your disk and screen."],
+["Its boot manager checks a saved **list of boot options,** in order.","Its boot manager checks a saved list of boot options, in order."],
+["It finds a small **FAT partition** holding a boot loader program.","It finds a small fat partition, holding a boot loader program."],
+["The boot loader loads the **kernel** into memory, plus a tiny starter filesystem.","The boot loader loads the kernel into memory, plus a tiny starter filesystem."],
+["The kernel unpacks it. Inside are just enough **drivers** to find your real disk.","The kernel unpacks it. Inside are just enough drivers to find your real disk."],
+["Then it starts the **first process.** Every other program descends from it.","Then it starts the first process. Every other program descends from it."],
+["On most Linux systems that's **systemd.** It mounts things and starts services.","On most Linux systems, that's systemd. It mounts things and starts services."],
+["And finally, the **login prompt** appears.","And finally, the login prompt appears."],
+["A chain of tiny **handoffs** woke your computer.","A chain of tiny handoffs woke your computer."],
+["Follow for more of **how it really works.**","Follow for more of how it really works."]
+]}

@@ -1,0 +1,92 @@
+{
+ "name": "scene",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Every time two things touch, **something moves** between them.",
+   "Every time two things touch, something moves between them."
+  ],
+  [
+   "That's **Locard's principle:** when two things touch, material is exchanged.",
+   "That's Locard's principle: when two things touch, material is exchanged."
+  ],
+  [
+   "So how does a crime scene **really work?**",
+   "So how does a crime scene really work?"
+  ],
+  [
+   "Step one: the first officer treats the place as a **crime scene,** and assumes the crime may be **ongoing.**",
+   "Step one: the first officer treats the place as a crime scene, and assumes the crime may be ongoing."
+  ],
+  [
+   "Step two: **secure it.** Control who goes in and out, and **log every entry.**",
+   "Step two: secure it. Control who goes in and out, and log every entry."
+  ],
+  [
+   "Step three: **photograph** the scene and make a rough **sketch,** before anything is moved.",
+   "Step three: photograph the scene and make a rough sketch, before anything is moved."
+  ],
+  [
+   "Step four: **find the traces.** A hidden fingerprint is called a **latent print.**",
+   "Step four: find the traces. A hidden fingerprint is called a latent print."
+  ],
+  [
+   "You can't see it until a **process brings it out.**",
+   "You can't see it until a process brings it out."
+  ],
+  [
+   "A fine powder **sticks** to sweat and oil, and its pigment shows the **ridges.**",
+   "A fine powder sticks to sweat and oil, and its pigment shows the ridges."
+  ],
+  [
+   "Examiners then compare prints in four steps, called **A-C-E-V.**",
+   "Examiners then compare prints in four steps, called A C E V."
+  ],
+  [
+   "Here's a surprise: it's **impossible to prove** that no two fingerprints are identical.",
+   "Here's a surprise: it's impossible to prove that no two fingerprints are identical."
+  ],
+  [
+   "Blood patterns are described by **cause,** like droplets in the air, or transfer from touch.",
+   "Blood patterns are described by cause, like droplets in the air, or transfer from touch."
+  ],
+  [
+   "Step five: **chain of custody,** a signed record of everyone who handles the evidence.",
+   "Step five: chain of custody, a signed record of everyone who handles the evidence."
+  ],
+  [
+   "If records go missing, evidence **may be excluded** in court.",
+   "If records go missing, evidence may be excluded in court."
+  ],
+  [
+   "Quick recap: **secure,** photograph, **find traces,** and **track every hand.**",
+   "Quick recap: secure, photograph, find traces, and track every hand."
+  ],
+  [
+   "Real procedures **vary** by agency and case.",
+   "Real procedures vary by agency and case."
+  ],
+  [
+   "**Follow** for more.",
+   "Follow for more."
+  ]
+ ]
+}

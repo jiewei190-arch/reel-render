@@ -1,0 +1,196 @@
+{
+"name": "mirror",
+"voice": "am_michael",
+"speed": 1.1,
+"root": 61.7,
+"bpm": 96,
+"arp": [
+246.9,
+293.7,
+370,
+440,
+370,
+293.7,
+329.6,
+440
+],
+"breath": [
+2,
+9,
+12,
+19
+],
+"phrases": [
+[
+"Scientists want a detector for **a life-form that doesn't exist.**",
+"Scientists want a detector for a life-form that doesn't exist."
+],
+[
+"It's called **mirror life.**",
+"It's called mirror life."
+],
+[
+"To understand it, start with your **hands.**",
+"To understand it, start with your hands."
+],
+[
+"Hold them up. They're **mirror images.**",
+"Hold them up. They're mirror images."
+],
+[
+"But stack one on the other, and they **can't overlap.**",
+"But stack one on the other, and they can't overlap."
+],
+[
+"That's called **handedness.**",
+"That's called handedness."
+],
+[
+"Molecules, the tiny building blocks of everything, can have it too.",
+"Molecules, the tiny building blocks of everything, can have it too."
+],
+[
+"Same atoms. But a **left-handed** version, and a **right-handed** version.",
+"Same atoms. But a left-handed version, and a right-handed version."
+],
+[
+"Life on Earth **picked a side.**",
+"Life on Earth picked a side."
+],
+[
+"Almost all our proteins use **left-handed** pieces. Mirror life would use the **opposite.**",
+"Almost all our proteins use left-handed pieces. Mirror life would use the opposite."
+],
+[
+"Does it exist? **No.** It's purely **hypothetical.**",
+"Does it exist? No. It's purely hypothetical."
+],
+[
+"In 2024, scientists warned against **building it.** Low likelihood, but **high severity.**",
+"In 2024, scientists warned against building it. Low likelihood, but high severity."
+],
+[
+"So how would you **spot one,** if it looked identical under a microscope?",
+"So how would you spot one, if it looked identical under a microscope?"
+],
+[
+"Researchers at Strathclyde and Durham have a **proposal.**",
+"Researchers at Strathclyde and Durham have a proposal."
+],
+[
+"Light can **twist** like a corkscrew, to the left, or to the right.",
+"Light can twist like a corkscrew, to the left, or to the right."
+],
+[
+"Glowing probes stick to **parts inside cells.**",
+"Glowing probes stick to parts inside cells."
+],
+[
+"Left-handed parts twist the glow **one way.** Mirror parts, the **other.**",
+"Left-handed parts twist the glow one way. Mirror parts, the other."
+],
+[
+"That twist is a **fingerprint** of handedness.",
+"That twist is a fingerprint of handedness."
+],
+[
+"It's published in **Royal Society Open Science.** But it's a **proposal,** not a proven test.",
+"It's published in Royal Society Open Science. But it's a proposal, not a proven test."
+],
+[
+"**Recap.** Mirror life: **hypothetical.** Handedness: **left versus right.** The detector: **twisting light.**",
+"Recap. Mirror life: hypothetical. Handedness: left versus right. The detector: twisting light."
+],
+[
+"Like building a **smoke detector** before there's any fire.",
+"Like building a smoke detector before there's any fire."
+],
+[
+"**Follow** for more.",
+"Follow for more."
+]
+],
+"sfx": [
+[
+"whoosh",
+2,
+-0.35
+],
+[
+"whoosh",
+6,
+-0.35
+],
+[
+"whoosh",
+9,
+-0.35
+],
+[
+"whoosh",
+12,
+-0.35
+],
+[
+"whoosh",
+13,
+-0.35
+],
+[
+"whoosh",
+19,
+-0.35
+],
+[
+"chime",
+3,
+0.8,
+1318,
+0.9,
+0.1
+],
+[
+"thud",
+4,
+0.5
+],
+[
+"blip",
+14,
+0.2,
+1500,
+0.07
+],
+[
+"riser",
+12,
+0.3,
+0.9,
+0.1
+],
+[
+"chime",
+17,
+0.9,
+1568,
+0.9,
+0.1
+],
+[
+"chime",
+18,
+0.6,
+1174,
+0.9,
+0.1
+],
+[
+"chime",
+21,
+0.6,
+1568,
+1.0,
+0.1
+]
+]
+}

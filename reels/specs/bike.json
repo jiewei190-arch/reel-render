@@ -1,0 +1,100 @@
+{
+ "name": "bike",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Push a bike and let go. **It rolls, and it doesn't fall.**",
+   "Push a bike and let go. It rolls, and it doesn't fall."
+  ],
+  [
+   "No rider. No hands. **Nobody balancing.**",
+   "No rider. No hands. Nobody balancing."
+  ],
+  [
+   "So what's holding it **up?**",
+   "So what's holding it up?"
+  ],
+  [
+   "You've probably heard it's the **spinning wheels.**",
+   "You've probably heard it's the spinning wheels."
+  ],
+  [
+   "A spinning wheel resists tilting, **like a spinning top.**",
+   "A spinning wheel resists tilting, like a spinning top."
+  ],
+  [
+   "Scientists tested that. They built a bike with **extra wheels spinning backwards** to cancel it out.",
+   "Scientists tested that. They built a bike with extra wheels spinning backwards to cancel it out."
+  ],
+  [
+   "It still **balanced itself.**",
+   "It still balanced itself."
+  ],
+  [
+   "Another popular answer is **trail:** the front wheel touches the ground a bit off its steering line, like a shopping cart wheel.",
+   "Another popular answer is trail. The front wheel touches the ground a bit off its steering line, like a shopping cart wheel."
+  ],
+  [
+   "They tested that too, with the contact point **pushed the other way.**",
+   "They tested that too, with the contact point pushed the other way."
+  ],
+  [
+   "Still balanced. So both ideas **help,** but neither one is **essential.**",
+   "Still balanced. So both ideas help, but neither one is essential."
+  ],
+  [
+   "Here's what does the work. When a moving bike leans, **the front wheel turns by itself.**",
+   "Here's what does the work. When a moving bike leans, the front wheel turns by itself."
+  ],
+  [
+   "It turns toward the way it's falling, which puts **the wheels back under the bike.**",
+   "It turns toward the way it's falling, which puts the wheels back under the bike."
+  ],
+  [
+   "Knock it sideways, and it **straightens itself back up.**",
+   "Knock it sideways, and it straightens itself back up."
+  ],
+  [
+   "But it needs speed. **Go too slow,** and the trick stops working.",
+   "But it needs speed. Go too slow, and the trick stops working."
+  ],
+  [
+   "How the weight is spread matters too, especially the **steering parts at the front.**",
+   "How the weight is spread matters too, especially the steering parts at the front."
+  ],
+  [
+   "Change the wrong thing, and a stable bike can turn **unstable.**",
+   "Change the wrong thing, and a stable bike can turn unstable."
+  ],
+  [
+   "So no single trick holds a bike up. **It balances itself, as it moves.**",
+   "So no single trick holds a bike up. It balances itself, as it moves."
+  ],
+  [
+   "Next time a bike rolls along on its own, remember: **it isn't magic. It's steering itself.**",
+   "Next time a bike rolls along on its own, remember, it isn't magic. It's steering itself."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

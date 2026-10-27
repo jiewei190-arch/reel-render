@@ -1,0 +1,99 @@
+{
+ "name": "honey",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "How does a bee turn **flower nectar** into honey?",
+   "How does a bee turn flower nectar into honey?"
+  ],
+  [
+   "First, a forager sips nectar into her **honey stomach.**",
+   "First, a forager sips nectar into her honey stomach."
+  ],
+  [
+   "It's only for storage. **She doesn't digest it.**",
+   "It's only for storage. She doesn't digest it."
+  ],
+  [
+   "One trip can take her to **50 to 100 flowers.**",
+   "One trip can take her to fifty to one hundred flowers."
+  ],
+  [
+   "Back at the hive, she **passes the nectar** to a waiting bee.",
+   "Back at the hive, she passes the nectar to a waiting bee."
+  ],
+  [
+   "Each pass adds an enzyme called **invertase.**",
+   "Each pass adds an enzyme called invertase."
+  ],
+  [
+   "It splits plain sugar into **glucose and fructose.**",
+   "It splits plain sugar into glucose and fructose."
+  ],
+  [
+   "But nectar is still about **70 percent water.**",
+   "But nectar is still about seventy percent water."
+  ],
+  [
+   "Real honey has **less than 18.6 percent.**",
+   "Real honey has less than eighteen point six percent."
+  ],
+  [
+   "So the bees spread it in the comb and **fan their wings.**",
+   "So the bees spread it in the comb and fan their wings."
+  ],
+  [
+   "The moving air carries the water away, **cell by cell.**",
+   "The moving air carries the water away, cell by cell."
+  ],
+  [
+   "Once it's ripe, they seal each cell with an **airtight wax cap.**",
+   "Once it's ripe, they seal each cell with an airtight wax cap."
+  ],
+  [
+   "Without that seal, honey **soaks up moisture** and can spoil.",
+   "Without that seal, honey soaks up moisture and can spoil."
+  ],
+  [
+   "Sealed, with so little water and a little acid, **almost nothing can grow in it.**",
+   "Sealed, with so little water and a little acid, almost nothing can grow in it."
+  ],
+  [
+   "Pots of honey **thousands of years old** have been found in Egyptian tombs.",
+   "Pots of honey thousands of years old have been found in Egyptian tombs."
+  ],
+  [
+   "All that work, and one bee makes only **one twelfth of a teaspoon** in her life.",
+   "All that work, and one bee makes only one twelfth of a teaspoon in her life."
+  ],
+  [
+   "So every spoonful took **a whole team of bees.**",
+   "So every spoonful took a whole team of bees."
+  ],
+  [
+   "And that flower's nectar? **Now it's honey.**",
+   "And that flower's nectar? Now it's honey."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  2,
+  3,
+  6,
+  8,
+  10,
+  11,
+  13,
+  14,
+  15,
+  16,
+  17
+ ]
+}

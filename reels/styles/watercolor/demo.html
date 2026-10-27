@@ -1,0 +1,89 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Caveat';src:url(fonts/Caveat.ttf);font-weight:400 700}
+@font-face{font-family:'Cormorant Garamond';src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic;font-weight:300 700}
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#f3ead9}canvas{display:block}
+</style></head><body><canvas id="c"></canvas>
+<script type="module">
+import { createWC, W, H, clamp, lerp, seg, ss, eo, backOut, hash, mix, rgba, PAL, PAPER, INK, INK2, leafPoly, shrinkPoly } from './watercolor.js';
+const scene = new URLSearchParams(location.search).get('scene') || 'hook';
+await Promise.all([document.fonts.load('600 60px Caveat'), document.fonts.load('italic 600 54px "Cormorant Garamond"')]);
+const R = createWC(document.getElementById('c')), g = R.g;
+
+// ---- a cute leaf character. gF = green fraction (1 green .. 0 all orange), reveal = painted-in progress ----
+function leaf(o) {
+  const { x, y, len = 560, wid = 250, rot = 0, gF = 1, red = 0, reveal = 1, mood = 'worried', seed = 3, t = 0, faceA = 1, hang = false } = o;
+  if (reveal <= 0) return;
+  const poly = leafPoly(len, wid);
+  g.save(); g.translate(x, y); g.rotate(rot + Math.sin(t * 1.3 + seed) * .025);
+  if (hang) g.scale(1, -1);
+  // wavy brush-edge reveal from the stem towards the tip
+  const ry = len / 2 + 40 - reveal * (len + 120); g.beginPath(); g.moveTo(-wid * 1.4, len); g.lineTo(-wid * 1.4, ry);
+  for (let i = 0; i <= 12; i++) g.lineTo(-wid * 1.4 + i * wid * 2.8 / 12, ry + Math.sin(i * 1.7 + seed) * 18); g.lineTo(wid * 1.4, len); g.closePath(); g.clip();
+  // stem
+  R.stroke(R.bezier(0, len / 2 - 10, 14, len / 2 + 60, -10, len / 2 + 130), { w: 22, col: PAL.brown, a: .9, seed: seed + 2, prof: u => .9 - .4 * u });
+  const base = mix(PAL.orange, PAL.red, red);
+  if (gF < .985) { R.wash(poly, base, { a: .85, seed: seed + 10, blooms: 7, br: 120 }); R.wash(shrinkPoly(poly, .6).map(([px, py]) => [px, py * .9 + len * .08]), mix(PAL.yellow, PAL.orange, red * .6), { a: .5, seed: seed + 11, blooms: 3, edge: 2 }); }
+  if (gF > .02) R.wash(poly.map(([px, py]) => [px * gF, py * (.62 + .38 * gF) + (1 - gF) * len * .06]), mix(PAL.green, PAL.deepGreen, .25), { a: .88, seed: seed + 12, blooms: 6, br: 140, jit: 6 });
+  // veins stay green longest
+  const vc = mix(PAL.deepGreen, '#b0602a', clamp((1 - gF) * 1.5 - .35));
+  R.stroke(R.bezier(0, len / 2 - 6, 8, 0, 0, -len / 2 + 30), { w: 12, col: vc, a: .85, seed: seed + 3, bristles: 3 });
+  for (let k = 0; k < 4; k++) for (const s of [-1, 1]) { const by = len / 2 - 120 - k * 95, sx = s * (wid * .78 * (1 - k * .12)); R.stroke(R.bezier(0, by, s * 40, by - 30, sx, by - 80 - k * 6), { w: 7, col: vc, a: .75, seed: seed + 20 + k * 2 + (s > 0), bristles: 2, prof: u => 1 - u * .6 }); }
+  if (hang) g.scale(1, -1);
+  // face
+  const fy = -len * .02, ex = len * .115, fa = faceA * clamp(reveal * 3 - 1.6);
+  if (fa > 0) {
+    g.globalAlpha = fa;
+    for (const s of [-1, 1]) {
+      g.fillStyle = rgba(INK, .9); g.beginPath(); g.ellipse(s * ex, fy, 15, 19, 0, 0, 6.3); g.fill(); g.fillStyle = rgba(PAPER, .95); g.beginPath(); g.arc(s * ex + 5, fy - 7, 5, 0, 6.3); g.fill();
+      R.wash([[s * ex * 1.55 - 38, fy + 40], [s * ex * 1.55, fy + 26], [s * ex * 1.55 + 38, fy + 40], [s * ex * 1.55, fy + 58]], PAL.pink, { a: .5, seed: seed + 40 + s, jit: 3, blooms: 0, edge: 1 });
+      if (mood === 'worried') R.stroke([[s * ex - s * 28, fy - 58], [s * ex, fy - 48], [s * ex + s * 26, fy - 36]], { w: 7, col: INK, a: .8, seed: seed + 50 + s, bristles: 0, prof: u => 1 - .4 * u });
+    }
+    if (mood === 'worried') R.stroke(R.bezier(-26, fy + 68, 0, fy + 48, 26, fy + 68), { w: 8, col: INK, a: .85, seed: seed + 60, bristles: 0 });
+    else if (mood === 'happy') R.stroke(R.bezier(-30, fy + 52, 0, fy + 86, 30, fy + 52), { w: 8, col: INK, a: .85, seed: seed + 61, bristles: 0 });
+    else { g.fillStyle = rgba(INK, .85); g.beginPath(); g.ellipse(0, fy + 64, 15, 20, 0, 0, 6.3); g.fill(); }
+    g.globalAlpha = 1;
+  }
+  g.restore();
+}
+const small = (x, y, s, col, rot, seed, t) => { g.save(); g.translate(x + Math.sin(t * 1.1 + seed) * 10, y + Math.cos(t * .9 + seed) * 8); g.rotate(rot + Math.sin(t * 1.3 + seed) * .12); const p = leafPoly(s, s * .46, 14); R.wash(p, col, { a: .85, seed, blooms: 2, br: 40, jit: 3, edge: 2 }); R.stroke([[0, s / 2 - 4], [0, 0], [0, -s / 2 + 12]], { w: 4, col: mix(col, INK, .45), a: .7, seed, bristles: 0 }); g.restore(); };
+const grass = (prog, t) => { const pts = []; for (let i = 0; i <= 16; i++) pts.push([i * W / 16, H - 250 + Math.sin(i * .9) * 22 + (i % 2) * 10]); pts.push([W, H], [0, H]); R.wash(pts, mix(PAL.green, PAL.yellow, .35), { a: .45, seed: 71, blooms: 8, by0: H - 300, br: 200, alpha: prog }); };
+
+const SC = {
+  hook: { dur: 5, draw(t) {
+    // soft tree-ish washes far behind
+    const m = ss(seg(t, 0, .8));
+    R.wash([[-40, 1150], [60, 1000], [210, 930], [330, 960], [420, 1030], [560, 1010], [680, 1080], [700, 1500], [-40, 1500]], PAL.green, { a: .17, seed: 5, blooms: 7, alpha: m, by0: 820 });
+    R.wash([[420, 1240], [640, 1000], [900, 960], [1120, 1100], [1120, 1500], [420, 1500]], mix(PAL.yellow, PAL.green, .4), { a: .17, seed: 6, blooms: 6, alpha: m, by0: 960 });
+    grass(ss(seg(t, .1, 1)), t);
+    // branch coming from the top-left, the leaf hangs from it
+    R.stroke(R.bezier(-40, 640, 260, 590, 556, 664), { w: 44, col: PAL.brown, a: .9, seed: 8, prog: ss(seg(t, .2, .9)), prof: u => 1 - .55 * u, bristles: 6 });
+    R.stroke(R.bezier(300, 612, 380, 560, 450, 520), { w: 18, col: PAL.brown, a: .85, seed: 9, prog: ss(seg(t, .5, 1)), bristles: 3 });
+    leaf({ x: 556, y: 1078, rot: .0, reveal: ss(seg(t, .7, 1.9)), gF: 1, mood: 'worried', t, hang: true });
+    // already-changed neighbours drifting
+    [[170, 1010, 120, PAL.orange, -.5, 11], [930, 1330, 140, PAL.red, .6, 12], [140, 1500, 100, PAL.yellow, .9, 13], [930, 1480, 110, PAL.orange, -.8, 14]].forEach(([x, y, s, c, r, sd], i) => { const k = backOut(seg(t, 1.8 + i * .2, 2.5 + i * .2)); if (k > 0) { g.save(); g.translate(x, y); g.scale(k, k); g.translate(-x, -y); small(x, y, s, c, r, sd, t); g.restore(); } });
+    R.text('Why do leaves\nchange color?', W / 2, 260, { size: 128, col: INK, reveal: seg(t, .15, 1.3) });
+    R.wash([[300, 425], [800, 410], [820, 436], [310, 450]], PAL.orange, { a: .6, seed: 15, blooms: 0, jit: 3, alpha: seg(t, 1.3, 1.8) });
+    R.text('?', 880, 880, { size: 190, col: PAL.orange, reveal: seg(t, 2.1, 2.5), a: .9 });
+    R.subtitle('Why do leaves change color in fall?', 1585, seg(t, 2.4, 3.1));
+  } },
+  drain: { dur: 6, draw(t) {
+    const gF = 1 - ss(seg(t, 1.0, 4.4));
+    R.wash([[-40, 1100], [200, 820], [540, 760], [900, 830], [1120, 1100], [1120, 1500], [-40, 1500]], mix(PAL.yellow, PAL.orange, .5), { a: .12 + .12 * (1 - gF), seed: 21, blooms: 7, by0: 940 });
+    grass(1, t);
+    R.text('Same leaf, same tree…', W / 2, 250, { size: 100, col: INK, reveal: seg(t, 0.05, 1) });
+    R.text('the orange was\nalways there!', W / 2, 395, { size: 124, col: PAL.orange, a: .95, reveal: seg(t, 3.9, 4.9) });
+    const mood = gF > .55 ? 'worried' : (gF > .1 ? 'wow' : 'happy');
+    leaf({ x: 540, y: 1010, rot: -.04, reveal: 1, gF: Math.max(.0, gF), red: .12, mood, t });
+    // notes with pen leaders
+    R.text('chlorophyll\n(green)', 200, 700, { size: 58, col: PAL.deepGreen, reveal: seg(t, .5, 1.1), rot: -.05, a: .95 });
+    R.leader(R.bezier(290, 790, 340, 880, 450, 930), seg(t, .9, 1.5), PAL.deepGreen);
+    R.text('carotenoids\n(yellow-orange)', 860, 1330, { size: 52, col: '#b0602a', reveal: seg(t, 2.6, 3.3), rot: .03, a: .95 });
+    R.leader(R.bezier(850, 1262, 830, 1180, 748, 1110), seg(t, 3.0, 3.6), '#b0602a');
+    R.subtitle('Green chlorophyll fades, and the orange was hiding underneath.', 1585, seg(t, 2.0, 2.8));
+  } }
+};
+const S = SC[scene]; window.DUR = S.dur;
+window.seek = t => { R.begin(t); S.draw(t); R.finish(); };
+window.seek(0); window.ready = true; window.READY = true;
+</script></body></html>

@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#f1e6cc}canvas{display:block}</style></head><body><canvas id="c"></canvas>
+<script type="module">
+import { createIM, W, H, PAL, BOW, knife, plane, rect, circlePoly, disc, ribbon, arcPts, shade } from './impasto.js';
+const scene = new URLSearchParams(location.search).get('scene') || 'swatch';
+const R = createIM(document.getElementById('c')), g = R.g;
+function swatch() {
+  plane(g, rect(0, 0, W, 900), '#8fa6b8', { ang: -.12, seed: 3, edge: false });
+  plane(g, [[80, 200], [520, 160], [560, 600], [120, 640]], '#2d4a5a', { ang: 1.4, seed: 4 });
+  disc(g, 800, 380, 170, '#ffc93c', { seed: 5 });
+  BOW.forEach((c, i) => ribbon(g, arcPts(540, 1500, 620 - i * 34, PI0, PI0 * 2, 70), 38, c, 10 + i, { len: 80 }));
+  for (let i = 0; i < 6; i++) knife(g, 200 + i * 140, 1000, 220, 60, -.2 + i * .1, shade('#e4572e', i * .08 - .2), 30 + i);
+}
+const PI0 = Math.PI;
+window.DUR = 1; window.seek = () => { R.begin(0); swatch(); }; window.seek(0); window.ready = true;
+</script></body></html>

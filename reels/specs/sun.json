@@ -1,0 +1,120 @@
+{
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "name": "sun",
+ "phrases": [
+  [
+   "The sunlight on your face was made in the Sun's **core.**",
+   "The sunlight on your face was made in the Sun's core."
+  ],
+  [
+   "It took between **100,000** and **a million years** to escape.",
+   "It took between 100,000 and a million years to escape."
+  ],
+  [
+   "Then it needed only **8 minutes and 20 seconds** to reach you.",
+   "Then it needed only 8 minutes and 20 seconds to reach you."
+  ],
+  [
+   "So how does the Sun **really** work?",
+   "So how does the Sun really work?"
+  ],
+  [
+   "In the core, it's about **15 million degrees.**",
+   "In the core, it's about 15 million degrees."
+  ],
+  [
+   "At that heat, **hydrogen** fuses into **helium.**",
+   "At that heat, hydrogen fuses into helium."
+  ],
+  [
+   "About **0.7 percent** of that mass turns into **energy.**",
+   "About 0.7 percent of that mass turns into energy."
+  ],
+  [
+   "Every second, that's about **4 to 5 million tons** of the Sun.",
+   "Every second, that's about 4 to 5 million tons of the Sun."
+  ],
+  [
+   "So why doesn't it **blow apart?**",
+   "So why doesn't it blow apart?"
+  ],
+  [
+   "Gravity pulls **inward.**",
+   "Gravity pulls inward."
+  ],
+  [
+   "Pressure from the hot core pushes **outward.**",
+   "Pressure from the hot core pushes outward."
+  ],
+  [
+   "The two **balance** each other.",
+   "The two balance each other."
+  ],
+  [
+   "Now the energy has to get **out.**",
+   "Now the energy has to get out."
+  ],
+  [
+   "Light is absorbed and re-emitted again and again, a **random walk.**",
+   "Light is absorbed and re-emitted again and again, a random walk."
+  ],
+  [
+   "Like a pinball in a **packed crowd.**",
+   "Like a pinball in a packed crowd."
+  ],
+  [
+   "Most estimates say that trip takes about **a million years.**",
+   "Most estimates say that trip takes about a million years."
+  ],
+  [
+   "Tiny **neutrinos** skip the traffic jam, and escape in about **2 seconds.**",
+   "Tiny neutrinos skip the traffic jam, and escape in about 2 seconds."
+  ],
+  [
+   "Free at last, light crosses **150 million kilometers** in **8 minutes, 20 seconds.**",
+   "Free at last, light crosses 150 million kilometers in 8 minutes, 20 seconds."
+  ],
+  [
+   "The Sun has about **10 billion years** of fuel in total, and about **5 billion** to go.",
+   "The Sun has about 10 billion years of fuel in total, and about 5 billion to go."
+  ],
+  [
+   "Quick recap. One: **fusion** makes the energy.",
+   "Quick recap. One: fusion makes the energy."
+  ],
+  [
+   "Two: gravity and pressure **balance.**",
+   "Two: gravity and pressure balance."
+  ],
+  [
+   "Three: light takes a **very long road** out.",
+   "Three: light takes a very long road out."
+  ],
+  [
+   "These are **estimates,** and sources differ.",
+   "These are estimates, and sources differ."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

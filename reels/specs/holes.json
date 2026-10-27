@@ -1,0 +1,208 @@
+{
+"name": "holes",
+"voice": "am_michael",
+"speed": 1.1,
+"root": 46.25,
+"bpm": 96,
+"arp": [
+185,
+220,
+277.2,
+329.6,
+277.2,
+220,
+246.9,
+329.6
+],
+"breath": [
+4,
+9,
+14,
+19
+],
+"phrases": [
+[
+"One galaxy. **Three** giant black holes.",
+"One galaxy. Three giant black holes."
+],
+[
+"A black hole is a spot where gravity is so strong, **nothing escapes.**",
+"A black hole is a spot where gravity is so strong, nothing escapes."
+],
+[
+"Think of a **drain** in space, pulling everything in.",
+"Think of a drain in space, pulling everything in."
+],
+[
+"Most sit quiet. But some are **active:** they're eating gas.",
+"Most sit quiet. But some are active: they're eating gas."
+],
+[
+"Falling gas spins into a glowing ring called a **disk.** That's how we **spot** them.",
+"Falling gas spins into a glowing ring called a disk. That's how we spot them."
+],
+[
+"This galaxy is **twelve billion** light-years away, so we see it as it was,",
+"This galaxy is over twelve billion light-years away, so we see it as it was,"
+],
+[
+"just **one billion** years after the Big Bang.",
+"just over one billion years after the Big Bang."
+],
+[
+"The James Webb telescope split its light into **colors.**",
+"The James Webb telescope split its light into colors."
+],
+[
+"Fast-moving gas shifts those colors in a **telltale** way.",
+"Fast-moving gas shifts those colors in a telltale way."
+],
+[
+"In the center, the colors looked **too messy** for one black hole.",
+"In the center, the colors looked too messy for one black hole."
+],
+[
+"They fit **two,** side by side.",
+"They fit two, side by side."
+],
+[
+"About **six hundred twenty** light-years apart. Too close to see separately.",
+"About six hundred twenty light-years apart. Too close to see separately."
+],
+[
+"Then, farther out, a **third** showed up.",
+"Then, farther out, a third showed up."
+],
+[
+"They differ a lot: one is about **eighty million** Suns, the others far smaller.",
+"They differ a lot: one is about eighty million Suns, the others far smaller."
+],
+[
+"So why does this **matter?**",
+"So why does this matter?"
+],
+[
+"Galaxies grow by **merging,** like two whirlpools in a bath becoming one.",
+"Galaxies grow by merging, like two whirlpools in a bath becoming one."
+],
+[
+"When galaxies merge, their black holes can end up in **one place.**",
+"When galaxies merge, their black holes can end up in one place."
+],
+[
+"This central pair is expected to merge within a few **hundred million** years.",
+"This central pair is expected to merge within a few hundred million years."
+],
+[
+"The team suggests that could be a **fast way** for black holes to grow early on.",
+"The team suggests that could be a fast way for black holes to grow early on."
+],
+[
+"The third may be **left over** from an earlier merger, or still drifting inward.",
+"The third may be left over from an earlier merger, or still drifting inward."
+],
+[
+"Scientists call this **evidence,** not a final answer.",
+"Scientists call this evidence, not a final answer."
+],
+[
+"Recap: **three** black holes, spotted by Webb's colors, and two may soon merge.",
+"Recap: three black holes, spotted by Webb's colors, and two may soon merge."
+],
+[
+"**Follow** for more.",
+"Follow for more."
+]
+],
+"sfx": [
+[
+"thud",
+0,
+0.9
+],
+[
+"whoosh",
+1,
+-0.35
+],
+[
+"whoosh",
+3,
+-0.35
+],
+[
+"chime",
+4,
+0.5,
+1174,
+0.8,
+0.1
+],
+[
+"whoosh",
+7,
+-0.35
+],
+[
+"blip",
+8,
+0.4,
+1500,
+0.07
+],
+[
+"chime",
+10,
+0.3,
+1318,
+0.9,
+0.1
+],
+[
+"chime",
+12,
+0.4,
+1568,
+0.9,
+0.1
+],
+[
+"whoosh",
+14,
+-0.35
+],
+[
+"whoosh",
+15,
+-0.35
+],
+[
+"riser",
+17,
+-0.1,
+0.9,
+0.1
+],
+[
+"thud",
+17,
+1.5
+],
+[
+"chime",
+21,
+0.4,
+988,
+0.8,
+0.1
+],
+[
+"chime",
+22,
+0.6,
+1568,
+1.0,
+0.1
+]
+]
+}

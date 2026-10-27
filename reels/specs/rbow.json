@@ -1,0 +1,100 @@
+{
+ "name": "rbow",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Why does a **rainbow** show up after rain?",
+   "Why does a rainbow show up after rain?"
+  ],
+  [
+   "Sunlight looks white, but it's secretly **all the colors** mixed together.",
+   "Sunlight looks white, but it's secretly all the colors mixed together."
+  ],
+  [
+   "The other ingredient is **rain:** millions of tiny, round raindrops.",
+   "The other ingredient is rain: millions of tiny, round raindrops."
+  ],
+  [
+   "Let's zoom in on **one drop.**",
+   "Let's zoom in on one drop."
+  ],
+  [
+   "A ray of sunlight **enters the drop** and bends. That bend is called refraction.",
+   "A ray of sunlight enters the drop and bends. That bend is called refraction."
+  ],
+  [
+   "Each color bends by a **different amount,** so the white light spreads out.",
+   "Each color bends by a different amount, so the white light spreads out."
+  ],
+  [
+   "The spread-out light hits the back of the drop and **bounces off.**",
+   "The spread-out light hits the back of the drop and bounces off."
+  ],
+  [
+   "On the way out, it bends **again.**",
+   "On the way out, it bends again."
+  ],
+  [
+   "Now the colors are leaving in **different directions.**",
+   "Now the colors are leaving in different directions."
+  ],
+  [
+   "To see them, the **sun** has to be behind you, with rain in front.",
+   "To see them, the sun has to be behind you, with rain in front."
+  ],
+  [
+   "Light piles up about **42 degrees** from the point directly opposite the sun.",
+   "Light piles up about forty two degrees from the point directly opposite the sun."
+  ],
+  [
+   "Millions of drops at that angle add up to one **glowing band.**",
+   "Millions of drops at that angle add up to one glowing band."
+  ],
+  [
+   "**Red** lands on the outside, **blue** on the inside.",
+   "Red lands on the outside, blue on the inside."
+  ],
+  [
+   "Here's the twist: a rainbow is really a **full circle.**",
+   "Here's the twist: a rainbow is really a full circle."
+  ],
+  [
+   "From the ground, the horizon just hides the **bottom half.**",
+   "From the ground, the horizon just hides the bottom half."
+  ],
+  [
+   "From an airplane, you can sometimes see the **whole ring.**",
+   "From an airplane, you can sometimes see the whole ring."
+  ],
+  [
+   "Sometimes a **second bow** appears, with the colors flipped.",
+   "Sometimes a second bow appears, with the colors flipped."
+  ],
+  [
+   "So a rainbow is just **sunlight, bent by rain.**",
+   "So a rainbow is just sunlight, bent by rain."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "name": "tsun",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "A tsunami can cross a whole ocean **as fast as a jet plane.**",
+   "A tsunami can cross a whole ocean as fast as a jet plane."
+  ],
+  [
+   "But out at sea, you could **sail right over it** and never notice.",
+   "But out at sea, you could sail right over it and never notice."
+  ],
+  [
+   "So how does something that small become **so dangerous?**",
+   "So how does something that small become so dangerous?"
+  ],
+  [
+   "It starts deep **under the seafloor.**",
+   "It starts deep under the seafloor."
+  ],
+  [
+   "A big earthquake suddenly **moves the ground,** and a huge amount of ocean moves with it.",
+   "A big earthquake suddenly moves the ground, and a huge amount of ocean moves with it."
+  ],
+  [
+   "That push spreads out across the sea as a **series of waves.**",
+   "That push spreads out across the sea as a series of waves."
+  ],
+  [
+   "Out in deep water, each wave is **hundreds of miles long,** but rarely more than **a meter high.**",
+   "Out in deep water, each wave is hundreds of miles long, but rarely more than a meter high."
+  ],
+  [
+   "And the deeper the water, **the faster it goes.** Over **five hundred miles an hour.**",
+   "And the deeper the water, the faster it goes. Over five hundred miles an hour."
+  ],
+  [
+   "Then it reaches the coast, where the water gets **shallow.**",
+   "Then it reaches the coast, where the water gets shallow."
+  ],
+  [
+   "The wave slows to about **twenty or thirty miles an hour.**",
+   "The wave slows to about twenty or thirty miles an hour."
+  ],
+  [
+   "But the energy has nowhere to go, so the wave **grows taller,** and the currents get stronger.",
+   "But the energy has nowhere to go, so the wave grows taller, and the currents get stronger."
+  ],
+  [
+   "Sometimes the sea **pulls back first,** showing the ocean floor like a very low tide.",
+   "Sometimes the sea pulls back first, showing the ocean floor like a very low tide."
+  ],
+  [
+   "That's a warning sign. Local tsunamis can arrive **just minutes** after the earthquake.",
+   "That's a warning sign. Local tsunamis can arrive just minutes after the earthquake."
+  ],
+  [
+   "And it's never just one wave. **The first isn't always the biggest,** and they can keep coming for hours.",
+   "And it's never just one wave. The first isn't always the biggest, and they can keep coming for hours."
+  ],
+  [
+   "So if you feel a strong earthquake near the coast, **go to high ground right away.**",
+   "So if you feel a strong earthquake near the coast, go to high ground right away."
+  ],
+  [
+   "Out at sea, **buoys** listen for these waves and help send warnings.",
+   "Out at sea, buoys listen for these waves and help send warnings."
+  ],
+  [
+   "So a wave you'd barely notice at sea **becomes a powerful surge** at the shore.",
+   "So a wave you'd barely notice at sea becomes a powerful surge at the shore."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  6,
+  8,
+  10,
+  12,
+  13,
+  14,
+  16
+ ]
+}

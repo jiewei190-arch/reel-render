@@ -1,0 +1,95 @@
+{
+ "name": "batt",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Here's a surprise: a battery stores **chemical energy,** not electricity.",
+   "Here's a surprise. A battery stores chemical energy, not electricity."
+  ],
+  [
+   "Inside are two different materials, the **anode** and the **cathode.**",
+   "Inside are two different materials, the anode and the cathode."
+  ],
+  [
+   "Between them sits a chemical called the **electrolyte.**",
+   "Between them sits a chemical called the electrolyte."
+  ],
+  [
+   "Tiny charged particles called **ions** drift through it.",
+   "Tiny charged particles called ions drift through it."
+  ],
+  [
+   "But **electrons** don't take that road.",
+   "But electrons don't take that road."
+  ],
+  [
+   "They have to **go around.**",
+   "They have to go around."
+  ],
+  [
+   "A chemical reaction at the anode **frees up electrons.**",
+   "A chemical reaction at the anode frees up electrons."
+  ],
+  [
+   "They flow from the anode to the cathode, but only through the **outside wire.**",
+   "They flow from the anode to the cathode, but only through the outside wire."
+  ],
+  [
+   "Connect a device, and those moving electrons **power it.**",
+   "Connect a device, and those moving electrons power it."
+  ],
+  [
+   "Meanwhile, the ions drift through the electrolyte to **balance the charge.**",
+   "Meanwhile, the ions drift through the electrolyte to balance the charge."
+  ],
+  [
+   "Electrons around the outside, ions through the middle. **One full loop.**",
+   "Electrons around the outside, ions through the middle. One full loop."
+  ],
+  [
+   "The loop keeps going until the chemicals are **used up.**",
+   "The loop keeps going until the chemicals are used up."
+  ],
+  [
+   "Then both ends match, and the flow **stops.**",
+   "Then both ends match, and the flow stops."
+  ],
+  [
+   "That's a dead battery: not out of electricity, just out of **fresh chemistry.**",
+   "That's a dead battery. Not out of electricity, just out of fresh chemistry."
+  ],
+  [
+   "A rechargeable battery can run the reaction **backwards.**",
+   "A rechargeable battery can run the reaction backwards."
+  ],
+  [
+   "A charger pushes energy in, and the chemistry is **reversed.**",
+   "A charger pushes energy in, and the chemistry is reversed."
+  ],
+  [
+   "It's not perfect every time, so batteries **wear out** slowly.",
+   "It's not perfect every time, so batteries wear out slowly."
+  ],
+  [
+   "So a battery isn't a bucket of electricity. **It's a loop powered by chemistry.**",
+   "So a battery isn't a bucket of electricity. It's a loop powered by chemistry."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  2,
+  5,
+  7,
+  10,
+  13,
+  15,
+  17
+ ]
+}

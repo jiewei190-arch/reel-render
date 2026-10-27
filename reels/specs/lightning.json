@@ -1,0 +1,100 @@
+{
+ "name": "lightning",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "A lightning bolt is about **five times hotter** than the surface of the Sun.",
+   "A lightning bolt is about five times hotter than the surface of the Sun."
+  ],
+  [
+   "But the flash you see is only the **last step** of a fight that starts inside a storm cloud.",
+   "But the flash you see is only the last step of a fight that starts inside a storm cloud."
+  ],
+  [
+   "So how does it **really** work?",
+   "So how does it really work?"
+  ],
+  [
+   "Inside a storm cloud, **ice and water droplets** crash into each other.",
+   "Inside a storm cloud, ice and water droplets crash into each other."
+  ],
+  [
+   "Those collisions move **electrons** around, and the cloud builds up electric charge.",
+   "Those collisions move electrons around, and the cloud builds up electric charge."
+  ],
+  [
+   "The charges sort themselves out. The **top** turns positive, and the **base** turns negative.",
+   "The charges sort themselves out. The top turns positive, and the base turns negative."
+  ],
+  [
+   "Then the charge gets strong enough to **break down** the air's insulation.",
+   "Then the charge gets strong enough to break down the air's insulation."
+  ],
+  [
+   "A negatively charged path called a **stepped leader** starts moving down.",
+   "A negatively charged path called a stepped leader starts moving down."
+  ],
+  [
+   "It travels at roughly **200,000 to 335,000** miles per hour.",
+   "It travels at roughly two hundred thousand to three hundred thirty five thousand miles per hour."
+  ],
+  [
+   "Meanwhile, tall objects on the ground send up a **positive streamer** to meet it.",
+   "Meanwhile, tall objects on the ground send up a positive streamer to meet it."
+  ],
+  [
+   "Charge rushes to the ground, and a **return stroke** shoots back up the channel.",
+   "Charge rushes to the ground, and a return stroke shoots back up the channel."
+  ],
+  [
+   "That's the **bright flash** you actually see.",
+   "That's the bright flash you actually see."
+  ],
+  [
+   "It climbs at roughly **200 million** miles per hour.",
+   "It climbs at roughly two hundred million miles per hour."
+  ],
+  [
+   "And it heats the air to about **50,000 degrees** Fahrenheit.",
+   "And it heats the air to about fifty thousand degrees Fahrenheit."
+  ],
+  [
+   "The air expands explosively, and that shock wave is **thunder.**",
+   "The air expands explosively, and that shock wave is thunder."
+  ],
+  [
+   "To guess how far the strike was, **count the seconds** between flash and thunder.",
+   "To guess how far the strike was, count the seconds between flash and thunder."
+  ],
+  [
+   "Then **divide by five** to get the distance in miles.",
+   "Then divide by five to get the distance in miles."
+  ],
+  [
+   "So lightning isn't one flash. It's a **leader,** a **streamer,** and a **return stroke.**",
+   "So lightning isn't one flash. It's a leader, a streamer, and a return stroke."
+  ],
+  [
+   "**Subscribe** for more of **how it really works.**",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}

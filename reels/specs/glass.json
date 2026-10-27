@@ -1,0 +1,91 @@
+{
+ "name": "glass",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Why is stained glass so **colorful?**",
+   "Why is stained glass so colorful?"
+  ],
+  [
+   "Here's a surprise: the color isn't painted on. It's **inside the glass.**",
+   "Here's a surprise: the color isn't painted on. It's inside the glass."
+  ],
+  [
+   "Glassmakers melt sand at about three thousand degrees, and stir in **metal.**",
+   "Glassmakers melt sand at about three thousand degrees, and stir in metal."
+  ],
+  [
+   "Each metal makes its own **color.**",
+   "Each metal makes its own color."
+  ],
+  [
+   "**Cobalt** makes blue.",
+   "Cobalt makes blue."
+  ],
+  [
+   "**Gold** makes red. Tiny gold spheres turn the glass a deep ruby.",
+   "Gold makes red. Tiny gold spheres turn the glass a deep ruby."
+  ],
+  [
+   "**Manganese** makes purple.",
+   "Manganese makes purple."
+  ],
+  [
+   "And **iron** gives a green tint.",
+   "And iron gives a green tint."
+  ],
+  [
+   "So how does a metal make color? It **soaks up** some colors of sunlight.",
+   "So how does a metal make color? It soaks up some colors of sunlight."
+  ],
+  [
+   "The colors it soaks up stay in the glass. The rest **pass through** to your eyes.",
+   "The colors it soaks up stay in the glass. The rest pass through to your eyes."
+  ],
+  [
+   "That's why stained glass only glows when the **sun is behind it.**",
+   "That's why stained glass only glows when the sun is behind it."
+  ],
+  [
+   "Next, the details. Faces and patterns are painted with a dark **glass paint.**",
+   "Next, the details. Faces and patterns are painted with a dark glass paint."
+  ],
+  [
+   "Then each piece goes into a hot **kiln.**",
+   "Then each piece goes into a hot kiln."
+  ],
+  [
+   "The heat melts the paint into the glass, so it's **there for good.**",
+   "The heat melts the paint into the glass, so it's there for good."
+  ],
+  [
+   "Finally, soft strips of **lead** hold all the pieces together.",
+   "Finally, soft strips of lead hold all the pieces together."
+  ],
+  [
+   "Blue is cobalt. Red is gold. Purple is manganese. **The color was in the glass all along.**",
+   "Blue is cobalt. Red is gold. Purple is manganese. The color was in the glass all along."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  7,
+  8,
+  9,
+  10,
+  13,
+  14,
+  15
+ ]
+}

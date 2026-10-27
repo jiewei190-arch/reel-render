@@ -1,0 +1,104 @@
+{
+ "name": "cables",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Everyone thinks **sharks** cut the internet.",
+   "Everyone thinks sharks cut the internet."
+  ],
+  [
+   "But **fishing gear** and **ship anchors** cause about 65 to 75 percent of cable breaks.",
+   "But fishing gear and ship anchors cause about sixty five to seventy five percent of cable breaks."
+  ],
+  [
+   "So how does the internet really **cross an ocean?**",
+   "So how does the internet really cross an ocean?"
+  ],
+  [
+   "Through **cables** lying on the sea floor.",
+   "Through cables lying on the sea floor."
+  ],
+  [
+   "More than **570** cable systems are in service, and about a hundred more are planned.",
+   "More than five hundred seventy cable systems are in service, and about a hundred more are planned."
+  ],
+  [
+   "A deep-ocean cable is typically **17 to 20 millimeters** thick.",
+   "A deep ocean cable is typically seventeen to twenty millimeters thick."
+  ],
+  [
+   "Inside are thin strands of **glass** called fibers.",
+   "Inside are thin strands of glass called fibers."
+  ],
+  [
+   "Your data travels through them as **pulses of light.**",
+   "Your data travels through them as pulses of light."
+  ],
+  [
+   "The glass keeps the light inside using **total internal reflection.**",
+   "The glass keeps the light inside using total internal reflection."
+  ],
+  [
+   "Fibers come in pairs: one carries data **each way.**",
+   "Fibers come in pairs. One carries data each way."
+  ],
+  [
+   "Along the cable, **repeaters** boost the light signal.",
+   "Along the cable, repeaters boost the light signal."
+  ],
+  [
+   "One industry source puts them about **25 miles** apart.",
+   "One industry source puts them about twenty five miles apart."
+  ],
+  [
+   "Their power comes from **the shore,** sent down the cable itself.",
+   "Their power comes from the shore, sent down the cable itself."
+  ],
+  [
+   "Near land, cables are **buried** one to three and a half meters deep.",
+   "Near land, cables are buried one to three and a half meters deep."
+  ],
+  [
+   "In the deep ocean, they often **just lie** on the seabed, where there is little human activity.",
+   "In the deep ocean, they often just lie on the seabed, where there is little human activity."
+  ],
+  [
+   "That's why the biggest threat is **fishing gear and anchors.**",
+   "That's why the biggest threat is fishing gear and anchors."
+  ],
+  [
+   "And sharks? Fish bites caused about **half a percent** of faults from 1959 to 2006.",
+   "And sharks? Fish bites caused about half a percent of faults from nineteen fifty nine to two thousand six."
+  ],
+  [
+   "From 2007 to 2014, the ICPC recorded **no shark faults** at all.",
+   "From two thousand seven to twenty fourteen, the ICPC recorded no shark faults at all."
+  ],
+  [
+   "So the internet under the sea is **light in glass,** boosted along the way.",
+   "So the internet under the sea is light in glass, boosted along the way."
+  ],
+  [
+   "**Subscribe** for more of how it **really** works.",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}

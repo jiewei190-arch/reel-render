@@ -1,0 +1,211 @@
+{
+ "name": "anc",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "root": 61.7,
+ "bpm": 104,
+ "arp": [
+  246.9,
+  293.7,
+  370,
+  440,
+  370,
+  293.7,
+  329.6,
+  440
+ ],
+ "breath": [
+  2,
+  5,
+  9,
+  13,
+  14,
+  18,
+  20
+ ],
+ "phrases": [
+  [
+   "Put on **noise-cancelling headphones,** and a loud room goes quiet.",
+   "Put on noise-cancelling headphones, and a loud room goes quiet."
+  ],
+  [
+   "But they aren't just **blocking** sound.",
+   "But they aren't just blocking sound."
+  ],
+  [
+   "They're fighting sound with **more sound.**",
+   "They're fighting sound with more sound."
+  ],
+  [
+   "First, what is sound? **A wave.**",
+   "First, what is sound? A wave."
+  ],
+  [
+   "Air gets pushed together, then pulled apart, **again and again.**",
+   "Air gets pushed together, then pulled apart, again and again."
+  ],
+  [
+   "Picture the wave as **high parts** and **low parts.**",
+   "Picture the wave as high parts and low parts."
+  ],
+  [
+   "Now, tiny **microphones** on the headphones listen to the noise around you.",
+   "Now, tiny microphones on the headphones listen to the noise around you."
+  ],
+  [
+   "A small chip works out the **mirror image** of that wave.",
+   "A small chip works out the mirror image of that wave."
+  ],
+  [
+   "When the noise wave goes up, the mirror wave goes **down.**",
+   "When the noise wave goes up, the mirror wave goes down."
+  ],
+  [
+   "The speaker plays that mirror wave. It's called **anti-noise.**",
+   "The speaker plays that mirror wave. It's called anti-noise."
+  ],
+  [
+   "Now both waves reach your ear **together.**",
+   "Now both waves reach your ear together."
+  ],
+  [
+   "Up meets down. **Plus one, minus one.**",
+   "Up meets down. Plus one, minus one."
+  ],
+  [
+   "They add up to almost **nothing,** so you hear much **less.**",
+   "They add up to almost nothing, so you hear much less."
+  ],
+  [
+   "Scientists call this **destructive interference.**",
+   "Scientists call this destructive interference."
+  ],
+  [
+   "Think of a swing. Push **against** it at just the right moment, and it **stops.**",
+   "Think of a swing. Push against it at just the right moment, and it stops."
+  ],
+  [
+   "It works best on **steady sounds,** like an airplane engine hum.",
+   "It works best on steady sounds, like an airplane engine hum."
+  ],
+  [
+   "Why? A steady wave is easy to **predict.**",
+   "Why? A steady wave is easy to predict."
+  ],
+  [
+   "Sudden sounds, like a **voice** or a dropped plate, are much harder to cancel.",
+   "Sudden sounds, like a voice or a dropped plate, are much harder to cancel."
+  ],
+  [
+   "That's why you still hear **some** things.",
+   "That's why you still hear some things."
+  ],
+  [
+   "The ear cup also blocks sound the old-fashioned way. That's called **isolation.**",
+   "The ear cup also blocks sound the old-fashioned way. That's called isolation."
+  ],
+  [
+   "So it's a team: **padding, plus anti-noise.**",
+   "So it's a team: padding, plus anti-noise."
+  ],
+  [
+   "Next time a plane goes quiet, **thank a mirror wave.**",
+   "Next time a plane goes quiet, thank a mirror wave."
+  ],
+  [
+   "Follow for more.",
+   "Follow for more."
+  ]
+ ],
+ "sfx": [
+  [
+   "whoosh",
+   1,
+   -0.3
+  ],
+  [
+   "blip",
+   0,
+   1.3,
+   1300,
+   0.07
+  ],
+  [
+   "whoosh",
+   6,
+   -0.3
+  ],
+  [
+   "chime",
+   7,
+   0.6,
+   1568,
+   0.8,
+   0.08
+  ],
+  [
+   "chime",
+   9,
+   0.8,
+   1175,
+   0.8,
+   0.08
+  ],
+  [
+   "whoosh",
+   10,
+   -0.3
+  ],
+  [
+   "thud",
+   11,
+   0.3
+  ],
+  [
+   "chime",
+   12,
+   0.5,
+   1760,
+   0.8,
+   0.09
+  ],
+  [
+   "whoosh",
+   14,
+   -0.3
+  ],
+  [
+   "blip",
+   16,
+   0.2,
+   1500,
+   0.06
+  ],
+  [
+   "whoosh",
+   17,
+   -0.3
+  ],
+  [
+   "chime",
+   20,
+   0.5,
+   1318,
+   0.8,
+   0.09
+  ],
+  [
+   "thud",
+   21,
+   0.3
+  ],
+  [
+   "chime",
+   22,
+   0.2,
+   1568,
+   1.0,
+   0.1
+  ]
+ ]
+}

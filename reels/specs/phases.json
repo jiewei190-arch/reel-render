@@ -1,0 +1,106 @@
+{
+ "name": "phases",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  7,
+  8,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  17,
+  18
+ ],
+ "phrases": [
+  [
+   "Why does the **moon** change shape?",
+   "Why does the moon change shape?"
+  ],
+  [
+   "Here's a surprise: the moon is **always half lit.**",
+   "Here's a surprise. The moon is always half lit."
+  ],
+  [
+   "It doesn't make its own light. It just **reflects sunlight.**",
+   "It doesn't make its own light. It just reflects sunlight."
+  ],
+  [
+   "The sun always lights up **half of the moon,** and the other half stays dark.",
+   "The sun always lights up half of the moon, and the other half stays dark."
+  ],
+  [
+   "So why do we see a **full circle** one night, and a thin sliver the next?",
+   "So why do we see a full circle one night, and a thin sliver the next?"
+  ],
+  [
+   "Because the moon **travels around Earth.**",
+   "Because the moon travels around Earth."
+  ],
+  [
+   "One lap takes about **27 days.**",
+   "One lap takes about twenty-seven days."
+  ],
+  [
+   "As it moves, we see its lit half from **different angles.**",
+   "As it moves, we see its lit half from different angles."
+  ],
+  [
+   "Let's look from **above.**",
+   "Let's look from above."
+  ],
+  [
+   "When the lit half faces us, we see a **full moon.**",
+   "When the lit half faces us, we see a full moon."
+  ],
+  [
+   "When the lit half faces away, the side we see is dark. That's a **new moon.**",
+   "When the lit half faces away, the side we see is dark. That's a new moon."
+  ],
+  [
+   "In between, we see **part of the lit half:** crescents, quarters, and gibbous moons.",
+   "In between, we see part of the lit half: crescents, quarters, and gibbous moons."
+  ],
+  [
+   "Some people guess it's **Earth's shadow.**",
+   "Some people guess it's Earth's shadow."
+  ],
+  [
+   "But Earth's shadow only reaches the moon during a **lunar eclipse.**",
+   "But Earth's shadow only reaches the moon during a lunar eclipse."
+  ],
+  [
+   "From one new moon to the next takes about **29 and a half days.**",
+   "From one new moon to the next takes about twenty-nine and a half days."
+  ],
+  [
+   "That's a little longer than one lap, because **Earth is moving** around the sun too.",
+   "That's a little longer than one lap, because Earth is moving around the sun too."
+  ],
+  [
+   "And everyone on Earth sees the **same phases.**",
+   "And everyone on Earth sees the same phases."
+  ],
+  [
+   "And we only ever see **one side** of the moon.",
+   "And we only ever see one side of the moon."
+  ],
+  [
+   "So the moon isn't changing. **Only our view of it is.**",
+   "So the moon isn't changing. Only our view of it is."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

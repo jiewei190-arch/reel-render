@@ -1,0 +1,239 @@
+{
+"name": "snake",
+"voice": "am_michael",
+"speed": 1.05,
+"root": 49,
+"bpm": 98,
+"arp": [
+196,
+246.9,
+293.7,
+370,
+293.7,
+246.9,
+261.6,
+370
+],
+"breath": [
+3,
+7,
+12,
+16,
+20
+],
+"phrases": [
+[
+"This snake's escape plan is to **become a wheel.**",
+"This snake's escape plan is to become a wheel."
+],
+[
+"Yes, really. It **rolls away.**",
+"Yes, really. It rolls away."
+],
+[
+"It's a tiny snake from **Southeast Asia,** called a **dwarf reedsnake.**",
+"It's a tiny snake from Southeast Asia, called a dwarf reedsnake."
+],
+[
+"Most snakes **slither,** which means moving in side-to-side waves.",
+"Most snakes slither, which means moving in side-to-side waves."
+],
+[
+"But when threatened, this one **tips onto its side and rolls.**",
+"But when threatened, this one tips onto its side and rolls."
+],
+[
+"In the lab, it reached about **three point seven meters per second,**",
+"In the lab, it reached about three point seven meters per second,"
+],
+[
+"roughly **four times** its fastest slithering speed.",
+"roughly four times its fastest slithering speed."
+],
+[
+"A wheel spins around a center rod called an **axle.**",
+"A wheel spins around a center rod called an axle."
+],
+[
+"A snake has **no axle.** It's one long, bendy body.",
+"A snake has no axle. It's one long, bendy body."
+],
+[
+"And if its head **spun around too,** it couldn't see where it was going.",
+"And if its head spun around too, it couldn't see where it was going."
+],
+[
+"So how does it **pull this off?**",
+"So how does it pull this off?"
+],
+[
+"Step one: the snake **rolls on one side** of its body.",
+"Step one: the snake rolls on one side of its body."
+],
+[
+"Step two: it **swings an arched part** of its body over, past its head.",
+"Step two: it swings an arched part of its body over, past its head."
+],
+[
+"Scientists call that swing a **stroke.**",
+"Scientists call that swing a stroke."
+],
+[
+"Then it does the same on the **other side.**",
+"Then it does the same on the other side."
+],
+[
+"Left, right, left, right. That **keeps it rolling.**",
+"Left, right, left, right. That keeps it rolling."
+],
+[
+"Meanwhile, the **head stays steady,** pointed where it's going,",
+"Meanwhile, the head stays steady, pointed where it's going,"
+],
+[
+"like a **camera on a stabilizer.**",
+"like a camera on a stabilizer."
+],
+[
+"The body tumbles, but the **view stays calm.**",
+"The body tumbles, but the view stays calm."
+],
+[
+"So the snake acts like **two parts:**",
+"So the snake acts like two parts:"
+],
+[
+"a **rolling body,** and a **steady head.**",
+"a rolling body, and a steady head."
+],
+[
+"With **no extra joints** or special parts.",
+"With no extra joints or special parts."
+],
+[
+"Just a **new way** of moving.",
+"Just a new way of moving."
+],
+[
+"Quick recap. One: it **rolls on its side.**",
+"Quick recap. One: it rolls on its side."
+],
+[
+"Two: it **swings its body over,** stroke by stroke.",
+"Two: it swings its body over, stroke by stroke."
+],
+[
+"Three: its **head stays steady.**",
+"Three: its head stays steady."
+],
+[
+"And to be clear, this is about **these snakes,** not every snake.",
+"And to be clear, this is about these snakes, not every snake."
+],
+[
+"**Follow** for more.",
+"Follow for more."
+]
+],
+"sfx": [
+[
+"whoosh",
+1,
+-0.3
+],
+[
+"thud",
+1,
+0.1
+],
+[
+"whoosh",
+3,
+-0.3
+],
+[
+"blip",
+5,
+0.3,
+1400,
+0.07
+],
+[
+"chime",
+6,
+0.4,
+1174,
+0.8,
+0.1
+],
+[
+"whoosh",
+7,
+-0.3
+],
+[
+"thud",
+8,
+0.1
+],
+[
+"whoosh",
+10,
+-0.3
+],
+[
+"chime",
+11,
+0.4,
+1318,
+0.8,
+0.1
+],
+[
+"whoosh",
+12,
+-0.3
+],
+[
+"riser",
+16,
+-0.2,
+0.8,
+0.09
+],
+[
+"chime",
+17,
+0.3,
+988,
+0.9,
+0.1
+],
+[
+"whoosh",
+19,
+-0.3
+],
+[
+"chime",
+20,
+0.3,
+1174,
+0.8,
+0.1
+],
+[
+"whoosh",
+23,
+-0.3
+],
+[
+"chime",
+27,
+0.6,
+1568,
+1.0,
+0.1
+]
+]
+}

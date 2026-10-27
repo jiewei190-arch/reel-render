@@ -1,0 +1,100 @@
+{
+ "name": "leaf",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Why do leaves change **color** in fall?",
+   "Why do leaves change color in fall?"
+  ],
+  [
+   "Here's a surprise: the **orange** was in the leaf all along.",
+   "Here's a surprise. The orange was in the leaf all along."
+  ],
+  [
+   "In summer, leaves are packed with a green pigment called **chlorophyll.**",
+   "In summer, leaves are packed with a green pigment called chlorophyll."
+  ],
+  [
+   "It helps the leaf make **food from sunlight.**",
+   "It helps the leaf make food from sunlight."
+  ],
+  [
+   "Chlorophyll is green, and there's so much of it that it **covers up** everything else.",
+   "Chlorophyll is green, and there's so much of it that it covers up everything else."
+  ],
+  [
+   "Hiding underneath are **yellow and orange** pigments called carotenoids.",
+   "Hiding underneath are yellow and orange pigments called carotenoids."
+  ],
+  [
+   "They're a natural part of healthy leaves, **all summer long.**",
+   "They're a natural part of healthy leaves, all summer long."
+  ],
+  [
+   "Then autumn comes: **shorter days** and **cooler temperatures.**",
+   "Then autumn comes. Shorter days, and cooler temperatures."
+  ],
+  [
+   "The leaf makes less food, and **stops replacing** its chlorophyll.",
+   "The leaf makes less food, and stops replacing its chlorophyll."
+  ],
+  [
+   "The first frost makes the green **break down even faster.**",
+   "The first frost makes the green break down even faster."
+  ],
+  [
+   "The green fades, and the hidden yellow and orange are **unmasked!**",
+   "The green fades, and the hidden yellow and orange are unmasked!"
+  ],
+  [
+   "Same leaf, same pigments. The green just **stopped covering** them.",
+   "Same leaf, same pigments. The green just stopped covering them."
+  ],
+  [
+   "Now for the **reds.**",
+   "Now, for the reds."
+  ],
+  [
+   "Red and purple pigments called anthocyanins are **made new** in late summer and fall.",
+   "Red and purple pigments, called anthocyanins, are made new in late summer and fall."
+  ],
+  [
+   "It's largely a response to **stress,** like the first frost.",
+   "It's largely a response to stress, like the first frost."
+  ],
+  [
+   "The more anthocyanins, the **brighter the red.**",
+   "The more anthocyanins, the brighter the red."
+  ],
+  [
+   "That's why a forest becomes a mix of **green, yellow and red.**",
+   "That's why a forest becomes a mix of green, yellow, and red."
+  ],
+  [
+   "So yellow and orange leaves aren't changing. They're finally showing their **true colors.**",
+   "So yellow and orange leaves aren't changing. They're finally showing their true colors."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

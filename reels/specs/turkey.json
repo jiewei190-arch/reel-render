@@ -1,0 +1,99 @@
+{
+ "name": "turkey",
+ "voice": "am_michael",
+ "speed": 1.0,
+ "music": "jazz",
+ "bpm": 112,
+ "phrases": [
+  [
+   "Everybody says **turkey makes you sleepy.**",
+   "Everybody says turkey makes you sleepy."
+  ],
+  [
+   "After a big dinner, you just want a **nap.**",
+   "After a big dinner, you just want a nap."
+  ],
+  [
+   "The blame goes to a chemical called **tryptophan.**",
+   "The blame goes to a chemical called tryptophan."
+  ],
+  [
+   "Your body uses it to make **serotonin,** which helps regulate sleep.",
+   "Your body uses it to make serotonin, which helps regulate sleep."
+  ],
+  [
+   "Case closed? **Nope. It's a myth.**",
+   "Case closed? Nope. It's a myth."
+  ],
+  [
+   "Turkey has no more tryptophan than **chicken or beef.**",
+   "Turkey has no more tryptophan than chicken or beef."
+  ],
+  [
+   "Cheese and nuts actually have **even more.**",
+   "Cheese and nuts actually have even more."
+  ],
+  [
+   "And nobody blames the **cheese.**",
+   "And nobody blames the cheese."
+  ],
+  [
+   "So what really makes you sleepy? **The whole meal.**",
+   "So what really makes you sleepy? The whole meal."
+  ],
+  [
+   "Culprit number one: **a huge meal.** Eating a lot at once makes you tired.",
+   "Culprit number one: a huge meal. Eating a lot at once makes you tired."
+  ],
+  [
+   "Number two: **carbs.** Stuffing, bread, potatoes and pie.",
+   "Number two: carbs. Stuffing, bread, potatoes and pie."
+  ],
+  [
+   "They spike your blood sugar, and then comes the **sugar crash.**",
+   "They spike your blood sugar, and then comes the sugar crash."
+  ],
+  [
+   "Carbs also release insulin, which clears the way so **tryptophan can reach your brain.**",
+   "Carbs also release insulin, which clears the way so tryptophan can reach your brain."
+  ],
+  [
+   "Number three: **a drink or two.** Alcohol makes you drowsy.",
+   "Number three: a drink or two. Alcohol makes you drowsy."
+  ],
+  [
+   "Big meal, carbs and alcohol. **That's the real trio.**",
+   "Big meal, carbs and alcohol. That's the real trio."
+  ],
+  [
+   "So the turkey is **innocent.**",
+   "So the turkey is innocent."
+  ],
+  [
+   "Does turkey make you sleepy? **Not by itself.**",
+   "Does turkey make you sleepy? Not by itself."
+  ],
+  [
+   "Next time you get drowsy after dinner, **blame the whole meal.**",
+   "Next time you get drowsy after dinner, blame the whole meal."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  1,
+  3,
+  4,
+  6,
+  7,
+  8,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

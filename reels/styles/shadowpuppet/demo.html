@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Cormorant Garamond';src:url(fonts/CormorantGaramond-Italic.ttf);font-style:italic;font-weight:300 700}
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#1a0d06}canvas{display:block;width:540px;height:960px}
+</style></head><body><canvas id="c"></canvas>
+<script type="module">
+import { createSP, sun, moon, earth, person, hill, plaque, tag, dye, rod, placard } from './shadowpuppet.js';
+await document.fonts.load('italic 700 60px "Cormorant Garamond"');
+const R = createSP(document.getElementById('c')), g = R.g;
+const scene = new URLSearchParams(location.search).get('scene') || 'lineup';
+window.seek = t => { R.begin(t); R.cam(1, 540, 820);
+  if (scene === 'lineup') { sun(g, 190, 820, 190, t); rod(g, 190, 1010); moon(g, 610, 820, 52, t); rod(g, 610, 872); earth(g, 880, 820, 120, t); rod(g, 880, 940); plaque(g, 540, 330, 860, 150, ['SHADOW PUPPETS'], 80); }
+  else { hill(g, 1250); person(g, 540, 1285, 1.5, t); sun(g, 540, 620, 175, t); moon(g, 540, 620, 187, t, { dark: 1 }); R.dim = .9; }
+  R.finish(); placard(R.main, 'A **storyteller’s** placard, lit by an **oil lamp.**'); };
+window.seek(0); window.ready = true;
+</script></body></html>

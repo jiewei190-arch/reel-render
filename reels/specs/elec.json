@@ -1,0 +1,104 @@
+{
+ "name": "elec",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Electrons in a wire crawl at about **23 micrometers per second.**",
+   "Electrons in a wire crawl at about twenty three micrometers per second."
+  ],
+  [
+   "Yet flip a switch, and the light turns on **instantly.**",
+   "Yet flip a switch, and the light turns on instantly."
+  ],
+  [
+   "So what's **really** going on?",
+   "So what's really going on?"
+  ],
+  [
+   "It starts at a power plant, which burns fuel to boil water into **steam.**",
+   "It starts at a power plant, which burns fuel to boil water into steam."
+  ],
+  [
+   "The steam spins a **turbine,** and the turbine spins a **magnet** inside coils of wire.",
+   "The steam spins a turbine, and the turbine spins a magnet inside coils of wire."
+  ],
+  [
+   "A moving magnet pushes the electrons in the wire. That's a **generator.**",
+   "A moving magnet pushes the electrons in the wire. That's a generator."
+  ],
+  [
+   "It doesn't make energy. It **converts motion** into electricity.",
+   "It doesn't make energy. It converts motion into electricity."
+  ],
+  [
+   "Those electrons are **already in the wire,** like water in a full pipe.",
+   "Those electrons are already in the wire, like water in a full pipe."
+  ],
+  [
+   "Push water in one end, and water pops out the other **right away.**",
+   "Push water in one end, and water pops out the other right away."
+  ],
+  [
+   "The electrons barely move, but the **signal** travels at roughly **the speed of light.**",
+   "The electrons barely move, but the signal travels at roughly the speed of light."
+  ],
+  [
+   "So what carries the **energy?**",
+   "So what carries the energy?"
+  ],
+  [
+   "Physicists found it flows through the **space around the wire.**",
+   "Physicists found it flows through the space around the wire."
+  ],
+  [
+   "Right next to the wire, it points **inward,** into the wire.",
+   "Right next to the wire, it points inward, into the wire."
+  ],
+  [
+   "Why do power lines use **high voltage?**",
+   "Why do power lines use high voltage?"
+  ],
+  [
+   "For the same power, higher voltage means **less current.**",
+   "For the same power, higher voltage means less current."
+  ],
+  [
+   "And heat lost in a wire grows with the **square** of the current.",
+   "And heat lost in a wire grows with the square of the current."
+  ],
+  [
+   "So **step-up transformers** raise the voltage before power travels far.",
+   "So step-up transformers raise the voltage before power travels far."
+  ],
+  [
+   "Even so, about **six percent** of US electricity is lost on the way.",
+   "Even so, about six percent of US electricity is lost on the way."
+  ],
+  [
+   "Remember: electrons **barely move,** the energy flows **around the wire,** and high voltage saves energy.",
+   "Remember: electrons barely move, the energy flows around the wire, and high voltage saves energy."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

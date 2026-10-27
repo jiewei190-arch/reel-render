@@ -1,0 +1,104 @@
+{
+ "name": "reactor",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "A nuclear power plant is basically a **very fancy kettle.**",
+   "A nuclear power plant is basically a very fancy kettle."
+  ],
+  [
+   "It boils water into **steam** that spins a turbine and makes electricity.",
+   "It boils water into steam that spins a turbine and makes electricity."
+  ],
+  [
+   "The only difference is **how it makes the heat.**",
+   "The only difference is how it makes the heat."
+  ],
+  [
+   "Instead of burning something, it **splits atoms.**",
+   "Instead of burning something, it splits atoms."
+  ],
+  [
+   "The fuel is **uranium,** in small ceramic pellets.",
+   "The fuel is uranium, in small ceramic pellets."
+  ],
+  [
+   "The pellets go into **metal rods,** bundled into assemblies.",
+   "The pellets go into metal rods, bundled into assemblies."
+  ],
+  [
+   "When **uranium-235** splits, it releases energy and neutrons.",
+   "When uranium two thirty five splits, it releases energy and neutrons."
+  ],
+  [
+   "Those neutrons can **split other atoms.**",
+   "Those neutrons can split other atoms."
+  ],
+  [
+   "That keeps a **chain reaction** going, and the heat keeps coming.",
+   "That keeps a chain reaction going, and the heat keeps coming."
+  ],
+  [
+   "A **moderator,** usually water, slows the neutrons down.",
+   "A moderator, usually water, slows the neutrons down."
+  ],
+  [
+   "**Control rods** soak up neutrons.",
+   "Control rods soak up neutrons."
+  ],
+  [
+   "Lower them to **slow the reaction.** Raise them to speed it up.",
+   "Lower them to slow the reaction. Raise them to speed it up."
+  ],
+  [
+   "Water flows through the core and **carries the heat away.**",
+   "Water flows through the core and carries the heat away."
+  ],
+  [
+   "Natural uranium has **less than 1 percent** uranium-235.",
+   "Natural uranium has less than one percent uranium two thirty five."
+  ],
+  [
+   "Reactor fuel is enriched to **3 to 5 percent.**",
+   "Reactor fuel is enriched to three to five percent."
+  ],
+  [
+   "According to the World Nuclear Association, a power reactor **cannot explode like a nuclear bomb.**",
+   "According to the World Nuclear Association, a power reactor cannot explode like a nuclear bomb."
+  ],
+  [
+   "Used fuel is kept in **water-filled pools,** at or near the reactor, that cool it and shield the radiation.",
+   "Used fuel is kept in water-filled pools, at or near the reactor, that cool it and shield the radiation."
+  ],
+  [
+   "According to the World Nuclear Association, nuclear supplied about **9 percent** of world electricity in 2025.",
+   "According to the World Nuclear Association, nuclear supplied about nine percent of world electricity in 2025."
+  ],
+  [
+   "So a nuclear plant is a kettle, **powered by atoms.**",
+   "So a nuclear plant is a kettle, powered by atoms."
+  ],
+  [
+   "Subscribe for more of **how it really works.**",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}

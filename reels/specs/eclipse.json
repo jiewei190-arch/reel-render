@@ -1,0 +1,92 @@
+{
+ "name": "eclipse",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "The Moon can **hide the Sun** in the middle of the day.",
+   "The Moon can hide the Sun in the middle of the day."
+  ],
+  [
+   "It's called a **solar eclipse,** and here's how it really works.",
+   "It's called a solar eclipse, and here's how it really works."
+  ],
+  [
+   "Picture the **Sun,** the **Moon,** and the **Earth** in a row.",
+   "Picture the Sun, the Moon, and the Earth in a row."
+  ],
+  [
+   "When the Moon slides **between** us and the Sun, it casts a **shadow** on Earth.",
+   "When the Moon slides between us and the Sun, it casts a shadow on Earth."
+  ],
+  [
+   "That shadow has two parts. A dark inner part called the **umbra.**",
+   "That shadow has two parts. A dark inner part called the umbra."
+  ],
+  [
+   "And a fainter outer part, the **penumbra,** where the Sun is only **partly covered.**",
+   "And a fainter outer part, the penumbra, where the Sun is only partly covered."
+  ],
+  [
+   "Stand in the umbra, and the Sun is **completely covered.** That's **totality.**",
+   "Stand in the umbra, and the Sun is completely covered. That's totality."
+  ],
+  [
+   "But the umbra is small. Its path is usually under **fifty miles wide,** and totality lasts just a **few minutes.**",
+   "But the umbra is small. Its path is usually under fifty miles wide, and totality lasts just a few minutes."
+  ],
+  [
+   "So why does the Moon cover the Sun so **perfectly?**",
+   "So why does the Moon cover the Sun so perfectly?"
+  ],
+  [
+   "The Sun is about **four hundred times wider** than the Moon, and about **four hundred times farther away.**",
+   "The Sun is about four hundred times wider than the Moon, and about four hundred times farther away."
+  ],
+  [
+   "So from Earth, they look almost the **same size.**",
+   "So from Earth, they look almost the same size."
+  ],
+  [
+   "During totality, the sky goes dark, the air cools, and the glowing **corona** shows up around the Moon.",
+   "During totality, the sky goes dark, the air cools, and the glowing corona shows up around the Moon."
+  ],
+  [
+   "So why isn't there an eclipse **every month?**",
+   "So why isn't there an eclipse every month?"
+  ],
+  [
+   "The Moon's orbit is **tilted** about five degrees, so most new moons pass **above or below** the Sun.",
+   "The Moon's orbit is tilted about five degrees, so most new moons pass above or below the Sun."
+  ],
+  [
+   "Eclipses can only happen in **eclipse seasons,** about **twice a year.**",
+   "Eclipses can only happen in eclipse seasons, about twice a year."
+  ],
+  [
+   "One safety rule: use real **eclipse glasses,** not sunglasses. Experts say take them off only during **totality.**",
+   "One safety rule: use real eclipse glasses, not sunglasses. Experts say take them off only during totality."
+  ],
+  [
+   "So the Moon doesn't switch off the Sun. It just **hides it** for a moment.",
+   "So the Moon doesn't switch off the Sun. It just hides it for a moment."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  6,
+  10,
+  11,
+  13,
+  15
+ ]
+}

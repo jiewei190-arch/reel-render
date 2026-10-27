@@ -1,0 +1,86 @@
+{
+ "name": "dna",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  5,
+  7,
+  10,
+  12,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "How can a **distant cousin's** DNA catch a killer?",
+   "How can a distant cousin's DNA catch a killer?"
+  ],
+  [
+   "After **decades** unidentified, a man was arrested in 2018.",
+   "After decades unidentified, a man was arrested in 2018."
+  ],
+  [
+   "Step one: **DNA** from several crime scenes.",
+   "Step one: DNA from several crime scenes."
+  ],
+  [
+   "Step two: upload it to **GEDmatch,** a public genealogy website.",
+   "Step two: upload it to GEDmatch, a public genealogy website."
+  ],
+  [
+   "The site shows **how much DNA** people share, which estimates how closely they're related.",
+   "The site shows how much DNA people share, which estimates how closely they're related."
+  ],
+  [
+   "One report says it returned **over a thousand** genetic cousins.",
+   "One report says it returned over a thousand genetic cousins."
+  ],
+  [
+   "Step three: genealogists build **family trees** from census, vital records, and obituaries.",
+   "Step three: genealogists build family trees from census, vital records, and obituaries."
+  ],
+  [
+   "That narrowed it to **six men** in California.",
+   "That narrowed it to six men in California."
+  ],
+  [
+   "Step four: DMV records showed **only one** had the killer's eye color.",
+   "Step four: DMV records showed only one had the killer's eye color."
+  ],
+  [
+   "Step five: investigators collected a **tissue** he threw away.",
+   "Step five: investigators collected a tissue he threw away."
+  ],
+  [
+   "Lab testing **matched** it to the crime-scene samples.",
+   "Lab testing matched it to the crime-scene samples."
+  ],
+  [
+   "He was arrested on **April twenty-fourth, twenty eighteen.**",
+   "He was arrested on April twenty-fourth, twenty eighteen."
+  ],
+  [
+   "In **June twenty twenty,** he pleaded guilty to **thirteen murder counts.**",
+   "In June twenty twenty, he pleaded guilty to thirteen murder counts."
+  ],
+  [
+   "Privacy critics say relatives **never agreed** to police searches.",
+   "Privacy critics say relatives never agreed to police searches."
+  ],
+  [
+   "In **twenty nineteen,** the site made police searches **opt-in.**",
+   "In twenty nineteen, the site made police searches opt-in."
+  ],
+  [
+   "Recap: **DNA,** a public database, **family trees,** a lab match.",
+   "Recap: DNA, a public database, family trees, a lab match."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

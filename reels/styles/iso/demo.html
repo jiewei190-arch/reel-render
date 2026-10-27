@@ -1,0 +1,118 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts/fonts.css">
+<script type="importmap">{"imports":{"three":"../../node_modules/three/build/three.module.js"}}</script>
+<style>
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#FBF4EA;font-family:'Poppins',sans-serif}
+#root{position:absolute;inset:0;
+  background:
+   radial-gradient(ellipse 80% 55% at 50% 52%, #FFF9F0 0%, rgba(255,249,240,0) 70%),
+   radial-gradient(circle at 1.6px 1.6px, #E9DCC9 1.6px, transparent 1.9px) 0 0/22px 22px,
+   #FBF4EA;}
+#gl{position:absolute;inset:0}
+.title{position:absolute;left:0;right:0;text-align:center;font-family:'Fredoka';color:#3A2E44;}
+#kicker{top:92px;font-size:24px;font-weight:600;letter-spacing:.16em;color:#8C7A9A}
+#big{top:120px;font-size:84px;font-weight:600;line-height:1;letter-spacing:.02em}
+#big b{color:#FF6F8E;font-weight:600}
+#tag2{top:96px;font-size:44px;font-weight:600;line-height:1.08}
+#tag2 b{color:#4F7BEA;font-weight:600}
+.isolabel{position:absolute;white-space:nowrap;font-family:'Fredoka';font-weight:600;font-size:21px;color:#3A2E44;
+  background:#FFF7EC;border:2px solid #3A2E44;border-radius:12px;padding:5px 12px 6px;box-shadow:0 3px 0 #3A2E44}
+.isolabel small{display:block;font-family:'Poppins';font-weight:500;font-size:13px;color:#7A6A86;letter-spacing:.02em;margin-top:-1px}
+.isolabel.blue{background:#E6F0FF}
+.isolabel.pink{background:#FFE8EF}
+.isorow{position:absolute;left:0;right:0;top:226px;display:flex;justify-content:center;gap:16px}
+.isorow img{width:74px;height:74px;filter:drop-shadow(0 5px 0 rgba(58,46,68,.18))}
+#sub{position:absolute;left:34px;right:34px;bottom:70px;display:flex;align-items:center;gap:12px;justify-content:center;
+  background:#FFF7EC;border:2px solid #3A2E44;border-radius:16px;padding:12px 18px;font-size:23px;font-weight:600;color:#3A2E44;box-shadow:0 4px 0 #3A2E44}
+#sub i{display:inline-block;width:18px;height:18px;flex:none;background:linear-gradient(135deg,#FFB9A8 50%,#E06A55 50%);transform:rotate(45deg);border-radius:3px}
+</style></head>
+<body><div id="root"><div id="gl"></div>
+<div class="title" id="kicker">WEIRD BUT TRUE</div>
+<div class="title" id="big">3 <b>HEARTS</b></div>
+<div class="title" id="tag2">Inside an octopus:<br><b>3 hearts</b>, blue blood</div>
+<div id="sub"><i></i><span id="subt"></span></div>
+</div>
+<script type="module">
+import { THREE, makeStage, block, hollowBox, lidOpen, cutaway, sprite, popScale, lattice, vial, makeOverlay, isotypeRow, loadTex, PAL, ease, backOut, ramp, clamp } from './iso.js';
+const F = '../../img/fluent/';
+const root = document.getElementById('root');
+const st = makeStage(document.getElementById('gl'));
+const ov = makeOverlay(root);
+const [tOct, tHeart, tDrop] = await Promise.all([loadTex(F + 'octopus.png'), loadTex(F + 'red_heart.png'), loadTex(F + 'droplet.png')]);
+await document.fonts.ready;
+
+// The board: a floating slab with strata on its front faces.
+const S = st.scene;
+const board = new THREE.Group(); S.add(board);
+const slab = block(7, .5, 7, PAL.board); slab.position.y = -.5; board.add(slab);
+const sea = block(7, .32, 7, PAL.sky); sea.position.y = -.82; board.add(sea);
+const deep = block(7, .3, 7, '#6FA6E0'); deep.position.y = -1.12; board.add(deep);
+board.add(lattice(3.3, .55, 0, '#E3D2BA'));
+// A soft shadow under the board.
+const sh = new THREE.Mesh(new THREE.CircleGeometry(5.6, 48), new THREE.MeshBasicMaterial({ color: '#3A2E44', transparent: true, opacity: .07 }));
+sh.rotation.x = -Math.PI / 2; sh.position.y = -1.6; S.add(sh);
+
+// The body box (the octopus's "mantle", cut open).
+const box = hollowBox(3.2, 1.9, 3.2, PAL.lav, '#6A5689'); S.add(box);
+// The hearts: 1 main (systemic) heart in the centre and 2 gill (branchial) hearts on the sides.
+const hMain = sprite(tHeart, 1.25); hMain.position.set(0, .14, 0); box.add(hMain);
+const hG1 = sprite(tHeart, .8); hG1.position.set(-.95, .14, .95); box.add(hG1);
+const hG2 = sprite(tHeart, .8); hG2.position.set(.95, .14, -.95); box.add(hG2);
+// Gills: two little mint pads under the gill hearts.
+const g1 = block(.9, .12, .9, PAL.mint); g1.position.set(-.95, .12, .95); box.add(g1);
+const g2 = block(.9, .12, .9, PAL.mint); g2.position.set(.95, .12, -.95); box.add(g2);
+
+// The octopus mascot.
+const oct = sprite(tOct, 4.6); S.add(oct);
+// The vial of blue blood.
+const vl = vial(.42, 1.7, '#3F78F0', .72); S.add(vl);
+const drop = sprite(tDrop, .7); S.add(drop);
+
+const Lmain = ov.label('1 main heart<small>pumps blood to the body</small>', 'R', 150, 34, 'pink');
+const Lgill = ov.label('2 gill hearts<small>push blood through the gills</small>', 'C', -150, 0, 'pink');
+const Lblue = ov.label('Blue blood<small>copper-based (hemocyanin)</small>', 'C', -215, 0, 'blue');
+const row = isotypeRow(root, F + 'red_heart.png', 3);
+
+const subs = [[0, 3.4, 'An octopus has <b>three</b> hearts.'], [3.4, 5.6, 'Let\'s look inside…'], [5.6, 7.4, 'Two pump blood through the gills…'], [7.4, 99, '…and its blood is <b style="color:#4F7BEA">blue</b>.']];
+const $ = id => document.getElementById(id);
+window.DUR = 10;
+window.seek = (t) => {
+  // Camera: the hook is a close push on the octopus, then it eases out to the diorama.
+  const k = ease(ramp(t, 3.0, 1.6));
+  const zoom = 11.5 + (17.5 - 11.5) * k;
+  st.setCam(zoom, 0, .4 + 1.0 * (1 - k), 0, -0.6 * k + 1.1 * (1 - k) + 0.04 * Math.sin(t * .8));
+  // Hook: the octopus big, front and centre, with a gentle bob.
+  const ok = backOut(ramp(t, .1, .55));
+  const bob = Math.sin(t * 2.2) * .08;
+  // It moves to the back-left and shrinks during the transition.
+  oct.position.set(-3.0 * k, 0 + bob, 0.6 * k);
+  oct.userData.base = 4.6 - 1.6 * k; popScale(oct, ramp(t, .1, .55));
+  oct.material.rotation = Math.sin(t * 1.7) * .05;
+  // The board and box.
+  board.position.y = -0.01;
+  const bk = ramp(t, 3.95, .6); box.visible = bk > 0; box.position.y = -3 * (1 - backOut(bk));
+  lidOpen(box, ramp(t, 4.6, .8));
+  cutaway(box, ramp(t, 5.2, .8));
+  popScale(hMain, ramp(t, 5.9, .45)); popScale(hG1, ramp(t, 6.2, .45)); popScale(hG2, ramp(t, 6.35, .45));
+  [hMain, hG1, hG2].forEach((h, i) => { if (h.visible) { const b = 1 + .06 * Math.max(0, Math.sin((t - 6.6 - i * .12) * 7.5)); h.scale.multiplyScalar(b); } });
+  // The vial rises in on the right.
+  const vk = backOut(ramp(t, 7.3, .6)); vl.visible = vk > 0; vl.position.set(2.75, 0, -.4); vl.scale.setScalar(Math.max(.001, vk));
+  drop.position.set(2.75, 2.0 + .1 * Math.sin(t * 3), -.4); popScale(drop, ramp(t, 7.8, .4));
+  // Titles.
+  const tk = ramp(t, .25, .5), tOut = ramp(t, 3.0, .5);
+  $('kicker').style.opacity = tk * (1 - tOut); $('big').style.opacity = tk * (1 - tOut);
+  $('big').style.transform = `scale(${.8 + .2 * backOut(tk)})`;
+  row.set(t, 1.0); row.style.opacity = 1 - tOut;
+  const t2 = ramp(t, 3.6, .5); $('tag2').style.opacity = t2; $('tag2').style.transform = `translateY(${(1 - ease(t2)) * 16}px)`;
+  // Labels follow their 3D anchors.
+  const wp = (o, y = 0) => { const v = new THREE.Vector3(); o.getWorldPosition(v); v.y += y; return st.project(v); };
+  st.renderer.render(S, st.cam);
+  Lmain.at(wp(hMain, 1.0), ramp(t, 6.6, .7));
+  Lgill.at(wp(hG1, .05), ramp(t, 6.9, .7));
+  Lblue.at(wp(vl, .15), ramp(t, 8.0, .7));
+  const s = subs.find(s => t >= s[0] && t < s[1]); $('subt').innerHTML = s[2];
+};
+window.seek(0);
+window.ready = true;
+</script></body></html>

@@ -1,0 +1,100 @@
+{
+ "name": "fla",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 96,
+ "phrases": [
+  [
+   "Baby flamingos hatch **fluffy and grey.**",
+   "Baby flamingos hatch fluffy and grey."
+  ],
+  [
+   "Even their pink little legs turn **black** within a week.",
+   "Even their pink little legs turn black within a week."
+  ],
+  [
+   "So where does all that **pink** come from?",
+   "So where does all that pink come from?"
+  ],
+  [
+   "Their **food.**",
+   "Their food."
+  ],
+  [
+   "Flamingos eat tiny **algae** and **brine shrimp.**",
+   "Flamingos eat tiny algae and brine shrimp."
+  ],
+  [
+   "Those are packed with natural pigments called **carotenoids.**",
+   "Those are packed with natural pigments called carotenoids."
+  ],
+  [
+   "The algae make them. The shrimp eat the algae. **The flamingo eats the shrimp.**",
+   "The algae make them. The shrimp eat the algae. The flamingo eats the shrimp."
+  ],
+  [
+   "The same family of pigment that makes **carrots orange.**",
+   "The same family of pigment that makes carrots orange."
+  ],
+  [
+   "Inside the flamingo, they get broken down into **pink and orange.**",
+   "Inside the flamingo, they get broken down into pink and orange."
+  ],
+  [
+   "Then that color goes into **new feathers,** legs and beaks as they grow.",
+   "Then that color goes into new feathers, legs and beaks as they grow."
+  ],
+  [
+   "Eat the pigment, stay pink. **Stop, and the pink fades.**",
+   "Eat the pigment, stay pink. Stop, and the pink fades."
+  ],
+  [
+   "That's why zoos add pigment to flamingo food, to keep them **in the pink.**",
+   "That's why zoos add pigment to flamingo food, to keep them in the pink."
+  ],
+  [
+   "Here's the **sweet part.**",
+   "Here's the sweet part."
+  ],
+  [
+   "Both parents feed their chick a special **crop milk** from their throat.",
+   "Both parents feed their chick a special crop milk from their throat."
+  ],
+  [
+   "Making it **drains their color,** so parents can turn pale.",
+   "Making it drains their color, so parents can turn pale."
+  ],
+  [
+   "Once the chick eats on its own, the parents' **pink comes back.**",
+   "Once the chick eats on its own, the parents' pink comes back."
+  ],
+  [
+   "Grey chick, pink parents, same bird. **The only difference is the menu.**",
+   "Grey chick, pink parents, same bird. The only difference is the menu."
+  ],
+  [
+   "So flamingos aren't born pink. **They eat their way there.**",
+   "So flamingos aren't born pink. They eat their way there."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  7,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ]
+}

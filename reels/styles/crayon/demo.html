@@ -1,0 +1,228 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>crayon demo</title>
+<style>
+@font-face{font-family:'Patrick Hand';src:url(fonts/PatrickHand-Regular.ttf)}
+@font-face{font-family:'Gaegu';font-weight:700;src:url(fonts/Gaegu-Bold.ttf)}
+html,body{margin:0;background:#f4efe3;overflow:hidden}
+canvas{width:540px;height:960px;display:block}
+</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import * as K from './crayon.js';
+const { line, fill, dab, wash, text, subtitle, knock, ellipse, handCircle, fluff, bez, smooth, tube, xf, prog, clamp, lerp, hash } = K;
+
+// ── crayon box (one dark outline colour, never black) ──
+const P = { out: '#4a2f5c', pink: '#ff6f9c', pink2: '#ee4f80', coral: '#ff8a5c', grey: '#a6abb3', grey2: '#737886',
+  mud: '#c08a5e', lemon: '#ffd34d', teal: '#4cb8c4', green: '#86c96f', white: '#ffffff', blush: '#ff9fbb', cream: '#ffe6ea' };
+
+const R = K.createCrayon(document.getElementById('c'), { wash: [0.50, 0.76, 0.90] });
+const scene = new URLSearchParams(location.search).get('scene') || 'hook';
+const TEASE = scene === 'teaser';
+
+// split a closed outline into the parts that lie outside some circles (simple occlusion for outlines)
+function outside(pts, circles) {
+  const segs = []; let cur = [];
+  for (const p of pts) { const hid = circles.some(([cx, cy, r]) => Math.hypot(p[0] - cx, p[1] - cy) < r); if (hid) { if (cur.length > 1) segs.push(cur); cur = []; } else cur.push(p); }
+  if (cur.length > 1) segs.push(cur); return segs;
+}
+function pip(p, poly) { let c = false; for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) { const a = poly[i], b = poly[j]; if ((a[1] > p[1]) !== (b[1] > p[1]) && p[0] < (b[0] - a[0]) * (p[1] - a[1]) / (b[1] - a[1]) + a[0]) c = !c; } return c; }
+function outsideP(pts, polys) {
+  const segs = []; let cur = [];
+  for (const p of pts) { if (polys.some(q => pip(p, q))) { if (cur.length > 1) segs.push(cur); cur = []; } else cur.push(p); }
+  if (cur.length > 1) segs.push(cur); return segs;
+}
+const T = (pts, o, s) => pts.map(([x, y]) => [o[0] + x * s, o[1] + y * s]);
+
+// ── shared background: far shore + lagoon with white-wax ripples revealed by the wash ──
+function lagoon(top, t0) {
+  const shore = []; for (let x = -20; x <= 1100; x += 20) shore.push([x, top - 40 - 26 * Math.abs(Math.sin(x / 140)) - 14 * Math.sin(x / 61)]);
+  const hills = [...shore, [1100, top + 4], [-20, top + 4]];
+  fill(R.bg, hills, { col: P.green, p: .55, gap: 11, w: 12, seed: 21, t0, dur: .5 });
+  line(R.bg, shore, { col: P.out, w: 5, p: .7, seed: 22, t0, dur: .5 });
+  const wl = []; for (let x = -20; x <= 1100; x += 15) wl.push([x, top + 6 * Math.sin(x / 50)]);
+  line(R.bg, wl, { col: P.out, w: 5.5, p: .75, seed: 23, t0: t0 + .1, dur: .5 });
+  const water = [...wl, [1100, 1940], [-20, 1940]];
+  fill(R.bg, water, { col: P.teal, p: .32, gap: 14, w: 12, ang: .08, seed: 24, t0: t0 + .2, dur: .6 });
+  // white wax ripples: invisible on paper, appear when the wash passes (wax resist)
+  for (let k = 0; k < 9; k++) {
+    const y = top + 60 + k * 62 + 20 * hash(k), x = 80 + 820 * hash(k * 3.1), wdt = 90 + 90 * hash(k * 7.7);
+    line(R.bg, bez([[x, y], [x + wdt * .3, y - 12], [x + wdt * .6, y + 12], [x + wdt, y]]), { col: P.white, w: 9, p: 1, seed: 40 + k });
+  }
+  wash(R.wash, water, { p: .5, t0: t0 + .5, dur: .8 });
+}
+
+// ── an original flamingo: origin = standing foot; faces left. pink: 0..1 colouring progress ──
+function flamingo(o, s, { pink = 1, t0 = 0, dur = 1, happy = false, seed = 1, fgL = R.fg } = {}) {
+  const w = v => Math.max(2.5, v * Math.max(s, .45));
+  const body = T(ellipse(40, -560, 200, 125, 64, 0, Math.PI * 2, -.12), o, s);
+  const neckC = smooth(T([[-110, -600], [-215, -690], [-170, -810], [-95, -905], [-110, -1015], [-165, -1085]], o, s), 8, false);
+  const neck = tube(neckC, u => (34 - 8 * u) * s);
+  const head = [o[0] - 178 * s, o[1] - 1112 * s, 64 * s];
+  const beakC = smooth(T([[-225, -1100], [-292, -1086], [-334, -1050], [-347, -1000]], o, s), 8, false);
+  const beak = tube(beakC, u => (27 - 17 * u) * s);
+  const tip = tube(beakC.slice(Math.floor(beakC.length * .6)), u => (16 - 8 * u) * s);
+  const wing = smooth(T([[-70, -598], [60, -655], [195, -605], [150, -540], [20, -528]], o, s), 8);
+  const tail = smooth(T([[205, -640], [290, -650], [262, -612], [300, -600], [240, -575]], o, s), 6);
+  const legA = smooth(T([[35, -440], [44, -250], [58, -228], [42, -10]], o, s), 8, false);
+  const legB = smooth(T([[95, -445], [205, -330], [120, -300]], o, s), 8, false);
+  const L = fgL, d = dur;
+  // knock out the silhouette so background crayon/wash never shows through
+  if (L !== R.bg) { [body, neck, beak].forEach(p => knock(R.knock, p)); knock(R.knock, handCircle(head[0], head[1], head[2] * 1.02, seed)); }
+  // colouring (the action): body → neck (bottom-up) → head
+  const pb = clamp(pink * 3), pn = clamp(pink * 3 - 1), ph = clamp(pink * 3 - 2);
+  fill(L, body, { col: P.pink, p: .82, gap: 8 * Math.max(s, .5), w: 10 * Math.max(s, .5), seed: seed + 1, draw: pb, cross: s > .6 });
+  fill(L, tail, { col: P.pink2, p: .85, gap: 6, w: 8, seed: seed + 2, draw: pb });
+  fill(L, neck, { col: P.pink, p: .85, gap: 7 * Math.max(s, .5), w: 9 * Math.max(s, .5), ang: 1.35, rev: true, seed: seed + 3, draw: pn });
+  fill(L, handCircle(head[0], head[1], head[2], seed + 4), { col: P.pink, p: .85, gap: 7, w: 9, seed: seed + 4, draw: ph });
+  fill(L, wing, { col: P.pink2, p: .9, gap: 7, w: 9, ang: .2, seed: seed + 5, draw: pb });
+  fill(L, beak, { col: P.cream, p: .9, gap: 5, w: 7, seed: seed + 6 });
+  fill(L, tip, { col: P.out, p: 1, gap: 3, w: 8, over: 2, ang: 2.2, seed: seed + 7, cross: true });
+  // outlines
+  const occl = [[head[0], head[1], head[2] * .97]];
+  const headC = handCircle(head[0], head[1], head[2] * .97, seed);
+  outsideP(neck, [headC, ellipse(o[0] + 40 * s, o[1] - 560 * s, 196 * s, 121 * s, 64, 0, Math.PI * 2, -.12)]).forEach((sg, i) => line(L, sg, { w: w(7), seed: seed + 10 + i, t0, dur: d * .5 }));
+  line(L, handCircle(head[0], head[1], head[2], seed + 4), { w: w(7.5), seed: seed + 14, t0: t0 + d * .3, dur: d * .3 });
+  const bodyVis = outsideP(body, [tube(neckC, u => (31 - 8 * u) * s)]);
+  bodyVis.forEach((sg, i) => line(L, sg, { w: w(8), seed: seed + 20 + i, t0, dur: d * .5 }));
+  line(L, beak, { w: w(6), seed: seed + 15, t0: t0 + d * .4, dur: d * .3 });
+  line(L, wing.slice(0, Math.floor(wing.length * .6)), { w: w(6), seed: seed + 16, t0: t0 + d * .5, dur: d * .3 });
+  line(L, tail, { w: w(6), seed: seed + 17, t0: t0 + d * .5, dur: d * .3 });
+  line(L, legA, { col: P.pink2, w: w(13), p: .95, seed: seed + 18, t0: t0 + d * .6, dur: d * .3 });
+  line(L, legB, { col: P.pink2, w: w(13), p: .95, seed: seed + 19, t0: t0 + d * .6, dur: d * .3 });
+  // face
+  const ex = head[0] - 6 * s, ey = head[1] - 12 * s;
+  if (s > .5) {
+    if (happy) line(L, bez([[ex - 16 * s, ey + 4 * s], [ex - 8 * s, ey - 12 * s], [ex + 8 * s, ey - 12 * s], [ex + 16 * s, ey + 4 * s]]), { w: w(7), seed: seed + 30, t0: t0 + d * .8, dur: .2 });
+    else { dab(L, ex, ey, 12 * s, { col: P.out, seed: seed + 31 }); dab(L, ex + 4 * s, ey - 5 * s, 4 * s, { col: P.white, p: 1, seed: seed + 32 }); }
+    dab(L, head[0] + 28 * s, head[1] + 22 * s, 17 * s, { col: P.pink2, p: .6, seed: seed + 33 });
+  } else dab(L, ex, ey, Math.max(4, 12 * s), { col: P.out, seed: seed + 31 });
+  return { head, beakTip: beakC[beakC.length - 1], neckC };
+}
+
+// ── shrimp (original, cute) ──
+function shrimp(L, x, y, s, rot, seed, t0 = 0) {
+  const c = []; for (let i = 0; i <= 16; i++) { const a = -1.25 + i / 16 * 2.75; c.push([Math.cos(a) * 46, Math.sin(a) * 46]); }
+  const C = xf(c, { x, y, r: rot, s });
+  const hw = u => (24 - 15 * Math.pow(u, .8) + (u < .15 ? 3 * (1 - u / .15) : 0)) * s;
+  const body = tube(C, hw);
+  knock(R.knock, body);
+  fill(L, body, { col: P.coral, p: .92, gap: 5, w: 7, ang: rot + 1.2, seed, t0, dur: .4 });
+  // segment bands
+  for (let k = 4; k < 15; k += 2) { const a = C[k], b = C[k + 1], nx = -(b[1] - a[1]), ny = b[0] - a[0], n = Math.hypot(nx, ny), h = hw(k / 16);
+    line(L, [[a[0] + nx / n * h * .85, a[1] + ny / n * h * .85], [a[0] - nx / n * h * .85, a[1] - ny / n * h * .85]], { col: '#e8643a', w: 3.5, p: .8, seed: seed + k, t0: t0 + .3, dur: .2 });
+    if (k < 12) line(L, [[a[0] - nx / n * h, a[1] - ny / n * h], [a[0] - nx / n * (h + 14 * s), a[1] - ny / n * (h + 14 * s)]], { col: P.coral, w: 3.5, p: .9, seed: seed + 40 + k }); }
+  line(L, body, { w: 5 * Math.max(s, .6), seed: seed + 1, closed: true, t0, dur: .4 });
+  // tail fan
+  const e = C[C.length - 1], e2 = C[C.length - 3], ta = Math.atan2(e[1] - e2[1], e[0] - e2[0]);
+  const fan = [[e[0], e[1]], [e[0] + Math.cos(ta - .6) * 26 * s, e[1] + Math.sin(ta - .6) * 26 * s], [e[0] + Math.cos(ta) * 18 * s, e[1] + Math.sin(ta) * 18 * s], [e[0] + Math.cos(ta + .6) * 26 * s, e[1] + Math.sin(ta + .6) * 26 * s]];
+  knock(R.knock, fan); fill(L, fan, { col: P.coral, p: .95, gap: 4, w: 5, seed: seed + 23 }); line(L, fan, { w: 4, seed: seed + 24, closed: true });
+  // head: eye + antennae sweeping back over the body
+  const h = C[0], h1 = C[2], hd = Math.atan2(h[1] - h1[1], h[0] - h1[0]);
+  dab(L, h[0] - Math.cos(hd) * 6 * s + Math.cos(hd + 1.57) * 8 * s, h[1] - Math.sin(hd) * 6 * s + Math.sin(hd + 1.57) * 8 * s, 5 * Math.max(s, .75), { col: P.out, seed: seed + 20 });
+  for (const sp of [-.25, -.5]) line(L, bez([[h[0], h[1]], [h[0] + Math.cos(hd + sp) * 30 * s, h[1] + Math.sin(hd + sp) * 30 * s], [h[0] + Math.cos(hd + sp * 1.6) * 55 * s, h[1] + Math.sin(hd + sp * 1.6) * 55 * s], [h[0] + Math.cos(hd + sp * 2.2) * 75 * s, h[1] + Math.sin(hd + sp * 2.2) * 75 * s]]), { w: 3, p: .75, seed: seed + 21 + sp * 10, t0: t0 + .3, dur: .2 });
+}
+
+// ── a crayon stick (the colouring hand-tool, no hand) ──
+function crayonStick(tip, ang, col, seed) {
+  const len = 250, wd = 30, dx = Math.cos(ang), dy = Math.sin(ang), nx = -dy, ny = dx;
+  const P0 = [tip[0] + dx * 46, tip[1] + dy * 46], P1 = [tip[0] + dx * len, tip[1] + dy * len];
+  const cone = [tip, [P0[0] + nx * wd / 2, P0[1] + ny * wd / 2], [P0[0] - nx * wd / 2, P0[1] - ny * wd / 2]];
+  const body = [[P0[0] + nx * wd / 2, P0[1] + ny * wd / 2], [P1[0] + nx * wd / 2, P1[1] + ny * wd / 2], [P1[0] - nx * wd / 2, P1[1] - ny * wd / 2], [P0[0] - nx * wd / 2, P0[1] - ny * wd / 2]];
+  const lab = [.32, .82].map(u => [P0[0] + dx * (len - 46) * u, P0[1] + dy * (len - 46) * u]);
+  const label = [[lab[0][0] + nx * wd / 2, lab[0][1] + ny * wd / 2], [lab[1][0] + nx * wd / 2, lab[1][1] + ny * wd / 2], [lab[1][0] - nx * wd / 2, lab[1][1] - ny * wd / 2], [lab[0][0] - nx * wd / 2, lab[0][1] - ny * wd / 2]];
+  [cone, body].forEach(p => knock(R.knock, p));
+  fill(R.fg, body, { col, p: .95, gap: 5, w: 8, ang: ang + 1.57, seed });
+  fill(R.fg, cone, { col: P.pink2, p: 1, gap: 4, w: 6, seed: seed + 1 });
+  fill(R.fg, label, { col: P.cream, p: 1, gap: 4, w: 7, ang: ang + 1.57, seed: seed + 2 });
+  line(R.fg, [...cone, cone[0]], { w: 5, seed: seed + 3 });
+  line(R.fg, [...body, body[0]], { w: 5, seed: seed + 4 });
+  line(R.fg, [label[0], label[3]], { w: 3, seed: seed + 5 }); line(R.fg, [label[1], label[2]], { w: 3, seed: seed + 6 });
+  for (let k = 0; k < 2; k++) { const u = .45 + k * .18, a = [lab[0][0] + (lab[1][0] - lab[0][0]) * u, lab[0][1] + (lab[1][1] - lab[0][1]) * u];
+    line(R.fg, [[a[0] + nx * 8, a[1] + ny * 8], [a[0] - nx * 8, a[1] - ny * 8]], { w: 3, p: .7, col: P.pink2, seed: seed + 7 + k }); }
+}
+
+// ── scenes ──
+const SCENES = {
+  hook: { dur: 4, draw(t) {
+    lagoon(1255, 0);
+    // far grown-ups: already pink (the contrast)
+    flamingo([150, 1245], .2, { pink: 1, seed: 300, fgL: R.bg, t0: .8, dur: .6 });
+    flamingo([965, 1240], .17, { pink: 1, seed: 320, fgL: R.bg, t0: .9, dur: .6 });
+    // mud nest (flamingos really build mud-mound nests)
+    const nest = smooth([[245, 1520], [370, 1340], [540, 1325], [710, 1340], [835, 1520]], 8, false);
+    const nestP = [...nest, [835, 1530], [245, 1530]];
+    knock(R.knock, nestP);
+    fill(R.fg, nestP, { col: P.mud, p: .78, gap: 9, w: 11, ang: .3, seed: 60, t0: .3, dur: .5, cross: true });
+    line(R.fg, nest, { w: 7.5, seed: 61, t0: .2, dur: .4 });
+    line(R.fg, [[260, 1525], [820, 1525]], { w: 6, p: .7, seed: 62, t0: .3, dur: .3 });
+    line(R.fg, ellipse(540, 1338, 150, 22, 40, Math.PI * .05, Math.PI * .95), { w: 5, p: .7, seed: 63, t0: .4, dur: .3 });
+    // the chick
+    const head = [540, 830, 150], bodyC = [540, 1090];
+    const bodyP = fluff(bodyC[0], bodyC[1], 220, 190, 16, .08, 2), headP = fluff(head[0], head[1], head[2], head[2] * .96, 12, .07, 5);
+    const legs = [[[492, 1255], [490, 1300], [488, 1345]], [[588, 1255], [590, 1300], [592, 1345]]];
+    legs.forEach((l, i) => { const tb = tube(l, 12); knock(R.knock, tb); fill(R.fg, tb, { col: P.grey2, p: .9, gap: 5, w: 7, seed: 70 + i, t0: .9, dur: .2 }); line(R.fg, tb, { w: 5, closed: true, seed: 72 + i, t0: .8, dur: .3 });
+      const ft = [l[2][0], l[2][1] + 4]; const foot = ellipse(ft[0] + (i ? 12 : -12), ft[1], 30, 11); knock(R.knock, foot); fill(R.fg, foot, { col: P.grey2, p: .9, gap: 4, w: 6, seed: 74 + i }); line(R.fg, foot, { w: 5, seed: 76 + i, t0: .9, dur: .2 }); });
+    knock(R.knock, bodyP); knock(R.knock, headP);
+    const wings = [smooth([[335, 1020], [300, 1100], [330, 1170], [372, 1120]], 8, false), smooth([[745, 1020], [780, 1100], [750, 1170], [708, 1120]], 8, false)];
+    fill(R.fg, bodyP, { col: P.grey, p: .78, gap: 9, w: 12, seed: 80, t0: 1.0, dur: .8, cross: true });
+    fill(R.fg, headP, { col: P.grey, p: .78, gap: 9, w: 12, seed: 81, t0: 1.3, dur: .6, cross: true });
+    fill(R.fg, fluff(540, 1125, 125, 100, 10, .08, 9), { col: '#d4d7dd', p: .75, gap: 7, w: 10, seed: 82, t0: 1.6, dur: .3, cross: true }); // pale belly fluff
+    outside(bodyP, [[head[0], head[1], head[2] * .95]]).forEach((sg, i) => line(R.fg, sg, { w: 8.5, seed: 83 + i, t0: .2, dur: .7 }));
+    line(R.fg, headP, { w: 8.5, seed: 86, t0: .1, dur: .7 });
+    wings.forEach((wg, i) => { fill(R.fg, wg, { col: P.grey2, p: .7, gap: 6, w: 8, seed: 120 + i, t0: 1.4, dur: .2 }); line(R.fg, wg, { w: 7, seed: 87 + i, t0: .7, dur: .3 }); });
+    // fluffy tuft
+    line(R.fg, bez([[520, 690], [505, 640], [545, 625], [540, 665]]), { w: 7, seed: 89, t0: .6, dur: .2 });
+    line(R.fg, bez([[548, 685], [560, 640], [600, 650], [580, 680]]), { w: 7, seed: 90, t0: .65, dur: .2 });
+    // face
+    const fp = prog(1.6, .3);
+    if (fp > 0) {
+      [[480, 815], [600, 815]].forEach(([x, y], i) => { dab(R.fg, x, y, 19, { col: P.out, seed: 91 + i }); dab(R.fg, x + 6, y - 7, 6.5, { col: P.white, p: 1, seed: 93 + i }); });
+      [[430, 885], [650, 885]].forEach(([x, y], i) => dab(R.fg, x, y, 30, { col: P.blush, p: .65, seed: 95 + i }));
+      const beak = smooth([[510, 852], [570, 852], [560, 885], [545, 905], [532, 903], [518, 885]], 6);
+      fill(R.fg, beak, { col: P.grey2, p: .95, gap: 4, w: 6, seed: 97 }); line(R.fg, beak, { w: 5.5, seed: 98 });
+    }
+    // question marks
+    text(R.fg, '?', 860, 760, { font: 'Gaegu', weight: 700, size: 150, col: P.out, seed: 5, t0: 2.0, dur: .2 });
+    text(R.fg, '?', 215, 700, { font: 'Gaegu', weight: 700, size: 110, col: P.grey2, seed: 9, t0: 2.1, dur: .2 });
+    // hand-lettered title
+    text(R.fg, 'Flamingos are', 540, 285, { font: 'Gaegu', weight: 700, size: 112, col: P.out, seed: 11, t0: .05, dur: .5 });
+    const ttl = 'born GREY?'; const cols = [...ttl].map((c, i) => i >= 5 && i <= 8 ? P.grey2 : P.out);
+    text(R.fg, ttl, 540, 455, { font: 'Gaegu', weight: 700, size: 176, colors: cols, seed: 12, t0: .5, dur: .6, stroke: 2 });
+    line(R.fg, bez([[555, 490], [650, 478], [760, 500], [870, 482]]), { col: P.grey2, w: 12, p: .9, seed: 13, t0: 1.1, dur: .3 });
+    subtitle(R, 'Baby flamingos hatch fluffy and grey.', 1585, { reveal: TEASE ? prog(.25, .45) : prog(2.2, .5), seed: 4 });
+  } },
+  eat: { dur: 6, draw(t) {
+    lagoon(1385, 0);
+    const pink = clamp(TEASE ? prog(.5, 2.0) : prog(1.0, 4.2));
+    const F = flamingo([650, 1500], 1, { pink, happy: true, seed: 100, t0: 0, dur: .9 });
+    // shrimp in the beak + swimming in the lagoon
+    shrimp(R.fg, F.beakTip[0] + 6, F.beakTip[1] + 58, .9, .3, 200);
+    shrimp(R.fg, 190, 1475, 1.05, .2, 210, .4); shrimp(R.fg, 905, 1470, .95, 2.9, 220, .5); shrimp(R.fg, 880, 1760, .85, .5, 230, .6);
+    // dotted "food → colour" path
+    const path = bez([[215, 1420], [140, 1250], [330, 1080], [470, 990]], 30);
+    const dp = prog(.8, .6);
+    for (let i = 0; i < path.length - 3; i += 4) { if (i / path.length > dp) break; line(R.fg, [path[i], path[i + 2]], { col: P.pink2, w: 9, p: .95, seed: 400 + i }); }
+    if (dp >= 1) { const e = path[path.length - 1], a = Math.atan2(e[1] - path[path.length - 4][1], e[0] - path[path.length - 4][0]);
+      line(R.fg, [[e[0] - 34 * Math.cos(a - .5), e[1] - 34 * Math.sin(a - .5)], e, [e[0] - 34 * Math.cos(a + .5), e[1] - 34 * Math.sin(a + .5)]], { col: P.pink2, w: 9, p: .95, seed: 450 }); }
+    text(R.fg, 'pink pigments!', 440, 1185, { size: 50, col: P.pink2, seed: 31, t0: 1.2, dur: .5, stroke: 1.5 });
+    // crayon working at the colour frontier on the neck
+    if (pink > 0 && pink < 1) {
+      const pn = clamp(pink * 3 - 1), nc = F.neckC; let tip;
+      if (pink * 3 < 1) tip = [650 - 40 + 220 * (pink * 3 - .5), 900]; else if (pn < 1) tip = nc[Math.floor((1 - pn) * (nc.length - 1))]; else tip = F.head;
+      crayonStick([tip[0] + 22, tip[1] + 4], -.75, P.pink, 500);
+    }
+    text(R.fg, 'The pink is', 540, 175, { font: 'Gaegu', weight: 700, size: 104, col: P.out, seed: 41, t0: .1, dur: .4 });
+    const t2 = 'from FOOD'; text(R.fg, t2, 540, 290, { font: 'Gaegu', weight: 700, size: 120, colors: [...t2].map((c, i) => i >= 5 ? P.pink2 : P.out), seed: 42, t0: .5, dur: .5, stroke: 2 });
+    subtitle(R, TEASE ? 'The pink comes from their food.' : 'Shrimp and algae carry pink pigments into their feathers.', 1585, { reveal: TEASE ? prog(.15, .4) : prog(.6, .6), seed: 6 });
+  } },
+};
+SCENES.teaser = { dur: 5 };
+const S = SCENES[scene];
+window.DUR = S.dur;
+window.seek = TEASE
+  ? t => { const sw = 2.9; if (t < sw) { R.begin(t); SCENES.hook.draw(t); } else { R.begin(t - sw); SCENES.eat.draw(t - sw); } R.compose(); }
+  : t => { R.begin(t); S.draw(t); R.compose(); };
+window.render = window.seek;
+await document.fonts.load('400 56px "Patrick Hand"'); await document.fonts.load('700 100px "Gaegu"');
+window.seek(0); window.ready = true; window.READY = true;
+</script></body></html>

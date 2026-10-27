@@ -1,0 +1,116 @@
+{
+ "name": "plane",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Everyone learned that planes fly because of a **longer top.**",
+   "Everyone learned that planes fly because of a longer top."
+  ],
+  [
+   "The story says air over the top must **race** to meet the air underneath.",
+   "The story says air over the top must race to meet the air underneath."
+  ],
+  [
+   "But NASA says that idea is **wrong.**",
+   "But NASA says that idea is wrong."
+  ],
+  [
+   "Air over the top actually reaches the back edge **first.**",
+   "Air over the top actually reaches the back edge first."
+  ],
+  [
+   "And many wings, like **symmetrical** ones, don't even have a longer top.",
+   "And many wings, like symmetrical ones, don't even have a longer top."
+  ],
+  [
+   "So how does a plane **really** fly?",
+   "So how does a plane really fly?"
+  ],
+  [
+   "Lift happens when a wing **turns** the air flowing past it.",
+   "Lift happens when a wing turns the air flowing past it."
+  ],
+  [
+   "A wing's shape pushes the air **downward.**",
+   "A wing's shape pushes the air downward."
+  ],
+  [
+   "Newton's third law says the air **pushes back** and lifts the wing.",
+   "Newton's third law says the air pushes back and lifts the wing."
+  ],
+  [
+   "Another view of the same lift: **pressure.**",
+   "Another view of the same lift: pressure."
+  ],
+  [
+   "Faster air has **lower pressure,** so the top of a lifting wing has less than the bottom.",
+   "Faster air has lower pressure, so the top of a lifting wing has less than the bottom."
+  ],
+  [
+   "Pushing air down, or lower pressure on top? **Both** describe the same lift.",
+   "Pushing air down, or lower pressure on top? Both describe the same lift."
+  ],
+  [
+   "Lift always acts at a **right angle** to the airflow.",
+   "Lift always acts at a right angle to the airflow."
+  ],
+  [
+   "Four forces act on a plane: **lift, weight, thrust** and **drag.**",
+   "Four forces act on a plane: lift, weight, thrust, and drag."
+  ],
+  [
+   "Weight is **gravity** pulling the plane down.",
+   "Weight is gravity pulling the plane down."
+  ],
+  [
+   "Thrust is the **forward** push from the engine or propeller.",
+   "Thrust is the forward push from the engine or propeller."
+  ],
+  [
+   "Drag is the force that **resists** the plane's motion.",
+   "Drag is the force that resists the plane's motion."
+  ],
+  [
+   "When lift is **greater than weight,** the plane can fly.",
+   "When lift is greater than weight, the plane can fly."
+  ],
+  [
+   "The angle between the wing and the oncoming air is the **angle of attack.**",
+   "The angle between the wing and the oncoming air is the angle of attack."
+  ],
+  [
+   "Tilt it past a critical angle, and the airflow **separates** from the wing.",
+   "Tilt it past a critical angle, and the airflow separates from the wing."
+  ],
+  [
+   "Lift suddenly drops. That's a **stall.**",
+   "Lift suddenly drops. That's a stall."
+  ],
+  [
+   "Planes don't need a longer top. They **turn air.**",
+   "Planes don't need a longer top. They turn air."
+  ],
+  [
+   "Subscribe for more of **how it really works.**",
+   "Subscribe for more of how it really works."
+  ]
+ ]
+}
