@@ -14,6 +14,8 @@ Workers build ONE reel each, push the finished mp4 + caption + sources to `jobs/
 
 - CLOSING LINE (required): the LAST spoken phrase and on-screen end card of every reel must be exactly "Follow for more of **how it really works.**" (see specs/leaf.json, specs/boot.json). The total must still be 86 s or less including it.
 
+- USAGE: read reels/USAGE_SAVERS.md and reels/PRIMITIVES.md first. Scaffold with newreel.py, QA with contact.py (one image per review), reuse lib/lib2d.js primitives.
+
 ## Style repos (clone each shallow into /home/claude/styles-src/ yourself; all public)
 - https://github.com/Vincentwei1021/mg-styles-15
 - https://github.com/ItsssssJack/claude-video-2

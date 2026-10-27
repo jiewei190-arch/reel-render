@@ -1,0 +1,4 @@
+# neon: generative neon night-sky (1080x1920, 2D canvas)
+Repo style used: "Generative & neon" from HiAPIAI/awesome-opus-5-5-video-styles (styles/generative.md recipe: procedural particles/shaders, dark background with neon 3-4 colour palette, motion locked to the beat). Palette: midnight navy bg, violet #8b5cff, cyan #35f0ff, hot pink #ff4fd8, Halloween orange #ff8a1f.
+createNeon(canvas) -> R {S, begin(), finish(t,{fade})}. Draw neon strokes/fills on S; finish() paints gradient sky + twinkling particles, two additive bloom passes (1/4 and 1/12 scale), the sharp layer, vignette. Font: Poppins (system). Example: t_bats.js (bat/moth/pumpkin vector icons, expanding sonar arcs, pulse trains).
+Why it fits: sound waves, pulses and echoes are the subject, and Halloween night suits the neon-on-dark look.
