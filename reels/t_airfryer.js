@@ -7,7 +7,8 @@ import { W, H, INK, init, frame, g, push, pop, translate, rotate, scale, shape, 
 import { juno, spud, fryer, mitt, eye, mouth, sweat, PAL, mix } from './styles/scifitoon/cast_af.js';
 await Promise.all(['800 50px "Baloo 2"', '400 50px VT323', '400 50px Bungee'].map(f => document.fonts.load(f)));
 init(document.getElementById('c'));
-const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end, LIP = window.LIP || [];
+const TL = window.TL, PH = TL.p, M = i => i >= 1 ? i + 1 : i, s = i => PH[M(i)].start, e = i => PH[M(i)].end, LIP = window.LIP || [];   // M: v2 hook added the 'but' line at 1
+const HCUT = PH[1].start - .1;   // hard cut from the hook insert to the lab two-shot
 const q = t => Math.floor(t * 12 + 1e-6) / 12;
 
 // —— lip sync from the voice track (24 Hz envelope, sampled on twos) ——
@@ -122,10 +123,21 @@ const landSq = (t, tl) => { const u = t - tl; if (u < 0 || u > .5) return 1; ret
 // ———————————————————— shots ————————————————————
 const WIPES = [[s(1) - .25, .3], [s(2) - .3, .3], [s(3) - .3, .3], [s(6) - .3, .3], [s(9) - .3, .3], [s(13) - .3, .3], [s(15) - .3, .3], [s(17) - .25, .25]];
 const CUTS = WIPES.map(w => w[0]);
-const SHOT = t => { const k = CUTS.filter(c => t >= c).length; return ['lab', 'oil', 'lab2', 'inside', 'blanket', 'brown', 'normal', 'lab3', 'end'][k]; };
+const SHOT = t => { if (t < HCUT) return 'hook'; const k = CUTS.filter(c => t >= c).length; return ['lab', 'oil', 'lab2', 'inside', 'blanket', 'brown', 'normal', 'lab3', 'end'][k]; };
 const TAGS = [[s(1) - .1, s(2) - .4, 'U-7  OIL WORLD', 'everything gets dunked', '#3a1030', '#b8f03c'], [s(3) - .1, s(6) - .4, 'U-2  INSIDE THE FRYER', 'heater + fan + basket', '#0f3b3a', '#ffb862'], [s(6) - .1, s(9) - .4, 'U-3  THE BLANKET', 'a thin layer of still air', '#1c0d38', '#e8d84a'], [s(9) - .1, s(13) - .4, 'U-4  BROWNING', 'dry, then golden', '#123a2f', '#ff7a6b'], [s(13) - .1, s(15) - .4, 'U-5  A REGULAR OVEN', '(suspiciously normal)', '#5a4630', '#f1e3c6']];
 
 const SH = {
+  hook(t, tq) {   // frame 0: insert close-up, fries already tumbling in the basket; an oil pot slides in and gets stamped NOT THIS
+    cam(170, 830, 2.6); lab(t); fryer(170, 1080, .78, t, { screenTxt: '200°C', steam: 1 });
+    shape(rr(92, 902, 156, 132, 14), { fill: '#ffb862', lw: 6, shade: () => {
+      for (let i = 0; i < 9; i++) { const ph = tq * 5 + i * 1.7, x = 110 + (i * 17) % 120 + Math.sin(ph) * 8, y = 1010 - Math.abs(Math.sin(ph * .9)) * 70 - (i % 3) * 8; push(); translate(x, y); rotate(ph * .8 + i); shape(rr(-5, -18, 10, 36, 4), { fill: '#f2c14e', lw: 4 }); pop(); }
+      for (let k = 0; k < 2; k++) { const a0 = tq * 4 + k * Math.PI; stroke(arc(170, 965, 60, 38, a0, a0 + 2.2, 12), 8, { line: INK }); stroke(arc(170, 965, 60, 38, a0, a0 + 2.2, 12), 4, { line: '#fff3d6' }); }
+    } });
+    const sl = eo(seg(t, .45, .85)), px = lerp(430, 262, sl); push(); translate(px, 1076);
+    shape(spline([[-62, -70], [62, -70], [56, 0], [-56, 0]]), { fill: '#3a3a4a', lw: 6 }); shape(ell(0, -70, 64, 13, 24), { fill: '#b8f03c', lw: 5 });
+    for (let i = 0; i < 4; i++) { const u = (t * 1.4 + i / 4) % 1; shape(ell(-40 + i * 26, -80 - u * 40, 5 * (1 - u) + 2, 5 * (1 - u) + 2, 10), { fill: '#e2ff9a', lw: 3 }); } pop();
+    const st = back(seg(tq, 1.0, 1.25), 2.2); if (st > 0) { push(); translate(250, 1000); rotate(-.16); scale(st); shape(rr(-74, -24, 148, 48, 8), { fill: '#fff3d6', lw: 5 }); text('NOT THIS', 0, 3, { font: '400 30px Bungee', fill: '#e8483b' }); pop(); push(); translate(262, 1040); scale(st); stroke([[-70, -60], [70, 40]], 7, { line: '#e8483b' }); pop(); }
+  },
   lab(t, tq) {   // cold open: two-shot, title lockup, Juno twists the fryer dial and the portal opens
     const z = lerp(1.1, 1.14, ss(seg(t, 0, 3))); cam(540, 1010, z); lab(t);
     const po = popOpen(t - (s(1) - .9)); portal(560, 860, 230, t, { open: po });
@@ -204,13 +216,13 @@ const SH = {
 };
 
 // ———————————————————— screen layer ————————————————————
-function titleArt(t) {   // atomic-age TV lockup: cream block letters, hard magenta offset, cyan orbit ring, orbiting fry, twinkle stars
+function titleArt(t, L1 = 'NOT A', L2 = 'FRYER') {   // atomic-age TV lockup: cream block letters, hard magenta offset, cyan orbit ring, orbiting fry, twinkle stars
   const orb = t * 1.6, rx = 560, ry = 92;
   const ring = (a0, a1) => { const P_ = arc(0, 6, rx, ry, a0, a1, 40); stroke(P_, 21, { boil: .5 }); stroke(P_, 9, { line: '#5ee6ff', boil: .5 }); };
   const fry = () => { push(); translate(Math.cos(orb) * rx, 6 + Math.sin(orb) * ry); rotate(orb + 1.2); shape(rr(-12, -34, 24, 68, 6), { fill: '#f2c14e', lw: 6 }); pop(); };
   rotate(-.05); push(); rotate(.12); ring(Math.PI, TAU); if (Math.sin(orb) < 0) fry(); pop();
-  text('NOT A', 10, -98, { font: '400 110px Bungee', fill: '#ff4fa3', outlineW: 20, outlineCol: INK }); text('NOT A', 0, -108, { font: '400 110px Bungee', fill: '#fff3d6', outlineW: 20, outlineCol: INK });
-  text('FRYER', 12, 52, { font: '400 170px Bungee', fill: '#ff4fa3', outlineW: 22, outlineCol: INK }); text('FRYER', 0, 40, { font: '400 170px Bungee', fill: '#fff3d6', outlineW: 22, outlineCol: INK });
+  text(L1, 10, -98, { font: '400 110px Bungee', fill: '#ff4fa3', outlineW: 20, outlineCol: INK }); text(L1, 0, -108, { font: '400 110px Bungee', fill: '#fff3d6', outlineW: 20, outlineCol: INK });
+  text(L2, 12, 52, { font: '400 170px Bungee', fill: '#ff4fa3', outlineW: 22, outlineCol: INK }); text(L2, 0, 40, { font: '400 170px Bungee', fill: '#fff3d6', outlineW: 22, outlineCol: INK });
   push(); rotate(.12); ring(0, Math.PI); if (Math.sin(orb) >= 0) fry(); pop();
   for (let i = 0; i < 4; i++) { const x = [-520, 520, -380, 430][i], y = [-170, -150, 150, 160][i], r = 16 + 10 * Math.sin(t * 5 + i * 1.7); shape([[x, y - r], [x + r * .28, y - r * .28], [x + r, y], [x + r * .28, y + r * .28], [x, y + r], [x - r * .28, y + r * .28], [x - r, y], [x - r * .28, y - r * .28]], { fill: '#ffe066', lw: 5 }); }
 }
@@ -239,4 +251,9 @@ function render(t) {
 window.DUR = TL.total;
 window.seek = t => { render(t); const fade = Math.min(1, (TL.total - t) / .4); if (fade < 1) { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - fade; g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.globalAlpha = 1; } };
 window.render = window.seek;
+// thumbnail / cover (rule 11): inside-the-fryer world, golden Spud in the hot-air storm, the lockup carrying the hook
+window.thumb = () => { const t = 18.5; frame(t); screenRect('#000'); cam(540, 960, 1); insideWorld(t, 1.5); airLoop(t, 1, 1.4);
+  spud(P(t, { x: 540, y: 1330, s: .85, nerv: .3, gold: .85, look: [0, -.6], mouth: { o: .35, sm: .4 }, eyeS: 1.2 }));
+  reset(); translate(540, 640); scale(1.05); titleArt(t, "IT DOESN'T", 'FRY');
+  reset(); push(); translate(540, 1530); shape(rr(-250, -54, 500, 108, 16), { fill: '#0f3b3a', lw: 7 }); text('hot air, no oil', 0, 6, { font: '400 72px VT323', fill: '#ffb862' }); pop(); };
 window.seek(0); window.ready = true; window.READY = true;
