@@ -22,3 +22,6 @@ Workers build ONE reel each, push the finished mp4 + caption + sources to `jobs/
 
 ## Pipeline
 specs/<n>.json -> `python3 -I voice2.py <n>` (needs Kokoro model in ../tts: pip install kokoro-onnx soundfile; get kokoro-v1.0.onnx and voices-v1.0.bin from the kokoro-onnx GitHub release model-files-v1.0) -> vo_<n>.wav + tl_<n>.js; ev_<n>.json -> `python3 -I mix2.py <n>`; t_<n>.js scenes + `python3 mkhtml.py <n>` -> t_<n>.html; render with rq.sh; encode with enc_hq.sh. Look at an existing style module in reels/styles/ (and kit.js/kit.css) for how scenes are written. Engine: headless Chromium 540x960 @DSF2, deterministic window.seek(t).
+
+## Batches
+BATCH_A.md and BATCH_B.md list the reels for two worker sessions. The main session keeps the rest (magnet, search, recommend, flush, airfryer, submarine) and finishes the vax, hiccup and skyscr reels.
