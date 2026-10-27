@@ -13,3 +13,5 @@ reels/*.done
 work/
 reels/up/*.mp4
 reels/enc_hq.log
+reels/*.log
+reels/contact_*.jpg

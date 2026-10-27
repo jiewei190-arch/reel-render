@@ -16,14 +16,14 @@ Owner's request (Oct 27 2026): keep active track of how well each style fits eac
 | 3 | blueprint | technical drawing, title block, revision notes, stamp | mechanisms with precise parts (locks, gears, valves, engines) | living things, emotions | lock: approved |
 | 6 | shadow-puppet | backlit stage, puppets on rods, theatre | sky and myth-tinged phenomena, light and shadow topics, stories with "actors" | data-heavy topics | eclipse: approved (light and shadow topic = perfect match) |
 | 7 | silkscreen-poster | vintage posters, slab type, triptych | topics with 2-3 named parts or scenes, colour topics, nature | step-by-step mechanisms | skyblue: approved (colour topic suits a print look) |
-| 9 | scifi-toon | lab sitcom, cast, portals between "worlds" | myth-busting everyday objects ("it's actually X"), what-if comparisons | quiet or abstract topics | airfryer: built, owner review pending |
+| 9 | scifi-toon | lab sitcom, cast, portals between "worlds" | myth-busting everyday objects ("it's actually X"), what-if comparisons | quiet or abstract topics | airfryer: v2 built (74.9 s), owner review pending |
 | 10 | paper-popup | pop-up book pages, layered scenery | physical journeys, vehicles, places, scale | microscopic topics | ship: approved |
 | 11 | cel-boil | hand-animated cartoon, exposure sheet, shakes | chemistry with action (ignite, snap, pop), short punchy events | long calm processes | match: approved |
 | 13 | collage "AI Doom" | paper sets, recurring kid + box creature, visual metaphors (museum, theatre, chalkboard) | algorithms, psychology, "how X decides", concepts best told through metaphor | precise physical mechanisms | recommend: in progress |
 | 14 | explainer "Alchemy Infra" | dark infra motion, cubes, globe, terminal, big stats | internet and computing systems, data at scale, networks | nature, food, the body | search: built, owner review pending |
 | 15 | handdrawn "Distilbook" | book page -> hand-drawn diagram -> video card, layered zoom | layered physics or science explanations (macro -> micro), textbook-style "why" topics | fast action, characters | magnet: **owner says excellent fit, probably wouldn't work as well in other templates** |
-| 16 | cinematic3d "Christmas story" | sepia/blue film, silhouettes, glowing windows | moody, night, underwater or travel topics, things with lit interiors | bright playful topics | submarine: in progress |
-| 18 | handdrawn "Japan heat wave" | field notebook, pencil sections, red seals, measurement boxes, charts | measurable mechanisms with numbers (flow, volume, temperature), cross-sections | character stories | flush: v2 in progress |
+| 16 | cinematic3d "Christmas story" | sepia/blue film, silhouettes, glowing windows | moody, night, underwater or travel topics, things with lit interiors | bright playful topics | submarine: v2 built (73.4 s), owner review pending |
+| 18 | handdrawn "Japan heat wave" | field notebook, pencil sections, red seals, measurement boxes, charts | measurable mechanisms with numbers (flow, volume, temperature), cross-sections | character stories | flush: v2 built (79.2 s), owner review pending |
 | 1, 2, 4, 5, 8, 12, 17, 19 | not used yet | see TEMPLATES.md and the demo videos | to be profiled after the first use | | |
 
 Extra approved style: the crayon colour style (reels/styles/crayon, used for flamingo). Best guess: animals and nature, playful kid-friendly topics.
@@ -38,9 +38,6 @@ Extra approved style: the crayon colour style (reels/styles/crayon, used for fla
 | eclipse | #6 shadow-puppet | 5 | the topic *is* light and shadow | approved | |
 | magnet | #15 Distilbook | 5 | layered zoom (pole -> electron -> domain -> nail) is exactly Distilbook's page-to-diagram move | "goes very well with the current style" | |
 | search | #14 Alchemy Infra | 4 | index cubes, crawler links, globe and terminal map 1:1; risk: dark tech look feels cold for beginners | pending | |
-| airfryer | #9 scifi-toon | 4 | myth-bust ("never fried anything") suits the sitcom and portal "worlds" | pending | |
-| flush | #18 Japan heat wave | 4 (expected) | cross-section + measurement boxes; v1 had blotchy paper and empty margins | pending | |
-| submarine | #16 Christmas | 4 (expected) | night water, silhouette, lit portholes; needs an added cutaway for ballast tanks | pending | |
 | recommend | #13 AI Doom | 5 (expected) | algorithm told through metaphors (theatre of millions, scoring room, betting wheel, mirror) | pending | |
 | 14 worker reels | generic repo styles | n/a | built before the template rule; mostly not in the owner's templates | kept as is | |
 
@@ -50,3 +47,6 @@ Extra approved style: the crayon colour style (reels/styles/crayon, used for fla
 - Empty areas are the most common flaw in vertical adaptations of 16:9 demos. Fill them with the demo's own margin devices (HUD, measurement boxes, stacked stats).
 - Sound effects must sit under the voice (rule 12).
 - Every reel gets a template-styled thumbnail (rule 11).
+| flush | #18 Japan heat wave | 5 | a plumbing cutaway is a field-notebook cross-section; the demo's measuring-cylinder chart = gallons per flush; measurement boxes = pipe/tank state; v2 adds a flush-cycle timeline strip | v1: clean the paper, fill the bottom third, English seal (done in v2) | |
+| airfryer | #9 scifi-toon | 4 | "it's not what you think" myth-bust maps onto parallel worlds (oil world, inside the fryer, boundary-layer blanket, browning, suspiciously normal oven); risk: one narrator voice instead of the template's two-voice dialogue | pending | |
+| submarine | #16 Christmas story | 5 | the demo's sepia-to-blue grade becomes surface-to-depth; lit windows become air-filled tanks; night silhouettes suit the sea; risk: real subs have no portholes (stylised) | pending | |
