@@ -1,0 +1,3 @@
+# Sources (qr)
+- Wikipedia "QR code" (fetched): invented 1994 by Masahiro Hara's team at Denso Wave to label automobile parts; three corner finder patterns, smaller alignment square; Reed-Solomon over GF(2^8); error-correction level L restores 7%, M 15% of data bytes. Q ~25% and H ~30% are the standard published levels (not shown in fetched excerpt; maketecheasier snippet from search says strongest restores roughly 30%).
+Hedges used: "about seven percent", "up to roughly thirty percent", "exact limits vary by level", bit example 01001000=H / 01101001=i is standard ASCII; damage visuals illustrative.

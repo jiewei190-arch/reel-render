@@ -1,0 +1,4 @@
+# Sources (fear)
+- Live Science, "Why do we get goosebumps?" https://www.livescience.com/32349-what-causes-goose-bumps.html : each hair has an arrector pili muscle; nerves make it contract and pull the hair upright; triggered by cold, fear, strong emotion; in furry mammals it fluffs fur (insulation, looks bigger); in humans mostly vestigial.
+- The Naked Scientists, "What happens when we become scared?" https://www.thenakedscientists.com/node/178136 : amygdala; first signal bypasses the conscious part of the brain, slower cortex route gives conscious realisation; sympathetic nervous system releases adrenaline; heart rate and breathing up, pupils dilate, sweating.
+Hedges: wording "quick signals CAN reach it before..."; "mostly a leftover" for humans; BPM panel labelled ILLUSTRATIVE (70 -> 140 is a visual, not a measurement); "scary + safe = thrill" framed as "can feel thrilling".

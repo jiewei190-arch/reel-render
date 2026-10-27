@@ -1,0 +1,162 @@
+[
+ {
+  "id": "lightning",
+  "file": "up/lightning.mp4",
+  "title": "A lightning bolt is 5x hotter than the Sun's surface ⚡",
+  "description": "Lightning is about 5x hotter than the surface of the Sun, but the flash you see is only the last step. Here's how it really works: charge builds in the cloud, a stepped leader heads down, a streamer rises up to meet it, and the return stroke makes the flash. Count the seconds between flash and thunder, then divide by 5 for the distance in miles.\n\nSources: NWS, NOAA NSSL, Britannica. Speeds and temperatures are quoted as ranges because sources differ.\n\n🔔 Subscribe for a new explainer every day.\n#lightning #science #howitworks #storm #Shorts",
+  "tags": [
+   "#lightning",
+   "#science",
+   "#howitworks",
+   "#storm",
+   "#Shorts"
+  ],
+  "thumb_text": "5× HOTTER\nTHAN THE SUN",
+  "date": "2026-11-01",
+  "time": "08:00"
+ },
+ {
+  "id": "chip",
+  "file": "up/chip.mp4",
+  "title": "Your phone's chip starts as SAND (how it's really made) 📱",
+  "description": "Silicon is purified, grown into a giant crystal, sliced into wafers, then printed with light through masks, layer after layer. ASML says a modern chip can have up to 100 layers, and the finest ones use extreme ultraviolet light at 13.5 nanometers. Plus: the \"5 nanometer\" in chip names is a marketing name. It no longer measures any physical feature on the chip.\n\nSources: Intel, ASML, Britannica, imec, EE Journal.\n\n🔔 Subscribe for a new explainer every day.\n#chips #technology #howitworks #semiconductor #Shorts",
+  "tags": [
+   "#chips",
+   "#technology",
+   "#howitworks",
+   "#semiconductor",
+   "#Shorts"
+  ],
+  "thumb_text": "PHONE CHIPS\nSTART AS SAND",
+  "date": "2026-11-01",
+  "time": "13:00"
+ },
+ {
+  "id": "scene",
+  "file": "up/scene.mp4",
+  "title": "How a Crime Scene Really Works (Locard's Principle Explained) 🔍",
+  "description": "Every time two things touch, something moves between them. That's Locard's principle, and it's why investigators secure a crime scene, photograph and sketch it before anything is moved, develop hidden fingerprints, and keep a signed chain of custody for every piece of evidence.\n\nFun fact: researchers say it's impossible to prove that no two fingerprints are identical. Real procedures vary by agency and case.\n\nSources: NIJ, NIST, Duke Judicature.\n\n🔔 Subscribe for a new explainer every day.\n#forensicscience #crimescene #howitworks #fingerprints #Shorts",
+  "tags": [
+   "#forensicscience",
+   "#crimescene",
+   "#howitworks",
+   "#fingerprints",
+   "#Shorts"
+  ],
+  "thumb_text": "EVERY TOUCH\nLEAVES A TRACE",
+  "date": "2026-11-01",
+  "time": "19:00"
+ },
+ {
+  "id": "sun",
+  "file": "up/sun.mp4",
+  "title": "The sunlight on your face took up to a MILLION years to escape the Sun ☀️",
+  "description": "The sunlight on your face was made in the Sun's core. Estimates say it took 100,000 to about a million years to escape, then only 8 minutes 20 seconds to reach you. Here is how the Sun really works: fusion at about 15 million degrees, gravity vs pressure, and a very long random walk out. (These are estimates and sources differ.)\n\nSources: NASA, NOAA SWPC, Harvard CfA, UT Austin, Smithsonian.\n\n🔔 Subscribe for a new explainer every day.\n#sun #space #science #howitworks #Shorts",
+  "tags": [
+   "#sun",
+   "#space",
+   "#science",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb_text": "A MILLION YEARS\nTO ESCAPE",
+  "date": "2026-11-02",
+  "time": "08:00"
+ },
+ {
+  "id": "cables",
+  "file": "up/cables.mp4",
+  "title": "Sharks DON'T cut the internet. Here's what does 🌊",
+  "description": "Everyone blames sharks, but fishing gear and ship anchors cause about 65 to 75 percent of undersea cable breaks (ICPC). Here's how the internet really crosses an ocean: pulses of light in glass fibers, boosted by repeaters, powered from the shore.\n\nSources: TeleGeography, ISCPC, ICPC via Fibre Systems, Britannica, SubTel Forum.\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #underseacables #internet #tech #Shorts",
+  "tags": [
+   "#howitworks",
+   "#underseacables",
+   "#internet",
+   "#tech",
+   "#Shorts"
+  ],
+  "thumb_text": "SHARKS DON'T\nCUT THE WEB",
+  "date": "2026-11-02",
+  "time": "13:00"
+ },
+ {
+  "id": "polygraph",
+  "file": "up/polygraph.mp4",
+  "title": "The lie detector doesn't detect lies",
+  "description": "The lie detector doesn't detect lies. It records breathing, heart rate, blood pressure and sweat, and a person has to interpret what those changes mean. In 2003 the National Academies called the evidence \"scanty and scientifically weak.\"\n\nSources: National Academies (2003), Faigman et al., Psychology Today. The spy example in the video is a hypothetical.\n\n🔔 Subscribe for a new explainer every day.\n#polygraph #liedetector #howitworks #science #Shorts",
+  "tags": [
+   "#polygraph",
+   "#liedetector",
+   "#howitworks",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb_text": "LIE DETECTORS\nDON'T DETECT",
+  "date": "2026-11-02",
+  "time": "19:00"
+ },
+ {
+  "id": "plane",
+  "file": "up/plane.mp4",
+  "title": "Planes DON'T fly because of a longer top ✈️ (NASA says so)",
+  "description": "You were probably taught that air has to race over a longer top surface to meet the air underneath. NASA says that \"equal transit time\" idea is wrong: air over the top actually reaches the back edge first, and many wings, like symmetrical ones, don't even have a longer top. Here is how a plane really flies: the wing turns the air downward, the air pushes back, and lower pressure on top describes the same lift.\n\nSources: NASA Glenn, FAA Pilot's Handbook of Aeronautical Knowledge.\n\n🔔 Subscribe for a new explainer every day.\n#aviation #physics #howitworks #science #Shorts",
+  "tags": [
+   "#aviation",
+   "#physics",
+   "#howitworks",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb_text": "WHY PLANES\nREALLY FLY",
+  "date": "2026-11-03",
+  "time": "08:00"
+ },
+ {
+  "id": "dna",
+  "file": "up/dna.mp4",
+  "title": "How a Distant Cousin's DNA Solved a Cold Case 🧬",
+  "description": "How does a distant cousin's DNA catch a killer? Five steps: crime-scene DNA, upload the profile to a public genealogy website (GEDmatch), the site shows how much DNA people share, genealogists build family trees from public records, and a lab confirms the match. In the 2018 Golden State Killer case that narrowed the list to six men. Privacy critics say relatives who uploaded their DNA never agreed to police searches. In 2019 the site made police searches opt-in.\n\nSources: Axios, CBS News, KTVU, ABC7, NIJ, Parabon.\n\n🔔 Subscribe for a new explainer every day.\n#dna #geneticgenealogy #howitworks #forensicscience #Shorts",
+  "tags": [
+   "#dna",
+   "#geneticgenealogy",
+   "#howitworks",
+   "#forensicscience",
+   "#Shorts"
+  ],
+  "thumb_text": "COLD CASE\nSOLVED BY DNA",
+  "date": "2026-11-03",
+  "time": "13:00"
+ },
+ {
+  "id": "elec",
+  "file": "up/elec.mp4",
+  "title": "Electrons crawl at 23 µm/s, so why is the light instant? ⚡",
+  "description": "Electrons in a wire crawl at about 23 micrometers per second. So why does the light turn on instantly? Here's how electricity really works: the generator, the signal, where the energy actually flows, and why power lines use high voltage.\n\nSources: Georgia State HyperPhysics, University of Illinois, U.S. EIA, University of Calgary Energy Education.\n\n🔔 Subscribe for a new explainer every day.\n#electricity #science #howitworks #physics #Shorts",
+  "tags": [
+   "#electricity",
+   "#science",
+   "#howitworks",
+   "#physics",
+   "#Shorts"
+  ],
+  "thumb_text": "ELECTRONS\nCRAWL",
+  "date": "2026-11-03",
+  "time": "19:00"
+ },
+ {
+  "id": "reactor",
+  "file": "up/reactor.mp4",
+  "title": "A nuclear power plant is basically a very fancy kettle ⚛️",
+  "description": "A nuclear plant boils water into steam that spins a turbine, just like a kettle, except the heat comes from splitting uranium atoms. Here is how the chain reaction, the control rods, the moderator and the fuel really work, and why, according to the World Nuclear Association, a power reactor cannot explode like a nuclear bomb.\n\nSources: U.S. DOE, World Nuclear Association, U.S. NRC.\n\n🔔 Subscribe for a new explainer every day.\n#nuclear #energy #science #howitworks #Shorts",
+  "tags": [
+   "#nuclear",
+   "#energy",
+   "#science",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb_text": "A FANCY\nKETTLE",
+  "date": "2026-11-04",
+  "time": "08:00"
+ }
+]

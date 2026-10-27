@@ -1,0 +1,114 @@
+[
+ {
+  "id": "bats",
+  "file": "up/bats.mp4",
+  "title": "How Bats See in the Dark (It's Sound) 🦇",
+  "description": "Halloween's favorite flyer can catch a moth in total darkness. Bats aren't blind: they send out high-pitched calls, listen to the echoes, and speed up into a \"feeding buzz\" right before the catch. Here's how bat echolocation really works.\n\nSources: USGS, National Park Service, Britannica, Wikipedia.\n\n🔔 Subscribe for a new explainer every day.\n#halloween #bats #echolocation #science #Shorts",
+  "tags": [
+   "#halloween",
+   "#bats",
+   "#echolocation",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb_text": "BATS SEE\nWITH SOUND",
+  "date": "2026-10-31",
+  "time": "19:00"
+ },
+ {
+  "id": "fog",
+  "file": "up/fog.mp4",
+  "title": "How Spooky Fog Really Works 👻 (Halloween)",
+  "description": "Spooky fog isn't smoke. Dry ice turns straight from solid to gas, chills the air above warm water, and the vapor condenses into tiny floating droplets. A fog machine heats a glycol or glycerin fluid into vapor that condenses the same way. Safety first: never seal dry ice in a container, keep the room ventilated, and wear insulated gloves.\n\nSources: Rutgers University Chemistry, Cornell EHS, University of Utah IBC, MIT OpenCourseWare.\n\n🔔 Subscribe for a new explainer every day.\n#halloween #howitworks #science #dryice #Shorts",
+  "tags": [
+   "#halloween",
+   "#howitworks",
+   "#science",
+   "#dryice",
+   "#Shorts"
+  ],
+  "thumb_text": "FOG IS NOT\nSMOKE",
+  "date": "2026-10-31",
+  "time": "16:00"
+ },
+ {
+  "id": "boot",
+  "file": "up/boot.mp4",
+  "title": "What Your Computer Does When You Press Power ⚡",
+  "description": "You press one button and a whole chain of tiny handoffs begins: power supply, processor, UEFI firmware, boot loader, kernel, first process, login prompt. Each step wakes up the next one. (Beep codes vary by maker.)\n\nSources: UEFI Forum, kernel.org, systemd documentation, Wikipedia.\n\n🔔 Subscribe for a new explainer every day.\n#computer #boot #tech #howitworks #Shorts",
+  "tags": [
+   "#computer",
+   "#boot",
+   "#tech",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb_text": "1 BUTTON,\n7 HANDOFFS",
+  "date": "2026-11-04",
+  "time": "13:00"
+ },
+ {
+  "id": "fridge",
+  "file": "up/fridge.mp4",
+  "title": "Your Fridge Doesn't Make Cold ❄️ (It Moves Heat)",
+  "description": "A refrigerant loops through four parts: the compressor squeezes it hot, the condenser dumps that heat into your kitchen, the expansion valve drops its pressure so it turns colder than your food, and the evaporator boils it, soaking up heat from inside. That's why the back of a fridge is warm.\n\nSources: OpenStax University Physics, iFixit, Wikipedia, FDA.\n\n🔔 Subscribe for a new explainer every day.\n#refrigerator #science #physics #howitworks #Shorts",
+  "tags": [
+   "#refrigerator",
+   "#science",
+   "#physics",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb_text": "IT MOVES\nHEAT",
+  "date": "2026-11-04",
+  "time": "19:00"
+ },
+ {
+  "id": "vax",
+  "file": "up/vax.mp4",
+  "title": "How a Vaccine Really Works 💉",
+  "description": "A vaccine is a practice run for your immune system. It shows your body a safe version of a germ's antigen (a weakened or killed germ, a piece of one, or instructions to make one), so your body builds antibodies and memory cells without the disease. Protection can take weeks, and some vaccines need several doses.\n\nSources: CDC, WHO, NIAID.\n\n🔔 Subscribe for a new explainer every day.\n#vaccines #immunesystem #science #howitworks #Shorts",
+  "tags": [
+   "#vaccines",
+   "#immunesystem",
+   "#science",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb_text": "A PRACTICE\nRUN",
+  "date": "2026-11-05",
+  "time": "08:00"
+ },
+ {
+  "id": "hiccup",
+  "file": "up/hiccup.mp4",
+  "title": "Why You Really Get Hiccups 😮",
+  "description": "A hiccup is a tug and a slam: your diaphragm spasms and jerks down, then the glottis snaps shut. That snap is the \"hic.\" Why we have hiccups at all? Nobody knows for sure, and the famous cures are unproven. If hiccups last more than two days, ask a doctor. Educational only, not medical advice.\n\nSources: Cleveland Clinic, Mayo Clinic, MedlinePlus, Cureus 2024 review.\n\n🔔 Subscribe for a new explainer every day.\n#hiccups #science #anatomy #didyouknow #Shorts",
+  "tags": [
+   "#hiccups",
+   "#science",
+   "#anatomy",
+   "#didyouknow",
+   "#Shorts"
+  ],
+  "thumb_text": "A TUG AND\nA SLAM",
+  "date": "2026-11-05",
+  "time": "13:00"
+ },
+ {
+  "id": "skyscr",
+  "file": "up/skyscr.mp4",
+  "title": "How a Skyscraper Stays Up 🏙️ (Taipei 101)",
+  "description": "Taipei 101 is 508 meters tall and built to sway. It stands on 380 piles driven into the ground, a strong steel core ties to giant outer columns, and near the top a 660-tonne steel ball swings opposite the tower to cut its movement by up to 40%.\n\nSources: Wikipedia, Guinness World Records, engineering references.\n\n🔔 Subscribe for a new explainer every day.\n#skyscraper #taipei101 #engineering #architecture #Shorts",
+  "tags": [
+   "#skyscraper",
+   "#taipei101",
+   "#engineering",
+   "#architecture",
+   "#Shorts"
+  ],
+  "thumb_text": "BUILT\nTO SWAY",
+  "date": "2026-11-05",
+  "time": "19:00"
+ }
+]

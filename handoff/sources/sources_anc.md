@@ -1,0 +1,3 @@
+# Sources (anc)
+- SoundGuys, "How noise cancelling headphones work" https://www.soundguys.com/how-noise-cancelling-headphones-work-12380 : sound as pressure waves; built-in microphones sample ambient noise; electronics create the phase-inverted "anti-noise"; waves offset by half a wavelength subtract (destructive interference); cancellation is far from perfect; steady sounds (airplane hum) easier than sudden/random sounds like speech; earcup blocking is "isolation", not noise canceling.
+Hedges: swing analogy and "sum" panel are illustrative; the sudden-sound row is a simplified picture of why unpredictable noise leaks through at its start.

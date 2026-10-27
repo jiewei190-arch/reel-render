@@ -1,0 +1,30 @@
+date,slot,topic,title,accent,duration,scheduled,style,voice
+2026-10-27,8AM,gps,GPS,blue,60.6,yes,legacy-3d,
+2026-10-27,1PM,snake,Snake wheel,,84.3,yes,legacy-3d,
+2026-10-27,7PM,ai,How AI answers,violet,49.4,yes,legacy-3d,
+2026-10-28,8AM,scroll,Infinite scroll,magenta,47.2,yes,legacy-3d,
+2026-10-28,1PM,moon,Moon leaving,gold,53.6,yes,legacy-3d,
+2026-10-28,7PM,mirror,Mirror life,,79.6,yes,legacy-3d,
+2026-10-29,8AM,holes,3 black holes,yellow,85.5,yes,legacy-3d,
+2026-10-29,1PM,volcano,Kikai caldera,,85.9,yes,legacy-3d,
+2026-10-29,7PM,pc,PC prices,cyan,85.5,yes,legacy-3d,
+2026-10-31,7PM,candy,Halloween candy,orange,43.6,yes,legacy-3d,
+2026-10-30,8AM,qr,QR codes survive damage,lime,86.7,yes,legacy-3d,
+2026-10-30,1PM,micro,Microwave myth,rose,87.3,yes,legacy-3d,
+2026-10-30,7PM,spin,Why dizzy,turquoise,80.5,yes,legacy-3d,
+2026-10-31,8AM,fear,Why a scare gives goosebumps,crimson,77.8,yes,legacy-3d,
+2026-10-31,1PM,anc,Noise-cancelling headphones,teal,75.8,yes,legacy-3d,
+TBD,TBD,fla,Why flamingos are pink,,67.0,no,crayon,af_heart
+TBD,TBD,oct,Octopus 3 hearts blue blood,,68.8,no,iso,am_michael
+TBD,TBD,wombat,Why wombat poop is cube-shaped,,68.7,skipped (user: not good),popup,am_michael
+2026-10-27,4:30 PM,leaf,Why leaves change color,,72.8,yes,watercolor,af_heart
+TBD,TBD,turkey,Does turkey make you sleepy?,,69.9,skipped (user: not good),midcentury,am_michael
+2026-10-31,10:00 AM,dst,Why the clocks go back,,81.5,yes,lowpoly,af_heart
+TBD,TBD,vax,How a vaccine really works,,69.8,no,collage,af_heart
+TBD,TBD,boot,What your computer does when you press power,,74.2,no (awaiting review),crt,af_heart
+2026-10-27,,fridge,Your fridge does not make cold,,83.8,no,dataviz,af_heart
+TBD,TBD,bats,How bats see in the dark (Halloween),,77.9,no (awaiting review),neon (Generative & neon),af_heart
+TBD,TBD,fog,How spooky fog really works (Halloween),,81.0,no (awaiting review),handdrawn (Hand-drawn sketch & comic; HiAPIAI awesome-opus-5-5-video-styles),af_heart
+TBD,TBD,hiccup,Why you really get hiccups,,83.9,no,cartoon,af_heart
+TBD,TBD,skyscr,How a skyscraper really stays up,,79.8,no,lowpoly,af_heart
+TBD,TBD,eclipse,How a solar and lunar eclipse really work,,84.2,no (awaiting review),shadow-puppet (lemo-opuscar demo #22),af_heart

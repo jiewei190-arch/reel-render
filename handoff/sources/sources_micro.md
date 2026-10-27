@@ -1,0 +1,3 @@
+# Sources (micro)
+- Wikipedia "Microwave oven" (fetched): 2.45 GHz consumer frequency (wavelength ~12.2 cm); dielectric heating of polar molecules such as water; penetration ~1 cm in most foods at 2.45 GHz, interior mostly warmed by conduction; "inside-out" cooking is a common misconception (exceptions in layered foods); uneven heating/cold spots, turntables help; Percy Spencer / Raytheon 1945 candy bar melting near magnetron, patent filed Oct 8 1945.
+Hedges used: "reportedly" for the candy-bar anecdote; "about one centimeter", "varies by food"; "water spinning like a crowd" is an analogy; the plate demo is illustrative.
