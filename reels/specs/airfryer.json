@@ -1,0 +1,28 @@
+{
+ "name": "airfryer",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  ["Your air fryer has **never fried** anything.", "Your air fryer has never fried anything."],
+  ["Frying means dunking food in a pot of **hot oil.**", "Frying means dunking food in a pot of hot oil."],
+  ["An air fryer has no pot of oil. It's a tiny countertop **convection oven.**", "An air fryer has no pot of oil. It's a tiny, countertop convection oven."],
+  ["Up top: a **heating element,** and a **fan.**", "Up top, a heating element, and a fan."],
+  ["The fan blasts air past the heater, up to about **200 °C.**", "The fan blasts air past the heater, up to about two hundred degrees Celsius."],
+  ["That hot air **whips around** the basket, over and under the food.", "That hot air whips around the basket, over and under the food."],
+  ["Here's the trick. Still air clings to food in a **thin, cooler layer.**", "Here's the trick. Still air clings to food, in a thin, cooler layer."],
+  ["It works like a **blanket,** slowing the heat down.", "It works like a blanket, slowing the heat down."],
+  ["Fast air **thins that blanket,** so heat gets in faster.", "Fast air thins that blanket, so heat gets in faster."],
+  ["The outside dries, then it **browns.**", "The outside dries, then it browns."],
+  ["That's the **Maillard reaction:** sugars and proteins turning golden.", "That's the Maillard reaction. Sugars and proteins, turning golden."],
+  ["It speeds up from about **140 °C,** the same zone as real frying.", "It speeds up from about a hundred and forty degrees, the same zone as real frying."],
+  ["A thin coat of oil helps, but the food **never swims** in it.", "A thin coat of oil helps, but the food never swims in it."],
+  ["So is it just an oven? Many ovens have a **fan too.**", "So, is it just an oven? Many ovens have a fan, too."],
+  ["Some reviewers say air frying is **basically convection baking,** just smaller.", "Some reviewers say air frying is basically convection baking, just smaller."],
+  ["A Dutch engineer, **Fred van der Weij,** invented it. Philips launched it in **2010.**", "A Dutch engineer, Fred van der Vey, invented it. Philips launched it in twenty ten."],
+  ["So, should we call it a fryer, or a **very small oven?**", "So, should we call it a fryer, or a very small oven?"],
+  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ ],
+ "breath": [0, 1, 2, 5, 8, 11, 12, 14, 15, 16]
+}
