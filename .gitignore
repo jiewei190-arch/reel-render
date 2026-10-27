@@ -3,3 +3,7 @@ tts/*.bin
 reels/frames/
 reels/out/
 *.wav
+reels/stills/
+reels/up/
+reels/*.log
+reels/*.done
