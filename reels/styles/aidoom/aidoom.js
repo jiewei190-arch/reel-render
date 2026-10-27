@@ -91,9 +91,9 @@ export function createAD(canvas) {
   // karaoke caption on dark band (sung = yellow, coming = white, dark outline)
   AD.caption = (ph, t, o = {}) => { if (!ph) return; const c = g; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.filter = 'none';
     const band = c.createLinearGradient(0, 1520, 0, H); band.addColorStop(0, 'rgba(25,18,14,0)'); band.addColorStop(.4, 'rgba(25,18,14,.55)'); band.addColorStop(1, 'rgba(25,18,14,.75)'); c.fillStyle = band; c.fillRect(0, 1520, W, H - 1520);
-    const size = 56; c.font = AD.font('roundX', size, 800); const ws = []; let hl = false; ph.cap.split(/(\*\*)/).forEach(p => { if (p === '**') { hl = !hl; return; } p.split(/\s+/).filter(Boolean).forEach(w => ws.push({ w })); });
+    const size = 50; c.font = AD.font('roundX', size, 800); const ws = []; let hl = false; ph.cap.split(/(\*\*)/).forEach(p => { if (p === '**') { hl = !hl; return; } p.split(/\s+/).filter(Boolean).forEach(w => ws.push({ w })); });
     const tot = ws.reduce((a, w) => a + w.w.length + 1, 0); let acc = 0; ws.forEach(w => { w.t0 = ph.start + (ph.end - ph.start) * acc / tot; acc += w.w.length + 1; w.ww = c.measureText(w.w).width; });
-    const lines = [[]]; let lw = 0; const sp = c.measureText(' ').width; ws.forEach(w => { if (lw + w.ww > 920 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push(w); lw += w.ww + sp; });
+    const lines = [[]]; let lw = 0; const sp = c.measureText(' ').width; ws.forEach(w => { if (lw + w.ww > 960 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push(w); lw += w.ww + sp; });
     const a = clamp((t - ph.start + .2) / .2) * (o.out != null ? clamp((o.out - t) / .2) : 1), lh = size * 1.22, y0 = 1720 - (lines.length - 1) * lh / 2;
     lines.forEach((ln, li) => { const w = ln.reduce((s, x) => s + x.ww, 0) + sp * (ln.length - 1); let x = W / 2 - w / 2; ln.forEach(wd => { c.globalAlpha = a; c.lineWidth = 9; c.lineJoin = 'round'; c.strokeStyle = '#1b1410'; c.strokeText(wd.w, x, y0 + li * lh); c.fillStyle = t >= wd.t0 ? C.yellow : '#fbf6ea'; c.fillText(wd.w, x, y0 + li * lh); x += wd.ww + sp; }); });
     c.restore(); };
