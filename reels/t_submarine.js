@@ -2,7 +2,7 @@
 // Flat silhouettes on an old film: sepia on the surface, drifting to blue-lavender once the sub goes under; warm glows stay warm.
 import { createFilm, W, H, GATE, clamp, lerp, ramp, ss, eo, hash, mixc } from './styles/cinefilm/cinefilm.js';
 await document.fonts.load('italic 600 54px "Playfair Display"');
-const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
+const TL = window.TL, PH = TL.p, M = i => i >= 1 ? i + 1 : i, s = i => PH[M(i)].start, e = i => PH[M(i)].end;   // M: v2 hook added the question line at 1
 const F = createFilm(document.getElementById('c')), g = F.g, R = ramp, TAU = Math.PI * 2;
 const INK = '#16120e', INK2 = '#221c16';
 
@@ -63,13 +63,23 @@ function seabed(y, a = 1) { g.save(); g.globalAlpha = a; g.fillStyle = INK; g.be
 
 // ---------- shots ----------
 const SH = [
-  [0, s(1) - .15, 'open'], [s(1) - .15, s(5) - .15, 'scale'], [s(5) - .15, s(8) + .4, 'dive'], [s(8) + .4, s(10) - .15, 'under'],
+  [0, s(1) - .15, 'hook'], [s(1) - .15, s(5) - .15, 'scale'], [s(5) - .15, s(8) + .4, 'dive'], [s(8) + .4, s(10) - .15, 'under'],
   [s(10) - .15, s(12) - .15, 'hover'], [s(12) - .15, s(13) - .15, 'planes'], [s(13) - .15, s(16) - .15, 'blow'], [s(16) - .15, s(17) - .15, 'emerg'],
   [s(17) - .15, s(18) - .15, 'fish'], [s(18) - .15, s(19) - .15, 'night'], [s(19) - .15, TL.total + 1, 'end']];
 const shotAt = t => SH.find(x => t >= x[0] && t < x[1]) || SH[SH.length - 1];
 const gradeK = t => ss(R(t, s(7) + .8, s(9) - s(7)));
 
 const SCN = {
+  hook(t) {   // frame 0: cutaway sub on the surface, vents already popping, air geysering out, sea flooding the tanks; then she sinks
+    const q = PH[1].start, vents = .6 + .4 * ss(R(t, 0, .3)), fill = .12 + .88 * ss(R(t, 0, q + .4)), sink = ss(R(t, q - .2, 2.4));
+    const ySurf = 1000 - sink * 700; sky(t, ySurf); sea(t, ySurf, 5000); rays(t, ySurf, sink);
+    const S = sub(540, 1030 + fill * 50 + sink * 140, 1.2, { cut: 1, fwd: fill, aft: fill * .97, vents, ports: 0 });
+    return () => { subGlow(S, t);
+      if (fill < .98) S.T.forEach(tk => { const [bx, by] = local(S, tk.x + tk.w / 2, -S.Hh - 10); bubbles(bx, by, t, 14, { spread: 50, rise: 380, a: (1 - fill) * vents, size: 9 });
+        if (sink < .2) for (let i = 0; i < 16; i++) { const u = (t * 1.7 + hash(i * 3.1)) % 1, a = -Math.PI / 2 + (hash(i) - .5) * .7; F.circ(bx + Math.cos(a) * u * 260, by - Math.sin(-a) * u * 320 + u * u * 160, 3 + hash(i) * 5, '#f4ead6', (1 - u) * (1 - fill) * (1 - sink * 5)); } });
+      if (fill < .98) S.T.forEach(tk => { const [bx, by] = local(S, tk.x + tk.w / 2, S.Hh + 30); for (let i = 0; i < 6; i++) { const u = (t * 1.8 + i / 6) % 1; g.save(); g.strokeStyle = 'rgba(170,190,240,.8)'; g.lineWidth = 4; g.beginPath(); g.moveTo(bx - 50 + i * 20, by + 50 - u * 40); g.lineTo(bx - 50 + i * 20, by + 14 - u * 40); g.stroke(); g.restore(); } });
+      F.snow(t, 40, { speed: 26, a: .5, y1: Math.max(0, ySurf) }); };
+  },
   open(t) {   // a single glowing round light in the dark, the camera pulls back: it's a porthole on a sub at night
     const z = lerp(9, 1, ss(R(t, .4, 3.4))), cx = 540, cy = 1000, px = 540 - 50, py = 1000 - 8;
     g.save(); g.translate(cx, cy); g.scale(z, z); g.translate(-px, -py); sky(t, 1050); sea(t, 1050); const S = sub(540, 1010, 1.05, { ports: 1 }); g.restore();
@@ -154,6 +164,8 @@ function label(txt, S, px, py, tS) { if (tS <= 0) return; const [x, y] = local(S
 // a depth gauge like the demo's wall clock: glowing face, needle settling
 function gauge(x, y, t, wob) { g.save(); g.fillStyle = '#ffe9c0'; g.beginPath(); g.arc(x, y, 92, 0, TAU); g.fill(); g.strokeStyle = INK; g.lineWidth = 8; g.stroke(); g.lineWidth = 4; for (let i = 0; i < 12; i++) { const a = i / 12 * TAU; g.beginPath(); g.moveTo(x + Math.cos(a) * 70, y + Math.sin(a) * 70); g.lineTo(x + Math.cos(a) * 82, y + Math.sin(a) * 82); g.stroke(); } const a = -.6 + Math.sin(t * 3) * .5 * wob; g.lineWidth = 6; g.beginPath(); g.moveTo(x, y); g.lineTo(x + Math.cos(a) * 64, y + Math.sin(a) * 64); g.stroke(); g.fillStyle = INK; g.beginPath(); g.arc(x, y, 8, 0, TAU); g.fill(); g.font = 'italic 600 24px "Playfair Display"'; g.textAlign = 'center'; g.fillText('depth', x, y + 44); g.restore(); F.glow(x, y, 70, .5); }
 
+function bigCap(str, a, size = 118, maxW = 940) { if (a <= 0) return; g.save(); g.textAlign = 'center'; g.font = `italic 700 ${size}px "Playfair Display"`; g.globalAlpha = a; g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 18; g.fillStyle = '#f6e6bf';
+  const words = str.split(' '), L = ['']; words.forEach(w => { const tr = (L[L.length - 1] + ' ' + w).trim(); if (g.measureText(tr).width > maxW && L[L.length - 1]) L.push(w); else L[L.length - 1] = tr; }); L.forEach((l, i) => g.fillText(l, 540, 430 + i * size * 1.08)); g.restore(); }
 function scene(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
   const [a, b, name] = shotAt(t), [wx, wy] = F.weave(t);
@@ -164,7 +176,9 @@ function scene(t) {
   const gk = name === 'end' ? 0 : gradeK(t); F.grade(gk);
   g.save(); g.translate(wx, wy); glowPass(); g.restore();
   // dip through dark between shots (the demo's fades)
-  const fi = name === 'open' ? 1 : ss(R(t, a, .3)), fo = 1 - ss(R(t, b - .3, .3)); const dip = Math.min(fi, fo); if (dip < 1) { g.fillStyle = `rgba(0,0,0,${1 - dip})`; g.fillRect(0, 0, W, H); }
+  const fi = name === 'hook' ? 1 : ss(R(t, a, .3)), fo = 1 - ss(R(t, b - .3, .3)); const dip = Math.min(fi, fo); if (dip < 1) { g.fillStyle = `rgba(0,0,0,${1 - dip})`; g.fillRect(0, 0, W, H); }
+  // burned-in hook caption (HOOKS.md rule 3), the demo's italic face, large, top third
+  if (t < PH[2].start - .2) { const one = t < PH[1].start - .05; bigCap(one ? 'Let the ocean in.' : 'How does it come back up?', one ? 1 : ss(R(t, PH[1].start - .05, .25)), one ? 112 : 76); }
   // foreground wavy black band + italic caption written in word by word
   if (name !== 'end') { F.band(t, 1585); let ci = -1; PH.forEach((p, k) => { if (t >= p.start - .1) ci = k; }); const cap = ci >= 0 ? PH[ci].cap.replace(/\*\*/g, '') : 'How a submarine really dives.'; F.caption(ci >= 0 ? cap : 'How a submarine really dives.', ci >= 0 ? t - PH[ci].start + .1 : 9, { y: 1712, size: 62, wps: 4.4 }); }
   F.film(t);
@@ -172,4 +186,7 @@ function scene(t) {
 window.DUR = TL.total;
 window.seek = t => { scene(t); const fade = Math.min(1, (TL.total - t) / .5); if (fade < 1) { g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = `rgba(0,0,0,${1 - fade})`; g.fillRect(0, 0, W, H); } };
 window.render = window.seek;
+// thumbnail / cover (rule 11): flooding cutaway on the surface in the film look, hook text large inside y 300-1620
+window.thumb = () => { const t = 1.6; g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, W, H); const gp = SCN.hook(t); F.grade(0); gp(); F.band(t, 1585);
+  bigCap('Let the', 1, 150); g.save(); g.translate(0, 162); bigCap('ocean in.', 1, 150); g.restore(); F.caption('How a submarine really dives.', 9, { y: 1712, size: 62 }); F.film(t); };
 window.seek(0); window.ready = true; window.READY = true;
