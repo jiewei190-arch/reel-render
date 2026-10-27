@@ -66,7 +66,7 @@ function draw(g, t) {
   if (i === 12) { const a = D(t, S(12) + .3, S(12) + 1); g.globalAlpha = a * flick; const rows = ['[x] chip authenticates card', '[x] one-time code per payment', '[x] same fraud protections']; rows.forEach((s, k) => { g.globalAlpha = D(t, S(12) + .4 + k * .7, S(12) + .9 + k * .7) * flick; T(s, 30, 430 + k * 60, { z: 31 }) }); g.globalAlpha = flick }
   if (i === 13) { terminal(60, 420, 1); card(330, 440, 1, 1); fieldArcs(t, 125, 438, 240, 1); const a = D(t, S(13) + 2, S(13) + 2.8); g.globalAlpha = a * flick; inv('TAP = RADIO CONVERSATION', 270, 720, { z: 32, al: 'center' }); g.globalAlpha = flick }
   if (i === 14) { card(185, 440 + Math.sin(t * 3) * 6, 1, 0); const a = D(t, S(14) + .6, S(14) + 1.2); g.globalAlpha = a * flick; T('> insert_card  (still?)', 270, 700, { z: 34, al: 'center', col: C.hot }); g.globalAlpha = flick }
-  if (i >= 15) { const a = D(t, S(15), S(15) + .5); g.globalAlpha = a * flick; inv('FOLLOW', 270, 560, { z: 90, al: 'center' }); T('> for more explainers_', 270, 650, { z: 34, al: 'center', col: C.hot }); g.globalAlpha = flick }
+  if (i >= 15) { const a = D(t, S(15), S(15) + .5); g.globalAlpha = a * flick; inv('FOLLOW', 270, 560, { z: 90, al: 'center' }); g.globalAlpha = flick }
   captionTerm(t);
   g.restore();
   // CRT: scanlines, vignette, slight bloom band
