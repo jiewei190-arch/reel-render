@@ -1,0 +1,104 @@
+{
+ "name": "submarine",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "A submarine dives by letting the **ocean in.** On purpose.",
+   "A submarine dives by letting the ocean in. On purpose."
+  ],
+  [
+   "Floating comes down to one thing: the **water you push aside.**",
+   "Floating comes down to one thing. The water you push aside."
+  ],
+  [
+   "If that water **weighs more** than you do, you float.",
+   "If that water weighs more than you do, you float."
+  ],
+  [
+   "If it weighs **less,** you sink.",
+   "If it weighs less, you sink."
+  ],
+  [
+   "That's why a steel sub weighing **thousands of tonnes** can still float.",
+   "That's why a steel sub, weighing thousands of tonnes, can still float."
+  ],
+  [
+   "On the surface, a sub's big **ballast tanks** are full of **air.**",
+   "On the surface, a sub's big ballast tanks are full of air."
+  ],
+  [
+   "To dive, the crew opens **vents** on top of the tanks.",
+   "To dive, the crew opens vents on top of the tanks."
+  ],
+  [
+   "Air escapes out the top, and **seawater floods in** through the bottom.",
+   "Air escapes out the top, and seawater floods in through the bottom."
+  ],
+  [
+   "Heavier for its size, the sub **slips under.**",
+   "Heavier for its size, the sub slips under."
+  ],
+  [
+   "But it shouldn't sink **forever.**",
+   "But it shouldn't sink forever."
+  ],
+  [
+   "Smaller **trim tanks** shift water until it neither rises nor sinks.",
+   "Smaller trim tanks shift water, until it neither rises, nor sinks."
+  ],
+  [
+   "That's **neutral buoyancy.** It hovers.",
+   "That's neutral buoyancy. It hovers."
+  ],
+  [
+   "Fins called **diving planes** tilt it up or down as it moves.",
+   "Fins called diving planes tilt it up or down as it moves."
+  ],
+  [
+   "To come up, the crew closes the vents and blows **compressed air** into the tanks.",
+   "To come up, the crew closes the vents, and blows compressed air into the tanks."
+  ],
+  [
+   "The air **shoves the water** back out the bottom.",
+   "The air shoves the water back out the bottom."
+  ],
+  [
+   "Lighter than the water it pushes aside, the sub **rises.**",
+   "Lighter than the water it pushes aside, the sub rises."
+  ],
+  [
+   "In an emergency, crews use **every trick at once** to surface fast.",
+   "In an emergency, crews use every trick at once, to surface fast."
+  ],
+  [
+   "Many fish do a version of this, with a gas-filled **swim bladder.**",
+   "Many fish do a version of this, with a gas-filled swim bladder."
+  ],
+  [
+   "So: would you trust **a bubble of air** to bring you home?",
+   "So, would you trust a bubble of air, to bring you home?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  8,
+  9,
+  11,
+  12,
+  15,
+  16,
+  17,
+  18
+ ]
+}

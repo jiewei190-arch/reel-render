@@ -131,7 +131,7 @@ const SH = {
     const po = popOpen(t - (s(1) - .9)); portal(560, 860, 230, t, { open: po });
     fryer(170, 1080, .78, t, { screenTxt: 'FRY', steam: 1 });
     const press = ss(seg(tq, s(1) - 1.4, s(1) - 1.0));
-    juno(J(t, { armR: press > 0 ? { h: [-150 * press - 30, 120 - 60 * press], bend: 30 } : undefined, look: [press ? -.8 : -.3, .1] }));
+    juno(J(t, { armR: press > 0 ? { h: [150 * press + 30, 120 - 60 * press], bend: -30 } : undefined, look: [press ? .8 : .3, .1] }));
     spud(P(t, { nerv: .6 + po * .6, sweat: t, look: [po > 0 ? -.3 : .6, -.3], mouth: { o: po * .6, sm: -.8 }, eyeS: 1 + po * .25 }));
   },
   oil(t, tq) {   // jump 1: Spud falls toward the oil, the blob licks its lips, reaction close-up
@@ -143,7 +143,7 @@ const SH = {
     const ins = t > s(2) + 2.6 && t < s(3) - .7;
     if (!ins) { cam(540, 1010, 1.1); lab(t); const po = popOpen(t - (s(2) - .3)) * (1 - ss(seg(t, s(2) + .6, s(2) + .9))) + popOpen(t - (s(3) - .9)); portal(560, 860, 230, t, { open: Math.min(1, po) }); fryer(170, 1080, .78, t, { screenTxt: t > s(2) + 1.2 ? 'OVEN' : 'FRY', steam: 1 });
       const land = s(2) + .2, fl = seg(t, s(2) - .3, land); const sp = t < land ? P(t, { x: lerp(560, 380, fl), y: lerp(860, 1080, fl) - Math.sin(fl * Math.PI) * 200, nerv: 1, mouth: { o: .7, sm: -1 } }) : P(t, { sq: landSq(t, land), nerv: .5, look: [.6, -.2], sweat: t });
-      juno(J(t, { armR: t > s(2) + .8 ? { h: [-170, -10], bend: 20 } : undefined, look: [-.6, 0] })); spud(sp); }
+      juno(J(t, { armR: t > s(2) + .8 ? { h: [170, -10], bend: -20 } : undefined, look: [.6, 0] })); spud(sp); }
     else { cam(220, 840, 2.4); lab(t); fryer(170, 1080, .78, t, { screenTxt: 'OVEN', steam: 1 }); const tw = seg(t, s(2) + 2.7, s(2) + 3.6); push(); translate(-60, 760); shape(rr(0, 0, 560, 120, 14), { fill: '#17232a', lw: 7 }); text('CONVECTION OVEN'.slice(0, Math.floor(tw * 16)), 280, 44, { font: '400 54px VT323', fill: '#ffb44a' }); text('(tiny. countertop.)'.slice(0, Math.max(0, Math.floor(tw * 30) - 14)), 280, 94, { font: '400 36px VT323', fill: '#ffb44a' }); pop(); }
   },
   inside(t, tq) {   // jump 2: inside the fryer. heater, fan, 200 C, air whips around; Spud's wind-blown reaction
@@ -183,7 +183,7 @@ const SH = {
   },
   normal(t, tq) {   // the break: suspiciously normal world, everyone calm
     const z = lerp(1, 1.06, ss(seg(t, s(13), s(15)))); cam(540, 960, z); normalWorld(t);
-    juno(J(t, { x: 860, y: 1460, s: .9, look: [-.9, 0], armR: t > s(13) + 1.4 && t < s(14) ? { h: [-160, -20], bend: 20 } : undefined }));
+    juno(J(t, { x: 860, y: 1460, s: .9, look: [.9, 0], armR: t > s(13) + 1.4 && t < s(14) ? { h: [160, -20], bend: -20 } : undefined }));
     const shrug = ss(seg(t, s(14) + .6, s(14) + 1.0)) * (1 - ss(seg(t, s(14) + 2.6, s(14) + 3.0)));
     spud(P(t, { x: 180, y: 1460, s: .72, nerv: 0, lid: .45, look: [.6, 0], mouth: { o: 0, sm: .2 }, brow: shrug * 1.4 - .3, armL: { h: [-60, -50 * shrug + 40], bend: 20 }, armR: { h: [60, -50 * shrug + 40], bend: -20 } }));
   },
