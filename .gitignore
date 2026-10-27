@@ -11,3 +11,5 @@ reels/r_*.log
 reels/asm_*.log
 reels/*.done
 work/
+reels/up/*.mp4
+reels/enc_hq.log
