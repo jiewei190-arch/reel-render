@@ -9,3 +9,4 @@ reels/stills/
 reels/*.log
 reels/*.done
 reels/frames/
+reels/vendor/

@@ -16,7 +16,7 @@ function card(x, y, a = 1, cur_ = 0) { G.save(); G.globalAlpha = a; G.translate(
 function fieldArcs(t, x, y, rmax, alpha = 1, dir = 1, fade = 1) { for (let k = 0; k < 4; k++) { const u = ((t * .9 * dir + k / 4) % 1 + 1) % 1, r = 10 + u * rmax; G.save(); G.strokeStyle = C.am; G.globalAlpha = alpha * (1 - u) * fade; G.lineWidth = 3; G.shadowColor = C.am; G.shadowBlur = 8; G.setLineDash(Math.floor(t * 8 + k) % 2 ? [10, 6] : [4, 8]); G.beginPath(); G.arc(x, y, r, -Math.PI * .95, -Math.PI * .05); G.stroke(); G.restore() } }
 // caption: typed on, inverse-video highlights
 function captionTerm(t) {
-  const i = cur(t); if (i < 0 || t > P[i].end + .5) return; const k = t - P[i].start, a = clamp((P[i].end + .5 - t) / .2);
+  const i = cur(t), last = i === P.length - 1; if (i < 0 || (!last && t > P[i].end + .5)) return; const k = t - P[i].start, a = last ? 1 : clamp((P[i].end + .5 - t) / .2);
   const words = []; let hl = false; P[i].cap.split(/(\*\*)/).forEach(sg => { if (sg === '**') { hl = !hl; return } sg.split(/\s+/).filter(Boolean).forEach(w => words.push({ w, hl })) });
   const z = 36; G.font = F(z); const cw = G.measureText('M').width, maxc = Math.floor(470 / cw); const lines = []; let cl = [], n = 0;
   words.forEach(wd => { if (n + wd.w.length + (n ? 1 : 0) > maxc && cl.length) { lines.push(cl); cl = []; n = 0 } cl.push(wd); n += wd.w.length + (n ? 1 : 0) }); lines.push(cl);
