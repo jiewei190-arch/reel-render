@@ -43,7 +43,7 @@ export function createAL(canvas) {
   // kinetic line: letters slide in from the right with horizontal smear (demo "p lat form"); k 0..1, out 0..1 slides away left
   A.kinetic = (s, x, y, k, o = {}) => { if (k <= 0) return; const c = ctx, size = o.size || 120, f = o.f || 'sans', wt = o.wt || 800; c.save(); c.font = A.font(f, size, wt); if (o.track != null) c.letterSpacing = o.track + 'px';
     const tw = c.measureText(s).width; let cx = o.align === 'center' ? x - tw / 2 : o.align === 'right' ? x - tw : x; const out = o.out || 0;
-    for (let i = 0; i < s.length; i++) { const ch = s[i], w = c.measureText(ch).width + (o.track || 0), u = ex(clamp(k * 1.6 - i / s.length * .6)), v = ex(clamp(out * 1.6 - i / s.length * .6)), off = (1 - u) * 260 - v * 260, a = clamp(u * 1.3) * (1 - v);
+    const base = cx; for (let i = 0; i < s.length; i++) { cx = base + c.measureText(s.slice(0, i)).width; const ch = s[i], w = 0, u = ex(clamp(k * 1.6 - i / s.length * .6)), v = ex(clamp(out * 1.6 - i / s.length * .6)), off = (1 - u) * 260 - v * 260, a = clamp(u * 1.3) * (1 - v);
       if (a > .01) { const sm = Math.abs((1 - u) + v) * 18; c.globalAlpha = a * (o.a ?? 1); c.fillStyle = o.col || C.white; if (sm > .5) { c.filter = `blur(${Math.min(14, sm)}px)`; c.fillText(ch, cx + off, y); c.filter = 'none'; c.globalAlpha = a * .6 * (o.a ?? 1); } c.fillText(ch, cx + off, y); }
       cx += w; } c.restore(); return tw; };
   A.line = (x0, y0, x1, y1, o = {}) => { const k = o.prog ?? 1; if (k <= 0) return; const c = ctx; c.save(); c.globalAlpha *= o.a ?? 1; c.strokeStyle = o.col || 'rgba(220,225,255,.8)'; c.lineWidth = o.w || 2; if (o.dash) c.setLineDash(o.dash);
