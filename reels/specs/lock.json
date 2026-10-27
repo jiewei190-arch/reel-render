@@ -1,0 +1,85 @@
+{
+ "name": "lock",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  2,
+  5,
+  9,
+  11,
+  12,
+  15
+ ],
+ "phrases": [
+  [
+   "Your key is a **tiny code.** How does a lock read it?",
+   "Your key is a tiny code. How does a lock read it?"
+  ],
+  [
+   "Inside the lock is a round **plug** that turns, held in a solid **housing.**",
+   "Inside the lock is a round plug that turns, held in a solid housing."
+  ],
+  [
+   "The thin gap between them is called the **shear line.**",
+   "The thin gap between them is called the shear line."
+  ],
+  [
+   "Five or six small holes are drilled **down through both parts.**",
+   "Five or six small holes are drilled down through both parts."
+  ],
+  [
+   "Each hole holds a **spring,** a **driver pin,** and a **key pin.**",
+   "Each hole holds a spring, a driver pin, and a key pin."
+  ],
+  [
+   "The springs push the pins down, so the driver pins **block the plug.** It can't turn.",
+   "The springs push the pins down, so the driver pins block the plug. It can't turn."
+  ],
+  [
+   "Now slide in the **right key.**",
+   "Now slide in the right key."
+  ],
+  [
+   "Each cut on the key lifts its key pin to **just the right height.**",
+   "Each cut on the key lifts its key pin to just the right height."
+  ],
+  [
+   "Now the gap between every key pin and driver pin lines up **right at the shear line.**",
+   "Now the gap between every key pin and driver pin lines up, right at the shear line."
+  ],
+  [
+   "Nothing crosses it, so the plug **turns freely.** A cam at the back pulls the bolt.",
+   "Nothing crosses it, so the plug turns freely. A cam at the back pulls the bolt."
+  ],
+  [
+   "Try a **wrong key,** and the pins rise to the wrong heights.",
+   "Try a wrong key, and the pins rise to the wrong heights."
+  ],
+  [
+   "At least one pin **straddles the shear line,** so the plug stays locked.",
+   "At least one pin straddles the shear line, so the plug stays locked."
+  ],
+  [
+   "So the key's **cuts are the code.** Change one, and the lock won't open.",
+   "So the key's cuts are the code. Change one, and the lock won't open."
+  ],
+  [
+   "The idea is **thousands of years old.** The oldest known ones were made of wood.",
+   "The idea is thousands of years old. The oldest known ones were made of wood."
+  ],
+  [
+   "The compact metal version we use today was patented by **Linus Yale Jr.** in the 1860s.",
+   "The compact metal version we use today was patented by Linus Yale Junior, in the eighteen sixties."
+  ],
+  [
+   "A lock doesn't recognize you. It just needs **every pin to line up.**",
+   "A lock doesn't recognize you. It just needs every pin to line up."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

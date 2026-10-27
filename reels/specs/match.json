@@ -1,0 +1,81 @@
+{
+ "name": "match",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Strike a match, and **fire appears** from a tiny stick.",
+   "Strike a match, and fire appears from a tiny stick."
+  ],
+  [
+   "But half of the chemistry isn't on the match. It's on the **box.**",
+   "But half of the chemistry isn't on the match. It's on the box."
+  ],
+  [
+   "First, what does any fire need? **Heat, fuel, and oxygen.**",
+   "First, what does any fire need? Heat, fuel, and oxygen."
+  ],
+  [
+   "A fire needs **all three** to start. This is the fire triangle.",
+   "A fire needs all three to start. This is the fire triangle."
+  ],
+  [
+   "The match head holds the **fuel**: sulfur and a chemical called antimony sulfide.",
+   "The match head holds the fuel: sulfur and a chemical called antimony sulfide."
+  ],
+  [
+   "It also holds the **oxygen supply**: a chemical called potassium chlorate.",
+   "It also holds the oxygen supply: a chemical called potassium chlorate."
+  ],
+  [
+   "But the head won't light by itself. It needs a **spark of heat** first.",
+   "But the head won't light by itself. It needs a spark of heat first."
+  ],
+  [
+   "That heat comes from the **striking strip** on the box. It holds **red phosphorus** and powdered glass.",
+   "That heat comes from the striking strip on the box. It holds red phosphorus and powdered glass."
+  ],
+  [
+   "Drag the match, and **friction** heats a tiny bit of that red phosphorus.",
+   "Drag the match, and friction heats a tiny bit of that red phosphorus."
+  ],
+  [
+   "The trace turns into **white phosphorus**, which ignites as soon as it meets air.",
+   "The trace turns into white phosphorus, which ignites as soon as it meets air."
+  ],
+  [
+   "That small flash heats the head, so the **potassium chlorate breaks down** and releases oxygen.",
+   "That small flash heats the head, so the potassium chlorate breaks down and releases oxygen."
+  ],
+  [
+   "With oxygen flowing, the **fuel catches**, and the head flares up.",
+   "With oxygen flowing, the fuel catches, and the head flares up."
+  ],
+  [
+   "The flame then lights the **wooden stick**, which is soaked in ammonium phosphate so it burns slowly.",
+   "The flame then lights the wooden stick, which is soaked in ammonium phosphate so it burns slowly."
+  ],
+  [
+   "John Walker sold the first friction matches in **1827.**",
+   "John Walker sold the first friction matches in 1827."
+  ],
+  [
+   "Later matches used **white phosphorus**, which was toxic to factory workers.",
+   "Later matches used white phosphorus, which was toxic to factory workers."
+  ],
+  [
+   "Red phosphorus, found in **1845**, is not toxic. That led to the **safety match.**",
+   "Red phosphorus, found in 1845, is not toxic. That led to the safety match."
+  ],
+  [
+   "So a safety match is a **two-part machine**: the head and the box.",
+   "So a safety match is a two-part machine: the head and the box."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

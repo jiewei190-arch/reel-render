@@ -1,0 +1,76 @@
+{
+ "name": "skyblue",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  5,
+  8,
+  10,
+  13
+ ],
+ "phrases": [
+  [
+   "Why is the **sky blue,** but a **sunset red?**",
+   "Why is the sky blue, but a sunset red?"
+  ],
+  [
+   "Sunlight looks white, but it is a **mix of every color.**",
+   "Sunlight looks white, but it is a mix of every color."
+  ],
+  [
+   "**Blue** light has **short waves.** **Red** light has **long waves.**",
+   "Blue light has short waves. Red light has long waves."
+  ],
+  [
+   "Air is full of **tiny gas molecules,** much smaller than a light wave.",
+   "Air is full of tiny gas molecules, much smaller than a light wave."
+  ],
+  [
+   "Sunlight bounces off them in every direction. That is **scattering.**",
+   "Sunlight bounces off them in every direction. That is called scattering."
+  ],
+  [
+   "And **short blue waves** scatter far more than **long red ones.**",
+   "And short blue waves scatter far more than long red ones."
+  ],
+  [
+   "So blue light fills the **whole sky,** and reaches your eyes from **everywhere.**",
+   "So blue light fills the whole sky, and reaches your eyes from everywhere."
+  ],
+  [
+   "What about **violet?** The sun sends us less of it, and our eyes see **blue** better.",
+   "What about violet? The sun sends us less of it, and our eyes see blue better."
+  ],
+  [
+   "And **no,** the sky is **not** a reflection of the ocean.",
+   "And no, the sky is not a reflection of the ocean."
+  ],
+  [
+   "At sunset the sun is **low,** so its light crosses **much more air.**",
+   "At sunset the sun is low, so its light crosses much more air."
+  ],
+  [
+   "Along the way the **blue** is scattered out, and the **reds and oranges** are what is left.",
+   "Along the way the blue is scattered out, and the reds and oranges are what is left."
+  ],
+  [
+   "**Clouds** are different. Their droplets are **much bigger,** so they scatter **every color** about equally.",
+   "Clouds are different. Their droplets are much bigger, so they scatter every color about equally."
+  ],
+  [
+   "All the colors mixed look **white.** Thick **rain clouds** look darker, because less light gets through.",
+   "All the colors mixed look white. Thick rain clouds look darker, because less light gets through."
+  ],
+  [
+   "So **tiny molecules** make blue skies, **long paths** make red sunsets, and **big droplets** make white clouds.",
+   "So tiny molecules make blue skies, long paths make red sunsets, and big droplets make white clouds."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

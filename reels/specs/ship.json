@@ -1,0 +1,104 @@
+{
+ "name": "ship",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  3,
+  4,
+  7,
+  10,
+  13,
+  15,
+  18,
+  19
+ ],
+ "phrases": [
+  [
+   "A steel ship is **incredibly heavy.** So why doesn't it **sink?**",
+   "A steel ship is incredibly heavy. So why doesn't it sink?"
+  ],
+  [
+   "Start with a **lump of clay.** Drop it in water, and it sinks.",
+   "Start with a lump of clay. Drop it in water, and it sinks."
+  ],
+  [
+   "Shape that same clay into a **boat,** and it floats.",
+   "Shape that same clay into a boat, and it floats."
+  ],
+  [
+   "Same clay. Same weight. Only the **shape** changed.",
+   "Same clay. Same weight. Only the shape changed."
+  ],
+  [
+   "The rule is called **Archimedes' principle.**",
+   "The rule is called Archimedes' principle."
+  ],
+  [
+   "An object in water pushes some water **out of the way.**",
+   "An object in water pushes some water out of the way."
+  ],
+  [
+   "That pushed-aside water is called **displaced** water.",
+   "That pushed-aside water is called displaced water."
+  ],
+  [
+   "The water pushes back up with a force equal to the **weight of the displaced water.**",
+   "The water pushes back up with a force equal to the weight of the displaced water."
+  ],
+  [
+   "The clay lump displaces only a **little** water, so the push up is small.",
+   "The clay lump displaces only a little water, so the push up is small."
+  ],
+  [
+   "The boat shape displaces **much more,** so the push up is much bigger.",
+   "The boat shape displaces much more, so the push up is much bigger."
+  ],
+  [
+   "A ship floats when the push up **equals its own weight.**",
+   "A ship floats when the push up equals its own weight."
+  ],
+  [
+   "Another way to see it: look at the ship's **average density.**",
+   "Another way to see it: look at the ship's average density."
+  ],
+  [
+   "Steel is about **eight times** denser than water.",
+   "Steel is about eight times denser than water."
+  ],
+  [
+   "But most of a ship's inside is **air.** Steel plus air, averaged, is lighter than water.",
+   "But most of a ship's inside is air. Steel plus air, averaged, is lighter than water."
+  ],
+  [
+   "That's why a **hole** in the hull is dangerous. Water replaces the air, and the density **rises.**",
+   "That's why a hole in the hull is dangerous. Water replaces the air, and the density rises."
+  ],
+  [
+   "Load on cargo, and the ship sits **lower** in the water.",
+   "Load on cargo, and the ship sits lower in the water."
+  ],
+  [
+   "So ships wear a mark on the hull, called the **Plimsoll line.**",
+   "So ships wear a mark on the hull, called the Plimsoll line."
+  ],
+  [
+   "It shows the deepest a ship may be **safely loaded.**",
+   "It shows the deepest a ship may be safely loaded."
+  ],
+  [
+   "The marks even change for **fresh water, the tropics,** and winter seas.",
+   "The marks even change for fresh water, the tropics, and winter seas."
+  ],
+  [
+   "So a ship floats because it **pushes aside its own weight** in water.",
+   "So a ship floats because it pushes aside its own weight in water."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
