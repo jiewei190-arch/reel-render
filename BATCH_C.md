@@ -13,7 +13,7 @@ STYLE (strict): build each reel in the template named below. Reproduce that demo
 
 | name | topic | template | demo |
 |---|---|---|---|
-| flush | How a toilet flushes (the siphon) | #17 handdrawn "Playful" | demo115.mp4: crayon/watercolour kid drawings on warm paper, black ink outlines, bouncy pop-in stickers, big rounded words, cute faces on objects |
+| flush | How a toilet flushes (the siphon) | #18 handdrawn "Japan heat wave" (owner's choice) | demo101.mp4: field-notebook page on warm paper, thin pencil line drawings that draw on, red accent stamps/seals, italic handwritten headline top-left with a small "No. xx" chapter label, measurement boxes and counters, annotated cross-sections, thin data charts |
 | airfryer | How an air fryer cooks (a small convection oven, not frying) | #9 scifi-toon | /home/claude/styles-src/lemo-opuscar/styles/scifi-toon (STYLE.md, DEMO.md, demo/): sage lab interior, thick-outline cartoon cast, bold title lockup |
 | submarine | How a submarine dives and surfaces (ballast tanks, buoyancy) | #16 cinematic3d "Christmas story" | demo99.mp4: sepia-to-blue film look, silhouettes with glowing windows, grain, vignette, film-frame border, italic serif captions |
 

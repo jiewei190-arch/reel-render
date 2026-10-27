@@ -1,5 +1,7 @@
 # Review of the 15 worker reels (Oct 27 2026)
 
+OWNER DECISION (Oct 27): keep all worker reels exactly as they are. The voiceover and ending stay the same, with no re-voice and no rebuild. The fixes below are a record only.
+
 All 15 are af_heart 0.97 / crayon 88 bpm. All run 67-85 s at 1080x1920 and about 9.7 MB, at -15 LUFS. All end on "Follow for more of how it really works.", both spoken and on the end card. Fact-check agents checked every claim against the web, and contact sheets were reviewed for visual QA.
 Mp4s: jobs/<name>/ on branches affectionate-feynman-sbqoqd (hurricane onion tap tickle touch wifi zipper), blissful-planck-8lojos (barcode caffeine faceid orbit quake sleep window) and watercolor-hurricane (hurricanewc; caption/sources/NOTES now on claude/reel-studio-handoff-f70dcj).
 "Spoken" means fixing it needs a re-voice. "Caption" means it is a text-only fix.
