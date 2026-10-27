@@ -21,7 +21,7 @@ Short animated explainer reels for Instagram and YouTube "howitreallyworkstudio"
 
 ## Workflow
 1. Research the topic with a "can this blow up on YouTube/Instagram" lens (surprising 3-s hook, a myth to correct, a question at the end). Avoid topics already covered (see tracking.csv).
-2. Pick the template that best fits (see the grid in TEMPLATES.md). Say which and why. Read the demo source in /home/claude/styles-src.
+2. Read STYLE_FIT.md, then pick the template that best fits (see the grid in TEMPLATES.md). Say which and why. Read the demo source in /home/claude/styles-src.
 3. Script and spec: specs/<n>.json, voice2.py, mix2.py; scenes in t_<n>.js (newreel.py scaffolds; never overwrite an existing reel).
 4. Preview clip (8 s with voice). Send to the owner.
 5. Full render (rq.sh, one at a time with flock /tmp/render.lock) then enc_hq.sh (2-pass ~9.6 MB).

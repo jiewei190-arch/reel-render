@@ -31,3 +31,5 @@ Work on your own branch. When all 3 are pushed, stop and report.
 UPDATE (owner, Oct 27):
 1. THUMBNAILS: every reel needs jobs/<n>/thumb_<n>.jpg. Add window.thumb() to t_<n>.js: a composed cover in the reel's template style, with big 2-4 word text matching the hook, inside y 300-1620. Render it with `PORT=9321 python3 -I reels/thumb.py <n>` and check stills/gridcrop_<n>.jpg. See t_magnet.js and t_search.js for examples.
 2. HOOKS: apply HOOKS.md (coming soon) to every reel's first line and first frame.
+3. STYLE FIT: read STYLE_FIT.md and add your reels' rows (fit score, why it fits, what didn't work).
+4. SOUND: mix2.py effects level, rule 12.
