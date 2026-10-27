@@ -209,4 +209,11 @@ function cardBlit(t) { const k = R(t, s(9) + 2.0, .8); if (k <= 0) { D.blit({});
 window.DUR = TOT;
 window.seek = t => { scene(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - f; g.fillStyle = C.bg; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
+// thumbnail / cover: Distilbook "Pages. / and pages." stack + the cut magnet, HUD, no captions
+window.thumb = () => { D.ground(0); D.clearLayer();
+  D.marker(86, 760, 600, 44, C.pinkL, 1, .8);
+  [['Cut a', C.ink], ['magnet', C.ink], ['in half?', C.blue]].forEach(([w, col], i) => D.text(w, 90, 470 + i * 168, { f: 'sans', size: 160, wt: 800, col, track: -5 })); D.text('4.1  Magnets', 94, 330, { f: 'serif', size: 50, col: C.blue });
+  const y = 1080, w = 360, h = 230; barMagnet(110, y, w, h, 1, { seed: 2 }); barMagnet(610, y + 40, w, h, 1, { seed: 6 });
+  D.ink(D.seg(540, y - 110, 540, y + h + 80, 8), { w: 6, dash: [22, 16], wob: 0, col: C.red }); D.text('\u2702', 540, y - 140, { f: 'sans', size: 90, align: 'center', col: C.red });
+  label(['you get ', { s: 'two magnets', col: C.blue }], 540, 1520, 1, { size: 74 }); D.blit({}); D.hud(12.3, TOT, 0); };
 window.seek(0); window.ready = true; window.READY = true;

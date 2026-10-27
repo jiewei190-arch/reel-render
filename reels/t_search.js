@@ -181,4 +181,10 @@ function scene(t) { const i = idx(t), u = R(t, SC[i][0], TR), cur = SC[i][2], pr
 window.DUR = TOT;
 window.seek = t => { scene(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - f; g.fillStyle = C.bg0; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
+// thumbnail / cover: Alchemy kinetic headline + gridded cube with callout, HUD
+window.thumb = () => { A.ground(0, 0); A.clear();
+  A.text("Google doesn't", 80, 470, { size: 128, wt: 800, track: -3 }); A.text('search the web.', 80, 640, { f: 'serif', size: 176, col: C.indL });
+  const cx = 540, yy = 1000, sz = 250; A.iso(cx, yy, sz, 300, { top: '#5a5aff', left: '#3c3cdc', right: '#26268f' }); cubeGrid(cx, yy, sz, 300, 1);
+  A.line(cx + sz + 70, yy, cx + sz + 70, yy + 300, { w: 2 }); A.callout(cx, yy - sz * .58, cx - 80, yy - sz * .58 - 90, 'INDEX', 'built before you ask', 1, { shelf: 240 });
+  A.text('So what does it search?', 540, 1560, { size: 60, wt: 700, align: 'center', col: C.white }); A.blit({}); A.hud(4.2, { bl: 'SC 01  QUERY' }); };
 window.seek(0); window.ready = true; window.READY = true;

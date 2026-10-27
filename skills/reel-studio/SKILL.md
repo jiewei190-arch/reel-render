@@ -26,7 +26,8 @@ Short animated explainer reels for Instagram and YouTube "howitreallyworkstudio"
 4. Preview clip (8 s with voice). Send to the owner.
 5. Full render (rq.sh, one at a time with flock /tmp/render.lock) then enc_hq.sh (2-pass ~9.6 MB).
 6. QA: contact.py or an ffmpeg tile of 12 frames + the final frame; check overlaps, blank frames, clipped text, closing line, duration, sources.
-7. Caption: description, blank line, "Sources: ...", blank line, "Follow for more of how it really works.", 5 hashtags ending #reels (YouTube: #Shorts). No #fyp.
+7. Thumbnail: window.thumb() in t_<n>.js + reels/thumb.py -> jobs/<n>/thumb_<n>.jpg (template-styled, 2-4 big words matching the hook, inside the 3:4 crop).
+8. Caption: description, blank line, "Sources: ...", blank line, "Follow for more of how it really works.", 5 hashtags ending #reels (YouTube: #Shorts). No #fyp.
 8. Send the finished reel and the list of unverified or softened claims to the owner. Wait for approval.
 9. After approval schedule (HANDOFF.md section 8): Instagram bulk composer (8 AM, 1 PM, 7 PM ET), YouTube Studio (daily upload limit ~10; stop at it).
 10. Update tracking.csv and handoff/yt/yt_schedule.csv, commit and push style code and notes to the repo.
