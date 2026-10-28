@@ -88,14 +88,15 @@ function recipe(t) { const a = win(t, s(2) - .3, s(7) + .2, .5); if (a <= 0) ret
   const done = t > r(4, 1.0) ? 3 : t > r(3, 2.4) ? 2 : t > r(2, 3.6) ? 1 : 0, tickK = done ? seg(t, [r(2, 3.6), r(3, 2.4), r(4, 1.0)][done - 1], [r(2, 3.6), r(3, 2.4), r(4, 1.0)][done - 1] + .35) : 0;
   const slide = eo(seg(t, s(2) - .3, s(2) + .5)); g.save(); g.translate((1 - slide) * 520, 0);
   card(g, { meta: 'SERVES 1 · ANY MEAL', title: ['Flavor'], rows: ROWS, done, cur: done < 3 ? done : -1, footer: 'FROM NIH TASTE & SMELL NOTES', t, tickK }); g.restore();
-  if (t < s(3) - .1) header(g, { step: 2, of: 6, title: 'the tongue', num: '5', unit: 'tastes', sub: 'SWEET·SALTY·SOUR·BITTER·UMAMI', k: seg(t, s(2), s(2) + .6) });
+  if (t < s(3) - .1) header(g, { step: 2, of: 6, title: 'the tongue', num: String(Math.max(1, Math.min(5, 1 + Math.floor((t - r(2, 1.6)) / .7)))), unit: 'tastes', sub: 'SWEET·SALTY·SOUR·BITTER·UMAMI', k: seg(t, s(2), s(2) + .6) });
   else if (t < s(5) - .1) header(g, { numSize: 40, step: 3, of: 6, title: 'the rest is smell', num: null, k: seg(t, s(3), s(3) + .6), note: 'strawberry, coffee, garlic' });
   else header(g, { numSize: 40, step: 3, of: 6, title: 'smelling from', note: 'the inside: retronasal', num: null, k: seg(t, s(5), s(5) + .6) });
   const sm = seg(t, r(3, .8), r(3, 1.6));
   face(t, { taste: seg(t, r(2, .8), r(2, 3.2)), smell: t > r(4, .2) ? seg(t, r(4, .2), r(4, 1.0)) : 0, food: 'bean', flavor: seg(t, r(6, 1.2), r(6, 2.0)) });
   if (t < s(4) && sm > 0) { strawberry(130, 620, .8, sm); bean(240, 620, .8, seg(t, r(3, 1.6), r(3, 2.2))); garlic(350, 620, .8, seg(t, r(3, 2.2), r(3, 2.8))); }
   meter(t < s(6) ? .2 + .3 * seg(t, r(4, .5), r(5, 2)) : .5 + .5 * seg(t, r(6, 1.2), r(6, 2.0)), seg(t, s(2), s(2) + .5));
-  if (t > r(4, 1.0)) { const ck = seg(t, r(4, 1.0), r(4, 2.0)); line(g, [[FX + 230 * FS, FY + 250 * FS], [FX + 110 * FS, FY + 250 * FS], [FX + 110 * FS, FY + 160 * FS], [FX + 300 * FS, FY + 150 * FS]], { w: 4, col: P.rust, k: ck, seed: 870, wob: .5 }); hand(g, 'the back channel', 60, 650, { size: 44, col: P.rust, a: ck }); }
+  if (t > r(4, 1.0)) { const ck = seg(t, r(4, 1.0), r(4, 2.0)); line(g, [[FX + 230 * FS, FY + 250 * FS], [FX + 110 * FS, FY + 250 * FS], [FX + 110 * FS, FY + 160 * FS], [FX + 300 * FS, FY + 150 * FS]], { w: 4, col: P.rust, k: ck, seed: 870, wob: .5 }); hand(g, 'the back channel', 60, 650, { size: 44, col: P.rust, a: ck });
+    const sc = seg(t, r(4, 2.6), r(4, 3.2)); if (sc > 0) { line(g, circPts(FX + 300 * FS, FY + 150 * FS, 44, 22, 1), { w: 4, col: P.rust, k: sc, close: true, seed: 872 }); hand(g, 'smell cells', 60, 598, { size: 40, col: P.rust, a: sc }); } }
   g.restore(); }
 function cold(t) { const a = win(t, s(7) - .3, s(9) + .1, .5); if (a <= 0) return; g.save(); g.globalAlpha = a;
   const bk = seg(t, r(7, .8), r(7, 2.0));
@@ -104,6 +105,7 @@ function cold(t) { const a = win(t, s(7) - .3, s(9) + .1, .5); if (a <= 0) retur
   header(g, { numSize: 40, step: 4, of: 6, title: 'a cold', note: 'the channel is blocked', num: null, k: seg(t, s(7), s(7) + .6) });
   face(t, { taste: 1, smell: 1, block: bk, food: 'bean' });
   meter(lerp(1, .06, ss(seg(t, s(8), r(8, 1.4)))));
+  const xk = seg(t, r(7, 2.6), r(7, 3.0)); if (xk > 0 && t < r(8, 1.1)) { const cx = FX + 300 * FS, cy = FY + 150 * FS; line(g, [[cx - 40, cy - 40], [cx + 40, cy + 40]], { w: 7, col: P.rust, k: xk, seed: 882 }); line(g, [[cx + 40, cy - 40], [cx - 40, cy + 40]], { w: 7, col: P.rust, k: seg(t, r(7, 2.8), r(7, 3.2)), seed: 883 }); hand(g, 'smells: blocked', 60, 610, { size: 46, col: P.rust, a: seg(t, r(7, 4.0), r(7, 4.5)) }); }
   hand(g, 'bland', 60, 650, { size: 58, col: P.rust, a: seg(t, r(8, 1.2), r(8, 1.6)) });
   g.restore(); }
 function test(t) { const a = win(t, s(9) - .3, s(12) + .1, .5); if (a <= 0) return; g.save(); g.globalAlpha = a;
