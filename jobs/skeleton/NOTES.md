@@ -1,0 +1,9 @@
+# skeleton: NOTES
+
+- **Template:** #10 paper-popup (lemo-opuscar demo "Papervale"), reusing reels/styles/popup (the kit behind the approved "ship" reel).
+- **Why this template:** a pop-up skeleton is the Halloween image, and the reel is a tour of jobs, each a new pop-up "page": support, armour, movement, blood factory, calcium bank, rebuild crew. Page turns mark the acts the way the demo turns pages.
+- **Copied from the demo (via the kit):** open book on a lit desk; the standing back board with layered paper scenery up top (here a night sky with a paper moon, bats, hills, a bare tree and a little haunted house with lit windows, so the top third is never empty); cut-paper cards with a white border, cardboard edge, grain and cut-out shadows that spring up around their bottom edge with overshoot, back to front; fold tabs; cardboard signs dropping on strings and swinging; page turns between the 4 acts; slow camera push-ins; cream ink subtitle strip.
+- **Hook (HOOKS.md):** line 1 "Your skeleton isn't spooky. It's alive, and busy right now." (11 words, done by 3.9 s); frame 0 = the big cut-paper skeleton already springing up and waving; on-screen caption "Your skeleton is ALIVE" (4 words); "But" turn at 4.6 s; question ("is it alive?") answered at 46.7 s ("Yes. Its cells keep tearing down old bone and building new").
+- **Length:** 68.8 s. Voice af_heart 0.97, crayon music 88 bpm, mix2.py at default fx_gain 0.5.
+- **Softened claims:** "around 300 bones" at birth (sources say "around" or "approximately"); "206" is the standard adult count (Cleveland Clinic notes 206-213 because of extra small bones). No numbers for blood-cell production rates were used because I didn't find a primary source. "Inside some bones" (not all) is kept, per MedlinePlus.
+- **Ear check:** not done by a human yet.
