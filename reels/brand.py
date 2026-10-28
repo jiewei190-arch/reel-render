@@ -21,6 +21,7 @@ OVR = {
     "catpurr": {"spot": (44, 680), "hide": [(7.4, 49.6)]},   # plaques fill the top band every scene; mid-left is clear beside the cat in the hook and from 49.6 s (edge scan); larynx/folds/lab/scale fill it in between
     "cranberries": {"spot": (44, 600), "t0": 7.2, "hide": [(56.2, 99.0)]},   # banner stage until 6.7 s; posters fill y 235-1150 with header/band text top and bottom; mid-left sits over poster art only; the wall and end card are all titles, so hidden from 56.2 s
     "popuptimer": {"spot": (44, 1080), "hide": [(47.3, 52.4)]},   # titles fill the top band in every scene; low-left above the caption box sits on art only; hidden under "3 popped early"
+    "leafcolor": {"spot": (44, 560)},   # top labels sit at y 300-440 across the middle; mid-left only crosses ensō strokes, the sun and the seal (art)
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
