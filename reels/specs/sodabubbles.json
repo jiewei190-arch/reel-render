@@ -18,7 +18,8 @@
   10,
   11,
   12,
-  13
+  13,
+  14
  ],
  "music_gain": 0.55,
  "phrases": [
@@ -81,6 +82,10 @@
   [
    "So every line of bubbles is a **single speck,** quietly breathing out gas.",
    "So every line of bubbles is a single speck, quietly breathing out gas."
+  ],
+  [
+   "Next time, will you look for the **speck** at the bottom of the line? **Yes or no?**",
+   "Next time, will you look for the speck at the bottom of the line? Yes or no?"
   ],
   [
    "Follow for more of how it really works.",
