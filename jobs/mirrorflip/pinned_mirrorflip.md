@@ -1,0 +1,1 @@
+Try it: face a mirror and point your right hand at the east wall. Your image points at the east wall too. Then point at the mirror: the image points back at you. Only front and back flip. Did you think mirrors swap left and right? Yes or no?

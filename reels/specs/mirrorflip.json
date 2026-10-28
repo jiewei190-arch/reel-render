@@ -1,0 +1,86 @@
+{
+ "name": "mirrorflip",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "jazz",
+ "bpm": 112,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "music_gain": 0.55,
+ "tail": 0.7,
+ "phrases": [
+  [
+   "Mirrors don't flip left and right. They flip **front and back.**",
+   "Mirrors don't flip left and right. They flip front and back."
+  ],
+  [
+   "So **why do mirrors flip left and right, but not up and down?**",
+   "So, why do mirrors flip left and right, but not up and down?"
+  ],
+  [
+   "Try it. Raise your **right** hand. The hand in the mirror is on the **right side** too.",
+   "Try it. Raise your right hand. The hand in the mirror is on the right side too."
+  ],
+  [
+   "Point up, and the image points **up.** Point at the glass, and it points **right back at you.**",
+   "Point up, and the image points up. Point at the glass, and it points right back at you."
+  ],
+  [
+   "That's the only thing a mirror reverses: the direction **into the glass.** Front and back.",
+   "That's the only thing a mirror reverses: the direction into the glass. Front and back."
+  ],
+  [
+   "Each point of you appears **just as far behind** the mirror as it is in front.",
+   "Each point of you appears just as far behind the mirror as it is in front."
+  ],
+  [
+   "So where does left and right come from? **From us.**",
+   "So where does left and right come from? From us."
+  ],
+  [
+   "We picture the image as a **real person** who walked around to face us.",
+   "We picture the image as a real person who walked around to face us."
+  ],
+  [
+   "If a real person did that, their right hand would be on **your left.** So we call the image **flipped.**",
+   "If a real person did that, their right hand would be on your left. So we call the image flipped."
+  ],
+  [
+   "Left and right are defined **relative to ourselves,** so they change when we imagine turning around.",
+   "Left and right are defined relative to ourselves, so they change when we imagine turning around."
+  ],
+  [
+   "Up and down are set by **the ground,** and nobody imagines turning around **head over heels.**",
+   "Up and down are set by the ground, and nobody imagines turning around head over heels."
+  ],
+  [
+   "So the mirror flips front and back, and **your brain** supplies the left and right.",
+   "So the mirror flips front and back, and your brain supplies the left and right."
+  ],
+  [
+   "As Toronto physicist David Harrison puts it, it's **front and back** that are being reversed.",
+   "As Toronto physicist David Harrison puts it, it's front and back that are being reversed."
+  ],
+  [
+   "Did you think mirrors swap left and right? **Yes or no?**",
+   "Did you think mirrors swap left and right? Yes or no?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
