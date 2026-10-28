@@ -1,11 +1,11 @@
 platform,date_ET,time_ET,reel,episode,video,status
 tiktok,2026-10-28,09:00,glowstick,1,jobs/glowstick/glowstick_ep.mp4,scheduled 2026-10-28 09:00 ET
 youtube,2026-10-28,12:00,glowstick,1,jobs/glowstick/glowstick_ep.mp4,"approved, to schedule"
-tiktok,2026-10-28,13:00,faces,2,jobs/faces/faces_ep.mp4,"approved, to schedule"
+tiktok,2026-10-28,13:00,faces,2,jobs/faces/faces_ep.mp4,scheduled 2026-10-28 13:00 ET
 youtube,2026-10-28,15:00,faces,2,jobs/faces/faces_ep.mp4,"approved, to schedule"
-tiktok,2026-10-28,16:00,darkeyes,3,jobs/darkeyes/darkeyes_ep.mp4,"approved, to schedule"
+tiktok,2026-10-28,16:00,darkeyes,3,jobs/darkeyes/darkeyes_ep.mp4,scheduled 2026-10-28 16:00 ET
 youtube,2026-10-28,18:00,darkeyes,3,jobs/darkeyes/darkeyes_ep.mp4,"approved, to schedule"
-tiktok,2026-10-28,19:00,foxfire,4,jobs/foxfire/foxfire_ep.mp4,"approved, to schedule"
+tiktok,2026-10-28,19:00,foxfire,4,jobs/foxfire/foxfire_ep.mp4,scheduled 2026-10-28 19:00 ET
 youtube,2026-10-28,20:00,foxfire,4,jobs/foxfire/foxfire_ep.mp4,"approved, to schedule"
 tiktok,2026-10-28,21:30,ouija,5,jobs/ouija/ouija_ep.mp4,"approved, to schedule"
 youtube,2026-10-28,21:30,ouija,5,jobs/ouija/ouija_ep.mp4,"approved, to schedule"
