@@ -63,7 +63,7 @@
 | 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | queued |
 | 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | merged, Nov 15 19:00 |
 | 94 | twinkle | Why do stars twinkle but planets don't? | H1 | merged, Nov 15 21:30 |
-| 95 | stalebread | Why does bread go stale? | H4 | queued |
+| 95 | stalebread | Why does bread go stale? | H4 | merged, Nov 16 09:00 |
 | 96 | bananabrown | Why do bananas turn brown? | H4 | queued |
 | 97 | fingerprints | Why do we have fingerprints? | H1 | queued |
 | 98 | darknight | Why is the night sky dark if there are so many stars? | H1 | queued |
