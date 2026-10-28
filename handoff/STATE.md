@@ -1,6 +1,6 @@
 # Main-session state (rule 19: kept in the repo so a fresh session can resume)
 
-Updated: 2026-10-28 afternoon UTC. Update this file whenever something below changes.
+Updated: 2026-10-28 ~14:10 UTC. Update this file whenever something below changes.
 
 ## Where things are
 - **EP tracker + template reservations:** handoff/topics_next30.md (status per EP; reservations line at the bottom).
@@ -18,16 +18,16 @@ Updated: 2026-10-28 afternoon UTC. Update this file whenever something below cha
 | H3 | session_01BPYB3nfqh6HEjZ42pf9qga | claude/halloween-h3 |
 | H4 | session_01BPYB3mgmDyVer9ppY4RmuX | claude/halloween-h4 |
 
-## Open items (Oct 28 afternoon)
-- Merged through EP 97 fingerprints (except below). Buffer reaches Nov 16.
-- EP 63 auroras (H3): long WebGL render; trim end card to <=3 s in post, re-badge --ep 63, merge (Nov 9 19:00).
-- EP 84 catfeet (H3): rendering (Nov 13 21:30).
-- EP 91 butterflies v2, EP 92 glowdark v2 (H2): swap in when delivered.
-- EP 98 darknight (H1): rendering (Nov 16 19:00/20:00).
-- EP 99 mirrorflip, 100 tidesmoon (H2); 101 hairwet, 102 sleeptalk (H4): template picks pending -> record on the reservations line.
+## Pace (owner, Oct 28 afternoon; HANDOFF rule 20)
+Production is pausing. Workers finish what's in flight, then rest. The buffer is full through Nov 17. Next: study the accounts (handoff/STUDY.md) before building more.
+
+## Open items
+- In flight, merge when final: EP 63 auroras + 84 catfeet (H3), 99 mirrorflip + 100 tidesmoon (H2), 102 sleeptalk (H4), 103 honey + 104 fog (H1).
+- Parked: compass, helium (were EP 105-106).
+- First analytics read: owner pastes handoff/ANALYTICS_PULL.md into the PC session before Mon Nov 2; the weekly review on Nov 2 does the first study (handoff/STUDY_LOG.md).
 - Thanksgiving reels (unbadged until slotted ~Nov 22-26): popuptimer, cranberries, turkeysleepy.
 - Optional: barcode/faceid one-frame flashes (owner may re-upload).
 - Owner-only: YouTube phone verification (lifts the daily upload limit, enables custom thumbnails).
 
 ## Scheduled check-ins
-- Hourly self check-in via send_later (re-arm each run). Weekly review: trigger trig_01E7MHWPVzXj9wPm1rAKtG8X (Mondays 13:23 ET).
+- No hourly check-in any more (deleted Oct 28); worker messages wake the main session. Weekly review + study: trigger trig_01E7MHWPVzXj9wPm1rAKtG8X (Mondays 13:23 ET).

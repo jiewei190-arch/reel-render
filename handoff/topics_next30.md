@@ -73,13 +73,13 @@
 | 102 | sleeptalk | Why do we talk in our sleep? | H4 | queued |
 | 103 | honey | How do bees turn nectar into honey? | H1 | queued |
 | 104 | fog | Where does fog come from? | H1 | queued |
-| 105 | compass | How does a compass know where north is? | H4 | queued |
-| 106 | helium | Why does helium make your voice squeaky? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | merged v3, Nov 9 16:00 |
 | 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v2, Nov 9 09:00 |
+
+Parked until after the first study (Nov 2): compass (how a compass knows north), helium (why helium makes your voice squeaky).
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
