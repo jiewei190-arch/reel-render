@@ -1,0 +1,96 @@
+{
+ "name": "crackedphone",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "music_gain": 0.55,
+ "tail": 0.7,
+ "phrases": [
+  [
+   "Your screen doesn't crack from the drop. It cracks from a **scratch.**",
+   "Your screen doesn't crack from the drop. It cracks from a scratch."
+  ],
+  [
+   "So **why does a phone screen crack from a short drop?**",
+   "So, why does a phone screen crack from such a short drop?"
+  ],
+  [
+   "Glass is incredibly strong when you **squeeze** it. But **pull** on it, and it's far weaker.",
+   "Glass is incredibly strong when you squeeze it. But pull on it, and it's far weaker."
+  ],
+  [
+   "And every piece of glass has **tiny flaws,** scratches too small to see.",
+   "And every piece of glass has tiny flaws, scratches too small to see."
+  ],
+  [
+   "When glass bends, the pull piles up at the **tip of the deepest flaw.**",
+   "When glass bends, the pull piles up at the tip of the deepest flaw."
+  ],
+  [
+   "A scientist named **Griffith** worked this out in 1920: the flaw focuses the force, and a **crack runs.**",
+   "A scientist named Griffith worked this out in nineteen twenty: the flaw focuses the force, and a crack runs."
+  ],
+  [
+   "So phone glass gets a **salt bath.**",
+   "So phone glass gets a salt bath."
+  ],
+  [
+   "It's soaked in hot melted salt, and big **potassium** atoms swap in for smaller **sodium** atoms at the surface.",
+   "It's soaked in hot melted salt, and big potassium atoms swap in for smaller sodium atoms at the surface."
+  ],
+  [
+   "They're too big for the space, so the surface is **squeezed tight.**",
+   "They're too big for the space, so the surface is squeezed tight."
+  ],
+  [
+   "Now a crack has to beat that squeeze before it can grow. **Small flaws stay shut.**",
+   "Now a crack has to beat that squeeze before it can grow. Small flaws stay shut."
+  ],
+  [
+   "But the squeezed layer is thin, about as thick as **a hair.**",
+   "But the squeezed layer is thin, about as thick as a hair."
+  ],
+  [
+   "Land face-down on pavement, and a **sharp grain** can drive a flaw right through it.",
+   "Land face-down on pavement, and a sharp grain can drive a flaw right through it."
+  ],
+  [
+   "When Corning studied broken phones, **sharp contact** caused **over seventy percent.**",
+   "When Corning studied broken phones, sharp contact caused over seventy percent."
+  ],
+  [
+   "And **exposed edges** are weak spots too.",
+   "And exposed edges are weak spots too."
+  ],
+  [
+   "So it's not the height. It's **what the glass meets.**",
+   "So it's not the height. It's what the glass meets."
+  ],
+  [
+   "Has your phone ever cracked from a short drop? **Yes or no?**",
+   "Has your phone ever cracked from a short drop? Yes or no?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
