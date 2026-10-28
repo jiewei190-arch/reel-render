@@ -36,7 +36,7 @@ QA saltyocean: WARN   (/home/user/reel-render/jobs/saltyocean/saltyocean.mp4, 71
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 5.5 (min 1.0), contrast 29.2 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      saltyocean.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      saltyocean.mp4 1080x1920 SAR 1:1; saltyocean_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
