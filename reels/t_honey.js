@@ -124,7 +124,7 @@ function scene(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.drawImage(paper(), 0, 0);
   g.save(); g.translate(8 * Math.sin(t * .45), 6 * Math.sin(t * .33)); hook(t); recipe(t); signoff(t); endcard(t); g.restore();
   if (t > s(2) - .3 && t < s(11)) { const [i, u] = stepIndex(t); g.save(); g.globalAlpha = seg(t, s(2) - .3, s(2) + .2) * (1 - seg(t, s(11) - .4, s(11))); progress(g, STEPS, i, u); g.restore(); }
-  const ph = PH.findLast(p => t >= p.start - .1); if (ph && ph.i < PH.length - 1) { const nx = PH[ph.i + 1].start; caption(g, ph.cap, seg(t, ph.start - .1, ph.start + .12) * (1 - seg(t, nx - .2, nx - .05)), 1290); }
+  const ph = PH.findLast(p => t >= p.start - .1); if (ph && ph.i < PH.length - 1) { const nx = PH[ph.i + 1].start; caption(g, ph.cap, seg(t, ph.start - .1, ph.start + .12) * (1 - seg(t, nx - .2, nx - .05)), 1250); }
 }
 window.DUR = TOT;
 // loop: blend the frame-0 hook back in over the last 0.5 s (30%)
