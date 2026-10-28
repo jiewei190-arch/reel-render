@@ -17,6 +17,7 @@ OVR = {
     "barcode": {"spot": (44, 1360), "hide": [(7.0, 99.0)]},  # giant headlines fill nearly every frame: badge shows only 5-6.7 s (12 DIGITS lands at 7.0 s), low-left inside the safe zone
     "recommend": {"spot": (44, 1366), "hide": [(4.7, 8.6), (52.6, 57.0)]},  # signs/boards fill the top; low-left above the captions
     # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
+    "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
     "magnet": {"spot": ("R", 260), "t0": 7.0},   # the "Cut it in half" headline reaches the top-right until ~6.5 s
@@ -27,7 +28,14 @@ OVR = {
     "yawn": {"spot": (44, 920), "hide": [(63.5, 99.0)]},        # top band holds titles, frames and chalkboards; mid-left wall is the quietest (edge scan)
     "wrinklyfingers": {"spot": ("R", 260), "hide": [(12.8, 17.8), (34.8, 37.8)]},  # captions run to 3 lines here; top-right band is clear
     "handwarmer": {"spot": (44, 1366)},   # titles and labels fill the top; the strip under the captions is always empty
-    "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: blackboard, plaques and signs fill the middle band; top-right is clear (tags are top-left); hide under the end-card title
+    "popcorn": {"spot": (44, 1050)},     # low-left over stove art, above the captions; top-left hits the hook plaques
+    "staticshock": {"spot": (44, 1366)},   # H3: free strip under the captions
+    "coldbreath": {"spot": (44, 1366)},   # H3: free strip under the captions
+    "stomachgrowl": {"spot": ("R", 260)},   # H2: hanging signs moved down to y 340 so the top-right badge clears them
+    "catpurr": {"spot": (44, 680), "hide": [(7.4, 49.6)]},   # H2: plaques fill the top band; mid-left is clear in the hook and from 49.6 s
+    "earpop": {"spot": ("R", 260)},   # H4: top-right is clear of the field-note titles
+    "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
+    "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
