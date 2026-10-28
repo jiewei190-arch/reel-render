@@ -28,7 +28,7 @@
   - the yes/no boxes;
   - the end card.
 - **Batch N layout:**
-  - header at y 270-390; board at y 420-1070 (drawings scaled 0.74 into it); caption card at y 1100-1410;
+  - header at y 300-420; board at y 450-1070 (drawings scaled 0.67 into it); caption card at y 1100-1410;
   - the scene counter is right-aligned at x 880;
   - qa WARN: the zoomed WWII drawing (hatching) reaches the right column at 50-55 s; no text there.
 - **Search question:** spoken at 0.35 s. Hook: 11 words. "But they weren't made for style" at 4.4 s.
@@ -36,13 +36,14 @@
 - **Payoff:** 60.7 s. Question: "Yes or no?"
 - **Length:** 71.5 s. Voice af_heart 0.97; years and the patent number are written in words in the spec. mix2.py with fx_gain 0.35 and music_gain 0.6 (typewriter ticks while boxes type, pencil scribbles per beat; no whoosh).
 - **Loop:** the last 0.5 s blends 30% of frame 0 back in.
-- **Badge:** EP 76 at ("R", 250), beside the mono header line.
+- **Badge:** EP 76 at ("R", 260), top-right. The title and board were moved 30 px down so the badge clears the "rivets." highlight (main-session note on v1 at ("R", 250)).
+- **Frame 0 (v2):** opens close on the riveted watch pocket and pulls back to the whole pair by about 3 s.
 - **Ear check:** not done by a human yet.
 
-## qa.py
+## qa.py (v2 render: riveted-pocket open, title + board 30 px lower)
 ```
 QA bluejeans: WARN   (/home/user/reel-render/jobs/bluejeans/bluejeans.mp4, 71.5 s)
-  PASS  static          longest no-change run 2.50 s (limit 4.0 s)
+  PASS  static          longest no-change run 3.50 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   WARN  safe zones      right x>900 y900-1650: content 50.0-55.2s
   PASS  outer 24 px     clear
@@ -52,9 +53,9 @@ QA bluejeans: WARN   (/home/user/reel-render/jobs/bluejeans/bluejeans.mp4, 71.5 
   PASS  length          71.5 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 9.7 (min 1.0), contrast 81.6 (min 18.0)
+  PASS  frame 0         edge 10.7 (min 1.0), contrast 79.4 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      bluejeans.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      bluejeans.mp4 1080x1920 SAR 1:1; bluejeans_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
@@ -66,4 +67,4 @@ QA bluejeans: WARN   (/home/user/reel-render/jobs/bluejeans/bluejeans.mp4, 71.5 
 - [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (30% frame-0 blend)
 - [x] pinned_bluejeans.md written; thumb_bluejeans.jpg made
-- [x] bluejeans_ep.mp4 (EP 76; OVR spot ("R", 250); checked at 3-70 s)
+- [x] bluejeans_ep.mp4 (EP 76; OVR spot ("R", 260); checked at 3-70 s)
