@@ -21,6 +21,8 @@
 - Click warmer: the card now reads 'sodium acetate' with the footer 'SODIUM ACETATE · RECHARGE BY BOILING' and the header 'Boil to recharge' (sources_handwarmer.md: BBC Science Focus, Silesia).
 - The standard end card follows "Good rust.".
 - Music bed at 0.7 (voice 9.0 dB over the bed).
+- Pouch reads as fabric: a stitched hem and a sewn-on '1 POUCH' tag wherever it appears; the hook pouch is larger; the thumbnail shows the mitten holding it.
+- Badge: handwarmer_ep.mp4, EP 36, spot (44, 1366).
 
 ## QA (python3 -I reels/qa.py handwarmer)
 ```
@@ -35,8 +37,8 @@ QA handwarmer: WARN   (/home/user/reel-render/jobs/handwarmer/handwarmer.mp4, 74
   PASS  length          74.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 5.3 (min 1.0), contrast 42.0 (min 18.0)
-  PASS  9:16 frame      handwarmer.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 5.7 (min 1.0), contrast 43.3 (min 18.0)
+  PASS  9:16 frame      handwarmer.mp4 1080x1920 SAR 1:1; handwarmer_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
@@ -48,5 +50,5 @@ QA handwarmer: WARN   (/home/user/reel-render/jobs/handwarmer/handwarmer.mp4, 74
 - [x] End card: the standard main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (frame-0 hook blends back, max 30%, in the last 0.5 s)
 - [x] pinned_handwarmer.md written
-- [ ] handwarmer_ep.mp4 (main session runs brand.py after the episode number is assigned)
+- [x] handwarmer_ep.mp4 (EP 36, spot (44, 1366))
 - [x] Timely window: winter, November to February

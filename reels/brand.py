@@ -29,6 +29,8 @@ OVR = {
     "wrinklyfingers": {"spot": ("R", 260), "hide": [(12.8, 17.8), (34.8, 37.8)]},  # captions run to 3 lines here; top-right band is clear
     "handwarmer": {"spot": (44, 1366)},   # titles and labels fill the top; the strip under the captions is always empty
     "popcorn": {"spot": (44, 1050)},     # low-left over stove art, above the captions; top-left hits the hook plaques
+    "staticshock": {"spot": (44, 1366)},   # H3: free strip under the captions
+    "coldbreath": {"spot": (44, 1366)},   # H3: free strip under the captions
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

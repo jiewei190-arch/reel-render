@@ -14,12 +14,18 @@
 - The humidifier tip went to the pinned comment, not the voice-over.
 - No talk of which materials charge positive or negative (the triboelectric series), to keep the middle simple.
 
+## Approval notes applied
+- Frame 0: the hand is already in frame and moving to the knob, with a small crackle (sparks plus a flickering mini bolt) at the fingertip.
+- Lower band: a cel-boil humidity ticker under the captions (y 1394-1438, x 460-895). It reads DRY in winter, rises to HUMID on the humid day, then drops to DRY. Nothing sits in the bottom 480 px.
+- Captions are size 58 at y 1140, so 3-line captions end above the badge strip.
+- Badge: staticshock_ep.mp4, EP 40, spot (44, 1366).
+
 ## QA (python3 -I reels/qa.py staticshock)
 ```
 QA staticshock: WARN   (/home/user/reel-render/jobs/staticshock/staticshock.mp4, 72.8 s)
   PASS  static          longest no-change run 0.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
-  WARN  safe zones      right x>900 y900-1650: content 10.2-15.0s, 55.5-60.2s
+  PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
   PASS  loudness        -15.0 LUFS integrated (want -16.0..-14.0)
   WARN  true peak       -0.6 dBTP (WARN above -1.0, FAIL above 0.0)
@@ -27,11 +33,10 @@ QA staticshock: WARN   (/home/user/reel-render/jobs/staticshock/staticshock.mp4,
   PASS  length          72.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 13.0 (min 1.0), contrast 33.6 (min 18.0)
-  PASS  9:16 frame      staticshock.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 13.6 (min 1.0), contrast 35.2 (min 18.0)
+  PASS  9:16 frame      staticshock.mp4 1080x1920 SAR 1:1; staticshock_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
-- Safe-zone WARN: art only. It's the right end of the purple carpet (10-15 s) and the star-burst lines at the payoff door (55-60 s). There is no text in the zone; the caption boxes stay inside it.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal noted
@@ -41,5 +46,5 @@ QA staticshock: WARN   (/home/user/reel-render/jobs/staticshock/staticshock.mp4,
 - [x] End card: the standard main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (frame-0 image blends back, max 40%, in the last 0.5 s)
 - [x] pinned_staticshock.md written
-- [ ] staticshock_ep.mp4 (main session runs brand.py after the episode number is assigned)
+- [x] staticshock_ep.mp4 (EP 40, spot (44, 1366))
 - [x] Timely window: winter, November to February (peaks in the first cold, dry weeks)
