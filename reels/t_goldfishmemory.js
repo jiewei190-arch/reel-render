@@ -119,7 +119,8 @@ S.push([T(10) - .45, T(11) - .1, t => {
 }]);
 // E (p11-p13): where did the myth come from? a tiny bowl; then weeks, months, years as a vertical column
 S.push([T(11) - .45, T(14) - .1, t => {
-  base(t, { moonA: .6, mtn: .5 });
+  base(t, { moonA: .6, mtn: .5 }); birds(g, t, { x0: 100, y0: 300, n: 6, sp: 70, s: 1.1 });
+  for (let i = 0; i < 3; i++) { const u = t * .7 + i * 2.1; fish(540 + Math.cos(u) * 360, 1060 + Math.sin(u * 1.3) * 40, .8, Math.sin(u) > 0 ? Math.PI : 0, t + i); }
   smallBowl(540, 760, 1.6, t, ss(seg(t, T(11) - .3, r(11, .6))) * (1 - ss(seg(t, T(13) - .3, T(13)))));
   serif(g, 'where did it come from?', 540, 360, { size: 58, a: ss(seg(t, T(11), r(11, .8))) * (1 - ss(seg(t, T(13) - .3, T(13)))) });
   if (t > T(12) + 2.4 && t < T(13)) serif(g, '(one researcher’s hunch)', 540, 1060, { size: 42, a: ss(seg(t, r(12, 2.4), r(12, 3.0))), tone: .6 });

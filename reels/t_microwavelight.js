@@ -145,8 +145,11 @@ S.push([T(8) - .5, T(11) - .1, t => {
 // F (p11-p12): the chocolate test: turntable out, melted spots, the sum
 S.push([T(11) - .5, T(13) - .1, t => {
   g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 13, a: .7 });
-  ovenTop(t, { spots: 1, hot: .55 }); const melt = [250, 440, 630, 820];
-  chocolate(170, 700, 740, t, melt, seg(t, r(11, 2.6), r(11, 4.4)));
+  const zz = 1 + .06 * ss(seg(t, T(11), r(12, 6.5))); g.save(); g.translate(540, 760); g.scale(zz, zz); g.translate(-540, -760);
+  ovenTop(t, { spots: 1, hot: .9 }); const melt = [250, 440, 630, 820], mk2 = seg(t, r(11, 2.6), r(11, 4.4));
+  chocolate(170, 700, 740, t, melt, mk2);
+  if (mk2 > .3) melt.forEach((mx, i) => { for (let k = 0; k < 2; k++) { const u = (t * .8 + i * .3 + k * .5) % 1; g.save(); g.strokeStyle = `rgba(255,250,235,${.7 * (1 - u)})`; g.lineWidth = 4; g.lineCap = 'round'; g.beginPath(); for (let j = 0; j <= 10; j++) { const yy = 680 - u * 160 - j * 9; g.lineTo(mx + Math.sin(j * .9 + t * 5 + i) * 10, yy); } g.stroke(); g.restore(); } });
+  g.restore();
   hand(g, 'no turntable', 540, 330, seg(t, T(11), r(11, .8)), { size: 74, col: GOLD });
   if (t > T(12) - .2) { const kb = seg(t, T(12) - .2, T(12) + .3); g.save(); g.globalAlpha *= kb; paint(g, P2(p => p.roundRect(170, 920, 740, 280, 22)), '#1c2250', { hatch: .12, lw: 3 }); g.restore(); bracket(250, 440, 828, seg(t, T(12) - .2, r(12, .6)), '~6 cm', '#3b3340', 52);
     hand(g, '6 cm x 2 = 12 cm', 540, 990, seg(t, r(12, .6), r(12, 1.6)), { size: 66, col: CREAM }); hand(g, '12 cm x 2.45 GHz', 540, 1060, seg(t, r(12, 1.6), r(12, 2.6)), { size: 66, col: CREAM });
