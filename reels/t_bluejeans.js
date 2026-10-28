@@ -106,9 +106,9 @@ const BEATS = [
 ];
 // the page: navy grid, mono header + hand-lettered title, the taped board with binder holes and a scene counter
 const BG = (() => { const c = document.createElement('canvas'); c.width = W; c.height = H; const p = c.getContext('2d'); p.fillStyle = NAVY; p.fillRect(0, 0, W, H); p.strokeStyle = 'rgba(255,255,255,.05)'; p.lineWidth = 2; for (let x = 0; x < W; x += 44) { p.beginPath(); p.moveTo(x, 0); p.lineTo(x, H); p.stroke(); } for (let y = 0; y < H; y += 44) { p.beginPath(); p.moveTo(0, y); p.lineTo(W, y); p.stroke(); } return c; })();
-const BX = 50, BY = 420, BW = 980, BH = 650;
-function page(t, beat) { g.drawImage(BG, 0, 0); g.font = '400 30px CourierPrime'; g.fillStyle = 'rgba(220,226,235,.7)'; g.textAlign = 'left'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 60, 300);
-  g.font = '700 92px Gaegu'; const t1 = 'Why jeans have ', t2 = 'rivets.', w1 = g.measureText(t1).width, w2 = g.measureText(t2).width; g.fillStyle = MINT; g.globalAlpha = .75; g.fillRect(60 + w1 - 6, 340, w2 + 4, 34); g.globalAlpha = 1; g.fillStyle = '#f3f4f6'; g.fillText(t1, 60, 380); g.fillText(t2, 60 + w1, 380);
+const BX = 50, BY = 450, BW = 980, BH = 620;
+function page(t, beat) { g.drawImage(BG, 0, 0); g.font = '400 30px CourierPrime'; g.fillStyle = 'rgba(220,226,235,.7)'; g.textAlign = 'left'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 60, 330);
+  g.font = '700 92px Gaegu'; const t1 = 'Why jeans have ', t2 = 'rivets.', w1 = g.measureText(t1).width, w2 = g.measureText(t2).width; g.fillStyle = MINT; g.globalAlpha = .75; g.fillRect(60 + w1 - 6, 370, w2 + 4, 34); g.globalAlpha = 1; g.fillStyle = '#f3f4f6'; g.fillText(t1, 60, 410); g.fillText(t2, 60 + w1, 410);
   g.fillStyle = 'rgba(0,0,0,.3)'; g.fillRect(BX + 8, BY + 10, BW, BH); g.drawImage(PAPER, 0, 0, W, H * BH / H * 2, BX, BY, BW, BH); g.fillStyle = 'rgba(236,236,230,.55)'; g.fillRect(BX, BY, BW, BH);
   g.fillStyle = 'rgba(232,214,150,.85)'; [[BX + 10, BY + 8, -.6], [BX + BW - 10, BY + 8, .6]].forEach(([x, y, a]) => { g.save(); g.translate(x, y); g.rotate(a); g.fillRect(-55, -14, 110, 30); g.restore(); });
   g.fillStyle = '#2b2b2b'; g.fillRect(W / 2 - 110, BY + 22, 46, 8); g.fillRect(W / 2 + 64, BY + 22, 46, 8); g.beginPath(); g.arc(W / 2, BY + 26, 9, 0, 7); g.fill();
@@ -128,12 +128,12 @@ function caption(t) { const ph = PH.findLast(p => t >= p.start - .1); if (!ph ||
   g.restore(); }
 function scene(t) { TQ = Math.floor(t * 12 + 1e-6) / 12; BOIL = Math.round(TQ * 12); t = TQ;
   g.setTransform(1, 0, 0, 1, 0, 0); let i = 0; for (let k = 0; k < PH.length; k++) if (t >= s(k) - .25) i = k; i = Math.min(i, BEATS.length - 1);
-  page(t, i); g.save(); g.beginPath(); g.rect(BX, BY + 40, BW, BH - 40); g.clip(); g.translate(540, 745); g.scale(.74, .74); g.translate(-540, -710); BEATS[i](t); g.restore();
+  page(t, i); g.save(); g.beginPath(); g.rect(BX, BY + 40, BW, BH - 40); g.clip(); g.translate(540, 780); g.scale(.67, .67); g.translate(-540, -710); BEATS[i](t); g.restore();
   if (i < BEATS.length - 1) mascot(t, BX + 90, BY + BH - 80, .9); caption(t); }
 window.DUR = TOT;
 // loop: the last 0.5 s blends 30% of frame 0 back in
 window.seek = t => { scene(t); const lp = seg(t, TOT - .5, TOT); if (lp > 0) { const keep = g.getImageData(0, 0, W, H); scene(0); const f0 = g.getImageData(0, 0, W, H); const kk = .3 * ss(lp), A = keep.data, B = f0.data; for (let i = 0; i < A.length; i += 4) { A[i] += (B[i] - A[i]) * kk; A[i + 1] += (B[i + 1] - A[i + 1]) * kk; A[i + 2] += (B[i + 2] - A[i + 2]) * kk; } g.putImageData(keep, 0, 0); } };
 window.render = window.seek;
-window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); page(3, 0); g.save(); g.translate(540, 760); g.scale(.82, .82); g.translate(-540, -700); const j = jeans(3, 540, 380, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i })); g.restore(); mascot(3, BX + 90, BY + BH - 80, .9);
+window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); page(3, 0); g.save(); g.translate(540, 790); g.scale(.74, .74); g.translate(-540, -700); const j = jeans(3, 540, 380, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i })); g.restore(); mascot(3, BX + 90, BY + BH - 80, .9);
   g.fillStyle = '#f3f3ee'; g.fillRect(BX, 1100, BW, 300); g.font = '400 76px PatrickHand'; g.fillStyle = '#1e1e1c'; g.fillText('That tiny pocket', BX + 46, 1200); g.fillStyle = '#1f7f66'; g.fillText('had a job.', BX + 46, 1290); };
 window.seek(0); window.ready = true; window.READY = true;
