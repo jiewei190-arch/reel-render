@@ -130,13 +130,13 @@ function sceneG(t) { const t0 = s(7); SETG(P.teal, P.tealD); const hit = R(t, t0
   stamp('BRUISE = FASTER', 540, 400, R(t, t0 + 2.4, .35), -.1, 64); }
 // H p8: the fridge: below 13 °C the peel gets chill damage; the banana shivers inside; thermometer
 function sceneH(t) { const t0 = s(8); SETG('#cfe3ee', '#9fb8c8'); fridge(150, 380, 560, 720, t); const dk = ss(R(t, t0 + 1.6, 3)); banana(430, 830, .62, t, { ripe: 1, spots: .3, dark: dk * .8, shiver: true, mood: 'sad' });
-  thermo(860, 440, lerp(.6, .25, ss(R(t, t0 + .4, 1.2))), t, '#8fd0f0'); AD.text('13 °C', 860, 860, { f: 'roundX', size: 52, col: C.ink, align: 'center', a: R(t, t0 + 1.0, .4) }); AD.text('(55 °F)', 860, 910, { f: 'round', size: 34, col: C.ink, align: 'center', a: R(t, t0 + 1.2, .4) });
+  thermo(820, 420, lerp(.6, .25, ss(R(t, t0 + .4, 1.2))), t, '#8fd0f0'); AD.text('13 °C', 800, 820, { f: 'roundX', size: 52, col: C.ink, align: 'center', a: R(t, t0 + 1.0, .4) }); AD.text('(55 °F)', 800, 860 - 6 + 0, { f: 'round', size: 34, col: C.ink, align: 'center', a: R(t, t0 + 1.2, .4) });
   AD.text('chill damage', 430, 1080, { f: 'hand', size: 56, col: C.ink, align: 'center', write: R(t, t0 + 2.8, .7) }); }
 // I p9: cut open: peel dark brown/black, the fruit inside fresh
 function sceneI(t) { const t0 = s(9); SETG('#e9dcc0', '#c8b08a'); const k = R(t, t0 + .2, .8);
   banana(330, 700, .75, t, { ripe: 1, dark: .9, face: false, rot: -.1 }); const op = ss(R(t, t0 + .8, 1)); lg.save(); lg.translate(760, 720); lg.rotate(-.1); AD.shape(AD.rbox(-150, -120 - 60 * op, 300, 240 + 120 * op, 120), P.black, { seed: 820, lw: 5 }); AD.shape(AD.rbox(-115, -90 - 50 * op, 230, 180 + 100 * op, 100), P.flesh, { seed: 821, lw: 4 });
   for (let i = 0; i < 3; i++) AD.shape(AD.poly(0, -50 + i * 50, 10, 6, 8), '#c9b48a', { line: false, wob: 0 }); lg.restore();
-  AD.plaque(560, 960, 400, 90, ['inside: fresh'], { size: 44, f: 'round', top: 60, fill: '#c6ecc0', a: k }); AD.text('peel: dark', 330, 1070, { f: 'hand', size: 50, col: C.ink, align: 'center', write: R(t, t0 + 1.4, .6) }); }
+  AD.plaque(500, 960, 380, 90, ['inside: fresh'], { size: 44, f: 'round', top: 60, fill: '#c6ecc0', a: k }); AD.text('peel: dark', 330, 1070, { f: 'hand', size: 50, col: C.ink, align: 'center', write: R(t, t0 + 1.4, .6) }); }
 // J p10: the trick: counter first, fridge once ripe (two numbered plaques + arrow)
 function sceneJ(t) { const t0 = s(10); SETG(P.leaf, P.leafD); AD.text('THE TRICK', 540, 400, { f: 'roundX', size: 76, col: P.cream, align: 'center', write: R(t, t0 + .1, .6) });
   AD.plaque(110, 470, 380, 100, ['1  counter'], { size: 46, f: 'roundX', top: 66, fill: P.butter }); AD.plaque(590, 470, 380, 100, ['2  then fridge'], { size: 42, f: 'roundX', top: 66, fill: '#cfe3ee', a: R(t, t0 + 1.6, .4) });
