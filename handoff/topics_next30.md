@@ -43,8 +43,8 @@
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
 | 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
-| 75 | earwax | What is earwax actually for? | H1 | queued |
-| 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v1, Nov 11 19:00 (renumbered from 76; re-badge --ep 73 pending) |
+| 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
+| 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
 | 77 | hairgray | Why does hair turn gray? | H2 | queued |
 | 78 | bubblewrap | Why do bubbles in soda rise in lines? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |

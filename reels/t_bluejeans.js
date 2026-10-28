@@ -67,7 +67,8 @@ function gauge(x, y, h, lev, lab, k = 1) { if (k <= 0) return; g.fillStyle = 'rg
 function tearZig(x, y, k) { if (k <= 0) return; const P = Array.from({ length: 9 }, (_, i) => [x + i * 14, y + (i % 2 ? -12 : 12) + i * 6]); pencil(P, { w: 3.4, col: RED, prog: k, seed: 310 }); }
 function figure(x, y, sc, seed) { pencil(ell(x, y - 150 * sc, 30 * sc, 34 * sc), { w: 3, seed }); pencil([[x, y - 116 * sc], [x, y - 30 * sc]], { w: 3, seed: seed + 1 }); pencil([[x - 50 * sc, y - 90 * sc], [x, y - 100 * sc], [x + 50 * sc, y - 80 * sc]], { w: 3, seed: seed + 2 }); pencil([[x - 34 * sc, y + 40 * sc], [x, y - 30 * sc], [x + 34 * sc, y + 40 * sc]], { w: 3, seed: seed + 3 }); }
 const BEATS = [
-  t => { const j = jeans(t, 540, 360, 1.0, { k: 1 }); ring(j.wp[0], j.wp[1], 120, 90, seg(t, -.6, 1.0), 1); for (const [i, p] of j.rv.slice(0, 4).entries()) arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, prog: seg(t, 1.6 + i * .3, 2.2 + i * .3), seed: 40 + i });
+  t => { const zo = ss(seg(t, .6, 2.8)), z = lerp(2.6, 1, zo); g.translate(540 + 153 * z * (1 - zo), 710 + 242 * z * (1 - zo)); g.scale(z, z); g.translate(-540, -710);   // open close on the riveted watch pocket, pull back to the pair
+    const j = jeans(t, 540, 360, 1.0, { k: 1 }); ring(j.wp[0], j.wp[1], 120, 90, seg(t, -.6, 1.0), 1); for (const [i, p] of j.rv.slice(0, 4).entries()) arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, prog: seg(t, 1.6 + i * .3, 2.2 + i * .3), seed: 40 + i });
     hand('that tiny pocket?', 120, 300, { size: 58, col: BLUE, font: 'Gaegu', weight: 700, reveal: seg(t, -.8, 1.0) }); hand('rivets?', 700, 520, { size: 50, col: RED, reveal: seg(t, 1.8, 2.6) }); },
   t => { jeans(t, 540, 380, .85, {}); slip(160, 300, 520, [['made for', 'style'], ['made for', 'work']], { k: seg(t, s(1) + .2, s(1) + 1.6), title: 'PURPOSE' }); line(470, 418, 650, 418, { w: 4, col: RED, prog: seg(t, s(1) + 1.2, s(1) + 1.6), seed: 50 }); hand('✓', 690, 470, { size: 64, col: BLUE, reveal: seg(t, s(1) + 2.0, s(1) + 2.2) }); },
   t => { figure(260, 820, 1.9, 60); jeans(t, 760, 760, .36, {}); pencil([[560, 1060], [960, 1060]], { w: 3, seed: 65 }); hand('Jacob Davis, tailor', 120, 1000, { size: 46, reveal: seg(t, s(2) + .6, s(2) + 1.6) }); slip(470, 380, 460, [['for', 'her husband'], ['must', "not fall apart"]], { k: seg(t, s(2) + 1.8, s(2) + 4.2), title: 'ORDER' });
@@ -76,7 +77,7 @@ const BEATS = [
     tearZig(260, 690, seg(t, s(3) + .4, s(3) + 1.2)); hand('rip!', 200, 640, { size: 64, col: RED, reveal: seg(t, s(3) + .8, s(3) + 1.2), rot: -.1 }); gauge(780, 420, 300, lerp(.3, .92, seg(t, s(3) + .2, s(3) + 1.6)), 'strain'); },
   t => { const z = 1.8, cx = -150, cy = 150; g.save(); g.translate(540, 700); g.scale(z, z); g.translate(-(540 + cx), -(360 + cy)); const j = jeans(t, 540, 360, 1, { rivets: seg(t, s(4) + .4, s(4) + 1.6) }); g.restore();
     gauge(780, 420, 300, lerp(.92, .35, seg(t, s(4) + 1.0, s(4) + 2.2)), 'strain'); hand('points of strain', 120, 1080, { size: 50, reveal: seg(t, s(4) + 1.4, s(4) + 2.4) }); hand('metal rivets', 160, 400, { size: 54, col: BLUE, font: 'Gaegu', weight: 700, reveal: seg(t, s(4) + .2, s(4) + 1.0) }); },
-  t => { const a = slip(110, 420, 380, [['trade', 'tailor'], ['idea', 'rivets']], { k: seg(t, s(5) + .2, s(5) + 1.4), title: 'J. Davis' }), b = slip(590, 420, 380, [['trade', 'cloth'], ['city', 'San Fran.']], { k: seg(t, s(5) + 2.2, s(5) + 3.4), title: 'L. Strauss' });
+  t => { const a = slip(110, 420, 380, [['trade', 'tailor'], ['idea', 'rivets']], { k: seg(t, s(5) - .3, s(5) + 1.0), title: 'J. Davis' }), b = slip(590, 420, 380, [['trade', 'cloth'], ['city', 'San Fran.']], { k: seg(t, s(5) + 1.6, s(5) + 2.8), title: 'L. Strauss' });
     hand('you connected:', 360, 330, { size: 44, reveal: seg(t, s(5), s(5) + .6) }); pencil([[300, 640], [300, 720], [780, 720], [780, 640]], { w: 3, prog: seg(t, s(5) + 3.4, s(5) + 4.4), seed: 70 }); hand('partners', 460, 800, { size: 56, col: BLUE, font: 'Gaegu', weight: 700, reveal: seg(t, s(5) + 4.2, s(5) + 5) });
     dashed(80, 380, 920, 480); jeans(t, 540, 900, .26, {}); },
   t => { slip(120, 360, 840, [['No.', '139,121'], ['date', 'May 20, 1873'], ['to', 'J. W. Davis'], ['and', 'Levi Strauss & Co.']], { k: seg(t, s(6) + .2, s(6) + 3.2), title: 'U.S. PATENT OFFICE', size: 40 });
@@ -95,7 +96,7 @@ const BEATS = [
     slip(560, 330, 400, [['WWII', 'metal saved'], ['pocket', 'no rivets']], { k: seg(t, s(11) + .3, s(11) + 1.8), title: 'WAR EFFORT', size: 30 }); },
   t => { pencil([[120, 560], [940, 560]], { w: 3, seed: 120 }); [[200, '1873'], [700, '1890']].forEach(([x, y], i) => { line(x, 540, x, 580, { w: 3, seed: 121 + i }); hand(y, x - 40, 640, { size: 46, col: i ? RED : BLUE, font: 'CourierPrime', reveal: seg(t, s(12) + i * 1.4, s(12) + .6 + i * 1.4) }); });
     hand('patent', 250, 520, { size: 44, reveal: seg(t, s(12) + .2, s(12) + .8) }); hand('ran out', 640, 520, { size: 44, col: RED, reveal: seg(t, s(12) + 1.6, s(12) + 2.2) });
-    for (let i = 0; i < 10; i++) { const kk = seg(t, s(12) + 2.4 + i * .18, s(12) + 2.7 + i * .18); if (kk <= 0) continue; g.save(); g.globalAlpha = kk; jeans(t, 150 + (i % 5) * 190, 720 + Math.floor(i / 5) * 230, .3, {}); g.restore(); } hand("everyone's work pants", 260, 1130, { size: 46, col: BLUE, reveal: seg(t, s(12) + 3.0, s(12) + 4.0) }); },
+    for (let i = 0; i < 10; i++) { const kk = seg(t, s(12) + .4 + i * .2, s(12) + .7 + i * .2); if (kk <= 0) continue; g.save(); g.globalAlpha = kk; jeans(t, 150 + (i % 5) * 190, 720 + Math.floor(i / 5) * 230, .3, {}); g.restore(); } hand("everyone's work pants", 260, 1130, { size: 46, col: BLUE, reveal: seg(t, s(12) + 3.0, s(12) + 4.0) }); },
   t => { const j = jeans(t, 520, 360, .95, {}); arrow(800, 330, j.rv[2][0] + 14, j.rv[2][1] - 6, { w: 3, col: BLUE, seed: 130 }); hand('armor for', 740, 300, { size: 44, col: BLUE }); hand('weak seams', 720, 345, { size: 44, col: BLUE });
     ring(j.wp[0], j.wp[1], 110, 82, seg(t, s(13) + 1.8, s(13) + 2.8), 131); hand('watch pocket', 90, 300, { size: 52, col: BLUE, font: 'Gaegu', weight: 700, reveal: seg(t, s(13) + 2.4, s(13) + 3.4) }); },
   t => { jeans(t, 540, 520, .7, {}); hand('ever used it?', 300, 380, { size: 66, col: BLUE, font: 'Gaegu', weight: 700, reveal: seg(t, s(14), s(14) + .8) });
@@ -105,9 +106,9 @@ const BEATS = [
 ];
 // the page: navy grid, mono header + hand-lettered title, the taped board with binder holes and a scene counter
 const BG = (() => { const c = document.createElement('canvas'); c.width = W; c.height = H; const p = c.getContext('2d'); p.fillStyle = NAVY; p.fillRect(0, 0, W, H); p.strokeStyle = 'rgba(255,255,255,.05)'; p.lineWidth = 2; for (let x = 0; x < W; x += 44) { p.beginPath(); p.moveTo(x, 0); p.lineTo(x, H); p.stroke(); } for (let y = 0; y < H; y += 44) { p.beginPath(); p.moveTo(0, y); p.lineTo(W, y); p.stroke(); } return c; })();
-const BX = 50, BY = 420, BW = 980, BH = 650;
-function page(t, beat) { g.drawImage(BG, 0, 0); g.font = '400 30px CourierPrime'; g.fillStyle = 'rgba(220,226,235,.7)'; g.textAlign = 'left'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 60, 300);
-  g.font = '700 92px Gaegu'; const t1 = 'Why jeans have ', t2 = 'rivets.', w1 = g.measureText(t1).width, w2 = g.measureText(t2).width; g.fillStyle = MINT; g.globalAlpha = .75; g.fillRect(60 + w1 - 6, 340, w2 + 4, 34); g.globalAlpha = 1; g.fillStyle = '#f3f4f6'; g.fillText(t1, 60, 380); g.fillText(t2, 60 + w1, 380);
+const BX = 50, BY = 450, BW = 980, BH = 620;
+function page(t, beat) { g.drawImage(BG, 0, 0); g.font = '400 30px CourierPrime'; g.fillStyle = 'rgba(220,226,235,.7)'; g.textAlign = 'left'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 60, 330);
+  g.font = '700 92px Gaegu'; const t1 = 'Why jeans have ', t2 = 'rivets.', w1 = g.measureText(t1).width, w2 = g.measureText(t2).width; g.fillStyle = MINT; g.globalAlpha = .75; g.fillRect(60 + w1 - 6, 370, w2 + 4, 34); g.globalAlpha = 1; g.fillStyle = '#f3f4f6'; g.fillText(t1, 60, 410); g.fillText(t2, 60 + w1, 410);
   g.fillStyle = 'rgba(0,0,0,.3)'; g.fillRect(BX + 8, BY + 10, BW, BH); g.drawImage(PAPER, 0, 0, W, H * BH / H * 2, BX, BY, BW, BH); g.fillStyle = 'rgba(236,236,230,.55)'; g.fillRect(BX, BY, BW, BH);
   g.fillStyle = 'rgba(232,214,150,.85)'; [[BX + 10, BY + 8, -.6], [BX + BW - 10, BY + 8, .6]].forEach(([x, y, a]) => { g.save(); g.translate(x, y); g.rotate(a); g.fillRect(-55, -14, 110, 30); g.restore(); });
   g.fillStyle = '#2b2b2b'; g.fillRect(W / 2 - 110, BY + 22, 46, 8); g.fillRect(W / 2 + 64, BY + 22, 46, 8); g.beginPath(); g.arc(W / 2, BY + 26, 9, 0, 7); g.fill();
@@ -127,12 +128,12 @@ function caption(t) { const ph = PH.findLast(p => t >= p.start - .1); if (!ph ||
   g.restore(); }
 function scene(t) { TQ = Math.floor(t * 12 + 1e-6) / 12; BOIL = Math.round(TQ * 12); t = TQ;
   g.setTransform(1, 0, 0, 1, 0, 0); let i = 0; for (let k = 0; k < PH.length; k++) if (t >= s(k) - .25) i = k; i = Math.min(i, BEATS.length - 1);
-  page(t, i); g.save(); g.beginPath(); g.rect(BX, BY + 40, BW, BH - 40); g.clip(); g.translate(540, 745); g.scale(.74, .74); g.translate(-540, -710); BEATS[i](t); g.restore();
+  page(t, i); g.save(); g.beginPath(); g.rect(BX, BY + 40, BW, BH - 40); g.clip(); g.translate(540, 780); g.scale(.67, .67); g.translate(-540, -710); BEATS[i](t); g.restore();
   if (i < BEATS.length - 1) mascot(t, BX + 90, BY + BH - 80, .9); caption(t); }
 window.DUR = TOT;
 // loop: the last 0.5 s blends 30% of frame 0 back in
 window.seek = t => { scene(t); const lp = seg(t, TOT - .5, TOT); if (lp > 0) { const keep = g.getImageData(0, 0, W, H); scene(0); const f0 = g.getImageData(0, 0, W, H); const kk = .3 * ss(lp), A = keep.data, B = f0.data; for (let i = 0; i < A.length; i += 4) { A[i] += (B[i] - A[i]) * kk; A[i + 1] += (B[i + 1] - A[i + 1]) * kk; A[i + 2] += (B[i + 2] - A[i + 2]) * kk; } g.putImageData(keep, 0, 0); } };
 window.render = window.seek;
-window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); page(3, 0); g.save(); g.translate(540, 760); g.scale(.82, .82); g.translate(-540, -700); const j = jeans(3, 540, 380, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i })); g.restore(); mascot(3, BX + 90, BY + BH - 80, .9);
+window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); page(3, 0); g.save(); g.translate(540, 790); g.scale(.74, .74); g.translate(-540, -700); const j = jeans(3, 540, 380, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i })); g.restore(); mascot(3, BX + 90, BY + BH - 80, .9);
   g.fillStyle = '#f3f3ee'; g.fillRect(BX, 1100, BW, 300); g.font = '400 76px PatrickHand'; g.fillStyle = '#1e1e1c'; g.fillText('That tiny pocket', BX + 46, 1200); g.fillStyle = '#1f7f66'; g.fillText('had a job.', BX + 46, 1290); };
 window.seek(0); window.ready = true; window.READY = true;

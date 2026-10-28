@@ -488,9 +488,9 @@ Follow for more of how it really works.
 #sleep #dreams #brain #science #reels 
 ```
 
-## C. On hold for TikTok + YouTube (badge-position fix pending)
+## C. Cleared for TikTok + YouTube (badge fix checked by the main session, Oct 28 ~10:30 UTC)
 
-Schedule only after you OK the fixed `_ep` files. TikTok: caption below, AI-generated label ON, cover = thumb. YouTube: title/description from section A format.
+The fixed `_ep` files are on the branch (badges at y >= 260, clear of text); schedule these now. TikTok: caption below, AI-generated label ON, cover = thumb. YouTube: title/description from section A format.
 
 ### Ep. 14 · match: TikTok Fri Oct 30, 7:00 PM / YouTube Fri Oct 30, 8:00 PM
 **TikTok caption:**
