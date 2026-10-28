@@ -45,7 +45,7 @@
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | merged v1, Nov 11 21:30 (v2 varied shots pending) |
 | 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
-| 77 | hairgray | Why does hair turn gray? | H2 | queued |
+| 77 | hairgray | Why does hair turn gray? | H2 | merged, Nov 12 16:00 |
 | 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | merged, Nov 12 19:00 |
 | 79 | saltyocean | Why is the ocean salty? | H1 | merged v2, Nov 12 21:30 |
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | merged, Nov 13 09:00 |
@@ -55,6 +55,8 @@
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
 | 85 | rainbow | Why are rainbows curved? | H1 | queued |
 | 86 | spicy | Why does spicy food feel hot? | H1 | queued |
+| 87 | crackedphone | Why does a phone screen crack from a short drop? | H2 | queued |
+| 88 | pickles | How does a cucumber turn into a pickle? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
