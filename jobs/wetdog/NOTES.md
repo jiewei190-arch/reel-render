@@ -1,53 +1,63 @@
 # wetdog: NOTES
 
-- **Template:** #23 Recipe card (demo t23), reusing reels/styles/recipe (the engine behind H3's handwarmer).
-- **Why this template:** wet dog smell really is a recipe: a dog, its microbes, their smelly molecules, a splash of water, time to dry. The demo's grammar carries it all:
-  - the checklist card ticks each ingredient on its word;
-  - the step header and big counter show 1 dog, 1 splash, 22 compounds, 32×;
-  - the % scale beside the glass becomes a STINK scale beside the dog;
-  - the progress bar runs RECIPE / DOG / SMELLS / WATER / DRY / THE MIX;
-  - "Good drink." becomes "Good stink.".
-- **New for this reel:**
-  - a hand-drawn sitting dog (shakes at frame 0, tail wags, fur flattens and drips when wet, stink lines scale with the STINK level);
-  - a fur loupe with drifting hairs, bacteria rods and budding yeast, purple molecules that stick and then get knocked loose;
-  - a bucket pour; evaporation carrying molecules to a nose that goes "!!";
-  - 22 vs 16 molecule rows; mushroom / cherry / flower / poop icons;
-  - a 32× bar; everything stirred into a bowl "= wet dog"; a bath tub.
-- **Batch N layout:** card x 560-1020 above y 830; handwritten captions centred at y 1290; content inside y 250-1130; nothing typed right of x 900 below y 840.
-- **Search question:** "Why do wet dogs smell so bad?" is spoken at 0.35 s and typed in the search bar.
+- **Template:** #8 urban-sketch (lemo-opuscar urban-sketch demo: STYLE.md, poster.jpg, styleframe), drawn with the in-house engine reels/styles/urbansketch (pen, wash, handwriting).
+  - **Re-templated at the main session's request:** v1 was a recipe card, but H2's coldtaste (EP 58) is a recipe card with a "Good nose." sign-off, so the "Good ___." line is gone too.
+- **Why this template:** wet dog smell is an invisible thing coming off a real, everyday scene. The style's own moves carry it:
+  - **the one coloured thing:** a wet ochre dog in an ink-only park;
+  - **invisible forces are drawn:** the smell is ink curls that draw on at the head and erase from the tail, with green dabs;
+  - **colour as arrival:** water floods the fur page with a wet front, and at the payoff colour blooms over the whole park (lawn, trees, skyline) from the dog;
+  - **page turns between spreads.**
+- **Pages:**
+  1. **Park by the pond** (frame 0): the dog mid-shake with droplets and motion arcs, a sitter on the bench going "ew!", a handwritten corner note "Sat. 4:10 pm, by the pond, after a swim". The camera pushes in to "who lives on it?".
+  2. **Fur, up close:** hairs with bacteria and budding yeast, purple molecules appearing, blue water arriving, molecules knocked loose.
+  3. **Park again:** the dog drying, curls drifting to the sitter's nose.
+  4. **Smell notes:** a smell cloud with "?", tallies 22 wet vs 16 dry, mushroom/fruity/floral/poop studies (line, then wash), x32 bars (benzaldehyde), curls merging into "= wet dog".
+  5. **Bath:** tiles, tub, water arriving, curls rising, "+ water".
+  6. **Park in full colour:** the payoff; the yes/no ticks for the question.
+  7. **Handwritten end card.**
+- **Batch N layout:**
+  - drawings inside y 250-1130; one handwritten margin note per step at y 330 (screen space);
+  - handwritten captions centred at y ~1290 with a paper halo, bold words in the accent ink;
+  - nothing written right of x 900 below y 840.
+  - qa WARN: art (hairs, park lines) touches the frame edge; no text.
+- **Search question:** "Why do wet dogs smell so bad?" is spoken at 0.35 s.
 - **Hook:** that question (7 words). "But the smell isn't really the dog" at 2.7 s.
-- **Re-hooks:** 28.4-37.7 s add water / up to your nose; 38.4 s "how many smells?"; 47-52 s mushrooms... poop.
-- **Payoff:** 64.8 s. Question: "Yes or no?"
-- **Motion fix:** the first render failed qa static at 13.8-20.0 s ("That's normal..."). Added hair drift inside the loupe, a loupe zoom-in and more microbes popping in; still diffs 0.75+ per 0.25 s.
-- **Length:** 76.5 s. Voice af_heart 0.97; mix2.py with fx_gain 0.35 and music_gain 0.6 (ticks on each recipe line, bubbles on the water, chime at the nose; no whoosh).
-- **Loop:** the last 0.5 s blends 30% of frame 0 back in (same as handwarmer).
-- **Badge:** EP 62 at (44, 760), in the free band between the step header and the STINK scale; hidden on the end card from 72.4 s.
+- **Re-hooks:** 28.3-37.5 s water arrives, then "up to your nose"; 38.2 s "how many smells?"; 47.6-52.7 s mushrooms... poop.
+- **Payoff:** 65.3 s, with colour arriving over the park. Question: "Yes or no?"
+- **Script changes from v1:**
+  - "recipe" wording dropped ("Here's how it works, step by step."; payoff "microbe molecules, set free by water, drifting to your nose");
+  - the Purina study is "a small pilot study".
+- **Length:** 77.8 s. Voice af_heart 0.97; mix2.py with fx_gain 0.35 and music_gain 0.6 (pen scribbles per margin note, bubbles on water, thuds on page turns; no whoosh).
+- **Motion:** figures and curls boil at 12 fps; a hand-held camera drift on every page (wider on the notes page so qa static passes).
+- **Loop:** the last 0.5 s blends 30% of frame 0 back in.
+- **Badge:** EP 62 at (44, 380), just under the margin note; hidden on the end card from 73.3 s.
 - **Ear check:** not done by a human yet.
 
-## qa.py
+## qa.py (handoff version with the blank-frame check)
 ```
-QA wetdog: PASS   (/home/user/reel-render/jobs/wetdog/wetdog.mp4, 76.5 s)
-  PASS  static          longest no-change run 3.50 s (limit 4.0 s)
-  PASS  empty thirds    no third near-blank > 6.0 s (longest 4.0 s)
+QA wetdog: WARN   (/home/user/reel-render/jobs/wetdog/wetdog.mp4, 77.8 s)
+  PASS  static          longest no-change run 3.25 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
-  PASS  outer 24 px     clear
-  PASS  loudness        -15.4 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -2.3 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 17.1 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          76.5 s (want 66-86)
+  WARN  outer 24 px     content at the frame edge 2.2-6.2s, 24.0-28.2s
+  PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.0 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 10.3 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          77.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 4.8 (min 1.0), contrast 27.9 (min 18.0)
-  PASS  9:16 frame      wetdog.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 11.2 (min 1.0), contrast 23.9 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      wetdog.mp4 1080x1920 SAR 1:1; wetdog_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
 ## GROWTH checklist
 - [x] Topic is a searched question ("why do wet dogs smell so bad"); demand signal: main-session assignment
-- [x] Hook passes HOOKS.md v2 (7 words = the search question, frame 0 is a dog mid-shake with droplets, "but" at 2.7 s)
-- [x] 66-86 s (76.5); ends on the exact closing line
+- [x] Hook passes HOOKS.md v2 (7 words = the search question, frame 0 is the coloured dog mid-shake with smell curls and "ew!", "but" at 2.7 s)
+- [x] 66-86 s (77.8); ends on the exact closing line
 - [x] Yes/no question before the closing line
 - [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (30% frame-0 blend)
 - [x] pinned_wetdog.md written; thumb_wetdog.jpg made
-- [x] wetdog_ep.mp4 (EP 62; OVR spot (44, 760), hidden from 72.4 s; checked at 3-74 s)
+- [x] wetdog_ep.mp4 (EP 62; OVR spot (44, 380), hidden from 73.3 s; checked at 3-76 s)

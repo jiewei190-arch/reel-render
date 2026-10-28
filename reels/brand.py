@@ -40,7 +40,7 @@ OVR = {
     "hiccups": {"spot": (44, 400), "hide": [(67.7, 99.0)]},   # H1: below the left plaques; hidden for the end card
     "ovenfoil": {"spot": (651, 400)},   # H1: right of the FIG label, above the figure callouts; the top band is the sheet header
     "contrails": {"spot": (44, 260), "hide": [(6.0, 64.2)]},   # H1: top-left above the banner/wall; hidden on the posters (their header sits there)
-    "wetdog": {"spot": (44, 760), "hide": [(72.4, 99)]},   # H1: left band between the step header and the STINK scale; hidden on the end card
+    "wetdog": {"spot": (44, 380), "hide": [(73.3, 99)]},   # H1: just under the handwritten margin note, above the drawings; hidden on the end card
     "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
     "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns   # titles run to the top-right corner; strip under the captions is clear
     # H2 QA, Oct 28
