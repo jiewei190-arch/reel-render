@@ -74,8 +74,8 @@ function page1(t) {   // hook: a sealed loaf, "Stale ≠ dried out", a crumb mag
   loaf(420, 820, 1.05, t, { bag: 1 }); for (let i = 0; i < 6; i++) { const u = (t * .5 + i / 6) % 1; F.circ(640 + hash(i) * 60, 760 + u * 280, 5 + hash(i + 2) * 4, { col: C.ochre, w: 2, alpha: Math.sin(u * Math.PI), wob: .4 }); }
   // magnifier on the crumb: crystal blocks forming
   const mx = 760, my = 1000, mr = 120; g.save(); F.path(ell(mx, my, mr, mr)); g.clip(); g.translate(mx - 540 * .3, my - 800 * .3); g.scale(.3, .3); starch({ gel: 1, cry: .6 + .4 * Math.sin(t * 1.4) ** 2 }, t); g.restore(); F.circ(mx, my, mr, { w: 3, seed: 700 }); F.pencil([[mx - 84, my - 84], [560, 870]], { w: 1.6, col: C.graph, wob: .3 });
-  F.txt('airtight bag', 100, 1110, { size: 38, f: 'hand', col: C.navy, write: ss(R(t, .8, .8)) });
-  if (t > s(1) - .2) { F.box(80, 600, 340, 110, ss(R(t, s(1) - .2, .5))); F.txt('Why does bread', 106, 644, { size: 34, f: 'hand', write: ss(R(t, s(1), .7)) }); F.txt('go stale?', 106, 688, { size: 34, f: 'hand', col: C.red, write: ss(R(t, s(1) + .4, .5)) }); }
+  F.txt('airtight bag', 110, 960, { size: 38, f: 'hand', col: C.navy, write: ss(R(t, .8, .8)) });
+  if (t > s(1) - .2) { F.box(80, 1040, 380, 120, ss(R(t, s(1) - .2, .5))); F.txt('Why does bread', 106, 1088, { size: 38, f: 'hand', write: ss(R(t, s(1), .7)) }); F.txt('go stale?', 106, 1136, { size: 38, f: 'hand', col: C.red, write: ss(R(t, s(1) + .4, .5)) }); }
   caption(t); strip(t, 1); }
 function page2(t, p) {   // the oven: granules swell with water and melt into a gel; then cooling: crystals form
   chapter(t, 'NO. 01 — IN THE OVEN', t < s(3) - .1 ? 'Water in, starch loosens.' : 'Cooling: crystals.', p[0]);
@@ -103,7 +103,7 @@ function page4(t, p) {   // the twist: fridge vs counter: the chart; 1 day = 6 d
 function page5(t, p) {   // freezer: the crystals barely grow (flat line), snowflake seal
   chapter(t, 'NO. 04 — THE FREEZER', 'Almost paused.', p[0]);
   const a = ss(R(t, p[0] + .2, .8)); chart(150, 560, 740, 380, t, a, { fridge: 1, freezer: ss(R(t, s(8) + .6, 1.0)) }); F.txt('freezer', 700, 900, { size: 40, f: 'hand', col: C.navy, write: ss(R(t, s(8) + 1.2, .6)) });
-  F.seal('ICE', 880, 1080, ss(R(t, s(8) + 1.6, .3)), { size: 70, round: true, f: 'mono', fs: 40 }); g.save(); g.translate(330, 1080); g.scale(.35, .35); g.translate(-540, -800); starch({ gel: 1, cry: .15 }, t * .1); g.restore(); F.circ(330, 1080, 110, { w: 2.4, seed: 701 });
+  F.seal('ICE', 880, 1080, ss(R(t, s(8) + 1.6, .3)), { size: 70, round: true, f: 'mono', fs: 40 }); g.save(); F.path(ell(330, 1110, 100, 100)); g.clip(); g.translate(330 - 540 * .3, 1110 - 800 * .3); g.scale(.3, .3); starch({ gel: 1, cry: .15 }, t * .1); g.restore(); F.circ(330, 1110, 100, { w: 2.4, seed: 701 });
   caption(t); strip(t, 1); }
 function page6(t, p) {   // the good news: warm it up, the crystals melt back into gel
   chapter(t, 'NO. 05 — THE TOASTER', 'Heat undoes it.', p[0]);
