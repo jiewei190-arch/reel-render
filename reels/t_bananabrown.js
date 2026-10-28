@@ -55,16 +55,19 @@ const P = { leaf: '#4f7d4a', leafD: '#355a33', teal: '#2f6f73', tealD: '#1f4f52'
   peelG: '#8cbf4a', peelY: '#f5d23a', peelYD: '#d9ae1f', spot: '#6b3e1c', black: '#2b2118', flesh: '#f6eac4' };
 // banana (cut paper): x,y = centre of the curve, sc scale, ripe 0 green .. 1 yellow, spots 0..1, dark 0..1 (chilled peel), face, rot
 function banana(x, y, sc, t, o = {}) { const c = lg; c.save(); c.translate(x, y); c.rotate(o.rot || 0); c.scale(sc * (o.flip ? -1 : 1), sc); AD.use(c);
-  const pts = []; for (let i = 0; i <= 24; i++) { const u = i / 24, a = Math.PI * (1.15 + u * .7); pts.push([Math.cos(a) * 260, Math.sin(a) * 260 + 300 - Math.sin(u * Math.PI) * 26]); }
-  for (let i = 24; i >= 0; i--) { const u = i / 24, a = Math.PI * (1.15 + u * .7); pts.push([Math.cos(a) * 190, Math.sin(a) * 190 + 250]); }
+  // a smile-shaped crescent: centreline radius 230 about (0,-230); thickness tapers to the tips; the stem at the left tip
+  const pt = (u, d) => { const a = Math.PI * (.12 + .76 * u); const r = 230 + d; return [Math.cos(a) * r, -230 + Math.sin(a) * r]; };
+  const th = u => 8 + 74 * Math.pow(Math.sin(Math.PI * u), .55), N = 28, out = [], inn = [];
+  for (let i = 0; i <= N; i++) { const u = i / N; out.push(pt(u, th(u))); inn.push(pt(u, -th(u) * .9)); } const pts = [...out, ...inn.reverse()];
   let col = o.ripe == null ? P.peelY : (o.ripe < .5 ? P.peelG : P.peelY); if (o.dark) col = mixc(col, P.black, o.dark);
-  AD.shape(pts, col, { seed: o.seed || 700, t, lw: 6 }); AD.shape([[-120, 90], [-150, 40], [-138, 30], [-104, 84]], P.leafD, { seed: 701, lw: 4 });   // stem
-  AD.line(pts.slice(3, 20).map(([a, b]) => [a * .9, b * .96 + 18]), { lw: 3, lc: 'rgba(80,60,20,.35)', wob: .5 });
-  const ns = Math.round((o.spots || 0) * 14); for (let i = 0; i < ns; i++) { const u = .15 + hash(i * 3.1) * .7, a = Math.PI * (1.15 + u * .7), r = 205 + hash(i * 7.3) * 45; AD.shape(AD.poly(Math.cos(a) * r, Math.sin(a) * r + 270, 9 + hash(i) * 9, 7 + hash(i + 1) * 7, 10), P.spot, { line: false, wob: 0 }); }
-  if (o.face !== false) { const fx = 0, fy = 38; for (const sd of [-1, 1]) { AD.shape(AD.poly(fx + sd * 34, fy, 15, 17, 12), '#fff', { seed: 702 + sd, lw: 3 }); AD.shape(AD.poly(fx + sd * 34 + (o.look || 0) * 5, fy + 2, 7, 8, 10), C.ink, { line: false, wob: 0 }); }
-    if (o.shades) { AD.shape(AD.rbox(-74, fy - 22, 66, 40, 10), '#222', { lw: 3 }); AD.shape(AD.rbox(8, fy - 22, 66, 40, 10), '#222', { lw: 3 }); AD.line([[-8, fy - 6], [8, fy - 6]], { lw: 4, wob: 0 }); }
-    if (o.mood === 'o') AD.shape(AD.poly(fx, fy + 44, 11, 13, 12), '#7a2a20', { lw: 3 }); else if (o.mood === 'sad') AD.line([[fx - 18, fy + 50], [fx, fy + 40], [fx + 18, fy + 50]], { lw: 4 }); else AD.line([[fx - 20, fy + 38], [fx, fy + 50], [fx + 20, fy + 38]], { lw: 4 });
-    if (o.shiver) for (const sd of [-1, 1]) AD.line([[sd * 300, 40], [sd * 316, 60], [sd * 300, 80], [sd * 316, 100]], { lw: 4, lc: '#9fd4f0', wob: 0 }); }
+  AD.shape(pts, col, { seed: o.seed || 700, t, lw: 6 }); AD.line(Array.from({ length: 21 }, (_, i) => pt(.08 + i / 20 * .84, th(.08 + i / 20 * .84) * .35)), { lw: 3, lc: 'rgba(80,60,20,.35)', wob: .5 });
+  const [sx, sy] = pt(1, 0); AD.shape([[sx - 4, sy - 6], [sx - 40, sy - 40], [sx - 30, sy - 52], [sx + 10, sy - 14]], o.dark ? P.black : P.leafD, { seed: 701, lw: 4 });   // stem
+  const [tx, ty] = pt(0, 0); AD.shape(AD.poly(tx + 6, ty - 4, 10, 10, 10), P.black, { line: false, wob: 0 });                                   // dark tip
+  const ns = Math.round((o.spots || 0) * 18); for (let i = 0; i < ns; i++) { const u = .1 + hash(i * 3.1) * .8, d = (hash(i * 7.3) - .5) * 1.2 * th(u); const [px, py] = pt(u, d); AD.shape(AD.poly(px, py, 7 + hash(i) * 8, 6 + hash(i + 1) * 6, 10), P.spot, { line: false, wob: 0 }); }
+  if (o.face !== false) { const [fx0, fy0] = pt(.5, 10), fx = fx0, fy = fy0 - 4; for (const sd of [-1, 1]) { AD.shape(AD.poly(fx + sd * 30, fy - 8, 14, 16, 12), '#fff', { seed: 702 + sd, lw: 3 }); AD.shape(AD.poly(fx + sd * 30 + (o.look || 0) * 5, fy - 6, 6, 7, 10), C.ink, { line: false, wob: 0 }); }
+    if (o.shades) { AD.shape(AD.rbox(fx - 70, fy - 30, 62, 38, 10), '#222', { lw: 3 }); AD.shape(AD.rbox(fx + 8, fy - 30, 62, 38, 10), '#222', { lw: 3 }); AD.line([[fx - 8, fy - 14], [fx + 8, fy - 14]], { lw: 4, wob: 0 }); }
+    if (o.mood === 'o') AD.shape(AD.poly(fx, fy + 30, 10, 12, 12), '#7a2a20', { lw: 3 }); else if (o.mood === 'sad') AD.line([[fx - 16, fy + 36], [fx, fy + 26], [fx + 16, fy + 36]], { lw: 4 }); else AD.line([[fx - 18, fy + 24], [fx, fy + 36], [fx + 18, fy + 24]], { lw: 4 });
+    if (o.shiver) for (const sd of [-1, 1]) AD.line([[sd * 290, -150], [sd * 306, -130], [sd * 290, -110], [sd * 306, -90]], { lw: 4, lc: '#9fd4f0', wob: 0 }); }
   c.restore(); AD.use(lg); }
 const mixc = (a, b, u) => { const q = x => [1, 3, 5].map(i => parseInt(x.slice(i, i + 2), 16)); const A = q(a), B = q(b); return '#' + A.map((v, i) => Math.round(lerp(v, B[i], clamp(u))).toString(16).padStart(2, '0')).join(''); };
 // gas puff (ethylene) with the C2H4 sketch inside
@@ -92,7 +95,7 @@ const SETG = (wall, floor) => { AD.set(wall, floor, { fy: FY }); lg.fillStyle = 
 
 // ---------- scenes ----------
 // A p0-1: frame 0: a spotted banana in sunglasses under a sun lamp; spots appear one by one; ransom SUNTAN?; p1 plaque + a gas puff
-function sceneA(t) { SETG(P.teal, P.tealD); sun(860, 470, 80, t, 1); banana(470, 640, 1.25, t, { ripe: 1, spots: .25 + .75 * ss(R(t, 0, 3.2)), shades: t < s(1) + .4, mood: 'smile' });
+function sceneA(t) { SETG(P.teal, P.tealD); sun(860, 470, 80, t, 1); banana(470, 740, 1.25, t, { ripe: 1, spots: .25 + .75 * ss(R(t, 0, 3.2)), shades: t < s(1) + .4, mood: 'smile' });
   ransomLine('SUNTAN?', 360, 96, 7, i => R(t, -1 + i * .05, .2), 470); AD.text('melanin', 860, 640, { f: 'hand', size: 50, col: P.cream, align: 'center', a: R(t, .8, .5) });
   if (t > s(1)) { AD.plaque(560, 820, 420, 150, ['Why do bananas', 'turn brown?'], { size: 44, f: 'round', top: 64, lh: 56, fill: P.cream }); puff(230, 880, 110, t, bo(R(t, s(1) + 2.4, .6))); } }
 // B p2: ethylene: the ripe banana breathes out puffs; green bananas nearby turn yellow
@@ -122,7 +125,7 @@ function sceneF(t) { const t0 = s(6); SETG(P.terra, P.terraD); const cr = R(t, t
   AD.text('brown pigment', 760, 1060, { f: 'hand', size: 50, col: P.cream, align: 'center', write: R(t, t0 + 3.2, .7) }); }
 // G p7: bruises brown faster: a banana gets bonked, the bruise darkens fast; stamp
 function sceneG(t) { const t0 = s(7); SETG(P.teal, P.tealD); const hit = R(t, t0 + .8, .2), dk = ss(R(t, t0 + 1.0, 1.6)); banana(500, 700, 1.0, t, { ripe: 1, spots: .3, mood: hit > 0 ? 'o' : 'smile' });
-  if (dk > 0) { AD.shape(AD.poly(440, 900, 70 * dk + 10, 46 * dk + 6, 20), mixc(P.peelY, P.spot, dk), { seed: 810, lw: 0, line: false }); }
+  if (dk > 0) { AD.shape(AD.poly(500, 760, 90 * dk + 10, 50 * dk + 6, 20), mixc(P.peelY, P.spot, dk), { seed: 810, lw: 0, line: false }); }
   const fx = lerp(980, 560, ss(R(t, t0, .8))); AD.shape(AD.rbox(fx - 20, 560, 220, 70, 20), '#a87a4a', { seed: 811, lw: 4 }); if (hit > 0 && hit < 1) AD.text('BONK', 700, 520, { f: 'poster', size: 70, col: C.red, align: 'center' });
   stamp('BRUISE = FASTER', 540, 400, R(t, t0 + 2.4, .35), -.1, 64); }
 // H p8: the fridge: below 13 °C the peel gets chill damage; the banana shivers inside; thermometer
