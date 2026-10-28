@@ -26,7 +26,7 @@ for i, (cap, text) in enumerate(spec["phrases"]):
     gap = .38 if text[-1] in ".?" else .14
     if i in BREATH: gap += .32
     t += d + gap
-TOTAL = round(t + 1.6, 3); N = int(TOTAL * SR); v = np.zeros(N, np.float32)
+TOTAL = round(t + spec.get("tail", 1.6), 3); N = int(TOTAL * SR); v = np.zeros(N, np.float32)
 for st, s in pieces: a = int(st * SR); v[a:a + len(s)] += s
 v *= .9 / np.max(np.abs(v)); sf.write(HERE / f"vo_{name}.wav", v, SR)
 (HERE / f"tl_{name}.js").write_text("window.TL=" + json.dumps({"total": TOTAL, "p": tl}) + ";")

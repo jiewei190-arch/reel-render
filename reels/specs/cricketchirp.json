@@ -83,5 +83,6 @@
   ]
  ],
  "fx_gain": 0.35,
- "music_gain": 0.7
+ "music_gain": 0.7,
+ "tail": 0.7
 }

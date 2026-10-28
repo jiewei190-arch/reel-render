@@ -72,16 +72,16 @@ const S = [];
 // A: hook: a cricket on a grass stem, chirping glowing arcs; a paper thermometer hangs like a lantern; title strip + vertical CRICKET strip
 S.push([0, T(1), t => { sky(t); const cam = { x: 16 * Math.sin(t * .3), y: 0 }; put(g, L.hillsFar, cam, .2); put(g, L.hills, cam, .35); put(g, L.grass, cam, .6);
   thermo(700, 360, 1.0, .62 + .02 * Math.sin(t * 3)); cricket(330, 640, 1.15, t, { rate: 2.2 }); chirps(240, 560, t, 2.2); put(g, L.front, cam, 1);
-  vstrip(g, 'CRICKET', 80, 20, seg(t, .1, .9), { size: 52, seal: '°F' }); strip(g, 'a living thermometer', 520, 90, t < .02 ? 1 : seg(t, 0, .6), { size: 60, rot: -.03 }); }]);
+  vstrip(g, 'CRICKET', 80, 20, seg(t, .1, .9), { size: 52, seal: '°F' }); strip(g, 'a living thermometer', 520, 130, t < .02 ? 1 : seg(t, 0, .6), { size: 60, rot: -.03 }); }]);
 // B: the question: closer on the cricket, arcs; "pretty much, yes"
 S.push([T(1) - .3, T(2), t => { sky(t, { moon: false }); put(g, L.branch, cam0, .4); cricket(470, 520, 1.7, t, { rate: 2.2 }); chirps(330, 420, t, 2.2); put(g, L.front, cam0, 1);
-  strip(g, 'temperature from chirps?', 470, 90, seg(t, T(1), T(1) + .7), { size: 62, seal: true }); tag(g, 'pretty much, yes', 650, 760, { k: backOut(seg(t, r(1, 2.6), r(1, 3.0))), rot: .05 }); }]);
+  strip(g, 'temperature from chirps?', 470, 130, seg(t, T(1), T(1) + .7), { size: 62, seal: true }); tag(g, 'pretty much, yes', 650, 760, { k: backOut(seg(t, r(1, 2.6), r(1, 3.0))), rot: .05 }); }]);
 // C: 1897: Amos Dolbear at his desk by an oil lamp, writing the formula; a cricket on the windowsill
 S.push([T(2) - .3, T(3), t => { const gr = g.createLinearGradient(0, 0, 0, BH); gr.addColorStop(0, '#3a2418'); gr.addColorStop(1, '#5a3a24'); g.fillStyle = gr; g.fillRect(0, 0, BW, BH);
   g.fillStyle = '#16204a'; g.fillRect(700, 120, 210, 340); for (let i = 0; i < 20; i++) { g.fillStyle = `rgba(255,240,210,${.4 * hash(i)})`; g.beginPath(); g.arc(710 + hash(i * 3) * 190, 130 + hash(i * 5) * 320, 1.6, 0, TAU); g.fill(); }
   putSheet(g, MAN, 250, 300, { sc: 1, sh: .8 }); put(g, L.study, cam0, .3); putSheet(g, OILLAMP, 600, 380, { sc: 1, sh: .6 }); bloom(g, 670, 450, 150 * flick(t), WARM, .9);
   g.save(); g.translate(420, 548); g.rotate(-.04); g.fillStyle = '#f3e3bf'; g.fillRect(-130, -12, 250, 16); g.restore(); cricket(800, 470, .45, t, { rate: 1.6, flip: true }); chirps(770, 440, t, 1.6, CHIRP, .8, 1);
-  strip(g, '1897', 300, 80, seg(t, r(2, .2), r(2, .8)), { size: 80, seal: true }); strip(g, 'The Cricket as a Thermometer', 470, 200, seg(t, r(2, 2.0), r(2, 2.8)), { size: 50 }); tag(g, 'Amos Dolbear', 300, 760, { k: backOut(seg(t, r(2, 1.2), r(2, 1.6))), rot: -.04 }); }]);
+  strip(g, '1897', 300, 130, seg(t, r(2, .2), r(2, .8)), { size: 80, seal: true }); strip(g, 'The Cricket as a Thermometer', 470, 240, seg(t, r(2, 2.0), r(2, 2.8)), { size: 50 }); tag(g, 'Amos Dolbear', 300, 760, { k: backOut(seg(t, r(2, 1.2), r(2, 1.6))), rot: -.04 }); }]);
 // D: his numbers: a cool night card and a warm night card, chirp dots filling each paper strip
 S.push([T(3) - .3, T(4), t => { sky(t, { moon: false, top: '#141a3e', bot: '#3a2c5e' }); put(g, L.hills, cam0, .3);
   [[230, '60 °F', 80, COOL, 0], [710, '70 °F', 120, WARM, 2.0]].forEach(([x, lab, n, col, d]) => { const k = backOut(seg(t, r(3, .2 + d * .4), r(3, .8 + d * .4)));
@@ -92,11 +92,11 @@ S.push([T(3) - .3, T(4), t => { sky(t, { moon: false, top: '#141a3e', bot: '#3a2
 // E: the shortcut: a stopwatch sweeps 15 s while chirp tallies appear; then 30 + 40 = 70 °F
 S.push([T(4) - .3, T(5), t => { sky(t); put(g, L.hills, cam0, .3); put(g, L.grass, cam0, .6); const u = seg(t, r(4, .5), r(4, 4.0)); clockFace(250, 330, 1.0, u); tag(g, '15 seconds', 250, 520, { k: 1, size: 46 });
   cricket(720, 330, .75, t, { rate: 2 }); chirps(660, 290, t, 2); tally(450, 600, Math.round(30 * u)); put(g, L.front, cam0, 1);
-  strip(g, '30 chirps + 40 = 70 °F', 470, 90, seg(t, r(4, 4.2), r(4, 4.9)), { size: 60, seal: true }); }]);
+  strip(g, '30 chirps + 40 = 70 °F', 470, 130, seg(t, r(4, 4.2), r(4, 4.9)), { size: 60, seal: true }); }]);
 // F: re-hook: the cricket isn't measuring anything; it's cold-blooded: a thermometer glows inside its body in the air's colour
 S.push([T(5) - .3, T(6), t => { sky(t, { moon: false }); put(g, L.branch, cam0, .4); cricket(470, 520, 1.7, t, { rate: 2 }); const k = seg(t, r(5, 1.6), r(5, 2.4));
   bloom(g, 440, 520, 160, WARM, .5 * k); thermo(460, 560, .55 * k + .01, .6, WARM); put(g, L.front, cam0, 1);
-  strip(g, 'not measuring anything', 470, 90, seg(t, r(5, .3), r(5, .9)), { size: 58 }); strip(g, 'cold-blooded', 470, 760, seg(t, r(5, 2.2), r(5, 2.8)), { size: 68, seal: true }); }]);
+  strip(g, 'not measuring anything', 470, 130, seg(t, r(5, .3), r(5, .9)), { size: 58 }); strip(g, 'cold-blooded', 470, 760, seg(t, r(5, 2.2), r(5, 2.8)), { size: 68, seal: true }); }]);
 // G: warm night vs cool night: the box splits; slow arcs on the cool side, fast arcs on the warm side
 S.push([T(6) - .3, T(7), t => { g.save(); g.beginPath(); g.rect(0, 0, BW / 2, BH); g.clip(); sky(t, { moon: false, top: '#0b1233', bot: '#2a4a8e' }); put(g, L.grass, cam0, .6); cricket(240, 520, .8, t, { rate: 1 }); chirps(190, 470, t, 1, COOL); g.restore();
   g.save(); g.beginPath(); g.rect(BW / 2, 0, BW / 2, BH); g.clip(); sky(t, { moon: false, top: '#3a1c2a', bot: '#a8582e' }); put(g, L.grass, cam0, .6); cricket(700, 520, .8, t, { rate: 3 }); chirps(650, 470, t, 3, WARM); g.restore();
@@ -110,25 +110,25 @@ S.push([T(7) - .3, T(8), t => { sky(t, { moon: false, top: '#2a1c3e', bot: '#6a3
   tag(g, 'wings rub together', 470, 110, { k: backOut(seg(t, r(7, .3), r(7, .7))) }); tag(g, 'warmer = faster', 470, 720, { k: backOut(seg(t, r(7, 2.0), r(7, 2.4))), col: '#ffd9a0' }); }]);
 // I: the catch: a line-up of crickets; one gets the red seal
 S.push([T(8) - .3, T(9), t => { sky(t); put(g, L.hills, cam0, .3); [[150, false, .6], [470, true, .62], [790, false, .7]].forEach(([x, pale, sc], i) => { const k = backOut(seg(t, r(8, .2 + i * .3), r(8, .6 + i * .3))); if (k <= 0) return; cricket(x, 500, sc * k, t, { pale, rate: 1.5 + i }); });
-  if (t > r(8, 1.6)) { sealMark(g, 470, 640, 80 * backOut(seg(t, r(8, 1.6), r(8, 2.0))), 'ONE'); } strip(g, 'works best for one kind', 470, 90, seg(t, r(8, .1), r(8, .7)), { size: 58 }); }]);
+  if (t > r(8, 1.6)) { sealMark(g, 470, 640, 80 * backOut(seg(t, r(8, 1.6), r(8, 2.0))), 'ONE'); } strip(g, 'works best for one kind', 470, 130, seg(t, r(8, .1), r(8, .7)), { size: 58 }); }]);
 // J: the snowy tree cricket on a leaf in a lantern-light spot; Dolbear never named his
 S.push([T(9) - .3, T(10), t => { sky(t, { moon: false, top: '#0e1a2a', bot: '#2a4a3e' }); put(g, L.branch, cam0, .4); bloom(g, 470, 480, 300, '200,255,170', .35); cricket(470, 500, 1.4, t, { pale: true, rate: 2 }); chirps(360, 420, t, 2, '220,255,190');
-  strip(g, 'snowy tree cricket', 470, 90, seg(t, r(9, 1.6), r(9, 2.3)), { size: 62, seal: true }); tag(g, 'Dolbear never named his', 470, 200, { k: backOut(seg(t, r(9, .2), r(9, .6))), size: 40 }); tag(g, '"the thermometer cricket"', 470, 760, { k: backOut(seg(t, r(9, 3.6), r(9, 4.0))), col: '#e0f5c8' }); }]);
+  strip(g, 'snowy tree cricket', 470, 130, seg(t, r(9, 1.6), r(9, 2.3)), { size: 62, seal: true }); tag(g, 'Dolbear never named his', 470, 240, { k: backOut(seg(t, r(9, .2), r(9, .6))), size: 40 }); tag(g, '"the thermometer cricket"', 470, 760, { k: backOut(seg(t, r(9, 3.6), r(9, 4.0))), col: '#e0f5c8' }); }]);
 // K: other crickets keep their own pace: three crickets, three rhythms
 S.push([T(10) - .3, T(11), t => { sky(t); put(g, L.grass, cam0, .6); [[180, 1.2], [470, 2.6], [760, 1.8]].forEach(([x, rate], i) => { cricket(x, 500, .55, t + i, { rate, flip: i === 2 }); chirps(x - 40, 460, t + i * .37, rate, CHIRP, .85); });
-  strip(g, 'their own pace', 470, 90, seg(t, r(10, .2), r(10, .8)), { size: 62 }); tag(g, 'same formula, off', 470, 760, { k: backOut(seg(t, r(10, 1.8), r(10, 2.2))), col: '#ffc4b0' }); }]);
+  strip(g, 'their own pace', 470, 130, seg(t, r(10, .2), r(10, .8)), { size: 62 }); tag(g, 'same formula, off', 470, 760, { k: backOut(seg(t, r(10, 1.8), r(10, 2.2))), col: '#ffc4b0' }); }]);
 // L: cold nights: frost grass, the arcs slow right down
 S.push([T(11) - .3, T(12), t => { sky(t, { top: '#0a1024', bot: '#2a3e6e', mx: 200 }); put(g, L.frost, cam0, .6); cricket(520, 560, .9, t, { rate: .5 }); chirps(460, 510, t, .5, COOL);
   for (let i = 0; i < 40; i++) { const x = hash(i) * BW, y = (hash(i + 3) * BH + t * 30) % BH; g.fillStyle = 'rgba(255,255,255,.7)'; g.beginPath(); g.arc(x, y, 2.5, 0, TAU); g.fill(); }
-  strip(g, 'cold night: slow', 470, 90, seg(t, r(11, .2), r(11, .8)), { size: 62 }); }]);
+  strip(g, 'cold night: slow', 470, 130, seg(t, r(11, .2), r(11, .8)), { size: 62 }); }]);
 // M: payoff: count 15 s, add 40, pick the right cricket: the stopwatch + tally + the snowy tree cricket + the formula strip
 S.push([T(12) - .3, T(13), t => { sky(t); put(g, L.hills, cam0, .3); const u = seg(t, r(12, .3), r(12, 3.3)); clockFace(230, 360, .8, u); tally(420, 300, Math.round(30 * u)); cricket(700, 620, .8, t, { pale: true, rate: 2 }); chirps(640, 580, t, 2, '220,255,190');
-  strip(g, 'chirps in 15 s + 40 = °F', 470, 90, seg(t, r(12, .2), r(12, .9)), { size: 58, seal: true }); tag(g, 'the right cricket', 320, 680, { k: backOut(seg(t, r(12, 3.6), r(12, 4.0))), col: '#e0f5c8' }); put(g, L.front, cam0, 1); }]);
+  strip(g, 'chirps in 15 s + 40 = °F', 470, 130, seg(t, r(12, .2), r(12, .9)), { size: 58, seal: true }); tag(g, 'the right cricket', 320, 680, { k: backOut(seg(t, r(12, 3.6), r(12, 4.0))), col: '#e0f5c8' }); put(g, L.front, cam0, 1); }]);
 // N: the question
-S.push([T(13) - .3, T(14), t => { sky(t); put(g, L.hills, cam0, .3); put(g, L.grass, cam0, .6); cricket(470, 560, 1.0, t, { rate: 2.2 }); chirps(400, 500, t, 2.2); strip(g, 'ever counted the chirps?', 470, 120, seg(t, T(13), T(13) + .8), { size: 58 }); put(g, L.front, cam0, 1); }]);
+S.push([T(13) - .3, T(14), t => { sky(t); put(g, L.hills, cam0, .3); put(g, L.grass, cam0, .6); cricket(470, 560, 1.0, t, { rate: 2.2 }); chirps(400, 500, t, 2.2); strip(g, 'ever counted the chirps?', 470, 140, seg(t, T(13), T(13) + .8), { size: 58 }); put(g, L.front, cam0, 1); }]);
 // O: the end card (loops to the hook's meadow)
 S.push([T(14) - .35, TOT + 1, t => { sky(t); put(g, L.hillsFar, cam0, .2); put(g, L.hills, cam0, .35); put(g, L.grass, cam0, .6); cricket(330, 640, 1.15, t, { rate: 2.2 }); chirps(240, 560, t, 2.2); thermo(700, 400, .8, .62);
-  strip(g, 'Follow for more of', 470, 150, seg(t, T(14) - .2, T(14) + .5), { size: 60 }); strip(g, 'how it really works.', 470, 270, seg(t, T(14) + .3, T(14) + 1.0), { size: 72, seal: true }); put(g, L.front, cam0, 1); }]);
+  strip(g, 'Follow for more of', 470, 170, seg(t, T(14) - .2, T(14) + .5), { size: 60 }); strip(g, 'how it really works.', 470, 290, seg(t, T(14) + .3, T(14) + 1.0), { size: 72, seal: true }); put(g, L.front, cam0, 1); }]);
 
 function scene(t) { g.save(); g.fillStyle = PAL.room; g.fillRect(0, 0, W, H); g.translate(BOX.x, BOX.y); g.beginPath(); g.rect(0, 0, BW, BH); g.clip();
   for (const [a, b, fn] of S) { const k = a <= 0 ? 1 - ss(seg(t, b - .5, b)) : win(t, a + .45, b); if (k <= 0) continue; g.save(); g.globalAlpha = k; fn(t); g.restore(); }
