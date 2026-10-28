@@ -1,0 +1,93 @@
+{
+ "name": "sleeptalk",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "The word people said most in their sleep? **\"No.\"**",
+   "The word people said most in their sleep? No."
+  ],
+  [
+   "But why do we **talk in our sleep** at all? Scientists don't **fully know.**",
+   "But why do we talk in our sleep at all? Scientists don't fully know."
+  ],
+  [
+   "It has a name: **somniloquy.** And it's common. About **60 to 65 percent** of people do it at some point.",
+   "It has a name: somniloquy. And it's common. About 60 to 65 percent of people do it at some point."
+  ],
+  [
+   "It's reported in **half of young children,** but only about **5 percent of adults.**",
+   "It's reported in half of young children, but only about 5 percent of adults."
+  ],
+  [
+   "It can happen in **any stage** of sleep. It's still unclear how closely it's tied to **dreaming.**",
+   "It can happen in any stage of sleep. It's still unclear how closely it's tied to dreaming."
+  ],
+  [
+   "Here's the weird part: a lab study recorded **883** sleep-talk episodes. More than half weren't words at all: **mumbles, whispers, shouts, laughs.**",
+   "Here's the weird part: a lab study recorded 883 sleep-talk episodes. More than half weren't words at all: mumbles, whispers, shouts, laughs."
+  ],
+  [
+   "When the words were clear, the top one was **\"No.\"** About **one in five** clauses was a negation.",
+   "When the words were clear, the top one was no. About one in five clauses was a negation."
+  ],
+  [
+   "About **one in ten** had swearing.",
+   "About one in ten had swearing."
+  ],
+  [
+   "Most of those sleepers had **sleep disorders,** so everyday sleep talk may be tamer.",
+   "Most of those sleepers had sleep disorders, so everyday sleep talk may be tamer."
+  ],
+  [
+   "But here's the surprising part: the **grammar** was mostly normal. It sounded like **one side of a conversation,** with pauses for replies.",
+   "But here's the surprising part: the grammar was mostly normal. It sounded like one side of a conversation, with pauses for replies."
+  ],
+  [
+   "So is it a **secret confession?** Don't count on it. Researchers still don't know how closely it's linked to **dreams.**",
+   "So is it a secret confession? Don't count on it. Researchers still don't know how closely it's linked to dreams."
+  ],
+  [
+   "What makes it more likely? **Stress** may trigger it, and it can **run in families.**",
+   "What makes it more likely? Stress may trigger it, and it can run in families."
+  ],
+  [
+   "On its own, it's **harmless.** If it starts later in life, or comes with other symptoms, talk to a **doctor.**",
+   "On its own, it's harmless. If it starts later in life, or comes with other symptoms, talk to a doctor."
+  ],
+  [
+   "So why do we talk in our sleep? No one knows for sure, but the sleeping brain can keep **chatting** while you're out cold.",
+   "So why do we talk in our sleep? No one knows for sure, but the sleeping brain can keep chatting while you're out cold."
+  ],
+  [
+   "Has anyone told you that you **talk in your sleep?** Yes or no?",
+   "Has anyone told you that you talk in your sleep? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7,
+ "tail": 0.7
+}
