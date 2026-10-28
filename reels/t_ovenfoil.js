@@ -18,7 +18,7 @@ const figAt = t => { let i = 0; FIGS.forEach((f, k) => { if (t >= f[0]) i = k; }
 // camera per figure (sheet coords centred on (540, VCY) at z = 1)
 function camAt(t) { const i = figAt(t);
   if (i === 2) { const z = lerp(1, 2.3, ss(R(t, s(6) - .2, 1.0))) * (1 - ss(R(t, s(8) - .2, .8))) + ss(R(t, s(8) - .2, .8)); return [lerp(540, 470, ss(R(t, s(6) - .2, 1.0)) * (1 - ss(R(t, s(8) - .2, .8)))), VCY, z]; }
-  if (i === 0) { const k = ss(R(t, s(1) + .2, 1.2)); return [lerp(540, 660, k), lerp(VCY, 790, k), lerp(1, 1.9, k)]; }   // push in on the edge by the but-turn
+  if (i === 0) { const k = ss(R(t, s(1) + .2, 1.2)); return [lerp(560, 660, k), lerp(VCY + 40, 790, k), lerp(1.25, 1.9, k) + .03 * Math.sin(t * 1.3)]; }   // large from frame 0, then push in on the edge   // push in on the edge by the but-turn
   return [540, VCY, 1]; }
 
 // ---------- helpers ----------
@@ -44,8 +44,9 @@ function fig1(t) {   // two faces of a sheet of foil, in isometric; the faces ar
   const top = wav(P); B.paper(top, .95); B.poly(top, { w: 2.6, close: true }); tint(top, .14);
   { const gx = ((t * .45) % 1.4 - .2), Q = [0, 1, 2, 3].map(i => top[i]); const band = [.0, .12].map(o => [lerp(Q[0][0], Q[1][0], gx + o), lerp(Q[0][1], Q[1][1], gx + o)]).concat([.12, .0].map(o => [lerp(Q[3][0], Q[2][0], gx + o - .1), lerp(Q[3][1], Q[2][1], gx + o - .1)])); g.save(); g.beginPath(); top.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.clip(); tint(band, .35); g.restore(); }   // a light glint sweeps the shiny face
   for (let i = 1; i < 8; i++) { const u = i / 8; B.line(lerp(260, 700, u), lerp(620, 560, u), lerp(420, 860, u), lerp(830, 760, u), { w: 1, alpha: .3, nib: false }); }   // shiny streaks
-  const und = [[420, 830], [860, 760], [870, 800], [430, 872]]; B.paper(und, .95); B.hatch(und, { sp: 6, alpha: .6 }); B.poly(und, { w: 2.2, close: true, nib: false });
-  co(t, 'SHINY', 330, 500, 420, 640, -1, s(1) + .2, {}); co(t, 'DULL', 760, 930, 700, 830, -1, s(1) + .2, {});
+  // the sheet tilts: the dull underside opens and closes
+  const dd = 42 + 26 * Math.sin(t * 1.4), und = [[420, 830], [860, 760], [870, 760 + dd], [430, 830 + dd]]; B.paper(und, .95); B.hatch(und, { sp: 6, alpha: .6 }); B.poly(und, { w: 2.2, close: true, nib: false });
+  co(t, 'SHINY', 230, 770, 420, 650, -1, s(1) + .2, {}); co(t, 'DULL', 790, 905, 700, 840, -1, s(1) + .2, {});
   if (t > s(1) + .9) { B.txt('SHINY', 600, 735, { size: 30, align: 'center', write: R(t, s(1) + .9, .5) }); B.txt('DULL', 520, 868, { size: 30, align: 'center', write: R(t, s(1) + 1.4, .5) }); }
   if (t > s(1) + 1.6) { B.txt('?', 880, 560, { size: 120, write: R(t, s(1) + 1.6, .4) }); }
   B.alpha(1); }
@@ -112,10 +113,10 @@ function fig6(t) {   // the fingerprint: the nip again, small, with a magnified 
 // the bottom band: a foil roll in phantom line, drawing only (no text in the bottom 480 px)
 function rollDetail(t) { const cx = 540, cy = 1660, rx = 150, ry = 150; B.line(160, cy, 920, cy, { w: 1, dash: DASH.centre, alpha: .5, nib: false });
   B.circ(cx - 260, cy, 150, { w: 2, nib: false, alpha: .7 }); B.circ(cx - 260, cy, 40, { w: 1.6, nib: false, alpha: .7 });
-  const sp = []; for (let a = 0; a < Math.PI * 9; a += .1) { const r_ = 40 + a * 3.8; sp.push([cx - 260 + Math.cos(a + t * .4) * r_, cy + Math.sin(a + t * .4) * r_]); } B.poly(sp, { w: 1, nib: false, alpha: .45 });
+  const sp = []; for (let a = 0; a < Math.PI * 9; a += .1) { const r_ = 40 + a * 3.8; sp.push([cx - 260 + Math.cos(a + t * 1.1) * r_, cy + Math.sin(a + t * 1.1) * r_]); } B.poly(sp, { w: 1, nib: false, alpha: .45 });
   B.line(cx - 260, cy - 150, cx + 300, cy - 150, { w: 2, nib: false, alpha: .7 }); B.line(cx - 260, cy + 150, cx + 300, cy + 150, { w: 2, nib: false, alpha: .7 });
   B.poly(circPts(cx + 300, cy, 150, 48).map(([x, y]) => [cx + 300 + (x - cx - 300) * .35, y]), { w: 2, nib: false, alpha: .7, close: true });
-  const tail = []; for (let x = cx + 300; x <= 980; x += 10) tail.push([x, cy + 150 + Math.sin((x - cx) * .02 + t) * 6]); B.poly(tail, { w: 2, nib: false, alpha: .7 }); }
+  const un = cx + 300 + (980 - cx - 300) * (.25 + .75 * ((t / TL.total) % 1)), tail = []; for (let x = cx + 300; x <= un; x += 10) tail.push([x, cy + 150 + Math.sin((x - cx) * .02 + t * 2) * 8]); B.poly(tail, { w: 2, nib: false, alpha: .7 }); }   // the sheet slowly unrolls
 
 // ---------- sheet furniture re-laid for Batch N ----------
 function header(t) { const fi = figAt(t), f = FIGS[fi], prev = fi ? FIGS[fi - 1] : null, fk = R(t, f[0], .6);

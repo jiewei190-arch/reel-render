@@ -79,7 +79,7 @@ const hicK = (lt, period = 1.4, ph = 0) => { const p = ((lt + ph) % period + per
 function buddy(c, x, y, s = 1, o = {}) {
   const { k = 0, hic = 0, cut = false, dia = 0, lungs = 0, door = 0, shrug = 0, lt = 0, mouth = 0, eyes = 1 } = o;
   const S = (j) => CS(1200 + k, j);
-  c.save(); c.translate(x, y - hic * 40); c.scale(s * (1 + hic * .04), s * (1 - hic * .06));
+  c.save(); c.translate(x, y - hic * (o.jump ?? 40)); c.scale(s * (1 + hic * .06), s * (1 - hic * .09));
   const body = spline([[0, 20, 1], [120, 60], [150, 240], [120, 420], [0, 450], [-120, 420], [-150, 240], [-120, 60]], true, 4);
   paint(c, body, SHIRT, { seed: S(1) }); if (!cut) hatchInk(c, rect(40, 80, 120, 340), { seed: S(2), gap: 14, ang: -0.9, w: 2 });
   if (cut) {
@@ -139,10 +139,10 @@ const SC = [];
 const ROOM = () => { paint(ctx, resample(rect(-60, 1080, W + 120, 900), 3, true), '#e8d6b8', { seed: BS(1), reg: false }); ink(ctx, [[-20, 1080], [W + 20, 1084]], { w: 9, seed: BS(2) });
   for (let r = 0; r < 6; r++) ink(ctx, [[-20, 1160 + r * 140], [W + 20, 1163 + r * 140]], { w: 4, seed: BS(10 + r), color: '#c4a77e' }); };
 // 0 hook: frame 0 = mid-hiccup, the whole kid jolts on every hic; HIC! burst
-SC[0] = (lt) => { ROOM(); const h = hicK(lt, 1.35); buddy(ctx, CX, 720, 1.0, { k: 1, hic: h, lt }); hicBurst(ctx, 790, 470, h, 1); plaque(ctx, 'WHY HICCUPS?', 400, 330, 96, PAL.red, 2); };
+SC[0] = (lt) => { ROOM(); const h = hicK(lt, 1.35); buddy(ctx, 560, 720, 1.0, { k: 1, hic: h, jump: 110, lt }); if (h > .1) speedLines(ctx, 560, 560, 260, 420, 12, seedFor(CURD, 3), 7); hicBurst(ctx, 820, 470, h, 1); plaque(ctx, 'WHY HICCUPS?', 470, 330, 92, PAL.red, 2); };
 // 1 the search question; cut away to the diaphragm
-SC[1] = (lt, u) => { ROOM(); const h = hicK(lt, 1.35, .4); buddy(ctx, 500, 700, 1.0, { k: 2, hic: h, cut: u > .45, dia: h, lt }); plaque(ctx, 'WHY DO WE GET HICCUPS?', CX, 330, 78, PAL.ink, 3);
-  if (u > .55) { title(ctx, 'diaphragm', 760, 1030, 62, DIA, { seed: TS(4) }); arrow(ctx, 640, 1010, 590, 1000, DIA, 5); } };
+SC[1] = (lt, u) => { ROOM(); const h = hicK(lt, 1.35, .4); buddy(ctx, 330, 720, .95, { k: 2, hic: h, cut: u > .45, dia: h, lt }); plaque(ctx, 'WHY DO WE GET HICCUPS?', CX, 330, 78, PAL.ink, 3);
+  if (u > .55) { plaque(ctx, 'diaphragm', 690, 900, 60, DIA, 4); arrow(ctx, 600, 940, 440, 1020, DIA, 5); } };
 // 2 the diaphragm pulls air in (slow, calm breath)
 SC[2] = (lt) => { ROOM(); const b = .5 + .5 * Math.sin(lt * 2.2); buddy(ctx, 480, 680, 1.05, { k: 3, cut: true, dia: b, lungs: b, lt }); plaque(ctx, 'THE DIAPHRAGM', CX, 330, 90, DIA, 6); if (b > .5) airArrows(ctx, 480, 640, b, 1); };
 // 3 the jerk: on ones, the dome yanks down, air rushes in
@@ -159,7 +159,7 @@ SC[5] = (lt, u) => { ROOM(); brain(ctx, 450, 470, 1.2, 1); const dome = [[200, 9
   const q = (lt * .5) % 1, n = L.length - 1, x = q * n, a = Math.floor(x), f = x - a, P = [lerp(L[a][0], L[a + 1][0], f), lerp(L[a][1], L[a + 1][1], f)]; star(ctx, P[0], P[1], 40, seedFor(CURD, 44), { fill: PAL.yel });
   title(ctx, 'vagus', 790, 700, 64, PAL.ink, { seed: TS(45) }); title(ctx, 'phrenic', 140, 720, 64, PAL.ink, { seed: TS(46) }); title(ctx, 'hiccup centre', 450, 330, 66, PAL.red, { seed: TS(47) }); plaque(ctx, 'REFLEX LOOP', 450, 1050, 70, PAL.ink, 48); };
 // 6 nobody knows what they're for: the kid shrugs, a big question mark
-SC[6] = (lt, u) => { ROOM(); buddy(ctx, 380, 700, 1.0, { k: 5, shrug: sstep(.1, .3, u), hic: hicK(lt, 1.6), lt }); title(ctx, '?', 780, 620, 360 + 20 * Math.sin(lt * 4), PAL.red, { seed: TS(50) }); plaque(ctx, 'WHAT ARE THEY FOR?', CX, 330, 84, PAL.ink, 51); };
+SC[6] = (lt, u) => { ROOM(); buddy(ctx, 620, 700, .9, { k: 5, shrug: sstep(.1, .3, u), hic: hicK(lt, 1.6), lt }); title(ctx, '?', 260, 640, 360 + 20 * Math.sin(lt * 4), PAL.red, { seed: TS(50) }); plaque(ctx, 'WHAT ARE THEY FOR?', CX, 330, 84, PAL.ink, 51); };
 // 7 babies hiccup a lot (and before birth): crib baby + a tag
 SC[7] = (lt, u) => { ROOM(); const crib = resample(rect(140, 760, 600, 260), 3, true); paint(ctx, crib, '#d9b47a', { seed: TS(55) }); loopInk(ctx, crib, { seed: TS(56), w: 8 }); for (let j = 1; j < 8; j++) ink(ctx, [[140 + j * 75, 760], [140 + j * 75, 1020]], { w: 6, seed: TS(57 + j) });
   const h = hicK(lt, 1.1); baby(ctx, 440, 700, 1.25, { k: 1, hic: h, lt }); hicBurst(ctx, 640, 520, h * .8, 3);
@@ -190,7 +190,7 @@ SC[14] = (lt, u) => { ROOM(); const cal = resample(rect(170, 480, 300, 340), 3, 
   const st = [[620, 480], [600, 620], [660, 760], [760, 760], [800, 640], [780, 520]]; ink(ctx, st, { w: 14, seed: TS(115), color: '#3a3a48' }); paint(ctx, ell(700, 860, 50, 50, 30), '#b0b0b8', { seed: TS(116) }); loopInk(ctx, ell(700, 860, 50, 50, 30), { seed: TS(117), w: 7 }); ink(ctx, [[700, 810], [710, 760]], { w: 10, seed: TS(118), color: '#3a3a48' });
   plaque(ctx, 'SEE A DOCTOR', CX, 330, 96, PAL.red, 119); };
 // 15 the question: your cure? one word (kid with a glass)
-SC[15] = (lt, u) => { ROOM(); buddy(ctx, 400, 700, 1.0, { k: 7, hic: hicK(lt, 1.5), lt }); prop(ctx, 'water', 720, 760, .9, 9); plaque(ctx, 'YOUR CURE?', CX, 330, 110, PAL.red, 120); title(ctx, 'one word', 720, 560, 60, PAL.ink, { seed: TS(121) }); };
+SC[15] = (lt, u) => { ROOM(); buddy(ctx, 660, 740, .85, { k: 7, hic: hicK(lt, 1.5), jump: 70, lt }); prop(ctx, 'water', 300, 800, 1.1, 9); plaque(ctx, 'YOUR CURE?', CX, 330, 110, PAL.red, 120); title(ctx, 'one word', 300, 600, 60, PAL.ink, { seed: TS(121) }); };
 // 16 end card: main line + standard second line + handle; the kid hics again (loop)
 SC[16] = (lt) => { const a = sstep(0, 0.4, lt); title(ctx, 'Follow for more of', CX, 330, 100 * a + 20, PAL.ink, { seed: TS(190) }); title(ctx, 'how it really works.', CX, 450, 100 * a + 20, PAL.red, { seed: TS(191) });
   ink(ctx, [[160, 530], [920, 535]], { w: 12, seed: TS(192) }); title(ctx, "A new 'wait, really?' every day.", CX, 610, 56, PAL.ink, { seed: TS(193) }); title(ctx, '@howitreallyworkstudio', CX, 690, 48, '#6b4a3a', { seed: TS(194) });
@@ -199,7 +199,7 @@ const EXPO = [1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 3];
 
 // ---------------------------------------------------------------- shots and shakes (every hic shakes the camera)
 function shotFor(i, lt) {
-  if (i === 0) { const k = ease(clamp(lt / 3)); return { s: lerp(1.12, 1.0, k), px: CX, py: 700, X: CX, Y: 700 }; }
+  if (i === 0) { const k = ease(clamp(lt / 3)); return { s: lerp(1.05, 1.0, k), px: CX, py: 760, X: CX, Y: 760 }; }
   if (i === 4) { const k = ease(clamp(lt / 2)); return { s: lerp(1.0, 1.08, k), px: 450, py: 700, X: CX, Y: 700 }; }
   return STAGE;
 }
@@ -225,7 +225,7 @@ function caption(cap, alpha) {
     cur.push({ ...wd, ww }); cw += ww;
   }
   if (cur.length) lines.push(cur);
-  const lh = size * 1.05, bh = lines.length * lh + 36, bw = 840, bx = 60, by = 1160, mid = bx + bw / 2;
+  const lh = size * 1.05, bh = lines.length * lh + 36, bw = 840, bx = 60, by = 1430 - bh, mid = bx + bw / 2;   // bottom-aligned at y 1430
   ctx.save(); ctx.globalAlpha = alpha;
   const box = resample(rect(bx, by, bw, bh), 3, true);
   paint(ctx, box, PAL.cream, { seed: seedBg(CURD, 0), amp: 1.2 });
