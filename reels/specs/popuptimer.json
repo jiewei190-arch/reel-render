@@ -1,0 +1,88 @@
+{
+ "name": "popuptimer",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "jazz",
+ "bpm": 96,
+ "breath": [
+  0,
+  1,
+  3,
+  6,
+  8,
+  10,
+  11,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "There's **no battery** in a turkey pop-up timer. Just a **spring,** and a blob of **metal.**",
+   "There's no battery in a turkey pop-up timer. Just a spring, and a blob of metal."
+  ],
+  [
+   "So **how does a pop-up timer know** when the turkey's done?",
+   "So how does a pop-up timer know when the turkey's done?"
+  ],
+  [
+   "Inside, a red stick sits on a **squeezed spring.**",
+   "Inside, a red stick sits on a squeezed spring."
+  ],
+  [
+   "Its tip is locked into the base by a plug of **soft metal,** or in newer timers, a **wax-like** material.",
+   "Its tip is locked into the base by a plug of soft metal, or in newer timers, a wax-like material."
+  ],
+  [
+   "As the turkey cooks, the plug **heats up** with it.",
+   "As the turkey cooks, the plug heats up with it."
+  ],
+  [
+   "At a **set temperature,** the plug **melts.**",
+   "At a set temperature, the plug melts."
+  ],
+  [
+   "Nothing holds the spring anymore, so **pop!** The stick jumps up.",
+   "Nothing holds the spring anymore, so pop! The stick jumps up."
+  ],
+  [
+   "The idea came from **fire sprinklers,** which use a metal plug that melts in a fire.",
+   "The idea came from fire sprinklers, which use a metal plug that melts in a fire."
+  ],
+  [
+   "California turkey growers got it **patented** in **1961.**",
+   "California turkey growers got it patented in nineteen sixty-one."
+  ],
+  [
+   "But here's the catch: it only feels **one spot** in the bird.",
+   "But here's the catch. It only feels one spot in the bird."
+  ],
+  [
+   "And it isn't **always right.**",
+   "And it isn't always right."
+  ],
+  [
+   "Consumer Reports tested **21** timers. **Three** popped too early, one at just **139 degrees.**",
+   "Consumer Reports tested twenty-one timers. Three popped too early, one at just a hundred and thirty-nine degrees."
+  ],
+  [
+   "The USDA says a turkey is safe at **165 degrees** Fahrenheit.",
+   "The U S D A says a turkey is safe at a hundred and sixty-five degrees Fahrenheit."
+  ],
+  [
+   "Check with a **food thermometer:** the **thigh,** the **wing,** and the **thickest part** of the breast.",
+   "Check with a food thermometer. The thigh, the wing, and the thickest part of the breast."
+  ],
+  [
+   "So the pop-up is a **melting lock:** a handy hint, but the **thermometer** gets the final word.",
+   "So the pop-up is a melting lock. A handy hint, but the thermometer gets the final word."
+  ],
+  [
+   "Does your family trust the pop-up? **Yes or no?**",
+   "Does your family trust the pop-up? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
