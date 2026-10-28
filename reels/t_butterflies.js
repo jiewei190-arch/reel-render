@@ -98,12 +98,12 @@ S.push([T(9), T(10), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }
   if (vk >= 1) for (let i = 0; i < 3; i++) { const u = (t * .6 + i / 3) % 1, d = i % 2 ? u : 1 - u, y = lerp(490, 740, d); glow(g, 540, y, 40, GOLD, .9); }
   label('vagus nerve', 780, 600, seg(t, r(9, 1.2), r(9, 1.8)), { size: 58, col: '#f2c35b' }); label('brain ⇄ gut', 540, 330, seg(t, r(9, 2.4), r(9, 3.0)), { size: 64 }); }]);
 // 10 immense crosstalk: messages both ways
-S.push([T(10), T(11), t => { g.drawImage(SKY, 0, 0); stars(g, 70, t, { y1: 1000 }); brainP(540, 470, 1.4); gut(540, 900, 1.1, .1);
+S.push([T(10), T(11), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }); const zz = 1 + .08 * seg(t, T(10), T(11)); g.save(); g.translate(540, 700); g.scale(zz, zz); g.translate(-540, -700); brainP(540, 470 + 8 * Math.sin(t * 1.7), 1.4); gut(540, 900 + 8 * Math.sin(t * 1.9 + 1), 1.1, .1);
   constLine(g, [[540, 540], [540, 780]], 1, { col: 'rgba(242,195,91,.6)', lw: 4, dot: 0 });
   const down = seg(t, r(10, 2.2), r(10, 4.0)), up = seg(t, r(10, 4.6), r(10, 6.4)); for (let i = 0; i < 3; i++) { const u = (t * .9 + i / 3) % 1; if (down > 0) glow(g, 510, lerp(540, 780, u), 34, '255,140,110', .9 * down); if (up > 0) glow(g, 570, lerp(780, 540, u), 34, '160,220,255', .9 * up); }
   arrowP(g, 470, 560, 470, 760, down, '#f0a090', 5); arrowP(g, 610, 760, 610, 560, up, '#9fc6e6', 5);
   label('"immense crosstalk"', 540, 330, seg(t, r(10, .3), r(10, 1.1)), { size: 66, col: '#f2c35b' }); label('Braden Kuo, Harvard', 540, 1100, seg(t, r(10, .8), r(10, 1.3)), { size: 40 });
-  label('stress', 300, 660, down, { size: 48, col: '#f0a090' }); label('signals back', 800, 660, up, { size: 48, col: '#9fc6e6' }); }]);
+  label('stress', 300, 660, down, { size: 48, col: '#f0a090' }); label('signals back', 780, 660, up, { size: 48, col: '#9fc6e6' }); g.restore(); }]);
 // 11 stress shows up in the gut: three little paintings
 S.push([T(11), T(12), t => { g.drawImage(HILLS, 0, 0); stars(g, 40, t, { y1: 700 }); [['nausea', 0], ['cramps', 1], ['butterflies', 2]].forEach(([nm, i]) => { const k = seg(t, r(11, .3 + i * .9), r(11, .8 + i * .9)); if (k <= 0) return; const x = 200 + i * 340, y = 700;
     g.save(); g.globalAlpha = k; g.translate(x, y + (1 - backOut(k)) * 40); paint(g, P2(p => p.rect(-140, -230, 280, 360)), PAL.paper, { hatch: 0, lw: 3 }); g.restore();
@@ -116,7 +116,7 @@ S.push([T(12), T(13), t => { g.drawImage(STAGE, 0, 0); glow(g, 540, 620, 520, '2
   const jump = Math.max(0, Math.sin((t - T(12)) * 4)) * 30 * seg(t, r(12, 1.6), r(12, 2.0)); kid(g, 540, 1130 - jump, 3.1, { body: '#7fa6d6', arm: 2.6, arm2: -2.6, mouth: 'smile' });
   label('ready for action!', 540, 340, seg(t, r(12, 1.8), r(12, 2.4)), { size: 70, col: '#f2c35b' }); }]);
 // 13 rest-and-digest: the moment passes, the flutter settles (butterflies drift off into the stars)
-S.push([T(13), T(14), t => { g.drawImage(HILLS, 0, 0); stars(g, 70, t, { y1: 900 }); glow(g, 830, 380, 120, '255,245,210', .4);
+S.push([T(13), T(14), t => { g.drawImage(HILLS, 0, 0); stars(g, 60, t, { y1: 900 }); glow(g, 830, 380, 120, '255,245,210', .4);
   paint(g, P2(p => blob(p, circPts(830, 380, 60, 60, 16), 1.5, 4)), '#efe6c4', { hatch: .2, lw: 2 });
   kid(g, 420, 1120, 2.4, { body: '#7fa6d6', arm: .2, arm2: -.2, mouth: 'smile', blink: (t % 2.6) < .3 ? 1 : 0 }); glow(g, 420, 930, 110, '255,200,160', .4 * seg(t, r(13, 2.0), r(13, 3.0)));
   const away = seg(t, r(13, 1.6), T(14)); for (let i = 0; i < 5; i++) butterfly(lerp(420, 300 + i * 140, away), lerp(900, 360 + hash(i) * 200, away), .8, t, ['#f2c35b', '#e9a7a0', '#9fc6e6'][i % 3], 1 - away * .6, i);
