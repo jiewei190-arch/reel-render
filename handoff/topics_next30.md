@@ -35,7 +35,7 @@
 | 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | merged v2, Nov 10 09:00 |
 | 66 | fridge | How does a refrigerator keep food cold? | H2 | merged v1, Nov 10 13:00 (v2 restyle pending; swap in) |
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | queued after 65-66; unbadged seasonal |
-| 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | queued |
+| 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | queued |
