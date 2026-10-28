@@ -41,7 +41,7 @@ OVR = {
     "ovenfoil": {"spot": (651, 400)},   # H1: right of the FIG label, above the figure callouts; the top band is the sheet header
     "contrails": {"spot": (44, 260), "hide": [(6.0, 64.2)]},   # H1: top-left above the banner/wall; hidden on the posters (their header sits there)
     "wetdog": {"spot": (44, 380), "hide": [(73.3, 99)]},   # H1: just under the handwritten margin note, above the drawings; hidden on the end card
-    "bluejeans": {"spot": ("R", 260)},   # H1: top-right, above the hand-lettered title (title + board moved down 30 px so the badge clears the "rivets." highlight)
+    "bluejeans": {"spot": ("R", 260)},   # H1 (EP 73): top-right, above the hand-lettered title (title + board moved down 30 px so the badge clears the "rivets." highlight)
     "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card
     "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
     "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns   # titles run to the top-right corner; strip under the captions is clear

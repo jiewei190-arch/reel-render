@@ -36,7 +36,7 @@
 - **Payoff:** 60.7 s. Question: "Yes or no?"
 - **Length:** 71.5 s. Voice af_heart 0.97; years and the patent number are written in words in the spec. mix2.py with fx_gain 0.35 and music_gain 0.6 (typewriter ticks while boxes type, pencil scribbles per beat; no whoosh).
 - **Loop:** the last 0.5 s blends 30% of frame 0 back in.
-- **Badge:** EP 76 at ("R", 260), top-right. The title and board were moved 30 px down so the badge clears the "rivets." highlight (main-session note on v1 at ("R", 250)).
+- **Badge:** EP 73 (renumbered by the main session from 76) at ("R", 260), top-right. The title and board were moved 30 px down so the badge clears the "rivets." highlight (main-session note on v1 at ("R", 250)).
 - **Frame 0 (v2):** opens close on the riveted watch pocket and pulls back to the whole pair by about 3 s.
 - **Ear check:** not done by a human yet.
 
@@ -67,4 +67,4 @@ QA bluejeans: WARN   (/home/user/reel-render/jobs/bluejeans/bluejeans.mp4, 71.5 
 - [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (30% frame-0 blend)
 - [x] pinned_bluejeans.md written; thumb_bluejeans.jpg made
-- [x] bluejeans_ep.mp4 (EP 76; OVR spot ("R", 260); checked at 3-70 s)
+- [x] bluejeans_ep.mp4 (EP 73; OVR spot ("R", 260); checked at 3-70 s)
