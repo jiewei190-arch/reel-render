@@ -53,7 +53,7 @@
 | 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
 | 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
-| 85 | rainbow | Why are rainbows curved? | H1 | merged v1, Nov 14 09:00 (white-print v2 rendering; swap in) |
+| 85 | rainbow | Why are rainbows curved? | H1 | merged v2, Nov 14 09:00 |
 | 86 | spicy | Why does spicy food feel hot? | H1 | queued |
 | 87 | crackedphone | Why does a phone screen crack from a short drop? | H2 | queued |
 | 88 | pickles | How does a cucumber turn into a pickle? | H2 | queued |
@@ -67,4 +67,4 @@ Next ideas (unassigned; check the research agent's list when it arrives): why le
 
 Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Numbers 49 and 50 went to H2's leafcolor and candle (Oct 28).
 
-Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 bluejeans stop-motion explainer (#24, swapped) · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 eyeblink collage AI Doom (#13, swapped) · 77 hairgray old-master painting (#27) · 78 sodabubbles particle flock (#29) · 79 saltyocean ink moon (#25) · 80 feetasleep Japan heat wave (#18) · 81 cricketchirp paper-lantern (#1) · 82 shiver Distilbook (#15) · 83 thunder sand art (#28) · 84 catfeet papercut-red (#2) · 85 rainbow blueprint (#3, cyan) · 86 spicy scifi-toon (#9) · 87 crackedphone doodle robot (#26) · 88 pickles recipe card (#23). Workers: send your pick to the main session, which records it here (you can only push your own branch).
+Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 bluejeans stop-motion explainer (#24, swapped) · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 eyeblink collage AI Doom (#13, swapped) · 77 hairgray old-master painting (#27) · 78 sodabubbles particle flock (#29) · 79 saltyocean ink moon (#25) · 80 feetasleep Japan heat wave (#18) · 81 cricketchirp paper-lantern (#1) · 82 shiver Distilbook (#15) · 83 thunder sand art (#28) · 84 catfeet papercut-red (#2) · 85 rainbow blueprint (#3, white-print) · 86 spicy scifi-toon (#9) · 87 crackedphone doodle robot (#26) · 88 pickles recipe card (#23). Workers: send your pick to the main session, which records it here (you can only push your own branch).
