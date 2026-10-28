@@ -3,7 +3,7 @@
 # Layout rules (main session, Oct 28): text inside 60 px margins; slides 1-6 keep the bottom 200 px free of text
 # (Instagram's dots and caption cover it); slide 1 = hook question over the hook visual; 2-5 = one idea + frame;
 # 6 = the "wait, really?" twist; 7 = CTA. Each reel uses its own template's fonts and colours.
-import io, os, pathlib, re, subprocess, sys
+import io, json, os, pathlib, re, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
 W, H, M, FREE = 1080, 1350, 60, 200
@@ -64,9 +64,16 @@ def build(n, C):
     mp4 = pathlib.Path(os.environ.get("MP4_DIR", ROOT / "jobs" / n)) / f"{n}.mp4"
     out = ROOT / "jobs" / n / "carousel"; out.mkdir(parents=True, exist_ok=True)
     bg, col, acc = C["bg"], C["ink"], C["accent"]
+    # snap every slide to the end of its phrase (minus 0.1 s) so labels and write-ons have finished drawing
+    tlp = pathlib.Path(os.environ.get("TL_DIR", HERE)) / (f"tl_{n}.js" if "TL_DIR" not in os.environ else "tl.js")
+    PH = json.loads(re.sub(r"^window.TL=|;\s*$", "", tlp.read_text().strip()))["p"] if tlp.exists() else []
+    def snap(t):
+        for p in PH:
+            if p["start"] - .4 <= t <= p["end"] + .4: return round(p["end"] - .1 - sum(0 for _ in []), 2)
+        return t
     fh, fb = C["head"], C["body"]
     for k, sl in enumerate(C["slides"], 1):
-        fr = frame(mp4, sl["t"]); img = Image.new("RGB", (W, H), bg); d = ImageDraw.Draw(img)
+        fr = frame(mp4, snap(sl["t"]) if not sl.get("exact") else sl["t"]); print(n, k, sl["t"], "->", snap(sl["t"]) if not sl.get("exact") else sl["t"]); img = Image.new("RGB", (W, H), bg); d = ImageDraw.Draw(img)
         if sl.get("kind") == "cover":
             y = draw_text(d, sl["text"], font(fh[0], sl.get("size", 96), fh[1]), M + 6, col, acc, lh=1.1)
             place_crop(img, fr, sl["crop"], int(y) + 30, H - FREE)
