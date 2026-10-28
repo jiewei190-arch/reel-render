@@ -8,7 +8,7 @@ await Promise.all(['700 40px "Caveat"', '600 20px "Poppins"', '800 40px "Poppins
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
 const B = createBP(document.getElementById('c')), g = B.g;
 const R = (t, t0, d) => ramp(t, t0, d);
-VP.y = 490; VP.h = 640;
+VP.y = 540; VP.h = 590;   // badge strip y 260-330 stays clear above the title block
 
 // ---------- wing geometry (sheet units): cambered 12% airfoil, chord 700, angle of attack 6 deg ----------
 const LE = [140, 790], CH = 700, AOA = 6 * Math.PI / 180;
@@ -78,10 +78,10 @@ function frame2(fl) {
   // drafting margin devices in the lower sheet (no text): a scale bar and a north-style flow arrow
   for (let i = 0; i <= 10; i++) B.line(160 + i * 76, 1560, 160 + i * 76, 1560 + (i % 5 ? 14 : 28), { w: 1.4, nib: false, alpha: .6 }); B.line(160, 1560, 920, 1560, { w: 1.6, nib: false, alpha: .6 });
   B.poly([[160, 1660], [700, 1660]], { w: 1.4, dash: DASH.centre, nib: false, alpha: .5 }); B.arrowhead(700, 1660, 0, { w: 1.4, alpha: .5 });
-  if (fl.figOld && fl.figK < 1) { B.txt(fl.figOld, 98, 470, { size: 40, alpha: 1 - ss(fl.figK * 2) }); B.line(94, 470, 94 + B.measure(fl.figOld, 40) + 8, 470, { w: 3, draw: ramp(fl.figK, 0, .35), nib: false }); }
-  B.txt(fl.fig + (fl.figSub ? '  ·  ' + fl.figSub : ''), 98, 470, { size: 40, write: fl.figOld ? ramp(fl.figK, .35, .65) : 1 });
+  if (fl.figOld && fl.figK < 1) { B.txt(fl.figOld, 98, 518, { size: 40, alpha: 1 - ss(fl.figK * 2) }); B.line(94, 518, 94 + B.measure(fl.figOld, 40) + 8, 518, { w: 3, draw: ramp(fl.figK, 0, .35), nib: false }); }
+  B.txt(fl.fig + (fl.figSub ? '  ·  ' + fl.figSub : ''), 98, 518, { size: 40, write: fl.figOld ? ramp(fl.figK, .35, .65) : 1 });
 }
-function titleBlock2(o) { const { status, write = 1 } = o; const y0 = 290, h = 128, x0 = 100, x1 = 900;
+function titleBlock2(o) { const { status, write = 1 } = o; const y0 = 345, h = 128, x0 = 100, x1 = 900;
   g.save(); g.strokeStyle = C.ink; g.lineWidth = 2.4; g.strokeRect(x0, y0, x1 - x0, h); g.lineWidth = 1.3; [[380, 0, 380, h], [x0, 64, x1, 64]].forEach(([a, b, c, d]) => { g.beginPath(); g.moveTo(a, y0 + b); g.lineTo(c, y0 + d); g.stroke(); }); g.restore();
   const cells = [['TITLE', 'WING SECTION', 112, 0], ['DRAWN BY', '@howitreallyworkstudio', 112, 64], ['STATUS', status, 392, 0], ['SOURCES', 'NASA GLENN · CAMBRIDGE', 392, 64]];
   cells.forEach(([k, v, x, dy], i) => { const wk = ramp(write, i * .11, .3); B.txt(k, x, y0 + dy + 15, { size: 17, font: 'Poppins', weight: 600, alpha: .7, ls: 2, write: wk }); B.txt(v, x, y0 + dy + 44, { size: v.length > 18 ? 30 : 40, write: wk }); }); }
@@ -101,7 +101,6 @@ function statusAt(t) { if (t < s(1)) return 'LONGER PATH?'; if (t < s(3) + .5) r
 // ---------- frame ----------
 function scene(t) {
   B.begin(); const fl = figLabel(t);
-  B.txt('HOW IT REALLY WORKS', 100, 270, { size: 22, font: 'Poppins', weight: 600, alpha: .85, ls: 3 }); B.txt('SHEET 1 / 1', 900, 270, { size: 22, font: 'Poppins', weight: 600, align: 'right', alpha: .85, ls: 3 });
   frame2(fl);
   const [cx, cy, z] = camAt(t); B.camBegin(cx, cy, z);
   const sailA = t > s(5) - .2 && t < s(6) + .2 ? ss(R(t, s(5) - .2, .4)) * (1 - ss(R(t, s(6), .3))) : 0, jetA = t > s(6) - .1 && t < s(7) + .1 ? ss(R(t, s(6) - .1, .3)) * (1 - ss(R(t, s(7), .3))) : 0;
@@ -151,5 +150,5 @@ window.render = window.seek;
 // thumbnail / cover (rule 11): the wing with the stamp, big lettering
 window.thumb = () => { const t = s(4) + 2.2; B.begin(); frame2({ fig: 'FIG. 1', figSub: 'WING, SIDE SECTION', figK: 1, figOld: '' }); titleBlock2({ status: 'INCORRECT THEORY' });
   B.txt('WHY PLANES', 540, 620, { size: 120, align: 'center' }); B.txt('STAY UP', 540, 740, { size: 140, align: 'center' });
-  VP.y = 800; VP.h = 700; B.camBegin(530, 820, 1.0); streamlines(t, 1, 1.35); wing(t, 1); B.stamp('NOT LONGER PATH', 560, 980, 1, { size: 64, rot: -.1 }); B.camEnd(); VP.y = 490; VP.h = 640; };
+  VP.y = 800; VP.h = 700; B.camBegin(530, 820, 1.0); streamlines(t, 1, 1.35); wing(t, 1); B.stamp('NOT LONGER PATH', 560, 980, 1, { size: 64, rot: -.1 }); B.camEnd(); VP.y = 540; VP.h = 590; };
 window.seek(0); window.ready = true; window.READY = true;
