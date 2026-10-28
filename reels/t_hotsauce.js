@@ -165,7 +165,7 @@ const SH = {
     if (t > s(4)) { thermo(860, 700, lerp(.3, .9, heat), .5); flames(250, 820, .7, t, heat, 0); if (heat > .3) label('> 43°C', 860, 470, 66, '#ff4a2a', pop_(tq, s(4) + .8)); if (heat > .5) label('OUCH!', 250, 560, 66, '#ffd36e', pop_(tq, s(4) + 1.2), -.1); }
   },
   alarm(t, tq) {   // jump 2: the trick: a capsaicin key turns in the gate with NO flame; the zap runs the wire to the brain; sirens: FIRE!; then FALSE ALARM
-    cam(540, 960, 1); wireWorld(t);
+    cam(540 + 18 * Math.sin(t * .9), 960 + 10 * Math.sin(t * .7), 1.02 + .03 * Math.sin(t * .6)); wireWorld(t);
     const turn = ss(seg(t, s(5) + 1.0, s(5) + 1.8)), wire = [[540, 1000], [540, 900], [420, 760], [560, 600], [430, 470]];
     stroke(wire, 30, { line: INK }); stroke(wire, 16, { line: '#ffd36e' });
     brain(430, 400, .62, t, turn > .5 ? '#ff9c8a' : '#ff9cb4'); siren(640, 360, .8, t, t > s(6) + .6 ? 1 : 0);
@@ -195,8 +195,8 @@ const SH = {
       for (let i = 0; i < 6; i++) { const u = (t * .8 + i / 6) % 1, x = 120 + i * 150, y = lerp(380, 860, Math.min(1, u * 1.6)) - (u > .62 ? Math.sin((u - .62) / .38 * Math.PI) * 140 : 0); shape(spline([[x, y - 26], [x + 18, y + 6], [x, y + 20], [x - 18, y + 6]]), { fill: '#7ac4ff', lw: 5 }); }
       label('OIL + WATER', 540, 560, 76, '#e8604f', pop_(tq, s(10) + .3)); label("DON'T MIX", 540, 650, 62, '#2e6a52', pop_(tq, s(10) + .9)); }
     else { // milk: casein grabbers wrap the capsaicin keys and swim off
-      glass(860, 1100, 1.0, '#fffaf0', 'MILK'); const grab = ss(seg(t, s(11) + .6, s(11) + 1.6)), away = ss(seg(t, s(11) + 2.4, s(11) + 5.0));
-      for (let i = 0; i < 4; i++) { const bx = 180 + i * 150, by = 880 + (i % 2) * 40, cx = lerp(760, bx + 40, grab), cy = lerp(1000, by - 30, grab), ox = away * (700 - i * 60), oy = -away * 120;
+      glass(760, 1100, 1.0, '#fffaf0', 'MILK'); const grab = ss(seg(t, s(11) + .6, s(11) + 1.6)), away = ss(seg(t, s(11) + 2.4, s(11) + 5.0));
+      for (let i = 0; i < 4; i++) { const bx = 180 + i * 150, by = 880 + (i % 2) * 40, cx = lerp(700, bx + 40, grab), cy = lerp(1000, by - 30, grab), ox = away * (700 - i * 60), oy = -away * 120;
         capKey(bx + ox, by + oy, .7, Math.sin(t + i) * .2); casein(cx + ox, cy + oy, .9, t + i, grab); }
       label('CASEIN', 380, 560, 86, '#2e6a52', pop_(tq, s(11) + .4), -.04); if (t > s(11) + 3.6) label('EVEN SKIM', 420, 680, 58, '#e8604f', pop_(tq, s(11) + 4.2)); }
   },
