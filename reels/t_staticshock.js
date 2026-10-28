@@ -174,6 +174,6 @@ window.CUES = [['thud', SEG[0].start + 1.95], ['sparkle', SEG[0].start + 2.0], [
 window.seek = (t) => { frame(t); const T = window.DUR, lp = clamp((t - (T - .5)) / .5); if (lp > 0) { const keep = ctx.getImageData(0, 0, W, H); frame(.05); const f0 = ctx.getImageData(0, 0, W, H); const k = .4 * E.io3(lp), Aa = keep.data, B = f0.data;
   for (let j = 0; j < Aa.length; j += 4) { Aa[j] += (B[j] - Aa[j]) * k; Aa[j + 1] += (B[j + 1] - Aa[j + 1]) * k; Aa[j + 2] += (B[j + 2] - Aa[j + 2]) * k; } ctx.putImageData(keep, 0, 0); } };
 window.render = window.seek;
-window.thumb = () => { CURD = drawingAt(2.2, 1, 10000); ctx.setTransform(1, 0, 0, 1, 0, 0); drawPaper(ctx, { x: 0, y: 0 }); door(ctx, 560, 700, 330, 830, 1); hand(ctx, 560, 1100, 1.05, 2); knob(ctx, 640, 1100, 52, 3, 1); bolt(ctx, 560, 1080, 600, 1100, CS(115), 1.2); speedLines(ctx, 610, 1100, 120, 330, 16, CS(116), 9);
+window.thumb = () => { CURD = drawingAt(2.2, 1, 10000); ctx.setTransform(1, 0, 0, 1, 0, 0); drawPaper(ctx, { x: 0, y: 0 }); door(ctx, 560, 820, 330, 760, 1); hand(ctx, 560, 1180, 1.05, 2); knob(ctx, 640, 1180, 52, 3, 1); bolt(ctx, 560, 1160, 600, 1180, CS(115), 1.2); speedLines(ctx, 610, 1180, 120, 330, 16, CS(116), 9);
   title(ctx, 'WHY MORE', CX, 380, 150, PAL.ink, { seed: TS(500) }); title(ctx, 'ZAPS IN', CX, 530, 150, PAL.ink, { seed: TS(501) }); title(ctx, 'WINTER?', CX, 680, 170, PAL.red, { seed: TS(502) }); drawTooth(ctx, CURD); };
 window.seek(0); window.ready = true;
