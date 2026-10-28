@@ -24,7 +24,9 @@ How it looks: the video is decoded once at 4 fps, quarter resolution (270x480 gr
 | 5b | true peak | WARN above -1.0 dBTP, FAIL above 0 dBTP | See "issues found": almost every reel is -0.5 to -0.9 after the AAC encode. Above 0 means real clipping. |
 | 5c | voice over bed | Speech level (inside the phrase times from `tl_<n>.js`) vs the level in the pauses between phrases (gaps over 0.45 s, trimmed by 0.12 s each side). FAIL below 3.5 dB, WARN below 6 dB | mix2.py ducks the music under the voice, so the pauses hold the unducked bed and this is a conservative proxy. Approved reels range from 4.0 dB (ship) to 9.4 dB (owl). A 10 dB rule would fail all of them, so 10 dB is not usable on finished mp4s without the stems. |
 | 6 | length / closing / years | FAIL outside 66-86 s. FAIL if the last spoken phrase in the spec isn't exactly "Follow for more of how it really works.". FAIL if a spoken phrase has a 4-digit year from 1100 to 2099 (rule 14: write years in words; quantities use a comma, e.g. 1,853) | Owner rules 5 and 14. |
-| 7 | frame 0 | FAIL if frame 0 has a mean edge strength below 3.0 or a luminance std below 18 | Approved reels: edge 4.7-31, std 26-82. Blank or fade-from-black openings fall far below (lock: 1.8 / 5.5). |
+| 7 | frame 0 | FAIL if frame 0 has a luminance std (contrast) below 18, or a mean edge strength below 1.0 | Approved reels: std 26-82. A blank or fade-from-black opening falls far below (lock: std 5.5). The edge minimum is low because a frame of huge flat type has few edges but is a strong image (barcode: edge 1.7, std 52.8). |
+| 8a | 9:16 frame | FAIL unless the video stream is exactly 1080x1920 with SAR 1:1. Checks `jobs/<n>/<n>.mp4` and, if it exists, `<n>_ep.mp4` | Owner rule: every reel is 9:16. A 1080x1350 test file fails. |
+| 8b | black bars | ffmpeg `cropdetect=limit=24` at 1 fps. WARN if a black bar over 60 px on any side shows in more than half of the samples | Catches letterboxing or a pillarboxed source. darkeyes (149 px) and submarine (142 px) WARN only, because their film-frame border is deliberate; other reels show 0 px. |
 
 ## Calibration (Oct 28): 16 reels
 

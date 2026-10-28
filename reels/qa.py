@@ -26,7 +26,9 @@ LUFS_RANGE = (-16.0, -14.0); TP_WARN, TP_FAIL = -1.0, 0.0   # dBTP: above -1 WAR
 VOICE_FAIL_DB, VOICE_WARN_DB = 3.5, 6.0   # speech vs the pauses between phrases (approved reels: 4.0-9.4 dB)
 LEN_RANGE = (66.0, 86.0)
 CLOSING = "Follow for more of how it really works."
-F0_EDGE, F0_STD = 3.0, 18.0  # frame 0: mean edge strength and luminance std
+F0_EDGE, F0_STD = 1.0, 18.0  # frame 0: luminance std (contrast) must be strong; edges only need to exist (big flat type has few edges)
+FRAME_WH = (1080, 1920)     # owner rule: 9:16, exactly 1080x1920, square pixels (SAR 1:1), also for the _ep copy
+BAR_PX, BAR_SHARE = 60, 0.5  # cropdetect (limit 24): WARN if a black bar over 60 px on any side in more than half of the 1 fps samples
 
 def args():
     a = sys.argv[1:]; o = {"name": a[0], "metrics": "--metrics" in a}
@@ -118,6 +120,20 @@ def main():
     e0, s0 = float(E[0].mean()), float(V[0].std()); m.update(frame0_edge=e0, frame0_std=s0)
     ok = e0 >= F0_EDGE and s0 >= F0_STD
     add("PASS" if ok else "FAIL", "frame 0", f"edge {e0:.1f} (min {F0_EDGE}), contrast {s0:.1f} (min {F0_STD})", [] if ok else [(0, "frame 0")])
+
+    # 8 frame geometry (9:16) and black bars
+    mp = pathlib.Path(o["mp4"]); ep = mp.with_name(mp.stem + "_ep.mp4"); geo = []
+    for f in [mp] + ([ep] if ep.exists() and not mp.stem.endswith("_ep") else []):
+        pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,sample_aspect_ratio", "-of", "csv=p=0", str(f)], capture_output=True, text=True).stdout.strip().split(",")
+        w, h, sar = int(pr[0]), int(pr[1]), (pr[2] if len(pr) > 2 else "1:1")
+        ok = (w, h) == FRAME_WH and sar in ("1:1", "N/A", "0:1"); geo.append((ok, f"{f.name} {w}x{h} SAR {sar}"))
+    add("PASS" if all(g[0] for g in geo) else "FAIL", "9:16 frame", "; ".join(g[1] for g in geo) + f" (want {FRAME_WH[0]}x{FRAME_WH[1]}, SAR 1:1)")
+    cd = subprocess.run(["ffmpeg", "-nostats", "-i", str(mp), "-vf", "fps=1,cropdetect=limit=24:round=2:reset=1", "-f", "null", "-"], capture_output=True, text=True).stderr
+    W0, H0 = (int(x) for x in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", str(mp)], capture_output=True, text=True).stdout.strip().split(",")[:2]); bars = []
+    for cw, ch, cx, cy in re.findall(r"crop=(\d+):(\d+):(\d+):(\d+)", cd):
+        cw, ch, cx, cy = map(int, (cw, ch, cx, cy)); bars.append(max(cx, cy, W0 - cw - cx, H0 - ch - cy))
+    share = float(np.mean([b > BAR_PX for b in bars])) if bars else 0.0; m["bar_share"] = share; m["bar_median_px"] = float(np.median(bars)) if bars else 0.0
+    add("WARN" if share > BAR_SHARE else "PASS", "black bars", f"bar over {BAR_PX} px in {share * 100:.0f}% of samples (median widest bar {m['bar_median_px']:.0f} px)" + ("; a deliberate film-frame border is OK, letterboxing is not" if share > BAR_SHARE else ""))
 
     # ---- report ----
     worst = "FAIL" if any(r[0] == "FAIL" for r in res) else "WARN" if any(r[0] == "WARN" for r in res) else "PASS"
