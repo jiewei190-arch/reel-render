@@ -66,6 +66,9 @@ function follicle(k, hairCol, o = {}) { const cx = 540, top = 520, bot = 1020; i
   return { bulge: [470, 700], germ: [475, 950], bulb: [540, 1000] }; }
 function cell(x, y, r, col, a = 1) { g.save(); g.globalAlpha *= a; g.fillStyle = col; g.strokeStyle = INK; g.lineWidth = 2.5; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); g.stroke(); g.restore(); }
 
+// study-sheet camera: keys [t0, fx, fy, zoom] eased over .8 s; the sheet is drawn in sheet coords, the window clips it
+function cam(t, keys, fn) { let [, fx, fy, z] = keys[0]; for (let i = 1; i < keys.length; i++) { const u = ss(R(t, keys[i][0], .8)); fx = lerp(fx, keys[i][1], u); fy = lerp(fy, keys[i][2], u); z = lerp(z, keys[i][3], u); }
+  g.save(); g.beginPath(); g.rect(0, VY, W, VH); g.clip(); g.translate(540, 710); g.scale(z, z); g.translate(-fx, -fy); fn(); g.restore(); }
 // ---------- views on the paintings (u, v, zoom) ----------
 const V_HAIR = [.36, .27, 2.6], V_FACE = [.47, .33, 1.5], V_WIDE = [.5, .45, 1], V_YHAIR = [.42, .25, 1.8], V_BEARD = [.5, .55, 1.6];
 // ---------- scenes ----------
@@ -74,23 +77,23 @@ SC.push([0, t => { const z = mixV(V_HAIR, [.37, .28, 2.9], ss(t / (s(1) + .5)));
   callout(hx, hy, 150, t < .02 ? 1 : R(t, 0, .7), { label: 'grows in gray', ly: -190 }); card('Rembrandt', 'Self-Portrait, 1660 · The Met', 40, 290, 1, { size: 30 }); }]);
 SC.push([s(1) - .3, t => { paint(IMG_YOUNG, [.45, .35, 1.55], 1, [0, VY, 540, VH]); paint(IMG_OLD, [.46, .36, 1.55], 1, [540, VY, 540, VH]); g.fillStyle = '#1a120a'; g.fillRect(536, VY, 8, VH);
   card('young', 'style of Rembrandt', 40, 290, R(t, s(1), .5), { size: 28, subSize: 22 }); card('older', 'Rembrandt, 1660', 580, 290, R(t, s(1) + .4, .5), { size: 28, subSize: 22 }); }]);
-SC.push([s(2) - .3, t => { paint(IMG_OLD, V_FACE, .9); const off = sheet(R(t, s(2) - .3, .6)); g.save(); g.translate(0, off);
+SC.push([s(2) - .3, t => { paint(IMG_OLD, V_FACE, .9); cam(t, [[0, 540, 710, 1], [s(2) + .6, 600, 930, 1.5], [s(3) - .2, 540, 700, 1.02]], () => { const off = sheet(R(t, s(2) - .3, .6)); g.save(); g.translate(0, off);
   const k = R(t, s(2), 1.2), grow = t < s(3) ? .25 : .25 + .75 * ss(R(t, s(3) + .2, 2.4)); const f = follicle(k, '#4a2a14', { grow });
   for (let i = 0; i < 6; i++) { const a = i / 6 * TAU + t * .6; cell(540 + Math.cos(a) * 62, 1000 + Math.sin(a) * 26, 14, '#e9c48a', R(t, s(2) + 1.2 + i * .1, .3)); }
   for (let i = 0; i < 8; i++) { const ph = (t * .6 + i / 8) % 1; g.save(); g.globalAlpha = R(t, s(2) + 2, .5); g.fillStyle = '#3a1c08'; g.beginPath(); g.arc(540 + Math.cos(i * 2) * 50 * (1 - ph), 1000 - ph * 60, 6, 0, TAU); g.fill(); g.restore(); }
   word('melanocytes', 790, 1000, R(t, s(2) + 2.6, .5)); ink([[690, 990], [610, 1000]], R(t, s(2) + 2.8, .3), { w: 2.5 }); word('melanin', 760, 860, R(t, s(2) + 1.0, .5), { col: '#3a1c08' }); ink([[690, 850], [560, 960]], R(t, s(2) + 1.2, .3), { w: 2.5 });
-  if (t > s(3) - .1) { word('color set as it grows', 540, 420, R(t, s(3) + .4, .6), { size: 54 }); } g.restore(); }]);
+  if (t > s(3) - .1) { word('color set as it grows', 300, 430, R(t, s(3) + .4, .6), { size: 50 }); } g.restore(); }); }]);
 SC.push([s(4) - .3, t => { paint(IMG_YOUNG, V_YHAIR, 1, [0, VY, 540, VH]); const P = paint(IMG_MAN, V_BEARD, 1, [540, VY, 540, VH]); g.fillStyle = '#1a120a'; g.fillRect(536, VY, 8, VH);
   callout(150, 760, 120, R(t, s(4) + .2, .7), { label: 'melanin', lx: 60 }); callout(810, 860, 150, R(t, s(4) + 1.0, .7), { label: 'little or none', ly: -190 }); card('Study Head of an Old Man', 'style of Rembrandt · The Met', 560, 290, R(t, s(4) + .4, .5), { size: 22, subSize: 18 }); }]);
-SC.push([s(5) - .3, t => { paint(IMG_OLD, V_HAIR, .9); const off = sheet(R(t, s(5) - .3, .6)); g.save(); g.translate(0, off);
+SC.push([s(5) - .3, t => { paint(IMG_OLD, V_HAIR, .9); cam(t, [[0, 540, 710, 1], [s(5) + 1.5, 540, 760, 1.12], [s(6) + .3, 420, 820, 1.45], [s(7) - .1, 600, 900, 1.5], [s(8) - .1, 450, 720, 1.6], [s(9) - .2, 540, 700, 1.0]], () => { const off = sheet(R(t, s(5) - .3, .6)); g.save(); g.translate(0, off);
   const stuck = t > s(8) - .1, white = t > s(9) - .2; const hairCol = white ? '#f4f1ea' : stuck ? '#9a8f84' : '#4a2a14'; const f = follicle(1, hairCol, { labels: true, grow: white ? .2 + .8 * ss(R(t, s(9), 2)) : 1 });
-  card(t < s(6) ? 'stem cells' : 'Sun et al. · Nature, 2023', t < s(6) ? 'in every hair follicle' : 'in mice · NYU Langone', 560, 330, R(t, t < s(6) ? s(5) : s(6), .5), { size: 26, subSize: 20 });
   for (let i = 0; i < 5; i++) { const ph = (t * .35 + i / 5) % 1, sh = Math.sin(ph * TAU) * .5 + .5, stuckK = stuck ? ss(R(t, s(8) + .4 + i * .3, .8)) : 0, y = lerp(lerp(700, 950, sh), 690 + i * 8, stuckK), x = 455 - i * 8;
     const pig = stuckK > .5 ? '#bdb5ab' : (y > 900 ? '#6a3a14' : '#f2e2b8'); cell(x, y, 15, pig, R(t, s(5) + .3 + i * .15, .3)); }
   if (t > s(6) - .1 && !stuck) { ink(arc(400, 825, 30, 120, -Math.PI / 2, Math.PI / 2, 20), R(t, s(6) + 1.6, .8), { w: 3 }); word('shuttle', 300, 830, R(t, s(6) + 2, .5)); }
   if (t > s(7) - .1 && !stuck) word('pigment signal here', 760, 960, R(t, s(7) + .3, .5), { size: 42, col: '#6a3a14' });
   if (stuck) { word('stuck!', 300, 620, R(t, s(8) + 1.4, .5), { size: 60, col: '#a83020' }); }
-  if (white) word('no color', 760, 760, R(t, s(9) + .4, .5), { size: 60 }); g.restore(); }]);
+  if (white) word('no color', 760, 760, R(t, s(9) + .4, .5), { size: 60 }); g.restore(); });
+  card(t < s(6) ? 'stem cells' : 'Sun et al. · Nature, 2023', t < s(6) ? 'in every hair follicle' : 'in mice · NYU Langone', 560, 330, R(t, t < s(6) ? s(5) : s(6), .5), { size: 26, subSize: 20 }); }]);
 SC.push([s(10) - .3, t => { paint(IMG_MAN, V_BEARD, .9); const off = sheet(R(t, s(10) - .3, .6)); g.save(); g.translate(0, off); follicle(1, '#d9d4cc');
   for (let i = 0; i < 14; i++) { const k = R(t, s(10) + .6 + i * .12, .4), x = 470 + 140 * hash(i * 3.3), y = 640 + 360 * hash(i * 7.1) + Math.sin(t * 2 + i) * 6; if (k <= 0) continue; g.save(); g.globalAlpha = k; g.strokeStyle = '#2c5d8a'; g.lineWidth = 3; g.beginPath(); g.arc(x, y, 12, 0, TAU); g.stroke(); g.restore(); }
   word('H₂O₂', 780, 760, R(t, s(10) + 1.2, .5), { size: 70, col: '#2c5d8a' }); word('tyrosinase', 780, 960, R(t, s(10) + 3.0, .5), { size: 46 }); const xk = R(t, s(10) + 3.8, .5); ink([[690, 990], [870, 930]], xk, { w: 7, col: '#a83020' }); ink([[690, 930], [870, 990]], R(xk, .4, .6), { w: 7, col: '#a83020' });
