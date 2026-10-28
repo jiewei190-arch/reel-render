@@ -22,7 +22,7 @@
 | (Thanksgiving) | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | (Thanksgiving) | cranberries | Why do cranberries float? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | merged, Nov 7 13:00 |
-| 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
+| 52 | firstsnowsmell | Can you really smell snow coming? | H4 | merged, Nov 7 16:00 |
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | merged, Nov 7 19:00 |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | merged, Nov 7 21:30 |
 | 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
@@ -35,6 +35,8 @@
 | 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | queued |
 | 66 | fridge | How does a refrigerator keep food cold? | H2 | queued |
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | queued after 65-66; unbadged seasonal |
+| 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | queued |
+| 68 | planelift | How do planes actually stay in the air? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | queued |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
