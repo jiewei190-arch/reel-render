@@ -4,98 +4,86 @@
  "speed": 0.97,
  "music": "crayon",
  "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  6,
+  8,
+  10,
+  11,
+  12,
+  13
+ ],
  "phrases": [
   [
-   "Noise-cancelling headphones don't **block** noise. They **add** more.",
-   "Noise-cancelling headphones don't block noise. They add more."
+   "Noise-cancelling headphones fight **sound** with more **sound.**",
+   "Noise-cancelling headphones fight sound with more sound."
   ],
   [
-   "Sound is a **pressure wave:** air squeezed high, then stretched low, again and again.",
-   "Sound is a pressure wave: air squeezed high, then stretched low, again and again."
+   "So **how do noise-cancelling headphones work?**",
+   "So how do noise-cancelling headphones work?"
   ],
   [
-   "Tiny **microphones** listen to the noise around you.",
-   "Tiny microphones listen to the noise around you."
+   "Sound is a wave of air pressure: **squeezes** and **stretches,** many times a second.",
+   "Sound is a wave of air pressure: squeezes and stretches, many times a second."
   ],
   [
-   "A small circuit makes an **upside-down copy** of that wave.",
-   "A small circuit makes an upside-down copy of that wave."
+   "Tiny **microphones** on the earcups listen to the noise outside.",
+   "Tiny microphones on the earcups listen to the noise outside."
   ],
   [
-   "Where the noise goes **up,** the copy goes **down.**",
-   "Where the noise goes up, the copy goes down."
+   "A **chip** flips that wave upside down: a squeeze becomes a **stretch.**",
+   "A chip flips that wave upside down: a squeeze becomes a stretch."
   ],
   [
-   "The speaker plays that copy. It's called **anti-noise.**",
-   "The speaker plays that copy. It's called anti-noise."
+   "The speaker plays this **anti-noise** along with your music.",
+   "The speaker plays this anti-noise along with your music."
   ],
   [
-   "Both waves reach your ear **together.** A squeeze meets a stretch, and they **cancel.**",
-   "Both waves reach your ear together. A squeeze meets a stretch, and they cancel."
+   "When a squeeze meets a stretch, they **cancel,** and the noise gets much **quieter.**",
+   "When a squeeze meets a stretch, they cancel, and the noise gets much quieter."
   ],
   [
-   "Scientists call this **destructive interference.**",
-   "Scientists call this destructive interference."
+   "Here's the catch: the chip has to **keep up,** thousands of times a second.",
+   "Here's the catch: the chip has to keep up, thousands of times a second."
   ],
   [
-   "The idea was patented in **1936.** The first commercial headsets came in the **late 1980s.**",
-   "The idea was patented in 1936. The first commercial headsets came in the late 1980s."
+   "That's easy for **slow, steady** sounds, like a plane's engine **drone** or an air conditioner's **hum.**",
+   "That's easy for slow, steady sounds, like a plane's engine drone or an air conditioner's hum."
   ],
   [
-   "But here's the **weird part.**",
-   "But here's the weird part."
+   "Those low hums have **long waves,** so a tiny delay barely matters.",
+   "Those low hums have long waves, so a tiny delay barely matters."
   ],
   [
-   "It works best on **steady, low hums,** like an airplane engine.",
-   "It works best on steady, low hums, like an airplane engine."
+   "But **high, sudden** sounds, like a voice or a bark, change **too fast** to copy in time.",
+   "But high, sudden sounds, like a voice or a bark, change too fast to copy in time."
   ],
   [
-   "A steady hum **repeats,** so the circuit can predict what's next.",
-   "A steady hum repeats, so the circuit can predict what's next."
+   "For those, the **padding** of the earcups does most of the blocking.",
+   "For those, the padding of the earcups does most of the blocking."
   ],
   [
-   "A sudden sound, like **speech** or breaking glass, is **irregular,** so it's much harder to cancel.",
-   "A sudden sound, like speech or breaking glass, is irregular, so it's much harder to cancel."
+   "The idea is old: it was first **patented** in **1936.**",
+   "The idea is old. It was first patented in nineteen thirty-six."
   ],
   [
-   "High pitches are tricky too. Their waves are **short,** so the timing must be **perfect.**",
-   "High pitches are tricky too. Their waves are short, so the timing must be perfect."
+   "Try it near a **fan:** switch noise cancelling on, and the **hum** fades, but **voices** still get through.",
+   "Try it near a fan: switch noise cancelling on, and the hum fades, but voices still get through."
   ],
   [
-   "So headphones add a second trick: **passive isolation.**",
-   "So headphones add a second trick: passive isolation."
+   "So your headphones don't just block noise. They play its **opposite.**",
+   "So your headphones don't just block noise. They play its opposite."
   ],
   [
-   "Soft padding and a tight seal **physically block** sound, especially high pitches.",
-   "Soft padding and a tight seal physically block sound, especially high pitches."
-  ],
-  [
-   "Padding handles the **highs.** Anti-noise handles the **lows.**",
-   "Padding handles the highs. Anti-noise handles the lows."
-  ],
-  [
-   "So: **listen, flip, play,** and the waves cancel.",
-   "So: listen, flip, play, and the waves cancel."
-  ],
-  [
-   "Next time a plane goes quiet, thank a **mirror wave.**",
-   "Next time a plane goes quiet, thank a mirror wave."
+   "Do you use noise cancelling on flights? **Yes or no?**",
+   "Do you use noise cancelling on flights? Yes or no?"
   ],
   [
    "Follow for more of **how it really works.**",
    "Follow for more of how it really works."
   ]
- ],
- "breath": [
-  0,
-  1,
-  5,
-  7,
-  8,
-  9,
-  12,
-  14,
-  16,
-  17
  ]
 }
