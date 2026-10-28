@@ -19,3 +19,10 @@
 - "After twenty to thirty minutes": rods keep improving for up to ~2 hours; 20-30 min is the usual figure for "fully adapted".
 - "Night looks grey" simplifies "colours are much less apparent in dim light".
 - The retina "village" (cone towers in the centre, rod cottages at the edges) and the rhodopsin "windows" are metaphors, not anatomy.
+
+## Added by the main session (Oct 28)
+| Claim | Source |
+|---|---|
+| Rods keep improving after the first minutes; by about 30 minutes rhodopsin is mostly replenished (supports "twenty to thirty minutes") | University of Minnesota, *Sensation and Perception* (open textbook), "Light transduction": rods take over after 7-8 min and sensitivity improves for another 13-22 min. https://pressbooks.umn.edu/sensationandperception/chapter/light-transduction-draft/ |
+| Dark adaptation follows the rebuilding of rhodopsin | Webvision (University of Utah, NCBI Bookshelf), "Light and Dark Adaptation": the time course of dark adaptation and of rhodopsin regeneration was the same (retinal densitometry). https://www.ncbi.nlm.nih.gov/books/NBK11525/ |
+| Full recovery takes longer (tens of minutes, up to about 40 min to the absolute threshold), so the script's "twenty to thirty minutes" means "most of the way" | Lamb & Pugh, "Dark adaptation and the retinoid cycle of vision", Prog. Retin. Eye Res. (2004). https://pubmed.ncbi.nlm.nih.gov/15177205/ |

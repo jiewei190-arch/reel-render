@@ -1,0 +1,1 @@
+Bonus: crushed ice looks white for the same reason, and deep glacier ice can look blue, because light travels far through it and the red gets soaked up first. Did you know snow can glow blue? Yes or no? 👇

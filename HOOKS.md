@@ -305,3 +305,34 @@ ffmpeg -i clips/<ID>.mp4 -vf "select='eq(n,0)+eq(n,45)+eq(n,90)'" -vsync 0 frame
 ```
 
 Space requests about a minute apart. Fast parallel requests triggered the bot check in this session.
+
+
+---
+# v2 (Oct 28, from research/HOOKS_V2.md; this REPLACES the older checklist above where they differ; 10 ranked hook patterns are in that file)
+
+## Hook checklist v2 (run on every script and on the first rendered second)
+
+1. **Line 1 is 12 words or fewer** and the topic noun lands in the first 5 words.
+2. **Frame 0 shows the subject**, large and in motion (no title, logo, black or empty space). `reels/qa.py` checks it automatically.
+3. **The sound-off test passes.** Frame 0 plus the 3-6 word caption tells the topic within 1 s.
+4. **Line 1 is one of the ten patterns above**, not a topic announcement and not a greeting.
+5. **One specific open question is written down** in NOTES.md, and the script answers it, explicitly, between 45 and 70 s.
+6. **A "but" turn or stake by 5 s.** Line 2 deepens or flips line 1 instead of defining terms.
+7. **The mechanism is on screen by about 3 s.** The tool, the cross-section or the diagram arrives early.
+8. **A re-hook at about 25 s and about 50 s**: a mini-question, a try-it test or a surprising number.
+9. **The hook is true and sourced.** Check numbers, "never", "always" and myth claims. Title, caption, thumbnail and line 1 make the same promise (legit bait, not a click trap).
+10. **The first second is checked by eye on the 8 s preview** and with the sound off, before the full render is queued.
+
+## Stop doing
+
+- Openers with "Have you ever wondered", "Did you know", "Today we'll learn" or "Let's talk about". No top-performing title in our study opens like that. [data, HOOKS.md]
+- Fading in from black, or opening on an empty set that fills up later (lock did this).
+- Building the image up slowly. If the template's signature move is a reveal, start mid-reveal.
+- First lines over 12 words, or lines that put the topic noun at the end.
+- Captions that say something different from the voice and the image.
+- Opening with a bare statistic. Numbers work as line 2 or as re-hooks.
+- Unverified numbers in hooks, such as "cats see with 1/6 of the light" or "42 vs 12 insects". Drop them or soften them, as we did.
+- Holding one static card for 4 s or more, at any point. The QA gate flags it, and search does it at 59-64 s.
+- Answering the hook's question in the first 10 s, or never answering it at all.
+- Brand badges, logos or "EP" marks in the first 5 s.
+
