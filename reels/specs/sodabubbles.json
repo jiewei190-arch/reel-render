@@ -1,0 +1,90 @@
+{
+ "name": "sodabubbles",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 100,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "music_gain": 0.55,
+ "phrases": [
+  [
+   "Soda bubbles don't start in the soda. They start on **lint.**",
+   "Soda bubbles don't start in the soda. They start on lint."
+  ],
+  [
+   "So **why do soda bubbles rise in lines?**",
+   "So, why do soda bubbles rise in lines?"
+  ],
+  [
+   "Soda is packed with **carbon dioxide,** squeezed in under pressure.",
+   "Soda is packed with carbon dioxide, squeezed in under pressure."
+  ],
+  [
+   "Open it, and the pressure drops. Now the drink holds **more gas than it wants.**",
+   "Open it, and the pressure drops. Now the drink holds more gas than it wants."
+  ],
+  [
+   "But a brand-new bubble is so tiny, the liquid **crushes it** right back.",
+   "But a brand-new bubble is so tiny, the liquid crushes it right back."
+  ],
+  [
+   "To grow, it needs a head start: a **pocket of gas** that's already there.",
+   "To grow, it needs a head start: a pocket of gas that's already there."
+  ],
+  [
+   "You'd guess **scratches in the glass.** But champagne scientist **Gérard Liger-Belair** filmed these spots up close.",
+   "You'd guess scratches in the glass. But champagne scientist Zhayrar Leezhay Belair filmed these spots up close."
+  ],
+  [
+   "Most were tiny hollow **fibers,** cellulose from towels, paper, or dust in the air, **stuck to the wall.**",
+   "Most were tiny hollow fibers, cellulose from towels, paper, or dust in the air, stuck to the wall."
+  ],
+  [
+   "When you pour, each fiber **traps a little pocket** of gas.",
+   "When you pour, each fiber traps a little pocket of gas."
+  ],
+  [
+   "Gas seeps in, the pocket swells, a bubble **breaks off,** and a bit stays behind to **start again.**",
+   "Gas seeps in, the pocket swells, a bubble breaks off, and a bit stays behind to start again."
+  ],
+  [
+   "Same spot, over and over, up to about **thirty bubbles a second.** That's your line.",
+   "Same spot, over and over, up to about thirty bubbles a second. That's your line."
+  ],
+  [
+   "And each bubble **grows as it rises,** soaking up more gas, so the line **spreads out** near the top.",
+   "And each bubble grows as it rises, soaking up more gas, so the line spreads out near the top."
+  ],
+  [
+   "The glass itself? Its bumps are mostly **far too small** to hold a pocket that big.",
+   "The glass itself? Its bumps are mostly far too small to hold a pocket that big."
+  ],
+  [
+   "That's why some glasses are **etched on purpose,** to give bubbles a place to start.",
+   "That's why some glasses are etched on purpose, to give bubbles a place to start."
+  ],
+  [
+   "So every line of bubbles is a **single speck,** quietly breathing out gas.",
+   "So every line of bubbles is a single speck, quietly breathing out gas."
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
