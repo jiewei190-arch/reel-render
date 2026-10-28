@@ -11,5 +11,5 @@ QA fingerprints: PASS   (/home/user/reel-render/jobs/fingerprints/fingerprints.m
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 10.1 (min 1.0), contrast 23.9 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      fingerprints.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      fingerprints.mp4 1080x1920 SAR 1:1; fingerprints_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
