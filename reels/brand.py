@@ -23,6 +23,7 @@ OVR = {
     # H4 QA, Oct 28
     "flush": {"spot": (44, 1300)},       # every top spot hit a seal, headline, label or the end card
     "hurricanewc": {"spot": (44, 300)},  # auto spot sat on the character's head
+    "onion": {"spot": (44, 1330)},       # right side is TikTok's button column; y 1300 clipped the "wet surface" label
     # H1 QA, Oct 28 (auto spot covered text on these)
     "darkeyes": {"spot": (44, 1400)}, "foxfire": {"spot": (44, 600)}, "zombieant": {"spot": (44, 860)},
     "catseyes": {"spot": ("R", 196)}, "owl": {"spot": (44, 1400)}, "spidersilk": {"spot": (44, 1060)}, "pumpkin": {"spot": ("R", 392)},
