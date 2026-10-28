@@ -25,7 +25,8 @@ HANDOFF.md rules 1-18, LESSONS.md (all of it), GROWTH.md (checklist), HOOKS.md (
    - pinned_<n>.md;
    - a thumbnail (thumb.py).
 5. **QA**: `python3 -I reels/qa.py <n>` must have no FAIL; paste the summary into NOTES.md, with the GROWTH checklist ticked.
-6. **Push** the final set (mp4, preview, thumb, caption, sources, pinned, NOTES, code, STYLE_FIT row), then message the main session. The main session assigns a peer reviewer, adds the episode number, runs brand.py and schedules.
+6. **Episode badge (you do it)**: the main session gives your reel an episode number when it approves the storyboard. After qa.py passes, run `python3 -I reels/brand.py <n> --ep <number>`, then check frames at 6 s, 25 s, 45 s and near the end. The badge must not touch any title, label or caption, must stay out of the top 250 px, the bottom 480 px and the right column at y >= 840. If it collides, add an OVR entry in brand.py (a spot plus hide windows). Push `<n>_ep.mp4` and your OVR line.
+7. **Push** the final set (mp4, preview, thumb, caption, sources, pinned, NOTES, code, STYLE_FIT row), then message the main session. The main session assigns a peer reviewer, adds the episode number, runs brand.py and schedules.
 
 ## Assignments
 Filled in by the main session in handoff/topics_next30.md (column "worker").

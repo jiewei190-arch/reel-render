@@ -1,0 +1,99 @@
+{
+ "name": "snowwhite",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  8,
+  9,
+  11,
+  13,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "Snow is made of ice, and ice is **clear.**",
+   "Snow is made of ice, and ice is clear."
+  ],
+  [
+   "**But** a snowbank is bright white. So why is snow white, if ice is clear?",
+   "But a snowbank is bright white. So why is snow white, if ice is clear?"
+  ],
+  [
+   "Here's the twist: there's **no white** in snow at all.",
+   "Here's the twist. There's no white in snow at all."
+  ],
+  [
+   "Zoom in, and a snowbank is **mostly air,** packed with tiny clear ice crystals.",
+   "Zoom in, and a snowbank is mostly air, packed with tiny clear ice crystals."
+  ],
+  [
+   "Each crystal has lots of **flat faces.**",
+   "Each crystal has lots of flat faces."
+  ],
+  [
+   "When sunlight hits a face, a little **bounces off,** and the rest goes in and **bends.**",
+   "When sunlight hits a face, a little bounces off, and the rest goes in and bends."
+  ],
+  [
+   "Then it hits the next crystal, and the next, and the next.",
+   "Then it hits the next crystal, and the next, and the next."
+  ],
+  [
+   "So where does all that light end up? **Back out,** in every direction.",
+   "So where does all that light end up? Back out, in every direction."
+  ],
+  [
+   "And ice barely absorbs visible light, so **every color** comes back together.",
+   "And ice barely absorbs visible light, so every color comes back together."
+  ],
+  [
+   "All the colors mixed together look **white.**",
+   "All the colors mixed together look white."
+  ],
+  [
+   "That's why fresh snow looks so **dazzling** in the sun.",
+   "That's why fresh snow looks so dazzling in the sun."
+  ],
+  [
+   "A smashed **windowpane** works the same way: clear glass, but the pile of pieces looks white.",
+   "A smashed windowpane works the same way. Clear glass, but the pile of pieces looks white."
+  ],
+  [
+   "**But** poke a deep hole in fresh snow, and look inside.",
+   "But poke a deep hole in fresh snow, and look inside."
+  ],
+  [
+   "It glows **blue!**",
+   "It glows blue!"
+  ],
+  [
+   "Deep snow soaks up a little more **red** light, so the light that comes back is **bluish.**",
+   "Deep snow soaks up a little more red light, so the light that comes back is bluish."
+  ],
+  [
+   "The deeper the light travels, the **bluer** it gets.",
+   "The deeper the light travels, the bluer it gets."
+  ],
+  [
+   "So snow is white because clear ice, broken into **countless faces,** sends every color back to you.",
+   "So snow is white because clear ice, broken into countless faces, sends every color back to you."
+  ],
+  [
+   "Did you know snow can glow blue? **Yes or no?**",
+   "Did you know snow can glow blue? Yes, or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.7
+}
