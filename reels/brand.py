@@ -53,6 +53,7 @@ OVR = {
     "fingerprints": {"spot": ("R", 260)},   # H1 (EP 97): as wetdog (same urban-sketch engine) but top-right: the margin notes are left-aligned at y ~330 and end before x 860
     "darknight": {"spot": ("R", 260)},   # H1 (EP 98): shadow-puppet like catpurr, but every top plaque moved down 70 px (tops at y >= 345) so the badge clears them; rods only above
     "honey": {"spot": (44, 1366)},   # H1 (EP 103): as handwarmer (same recipe kit): the strip under the captions (captions max 3 lines, box bottom <= 1364; badge bottom 1440)
+    "fog": {"spot": (44, 1366)},   # H1 (EP 104): as twinkle (same engine): the strip under the bottom-anchored caption box (box ends at y 1360)
     "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card
     "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
     "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns   # titles run to the top-right corner; strip under the captions is clear
