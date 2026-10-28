@@ -1,0 +1,80 @@
+{
+ "name": "hotsauce",
+ "voice": "af_heart",
+ "speed": 0.92,
+ "music": "popup",
+ "bpm": 96,
+ "breath": [
+  1,
+  4,
+  6,
+  7,
+  8,
+  9,
+  11
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why does spicy food feel **hot?**",
+   "Why does spicy food feel hot?"
+  ],
+  [
+   "But a chili pepper isn't hot at all. It's **tricking** your nerves.",
+   "But a chili pepper isn't hot at all. It's tricking your nerves."
+  ],
+  [
+   "Chilies contain a chemical called **capsaicin.**",
+   "Chilies contain a chemical called capsaicin."
+  ],
+  [
+   "Nerve endings in your mouth have tiny sensors called **TRPV1.**",
+   "Nerve endings in your mouth have tiny sensors called T R P V one."
+  ],
+  [
+   "Normally they switch on above about **43\u00b0C:** hot enough to **hurt.**",
+   "Normally they switch on above about forty-three degrees Celsius: hot enough to hurt."
+  ],
+  [
+   "Here's the trick: capsaicin flips that **same sensor** on, with **no heat** at all.",
+   "Here's the trick: capsaicin flips that same sensor on, with no heat at all."
+  ],
+  [
+   "So your nerves send the exact alarm they'd send for a **burn.** Your brain hears: **fire!**",
+   "So your nerves send the exact alarm they'd send for a burn. Your brain hears: fire!"
+  ],
+  [
+   "Nothing in your mouth is actually burning. It's a **false alarm.**",
+   "Nothing in your mouth is actually burning. It's a false alarm."
+  ],
+  [
+   "David Julius used chili peppers to find this sensor, and shared the **2021 Nobel Prize.**",
+   "David Julius used chili peppers to find this sensor, and shared the twenty twenty-one Nobel Prize."
+  ],
+  [
+   "Now the fix. Don't grab **water.**",
+   "Now the fix. Don't grab water."
+  ],
+  [
+   "Capsaicin is **oily.** It doesn't mix with water, so water barely rinses it away.",
+   "Capsaicin is oily. It doesn't mix with water, so water barely rinses it away."
+  ],
+  [
+   "Milk has a protein called **casein** that grabs capsaicin, like soap on **grease.** Even skim milk works.",
+   "Milk has a protein called casein that grabs capsaicin, like soap on grease. Even skim milk works."
+  ],
+  [
+   "So spicy food feels hot because capsaicin flips your **heat sensor.** It's a **false fire alarm.**",
+   "So spicy food feels hot because capsaicin flips your heat sensor. It's a false fire alarm."
+  ],
+  [
+   "What's the **spiciest** thing you've ever eaten?",
+   "What's the spiciest thing you've ever eaten?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
