@@ -29,11 +29,12 @@
 1. The first render failed QA "static" in the crosstalk shot. Bobbing and a slow push-in fixed it.
 2. The second render showed the badge covering the centred headings at y 330. Moving them to y 405 hit the drawings, so they now sit left of the badge.
 3. The third render had a static FAIL in the vagus shot. A push-in fixed it.
-4. Script: "Harvard doctors" became "A Harvard gut doctor", because only Braden Kuo is quoted.
+4. Main-session request: the hedge "Physiologists think" now sits in the hook itself (0 s), so the strong opener doesn't read as settled fact. The diagram shots got a slow push-in after another static FAIL.
+5. Script: "Harvard doctors" became "A Harvard gut doctor", because only Braden Kuo is quoted.
 
 **QA:** no FAIL. One WARN: during the crosstalk push-in, stars move into the right column; no text is there.
 
-**Voice:** af_heart 0.97, crayon bed at music_gain 0.55, 72.7 s; spec `tail` 0.7, so the end card runs 3.0 s.
+**Voice:** af_heart 0.97, crayon bed at music_gain 0.55, 73.8 s; spec `tail` 0.7, so the end card runs 3.0 s.
 **Sources:** sources_butterflies.md (the "stomach nerves notice" mechanism is hedged as "physiologists think").
 **Code:** reels/t_butterflies.js, t_butterflies.html, specs/butterflies.json, ev_butterflies.json, tl_butterflies.js.
 **Thumbnail:** thumb_butterflies.jpg ("WHY THE BUTTERFLIES?").
@@ -41,8 +42,8 @@
 
 ## GROWTH checklist
 - [x] Topic is a searched question (main-session assignment EP 91)
-- [x] Hook passes HOOKS.md (10 words; frame 0 is a big painted kid backstage with glowing butterflies at the tummy; search question at 4.5 s)
-- [x] 66-86 s (72.7 s); ends on the exact closing line
+- [x] Hook passes HOOKS.md (12 words, hedged: "Those butterflies? Physiologists think it's your gut losing blood to your muscles."; frame 0 is a big painted kid backstage with glowing butterflies at the tummy; search question at 4.5 s)
+- [x] 66-86 s (73.8 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Do you get butterflies before big moments? Yes or no?")
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 40%; the end and the hook are both the kid)
@@ -50,17 +51,17 @@
 - [x] butterflies_ep.mp4 (EP 91)
 - [x] Evergreen
 
-## QA (python3 -I reels/qa.py butterflies)
+## QA (python3 -I reels/qa.py butterflies), final render
 ```
-QA butterflies: WARN   (/home/user/reel-render/jobs/butterflies/butterflies.mp4, 72.8 s)
-  PASS  static          longest no-change run 4.00 s (limit 4.0 s)
+QA butterflies: WARN   (/home/user/reel-render/jobs/butterflies/butterflies.mp4, 73.8 s)
+  PASS  static          longest no-change run 3.25 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.2 s)
-  WARN  safe zones      right x>900 y900-1650: content 44.8-52.0s
+  WARN  safe zones      right x>900 y900-1650: content 45.8-53.2s
   PASS  outer 24 px     clear
   PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -1.4 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 9.8 dB above the pauses (14 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          72.8 s (want 66-86)
+  PASS  true peak       -2.9 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.0 dB above the pauses (14 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          73.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 10.1 (min 1.0), contrast 35.6 (min 18.0)
