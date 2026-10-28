@@ -27,9 +27,10 @@ The owner's words: "follow this every time we make a reel from now on". Read thi
 - Pin the three best reels on Instagram and TikTok; update them when the stats show new winners.
 - Instagram Trial Reels (if the account has it): test two openings of the same reel on non-followers.
 
-## 6. Post less, measure more
-- **New schedules: 1-2 posts a day** per platform. Already-scheduled slots stay unless the owner says otherwise.
-- **Weekly check**: swipe-away rate, average % watched, shares, saves and follows per reel (YouTube Studio, Instagram Insights, TikTok Analytics, read on the owner's PC with their OK). Log them in STYLE_FIT.md's Performance column and in handoff/metrics.csv, then do more of what wins.
+## 6. Posting pace and measurement (owner, Oct 28: "5 TikToks and 5 Shorts a day minimum and 2-3 reels a day on the gram")
+- **From Nov 1: at least 5 TikToks and 5 YouTube Shorts a day** (the same 5 reels, episode-badged `_ep.mp4`), and **2-3 Instagram Reels a day** (the strongest of them, plain `<n>.mp4`). Slots (ET): TikTok/Shorts 08:00, 11:00, 14:00, 17:00, 20:00; Instagram 11:00, 17:00 (+ 20:00 on 3-reel days). Plan file: handoff/schedule_nov.csv.
+- That needs **5 new approved reels a day**: keep 4 workers building continuously and a buffer of about a week. Quality bar unchanged; never post filler to hit the count. If the buffer runs out, tell the owner rather than lowering the bar.
+- **Weekly check**: swipe-away rate, average % watched, shares, saves and follows per reel (YouTube Studio, Instagram Insights, TikTok Analytics, read on the owner's PC with their OK). Log them in STYLE_FIT.md's Performance column and in handoff/metrics.csv. If views per post fall as volume rises, flag it to the owner with the numbers.
 
 ## Per-reel checklist (copy into NOTES.md, tick each)
 - [ ] Topic is a searched question; demand signal noted

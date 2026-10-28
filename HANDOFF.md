@@ -20,7 +20,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
 13. STYLE FIT (owner, Oct 27): keep STYLE_FIT.md up to date. Read it before choosing a template, add a row after every reel, record owner feedback and later the performance numbers, and refine the template profiles. Choose the template whose storytelling engine *is* the explanation (example: magnet + Distilbook).
 14. YEARS (owner, Oct 28): years are spoken the way people say them: "nineteen ninety-nine", "eighteen fifty-three", "twenty twelve", "the seventeen seventies" (2000-2009 = "two thousand five"). reels/voice2.py now does this automatically for any standalone 1100-2099 number (and decades like 1770s). Write `1,853` with a comma when it is a quantity, not a year. Kokoro alone says "one thousand eight hundred fifty-three", so re-voice any reel built before this fix.
 15. EPISODES (owner, Oct 28): TikTok and YouTube get episode numbers. Numbers follow posting order in handoff/episodes.csv (EP 01 = glowstick, Oct 28 11 AM). Upload `jobs/<n>/<n>_ep.mp4` (same reel plus an "EP nn · HOW IT REALLY WORKS" badge that fades in at 5 s, made by `python3 -I reels/brand.py <n>`) to TikTok and YouTube; Instagram keeps the plain `<n>.mp4`. YouTube titles end with " | Ep. nn" (handoff/yt/*.json); TikTok captions start with "Ep. nn · ". New reels: add the next number to episodes.csv when they are scheduled, then run brand.py.
-16. GROWTH (owner, Oct 28): every reel follows the six growth rules in GROWTH.md (one show: badge, standard end card with "A new 'wait, really?' every day."; keep people watching: hooks, loop ending, 66-86 s; searched/myth-busting/timely topics; one-word question + pinned_<n>.md; profiles in handoff/PROFILE.md; 1-2 posts a day for new schedules + weekly metrics in handoff/metrics.csv). Tick the GROWTH checklist in each NOTES.md.
+16. GROWTH (owner, Oct 28): every reel follows the six growth rules in GROWTH.md (one show: badge, standard end card with "A new 'wait, really?' every day."; keep people watching: hooks, loop ending, 66-86 s; searched/myth-busting/timely topics; one-word question + pinned_<n>.md; profiles in handoff/PROFILE.md; posting pace from Nov 1: 5 TikToks + 5 Shorts + 2-3 Instagram Reels a day, plan in handoff/schedule_nov.csv; weekly metrics in handoff/metrics.csv). Tick the GROWTH checklist in each NOTES.md.
 10. Caption format (`caption_<name>.md`): description + blank line + "Sources: ..." + blank line + "Follow for more of how it really works." + 5 hashtags ending `#reels` (no #fyp). YouTube metadata uses #Shorts instead of #reels.
 
 ## 3. Pipeline (see reels/ in this repo)
@@ -81,7 +81,7 @@ Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Ch
 
 ### 8e. Order of work (Oct 28)
 1. Halloween reels first (Oct 28-31, 11 AM / 3 PM / 9 PM ET) on Instagram, YouTube and TikTok; owl only after the owner OKs its fixed version.
-2. Then the 20 approved reels for Nov 6-12, from handoff/schedule_plan.csv.
+2. Then the 20 approved reels from handoff/schedule_nov.csv (owner's new pace, Oct 28: TikTok + Shorts 5 a day Nov 1-4, Instagram 2-3 a day Nov 1-8). The Nov 6-12 rows in schedule_plan.csv are SUPERSEDED.
 3. YouTube metadata: handoff/yt/meta_halloween.json (Halloween) and handoff/yt/meta4.json (the 20). YouTube's daily upload cap is about 10 to 15: do Halloween first, carry the rest to the next day.
 4. Mark each row "scheduled <date>" in schedule_plan.csv and tracking.csv as you go.
 
