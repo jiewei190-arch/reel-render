@@ -21,7 +21,7 @@
 | 45 | runnynose | Why does your nose run when it's cold? | H3 | merged, Nov 6 09:00 |
 | (Thanksgiving) | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | (Thanksgiving) | cranberries | Why do cranberries float? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
-| 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | queued |
+| 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | merged, Nov 7 13:00 |
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | merged, Nov 7 19:00 |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | merged, Nov 7 21:30 |

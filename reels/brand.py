@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "daylightsleep": {"spot": (44, 1368)},   # H4: cut-letter plaques fill the top band; low-left under the (raised) storyteller placard
     "ovenfoil": {"spot": (651, 400)},   # H1: right of the FIG label, above the figure callouts; the top band is the sheet header
     "hiccups": {"spot": (44, 400), "hide": [(67.7, 99.0)]},   # H1: below the left plaques; hidden for the end card
     "snowflake": {"spot": (44, 1366)},   # paper banner ends at y 1355; snow-bank paper only below it
