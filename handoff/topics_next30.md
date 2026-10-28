@@ -61,10 +61,12 @@
 | 90 | earringing | Why do your ears ring after a concert? | H1 | merged v2, Nov 15 09:00 |
 | 91 | butterflies | Why do you get butterflies in your stomach? | H2 | queued |
 | 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | queued |
-| 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | queued |
+| 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | merged, Nov 15 19:00 |
 | 94 | twinkle | Why do stars twinkle but planets don't? | H1 | merged, Nov 15 21:30 |
 | 95 | stalebread | Why does bread go stale? | H4 | queued |
 | 96 | bananabrown | Why do bananas turn brown? | H4 | queued |
+| 97 | fingerprints | Why do we have fingerprints? | H1 | queued |
+| 98 | darknight | Why is the night sky dark if there are so many stars? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
