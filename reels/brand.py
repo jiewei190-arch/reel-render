@@ -37,13 +37,13 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "microwavecenter": {"spot": ("R", 260), "hide": [(21.8, 24.6), (44.4, 47.8), (68.7, 99.0)]},   # popup: hidden under the 3-tricks sign, the YES/NO signs and the end card
     "rainbow": {"spot": (651, 400)},   # H1 (EP 85): right of the FIG label, above the figure window (as ovenfoil); the sheet header owns the top band
     "hairgray": {"spot": ("R", 256), "hide": [(16.2, 20.3)]},   # H2: hidden under the "Study Head of an Old Man" card
     "sodabubbles": {"spot": ("R", 256)},
     "feetasleep": {"spot": ("R", 260), "hide": [(21.7, 40.8)]},   # H1 (EP 80): top-right; hidden while "The worst part comes after." reaches under it (main)
     "moonday": {"spot": (44, 1366)},
     "freezerburn": {"spot": ("R", 256), "hide": [(5.7, 11.8), (64.4, 99.0)]},   # H2: top-right sky wash; hidden under the "tiny ice crystals" title and the end card (main)
-    "microwavecenter": {"spot": ("R", 260), "hide": [(44.8, 47.8), (68.7, 99.0)]},   # popup: hidden under the 3-tricks sign, the YES/NO signs and the end card
     "saltyocean": {"spot": (44, 260)},   # H1 (EP 79): top-left above the serif titles (all titles sit at y >= 400)
     "bluejeans": {"spot": ("R", 260)},   # H1: top-right, above the hand-lettered title (title + board moved down 30 px so the badge clears the "rivets." highlight)
     "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card

@@ -42,7 +42,7 @@
 | 71 | sneeze | Why do we sneeze? | H3 | merged, Nov 11 13:00 |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | merged, Nov 11 16:00 |
 | 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
-| 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | merged v1, Nov 11 21:30 (v2 varied shots pending) |
+| 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | merged v2, Nov 11 21:30 |
 | 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
 | 77 | hairgray | Why does hair turn gray? | H2 | merged, Nov 12 16:00 |
