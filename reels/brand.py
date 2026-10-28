@@ -20,6 +20,9 @@ OVR = {
     "ship": {"spot": (44, 196)},       # mid spots hit labels and the end-card sign
     "skyblue": {"spot": (660, 436)},   # auto spot sat on the end-card title
     "lock": {"spot": (44, 1276)},      # top spots hit the "5 HOLES"/"SPRING" callouts; bottom-left above the NOTE box
+    # H4 QA, Oct 28
+    "flush": {"spot": (44, 1300)},       # every top spot hit a seal, headline, label or the end card
+    "hurricanewc": {"spot": (44, 300)},  # auto spot sat on the character's head
 }
 
 def frames(src, dur, k=24):
