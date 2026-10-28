@@ -76,7 +76,7 @@ function lamp(o) { const on = o.lamp ?? 1; ink(dens([[540, BY0], [540, 548]], fa
   if (on > 0) { const gr = g.createRadialGradient(540, 600, 0, 540, 600, 230); gr.addColorStop(0, `rgba(255,228,140,${.5 * on})`); gr.addColorStop(1, 'rgba(255,228,140,0)'); g.fillStyle = gr; g.fillRect(300, 380, 480, 460); }
   shape(poly([[510, 548], [570, 548], [594, 594], [486, 594]]), MUST, { seed: 711 }); shape(ell(540, 600, 10, 6, 16), on > .5 ? '#fff7d6' : '#cfc6b0', { seed: 712, w: 3 }); }
 function poster(o) { shape(rr(690, 530, 200, 255, 4), CREAM, { seed: 720, w: 5 }); const kind = o.poster || 'home';
-  if (kind === 'home') { heart(790, 640, 46, '#e98c7c', { seed: 721 }); txt('home', 790, 750, 40, { rot: -.05 }); }
+  if (kind === 'home') { heart(790, 650, 56, '#e98c7c', { seed: 721 }); }
   if (kind === 'kitten') { cat(790, 690, .52, { eyes: 'happy', tail: 0, nobody: 1 }); txt('day 1', 790, 760, 38, { rot: -.05 }); }
   if (kind === 'list') { const L = o.list || 0; txt('theories', 790, 576, 34, { col: ORD }); ink(dens([[722, 590], [858, 590]], false), { seed: 722, w: 2.5 });
     [['1 comfort', 1], ['2 scent', 2], ['3 bed', 3]].forEach(([w, n], i) => { if (L >= n) { txt(w, 712, 640 + i * 58, 34, { align: 'left', k: clamp(o.listK?.[i] ?? 1) }); if (o.ticks > i) ink(cr([[836, 624 + i * 58], [848, 638 + i * 58], [874, 600 + i * 58]], false, 5), { seed: 730 + i, col: TEAL, w: 5 }); } }); } }
@@ -93,7 +93,7 @@ function rug(o) { shape(ell(540, 1530, 400, 92), '#c8907a', { seed: 760 }); ink(
 
 // ---------- characters ----------
 function cat(x, y, sc, o = {}) { g.save(); g.translate(x, y); g.scale(sc, sc); g.globalAlpha *= o.a ?? 1; const col = o.col || ORANGE, dk = o.col ? '#6f6a62' : ORD, kn = o.knead ?? 0, wig = o.purr ? Math.sin(T * 40) * 1.6 : 0;
-  const ph = T * TAU * 1.5, p1 = kn * 14 * Math.max(0, Math.sin(ph)), p2 = kn * 14 * Math.max(0, Math.sin(ph + Math.PI));
+  const ph = T * TAU * 1.5 + 1.3, p1 = kn * 14 * Math.max(0, Math.sin(ph)), p2 = kn * 14 * Math.max(0, Math.sin(ph + Math.PI));
   if (!o.nobody) { if (o.tail !== 0) ink(cr([[62, 40], [112, 20], [124, -30], [104, -62 + 8 * Math.sin(T * 2)]], false, 8), { seed: 801, w: 15, col: INK }), ink(cr([[62, 40], [112, 20], [124, -30], [104, -62 + 8 * Math.sin(T * 2)]], false, 8), { seed: 801, w: 8, col }, g);
     shape(ell(wig, 22, 80, 47), col, { seed: 802 }); for (let i = 0; i < 3; i++) ink(cr([[-36 + i * 30, -10], [-30 + i * 30, 10], [-36 + i * 30, 30]], false, 5), { seed: 803 + i, w: 5, col: dk });
     for (const [px, pp, sd] of [[-26, p1, 810], [26, p2, 820]]) { const py = 56 + pp; shape(ell(px, py, 20, 15, 20), col, { seed: sd, w: 3.6 });
@@ -146,7 +146,7 @@ function scent(x, y, r, a, seed) { if (a <= 0) return; ink(cr([[x - r, y + r * .
 // ---------- scenes: each returns the room state; drawing in world space, notes in screen space ----------
 const SC = [], N = PH.length;
 const START = PH.map(p => p.start); START[0] = 0;
-const CAM = { 0: [1.62, 540, 945], 1: [1.2, 540, 880], 2: [1.06, 540, 890], 3: [1.15, 540, 920], 4: [1.7, 540, 950], 5: [1.04, 520, 900], 6: [1.3, 520, 900], 7: [1.0, 540, 900],
+const CAM = { 0: [2.0, 540, 930], 1: [1.2, 540, 880], 2: [1.06, 540, 890], 3: [1.15, 540, 920], 4: [1.7, 540, 950], 5: [1.04, 520, 900], 6: [1.3, 520, 900], 7: [1.0, 540, 900],
   8: [1.3, 540, 900], 9: [1.0, 540, 900], 10: [1.0, 540, 900], 11: [1.38, 540, 920], 12: [1.12, 540, 900], 13: [1.0, 540, 900], 14: [1.0, 540, 900], 15: [1.3, 540, 935], 16: [1.0, 540, 900],
   17: [1.0, 540, 900], 18: [1.0, 540, 900], 19: [1.36, 540, 940], 20: [1.55, 540, 880], 21: [1.0, 540, 900] };
 const TITLE = ['kneading', 'why?', 'making biscuits', 'day 1', 'push, push', 'milk on', 'oxytocin', 'all at once', 'never stopped', 'neoteny', 'theory #1', 'prrrr', 'theory #2', 'paw pads', 'pheromones',
@@ -155,7 +155,7 @@ const METER = [.35, .45, .5, .1, .25, .7, .9, 1, .55, .65, .95, 1, .8, .8, .8, .
 const NURSERY = k => k >= 3 && k <= 7;
 let MLAB = 'comfort';
 function lapScene(k, lt, o = {}) { const grow = o.grow ?? 1; couch();   // the cat goes on the lap before the arms, so the hands rest on it
-  person({ pet: o.pet, look: o.look, mouth: o.mouth, drawLap: () => { o.drawLap?.(); cat(540, 915 + (1 - grow) * 40, lerp(.45, 1, grow), { knead: o.knead ?? 1, eyes: o.eyes, purr: o.purr, claws: o.claws }); } }); }
+  person({ pet: o.pet, look: o.look, mouth: o.mouth, drawLap: () => { o.drawLap?.(); cat(540, 915 + (1 - grow) * 40, lerp(.5, 1.18, grow), { knead: o.knead ?? 1, eyes: o.eyes, purr: o.purr, claws: o.claws }); } }); }
 function world(k, lt, t) { const o = { meter: lerp(METER[Math.max(0, k - 1)], METER[k], eo(lt / 1.2)), mlabel: MLAB, poster: 'home', lamp: 1 };
   if (k >= 3 && k <= 7) { o.mlabel = 'milk'; o.mcol = '#e9e3d0'; o.poster = 'kitten'; }
   if (k >= 10 && k <= 20) { o.poster = 'list'; o.list = k >= 16 ? 3 : k >= 12 ? 2 : 1; o.listK = [k === 10 ? (lt - .6) / .5 : 1, k === 12 ? (lt - 1) / .5 : 1, k === 16 ? (lt - 2.2) / .5 : 1]; o.ticks = k >= 17 ? Math.floor(clamp((lt - .4) / .5, 0, 3) + (k > 17 ? 3 : 0)) : 0; }
@@ -186,6 +186,7 @@ function world(k, lt, t) { const o = { meter: lerp(METER[Math.max(0, k - 1)], ME
 }
 // screen-space overlays per scene (notes over the room, stamps)
 function overlay(k, lt) {
+  if (k === 0) { const kk = eo((lt - .1) / .4); g.save(); g.globalAlpha = kk; g.translate(190, 1068); g.rotate(-.05); g.fillStyle = 'rgba(236,210,136,.95)'; g.fillRect(-160, -40, 320, 66); g.restore(); txt('press, press!', 190, 1088, 54, { k: kk, rot: -.05 }); arrow(352, 1062, 432, 1050, { k: kk, seed: 1490, bend: -.15, w: 4.6 }); }
   if (k === 7) { const L = [['push', 110, 470, -.06], ['milk', 640, 470, .05], ['safety', 110, 1000, .04], ['warmth', 640, 1000, -.05]];
     L.forEach(([w, x, y, r], i) => note(x, y, 250, 100, r, (lt + .2 - i * .32) / .5, () => txt(w, x + 125, y + 68, 54, {}), { seed: 1500 + i, notape: 1 }));
     const kk = clamp((lt - 1.6) / .5); arrow(370, 520, 630, 520, { k: kk, seed: 1510 }); arrow(770, 580, 770, 990, { k: kk, seed: 1511, bend: .06 }); arrow(630, 1050, 370, 1050, { k: kk, seed: 1512 }); arrow(240, 990, 240, 580, { k: kk, seed: 1513, bend: .06 }); }
@@ -233,7 +234,7 @@ function card(t) { let i = -1; for (let k = 0; k < N - 1; k++) if (t >= PH[k].st
   const dur = Math.max(.6, p.end - p.start), nW = toks.length; let wi = 0; const y0 = lines.length >= 3 ? 1214 : lines.length === 2 ? 1238 : 1268;
   lines.forEach((ln, j) => { let x = 100; ln.forEach(([w, h, ww]) => { const wt = p.start + dur * wi / nW, a = clamp((t - wt + .25) / .15); g.font = h ? '700 46px KalB' : '400 46px Kal';
     if (h) { const m = clamp((t - wt) / .3), wd = g.measureText(w).width; g.fillStyle = 'rgba(232,180,70,.6)'; g.fillRect(x - 4, y0 + j * 56 - 18, (wd + 8) * m, 26); }
-    g.globalAlpha = .25 + .75 * a; g.fillStyle = h ? ORD : INK; g.fillText(w, x, y0 + j * 56); g.globalAlpha = 1; x += ww; wi++; }); });
+    g.globalAlpha = .45 + .55 * a; g.fillStyle = h ? ORD : INK; g.fillText(w, x, y0 + j * 56); g.globalAlpha = 1; x += ww; wi++; }); });
   g.restore(); }
 function tape(str, t0) { if (!str) return; const k = eo(t0 / .35); g.save(); g.font = '700 64px KalB'; const w = g.measureText(str).width + 90; g.translate(540, 320); g.rotate(-.025); g.globalAlpha = clamp(t0 / .2);
   g.fillStyle = 'rgba(236,210,136,.95)'; g.beginPath(); const x0 = -w / 2, x1 = -w / 2 + w * k; g.moveTo(x0, -42); for (let x = x0; x < x1; x += 16) g.lineTo(x, -42 + (hash(x) - .5) * 3); g.lineTo(x1, -42); for (let y = -42; y <= 42; y += 10) g.lineTo(x1 + (hash(y + 3) - .5) * 10, y); g.lineTo(x0, 42); g.closePath(); g.fill();
