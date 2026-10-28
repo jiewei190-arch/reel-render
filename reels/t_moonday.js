@@ -42,14 +42,14 @@ function moon(x, y, r, f, side = 'R', o = {}) { const k = o.k ?? 1; if (k <= 0) 
   pen(C, { seed: 21, a: o.faint ?? 1 }); for (const [cx, cy, cr] of [[.3, -.25, .14], [-.1, .3, .1], [.45, .25, .08]]) if (side === 'R' ? cx > -.1 : cx < .1) pen(ell(x + cx * r * sgn, y + cy * r, cr * r, cr * r, 14), { seed: 22, w: 1.6, a: .5 * (o.faint ?? 1) }); g.restore(); }
 function cloud(x, y, sc, sd) { const P = []; for (let i = 0; i <= 24; i++) { const a = Math.PI + i / 24 * Math.PI, bump = 1 + .22 * Math.abs(Math.sin(a * 3 + sd)); P.push([x + Math.cos(a) * 120 * sc * bump, y + Math.sin(a) * 55 * sc * bump]); } P.push([x - 120 * sc, y]); pen(P, { seed: 30 + sd, w: 2.4, a: .7 }); }
 function clouds(t, k = 1) { if (k <= 0) return; g.save(); g.globalAlpha = k; for (let i = 0; i < 3; i++) { const x = ((t * (12 + i * 5) + i * 420) % 1500) - 210, y = 420 + i * 170; cloud(x, y, .75 - i * .1, i); } g.restore(); }
-function skyTint(k = 1, x1 = W) { if (k <= 0) return; hatch(box(0, 250, x1, HY - 250), SKYB, { a: .28 * k, sp: 12, ang: .9, w: 2.2 }); }
+function skyTint(k = 1, x1 = W) { if (k <= 0) return; wash(box(0, 250, x1, HY - 250), '#b9cde6', .35 * k); hatch(box(0, 250, x1, HY - 250), '#6f93c8', { a: .4 * k, sp: 11, ang: .9, w: 2.4 }); }
 function ground() { pen(dens([[-20, HY], [200, HY - 18], [420, HY - 6], [640, HY - 26], [860, HY - 10], [1100, HY - 20]], false, 18), { seed: 40, w: 3 });
   hatch(dens([[0, 1365], [1080, 1365], [1080, 1920], [0, 1920]], true), '#7a8a5a', { a: .3, sp: 14, ang: .7 }); pen(dens([[-20, 1420], [300, 1395], [640, 1430], [1100, 1400]], false, 20), { seed: 41, w: 2.6 });
   for (let i = 0; i < 18; i++) { const x = 40 + i * 60 + (hash(i) - .5) * 30, y = 1470 + hash(i * 3) * 380; pen([[x - 8, y], [x - 2, y - 22], [x, y], [x + 6, y - 26], [x + 10, y]], { seed: 50 + i, w: 2 }); }
   for (let i = 0; i < 7; i++) { const x = 120 + i * 120; pen([[x, 1560], [x, 1660]], { seed: 70 + i, w: 3 }); } pen(dens([[100, 1590], [860, 1590]], false, 20), { seed: 78, w: 2.4 }); pen(dens([[100, 1635], [860, 1635]], false, 20), { seed: 79, w: 2.4 });
   const hx = 880, hy = 1740; pen(box(hx - 90, hy - 110, 180, 110), { seed: 80 }); pen([[hx - 110, hy - 105], [hx, hy - 190], [hx + 110, hy - 105]], { seed: 81 }); pen(box(hx - 25, hy - 60, 50, 60), { seed: 82 }); }
 function person(x, y, o = {}) { pen(ell(x, y - 150, 22, 24, 20), { seed: 90 }); pen([[x, y - 126], [x, y - 50]], { seed: 91 }); pen([[x, y - 50], [x - 22, y]], { seed: 92 }); pen([[x, y - 50], [x + 22, y]], { seed: 93 });
-  pen([[x, y - 110], [x - 30, y - 70]], { seed: 94 }); if (o.point) pen([[x, y - 112], [x + 40, y - 168]], { seed: 95 }); else pen([[x, y - 110], [x + 30, y - 70]], { seed: 95 }); }
+  pen([[x, y - 110], [x - 30, y - 70]], { seed: 94 }); if (o.point) { const w = o.wave ? Math.sin(T * 9) * 14 : 0; pen([[x, y - 112], [x + 40 + w, y - 168 - w * .4]], { seed: 95 }); } else pen([[x, y - 110], [x + 30, y - 70]], { seed: 95 }); }
 function gauge(x, y, h, v, marks, k = 1) { if (k <= 0) return; g.save(); g.globalAlpha = k; const tube = dens([[x - 22, y], [x + 22, y], [x + 22, y + h], [x - 22, y + h]], true), bulb = ell(x, y + h + 26, 36, 36, 30);
   const lv = y + h * (1 - v); hatch(dens([[x - 22, lv], [x + 22, lv], [x + 22, y + h + 20], [x - 22, y + h + 20]], true), GR, { a: .55, sp: 8 }); hatch(bulb, GR, { a: .55, sp: 8 }); pen(tube, { seed: 100 }); pen(bulb, { seed: 101 });
   marks.forEach(([u, label, col, dash, kk], i) => { const yy = y + h * (1 - u); pen([[x - 44, yy], [x + 44, yy]], { seed: 110 + i, col, w: 3, dash: dash ? [10, 8] : [] }); hand(label, x + 60, yy + 14, 46, { col, align: 'left', k: kk ?? 1 }); }); g.restore(); }
@@ -65,7 +65,7 @@ function clock(x, y, r, o = {}) { const k = o.k ?? 1; if (k <= 0) return; g.save
 // ---------- scenes ----------
 const SC = [];
 const daySky = (t, k = 1) => { skyTint(k); clouds(t, .8); };
-SC[0] = (t, lt) => { daySky(t); sun(820, 640, 90); moon(330, 470, 130, .5, 'R'); slip(560, 300, 300, 110, .03, [['3:30 pm', 'center', 60, '#2b2b2b', 'Typed']], { k: 1 }); hand('the Moon?', 330, 680, 60, { col: BLUE }); pen(dens([[330, 636], [330, 604]], false), { col: BLUE, seed: 140 }); person(260, HY - 4, { point: true }); };
+SC[0] = (t, lt) => { daySky(t); sun(820, 640, 90); moon(330, 470, 130, .5, 'R'); slip(560, 300, 300, 110, .03, [['3:30 pm', 'center', 60, '#2b2b2b', 'Typed']], { k: 1 }); hand('the Moon?', 330, 680, 60, { col: BLUE }); pen(dens([[330, 636], [330, 604]], false), { col: BLUE, seed: 140 }); person(260, HY - 4, { point: true, wave: 1 }); cloud(((T * 40) % 900) + 60, 520, .6, 7); };
 SC[1] = (t, lt) => { const L = dens([[0, 250], [540, 250], [540, HY], [0, HY]], true), Rr = dens([[540, 250], [1080, 250], [1080, HY], [540, HY]], true);   // split page: night vs day
   wash(L, '#3d4870', .55); hatch(L, '#2a3358', { a: .45, sp: 9 }); hatch(Rr, SKYB, { a: .3, sp: 12, ang: .9 }); pen(dens([[540, 250], [540, HY]], false, 14), { seed: 143, w: 3 });
   moon(270, 470, 100, .25, 'R', { night: 1 }); for (const [x, y] of [[90, 330], [420, 360], [130, 640], [460, 700], [300, 860]]) plus(x, y, 12, { col: '#e8e6dc' });
@@ -114,7 +114,8 @@ function sceneAt(t) { let k = 0; for (let i = 0; i < N; i++) if (t >= START[i]) 
 function paperBg() { g.fillStyle = PAPER; g.fillRect(0, 0, W, H); const rg = g.createRadialGradient(540, 800, 300, 540, 900, 1300); rg.addColorStop(0, 'rgba(255,255,255,.35)'); rg.addColorStop(1, 'rgba(120,120,110,.28)'); g.fillStyle = rg; g.fillRect(0, 0, W, H); g.drawImage(FIB, 0, 0); }
 const FIB = document.createElement('canvas'); FIB.width = W; FIB.height = H; { const c = FIB.getContext('2d'); for (let i = 0; i < 2600; i++) { const x = hash(i * 1.7) * W, y = hash(i * 2.9) * H, a = hash(i * 4.1) * TAU, L = 6 + hash(i * 5.3) * 22; c.strokeStyle = `rgba(90,90,80,${.04 + hash(i) * .05})`; c.lineWidth = 1; c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * L, y + Math.sin(a) * L); c.stroke(); } }
 function draw(t) { ST = Math.floor(t * 12); T = ST / 12; const k = sceneAt(t), lt = Math.floor((t - START[k]) * 12) / 12 + (k === 0 ? .2 : 0);
-  g.setTransform(1, 0, 0, 1, 0, 0); paperBg(); if (k < N - 1) ground(); SC[k](T, lt); if (k < N - 1) strip(t); }
+  g.setTransform(1, 0, 0, 1, 0, 0); paperBg(); if (k === 0) { const z = 1.12 - .1 * eo(lt / 3.4); g.translate(330, 470); g.scale(z, z); g.translate(-330, -470); }   // hook: a slow stop-motion push in on the Moon
+  if (k < N - 1) ground(); SC[k](T, lt); g.setTransform(1, 0, 0, 1, 0, 0); if (k < N - 1) strip(t); }
 const F0 = document.createElement('canvas'); F0.width = W; F0.height = H;
 function frame(t) { draw(t); const kk = ss(TOT - .5, TOT, t) * .4; if (kk > 0) { g.save(); g.globalAlpha = kk; g.drawImage(F0, 0, 0); g.restore(); } }
 const r = (i, d = 0) => s(i) + d;

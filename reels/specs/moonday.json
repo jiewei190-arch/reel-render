@@ -4,8 +4,8 @@
  "speed": 0.97,
  "music": "crayon",
  "bpm": 84,
- "fx_gain": 0.5,
- "music_gain": 0.7,
+ "fx_gain": 0.4,
+ "music_gain": 0.62,
  "breath": [
   1,
   2,
