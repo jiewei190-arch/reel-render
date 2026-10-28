@@ -40,6 +40,7 @@ function iceCube(x, y, sz, k, t) { if (k <= 0) return; const c = lg, d = sz * .3
   for (let i = 0; i < 5; i++) D.ink(D.seg(x - 40, y + 40 + i * sz / 4.5, x + sz + d + 40, y + 40 + i * sz / 4.5, 6), { w: 3, prog: R(k, i * .05, .5), seed: 140 + i, col: 'rgba(29,31,36,.45)', wob: .6 });
   const front = [[x, y + d], [x + sz, y + d], [x + sz, y + sz + d], [x, y + sz + d], [x, y + d]], top = [[x, y + d], [x + d, y], [x + sz + d, y], [x + sz, y + d], [x, y + d]], side = [[x + sz, y + d], [x + sz + d, y], [x + sz + d, y + sz], [x + sz, y + sz + d], [x + sz, y + d]];
   [[front, ICE, .35], [top, '#e8f2ff', .5], [side, ICE2, .4]].forEach(([p, col, a], i) => { c.save(); c.globalAlpha *= clamp(k * 2) * a; D.path(p); c.fillStyle = col; c.fill(); c.restore(); D.ink(p, { w: 4.5, prog: k, seed: 150 + i, smooth: false, wob: .8 }); });
+  { const gx = x - sz * .2 + ((t * .35 + .35) % 1.6) * sz * 1.1; c.save(); D.path(front); c.clip(); const gr = c.createLinearGradient(gx - 60, 0, gx + 60, 0); gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(.5, `rgba(255,255,255,${.75 * clamp(k * 2)})`); gr.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = gr; c.translate(gx, y + d + sz / 2); c.rotate(-.5); c.fillRect(-60, -sz, 120, sz * 2); c.restore(); }
   c.save(); c.globalAlpha *= clamp(k * 2) * .9; c.strokeStyle = '#fff'; c.lineWidth = 7; c.lineCap = 'round'; c.beginPath(); c.moveTo(x + sz * .15, y + d + sz * .2); c.lineTo(x + sz * .35, y + d + sz * .08); c.moveTo(x + sz * .15, y + d + sz * .38); c.lineTo(x + sz * .5, y + d + sz * .14); c.stroke(); c.restore();
   c.restore(); }
 
@@ -153,7 +154,7 @@ function sceneJ(t) { const t0 = s(12), c = lg; const bx = 110, bw = 780, top = 4
   // light going in: red fades first, blue survives deepest and comes back
   const lk = R(t, s(14) - .1, .3); if (lk > 0) { const x0 = 680; [['#e8574a', 230], ['#5fbf62', 380], ['#4f7be8', 560]].forEach(([col, depth], i) => { const k = R(t, s(14) + i * .5, 1.0), x = x0 + i * 60, yEnd = top + depth * k;
       for (let j = 0; j < 12; j++) { const y = top + (yEnd - top) * j / 12, fade = 1 - (j / 12) * (i === 2 ? .3 : .9); if (y >= yEnd) break; D.ink([[x, y], [x, y + (yEnd - top) / 12]], { w: 7, col, a: fade * lk, seed: 210 + i * 20 + j, wob: .3, smooth: false }); } });
-    const up = R(t, s(14) + 2.0, .8); if (up > 0) straight(800, top + 540, 820, top - 60, up, { col: C.blue, w: 7, seed: 240 }); label([{ s: 'red', col: '#d94c3f' }, ' soaked up first'], 690, 1150 - 20, R(t, s(14) + 1.6, .7), { size: 44 }); }
+    const up = R(t, s(14) + 2.0, .8); if (up > 0) straight(800, top + 540, 820, top - 60, up, { col: C.blue, w: 7, seed: 240 }); label(['long path: ', { s: 'red absorbed', col: '#d94c3f' }, ', ', { s: 'blue survives', col: C.blue }], 500, 1150 - 20, R(t, s(14) + 1.6, .7), { size: 42 }); }
   const dk = R(t, s(15), .6); if (dk > 0) { D.ink([[bx - 40, top], [bx - 40, top + 560]], { w: 4, prog: dk, seed: 250 }); for (let i = 0; i <= 4; i++) D.ink([[bx - 52, top + i * 140], [bx - 28, top + i * 140]], { w: 3, prog: dk, seed: 251 + i, wob: 0 });
     lg.save(); const gr = lg.createLinearGradient(0, top, 0, top + 560); gr.addColorStop(0, 'rgba(230,240,255,1)'); gr.addColorStop(1, 'rgba(40,110,235,1)'); lg.globalAlpha = dk; lg.fillStyle = gr; lg.fillRect(bx - 34, top, 18, 560 * dk); lg.restore();
     label(['deeper = ', { s: 'bluer', col: C.blue }], 300, 1110 - 6, R(t, s(15) + .5, .6), { size: 44 }); }
@@ -186,6 +187,13 @@ function hud(t, dk) { const c = g; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c
   const beat = 60 / 88, bar = Math.floor(t / (4 * beat)) + 1, bars = Math.ceil(TOT / (4 * beat)); c.textAlign = 'right'; c.fillStyle = ink + '.5)'; c.fillText(`BAR ${String(bar).padStart(2, '0')}/${bars}`, W - 196, 283);
   c.font = D.font('mono', 20, 700); c.fillStyle = ink + '.9)'; c.fillText('88 BPM', W - 80, 283); c.restore(); }
 
+// ---------- lower band: faint ruled book-page texture + margin rule + pencil doodle flakes (no text; that zone is the platform UI) ----------
+function pageBand(t, dk) { const c = g; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); const ink = dk > .5 ? '226,232,248' : '61,95,217';
+  for (let y = 1470; y < 1880; y += 44) { c.strokeStyle = `rgba(${ink},.09)`; c.lineWidth = 2; c.beginPath(); c.moveTo(70, y); c.lineTo(W - 70, y + 2 * Math.sin(y)); c.stroke(); }
+  c.strokeStyle = 'rgba(242,122,155,.22)'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(150, 1450); c.lineTo(150, 1890); c.stroke();
+  for (let i = 0; i < 6; i++) { const x = 230 + i * 130 + 20 * Math.sin(i * 2.3), y = 1560 + 160 * hash(i * 3.3) + 6 * Math.sin(t * .8 + i), r = 14 + 8 * hash(i); c.strokeStyle = `rgba(${ink},.16)`; c.lineWidth = 2;
+    for (let j = 0; j < 6; j++) { const a = j * TAU / 6 + t * .1; c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r); c.stroke(); } }
+  c.restore(); }
 // ---------- compositor ----------
 const SC = [[0, sceneA, 0], [s(1) - .2, sceneB, 0], [s(2) - .25, sceneC, 1], [s(3) - .3, sceneD, 0], [s(4) - .3, sceneE, 0], [s(7) - .3, sceneF, 0], [s(8) - .3, sceneG, 0],
   [s(10) - .3, sceneH, 0], [s(11) - .3, sceneI, 0], [s(12) - .3, sceneJ, 0], [s(16) - .3, sceneK, 0], [s(17) - .3, sceneL, 1], [s(18) - .3, sceneM, 0]];
@@ -199,7 +207,7 @@ function scene(t) { const i = idx(t), u = R(t, SC[i][0], TR), dk = i > 0 && u < 
   draw(i, t); if (SC[i][1] === sceneF) cardBlit(t); else D.blit({ a: i > 0 ? ss(u) : 1, z: i > 0 ? lerp(.95, 1, ex(u)) : 1, blur: i > 0 ? 12 * (1 - u) : 0 });
   const ph = PH.findLast(p => t >= p.start - .25), endc = t >= s(18) - .4;
   if (!endc && ph) D.karaoke(ph, t, 1290, { dark: dk > .5, out: ph.i < PH.length - 1 ? PH[ph.i + 1].start - .2 : null, maxW: 860 });
-  hud(t, dk);
+  pageBand(t, dk); hud(t, dk);
   // loop: the last 0.8 s dissolves (at most 50%) toward the frame-0 image so the replay flows on
   const lp = R(t, TOT - .5, .5); if (lp > 0) { D.clearLayer(); sceneA(0); g.save(); g.globalAlpha = .4 * ss(lp); g.drawImage(D.L, 0, 0); g.restore(); }
 }

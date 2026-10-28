@@ -1,0 +1,1 @@
+Bonus: Dewar built it for liquid gases at extremely low temperatures, and the same vacuum keeps your coffee hot, because it just stops heat crossing either way. Coffee or ice water in yours? One word.
