@@ -1,9 +1,9 @@
 {
  "name": "turkeysleepy",
- "voice": "am_michael",
- "speed": 1.0,
- "music": "jazz",
- "bpm": 112,
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
  "breath": [
   0,
   1,
@@ -16,7 +16,8 @@
   11,
   12,
   13,
-  14
+  14,
+  15
  ],
  "music_gain": 0.6,
  "phrases": [
@@ -45,8 +46,8 @@
    "Roughly a quarter of a gram in a hundred grams of meat."
   ],
   [
-   "Cheddar cheese has even **more** per gram, and nobody blames the **cheese.**",
-   "Cheddar cheese has even more per gram, and nobody blames the cheese."
+   "Cheddar cheese and nuts have even **more,** and nobody blames the **cheese.**",
+   "Cheddar cheese and nuts have even more, and nobody blames the cheese."
   ],
   [
    "So what really makes you sleepy? **The whole meal.**",
@@ -79,6 +80,10 @@
   [
    "So the turkey is **innocent.** Blame the whole **plate.**",
    "So the turkey is innocent. Blame the whole plate."
+  ],
+  [
+   "Turkey just gets the blame because it's the **star** of the table.",
+   "Turkey just gets the blame because it's the star of the table."
   ],
   [
    "Do you nap after Thanksgiving dinner? **Yes or no?**",
