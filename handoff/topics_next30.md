@@ -46,7 +46,7 @@
 | 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
 | 77 | hairgray | Why does hair turn gray? | H2 | queued |
-| 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | queued |
+| 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | merged, Nov 12 19:00 |
 | 79 | saltyocean | Why is the ocean salty? | H1 | merged v2, Nov 12 21:30 |
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | merged, Nov 13 09:00 |
 | 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | queued |
