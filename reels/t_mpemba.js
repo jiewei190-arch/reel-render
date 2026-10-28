@@ -13,7 +13,7 @@ const ss = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 
 const fr = x => x - Math.floor(x), hash = n => fr(Math.sin(n * 127.1 + 311.7) * 43758.5453);
 const INK = '#1d1f26', MINT = '#4fe0bd', PURP = '#7b6cf0', RED = '#e2574c', BLUE = '#4f8fe6', PAPER = '#eeeee8', BOARD = '#2a3245';
 let ST = 0;                      // 12 fps step index (the boil seed)
-const SX0 = 60, SY0 = 450, SX1 = 1020, SY1 = 1110;    // the sheet
+const SX0 = 60, SY0 = 360, SX1 = 1020, SY1 = 1140;    // the sheet
 
 // ---------- ink: wobbly line that draws on (k) and re-jitters on 12 fps steps ----------
 function ink(pts, k = 1, o = {}) { if (k <= 0 || pts.length < 2) return; const seed = o.seed || 1, j = o.j ?? 1.3; let tot = 0; const L = [0]; for (let i = 1; i < pts.length; i++) { tot += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); L.push(tot); }
@@ -32,23 +32,25 @@ function txt(str, x, y, size, k = 1, o = {}) { if (k <= 0) return; g.save(); g.g
 
 // ---------- board, header, title, sheet, mascot, caption card ----------
 function board() { g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = BOARD; g.fillRect(0, 0, W, H); g.strokeStyle = 'rgba(255,255,255,.045)'; g.lineWidth = 2; for (let x = 0; x <= W; x += 40) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, H); g.stroke(); } for (let y = 0; y <= H; y += 40) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
-  g.font = '600 26px Mono'; g.fillStyle = 'rgba(214,220,235,.75)'; if ('letterSpacing' in g) g.letterSpacing = '6px'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 64, 292); if ('letterSpacing' in g) g.letterSpacing = '0px'; }
-function title(pre, hi, post = '') { g.save(); g.font = '800 78px SnigX'; const w1 = g.measureText(pre).width, w2 = g.measureText(hi).width; g.fillStyle = MINT; g.fillRect(64 + w1 - 4, 372, w2 + 10, 26); g.fillStyle = '#f4f6fb'; g.fillText(pre + hi + post, 64, 392); g.restore(); }
+  g.font = '600 26px Mono'; g.fillStyle = 'rgba(214,220,235,.75)'; if ('letterSpacing' in g) g.letterSpacing = '6px'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 64, 268); if ('letterSpacing' in g) g.letterSpacing = '0px'; }
+let TT = null; function title(pre, hi, post = '') { TT = [pre, hi, post]; }
+function drawTitle() { if (!TT) return; const [pre, hi, post] = TT; g.save(); g.font = '800 78px SnigX'; const w1 = g.measureText(pre).width, w2 = g.measureText(hi).width; g.fillStyle = MINT; g.fillRect(64 + w1 - 4, 318, w2 + 10, 24); g.fillStyle = '#f4f6fb'; g.fillText(pre + hi + post, 64, 337); g.restore(); }
 function sheet(sc) { g.save(); g.shadowColor = 'rgba(0,0,0,.45)'; g.shadowBlur = 26; g.shadowOffsetY = 10; g.fillStyle = PAPER; g.fillRect(SX0, SY0, SX1 - SX0, SY1 - SY0); g.restore();
   const vg = g.createRadialGradient(540, 760, 100, 540, 780, 640); vg.addColorStop(0, 'rgba(255,255,255,.35)'); vg.addColorStop(1, 'rgba(0,0,0,.06)'); g.fillStyle = vg; g.fillRect(SX0, SY0, SX1 - SX0, SY1 - SY0);
-  g.strokeStyle = 'rgba(0,0,0,.05)'; g.lineWidth = 2; for (const [x, y, r] of [[880, 560, 60], [930, 980, 40], [150, 640, 34]]) { g.beginPath(); g.arc(x, y, r, 0, TAU); g.stroke(); }
-  g.fillStyle = INK; g.fillRect(430, 476, 50, 8); g.fillRect(600, 476, 50, 8); g.beginPath(); g.arc(540, 480, 8, 0, TAU); g.fill();          // camera notch
+  g.strokeStyle = 'rgba(0,0,0,.05)'; g.lineWidth = 2; for (const [x, y, r] of [[880, 470, 60], [930, 1040, 40], [150, 560, 34]]) { g.beginPath(); g.arc(x, y, r, 0, TAU); g.stroke(); }
+  g.fillStyle = INK; g.fillRect(430, SY0 + 26, 50, 8); g.fillRect(600, SY0 + 26, 50, 8); g.beginPath(); g.arc(540, SY0 + 30, 8, 0, TAU); g.fill();          // camera notch
   for (const [x, a] of [[SX0 + 10, -.6], [SX1 - 10, .6]]) { g.save(); g.translate(x, SY0 + 4); g.rotate(a); g.fillStyle = 'rgba(232,214,160,.85)'; g.fillRect(-60, -16, 120, 32); g.restore(); }   // tape
   g.font = '400 22px Mono'; g.fillStyle = 'rgba(0,0,0,.35)'; g.textAlign = 'right'; g.fillText(`sc ${sc} · ${String(ST).padStart(4, '0')}`, 860, SY1 - 22); g.textAlign = 'left'; }
 function cube(x, y, s = 1, mood = 'smile', k = 1) { if (k <= 0) return; const P = dens([[x - 46 * s, y - 40 * s], [x + 40 * s, y - 46 * s], [x + 46 * s, y + 40 * s], [x - 40 * s, y + 46 * s]], true, 6); shape(P, k, '#9adff0', { seed: 900 });
   g.fillStyle = INK; g.beginPath(); g.arc(x - 14 * s, y - 6 * s, 4.5 * s, 0, TAU); g.arc(x + 16 * s, y - 8 * s, 4.5 * s, 0, TAU); g.fill();
   ink(mood === 'oh' ? circle(x + 2 * s, y + 18 * s, 7 * s, 16) : mood === 'flat' ? [[x - 10 * s, y + 18 * s], [x + 14 * s, y + 16 * s]] : [[x - 14 * s, y + 12 * s], [x + 1 * s, y + 22 * s], [x + 16 * s, y + 10 * s]], 1, { w: 3, seed: 901 });
   if (mood === 'shrug') { ink([[x - 50 * s, y + 10 * s], [x - 80 * s, y - 20 * s]], 1, { seed: 903 }); ink([[x + 50 * s, y + 10 * s], [x + 80 * s, y - 20 * s]], 1, { seed: 904 }); } }
-function card(t) { g.save(); g.shadowColor = 'rgba(0,0,0,.4)'; g.shadowBlur = 20; g.shadowOffsetY = 8; g.fillStyle = '#f4f4ef'; g.fillRect(SX0, 1150, SX1 - SX0, 205); g.restore();
-  let i = -1; for (let k = 0; k < PH.length - 1; k++) if (t >= PH[k].start - .1 && t < PH[k + 1].start - .1) i = k; if (i < 0) return; const p = PH[i];
-  g.save(); g.font = '400 48px Snig'; const words = p.cap.replace(/\*\*/g, '').split(' '), lines = [[]]; let lw = 0; words.forEach(w => { const ww = g.measureText(w + ' ').width; if (lw + ww > 760 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push(w); lw += ww; });
-  const total = words.join(' ').length, shown = Math.floor(clamp((t - p.start + .05) / Math.max(.6, (p.end - p.start) * .8)) * total); let c = 0; g.fillStyle = INK;     // typed on, letter by letter, like the demo's caption card
-  lines.forEach((ln, j) => { let str = ln.join(' '); if (c + str.length > shown) str = str.slice(0, Math.max(0, shown - c)); g.fillText(str, 100, 1218 + j * 58); c += ln.join(' ').length + 1; }); g.restore(); }
+function card(t) { g.save(); g.shadowColor = 'rgba(0,0,0,.4)'; g.shadowBlur = 20; g.shadowOffsetY = 8; g.fillStyle = '#f4f4ef'; g.fillRect(SX0, 1160, SX1 - SX0, 202); g.restore();
+  let i = -1; for (let k = 0; k < PH.length - 1; k++) if (t >= PH[k].start - .1 && t < PH[k + 1].start - .1) i = k;
+  if (i < 0) { if (t >= 0 && t < PH[0].start) { g.save(); g.font = '400 42px Snig'; g.fillStyle = INK; g.fillText('Hot vs cold?', 100, 1213); g.restore(); } return; } const p = PH[i];
+  g.save(); g.font = '400 42px Snig'; const words = p.cap.replace(/\*\*/g, '').split(' '), lines = [[]]; let lw = 0; words.forEach(w => { const ww = g.measureText(w + ' ').width; if (lw + ww > 800 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push(w); lw += ww; });
+  const total = words.join(' ').length, shown = Math.floor(Math.max(0, t - p.start + .05) * 120); let c = 0; g.fillStyle = INK;     // typed on, letter by letter, like the demo's caption card   // typed at 120 characters/s
+  lines.forEach((ln, j) => { let str = ln.join(' '); if (c + str.length > shown) str = str.slice(0, Math.max(0, shown - c)); g.fillText(str, 100, 1213 + j * 48); c += ln.join(' ').length + 1; }); g.restore(); }
 
 // ---------- objects ----------
 function mug(x, y, k, hot, o = {}) { const P = dens([[x - 80, y - 120], [x + 80, y - 120], [x + 66, y + 60], [x - 66, y + 60]], true); shape(P, k, hot ? RED : BLUE, { seed: hot ? 10 : 20, a: .55 }); ink(dens([[x + 78, y - 80], [x + 120, y - 70], [x + 118, y], [x + 72, y + 10]], false), k, { seed: hot ? 11 : 21 });
@@ -64,8 +66,8 @@ function stick(x, y, k, seed, o = {}) { ink(circle(x, y - 150, 28, 24), k, { see
 // ---------- scenes ----------
 const SC = [], r = (i, d = 0) => s(i) + d;
 SC[0] = (lt) => { freezer(640, 560, 300, 480, 1); mug(270, 860, 1, true); mug(500, 900, 1, false); txt('?', 790, 820, 150, 1, { col: PURP }); title('Hot vs ', 'cold', '?'); return { sc: 1, mood: 'oh' }; };
-SC[1] = (lt) => { chart(180, 560, 640, 420, clamp(lt / .8), { xl: '', yl: 'votes' }); shape(rect(260, 700, 140, 280), clamp((lt - .5) / .8), BLUE, { seed: 50 }); shape(rect(560, 880, 140, 100), clamp((lt - 1.6) / .8), RED, { seed: 51 });
-  txt('cold', 330, 1040, 40, lt - .8); txt('hot', 630, 1040, 40, lt - 1.9); txt('most people', 330, 680, 34, lt - 1); txt('some swear', 630, 860, 34, lt - 2.1); title('Which ', 'freezes', ' first?'); return { sc: 2, mood: 'smile' }; };
+SC[1] = (lt) => { stick(300, 1060, clamp(lt / .8), 50); stick(760, 1060, clamp((lt - 1.2) / .8), 55, { wave: true });
+  for (const [x, y, w2, word, col, k] of [[330, 680, 300, 'cold, obviously.', BLUE, lt - .5], [740, 680, 240, 'hot!', RED, lt - 1.8]]) { shape(dens(Array.from({ length: 24 }, (_, i) => { const a = i / 24 * TAU; return [x + Math.cos(a) * w2 / 2 * (1 + .06 * Math.sin(a * 7)), y + Math.sin(a) * 90 * (1 + .06 * Math.sin(a * 7))]; }), true, 10), clamp(k / .6), null, { seed: 52 + x }); ink(circle(x - 40, y + 130, 16, 16), clamp(k / .6), { seed: 53 + x }); ink(circle(x - 60, y + 175, 9, 12), clamp(k / .6), { seed: 54 + x }); txt(word, x, y + 14, 44, k - .3, { col }); } title('Which ', 'freezes', ' first?'); return { sc: 2, mood: 'smile' }; };
 SC[2] = (lt) => { bust(260, 820, 'Aristotle', clamp(lt / .9), 60); bust(540, 820, 'Bacon', clamp((lt - 1.2) / .9), 62); bust(820, 820, 'Descartes', clamp((lt - 1.8) / .9), 64); txt('"warmed water freezes quickly"', 540, 600, 34, lt - .6, { f: 'Snig', wt: 400 }); title('An ', 'old', ' idea'); return { sc: 3, mood: 'smile' }; };
 SC[3] = (lt) => { stick(420, 1020, clamp(lt / 1), 70, { wave: true }); shape(rect(600, 640, 300, 200), clamp((lt - .6) / .8), MINT, { seed: 72 }); ink(dens([[600, 640], [750, 560], [900, 640]], false), clamp((lt - .6) / .8), { seed: 73 }); txt('school', 750, 760, 40, lt - 1.2); txt('Tanzania', 750, 900, 40, lt - 1.4, { col: PURP });
   txt('Erasto Mpemba', 420, 720, 46, lt - 1.8); title('A schoolboy, ', 'Mpemba'); return { sc: 4, mood: 'smile' }; };
@@ -102,9 +104,11 @@ SC[15] = (lt) => { mug(330, 860, 1, true); mug(750, 900, 1, false); for (const [
 SC[16] = (lt) => { const k = clamp(lt / .5); txt('Follow for more of', CX, 700, 64, k, { f: 'SnigX', wt: 800 }); g.save(); g.font = '800 64px SnigX'; const w2 = g.measureText('how it really works.').width; g.fillStyle = MINT; g.globalAlpha = k; g.fillRect(CX - w2 / 2, 775, w2 * clamp((lt - .3) / .5), 22); g.restore(); txt('how it really works.', CX, 790, 64, k, { f: 'SnigX', wt: 800 });
   txt("A new 'wait, really?' every day.", CX, 880, 44, lt - .6, { f: 'Snig', wt: 400 }); txt('@howitreallyworkstudio', CX, 950, 40, lt - .8, { f: 'Mono', wt: 600, col: PURP }); title('Hot vs ', 'cold', '.'); return { sc: 17, mood: 'smile' }; };
 
+// per-scene zoom of the drawing on the taller sheet [scale, centre x]; the freezer, mugs and the 1 cm trap get the biggest
+const ZOOM = { 0: [1.22, 560], 5: [1.15, 590], 10: [1.28, 600], 11: [1.3, 540], 13: [1.15, 530], 16: [1.1, 540] };
 const START = PH.map(p => p.start); START[0] = 0;
 function sceneAt(t) { let k = 0; for (let i = 0; i < SC.length; i++) if (t >= START[i] - .2) k = i; return k; }
-function draw(t) { ST = Math.floor(t * 12); const k = sceneAt(t), lt = k === 0 ? 9 : t - (START[k] - .2); board(); sheet(k + 1); const st = SC[k](lt); cube(170, 1030, .9, st.mood); if (k < SC.length - 1) card(t); else card(-1); }
+function draw(t) { ST = Math.floor(t * 12); const k = sceneAt(t), lt = k === 0 ? 9 : t - (START[k] - .2); board(); sheet(k + 1); g.save(); g.beginPath(); g.rect(SX0, SY0, SX1 - SX0, SY1 - SY0); g.clip(); const [zs, zx] = ZOOM[k] || [1.17, 540]; g.translate(540, 770); g.scale(zs, zs); g.translate(-zx, -790); TT = null; const st = SC[k](lt); g.restore(); drawTitle(); cube(165, 1085, .9, st.mood); if (k < SC.length - 1) card(t); else card(-1); }
 const F0 = document.createElement('canvas'); F0.width = W; F0.height = H; { const keep = g; g = F0.getContext('2d'); draw(0); g = keep; }
 function frame(t) { draw(t); const k = ss(TOT - .5, TOT, t) * .4; if (k > 0) { g.save(); g.globalAlpha = k; g.drawImage(F0, 0, 0); g.restore(); } }
 
@@ -114,5 +118,5 @@ window.CUES = [['pop', .3], ['tick', 1.2], ['tick', 2.4], ['whoosh', r(1, -.2)],
 window.DUR = TOT;
 window.seek = t => frame(t);
 window.render = window.seek;
-window.thumb = () => { ST = 30; board(); sheet(1); freezer(640, 560, 300, 480, 1); mug(270, 860, 1, true); mug(500, 900, 1, false); cube(170, 1030, .9, 'oh'); g.save(); g.font = '800 104px SnigX'; g.fillStyle = MINT; g.fillRect(60, 1210, 560, 34); g.fillStyle = '#f4f6fb'; g.fillText('Does HOT', 64, 1180); g.fillText('freeze first?', 64, 1240); g.restore(); title('Hot vs ', 'cold', '?'); };
+window.thumb = () => { ST = 30; board(); sheet(1); freezer(640, 560, 300, 480, 1); mug(270, 860, 1, true); mug(500, 900, 1, false); cube(170, 1030, .9, 'oh'); g.save(); g.font = '800 104px SnigX'; g.fillStyle = MINT; g.fillRect(60, 1210, 560, 34); g.fillStyle = '#f4f6fb'; g.fillText('Does HOT', 64, 1180); g.fillText('freeze first?', 64, 1240); g.restore(); title('Hot vs ', 'cold', '?'); drawTitle(); };
 window.seek(0); window.ready = true; window.READY = true;

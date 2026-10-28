@@ -6,7 +6,7 @@
 // Batch N layout: captions inside x 80-880, bottom at y 1355; titles at y 270-460; silhouettes inside y 250-1120; badge strip y 1366-1440 free.
 await Promise.all(['700 96px Bask', 'italic 400 52px BaskI', '400 50px Bask'].map(f => document.fonts.load(f)));
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, TOT = TL.total;
-const W = 1080, H = 1920, TAU = Math.PI * 2, CX = 540, HZ = 1120;          // HZ: sand horizon
+const W = 1080, H = 1920, TAU = Math.PI * 2, CX = 540, HZ = 1010, DY = -110;   // HZ: sand horizon; DY: scene drawings are lifted to stand on it
 const cv = document.getElementById('c'); cv.width = W; cv.height = H; let g = cv.getContext('2d');
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), lerp = (a, b, k) => a + (b - a) * k;
 const ss = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 - 2 * k); }, eo = k => 1 - Math.pow(1 - clamp(k), 3);
@@ -27,7 +27,7 @@ function grain(t) { const q = Math.floor(t * 12), pat = g.createPattern(GRAIN[q 
 const [Mc, Mg] = mk(W, H);
 function sandFill(path, col = SAND, a = 1) { g.save(); g.globalAlpha = a; g.fillStyle = col; g.fill(path); g.globalAlpha = a * .55; g.lineWidth = 3; g.strokeStyle = SAND2; g.setLineDash([2, 5]); g.stroke(path); g.restore(); }
 const PTS = new Map();
-function inside(path, key, n, box) { if (PTS.has(key)) return PTS.get(key); const out = []; let tries = 0; while (out.length < n && tries < n * 40) { tries++; const x = box[0] + hash(tries * 1.31 + key.length) * box[2], y = box[1] + hash(tries * 2.77 + 9) * box[3]; if (g.isPointInPath(path, x, y)) out.push([x, y]); } PTS.set(key, out); return out; }
+function inside(path, key, n, box) { if (PTS.has(key)) return PTS.get(key); const out = []; let tries = 0; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); while (out.length < n && tries < n * 40) { tries++; const x = box[0] + hash(tries * 1.31 + key.length) * box[2], y = box[1] + hash(tries * 2.77 + 9) * box[3]; if (g.isPointInPath(path, x, y)) out.push([x, y]); } g.restore(); PTS.set(key, out); return out; }
 // k: 0 = scattered sand above, .7 = grains settled, 1 = solid. out: 0..1 sweeps it away to the right
 function sandShape(path, key, box, k, o = {}) { if (k <= 0) return; const P = inside(path, key, o.n || 520, box), u = eo(clamp(k / .75)), solid = ss(.6, 1, k), out = o.out || 0;
   if (solid > 0) { g.save(); if (out > 0) { g.beginPath(); g.rect(lerp(-80, 1160, eo(out)), 0, 2000, H); g.clip(); } sandFill(path, o.col || SAND, solid); g.restore(); }
@@ -42,15 +42,32 @@ function rays(x, y, r, a, t) { if (a <= 0) return; g.save(); g.globalAlpha = a; 
   g.strokeStyle = 'rgba(255,244,210,.5)'; g.lineWidth = 6; for (let i = 0; i < 18; i++) { const an = i / 18 * TAU + t * .05; g.beginPath(); g.moveTo(x + Math.cos(an) * r * 1.2, y + Math.sin(an) * r * 1.2); g.lineTo(x + Math.cos(an) * r * (2.2 + .5 * hash(i)), y + Math.sin(an) * r * (2.2 + .5 * hash(i))); g.stroke(); }
   g.fillStyle = LIGHT; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); g.restore(); }
 
+// ---------- sand drawings in the dark ground (light grains scratched in, drawn on progressively with a trickle at the tip) ----------
+function scratch(pts, k, w = 6) { if (k <= 0) return; let tot = 0; const Ls = [0]; for (let i = 1; i < pts.length; i++) { tot += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); Ls.push(tot); } const lim = tot * clamp(k);
+  g.save(); g.strokeStyle = 'rgba(214,186,130,.75)'; g.lineWidth = w; g.lineCap = 'round'; g.beginPath(); let tip = pts[0];
+  for (let i = 0; i < pts.length; i++) { if (Ls[i] > lim) { const a = pts[i - 1], b = pts[i], u = (lim - Ls[i - 1]) / (Ls[i] - Ls[i - 1] || 1); tip = [lerp(a[0], b[0], u), lerp(a[1], b[1], u)]; g.lineTo(...tip); break; } i ? g.lineTo(...pts[i]) : g.moveTo(...pts[i]); tip = pts[i]; } g.stroke();
+  if (k < 1) { g.fillStyle = 'rgba(236,212,160,.9)'; for (let j = 0; j < 14; j++) g.fillRect(tip[0] + (hash(j + ST2) - .5) * 14, tip[1] - 40 + hash(j * 3 + ST2) * 40, 3, 3); } g.restore(); }
+let ST2 = 0;
+const Dl = (x0, x1, y, n, f) => Array.from({ length: n + 1 }, (_, i) => { const u = i / n; return [lerp(x0, x1, u), y + f(u)]; });
+function doodle(k, lt, t) { ST2 = Math.floor(t * 12); const y = 1068, d = clamp((lt - .1) / 1.6);
+  const thermo = (x, lev, kk) => { scratch([[x, y - 60], [x, y + 40]], kk, 18); scratch(Array.from({ length: 21 }, (_, i) => [x + Math.cos(i / 20 * TAU) * 22, y + 62 + Math.sin(i / 20 * TAU) * 22]), kk, 6); if (kk >= 1) { g.fillStyle = 'rgba(236,212,160,.9)'; g.fillRect(x - 5, y + 40 - 100 * lev, 10, 100 * lev); } };
+  if (k <= 1) { scratch(Dl(120, 760, y, 40, u => 8 * Math.sin(u * 18 + t * 2)), d); thermo(860, lerp(.8, .25, ss(.5, 2.5, lt)), clamp(d * 2)); return; }
+  if (k <= 4) { const xs = [150, 380, 610, 840], lab = ['cold', 'nerve', 'muscle', 'hair up']; xs.forEach((x, j) => { const kk = clamp(d * 4 - j); scratch(Array.from({ length: 21 }, (_, i) => [x + Math.cos(i / 20 * TAU) * 34, y + Math.sin(i / 20 * TAU) * 34]), kk, 5); if (j < 3) scratch([[x + 44, y], [xs[j + 1] - 44, y]], clamp(d * 4 - j - .5), 5); if (kk > .9) { g.save(); g.font = 'italic 400 30px BaskI'; g.textAlign = 'center'; g.fillStyle = 'rgba(236,212,160,.95)'; g.fillText(lab[j], x, y + 66); g.restore(); } }); return; }
+  if (k <= 8) { const fur = k <= 6 ? 1 : k === 7 ? .7 : lerp(.7, .15, ss(.4, 2.4, lt)); scratch(Dl(110, 870, y + 10, 60, u => -((Math.floor(u * 60) % 2) ? 40 * fur * (.6 + .4 * hash(Math.floor(u * 60))) : 0)), d, 5); return; }
+  if (k <= 10 || k === 13) { scratch(Dl(110, 640, y, 30, u => 14 * Math.sin(u * 9)), d, 6); for (let j = 0; j < 5; j++) { const kk = clamp(d * 3 - 1 - j * .2); if (kk > 0) { g.fillStyle = `rgba(236,212,160,${.9 * kk})`; g.beginPath(); g.arc(700 + j * 44, y + (j % 2) * 16, 14, 0, TAU); g.fill(); } } return; }
+  if (k <= 14) { scratch([[110, y + 40], [870, y + 40]], d, 5); const days = Math.floor(clamp(d * 1.2) * 8); for (let j = 0; j < days; j++) { const x = 140 + j * 100, h = 10 + j * 8 * (k >= 12 ? 1 : .4); scratch([[x, y + 40], [x, y + 40 - h]], 1, 5); } g.save(); g.font = 'italic 400 30px BaskI'; g.fillStyle = 'rgba(236,212,160,.9)'; g.globalAlpha = clamp(d * 2); g.fillText('days of cold (mice)', 620, y - 6); g.restore(); return; }
+  if (k <= 16) { thermo(860, .3, clamp(d * 2)); scratch(Dl(120, 760, y, 40, u => 8 * Math.sin(u * 18 + t * 2)), d); } }
+
 // ---------- type (demo: serif title + italic sub-line, top-left) ----------
-function title(str, sub, k, o = {}) { if (k <= 0) return; const a = clamp(k / .5); g.save(); g.globalAlpha = a; g.fillStyle = o.col || SAND; g.textBaseline = 'alphabetic';
+let TT = []; function title(...args) { TT.push(args); }
+function drawTitle(str, sub, k, o = {}) { if (k <= 0) return; const a = clamp(k / .5); g.save(); g.globalAlpha = a; g.fillStyle = o.col || SAND; g.textBaseline = 'alphabetic';
   g.font = `700 ${o.size || 96}px Bask`; g.fillText(str, o.x ?? 90, o.y ?? 360); if (sub) { g.font = `italic 400 ${o.subSize || 50}px BaskI`; g.fillText(sub, (o.x ?? 90) + 4, (o.y ?? 360) + 70); } g.restore(); }
 function label(str, x, y, k, o = {}) { if (k <= 0) return; g.save(); g.globalAlpha = clamp(k / .4); g.font = `italic 400 ${o.size || 46}px BaskI`; g.textAlign = o.align || 'center'; g.fillStyle = o.col || SAND; g.fillText(str, x, y); g.restore(); }
 function caption(t) { let i = -1; for (let k = 0; k < PH.length - 1; k++) if (t >= PH[k].start - .1 && t < PH[k + 1].start - .1) i = k; if (i < 0) return; const p = PH[i];
-  g.save(); g.font = '400 50px Bask'; let bold = false; const toks = p.cap.split(' ').map(w => { if (w.startsWith('**')) bold = true; const r = { w: w.replace(/\*\*/g, ''), b: bold }; if (w.replace(/[.,!?:;]+$/, '').endsWith('**')) bold = false; return r; });
-  const lines = [[]]; let lw = 0; toks.forEach(o => { const ww = g.measureText(o.w + ' ').width; if (lw + ww > 760 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...o, ww }); lw += ww; });
-  const lh = 64, y0 = 1355 - lines.length * lh + 46, a = clamp((t - p.start + .1) / .3), prog = clamp((t - p.start) / Math.max(.6, p.end - p.start - .2)), n = toks.length; let idx = 0;
-  lines.forEach((ln, j) => { const tw = ln.reduce((q, o) => q + o.ww, 0); let x = 480 - tw / 2; ln.forEach(o => { g.font = o.b ? 'italic 400 52px BaskI' : '400 50px Bask'; g.fillStyle = o.b ? '#f6c96a' : CREAM; g.globalAlpha = a * (idx / n <= prog + .03 ? 1 : .45); g.fillText(o.w, x, y0 + j * lh); x += o.ww; idx++; }); });
+  g.save(); g.font = '400 46px Bask'; let bold = false; const toks = p.cap.split(' ').map(w => { if (w.startsWith('**')) bold = true; const r = { w: w.replace(/\*\*/g, ''), b: bold }; if (w.replace(/[.,!?:;]+$/, '').endsWith('**')) bold = false; return r; });
+  const lines = [[]]; let lw = 0; toks.forEach(o => { const ww = g.measureText(o.w + ' ').width; if (lw + ww > 800 && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...o, ww }); lw += ww; });
+  const lh = 58, y0 = 1355 - lines.length * lh + 46, a = clamp((t - p.start + .1) / .3), prog = clamp((t - p.start) / Math.max(.6, p.end - p.start - .2)), n = toks.length; let idx = 0;
+  lines.forEach((ln, j) => { const tw = ln.reduce((q, o) => q + o.ww, 0); let x = 480 - tw / 2; ln.forEach(o => { g.font = o.b ? 'italic 400 48px BaskI' : '400 46px Bask'; g.fillStyle = o.b ? '#f6c96a' : CREAM; g.globalAlpha = a * (idx / n <= prog + .03 ? 1 : .45); g.fillText(o.w, x, y0 + j * lh); x += o.ww; idx++; }); });
   g.restore(); }
 
 // ---------- silhouettes (Path2D builders) ----------
@@ -91,19 +108,22 @@ function skin(k, up, o = {}) { const y0 = 640, fx = 420; const surf = new Path2D
 // ---------- scenes ----------
 const SC = [];
 const L = (i, t) => t - (i ? s(i) - .2 : -1);
-SC[0] = (t, lt) => { const P = arm(440, 720, 1); sandShape(P, 'arm', [0, 560, 1080, 240], 1); const bumps = ss(.6, 2.4, lt);
-  g.fillStyle = SAND; for (let i = 0; i < 26; i++) { const x = 120 + i * 32 + 6 * hash(i), y = 640 - 8 * hash(i * 3), r = 6 + 6 * bumps; g.beginPath(); g.arc(x, y + 8, r, Math.PI, 0); g.fill(); g.strokeStyle = SAND; g.lineWidth = 3; g.beginPath(); g.moveTo(x, y + 4); g.lineTo(x + lerp(14, 2, bumps), y - lerp(10, 30, bumps)); g.stroke(); }
-  for (let i = 0; i < 9; i++) { const y = 300 + i * 34, x = ((step(t) * 600 + i * 230) % 1300) - 200; g.fillStyle = 'rgba(74,58,40,.35)'; g.fillRect(x, y + 120, 160 + 60 * hash(i), 4); }
-  sandShape(goose(820, 1080, .8, Math.floor(t * 4) % 2), 'goose', [700, 820, 340, 300], 1); title('Why goose bumps?', 'a cold breeze', 1, { y: 330, size: 90 }); };
+let ARMTOP = null;
+SC[0] = (t, lt) => { const P = arm(300, 880, 1.4); sandShape(P, 'armBig', [0, 600, 1080, 420], 1, { n: 900 }); const bumps = ss(.3, 2.2, lt);
+  if (!ARMTOP) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); ARMTOP = Array.from({ length: 16 }, (_, i) => { const x = 20 + i * 58; for (let y = 600; y < 1000; y += 2) if (g.isPointInPath(P, x, y)) return [x, y]; return [x, 900]; }); g.restore(); }
+  g.fillStyle = SAND; g.strokeStyle = SAND; g.lineCap = 'round'; ARMTOP.forEach(([x, y], i) => { const r = 8 + 14 * bumps * (.8 + .4 * hash(i));
+    g.beginPath(); g.arc(x, y + 4, r, Math.PI, 0); g.fill(); g.lineWidth = 5; g.beginPath(); g.moveTo(x, y + 2 - r * .6); g.lineTo(x + lerp(46, 8, bumps), y - r * .6 - lerp(14, 72, bumps)); g.stroke(); });
+  for (let i = 0; i < 9; i++) { const y = 360 + i * 30, x = ((step(t) * 600 + i * 230) % 1300) - 200; g.fillStyle = 'rgba(74,58,40,.35)'; g.fillRect(x, y + 120, 160 + 60 * hash(i), 4); }
+  title('Why goose bumps?', 'a cold breeze', 1, { y: 330, size: 90 }); };
 SC[1] = (t, lt) => { sandShape(goose(560, 1060, 1.5), 'goose2', [330, 660, 520, 480], clamp(lt / 1.4), {}); const f = new Path2D(); f.moveTo(760, 480); f.bezierCurveTo(860, 420, 940, 330, 960, 300); f.bezierCurveTo(930, 380, 860, 470, 770, 500); f.closePath(); sandShape(f, 'feather', [750, 290, 230, 230], clamp((lt - .8) / 1.2));
   if (lt > 2.4) { g.save(); g.strokeStyle = '#8a2a1a'; g.lineWidth = 12; g.globalAlpha = clamp((lt - 2.4) / .3); g.beginPath(); g.moveTo(740, 300); g.lineTo(980, 520); g.stroke(); g.restore(); } title('No feathers.', 'so why?', lt - .3, { y: 330 }); };
 SC[2] = (t, lt) => { skin(clamp(lt / 1.3), 0); label('arrector pili', 760, 960, lt - 1.4, { col: CREAM }); title('Under every hair', 'a tiny muscle', lt - .2, { y: 330, size: 84 }); };
 SC[3] = (t, lt) => { skin(1, 0, { nerve: clamp((lt - .3) / .8) }); label('nerve', 900, 1060, lt - .8, { col: CREAM }); title('Cold!', 'a nerve says: squeeze', lt - .2, { y: 330 }); rays(880, 330, 50, .6, t); };
 SC[4] = (t, lt) => { const up = ss(.3, 2.2, lt); skin(1, up, { nerve: 1 }); label('the bump', 280, 560, lt - 2, {}); title('Pull!', 'the hair stands up', lt - .2, { y: 330 }); };
-SC[5] = (t, lt) => { const pf = ss(1.6, 3.4, lt); sandShape(cat(470, 1110, 1.3, pf), 'cat' + Math.round(pf * 6), [150, 400, 700, 720], lt < 1.5 ? clamp(lt / 1.4) : 1, { n: 600 }); title('A cat in the cold', 'every hair stands up', lt - .2, { y: 330, size: 84 }); };
-SC[6] = (t, lt) => { rays(470, 790, 150, ss(.3, 1.4, lt) * .7, t); sandShape(cat(470, 1110, 1.3, 1), 'cat6', [150, 400, 700, 720], 1); title('A fluffy coat', 'of trapped warm air', lt - .2, { y: 330, size: 88 }); };
-SC[7] = (t, lt) => { sandShape(person(620, 1110, 1.1, 1, 1), 'ape', [380, 380, 520, 740], clamp(lt / 1.6), { n: 600 }); title('Our hairy', 'ancestors', lt - .2, { y: 330 }); rays(300, 640, 44, .55, t); };
-SC[8] = (t, lt) => { const loss = ss(.4, 2.4, lt); sandShape(person(620, 1110, 1.1, 1 - loss, 1 - loss), 'man' + Math.round(loss * 5), [380, 380, 520, 740], 1, { n: 500 });
+SC[5] = (t, lt) => { const pf = ss(1.6, 3.4, lt); sandShape(cat(470, 1110, 1.08, pf), 'cat' + Math.round(pf * 6), [200, 520, 640, 620], lt < 1.5 ? clamp(lt / 1.4) : 1, { n: 600 }); title('A cat in the cold', 'every hair stands up', lt - .2, { y: 330, size: 84 }); };
+SC[6] = (t, lt) => { rays(470, 790, 150, ss(.3, 1.4, lt) * .7, t); sandShape(cat(470, 1110, 1.08, 1), 'cat6', [200, 520, 640, 620], 1); title('A fluffy coat', 'of trapped warm air', lt - .2, { y: 330, size: 88 }); };
+SC[7] = (t, lt) => { sandShape(person(620, 1110, .95, 1, 1), 'ape', [400, 460, 480, 660], clamp(lt / 1.6), { n: 600 }); title('Our hairy', 'ancestors', lt - .2, { y: 330 }); rays(300, 640, 44, .55, t); };
+SC[8] = (t, lt) => { const loss = ss(.4, 2.4, lt); sandShape(person(620, 1110, .95, 1 - loss, 1 - loss), 'man' + Math.round(loss * 5), [400, 460, 480, 660], 1, { n: 500 });
   g.fillStyle = SAND; for (let i = 0; i < 60; i++) { const f = clamp(loss * 1.4 - hash(i) * .4); if (f <= 0 || f >= 1) continue; g.globalAlpha = 1 - f; g.fillRect(620 + (hash(i * 3) - .5) * 260 + f * 400, 700 + hash(i * 7) * 380 - f * 80, 4, 3); } g.globalAlpha = 1; title('Mostly', 'a leftover', lt - .2, { y: 330 }); };
 SC[9] = (t, lt) => { const mic = new Path2D(); mic.moveTo(380, 1110); mic.lineTo(780, 1110); mic.lineTo(760, 1060); mic.lineTo(400, 1060); mic.closePath();           // base
   mic.moveTo(620, 1060); mic.bezierCurveTo(800, 980, 800, 720, 640, 600); mic.lineTo(600, 640); mic.bezierCurveTo(720, 740, 720, 940, 560, 1060); mic.closePath();   // arm
@@ -114,12 +134,12 @@ SC[9] = (t, lt) => { const mic = new Path2D(); mic.moveTo(380, 1110); mic.lineTo
 SC[10] = (t, lt) => { skin(1, .2, { nerve: 1, stem: clamp((lt - .3) / .6), stemLink: clamp((lt - 1) / .8) }); label('hair stem cells', 470, 1060, lt - .8, { col: CREAM }); title('A second wire', 'to the hair-growing cells', lt - .2, { y: 330, size: 84 }); };
 SC[11] = (t, lt) => { sandShape(mouse(600, 1100, 1.6, 0), 'mouse', [0, 800, 1080, 310], clamp(lt / 1.2), { n: 700 }); for (let i = 0; i < 50; i++) { const y = 260 + ((hash(i) * 850 + step(t) * 90) % 850), x = 60 + hash(i * 3) * 960; g.fillStyle = 'rgba(255,245,220,.8)'; g.beginPath(); g.arc(x, y, 4 + 3 * hash(i * 5), 0, TAU); g.fill(); }
   const fl = Math.floor(t * 8) % 2; g.save(); g.strokeStyle = `rgba(255,240,200,${.5 + .4 * fl})`; g.lineWidth = 8; g.shadowColor = 'rgba(255,230,170,.9)'; g.shadowBlur = 20; g.beginPath(); g.moveTo(560, 1010); g.lineTo(620, 930); g.lineTo(590, 880); g.lineTo(680, 790); g.stroke(); g.restore(); title('In mice', 'a long cold spell', lt - .2, { y: 330 }); };
-SC[12] = (t, lt) => { const fu = ss(.2, 2.6, lt); sandShape(mouse(600, 1100, 1.6, fu * 2.2), 'mouseF' + Math.round(fu * 6), [0, 760, 1080, 350], 1, { n: 700 }); title('More fur', 'grew faster', lt - .2, { y: 330 }); rays(840, 600, 46, .5, t); };
+SC[12] = (t, lt) => { const fu = ss(.2, 2.6, lt); sandShape(mouse(600, 1100, 1.6, fu * 2.2), 'mouseF' + Math.round(fu * 6), [0, 760, 1080, 350], 1, { n: 700 }); title('More fur', 'in mice: grew faster', lt - .2, { y: 330 }); rays(840, 600, 46, .5, t); };
 SC[13] = (t, lt) => { skin(1, .3, { nerve: 1, stem: 1, stemLink: 1 }); const pk = ss(.4, 1.2, lt); g.save(); g.strokeStyle = `rgba(255,241,201,${pk})`; g.lineWidth = 6; g.setLineDash([12, 10]); g.beginPath(); g.ellipse(640, 760, 120, 90, -.6, 0, TAU); g.stroke(); g.restore();
   label('the muscle holds the nerve in place', 540, 1070, lt - 1, { col: CREAM, size: 42 }); title('Plugged in', 'by the goosebump muscle', lt - .2, { y: 330, size: 90 }); };
 SC[14] = (t, lt) => { g.save(); g.fillStyle = 'rgba(43,32,22,.25)'; g.fillRect(538, 470, 4, 640); g.restore(); sandShape(cat(290, 1110, .55, ss(.3, 1.2, lt)), 'catQ' + Math.round(ss(.3, 1.2, lt) * 4), [150, 800, 320, 320], 1); sandShape(mouse(790, 1100, .7, ss(1.6, 3.2, lt) * 2.4), 'mouseL' + Math.round(ss(1.6, 3.2, lt) * 5), [560, 990, 460, 130], clamp((lt - 1.2) / .8));
   label('quick cold', 290, 640, lt - .2, { size: 50 }); label('hair stands up', 290, 700, lt - .4, { size: 40 }); label('long cold', 790, 640, lt - 1.4, { size: 50 }); label('more fur (mice)', 790, 700, lt - 1.6, { size: 40 }); title('Short vs long', '', lt - .1, { y: 330, size: 90 }); };
-SC[15] = (t, lt) => { rays(620, 760, 90, ss(.6, 2, lt) * .5, t); const p = person(620, 1110, 1.1, 0, 0), ghost = person(620, 1110, 1.1, 1.6, 0); g.save(); g.globalAlpha = .45 * ss(.4, 1.6, lt); g.fillStyle = '#7a5f3e'; g.fill(ghost); g.restore(); sandShape(p, 'manF', [380, 380, 520, 740], 1);
+SC[15] = (t, lt) => { rays(620, 760, 90, ss(.6, 2, lt) * .5, t); const p = person(620, 1110, .95, 0, 0), ghost = person(620, 1110, .95, 1.6, 0); g.save(); g.globalAlpha = .45 * ss(.4, 1.6, lt); g.fillStyle = '#7a5f3e'; g.fill(ghost); g.restore(); sandShape(p, 'manF', [400, 460, 480, 660], 1);
   title('An old fur coat', 'still keeping you warm', lt - .2, { y: 330, size: 88 }); };
 SC[16] = (t, lt) => { const gm = new Path2D(); gm.rect(380, 930, 320, 140); gm.rect(530, 800, 26, 140); gm.moveTo(540, 820); gm.bezierCurveTo(600, 620, 760, 560, 860, 520); gm.lineTo(900, 700); gm.bezierCurveTo(800, 700, 640, 760, 556, 850); gm.closePath(); sandShape(gm, 'gramo', [370, 500, 540, 580], clamp(lt / 1.2));
   for (let j = 0; j < 4; j++) { const ph = (t * .5 + j * .25) % 1; label('♪', 760 + ph * 160 + 30 * Math.sin(ph * 6 + j), 560 - ph * 260, 1, { size: 80, col: SAND2 }); } title('Music too?', 'yes or no', lt - .2, { y: 330 }); };
@@ -128,7 +148,7 @@ SC[17] = (t, lt) => { rays(540, 560, 70, .6, t); g.save(); g.textAlign = 'center
 
 const START = PH.map(p => p.start); START[0] = 0;
 function sceneAt(t) { let k = 0; for (let i = 0; i < SC.length; i++) if (t >= START[i] - .2) k = i; return k; }
-function draw(t) { const k = sceneAt(t), lt = k === 0 ? t + 1 : t - (START[k] - .2); table(t); ground(t); SC[k](t, lt); if (k > 0 && lt < .55) sweep(lt / .55); if (k < SC.length - 1) caption(t); grain(t); }
+function draw(t) { const k = sceneAt(t), lt = k === 0 ? t + 1 : t - (START[k] - .2); table(t); ground(t); TT = []; g.save(); g.translate(0, DY); SC[k](t, lt); g.restore(); TT.forEach(a => drawTitle(...a)); doodle(k, lt, t); if (k > 0 && lt < .55) sweep(lt / .55); if (k < SC.length - 1) caption(t); grain(t); }
 const F0 = document.createElement('canvas'); F0.width = W; F0.height = H; { const keep = g; g = F0.getContext('2d'); draw(0); g = keep; }
 function frame(t) { draw(t); const k = ss(TOT - .5, TOT, t) * .4; if (k > 0) { g.save(); g.globalAlpha = k; g.drawImage(F0, 0, 0); g.restore(); } }
 
@@ -140,5 +160,5 @@ window.CUES = [['whoosh', .3], ['whoosh', 1.6], ['pop', 2.2], ['whoosh', r(1, -.
 window.DUR = TOT;
 window.seek = t => frame(t);
 window.render = window.seek;
-window.thumb = () => { table(2); ground(2); sandShape(cat(470, 1110, 1.1, 1), 'catT', [220, 520, 600, 620], 1); rays(860, 560, 50, .6, 2); g.save(); g.fillStyle = SAND; g.font = '700 130px Bask'; g.fillText('Why', 90, 330); g.fillText('goose-', 90, 470); g.fillText('bumps?', 90, 610); g.restore(); grain(2); };
+window.thumb = () => { table(2); ground(2); g.save(); g.translate(0, DY); sandShape(cat(470, 1110, 1.1, 1), 'catT', [220, 520, 600, 620], 1); rays(860, 560, 50, .6, 2); g.restore(); g.save(); g.fillStyle = SAND; g.font = '700 130px Bask'; g.fillText('Why', 90, 330); g.fillText('goose-', 90, 470); g.fillText('bumps?', 90, 610); g.restore(); grain(2); };
 window.seek(0); window.ready = true; window.READY = true;
