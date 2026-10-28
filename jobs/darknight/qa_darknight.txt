@@ -1,5 +1,5 @@
 QA darknight: PASS   (/home/user/reel-render/jobs/darknight/darknight.mp4, 72.2 s)
-  PASS  static          longest no-change run 2.00 s (limit 4.0 s)
+  PASS  static          longest no-change run 2.25 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 2.5 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
@@ -9,7 +9,7 @@ QA darknight: PASS   (/home/user/reel-render/jobs/darknight/darknight.mp4, 72.2 
   PASS  length          72.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 6.4 (min 1.0), contrast 22.5 (min 18.0)
+  PASS  frame 0         edge 6.5 (min 1.0), contrast 23.0 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      darknight.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      darknight.mp4 1080x1920 SAR 1:1; darknight_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 47% of samples (median widest bar 0 px)
