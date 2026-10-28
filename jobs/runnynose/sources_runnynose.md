@@ -1,0 +1,16 @@
+# Sources: runnynose (why does your nose run when it's cold?)
+
+| Claim in the script | Source |
+|---|---|
+| The nose warms and humidifies (wets) every breath before it reaches the lungs | David King (Senior Lecturer, The University of Queensland) with Caitlin Saunders, "Why does your nose run when it's cold?", The Conversation, republished by ScienceAlert (Oct 13 2017): https://www.sciencealert.com/why-does-your-nose-run-when-it-s-cold [university]; Mitchell H. Grayson (pediatric allergist and immunologist, Medical College of Wisconsin) in Alicia Ault, "Ask Smithsonian: Why Does My Nose Run When It's Cold?" (Mar 21 2016): https://www.smithsonianmag.com/smithsonian-institution/ask-smithsonian-why-does-my-nose-run-when-its-cold-180958383/ ("Heating the air and mucous production are among the nose's primary activities") [medical school] |
+| Cold winter air is usually dry | Andrew Lane (director, Johns Hopkins Sinus Center), NPR, "Why Does Cold Weather Cause Runny Noses?" (Jan 24 2009): https://www.npr.org/2009/01/24/99844567/why-does-cold-weather-cause-runny-noses ("when it's very cold out, the air is usually dry as well") [medical school] |
+| Cold, dry air stimulates nerves in the nose, which signal the brain | King (UQ): cold, dry air "stimulates the nerves inside your nose"; Grayson (MCW): "essentially a nervous system response, mediated by chemical neurotransmitters" |
+| The brain sends extra blood to the nose to warm the air | King (UQ): the brain responds by "increasing the blood flow to the nose" |
+| Glands make more mucus and water | Grayson (MCW): "The compensatory action of the nose is to produce more mucous and more liquid"; neurotransmitters control the mucus-producing glands |
+| It often makes more than it needs, and the extra drips out | King (UQ): when the response is a little overactive, "moisture in excess of that needed to humidify this cold, dry air will drip from the nostrils"; Lane (NPR): "if it really makes a lot of fluid, then it starts to run out of the end of your nose" |
+| Second drip: warm, wet breath condenses at the cold tip of the nose, because cold air holds less water | Lane (NPR): warm breath condenses in cold air "because cold air can't hold as much moisture as warm air"; when you breathe out, "it comes to the very tip of your nose where the nose is cold, and the fluid collects there"; Grayson (MCW): "When that warm air runs smack up against cold air, the reaction is moisture" |
+| The name: cold-induced rhinitis, or "skier nose"; about 50-90% of people get it | King (UQ): "About 50-90 percent of people get a runny nose when it's cold. We call this 'cold-induced rhinitis', or 'skier nose'." The VO says "between half and nine out of ten" |
+| It isn't a germ: it's the nose's reflex | Grayson (MCW): a nervous-system response; King (UQ): the nose's compensating mechanism. The VO doesn't claim it prevents colds or that cold weather can't come with a cold |
+| Pinned: people with hay fever or asthma get it more | King (UQ): "People with asthma, eczema and hay fever seem to experience it more" |
+
+Not used: "the drip flushes out germs" and "cilia slow down in the cold" (a single physician's view in secondary coverage). No AAAAI page was found with this topic, so it isn't cited.
