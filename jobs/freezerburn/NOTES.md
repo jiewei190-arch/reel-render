@@ -41,7 +41,19 @@ My last two reels were gps (paper-lantern) and turkeysleepy (crayon-book).
 - [x] freezerburn_ep.mp4 (EP 70)
 - [x] Timely window: holiday leftovers season
 
-## QA (python3 -I reels/qa.py freezerburn)
+## v2 (main-session feedback: "pale and thin")
+- Pencil lines 2.1× heavier and darker (#231f2a); washes 35% stronger.
+- Every drawing is scaled to fill y 350-1150:
+  - steak at 2×, magnifier lens r 390;
+  - sublimation drops with three big arrows across the frame;
+  - ice-cream tub at 1.6×;
+  - a full-height 0°F thermometer inside the freezer box;
+  - bag 820×620.
+- Frame 0 is a big frosted package (box 150-930 × 470-1130) with a 1.55× steak and 26 sparkling ice crystals.
+- End card: the package moved down 50 px, end lines at y 1245/1315 on a soft backing.
+- Badge EP 70 checked at 3, 14, 22, 42.5, 51 and 59 s: it clears every title (hidden 5.7-11.8 s under "tiny ice crystals").
+
+## QA (python3 -I reels/qa.py freezerburn), v2 render
 ```
 QA freezerburn: PASS   (/home/user/reel-render/jobs/freezerburn/freezerburn.mp4, 68.2 s)
   PASS  static          longest no-change run 0.25 s (limit 4.0 s)
@@ -54,7 +66,7 @@ QA freezerburn: PASS   (/home/user/reel-render/jobs/freezerburn/freezerburn.mp4,
   PASS  length          68.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 6.5 (min 1.0), contrast 22.6 (min 18.0)
+  PASS  frame 0         edge 6.4 (min 1.0), contrast 26.0 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      freezerburn.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
