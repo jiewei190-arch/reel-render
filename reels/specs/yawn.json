@@ -1,0 +1,79 @@
+{
+ "name": "yawn",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  6,
+  7,
+  9,
+  11,
+  12
+ ],
+ "phrases": [
+  [
+   "See someone yawn, and you'll probably **yawn too.**",
+   "See someone yawn, and you'll probably yawn too."
+  ],
+  [
+   "But **why are yawns contagious?** Scientists still argue about it.",
+   "But why are yawns contagious? Scientists still argue about it."
+  ],
+  [
+   "Just **thinking about yawning** made most people in one study yawn, or want to.",
+   "Just thinking about yawning made most people in one study yawn, or want to."
+  ],
+  [
+   "A yawn is a **huge breath in,** a wide jaw stretch, then a long breath out.",
+   "A yawn is a huge breath in, a wide jaw stretch, then a long breath out."
+  ],
+  [
+   "Here's the strange part: catching yawns **isn't just a human thing.**",
+   "Here's the strange part: catching yawns isn't just a human thing."
+  ],
+  [
+   "In one study, **21 of 29 dogs** yawned after watching a person yawn. Later studies were mixed.",
+   "In one study, 21 of 29 dogs yawned after watching a person yawn. Later studies were mixed."
+  ],
+  [
+   "And some **chimpanzees** yawned more while watching videos of other chimps yawning.",
+   "And some chimpanzees yawned more while watching videos of other chimps yawning."
+  ],
+  [
+   "So why would a yawn spread? There are **two big ideas.**",
+   "So why would a yawn spread? There are two big ideas."
+  ],
+  [
+   "Idea one: **brain cooling.** A yawn may pull in cooler air and blood, like a radiator for your brain.",
+   "Idea one: brain cooling. A yawn may pull in cooler air and blood, like a radiator for your brain."
+  ],
+  [
+   "Here's the proof: with a **cold pack** on the forehead, people caught far fewer yawns. **9 percent,** against **41.**",
+   "Here's the proof: with a cold pack on the forehead, people caught far fewer yawns. 9 percent, against 41."
+  ],
+  [
+   "Idea two: it's **social.** One study found yawns spread most between **family,** then friends, then strangers.",
+   "Idea two: it's social. One study found yawns spread most between family, then friends, then strangers."
+  ],
+  [
+   "But the empathy link is **contested.** In a study of **328 people,** catching yawns tracked **age,** not empathy.",
+   "But the empathy link is contested. In a study of 328 people, catching yawns tracked age, not empathy."
+  ],
+  [
+   "So why are yawns contagious? Both ideas may play a part, and scientists are **still testing them.**",
+   "So why are yawns contagious? Both ideas may play a part, and scientists are still testing them."
+  ],
+  [
+   "Did you **yawn** while watching this? Yes or no?",
+   "Did you yawn while watching this? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
