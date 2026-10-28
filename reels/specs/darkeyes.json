@@ -1,0 +1,100 @@
+{
+ "name": "darkeyes",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Turn off the lights, and at first you see **nothing.**",
+   "Turn off the lights, and at first, you see nothing."
+  ],
+  [
+   "But wait twenty minutes, and the room **slowly appears.** Why?",
+   "But wait twenty minutes, and the room slowly appears. Why?"
+  ],
+  [
+   "Your retina has two kinds of light cells: **cones and rods.**",
+   "Your retina has two kinds of light cells. Cones, and rods."
+  ],
+  [
+   "Cones handle **bright light** and **colour.**",
+   "Cones handle bright light, and colour."
+  ],
+  [
+   "Rods are the **night shift.** One rod can respond to a **single particle of light.**",
+   "Rods are the night shift. One rod can respond to a single particle of light."
+  ],
+  [
+   "And you have **far more** of them: around a hundred million.",
+   "And you have far more of them. Around a hundred million."
+  ],
+  [
+   "They sit mostly around the **edges** of your retina.",
+   "They sit mostly around the edges of your retina."
+  ],
+  [
+   "But bright light **bleaches** the rods' light-catching pigment, **rhodopsin.**",
+   "But bright light bleaches the rods' light-catching pigment, rhodopsin."
+  ],
+  [
+   "In the dark, your eyes **rebuild it,** molecule by molecule.",
+   "In the dark, your eyes rebuild it, molecule by molecule."
+  ],
+  [
+   "Cones recover first, in about **ten minutes.**",
+   "Cones recover first, in about ten minutes."
+  ],
+  [
+   "Then the rods **take over,** and keep improving.",
+   "Then the rods take over, and keep improving."
+  ],
+  [
+   "After twenty to thirty minutes, you can be up to a **million times** more sensitive.",
+   "After twenty to thirty minutes, you can be up to a million times more sensitive."
+  ],
+  [
+   "Your pupils widen too, but that only helps about **tenfold.**",
+   "Your pupils widen too, but that only helps about tenfold."
+  ],
+  [
+   "Here's the catch: **one bright flash** bleaches it all again.",
+   "Here's the catch. One bright flash bleaches it all again."
+  ],
+  [
+   "That's why pilots and ship crews use **red light** at night.",
+   "That's why pilots and ship crews use red light at night."
+  ],
+  [
+   "Rods barely notice red, so the **night vision survives.**",
+   "Rods barely notice red, so the night vision survives."
+  ],
+  [
+   "And rods don't do colour. That's why night looks **grey.**",
+   "And rods don't do colour. That's why night looks grey."
+  ],
+  [
+   "So, could you sit in the dark for **twenty minutes?**",
+   "So, could you sit in the dark for twenty minutes?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  6,
+  8,
+  11,
+  12,
+  13,
+  15,
+  16,
+  17
+ ]
+}
