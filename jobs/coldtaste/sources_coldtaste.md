@@ -10,7 +10,7 @@ Researched Oct 28 2026. Primary: NIH / NIDCD (National Institute on Deafness and
 | The tongue senses a few basic tastes: sweet, salty, sour, bitter, umami | NIDCD Taste Disorders: "at least five basic taste qualities: sweet, sour, bitter, salty, and umami" |
 | Smells drift up a channel at the back of the mouth into the nose | NIDCD Taste Disorders: aromas released by chewing travel through a channel connecting the roof of the throat to the nose |
 | Retronasal smell, mixed with taste, is what we feel as flavor | NIDCD Taste Disorders (flavor = taste + smell through that channel); retronasal is the standard term (Monell) |
-| A stuffy nose from a cold blocks that channel | NIDCD Taste Disorders: when the channel is blocked, as by a stuffy nose from a cold, odors can't reach the sensory cells in the nose |
+| With a cold, swelling and mucus stop smells reaching the smell cells high in your nose | NIDCD Taste Disorders: when the channel is blocked, as by a stuffy nose from a cold, odors can't reach the sensory cells in the nose |
 | Food tastes bland, with little or no flavor | NIDCD Smell Disorders: "Without smell, foods tend to taste bland and have little or no flavor." |
 | Jellybean: pinch your nose and it's just sweet; let go and it's cherry | Monell jellybean demo (Pelchat); Columbia lesson plan |
 | Most people who think they've lost taste have really lost smell | NIDCD Taste Disorders: "Most people who think they have a taste disorder actually have a problem with smell." |
