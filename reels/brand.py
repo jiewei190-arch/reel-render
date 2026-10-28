@@ -27,6 +27,8 @@ OVR = {
     "noisecancel": {"spot": ("R", 256)},   # H2: HUD timecode and top-right bracket removed so the badge owns that corner
     "voicerecording": {"spot": ("R", 256), "hide": [(6.0, 13.7)]},   # H2: own HUD leaves the top-right corner empty; hidden under the centred "two paths" title
     "fridge": {"spot": ("R", 256)},   # H2: top-right above the STATUS field (y 342)
+    "gps": {"spot": ("R", 256)},   # H2: on the lamp frame top-right, above the strips inside the box (y 330+)
+    "freezerburn": {"spot": ("R", 256)},   # H2: top-right sky wash; titles start at y 330
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
