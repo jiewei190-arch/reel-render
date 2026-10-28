@@ -40,8 +40,9 @@ function strip(x0, x1, yTop, th, o = {}) { const { k = 1, hatch = true, roughTop
 // ---------- figures ----------
 function fig1(t) {   // two faces of a sheet of foil, in isometric; the faces are labelled; heat arrows on both with a "?"
   const a = 1 - R(t, s(2) - .3, .3); if (a <= 0) return; B.alpha(B.S.A * a);
-  const P = [[260, 620], [700, 560], [860, 760], [420, 830]]; const wav = p => p.map(([x, y], i) => [x, y + Math.sin(t * 1.5 + i) * 4]);
+  const P = [[260, 620], [700, 560], [860, 760], [420, 830]]; const wav = p => p.map(([x, y], i) => [x, y + Math.sin(t * 2.2 + i * 1.3) * 10]);
   const top = wav(P); B.paper(top, .95); B.poly(top, { w: 2.6, close: true }); tint(top, .14);
+  { const gx = ((t * .45) % 1.4 - .2), Q = [0, 1, 2, 3].map(i => top[i]); const band = [.0, .12].map(o => [lerp(Q[0][0], Q[1][0], gx + o), lerp(Q[0][1], Q[1][1], gx + o)]).concat([.12, .0].map(o => [lerp(Q[3][0], Q[2][0], gx + o - .1), lerp(Q[3][1], Q[2][1], gx + o - .1)])); g.save(); g.beginPath(); top.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.clip(); tint(band, .35); g.restore(); }   // a light glint sweeps the shiny face
   for (let i = 1; i < 8; i++) { const u = i / 8; B.line(lerp(260, 700, u), lerp(620, 560, u), lerp(420, 860, u), lerp(830, 760, u), { w: 1, alpha: .3, nib: false }); }   // shiny streaks
   const und = [[420, 830], [860, 760], [870, 800], [430, 872]]; B.paper(und, .95); B.hatch(und, { sp: 6, alpha: .6 }); B.poly(und, { w: 2.2, close: true, nib: false });
   co(t, 'SHINY', 330, 500, 420, 640, -1, s(1) + .2, {}); co(t, 'DULL', 760, 930, 700, 830, -1, s(1) + .2, {});
@@ -97,9 +98,10 @@ function fig5(t) {   // in the oven: shiny out vs dull out, same heat; verdict s
     B.txt('SHINY OUT', 300, VP.y + 60, { size: 34, align: 'center', write: R(t, s(10) + .2, .5) }); B.txt('DULL OUT', 780, VP.y + 60, { size: 34, align: 'center', write: R(t, s(10) + .5, .5) });
     B.stamp('EITHER SIDE', 540, VCY + 150, R(t, s(11) + 1.4, .35), { size: 64 });
     co(t, 'GDA: "EQUIVALENT"', 540, VP.y + VP.h - 50, null, null, s(12) + .6, s(13) - .2, { size: 34 }); }
-  else { const k = R(t, s(13) - .1, .6); strip(180, 900, VCY + 40, 18, { k, roughTop: true }); B.poly([[180, VCY + 34], [900, VCY + 34]], { w: 3, dash: [6, 6], nib: false, alpha: k });
+  else { const k = R(t, s(13) - .1, .6); g.save(); const zz = 1 + .3 * R(t, s(13), 6.5); g.translate(540, VCY); g.scale(zz, zz); g.translate(-540, -VCY); strip(180, 900, VCY + 40, 18, { k, roughTop: true });
+    for (let j = 0; j < 7; j++) { const u = (t * .9 + j / 7) % 1, x = 380 + j * 45; B.poly([[x, VCY - 110 - u * 90], [x + 12, VCY - 130 - u * 90], [x - 8, VCY - 150 - u * 90], [x + 6, VCY - 170 - u * 90]], { w: 1.8, nib: false, alpha: 1 - u }); } B.poly([[180, VCY + 34], [900, VCY + 34]], { w: 3, dash: [6, 6], nib: false, alpha: k });
     const food = circPts(540, VCY - 40, 110, 40).map(([x, y]) => [x, VCY - 40 + (y - VCY + 40) * .55]); B.paper(food, .95); B.poly(food, { w: 2.6, close: true, draw: R(t, s(13) + .6, .6) });
-    co(t, 'NON-STICK COATING', 300, VP.y + 70, 300, VCY + 34, s(13) + .9, s(14) - .3, { size: 30 }); co(t, 'ON THE DULL SIDE', 770, VCY + 170, 760, VCY + 40, s(13) + 2.4, s(14) - .3, { size: 30 }); }
+    co(t, 'NON-STICK COATING', 330, VP.y + 120, 330, VCY + 34, s(13) + .9, s(14) - .3, { size: 30 }); co(t, 'ON THE DULL SIDE', 620, VCY + 150, 680, VCY + 40, s(13) + 2.4, s(14) - .3, { size: 30 }); g.restore(); }
   B.alpha(1); }
 function fig6(t) {   // the fingerprint: the nip again, small, with a magnified matte texture; the question
   const a = R(t, s(14) - .3, .4); if (a <= 0) return; B.alpha(B.S.A * a);
