@@ -27,7 +27,7 @@
 ## qa.py
 ```
 QA rainbow: PASS   (/home/user/reel-render/jobs/rainbow/rainbow.mp4, 71.2 s)
-  PASS  static          longest no-change run 1.50 s (limit 4.0 s)
+  PASS  static          longest no-change run 2.25 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
@@ -37,7 +37,7 @@ QA rainbow: PASS   (/home/user/reel-render/jobs/rainbow/rainbow.mp4, 71.2 s)
   PASS  length          71.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 12.8 (min 1.0), contrast 36.9 (min 18.0)
+  PASS  frame 0         edge 13.1 (min 1.0), contrast 61.5 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      rainbow.mp4 1080x1920 SAR 1:1; rainbow_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
