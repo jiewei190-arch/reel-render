@@ -18,8 +18,8 @@
  ],
  "phrases": [
   [
-   "A candle's wick doesn't really burn. The **wax** does, as a **gas.**",
-   "A candle's wick doesn't really burn. The wax does, as a gas."
+   "The wick isn't the **fuel.** The **wax** is, as a **gas.**",
+   "The wick isn't the fuel. The wax is, as a gas."
   ],
   [
    "So **how does a candle actually burn?**",
@@ -46,20 +46,20 @@
    "And that vapour is what actually burns."
   ],
   [
-   "Faraday showed it: blow a candle out, then **light the smoke.**",
-   "Faraday showed it. Blow a candle out, then light the smoke."
-  ],
-  [
-   "A **trail of fire** runs down through the air and **relights the wick.**",
-   "A trail of fire runs down through the air and relights the wick."
-  ],
-  [
    "Inside the flame is a **dark core:** vapour that **hasn't burned yet.**",
    "Inside the flame is a dark core. Vapour that hasn't burned yet."
   ],
   [
    "The bright **yellow** glow? Tiny specks of solid **carbon,** so hot they **shine.**",
    "The bright yellow glow? Tiny specks of solid carbon, so hot they shine."
+  ],
+  [
+   "Now **watch this.** Faraday blew a candle out, then **lit the smoke.**",
+   "Now watch this. Faraday blew a candle out, then lit the smoke."
+  ],
+  [
+   "A **trail of fire** runs down through the air and **relights the wick.**",
+   "A trail of fire runs down through the air and relights the wick."
   ],
   [
    "Burning with oxygen from the air, the vapour turns into **water** and **carbon dioxide.**",

@@ -85,18 +85,20 @@ function pigments(cx, cy, R, st, t, seed = 1) {
 
 // ---------------- scenes ----------------
 const S = [];
-// A (p0-p1): ink mountains under a pale moon, a maple branch in red and gold; the question in a vertical column; the first leaves fall
+// A (p0-p1): frame 0 is one big leaf inside an ensō, green already draining to reveal gold; at the question the ink landscape comes in:
+// mountains under a pale moon, a maple branch in red and gold, the question in a vertical column, the first leaves falling
 S.push([0, T(2), t => {
-  land(t, { mx: 190, my: 760, mr: 95, o: .25 });
-  const st = { green: 0, red: .85, brown: 0 };
-  branch(t, st, { y: 300 });
-  falling(t, 7, { green: 0, red: .8, brown: 0 }, { a: ss(seg(t, r(1, -.3), r(1, .6))), y0: 260 });
-  // the hidden yellow: an ensō inset where the green sheet slides off a leaf (hook line, 1.2-3 s)
-  const k = seg(t, .2, 1.0), sl = ss(seg(t, 1.4, 2.6));
-  enso(g, 760, 920, 160, k, { seed: 2 });
-  if (k > .4) { g.save(); g.globalAlpha *= seg(k, .4, 1); leaf(760, 925, 105, .1, { green: 1 - sl, red: 0, brown: 0 }); g.restore(); }
-  serif(g, 'yellow, all along', 700, 715, { size: 54, w: 700, a: seg(t, 2.4, 3.0) * (1 - seg(t, T(1) + 1.2, T(1) + 1.6)) });
-  column(g, ['WHY DO', 'LEAVES', 'TURN?'], 400, 320, seg(t, T(1) - .1, T(1) + 1.0), { size: 84, gap: 1.05, seal: 'fall' });
+  const k = ss(seg(t, T(1) - .2, T(1) + .7));
+  land(t, { mx: 190, my: 760, mr: 95, o: .25, birdsA: k });
+  if (k > 0) { g.save(); g.globalAlpha *= k; branch(t, { green: 0, red: .85, brown: 0 }, { y: 300 });
+    falling(t, 7, { green: 0, red: .8, brown: 0 }, { a: ss(seg(t, T(1), T(1) + .8)), y0: 260 });
+    column(g, ['WHY DO', 'LEAVES', 'TURN?'], 400, 320, seg(t, T(1) + .1, T(1) + 1.1), { size: 84, gap: 1.05, seal: 'fall' }); g.restore(); }
+  if (k < 1) { g.save(); g.globalAlpha *= 1 - k; g.drawImage(paper(), 0, 0);
+    const gr = 1 - ss(seg(t, .15, 2.6));
+    enso(g, 540, 770, 390, 1, { lw: 20, seed: 4 });
+    leaf(540 + 6 * Math.sin(t * 1.3), 795, 290, .04 * Math.sin(t * .9), { green: gr, red: 0, brown: 0 });
+    serif(g, 'gold, all along', 540, 300, { size: 64, w: 700, a: seg(t, 1.6, 2.0) });
+    g.restore(); }
 }]);
 // B (p2-p5): one big leaf: green all summer (sunlight -> food), nights lengthen, chlorophyll breaks down, gold revealed
 S.push([T(2) - .5, T(6) - .1, t => {
@@ -147,7 +149,7 @@ S.push([T(6) - .5, T(11) - .1, t => {
   // p9: sunshine + sugar -> red
   const sk = seg(t, T(9), r(9, .8)) * (1 - seg(t, E(10) - .3, E(10) + .2));
   sun(170, 420, 48, sk); rays(170, 420, 1, 62, 300, sk);
-  serif(g, 'sun + sugar = red', 560, 300, { size: 58, w: 700, a: seg(t, r(9, 1.4), r(9, 2.0)) * (1 - seg(t, T(10) - .2, T(10) + .2)) });
+  serif(g, 'sun + sugar = red', 560, 300, { size: 58, w: 700, a: seg(t, r(9, .5), r(9, .8)) * (1 - seg(t, T(10) - .2, T(10) + .2)) });
   // p10: like a sunscreen: rays stop at the red leaf (dashed rays end at the edge)
   const sc = seg(t, T(10), r(10, .8));
   if (sc > 0) { g.save(); g.globalAlpha *= sc; g.strokeStyle = 'rgba(217,118,62,.9)'; g.lineWidth = 6; g.setLineDash([18, 12]); [[-60], [0], [60]].forEach(([dx], i) => { g.beginPath(); g.moveTo(230 + dx, 470); g.lineTo(400 + dx * .5, 570 + i * 20); g.stroke(); }); g.restore();
@@ -174,7 +176,7 @@ S.push([T(12) - .5, T(14) - .1, t => {
   leaf(540 + 60 * Math.sin(drop * 5) * drop, 600 + drop * 520, 170 * (1 - .4 * drop), drop * 2.5, st, { stem: .6 });
   serif(g, 'tannins', 540, 300, { size: 66, w: 700, a: seg(t, r(12, .5), r(12, 1.1)) * (1 - seg(t, T(13) - .2, T(13) + .2)) });
   serif(g, 'brown comes last', 540, 970, { size: 50, w: 700, a: seg(t, r(12, 1.8), r(12, 2.4)) * (1 - seg(t, T(13) - .2, T(13) + .2)) });
-  serif(g, 'the leaf lets go', 540, 300, { size: 62, w: 700, a: seg(t, r(13, 1.2), r(13, 1.8)) });
+  serif(g, 'the leaf lets go', 540, 300, { size: 62, w: 700, a: seg(t, r(13, .7), r(13, 1.0)) });
   falling(t, 6, { green: 0, red: .5, brown: .6 }, { a: seg(t, T(13), r(13, 1)), y0: 280 });
 }]);
 // F (p14): payoff: three ensō, green leaving / gold revealed / red made
@@ -210,7 +212,7 @@ function subtitle(cap, a) {
   const toks = []; parse(cap).forEach(p => p.t.split(/\s+/).filter(Boolean).forEach(w => toks.push({ w, b: p.b })));
   const m = tk => { g.font = `italic ${tk.b ? 700 : 500} ${SZ}px "Cormorant Garamond"`; return g.measureText(tk.w + ' ').width; };
   const lines = [[]]; let cw = 0; for (const tk of toks) { const w = m(tk); if (cw + w > maxW && lines[lines.length - 1].length) { lines.push([]); cw = 0; } lines[lines.length - 1].push(tk); cw += w; }
-  const lh = 60, top = 1290 - (lines.length - 1) * lh / 2;
+  const lh = 60, top = 1262 - (lines.length - 1) * lh / 2;
   g.fillStyle = 'rgba(239,232,216,.78)'; g.beginPath(); g.roundRect(150, top - 50, 780, (lines.length - 1) * lh + 100, 30); g.fill();
   lines.forEach((ln, i) => { const tw = ln.reduce((s, tk) => s + m(tk), 0); let x = W / 2 - tw / 2; if (i === 0) { g.fillStyle = VERM; g.fillRect(x - 30, top - 7, 13, 13); }
     for (const tk of ln) { g.font = `italic ${tk.b ? 700 : 500} ${SZ}px "Cormorant Garamond"`; g.lineJoin = 'round'; g.strokeStyle = 'rgba(239,232,216,.92)'; g.lineWidth = 10; g.strokeText(tk.w, x, top + i * lh);
@@ -222,8 +224,20 @@ function sub(t) {
   if (cur === PH.length - 1) return; const p = PH[cur], nx = PH[cur + 1].start, a = (cur === 0 ? 1 : seg(t, p.start - .05, p.start + .15)) * (1 - seg(t, nx - .25, nx - .05));
   subtitle(p.cap, a);
 }
+// pigment strip (the three layers' levels across the whole reel), under the caption in y 1395-1435
+function pigStrip(t) {
+  const hook = t < T(2) - .3;
+  const chl = hook ? 1 - ss(seg(t, .15, 2.6)) : 1 - ss(seg(t, T(3) + .5, T(4) + 1)) + ss(seg(t, T(14) + .1, T(14) + 1.2)) * 0;
+  const gold = 1 - .6 * ss(seg(t, T(12), T(13))) + .6 * ss(seg(t, T(14) - .3, T(14) + .3));
+  const red = hook ? 0 : ss(seg(t, T(7) + .8, T(9) + 2)) * (1 - .7 * ss(seg(t, T(12), T(13)))) + .7 * ss(seg(t, T(14) - .3, T(14) + .3)) * ss(seg(t, T(7), T(9)));
+  g.save(); g.fillStyle = 'rgba(239,232,216,.85)'; g.strokeStyle = ink(.6); g.lineWidth = 2; g.beginPath(); g.roundRect(160, 1392, 760, 46, 22); g.fill(); g.stroke();
+  [['green', GREEN, chl], ['gold', GOLD, gold], ['red', RED, red]].forEach(([lab, col, v], i) => { const x = 190 + i * 245;
+    g.font = 'italic 700 30px "Cormorant Garamond"'; g.textBaseline = 'middle'; g.textAlign = 'left'; g.fillStyle = ink(.85); g.fillText(lab, x, 1415);
+    g.fillStyle = 'rgba(30,28,30,.12)'; g.fillRect(x + 78, 1407, 130, 16); g.fillStyle = col; g.fillRect(x + 78, 1407, 130 * clamp(v), 16); });
+  g.restore();
+}
 window.DUR = TL.total;
-window.seek = t => { scene(t); sub(t); const f = Math.min(1, (TL.total - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .3; g.fillStyle = '#2a2622'; g.fillRect(0, 0, W, H); g.restore(); } };
+window.seek = t => { scene(t); sub(t); pigStrip(t); const f = Math.min(1, (TL.total - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .3; g.fillStyle = '#2a2622'; g.fillRect(0, 0, W, H); g.restore(); } };
 window.thumb = () => { const t = 3; land(t, { mx: 280, my: 700, mr: 130, o: .3, birdsA: 0 }); branch(t, { green: 0, red: .9, brown: 0 }, { y: 760, s: 1.25 });
   leaf(300, 1150, 170, .1, { green: .35, red: 0, brown: 0 });
   serif(g, 'WHY DO LEAVES', 540, 380, { size: 104, w: 700, ls: 3 }); serif(g, 'CHANGE COLOR?', 540, 500, { size: 104, w: 700, ls: 3 }); sealMark(g, 900, 590, 64, 'fall'); };

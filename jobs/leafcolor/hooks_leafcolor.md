@@ -2,7 +2,7 @@
 
 Search question (spoken at 4.8 s, brushed as a vertical column "WHY DO LEAVES TURN?" with a vermilion seal): "Why do leaves change color in the fall?"
 
-1. **[PICK]** "Those red and gold leaves? The yellow was hiding in there all summer." (13 words; pattern 6, a secret inside something everyday). Frame 0: ink mountains under a pale moon, a maple branch in red and gold; within 1 s an ensō inset draws on and its green leaf turns gold as the green slides off.
+1. **[PICK]** "That gold in fall leaves was hiding there all summer." (10 words; pattern 6, a secret inside something everyday; main-session wording). Frame 0: one big maple leaf filling the width inside an ensō, its green already draining to reveal gold ("gold, all along" at 1.6 s); the ink mountains, branch and question column come in at the question (3.9 s).
 2. "Fall doesn't paint leaves yellow. It just stops hiding it." (10 words; pattern 7, myth correction).
 3. "The red in fall leaves is brand new. The yellow is not." (12 words; pattern 2, contradiction).
 

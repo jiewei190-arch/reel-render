@@ -48,7 +48,10 @@ function room(t, o = {}) {
   const gr = g.createLinearGradient(0, 0, 0, 1200); gr.addColorStop(0, '#2a241e'); gr.addColorStop(1, '#4a4034'); g.fillStyle = gr; g.fillRect(-100, -100, W + 200, H + 200);
   if (o.window !== false) { g.fillStyle = '#5e5244'; g.fillRect(620, 300, 300, 420); F.stars(t, 30, 700); g.fillStyle = INK; g.fillRect(612, 292, 316, 14); g.fillRect(612, 714, 316, 14); g.fillRect(612, 292, 14, 436); g.fillRect(914, 292, 14, 436); g.fillRect(764, 292, 10, 436); g.fillRect(612, 500, 316, 10); }
   g.fillStyle = INK; g.fillRect(-100, 1000, W + 200, 400);
+  // the lecture-hall audience along the table front (silhouettes; rim-lit in the light pass)
+  for (let i = 0; i < 9; i++) { const hx = 60 + i * 120, hy = 1110 + (i % 2) * 14 + 3 * Math.sin(t * 2 + i); g.fillStyle = '#0c0a08'; g.beginPath(); g.arc(hx, hy, 44, 0, TAU); g.fill(); g.fillRect(hx - 58, hy + 30, 116, 120); }
 }
+function rims(t) { g.save(); g.globalCompositeOperation = 'lighter'; g.strokeStyle = 'rgba(255,170,90,.38)'; g.lineWidth = 4; for (let i = 0; i < 9; i++) { const hx = 60 + i * 120, hy = 1110 + (i % 2) * 14 + 3 * Math.sin(t * 2 + i); g.beginPath(); g.arc(hx, hy, 44, Math.PI * 1.1, Math.PI * 1.9); g.stroke(); } g.restore(); }
 function label(txt, x, y, k, size = 46) { if (k <= 0) return; g.save(); g.font = `italic 600 ${size}px "Playfair Display"`; g.textAlign = 'center'; g.fillStyle = CREAM; g.globalAlpha = clamp(k); g.shadowColor = 'rgba(0,0,0,.7)'; g.shadowBlur = 10; g.fillText(txt, x, y); g.restore(); }
 function leader(x0, y0, x1, y1, k) { if (k <= 0) return; g.save(); g.strokeStyle = 'rgba(240,220,168,.8)'; g.lineWidth = 2.5; g.globalAlpha = clamp(k); g.beginPath(); g.moveTo(x0, y0); g.lineTo(lerp(x0, x1, clamp(k)), lerp(y0, y1, clamp(k))); g.stroke(); g.restore(); }
 function bigCap(str, a, size = 100, y = 420) { if (a <= 0) return; g.save(); g.textAlign = 'center'; g.font = `italic 700 ${size}px "Playfair Display"`; g.globalAlpha = a; g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 18; g.fillStyle = '#f6e6bf';
@@ -56,8 +59,8 @@ function bigCap(str, a, size = 100, y = 420) { if (a <= 0) return; g.save(); g.t
 function arrowUp(x, y0, y1, k, col = 'rgba(255,214,140,.95)') { if (k <= 0) return; const yy = lerp(y0, y1, clamp(k)); g.save(); g.strokeStyle = col; g.fillStyle = col; g.lineWidth = 6; g.beginPath(); g.moveTo(x, y0); g.lineTo(x, yy + 10); g.stroke(); g.beginPath(); g.moveTo(x - 16, yy + 18); g.lineTo(x + 16, yy + 18); g.lineTo(x, yy - 8); g.fill(); g.restore(); }
 
 // ---------- shots ----------
-const SH = [[0, s(1) + 1.0, 'hook'], [s(1) + 1.0, s(3) - .15, 'faraday'], [s(3) - .15, s(5) - .15, 'melt'], [s(5) - .15, s(7) - .15, 'vapour'], [s(7) - .15, s(9) - .15, 'relight'],
-  [s(9) - .15, s(11) - .15, 'zones'], [s(11) - .15, s(13) - .15, 'water'], [s(13) - .15, s(14) - .15, 'pump'], [s(14) - .15, s(15) - .15, 'question'], [s(15) - .15, TL.total + 1, 'end']];
+const SH = [[0, s(1) + 1.0, 'hook'], [s(1) + 1.0, s(3) - .15, 'faraday'], [s(3) - .15, s(5) - .15, 'melt'], [s(5) - .15, s(7) - .15, 'vapour'], [s(7) - .15, s(9) - .15, 'zones'],
+  [s(9) - .15, s(11) - .15, 'relight'], [s(11) - .15, s(13) - .15, 'water'], [s(13) - .15, s(14) - .15, 'pump'], [s(14) - .15, s(15) - .15, 'question'], [s(15) - .15, TL.total + 1, 'end']];
 const shotAt = t => SH.find(x => t >= x[0] && t < x[1]) || SH[SH.length - 1];
 
 const SCN = {
@@ -102,23 +105,25 @@ const SCN = {
       const bk = ss(R(t, s(6) + .3, .6)); label('this is what burns', 540, 1060, bk, 52); };
   },
   relight(t) { // blow it out, light the smoke: a trail of fire runs down and relights the wick
-    room(t); const C = candle(540, 1000, 1.1);
-    const out = ss(R(t, s(7) + .5, .3)), m = ss(R(t, s(7) + 1.8, 1.2)), run = ss(R(t, s(8) + .2, 1.2)), rel = ss(R(t, s(8) + 1.3, .4));
-    // a taper (long match) coming in from the right
-    const tx = lerp(1100, 650, m), ty = 560; g.save(); g.translate(tx, ty); g.rotate(-.5); g.fillStyle = INK; g.fillRect(0, -6, 360, 12); g.restore();
+    room(t, { window: false }); const C = candle(540, 1660, 2.3, { h: 400 });   // big close-up: the wow
+    const out = ss(R(t, s(9) + 1.0, .3)), m = ss(R(t, s(9) + 2.0, 1.0)), run = ss(R(t, s(10) + .1, 1.4)), rel = ss(R(t, s(10) + 1.4, .4));
+    const sx = (u) => smokeAt(C.x + 18, C.top - 70, t, u, 700), [px, py] = sx(.6);
+    // a taper (long match) coming in from the right to the smoke, high above the wick
+    const tx = lerp(1150, px + 10, m), ty = py; g.save(); g.translate(tx, ty); g.rotate(-.45); g.fillStyle = INK; g.fillRect(0, -9, 420, 18); g.restore();
     return () => { flame(C, t, { k: Math.max(1 - out, rel) });
-      const sa = out * (1 - rel); smoke(C.x + 8, C.top - 30, t, sa, 520);
-      if (m > 0) { F.glow(tx, ty, 14, .9); F.circ(tx, ty - 6, 10, '#ffd27a'); }
-      if (run > 0 && rel < 1) for (let i = 0; i < 6; i++) { const u = clamp(1 - run + i * .02); const [fx, fy] = smokeAt(C.x + 8, C.top - 30, t, lerp(.55, 0, run) + i * .02, 520); F.circ(fx, fy, 12 - i, '#ffb050', 1 - rel); F.glow(fx, fy, 10, (1 - rel) * .8); }
-      label('blow it out', 380, 320, ss(R(t, s(7) + .3, .5)) * (1 - m));
-      label('light the smoke', 380, 320, m * (1 - run));
-      label('fire runs down the vapour', 540, 320, run, 44); };
+      const sa = out * (1 - rel); smoke(C.x + 18, C.top - 70, t, sa, 700);
+      if (m > 0) { F.glow(tx, ty, 20, .9); F.circ(tx, ty - 8, 14, '#ffd27a'); }
+      if (run > 0 && rel < 1) for (let i = 0; i < 8; i++) { const [fx, fy] = sx(clamp(lerp(.6, 0, run) + i * .02)); F.circ(fx, fy, 18 - i * 1.5, '#ffb050', 1 - rel); F.glow(fx, fy, 16, (1 - rel) * .9); }
+      label('watch this', 540, 950, ss(R(t, s(9) + .1, .4)) * (1 - ss(R(t, s(9) + .8, .2))), 56);
+      label('blow it out', 540, 950, out * (1 - ss(R(t, s(9) + 1.9, .25))), 52);
+      label('light the smoke', 540, 950, ss(R(t, s(9) + 2.2, .3)) * (1 - ss(R(t, s(10) - .25, .25))), 52);
+      label('fire runs down the vapour', 540, 950, ss(R(t, s(10) + .1, .3)), 50); };
   },
   zones(t) {  // inside the flame: a dark core of unburnt vapour; the yellow glow is solid carbon specks so hot they shine
     room(t, { window: false }); const C = candle(540, 1980, 3.0, { h: 340 });
     return () => { flame(C, t, { k: 1.2, zones: 1, cut: 1 });
-      const ck = ss(R(t, s(9) + .4, .6)); label('dark core', 300, 700, ck); leader(380, 690, 520, C.top - 140, ck); label('unburnt vapour', 300, 760, ss(R(t, s(9) + 1.6, .6)), 40);
-      const yk = ss(R(t, s(10) + .6, .6)); if (yk > 0) for (let i = 0; i < 40; i++) { const u = (t * .5 + hash(i * 5.3)) % 1, a = hash(i * 2.1) * TAU, rr = 40 + 50 * hash(i * 7); const x = 540 + Math.cos(a) * rr * .7, y = C.top - 300 + Math.sin(a) * rr * 1.6 - u * 40; F.circ(x, y, 3 + 2 * hash(i), '#fff2c0', yk * (.4 + .6 * hash(i + Math.floor(t * 8)))); }
+      const ck = ss(R(t, s(7) + .4, .6)); label('dark core', 300, 700, ck); leader(380, 690, 520, C.top - 140, ck); label('unburnt vapour', 300, 760, ss(R(t, s(7) + 1.6, .6)), 40);
+      const yk = ss(R(t, s(8) + .6, .6)); if (yk > 0) for (let i = 0; i < 40; i++) { const u = (t * .5 + hash(i * 5.3)) % 1, a = hash(i * 2.1) * TAU, rr = 40 + 50 * hash(i * 7); const x = 540 + Math.cos(a) * rr * .7, y = C.top - 300 + Math.sin(a) * rr * 1.6 - u * 40; F.circ(x, y, 3 + 2 * hash(i), '#fff2c0', yk * (.4 + .6 * hash(i + Math.floor(t * 8)))); }
       label('glowing carbon specks', 540, 300, yk, 50); };
   },
   water(t) {  // the products: water and carbon dioxide; Faraday catches the water on a cold vessel above the flame
@@ -146,7 +151,7 @@ const SCN = {
     room(t); const C = candle(540, 1000, 1.1);
     return () => { flame(C, t, { k: 0 }); smoke(C.x + 8, C.top - 30, t, .9, 520); bigCap('Through the smoke?', ss(R(t, s(14) + .2, .5)), 80, 360); label('yes', 380, 560, ss(R(t, s(14) + 1.2, .4)), 64); label('no', 700, 560, ss(R(t, s(14) + 1.4, .4)), 64); };
   },
-  end(t) { room(t, { window: false }); const C = candle(540, 1160, .8);
+  end(t) { room(t, { window: false }); const C = candle(540, 1520, 1.6, { h: 420 });
     return () => { flame(C, t, { k: 1 }); const k = ss(R(t, s(15) - .1, .7));
       g.save(); g.textAlign = 'center'; g.font = 'italic 600 70px "Playfair Display"'; g.fillStyle = CREAM; g.globalAlpha = k; g.fillText('Follow for more of', 540, 340); g.globalAlpha = ss(R(t, s(15) + .5, .7)); g.fillText('how it really works.', 540, 430);
       g.font = 'italic 500 44px "Playfair Display"'; g.globalAlpha = ss(R(t, s(15) + 1.0, .7)); g.fillText("A new 'wait, really?' every day.", 540, 510); g.font = 'italic 600 40px "Playfair Display"'; g.globalAlpha = ss(R(t, s(15) + 1.3, .7)); g.fillText('@howitreallyworkstudio', 540, 575); g.restore(); };
@@ -158,10 +163,10 @@ function scene(t) {
   const [a, b, name] = shotAt(t), [wx, wy] = F.weave(t);
   g.save(); g.translate(wx, wy); const glowPass = SCN[name](t); g.restore();
   F.grade(0);
-  g.save(); g.translate(wx, wy); glowPass(); g.restore();
+  g.save(); g.translate(wx, wy); glowPass(); if (name !== 'faraday') rims(t); g.restore();
   const fi = name === 'hook' ? 1 : ss(R(t, a, .3)), fo = 1 - ss(R(t, b - .3, .3)), dip = Math.min(fi, fo); if (dip < 1) { g.fillStyle = `rgba(0,0,0,${1 - dip})`; g.fillRect(0, 0, W, H); }
   // burned-in hook line (top third), then the question
-  if (t < s(2) - .2) { const one = t < s(1) - .05; bigCap(one ? 'The wick doesn’t burn.' : 'So how does it burn?', one ? 1 : ss(R(t, s(1) - .05, .25)), one ? 96 : 84, 920); }
+  if (t < s(2) - .2) { const one = t < s(1) - .05; bigCap(one ? 'The wick isn’t the fuel.' : 'So how does it burn?', one ? 1 : ss(R(t, s(1) - .05, .25)), one ? 96 : 84, 920); }
   // foreground wavy black band + italic caption written in word by word (inside y 1180-1400)
   F.band(t, 1160, { amp: 12 });
   let ci = 0; PH.forEach((p, k) => { if (t >= p.start - .1) ci = k; });
