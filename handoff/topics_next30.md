@@ -48,7 +48,7 @@
 | 77 | hairgray | Why does hair turn gray? | H2 | queued |
 | 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | queued |
 | 79 | saltyocean | Why is the ocean salty? | H1 | merged v2, Nov 12 21:30 |
-| 80 | feetasleep | Why does your foot fall asleep? | H1 | queued |
+| 80 | feetasleep | Why does your foot fall asleep? | H1 | merged, Nov 13 09:00 |
 | 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | queued |
 | 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
 | 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
