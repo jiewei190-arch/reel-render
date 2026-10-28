@@ -32,3 +32,13 @@ Read this before scripting any reel. When the owner (or a reviewer) says somethi
 6. Effects sit under the voice; the voice is always the clearest thing.
 7. Years spoken as people say them; numbers rounded and sourced.
 8. End: one-word question, then exactly "Follow for more of how it really works.", then the standard end card, then the loop back.
+
+## From the research (Oct 28: research/RETENTION.md, TIKTOK.md, YT_SHORTS.md, HOOKS_V2.md)
+9. **Second-by-second structure** (RETENTION.md): 0-3 s hook; 3-6 s "but" open question; 6-12 s show a glimpse of the payoff; ~25 s re-hook; 25-45 s escalate; ~45-50 s second re-hook ("here's the catch/proof"); 50-65 s answer with the best visual; one-word question; closing line + end card of 3 s or less.
+10. **Scene code**: a visible change at least every 4 s; nothing static for more than 4 s (qa.py fails it); every phrase starts a new visual action.
+11. **Safe zones for every new reel** (TikTok/Shorts/Reels UI): keep text and key visuals out of the top 250 px, the bottom 480 px, and the right column (x > 900 from y 840 down). **Burned-in captions sit at y about 1150-1420**, not at the bottom.
+12. **Ending**: never fade more than 50% to black; the last frame must flow back into frame 0 (loop).
+13. **Search**: say the exact search question out loud in the first sentence or two and show it on screen (TikTok search counts for Creator Rewards).
+14. **YouTube**: the Shorts feed shows no thumbnail, so pick the hook frame; custom thumbnails need the Partner Program; link each Short to a related episode once the owner verifies the account.
+15. **Audio**: true peak under -1 dBTP (enc_hq.sh limiter); the voice clearly above the bed (qa.py).
+16. **Licensed sound**: only our own generated effects, or Freesound **CC0** (CC BY with credit in the caption). Never CC BY-NC, because our videos are monetised.
