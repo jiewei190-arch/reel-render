@@ -23,5 +23,5 @@
 - [x] End card: the standard main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (frame-0 image dissolves in, max 40%, in the last 0.5 s)
 - [x] pinned_coldbreath.md written
-- [x] coldbreath_ep.mp4 (EP 40, brand.py --ep 40, spot (44, 1366))
+- [x] coldbreath_ep.mp4 (EP 39, brand.py --ep 39, spot (44, 1366))
 - [x] Timely window: first cold mornings, late October to February
