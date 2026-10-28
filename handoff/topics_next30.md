@@ -43,10 +43,12 @@
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
 | 73 | eyeblink | Why do we blink so much? | H4 | queued |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
+| 75 | earwax | What is earwax actually for? | H1 | queued |
+| 76 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
-| 62 | wetdog | Why do wet dogs smell so bad? | H1 | queued |
+| 62 | wetdog | Why do wet dogs smell so bad? | H1 | merged v3, Nov 9 16:00 |
 | 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v2, Nov 9 09:00 |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
