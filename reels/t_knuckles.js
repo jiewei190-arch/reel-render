@@ -135,7 +135,7 @@ SC[0] = (lt) => {
 // 1 but: why the pop?
 SC[1] = (lt, u) => {
   hand(ctx, 240, 760, 0.9, { k: 3, pull: 1, mood: 0 });
-  title(ctx, 'WHY THE', 560, 380, 120, PAL.ink, { seed: TS(20) }); title(ctx, 'POP?', 560, 520, 170, PAL.red, { seed: TS(21) });
+  title(ctx, 'WHY THE', 560, 420, 120, PAL.ink, { seed: TS(20) }); title(ctx, 'POP?', 560, 560, 170, PAL.red, { seed: TS(21) });
   title(ctx, '?', 900, 760, 200 + 20 * Math.sin(lt * 6), PAL.red, { seed: TS(22) });
 };
 // 2 the capsule: bones, joint fluid, capsule labels
@@ -159,15 +159,15 @@ SC[4] = (lt, u) => {
   const pop = sstep(0.25, 0.4, u);
   joint(ctx, 400, 700, 1.05, { k: 6, gap: 80, cav: pop });
   if (pop > 0) { popBurst(ctx, 820, 520, 170 * pop + 20, 60, 'SNAP!'); speedLines(ctx, 400, 700, 220, 360, 12, TS(62), 7); }
-  title(ctx, 'gas comes out', 420, 330, 96, BLUE, { seed: TS(63) });
+  title(ctx, 'gas comes out', 420, 410, 96, BLUE, { seed: TS(63) });
 };
 // 5 the 2015 MRI: scanner ring + a 3-frame strip
 SC[5] = (lt, u) => {
-  const ring = ell(CX, 560, 300, 230, 70), hole = ell(CX, 560, 170, 130, 50);
+  const ring = ell(CX, 640, 280, 210, 70), hole = ell(CX, 640, 160, 120, 50);
   paint(ctx, ring, '#d7dbe2', { seed: TS(70) }); loopInk(ctx, ring, { seed: TS(71), w: 9 }); paint(ctx, hole, '#3a3d4a', { seed: TS(72) }); loopInk(ctx, hole, { seed: TS(73), w: 7 });
-  hand(ctx, CX - 120, 560, 0.42, { k: 7, pull: sstep(0.1, 0.5, u), face: false });
-  title(ctx, '2015', 230, 340, 110, PAL.red, { seed: TS(74) }); title(ctx, 'MRI', 860, 340, 110, PAL.ink, { seed: TS(75) });
-  [0, 1, 2].forEach((j) => { const x = 210 + j * 330, y = 960, g = sstep(0.3 + j * 0.15, 0.4 + j * 0.15, u); if (g <= 0) return;
+  hand(ctx, CX - 120, 640, 0.42, { k: 7, pull: sstep(0.1, 0.5, u), face: false });
+  title(ctx, '2015', 200, 410, 100, PAL.red, { seed: TS(74) }); title(ctx, 'MRI', 880, 410, 100, PAL.ink, { seed: TS(75) });
+  [0, 1, 2].forEach((j) => { const x = 210 + j * 330, y = 1000, g = sstep(0.3 + j * 0.15, 0.4 + j * 0.15, u); if (g <= 0) return;
     const f = resample(rect(x - 130, y - 120, 260, 240), 3, true); paint(ctx, f, '#2b2e38', { seed: TS(76 + j) }); loopInk(ctx, f, { seed: TS(80 + j), w: 6 });
     ctx.save(); ctx.beginPath(); ctx.rect(x - 126, y - 116, 252, 232); ctx.clip(); joint(ctx, x, y, 0.3, { k: 8 + j, gap: j * 30, cav: j === 2 ? 1 : 0 }); ctx.restore();
     if (j === 2 && u > 0.7) title(ctx, 'crack!', x, y - 150, 60, PAL.red, { seed: TS(84) }); });
@@ -182,14 +182,14 @@ SC[6] = (lt, u) => {
 SC[7] = (lt, u) => {
   const c = sstep(0.2, 0.8, u);
   joint(ctx, 400, 690, 1.0, { k: 12, gap: 50, cav: 1, collapse: c });
-  title(ctx, 'COLLAPSING?', 560, 330, 120, PAL.ink, { seed: TS(100) });
+  title(ctx, 'COLLAPSING?', 560, 420, 120, PAL.ink, { seed: TS(100) });
   for (let j = 0; j < 4; j++) { const a = j * Math.PI / 2 + 0.6; arrow(ctx, 400 + Math.cos(a) * 200, 700 + Math.sin(a) * 130, 400 + Math.cos(a) * 110, 700 + Math.sin(a) * 70, BLUE, 101 + j * 4); }
   title(ctx, 'the old answer', 800, 980, 80, PAL.ink, { seed: TS(120) });
 };
 // 8 the 2018 model: half-collapse, sound wave matches
 SC[8] = (lt, u) => {
-  title(ctx, '2018', 200, 340, 110, PAL.red, { seed: TS(130) }); title(ctx, 'math model', 640, 340, 96, PAL.ink, { seed: TS(131) });
-  joint(ctx, 270, 760, 0.62, { k: 13, gap: 50, cav: 1, collapse: 0.5 * sstep(0.1, 0.5, u) });
+  title(ctx, '2018', 200, 410, 100, PAL.red, { seed: TS(130) }); title(ctx, 'math model', 640, 410, 90, PAL.ink, { seed: TS(131) });
+  joint(ctx, 270, 810, 0.62, { k: 13, gap: 50, cav: 1, collapse: 0.5 * sstep(0.1, 0.5, u) });
   const g = sstep(0.3, 0.8, u), P = []; for (let j = 0; j <= 60 * g; j++) { const x = 480 + j * 7, d = Math.exp(-j / 18); P.push([x, 700 + Math.sin(j * 0.9) * 120 * d]); }
   if (P.length > 2) ink(ctx, P, { w: 8, color: BLUE, seed: TS(132) });
   if (u > 0.5) { title(ctx, 'half collapse', 720, 900, 80, PAL.red, { seed: TS(133) }); title(ctx, 'same sound', 720, 990, 80, PAL.ink, { seed: TS(134) }); }
@@ -223,28 +223,28 @@ SC[12] = (lt, u) => {
 };
 // 13 300 people: no extra arthritis; more swelling, weaker grip
 SC[13] = (lt, u) => {
-  for (let j = 0; j < 30; j++) { const x = 140 + (j % 10) * 88, y = 470 + Math.floor(j / 10) * 120, g = sstep(j / 60, j / 60 + 0.1, u); if (g > 0) person(ctx, x, y, 0.95, 220 + j * 4, j % 4 === 0 ? '#e8563a' : BLUE); }
-  title(ctx, '300 people', CX, 330, 100, PAL.ink, { seed: TS(330) });
-  if (u > 0.4) { title(ctx, 'arthritis: no extra', CX, 860, 84, GREEN, { seed: TS(331) }); }
-  if (u > 0.65) { title(ctx, 'swelling, grip: worse', CX, 980, 84, PAL.red, { seed: TS(332) }); }
+  for (let j = 0; j < 30; j++) { const x = 140 + (j % 10) * 88, y = 560 + Math.floor(j / 10) * 120, g = sstep(j / 60, j / 60 + 0.1, u); if (g > 0) person(ctx, x, y, 0.95, 220 + j * 4, j % 4 === 0 ? '#e8563a' : BLUE); }
+  title(ctx, '300 people', CX, 420, 100, PAL.ink, { seed: TS(330) });
+  if (u > 0.4) { title(ctx, 'arthritis: no extra', CX, 930, 84, GREEN, { seed: TS(331) }); }
+  if (u > 0.65) { title(ctx, 'swelling, grip: worse', CX, 1040, 84, PAL.red, { seed: TS(332) }); }
 };
 // 14 the question
 SC[14] = (lt, u) => {
   hand(ctx, 260, 700, 0.8, { k: 19, pull: 0.5 + 0.5 * Math.abs(Math.sin(lt * 4)), face: true, mood: 1 });
-  const b1 = ell(320, 400, 140, 100, 40), b2 = ell(760, 400, 140, 100, 40);
-  paint(ctx, b1, GREEN, { seed: TS(340) }); loopInk(ctx, b1, { seed: TS(341), w: 7 }); title(ctx, 'YES?', 320, 405, 90, PAL.hi, { seed: TS(342) });
-  paint(ctx, b2, PAL.red, { seed: TS(343) }); loopInk(ctx, b2, { seed: TS(344), w: 7 }); title(ctx, 'NO?', 760, 405, 90, PAL.hi, { seed: TS(345) });
+  const b1 = ell(320, 460, 140, 100, 40), b2 = ell(760, 460, 140, 100, 40);
+  paint(ctx, b1, GREEN, { seed: TS(340) }); loopInk(ctx, b1, { seed: TS(341), w: 7 }); title(ctx, 'YES?', 320, 465, 90, PAL.hi, { seed: TS(342) });
+  paint(ctx, b2, PAL.red, { seed: TS(343) }); loopInk(ctx, b2, { seed: TS(344), w: 7 }); title(ctx, 'NO?', 760, 465, 90, PAL.hi, { seed: TS(345) });
 };
 // 15 closing card (standard): main line, the series line, handle; the hook's hand + bubble loop back
 SC[15] = (lt) => {
   const a = sstep(0, 0.5, lt);
-  title(ctx, 'Follow for more of', CX, 380, 106 * a + 30, PAL.ink, { seed: TS(350) });
-  title(ctx, 'how it really works.', CX, 500, 104 * a + 30, PAL.red, { seed: TS(351) });
-  ink(ctx, [[160, 580], [920, 585]], { w: 12, seed: TS(352) });
-  title(ctx, "A new 'wait, really?' every day.", CX, 660, 70, PAL.ink, { seed: TS(353) });
-  title(ctx, '@howitreallyworkstudio', CX, 750, 60, BLUE, { seed: TS(354) });
-  hand(ctx, 250, 930, 0.6, { k: 20, pull: 1, face: true, mood: 1 });
-  popBurst(ctx, 800, 960, 110, 360);
+  title(ctx, 'Follow for more of', CX, 430, 106 * a + 30, PAL.ink, { seed: TS(350) });
+  title(ctx, 'how it really works.', CX, 550, 104 * a + 30, PAL.red, { seed: TS(351) });
+  ink(ctx, [[160, 630], [920, 635]], { w: 12, seed: TS(352) });
+  title(ctx, "A new 'wait, really?' every day.", CX, 710, 70, PAL.ink, { seed: TS(353) });
+  title(ctx, '@howitreallyworkstudio', CX, 800, 60, BLUE, { seed: TS(354) });
+  hand(ctx, 250, 960, 0.6, { k: 20, pull: 1, face: true, mood: 1 });
+  popBurst(ctx, 800, 990, 110, 360);
 };
 
 // ---------------------------------------------------------------- shots and shakes
