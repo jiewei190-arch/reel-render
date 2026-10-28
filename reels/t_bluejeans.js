@@ -1,14 +1,14 @@
-// t_bluejeans.js: "Why do jeans have that tiny pocket and those rivets?" in template #22 paper stop-motion ledger (demo t22: "a stop-motion in graphite, 12 frames a second").
-// Grammar kept from the demo: pale grey paper with a soft vignette, graphite pencil line work and hatching that boil on 12 fps, typed paper slips with drop
-// shadows and typewriter text, dashed grouping boxes, blue ballpoint notes, one red warning note, a yellow marker ring for the thing to look at, a pencil
-// gauge (the demo's thermometer becomes a STRAIN gauge), and the caption as a taped paper slip on a dark band that types on.
-// Batch N: drawings and slips inside y 250-1130, the caption slip at y 1190-1400 on the dark band, nothing written right of x 900 below y 840.
-await Promise.all(['400 40px CourierPrime', '400 40px Kalam', '700 40px Gaegu'].map(f => document.fonts.load(f)));
+// t_bluejeans.js: "Why do jeans have that tiny pocket and those rivets?" in template #24 stop-motion explainer (demo t24 "Hi, I'm Lotus.": hand-drawn stop-motion, 12 fps).
+// Grammar kept from the demo: a navy grid page with a small mono header and a big hand-lettered title with one highlighted word, a taped paper board with
+// binder holes and a scene counter, pen line drawings that boil on 12 fps with hatched accent fills, small labelled boxes and arrows, a red ring for the thing to
+// look at, a little mascot in the board's corner (a copper rivet), and a big cream caption card whose text types on.
+// Batch N: header y 270-390, board y 420-1070, caption card y 1100-1410, nothing written right of x 900 below y 840.
+await Promise.all(['400 40px CourierPrime', '400 40px Kalam', '700 40px Gaegu', '400 40px PatrickHand'].map(f => document.fonts.load(f)));
 const W = 1080, H = 1920, cv = document.getElementById('c'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, r = (i, d) => s(i) + d, TOT = TL.total;
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), lerp = (a, b, u) => a + (b - a) * u, seg = (t, a, b) => clamp((t - a) / (b - a)), ss = u => { u = clamp(u); return u * u * (3 - 2 * u); };
 const hash = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
-const GR = '#3b3b39', BLUE = '#3346b8', RED = '#c0392b', YEL = 'rgba(240,200,60,.75)', SLIP = '#f6f4ec', COPPER = '#b8743a';
+const GR = '#2b2b2b', BLUE = '#3346b8', RED = '#d0453a', YEL = 'rgba(208,69,58,.9)', SLIP = '#fbfbf7', COPPER = '#c27a3e', MINT = '#4fd1ae', DENIM = '#5b7fc4', NAVY = '#2a3140';
 let TQ = 0, BOIL = 0;   // stop motion: the whole frame is drawn at 12 fps
 
 // ---------- paper + pencil ----------
@@ -25,10 +25,10 @@ const line = (x0, y0, x1, y1, o) => pencil([[x0, y0], [x1, y1]], o);
 const box = (x, y, w, h, o = {}) => pencil([[x, y], [x + w, y], [x + w, y + h], [x, y + h], [x, y]], o);
 const ell = (cx, cy, rx, ry, n = 28) => Array.from({ length: n + 1 }, (_, i) => [cx + Math.cos(i / n * 6.2832) * rx, cy + Math.sin(i / n * 6.2832) * ry]);
 function dashed(x, y, w, h, o = {}) { const P = [[x, y], [x + w, y], [x + w, y + h], [x, y + h], [x, y]]; for (let i = 0; i < 4; i++) { const [a0, a1] = [P[i], P[i + 1]], L = Math.hypot(a1[0] - a0[0], a1[1] - a0[1]), n = Math.floor(L / 22); for (let k = 0; k < n; k += 2) line(lerp(a0[0], a1[0], k / n), lerp(a0[1], a1[1], k / n), lerp(a0[0], a1[0], (k + 1) / n), lerp(a0[1], a1[1], (k + 1) / n), { w: 2, a: .6, seed: i * 50 + k, ...o }); } }
-function hatch(poly, { sp = 10, ang = .9, a = .45, seed = 1 } = {}) { g.save(); g.beginPath(); poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.clip(); const xs = poly.map(p => p[0]), ys = poly.map(p => p[1]), x0 = Math.min(...xs) - 200, x1 = Math.max(...xs) + 200, y0 = Math.min(...ys), y1 = Math.max(...ys);
-  for (let x = x0; x < x1; x += sp) line(x, y1, x + (y1 - y0) * Math.tan(ang) * .5, y0, { w: 1.6, a, seed: seed + x, wob: .8 }); g.restore(); }
-function hand(txt, x, y, { size = 48, col = BLUE, align = 'left', reveal = 1, font = 'Kalam', weight = 400, rot = 0 } = {}) { if (reveal <= 0) return; g.save(); g.translate(x, y); g.rotate(rot); g.font = `${weight} ${size}px ${font}`; g.fillStyle = col; g.textAlign = align; g.textBaseline = 'alphabetic'; g.fillText(txt.slice(0, Math.ceil(txt.length * clamp(reveal))), 0, 0); g.restore(); }
-function ring(cx, cy, rx, ry, k, seed = 1) { if (k <= 0) return; const P = Array.from({ length: 41 }, (_, i) => { const a = -1.2 + i / 40 * 6.6; return [cx + Math.cos(a) * rx * (1 + .05 * Math.sin(i)), cy + Math.sin(a) * ry * (1 + .05 * Math.cos(i * 1.3))]; }); pencil(P, { w: 12, col: YEL, a: 1, prog: k, seed, wob: 1.5 }); }
+function hatch(poly, { sp = 10, ang = .9, a = .45, seed = 1, col = GR } = {}) { g.save(); g.beginPath(); poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.clip(); const xs = poly.map(p => p[0]), ys = poly.map(p => p[1]), x0 = Math.min(...xs) - 200, x1 = Math.max(...xs) + 200, y0 = Math.min(...ys), y1 = Math.max(...ys);
+  for (let x = x0; x < x1; x += sp) line(x, y1, x + (y1 - y0) * Math.tan(ang) * .5, y0, { w: col === GR ? 1.6 : 3.2, a, seed: seed + x, wob: .8, col }); g.restore(); }
+function hand(txt, x, y, { size = 48, col = BLUE, align = 'left', reveal = 1, font = 'PatrickHand', weight = 400, rot = 0 } = {}) { if (reveal <= 0) return; g.save(); g.translate(x, y); g.rotate(rot); g.font = `${weight} ${size}px ${font}`; g.fillStyle = col; g.textAlign = align; g.textBaseline = 'alphabetic'; g.fillText(txt.slice(0, Math.ceil(txt.length * clamp(reveal))), 0, 0); g.restore(); }
+function ring(cx, cy, rx, ry, k, seed = 1) { if (k <= 0) return; const P = Array.from({ length: 41 }, (_, i) => { const a = -1.2 + i / 40 * 6.6; return [cx + Math.cos(a) * rx * (1 + .05 * Math.sin(i)), cy + Math.sin(a) * ry * (1 + .05 * Math.cos(i * 1.3))]; }); pencil(P, { w: 5, col: YEL, a: 1, prog: k, seed, wob: 1.5 }); }
 function arrow(x0, y0, x1, y1, o = {}) { line(x0, y0, x1, y1, o); const a = Math.atan2(y1 - y0, x1 - x0); for (const d of [-.5, .5]) line(x1, y1, x1 - Math.cos(a + d) * 22, y1 - Math.sin(a + d) * 22, o); }
 // a typed paper slip: cream card + shadow, typewriter rows (label left, value right), types on with k
 function slip(x, y, w, rows, { k = 1, title = '', rot = 0, size = 34 } = {}) { if (k <= 0) return; const h = (title ? 70 : 30) + rows.length * (size * 1.35) + 20;
@@ -44,12 +44,12 @@ function slip(x, y, w, rows, { k = 1, title = '', rot = 0, size = 34 } = {}) { i
 // x, y = waistband centre; sc scale. o: pocketRing, rivets (0..1), rivetErase, watch, labels
 function jeans(t, x, y, sc, o = {}) { const T = (px, py) => [x + px * sc, y + py * sc], P = pts => pts.map(([a, b]) => T(a, b)), k = o.k ?? 1;
   const out = P([[-230, 0], [230, 0], [250, 120], [270, 760], [40, 760], [0, 230], [-40, 760], [-270, 760], [-250, 120], [-230, 0]]);
-  hatch(out, { sp: 11, a: .22, seed: 11 }); pencil(out, { w: 3.6, prog: k, seed: 12 });
+  hatch(out, { sp: 16, a: .5, seed: 11, col: DENIM }); pencil(out, { w: 3.6, prog: k, seed: 12 });
   pencil(P([[-232, 46], [232, 46]]), { w: 2.6, prog: k, seed: 13 }); for (const bx of [-180, -60, 60, 180]) box(...T(bx - 10, -6), 20 * sc, 60 * sc, { w: 2.2, seed: 14 + bx, prog: k });
   pencil(P([[0, 46], [6, 200], [40, 236]]), { w: 2.4, prog: k, seed: 15 }); [70, 120, 170].forEach((yy, i) => { g.save(); g.fillStyle = GR; g.beginPath(); g.arc(...T(16, yy), 5 * sc, 0, 7); g.fill(); g.restore(); });
   // front pockets (curved openings) + the watch pocket inside the wearer's right (viewer's left)
   pencil(P([[-226, 70], [-200, 150], [-130, 200], [-80, 210]]), { w: 3, prog: k, seed: 16 }); pencil(P([[226, 70], [200, 150], [130, 200], [80, 210]]), { w: 3, prog: k, seed: 17 });
-  const wp = P([[-196, 66], [-110, 66], [-112, 150], [-194, 150], [-196, 66]]); pencil(wp, { w: 3, prog: k, seed: 18 }); hatch(wp, { sp: 7, a: .35, seed: 19 });
+  const wp = P([[-196, 66], [-110, 66], [-112, 150], [-194, 150], [-196, 66]]); pencil(wp, { w: 3, prog: k, seed: 18 }); hatch(wp, { sp: 9, a: .9, seed: 19, col: MINT });
   pencil(P([[-40, 760], [0, 230], [40, 760]]), { w: 2.6, prog: k, seed: 20 });
   // rivets at the points of strain (pocket corners + watch pocket corners)
   const RV = [[-226, 70], [-80, 210], [226, 70], [80, 210], [-196, 66], [-110, 66]];
@@ -103,23 +103,36 @@ const BEATS = [
   t => { const t0 = s(15) - .2; hand('Follow for more of', 540, 640, { size: 74, col: GR, font: 'Gaegu', weight: 700, align: 'center', reveal: seg(t, t0 + .1, t0 + .8) }); hand('how it really works.', 540, 740, { size: 84, col: BLUE, font: 'Gaegu', weight: 700, align: 'center', reveal: seg(t, t0 + .5, t0 + 1.3) });
     line(320, 770, 760, 764, { w: 3, col: BLUE, prog: seg(t, t0 + 1.0, t0 + 1.4), seed: 150 }); slip(250, 820, 580, [['', "a new 'wait, really?'"], ['', 'every day'], ['', '@howitreallyworkstudio']], { k: seg(t, t0 + 1.2, t0 + 2.0), size: 32 }); jeans(t, 540, 360 - 150, .3, {}); },
 ];
-// caption: a taped paper slip on the dark band, typed on (the demo's subtitle)
-function caption(t) { const ph = PH.findLast(p => t >= p.start - .1); if (!ph || ph.i === PH.length - 1) return; const k = seg(t, ph.start - .1, ph.end - .2);
-  const txt = ph.cap.replace(/\*\*/g, ''), bold = []; let inB = false, idx = 0; ph.cap.split('**').forEach((pc, i) => { for (const ch of pc) bold[idx++] = i % 2 === 1; });
-  g.save(); g.font = '400 44px Kalam'; const words = txt.split(' '), lines = [[]]; let cw = 0; words.forEach(w => { const m = g.measureText(w + ' ').width; if (cw + m > 820 && lines.at(-1).length) { lines.push([]); cw = 0; } lines.at(-1).push(w); cw += m; });
-  const x0 = 90, w = 900, h = 70 + lines.length * 56, y0 = 1300 - h / 2; g.fillStyle = 'rgba(0,0,0,.35)'; g.fillRect(x0 + 6, y0 + 8, w, h); g.fillStyle = '#f4f2ea'; g.fillRect(x0, y0, w, h);
-  g.fillStyle = 'rgba(232,214,150,.75)'; g.save(); g.translate(x0 + 30, y0 - 4); g.rotate(-.35); g.fillRect(-40, -12, 90, 26); g.restore(); g.save(); g.translate(x0 + w - 30, y0 - 4); g.rotate(.35); g.fillRect(-50, -12, 90, 26); g.restore();
+// the page: navy grid, mono header + hand-lettered title, the taped board with binder holes and a scene counter
+const BG = (() => { const c = document.createElement('canvas'); c.width = W; c.height = H; const p = c.getContext('2d'); p.fillStyle = NAVY; p.fillRect(0, 0, W, H); p.strokeStyle = 'rgba(255,255,255,.05)'; p.lineWidth = 2; for (let x = 0; x < W; x += 44) { p.beginPath(); p.moveTo(x, 0); p.lineTo(x, H); p.stroke(); } for (let y = 0; y < H; y += 44) { p.beginPath(); p.moveTo(0, y); p.lineTo(W, y); p.stroke(); } return c; })();
+const BX = 50, BY = 420, BW = 980, BH = 650;
+function page(t, beat) { g.drawImage(BG, 0, 0); g.font = '400 30px CourierPrime'; g.fillStyle = 'rgba(220,226,235,.7)'; g.textAlign = 'left'; g.fillText('HAND-DRAWN STOP-MOTION · 12 FPS', 60, 300);
+  g.font = '700 92px Gaegu'; const t1 = 'Why jeans have ', t2 = 'rivets.', w1 = g.measureText(t1).width, w2 = g.measureText(t2).width; g.fillStyle = MINT; g.globalAlpha = .75; g.fillRect(60 + w1 - 6, 340, w2 + 4, 34); g.globalAlpha = 1; g.fillStyle = '#f3f4f6'; g.fillText(t1, 60, 380); g.fillText(t2, 60 + w1, 380);
+  g.fillStyle = 'rgba(0,0,0,.3)'; g.fillRect(BX + 8, BY + 10, BW, BH); g.drawImage(PAPER, 0, 0, W, H * BH / H * 2, BX, BY, BW, BH); g.fillStyle = 'rgba(236,236,230,.55)'; g.fillRect(BX, BY, BW, BH);
+  g.fillStyle = 'rgba(232,214,150,.85)'; [[BX + 10, BY + 8, -.6], [BX + BW - 10, BY + 8, .6]].forEach(([x, y, a]) => { g.save(); g.translate(x, y); g.rotate(a); g.fillRect(-55, -14, 110, 30); g.restore(); });
+  g.fillStyle = '#2b2b2b'; g.fillRect(W / 2 - 110, BY + 22, 46, 8); g.fillRect(W / 2 + 64, BY + 22, 46, 8); g.beginPath(); g.arc(W / 2, BY + 26, 9, 0, 7); g.fill();
+  g.font = '400 24px CourierPrime'; g.fillStyle = 'rgba(60,60,60,.6)'; g.textAlign = 'right'; g.fillText(`sc ${beat + 1} · ${String(Math.floor(t * 12)).padStart(4, '0')}`, 880, BY + BH - 22); g.textAlign = 'left'; }
+// the mascot: a little copper rivet with a face, bobbing in the board's corner
+function mascot(t, x, y, sc = 1) { const b = Math.sin(t * 4) * 4; g.save(); g.translate(x, y + b); g.scale(sc, sc); g.fillStyle = 'rgba(0,0,0,.12)'; g.beginPath(); g.ellipse(0, 46, 46, 10, 0, 0, 7); g.fill();
+  g.fillStyle = COPPER; g.beginPath(); g.arc(0, 0, 40, 0, 7); g.fill(); pencil(ell(0, 0, 40, 40), { w: 3, seed: 900 }); pencil(ell(0, 0, 24, 24), { w: 2, a: .6, seed: 901 });
+  g.fillStyle = GR; [[-12, -4], [12, -4]].forEach(([dx, dy]) => { g.beginPath(); g.arc(dx, dy, 4, 0, 7); g.fill(); }); pencil([[-10, 12], [0, 17], [10, 12]], { w: 2.4, seed: 902 });
+  pencil([[-38, 10], [-60, 24 + Math.sin(t * 6) * 6]], { w: 3, seed: 903 }); pencil([[38, 10], [60, 24 - Math.sin(t * 6) * 6]], { w: 3, seed: 904 }); g.restore(); }
+// caption: the big cream card under the board, typed on
+function caption(t) { const ph = PH.findLast(p => t >= p.start - .1); if (!ph || ph.i === PH.length - 1) return; const k = seg(t, ph.start - .1, ph.end - .3);
+  const txt = ph.cap.replace(/\*\*/g, ''), bold = []; let idx = 0; ph.cap.split('**').forEach((pc, i) => { for (const ch of pc) bold[idx++] = i % 2 === 1; });
+  g.save(); g.fillStyle = 'rgba(0,0,0,.3)'; g.fillRect(BX + 8, 1110, BW, 300); g.fillStyle = '#f3f3ee'; g.fillRect(BX, 1100, BW, 300);
+  g.font = '400 60px PatrickHand'; const words = txt.split(' '), lines = [[]]; let cw = 0; words.forEach(w => { const m = g.measureText(w + ' ').width; if (cw + m > 860 && lines.at(-1).length) { lines.push([]); cw = 0; } lines.at(-1).push(w); cw += m; });
   const shown = Math.ceil(txt.length * Math.min(1, k * 1.15)); let ci = 0; g.textBaseline = 'alphabetic';
-  lines.forEach((ln, li) => { const lw = g.measureText(ln.join(' ')).width; let x = 540 - lw / 2; ln.forEach(wd => { for (const ch of wd + ' ') { if (ci >= shown) return; g.fillStyle = bold[ci] ? BLUE : '#1e1e1c'; g.fillText(ch, x, y0 + 58 + li * 56); x += g.measureText(ch).width; ci++; } }); });
+  lines.forEach((ln, li) => { let x = BX + 46; ln.forEach(wd => { for (const ch of wd + ' ') { if (ci >= shown) return; g.fillStyle = bold[ci] ? '#1f7f66' : '#1e1e1c'; g.fillText(ch, x, 1180 + li * 72); x += g.measureText(ch).width; ci++; } }); });
   g.restore(); }
 function scene(t) { TQ = Math.floor(t * 12 + 1e-6) / 12; BOIL = Math.round(TQ * 12); t = TQ;
-  g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(PAPER, 0, 0); g.fillStyle = '#1f2326'; g.fillRect(0, 1160, W, H - 1160);
-  let i = 0; for (let k = 0; k < PH.length; k++) if (t >= s(k) - .25) i = k; i = Math.min(i, BEATS.length - 1);
-  g.save(); g.beginPath(); g.rect(0, 0, W, 1160); g.clip(); BEATS[i](t); g.restore(); caption(t); }
+  g.setTransform(1, 0, 0, 1, 0, 0); let i = 0; for (let k = 0; k < PH.length; k++) if (t >= s(k) - .25) i = k; i = Math.min(i, BEATS.length - 1);
+  page(t, i); g.save(); g.beginPath(); g.rect(BX, BY + 40, BW, BH - 40); g.clip(); g.translate(540, 745); g.scale(.74, .74); g.translate(-540, -710); BEATS[i](t); g.restore();
+  if (i < BEATS.length - 1) mascot(t, BX + 90, BY + BH - 80, .9); caption(t); }
 window.DUR = TOT;
 // loop: the last 0.5 s blends 30% of frame 0 back in
 window.seek = t => { scene(t); const lp = seg(t, TOT - .5, TOT); if (lp > 0) { const keep = g.getImageData(0, 0, W, H); scene(0); const f0 = g.getImageData(0, 0, W, H); const kk = .3 * ss(lp), A = keep.data, B = f0.data; for (let i = 0; i < A.length; i += 4) { A[i] += (B[i] - A[i]) * kk; A[i + 1] += (B[i + 1] - A[i + 1]) * kk; A[i + 2] += (B[i + 2] - A[i + 2]) * kk; } g.putImageData(keep, 0, 0); } };
 window.render = window.seek;
-window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(PAPER, 0, 0); const j = jeans(3, 540, 560, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i }));
-  hand('why the tiny pocket?', 90, 420, { size: 82, col: BLUE, font: 'Gaegu', weight: 700 }); hand('(and the rivets)', 220, 500, { size: 56, col: RED }); };
+window.thumb = () => { BOIL = 3; g.setTransform(1, 0, 0, 1, 0, 0); page(3, 0); g.save(); g.translate(540, 760); g.scale(.82, .82); g.translate(-540, -700); const j = jeans(3, 540, 380, 1.05, {}); ring(j.wp[0], j.wp[1], 130, 96, 1, 1); j.rv.slice(0, 4).forEach((p, i) => arrow(p[0] + (i % 2 ? 70 : -70), p[1] - 80, p[0] + (i % 2 ? 16 : -16), p[1] - 14, { w: 3, col: RED, seed: 40 + i })); g.restore(); mascot(3, BX + 90, BY + BH - 80, .9);
+  g.fillStyle = '#f3f3ee'; g.fillRect(BX, 1100, BW, 300); g.font = '400 76px PatrickHand'; g.fillStyle = '#1e1e1c'; g.fillText('That tiny pocket', BX + 46, 1200); g.fillStyle = '#1f7f66'; g.fillText('had a job.', BX + 46, 1290); };
 window.seek(0); window.ready = true; window.READY = true;
