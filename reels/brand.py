@@ -6,10 +6,35 @@ HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
 F_EP = str(HERE / "styles/aidoom/fonts/Anton.ttf"); F_TX = str(HERE / "styles/distilbook/fonts/Inter.ttf")
 EPS = {r["reel"]: int(r["episode"]) for r in csv.DictReader(open(ROOT / "handoff/episodes.csv"))}
 # candidate spots (top area, below the TikTok/Shorts top bar, clear of the right-side buttons); the quietest one wins
-SPOTS = [(x, y) for y in (196, 260, 330, 400, 470) for x in (44, "R")]
-# per-reel overrides after a visual QA (the edge-busy search can't tell text from art): (x or "R", y)
-SPOT_FOR = {"darkeyes": (44, 1400), "foxfire": (44, 600), "zombieant": (44, 860), "catseyes": ("R", 196), "owl": (44, 1400), "spidersilk": (44, 1060), "pumpkin": ("R", 392)}
+SPOTS = [(x, y) for y in (260, 330, 400, 470, 540) for x in (44, "R")]  # y >= 260: TikTok's top tabs cover about the top 240 px (research/TIKTOK.md)
 T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first seconds stay clean)
+# per-reel overrides (H3 QA, Oct 28): spot (x, y), fade-in time t0, and hide windows [(a, b), ...] where a title/label passes
+# under the badge (it fades out 0.3 s before a and back in 0.3 s after b). Found with a 4 fps edge-density scan + frame checks.
+OVR = {
+    "airfryer": {"t0": 7.0},                                      # the NOT A FRYER logo sits in the top-left until ~6.5 s
+    "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
+    "barcode": {"spot": (44, 1360), "hide": [(7.0, 99.0)]},  # giant headlines fill nearly every frame: badge shows only 5-6.7 s (12 DIGITS lands at 7.0 s), low-left inside the safe zone
+    "recommend": {"spot": (44, 1366), "hide": [(4.7, 8.6), (52.6, 57.0)]},  # signs/boards fill the top; low-left above the captions
+    # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
+    "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
+    "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
+    "magnet": {"spot": ("R", 260), "t0": 7.0},   # the "Cut it in half" headline reaches the top-right until ~6.5 s
+    "search": {"spot": ("R", 260)}, "orbit": {"spot": ("R", 360)}, "window": {"spot": ("R", 260)},   # empty top-right band
+    "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
+    "submarine": {"spot": (44, 1360)}, # seabed only
+    # H2 QA, Oct 28
+    "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
+    "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
+    "skyblue": {"spot": (660, 436)},   # auto spot sat on the end-card title
+    "lock": {"spot": (44, 1276)},      # top spots hit the "5 HOLES"/"SPRING" callouts; bottom-left above the NOTE box
+    # H4 QA, Oct 28
+    "flush": {"spot": (44, 1300)},       # every top spot hit a seal, headline, label or the end card
+    "hurricanewc": {"spot": (44, 300)},  # auto spot sat on the character's head
+    "onion": {"spot": (44, 1330)},       # right side is TikTok's button column; y 1300 clipped the "wet surface" label
+    # H1 QA, Oct 28 (auto spot covered text on these)
+    "darkeyes": {"spot": (44, 1320)}, "foxfire": {"spot": (44, 600)}, "zombieant": {"spot": (44, 860)},
+    "catseyes": {"spot": (44, 1280), "hide": [(65.0, 70.0)]}, "owl": {"spot": (44, 1320)}, "spidersilk": {"spot": (44, 1060)}, "pumpkin": {"spot": ("R", 392)},
+}
 
 def frames(src, dur, k=24):
     out = []
@@ -46,10 +71,12 @@ for n in sys.argv[1:]:
     src = ROOT / f"jobs/{n}/{n}.mp4"; dst = ROOT / f"jobs/{n}/{n}_ep.mp4"; png = HERE / f"stills/badge_{n}.png"
     png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)
-    if n in SPOT_FOR: X, Y = SPOT_FOR[n]; X = 1080 - 44 - b.size[0] if X == "R" else X; busy = -1
+    o = OVR.get(n, {}); t0 = o.get("t0", T0)
+    if "spot" in o: (X, Y), busy = o["spot"], -1; X = 1080 - 44 - b.size[0] if X == "R" else X
     else: busy, X, Y = place(src, dur, *b.size)
-    # fade in at T0 so the hook stays clean; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
-    fc = f"[1]format=rgba,fade=in:st={T0}:d=0.4:alpha=1[b];[0][b]overlay={X}:{Y}:shortest=1"
+    # fade in at t0 so the hook stays clean; fade out/in around hide windows; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
+    vis = f"clip((T-{t0})/0.4,0,1)" + "".join(f"*(1-clip(min((T-{a - .3})/0.3,({b + .3}-T)/0.3),0,1))" for a, b in o.get("hide", []))
+    fc = f"[1]format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='alpha(X,Y)*{vis}'[b];[0][b]overlay={X}:{Y}:shortest=1"
     vb = int((9.6 * 8e6 / dur - 72000) / 1000); log = f"/tmp/brand_{n}"
     base = ["ffmpeg", "-v", "error", "-y", "-i", str(src), "-loop", "1", "-i", str(png), "-filter_complex", fc,
             "-c:v", "libx264", "-preset", "slow", "-tune", "animation", "-b:v", f"{vb}k", "-pix_fmt", "yuv420p", "-passlogfile", log]

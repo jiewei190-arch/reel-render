@@ -58,6 +58,6 @@ After each final push, send the main session a one-line message (send_message to
 | H3 | harvestmoon | Why the October moon looks huge and orange (moon illusion near the horizon; orange from light passing through more atmosphere; "hunter's moon") | #25 Ink moon (demo t25) |
 | H4 | darkeyes | Why the dark gets less dark after a few minutes (dark adaptation: rods vs cones, rhodopsin rebuilds, about 20-30 minutes; red light keeps night vision) | #16 cinematic3d "Christmas story" (demo 99; reuse submarine's film-look module) |
 | H4 | owl | How owls fly almost silently (comb-like leading-edge feathers, soft fringes, velvety surface break up turbulence) | #4 crayon-book (lemo-opuscar source) |
-| H4 | pumpkin | Why a carved jack-o'-lantern rots so fast (cut surface lets water out and mould and bacteria in; tips that slow it, like keeping it cool and dry) | #18 handdrawn "Japan heat wave" (field notebook; reuse reels/styles/fieldbook) |
+| H1 (moved from H4, Oct 28) | pumpkin | Why a carved jack-o'-lantern rots so fast (cut surface lets water out and mould and bacteria in; tips that slow it, like keeping it cool and dry) | #18 handdrawn "Japan heat wave" (field notebook; reuse reels/styles/fieldbook) |
 
 If a topic can't be sourced well, tell the main session and propose a swap before building. Don't build an unsourced reel.
