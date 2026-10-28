@@ -5,23 +5,88 @@
  "music": "crayon",
  "bpm": 88,
  "phrases": [
-  ["An owl can swoop right past you, and you **won't hear it.**", "An owl can swoop right past you, and you won't hear it."],
-  ["But wings push air, and moving air **makes noise.** So how?", "But wings push air, and moving air makes noise. So, how?"],
-  ["Most wing noise comes from the **back edge,** where the air turns messy and **turbulent.**", "Most wing noise comes from the back edge, where the air turns messy, and turbulent."],
-  ["A sharp, stiff edge **scatters** that noise loudly.", "A sharp, stiff edge scatters that noise loudly."],
-  ["An owl's wing has **three tricks.**", "An owl's wing has three tricks."],
-  ["One: a **comb-like** front edge, which researchers think smooths the incoming air.", "One. A comb-like front edge, which researchers think smooths the incoming air."],
-  ["Two: a soft, **fringed** back edge, like the tip of a paintbrush.", "Two. A soft, fringed back edge, like the tip of a paintbrush."],
-  ["The fringe breaks up the turbulence, so the air **slips away quietly.**", "The fringe breaks up the turbulence, so the air slips away quietly."],
-  ["Three: a **velvety** surface that soaks up the sound of the wing moving.", "Three. A velvety surface that soaks up the sound of the wing moving."],
-  ["Owls also fly **more slowly** than other birds of prey.", "Owls also fly more slowly than other birds of prey."],
-  ["Together, they cut the sounds above about **two thousand hertz.**", "Together, they cut the sounds above about two thousand hertz."],
-  ["That drops the swoosh **below what its prey can hear.**", "That drops the swoosh below what its prey can hear."],
-  ["So the mouse **never hears it coming.**", "So the mouse never hears it coming."],
-  ["Here's the proof: **fish-eating owls** never needed silence, and they **don't have** these feathers.", "Here's the proof. Fish-eating owls never needed silence, and they don't have these feathers."],
-  ["Now engineers are copying the fringe to quiet **wind turbines and fans.**", "Now, engineers are copying the fringe, to quiet wind turbines and fans."],
-  ["So, what would you make **quieter** with owl feathers?", "So, what would you make quieter with owl feathers?"],
-  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+  [
+   "An owl can swoop right past you, and you **won't hear it.**",
+   "An owl can swoop right past you, and you won't hear it."
+  ],
+  [
+   "But wings push air, and moving air **makes noise.** So how?",
+   "But wings push air, and moving air makes noise. So, how?"
+  ],
+  [
+   "Most wing noise comes from the **back edge,** where the air turns messy and **turbulent.**",
+   "Most wing noise comes from the back edge, where the air turns messy, and turbulent."
+  ],
+  [
+   "A sharp, stiff edge **scatters** that noise loudly.",
+   "A sharp, stiff edge scatters that noise loudly."
+  ],
+  [
+   "An owl's wing has **three tricks.**",
+   "An owl's wing has three tricks."
+  ],
+  [
+   "One: a **comb-like** front edge, which researchers think smooths the incoming air.",
+   "One. A comb-like front edge, which researchers think smooths the incoming air."
+  ],
+  [
+   "Two: a soft, **fringed** back edge, like the tip of a paintbrush.",
+   "Two. A soft, fringed back edge, like the tip of a paintbrush."
+  ],
+  [
+   "The fringe breaks up the turbulence, so the air **slips away quietly.**",
+   "The fringe breaks up the turbulence, so the air slips away quietly."
+  ],
+  [
+   "Three: a **velvety** surface that soaks up the sound of the wing moving.",
+   "Three. A velvety surface that soaks up the sound of the wing moving."
+  ],
+  [
+   "Owls also fly **more slowly** than other birds of prey.",
+   "Owls also fly more slowly than other birds of prey."
+  ],
+  [
+   "Together, they make the owl quiet enough to **hear its prey**,",
+   "Together, they make the owl quiet enough to hear its prey,"
+  ],
+  [
+   "**without the prey hearing it** coming.",
+   "without the prey hearing it coming."
+  ],
+  [
+   "That matters most for owls that hunt small animals **by stealth.**",
+   "That matters most for owls that hunt small animals by stealth."
+  ],
+  [
+   "Here's the proof: **fish-eating owls** never needed silence, and they **mostly lack** these feathers.",
+   "Here's the proof. Fish-eating owls never needed silence, and they mostly lack these feathers."
+  ],
+  [
+   "Now engineers are copying the fringe to quiet **wind turbines and fans.**",
+   "Now, engineers are copying the fringe, to quiet wind turbines and fans."
+  ],
+  [
+   "So, what would you make **quieter** with owl feathers?",
+   "So, what would you make quieter with owl feathers?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
  ],
- "breath": [0, 1, 2, 3, 4, 7, 8, 9, 11, 12, 13, 14, 15]
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15
+ ]
 }
