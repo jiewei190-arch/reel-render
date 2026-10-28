@@ -41,9 +41,9 @@ function bubble(x, y, txt, t, a = 1, o = {}) { if (a <= 0) return; g.save(); g.g
 function sleeper(t, o = {}) { const br = Math.sin(t * 1.3) * 4; put(g, L.bed, cam0, .5); putSheet(g, HEAD, 120, 440 + br, { sc: .75, sh: .6 }); g.save(); g.fillStyle = 'rgba(60,40,80,.9)'; g.beginPath(); g.ellipse(195, 515 + br, 16, 4, 0, 0, TAU); g.fill(); g.restore();   // closed eye
   for (let i = 0; i < 3; i++) { const u = (t * .35 + i / 3) % 1; g.save(); g.globalAlpha = (1 - u) * .8; g.fillStyle = '#fff3d6'; g.font = `700 ${30 + i * 8}px Caveat`; g.fillText('z', 270 + i * 26 + u * 30, 440 - u * 120); g.restore(); } }
 function hypnogram(x, y, w, h, t, k, marks) { const st = [0, 2, 3, 3, 2, 1, 4, 2, 3, 2, 1, 4, 2, 1, 4, 1, 0]; g.save(); g.globalAlpha *= k; g.strokeStyle = 'rgba(255,236,190,.9)'; g.lineWidth = 4; g.beginPath();
-  st.forEach((v, i) => { const xx = x + i / (st.length - 1) * w, yy = y + (v === 4 ? -.3 : v) * h / 3; i ? (g.lineTo(xx, g.__ly ?? yy), g.lineTo(xx, yy)) : g.moveTo(xx, yy); g.__ly = yy; }); g.stroke(); g.restore();
-  ['awake', 'light', 'deep'].forEach((lab, i) => tag(g, lab, x - 90, y + i * h / 3 + (i ? 30 : 0), { k: k, size: 30, rot: 0 })); tag(g, 'REM', x - 90, y - .3 * h / 3 - 10, { k, size: 30, rot: 0, col: '#e0d0ff' });
-  marks.forEach(([u, lab], i) => { const xx = x + u * w, v = st[Math.round(u * (st.length - 1))], yy = y + (v === 4 ? -.3 : v) * h / 3; if (t > lab) bubble(xx, yy - 80, '…', t, ss(seg(t, lab, lab + .4)), { size: 40, tx: xx, ty: yy - 10 }); }); }
+  st.forEach((v, i) => { const xx = x + i / (st.length - 1) * w, yy = y + (v === 4 ? -.7 : v) * h / 3; i ? (g.lineTo(xx, g.__ly ?? yy), g.lineTo(xx, yy)) : g.moveTo(xx, yy); g.__ly = yy; }); g.stroke(); g.restore();
+  [['awake', 0], ['light', 1.5], ['deep', 3]].forEach(([lab, v]) => tag(g, lab, x - 90, y + v * h / 3, { k: k, size: 30, rot: 0 })); tag(g, 'REM', x - 90, y - .7 * h / 3 - 6, { k, size: 30, rot: 0, col: '#e0d0ff' });
+  marks.forEach(([u, lab], i) => { const xx = x + u * w, v = st[Math.round(u * (st.length - 1))], yy = y + (v === 4 ? -.7 : v) * h / 3; if (t > lab) bubble(xx, yy - 80, '…', t, ss(seg(t, lab, lab + .4)), { size: 40, tx: xx, ty: yy - 10 }); }); }
 
 // ---------- shots ----------
 const S = [];
@@ -56,14 +56,14 @@ S.push([T(1) - .3, T(2), t => { sky(t); put(g, L.room, cam0, .3); put(g, L.sill,
   put(g, L.front, cam0, 1); strip(g, 'why do we talk in our sleep?', 470, 140, seg(t, T(1), T(1) + .7), { size: 54, seal: true }); tag(g, "scientists don't fully know", 470, 760, { k: backOut(seg(t, r(1, 2.6), r(1, 3.0))), rot: .03 }); }]);
 // C: somniloquy: a row of 20 paper heads; about 13 light up (60-65%)
 S.push([T(2) - .3, T(3), t => { sky(t, { moon: false, top: '#141a3e', bot: '#2c2c5e' }); strip(g, 'somniloquy', 470, 140, seg(t, r(2, .2), r(2, .8)), { size: 70, seal: true });
-  for (let i = 0; i < 20; i++) { const x = 110 + (i % 10) * 80, y = 420 + Math.floor(i / 10) * 180, on = i < 13 && t > r(2, 2.6 + i * .08); putSheet(g, HEAD, x - 32, y - 32, { sc: .32, sh: .5, a: on ? 1 : .35 }); if (on) bubble(x + 20, y - 54, '…', t, ss(seg(t, r(2, 2.6 + i * .08), r(2, 3.0 + i * .08))), { size: 28 }); }
+  for (let i = 0; i < 20; i++) { const x = 110 + (i % 10) * 80, y = 420 + Math.floor(i / 10) * 180, on = i < 13 && t > r(2, 2.6 + i * .08); const kk = on ? ss(seg(t, r(2, 2.6 + i * .08), r(2, 3.0 + i * .08))) : 0; if (kk > 0) glow(g, x, y, 70, WARM, .55 * kk * flick(t, i)); putSheet(g, HEAD, x - 32, y - 32, { sc: .32, sh: .5, a: .35 + .65 * kk }); }
   tag(g, '60-65% at some point', 470, 790, { k: backOut(seg(t, r(2, 4.2), r(2, 4.6))), size: 46 }); }]);
 // D: children vs adults
-S.push([T(3) - .3, T(4), t => { sky(t); put(g, L.hills, cam0, .3); putSheet(g, KID, 200, 380, { sc: 1.1, sh: .8 }); putSheet(g, PERSON, 560, 280, { sc: 1.2, sh: .8 });
+S.push([T(3) - .3, T(4), t => { sky(t, { mx: 470, my: 150 }); put(g, L.hills, cam0, .3); putSheet(g, KID, 200, 380, { sc: 1.1, sh: .8 }); putSheet(g, PERSON, 560, 280, { sc: 1.2, sh: .8 });
   bubble(300, 300, 'la la…', t, ss(seg(t, r(3, .4), r(3, .8))), { size: 42, tx: 270, ty: 400 }); bubble(760, 220, '…', t, ss(seg(t, r(3, 2.4), r(3, 2.8))) * .6, { size: 36, tx: 680, ty: 300 });
-  tag(g, '50% of young children', 270, 760, { k: backOut(seg(t, r(3, .8), r(3, 1.2))), size: 42 }); tag(g, 'about 5% of adults', 680, 760, { k: backOut(seg(t, r(3, 2.6), r(3, 3.0))), size: 42 }); }]);
+  tag(g, '50% of young children', 270, 760, { k: backOut(seg(t, r(3, .8), r(3, 1.2))), size: 42 }); tag(g, 'about 5% of adults', 610, 800, { k: backOut(seg(t, r(3, 2.6), r(3, 3.0))), size: 42 }); }]);
 // E: any stage of sleep: the hypnogram with bubbles at light, deep and REM points
-S.push([T(4) - .3, T(5), t => { sky(t, { moon: false, top: '#0b1233', bot: '#1f2a5e' }); hypnogram(180, 360, 700, 360, t, ss(seg(t, r(4, 0), r(4, .8))), [[.15, r(4, 1.0)], [.4, r(4, 1.6)], [.68, r(4, 2.2)]]);
+S.push([T(4) - .3, T(5), t => { sky(t, { moon: false, top: '#0b1233', bot: '#1f2a5e' }); hypnogram(180, 410, 700, 320, t, ss(seg(t, r(4, 0), r(4, .8))), [[.15, r(4, 1.0)], [.4, r(4, 1.6)], [.68, r(4, 2.2)]]);
   strip(g, 'any stage of sleep', 470, 140, seg(t, r(4, .2), r(4, .8)), { size: 58 }); tag(g, 'link to dreams: unclear', 470, 800, { k: backOut(seg(t, r(4, 3.0), r(4, 3.4))), size: 42, col: '#e0d0ff' }); }]);
 // F: re-hook: the lab: 883 episodes as a dot grid; 59% squiggles (no words)
 S.push([T(5) - .3, T(6), t => { sky(t, { moon: false, top: '#10162e', bot: '#24304e' }); putSheet(g, LAB, 560, 120, { sc: .9, sh: .7 }); for (let i = 0; i < 3; i++) { const u = (t * .8 + i / 3) % 1; g.save(); g.strokeStyle = 'rgba(140,220,255,.8)'; g.lineWidth = 3; g.beginPath(); for (let x = 0; x <= 230; x += 6) g.lineTo(610 + x, 230 + i * 30 + Math.sin(x * .12 + t * 8 + i) * 10 * (1 - u * .3)); g.stroke(); g.restore(); }
@@ -71,7 +71,7 @@ S.push([T(5) - .3, T(6), t => { sky(t, { moon: false, top: '#10162e', bot: '#243
   for (let i = 0; i < shown; i++) { const x = 110 + (i % 20) * 36, y = 440 + Math.floor(i / 20) * 46, nv = hash(i * 1.7) < .59; if (nv) { g.save(); g.strokeStyle = 'rgba(255,236,190,.9)'; g.lineWidth = 3; g.beginPath(); for (let q = 0; q <= 16; q += 4) g.lineTo(x - 8 + q, y + Math.sin(q + t * 6 + i) * 6); g.stroke(); g.restore(); } else { g.fillStyle = '#fff3d6'; g.beginPath(); g.arc(x, y, 7, 0, TAU); g.fill(); } }
   ['mumbles', 'whispers', 'shouts', 'laughs'].forEach((w, i) => tag(g, w, 180 + i * 200, 740 + (i % 2) * 50, { k: backOut(seg(t, r(5, 4.6 + i * .4), r(5, 5.0 + i * .4))), size: 38, rot: (i - 1.5) * .04 })); }]);
 // G: "No." brushed big; 1 in 5 clauses a negation
-S.push([T(6) - .3, T(7), t => { sky(t); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); const k = backOut(seg(t, r(6, .2), r(6, .7))); g.save(); g.translate(400, 360); g.scale(k, k); bloom(g, 0, 0, 260, BUB, .5 * flick(t)); g.font = 'italic 700 240px "Cormorant Garamond"'; g.fillStyle = '#fff3d6'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('No.', 0, 0); g.restore();
+S.push([T(6) - .3, T(7), t => { sky(t); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); const k = backOut(seg(t, r(6, .2), r(6, .7))); g.save(); g.translate(320, 380); g.scale(k, k); bloom(g, 0, 0, 260, BUB, .5 * flick(t)); g.font = 'italic 700 240px "Cormorant Garamond"'; g.fillStyle = '#fff3d6'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('No.', 0, 0); g.restore();
   tag(g, 'about 1 in 5 clauses: a negation', 470, 700, { k: backOut(seg(t, r(6, 2.6), r(6, 3.0))), size: 42 }); }]);
 // H: swearing: a #!@% bubble; 1 in 10
 S.push([T(7) - .3, T(8), t => { sky(t); put(g, L.room, cam0, .3); sleeper(t); bubble(470, 300, '#!@%', t, ss(seg(t, r(7, .1), r(7, .4))), { size: 80, tx: 250, ty: 450 }); tag(g, 'about 1 in 10: swearing', 470, 760, { k: backOut(seg(t, r(7, .6), r(7, 1.0))), size: 44 }); }]);
@@ -96,7 +96,7 @@ S.push([T(12) - .3, T(13), t => { sky(t); put(g, L.hills, cam0, .2); put(g, L.ro
 // N: question
 S.push([T(13) - .3, T(14), t => { sky(t); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); sleeper(t); strip(g, 'do you talk in your sleep?', 470, 150, seg(t, T(13), T(13) + .8), { size: 54 }); put(g, L.front, cam0, 1); }]);
 // O: end card (loops to the hook's bedroom)
-S.push([T(14) - .35, TOT + 1, t => { sky(t); put(g, L.hills, cam0, .2); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); sleeper(t); bubble(420, 330, 'No.', t, .6, { size: 70, tx: 250, ty: 450 });
+S.push([T(14) - .35, TOT + 1, t => { sky(t); put(g, L.hills, cam0, .2); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); sleeper(t); bubble(440, 450, 'No.', t, .6, { size: 64, tx: 260, ty: 470 });
   strip(g, 'Follow for more of', 470, 170, seg(t, T(14) - .2, T(14) + .5), { size: 60 }); strip(g, 'how it really works.', 470, 290, seg(t, T(14) + .3, T(14) + 1.0), { size: 72, seal: true }); put(g, L.front, cam0, 1); }]);
 
 function scene(t) { g.save(); g.fillStyle = PAL.room; g.fillRect(0, 0, W, H); g.translate(BOX.x, BOX.y); g.beginPath(); g.rect(0, 0, BW, BH); g.clip();
