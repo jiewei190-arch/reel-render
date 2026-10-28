@@ -1,0 +1,1 @@
+Bonus: the sky isn't perfectly dark. Point a radio telescope anywhere and you'll pick up a faint microwave glow from every direction: the stretched leftover light of the early universe (OpenStax Astronomy). Did you know the dark sky is a clue the universe had a beginning? Yes or no? ✨
