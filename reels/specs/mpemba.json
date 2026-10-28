@@ -1,0 +1,93 @@
+{
+ "name": "mpemba",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Hot water and cold water go in the freezer. Which freezes **first?**",
+   "Hot water and cold water go in the freezer. Which freezes first?"
+  ],
+  [
+   "Most people say cold. **But** some swear it's hot. So does hot water really freeze faster than cold?",
+   "Most people say cold. But some swear it's hot. So does hot water really freeze faster than cold?"
+  ],
+  [
+   "The idea is old. **Aristotle** wrote about it, and so did Bacon and Descartes.",
+   "The idea is old. Aristotle wrote about it, and so did Bacon and Descartes."
+  ],
+  [
+   "It got its name from a schoolboy in Tanzania, **Erasto Mpemba.**",
+   "It got its name from a schoolboy in Tanzania, Erasto Mpemba."
+  ],
+  [
+   "Making ice cream at school, he put his mix in the freezer while it was still **hot.**",
+   "Making ice cream at school, he put his mix in the freezer while it was still hot."
+  ],
+  [
+   "And it froze before his classmate's **cooler** mix.",
+   "And it froze before his classmate's cooler mix."
+  ],
+  [
+   "In nineteen sixty-nine, he and a physicist, Denis Osborne, published tests where hot water **started freezing first.**",
+   "In nineteen sixty-nine, he and a physicist, Denis Osborne, published tests where hot water started freezing first."
+  ],
+  [
+   "Case closed? **Not quite.**",
+   "Case closed? Not quite."
+  ],
+  [
+   "In twenty sixteen, two scientists ran very **careful** tests,",
+   "In twenty sixteen, two scientists ran very careful tests,"
+  ],
+  [
+   "and found **no real evidence** that hot water cools faster.",
+   "and found no real evidence that hot water cools faster."
+  ],
+  [
+   "They also found a sneaky trap: put the thermometer just **one centimeter** off, and the result can flip.",
+   "They also found a sneaky trap: put the thermometer just one centimeter off, and the result can flip."
+  ],
+  [
+   "So why do some freezers seem to show it?",
+   "So why do some freezers seem to show it?"
+  ],
+  [
+   "Hot water **evaporates,** so there's a little less of it left to freeze.",
+   "Hot water evaporates, so there's a little less of it left to freeze."
+  ],
+  [
+   "It also holds less **dissolved gas,** it stirs itself with **currents,** and cold water can **supercool:** stay liquid below zero.",
+   "It also holds less dissolved gas, it stirs itself with currents, and cold water can supercool: stay liquid below zero."
+  ],
+  [
+   "So the honest answer: **sometimes,** under special conditions. And scientists **still argue** about it.",
+   "So the honest answer: sometimes, under special conditions. And scientists still argue about it."
+  ],
+  [
+   "Which freezes first in your freezer? **Hot or cold?**",
+   "Which freezes first in your freezer? Hot or cold?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
