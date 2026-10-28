@@ -629,12 +629,12 @@ window.thumb = () => {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   drawPaper(ctx, { x: 0, y: 0 });
   night(ctx);
-  bat(ctx, 220, 760, 1.0, 0.5, 1); bat(ctx, 880, 820, 0.8, 1.6, 2);
-  glowStick(ctx, CX, 1080, 1.25, -0.1, { k: 1, lit: 1, face: true });
+  bat(ctx, 190, 880, 1.0, 0.5, 1); bat(ctx, 900, 920, 0.8, 1.6, 2);
+  glowStick(ctx, CX, 1200, 1.15, -0.1, { k: 1, lit: 1, face: true });
   pumpkin(ctx, 220, 1430, 0.8, 3, 1);
   ghost(ctx, 870, 1380, 0.8, 1, 0.4);
-  plaque(ctx, 'NO', CX, 420, 210, PAL.red, 1);
-  plaque(ctx, 'BATTERY?', CX, 670, 200, '#4f8a10', 2);
+  plaque(ctx, 'NO', CX, 420, 200, PAL.red, 1);
+  plaque(ctx, 'BATTERY?', CX, 645, 190, '#4f8a10', 2);
   drawTooth(ctx, D);
 };
 window.ready = true;
