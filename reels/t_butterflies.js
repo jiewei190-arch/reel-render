@@ -46,6 +46,7 @@ function brainP(x, y, s, a = 1) { g.save(); g.globalAlpha *= a; paint(g, P2(p =>
   for (let i = 0; i < 4; i++) { g.beginPath(); g.arc(x - 30 * s + i * 20 * s, y + (i % 2 ? 6 : -8) * s, 16 * s, .3, 2.6); g.stroke(); } g.restore(); }
 function bloodArrows(t, pts, k, col = RED) { pts.forEach(([x0, y0, x1, y1], i) => { const kk = seg(k, i * .12, .6 + i * .12); arrowP(g, x0, y0, x1, y1, kk, col, 6);
   const u = (t * .8 + i * .3) % 1; if (kk >= 1) { g.save(); g.fillStyle = col; g.beginPath(); g.arc(lerp(x0, x1, u), lerp(y0, y1, u), 7, 0, TAU); g.fill(); g.restore(); } }); }
+const push = (t, a, b, fn, z = .1) => { const zz = 1 + z * seg(t, a, b); g.save(); g.translate(540, 700); g.scale(zz, zz); g.translate(-540, -700); fn(); g.restore(); };
 const label = (s, x, y, k, o = {}) => hand(g, s, x, y, k, { size: o.size || 58, col: o.col || CREAM, ...o });
 
 // ---------- scenes: [start, end, fn] ----------
@@ -67,26 +68,26 @@ S.push([T(2), T(3), t => { g.drawImage(STAGE, 0, 0); const op = seg(t, T(2), r(2
   kid(g, 300 + 60 * ss(seg(t, r(2, .5), r(2, 2.5))), 990, 1.7, { body: '#7fa6d6', mouth: 'o', look: 4 });
   const bk = seg(t, r(2, 2.6), r(2, 3.2)); if (bk > 0) { g.save(); g.globalAlpha = bk; paint(g, P2(p => blob(p, circPts(620, 560, 230, 120, 18), 6, 31)), CREAM, { hatch: .1 }); g.restore(); brainP(480, 560, .8, bk); hand(g, 'big deal!', 680, 560, bk, { size: 66, col: RED }); } }]);
 // 3 fight-or-flight: adrenaline floods the body (warm glow spreading through the body diagram)
-S.push([T(3), T(4), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }); const B = bodyDiagram(t, 540, 620, 1.35, seg(t, T(3) - .2, r(3, 1.0)));
+S.push([T(3), T(4), t => { g.drawImage(SKY, 0, 0); push(t, T(3), T(4), () => { stars(g, 60, t, { y1: 1000 }); const B = bodyDiagram(t, 540, 620, 1.35, seg(t, T(3) - .2, r(3, 1.0)));
   const ak = seg(t, r(3, 1.6), r(3, 3.2)); glow(g, 540, 700, 140 + 300 * ak, GOLD, .55 * ak); for (let i = 0; i < 26; i++) { const a = hash(i) * TAU, d = 60 + 280 * ak * hash(i * 3); g.save(); g.globalAlpha = ak * .9; g.fillStyle = '#f2c35b'; g.beginPath(); g.arc(540 + Math.cos(a) * d * .6, 700 + Math.sin(a) * d, 6, 0, TAU); g.fill(); g.restore(); }
-  label('fight-or-flight', 330, 330, seg(t, T(3) + .2, r(3, .8)), { size: 66 }); label('adrenaline', 760, 820, seg(t, r(3, 1.8), r(3, 2.4)), { col: '#f2c35b' }); }]);
+  label('fight-or-flight', 330, 330, seg(t, T(3) + .2, r(3, .8)), { size: 66 }); label('adrenaline', 760, 820, seg(t, r(3, 1.8), r(3, 2.4)), { col: '#f2c35b' });  });}]);
 // 4 heart speeds up; blood sent to the muscles
-S.push([T(4), T(5), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }); bodyDiagram(t, 540, 620, 1.35, 1); const beat = 1 + .25 * Math.max(0, Math.sin(t * 9));
+S.push([T(4), T(5), t => { g.drawImage(SKY, 0, 0); push(t, T(4), T(5), () => { stars(g, 60, t, { y1: 1000 }); bodyDiagram(t, 540, 620, 1.35, 1); const beat = 1 + .25 * Math.max(0, Math.sin(t * 9));
   paint(g, P2(p => { const x = 560, y = 560, s = 34 * beat; p.moveTo(x, y + s * .9); p.bezierCurveTo(x - s * 1.6, y - s * .2, x - s * .6, y - s * 1.3, x, y - s * .4); p.bezierCurveTo(x + s * .6, y - s * 1.3, x + s * 1.6, y - s * .2, x, y + s * .9); }), RED, { hatch: .2 });
   glow(g, 560, 560, 80 * beat, '255,120,100', .5);
   bloodArrows(t, [[560, 600, 380, 730], [560, 600, 700, 730], [540, 700, 480, 1000], [560, 700, 610, 1000]], seg(t, r(4, 1.2), r(4, 2.8)));
-  label('heart speeds up', 330, 330, seg(t, T(4) + .2, r(4, .8)), { size: 62 }); label('muscles', 830, 760, seg(t, r(4, 2.2), r(4, 2.7)), { col: '#f0a090' }); }]);
+  label('heart speeds up', 330, 330, seg(t, T(4) + .2, r(4, .8)), { size: 62 }); label('muscles', 830, 760, seg(t, r(4, 2.2), r(4, 2.7)), { col: '#f0a090' });  });}]);
 // 5 adrenaline shunts blood away from the gut; digestion slows
-S.push([T(5), T(6), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }); bodyDiagram(t, 540, 620, 1.35, 1); const dim = ss(seg(t, r(5, .6), r(5, 2.2))); gut(540, 760, 1.1, dim);
+S.push([T(5), T(6), t => { g.drawImage(SKY, 0, 0); push(t, T(5), T(6), () => { stars(g, 60, t, { y1: 1000 }); bodyDiagram(t, 540, 620, 1.35, 1); const dim = ss(seg(t, r(5, .6), r(5, 2.2))); gut(540, 760, 1.1, dim);
   bloodArrows(t, [[520, 760, 300, 640], [560, 760, 780, 640], [540, 820, 540, 1020]], seg(t, r(5, .4), r(5, 1.6)));
   label('less blood here', 330, 330, seg(t, r(5, 1.2), r(5, 1.8)), { size: 62, col: '#f0a090' });
   const sk = seg(t, r(5, 2.6), r(5, 3.0)); if (sk > 0) { const sx = 470 + 40 * seg(t, r(5, 2.6), T(6)); g.save(); g.globalAlpha = sk; paint(g, P2(p => blob(p, circPts(sx, 905, 22, 18, 12), 2, 41)), '#c9a46a', { hatch: .2 }); paint(g, P2(p => p.ellipse(sx - 22, 920, 30, 9, 0, 0, TAU)), '#9aa58a', { hatch: .1 }); g.restore(); }
-  label('digestion slows', 540, 1110, sk, { size: 54 }); }]);
+  label('digestion slows', 540, 1110, sk, { size: 54 });  });}]);
 // 6 the stomach's own nerves notice the shortage: that's the flutter
-S.push([T(6), T(7), t => { g.drawImage(SKY, 0, 0); stars(g, 50, t, { y1: 1000 }); const z = 1.9 + .2 * seg(t, T(6), T(7)); gut(540, 760, z, .8);
+S.push([T(6), T(7), t => { g.drawImage(SKY, 0, 0); push(t, T(6), T(7), () => { stars(g, 50, t, { y1: 1000 }); const z = 1.9 + .2 * seg(t, T(6), T(7)); gut(540, 760, z, .8);
   const nk = seg(t, r(6, .4), r(6, 1.6)); for (let i = 0; i < 7; i++) { const a = i / 7 * TAU; constLine(g, [[540 + Math.cos(a) * 60, 700 + Math.sin(a) * 40], [540 + Math.cos(a) * 170, 700 + Math.sin(a) * 120]], nk, { lw: 2.5, dot: 4 }); }
   for (let i = 0; i < 7; i++) { const a = i / 7 * TAU, tw = .5 + .5 * Math.sin(t * 8 + i); glow(g, 540 + Math.cos(a) * 170, 700 + Math.sin(a) * 120, 30, '255,250,230', nk * tw * .7); }
-  label('nerves notice', 330, 330, seg(t, r(6, .8), r(6, 1.4)), { size: 64 }); const fk = seg(t, r(6, 2.6), r(6, 3.4)); flock(t, 540, 720, 6, 220, fk, 1.1); label('the flutter', 540, 1110, fk, { size: 64, col: '#f2c35b' }); }]);
+  label('nerves notice', 330, 330, seg(t, r(6, .8), r(6, 1.4)), { size: 64 }); const fk = seg(t, r(6, 2.6), r(6, 3.4)); flock(t, 540, 720, 6, 220, fk, 1.1); label('the flutter', 540, 1110, fk, { size: 64, col: '#f2c35b' });  });}]);
 // 7-8 the gut's own nervous system: the "second brain"
 S.push([T(7), T(9), t => { g.drawImage(SKY, 0, 0); stars(g, 60, t, { y1: 1000 }); gut(540, 760, 2.0, .3); const k = seg(t, r(7, .6), r(8, 1.6));
   for (let i = 0; i < 30; i++) { const a = hash(i) * TAU, rr = 40 + 170 * hash(i * 3), b = hash(i * 7) * TAU, x = 540 + Math.cos(a) * rr, y = 760 + Math.sin(a) * rr * .8; constLine(g, [[x, y], [x + Math.cos(b) * 60, y + Math.sin(b) * 50]], seg(k, i / 40, i / 40 + .3), { lw: 2.2, dot: 4 }); }
