@@ -1,0 +1,100 @@
+{
+ "name": "freezerburn",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "music_gain": 0.6,
+ "phrases": [
+  [
+   "Freezer burn isn't a **burn.** Your food is **drying out.**",
+   "Freezer burn isn't a burn. Your food is drying out."
+  ],
+  [
+   "So **what is freezer burn?**",
+   "So, what is freezer burn?"
+  ],
+  [
+   "Frozen food is full of tiny **ice crystals.**",
+   "Frozen food is full of tiny ice crystals."
+  ],
+  [
+   "And the air in your freezer is very **dry.**",
+   "And the air in your freezer is very dry."
+  ],
+  [
+   "So ice at the surface turns straight into **vapor,** without melting first.",
+   "So ice at the surface turns straight into vapor, without melting first."
+  ],
+  [
+   "That's called **sublimation.**",
+   "That's called sublimation."
+  ],
+  [
+   "Bit by bit, the surface dries into tough, **leathery** patches, often grayish or brown.",
+   "Bit by bit, the surface dries into tough, leathery patches, often grayish or brown."
+  ],
+  [
+   "And as the water leaves, **air** creeps in, changing the color and the flavor.",
+   "And as the water leaves, air creeps in, changing the color and the flavor."
+  ],
+  [
+   "Is it safe to eat? **Yes.** It's a quality problem, not a safety one.",
+   "Is it safe to eat? Yes. It's a quality problem, not a safety one."
+  ],
+  [
+   "It just cooks up **dry** and **tough.**",
+   "It just cooks up dry and tough."
+  ],
+  [
+   "Ice cream gets it too: it loses its creaminess and grows **ice crystals.**",
+   "Ice cream gets it too. It loses its creaminess and grows ice crystals."
+  ],
+  [
+   "So how do you stop it? **Keep the air out.**",
+   "So how do you stop it? Keep the air out."
+  ],
+  [
+   "Wrap food tightly, squeeze the air out of freezer bags, and use **small containers.**",
+   "Wrap food tightly, squeeze the air out of freezer bags, and use small containers."
+  ],
+  [
+   "Keep the freezer at **zero degrees Fahrenheit** or colder.",
+   "Keep the freezer at zero degrees Fahrenheit or colder."
+  ],
+  [
+   "For ice cream, press plastic wrap right onto the top before the **lid.**",
+   "For ice cream, press plastic wrap right onto the top before the lid."
+  ],
+  [
+   "No air, no sublimation, **no freezer burn.**",
+   "No air, no sublimation, no freezer burn."
+  ],
+  [
+   "Have you found freezer burn in your freezer? **Yes or no?**",
+   "Have you found freezer burn in your freezer? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

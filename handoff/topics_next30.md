@@ -38,13 +38,15 @@
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | merged, Nov 10 19:00 |
 | 69 | gps | How does your phone's GPS know where you are? | H2 | merged, Nov 10 21:30 |
-| 70 | freezerburn | What is freezer burn? | H2 | queued |
+| 70 | freezerburn | What is freezer burn? | H2 | merged v1, Nov 11 09:00 (v2 contrast/fill pending) |
 | 71 | sneeze | Why do we sneeze? | H3 | queued |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
 | 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
 | 75 | earwax | What is earwax actually for? | H1 | queued |
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v1, Nov 11 19:00 (renumbered from 76; re-badge --ep 73 pending) |
+| 77 | hairgray | Why does hair turn gray? | H2 | queued |
+| 78 | bubblewrap | Why do bubbles in soda rise in lines? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
