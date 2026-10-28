@@ -5,22 +5,17 @@ date_ET,time_ET,reel,instagram,youtube,video,thumbnail,caption
 2026-11-07,08:00,eclipse,pending,pending,jobs/eclipse/eclipse.mp4,jobs/eclipse/thumb_eclipse.jpg,jobs/eclipse/caption_eclipse.md
 2026-11-07,13:00,skyblue,pending,pending,jobs/skyblue/skyblue.mp4,jobs/skyblue/thumb_skyblue.jpg,jobs/skyblue/caption_skyblue.md
 2026-11-07,19:00,magnet,pending,pending,jobs/magnet/magnet.mp4,jobs/magnet/thumb_magnet.jpg,jobs/magnet/caption_magnet.md
-2026-11-08,08:00,barcode,awaiting owner OK,awaiting owner OK,jobs/barcode/barcode.mp4,jobs/barcode/thumb_barcode.jpg,jobs/barcode/caption_barcode.md
+2026-11-08,08:00,barcode,pending,pending,jobs/barcode/barcode.mp4,jobs/barcode/thumb_barcode.jpg,jobs/barcode/caption_barcode.md
 2026-11-08,13:00,search,pending,pending,jobs/search/search.mp4,jobs/search/thumb_search.jpg,jobs/search/caption_search.md
-2026-11-08,19:00,caffeine,awaiting owner OK,awaiting owner OK,jobs/caffeine/caffeine.mp4,jobs/caffeine/thumb_caffeine.jpg,jobs/caffeine/caption_caffeine.md
+2026-11-08,19:00,faceid,pending,pending,jobs/faceid/faceid.mp4,jobs/faceid/thumb_faceid.jpg,jobs/faceid/caption_faceid.md
 2026-11-09,08:00,airfryer,pending,pending,jobs/airfryer/airfryer.mp4,jobs/airfryer/thumb_airfryer.jpg,jobs/airfryer/caption_airfryer.md
-2026-11-09,13:00,tickle,awaiting owner OK,awaiting owner OK,jobs/tickle/tickle.mp4,jobs/tickle/thumb_tickle.jpg,jobs/tickle/caption_tickle.md
+2026-11-09,13:00,orbit,pending,pending,jobs/orbit/orbit.mp4,jobs/orbit/thumb_orbit.jpg,jobs/orbit/caption_orbit.md
 2026-11-09,19:00,recommend,pending,pending,jobs/recommend/recommend.mp4,jobs/recommend/thumb_recommend.jpg,jobs/recommend/caption_recommend.md
-2026-11-10,08:00,quake,awaiting owner OK,awaiting owner OK,jobs/quake/quake.mp4,jobs/quake/thumb_quake.jpg,jobs/quake/caption_quake.md
+2026-11-10,08:00,tap,pending,pending,jobs/tap/tap.mp4,jobs/tap/thumb_tap.jpg,jobs/tap/caption_tap.md
 2026-11-10,13:00,flush,pending,pending,jobs/flush/flush.mp4,jobs/flush/thumb_flush.jpg,jobs/flush/caption_flush.md
-2026-11-10,19:00,faceid,awaiting owner OK,awaiting owner OK,jobs/faceid/faceid.mp4,jobs/faceid/thumb_faceid.jpg,jobs/faceid/caption_faceid.md
-2026-11-11,08:00,zipper,awaiting owner OK,awaiting owner OK,jobs/zipper/zipper.mp4,jobs/zipper/thumb_zipper.jpg,jobs/zipper/caption_zipper.md
+2026-11-10,19:00,window,pending,pending,jobs/window/window.mp4,jobs/window/thumb_window.jpg,jobs/window/caption_window.md
+2026-11-11,08:00,hurricanewc,pending,pending,jobs/hurricanewc/hurricanewc.mp4,jobs/hurricanewc/thumb_hurricanewc.jpg,jobs/hurricanewc/caption_hurricanewc.md
 2026-11-11,13:00,submarine,pending,pending,jobs/submarine/submarine.mp4,jobs/submarine/thumb_submarine.jpg,jobs/submarine/caption_submarine.md
-2026-11-11,19:00,tap,awaiting owner OK,awaiting owner OK,jobs/tap/tap.mp4,jobs/tap/thumb_tap.jpg,jobs/tap/caption_tap.md
-2026-11-12,08:00,orbit,awaiting owner OK,awaiting owner OK,jobs/orbit/orbit.mp4,jobs/orbit/thumb_orbit.jpg,jobs/orbit/caption_orbit.md
-2026-11-12,13:00,touch,awaiting owner OK,awaiting owner OK,jobs/touch/touch.mp4,jobs/touch/thumb_touch.jpg,jobs/touch/caption_touch.md
-2026-11-12,19:00,window,awaiting owner OK,awaiting owner OK,jobs/window/window.mp4,jobs/window/thumb_window.jpg,jobs/window/caption_window.md
-2026-11-13,08:00,hurricanewc,awaiting owner OK,awaiting owner OK,jobs/hurricanewc/hurricanewc.mp4,jobs/hurricanewc/thumb_hurricanewc.jpg,jobs/hurricanewc/caption_hurricanewc.md
-2026-11-13,13:00,wifi,awaiting owner OK,awaiting owner OK,jobs/wifi/wifi.mp4,jobs/wifi/thumb_wifi.jpg,jobs/wifi/caption_wifi.md
-2026-11-13,19:00,onion,awaiting owner OK,awaiting owner OK,jobs/onion/onion.mp4,jobs/onion/thumb_onion.jpg,jobs/onion/caption_onion.md
-2026-11-14,08:00,sleep,awaiting owner OK,awaiting owner OK,jobs/sleep/sleep.mp4,jobs/sleep/thumb_sleep.jpg,jobs/sleep/caption_sleep.md
+2026-11-11,19:00,wifi,pending,pending,jobs/wifi/wifi.mp4,jobs/wifi/thumb_wifi.jpg,jobs/wifi/caption_wifi.md
+2026-11-12,08:00,onion,pending,pending,jobs/onion/onion.mp4,jobs/onion/thumb_onion.jpg,jobs/onion/caption_onion.md
+2026-11-12,13:00,sleep,pending,pending,jobs/sleep/sleep.mp4,jobs/sleep/thumb_sleep.jpg,jobs/sleep/caption_sleep.md

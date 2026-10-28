@@ -136,19 +136,19 @@
   "time": "13:00"
  },
  {
-  "id": "caffeine",
-  "file": "jobs/caffeine/caffeine.mp4",
-  "title": "Coffee Doesn't Give You Energy, It Fools Your Brain ☕",
-  "description": "Coffee doesn't give you energy. It fools your brain. While you're awake, a chemical called adenosine builds up and makes you sleepy by plugging into receptors on your brain cells. Caffeine is close enough in shape to fit those same receptors, but it doesn't trigger them, so the sleepy message never arrives. The tiredness doesn't go away, it's just blocked, and caffeine's half-life is about four to six hours.\n\nSources: Johns Hopkins Medicine (Sleep/Wake Cycles); Harvard Health (What is it about coffee?); StatPearls (Caffeine; Caffeine Withdrawal); FDA (Spilling the Beans: How Much Caffeine Is Too Much?).\n\n🔔 Subscribe for a new explainer every day.\n#caffeine #coffee #brain #science #Shorts",
+  "id": "faceid",
+  "file": "jobs/faceid/faceid.mp4",
+  "title": "Face ID Doesn't Look at Your Face 📱",
+  "description": "Your phone doesn't look at your face. It looks at its shape. Face ID projects thousands of invisible infrared dots, reads where they land to build a depth map, and turns that into numbers that stay on your device. A printed photo has no depth, so it can't fool it.\n\nSources: Apple Support (About Face ID advanced technology); Apple Platform Security guide (Face ID and Touch ID security).\n\n🔔 Subscribe for a new explainer every day.\n#faceid #iphone #technology #howthingswork #Shorts",
   "tags": [
-   "#caffeine",
-   "#coffee",
-   "#brain",
-   "#science",
+   "#faceid",
+   "#iphone",
+   "#technology",
+   "#howthingswork",
    "#Shorts"
   ],
-  "thumb": "jobs/caffeine/thumb_caffeine.jpg",
-  "thumb_text": "COFFEE\nFOOLS YOU",
+  "thumb": "jobs/faceid/thumb_faceid.jpg",
+  "thumb_text": "NOT A\nPHOTO",
   "date": "2026-11-08",
   "time": "19:00"
  },
@@ -170,19 +170,19 @@
   "time": "08:00"
  },
  {
-  "id": "tickle",
-  "file": "jobs/tickle/tickle.mp4",
-  "title": "Why You Can't Tickle Yourself 🪶",
-  "description": "Why can't you tickle yourself? Your own fingers are just as soft. The difference is your cerebellum: it predicts the touch from your own movement and tells other brain areas to turn the feeling down. Add a delay between movement and touch, as researchers did with a robot, and the ticklishness comes back.\n\nSources: Scientific American (Blakemore, UCL); Blakemore, Wolpert & Frith 1998, Nature Neuroscience; Wikipedia \"Tickling\".\n\n🔔 Subscribe for a new explainer every day.\n#tickle #brain #howthingswork #science #Shorts",
+  "id": "orbit",
+  "file": "jobs/orbit/orbit.mp4",
+  "title": "Orbit Is Falling and Missing the Ground 🛰️",
+  "description": "To reach orbit, a rocket doesn't just go up. It goes sideways. The space station moves at about 17,500 miles per hour, fast enough that as it falls toward Earth, the ground curves away beneath it. Orbit isn't escaping gravity: at the station's height, gravity is still about 90 percent as strong. It's falling and missing the ground, which is why astronauts float.\n\nSources: NASA (What Is Microgravity?; Space Station Facts and Figures; Basics of Space Flight, Gravity & Mechanics; Technical Memorandum TM X-52396); NOAA SciJinks.\n\n🔔 Subscribe for a new explainer every day.\n#orbit #space #physics #howthingswork #Shorts",
   "tags": [
-   "#tickle",
-   "#brain",
+   "#orbit",
+   "#space",
+   "#physics",
    "#howthingswork",
-   "#science",
    "#Shorts"
   ],
-  "thumb": "jobs/tickle/thumb_tickle.jpg",
-  "thumb_text": "YOU CAN'T\nTICKLE YOU",
+  "thumb": "jobs/orbit/thumb_orbit.jpg",
+  "thumb_text": "ALWAYS\nFALLING",
   "date": "2026-11-09",
   "time": "13:00"
  },
@@ -204,19 +204,19 @@
   "time": "19:00"
  },
  {
-  "id": "quake",
-  "file": "jobs/quake/quake.mp4",
-  "title": "Why Earthquakes Can't Be Predicted 🌍",
-  "description": "Nobody has ever predicted a major earthquake. Not the USGS, not any scientist. A real prediction needs the when, the where and the how big, and nobody can nail all three. In 1985 scientists forecast a quake at Parkfield, California before 1993. It arrived in 2004.\n\nSources: USGS (Can you predict earthquakes?; Parkfield experiment; foreshock probability; ShakeAlert fact sheet), NPR (7 Feb 2023), NASA Earth Observatory, Caltech.\n\n🔔 Subscribe for a new explainer every day.\n#earthquake #geology #science #howthingswork #Shorts",
+  "id": "tap",
+  "file": "jobs/tap/tap.mp4",
+  "title": "How Tap-to-Pay Works With No Battery 💳",
+  "description": "A contactless card has no battery. So how does it pay when you tap? The terminal's coil makes a magnetic field that flips about 13.5 million times a second, and it powers the card's chip through a tiny wireless \"transformer\". Every payment uses a one-time code, so a recorded signal can't be replayed.\n\nSources: Wikipedia \"Near-field communication\" and \"Contactless payment\"; Apple Pay security overview; EMVCo.\n\n🔔 Subscribe for a new explainer every day.\n#tapandpay #nfc #howthingswork #technology #Shorts",
   "tags": [
-   "#earthquake",
-   "#geology",
-   "#science",
+   "#tapandpay",
+   "#nfc",
    "#howthingswork",
+   "#technology",
    "#Shorts"
   ],
-  "thumb": "jobs/quake/thumb_quake.jpg",
-  "thumb_text": "CAN'T BE\nPREDICTED",
+  "thumb": "jobs/tap/thumb_tap.jpg",
+  "thumb_text": "NO\nBATTERY",
   "date": "2026-11-10",
   "time": "08:00"
  },
@@ -238,36 +238,36 @@
   "time": "13:00"
  },
  {
-  "id": "faceid",
-  "file": "jobs/faceid/faceid.mp4",
-  "title": "Face ID Doesn't Look at Your Face 📱",
-  "description": "Your phone doesn't look at your face. It looks at its shape. Face ID projects thousands of invisible infrared dots, reads where they land to build a depth map, and turns that into numbers that stay on your device. A printed photo has no depth, so it can't fool it.\n\nSources: Apple Support (About Face ID advanced technology); Apple Platform Security guide (Face ID and Touch ID security).\n\n🔔 Subscribe for a new explainer every day.\n#faceid #iphone #technology #howthingswork #Shorts",
+  "id": "window",
+  "file": "jobs/window/window.mp4",
+  "title": "The Tiny Hole in Every Plane Window ✈️",
+  "description": "That tiny hole at the bottom of a plane window isn't a flaw. Windows have three panes. The hole in the middle one lets cabin air into the gap, so the pressure pushing out lands on the outer pane, with the middle pane as a backup. It also lets moisture out so the window doesn't fog up.\n\nSources: ScienceAlert; Time (quoting Slate's Mark Vanhoenacker and GKN Aerospace's Marlowe Moncur); AirHelp.\n\n🔔 Subscribe for a new explainer every day.\n#airplane #aviation #engineering #howthingswork #Shorts",
   "tags": [
-   "#faceid",
-   "#iphone",
-   "#technology",
+   "#airplane",
+   "#aviation",
+   "#engineering",
    "#howthingswork",
    "#Shorts"
   ],
-  "thumb": "jobs/faceid/thumb_faceid.jpg",
-  "thumb_text": "NOT A\nPHOTO",
+  "thumb": "jobs/window/thumb_window.jpg",
+  "thumb_text": "THE TINY\nHOLE",
   "date": "2026-11-10",
   "time": "19:00"
  },
  {
-  "id": "zipper",
-  "file": "jobs/zipper/zipper.mp4",
-  "title": "How a Zipper Really Locks 🤐",
-  "description": "How does a zipper lock two sides of fabric together? Each tooth has a rounded bump and a matching hollow. The slider's Y-shaped channel pushes the two rows together, one pair of teeth at a time, and the teeth snap in and spring back, so the zipper stays locked. Pull the slider the other way and the same Y pushes them apart.\n\nSources: Wikipedia \"Zipper\".\n\n🔔 Subscribe for a new explainer every day.\n#zipper #howthingswork #explained #design #Shorts",
+  "id": "hurricanewc",
+  "file": "jobs/hurricanewc/hurricanewc.mp4",
+  "title": "How a Hurricane Really Forms 🌀",
+  "description": "A hurricane is a giant heat engine, and its fuel is warm ocean water. The sea surface needs to be at least about 27 °C (80 °F). Warm, moist air rises, cools and condenses into storm clouds, releasing the heat that powers the storm. Earth's rotation turns the inflow into a spin: counterclockwise north of the equator, clockwise south of it. When sustained winds reach 74 mph it is officially a hurricane, with a calm eye inside an eyewall of the strongest winds. Which part surprised you most?\n\nSources: NOAA \"Hurricanes\"; NOAA JetStream \"Tropical Cyclone Introduction\" and \"Tropical Cyclone Structure\"; NHC Saffir-Simpson Hurricane Wind Scale.\n\n🔔 Subscribe for a new explainer every day.\n#hurricane #weather #howthingswork #science #Shorts",
   "tags": [
-   "#zipper",
+   "#hurricane",
+   "#weather",
    "#howthingswork",
-   "#explained",
-   "#design",
+   "#science",
    "#Shorts"
   ],
-  "thumb": "jobs/zipper/thumb_zipper.jpg",
-  "thumb_text": "HOW ZIPPERS\nLOCK",
+  "thumb": "jobs/hurricanewc/thumb_hurricanewc.jpg",
+  "thumb_text": "HOW A\nHURRICANE\nFORMS",
   "date": "2026-11-11",
   "time": "08:00"
  },
@@ -289,91 +289,6 @@
   "time": "13:00"
  },
  {
-  "id": "tap",
-  "file": "jobs/tap/tap.mp4",
-  "title": "How Tap-to-Pay Works With No Battery 💳",
-  "description": "A contactless card has no battery. So how does it pay when you tap? The terminal's coil makes a magnetic field that flips about 13.5 million times a second, and it powers the card's chip through a tiny wireless \"transformer\". Every payment uses a one-time code, so a recorded signal can't be replayed.\n\nSources: Wikipedia \"Near-field communication\" and \"Contactless payment\"; Apple Pay security overview; EMVCo.\n\n🔔 Subscribe for a new explainer every day.\n#tapandpay #nfc #howthingswork #technology #Shorts",
-  "tags": [
-   "#tapandpay",
-   "#nfc",
-   "#howthingswork",
-   "#technology",
-   "#Shorts"
-  ],
-  "thumb": "jobs/tap/thumb_tap.jpg",
-  "thumb_text": "NO\nBATTERY",
-  "date": "2026-11-11",
-  "time": "19:00"
- },
- {
-  "id": "orbit",
-  "file": "jobs/orbit/orbit.mp4",
-  "title": "Orbit Is Falling and Missing the Ground 🛰️",
-  "description": "To reach orbit, a rocket doesn't just go up. It goes sideways. The space station moves at about 17,500 miles per hour, fast enough that as it falls toward Earth, the ground curves away beneath it. Orbit isn't escaping gravity: at the station's height, gravity is still about 90 percent as strong. It's falling and missing the ground, which is why astronauts float.\n\nSources: NASA (What Is Microgravity?; Space Station Facts and Figures; Basics of Space Flight, Gravity & Mechanics; Technical Memorandum TM X-52396); NOAA SciJinks.\n\n🔔 Subscribe for a new explainer every day.\n#orbit #space #physics #howthingswork #Shorts",
-  "tags": [
-   "#orbit",
-   "#space",
-   "#physics",
-   "#howthingswork",
-   "#Shorts"
-  ],
-  "thumb": "jobs/orbit/thumb_orbit.jpg",
-  "thumb_text": "ALWAYS\nFALLING",
-  "date": "2026-11-12",
-  "time": "08:00"
- },
- {
-  "id": "touch",
-  "file": "jobs/touch/touch.mp4",
-  "title": "Your Screen Doesn't Feel Your Touch 👆",
-  "description": "Your phone screen doesn't feel your touch. It senses your electricity. Under the glass is an invisible grid of wires. Every crossing holds a little charge, and your finger disturbs it. The phone finds the dip and works out where you are. That's also why many gloves fail.\n\nSources: Wikipedia \"Touchscreen\"; US patent literature on mutual-capacitance touch sensing.\n\n🔔 Subscribe for a new explainer every day.\n#touchscreen #howthingswork #explained #technology #Shorts",
-  "tags": [
-   "#touchscreen",
-   "#howthingswork",
-   "#explained",
-   "#technology",
-   "#Shorts"
-  ],
-  "thumb": "jobs/touch/thumb_touch.jpg",
-  "thumb_text": "IT SENSES\nYOU",
-  "date": "2026-11-12",
-  "time": "13:00"
- },
- {
-  "id": "window",
-  "file": "jobs/window/window.mp4",
-  "title": "The Tiny Hole in Every Plane Window ✈️",
-  "description": "That tiny hole at the bottom of a plane window isn't a flaw. Windows have three panes. The hole in the middle one lets cabin air into the gap, so the pressure pushing out lands on the outer pane, with the middle pane as a backup. It also lets moisture out so the window doesn't fog up.\n\nSources: ScienceAlert; Time (quoting Slate's Mark Vanhoenacker and GKN Aerospace's Marlowe Moncur); AirHelp.\n\n🔔 Subscribe for a new explainer every day.\n#airplane #aviation #engineering #howthingswork #Shorts",
-  "tags": [
-   "#airplane",
-   "#aviation",
-   "#engineering",
-   "#howthingswork",
-   "#Shorts"
-  ],
-  "thumb": "jobs/window/thumb_window.jpg",
-  "thumb_text": "THE TINY\nHOLE",
-  "date": "2026-11-12",
-  "time": "19:00"
- },
- {
-  "id": "hurricanewc",
-  "file": "jobs/hurricanewc/hurricanewc.mp4",
-  "title": "How a Hurricane Really Forms 🌀",
-  "description": "A hurricane is a giant heat engine, and its fuel is warm ocean water. The sea surface needs to be at least about 27 °C (80 °F). Warm, moist air rises, cools and condenses into storm clouds, releasing the heat that powers the storm. Earth's rotation turns the inflow into a spin: counterclockwise north of the equator, clockwise south of it. When sustained winds reach 74 mph it is officially a hurricane, with a calm eye inside an eyewall of the strongest winds. Which part surprised you most?\n\nSources: NOAA \"Hurricanes\"; NOAA JetStream \"Tropical Cyclone Introduction\" and \"Tropical Cyclone Structure\"; NHC Saffir-Simpson Hurricane Wind Scale.\n\n🔔 Subscribe for a new explainer every day.\n#hurricane #weather #howthingswork #science #Shorts",
-  "tags": [
-   "#hurricane",
-   "#weather",
-   "#howthingswork",
-   "#science",
-   "#Shorts"
-  ],
-  "thumb": "jobs/hurricanewc/thumb_hurricanewc.jpg",
-  "thumb_text": "HOW A\nHURRICANE\nFORMS",
-  "date": "2026-11-13",
-  "time": "08:00"
- },
- {
   "id": "wifi",
   "file": "jobs/wifi/wifi.mp4",
   "title": "How WiFi Gets Through Your Walls 📶",
@@ -387,8 +302,8 @@
   ],
   "thumb": "jobs/wifi/thumb_wifi.jpg",
   "thumb_text": "THROUGH\nWALLS?",
-  "date": "2026-11-13",
-  "time": "13:00"
+  "date": "2026-11-11",
+  "time": "19:00"
  },
  {
   "id": "onion",
@@ -404,8 +319,8 @@
   ],
   "thumb": "jobs/onion/thumb_onion.jpg",
   "thumb_text": "WHY ONIONS\nMAKE YOU CRY",
-  "date": "2026-11-13",
-  "time": "19:00"
+  "date": "2026-11-12",
+  "time": "08:00"
  },
  {
   "id": "sleep",
@@ -421,7 +336,7 @@
   ],
   "thumb": "jobs/sleep/thumb_sleep.jpg",
   "thumb_text": "YOUR BRAIN\nAT NIGHT",
-  "date": "2026-11-14",
-  "time": "08:00"
+  "date": "2026-11-12",
+  "time": "13:00"
  }
 ]

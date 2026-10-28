@@ -41,6 +41,15 @@ Extra approved style: the crayon colour style (reels/styles/crayon, used for fla
 | recommend | #13 AI Doom | 5 (expected) | algorithm told through metaphors (theatre of millions, scoring room, betting wheel, mirror) | approved Oct 28 | |
 | 14 worker reels | generic repo styles | n/a | built before the template rule; mostly not in the owner's templates | kept as is | |
 
+## REJECTED by the owner (Oct 28): "terrible quality, never make these again"
+caffeine (flat cartoon), tickle (flat cartoon), quake (low-poly isometric), zipper (papercut-red, loose "grammar only" interpretation), touch (generic explainer / data-viz grid).
+What they have in common, and what to avoid from now on:
+- **Generic repo looks instead of a specific demo**: flat vector cartoon with simple blobs, sterile isometric blocks, plain grid diagrams. They look like templates, not crafted pieces.
+- **Static, repetitive compositions**: the same diagram or blob on screen for most of the reel (touch grid, caffeine receptors, tickle brain).
+- **No texture or hand-made feel**: no paper, grain, ink or film. The owner's approved reels all have a strong material feel (cel-boil paper, blueprint sheet, pop-up card, silkscreen, shadow-puppet, notebook paper, scifi-toon outlines).
+- **A loose template interpretation counts as a fail** (zipper was "papercut-red grammar only"). Reproduce the actual demo or don't use it.
+Approved anyway, but not to repeat as a style: barcode (kinetic type), faceid and wifi (neon), orbit (generic 3D), tap (CRT), window (explainer), sleep and onion (hand-drawn), hurricanewc (watercolor).
+
 ## Lessons so far (designer notes)
 - The owner rewards a **clear concept-to-template match** over raw polish (magnet).
 - First 3 seconds: the owner finds our intros not catchy enough. See HOOKS.md. The template's most striking image should be on screen at frame 0, not built up slowly.
