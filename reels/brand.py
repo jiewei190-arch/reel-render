@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "sneeze": {"spot": (44, 1366)},   # caption band ends at y 1354 over the paper floor
     "freezerburn": {"spot": ("R", 256), "hide": [(5.7, 11.8)]},   # H2: top-right sky wash; hidden under the "tiny ice crystals" title
     "eyeblink": {"spot": ("R", 260), "hide": [(76.9, 99.0)]},   # AI Doom titles moved below y 345; ransom end card hidden
     "bluejeans": {"spot": ("R", 250)},   # H1: top-right beside the mono header line, above the title and the board
