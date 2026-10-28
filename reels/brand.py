@@ -23,6 +23,9 @@ OVR = {
     # H4 QA, Oct 28
     "flush": {"spot": (44, 1300)},       # every top spot hit a seal, headline, label or the end card
     "hurricanewc": {"spot": (44, 300)},  # auto spot sat on the character's head
+    # H1 QA, Oct 28 (auto spot covered text on these)
+    "darkeyes": {"spot": (44, 1400)}, "foxfire": {"spot": (44, 600)}, "zombieant": {"spot": (44, 860)},
+    "catseyes": {"spot": ("R", 196)}, "owl": {"spot": (44, 1400)}, "spidersilk": {"spot": (44, 1060)}, "pumpkin": {"spot": ("R", 392)},
 }
 
 def frames(src, dur, k=24):
@@ -61,7 +64,7 @@ for n in sys.argv[1:]:
     png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)
     o = OVR.get(n, {}); t0 = o.get("t0", T0)
-    if "spot" in o: (X, Y), busy = o["spot"], -1
+    if "spot" in o: (X, Y), busy = o["spot"], -1; X = 1080 - 44 - b.size[0] if X == "R" else X
     else: busy, X, Y = place(src, dur, *b.size)
     # fade in at t0 so the hook stays clean; fade out/in around hide windows; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
     vis = f"clip((T-{t0})/0.4,0,1)" + "".join(f"*(1-clip(min((T-{a - .3})/0.3,({b + .3}-T)/0.3),0,1))" for a, b in o.get("hide", []))
