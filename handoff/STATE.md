@@ -4,7 +4,7 @@ Updated: 2026-10-28 ~12:00 UTC. Update this file whenever something below change
 
 ## Where things are
 - **EP tracker + template reservations:** handoff/topics_next30.md (status per EP; reservations line at the bottom).
-- **TikTok/YouTube plan:** handoff/schedule_batchN.csv (main session owns rows/dates/EPs; PC session owns the status column; on a merge conflict run `python3 -I handoff/merge_schedule.py`).
+- **TikTok/YouTube plan:** handoff/schedule_batchN.csv (main session owns rows/dates/EPs; PC session owns the status column). Push with `sh handoff/push.sh`, which merges and auto-resolves the PC session's status edits.
 - **Episode numbers:** handoff/episodes.csv (EP order = posting order).
 - **Merging a worker final:** `python3 -I handoff/merge_reel.py <reel> origin/claude/halloween-hN <ep> <date> <tt> <yt> "<title>" "<template>"`, then look at work/merge/<reel>_sheet.jpg, check the badge against every long title, copy the worker's OVR line into reels/brand.py by hand, commit, push.
 - **Reel Dailies page** (https://claude.ai/artifact/4i1CintFhB3ZJLqswwSnQA): source in handoff/dailies/ (dailies.html, thumbs/, seed). To add a reel: copy jobs/<n>/thumb_<n>.jpg to thumbs/<n>.jpg (270x480), republish with files {"thumbs/<n>.jpg": ...}, then ArtifactData set reels/<n> {ep, length, posts, template, thumb, title}. Owner scores are in the db collection scores/<reel>.
