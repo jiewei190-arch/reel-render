@@ -35,6 +35,14 @@ function snowWax(n = 40, y0 = 250, y1 = 1150, t = 0) { for (let i = 0; i < n; i+
 function ground(d = 1, col = K.white) { const top = []; for (let x = -20; x <= 1100; x += 40) top.push([x, 1150 + 18 * Math.sin(x * .008 + 1) + 8 * Math.sin(x * .03)]);
   L(top, { seed: 40, draw: d, p: .7, w: 6 }); F(top.concat([[1100, 1440], [-20, 1440]]), '#b9c7e6', { seed: 41, p: .36, gap: 13, w: 12, ang: .2 }); }
 
+// ---------- page fillers (the book's own doodles): a crayon sled + little pines on a snow drift, right of the badge strip ----------
+function fillers(t) { const s0 = CAM.s, x0 = CAM.x, y0 = CAM.y; CAM.s = 1; CAM.x = 540; CAM.y = 960;
+  L(smooth([[470, 1440], [560, 1392], [680, 1402], [800, 1385], [900, 1412]], 4, false), { seed: 900, w: 6, p: .7 }); F([[470, 1440], [560, 1392], [680, 1402], [800, 1385], [900, 1412], [900, 1440]], K.white, { seed: 901, p: .9, gap: 6, w: 8 });
+  const bob = Math.floor(t * 4) % 2 * 3; F([[600, 1380 - bob], [760, 1380 - bob], [740, 1405 - bob], [610, 1405 - bob]], K.red, { seed: 902, p: .8, gap: 6, w: 8 }); L([[600, 1380 - bob], [760, 1380 - bob], [740, 1405 - bob], [610, 1405 - bob], [600, 1380 - bob]], { seed: 903, w: 5 });
+  L([[590, 1418 - bob], [770, 1418 - bob], [790, 1400 - bob]], { seed: 904, w: 5, col: K.brown }); L([[620, 1405 - bob], [620, 1418 - bob]], { seed: 905, w: 4 }); L([[730, 1405 - bob], [730, 1418 - bob]], { seed: 906, w: 4 });
+  for (const [x, h, sd] of [[830, 70, 0], [875, 52, 1]]) { const tr = [[x, 1395 - h], [x + 26, 1395], [x - 26, 1395]]; F(tr, K.green, { seed: 910 + sd, p: .8, gap: 6, w: 8 }); L([...tr, tr[0]], { seed: 912 + sd, w: 5 }); }
+  CAM.s = s0; CAM.x = x0; CAM.y = y0; }
+
 // ---------- the kid (front view): beanie + pompom, big round nose, striped scarf, coat, mittens ----------
 function kid(cx, cy, sc, o = {}) { const C = KID, P = pts => pts.map(([x, y]) => [cx + x * sc, cy + y * sc]), sd = 100, d = o.draw ?? 1;
   const lo = (seed, ex = {}) => ({ w: 7, seed, draw: clamp(d * 1.3), ...ex });
@@ -85,7 +93,7 @@ function washSky(d, y1 = 1120, box = null) { if (d <= 0) return; const g = WASH.
 // ---------- scenes ----------
 const SC = [];
 const r = (i, d = 0) => s(i) + d;
-SC[0] = (t, lt) => { washSky(1); snowWax(36, 250, 1120, t); ground(); const k = kid(CX, 700, 1.15); dripCycle(k.nostril[0], k.nostril[1], t, 2.4, 1); title('drip.', 330, 1, { x: 800, col: K.red, size: 140 }); };
+SC[0] = (t, lt) => { washSky(1); snowWax(36, 250, 1120, t); ground(); const k = kid(CX, 700, 1.15); dripCycle(k.nostril[0], k.nostril[1], t, 2.4, 1); title('WHY THE DRIP?', 300, 1, { col: K.red, size: 118 }); note('drip.', 850, 760, 1, { col: K.red, size: 64 }); };
 SC[1] = (t, lt) => { washSky(1); ground(); kid(330, 720, .95, { smile: true }); const d = pr(lt, 0, .8);
   shape([[700, 500], [740, 500], [740, 900], [700, 900]], K.white, 300, d); dab(BG.f, 720, 930, 40, { col: K.red, p: .9, seed: 302 }); L(handCircle(720, 930, 42, 3, .1, 24), { seed: 303, draw: d }); L([[700, 760], [740, 760]], { seed: 304, w: 5, draw: d });
   note('not sick!', 860, 700, lt - .8, { size: 62 }); L([[820, 760], [860, 810], [960, 700]], { col: K.green, w: 12, seed: 305, draw: pr(lt, 1, 1.4) }); title('so WHY?', 300, lt - 2.2, { col: K.red, size: 120 }); };
@@ -101,9 +109,9 @@ SC[5] = (t, lt) => { profile(1); const blink = Math.floor(t * 6) % 2; title('NER
   for (let j = 0; j < 5; j++) { const x = 480 - j * 40, y = 690 + (j % 2) * 30; L([[x, y], [x - 12, y - 30], [x + 8, y - 44], [x - 6, y - 74]], { col: K.yellow, w: 8, seed: 370 + j, draw: pr(lt, .4 + j * .15, .8 + j * .15) }); }
   const bx = 820, by = 700; shape(smooth([[bx - 70, by + 50], [bx - 60, by - 40], [bx, by - 80], [bx + 60, by - 40], [bx + 70, by + 50]], 4), K.yellow, 380, pr(lt, .8, 1.5)); dab(BG.f, bx, by + 66, 16, { col: K.ink, p: .9, seed: 383 });
   if (lt > 1.5) for (let j = 0; j < 3; j++) L([[bx + 90 + j * 6, by - 60 + j * 40], [bx + 130 + j * 10 + blink * 8, by - 70 + j * 46]], { seed: 384 + j, w: 6, fx: true }); arrow(760, 820, 520, 760, K.ink, 390, pr(lt, 1.8, 2.4), -.2); note('to the brain', 820, 900, lt - 2.4); };
-SC[6] = (t, lt) => { profile(1); const bx = 340, by = 500; shape(smooth([[bx - 120, by + 40], [bx - 130, by - 50], [bx - 60, by - 110], [bx + 40, by - 115], [bx + 120, by - 60], [bx + 130, by + 30], [bx + 40, by + 60], [bx - 60, by + 60]], 5), K.pink, 400, pr(lt, 0, .6), { p: .55 });
-  for (let j = 0; j < 3; j++) L(smooth([[bx - 60 + j * 50, by - 70], [bx - 40 + j * 50, by - 20], [bx - 70 + j * 50, by + 20]], 4, false), { seed: 403 + j, w: 5, draw: pr(lt, .3, .8) });
-  for (let j = 0; j < 3; j++) L(smooth([[430, 560 + j * 20], [480 + j * 20, 640 + j * 30], [520, 720 + j * 20], [560, 770]], 4, false), { col: K.red, w: 9, seed: 410 + j, draw: pr(lt, .6 + j * .2, 1.3 + j * .2) });
+SC[6] = (t, lt) => { profile(1); const wd = 6 + 10 * pr(lt, .6, 2.2);
+  for (let j = 0; j < 4; j++) L(smooth([[300, 700 + j * 22], [380, 640 + j * 26], [460, 650 + j * 30], [520, 720 + j * 18], [570, 770]], 4, false), { col: K.red, w: wd, seed: 410 + j, draw: pr(lt, .2 + j * .15, .9 + j * .15) });
+  note('vessels widen', 800, 880, lt - 1.4, { col: K.red, size: 54 }); arrow(760, 850, 560, 740, K.red, 415, pr(lt, 1.6, 2.1), .15);
   title('EXTRA BLOOD', 300, lt - .2, { x: 720, size: 84, col: K.red }); note('= warmer air', 790, 400, lt - 1.2, { col: K.orange }); };
 SC[7] = (t, lt) => { profile(1); for (let j = 0; j < 4; j++) { const x = 330 + j * 50, y = 640 + (j % 2) * 6; shape([[x - 18, y - 30], [x + 18, y - 30], [x + 12, y], [x - 12, y]], K.violet, 420 + j * 3, pr(lt, .2 + j * .2, .6 + j * .2));
     const ph = (t * 1.4 + j * .3) % 1; if (lt > .8) drop(x, y + 20 + ph * 70, 9 + 3 * ph, 440 + j); }
@@ -151,7 +159,8 @@ let F0 = null;
 const CAMS = { 2: [540, 960, 1], 3: [600, 930, 1.04], 5: [500, 900, 1.18], 6: [470, 860, 1.12], 7: [460, 880, 1.3] };
 function draw(t) { BOIL.step = Math.floor(t * 12 + 1e-6); BOIL.amp = 1;
   clearGroup(KID); [BG.f, BG.l, FX, WASH, SUBK, SUBT].forEach(clear);
-  const k = sceneAt(t), lt = k === 0 ? 99 : t - (START[k] - .15), cm = CAMS[k] || [540, 960, 1]; CAM.x = cm[0]; CAM.y = cm[1]; CAM.s = cm[2] * (1 + .012 * Math.min(lt, 5)); SC[k](t, lt); if (k < SC.length - 1) subtitle(t);
+  const k = sceneAt(t), lt = k === 0 ? 99 : t - (START[k] - .15); CAM.x = 540; CAM.y = 960; CAM.s = 1; if (![0, 1, 4, 9, 10].includes(k)) ground(1); fillers(t);
+  const cm = CAMS[k] || [540, 960, 1]; CAM.x = cm[0]; CAM.y = cm[1]; CAM.s = cm[2] * (1 + .012 * Math.min(lt, 5)); SC[k](t, lt); if (k < SC.length - 1) subtitle(t);
   comp.paperCam(CAM.x * .6, CAM.y * .6, CAM.s / .6); comp.begin(); comp.crayon(BG.f.c); comp.crayon(BG.l.c); comp.wash(WASH.c, { color: WASHC }); const go = [hash(BOIL.step) * 300, hash(BOIL.step + 7) * 300];
   comp.group(KID, { goff: go }); comp.crayon(FX.c, { goff: go }); comp.knock(SUBK.c); comp.crayon(SUBT.c);
   const lp = clamp((t - (TOT - .5)) / .5) * .4; if (lp > 0 && F0) { const [c2, g2] = [document.createElement('canvas'), null]; c2.width = W; c2.height = H; const gg = c2.getContext('2d'); gg.globalAlpha = lp; gg.drawImage(F0, 0, 0); comp.image(c2); }

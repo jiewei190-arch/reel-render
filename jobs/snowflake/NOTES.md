@@ -2,8 +2,18 @@
 
 - Template: **#2 Red paper-cut** (lemo-opuscar papercut-red; the engine files paper.js, motifs.js, rig.js and hud.js are copied from the demo into reels/styles/papercut/, Fraunces OFL font from jsDelivr). Why: a paper snowflake is folded and cut, the template's own fold-cut-unfold move, and the window-flower rosette is literally a snowflake. The previous H3 reels used Recipe card, cel-boil and particle flock.
 - Taken from the demo: red paper as the hero on a night-indigo paper ground (different paper families); every shape is cut, with hand-cut wobble, soft-light paper grain, a cut-edge rim and a tight paper shadow; yin-cut holes and slits (the honeycomb, the flake's core hexagon, the dotted hydrogen bonds); 12 fps stepped pieces with a one-step 1.15x pop; cut-out titles popping in letter by letter; the subtitle as a dark-red paper banner with sawtooth edges, swallowtails and gold flecks, dropping in on two steps; the folded stack and scissors; gold foil kept for one late moment (the "diary" payoff).
+- **Demo elements copied after the storyboard notes** (compared with the demo poster and style frame):
+  1. layered paper depth: night-indigo paper ground, two sawtooth-crest hill layers (#1f2a55, #29356e), a village row, a front snow layer; every piece casts a tight paper shadow on the one below;
+  2. the village row from the demo's town: houses with tiled roofs cut as sawtooth rows, inset double-outline walls, doors and windows cut out, warm-lit windows with tiny red rosettes, and pines; the lit windows change from scene to scene;
+  3. snow paper with crescent "smile" cuts, as on the demo's snowfield;
+  4. paper fibre texture at full strength (the demo's soft-light paperGrain with fibres) on every piece;
+  5. cut-out negative space: the yin-cut honeycomb, the flake's hexagon core and dot cuts, roof tiles, window and door holes;
+  6. inset contours (the demo's double outline) on the wide red pieces: molecules, the honeycomb disc, the mitten, walls, snow;
+  7. parallax: the far hills, mid hills, village, crescents and three depths of paper flakes all pan at different rates (0.3 / 0.55 / 0.7 / 1.0 / flakes 0.45-1.2), so something moves in every frame;
+  8. kept from before: 12 fps stepped pieces with the one-step 1.15x pop, letter-by-letter cut titles, the swallowtail banner subtitle with gold flecks, the folded stack and scissors, gold foil saved for the "diary" payoff.
+- Hook accuracy: "Never five. Never eight." over-claimed (Libbrecht notes rare three-fold crystals). The line is now "Every snowflake has six arms. Almost always six.", with two more six-armed flakes popping in and no crossed-out five- or eight-armed flakes.
 - New for the topic: a procedural six-fold snowflake (spine, side branches, tip; one arm rotated n times), which grows from the prism in the "branches sprout" scene; cut-paper water molecules; the paper thermometer strip; cloud pieces; a paper mitten.
-- Length 78.8 s; af_heart 0.97; music crayon 88 bpm at music_gain 0.7; fx_gain 0.5.
+- Length 78.4 s; af_heart 0.97; music crayon 88 bpm at music_gain 0.7; fx_gain 0.5.
 - Code: reels/t_snowflake.js, t_snowflake.html, specs/snowflake.json, ev_snowflake.json, tl_snowflake.js, reels/styles/papercut/ (demo engine + all.js re-export).
 - Batch N layout: banner bottom at y 1355 inside x 70-890; titles at y 250-460; content inside y 250-1130; badge strip y 1366-1440 free.
 - Loop ending: in the last 0.5 s the frame-0 image (the big red flake under "SIX ARMS.") dissolves in at most 40%.
@@ -35,8 +45,8 @@ QA snowflake: PASS   (/home/user/reel-render/jobs/snowflake/snowflake.mp4, 78.8 
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal noted
-- [x] Hook passes HOOKS.md (9-word first line; frame 0 a big red flake turning on 12 fps steps with paper snow falling; "But" at 4.3 s; search question spoken at 4-8 s)
-- [x] 66-86 s (78.8 s); ends on the exact closing line
+- [x] Hook passes HOOKS.md (9-word first line, "Every snowflake has six arms. Almost always six."; frame 0 a big red flake turning on 12 fps steps with paper snow falling; "But" at 4.3 s; search question spoken at 4-8 s)
+- [x] 66-86 s (78.4 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Ever caught one on your mitten? Yes or no?")
 - [x] End card: the standard main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (frame-0 image dissolves in, max 40%, in the last 0.5 s)
