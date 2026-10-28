@@ -78,21 +78,33 @@ function sceneH(t) { const t0 = s(7), k = R(t, t0 + .2, .9), v = Math.round(1000
   A.kinetic('keep up.', 90, 420, R(t, t0, .7), { size: 108 });
   if (k > 0) A.text(v.toLocaleString('en-US') + 's', 540, 860, { size: 300, wt: 800, align: 'center', track: -10, blur: (1 - ex(k)) * 14, a: clamp(k * 3) });
   A.text('OF TIMES A SECOND', 540, 960, { f: 'mono', size: 32, col: C.grey, track: 8, align: 'center', a: R(t, t0 + 1.2, .5) }); }
-// I (p8-p9): slow, steady hums: long waves, the anti-wave lines up even with a small delay -> cancels
-function terminal(x, y, rows, t, t0, o = {}) { A.glass(x, y, 820, 300, { title: '~/anc — zsh', pill: o.pill, a: 1 });
-  rows.forEach(([txt, ok], i) => { const k = R(t, t0 + i * .7, .4); if (k <= 0) return; A.text(txt, x + 50, y + 170 + i * 64, { f: 'mono', size: 34, col: C.white, write: k });
-    A.text(ok ? '✓ cancels' : '✗ too fast', x + 520, y + 170 + i * 64, { f: 'mono', size: 34, wt: 700, col: ok ? C.green : C.red, a: R(k, .6, .4) }); }); }
+// I-J (p8-p10): the wave comparison. Top: the noise (white) with the anti-noise (indigo) laid over it, a tiny delay late.
+// Bottom: what's left over (cyan) = noise + anti-noise. Long low waves: the left-over is nearly flat. Short jagged waves: it isn't.
+function curve(x0, x1, y0, f, o = {}) { const c = lg, prog = o.prog ?? 1; if (prog <= 0) return; c.save(); c.globalAlpha *= o.a ?? 1; c.strokeStyle = o.col || C.white; c.lineWidth = o.w || 6; c.lineCap = 'round'; c.lineJoin = 'round';
+  if (o.glow) { c.shadowColor = o.col || C.white; c.shadowBlur = o.glow; } c.beginPath(); const xe = lerp(x0, x1, prog); for (let x = x0; x <= xe; x += 3) { const y = y0 + f(x); x === x0 ? c.moveTo(x, y) : c.lineTo(x, y); } c.stroke(); c.restore(); }
+function chip(txt, x, y, k, col) { if (k <= 0) return; const c = lg; c.save(); c.globalAlpha *= clamp(k * 2); A.use(c); A.glass(x, y - 44 + 20 * (1 - eo(clamp(k))), 400, 88, { r: 44 });
+  c.fillStyle = col; c.shadowColor = col; c.shadowBlur = 14; c.beginPath(); c.arc(x + 46, y, 10, 0, TAU); c.fill(); c.restore(); A.text(txt, x + 76, y + 11, { f: 'mono', size: 30, wt: 700, track: 4, col: C.white, a: clamp(k * 2) }); }
+function compare(t, f, dl, k, col, ka, ks) { const env = x => ss(clamp((x - 80) / 140)) * ss(clamp((1000 - x) / 140));
+  label('NOISE + ANTI-NOISE', 90, 620, k, { size: 24, col: C.grey });
+  curve(80, 1000, 770, x => f(x) * env(x), { col: C.white, glow: 14, a: k, prog: k });
+  curve(80, 1000, 770, x => -f(x - dl) * env(x), { col, glow: 18, a: .9 * ka, prog: ka });
+  label('WHAT YOU HEAR', 90, 930, ks, { size: 24, col: C.grey });
+  curve(80, 1000, 1010, x => (f(x) - f(x - dl)) * env(x), { col: C.cyan, glow: 16, a: ks, prog: ks }); }
 function sceneI(t) { const t0 = s(8), dl = 14;
   A.kinetic('slow, steady hums', 90, 400, R(t, t0, .7), { size: 84 });
-  terminal(130, 470, [['engine drone', 1], ['air con hum', 1]], t, t0 + .8);
-  const k9 = R(t, s(9) - .2, .6); wave(80, 1000, 960, 70, 420, t, { col: C.white, glow: 12, a: k9, speed: 1.2 }); wave(80 + dl, 1000, 960, 70, 420, t, { col: C.ind, glow: 16, inv: 1, a: k9, speed: 1.2 });
-  label('LONG WAVES: A TINY DELAY BARELY MATTERS', 540, 1100, R(t, s(9) + .6, .6), { align: 'center', size: 26, col: C.cyan }); }
-// J (p10): high, sudden sounds: short waves; the same delay leaves them out of step -> no cancel
+  chip('ENGINE DRONE', 90, 510, R(t, t0 + 1.4, .5), C.cyan); chip('AIR CON HUM', 540, 510, R(t, t0 + 3.0, .5), C.cyan);
+  const f = x => 130 * Math.sin((x / 700) * TAU - t * 1.3);
+  compare(t, f, dl, R(t, t0 + .4, 1.0), C.ind, R(t, t0 + 1.8, 1.2), R(t, t0 + 3.6, 1.0));
+  label('→ ALMOST NOTHING LEFT', 365, 930, R(t, s(9) + .3, .6), { size: 24, col: C.cyan });
+  label('LONG WAVES: STILL IN STEP', 540, 1140, R(t, s(9) + 1.2, .6), { align: 'center', size: 26, col: C.cyan }); }
 function sceneJ(t) { const t0 = s(10), dl = 14;
   A.kinetic('high, sudden sounds', 90, 400, R(t, t0, .7), { size: 80 });
-  terminal(130, 470, [['a voice', 0], ['a dog bark', 0]], t, t0 + 1.2);
-  wave(80, 1000, 960, 60, 60, t, { col: C.white, glow: 10, speed: 8 }); wave(80 + dl, 1000, 960, 60, 60, t, { col: C.red, glow: 10, inv: 1, speed: 8, a: .8 });
-  label('SHORT WAVES: TOO FAST TO COPY IN TIME', 540, 1100, R(t, t0 + 2.4, .6), { align: 'center', size: 26, col: C.red }); }
+  chip('A VOICE', 90, 510, R(t, t0 + 1.0, .5), C.red); chip('A DOG BARK', 540, 510, R(t, t0 + 2.0, .5), C.red);
+  const burst = x => .55 + .45 * Math.max(0, Math.sin((x / 900) * TAU * 2 - t * 3));
+  const f = x => burst(x) * (34 * Math.sin((x / 60) * TAU - t * 8) + 20 * Math.sin((x / 90) * TAU - t * 5 + 1) + 12 * Math.sin((x / 37) * TAU - t * 11 + 2));
+  compare(t, f, dl, R(t, t0 + .3, .8), C.red, R(t, t0 + 1.2, .8), R(t, t0 + 2.2, .8));
+  label('→ MOST OF IT GETS THROUGH', 365, 930, R(t, t0 + 4.4, .6), { size: 24, col: C.red });
+  label('SHORT WAVES: TOO FAST TO COPY', 540, 1140, R(t, t0 + 3.4, .6), { align: 'center', size: 26, col: C.red }); }
 // K (p11): passive padding blocks the highs: iso cushion block with the short wave stopping at it
 function sceneK(t) { const t0 = s(11);
   A.kinetic('padding', 90, 420, R(t, t0, .7), { size: 116 }); A.kinetic('does the rest.', 90, 540, R(t, t0 + .3, .7), { f: 'serif', wt: 400, size: 120, col: C.indL, track: 0 });

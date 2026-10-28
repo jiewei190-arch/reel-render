@@ -10,7 +10,7 @@ Also consulted: NC State University, "Engineering Silence" (student engineering 
 | A chip flips the wave upside down; the speaker plays the anti-noise | Elliott & Nelson: a secondary source driven to produce a wave of opposite phase |
 | A squeeze meets a stretch, they cancel, the noise gets much quieter | Elliott & Nelson: destructive interference between primary and secondary waves |
 | The chip has to keep up | Elliott & Nelson (the controller must respond within the delay of the acoustic path) |
-| Easy for slow, steady sounds: plane engine drone, AC hum | Elliott & Nelson: active control is effective at low frequencies; Sennheiser: repetitive low-frequency noise like engines and AC |
+| Easy for slow, steady sounds: plane engine drone, AC hum | **University source:** Elliott & Nelson (ISVR, Southampton): active control is effective at low frequencies, where wavelengths are long, and in practice is used on low, steady (tonal) noise such as engine and propeller noise. Secondary, manufacturer: Sennheiser (repetitive low-frequency noise like engines and AC) |
 | Low hums have long waves, so a tiny delay barely matters | Elliott & Nelson: practical because acoustic wavelengths are long at low frequencies |
 | High, sudden sounds (a voice, a bark) change too fast | Elliott & Nelson (performance falls at higher frequencies); Sennheiser: less effective for voices |
 | The earcup padding does most of the blocking for those | Elliott & Nelson (passive attenuation of the headset shell is effective at high frequencies) |
