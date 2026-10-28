@@ -73,7 +73,7 @@
 | 102 | sleeptalk | Why do we talk in our sleep? | H4 | merged v1, Nov 17 16:00 (v2 with hedged hook "In a sleep lab..." pending; swap in) |
 | 103 | honey | How do bees turn nectar into honey? | H1 | queued |
 | 104 | fog | Where does fog come from? | H1 | queued |
-| 63 | auroras | What causes the northern lights? | H3 | queued |
+| 63 | auroras | What causes the northern lights? | H3 | merged, Nov 9 19:00 |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | merged v3, Nov 9 16:00 |
