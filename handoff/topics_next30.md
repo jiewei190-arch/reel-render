@@ -70,7 +70,7 @@
 | 99 | mirrorflip | Why do mirrors flip left and right but not up and down? | H2 | merged, Nov 16 21:30 |
 | 100 | tidesmoon | How does the Moon cause tides? | H2 | merged, Nov 17 09:00 |
 | 101 | hairwet | Why does wet hair look darker? | H4 | merged, Nov 17 13:00 |
-| 102 | sleeptalk | Why do we talk in our sleep? | H4 | queued |
+| 102 | sleeptalk | Why do we talk in our sleep? | H4 | merged v1, Nov 17 16:00 (v2 with hedged hook "In a sleep lab..." pending; swap in) |
 | 103 | honey | How do bees turn nectar into honey? | H1 | queued |
 | 104 | fog | Where does fog come from? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
