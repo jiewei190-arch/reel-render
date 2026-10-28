@@ -23,6 +23,7 @@ OVR = {
     "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
     "submarine": {"spot": (44, 1360)}, # seabed only
     "snowwhite": {"spot": (44, 1360)},  # top band holds the search bar and handwritten labels; empty strip under the captions
+    "yawn": {"spot": (44, 920), "hide": [(63.5, 99.0)]},        # top band holds titles, frames and chalkboards; mid-left wall is the quietest (edge scan)
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
