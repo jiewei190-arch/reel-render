@@ -2,7 +2,7 @@
 // Demo moves reused: the violet > pink > peach dusk gradient with a murmuration of tiny dark glyph specks (A), the starry navy sky (B), the glowing
 // ringed orb (C), the thin light streak drawn across the frame (D), handwritten notes with curved arrows (E). Here the flock is the water in a breath:
 // molecules zooming apart, slowing past the dew point, sticking into droplets, a white cloud, then evaporating again.
-// Batch N layout: captions at y ~1290 inside x 70-890, content inside y 250-1130, nothing important in x > 900 below y 840.
+// Batch N layout: caption box bottom-anchored at y 1360 inside x 70-890 (badge strip y 1366-1440 stays free), content inside y 250-1130, nothing important in x > 900 below y 840.
 await Promise.all(['800 80px Inter', '600 50px Inter', '60px Hand'].map(f => document.fonts.load(f)));
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end, TOT = TL.total;
 const W = 1080, H = 1920, TAU = Math.PI * 2, CX = 540;
@@ -108,27 +108,27 @@ SC[1] = { bg: 'warm', style: 'drop', form: F.puff, pa: (i, t, lt) => ageA(i, t) 
   c.save(); c.globalAlpha = .9; const g = c.createRadialGradient(830, 420, 0, 830, 420, 150); g.addColorStop(0, '#fff6c8'); g.addColorStop(.5, '#ffd36b'); g.addColorStop(1, 'rgba(255,211,107,0)'); c.fillStyle = g; c.beginPath(); c.arc(830, 420, 150, 0, TAU); c.fill(); c.restore();
   title([['WARM DAY?', '#fff']], lt, 300, 100); note('nothing...', 700, 760, lt - 1.3, '#7a3f2a', 76); title([['', ''], ['WHY?', '#7a3f2a']], lt - 2.4, 300, 100); } };
 SC[2] = { bg: 'night', style: 'mol', form: F.orb, pa: (i, t, lt) => .25 + .55 * ss(.6, 2, lt), draw: (lt, u, t) => { orb(CX, 720, 240, t, ss(0, .8, lt)); title([['ALWAYS FULL', '#fff'], ['OF WATER', ICEB]], lt, 300, 96); } };
-SC[3] = { bg: 'night', style: 'mol', form: F.box(110, 490, 840, 600, 2.4), pa: () => .9, draw: (lt, u, t) => { title([['WATER VAPOR', ICEB]], lt, 300, 104); note('invisible molecules', 330, 1050, lt - 1.4, '#fff', 56); arrow(560, 1040, 700, 920, lt - 1.8, '#fff', -40); } };
+SC[3] = { bg: 'night', style: 'mol', form: F.box(110, 490, 840, 600, 2.4), pa: () => .9, draw: (lt, u, t) => { title([['WATER VAPOR', ICEB]], lt, 300, 104); note('invisible molecules', 330, 1030, lt - 1.4, '#fff', 56); arrow(560, 1020, 700, 900, lt - 1.8, '#fff', -40); } };
 SC[4] = { bg: 'night', style: 'mol', form: F.box(110, 490, 840, 600, 4.2), pa: () => .9, trail: 1, draw: (lt, u, t) => { thermo(950, 800, 260, .85, '#ff7a6a', pop(lt)); title([['WARM =', '#fff'], ['FAST & APART', WARMY]], lt, 300, 96); } };
 SC[5] = { bg: 'night', style: 'mol', form: F.two, pa: (i) => .92, draw: (lt, u, t) => { boxFrame(110, 540, 370, 440, WARMY, pop(lt), 'warm air'); boxFrame(570, 540, 340, 440, ICEB, pop(lt - 1.6), 'cold air');
   title([['WARM: LOTS', WARMY]], lt, 290, 84); title([['', ''], ['COLD: LESS', ICEB]], lt - 1.8, 290, 84); } };
 SC[6] = { bg: 'night', style: 'mol', form: F.cols, pa: (i) => i < 330 ? .95 : 0, sz: .85, draw: (lt, u, t) => { title([['ABOUT', '#fff'], ['A TENTH', ICEB]], lt, 290, 104);
-  note('body-warm air', 330, 1100, lt - .8, WARMY, 54); note('freezing air', 750, 1100, lt - 1.4, ICEB, 54); arrow(760, 860, 760, 990, lt - 2.2, ICEB, 0); note('1/10', 760, 820, lt - 2.2, '#fff', 80); } };
+  note('body-warm air', 330, 1075, lt - .8, WARMY, 54); note('freezing air', 750, 1075, lt - 1.4, ICEB, 54); arrow(760, 860, 760, 990, lt - 2.2, ICEB, 0); note('1/10', 760, 820, lt - 2.2, '#fff', 80); } };
 SC[7] = { bg: 'cold', style: 'speck', form: F.flock(380, 760, 700, 720, 3.4), pa: () => .95, draw: (lt, u, t) => { kid(-40, 0, 1, 1, INK); title([['CRASH INTO', '#fff'], ['THE COLD', ICEB]], lt, 300, 104, 1.08); snowfall(t, .6); } };
 SC[8] = { bg: 'cold', style: 'speck', form: F.flock(540, 560, 540, 960, 2.6), pa: () => .95, draw: (lt, u, t) => { streak(800, lt / 1.2, t, '#ffe2a8'); note('dew point', 210, 860, lt - 1, '#fff', 64, 'left');
   title([['THE DEW POINT', '#fff']], lt, 300, 96); const k = eo((lt - .4) / 2.6); thermo(860, 1000, 520, lerp(.9, .3, k), '#7fb3ff', pop(lt)); } };
-SC[9] = { bg: 'night', style: 'mol', form: F.squeeze, pa: () => .95, draw: (lt, u, t) => { boxFrame(300, 520, 480, 380, '#fff', pop(lt), ''); title([["CAN'T HOLD", '#fff'], ['IT ALL', '#ff9fb0']], lt, 300, 104); note('too much vapor!', CX, 1010, lt - 1.2, '#fff', 60); } };
+SC[9] = { bg: 'night', style: 'mol', form: F.squeeze, pa: () => .95, draw: (lt, u, t) => { boxFrame(300, 520, 480, 380, '#fff', pop(lt), ''); title([["CAN'T HOLD", '#fff'], ['IT ALL', '#ff9fb0']], lt, 300, 104); note('too much vapor!', CX, 990, lt - 1.2, '#fff', 60); } };
 SC[10] = { bg: 'night', style: 'mol', form: F.clump, pa: () => .95, draw: (lt, u, t) => { const k = ss(2.2, 4.2, lt); c.save(); for (let j = 0; j < 26; j++) { const a = hash(j * 3.7), b = hash(j * 9.2), x = 170 + a * 700 + 16 * Math.sin(t * .8 + j), y = 520 + b * 520 + 12 * Math.cos(t * .7 + j);
     const g = c.createRadialGradient(x, y, 0, x, y, 52); g.addColorStop(0, `rgba(255,255,255,${.9 * k})`); g.addColorStop(.6, `rgba(220,236,255,${.5 * k})`); g.addColorStop(1, 'rgba(220,236,255,0)'); c.fillStyle = g; c.beginPath(); c.arc(x, y, 52, 0, TAU); c.fill(); } c.restore();
-  title([['STICK', '#fff'], ['TOGETHER', ICEB]], lt, 290, 104); note('tiny droplets!', CX, 1080, lt - 2.6, WARMY, 62); } };
+  title([['STICK', '#fff'], ['TOGETHER', ICEB]], lt, 290, 104); note('tiny droplets!', CX, 1060, lt - 2.6, WARMY, 62); } };
 SC[11] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-110, 40, .9); title([['A LITTLE', '#fff'], ['WHITE CLOUD', '#fff']], lt, 300, 100); note('droplets', 870, 960, lt - 1, '#fff', 60); arrow(860, 920, 790, 840, lt - 1.2, '#fff', 40); } };
 SC[12] = { bg: 'dusk', style: 'drop', form: F.big, pa: (i) => i % 7 === 0 ? .9 : .8, sz: 1.15, draw: (lt, u, t) => { kid(30, 470, .55); title([['SAME WAY', WARMY]], lt - 1, 280, 110);
-  note('a real cloud', 800, 850, lt - .6, '#fff', 58); note('your breath', 520, 1080, lt - 1.4, '#fff', 58); arrow(470, 1050, 410, 975, lt - 1.6, '#fff', -30); } };
+  note('a real cloud', 800, 850, lt - .6, '#fff', 58); note('your breath', 520, 1060, lt - 1.4, '#fff', 58); arrow(470, 1030, 410, 965, lt - 1.6, '#fff', -30); } };
 SC[13] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-110, 40, .9); title([['GONE IN', '#fff'], ['A SECOND?', WARMY]], lt, 300, 104); } };
 SC[14] = { bg: 'cold', style: 'drop', form: F.spread, pa: (i, t, lt) => .85 - .3 * ss(0, 3.4, lt), draw: (lt, u, t) => { kid(-110, 40, .9); snowfall(t, .7); title([['MIXING WITH', '#fff'], ['DRY AIR', ICEB]], lt, 290, 104); } };
-SC[15] = { bg: 'night', style: 'mol', form: F.evap, pa: (i, t, lt) => .9 - .55 * ss(1.2, 3.6, lt), sz: .8, draw: (lt, u, t) => { title([['EVAPORATE', ICEB]], lt, 300, 110); note('back to invisible vapor', CX, 1080, lt - 1.3, '#fff', 58); } };
+SC[15] = { bg: 'night', style: 'mol', form: F.evap, pa: (i, t, lt) => .9 - .55 * ss(1.2, 3.6, lt), sz: .8, draw: (lt, u, t) => { title([['EVAPORATE', ICEB]], lt, 300, 110); note('back to invisible vapor', CX, 1060, lt - 1.3, '#fff', 58); } };
 SC[16] = { bg: 'dusk', style: 'drop', form: F.puff, pa: ageA, draw: (lt, u, t) => { kid(); title([['NOT YOUR BREATH:', '#fff'], ['A CLOUD YOU MADE', WARMY]], lt, 290, 88, 1.15); } };
-SC[17] = { bg: 'dusk', style: 'drop', form: F.puff, pa: ageA, draw: (lt, u, t) => { kid(); title([['DRAGON', '#fff'], ['SMOKE?', WARMY]], lt, 300, 120); pill('YES', 560, 1030, 230, 110, WARMY, INK, lt - 1.4); pill('NO', 820, 1030, 200, 110, '#fff', INK, lt - 1.6); } };
+SC[17] = { bg: 'dusk', style: 'drop', form: F.puff, pa: ageA, draw: (lt, u, t) => { kid(); title([['DRAGON', '#fff'], ['SMOKE?', WARMY]], lt, 300, 120); pill('YES', 560, 990, 230, 110, WARMY, INK, lt - 1.4); pill('NO', 800, 990, 200, 110, '#fff', INK, lt - 1.6); } };
 SC[18] = { bg: 'night', style: 'mol', form: F.band, pa: () => .7, sz: .8, draw: (lt, u, t) => { const a = pop(lt);
   txt('Follow for more of', CX, 600, 80, '#fff', { a }); txt('how it really works.', CX, 700, 80, WARMY, { a }); txt("A new 'wait, really?' every day.", CX, 830, 50, '#fff', { a: a * .9, f: 'Hand', wt: 400 }); txt('@howitreallyworkstudio', CX, 910, 46, ICEB, { a: a * .9, wt: 600 }); orb(CX, 420, 70, t, a * .8); } };
 
@@ -140,11 +140,11 @@ const MORPH = .9;
 function caption(t) { let k = -1; for (let i = 0; i < PH.length; i++) if (t >= PH[i].start - .15 && t <= (i + 1 < PH.length ? PH[i + 1].start - .15 : TOT)) k = i; if (k < 0 || k === PH.length - 1) return; const p = PH[k];
   // bold (**...**) state carries across words
   let bold = false; const toks = p.cap.split(' ').map(w => { const st = w.startsWith('**'), en = w.endsWith('**') || w.replace(/[.,!?:;]+$/, '').endsWith('**'); if (st) bold = true; const r = { w: w.replace(/\*\*/g, ''), b: bold }; if (en) bold = false; return r; });
-  c.save(); c.font = '600 54px Inter'; const maxW = 760, lines = [[]]; let lw = 0; toks.forEach(o => { const ww = c.measureText(o.w + ' ').width; if (lw + ww > maxW && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...o, ww }); lw += ww; });
-  const lh = 70, bh = lines.length * lh + 50, by = 1290 - bh / 2, fade = clamp((t - p.start + .15) / .25); c.globalAlpha = fade;
+  c.save(); c.font = '600 52px Inter'; const maxW = 770, lines = [[]]; let lw = 0; toks.forEach(o => { const ww = c.measureText(o.w + ' ').width; if (lw + ww > maxW && lines[lines.length - 1].length) { lines.push([]); lw = 0; } lines[lines.length - 1].push({ ...o, ww }); lw += ww; });
+  const lh = 66, bh = lines.length * lh + 44, by = 1360 - bh, fade = clamp((t - p.start + .15) / .25); c.globalAlpha = fade;
   c.fillStyle = 'rgba(24,18,60,.62)'; c.beginPath(); c.roundRect(70, by, 820, bh, 34); c.fill();
   const n = toks.length, prog = clamp((t - p.start) / Math.max(.5, p.end - p.start - .2)); let idx = 0; c.textBaseline = 'middle';
-  lines.forEach((ln, j) => { const tw = ln.reduce((a, o) => a + o.ww, 0); let x = 480 - tw / 2; ln.forEach(o => { const on = idx / n <= prog + .02; c.fillStyle = o.b ? WARMY : '#fff'; c.globalAlpha = fade * (on ? 1 : .42); c.fillText(o.w, x, by + 25 + lh / 2 + j * lh); x += o.ww; idx++; }); });
+  lines.forEach((ln, j) => { const tw = ln.reduce((a, o) => a + o.ww, 0); let x = 480 - tw / 2; ln.forEach(o => { const on = idx / n <= prog + .02; c.fillStyle = o.b ? WARMY : '#fff'; c.globalAlpha = fade * (on ? 1 : .42); c.fillText(o.w, x, by + 22 + lh / 2 + j * lh); x += o.ww; idx++; }); });
   c.restore(); }
 
 // ---------- frame ----------

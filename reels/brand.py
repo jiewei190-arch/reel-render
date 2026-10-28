@@ -1,5 +1,6 @@
 # Episode badge for TikTok/YouTube copies: jobs/<n>/<n>.mp4 -> jobs/<n>/<n>_ep.mp4
 # Usage: python3 -I brand.py <name> [<name> ...]   (episode numbers come from handoff/episodes.csv)
+#        python3 -I brand.py <name> --ep <number>     (number assigned by the main session, before it's in episodes.csv)
 import csv, pathlib, subprocess, sys
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageStat
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
@@ -13,13 +14,24 @@ T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first secon
 OVR = {
     "airfryer": {"t0": 7.0},                                      # the NOT A FRYER logo sits in the top-left until ~6.5 s
     "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
-    "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
-    "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
+    "barcode": {"spot": (44, 1360), "hide": [(7.0, 99.0)]},  # giant headlines fill nearly every frame: badge shows only 5-6.7 s (12 DIGITS lands at 7.0 s), low-left inside the safe zone
+    "recommend": {"spot": (44, 1366), "hide": [(4.7, 8.6), (52.6, 57.0)]},  # signs/boards fill the top; low-left above the captions
     # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
+    "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
+    "magnet": {"spot": ("R", 260), "t0": 7.0},   # the "Cut it in half" headline reaches the top-right until ~6.5 s
+    "search": {"spot": ("R", 260)}, "orbit": {"spot": ("R", 360)}, "window": {"spot": ("R", 260)},   # empty top-right band
+    "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
+    "submarine": {"spot": (44, 1360)}, # seabed only
+    "snowwhite": {"spot": (44, 1360)},  # top band holds the search bar and handwritten labels; empty strip under the captions
+    "yawn": {"spot": (44, 920), "hide": [(63.5, 99.0)]},        # top band holds titles, frames and chalkboards; mid-left wall is the quietest (edge scan)
+    "wrinklyfingers": {"spot": ("R", 260), "hide": [(12.8, 17.8), (34.8, 37.8)]},  # captions run to 3 lines here; top-right band is clear
+    "handwarmer": {"spot": (44, 1366)},   # titles and labels fill the top; the strip under the captions is always empty
+    # H3 Batch N, Oct 28: strip under the captions (staticshock: the humidity ticker sits to its right at x 460-895)
+    "staticshock": {"spot": (44, 1366)}, "coldbreath": {"spot": (44, 1366)},
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
-    "ship": {"spot": (44, 196)},       # mid spots hit labels and the end-card sign
+    "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
     "skyblue": {"spot": (660, 436)},   # auto spot sat on the end-card title
     "lock": {"spot": (44, 1276)},      # top spots hit the "5 HOLES"/"SPRING" callouts; bottom-left above the NOTE box
     # H4 QA, Oct 28
@@ -62,7 +74,11 @@ def badge(ep):
     d.text((x + 3 * s + gap, h / 2), tx_t, font=tx_f, fill=(255, 255, 255, 235), anchor="lm")
     return im.resize((w // s, h // s), Image.LANCZOS)
 
-for n in sys.argv[1:]:
+ARGS = sys.argv[1:]; EPOV = {}
+if "--ep" in ARGS:  # workers: python3 -I brand.py <name> --ep <number>  (the main session assigns the number)
+    i = ARGS.index("--ep"); EPOV[ARGS[i - 1]] = int(ARGS[i + 1]); del ARGS[i:i + 2]
+EPS.update(EPOV)
+for n in ARGS:
     src = ROOT / f"jobs/{n}/{n}.mp4"; dst = ROOT / f"jobs/{n}/{n}_ep.mp4"; png = HERE / f"stills/badge_{n}.png"
     png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)

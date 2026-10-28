@@ -60,9 +60,10 @@ function filmOutline(c, P, k, a = 1) { c.save(); c.globalAlpha *= a; loopInk(c, 
 // ---------------------------------------------------------------- scenes
 const SC = [];
 // 0 hook: the hand reaches for the knob, crackles at the fingertip from frame 0, then the ZAP (shake)
-SC[0] = (lt) => { door(ctx, 560, 300, 330, 830, 1); const zt = 1.95, k = ease(clamp(lt / 1.9)), fx = lerp(330, 560, k), fy = 760;
+SC[0] = (lt) => { door(ctx, 560, 300, 330, 830, 1); const zt = 1.95, k = ease(clamp(lt / 1.9)), fx = lerp(420, 560, k), fy = 760;
   hand(ctx, fx, fy, 1.05, 2); knob(ctx, 640, 760, 52, 3, lt > zt ? 1 : 0);
-  for (let j = 0; j < 3; j++) spark(ctx, fx + 6, fy - 22 + j * 18, 260 + j * 80, -160 + j * 150, 12 + 6 * Math.sin(lt * 9 + j), CS(110 + j), { fill: PAL.yel });
+  for (let j = 0; j < 3; j++) spark(ctx, fx + 6, fy - 22 + j * 18, 260 + j * 80, -160 + j * 150, 20 + 8 * Math.sin(lt * 9 + j), CS(110 + j), { fill: PAL.yel });
+  if (lt < zt && Math.sin(lt * 23) > -.3) bolt(ctx, fx + 6, fy - 20, fx + 54, fy - 30 + 12 * Math.sin(lt * 31), CS(117 + Math.floor(lt * 8) % 3), .5);
   if (lt > zt) { bolt(ctx, fx, fy - 20, 600, 760, CS(115), 1.2); speedLines(ctx, 610, 760, 120, 330, 16, CS(116), 9); title(ctx, 'ZAP!', 280, 400, 200, PAL.red, { seed: TS(1) }); }
   else title(ctx, 'ZAP?', 280, 400, 150, PAL.ink, { seed: TS(2) }); };
 // 1 more in winter: window with snow, the knob zapping again
@@ -70,7 +71,7 @@ SC[1] = (lt, u) => { const win = resample(rect(120, 320, 420, 520), 3, true); pa
   for (let j = 0; j < 16; j++) { const y = 340 + ((j * 67 + lt * 120) % 480), x = 140 + (j * 53) % 380; paint(ctx, ell(x, y, 9, 9, 12), PAL.hi, { seed: CS(134 + j), reg: false }); }
   const sb = ell(330, 900, 160, 40, 30); paint(ctx, sb, PAL.hi, { seed: CS(150) }); loopInk(ctx, sb, { seed: CS(151), w: 6 });
   door(ctx, 600, 400, 280, 700, 4); knob(ctx, 660, 770, 44, 5, (lt % 1.2) < .2 ? 1 : 0);
-  title(ctx, 'MORE IN', 290, 1000, 100, PAL.ink, { seed: TS(10) }); title(ctx, 'WINTER?', 290, 1110, 110, BLUE, { seed: TS(11) }); };
+  title(ctx, 'MORE IN', 290, 975, 100, PAL.ink, { seed: TS(10) }); title(ctx, 'WINTER?', 290, 1080, 110, BLUE, { seed: TS(11) }); };
 // 2 where does the zap come from? magnifier on the fingertip
 SC[2] = (lt, u) => { hand(ctx, 620, 720, 1.3, 6); const m = ell(600, 690, 170, 170, 50); loopInk(ctx, m, { seed: CS(160), w: 12 }); ink(ctx, [[720, 810], [860, 960]], { w: 22, seed: CS(161) });
   title(ctx, 'WHERE FROM?', CX, 380, 130, PAL.red, { seed: TS(20) }); for (let j = 0; j < 3; j++) spark(ctx, 610, 680 + j * 14, 200, -120 + j * 120, 10, CS(162 + j)); };
@@ -150,10 +151,10 @@ function caption(cap, alpha) {
   while ((m = re.exec(cap))) { if (m.index > last) segs.push({ t: cap.slice(last, m.index), b: false }); segs.push({ t: m[1], b: true }); last = re.lastIndex; }
   if (last < cap.length) segs.push({ t: cap.slice(last), b: false });
   const words = []; for (const s of segs) for (const w of s.t.split(/(\s+)/)) if (w.length) words.push({ w, b: s.b, sp: /^\s+$/.test(w) });
-  const size = 66, maxW = 900, lines = []; let cur = [], cw = 0;
+  const size = 58, maxW = 900, lines = []; let cur = [], cw = 0;
   for (const wd of words) { ctx.font = `${wd.b ? 700 : 600} ${size}px Caveat`; const ww = ctx.measureText(wd.w).width; if (!wd.sp && cw + ww > maxW && cur.length) { lines.push(cur); cur = []; cw = 0; } if (wd.sp && cur.length === 0) continue; cur.push({ ...wd, ww }); cw += ww; }
   if (cur.length) lines.push(cur);
-  const lh = size * 1.08, bh = lines.length * lh + 36, bw = 980, bx = (W - bw) / 2, by = 1165;
+  const lh = size * 1.08, bh = lines.length * lh + 36, bw = 980, bx = (W - bw) / 2, by = 1140;
   ctx.save(); ctx.globalAlpha = alpha; const box = resample(rect(bx, by, bw, bh), 3, true); paint(ctx, box, PAL.cream, { seed: seedBg(CURD, 0), amp: 1.2 }); loopInk(ctx, box, { seed: seedBg(CURD, 1), w: 7, amp: 1.4 });
   lines.forEach((ln, li) => { const tw = ln.reduce((s, x) => s + x.ww, 0); let x = CX - tw / 2; const y = by + 18 + lh * li + lh / 2; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
     for (const wd of ln) { ctx.font = `${wd.b ? 700 : 600} ${size}px Caveat`; ctx.fillStyle = wd.b ? PAL.red : PAL.ink; ctx.fillText(wd.w, x, y); x += wd.ww; } });
@@ -164,7 +165,15 @@ function locate(t) { for (let i = 0; i < SEG.length; i++) if (t < SEG[i].end || 
 function frame(t) { const i = locate(t), S = SEG[i], dur = S.end - S.start, D = drawingAt(t, EXPO[i], (i + 1) * 10000); CURD = D;
   const lt = clamp(D.tq - S.start, 0, Math.max(dur, TL_TAIL(i))), u = clamp(lt / dur), cam = camera(D.t1, shakesFor(i, S));
   ctx.setTransform(1, 0, 0, 1, 0, 0); drawPaper(ctx, cam); ctx.save(); ctx.translate(cam.x, cam.y); const shot = shotFor(i, lt); zoomWeight(shot); ctx.save(); applyShot(ctx, shot); SC[i](lt, u); ctx.restore(); resetWeight(); ctx.restore();
-  if (i < SEG.length - 1) caption(S.cap, sstep(0, .2, lt)); drawTooth(ctx, D); }
+  if (i < SEG.length - 1) { caption(S.cap, sstep(0, .2, lt)); humidity(i, lt, t); } drawTooth(ctx, D); }
+// humidity ticker under the caption (y 1394-1438, x 460-895; the episode badge takes x 44-430 of this strip): rises on the humid day, drops to dry for winter
+const HUM = i => (i === 9 || i === 10) ? .86 : (i >= 11 && i <= 15) ? (i === 11 ? .3 : .1) : .3;
+function humidity(i, lt, t) { const lv = lerp(HUM(Math.max(0, i - 1)), HUM(i), ease(clamp(lt / 1.2))), y = 1394, x0 = 612, x1 = 790, bw = x1 - x0;
+  title(ctx, 'humidity', 515, y + 20, 48, PAL.ink, { seed: TS(600), w: 4 });
+  const bar = resample(rect(x0, y, bw, 40), 3, true), fillR = resample(rect(x0 + 4, y + 4, Math.max(8, (bw - 8) * lv), 32), 3, true);
+  paint(ctx, bar, PAL.cream, { seed: CS(601) }); paint(ctx, fillR, BLUEL, { seed: CS(602) }); loopInk(ctx, bar, { seed: CS(603), w: 5 });
+  drop(ctx, x0 + 4 + (bw - 8) * lv, y + 6 + 3 * Math.sin(t * 4), .27, 604);
+  title(ctx, lv < .5 ? 'DRY' : 'HUMID', 845, y + 20, 42, lv < .5 ? PAL.red : BLUE, { seed: TS(605 + (lv < .5 ? 0 : 1)), w: 4 }); }
 const TL_TAIL = (i) => (i === SEG.length - 1 ? 4 : 0);
 window.DUR = window.TL.total;
 window.CUES = [['thud', SEG[0].start + 1.95], ['sparkle', SEG[0].start + 2.0], ['whoosh', SEG[1].start], ['pop', SEG[2].start + .3], ['scribble', SEG[3].start, SEG[3].end], ['pop', SEG[4].start + 1], ['pop', SEG[4].start + 2],
