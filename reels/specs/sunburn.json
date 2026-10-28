@@ -1,16 +1,16 @@
 {
  "name": "sunburn",
  "voice": "af_heart",
- "speed": 0.93,
+ "speed": 0.92,
  "music": "popup",
  "bpm": 96,
  "breath": [
   1,
-  4,
-  6,
-  8,
-  11,
-  13
+  5,
+  7,
+  10,
+  13,
+  15
  ],
  "music_gain": 0.6,
  "fx_gain": 0.35,
@@ -33,6 +33,10 @@
    "U V B is the main one that burns the top layer of your skin."
   ],
   [
+   "That's the **redness** and swelling, and in bad cases, **blisters.**",
+   "That's the redness and swelling, and in bad cases, blisters."
+  ],
+  [
    "**UVA** goes **deeper,** and it gets through **clouds** and even windows.",
    "U V A goes deeper, and it gets through clouds and even windows."
   ],
@@ -51,6 +55,10 @@
   [
    "At **3 or higher,** health agencies say: **protect** your skin.",
    "At three or higher, health agencies say: protect your skin."
+  ],
+  [
+   "UV is usually strongest from **late morning** to **mid-afternoon.**",
+   "U V is usually strongest from late morning to mid-afternoon."
   ],
   [
    "And UV **bounces.** Water, sand and concrete **reflect** it back at you.",
