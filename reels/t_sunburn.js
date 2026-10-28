@@ -7,6 +7,8 @@
 import { W, H, PAL, clamp, lerp, ramp, ease, back, hash, wobble, ink, crescent, bez, card, pop, foldTab, desk, book, board, sign, label, BOOK } from './styles/popup/popup.js';
 await document.fonts.load('600 60px Fredoka'); await document.fonts.load('500 30px Fredoka');
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end, TOT = TL.total;
+// EP 93's own palette (stomachgrowl and microwavecenter use the same kit with the teal cover on a wood desk): a sunny orange cover on a sandy desk
+Object.assign(PAL, { cover: '#f29a3a', coverDark: '#c9702a', desk: '#e2bf86', deskDark: '#c39a5e', page: '#fff4dc' });
 const cv = document.getElementById('c'); cv.width = W; cv.height = H; let g = cv.getContext('2d'); const R = ramp;
 const UV = '#8a5cf6', UVD = '#5b34c9', SKIN = '#f6c9a3', BURN = '#ff8f7a', SAND = '#f3d79a', SEA = '#7fc8e8', SNOW = '#f4fbff', CLOUD = '#e9eef5', CLOUDD = '#b9c4d4';
 const rect = (w, h, m = 6) => [[m, m], [w - m, m], [w - m, h - m], [m, h - m]];
