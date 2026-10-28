@@ -13,7 +13,7 @@
   8. kept from before: 12 fps stepped pieces with the one-step 1.15x pop, letter-by-letter cut titles, the swallowtail banner subtitle with gold flecks, the folded stack and scissors, gold foil saved for the "diary" payoff.
 - Hook accuracy: "Never five. Never eight." over-claimed (Libbrecht notes rare three-fold crystals). The line is now "Every snowflake has six arms. Almost always six.", with two more six-armed flakes popping in and no crossed-out five- or eight-armed flakes.
 - New for the topic: a procedural six-fold snowflake (spine, side branches, tip; one arm rotated n times), which grows from the prism in the "branches sprout" scene; cut-paper water molecules; the paper thermometer strip; cloud pieces; a paper mitten.
-- Length 78.4 s; af_heart 0.97; music crayon 88 bpm at music_gain 0.7; fx_gain 0.5.
+- Length 78.2 s; af_heart 0.97; music crayon 88 bpm at music_gain 0.7; fx_gain 0.5.
 - Code: reels/t_snowflake.js, t_snowflake.html, specs/snowflake.json, ev_snowflake.json, tl_snowflake.js, reels/styles/papercut/ (demo engine + all.js re-export).
 - Batch N layout: banner bottom at y 1355 inside x 70-890; titles at y 250-460; content inside y 250-1130; badge strip y 1366-1440 free.
 - Loop ending: in the last 0.5 s the frame-0 image (the big red flake under "SIX ARMS.") dissolves in at most 40%.
@@ -27,18 +27,18 @@
 
 ## QA (python3 -I reels/qa.py snowflake)
 ```
-QA snowflake: PASS   (/home/user/reel-render/jobs/snowflake/snowflake.mp4, 78.8 s)
-  PASS  static          longest no-change run 1.75 s (limit 4.0 s)
+QA snowflake: PASS   (/home/user/reel-render/jobs/snowflake/snowflake.mp4, 78.2 s)
+  PASS  static          longest no-change run 0.50 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
-  PASS  loudness        -15.2 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -1.3 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 10.9 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          78.8 s (want 66-86)
+  PASS  loudness        -15.3 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -1.2 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.4 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          78.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 6.3 (min 1.0), contrast 50.0 (min 18.0)
+  PASS  frame 0         edge 7.5 (min 1.0), contrast 49.4 (min 18.0)
   PASS  9:16 frame      snowflake.mp4 1080x1920 SAR 1:1; snowflake_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
@@ -46,10 +46,10 @@ QA snowflake: PASS   (/home/user/reel-render/jobs/snowflake/snowflake.mp4, 78.8 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal noted
 - [x] Hook passes HOOKS.md (9-word first line, "Every snowflake has six arms. Almost always six."; frame 0 a big red flake turning on 12 fps steps with paper snow falling; "But" at 4.3 s; search question spoken at 4-8 s)
-- [x] 66-86 s (78.4 s); ends on the exact closing line
+- [x] 66-86 s (78.2 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Ever caught one on your mitten? Yes or no?")
 - [x] End card: the standard main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (frame-0 image dissolves in, max 40%, in the last 0.5 s)
 - [x] pinned_snowflake.md written
-- [x] snowflake_ep.mp4 (EP 47, spot (44, 1366); frames at 6/25/45/74 s checked, clear of all text)
+- [x] snowflake_ep.mp4 (EP 47, spot (44, 1366); frames at 6/25/45/74 s re-checked on the final, clear of all text)
 - [x] Timely window: first snow, November to February
