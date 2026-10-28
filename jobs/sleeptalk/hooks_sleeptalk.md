@@ -2,7 +2,7 @@
 
 Search question spoken in line 2: "But why do we talk in our sleep at all? Scientists don't fully know."
 
-1. **PICK** 'The word people said most in their sleep? "No."' (9 words). This is pattern 3, the surprising number/fact. The source is Arnulf et al. 2017, Sleep 40 (883 episodes from 232 sleepers): the most frequent word was "No", and negations were 21.4% of clauses. Frame 0 shows the night bedroom with the sleeper, a glowing "No." speech bubble, the vertical SLEEP strip and the strip "the top word in sleep talk".
+1. **PICK** 'In a sleep lab, the word people said most? "No."' (10 words; hedged from "The word people said most in their sleep?" per the main session, since the data is one lab study of mostly patients). This is pattern 3, the surprising number/fact. The source is Arnulf et al. 2017, Sleep 40 (883 episodes from 232 sleepers): the most frequent word was "No", and negations were 21.4% of clauses. Frame 0 shows the night bedroom with the sleeper, a glowing "No." speech bubble, the vertical SLEEP strip and the strip "the top word in a sleep lab".
 2. "Most people talk in their sleep at some point." (9 words). Pattern 3, weaker; it is kept as the 7.8 s beat (AASM: 60-65% lifetime).
 3. "Your sleep talk isn't a confession." (6 words). Pattern 7, myth correction; it is kept as the 57.5 s beat.
 
