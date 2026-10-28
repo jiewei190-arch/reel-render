@@ -49,6 +49,8 @@
 | 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | queued |
 | 79 | saltyocean | Why is the ocean salty? | H1 | merged, Nov 12 21:30 |
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | queued |
+| 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | queued |
+| 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
