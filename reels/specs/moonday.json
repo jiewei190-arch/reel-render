@@ -1,0 +1,104 @@
+{
+ "name": "moonday",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 84,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "There's the Moon, hanging in a bright blue **afternoon** sky.",
+   "There's the Moon, hanging in a bright blue afternoon sky."
+  ],
+  [
+   "**But** isn't the Moon a night thing? Why can you see it during the day?",
+   "But isn't the Moon a night thing? Why can you see it during the day?"
+  ],
+  [
+   "First: the Moon makes no light of its own. It **reflects sunlight.**",
+   "First: the Moon makes no light of its own. It reflects sunlight."
+  ],
+  [
+   "And it's bright enough to **shine through** the blue daytime sky.",
+   "And it's bright enough to shine through the blue daytime sky."
+  ],
+  [
+   "Stars are up there in the daytime too, but the sky's glare **hides them.**",
+   "Stars are up there in the daytime too, but the sky's glare hides them."
+  ],
+  [
+   "The Moon is just bright enough to **win.**",
+   "The Moon is just bright enough to win."
+  ],
+  [
+   "So the real question is: when is the Moon **up?**",
+   "So the real question is: when is the Moon up?"
+  ],
+  [
+   "Here's the twist: it isn't tied to the night at all. It's tied to its **orbit.**",
+   "Here's the twist: it isn't tied to the night at all. It's tied to its orbit."
+  ],
+  [
+   "Each day, the Moon rises about **fifty minutes later** than the day before.",
+   "Each day, the Moon rises about fifty minutes later than the day before."
+  ],
+  [
+   "So over a month, its rising time slides all the way **around the clock.**",
+   "So over a month, its rising time slides all the way around the clock."
+  ],
+  [
+   "That's why the Moon spends almost as much time in the **daytime** sky as at night.",
+   "That's why the Moon spends almost as much time in the daytime sky as at night."
+  ],
+  [
+   "**But** some days are much better than others.",
+   "But some days are much better than others."
+  ],
+  [
+   "Near new Moon, it sits close to the Sun, lost in the **glare.**",
+   "Near new Moon, it sits close to the Sun, lost in the glare."
+  ],
+  [
+   "About a week later, the **first quarter** Moon rises around noon and glows all afternoon.",
+   "About a week later, the first quarter Moon rises around noon and glows all afternoon."
+  ],
+  [
+   "And about a week after full Moon, the **third quarter** Moon hangs in the morning sky.",
+   "And about a week after full Moon, the third quarter Moon hangs in the morning sky."
+  ],
+  [
+   "So the daytime Moon isn't out of place. It just keeps its **own schedule,** not the Sun's.",
+   "So the daytime Moon isn't out of place. It just keeps its own schedule, not the Sun's."
+  ],
+  [
+   "Next clear afternoon, about a week after new Moon, look up.",
+   "Next clear afternoon, about a week after new Moon, look up."
+  ],
+  [
+   "**Spotted?**",
+   "Spotted?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
