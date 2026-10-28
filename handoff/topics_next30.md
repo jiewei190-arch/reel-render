@@ -67,8 +67,8 @@
 | 96 | bananabrown | Why do bananas turn brown? | H4 | merged v2, Nov 16 13:00 |
 | 97 | fingerprints | Why do we have fingerprints? | H1 | merged, Nov 16 16:00 |
 | 98 | darknight | Why is the night sky dark if there are so many stars? | H1 | merged, Nov 16 19:00 |
-| 99 | mirrorflip | Why do mirrors flip left and right but not up and down? | H2 | merged, Nov 16 21:30 |
-| 100 | tidesmoon | How does the Moon cause tides? | H2 | merged, Nov 17 09:00 |
+| 99 | mirrorflip | Why do mirrors flip left and right but not up and down? | H2 | merged v3, Nov 16 21:30 |
+| 100 | tidesmoon | How does the Moon cause tides? | H2 | merged v3, Nov 17 09:00 |
 | 101 | hairwet | Why does wet hair look darker? | H4 | merged, Nov 17 13:00 |
 | 102 | sleeptalk | Why do we talk in our sleep? | H4 | merged v2, Nov 17 16:00 |
 | 103 | honey | How do bees turn nectar into honey? | H1 | queued |

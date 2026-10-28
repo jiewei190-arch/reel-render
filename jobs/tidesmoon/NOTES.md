@@ -36,10 +36,12 @@
 **Thumbnail:** thumb_tidesmoon.jpg ("Why TWO high tides?", EP 100 seal).
 **Badge:** `brand.py tidesmoon --ep 100` at ("R", 256), no hide needed.
 
+**v3 (main-session fix):** the far-side line now reads "...the water tends to keep going, and it's left behind as a second bulge." 79.8 s, QA PASS.
+
 ## GROWTH checklist
 - [x] Topic is a searched question (main-session assignment EP 100)
 - [x] Hook passes HOOKS.md (12 words; frame 0 is the big two-bulge diagram, moving; search question at 4.5 s)
-- [x] 66-86 s (79.9 s); ends on the exact closing line
+- [x] 66-86 s (79.8 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Have you ever seen a spring tide? Yes or no?")
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 35%)
@@ -47,17 +49,17 @@
 - [x] tidesmoon_ep.mp4 (EP 100)
 - [x] Evergreen
 
-## QA (python3 -I reels/qa.py tidesmoon)
+## QA (python3 -I reels/qa.py tidesmoon), v3 render
 ```
-QA tidesmoon: PASS   (/home/user/reel-render/jobs/tidesmoon/tidesmoon.mp4, 80.0 s)
+QA tidesmoon: PASS   (/home/user/reel-render/jobs/tidesmoon/tidesmoon.mp4, 79.8 s)
   PASS  static          longest no-change run 2.75 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
-  PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
+  PASS  loudness        -15.4 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -2.8 dBTP (WARN above -1.0, FAIL above 0.0)
   PASS  voice over bed  speech 7.2 dB above the pauses (14 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          80.0 s (want 66-86)
+  PASS  length          79.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 4.7 (min 1.0), contrast 21.7 (min 18.0)

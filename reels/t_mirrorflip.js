@@ -120,7 +120,7 @@ const SH = {
       plan(t, { cx: 540, cy: 680, img: 1, raise: 'E', ghost: () => { person(gx, gy, 0, { ghost: true, raise: 'E', col: '#ffd1ec', rot: lerp(0, Math.PI, u) }); if (u > .95) text('PRETEND TWIN', gx + 250, gy - 10, { font: '400 34px VT323', fill: '#ffd1ec' }); } });
       if (t > s(8) + .4) { const k = back(seg(tq, s(8) + .4, s(8) + .65), 2); push(); translate(250, 520); scale(k); text('ITS RIGHT', 0, 0, { font: '400 36px VT323', fill: '#ffd1ec' }); text('= WEST', 0, 36, { font: '400 36px VT323', fill: '#ffd1ec' }); pop(); }
       pop();
-      if (ph === 'walk') sign(540, 1010, 600, 100, '"IT\'S FLIPPED!"', s(8) + 2.6, tq, { col: '#c0307a' });
+      if (ph === 'walk') sign(540, 940, 600, 100, '"IT\'S FLIPPED!"', s(8) + 2.6, tq, { col: '#c0307a' });
       else { readout(310, 1070, 440, 'L/R = YOU', 'relative to yourself', { bg: '#3a0f40', fg: '#ffd1ec' }); if (t > s(9) + 3.0) readout(780, 1070, 420, 'UP = SKY', 'set by the ground', { bg: '#3a0f40', fg: '#b8ff5a' }); } }
     if (ph === 'flip') { const fl = ss(seg(t, s(10) + 1.6, s(10) + 3.4)); push(); translate(540, 1000); rotate(fl * Math.PI); translate(-540, -1000); spud(P(t, { x: 540, y: 1150, s: 1.0, nerv: .8, mouth: { o: .8, sm: -1 }, eyeS: 1.3, armL: { h: [-90, -80], bend: 10 }, armR: { h: [90, -80], bend: -10 } })); pop();
       readout(540, 470, 520, 'UP / DOWN', 'set by the ground', { bg: '#3a0f40', fg: '#b8ff5a' }); sign(540, 640, 640, 100, 'NOBODY TURNS LIKE THIS', s(10) + 2.4, tq, { font: '400 38px Bungee', col: '#c0307a' }); }
