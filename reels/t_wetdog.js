@@ -63,8 +63,8 @@ function molecule(x, y, a = 1, sd = 1) { if (a <= 0) return; fill(g, circPts(x, 
 function loupe(t, cx, cy, rr, { k = 1, micro = 1, m = 0, loose = 0, wet = 0, label = '' } = {}) { if (k <= 0) return; g.save(); g.globalAlpha *= k;
   fill(g, circPts(cx, cy, rr, 36), '#fbf6ee'); if (wet > 0) fill(g, circPts(cx, cy, rr, 36), C.waterL, wet);
   g.save(); g.beginPath(); g.arc(cx, cy, rr - 3, 0, TAU); g.clip();
-  for (let i = 0; i < 4; i++) { const x0 = cx - rr + i * rr * .55, sag = wet * 30; line(g, Array.from({ length: 8 }, (_, j) => { const u = j / 7; return [x0 + u * rr * 1.1, cy + rr - u * rr * 2 + sag * Math.sin(u * Math.PI)]; }), { w: 14, col: C.furD, seed: 860 + i, wob: .3 }); }
-  const M = [[-50, 40, 0], [10, -10, 1], [55, 30, 0], [-20, -60, 0], [40, -60, 1], [-60, -20, 1], [5, 60, 0]];
+  const drift = (t * 22) % (rr * .55); for (let i = -1; i < 4; i++) { const x0 = cx - rr + i * rr * .55 + drift, sag = wet * 30; line(g, Array.from({ length: 8 }, (_, j) => { const u = j / 7; return [x0 + u * rr * 1.1, cy + rr - u * rr * 2 + sag * Math.sin(u * Math.PI)]; }), { w: 14, col: C.furD, seed: 860 + i, wob: .3 }); }
+  const M = [[-50, 40, 0], [10, -10, 1], [55, 30, 0], [-20, -60, 0], [40, -60, 1], [-60, -20, 1], [5, 60, 0], [-80, 10, 0], [70, -20, 1], [-35, 80, 1], [30, 85, 0], [80, 50, 0], [-70, -60, 0], [0, -90, 1]];
   M.forEach(([dx, dy, kind], i) => microbe(cx + dx * rr / 110, cy + dy * rr / 110, kind, t, 870 + i * 3, clamp(micro * 7 - i)));
   for (let i = 0; i < 14; i++) { const ap = clamp(m * 14 - i); if (ap <= 0) continue; const bx = cx + (hash(i * 3.1) - .5) * rr * 1.4, by = cy + (hash(i * 5.3) - .5) * rr * 1.2, u = clamp(loose * 1.4 - hash(i) * .4);
     molecule(bx + 20 * Math.sin(t * 2 + i) * u, by - u * rr * 1.2, ap, 880 + i); }
@@ -107,7 +107,8 @@ function recipe(t) { const a = win(t, s(2) - .3, s(10) - .1, .4); if (a <= 0) re
   const wet = t < s(7) ? 0 : ss(seg(t, r(7, .5), r(7, 1.6))) * (1 - .55 * ss(seg(t, r(9, .6), r(9, 3.5))));
   dog(t, { x: DX, y: DY, sc: .95, wet, k: seg(t, s(2) - .2, s(2) + .4), stink: lev, blink: (t % 3.1) < 2.9 ? 1 : 0 });
   if (t < s(3) - .2) header(g, { title: 'the recipe', note: 'for wet dog smell' });
-  else if (t < s(5) - .2) { const k2 = bo(seg(t, r(3, 2.2), r(3, 2.8))); loupe(t, 740, 960, 130, { k: k2, micro: seg(t, r(3, 2.5), r(3, 3.6)) + (t > s(4) ? seg(t, r(4, 2.5), r(4, 4)) * .0 : 0) });
+  else if (t < s(5) - .2) { const k2 = bo(seg(t, r(3, 2.2), r(3, 2.8))), zz = ss(seg(t, r(4, .2), r(4, 2.2))) * (1 - ss(seg(t, s(5) - 1.4, s(5) - .3)));
+    loupe(t, lerp(740, 690, zz), lerp(960, 930, zz), lerp(130, 185, zz), { k: k2, micro: seg(t, r(3, 2.5), r(3, 3.6)) + seg(t, r(4, 2.2), r(4, 5.0)) });
     if (t < s(4) - .2) header(g, { step: 1, of: 4, title: 'Add a dog', num: '1', unit: 'dog', sub: 'SKIN + FUR', note: 'home to bacteria + yeast' });
     else { header(g, { title: 'Totally normal', note: 'furry skin: the richest mix' }); mono(g, 'TEXAS A&M VET STUDY', 60, 640, { size: 20, col: P.rust, track: 4, a: seg(t, r(4, 1.2), r(4, 1.8)) });
       for (let i = 0; i < 3; i++) line(g, [[620 + i * 40, 800 - i * 6], [640 + i * 40, 830]], { w: 3, col: P.rust, k: seg(t, r(4, 3) + i * .1, r(4, 3.4) + i * .1), seed: 960 + i }); } }

@@ -431,7 +431,7 @@ function cloudWipe(t, t0, color) {   // the demo's silhouette wipe, cut as a clo
 }
 // wall lockup (the three posters hung under the banner)
 function wallLayout() {
-  const gap = 30, pw = (W - 80 - 2 * gap) / 3, ph = pw * 1.5, bw = 940, bh = BH * bw / BW, top = 330, x0 = 40;
+  const gap = 24, x0 = 60, pw = (900 - x0 - 2 * gap) / 3, ph = pw * 1.5, bw = 940, bh = BH * bw / BW, top = 330;   // posters stay left of x 900 (right UI column)
   return { pw, ph, s: pw / PW, bs: bw / BW, bw, bh, banner: [(W - bw) / 2, top], posters: [0, 1, 2].map(i => [x0 + i * (pw + gap), top + bh + 40]) };
 }
 function wall(t, hi) {
@@ -505,7 +505,9 @@ function render(t) {
   const f = Math.min(1, (DUR - t) / .35); if (f < 1) { ctx.save(); ctx.globalAlpha = (1 - f) * .3; ctx.fillStyle = '#1a120c'; ctx.fillRect(0, 0, W, H); ctx.restore(); }
 }
 window.DUR = DUR;
-window.seek = t => render(t); window.render = window.seek;
+// loop: blend the frame-0 banner back in over the last 0.5 s (max 30%), on top of the 30% end darkening
+window.seek = t => { render(t); const lp = seg(t, DUR - .5, DUR); if (lp > 0) { const keep = ctx.getImageData(0, 0, W, H); render(0); const f0 = ctx.getImageData(0, 0, W, H); const k = .3 * ss(lp), A = keep.data, B = f0.data; for (let i = 0; i < A.length; i += 4) { A[i] += (B[i] - A[i]) * k; A[i + 1] += (B[i + 1] - A[i + 1]) * k; A[i + 2] += (B[i + 2] - A[i + 2]) * k; } ctx.putImageData(keep, 0, 0); } };
+window.render = window.seek;
 window.thumb = () => {
   ctx.setTransform(1, 0, 0, 1, 0, 0); cam(0, 900, .62); table(); ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.save(); ctx.translate(540 - PW * .78 / 2, 560); ctx.scale(.78, .78); ctx.save(); ctx.globalAlpha = .3; ctx.fillStyle = '#000'; ctx.fillRect(10, 14, PW, PH); ctx.restore(); drawPoster(ctx, POS[0], { pal: PALS[0], T, finish: false }); overlay(0, FLY[0].t0 + 8.5, PALS[0], true); inkFinish(ctx, T, 0, 0, PW, PH, .6, 1); ctx.restore();
