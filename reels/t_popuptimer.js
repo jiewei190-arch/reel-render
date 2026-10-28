@@ -257,30 +257,30 @@ SC[10] = (lt) => {
 };
 // 11 Consumer Reports: 21 timers, three popped too early, one at 139 °F
 SC[11] = (lt) => {
-  title(ctx, '21 TIMERS', CX, 320, 120, PAL.ink, { seed: TS(50) });
+  title(ctx, '21 TIMERS, 2016', CX, 320, 104, PAL.ink, { seed: TS(50) });
   const early = [3, 10, 16];
   for (let i = 0; i < 21; i++) {
     const c = i % 7, r = (i / 7) | 0, x = 180 + c * 120, y = 560 + r * 180, k = sstep(0.1 + i * 0.05, 0.3 + i * 0.05, lt);
     if (k <= 0) continue;
-    const bad = early.includes(i), p = bad ? back(sstep(2.3 + early.indexOf(i) * 0.25, 2.6 + early.indexOf(i) * 0.25, lt)) : 0;
+    const bad = early.includes(i), p = bad ? back(sstep(3.9 + early.indexOf(i) * 0.25, 4.2 + early.indexOf(i) * 0.25, lt)) : 0;
     timerTop(ctx, x, y, 1.1 * k, p, 100 + i);
     if (bad && p > 0.5) loopInk(ctx, ell(x, y - 60, 62, 100, 30), { seed: CS(11, i), w: 8, color: PAL.red });
   }
-  const g = sstep(3.0, 3.4, lt); if (g > 0) title(ctx, '3 popped early', CX, 1050 - 0, 80 * g + 8, PAL.red, { seed: TS(51) });
-  const g2 = sstep(4.6, 5.0, lt); if (g2 > 0) { bubble(ctx, 830 - 40, 440, 0 + 95 * g2 + 1, '139°F', '#f6d2c4', TS(53), 52); }
+  const g = sstep(4.6, 5.0, lt); if (g > 0) title(ctx, '3 popped early', CX, 1050 - 0, 80 * g + 8, PAL.red, { seed: TS(51) });
+  const g2 = sstep(6.4, 6.8, lt); if (g2 > 0) { bubble(ctx, 830 - 40, 440, 0 + 95 * g2 + 1, '139°F', '#f6d2c4', TS(53), 52); }
 };
 // 12 USDA: safe at 165 °F
 SC[12] = (lt) => {
   const a = sstep(0, 0.6, lt);
   thermo(ctx, 330, 640, 1.6, lerp(0.2, 0.82, ease(lt / 2)), 3);
-  title(ctx, '165°F', 760, 640, 150 * a + 30, PAL.red, { seed: TS(54) });
-  title(ctx, 'safe', 760, 790, 90, PAL.ink, { seed: TS(55) });
+  title(ctx, '165°F', 720, 600, 150 * a + 30, PAL.red, { seed: TS(54) });
+  const g = sstep(0.8, 1.2, lt); if (g > 0) { title(ctx, 'in the thickest', 700, 760, 64 * g + 6, PAL.ink, { seed: TS(55) }); title(ctx, 'part', 700, 830, 64 * g + 6, PAL.ink, { seed: TS(57) }); }
   title(ctx, 'USDA', CX, 330, 120, BLUE, { seed: TS(56) });
 };
 // 13 check in three places: thigh, wing, thickest part of the breast
 SC[13] = (lt) => {
   turkey(ctx, CX, 880, 1.0, { k: 13, pop: 1 });
-  const spots = [[300, 900, 'thigh', 150, 520, -0.6, 1.2], [780, 780, 'wing', 860, 480, 0.5, 2.1], [470, 720, 'breast', 470, 400, 0.05, 3.0]];
+  const spots = [[300, 900, 'inner thigh', 210, 520, -0.6, 0.6], [780, 780, 'inner wing', 840, 470, 0.5, 1.5], [470, 720, 'thickest part', 470, 400, 0.05, 2.4]];
   spots.forEach(([x, y, lab, lx, ly, rot, t0], j) => {
     const g = sstep(t0, t0 + 0.4, lt); if (g <= 0) return;
     thermo(ctx, x + Math.sin(rot) * 231, y - Math.cos(rot) * 231, 0.55, 0.82, 10 + j, { rot });
@@ -324,7 +324,7 @@ function shotFor(i, lt) {
 function shakesFor(i, S) {
   if (i === 1) return [{ t0: S.start + 0.6, dur: 0.4, amp: 10 }];
   if (i === 6) return [{ t0: S.start + 1.05, dur: 0.5, amp: 16 }];
-  if (i === 11) return [{ t0: S.start + 2.3, dur: 0.4, amp: 10 }];
+  if (i === 11) return [{ t0: S.start + 3.9, dur: 0.4, amp: 10 }];
   return [];
 }
 
@@ -335,7 +335,9 @@ function caption(cap, alpha) {
   if (last < cap.length) segs.push({ t: cap.slice(last), b: false });
   const words = [];
   for (const s of segs) for (const w of s.t.split(/(\s+)/)) if (w.length) words.push({ w, b: s.b, sp: /^\s+$/.test(w) });
-  const size = 70, maxW = 720, lines = []; let cur = [], cw = 0;
+  let size = 70, maxW = 720, lines = []; let cur = [], cw = 0;
+  for (let pass = 0; pass < 2; pass++) {   // long captions: one smaller size so the box stays inside y 1150-1420
+  lines = []; cur = []; cw = 0; if (pass) { size = 60; maxW = 740; }
   for (const wd of words) {
     ctx.font = `${wd.b ? 700 : 600} ${size}px Caveat`;
     const ww = ctx.measureText(wd.w).width;
@@ -344,6 +346,7 @@ function caption(cap, alpha) {
     cur.push({ ...wd, ww }); cw += ww;
   }
   if (cur.length) lines.push(cur);
+  if (lines.length <= 3) break; }
   lines.forEach((l) => { while (l.length && l[l.length - 1].sp) l.pop(); });
   const lh = size * 1.02, bh = lines.length * lh + 36, bw = 800, bx = (W - bw) / 2, by = 1420 - bh;
   ctx.save(); ctx.globalAlpha = alpha;
