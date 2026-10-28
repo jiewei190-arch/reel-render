@@ -6,7 +6,7 @@
 4. Jennifer Schissler, DVM (veterinary dermatologist, Colorado State University Veterinary Teaching Hospital), quoted in Dogster: the smell comes from normal microorganisms on healthy dog skin and hair, which make volatile byproducts that have little scent when dry. https://www.dogster.com/lifestyle/why-do-dogs-stink-when-wet
 
 Wording notes:
-- "In one small study" = the Purina pilot study (source 3); "32 times higher" = benzaldehyde, named on screen.
+- "In one small pilot study" = the Purina pilot study (source 3); "32 times higher" = benzaldehyde, named on screen.
 - "On a dry dog, they mostly stay put, and you barely notice" follows sources 1 and 4 (little scent when dry; water releases the compounds).
 - "a bath can make it worse at first: you just added water" follows source 1 (wetting releases the molecules; the bath itself isn't the cause).
 - The bacteria/yeast doodles and the smell icons are illustrations, not specific species.
