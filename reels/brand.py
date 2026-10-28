@@ -29,6 +29,7 @@ OVR = {
     "handwarmer": {"spot": (44, 1366)},   # titles and labels fill the top; the strip under the captions is always empty
     # H3 Batch N, Oct 28: strip under the captions (staticshock: the humidity ticker sits to its right at x 460-895)
     "staticshock": {"spot": (44, 1366)}, "coldbreath": {"spot": (44, 1366)},
+    "snowflake": {"spot": (44, 1366)},   # paper banner ends at y 1355; snow-bank paper only below it
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

@@ -1,0 +1,98 @@
+{
+ "name": "runnynose",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "Step outside on a freezing morning, and your nose starts to... **drip.**",
+   "Step outside on a freezing morning, and your nose starts to... drip."
+  ],
+  [
+   "**But** you're not sick. So why does your nose run when it's cold?",
+   "But you're not sick. So why does your nose run when it's cold?"
+  ],
+  [
+   "Your nose has a big job: it's the **air conditioner** for your lungs.",
+   "Your nose has a big job: it's the air conditioner for your lungs."
+  ],
+  [
+   "Every breath gets **warmed up** and made **wet** before it goes down to them.",
+   "Every breath gets warmed up and made wet before it goes down to them."
+  ],
+  [
+   "And cold winter air is usually **very dry.**",
+   "And cold winter air is usually very dry."
+  ],
+  [
+   "So when freezing, dry air rushes in, **nerves** inside your nose sound the alarm.",
+   "So when freezing, dry air rushes in, nerves inside your nose sound the alarm."
+  ],
+  [
+   "Your brain sends **extra blood** to warm the air,",
+   "Your brain sends extra blood to warm the air,"
+  ],
+  [
+   "and tells tiny glands to pump out **more mucus and water.**",
+   "and tells tiny glands to pump out more mucus and water."
+  ],
+  [
+   "Here's the twist: your nose often makes **more than it needs.**",
+   "Here's the twist: your nose often makes more than it needs."
+  ],
+  [
+   "And the extra **drips** right out the end.",
+   "And the extra drips right out the end."
+  ],
+  [
+   "There's a **second drip,** too: your warm, wet breath hits the **cold tip** of your nose.",
+   "There's a second drip, too: your warm, wet breath hits the cold tip of your nose."
+  ],
+  [
+   "Cold air can't hold as much water, so it turns into **little drops,** right there.",
+   "Cold air can't hold as much water, so it turns into little drops, right there."
+  ],
+  [
+   "Like breath **fogging up** a cold window.",
+   "Like breath fogging up a cold window."
+  ],
+  [
+   "Doctors even have a name for it: **cold-induced rhinitis.** Some call it **skier's nose.**",
+   "Doctors even have a name for it: cold-induced rhinitis. Some call it skier's nose."
+  ],
+  [
+   "Somewhere between **half** and **nine out of ten** people get it.",
+   "Somewhere between half and nine out of ten people get it."
+  ],
+  [
+   "So that winter drip isn't a germ. It's your nose **working overtime.**",
+   "So that winter drip isn't a germ. It's your nose working overtime."
+  ],
+  [
+   "Does your nose run in the cold? **Yes or no?**",
+   "Does your nose run in the cold? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
