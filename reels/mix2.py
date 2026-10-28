@@ -1,6 +1,6 @@
 # Step B: vo_<name>.wav + style music + events ev_<name>.json -> mix_<name>.wav
 # events: [kind, t, *args]. kinds: scribble t0 t1 | pageturn t | note t midi | pop t | whoosh t | thud t | chime t midi
-#         heartbeat t n gap | bubbles t | slide t | silence t0 t1 (music dips) | sparkle t
+#         heartbeat t n gap | bubbles t | slide t | silence t0 t1 (music dips) | sparkle t | purr t dur
 import json, pathlib, sys, re, numpy as np, soundfile as sf
 HERE = pathlib.Path(__file__).resolve().parent; SR = 24000
 name = sys.argv[1]; spec = json.load(open(HERE / "specs" / f"{name}.json"))
@@ -128,6 +128,8 @@ for e in json.load(open(HERE / f"ev_{name}.json")):
         for j in range(6): f = rng.uniform(500, 1100); n = int(.08 * SR); x = np.arange(n) / SR; put(fx, t + j * rng.uniform(.06, .14), np.sin(2 * np.pi * (f + 2500 * x) * x) * env(.08, .002, .02), .08)
     elif k == "snap":
         n = int(.12 * SR); x = np.arange(n) / SR; put(fx, t, np.sin(2 * np.pi * (900 - 5000 * x) * x) * env(.12, .001, .025), .22); put(fx, t, bp(noise(.05), 1500, 7000) * env(.05, .001, .015), .30)
+    elif k == "purr":   # purr t dur: low rumble, noise gated ~26 times a second
+        n = int(a[0] * SR); x = np.arange(n) / SR; am = (.5 + .5 * np.sin(2 * np.pi * 26 * x)) ** 2; put(fx, t, bp(noise(a[0]), 60, 420) * am * np.minimum(1, np.minimum(x / .2, (a[0] - x) / .3)), .5)
     elif k == "tick": put(fx, t, tone(1700, .05, (1, 2.4), .012), .18)
     elif k == "slide": n = int(.6 * SR); x = np.arange(n) / SR; put(fx, t, np.sin(2 * np.pi * np.cumsum(600 + 900 * (x / .6) ** 2) / SR) * env(.6, .02, .3), .06)
     elif k == "silence":
