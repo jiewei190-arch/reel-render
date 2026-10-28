@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "catfeet": {"spot": (44, 1366)},   # H3 (EP 84): banner bottom at y 1355 over the paper street
     "honey": {"spot": (44, 1366)},   # H1 (EP 103): strip under the captions (box bottom <= 1364)
     "fog": {"spot": (44, 1366)},   # H1 (EP 104): strip under the caption box (ends y 1360)
     "auroras": {"spot": (44, 1366)},   # H3 (EP 63): captions end at y 1355 on the dark frozen lake

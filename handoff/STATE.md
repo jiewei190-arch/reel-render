@@ -1,6 +1,6 @@
 # Main-session state (rule 19: kept in the repo so a fresh session can resume)
 
-Updated: 2026-10-28 ~14:10 UTC. Update this file whenever something below changes.
+Updated: 2026-10-28 ~14:40 UTC. Update this file whenever something below changes.
 
 ## Where things are
 - **EP tracker + template reservations:** handoff/topics_next30.md (status per EP; reservations line at the bottom).
@@ -22,9 +22,9 @@ Updated: 2026-10-28 ~14:10 UTC. Update this file whenever something below change
 Production is pausing. Workers finish what's in flight, then rest. The buffer is full through Nov 17. Next: study the accounts (handoff/STUDY.md) before building more.
 
 ## Open items
-- In flight, merge when final: EP 63 auroras + 84 catfeet (H3), 99 mirrorflip + 100 tidesmoon (H2), 102 sleeptalk (H4), 103 honey + 104 fog (H1).
+- Every slot through Nov 17 is filled (EP 1-104). All four workers are resting until the Nov 2 study.
 - Parked: compass, helium (were EP 105-106).
-- First analytics read: owner pastes handoff/ANALYTICS_PULL.md into the PC session before Mon Nov 2; the weekly review on Nov 2 does the first study (handoff/STUDY_LOG.md).
+- First analytics read: owner pastes handoff/ANALYTICS_PULL.md into the PC session before Mon Nov 2; the weekly study on Nov 2 does the first study (handoff/STUDY_LOG.md).
 - Thanksgiving reels (unbadged until slotted ~Nov 22-26): popuptimer, cranberries, turkeysleepy.
 - Optional: barcode/faceid one-frame flashes (owner may re-upload).
 - Owner-only: YouTube phone verification (lifts the daily upload limit, enables custom thumbnails).
