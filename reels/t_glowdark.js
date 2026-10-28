@@ -54,7 +54,7 @@ const SCN = {
     return () => { g.save(); g.globalCompositeOperation = 'lighter'; const bm = g.createLinearGradient(780, 700, 300, 300); bm.addColorStop(0, 'rgba(255,230,170,.45)'); bm.addColorStop(1, 'rgba(255,230,170,0)'); g.fillStyle = bm; g.beginPath(); g.moveTo(650, 600); g.lineTo(890, 600); g.lineTo(500, 160); g.lineTo(100, 160); g.closePath(); g.fill(); g.restore();
       F.window(644, 564, 252, 328, .6, { col: '#ffe9b8' }); label('daylight in', 300, 620, ss(R(t, s(1) + 1.2, .5)) * (1 - ins), 56);
       if (ins > 0) { for (let i = 0; i < 5; i++) { const u = clamp(((t - s(2) - 1.0) * .7 - i * .25)), x = 420 + i * 60, y = lerp(720, 400, ss(u)); electron(x, y, ins); if (u > 0 && u < 1) { g.save(); g.globalAlpha = ins * (1 - u); g.strokeStyle = 'rgba(255,230,170,.8)'; g.lineWidth = 3; g.beginPath(); g.moveTo(x - 30, y + 60); g.lineTo(x - 10, y + 20); g.stroke(); g.restore(); } }
-        label('electrons', 540, 400, ins * ss(R(t, s(2) + 1.0, .5)), 52); label('a burst of energy', 540, 860, ins * ss(R(t, s(2) + 2.4, .5)), 44); } };
+        label('electrons', 540, 312, ins * ss(R(t, s(2) + 1.0, .5)), 52); label('a burst of energy', 540, 860, ins * ss(R(t, s(2) + 2.4, .5)), 44); } };
   },
   flash(t) {   // normally: the electron drops straight back and the light leaves in a flash
     bedroom(t, { window: false }); lens(540, 640, 300); levels(540, 640, 400);
