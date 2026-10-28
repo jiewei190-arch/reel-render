@@ -12,6 +12,15 @@
 
 The STATUS field tells the story (MAKES COLD? → MOVES HEAT → PUMPING HEAT → HEAT OUT BACK). My last two reels were Distilbook (voicerecording) and the recipe card (coldtaste).
 
+**v2 (main-session note: H1's ovenfoil, EP 60, is also blueprint and posts a day earlier):**
+- a sepia diazo sheet (brown ink on cream stock) replaces the cyanotype;
+- a new ruled two-row title block: DWG FR-66 / HOW IT REALLY WORKS, then FIG + STATUS (status in red);
+- the refrigerant loop is colour-coded and always flowing: cold blue through the evaporator and suction line, hot red out of the compressor, amber as it cools up the back coils, with dashes and dots moving round;
+- heat arrows are red;
+- the door-open sheet draws the kitchen (window, counter, cabinets) straight away, the door swings open, and red heat dots circle the room (this also fixed a static FAIL at 52.8-57.5 s).
+
+The kit's Poppins→Inter fix is noted in reels/styles/blueprint/README.md.
+
 **Batch N layout:** the kit's header (y 104-232), NOTE box (y 1372-1690) and title block (y 1722) sit in the UI bands, so this reel draws its own furniture:
 - header text at y 284-342;
 - figure viewport at y 360-1140 (VP override);
@@ -48,7 +57,7 @@ QA fridge: PASS   (/home/user/reel-render/jobs/fridge/fridge.mp4, 68.8 s)
   PASS  length          68.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 10.0 (min 1.0), contrast 28.4 (min 18.0)
-  PASS  9:16 frame      fridge.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 9.8 (min 1.0), contrast 53.8 (min 18.0)
+  PASS  9:16 frame      fridge.mp4 1080x1920 SAR 1:1; fridge_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```

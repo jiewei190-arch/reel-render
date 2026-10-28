@@ -33,10 +33,12 @@
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | merged, Nov 8 19:00 |
 | 59 | hiccups | Why do we get hiccups? | H1 | merged v2, Nov 8 21:30 |
 | 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | merged v2, Nov 10 09:00 |
-| 66 | fridge | How does a refrigerator keep food cold? | H2 | merged v1, Nov 10 13:00 (v2 restyle pending; swap in) |
-| (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | queued after 65-66; unbadged seasonal |
+| 66 | fridge | How does a refrigerator keep food cold? | H2 | merged v2, Nov 10 13:00 |
+| (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | merged, unbadged; EP + badge when scheduled (about Nov 22-26) |
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | queued |
+| 69 | yawncats | Why do cats sleep so much? | H2 | queued |
+| 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | queued |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
