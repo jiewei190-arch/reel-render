@@ -32,7 +32,7 @@
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | merged, Nov 8 16:00 |
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | merged, Nov 8 19:00 |
 | 59 | hiccups | Why do we get hiccups? | H1 | merged v2, Nov 8 21:30 |
-| 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | merged v1, Nov 10 09:00 (v2 with new hook pending; swap in) |
+| 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | merged v2, Nov 10 09:00 |
 | 66 | fridge | How does a refrigerator keep food cold? | H2 | merged v1, Nov 10 13:00 (v2 restyle pending; swap in) |
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | queued after 65-66; unbadged seasonal |
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | queued |

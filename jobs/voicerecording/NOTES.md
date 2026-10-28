@@ -12,6 +12,7 @@
 
 My last two reels were Alchemy (noisecancel) and the recipe card (coldtaste).
 **Batch N layout:** the kit's HUD writes in the top 250 px and the bottom band, so this reel draws its own: logo + label at y 304, brackets at y 262 / H-500, top-right left empty for the badge. Karaoke at y 1280 (maxW 820), chapter strip at y 1402-1436. Nothing is written in the right column below 840.
+**v2 (main-session note):** the first line was re-voiced from "...the voice you hear in your head" (read as inner monologue) to "Nobody else hears your voice the way you do."; the title "Nobody else hears this." is kept. Re-rendered and re-badged.
 **Voice:** af_heart 0.97, crayon bed at music_gain 0.6, 68.8 s. "2023" is spoken from words.
 **QA notes:** the outer-24 px WARN is the demo's tilted book page bleeding off the frame at 3.2-6.2 s (deliberate, the template's look).
 **Sources:** see sources_voicerecording.md. Holzman & Rousey 1966 is not cited (unverified).
@@ -20,7 +21,7 @@ My last two reels were Alchemy (noisecancel) and the recipe card (coldtaste).
 
 ## GROWTH checklist
 - [x] Topic is a searched question (main-session assignment EP 65)
-- [x] Hook passes HOOKS.md (10 words, frame 0 moving paths, search question at 3.2 s)
+- [x] Hook passes HOOKS.md ("Nobody else hears your voice the way you do.", 9 words, main-session wording; frame 0 moving paths, search question at 3.2 s)
 - [x] 66-86 s (68.8 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Do you like your voice on recordings? Yes or no?")
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
@@ -37,8 +38,8 @@ QA voicerecording: WARN   (/home/user/reel-render/jobs/voicerecording/voicerecor
   PASS  safe zones      UI zones clear
   WARN  outer 24 px     content at the frame edge 3.2-6.2s
   PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -1.7 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 7.3 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  true peak       -2.4 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 8.5 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
   PASS  length          68.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
