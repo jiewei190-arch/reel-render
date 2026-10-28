@@ -61,7 +61,7 @@
 | 90 | earringing | Why do your ears ring after a concert? | H1 | merged v2, Nov 15 09:00 |
 | 91 | butterflies | Why do you get butterflies in your stomach? | H2 | queued |
 | 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | queued |
-| 93 | keyswork | How does a key open a lock? | H1 | queued |
+| 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | queued |
 | 94 | stars-twinkle | Why do stars twinkle but planets don't? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
