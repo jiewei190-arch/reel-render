@@ -50,7 +50,7 @@ const S = [];
 // A: hook: the night bedroom; a glowing "No." bubble pulses over the sleeper; vertical SLEEP strip
 S.push([0, T(1), t => { sky(t); put(g, L.hills, cam0, .2); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); sleeper(t);
   bubble(420, 330, 'No.', t, .75 + .25 * Math.sin(t * 3), { size: 80, tx: 250, ty: 450 }); put(g, L.front, cam0, 1);
-  vstrip(g, 'SLEEP', 80, 20, seg(t, .1, .9), { size: 52, seal: 'Zz' }); strip(g, 'the top word in sleep talk', 520, 140, t < .02 ? 1 : seg(t, 0, .6), { size: 54, rot: -.03 }); }]);
+  vstrip(g, 'SLEEP', 80, 20, seg(t, .1, .9), { size: 52, seal: 'Zz' }); strip(g, 'the top word in a sleep lab', 520, 140, t < .02 ? 1 : seg(t, 0, .6), { size: 54, rot: -.03 }); }]);
 // B: the question: mumble bubbles over the pillow
 S.push([T(1) - .3, T(2), t => { sky(t); put(g, L.room, cam0, .3); put(g, L.sill, cam0, .35); sleeper(t); ['mmm…', 'nnno…', 'wait…'].forEach((w, i) => bubble(380 + i * 150, 320 - i * 40, w, t, ss(seg(t, r(1, .4 + i * .5), r(1, .8 + i * .5))), { size: 44, tx: 250, ty: 460 }));
   put(g, L.front, cam0, 1); strip(g, 'why do we talk in our sleep?', 470, 140, seg(t, T(1), T(1) + .7), { size: 54, seal: true }); tag(g, "scientists don't fully know", 470, 760, { k: backOut(seg(t, r(1, 2.6), r(1, 3.0))), rot: .03 }); }]);
