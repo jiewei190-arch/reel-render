@@ -132,10 +132,10 @@ function pan(c, x, y, s = 1, lt = 0, fire = 1) {
   c.restore();
 }
 // pressure gauge: dial 0..10 (times normal air pressure)
-function gauge(c, x, y, r, v, k) { const e = ell(x, y, r, r, 50); paint(c, e, PAL.hi, { seed: TS(k) }); loopInk(c, e, { seed: TS(k + 1), w: 9 });
+function gauge(c, x, y, r, v, k, lab) { const e = ell(x, y, r, r, 50); paint(c, e, PAL.hi, { seed: TS(k) }); loopInk(c, e, { seed: TS(k + 1), w: 9 });
   for (let j = 0; j <= 10; j++) { const a = Math.PI * (0.8 + j / 10 * 1.4); ink(c, [[x + Math.cos(a) * r * 0.78, y + Math.sin(a) * r * 0.78], [x + Math.cos(a) * r * 0.92, y + Math.sin(a) * r * 0.92]], { w: j % 5 ? 4 : 7, seed: TS(k + 2 + j) }); }
   const a = Math.PI * (0.8 + clamp(v / 10) * 1.4); ink(c, [[x, y], [x + Math.cos(a) * r * 0.72, y + Math.sin(a) * r * 0.72]], { w: 10, color: PAL.red, seed: TS(k + 20) });
-  paint(c, ell(x, y, 14, 14, 20), PAL.ink, { seed: TS(k + 21), reg: false }); title(c, '×' + Math.round(v), x, y + r * 0.45, r * 0.42, PAL.red, { seed: TS(k + 22), w: 5 }); }
+  paint(c, ell(x, y, 14, 14, 20), PAL.ink, { seed: TS(k + 21), reg: false }); if (lab !== '') title(c, lab != null ? lab : '~×' + Math.round(v), x, y + r * 0.45, r * 0.42, PAL.red, { seed: TS(k + 22), w: 5 }); }
 function steamLines(c, x, y, n, lt, len = 120, k = 0, col = '#9fd8f5') { for (let j = 0; j < n; j++) { const a = -Math.PI / 2 + (j - (n - 1) / 2) * 0.5, u = (lt * 1.6 + j / n) % 1;
   const P = []; for (let q = 0; q <= 8; q++) { const r = 40 + q / 8 * len * (0.5 + u); P.push([x + Math.cos(a) * r + Math.sin(q + lt * 6 + j) * 10, y + Math.sin(a) * r]); } ink(c, P, { w: 7, color: col, seed: CS(0, 300 + k + j) }); } }
 function soundWaves(c, x, y, g, k = 0) { for (let j = 0; j < 3; j++) { const r = 60 + j * 50 * g; const P = []; for (let q = 0; q <= 12; q++) { const a = -0.8 + q / 12 * 1.6; P.push([x + Math.cos(a) * r, y + Math.sin(a) * r]); } ink(c, P, { w: 8, color: PAL.red, seed: CS(0, 340 + k + j) }); ink(c, P.map(([px, py]) => [2 * x - px, py]), { w: 8, color: PAL.red, seed: CS(0, 360 + k + j) }); } }
@@ -183,8 +183,9 @@ SC[4] = (lt, u) => {
 function bigXs(x, y, r, k) { ink(ctx, [[x - r, y - r], [x + r, y + r]], { w: 16, color: PAL.red, seed: TS(k) }); ink(ctx, [[x + r, y - r], [x - r, y + r]], { w: 16, color: PAL.red, seed: TS(k + 1) }); }
 // 5 re-hook: hotter than boiling, pressure builds (gauge climbs, kernel swells)
 SC[5] = (lt, u) => {
-  STOVE(); kernel(ctx, 400, 720, 2.1, 0, { k: 8, cut: true, drops: 7, press: lerp(.3, .7, u), lt }); gauge(ctx, 820, 620, 150, lerp(1, 6, ease(u)), 50);
-  plaque(ctx, 'HOTTER THAN BOILING', CX, 340, 80, PAL.red, 49); title(ctx, '100°C +', 820, 860, 70, PAL.red, { seed: TS(48) });
+  STOVE(); kernel(ctx, 400, 720, 2.1, 0, { k: 8, cut: true, drops: 7, press: lerp(.3, .7, u), lt }); gauge(ctx, 700, 640, 120, lerp(1, 5, ease(u)), 50, '');
+  thermo(ctx, 920, 600, 0.55, lerp(.45, .75, ease(u)), PAL.red, 47);
+  plaque(ctx, 'HOTTER THAN BOILING', CX, 340, 80, PAL.red, 49); title(ctx, 'way past 100°C', 770, 800, 58, PAL.red, { seed: TS(48) });
 };
 // 6 the starch goes to gel: the inside turns glossy, bubbles
 SC[6] = (lt, u) => {
@@ -193,11 +194,11 @@ SC[6] = (lt, u) => {
 };
 // 7 180 °C and about ten times normal pressure: thermometer + gauge max, kernel trembling (ones)
 SC[7] = (lt, u) => {
-  STOVE(); kernel(ctx, 400 + Math.sin(lt * 50) * 4, 740, 1.9, 0, { k: 10, cut: false, press: .9, lt });
-  thermo(ctx, 760, 520, 0.7, lerp(.6, .95, ease(u)), PAL.red, 70); title(ctx, '180°C', 760, 900, 90, PAL.red, { seed: TS(71) });
-  if (u > 0.3) { const k = sstep(0.3, 0.6, u); gaugeBig(250, 380, k * 10); }
+  STOVE(); kernel(ctx, 300 + Math.sin(lt * 50) * 4, 740, 1.9, 0, { k: 10, cut: false, press: .9, lt });
+  thermo(ctx, 840, 520, 0.7, lerp(.6, .95, ease(u)), PAL.red, 70); title(ctx, '180°C', 800, 900, 90, PAL.red, { seed: TS(71) });
+  if (u > 0.3) { const k = ease(sstep(0.3, 0.64, u)); gaugeBig(590, 420, 1 + k * 9); }
 };
-function gaugeBig(x, y, v) { gauge(ctx, x, y, 110, v, 80); title(ctx, 'air pressure', x + 260, y, 54, PAL.ink, { seed: TS(83) }); }
+function gaugeBig(x, y, v) { gauge(ctx, x, y, 130, v, 80); title(ctx, 'air pressure', x, y + 180, 50, PAL.ink, { seed: TS(83) }); }
 // 8 the hull cracks (ones, shake)
 SC[8] = (lt, u) => {
   STOVE(); kernel(ctx, CX, 720, 2.6, 0, { k: 11, press: 1, crack: sstep(0.1, 0.6, u), lt }); if (u > 0.4) star(ctx, CX, 420, 110 * sstep(0.4, 0.6, u), seedFor(CURD, 90), { fill: PAL.yel });

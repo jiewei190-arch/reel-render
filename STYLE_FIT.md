@@ -65,4 +65,5 @@ Approved anyway, but not to repeat as a style: barcode (kinetic type), faceid an
 | ouija | #6 shadow-puppet | 5 | a séance is theatre with actors; every piece visibly held up on a rod by someone off-stage IS the ideomotor point; Faraday's lever indicator gives a clear diagram moment | pending | |
 | skeleton | #10 paper-popup | 5 | a pop-up skeleton is the Halloween image; a tour of 'jobs' maps onto pop-up pages and page turns; night-sky back board keeps the top third full | pending | |
 | pumpkin | #18 Japan heat wave | 5 | rot is a measurable process: rind cross-section, rain-gauge 90% water, moisture box, rot timeline strip, day counters, tick list of tips; the red sun-disc frames the sagging jack-o'-lantern | pending | |
-| yawn | #13 AI Doom | 5 (expected) | competing explanations told as paper-set metaphors: two doors, brain radiator, chalkboard experiment, species gallery, CONTESTED stamp | pending | |
+| yawn | #13 AI Doom | 5 (expected) | competing explanations told as paper-set metaphors: two doors, brain radiator, chalkboard experiment, species gallery, CONTESTED stamp | storyboard approved Oct 28 | |
+| popcorn | #11 cel-boil | 5 | heat -> pressure -> crack -> burst -> foam sets -> jump is a chain of action beats for cel-boil's ones/shakes/stars; kernel cutaway, pressure gauge and thermometer carry the numbers | storyboard approved Oct 28 | |
