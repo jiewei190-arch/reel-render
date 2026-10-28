@@ -13,12 +13,12 @@
 | 41 | stomachgrowl | Why does your stomach growl? | H2 | merged, Nov 5 |
 | 42 | catpurr | How do cats purr? | H2 | merged, Nov 5 |
 | 43 | brainfreeze | Why do you get brain freeze? | H1 | queued |
-| 44 | eggflip | Why do eggs turn solid when you cook them? | H1 | queued |
+| 48 | eggflip | Why do eggs turn solid when you cook them? | H1 | building (renumbered from 44) |
 
-| 45 | earpop | Why do your ears pop on a plane? | H4 | building |
+| 44 | earpop | Why do your ears pop on a plane? | H4 | merged, Nov 5 21:30 (renumbered from 45; v2 coming) |
 | 46 | slipperyice | Why is ice slippery? | H4 | storyboard approved |
 | 47 | snowflake | Why do snowflakes have six sides? | H3 | queued |
-| 48 | runnynose | Why does your nose run when it's cold? | H3 | queued |
+| 45 | runnynose | Why does your nose run when it's cold? | H3 | building (renumbered from 48) |
 | 49 | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | queued (Thanksgiving) |
 | 50 | cranberries | Why do cranberries float? | H2 | queued (Thanksgiving) |
 

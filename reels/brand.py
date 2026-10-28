@@ -34,6 +34,7 @@ OVR = {
     "stomachgrowl": {"spot": ("R", 260)},   # H2: hanging signs moved down to y 340 so the top-right badge clears them
     "catpurr": {"spot": (44, 680), "hide": [(7.4, 49.6)]},   # H2: plaques fill the top band; mid-left is clear in the hook and from 49.6 s
     "earpop": {"spot": ("R", 260)},   # H4: top-right is clear of the field-note titles
+    "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
