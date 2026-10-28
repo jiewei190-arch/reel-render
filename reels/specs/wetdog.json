@@ -1,0 +1,105 @@
+{
+ "name": "wetdog",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  6,
+  8,
+  9,
+  10,
+  13,
+  15,
+  16,
+  17
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why do wet dogs smell so **bad?**",
+   "Why do wet dogs smell so bad?"
+  ],
+  [
+   "But the smell isn't really **the dog.** It's **who lives on it.**",
+   "But the smell isn't really the dog. It's who lives on it."
+  ],
+  [
+   "Here's the **recipe,** step by step.",
+   "Here's the recipe, step by step."
+  ],
+  [
+   "Step one: **a dog.** Its skin and fur are home to **bacteria and yeast.**",
+   "Step one: a dog. Its skin and fur are home to bacteria and yeast."
+  ],
+  [
+   "That's normal. A Texas A&M vet study found **furry skin** has the **richest mix** of microbes.",
+   "That's normal. A Texas A and M vet study found furry skin has the richest mix of microbes."
+  ],
+  [
+   "Step two: those microbes give off tiny **smelly molecules.**",
+   "Step two: those microbes give off tiny smelly molecules."
+  ],
+  [
+   "On a **dry dog,** they mostly stay put, and you barely notice.",
+   "On a dry dog, they mostly stay put, and you barely notice."
+  ],
+  [
+   "Step three: **add water.**",
+   "Step three: add water."
+  ],
+  [
+   "Water knocks those molecules **loose** from the fur.",
+   "Water knocks those molecules loose from the fur."
+  ],
+  [
+   "Step four: **let it dry.** The evaporating water carries them **up to your nose.**",
+   "Step four: let it dry. The evaporating water carries them up to your nose."
+  ],
+  [
+   "So how many smells are in that cloud?",
+   "So how many smells are in that cloud?"
+  ],
+  [
+   "In one small study, wet dog hair had **22 key odor compounds.** Dry hair had **16.**",
+   "In one small study, wet dog hair had twenty-two key odor compounds. Dry hair had sixteen."
+  ],
+  [
+   "Some smell like **mushrooms.** Some are **fruity,** some **floral.**",
+   "Some smell like mushrooms. Some are fruity, some floral."
+  ],
+  [
+   "And some smell like... **poop.**",
+   "And some smell like... poop."
+  ],
+  [
+   "One compound jumped **32 times higher** once the hair got wet.",
+   "One compound jumped thirty-two times higher once the hair got wet."
+  ],
+  [
+   "No single molecule is **wet dog.** It's **the whole mix.**",
+   "No single molecule is wet dog. It's the whole mix."
+  ],
+  [
+   "That's why a **bath** can make it worse at first: you just **added water.**",
+   "That's why a bath can make it worse at first: you just added water."
+  ],
+  [
+   "So wet dog smell is a **microbe recipe:** fur, water, and **your nose** nearby.",
+   "So wet dog smell is a microbe recipe: fur, water, and your nose nearby."
+  ],
+  [
+   "Does yours stink when wet? **Yes or no?**",
+   "Does yours stink when wet? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
