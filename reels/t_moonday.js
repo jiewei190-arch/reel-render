@@ -66,7 +66,12 @@ function clock(x, y, r, o = {}) { const k = o.k ?? 1; if (k <= 0) return; g.save
 const SC = [];
 const daySky = (t, k = 1) => { skyTint(k); clouds(t, .8); };
 SC[0] = (t, lt) => { daySky(t); sun(820, 640, 90); moon(330, 470, 130, .5, 'R'); slip(560, 300, 300, 110, .03, [['3:30 pm', 'center', 60, '#2b2b2b', 'Typed']], { k: 1 }); hand('the Moon?', 330, 680, 60, { col: BLUE }); pen(dens([[330, 636], [330, 604]], false), { col: BLUE, seed: 140 }); person(260, HY - 4, { point: true }); };
-SC[1] = (t, lt) => { daySky(t); sun(820, 640, 90); moon(330, 470, 130, .5, 'R'); slip(180, 690, 520, 130, -.02, [['MOON:', 'left', 46], ['night shift only?', 'left', 40]], { k: lt / .4 }); if (lt > 1) { pen([[200, 710], [690, 820]], { col: RED, w: 5, seed: 141 }); pen([[200, 820], [690, 710]], { col: RED, w: 5, seed: 142 }); } person(260, HY - 4, { point: true }); };
+SC[1] = (t, lt) => { const L = dens([[0, 250], [540, 250], [540, HY], [0, HY]], true), Rr = dens([[540, 250], [1080, 250], [1080, HY], [540, HY]], true);   // split page: night vs day
+  wash(L, '#3d4870', .55); hatch(L, '#2a3358', { a: .45, sp: 9 }); hatch(Rr, SKYB, { a: .3, sp: 12, ang: .9 }); pen(dens([[540, 250], [540, HY]], false, 14), { seed: 143, w: 3 });
+  moon(270, 470, 100, .25, 'R', { night: 1 }); for (const [x, y] of [[90, 330], [420, 360], [130, 640], [460, 700], [300, 860]]) plus(x, y, 12, { col: '#e8e6dc' });
+  hand('night', 270, 980, 60, { col: '#f2efe4' }); hand('day', 810, 980, 60, { col: '#a87b14' }); sun(880, 700, 70);
+  const k = (lt - .9) / .5; moon(720, 470, 100, .5, 'R', { k: clamp(k) }); hand('?', 720, 500, 120, { col: BLUE, k: 1 - clamp(k) });
+  slip(600, 560, 400, 110, .03, [['night only?', 'center', 44]], { k: (lt - 1.6) / .4 }); if (lt > 2.2) pen([[610, 590], [990, 650]], { col: RED, w: 5, seed: 141 }); };
 SC[2] = (t, lt) => { sun(880, 420, 80); moon(460, 520, 80, .5, 'R'); const u = clamp(lt / 1.2); for (let i = 0; i < 4; i++) { const y0 = 380 + i * 30; pen(dens([[790, y0], [lerp(790, 560, u), lerp(y0, 480 + i * 22, u)]], false), { col: '#c7962a', w: 3.2, seed: 150 + i }); }
   if (lt > 1.2) { const v = clamp((lt - 1.2) / 1); for (let i = 0; i < 3; i++) pen(dens([[440 - i * 20, 610], [lerp(440 - i * 20, 300 - i * 50, v), lerp(610, 1040, v)]], false), { col: '#c7962a', w: 3, seed: 160 + i, dash: [12, 10] }); }
   hand('sunlight in', 690, 340, 46, { col: '#a87b14', k: lt / .4 }); hand('bounces to us', 260, 880, 48, { col: '#a87b14', k: (lt - 1.6) / .4 }); hand('no light of its own', 460, 700, 44, { k: (lt - .6) / .4 }); };
