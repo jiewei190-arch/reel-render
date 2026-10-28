@@ -24,6 +24,7 @@ OVR = {
     "leafcolor": {"spot": (44, 560)},   # top labels sit at y 300-440 across the middle; mid-left only crosses ensō strokes, the sun and the seal (art)
     "candle": {"spot": (44, 1060), "hide": [(25.4, 28.4)]},   # titles/labels fill y 300-1000 in every shot; low-left sits on the rim-lit audience row (art); hidden under "this is what burns"
     "coldtaste": {"spot": ("R", 260)},   # H2: progress bar shortened to x 60-620 so the top-right badge clears it and the recipe card (y 360+)
+    "noisecancel": {"spot": ("R", 256)},   # H2: HUD timecode and top-right bracket removed so the badge owns that corner
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box

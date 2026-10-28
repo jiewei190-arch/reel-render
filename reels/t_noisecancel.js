@@ -155,9 +155,9 @@ function strip(t, white) { const c = g, y = 1418, lv = netLevel(t); c.save(); c.
   c.strokeStyle = C.cyan; c.lineWidth = 3; c.beginPath(); for (let x = 360; x <= 880; x += 3) { const yy = y + 17 * lv * Math.sin(x * .09 - t * 9) * (.6 + .4 * Math.sin(x * .021 + t * 2)); x === 360 ? c.moveTo(x, yy) : c.lineTo(x, yy); } c.stroke(); c.restore(); }
 // HUD: the demo's corner brackets; its corner labels moved below the top 250 px
 function hud(t, label0, white) { const c = g; c.save(); c.setTransform(1, 0, 0, 1, 0, 0); const col = white ? 'rgba(30,30,60,' : 'rgba(200,205,240,'; c.strokeStyle = col + '.55)'; c.lineWidth = 2.5;
-  const m = 60, q = 46; [[m, 260, 1, 1], [W - m, 260, -1, 1], [m, H - 500, 1, -1], [W - m, H - 500, -1, -1]].forEach(([x, y, sx, sy]) => { c.beginPath(); c.moveTo(x, y + sy * q); c.lineTo(x, y); c.lineTo(x + sx * q, y); c.stroke(); });
+  const m = 60, q = 46; [[m, 260, 1, 1], [m, H - 500, 1, -1], [W - m, H - 500, -1, -1]].forEach(([x, y, sx, sy]) => { c.beginPath(); c.moveTo(x, y + sy * q); c.lineTo(x, y); c.lineTo(x + sx * q, y); c.stroke(); });
   c.font = A.font('mono', 22, 500); c.letterSpacing = '5px'; c.fillStyle = col + '.6)'; c.fillText(label0, m + 64, 286);
-  const f = Math.floor(t * 30); c.textAlign = 'right'; c.fillText(`00:00:${String(Math.floor(t)).padStart(2, '0')}:${String(f % 30).padStart(2, '0')}`, W - m - 64, 286); c.restore(); }
+  c.restore(); }   // top-right corner left empty: the EP badge sits there
 
 // ---------- compositor (the search reel's: blurred slide transitions, indigo/white flash cards) ----------
 const SC = [[0, sceneA, 0, 'SC 01  NOISE'], [s(1) - .3, sceneB, 0, 'SC 02  ASK'], [s(2) - .3, sceneC, 0, 'SC 03  WAVE'], [s(3) - .3, sceneD, 0, 'SC 04  MIC'], [s(4) - .3, sceneE, 0, 'SC 05  CHIP'],
