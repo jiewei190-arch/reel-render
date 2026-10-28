@@ -93,6 +93,9 @@ Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Ch
 2. **Instagram: lower priority.** Halloween rows in handoff/schedule_plan.csv (Oct 28-31), then handoff/schedule_nov.csv (2-3 a day, Nov 1-8), plain `<n>.mp4`.
 3. Mark each row "scheduled <date>" in its CSV and in tracking.csv as you go, and push.
 
+### 8e-2. New reels (Batch N, from Nov 3): handoff/schedule_batchN.csv
+The main session adds each newly approved reel here (TikTok and YouTube rows, `_ep.mp4`, episode number). The scheduling session schedules these rows too, and marks their status in THIS file. The main session doesn't edit schedule_tt_yt.csv any more, so there are no merge conflicts. Instagram for new reels: post the strongest 2-3 per day from this file at 11:00/17:00/20:00 with the plain `<n>.mp4`.
+
 ### 8f. Playlists and series (Oct 28)
 handoff/series.csv groups the reels into series. On YouTube, create one public playlist per series (title, description from the CSV) and add each Short to its series playlist; with advanced features on, set each Short's "Related video" to the next episode in the same series. On TikTok, create the same playlists when the account has the Playlists feature (Profile -> Create playlist), otherwise skip. Every new reel gets a series in series.csv before it's scheduled.
 
