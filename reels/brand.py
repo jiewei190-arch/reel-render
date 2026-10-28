@@ -37,6 +37,8 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "cranberries": {"spot": (44, 600), "t0": 7.2, "hide": [(56.2, 99.0)]},   # banner stage until 6.7 s; posters fill y 235-1150 with header/band text top and bottom; mid-left sits over poster art only; the wall and end card are all titles, so hidden from 56.2 s
+    "popuptimer": {"spot": (44, 1080), "hide": [(47.3, 52.4)]},   # titles fill the top band in every scene; low-left above the caption box sits on art only; hidden under "3 popped early"
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

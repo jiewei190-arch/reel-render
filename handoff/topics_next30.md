@@ -19,7 +19,7 @@
 | 46 | slipperyice | Why is ice slippery? | H4 | merged, Nov 6 13:00 (v2 coming) |
 | 47 | snowflake | Why do snowflakes have six sides? | H3 | queued |
 | 45 | runnynose | Why does your nose run when it's cold? | H3 | building (renumbered from 48) |
-| (Thanksgiving) | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | rendering; EP + badge assigned when scheduled (about Nov 22-25) |
+| (Thanksgiving) | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | (Thanksgiving) | cranberries | Why do cranberries float? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | queued |
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
