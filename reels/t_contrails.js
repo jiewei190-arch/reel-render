@@ -347,38 +347,36 @@ function overlay(k, t, pal, onWall) {
 }
 function posterOnTable(k, P, st, t) { regTape(PO[0], PO[1], PW, PH); sheetShadow(PO[0], PO[1], PW, PH, .22); ctx.save(); ctx.translate(PO[0], PO[1]); drawPoster(ctx, P, { ...st, finish: false }); overlay(k, t, st.pal, false); inkFinish(ctx, T, 0, 0, PW, PH, .6, 1); ctx.restore(); }
 // ------------------------------------------------------------------ sections
-function bannerTrail() { const p = new Path2D(); for (let x = 0; x < 1400; x += 8) addC(p, x, 70, 7 + 9 * (1 - x / 1400)); return p; }
+const jetX = t => 330 + 430 * t;   // banner units: the hook jet crosses the banner's sky band and leaves on the right
+function bannerTrail(jx) {   // droplets just behind the engine, then a growing band of ice; the trail runs between the two title lines
+  const p = new Path2D(), ex = jx - 10; for (let x = 0; x < Math.min(ex - 24, BW); x += 8) { const d = ex - x; if (d < 110) { if (x % 16) continue; addC(p, x, 161 + (hash(x * .3) - .5) * 8, 2.5 + 2 * hash(x)); } else addC(p, x, 161, 3.5 + 6.5 * clamp((d - 110) / 900)); } return p; }
 function bannerStage(t) {
-  const sky = seg(t, -.45, 1.0), lift = seg(t, 1.0, 1.45), tt = seg(t, 1.2, 1.5), ff = seg(t, 1.35, 1.6);
-  const sqX = wipeFront([BAN[0], BAN[1], BW, BH], 'right', sky, 34);
-  const k = eo(seg(t, 1.0, 1.65));
+  // hook: the camera rides with a big jet across the printed sky band, the trail drawing behind it, then pulls back to the whole banner and the title pulls
+  const sky = 1, lift = 1, tt = seg(t, 2.0, 2.35), ff = seg(t, 2.2, 2.5), sqX = BAN[0] + BW;
+  const k = eio(seg(t, 1.1, 2.3));
   const down = eio(seg(t, a(Q.but) - .2, a(Q.but) + .6));
-  const zc = lerp(1.35, 1.2, ss(seg(t, 0, 1.0))), zw = .58;
-  let z = lerp(zc, zw, k), cx = lerp(sqX - 120, 0, k), cy = lerp(0, BCY, k);
+  const jw = BAN[0] + Math.min(jetX(t), 1500) - 90, jy = BAN[1] + 205;
+  let z = Math.exp(lerp(Math.log(4.0), Math.log(.58), k)), cx = lerp(jw, 0, k), cy = lerp(jy, BCY, k);
   z = lerp(z, .56, down);
-  z *= 1 + .02 * ss(seg(t, 1.8, a(Q.fuel)));
-  cam(cx, cy, z, lerp(-.03, 0, k)); table();
+  z *= 1 + .02 * ss(seg(t, 2.4, a(Q.fuel)));
+  cam(cx, cy, z, 0); table();
   const bp = PAL.banner;
   regTape(BAN[0], BAN[1], BW, BH); sheetShadow(BAN[0], BAN[1], BW, BH, .25);
   ctx.save(); ctx.translate(BAN[0], BAN[1]);
   drawBanner(ctx, BANNER_C, { pal: bp, T, sky, title: tt, footer: ff, reg: 1, finish: false });
   // the white trail and its jet, printed with the sky pull (the hook picture), the jet keeps flying across the banner
-  if (sky > 0) {
-    const clip = sky < 1 ? wipeRegion([0, 0, BW, BH], 'right', sky, 4, 34, 4) : null, jx = 1440 + 60 * Math.sin(t * .8) + 30 * t;
-    ctx.save(); ctx.beginPath(); ctx.rect(...BANNER_ART); ctx.clip();
-    const tr = new Path2D(); for (let x = 0; x < jx - 60; x += 8) addC(tr, x, 34, 5 + 7 * clamp((jx - x) / 900));
-    ink(ctx, { path: tr }, { color: bp.glow, reg: [1.4, -.6], clip, sheen: 1 });
-    ink(ctx, { path: placed(JET.body, jx, 16, .42) }, { color: bp.near, reg: [.6, .4], clip, sheen: 1 });
-    ctx.restore();
-  }
+  { const jx = jetX(t); ctx.save(); ctx.beginPath(); ctx.rect(...BANNER_ART); ctx.clip();
+    ink(ctx, { path: bannerTrail(jx) }, { color: bp.glow, reg: [1.4, -.6], sheen: 1 });
+    if (jx < BW + 400) { ink(ctx, { path: placed(JET.body, jx, 140, .7) }, { color: bp.near, reg: [.6, .4], sheen: 1 }); ink(ctx, { path: placed(JET.win, jx, 140, .7) }, { color: bp.sky1, reg: [.8, .4] }); }
+    ctx.restore(); }
   inkFinish(ctx, T, 0, 0, BW, BH, .6, 1);
   ctx.restore();
-  const wet = 1 - seg(t, 1.0, 1.8);
+  const wet = 0;
   if (sky > 0 && wet > 0) { ctx.save(); ctx.globalAlpha = wet; ctx.beginPath(); ctx.rect(BAN[0] + 14, BAN[1] + 14, Math.max(0, sqX - BAN[0] - 14), BANNER_ART[3]); ctx.clip(); const g = ctx.createLinearGradient(sqX - 420, 0, sqX, 0); g.addColorStop(0, 'rgba(255,250,235,0)'); g.addColorStop(1, 'rgba(255,250,235,.3)'); ctx.fillStyle = g; ctx.fillRect(sqX - 420, BAN[1], 420, BH); ctx.restore(); }
   const box = [BAN[0] - 90, BAN[1] - 90, BW + 180, BH + 180];
   const emu = new Path2D(); emu.rect(box[0], box[1], box[2], box[3]); emu.rect(BAN[0] + 14, BAN[1] + 14, BW - 28, BANNER_ART[3]);
   if (lift < 1) screenFrame(ctx, box, { lift: ss(seg(t, 1.0, 1.45)), frame: 40, mesh: 'rgba(236,214,128,.03)', emulsion: emu, emulsionAlpha: .55, meshStep: 3.4, meshLine: 'rgba(70,60,30,.16)' });
-  if (t < 1.35) {
+  if (sky < 1) {
     const upx = ss(seg(t, 1.0, 1.35)), x = sqX + 14 + upx * 120, y0 = BAN[1] - 38, y1 = BAN[1] + BH + 38, tn = yy => (yy - y0) / (y1 - y0), BB = BANNER_BANDS;
     ctx.save(); ctx.globalAlpha = 1 - upx;
     squeegee(ctx, [x, y0], [x, y1], [1, 0], { beads: [['sky2', bp.sky2], ['sky1', bp.sky1], ['far', bp.far]].map(([kk, c]) => ({ t0: tn(BAN[1] + BB[kk][0] + 16), t1: tn(BAN[1] + BB[kk][1]), color: c })), seed: 3, scale: 1.25, roll: sqX / 30 });
@@ -421,12 +419,10 @@ function posterStage(k, t, S) {
   });
   caption(t, pl, 1);
 }
-function cloudWipe(t, t0, color) {   // the demo's silhouette wipe, cut as a cloud edge
-  const u = seg(t, t0 - .3, t0 + .3); if (u <= 0 || u >= 1) return;
-  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
-  const w = W * 1.25, cxw = lerp(W + w / 2 + 160, -w / 2 - 160, ss(u)), x = cxw - w / 2, p = new Path2D();
-  p.moveTo(x, -40); for (let y = -40; y <= H + 40; y += 120) { const r = 60 + 30 * hash(y * .37); p.arc(x - 10, y + 60, 60, -Math.PI / 2, Math.PI / 2, true); }
-  p.lineTo(x + w, H + 40); for (let y = H + 40; y >= -40; y -= 120) { p.arc(x + w + 10, y - 60, 60, Math.PI / 2, -Math.PI / 2, true); }
+function cloudBand(x1, band, color) {   // a cloud-edged band of ink between the outgoing and incoming stage
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); const x0 = x1 - band, p = new Path2D(); p.moveTo(x0, -40);
+  for (let y = -40; y <= H + 40; y += 120) p.arc(x0 + 10, y + 60, 60, -Math.PI / 2, Math.PI / 2, true);
+  p.lineTo(x1, H + 40); for (let y = H + 40; y >= -40; y -= 120) p.arc(x1 - 10, y - 60, 60, Math.PI / 2, -Math.PI / 2, true);
   p.closePath(); ctx.fillStyle = color; ctx.fill(p); ctx.restore();
 }
 // wall lockup (the three posters hung under the banner)
@@ -442,8 +438,8 @@ function wall(t, hi) {
   const [bx, by] = L.banner;
   ctx.save(); ctx.globalAlpha = .35; ctx.fillStyle = '#1a120c'; ctx.fillRect(bx + 10, by + 12, L.bw, L.bh); ctx.restore();
   ctx.save(); ctx.translate(bx, by); ctx.scale(L.bs, L.bs); drawBanner(ctx, BANNER_C, { pal: PAL.banner, T, finish: false });
-  ctx.save(); ctx.beginPath(); ctx.rect(...BANNER_ART); ctx.clip(); const jx = 1440 + 60 * Math.sin(t * .8) + 30 * t, tr = new Path2D(); for (let x = 0; x < jx - 60; x += 8) addC(tr, x, 34, 5 + 7 * clamp((jx - x) / 900));
-  ink(ctx, { path: tr }, { color: '#FFFFFF', reg: [1.4, -.6], sheen: 1 }); ink(ctx, { path: placed(JET.body, Math.min(jx, 1700), 16, .42) }, { color: PAL.banner.near, sheen: 1 }); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.rect(...BANNER_ART); ctx.clip();
+  ink(ctx, { path: bannerTrail(jetX(t)) }, { color: '#FFFFFF', reg: [1.4, -.6], sheen: 1 }); ctx.restore();
   inkFinish(ctx, T, 0, 0, BW, BH, .6, 1); ctx.restore();
   [0, 1, 2].forEach(i => {
     const P = POS[i], [x, y] = L.posters[i], g = 1 + .05 * hi[i];
@@ -493,14 +489,13 @@ function endStage(t) {
 }
 function render(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = TABLE; ctx.fillRect(0, 0, W, H);
-  if (t < S1.t1) bannerStage(t);
-  else if (t < S2.t1) posterStage(0, t, S2);
-  else if (t < S3.t1) posterStage(1, t, S3);
-  else if (t < S4.t1) posterStage(2, t, S4);
-  else if (t < S5.t1) posterStage(3, t, S5);
-  else if (t < S6.t1) wallStage(t);
-  else endStage(t);
-  cloudWipe(t, S3.t0 + .05, PALS[0].sky2); cloudWipe(t, S4.t0 + .05, PALS[1].sky2); cloudWipe(t, S5.t0 + .05, PALS[2].sky2); cloudWipe(t, S6.t0 + .05, PALS[3].sky2);
+  const STG = [bannerStage, t => posterStage(0, t, S2), t => posterStage(1, t, S3), t => posterStage(2, t, S4), t => posterStage(3, t, S5), wallStage, endStage];
+  let idx = [S1.t1, S2.t1, S3.t1, S4.t1, S5.t1, S6.t1].findIndex(b => t < b); if (idx < 0) idx = 6;
+  // silhouette wipes as a moving cloud band: the old stage stays on its left, the new one is already there on its right (never a blank frame)
+  const w = [[S3.t0, 1, 2, PALS[0].sky2], [S4.t0, 2, 3, PALS[1].sky2], [S5.t0, 3, 4, PALS[2].sky2], [S6.t0, 4, 5, PALS[3].sky2]].find(([t0]) => t > t0 - .35 && t < t0 + .35);
+  if (!w) STG[idx](t);
+  else { const [t0, o, nw, col] = w, band = W * .4, cx = lerp(W + band + 120, -120, ss(seg(t, t0 - .35, t0 + .35)));
+    STG[o](t); ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.beginPath(); ctx.rect(cx, 0, W + 200, H); ctx.clip(); STG[nw](t); ctx.restore(); cloudBand(cx, band, col); }
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   const f = Math.min(1, (DUR - t) / .35); if (f < 1) { ctx.save(); ctx.globalAlpha = (1 - f) * .3; ctx.fillStyle = '#1a120c'; ctx.fillRect(0, 0, W, H); ctx.restore(); }
 }
