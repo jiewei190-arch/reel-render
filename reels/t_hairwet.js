@@ -9,7 +9,7 @@ const SKIN = '#f3c4a2', SKIND = 'rgba(150,70,40,1)', MUS = '#e8746e', MUSD = 'rg
 const label = (segs, x, y, k, o = {}) => D.rich(segs.map(z => typeof z === 'string' ? { s: z } : z), x, y, { f: 'hand', size: o.size || 48, align: o.align || 'center', write: k, a: o.a });
 const stack = (lines, x, y, k, o = {}) => lines.forEach(([w, col], i) => D.text(w, x, y + i * (o.lh || 150), { f: 'sans', size: o.size || 140, wt: 800, col, track: -5, a: R(k, i * .25, .3), align: o.align }));
 // ---------- hairwet pieces ----------
-const HAIR = '#a8743e', HAIRD = 'rgba(90,50,20,1)', WET = '#4a2c16', WATERC = '#7fb0f0', RAY = '#f0b41d';
+const HAIR = '#a8743e', HAIRD = 'rgba(90,50,20,1)', WET = '#2e1a0c', WATERC = '#7fb0f0', RAY = '#f0b41d';
 // a head (felt tip) with hair; wet 0..1 per side (left, right)
 function head(x, y, sc, t, k, wl, wr) { const c = D.ctx(); c.save(); c.translate(x, y); c.scale(sc, sc); D.use(c);
   D.crayon(D.circ(0, 0, 150, 40), SKIN, { prog: R(k, .1, .4), seed: 900, dark: SKIND, scribble: false }); D.ink(D.circ(0, 0, 150, 40), { w: 6 / sc, prog: R(k, 0, .4), seed: 901 });
@@ -44,7 +44,7 @@ function sceneB(t) { const T = D.T, tg = D.tg; tg.setTransform(1, 0, 0, 1, 0, 0)
   const band = (y0, y1, b) => { lg.save(); lg.beginPath(); lg.rect(0, y0, W, y1 - y0); lg.clip(); if (b) lg.filter = `blur(${b}px)`; lg.drawImage(T, 0, 0); lg.restore(); };
   band(0, 480, 7); band(480, 600, 3); band(600, 1000, 0); band(1000, 1110, 3); band(1110, H, 8); }
 // C: dry strand: rays scatter every way, plenty back to the eye
-function sceneC(t) { const t0 = s(2); strand(120, 960, 820, 90, t, R(t, t0 - .3, .9)); label([{ s: 'rough', col: C.red }, ' cuticle'], 300, 700, R(t, t0 + .6, .6), { size: 48 });
+function sceneC(t) { const t0 = s(2); strand(120, 960, 820, 90, t, R(t, t0 - .3, .9)); label([{ s: 'rough', col: C.red }, ' cuticle'], 300, 700, R(t, t0 + .6, .6), { size: 48 }); label(['one hair, ', { s: 'up close', col: C.blue }], 700, 1010, R(t, t0 + .2, .6), { size: 46 });
   ray(D.seg(220, 420, 420, 760, 6), R(t, t0 + 1.0, .5)); [[-1.9, 1.4], [-1.2, 1.7], [-2.4, 1.6], [-.6, 1.8]].forEach(([a, d], i) => ray(D.seg(430, 760, 430 + Math.cos(a) * 260, 760 + Math.sin(a) * 260, 6), R(t, t0 + d, .4), { seed: 961 + i }));
   eye(840, 470, R(t, t0 + 1.8, .4)); ray(D.wave(560, 560, 790, 480, 6, 1), R(t, t0 + 2.6, .5), { seed: 965 }); label(['plenty comes back'], 760, 380, R(t, t0 + 3.0, .7), { size: 46 }); }
 // D: water film coats the strand
