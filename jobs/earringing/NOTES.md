@@ -21,12 +21,13 @@
 - **Loop:** the last 0.5 s blends at most 30% of frame 0 (the engine's loop).
 - **Badge:** EP 90 at (44, 260) as contrails (same engine). Visible over the banner hook, the wall and the end card; hidden 6.5-57.4 s while the posters fill the frame (their HOW IT REALLY WORKS header sits at y ~270).
   - Frames checked across the visible spans. Over the earplug strip (62-66 s) the badge sits about 6 px above the strip edge, clear of its lettering.
+- **v2 (main's note):** the white sound-wave arcs crossed "EARS RING?" when the camera pulled back to the banner (about 2.5-6 s) and on the wall. Once the title is printed, the arcs are now drawn only right of the lettering (banner x > 1420). The frame-0 hook keeps all its arcs.
 - **Ear check:** not done by a human yet.
 
 ## qa.py
 ```
 QA earringing: PASS   (/home/user/reel-render/jobs/earringing/earringing.mp4, 70.0 s)
-  PASS  static          longest no-change run 0.50 s (limit 4.0 s)
+  PASS  static          longest no-change run 0.75 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear

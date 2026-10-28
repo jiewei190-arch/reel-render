@@ -1,5 +1,5 @@
 QA earringing: PASS   (/home/user/reel-render/jobs/earringing/earringing.mp4, 70.0 s)
-  PASS  static          longest no-change run 0.50 s (limit 4.0 s)
+  PASS  static          longest no-change run 0.75 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear

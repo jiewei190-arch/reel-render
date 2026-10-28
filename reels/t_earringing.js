@@ -305,7 +305,7 @@ function posterOnTable(k, P, st, t) { regTape(PO[0], PO[1], PW, PH); sheetShadow
 // ------------------------------------------------------------------ sections
 const jetX = t => 330 + 430 * t;   // banner units: the hook note crosses the banner's sky band and leaves on the right
 function bannerTrail(jx) {   // sound waves rippling out behind the note: nested arcs along the band between the two title lines
-  const p = new Path2D(), ex = jx - 70; for (let i = 0; i < 9; i++) { const x = ex - i * 70; if (x < 30) break; const r = 46 + i * 9, th = 10 - i * .6, q = new Path2D(); q.arc(x, 161, r + th / 2, Math.PI * .65, Math.PI * 1.35); q.arc(x, 161, r - th / 2, Math.PI * 1.35, Math.PI * .65, true); q.closePath(); p.addPath(q); } return p; }
+  const p = new Path2D(), ex = jx - 70; for (let i = 0; i < 9; i++) { const x = ex - i * 70; if (x < 30) break; if (jx >= 1190 && x > 380 && x < 1420) continue; /* once the title is printed (t >= 2 s, and on the wall), keep the arcs clear of its lettering */ const r = 46 + i * 9, th = 10 - i * .6, q = new Path2D(); q.arc(x, 161, r + th / 2, Math.PI * .65, Math.PI * 1.35); q.arc(x, 161, r - th / 2, Math.PI * 1.35, Math.PI * .65, true); q.closePath(); p.addPath(q); } return p; }
 function bannerStage(t) {
   // hook: the camera rides with a big jet across the printed sky band, the trail drawing behind it, then pulls back to the whole banner and the title pulls
   const sky = 1, lift = 1, tt = seg(t, 2.0, 2.35), ff = seg(t, 2.2, 2.5), sqX = BAN[0] + BW;
