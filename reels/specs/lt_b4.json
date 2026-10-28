@@ -1,0 +1,20 @@
+{
+ "name": "lt_b4",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Face ID decides **who you are.**",
+   "Face ID decides who you are."
+  ],
+  [
+   "The next system guesses **what you'll watch.** Chapter four: your feed.",
+   "The next system guesses what you'll watch. Chapter four, your feed."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

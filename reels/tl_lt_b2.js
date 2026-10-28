@@ -1,0 +1,1 @@
+window.TL={"total": 9.999, "p": [{"i": 0, "cap": "A barcode is just a number that points into a **database.**", "start": 0.35, "end": 3.62}, {"i": 1, "cap": "Search also answers from something **built in advance.** Chapter two.", "start": 4.32, "end": 8.019}]};

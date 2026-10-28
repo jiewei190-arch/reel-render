@@ -1,0 +1,1 @@
+window.TL={"total": 8.325, "p": [{"i": 0, "cap": "Face ID decides **who you are.**", "start": 0.35, "end": 2.051}, {"i": 1, "cap": "The next system guesses **what you'll watch.** Chapter four: your feed.", "start": 2.752, "end": 6.345}]};

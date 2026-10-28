@@ -1,0 +1,20 @@
+{
+ "name": "lt_b5",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "All those videos have to reach your phone,",
+   "All those videos have to reach your phone,"
+  ],
+  [
+   "often through the air, and **through your walls.** Chapter five.",
+   "often through the air, and through your walls. Chapter five."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

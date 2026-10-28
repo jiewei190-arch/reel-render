@@ -1,0 +1,35 @@
+{
+ "name": "lt_intro",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "You use **all six** of these today.",
+   "You use all six of these today."
+  ],
+  [
+   "Do you know how **any of them** work?",
+   "Do you know how any of them work?"
+  ],
+  [
+   "A **barcode** at the checkout. A **search** box. **Face ID.**",
+   "A barcode at the checkout. A search box. Face ID."
+  ],
+  [
+   "Your video **feed.** **Wi-Fi.** And **tap to pay.**",
+   "Your video feed. Wi-Fi. And tap to pay."
+  ],
+  [
+   "Let's open them up, **one by one.**",
+   "Let's open them up, one by one."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  2,
+  3
+ ]
+}

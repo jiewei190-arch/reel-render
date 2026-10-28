@@ -1,0 +1,20 @@
+{
+ "name": "lt_b6",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Wi-Fi reaches across a **whole house.**",
+   "Wi-Fi reaches across a whole house."
+  ],
+  [
+   "Tap to pay only works a **few centimetres** away. Chapter six.",
+   "Tap to pay only works a few centimetres away. Chapter six."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

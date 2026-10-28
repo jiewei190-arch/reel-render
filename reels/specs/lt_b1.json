@@ -1,0 +1,20 @@
+{
+ "name": "lt_b1",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Chapter one starts at the **checkout,**",
+   "Chapter one starts at the checkout,"
+  ],
+  [
+   "with a few black stripes that hide **less than you think.**",
+   "with a few black stripes that hide less than you think."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

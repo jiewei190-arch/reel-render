@@ -1,0 +1,20 @@
+{
+ "name": "lt_b2",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "A barcode is just a number that points into a **database.**",
+   "A barcode is just a number that points into a database."
+  ],
+  [
+   "Search also answers from something **built in advance.** Chapter two.",
+   "Search also answers from something built in advance. Chapter two."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

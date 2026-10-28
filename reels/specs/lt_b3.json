@@ -1,0 +1,20 @@
+{
+ "name": "lt_b3",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Search compares your words with an **index.**",
+   "Search compares your words with an index."
+  ],
+  [
+   "Your phone compares your face with something it **saved,** too. Chapter three.",
+   "Your phone compares your face with something it saved, too. Chapter three."
+  ]
+ ],
+ "breath": [
+  0
+ ]
+}

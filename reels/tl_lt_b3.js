@@ -1,0 +1,1 @@
+window.TL={"total": 8.866, "p": [{"i": 0, "cap": "Search compares your words with an **index.**", "start": 0.35, "end": 2.315}, {"i": 1, "cap": "Your phone compares your face with something it **saved,** too. Chapter three.", "start": 3.015, "end": 6.886}]};

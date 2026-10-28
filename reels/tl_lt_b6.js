@@ -1,0 +1,1 @@
+window.TL={"total": 8.625, "p": [{"i": 0, "cap": "Wi-Fi reaches across a **whole house.**", "start": 0.35, "end": 2.447}, {"i": 1, "cap": "Tap to pay only works a **few centimetres** away. Chapter six.", "start": 3.147, "end": 6.645}]};

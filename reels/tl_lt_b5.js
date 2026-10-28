@@ -1,0 +1,1 @@
+window.TL={"total": 7.913, "p": [{"i": 0, "cap": "All those videos have to reach your phone,", "start": 0.35, "end": 2.293}, {"i": 1, "cap": "often through the air, and **through your walls.** Chapter five.", "start": 2.753, "end": 5.933}]};

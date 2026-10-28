@@ -1,0 +1,55 @@
+{
+ "name": "lt_outro",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "So, **six secrets.**",
+   "So, six secrets."
+  ],
+  [
+   "A barcode holds **just a number.**",
+   "A barcode holds just a number."
+  ],
+  [
+   "Search answers from an **index** built before you ask.",
+   "Search answers from an index built before you ask."
+  ],
+  [
+   "Face ID reads the **shape** of your face, not a photo.",
+   "Face ID reads the shape of your face, not a photo."
+  ],
+  [
+   "Your feed is a **funnel,** from millions of videos to a few dozen.",
+   "Your feed is a funnel, from millions of videos to a few dozen."
+  ],
+  [
+   "Wi-Fi slips through most walls, just **a bit weaker** each time.",
+   "Wi-Fi slips through most walls, just a bit weaker each time."
+  ],
+  [
+   "And a contactless card is **powered by the terminal.**",
+   "And a contactless card is powered by the terminal."
+  ],
+  [
+   "Which one **surprised you** most?",
+   "Which one surprised you most?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ]
+}

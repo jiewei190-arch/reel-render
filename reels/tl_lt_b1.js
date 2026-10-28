@@ -1,0 +1,1 @@
+window.TL={"total": 6.987, "p": [{"i": 0, "cap": "Chapter one starts at the **checkout,**", "start": 0.35, "end": 2.1}, {"i": 1, "cap": "with a few black stripes that hide **less than you think.**", "start": 2.56, "end": 5.007}]};
