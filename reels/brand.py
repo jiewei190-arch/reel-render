@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "bananabrown": {"spot": ("R", 260), "hide": [(72.1, 99.0)]},   # titles moved below y 345; ransom end card hidden
     "glowdark": {"spot": ("R", 256)},
     "butterflies": {"spot": ("R", 256)},
     "stalebread": {"spot": (651, 260)},   # H4 (EP 95): auto spot pinned so re-runs match; field-note titles stop short of it

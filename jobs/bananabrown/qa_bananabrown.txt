@@ -1,0 +1,15 @@
+QA bananabrown: WARN   (/home/user/reel-render/jobs/bananabrown/bananabrown.mp4, 75.5 s)
+  PASS  static          longest no-change run 0.75 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 12.2-18.8s, 26.2-33.0s, 45.2-51.8s, 62.2-68.8s
+  WARN  outer 24 px     content at the frame edge 12.2-15.5s, 26.2-31.2s, 72.5-75.0s
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.3 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.8 dB above the pauses (13 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          75.5 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 4.7 (min 1.0), contrast 33.3 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      bananabrown.mp4 1080x1920 SAR 1:1; bananabrown_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
