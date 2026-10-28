@@ -197,12 +197,12 @@ function caption(cap, a = 1, y0 = 1290) { if (a <= 0) return; let size = 58; con
 function sub(t) { let cur = 0; for (let i = 0; i < PH.length; i++) if (t >= PH[i].start - .05) cur = i; if (cur === PH.length - 1) return;
   const nx = PH[cur + 1].start; caption(PH[cur].cap, (cur === 0 ? 1 : seg(t, PH[cur].start - .05, PH[cur].start + .15)) * (1 - seg(t, nx - .25, nx - .05))); }
 // the segmented progress bar (the demo's top strip)
-function bar(t) { const b = [s(0), s(2), s(3), s(7), s(9), s(12), TOT]; let cur = 0; for (let i = 0; i < 6; i++) if (t >= b[i]) cur = i; progress(g, STEPS, cur, seg(t, b[cur], b[cur + 1])); }
+function bar(t) { const b = [s(0), s(2), s(3), s(7), s(9), s(12), TOT]; let cur = 0; for (let i = 0; i < 6; i++) if (t >= b[i]) cur = i; progress(g, STEPS, cur, seg(t, b[cur], b[cur + 1]), { x1: 620 }); }   // ends at x 620: the EP badge sits top-right
 
 window.DUR = TOT;
 window.seek = t => { g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(paper(), 0, 0); bar(t); hook(t); recipe(t); cold(t); test(t); smellNotTaste(t); ending(t); sub(t); strip(t);
   const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .3; g.fillStyle = '#3b2a1f'; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
 window.thumb = () => { g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(paper(), 0, 0); hand(g, 'Cold?', 70, 470, { size: 150 }); hand(g, "It's your", 70, 610, { size: 120 }); hand(g, 'nose.', 70, 740, { size: 150, col: P.rust });
-  strawberry(820, 520, 1.6); face(1, { taste: 1, smell: 1, block: 1, food: 'bean' }); meter(.08); };
+  strawberry(820, 520, 1.6); face(1, { taste: 1, smell: 1, block: 1, swell: 1, food: 'bean', cam: [200, 185, 1.25, 330, 1080] }); };
 window.seek(0); window.ready = true; window.READY = true;
