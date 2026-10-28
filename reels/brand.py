@@ -37,6 +37,8 @@ OVR = {
     "catsknead": {"spot": (44, 1366)},   # caption note ends at y 1354 over the floor tiles
     "sneeze": {"spot": (44, 1366)},   # caption band ends at y 1354 over the paper floor
     "moonday": {"spot": (44, 1366)},
+    "thunder": {"spot": (44, 1366)},   # captions end at y 1355 on the dark sand ground
+    "catfeet": {"spot": (44, 1366)},   # banner bottom at y 1355 over the paper street
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
