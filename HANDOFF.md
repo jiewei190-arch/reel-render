@@ -29,6 +29,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
    e. **Owner review** in Reel Dailies (https://claude.ai/artifact/4i1CintFhB3ZJLqswwSnQA): scores, verdict and note. The main session adds the reel there when it's ready, and copies the notes into LESSONS.md.
    f. **Weekly review** (main session, with the owner's analytics): top 3 and bottom 3 by % watched, where each one drops, then one rule change at a time in LESSONS.md / GROWTH.md, logged in handoff/metrics.csv.
 18. AUTHORITY (owner, Oct 28): "whatever you think will help us grow, DO IT. Don't ask me unless it's legal stuff or deleting stuff." The main session decides creative, technical, scheduling-plan and growth questions on its own and reports what it did. It still asks the owner before anything with legal risk (copyright, licences, policy gray areas, claims about people or brands) and before deleting or unpublishing anything. Rules 1, 9 and the no-passwords rule still apply (never Jiesuke; accounts are touched only through the owner's PC session). Approving reels for posting is now the main session's call; the owner's Reel Dailies scores still steer quality.
+19. SAVE EVERYTHING TO THE REPO (owner, Oct 28, after a session cut-off): nothing that matters lives only in a session or a scratchpad. Every session (main and workers) commits and pushes after every meaningful step: a storyboard, a script/spec change, a render, a QA pass, a badge, a note. Never leave work uncommitted between turns; a session can be cut off or its container reclaimed at any time. Workers push their own branch (claude/halloween-hN); the main session pushes the handoff branch. The main session also keeps its running state in the repo: handoff/STATE.md (who is doing what, open items, scheduled check-ins), handoff/topics_next30.md (EP tracker + template reservations) and handoff/dailies/ (the Reel Dailies page source and thumbnails), so a fresh session can pick up exactly where the last one stopped.
 10. Caption format (`caption_<name>.md`): description + blank line + "Sources: ..." + blank line + "Follow for more of how it really works." + 5 hashtags ending `#reels` (no #fyp). YouTube metadata uses #Shorts instead of #reels.
 
 ## 3. Pipeline (see reels/ in this repo)
@@ -93,8 +94,17 @@ Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Ch
 2. **Instagram: lower priority.** Halloween rows in handoff/schedule_plan.csv (Oct 28-31), then handoff/schedule_nov.csv (2-3 a day, Nov 1-8), plain `<n>.mp4`.
 3. Mark each row "scheduled <date>" in its CSV and in tracking.csv as you go, and push.
 
+### 8e-2. New reels (Batch N, from Nov 3): handoff/schedule_batchN.csv
+The main session adds each newly approved reel here (TikTok and YouTube rows, `_ep.mp4`, episode number). The scheduling session schedules these rows too, and marks their status in THIS file. The main session doesn't edit schedule_tt_yt.csv any more, so there are no merge conflicts. Instagram for new reels: post the strongest 2-3 per day from this file at 11:00/17:00/20:00 with the plain `<n>.mp4`.
+
+### 8e-3. Long-form videos: handoff/schedule_longform.csv
+A normal YouTube upload (16:9, not a Short). Rebuild the file from its parts first (command in the CSV). Add chapters from chapters.txt to the description, and replace the [link] placeholders with the six Shorts' URLs. Custom thumbnail: long-form videos can take one; if Studio refuses (unverified account), pick a frame and tell the owner to verify. Afterwards, set each tech Short's "Related video" to this video (needs advanced features).
+
 ### 8f. Playlists and series (Oct 28)
 handoff/series.csv groups the reels into series. On YouTube, create one public playlist per series (title, description from the CSV) and add each Short to its series playlist; with advanced features on, set each Short's "Related video" to the next episode in the same series. On TikTok, create the same playlists when the account has the Playlists feature (Profile -> Create playlist), otherwise skip. Every new reel gets a series in series.csv before it's scheduled.
+
+### 8g. Carousels (Oct 28)
+handoff/carousels.csv: one carousel a day at 12:30 ET, posted after that reel's own post. Instagram: upload the slides in order (01-07) as one carousel post, caption from carousel_caption.md, Instagram account only (never Jiesuke). TikTok: Photo mode, the same slides and caption. Photo posts don't earn Creator Rewards; they're for reach. Lowest priority after TikTok/YouTube reels.
 
 ### 8c. After scheduling
 Update `tracking.csv` (scheduled column) and `yt/yt_schedule.csv`, and tell the owner what is scheduled where.
