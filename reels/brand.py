@@ -43,6 +43,7 @@ OVR = {
     "cricketchirp": {"spot": (44, 260)},   # lantern: in-box strips moved to box y >= 130 (screen y >= 360) to clear it
     "shiver": {"spot": ("R", 260)},
     "bananabrown": {"spot": ("R", 260), "hide": [(73.4, 99.0)]},   # titles moved below y 345; ransom end card hidden
+    "hairwet": {"spot": ("R", 260)},
     "microwavecenter": {"spot": ("R", 260), "hide": [(21.8, 24.6), (44.4, 47.8), (68.7, 99.0)]},   # popup: hidden under the 3-tricks sign, the YES/NO signs and the end card
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
