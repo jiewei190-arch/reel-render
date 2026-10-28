@@ -1,0 +1,96 @@
+{
+ "name": "carsick",
+ "voice": "af_heart",
+ "speed": 0.94,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  5,
+  8,
+  10,
+  11,
+  15
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "phrases": [
+  [
+   "Why do you get **carsick?**",
+   "Why do you get carsick?"
+  ],
+  [
+   "But your stomach isn't the problem. Your **senses** are **arguing.**",
+   "But your stomach isn't the problem. Your senses are arguing."
+  ],
+  [
+   "Deep in your **inner ear,** tiny tubes of fluid feel every turn, bump and stop.",
+   "Deep in your inner ear, tiny tubes of fluid feel every turn, bump and stop."
+  ],
+  [
+   "They work like a **spirit level** for your head.",
+   "They work like a spirit level for your head."
+  ],
+  [
+   "So in the back seat, your inner ear says: **we're moving!**",
+   "So in the back seat, your inner ear says: we're moving!"
+  ],
+  [
+   "But your **eyes** are on a book or a phone, and they say: **we're sitting still.**",
+   "But your eyes are on a book or a phone, and they say: we're sitting still."
+  ],
+  [
+   "Even your **muscles** and **joints** chime in.",
+   "Even your muscles and joints chime in."
+  ],
+  [
+   "Here's the twist: your **brain** can't tell **who's right.**",
+   "Here's the twist: your brain can't tell who's right."
+  ],
+  [
+   "Doctors call this **sensory conflict.** It's the most widely accepted explanation.",
+   "Doctors call this sensory conflict. It's the most widely accepted explanation."
+  ],
+  [
+   "But why feel **sick?** One **theory:** your brain treats the mix-up like **poison.**",
+   "But why feel sick? One theory: your brain treats the mix-up like poison."
+  ],
+  [
+   "Some poisons scramble your senses, so throwing up could have **saved** our ancestors. It's still just a **theory.**",
+   "Some poisons scramble your senses, so throwing up could have saved our ancestors. It's still just a theory."
+  ],
+  [
+   "And **kids** get it most. It peaks around ages **7 to 12.**",
+   "And kids get it most. It peaks around ages seven to twelve."
+  ],
+  [
+   "The fix: make your **eyes** agree with your **ears.**",
+   "The fix: make your eyes agree with your ears."
+  ],
+  [
+   "Sit up **front,** look at the **horizon,** and put the **phone** down.",
+   "Sit up front, look at the horizon, and put the phone down."
+  ],
+  [
+   "**Lean** into the bends, and keep your **head** still.",
+   "Lean into the bends, and keep your head still."
+  ],
+  [
+   "And the good news: the more you ride, the more your brain **gets used to it.**",
+   "And the good news: the more you ride, the more your brain gets used to it."
+  ],
+  [
+   "So carsickness is your eyes and inner ear **disagreeing,** and your brain hitting the **panic button.**",
+   "So carsickness is your eyes and inner ear disagreeing, and your brain hitting the panic button."
+  ],
+  [
+   "Do **you** get carsick? Yes or no?",
+   "Do you get carsick? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
