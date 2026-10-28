@@ -32,8 +32,23 @@
 
 ## QA (python3 -I reels/qa.py mpemba)
 ```
-(filled in after the final render)
+QA mpemba: PASS   (/home/user/reel-render/jobs/mpemba/mpemba.mp4, 81.2 s)
+  PASS  static          longest no-change run 3.00 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  PASS  safe zones      UI zones clear
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.3 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -1.4 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.0 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          81.2 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 9.7 (min 1.0), contrast 85.6 (min 18.0)
+  PASS  9:16 frame      mpemba.mp4 1080x1920 SAR 1:1; mpemba_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
+- The first final FAILed static (5.0 s at 68.8-73.8 s, on the still verdict balance). Fixed: the balance rocks and the '?' bobs; the ink boil is stronger (jitter 1.8 px).
+- Badge: mpemba_ep.mp4 EP 56 at (44, 1366); frames at 6/25/45/70 s checked, clear of all text.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal noted
