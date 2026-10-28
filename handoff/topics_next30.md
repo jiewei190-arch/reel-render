@@ -28,7 +28,7 @@
 | 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
 | 50 | candle | How does a candle actually burn? | H2 | merged, Nov 7 09:00 |
 | 55 | goosebumps | Why do we get goosebumps? | H3 | merged, Nov 8 09:00 |
-| 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
+| 56 | mpemba | Does hot water really freeze faster than cold? | H3 | merged, Nov 8 13:00 |
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | merged, Nov 8 16:00 |
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | merged, Nov 8 19:00 |
 | 59 | hiccups | Why do we get hiccups? | H1 | merged v1, Nov 8 21:30 (v2 with notes rendering; swap in) |
