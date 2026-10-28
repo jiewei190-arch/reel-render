@@ -56,4 +56,4 @@ QA eggflip: PASS   (/home/user/reel-render/jobs/eggflip/eggflip.mp4, 76.5 s)
 - [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (ink fade back into frame 0, paper never fades)
 - [x] pinned_eggflip.md written; thumb_eggflip.jpg made
-- [x] eggflip_ep.mp4 (EP 44; auto spot (651, 260) sits between the chapter label and the headline on every page, so no OVR needed; checked at 1, 6, 20, 25, 38, 45, 55, 68, 75 s)
+- [x] eggflip_ep.mp4 (EP 48, renumbered by the main session; auto spot (651, 260) sits between the chapter label and the headline on every page, so no OVR needed; checked at 1, 6, 20, 25, 38, 45, 55, 68, 75 s)
