@@ -59,6 +59,7 @@ function sceneC(t) { const t0 = s(2), cut = R(t, t0 + 1.2, .4), wrk = ss(R(t, t0
   hand(560, 760, .9, R(t, t0 - .3, 1), { wr, nerve: R(t, t0 + .2, 1.2) });
   if (cut > 0) { D.text('✂', 600, 1110 - 60 * (1 - ex(cut)), { f: 'sans', size: 96, align: 'center', col: C.red, a: cut }); D.ink(D.seg(520, 1050, 640, 1050, 4), { w: 7, prog: cut, col: C.red, wob: 0 }); }
   label([{ s: 'median nerve', col: C.blue }], 330, 1120, R(t, t0 + .8, .8), { size: 46 });
+  { const ph = (t * .45) % 1; D.dot(lerp(600, 470, ph), lerp(1130, 640, ph), 12, C.pink, R(t, t0 + 1.4, .4)); }   // nerve signal keeps travelling
   label(['stay ', { s: 'smooth', col: C.blue }], 250, 420, R(t, t0 + 2.6, .7), { size: 50 }); D.arrow(D.wave(250, 440, 380, 560, 10, 2), { w: 4.5, prog: R(t, t0 + 3.0, .5), seed: 70 });
   label(['wrinkle'], 860, 470, R(t, t0 + 3.2, .6), { size: 50 }); D.arrow(D.wave(850, 490, 780, 600, 8, 2), { w: 4.5, prog: R(t, t0 + 3.5, .5), seed: 71 });
   // phrase 3: editor card with the 1930s note
@@ -137,7 +138,7 @@ function sceneJ(t) { const t0 = s(12), c = lg; const half = (x, yr, title, sub, 
 
 // ---------- K: payoff: the cross-section shrinks into the video-player card ----------
 function sceneK(t) { section(t, 1, 1, 1, { nerve: 1, pull: 1 }); label([{ s: 'nerves', col: C.blue }, ' → vessels narrow → ', { s: 'folds', col: C.blue }], 540, 1170, 1, { size: 50 });
-  label(['grip? ', { s: 'still open', col: C.red }], 540, 400, R(t, s(14) + 1.0, .8), { size: 60 }); }
+  label(['grip? ', { s: 'still open', col: C.red }], 540, 440, R(t, s(14) + 1.0, .8), { size: 60 }); }
 // ---------- L: question: two pills ----------
 function sceneL(t) { const t0 = s(15), c = lg; label(['Just soggy skin?'], 540, 640, R(t, t0 - .1, .7), { size: 92 });
   [['YES', 300, C.pinkL], ['NO', 780, C.hlBlue]].forEach(([w, x, col], i) => { const k = bo(R(t, t0 + .7 + i * .3, .4)); if (k <= 0) return; c.save(); c.translate(x, 900); c.scale(k, k); c.fillStyle = col; c.beginPath(); c.roundRect(-170, -70, 340, 140, 70); c.fill(); c.restore(); D.text(w, x, 930, { f: 'sans', size: 80, wt: 800, align: 'center', a: clamp(k) }); });
@@ -156,11 +157,11 @@ const SC = [[0, sceneA, 0], [s(1) - .3, sceneB, 0], [s(2) - .3, sceneC, 0], [s(4
 const TR = .45;
 function idx(t) { let i = 0; for (let k = 0; k < SC.length; k++) if (t >= SC[k][0]) i = k; return i; }
 function draw(i, t) { D.clearLayer(); SC[i][1](t); }
-function blitScene(i, t, o) { if (SC[i][1] === sceneK) { const k = R(t, s(14) + .2, .8); if (k > 0) { D.card(k, t / TOT, t, TOT, { cy: 760, h: 900, src: [70, 380, 940, 860] }); return; } } D.blit(o); }
+function blitScene(i, t, o) { if (SC[i][1] === sceneK) { const k = R(t, s(14) + .2, .8); if (k > 0) { D.card(k, t / TOT, t, TOT, { cy: 760, h: 900, src: [70, 330, 940, 910] }); return; } } D.blit(o); }
 function scene(t) { const i = idx(t), u = R(t, SC[i][0], TR), dk = i > 0 && u < 1 ? lerp(SC[i - 1][2], SC[i][2], ss(u)) : SC[i][2];
   D.ground(dk);
   if (i > 0 && u < 1) { draw(i - 1, t); blitScene(i - 1, t, { a: 1 - ss(u), z: 1 + .06 * u, blur: 14 * u }); }
-  draw(i, t); blitScene(i, t, { a: i > 0 ? ss(u) : 1, z: i > 0 ? lerp(.95, 1, ex(u)) : 1, blur: i > 0 ? 12 * (1 - u) : 0 });
+  draw(i, t); blitScene(i, t, { a: i > 0 ? ss(u) : 1, z: (i > 0 ? lerp(.95, 1, ex(u)) : 1) * (1 + .012 * Math.sin(t * .9)), dy: 8 * Math.sin(t * .6), blur: i > 0 ? 12 * (1 - u) : 0 });
   const ph = PH.findLast(p => t >= p.start - .25), endc = t >= s(16) - .4;
   if (!endc && ph) D.karaoke(ph, t, 1330, { dark: dk > .5, size: 50, out: ph.i < PH.length - 1 ? PH[ph.i + 1].start - .2 : null });
   chapters(t, dk); D.hud(t, TOT, dk); }
