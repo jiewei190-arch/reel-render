@@ -67,7 +67,7 @@ function sceneE(t) { const t0 = s(6), air = t > s(7) - .1; SM.begin(t, { hz: 115
   SM.reset(); SM.text('leathery', 260, 480, { size: 72, write: R(t, t0 + 1.8, .5), col: '#7a6458' }); SM.text('grayish, brown', 760, 1100, { size: 60, write: R(t, t0 + 3.0, .6), col: '#7a6458', align: 'right' });
   if (air) { for (let k = 0; k < 3; k++) { const y = 560 + k * 110; L(Array.from({ length: 10 }, (_, j) => [70 + j * 22 + R(t, s(7), 2) * 60, y + 10 * Math.sin(j + t * 3 + k)]), R(t, s(7) + .2 + k * .15, .5), { seed: 700 + k, lw: 2.2, col: '#7f8db4' }); }
     SM.text('air in', 150, 520, { size: 64, write: R(t, s(7) + .4, .5), col: '#4f6690' }); } }
-function sceneF(t) { const t0 = s(8), dry = t > s(9) - .1; SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); steak(540, 900, 1.0, 1, { burn: 1 });
+function sceneF(t) { const t0 = s(8), dry = t > s(9) - .1; SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); steak(560, 820, 1.3, 1, { burn: 1 });
   const ck = R(t, t0 + 1.0, .5); L([[300, 540], [380, 620], [520, 440]], ck, { seed: 800, lw: 9, col: '#5f8f5a' }); SM.reset(); SM.text('safe', 620, 560, { size: 96, write: R(t, t0 + 1.2, .4), col: '#5f8f5a' });
   SM.text('quality ↓', 540, 380, { size: 70, write: R(t, t0 + 2.4, .5), col: P.red });
   if (dry) { SM.cam(1, 540, 760); for (let k = 0; k < 4; k++) L([[330 + k * 110, 1060], [350 + k * 110, 1020], [330 + k * 110, 990]], R(t, s(9) + .2 + k * .1, .3), { seed: 810 + k, lw: 2.4, col: '#7a6458' }); SM.reset(); SM.text('dry + tough', 540, 1110, { size: 66, write: R(t, s(9) + .4, .5) }); } }
@@ -79,8 +79,8 @@ function sceneH(t) { const t0 = s(11), fix = t > s(12) - .1; SM.begin(t, { hz: 1
     for (let i = 0; i < 3; i++) SM.drop(380 + (i - 1) * 60, 700 - sq * 200 - i * 20, 9, (1 - sq) * .8);
     const cb = [[640, 860], [920, 860], [920, 1080], [640, 1080]]; const ck = R(t, s(12) + 2.6, 1); SM.wash(cb, '#e6eef7', ck, { op: .6 }); L([...cb, cb[0]], ck, { seed: 900, lw: 2.8 }); SM.reset();
     SM.text('squeeze', 380, 1110, { size: 56, write: R(t, s(12) + 1.0, .4), col: P.red }); SM.text('small', 780, 820, { size: 56, write: R(t, s(12) + 3.0, .4), col: '#4f6690' }); } }
-function sceneI(t) { const t0 = s(13); SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); freezer(.0); thermo(540, 760, R(t, t0 - .2, 1.2), .25);
-  SM.reset(); SM.text('0°F', 780, 680, { size: 130, write: R(t, t0 + .8, .5), col: '#4f6690' }); SM.text('or colder', 780, 780, { size: 60, write: R(t, t0 + 1.6, .5) }); }
+function sceneI(t) { const t0 = s(13); SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); freezer(R(t, t0 - .3, 1)); steak(720, 860, .55, 1, { seed: 44 }); thermo(380, 700, R(t, t0 - .2, 1.2), .25);
+  SM.reset(); SM.text('0°F', 640, 640, { size: 130, write: R(t, t0 + .8, .5), col: '#4f6690' }); SM.text('or colder', 640, 740, { size: 60, write: R(t, t0 + 1.6, .5) }); }
 function sceneJ(t) { const t0 = s(14); SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); tub(540, 860, 1.2, 1, { wrap: R(t, t0 + .8, 1.2), lid: R(t, t0 + 2.6, .8) });
   SM.reset(); SM.text('wrap on top', 540, 400, { size: 80, write: R(t, t0 + .5, .6) }); SM.text('then the lid', 540, 490, { size: 64, write: R(t, t0 + 2.6, .5), col: '#4f6690' }); }
 function sceneK(t) { const t0 = s(15); SM.begin(t, { hz: 1150, ...ICE }); SM.cam(1, 540, 760); bag(540, 760, 620, 480, 1, .4); steak(540, 790, .95, 1, { seed: 42 });
