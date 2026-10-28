@@ -74,6 +74,15 @@ Metadata comes from `handoff/yt/meta2.json` (Nov 1-4 reels), `meta3.json` (bats,
 Per video (ASK the owner if anything differs): Details tab -> fill title and description -> upload the custom thumbnail ("Upload file") -> "No, it's not made for kids" -> Next through Video elements/Checks -> Visibility "Schedule" -> set date and time (ET) -> Schedule. Verify in Studio > Content > Shorts (filter by Scheduled) that title and date are right. Update `handoff/yt/yt_schedule.csv`.
 Status on Oct 27: 10 Shorts scheduled (gps, snake, leaf, ai, scroll, moon, flamingo, mirror, holes, volcano; Oct 27-29). NOT uploaded yet because of the limit: the Nov 1-4 batch (lightning, chip, scene, sun, cables, polygraph, plane, dna, elec, reactor) and bats, fog, boot, fridge, vax, hiccup, skyscr. A retry was scheduled for Oct 28, 9 AM ET. Halloween first: fog Oct 31 4 PM, bats Oct 31 7 PM.
 
+### 8d. TikTok (owner created the account Oct 28)
+Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Chrome (https://www.tiktok.com/tiktokstudio/upload), where the owner is signed in themselves; never type a password. Per reel: upload the mp4, caption = the first sentence of caption_<n>.md + "Follow for more of how it really works." + the 5 hashtags, cover = thumb_<n>.jpg if the cover editor allows an upload (otherwise choose the frame with the hook title), turn ON "AI-generated content" (the reels are AI-made), then Schedule at the plan's ET time. TikTok Studio on the web schedules up to 10 days ahead. Same slots as Instagram/YouTube in handoff/schedule_plan.csv (column "tiktok").
+
+### 8e. Order of work (Oct 28)
+1. Halloween reels first (Oct 28-31, 11 AM / 3 PM / 9 PM ET) on Instagram, YouTube and TikTok; owl only after the owner OKs its fixed version.
+2. Then the 20 approved reels for Nov 6-12, from handoff/schedule_plan.csv.
+3. YouTube metadata: handoff/yt/meta_halloween.json (Halloween) and handoff/yt/meta4.json (the 20). YouTube's daily upload cap is about 10 to 15: do Halloween first, carry the rest to the next day.
+4. Mark each row "scheduled <date>" in schedule_plan.csv and tracking.csv as you go.
+
 ### 8c. After scheduling
 Update `tracking.csv` (scheduled column) and `yt/yt_schedule.csv`, and tell the owner what is scheduled where.
 
