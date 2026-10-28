@@ -26,7 +26,7 @@ function ridgeLines(type, seed, n) {
   if (type === 'loop') { for (let j = 0; j < n; j++) { const d = (j + .6) / n * 1.15, pts = [];
       for (let q = 0; q <= 10; q++) pts.push([-d, 1.6 - q / 10 * 1.6]); for (let q = 1; q <= 16; q++) { const th = Math.PI + q / 16 * Math.PI; pts.push([Math.cos(th) * d, Math.sin(th) * d]); } for (let q = 1; q <= 10; q++) pts.push([d, q / 10 * 1.6]);
       L.push(pts.map(([x, y]) => wob(x + (1.6 - y) * .0 + y * .35, y - .1, j))); }
-    for (let j = 0; j < 5; j++) { const y0 = -1.25 - j * .14, pts = []; for (let q = 0; q <= 24; q++) { const x = -1.6 + q / 24 * 3.2; pts.push(wob(x, y0 + .3 * Math.exp(-x * x), j + 40)); } L.push(pts); } }
+    for (let j = 0; j < 5; j++) { const y0 = -1.42 - j * .15, pts = []; for (let q = 0; q <= 24; q++) { const x = -1.6 + q / 24 * 3.2; pts.push(wob(x, y0 - .25 * Math.exp(-x * x), j + 40)); } L.push(pts); } }
   if (type === 'arch') for (let j = 0; j < n; j++) { const y0 = -1.5 + j / (n - 1) * 3, h = .55 * (1 - Math.abs(y0) / 1.8), pts = []; for (let q = 0; q <= 26; q++) { const x = -1.6 + q / 26 * 3.2; pts.push(wob(x, y0 - h * Math.exp(-x * x * 1.6), j)); } L.push(pts); }
   // ridge endings: split a few ridges with a short gap, chosen by the seed (this is what differs between twins)
   const out = []; L.forEach((pl, j) => { if (hash(seed * 1.3 + j * 7.7) < .35 && pl.length > 12) { const c = 3 + Math.floor(hash(seed + j) * (pl.length - 8)); out.push(pl.slice(0, c), pl.slice(c + 2)); } else out.push(pl); });
