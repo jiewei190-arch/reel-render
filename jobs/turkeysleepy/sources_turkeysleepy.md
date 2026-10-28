@@ -11,12 +11,13 @@ Researched Oct 28 2026 (adds to reels/styles/sources_turkey.md).
 | The body uses it to make serotonin, which helps regulate sleep | Live Science |
 | Turkey has about the same tryptophan as other poultry, like chicken | OSU: "There's really not that much more Tryptophan in turkey than in other poultry"; BU (Blake): chicken breast usually has more than turkey |
 | Roughly a quarter of a gram in 100 g of meat | OSU (Scott): "approximately a quarter of a gram of Tryptophan per 100 grams of poultry" |
-| Cheddar cheese has even more per gram | Live Science: cheddar cheese has more tryptophan per gram than turkey; Texas Health: nuts and cheeses have even more |
+| Cheddar cheese and nuts have even more | Live Science: cheddar cheese has more tryptophan per gram than turkey; Texas Health: some foods like nuts and cheeses have even more |
 | A huge meal: eating a lot at once makes you tired | Texas Health |
 | Carbs (stuffing, bread, potatoes, pie) raise blood sugar, then a crash | Texas Health ("sugar crash"); OSU (high-carb, high-sugar foods) |
 | Carbs release insulin, which helps tryptophan reach the brain | Live Science: insulin moves most other amino acids into muscle, leaving tryptophan free to reach the brain |
 | Alcohol makes you drowsy | Texas Health |
 | So the turkey is innocent; blame the whole meal | OSU, BU, Live Science, Texas Health |
+| Turkey just gets the blame because it's the star of the table | The reel's own framing (no factual claim) |
 
 ## Softened / careful wording
 1. "About the same as other poultry" and "roughly a quarter of a gram" follow OSU's estimate; USDA per-meat numbers were not verified directly, so none are shown.
