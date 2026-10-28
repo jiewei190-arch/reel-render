@@ -13,4 +13,4 @@
 ## Softened / left out
 - No numbers (no jet weights or airflow masses).
 - "Low pressure on top does much of the lifting" is kept qualitative (no share/percentage).
-- The streamlines and downwash in the drawing are schematic (computed for clarity, not from a flow solver).
+- The streamlines, smoke pulses and downwash in the cartoon are schematic (computed for clarity, not from a flow solver).

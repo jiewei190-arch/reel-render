@@ -67,7 +67,7 @@ function labW(t, o = {}) {          // home lab: sage walls, blackboard
     if (o.sketch) { const P = foil(540, 760, 300, .1); stroke(P.concat([P[0]]), 4, { line: '#e8f0e0' }); stroke(flowPath(540, 760, 300, -90, 0), 3, { line: '#bcd0c2' }); stroke(flowPath(540, 760, 300, 90, 0), 3, { line: '#bcd0c2' }); }
   } });
   shape(rr(140, 882, 800, 18, 4), { fill: '#b08a5a', lw: 5 });
-  push(); translate(1000, 300); shape(ell(0, 0, 60, 60, 36), { fill: '#f7f3e8', lw: 7 }); const sA = Math.floor(t) / 60 * TAU - Math.PI / 2; stroke([[0, 0], [0, -34]], 7); stroke([[0, 0], [30, 14]], 5); stroke([[0, 0], [Math.cos(sA) * 46, Math.sin(sA) * 46]], 2.5, { line: '#e8392b' }); dot(0, 0, 6); pop();
+  push(); translate(1050, 330); shape(ell(0, 0, 60, 60, 36), { fill: '#f7f3e8', lw: 7 }); const sA = Math.floor(t) / 60 * TAU - Math.PI / 2; stroke([[0, 0], [0, -34]], 7); stroke([[0, 0], [30, 14]], 5); stroke([[0, 0], [Math.cos(sA) * 46, Math.sin(sA) * 46]], 2.5, { line: '#e8392b' }); dot(0, 0, 6); pop();
   shape(rect(X0, FLOOR, X1 - X0, 900), { fill: '#6c7c75', lw: 6 }); for (let k = 0; k < 4; k++) stroke([[X0, FLOOR + 40 + k * 70 + k * k * 14], [X1, FLOOR + 40 + k * 70 + k * k * 14]], 4, { line: '#58665f' }); shape(rect(X0, FLOOR - 30, X1 - X0, 32), { fill: '#557065', lw: 6 });
   // a model plane on a stand (the exhibit)
   shape(rr(-80, 1080, 240, 220, 10), { fill: '#8e7a66', lw: 7 }); shape([[-60, 1040], [150, 1030], [190, 1046], [150, 1060], [-60, 1056]], { fill: '#e8ecf4', lw: 6 }); shape([[30, 1040], [70, 980], [96, 980], [80, 1040]], { fill: '#e8ecf4', lw: 5 });
@@ -168,7 +168,7 @@ const SH = {
   },
   end(t, tq) {   // end card: dark purple, dim portal, title lockup, closing line + the series line
     reset(); screenRect('#241339'); reset(); portal(540, 1080, 420, t * .6, { open: spring(t - CUTS[7], 7, .45), sx: 1 }); screenRect('#241339', .5);
-    const sc = back(seg(q(t), CUTS[7], CUTS[7] + .3), 2.2); reset(); translate(540, 420); scale(sc * .6); titleArt(t);
+    const sc = back(seg(q(t), CUTS[7], CUTS[7] + .3), 2.2); reset(); translate(540, 470); scale(sc * .6); titleArt(t);
     const b = ss(seg(t, CUTS[7] + .3, CUTS[7] + .8)); reset(); g.globalAlpha = b;
     text('Follow for more of', 540, 660, { font: '800 70px "Baloo 2"', fill: '#fff', outlineW: 12 }); text('how it really works.', 540, 750, { font: '800 70px "Baloo 2"', fill: '#ffe066', outlineW: 12 });
     text("A new 'wait, really?' every day.", 540, 840, { font: '800 44px "Baloo 2"', fill: '#fff', outlineW: 10 });
