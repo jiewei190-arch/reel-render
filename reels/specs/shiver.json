@@ -1,0 +1,87 @@
+{
+ "name": "shiver",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Shivering is your body turning **muscles** into a **furnace.**",
+   "Shivering is your body turning muscles into a furnace."
+  ],
+  [
+   "But why do we **shiver** when we're **cold?** Because shaking makes **heat.**",
+   "But why do we shiver when we're cold? Because shaking makes heat."
+  ],
+  [
+   "Deep in your brain, the **hypothalamus** works like a **thermostat.**",
+   "Deep in your brain, the hypothalamus works like a thermostat."
+  ],
+  [
+   "When it senses you're getting too cold, it can **switch on shivering.**",
+   "When it senses you're getting too cold, it can switch on shivering."
+  ],
+  [
+   "Shivering is your muscles **tightening** and **relaxing,** fast, over and over.",
+   "Shivering is your muscles tightening and relaxing, fast, over and over."
+  ],
+  [
+   "Sometimes it's a steady tremble. Sometimes it comes in **bursts.**",
+   "Sometimes it's a steady tremble. Sometimes it comes in bursts."
+  ],
+  [
+   "Here's the trick: muscles never turn fuel into motion perfectly. Much of the energy always escapes as **heat.**",
+   "Here's the trick: muscles never turn fuel into motion perfectly. Much of the energy always escapes as heat."
+  ],
+  [
+   "Shivering uses that on purpose: lots of muscle work, but **no real movement,** so the energy ends up **warming you.**",
+   "Shivering uses that on purpose: lots of muscle work, but no real movement, so the energy ends up warming you."
+  ],
+  [
+   "In one study, people in cold water shivered so hard, their metabolism hit about **three and a half times** its resting rate.",
+   "In one study, people in cold water shivered so hard, their metabolism hit about three and a half times its resting rate."
+  ],
+  [
+   "But that heater burns **fuel,** like the sugar stored in your **muscles.**",
+   "But that heater burns fuel, like the sugar stored in your muscles."
+  ],
+  [
+   "Your body has a quieter heater too: **brown fat,** which makes heat **without shaking.**",
+   "Your body has a quieter heater too: brown fat, which makes heat without shaking."
+  ],
+  [
+   "And it's not only the cold: shivering can show up when a **fever** is on the way.",
+   "And it's not only the cold: shivering can show up when a fever is on the way."
+  ],
+  [
+   "So why do we shiver? Your **thermostat** orders fast, tiny muscle contractions, and the effort becomes **heat.**",
+   "So why do we shiver? Your thermostat orders fast, tiny muscle contractions, and the effort becomes heat."
+  ],
+  [
+   "Do your **teeth chatter** when you're cold? Yes or no?",
+   "Do your teeth chatter when you're cold? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7
+}
