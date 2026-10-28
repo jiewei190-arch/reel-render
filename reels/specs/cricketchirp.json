@@ -1,0 +1,87 @@
+{
+ "name": "cricketchirp",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Your backyard **crickets** are a working **thermometer.**",
+   "Your backyard crickets are a working thermometer."
+  ],
+  [
+   "But can you really tell the **temperature** from **cricket chirps?** Pretty much, yes.",
+   "But can you really tell the temperature from cricket chirps? Pretty much, yes."
+  ],
+  [
+   "In **1897,** a physicist named **Amos Dolbear** wrote it down as a formula.",
+   "In eighteen ninety-seven, a physicist named Amos Dolbear wrote it down as a formula."
+  ],
+  [
+   "He heard about **80 chirps a minute** at **60 degrees,** and **120** at **70.**",
+   "He heard about eighty chirps a minute at sixty degrees, and a hundred and twenty at seventy."
+  ],
+  [
+   "Here's the shortcut: count the chirps in **15 seconds,** then **add 40.** That's the temperature in **Fahrenheit.**",
+   "Here's the shortcut: count the chirps in fifteen seconds, then add forty. That's the temperature in Fahrenheit."
+  ],
+  [
+   "Here's the weird part: the cricket isn't measuring anything. It's **cold-blooded.**",
+   "Here's the weird part: the cricket isn't measuring anything. It's cold-blooded."
+  ],
+  [
+   "Its body is about as warm as the **air** around it, so on a warm night, its muscles work **faster.**",
+   "Its body is about as warm as the air around it, so on a warm night, its muscles work faster."
+  ],
+  [
+   "A cricket chirps by rubbing its **wings** together, and warm wings rub **faster.** More chirps.",
+   "A cricket chirps by rubbing its wings together, and warm wings rub faster. More chirps."
+  ],
+  [
+   "But here's the catch: it works best for **one** kind of cricket.",
+   "But here's the catch: it works best for one kind of cricket."
+  ],
+  [
+   "Dolbear never named his. Most people think it was the **snowy tree cricket,** nicknamed the **thermometer cricket.**",
+   "Dolbear never named his. Most people think it was the snowy tree cricket, nicknamed the thermometer cricket."
+  ],
+  [
+   "Other crickets keep their **own** pace, so the same formula can be **off.**",
+   "Other crickets keep their own pace, so the same formula can be off."
+  ],
+  [
+   "And on **cold** nights, they slow way down.",
+   "And on cold nights, they slow way down."
+  ],
+  [
+   "So can crickets tell you the temperature? Yes. Count **15 seconds,** add **40,** and pick the **right** cricket.",
+   "So can crickets tell you the temperature? Yes. Count fifteen seconds, add forty, and pick the right cricket."
+  ],
+  [
+   "Have you ever **counted** cricket chirps? Yes or no?",
+   "Have you ever counted cricket chirps? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7
+}
