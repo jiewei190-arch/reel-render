@@ -133,7 +133,7 @@ S.push([T(10) - .5, T(12) - .1, t => {
   const ik = seg(t, r(10, .5), r(10, 1.5)) * (1 - pz);
   if (ik > 0) { g.save(); g.setLineDash([14, 12]); g.strokeStyle = 'rgba(184,56,42,.9)'; g.lineWidth = 5; g.beginPath(); g.arc(540, 1000, 120, 0, TAU * ik); g.stroke(); g.restore();
     serif(g, 'what a camera sees', 540, 680, { size: 56, w: 700, a: ik }); serif(g, 'what you feel you see', 540, 1540, { size: 56, w: 700, a: seg(t, r(10, 1.4), r(10, 2.0)) * (1 - pz) });
-    column(g, ['ILLU', 'SION'], 950, 220, seg(t, r(10, .3), r(10, 1.0)) * (1 - pz), { size: 76, seal: 'brain' }); }
+    const ck = seg(t, r(10, .3), r(10, 1.0)) * (1 - pz); serif(g, 'ILLUSION', 540, 230, { size: 92, w: 700, ls: 6, a: ck }); sealMark(g, 790, 280, 50, 'brain', ck); }
   // p11: Ponzo: converging tracks, two equal moons, the far one looks bigger
   if (pz > 0) { g.save(); g.globalAlpha *= pz; g.fillStyle = 'rgba(239,232,216,.9)'; g.fillRect(0, 0, W, H);
     const vx = 540, vy = 520; g.strokeStyle = ink(.85); g.lineCap = 'round';
