@@ -1,6 +1,6 @@
 # Main-session state (rule 19: kept in the repo so a fresh session can resume)
 
-Updated: 2026-10-28 ~12:00 UTC. Update this file whenever something below changes.
+Updated: 2026-10-28 afternoon UTC. Update this file whenever something below changes.
 
 ## Where things are
 - **EP tracker + template reservations:** handoff/topics_next30.md (status per EP; reservations line at the bottom).
@@ -18,10 +18,13 @@ Updated: 2026-10-28 ~12:00 UTC. Update this file whenever something below change
 | H3 | session_01BPYB3nfqh6HEjZ42pf9qga | claude/halloween-h3 |
 | H4 | session_01BPYB3mgmDyVer9ppY4RmuX | claude/halloween-h4 |
 
-## Open items (Oct 28 midday)
-- EP 63 auroras (H3): long WebGL render (~60%); trim end card to <=3 s in post, re-badge, merge (Nov 9 19:00).
-- EP 77 hairgray (H2): end-card trim + re-badge pending; swap in.
-- EP 81 cricketchirp, 82 shiver (H4); 83 thunder, 84 catfeet (H3); 87 crackedphone, 88 pickles (H2); 89 carsick, 90 earringing (H1): in production.
+## Open items (Oct 28 afternoon)
+- Merged through EP 97 fingerprints (except below). Buffer reaches Nov 16.
+- EP 63 auroras (H3): long WebGL render; trim end card to <=3 s in post, re-badge --ep 63, merge (Nov 9 19:00).
+- EP 84 catfeet (H3): rendering (Nov 13 21:30).
+- EP 91 butterflies v2, EP 92 glowdark v2 (H2): swap in when delivered.
+- EP 98 darknight (H1): rendering (Nov 16 19:00/20:00).
+- EP 99 mirrorflip, 100 tidesmoon (H2); 101 hairwet, 102 sleeptalk (H4): template picks pending -> record on the reservations line.
 - Thanksgiving reels (unbadged until slotted ~Nov 22-26): popuptimer, cranberries, turkeysleepy.
 - Optional: barcode/faceid one-frame flashes (owner may re-upload).
 - Owner-only: YouTube phone verification (lifts the daily upload limit, enables custom thumbnails).
