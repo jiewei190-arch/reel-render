@@ -1,7 +1,7 @@
 # Copy every episode's upload files into one folder, in posting order, for manual uploading.
 # Usage (from the repo root, after pulling the handoff branch):
 #   python handoff/export_uploads.py "<destination folder>" [first_ep] [last_ep]
-# Makes <dest>/EP001_glowstick/ with: tiktok_youtube.mp4 (badged), instagram.mp4, cover.jpg, caption.txt
+# Makes <dest>/EP001_glowstick/ with: tiktok_youtube.mp4 (badged), instagram.mp4, cover.jpg, caption.txt (short, new), caption_long.txt (old)
 import csv, pathlib, shutil, sys
 root = pathlib.Path(__file__).resolve().parent.parent
 dest = pathlib.Path(sys.argv[1]).expanduser()
@@ -14,7 +14,7 @@ for r in rows:
     if not lo <= ep <= hi: continue
     src, out = root / "jobs" / n, dest / f"EP{ep:03d}_{n}"
     out.mkdir(parents=True, exist_ok=True)
-    for name, to in [(f"{n}_ep.mp4", "tiktok_youtube.mp4"), (f"{n}.mp4", "instagram.mp4"), (f"thumb_{n}.jpg", "cover.jpg"), (f"caption_{n}.md", "caption.txt")]:
+    for name, to in [(f"{n}_ep.mp4", "tiktok_youtube.mp4"), (f"{n}.mp4", "instagram.mp4"), (f"thumb_{n}.jpg", "cover.jpg"), (f"caption_short_{n}.txt", "caption.txt"), (f"caption_{n}.md", "caption_long.txt")]:
         if (src / name).exists(): shutil.copy2(src / name, out / to)
         else: missing.append(f"EP{ep} {name}")
     done += 1
