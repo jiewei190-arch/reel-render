@@ -46,6 +46,8 @@ OVR = {
     "feetasleep": {"spot": ("R", 260), "hide": [(21.7, 40.8)]},   # H1 (EP 80): top-right; hidden while "The worst part comes after." reaches under it (main)
     "rainbow": {"spot": (651, 400)},   # H1 (EP 85): right of the FIG label, above the figure window (as ovenfoil); the sheet header owns the top band
     "hotsauce": {"spot": ("R", 260)},   # H1 (EP 86): top-right; world tags are top-left, lab board text starts at y 336
+    "earringing": {"spot": (44, 260), "hide": [(6.5, 57.4)]},   # H1 (EP 90): as contrails (same engine): top-left over the banner hook, the wall and the end card; hidden while the posters (their HOW IT REALLY WORKS header sits at y ~270) fill the frame
+    "carsick": {"spot": (44, 400), "hide": [(70.0, 99)]},   # H1 (EP 89): as hiccups (same rig): below the left of the plaques; hidden on the end card
     "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card
     "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
     "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns   # titles run to the top-right corner; strip under the captions is clear
