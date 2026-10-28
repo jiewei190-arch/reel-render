@@ -58,9 +58,12 @@ function caption(t) { let i = -1; for (let k = 0; k < PH.length - 1; k++) if (t 
   lines.forEach((ln, j) => { const tw = ln.reduce((q, o) => q + o.ww, 0); let x = 480 - tw / 2; ln.forEach(o => { g.font = o.b ? 'italic 400 48px BaskI' : '400 46px Bask'; g.fillStyle = o.b ? '#f6c96a' : CREAM; g.globalAlpha = a * (idx / n <= prog + .03 ? 1 : .45); g.fillText(o.w, x, y0 + j * lh); x += o.ww; idx++; }); });
   g.restore(); }
 let ST2 = 0;
+// sand ripples scratched into the dark ground below the captions (they drift slowly, like the demo's ground drawings)
+function ripples(t) { for (let r = 0; r < 6; r++) { const y = 1460 + r * 72, ph = t * .25 + r * 1.3; scratch(Array.from({ length: 41 }, (_, i) => { const u = i / 40; return [lerp(40, 1040, u), y + 14 * Math.sin(u * 9 + ph) + 6 * Math.sin(u * 23 - ph)]; }), 1, 4 + (r % 2)); }
+  for (let i = 0; i < 9; i++) { const x = 90 + i * 115 + 20 * Math.sin(i), y = 1430 + (i % 3) * 170 + 30; scratch(Array.from({ length: 13 }, (_, j) => [x + Math.cos(j / 12 * TAU) * 12, y + Math.sin(j / 12 * TAU) * 8]), 1, 3); } }
 
 // ---------- storm vocabulary: the sky is a layer of dark sand; lightning and sound are CLEARED through it to the light table ----------
-function storm(t, a = .78) { const p = new Path2D(); p.moveTo(0, 0); p.lineTo(W, 0); p.lineTo(W, HZ); p.lineTo(0, HZ); p.closePath(); g.save(); g.globalAlpha = a; g.fillStyle = SAND; g.fill(p); g.restore();
+function storm(t, a = .62) { const p = new Path2D(); p.moveTo(0, 0); p.lineTo(W, 0); p.lineTo(W, HZ); p.lineTo(0, HZ); p.closePath(); g.save(); g.globalAlpha = a; g.fillStyle = SAND; g.fill(p); g.restore();
   g.save(); g.globalAlpha = .55; g.fillStyle = '#1a130c'; for (let i = 0; i < 7; i++) { const x = ((i * 190 + t * (8 + i)) % 1400) - 160, y = 260 + (i % 3) * 60; g.beginPath(); for (let j = 0; j < 5; j++) g.arc(x + j * 70, y + 30 * Math.sin(j * 1.7 + i), 90 - j * 6, 0, TAU); g.fill(); } g.restore(); }
 // cleared light line (a scraped groove that lets the table shine through), glowing
 function glowLine(P, k = 1, o = {}) { if (k <= 0 || P.length < 2) return; const n = Math.max(2, Math.ceil(P.length * clamp(k))); const path = () => { g.beginPath(); for (let i = 0; i < n; i++) i ? g.lineTo(...P[i]) : g.moveTo(...P[i]); };
@@ -120,11 +123,11 @@ SC[18] = (t, lt) => { storm(t); hills(); bolt('big', 520, 250, 600, HZ - 10, 1, 
 SC[19] = (t, lt) => { const k = clamp(lt / .5); label('Follow for more of', CX, 600, k, { size: 72, col: SAND }); label('how it really works.', CX, 700, k, { size: 72, col: '#7a4a1c' }); label("A new 'wait, really?' every day.", CX, 790, lt - .6, { size: 46 }); label('@howitreallyworkstudio', CX, 860, lt - .8, { size: 42 });
   const p = new Path2D(); for (let j = 0; j < 5; j++) p.arc(390 + j * 70, 1000 + 20 * Math.sin(j * 1.7), 80 - j * 5, 0, TAU); sandFill(p, SAND); };
 
-// ---------- frame ----------
+// ---------- frame ---------- (scene drawing is clipped to the sky, so rings and glow stay off the captions)
 const START = PH.map(p => p.start - .2); START[0] = 0;
 function sceneAt(t) { let k = 0; for (let i = 0; i < SC.length; i++) if (t >= START[i]) k = i; return k; }
 function draw(t) { ST2 = Math.floor(t * 12); const k = sceneAt(t), lt = k === 0 ? t + .3 : t - START[k]; table(t); TT = []; const sh = k === 0 && lt > .5 && lt < 2.5 ? Math.sin(t * 60) * 4 * (1 - (lt - .5) / 2) : 0;
-  g.save(); g.translate(sh, 0); if (k < SC.length - 1) ground(t); SC[k](t, lt); g.restore(); TT.forEach(a => drawTitle(...a)); if (k > 0 && lt < .4) sweep(lt / .4); grain(t); if (k < SC.length - 1) caption(t); }
+  g.save(); g.translate(sh, 0); if (k < SC.length - 1) { ground(t); ripples(t); g.beginPath(); g.rect(-20, 0, W + 40, HZ + 6); g.clip(); } SC[k](t, lt); g.restore(); TT.forEach(a => drawTitle(...a)); if (k > 0 && lt < .4) sweep(lt / .4); grain(t); if (k < SC.length - 1) caption(t); }
 const F0 = document.createElement('canvas'); F0.width = W; F0.height = H; { const keep = g; g = F0.getContext('2d'); draw(0); g = keep; }
 function frame(t) { draw(t); const k = ss(TOT - .5, TOT, t) * .4; if (k > 0) { g.save(); g.globalAlpha = k; g.drawImage(F0, 0, 0); g.restore(); } }
 const r = (i, d = 0) => s(i) + d;
