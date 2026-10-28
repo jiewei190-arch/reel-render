@@ -47,7 +47,7 @@
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
 | 77 | hairgray | Why does hair turn gray? | H2 | queued |
 | 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | queued |
-| 79 | saltyocean | Why is the ocean salty? | H1 | merged, Nov 12 21:30 |
+| 79 | saltyocean | Why is the ocean salty? | H1 | merged v1, Nov 12 21:30 (v2 sea-blue palette pending; swap in) |
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | queued |
 | 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | queued |
 | 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
