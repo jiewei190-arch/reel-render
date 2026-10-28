@@ -65,7 +65,7 @@
 | 94 | twinkle | Why do stars twinkle but planets don't? | H1 | merged, Nov 15 21:30 |
 | 95 | stalebread | Why does bread go stale? | H4 | merged, Nov 16 09:00 |
 | 96 | bananabrown | Why do bananas turn brown? | H4 | merged, Nov 16 13:00 |
-| 97 | fingerprints | Why do we have fingerprints? | H1 | queued |
+| 97 | fingerprints | Why do we have fingerprints? | H1 | merged, Nov 16 16:00 |
 | 98 | darknight | Why is the night sky dark if there are so many stars? | H1 | queued |
 | 99 | mirrorflip | Why do mirrors flip left and right but not up and down? | H2 | queued |
 | 100 | tidesmoon | How does the Moon cause tides? | H2 | queued |

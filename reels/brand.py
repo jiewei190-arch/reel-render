@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "fingerprints": {"spot": ("R", 260)},   # H1 (EP 97): as wetdog (same urban-sketch engine) but top-right: the margin notes are left-aligned at y ~330 and end before x 860
     "bananabrown": {"spot": ("R", 260), "hide": [(72.1, 99.0)]},   # titles moved below y 345; ransom end card hidden
     "glowdark": {"spot": ("R", 256)},
     "butterflies": {"spot": ("R", 256)},
