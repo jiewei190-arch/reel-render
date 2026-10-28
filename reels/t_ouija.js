@@ -264,12 +264,12 @@ window.seek = t => { R.begin(t); scene(t); R.finish(); stage(R.main, kStage(t), 
 window.thumb = () => {
   const t = 2.0; R.begin(t); R.dim = 0; R.hot = [540, 900];
   cam(1, 540, 800);
-  candle(190, 640, 1.1, t, 0); candle(890, 640, 1.1, t, 1);
+  candle(200, 790, 1.0, t, 0); candle(880, 790, 1.0, t, 1);
   board(540, 1080, 1.0, t);
   const [lx, ly] = letterPos('B'); const px = 540 + lx, py = 1080 + ly + 50;
   planchette(px, py, 1.05, t, .1); R.glow(px, py - 50, 90, 'rgba(255,230,160,1)', .6);
   hand(px - 75, py + 45, -Math.PI / 2 + .35, 1.0, t); hand(px + 75, py + 45, -Math.PI / 2 - .35, 1.0, t, { sleeve: SITTER.sleeve });
-  ghost(860, 640, .75, t);
+  ghost(800, 1530, .62, t);
   cutPlaque(g, 540, 430, 900, 260, ['WHO MOVES', 'THE POINTER?'], 92, 1);
   R.finish(); stage(R.main, 1, t);
 };
