@@ -38,7 +38,9 @@ My last reels were hairgray (#27 old-master) and freezerburn (#19 Sketch music);
 - The end-card title got a soft backing because the ring flies through it.
 - Scene changes are 0.45 s crossfades; the end dims 40% and loops to the frame-0 glass.
 
-**Voice:** af_heart 0.97, crayon bed at music_gain 0.55, 84.1 s.
+**Voice:** af_heart 0.97, crayon bed at music_gain 0.55, 83.1 s.
+
+**End card:** 2.95 s (80.17-83.12 s; main session asked for 3 s or less). The spec sets `"tail": 0.6`, a new optional key in voice2.py (default 1.6), and the card starts 0.1 s before the closing line.
 
 **Accuracy:** Liger-Belair's work says the sites are mostly fibers and *not* glass scratches (the glass's bumps are far below the ~0.2 µm critical radius). The script therefore says "You'd guess scratches... but", and hedges with "most" and "mostly". Etched glasses appear as the deliberate exception.
 
@@ -53,7 +55,7 @@ My last reels were hairgray (#27 old-master) and freezerburn (#19 Sketch music);
 ## GROWTH checklist
 - [x] Topic is a searched question (main-session assignment EP 78)
 - [x] Hook passes HOOKS.md (11 words; frame 0 is the big glass with rising lines; search question at 4.3 s)
-- [x] 66-86 s (84.1 s); ends on the exact closing line
+- [x] 66-86 s (83.1 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Next time, will you look for the speck at the bottom of the line? Yes or no?")
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 40%, frame 0 is the same glass the reel opens on)
@@ -61,21 +63,21 @@ My last reels were hairgray (#27 old-master) and freezerburn (#19 Sketch music);
 - [x] sodabubbles_ep.mp4 (EP 78)
 - [x] Evergreen
 
-## QA (python3 -I reels/qa.py sodabubbles)
+## QA (python3 -I reels/qa.py sodabubbles), final render
 ```
-QA sodabubbles: PASS   (/home/user/reel-render/jobs/sodabubbles/sodabubbles.mp4, 84.0 s)
+QA sodabubbles: PASS   (/home/user/reel-render/jobs/sodabubbles/sodabubbles.mp4, 83.0 s)
   PASS  static          longest no-change run 0.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.5 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
-  PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
+  PASS  loudness        -15.4 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -2.4 dBTP (WARN above -1.0, FAIL above 0.0)
   PASS  voice over bed  speech 12.5 dB above the pauses (15 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          84.0 s (want 66-86)
+  PASS  length          83.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 4.1 (min 1.0), contrast 38.5 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      sodabubbles.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      sodabubbles.mp4 1080x1920 SAR 1:1; sodabubbles_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
