@@ -26,9 +26,11 @@
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | queued |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | queued |
 | 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
-| 50 | candle | How does a candle actually burn? | H2 | queued, Nov 7 09:00 |
+| 50 | candle | How does a candle actually burn? | H2 | merged, Nov 7 09:00 |
 | 55 | goosebumps | Why do we get goosebumps? | H3 | queued (after snowflake) |
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
+| 57 | noisecancel | How do noise-cancelling headphones work? | H2 | queued |
+| 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | queued |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
