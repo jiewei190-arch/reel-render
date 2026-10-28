@@ -115,7 +115,7 @@ function header(t) { const i = segOf(t), f = FIGS[i], old = i > 0 ? FIGS[i - 1] 
   if (old && fk < 1) { B.txt(lab(old), 98, 330, { size: 36, alpha: 1 - ss(fk * 2) }); B.line(94, 330, 94 + B.measure(lab(old), 36) + 8, 330, { w: 3, draw: ramp(fk, 0, .35), nib: false }); }
   B.txt(lab(f), 98, 330, { size: 36, write: old ? ramp(fk, .35, .65) : 1 });
   const status = t < s(2) ? 'MAKES COLD?' : t < s(3) ? 'MOVES HEAT' : t < s(11) ? 'PUMPING HEAT' : t < s(15) ? 'HEAT OUT BACK' : 'MOVES HEAT';
-  B.txt('STATUS: ' + status, 982, 330, { size: 22, font: 'Poppins', weight: 600, align: 'right', ls: 2, alpha: .9 }); }
+  B.txt('STATUS: ' + status, 982, 342, { size: 22, font: 'Poppins', weight: 600, align: 'right', ls: 2, alpha: .9 }); }
 function note(n, cap, tSince) { const x = 110, y = 1158, w = 860, h = 256, size = 46; g.save(); g.globalAlpha = clamp(tSince / .15); g.fillStyle = 'rgba(14,34,82,.62)'; g.fillRect(x, y, w, h); g.strokeStyle = C.ink; g.lineWidth = 2.2; g.strokeRect(x, y, w, h); g.lineWidth = 1; g.strokeRect(x + 7, y + 7, w - 14, h - 14); g.restore();
   B.txt('NOTE', x + 24, y + 28, { size: 17, font: 'Poppins', weight: 600, alpha: .8, ls: 3 }); B.txt(String(n).padStart(2, '0'), x + 92, y + 28, { size: 22, font: 'Poppins', weight: 600 });
   const toks = []; cap.split('**').forEach((sg, k) => sg.split(' ').filter(Boolean).forEach(wd => toks.push({ w: wd, b: k % 2 === 1 }))); const sp = B.measure(' ', size), maxW = 720; const lines = [[]]; let acc = 0;
