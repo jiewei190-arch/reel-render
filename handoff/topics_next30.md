@@ -23,14 +23,16 @@
 | (Thanksgiving) | cranberries | Why do cranberries float? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | queued |
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
-| 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | queued |
-| 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | queued |
+| 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | merged, Nov 7 19:00 |
+| 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | merged, Nov 7 21:30 |
 | 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
 | 50 | candle | How does a candle actually burn? | H2 | merged, Nov 7 09:00 |
 | 55 | goosebumps | Why do we get goosebumps? | H3 | queued (after snowflake) |
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | queued |
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | queued |
+| 59 | hiccups | Why do we get hiccups? | H1 | queued |
+| 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | queued |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
