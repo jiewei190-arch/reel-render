@@ -9,4 +9,6 @@ QA catseyes: WARN   (/home/user/reel-render/jobs/catseyes/catseyes.mp4, 69.0 s)
   PASS  length          69.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 9.0 (min 3.0), contrast 52.6 (min 18.0)
+  PASS  frame 0         edge 9.0 (min 1.0), contrast 52.6 (min 18.0)
+  PASS  9:16 frame      catseyes.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
