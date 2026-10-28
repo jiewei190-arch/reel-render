@@ -36,18 +36,18 @@ function stamp(txt, x, y, k) { if (k <= 0) return; const sc = lerp(1.8, 1, eo(k)
   g.strokeRect(-w / 2, -52, w, 104); g.fillStyle = RED; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(txt, 0, 4); g.restore(); }
 
 // ---------- the mottled warm paper (cached) ----------
-const PAPER = (() => { const o = document.createElement('canvas'); o.width = W; o.height = H; const q = o.getContext('2d'); q.fillStyle = '#efe2c8'; q.fillRect(0, 0, W, H);
-  for (let i = 0; i < 900; i++) { const x = hash(i * 1.7) * W, y = hash(i * 2.9) * H, r = 20 + 70 * hash(i * 4.1); const gr = q.createRadialGradient(x, y, 0, x, y, r); const d = hash(i * 5.3) > .5; gr.addColorStop(0, d ? 'rgba(170,130,80,.10)' : 'rgba(255,250,235,.12)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); q.fillStyle = gr; q.fillRect(x - r, y - r, r * 2, r * 2); }
+const PAPER = (() => { const o = document.createElement('canvas'); o.width = W; o.height = H; const q = o.getContext('2d'); q.fillStyle = '#dfe6e3'; q.fillRect(0, 0, W, H);
+  for (let i = 0; i < 900; i++) { const x = hash(i * 1.7) * W, y = hash(i * 2.9) * H, r = 20 + 70 * hash(i * 4.1); const gr = q.createRadialGradient(x, y, 0, x, y, r); const d = hash(i * 5.3) > .5; gr.addColorStop(0, d ? 'rgba(90,120,130,.10)' : 'rgba(250,255,252,.14)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); q.fillStyle = gr; q.fillRect(x - r, y - r, r * 2, r * 2); }
   return o; })();
 
 // ---------- the room (one-point perspective; back wall x 140-940, y 420-900) ----------
 const BW = [140, 420, 940, 900];
 function room(t, o = {}) { const [x0, y0, x1, y1] = BW;
-  g.save(); path([[0, 300], [1080, 300], [x1, y0], [x0, y0]], true); g.fillStyle = 'rgba(150,110,70,.10)'; g.fill(); g.restore();   // ceiling
-  g.save(); path([[0, 300], [x0, y0], [x0, y1], [0, 1150]], true); g.fillStyle = 'rgba(150,110,70,.08)'; g.fill(); path([[1080, 300], [x1, y0], [x1, y1], [1080, 1150]], true); g.fill(); g.restore();
-  g.save(); g.fillStyle = 'rgba(255,248,232,.55)'; g.fillRect(x0, y0, x1 - x0, y1 - y0); g.restore();   // back wall (lighter)
-  g.save(); path([[x0, y1], [x1, y1], [1080, 1150], [0, 1150]], true); g.fillStyle = '#d7a77a'; g.fill(); g.clip();   // tiled floor
-  g.strokeStyle = 'rgba(80,50,30,.35)'; g.lineWidth = 2; for (let i = -8; i <= 8; i++) { g.beginPath(); g.moveTo(540 + i * 100, y1); g.lineTo(540 + i * 270, 1150); g.stroke(); } [930, 975, 1035, 1110].forEach(y => { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }); g.restore();
+  g.save(); path([[0, 300], [1080, 300], [x1, y0], [x0, y0]], true); g.fillStyle = 'rgba(70,100,120,.12)'; g.fill(); g.restore();   // ceiling
+  g.save(); path([[0, 300], [x0, y0], [x0, y1], [0, 1150]], true); g.fillStyle = 'rgba(70,100,120,.09)'; g.fill(); path([[1080, 300], [x1, y0], [x1, y1], [1080, 1150]], true); g.fill(); g.restore();
+  g.save(); g.fillStyle = 'rgba(214,232,214,.6)'; g.fillRect(x0, y0, x1 - x0, y1 - y0); g.restore();   // back wall (soft sage)
+  g.save(); path([[x0, y1], [x1, y1], [1080, 1150], [0, 1150]], true); g.fillStyle = '#93a9bb'; g.fill(); g.clip();   // tiled floor (slate blue)
+  g.strokeStyle = 'rgba(30,45,60,.35)'; g.lineWidth = 2; for (let i = -8; i <= 8; i++) { g.beginPath(); g.moveTo(540 + i * 100, y1); g.lineTo(540 + i * 270, 1150); g.stroke(); } [930, 975, 1035, 1110].forEach(y => { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }); g.restore();
   ink([[0, 300], [x0, y0]], { seed: 3, w: 4 }); ink([[1080, 300], [x1, y0]], { seed: 4, w: 4 }); ink([[0, 1150], [x0, y1]], { seed: 5 }); ink([[1080, 1150], [x1, y1]], { seed: 6 }); ink(rect(x0, y0, x1 - x0, y1 - y0), { close: true, seed: 7 });
   // pendant lamp
   ink([[540, y0], [540, 470]], { w: 3, seed: 8 }); blob([[505, 470], [575, 470], [600, 505], [480, 505]], '#e8c25a', { seed: 9, w: 4 }); g.save(); const lg = g.createRadialGradient(540, 520, 5, 540, 520, 160); lg.addColorStop(0, `rgba(255,236,170,${.45 + .1 * Math.sin(t * 3)})`); lg.addColorStop(1, 'rgba(255,236,170,0)'); g.fillStyle = lg; g.fillRect(380, 460, 320, 260); g.restore();
@@ -55,7 +55,7 @@ function room(t, o = {}) { const [x0, y0, x1, y1] = BW;
   if (!o.noWindow) { blob(rect(180, 470, 150, 130), '#a9d3e6', { seed: 10, w: 4.5 }); ink([[255, 470], [255, 600]], { w: 3.5, seed: 11 }); ink([[180, 535], [330, 535]], { w: 3.5, seed: 12 }); g.fillStyle = '#f1c94e'; g.beginPath(); g.arc(300, 495, 14, 0, TAU); g.fill(); }
   // poster (right) and filing cabinet
   if (!o.noPoster) { blob(rect(790, 460, 120, 150), '#f6edd6', { seed: 13, w: 4 }); blob([[850, 480], [868, 530], [850, 540], [832, 530]], '#fbfbf6', { seed: 14, w: 3 }); g.fillStyle = ORANGE; g.beginPath(); g.arc(850, 548, 6 + Math.sin(t * 8) * 2, 0, TAU); g.fill(); write('ship it!', 850, 585, 1, { size: 26 }); }
-  blob(rect(800, 700, 110, 200), '#e9d7ad', { seed: 15, w: 4.5 }); ink(rect(812, 712, 86, 82), { close: true, w: 3, seed: 16 }); ink(rect(812, 806, 86, 82), { close: true, w: 3, seed: 17 }); ink([[838, 752], [872, 752]], { w: 6, col: '#9a8f80', seed: 18 }); ink([[838, 846], [872, 846]], { w: 6, col: '#9a8f80', seed: 19 });
+  blob(rect(800, 700, 110, 200), '#c9d4dc', { seed: 15, w: 4.5 }); ink(rect(812, 712, 86, 82), { close: true, w: 3, seed: 16 }); ink(rect(812, 806, 86, 82), { close: true, w: 3, seed: 17 }); ink([[838, 752], [872, 752]], { w: 6, col: '#9a8f80', seed: 18 }); ink([[838, 846], [872, 846]], { w: 6, col: '#9a8f80', seed: 19 });
   // potted plant (front left floor)
   blob([[60, 1040], [150, 1040], [140, 1120], [70, 1120]], ORANGE, { seed: 20, w: 4.5 }); for (let i = 0; i < 6; i++) { const a = -Math.PI / 2 + (i - 2.5) * .3 + .04 * Math.sin(t * 1.5 + i); blob([[105, 1040], [105 + Math.cos(a - .12) * 60, 1040 + Math.sin(a - .12) * 60], [105 + Math.cos(a) * 120, 1040 + Math.sin(a) * 120], [105 + Math.cos(a + .12) * 60, 1040 + Math.sin(a + .12) * 60]], '#4f9a86', { seed: 21 + i, w: 3.5 }); }
   gauge(t, o.pull ?? 0, o.gaugeA ?? 1); }
@@ -220,11 +220,11 @@ function scene(t) { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.drawI
   let i = 0; SC.forEach((cc, k) => { if (t >= cc[0]) i = k; }); const u = R(t, SC[i][0], .4); g.save(); g.beginPath(); g.rect(0, 280, W, 870); g.clip();
   if (i > 0 && u < 1) { g.save(); SC[i - 1][1](t); g.restore(); g.save(); g.globalAlpha = ss(u); g.drawImage(PAPER, 0, 0); SC[i][1](t); g.restore(); } else SC[i][1](t);
   g.restore(); ink([[0, 280], [W, 280]], { w: 5, seed: 402 });
-  g.save(); g.fillStyle = '#efe2c8'; g.globalAlpha = 1; g.fillRect(0, 1150, W, H - 1150); g.drawImage(PAPER, 0, 1150, W, H - 1150, 0, 1150, W, H - 1150); ink([[0, 1150], [W, 1150]], { w: 5, seed: 401 }); g.restore();
+  g.save(); g.fillStyle = '#dfe6e3'; g.globalAlpha = 1; g.fillRect(0, 1150, W, H - 1150); g.drawImage(PAPER, 0, 1150, W, H - 1150, 0, 1150, W, H - 1150); ink([[0, 1150], [W, 1150]], { w: 5, seed: 401 }); g.restore();
   const ph = PH.findLast(p => t >= p.start - .25); if (ph && ph.i < PH.length - 1) caption(ph, t, PH[ph.i + 1].start - .15); }
 window.DUR = TOT;
 window.seek = t => { scene(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .4; g.fillStyle = '#2b211c'; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
 window.thumb = () => { g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(PAPER, 0, 0); cam([600, 800, 1.35], () => { room(3, { pull: 1 }); robot(560, 840, 1, 3, { face: 'oh', armL: 2.6 }); phone(720, 1050, 80, 150, 1.57, { crack: 1, cx: .2, cy: -.25 }); });
-  g.save(); g.fillStyle = '#efe2c8'; g.fillRect(0, 0, W, 290); g.restore(); write('Why did a short drop', 540, 160, 1, { size: 78 }); write('crack my screen?', 540, 250, 1, { size: 78, col: ORANGE }); };
+  g.save(); g.fillStyle = '#dfe6e3'; g.fillRect(0, 0, W, 290); g.restore(); write('Why did a short drop', 540, 160, 1, { size: 78 }); write('crack my screen?', 540, 250, 1, { size: 78, col: ORANGE }); };
 window.seek(0); window.ready = true; window.READY = true;

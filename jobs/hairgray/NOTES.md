@@ -44,7 +44,7 @@
 
 **QA:** no FAIL. Two WARNs come from the zoomed parchment: it reaches the outer 24 px, and it is in the right column at 26-32 s. There is no text in either zone, only paper and the edge of the follicle drawing.
 
-**Voice:** af_heart 0.97, jazz bed at music_gain 0.55, 76.2 s; "2023" is spoken as "twenty twenty-three".
+**Voice:** af_heart 0.97, jazz bed at music_gain 0.55, 75.1 s (spec `tail` 0.5, so the end card runs 2.95 s, per RETENTION.md); "2023" is spoken as "twenty twenty-three".
 
 **Sources:** sources_hairgray.md.
 
@@ -57,7 +57,7 @@
 ## GROWTH checklist
 - [x] Topic is a searched question (main-session assignment EP 77)
 - [x] Hook passes HOOKS.md (9 words; frame 0 is a push-in on Rembrandt's grey curls with a callout; search question at 3.6 s)
-- [x] 66-86 s (76.2 s); ends on the exact closing line
+- [x] 66-86 s (75.1 s); ends on the exact closing line
 - [x] One-word-answer question before the closing line ("Have you found your first gray hair yet? Yes or no?")
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 40%, back to the self-portrait)
@@ -65,17 +65,17 @@
 - [x] hairgray_ep.mp4 (EP 77)
 - [x] Evergreen
 
-## QA (python3 -I reels/qa.py hairgray)
+## QA (python3 -I reels/qa.py hairgray), final render with the 2.95 s end card
 ```
-QA hairgray: WARN   (/home/user/reel-render/jobs/hairgray/hairgray.mp4, 76.2 s)
+QA hairgray: WARN   (/home/user/reel-render/jobs/hairgray/hairgray.mp4, 75.0 s)
   PASS  static          longest no-change run 3.00 s (limit 4.0 s)
-  PASS  empty thirds    no third near-blank > 6.0 s (longest 4.2 s)
-  WARN  safe zones      right x>900 y900-1650: content 26.2-31.8s
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 3.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 26.5-31.8s, 37.5-40.8s
   WARN  outer 24 px     content at the frame edge 6.8-12.2s, 22.2-41.5s
   PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -2.3 dBTP (WARN above -1.0, FAIL above 0.0)
   PASS  voice over bed  speech 9.6 dB above the pauses (15 pauses; FAIL < 3.5, WARN < 6.0)
-  PASS  length          76.2 s (want 66-86)
+  PASS  length          75.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 5.3 (min 1.0), contrast 40.6 (min 18.0)

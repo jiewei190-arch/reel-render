@@ -8,4 +8,4 @@ Search question (spoken at 4.4 s, the robot holding its cracked phone, a "short 
 
 Storyboard stills (storyboard_crackedphone.jpg): 0.3 s hook (robot with phone) · 10.5 s whiteboard: squeeze strong / pull weak · 26.5 s Griffith 1920, the crack runs from a flaw · 36.5 s salt bath: big potassium atoms swap in for small sodium at the surface · 54.5 s a sharp grain of pavement drives a flaw through the squeezed layer · 60.8 s "70%+ sharp contact" (Corning) with a row of cracked phones. Also: tiny flaws under a magnifier, the pull piling up at a flaw tip, "small flaws stay shut", layer ≈ one hair, exposed edge, smooth vs grit, yes/no, end card on the whiteboard.
 
-Voice af_heart 0.97, crayon bed, 74.9 s (end card 3.0 s).
+Voice af_heart 0.97, crayon bed, 77.0 s (end card 3.0 s). Hook line 2 revised: "Most of the time, it starts at a scratch you can't even see."
