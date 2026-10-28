@@ -1,0 +1,90 @@
+{
+ "name": "goldfishmemory",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  5,
+  6,
+  9,
+  10,
+  11,
+  13,
+  14
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "They say a goldfish forgets everything in **three seconds.**",
+   "They say a goldfish forgets everything in three seconds."
+  ],
+  [
+   "But **do goldfish really have a 3-second memory?** Not even close.",
+   "But do goldfish really have a 3-second memory? Not even close."
+  ],
+  [
+   "In a study at the **University of Plymouth,** goldfish learned to press a **lever** for food.",
+   "In a study at the University of Plymouth, goldfish learned to press a lever for food."
+  ],
+  [
+   "Then the lever only worked for **one hour a day,** at the same time each day.",
+   "Then the lever only worked for one hour a day, at the same time each day."
+  ],
+  [
+   "The fish learned the schedule. They got busy at the lever **just before feeding time.**",
+   "The fish learned the schedule. They got busy at the lever just before feeding time."
+  ],
+  [
+   "And when the food was switched off, they kept that rhythm for a few more **days.**",
+   "And when the food was switched off, they kept that rhythm for a few more days."
+  ],
+  [
+   "Here's the twist: a 3-second fish could never learn a **daily routine.**",
+   "Here's the twist: a 3-second fish could never learn a daily routine."
+  ],
+  [
+   "Fish can learn **sounds,** too.",
+   "Fish can learn sounds, too."
+  ],
+  [
+   "In Israel, researchers trained young fish to expect food when a **sound** played, then released them into the **sea.**",
+   "In Israel, researchers trained young fish to expect food when a sound played, then released them into the sea."
+  ],
+  [
+   "Months later, the sound reportedly **brought them back.** About **four to five months.**",
+   "Months later, the sound reportedly brought them back. About four to five months."
+  ],
+  [
+   "In Japan, goldfish even learned to tell **Bach** from **Stravinsky,** after lots of training.",
+   "In Japan, goldfish even learned to tell Bach from Stravinsky, after lots of training."
+  ],
+  [
+   "So where did the 3-second idea **come from?**",
+   "So where did the 3-second idea come from?"
+  ],
+  [
+   "Nobody knows for sure. One fish researcher suspects it helped tiny **bowls** feel okay.",
+   "Nobody knows for sure. One fish researcher suspects it helped tiny bowls feel okay."
+  ],
+  [
+   "He says goldfish memories can last **weeks, months,** even **years.**",
+   "He says goldfish memories can last weeks, months, even years."
+  ],
+  [
+   "So the forgetful goldfish is the real **myth.** The fish **remembers.**",
+   "So the forgetful goldfish is the real myth. The fish remembers."
+  ],
+  [
+   "Does your fish know when it's **dinner time?** Yes or no?",
+   "Does your fish know when it's dinner time? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
