@@ -69,7 +69,7 @@
 | 98 | darknight | Why is the night sky dark if there are so many stars? | H1 | merged, Nov 16 19:00 |
 | 99 | mirrorflip | Why do mirrors flip left and right but not up and down? | H2 | queued |
 | 100 | tidesmoon | How does the Moon cause tides? | H2 | queued |
-| 101 | hairwet | Why does wet hair look darker? | H4 | queued |
+| 101 | hairwet | Why does wet hair look darker? | H4 | merged, Nov 17 13:00 |
 | 102 | sleeptalk | Why do we talk in our sleep? | H4 | queued |
 | 103 | honey | How do bees turn nectar into honey? | H1 | queued |
 | 104 | fog | Where does fog come from? | H1 | queued |
