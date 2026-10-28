@@ -4,12 +4,16 @@
 // Ions are the one accent: sodium in vermilion, chloride as ink dots. Hot vents breathe ink plumes from the sea floor.
 // Batch N layout: subtitle at y ~1240-1400 centred at x 500 (max width 720); nothing typed in the top 250 px or bottom 480 px;
 // titles sit at y >= 400 so the badge spot (44,260) stays clear.
-import { createInkMoon, W, H, TAU, clamp, lerp, seg, ss, eo, backOut, hash, PAPER, VERM, paper, range, putRange, mist, moon, birds, enso, ripples, serif, sealMark, parse, figure, house } from './styles/inkmoon/inkmoon.js';
+import { createInkMoon, W, H, TAU, clamp, lerp, seg, ss, eo, backOut, hash, PAPER, paper, range, putRange, mist, moon, birds, enso, ripples, serif, parse, figure, house } from './styles/inkmoon/inkmoon.js';
 await Promise.all(['italic 600 60px "Cormorant Garamond"', 'italic 700 60px "Cormorant Garamond"'].map(f => document.fonts.load(f)));
 const g = createInkMoon(document.getElementById('c'));
 const TL = window.TL, PH = TL.p, T = i => PH[i].start, E = i => PH[i].end, r = (i, d) => T(i) + d;
 const win = (t, a, b, f = .45) => ss(seg(t, a - f, a)) * (1 - ss(seg(t, b - f, b)));
 const ink = a => `rgba(30,28,30,${clamp(a)})`;
+// palette (EP 79 differs from goldfish EP 54): deep sea blue as the accent, salt white for chloride; warm only in the sun and magma
+const VERM = '#1f5683', SALT = '#fbfaf4';
+function sealMark(g, x, y, s, txt = '', a = 1) { if (a <= 0) return; g.save(); g.globalAlpha *= a; g.translate(x, y); g.rotate(-.04); g.fillStyle = VERM; g.fillRect(-s / 2, -s / 2, s, s);
+  g.strokeStyle = 'rgba(245,240,230,.85)'; g.lineWidth = 2; g.strokeRect(-s * .38, -s * .38, s * .76, s * .76); g.fillStyle = '#f4efe4'; g.font = `italic 700 ${s * .3}px "Cormorant Garamond"`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(txt, 0, 1); g.restore(); }
 const sea_ = a => `rgba(120,150,178,${clamp(a)})`;
 const PAP = paper();
 const FAR = range([[160, 200, 300], [520, 260, 340], [900, 190, 300]], 780, { far: true, seed: 3, dots: 9000, col: '#9fb0bd' });
@@ -20,8 +24,8 @@ const LOW = range([[120, 120, 260], [470, 160, 280], [880, 110, 260]], 760, { se
 // sodium = vermilion bead with "+", chloride = ink bead with "−"
 function ion(x, y, s, na, a = 1) {
   if (a <= 0) return; g.save(); g.globalAlpha *= clamp(a); g.translate(x, y); g.scale(s, s);
-  g.fillStyle = na ? VERM : ink(.88); g.beginPath(); g.arc(0, 0, 11, 0, TAU); g.fill();
-  g.strokeStyle = 'rgba(246,236,220,.95)'; g.lineWidth = 2.6; g.lineCap = 'round'; g.beginPath(); g.moveTo(-5, 0); g.lineTo(5, 0); if (na) { g.moveTo(0, -5); g.lineTo(0, 5); } g.stroke(); g.restore();
+  g.fillStyle = na ? VERM : SALT; g.beginPath(); g.arc(0, 0, 11, 0, TAU); g.fill(); if (!na) { g.strokeStyle = ink(.85); g.lineWidth = 2.2; g.stroke(); }
+  g.strokeStyle = na ? 'rgba(246,236,220,.95)' : ink(.85); g.lineWidth = 2.6; g.lineCap = 'round'; g.beginPath(); g.moveTo(-5, 0); g.lineTo(5, 0); if (na) { g.moveTo(0, -5); g.lineTo(0, 5); } g.stroke(); g.restore();
 }
 function rainSt(x0, x1, y0, y1, t, k, { n = 40, sl = .25, len = 46, a = .55, seed = 1 } = {}) {
   if (k <= 0) return; g.save(); g.strokeStyle = ink(a * k); g.lineCap = 'round'; g.lineWidth = 2.2;
@@ -89,7 +93,7 @@ const CRUST = (() => { const c = document.createElement('canvas'); c.width = W; 
 function plume(x, y, t, k, { s = 1, hot = 0, h = 420 } = {}) {   // ink smoke billowing up from a vent
   if (k <= 0) return; g.save();
   for (let i = 0; i < 22; i++) { const u = ((t * .32 + i / 22) % 1), py = y - u * h * k, px = x + Math.sin(u * 7 + i) * 26 * u * s + u * u * 40 * s, pr = (16 + u * 70) * s;
-    const gr = g.createRadialGradient(px, py, 0, px, py, pr); const c = hot && i % 3 === 0 ? '184,56,42' : '30,28,30'; gr.addColorStop(0, `rgba(${c},${.55 * (1 - u) * k})`); gr.addColorStop(1, `rgba(${c},0)`); g.fillStyle = gr; g.beginPath(); g.arc(px, py, pr, 0, TAU); g.fill();
+    const gr = g.createRadialGradient(px, py, 0, px, py, pr); const c = hot && i % 3 === 0 ? '200,80,45' : '30,28,30'; gr.addColorStop(0, `rgba(${c},${.55 * (1 - u) * k})`); gr.addColorStop(1, `rgba(${c},0)`); g.fillStyle = gr; g.beginPath(); g.arc(px, py, pr, 0, TAU); g.fill();
     if (i % 4 === 0 && u > .1) ion(px + 14, py, .8, i % 8 === 0, (1 - u) * k); }
   g.restore();
 }
