@@ -15,11 +15,17 @@
 - The smashed-windowpane analogy is credited on screen to Caltech physicist Kenneth Libbrecht (quoted by Live Science).
 - The blue-hole depth ("a metre or more", NSIDC) is shown as a depth ruler without a number in the voice-over.
 
+## Approval notes applied
+- Frame 0 moves: snowflakes drift and a glint sweeps across the ice cube's front face from t=0.
+- The lower third carries faint ruled page lines, a pink margin rule and doodle flakes (y 1470-1880).
+- The blue-hole scene says why it's blue in one line: "long path: red absorbed, blue survives".
+- Music bed at 0.7 (voice 6.8 dB over the bed).
+
 ## QA (python3 -I reels/qa.py snowwhite)
 ```
 QA snowwhite: WARN   (/home/user/reel-render/jobs/snowwhite/snowwhite.mp4, 73.5 s)
   PASS  static          longest no-change run 2.75 s (limit 4.0 s)
-  PASS  empty thirds    no third near-blank > 6.0 s (longest 4.2 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.2 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
   PASS  loudness        -15.3 LUFS integrated (want -16.0..-14.0)
@@ -28,7 +34,7 @@ QA snowwhite: WARN   (/home/user/reel-render/jobs/snowwhite/snowwhite.mp4, 73.5 
   PASS  length          73.5 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 8.2 (min 1.0), contrast 33.6 (min 18.0)
+  PASS  frame 0         edge 8.4 (min 1.0), contrast 33.6 (min 18.0)
   PASS  9:16 frame      snowwhite.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```

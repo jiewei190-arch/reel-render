@@ -15,6 +15,13 @@
 - The SDS is Kobayashi's general sheet for air-activated heating packs; the reel says "a maker's safety sheet" and doesn't name a brand on screen.
 - "More dissolved salt than it normally could hold" for the supersaturated sodium acetate solution (named in the pinned comment). "Metal piece/clicker" rather than "disc" (BBC Science Focus says "metal strip").
 
+## Approval notes applied
+- Frame 0: a knit mitten holds the glowing pouch, with heat squiggles from t=0.
+- No brand names on screen (the safety-sheet recipe is generic).
+- Click warmer: the card now reads 'sodium acetate' with the footer 'SODIUM ACETATE · RECHARGE BY BOILING' and the header 'Boil to recharge' (sources_handwarmer.md: BBC Science Focus, Silesia).
+- The standard end card follows "Good rust.".
+- Music bed at 0.7 (voice 9.0 dB over the bed).
+
 ## QA (python3 -I reels/qa.py handwarmer)
 ```
 QA handwarmer: WARN   (/home/user/reel-render/jobs/handwarmer/handwarmer.mp4, 74.8 s)
@@ -28,7 +35,7 @@ QA handwarmer: WARN   (/home/user/reel-render/jobs/handwarmer/handwarmer.mp4, 74
   PASS  length          74.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 4.0 (min 1.0), contrast 35.8 (min 18.0)
+  PASS  frame 0         edge 5.3 (min 1.0), contrast 42.0 (min 18.0)
   PASS  9:16 frame      handwarmer.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```

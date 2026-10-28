@@ -9,7 +9,7 @@ const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end, r = (
 const win = (t, a, b, f = .4) => ss(seg(t, a - f, a)) * (1 - ss(seg(t, b - f, b)));
 const STEPS = ['RECIPE', 'AIR', 'RUST', 'FAST', 'HEAT', 'CLICK'];
 const ROWS = [{ amt: '50-60%', item: 'iron powder' }, { amt: '30-40%', item: 'water' }, { amt: '1-5%', item: 'salt' }, { amt: '5-10%', item: 'charcoal' }, { amt: '5-10%', item: 'vermiculite' }];
-const ROWS2 = [{ amt: 'lots of', item: 'dissolved salt' }, { amt: 'some', item: 'water' }, { amt: '1', item: 'metal clicker' }];
+const ROWS2 = [{ amt: 'lots of', item: 'sodium acetate' }, { amt: 'some', item: 'water' }, { amt: '1', item: 'metal clicker' }];
 // ingredient word times inside phrase 4 ("Then water, a pinch of salt, activated charcoal, and vermiculite.")
 const TW = [r(3, .4), r(4, .25), r(4, 1.25), r(4, 2.1), r(4, 3.2)];
 
@@ -47,11 +47,25 @@ function grain(x, y, r, rust, seed = 1) { const col = `rgb(${Math.round(lerp(120
 function salt(x, y, sz, a = 1) { g.save(); g.globalAlpha *= a; g.fillStyle = '#fbfbf7'; g.fillRect(x, y, sz, sz); g.restore(); line(g, rectPts(x, y, sz, sz, 2), { w: 2, close: true, seed: x, wob: .3, a }); }
 function clockDoodle(x, y, rr, t, a = 1) { line(g, circPts(x, y, rr, 30), { w: 3, close: true, seed: 340, a }); const an = -Math.PI / 2 + t * 3; line(g, [[x, y], [x + Math.cos(an) * rr * .75, y + Math.sin(an) * rr * .75]], { w: 3.4, seed: 341, wob: 0, a }); const an2 = -Math.PI / 2 + t * .4; line(g, [[x, y], [x + Math.cos(an2) * rr * .5, y + Math.sin(an2) * rr * .5]], { w: 4.4, seed: 342, wob: 0, a }); }
 
+function mitten(t, op) { const a = 1 - op; if (a <= 0) return; const c = g; c.save(); c.globalAlpha *= a; const dy = 4 * Math.sin(t * 2);
+  // a knit mitten gripping the pouch's right end: body + thumb lobe over the pouch front + ribbed cuff (rust knit, cream stripe)
+  const cx = 760, cy = 960 + dy, body = Array.from({ length: 28 }, (_, i) => { const an = i / 28 * TAU; return [cx + Math.cos(an) * 150, cy + Math.sin(an) * 190 * (Math.sin(an) < 0 ? 1.05 : .9)]; });
+  const knit = pts => { fill(c, pts, '#b5533a'); c.save(); c.beginPath(); pts.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.closePath(); c.clip();
+    for (let y = 760; y < 1300; y += 20) for (let x = 450; x < 960; x += 20) { c.strokeStyle = 'rgba(59,30,20,.25)'; c.lineWidth = 2; c.beginPath(); c.moveTo(x, y); c.lineTo(x + 10, y + 12); c.lineTo(x + 20, y); c.stroke(); }
+    c.fillStyle = 'rgba(247,240,230,.85)'; c.fillRect(450, cy - 40, 520, 22); c.restore(); line(c, pts, { w: 3.6, close: true, seed: 700 }); };
+  knit(body);
+  const thumb = Array.from({ length: 18 }, (_, i) => { const an = i / 18 * TAU; return [cx - 175 + Math.cos(an) * 60, cy - 60 + Math.sin(an) * 95]; }).map(([x, y]) => { const r0 = .5; return [x + (y - cy) * -.25, y]; });
+  knit(thumb);
+  const cuff = rectPts(cx - 130, cy + 160, 260, 110, 4); fill(c, cuff, '#c97a5c'); for (let x = cx - 120; x < cx + 130; x += 18) line(c, [[x, cy + 168], [x, cy + 262]], { w: 2.4, col: 'rgba(59,30,20,.4)', seed: x, wob: .3 }); line(c, cuff, { w: 3.4, close: true, seed: 703 });
+  c.restore(); }
+
 // ---------- scenes ----------
 function hook(t) { const a = 1 - ss(seg(t, s(2) - .4, s(2))); if (a <= 0) return; g.save(); g.globalAlpha = a;
   const op = ss(seg(t, r(1, .3), r(1, 1.2)));
-  pouch(t, { fill: 1, layers: 5, glow: (1 - op * .6) * (.8 + .2 * Math.sin(t * 4)), x: 190 - 60 * (1 - op), y: 620 + 120 * op, w: 640 - 140 * op, h: 360 - 100 * op, open: op });
+  pouch(t, { fill: 1, layers: 5, glow: (1 - op * .6) * (.8 + .2 * Math.sin(t * 4)), x: 100 + 90 * op, y: 680 + 60 * op, w: 600 - 100 * op, h: 330 - 70 * op, open: op });
+  if (op < 1) for (let i = 0; i < 5; i++) { const xx = 230 + i * 130, ph = t * 2.4 + i * 1.3; line(g, Array.from({ length: 9 }, (_, j) => [xx + 14 * Math.sin(ph + j * .8), 600 - j * 18]), { w: 3.6, col: P.heat, a: (1 - op) * .85, seed: 720 + i, wob: .3 }); }
   if (op > 0) { for (let i = 0; i < 60; i++) { const px = 300 + hash(i) * 380, py = 640 + hash(i * 3) * 120 * op; g.fillStyle = 'rgba(70,64,60,.85)'; g.beginPath(); g.arc(px, py - op * 30, 3 + 2 * hash(i * 5), 0, TAU); g.fill(); } hand(g, 'just dark powder?', 540, 1110, { size: 52, align: 'center', write: seg(t, r(1, .6), r(1, 1.6)) }); }
+  mitten(t, op);
   hand(g, 'Hot.', 70, 430, { size: 128 }); hand(g, 'No battery.', 70, 560, { size: 128, col: P.rust });
   // crossed-out battery (the "no battery" proof), top right
   const bx = 760, by = 380; line(g, rectPts(bx, by, 170, 86, 4), { w: 3.4, close: true, seed: 350 }); line(g, rectPts(bx + 170, by + 26, 16, 34, 2), { w: 3, close: true, seed: 351 }); line(g, [[bx + 30, by + 43], [bx + 70, by + 43]], { w: 4, seed: 352 }); line(g, [[bx + 50, by + 23], [bx + 50, by + 63]], { w: 4, seed: 353 });
@@ -101,7 +115,7 @@ function recipe(t) { const a = win(t, s(2) - .3, s(13) + .2, .5); if (a <= 0) re
 
 function click(t) { const a = win(t, s(13) - .3, s(17) + .1, .5); if (a <= 0) return; g.save(); g.globalAlpha = a;
   const nd = t > r(14, .4) ? 1 + (t > r(14, 1.6) ? 1 : 0) + (t > r(15, .6) ? 1 : 0) : 0, slide = eo(seg(t, s(13) - .3, s(13) + .5)); g.save(); g.translate((1 - slide) * 520, 0);
-  card(g, { meta: 'REUSABLE · CLICK TYPE', title: ['Click', 'Warmer'], rows: ROWS2, done: nd, cur: nd < 3 ? nd : -1, footer: 'BOIL TO RESET', t, tickK: 1, h: 400 }); g.restore();
+  card(g, { meta: 'REUSABLE · CLICK TYPE', title: ['Click', 'Warmer'], rows: ROWS2, done: nd, cur: nd < 3 ? nd : -1, footer: 'SODIUM ACETATE · RECHARGE BY BOILING', t, tickK: 1, h: 400 }); g.restore();
   const x = 200, y = 870, w = 480, h = 240, cr = ss(seg(t, r(15, .8), r(15, 3.4))) * (1 - ss(seg(t, r(16, .6), r(16, 2.4))));
   if (t > s(16) - .2) { const k = seg(t, s(16) - .2, s(16) + .3); line(g, [[x - 40, y + 20], [x - 20, y + h + 40], [x + w + 20, y + h + 40], [x + w + 40, y + 20]], { w: 4, seed: 520, k }); for (let i = 0; i < 10; i++) { const u = (t * .8 + hash(i)) % 1; line(g, circPts(x + 20 + hash(i * 3) * (w - 40), y + h + 20 - u * (h + 40), 7, 10), { w: 2, col: '#5f86a6', close: true, seed: 530 + i, a: 1 - u }); } hand(g, 'boil = reset', 880, 1130 - 6, { size: 44, align: 'right' }); }
   fill(g, rectPts(x, y, w, h, 8), 'rgba(207,224,234,.6)'); shade(g, rectPts(x, y, w, h, 8), 'rgba(59,42,31,.06)', 12);
@@ -113,7 +127,7 @@ function click(t) { const a = win(t, s(13) - .3, s(17) + .1, .5); if (a <= 0) re
   if (cr > 0) { g.save(); g.beginPath(); g.rect(x, y, w, h); g.clip(); for (let i = 0; i < 140; i++) { const a2 = hash(i) * TAU, d = hash(i * 3) * w * cr; const px = cx + Math.cos(a2) * d, py = cy + Math.sin(a2) * d * .6; g.save(); g.translate(px, py); g.rotate(a2); g.fillStyle = '#fdfdfb'; g.fillRect(-12, -2.5, 24, 5); g.restore(); line(g, [[px - 10 * Math.cos(a2), py - 10 * Math.sin(a2)], [px + 10 * Math.cos(a2), py + 10 * Math.sin(a2)]], { w: 2.4, col: 'rgba(59,42,31,.85)', seed: 550 + i, wob: 0 }); } g.restore();
     const gr = g.createRadialGradient(cx, cy, 10, cx, cy, w); gr.addColorStop(0, `rgba(232,133,74,${.35 * cr})`); gr.addColorStop(1, 'rgba(232,133,74,0)'); g.fillStyle = gr; g.fillRect(x - 100, y - 100, w + 200, h + 200); }
   line(g, rectPts(x, y, w, h, 8), { w: 3.4, close: true, seed: 560 }); thermo(780, 880, 180, .1 + .8 * cr, t < s(16) - .2 ? 1 : 0);
-  const H0 = t < s(14) - .2 ? { title: 'The click kind', note: 'a different trick' } : t < s(15) - .2 ? { title: 'Overloaded liquid', note: 'more salt dissolved than it normally could hold' } : t < s(16) - .2 ? { title: 'Click: crystals', note: 'crystallising releases stored heat' } : { title: 'Boil to reset', note: 'crystals melt back to liquid' };
+  const H0 = t < s(14) - .2 ? { title: 'The click kind', note: 'a different trick' } : t < s(15) - .2 ? { title: 'Overloaded liquid', note: 'more salt dissolved than it normally could hold' } : t < s(16) - .2 ? { title: 'Click: crystals', note: 'crystallising releases stored heat' } : { title: 'Boil to recharge', note: 'sodium acetate melts back to liquid' };
   header(g, { ...H0, k: 1 }); g.restore(); }
 
 function signoff(t) { const a = win(t, s(17) - .3, s(19) - .1, .4); if (a <= 0) return; g.save(); g.globalAlpha = a;
