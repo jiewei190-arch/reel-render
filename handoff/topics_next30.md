@@ -62,7 +62,7 @@
 | 91 | butterflies | Why do you get butterflies in your stomach? | H2 | queued |
 | 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | queued |
 | 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | queued |
-| 94 | stars-twinkle | Why do stars twinkle but planets don't? | H1 | queued |
+| 94 | twinkle | Why do stars twinkle but planets don't? | H1 | merged, Nov 15 21:30 |
 | 95 | stalebread | Why does bread go stale? | H4 | queued |
 | 96 | bananabrown | Why do bananas turn brown? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
