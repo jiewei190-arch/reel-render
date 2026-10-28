@@ -13,13 +13,18 @@ T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first secon
 OVR = {
     "airfryer": {"t0": 7.0},                                      # the NOT A FRYER logo sits in the top-left until ~6.5 s
     "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
-    "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
-    "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
+    "barcode": {"spot": (44, 1360), "hide": [(7.0, 99.0)]},  # giant headlines fill nearly every frame: badge shows only 5-6.7 s (12 DIGITS lands at 7.0 s), low-left inside the safe zone
+    "recommend": {"spot": (44, 1366), "hide": [(4.7, 8.6), (52.6, 57.0)]},  # signs/boards fill the top; low-left above the captions
     # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
+    "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
+    "magnet": {"spot": ("R", 260), "t0": 7.0},   # the "Cut it in half" headline reaches the top-right until ~6.5 s
+    "search": {"spot": ("R", 260)}, "orbit": {"spot": ("R", 360)}, "window": {"spot": ("R", 260)},   # empty top-right band
+    "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
+    "submarine": {"spot": (44, 1360)}, # seabed only
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
-    "ship": {"spot": (44, 196)},       # mid spots hit labels and the end-card sign
+    "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
     "skyblue": {"spot": (660, 436)},   # auto spot sat on the end-card title
     "lock": {"spot": (44, 1276)},      # top spots hit the "5 HOLES"/"SPRING" callouts; bottom-left above the NOTE box
     # H4 QA, Oct 28
