@@ -1,6 +1,6 @@
 # owl: How owls fly almost silently
 
-- Template: #4 crayon-book (lemo-opuscar/styles/crayon-book), using the in-house re-implementation reels/styles/crayon (approved for flamingo). Duration 66.5 s, af_heart 0.97, crayon 88 bpm, new mix2.py.
+- Template: #4 crayon-book (lemo-opuscar/styles/crayon-book), using the in-house re-implementation reels/styles/crayon (approved for flamingo). Duration 66.7 s, af_heart 0.97, crayon 88 bpm, new mix2.py.
 - Why: a Halloween night picture-book page (moon, stars, owl, mouse) fits the template's own demo poster ("The Moon Can't Sleep"), and colouring as the action lets each wing trick be drawn on in turn.
 
 ## Copied from the template (STYLE.md, demo source, poster)
@@ -11,8 +11,12 @@
 - Substitution animation: the owl's two key wing drawings alternate on the beat; colouring is the action (the comb, the fringe and the velvet are drawn in as each trick is named).
 
 ## HOOKS.md
-- Line 1: "An owl can swoop right past you, and you won't hear it." (12 words). Frame 0: the owl already mid-swoop, large, flapping, over a mouse in the grass, with the lettering "Shh. Silent wings." "But" line by 5 s ("But wings push air, and moving air makes noise. So how?"). Re-hooks at ~23 s (the three tricks) and ~49 s ("Here's the proof: fish-eating owls..."). Payoff (below what prey can hear) at ~43-49 s.
+- Line 1: "An owl can swoop right past you, and you won't hear it." (12 words). Frame 0: the owl already mid-swoop, large, flapping, over a mouse in the grass, with the lettering "Shh. Silent wings." "But" line by 5 s ("But wings push air, and moving air makes noise. So how?"). Re-hooks at ~23 s (the three tricks) and ~49 s ("Here's the proof: fish-eating owls..."). Payoff (hears its prey without being heard) at ~40-48 s.
 - Thumbnail: "Silent wings" in yellow crayon lettering over the owl mid-swoop (3:4 crop checked).
 
 ## Softened claims
 See sources_owl.md (role of the comb is debated; prototypes, not wide use).
+
+## Revision (main-session review, Oct 28)
+- Dropped the "above about 2,000 Hz" line; the hearing payoff now uses the Cambridge (2015) wording "quiet enough to hear its prey without the prey hearing it coming"; added "owls that hunt small animals by stealth" (Cambridge); fish owls "mostly lack" these features. On-screen labels updated to match ("hears, unheard", "stealth hunter", "mostly no comb or fringe").
+- The single wing diagram held from 8 s to 36 s was split into separate scenes (STYLE_FIT REJECTED: static repeated diagram): stiff wing + turbulence; a crow close-up; the perched owl with numbered parts; a giant feather for the comb; the fringe with a paintbrush; the velvet surface soaking up sound rings.
