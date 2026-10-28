@@ -114,18 +114,18 @@ SC[5] = { bg: 'night', style: 'mol', form: F.two, pa: (i) => .92, draw: (lt, u, 
   title([['WARM: LOTS', WARMY]], lt, 290, 84); title([['', ''], ['COLD: LESS', ICEB]], lt - 1.8, 290, 84); } };
 SC[6] = { bg: 'night', style: 'mol', form: F.cols, pa: (i) => i < 330 ? .95 : 0, sz: .85, draw: (lt, u, t) => { title([['ABOUT', '#fff'], ['A TENTH', ICEB]], lt, 290, 104);
   note('body-warm air', 330, 1075, lt - .8, WARMY, 54); note('freezing air', 750, 1075, lt - 1.4, ICEB, 54); arrow(760, 860, 760, 990, lt - 2.2, ICEB, 0); note('1/10', 760, 820, lt - 2.2, '#fff', 80); } };
-SC[7] = { bg: 'cold', style: 'speck', form: F.flock(380, 760, 700, 720, 3.4), pa: () => .95, draw: (lt, u, t) => { kid(-40, 0, 1, 1, INK); title([['CRASH INTO', '#fff'], ['THE COLD', ICEB]], lt, 300, 104, 1.08); snowfall(t, .6); } };
+SC[7] = { bg: 'cold', style: 'speck', form: F.flock(380, 760, 700, 720, 3.4), pa: () => .95, draw: (lt, u, t) => { kid(20, 0, 1, 1, INK); title([['CRASH INTO', '#fff'], ['THE COLD', ICEB]], lt, 300, 104, 1.08); snowfall(t, .6); } };
 SC[8] = { bg: 'cold', style: 'speck', form: F.flock(540, 560, 540, 960, 2.6), pa: () => .95, draw: (lt, u, t) => { streak(800, lt / 1.2, t, '#ffe2a8'); note('dew point', 210, 860, lt - 1, '#fff', 64, 'left');
   title([['THE DEW POINT', '#fff']], lt, 300, 96); const k = eo((lt - .4) / 2.6); thermo(860, 1000, 520, lerp(.9, .3, k), '#7fb3ff', pop(lt)); } };
 SC[9] = { bg: 'night', style: 'mol', form: F.squeeze, pa: () => .95, draw: (lt, u, t) => { boxFrame(300, 520, 480, 380, '#fff', pop(lt), ''); title([["CAN'T HOLD", '#fff'], ['IT ALL', '#ff9fb0']], lt, 300, 104); note('too much vapor!', CX, 990, lt - 1.2, '#fff', 60); } };
 SC[10] = { bg: 'night', style: 'mol', form: F.clump, pa: () => .95, draw: (lt, u, t) => { const k = ss(2.2, 4.2, lt); c.save(); for (let j = 0; j < 26; j++) { const a = hash(j * 3.7), b = hash(j * 9.2), x = 170 + a * 700 + 16 * Math.sin(t * .8 + j), y = 520 + b * 520 + 12 * Math.cos(t * .7 + j);
     const g = c.createRadialGradient(x, y, 0, x, y, 52); g.addColorStop(0, `rgba(255,255,255,${.9 * k})`); g.addColorStop(.6, `rgba(220,236,255,${.5 * k})`); g.addColorStop(1, 'rgba(220,236,255,0)'); c.fillStyle = g; c.beginPath(); c.arc(x, y, 52, 0, TAU); c.fill(); } c.restore();
   title([['STICK', '#fff'], ['TOGETHER', ICEB]], lt, 290, 104); note('tiny droplets!', CX, 1060, lt - 2.6, WARMY, 62); } };
-SC[11] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-110, 40, .9); title([['A LITTLE', '#fff'], ['WHITE CLOUD', '#fff']], lt, 300, 100); note('droplets', 870, 960, lt - 1, '#fff', 60); arrow(860, 920, 790, 840, lt - 1.2, '#fff', 40); } };
+SC[11] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-20, 40, .9); title([['A LITTLE', '#fff'], ['WHITE CLOUD', '#fff']], lt, 300, 100); note('droplets', 870, 960, lt - 1, '#fff', 60); arrow(860, 920, 790, 840, lt - 1.2, '#fff', 40); } };
 SC[12] = { bg: 'dusk', style: 'drop', form: F.big, pa: (i) => i % 7 === 0 ? .9 : .8, sz: 1.15, draw: (lt, u, t) => { kid(30, 470, .55); title([['SAME WAY', WARMY]], lt - 1, 280, 110);
   note('a real cloud', 800, 850, lt - .6, '#fff', 58); note('your breath', 520, 1060, lt - 1.4, '#fff', 58); arrow(470, 1030, 410, 965, lt - 1.6, '#fff', -30); } };
-SC[13] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-110, 40, .9); title([['GONE IN', '#fff'], ['A SECOND?', WARMY]], lt, 300, 104); } };
-SC[14] = { bg: 'cold', style: 'drop', form: F.spread, pa: (i, t, lt) => .85 - .3 * ss(0, 3.4, lt), draw: (lt, u, t) => { kid(-110, 40, .9); snowfall(t, .7); title([['MIXING WITH', '#fff'], ['DRY AIR', ICEB]], lt, 290, 104); } };
+SC[13] = { bg: 'dusk', style: 'drop', form: F.cloud, pa: () => .85, draw: (lt, u, t) => { kid(-20, 40, .9); title([['GONE IN', '#fff'], ['A SECOND?', WARMY]], lt, 300, 104); } };
+SC[14] = { bg: 'cold', style: 'drop', form: F.spread, pa: (i, t, lt) => .85 - .3 * ss(0, 3.4, lt), draw: (lt, u, t) => { kid(-20, 40, .9); snowfall(t, .7); title([['MIXING WITH', '#fff'], ['DRY AIR', ICEB]], lt, 290, 104); } };
 SC[15] = { bg: 'night', style: 'mol', form: F.evap, pa: (i, t, lt) => .9 - .55 * ss(1.2, 3.6, lt), sz: .8, draw: (lt, u, t) => { title([['EVAPORATE', ICEB]], lt, 300, 110); note('back to invisible vapor', CX, 1060, lt - 1.3, '#fff', 58); } };
 SC[16] = { bg: 'dusk', style: 'drop', form: F.puff, pa: ageA, draw: (lt, u, t) => { kid(); title([['NOT YOUR BREATH:', '#fff'], ['A CLOUD YOU MADE', WARMY]], lt, 290, 88, 1.15); } };
 SC[17] = { bg: 'dusk', style: 'drop', form: F.puff, pa: ageA, draw: (lt, u, t) => { kid(); title([['DRAGON', '#fff'], ['SMOKE?', WARMY]], lt, 300, 120); pill('YES', 560, 990, 230, 110, WARMY, INK, lt - 1.4); pill('NO', 800, 990, 200, 110, '#fff', INK, lt - 1.6); } };
@@ -134,7 +134,7 @@ SC[18] = { bg: 'night', style: 'mol', form: F.band, pa: () => .7, sz: .8, draw: 
 
 const START = PH.map(p => p.start); START[0] = 0;
 function sceneAt(t) { let k = 0; for (let i = 0; i < SC.length; i++) if (t >= START[i] - .3) k = i; return k; }
-const MORPH = .9;
+const MORPH = .9; SC[6].morph = 1.9; SC[11].morph = 1.6; SC[12].morph = 2.2; SC[18].morph = 1.4;   // the template's move: the flock re-forms into the next shape
 
 // ---------- captions (karaoke, inside x 70-890) ----------
 function caption(t) { let k = -1; for (let i = 0; i < PH.length; i++) if (t >= PH[i].start - .15 && t <= (i + 1 < PH.length ? PH[i + 1].start - .15 : TOT)) k = i; if (k < 0 || k === PH.length - 1) return; const p = PH[k];
@@ -154,7 +154,7 @@ function draw(t) {
   if (S.bg === 'dusk' || S.bg === 'cold') snowfall(t, .35);
   // particles: morph from the previous scene's formation with a per-particle stagger
   const sameStyle = S.style === P.style;
-  for (let i = 0; i < N; i++) { const q = HS[i], kk = k === 0 ? 1 : eo(clamp((lt + .3 - q[5] * .45) / MORPH));
+  for (let i = 0; i < N; i++) { const q = HS[i], mo = S.morph || MORPH, kk = k === 0 ? 1 : eo(clamp((lt + .3 - q[5] * mo * .5) / mo));
     const b = S.form(i, t, lt), a0 = S.pa(i, t, lt); let x = b[0], y = b[1];
     if (kk < 1) { const p = P.form(i, t, lp), ap = P.pa(i, t, lp); x = lerp(p[0], b[0], kk); y = lerp(p[1], b[1], kk);
       if (sameStyle) drawP(S.style, x, y, i, t, lerp(ap, a0, kk), lerp(P.sz || 1, S.sz || 1, kk)); else { drawP(P.style, x, y, i, t, ap * (1 - kk), P.sz || 1); drawP(S.style, x, y, i, t, a0 * kk, S.sz || 1); } }
