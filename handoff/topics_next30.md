@@ -53,7 +53,7 @@
 | 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
 | 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
-| 85 | rainbow | Why are rainbows curved? | H1 | merged, Nov 14 09:00 |
+| 85 | rainbow | Why are rainbows curved? | H1 | merged v1, Nov 14 09:00 (white-print v2 rendering; swap in) |
 | 86 | spicy | Why does spicy food feel hot? | H1 | queued |
 | 87 | crackedphone | Why does a phone screen crack from a short drop? | H2 | queued |
 | 88 | pickles | How does a cucumber turn into a pickle? | H2 | queued |
