@@ -80,10 +80,10 @@ function poster(o) { shape(rr(690, 530, 200, 255, 4), CREAM, { seed: 720, w: 5 }
   if (kind === 'kitten') { cat(790, 690, .52, { eyes: 'happy', tail: 0, nobody: 1 }); txt('day 1', 790, 760, 38, { rot: -.05 }); }
   if (kind === 'list') { const L = o.list || 0; txt('theories', 790, 576, 34, { col: ORD }); ink(dens([[722, 590], [858, 590]], false), { seed: 722, w: 2.5 });
     [['1 comfort', 1], ['2 scent', 2], ['3 bed', 3]].forEach(([w, n], i) => { if (L >= n) { txt(w, 712, 640 + i * 58, 34, { align: 'left', k: clamp(o.listK?.[i] ?? 1) }); if (o.ticks > i) ink(cr([[836, 624 + i * 58], [848, 638 + i * 58], [874, 600 + i * 58]], false, 5), { seed: 730 + i, col: TEAL, w: 5 }); } }); } }
-function meter(o) { if (Z > 1.1) return; const v = clamp(o.meter ?? .5), x = 30, y = 600, w = 84, h = 250; shape(rr(x + 26, y - 14, 32, 18, 4), GREY, { seed: 740, w: 3.4 }); shape(rr(x, y, w, h, 16), CREAM, { seed: 741 });
+function meter(o) { if (Z > 1.02) return; const v = clamp(o.meter ?? .5), x = 58, y = 600, w = 84, h = 250; shape(rr(x + 26, y - 14, 32, 18, 4), GREY, { seed: 740, w: 3.4 }); shape(rr(x, y, w, h, 16), CREAM, { seed: 741 });
   const n = 5, on = Math.round(v * n * 10) / 10; for (let i = 0; i < n; i++) { const f = clamp(on - i); if (f <= 0) continue; const yy = y + h - 14 - (i + 1) * 45; shape(rr(x + 12, yy + 45 * (1 - f) + 4, w - 24, 37 * f, 8), o.mcol || TEAL, { seed: 742 + i, w: 3, a: .95 }); }
   if (v < .12) ink(rr(x, y, w, h, 16), { col: RED, seed: 749, w: 4 });
-  txt(o.mlabel || 'comfort', x + w / 2, y + h + 58, 40, { rot: -.03 }); }
+  txt(o.mlabel || 'comfort', x + w / 2 + 2, y + h + 54, 34, { rot: -.03 }); }   // label kept >= 40 px from the frame edge
 function plant() { shape(poly([[958, 1252], [1046, 1252], [1036, 1348], [968, 1348]]), '#d8723f', { seed: 750 }); ink(dens([[952, 1262], [1052, 1262]], false), { seed: 751, w: 4 });
   for (let i = 0; i < 7; i++) { const a = -Math.PI / 2 + (i - 3) * .26 + Math.sin(T * 1.3 + i) * .03, L = 150 - Math.abs(i - 3) * 22; const bx = 1002, by = 1252; shape(cr([[bx - 9, by], [bx + Math.cos(a) * L * .5 - 10, by + Math.sin(a) * L * .5], [bx + Math.cos(a) * L, by + Math.sin(a) * L], [bx + Math.cos(a) * L * .5 + 10, by + Math.sin(a) * L * .5], [bx + 9, by]], true, 4), TEAL, { seed: 752 + i, w: 3.4 }); } }
 function rug(o) { shape(ell(540, 1530, 400, 92), '#c8907a', { seed: 760 }); ink(ell(540, 1530, 340, 70), { seed: 761, w: 3, a: .7 }); ink(ell(540, 1530, 280, 50), { seed: 762, w: 3, a: .5 });
@@ -146,7 +146,7 @@ function scent(x, y, r, a, seed) { if (a <= 0) return; ink(cr([[x - r, y + r * .
 // ---------- scenes: each returns the room state; drawing in world space, notes in screen space ----------
 const SC = [], N = PH.length;
 const START = PH.map(p => p.start); START[0] = 0;
-const CAM = { 0: [2.0, 540, 930], 1: [1.2, 540, 880], 2: [1.06, 540, 890], 3: [1.15, 540, 920], 4: [1.7, 540, 950], 5: [1.04, 520, 900], 6: [1.3, 520, 900], 7: [1.0, 540, 900],
+const CAM = { 0: [2.0, 540, 930], 1: [1.2, 540, 880], 2: [1.06, 540, 890], 3: [1.15, 540, 920], 4: [1.7, 540, 950], 5: [1.0, 520, 900], 6: [1.3, 520, 900], 7: [1.0, 540, 900],
   8: [1.3, 540, 900], 9: [1.0, 540, 900], 10: [1.0, 540, 900], 11: [1.38, 540, 920], 12: [1.12, 540, 900], 13: [1.0, 540, 900], 14: [1.0, 540, 900], 15: [1.3, 540, 935], 16: [1.0, 540, 900],
   17: [1.0, 540, 900], 18: [1.0, 540, 900], 19: [1.36, 540, 940], 20: [1.55, 540, 880], 21: [1.0, 540, 900] };
 const TITLE = ['kneading', 'why?', 'making biscuits', 'day 1', 'push, push', 'milk on', 'oxytocin', 'all at once', 'never stopped', 'neoteny', 'theory #1', 'prrrr', 'theory #2', 'paw pads', 'pheromones',
