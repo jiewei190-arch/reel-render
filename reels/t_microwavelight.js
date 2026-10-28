@@ -77,6 +77,15 @@ function chocolate(x, y, w, t, melt = [], mk_ = 0) {   // a bar seen from above;
   melt.forEach((mx, i) => { const k = clamp(mk_ * 3 - i * .4); if (k <= 0) return; paint(g, P2(p => blob(p, circPts(mx, y + 60, 46 * k, 52 * k, 14), 6, i * 7)), '#4a2414', { hatch: 0, lw: 2 }); g.fillStyle = `rgba(255,240,220,${.5 * k})`; g.beginPath(); g.ellipse(mx - 12 * k, y + 44, 14 * k, 6 * k, -.4, 0, TAU); g.fill(); });
 }
 
+// the painted ground props under every night diagram (fills the bottom band; drawings only, no text there):
+// a wooden ruler with a 12 cm microwave wave drawn along it, a tiny light wiggle, and a chocolate bar with melt marks
+function ground(t) {
+  paint(g, P2(p => p.roundRect(110, 1500, 860, 70, 10)), '#d9b77e', { hatch: .2, lw: 3 });
+  g.save(); g.strokeStyle = INK; g.lineWidth = 2; for (let i = 0; i <= 43; i++) { const x = 130 + i * 19.5, l = i % 5 ? 14 : 28; g.beginPath(); g.moveTo(x, 1500); g.lineTo(x, 1500 + l); g.stroke(); } g.restore();
+  wave(wavePts(130, 970, 1455, 34, 420, t * 2.2), 1, 'rgba(255,250,235,.85)', 3.4);
+  wave(wavePts(130, 560, 1625, 4, 9, t * 6, 500), 1, 'rgba(255,216,106,.85)', 2.4);
+  g.save(); g.translate(760, 1650); g.rotate(-.06); chocolate(-170, -40, 340, t, [-90, 0, 90].map(v => -170 + 170 + v), 1); g.restore();
+}
 // ---------------- scenes ----------------
 const S = [];
 // the painted kitchen (painting coordinates): kid peeking at the microwave
@@ -88,20 +97,21 @@ function kitchen(t, { pop = 1, look = 1 } = {}) {
 }
 // A (p0-p1): sketchbook page with the painting already alive; push in; the mesh close-up pops up on "tiny holes"
 S.push([0, T(2), t => {
-  const z = lerp(1, 1.2, ss(seg(t, r(1, .2), E(1) + .2))), cx = lerp(540, 600, ss(seg(t, T(1), E(1)))), cy = lerp(900, 880, ss(seg(t, T(1), E(1))));
+  const pk = ss(seg(t, T(1) - .2, r(1, 1.2))), z = lerp(1, 2.3, pk), cx = lerp(540, 563, pk), cy = lerp(900, 865, pk);   // push in on the door by the but-turn
   g.save(); g.translate(W / 2, H / 2); g.scale(z, z); g.translate(-cx, -cy);
   book(g); const { x, y, w, h } = PAGE;
   g.save(); g.beginPath(); g.rect(x + 40, y + 260, w - 80, h - 300); g.clip(); g.translate(x + 40, y + 260); g.scale((w - 80) / W, (w - 80) / W); g.translate(0, -300);
   kitchen(t); g.restore();
   g.strokeStyle = 'rgba(60,40,30,.35)'; g.lineWidth = 2; g.strokeRect(x + 40, y + 260, w - 80, h - 300);
-  hand(g, 'WHY THE MESH', 520, y + 150, 1, { size: 100 }); hand(g, '?', 850, y + 150, seg(t, .1, .4), { size: 116, col: '#c4543f' });
+  hand(g, 'WHY THE MESH', 520, y + 150, 1, { size: 100, a: 1 - clamp(pk * 4) }); hand(g, '?', 850, y + 150, seg(t, .1, .4), { size: 116, col: '#c4543f', a: 1 - clamp(pk * 4) });
   pencil(g, 930 + 14 * Math.sin(t * 3), 1500 + 8 * Math.cos(t * 4), -.8);
   g.restore();
-  meshPlate(720, 560, 200, seg(t, r(1, 3.0), r(1, 3.6)), t); hand(g, 'tiny holes', 690, 820, seg(t, r(1, 3.4), r(1, 4.0)), { size: 76, col: GOLD });
+  { const kl = seg(t, r(1, 3.0), r(1, 3.4)); if (kl > 0) { g.save(); g.globalAlpha *= kl; g.fillStyle = 'rgba(28,33,71,.88)'; g.beginPath(); g.roundRect(330, 1030, 420, 100, 18); g.fill(); g.restore(); } }
+  meshPlate(540, 720, 270, seg(t, r(1, 2.8), r(1, 3.4)), t); hand(g, 'tiny holes', 540, 1080, seg(t, r(1, 3.2), r(1, 3.8)), { size: 84, col: GOLD });
 }]);
 // B (p2-p4): night-sky diagram: a long microwave and a tiny light wave; 12 cm; the mesh hole is a few millimetres
 S.push([T(2) - .5, T(5) - .1, t => {
-  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 9, a: .7 });
+  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 9, a: .7 }); ground(t);
   const ph = t * 2.2;
   hand(g, 'microwave', 300, 360, seg(t, r(2, .3), r(2, .9)), { size: 74, col: CREAM }); wave(wavePts(80, 1000, 560, 120, 600, ph), seg(t, r(2, .2), r(2, 1.6)));
   hand(g, 'light', 230, 820, seg(t, r(2, 1.8), r(2, 2.3)), { size: 74, col: GOLD }); wave(wavePts(80, 1000, 900, 10, 14, ph * 3, 800), seg(t, r(2, 1.8), r(2, 3.0)), 'rgba(255,216,106,.95)', 3);
@@ -110,7 +120,7 @@ S.push([T(2) - .5, T(5) - .1, t => {
 }]);
 // C (p5-p6): side view: the big wave runs into the mesh wall and bounces back; the oven as a cage
 S.push([T(5) - .5, T(7) - .1, t => {
-  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 3, a: .7 });
+  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 3, a: .7 }); ground(t);
   // the mesh wall: a vertical metal strip with small gaps
   const MX = 660; paint(g, P2(p => p.roundRect(MX - 14, 320, 28, 860, 8)), '#9a97a8', { hatch: .2, lw: 3 }); g.fillStyle = '#1c2250'; for (let yy = 340; yy < 1170; yy += 36) g.fillRect(MX - 14, yy, 28, 10);
   hand(g, 'mesh', MX, 280 + 0, seg(t, T(5), r(5, .5)), { size: 64, col: CREAM });
@@ -122,7 +132,7 @@ S.push([T(5) - .5, T(7) - .1, t => {
 }]);
 // D (p7): light's tiny waves slip through the holes to the kid's eye
 S.push([T(7) - .5, T(8) - .1, t => {
-  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 5, a: .7 });
+  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 5, a: .7 }); ground(t);
   const MX = 560; paint(g, P2(p => p.roundRect(MX - 14, 320, 28, 860, 8)), '#9a97a8', { hatch: .2, lw: 3 }); g.fillStyle = '#1c2250'; for (let yy = 340; yy < 1170; yy += 36) g.fillRect(MX - 14, yy, 28, 10);
   const k = seg(t, r(7, .2), r(7, 3.0)); [520, 700, 880].forEach((yy, i) => { const P = wavePts(60, 760, yy, 9, 14, t * 6 + i, 700); wave(P, clamp(k * 1.2 - i * .1), 'rgba(255,216,106,.95)', 3); });
   g.save(); g.translate(860, 1080); kid(g, 0, 0, 2.0, { body: '#8fb3d9', scarf: '#d9655a', look: -3, mouth: 'smile' }); g.restore();
@@ -136,7 +146,7 @@ function ovenTop(t, { spots = 1, spin = 0, hot = 1 } = {}) {
   if (spin > 0) { const a = t * 1.2; g.save(); g.translate(540, 760); g.rotate(a); g.globalAlpha *= spin; paint(g, P2(p => p.arc(0, 0, 300, 0, TAU)), 'rgba(230,240,250,.55)', { hatch: .1, lw: 3 }); paint(g, P2(p => blob(p, circPts(120, 0, 70, 60, 12), 4, 3)), '#e9a7a0', { hatch: .2, lw: 2.4 }); g.restore(); }
 }
 S.push([T(8) - .5, T(11) - .1, t => {
-  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 11, a: .7 });
+  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 11, a: .7 }); ground(t);
   const sp = seg(t, r(9, .2), r(9, 2.4)); ovenTop(t, { spots: t > T(9) ? sp : 0, spin: ss(seg(t, T(10), r(10, .6))) });
   if (t < T(9)) { const ph = t * 3; [600, 800].forEach((yy, i) => { wave(wavePts(160, 920, yy, 70, 360, ph * (i ? -1 : 1)), seg(t, T(8) + i * .3, r(8, 1.6))); }); hand(g, 'sneaky...', 540, 320, seg(t, r(8, 1.4), r(8, 2.2)), { size: 80, col: GOLD }); }
   if (t > T(9) + 1.2 && t < T(10)) { hand(g, 'hot', 250, 470, seg(t, r(9, 1.2), r(9, 1.6)), { size: 60, col: '#ffb08a' }); hand(g, 'cold', 440, 470, seg(t, r(9, 1.6), r(9, 2.0)), { size: 60, col: '#bcd6ff' }); bracket(250, 440, 1180, seg(t, r(9, 2.4), r(9, 3.4)), '~6 cm'); }
@@ -144,7 +154,7 @@ S.push([T(8) - .5, T(11) - .1, t => {
 }]);
 // F (p11-p12): the chocolate test: turntable out, melted spots, the sum
 S.push([T(11) - .5, T(13) - .1, t => {
-  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 13, a: .7 });
+  g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 13, a: .7 }); ground(t);
   const zz = 1 + .06 * ss(seg(t, T(11), r(12, 6.5))); g.save(); g.translate(540, 760); g.scale(zz, zz); g.translate(-540, -760);
   ovenTop(t, { spots: 1, hot: .9 }); const melt = [250, 440, 630, 820], mk2 = seg(t, r(11, 2.6), r(11, 4.4));
   chocolate(170, 700, 740, t, melt, mk2);

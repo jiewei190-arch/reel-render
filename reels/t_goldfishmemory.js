@@ -73,8 +73,12 @@ function base(t, { moonA = 1, mtn = 1, mistA = .5 } = {}) { g.drawImage(PAP, 0, 
 // A (p0-p1): the goldfish circling inside an ensō bowl from frame 0; the "3-second" title gets struck out
 S.push([0, T(2), t => {
   base(t, { mtn: .55 }); plum(g, 1, t, { x: W + 20, y: 260, s: .9 });
-  enso(g, 540, 770, 260, 1, { lw: 16, seed: 2 }); g.save(); g.globalAlpha = .3; g.fillStyle = PAPER; g.beginPath(); g.arc(540, 770, 246, 0, TAU); g.fill(); g.globalAlpha = .25; g.fillStyle = 'rgba(150,175,200,1)'; g.fill(); g.restore();
-  const u = t * 1.1 + 2; const [fx, fy] = swimPt(540, 790, 160, 100, u); fish(fx, fy, 1.5, u + Math.PI / 2, t); bubbles(fx + 40, fy - 40, t, 3);
+  const crack = ss(seg(t, r(1, 2.2), r(1, 2.8))), outK = ss(seg(t, r(1, 2.5), r(1, 3.9)));
+  enso(g, 540, 770, 260, 1 - .2 * crack, { lw: 16, seed: 2 });
+  if (crack > 0) { g.save(); g.strokeStyle = ink(.8); g.lineWidth = 3; g.lineCap = 'round'; [[[392, 560], [356, 520], [372, 490]], [[300, 700], [252, 690], [236, 650]]].forEach(L => { g.beginPath(); L.forEach(([x, y], i) => { const px = lerp(L[0][0], x, crack), py = lerp(L[0][1], y, crack); i ? g.lineTo(px, py) : g.moveTo(px, py); }); g.stroke(); }); g.restore(); } g.save(); g.globalAlpha = .3; g.fillStyle = PAPER; g.beginPath(); g.arc(540, 770, 246, 0, TAU); g.fill(); g.globalAlpha = .25; g.fillStyle = 'rgba(150,175,200,1)'; g.fill(); g.restore();
+  const u = t * 1.1 + 2; let [fx, fy] = swimPt(540, 790, 160, 100, u), fa = u + Math.PI / 2;
+  if (outK > 0) { const t0 = r(1, 2.5), [sx, sy] = swimPt(540, 790, 160, 100, t0 * 1.1 + 2); fx = lerp(sx, 120, outK) + Math.sin(outK * 9) * 20 * (1 - outK); fy = lerp(sy, 1010, outK * outK); fa = Math.atan2(1010 - sy, 120 - sx); }
+  fish(fx, fy, 1.5, fa, t); bubbles(fx + 40, fy - 40, t, 3, 1 - outK);
   serif(g, 'the 3-second', 400, 340, { size: 96, w: 700 }); serif(g, 'goldfish?', 400, 440, { size: 96, w: 700 });
   if (t > E(0) - .2) { const k = ss(seg(t, r(1, 3.0), r(1, 3.6))); if (k > 0) { g.save(); g.strokeStyle = 'rgba(184,56,42,.9)'; g.lineWidth = 14; g.lineCap = 'round'; g.beginPath(); g.moveTo(130, 355); g.lineTo(lerp(130, 680, k), 330); g.stroke(); g.restore(); } }
   sealMark(g, 900, 430, 60, 'myth', ss(seg(t, r(1, 3.4), r(1, 3.8))));
@@ -103,7 +107,7 @@ S.push([T(7) - .45, T(10) - .1, t => {
   if (t > r(8, 3.0)) { const k = ss(seg(t, r(8, 3.0), r(8, 4.0))); serif(g, 'released into the sea', 600, 720, { size: 46, a: k * (1 - ss(seg(t, T(9) - .3, T(9)))) }); }
   // months passing: five moon phases across the sky
   const mk_ = seg(t, T(9) - .4, r(9, 1.8)); for (let i = 0; i < 5; i++) { const a = clamp(mk_ * 5 - i); if (a > 0) moonPhase(220 + i * 160, 470, 46, .1 + i * .2, a); }
-  if (t > r(9, 1.8)) serif(g, 'about 4-5 months', 540, 590, { size: 60, w: 700, a: ss(seg(t, r(9, 1.8), r(9, 2.6))) });
+  if (t > r(9, 1.8)) serif(g, 'months later', 540, 590, { size: 60, w: 700, a: ss(seg(t, r(9, 1.8), r(9, 2.6))) });
   serif(g, 'sound = food', 540, 320, { size: 60, w: 700, a: ss(seg(t, r(7, .6), r(7, 1.4))) * (1 - ss(seg(t, T(9) - .4, T(9)))) });
 }]);
 // D (p10): Japan: a goldfish told Bach from Stravinsky (it bites a bead for its piece)
@@ -113,8 +117,11 @@ S.push([T(10) - .45, T(11) - .1, t => {
   const bach = (Math.floor((t - T(10)) / 1.4) % 2) === 0, bite = bach ? Math.abs(Math.sin((t - T(10)) * 6)) : 0;
   staff(130, 360, 360, seg(t, T(10), r(10, 1.0)), 1, t, bach); staff(590, 360, 360, seg(t, r(10, .4), r(10, 1.4)), 0, t, !bach);
   serif(g, 'Bach', 310, 520, { size: 64, w: 700, a: ss(seg(t, r(10, .6), r(10, 1.2))), tone: bach ? .95 : .4 }); serif(g, 'Stravinsky', 770, 520, { size: 64, w: 700, a: ss(seg(t, r(10, 1.2), r(10, 1.8))), tone: bach ? .4 : .95 });
-  g.save(); g.strokeStyle = ink(.7); g.lineWidth = 2; g.beginPath(); g.moveTo(540, 650); g.lineTo(540, 780); g.stroke(); g.fillStyle = VERM; g.beginPath(); g.arc(540, 790, 14, 0, TAU); g.fill(); g.restore();
-  fish(lerp(640, 600, bite), 850, 1.3, Math.PI - .25, t);
+  // the speaker that plays the piece (beside the bowl) and the bead on a stalk the fish bites for its piece
+  g.save(); g.fillStyle = ink(.85); g.fillRect(812, 690, 70, 90); g.fillStyle = PAPER; g.beginPath(); g.arc(847, 735, 26, 0, TAU); g.fill(); g.fillStyle = ink(.85); g.beginPath(); g.arc(847, 735, 10, 0, TAU); g.fill();
+  g.strokeStyle = bach ? VERM : ink(.5); g.lineWidth = 3; for (let i = 0; i < 3; i++) { const u2 = (t * .9 + i / 3) % 1; g.globalAlpha = 1 - u2; g.beginPath(); g.arc(847, 735, 50 + u2 * 70, Math.PI * .65, Math.PI * 1.35); g.stroke(); } g.globalAlpha = 1;
+  g.strokeStyle = ink(.8); g.lineWidth = 6; g.lineCap = 'round'; g.beginPath(); g.moveTo(560, 1060); g.quadraticCurveTo(570, 960, 560, 880); g.stroke(); g.fillStyle = VERM; g.beginPath(); g.arc(560, 868, 18, 0, TAU); g.fill(); g.strokeStyle = ink(.8); g.lineWidth = 2.5; g.stroke(); g.restore();
+  fish(lerp(680, 630, bite), 880, 1.3, Math.PI - .15, t);
   serif(g, 'Keio University', 540, 1130, { size: 40, a: ss(seg(t, r(10, 2.0), r(10, 2.6))), tone: .6 });
 }]);
 // E (p11-p13): where did the myth come from? a tiny bowl; then weeks, months, years as a vertical column

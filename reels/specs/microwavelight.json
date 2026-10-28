@@ -15,8 +15,8 @@
  "fx_gain": 0.35,
  "phrases": [
   [
-   "You can see right through a microwave door, but the **microwaves can't get out.**",
-   "You can see right through a microwave door, but the microwaves can't get out."
+   "You can see through this door, but **microwaves can't get out.**",
+   "You can see through this door, but microwaves can't get out."
   ],
   [
    "So **why does a microwave have a metal mesh on the door?** Look closer: **tiny holes.**",
