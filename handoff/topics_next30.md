@@ -31,10 +31,10 @@
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | queued |
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | queued |
-| 59 | hiccups | Why do we get hiccups? | H1 | merged, Nov 8 21:30 |
+| 59 | hiccups | Why do we get hiccups? | H1 | merged v1, Nov 8 21:30 (v2 with notes rendering; swap in) |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | queued |
-| 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged, Nov 9 09:00 |
+| 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v1, Nov 9 09:00 (v2 with notes rendering; swap in) |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
