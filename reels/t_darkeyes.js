@@ -73,7 +73,7 @@ const SCN = {
     const N = 9, M = 5;
     return () => { for (let r = 0; r < N; r++) for (let c = 0; c < M; c++) { const i = r * M + c, lit = t < s(7) + .9 ? 1 : 1 - bleach + clamp(rebuild * 1.25 - hash(i * 4.3) * .35) * bleach; F.window(375 + c * 72, 400 + r * 118, 46, 54, clamp(lit) * .95, { cross: false }); }
       if (t > s(7) + .7 && t < s(7) + 1.4) { const k = 1 - Math.abs(t - s(7) - 1.0) / .4; g.fillStyle = `rgba(255,250,235,${clamp(k) * .85})`; g.fillRect(0, 0, W, H); }
-      label('rhodopsin', 540, 290, ss(R(t, s(7) + .2, .5))); if (t > s(8)) label('rebuilding…', 540, 1590, ss(R(t, s(8), .5)) * (1 - ss(R(t, s(9) - .5, .3)))); };
+      label(t > s(8) ? 'rhodopsin: rebuilding…' : 'rhodopsin', 540, 290, ss(R(t, s(7) + .2, .5))); };
   },
   curve(t) {  // the time-lapse: a big clock; cone towers recover first (~10 min), then the rod cottages keep brightening; pupils widen ~10x
     GRADE = 1; DARK = 0; const mins = lerp(0, 30, ss(R(t, s(9), e(11) - s(9)))), pupil = t > s(12) - .1;

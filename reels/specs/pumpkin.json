@@ -1,0 +1,28 @@
+{
+ "name": "pumpkin",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  ["Carve a pumpkin, and you've **started a countdown.**", "Carve a pumpkin, and you've started a countdown."],
+  ["But a whole pumpkin can last for **months.** So why does carving change that?", "But a whole pumpkin can last for months. So why does carving change that?"],
+  ["Uncarved, it can keep for **two to three months** somewhere cool and dry.", "Uncarved, it can keep for two to three months, somewhere cool and dry."],
+  ["Carved, many last just **three to five days,** less in warm weather.", "Carved, many last just three to five days, less in warm weather."],
+  ["The secret is the **rind:** a tough skin that keeps **moisture in** and **microbes out.**", "The secret is the rind. A tough skin that keeps moisture in, and microbes out."],
+  ["Carving **cuts right through** that wall.", "Carving cuts right through that wall."],
+  ["Now the soft, wet flesh is **wide open** to the air.", "Now the soft, wet flesh is wide open to the air."],
+  ["First, it **loses water.** The cut edges dry, shrink and **shrivel.**", "First, it loses water. The cut edges dry, shrink, and shrivel."],
+  ["Second, **mould and bacteria** land on the moist surface and start feeding.", "Second, mould and bacteria land on the moist surface, and start feeding."],
+  ["Warmth speeds them up. Even a **candle's heat** inside makes it rot faster.", "Warmth speeds them up. Even a candle's heat inside makes it rot faster."],
+  ["So, a few **field notes** for a longer-lasting lantern.", "So, a few field notes, for a longer-lasting lantern."],
+  ["Scrape out all the **stringy, moist** insides.", "Scrape out all the stringy, moist insides."],
+  ["Seal the cut edges with **petroleum jelly** to slow the drying.", "Seal the cut edges with petroleum jelly, to slow the drying."],
+  ["Keep it **cool, shaded,** and out of the rain.", "Keep it cool, shaded, and out of the rain."],
+  ["And light it with an **electric candle,** not a flame.", "And light it with an electric candle, not a flame."],
+  ["With care, extension experts say it can last **over a week.**", "With care, extension experts say it can last over a week."],
+  ["So, how many days will **yours** make it?", "So, how many days will yours make it?"],
+  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ ],
+ "breath": [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 14, 15, 16]
+}
