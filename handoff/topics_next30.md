@@ -49,8 +49,8 @@
 | 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | merged, Nov 12 19:00 |
 | 79 | saltyocean | Why is the ocean salty? | H1 | merged v2, Nov 12 21:30 |
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | merged, Nov 13 09:00 |
-| 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | queued |
-| 82 | shiver | Why do we shiver when we're cold? | H4 | queued |
+| 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | merged, Nov 13 13:00 |
+| 82 | shiver | Why do we shiver when we're cold? | H4 | merged, Nov 13 16:00 |
 | 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
 | 85 | rainbow | Why are rainbows curved? | H1 | merged v2, Nov 14 09:00 |
@@ -63,6 +63,8 @@
 | 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | queued |
 | 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | queued |
 | 94 | stars-twinkle | Why do stars twinkle but planets don't? | H1 | queued |
+| 95 | stalebread | Why does bread go stale? | H4 | queued |
+| 96 | bananabrown | Why do bananas turn brown? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
