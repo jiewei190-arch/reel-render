@@ -70,7 +70,7 @@ function brain(x, y, sc, k, o = {}) { if (k <= 0) return; g.save(); g.translate(
 function zzz(x, y, t, k) { if (k <= 0) return; for (let i = 0; i < 3; i++) { const u = (t * .35 + i / 3) % 1; F.txt('z', x + u * 90 + i * 10, y - u * 170, { size: 46 + u * 50, f: 'hand', col: C.navy, alpha: k * Math.sin(u * Math.PI) }); } }
 
 // ---------- p1: title page (frame 0 = a big foot with its toes twitching, Zzz rising, red sun behind) ----------
-function page1(t) { F.txt('A FIELD SKETCHBOOK  ·  BODY NOTES', 80, TOP, { size: 25, f: 'mono', wt: 700, ls: 3, col: '#45454c', alpha: .9 }); F.line(80, TOP + 16, 700, TOP + 16, { w: 1, alpha: .5, wob: .3 });
+function page1(t) { F.txt('FIELD NOTES  ·  BODY', 80, TOP, { size: 25, f: 'mono', wt: 700, ls: 3, col: '#45454c', alpha: .9 }); F.line(80, TOP + 16, 460, TOP + 16, { w: 1, alpha: .5, wob: .3 });
   F.txt('Why does my foot', 74, 410, { size: 92, f: 'hand', rot: -.015 }); F.txt('fall asleep?', 74, 510, { size: 104, f: 'hand', col: C.navy, rot: -.015 });
   const cx = 660, cy = 860, ring = ringPts(cx, cy, 230); F.hatch(ring, 'red', { alpha: .5 }); F.pencil(ring, { col: C.red, w: 2.2, seed: 2 });
   const tk = s(1), turn = R(t, tk + .4, .8);
@@ -80,7 +80,7 @@ function page1(t) { F.txt('A FIELD SKETCHBOOK  ·  BODY NOTES', 80, TOP, { size:
   caption(t); }
 
 // ---------- p2: nerves are wires; pressure squeezes nerve + vessel; the signal is blocked ----------
-function page2(t) { const t0 = s(2) - .1; chapter(t, 'NO. 01 — THE WIRING  ·  fig. a', 'Nerves are wires.', t0);
+function page2(t) { const t0 = s(2) - .1; chapter(t, 'NO. 01 — THE WIRING', 'Nerves are wires.', t0);
   const fx = 180, fy = 1140, sc = .82;
   foot(fx, fy, sc, t, { k: R(t, t0, 1.2), nerve: R(t, t0 + .8, 1.0), numb: ss(R(t, s(4) + .8, 1.2)) * .8 });
   brain(820, 520, .9, R(t, t0 + .6, .8), { lit: t < s(4) + .6 ? .8 + .2 * Math.sin(t * 6) : 0, q: R(t, s(4) + 1.2, .5) });
@@ -99,7 +99,7 @@ function page2(t) { const t0 = s(2) - .1; chapter(t, 'NO. 01 — THE WIRING  · 
   caption(t); }
 
 // ---------- p3: the worst part comes after: waking up; messy restart; pins and needles ----------
-function page3(t) { const t0 = s(5) - .1; chapter(t, 'NO. 02 — WAKING UP  ·  fig. b', 'The worst part comes after.', t0, { size: 66 });
+function page3(t) { const t0 = s(5) - .1; chapter(t, 'NO. 02 — WAKING UP', 'The worst part comes after.', t0, { size: 66 });
   const lift = ss(R(t, s(6) + .2, 1.0));
   if (t < s(8) - .1) {
     // cross-section, big: pressure lifts, blood flows back, fibres restart
@@ -126,8 +126,8 @@ function sleeper(x, y, t, k, numb, sc = 1) { // a figure asleep on its arm: head
   g.restore(); zzz(x - 60, y - 90, t, k); }
 const STRIP = [['PRESSURE', 'graph'], ['NUMB', 'navy'], ['MOVE', 'ochre'], ['TINGLE', 'red'], ['NORMAL', null]];
 function page4(t) { const t0 = s(9) - .1;
-  if (t < s(10) - .1) { chapter(t, 'NO. 03 — NOT JUST FEET  ·  fig. c', 'Arms do it too.', t0); sleeper(560, 820, t, R(t, t0 + .3, 1.2), R(t, s(9) + 2.0, .8), 1.6); note('hand: numb', 120, 1060, R(t, s(9) + 2.4, .6), { col: C.navy, size: 44 }); }
-  else { const t1 = s(10) - .1; chapter(t, 'NO. 04 — THE FIX  ·  fig. d', 'Move.', t1, { size: 96 });
+  if (t < s(10) - .1) { chapter(t, 'NO. 03 — NOT JUST FEET', 'Arms do it too.', t0); sleeper(560, 820, t, R(t, t0 + .3, 1.2), R(t, s(9) + 2.0, .8), 1.6); note('hand: numb', 120, 1060, R(t, s(9) + 2.4, .6), { col: C.navy, size: 44 }); }
+  else { const t1 = s(10) - .1; chapter(t, 'NO. 04 — THE FIX', 'Move.', t1, { size: 96 });
     foot(230, 860, .56, t, { k: 1, wig: 1, tingle: 1 - R(t, s(10) + 2.4, 1.0), nerve: 1 });
     for (let i = 0; i < 3; i++) F.pencil([[440, 790 + i * 26], [466 + 10 * Math.sin(t * 9 + i), 782 + i * 26]], { col: C.graph, w: 2, wob: .4 });
     // the timeline strip (the demo's row of day boxes): pressure -> numb -> move -> tingle -> normal
@@ -139,7 +139,7 @@ function page4(t) { const t0 = s(9) - .1;
   caption(t); }
 
 // ---------- p5: the answer + when to see a doctor ----------
-function page5(t) { const t0 = s(11) - .1; chapter(t, 'NO. 05 — THE ANSWER  ·  fig. e', 'It never slept.', t0, { size: 80 });
+function page5(t) { const t0 = s(11) - .1; chapter(t, 'NO. 05 — THE ANSWER', 'It never slept.', t0, { size: 80 });
   if (t < s(12) - .1) { const fx = 200, fy = 1140, sc = .82; foot(fx, fy, sc, t, { k: 1, nerve: 1, tingle: .5 * (1 - R(t, s(11) + 3, 1.5)) }); signals(fx, fy, sc, t, 1);
     brain(820, 560, .9, 1, { lit: .7 + .3 * Math.sin(t * 6) }); const top = [fx, fy - 520 * sc]; F.pencil([top, [top[0] + 40, 560], [700, 580]], { col: C.red, w: 3, seed: 80 });
     F.box(470, 760, 420, 170, R(t, t0 + .8, .5)); F.txt('SIGNAL', 492, 800, { size: 22, f: 'mono', wt: 700, col: '#5d5d62', alpha: R(t, t0 + 1, .3) }); note('lost → coming back', 680, 880, R(t, s(11) + 2.6, .8), { col: C.red, size: 42, align: 'center' }); }
@@ -149,7 +149,7 @@ function page5(t) { const t0 = s(11) - .1; chapter(t, 'NO. 05 — THE ANSWER  ·
   caption(t); }
 
 // ---------- p6: the question ----------
-function page6(t) { const t0 = s(13) - .1; chapter(t, 'NO. 06 — YOUR TURN  ·  fig. f', 'Foot or arm?', t0, { size: 86 });
+function page6(t) { const t0 = s(13) - .1; chapter(t, 'NO. 06 — YOUR TURN', 'Foot or arm?', t0, { size: 86 });
   foot(170, 1060, .66, t, { k: R(t, t0, .8), wig: 1, numb: .6 }); sleeper(660, 900, t, R(t, t0 + .3, .8), 1);
   [['FOOT', 280], ['ARM', 660]].forEach(([w, x], i) => { const k = bo(R(t, s(13) + .6 + i * .5, .4)); if (k <= 0) return; F.box(x - 130, 1080, 260, 110, clamp(k)); F.txt(w, x, 1152, { size: 44, f: 'mono', wt: 700, align: 'center', col: i ? C.navy : C.red, alpha: clamp(k) }); });
   F.txt('or', 470, 1152, { size: 44, f: 'hand', align: 'center', alpha: R(t, s(13) + 1.0, .4) }); }
