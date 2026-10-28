@@ -1,0 +1,82 @@
+{
+ "name": "microwavelight",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  5,
+  8,
+  12
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "You can see right through a microwave door, but the **microwaves can't get out.**",
+   "You can see right through a microwave door, but the microwaves can't get out."
+  ],
+  [
+   "So **why does a microwave have a metal mesh on the door?** Look closer: **tiny holes.**",
+   "So why does a microwave have a metal mesh on the door? Look closer: tiny holes."
+  ],
+  [
+   "Microwaves are a kind of **light,** just with much, much **longer waves.**",
+   "Microwaves are a kind of light, just with much, much longer waves."
+  ],
+  [
+   "In your oven, each wave is about **12 centimeters** long.",
+   "In your oven, each wave is about 12 centimeters long."
+  ],
+  [
+   "The holes in the mesh are only a **few millimeters** across.",
+   "The holes in the mesh are only a few millimeters across."
+  ],
+  [
+   "Here's the trick: a wave can't squeeze through a hole that's **much smaller** than the wave.",
+   "Here's the trick: a wave can't squeeze through a hole that's much smaller than the wave."
+  ],
+  [
+   "So the metal mesh **bounces the microwaves back** inside. It's the idea behind a **Faraday cage.**",
+   "So the metal mesh bounces the microwaves back inside. It's the idea behind a Faraday cage."
+  ],
+  [
+   "But visible light has **tiny** waves, less than a thousandth of a millimeter. It **slips right through,** so you can watch your food.",
+   "But visible light has tiny waves, less than a thousandth of a millimeter. It slips right through, so you can watch your food."
+  ],
+  [
+   "And trapped inside, the bouncing microwaves do something **sneaky.**",
+   "And trapped inside, the bouncing microwaves do something sneaky."
+  ],
+  [
+   "They stack up into **hot spots** and **cold spots,** about **6 centimeters** apart.",
+   "They stack up into hot spots and cold spots, about 6 centimeters apart."
+  ],
+  [
+   "That's why your plate **spins.** The turntable carries food through the hot spots.",
+   "That's why your plate spins. The turntable carries food through the hot spots."
+  ],
+  [
+   "Take the turntable out, heat a **chocolate bar,** and the melted spots **show you the wave.**",
+   "Take the turntable out, heat a chocolate bar, and the melted spots show you the wave."
+  ],
+  [
+   "Double the gap, multiply by the oven's frequency, and you get roughly **the speed of light.**",
+   "Double the gap, multiply by the oven's frequency, and you get roughly the speed of light."
+  ],
+  [
+   "So the door is a **sieve for waves:** big ones stay in, tiny ones get out.",
+   "So the door is a sieve for waves: big ones stay in, tiny ones get out."
+  ],
+  [
+   "Did you know your microwave could do that? **Yes or no?**",
+   "Did you know your microwave could do that? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
