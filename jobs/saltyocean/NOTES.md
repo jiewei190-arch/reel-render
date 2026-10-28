@@ -1,7 +1,7 @@
 # saltyocean: NOTES (EP 79)
 
 - **Template:** #25 Ink moon (demo t25), via styles/inkmoon (the module behind goldfishmemory). Picked to avoid the EP 71-78 families.
-- **Why this template:** the ocean salt story is a landscape water cycle: mountains in mist, rain as brush streaks, a river to the sea, the sun lifting water. Ink moon draws exactly that. Ions are the one accent: sodium as vermilion beads, chloride as ink beads.
+- **Why this template:** the ocean salt story is a landscape water cycle: mountains in mist, rain as brush streaks, a river to the sea, the sun lifting water. Ink moon draws exactly that. Ions are the one accent: sodium as deep sea-blue beads, chloride as salt-white beads. The palette is sea blue + salt white (no vermilion or plum) so it reads apart from goldfish (EP 54, same template), per the main session; warm colour stays only in the sun and magma.
 - **Scenes:**
   - frame 0: a huge Hokusai-like breaking wave with salt crystals in the spray; a "fresh" river spills in;
   - rain over big stippled mountains, CO₂ bubbles; an ensō close-up of a rock cracking and letting go of ions; a river carrying ions to the sea;
@@ -36,7 +36,7 @@ QA saltyocean: WARN   (/home/user/reel-render/jobs/saltyocean/saltyocean.mp4, 71
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 5.5 (min 1.0), contrast 29.2 (min 18.0)
   PASS  blank frames    none
-  PASS  9:16 frame      saltyocean.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  9:16 frame      saltyocean.mp4 1080x1920 SAR 1:1; saltyocean_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
