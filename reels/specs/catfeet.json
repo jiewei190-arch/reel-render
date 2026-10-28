@@ -1,0 +1,104 @@
+{
+ "name": "catfeet",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "popup",
+ "bpm": 96,
+ "fx_gain": 0.45,
+ "music_gain": 0.62,
+ "breath": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "A falling cat flips **right side up** in a split second.",
+   "A falling cat flips right side up in a split second."
+  ],
+  [
+   "**But** how? How do cats always land on their feet?",
+   "But how? How do cats always land on their feet?"
+  ],
+  [
+   "It's called the **righting reflex,** and it puzzled physicists for a long time.",
+   "It's called the righting reflex, and it puzzled physicists for a long time."
+  ],
+  [
+   "Because a falling cat has nothing to **push against.**",
+   "Because a falling cat has nothing to push against."
+  ],
+  [
+   "And physics says you can't start spinning in midair from **nothing.**",
+   "And physics says you can't start spinning in midair from nothing."
+  ],
+  [
+   "That rule is called **conservation of angular momentum.**",
+   "That rule is called conservation of angular momentum."
+  ],
+  [
+   "Here's the trick: a cat isn't one stiff piece. It **bends in the middle.**",
+   "Here's the trick: a cat isn't one stiff piece. It bends in the middle."
+  ],
+  [
+   "First it turns its **front half,** tucking its front legs in to turn faster,",
+   "First it turns its front half, tucking its front legs in to turn faster,"
+  ],
+  [
+   "while its back half twists a little the **other way.**",
+   "while its back half twists a little the other way."
+  ],
+  [
+   "Then it swaps: the **back half** turns, while the front half stays put.",
+   "Then it swaps: the back half turns, while the front half stays put."
+  ],
+  [
+   "Each twist is balanced by an opposite twist, so the **total spin stays zero.**",
+   "Each twist is balanced by an opposite twist, so the total spin stays zero."
+  ],
+  [
+   "Physicists think cats mix moves: the **bend and twist,** and the **tuck and turn.**",
+   "Physicists think cats mix moves: the bend and twist, and the tuck and turn."
+  ],
+  [
+   "**But** landing on its feet doesn't mean landing **safe.**",
+   "But landing on its feet doesn't mean landing safe."
+  ],
+  [
+   "Vets have a name for falls from windows and balconies: **high-rise syndrome.**",
+   "Vets have a name for falls from windows and balconies: high-rise syndrome."
+  ],
+  [
+   "In one study of 119 cats, nearly half had **broken legs.**",
+   "In one study of a hundred and nineteen cats, nearly half had broken legs."
+  ],
+  [
+   "And falls from the seventh floor or higher caused **worse injuries.**",
+   "And falls from the seventh floor or higher caused worse injuries."
+  ],
+  [
+   "So cats are physics experts in midair, but they're **not indestructible.**",
+   "So cats are physics experts in midair, but they're not indestructible."
+  ],
+  [
+   "**Graceful?**",
+   "Graceful?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
