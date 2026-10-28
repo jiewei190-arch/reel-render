@@ -15,7 +15,7 @@
 | 43 | brainfreeze | Why do you get brain freeze? | H1 | merged, Nov 5 19:00 |
 | 48 | eggflip | Why do eggs turn solid when you cook them? | H1 | merged, Nov 6 19:00 |
 
-| 44 | earpop | Why do your ears pop on a plane? | H4 | merged, Nov 5 21:30 (renumbered from 45; v2 coming) |
+| 44 | earpop | Why do your ears pop on a plane? | H4 | merged v2, Nov 5 21:30 |
 | 46 | slipperyice | Why is ice slippery? | H4 | merged, Nov 6 13:00 (v2 coming) |
 | 47 | snowflake | Why do snowflakes have six sides? | H3 | queued |
 | 45 | runnynose | Why does your nose run when it's cold? | H3 | building (renumbered from 48) |

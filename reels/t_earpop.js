@@ -85,7 +85,7 @@ function press(t) {
 const hookState = t => { const c = (t + .9) % 2.6; const u = ss(clamp(c / 1.5)); return { pin: .8 + .2 * ss(R(c, 1.5, .4)), pout: 1, b: -.6 * (1 - ss(R(c, 1.5, .4))), o: Math.sin(Math.PI * clamp(c / 1.8)), bub: { u, a: 1 - ss(R(c, 1.45, .2)) }, pop: R(c, 1.5, .55), waves: 0, t, k: 1 }; };
 
 // ---------- shared devices ----------
-function caption(t, o = {}) { if (PREV) return; let ci = -1; PH.forEach((p, k) => { if (t >= p.start - .05) ci = k; }); if (ci < 0) return; const p = pageAt(t); if (PH[ci].start < p[0] - .15) return; F.body(PH[ci].cap, 80, o.y || CAPY, 800, t - PH[ci].start + .05, { size: 48, ...o }); }
+function caption(t, o = {}) { if (PREV) return; let ci = -1; PH.forEach((p, k) => { if (t >= p.start - .05) ci = k; }); if (ci < 0) return; const p = pageAt(t); if (PH[ci].start < p[0] - .15) return; F.body(PH[ci].cap, 80, o.y || CAPY, 800, t - PH[ci].start + .05, { size: 48, cps: 120, ...o }); }
 function chapter(t, label, head, t0) { F.label(label, 80, LBY, t - t0); F.head(head, 76, HDY, t - t0 - .35, { size: 84 }); }
 // the demo's chart: altitude over a flight; plane line (graphite) and cabin line (red, dashed). maps 0..1 time, feet
 const PROF = u => u < .3 ? ss(u / .3) : u < .62 ? 1 : 1 - ss((u - .62) / .33);
@@ -111,10 +111,16 @@ function page1(t) {
   F.seal('EAR', 900, 400, ss(R(t, .3, .35)), { size: 62, round: true, f: 'mono', fs: 30 });
   // big red hatched circle (the demo's sun) behind the cross-section
   const ring = []; for (let i = 0; i <= 48; i++) { const a = i / 48 * Math.PI * 2; ring.push([560 + Math.cos(a) * 250, 860 + Math.sin(a) * 250]); } F.hatch(ring, 'red', { alpha: .45 }); F.pencil(ring, { col: C.red, w: 2, seed: 2, alpha: .7 });
-  const st = hookState(t); place(70, 600, .82, st);
+  const st = hookState(t); place(70, 600, .82, st); g.save(); g.translate(880, 680); g.scale(1.4, 1.4); g.translate(-880, -680); planeWindow(880, 680, t); g.restore();
   if (t > s(1) - .2) { F.box(80, 1064, 340, 110, ss(R(t, s(1) - .2, .5))); F.txt('Why do ears pop', 106, 1110, { size: 34, f: 'hand', write: ss(R(t, s(1), .7)) }); F.txt('on a plane?', 106, 1152, { size: 34, f: 'hand', col: C.red, write: ss(R(t, s(1) + .4, .5)) }); }
   caption(t);
 }
+// "on a plane" cue (frame 0): an airliner window, clouds sliding past, a seatbelt sign above it
+function planeWindow(x, y, t) { const w = 120, h = 168, O = []; for (let i = 0; i <= 40; i++) { const a = i / 40 * Math.PI * 2; O.push([x + Math.cos(a) * w / 2, y + Math.sin(a) * h / 2]); }
+  const I = O.map(([a, b]) => [x + (a - x) * .78, y + (b - y) * .8]); F.hatch(O, 'graph', { alpha: .45 }); g.save(); F.path(I); g.fillStyle = F.paperPat(); g.globalAlpha = F.S.A; g.fill(); g.clip(); F.hatch(I, 'navyL', { alpha: .55 });
+  for (let i = 0; i < 3; i++) { const cx = x + 80 - ((t * 60 + i * 70) % 220), cy = y - 30 + i * 34; F.pencil([[cx - 26, cy], [cx - 16, cy - 12], [cx, cy - 16], [cx + 14, cy - 10], [cx + 26, cy]], { w: 1.8, wob: .4 }); } g.restore();
+  F.pencil(O, { close: true, w: 2.4, seed: 51 }); F.pencil(I, { close: true, w: 1.8, seed: 52 });
+  F.rect(x - 52, y - 150, 104, 50, { w: 2, seed: 53 }); F.circ(x - 24, y - 125, 10, { col: C.red, w: 2 }); F.pencil([[x - 2, y - 136], [x - 2, y - 114], [x + 18, y - 114]], { col: C.red, w: 2.4, wob: .3 }); F.pencil([[x + 10, y - 132], [x + 30, y - 132], [x + 30, y - 118]], { col: C.red, w: 2.4, wob: .3 }); }
 function page2(t, p) {
   chapter(t, 'NO. 01 — THE MIDDLE EAR', 'A pocket of air.', p[0]);
   const st = { ...press(t), k: ss(R(t, p[0] + .2, 2.4)), waves: ss(R(t, p[0] + .8, .6)) }; const z = 1 + .1 * ss(R(t, p[0] + 1, p[1] - p[0] - 1)); const m = place(50 - 330 * (z - 1), 440 - 280 * (z - 1), .85 * z, st);
@@ -167,7 +173,7 @@ function counters(t, st, t0) { const a = ss(R(t, t0, .6)); F.box(80, 1064, 380, 
   const d = st.pin - st.pout; F.txt(Math.abs(d) < .02 ? '=' : d > 0 ? '<' : '>', 480, 1144, { size: 60, f: 'hand', align: 'center', col: Math.abs(d) < .02 ? C.ink : C.red }); F.alpha(BASE); }
 function page5(t, p) {
   chapter(t, 'NO. 04 — THE DESCENT', 'Now it pushes in.', p[0]);
-  const st = { ...press(t), k: ss(R(t, p[0] + .2, 1.2)), waves: .6 + .4 * ss(R(t, s(9) + 1.4, .5)), mute: ss(R(t, s(9) + 2.2, .8)) }; const m = place(50, 440, .85, st);
+  const st = { ...press(t), k: ss(R(t, p[0] + .2, 1.2)), waves: .6 + .4 * ss(R(t, s(9) + 1.4, .5)), mute: ss(R(t, s(9) + 2.2, .8)) }; const z = 1 + .1 * ss(R(t, p[0] + .5, p[1] - p[0] - .5)); const m = place(50 - 330 * (z - 1), 440 - 280 * (z - 1), .85 * z, st);
   const inn = ss(R(t, s(9), .6)); if (inn > 0) { const [ax, ay] = m(250, 300), [bx, by] = m(420, 300); F.arrow([[ax, ay - 34], [bx, by - 34]], { draw: inn, w: 3.6 }); F.arrow([[ax, ay + 34], [bx, by + 34]], { draw: inn, w: 3.6 }); }
   const [nx, ny] = m(440, 364); note('stretched', 110, 930, nx - 10, ny, R(t, s(9) + 1.0, .8), { col: C.red });
   const words = [['muffled', 110, 1020], ['full', 300, 1030], ['ouch', 430, 1040]]; words.forEach(([w, x, y], i) => { const k = R(t, s(9) + 2.4 + i * .8, .5); if (k > 0) F.txt(w, x, y, { size: 44, f: 'hand', col: i === 2 ? C.red : C.graph, write: ss(k), rot: -.06 + i * .05 }); });
@@ -236,7 +242,6 @@ function scene(t) {
   F.begin(); const p = pageAt(t); F.footer(p[2]);
   const pi = PG.indexOf(p); if (pi > 0 && t < p[0] + .35) { const q = PG[pi - 1]; BASE = 1 - ss(R(t, p[0], .35)); F.alpha(BASE); PREV = true; PAGES[q[2]](Math.min(t, q[1] - .01), q); PREV = false; F.alpha(1); }
   BASE = pi === 0 ? 1 : ss(R(t, p[0], .35)); F.alpha(BASE); PAGES[p[2]](t, p); F.alpha(1); BASE = 1;
-  if (p[2] >= 2 && p[2] <= 8) strip(t, p[2] === 2 ? ss(R(t, p[0] + .3, .5)) : 1);
   // loop: the last 0.7 s dissolve back toward the frame-0 page
   const L = R(t, TL.total - .7, .7); if (L > 0) { F.alpha(ss(L) * .5); page1(0); F.alpha(1); }
 }
