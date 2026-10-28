@@ -32,6 +32,7 @@ OVR = {
     "staticshock": {"spot": (44, 1366)},   # H3: free strip under the captions
     "coldbreath": {"spot": (44, 1366)},   # H3: free strip under the captions
     "stomachgrowl": {"spot": ("R", 260)},   # H2: hanging signs moved down to y 340 so the top-right badge clears them
+    "catpurr": {"spot": (44, 680), "hide": [(7.4, 49.6)]},   # H2: plaques fill the top band; mid-left is clear in the hook and from 49.6 s
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
