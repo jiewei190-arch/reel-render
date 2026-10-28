@@ -400,7 +400,7 @@ window.thumb = () => {
   const D = drawingAt(1, 2, 7); CURD = D;
   ctx.setTransform(1, 0, 0, 1, 0, 0); drawPaper(ctx, { x: 0, y: 0 });
   turkey(ctx, CX, 1150, 1.15, { k: 50, pop: 1 });
-  star(ctx, CX + 80, 860, 120, seedFor(D, 3)); speedLines(ctx, CX + 80, 900, 120, 260, 12, seedFor(D, 4));
+  star(ctx, CX + 300, 880, 95, seedFor(D, 3)); title(ctx, 'POP!', CX + 300, 880, 80, PAL.red, { seed: 13 });
   title(ctx, 'HOW DOES', CX, 420, 150, PAL.ink, { seed: 11 }); title(ctx, 'IT KNOW?', CX, 590, 170, PAL.red, { seed: 12 });
   drawTooth(ctx, D);
 };
