@@ -31,6 +31,16 @@ OVR = {
     "snowwhite": {"spot": (44, 1360)},  # top band holds the search bar and handwritten labels; empty strip under the captions
     "yawn": {"spot": (44, 920), "hide": [(63.5, 99.0)]},        # top band holds titles, frames and chalkboards; mid-left wall is the quietest (edge scan)
     "wrinklyfingers": {"spot": ("R", 260), "hide": [(12.8, 17.8), (34.8, 37.8)]},  # captions run to 3 lines here; top-right band is clear
+    "handwarmer": {"spot": (44, 1366)},   # titles and labels fill the top; the strip under the captions is always empty
+    "popcorn": {"spot": (44, 1050)},     # low-left over stove art, above the captions; top-left hits the hook plaques
+    "staticshock": {"spot": (44, 1366)},   # H3: free strip under the captions
+    "coldbreath": {"spot": (44, 1366)},   # H3: free strip under the captions
+    "stomachgrowl": {"spot": ("R", 260)},   # H2: hanging signs moved down to y 340 so the top-right badge clears them
+    "catpurr": {"spot": (44, 680), "hide": [(7.4, 49.6)]},   # H2: plaques fill the top band; mid-left is clear in the hook and from 49.6 s
+    "earpop": {"spot": ("R", 260)},   # H4: top-right is clear of the field-note titles
+    "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
+    "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
+    "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

@@ -96,9 +96,9 @@ function caption(ph, t, out) { if (!ph) return; const c = g; c.save(); c.setTran
 // ---------- scenes ----------
 // A p0-1: frame 0 = the kid mid-yawn, the box creature catching it; ransom title; p1 the search question chalked on the wall
 function sceneA(t) { AD.set('#5d4a7a', '#3a2c46', { fy: FY }); lg.fillStyle = 'rgba(0,0,0,.12)'; for (let x = 0; x < W; x += 120) lg.fillRect(x, 0, 50, FY - 34);
-  const k1 = .55 + .45 * Math.sin(Math.min(t, 2.6) * 1.2 + .9), k2 = ss(R(t, 1.4, 1.2)) * (t < s(1) + 2 ? 1 : .5 + .5 * Math.sin(t * 2));
+  const k1 = .55 + .45 * Math.sin(Math.min(t, 2.6) * 1.2 + .9), k2 = ss(R(t, -0.7, 1.6)) * (t < s(1) + 2 ? 1 : .5 + .5 * Math.sin(t * 2));
   kidYawn(330, FY - 10, 1.15, t, Math.max(.15, k1)); AD.boxy(770, FY - 10, 1.4, t, { mood: k2 > .5 ? 'sleepy' : 'o', hop: t < 1.4 ? t * .8 : 0 });
-  if (k2 > .3) { const c = lg; c.save(); AD.shape(AD.poly(770, FY - 10 - 64 * 1.4, 14 + 22 * k2, 10 + 30 * k2, 16), '#7a2a20', { seed: 401, lw: 3 }); c.restore(); }
+  if (k2 > .12) { const c = lg; c.save(); AD.shape(AD.poly(770, FY - 10 - 64 * 1.4, 14 + 22 * k2, 10 + 30 * k2, 16), '#7a2a20', { seed: 401, lw: 3 }); c.restore(); }
   yawnWave(450, 560, 690, 760, clamp(t / 1.2), 8, t);
   ransomLine('YAWNS', 320, 104, 3, i => R(t, -1 + i * .05, .2), 560); ransomLine('SPREAD?', 440, 104, 41, i => R(t, -1 + i * .05, .2), 560);
   if (t > s(1)) { const k = R(t, s(1) + .2, 1.6); AD.plaque(460, 520, 420, 150, ['Why are yawns', 'contagious?'], { size: 46, f: 'round', t, top: 64, lh: 56 }); lg.save(); lg.globalAlpha = 1 - k; lg.fillStyle = '#5d4a7a'; lg.fillRect(450, 510, 440 * (1 - k), 170); lg.restore(); } }
