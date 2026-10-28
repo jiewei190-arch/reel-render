@@ -41,10 +41,10 @@
 | 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 71 | sneeze | Why do we sneeze? | H3 | queued |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
-| 73 | eyeblink | Why do we blink so much? | H4 | queued |
+| 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
 | 75 | earwax | What is earwax actually for? | H1 | queued |
-| 76 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v1, Nov 12 13:00 (badge nudge pending) |
+| 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v1, Nov 11 19:00 (renumbered from 76; re-badge --ep 73 pending) |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
@@ -55,4 +55,4 @@ Next ideas (unassigned; check the research agent's list when it arrives): why le
 
 Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Numbers 49 and 50 went to H2's leafcolor and candle (Oct 28).
 
-Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 eyeblink handdrawn Playful or papercut-red · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 bluejeans stop-motion explainer (#24). Workers: send your pick to the main session, which records it here (you can only push your own branch).
+Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 bluejeans stop-motion explainer (#24, swapped) · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 eyeblink collage AI Doom (#13, swapped). Workers: send your pick to the main session, which records it here (you can only push your own branch).
