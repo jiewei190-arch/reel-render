@@ -77,7 +77,8 @@ function surfaceWorld(t) {          // ultraviolet + ice blue: the molecular sur
   for (let i = 0; i < 14; i++) { const x = hash(i * 3.3) * 1080, y = hash(i * 5.1) * 500 + 330, r = 6 + 5 * Math.sin(t * 4 + i); star(x, y, r, '#9cf2ff', 3); }
 }
 // molecules: a stuck lattice below, loose rollers on top; scramble 0..1 jumbles the top rows (the 2025 simulation)
-function lattice(t, o = {}) { const { y0 = 1020, rows = 9, roll = 1, scramble = 0, hi = -1, z = 1 } = o; const sp = 104 * z;
+function lattice(t, o = {}) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.beginPath(); g.rect(0, 0, 870, 1640); g.clip(); latticeIn(t, o); g.restore(); reset(); stroke([[870, (o.y0 ?? 1020) - 60], [870, 1640], [-20, 1640]], 9, { line: '#9cf2ff' }); }
+function latticeIn(t, o = {}) { const { y0 = 1020, rows = 6, roll = 1, scramble = 0, hi = -1, z = 1 } = o; const sp = 104 * z;
   for (let r = rows - 1; r >= 0; r--) for (let c = -1; c < 12; c++) { const x0 = c * sp + (r % 2 ? sp / 2 : 0), y = y0 + r * sp * .86; const top = r === 0, jit = scramble * (rows - r) / rows; const jx = (hash(c * 7 + r * 13 + Math.floor(t * 12)) - .5) * 40 * jit, jy = (hash(c * 3 + r * 5 + Math.floor(t * 12) + 9) - .5) * 30 * jit;
     const x = x0 + jx, yy = y + jy;
     if (r < rows - 1 && jit < .3) { stroke([[x, yy], [x + sp / 2, yy + sp * .86]], 6 * z, { line: '#7fb8e6' }); stroke([[x, yy], [x - sp / 2, yy + sp * .86]], 6 * z, { line: '#7fb8e6' }); }
@@ -106,8 +107,8 @@ const SH = {
     skater(P(t, { x, y: 1300, s: 1.35, lean: .14, nerv: .2, look: [.8, -.1], mouth: { o: .4, sm: .6 }, eyeS: 1.15, armL: { h: [-90, -20], bend: 20 }, armR: { h: [90, -30], bend: -20 }, kick: 10 * Math.sin(t * 8) }));
     for (let i = 0; i < 6; i++) { const k = (t * 3 + i / 6) % 1; dot(x - 60 - k * 120, 1290 - Math.sin(k * Math.PI) * 50 - i * 4, 8 * (1 - k) + 3, '#ffffff'); }
     // the myth panel: a weight squashing ice into water, stamped NOT IT
-    const pk = back(seg(tq, .9, 1.2), 2) * (1 - seg(t, s(1) - .5, s(1) - .3)); if (pk > 0) { push(); translate(540, 650); scale(pk); shape(rr(-300, -110, 600, 220, 18), { fill: '#fff3d6', lw: 7 }); shape(rr(-250, -80, 120, 90, 10), { fill: '#3a3d4a', lw: 6 }); text('KG', -190, -34, { font: '400 40px Bungee', fill: '#fff3d6' });
-      text('→', -80, -30, { font: '800 70px "Baloo 2"', fill: INK }); shape(ell(60, -20, 80, 26, 20), { fill: '#9fd2ef', lw: 6 }); text('MELT?', 180, -30, { font: '400 44px Bungee', fill: '#3a7fb0' }); text('the old answer', 0, 66, { font: '800 40px "Baloo 2"', fill: INK }); pop(); stamp(540, 640, back(seg(tq, 1.9, 2.15), 2.4)); }
+    const pk = back(seg(tq, .9, 1.2), 2) * (1 - seg(t, s(1) - .5, s(1) - .3)); if (pk > 0) { push(); translate(540, 735); scale(pk); shape(rr(-300, -100, 600, 200, 18), { fill: '#fff3d6', lw: 7 }); shape(rr(-250, -80, 120, 90, 10), { fill: '#3a3d4a', lw: 6 }); text('KG', -190, -34, { font: '400 40px Bungee', fill: '#fff3d6' });
+      text('→', -80, -30, { font: '800 70px "Baloo 2"', fill: INK }); shape(ell(60, -20, 80, 26, 20), { fill: '#9fd2ef', lw: 6 }); text('MELT?', 180, -30, { font: '400 44px Bungee', fill: '#3a7fb0' }); text('the old answer', 0, 60, { font: '800 40px "Baloo 2"', fill: INK }); pop(); stamp(540, 725, back(seg(tq, 1.9, 2.15), 2.4)); }
   },
   lab(t, tq) {   // two-shot at the board: the suspect line-up, then Juno opens the portal
     const z = lerp(1.0, 1.04, ss(seg(t, HCUT, s(2)))); cam(540, 1000, z);
@@ -118,15 +119,15 @@ const SH = {
   },
   press(t, tq) {   // U-1: a big press drives a skate blade into an ice block; gauge to 466 atm, melt at -3.5; then -35 and the standing-still slip
     const cold = t > s(4) - .1;
-    if (!cold) { cam(540, 960, 1); pressureWorld(t); push(); translate(0, -170);
+    if (!cold) { cam(540, 960, 1); pressureWorld(t); push(); translate(0, -90);
       const dn = ss(seg(t, s(3) + .2, s(3) + 1.6)), py = lerp(520, 690, dn);
-      shape(rr(150, 300, 60, 1170, 10), { fill: "#8a5e22", lw: 7 }); shape(rr(870, 300, 60, 1170, 10), { fill: '#8a5e22', lw: 7 }); shape(rr(120, 240, 840, 90, 14), { fill: '#b8873a', lw: 8 });
+      shape(rr(150, 300, 60, 1090, 10), { fill: "#8a5e22", lw: 7 }); shape(rr(870, 300, 60, 1090, 10), { fill: '#8a5e22', lw: 7 }); shape(rr(120, 240, 840, 90, 14), { fill: '#b8873a', lw: 8 });
       shape(rr(500, 330, 80, py - 330 - 60, 8), { fill: '#d6b56a', lw: 6 }); shape(rr(380, py - 70, 320, 70, 12), { fill: '#3a3d4a', lw: 7 });
       shape(spline([[400, py], [680, py], [700, py + 10], [690, py + 24], [400, py + 24]], true, 4), { fill: '#d7e4ee', lw: 6 });
-      shape(rr(260, 700, 560, 420, 16), { fill: '#d6f2ff', lw: 8, shade: () => { fillOnly(rect(700, 700, 120, 420), '#b6e3f7', { boil: .3 }); for (let i = 0; i < 3; i++) stroke([[300 + i * 40, 760 + i * 30], [340 + i * 40, 740 + i * 30]], 5, { line: '#ffffff' }); } });
+      shape(rr(260, 700, 560, 360, 16), { fill: '#d6f2ff', lw: 8, shade: () => { fillOnly(rect(700, 700, 120, 360), '#b6e3f7', { boil: .3 }); for (let i = 0; i < 3; i++) stroke([[300 + i * 40, 760 + i * 30], [340 + i * 40, 740 + i * 30]], 5, { line: '#ffffff' }); } });
       if (dn > .8) { const m = ss(seg(t, s(3) + 1.6, s(3) + 3.0)); fillOnly(ell(540, 712, 150 * m, 14 * m + 1, 20), '#3fa9ff', { boil: .4 }); for (let i = 0; i < 4; i++) { const u = (t * 1.4 + i / 4) % 1; dot(420 + i * 70, 712 + u * 30, 7 * (1 - u) + 2, '#3fa9ff'); } }
-      pop(); if (t > s(3) + 1.0) { const a = Math.round(lerp(1, 466, ss(seg(t, s(3) + 1.0, s(3) + 3.2)))); readout(290, 1050, 380, a + ' atm', "Joly's estimate", { bg: '#3a2410', fg: '#f3d9a4' }); }
-      if (t > s(3) + 3.0) readout(740, 1050, 360, '-3.5°C', 'new melting point', { bg: '#3a2410', fg: '#9cf2ff' });
+      pop(); if (t > s(3) + 1.0) { const a = Math.round(lerp(1, 466, ss(seg(t, s(3) + 1.0, s(3) + 3.2)))); readout(290, 480, 380, a + ' atm', "Joly's estimate", { bg: '#3a2410', fg: '#f3d9a4' }); }
+      if (t > s(3) + 3.0) readout(780, 480, 330, '-3.5°C', 'new melting point', { bg: '#3a2410', fg: '#9cf2ff' });
       juno(J(t, { x: 1010, y: FLOOR + 10, s: .62, look: [-.6, -.4] }));
     } else { cam(540, 960, 1); rink(t); const v = Math.round(lerp(-3.5, -35, ss(seg(t, s(4), s(4) + 1.2))));
       thermo(870, 560, v, -40, 0); readout(870, 900, 300, v.toFixed(v > -10 ? 1 : 0) + '°C', 'people still skate', { bg: '#0f2b3b' });

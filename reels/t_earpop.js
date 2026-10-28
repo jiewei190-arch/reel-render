@@ -37,10 +37,10 @@ function ear(st) {
   // pressure dots: count follows pressure (the demo's stippled density)
   const da = ss(R(k, .6, .3));
   if (da > 0) { const nin = Math.round(DOTS_IN.length * clamp((st.pin ?? .75) / 1.3)), nout = Math.round(DOTS_OUT.length * clamp((st.pout ?? .75) / 1.3));
-    DOTS_IN.slice(0, nin).forEach(([x, y], i) => F.circ(x + Math.sin(t * 2.3 + i) * 4, y + Math.cos(t * 1.9 + i * 2) * 4, 4.5, { col: C.navy, w: 2, alpha: da * .9, wob: .3, seed: i }));
-    DOTS_OUT.slice(0, nout).forEach(([x, y], i) => F.circ(x + Math.sin(t * 2.1 + i * 3) * 4, y + Math.cos(t * 1.7 + i) * 4, 4.5, { col: C.red, w: 2, alpha: da * .8, wob: .3, seed: 40 + i })); }
+    DOTS_IN.slice(0, nin).forEach(([x, y], i) => F.circ(x + Math.sin(t * 3.4 + i) * 9, y + Math.cos(t * 2.9 + i * 2) * 9, 5, { col: C.navy, w: 2, alpha: da * .9, wob: .3, seed: i }));
+    DOTS_OUT.slice(0, nout).forEach(([x, y], i) => F.circ(x + Math.sin(t * 3.1 + i * 3) * 9, y + Math.cos(t * 2.6 + i) * 9, 5, { col: C.red, w: 2, alpha: da * .8, wob: .3, seed: 40 + i })); }
   // sound waves into the canal (muffled = they fade at the drum)
-  if (st.waves > 0) for (let i = 0; i < 4; i++) { const u = (t * .7 + i / 4) % 1, x = lerp(60, 420, u), P = []; for (let j = 0; j <= 10; j++) { const a = -0.7 + j / 10 * 1.4; P.push([x + Math.cos(a) * 26, 300 + Math.sin(a) * 34]); } F.pencil(P, { col: C.graph, w: 2, alpha: st.waves * Math.sin(u * Math.PI) * (1 - (st.mute || 0) * u), wob: .3 }); }
+  const wv = st.waves ?? .8; if (wv > 0) for (let i = 0; i < 4; i++) { const u = (t * .7 + i / 4) % 1, x = lerp(60, 420, u), P = []; for (let j = 0; j <= 10; j++) { const a = -0.7 + j / 10 * 1.4; P.push([x + Math.cos(a) * 26, 300 + Math.sin(a) * 34]); } F.pencil(P, { col: C.graph, w: 2.4, alpha: wv * Math.sin(u * Math.PI) * (1 - (st.mute || 0) * u), wob: .3 }); }
   // line work
   F.pencil(PINNA, { ...ow, draw: ss(R(k, 0, .35)), seed: 1 });
   F.pencil(CAN_U, { ...ow, draw: ss(R(k, .05, .3)), seed: 2 }); F.pencil(CAN_L, { ...ow, draw: ss(R(k, .07, .3)), seed: 3 });
@@ -95,7 +95,7 @@ function profile(x, y, w, h, t, a, um, o = {}) {
   F.pencil([[x, y - 10], [x, y + h], [x + w + 10, y + h]], { w: 1.6, col: C.graph, draw: a });
   F.pencil(P, { w: 2.6, draw: a, seed: 3 }); F.pencil(Q, { col: C.red, w: 2.4, dash: [10, 7], draw: ss(R(a, .3, .7)), seed: 4 });
   if (o.hi) { const H0 = o.hi[0], H1 = o.hi[1], S = []; for (let i = 0; i <= 30; i++) { const u = lerp(H0, H1, i / 30); S.push([x + u * w, y + h - PROF(u) * h]); } F.pencil(S, { col: C.red, w: 6, draw: o.hk ?? 1, wob: .5 }); }
-  if (um != null) { const u = clamp(um), px = x + u * w, py = y + h - PROF(u) * h, ang = Math.atan2(-(PROF(clamp(u + .01)) - PROF(clamp(u - .01))) * h, .02 * w); plane(px, py - 6, o.ps || 1, ang); }
+  if (um != null) { const u = clamp(um), px = x + u * w, py = y + h - PROF(u) * h, ang = Math.atan2(-(PROF(clamp(u + .01)) - PROF(clamp(u - .01))) * h, .02 * w); plane(px, py - 6 + Math.sin(t * 3.1) * 8, o.ps || 1, ang + Math.sin(t * 2.3) * .08); }
 }
 function plane(x, y, sc, ang) { g.save(); g.translate(x, y); g.rotate(ang); g.scale(sc, sc); const body = [[-34, 0], [-26, -7], [26, -7], [36, -2], [36, 3], [-30, 5]];
   F.hatch(body, 'navyL', { alpha: .7 }); F.pencil(body, { close: true, w: 2, wob: .3 }); F.pencil([[-4, -5], [10, -22], [16, -22], [8, -4]], { w: 2, wob: .3 }); F.pencil([[-2, 3], [12, 16], [18, 16], [8, 2]], { w: 2, wob: .3 }); F.pencil([[-28, -6], [-36, -20], [-30, -20], [-20, -7]], { w: 2, wob: .3 }); g.restore(); }
@@ -105,7 +105,7 @@ function strip(t, a) { if (a <= 0) return; F.alpha(F.S.A * a); profile(130, 1450
 
 // ---------- pages ----------
 function page1(t) {
-  F.label('A FIELD SKETCHBOOK  ·  FLIGHT NOTES', 80, LBY, 9);
+  F.label('FIELD NOTES  ·  FLIGHT', 80, LBY, 9);
   const w1 = F.txt('That ', 74, 430, { size: 112, f: 'hand', rot: -.015 }); F.txt('pop', 74 + w1, 426, { size: 112, f: 'hand', col: C.red, rot: -.015 }); F.txt('is a bubble of air.', 74, 540, { size: 92, f: 'hand', rot: -.015 });
   F.line(84, 566, 800, 558, { col: C.red, w: 2.6, draw: ss(R(t, 0, .6)), wob: .6 });
   F.seal('EAR', 900, 400, ss(R(t, .3, .35)), { size: 62, round: true, f: 'mono', fs: 30 });
@@ -116,8 +116,8 @@ function page1(t) {
   caption(t);
 }
 function page2(t, p) {
-  chapter(t, 'NO. 01 — THE MIDDLE EAR  ·  fig. a', 'A pocket of air.', p[0]);
-  const st = { ...press(t), k: ss(R(t, p[0] + .2, 2.4)), waves: ss(R(t, p[0] + 2.4, .6)) }; const m = place(50, 440, .85, st);
+  chapter(t, 'NO. 01 — THE MIDDLE EAR', 'A pocket of air.', p[0]);
+  const st = { ...press(t), k: ss(R(t, p[0] + .2, 2.4)), waves: ss(R(t, p[0] + .8, .6)) }; const z = 1 + .1 * ss(R(t, p[0] + 1, p[1] - p[0] - 1)); const m = place(50 - 330 * (z - 1), 440 - 280 * (z - 1), .85 * z, st);
   const lab = (txt, lx, ly, px, py, t0, o) => { const [x, y] = m(px, py), [tx, ty] = m(lx, ly); note(txt, x, y, tx, ty, R(t, t0, .8), o); };
   lab('eardrum', 440, 236, 300, 150, s(2) + 1.4, { col: C.red });
   lab('middle ear', 600, 180, 560, 70, s(2) + 2.4);
@@ -133,7 +133,7 @@ function page2(t, p) {
   caption(t);
 }
 function page3(t, p) {
-  chapter(t, 'NO. 02 — THE CABIN  ·  fig. b', 'Thinner air up high.', p[0]);
+  chapter(t, 'NO. 02 — THE CABIN', 'Thinner air up high.', p[0]);
   // the demo's chart: flight profile, axis notes
   const k = ss(R(t, p[0] + .3, 1.6)); const x = 110, y = 520, w = 780, h = 300;
   profile(x, y, w, h, t, k, lerp(0, .5, ss(R(t, p[0] + .6, 4))));
@@ -151,7 +151,7 @@ function page3(t, p) {
   caption(t);
 }
 function page4(t, p) {
-  chapter(t, 'NO. 03 — THE CLIMB  ·  fig. c', 'It pushes out.', p[0]);
+  chapter(t, 'NO. 03 — THE CLIMB', 'It pushes out.', p[0]);
   const st = { ...press(t), k: ss(R(t, p[0] + .2, 1.2)) }; const m = place(50, 440, .85, st);
   // arrows out of the middle ear while inside > outside
   const out = ss(R(t, s(6) + .4, .6)) * (1 - ss(R(t, s(7) + 1.2, .5)));
@@ -166,8 +166,8 @@ function counters(t, st, t0) { const a = ss(R(t, t0, .6)); F.box(80, 1064, 380, 
   F.txt('MIDDLE EAR', 528, 1100, { size: 22, f: 'mono', wt: 700, ls: 3, col: '#5d5d62' }); F.txt(Math.round(st.pin * 100) + '%', 700, 1166, { size: 64, f: 'hand', col: C.navy });
   const d = st.pin - st.pout; F.txt(Math.abs(d) < .02 ? '=' : d > 0 ? '<' : '>', 480, 1144, { size: 60, f: 'hand', align: 'center', col: Math.abs(d) < .02 ? C.ink : C.red }); F.alpha(BASE); }
 function page5(t, p) {
-  chapter(t, 'NO. 04 — THE DESCENT  ·  fig. d', 'Now it pushes in.', p[0]);
-  const st = { ...press(t), k: ss(R(t, p[0] + .2, 1.2)), waves: ss(R(t, s(9) + 1.4, .5)), mute: ss(R(t, s(9) + 2.2, .8)) }; const m = place(50, 440, .85, st);
+  chapter(t, 'NO. 04 — THE DESCENT', 'Now it pushes in.', p[0]);
+  const st = { ...press(t), k: ss(R(t, p[0] + .2, 1.2)), waves: .6 + .4 * ss(R(t, s(9) + 1.4, .5)), mute: ss(R(t, s(9) + 2.2, .8)) }; const m = place(50, 440, .85, st);
   const inn = ss(R(t, s(9), .6)); if (inn > 0) { const [ax, ay] = m(250, 300), [bx, by] = m(420, 300); F.arrow([[ax, ay - 34], [bx, by - 34]], { draw: inn, w: 3.6 }); F.arrow([[ax, ay + 34], [bx, by + 34]], { draw: inn, w: 3.6 }); }
   const [nx, ny] = m(440, 364); note('stretched', 110, 930, nx - 10, ny, R(t, s(9) + 1.0, .8), { col: C.red });
   const words = [['muffled', 110, 1020], ['full', 300, 1030], ['ouch', 430, 1040]]; words.forEach(([w, x, y], i) => { const k = R(t, s(9) + 2.4 + i * .8, .5); if (k > 0) F.txt(w, x, y, { size: 44, f: 'hand', col: i === 2 ? C.red : C.graph, write: ss(k), rot: -.06 + i * .05 }); });
@@ -175,7 +175,7 @@ function page5(t, p) {
   caption(t);
 }
 function page6(t, p) {
-  chapter(t, 'NO. 05 — THE CATCH  ·  fig. e', 'Air must get in.', p[0]);
+  chapter(t, 'NO. 05 — THE CATCH', 'Air must get in.', p[0]);
   // close-up of the tube: walls squeezed shut, a bubble waiting at the throat end
   const k = ss(R(t, p[0] + .2, 1.4)); g.save(); g.translate(-690, -210); g.scale(1.75, 1.75);
   const [WA, WB] = tubeWalls(.0); F.hatch([[560, 360], [900, 360], [900, 700], [560, 700]], 'graph', { alpha: .25 * k });
@@ -191,7 +191,7 @@ function page6(t, p) {
   caption(t);
 }
 function page7(t, p) {
-  chapter(t, 'NO. 06 — THE FIX  ·  fig. f', 'Swallow. Yawn. Chew.', p[0]);
+  chapter(t, 'NO. 06 — THE FIX', 'Swallow. Yawn. Chew.', p[0]);
   const st = { ...press(t), k: 1 }; place(50, 440, .85, st);
   counters(t, st, p[0] + .2);
   [['swallow', 0], ['yawn', .5], ['chew gum', 1.0]].forEach(([w, d], i) => { const t0 = s(12) + .2 + d, y = 590 + i * 80; const x = 770; F.rect(x, y - 36, 40, 40, { w: 2.2, draw: ss(R(t, t0, .4)) }); F.pencil([[x + 6, y - 18], [x + 18, y - 4], [x + 44, y - 46]], { col: C.red, w: 3.6, draw: ss(R(t, t0 + .4, .3)) }); F.txt(w, x + 56, y, { size: 36, f: 'hand', write: ss(R(t, t0 + .2, .5)) }); });
@@ -199,11 +199,13 @@ function page7(t, p) {
   caption(t);
 }
 function page8(t, p) {
-  chapter(t, 'NO. 07 — SMALL EARS  ·  fig. g', 'Narrower tubes.', p[0]);
+  chapter(t, 'NO. 07 — SMALL EARS', 'Narrower tubes.', p[0]);
+  const zz = 1 + .1 * ss(R(t, p[0] + 1, p[1] - p[0] - 1)); g.save(); g.translate(540, 820); g.scale(zz, zz); g.translate(-540, -820);
   // two tubes side by side: adult and baby (narrower), drawn like the demo's paired gauges
   const tube = (x, y, hw, lab, t0, col) => { const k = ss(R(t, t0, .8)); const P = F.dense([[x, y], [x + 120, y + 110], [x + 250, y + 230]], 8); const A = offs(P, hw), B = offs(P, -hw);
     g.save(); F.path(A.concat(B.slice().reverse())); g.fillStyle = F.pat(col === C.red ? 'redL' : 'navyL'); g.globalAlpha = F.S.A * k * .7; g.fill(); g.restore(); F.pencil(A, { w: 2.4, draw: k }); F.pencil(B, { w: 2.4, draw: k });
-    F.txt(lab, x, y - 34, { size: 44, f: 'hand', col, write: ss(R(t, t0 + .3, .6)) }); };
+    F.txt(lab, x, y - 34, { size: 44, f: 'hand', col, write: ss(R(t, t0 + .3, .6)) });
+    for (let i = 0; i < 3; i++) { const u = (t * .4 + i / 3) % 1, Q = P[Math.round(u * (P.length - 1))]; F.circ(Q[0], Q[1], hw * .7 + 2, { col: C.navy, w: 2.2, alpha: k * Math.sin(u * Math.PI), wob: .3 }); } };
   tube(120, 560, 15, 'grown-up', p[0] + .3, C.navy); tube(560, 560, 6, 'baby', p[0] + 1.2, C.red);
   F.txt('narrower', 600, 840, { size: 36, f: 'hand', col: C.red, write: ss(R(t, s(13) + 2.4, .6)) });
   // baby face doodle + bottle, near the landing leg of the chart
@@ -213,6 +215,7 @@ function page8(t, p) {
     else { F.pencil([[bx - 18, by + 26], [bx, by + 36], [bx + 18, by + 26]], { w: 2.4, draw: a }); }
     if (!cry) { const k = ss(R(t, s(14) + 2.4, .6)); g.save(); g.translate(bx + 70, by + 40); g.rotate(-.5); F.rect(0, -18, 110, 36, { w: 2.2, draw: k }); F.hatch([[4, -14], [70, -14], [70, 14], [4, 14]], 'ochre', { alpha: .7 * k }); F.pencil([[110, -8], [138, 0], [110, 8]], { w: 2.2, draw: k }); g.restore(); F.txt('swallow!', 480, 1060, { size: 44, f: 'hand', col: C.red, write: ss(R(t, s(14) + 2.8, .6)) }); }
     profile(560, 900, 320, 100, t, a, lerp(.7, .97, R(t, s(14), 3)), { hi: [.62, .95], ps: .6 }); }
+  g.restore();
   caption(t);
 }
 function page9(t, p) {
@@ -235,7 +238,7 @@ function scene(t) {
   BASE = pi === 0 ? 1 : ss(R(t, p[0], .35)); F.alpha(BASE); PAGES[p[2]](t, p); F.alpha(1); BASE = 1;
   if (p[2] >= 2 && p[2] <= 8) strip(t, p[2] === 2 ? ss(R(t, p[0] + .3, .5)) : 1);
   // loop: the last 0.7 s dissolve back toward the frame-0 page
-  const L = R(t, TL.total - .7, .7); if (L > 0) { F.alpha(ss(L) * .9); page1(0); F.alpha(1); }
+  const L = R(t, TL.total - .7, .7); if (L > 0) { F.alpha(ss(L) * .5); page1(0); F.alpha(1); }
 }
 window.DUR = TL.total;
 window.seek = t => scene(t);
