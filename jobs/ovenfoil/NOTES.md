@@ -35,7 +35,7 @@
 - **Loop:** the last 0.5 s crossfades into frame 0 (same sheet).
 - **Ear check:** not done by a human yet.
 
-## qa.py
+## qa.py (re-render after the storyboard notes)
 ```
 QA ovenfoil: PASS   (/home/user/reel-render/jobs/ovenfoil/ovenfoil.mp4, 71.8 s)
   PASS  static          longest no-change run 3.50 s (limit 4.0 s)
@@ -48,8 +48,8 @@ QA ovenfoil: PASS   (/home/user/reel-render/jobs/ovenfoil/ovenfoil.mp4, 71.8 s)
   PASS  length          71.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 14.8 (min 1.0), contrast 31.2 (min 18.0)
-  PASS  9:16 frame      ovenfoil.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 15.8 (min 1.0), contrast 32.3 (min 18.0)
+  PASS  9:16 frame      ovenfoil.mp4 1080x1920 SAR 1:1; ovenfoil_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 
