@@ -1,0 +1,99 @@
+{
+ "name": "contrails",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  5,
+  7,
+  9,
+  11,
+  13,
+  14,
+  15,
+  16
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why do planes leave **white trails** in the sky?",
+   "Why do planes leave white trails in the sky?"
+  ],
+  [
+   "But it isn't **smoke.** The plane is **making a cloud.**",
+   "But it isn't smoke. The plane is making a cloud."
+  ],
+  [
+   "Burning jet fuel makes carbon dioxide and lots of **water vapor.**",
+   "Burning jet fuel makes carbon dioxide and lots of water vapor."
+  ],
+  [
+   "Up at cruising height, the air can be as cold as **minus 70 Fahrenheit.**",
+   "Up at cruising height, the air can be as cold as minus seventy Fahrenheit."
+  ],
+  [
+   "The vapor condenses on tiny specks and **freezes into ice crystals.**",
+   "The vapor condenses on tiny specks and freezes into ice crystals."
+  ],
+  [
+   "Just like your **breath on a cold day.**",
+   "Just like your breath on a cold day."
+  ],
+  [
+   "So why do some trails **vanish in seconds,** and others **stay for hours?**",
+   "So why do some trails vanish in seconds, and others stay for hours?"
+  ],
+  [
+   "It's not the plane. It's **the sky.**",
+   "It's not the plane. It's the sky."
+  ],
+  [
+   "In **dry air,** the new ice **evaporates** almost straight away.",
+   "In dry air, the new ice evaporates almost straight away."
+  ],
+  [
+   "You get a **short white line,** then **nothing.**",
+   "You get a short white line, then nothing."
+  ],
+  [
+   "In **humid air,** the crystals **keep growing,** pulling water from the air around them.",
+   "In humid air, the crystals keep growing, pulling water from the air around them."
+  ],
+  [
+   "Then a trail can hang there for **hours.**",
+   "Then a trail can hang there for hours."
+  ],
+  [
+   "And if the winds up there **shear** it, it **spreads** into a thin sheet of **cirrus cloud.**",
+   "And if the winds up there shear it, it spreads into a thin sheet of cirrus cloud."
+  ],
+  [
+   "In some busy flight corridors, cloud cover is estimated to be up by **as much as 20 percent.**",
+   "In some busy flight corridors, cloud cover is estimated to be up by as much as twenty percent."
+  ],
+  [
+   "And no, they're **not chemtrails.**",
+   "And no, they're not chemtrails."
+  ],
+  [
+   "**2016 survey:** **76 of 77** scientists saw **no evidence** of secret spraying.",
+   "In a twenty sixteen survey, seventy-six of seventy-seven atmospheric scientists had seen no evidence of secret spraying."
+  ],
+  [
+   "So a contrail is a **cloud the plane writes,** and **the sky decides** how long it stays.",
+   "So a contrail is a cloud the plane writes, and the sky decides how long it stays."
+  ],
+  [
+   "Look up today. **Long or short?**",
+   "Look up today. Long or short?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
