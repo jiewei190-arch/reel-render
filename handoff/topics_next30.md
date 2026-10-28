@@ -44,7 +44,7 @@
 | 73 | eyeblink | Why do we blink so much? | H4 | queued |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
 | 75 | earwax | What is earwax actually for? | H1 | queued |
-| 76 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | queued |
+| 76 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v1, Nov 12 13:00 (badge nudge pending) |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
