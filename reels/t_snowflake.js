@@ -98,7 +98,7 @@ function ground(t, tint = 0) { g.setTransform(1, 0, 0, 1, 0, 0); fillPaper(g, 'i
 }
 
 // ---------- cut-out titles: letters pop in one per 12 fps step ----------
-function title(str, x, y, size, k, col = PAL.red, o = {}) { if (k < 0) return; const q = step(k), shown = Math.floor(q * 24) + 1; g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
+function title(str, x, y, size, k, col = PAL.red, o = {}) { if (k < 0) return; const q = step(k), shown = Math.floor(q * 36) + 1; g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
   g.font = `800 ${size}px Fraunces`; const ws = [...str].map(ch => g.measureText(ch).width), tw = ws.reduce((a, b) => a + b, 0); let xx = x - (o.align === 'left' ? 0 : tw / 2);
   [...str].forEach((ch, i) => { if (i >= shown) { xx += ws[i]; return; } if (ch !== ' ') { const p = textPiece(ch, size, 800, col, 'Fraunces', 3 + i), sc = i === shown - 1 ? 1.15 : 1;
       g.save(); g.shadowColor = 'rgba(8,10,30,.55)'; g.shadowBlur = 6; g.shadowOffsetX = 3; g.shadowOffsetY = 5; g.translate(xx + ws[i] / 2, y); g.scale(sc, sc); g.drawImage(p.c, -ws[i] / 2 - 10, -size * 1.02, p.w, p.h); g.restore(); } xx += ws[i]; });
