@@ -28,7 +28,7 @@ OVR = {
     "voicerecording": {"spot": ("R", 256), "hide": [(6.0, 13.7)]},   # H2: own HUD leaves the top-right corner empty; hidden under the centred "two paths" title
     "fridge": {"spot": ("R", 256)},   # H2: top-right above the STATUS field (y 342)
     "gps": {"spot": ("R", 256)},   # H2: on the lamp frame top-right, above the strips inside the box (y 330+)
-    "freezerburn": {"spot": ("R", 256), "hide": [(5.7, 11.8)]},   # H2: top-right sky wash; hidden under the "tiny ice crystals" title
+    "freezerburn": {"spot": ("R", 256), "hide": [(5.7, 11.8), (64.4, 99.0)]},   # H2: top-right sky wash; hidden under the "tiny ice crystals" title and the end card (main)
     "hairgray": {"spot": ("R", 256), "hide": [(16.2, 20.3)]},   # H2: hidden under the "Study Head of an Old Man" card
     "sodabubbles": {"spot": ("R", 256)},
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines

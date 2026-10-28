@@ -6,6 +6,13 @@ Researched Oct 28 2026.
 - Wood J. M. et al., "Senile hair graying: H2O2-mediated oxidative stress affects human hair color...", The FASEB Journal 2009 (DOI 10.1096/fj.08-125435), via ScienceDaily: https://www.sciencedaily.com/releases/2009/02/090223131123.htm
 - Paintings (The Met, Open Access, public domain): Rembrandt, Self-Portrait, 1660 (437397); Style of Rembrandt, Rembrandt as a Young Man (437419); Style of Rembrandt, Study Head of an Old Man (437421). Images in reels/assets/hairgray/.
 
+
+Primary papers (alongside the coverage above):
+- Sun Q. et al., "Dedifferentiation maintains melanocyte stem cells in a dynamic niche", Nature 616:774-782 (2023), DOI 10.1038/s41586-023-05960-6 (mice)
+- Zhang B. et al., "Hyperactivation of sympathetic nerves drives depletion of melanocyte stem cells", Nature 577:676-681 (2020), DOI 10.1038/s41586-020-1935-3 (mice)
+- Wood J. M. et al., "Senile hair graying: H2O2-mediated oxidative stress affects human hair color by blunting methionine sulfoxide repair", The FASEB Journal 23:2065-2075 (2009), DOI 10.1096/fj.08-125435
+Image credit: The Met, Open Access (CC0). The two heads are catalogued by The Met as "Style of Rembrandt" and are labelled that way on screen.
+
 | Claim (script) | Source |
 |---|---|
 | Hair colour comes from melanin, made by cells in the root called melanocytes | Cleveland Clinic |
