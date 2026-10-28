@@ -6,7 +6,7 @@ HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
 F_EP = str(HERE / "styles/aidoom/fonts/Anton.ttf"); F_TX = str(HERE / "styles/distilbook/fonts/Inter.ttf")
 EPS = {r["reel"]: int(r["episode"]) for r in csv.DictReader(open(ROOT / "handoff/episodes.csv"))}
 # candidate spots (top area, below the TikTok/Shorts top bar, clear of the right-side buttons); the quietest one wins
-SPOTS = [(x, y) for y in (196, 260, 330, 400, 470) for x in (44, "R")]
+SPOTS = [(x, y) for y in (260, 330, 400, 470, 540) for x in (44, "R")]  # y >= 260: TikTok's top tabs cover about the top 240 px (research/TIKTOK.md)
 T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first seconds stay clean)
 # per-reel overrides (H3 QA, Oct 28): spot (x, y), fade-in time t0, and hide windows [(a, b), ...] where a title/label passes
 # under the badge (it fades out 0.3 s before a and back in 0.3 s after b). Found with a 4 fps edge-density scan + frame checks.
@@ -15,6 +15,8 @@ OVR = {
     "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
     "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
     "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
+    # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
+    "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": (44, 196)},       # mid spots hit labels and the end-card sign
@@ -25,8 +27,8 @@ OVR = {
     "hurricanewc": {"spot": (44, 300)},  # auto spot sat on the character's head
     "onion": {"spot": (44, 1330)},       # right side is TikTok's button column; y 1300 clipped the "wet surface" label
     # H1 QA, Oct 28 (auto spot covered text on these)
-    "darkeyes": {"spot": (44, 1400)}, "foxfire": {"spot": (44, 600)}, "zombieant": {"spot": (44, 860)},
-    "catseyes": {"spot": ("R", 196)}, "owl": {"spot": (44, 1400)}, "spidersilk": {"spot": (44, 1060)}, "pumpkin": {"spot": ("R", 392)},
+    "darkeyes": {"spot": (44, 1320)}, "foxfire": {"spot": (44, 600)}, "zombieant": {"spot": (44, 860)},
+    "catseyes": {"spot": (44, 1280), "hide": [(65.0, 70.0)]}, "owl": {"spot": (44, 1320)}, "spidersilk": {"spot": (44, 1060)}, "pumpkin": {"spot": ("R", 392)},
 }
 
 def frames(src, dur, k=24):
