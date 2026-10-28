@@ -110,7 +110,7 @@ function sceneM(t) { const t0 = s(13), on = ss(R(t, t0 + 1.6, .6));
   fan(260, 740, 110, t); wave(380, 1000, 700, 50 * (1 - on * .9), 320, t, { col: C.white, glow: 10, speed: 1.5 });
   bubble(360, 960); wave(480, 1000, 960, 30, 50, t, { col: C.cyan, glow: 8, speed: 6 });
   const tx = 720, ty = 1080; lg.save(); lg.fillStyle = on > .5 ? C.ind : C.dim; lg.beginPath(); lg.roundRect(tx - 90, ty - 40, 180, 80, 40); lg.fill(); A.dot(lerp(tx - 50, tx + 50, on), ty, 30, '#fff'); lg.restore();
-  label('NOISE CANCELLING', tx - 300, ty + 10, R(t, t0 + .8, .5), { size: 24 });
+  label('NOISE CANCELLING', tx - 390, ty + 10, R(t, t0 + .8, .5), { size: 24 });
   label('hum fades', 600, 640, R(t, t0 + 2.4, .5), { col: C.white, size: 28 }); label('voices get through', 560, 900, R(t, t0 + 3.6, .5), { col: C.cyan, size: 28 }); }
 // N (p14): payoff on indigo flash
 function sceneN(t) { const t0 = s(14); A.kinetic("they don't just", 90, 640, R(t, t0, .7), { size: 104 }); A.kinetic('block noise.', 90, 760, R(t, t0 + .3, .7), { size: 104 });
