@@ -26,8 +26,22 @@
 
 ## QA (python3 -I reels/qa.py goosebumps)
 ```
-(filled in after the final render)
+QA goosebumps: PASS   (/home/user/reel-render/jobs/goosebumps/goosebumps.mp4, 73.0 s)
+  PASS  static          longest no-change run 2.00 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  PASS  safe zones      UI zones clear
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.3 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -1.3 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.6 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          73.0 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 8.5 (min 1.0), contrast 69.0 (min 18.0)
+  PASS  9:16 frame      goosebumps.mp4 1080x1920 SAR 1:1; goosebumps_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
+- Badge: goosebumps_ep.mp4 EP 55 at (44, 1366); frames at 1/16/39/54 s checked, clear of all text.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal noted

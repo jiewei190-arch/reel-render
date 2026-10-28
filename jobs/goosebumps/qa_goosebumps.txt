@@ -1,5 +1,5 @@
 QA goosebumps: PASS   (/home/user/reel-render/jobs/goosebumps/goosebumps.mp4, 73.0 s)
-  PASS  static          longest no-change run 1.00 s (limit 4.0 s)
+  PASS  static          longest no-change run 2.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
