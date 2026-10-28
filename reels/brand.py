@@ -13,7 +13,7 @@ T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first secon
 OVR = {
     "airfryer": {"t0": 7.0},                                      # the NOT A FRYER logo sits in the top-left until ~6.5 s
     "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
-    "barcode": {"spot": (660, 1430), "hide": [(8.4, 13.3), (21.4, 24.8), (29.2, 32.8), (37.0, 41.5), (45.2, 52.0), (60.7, 65.0)]},  # giant headlines fill the top; low spot above the subtitles, hidden while a headline drops there
+    "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
     "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
 }
 
