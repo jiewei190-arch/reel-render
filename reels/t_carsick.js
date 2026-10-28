@@ -80,10 +80,13 @@ function kidHead(c, x, y, s, o = {}) {
   const { k = 0, sick = 0, look = 'front', lt = 0, mouth = 0 } = o; const S = (j) => CS(1200 + k, j);
   c.save(); c.translate(x, y); c.scale(s, s);
   const head = ell(0, 0, 120, 112, 48); paint(c, head, sick > .5 ? SICK : SKIN, { seed: S(1) }); hatchInk(c, rect(40, -100, 80, 200), { seed: S(2), gap: 15, ang: -0.9, w: 2 }); loopInk(c, head, { seed: S(3), w: 8 });
-  ink(c, [[-80, -80], [-30, -110], [30, -108], [80, -80]], { w: 18, seed: S(4), color: '#4a3328' });
+  // EP 89's own kid (not hiccups' blue-shirt kid): a yellow cap with a teal brim and round glasses
+  const cap = spline([[-118, -40, 1], [-96, -112], [0, -140], [96, -112], [118, -40], [60, -70], [0, -78], [-60, -70]], true, 4); paint(c, cap, '#f2c14e', { seed: S(4) }); loopInk(c, cap, { seed: S(30), w: 7 });
+  const brim = resample([[40, -60], [190, -54], [196, -34], [40, -40]], 3, true); paint(c, brim, '#2e9c8a', { seed: S(31) }); loopInk(c, brim, { seed: S(32), w: 6 });
   [-40, 40].forEach((ex, e) => { const ey = look === 'down' ? -6 : -14;
     if (sick > .5) { const P = []; for (let j = 0; j <= 20; j++) { const a = j * .7 + lt * 6 * (e ? 1 : -1), r = j * .9; P.push([ex + Math.cos(a) * r, ey + Math.sin(a) * r]); } ink(c, P, { w: 5, seed: S(5 + e) }); }
     else paint(c, ell(ex + (look === 'out' ? 10 : 0), ey + (look === 'down' ? 8 : 0), 11, 14, 20), PAL.ink, { seed: S(7 + e), reg: false }); });
+  [-40, 40].forEach((ex, e) => loopInk(c, ell(ex, -10, 30, 30, 24), { seed: S(33 + e), w: 6 })); ink(c, [[-10, -12], [10, -12]], { w: 6, seed: S(35) });
   if (sick > .5 || mouth > .5) { const P = [[-30, 50], [-15, 40], [0, 50], [15, 40], [30, 50]]; ink(c, P, { w: 7, seed: S(9) }); } else ink(c, [[-20, 44], [0, 56], [20, 44]], { w: 7, seed: S(10) });
   if (sick > .5) for (const sd of [-1, 1]) { const q = ((lt * .8 + (sd > 0 ? .5 : 0)) % 1); paint(c, ell(sd * 130, -40 + q * 60, 10, 14, 14), '#bfe9ff', { seed: S(11 + sd), reg: false }); }
   c.restore();
