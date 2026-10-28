@@ -40,7 +40,7 @@
 | 69 | gps | How does your phone's GPS know where you are? | H2 | merged, Nov 10 21:30 |
 | 70 | freezerburn | What is freezer burn? | H2 | merged v2, Nov 11 09:00 |
 | 71 | sneeze | Why do we sneeze? | H3 | merged, Nov 11 13:00 |
-| 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
+| 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | merged, Nov 11 16:00 |
 | 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
 | 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | merged v1, Nov 11 21:30 (v2 varied shots pending) |
 | 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
