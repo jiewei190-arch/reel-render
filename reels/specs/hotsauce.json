@@ -69,12 +69,13 @@
    "So spicy food feels hot because capsaicin flips your heat sensor. It's a false fire alarm."
   ],
   [
-   "What's the **spiciest** thing you've ever eaten?",
-   "What's the spiciest thing you've ever eaten?"
+   "**Milk** or **water:** which do you grab? One word.",
+   "Milk or water: which do you grab? One word."
   ],
   [
    "Follow for more of **how it really works.**",
    "Follow for more of how it really works."
   ]
- ]
+ ],
+ "tail": 0.4
 }

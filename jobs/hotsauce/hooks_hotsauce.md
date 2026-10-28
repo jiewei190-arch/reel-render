@@ -6,4 +6,4 @@
 
 Why ★1: it's the question people type, and "a chili isn't hot" is the twist by 2.5 s.
 Re-hooks: 19.9 s "Here's the trick" (the capsaicin key turns the TRPV1 gate with no flame: FIRE! / FALSE ALARM); 34.7 s the Nobel Prize; 41.7 s "Now the fix. Don't grab water."
-Payoff 57.0 s: "So spicy food feels hot because capsaicin flips your heat sensor. It's a false fire alarm." Question: "What's the spiciest thing you've ever eaten?"
+Payoff 57.0 s: "So spicy food feels hot because capsaicin flips your heat sensor. It's a false fire alarm." Question: "Milk or water: which do you grab? One word." (one-word answer, GROWTH rule 4)

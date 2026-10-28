@@ -8,10 +8,23 @@ import { createBP, W, H, VP, DASH, C, clamp, lerp, ramp, ss, eo, bo, hash } from
 await Promise.all(['700 40px "Caveat"', '600 20px "Poppins"', '800 40px "Poppins"'].map(f => document.fonts.load(f)));
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
 const B = createBP(document.getElementById('c')), g = B.g;
+// white-print sheet (main's note: not ovenfoil's cyan or fridge's sepia): off-white diazo paper, faint blue grid, deep-blue line work
+Object.assign(C, { ink: '#1f3f86', paper: '#f6f4ee', blue0: '#f6f4ee', blue1: '#e9eef8' });
+const WP = (() => { const c = document.createElement('canvas'); c.width = W; c.height = H; const s = c.getContext('2d');
+  s.fillStyle = '#20242c'; s.fillRect(0, 0, W, H); for (let i = 0; i < 900; i++) { s.fillStyle = `rgba(255,255,255,${hash(i) * .02})`; s.fillRect(hash(i + 3) * W, hash(i + 7) * H, 1 + hash(i + 9) * 3, 1); }
+  s.save(); s.shadowColor = 'rgba(0,0,0,.55)'; s.shadowBlur = 34; s.shadowOffsetY = 10; s.fillStyle = '#f4f2ea'; s.fillRect(36, 36, W - 72, H - 72); s.restore();
+  s.save(); s.beginPath(); s.rect(36, 36, W - 72, H - 72); s.clip();
+  const gr = s.createLinearGradient(0, 0, W, H); gr.addColorStop(0, '#f7f5ee'); gr.addColorStop(.6, '#f2efe4'); gr.addColorStop(1, '#ece6d6'); s.fillStyle = gr; s.fillRect(0, 0, W, H);
+  for (let i = 0; i < 50; i++) { const x = hash(i * 1.3) * W, y = hash(i * 2.1) * H, r = 160 + hash(i * 3.7) * 360; const rg = s.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, hash(i * 5.3) > .5 ? 'rgba(120,140,190,.05)' : 'rgba(210,190,140,.07)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); s.fillStyle = rg; s.fillRect(x - r, y - r, 2 * r, 2 * r); }
+  s.strokeStyle = 'rgba(60,100,180,.10)'; s.lineWidth = 1; for (let x = 36; x < W; x += 54) { s.beginPath(); s.moveTo(x, 36); s.lineTo(x, H - 36); s.stroke(); } for (let y = 36; y < H; y += 54) { s.beginPath(); s.moveTo(36, y); s.lineTo(W - 36, y); s.stroke(); }
+  for (let i = 0; i < 1600; i++) { s.fillStyle = `rgba(60,80,140,${hash(i * 3.1) * .12})`; s.fillRect(hash(i * 5.1) * W, hash(i * 7.9) * H, 1.4, 1.4); }
+  [[0, 640], [0, 1280], [1, 540]].forEach(([v, p]) => { s.fillStyle = 'rgba(0,0,0,.05)'; v ? s.fillRect(p - 1, 36, 2, H - 72) : s.fillRect(36, p - 1, W - 72, 2); });
+  s.restore(); return c; })();
+B.begin = () => { B.S.A = 1; g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.setLineDash([]); g.drawImage(WP, 0, 0); };
 const R = (t, t0, d) => ramp(t, t0, d), TAU = Math.PI * 2, D2R = Math.PI / 180;
 VP.y = 440; VP.h = 560;
 const VCY = VP.y + VP.h / 2;
-const SPEC = ['#e0605a', '#ec9a4e', '#e9d460', '#72c487', '#5fa6e0', '#9a82dc'];   // red (outside) -> violet (inside)
+const SPEC = ['#d9443b', '#e8842a', '#e0b92c', '#3fa65e', '#3584cc', '#7a5cc4'];   // red (outside) -> violet (inside)
 
 // ---------- figure schedule ----------
 const FIGS = [[0, 'FIG. 1', 'THE ARC'], [s(2) - .3, 'FIG. 2', 'ONE RAINDROP'], [s(5) - .3, 'FIG. 3', 'THE CONE'], [s(8) - .3, 'FIG. 4', 'THE HORIZON'], [s(10) - .3, 'FIG. 5', 'YOUR OWN BOW'], [s(11) - .3, 'FIG. 6', 'THE SECOND BOW'], [s(12) - .3, 'FIG. 7', 'THE ANSWER']];
@@ -79,7 +92,7 @@ function fig3(t) { const a = vis(t, 2); if (a <= 0) return; B.alpha(a); const t0
     B.txt('SUNLIGHT', 60, 470, { size: 28, alpha: .8 });
     eye(E3.x, E3.y, 1.2, R(t, t0 + .2, .5)); B.line(E3.x, E3.y, 1000, E3.y, { w: 1.2, dash: DASH.centre, draw: R(t, t0 + .4, .8), nib: false, alpha: .8 });
     const ka = R(t, s(5) + .8, .8);
-    DROPS.forEach(([dx, dy], i) => { const ang = Math.abs(Math.atan2(E3.y - dy, dx - E3.x)), near = Math.abs(ang - A42) < .035; const lit = near && ka > 0; dot(dx, dy, lit ? 9 : 5, lit ? SPEC[i % 6] : 'rgba(231,240,249,.45)', lit ? ka : .8); });
+    DROPS.forEach(([dx, dy], i) => { const ang = Math.abs(Math.atan2(E3.y - dy, dx - E3.x)), near = Math.abs(ang - A42) < .035; const lit = near && ka > 0; dot(dx, dy, lit ? 9 : 5, lit ? SPEC[i % 6] : 'rgba(31,63,134,.35)', lit ? ka : .8); });
     const kc = R(t, s(6) + .2, 1.0); [-1, 1].forEach(sg => { const L = 620; B.line(E3.x, E3.y, E3.x + Math.cos(A42) * L, E3.y - sg * Math.sin(A42) * L, { w: 2, draw: kc * (1 - look), nib: false }); });
     if (kc > 0) { const bx = E3.x + Math.cos(A42) * 380, ry = Math.sin(A42) * 380; g.save(); g.globalAlpha = B.S.A; g.lineWidth = 10; SPEC.forEach((c, j) => { g.strokeStyle = c; g.beginPath(); g.ellipse(bx, E3.y, 46 - j * 2, ry - j * 10, 0, -Math.PI / 2, -Math.PI / 2 + TAU * ss(R(t, s(6) + .8, 1.2))); g.stroke(); }); g.restore();
       angleDim(E3.x, E3.y, 150, -A42, 0, '42°', R(t, s(6) + 1.2, .6), { size: 40, lo: 40 }); dot(bx, E3.y, 6, C.ink); }
@@ -140,7 +153,7 @@ function titleBlock(t, status) { const y0 = 1010, h = 128, x0 = 100, w = 800; g.
   [[380, 0, 380, h], [640, 0, 640, h]].forEach(([a, b, c2, d]) => { g.beginPath(); g.moveTo(a, y0 + b); g.lineTo(c2, y0 + d); g.stroke(); }); g.beginPath(); g.moveTo(x0, y0 + 64); g.lineTo(x0 + w, y0 + 64); g.stroke(); g.restore();
   const cells = [['TITLE', 'RAINBOW', 112, 0], ['DRAWN BY', '@howitreallyworkstudio', 112, 64], ['STATUS', status, 392, 0], ['SHEET', '1 OF 1', 392, 64], ['SCALE', 'NOT TO SCALE', 652, 0], ['SOURCES', 'SEE CAPTION', 652, 64]];
   cells.forEach(([k, v, x, dy]) => { B.txt(k, x, y0 + dy + 15, { size: 16, font: 'Poppins', weight: 600, alpha: .7, ls: 2 }); B.txt(v, x, y0 + dy + 44, { size: v.length > 13 ? 26 : 32 }); }); }
-function note(n, cap, tS) { const x = 100, y = 1150, w = 800, h = 275, size = 50; g.save(); g.globalAlpha = clamp(tS / .15); g.fillStyle = 'rgba(14,34,82,.62)'; g.fillRect(x, y, w, h); g.strokeStyle = C.ink; g.lineWidth = 2.2; g.strokeRect(x, y, w, h); g.lineWidth = 1; g.strokeRect(x + 8, y + 8, w - 16, h - 16); g.restore();
+function note(n, cap, tS) { const x = 100, y = 1150, w = 800, h = 275, size = 50; g.save(); g.globalAlpha = clamp(tS / .15); g.fillStyle = 'rgba(255,255,255,.82)'; g.fillRect(x, y, w, h); g.strokeStyle = C.ink; g.lineWidth = 2.2; g.strokeRect(x, y, w, h); g.lineWidth = 1; g.strokeRect(x + 8, y + 8, w - 16, h - 16); g.restore();
   B.txt('NOTE', x + 24, y + 30, { size: 16, font: 'Poppins', weight: 600, alpha: .8, ls: 3 }); B.txt(String(n).padStart(2, '0'), x + 92, y + 30, { size: 20, font: 'Poppins', weight: 600 });
   const toks = []; cap.split('**').forEach((sg, k) => sg.split(' ').filter(Boolean).forEach(wd => toks.push({ w: wd, b: k % 2 === 1 }))); const sp = B.measure(' ', size), maxW = w - 64; const lines = [[]]; let acc = 0;
   toks.forEach(tk => { const ww = B.measure(tk.w, size); if (acc + ww > maxW && lines[lines.length - 1].length) { lines.push([]); acc = 0; } lines[lines.length - 1].push({ ...tk, ww }); acc += ww + sp; });
@@ -155,8 +168,8 @@ function scene(t) {
   B.begin(); header(t);
   const [cx, cy, z] = camAt(t); B.camBegin(cx, cy, z); fig1(t); fig2(t); fig3(t); fig4(t); fig5(t); fig6(t); fig7(t); B.camEnd();
   if (t > s(12) + 4.2 && t < s(13) - .2) B.stamp('CIRCLE', 760, 560, R(t, s(12) + 4.2, .35), { size: 60 });
-  if (t > s(14) - .1) { const k = R(t, s(14) - .1, .6); g.save(); g.globalAlpha = .55 * k; g.fillStyle = '#18336B'; g.fillRect(VP.x + 9, VP.y + 1, VP.w - 18, VP.h - 2); g.restore();
-    const bx = 150, by = 500, bw = 780, bh = 400; g.save(); g.globalAlpha = k; g.fillStyle = 'rgba(14,34,82,.92)'; g.fillRect(bx, by, bw, bh); g.restore(); B.rect(bx, by, bw, bh, { w: 3, draw: k, nib: false }); B.rect(bx + 9, by + 9, bw - 18, bh - 18, { w: 1.2, draw: k, nib: false });
+  if (t > s(14) - .1) { const k = R(t, s(14) - .1, .6); g.save(); g.globalAlpha = .7 * k; g.fillStyle = '#f4f2ea'; g.fillRect(VP.x + 9, VP.y + 1, VP.w - 18, VP.h - 2); g.restore();
+    const bx = 150, by = 500, bw = 780, bh = 400; g.save(); g.globalAlpha = k; g.fillStyle = 'rgba(252,251,247,.96)'; g.fillRect(bx, by, bw, bh); g.restore(); B.rect(bx, by, bw, bh, { w: 3, draw: k, nib: false }); B.rect(bx + 9, by + 9, bw - 18, bh - 18, { w: 1.2, draw: k, nib: false });
     B.txt('Follow for more of', 540, by + 90, { size: 70, align: 'center', write: R(t, s(14) + .1, .8) }); B.txt('how it really works.', 540, by + 175, { size: 70, align: 'center', write: R(t, s(14) + .6, .8) });
     B.line(210, by + 225, 870, by + 225, { w: 2, draw: R(t, s(14) + 1.2, .5), nib: false }); B.txt("A new 'wait, really?' every day.", 540, by + 285, { size: 46, align: 'center', write: R(t, s(14) + 1.4, .7) }); B.txt('@howitreallyworkstudio', 540, by + 350, { size: 40, align: 'center', write: R(t, s(14) + 1.8, .7) }); }
   band(t);
@@ -170,6 +183,6 @@ const LOOP = document.createElement('canvas'); LOOP.width = W; LOOP.height = H;
 window.seek = t => { const Tt = TL.total, lp = clamp((t - (Tt - .5)) / .5); if (lp > 0) { scene(0); LOOP.getContext('2d').drawImage(g.canvas, 0, 0); } scene(t); if (lp > 0) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = .4 * ss(lp); g.drawImage(LOOP, 0, 0); g.restore(); } };
 window.render = window.seek;
 window.thumb = () => { B.begin(); header(0); B.camBegin(540, 760, .8); fig1(0); B.camEnd(); band(0);
-  g.save(); g.fillStyle = 'rgba(14,34,82,.92)'; g.fillRect(120, 1100, 840, 330); g.restore(); B.rect(120, 1100, 840, 330, { w: 3, nib: false }); B.txt('WHY ARE', 540, 1215, { size: 120, align: 'center' }); B.txt('RAINBOWS CURVED?', 540, 1350, { size: 100, align: 'center' });
+  g.save(); g.fillStyle = 'rgba(252,251,247,.96)'; g.fillRect(120, 1100, 840, 330); g.restore(); B.rect(120, 1100, 840, 330, { w: 3, nib: false }); B.txt('WHY ARE', 540, 1215, { size: 120, align: 'center' }); B.txt('RAINBOWS CURVED?', 540, 1350, { size: 100, align: 'center' });
   B.stamp('CIRCLE', 780, 600, 1, { size: 60 }); };
 window.seek(0); window.ready = true; window.READY = true;

@@ -2,7 +2,7 @@
 
 - **Template:** #3 blueprint (lemo-opuscar/styles/blueprint grammar), via styles/blueprint, with ovenfoil's Batch N layout. Picked to avoid the families used or reserved in EPs 77-84.
 - **Why this template:** "why are rainbows curved" is pure geometry: a drop's ray path, a 42° angle dimension, a cone in elevation, hidden lines for the half of the circle you can't see.
-- **Palette:** blueprint allows one non-blue colour; here the spectrum itself is the colour (pencil-thin bands). The one red stamp, CIRCLE, lands at the payoff.
+- **Palette:** a white-print sheet (off-white diazo paper, faint blue grid, deep-blue line work), at the main session's request so it reads apart from ovenfoil (cyan) and fridge (sepia), and the spectrum pops. The spectrum is the only colour; the one red stamp, CIRCLE, lands at the payoff.
 - **Figures:**
   - FIG 1 THE ARC: a big bow from frame 0 with the camera riding it; the hidden half is drafted dashed; someone else's circle in phantom line.
   - FIG 2 ONE RAINDROP: drop cross-section with centre lines; a white ray in, fanning into six colours, reflecting off the back and out; a 42° angle dimension.

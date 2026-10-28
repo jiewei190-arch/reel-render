@@ -202,10 +202,10 @@ const SH = {
   },
   lab3(t, tq) {   // home: payoff (board: FALSE FIRE ALARM), Spud calm with milk; then the question with a push-in
     const pushIn = ss(seg(t, s(13) - .3, s(14) - .3)); cam(lerp(540, 420, pushIn), lerp(960, 900, pushIn), lerp(1, 1.16, pushIn));
-    lab(t, { board: t < s(13) ? ['SPICY = FALSE', 'FIRE ALARM', 'capsaicin → TRPV1'] : ['SPICIEST', 'THING YOU', 'EVER ATE?'] });
+    lab(t, { board: t < s(13) ? ['SPICY = FALSE', 'FIRE ALARM', 'capsaicin → TRPV1'] : ['MILK', 'OR WATER?', 'one word'] });
     juno(J(t, { armR: t < s(13) ? { h: [-120, -150], bend: 30 } : undefined, look: t < s(13) ? [-.3, -.9] : [-.7, .2] }));
     const p = P(t, { x: 300, look: t < s(13) ? [.8, -.6] : [-.6, .1], nerv: .2, mouth: { o: 0, sm: .6 }, armR: { h: [90, -60], bend: -20 } }); spud(p); glass(p.x + 130 * p.s, p.y - 120 * p.s, .5, '#fffaf0');
-    if (t > s(13)) for (let i = 0; i < 3; i++) chili(140 + i * 90, 1000 - i * 10, .5 + i * .15, .3 - i * .2, ['#ffb03a', '#ff6a2a', '#c8102e'][i]);
+    if (t > s(13)) { const k1 = pop_(tq, s(13) + .3, 1.8), k2 = pop_(tq, s(13) + .9, 1.8); push(); translate(470, 1100); scale(k1); glass(0, 0, .8, '#fffaf0', 'MILK'); pop(); push(); translate(620, 1100); scale(k2); glass(0, 0, .8, 'rgba(120,190,255,.7)', 'WATER'); pop(); label('?', 545, 860, 110, '#ffd36e', pop_(tq, s(13) + 1.4, 2)); }
   },
   end(t, tq) {   // end card: dark plum, dim portal, title lockup, closing lines; Spud floats with a glass of milk
     reset(); screenRect('#2a1020'); reset(); portal(540, 1000, 380, t * .6, { open: spring(t - CUTS[5], 7, .45), sx: 1 }); screenRect('#2a1020', .5);
