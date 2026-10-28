@@ -96,6 +96,9 @@ Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Ch
 ### 8e-2. New reels (Batch N, from Nov 3): handoff/schedule_batchN.csv
 The main session adds each newly approved reel here (TikTok and YouTube rows, `_ep.mp4`, episode number). The scheduling session schedules these rows too, and marks their status in THIS file. The main session doesn't edit schedule_tt_yt.csv any more, so there are no merge conflicts. Instagram for new reels: post the strongest 2-3 per day from this file at 11:00/17:00/20:00 with the plain `<n>.mp4`.
 
+### 8e-3. Long-form videos: handoff/schedule_longform.csv
+A normal YouTube upload (16:9, not a Short). Rebuild the file from its parts first (command in the CSV). Add chapters from chapters.txt to the description, and replace the [link] placeholders with the six Shorts' URLs. Custom thumbnail: long-form videos can take one; if Studio refuses (unverified account), pick a frame and tell the owner to verify. Afterwards, set each tech Short's "Related video" to this video (needs advanced features).
+
 ### 8f. Playlists and series (Oct 28)
 handoff/series.csv groups the reels into series. On YouTube, create one public playlist per series (title, description from the CSV) and add each Short to its series playlist; with advanced features on, set each Short's "Related video" to the next episode in the same series. On TikTok, create the same playlists when the account has the Playlists feature (Profile -> Create playlist), otherwise skip. Every new reel gets a series in series.csv before it's scheduled.
 
