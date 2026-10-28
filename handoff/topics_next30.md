@@ -46,7 +46,9 @@
 | 75 | earwax | What is earwax actually for? | H1 | merged, Nov 12 09:00 |
 | 73 | bluejeans | Why do jeans have tiny pockets and rivets? | H1 | merged v2, Nov 11 19:00 (renumbered from 76; badge EP 73 by main) |
 | 77 | hairgray | Why does hair turn gray? | H2 | queued |
-| 78 | bubblewrap | Why do bubbles in soda rise in lines? | H2 | queued |
+| 78 | sodabubbles | Why do soda bubbles rise in lines? | H2 | queued |
+| 79 | saltyocean | Why is the ocean salty? | H1 | queued |
+| 80 | feetasleep | Why does your foot fall asleep? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
@@ -57,4 +59,4 @@ Next ideas (unassigned; check the research agent's list when it arrives): why le
 
 Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Numbers 49 and 50 went to H2's leafcolor and candle (Oct 28).
 
-Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 bluejeans stop-motion explainer (#24, swapped) · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 eyeblink collage AI Doom (#13, swapped). Workers: send your pick to the main session, which records it here (you can only push your own branch).
+Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 bluejeans stop-motion explainer (#24, swapped) · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint (#21) · 76 eyeblink collage AI Doom (#13, swapped) · 77 hairgray old-master painting (#27) · 78 sodabubbles particle flock (#29). Workers: send your pick to the main session, which records it here (you can only push your own branch).
