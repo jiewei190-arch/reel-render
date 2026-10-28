@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "voicerecording": {"spot": ("R", 256), "hide": [(6.0, 13.7)]},   # H2: own HUD leaves the top-right corner empty; hidden under the centred "two paths" title
     "firstsnowsmell": {"spot": (44, 260)},   # H4: posters framed from y 340 so the table strip above them stays clear
     "mpemba": {"spot": (44, 1366)},   # caption card ends at y 1355; navy board below it
     "noisecancel": {"spot": ("R", 256)},   # H2: HUD timecode and top-right bracket removed so the badge owns that corner
