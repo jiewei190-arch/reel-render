@@ -1,15 +1,15 @@
 QA microwavecenter: WARN   (/home/user/reel-render/jobs/microwavecenter/microwavecenter.mp4, 76.0 s)
   PASS  static          longest no-change run 0.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
-  WARN  safe zones      right x>900 y900-1650: content 0.5-7.5s, 7.8-12.2s, 12.5-16.8s, 17.0-22.2s ...; top y<150: content 0.0-10.5s, 16.2-22.0s, 22.8-28.5s, 34.2-44.8s ...
-  PASS  outer 24 px     clear
+  WARN  safe zones      right x>900 y900-1650: content 0.0-38.0s, 38.2-75.5s; bottom y>1700: content 7.5-21.0s, 22.0-45.2s, 57.8-63.0s; top y<150: content 0.0-7.8s, 62.8-76.0s
+  WARN  outer 24 px     content at the frame edge 7.5-45.0s, 51.2-53.8s, 54.8-63.0s
   PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -1.4 dBTP (WARN above -1.0, FAIL above 0.0)
   PASS  voice over bed  speech 8.0 dB above the pauses (15 pauses; FAIL < 3.5, WARN < 6.0)
   PASS  length          76.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 16.8 (min 1.0), contrast 58.9 (min 18.0)
+  PASS  frame 0         edge 17.2 (min 1.0), contrast 58.5 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      microwavecenter.mp4 1080x1920 SAR 1:1; microwavecenter_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
