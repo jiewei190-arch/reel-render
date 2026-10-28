@@ -33,6 +33,7 @@ OVR = {
     "runnynose": {"spot": (44, 1366)},   # subtitle paper patch ends at y 1355; snow hatch only below it
     "goosebumps": {"spot": (44, 1366)},   # captions end at y 1355 on the dark sand ground
     "mpemba": {"spot": (44, 1366)},   # caption card ends at y 1355; navy board below it
+    "auroras": {"spot": (44, 1366)},   # captions end at y 1355 on the dark frozen lake
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
