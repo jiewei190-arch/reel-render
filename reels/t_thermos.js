@@ -101,7 +101,8 @@ function page5(t) { const t0 = s(11) - .1; chapter(t, 'NO. 04 — WHO MADE IT  �
   // Dewar's lab flask with liquid gas (navy) + frost marks
   flask(300, 1150, .5, t, { fill: 'navy', vac: 1, k: R(t, t0 + 1.2, 1.2) }); note('James Dewar', 300, 725, R(t, t0 + 2.6, .7), { align: 'center', size: 44 });
   if (t > s(12) - .2) { note('liquid gases', 300, 1190, R(t, s(12) + .2, .6), { align: 'center', col: C.navy, size: 38 }); for (let i = 0; i < 6; i++) F.squig(250 + i * 20, 1000, 50, t + i, { col: C.navy, alpha: .5, amp: 4 });
-    F.seal('NO PATENT', 560, 980, ss(R(t, s(12) + 2.4, .35)), { size: 26, f: 'mono', fs: 22 }); }
+    for (let i = 0; i < 4; i++) F.squig(250 + i * 33, 660, 60, t + i * .7, { col: C.navy, alpha: .55, amp: 6 });
+  F.seal('NO PATENT', 560, 980, ss(R(t, s(12) + 2.4, .35)), { size: 26, f: 'mono', fs: 22 }); }
   if (t > s(13) - .2) { const k13 = R(t, s(13), .8); flask(780, 1150, .4, t, { fill: 'red', stopper: 1, k: k13 }); F.txt('1904  ·  THERMOS', 780, 760, { size: 26, f: 'mono', wt: 700, align: 'center', col: C.red, type: (t - s(13) - .6) * 30 }); }
   caption(t); }
 
@@ -128,6 +129,7 @@ function routeStrip(t) { if (t < s(3) || t > s(16) - .3) return; const a = R(t, 
 
 const PAGES = { 1: page1, 2: page2, 3: page3, 4: page4, 5: page5, 6: page6, 7: page7 };
 function scene(t) { F.begin(); const p = pageAt(t); F.footer(p[2]); const pi = PG.indexOf(p);
+  { const z = 1 + .011 * Math.sin(t * .8), dx = 7 * Math.sin(t * .55), dy = 9 * Math.sin(t * .7 + 1); g.setTransform(z, 0, 0, z, W / 2 * (1 - z) + dx, H / 2 * (1 - z) + dy); }   // the camera breathes over the page (nothing holds still > 4 s)
   if (pi > 0 && t < p[0] + .35) { const q = PG[pi - 1]; F.alpha(1 - ss(R(t, p[0], .35))); PREV = true; PAGES[q[2]](Math.min(t, q[1] - .01)); PREV = false; F.alpha(1); }
   F.alpha(pi === 0 ? 1 : ss(R(t, p[0], .35))); PAGES[p[2]](t); F.alpha(1); routeStrip(t); }
 window.DUR = TOT;
