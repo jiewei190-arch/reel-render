@@ -8,6 +8,14 @@ EPS = {r["reel"]: int(r["episode"]) for r in csv.DictReader(open(ROOT / "handoff
 # candidate spots (top area, below the TikTok/Shorts top bar, clear of the right-side buttons); the quietest one wins
 SPOTS = [(x, y) for y in (196, 260, 330, 400, 470) for x in (44, "R")]
 T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first seconds stay clean)
+# per-reel overrides (H3 QA, Oct 28): spot (x, y), fade-in time t0, and hide windows [(a, b), ...] where a title/label passes
+# under the badge (it fades out 0.3 s before a and back in 0.3 s after b). Found with a 4 fps edge-density scan + frame checks.
+OVR = {
+    "airfryer": {"t0": 7.0},                                      # the NOT A FRYER logo sits in the top-left until ~6.5 s
+    "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
+    "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
+    "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
+}
 
 def frames(src, dur, k=24):
     out = []
@@ -44,9 +52,12 @@ for n in sys.argv[1:]:
     src = ROOT / f"jobs/{n}/{n}.mp4"; dst = ROOT / f"jobs/{n}/{n}_ep.mp4"; png = HERE / f"stills/badge_{n}.png"
     png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)
-    busy, X, Y = place(src, dur, *b.size)
-    # fade in at T0 so the hook stays clean; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
-    fc = f"[1]format=rgba,fade=in:st={T0}:d=0.4:alpha=1[b];[0][b]overlay={X}:{Y}:shortest=1"
+    o = OVR.get(n, {}); t0 = o.get("t0", T0)
+    if "spot" in o: (X, Y), busy = o["spot"], -1
+    else: busy, X, Y = place(src, dur, *b.size)
+    # fade in at t0 so the hook stays clean; fade out/in around hide windows; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
+    vis = f"clip((T-{t0})/0.4,0,1)" + "".join(f"*(1-clip(min((T-{a - .3})/0.3,({b + .3}-T)/0.3),0,1))" for a, b in o.get("hide", []))
+    fc = f"[1]format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='alpha(X,Y)*{vis}'[b];[0][b]overlay={X}:{Y}:shortest=1"
     vb = int((9.6 * 8e6 / dur - 72000) / 1000); log = f"/tmp/brand_{n}"
     base = ["ffmpeg", "-v", "error", "-y", "-i", str(src), "-loop", "1", "-i", str(png), "-filter_complex", fc,
             "-c:v", "libx264", "-preset", "slow", "-tune", "animation", "-b:v", f"{vb}k", "-pix_fmt", "yuv420p", "-passlogfile", log]
