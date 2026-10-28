@@ -1,0 +1,88 @@
+{
+ "name": "leafcolor",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  6,
+  10,
+  11,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Those red and gold leaves? The **yellow** was hiding in there **all summer.**",
+   "Those red and gold leaves? The yellow was hiding in there all summer."
+  ],
+  [
+   "So **why do leaves change color** in the fall?",
+   "So why do leaves change color in the fall?"
+  ],
+  [
+   "All summer, leaves are full of **chlorophyll,** the green pigment that turns sunlight into food.",
+   "All summer, leaves are full of chlorophyll, the green pigment that turns sunlight into food."
+  ],
+  [
+   "But as **nights get longer,** trees stop making it, and the **green breaks down.**",
+   "But as nights get longer, trees stop making it, and the green breaks down."
+  ],
+  [
+   "Underneath are yellow and orange pigments called **carotenoids.** They were there **all along.**",
+   "Underneath are yellow and orange pigments called carotenoids. They were there all along."
+  ],
+  [
+   "The green was just **covering them up.**",
+   "The green was just covering them up."
+  ],
+  [
+   "Here's the twist: the **reds** weren't hiding.",
+   "Here's the twist: the reds weren't hiding."
+  ],
+  [
+   "Reds and purples come from **anthocyanins,** and most are **made fresh** in the fall.",
+   "Reds and purples come from anthocyanins, and most are made fresh in the fall."
+  ],
+  [
+   "A **cork-like layer** grows across the leaf stem, and **sugar** gets trapped inside the leaf.",
+   "A cork-like layer grows across the leaf stem, and sugar gets trapped inside the leaf."
+  ],
+  [
+   "Bright **sunshine** and that trapped **sugar** help make the red.",
+   "Bright sunshine and that trapped sugar help make the red."
+  ],
+  [
+   "Scientists think it may work like a **sunscreen** for the fading leaf.",
+   "Scientists think it may work like a sunscreen for the fading leaf."
+  ],
+  [
+   "That's why weather matters. **Warm, sunny days** and **cool nights** bring the brightest reds.",
+   "That's why weather matters. Warm, sunny days and cool nights bring the brightest reds."
+  ],
+  [
+   "**Brown** comes last: **tannins,** left behind when the other colors are gone.",
+   "Brown comes last: tannins, left behind when the other colors are gone."
+  ],
+  [
+   "Then that cork-like layer **seals off,** and the leaf **lets go.**",
+   "Then that cork-like layer seals off, and the leaf lets go."
+  ],
+  [
+   "So fall color is **green leaving,** gold **revealed,** and red **freshly made.**",
+   "So fall color is green leaving, gold revealed, and red freshly made."
+  ],
+  [
+   "Which do you love more, **red or gold?** One word.",
+   "Which do you love more, red or gold? One word."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
