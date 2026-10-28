@@ -15,6 +15,11 @@ OVR = {
     "tap": {"spot": (651, 590), "hide": [(12.7, 17.1)]},          # top band is full-width terminal text; only one long paragraph reaches y 590
     "barcode": {"spot": (44, 1490), "hide": [(8.3, 60.4)]},  # giant headlines fill the top and (on the left) ~40%+ of the low band; TikTok buttons cover the right: show only 5-8 s and the last 8 s, low-left above the subtitles
     "recommend": {"spot": (44, 1430), "hide": [(4.7, 8.6), (27.9, 38.0), (59.2, 66.0)]},  # signs/boards fill the top; low-left above the captions
+    # H2 QA, Oct 28
+    "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
+    "ship": {"spot": (44, 196)},       # mid spots hit labels and the end-card sign
+    "skyblue": {"spot": (660, 436)},   # auto spot sat on the end-card title
+    "lock": {"spot": (44, 1276)},      # top spots hit the "5 HOLES"/"SPRING" callouts; bottom-left above the NOTE box
 }
 
 def frames(src, dur, k=24):
