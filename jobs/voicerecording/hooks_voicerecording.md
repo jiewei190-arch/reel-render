@@ -2,7 +2,7 @@
 
 Search question (spoken at 3.2 s, highlighted on the book page): "Why does your voice sound weird on recordings?"
 
-1. **[PICK]** "Nobody else hears the voice you hear in your head." (10 words; pattern 2, a hidden thing). Frame 0: "Nobody else / hears this." in the Distilbook bold stack (last line blue) over a felt-tip head with both paths already drawn and moving: the blue air path looping from the mouth round to the ear, the pink bone path running up through the skull from the throat to the inner ear.
+1. **[PICK, v2]** "Nobody else hears your voice the way you do." (9 words; pattern 2, a hidden thing; main-session wording, v1 was "...the voice you hear in your head"). Frame 0: "Nobody else / hears this." in the Distilbook bold stack (last line blue) over a felt-tip head with both paths already drawn and moving: the blue air path looping from the mouth round to the ear, the pink bone path running up through the skull from the throat to the inner ear.
 2. "Your recorded voice is the real one. The one in your head isn't." (12 words; pattern 7, myth correction).
 3. "Why does your voice sound so weird on recordings?" (9 words; the search question as the hook).
 

@@ -4,8 +4,8 @@ QA voicerecording: WARN   (/home/user/reel-render/jobs/voicerecording/voicerecor
   PASS  safe zones      UI zones clear
   WARN  outer 24 px     content at the frame edge 3.2-6.2s
   PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -1.7 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 7.3 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  true peak       -2.4 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 8.5 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
   PASS  length          68.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
