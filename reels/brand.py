@@ -8,7 +8,7 @@ EPS = {r["reel"]: int(r["episode"]) for r in csv.DictReader(open(ROOT / "handoff
 # candidate spots (top area, below the TikTok/Shorts top bar, clear of the right-side buttons); the quietest one wins
 SPOTS = [(x, y) for y in (196, 260, 330, 400, 470) for x in (44, "R")]
 # per-reel overrides, chosen by eye from frame grids where the auto pick touched a title, label or caption
-OVERRIDE = {"flush": [(44, 1300)], "onion": [("R", 900)], "hurricanewc": [(44, 300)]}
+OVERRIDE = {"flush": [(44, 1300)], "onion": [(44, 1330)], "hurricanewc": [(44, 300)]}
 T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first seconds stay clean)
 
 def frames(src, dur, k=24):
