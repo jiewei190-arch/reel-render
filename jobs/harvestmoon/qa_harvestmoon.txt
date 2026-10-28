@@ -1,0 +1,12 @@
+QA harvestmoon: WARN   (/home/user/reel-render/jobs/harvestmoon/harvestmoon.mp4, 68.5 s)
+  PASS  static          longest no-change run 3.25 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 0.0-10.8s, 30.0-35.2s, 39.5-43.2s, 55.8-68.5s
+  WARN  outer 24 px     content at the frame edge 56.0-64.2s, 64.8-68.5s
+  PASS  loudness        -15.1 LUFS integrated (want -16.0..-14.0)
+  WARN  true peak       -0.8 dBTP (WARN above -1.0, FAIL above 0.0)
+  WARN  voice over bed  speech 4.6 dB above the pauses (8 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          68.5 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 12.7 (min 3.0), contrast 33.2 (min 18.0)

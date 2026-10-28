@@ -1,0 +1,12 @@
+QA foxfire: WARN   (/home/user/reel-render/jobs/foxfire/foxfire.mp4, 68.8 s)
+  PASS  static          longest no-change run 0.25 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  PASS  safe zones      UI zones clear
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.1 LUFS integrated (want -16.0..-14.0)
+  WARN  true peak       -0.9 dBTP (WARN above -1.0, FAIL above 0.0)
+  WARN  voice over bed  speech 5.5 dB above the pauses (8 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          68.8 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 8.3 (min 3.0), contrast 74.0 (min 18.0)
