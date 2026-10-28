@@ -9,7 +9,7 @@ QA freezerburn: PASS   (/home/user/reel-render/jobs/freezerburn/freezerburn.mp4,
   PASS  length          68.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 6.5 (min 1.0), contrast 22.6 (min 18.0)
+  PASS  frame 0         edge 6.4 (min 1.0), contrast 26.0 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      freezerburn.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)

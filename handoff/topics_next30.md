@@ -38,7 +38,7 @@
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | merged, Nov 10 19:00 |
 | 69 | gps | How does your phone's GPS know where you are? | H2 | merged, Nov 10 21:30 |
-| 70 | freezerburn | What is freezer burn? | H2 | merged v1, Nov 11 09:00 (v2 contrast/fill pending) |
+| 70 | freezerburn | What is freezer burn? | H2 | merged v2, Nov 11 09:00 |
 | 71 | sneeze | Why do we sneeze? | H3 | merged, Nov 11 13:00 |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
 | 76 | eyeblink | Why do we blink so much? | H4 | merged, Nov 12 13:00 (renumbered from 73 to keep it 5 EPs from sneeze's collage; badge redone by main) |
