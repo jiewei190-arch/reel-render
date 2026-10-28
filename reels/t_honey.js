@@ -31,7 +31,7 @@ function flower(x, y, sc, k, seed) { if (k <= 0) return; g.save(); g.translate(x
   line(g, [[0, 30], [4, 150]], { w: 3.4, seed }); const lf = ell(30, 110, 30, 12, 16, -.5); fill(g, lf, C.leaf, .8); line(g, lf, { w: 2.4, close: true, seed: seed + 1 });
   for (let i = 0; i < 6; i++) { const a = i * TAU / 6, p = ell(Math.cos(a) * 34, Math.sin(a) * 34, 30, 18, 16, a); fill(g, p, C.petal, .8); line(g, p, { w: 2.4, close: true, seed: seed + 2 + i, wob: .6 }); }
   fill(g, ell(0, 0, 20, 20, 16), C.honey); line(g, ell(0, 0, 20, 20, 16), { w: 2.6, close: true, seed: seed + 9 }); g.restore(); }
-const hexPts = (x, y, rr) => Array.from({ length: 6 }, (_, i) => [x + Math.cos(i * TAU / 6) * rr, y + Math.sin(i * TAU / 6) * rr]);
+const hexPts = (x, y, rr, rot = 0) => Array.from({ length: 6 }, (_, i) => [x + Math.cos(i * TAU / 6 + rot) * rr, y + Math.sin(i * TAU / 6 + rot) * rr]);
 const COMB = (() => { const o = []; for (let c = 0; c < 6; c++) for (let rw = 0; rw < 3; rw++) o.push([170 + c * 78, 930 + rw * 90 + (c % 2) * 45]); return o.filter(([, y]) => y < 1130); })();
 function comb(t, f, cap, o = {}) { COMB.forEach(([x, y], i) => { const hp = hexPts(x, y, 50); fill(g, hp, C.wax, .7);
   const fi = clamp(f * 1.3 - hash(i) * .3); if (fi > 0) fill(g, hexPts(x, y + 4, 40 * Math.sqrt(fi)), mixc(C.nectar, C.honey, o.ripe ?? 0), .9);
@@ -41,7 +41,7 @@ function mixc(a, b, u) { const A = [1, 3, 5].map(i => parseInt(a.slice(i, i + 2)
 function air(x0, y0, x1, y1, t, k, seed) { if (k <= 0) return; for (let j = 0; j < 3; j++) { const u = (t * .9 + j / 3) % 1, pts = Array.from({ length: 10 }, (_, i) => { const q = i / 9; return [lerp(x0, x1, q), lerp(y0, y1, q) + 8 * Math.sin(q * 9 + t * 4 + j)]; });
   line(g, pts.slice(Math.floor(u * 6), Math.floor(u * 6) + 4), { w: 3, col: '#7fa6c0', a: k * (1 - u * .5), seed: seed + j, wob: .3 }); } }
 function steam(x, y, t, k, seed) { if (k <= 0) return; for (let i = 0; i < 3; i++) { const ph = t * 2 + i * 1.7; line(g, Array.from({ length: 7 }, (_, j) => [x + i * 26 + 9 * Math.sin(ph + j * .9), y - j * 14]), { w: 2.6, col: '#7fa6c0', a: k * .8, seed: seed + i, wob: .3 }); } }
-function ring6(x, y, rr, k, seed, col = P.ink) { line(g, hexPts(x, y, rr), { w: 3.2, close: true, seed, k, col, wob: .4 }); }
+function ring6(x, y, rr, k, seed, col = P.ink, rot = 0) { line(g, hexPts(x, y, rr, rot), { w: 3.2, close: true, seed, k, col, wob: .4 }); }
 function jar(x, y, w, h, f, t, k = 1, seed = 950) { if (k <= 0) return; const body = rectPts(x, y, w, h, 6); g.save(); g.globalAlpha *= k; fill(g, body, '#f6efe4', 1);
   if (f > 0) { const fy = y + h - h * .9 * f; fill(g, rectPts(x + 6, fy, w - 12, y + h - fy - 6, 4), C.honey, .92); shade(g, rectPts(x + 6, fy, w - 12, y + h - fy - 6, 4), 'rgba(140,80,20,.18)', 9); }
   line(g, body, { w: 3.4, close: true, seed }); fill(g, rectPts(x - 10, y - 34, w + 20, 34, 3), '#c98a4a'); line(g, rectPts(x - 10, y - 34, w + 20, 34, 3), { w: 3, close: true, seed: seed + 1 });
@@ -72,15 +72,15 @@ function recipe(t) { const a = win(t, s(2) - .3, s(11) - .1, .5); if (a <= 0) re
     fill(g, ell(lerp(335, 535, u), 982, 14, 11, 14), C.nectar, .95); line(g, ell(lerp(335, 535, u), 982, 14, 11, 14), { w: 2, close: true, seed: 52, wob: .3 });
     header(g, { step: 2, of: 6, title: 'Pass it on', note: 'mouth to mouth, bee to bee', k }); }
   else if (t < s(5) - .2) { const k = seg(t, s(4) - .2, s(4) + .4), cut = ss(seg(t, r(4, 2.6), r(4, 4.0))), y = 990;
-    ring6(320 - 70 * cut, y, 70, k, 60); ring6(460 + 70 * cut, y, 70, k, 61); if (cut < .5) line(g, [[390, y], [390, y]], { w: 4, seed: 62, a: 1 - cut * 2 });
+    ring6(320 - 70 * cut, y + 8 * Math.sin(t * 1.3) * cut, 70, k, 60, P.ink, .5 * cut * t); ring6(460 + 70 * cut, y - 8 * Math.sin(t * 1.3) * cut, 70, k, 61, P.ink, -.5 * cut * t); bee(t, 700 + 90 * Math.sin(t * .8), 930, .9, { seed: 64, face: Math.cos(t * .8) > 0 ? 1 : -1, crop: .7 }); if (cut < .5) line(g, [[390, y], [390, y]], { w: 4, seed: 62, a: 1 - cut * 2 });
     hand(g, 'sucrose', 390, 900, { size: 46, align: 'center', col: P.soft, a: (1 - cut) * k });
     if (cut > 0) { hand(g, 'glucose', 260, 1100, { size: 46, align: 'center', col: P.rust, a: cut }); hand(g, 'fructose', 520, 1100, { size: 46, align: 'center', col: P.rust, a: cut }); }
     const sx = 390, sy = 860 + 40 * seg(t, r(4, 2.0), r(4, 2.6)), op = .5 + .5 * Math.sin(t * 8); line(g, [[sx - 30, sy - 30], [sx, sy + 20 * op], [sx + 30, sy - 30]], { w: 4, col: P.rust, seed: 63, k: seg(t, r(4, 1.6), r(4, 2.2)) });
     header(g, { step: 3, of: 6, title: 'Add invertase', note: 'an enzyme: cuts sugar in two', k }); }
-  else if (t < s(6) - .2) { const k = seg(t, s(5) - .2, s(5) + .4), bub = seg(t, r(5, 2.6), r(5, 3.6));
-    jar(240, 900, 260, 210, .85, t, k, 70); fill(g, rectPts(246, 925, 248, 180, 4), C.nectar, .7 * k);
+  else if (t < s(6) - .2) { const k = seg(t, s(5) - .2, s(5) + .4), bub = seg(t, r(5, .2), r(5, 1.2));
+    const jx = 240 + 4 * Math.sin(t * 17) * seg(t, r(5, 2.6), r(5, 3.0)); jar(jx, 900, 260, 210, .85, t, k, 70); fill(g, rectPts(jx + 6, 925, 248, 180, 4), C.nectar, .7 * k);
     for (let i = 0; i < 10 * bub; i++) { const u = (t * .8 + hash(i)) % 1; line(g, circPts(270 + hash(i * 3) * 200, 1090 - u * 170, 6 + 4 * hash(i), 10), { w: 2, close: true, seed: 71 + i, a: 1 - u }); }
-    hand(g, 'ferment!', 640, 1000, { size: 64, col: P.rust, write: bub }); line(g, [[560, 1020], [500, 1000]], { w: 3, col: P.rust, k: bub, seed: 72 });
+    hand(g, 'ferment!', 640, 1000, { size: 64, col: P.rust, write: seg(t, r(5, 2.6), r(5, 3.4)) }); line(g, [[560, 1020], [500, 1000]], { w: 3, col: P.rust, k: bub, seed: 72 });
     header(g, { title: 'Too watery', note: 'stored like this, it spoils', k }); }
   else if (t < s(7) - .2) { const k = seg(t, s(6) - .2, s(6) + .4), fl = ss(seg(t, r(6, 2.2), r(6, 6.4)));
     flower(170, 960, .8, k, 80); line(g, [[240, 900], [380, 860], [560, 880], [700, 940]], { w: 2.6, col: P.faint, seed: 81, k: fl });
@@ -106,7 +106,7 @@ function recipe(t) { const a = win(t, s(2) - .3, s(11) - .1, .5); if (a <= 0) re
 function signoff(t) { const a = win(t, s(11) - .3, s(13) - .1, .4); if (a <= 0) return; g.save(); g.globalAlpha = a;
   if (t < s(12) - .2) { const k = seg(t, s(11) + .2, s(11) + 1.6); hand(g, 'Good honey.', 540, 600, { size: 170, align: 'center', write: k }); splats(g, 900, 480, seg(t, s(11) + 1.5, s(11) + 2), 7); splats(g, 180, 660, seg(t, s(11) + 1.7, s(11) + 2.2), 13);
     mono(g, 'ENZYMES · TONGUE + WINGS · WAX', 540, 700, { size: 22, col: P.soft, align: 'center', track: 4, a: seg(t, s(11) + 1.2, s(11) + 1.8) });
-    jar(370, 820, 300, 290, 1, t); hand(g, 'HONEY', 520, 1010, { size: 66, align: 'center', col: '#fff8ea' }); bee(t, 760, 800, .9, { seed: 150 }); }
+    jar(370, 820, 300, 290, 1, t); hand(g, 'HONEY', 520, 1010, { size: 66, align: 'center', col: '#fff8ea' }); bee(t, 520 + 290 * Math.cos(t * 1.1), 900 + 70 * Math.sin(t * 2.2), .9, { seed: 150, face: Math.sin(t * 1.1) < 0 ? 1 : -1 }); }
   else { hand(g, 'Bees dry it', 540, 520, { size: 110, align: 'center' }); hand(g, 'with their wings?', 540, 640, { size: 110, align: 'center', col: P.rust });
     bee(t, 540, 780, 1.1, { seed: 160, flap: 2.5 });
     [['yes', 360], ['no', 700]].forEach(([w, x], i) => { const k = seg(t, s(12) + .8 + i * .3, s(12) + 1.3 + i * .3); line(g, circPts(x - 70, 960, 30, 20), { w: 3.4, close: true, seed: 600 + i, k }); hand(g, w, x - 20, 985, { size: 90, a: k }); }); }
@@ -122,7 +122,7 @@ function endcard(t) { const t0 = s(13) - .25, a = ss(seg(t, t0, t0 + .5)); if (a
 function stepIndex(t) { const b = [s(2), s(3), s(4), s(6), s(8), s(10), s(11)]; for (let i = 0; i < 6; i++) if (t < b[i + 1]) return [i, seg(t, b[i], b[i + 1])]; return [5, 1]; }
 function scene(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.drawImage(paper(), 0, 0);
-  hook(t); recipe(t); signoff(t); endcard(t);
+  g.save(); g.translate(8 * Math.sin(t * .45), 6 * Math.sin(t * .33)); hook(t); recipe(t); signoff(t); endcard(t); g.restore();
   if (t > s(2) - .3 && t < s(11)) { const [i, u] = stepIndex(t); g.save(); g.globalAlpha = seg(t, s(2) - .3, s(2) + .2) * (1 - seg(t, s(11) - .4, s(11))); progress(g, STEPS, i, u); g.restore(); }
   const ph = PH.findLast(p => t >= p.start - .1); if (ph && ph.i < PH.length - 1) { const nx = PH[ph.i + 1].start; caption(g, ph.cap, seg(t, ph.start - .1, ph.start + .12) * (1 - seg(t, nx - .2, nx - .05)), 1290); }
 }
