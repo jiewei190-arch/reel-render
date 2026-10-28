@@ -51,7 +51,7 @@
 | 80 | feetasleep | Why does your foot fall asleep? | H1 | merged, Nov 13 09:00 |
 | 81 | cricketchirp | Can you tell the temperature from cricket chirps? | H4 | merged, Nov 13 13:00 |
 | 82 | shiver | Why do we shiver when we're cold? | H4 | merged, Nov 13 16:00 |
-| 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
+| 83 | thunder | Why does thunder rumble instead of just bang? | H3 | merged, Nov 13 19:00 |
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
 | 85 | rainbow | Why are rainbows curved? | H1 | merged v2, Nov 14 09:00 |
 | 86 | hotsauce | Why does spicy food feel hot? | H1 | merged, Nov 14 13:00 |

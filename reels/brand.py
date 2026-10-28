@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "thunder": {"spot": (44, 1366)},   # captions end at y 1355 on the dark sand ground
     "shiver": {"spot": ("R", 260)},
     "cricketchirp": {"spot": (44, 260)},   # lantern: in-box strips moved to box y >= 130 (screen y >= 360) to clear it
     "earringing": {"spot": (44, 260), "hide": [(6.5, 57.4)]},   # H1 (EP 90): as contrails (same engine): top-left over the banner hook, the wall and the end card; hidden while the posters (their HOW IT REALLY WORKS header sits at y ~270) fill the frame
