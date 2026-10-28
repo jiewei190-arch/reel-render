@@ -236,5 +236,5 @@ window.render = window.seek;
 window.thumb = () => { const t = 1.2; frame(t); screenRect('#000'); cam(540, 1000, 1); rink(t, { trail: 700 });
   skater(P(t, { x: 640, y: 1360, s: 1.2, lean: .14, look: [.8, -.1], mouth: { o: .5, sm: .6 }, eyeS: 1.2, armL: { h: [-90, -20], bend: 20 }, armR: { h: [90, -30], bend: -20 } }));
   reset(); translate(540, 620); scale(.95); titleArt(t, "IT'S NOT", 'PRESSURE');
-  reset(); push(); translate(540, 1000); shape(rr(-300, -54, 600, 108, 16), { fill: '#0f2b3b', lw: 7 }); text('why ice is slippery', 0, 6, { font: '400 64px VT323', fill: '#9cf2ff' }); pop(); };
+  reset(); push(); translate(540, 1530); shape(rr(-300, -54, 600, 108, 16), { fill: '#0f2b3b', lw: 7 }); text('why ice is slippery', 0, 6, { font: '400 64px VT323', fill: '#9cf2ff' }); pop(); };
 window.seek(0); window.ready = true; window.READY = true;
