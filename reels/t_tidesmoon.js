@@ -44,7 +44,7 @@ function post(x, t, tide) { g.save(); g.fillStyle = ink(.85); g.fillRect(x - 7, 
 function ocean(x, y, R, A, ang, far = 1, t = 0, extra = 0, extraAng = 0) { g.save(); g.beginPath();
   for (let i = 0; i <= 120; i++) { const th = i / 120 * TAU, c = Math.cos(th - ang); const near = c > 0 ? 1 : far; const e = extra * Math.pow(Math.cos(th - extraAng), 2);
     const rr = R + A * near * c * c + e + 3 * Math.sin(th * 9 + t * 2); const px = x + Math.cos(th) * rr, py = y + Math.sin(th) * rr; i ? g.lineTo(px, py) : g.moveTo(px, py); }
-  g.closePath(); g.fillStyle = 'rgba(150,175,200,.5)'; g.fill(); g.strokeStyle = ink(.45); g.lineWidth = 3; g.stroke();
+  g.closePath(); g.fillStyle = 'rgba(105,135,170,.62)'; g.fill(); g.strokeStyle = ink(.7); g.lineWidth = 4; g.stroke();
   // dry-brush stipple at the rim
   g.clip(); g.fillStyle = ink(.12); for (let i = 0; i < 500; i++) { const th = hash(i) * TAU, rr = R + (A + 40) * hash(i * 3); g.fillRect(x + Math.cos(th) * rr, y + Math.sin(th) * rr, 2, 2); } g.restore(); }
 function earth(x, y, R, t, rot = 0, k = 1) { g.save(); g.fillStyle = '#efe8d8'; g.beginPath(); g.arc(x, y, R, 0, TAU); g.fill();
@@ -64,7 +64,7 @@ function diagram(t, o = {}) { const { A = 70, far = 1, moonA = 1, rot = t * .25,
 // ---------------- scenes ----------------
 const S = [];
 // hook: the two bulges, big; a vermilion arrow lands on the far one
-S.push([0, T(1), t => { diagram(t, { A: 90 }); const k = seg(t, 1.0, 1.6); arrow(160, 420, 220, 610, k, { col: VERM }); lab('here too', 190, 380, seg(t, 1.2, 1.8), { size: 64 });
+S.push([0, T(1), t => { diagram(t, { A: 90 }); column(g, ['two', 'bulges'], 120, 1000, 1, { size: 70 }); const k = seg(t, 1.0, 1.6); arrow(160, 420, 220, 610, k, { col: VERM }); lab('here too', 190, 380, seg(t, 1.2, 1.8), { size: 64 });
   lab('Moon', 930, 610, seg(t, .3, .9), { size: 44 }); }]);
 // question: the landscape, moon over the ink peaks, the sea climbing the shore; vertical title column
 S.push([T(1), T(2), t => { land(t, { tide: .4 + .2 * Math.sin(t * .8), plumK: seg(t, T(1), r(1, 1.2)) }); column(g, ['Moon', '&', 'tide'], 110, 420, seg(t, T(1), r(1, 1.2)), { size: 80, seal: 'EP 100' }); }]);
@@ -114,7 +114,7 @@ S.push([T(15) - .05, TOT + 1, t => { land(t, { tide: .6, plumK: 0, birdsA: .7, m
   sealMark(g, 860, 700, 50, 'EP 100', seg(t, r(15, 1.2), r(15, 1.6))); }]);
 
 function scene(t) { g.setTransform(1, 0, 0, 1, 0, 0);
-  for (const [a, b, fn] of S) { const k = a <= 0 ? 1 - ss(seg(t, b - .5, b)) : win(t, a + .5, b, .5); if (k <= 0) continue; g.save(); g.globalAlpha = k; fn(t); g.restore(); } }
+  for (const [a, b, fn] of S) { const k = a <= 0 ? 1 - ss(seg(t, b - .5, b)) : win(t, a, b, .5); if (k <= 0) continue; g.save(); g.globalAlpha = k; fn(t); g.restore(); } }
 function sub(t) { let cur = -1; for (let i = 0; i < PH.length; i++) if (t >= PH[i].start - .05) cur = i; if (cur < 0 || cur === PH.length - 1) return;
   const p = PH[cur], nx = PH[cur + 1].start, a = (cur === 0 ? 1 : seg(t, p.start - .05, p.start + .15)) * (1 - seg(t, nx - .25, nx - .05)); subtitle(g, p.cap, a, 1300); }
 window.DUR = TOT;
