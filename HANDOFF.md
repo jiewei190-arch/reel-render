@@ -6,7 +6,7 @@ Read this first. It replaces the chat history. No passwords, tokens or logins ar
 Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Vertical animated "how it really works" explainer reels/Shorts, 66-86 s, beginner friendly. One reel is researched, scripted, voiced, rendered, checked, then scheduled (Instagram + YouTube) only after the owner approves it.
 
 ## 2. Standing rules (set by the owner)
-1. NEVER post to the Facebook Page "Jiesuke". Instagram + YouTube only.
+1. NEVER post to the Facebook Page "Jiesuke". Instagram + YouTube, plus TikTok (owner, Oct 28: "post everything to TikTok") once the owner has created the account and connected it themselves.
 2. Every claim sourced. Write `sources_<name>.md`. Drop or attribute anything you cannot verify (say "according to X"). Keep a list of softened or unverified claims and report it.
 3. No realistic photos. Nothing crude or gory. Educational only for health topics (not medical advice).
 4. VOICE: female `af_heart` (Kokoro), speed 0.97, music `crayon`, bpm 88, copy `specs/leaf.json` settings and breath list. Already-scheduled older reels keep their male voice; all NEW reels use af_heart.
@@ -18,6 +18,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
 11. THUMBNAIL (owner, Oct 27): every reel gets `jobs/<n>/thumb_<n>.jpg`, 1080x1920, designed in the reel's own template (same type, palette, HUD, a key visual). Big 2-4 word text that matches the hook, inside y 300-1620 so it survives the Instagram 3:4 grid crop (y 240-1680). Make it with `window.thumb()` in t_<n>.js and `PORT=9321 python3 -I reels/thumb.py <n>`. Use it as the YouTube custom thumbnail and the Instagram cover.
 12. SOUND MIX (owner, Oct 27): sound effects must never overpower the voice-over. reels/mix2.py now plays effects at 0.5 of their old level and ducks them a further 40% while the voice speaks (spec key "fx_gain" can lower it further; never raise it above 0.5). Do an ear check on the first 10 s of every mix.
 13. STYLE FIT (owner, Oct 27): keep STYLE_FIT.md up to date. Read it before choosing a template, add a row after every reel, record owner feedback and later the performance numbers, and refine the template profiles. Choose the template whose storytelling engine *is* the explanation (example: magnet + Distilbook).
+14. YEARS (owner, Oct 28): years are spoken the way people say them: "nineteen ninety-nine", "eighteen fifty-three", "twenty twelve", "the seventeen seventies" (2000-2009 = "two thousand five"). reels/voice2.py now does this automatically for any standalone 1100-2099 number (and decades like 1770s). Write `1,853` with a comma when it is a quantity, not a year. Kokoro alone says "one thousand eight hundred fifty-three", so re-voice any reel built before this fix.
 10. Caption format (`caption_<name>.md`): description + blank line + "Sources: ..." + blank line + "Follow for more of how it really works." + 5 hashtags ending `#reels` (no #fyp). YouTube metadata uses #Shorts instead of #reels.
 
 ## 3. Pipeline (see reels/ in this repo)
