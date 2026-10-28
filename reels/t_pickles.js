@@ -1,8 +1,8 @@
 // t_pickles.js: "How does a cucumber turn into a pickle?" in template #23 Recipe card (demo t23), same kit as handwarmer and coldtaste.
 // The demo's recipe grammar carries the explanation: fermented dills really are a recipe (cucumbers + salt water + dill, ~3 weeks),
 // built the way the demo builds a cocktail: step header + big counter + checklist card with rust ticks + segmented progress bar + a
-// measuring scale beside the vessel (here a "sour" scale beside the pickle jar), close-ups in a paper panel, the handwritten sign-off
-// ("Good drink." becomes "Good pickle."). The quick (vinegar) pickle gets its own second card, poured like the demo's liqueur.
+// measuring scale beside the vessel (here a "sour" scale beside the pickle jar), close-ups in a paper panel; it ends on the
+// yes/no question and the standard end card (no "Good ___." sign-off: coldtaste used it). The quick (vinegar) pickle gets its own second card, poured like the demo's liqueur.
 // Batch N layout: progress bar y 290 (ends x 620 for the EP badge), header and card in y 360-830, the jar in y 720-1140 (left),
 // the scale at x 760 (y 880-1120), captions centred at y 1290 inside x 180-900. Pure function of t.
 import { create, W, H, TAU, P, clamp, lerp, seg, ss, eo, bo, hash, paper, hand, mono, line, rectPts, circPts, fill, shade, progress, header, card, scale, splats, parse } from './styles/recipe/recipe.js';
@@ -32,7 +32,7 @@ function jar(t, x, y, sc, o = {}) { const { brine = 1, age = 0, bubbles = 0, clo
   const body = [[-120, -150], [120, -150], [132, -120], [132, 170], [110, 190], [-110, 190], [-132, 170], [-132, -120]]; fill(c, body, 'rgba(233,238,240,.7)');
   if (brine > 0) { const top = lerp(190, -110, brine); c.save(); c.beginPath(); body.forEach(([px, py], i) => i ? c.lineTo(px, py) : c.moveTo(px, py)); c.closePath(); c.clip(); c.fillStyle = vinegar ? 'rgba(232,214,160,.6)' : BRINE; c.fillRect(-140, top + Math.sin(t * 2) * 2, 280, 400);
     if (cloudy > 0) { c.fillStyle = `rgba(230,228,205,${.45 * cloudy})`; c.fillRect(-140, top, 280, 400); } c.restore(); }
-  if (cukes > 0) [[-60, 10, 1.45], [0, 30, 1.6], [60, 0, 1.5], [-30, 110, 1.35], [40, 120, 1.4]].forEach(([cx, cy, rr], i) => cuke(cx, cy, 230, rr + (hash(i) - .5) * .2, age, cukes, i));
+  if (cukes > 0) { c.save(); c.beginPath(); body.forEach(([px, py], i) => i ? c.lineTo(px, py) : c.moveTo(px, py)); c.closePath(); c.clip(); } if (cukes > 0) [[-60, 10, 1.45], [0, 30, 1.6], [60, 0, 1.5], [-30, 110, 1.35], [40, 120, 1.4]].forEach(([cx, cy, rr], i) => cuke(cx + 4 * Math.sin(t * 1.3 + i * 2), cy + 7 * Math.sin(t * 1.7 + i), 230, rr + (hash(i) - .5) * .2, age, cukes, i)); if (cukes > 0) c.restore();
   if (bubbles > 0) for (let i = 0; i < 14; i++) { const u = (t * (.25 + hash(i) * .2) + hash(i * 3)) % 1, bx = -100 + hash(i * 5) * 200 + Math.sin(t * 2 + i) * 6, by = lerp(180, lerp(190, -110, brine) + 8, u); c.save(); c.globalAlpha *= bubbles * (1 - u * .3); line(c, circPts(bx, by, 4 + 5 * hash(i * 7), 10), { w: 1.8, close: true, seed: 420 + i, wob: .2, col: P.soft }); c.restore(); }
   line(c, body, { w: 3.2, close: true, seed: 430 }); shade(c, [[-120, -140], [-90, -140], [-90, 180], [-120, 180]], 'rgba(255,255,255,.5)', 7);
   if (lid > 0) { const lp = rectPts(-128, -190 - (1 - lid) * 80, 256, 42, 4); fill(c, lp, '#c9a15a'); line(c, lp, { w: 3, close: true, seed: 431 }); for (let i = 0; i < 6; i++) line(c, [[-110 + i * 42, -186 - (1 - lid) * 80], [-110 + i * 42, -152 - (1 - lid) * 80]], { w: 1.6, col: P.soft, seed: 432 + i }); }
@@ -57,12 +57,12 @@ function ferment(t) { const a = win(t, s(2) - .3, s(7) + .2, .5); if (a <= 0) re
   else if (t < s(5) - .1) header(g, { numSize: 40, step: 2, of: 6, title: t < s(4) ? 'on the skin' : 'into the brine', note: t < s(4) ? 'lactic acid bacteria' : 'they eat the sugars', num: null, k: seg(t, t < s(4) ? s(3) : s(4), (t < s(4) ? s(3) : s(4)) + .6) });
   else if (t < s(6) - .1) header(g, { numSize: 40, step: 3, of: 6, title: 'sugar → acid', note: 'lactic acid + CO₂ bubbles', num: null, k: seg(t, s(5), s(5) + .6) });
   else header(g, { step: 3, of: 6, title: 'wait', num: String(Math.round(21 * ss(seg(t, r(6, .4), r(6, 4.2))))), unit: 'days', sub: 'ABOUT 3 WEEKS', k: seg(t, s(6), s(6) + .6) });
-  if (t < s(3) - .2) { jar(t, 345, 925, 1.22, { brine: ss(seg(t, r(2, 1.8), r(2, 3.2))), cukes: seg(t, r(2, .9), r(2, 1.5)), lid: 0 }); meter(0); }
+  if (t < s(3) - .2) { jar(t, 345, 925, 1.22, { brine: ss(seg(t, r(2, 1.8), r(2, 3.2))), cukes: seg(t, r(2, .9), r(2, 1.5)), lid: 0, bubbles: seg(t, r(2, 3.2), r(2, 3.8)) }); meter(0); }
   else if (t < s(4) - .2) panel(() => {   // close-up on the skin: bacteria riding on the bumps
     const zk = seg(t, s(3) - .2, s(3) + .6); g.save(); g.translate(540, 980); g.scale(lerp(1.4, 1.8, zk), lerp(1.4, 1.8, zk)); cuke(0, 0, 560, -.05, 0, 1, 7); g.restore();
     for (let i = 0; i < 9; i++) bacterium(220 + i * 72 + 8 * Math.sin(t * 2 + i), 850 + 18 * Math.sin(i * 1.7) + 5 * Math.cos(t * 3 + i), seg(t, r(3, .4 + i * .12), r(3, .8 + i * .12)), .3 * Math.sin(i + t));
     hand(g, 'lactic acid bacteria', 540, 740, { size: 54, col: P.rust, align: 'center', a: seg(t, r(3, 1.4), r(3, 2.0)) }); });
-  else if (t < s(5) - .2) { jar(t, 345, 925, 1.22, { brine: 1, lid: seg(t, r(4, .2), r(4, .8)) }); for (let i = 0; i < 10; i++) { const u = (t * .5 + i / 10) % 1; sugar(250 + hash(i) * 160, lerp(1060, 900, u), seg(t, r(4, 1.6), r(4, 2.2)) * (1 - u)); }
+  else if (t < s(5) - .2) { jar(t, 345, 925, 1.22, { brine: 1, lid: seg(t, r(4, .2), r(4, .8)), bubbles: .7 }); for (let i = 0; i < 10; i++) { const u = (t * .5 + i / 10) % 1; sugar(250 + hash(i) * 160, lerp(1060, 900, u), seg(t, r(4, 1.6), r(4, 2.2)) * (1 - u)); }
     for (let i = 0; i < 6; i++) bacterium(240 + hash(i * 5) * 180 + 10 * Math.sin(t * 2 + i), 880 + hash(i * 9) * 180, seg(t, r(4, 1.0 + i * .1), r(4, 1.4 + i * .1)), t + i);
     hand(g, 'salty brine', 520, 760, { size: 48, col: P.soft, a: seg(t, r(4, .4), r(4, 1.0)) }); hand(g, 'sugars', 520, 820, { size: 44, col: P.rust, a: seg(t, r(4, 2.6), r(4, 3.1)) }); meter(.05); }
   else if (t < s(6) - .2) panel(() => {   // a bacterium turns sugar into acid drops and CO2 bubbles
@@ -81,7 +81,7 @@ function salt(t) { const a = win(t, s(7) - .3, s(12) + .1, .5); if (a <= 0) retu
   else if (t < s(11) - .1) header(g, { numSize: 40, step: 4, of: 6, title: 'then acid', note: 'too sour for the bad guys', num: null, k: seg(t, s(10), s(10) + .6) });
   else header(g, { numSize: 40, step: 4, of: 6, title: 'the rule', note: 'never cut the salt', num: null, k: seg(t, s(11), s(11) + .6) });
   const showCard = t < s(8) - .1 || t > s(11) - .1; if (showCard) card(g, { meta: 'CLASSIC · 1 JAR · FERMENTED', title: ['Sour dills'], rows: ROWS, done: 5, cur: -1, footer: 'AFTER NCHFP TESTED RECIPES', t });
-  if (t > s(11) - .1) { const k = seg(t, r(11, .6), r(11, 1.2)); line(g, circPts(870, 668, 150, 30, .32), { w: 4, col: P.rust, k, close: true, seed: 480 }); hand(g, 'never cut it!', 830, 880, { size: 52, col: P.rust, align: 'center', a: seg(t, r(11, 1.4), r(11, 1.9)) }); }
+  if (t > s(11) - .1) { const k = seg(t, r(11, .6), r(11, 1.2)); line(g, circPts(805, 618, 100, 30, .36), { w: 4, col: P.rust, k, close: true, seed: 480 }); }
   if (t < s(8) - .1) { jar(t, 345, 925, 1.22, { brine: 1, age: 1, cloudy: 1, bubbles: .5 }); meter(.9); for (let i = 0; i < 9; i++) { const u = (t * .8 + i / 9) % 1; g.fillStyle = '#ffffff'; g.fillRect(560 + hash(i) * 100, lerp(700, 900, u), 9, 9); } hand(g, 'salt', 640, 680, { size: 50, col: P.soft }); }
   else if (t < s(9) - .1) panel(() => { const k = seg(t, r(8, .4), r(8, 2.6));
     for (let i = 0; i < 6; i++) spoiler(180 + (i % 3) * 120, 820 + Math.floor(i / 3) * 140 + 6 * Math.sin(t * 2 + i), seg(t, r(8, .2 + i * .1), r(8, .5 + i * .1)), t, k);
@@ -113,10 +113,9 @@ function ending(t) { const a = win(t, s(15) - .3, TOT + 1, .5); if (a <= 0) retu
     [['yes', 180], ['no', 460]].forEach(([w, x], i) => { const bx = rectPts(x - 80, 640, 200, 110, 5); line(g, bx, { w: 3, close: true, seed: 890 + i, k: seg(t, r(15, .4 + i * .2), r(15, 1.0 + i * .2)) }); hand(g, w, x + 20, 715, { size: 64, align: 'center', a: seg(t, r(15, .8 + i * .2), r(15, 1.2 + i * .2)) }); });
     jar(t, 345, 940, 1.15, { brine: 1, age: 1, cloudy: .6, bubbles: .6 }); meter(1); g.restore(); }
   const e1 = seg(t, s(16) - .05, r(16, .4));
-  if (e1 > 0) { hand(g, 'Good pickle.', 540, 500, { size: 124, a: e1, align: 'center' }); splats(g, 880, 430, e1, 3);
-    hand(g, 'Follow for more of', 540, 620, { size: 62, a: seg(t, r(16, .2), r(16, .7)), align: 'center' }); hand(g, 'how it really works.', 540, 690, { size: 62, col: P.rust, a: seg(t, r(16, .4), r(16, .9)), align: 'center' });
-    hand(g, "A new 'wait, really?' every day.", 540, 770, { size: 46, col: P.ink, a: seg(t, r(16, .6), r(16, 1.1)), align: 'center' }); mono(g, '@HOWITREALLYWORKSTUDIO', 540, 830, { size: 22, col: P.rust, track: 3, a: seg(t, r(16, .8), r(16, 1.3)), align: 'center' });
-    cuke(540, 1000 + 6 * Math.sin(t * 2.2), 380, -.15, 1, seg(t, r(16, .5), r(16, 1.0)), 4); }
+  if (e1 > 0) { hand(g, 'Follow for more of', 540, 560, { size: 62, a: seg(t, r(16, .2), r(16, .7)), align: 'center' }); hand(g, 'how it really works.', 540, 640, { size: 62, col: P.rust, a: seg(t, r(16, .4), r(16, .9)), align: 'center' });
+    hand(g, "A new 'wait, really?' every day.", 540, 730, { size: 46, col: P.ink, a: seg(t, r(16, .6), r(16, 1.1)), align: 'center' }); mono(g, '@HOWITREALLYWORKSTUDIO', 540, 795, { size: 22, col: P.rust, track: 3, a: seg(t, r(16, .8), r(16, 1.3)), align: 'center' });
+    jar(t, 540, 990, .95, { brine: 1, age: 1, cloudy: .6, bubbles: .8, k: seg(t, r(16, .3), r(16, .8)) }); }
   g.restore(); }
 
 // captions: the kit's handwritten strip, re-set for Batch N (centred at y 1290, text inside x 180-900)

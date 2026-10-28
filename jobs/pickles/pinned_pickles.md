@@ -1,0 +1,1 @@
+Fermented pickles bubble and turn the brine cloudy as the bacteria work; that's normal. For anything you plan to store, use a tested recipe (NCHFP) and don't cut the salt. Have you ever made your own pickles? Yes or no?
