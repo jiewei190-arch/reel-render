@@ -123,7 +123,7 @@ S.push([T(5) - .5, T(7) - .1, t => {
   g.drawImage(DIA, 0, 0); stars(g, 60, t, { y1: H, seed: 3, a: .7 }); ground(t);
   // the mesh wall: a vertical metal strip with small gaps
   const MX = 660; paint(g, P2(p => p.roundRect(MX - 14, 320, 28, 860, 8)), '#9a97a8', { hatch: .2, lw: 3 }); g.fillStyle = '#1c2250'; for (let yy = 340; yy < 1170; yy += 36) g.fillRect(MX - 14, yy, 28, 10);
-  hand(g, 'mesh', MX, 280 + 0, seg(t, T(5), r(5, .5)), { size: 64, col: CREAM });
+  hand(g, 'mesh', MX - 90, 330, seg(t, T(5), r(5, .5)), { size: 60, col: CREAM });
   const ph = t * 2.2, inK = seg(t, r(5, .2), r(5, 1.6)); wave(wavePts(80, MX - 20, 620, 110, 560, ph), inK);
   const back = seg(t, T(6) - .1, r(6, 1.4)); if (back > 0) { const P = wavePts(80, MX - 20, 900, 110, 560, -ph).reverse(); wave(P, back, 'rgba(255,170,120,.95)'); arrowP(g, 560, 1060, 300, 1060, back, '#ffb08a'); hand(g, 'bounced back', 340, 1120, seg(t, r(6, .6), r(6, 1.3)), { size: 70, col: '#ffb08a' }); }
   hand(g, 'too big to fit', 360, 380, seg(t, r(5, 2.2), r(5, 3.0)), { size: 70, col: GOLD });

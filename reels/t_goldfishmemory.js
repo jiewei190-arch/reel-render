@@ -79,22 +79,22 @@ S.push([0, T(2), t => {
   const u = t * 1.1 + 2; let [fx, fy] = swimPt(540, 790, 160, 100, u), fa = u + Math.PI / 2;
   if (outK > 0) { const t0 = r(1, 2.5), [sx, sy] = swimPt(540, 790, 160, 100, t0 * 1.1 + 2); fx = lerp(sx, 120, outK) + Math.sin(outK * 9) * 20 * (1 - outK); fy = lerp(sy, 1010, outK * outK); fa = Math.atan2(1010 - sy, 120 - sx); }
   fish(fx, fy, 1.5, fa, t); bubbles(fx + 40, fy - 40, t, 3, 1 - outK);
-  serif(g, 'the 3-second', 400, 340, { size: 96, w: 700 }); serif(g, 'goldfish?', 400, 440, { size: 96, w: 700 });
-  if (t > E(0) - .2) { const k = ss(seg(t, r(1, 3.0), r(1, 3.6))); if (k > 0) { g.save(); g.strokeStyle = 'rgba(184,56,42,.9)'; g.lineWidth = 14; g.lineCap = 'round'; g.beginPath(); g.moveTo(130, 355); g.lineTo(lerp(130, 680, k), 330); g.stroke(); g.restore(); } }
+  serif(g, 'the 3-second', 360, 360, { size: 92, w: 700 }); serif(g, 'goldfish?', 360, 455, { size: 92, w: 700 });
+  if (t > E(0) - .2) { const k = ss(seg(t, r(1, 3.0), r(1, 3.6))); if (k > 0) { g.save(); g.strokeStyle = 'rgba(184,56,42,.9)'; g.lineWidth = 14; g.lineCap = 'round'; g.beginPath(); g.moveTo(100, 375); g.lineTo(lerp(100, 620, k), 350); g.stroke(); g.restore(); } }
   sealMark(g, 900, 430, 60, 'myth', ss(seg(t, r(1, 3.4), r(1, 3.8))));
 }]);
 // B (p2-p6): Plymouth: a lever in the pond, a 24-hour dial with one feeding hour; fish crowd the lever before the hour, even after the food stops
 S.push([T(2) - .45, T(7) - .1, t => {
   base(t, { moonA: .5, mtn: .7 });
-  serif(g, 'University of Plymouth', 540, 300, { size: 52, a: ss(seg(t, T(2), r(2, .8))) });
+  serif(g, 'University of Plymouth', 480, 372, { size: 52, a: ss(seg(t, T(2), r(2, .8))) });
   const kd = ss(seg(t, T(3) - .2, r(3, .8))), day = Math.max(0, t - T(3)) * .9, hand = (day % 1) * TAU, nearHour = ((day % 1) > .9 || (day % 1) < .05) && t > T(4) - .3;
   dial(770, 560, 150, hand, kd, t, { red: t < T(5) + .4 ? 1 : 0, label: t < T(5) + .4 ? 'one hour in 24' : 'food off' });
   const live = t < T(5) + .4 ? 1 : 0, press = nearHour ? Math.abs(Math.sin(t * 9)) : 0;
   lever(230, 1000, press, ss(seg(t, r(2, 2.0), r(2, 2.8))), live);
   for (let i = 0; i < 5; i++) { const home = [420 + i * 110, 1040 + (i % 2) * 60], at = [250 + (i - 2) * 22, 1030 + (i % 3) * 28], gather = t > T(4) - .3 ? ss(clamp(nearHour ? 1 : .15)) : 0;
     const wx = lerp(home[0] + Math.sin(t * .8 + i) * 60, at[0], gather), wy = lerp(home[1] + Math.cos(t * .7 + i) * 20, at[1], gather); fish(wx, wy, .8, gather > .5 ? Math.PI + .2 * Math.sin(t * 3 + i) : (Math.cos(t * .8 + i) > 0 ? 0 : Math.PI), t + i); }
-  if (t > T(4) + .6) serif(g, 'just before feeding time', 300, 470, { size: 44, a: ss(seg(t, r(4, .6), r(4, 1.2))) * (1 - ss(seg(t, T(5) - .3, T(5)))) });
-  if (t > T(5)) serif(g, 'day 1 · day 2 · day 3', 300, 470, { size: 46, a: ss(seg(t, r(5, .5), r(5, 1.2))) * (1 - ss(seg(t, T(6) - .3, T(6)))) });
+  if (t > T(4) + .6) serif(g, 'just before feeding time', 300, 480, { size: 44, a: ss(seg(t, r(4, .6), r(4, 1.2))) * (1 - ss(seg(t, T(5) - .3, T(5)))) });
+  if (t > T(5)) serif(g, 'day 1 · day 2 · day 3', 300, 480, { size: 46, a: ss(seg(t, r(5, .5), r(5, 1.2))) * (1 - ss(seg(t, T(6) - .3, T(6)))) });
   if (t > T(6)) { const k = ss(seg(t, T(6), r(6, .6))); serif(g, '3 seconds', 300, 450, { size: 60, a: k }); g.save(); g.strokeStyle = 'rgba(184,56,42,.9)'; g.lineWidth = 8; g.beginPath(); g.moveTo(180, 455); g.lineTo(lerp(180, 420, ss(seg(t, r(6, .6), r(6, 1.0)))), 445); g.stroke(); g.restore();
     serif(g, 'a daily routine', 300, 560, { size: 60, w: 700, a: ss(seg(t, r(6, 1.4), r(6, 2.0))) }); }
 }]);
@@ -108,7 +108,7 @@ S.push([T(7) - .45, T(10) - .1, t => {
   // months passing: five moon phases across the sky
   const mk_ = seg(t, T(9) - .4, r(9, 1.8)); for (let i = 0; i < 5; i++) { const a = clamp(mk_ * 5 - i); if (a > 0) moonPhase(220 + i * 160, 470, 46, .1 + i * .2, a); }
   if (t > r(9, 1.8)) serif(g, 'months later', 540, 590, { size: 60, w: 700, a: ss(seg(t, r(9, 1.8), r(9, 2.6))) });
-  serif(g, 'sound = food', 540, 320, { size: 60, w: 700, a: ss(seg(t, r(7, .6), r(7, 1.4))) * (1 - ss(seg(t, T(9) - .4, T(9)))) });
+  serif(g, 'sound = food', 480, 372, { size: 60, w: 700, a: ss(seg(t, r(7, .6), r(7, 1.4))) * (1 - ss(seg(t, T(9) - .4, T(9)))) });
 }]);
 // D (p10): Japan: a goldfish told Bach from Stravinsky (it bites a bead for its piece)
 S.push([T(10) - .45, T(11) - .1, t => {
@@ -129,7 +129,7 @@ S.push([T(11) - .45, T(14) - .1, t => {
   base(t, { moonA: .6, mtn: .5 }); birds(g, t, { x0: 100, y0: 300, n: 6, sp: 70, s: 1.1 });
   for (let i = 0; i < 3; i++) { const u = t * .7 + i * 2.1; fish(540 + Math.cos(u) * 360, 1060 + Math.sin(u * 1.3) * 40, .8, Math.sin(u) > 0 ? Math.PI : 0, t + i); }
   smallBowl(540, 760, 1.6, t, ss(seg(t, T(11) - .3, r(11, .6))) * (1 - ss(seg(t, T(13) - .3, T(13)))));
-  serif(g, 'where did it come from?', 540, 360, { size: 58, a: ss(seg(t, T(11), r(11, .8))) * (1 - ss(seg(t, T(13) - .3, T(13)))) });
+  serif(g, 'where did it come from?', 500, 400, { size: 58, a: ss(seg(t, T(11), r(11, .8))) * (1 - ss(seg(t, T(13) - .3, T(13)))) });
   if (t > T(12) + 2.4 && t < T(13)) serif(g, '(one researcher’s hunch)', 540, 1060, { size: 42, a: ss(seg(t, r(12, 2.4), r(12, 3.0))), tone: .6 });
   if (t > T(13) - .2) { ['weeks', 'months', 'years'].forEach((w_, i) => serif(g, w_, 540, 470 + i * 150, { size: 100, w: 700, a: ss(seg(t, r(13, .5 + i * .9), r(13, 1.1 + i * .9))) })); sealMark(g, 760, 860, 60, 'C Brown', ss(seg(t, r(13, 2.8), r(13, 3.3)))); }
 }]);
