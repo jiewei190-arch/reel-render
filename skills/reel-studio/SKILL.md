@@ -14,7 +14,7 @@ Short animated explainer reels for Instagram and YouTube "howitreallyworkstudio"
 - The LAST spoken phrase and the end card are exactly "Follow for more of how it really works."
 - Research first; every claim sourced in sources_<name>.md; unverifiable claims are cut or attributed.
 - No realistic photos, nothing crude or gory, nothing budget-looking.
-- STYLE: only the owner's 19 chosen templates (TEMPLATES.md). Reproduce the demo's actual animation language and formatting, not a lookalike; only topic, voice and objects are new. Old house templates are dropped.
+- STYLE: only the owner's 29 approved styles (TEMPLATES.md: 19 grid templates, #20 crayon, #21-#29). Reproduce the demo's actual animation language and formatting, not a lookalike; only topic, voice and objects are new. Old house templates are dropped.
 - Never enter passwords, tokens or card details; no permanent deletes; ask before changing account settings; never post without the owner's approval.
 - Do your own research; do not ask the owner to fetch websites.
 - Show an ~8 s preview as soon as scenes render, before the full render, so changes are cheap.

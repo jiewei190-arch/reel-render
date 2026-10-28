@@ -26,6 +26,8 @@ Owner's request (Oct 27 2026): keep active track of how well each style fits eac
 | 18 | handdrawn "Japan heat wave" | field notebook, pencil sections, red seals, measurement boxes, charts | measurable mechanisms with numbers (flow, volume, temperature), cross-sections | character stories | flush: v2 built (79.2 s), owner review pending |
 | 1, 2, 4, 5, 8, 12, 17, 19 | not used yet | see TEMPLATES.md and the demo videos | to be profiled after the first use | | |
 
+Templates #21-#29 (owner picks, Oct 28): storybook paint, paper stop-motion ledger, recipe card, stop-motion explainer, ink moon, doodle robot, old-master painting, sand art, particle flock. Not profiled until first use. Signal: 8 of 9 picks are hand-made (paint, paper, ink, sand); the owner strongly prefers material, hand-made looks.
+
 Extra approved style: the crayon colour style (reels/styles/crayon, used for flamingo). Best guess: animals and nature, playful kid-friendly topics.
 
 ## Reel log

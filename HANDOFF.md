@@ -11,7 +11,7 @@ Instagram `@howitreallyworkstudio` and a YouTube channel with the same name. Ver
 3. No realistic photos. Nothing crude or gory. Educational only for health topics (not medical advice).
 4. VOICE: female `af_heart` (Kokoro), speed 0.97, music `crayon`, bpm 88, copy `specs/leaf.json` settings and breath list. Already-scheduled older reels keep their male voice; all NEW reels use af_heart.
 5. CLOSING LINE: the last spoken phrase AND the on-screen end card of every reel is exactly "Follow for more of how it really works." Total length still <= 86 s.
-6. STYLE (strict): each reel is built in ONE of the owner's chosen demo templates (section 4) and must reproduce that demo's actual animation language and formatting, not a lookalike. Only the topic, voiceover and objects are original. Nothing basic. Earlier house templates (pc, qr, micro, spin, fear, anc, candy, oct) were dropped. Say which template and why.
+6. STYLE (strict): each reel is built in ONE of the owner's 29 approved styles (section 4 + TEMPLATES.md: the 19 grid templates, #20 crayon, #21-#29 added Oct 28) and must reproduce that demo's actual animation language and formatting, not a lookalike. Only the topic, voiceover and objects are original. Nothing basic. Earlier house templates (pc, qr, micro, spin, fear, anc, candy, oct) were dropped. Say which template and why.
 7. Topics are researched with a "this can blow up on YouTube and Instagram" lens. Beginner friendly, a surprising first 3 seconds, a question at the end. Prefer topics nobody on the channel covered yet.
 8. Do not ask the owner to fetch websites or send links; do the research yourself (WebSearch/WebFetch).
 9. Workers NEVER post, schedule or touch the owner's computer. Build, check, push, stop.
@@ -26,7 +26,7 @@ Engine: headless Chromium 540x960 @DSF2 -> 1080x1920, deterministic `window.seek
 Helpers: `newreel.py` (scaffold; refuses to overwrite), `contact.py <name> [cols] [maxframes] [up|out]` (one labelled contact sheet = the cheapest QA), `lib/lib2d.js` primitives, `PRIMITIVES.md`, `USAGE_SAVERS.md`.
 Limits: 2 CPUs, ONE render at a time (`flock /tmp/render.lock`), limited disk (delete `frames/<n>` after encode). Each parallel worker uses its own two ports.
 
-## 4. The owner's 19 templates (the only styles to use)
+## 4. The owner's approved templates (the only styles to use): 19 below + #20 crayon + #21-#29 in TEMPLATES.md
 Numbers are the owner's grid positions; the second number is the id in the source repo.
 1 paper-lantern (2) | 2 papercut-red (7) | 3 blueprint (8) | 4 crayon-book (20) | 5 impasto (21) | 6 shadow-puppet (22) | 7 silkscreen-poster (23) | 8 urban-sketch (29) | 9 scifi-toon (25) | 10 paper-popup (28) | 11 cel-boil (55) | 12 collage (56) | 13 collage "AI Doom" (78) | 14 explainer "Alchemy Infra" (80) | 15 handdrawn "Distilbook" (83) | 16 cinematic3d "Christmas story" (99) | 17 handdrawn "Playful" (115) | 18 handdrawn "Japan heat wave" (101) | 19 handdrawn "Sketch music" (102).
 Sources: clones in `/home/claude/styles-src/` of mg-styles-15, awesome-opus-5-5-video-styles, claude-video-2, animate, awesome-claude-video-skills, awesome-claude-5-5-videos, ClaudeAnimationBase, lemo-opuscar (see README for URLs). Read the demo's source, copy its motion, easing, type and layout. Existing in-house modules in `reels/styles/` (crayon, silkscreen, shadowpuppet, popup, lantern, celboil, handdrawn, neon, cartoon, collage, crt, dataviz, lowpoly...) are starting points, but must be brought up to match the demo.
