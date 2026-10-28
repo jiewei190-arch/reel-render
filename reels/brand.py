@@ -49,6 +49,7 @@ OVR = {
     "earringing": {"spot": (44, 260), "hide": [(6.5, 57.4)]},   # H1 (EP 90): as contrails (same engine): top-left over the banner hook, the wall and the end card; hidden while the posters (their HOW IT REALLY WORKS header sits at y ~270) fill the frame
     "carsick": {"spot": (44, 400), "hide": [(14.0, 20.7), (59.9, 66.9), (70.0, 99)]},   # H1 (EP 89): as hiccups (same rig): below the left of the plaques; hidden on the end card
     "twinkle": {"spot": (44, 1366)},   # H1 (EP 94): as coldbreath (same engine): the free strip under the caption box; centred titles fill the top band
+    "sunburn": {"spot": ("R", 260)},   # H1 (EP 93): as stomachgrowl (same pop-up kit): top-right above the hanging signs (they start at y 340)
     "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card
     "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
     "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns   # titles run to the top-right corner; strip under the captions is clear
