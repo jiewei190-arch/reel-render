@@ -25,7 +25,11 @@
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | queued |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | queued |
+| 49 | leafcolor | Why do leaves change color in the fall? | H2 | queued (after popuptimer), Nov 6 21:30 |
+| 50 | candle | How does a candle actually burn? | H2 | queued, Nov 7 09:00 |
+| 55 | goosebumps | Why do we get goosebumps? | H3 | queued (after snowflake) |
+| 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
-Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Free numbers 49 and 50 go to the next reels in line.
+Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Numbers 49 and 50 went to H2's leafcolor and candle (Oct 28).
