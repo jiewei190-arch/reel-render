@@ -19,11 +19,13 @@
 | 46 | slipperyice | Why is ice slippery? | H4 | merged, Nov 6 13:00 (v2 coming) |
 | 47 | snowflake | Why do snowflakes have six sides? | H3 | queued |
 | 45 | runnynose | Why does your nose run when it's cold? | H3 | building (renumbered from 48) |
-| 49 | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | queued (Thanksgiving) |
-| 50 | cranberries | Why do cranberries float? | H2 | queued (Thanksgiving) |
+| (Thanksgiving) | popuptimer | How does a turkey pop-up timer know when it's done? | H2 | rendering; EP + badge assigned when scheduled (about Nov 22-25) |
+| (Thanksgiving) | cranberries | Why do cranberries float? | H2 | merged, unbadged; EP + badge assigned when scheduled (about Nov 22-25) |
 | 51 | daylightsleep | Why does the time change mess with your sleep? | H4 | queued |
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | queued |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | queued |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
+
+Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Free numbers 49 and 50 go to the next reels in line.
