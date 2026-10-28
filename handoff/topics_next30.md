@@ -37,7 +37,7 @@
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | merged, unbadged; EP + badge when scheduled (about Nov 22-26) |
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | queued |
-| 69 | yawncats | Why do cats sleep so much? | H2 | queued |
+| 69 | gps | How does your phone's GPS know where you are? | H2 | queued |
 | 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | queued |
