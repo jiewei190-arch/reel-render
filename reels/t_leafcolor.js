@@ -155,13 +155,13 @@ S.push([T(6) - .5, T(11) - .1, t => {
 }]);
 // D (p11): weather: warm sunny day + cool night -> brightest reds over the ink landscape
 S.push([T(11) - .5, T(12) - .1, t => {
-  const nt = ss(seg(t, r(11, 2.0), r(11, 3.2)));
+  const nt = ss(seg(t, r(11, 2.2), r(11, 3.4)));
   land(t, { mx: lerp(240, 300, nt), my: lerp(980, 560, nt), mr: 100, o: .1, moonA: nt, birdsA: 1 - nt });
   sun(lerp(300, 240, nt), lerp(520, 980, nt), 60, 1 - nt);
   g.save(); g.globalAlpha *= .22 * nt; g.fillStyle = 'rgb(40,46,70)'; g.fillRect(0, 0, W, H); g.restore();
   branch(t, { green: .05, red: lerp(.6, 1, seg(t, T(11), E(11))), brown: 0 }, { y: 300 });
-  serif(g, 'warm, sunny days', 330, 300, { size: 56, w: 700, a: seg(t, r(11, .5), r(11, 1.0)) * (1 - nt) });
-  serif(g, 'cool nights', 330, 300, { size: 56, w: 700, a: nt });
+  serif(g, 'warm, sunny days', 330, 300, { size: 56, w: 700, a: seg(t, r(11, .5), r(11, 1.0)) * (1 - seg(t, r(11, 2.2), r(11, 2.5))) });
+  serif(g, 'cool nights', 330, 300, { size: 56, w: 700, a: seg(t, r(11, 2.6), r(11, 2.9)) });
   sealMark(g, 160, 410, 56, 'bright red', seg(t, r(11, 3.6), r(11, 4.2)));
 }]);
 // E (p12-p13): brown last (tannins); the cork layer seals and the leaf lets go, drifting down to the water
@@ -188,7 +188,7 @@ S.push([T(14) - .5, T(15) - .1, t => {
 }]);
 // G (p15-p16): question (red or gold) and the end card under the moon, branch back in place (loops to frame 0)
 S.push([T(15) - .5, TL.total + 1, t => {
-  land(t, { mx: 190, my: 760, mr: 95, o: .25 });
+  land(t, { mx: 190, my: 760, mr: 95, o: .25, birdsA: 1 - seg(t, T(16) - .6, T(16) - .1) });
   branch(t, { green: 0, red: .85, brown: 0 }, { y: lerp(300, 640, ss(seg(t, T(16) - .5, T(16) + .3))) });
   const q = 1 - seg(t, T(16) - .3, T(16) + .1);
   if (q > 0) { g.save(); g.globalAlpha *= q; enso(g, 300, 900, 130, seg(t, T(15), r(15, .6)), { seed: 3 }); enso(g, 780, 760, 130, seg(t, r(15, .3), r(15, .9)), { seed: 6 });
@@ -224,7 +224,7 @@ function sub(t) {
 }
 window.DUR = TL.total;
 window.seek = t => { scene(t); sub(t); const f = Math.min(1, (TL.total - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .3; g.fillStyle = '#2a2622'; g.fillRect(0, 0, W, H); g.restore(); } };
-window.thumb = () => { const t = 3; land(t, { mx: 280, my: 700, mr: 130, o: .3 }); branch(t, { green: 0, red: .9, brown: 0 }, { y: 760, s: 1.25 });
+window.thumb = () => { const t = 3; land(t, { mx: 280, my: 700, mr: 130, o: .3, birdsA: 0 }); branch(t, { green: 0, red: .9, brown: 0 }, { y: 760, s: 1.25 });
   leaf(300, 1150, 170, .1, { green: .35, red: 0, brown: 0 });
   serif(g, 'WHY DO LEAVES', 540, 380, { size: 104, w: 700, ls: 3 }); serif(g, 'CHANGE COLOR?', 540, 500, { size: 104, w: 700, ls: 3 }); sealMark(g, 900, 590, 64, 'fall'); };
 window.render = window.seek; window.seek(0); window.ready = true; window.READY = true;
