@@ -76,12 +76,12 @@ function lab(t, o = {}) {           // home: sage ice-cream lab (wall, freezer, 
   fillOnly(rect(X0, -800, X1 - X0, 300), '#8fae9b', { boil: 0 });
   shape(rr(300, 160, 520, 44, 10), { fill: '#eef6f0', lw: 6 }); stroke([[360, 140], [360, 160]], 5); stroke([[760, 140], [760, 160]], 5);
   shape(rr(560, 300, 470, 300, 10), { fill: '#2f4a3f', lw: 8, shade: () => {
-    const L = o.board || ['BRAIN = FROZEN ?', 'cold → mouth → ???', '']; L.forEach((l, i) => text(l, 795, 360 + i * 64, { font: `400 ${i ? 38 : 48}px VT323`, fill: i === 2 ? '#ffd36e' : '#e8f0e0' }));
+    const L = o.bare ? [] : o.board || ['BRAIN = FROZEN ?', 'cold → mouth → ???', '']; L.forEach((l, i) => text(l, 795, 360 + i * 64, { font: `400 ${i ? 38 : 48}px VT323`, fill: i === 2 ? '#ffd36e' : '#e8f0e0' }));
   } });
   shape(rr(580, 592, 430, 16, 4), { fill: '#b08a5a', lw: 5 });
   push(); translate(170, 360); shape(ell(0, 0, 70, 70, 40), { fill: '#f7f3e8', lw: 8 }); for (let i = 0; i < 12; i++) { const a = i / 12 * TAU; stroke([[Math.cos(a) * 54, Math.sin(a) * 54], [Math.cos(a) * 62, Math.sin(a) * 62]], 4); } const sA = Math.floor(t) / 60 * TAU - Math.PI / 2; stroke([[0, 0], [0, -40]], 8); stroke([[0, 0], [36, 18]], 6); stroke([[0, 0], [Math.cos(sA) * 54, Math.sin(sA) * 54]], 2.5, { line: '#e8392b' }); dot(0, 0, 7); pop();
   shape(rr(-60, 560, 400, 22, 4), { fill: '#b08a5a', lw: 6 });
-  [['#ff9cc2', 'BERRY'], ['#bff2d0', 'MINT'], ['#7a4a2a', 'CHOC']].forEach(([c, l], i) => { shape(rr(10 + i * 110, 470, 90, 90, 12), { fill: '#f4f1ea', lw: 6, shade: () => fillOnly(rect(0, 470, 400, 26), c, { boil: .3 }) }); text(l, 55 + i * 110, 530, { font: '800 18px "Baloo 2"', fill: INK }); });
+  [['#ff9cc2', 'BERRY'], ['#bff2d0', 'MINT'], ['#7a4a2a', 'CHOC']].forEach(([c, l], i) => { shape(rr(10 + i * 110, 470, 90, 90, 12), { fill: '#f4f1ea', lw: 6, shade: () => fillOnly(rect(0, 470, 400, 26), c, { boil: .3 }) }); if (!o.bare) text(l, 55 + i * 110, 530, { font: '800 18px "Baloo 2"', fill: INK }); });
   // freezer chest (left) with frost
   shape(rr(-80, 760, 460, 380, 20), { fill: '#e6f2f7', lw: 8, shade: () => { fillOnly(rect(300, 760, 100, 400), '#c9dde6', { boil: .3 }); for (let i = 0; i < 5; i++) fillOnly(ell(-40 + i * 90, 780, 40, 14, 12), '#ffffff', { boil: .4 }); } });
   shape(rr(-90, 730, 480, 50, 12), { fill: '#bcd6e2', lw: 7 }); shape(rr(120, 860, 120, 24, 10), { fill: '#7c9aa8', lw: 5 });
@@ -140,7 +140,7 @@ const TAGS = [[s(3) - .1, s(6) - .4, 'U-1  THE PALATE', 'the roof of your mouth'
 
 const SH = {
   hook(t, tq) {   // frame 0: Spud already deep in brain freeze, cone up, ice shards + zaps; camera shake; lockup on top
-    cam(400, 900, 1.9, 6, t); lab(t);
+    cam(400, 900, 1.9, 6, t); lab(t, { bare: true });
     frozenSpud(t, { x: 400, y: 1080, fx: 1 });
   },
   lab(t, tq) {   // two-shot: Juno explains; Spud thaws; insert of a brain on a pedestal under a dome: PAIN SENSORS 0
@@ -260,7 +260,7 @@ function titleArt(t, L1 = 'BRAIN', L2 = 'FREEZE') {   // atomic-age TV lockup: c
 }
 function titleCard(t) {   // on from frame 0 (popped on 12 fps steps after a beat), out before the cut to the lab
   const b = HCUT; if (t >= b) return; const sc = 1 + .04 * Math.sin(q(t) * 6), out = 1 - seg(t, b - .2, b);
-  reset(); translate(540, 470); scale(sc * out * .78, sc * .78); titleArt(t);
+  reset(); translate(540, 470); scale(sc * out * .72, sc * .72); titleArt(t);
 }
 function wipe(t) { for (const [tc, hw] of WIPES) { const d = Math.abs(t - tc); if (d > hw) continue; const u = 1 - d / hw, R = 1500 * Math.pow(u, .6); reset(); portal(540, 960, R, t, { open: 1, sx: 1, spin: 2.2 }); if (d < .03) screenRect('#dcffa8', .7); } }
 function tag(t) {
@@ -288,7 +288,7 @@ window.seek = t => { const T = TL.total, a = T - .5; if (t <= a) return render(t
   else { render(0); const R = 1500 * Math.pow(Math.max(0, 1 - (u - .5) * 2), .6) * (1 - u) * 2; reset(); portal(540, 960, R, t, { open: 1, sx: 1, spin: 2.2 }); } };
 window.render = window.seek;
 // thumbnail / cover (rule 11): Spud mid brain-freeze, the lockup carrying the question
-window.thumb = () => { const t = 1.2; frame(t); screenRect('#000'); cam(400, 980, 1.7); lab(t); frozenSpud(t, { x: 400, y: 1180 });
+window.thumb = () => { const t = 1.2; frame(t); screenRect('#000'); cam(400, 980, 1.7); lab(t, { bare: true }); frozenSpud(t, { x: 400, y: 1180 });
   reset(); translate(540, 470); scale(.8); titleArt(t, 'WHY BRAIN', 'FREEZE?');
   reset(); push(); translate(540, 1330); shape(rr(-300, -54, 600, 108, 16), { fill: '#17232a', lw: 7 }); text("it's not your brain", 0, 6, { font: '400 72px VT323', fill: '#5ee6ff' }); pop(); };
 window.seek(0); window.ready = true; window.READY = true;

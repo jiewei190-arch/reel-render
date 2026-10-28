@@ -1,0 +1,92 @@
+{
+ "name": "eggflip",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  6,
+  9,
+  11,
+  14,
+  15
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Clear, runny egg white turns **solid white** the moment it gets hot.",
+   "Clear, runny egg white turns solid white the moment it gets hot."
+  ],
+  [
+   "But **why do eggs turn solid when you cook them?**",
+   "But why do eggs turn solid when you cook them?"
+  ],
+  [
+   "Egg white is almost **90 percent water,** with proteins floating in it.",
+   "Egg white is almost 90 percent water, with proteins floating in it."
+  ],
+  [
+   "Each protein is a long chain, **folded up** into a tight little ball.",
+   "Each protein is a long chain, folded up into a tight little ball."
+  ],
+  [
+   "Heat makes those chains **shake.** Weak bonds snap, and the balls **unfold.** That's called **denaturing.**",
+   "Heat makes those chains shake. Weak bonds snap, and the balls unfold. That's called denaturing."
+  ],
+  [
+   "Here's the trick: unfolded chains **grab each other.**",
+   "Here's the trick: unfolded chains grab each other."
+  ],
+  [
+   "They tangle into a **mesh,** and the water gets **caught inside,** like fish in a net.",
+   "They tangle into a mesh, and the water gets caught inside, like fish in a net."
+  ],
+  [
+   "That tight mesh turns clear into **white,** and runny into **solid.**",
+   "That tight mesh turns clear into white, and runny into solid."
+  ],
+  [
+   "Each protein lets go at its own heat. The white starts to set around **63 degrees Celsius.** The yolk sets around **70.**",
+   "Each protein lets go at its own heat. The white starts to set around 63 degrees Celsius. The yolk sets around 70."
+  ],
+  [
+   "Keep heating, and too many links form. The egg turns **rubbery.**",
+   "Keep heating, and too many links form. The egg turns rubbery."
+  ],
+  [
+   "So can you **uncook** an egg?",
+   "So can you uncook an egg?"
+  ],
+  [
+   "Not in your **kitchen.**",
+   "Not in your kitchen."
+  ],
+  [
+   "But in 2015, chemists **sort of** did it.",
+   "But in 2015, chemists sort of did it."
+  ],
+  [
+   "They dissolved boiled egg white, spun it in a **vortex machine,** and refolded one protein, **lysozyme.**",
+   "They dissolved boiled egg white, spun it in a vortex machine, and refolded one protein, lysozyme."
+  ],
+  [
+   "Not a raw egg again, just one protein. The goal: **cheaper proteins** for medicine.",
+   "Not a raw egg again, just one protein. The goal: cheaper proteins for medicine."
+  ],
+  [
+   "So cooking an egg is **protein origami** in reverse: unfold, then **tangle.**",
+   "So cooking an egg is protein origami in reverse: unfold, then tangle."
+  ],
+  [
+   "Runny yolk, or hard? **One word.**",
+   "Runny yolk, or hard? One word."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
