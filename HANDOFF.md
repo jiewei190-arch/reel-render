@@ -79,11 +79,10 @@ Status on Oct 27: 10 Shorts scheduled (gps, snake, leaf, ai, scroll, moon, flami
 ### 8d. TikTok (owner created the account Oct 28)
 Owner's rule: post everything to TikTok too. Use TikTok Studio in the owner's Chrome (https://www.tiktok.com/tiktokstudio/upload), where the owner is signed in themselves; never type a password. Per reel: upload the mp4, caption = the first sentence of caption_<n>.md + "Follow for more of how it really works." + the 5 hashtags, cover = thumb_<n>.jpg if the cover editor allows an upload (otherwise choose the frame with the hook title), turn ON "AI-generated content" (the reels are AI-made), then Schedule at the plan's ET time. TikTok limits how far ahead you can schedule (it has been 10 days; check the date picker). Same slots as Instagram/YouTube in handoff/schedule_plan.csv (column "tiktok").
 
-### 8e. Order of work (Oct 28)
-1. Halloween reels first (Oct 28-31, 11 AM / 3 PM / 9 PM ET) on Instagram, YouTube and TikTok; owl only after the owner OKs its fixed version.
-2. Then the 20 approved reels from handoff/schedule_nov.csv (owner's new pace, Oct 28: TikTok + Shorts 5 a day Nov 1-4, Instagram 2-3 a day Nov 1-8). The Nov 6-12 rows in schedule_plan.csv are SUPERSEDED.
-3. YouTube metadata: handoff/yt/meta_halloween.json (Halloween) and handoff/yt/meta4.json (the 20). YouTube's daily upload cap is about 10 to 15: do Halloween first, carry the rest to the next day.
-4. Mark each row "scheduled <date>" in schedule_plan.csv and tracking.csv as you go.
+### 8e. Order of work (updated Oct 28, owner: TikTok + YouTube 5 a day at peak times; Instagram is lower priority because it doesn't pay)
+1. **TikTok and YouTube: handoff/schedule_tt_yt.csv.** All 32 reels (Halloween EP 01-12 first), 5 a day Oct 28-Nov 3, `_ep.mp4` files. TikTok slots 09:00, 13:00, 16:00, 19:00, 21:30 ET; YouTube 12:00, 15:00, 18:00, 20:00, 21:30 ET. TikTok captions start "Ep. nn · "; YouTube titles end "| Ep. nn" (handoff/yt/*.json). YouTube allows only about 10-15 uploads a day: upload today's and tomorrow's first, then continue the next day.
+2. **Instagram: lower priority.** Halloween rows in handoff/schedule_plan.csv (Oct 28-31), then handoff/schedule_nov.csv (2-3 a day, Nov 1-8), plain `<n>.mp4`.
+3. Mark each row "scheduled <date>" in its CSV and in tracking.csv as you go, and push.
 
 ### 8c. After scheduling
 Update `tracking.csv` (scheduled column) and `yt/yt_schedule.csv`, and tell the owner what is scheduled where.
