@@ -37,7 +37,7 @@
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | merged, unbadged; EP + badge when scheduled (about Nov 22-26) |
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
 | 68 | planelift | How do planes actually stay in the air? | H4 | merged, Nov 10 19:00 |
-| 69 | gps | How does your phone's GPS know where you are? | H2 | queued |
+| 69 | gps | How does your phone's GPS know where you are? | H2 | merged, Nov 10 21:30 |
 | 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 71 | sneeze | Why do we sneeze? | H3 | queued |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
