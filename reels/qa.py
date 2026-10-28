@@ -26,6 +26,7 @@ LUFS_RANGE = (-16.0, -14.0); TP_WARN, TP_FAIL = -1.0, 0.0   # dBTP: above -1 WAR
 VOICE_FAIL_DB, VOICE_WARN_DB = 3.5, 6.0   # speech vs the pauses between phrases (approved reels: 4.0-9.4 dB)
 LEN_RANGE = (66.0, 86.0)
 CLOSING = "Follow for more of how it really works."
+BLANK_STD = 1.2             # any single frame whose luminance std is under this is a blank (solid-colour) frame
 F0_EDGE, F0_STD = 1.0, 18.0  # frame 0: luminance std (contrast) must be strong; edges only need to exist (big flat type has few edges)
 FRAME_WH = (1080, 1920)     # owner rule: 9:16, exactly 1080x1920, square pixels (SAR 1:1), also for the _ep copy
 BAR_PX, BAR_SHARE = 60, 0.5  # cropdetect (limit 24): WARN if a black bar over 60 px on any side in more than half of the 1 fps samples
@@ -120,6 +121,11 @@ def main():
     e0, s0 = float(E[0].mean()), float(V[0].std()); m.update(frame0_edge=e0, frame0_std=s0)
     ok = e0 >= F0_EDGE and s0 >= F0_STD
     add("PASS" if ok else "FAIL", "frame 0", f"edge {e0:.1f} (min {F0_EDGE}), contrast {s0:.1f} (min {F0_STD})", [] if ok else [(0, "frame 0")])
+    # 7b blank frames at full frame rate (contrails, Oct 28: solid navy flashes at poster swaps that the FPS samples missed)
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", o["mp4"], "-vf", "scale=27:48,format=gray", "-f", "rawvideo", "-"], capture_output=True, check=True).stdout
+    Vf = np.frombuffer(raw, np.uint8).reshape(-1, 48, 27).astype(np.float32); fr = len(Vf) / T
+    bl = [i / fr for i in np.nonzero(Vf.std(axis=(1, 2)) < BLANK_STD)[0]]; m["blank_frames"] = len(bl)
+    add("FAIL" if bl else "PASS", "blank frames", f"{len(bl)} near-uniform frames, first at {', '.join(f'{t:.2f}s' for t in bl[:4])}" if bl else "none", [(bl[0], "blank")] if bl else [])
 
     # 8 frame geometry (9:16) and black bars
     mp = pathlib.Path(o["mp4"]); ep = mp.with_name(mp.stem + "_ep.mp4"); geo = []
