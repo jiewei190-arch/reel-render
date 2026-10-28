@@ -27,10 +27,10 @@
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | merged, Nov 7 21:30 |
 | 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
 | 50 | candle | How does a candle actually burn? | H2 | merged, Nov 7 09:00 |
-| 55 | goosebumps | Why do we get goosebumps? | H3 | queued (after snowflake) |
+| 55 | goosebumps | Why do we get goosebumps? | H3 | merged, Nov 8 09:00 |
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | queued |
-| 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | queued |
+| 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | merged, Nov 8 19:00 |
 | 59 | hiccups | Why do we get hiccups? | H1 | merged v1, Nov 8 21:30 (v2 with notes rendering; swap in) |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | queued |
