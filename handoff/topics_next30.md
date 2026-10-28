@@ -54,3 +54,5 @@
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
 Seasonal reels made early (Thanksgiving etc.) are merged without an episode badge; the main session numbers and badges them when they're slotted, so EP order always equals posting order. Numbers 49 and 50 went to H2's leafcolor and candle (Oct 28).
+
+Template reservations (claim here before storyboarding; no family twice within ~8 EPs): 69 gps paper-lantern · 70 freezerburn Sketch music · 71 sneeze collage (#13) · 72 moonday paper stop-motion ledger (#22) · 73 eyeblink handdrawn Playful or papercut-red · 74 microwavecenter paper-popup (#10) · 75 earwax storybook paint / sand art / crayon-book · 76 bluejeans old-master painting (#27).
