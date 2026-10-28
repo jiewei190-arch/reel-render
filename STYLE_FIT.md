@@ -36,9 +36,9 @@ Extra approved style: the crayon colour style (reels/styles/crayon, used for fla
 | ship | #10 paper-popup | 4 | scale and journey; first version had an empty top third | approved | |
 | skyblue | #7 silkscreen-poster | 4 | colour topic suits print; posters looked empty at first | approved | |
 | eclipse | #6 shadow-puppet | 5 | the topic *is* light and shadow | approved | |
-| magnet | #15 Distilbook | 5 | layered zoom (pole -> electron -> domain -> nail) is exactly Distilbook's page-to-diagram move | "goes very well with the current style" | |
-| search | #14 Alchemy Infra | 4 | index cubes, crawler links, globe and terminal map 1:1; risk: dark tech look feels cold for beginners | pending | |
-| recommend | #13 AI Doom | 5 (expected) | algorithm told through metaphors (theatre of millions, scoring room, betting wheel, mirror) | pending | |
+| magnet | #15 Distilbook | 5 | layered zoom (pole -> electron -> domain -> nail) is exactly Distilbook's page-to-diagram move | "goes very well with the current style"; approved Oct 28 | |
+| search | #14 Alchemy Infra | 4 | index cubes, crawler links, globe and terminal map 1:1; risk: dark tech look feels cold for beginners | approved Oct 28 | |
+| recommend | #13 AI Doom | 5 (expected) | algorithm told through metaphors (theatre of millions, scoring room, betting wheel, mirror) | approved Oct 28 | |
 | 14 worker reels | generic repo styles | n/a | built before the template rule; mostly not in the owner's templates | kept as is | |
 
 ## Lessons so far (designer notes)
@@ -47,6 +47,6 @@ Extra approved style: the crayon colour style (reels/styles/crayon, used for fla
 - Empty areas are the most common flaw in vertical adaptations of 16:9 demos. Fill them with the demo's own margin devices (HUD, measurement boxes, stacked stats).
 - Sound effects must sit under the voice (rule 12).
 - Every reel gets a template-styled thumbnail (rule 11).
-| flush | #18 Japan heat wave | 5 | a plumbing cutaway is a field-notebook cross-section; the demo's measuring-cylinder chart = gallons per flush; measurement boxes = pipe/tank state; v2 adds a flush-cycle timeline strip | v1: clean the paper, fill the bottom third, English seal (done in v2) | |
-| airfryer | #9 scifi-toon | 4 | "it's not what you think" myth-bust maps onto parallel worlds (oil world, inside the fryer, boundary-layer blanket, browning, suspiciously normal oven); risk: one narrator voice instead of the template's two-voice dialogue | pending | |
-| submarine | #16 Christmas story | 5 | the demo's sepia-to-blue grade becomes surface-to-depth; lit windows become air-filled tanks; night silhouettes suit the sea; risk: real subs have no portholes (stylised) | pending | |
+| flush | #18 Japan heat wave | 5 | a plumbing cutaway is a field-notebook cross-section; the demo's measuring-cylinder chart = gallons per flush; measurement boxes = pipe/tank state; v2 adds a flush-cycle timeline strip | v1: clean the paper, fill the bottom third, English seal (done in v2); v2 approved Oct 28 | |
+| airfryer | #9 scifi-toon | 4 | "it's not what you think" myth-bust maps onto parallel worlds (oil world, inside the fryer, boundary-layer blanket, browning, suspiciously normal oven); risk: one narrator voice instead of the template's two-voice dialogue | approved Oct 28 | |
+| submarine | #16 Christmas story | 5 | the demo's sepia-to-blue grade becomes surface-to-depth; lit windows become air-filled tanks; night silhouettes suit the sea; risk: real subs have no portholes (stylised) | approved Oct 28 | |
