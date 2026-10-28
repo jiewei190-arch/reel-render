@@ -1,1 +1,1 @@
-Bonus: the white isn't one protein. The first ones set in the low 60s °C, but the main one, ovalbumin, holds out until about 80 °C, which is why a slow-cooked egg can stay soft. Runny yolk or hard? One word. 🍳
+Bonus: egg white isn't one protein. The first ones start to set in the low 60s °C, but the main one, ovalbumin, holds out until about 80 °C. Runny yolk or hard? One word. 🍳
