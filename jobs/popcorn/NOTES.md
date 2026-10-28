@@ -39,5 +39,5 @@ QA popcorn: WARN   (/home/user/reel-render/jobs/popcorn/popcorn.mp4, 76.2 s)
 - [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
 - [x] Loop ending (0.6 s dissolve into frame 0)
 - [x] pinned_popcorn.md written; thumb_popcorn.jpg made
-- [ ] popcorn_ep.mp4 (main session assigns the episode number)
+- [x] popcorn_ep.mp4 (EP 38; OVR spot (44, 1050): low-left over stove art, above the caption box; checked at 1, 6, 25, 33, 45, 60, 66, 75 s)
 - **qa.py WARN:** true peak -0.7 dBTP only.

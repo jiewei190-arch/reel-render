@@ -24,6 +24,7 @@ OVR = {
     "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
     "submarine": {"spot": (44, 1360)}, # seabed only
     "snowwhite": {"spot": (44, 1360)},  # top band holds the search bar and handwritten labels; empty strip under the captions
+    "popcorn": {"spot": (44, 1050)},   # top-left sits under the hook plaques; low-left over the stove/backsplash art, above the caption box (by 1160)
     "yawn": {"spot": (44, 920), "hide": [(63.5, 99.0)]},        # top band holds titles, frames and chalkboards; mid-left wall is the quietest (edge scan)
     "wrinklyfingers": {"spot": ("R", 260), "hide": [(12.8, 17.8), (34.8, 37.8)]},  # captions run to 3 lines here; top-right band is clear
     # H2 QA, Oct 28
