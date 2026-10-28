@@ -1,0 +1,97 @@
+{
+ "name": "snowflake",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  8,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "Every snowflake has **six arms.** Never five. Never eight.",
+   "Every snowflake has six arms. Never five. Never eight."
+  ],
+  [
+   "**But** nobody folds and cuts them. So why do snowflakes have six sides?",
+   "But nobody folds and cuts them. So why do snowflakes have six sides?"
+  ],
+  [
+   "It starts with one tiny **water molecule.**",
+   "It starts with one tiny water molecule."
+  ],
+  [
+   "One oxygen, two hydrogens, in a **bent** little V.",
+   "One oxygen, two hydrogens, in a bent little V."
+  ],
+  [
+   "When water freezes, each molecule grabs its neighbors with **hydrogen bonds.**",
+   "When water freezes, each molecule grabs its neighbors with hydrogen bonds."
+  ],
+  [
+   "And the shape they lock into is a **ring of six.**",
+   "And the shape they lock into is a ring of six."
+  ],
+  [
+   "Ring after ring after ring: a **honeycomb** of ice.",
+   "Ring after ring after ring: a honeycomb of ice."
+  ],
+  [
+   "So every snow crystal starts out as a tiny **six-sided prism.**",
+   "So every snow crystal starts out as a tiny six-sided prism."
+  ],
+  [
+   "Water vapor in the cloud freezes onto it, and as it grows, branches sprout from its **six corners.**",
+   "Water vapor in the cloud freezes onto it, and as it grows, branches sprout from its six corners."
+  ],
+  [
+   "Six corners, **six arms.**",
+   "Six corners, six arms."
+  ],
+  [
+   "Here's the twist: how do the six arms stay **so alike?**",
+   "Here's the twist: how do the six arms stay so alike?"
+  ],
+  [
+   "They don't talk to each other. They grow at the **same time,** through the **same air.**",
+   "They don't talk to each other. They grow at the same time, through the same air."
+  ],
+  [
+   "So every change in temperature and humidity hits **all six arms at once.**",
+   "So every change in temperature and humidity hits all six arms at once."
+  ],
+  [
+   "Temperature even picks the shape: near minus two Celsius, **thin plates.** Near minus five, **needles.** Near minus fifteen, **big starry flakes.**",
+   "Temperature even picks the shape: near minus two Celsius, thin plates. Near minus five, needles. Near minus fifteen, big starry flakes."
+  ],
+  [
+   "And no two flakes fall the same path through the clouds, so **no two look exactly alike.**",
+   "And no two flakes fall the same path through the clouds, so no two look exactly alike."
+  ],
+  [
+   "So a snowflake is a diary of its fall, **written six times.**",
+   "So a snowflake is a diary of its fall, written six times."
+  ],
+  [
+   "Ever caught one on your mitten? **Yes or no?**",
+   "Ever caught one on your mitten? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
