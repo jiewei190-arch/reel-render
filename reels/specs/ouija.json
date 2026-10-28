@@ -1,0 +1,83 @@
+{
+ "name": "ouija",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  7,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Rest your fingers on a Ouija pointer, and it starts to **move.**",
+   "Rest your fingers on a Ouija pointer, and it starts to move."
+  ],
+  [
+   "But nobody at the table **means to push it.** So who does?",
+   "But nobody at the table means to push it. So who does?"
+  ],
+  [
+   "In **1853**, the scientist **Michael Faraday** chased the same mystery.",
+   "In 1853, the scientist Michael Faraday chased the same mystery."
+  ],
+  [
+   "At séances, people rested their hands on a table, and it seemed to **turn by itself.**",
+   "At séances, people rested their hands on a table, and it seemed to turn by itself."
+  ],
+  [
+   "Faraday slipped a simple **pointer** between their hands and the table.",
+   "Faraday slipped a simple pointer between their hands and the table."
+  ],
+  [
+   "It showed whether the table moved their hands, or their **hands moved the table.**",
+   "It showed whether the table moved their hands, or their hands moved the table."
+  ],
+  [
+   "It was the hands, pushing **ever so slightly**, without anyone noticing.",
+   "It was the hands, pushing ever so slightly, without anyone noticing."
+  ],
+  [
+   "And once the sitters could **watch the pointer,** the table **stopped turning.**",
+   "And once the sitters could watch the pointer, the table stopped turning."
+  ],
+  [
+   "A year earlier, William Carpenter had named it: the **ideomotor effect.**",
+   "A year earlier, William Carpenter had named it: the ideomotor effect."
+  ],
+  [
+   "Your brain expects a movement, and your muscles make it, **too small to notice.**",
+   "Your brain expects a movement, and your muscles make it, too small to notice."
+  ],
+  [
+   "On a Ouija board, those tiny nudges steer the pointer toward the **letters you expect.**",
+   "On a Ouija board, those tiny nudges steer the pointer toward the letters you expect."
+  ],
+  [
+   "So the answer: the pointer is moved by **your own hands.** You just don't feel it.",
+   "So the answer: the pointer is moved by your own hands. You just don't feel it."
+  ],
+  [
+   "In one TV test, with every player **blindfolded**, the board **stopped working.**",
+   "In one TV test, with every player blindfolded, the board stopped working."
+  ],
+  [
+   "In a small 2012 study, unsure players scored **65 percent** with the board, versus **50** by guessing.",
+   "In a small 2012 study, unsure players scored 65 percent with the board, versus 50 by guessing."
+  ],
+  [
+   "No ghosts needed. Just **your own muscles.**",
+   "No ghosts needed. Just your own muscles."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

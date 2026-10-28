@@ -1,0 +1,89 @@
+{
+ "name": "zombieant",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  8,
+  9,
+  11,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "This ant is walking somewhere it **never chose** to go.",
+   "This ant is walking somewhere it never chose to go."
+  ],
+  [
+   "But the fungus inside it never even touches its **brain.**",
+   "But the fungus inside it never even touches its brain."
+  ],
+  [
+   "Meet **Ophiocordyceps,** a fungus of tropical rainforests.",
+   "Meet oh-fee-oh-cordyceps, a fungus of tropical rainforests."
+  ],
+  [
+   "Its carpenter ants nest high in the trees, about **20 meters** up.",
+   "Its carpenter ants nest high in the trees, about twenty meters up."
+  ],
+  [
+   "An infected ant leaves home and wanders in a random, **drunken walk.**",
+   "An infected ant leaves home and wanders in a random, drunken walk."
+  ],
+  [
+   "Spasms make it **tumble,** so it can't climb back up.",
+   "Spasms make it tumble, so it can't climb back up."
+  ],
+  [
+   "Then, around **noon,** it climbs a small plant and bites the **vein** under a leaf.",
+   "Then, around noon, it climbs a small plant and bites the vein under a leaf."
+  ],
+  [
+   "About **25 centimeters** up, in the humid air near the forest floor.",
+   "About twenty five centimeters up, in the humid air near the forest floor."
+  ],
+  [
+   "Its jaw muscles waste away, so the bite **locks.** It stays put.",
+   "Its jaw muscles waste away, so the bite locks. It stays put."
+  ],
+  [
+   "So how does a fungus steer an ant **without its brain?**",
+   "So how does a fungus steer an ant without its brain?"
+  ],
+  [
+   "In 2017, scientists found its cells wrapped around the ant's **muscles,** in a connected **network.**",
+   "In twenty seventeen, scientists found its cells wrapped around the ant's muscles, in a connected network."
+  ],
+  [
+   "Exactly how it pulls the strings is still being **worked out.**",
+   "Exactly how it pulls the strings is still being worked out."
+  ],
+  [
+   "And why that leaf? Within days, a **stalk** grows from the back of the ant's head.",
+   "And why that leaf? Within days, a stalk grows from the back of the ant's head."
+  ],
+  [
+   "From up there, it releases **spores** over the forest floor, to infect more ants.",
+   "From up there, it releases spores over the forest floor, to infect more ants."
+  ],
+  [
+   "The trick is old: a **48-million-year-old** fossil leaf shows the same bite marks.",
+   "The trick is old. A forty eight million year old fossil leaf shows the same bite marks."
+  ],
+  [
+   "And no, it can't infect **you.** Our bodies are too **warm.**",
+   "And no, it can't infect you. Our bodies are too warm."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
