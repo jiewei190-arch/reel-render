@@ -49,9 +49,12 @@ function jar(x, y, w, h, f, t, k = 1, seed = 950) { if (k <= 0) return; const bo
 
 // ---------- scenes ----------
 function hook(t) { const a = 1 - ss(seg(t, s(2) - .4, s(2))); if (a <= 0) return; g.save(); g.globalAlpha = a;
-  flower(220, 760, 1.4, 1, 10); bee(t, 360, 700, 1.5, { seed: 20, tongue: .4, crop: .4 });
-  jar(600, 780, 300, 330, 1, t); hand(g, 'HONEY', 750, 980, { size: 70, align: 'center', col: '#fff8ea' });
-  const dr = (t * .7) % 1; fill(g, ell(750, 744 + dr * 30, 7, 10 + dr * 6, 14), C.honey, 1 - dr * .3);
+  flower(200, 960, 1.3, 1, 10); bee(t, 340, 910, 1.45, { seed: 20, tongue: .4, crop: .4 });
+  jar(640, 780, 280, 330, 1, t);
+  // the water counter is already running at frame 0 (nectar -> honey: water falls to about 18%)
+  const wd = ss(seg(t, 0, 2.2)), wv = Math.round(lerp(60, 18, wd)); hand(g, `${wv}%`, 70, 760, { size: 130, col: P.rust }); mono(g, 'WATER LEFT', 76, 800, { size: 22, col: P.soft, track: 5 });
+  scale(g, 600, 1110, 800, [[0, '0'], [.18, '18%'], [.6, '60']], lerp(.6, .18, wd)); hand(g, 'HONEY', 780, 980, { size: 66, align: 'center', col: '#fff8ea' });
+  const dr = (t * .7) % 1; fill(g, ell(780, 744 + dr * 30, 7, 10 + dr * 6, 14), C.honey, 1 - dr * .3);
   hand(g, 'Nectar', 70, 430, { size: 128 }); hand(g, '→ honey?', 70, 560, { size: 128, col: P.rust });
   const ar = seg(t, r(1, .4), r(1, 1.4)); if (ar > 0) { line(g, [[420, 840], [520, 860], [590, 900]], { w: 4, col: P.rust, k: ar, seed: 30 }); hand(g, 'two changes', 380, 1110, { size: 54, col: P.rust, write: seg(t, r(1, 2.0), r(1, 3.0)) });
     [['1', 300], ['2', 520]].forEach(([n, x], i) => { const kk = seg(t, r(1, 2.6) + i * .4, r(1, 3.0) + i * .4); line(g, circPts(x, 1000, 34, 20), { w: 3.4, col: P.rust, close: true, seed: 31 + i, k: kk }); hand(g, n, x, 1020, { size: 56, align: 'center', col: P.rust, a: kk }); }); }
