@@ -22,6 +22,7 @@ OVR = {
     "search": {"spot": ("R", 260)}, "orbit": {"spot": ("R", 360)}, "window": {"spot": ("R", 260)},   # empty top-right band
     "faceid": {"spot": (44, 1300), "hide": [(52.3, 56.0), (57.8, 61.0)]},   # passcode dots, "1 IN 1,000,000"
     "submarine": {"spot": (44, 1360)}, # seabed only
+    "snowwhite": {"spot": (44, 1360)},  # top band holds the search bar and handwritten labels; empty strip under the captions
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
