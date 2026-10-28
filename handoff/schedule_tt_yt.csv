@@ -53,17 +53,17 @@ tiktok,2026-11-02,09:00,flush,26,jobs/flush/flush_ep.mp4,scheduled 2026-11-02 09
 youtube,2026-11-02,12:00,flush,26,jobs/flush/flush_ep.mp4,"approved, to schedule"
 tiktok,2026-11-02,13:00,window,27,jobs/window/window_ep.mp4,"on hold (owner, Oct 28: badge-position fix pending)"
 youtube,2026-11-02,15:00,window,27,jobs/window/window_ep.mp4,"on hold (owner, Oct 28: badge-position fix pending)"
-tiktok,2026-11-02,16:00,hurricanewc,28,jobs/hurricanewc/hurricanewc_ep.mp4,"approved, to schedule"
+tiktok,2026-11-02,16:00,hurricanewc,28,jobs/hurricanewc/hurricanewc_ep.mp4,scheduled 2026-11-02 16:00 ET
 youtube,2026-11-02,18:00,hurricanewc,28,jobs/hurricanewc/hurricanewc_ep.mp4,"approved, to schedule"
 tiktok,2026-11-02,19:00,submarine,29,jobs/submarine/submarine_ep.mp4,"on hold (owner, Oct 28: badge-position fix pending)"
 youtube,2026-11-02,20:00,submarine,29,jobs/submarine/submarine_ep.mp4,"on hold (owner, Oct 28: badge-position fix pending)"
-tiktok,2026-11-02,21:30,wifi,30,jobs/wifi/wifi_ep.mp4,"approved, to schedule"
+tiktok,2026-11-02,21:30,wifi,30,jobs/wifi/wifi_ep.mp4,scheduled 2026-11-02 21:30 ET
 youtube,2026-11-02,21:30,wifi,30,jobs/wifi/wifi_ep.mp4,"approved, to schedule"
-tiktok,2026-11-03,09:00,onion,31,jobs/onion/onion_ep.mp4,"approved, to schedule"
+tiktok,2026-11-03,09:00,onion,31,jobs/onion/onion_ep.mp4,scheduled 2026-11-03 09:00 ET
 youtube,2026-11-03,12:00,onion,31,jobs/onion/onion_ep.mp4,"approved, to schedule"
-tiktok,2026-11-03,13:00,sleep,32,jobs/sleep/sleep_ep.mp4,"approved, to schedule"
+tiktok,2026-11-03,13:00,sleep,32,jobs/sleep/sleep_ep.mp4,scheduled 2026-11-03 13:00 ET
 youtube,2026-11-03,15:00,sleep,32,jobs/sleep/sleep_ep.mp4,"approved, to schedule"
-tiktok,2026-11-03,16:00,snowwhite,33,jobs/snowwhite/snowwhite_ep.mp4,"approved, to schedule"
+tiktok,2026-11-03,16:00,snowwhite,33,jobs/snowwhite/snowwhite_ep.mp4,scheduled 2026-11-03 16:00 ET
 youtube,2026-11-03,18:00,snowwhite,33,jobs/snowwhite/snowwhite_ep.mp4,"approved, to schedule"
 tiktok,2026-11-03,19:00,yawn,34,jobs/yawn/yawn_ep.mp4,"approved, to schedule"
 youtube,2026-11-03,20:00,yawn,34,jobs/yawn/yawn_ep.mp4,"approved, to schedule"
