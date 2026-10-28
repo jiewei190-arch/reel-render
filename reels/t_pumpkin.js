@@ -207,8 +207,8 @@ window.render = window.seek;
 // cover (rule 11): the hook words big inside y 300-1620, the sagging jack-o'-lantern in front of the demo's red sun
 window.thumb = () => { F.begin(); F.footer(1);
   F.txt('A FIELD SKETCHBOOK  ·  HALLOWEEN NOTES', 80, 340, { size: 25, f: 'mono', wt: 700, ls: 3, col: '#45454c', alpha: .9 });
-  const w1 = F.txt('Why it ', 70, 520, { size: 180, f: 'hand', rot: -.02 }); F.txt('sags', 70 + w1, 514, { size: 180, f: 'hand', col: C.red, rot: -.02 });
-  F.line(84, 560, 880, 550, { col: C.red, w: 3.5, wob: .6 }); F.seal('ROT', 940, 430, 1, { size: 48, f: 'mono', fs: 48 });
+  F.txt('Why it', 70, 540, { size: 190, f: 'hand', rot: -.02 }); F.txt('sags.', 70, 740, { size: 230, f: 'hand', col: C.red, rot: -.02 });
+  F.line(84, 780, 640, 770, { col: C.red, w: 3.5, wob: .6 }); F.seal('ROT', 860, 600, 1, { size: 56, f: 'mono', fs: 56 });
   const ring = el(560, 1180, 340, 340, 48); F.hatch(ring, 'red', { alpha: .55 }); F.pencil(ring, { col: C.red, w: 2.2 });
   F.pencil([[90, 1460], [990, 1460]], { w: 1.6 }); pumpkin(560, 1230, 270, { sag: .55, t: 1, glow: .6, mould: .5 });
 };

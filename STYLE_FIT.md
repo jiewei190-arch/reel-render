@@ -64,3 +64,4 @@ Approved anyway, but not to repeat as a style: barcode (kinetic type), faceid an
 | glowstick | #11 cel-boil | 5 | snap -> crack -> mix -> burst -> hand-off -> flash is a chain of action beats, exactly cel-boil's ones/shakes/sparks engine; night-wash cels + plaques make the glow read on paper | pending | |
 | ouija | #6 shadow-puppet | 5 | a séance is theatre with actors; every piece visibly held up on a rod by someone off-stage IS the ideomotor point; Faraday's lever indicator gives a clear diagram moment | pending | |
 | skeleton | #10 paper-popup | 5 | a pop-up skeleton is the Halloween image; a tour of 'jobs' maps onto pop-up pages and page turns; night-sky back board keeps the top third full | pending | |
+| pumpkin | #18 Japan heat wave | 5 | rot is a measurable process: rind cross-section, rain-gauge 90% water, moisture box, rot timeline strip, day counters, tick list of tips; the red sun-disc frames the sagging jack-o'-lantern | pending | |
