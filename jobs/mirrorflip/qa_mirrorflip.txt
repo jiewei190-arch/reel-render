@@ -1,0 +1,15 @@
+QA mirrorflip: WARN   (/home/user/reel-render/jobs/mirrorflip/mirrorflip.mp4, 70.8 s)
+  PASS  static          longest no-change run 3.00 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.2 s)
+  WARN  safe zones      right x>900 y900-1650: content 4.0-7.5s, 54.2-67.5s
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.9 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 7.7 dB above the pauses (13 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          70.8 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 11.1 (min 1.0), contrast 51.2 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      mirrorflip.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)

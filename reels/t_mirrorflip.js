@@ -42,7 +42,7 @@ function labW(t, o = {}) {   // home lab: sage walls, the board, a wall clock, a
   fillOnly(rect(X0, -800, X1 - X0, 2400), '#a7c3b1', { boil: 0 }); for (let x = -800; x < 2000; x += 240) stroke([[x, -800], [x, FLOOR]], 4, { line: '#7c9d8a' });
   shape(rr(120, 440, 840, 460, 12), { fill: '#2f4a3f', lw: 8, shade: () => { if (o.board) o.board(); } });
   shape(rr(140, 892, 800, 18, 4), { fill: '#b08a5a', lw: 5 });
-  push(); translate(1000, 340); shape(ell(0, 0, 50, 50, 36), { fill: '#f7f3e8', lw: 7 }); const sA = Math.floor(t) / 60 * TAU - Math.PI / 2; stroke([[0, 0], [0, -28]], 6); stroke([[0, 0], [24, 12]], 5); stroke([[0, 0], [Math.cos(sA) * 38, Math.sin(sA) * 38]], 2.5, { line: '#e8392b' }); dot(0, 0, 5); pop();
+  push(); translate(1010, 420); shape(ell(0, 0, 50, 50, 36), { fill: '#f7f3e8', lw: 7 }); const sA = Math.floor(t) / 60 * TAU - Math.PI / 2; stroke([[0, 0], [0, -28]], 6); stroke([[0, 0], [24, 12]], 5); stroke([[0, 0], [Math.cos(sA) * 38, Math.sin(sA) * 38]], 2.5, { line: '#e8392b' }); dot(0, 0, 5); pop();
   shape(rect(X0, FLOOR, X1 - X0, 900), { fill: '#6c7c75', lw: 6 }); for (let k = 0; k < 4; k++) stroke([[X0, FLOOR + 40 + k * 70 + k * k * 14], [X1, FLOOR + 40 + k * 70 + k * k * 14]], 4, { line: '#58665f' }); shape(rect(X0, FLOOR - 30, X1 - X0, 32), { fill: '#557065', lw: 6 });
 }
 function testWorld(t) {      // U-1: mirror-silver + cobalt, a hall of glass panes
@@ -78,7 +78,7 @@ function plan(t, o = {}) { const { cx = 540, cy = 670, me = 1, img = 1, raise = 
   if (ghost) ghost(); }
 
 // ———————————————————— poses ————————————————————
-function J(t, o = {}) { const m = talk(t), tq = q(t); return { x: 900, y: FLOOR + 10, s: .72, face: -1, lid: .5, look: [-.5, -.3], mouth: { o: m.o, w: m.w, sm: -.2 }, sq: 1 + .008 * Math.sin(tq * 2.3), headTilt: .05 + (m.talking ? (m.o - .3) * .06 : 0), blink: blink(t), ...o }; }
+function J(t, o = {}) { const m = talk(t), tq = q(t); return { x: 830, y: FLOOR + 10, s: .72, face: -1, lid: .5, look: [-.5, -.3], mouth: { o: m.o, w: m.w, sm: -.2 }, sq: 1 + .008 * Math.sin(tq * 2.3), headTilt: .05 + (m.talking ? (m.o - .3) * .06 : 0), blink: blink(t), ...o }; }
 function P(t, o = {}) { const tq = q(t); return { x: 190, y: FLOOR, s: .7, face: 1, t, nerv: .2, look: [.5, -.4], blink: blink(t, 3), mouth: { o: 0, sm: .2 }, sq: 1 + .012 * Math.sin(tq * 3.1), ...o }; }
 
 // ———————————————————— shots ————————————————————
