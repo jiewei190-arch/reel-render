@@ -106,7 +106,7 @@ const SCN = {
     g.fillStyle = INK; g.fillRect(-60, 900, W + 120, 40); for (let i = 0; i < 4; i++) { const x = 160 + i * 250; g.beginPath(); g.arc(x, 720, 46, 0, TAU); g.fill(); g.beginPath(); g.moveTo(x - 80, 900); g.quadraticCurveTo(x - 70, 780, x, 770); g.quadraticCurveTo(x + 70, 780, x + 80, 900); g.fill(); g.beginPath(); g.ellipse(x, 680, 52, 26, 0, Math.PI, TAU); g.fill(); }
     g.fillStyle = '#0d0b09'; g.fillRect(-100, 1140, W + 200, 400);
     return () => { for (let i = 0; i < 4; i++) { const x = 160 + i * 250 + 60; F.circ(x, 890, 22, 'rgba(200,255,200,.25)', 1); for (let k = 0; k < 6; k++) { const a = k / 6 * TAU; F.circ(x + Math.cos(a) * 16, 890 + Math.sin(a) * 8, 3, GHEX, .9); } F.glow(x, 890, 14, .6, GREEN); }
-      label('a century ago', 540, 400, ss(R(t, s(12) + .2, .5)), 56); label('radium paint', 540, 1080, ss(R(t, s(12) + 1.6, .5)), 52, '#d8ffdc'); };
+      label('old watch dials', 540, 400, ss(R(t, s(12) + .2, .5)), 56); label('radium paint', 540, 1080, ss(R(t, s(12) + 1.6, .5)), 52, '#d8ffdc'); };
   },
   lamp(t) {    // your stickers just need a lamp: on (charge), off (glow back)
     bedroom(t, { window: false }); const on = t > s(13) + .6 && t < s(13) + 2.4;
