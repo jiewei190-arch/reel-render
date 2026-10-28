@@ -28,11 +28,11 @@
 - **Loop:** the last 0.6 s dissolves into frame 0 (mid-hic).
 - **Ear check:** not done by a human yet.
 
-## qa.py
+## qa.py (re-render after the storyboard notes)
 ```
 QA hiccups: PASS   (/home/user/reel-render/jobs/hiccups/hiccups.mp4, 72.2 s)
   PASS  static          longest no-change run 0.00 s (limit 4.0 s)
-  PASS  empty thirds    no third near-blank > 6.0 s (longest 2.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.5 s)
   PASS  safe zones      UI zones clear
   PASS  outer 24 px     clear
   PASS  loudness        -15.5 LUFS integrated (want -16.0..-14.0)
@@ -41,8 +41,8 @@ QA hiccups: PASS   (/home/user/reel-render/jobs/hiccups/hiccups.mp4, 72.2 s)
   PASS  length          72.2 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 17.4 (min 1.0), contrast 38.5 (min 18.0)
-  PASS  9:16 frame      hiccups.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 17.7 (min 1.0), contrast 38.0 (min 18.0)
+  PASS  9:16 frame      hiccups.mp4 1080x1920 SAR 1:1; hiccups_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 

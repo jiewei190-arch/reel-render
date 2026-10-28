@@ -31,7 +31,7 @@
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | merged, Nov 8 13:00 |
 | 57 | noisecancel | How do noise-cancelling headphones work? | H2 | merged, Nov 8 16:00 |
 | 58 | coldtaste | Why can't you taste food when you have a cold? | H2 | merged, Nov 8 19:00 |
-| 59 | hiccups | Why do we get hiccups? | H1 | merged v1, Nov 8 21:30 (v2 with notes rendering; swap in) |
+| 59 | hiccups | Why do we get hiccups? | H1 | merged v2, Nov 8 21:30 |
 | 65 | voicerecording | Why does your voice sound weird on recordings? | H2 | queued |
 | 66 | fridge | How does a refrigerator keep food cold? | H2 | queued |
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | queued after 65-66; unbadged seasonal |
@@ -41,7 +41,7 @@
 | 64 | catsknead | Why do cats knead? | H3 | queued |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | queued |
-| 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v1, Nov 9 09:00 (v2 with notes rendering; swap in) |
+| 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v2, Nov 9 09:00 |
 
 Next ideas (unassigned; check the research agent's list when it arrives): why leaves crunch, why the moon looks bigger near the horizon (done: harvestmoon), how snowflakes get six sides, why cold makes your nose run, how turkeys' timers pop, why your ears pop on planes, how a microwave popcorn bag works, why ice is slippery, why cranberries float, how a candle actually burns.
 
