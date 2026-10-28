@@ -96,9 +96,9 @@ function pageB2(t) { drift(t); const k1 = seg(t, s(3) - .3, r(3, .6)), k2 = seg(
   const lk = seg(t, r(3, 3.6), r(3, 4.4)); if (lk > 0) { R.pen([[460, 1100], [620, 1100]], { w: 4, prog: lk, seed: 220, col: PAL.accent }); } }
 // B3: "BUSTED?" stamp, then "not quite": two small sketches of the rough-surface and wet-surface ideas
 function pageB3(t) { drift(t); const st = seg(t, s(4) - .1, r(4, .35)), nq = seg(t, r(4, .9), r(4, 1.6));
-  const sc = lerp(1.6, 1, eo(st)); if (st > 0) { g.save(); g.translate(540, 480); g.rotate(-.12); g.scale(sc, sc); g.globalAlpha = st;
+  const sc = lerp(1.6, 1, eo(st)); if (st > 0) { g.save(); g.translate(540, 520); g.rotate(-.12); g.scale(sc, sc); g.globalAlpha = st;
     R.rect(-270, -90, 540, 150, { w: 8, seed: 230, col: C.stamp }); R.text('BUSTED?', 0, 30, { size: 130, col: C.stamp, weight: 700, halo: false }); g.restore(); }
-  R.text('not quite.', 790, 640, { size: 84, col: INK, reveal: nq });
+  R.text('not quite.', 790, 670, { size: 84, col: INK, reveal: nq });
   const k1 = seg(t, r(4, 2.2), r(4, 3.0)), k2 = seg(t, r(4, 3.4), r(4, 4.2));
   // rough: bumpy surface, ridges interlock
   if (k1 > 0) { const base = [], ox = 290, oy = 960; for (let q = 0; q <= 20; q++) { const x = ox - 200 + q * 20; base.push([x, oy + 18 * Math.sin(q * 1.9) + 8 * hash(q)]); }
@@ -175,7 +175,7 @@ function pageD3(t) { drift(t); const k = seg(t, s(12) - .3, r(12, .5)); kid(300,
   R.text('≠', 540, 880, { size: 140, col: PAL.accent, reveal: seg(t, r(12, 1.6), r(12, 2.2)) }); }
 // E: the payoff list
 function pageE(t) { drift(t); const L = [['grip on smooth things', 0, r(13, .4)], ['grip on rough or wet surfaces', 1, r(13, 3.2)], ['a sharper sense of touch', 1, r(13, 6.0)]];
-  finger(t, 790, 300, 200, 640, { seed: 14, n: 10, k: seg(t, s(13) - .3, r(13, .5)) });
+  finger(t, 790, 420, 200, 700, { seed: 14, n: 10, k: seg(t, s(13) - .3, r(13, .5)) });
   L.forEach(([txt, ok, t0], i) => { const y = 740 + i * 140, k = seg(t, t0, t0 + .8); if (k <= 0) return; R.rect(90, y - 50, 56, 56, { w: 3.6, prog: k, seed: 900 + i });
     R.text(txt, 180, y, { size: 62, col: ok ? INK : INK2, reveal: k, align: 'left' });
     if (ok) { check(96, y - 30, seg(t, t0 + .7, t0 + 1.1), 910 + i); R.text('idea', 180 + R.measure(txt, 62) + 20, y, { size: 44, col: PAL.accent, reveal: seg(t, t0 + 1.0, t0 + 1.5), align: 'left' }); }
@@ -186,7 +186,7 @@ function pageF(t) { const z = eio(seg(t, s(14) - .3, r(14, 2.5))); cam(lerp(1, 1
   for (let i = 0; i < 4; i++) { const u = (t * .8 + i / 4) % 1; R.circle(540, 640, 230 + u * 100, { w: 3, a: .5 * (1 - u), seed: 950 + i }); } }
 function margin(t) {
   const N = [[0, s(2) - .3, 'Tues. 9:40 pm, my own thumb, a loupe'], [s(2) - .3, s(3) - .2, 'test: Manchester, 2009'], [s(3) - .2, s(4) - .2, 'contact patch, from below'], [s(4) - .2, s(5) - .2, 'idea 1: grip where it counts'],
-    [s(5) - .2, s(6) - .2, 'the twist'], [s(6) - .2, s(8) - .2, 'test: Paris, 2009, a ridged sensor'], [s(8) - .2, s(9) - .2, 'idea 2: feel fine textures'], [s(9) - .2, s(11) - .2, 'made before birth'],
+    [s(5) - .2, s(6) - .2, 'the twist'], [s(6) - .2, s(8) - .2, 'test: a ridged sensor, 2009'], [s(8) - .2, s(9) - .2, 'idea 2: feel fine textures'], [s(9) - .2, s(11) - .2, 'made before birth'],
     [s(11) - .2, s(12) - .2, 'pattern vs details'], [s(12) - .2, s(13) - .2, 'identical twins'], [s(13) - .2, s(14) - .2, 'so, why the ridges?'], [s(14) - .2, s(15) - .3, 'can you feel them?']];
   screen(); N.forEach(([a, b, txt], i) => { if (t < a || t >= b) return; R.text(txt, 80, 330, { size: i === 0 ? 46 : 54, col: i === 0 ? INK2 : INK, reveal: seg(t, a + .1, a + .1 + Math.min(1.2, txt.length * .03)), align: 'left', weight: i === 0 ? 500 : 600 }); });
   if (t >= s(14) - .2 && t < s(15) - .3) [['yes', 640], ['no', 800]].forEach(([w, x], i) => { const k = seg(t, r(14, .8) + i * .3, r(14, 1.3) + i * .3); R.rect(x - 60, 296, 40, 40, { w: 3, prog: k, seed: 1800 + i }); R.text(w, x - 8, 334, { size: 60, reveal: k, align: 'left' }); }); }
