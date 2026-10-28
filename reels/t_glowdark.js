@@ -54,18 +54,18 @@ const SCN = {
     return () => { g.save(); g.globalCompositeOperation = 'lighter'; const bm = g.createLinearGradient(780, 700, 300, 300); bm.addColorStop(0, 'rgba(255,230,170,.45)'); bm.addColorStop(1, 'rgba(255,230,170,0)'); g.fillStyle = bm; g.beginPath(); g.moveTo(650, 600); g.lineTo(890, 600); g.lineTo(500, 160); g.lineTo(100, 160); g.closePath(); g.fill(); g.restore();
       F.window(644, 564, 252, 328, .6, { col: '#ffe9b8' }); label('daylight in', 300, 620, ss(R(t, s(1) + 1.2, .5)) * (1 - ins), 56);
       if (ins > 0) { for (let i = 0; i < 5; i++) { const u = clamp(((t - s(2) - 1.0) * .7 - i * .25)), x = 420 + i * 60, y = lerp(720, 400, ss(u)); electron(x, y, ins); if (u > 0 && u < 1) { g.save(); g.globalAlpha = ins * (1 - u); g.strokeStyle = 'rgba(255,230,170,.8)'; g.lineWidth = 3; g.beginPath(); g.moveTo(x - 30, y + 60); g.lineTo(x - 10, y + 20); g.stroke(); g.restore(); } }
-        label('electrons', 540, 300, ins * ss(R(t, s(2) + 1.0, .5)), 52); label('a burst of energy', 540, 860, ins * ss(R(t, s(2) + 2.4, .5)), 44); } };
+        label('electrons', 540, 400, ins * ss(R(t, s(2) + 1.0, .5)), 52); label('a burst of energy', 540, 860, ins * ss(R(t, s(2) + 2.4, .5)), 44); } };
   },
   flash(t) {   // normally: the electron drops straight back and the light leaves in a flash
     bedroom(t, { window: false }); lens(540, 640, 300); levels(540, 640, 400);
     return () => { const ph = ((t - s(3)) * .8) % 1; const y = ph < .5 ? 480 : lerp(480, 800, ss((ph - .5) * 4)); electron(540, y, 1); if (ph > .62 && ph < .8) { F.glow(540, 800, 40, 1 - (ph - .62) * 5, '255,250,220'); }
-      label('excited', 860, 488, 1, 40); label('ground', 860, 808, 1, 40); label('normally: a flash', 540, 300, ss(R(t, s(3) + .4, .5)), 60); label('over in an instant', 540, 1080, ss(R(t, s(3) + 2.6, .5)), 44); };
+      label('excited', 860, 488, 1, 40); label('ground', 860, 808, 1, 40); label('normally: a flash', 540, 400, ss(R(t, s(3) + .4, .5)), 60); label('over in an instant', 540, 1080, ss(R(t, s(3) + 2.6, .5)), 44); };
   },
   traps(t) {   // traps: the crystal's defects catch excited electrons and hold them (each trapped one = a lit window)
     bedroom(t, { window: false }); lens(540, 640, 320); const W4 = house(540, 720);
     return () => { const n = Math.floor(clamp((t - s(4) - 1.0) / 1.0, 0, 4)); W4.forEach(([x, y], i) => { const lit = i < n ? 1 : 0; if (lit) F.window(x - 22, y - 26, 44, 52, 1, { col: '#c8ffd0' }); });
       const fly = ((t - s(4) - 1.0) % 1); if (n < 4 && t > s(4) + 1.0) { const [x, y] = W4[n]; electron(lerp(540, x, ss(fly)), lerp(420, y, ss(fly)), 1); }
-      label('traps', 540, 300, ss(R(t, s(4) + .2, .5)), 70, '#d8ffdc'); label('defects in the crystal', 540, 1090, ss(R(t, s(4) + 1.6, .5)), 46); label('caught and held', 540, 380, ss(R(t, s(4) + 4.0, .5)), 46); };
+      label('traps', 540, 400, ss(R(t, s(4) + .2, .5)), 70, '#d8ffdc'); label('defects in the crystal', 540, 1090, ss(R(t, s(4) + 1.6, .5)), 46); label('caught and held', 540, 380, ss(R(t, s(4) + 4.0, .5)), 46); };
   },
   release(t) { // night: the room's warmth shakes them loose; each escape is a green spark; millions of them make the glow
     const zo = ss(R(t, s(6) + 1.6, 2.4)); const z = lerp(1, .45, zo);
@@ -74,12 +74,12 @@ const SCN = {
     return () => { g.save(); g.translate(540, 640); g.scale(z, z); g.translate(-540, -640);
       W4.forEach(([x, y], i) => { const esc = s(5) + .8 + i * 1.1, lit = t < esc ? 1 : 0; if (lit) F.window(x - 22, y - 26, 44, 52, 1, { col: '#c8ffd0' }); const u = R(t, esc, 1.4); if (u > 0 && u < 1) { electron(x, y - 40 - 160 * u, 1 - u, GREEN); F.glow(x, y - 40 - 160 * u, 20, (1 - u), GREEN); } });
       g.restore(); if (zo > 0) { g.save(); g.globalAlpha = zo; bedroomGlow(t, zo); g.restore(); }
-      label("the room's warmth", 540, 300, ss(R(t, s(5) + .3, .5)) * (1 - ss(R(t, s(6) - .3, .4))), 56); label('a few at a time', 540, 1090, ss(R(t, s(5) + 2.2, .5)) * (1 - zo), 46);
-      label('a flash of green', 540, 380, ss(R(t, s(6) + .4, .5)) * clamp(1 - zo * 2.5), 52, '#d8ffdc'); label('millions = the glow', 540, 300, clamp(zo * 2 - 1), 62, '#d8ffdc'); };
+      label("the room's warmth", 540, 400, ss(R(t, s(5) + .3, .5)) * (1 - ss(R(t, s(6) - .3, .4))), 56); label('a few at a time', 540, 1090, ss(R(t, s(5) + 2.2, .5)) * (1 - zo), 46);
+      label('a flash of green', 540, 470, ss(R(t, s(6) + .4, .5)) * clamp(1 - zo * 2.5), 52, '#d8ffdc'); label('millions = the glow', 540, 400, clamp(zo * 2 - 1), 62, '#d8ffdc'); };
   },
   phos(t) {    // light in, stored for a while, light out
     bedroom(t, { window: false });
-    return () => { bigCap('Phosphorescence', ss(R(t, s(7) - .1, .5)), 96, 380); const items = [['light in', 220, '255,230,170'], ['stored', 540, '200,255,210'], ['light out', 860, GREEN]];
+    return () => { bigCap('Phosphorescence', ss(R(t, s(7) - .1, .5)), 96, 450); const items = [['light in', 220, '255,230,170'], ['stored', 540, '200,255,210'], ['light out', 860, GREEN]];
       items.forEach(([n, x, col], i) => { const k = ss(R(t, s(7) + .8 + i * .9, .5)); F.glow(x, 700, 40, k, col); F.circ(x, 700, 26, `rgba(${col},1)`, k); label(n, x, 820, k, 46); });
       g.save(); g.globalAlpha = ss(R(t, s(7) + 2.6, .5)); g.strokeStyle = 'rgba(240,220,168,.7)'; g.lineWidth = 4; g.beginPath(); g.moveTo(290, 700); g.lineTo(470, 700); g.moveTo(610, 700); g.lineTo(790, 700); g.stroke(); g.restore(); };
   },
@@ -91,14 +91,14 @@ const SCN = {
   sral(t) {    // the 1990s answer: strontium aluminate with europium and dysprosium; Eu makes the green, Dy holds electrons, hours of glow
     bedroom(t, { window: false }); const tiles = [['Sr', 'strontium', 200], ['Al', 'aluminate', 400], ['Eu', 'europium', 640], ['Dy', 'dysprosium', 860]];
     tiles.forEach(([sy, nm, x], i) => { const k = ss(R(t, s(9) + 1.0 + i * .7, .5)); if (k > 0) { g.save(); g.globalAlpha = k; F.rrect(x - 85, 520, 170, 170, 14, '#3a3228'); g.strokeStyle = 'rgba(240,220,168,.7)'; g.lineWidth = 4; g.strokeRect(x - 85, 520, 170, 170); g.restore(); } });
-    return () => { label('1990s', 540, 330, ss(R(t, s(9) + .1, .5)), 60); tiles.forEach(([sy, nm, x], i) => { const k = ss(R(t, s(9) + 1.0 + i * .7, .5)); const hot = (i === 2 && t > s(10)) || (i === 3 && t > s(10) + 2.2);
+    return () => { label('1990s', 540, 400, ss(R(t, s(9) + .1, .5)), 60); tiles.forEach(([sy, nm, x], i) => { const k = ss(R(t, s(9) + 1.0 + i * .7, .5)); const hot = (i === 2 && t > s(10)) || (i === 3 && t > s(10) + 2.2);
         if (hot) F.glow(x, 605, 60, 1, i === 2 ? GREEN : '255,214,140'); label(sy, x, 630, k, 84, hot ? (i === 2 ? '#d8ffdc' : '#ffe2a8') : CREAM); label(nm, x, 740, k, 32); });
       label('makes the green', 640, 820, ss(R(t, s(10) + .3, .5)), 40, '#d8ffdc'); label('holds electrons', 820, 880, ss(R(t, s(10) + 2.4, .5)), 38, '#ffe2a8');
       const hk = ss(R(t, s(10) + 4.2, .6)); if (hk > 0) { const L = 600; g.save(); g.globalAlpha = hk; g.fillStyle = 'rgba(150,255,170,.85)'; g.fillRect(240, 1000, L * hk, 26); g.fillStyle = 'rgba(240,220,168,.6)'; g.fillRect(240, 1050, 90 * hk, 26); g.restore(); label('hours', 240 + L * hk + 70, 1024, hk, 40, '#d8ffdc'); label('old', 400, 1074, hk, 32); } };
   },
   safe(t) {    // and no, it's not radioactive
     bedroom(t, { window: false }); sticker(540, 680, 220, 0);
-    return () => { stickerGlow(540, 680, 220, 1, 0); bigCap('Not radioactive.', ss(R(t, s(11) - .1, .5)), 96, 380); };
+    return () => { stickerGlow(540, 680, 220, 1, 0); bigCap('Not radioactive.', ss(R(t, s(11) - .1, .5)), 96, 450); };
   },
   radium(t) {  // a century ago: radium watch dials (period silhouettes: dial painters at a long workbench)
     const gr = g.createLinearGradient(0, 0, 0, 1200); gr.addColorStop(0, '#2e2820'); gr.addColorStop(1, '#4e4436'); g.fillStyle = gr; g.fillRect(-100, -100, W + 200, H + 200);
@@ -106,12 +106,12 @@ const SCN = {
     g.fillStyle = INK; g.fillRect(-60, 900, W + 120, 40); for (let i = 0; i < 4; i++) { const x = 160 + i * 250; g.beginPath(); g.arc(x, 720, 46, 0, TAU); g.fill(); g.beginPath(); g.moveTo(x - 80, 900); g.quadraticCurveTo(x - 70, 780, x, 770); g.quadraticCurveTo(x + 70, 780, x + 80, 900); g.fill(); g.beginPath(); g.ellipse(x, 680, 52, 26, 0, Math.PI, TAU); g.fill(); }
     g.fillStyle = '#0d0b09'; g.fillRect(-100, 1140, W + 200, 400);
     return () => { for (let i = 0; i < 4; i++) { const x = 160 + i * 250 + 60; F.circ(x, 890, 22, 'rgba(200,255,200,.25)', 1); for (let k = 0; k < 6; k++) { const a = k / 6 * TAU; F.circ(x + Math.cos(a) * 16, 890 + Math.sin(a) * 8, 3, GHEX, .9); } F.glow(x, 890, 14, .6, GREEN); }
-      label('a century ago', 540, 300, ss(R(t, s(12) + .2, .5)), 56); label('radium paint', 540, 1080, ss(R(t, s(12) + 1.6, .5)), 52, '#d8ffdc'); };
+      label('a century ago', 540, 400, ss(R(t, s(12) + .2, .5)), 56); label('radium paint', 540, 1080, ss(R(t, s(12) + 1.6, .5)), 52, '#d8ffdc'); };
   },
   lamp(t) {    // your stickers just need a lamp: on (charge), off (glow back)
     bedroom(t, { window: false }); const on = t > s(13) + .6 && t < s(13) + 2.4;
     return () => { if (on) { F.glow(619, 870, 50, 1); bedroomGlow(t, .2); } else bedroomGlow(t, t > s(13) + 2.4 ? 1 : .5);
-      label('a lamp', 619, 780, ss(R(t, s(13) + .4, .5)) * (on ? 1 : .6), 50); label('glow it back', 540, 330, ss(R(t, s(13) + 2.6, .5)), 64, '#d8ffdc'); };
+      label('a lamp', 619, 780, ss(R(t, s(13) + .4, .5)) * (on ? 1 : .6), 50); label('glow it back', 540, 400, ss(R(t, s(13) + 2.6, .5)), 64, '#d8ffdc'); };
   },
   question(t) { bedroom(t, { window: false }); return () => { bedroomGlow(t, 1); bigCap('Still on a ceiling?', ss(R(t, s(14) + .2, .5)), 80, 560); label('yes', 380, 760, ss(R(t, s(14) + 2.4, .4)), 64); label('no', 700, 760, ss(R(t, s(14) + 2.6, .4)), 64); }; },
   end(t) { bedroom(t, { window: false }); return () => { bedroomGlow(t, .55); const k = ss(R(t, s(15) - .05, .6));
