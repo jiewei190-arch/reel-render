@@ -8,10 +8,10 @@
 | A loaf wrapped airtight still goes stale (the water didn't leave) | Indiana University (above): not simply drying out; Gray & BeMiller 2003: water is redistributed into the crystallites rather than lost | university; peer-reviewed |
 | The fridge makes it worse: one test, 1 day in the fridge = 6 days on the counter | Indiana University (above): refrigeration is "the quickest way to make bread go stale"; "refrigerated bread staled as much in one day as bread stored at room temperature staled in six" | university |
 | In the freezer it barely happens; frozen bread stales very slowly | Indiana University (above): "frozen bread stales very slowly" | university |
-| Warm it (toaster, oven) and the crystals melt back into gel; the bread softens, but only for a while | America's Test Kitchen / Cook's Illustrated, "How to revive stale bread": heat lets the starch take moisture back in, which makes retrogradation "reversible—at least for a little while" | published (test kitchen) |
+| Warm it (toaster, oven) and the crystals melt back into gel; the bread softens, but only for a while | Gray JA, BeMiller JN 2003 (above; per the main session's review of the full text): retrograded amylopectin crystallites melt on reheating (roughly 50-60 °C), which is why warming refreshes bread temporarily (the fetched abstract does not state this; full text not retrieved here). Secondary: America's Test Kitchen / Cook's Illustrated, "How to revive stale bread": retrogradation is "reversible—at least for a little while" | peer-reviewed review; published (test kitchen) |
 | Once it cools, the staling starts over | America's Test Kitchen (same): the effect lasts "a little while" | published |
 
 ## Softened / left out
 - "Not mainly drying": the reviews say staling is complex (multiple mechanisms, "not fully elucidated"); the script names amylopectin retrogradation as the main one, as both reviews do.
 - No percentages or temperatures for the fridge effect beyond IU's one-day-vs-six-days test; the chart is schematic.
-- Reheating: no temperature is given, and no institutional source was found for it in this pass (ATK only).
+- Reheating: Gray & BeMiller 2003 is the institutional source (melting of retrograded amylopectin, roughly 50-60 °C, per the main session); no temperature is shown on screen.
