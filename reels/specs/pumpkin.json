@@ -4,25 +4,88 @@
  "speed": 0.97,
  "music": "crayon",
  "bpm": 88,
- "phrases": [
-  ["Carve a pumpkin, and you've **started a countdown.**", "Carve a pumpkin, and you've started a countdown."],
-  ["But a whole pumpkin can last for **months.** So why does carving change that?", "But a whole pumpkin can last for months. So why does carving change that?"],
-  ["Uncarved, it can keep for **two to three months** somewhere cool and dry.", "Uncarved, it can keep for two to three months, somewhere cool and dry."],
-  ["Carved, many last just **three to five days,** less in warm weather.", "Carved, many last just three to five days, less in warm weather."],
-  ["The secret is the **rind:** a tough skin that keeps **moisture in** and **microbes out.**", "The secret is the rind. A tough skin that keeps moisture in, and microbes out."],
-  ["Carving **cuts right through** that wall.", "Carving cuts right through that wall."],
-  ["Now the soft, wet flesh is **wide open** to the air.", "Now the soft, wet flesh is wide open to the air."],
-  ["First, it **loses water.** The cut edges dry, shrink and **shrivel.**", "First, it loses water. The cut edges dry, shrink, and shrivel."],
-  ["Second, **mould and bacteria** land on the moist surface and start feeding.", "Second, mould and bacteria land on the moist surface, and start feeding."],
-  ["Warmth speeds them up. Even a **candle's heat** inside makes it rot faster.", "Warmth speeds them up. Even a candle's heat inside makes it rot faster."],
-  ["So, a few **field notes** for a longer-lasting lantern.", "So, a few field notes, for a longer-lasting lantern."],
-  ["Scrape out all the **stringy, moist** insides.", "Scrape out all the stringy, moist insides."],
-  ["Seal the cut edges with **petroleum jelly** to slow the drying.", "Seal the cut edges with petroleum jelly, to slow the drying."],
-  ["Keep it **cool, shaded,** and out of the rain.", "Keep it cool, shaded, and out of the rain."],
-  ["And light it with an **electric candle,** not a flame.", "And light it with an electric candle, not a flame."],
-  ["With care, extension experts say it can last **over a week.**", "With care, extension experts say it can last over a week."],
-  ["So, how many days will **yours** make it?", "So, how many days will yours make it?"],
-  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ "breath": [
+  0,
+  1,
+  4,
+  7,
+  10,
+  12,
+  13,
+  14
  ],
- "breath": [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 14, 15, 16]
+ "phrases": [
+  [
+   "Carve a pumpkin, and in a few days its face starts to **sag.**",
+   "Carve a pumpkin, and in a few days its face starts to sag."
+  ],
+  [
+   "But an uncut pumpkin lasts **far longer.** So what did the knife change?",
+   "But an uncut pumpkin lasts far longer. So what did the knife change?"
+  ],
+  [
+   "An uncut pumpkin wears a **hard rind** with a **waxy coat.**",
+   "An uncut pumpkin wears a hard rind with a waxy coat."
+  ],
+  [
+   "That rind is a **seal.** It keeps water in, and germs out.",
+   "That rind is a seal. It keeps water in, and germs out."
+  ],
+  [
+   "And a pumpkin is mostly water: about **90 percent.**",
+   "And a pumpkin is mostly water: about 90 percent."
+  ],
+  [
+   "Carving cuts **right through the seal.**",
+   "Carving cuts right through the seal."
+  ],
+  [
+   "Now the soft flesh is open to the air, so **water escapes** and it dries out.",
+   "Now the soft flesh is open to the air, so water escapes and it dries out."
+  ],
+  [
+   "That's why the face **shrivels and softens.**",
+   "That's why the face shrivels and softens."
+  ],
+  [
+   "The air also carries tiny **mould spores.**",
+   "The air also carries tiny mould spores."
+  ],
+  [
+   "They land on the wet, open flesh and grow into **fuzzy grey mould.**",
+   "They land on the wet, open flesh and grow into fuzzy grey mould."
+  ],
+  [
+   "Moulds like **Penicillium** and **Aspergillus** move in, and **bacteria** join them.",
+   "Moulds like Penicillium and Aspergillus move in, and bacteria join them."
+  ],
+  [
+   "Together, they turn firm flesh **soft and saggy.**",
+   "Together, they turn firm flesh soft and saggy."
+  ],
+  [
+   "So the answer: carving removes the pumpkin's **armour.** Water gets **out,** and microbes get **in.**",
+   "So the answer: carving removes the pumpkin's armour. Water gets out, and microbes get in."
+  ],
+  [
+   "A real candle makes it worse. Its **heat speeds up the rot.**",
+   "A real candle makes it worse. Its heat speeds up the rot."
+  ],
+  [
+   "To slow it down, **scoop out all the insides**, and keep it **cool** and out of the sun.",
+   "To slow it down, scoop out all the insides, and keep it cool and out of the sun."
+  ],
+  [
+   "Rub **petroleum jelly** on the cuts to hold in moisture, and use an **LED light.**",
+   "Rub petroleum jelly on the cuts to hold in moisture, and use an LED light."
+  ],
+  [
+   "Even then, a carved pumpkin often lasts only **a few days to a week.** So carve it close to Halloween.",
+   "Even then, a carved pumpkin often lasts only a few days to a week. So carve it close to Halloween."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
 }
