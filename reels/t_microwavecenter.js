@@ -196,8 +196,8 @@ function act3(c, t) {
   if (cur === 2) { const u = ease(ramp(t, s(12) + .4, 3.5)); st.edge = mixc(HOT, WARM, .4 + .6 * u); st.mid2 = 90; st.mid = WARM; st.core = mixc('#c8e6c0', WARM, u); st.steam = .5 + .5 * u; }
   bowl(c, t, spr(t, o + .25, .7), st);
   if (cur === 0) { const a = Math.sin((t - s(10)) * 3.2) * .5; spoon(c, BW.cx + Math.sin((t - s(10)) * 3.2) * 120, BW.surf + 60, a, ramp(t, s(10) + .2, .3)); }
-  if (cur === 1) dial(c, 800, 430, ease(ramp(t, s(11) + .4, .8)), back(ramp(t, s(11) + .1, .5)));
-  if (cur === 2) { timer(c, 800, 430, ramp(t, s(12) + .4, 4), back(ramp(t, s(12) + .1, .5))); tag(c, 'USDA', 'standing time completes the cooking', 470, 650, 720, 120, '#fff7e6', ramp(t, s(12) + 2.0, .3)); }
+  if (cur === 1) dial(c, 800, 510, ease(ramp(t, s(11) + .4, .8)), back(ramp(t, s(11) + .1, .5)));
+  if (cur === 2) { timer(c, 800, 500, ramp(t, s(12) + .4, 4), back(ramp(t, s(12) + .1, .5))); tag(c, 'USDA', 'standing time completes the cooking', 450, 675, 700, 120, '#fff7e6', ramp(t, s(12) + 2.0, .3)); }
 }
 // act 4: recap (outside heats, middle waits), question signs, follow sign (end card), loop back toward the hook bowl
 function act4(c, t) {
