@@ -11,7 +11,7 @@
 - Demand signal: "why does bread go stale" / "should you refrigerate bread" are evergreen searches.
 
 ## Softened / not used
-See sources_stalebread.md (reheating sourced to America's Test Kitchen only; no temperatures).
+See sources_stalebread.md (reheating: Gray & BeMiller 2003, ATK secondary; no temperatures on screen).
 
 ## QA (python3 -I reels/qa.py stalebread, handoff qa.py)
 ```
