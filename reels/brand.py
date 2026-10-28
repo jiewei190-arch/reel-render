@@ -39,6 +39,7 @@ OVR = {
     "daylightsleep": {"spot": (44, 1368)},   # H4: cut-letter plaques fill the top band; low-left under the (raised) storyteller placard
     "firstsnowsmell": {"spot": (44, 260)},   # H4: posters framed from y 340 so the table strip above them stays clear
     "planelift": {"spot": (560, 260)},   # scifi-toon: clear of the U-tags (left) and the lab clock (right)
+    "eyeblink": {"spot": ("R", 260), "hide": [(76.9, 99.0)]},   # AI Doom titles moved below y 345; ransom end card hidden
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

@@ -107,37 +107,37 @@ const DIM = t => { let d = 0; [.9, 2.7, 4.4].forEach(a => { d = Math.max(d, 1 - 
 // A p0-1: frame 0 = the kid in close-up mid-blink; the whole set dims on each blink ("blind for a moment"); ransom 15 A MINUTE; p1 plaque
 function sceneA(t) { AD.set('#5d4a7a', '#3a2c46', { fy: FY }); lg.fillStyle = 'rgba(0,0,0,.12)'; for (let x = 0; x < W; x += 120) lg.fillRect(x, 0, 50, FY - 34);
   const at = [.9, 2.7, 4.4, 6.1]; kidB(330, FY - 10, 1.25, t, { at, per: 99 }); boxyB(790, FY - 10, 1.35, t, { at: at.map(a => a + .05), per: 99, hop: t < 1.6 ? t * .8 : 0 });
-  ransomLine('BLINK', 330, 104, 3, i => R(t, -1 + i * .05, .2), 520); ransomLine('15x A MINUTE', 450, 76, 41, i => R(t, .3 + i * .04, .2), 520);
+  ransomLine('BLINK', 340, 104, 3, i => R(t, -1 + i * .05, .2), 470); ransomLine('15x A MINUTE', 460, 76, 41, i => R(t, .3 + i * .04, .2), 470);
   const n = at.filter(a => t > a).length; if (t < s(1)) AD.plaque(640, 540, 300, 110, ['blinks: ' + n], { size: 46, f: 'roundX', top: 72, fill: '#fff3c4' });
   if (t > s(1)) { const k = R(t, s(1) + .2, 1.4); AD.plaque(540, 540, 440, 150, ['Why do we', 'blink so much?'], { size: 46, f: 'round', t, top: 64, lh: 56 }); lg.save(); lg.globalAlpha = 1 - k; lg.fillStyle = '#5d4a7a'; lg.fillRect(530, 530, 460 * (1 - k), 170); lg.restore(); } }
 // B p2: museum: the big eye exhibit, the lid wipes a tear film; the kid and box creature behind a velvet rope
-function sceneB(t) { const t0 = s(2); AD.set('#e6c9a8', C.floor, { fy: FY }); AD.text('EXHIBIT 1', 540, 330, { f: 'serif', size: 52, col: '#4a3a30', align: 'center' });
+function sceneB(t) { const t0 = s(2); AD.set('#e6c9a8', C.floor, { fy: FY }); AD.text('EXHIBIT 1', 400, 340, { f: 'serif', size: 52, col: '#4a3a30', align: 'center' });
   const ph = ((t - t0) % 2.4) / 2.4, k = ph < .18 ? Math.sin(ph / .18 * Math.PI) : 0, film = ph < .45 ? 1 - ph / .45 : 0;
   frame(160, 400, 760, 440, t, () => bigEye(540, 620, 210, t, k, { film: film * .45 }), { bg: '#f0d9c0' });
   AD.plaque(300, 900, 480, 100, ['THE TEAR WIPER'], { size: 42, top: 64 }); kidB(170, FY - 10, .62, t, { look: 1, per: 2.9 }); boxyB(900 - 40, FY - 10, .7, t, {}); rope(FY - 190, 260, 820, t); }
 // C p3: the kid glued to a phone; the blink counter drops 15 -> 5-7; AAO plaque
-function sceneC(t) { const t0 = s(3); AD.set('#cfe3dc', '#9fb08e', { fy: FY }); AD.plaque(220, 300, 640, 90, ['American Academy of Ophthalmology'], { size: 30, top: 58 });
+function sceneC(t) { const t0 = s(3); AD.set('#cfe3dc', '#9fb08e', { fy: FY }); AD.plaque(220, 345, 640, 90, ['American Academy of Ophthalmology'], { size: 30, top: 58 });
   kidB(320, FY - 10, 1.1, t, { arm: 'phone', mood: 'o', per: 9, ph: 3 }); lg.save(); lg.globalAlpha = .3; AD.shape(AD.poly(320, FY - 10 - 270 * 1.1, 170, 120, 20), '#8fd3ff', { line: false, wob: 0 }); lg.restore();
   AD.chalkboard(560, 440, 360, 360, t); const u = ss(R(t, t0 + 1.0, 1.6)); AD.text('blinks / min', 740, 510, { f: 'hand', size: 44, col: '#f3efe0', align: 'center' });
   AD.text(u < .5 ? '15' : '5-7', 740, 680, { f: 'hand', size: 150, col: u < .5 ? '#f3efe0' : '#ffe9a0', align: 'center' }); if (u > .5) AD.line([[640, 560], [690, 600], [740, 570]], { lc: '#ffe9a0', lw: 6 });
-  if (t > t0 + 3.6) AD.plaque(560, 860, 360, 90, ['eyes cope'], { size: 42, f: 'round', top: 58, fill: '#fff3c4' }); }
+  if (t > t0 + 3.6) AD.plaque(500, 860, 360, 90, ['eyes cope'], { size: 42, f: 'round', top: 58, fill: '#fff3c4' }); }
 // D p4: chalkboard question WHEN? with the box creature pointing
-function sceneD(t) { const t0 = s(4); AD.set('#efd9a8', C.floor, { fy: FY }); AD.chalkboard(120, 330, 840, 540, t);
-  AD.text('not WHY...', 540, 460, { f: 'hand', size: 80, col: 'rgba(243,239,224,.55)', align: 'center', write: R(t, t0 + .1, .6) });
-  AD.text('WHEN?', 540, 700, { f: 'hand', size: 200, col: '#ffe9a0', align: 'center', write: R(t, t0 + 1.2, .6) });
+function sceneD(t) { const t0 = s(4); AD.set('#efd9a8', C.floor, { fy: FY }); AD.chalkboard(120, 370, 840, 520, t);
+  AD.text('not WHY...', 540, 490, { f: 'hand', size: 80, col: 'rgba(243,239,224,.55)', align: 'center', write: R(t, t0 + .1, .6) });
+  AD.text('WHEN?', 540, 730, { f: 'hand', size: 200, col: '#ffe9a0', align: 'center', write: R(t, t0 + 1.2, .6) });
   boxyB(300, FY - 10, 1.0, t, { hop: (t - t0) * .5 }); kidB(780, FY - 10, .9, t, { look: -1, mood: 'o' }); }
 // E p5: theatre: an audience watching the same film blinks together (re-hook)
 const SYNC = i => [s(5) + 1.6, s(5) + 3.3, s(5) + 4.8, s(6) + .6, s(6) + 2.2, s(6) + 3.8][i];
-function sceneE(t) { const t0 = s(5); AD.set('#3a2c46', '#2a2034', { fy: FY }); curtains(t, ss(R(t, t0, 1.2))); AD.plaque(330, 300, 420, 80, ['Nakano et al., 2009'], { size: 32, top: 54 });
+function sceneE(t) { const t0 = s(5); AD.set('#3a2c46', '#2a2034', { fy: FY }); curtains(t, ss(R(t, t0, 1.2))); AD.plaque(180, 300, 420, 80, ['Nakano et al., 2009'], { size: 32, top: 54 });
   screen(250, 420, 580, 330, t, () => filmBall(250, 420, 580, 330, t, ((t - t0) / 3.2) % 1));
   const at = [0, 1, 2].map(SYNC); audience(800, t, at); const sy = at.some(a => t >= a && t < a + .22); AD.text('in sync!', 540, 720, { f: 'roundX', size: 64, col: C.yellow, align: 'center', outline: 8, a: t > at[0] ? (sy ? 1 : .8) : 0 }); }
 // F p6: the blinks land on calm moments: film strip, closed-eye marks over ACTION ENDS / HERO GONE / LONG SHOT
-function sceneF(t) { const t0 = s(6); AD.set('#2a2034', '#1f1828', { fy: FY }); AD.text('WHERE THE BLINKS LAND', 540, 330, { f: 'roundX', size: 56, col: '#fbf6ea', align: 'center', write: R(t, t0, .8) });
-  filmStrip(60, 420, 280, 230, 3, t, (i, fx, fy) => { if (i === 0) filmBall(fx, fy, 280, 230, t, 1); else if (i === 1) filmHero(fx, fy, 280, 230, t, true); else filmLong(fx, fy, 280, 230, t); });
-  [['ACTION ENDS', 1.0], ['HERO GONE', 2.4], ['LONG SHOT', 3.8]].forEach(([lab, d], i) => { const k = R(t, t0 + d, .35); eyeShut(260 + i * 310 - 60 + 40, 580, 1.0, k); AD.text(lab, 200 + i * 310 + 10, 790, { f: 'type', size: 34, col: '#fbf6ea', align: 'center', a: k }); });
+function sceneF(t) { const t0 = s(6); AD.set('#2a2034', '#1f1828', { fy: FY }); AD.text('WHERE THE BLINKS LAND', 540, 385, { f: 'roundX', size: 56, col: '#fbf6ea', align: 'center', write: R(t, t0, .8) });
+  filmStrip(60, 430, 280, 230, 3, t, (i, fx, fy) => { if (i === 0) filmBall(fx, fy, 280, 230, t, 1); else if (i === 1) filmHero(fx, fy, 280, 230, t, true); else filmLong(fx, fy, 280, 230, t); });
+  [['ACTION ENDS', 1.0], ['HERO GONE', 2.4], ['LONG SHOT', 3.8]].forEach(([lab, d], i) => { const k = R(t, t0 + d, .35); eyeShut(260 + i * 310 - 60 + 40, 590, 1.0, k); AD.text(lab, 200 + i * 310 + 10, 790, { f: 'type', size: 34, col: '#fbf6ea', align: 'center', a: k }); });
   kidB(540, FY - 10, .6, t, { at: [1, 2].map(i => SYNC(i + 2)), per: 99 }); }
 // G p7: a sentence with pauses; blink marks fall in the gaps
-function sceneG(t) { const t0 = s(7); AD.set('#efd9a8', C.floor, { fy: FY }); AD.plaque(260, 300, 560, 90, ['natural pauses'], { size: 44, f: 'round', top: 60 });
+function sceneG(t) { const t0 = s(7); AD.set('#efd9a8', C.floor, { fy: FY }); AD.plaque(260, 345, 560, 90, ['natural pauses'], { size: 44, f: 'round', top: 60 });
   const words = [['the hero', 120], ['opens the door', 380], ['...', 690], ['and leaves.', 820]]; const ty = 560;
   AD.shape(AD.box(70, 460, 940, 200, 3), '#fbf6ea', { seed: 710, t, lw: 4 });
   words.forEach(([w, x], i) => AD.text(w, x, ty, { f: 'type', size: 44, col: C.ink, align: 'left', a: R(t, t0 + .2 + i * .5, .3) }));
@@ -146,33 +146,33 @@ function sceneG(t) { const t0 = s(7); AD.set('#efd9a8', C.floor, { fy: FY }); AD
   AD.text('least likely to miss something', 540, 830, { f: 'hand', size: 52, col: C.ink, align: 'center', a: R(t, t0 + 2.6, .4) });
   kidB(200, FY - 10, .55, t, { at: [t0 + 1.4, t0 + 2.2, t0 + 3.0], per: 99 }); boxyB(880 - 20, FY - 10, .6, t, { at: [t0 + 1.45, t0 + 2.25, t0 + 3.05], per: 99 }); }
 // H p8: brain-scan study: the kid slides into the scanner
-function sceneH(t) { const t0 = s(8); AD.set('#cfe3dc', '#9fb08e', { fy: FY }); AD.plaque(220, 290, 640, 80, ['Nakano et al., 2013 · PNAS'], { size: 32, top: 54 });
-  scanner(540, 700, t, R(t, t0 + .1, 1.4)); }
+function sceneH(t) { const t0 = s(8); AD.set('#cfe3dc', '#9fb08e', { fy: FY }); AD.plaque(220, 345, 640, 80, ['Nakano et al., 2013 · PNAS'], { size: 32, top: 54 });
+  scanner(540, 760, t, R(t, t0 + .1, 1.4)); }
 // I p9: the brain on blueprint blue: ATTENTION meter dips, DEFAULT MODE lamp lights, right after each blink
 function sceneI(t) { const t0 = s(9), c = lg; c.fillStyle = '#2c5aa0'; c.fillRect(0, 0, W, H); c.strokeStyle = 'rgba(255,255,255,.12)'; c.lineWidth = 2; for (let x = 0; x < W; x += 60) { c.beginPath(); c.moveTo(x, 0); c.lineTo(x, H); c.stroke(); } for (let y = 0; y < H; y += 60) { c.beginPath(); c.moveTo(0, y); c.lineTo(W, y); c.stroke(); }
-  AD.text('RIGHT AFTER A BLINK', 540, 330, { f: 'type', size: 50, col: '#eaf2ff', align: 'center', write: R(t, t0, .8) });
+  AD.text('RIGHT AFTER A BLINK', 540, 385, { f: 'type', size: 50, col: '#eaf2ff', align: 'center', write: R(t, t0, .8) });
   const bt = [t0 + .8, t0 + 2.8, t0 + 4.8]; const after = bt.reduce((m, a) => Math.max(m, t > a ? Math.exp(-(t - a - .5) * (t - a - .5) * 3) : 0), 0);
   brain(400, 640, .72, t, after); bigEye(820, 470, 60, t, bt.some(a => t >= a && t < a + .2) ? 1 : 0);
   meter(230, 1020, lerp(.85, .35, after), 'ATTENTION', t); lamp(560, 950, after, 'DEFAULT MODE', '#ffcf4a', t); AD.text('resting network', 840, 960, { f: 'hand', size: 40, col: '#eaf2ff', align: 'center', a: R(t, t0 + 3.2, .4) }); }
 // J p10: re-hook: the micro-break: the box creature on a deck chair inside the brain, "MICRO-BREAK?"
-function sceneJ(t) { const t0 = s(10); AD.set('#f2d6d0', C.floor, { fy: FY }); ransomLine('MICRO-BREAK?', 340, 82, 91, i => R(t, t0 + i * .04, .2));
+function sceneJ(t) { const t0 = s(10); AD.set('#f2d6d0', C.floor, { fy: FY }); ransomLine('MICRO-BREAK?', 390, 82, 91, i => R(t, t0 + i * .04, .2));
   AD.shape(AD.poly(540, 720, 400, 290, 40), '#f2b8c0', { seed: 720, t, lw: 6 }); [[-200, -80, 110], [-40, -150, 130], [150, -60, 120], [-120, 100, 110], [120, 120, 100]].forEach(([a, b, r], i) => AD.line(AD.poly(540 + a, 720 + b, r * .6, r * .35, 14, i).slice(0, 10), { lc: '#c06a7a', lw: 4, t }));
   deckChair(540, 860, t); boxyB(540, 820, .8, t, { closed: true }); AD.text('z', 640, 560 - ((t * 40) % 60), { f: 'roundX', size: 48, col: C.ink, a: .8 });
   const ck = bo(R(t, t0 + 2.4, .4)); if (ck > 0) AD.plaque(330, 1000, 420, 90, ['a tiny reset?'], { size: 44, f: 'round', top: 60, fill: '#fff3c4' }); kidB(150, FY - 10, .5, t, { look: 1 }); }
 // K p11: the catch: the screen goes dark instead (fake blink): lamp stays off: NO SHIFT
-function sceneK(t) { const t0 = s(11); AD.set('#3a2c46', '#2a2034', { fy: FY }); curtains(t, 1); AD.text('FAKE BLINK', 540, 330, { f: 'roundX', size: 70, col: '#fbf6ea', align: 'center', write: R(t, t0, .6) });
-  const dk = [t0 + 1.4, t0 + 2.6, t0 + 3.8].some(a => t >= a && t < a + .3) ? 1 : 0; screen(250, 420, 580, 330, t, () => filmBall(250, 420, 580, 330, t, ((t - t0) / 3) % 1), dk * .92);
-  AD.text(dk ? 'screen dark' : '', 540, 600, { f: 'type', size: 44, col: '#fbf6ea', align: 'center' }); lamp(540, 860, 0, '', '#ffcf4a', t); AD.text('DEFAULT MODE', 540, 966, { f: 'type', size: 34, col: '#fbf6ea', align: 'center' });
+function sceneK(t) { const t0 = s(11); AD.set('#3a2c46', '#2a2034', { fy: FY }); curtains(t, 1); AD.text('FAKE BLINK', 540, 390, { f: 'roundX', size: 70, col: '#fbf6ea', align: 'center', write: R(t, t0, .6) });
+  const dk = [t0 + 1.4, t0 + 2.6, t0 + 3.8].some(a => t >= a && t < a + .3) ? 1 : 0; screen(250, 450, 580, 300, t, () => filmBall(250, 450, 580, 300, t, ((t - t0) / 3) % 1), dk * .92);
+  AD.text(dk ? 'screen dark' : '', 540, 620, { f: 'type', size: 44, col: '#fbf6ea', align: 'center' }); lamp(540, 860, 0, '', '#ffcf4a', t); AD.text('DEFAULT MODE', 540, 966, { f: 'type', size: 34, col: '#fbf6ea', align: 'center' });
   stamp('NO SHIFT', 540, 860, R(t, t0 + 4.0, .35)); }
 // L p12: payoff: two jobs: WET EYES (ticked) and BRAIN BREAKS? (still testing)
-function sceneL(t) { const t0 = s(12); AD.set('#efd9a8', C.floor, { fy: FY }); AD.text('TWO JOBS?', 540, 330, { f: 'roundX', size: 84, col: C.ink, align: 'center', write: R(t, t0 + .2, .7) });
-  [[110, '#8fd0f0', 'WET EYES', 1.0], [600, C.pink, 'BRAIN BREAKS?', 3.2]].forEach(([x, col, lab, d], i) => { const k = bo(R(t, t0 + d, .5)); if (k <= 0) return; lg.save(); lg.translate(x + 185, FY); lg.scale(1, k); lg.translate(-(x + 185), -FY); AD.shape(AD.box(x, 440, 370, FY - 474, 3), col, { seed: 730 + i, t, lw: 5 }); AD.text(lab, x + 185, 530, { f: 'roundX', size: i ? 40 : 50, col: C.ink, align: 'center' }); lg.restore(); });
+function sceneL(t) { const t0 = s(12); AD.set('#efd9a8', C.floor, { fy: FY }); AD.text('TWO JOBS?', 540, 395, { f: 'roundX', size: 84, col: C.ink, align: 'center', write: R(t, t0 + .2, .7) });
+  [[110, '#8fd0f0', 'WET EYES', 1.0], [600, C.pink, 'BRAIN BREAKS?', 3.2]].forEach(([x, col, lab, d], i) => { const k = bo(R(t, t0 + d, .5)); if (k <= 0) return; lg.save(); lg.translate(x + 185, FY); lg.scale(1, k); lg.translate(-(x + 185), -FY); AD.shape(AD.box(x, 450, 370, FY - 484, 3), col, { seed: 730 + i, t, lw: 5 }); AD.text(lab, x + 185, 540, { f: 'roundX', size: i ? 40 : 50, col: C.ink, align: 'center' }); lg.restore(); });
   if (t > t0 + 1.8) AD.line([[200, 700], [270, 770], [400, 620]], { lw: 16, lc: '#2f7a3a' }); if (t > t0 + 4.6) { lg.save(); lg.translate(785, 700); lg.scale(bo(R(t, t0 + 4.6, .4)), bo(R(t, t0 + 4.6, .4))); AD.plaque(-165, -50, 330, 90, ['still testing'], { size: 40, f: 'round', top: 58, fill: '#fff3c4' }); lg.restore(); }
   kidB(540, FY - 10, .85, t, { per: 2.6 }); }
 // M p13: the question: DID YOU BLINK? YES / NO
 function sceneM(t) { const t0 = s(13); AD.set('#5d4a7a', '#3a2c46', { fy: FY }); lg.fillStyle = 'rgba(0,0,0,.12)'; for (let x = 0; x < W; x += 120) lg.fillRect(x, 0, 50, FY - 34);
-  ransomLine('DID YOU', 340, 110, 61, i => R(t, t0 + i * .04, .25)); ransomLine('BLINK?', 480, 130, 83, i => R(t, t0 + .3 + i * .04, .25));
-  AD.plaque(140, 600, 260, 120, ['YES'], { size: 70, f: 'poster', top: 92, fill: '#c6ecc0' }); AD.plaque(680, 600, 260, 120, ['NO'], { size: 70, f: 'poster', top: 92, fill: '#ffc4c4' });
+  ransomLine('DID YOU', 400, 110, 61, i => R(t, t0 + i * .04, .25)); ransomLine('BLINK?', 545, 130, 83, i => R(t, t0 + .3 + i * .04, .25));
+  AD.plaque(140, 660, 260, 120, ['YES'], { size: 70, f: 'poster', top: 92, fill: '#c6ecc0' }); AD.plaque(680, 660, 260, 120, ['NO'], { size: 70, f: 'poster', top: 92, fill: '#ffc4c4' });
   kidB(400, FY - 10, .6, t, { per: 1.7 }); boxyB(700, FY - 10, .9, t, { per: 2.1 }); }
 // N p14: end card on cork; the kid blinks below (loop)
 const ENDL = [['FOLLOW', 330], ['FOR MORE OF', 500], ['HOW IT', 680], ['REALLY', 850], ['WORKS.', 1020]];
