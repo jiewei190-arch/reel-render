@@ -8,6 +8,8 @@ import { W, H, INK, init, frame, g, push, pop, translate, rotate, scale, shape, 
 import { juno, spud, mitt, eye, mouth, sweat, PAL, mix } from './styles/scifitoon/cast_af.js';
 await Promise.all(['800 50px "Baloo 2"', '400 50px VT323', '400 50px Bungee'].map(f => document.fonts.load(f)));
 init(document.getElementById('c'));
+// own colourway (H4's slipperyice is also scifi-toon): teal suit + peach lab + plum floor, so the two episodes don't look identical
+Object.assign(PAL, { suit: '#4fc4b8', suitS: '#2f9488', boot: '#3a3a6e', bootS: '#26264f' });
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end, LIP = window.LIP || [];
 const HCUT = s(1) - .1;   // hard cut from the hook close-up to the lab two-shot
 const q = t => Math.floor(t * 12 + 1e-6) / 12;
@@ -43,7 +45,7 @@ function cone(x, y, s, ang = 0, bite = 0, scoop = '#ff9cc2') {   // waffle cone 
   const P = []; for (let i = 0; i < 18; i++) { const a = Math.PI + i / 17 * Math.PI, r = 62 * (1 + .06 * Math.sin(i * 2.3)); P.push([Math.cos(a) * r, -128 + Math.sin(a) * r * .95]); }
   P.push([52, -120], [34, -100], [20, -116], [0, -96], [-18, -114], [-40, -98], [-56, -118]);
   shape(spline(P), { fill: scoop, lw: 6, shade: () => { fillOnly(ell(24, -150, 30, 36, 16), mix(scoop, '#ffffff', .45), { boil: .3 }); for (let i = 0; i < 4; i++) dot(-30 + i * 18, -170 + (i % 2) * 22, 4, ['#ff5a5a', '#5ad0ff', '#ffe066', '#7ad65a'][i]); } });
-  if (bite > 0) fillOnly(ell(44, -176, 26 * bite, 22 * bite, 14), '#a7c3b1', { boil: .3 });
+  if (bite > 0) fillOnly(ell(44, -176, 26 * bite, 22 * bite, 14), '#f3c9a5', { boil: .3 });
   pop();
 }
 function freezeFX(x, y, r, t, k = 1) {   // brain-freeze burst around a head centre: ice shards, zig-zag zaps, shiver ticks
@@ -71,9 +73,9 @@ function thermo(x, y, v, s = 1) { push(); translate(x, y); scale(s); shape(rr(-4
 // ———————————————————— worlds (one palette each) ————————————————————
 const X0 = -900, X1 = 2000;
 function lab(t, o = {}) {           // home: sage ice-cream lab (wall, freezer, blackboard, clock, shelf of tubs)
-  fillOnly(rect(X0, -800, X1 - X0, 2400), '#a7c3b1', { boil: 0 });
-  for (let x = -800; x < 2000; x += 240) stroke([[x, -800], [x, 1150]], 4, { line: '#7c9d8a' });
-  fillOnly(rect(X0, -800, X1 - X0, 300), '#8fae9b', { boil: 0 });
+  fillOnly(rect(X0, -800, X1 - X0, 2400), '#f3c9a5', { boil: 0 });
+  for (let x = -800; x < 2000; x += 240) stroke([[x, -800], [x, 1150]], 4, { line: '#dba27c' });
+  fillOnly(rect(X0, -800, X1 - X0, 300), '#e6b48c', { boil: 0 });
   shape(rr(300, 160, 520, 44, 10), { fill: '#eef6f0', lw: 6 }); stroke([[360, 140], [360, 160]], 5); stroke([[760, 140], [760, 160]], 5);
   shape(rr(560, 300, 470, 300, 10), { fill: '#2f4a3f', lw: 8, shade: () => {
     const L = o.bare ? [] : o.board || ['BRAIN = FROZEN ?', 'cold → mouth → ???', '']; L.forEach((l, i) => text(l, 795, 360 + i * 64, { font: `400 ${i ? 38 : 48}px VT323`, fill: i === 2 ? '#ffd36e' : '#e8f0e0' }));
@@ -87,7 +89,7 @@ function lab(t, o = {}) {           // home: sage ice-cream lab (wall, freezer, 
   shape(rr(-90, 730, 480, 50, 12), { fill: '#bcd6e2', lw: 7 }); shape(rr(120, 860, 120, 24, 10), { fill: '#7c9aa8', lw: 5 });
   for (let i = 0; i < 3; i++) { const u = (t * .5 + i / 3) % 1; stroke([[60 + i * 110, 730 - u * 60], [70 + i * 110, 700 - u * 60]], 5, { line: '#ffffff', alpha: 1 - u }); }
   // floor
-  shape(rect(X0, 1140, X1 - X0, 1200), { fill: '#6c7c75', lw: 6 }); for (let k = 0; k < 6; k++) stroke([[X0, 1190 + k * 80 + k * k * 12], [X1, 1190 + k * 80 + k * k * 12]], 4, { line: '#58665f' }); shape(rect(X0, 1116, X1 - X0, 30), { fill: '#557065', lw: 6 });
+  shape(rect(X0, 1140, X1 - X0, 1200), { fill: '#7a6a8c', lw: 6 }); for (let k = 0; k < 6; k++) stroke([[X0, 1190 + k * 80 + k * k * 12], [X1, 1190 + k * 80 + k * k * 12]], 4, { line: '#665878' }); shape(rect(X0, 1116, X1 - X0, 30), { fill: '#5c4e70', lw: 6 });
 }
 function palateWorld(t, chill = 0) {   // pink + ice blue: inside the mouth, the palate is the sky
   bands(['#ffc2d4', '#ffb0c8', '#ff9dbb', '#ff8aae'], -600, 1200);
@@ -171,14 +173,14 @@ const SH = {
   },
   study(t, tq) {   // jump 2: the volunteer sips ice water; the Doppler screen spikes as the front artery widens; hand up, then down
     cam(540, 960, 1); studyWorld(t);
-    const pain = ss(seg(t, s(8) + .3, s(8) + .8)) * (1 - ss(seg(t, s(8) + 4.6, s(8) + 5.4)));
+    const pain = ss(seg(t, s(8) + .3, s(8) + .8)) * (1 - ss(seg(t, s(8) + 5.0, s(8) + 5.8)));
     // the cart + CRT monitor
     shape(rr(280, 740, 520, 40, 10), { fill: '#3a4566', lw: 7 }); shape(rr(510, 780, 60, 340, 8), { fill: '#3a4566', lw: 6 });
     shape(rr(200, 400, 680, 360, 30), { fill: '#c9c1a8', lw: 9, shade: () => fillOnly(rect(760, 380, 140, 400), '#b0a88e', { boil: .3 }) });
     shape(rr(240, 430, 520, 300, 18), { fill: '#0e1a14', lw: 7, shade: () => {
       text('BLOOD FLOW · FRONT ARTERY', 500, 464, { font: '400 30px VT323', fill: '#7affb0' });
-      const P_ = []; for (let i = 0; i <= 60; i++) { const tt = t - (60 - i) * .06; const pk = ss(seg(tt, s(8) + .3, s(8) + .8)) * (1 - ss(seg(tt, s(8) + 4.6, s(8) + 5.4))); const beat = Math.max(0, Math.sin(tt * 7.5)) ** 6; P_.push([260 + i * 8, 680 - 40 - pk * 120 - beat * (30 + pk * 30)]); }
-      stroke(P_, 6, { line: '#7affb0' }); text('Serrador et al. (abstract), 2012', 500, 710, { font: '400 26px VT323', fill: '#4fae78' }); } });
+      const P_ = []; for (let i = 0; i <= 60; i++) { const tt = t - (60 - i) * .06; const pk = ss(seg(tt, s(8) + .3, s(8) + .8)) * (1 - ss(seg(tt, s(8) + 5.0, s(8) + 5.8))); const beat = Math.max(0, Math.sin(tt * 7.5)) ** 6; P_.push([260 + i * 8, 680 - 40 - pk * 120 - beat * (30 + pk * 30)]); }
+      stroke(P_, 6, { line: '#7affb0' }); text('Serrador et al. 2012 · small study', 500, 710, { font: '400 26px VT323', fill: '#4fae78' }); } });
     // volunteer Spud on a stool: glass of ice water, straw to the palate
     shape(rr(140, 1000, 160, 26, 8), { fill: '#8a6a4a', lw: 6 }); stroke([[160, 1026], [150, 1130]], 8); stroke([[280, 1026], [290, 1130]], 8);
     const sip = t < s(8) + .2;
@@ -189,7 +191,7 @@ const SH = {
     const w = 30 + pain * 40; vessel([[640, 980], [700, 940], [780, 980], [860, 950]], w, t, pain * 2);
     label(pain > .5 ? 'WIDENS!' : 'artery', 760, 880, 46, pain > .5 ? '#ff7a86' : '#ffb44a', 1);
     if (t > s(7) + .6 && t < s(8) + .3) label('13 VOLUNTEERS', 400, 820, 56, '#ffb44a', pop_(tq, s(7) + .6));
-    if (t > s(8) + 4.9) label('PAIN FADES', 400, 820, 60, '#7affb0', pop_(tq, s(8) + 4.9));
+    if (t > s(8) + 5.6) label('PAIN FADES', 400, 820, 60, '#7affb0', pop_(tq, s(8) + 5.6));
   },
   nerve(t, tq) {   // jump 3: the trigeminal nerve wire; a zap runs mouth -> knot; the brain reads it as forehead pain
     cam(540, 960, 1); nerveWorld(t);

@@ -8,6 +8,8 @@
 import { createFB, W, H, C, clamp, lerp, ramp, ss, eo, bo, hash } from './styles/fieldbook/fieldbook.js';
 await Promise.all(['400 40px "Kalam"', '700 40px "Kalam"', '400 20px "Courier Prime"', '700 20px "Courier Prime"', '500 40px "Nunito"', '700 40px "Nunito"'].map(f => document.fonts.load(f)));
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
+// own palette (H4's earpop is also #18): a kitchen notebook, cream ruled paper, blue ink lines, pink margin, yolk-amber accents
+Object.assign(C, { paper: '#fbf3da', red: '#c47410', redL: '#efb54a', ochre: '#f2b51c', navy: '#4a78a4' });
 const F = createFB(document.getElementById('c')), g = F.g;
 const R = ramp, TAU = Math.PI * 2;
 
@@ -25,7 +27,9 @@ const mono = (str, x, y, o = {}) => F.txt(str, x, y, { size: 22, f: 'mono', wt: 
 
 // ---------- drawings ----------
 // the counter at the bottom of every page (printed furniture: keeps the bottom band from going blank; no text there)
-function counter() { F.pencil([[60, 1470], [1020, 1466]], { w: 1.6, seed: 9 }); F.hatch([[60, 1474], [1020, 1470], [1020, 1610], [60, 1610]], 'graph', { alpha: .28 }); F.pencil([[60, 1612], [1020, 1608]], { w: 1, alpha: .5, seed: 4 }); }
+function counter() { g.save(); g.globalAlpha = .5; g.strokeStyle = '#9cc2e2'; g.lineWidth = 2; for (let y = 262; y < 1700; y += 66) { g.beginPath(); g.moveTo(0, y); g.lineTo(W, y + 1); g.stroke(); }
+  g.strokeStyle = '#e88a9a'; g.lineWidth = 2.5; g.beginPath(); g.moveTo(56, 0); g.lineTo(57, H); g.stroke(); g.globalAlpha = .9; g.fillStyle = '#efe6cc'; [420, 960, 1500].forEach(y => { g.beginPath(); g.arc(28, y, 13, 0, TAU); g.fill(); }); g.restore();
+  F.pencil([[60, 1730], [1020, 1726]], { w: 1.6, seed: 9 }); F.hatch([[60, 1734], [1020, 1730], [1020, 1820], [60, 1820]], 'ochre', { alpha: .35 }); }
 // irregular fried-egg white outline
 const blob = (cx, cy, r, sc = 1) => { const P = []; for (let i = 0; i <= 44; i++) { const a = i / 44 * TAU, k = 1 + .1 * Math.sin(a * 3 + 1) + .06 * Math.sin(a * 5 + 2); P.push([cx + Math.cos(a) * r * k * sc + (Math.cos(a) > 0 ? 10 : 0), cy + Math.sin(a) * r * .8 * k * sc]); } return P; };
 // pan seen from above + an egg whose white sets from the rim inward (set 0..1); yolk ochre
@@ -59,7 +63,7 @@ function thermo(x, y0, y1, lo, hi, v, k) { const Y = c => lerp(y1, y0, (c - lo) 
 
 // ---------- pages ----------
 function page1(t) {   // hook: the egg is already setting at frame 0, heat lines rising; the headline asks the search question
-  mono('A FIELD SKETCHBOOK  ·  KITCHEN NOTES', 80, TOP, { size: 25, col: '#45454c', alpha: .9 }); F.line(80, TOP + 16, 800, TOP + 16, { w: 1, alpha: .5, wob: .3 });
+  mono('KITCHEN NOTEBOOK  ·  EGG NOTES', 80, TOP, { size: 25, col: '#45454c', alpha: .9 }); F.line(80, TOP + 16, 800, TOP + 16, { w: 1, alpha: .5, wob: .3 });
   const w1 = F.txt('Why it turns ', 74, 440, { size: 112, f: 'hand', rot: -.015 }); F.txt('solid.', 74, 560, { size: 112, f: 'hand', col: C.red, rot: -.015 });
   F.line(84, 586, 420, 582, { col: C.red, w: 2.6, draw: ss(R(t, 0, .6)), wob: .6 });
   F.seal('EGG', 900, 470, ss(R(t, .3, .35)), { size: 48, f: 'mono', fs: 48 });
@@ -166,7 +170,7 @@ window.seek = t => { const T = TL.total, a = T - .5; if (t <= a) return scene(t)
 window.render = window.seek;
 // cover (rule 11): the question big inside y 300-1620, the egg setting in the pan
 window.thumb = () => { F.begin(); counter();
-  mono('A FIELD SKETCHBOOK  ·  KITCHEN NOTES', 80, 340, { size: 25, col: '#45454c', alpha: .9 });
+  mono('KITCHEN NOTEBOOK  ·  EGG NOTES', 80, 340, { size: 25, col: '#45454c', alpha: .9 });
   F.txt('Why eggs', 70, 540, { size: 180, f: 'hand', rot: -.02 }); F.txt('go solid.', 70, 730, { size: 190, f: 'hand', col: C.red, rot: -.02 });
   F.line(84, 770, 700, 760, { col: C.red, w: 3.5, wob: .6 }); F.seal('EGG', 900, 470, 1, { size: 56, f: 'mono', fs: 56 });
   panEgg(470, 1110, 210, .55, 1, { bubbles: true });
