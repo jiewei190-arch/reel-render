@@ -36,6 +36,8 @@ OVR = {
     "earpop": {"spot": ("R", 260)},   # H4: top-right is clear of the field-note titles
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
+    "daylightsleep": {"spot": (44, 1368)},   # H4: cut-letter plaques fill the top band; low-left under the (raised) storyteller placard
+    "firstsnowsmell": {"spot": (44, 260)},   # H4: posters framed from y 340 so the table strip above them stays clear
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)
