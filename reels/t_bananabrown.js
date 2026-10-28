@@ -96,7 +96,7 @@ const SETG = (wall, floor) => { AD.set(wall, floor, { fy: FY }); lg.fillStyle = 
 // ---------- scenes ----------
 // A p0-1: frame 0: a spotted banana in sunglasses under a sun lamp; spots appear one by one; ransom SUNTAN?; p1 plaque + a gas puff
 function sceneA(t) { SETG(P.teal, P.tealD); sun(860, 470, 80, t, 1); banana(470, 740, 1.25, t, { ripe: 1, spots: .25 + .75 * ss(R(t, 0, 3.2)), shades: t < s(1) + .4, mood: 'smile' });
-  ransomLine('SUNTAN?', 360, 96, 7, i => R(t, -1 + i * .05, .2), 470); AD.text('melanin', 860, 640, { f: 'hand', size: 50, col: P.cream, align: 'center', a: R(t, .8, .5) });
+  ransomLine('SUNTAN?', 410, 96, 7, i => R(t, -1 + i * .05, .2), 430); AD.text('melanin', 860, 640, { f: 'hand', size: 50, col: P.cream, align: 'center', a: R(t, .8, .5) });
   if (t > s(1)) { AD.plaque(560, 820, 420, 150, ['Why do bananas', 'turn brown?'], { size: 44, f: 'round', top: 64, lh: 56, fill: P.cream }); puff(230, 880, 110, t, bo(R(t, s(1) + 2.4, .6))); } }
 // B p2: ethylene: the ripe banana breathes out puffs; green bananas nearby turn yellow
 function sceneB(t) { const t0 = s(2); SETG(P.leaf, P.leafD); AD.plaque(200, 340, 680, 90, ['ETHYLENE: a ripening gas'], { size: 40, f: 'roundX', top: 60, fill: P.cream });
@@ -113,7 +113,7 @@ function sceneD(t) { const t0 = s(4); SETG(P.terra, P.terraD); AD.plaque(200, 34
   AD.shape(AD.box(520, 480, 40, 420, 2), P.cream, { seed: 781, lw: 4 }); AD.text('kept apart', 540, 1040, { f: 'hand', size: 56, col: P.cream, align: 'center', write: R(t, t0 + 2.4, .8) });
   enzyme(300, 760, .7, t); }
 // E p5: re-hook: dopamine, the same molecule your brain uses: two museum frames (banana / brain) + the molecule sketch
-function sceneE(t) { const t0 = s(5); SETG('#e9dcc0', '#c8b08a'); AD.text('SAME MOLECULE', 540, 400, { f: 'roundX', size: 72, col: C.ink, align: 'center', write: R(t, t0 + .2, .7) });
+function sceneE(t) { const t0 = s(5); SETG('#e9dcc0', '#c8b08a'); AD.text('SAME MOLECULE', 540, 430, { f: 'roundX', size: 64, col: C.ink, align: 'center', write: R(t, t0 + .2, .7) });
   const k1 = bo(R(t, t0 + .5, .5)), k2 = bo(R(t, t0 + 1.0, .5)); if (k1 > 0) { lg.save(); lg.translate(280, 640); lg.scale(k1, k1); lg.translate(-280, -640); frame(130, 480, 300, 320, t, () => banana(280, 620, .45, t, { ripe: 1, spots: .5, face: false }), { bg: '#f0e6c8' }); lg.restore(); }
   if (k2 > 0) { lg.save(); lg.translate(800, 640); lg.scale(k2, k2); lg.translate(-800, -640); frame(650, 480, 300, 320, t, () => brain(800, 640, .4, t, 0), { bg: '#2c5aa0' }); lg.restore(); }
   dopa(470, 950, .9, t, R(t, t0 + 2.2, .6)); AD.text('dopamine', 540, 1080, { f: 'hand', size: 54, col: '#7a3a9a', align: 'center', write: R(t, t0 + 2.8, .6) }); rope(FY - 190, 120, 960, t); }
