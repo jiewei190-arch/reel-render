@@ -41,7 +41,7 @@
 | 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | queued |
-| 61 | contrails | Why do planes leave white trails in the sky? | H1 | queued |
+| 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
 | 62 | wetdog | Why do wet dogs smell so bad? | H1 | queued |
 | 60 | ovenfoil | Why does aluminum foil have a shiny side and a dull side? | H1 | merged v2, Nov 9 09:00 |
 
