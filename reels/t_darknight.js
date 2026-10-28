@@ -3,9 +3,11 @@
 // carved lace (evenodd holes glow), cut-letter plaques, storyteller's placard. The night sky is a dark hide sheet pricked with
 // star holes, so the stars really are the lamp shining through. Diagrams play on the open, lit screen.
 // Batch N: pictures inside y 250-1130, placard in the caption band (y ~1150-1420), nothing written right of x 900 below y 840.
-import { createSP, cfg, W, H, TAU, clamp, lerp, ramp, win, hash, mixc, DYE, dye, hidePiece, at, rod, inkText, plaque, tag, circ, ring, ell, poly, star, trem, puppet, cutPlaque, rivet, hill, sun, earth, FONT } from './styles/shadowpuppet/shadowpuppet.js';
+import { createSP, cfg, W, H, TAU, clamp, lerp, ramp, win, hash, mixc, DYE, dye, hidePiece, at, rod, inkText, plaque, tag, circ, ring, ell, poly, star, trem, puppet, cutPlaque as cutPlaque0, rivet, hill, sun, earth, FONT } from './styles/shadowpuppet/shadowpuppet.js';
 await Promise.all([document.fonts.load('italic 700 60px "Cormorant Garamond"')]);
 cfg.hide = true;
+// every top plaque sits 70 px lower than catpurr's so the EP badge fits the top-right band (y 260-330) above them
+const cutPlaque = (gg, x, y, ...a) => cutPlaque0(gg, x, y + 70, ...a);
 const canvas = document.getElementById('c'), R = createSP(canvas), g = R.g;
 const TL = window.TL, PH = TL.p, T = i => PH[i].start, E = i => PH[i].end;
 const r = (i, d) => T(i) + d;
@@ -28,7 +30,7 @@ const LINES = [3, 9, 14, 21, 30, 41, 55, 70, 88, 104, 131, 160];
 function watcher(t, x, y, s, o = {}) { rod(g, x + 10 * s, y - 120 * s); puppet(g, x, y, s, t, { hand: o.hand || [70, -230], hand2: o.hand2 || [-20, -70], head: o.head ?? -.35 }); }
 const EYE = (x, y, s) => [x + 18 * s, y - 150 * s];
 // on the dark sheet a paper tag would vanish (multiply), so labels there are cut-letter boards: the letters glow
-function ctag(s, x, y, size, k) { if (k <= 0) return; g.save(); g.font = `italic 700 ${size}px ${FONT}`; if ('letterSpacing' in g) g.letterSpacing = '2px'; const w = g.measureText(s).width + 80; g.restore(); cutPlaque(g, x, y, w, size + 50, [s], size, k, { ls: 2 }); }
+function ctag(s, x, y, size, k) { if (k <= 0) return; g.save(); g.font = `italic 700 ${size}px ${FONT}`; if ('letterSpacing' in g) g.letterSpacing = '2px'; const w = g.measureText(s).width + 80; g.restore(); cutPlaque0(g, x, y, w, size + 50, [s], size, k, { ls: 2 }); }
 
 // ---------- small puppets ----------
 function arrow(x, y, ang, len, col = DYE.sun, a = 1) { at(g, x, y, ang, 1, () => dye(g, p => poly(p, [[-len / 2, -9], [len / 2 - 26, -9], [len / 2 - 26, -24], [len / 2, 0], [len / 2 - 26, 24], [len / 2 - 26, 9], [-len / 2, 9]]), col, { r: len / 2, a, edge: '#8a3a12' })); }
@@ -73,8 +75,8 @@ function sceneSky(t) {
 function sceneDust(t) {
   const a = win(t, T(3) - .3, T(4) - .05, .4); if (a <= 0) return; g.save(); g.globalAlpha = a; cam(1.02, 540, 800);
   sky(t, 420); const heat = ramp(t, r(3, 3.0), r(3, 5.4)), cx = lerp(1300, 560, ramp(t, T(3) - .3, r(3, 2.2)));
-  R.glow(cx, 640, 420, 'rgba(150,110,80,1)', .22 * a); if (heat > 0) R.glow(cx, 640, 520, EMBER, .7 * heat * a);
-  cloud(cx, 640, 1.25, t, heat); hill(g, 1150); watcher(t, 300, 1140, 1.7);
+  R.glow(cx, 690, 420, 'rgba(150,110,80,1)', .22 * a); if (heat > 0) R.glow(cx, 690, 520, EMBER, .7 * heat * a);
+  cloud(cx, 690, 1.25, t, heat); hill(g, 1150); watcher(t, 300, 1140, 1.7);
   cutPlaque(g, 540, 400, 700, 200, ['DUST?'], 96, ramp(t, T(3), r(3, .5)));
   ctag('soaks up light', 640, 850, 44, ramp(t, r(3, 2.4), r(3, 2.9))); ctag('heats up, glows', 600, 960, 46, ramp(t, r(3, 4.4), r(3, 4.9)));
   g.restore(); }
@@ -96,7 +98,7 @@ function sceneMap(t) {
   dye(g, p => ell(p, 540, 700, rr * .82, rr * .66), ['#fff4d2', '#ffe2a0'], { edge: false, r: rr, a: .5 });
   MAP.forEach(m => { const lit = m.d < rr; starPiece(m.x, m.y, m.s, t, lit, m.seed);
     if (!lit && t > T(7) - .2) { const k = ramp(t, T(7) - .2, r(7, 1)), ang = Math.atan2(700 - m.y, 540 - m.x), prog = ((t * .25 + hash(m.seed)) % 1) * .45 + .1, ax = lerp(m.x, 540, prog), ay = lerp(m.y, 700, prog); g.save(); g.globalAlpha *= k * .9; arrow(ax, ay, ang, 54, DYE.sun); g.restore(); } });
-  earth(g, 540, 700, 34, t); label(t, r(6, 1.2), () => tag(g, 'light had time to get here', 540, 340, 44));
+  earth(g, 540, 700, 34, t); label(t, r(6, 1.2), () => tag(g, 'light had time to get here', 540, 400, 44));
   label(t, r(7, .9), () => tag(g, 'still on its way', 540, 1110, 46));
   g.restore(); }
 // 8-10: space stretches: galaxies spread apart, a wave from a far galaxy stretches, reddens and weakens on the way to us
