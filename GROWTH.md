@@ -32,6 +32,14 @@ The owner's words: "follow this every time we make a reel from now on". Read thi
 - That needs **5 new approved reels a day**: keep 4 workers building continuously and a buffer of about a week. Quality bar unchanged; never post filler to hit the count. If the buffer runs out, tell the owner rather than lowering the bar.
 - **Weekly check**: swipe-away rate, average % watched, shares, saves and follows per reel (YouTube Studio, Instagram Insights, TikTok Analytics, read on the owner's PC with their OK). Log them in STYLE_FIT.md's Performance column and in handoff/metrics.csv. If views per post fall as volume rises, flag it to the owner with the numbers.
 
+## 7. Standing growth practices (main session decides; owner's rule 18)
+- **Series**: every reel belongs to a series in handoff/series.csv; YouTube (and TikTok, when available) playlists per series; each Short's related-video link points to the next episode in its series or to a long-form compilation.
+- **Long-form compilations** (YouTube, 16:9): one per finished series of 6-8 reels, with new narration (cold open, bridges, outro) so it's not reused content. First one: "6 Everyday Tech Secrets" (jobs/long_tech).
+- **Carousels**: a 6-7 slide 4:5 carousel for the strongest reels, for Instagram and TikTok photo mode (jobs/<n>/carousel/).
+- **Trend reels**: when a news event fits "how it really works" (eclipses, storms, launches, viral gadgets), one worker builds a reel within 24-48 h, under the same QA and sourcing rules.
+- **Comment replies**: every week, pick the best viewer questions; answer them as TikTok video replies or "Part 2" reels (handoff/topics_backlog.md).
+- **Spanish edition** (next): re-voice and re-caption our best reels with a Spanish Kokoro voice for a Spanish-language account. This needs the owner to create the accounts.
+
 ## Per-reel checklist (copy into NOTES.md, tick each)
 - [ ] Topic is a searched question; demand signal noted
 - [ ] Hook passes HOOKS.md (first line of 12 words or fewer, frame 0 subject moving, 3-6 word caption, "but" by 5 s)
