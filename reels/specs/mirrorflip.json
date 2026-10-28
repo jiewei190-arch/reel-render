@@ -16,7 +16,8 @@
   8,
   9,
   10,
-  11
+  11,
+  12
  ],
  "music_gain": 0.55,
  "tail": 0.7,
@@ -68,6 +69,10 @@
   [
    "So the mirror flips front and back, and **your brain** supplies the left and right.",
    "So the mirror flips front and back, and your brain supplies the left and right."
+  ],
+  [
+   "As Toronto physicist David Harrison puts it, it's **front and back** that are being reversed.",
+   "As Toronto physicist David Harrison puts it, it's front and back that are being reversed."
   ],
   [
    "Did you think mirrors swap left and right? **Yes or no?**",
