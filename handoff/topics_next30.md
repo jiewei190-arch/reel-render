@@ -25,7 +25,7 @@
 | 52 | firstsnowsmell | Can you really smell snow coming? | H4 | queued |
 | 53 | microwavelight | Why does a microwave have a metal mesh on the door? | H1 | queued |
 | 54 | goldfishmemory | Do goldfish really have a 3-second memory? | H1 | queued |
-| 49 | leafcolor | Why do leaves change color in the fall? | H2 | queued (after popuptimer), Nov 6 21:30 |
+| 49 | leafcolor | Why do leaves change color in the fall? | H2 | merged, Nov 6 21:30 |
 | 50 | candle | How does a candle actually burn? | H2 | queued, Nov 7 09:00 |
 | 55 | goosebumps | Why do we get goosebumps? | H3 | queued (after snowflake) |
 | 56 | mpemba | Does hot water really freeze faster than cold? | H3 | queued |
