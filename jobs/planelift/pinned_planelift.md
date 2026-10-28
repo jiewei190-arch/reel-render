@@ -1,0 +1,1 @@
+Bonus: in Cambridge's smoke-pulse films, the air over the top doesn't just keep up, it reaches the back of the wing well ahead of the air underneath. Did you learn the longer-path myth at school? Yes or no? 👇

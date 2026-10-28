@@ -36,11 +36,13 @@
 | 66 | fridge | How does a refrigerator keep food cold? | H2 | merged v2, Nov 10 13:00 |
 | (Thanksgiving) | turkeysleepy | Does turkey really make you sleepy? | H2 | merged, unbadged; EP + badge when scheduled (about Nov 22-26) |
 | 67 | knuckles | Why does cracking your knuckles make a pop? | H4 | merged, Nov 10 16:00 |
-| 68 | planelift | How do planes actually stay in the air? | H4 | queued |
+| 68 | planelift | How do planes actually stay in the air? | H4 | merged, Nov 10 19:00 |
 | 69 | gps | How does your phone's GPS know where you are? | H2 | queued |
 | 70 | freezerburn | What is freezer burn? | H2 | queued |
 | 71 | sneeze | Why do we sneeze? | H3 | queued |
 | 72 | moonday | Why can you sometimes see the Moon during the day? | H3 | queued |
+| 73 | eyeblink | Why do we blink so much? | H4 | queued |
+| 74 | microwavecenter | Why is food cold in the middle after microwaving? | H4 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |
