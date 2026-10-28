@@ -96,7 +96,7 @@ function mouse(x, y, s = 1, fur = 0) { const p = new Path2D(); const P = []; for
 // skin cross-section: surface at y0, follicle, hair angle (0 = lying, 1 = upright), muscle, nerve
 function skin(k, up, o = {}) { const y0 = 640, fx = 420; const surf = new Path2D(); surf.moveTo(60, y0); for (let x = 60; x <= 1020; x += 20) { const bump = up * 46 * Math.exp(-Math.pow((x - fx - 20) / 70, 2)); surf.lineTo(x, y0 - bump + 3 * Math.sin(x * .05)); } surf.lineTo(1020, 1110); surf.lineTo(60, 1110); surf.closePath();
   sandShape(surf, 'skin', [60, 560, 960, 560], k, { col: '#5a4630', n: 700 }); if (k < .6) return { fx, y0 };
-  const th = lerp(.42, 1.35, eo(up)), rx = fx, ry = 880, hx = rx + Math.cos(th) * 440, hy = ry - Math.sin(th) * 440;
+  const th = lerp(.42, 1.35, eo(up)), rx = fx, ry = 880, hx = rx + Math.cos(th) * 320, hy = ry - Math.sin(th) * 320;
   g.save(); g.globalAlpha = ss(.6, 1, k); g.fillStyle = '#e8d3a2'; g.beginPath(); g.ellipse(rx + Math.cos(th) * 120, ry - Math.sin(th) * 120, 150, 34, -th, 0, TAU); g.fill();   // follicle (a light hollow in the sand)
   g.strokeStyle = SAND; g.lineWidth = 12; g.lineCap = 'round'; g.beginPath(); g.moveTo(rx, ry); g.lineTo(hx, hy); g.stroke();   // hair
   const mus = new Path2D(); mus.moveTo(fx + 20, 860); mus.quadraticCurveTo(fx + 120 - up * 30, 820, fx + 230 - up * 40, 700 + up * 20); mus.lineTo(fx + 250 - up * 40, 720 + up * 20); mus.quadraticCurveTo(fx + 130 - up * 30, 850, fx + 26, 890); mus.closePath(); g.fillStyle = '#c78f5a'; g.fill(mus);  // arrector pili
@@ -119,7 +119,7 @@ SC[1] = (t, lt) => { sandShape(goose(560, 1060, 1.5), 'goose2', [330, 660, 520, 
   if (lt > 2.4) { g.save(); g.strokeStyle = '#8a2a1a'; g.lineWidth = 12; g.globalAlpha = clamp((lt - 2.4) / .3); g.beginPath(); g.moveTo(740, 300); g.lineTo(980, 520); g.stroke(); g.restore(); } title('No feathers.', 'so why?', lt - .3, { y: 330 }); };
 SC[2] = (t, lt) => { skin(clamp(lt / 1.3), 0); label('arrector pili', 760, 960, lt - 1.4, { col: CREAM }); title('Under every hair', 'a tiny muscle', lt - .2, { y: 330, size: 84 }); };
 SC[3] = (t, lt) => { skin(1, 0, { nerve: clamp((lt - .3) / .8) }); label('nerve', 900, 1060, lt - .8, { col: CREAM }); title('Cold!', 'a nerve says: squeeze', lt - .2, { y: 330 }); rays(880, 330, 50, .6, t); };
-SC[4] = (t, lt) => { const up = ss(.3, 2.2, lt); skin(1, up, { nerve: 1 }); label('the bump', 280, 560, lt - 2, {}); title('Pull!', 'the hair stands up', lt - .2, { y: 330 }); };
+SC[4] = (t, lt) => { const up = ss(.3, 2.2, lt); skin(1, up, { nerve: 1 }); label('the bump', 250, 620, lt - 2, {}); title('Pull!', 'the hair stands up', lt - .2, { y: 330 }); };
 SC[5] = (t, lt) => { const pf = ss(1.6, 3.4, lt); sandShape(cat(470, 1110, 1.08, pf), 'cat' + Math.round(pf * 6), [200, 520, 640, 620], lt < 1.5 ? clamp(lt / 1.4) : 1, { n: 600 }); title('A cat in the cold', 'every hair stands up', lt - .2, { y: 330, size: 84 }); };
 SC[6] = (t, lt) => { rays(470, 790, 150, ss(.3, 1.4, lt) * .7, t); sandShape(cat(470, 1110, 1.08, 1), 'cat6', [200, 520, 640, 620], 1); title('A fluffy coat', 'of trapped warm air', lt - .2, { y: 330, size: 88 }); };
 SC[7] = (t, lt) => { sandShape(person(620, 1110, .95, 1, 1), 'ape', [400, 460, 480, 660], clamp(lt / 1.6), { n: 600 }); title('Our hairy', 'ancestors', lt - .2, { y: 330 }); rays(300, 640, 44, .55, t); };
@@ -130,7 +130,7 @@ SC[9] = (t, lt) => { const mic = new Path2D(); mic.moveTo(380, 1110); mic.lineTo
   mic.rect(430, 860, 260, 30);                                                                                  // stage
   mic.moveTo(470, 560); mic.lineTo(560, 470); mic.lineTo(640, 800); mic.lineTo(560, 830); mic.closePath();      // tube (tilted)
   mic.rect(440, 520, 70, 50); mic.moveTo(545, 830); mic.lineTo(585, 830); mic.lineTo(575, 860); mic.lineTo(555, 860); mic.closePath();   // eyepiece, lens
-  sandShape(mic, 'mic', [370, 460, 440, 660], clamp(lt / 1.4), { n: 650 }); rays(800, 520, 40, ss(1.4, 2.2, lt) * .6, t); title('The twist', 'Harvard, a second job', lt - .2, { y: 330, size: 92 }); };
+  g.save(); g.translate(580, 1110); g.scale(.78, .78); g.translate(-580, -1110); sandShape(mic, 'mic', [370, 460, 440, 660], clamp(lt / 1.4), { n: 650 }); g.restore(); rays(860, 620, 40, ss(1.4, 2.2, lt) * .6, t); title('The twist', 'Harvard, a second job', lt - .2, { y: 330, size: 92 }); };
 SC[10] = (t, lt) => { skin(1, .2, { nerve: 1, stem: clamp((lt - .3) / .6), stemLink: clamp((lt - 1) / .8) }); label('hair stem cells', 470, 1060, lt - .8, { col: CREAM }); title('A second wire', 'to the hair-growing cells', lt - .2, { y: 330, size: 84 }); };
 SC[11] = (t, lt) => { sandShape(mouse(600, 1100, 1.6, 0), 'mouse', [0, 800, 1080, 310], clamp(lt / 1.2), { n: 700 }); for (let i = 0; i < 50; i++) { const y = 260 + ((hash(i) * 850 + step(t) * 90) % 850), x = 60 + hash(i * 3) * 960; g.fillStyle = 'rgba(255,245,220,.8)'; g.beginPath(); g.arc(x, y, 4 + 3 * hash(i * 5), 0, TAU); g.fill(); }
   const fl = Math.floor(t * 8) % 2; g.save(); g.strokeStyle = `rgba(255,240,200,${.5 + .4 * fl})`; g.lineWidth = 8; g.shadowColor = 'rgba(255,230,170,.9)'; g.shadowBlur = 20; g.beginPath(); g.moveTo(560, 1010); g.lineTo(620, 930); g.lineTo(590, 880); g.lineTo(680, 790); g.stroke(); g.restore(); title('In mice', 'a long cold spell', lt - .2, { y: 330 }); };
