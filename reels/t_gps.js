@@ -101,11 +101,11 @@ S.push([T(16) - .3, T(17), t => { sky(t); put(g, L.hills, cam0, .4); put(g, L.to
   phone(470, 520, 1.15, t, { dx: 70 * u }); put(g, L.front, cam0, 1); strip(g, 'corrected', 470, 80, seg(t, T(16), T(16) + .6), { size: 66, seal: true }); bloom(g, 470, 520, 80 * (1 - u), DOT, .7 * (1 - u)); }]);
 // K: the question
 S.push([T(17) - .3, T(18), t => { sky(t); put(g, L.earth, cam0, .2); strip(g, 'your phone needs Einstein?', 470, 180, seg(t, T(17), T(17) + .8), { size: 58 });
-  tag(g, 'YES', 300, 430, { k: backOut(seg(t, r(17, 1.0), r(17, 1.4))), size: 80, col: '#ffd9a0' }); tag(g, 'NO', 640, 430, { k: backOut(seg(t, r(17, 1.3), r(17, 1.7))), size: 80, col: '#bcd6ff' }); sat(470, 640, .6, 1, t); }]);
+  sat(470, 520, .8, 1, t); }]);
 // L: the standard end card (loops to the satellites over the Earth)
 S.push([T(18) - .35, TOT + 1, t => { sky(t); put(g, L.earth, cam0, .2); [[150, 560], [790, 600]].forEach(([x, y], i) => sat(x, y, .5, 1, t));
   strip(g, 'Follow for more of', 470, 150, seg(t, T(18) - .2, T(18) + .5), { size: 60 }); strip(g, 'how it really works.', 470, 270, seg(t, T(18) + .3, T(18) + 1.0), { size: 72, seal: true });
-  tag(g, "A new 'wait, really?' every day.", 470, 400, { k: backOut(seg(t, T(18) + .8, T(18) + 1.2)), size: 40 }); tag(g, '@howitreallyworkstudio', 470, 480, { k: backOut(seg(t, T(18) + 1.0, T(18) + 1.4)), size: 36, col: '#ffd9a0' }); }]);
+  }]);
 
 function scene(t) { g.save(); g.fillStyle = PAL.room; g.fillRect(0, 0, W, H); g.translate(BOX.x, BOX.y); g.beginPath(); g.rect(0, 0, BW, BH); g.clip();
   for (const [a, b, fn] of S) { const k = a <= 0 ? 1 - ss(seg(t, b - .5, b)) : win(t, a + .45, b); if (k <= 0) continue; g.save(); g.globalAlpha = k; fn(t); g.restore(); }
@@ -113,7 +113,10 @@ function scene(t) { g.save(); g.fillStyle = PAL.room; g.fillRect(0, 0, W, H); g.
 function sub(t) { let cur = -1; for (let i = 0; i < PH.length; i++) if (t >= PH[i].start - .05) cur = i; if (cur < 0 || cur === PH.length - 1) return;
   const p = PH[cur], nx = PH[cur + 1].start, a = seg(t, p.start - .05, p.start + .15) * (1 - seg(t, nx - .25, nx - .05)); subtitle(g, p.cap, cur === 0 ? (1 - seg(t, nx - .25, nx - .05)) : a, 1240); }
 window.DUR = TOT;
-window.seek = t => { scene(t); sub(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .35; g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.restore(); } };
+// the room under the lamp (Batch N band y 1180-1420): the yes/no tags and the end-card lines are paper tags lying on the table
+function room(t) { if (t > T(17) - .2 && t < T(18) - .3) { const a = 1 - seg(t, T(18) - .6, T(18) - .3); tag(g, 'YES', 330, 1395, { k: backOut(seg(t, r(17, 1.0), r(17, 1.4))), size: 64, col: '#ffd9a0', a }); tag(g, 'NO', 750, 1395, { k: backOut(seg(t, r(17, 1.3), r(17, 1.7))), size: 64, col: '#bcd6ff', a }); }
+  if (t > T(18) - .35) { tag(g, "A new 'wait, really?' every day.", 540, 1230, { k: backOut(seg(t, T(18) + .8, T(18) + 1.2)), size: 50 }); tag(g, '@howitreallyworkstudio', 540, 1340, { k: backOut(seg(t, T(18) + 1.0, T(18) + 1.4)), size: 44, col: '#ffd9a0' }); } }
+window.seek = t => { scene(t); sub(t); room(t); const f = Math.min(1, (TOT - t) / .35); if (f < 1) { g.save(); g.globalAlpha = (1 - f) * .35; g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.restore(); } };
 window.render = window.seek;
 window.thumb = () => { const t = 2; g.save(); g.fillStyle = PAL.room; g.fillRect(0, 0, W, H); g.translate(BOX.x, BOX.y); g.beginPath(); g.rect(0, 0, BW, BH); g.clip();
   sky(t); put(g, L.earth, cam0, .2); [[150, 190], [400, 120], [650, 170], [830, 260]].forEach(([x, y], i) => { sat(x, y, .6, 1, t); pulse(x, y, 520, 660, .3 + i * .15, .9); });
