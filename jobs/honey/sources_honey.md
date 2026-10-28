@@ -10,7 +10,7 @@
    - Processor bees "add an enzyme called invertase every time they regurgitate their nectar"; invertase splits sucrose into glucose and fructose.
    - Fanning their wings "creates airflow around the honeycomb and helps water evaporate"; nectar is usually about 70% water; "by definition, honey contains less than 18.6 percent water"; ripe cells are capped with wax.
    - (Fetched via search snippets; the page returned HTTP 503 when fetched directly on Oct 28.)
-3. Kubo et al., PLoS ONE (2015) and Ohashi et al., European Journal of Biochemistry (1997): forager bees' hypopharyngeal glands switch to making α-glucosidase (the bees' invertase), which splits nectar sucrose into glucose and fructose.
+3. Gland studies: a 2015 PLoS ONE study (https://doaj.org/article/61d5c926d8104f0bbf3fdabfda0127e5): "nurse bee HPGs secrete mainly major royal jelly proteins, whereas forager HPGs secrete mainly α-glucosidase III", the enzyme (the bees' invertase) that splits nectar sucrose into glucose and fructose; a 1997 European Journal of Biochemistry paper reports the same switch "from bee-milk proteins to alpha-glucosidase".
 4. Texas A&M AgriLife Extension, Department of Entomology, "Honey Judging and Standards": https://extensionentomology.tamu.edu/wp-content/uploads/sites/5/2015/04/Honey-Judging-and-Standards.pdf
    - "Water content above 18.6% is disqualified"; fermentation disqualifies honey; follows the USDA grade standards.
 5. USDA Agricultural Marketing Service, "United States Standards for Grades of Extracted Honey": https://www.ams.usda.gov/grades-standards/extracted-honey-grades-and-standards (Grade A and B: moisture no more than 18.6%).
