@@ -35,6 +35,8 @@ OVR = {
     "pickles": {"spot": ("R", 256)},
     "butterflies": {"spot": ("R", 256)},
     "glowdark": {"spot": ("R", 256)},
+    "mirrorflip": {"spot": ("R", 256)},
+    "tidesmoon": {"spot": ("R", 256)},
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
