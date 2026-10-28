@@ -1,11 +1,30 @@
 # Episode badge for TikTok/YouTube copies: jobs/<n>/<n>.mp4 -> jobs/<n>/<n>_ep.mp4
 # Usage: python3 -I brand.py <name> [<name> ...]   (episode numbers come from handoff/episodes.csv)
 import csv, pathlib, subprocess, sys
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageStat
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
 F_EP = str(HERE / "styles/aidoom/fonts/Anton.ttf"); F_TX = str(HERE / "styles/distilbook/fonts/Inter.ttf")
 EPS = {r["reel"]: int(r["episode"]) for r in csv.DictReader(open(ROOT / "handoff/episodes.csv"))}
-X, Y = 44, 196  # top-left, below the TikTok/Shorts top bar, clear of the right-side buttons
+# candidate spots (top area, below the TikTok/Shorts top bar, clear of the right-side buttons); the quietest one wins
+SPOTS = [(x, y) for y in (196, 260, 330, 400, 470) for x in (44, "R")]
+T0 = 5.0  # badge fades in after the hook (HOOKS.md: frame 0 and the first seconds stay clean)
+
+def frames(src, dur, k=24):
+    out = []
+    for i in range(k):
+        t = T0 + (dur - T0 - 1) * i / (k - 1)
+        r = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.2f}", "-i", str(src), "-vframes", "1", "-f", "image2pipe", "-vcodec", "png", "-"], capture_output=True, check=True)
+        import io; out.append(Image.open(io.BytesIO(r.stdout)).convert("L").filter(ImageFilter.FIND_EDGES))
+    return out
+
+def place(src, dur, bw, bh):
+    fr = frames(src, dur); best = None
+    for x, y in SPOTS:
+        x = 1080 - 44 - bw if x == "R" else x
+        box = (x - 12, y - 12, x + bw + 12, y + bh + 12)
+        v = sorted(ImageStat.Stat(f.crop(box)).mean[0] for f in fr); busy = v[int(.9 * (len(v) - 1))]  # 90th percentile: avoid spots that are ever busy
+        if best is None or busy < best[0]: best = (busy, x, y)
+    return best
 
 def badge(ep):
     s = 2; ep_f = ImageFont.truetype(F_EP, 50 * s); tx_f = ImageFont.truetype(F_TX, 19 * s)
@@ -23,10 +42,14 @@ def badge(ep):
 
 for n in sys.argv[1:]:
     src = ROOT / f"jobs/{n}/{n}.mp4"; dst = ROOT / f"jobs/{n}/{n}_ep.mp4"; png = HERE / f"stills/badge_{n}.png"
-    png.parent.mkdir(exist_ok=True); badge(EPS[n]).save(png)
-    # fade in at 0.4 s so frame 0 stays the hook image; hold to the end
-    fc = f"[1]format=rgba,fade=in:st=0.4:d=0.35:alpha=1[b];[0][b]overlay={X}:{Y}:shortest=1"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-loop", "1", "-i", str(png), "-filter_complex", fc,
-                    "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-maxrate", "14M", "-bufsize", "20M", "-pix_fmt", "yuv420p",
-                    "-c:a", "copy", "-movflags", "+faststart", str(dst)], check=True)
-    print(n, EPS[n], dst.stat().st_size)
+    png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)
+    busy, X, Y = place(src, dur, *b.size)
+    # fade in at T0 so the hook stays clean; hold to the end. 2-pass to the same ~9.6 MB as enc_hq.sh
+    fc = f"[1]format=rgba,fade=in:st={T0}:d=0.4:alpha=1[b];[0][b]overlay={X}:{Y}:shortest=1"
+    vb = int((9.6 * 8e6 / dur - 72000) / 1000); log = f"/tmp/brand_{n}"
+    base = ["ffmpeg", "-v", "error", "-y", "-i", str(src), "-loop", "1", "-i", str(png), "-filter_complex", fc,
+            "-c:v", "libx264", "-preset", "slow", "-tune", "animation", "-b:v", f"{vb}k", "-pix_fmt", "yuv420p", "-passlogfile", log]
+    subprocess.run(base + ["-pass", "1", "-an", "-f", "mp4", "/dev/null"], check=True)
+    subprocess.run(base + ["-pass", "2", "-c:a", "copy", "-movflags", "+faststart", str(dst)], check=True)
+    print(n, EPS[n], f"spot {X},{Y} busy {busy:.1f}", dst.stat().st_size, flush=True)
