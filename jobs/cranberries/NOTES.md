@@ -23,7 +23,7 @@
 **Softened claims:** see sources_cranberries.md ("Legend says" for John Webb, no date; "scientists think" for seed drift; no density number).
 **Storyboard review (main session):** approved as is; posters print top to bottom inside the safe zones.
 **Code:** reels/t_cranberries.js, t_cranberries.html, specs/cranberries.json, ev_cranberries.json, tl_cranberries.js. Thumbnail: thumb_cranberries.jpg (banner "WHY DO CRANBERRIES FLOAT?" over poster 02).
-**Badge:** `brand.py cranberries --ep 50` at (44, 600), mid-left over poster art. It fades in at 7.2 s, after the banner stage, and is hidden from 56.2 s, because the wall and end card are all titles. OVR line in brand.py.
+**Badge:** none for now (seasonal rule). A spot is prepared: OVR "cranberries" in brand.py, mid-left (44, 600), t0 7.2 s, hidden from 56.2 s.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal: assigned from the main session's Thanksgiving list; "why do cranberries float" is a classic autocomplete question
@@ -33,7 +33,7 @@
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 30%)
 - [x] pinned_cranberries.md written
-- [x] cranberries_ep.mp4 (EP 50)
+- [ ] cranberries_ep.mp4: seasonal, badge later (main session numbers it for Thanksgiving week)
 - [x] Timely window: Thanksgiving (post mid/late November)
 
 ## QA (python3 -I reels/qa.py cranberries)
