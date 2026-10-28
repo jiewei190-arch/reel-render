@@ -48,7 +48,8 @@ function chart(x, y, w, h, t, a, o = {}) { if (a <= 0) return; const cur = (f, n
   F.txt('days', x + w - 40, y + h + 84, { size: 28, f: 'hand', col: C.graph, alpha: a }); F.txt('firmness', x - 4, y - 24, { size: 28, f: 'hand', col: C.graph, alpha: a });
   F.pencil(cur(u => .15 + .8 * (1 - Math.exp(-u * 2.2)) * .95, 0), { w: 2.8, draw: ss(R(a, 0, .8)) * (o.counter ?? 1), seed: 300 });
   if (o.fridge) F.pencil(cur(u => .15 + .8 * (1 - Math.exp(-u * 13)), 0), { w: 3, col: C.red, draw: o.fridge, seed: 301 });
-  if (o.freezer) F.pencil(cur(u => .15 + .05 * u, 0), { w: 3, col: C.navy, dash: [10, 7], draw: o.freezer, seed: 302 }); }
+  if (o.freezer) F.pencil(cur(u => .15 + .05 * u, 0), { w: 3, col: C.navy, dash: [10, 7], draw: o.freezer, seed: 302 });
+  const m = (t * .18) % 1; F.circ(x + m * w, y + h - (.15 + .8 * (1 - Math.exp(-m * 2.2)) * .95) * h, 10, { col: C.ink, w: 3, alpha: a, wob: .2 }); if (o.fridge) F.circ(x + m * w, y + h - (.15 + .8 * (1 - Math.exp(-m * 13))) * h, 10, { col: C.red, w: 3, alpha: o.fridge, wob: .2 }); }
 // toaster sketch with heat squiggles
 function toaster(x, y, sc, t, k, glow) { g.save(); g.translate(x, y); g.scale(sc, sc); const body = [[-170, -40], [170, -40], [190, 160], [-190, 160]];
   F.hatch(body, 'graph', { alpha: .35 * k }); F.pencil(body, { close: true, w: 2.6, draw: k, seed: 400 }); F.rect(-120, -40, 90, 16, { w: 2, draw: k }); F.rect(30, -40, 90, 16, { w: 2, draw: k }); F.pencil([[200, 20], [240, 20], [240, 80]], { w: 2.4, draw: k, seed: 401 });
@@ -71,6 +72,7 @@ function page1(t) {   // hook: a sealed loaf, "Stale ≠ dried out", a crumb mag
   F.label('FIELD NOTES  ·  KITCHEN', 80, LBY, 9);
   F.txt('Stale', 74, 470, { size: 120, f: 'hand', rot: -.015 }); F.txt('≠ dried out', 380, 466, { size: 92, f: 'hand', col: C.red, rot: -.015 }); F.line(84, 500, 860, 490, { col: C.red, w: 2.6, draw: ss(R(t, 0, .6)), wob: .6 });
   F.seal('BREAD', 900, 400, ss(R(t, .3, .35)), { size: 62, round: true, f: 'mono', fs: 24 });
+  const ring = ell(560, 800, 330, 330, 48); F.hatch(ring, 'red', { alpha: .5 }); F.pencil(ring, { col: C.red, w: 2.4, seed: 2, alpha: .8 });
   loaf(420, 820, 1.05, t, { bag: 1 }); for (let i = 0; i < 6; i++) { const u = (t * .5 + i / 6) % 1; F.circ(640 + hash(i) * 60, 760 + u * 280, 5 + hash(i + 2) * 4, { col: C.ochre, w: 2, alpha: Math.sin(u * Math.PI), wob: .4 }); }
   // magnifier on the crumb: crystal blocks forming
   const mx = 760, my = 1000, mr = 120; g.save(); F.path(ell(mx, my, mr, mr)); g.clip(); g.translate(mx - 540 * .3, my - 800 * .3); g.scale(.3, .3); starch({ gel: 1, cry: .6 + .4 * Math.sin(t * 1.4) ** 2 }, t); g.restore(); F.circ(mx, my, mr, { w: 3, seed: 700 }); F.pencil([[mx - 84, my - 84], [560, 870]], { w: 1.6, col: C.graph, wob: .3 });
@@ -89,7 +91,7 @@ function page2(t, p) {   // the oven: granules swell with water and melt into a 
 function page3(t, p) {   // retrogradation: water pulled into the crystals; the sealed loaf still stales
   chapter(t, 'NO. 02 — RETROGRADATION', t < s(5) - .1 ? 'Crystals grab water.' : 'Sealed? Still stale.', p[0]);
   if (t < s(5) - .1) { starch({ gel: 1, cry: 1, wd: 1, mig: ss(R(t, s(4) + 1.2, 2.6)) }, t, 1); note('soft parts', 120, 1120, 200, 1040, R(t, s(4) + .6, .8), { col: C.ochre }); note('crystal', 640, 520, GR[1][0], GR[1][1] - 30, R(t, s(4) + .4, .8), { col: C.navy }); }
-  else { const k = ss(R(t, s(5) - .1, .6)); loaf(400, 830, .95, t, { bag: 1, k });
+  else { const k = ss(R(t, s(5) - .1, .6)); loaf(400, 830, .95, t, { bag: 1, k }); for (let i = 0; i < 6; i++) { const u = (t * .45 + i / 6) % 1; F.circ(600 + hash(i) * 50, 800 + u * 260, 5 + hash(i + 2) * 4, { col: C.ochre, w: 2, alpha: k * Math.sin(u * Math.PI), wob: .4 }); }
     F.box(640, 580, 330, 130, k); F.txt('WATER INSIDE', 666, 618, { size: 22, f: 'mono', wt: 700, ls: 3, col: '#5d5d62', alpha: k }); F.txt('kept', 700, 684, { size: 54, f: 'hand', col: C.navy, write: ss(R(t, s(5) + .8, .5)) });
     F.box(640, 760, 330, 130, ss(R(t, s(5) + 1.6, .6))); F.txt('STARCH', 666, 798, { size: 22, f: 'mono', wt: 700, ls: 3, col: '#5d5d62', alpha: ss(R(t, s(5) + 1.6, .6)) }); F.txt('grabbed it', 680, 864, { size: 48, f: 'hand', col: C.red, write: ss(R(t, s(5) + 2.6, .6)) }); }
   caption(t); strip(t, 1); }
@@ -108,7 +110,7 @@ function page5(t, p) {   // freezer: the crystals barely grow (flat line), snowf
 function page6(t, p) {   // the good news: warm it up, the crystals melt back into gel
   chapter(t, 'NO. 05 — THE TOASTER', 'Heat undoes it.', p[0]);
   const heat = ss(R(t, s(10) + .2, 2.4)); toaster(300, 900, 1.0, t, ss(R(t, p[0] + .2, .8)), Math.max(heat, t > s(10) ? 1 : 0));
-  const mx = 760, my = 760, mr = 150; g.save(); F.path(ell(mx, my, mr, mr)); g.clip(); g.translate(mx - 540 * .36, my - 800 * .36); g.scale(.36, .36); starch({ gel: 1, cry: 1 - heat }, t); g.restore(); F.circ(mx, my, mr, { w: 3, seed: 702 });
+  const mx = 760, my = 760, mr = 150; g.save(); F.path(ell(mx, my, mr, mr)); g.clip(); g.translate(mx - 540 * .36, my - 800 * .36); g.scale(.36, .36); starch({ gel: 1, cry: 1 - heat, wd: 1 }, t * 3); g.restore(); F.circ(mx, my, mr, { w: 3, seed: 702 });
   F.txt(heat > .5 ? 'gel again' : 'crystals', 680, 970, { size: 44, f: 'hand', col: heat > .5 ? C.navy : C.red, write: ss(R(t, p[0] + .8, .5)) });
   if (t < s(10)) F.seal('UNDO', 880, 540, ss(R(t, s(9) + 1.2, .3)), { size: 60, round: true, f: 'mono', fs: 24 });
   if (t > s(10) + 2.6) F.txt('soft!', 120, 620, { size: 64, f: 'hand', col: C.red, write: ss(R(t, s(10) + 2.6, .4)), rot: -.08 });
@@ -123,7 +125,7 @@ function page8(t, p) {   // payoff: the cycle diagram gel -> crystals (time, col
   const k = ss(R(t, p[0] + .2, 1)); const A = [300, 700], B = [780, 700], Cc = [540, 1020];
   [[A, 'soft gel', C.navy], [B, 'crystals', C.red], [Cc, 'warm = gel', C.navy]].forEach(([[x, y], lab, col], i) => { F.circ(x, y, 110, { w: 2.6, draw: ss(R(k, i * .2, .4)), seed: 710 + i }); F.txt(lab, x, y + 14, { size: 40, f: 'hand', align: 'center', col, write: ss(R(t, p[0] + .6 + i * .5, .5)) }); });
   F.arrow([[420, 650], [540, 610], [660, 650]], { draw: ss(R(t, p[0] + 1.2, .6)) }); F.txt('time, cold', 470, 590, { size: 32, f: 'hand', col: C.red, write: ss(R(t, p[0] + 1.6, .5)) });
-  F.arrow([[760, 830], [700, 940], [650, 980]], { draw: ss(R(t, p[0] + 2.2, .6)), col: C.navy }); F.arrow([[430, 980], [360, 920], [320, 830]], { draw: ss(R(t, p[0] + 2.8, .6)), col: C.navy });
+  F.arrow([[760, 830], [700, 940], [650, 980]], { draw: ss(R(t, p[0] + 2.2, .6)), col: C.navy }); { const u = (t * .3) % 1, q = u < 1 / 3 ? [lerp(300, 780, u * 3), 700 - Math.sin(u * 3 * Math.PI) * 120] : u < 2 / 3 ? [lerp(780, 540, u * 3 - 1), lerp(700, 1020, u * 3 - 1)] : [lerp(540, 300, u * 3 - 2), lerp(1020, 700, u * 3 - 2)]; F.circ(q[0], q[1], 12, { col: C.red, w: 3.4, alpha: k, wob: .2 }); } F.arrow([[430, 980], [360, 920], [320, 830]], { draw: ss(R(t, p[0] + 2.8, .6)), col: C.navy });
   caption(t); strip(t, 1); }
 function page9(t, p) {   // question + end card
   const t0 = s(14) - .1, q = t < t0;
@@ -140,7 +142,7 @@ const PAGES = { 1: page1, 2: page2, 3: page3, 4: page4, 5: page5, 6: page6, 7: p
 function scene(t) {
   F.begin(); const p = pageAt(t); F.footer(p[2]);
   const pi = PG.indexOf(p); if (pi > 0 && t < p[0] + .35) { const q = PG[pi - 1]; BASE = 1 - ss(R(t, p[0], .35)); F.alpha(BASE); PREV = true; PAGES[q[2]](Math.min(t, q[1] - .01), q); PREV = false; F.alpha(1); }
-  BASE = pi === 0 ? 1 : ss(R(t, p[0], .35)); F.alpha(BASE); PAGES[p[2]](t, p); F.alpha(1); BASE = 1;
+  BASE = pi === 0 ? 1 : ss(R(t, p[0], .35)); F.alpha(BASE); const z = 1 + .035 * ss(R(t, p[0], Math.max(1, p[1] - p[0]))); g.save(); g.translate(540, 760); g.scale(z, z); g.translate(-540, -760); PAGES[p[2]](t, p); g.restore(); F.alpha(1); BASE = 1;
   const L = R(t, TL.total - .7, .7); if (L > 0) { F.alpha(ss(L) * .5); page1(0); F.alpha(1); }
 }
 window.DUR = TL.total;
