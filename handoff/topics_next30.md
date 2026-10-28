@@ -59,8 +59,8 @@
 | 88 | pickles | How does a cucumber turn into a pickle? | H2 | merged, Nov 14 19:00 |
 | 89 | carsick | Why do you get carsick? | H1 | merged, Nov 14 21:30 |
 | 90 | earringing | Why do your ears ring after a concert? | H1 | merged v2, Nov 15 09:00 |
-| 91 | butterflies | Why do you get butterflies in your stomach? | H2 | merged, Nov 15 13:00 |
-| 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | merged, Nov 15 16:00 |
+| 91 | butterflies | Why do you get butterflies in your stomach? | H2 | merged v1, Nov 15 13:00 (v2 with hedged hook rendering; swap in) |
+| 92 | glowdark | How do glow-in-the-dark stickers glow? | H2 | merged v1, Nov 15 16:00 (v2 trimmed to 79 s rendering; swap in) |
 | 93 | sunburn | Why can you get sunburned on a cloudy day? | H1 | merged, Nov 15 19:00 |
 | 94 | twinkle | Why do stars twinkle but planets don't? | H1 | merged, Nov 15 21:30 |
 | 95 | stalebread | Why does bread go stale? | H4 | merged, Nov 16 09:00 |
