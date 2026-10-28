@@ -37,6 +37,8 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "glowdark": {"spot": ("R", 256)},
+    "butterflies": {"spot": ("R", 256)},
     "stalebread": {"spot": (651, 260)},   # H4 (EP 95): auto spot pinned so re-runs match; field-note titles stop short of it
     "sunburn": {"spot": ("R", 260)},   # H1 (EP 93): as stomachgrowl (same pop-up kit): top-right above the hanging signs (they start at y 340)
     "twinkle": {"spot": (44, 1366)},   # H1 (EP 94): as coldbreath (same engine): the free strip under the caption box; centred titles fill the top band
