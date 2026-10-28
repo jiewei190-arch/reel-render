@@ -20,7 +20,8 @@ function cat(x, y, s, t, o = {}) {
         L.push([cx + Math.cos(n) * w, cy + Math.sin(n) * w]); Rr.push([cx - Math.cos(n) * w, cy - Math.sin(n) * w]); }
         poly(p, L.concat(Rr.reverse())); for (let i = 0; i < 4; i++) { const u = .2 + i * .19, a = -2.6 + 1.9 * u, rr = 60 + 70 * u; ell(p, -30 + Math.cos(a) * rr * .8, -10 + Math.sin(a) * rr * .9 - 40 * u * u, 6, 2.4, a); } }, TABBY, { r: 90, lw: 2, edge: '#6a2c0c' });
     });
-    // body with carved stripes + haunch ring
+    // body with carved stripes + haunch ring (o.breath: the chest swells on the in-breath)
+    const br = o.breath || 0; g.save(); g.scale(1 + .025 * br, 1 + .07 * br);
     hidePiece(g, p => { p.moveTo(-104, 0); p.bezierCurveTo(-136, -92, -92, -188, -8, -202); p.bezierCurveTo(52, -208, 82, -172, 86, -122); p.bezierCurveTo(92, -62, 82, -22, 74, 0); p.closePath();
       ring(p, 40, 47, -50, -62); for (let i = 0; i < 5; i++) { const a = -2.5 + i * .3; ell(p, -10 + Math.cos(a) * 150, -40 + Math.sin(a) * 150, 15, 3.6, a + Math.PI / 2); }
       for (let i = 0; i < 4; i++) circ(p, 30 + (i % 2) * 14, -150 + i * 22, 4); }, TABBY, { r: 140, lw: 3, edge: '#6a2c0c' });
@@ -36,6 +37,7 @@ function cat(x, y, s, t, o = {}) {
         [-.12, .06, .22].forEach(a => ell(p, 66 + Math.cos(a) * 18, -28 + Math.sin(a) * 18, 18, 1.6, a)); }, TABBY, { r: 90, lw: 3, edge: '#6a2c0c' });
       rivet(g, -4, -10, 6);
     });
+    g.restore();
   });
 }
 const THROAT = [70, -178];   // local throat point (for rings / the voice box)
@@ -83,14 +85,15 @@ function sceneHook(t) {
   const a = 1 - ramp(t, E(1) + .05, E(1) + .5); if (a <= 0) return; g.save(); g.globalAlpha = a;
   cam(1 + .06 * ramp(t, 0, E(1)), 540, 860);
   floor(1180); rod(g, 470, 1000); rod(g, 640, 860);
-  catWithRings(470, 1150, 1.45, t, 1);
+  const bw = win(t, r(1, .5), E(1) + .5, .3), ph = fr((t - r(1, .5)) / 1.8), br = -Math.cos(TAU * ph) * bw;
+  catWithRings(470, 1150, 1.45, t, 1, { breath: br });
   const swap = ramp(t, T(1) - .15, T(1) + .25), k1 = 1 - swap, k2 = swap;
   if (k1 > 0) { g.save(); g.globalAlpha *= k1; cutPlaque(g, 540, 420, 860, 230, ['SCIENTISTS', 'STILL ARGUE'], 82, 1); g.restore(); }
   if (k2 > 0) { g.save(); g.globalAlpha *= k2; cutPlaque(g, 540, 420, 860, 230, ['HOW DO', 'CATS PURR?'], 88, 1); g.restore(); }
   // breathing in / out: blue arrows at the nose
-  const bi = win(t, r(1, 2.0), r(1, 2.9), .2), bo = win(t, r(1, 2.9), E(1) + .3, .2);
-  if (bi > 0) { arrow(870 - 40 * fr(t * 1.4), 740, Math.PI, 150, DYE.moon, bi); label(t, r(1, 2.0), () => tag(g, 'in', 790, 640, 46)); }
-  if (bo > 0) { g.save(); g.globalAlpha *= bo; arrow(820 + 40 * fr(t * 1.4), 760, 0, 150, DYE.moon, 1); tag(g, 'and out', 780, 640, 46); g.restore(); }
+  if (bw > 0) { g.save(); g.globalAlpha *= bw; const inn = ph < .5, u = fr(ph * 2), fa = Math.sin(Math.PI * u);
+    if (inn) arrow(880 - 60 * u, 735, Math.PI, 150, DYE.moon, fa); else arrow(800 + 60 * u, 765, 0, 150, DYE.moon, fa);
+    tag(g, inn ? 'breathing in' : 'breathing out', 790, 600, 46); g.restore(); }
   g.restore();
 }
 // ---------- p2 larynx: twitching muscles ----------
@@ -99,10 +102,11 @@ function sceneLarynx(t) {
   const z = ease(ramp(t, T(2) - .35, r(2, 1.6)));
   if (z < 1) { g.save(); g.globalAlpha *= 1 - z; cam(lerp(1.45, 3.4, z), lerp(540, 600, z), lerp(860, 900, z)); catWithRings(470, 1150, 1.45, t, 1); g.restore(); }
   g.save(); g.globalAlpha *= z; cam(1, 540, 800);
-  const m = sq(t, 2.2) * ramp(t, r(2, 2.3), r(2, 2.6));
+  const m = sq(t, 2.2) * ramp(t, r(2, 3.8), r(2, 4.1));
   voicebox(540, 640, 1.9, t, { muscle: m, open: 1 - m }); rod(g, 540, 1100);
-  label(t, r(2, .9), () => tag(g, 'larynx = voice box', 540, 270 + 0, 46));
-  label(t, r(2, 2.4), () => { tag(g, 'muscles', 230, 1060, 42); tag(g, 'twitch', 830, 1060, 42); });
+  label(t, r(2, .5), () => { tag(g, "one side: the brain's rhythm", 540, 280, 44); for (let i = 0; i < 9; i++) { const x = 230 + i * 70 - 70 * fr(t * 2.2), up = (i % 2) ? 1 : 0; if (x < 200 || x > 880) continue; dye(g, p => poly(p, [[x - 4, 400], [x + 4, 400], [x + 4, 400 - 40 * up - 6], [x - 4, 400 - 40 * up - 6]]), DYE.red, { edge: false }); } dye(g, p => poly(p, [[200, 398], [880, 398], [880, 404], [200, 404]]), ['#6a1010'], { edge: false }); });
+  label(t, r(2, 2.4), () => { if (t < r(2, 3.9)) { g.save(); g.globalAlpha *= 1 - ramp(t, r(2, 3.6), r(2, 3.9)); tag(g, 'larynx = voice box', 540, 1060, 44); g.restore(); } });
+  label(t, r(2, 3.9), () => { tag(g, 'muscles', 230, 1060, 42); tag(g, 'twitch', 830, 1060, 42); });
   g.restore(); g.restore();
 }
 // ---------- p3 folds open + snap shut (shown slowed) ----------
@@ -110,7 +114,7 @@ function sceneFolds(t) {
   const a = win(t, T(3) - .3, E(3) + .25, .45); if (a <= 0) return; g.save(); g.globalAlpha = a; cam(1 + .04 * ramp(t, T(3), E(3)), 540, 760);
   const op = sq(t, 1.6);
   folds(540, 640, 1.55, op);
-  cutPlaque(g, 540, 1040, 700, 150, ['25–30 × a second'], 70, ramp(t, T(3) + .2, T(3) + .8));
+  cutPlaque(g, 540, 1040, 700, 150, ['20–30 × a second'], 70, ramp(t, T(3) + .2, T(3) + .8));
   label(t, r(3, 1.2), () => inkText(g, 'top view, slowed way down', 540, 270, 40, '#3a1608', { ls: 2 }));
   label(t, r(3, 2.6), () => { tag(g, op > .5 ? 'open' : 'shut', 540, 640 - 330, 44); });
   g.restore();
@@ -158,7 +162,7 @@ function sceneLab(t) {
   const k1 = ramp(t, r(6, 3.0), r(6, 3.5)), k2 = ramp(t, r(6, 3.6), r(6, 4.1));
   if (k1 > 0) { g.save(); g.globalAlpha *= k1; nerve(300, 900, 1.1); xmark(300, 900, 1.1 * k1 + .3 * (1 - k1)); tag(g, 'no nerves', 300, 1030, 40); g.restore(); }
   if (k2 > 0) { g.save(); g.globalAlpha *= k2; muscleIcon(600, 900, 1.0); xmark(600, 900, 1.1); tag(g, 'no muscles', 600, 1030, 40); g.restore(); }
-  label(t, r(6, .6), () => tag(g, 'cat voice box, in the lab', 540, 300, 44));
+  label(t, r(6, .6), () => tag(g, 'cat voice box, in a lab', 540, 300, 44));
   if (still > 0) { g.save(); g.globalAlpha *= still; cutPlaque(g, 540, 300, 760, 150, ['STILL PURRED'], 84, ramp(t, T(7), r(7, .6))); g.restore(); }
   label(t, r(7, 1.6), () => tag(g, '25–30 × a second', 540, 470, 42));
   g.restore();
@@ -240,7 +244,7 @@ function sceneKittens(t) {
       for (let i = 0; i < 5; i++) ell(p, 360 + i * 60, 960, 18, 3.6, 1.3); ring(p, 50, 57, 330, 1040); }, TABBY, { r: 300, lw: 3, edge: '#6a2c0c' });
     [[470, 1125], [600, 1120]].forEach(([x, y], i) => { const b = 3 * Math.sin(t * 6 + i); hidePiece(g, p => { ell(p, x, y + b, 56, 30, 0); circ(p, x - 50, y - 8 + b, 26); poly(p, [[x - 66, y - 26 + b], [x - 62, y - 50 + b], [x - 50, y - 30 + b]]); poly(p, [[x - 44, y - 30 + b], [x - 34, y - 50 + b], [x - 30, y - 24 + b]]); ell(p, x + 10, y + b, 10, 2.4, 0); }, ['#e8c9a0', '#b48a5a'], { r: 70, lw: 2, edge: '#5a3a1a' }); });
     rings(520, 1000, t, ramp(t, T(13), T(13) + .5), { dir: -Math.PI / 2, span: 300, w: 1.0 });
-    label(t, r(13, .4), () => tag(g, 'kittens purr while nursing', 540, 330, 46));
+    label(t, r(13, .4), () => tag(g, 'mother cats purr while nursing', 540, 330, 46));
     g.restore(); }
   if (a2 > 0) { g.save(); g.globalAlpha = a2; cam(1, 540, 800);
     // a low purr wave with a high cry riding inside it

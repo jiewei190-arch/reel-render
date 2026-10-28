@@ -58,7 +58,11 @@ function chapters(t) { if (t > s(16) - .3) return; let cur = 0; CH.forEach(([, i
 function act0(t) { const k = kAct(t, 0), sh = Math.sin(t * 38) * 5 * (t < s(1) + 2 ? 1 : .3);
   g.save(); g.translate(sh, 0); stand('stomach', 420, 360, (c, w, h) => stomachArt(c, w, h, { face: true }), 540, 940, k, { scale: 1.15 }); g.restore();
   arcs(540, 700, t, k, 3, 220, PAL.coral);
-  ['G', 'R', 'R', 'R'].forEach((ch, i) => { const kk = back(R(t, -.2 + i * .12, .4)); stand('L' + ch + i, 120, 120, letterArt(ch, ['#f3c87a', '#ff7a59', '#8fd0ee', '#8fcf86'][i]), 240 + i * 200, 1190, kk * k, { scale: 1, lean: Math.sin(t * 9 + i) * .12 }); });
+  ['G', 'R', 'R', 'R'].forEach((ch, i) => { const kk = back(R(t, -.2 + i * .12, .4)); stand('L' + ch + i, 120, 120, letterArt(ch, ['#f3c87a', '#ff7a59', '#8fd0ee', '#8fcf86'][i]), 240 + i * 200, 1190, kk * k * (1 - R(t, s(1) + .2 + i * .06, .25)), { scale: 1, lean: Math.sin(t * 9 + i) * .12 }); });
+  // but-turn: the G-R-R-R cards fold down and a short gut tube pops up, a gas bubble squeezed along it
+  if (t > s(1) + .3) { const tk = back(R(t, s(1) + .45, .45)) * k; stand('tube0', 820, 220, tubeArt, 540, 1235, tk);
+    if (tk > .9) { const x = 190 + ((t - s(1) - .9) * 230) % 700; g.save(); g.fillStyle = GUTD; g.strokeStyle = PAL.ink; g.lineWidth = 5; g.beginPath(); g.roundRect(x - 26, 1036, 52, 44, 14); g.fill(); g.stroke(); g.beginPath(); g.roundRect(x - 26, 1156, 52, 44, 14); g.fill(); g.stroke();
+      [[x + 56, 22, GAS], [x + 108, 16, BLUE]].forEach(([bx, r, c]) => { if (bx > 920) return; g.beginPath(); g.fillStyle = c; g.arc(bx, 1118 + Math.sin(t * 6 + bx) * 8, r, 0, 7); g.fill(); g.stroke(); }); g.restore(); } }
   if (t < s(1) - .1) sign(g, 'hook', 'Not hungry?\nStill growls.', 540, 190, 340, 620, 180, Math.sin(t * 2) * .04, { font: '600 66px Fredoka' });
   else sign(g, 'hook2', 'Why does your\nstomach growl?', 540, 190, 340 - 60 * (1 - back(R(t, s(1) - .1, .4))), 680, 180, Math.sin(t * 2.4) * .06, { font: '600 64px Fredoka' }); }
 function act1(t) { const i = 1, k = kAct(t, i), t0 = ACT[i][0];
@@ -66,8 +70,8 @@ function act1(t) { const i = 1, k = kAct(t, i), t0 = ACT[i][0];
   stand('tube', 880, 320, tubeArt, 540, 960, k);
   if (k > .9) { const x = 120 + ((t - t0) * 210) % 860, c = g; c.save(); c.fillStyle = GUTD; c.strokeStyle = PAL.ink; c.lineWidth = 6; c.beginPath(); c.roundRect(x - 34, 640, 68, 70, 20); c.fill(); c.stroke(); c.beginPath(); c.roundRect(x - 34, 830, 68, 70, 20); c.fill(); c.stroke(); c.restore();
     for (let j = 0; j < 6; j++) { const bx = x + 60 + j * 70, by = 770 + Math.sin(t * 5 + j) * 18; if (bx > 980) continue; g.save(); g.fillStyle = j % 2 ? GAS : BLUE; g.strokeStyle = PAL.ink; g.lineWidth = 4; g.beginPath(); g.arc(bx, by, j % 2 ? 22 : 18, 0, 7); g.fill(); g.stroke(); g.restore(); } }
-  label(g, 'peristalsis', 300, 520, { a: R(t, s(3) + .6, .4) * k, sub: 'muscle waves' });
-  if (t > s(4) - .2) { label(g, 'gas + fluid', 780, 520, { a: R(t, s(4), .4) * k }); const gk = back(R(t, s(4) + 1.6, .4)); stand('gurgle', 300, 110, (c, w, h) => { ink(c, rect(w, h), { fill: '#fff7e6', w: 6 }); c.fillStyle = PAL.coral; c.font = '700 64px Fredoka'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('GURGLE!', w / 2, h / 2 + 4); }, 760, 1180, gk * k); }
+  label(g, 'peristalsis', 300, 570, { a: R(t, s(3) + .6, .4) * k * (1 - R(t, s(5) - .3, .3)), sub: 'muscle waves' });
+  if (t > s(4) - .2) { label(g, 'gas + fluid', 780, 570, { a: R(t, s(4), .4) * k * (1 - R(t, s(5) - .3, .3)) }); const gk = back(R(t, s(4) + 1.6, .4)); stand('gurgle', 300, 110, (c, w, h) => { ink(c, rect(w, h), { fill: '#fff7e6', w: 6 }); c.fillStyle = PAL.coral; c.font = '700 64px Fredoka'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('GURGLE!', w / 2, h / 2 + 4); }, 760, 1180, gk * k); }
   if (t > s(5) - .2) { const ck = back(R(t, s(5) - .1, .5)); stand('column', 200, 340, columnArt, 230, 1190, ck * k); sign(g, 'borb', 'borborygmi\n= "rumbling"', 640, 190, 340, 600, 180, Math.sin(t * 2.2) * .05, { font: '600 60px Fredoka' }); } }
 function act2(t) { const i = 2, k = kAct(t, i), t0 = ACT[i][0];
   stand('full', 330, 290, (c, w, h) => stomachArt(c, w, h, { food: true }), 280, 940, k); stand('empty', 330, 290, (c, w, h) => stomachArt(c, w, h, { col: '#ffc9d2' }), 780, 940, kAct(t, i, .25));
@@ -75,18 +79,18 @@ function act2(t) { const i = 2, k = kAct(t, i), t0 = ACT[i][0];
   label(g, 'full', 280, 1120, { a: R(t, t0 + .9, .3) * k, sub: 'muffled' }); label(g, 'empty', 780, 1120, { a: R(t, t0 + 1.3, .3) * k, sub: 'LOUD', col: '#ffd9c7' });
   sign(g, 'twist', 'Loudest when\nEMPTY', 540, 190, 330, 560, 180, Math.sin(t * 2) * .04, { font: '600 62px Fredoka' }); }
 function act3(t) { const i = 3, k = kAct(t, i), t0 = ACT[i][0];
-  stand('clock', 300, 300, clockArt('2 hrs'), 280, 900, k); { const a = (t - t0) * 2.4; g.save(); g.strokeStyle = PAL.ink; g.lineWidth = 8; g.lineCap = 'round'; g.globalAlpha = clamp(k); g.beginPath(); g.moveTo(280, 755); g.lineTo(280 + Math.cos(a) * 80, 755 + Math.sin(a) * 80); g.stroke(); g.restore(); }
+  stand('clock', 300, 300, clockArt('~2 hrs'), 280, 900, k); { const a = (t - t0) * 2.4; g.save(); g.strokeStyle = PAL.ink; g.lineWidth = 8; g.lineCap = 'round'; g.globalAlpha = clamp(k); g.beginPath(); g.moveTo(280, 755); g.lineTo(280 + Math.cos(a) * 80, 755 + Math.sin(a) * 80); g.stroke(); g.restore(); }
   stand('stomach2', 330, 290, (c, w, h) => stomachArt(c, w, h, { col: '#ffc9d2' }), 760, 940, kAct(t, i, .2));
   // phrase 9: the broom sweeps the leftovers along
   if (t > s(9) - .3) { const u = ease(R(t, s(9), 3.2)); stand('broom', 150, 260, broomArt, lerp(620, 960, u), 1190, back(R(t, s(9) - .2, .4)) * k, { lean: -.2 }); for (let j = 0; j < 6; j++) { const cx = lerp(660, 1000, u) + 40 + j * 22 - u * 60; g.save(); g.fillStyle = ['#f3c87a', '#8fcf86', '#c9556f'][j % 3]; g.strokeStyle = PAL.ink; g.lineWidth = 3; g.beginPath(); g.arc(Math.min(cx, 960), 1170 - (j % 2) * 18, 13, 0, 7); g.fill(); g.stroke(); g.restore(); } }
-  if (t > s(10) - .3) { label(g, 'every 90-120 min', 540, 520, { a: R(t, s(10), .4) * k, sub: 'while you fast', w: 560 }); for (let j = 0; j < 4; j++) { const kk = back(R(t, s(10) + .5 + j * .25, .35)); stand('cyc' + j, 110, 110, clockArt(''), 220 + j * 210, 1190, kk * k, { scale: .9 }); } }
+  if (t > s(10) - .3) { label(g, 'every couple of hours', 540, 570, { a: R(t, s(10), .4) * k, sub: 'roughly, while you fast', w: 640 }); for (let j = 0; j < 4; j++) { const kk = back(R(t, s(10) + .5 + j * .25, .35)); stand('cyc' + j, 110, 110, clockArt(''), 220 + j * 210, 1190, kk * k, { scale: .9 }); } }
   sign(g, 'clean', 'Cleaning wave', 540, 190, 340, 560, 140, Math.sin(t * 2) * .04, { font: '600 62px Fredoka' }); }
 function act4(t) { const i = 4, k = kAct(t, i), t0 = ACT[i][0];
   stand('brain', 360, 280, brainArt, 760, 900, k); stand('stomach3', 300, 260, (c, w, h) => stomachArt(c, w, h, {}), 260, 960, kAct(t, i, .2));
   // envelopes fly from gut to brain
   const env = (key, txt, col, t1) => { const u = ease(R(t, t1, 1.8)); if (u <= 0) return; const x = lerp(300, 720, u), y = lerp(860, 700, u) - Math.sin(u * Math.PI) * 160; stand(key, 210, 140, envArt(txt, col), x, y + 140, back(R(t, t1 - .1, .3)) * k, { scale: .9 }); };
   env('env1', 'motilin', '#f3c87a', s(12) + .2); if (t > s(12) + 2.3) { g.save(); g.globalAlpha = R(t, s(12) + 2.3, .3) * k; g.fillStyle = PAL.coral; g.font = '700 110px Fredoka'; g.textAlign = 'center'; g.fillText('?', 900, 690); g.restore(); }
-  if (t > s(13) - .3) { env('env2', 'ghrelin', '#8fd0ee', s(13) + .1); for (let j = 0; j < 3; j++) { const kk = back(R(t, s(13) + 1.2 + j * .3, .35)); stand('plate' + j, 170, 110, plateArt, 230 + j * 230, 1190, kk * k, { scale: .9 }); const bh = 60 + j * 0; g.save(); g.globalAlpha = kk * k; g.fillStyle = '#8fd0ee'; g.strokeStyle = PAL.ink; g.lineWidth = 4; const by = 1100 - 90 * kk; g.beginPath(); g.roundRect(170 + j * 230, by, 30, 1100 - by, 6); g.fill(); g.stroke(); g.restore(); } label(g, 'rises before meals', 540, 520, { a: R(t, s(13) + 1.6, .4) * k, w: 560 }); }
+  if (t > s(13) - .3) { env('env2', 'ghrelin', '#8fd0ee', s(13) + .1); for (let j = 0; j < 3; j++) { const kk = back(R(t, s(13) + 1.2 + j * .3, .35)); stand('plate' + j, 170, 110, plateArt, 230 + j * 230, 1190, kk * k, { scale: .9 }); const bh = 60 + j * 0; g.save(); g.globalAlpha = kk * k; g.fillStyle = '#8fd0ee'; g.strokeStyle = PAL.ink; g.lineWidth = 4; const by = 1100 - 90 * kk; g.beginPath(); g.roundRect(170 + j * 230, by, 30, 1100 - by, 6); g.fill(); g.stroke(); g.restore(); } label(g, 'rises before meals', 540, 570, { a: R(t, s(13) + 1.6, .4) * k, w: 560 }); }
   sign(g, 'hunger', 'A hunger signal?', 540, 190, 340, 600, 140, Math.sin(t * 2) * .04, { font: '600 60px Fredoka' }); }
 function act5(t) { const i = 5, k = kAct(t, i), t0 = ACT[i][0];
   if (t < s(15) - .2) { stand('stomach4', 380, 320, (c, w, h) => stomachArt(c, w, h, { face: true }), 420, 960, k); stand('broom2', 150, 260, broomArt, 720, 960, kAct(t, i, .2), { lean: Math.sin(t * 4) * .15 }); stand('fork', 140, 220, forkArt, 900, 960, back(R(t, s(14) + 2.6, .4)) * k);

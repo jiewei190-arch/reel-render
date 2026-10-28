@@ -6,13 +6,14 @@
 **Copied from the demo:** open pop-up book on a desk under a warm lamp; a standing back board with layered paper scenery; cut-paper cards with white border, cardboard edge and cut-out shadow springing up with overshoot; cardboard signs dropping on strings and swinging; paper labels; acts that fold flat and pop back up.
 **Changes for 9:16 + safe zones:** signs and cards between y 260 and 1230; caption on a paper strip at y 1260-1420; a chapter strip (GROWL · SQUEEZE · EMPTY · CLEANING · HORMONES · ANSWER) at y 1560 as the progress device; nothing in the right column below 840 except the sweeping broom (art, no text; qa WARN only); a slow lamp-lit camera breath so nothing holds still > 4 s.
 
-**Hook (HOOKS v2):** "Your stomach can growl even when you're not hungry." (9 words, myth correction). Frame 0: the stomach card shaking with coral sound arcs, G-R-R-R letter cards, sign "Not hungry? Still growls." Exact search question at 3.6 s on the swapped sign: "Why does your stomach growl?"
-**Re-hooks:** 24.4 s "Here's the twist: loudest when empty"; 31-39 s wow (cleaning wave, broom sweeps the leftovers); 44.8 s "A hunger signal? Partly, maybe."
+**Hook (HOOKS v2):** "Your stomach can growl even when you're not hungry." (9 words, myth correction). Frame 0: the stomach card shaking with coral sound arcs, G-R-R-R letter cards, sign "Not hungry? Still growls." Exact search question at 3.6 s on the swapped sign: "Why does your stomach growl?"; on the but-turn (4.1 s) the G-R-R-R cards fold down and a gut tube pops up with a gas bubble squeezed along it (main-session note: something new by 5 s).
+**Re-hooks:** 25.2 s "Here's the twist: loudest when empty"; 32-40 s wow (cleaning wave, broom sweeps the leftovers); 44.8 s "A hunger signal? Partly, maybe."
 **Loop:** the end card returns to the hook's stomach card with sound arcs; final dim 30%.
 **Voice:** af_heart 0.97, popup music, mix2 (fx 0.5, ducked). 72.0 s.
-**Softened claims:** see sources_stomachgrowl.md (hunger link "partly, maybe"; ghrelin "helps make you want to eat"; "about two hours" approximate).
+**Softened claims:** see sources_stomachgrowl.md (hunger link "partly, maybe"; ghrelin "helps make you want to eat"; "roughly every couple of hours"; stomach and small intestine named).
+**Storyboard review (main session):** applied all four notes: new layer on the but-turn; stomach + small intestine said once; cleaning-wave timing loosened; badge after QA.
 **Code:** reels/t_stomachgrowl.js, t_stomachgrowl.html, specs/stomachgrowl.json, ev_stomachgrowl.json, tl_stomachgrowl.js. Thumbnail: thumb_stomachgrowl.jpg ("Why does it growl?").
-**Build notes:** the clock card's "2 hrs" sat between two tick marks and read ".2 hrs."; moved the label up and re-rendered frames 880-1370 only (spliced, frame count checked: 2159). The AAC encode overshot to -0.5 dBTP; audio re-limited once from the crf16 master with 4x oversampling (alimiter 0.72, AAC 96k) → -2.3 dBTP; video untouched.
+**Build notes:** the hanging signs moved 40 px lower (2-line signs 20 px shorter) so the EP badge top-right clears them; the clock card's "2 hrs" sat between two tick marks and read ".2 hrs."; moved the label up and re-rendered frames 880-1370 only (spliced, frame count checked: 2159). The AAC encode overshot to -0.5 dBTP; audio re-limited once from the crf16 master with 4x oversampling (alimiter 0.72, AAC 96k) → -2.3 dBTP; video untouched.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal: assigned from handoff/topics_next30.md (main session's search research); "why does my stomach growl" is a classic autocomplete question
