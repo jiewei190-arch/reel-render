@@ -107,8 +107,6 @@ function fur(t, { micro = 1, mol = 0, loose = 0, water = 0, prog = 1 } = {}) {
     R.fillCirc(x, y, 14, C.mol, { a: .8 * k, seed: 980 + i, blooms: 0, edge: 1.4 }); R.fillCirc(x + 18, y - 10, 9, C.mol, { a: .8 * k, seed: 1010 + i, blooms: 0, edge: 1.2 }); R.pen([[x, y], [x + 18, y - 10]], { w: 2.4, prog: k, seed: 1040 + i, over: 0, gaps: false }); });
 }
 // ---------- page C: smell notes (tallies, four little studies, the x32 bars, everything curling into one cloud) ----------
-function tally(x, y, n, k, seed) { for (let i = 0; i < n; i++) { const kk = clamp(k * n - i); if (kk <= 0) break; const grp = Math.floor(i / 5), j = i % 5, gx = x + grp * 92;
-    if (j < 4) R.pen([[gx + j * 16, y], [gx + j * 16 + 3, y - 50]], { w: 3, prog: kk, seed: seed + i, over: 3, gaps: false }); else R.pen([[gx - 8, y - 8], [gx + 64, y - 40]], { w: 3, prog: kk, seed: seed + i, over: 3, gaps: false }); } }
 function mushroom(x, y, k, sd) { const cap = Array.from({ length: 14 }, (_, i) => { const a = Math.PI + i / 13 * Math.PI; return [x + Math.cos(a) * 60, y - 40 + Math.sin(a) * 44]; }), st = [[x - 18, y - 40], [x + 18, y - 40], [x + 14, y + 14], [x - 16, y + 14]];
   R.wash(cap, PAL.brick, { a: .6 * k, seed: sd, dens: false }); R.wash(st, '#ead9b8', { a: .7 * k, seed: sd + 1, dens: false }); R.pen(close(cap), { w: 3, prog: k, boil: true, seed: sd + 2, closed: true, over: 0, gaps: false }); R.pen(close(st), { w: 3, prog: k, boil: true, seed: sd + 3, closed: true, over: 0, gaps: false }); }
 function cherry(x, y, k, sd) { [[-22, 0], [22, 8]].forEach(([dx, dy], i) => { const c = ell(x + dx, y + dy, 26, 26, 18); R.wash(c, '#b33a3a', { a: .65 * k, smooth: true, step: 1e4, seed: sd + i }); R.pen(close(c), { w: 3, prog: k, boil: true, seed: sd + 2 + i, closed: true, over: 0, gaps: false }); R.pen([[x + dx, y + dy - 24], [x + 4, y - 80]], { w: 2.6, prog: k, boil: true, seed: sd + 4 + i }); });
@@ -117,23 +115,6 @@ function flower(x, y, k, sd) { for (let i = 0; i < 6; i++) { const an = i * 1.04
   R.fillCirc(x, y - 40, 14, PAL.gold, { a: .8 * k, seed: sd + 20 }); R.pen([[x, y - 20], [x - 4, y + 16]], { w: 3, prog: k, boil: true, seed: sd + 21 }); }
 function poop(x, y, k, sd) { [[0, 0, 52, 18], [0, -24, 40, 16], [2, -46, 26, 13]].forEach(([dx, dy, rx, ry], i) => { const p = ell(x + dx, y + dy, rx, ry, 20); R.wash(p, '#8a5a34', { a: .65 * k, smooth: true, step: 1e4, seed: sd + i }); R.pen(close(p), { w: 3, prog: k, boil: true, seed: sd + 5 + i, closed: true, over: 0, gaps: false }); });
   R.pen([[x + 2, y - 59], [x + 10, y - 72], [x + 2, y - 80]], { w: 2.6, prog: k, boil: true, seed: sd + 9 }); }
-const ICONS = [[200, mushroom, 'mushroom'], [400, cherry, 'fruity'], [600, flower, 'floral'], [800, poop, 'poop']];
-function notes(t) {
-  { const cu = seg(t, s(10) - .2, s(10) + 1.2); if (cu > 0 && t < r(15, .3)) { R.wash(ell(700, 420, 180, 60, 24), C.smell, { a: .35, smooth: true, step: 1e4, seed: 1440, bloom: { x: 700, y: 420, r: 220 * cu } }); for (let j = 0; j < 3; j++) curl(t, 620 + j * 60, 470, 660 + j * 70, 360, s(10) + j * .5, 2.0, 1430 + j, { a: .8, arc: 50, rad: 16, dab: 8 }); R.text('?', 880, 470, { size: 120, col: PAL.accent, reveal: cu }); } }
-  const k1 = seg(t, r(11, .4), r(11, 2.6)), k2 = seg(t, r(11, 4.2), r(11, 5.8));
-  R.text('wet', 110, 520, { size: 58, col: PAL.accent, reveal: seg(t, r(11, .1), r(11, .5)), align: 'left' }); tally(220, 530, 22, k1, 1100);
-  R.text('dry', 110, 650, { size: 58, col: INK2, reveal: seg(t, r(11, 3.8), r(11, 4.2)), align: 'left' }); tally(220, 660, 16, k2, 1200);
-  if (k1 >= 1) R.text('22', 800, 525, { size: 64, col: PAL.accent, reveal: seg(t, r(11, 2.6), r(11, 3.0)) }); if (k2 >= 1) R.text('16', 640, 655, { size: 64, col: INK2, reveal: seg(t, r(11, 5.8), r(11, 6.2)) });
-  const mixU = ss(seg(t, r(15, .3), r(15, 2.0)));
-  ICONS.forEach(([x, f, lab], i) => { const t0 = i < 3 ? r(12, .3 + i * 1.0) : r(13, .9), k = seg(t, t0, t0 + .7); if (k <= 0) return; const y = 850;
-    f(x, y, k, 1300 + i * 40); R.text(lab, x, 950, { size: 46, col: i === 3 ? PAL.accent : INK2, reveal: seg(t, t0 + .3, t0 + .8) });
-    if (i === 3 || mixU > 0) for (let j = 0; j < 2; j++) curl(t, x - 10 + j * 20, y - 70, lerp(x + 10, 520, mixU), lerp(y - 220, 330, mixU), t0 + j * .7, 2.2, 1400 + i * 9 + j, { a: .8, arc: 40, rad: 14, dab: 7 }); });
-  if (mixU > 0) { R.wash(ell(520, 330, 220 * mixU + 10, 70 * mixU + 6, 26), C.smell, { a: .4, smooth: true, step: 1e4, seed: 1450, bloom: { x: 520, y: 330, r: 260 * mixU } }); R.text('= wet dog', 520, 350, { size: 72, col: PAL.accent, reveal: seg(t, r(15, 1.6), r(15, 2.4)) }); }
-  const kb = seg(t, r(14, .6), r(14, 2.6)); if (t > r(14, 0) - .2) {   // x32: two bars (dry tiny, wet tall)
-    const base = 1120, top = 990, bx = [260, 460]; R.pen([[180, base], [620, base]], { w: 3, seed: 1500 }); R.wash(R.rectPts(bx[0] - 46, base - (base - top) / 32 - 2, 92, (base - top) / 32 + 2), INK2, { a: .5, seed: 1501, dens: false });
-    if (kb > 0) { const hh = (base - top) * kb; R.wash(R.rectPts(bx[1] - 46, base - hh, 92, hh), PAL.accent, { a: .6, seed: 1502, dens: false }); R.rect(bx[1] - 46, base - hh, 92, hh, { w: 3, seed: 1503 }); }
-    R.text('×32', 680, 1080, { size: 90, col: PAL.accent, reveal: seg(t, r(14, 1.8), r(14, 2.4)), align: 'left' }); R.text('benzaldehyde', 680, 1122, { size: 36, col: INK2, reveal: seg(t, r(14, 2.2), r(14, 2.8)), align: 'left' }); }
-}
 // ---------- page D: the bath ----------
 function bath(t) { const k = seg(t, s(16) - .2, s(16) + .6), tub = [[160, 900], [760, 900], [720, 1100], [200, 1100]];
   for (let i = 0; i < 6; i++) R.pen([[60, 420 + i * 80], [880, 420 + i * 80]], { w: 2, a: .5, prog: k, seed: 1590 + i, over: 3 }); for (let i = 0; i < 9; i++) R.pen([[80 + i * 100, 420], [80 + i * 100, 820]], { w: 2, a: .5, prog: k, seed: 1580 + i, over: 3 });
@@ -147,8 +128,9 @@ function bath(t) { const k = seg(t, s(16) - .2, s(16) + .6), tub = [[160, 900], 
 
 // ---------- pages, notes, captions ----------
 function pageA(t) {   // hook, the drying scene, the payoff
-  if (t < s(2)) { const push = eio(seg(t, r(1, .4), r(1, 2.2))); cam(lerp(1.3, 1.7, push), lerp(560, 450, push), lerp(830, 900, push), t);
-    park(t, { dogO: { wet: 1, shake: 1 - ss(seg(t, 2.2, 2.9)) }, curls: 1, react: seg(t, 1.0, 1.4) * (1 - seg(t, r(1, .3), r(1, .7))) });
+  if (t < s(2)) { const out = eio(seg(t, .9, 2.1)), push = eio(seg(t, r(1, .6), r(1, 2.0)));
+    cam(lerp(lerp(2.4, 1.05, out), 1.7, push), lerp(lerp(470, 560, out), 450, push), lerp(lerp(900, 830, out), 900, push), t);
+    park(t, { dogO: { wet: 1, shake: 1 - ss(seg(t, 2.4, 3.1)) }, curls: 1, react: seg(t, 1.5, 1.9) * (1 - seg(t, r(1, .4), r(1, .8))) });
     screen(); if (push > .3) { const k = seg(t, r(1, 1.4), r(1, 2.2)); R.circle(525, 935, 150, { w: 4, prog: k, seed: 1700 }); R.text('who lives on it?', 525, 750, { size: 56, col: PAL.accent, reveal: seg(t, r(1, 1.8), r(1, 2.4)) }); } }
   else if (t < s(17) - .4) { cam(1.0 + .03 * seg(t, s(9), s(10)), 540, 860, t);
     park(t, { dogO: { wet: 1 - .5 * seg(t, r(9, .5), r(9, 3)) }, curls: seg(t, r(9, .6), r(9, 1.2)), react: seg(t, r(9, 2.6), r(9, 3.1)) }); }
@@ -178,19 +160,74 @@ function endcard(t) { const t0 = s(19) - .3; screen();
 function turn(t, t0, oldF, newF) { const u = eio(seg(t, t0, t0 + .55)); if (u <= 0) { oldF(t); return; } if (u >= 1) { newF(t); return; }
   oldF(t); const ex = W * (1 - u); screen(); g.save(); g.beginPath(); g.rect(ex, 0, W - ex + 10, H); g.clip(); g.drawImage(R.paperImg, 0, 0); newF(t); g.restore();
   screen(); const gr = g.createLinearGradient(ex - 60, 0, ex + 20, 0); gr.addColorStop(0, 'rgba(60,40,20,0)'); gr.addColorStop(1, 'rgba(60,40,20,.28)'); g.fillStyle = gr; g.fillRect(ex - 60, 0, 80, H); g.fillStyle = 'rgba(255,250,240,.6)'; g.fillRect(ex, 0, 3, H); }
-const pageB = t => { cam(1 + .05 * seg(t, s(2), s(10)), 540 + 40 * Math.sin(t * .3), 960, t); fur(t, { micro: seg(t, r(3, 1.6), r(3, 3.4)) * .5 + seg(t, r(4, .6), r(4, 4.6)) * .5, mol: seg(t, r(5, .6), r(5, 2.6)), loose: seg(t, r(8, .3), r(8, 2.2)), water: seg(t, r(7, .4), r(7, 1.6)) });
-  screen(); if (t > s(6) - .2 && t < s(7) - .2) nose(820, 1100, 0, seg(t, r(6, .6), r(6, 1.4)), 1990); };
-const pageC = t => { cam(1.01 + .01 * Math.sin(t * .4), 540 + 12 * Math.sin(t * .6), 960 + 14 * Math.sin(t * .5), t); notes(t); };
+// shared little drawings, scalable
+function bug(t, x, y, kind, sc, seed, k = 1) { if (k <= 0) return; const xx = x + 3 * Math.sin(t * 4 + seed), yy = y + 2 * Math.cos(t * 3 + seed), po = { w: 2.6, prog: k, boil: true, closed: true, over: 0, gaps: false };
+  if (kind === 0) { const a = hash(seed) * 3, cap = ell(0, 0, 1, 1, 20).map(([p, q]) => [xx + p * 26 * sc * Math.cos(a) - q * 11 * sc * Math.sin(a), yy + p * 26 * sc * Math.sin(a) + q * 11 * sc * Math.cos(a)]);
+    R.wash(cap, C.bact, { a: .75 * k, smooth: true, step: 1e4, seed, blooms: 0 }); R.pen(close(cap), { ...po, seed: seed + 1 }); }
+  else { const b = ell(xx, yy, 22 * sc, 18 * sc, 18), bud = ell(xx + 22 * sc, yy - 16 * sc, 11 * sc, 10 * sc, 12); R.wash(b, C.yeast, { a: .75 * k, smooth: true, step: 1e4, seed, blooms: 0 }); R.wash(bud, C.yeast, { a: .75 * k, smooth: true, step: 1e4, seed: seed + 2, blooms: 0 });
+    R.pen(close(b), { ...po, seed: seed + 3 }); R.pen(close(bud), { ...po, seed: seed + 4 }); } }
+function molecule(x, y, k, seed, sc = 1) { if (k <= 0) return; R.fillCirc(x, y, 14 * sc, C.mol, { a: .8 * k, seed, blooms: 0, edge: 1.4 }); R.fillCirc(x + 18 * sc, y - 10 * sc, 9 * sc, C.mol, { a: .8 * k, seed: seed + 1, blooms: 0, edge: 1.2 }); R.pen([[x, y], [x + 18 * sc, y - 10 * sc]], { w: 2.4, prog: k, seed: seed + 2, over: 0, gaps: false }); }
+function sized(f, x, y, sc, k, sd) { g.save(); g.translate(x, y); g.scale(sc, sc); f(0, 0, k, sd); g.restore(); }
+// B1: the fur, then a push-in on one hair with bacteria and yeast living on it
+const M2 = MIC.filter((_, i) => i % 6 === 2), M2X = M2.reduce((a, m) => a + m.x, 0) / M2.length, M2Y = M2.reduce((a, m) => a + m.y, 0) / M2.length;
+const pageB1 = t => { const pz = eio(seg(t, r(3, .3), r(3, 3.0))), hx = M2X, hy = M2Y;
+  cam(lerp(1, 2.0, pz), lerp(540, hx, pz) + 30 * Math.sin(t * .3), lerp(960, hy, pz), t); fur(t, { micro: seg(t, r(3, 1.4), r(3, 3.6)) }); };
+// B2: Texas A&M: furry skin has the richest mix (two sample circles, a small dog between them)
+function sample(t, cx, cy, rr, n, seed, k) { R.wash(ell(cx, cy, rr, rr, 32), '#fbf3e4', { a: .9, smooth: true, step: 1e4, seed, blooms: 0 }); g.save(); g.beginPath(); g.arc(cx, cy, rr - 4, 0, 6.29); g.clip();
+  for (let i = 0; i < 3; i++) { const x0 = cx - rr + i * rr * .8, A = [[x0 - 40, cy + rr], [x0 + 80, cy - rr]], th = 34; R.wash([[A[0][0] - th, A[0][1]], [A[1][0] - th, A[1][1]], [A[1][0] + th, A[1][1]], [A[0][0] + th, A[0][1]]], C.fur, { a: .45, seed: seed + 40 + i, dens: false }); R.pen([[A[0][0] - th, A[0][1]], [A[1][0] - th, A[1][1]]], { w: 2.6, seed: seed + 50 + i }); R.pen([[A[0][0] + th, A[0][1]], [A[1][0] + th, A[1][1]]], { w: 2.6, seed: seed + 60 + i }); }
+  for (let i = 0; i < n; i++) bug(t, cx + (hash(seed + i) - .5) * rr * 1.4, cy + (hash(seed + i * 3) - .5) * rr * 1.4, i % 3 === 1 ? 1 : 0, 1.1, seed + 10 + i * 7, clamp(k * n - i));
+  g.restore(); R.circle(cx, cy, rr, { w: 4, seed }); }
+const pageB2 = t => { cam(1.0 + .14 * ss(seg(t, s(4) - .4, s(5))), 540 + 10 * Math.sin(t * .4), 900, t); const k = seg(t, s(4) - .2, r(4, 3.5));
+  sample(t, 300, 640, 220, 16, 2100, k); sample(t, 740, 700, 140, 4, 2200, k);
+  R.text('furry skin', 300, 930, { size: 66, col: PAL.accent, reveal: seg(t, r(4, 1.2), r(4, 1.8)) }); R.text('most kinds', 300, 990, { size: 50, col: INK2, reveal: seg(t, r(4, 1.8), r(4, 2.4)) });
+  R.text('bare, moist spots', 690, 900, { size: 50, reveal: seg(t, r(4, 2.4), r(4, 3.0)) }); R.text('fewer kinds', 690, 955, { size: 46, col: INK2, reveal: seg(t, r(4, 3.0), r(4, 3.6)) });
+  dog(t, { x: 470, y: 1135, sc: .42, wet: 1, seed: 2300 }); };
+// B3: side view: two hairs lying flat, bugs on top, molecules appear, stay put dry, the water front sweeps across and lifts them off
+const SIDE = [[150, 0], [330, 1], [520, 0], [700, 1], [850, 0]];
+const pageB3 = t => { cam(1.01 + .06 * ss(seg(t, s(5), s(9))), 540 + 14 * Math.sin(t * .45), 960 - 60 * ss(seg(t, s(5), s(9))) + 8 * Math.sin(t * .35), t);
+  const wf = seg(t, r(7, .3), r(7, 2.2)); if (wf > 0) R.wash([[-60, 330], [1140, 330], [1140, 1140], [-60, 1140]], C.water, { a: .42, seed: 2400, bloom: { x: -300, y: 760, r: wf * 1700 }, blooms: 3, br: 240 });
+  [[790, 74], [1020, 56]].forEach(([y, th], i) => { const top = Array.from({ length: 12 }, (_, j) => [-60 + j * 110, y - th / 2 + 6 * Math.sin(j * 1.3 + i)]), bot = top.map(([x, yy]) => [x, yy + th]).reverse();
+    R.wash(top.concat(bot), C.fur, { a: .55, seed: 2410 + i, dens: false, shade: .5 }); R.pen(top, { w: 3.4, seed: 2420 + i, over: 6 }); R.pen(bot, { w: 3.4, seed: 2430 + i, over: 6 });
+    for (let k = 0; k < 9; k++) R.pen([[40 + k * 120, y - th * .2], [80 + k * 120, y + th * .2]], { w: 2, a: .55, seed: 2440 + i * 10 + k, over: 0, gaps: false }); });
+  SIDE.forEach(([x, kind], i) => bug(t, x, 722, kind, 1.7, 2500 + i * 5, seg(t, s(5) - .3, s(5) + .4)));
+  for (let i = 0; i < 15; i++) { const bx = SIDE[i % 5][0] + (i < 5 ? -24 : i < 10 ? 26 : 0), by0 = 650 - Math.floor(i / 5) * 42, k = seg(t, r(5, .6) + i * .1, r(5, 1.0) + i * .1);
+    const up = seg(t, r(8, .2) + hash(i) * .6, r(8, 2.4) + hash(i) * .6), x = bx + up * 40 * Math.sin(i + t * 1.5), y = by0 - up * (240 + 60 * hash(i * 3)); molecule(x, y, k, 2600 + i * 3, 1); }
+  if (t > s(6) - .2 && t < s(7) - .2) { nose(780, 470, 0, seg(t, r(6, .4), r(6, 1.2)), 2700); R.text('zzz', 850, 400, { size: 56, col: INK2, reveal: seg(t, r(6, 1.0), r(6, 1.6)) }); }
+  if (t > s(7)) for (let i = 0; i < 14; i++) { const u = (t * 1.1 + hash(i)) % 1; R.fillCirc(80 + hash(i * 7) * 820, lerp(340, 700, u), 8, C.water, { a: .7 * (1 - u) * (1 - seg(t, r(8, 1), r(8, 2))), seed: 2800 + i, blooms: 0, edge: 1.2 }); } };
+// C1-C4: smell notes as full sketchbook spreads
+function tallyBig(x, y, n, k, seed) { for (let i = 0; i < n; i++) { const kk = clamp(k * n - i); if (kk <= 0) break; const grp = Math.floor(i / 5), j = i % 5, gx = x + grp * 148;
+    if (j < 4) R.pen([[gx + j * 26, y], [gx + j * 26 + 5, y - 82]], { w: 4, prog: kk, seed: seed + i, over: 4, gaps: false }); else R.pen([[gx - 12, y - 14], [gx + 100, y - 66]], { w: 4, prog: kk, seed: seed + i, over: 4, gaps: false }); } }
+const drift = t => cam(1.01 + .01 * Math.sin(t * .4), 540 + 12 * Math.sin(t * .6), 960 + 10 * Math.sin(t * .5), t);
+const pageC1 = t => { drift(t); const cu = seg(t, s(10) - .2, s(10) + 1.2);
+  R.wash(ell(540, 480, 280, 90, 26), C.smell, { a: .35, smooth: true, step: 1e4, seed: 1440, bloom: { x: 540, y: 480, r: 320 * cu } });
+  for (let j = 0; j < 4; j++) curl(t, 360 + j * 110, 560, 400 + j * 120, 430, s(10) + j * .4, 2.0, 1430 + j, { a: .8, arc: 50, rad: 18, dab: 9 }); R.text('?', 860, 520, { size: 150, col: PAL.accent, reveal: cu });
+  const k1 = seg(t, r(11, .4), r(11, 2.6)), k2 = seg(t, r(11, 4.2), r(11, 5.8));
+  R.text('wet hair', 80, 720, { size: 62, col: PAL.accent, reveal: seg(t, r(11, .1), r(11, .5)), align: 'left' }); tallyBig(90, 860, 22, k1, 1100);
+  if (k1 >= 1) R.text('22', 440, 728, { size: 120, col: PAL.accent, reveal: seg(t, r(11, 2.6), r(11, 3.0)), align: 'left' });
+  R.text('dry hair', 80, 960, { size: 62, col: INK2, reveal: seg(t, r(11, 3.8), r(11, 4.2)), align: 'left' }); tallyBig(90, 1100, 16, k2, 1200);
+  if (k2 >= 1) R.text('16', 440, 968, { size: 110, col: INK2, reveal: seg(t, r(11, 5.8), r(11, 6.2)), align: 'left' }); };
+const STUDY = [[mushroom, 'mushroom'], [cherry, 'fruity'], [flower, 'floral'], [poop, 'poop']];
+const pageC2 = t => { drift(t); const P = [[300, 700], [760, 700], [300, 1040], [760, 1040]];
+  STUDY.forEach(([f, lab], i) => { const t0 = i < 3 ? r(12, .3 + i * 1.0) : r(13, .9), k = seg(t, t0, t0 + .7); if (k <= 0) return; const [x, y] = P[i];
+    sized(f, x, y - 60, 2.0, k, 1300 + i * 40); R.text(lab, x, y + 20, { size: 60, col: i === 3 ? PAL.accent : INK2, reveal: seg(t, t0 + .3, t0 + .8) });
+    if (i === 3) for (let j = 0; j < 3; j++) curl(t, x - 40 + j * 40, y - 200, x - 20 + j * 50, y - 330, t0 + j * .5, 2.0, 1400 + j, { a: .8, arc: 30, rad: 14, dab: 8 }); }); };
+const pageC3 = t => { drift(t); const k = seg(t, r(14, .6), r(14, 2.6)), base = 1060, top = 440;
+  R.pen([[120, base], [700, base]], { w: 3.4, seed: 1500 }); R.wash(R.rectPts(200, base - (base - top) / 32 - 2, 130, (base - top) / 32 + 2), INK2, { a: .55, seed: 1501, dens: false }); R.rect(200, base - (base - top) / 32 - 2, 130, (base - top) / 32 + 2, { w: 3, seed: 1504 });
+  if (k > 0) { const hh = (base - top) * k; R.wash(R.rectPts(420, base - hh, 130, hh), PAL.accent, { a: .6, seed: 1502, dens: false }); R.rect(420, base - hh, 130, hh, { w: 3.4, seed: 1503 }); }
+  R.text('dry', 265, base + 60, { size: 56, col: INK2 }); R.text('wet', 485, base + 60, { size: 56, col: PAL.accent });
+  R.text('×32', 610, 720, { size: 170, col: PAL.accent, reveal: seg(t, r(14, 1.6), r(14, 2.2)), align: 'left' }); R.text('benzaldehyde', 616, 800, { size: 52, col: INK2, reveal: seg(t, r(14, 2.0), r(14, 2.6)), align: 'left' });
+  nose(790, 980, seg(t, r(14, 2.4), r(14, 2.9)), seg(t, r(14, .2), r(14, .8)), 1510); };
+const pageC4 = t => { drift(t); const mixU = ss(seg(t, r(15, .1), r(15, 1.8)));
+  R.wash(ell(540, 520, 330 * (.3 + .7 * mixU), 110 * (.3 + .7 * mixU), 26), C.smell, { a: .42, smooth: true, step: 1e4, seed: 1450, bloom: { x: 540, y: 520, r: 400 * mixU + 20 } });
+  R.text('= wet dog', 540, 550, { size: 110, col: PAL.accent, reveal: seg(t, r(15, 1.4), r(15, 2.2)) });
+  STUDY.forEach(([f], i) => { const x = 150 + i * 230, y = 1000; sized(f, x, y, 1.5, 1, 1300 + i * 40); for (let j = 0; j < 2; j++) curl(t, x - 10 + j * 20, y - 120, lerp(x, 540, mixU), lerp(y - 300, 560, mixU), s(15) - .3 + j * .6 + i * .2, 2.0, 1460 + i * 9 + j, { a: .85, arc: 40, rad: 16, dab: 8 }); }); };
 const pageD = t => { cam(1, 540, 960, t); bath(t); };
 const pageE = t => { endcard(t); };
+const PAGES = () => [[0, pageA], [s(2) - .4, pageB1], [s(4) - .4, pageB2], [s(5) - .4, pageB3], [s(9) - .3, pageA], [s(10) - .4, pageC1], [s(12) - .4, pageC2], [s(14) - .4, pageC3], [s(15) - .4, pageC4], [s(16) - .4, pageD], [s(17) - .4, pageA], [s(19) - .4, pageE]];
 function scene(t) {
   R.begin(t);
-  if (t < s(9) - .3) turn(t, s(2) - .4, pageA, pageB);
-  else if (t < s(10) - .4) turn(t, s(9) - .3, pageB, pageA);
-  else if (t < s(16) - .4) turn(t, s(10) - .4, pageA, pageC);
-  else if (t < s(17) - .4) turn(t, s(16) - .4, pageC, pageD);
-  else if (t < s(19) - .4) turn(t, s(17) - .4, pageD, pageA);
-  else turn(t, s(19) - .4, pageA, pageE);
+  const L = PAGES(); let i = 0; for (let k = 0; k < L.length; k++) if (t >= L[k][0]) i = k;
+  if (i > 0) turn(t, L[i][0], L[i - 1][1], L[i][1]); else L[0][1](t);
   if (t < s(19) - .4) margin(t);
   caption(t); screen(); R.finish();
 }
