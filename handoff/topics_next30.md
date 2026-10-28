@@ -54,9 +54,11 @@
 | 83 | thunder | Why does thunder rumble instead of just bang? | H3 | queued |
 | 84 | catfeet | How do cats always land on their feet? | H3 | queued |
 | 85 | rainbow | Why are rainbows curved? | H1 | merged v2, Nov 14 09:00 |
-| 86 | spicy | Why does spicy food feel hot? | H1 | queued |
+| 86 | hotsauce | Why does spicy food feel hot? | H1 | merged, Nov 14 13:00 |
 | 87 | crackedphone | Why does a phone screen crack from a short drop? | H2 | queued |
 | 88 | pickles | How does a cucumber turn into a pickle? | H2 | queued |
+| 89 | carsick | Why do you get carsick? | H1 | queued |
+| 90 | earringing | Why do your ears ring after a concert? | H1 | queued |
 | 63 | auroras | What causes the northern lights? | H3 | queued |
 | 64 | catsknead | Why do cats knead? | H3 | merged, Nov 9 21:30 |
 | 61 | contrails | Why do planes leave white trails in the sky? | H1 | merged v2, Nov 9 13:00 |

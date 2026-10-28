@@ -37,6 +37,7 @@ OVR = {
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
     "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "hotsauce": {"spot": ("R", 260)},   # H1 (EP 86): top-right; world tags are top-left, lab board text starts at y 336
     "microwavecenter": {"spot": ("R", 260), "hide": [(21.8, 24.6), (44.4, 47.8), (68.7, 99.0)]},   # popup: hidden under the 3-tricks sign, the YES/NO signs and the end card
     "rainbow": {"spot": (651, 400)},   # H1 (EP 85): right of the FIG label, above the figure window (as ovenfoil); the sheet header owns the top band
     "hairgray": {"spot": ("R", 256), "hide": [(16.2, 20.3)]},   # H2: hidden under the "Study Head of an Old Man" card

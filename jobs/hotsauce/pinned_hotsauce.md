@@ -1,0 +1,1 @@
+Bonus: plant milks like oat or almond don't contain casein, so they don't help nearly as much (Cleveland Clinic). Beer is mostly water, so it barely helps either. Milk or water: which do you grab? One word. 🌶️🥛
