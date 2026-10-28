@@ -1,5 +1,6 @@
 # Episode badge for TikTok/YouTube copies: jobs/<n>/<n>.mp4 -> jobs/<n>/<n>_ep.mp4
 # Usage: python3 -I brand.py <name> [<name> ...]   (episode numbers come from handoff/episodes.csv)
+#        python3 -I brand.py <name> --ep <number>     (number assigned by the main session, before it's in episodes.csv)
 import csv, pathlib, subprocess, sys
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageStat
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
@@ -70,7 +71,11 @@ def badge(ep):
     d.text((x + 3 * s + gap, h / 2), tx_t, font=tx_f, fill=(255, 255, 255, 235), anchor="lm")
     return im.resize((w // s, h // s), Image.LANCZOS)
 
-for n in sys.argv[1:]:
+ARGS = sys.argv[1:]; EPOV = {}
+if "--ep" in ARGS:  # workers: python3 -I brand.py <name> --ep <number>  (the main session assigns the number)
+    i = ARGS.index("--ep"); EPOV[ARGS[i - 1]] = int(ARGS[i + 1]); del ARGS[i:i + 2]
+EPS.update(EPOV)
+for n in ARGS:
     src = ROOT / f"jobs/{n}/{n}.mp4"; dst = ROOT / f"jobs/{n}/{n}_ep.mp4"; png = HERE / f"stills/badge_{n}.png"
     png.parent.mkdir(exist_ok=True); b = badge(EPS[n]); b.save(png)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout)
