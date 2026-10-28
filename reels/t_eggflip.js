@@ -12,6 +12,9 @@ const TL = window.TL, PH = TL.p, s = i => PH[i].start, e = i => PH[i].end;
 Object.assign(C, { paper: '#fbf3da', red: '#c47410', redL: '#efb54a', ochre: '#f2b51c', navy: '#4a78a4' });
 const F = createFB(document.getElementById('c')), g = F.g;
 const R = ramp, TAU = Math.PI * 2;
+// pencil boil: every graphite line is redrawn 4 times a second with a fresh wobble (keeps still pages alive)
+let BOIL = 0; const P0 = F.pencil; F.pencil = (pts, o = {}) => P0(pts, { ...o, seed: (o.seed || 0) + BOIL, wob: (o.wob ?? 1.3) * 1.25 });
+const steam = (x, y, t, n = 3, h = 120, col = C.graph) => { for (let i = 0; i < n; i++) { const u = (t * .45 + i / n) % 1; F.squig(x + (i - (n - 1) / 2) * 60, y - u * 90, h, t + i, { col, alpha: .75 * Math.sin(u * Math.PI), amp: 12 }); } };
 
 // ---------- pages: [start, end, page no] ----------
 const PG = [[0, s(2) - .05, 1], [s(2) - .05, s(5) - .1, 2], [s(5) - .1, s(8) - .1, 3], [s(8) - .1, s(10) - .1, 4], [s(10) - .1, s(15) - .1, 5], [s(15) - .1, TL.total + 1, 6]];
@@ -31,19 +34,19 @@ function counter() { g.save(); g.globalAlpha = .5; g.strokeStyle = '#9cc2e2'; g.
   g.strokeStyle = '#e88a9a'; g.lineWidth = 2.5; g.beginPath(); g.moveTo(56, 0); g.lineTo(57, H); g.stroke(); g.globalAlpha = .9; g.fillStyle = '#efe6cc'; [420, 960, 1500].forEach(y => { g.beginPath(); g.arc(28, y, 13, 0, TAU); g.fill(); }); g.restore();
   F.pencil([[60, 1730], [1020, 1726]], { w: 1.6, seed: 9 }); F.hatch([[60, 1734], [1020, 1730], [1020, 1820], [60, 1820]], 'ochre', { alpha: .35 }); }
 // irregular fried-egg white outline
-const blob = (cx, cy, r, sc = 1) => { const P = []; for (let i = 0; i <= 44; i++) { const a = i / 44 * TAU, k = 1 + .1 * Math.sin(a * 3 + 1) + .06 * Math.sin(a * 5 + 2); P.push([cx + Math.cos(a) * r * k * sc + (Math.cos(a) > 0 ? 10 : 0), cy + Math.sin(a) * r * .8 * k * sc]); } return P; };
+const blob = (cx, cy, r, sc = 1, ph = 0) => { const P = []; for (let i = 0; i <= 44; i++) { const a = i / 44 * TAU, k = 1 + .1 * Math.sin(a * 3 + 1 + ph) + .06 * Math.sin(a * 5 + 2 - ph * 1.3); P.push([cx + Math.cos(a) * r * k * sc + (Math.cos(a) > 0 ? 10 : 0), cy + Math.sin(a) * r * .8 * k * sc]); } return P; };
 // pan seen from above + an egg whose white sets from the rim inward (set 0..1); yolk ochre
 function panEgg(cx, cy, r, set, t, o = {}) {
   const pan = el(cx, cy, r * 1.55, r * 1.3, 60); F.hatch(pan, 'navyL', { alpha: .5 }); F.pencil(pan, { w: 2.4, seed: 3 }); F.pencil(el(cx, cy, r * 1.42, r * 1.18, 60), { w: 1.2, alpha: .6, seed: 5 });
   F.pencil([[cx + r * 1.5, cy - 18], [cx + r * 2.4, cy - 34], [cx + r * 2.4, cy + 10], [cx + r * 1.5, cy + 22]], { w: 2.2, seed: 6 }); F.hatch([[cx + r * 1.5, cy - 18], [cx + r * 2.4, cy - 34], [cx + r * 2.4, cy + 10], [cx + r * 1.5, cy + 22]], 'graph', { alpha: .7 });
-  const outer = blob(cx, cy, r), inner = blob(cx, cy, r, Math.max(.001, 1 - set));
+  const outer = blob(cx, cy, r), inner = blob(cx, cy, r, Math.max(.001, 1 - set), set < .98 ? Math.sin(t * 5) * .8 : 0);
   g.save(); g.beginPath(); outer.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); inner.slice().reverse().forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.clip('evenodd');
   g.globalAlpha = F.S.A; g.fillStyle = F.paperPat(); g.fillRect(cx - r * 1.5, cy - r * 1.2, r * 3, r * 2.4); g.globalAlpha = F.S.A * .55; g.fillStyle = F.pat('graph'); g.fillRect(cx - r * 1.5, cy - r * 1.2, r * 3, r * 2.4); g.restore();
   F.pencil(outer, { w: 2.2, seed: 7, col: set > .2 ? C.ink : C.graph, alpha: set > .2 ? 1 : .6 });
   if (set > .02 && set < .98) F.pencil(inner, { w: 1.2, col: C.graph, alpha: .5, seed: 8, dash: [6, 8] });
   // clear part: a few pan lines show through the raw white
   if (set < .9) for (let i = 0; i < 3; i++) F.line(cx - r * .5, cy - r * .3 + i * r * .25, cx + r * .2, cy - r * .32 + i * r * .25, { w: 1, alpha: .35 * (1 - set), col: C.navy });
-  const y = el(cx + 8, cy - 4, r * .34, r * .3, 36); F.hatch(y, 'ochre', { alpha: .9 }); F.pencil(y, { w: 2.2, col: '#8a6a22', seed: 2 }); F.pencil(el(cx - r * .1, cy - r * .12, r * .08, r * .05, 12, 3.6, 5.6), { w: 2, col: '#fff8e0' });
+  const jig = set < .98 ? Math.sin(t * 9) * .05 : 0, y = el(cx + 8, cy - 4, r * .34 * (1 + jig), r * .3 * (1 - jig), 36); F.hatch(y, 'ochre', { alpha: .9 }); F.pencil(y, { w: 2.2, col: '#8a6a22', seed: 2 }); F.pencil(el(cx - r * .1, cy - r * .12, r * .08, r * .05, 12, 3.6, 5.6), { w: 2, col: '#fff8e0' });
   if (o.bubbles) for (let i = 0; i < 6; i++) { const a = hash(i * 3.1) * TAU, d = r * (.55 + hash(i) * .35), ph = (t * 1.3 + hash(i * 7)) % 1; if (set < d / r) F.circ(cx + Math.cos(a) * d, cy + Math.sin(a) * d * .8, 4 + ph * 7, { w: 1.2, col: C.graph, alpha: 1 - ph }); }
 }
 // a protein chain: folded into a ball (u = 0) or unfolded into a wavy strand (u = 1); jitter shakes it
@@ -69,6 +72,7 @@ function page1(t) {   // hook: the egg is already setting at frame 0, heat lines
   F.seal('EGG', 900, 470, ss(R(t, .3, .35)), { size: 48, f: 'mono', fs: 48 });
   const set = clamp(.18 + t * .19, 0, 1); panEgg(470, 900, 210, set, t, { bubbles: true });
   for (let i = 0; i < 3; i++) F.squig(250 + i * 220, 1210, 70, t + i, { col: C.redL, alpha: .55 });
+  steam(470, 700, t, 5, 150);
   if (t > s(1) - .1) { const k = R(t, s(1) - .1, .8); note('clear → white', 650, 660, 560, 790, k, { col: C.navy, size: 40 }); note('runny → solid', 60, 1150, 300, 1040, R(t, s(1) + .5, .8), { col: C.red, size: 40 }); }
   caption(t);
 }
@@ -110,10 +114,11 @@ function page4(t, p) {   // the heat: a thermometer scale with the setting point
   const Y = thermo(200, 520, 1080, 40, 90, v, ss(R(t, p[0] + .2, .8)));
   [[63, 'white starts to set', t63 - .3, C.ink], [70, 'yolk sets', t70 - .3, '#8a6a22'], [80, 'white firm (main protein)', t70 + .8, C.graph]].forEach(([c, l, t0, col]) => { if (t > t0) { F.line(240, Y(c), 300, Y(c), { col: C.red, w: 2, draw: ss(R(t, t0, .3)) }); F.txt(c + ' °C', 310, Y(c) + 12, { size: 40, f: 'hand', col: C.red, write: ss(R(t, t0 + .1, .4)) }); F.txt(l, 450, Y(c) + 12, { size: 34, f: 'hand', col, write: ss(R(t, t0 + .3, .6)) }); } });
   // halved boiled egg (right): white sets past 63, yolk past 70
-  const cx = 790, cy = 1000, wk = clamp((v - 58) / 10), yk = clamp((v - 66) / 6), shell = el(cx, cy, 110, 140, 48);
+  const cx = 790, cy = 1000, wk = clamp((v - 58) / 10), yk = clamp((v - 66) / 6), wob = (1 - yk * .4) * .07 * Math.sin(t * 7), shell = el(cx, cy, 110 * (1 + wob), 140 * (1 - wob), 48);
   if (wk > 0) F.hatch(shell, 'graph', { alpha: .45 * wk + (v > 80 ? .3 : 0) }); F.pencil(shell, { w: 2.4, seed: 4 });
-  const yo = el(cx, cy + 16, 52, 52, 36); F.hatch(yo, 'ochre', { alpha: .5 + .45 * yk }); F.pencil(yo, { w: 2, col: '#8a6a22', seed: 6 });
+  const yo = el(cx, cy + 16, 52 * (1 - wob * 1.5), 52 * (1 + wob * 1.5), 36); F.hatch(yo, 'ochre', { alpha: .5 + .45 * yk }); F.pencil(yo, { w: 2, col: '#8a6a22', seed: 6 });
   if (yk < .9) for (let i = 0; i < 3; i++) F.pencil(el(cx, cy + 16, 20 + i * 11, 20 + i * 11, 24), { w: 1, col: '#8a6a22', alpha: .4 * (1 - yk), dash: [4, 6] });
+  steam(790, 830, t, 4, 150, C.redL); steam(200, 470, t + 1.3, 2, 90, C.redL);
   if (t > s(9) + 1.4) { const k = R(t, s(9) + 1.4, .8); for (let i = 0; i < 4; i++) { const u = (t * .8 + i / 4) % 1; F.circ(700 + i * 55, 1060 + u * 90, 7, { w: 1.6, col: C.navy, alpha: k * (1 - u) }); } F.seal('RUBBERY', 960, 620, ss(R(t, s(9) + 2.4, .3)), { size: 30, f: 'mono', fs: 26, rot: .05 }); note('too many links', 290, 1160, 690, 1020, k, { col: C.red, size: 38 }); }
   caption(t);
 }
@@ -129,7 +134,8 @@ function page5(t, p) {   // uncook? not in a kitchen (red X); 2015: dissolve, sp
   // right: the vortex fluid device (a tilted spinning tube), tangle in, one protein ball out
   if (t > s(12) - .2) { const k = ss(R(t, s(12) - .2, .8)), cx = 680, cy = 700, ang = -.6;
     g.save(); g.translate(cx, cy); g.rotate(ang); const tube = [[-60, -260], [60, -260], [60, 260], [-60, 260]]; F.hatch(tube, 'navyL', { alpha: .35 * k }); F.pencil(tube, { w: 2.4, draw: k, close: true });
-    for (let i = 0; i < 6; i++) { const y = -220 + i * 80, ph = t * 6 + i; F.pencil(el(0, y, 52, 14, 24, ph, ph + 4.2), { w: 1.6, col: C.navy, alpha: .8 * k }); } g.restore();
+    for (let i = 0; i < 6; i++) { const y = -220 + i * 80 + ((t * 120) % 80), ph = t * 9 + i; F.pencil(el(0, y, 52, 16, 24, ph, ph + 4.2), { w: 2.2, col: C.navy, alpha: .85 * k }); }
+    for (let i = 0; i < 14; i++) { const u = (t * .6 + i / 14) % 1, xx = Math.sin(u * 30 + i) * 40; F.circ(xx, -250 + u * 500, 6, { w: 2, col: C.red, alpha: k }); } g.restore();
     F.pencil([[cx - 40, cy + 300], [cx + 120, cy + 300]], { w: 2, alpha: k }); F.pencil([[cx + 40, cy + 300], [cx + 40, cy + 220]], { w: 3, alpha: k });
     F.seal('2015', 880, 560, ss(R(t, s(12) + .2, .3)), { size: 40, round: true, f: 'mono', fs: 24 });
     mono('UC IRVINE + FLINDERS UNIV.', 80, 470, { size: 20, type: (t - s(12) - .4) * 40, col: '#45454c' });
@@ -159,14 +165,14 @@ function page6(t, p) {   // payoff strip (ball -> strand -> net), the question, 
 const PAGES = { 1: page1, 2: page2, 3: page3, 4: page4, 5: page5, 6: page6 };
 
 function scene(t) {
-  F.begin(); counter(); const p = pageAt(t);
+  BOIL = Math.floor(t * 4) * 1.7; F.begin(); counter(); const p = pageAt(t);
   const pi = PG.indexOf(p); if (pi > 0 && t < p[0] + .35) { const q = PG[pi - 1]; F.alpha(1 - ss(R(t, p[0], .35))); PREV = true; PAGES[q[2]](Math.min(t, q[1] - .01), q); PREV = false; F.alpha(1); }
   F.alpha(inkA(t, p)); PAGES[p[2]](t, p); F.alpha(1);
 }
 window.DUR = TL.total;
 // loop: in the last 0.5 s the end page's ink fades off (paper stays) and page 1 inks back in exactly as frame 0
 window.seek = t => { const T = TL.total, a = T - .5; if (t <= a) return scene(t);
-  const u = (t - a) / .5; F.begin(); counter(); if (u < .55) { F.alpha(1 - ss(u / .55)); page6(Math.min(t, T - .5), PG[5]); } else { F.alpha(ss((u - .55) / .45)); page1(0); } F.alpha(1); };
+  const u = (t - a) / .5; BOIL = Math.floor(t * 4) * 1.7; F.begin(); counter(); if (u < .55) { F.alpha(1 - ss(u / .55)); page6(Math.min(t, T - .5), PG[5]); } else { F.alpha(ss((u - .55) / .45)); page1(0); } F.alpha(1); };
 window.render = window.seek;
 // cover (rule 11): the question big inside y 300-1620, the egg setting in the pan
 window.thumb = () => { F.begin(); counter();
