@@ -17,6 +17,7 @@ OVR = {
     "barcode": {"spot": (44, 1360), "hide": [(7.0, 99.0)]},  # giant headlines fill nearly every frame: badge shows only 5-6.7 s (12 DIGITS lands at 7.0 s), low-left inside the safe zone
     "recommend": {"spot": (44, 1366), "hide": [(4.7, 8.6), (52.6, 57.0)]},  # signs/boards fill the top; low-left above the captions
     # H2 badge fix, Oct 28 (TikTok safe zone: y >= 260, bottom edge <= 1440, out of the right button column at y >= 840)
+    "stomachgrowl": {"spot": ("R", 260)},   # hanging signs moved down to y 340 so the top-right badge clears them
     "thermos": {"spot": (44, 1360), "hide": [(17.27, 21.6), (22.19, 27.2), (46.05, 51.7)]},   # under the typed caption; hidden while a caption runs to 3 lines
     "ouija": {"spot": (44, 1200)},     # auto spot was y 196; low-left crosses only puppet art
     "match": {"spot": (44, 1320)},     # top spots hit the HALF IS ON THE BOX title; low-left above the caption box
