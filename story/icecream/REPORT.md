@@ -11,3 +11,9 @@
 - v4: painted overhead (textured sand, foam, crowds in red/teal formations, glints, tilt-shift), bigger rivals in the side-by-side wides, earthier wood. Sheet `compare_v4.jpg`.
 - v5 (rendering): material pass on characters and props (soft lit-to-shaded volume, light grain), narrower boardwalk.
 - Every version's notes and remaining gaps: `CHANGELOG.md`. QA has been WARN-only throughout (right-column flags on the end-card question; wide shot touching the frame edges).
+
+## Oct 29, v6-v9 (current best: v9)
+- v6: crowds of each side's customers behind each vendor (the reference's armies). v7: far mountains, hills and a lighthouse. v8: night stand-off lit by lanterns; scoops in hand. v9: deeper night.
+- Current best render: `story/icecream/icecream_v9.mp4` (67 s, af_heart, 1-2 word captions, loop on the DISTANCE APART sign). Sheet: `compare_v9.jpg`. QA WARN only (listed in CHANGELOG).
+- Honest status: much closer than v1/v2 in colour bands, ground, haze, crowds, rim light and the overhead, but still distinguishable from the reference. The reference has more varied, detail-rich sets and stronger lighting moods. Next steps are in CHANGELOG v9.
+- Nothing posted or scheduled.

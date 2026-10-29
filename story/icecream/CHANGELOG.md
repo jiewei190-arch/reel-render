@@ -81,3 +81,12 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
 - Vendors keep to the outer side of their cart until the carts are far apart (fixes vendors crossing over when the carts edge away).
 - Render `icecream_v8.mp4`, sheet `compare_v8.jpg` (the time-lapse pair is swapped for a night pair: ref 26.5 s vs ours 49.5 s). QA WARN only: right-column content 35.5-38.8 s and 60.8-66.5 s; wide shot at the edges 13.5-16 s.
 - Biggest gap now: **night contrast.** Ours is hazy and washed out (the bloom and haze lift the blacks). The reference's night is deep, saturated blue with crisp warm highlights.
+
+## v9 (Oct 29): deeper night
+- Night stand-off: a contrast/saturation pass (contrast 1.35, saturate 1.3, brightness .92) before a stronger blue wash, so the blacks stay darker and the lamps read crisper.
+- Render `icecream_v9.mp4` (current best), sheet `compare_v9.jpg`. QA WARN only: right-column content 35.5-38.8 s and 60.8-64.5 s; wide shot at the frame edges 13.5-16 s.
+- Still off (next candidates):
+  1. The night keeps a cream haze band at the horizon (the day horizon haze isn't switched off at night); the reference's night has crisp, saturated blues there.
+  2. The reference's settings are more varied (courtyard, interiors, a forge, a moonlit street); ours is one beach plus two prop shots. That's a story choice, but it limits how many lighting moods we show.
+  3. Fine painterly texture in the far scenery (the reference's castle and trees carry more small detail).
+  4. QA warnings: the YES/NO pennants on the question shot reach the right column; the quarter-position wide shot touches the frame edges.
