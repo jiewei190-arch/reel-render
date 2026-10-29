@@ -1,7 +1,7 @@
 // t_icecream.js: "Why do rival ice-cream carts end up side by side?" (Hotelling's law) in the story-fable look (template #30),
 // on H1's own fable.js. Red cart vs teal cart; the "STEPS APART" counter sign opens and closes the reel (loop).
 // Every cut, caption chunk and grade change is driven by the line timings in tl_icecream.js.
-import { create, W, H, TAU, clamp, lerp, ss, eio, fr, hash, mix, rgba, shade, C } from './styles/storyfable/fable.js';
+import { create, W, H, TAU, clamp, lerp, ss, eio, fr, hash, mix, rgba, shade, C } from './styles/storyfable/fable_h1_v1.js';
 await Promise.all(['900 78px Nunito', '700 40px Cinzel'].map(f => document.fonts.load(f)));
 const F = create(document.getElementById('c')), g = F.g;
 const TL = window.TL, P = TL.p, T = i => P[i].start, E = i => P[i].end, r = (i, d) => T(i) + d, TOT = TL.total;
