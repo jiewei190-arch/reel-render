@@ -7,6 +7,7 @@ const F = createFable(document.getElementById('c'));
 const TLV = window.TL, P = TLV.p, DUR = TLV.total, N = P.length, s = i => P[i].start;
 const FIG = 170 / 640, CAR = 150 / 420, SIGN = 230 / 760;
 const C = () => F.ctx();
+PAL.skyMid = '#6aa9e0'; PAL.skyTop = '#3f8bd6'; // v4: sky band measured paler than the reference (s0.15 vs 0.25)
 const mixc = (a, b, k) => { const h = x => parseInt(x.slice(1), 16), A = h(a), B = h(b); return '#' + [16, 8, 0].map(sh => Math.round(lerp((A >> sh) & 255, (B >> sh) & 255, k)).toString(16).padStart(2, '0')).join(''); };
 
 // ---------- cast (ours) ----------
@@ -17,6 +18,10 @@ function cap(col, colD, turn = 0, dir = 1) { const x = turn * 26, c = C(), dome 
   F.fs(dome, col, 6); F.shade(dome, colD, 16, 0); F.fs(dome, null, 6);
   F.fs(() => { c.moveTo(x - 20 * dir, -606); c.quadraticCurveTo(x + 110 * dir, -616, x + 160 * dir, -590); c.quadraticCurveTo(x + 100 * dir, -588, x - 20 * dir, -590); c.closePath(); }, colD, 5); F.fs(F.ell(x, -706, 14, 9), colD, 3); }
 function mayor(t, o = {}) { F.figure({ ...MAYOR, t, ...o }); topHat(o.turn || 0); F.fs(F.poly([[-60, -460], [-30, -470], [70, -190], [44, -180]]), '#e9b949', 4); }
+// held props (drawn at the hand, local figure units): the red commuter grips a steering wheel, the teal one a briefcase
+const wheelProp = () => { const c = C(); c.save(); c.translate(14, 44); c.scale(1.45, 1.45); F.fs(F.ell(0, 0, 70, 70), null, 0); c.lineWidth = 20; c.strokeStyle = PAL.ink; c.beginPath(); c.arc(0, 0, 66, 0, Math.PI * 2); c.stroke(); c.lineWidth = 12; c.strokeStyle = PAL.sideA; c.beginPath(); c.arc(0, 0, 66, 0, Math.PI * 2); c.stroke();
+  F.line([[-62, 0], [62, 0]], 12); F.line([[0, 0], [0, 62]], 12); F.fs(F.ell(0, 0, 20, 20), PAL.sideAD, 5); c.restore(); };
+const caseProp = () => { C().scale(1.3, 1.3); F.fs(F.rr(-58, 22, 116, 84, 12), '#8a5a3a', 5); F.fs(F.rr(-58, 22, 116, 22, 8), '#6e4630', 5); F.fs(F.rr(-22, 2, 44, 26, 10), null, 5); F.fs(F.rr(-8, 40, 16, 12, 3), PAL.gold, 3); };
 function driver(side, t, o = {}) { const B = side ? TEALD : REDD; F.figure({ ...B, t, ...o }); cap(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, o.turn || 0, o.flip ? -1 : 1); }
 
 // ---------- props (our own, drawn with the module's outline + shade language) ----------
@@ -84,33 +89,33 @@ function roadQuad(xa, xb, z0, z1, w, col) { const g = F.g, n = F.cam().z + 20, a
 
 // ---------- SETS ----------
 function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const g = F.g, hor = F.cam().hor;
-  g.fillStyle = F.vgrad(hor, H, [[0, '#d8c8a6'], [1, '#bfa67a']]); g.fillRect(0, hor, W, H - hor);
+  g.fillStyle = F.vgrad(hor, H, [[0, '#e0cfa6'], [1, '#c9ad78']]); g.fillRect(0, hor, W, H - hor);
   tiles(-1600, 1600, F.cam().z + 20, 3400, '#dccaa2', '#cfbb92', 90); F.groundQuad(-30, F.cam().z + 20, 30, 3400, '#e9b949', 0);
   for (let i = -3; i <= 3; i++) F.put(i * 520 + 120 * (i % 2), 3600 + 200 * Math.abs(i % 2), 1, () => house({ roof: i % 2 ? PAL.sideB : PAL.sideA, shut: i % 2 ? PAL.sideBD : PAL.sideAD, chimney: i % 3 === 0, w: 460, h: 420 }), { rim: true });
   F.put(0, 2600, .9, () => fountain(t), { rim: true }); F.put(-900, 2300, .9, () => stall(PAL.sideA), { rim: true, shadow: true }); F.put(900, 2400, .9, () => stall(PAL.sideB), { rim: true, shadow: true });
   F.put(-560, 1500, .45, () => banner(PAL.sideA, PAL.sideAD, t, 0), { rim: true, shadow: true }); F.put(560, 1500, .45, () => banner(PAL.sideB, PAL.sideBD, t, 2), { rim: true, shadow: true });
   F.put(-760, 1100, .35, () => lamp(0), { rim: true, shadow: true }); F.put(760, 1100, .35, () => lamp(0), { rim: true, shadow: true });
-  F.put(0, 760, .42, () => emblem(), {});
+  F.put(0, o.duo ? 520 : 760, .42, () => emblem(), {});
   F.put(o.duo ? 0 : -120, o.duo ? 720 : 640, SIGN * (o.duo ? 1.4 : 1.08), () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
   F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
   // the two commuters stand up front, the reference's big-heads-in-the-foreground staging
-  if (o.duo) { const [ea, eb] = o.duo; F.put(-112, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20 }), { rim: true, shadow: true });
-    F.put(84, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 20 }), { rim: true, shadow: true }); }
+  if (o.duo) { const [ea, eb] = o.duo; F.put(-112, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
+    F.put(84, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 80, bendF: 10, hold: caseProp }), { rim: true, shadow: true }); }
   F.put(-330, 240, .5, () => flowerBox(PAL.sideA), {}); F.put(380, 230, .5, () => flowerBox(PAL.sideB), {});
   groundHaze(); F.flush(); }
 function setValley(t, o) { F.sky(t, { sunX: 780, sunY: 340 }); skyline(t, { town: false }); const g = F.g, hor = F.cam().hor;
-  g.fillStyle = F.vgrad(hor, H, [[0, '#b6b783'], [.25, '#9aae5e'], [1, '#6f8f3a']]); g.fillRect(0, hor, W, H - hor);
-  for (let r = 0; r < 7; r++) for (let k = -6; k <= 6; k++) { const z = 3000 + r * 900, x = k * 700 + (r % 2) * 350; F.groundQuad(x, z, x + 680, z + 860, ['#a9b86a', '#c9b86a', '#8fae5a', '#b7a85a'][Math.floor(hash(r * 13 + k) * 4)], 0); }
+  g.fillStyle = F.vgrad(hor, H, [[0, '#cdc08c'], [.25, '#b9ad62'], [1, '#9a8c48']]); g.fillRect(0, hor, W, H - hor);
+  for (let r = 0; r < 7; r++) for (let k = -6; k <= 6; k++) { const z = 3000 + r * 900, x = k * 700 + (r % 2) * 350; F.groundQuad(x, z, x + 680, z + 860, ['#c2b46a', '#d4bb6e', '#aab060', '#c9a95e'][Math.floor(hash(r * 13 + k) * 4)], 0); }
   pebbleField(3000, ['#6d8a3a', '#a3b46a', 'rgba(60,80,30,.4)', '#b9c27e'], 360);
-  roadQuad(-120, -1500, F.cam().z + 20, 9000, 120, '#a58a64'); roadQuad(120, 1500, F.cam().z + 20, 9000, 120, '#a58a64');
+  roadQuad(-120, -1500, F.cam().z + 20, 9000, 120, '#bfa271'); roadQuad(120, 1500, F.cam().z + 20, 9000, 120, '#bfa271');
   for (let z = 200; z < 9000; z += 420) { const u = z / 9000; [[-120, -1500], [120, 1500]].forEach(([xa, xb]) => { const a = F.proj(lerp(xa, xb, u), 0, z), b = F.proj(lerp(xa, xb, (z + 180) / 9000), 0, z + 180); if (a.dz < 40) return; g.strokeStyle = 'rgba(255,245,215,.9)'; g.lineWidth = Math.max(1, 14 * a.s); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }); }
   for (let z = 400; z < 8000; z += 520) [[-120, -1500, -1], [120, 1500, 1]].forEach(([xa, xb, sd]) => F.put(lerp(xa, xb, z / 9000) + sd * 200, z, .25, () => { F.fs(F.rr(-16, -150, 32, 150, 6), PAL.woodL, 5); F.fs(F.rr(-16, -150, 32, 40, 6), sd < 0 ? PAL.sideA : PAL.sideB, 5); }));
   F.put(0, 9600, 3.2, () => mill(t), {}); F.put(-1700, 8800, 1.3, () => house({ roof: PAL.sideA }), {}); F.put(1700, 8800, 1.3, () => house({ roof: PAL.sideB }), {});
   for (let i = 0; i < 10; i++) { const sd = i % 2 ? 1 : -1; F.put(sd * (1800 + 400 * hash(i)), 1500 + i * 700, 1, () => tree({}), { rim: true, shadow: true }); }
   const n = o.cars ?? 10; for (let i = 0; i < n; i++) { const sd = i % 2, u = ((t * .03 + i * .1) % 1), z = lerp(300, 8000, u), x = lerp(sd ? 120 : -120, sd ? 1500 : -1500, z / 9000); F.put(x, z, CAR, () => car(sd ? PAL.sideB : PAL.sideA, sd ? PAL.sideBD : PAL.sideAD, { back: true, t, driver: () => driver(sd, t, {}) }), { rim: true, shadow: true }); }
   if (o.posts) { F.put(-460, 900, SIGN * .9, () => signpost(['RED ROUTE', 'narrow street', '+ highway'], '#f6dcd8', PAL.sideAD), { sharp: true, rim: true, shadow: true }); F.put(460, 900, SIGN * .9, () => signpost(['TEAL ROUTE', 'highway', '+ narrow street'], '#d6efec', PAL.sideBD), { sharp: true, rim: true, shadow: true }); }
-  if (o.walkers !== false) [0, 1].forEach(sd => F.put(sd ? 105 : -125, F.cam().z + 330 + sd * 20, FIG, () => driver(sd, t, { expr: sd ? 'smug' : 'neutral', walk: t * 1.3 + sd * .5, turn: sd ? -.25 : .25, look: sd ? -1 : 1, flip: !!sd }), { rim: true, shadow: true, sharp: true }));
+  if (o.walkers !== false) [0, 1].forEach(sd => F.put(sd ? 105 : -125, F.cam().z + 330 + sd * 20, FIG, () => driver(sd, t, { expr: sd ? 'smug' : 'neutral', walk: t * 1.3 + sd * .5, turn: sd ? -.25 : .25, look: sd ? -1 : 1, flip: !!sd, armF: sd ? 80 : 30, bendF: sd ? 10 : 20, hold: sd ? caseProp : wheelProp }), { rim: true, shadow: true, sharp: true }));
   F.put(-160, 140, .5, () => tuft(3)); F.put(190, 130, .5, () => tuft(9)); groundHaze(); F.flush(); }
 const NODE = { home: [540, 380], A: [230, 820], B: [850, 820], mill: [540, 1260] };
 function setMap(t, o) { const g = F.g; g.fillStyle = '#8bb85c'; g.fillRect(0, 0, W, H);

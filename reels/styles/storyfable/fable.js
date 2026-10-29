@@ -141,6 +141,7 @@ export function createFable(canvas) {
       F.line([[sx, sy], [ex, ey], [hx, hy]], 6);
       if (front && hold === 'scoop') { g.save(); g.translate(hx, hy); g.rotate(-1.1); F.fs(F.rr(-5, -6, 64, 12, 6), '#cfd3d8', 4); F.fs(F.ell(76, 0, 20, 16), '#cfd3d8', 4); F.fs(F.ell(78, -6, 16, 12), PAL.cream, 0); g.restore(); }
       if (front && hold === 'cone') { g.save(); g.translate(hx, hy - 6); F.fs(F.poly([[-18, -4], [18, -4], [0, 50]]), PAL.gold, 4); for (let k = -1; k <= 1; k++) F.line([[k * 8 - 6, 4], [k * 8 + 6, 22]], 2, 'rgba(120,70,20,.6)'); F.fs(F.ell(0, -20, 24, 20), robeL, 4); F.fs(F.ell(-7, -27, 7, 5), 'rgba(255,255,255,.7)', 0); g.restore(); }
+      if (front && typeof hold === 'function') { g.save(); g.translate(hx, hy); hold(); g.restore(); } // H3: any held prop, drawn at the hand
       F.fs(F.ell(hx, hy, 11, 11), PAL.head, 4); };
     arm(armB, bendB, false);
     // body: narrow capsule; long robe reaches the floor, short tunic stops at the knees
