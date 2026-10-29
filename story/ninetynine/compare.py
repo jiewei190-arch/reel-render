@@ -4,7 +4,7 @@ import subprocess, sys, tempfile, os
 from PIL import Image, ImageDraw, ImageFont
 ref, ours, out, lab = sys.argv[1:5]
 PAIRS = [  # (shot type, reference time, our time)
-    ('hook: counter prop', 0.5, 0.6), ('medium: character', 3.5, 8.0), ('wide: two sides', 16.6, 55.0), ('medium: other side', 5.0, 12.0),
+    ('hook: counter prop', 0.5, 0.6), ('medium: character', 3.5, 8.0), ('wide: two sides', 16.6, 5.4), ('medium: other side', 5.0, 12.0),
     ('blueprint', 36.5, 27.6), ('overhead', 12.2, 38.0), ('candle-lit night', 24.5, 46.0), ('loop end: same prop', 44.0, 66.5)]
 FONT = '/home/user/reel-render/reels/styles/fieldbook/fonts/Nunito.ttf'
 td = tempfile.mkdtemp()

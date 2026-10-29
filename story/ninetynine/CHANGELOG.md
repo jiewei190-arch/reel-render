@@ -103,3 +103,35 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 2. **Wide shot.** The boards still sit by the shops. The reference has a central object on the track between the two sides.
 3. **Right safe-column overlaps** (above).
 4. **Near-horizon band is darker than the reference's cream haze.**
+
+## v4 (Oct 29)
+**Fixed: the biggest v3 gap, camera motion.** The wide-shot composition gap is also fixed.
+- **Continuous opening move (0-6.6 s), no cuts.** It replaces three separate shots.
+  - The camera starts on the price boards.
+  - It pulls back past the two bakers, who come into frame at the left and right edges.
+  - It settles on the wide shot: bakers about a quarter of the frame tall at the edges, the road running to the vanishing point between them, and the two boards standing side by side on it like the reference's central object. The coin emblem sits in front of the boards.
+- **Every street shot now moves in three keys** (push, truck, pull), giving a new framing every 1.5-2 s:
+  - the red and teal mediums
+  - the teal board close-up, with a slight crane
+  - the "even again" wide, with a push and a truck
+- **Second whip pan** into the "even again" wide (whoosh SFX). Whip pans are at most every other cut.
+- **Safe zones:** the till and drawer moved 90 px left and the cashier 70 px left, and the blueprint sheet is a little narrower. The blueprint and night-till right-column warnings are gone.
+- **Measured bands** (`measure.py`, ref 16.6 s vs ours 5.4 s):
+
+  | Band | Reference | v4 |
+  |---|---|---|
+  | Sky | s .25 | s .18 (clouds cover part of the band) |
+  | Ground mid | s .51, v .73 | s .48, v .66 |
+  | Ground low | s .57, v .59 | s .54, v .61 |
+  | Whole frame | s .35, luma SD 49 | s .35, luma SD 49 |
+
+- QA: WARN only.
+  - Right column: the hook and loop-end board and emblem edges.
+  - Outer 24 px.
+
+**Still off (biggest first)**
+1. **Near-horizon band** is darker and more saturated than the reference's open cream haze (v .65 vs .89). The shops sit in that band. Options: push the shops further back, or add stronger aerial haze.
+2. **Teal medium foreground.** The blurred queue customer is too big and covers a third of the frame. The reference uses a smaller foreground prop.
+3. **Hook and end boards** still touch the right safe column.
+4. **Sky band** is a little paler (s .18 vs .25), and the reference's clouds have more contour arcs.
+5. **Fine texture.** The reference has more texture on characters' clothes (stitch seams, patterns) and props (wood grain).

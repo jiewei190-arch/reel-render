@@ -87,7 +87,7 @@ function blueprint(t, t0) { const k = t - t0;   // a baker's desk seen from abov
   const de = P(0, d1); g.fillStyle = '#5a3420'; g.fillRect(0, de.y - 6, W, 14); g.strokeStyle = INK; g.lineWidth = 4; g.beginPath(); g.moveTo(0, de.y - 6); g.lineTo(W, de.y - 6); g.stroke();
   // the sheet in perspective, drawn in thin strips
   let dd = 0; withCtx(SC.getContext('2d'), () => { dd = sheetContent(k); });
-  const zN = 560, zF = 1330, SW = 700; const S = v => { const z = zF + (zN - zF) * v; return P(0, z); };
+  const zN = 600, zF = 1350, SW = 620; const S = v => { const z = zF + (zN - zF) * v; return P(0, z); };
   const shadow = [P(-SW / 2 + 30, zN + 30), P(SW / 2 + 30, zN + 30), P(SW / 2 + 30, zF + 30), P(-SW / 2 + 30, zF + 30)]; g.fillStyle = 'rgba(40,20,10,.35)'; g.beginPath(); shadow.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.fill();
   for (let r = 0; r < 940; r += 4) { const a = S(r / 940), b = S((r + 4) / 940), w = SW * a.k; g.drawImage(SC, 0, r, 840, 4, 540 + (-SW / 2 - cx) * a.k, a.y, w, b.y - a.y + .6); }
   const e = [P(-SW / 2, zN), P(SW / 2, zN), P(SW / 2, zF), P(-SW / 2, zF)]; g.strokeStyle = INK; g.lineWidth = 5; g.beginPath(); e.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.stroke();
@@ -148,15 +148,16 @@ function nightTill(t, t0) { const k = t - t0;   // night, inside the shop: panel
   const pk = back(seg(k, .3, .6), 2); if (pk > 0) { g.save(); g.translate(280, 450); g.rotate(-.06); g.scale(pk, pk); ink(() => { g.beginPath(); g.rect(-200, -140, 400, 280); }, '#efe0bd', { lw: 5, shade: '#e0cca2', sx: 120 }); ink(() => { g.beginPath(); g.arc(0, -122, 12, 0, TAU); }, '#c8443a', { lw: 3, rim: false }); g.fillStyle = INK; g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = '700 50px Cinzel'; g.fillText('LEGEND', 0, -70); g.font = '700 32px Cinzel'; g.fillText('odd price =', 0, -8); g.fillText('open the till', 0, 38); g.fillText('for change', 0, 84);
     const st = seg(k, 4.6, 4.85); if (st > 0) { g.save(); g.translate(10, 10); g.rotate(-.16); const sc = lerp(2.2, 1, eo(st)); g.scale(sc, sc); g.globalAlpha = clamp(st * 2) * .92; g.strokeStyle = '#d8382c'; g.lineWidth = 9; g.strokeRect(-190, -54, 380, 108); g.fillStyle = '#d8382c'; g.font = '700 58px Cinzel'; g.fillText('UNPROVEN', 0, 6); g.restore(); } g.restore(); }
   // the cashier behind the counter (only the top half shows)
-  const dr = ss(seg(k, 1.4, 1.9)); g.save(); g.translate(400, 1290); g.scale(2.7, 2.7); figure({ col: '#7d5aa6', colS: '#5f4383', hat: 'cap', hatBand: '#2a8a84', stache: 'brush', expr: dr > .5 ? 'shock' : 'sly', look: dr > .5 ? .9 : .3, turn: dr > .5 ? .5 : .1, t, shadow: false, armF: { x: 64, y: -110 + 20 * dr, bend: 10 } }); g.restore();
+  const dr = ss(seg(k, 1.4, 1.9)); g.save(); g.translate(330, 1290); g.scale(2.7, 2.7); figure({ col: '#7d5aa6', colS: '#5f4383', hat: 'cap', hatBand: '#2a8a84', stache: 'brush', expr: dr > .5 ? 'shock' : 'sly', look: dr > .5 ? .9 : .3, turn: dr > .5 ? .5 : .1, t, shadow: false, armF: { x: 64, y: -110 + 20 * dr, bend: 10 } }); g.restore();
   // counter: top surface + plank front
   ink(() => { g.beginPath(); g.moveTo(-100, 1000); g.lineTo(W + 100, 1000); g.lineTo(W + 100, 1080); g.lineTo(-100, 1080); g.closePath(); }, '#9a6a3e', { lw: 6, rim: false });
   ink(() => { g.beginPath(); g.rect(-100, 1080, W + 200, 1200); }, '#6b4428', { lw: 6, rim: false }); for (let x = -100; x < W + 100; x += 110) { g.strokeStyle = 'rgba(30,15,10,.5)'; g.lineWidth = 4; g.beginPath(); g.moveTo(x, 1080); g.lineTo(x, 2280); g.stroke(); } g.strokeStyle = 'rgba(30,15,10,.6)'; g.lineWidth = 8; g.beginPath(); g.moveTo(-100, 1180); g.lineTo(W + 100, 1180); g.stroke();
   // brass till on the counter; drawer slides toward us, a coin pops
+  g.save(); g.translate(-90, 0);
   ink(() => { g.beginPath(); g.roundRect(560, 700, 380, 300, 22); }, '#c9973e', { shade: '#a87a2c', sx: 820, lw: 6 }); for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) ink(() => { g.beginPath(); g.arc(620 + c * 86, 760 + r * 64, 24, 0, TAU); }, '#f3ead6', { lw: 3, rim: false });
   ink(() => { g.beginPath(); g.roundRect(690, 640 - 40 * back(seg(k, 1.4, 1.7), 2), 120, 60, 10); }, '#f3ead6', { lw: 4 }); g.fillStyle = INK; g.font = '700 34px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('$', 750, 670 - 40 * back(seg(k, 1.4, 1.7), 2));
   ink(() => { g.beginPath(); g.rect(550 - 20 * dr, 990 + dr * 40, 400 + 40 * dr, 60 + dr * 40); }, '#a87a2c', { lw: 5 }); if (dr > 0) for (let i = 0; i < 3; i++) { g.fillStyle = '#f2d16b'; g.strokeStyle = INK; g.lineWidth = 3; g.beginPath(); g.ellipse(640 + i * 110, 1040 + dr * 40, 34, 12, 0, 0, TAU); g.fill(); g.stroke(); }
-  g.restore();
+  g.restore(); g.restore();
   // blurred foreground: a basket of loaves at the lower left, close to the lens
   g.save(); g.filter = 'blur(9px)'; g.translate(110, 1840); g.scale(2.2, 2.2); ink(() => { g.beginPath(); g.moveTo(-90, -40); g.lineTo(90, -40); g.lineTo(70, 40); g.lineTo(-70, 40); g.closePath(); }, '#b07a3c', { lw: 5, shade: '#8e5f2b', sx: 30 }); for (let i = 0; i < 3; i++) loaf(-50 + i * 50, -46, 1); g.restore();
   // candle on the counter + warm glow over everything
@@ -172,7 +173,7 @@ const SH = [
   [s(4) - .1, s(5) - .1, t => { camKeys(t, [[s(4) - .1, { x: 0, y: 60, z: 260, focus: 560, dof: 7 }], [s(5), { x: 0, y: 70, z: 320, focus: 560, dof: 7 }]]); world(t, { fg: 1 });
     const sp = (t - s(4)) * 9; const p = proj(0, 0, 560); if (p) { g.save(); g.translate(p.x, p.y - 50 * p.k * Math.abs(Math.sin(sp * .3)) * (1 - seg(t, s(4) + .8, s(4) + 1.4))); coin(0, 0, p.k * 1.2, sp, t); g.restore(); } }],
   [s(5) - .1, s(7) - .2, t => { camKeys(t, [[s(5) - .1, { x: 158, y: 150, z: 380, focus: 520, dof: 6 }], [s(6), { x: 175, y: 160, z: 450, focus: 450, dof: 6 }], [s(7), { x: 150, y: 150, z: 430, focus: 470, dof: 6 }]]); const sweep = seg(t, s(5) + .4, s(5) + 2.0);
-    world(t, { sharpBoards: true, fg: 1, boardO1: { glow: Math.min(3, Math.floor(sweep * 4)), glowK: sweep < 1 ? 1 : .6 + .4 * Math.sin(t * 4) } });
+    world(t, { sharpBoards: true, fg: 1, emZ: 2600, boardO1: { glow: Math.min(3, Math.floor(sweep * 4)), glowK: sweep < 1 ? 1 : .6 + .4 * Math.sin(t * 4) } });
     if (t > s(6) - .1) { const k = back(seg(t, s(6), s(6) + .3), 2); g.save(); g.translate(300, 520); g.scale(k, k); ink(() => { g.beginPath(); g.ellipse(0, 0, 230, 110, 0, 0, TAU); }, '#fbf3df', { lw: 5 }); for (let i = 0; i < 3; i++) ink(() => { g.beginPath(); g.arc(150 - i * 40, 130 + i * 40, 18 - i * 4, 0, TAU); }, '#fbf3df', { lw: 4, rim: false }); g.fillStyle = INK; g.font = '700 60px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('2-something', 0, 4); g.restore(); } }],
   [s(7) - .2, s(9) - .2, t => blueprint(t, s(7) - .2)],
   [s(9) - .2, s(11) - .2, t => overhead(t, s(9) - .2)],
