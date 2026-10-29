@@ -17,9 +17,9 @@ function camKeys(t, keys) { let a = keys[0], b = keys[keys.length - 1]; for (let
 
 // ---------------- the street set ----------------
 const CUST = [['#d9a441', '#b78327'], ['#7d5aa6', '#5f4383'], ['#6f8f5a', '#55703f'], ['#c27a8a', '#9e5d6c'], ['#5a7ea6', '#425f83'], ['#b98a5a', '#966a3f']];
-function baker(side, t, o = {}) { const red = side < 0; return figure({ col: red ? '#f2ece0' : '#f2ece0', colS: '#d8cfbd', apron: red ? RED : TEAL, hat: 'toque', hatBand: red ? RED : TEAL, stache: red ? 'handle' : null, goatee: !red, t, ...o }); }
+function baker(side, t, o = {}) { const red = side < 0; return figure({ col: red ? RED : TEAL, colS: red ? REDS : TEALS, apron: '#f4eedf', hat: 'toque', hatBand: red ? RED : TEAL, stache: red ? 'handle' : null, goatee: !red, t, ...o }); }
 function customer(i, t, o = {}) { const [c, cs] = CUST[i % CUST.length]; return figure({ col: c, colS: cs, stache: i % 3 === 0 ? 'brush' : null, hat: i % 4 === 1 ? 'cap' : null, hatBand: cs, t, scale: .92, ...o }); }
-function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.00', '2.99'], prev = null, flip = 1, bakersOn = true, walkIn = 1, bird = 0 } = o;
+function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.00', '2.99'], prev = null, flip = 1, bakersOn = true, walkIn = 1, bird = 0, bk = [620, 1050], bx = 330, bz = 900 } = o;
   sky(t, mood); if (mood !== 2) { cloud(220 + t * 6, 300, 1.2, 3); cloud(780 + t * 4, 220, .9, 7); cloud(560 + t * 5, 420, .7, 11, .9); } farLand(t, mood); street(t, { mood });
   put(-900, 0, 1500, (g2, p) => bakery('RED', RED, REDS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
   put(900, 0, 1500, (g2, p) => bakery('TEAL', TEAL, TEALS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
@@ -27,19 +27,22 @@ function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.
   for (const sd of [-1, 1]) for (let z = 2400; z < 7000; z += 1100) put(sd * 1100, 0, z, () => { ink(() => { g.beginPath(); g.rect(-160, -380, 320, 380); }, mood === 2 ? '#6a6688' : '#e8d9b8', { shade: mood === 2 ? '#56537a' : '#d4c19c', sx: 60, lw: 5 }); ink(() => { g.beginPath(); g.moveTo(-190, -380); g.lineTo(0, -520); g.lineTo(190, -380); g.closePath(); }, '#8d4a3a', { lw: 5 }); ink(() => { g.beginPath(); g.rect(-60, -260, 120, 100); }, mood === 2 ? '#f5c66b' : '#9cc0d8', { lw: 4 }); }, { hazeBox: [-200, -540, 400, 560] });
   for (const sd of [-1, 1]) put(sd * 420, 0, 1100, () => { stick(0, 0, 0, -330, 0, 8); ink(() => { g.beginPath(); g.roundRect(-22, -380, 44, 54, 8); }, mood === 2 ? '#ffd27a' : '#e9e2c8', { lw: 4 }); if (mood === 2) { g.save(); g.globalCompositeOperation = 'lighter'; const lg = g.createRadialGradient(0, -352, 4, 0, -352, 160); lg.addColorStop(0, 'rgba(255,210,120,.6)'); lg.addColorStop(1, 'rgba(255,210,120,0)'); g.fillStyle = lg; g.fillRect(-160, -512, 320, 320); g.restore(); } });
   // price boards
-  put(-330, 0, 900, () => priceBoard('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
-  put(330, 0, 900, () => priceBoard('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });
+  put(-bx, 0, bz, () => priceBoard('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
+  put(bx, 0, bz, () => priceBoard('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });
   // bakers by their doors
-  if (bakersOn) { put(-620, 0, 1050, () => baker(-1, t, { expr: o.redExpr || 'glare', look: .6, turn: .3, armF: { x: 52, y: -100, bend: 12 }, talk: o.redTalk || 0, bird }));
-    put(620, 0, 1050, () => baker(1, t, { expr: o.tealExpr || 'smug', look: -.6, turn: -.3, armF: { x: 40, y: -160, bend: 20 }, hold: (x, y) => loaf(x + 6, y - 20, .9), talk: o.tealTalk || 0 })); }
+  if (bakersOn) { put(-bk[0], 0, bk[1], () => baker(-1, t, { expr: o.redExpr || 'glare', look: .6, turn: .3, armF: { x: 52, y: -100, bend: 12 }, talk: o.redTalk || 0, bird, ...(o.redO || {}) }));
+    put(bk[0], 0, bk[1], () => baker(1, t, { expr: o.tealExpr || 'smug', look: -.6, turn: -.3, armF: { x: 40, y: -160, bend: 20 }, hold: (x, y) => loaf(x + 6, y - 20, .9), talk: o.tealTalk || 0 })); }
   // queues
   for (let i = 0; i < tealQ; i++) { const z = 1150 - i * 120, x = 560 - i * 30 + (1 - walkIn) * (i * 160 - 500); put(x, 0, z, () => customer(i, t, { look: .8, turn: .2, walk: walkIn < 1 ? (t * 1.6 + i * .3) % 1 : -1 })); }
   for (let i = 0; i < redQ; i++) { const z = 1150 - i * 120, x = -560 + i * 30; put(x, 0, z, () => customer(i + 3, t, { look: -.8, turn: -.2, expr: 'neutral' })); }
   // foreground element: a flower barrel near the camera (blurred)
-  put(o.fgX ?? -260, 0, CAM.z + 260, () => { ink(() => { g.beginPath(); g.roundRect(-60, -110, 120, 110, 12); }, '#8a5a34', { shade: '#6e4628', sx: 20, lw: 4 }); for (let i = 0; i < 7; i++) { g.fillStyle = ['#e85a5a', '#f2c24e', '#ffffff'][i % 3]; g.beginPath(); g.arc(-48 + i * 16, -126 - 10 * hash(i), 12, 0, TAU); g.fill(); } g.fillStyle = '#5c8a3a'; g.fillRect(-56, -118, 112, 10); });
+  const fs = o.fg ?? -1; if (fs) put(CAM.x + fs * 230, 0, CAM.z + 330, () => { ink(() => { g.beginPath(); g.roundRect(-60, -110, 120, 110, 12); }, '#8a5a34', { shade: '#6e4628', sx: 20, lw: 4 }); for (let i = 0; i < 7; i++) { g.fillStyle = ['#e85a5a', '#f2c24e', '#ffffff'][i % 3]; g.beginPath(); g.arc(-48 + i * 16, -126 - 10 * hash(i), 12, 0, TAU); g.fill(); } g.fillStyle = '#5c8a3a'; g.fillRect(-56, -118, 112, 10); });
   flush();
 }
 
+// a two-tier birthday cake with a round tag (the round-price twist)
+function cake(x, y) { g.save(); g.translate(x, y); ink(() => { g.beginPath(); g.roundRect(-46, -40, 92, 40, 8); }, '#f2b8c6', { shade: '#d995a6', sx: 20, lw: 3.5 }); ink(() => { g.beginPath(); g.roundRect(-30, -72, 60, 34, 8); }, '#fbe6ea', { shade: '#efc9d1', sx: 12, lw: 3.5 });
+  ink(() => { g.beginPath(); g.arc(0, -82, 9, 0, TAU); }, '#d8343a', { lw: 3 }); dashes([[-40, -20], [40, -20]], 'rgba(255,255,255,.8)', 2.5); g.restore(); }
 // ---------------- other sets (screen space) ----------------
 function blueprint(t, t0) { const k = t - t0;   // desk + blue sheet; a glowing pen draws, labels pop, a red stamp slams
   g.fillStyle = '#3a2418'; g.fillRect(0, 0, W, H); const dg = g.createRadialGradient(240, 420, 40, 240, 420, 900); dg.addColorStop(0, 'rgba(255,190,110,.55)'); dg.addColorStop(1, 'rgba(255,190,110,0)'); g.fillStyle = dg; g.fillRect(0, 0, W, H);
@@ -81,23 +84,24 @@ function nightTill(t, t0) { const k = t - t0;   // candle-lit counter, brass til
 
 // ---------------- shots ----------------
 const SH = [
-  [0, s(1) - .15, t => { camKeys(t, [[0, { x: 0, z: 120, focus: 900, dof: 4 }], [1.6, { x: -80, z: 200, focus: 900, dof: 4 }], [s(1) - .5, { x: 0, z: -40, focus: 900, dof: 3 }]]); world(t, { sharpBoards: true, fgX: -200 }); }],
-  [s(1) - .15, s(2) - .15, t => { camKeys(t, [[s(1) - .15, { x: 0, z: -700, focus: 1100, dof: 1.8 }], [s(2), { x: 60, z: -560, focus: 1100, dof: 1.8 }]]); world(t, { walkIn: seg(t, s(1), s(1) + 1.8) }); }],
-  [s(2) - .15, s(3) - .1, t => { camKeys(t, [[s(2) - .15, { x: -560, z: 380, focus: 1000, dof: 7 }], [s(3), { x: -600, z: 470, focus: 1000, dof: 7 }]]); world(t, { redTalk: 0, fgX: -760 }); }],
-  [s(3) - .1, s(4) - .1, t => { camKeys(t, [[s(3) - .1, { x: 560, z: 380, focus: 1000, dof: 7 }], [s(4), { x: 600, z: 470, focus: 1000, dof: 7 }]]); world(t, { fgX: 760, tealExpr: 'smug' }); }],
-  [s(4) - .1, s(5) - .1, t => { camKeys(t, [[s(4) - .1, { x: 0, y: 60, z: 260, focus: 560, dof: 7 }], [s(5), { x: 0, y: 70, z: 320, focus: 560, dof: 7 }]]); world(t, { fgX: 220 });
+  [0, s(1) - .15, t => { camKeys(t, [[0, { x: 0, y: 70, z: 120, focus: 900, dof: 4 }], [1.6, { x: -30, y: 70, z: 160, focus: 900, dof: 4 }], [s(1) - .5, { x: 0, y: 80, z: 20, focus: 900, dof: 3 }]]); world(t, { sharpBoards: true, fg: -1, bx: 158, bk: [520, 1300] }); }],
+  [s(1) - .15, s(2) - .15, t => { camKeys(t, [[s(1) - .15, { x: 0, z: -700, focus: 1100, dof: 1.8 }], [s(2), { x: 60, z: -560, focus: 1100, dof: 1.8 }]]); world(t, { walkIn: seg(t, s(1), s(1) + 1.8), bk: [175, -40] }); }],
+  [s(2) - .15, s(3) - .1, t => { camKeys(t, [[s(2) - .15, { x: -540, z: 560, focus: 490, dof: 7 }], [s(3), { x: -570, z: 620, focus: 430, dof: 7 }]]); world(t, { redTalk: 0, fg: -1 }); }],
+  [s(3) - .1, s(4) - .1, t => { camKeys(t, [[s(3) - .1, { x: 540, z: 560, focus: 490, dof: 7 }], [s(4), { x: 570, z: 620, focus: 430, dof: 7 }]]); world(t, { fg: 1, tealExpr: 'smug' }); }],
+  [s(4) - .1, s(5) - .1, t => { camKeys(t, [[s(4) - .1, { x: 0, y: 60, z: 260, focus: 560, dof: 7 }], [s(5), { x: 0, y: 70, z: 320, focus: 560, dof: 7 }]]); world(t, { fg: 1 });
     const sp = (t - s(4)) * 9; const p = proj(0, 0, 560); if (p) { g.save(); g.translate(p.x, p.y - 50 * p.k * Math.abs(Math.sin(sp * .3)) * (1 - seg(t, s(4) + .8, s(4) + 1.4))); coin(0, 0, p.k * 1.2, sp, t); g.restore(); } }],
-  [s(5) - .1, s(7) - .2, t => { camKeys(t, [[s(5) - .1, { x: 330, y: 150, z: 520, focus: 900, dof: 6 }], [s(7), { x: 300, y: 150, z: 560, focus: 900, dof: 6 }]]); const sweep = seg(t, s(5) + .4, s(5) + 2.0);
-    world(t, { sharpBoards: true, fgX: 120, boardO1: { glow: Math.min(3, Math.floor(sweep * 4)), glowK: sweep < 1 ? 1 : .6 + .4 * Math.sin(t * 4) } });
+  [s(5) - .1, s(7) - .2, t => { camKeys(t, [[s(5) - .1, { x: 330, y: 150, z: 400, focus: 900, dof: 6 }], [s(7), { x: 310, y: 150, z: 450, focus: 900, dof: 6 }]]); const sweep = seg(t, s(5) + .4, s(5) + 2.0);
+    world(t, { sharpBoards: true, fg: 1, boardO1: { glow: Math.min(3, Math.floor(sweep * 4)), glowK: sweep < 1 ? 1 : .6 + .4 * Math.sin(t * 4) } });
     if (t > s(6) - .1) { const k = back(seg(t, s(6), s(6) + .3), 2); g.save(); g.translate(300, 520); g.scale(k, k); ink(() => { g.beginPath(); g.ellipse(0, 0, 230, 110, 0, 0, TAU); }, '#fbf3df', { lw: 5 }); for (let i = 0; i < 3; i++) ink(() => { g.beginPath(); g.arc(150 - i * 40, 130 + i * 40, 18 - i * 4, 0, TAU); }, '#fbf3df', { lw: 4, rim: false }); g.fillStyle = INK; g.font = '700 60px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('2-something', 0, 4); g.restore(); } }],
   [s(7) - .2, s(9) - .2, t => blueprint(t, s(7) - .2)],
   [s(9) - .2, s(11) - .2, t => overhead(t, s(9) - .2)],
   [s(11) - .2, s(12) - .15, t => nightTill(t, s(11) - .2)],
-  [s(12) - .15, s(13) - .15, t => { const u = seg(t, s(12), s(12) + 1.2); camKeys(t, [[s(12) - .15, { x: -420, z: 360, focus: 900, dof: 6 }], [s(13), { x: -380, z: 430, focus: 900, dof: 6 }]]);
-    world(t, { mood: u < .5 ? 1 : 0, boards: ['2.99', '2.99'], prev: ['3.00', '2.99'], flip: seg(t, s(12) + 1.4, s(12) + 2.2), sharpBoards: true, redExpr: 'sly', fgX: -700 }); if (u < 1) { g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .5 * (1 - u); g.fillStyle = '#f3a46b'; g.fillRect(0, 0, W, H); g.restore(); } }],
-  [s(13) - .15, s(14) - .15, t => { camKeys(t, [[s(13) - .15, { x: 0, z: -720, focus: 1100, dof: 1.8 }], [s(14), { x: 0, z: -600, focus: 1100, dof: 1.8 }]]); world(t, { boards: ['2.99', '2.99'], redQ: 4, tealQ: 4, bird: seg(t, s(13) + 1.0, s(13) + 1.6) }); }],
-  [s(14) - .15, s(15) - .1, t => { camKeys(t, [[s(14) - .15, { x: 0, z: 520, focus: 1050, dof: 6 }], [s(15), { x: 0, z: 600, focus: 1050, dof: 6 }]]); world(t, { boards: ['2.99', '2.99'], redExpr: 'glare', tealExpr: 'glare', fgX: 0 }); }],
-  [s(15) - .1, TOT + 1, t => { camKeys(t, [[s(15) - .1, { x: 0, z: 40, focus: 900, dof: 3 }], [TOT, { x: 0, z: 120, focus: 900, dof: 4 }]]); world(t, { boards: ['2.99', '2.99'], sharpBoards: true, fgX: -200 }); }],
+  [s(12) - .15, s(13) - .15, t => { const u = seg(t, s(12), s(12) + 1.2); camKeys(t, [[s(12) - .15, { x: -360, z: 300, focus: 700, dof: 6 }], [s(13), { x: -380, z: 360, focus: 640, dof: 6 }]]);
+    world(t, { mood: u < .5 ? 1 : 0, boards: ['2.99', '2.99'], prev: ['3.00', '2.99'], flip: seg(t, s(12) + 1.4, s(12) + 2.2), sharpBoards: true, redExpr: 'sly', fg: -1 }); if (u < 1) { g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .5 * (1 - u); g.fillStyle = '#f3a46b'; g.fillRect(0, 0, W, H); g.restore(); } }],
+  [s(13) - .15, s(14) - .15, t => { camKeys(t, [[s(13) - .15, { x: 0, z: -720, focus: 1100, dof: 1.8 }], [s(14), { x: 0, z: -600, focus: 1100, dof: 1.8 }]]); world(t, { boards: ['2.99', '2.99'], redQ: 4, tealQ: 4, bird: seg(t, s(13) + 1.0, s(13) + 1.6), bk: [175, -40] }); }],
+  [s(14) - .15, s(15) - .15, t => { camKeys(t, [[s(14) - .15, { x: -540, z: 200, focus: 600, dof: 6 }], [s(15), { x: -520, z: 280, focus: 520, dof: 6 }]]); world(t, { boards: ['10.00', '2.99'], sharpBoards: true, bk: [720, 800], bx: 470, boardO0: { unit: 'per cake' }, redExpr: 'smug', redO: { armF: { x: 54, y: -118, bend: 10 }, hold: (x, y) => cake(x + 4, y - 6) }, fg: 1 }); }],
+  [s(15) - .15, s(16) - .1, t => { camKeys(t, [[s(15) - .15, { x: 0, z: 460, focus: 440, dof: 6 }], [s(16), { x: 0, z: 520, focus: 380, dof: 6 }]]); world(t, { boards: ['2.99', '2.99'], redExpr: 'glare', tealExpr: 'glare', bk: [95, 900], fg: -1 }); }],
+  [s(16) - .1, TOT + 1, t => { camKeys(t, [[s(16) - .1, { x: 0, y: 80, z: 20, focus: 900, dof: 3 }], [TOT, { x: 0, y: 70, z: 120, focus: 900, dof: 4 }]]); world(t, { boards: ['2.99', '2.99'], sharpBoards: true, fg: -1, bx: 158, bk: [520, 1300] }); }],
 ];
 function render(t) { g.setTransform(1, 0, 0, 1, 0, 0); g.filter = 'none'; g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
   const i = SH.findIndex(([a, b]) => t >= a && t < b); const [a, b, fn] = SH[i < 0 ? SH.length - 1 : i]; fn(t);

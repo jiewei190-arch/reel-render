@@ -126,7 +126,7 @@ export function figure(o) { const { col = '#c8443a', colS = '#9b2f29', apron = n
   const hd = () => { g.beginPath(); g.ellipse(0, 0, 44, 41, 0, 0, TAU); };
   ink(hd, HEAD, { lw: 4.5 }); g.save(); hd(); g.clip(); const sh = g.createRadialGradient(-14, -16, 10, 6, 6, 56); sh.addColorStop(0, 'rgba(0,0,0,0)'); sh.addColorStop(1, 'rgba(150,135,115,.28)'); g.fillStyle = sh; g.fillRect(-50, -50, 100, 100); g.restore(); hd(); g.strokeStyle = INK; g.lineWidth = 4.5; g.stroke();
   face(expr, turn * 12, look, talk, t, stache, goatee);
-  if (hat === 'toque') { ink(() => { g.beginPath(); g.roundRect(-30, -58, 60, 24, 4); }, '#fbf8f0', { lw: 4 }); ink(() => { g.beginPath(); g.arc(-20, -66, 18, 0, TAU); g.arc(0, -76, 22, 0, TAU); g.arc(20, -66, 18, 0, TAU); }, '#fbf8f0', { lw: 4 }); ink(() => { g.beginPath(); g.roundRect(-31, -44, 62, 10, 3); }, hatBand, { lw: 3, rim: false }); }
+  if (hat === 'toque') { ink(() => { g.beginPath(); g.roundRect(-30, -58, 60, 24, 4); }, '#fbf8f0', { lw: 4 }); const tq = () => { g.beginPath(); g.arc(-20, -66, 18, 0, TAU); g.moveTo(22, -76); g.arc(0, -76, 22, 0, TAU); g.moveTo(38, -66); g.arc(20, -66, 18, 0, TAU); }; ink(tq, '#fbf8f0', { lw: 4 }); tq(); g.fillStyle = '#fbf8f0'; g.fill(); g.strokeStyle = 'rgba(42,34,48,.35)'; g.lineWidth = 2; g.beginPath(); g.arc(0, -76, 22, Math.PI * .75, Math.PI * .95); g.stroke(); ink(() => { g.beginPath(); g.roundRect(-31, -44, 62, 10, 3); }, hatBand, { lw: 3, rim: false }); }
   if (hat === 'cap') { ink(() => { g.beginPath(); g.ellipse(0, -30, 46, 20, 0, Math.PI, TAU); g.closePath(); }, hatBand, { lw: 4 }); }
   g.restore(); g.restore(); g.restore();
 }

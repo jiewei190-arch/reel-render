@@ -19,7 +19,8 @@
   11,
   12,
   13,
-  14
+  14,
+  15
  ],
  "music_gain": 0.5,
  "tail": 0.7,
@@ -79,6 +80,10 @@
   [
    "Same bread. Same penny trick. **Even again.**",
    "Same bread. Same penny trick. Even again."
+  ],
+  [
+   "But for a treat like cake, one study suggests a **round price** can feel more right.",
+   "But for a treat like cake, one study suggests a round price can feel more right."
   ],
   [
    "Which bakery would you pick? **Red or teal?**",
