@@ -1,0 +1,91 @@
+{
+ "name": "newroad",
+ "voice": "af_heart",
+ "speed": 0.96,
+ "music": "popup",
+ "bpm": 100,
+ "fx_gain": 0.4,
+ "music_gain": 0.55,
+ "tail": 0.5,
+ "breath": [
+  1,
+  6,
+  11,
+  13,
+  15
+ ],
+ "phrases": [
+  [
+   "This town built a new road, and traffic got worse.",
+   "This town built a new road, and traffic got worse."
+  ],
+  [
+   "But how can more road mean slower driving?",
+   "But how can more road mean slower driving?"
+  ],
+  [
+   "Every morning, four thousand drivers go from Hilltown to the Mill.",
+   "Every morning, four thousand drivers go from Hilltown to the Mill."
+  ],
+  [
+   "There are two routes: red and teal.",
+   "There are two routes: red and teal."
+  ],
+  [
+   "Each has a narrow street that slows down when it's crowded,",
+   "Each has a narrow street that slows down when it's crowded,"
+  ],
+  [
+   "and a highway that always takes forty-five minutes.",
+   "and a highway that always takes forty-five minutes."
+  ],
+  [
+   "The drivers split evenly. Sixty-five minutes, either way.",
+   "The drivers split evenly. Sixty-five minutes, either way."
+  ],
+  [
+   "Then the mayor had an idea: a free shortcut joining the two narrow streets.",
+   "Then the mayor had an idea: a free shortcut joining the two narrow streets."
+  ],
+  [
+   "Now every driver did the smart thing for themselves:",
+   "Now every driver did the smart thing for themselves:"
+  ],
+  [
+   "narrow street, shortcut, narrow street.",
+   "narrow street, shortcut, narrow street."
+  ],
+  [
+   "But now all four thousand cars crammed onto both narrow streets.",
+   "But now all four thousand cars crammed onto both narrow streets."
+  ],
+  [
+   "The trip took eighty minutes. For everyone.",
+   "The trip took eighty minutes. For everyone."
+  ],
+  [
+   "You see, when every driver picks their own best route, the whole town can lose.",
+   "You see, when every driver picks their own best route, the whole town can lose."
+  ],
+  [
+   "It's called Braess's paradox.",
+   "It's called Braess's paradox."
+  ],
+  [
+   "And it's real. Stuttgart opened a new road in 1969. Traffic got worse, so they closed it again.",
+   "And it's real. Stuttgart opened a new road in nineteen sixty-nine. Traffic got worse, so they closed it again."
+  ],
+  [
+   "Seoul tore down a downtown highway, and more people rode the bus and subway.",
+   "Seoul tore down a downtown highway, and more people rode the bus and subway."
+  ],
+  [
+   "So the mayor closed the shortcut, and the sign went back to sixty-five.",
+   "So the mayor closed the shortcut, and the sign went back to sixty-five."
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
