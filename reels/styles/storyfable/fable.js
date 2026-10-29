@@ -22,6 +22,7 @@ export function createFable(canvas) {
   const tint = document.createElement('canvas'); tint.width = W; tint.height = H; const tg = tint.getContext('2d');
   const off = document.createElement('canvas'); off.width = W; off.height = H; const og = off.getContext('2d');
   const F = { g: main, W, H };
+  let grainPat = null;
   F.ctx = () => g;
   F.layer = (draw, filter) => { og.setTransform(1, 0, 0, 1, 0, 0); og.clearRect(0, 0, W, H); og.filter = 'none'; const keep = g; g = og; draw(og); g = keep; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.filter = filter; g.drawImage(off, 0, 0); g.restore(); };   // H1: draw a whole layer offscreen, filter it once   // H1: the context a sprite is drawing into right now (the offscreen one for rim/shadow sprites)
 
@@ -49,6 +50,10 @@ export function createFable(canvas) {
     g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
     if (it.shadow) { tintTo('#3a2a1c'); g.save(); g.globalAlpha = .26; g.filter = 'blur(3px)'; g.translate(p.x, p.y); g.transform(1, 0, -.95, -.22, 0, 0); g.translate(-p.x, -p.y); g.drawImage(tint, x0, y0, bw, bh, x0, y0, bw, bh); g.restore();
       g.save(); g.globalAlpha = .35; g.filter = 'blur(4px)'; g.fillStyle = '#3a2a1c'; g.beginPath(); g.ellipse(p.x, p.y, 120 * sc, 22 * sc, 0, 0, Math.PI * 2); g.fill(); g.restore(); }
+    // H1 v5 material pass: soft painterly volume on characters and props (lit upper left, shaded lower right, fine grain), kept inside the sprite's alpha
+    { spg.save(); spg.setTransform(1, 0, 0, 1, 0, 0); spg.globalCompositeOperation = 'source-atop'; const L = spg.createLinearGradient(x0, y0, x0 + bw, y0 + bh);
+      L.addColorStop(0, 'rgba(255,248,228,.2)'); L.addColorStop(.42, 'rgba(255,248,228,0)'); L.addColorStop(.62, 'rgba(70,40,50,0)'); L.addColorStop(1, 'rgba(70,40,50,.26)'); spg.fillStyle = L; spg.fillRect(x0, y0, bw, bh);
+      spg.globalAlpha = .022; spg.fillStyle = grainPat || (grainPat = spg.createPattern(grain, 'repeat')); spg.fillRect(x0, y0, bw, bh); spg.restore(); }
     // rim halo + sprite are built unfiltered in the spare canvas, then filtered once
     const r = it.rim ? Math.max(2, 7 * sc) : 0, ex0 = Math.max(0, Math.floor(x0 - r - 2)), ey0 = Math.max(0, Math.floor(y0 - r - 2)), ex1 = Math.min(W, Math.ceil(x0 + bw + r + 2)), ey1 = Math.min(H, Math.ceil(y0 + bh + r + 2));
     og.setTransform(1, 0, 0, 1, 0, 0); og.filter = 'none'; og.clearRect(ex0, ey0, ex1 - ex0, ey1 - ey0);

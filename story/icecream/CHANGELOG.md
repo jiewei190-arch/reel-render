@@ -39,3 +39,16 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
   1. **The overhead** still reads as candy icons on flat sand. The reference's is a painted field: grass texture, dense crowd formations shaped like arrows, glints, a tilt-shift blur at the top and bottom.
   2. **Character scale in the side-by-side wides:** the reference's rivals are about 1.6x bigger in frame.
   3. **The boardwalk** is too orange and too wide compared with the reference's earthy track.
+
+## v4 (Oct 29): the overhead, character scale, earthier wood
+- Painted overhead like the reference's field:
+  - textured sand with ripples and speckle, sea depth bands, wave crests, foam lace, glints;
+  - dune grass;
+  - 150 small umbrellas and 520 beachgoers that turn red/teal by nearest cart and stream toward it in formation;
+  - cart glints, and a tilt-shift blur at the top and bottom of the frame.
+- Rivals about 1.24x bigger in the side-by-side wides (f 760 -> 940).
+- Earthier boardwalk wood.
+- Render `icecream_v4.mp4`, sheet `compare_v4.jpg`. QA WARN only (end-card question pennants in the right column; wide shot touching the edges).
+- Biggest gaps now:
+  1. **Material shading.** In a character close-up crop (ref 1.5 s vs ours 44 s), the reference's robes, props and carts have soft painterly volume: a lit upper-left to shaded lower-right gradient and fine grain. Ours are flat vector fills.
+  2. **The boardwalk** still dominates the bottom third of the wides; the reference's track is narrower, with the ground showing on both sides.

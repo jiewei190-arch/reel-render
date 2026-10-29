@@ -67,9 +67,9 @@ function beach(t, o = {}) {
     else { g.fillStyle = ['#e85a6a', '#f2c84a', '#fff4e0', '#b36ad6'][i % 4]; for (let k = 0; k < 5; k++) { g.beginPath(); g.arc(q.x + Math.cos(k * 1.26) * 5 * s2, q.y - 22 * s2 + Math.sin(k * 1.26) * 5 * s2, 3.6 * s2, 0, Math.PI * 2); g.fill(); } g.fillStyle = '#7a4a20'; g.beginPath(); g.arc(q.x, q.y - 22 * s2, 2.4 * s2, 0, Math.PI * 2); g.fill(); g.strokeStyle = PAL.leafD; g.lineWidth = Math.max(1, 2 * s2); g.beginPath(); g.moveTo(q.x, q.y); g.lineTo(q.x, q.y - 18 * s2); g.stroke(); } }
   g.globalAlpha = 1;
   // the boardwalk down the middle (the reference's track to the vanishing point)
-  const z0 = F.cam().z + 60; F.groundQuad(-36, z0, 36, SHORE - 200, PAL.woodD, .4);
-  for (let z = Math.floor(z0 / 26) * 26; z < SHORE - 200; z += 26) { const k = hash(Math.floor(z / 26)); F.groundQuad(-36, z, 36, z + 22, k < .33 ? PAL.wood : k < .66 ? PAL.woodL : '#9f8358', .5); }
-  F.groundQuad(-41, z0, -36, SHORE - 200, PAL.woodD, .6); F.groundQuad(36, z0, 41, SHORE - 200, PAL.woodD, .6);
+  const z0 = F.cam().z + 60; F.groundQuad(-27, z0, 27, SHORE - 200, PAL.woodD, .4);
+  for (let z = Math.floor(z0 / 26) * 26; z < SHORE - 200; z += 26) { const k = hash(Math.floor(z / 26)); F.groundQuad(-27, z, 27, z + 22, k < .33 ? PAL.wood : k < .66 ? PAL.woodL : '#9f8358', .5); }
+  F.groundQuad(-31, z0, -27, SHORE - 200, PAL.woodD, .6); F.groundQuad(27, z0, 31, SHORE - 200, PAL.woodD, .6);
   // bunting between the distance posts: red on the left, teal on the right
   for (let z = 400; z + 380 < SHORE - 400; z += 380) [-70, 70].forEach(x => { const a = F.proj(x, 150, z), b = F.proj(x, 150, z + 380); if (a.dz < 520) return;
     const col = x < 0 ? PAL.sideA : PAL.sideB, sag = 18 * a.s; g.strokeStyle = 'rgba(60,40,30,.7)'; g.lineWidth = Math.max(1, 2 * a.s);
