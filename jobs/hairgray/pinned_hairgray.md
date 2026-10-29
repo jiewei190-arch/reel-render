@@ -1,0 +1,1 @@
+The stem-cell and stress findings are from mice; how much carries over to people is still being studied. Genes matter most for when the first grays show up. Have you found your first gray hair yet? Yes or no?

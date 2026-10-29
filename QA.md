@@ -40,3 +40,6 @@ FAIL, all real issues in already-approved reels:
 ## Issues found that the pipeline should fix
 - **True peak.** `tools.py assemble` uses loudnorm with TP -1.5, but the AAC encode in `enc_hq.sh` adds about 0.5-1 dB of overshoot, and some mixes clip. Suggested fix: run `alimiter=limit=0.8` (or loudnorm TP=-2.0) before the AAC encode, or re-run loudnorm in `enc_hq.sh`.
 - **Old owl.** Only the 8 s previews of the first owl version exist in git history, not the full old render, so the static check could not be tested on it. If owl's old problem was a diagram that stayed on screen but still had small animations, check 1 won't catch it: it measures *no change at all*. The repetition rules in STYLE_FIT.md still need a human look at the contact sheet.
+
+## Blank frames (added Oct 28)
+qa.py now scans every frame (not the 2 fps samples) and FAILs any frame whose luminance std is under 1.2 on a 27x48 thumbnail, i.e. a solid-colour frame. Found on contrails v1: navy flashes for 4-5 frames at poster swaps. Deliberate dark dips (candle's blow-out) still pass. Fix by overlapping transitions so something is always on screen.

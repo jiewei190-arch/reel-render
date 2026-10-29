@@ -33,6 +33,12 @@ function pouch(t, { fill: f = 0, layers = 0, glow = 0, wrapper = 0, tear = 0, op
   // non-woven cloth: dotted pores (air gets in here)
   for (let i = 0; i < 80; i++) { c.fillStyle = 'rgba(59,42,31,.22)'; c.fillRect(x + 10 + hash(i * 3.7) * (w - 20), y + 10 + hash(i * 1.9) * (h - 20), 2, 2); }
   line(c, body, { w: 3.4, k, close: true, seed: 310 });
+  // stitched hem just inside the edge + a small sewn-on '1 POUCH' tag, so it reads as a fabric pouch
+  { const m = 14, per = 2 * (w + h - 4 * m), n = Math.floor(per / 22); c.save(); c.globalAlpha *= k; c.strokeStyle = 'rgba(59,42,31,.7)'; c.lineWidth = 2.6; c.lineCap = 'round';
+    for (let i = 0; i < n; i++) { let d = i * per / n, px, py, dx, dy; const iw = w - 2 * m, ih = h - 2 * m;
+      if (d < iw) { px = x + m + d; py = y + m; dx = 1; dy = 0; } else if ((d -= iw) < ih) { px = x + w - m; py = y + m + d; dx = 0; dy = 1; } else if ((d -= ih) < iw) { px = x + w - m - d; py = y + h - m; dx = -1; dy = 0; } else { d -= iw; px = x + m; py = y + h - m - d; dx = 0; dy = -1; }
+      c.beginPath(); c.moveTo(px, py); c.lineTo(px + dx * 11, py + dy * 11); c.stroke(); } c.restore();
+    const tw = 148, tx = x + 30, ty = y + 26; fill(c, rectPts(tx, ty, tw, 40, 3), '#f7f1e6', k); line(c, rectPts(tx, ty, tw, 40, 3), { w: 2.4, close: true, seed: 315, k, wob: .4 }); mono(c, '1 POUCH', tx + tw / 2, ty + 28, { size: 19, col: P.ink, align: 'center', a: k, track: 3, w: 600 }); }
   if (open > 0) line(c, Array.from({ length: 12 }, (_, i) => [x + i * w / 11, y - (i % 2) * 14 * open]), { w: 3, k: open, seed: 311 });
   if (wrapper > 0) { const wx = x - 40, wy = y - 40, ww = w + 80, wh = h + 80; c.save(); c.globalAlpha *= wrapper; c.fillStyle = 'rgba(207,224,234,.35)'; c.fillRect(wx, wy + 60 * tear, ww, wh - 60 * tear); c.restore();
     line(c, rectPts(wx, wy + 60 * tear, ww, wh - 60 * tear, 8), { w: 3, col: '#6f8fa3', close: true, seed: 312, a: wrapper });
@@ -62,7 +68,7 @@ function mitten(t, op) { const a = 1 - op; if (a <= 0) return; const c = g; c.sa
 // ---------- scenes ----------
 function hook(t) { const a = 1 - ss(seg(t, s(2) - .4, s(2))); if (a <= 0) return; g.save(); g.globalAlpha = a;
   const op = ss(seg(t, r(1, .3), r(1, 1.2)));
-  pouch(t, { fill: 1, layers: 5, glow: (1 - op * .6) * (.8 + .2 * Math.sin(t * 4)), x: 100 + 90 * op, y: 680 + 60 * op, w: 600 - 100 * op, h: 330 - 70 * op, open: op });
+  pouch(t, { fill: 1, layers: 5, glow: (1 - op * .6) * (.8 + .2 * Math.sin(t * 4)), x: 70 + 120 * op, y: 650 + 90 * op, w: 660 - 160 * op, h: 370 - 110 * op, open: op });
   if (op < 1) for (let i = 0; i < 5; i++) { const xx = 230 + i * 130, ph = t * 2.4 + i * 1.3; line(g, Array.from({ length: 9 }, (_, j) => [xx + 14 * Math.sin(ph + j * .8), 600 - j * 18]), { w: 3.6, col: P.heat, a: (1 - op) * .85, seed: 720 + i, wob: .3 }); }
   if (op > 0) { for (let i = 0; i < 60; i++) { const px = 300 + hash(i) * 380, py = 640 + hash(i * 3) * 120 * op; g.fillStyle = 'rgba(70,64,60,.85)'; g.beginPath(); g.arc(px, py - op * 30, 3 + 2 * hash(i * 5), 0, TAU); g.fill(); } hand(g, 'just dark powder?', 540, 1110, { size: 52, align: 'center', write: seg(t, r(1, .6), r(1, 1.6)) }); }
   mitten(t, op);
@@ -161,6 +167,6 @@ window.DUR = TOT;
 // loop: blend the frame-0 hook back in over the last 0.5 s (max 40%)
 window.seek = t => { scene(t); const lp = seg(t, TOT - .5, TOT); if (lp > 0) { const keep = g.getImageData(0, 0, W, H); scene(0); const f0 = g.getImageData(0, 0, W, H); const k = .3 * ss(lp), A = keep.data, B = f0.data; for (let i = 0; i < A.length; i += 4) { A[i] += (B[i] - A[i]) * k; A[i + 1] += (B[i + 1] - A[i + 1]) * k; A[i + 2] += (B[i + 2] - A[i + 2]) * k; } g.putImageData(keep, 0, 0); } };
 window.render = window.seek;
-window.thumb = () => { g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(paper(), 0, 0); pouch(2, { fill: 1, layers: 5, glow: 1, x: 190, y: 980, w: 640, h: 360 });
+window.thumb = () => { g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(paper(), 0, 0); pouch(2, { fill: 1, layers: 5, glow: 1, x: 190, y: 980, w: 640, h: 360 }); g.save(); g.translate(60, 190); mitten(2, 0); g.restore();
   mono(g, 'STEP 1 / 5 · THE RECIPE', 90, 360, { size: 26, col: P.rust, track: 5 }); hand(g, 'Hot with', 80, 520, { size: 170 }); hand(g, 'no battery?', 80, 700, { size: 170, col: P.rust }); hand(g, 'it’s just rust', 540, 1480, { size: 70, align: 'center' }); splats(g, 900, 560, 1, 3); };
 window.seek(0); window.ready = true; window.READY = true;

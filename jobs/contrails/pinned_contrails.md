@@ -1,0 +1,1 @@
+Bonus: those three kinds have names. Short-lived contrails vanish within minutes, persistent ones hang around for hours, and spreading ones can widen into "contrail cirrus" that's hard to tell from natural cloud. Look up today: long trails or short? ✈️

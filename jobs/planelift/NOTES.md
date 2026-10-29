@@ -26,7 +26,6 @@ QA planelift: WARN   (/home/user/reel-render/jobs/planelift/planelift.mp4, 69.5 
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
   PASS  frame 0         edge 11.0 (min 1.0), contrast 82.5 (min 18.0)
-  PASS  blank frames    none
   PASS  9:16 frame      planelift.mp4 1080x1920 SAR 1:1; planelift_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```

@@ -43,6 +43,10 @@ export function cinema(g, t, cam, o = {}) {
       const y = GY - 8 - r * 38, sc = 1 - r * 0.07, col = shade('#7a2a3a', -0.55 - r * 0.07);
       for (let i = -9; i <= 11; i++) { const sx = CX + 200 + i * 112 * sc - (i < 0 ? 0 : 0); if (Math.abs(sx - pos.aisleX) < 90) continue; rr(g, sx - 38 * sc, y - 124 * sc, 76 * sc, 118 * sc, 14 * sc); g.fillStyle = col; g.fill(); g.fillStyle = alpha(key, 0.08 * scr); g.fillRect(sx - 38 * sc, y - 124 * sc, 76 * sc, 10); }
     }
+    if (view === 'hall') {                                           // audience silhouettes: dark heads + coloured hoodie shoulders, rim-lit by the screen
+      const ra = rng(33), cols = ['#d4262e', '#2f6fd0', '#f08a24', '#6aba4a', '#9a5ad6', '#e0e0d0', '#3aa0a8'];
+      for (let r2 = 3; r2 >= 0; r2--) { const y = GY - 8 - r2 * 38, sc = 1 - r2 * 0.07; for (let i = -9; i <= 11; i++) { const sx = CX + 200 + i * 112 * sc; if (Math.abs(sx - pos.aisleX) < 90 || ra() > 0.42) continue;
+        const hy = y - 150 * sc, c = cols[Math.floor(ra() * cols.length)]; g.fillStyle = shade(c, -0.62); g.beginPath(); g.ellipse(sx, y - 98 * sc, 34 * sc, 30 * sc, 0, Math.PI, 0); g.fill(); circle(g, sx, hy, 20 * sc, '#07060c'); g.strokeStyle = alpha(key, 0.45 * scr); g.lineWidth = 2.5; g.beginPath(); g.arc(sx, hy, 20 * sc, Math.PI * 1.1, Math.PI * 1.9); g.stroke(); if (ra() < 0.3) circle(g, sx + 4, hy - 4, 3, alpha('#fff', 0.5)); } } }
     if (view === 'hall') { for (let k = 0; k < 6; k++) { const sx = pos.aisleX + 34 + k * 0; g.fillStyle = alpha('#ffb860', 0.7); g.fillRect(sx - 60, GY + 18 + k * 56, 8, 5); g.fillRect(sx + 120, GY + 18 + k * 56, 8, 5); } }
   });
   // row letters on the seat ends + row F sign

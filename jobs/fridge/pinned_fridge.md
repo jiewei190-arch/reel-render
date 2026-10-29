@@ -1,0 +1,1 @@
+Feel it yourself: put a hand near the coils on the back (or the vent at the bottom) while the fridge is running. That warm air is heat that was inside with your food a minute ago. Have you felt it? Yes or no?

@@ -36,16 +36,66 @@ OVR = {
     "earpop": {"spot": ("R", 260)},   # H4: top-right is clear of the field-note titles
     "brainfreeze": {"spot": (651, 260), "hide": [(3.7, 11.8), (64.4, 99.0)]},   # H1: top-right; hidden in the lab shots where blackboard text sits there
     "slipperyice": {"spot": ("R", 260), "hide": [(67.6, 99.0)]},   # H4: top-right; hidden under the end card
-    "daylightsleep": {"spot": (44, 1368)},   # H4: cut-letter plaques fill the top band; low-left under the (raised) storyteller placard
-    "firstsnowsmell": {"spot": (44, 260)},   # H4: posters framed from y 340 so the table strip above them stays clear
-    "planelift": {"spot": (560, 260)},   # scifi-toon: clear of the U-tags (left) and the lab clock (right)
-    "eyeblink": {"spot": ("R", 260), "hide": [(76.9, 99.0)]},   # AI Doom titles moved below y 345; ransom end card hidden
-    "cricketchirp": {"spot": (44, 260)},   # lantern: in-box strips moved to box y >= 130 (screen y >= 360) to clear it
-    "shiver": {"spot": ("R", 260)},
+    "eggflip": {"spot": (44, 1366)},   # titles run to the top-right corner; strip under the captions is clear
+    "catfeet": {"spot": (44, 1366)},   # H3 (EP 84): banner bottom at y 1355 over the paper street
+    "honey": {"spot": (44, 1366)},   # H1 (EP 103): strip under the captions (box bottom <= 1364)
+    "fog": {"spot": (44, 1366)},   # H1 (EP 104): strip under the caption box (ends y 1360)
+    "auroras": {"spot": (44, 1366)},   # H3 (EP 63): captions end at y 1355 on the dark frozen lake
+    "sleeptalk": {"spot": ("R", 260)},   # H4 (EP 102)
+    "mirrorflip": {"spot": ("R", 256)},   # H2 (EP 99)
+    "tidesmoon": {"spot": ("R", 256)},   # H2 (EP 100)
+    "hairwet": {"spot": ("R", 260)},   # H4 (EP 101): badge strip checked every 3 s
+    "darknight": {"spot": ("R", 260)},   # H1 (EP 98): top plaques moved down 70 px so the badge clears them
+    "fingerprints": {"spot": ("R", 260)},   # H1 (EP 97): as wetdog (same urban-sketch engine) but top-right: the margin notes are left-aligned at y ~330 and end before x 860
     "bananabrown": {"spot": ("R", 260), "hide": [(73.4, 99.0)]},   # titles moved below y 345; ransom end card hidden
-    "hairwet": {"spot": ("R", 260)},
-    "sleeptalk": {"spot": ("R", 260)},
+    "glowdark": {"spot": ("R", 256)},
+    "butterflies": {"spot": ("R", 256)},
+    "stalebread": {"spot": (651, 260)},   # H4 (EP 95): auto spot pinned so re-runs match; field-note titles stop short of it
+    "sunburn": {"spot": ("R", 260)},   # H1 (EP 93): as stomachgrowl (same pop-up kit): top-right above the hanging signs (they start at y 340)
+    "twinkle": {"spot": (44, 1366)},   # H1 (EP 94): as coldbreath (same engine): the free strip under the caption box; centred titles fill the top band
+    "thunder": {"spot": (44, 1366)},   # captions end at y 1355 on the dark sand ground
+    "shiver": {"spot": ("R", 260)},
+    "cricketchirp": {"spot": (44, 260)},   # lantern: in-box strips moved to box y >= 130 (screen y >= 360) to clear it
+    "earringing": {"spot": (44, 260), "hide": [(6.5, 57.4)]},   # H1 (EP 90): as contrails (same engine): top-left over the banner hook, the wall and the end card; hidden while the posters (their HOW IT REALLY WORKS header sits at y ~270) fill the frame
+    "carsick": {"spot": (44, 400), "hide": [(14.0, 20.7), (59.9, 66.9), (70.0, 99)]},   # H1 (EP 89): as hiccups (same rig): below the left of the plaques; hidden on the end card
+    "hairgray": {"spot": ("R", 256), "hide": [(16.2, 20.3)]},   # H2: hidden under the "Study Head of an Old Man" card
+    "pickles": {"spot": ("R", 256)},
+    "crackedphone": {"spot": ("R", 256)},
+    "hotsauce": {"spot": ("R", 260)},   # H1 (EP 86): top-right; world tags are top-left, lab board text starts at y 336
     "microwavecenter": {"spot": ("R", 260), "hide": [(21.8, 24.6), (44.4, 47.8), (68.7, 99.0)]},   # popup: hidden under the 3-tricks sign, the YES/NO signs and the end card
+    "rainbow": {"spot": (651, 400)},   # H1 (EP 85): right of the FIG label, above the figure window (as ovenfoil); the sheet header owns the top band
+    "sodabubbles": {"spot": ("R", 256)},
+    "feetasleep": {"spot": ("R", 260), "hide": [(21.7, 40.8)]},   # H1 (EP 80): top-right; hidden while "The worst part comes after." reaches under it (main)
+    "moonday": {"spot": (44, 1366)},
+    "freezerburn": {"spot": ("R", 256), "hide": [(5.7, 11.8), (64.4, 99.0)]},   # H2: top-right sky wash; hidden under the "tiny ice crystals" title and the end card (main)
+    "saltyocean": {"spot": (44, 260)},   # H1 (EP 79): top-left above the serif titles (all titles sit at y >= 400)
+    "bluejeans": {"spot": ("R", 260)},   # H1: top-right, above the hand-lettered title (title + board moved down 30 px so the badge clears the "rivets." highlight)
+    "earwax": {"spot": (44, 260), "hide": [(0, 5.7), (70.8, 99)]},   # H1: top-left over the night/canal sky band; hidden under the hook title and on the end card
+    "sneeze": {"spot": (44, 1366)},   # caption band ends at y 1354 over the paper floor
+    "eyeblink": {"spot": ("R", 260), "hide": [(76.9, 99.0)]},   # AI Doom titles moved below y 345; ransom end card hidden
+    "gps": {"spot": ("R", 256)},   # H2: on the lamp frame top-right, above the strips inside the box (y 330+)
+    "wetdog": {"spot": (44, 380), "hide": [(73.3, 99)]},   # H1: just under the handwritten margin note, above the drawings; hidden on the end card
+    "planelift": {"spot": (560, 260)},   # scifi-toon: clear of the U-tags (left) and the lab clock (right)
+    "catsknead": {"spot": (44, 1366)},   # caption note ends at y 1354 over the floor tiles
+    "contrails": {"spot": (44, 260), "hide": [(6.0, 64.2)]},   # H1: top-left above the banner/wall; hidden on the posters (their header sits there)
+    "fridge": {"spot": ("R", 256)},   # H2: top-right above the STATUS field (y 342)
+    "voicerecording": {"spot": ("R", 256), "hide": [(6.0, 13.7)]},   # H2: own HUD leaves the top-right corner empty; hidden under the centred "two paths" title
+    "firstsnowsmell": {"spot": (44, 260)},   # H4: posters framed from y 340 so the table strip above them stays clear
+    "mpemba": {"spot": (44, 1366)},   # caption card ends at y 1355; navy board below it
+    "noisecancel": {"spot": ("R", 256)},   # H2: HUD timecode and top-right bracket removed so the badge owns that corner
+    "coldtaste": {"spot": ("R", 260)},   # H2: progress bar shortened to x 60-620 so the top-right badge clears it and the recipe card (y 360+)
+    "goosebumps": {"spot": (44, 1366)},   # captions end at y 1355 on the dark sand ground
+    "daylightsleep": {"spot": (44, 1368)},   # H4: cut-letter plaques fill the top band; low-left under the (raised) storyteller placard
+    "ovenfoil": {"spot": (651, 400)},   # H1: right of the FIG label, above the figure callouts; the top band is the sheet header
+    "hiccups": {"spot": (44, 400), "hide": [(67.7, 99.0)]},   # H1: below the left plaques; hidden for the end card
+    "snowflake": {"spot": (44, 1366)},   # paper banner ends at y 1355; snow-bank paper only below it
+    "goldfishmemory": {"spot": ("R", 260)},   # H1: top-right band over moon/plum art; left side carries status text and the end card
+    "microwavelight": {"spot": (651, 400), "hide": [(63.7, 99.0)]},   # H1: right of the night diagrams; hidden once the sketchbook page (title + end card) returns
+    "candle": {"spot": (44, 1060), "hide": [(25.4, 28.4)]},   # titles/labels fill y 300-1000 in every shot; low-left sits on the rim-lit audience row (art); hidden under "this is what burns"
+    "leafcolor": {"spot": (44, 560)},   # top labels sit at y 300-440 across the middle; mid-left only crosses ensō strokes, the sun and the seal (art)
+    "runnynose": {"spot": (44, 1366)},   # subtitle paper patch ends at y 1355; snow hatch only below it
+    "cranberries": {"spot": (44, 600), "t0": 7.2, "hide": [(56.2, 99.0)]},   # banner stage until 6.7 s; posters fill y 235-1150 with header/band text top and bottom; mid-left sits over poster art only; the wall and end card are all titles, so hidden from 56.2 s
+    "popuptimer": {"spot": (44, 1080), "hide": [(47.3, 52.4)]},   # titles fill the top band in every scene; low-left above the caption box sits on art only; hidden under "3 popped early"
     # H2 QA, Oct 28
     "skeleton": {"spot": (44, 560)},   # auto spot sat on the hook sign and end-card sign
     "ship": {"spot": ("R", 300)},      # sky/sun only, just above the end-card sign (mid spots hit labels)

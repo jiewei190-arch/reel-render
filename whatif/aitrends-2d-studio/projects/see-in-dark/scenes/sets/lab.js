@@ -35,6 +35,11 @@ export function lab(g, t, cam, o = {}) {
     text(g, 'RETINA', x + 800, y + 310, { size: 24, color: ui.gold, font: FONTS.ui, weight: 900, alpha: a, spacing: 2 });
     o.wall?.(g, x, y, w, h, wt); g.restore();
     glow(g, x + w / 2, y + h / 2, 640, ui.blueprint, 0.1 + 0.06 * (1 - L));
+    // whiteboard with doodles, jar shelf, clock
+    { const wx2 = CX - 1060, wy2 = GY - 740; rr(g, wx2 - 10, wy2 - 10, 360, 260, 8); g.fillStyle = shade(M.wall, -0.6); g.fill(); g.fillStyle = mix('#cfd6e4', '#2a3042', 1 - L * 0.8); g.fillRect(wx2, wy2, 340, 240);
+      g.strokeStyle = alpha('#2a4a9a', 0.7 * (0.4 + 0.6 * L)); g.lineWidth = 3; g.beginPath(); g.moveTo(wx2 + 30, wy2 + 60); g.quadraticCurveTo(wx2 + 100, wy2 + 20, wx2 + 170, wy2 + 70); g.quadraticCurveTo(wx2 + 240, wy2 + 120, wx2 + 300, wy2 + 50); g.stroke(); g.strokeStyle = alpha('#c8303a', 0.7 * (0.4 + 0.6 * L)); g.beginPath(); g.arc(wx2 + 90, wy2 + 160, 34, 0, 7); g.moveTo(wx2 + 140, wy2 + 160); g.lineTo(wx2 + 290, wy2 + 160); g.stroke();
+      seg(g, [[wx2 + 20, wy2 + 220], [wx2 + 320, wy2 + 220]], 4, alpha('#000', 0.25));
+      g.fillStyle = shade(M.wall, -0.5); g.fillRect(CX + 560, GY - 640, 330, 12); for (let i = 0; i < 6; i++) { rr(g, CX + 580 + i * 50, GY - 700, 36, 60, 8); g.fillStyle = alpha(['#7fd0d6', '#e08a3a', '#9a5ad6', '#6aba4a', '#d4262e', '#f2c21a'][i], 0.4 + 0.2 * L); g.fill(); } FX.clock(g, CX + 700, GY - 800, 34, 4000, { face: shade('#f2efe8', -0.4), ink: '#0a0a14', red: '#7a2a2a' }); }
     // door + exit light (stays on in a blackout)
     const dx = pos.doorX; rr(g, dx, GY - 460, 170, 460, 6); g.fillStyle = shade(M.wall, -0.7); g.fill(); rr(g, dx + 30, GY - 560, 110, 36, 6); g.fillStyle = '#04140a'; g.fill();
     text(g, 'EXIT', dx + 85, GY - 542, { size: 22, color: '#3dff7a', font: FONTS.ui, weight: 900, glow: 16, glowColor: 'rgba(60,255,120,.8)', spacing: 2 });
@@ -52,6 +57,9 @@ export function lab(g, t, cam, o = {}) {
     const mg = g.createLinearGradient(mx, pos.benchTop - 210, mx, pos.benchTop - 40); [[0, '#1a0030'], [0.4, '#b01a50'], [0.7, '#ff8a10'], [1, '#ffe860']].forEach(([p, c]) => mg.addColorStop(p, c)); g.fillStyle = mg; g.fillRect(mx - 140, pos.benchTop - 210, 280, 170);   // monitor shows a thermal gradient
     glow(g, mx, pos.benchTop - 120, 360, '#ff7a30', 0.2); seg(g, [[mx, pos.benchTop - 30], [mx, pos.benchTop]], 10, '#0a0a12');
     for (const [fx, c] of [[-340, '#7fd0d6'], [-290, '#e08a3a'], [-240, '#9a5ad6']]) { rr(g, bx + fx, pos.benchTop - 80, 34, 80, 8); g.fillStyle = alpha(c, 0.55); g.fill(); g.fillStyle = alpha('#fff', 0.2); g.fillRect(bx + fx + 6, pos.benchTop - 76, 5, 60); }
+    { const px = CX - 760; rr(g, px - 34, GY - 80, 68, 80, 8); g.fillStyle = shade('#6a6a78', -0.55); g.fill(); for (let i = 0; i < 7; i++) { g.save(); g.translate(px, GY - 78); g.rotate(-1.2 + i * 0.4); g.fillStyle = shade(i % 2 ? '#2f7a4a' : '#3a8a5a', -0.5); g.beginPath(); g.ellipse(0, -52, 14, 54, 0, 0, 7); g.fill(); g.restore(); }
+      rr(g, CX - 640, GY - 110, 60, 14, 5); g.fillStyle = shade('#c8d0e0', -0.55); g.fill(); seg(g, [[CX - 626, GY - 96], [CX - 626, GY]], 6, '#14141c'); seg(g, [[CX - 596, GY - 96], [CX - 596, GY]], 6, '#14141c');          // stool
+      const cm = pos.benchX + 280; rr(g, cm - 40, pos.benchTop - 90, 80, 90, 8); g.fillStyle = shade('#d8d0c0', -0.65); g.fill(); rr(g, cm - 30, pos.benchTop - 50, 60, 6, 3); g.fillStyle = '#05060c'; g.fill(); circle(g, cm + 22, pos.benchTop - 74, 4, '#ff3b30'); }
     const tx = pos.tripodX; seg(g, [[tx, GY - 230], [tx - 56, GY]], 6, '#14141c'); seg(g, [[tx, GY - 230], [tx + 56, GY]], 6, '#14141c'); seg(g, [[tx, GY - 230], [tx, GY]], 6, '#14141c');
     rr(g, tx - 54, GY - 300, 108, 70, 10); g.fillStyle = '#1c1e2c'; g.fill(); circle(g, tx - 54, GY - 266, 22, '#0a0a12'); circle(g, tx - 54, GY - 266, 11, '#3a2a6a'); glow(g, tx - 54, GY - 266, 50, '#9a7aff', 0.4);
     if (L < 0.5) { circle(g, tx + 30, GY - 282, 4, '#ff3b30'); }
