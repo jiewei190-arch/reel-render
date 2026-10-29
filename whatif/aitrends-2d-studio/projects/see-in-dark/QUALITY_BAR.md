@@ -1,6 +1,6 @@
 # QUALITY BAR: "What If You Could See in Complete Darkness?"
 
-Target: sit next to IFinity ("What If You Could Turn Invisible") and Awaken frames without looking amateur. Every shot is checked against this list before it is called done. "Checkable" means you can verify it from the code or from a still / preview frame. Reference implementation: `scenes/shots/S_showcase.js` (s001, s002, s005, s008, s011, s012).
+Target: sit next to IFinity ("What If You Could Turn Invisible") and Awaken frames without looking amateur. Every shot is checked against this list before it is called done. "Checkable" means you can verify it from the code or from a still / preview frame. Reference implementation: `scenes/shots/S_showcase.js` (v2 ids: s001, s003, s005, s010, s011, s029).
 
 ## 1. Framing and scale (the biggest gap in stage 1)
 1. **Hero (or any speaking character) >= 25% of frame height in every non-establishing shot.** Rig height is 240 units at `s = 1`; frame is 1080. So `actor` `s >= 1.6` for a figure that is standing in a medium shot (s 1.85-2.0 is the sweet spot; Mina is x0.72 so use 2.0+). Giant face shots use `giantFace` radius 300-360 (hood included about 75% of frame height).
@@ -62,11 +62,11 @@ Target: sit next to IFinity ("What If You Could Turn Invisible") and Awaken fram
 ## 10. Good / bad examples (by shot id; all in S_showcase.js unless noted)
 GOOD
 - **s001**: medium tracking shot, hero 42% of frame, 5 bystanders each with their own colour, phones -> torches on the beat of "Blackout", locked walk, camera follows, three parallax depths, hero smirks on "walking".
-- **s002**: giant face, shocked -> delighted: blink, double-take, sweat drop, punch zoom + shake, orange glow and eye glint on delight, sparkles.
-- **s005**: three characters, torch beam sweeps from Mina over Hero to the cat (eyeshine, then offended), pan reveals the fridge, lived-in apartment, blurred foreground plants.
-- **s008**: bright violet world, white-yellow mouse and cat with hot ears/eyes, toast fading white to orange, crosshair + temp.
-- **s011**: lock-up with extruded numeral and banner over the audience hall.
-- **s012**: clean eye with labelled cornea/lens/retina, converging rays, dashed zoom into rods.
+- **s029**: giant face, shocked -> delighted: blink, double-take, sweat drop, punch zoom + shake, orange glow and eye glint on delight, sparkles.
+- **s003**: three characters, torch beam sweeps from Mina over Hero to the cat (eyeshine, then offended), pan reveals the fridge, lived-in apartment, blurred foreground plants.
+- **s005**: bright violet world, white-yellow mouse and cat with hot ears/eyes, toast fading white to orange, crosshair + temp.
+- **s010**: lock-up with extruded numeral and banner over the audience hall.
+- **s011**: clean eye with labelled cornea/lens/retina, converging rays, dashed zoom into rods.
 
 BAD (what stage 1 did, do not repeat)
 - old **s001**: wide street, hero ~12% of frame height, 5 s with no one else in frame, lights die and the frame is a dark empty street.
