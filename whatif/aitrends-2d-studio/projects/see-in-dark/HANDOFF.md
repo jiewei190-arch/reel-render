@@ -1,6 +1,6 @@
 # HANDOFF: shot writers for "What If You Could See in Complete Darkness?"
 
-Project: `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studio\projects\see-in-dark\` (all paths below are relative to it). 16:9, 1080p, 24 fps, style `dusk`, 414.56 s, 120 shots. Voiceover and timings are final; `story/shots.json` owns timing. Read first: `story/bible.md`, this file, `scenes/shots/S_stage1_examples.js` (4 finished shots = the working pattern), and the kit docs (`..\..\SETUP_NOTES.md`, style-bible/engine-api in the plugin skills).
+Project: `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studio\projects\see-in-dark\` (all paths below are relative to it). 16:9, 1080p, 24 fps, style `dusk`, 414.56 s, 120 shots. Voiceover and timings are final; `story/shots.json` owns timing. Read first: **`QUALITY_BAR.md` (mandatory, checkable rules; every shot is judged against it)**, `story/bible.md`, this file, `scenes/shots/S_showcase.js` (6 finished shots = the working pattern) and the kit docs (`..\..\SETUP_NOTES.md`, style-bible/engine-api in the plugin skills).
 
 ## Batches (each shot has `batch`, `type`, `view` ("thermal" or "normal"), `scene` in shots.json; implement what `scene` says)
 | Batch | Ids | Time | Write only |
@@ -8,7 +8,8 @@ Project: `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studi
 | A | s001-s039 | 0:00-2:22 | `scenes/shots/A_*.js` |
 | B | s040-s081 | 2:22-4:41 | `scenes/shots/B_*.js` |
 | C | s082-s120 | 4:41-end | `scenes/shots/C_*.js` |
-DONE in stage 1 (do NOT redefine): **s001** blackout street, **s008** thermal view, **s011** RULE 1 card, **s012** blueprint eye. Name files like `B_s040_s044_viper.js` (several `registerShot` per file is fine; one file per scene cluster).
+DONE in the showcase (`scenes/shots/S_showcase.js`; do NOT redefine): **s001** blackout street walk, **s008** thermal view, **s011** RULE 1 card, **s012** blueprint eye, plus two NEW showcase shots that **temporarily reuse the ids s002 (giant-face reaction) and s005 (Mina + Hero + Biscuit apartment scene)** so they render on the sheet. When the new script/shot list lands, either keep them under their real ids by renaming `registerShot('s002'...)`/`('s005'...)`, or copy them as templates and delete them from S_showcase.js. The old stage-1 file is kept as `scenes/shots/_stage1_examples_old.js` (skipped by the loader, reference only). Shot timings in shots.json are being replaced: bind beats to words with `wordTime()` (see `shotWord()` in S_showcase.js), never to hard-coded seconds.
+Name files like `B_s040_s044_viper.js` (several `registerShot` per file is fine; one file per scene cluster).
 
 ## Rules
 - Write ONLY your own `X_*.js`. `scenes/cast.js`, everything in `scenes/sets/`, `story/*`, `config.json` and the kit (`engine/`, `tools/`) are SHARED and READ-ONLY. Need a new prop/set tweak? Draw it inside your own shot file (a local helper) and tell the coordinator.
@@ -33,6 +34,20 @@ import { actor, cat, mouse, snake, deer, fox } from '../sets/actors.js';
   - `lab(g,t,cam,{lights:0..1, wall(g,x,y,w,h,wt), wallT})` + `labFg`. `pos`: wallX/Y/W/H (blueprint wall panel: draw extra art with the `wall` callback), benchX, tripodX, monitorX.
   - `forest(g,t,cam,{view:'camp'|'cave', torch:0..1, torchX, torchAngle, rain})` + `forestFg`. `pos`: tentX, tent2X (the empty one), fireX, caveX/W/H, ledgeX/ledgeY.
 - Figures live inside `layer(g, cam, 1, g => ...)`; for a blurred over-the-shoulder foreground use `blurLayer(g, 12, g => actor(...), cam, 1.6)`.
+
+## NEW SHARED HELPERS (stage 2; read the header comment of each file)
+```js
+import { blinkFlag, blinkAmt, exprAt, poseAt, idle, talkGesture, reaction, walkAlong, pointAndLook, lookToward, camMove, atmos, EXTRA } from '../sets/acting.js';
+import { giantFace, faceAt, FACE } from '../sets/faces.js';
+import { actor, cat, mouse, snake, deer, fox, gecko, owl } from '../sets/actors.js';          // creatures live in sets/creatures.js, re-exported here
+import { thermalView, heatActor, heatCat, heatMouse, heatSnake, heatDeer, heatFox, heatGecko, heatOwl, heatBlob, heatRect } from '../sets/thermal.js';
+```
+- **acting.js**: `blink: blinkFlag(t, 3.4, seed)` (every figure); `idle(pose, t, seed)` (breathing + sway, every standing figure); `poseAt(t, [[0,'stand'],[0.8,'shock'],[2,'delight']], 0.3)` knows the extra poses `shock delight wince lookUp sheepish handsUp phoneLow reachHigh`; `reaction('shock', t, t0)` snaps with overshoot; `talkGesture(t, seed)` gesture cycle for quoted lines; `walkAlong(x, s, {kid})` returns `{pose}` with the foot phase locked to world x (no sliding; ~160 units/s looks right at s 1.9); `pointAndLook(t, t0, [dx,dy])`; `camMove(t, dur, {z:[a,b], x:[a,b], y:[a,b]})` ease + handheld drift; `atmos(g, t, cam)` two-depth dust. Hand position for props/torches: copy `handWorld()` from S_showcase.js.
+- **faces.js**: `giantFace(g, cx, cy, r, { who:'HERO'|'MINA'|'DEV', f: faceAt(t, [[0,'neutral'],[0.8,'shocked'],[1.5,'delighted']]), blink: blinkAmt(t,3.1,0), rimSide: 1 (light from the right), rimColor, glint, tilt, breath })`. Expressions: neutral smirk shocked awe delighted joy determined squint worried cheeky sheepish suspicious (or pass a partial params object). Use it for every reaction beat instead of `bigFace`. Mustard hood is drawn for HERO; MINA has bun + red scarf; DEV beanie not yet drawn (add to `body()` in faces.js if needed and tell the coordinator).
+- **Creatures** (all take `t` for animation, `eyes`/`graze`/`strike`/`turn` etc. as in the header of `sets/creatures.js`). Sizes: cat s 1.8+ and mouse s 4.5+ in inserts. Thermal versions add hot ears/eyes automatically.
+- **Thermal**: background is violet-magenta (floor 0.15), cold set luminance is remapped; keep creature `heat` 0.55-0.7 so ears and eyes (+0.3) stay the hottest parts, people use `heatActor` (skin ~0.93, clothes ~0.6).
+- **Blueprint**: `const A = BP.eye(g, t, {x, y, r, k, inset:true})` returns anchors `{cornea, lens, iris, retina, fovea, nerve}`; label them with `BP.label`. `BP.retina` now draws nerve cells, striped rods, tapered cones and the pigment layer.
+- **Sets** got many more props (apartment bookcase/plant/coats/fridge art/fairy lights; street awning/neon/hydrant/bike/stoop/curtained windows; cinema audience heads; lab whiteboard/jars/plant/stool; forest logs/backpack/lantern/ferns/mushrooms). They are still READ-ONLY for shot writers. `ruleCard` has the new extruded lock-up.
 
 ## THERMAL VIEW (`../sets/thermal.js`): the hero's heat vision
 ```js
