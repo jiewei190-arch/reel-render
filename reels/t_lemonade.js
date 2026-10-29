@@ -67,6 +67,38 @@ function streetSet(t, o = {}) { F.begin(); const c0 = F.drawGround.bind(null);
 function Q_extra(t) { for (const [Z, k] of [[1100, 0], [2400, 1]]) F.put(0, Z + 1, c => { c.setTransform(1, 0, 0, 1, 0, 0); F.bunting(c, [-330, 330, Z], [330, 330, Z], k ? [PAL.teal, PAL.red, '#f3cf3a'] : [PAL.red, PAL.teal, '#fbf3df'], t); }, {});
   for (const [X, Z] of [[-275, 700], [275, 700]]) F.put(X + (X < 0 ? -40 : 40), Z - 90, (c, s) => F.crate(c, s * 1.1), { shadow: true, rim: true, h: 50, w: 90, sw: 70 });
   for (let i = 0; i < 8; i++) { const side = i % 2 ? 1 : -1, Z = 800 + i * 380; F.put(side * (330 + hash(i * 7) * 120), Z, (c, s) => F.flowers(c, s * 1.4, i + 2), {}); } }
+// ---------- grocer's shop (warm interior) ----------
+const GROCER = { body: '#d9893a', bodyDark: '#a8622a', apron: '#f4e7cc', hat: 'none', stache: true };
+function shop(t) { F.begin(); const a = T(16);
+  F.drawGround(c => { const wg = c.createLinearGradient(0, 0, 0, F.cam.hor + 200); wg.addColorStop(0, '#3a2320'); wg.addColorStop(1, '#7a4a30'); c.fillStyle = wg; c.fillRect(0, 0, W, H);
+    // plank floor in perspective
+    for (let i = -8; i <= 8; i++) F.quad(c, [[i * 60, F.cam.z + 10], [i * 60 + 58, F.cam.z + 10], [i * 60 + 58, 900], [i * 60, 900]], i % 2 ? '#8a5530' : '#9a6236');
+    // back wall: timber frame, red and teal banners, shelves of lemons and sugar sacks
+    const wall = (X, Y, Z) => F.proj(X, Y, Z); const p0 = wall(-560, 520, 900), p1 = wall(560, 0, 900); if (!p0 || !p1) return; const sx = p0.s;
+    c.fillStyle = '#c9a77a'; c.fillRect(p0.x, p0.y, p1.x - p0.x, p1.y - p0.y); c.strokeStyle = '#5a3420'; c.lineWidth = 14 * sx; c.strokeRect(p0.x, p0.y, p1.x - p0.x, p1.y - p0.y);
+    for (const X of [-280, 0, 280]) { const q = wall(X, 520, 900); c.fillStyle = '#5a3420'; c.fillRect(q.x - 7 * sx, p0.y, 14 * sx, p1.y - p0.y); }
+    for (const [X, col] of [[-420, PAL.red], [420, PAL.teal]]) { const q = wall(X, 500, 900); c.fillStyle = col; c.strokeStyle = INK; c.lineWidth = 3 * sx; c.beginPath(); c.moveTo(q.x - 50 * sx, q.y); c.lineTo(q.x + 50 * sx, q.y); c.lineTo(q.x + 50 * sx, q.y + 200 * sx); c.lineTo(q.x, q.y + 170 * sx); c.lineTo(q.x - 50 * sx, q.y + 200 * sx); c.closePath(); c.fill(); c.stroke(); }
+    for (const Y of [330, 210]) { const q0 = wall(-260, Y, 900), q1 = wall(260, Y, 900); c.fillStyle = '#6a4024'; c.fillRect(q0.x, q0.y, q1.x - q0.x, 10 * sx);
+      for (let i = 0; i < 9; i++) { const x = lerp(q0.x + 20 * sx, q1.x - 20 * sx, i / 8); if (Y > 300) { c.fillStyle = PAL.lemon; c.strokeStyle = INK; c.lineWidth = 2 * sx; c.beginPath(); c.ellipse(x, q0.y - 12 * sx, 14 * sx, 11 * sx, 0, 0, TAU); c.fill(); c.stroke(); }
+        else { c.fillStyle = '#efe6d4'; c.strokeStyle = INK; c.lineWidth = 2 * sx; c.beginPath(); c.moveTo(x - 18 * sx, q0.y); c.lineTo(x - 15 * sx, q0.y - 44 * sx); c.quadraticCurveTo(x, q0.y - 54 * sx, x + 15 * sx, q0.y - 44 * sx); c.lineTo(x + 18 * sx, q0.y); c.closePath(); c.fill(); c.stroke(); } } }
+    const sg = wall(0, 470, 900); c.fillStyle = '#f4e3c0'; c.strokeStyle = INK; c.lineWidth = 3 * sx; c.fillRect(sg.x - 120 * sx, sg.y - 30 * sx, 240 * sx, 56 * sx); c.strokeRect(sg.x - 120 * sx, sg.y - 30 * sx, 240 * sx, 56 * sx);
+    c.fillStyle = '#5a3420'; c.font = `700 ${30 * sx}px Cinzel`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('GROCER', sg.x, sg.y); });
+  // the grocer behind the counter, the two owners in front of it, one each side
+  F.put(0, 700, person(GROCER, { t, seed: 5, expr: 'smug', turn: Math.sin(t * 1.3) * .8, look: Math.sin(t * 1.3), armF: 150, bendF: -30, armB: 210, bendB: 30 }), PERSON);
+  F.put(0, 640, (c, s) => { c.save(); c.scale(s, s); c.fillStyle = PAL.wood; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(-260, -110, 520, 110); c.strokeRect(-260, -110, 520, 110); c.fillStyle = '#e9d2a6'; c.fillRect(-270, -122, 540, 14); c.strokeRect(-270, -122, 540, 14);
+    c.strokeStyle = 'rgba(90,55,25,.55)'; c.lineWidth = 2; for (let i = 1; i < 5; i++) { c.beginPath(); c.moveTo(-260, -110 + i * 22); c.lineTo(260, -110 + i * 22); c.stroke(); }
+    // price tags on the counter: lemons, sugar, and the sum
+    const tag = (x, txt, k, col = '#fbf3df') => { if (k <= 0) return; c.save(); c.translate(x, -60); c.scale(backOut(k), backOut(k)); c.fillStyle = col; c.strokeStyle = INK; c.lineWidth = 3; c.beginPath(); c.moveTo(-70, -30); c.lineTo(56, -30); c.lineTo(76, 0); c.lineTo(56, 30); c.lineTo(-70, 30); c.closePath(); c.fill(); c.stroke();
+      c.fillStyle = INK; c.font = '900 30px Nunito'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(txt, -4, 2); c.restore(); };
+    tag(-170, 'LEMONS 20¢', seg(t, a + .4, a + .7)); tag(0, 'SUGAR 10¢', seg(t, a + 1.0, a + 1.3)); tag(170, '= 30¢', seg(t, a + 1.6, a + 1.9), '#ffd77a'); c.restore(); }, { rim: true, shadow: true, h: 140, w: 600, sw: 520 });
+  F.put(-230, 520, person(RED, { t, seed: 1, expr: 'worried', turn: .7, look: 1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
+  F.put(230, 520, person(TEAL, { t, seed: 2, expr: 'worried', turn: -.7, look: -1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
+  // two hanging lanterns
+  for (const X of [-200, 200]) F.put(X, 600, (c, s) => { c.save(); c.scale(s, s); c.strokeStyle = INK; c.lineWidth = 2; c.beginPath(); c.moveTo(0, -520); c.lineTo(0, -330); c.stroke(); c.fillStyle = '#5a4030'; c.fillRect(-14, -330, 28, 6); c.fillStyle = '#ffd77a'; c.fillRect(-12, -324, 24, 34); c.strokeRect(-12, -324, 24, 34); c.restore(); }, { Y: 0 });
+  F.flush();
+  // warm interior grade: lantern pools, dim corners
+  g.save(); g.globalCompositeOperation = 'multiply'; g.fillStyle = 'rgba(255,190,140,.55)'; g.fillRect(0, 0, W, H); g.restore();
+  for (const X of [-200, 200]) { const q = F.proj(X, 300, 600); if (q) { F.glow(g, q.x, q.y, Math.min(520, 260 * q.s), '255,170,80', .55); F.glow(g, q.x, q.y, Math.min(110, 40 * q.s), '255,240,190', .9); } } }
 // ---------- blueprint desk set (night, candle) ----------
 const BP = document.createElement('canvas'); BP.width = 1000; BP.height = 1400; const bp = BP.getContext('2d');
 function blueprint(t, page) { const c = bp; c.setTransform(1, 0, 0, 1, 0, 0);
@@ -174,8 +206,8 @@ shot(T(13) - .2, T(14) - .2, t => { F.setCam(F.camKeys(t, [[T(13) - .2, WIDE(100
   streetSet(t, { crowd: 'calm', redExpr: 'tired', tealExpr: 'tired', extra: () => bird(t) }); F.grade(g, clamp(tod, 0, 2)); });
 // H: the board flips 60, 50, 40 ... 30
 shot(T(14) - .2, T(16) - .2, t => { F.setCam(F.camKeys(t, [[T(14) - .2, { ...CAM_BOARD, z: BZ - 520 }], [T(16), { ...CAM_BOARD, z: BZ - 420 }]]), t); streetSet(t, { crowd: 'split', redExpr: 'worried', tealExpr: 'worried' }); });
-// I: the cost sheet on the desk (light-flash in)
-shot(T(16) - .2, T(17) - .2, t => desk(t, pageCost, { zoom: lerp(1, 1.12, seg(t, T(16), T(17))), cx: 540 }), { flash: true });
+// I: the grocer's shop at dusk, symmetrical: Red left, Teal right, the grocer between them; LEMONS 20¢ + SUGAR 10¢ = 30¢ on tags (light-flash in)
+shot(T(16) - .2, T(17) - .2, t => { F.setCam(F.camKeys(t, [[T(16) - .2, { x: 0, y: 150, z: -120, hor: 780, focus: 640, dof: 4, f: 1150 }], [T(17), { x: 0, y: 150, z: 20, hor: 780, focus: 500, dof: 4.5, f: 1150 }]]), t); shop(t); }, { flash: true });
 // J: the crowded happy street; then the two tired owners and their empty jars
 shot(T(17) - .2, T(18) - .1, t => { F.setCam(F.camKeys(t, [[T(17) - .2, WIDE(0)], [T(18), WIDE(200, 40)]]), t); streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired' }); });
 shot(T(18) - .1, T(20) - .2, t => { F.setCam(F.camKeys(t, [[T(18) - .1, { x: 0, y: 170, z: OZ - 470, hor: 940, focus: 470, dof: 5, f: 1150 }], [T(20), { x: 0, y: 170, z: OZ - 400, hor: 940, focus: 400, dof: 5, f: 1150 }]]), t);

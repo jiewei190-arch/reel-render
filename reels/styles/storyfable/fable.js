@@ -43,7 +43,7 @@ export function camKeys(t, keys) { let a = keys[0], b = keys[keys.length - 1]; f
 let Q = [];
 export function begin() { Q = []; for (const k in LG) LG[k].clearRect(0, 0, W, H); }
 // put(X, Z, fn(ctx, s, p), {Y, layer, rim, shadow, sharp, h}) -> fn draws with origin at the feet, 1 unit = 1 cm * s
-export function put(X, Z, fn, o = {}) { const p = proj(X, o.Y || 0, Z); if (!p) return; Q.push({ X, Z, fn, o, p, d: p.d }); }
+export function put(X, Z, fn, o = {}) { const p = proj(X, o.Y || 0, Z); if (!p || p.d < (o.minD ?? 90)) return; Q.push({ X, Z, fn, o, p, d: p.d }); }
 function layerFor(d, o) { if (o.layer) return o.layer; const r = (d - cam.focus) / cam.focus; if (r > .35) return 'far'; if (r < -.45) return 'near'; return 'mid'; }
 export function drawGround(fn) { fn(LG.far); }               // ground/sky go to the far layer
 export function flush() {
@@ -257,7 +257,7 @@ function flap(c, x, y, v, p, k, ) { c.save(); c.translate(x, y); const txt = q =
   c.strokeStyle = 'rgba(0,0,0,.45)'; c.lineWidth = 1.5; c.beginPath(); c.moveTo(-46, 0); c.lineTo(46, 0); c.stroke(); c.restore(); }
 
 // bunting: a string of team-colour pennants between two poles (world points), sagging
-export function bunting(c, A, B, cols, t) { const n = 14, pts = []; for (let i = 0; i <= n; i++) { const u = i / n, X = lerp(A[0], B[0], u), Y = lerp(A[1], B[1], u) - Math.sin(u * Math.PI) * 60, Z = lerp(A[2], B[2], u); const p = proj(X, Y, Z); if (!p) return; pts.push(p); }
+export function bunting(c, A, B, cols, t) { if (A[2] - cam.z < 200) return; const n = 14, pts = []; for (let i = 0; i <= n; i++) { const u = i / n, X = lerp(A[0], B[0], u), Y = lerp(A[1], B[1], u) - Math.sin(u * Math.PI) * 60, Z = lerp(A[2], B[2], u); const p = proj(X, Y, Z); if (!p) return; pts.push(p); }
   c.save(); c.strokeStyle = INK; c.lineWidth = Math.max(1.2, pts[0].s * 1.6); c.beginPath(); pts.forEach((p, i) => i ? c.lineTo(p.x, p.y) : c.moveTo(p.x, p.y)); c.stroke();
   for (let i = 0; i < n; i++) { const a = pts[i], b = pts[i + 1], sw = Math.sin(t * 3 + i) * .08, mx = (a.x + b.x) / 2, len = 46 * (a.s + b.s) / 2; c.fillStyle = cols[i % cols.length];
     c.beginPath(); c.moveTo(a.x + (b.x - a.x) * .1, a.y + (b.y - a.y) * .1); c.lineTo(b.x - (b.x - a.x) * .1, b.y - (b.y - a.y) * .1); c.lineTo(mx + len * sw, (a.y + b.y) / 2 + len); c.closePath(); c.fill(); c.lineWidth = Math.max(1, a.s * 1.2); c.stroke(); } c.restore(); }

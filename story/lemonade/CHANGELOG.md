@@ -78,3 +78,18 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   2. **The camera holds** two-key eases; the reference roams constantly.
   3. **The time-lapse sunset is weak**; the reference shifts strongly to purple dusk with stars.
   4. **No warm interior with characters** (the reference's shop and forge).
+
+## v4 (Oct 29)
+- Fixed the biggest v3 gap, the empty sets:
+  - red/teal/cream bunting strung across the street on wooden poles at two depths (more team-colour props, like the reference's flags);
+  - patchwork crop fields with furrows on both sides beyond the trees;
+  - crates of lemons beside each stand (rim-lit, shadowed);
+  - flower clumps on the verges.
+- Camera: a constant small roaming drift (x/y sway) on every shot on top of the eased keys, so no frame is locked off.
+- Fix: sprites within 90 cm of the camera are skipped (a bunting pole smeared across the board close-up).
+- QA: WARN (right column, frame edge); rest PASS. Bands about the same as v3 (frame sat .37 / std 47 vs ref .36 / 49).
+- Note: the code in this commit already contains the v5 grocer's shop interior being worked on; lemonade_v4.mp4 was rendered before it.
+- Still off (compare_v4.jpg):
+  1. **No warm interior with characters** (the reference's symmetrical shop, red client left, teal right, candles) is the biggest remaining scene-type gap.
+  2. **Sky band** is paler (sat .19 vs .25) and the **horizon band** greener/darker (#b1aa92 vs the cream #e1dbcc) because our owners and stands stand in it.
+  3. **Medium shots:** the reference heads fill more of the frame, with strong side light.
