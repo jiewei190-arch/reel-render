@@ -38,7 +38,7 @@ registerShot('s013', { draw(g, t, info) {
   ['RED', 'GREEN', 'BLUE'].forEach((s, i) => { const p = ease.outBack(prog(t, tCones + 0.1 + i * 0.18, tCones + 0.5 + i * 0.18)); if (p > 0.01) { g.save(); g.translate(E.W * 0.47 + i * 210, E.H * 0.75); g.scale(p, p); text(g, s, 0, 0, { size: 34, color: ['#ff7a6a', '#8aef9a', '#7aa8ff'][i], font: FONTS.ui, weight: 900, spacing: 3, glow: 12 }); g.restore(); } });
   BP.label(g, t, { at: [E.W * 0.62 - 140, E.H * 0.5 - 120], to: [E.W * 0.62 - 140, E.H * 0.5 - 280], str: 'CONES', start: tCones });
   g.restore();
-  chip(g, t, { str: 'About 6 million cones', at: tMil, x: E.W * 0.62, y: E.H * 0.86, tone: 'gold' });
+  chip(g, t, { dur: info.dur - 0.05, str: 'About 6 million cones', at: tMil, x: E.W * 0.62, y: E.H * 0.86, tone: 'gold' });
 } });
 
 // s014 — "Cones handle colour. And at night, they clock out."  gag: cone workers punch out at a time clock, the poster drains to grey
@@ -120,7 +120,7 @@ registerShot('s016', { draw(g, t, info) {
   const fh = 360 * fill; rr(g, bx - 70, by + 160 - fh, 140, fh, 14); g.fillStyle = linGrad(g, 0, by + 160, 0, by - 200, ['#5a6aff', '#b8c8ff']); g.fill();
   for (let i = 0; i < 6; i++) { const rx = bx - 55 + i * 22, lit = fill > i / 6; rr(g, rx - 6, by - 150, 12, 230, 6); g.fillStyle = alpha('#ffffff', lit ? 0.5 : 0.08); g.fill(); }
   text(g, 'RODS', bx, by + 230, { size: 40, color: '#b8c8ff', font: FONTS.ui, weight: 900, spacing: 4 });
-  chip(g, t, { str: 'Rods: 20-30 minutes', at: tTh, x: E.W * 0.5, y: E.H * 0.88, tone: 'gold' });
+  chip(g, t, { dur: info.dur - 0.05, str: 'Rods: 20-30 minutes', at: tTh, x: E.W * 0.5, y: E.H * 0.88, tone: 'gold' });
   FX.dust(g, t, { count: 30, color: '#b8c8ff', a: 0.2 });
 } });
 
@@ -178,7 +178,7 @@ registerShot('s019', { draw(g, t, info) {
   // the pupils: big round in the dark, narrowing to slits when the light comes up a touch
   const nar = ease.inOut(prog(t, tSix - 0.3, tSix + 0.7));
   layer(g, cam, 1, (g) => { for (const ex of [-3, -14]) { const x = cx + ex * cs, y = cy - 3 * cs; g.fillStyle = '#0a0810'; g.beginPath(); g.ellipse(x, y, lerp(46, 10, nar), lerp(60, 66, nar), 0, 0, Math.PI * 2); g.fill(); g.fillStyle = '#ffffff'; g.fillRect(x - 22, y - 30, 10, 10); glow(g, x, y, 170, '#c8f07a', 0.18); } });
-  chip(g, t, { str: 'Cat: about 1/6 the light', at: tSix, x: E.W * 0.3, y: E.H * 0.84, tone: 'gold' });
+  chip(g, t, { dur: info.dur - 0.05, str: 'Cat: about 1/6 the light', at: tSix, x: E.W * 0.3, y: E.H * 0.84, tone: 'gold' });
   FX.dust(g, t, { count: 24, color: '#c9d4ff', a: 0.2 });
 } });
 
@@ -216,7 +216,7 @@ registerShot('s021', { draw(g, t, info) {
     }
   });
   labFg(g, t, cam);
-  chip(g, t, { str: 'Nature Comms, 2016', at: tYear, x: E.W * 0.5, y: E.H * 0.88, tone: 'blue' });
+  chip(g, t, { dur: info.dur - 0.05, str: 'Nature Comms, 2016', at: tYear, x: E.W * 0.5, y: E.H * 0.88, tone: 'blue' });
   FX.dust(g, t, { count: 30, color: '#cfe0ff', a: 0.2 });
 } });
 
@@ -233,7 +233,7 @@ registerShot('s022', { draw(g, t, info) {
   g.restore();
   const nk = ease.outBack(prog(t, tOne - 0.1, tOne + 0.35)), pulse = 1 + 0.1 * Math.max(0, 1 - Math.abs(t - tOne2) * 4);
   if (nk > 0.01) { g.save(); g.translate(E.W * 0.24, E.H * 0.42); g.scale(nk * pulse, nk * pulse); glow(g, 0, 0, 300, '#ffd47e', 0.3); text(g, '1', 0, 0, { size: 300, color: '#ffd47e', font: FONTS.title, weight: 700, glow: 50, glowColor: 'rgba(255,170,80,.8)' }); g.restore(); }
-  chip(g, t, { str: 'Better than chance', at: tPh + 0.4, x: E.W * 0.24, y: E.H * 0.8, tone: 'blue' });
+  chip(g, t, { dur: info.dur - 0.05, str: 'Better than chance', at: tPh + 0.4, x: E.W * 0.24, y: E.H * 0.8, tone: 'blue' });
 } });
 
 // s023 — "Upside, no more stubbed toes."  insert: a bare foot slides past the coffee-table leg; checkmark sparkle + thumbs-up

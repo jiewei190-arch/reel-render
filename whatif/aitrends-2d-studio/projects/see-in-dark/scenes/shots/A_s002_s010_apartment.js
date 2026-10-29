@@ -178,7 +178,7 @@ registerShot('s009', { draw(g, t, info) {
   });
   // the charger outline, barely there: a cold black brick (drawn on top so it reads)
   layer(g, cam, 1, (g) => { rr(g, sideX + 34, top - 30, 54, 30, 6); g.fillStyle = '#05010c'; g.fill(); g.strokeStyle = alpha('#5a2a8a', 0.6); g.lineWidth = 1.5; g.stroke(); seg(g, [[sideX + 88, top - 14], [sideX + 160, top - 6], [sideX + 210, top + 40]], 2, alpha('#3a1a5a', 0.7)); });
-  chip(g, t, { str: 'Cold things stay dark', at: tChg + 0.3, x: E.W / 2, y: E.H * 0.86, tone: 'coral', dur: info.dur - 0.05 });
+  chip(g, t, { dur: info.dur - 0.05, str: 'Cold things stay dark', at: tChg + 0.3, x: E.W / 2, y: E.H * 0.86, tone: 'coral', dur: info.dur - 0.05 });
 } });
 
 // s010 — "What if you could see in complete darkness?"  TITLE CARD fading up over the night skyline
