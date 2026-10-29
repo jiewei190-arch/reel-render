@@ -81,6 +81,17 @@ function skylineRaw(t, o) { const g = F.g, hor = F.cam().hor, px = -F.cam().x * 
   g.restore(); F.horizonHaze(.68); }
 // cream mist lying on the ground just below the horizon (the reference's horizon band reads ~#e2dbcd, s0.09); drawn after the
 // ground and before the sprites, so far ground fades and the sprites keep their own depth haze
+// painterly mottle: soft light/dark blotches and short hatch strokes, laid over the ground with soft-light (the reference's
+// grass and floors are textured, ours were flat fills). Built once; drifts with the camera so it reads as part of the ground.
+const MOT = (() => { const c = document.createElement('canvas'); c.width = c.height = 512; const x = c.getContext('2d'); x.fillStyle = '#808080'; x.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 260; i++) { const px = hash(i * 3.7) * 512, py = hash(i * 5.3) * 512, r = 10 + hash(i * 7.1) * 46, l = hash(i * 9.9) > .5 ? 255 : 0;
+    for (const [dx, dy] of [[0, 0], [512, 0], [-512, 0], [0, 512], [0, -512]]) { const gr = x.createRadialGradient(px + dx, py + dy, 0, px + dx, py + dy, r); gr.addColorStop(0, `rgba(${l},${l},${l},.22)`); gr.addColorStop(1, `rgba(${l},${l},${l},0)`); x.fillStyle = gr; x.fillRect(px + dx - r, py + dy - r, r * 2, r * 2); } }
+  x.lineCap = 'round'; for (let i = 0; i < 700; i++) { const px = hash(i * 1.9 + 4) * 512, py = hash(i * 2.3 + 8) * 512, l = hash(i * 4.4) > .45 ? 40 : 230; x.strokeStyle = `rgba(${l},${l},${l},.28)`; x.lineWidth = 2 + hash(i) * 2; x.beginPath(); x.moveTo(px, py); x.lineTo(px + 6 + hash(i * 6.6) * 10, py - 4 - hash(i * 8.8) * 8); x.stroke(); }
+  return c; })();
+function mottle(a = .55, y0 = null) { const g = F.g, top = y0 ?? F.cam().hor; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'soft-light'; g.globalAlpha = a; const pat = g.createPattern(MOT, 'repeat'); const ox = -F.cam().x * 1.5, oy = F.cam().z * .6;
+  pat.setTransform(new DOMMatrix([1.4, 0, 0, 1.4, ox % 717, oy % 717])); g.fillStyle = pat; g.fillRect(0, top, W, H - top); g.restore(); }
+// floor decal: drawn on the ground before the sprites, so characters stand on it
+function decal(X, Z, size, draw) { const p = F.proj(X, 0, Z); if (p.dz < 20) return; const g = F.g; g.save(); g.translate(p.x, p.y); g.scale(p.s * size, p.s * size); draw(); g.restore(); }
 function groundHaze(a = .85, depth = 420) { const g = F.g, hor = F.cam().hor; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = F.vgrad(hor - 60, hor + depth, [[0, `rgba(236,230,214,${a * .6})`], [.25, `rgba(236,230,214,${a})`], [1, 'rgba(236,230,214,0)']]); g.fillRect(0, hor - 60, W, depth + 60); g.restore(); }
 function pebbleField(z1, base, n = 420) { const g = F.g; for (let i = 0; i < n; i++) { const X = (hash(i * 1.31) - .5) * 2600 + F.cam().x, Z = F.cam().z + 40 + Math.pow(hash(i * 2.17), 1.7) * z1, q = F.proj(X, 0, Z); if (q.dz < 30 || q.x < -20 || q.x > W + 20 || q.y > H + 10) continue;
   const r = Math.min(9, (3 + hash(i * 5.7) * 5) * q.s); g.fillStyle = base[i % 4]; g.beginPath(); g.ellipse(q.x, q.y, r * 1.6, r * .7, 0, 0, Math.PI * 2); g.fill(); } }
@@ -95,15 +106,15 @@ function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const
   F.put(0, 2600, .9, () => fountain(t), { rim: true }); F.put(-900, 2300, .9, () => stall(PAL.sideA), { rim: true, shadow: true }); F.put(900, 2400, .9, () => stall(PAL.sideB), { rim: true, shadow: true });
   F.put(-560, 1500, .45, () => banner(PAL.sideA, PAL.sideAD, t, 0), { rim: true, shadow: true }); F.put(560, 1500, .45, () => banner(PAL.sideB, PAL.sideBD, t, 2), { rim: true, shadow: true });
   F.put(-760, 1100, .35, () => lamp(0), { rim: true, shadow: true }); F.put(760, 1100, .35, () => lamp(0), { rim: true, shadow: true });
-  F.put(0, o.duo ? 520 : 760, .42, () => emblem(), {});
+  if (o.duo) decal(0, 330, .5, emblem); else F.put(0, 760, .42, () => emblem(), {});
   F.put(o.duo ? 0 : -120, o.duo ? 720 : 640, SIGN * (o.duo ? 1.4 : 1.08), () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
   F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
   // the two commuters stand up front, the reference's big-heads-in-the-foreground staging
-  if (o.duo) { const [ea, eb] = o.duo; F.put(-112, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
+  if (o.duo) { const [ea, eb] = o.duo; F.put(-98, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
     F.put(84, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 80, bendF: 10, hold: caseProp }), { rim: true, shadow: true }); }
   F.put(-330, 240, .5, () => flowerBox(PAL.sideA), {}); F.put(380, 230, .5, () => flowerBox(PAL.sideB), {});
-  groundHaze(); F.flush(); }
+  mottle(); groundHaze(); F.flush(); }
 function setValley(t, o) { F.sky(t, { sunX: 780, sunY: 340 }); skyline(t, { town: false }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#cdc08c'], [.25, '#b9ad62'], [1, '#9a8c48']]); g.fillRect(0, hor, W, H - hor);
   for (let r = 0; r < 7; r++) for (let k = -6; k <= 6; k++) { const z = 3000 + r * 900, x = k * 700 + (r % 2) * 350; F.groundQuad(x, z, x + 680, z + 860, ['#c2b46a', '#d4bb6e', '#aab060', '#c9a95e'][Math.floor(hash(r * 13 + k) * 4)], 0); }
@@ -116,11 +127,12 @@ function setValley(t, o) { F.sky(t, { sunX: 780, sunY: 340 }); skyline(t, { town
   const n = o.cars ?? 10; for (let i = 0; i < n; i++) { const sd = i % 2, u = ((t * .03 + i * .1) % 1), z = lerp(300, 8000, u), x = lerp(sd ? 120 : -120, sd ? 1500 : -1500, z / 9000); F.put(x, z, CAR, () => car(sd ? PAL.sideB : PAL.sideA, sd ? PAL.sideBD : PAL.sideAD, { back: true, t, driver: () => driver(sd, t, {}) }), { rim: true, shadow: true }); }
   if (o.posts) { F.put(-460, 900, SIGN * .9, () => signpost(['RED ROUTE', 'narrow street', '+ highway'], '#f6dcd8', PAL.sideAD), { sharp: true, rim: true, shadow: true }); F.put(460, 900, SIGN * .9, () => signpost(['TEAL ROUTE', 'highway', '+ narrow street'], '#d6efec', PAL.sideBD), { sharp: true, rim: true, shadow: true }); }
   if (o.walkers !== false) [0, 1].forEach(sd => F.put(sd ? 105 : -125, F.cam().z + 330 + sd * 20, FIG, () => driver(sd, t, { expr: sd ? 'smug' : 'neutral', walk: t * 1.3 + sd * .5, turn: sd ? -.25 : .25, look: sd ? -1 : 1, flip: !!sd, armF: sd ? 80 : 30, bendF: sd ? 10 : 20, hold: sd ? caseProp : wheelProp }), { rim: true, shadow: true, sharp: true }));
-  F.put(-160, 140, .5, () => tuft(3)); F.put(190, 130, .5, () => tuft(9)); groundHaze(); F.flush(); }
+  F.put(-160, 140, .5, () => tuft(3)); F.put(190, 130, .5, () => tuft(9)); mottle(); groundHaze(); F.flush(); }
 const NODE = { home: [540, 380], A: [230, 820], B: [850, 820], mill: [540, 1260] };
-function setMap(t, o) { const g = F.g; g.fillStyle = '#8bb85c'; g.fillRect(0, 0, W, H);
-  for (let r = 0; r < 12; r++) for (let k = 0; k < 7; k++) { g.fillStyle = ['#97c266', '#a9c86e', '#7fae52', '#b8c97a', '#c8bf6a'][Math.floor(hash(r * 11 + k) * 5)]; g.fillRect(k * 160 - 20 + (r % 2) * 40, r * 170 - 30, 150, 160); }
+function setMap(t, o) { const g = F.g; g.fillStyle = '#8fa654'; g.fillRect(0, 0, W, H);
+  for (let r = 0; r < 12; r++) for (let k = 0; k < 7; k++) { g.fillStyle = ['#93a95a', '#a1ae62', '#86a04e', '#a8ad68', '#b0a85e'][Math.floor(hash(r * 11 + k) * 5)]; g.fillRect(k * 160 - 20 + (r % 2) * 40, r * 170 - 30, 150, 160); }
   for (let i = 0; i < 40; i++) { const x = hash(i * 3.7) * W, y = hash(i * 5.1) * H; g.fillStyle = '#4f7d3a'; g.beginPath(); g.arc(x, y, 20 + 14 * hash(i), 0, Math.PI * 2); g.fill(); g.fillStyle = '#6f9a4e'; g.beginPath(); g.arc(x - 6, y - 6, 14 + 8 * hash(i), 0, Math.PI * 2); g.fill(); }
+  mottle(.8, 0);
   const road = (a, b, w) => { const A = NODE[a], B = NODE[b]; g.lineCap = 'round'; g.strokeStyle = '#4a3d30'; g.lineWidth = w + 12; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); g.strokeStyle = '#b39a74'; g.lineWidth = w; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); g.setLineDash([24, 20]); g.strokeStyle = 'rgba(255,245,215,.8)'; g.lineWidth = 4; g.beginPath(); g.moveTo(...A); g.lineTo(...B); g.stroke(); g.setLineDash([]); };
   road('home', 'A', 34); road('A', 'mill', 86); road('home', 'B', 86); road('B', 'mill', 34);
   if (o.shortcut > 0) { const A = NODE.A, B = NODE.B, k = clamp(o.shortcut); g.strokeStyle = '#4a3d30'; g.lineWidth = 50; g.lineCap = 'round'; g.beginPath(); g.moveTo(...A); g.lineTo(lerp(A[0], B[0], k), A[1]); g.stroke(); g.strokeStyle = '#e9b949'; g.lineWidth = 36; g.beginPath(); g.moveTo(...A); g.lineTo(lerp(A[0], B[0], k), A[1]); g.stroke(); }
@@ -159,12 +171,12 @@ function setJam(t, o) { F.sky(t, { sunX: 300, sunY: 300 }); skyline(t, { town: f
   g.fillStyle = F.vgrad(hor, H, [[0, '#c8b894'], [1, '#a8906a']]); g.fillRect(0, hor, W, H - hor); tiles(-800, 800, F.cam().z + 20, 6000, '#cdb98f', '#bfa982', 80); F.groundQuad(-190, F.cam().z + 20, 190, 9000, '#9a8b74', 0);
   for (let z = 700; z < 9000; z += 900) { F.put(-640, z, 1, () => house({ roof: PAL.sideA, shut: PAL.sideAD, timber: true, w: 480, h: 520, lit: o.night }), { rim: true, shadow: true }); F.put(640, z + 450, 1, () => house({ roof: PAL.sideB, shut: PAL.sideBD, timber: true, w: 480, h: 500, lit: o.night }), { rim: true, shadow: true }); }
   for (let i = 0; i < 24; i++) { const z = 520 + i * 340, sd = i % 2, col = (i % 3 === 1) ? 1 - sd : sd; F.put(sd ? 80 : -80, z, CAR, () => car(col ? PAL.sideB : PAL.sideA, col ? PAL.sideBD : PAL.sideAD, { t, idle: true, seed: i, lights: o.night, honk: i === 1 ? clamp(Math.sin(t * 3)) : 0, plate: col ? 'TEAL' : 'RED', driver: () => driver(col, t, { expr: i < 4 ? 'glare' : 'neutral' }) }), { rim: true, shadow: true }); }
-  F.put(-330, 200, .5, () => tuft(6)); F.put(360, 190, .5, () => tuft(12)); groundHaze(); F.flush(); }
+  F.put(-330, 200, .5, () => tuft(6)); F.put(360, 190, .5, () => tuft(12)); mottle(); groundHaze(); F.flush(); }
 function setStuttgart(t) { F.sky(t, { sunX: 820, sunY: 380 }); skyline(t, { town: true }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#c9b998'], [1, '#a99070']]); g.fillRect(0, hor, W, H - hor); tiles(-1200, 1200, F.cam().z + 20, 6000, '#cfbd96', '#c1ad86', 80); F.groundQuad(-240, F.cam().z + 20, 240, 9000, '#8f8a82', 0);
   for (let z = 1200; z < 9000; z += 1200) { F.put(-760, z, 1.1, () => house({ roof: '#b8583f', w: 500, h: 600, timber: true, chimney: true }), { rim: true, shadow: true }); F.put(760, z + 500, 1.1, () => house({ roof: '#6e7f8f', w: 500, h: 560, timber: true }), { rim: true, shadow: true }); }
   F.put(0, 1200, .5, () => barrier('CLOSED'), { rim: true, shadow: true, sharp: true }); F.put(-430, 800, SIGN, () => signpost(['STUTTGART', '1969', 'new road']), { rim: true, shadow: true, sharp: true });
-  F.put(260, 520, FIG, () => driver(0, t, { expr: 'smug', turn: -.4, look: -1, flip: true }), { rim: true, shadow: true }); F.put(-200, 200, .5, () => tuft(9)); groundHaze(.65); F.flush(); }
+  F.put(260, 520, FIG, () => driver(0, t, { expr: 'smug', turn: -.4, look: -1, flip: true }), { rim: true, shadow: true }); F.put(-200, 200, .5, () => tuft(9)); mottle(); groundHaze(.65); F.flush(); }
 function setSeoul(t) { F.sky(t, { sunX: 760, sunY: 300 }); skyline(t, { town: true }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#c8bfa6'], [1, '#a99a7a']]); g.fillRect(0, hor, W, H - hor);
   F.groundQuad(-300, F.cam().z + 20, 300, 9000, '#4c9fc4', 0); for (let z = Math.max(200, F.cam().z + 60); z < 7000; z += 160) { const a = F.proj(-200 + 150 * Math.sin(z * .01 + t), 0, z), b = F.proj(-120 + 150 * Math.sin(z * .01 + t), 0, z); g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = Math.max(1, 6 * a.s); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
@@ -172,7 +184,7 @@ function setSeoul(t) { F.sky(t, { sunX: 760, sunY: 300 }); skyline(t, { town: tr
   for (let z = 1200; z < 9000; z += 1300) [-1, 1].forEach(sd => F.put(sd * 520, z, 1, () => willow(), { rim: true, shadow: true }));
   for (let z = 2200; z < 9000; z += 1600) { F.put(-1100, z, 1.3, () => house({ roof: '#7d8fa3', w: 560, h: 900, wall: '#e8e2d6' }), { rim: true }); F.put(1100, z + 600, 1.3, () => house({ roof: '#9a7d6a', w: 560, h: 800, wall: '#ece4d8' }), { rim: true }); }
   for (let i = 0; i < 6; i++) { const sd = i % 2, z = 400 + i * 420 + ((t * 40 + i * 90) % 300); F.put(sd ? 420 : -420, z, FIG, () => F.figure({ ...(sd ? TEALD : REDD), t, walk: t * 1.2 + i * .3, expr: 'smug', turn: sd ? -.3 : .3, flip: !!sd }), { rim: true, shadow: true }); }
-  F.put(-760, 1400 + ((t * 160) % 900), CAR * .9, () => bus(PAL.sideB), { rim: true, shadow: true }); F.put(560, 900, SIGN, () => signpost(['SEOUL', 'bus + subway', 'riders up']), { rim: true, shadow: true, sharp: true }); F.put(260, 200, .5, () => tuft(3)); groundHaze(.65); F.flush(); }
+  F.put(-760, 1400 + ((t * 160) % 900), CAR * .9, () => bus(PAL.sideB), { rim: true, shadow: true }); F.put(560, 900, SIGN, () => signpost(['SEOUL', 'bus + subway', 'riders up']), { rim: true, shadow: true, sharp: true }); F.put(260, 200, .5, () => tuft(3)); mottle(); groundHaze(.65); F.flush(); }
 
 // ---------- camera keys ----------
 function keys(t, K) { if (t <= K[0][0]) return K[0][1]; for (let i = 0; i < K.length - 1; i++) { const [ta, A] = K[i], [tb, B] = K[i + 1]; if (t <= tb) { const u = eio((t - ta) / (tb - ta)), o = {}; for (const k in A) o[k] = lerp(A[k], B[k] ?? A[k], u); return o; } } return K[K.length - 1][1]; }
