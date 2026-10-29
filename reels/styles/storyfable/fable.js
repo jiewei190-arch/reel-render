@@ -20,9 +20,18 @@ export function createFable(canvas) {
   const main = canvas.getContext('2d'); let g = main;
   const sp = document.createElement('canvas'); sp.width = W; sp.height = H; const spg = sp.getContext('2d');
   const tint = document.createElement('canvas'); tint.width = W; tint.height = H; const tg = tint.getContext('2d');
+  const cmp = document.createElement('canvas'); cmp.width = W; cmp.height = H; const cg = cmp.getContext('2d');
+  const lo = document.createElement('canvas'); lo.width = W; lo.height = H; const lg = lo.getContext('2d'); // reduced-size scratch for cheap blurs
+  const lay = document.createElement('canvas'); lay.width = W; lay.height = H; const ly = lay.getContext('2d');
   const off = document.createElement('canvas'); off.width = W; off.height = H; const og = off.getContext('2d');
   const F = { g: main, W, H };
-  F.ctx = () => g;   // H3 addition: the context the helpers draw on right now (the sprite canvas inside F.put), for custom paths
+  F.ctx = () => g;
+  // H3: draw fn unfiltered on a layer, then lay it down blurred by px using a shrink-and-grow blur (a canvas filter on
+  // every path is ~100x slower in the headless renderer)
+  F.layer = (px, fn) => { const keep = g, keepF = F.g; ly.setTransform(1, 0, 0, 1, 0, 0); ly.clearRect(0, 0, W, H); g = ly; F.g = ly; fn(); g = keep; F.g = keepF;
+    const d = Math.max(1, Math.min(4, px / 1.2)), ww = Math.ceil(W / d), hh = Math.ceil(H / d); lo.width = ww + 2; lo.height = hh + 2;
+    lg.filter = `blur(${(px / d).toFixed(2)}px)`; lg.drawImage(lay, 0, 0, W, H, 0, 0, ww, hh); lg.filter = 'none';
+    g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(lo, 0, 0, ww, hh, 0, 0, W, H); g.restore(); };   // H3 addition: the context the helpers draw on right now (the sprite canvas inside F.put), for custom paths
 
   // —— perspective camera (world units ~ cm, Y up, the camera looks down +Z) ——
   let cam = { x: 0, y: 130, z: 0, f: 1100, hor: 800, focus: 420, dof: 4 };
@@ -44,23 +53,29 @@ export function createFable(canvas) {
   // H3 speed-up: every sprite works inside its screen bounding box (o.box in local units, default generous), and any
   // blurred or hazed sprite goes through the offscreen canvas so the filter runs once on a small rect, not on every path
   const BOX = [-900, -1500, 900, 300];
-  const fancy = (it, p, sc, f) => {
+  const fancy = (it, p, sc, f, bl, hz) => {
     const bx = it.box || BOX, m = 40 + Math.max(2, 7 * sc);
     const x0 = Math.max(0, Math.floor(p.x + bx[0] * sc - m)), y0 = Math.max(0, Math.floor(p.y + bx[1] * sc - m));
     const x1 = Math.min(W, Math.ceil(p.x + bx[2] * sc + m)), y1 = Math.min(H, Math.ceil(p.y + bx[3] * sc + m)); const w = x1 - x0, h = y1 - y0;
     if (w <= 0 || h <= 0) return;
-    g = spg; spg.setTransform(1, 0, 0, 1, 0, 0); spg.clearRect(x0, y0, w, h); spg.filter = 'none'; spg.save(); spg.beginPath(); spg.rect(x0, y0, w, h); spg.clip(); spg.translate(p.x, p.y); spg.scale(sc, sc); it.draw(); spg.restore(); g = main;
-    const tintTo = col => { tg.setTransform(1, 0, 0, 1, 0, 0); tg.globalCompositeOperation = 'source-over'; tg.clearRect(x0, y0, w, h); tg.drawImage(sp, x0, y0, w, h, x0, y0, w, h); tg.globalCompositeOperation = 'source-in'; tg.fillStyle = col; tg.fillRect(x0, y0, w, h); tg.globalCompositeOperation = 'source-over'; };
-    const blit = (src, dx = 0, dy = 0) => g.drawImage(src, x0, y0, w, h, x0 + dx, y0 + dy, w, h);
+    // scratch canvases are resized to the sprite's rect: drawing from a full-frame canvas costs a full-frame copy each time
+    for (const c of [sp, tint, cmp]) { c.width = w; c.height = h; }
+    g = spg; spg.setTransform(1, 0, 0, 1, -x0, -y0); spg.translate(p.x, p.y); spg.scale(sc, sc); it.draw(); g = main;
+    const tintTo = col => { tg.globalCompositeOperation = 'source-over'; tg.clearRect(0, 0, w, h); tg.drawImage(sp, 0, 0); tg.globalCompositeOperation = 'source-in'; tg.fillStyle = col; tg.fillRect(0, 0, w, h); tg.globalCompositeOperation = 'source-over'; };
     g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
-    if (it.shadow) { tintTo('#3a2a1c'); g.save(); g.globalAlpha = .26; g.filter = 'blur(3px)'; g.translate(p.x, p.y); g.transform(1, 0, -.95, -.22, 0, 0); g.translate(-p.x, -p.y); blit(tint); g.restore();
-      g.save(); g.globalAlpha = .35; g.filter = 'blur(4px)'; g.fillStyle = '#3a2a1c'; g.beginPath(); g.ellipse(p.x, p.y, 120 * sc, 22 * sc, 0, 0, Math.PI * 2); g.fill(); g.restore(); }
-    if (it.rim) { tintTo('#fff8e8'); const r = Math.max(2, 7 * sc); g.save(); g.filter = f; for (let a = 0; a < 8; a++) blit(tint, Math.cos(a * Math.PI / 4) * r, Math.sin(a * Math.PI / 4) * r); g.restore(); }
-    g.filter = f; blit(sp); g.restore(); };
+    // blur by shrinking: draw the rect at 1/d size (with a d-times smaller blur), then scale it back up
+    const down = (src, d, filter) => { const ww = Math.ceil(w / d), hh = Math.ceil(h / d); lo.width = ww + 2; lo.height = hh + 2; lg.filter = filter; lg.drawImage(src, 0, 0, w, h, 0, 0, ww, hh); lg.filter = 'none'; return [ww, hh]; };
+    if (it.shadow) { tintTo('#3a2a1c'); const [ww, hh] = down(tint, 4, 'none'); g.save(); g.globalAlpha = .26; g.translate(p.x, p.y); g.transform(1, 0, -.95, -.22, 0, 0); g.translate(-p.x, -p.y); g.drawImage(lo, 0, 0, ww, hh, x0, y0, w, h); g.restore();
+      g.save(); g.globalAlpha = .35; g.translate(p.x, p.y); g.scale(1, 22 / 120); const rg = g.createRadialGradient(0, 0, 0, 0, 0, 120 * sc + 6); rg.addColorStop(0, '#3a2a1c'); rg.addColorStop(Math.max(0, 1 - 8 / (120 * sc + 6)), '#3a2a1c'); rg.addColorStop(1, 'rgba(58,42,28,0)'); g.fillStyle = rg; g.beginPath(); g.arc(0, 0, 120 * sc + 6, 0, Math.PI * 2); g.fill(); g.restore(); }
+    // rim halo + sprite are stacked unfiltered on cmp, then blurred/hazed once (was 9 filtered blits per sprite)
+    if (it.rim) { tintTo('#fff8e8'); const r = Math.max(2, 7 * sc); for (let a = 0; a < 8; a++) cg.drawImage(tint, Math.cos(a * Math.PI / 4) * r, Math.sin(a * Math.PI / 4) * r); }
+    cg.drawImage(sp, 0, 0);
+    if (bl > 1.5) { const d = Math.min(4, bl / 1.5), [ww, hh] = down(cmp, d, `blur(${(bl / d).toFixed(2)}px) ${hz === 'none' ? '' : hz}`.trim()); g.drawImage(lo, 0, 0, ww, hh, x0, y0, w, h); }
+    else { g.filter = f; g.drawImage(cmp, x0, y0); } g.restore(); };
   F.flush = () => { queue.sort((p, q) => q.Z - p.Z);
     for (const it of queue) { const p = F.proj(it.X, it.Y, it.Z); if (p.dz < 20) continue; const sc = p.s * it.size;
-      const f = filt(it.sharp ? 0 : F.dofBlur(p.dz), F.hazeK(p.dz)); // canvas filter lengths are in canvas pixels, not scaled by the transform
-      if (it.rim || it.shadow || f !== 'none') { fancy(it, p, sc, f); continue; }
+      const bl = it.sharp ? 0 : F.dofBlur(p.dz), hk = F.hazeK(p.dz), f = filt(bl, hk); // canvas filter lengths are in canvas pixels, not scaled by the transform
+      if (it.rim || it.shadow || f !== 'none') { fancy(it, p, sc, f, bl, filt(0, hk)); continue; }
       g.save(); g.translate(p.x, p.y); g.scale(sc, sc); it.draw(); g.restore(); }
     queue = []; };
   // horizon haze band: cream mist where the land meets the sky (measured: horizon value ~0.89, saturation ~0.09)
@@ -87,9 +102,7 @@ export function createFable(canvas) {
   F.sky = (t, o = {}) => { const { sunX = 820, sunY = 300 } = o; const hor = cam.hor, px = -cam.x * .02;
     g.fillStyle = F.vgrad(hor - 1000, hor + 40, [[0, PAL.skyTop], [.55, PAL.skyMid], [.88, '#cfe1ea'], [1, PAL.skyLow]]); g.fillRect(0, 0, W, hor + 60);
     F.glow(sunX + px, sunY, 300, 'rgba(255,244,210,.9)', .6);
-    g.save(); g.filter = 'blur(1.5px)';
-    [[170, hor - 640, 1.1, 0], [820, hor - 560, .85, 3], [-40, hor - 330, .7, 7], [620, hor - 250, .55, 9]].forEach(([x, y, s, k]) => F.cloud(x + px * (1 + s) + t * (5 + k), y, s, k * 11 + 2));
-    g.restore(); };
+    F.layer(1.5, () => [[170, hor - 640, 1.1, 0], [820, hor - 560, .85, 3], [-40, hor - 330, .7, 7], [620, hor - 250, .55, 9]].forEach(([x, y, s, k]) => F.cloud(x + px * (1 + s) + t * (5 + k), y, s, k * 11 + 2))); };
   // cartoon cumulus (the reference's): flat blue-grey silhouette with a flat white top offset up-left, flat bottom
   F.cloud = (x, y, s, seed = 0) => { g.save(); g.translate(x, y); g.scale(s, s);
     const puffs = []; const n = 5 + Math.floor(hash(seed) * 4);
@@ -212,8 +225,8 @@ export function createFable(canvas) {
   const grain = document.createElement('canvas'); grain.width = grain.height = 256; { const gg = grain.getContext('2d'), id = gg.createImageData(256, 256);
     for (let i = 0; i < id.data.length; i += 4) { const v = Math.floor(hash(i * .37) * 255); id.data[i] = id.data[i + 1] = id.data[i + 2] = v; id.data[i + 3] = 255; } gg.putImageData(id, 0, 0); }
   F.post = t => { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.filter = 'none';
-    og.clearRect(0, 0, W, H); og.filter = 'blur(26px)'; og.drawImage(canvas, 0, 0); og.filter = 'none';
-    g.globalCompositeOperation = 'screen'; g.globalAlpha = .07; g.drawImage(off, 0, 0);
+    og.clearRect(0, 0, W / 8 + 2, H / 8 + 2); og.filter = 'blur(3.25px)'; og.drawImage(canvas, 0, 0, W, H, 0, 0, W / 8, H / 8); og.filter = 'none'; // H3: bloom blurred at 1/8 size (same 26 px look, far cheaper)
+    g.globalCompositeOperation = 'screen'; g.globalAlpha = .07; g.drawImage(off, 0, 0, W / 8, H / 8, 0, 0, W, H);
     g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
     og.clearRect(0, 0, W, H); og.drawImage(canvas, 0, 0); g.filter = 'saturate(1.02) contrast(1.14)'; g.drawImage(off, 0, 0); g.filter = 'none';
     const vg = g.createRadialGradient(W / 2, H * .45, H * .32, W / 2, H * .5, H * .8); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(30,15,25,.2)'); g.fillStyle = vg; g.fillRect(0, 0, W, H);

@@ -6,7 +6,7 @@
  "bpm": 100,
  "fx_gain": 0.4,
  "music_gain": 0.55,
- "tail": 0.5,
+ "tail": 1.2,
  "breath": [
   1,
   6,

@@ -66,7 +66,8 @@ function willow() { F.fs(F.rr(-24, -360, 48, 360, 14), PAL.woodD, 6); for (let i
 function bus(col) { const b = F.rr(-520, -420, 1040, 360, 50); F.fs(b, col, 7); F.shade(b, mixc(col, '#2b2422', .3), 0, -30); F.fs(b, null, 7); for (let i = 0; i < 6; i++) F.fs(F.rr(-470 + i * 160, -380, 120, 120, 14), '#bfe3f2', 5); F.text('BUS', 0, -170, { size: 70, col: PAL.cream, weight: 900 }); [-330, 330].forEach(wx => { F.fs(F.ell(wx, -60, 76, 76), '#3e3a44', 7); F.fs(F.ell(wx, -60, 34, 34), '#d8d2c6', 5); }); }
 
 // ---------- painted backdrops ----------
-function skyline(t, o = {}) { const g = F.g, hor = F.cam().hor, px = -F.cam().x * .05; g.save(); g.filter = 'blur(1.6px)';
+function skyline(t, o = {}) { F.layer(1.6, () => skylineRaw(t, o)); }
+function skylineRaw(t, o) { const g = F.g, hor = F.cam().hor, px = -F.cam().x * .05; g.save();
   g.fillStyle = '#9fb5c9'; g.beginPath(); g.moveTo(-50, hor + 4); for (let x = -50; x <= 1130; x += 60) g.lineTo(x + px * .5, hor - 120 - 70 * Math.abs(Math.sin(x * .004 + 1)) - 30 * Math.sin(x * .013)); g.lineTo(1130, hor + 4); g.fill();
   g.fillStyle = '#8fae74'; g.beginPath(); g.moveTo(-50, hor + 4); for (let x = -50; x <= 1130; x += 40) g.lineTo(x + px, hor - 40 - 26 * Math.sin(x * .009 + 2)); g.lineTo(1130, hor + 4); g.fill();
   if (o.town !== false) for (let i = 0; i < 22; i++) { const x = 20 + i * 48 + px, h = 30 + 30 * hash(i), y = hor - 34 - (i % 4) * 8; g.fillStyle = '#efe6d4'; g.fillRect(x, y - h, 38, h); g.fillStyle = i % 2 ? PAL.sideA : PAL.sideB; g.beginPath(); g.moveTo(x - 4, y - h); g.lineTo(x + 19, y - h - 18); g.lineTo(x + 42, y - h); g.fill();
@@ -87,9 +88,12 @@ function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const
   F.put(-560, 1500, .45, () => banner(PAL.sideA, PAL.sideAD, t, 0), { rim: true, shadow: true }); F.put(560, 1500, .45, () => banner(PAL.sideB, PAL.sideBD, t, 2), { rim: true, shadow: true });
   F.put(-760, 1100, .35, () => lamp(0), { rim: true, shadow: true }); F.put(760, 1100, .35, () => lamp(0), { rim: true, shadow: true });
   F.put(0, 760, .42, () => emblem(), {});
-  F.put(-120, 640, SIGN * 1.08, () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
-  F.put(200, 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
+  F.put(o.duo ? 0 : -120, o.duo ? 720 : 640, SIGN * 1.08, () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
+  F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
+  // the two commuters stand up front, the reference's big-heads-in-the-foreground staging
+  if (o.duo) { const [ea, eb] = o.duo; F.put(-125, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20 }), { rim: true, shadow: true });
+    F.put(135, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 20 }), { rim: true, shadow: true }); }
   F.put(-330, 240, .5, () => flowerBox(PAL.sideA), {}); F.put(380, 230, .5, () => flowerBox(PAL.sideB), {});
   F.flush(); }
 function setValley(t, o) { F.sky(t, { sunX: 780, sunY: 340 }); skyline(t, { town: false }); const g = F.g, hor = F.cam().hor;
@@ -117,8 +121,8 @@ function setMap(t, o) { const g = F.g; g.fillStyle = '#8bb85c'; g.fillRect(0, 0,
   (o.tags || []).forEach(([x, y, txt, col, k]) => { if (k <= 0) return; const sc = .85 + .15 * ss(k * 4); g.save(); g.globalAlpha = clamp(k * 5); g.translate(x, y); g.scale(sc, sc); g.font = '900 46px Nunito'; const w = g.measureText(txt).width + 46; F.fs(F.rr(-w / 2, -38, w, 70, 16), col, 6); F.text(txt, 0, -2, { size: 46, col: PAL.cream, weight: 900 }); g.restore(); }); }
 function setDesk(t, o) { const g = F.g; F.setCam({ x: 0, y: 330, z: -260 + (o.push || 0), hor: 380, f: 1100, focus: 1700, dof: 3 });
   g.fillStyle = F.vgrad(0, 800, [[0, '#2b2544'], [1, '#4a3a5a']]); g.fillRect(0, 0, W, 800);
-  g.save(); g.filter = 'blur(2.5px)'; F.fs(F.rr(620, 60, 320, 360, 16), '#1b2a55', 8); F.glow(800, 180, 120, 'rgba(240,240,255,.9)', .9); F.fs(F.ell(800, 180, 46, 46), '#f4f2e8', 0); F.line([[780, 60], [780, 420]], 8); F.line([[620, 240], [940, 240]], 8);
-  for (let i = 0; i < 4; i++) { F.fs(F.rr(80, 60 + i * 110, 420, 18, 4), PAL.woodD, 4); for (let k = 0; k < 9; k++) F.fs(F.rr(96 + k * 44, 60 + i * 110 - 80 + 10 * hash(i * 9 + k), 34, 80 - 10 * hash(i * 9 + k), 4), [PAL.sideA, PAL.sideB, '#e9b949', '#8a6a9a'][(i + k) % 4], 3); } g.restore();
+  F.layer(2.5, () => { F.fs(F.rr(620, 60, 320, 360, 16), '#1b2a55', 8); F.glow(800, 180, 120, 'rgba(240,240,255,.9)', .9); F.fs(F.ell(800, 180, 46, 46), '#f4f2e8', 0); F.line([[780, 60], [780, 420]], 8); F.line([[620, 240], [940, 240]], 8);
+  for (let i = 0; i < 4; i++) { F.fs(F.rr(80, 60 + i * 110, 420, 18, 4), PAL.woodD, 4); for (let k = 0; k < 9; k++) F.fs(F.rr(96 + k * 44, 60 + i * 110 - 80 + 10 * hash(i * 9 + k), 34, 80 - 10 * hash(i * 9 + k), 4), [PAL.sideA, PAL.sideB, '#e9b949', '#8a6a9a'][(i + k) % 4], 3); } });
   F.glow(860, 460, 520, 'rgba(255,170,90,.5)', .8);
   F.groundQuad(-1400, 0, 1400, 2400, '#6b4630', 0); F.groundQuad(-560, 140, 560, 1600, '#2f63b8', 0); F.groundQuad(-560, 140, 560, 160, '#e8f0ff', 0);
   for (let x = -540; x <= 540; x += 90) { const a = F.proj(x, 0, 150), b = F.proj(x, 0, 1590); g.strokeStyle = 'rgba(220,235,255,.2)'; g.lineWidth = 2; g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
@@ -132,7 +136,16 @@ function setDesk(t, o) { const g = F.g; F.setCam({ x: 0, y: 330, z: -260 + (o.pu
   if (o.stamp > 0) { const k = o.stamp, sc = k < .15 ? lerp(1.9, 1, k / .15) : 1; g.save(); g.translate(540, 1050); g.rotate(-.14); g.scale(sc, sc); g.globalAlpha = .92; g.strokeStyle = '#d8352e'; g.lineWidth = 12; g.strokeRect(-300, -84, 600, 150); g.strokeRect(-284, -68, 568, 118); F.text(o.stampText || 'WORSE!', 0, -8, { size: 104, col: '#d8352e', weight: 900 }); g.restore(); }
   F.put(430, 1450, .5, () => { F.fs(F.rr(-50, -300, 100, 300, 10), '#f4ecd8', 6); F.fs(F.ell(0, -330, 22 + 2 * Math.sin(t * 17), 50), '#ffd36a', 0); F.glow(0, -330, 260, 'rgba(255,200,110,.9)', .9); }, { sharp: true });
   if (o.mayor) F.put(-430, 1700, FIG * 1.4, () => mayor(t, { expr: o.mayorExpr || 'sly', turn: .5, look: 1, armF: 10, bendF: -20 }), { rim: true });
-  F.flush(); }
+  F.flush();
+  // candle grade: the reference's night interiors are lit warm from one low source, cool in the corners
+  g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'multiply'; const cp = F.proj(430, 300, 1450); const wg = g.createRadialGradient(cp.x, cp.y, 40, cp.x, cp.y, 1600); wg.addColorStop(0, '#fff0d8'); wg.addColorStop(.35, '#f2b27a'); wg.addColorStop(.75, '#b06a6a'); wg.addColorStop(1, '#4a3060'); g.fillStyle = wg; g.fillRect(0, 0, W, H);
+  g.globalCompositeOperation = 'screen'; F.glow(cp.x, cp.y, 700, 'rgba(255,150,60,1)', .45);
+  g.globalCompositeOperation = 'source-over'; g.restore();
+  // the mayor leans in over the plan, big in the foreground, lit warm from the candle side
+  if (o.fgMayor) { g.save(); g.setTransform(1, 0, 0, 1, 0, 0); const k = o.fgMayor; g.translate(lerp(-120, 150, ss(k)), 2260); g.rotate(.08); g.scale(1.75, 1.75);
+    const keep = F.g; mayor(t, { expr: o.mayorExpr || 'sly', turn: .55, look: 1, armF: 60, bendF: -40 }); g.restore();
+    g.save(); g.globalCompositeOperation = 'soft-light'; F.glow(cp.x - 200, cp.y + 300, 700, 'rgba(255,160,70,1)', .8); g.restore(); }
+  }
 function setJam(t, o) { F.sky(t, { sunX: 300, sunY: 300 }); skyline(t, { town: false }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#c8b894'], [1, '#a8906a']]); g.fillRect(0, hor, W, H - hor); tiles(-800, 800, F.cam().z + 20, 6000, '#cdb98f', '#bfa982', 80); F.groundQuad(-190, F.cam().z + 20, 190, 9000, '#9a8b74', 0);
   for (let z = 700; z < 9000; z += 900) { F.put(-640, z, 1, () => house({ roof: PAL.sideA, shut: PAL.sideAD, timber: true, w: 480, h: 520, lit: o.night }), { rim: true, shadow: true }); F.put(640, z + 450, 1, () => house({ roof: PAL.sideB, shut: PAL.sideBD, timber: true, w: 480, h: 500, lit: o.night }), { rim: true, shadow: true }); }
@@ -162,19 +175,19 @@ function night(k) { if (k <= 0) return; const g = F.g; g.save(); g.setTransform(
 // ---------- shots ----------
 const S = i => s(i) - .15;
 const SHOTS = [
-  [0, t => { cam(t, [[0, { x: -150, z: 120, hor: 700, focus: 520, dof: 5 }], [1.4, { x: -160, z: 160 }], [2.2, { x: 140, z: 170, focus: 440 }], [3.6, { x: 150, z: 200, focus: 440 }], [S(2), { x: 0, z: 40, hor: 760, focus: 500, dof: 3, f: 900 }]]);
-    const fl = seg(t, .9, 1.4); setSquare(t, { sign: { title: 'MINUTES TO WORK', value: t < .9 ? '65 min' : '80 min', prev: '65 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: t > 1.4 ? 'worried' : 'smug', look: t > 2.2 ? 1 : -1, cars: [[-560, 900, 0], [560, 950, 1]] }); }],
+  [0, t => { cam(t, [[0, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }], [1.4, { x: -25, z: 80, hor: 690, focus: 255, dof: 5 }], [2.2, { x: 25, z: 95, hor: 690, focus: 240, dof: 5 }], [3.6, { x: 35, z: 130, hor: 690, focus: 205, dof: 5 }], [S(2), { x: 0, z: 40, hor: 760, focus: 500, dof: 3, f: 900 }]]);
+    const fl = seg(t, .9, 1.4); setSquare(t, { sign: { title: 'MINUTES TO WORK', value: t < .9 ? '65 min' : '80 min', prev: '65 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: t > 1.4 ? 'worried' : 'smug', look: t > 2.2 ? 1 : -1, mayorX: 300, mayorZ: 900, duo: t < .9 ? ['neutral', 'neutral'] : ['worried', 'glare'], cars: [[-620, 1000, 0], [620, 1050, 1]] }); }],
   [S(2), (t, lt) => { cam(lt, [[0, { x: 0, y: 300, z: -500, hor: 700, focus: 1400, dof: 1.6, f: 900 }], [S(4) - S(2), { x: 0, y: 240, z: 150, focus: 1100 }]]); setValley(t, { posts: lt > 3.4 }); }],
   [S(4), (t, lt) => setMap(t, { routes: [{ col: PAL.sideA, segs: [['home', 'A'], ['A', 'mill']] }, { col: PAL.sideB, segs: [['home', 'B'], ['B', 'mill']] }], tags: [[230, 600, 'NARROW', '#8a5a3a', lt - .2], [230, 1040, '45 MIN', '#4a4a52', lt - 1.4], [850, 600, '45 MIN', '#4a4a52', lt - 1.6], [850, 1040, 'NARROW', '#8a5a3a', lt - .4], [260, 300, '2000', PAL.sideA, lt - 5.6], [820, 300, '2000', PAL.sideB, lt - 5.8], [540, 1380, '65 MIN', '#3b3b44', lt - 6.4]] })],
-  [S(7), (t, lt) => setDesk(t, { draw: clamp((lt - 1.4) / 2), mayor: true, push: lt * 40 })],
+  [S(7), (t, lt) => setDesk(t, { draw: clamp((lt - 1.4) / 2), fgMayor: clamp(lt / 1.2), push: lt * 40 })],
   [S(8), (t, lt) => setMap(t, { shortcut: 1, routes: [{ col: PAL.sideA, segs: [['home', 'A'], ['A', 'B'], ['B', 'mill']] }, { col: PAL.sideB, segs: [['home', 'A'], ['A', 'B'], ['B', 'mill']] }], tags: [[540, 760, '0 MIN', '#c8962a', lt - .4], [230, 600, 'NARROW', '#8a5a3a', lt - 2.8], [850, 1040, 'NARROW', '#8a5a3a', lt - 3.4]] })],
   [S(10), (t, lt) => { cam(lt, [[0, { x: 0, y: 170, z: -150, hor: 760, focus: 640, dof: 4 }], [4, { x: 40, y: 150, z: 180, focus: 820 }]]); setJam(t, { night: lt > 2.4 }); const k = seg(lt, .5, 3.6); dusk(ss(seg(k, 0, .45)) * (1 - ss(seg(k, .55, 1)))); night(ss(seg(k, .45, .75)) * (1 - ss(seg(k, .85, 1)))); }],
   [S(11), (t, lt) => { cam(lt, [[0, { x: -110, z: 150, hor: 700, focus: 520, dof: 5 }], [3, { x: -40, z: 230, focus: 520 }]]); const fl = seg(lt, .6, 1.1); setSquare(t, { sign: { title: 'MINUTES TO WORK', value: lt < .6 ? '65 min' : '80 min', prev: '65 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: 'worried', look: -1, cars: [[-420, 820, 0, 'glare'], [430, 860, 1, 'glare'], [-700, 1200, 1], [700, 1250, 0]] }); }],
-  [S(12), (t, lt) => setDesk(t, { draw: 1, push: lt * 50, texts: [['BRAESS\'S PARADOX', 0, 1140, 76, '#ffffff', lt - 2.6], ['more road, slower trip', 0, 1020, 50, '#e8f0ff', lt - 3]], stamp: clamp((lt - 4.4) / 1), stampText: 'WORSE!' })],
+  [S(12), (t, lt) => setDesk(t, { draw: 1, push: lt * 50, fgMayor: 1, mayorExpr: lt > 4.4 ? 'shock' : 'sly', texts: [['BRAESS\'S PARADOX', 0, 1140, 76, '#ffffff', lt - 2.6], ['more road, slower trip', 0, 1020, 50, '#e8f0ff', lt - 3]], stamp: clamp((lt - 4.4) / 1), stampText: 'WORSE!' })],
   [S(14), (t, lt) => { cam(lt, [[0, { x: 0, y: 160, z: -200, hor: 760, focus: 520, dof: 4 }], [6, { x: -40, y: 150, z: 0, focus: 520 }]]); setStuttgart(t); }],
   [S(15), (t, lt) => { cam(lt, [[0, { x: 0, y: 220, z: -300, hor: 760, focus: 700, dof: 3 }], [5, { x: 60, y: 200, z: 100, focus: 700 }]]); setSeoul(t); }],
-  [S(16), (t, lt) => { const fl = seg(lt, 2.3, 2.8); cam(lt, [[0, { x: 140, z: 170, hor: 700, focus: 440, dof: 5 }], [2.4, { x: -40, z: 130, focus: 520 }], [6, { x: -150, z: 120, focus: 520 }]]);
-    setSquare(t, { sign: { title: 'MINUTES TO WORK', value: lt < 2.3 ? '80 min' : '65 min', prev: '80 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: fl >= 1 ? 'smug' : 'neutral', look: -1, cars: lt > 2.6 ? [[-560, 900, 0, 'smug'], [560, 950, 1, 'smug']] : [[-560, 900, 0], [560, 950, 1]] }); }],
+  [S(16), (t, lt) => { const fl = seg(lt, 2.3, 2.8); cam(lt, [[0, { x: 60, z: 160, hor: 690, focus: 210, dof: 5 }], [2.4, { x: 20, z: 100, hor: 690, focus: 250, dof: 5 }], [DUR - S(16) - 1.1, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }]]);
+    setSquare(t, { sign: { title: 'MINUTES TO WORK', value: lt < 2.3 ? '80 min' : '65 min', prev: '80 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: fl >= 1 ? 'smug' : 'neutral', look: -1, mayorX: 300, mayorZ: 900, duo: lt > 2.6 && t < DUR - 1.2 ? ['smug', 'smug'] : lt > 2.6 ? ['neutral', 'neutral'] : ['worried', 'glare'], cars: [[-620, 1000, 0], [620, 1050, 1]] }); }],
 ];
 // captions: 1-2 words per chunk, timed by characters through each line
 const CAPS = []; P.forEach((p, i) => { if (i === N - 1) return; const ws = p.cap.replace(/\*\*/g, '').split(/\s+/), ch = []; for (let j = 0; j < ws.length;) { const w = ws[j]; if (w.length > 7 || j === ws.length - 1 || ws[j + 1].length > 7 || /[.,:;]$/.test(w)) { ch.push(w); j++; } else { ch.push(w + ' ' + ws[j + 1]); j += 2; } }
