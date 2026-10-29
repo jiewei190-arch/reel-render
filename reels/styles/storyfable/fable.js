@@ -42,20 +42,24 @@ export function createFable(canvas) {
   // ---------- sprites: depth sorted, rim light, cast shadows, depth of field ----------
   const Q = []; F.RIM = false;
   F.put = (X, Z, draw, o = {}) => Q.push({ X, Z, Y: o.y || 0, draw, o });
+  // depth of field without per-sprite filters: consecutive sprites with the same quantized blur share one layer, blurred once
+  const LY = document.createElement('canvas'); LY.width = W; LY.height = H; const lg = LY.getContext('2d');
+  const drawItem = (c, it, p) => { const hz = F.hazeK(p.dz) * (it.o.haze ?? 1); c.save(); c.translate(p.x, p.y); c.scale(p.s, p.s); F.S = p.s; F.HZ = hz;
+      if (it.o.shadow) { const L = it.o.shadow === true ? 1 : it.o.shadow, a = .3 * (1 - hz); const gr = c.createLinearGradient(0, 0, 150 * L, 40 * L); gr.addColorStop(0, `rgba(58,46,34,${a})`); gr.addColorStop(1, 'rgba(58,46,34,0)'); c.fillStyle = gr; c.beginPath(); c.moveTo(-34, 0); c.lineTo(34, -2); c.lineTo(40 + 170 * L, 36 * L); c.lineTo(-14 + 170 * L, 54 * L); c.closePath(); c.fill();
+        const rg = c.createRadialGradient(0, 0, 0, 0, 0, 50); rg.addColorStop(0, `rgba(50,38,28,${.45 * (1 - hz)})`); rg.addColorStop(1, 'rgba(50,38,28,0)'); c.fillStyle = rg; c.save(); c.scale(1, .24); c.beginPath(); c.arc(0, 0, 50, 0, TAU); c.fill(); c.restore(); }
+      if (it.o.rim !== false) { F.RIM = true; c.save(); it.draw(c, p); c.restore(); F.RIM = false; } it.draw(c, p); c.restore(); F.HZ = 0; };
   F.flush = () => { Q.sort((a, b) => b.Z - a.Z); const fd = Math.max(60, cam.focus - cam.z);   // focus is a world Z
-    for (const it of Q) { const p = F.proj(it.X, it.Y, it.Z); if (!p || p.s < .02) continue; const blur = it.o.sharp ? 0 : Math.min(16, cam.dof * Math.abs(cam.f / p.dz - cam.f / fd) * 9), hz = F.hazeK(p.dz) * (it.o.haze ?? 1);
-      g.save(); g.translate(p.x, p.y); g.scale(p.s, p.s);
-      if (it.o.shadow) { g.save(); g.globalAlpha = .28 * (1 - hz); g.fillStyle = '#3a2e22'; g.filter = `blur(${Math.max(2, 9 * p.s)}px)`; const L = it.o.shadow === true ? 1 : it.o.shadow; g.beginPath(); g.moveTo(-30, 0); g.lineTo(30, 0); g.lineTo(30 + 150 * L, 32 * L); g.lineTo(-10 + 150 * L, 46 * L); g.closePath(); g.fill(); g.globalAlpha = .4 * (1 - hz); g.beginPath(); g.ellipse(0, 0, 44, 10, 0, 0, TAU); g.fill(); g.restore(); }
-      if (blur > .7) g.filter = `blur(${blur.toFixed(1)}px)`;
-      if (it.o.rim !== false) { F.RIM = true; g.save(); it.draw(g, p); g.restore(); F.RIM = false; }
-      it.draw(g, p);
-      if (hz > .02) { /* aerial perspective: veil the sprite toward cream */ g.globalCompositeOperation = 'source-atop'; g.fillStyle = `rgba(232,226,210,${hz})`; g.fillRect(-400, -900, 800, 1000); }
-      g.restore(); }
-    Q.length = 0; };
+    let cur = -1, open = false; const close = () => { if (!open) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); if (cur > 0) g.filter = `blur(${cur}px)`; g.drawImage(LY, 0, 0); g.restore(); open = false; };
+    for (const it of Q) { const p = F.proj(it.X, it.Y, it.Z); if (!p || p.s < .02) continue; const blur = it.o.sharp ? 0 : Math.min(14, cam.dof * Math.abs(cam.f / p.dz - cam.f / fd) * 9), lv = blur < 1 ? 0 : Math.round(blur / 2) * 2;
+      if (lv === 0) { close(); cur = 0; drawItem(g, it, p); continue; }
+      if (lv !== cur) { close(); cur = lv; lg.setTransform(1, 0, 0, 1, 0, 0); lg.clearRect(0, 0, W, H); open = true; }
+      drawItem(lg, it, p); }
+    close(); Q.length = 0; };
   // shape helper used by every sprite: in the rim pass it draws a wide cream stroke (the halo outside the outline)
   F.shape = (c, path, fill, o = {}) => { c.beginPath(); path(c); if (F.RIM) { if (o.norim) return; c.lineJoin = 'round'; c.strokeStyle = CREAM; c.lineWidth = (o.lw || 4) + 11; c.stroke(); c.fillStyle = CREAM; c.fill(); return; }
-    if (fill) { c.fillStyle = fill; c.fill(); } if (o.side) { c.save(); c.clip(); c.fillStyle = o.side; c.beginPath(); o.sideFn ? o.sideFn(c) : c.rect(o.sx ?? 0, -1000, 1000, 2000); c.fill(); c.restore(); c.beginPath(); path(c); }
-    if (o.lw !== 0) { c.strokeStyle = o.line || INK; c.lineWidth = o.lw || 4; c.lineJoin = 'round'; c.lineCap = 'round'; c.stroke(); } };
+    const hz = F.HZ || 0, hf = v => (hz > .02 && typeof v === 'string' && v[0] === '#' && v.length === 7) ? mix(v, '#e8e2d2', hz) : v;
+    if (fill) { c.fillStyle = hf(fill); c.fill(); } if (o.side) { c.save(); c.clip(); c.fillStyle = hf(o.side); c.beginPath(); o.sideFn ? o.sideFn(c) : c.rect(o.sx ?? 0, -1000, 1000, 2000); c.fill(); c.restore(); c.beginPath(); path(c); }
+    if (o.lw !== 0) { c.strokeStyle = hf(o.line || INK); c.lineWidth = o.lw || 4; c.lineJoin = 'round'; c.lineCap = 'round'; c.stroke(); } };
   F.stick = (c, pts, w = 4.5) => { c.beginPath(); pts.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.lineCap = 'round'; c.lineJoin = 'round'; if (F.RIM) { c.strokeStyle = CREAM; c.lineWidth = w + 9; c.stroke(); return; } c.strokeStyle = INK; c.lineWidth = w; c.stroke(); };
   F.dash = (c, pts, col) => { if (F.RIM) return; c.save(); c.setLineDash([7, 6]); c.strokeStyle = col; c.lineWidth = 2.2; c.beginPath(); pts.forEach(([x, y], i) => i ? c.lineTo(x, y) : c.moveTo(x, y)); c.stroke(); c.restore(); };
 
