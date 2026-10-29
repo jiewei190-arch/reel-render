@@ -92,3 +92,17 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
 ## Paused after v7 (Oct 29)
 - Paused at the main session's request for the priority "What If You Could See in Complete Darkness?" job (batch B).
 - v7 (de5fa54) is the current best; resume from the gaps listed under v7.
+
+## v8: crowding (resumed after the see-in-dark pause)
+- Reel: newroad_v8.mp4 (66.2 s). Compare: compare_v8.jpg. QA: qa_v8.txt (PASS, no warnings).
+- **Fix for v7's crowding gap:**
+  - **Stuttgart:** a queue at the CLOSED barrier (back-view cars with glaring drivers, one honking), four townsfolk behind it, and cone clusters at both ends.
+  - **Seoul:** walkers doubled (12) and brought closer.
+  - **Traffic jam:** pedestrians on the pavement overtake the stuck cars.
+  - **Square:** cone and crate prop clusters behind the duo.
+- **Tried and reverted:** putting the mayor in the middle of the duo as a third foreground figure. His top hat covers the counter sign's number, the key prop, so he stays in the background.
+- Sky bluer (skyMid #5c9fdc). The wide-shot sky band barely moved (s0.20 vs ref 0.25), because clouds dominate that band.
+- Remaining gaps:
+  - Three overlapping foreground characters per frame: needs a layout where the sign sits higher.
+  - Painted interiors with fabric and firelight textures.
+  - The horizon is still a little warm (s0.19 vs 0.09).
