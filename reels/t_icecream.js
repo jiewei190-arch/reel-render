@@ -26,6 +26,19 @@ let UMODE = 'split', UBOUND = 0;
 const MIXED = ['#e9b949', '#5b8fd6', '#e07aa0', '#8fbf5a'];
 const uCol = (x, i) => UMODE === 'mixed' ? MIXED[i % 4] : (x < UBOUND ? PAL.sideA : PAL.sideB);
 function headland(t) { const shore = F.proj(0, 0, SHORE).y, hor = F.cam().hor, px = -F.cam().x * .05;
+  // v7: the far layer, like the reference's mountains / castle hills: blue-grey peaks with snow, green coastal hills with tree clumps, a cliff lighthouse
+  F.layer(g => { const qx = px * .6;
+    g.fillStyle = '#aebdd2'; g.beginPath(); g.moveTo(-100, hor + 2); [[-40, 230], [120, 120], [260, 300], [430, 150], [560, 260], [720, 140], [880, 290], [1040, 170], [1200, 240]].forEach(([x, h], k) => { g.lineTo(x + qx - 60, hor - h * .35); g.lineTo(x + qx, hor - h); }); g.lineTo(1300, hor + 2); g.closePath(); g.fill();
+    g.fillStyle = '#f4f6fa'; [[-40, 230], [260, 300], [560, 260], [880, 290], [1200, 240]].forEach(([x, h]) => { g.beginPath(); g.moveTo(x + qx, hor - h); g.lineTo(x + qx - 38, hor - h + 60); g.lineTo(x + qx - 12, hor - h + 46); g.lineTo(x + qx + 4, hor - h + 64); g.lineTo(x + qx + 30, hor - h + 52); g.closePath(); g.fill(); });
+    g.fillStyle = '#8fb07c'; g.beginPath(); g.moveTo(-200, hor + 2); g.quadraticCurveTo(100 + qx, hor - 190, 420 + qx, hor - 90); g.quadraticCurveTo(560 + qx, hor - 50, 640 + qx, hor + 2); g.closePath(); g.fill();
+    g.fillStyle = '#9dba86'; g.beginPath(); g.moveTo(560 + qx, hor + 2); g.quadraticCurveTo(860 + qx, hor - 170, 1300, hor - 110); g.lineTo(1300, hor + 2); g.closePath(); g.fill();
+    for (let k = 0; k < 26; k++) { const x = hash(k * 3.7) * 1200 - 60 + qx, y = hor - 20 - hash(k * 5.1) * 90, rr = 10 + hash(k) * 12; if (y < hor - (x < 600 ? 150 : 120) * (1 - Math.abs((x - (x < 600 ? 160 : 900)) / 700))) continue; g.fillStyle = k % 2 ? '#5f8a52' : '#6f9a5c'; g.beginPath(); g.arc(x, y, rr, 0, Math.PI * 2); g.arc(x + rr * .8, y + 4, rr * .8, 0, Math.PI * 2); g.fill(); }
+    // the cliff lighthouse on the right hill
+    g.fillStyle = '#f2ebde'; g.fillRect(960 + qx, hor - 230, 26, 90); g.fillStyle = PAL.sideA; g.fillRect(960 + qx, hor - 210, 26, 12); g.fillRect(960 + qx, hor - 180, 26, 12); g.fillStyle = '#fff4c8'; g.fillRect(962 + qx, hor - 244, 22, 14); g.fillStyle = PAL.sideAD; g.beginPath(); g.moveTo(956 + qx, hor - 244); g.lineTo(973 + qx, hor - 262); g.lineTo(990 + qx, hor - 244); g.fill();
+    // far little clouds, hazed
+    g.globalAlpha = .75; F.cloud(260 + qx, hor - 300, .32, 21); F.cloud(760 + qx, hor - 340, .26, 33); F.cloud(1000 + qx, hor - 260, .22, 41); g.globalAlpha = 1;
+  }, 'blur(1.5px)');
+  g.fillStyle = F.vgrad(hor - 320, hor + 10, [[0, 'rgba(236,230,214,0)'], [1, 'rgba(236,230,214,.35)']]); g.fillRect(0, hor - 320, W, 330);
   F.layer(g => {
   g.fillStyle = '#a9bfae'; g.beginPath(); g.moveTo(-200 + px, hor + 2); g.quadraticCurveTo(80 + px, hor - 90, 360 + px, hor - 30); g.quadraticCurveTo(440 + px, hor - 20, 520 + px, hor + 2); g.fill();
   g.fillStyle = '#93ad98'; g.beginPath(); g.moveTo(-200 + px, hor + 2); g.quadraticCurveTo(0 + px, hor - 50, 180 + px, hor - 20); g.lineTo(260 + px, hor + 2); g.fill();
