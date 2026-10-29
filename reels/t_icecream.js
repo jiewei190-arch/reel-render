@@ -217,14 +217,21 @@ function cartsAt(t) { if (t < T(5)) return [-CW, CW]; if (t < T(7)) return [-CW,
   if (t < T(8)) return [lerp(-CW, -150, ss(seg(t, T(7), r(7, 1.2)))), lerp(200, 120, ss(seg(t, r(7, 1.2), E(7))))];
   const u = ss(seg(t, T(8), r(8, 3.8))); return [lerp(-150, -47, u), lerp(120, 47, u)]; }
 const vendorX = (x, side) => x + (Math.abs(x) > 80 ? (side ? -100 : 100) : (side ? 88 : -88));
-function wideCarts(t, o = {}) { const [xr, xt] = o.at || cartsAt(t); cart(xr, 540, 0); cart(xt, 540, 1);
+function wideCarts(t, o = {}) { const [xr, xt] = o.at || cartsAt(t); cart(xr, 540, 0); cart(xt, 540, 1); queues(t, vendorX(xr, 0), vendorX(xt, 1), o);
   fig(vendorX(xr, 0) + (o.jigR || 0), 470, { ...RED, t, expr: o.exprR || 'glare', look: 1, turn: .4, armF: 70, bendF: 150, armB: 70, bendB: 150, ...o.red });
   fig(vendorX(xt, 1) - (o.jigT || 0), 470, { ...TEAL, t, expr: o.exprT || 'glare', look: 1, turn: .4, flip: true, armF: 70, bendF: 150, armB: 70, bendB: 150, ...o.teal }); }
+// v6: each side's customers queue behind its vendor (the reference stacks each side's army right behind its king)
+const QUEUE = Array.from({ length: 18 }, (_, i) => ({ dx: -10 + (i % 6) * 105 + hash(i * 3.1) * 30, z: 700 + Math.floor(i / 6) * 170 + hash(i * 1.7) * 60, look: hash(i * 5.3), cone: i % 3 === 0, ph: hash(i * 7.7) }));
+function queues(t, xr, xt, o = {}) { if (o.queues === false) return;
+  [[xr, 0], [xt, 1]].forEach(([cx, side]) => QUEUE.forEach((q, i) => { const x = cx + (side ? 1 : -1) * q.dx, near = i < 4, A = side ? PAL.sideB : PAL.sideA, AD = side ? PAL.sideBD : PAL.sideAD, AL = side ? PAL.sideBL : PAL.sideAL;
+    const cos = { robe: i % 2 ? AL : PAL.cream, robeD: i % 2 ? A : '#e2d3b4', robeL: AL, hat: i % 3 === 1 ? 'bucket' : 'none', hatCol: A, stripes: i % 4 === 2, stache: i % 5 === 3, goatee: i % 5 === 1, phase: q.ph, t,
+      expr: q.look < .5 ? 'neutral' : 'smug', look: side ? -1 : 1, turn: (side ? -1 : 1) * .3, flip: !!side, hold: q.cone ? 'cone' : 'none', armF: q.cone ? 40 : 75, bendF: q.cone ? -95 : 20 };
+    F.put(x, q.z, FIG * .9, () => F.figure(cos), near ? { rim: true, shadow: true } : {}); })); }
 const SH = [];
 const shot = (a, b, fn) => SH.push({ a, b, fn });
 // 0 hook: the sign (open prop) close, then the camera roams: wide on the carts side by side, push to red, across to teal
-shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 940 }], [3.0, { x: -135, z: 245, hor: 780, focus: 225, dof: 5 }], [T(1) + WHIP, { x: 135, z: 255, hor: 780, focus: 215, dof: 5 }]]);
-  UMODE = 'split'; UBOUND = 0; set(t); sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
+shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 940 }], [3.0, { x: -135, z: 295, hor: 780, focus: 175, dof: 6 }], [T(1) + WHIP, { x: 135, z: 305, hor: 780, focus: 165, dof: 6 }]]);
+  UMODE = 'split'; UBOUND = 0; set(t); if (F.cam().z < 240) sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
 // 1 medium two-shot: they glare (heads turn), then the paper with the 1929 stamp
 shot(T(1), r(1, 2.6), t => { cam(t, [[T(1) - WHIP, { x: -60, z: 60, hor: 830, focus: 410, dof: 5 }], [r(1, 1.3), { x: -30, z: 90, hor: 830, focus: 380, dof: 5 }], [r(1, 2.6), { x: 50, z: 100, hor: 830, focus: 370, dof: 5 }]]);
   set(t); const k = seg(t, r(1, .9), r(1, 1.4)); wideCarts(t, { at: [-47, 47], exprR: k > 0 ? 'glare' : 'sly', red: { turn: lerp(0, .5, k), talk: t < r(1, 1.2) ? Math.abs(Math.sin(t * 14)) : 0 } }); foreground(1); F.flush(); });
@@ -244,7 +251,7 @@ shot(T(5), T(6), t => { const [, xt] = cartsAt(t), push = seg(t, T(5) + .5, T(6)
   F.put(xt + 120, 110, .45, () => tuft(41)); F.put(xt - 200, 105, .45, () => tuft(52)); F.flush(); });
 // 6 overhead: teal's half grows past the middle; then red, worried
 shot(T(6), r(6, 2.6), t => overhead(t, { zoom: 1.04, zones: 1, red: .25, teal: lerp(.75, .6, ss(seg(t, T(6), r(6, 1.4)))) }));
-shot(r(6, 2.6), T(7), t => { cam(t, [[r(6, 2.6), { x: vendorX(-CW, 0) - 30, z: 245, y: 128, hor: 780, focus: 225, dof: 7 }], [T(7) + WHIP, { x: vendorX(-CW, 0) - 10, z: 265, y: 128, hor: 780, focus: 205, dof: 7 }]]); UBOUND = 60; set(t);
+shot(r(6, 2.6), T(7), t => { cam(t, [[r(6, 2.6), { x: vendorX(-CW, 0) - 25, z: 300, y: 128, hor: 780, focus: 170, dof: 7 }], [T(7) + WHIP, { x: vendorX(-CW, 0) - 10, z: 315, y: 128, hor: 780, focus: 155, dof: 7 }]]); UBOUND = 60; set(t);
   cart(-CW, 540, 0); fig(vendorX(-CW, 0), 470, { ...RED, t, expr: 'worried', look: 1, turn: .5, armF: 60, bendF: 120, armB: 70, bendB: 150 }); foreground(-1); F.flush(); });
 // 7 red does the same, then teal again (two tracking shots with a whip between)
 shot(T(7), r(7, 1.2), t => { const [xr] = cartsAt(t), push = seg(t, T(7), r(7, 1.2)); cam(t, [[T(7) - WHIP, { x: xr + 10, z: 0, y: 128, hor: 760, focus: 200, dof: 8 }], [r(7, 1.2), { x: xr + 60, z: 25, y: 128, hor: 760, focus: 175, dof: 8 }]]); F.cam().x = xr + 40; set(t);
