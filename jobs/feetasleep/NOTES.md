@@ -1,0 +1,57 @@
+# feetasleep: NOTES (EP 80)
+
+- **Template:** #18 handdrawn "Japan heat wave" field sketchbook (demo 101), via styles/fieldbook (the module behind thermos and earpop). Picked to avoid the EP 71-78 families.
+- **Why this template:** a body-notes field sketchbook fits a nerve explainer:
+  - graphite drawings that draw on;
+  - red and navy pencil hatching as the only fills (navy = numb, red = signal and tingle);
+  - double-ruled measurement boxes as nerve-signal readouts;
+  - the demo's row of day boxes as a pins-and-needles timeline strip.
+- **Pages:**
+  - title: a big graphite foot, hatched numb, with twitching toes and rising Zzz's beside a red hatched sun (frame 0). At the but-turn the Zzz is struck out and a red nerve draws up the leg;
+  - "Nerves are wires": signal dots ride the nerve to a brain; a LEG block presses on it; a cross-section box shows the nerve bundle and its blood vessel squashing; the dots stop at the pinch and the brain gets a "?";
+  - "The worst part comes after": a big cross-section un-squashes, blood flows back, and fibres restart (some quiet, some too loud), with a SIGNAL readout going off → ok → messy. Then the foot fizzes with red pin marks beside tingle / buzz / prickle boxes;
+  - "Arms do it too": a sleeper on their arm, the hand hatched numb;
+  - "Move.": the foot wiggling, and the PRESSURE → NUMB → MOVE → TINGLE → NORMAL strip with the current step circled; "FADES quickly";
+  - "It never slept.": the signal restored to the brain; then a when-to-see-a-doctor box (now and then = harmless; often / no pressure / with weakness = see a doctor);
+  - "Foot or arm?"; then the end card (centred lines, round END seal, half disc on the horizon).
+- **Layout:**
+  - label at y 280 and headline at y 386; drawings y 430-1200;
+  - typed caption at y 1240, x 80-880;
+  - nothing in the right column below y 840; the top-right band is kept clear for the badge.
+- **Search question:** spoken at 0.35 s. Hook: 6 words. "But" at 2.2 s.
+- **Re-hooks:** 21.9 s "Now the weird part"; 40.1 s "And it's not just feet".
+- **Payoff:** 49.9 s. Question: "foot, or your arm?"
+- **Length:** 70.1 s, lengthened from 68.1 s at main's request: voice af_heart at 0.93 and two extra breaths. Popup bed 96 bpm; music_gain 0.6, fx_gain 0.35.
+- **Loop:** the last 0.5 s blends at most 35% of frame 0 over the end card.
+- **Badge:** EP 80 at ("R", 260), top-right above the field-note labels (they end at x ~700).
+- **Ear check:** not done by a human yet.
+- **Badge check:** the first badged build sat against the ends of the "· fig. x" labels, so the labels were shortened and the reel re-rendered. Now the closest text is the 66 px headline "The worst part comes after." (21.9-33 s), a few px under the badge with no overlap.
+
+## qa.py
+```
+QA feetasleep: PASS   (/home/user/reel-render/jobs/feetasleep/feetasleep.mp4, 70.0 s)
+  PASS  static          longest no-change run 0.00 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  PASS  safe zones      UI zones clear
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.4 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -1.4 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 16.7 dB above the pauses (7 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          70.0 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 7.5 (min 1.0), contrast 20.0 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      feetasleep.mp4 1080x1920 SAR 1:1; feetasleep_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
+```
+
+## GROWTH checklist
+- [x] Topic is a searched question ("why does my foot fall asleep"); demand signal: main-session assignment
+- [x] Hook passes HOOKS.md v2 (6 words = the search question; frame 0 is a big graphite foot with twitching toes; "but" at 2.2 s)
+- [x] 66-86 s (70.1); ends on the exact closing line
+- [x] Short question before the closing line
+- [x] End card: main line + "A new 'wait, really?' every day." + @howitreallyworkstudio
+- [x] Loop ending (35% frame-0 blend)
+- [x] Every claim sourced (sources_feetasleep.md); harmless-vs-doctor line per Cleveland Clinic
+- [x] Pinned comment + thumbnail

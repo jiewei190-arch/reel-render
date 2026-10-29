@@ -1,0 +1,209 @@
+[00:00.00 -> 00:01.40] Blackout.
+[00:01.40 -> 00:03.12] Every light on your street dies at once.
+[00:03.64 -> 00:04.40] You keep walking.
+[00:05.08 -> 00:06.16] Round the coffee table.
+[00:06.60 -> 00:07.28] Over the shoe.
+[00:07.76 -> 00:10.00] Past the door that always eats your knee.
+[00:10.52 -> 00:12.46] You find the cat on top of the fridge.
+[00:13.04 -> 00:13.72] Biscuit blinks.
+[00:14.32 -> 00:15.68] She looks offended.
+[00:16.36 -> 00:19.12] Your little sister Mina stumbles in, torch first.
+[00:19.70 -> 00:21.46] How are you doing this?
+[00:21.46 -> 00:21.96] You shrug.
+[00:22.48 -> 00:24.08] You can see the mouse by the bin.
+[00:24.62 -> 00:26.26] You can see the toast cooling.
+[00:26.76 -> 00:28.70] You still cannot find your phone charger.
+[00:29.32 -> 00:31.04] What if you could see in complete darkness?
+[00:31.04 -> 00:33.34] Rule one...
+[00:33.34 -> 00:34.68] your eyes quit first.
+[00:35.20 -> 00:38.32] A human eye holds about one hundred and twenty million rods.
+[00:39.04 -> 00:39.96] Rods handle the dark.
+[00:40.50 -> 00:42.94] It also holds about six million cones.
+[00:43.68 -> 00:45.02] Cones handle colour.
+[00:45.02 -> 00:46.38] And at night, they clock out.
+[00:46.90 -> 00:48.56] Walk from sunshine into a cinema.
+[00:49.06 -> 00:49.98] You are blind.
+[00:50.54 -> 00:53.18] Your rods need twenty to thirty minutes to catch up.
+[00:53.68 -> 00:57.22] Dev shuffles in beside you, orange beanie first, popcorn flying.
+[00:57.82 -> 00:59.28] Where is row F?
+[00:59.28 -> 01:00.06] he groans.
+[01:00.50 -> 01:01.68] You walk straight to it.
+[01:02.08 -> 01:04.88] A cat needs roughly a sixth of the light you do.
+[01:04.88 -> 01:06.24] You?
+[01:06.24 -> 01:06.42] None.
+[01:06.94 -> 01:09.04] But even a cat is blind in true darkness.
+[01:09.72 -> 01:11.36] Humans are not hopeless, though.
+[01:11.80 -> 01:13.38] In a 2016 experiment,
+[01:14.28 -> 01:16.56] volunteers spotted single photons better than chance.
+[01:17.20 -> 01:17.80] One photon.
+[01:18.24 -> 01:18.56] One.
+[01:19.20 -> 01:20.64] Upside, no more stubbed toes.
+[01:21.32 -> 01:24.40] Downside, Dev wants to know why you keep staring at him.
+[01:25.04 -> 01:25.70] Fair question.
+[01:26.66 -> 01:28.60] So how do you see where nothing shines?
+[01:29.62 -> 01:29.62] Simple...
+[01:30.36 -> 01:31.32] nothing has to shine.
+[01:31.92 -> 01:33.46] Everything is already glowing.
+[01:34.76 -> 01:36.06] Rule two...
+[01:36.06 -> 01:37.26] dark isn't empty.
+[01:37.72 -> 01:40.78] Anything above absolute zero glows with infrared.
+[01:41.52 -> 01:42.10] Your couch.
+[01:42.50 -> 01:43.14] Your cat.
+[01:43.62 -> 01:44.06] You.
+[01:44.76 -> 01:44.96] Dr.
+[01:45.74 -> 01:48.22] Lin, in her green lanyard, kills every light in the lab.
+[01:48.82 -> 01:49.86] She holds up one hand.
+[01:50.36 -> 01:51.92] You count five warm fingers.
+[01:52.54 -> 01:53.36] She is not scared.
+[01:53.98 -> 01:55.20] She is thrilled.
+[01:55.80 -> 01:57.86] This is thermal vision, she whispers.
+[01:58.70 -> 01:59.48] Not magic.
+[02:00.26 -> 02:00.32] Physics.
+[02:01.12 -> 02:05.32] Human skin glows most strongly near nine and a half micrometres.
+[02:05.32 -> 02:06.68] That is long-wave infrared.
+[02:07.19 -> 02:09.62] Thermal cameras read exactly that band.
+[02:10.18 -> 02:11.42] Your own eyes can't.
+[02:11.78 -> 02:12.40] One reason?
+[02:12.86 -> 02:13.76] They are warm too.
+[02:14.24 -> 02:16.74] It's like reading a dim screen with a torch in your face.
+[02:17.50 -> 02:18.56] Nature found a workaround.
+[02:19.18 -> 02:21.74] Pit vipers have a hollow pit on their face.
+[02:22.32 -> 02:24.34] It works like a pinhole camera for heat.
+[02:24.92 -> 02:28.32] Its nerves use a heat-sensitive protein called TRPA1.
+[02:28.98 -> 02:31.08] Scientists pinned that down in 2010.
+[02:31.46 -> 02:33.98] A snake finds a mouse in total darkness.
+[02:33.98 -> 02:35.34] You?
+[02:35.34 -> 02:36.06] The mouse...
+[02:36.46 -> 02:37.26] and the remote.
+[02:37.82 -> 02:40.90] Out on the dark street, you spot a kitten under a parked car.
+[02:40.90 -> 02:42.62] A small orange glow.
+[02:43.22 -> 02:44.08] You rescue it.
+[02:44.52 -> 02:47.44] Then you walk face first into a shop window.
+[02:48.14 -> 02:50.20] Ordinary glass blocks thermal infrared.
+[02:50.84 -> 02:53.04] To you, it is a flat, cold wall.
+[02:53.68 -> 02:54.76] Dev wheezes with laughter.
+[02:54.76 -> 02:56.32] Mate...
+[02:56.32 -> 02:57.16] that was a window.
+[02:57.16 -> 02:59.46] Ten out of ten.
+[02:59.46 -> 03:01.28] Rule three...
+[03:01.28 -> 03:03.22] heat has no colour.
+[03:03.22 -> 03:05.34] Mina slides a birthday card across the table.
+[03:05.80 -> 03:08.60] In the dark, it is a blank, warm rectangle.
+[03:09.34 -> 03:11.28] Ink and paper sit at the same temperature.
+[03:11.80 -> 03:12.56] No contrast.
+[03:13.16 -> 03:13.78] No words.
+[03:14.40 -> 03:15.88] You guess happy birthday.
+[03:16.66 -> 03:18.06] It says get well soon.
+[03:18.68 -> 03:20.86] She tucks a hand warmer into your hoodie pocket.
+[03:21.46 -> 03:22.50] Keep it, she says.
+[03:23.08 -> 03:24.32] I have the twin.
+[03:24.82 -> 03:26.82] In your sight, it burns like a coal.
+[03:26.82 -> 03:29.02] Night-vision goggles work differently.
+[03:29.62 -> 03:31.80] They amplify the faint light already there.
+[03:32.52 -> 03:32.82] Starlight.
+[03:33.40 -> 03:33.80] Moonlight.
+[03:34.30 -> 03:35.18] In true darkness?
+[03:35.90 -> 03:36.80] Nothing to amplify.
+[03:37.46 -> 03:39.52] So thermal wins the pitch black...
+[03:40.06 -> 03:41.28] but only for warm things.
+[03:41.28 -> 03:43.36] Colour is a bigger ask.
+[03:43.94 -> 03:47.16] Helmet geckos told blue from grey at moonlight levels in 2004.
+[03:47.96 -> 03:48.14] You?
+[03:48.62 -> 03:50.08] Hot, warm, cold.
+[03:50.62 -> 03:52.18] That is your entire palette.
+[03:52.18 -> 03:55.52] Upside, you win hide and seek forever.
+[03:55.98 -> 03:57.84] Downside, you can't read a menu.
+[03:59.00 -> 04:00.08] Rule four...
+[04:00.08 -> 04:01.02] light is the enemy.
+[04:01.60 -> 04:03.12] You step off the kerb at midnight.
+[04:03.72 -> 04:06.56] A cyclist, no lamp, glows like a ghost.
+[04:07.10 -> 04:08.48] You yank Dev back.
+[04:09.06 -> 04:09.68] Saved him.
+[04:10.32 -> 04:11.14] Dev stares at you.
+[04:11.56 -> 04:12.38] How did you see that?
+[04:12.74 -> 04:15.02] Then the cyclist's lamp snaps on.
+[04:15.52 -> 04:16.80] It is one bright flash.
+[04:17.40 -> 04:18.92] Your thermal view whites out.
+[04:18.92 -> 04:20.98] Your old eyes are not ready either.
+[04:21.72 -> 04:22.22] Total blindness.
+[04:23.00 -> 04:24.26] Bright light floods your rods.
+[04:24.86 -> 04:26.64] They need twenty to thirty minutes to recover.
+[04:27.20 -> 04:28.80] Your new sight takes about a minute.
+[04:29.42 -> 04:30.74] A long, shaky minute.
+[04:31.54 -> 04:32.92] Dev guides you home by the sleeve.
+[04:33.52 -> 04:33.82] Amazing.
+[04:34.64 -> 04:35.44] And awful.
+[04:36.56 -> 04:37.48] Usually both at once.
+[04:38.12 -> 04:39.58] So the rule is simple.
+[04:40.20 -> 04:41.08] Dark is your friend.
+[04:41.62 -> 04:42.60] Light is a punch.
+[04:43.24 -> 04:43.96] Remember that...
+[04:44.36 -> 04:46.54] because you are about to need it.
+[04:47.22 -> 04:48.56] Rule five...
+[04:48.56 -> 04:49.34] cold hides.
+[04:49.92 -> 04:51.12] A school camping trip.
+[04:51.56 -> 04:52.40] Rain on the trees.
+[04:53.14 -> 04:53.70] Mina is gone.
+[04:54.22 -> 04:55.24] You scan the forest.
+[04:56.02 -> 04:56.24] Deer.
+[04:56.88 -> 04:57.14] A fox.
+[04:58.36 -> 04:59.84] Dev, glowing beside you.
+[05:00.26 -> 05:01.74] Everything alive shows up.
+[05:02.06 -> 05:02.82] Except her.
+[05:03.28 -> 05:03.58] Why?
+[05:04.54 -> 05:06.06] Rain has soaked everything cold.
+[05:06.66 -> 05:08.76] Warm and cool fade to the same grey.
+[05:08.76 -> 05:09.82] So where is she?
+[05:10.36 -> 05:13.64] Ranger Tomas, in his blue cap, shouts that it is hopeless.
+[05:13.64 -> 05:15.42] You find a cave mouth.
+[05:15.94 -> 05:19.66] Mina's coat is zipped, her skin cool, her body blending into the rock.
+[05:20.14 -> 05:20.80] Almost enough.
+[05:21.36 -> 05:21.94] Not quite.
+[05:21.94 -> 05:24.54] Tomas swings his torch at the cave.
+[05:25.16 -> 05:26.54] Light slams into your eyes.
+[05:27.08 -> 05:28.08] Everything goes white.
+[05:28.58 -> 05:29.26] You are blind...
+[05:29.74 -> 05:30.14] again.
+[05:30.76 -> 05:31.48] Time is short.
+[05:32.00 -> 05:33.84] Mina is cold, and you are blind.
+[05:34.34 -> 05:35.14] Run in blind...
+[05:35.72 -> 05:37.16] or wait in the dark?
+[05:37.16 -> 05:38.78] Lights out, you croak.
+[05:38.78 -> 05:39.58] Everybody.
+[05:39.58 -> 05:41.62] Tomas clicks off his torch.
+[05:42.20 -> 05:44.00] You count sixty seconds in the dark.
+[05:44.68 -> 05:45.42] Then it comes back.
+[05:45.42 -> 05:46.46] Grey rock.
+[05:46.46 -> 05:47.50] Grey rain.
+[05:48.00 -> 05:51.60] And one tiny white spark, as a small hand pulls it from a coat.
+[05:52.18 -> 05:53.10] Mina's hand warmer.
+[05:53.96 -> 05:55.00] The twin.
+[05:55.52 -> 05:57.72] You reach her, curled under a rock ledge.
+[05:58.36 -> 05:59.16] She is cold.
+[05:59.68 -> 06:00.42] She is smiling.
+[06:01.06 -> 06:02.74] You found me, she mumbles.
+[06:03.36 -> 06:04.14] Of course you did.
+[06:04.68 -> 06:05.16] Dev cheers.
+[06:05.16 -> 06:07.88] Tomas wipes his eyes and blames the rain.
+[06:08.56 -> 06:09.74] Mina waves the little brick.
+[06:09.74 -> 06:11.00] Best twin ever...
+[06:11.72 -> 06:13.52] and you owe me hot chocolate.
+[06:13.52 -> 06:15.32] So...
+[06:15.32 -> 06:16.40] is any of this real?
+[06:16.92 -> 06:17.80] Pit vipers are.
+[06:18.28 -> 06:19.48] Thermal cameras are.
+[06:19.48 -> 06:21.28] Night-vision goggles are.
+[06:21.72 -> 06:24.00] Even single photons are, barely.
+[06:24.40 -> 06:26.02] But no human can see heat.
+[06:26.62 -> 06:28.22] Goggles are not eyes.
+[06:28.82 -> 06:31.50] And without any light, cats and goggles are blind.
+[06:32.10 -> 06:36.26] Your power would need infrared sensors, and a body that doesn't glow itself.
+[06:36.78 -> 06:37.36] Are we close?
+[06:38.12 -> 06:38.66] Not yet.
+[06:39.28 -> 06:40.44] The dark was never empty.
+[06:40.96 -> 06:41.76] It was only quiet.
+[06:42.34 -> 06:43.40] So what would you do...
+[06:43.92 -> 06:45.62] if you could see in complete darkness?
+[06:46.22 -> 06:47.04] Tell us in the comments.
+[06:47.76 -> 06:50.24] And if you would trust that tiny white spark...
+[06:50.66 -> 06:53.06] hit like, and subscribe for more What Ifs.

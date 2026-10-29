@@ -1,0 +1,1 @@
+Bonus: honey has to be dry enough before bees cap it, or it can ferment. That's why US honey grades reject honey with more than 18.6% water (USDA; Texas A&M AgriLife Extension). Did you know bees dry honey with their wings? Yes or no? 🐝

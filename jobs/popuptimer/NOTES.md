@@ -37,7 +37,7 @@
 - The AAC encode overshoots true peak, so the audio is re-limited with 4x oversampling (alimiter 0.72, AAC 96k), giving −2.1 dBTP.
 - The thumbnail's starburst was moved off the popped stick.
 
-**Badge:** none for now (seasonal rule: the main session numbers and badges it when slotted for Thanksgiving week). A spot is prepared: OVR "popuptimer" in brand.py, low-left (44, 1080), hidden 47.3-52.4 s.
+**Badge:** `brand.py popuptimer --ep 49` at (44, 1080), low-left just above the caption box, over art only. Titles fill the top band in every scene. It is hidden 47.3-52.4 s under the "3 popped early" label. OVR line in brand.py; checked at 16 points from 4 s to 75 s.
 
 ## GROWTH checklist
 - [x] Topic is a searched question; demand signal: assigned from the main session's Thanksgiving list; "how does a turkey pop up timer work" is a classic autocomplete question
@@ -47,7 +47,7 @@
 - [x] End card: standard main line + "A new 'wait, really?' every day." + handle
 - [x] Loop ending (dim 30%)
 - [x] pinned_popuptimer.md written
-- [ ] popuptimer_ep.mp4: seasonal, badge later (main session numbers it for Thanksgiving week)
+- [x] popuptimer_ep.mp4 (EP 49)
 - [x] Timely window: Thanksgiving (Nov 26); post date set by the main session
 
 ## QA (python3 -I reels/qa.py popuptimer, after the remix)
