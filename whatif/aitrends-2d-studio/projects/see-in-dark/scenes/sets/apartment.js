@@ -4,7 +4,7 @@
 //   apartmentFg(g, t, cam)  // blurred foreground (plant leaves + table edge) - call AFTER the characters
 // power: 1 = lights on (warm), 0 = blackout (moonlight only). Animate it: power: key(t, [[0.4, 1], [0.6, 0]]).
 // Returns { GY, CX, M, rim, pos: { doorX, sofaX, tableX, tableTop, fridgeX, fridgeTop, binX, counterX, counterTop, plateX, windowX, lampX, shoeX, sideTableX, chargerX } }
-import { E, V, mood, layer, backdrop, rr, seg, circle, poly, linGrad, radGrad, glow, alpha, shade, mix, blurLayer, rng, clamp } from '/engine/core.js';
+import { E, V, mood, layer, backdrop, rr, seg, circle, poly, linGrad, radGrad, glow, alpha, shade, mix, blurLayer, rng, clamp, lerp } from '/engine/core.js';
 import * as FX from '/engine/fx2d.js';
 
 export const apartmentGround = () => E.H * V(0.8, 0.68);
@@ -12,7 +12,7 @@ export const apartmentGround = () => E.H * V(0.8, 0.68);
 export function apartment(g, t, cam, o = {}) {
   const M = mood(o.mood || 'night'), GY = apartmentGround(), CX = E.W / 2, P = clamp(o.power ?? 0);
   const moon = o.moon ?? 1;
-  const wall = mix(shade(M.wall, -0.35), shade(M.wall, 0.0), P * 0.6), wallDark = shade(M.wall, -0.65);
+  const wall = mix(shade(M.wall, -0.2), shade(M.wall, 0.0), P * 0.6), wallDark = shade(M.wall, -0.65);
   const warm = M.practical;
   const pos = { doorX: CX - 820, shelfX: CX - 560, sofaX: CX - 150, tableX: CX - 120, tableTop: GY - 62 + 38, windowX: CX - 60, fridgeX: CX + 640, fridgeTop: GY - 440,
     binX: CX + 960, counterX: CX + 1180, counterTop: GY - 190, plateX: CX + 1150, lampX: CX + 330, sideTableX: CX + 330, chargerX: CX + 360, shoeX: CX - 420 };
@@ -37,6 +37,13 @@ export function apartment(g, t, cam, o = {}) {
     for (const s of [-1, 1]) { const cx = s < 0 ? wx - 70 : wx + ww + 8; g.fillStyle = linGrad(g, cx, 0, cx + 62, 0, s < 0 ? [shade(M.wall, -0.2), shade(M.wall, -0.5)] : [shade(M.wall, -0.5), shade(M.wall, -0.2)]); g.fillRect(cx, wy - 30, 62, wh + 130);
       for (let i = 1; i < 4; i++) seg(g, [[cx + i * 15, wy - 28], [cx + i * 15, wy + wh + 98]], 2, alpha('#000', 0.3)); }
     seg(g, [[wx - 100, wy - 32], [wx + ww + 100, wy - 32]], 6, shade(M.wall, -0.6));
+    // blinds raised at the top of the window, a pendant lamp, fairy lights (die with power), upper kitchen cabinets + utensil rail
+    g.fillStyle = shade(M.wall, -0.55); g.fillRect(wx, wy, ww, 34); for (let i = 0; i < 4; i++) seg(g, [[wx, wy + 8 + i * 8], [wx + ww, wy + 8 + i * 8]], 2.5, alpha(M.key, 0.14 * moon));
+    seg(g, [[CX + 160, GY - 1000], [CX + 160, GY - 800]], 4, '#0a0910'); g.fillStyle = shade(M.wall, -0.7); g.beginPath(); g.moveTo(CX + 90, GY - 740); g.quadraticCurveTo(CX + 160, GY - 830, CX + 230, GY - 740); g.closePath(); g.fill(); if (P > 0.3) glow(g, CX + 160, GY - 730, 200, warm, 0.35 * P);
+    { const n = 22, x0f = pos.doorX + 40, x1f = pos.sofaX + 330; g.strokeStyle = alpha('#0a0910', 0.9); g.lineWidth = 2; g.beginPath(); for (let i = 0; i <= n; i++) { const u = i / n, x = lerp(x0f, x1f, u), y = GY - 700 + Math.sin(u * Math.PI) * 70; i ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke();
+      for (let i = 0; i <= n; i += 1) { const u = i / n, x = lerp(x0f, x1f, u), y = GY - 700 + Math.sin(u * Math.PI) * 70; circle(g, x, y + 6, 4, P > 0.3 ? mix('#ffd9a0', '#ffffff', 0.4) : shade('#c8a070', -0.65)); if (P > 0.3) glow(g, x, y + 6, 26, '#ffcf8a', 0.3 * P); } }
+    for (let i = 0; i < 4; i++) { const cx0 = CX + 760 + i * 150; rr(g, cx0, GY - 770, 140, 200, 6); g.fillStyle = shade('#5a4a68', -0.55); g.fill(); rr(g, cx0 + 8, GY - 762, 124, 184, 4); g.strokeStyle = alpha('#000', 0.35); g.lineWidth = 2; g.stroke(); seg(g, [[cx0 + 118, GY - 640], [cx0 + 118, GY - 610]], 5, '#a8a0b0'); g.fillStyle = alpha(M.key, 0.05 * moon); g.fillRect(cx0, GY - 770, 140, 20); }
+    seg(g, [[CX + 1030, GY - 520], [CX + 1360, GY - 520]], 4, '#a8a0b0'); for (let i = 0; i < 5; i++) { const ux = CX + 1060 + i * 62; seg(g, [[ux, GY - 520], [ux, GY - 470 - (i % 3) * 14]], 3, '#a8a0b0'); rr(g, ux - 12, GY - 470 - (i % 3) * 14, 24, 30 + (i % 2) * 14, 6); g.fillStyle = shade(['#c8503a', '#3a7aa0', '#d8a830', '#6a6a78', '#4a9a6a'][i], -0.55); g.fill(); }
     // sill + pictures + clock + shelf (the details that make a wall read as a home)
     g.fillStyle = shade(M.wall, -0.4); g.fillRect(wx - 14, wy + wh, ww + 28, 14);
     for (const [px, py, pw, ph, c] of [[pos.doorX + 300, GY - 560, 130, 170, '#3a4a78'], [pos.doorX + 470, GY - 520, 100, 130, '#5a3a58'], [CX + 560, GY - 700, 170, 120, '#2e5a6a']]) { rr(g, px, py, pw, ph, 4); g.fillStyle = shade(M.wall, -0.55); g.fill(); g.fillStyle = shade(c, -0.35); g.fillRect(px + 8, py + 8, pw - 16, ph - 16); g.fillStyle = alpha(c, 0.7); g.beginPath(); g.moveTo(px + 8, py + ph - 8); g.lineTo(px + pw * 0.4, py + ph * 0.5); g.lineTo(px + pw * 0.65, py + ph * 0.8); g.lineTo(px + pw - 8, py + ph * 0.4); g.lineTo(px + pw - 8, py + ph - 8); g.fill(); }
@@ -91,6 +98,34 @@ export function apartment(g, t, cam, o = {}) {
     rr(g, pos.plateX - 40, GY - 214, 80, 10, 4); g.fillStyle = '#d8d4cc'; g.fill(); rr(g, pos.plateX - 26, GY - 232, 52, 20, 5); g.fillStyle = shade('#c8883a', -0.5); g.fill();       // toast on a plate
     rr(g, cxk - 180, GY - 258, 44, 54, 8); g.fillStyle = '#14111a'; g.fill();                                                                                                          // kettle
     rr(g, pos.binX - 36, GY - 100, 72, 100, 8); g.fillStyle = shade('#6a7a8a', -0.6); g.fill(); g.fillStyle = shade('#6a7a8a', -0.7); g.fillRect(pos.binX - 42, GY - 108, 84, 12);
+  });
+  // ---- lived-in details on the character plane: bookcase, plant, door coats + shoe rack, throw blanket, cat bowls, fridge art, counter clutter, radiator ----
+  layer(g, cam, 1, (g) => {
+    const dk = (c, k = -0.5) => shade(c, k), edge = (x, y, w, h) => { g.fillStyle = alpha(M.key, 0.12 * moon); g.fillRect(x, y, w, 3); g.fillRect(x, y, 3, h); };
+    // tall bookcase (between door and sofa)
+    { const bx = CX - 650, by = GY - 400, bw = 210, bh = 400; g.fillStyle = dk('#6a4a38', -0.6); g.fillRect(bx, by, bw, bh); edge(bx, by, bw, bh); const r = rng(14);
+      for (let row = 0; row < 4; row++) { const ry = by + 14 + row * 96; g.fillStyle = dk('#6a4a38', -0.75); g.fillRect(bx + 8, ry + 86, bw - 16, 8); let x = bx + 14;
+        while (x < bx + bw - 24) { const w = 12 + r() * 14, h = 44 + r() * 38, c = ['#c8503a', '#3a7aa0', '#d8a830', '#6a5ab0', '#4a9a6a', '#d8d0c0'][Math.floor(r() * 6)]; g.fillStyle = dk(c, -0.52 - r() * 0.1); g.fillRect(x, ry + 86 - h, w, h); g.fillStyle = alpha('#fff', 0.07); g.fillRect(x, ry + 86 - h, 2, h); x += w + 1; if (r() < 0.12) x += 26; } }
+      circle(g, bx + 160, by + 10 - 10, 0, '#000'); }
+    // big plant by the lamp
+    { const px = CX + 480; rr(g, px - 38, GY - 90, 76, 90, 10); g.fillStyle = dk('#aa5a3a', -0.6); g.fill(); for (let i = 0; i < 9; i++) { const a = -1.9 + i * 0.3 + Math.sin(t * 0.5 + i) * 0.025, L = 120 + (i % 3) * 38; g.save(); g.translate(px, GY - 86); g.rotate(a); g.fillStyle = dk(i % 2 ? '#2f7a4a' : '#3a8a5a', -0.62); g.beginPath(); g.ellipse(0, -L * 0.6, 24, L * 0.62, 0, 0, 7); g.fill(); seg(g, [[0, -4], [0, -L * 1.1]], 2, alpha('#000', 0.35)); g.fillStyle = alpha(M.key, 0.1 * moon); g.beginPath(); g.ellipse(-8, -L * 0.7, 6, L * 0.4, 0, 0, 7); g.fill(); g.restore(); } }
+    // door: coat hooks with a coat + a bag, shoe rack with the OTHER shoes, umbrella
+    { const dx = pos.doorX; seg(g, [[dx + 190, GY - 520], [dx + 330, GY - 520]], 6, '#0a0910'); for (const hx of [200, 250, 300]) circle(g, dx + hx, GY - 514, 5, '#8a7a68');
+      g.fillStyle = dk('#4a5a7a', -0.55); g.beginPath(); g.moveTo(dx + 214, GY - 516); g.lineTo(dx + 282, GY - 516); g.lineTo(dx + 296, GY - 190); g.lineTo(dx + 202, GY - 190); g.closePath(); g.fill(); g.fillStyle = alpha(M.key, 0.1 * moon); g.fillRect(dx + 214, GY - 516, 6, 320);
+      rr(g, dx + 286, GY - 480, 54, 70, 10); g.fillStyle = dk('#d8a830', -0.6); g.fill(); seg(g, [[dx + 300, GY - 480], [dx + 310, GY - 520]], 3, '#0a0910');
+      rr(g, dx + 200, GY - 70, 150, 64, 6); g.fillStyle = dk('#6a4a38', -0.7); g.fill(); for (let i = 0; i < 3; i++) { g.fillStyle = dk(['#c8503a', '#3a7aa0', '#d8a830'][i], -0.6); g.beginPath(); g.ellipse(dx + 230 + i * 46, GY - 40, 20, 9, 0, 0, 7); g.fill(); } seg(g, [[dx + 360, GY - 8], [dx + 366, GY - 260]], 6, '#0a0910'); seg(g, [[dx + 366, GY - 260], [dx + 380, GY - 280], [dx + 396, GY - 262]], 5, '#0a0910'); }
+    // throw blanket + second cushion on the sofa, magazine + succulent + game pad on the coffee table, cat bowls
+    { const sx = pos.sofaX; g.fillStyle = dk('#c8503a', -0.55); g.beginPath(); g.moveTo(sx + 60, GY - 190); g.quadraticCurveTo(sx + 150, GY - 180, sx + 200, GY - 100); g.lineTo(sx + 80, GY - 100); g.closePath(); g.fill(); for (let i = 0; i < 4; i++) seg(g, [[sx + 84 + i * 28, GY - 188 + i * 14], [sx + 94 + i * 24, GY - 106]], 2, alpha('#000', 0.25));
+      rr(g, sx + 118, GY - 176, 66, 56, 14); g.fillStyle = dk('#3a7aa0', -0.5); g.fill();
+      const tx = pos.tableX, ty = GY + 38; rr(g, tx - 130, ty - 74, 90, 8, 2); g.fillStyle = dk('#d8d0c0', -0.55); g.fill(); rr(g, tx - 120, ty - 82, 64, 8, 2); g.fillStyle = dk('#c8503a', -0.5); g.fill(); rr(g, tx + 112, ty - 88, 30, 22, 4); g.fillStyle = dk('#aa5a3a', -0.6); g.fill(); circle(g, tx + 127, ty - 96, 12, dk('#4a9a6a', -0.55)); circle(g, tx + 120, ty - 100, 8, dk('#6aba8a', -0.55));
+      for (const bx of [CX + 556, CX + 566]) { g.fillStyle = dk('#9a5ad6', -0.55); g.beginPath(); g.ellipse(bx + (bx > CX + 560 ? 34 : -30), GY + 10, 26, 8, 0, 0, Math.PI); g.fill(); } }
+    // fridge art: a kid's drawing, a photo, a calendar, post-its
+    { const fx = pos.fridgeX; rr(g, fx - 80, GY - 210, 54, 66, 2); g.fillStyle = dk('#f4efe6', -0.5); g.fill(); g.strokeStyle = dk('#d4262e', -0.35); g.lineWidth = 3; g.beginPath(); g.arc(fx - 53, GY - 184, 12, 0, 7); g.stroke(); seg(g, [[fx - 53, GY - 172], [fx - 53, GY - 154]], 3, dk('#3a6ea5', -0.35));
+      rr(g, fx - 12, GY - 232, 44, 36, 2); g.fillStyle = dk('#3a6ea5', -0.55); g.fill(); rr(g, fx + 40, GY - 214, 30, 30, 2); g.fillStyle = dk('#f2c21a', -0.5); g.fill(); rr(g, fx - 12, GY - 184, 36, 36, 2); g.fillStyle = dk('#d8d0c0', -0.55); g.fill(); }
+    // counter clutter: toaster, fruit bowl, mug tree
+    { const cxk = pos.counterX; rr(g, cxk - 100, GY - 246, 70, 42, 8); g.fillStyle = dk('#a8a8b8', -0.6); g.fill(); seg(g, [[cxk - 80, GY - 246], [cxk - 80, GY - 252]], 2, '#0a0910'); seg(g, [[cxk - 50, GY - 246], [cxk - 50, GY - 252]], 2, '#0a0910');
+      g.fillStyle = dk('#8a6a48', -0.6); g.beginPath(); g.ellipse(cxk + 70, GY - 210, 56, 10, 0, 0, Math.PI); g.fill(); circle(g, cxk + 48, GY - 224, 14, dk('#d4262e', -0.5)); circle(g, cxk + 76, GY - 228, 14, dk('#f2c21a', -0.55)); circle(g, cxk + 98, GY - 222, 13, dk('#6aba4a', -0.55));
+      seg(g, [[cxk + 200, GY - 204], [cxk + 200, GY - 290]], 4, '#0a0910'); for (const dy of [-280, -250]) { seg(g, [[cxk + 200, GY + dy + 0], [cxk + 226, GY + dy + 8]], 3, '#0a0910'); rr(g, cxk + 218, GY + dy + 4, 20, 24, 5); g.fillStyle = dk('#d8d0c0', -0.55); g.fill(); } }
   });
   // ---- lamp light when power is on (the one warm key) ----
   if (P > 0.01) {
