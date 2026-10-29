@@ -23,3 +23,19 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
   1. **Ground and colour bands:** our lower half is a flat orange boardwalk and plain sand. The reference has a varied ground: ruts, grass verges and flowers along the path, muted yellow-green earth. Measured: ground mid ours #b4884d (sat .57) vs ref #b69d5d (.49); ground low #a87641 (.61) vs #957541 (.56); the near-horizon band is umbrellas/sand (#b8a380) instead of a cream haze (#e2dbcd), because our horizon sits at 36% down vs about 44%.
   2. **Midground reads as noise:** the umbrella rows melt into a blurred stripe; the reference midground (soldiers, trees, castle) stays readable but hazed.
   3. The overhead looks like candy icons rather than a painted field. The time-lapse night is too weak (no stars or moon).
+
+## v3 (Oct 29): ground and colour bands
+- Fixed v2's biggest gap, the ground and colour bands:
+  - sand palette matched to the reference's measured bands;
+  - horizon moved to about 44% in two-shots and close shots;
+  - a stronger cream horizon haze;
+  - cart-wheel ruts and sea-grass / flower verges along the boardwalk (like the reference's track verges);
+  - a sharper wide-shot midground (DOF 2.2 -> 1.2);
+  - stars and a crescent moon in the time-lapse night;
+  - the blueprint shrunk to clear the right UI column.
+- Measured (wide shot vs ref 16.6 s): near horizon #d5d1c3 (ref #e2dbcd), ground mid #a38d4f -> brightened to the ref's value, ground low #977f41 (ref #957541), mean saturation .376 (ref .352).
+- Render `icecream_v3.mp4`, sheet `compare_v3.jpg`. QA WARN only: the end-card question flags in the right column (60.8-66.8 s); the wide shot touches the edges (13.5-16 s).
+- Biggest gaps now:
+  1. **The overhead** still reads as candy icons on flat sand. The reference's is a painted field: grass texture, dense crowd formations shaped like arrows, glints, a tilt-shift blur at the top and bottom.
+  2. **Character scale in the side-by-side wides:** the reference's rivals are about 1.6x bigger in frame.
+  3. **The boardwalk** is too orange and too wide compared with the reference's earthy track.
