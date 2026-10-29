@@ -3,7 +3,7 @@
 import subprocess, sys, os, tempfile
 from PIL import Image, ImageDraw, ImageFont
 PAIRS = [(7.5, 0.6, 'counter sign (open prop)'), (1.5, 2.0, 'wide: two rivals, one set'), (16.6, 15.0, 'wide down the set, rivals at the edges'), (12.3, 22.0, 'top-down graphic, red vs teal'),
-         (19.5, 38.6, 'time-lapse night grade'), (30.0, 50.0, 'medium, symmetrical rivals'), (41.5, 33.5, 'medium close, one face'), (35.0, 56.0, 'blueprint states the idea')]
+         (26.5, 49.5, 'night scene, warm lamps'), (30.0, 50.0, 'medium, symmetrical rivals'), (41.5, 33.5, 'medium close, one face'), (35.0, 56.0, 'blueprint states the idea')]
 ref, ours, out = sys.argv[1:4]
 tmp = tempfile.mkdtemp(); W, H = 405, 720
 def grab(src, t, p):

@@ -309,7 +309,9 @@ function grade(k) { if (k <= 0) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 
     F.glow(820, 300, 220, 'rgba(255,250,230,.9)', .55 * night); g.fillStyle = '#fbf3da'; g.beginPath(); g.arc(820, 300, 46, 0, Math.PI * 2); g.fill(); g.fillStyle = 'rgba(30,28,74,.9)'; g.beginPath(); g.arc(842, 290, 42, 0, Math.PI * 2); g.fill(); }
   g.restore(); }
 let NIGHTK = 0, LAMPS = [];
-function nightLamps(t) { if (!NIGHTK) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'multiply'; g.fillStyle = F.vgrad(0, H, [[0, '#1c1b48'], [.45, '#3a4282'], [1, '#2c2a55']]); g.globalAlpha = .82; g.fillRect(0, 0, W, H);
+function nightLamps(t) { if (!NIGHTK) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
+  // v9: deepen the night: more contrast and saturation before the blue wash, so the blacks stay dark and the lamps stay crisp
+  F.layer(c => c.drawImage(g.canvas, 0, 0), 'contrast(1.35) saturate(1.3) brightness(.92)'); g.globalCompositeOperation = 'multiply'; g.fillStyle = F.vgrad(0, H, [[0, '#1c1b48'], [.45, '#3a4282'], [1, '#2c2a55']]); g.globalAlpha = .9; g.fillRect(0, 0, W, H);
   g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1; for (let i = 0; i < 70; i++) { const x = hash(i * 1.7) * W, y = 40 + hash(i * 2.9) * 600; g.fillStyle = `rgba(255,250,230,${.35 + .4 * Math.sin(i + t * 2) ** 2})`; g.beginPath(); g.arc(x, y, 1.4 + 1.6 * hash(i), 0, Math.PI * 2); g.fill(); }
   g.globalCompositeOperation = 'screen'; LAMPS.forEach(([x, y, s2, col]) => { const fl = 1 + .06 * Math.sin(t * 13 + x); F.glow(x, y, 230 * s2 * fl, col, .42); F.glow(x, y, 34 * s2, 'rgba(255,240,200,1)', .85); });
   g.globalCompositeOperation = 'source-over'; LAMPS.forEach(([x, y, s2]) => { g.fillStyle = '#2b2422'; g.fillRect(x - 9 * s2, y - 14 * s2, 18 * s2, 26 * s2); g.fillStyle = '#ffe7a8'; g.fillRect(x - 6 * s2, y - 10 * s2, 12 * s2, 18 * s2); });

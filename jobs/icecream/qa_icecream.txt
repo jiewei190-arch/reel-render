@@ -1,7 +1,7 @@
 QA icecream: WARN   (/home/user/reel-render/jobs/icecream/icecream.mp4, 67.0 s)
   PASS  static          longest no-change run 0.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
-  WARN  safe zones      right x>900 y900-1650: content 60.8-66.5s
+  WARN  safe zones      right x>900 y900-1650: content 35.5-38.8s, 60.8-66.5s
   WARN  outer 24 px     content at the frame edge 13.5-16.0s
   PASS  loudness        -15.4 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -2.3 dBTP (WARN above -1.0, FAIL above 0.0)

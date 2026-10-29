@@ -75,3 +75,9 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
 - Biggest gaps now:
   1. **Lighting moods:** the reference cuts to night and candle-lit scenes (tent, street, blacksmith) for its dramatic beats. Ours is daylight except the time-lapse.
   2. **Props in hand:** the reference's characters always hold something (spear, shield, money bags, candle); ours mostly stand empty-handed.
+
+## v8 (Oct 29): a night beat with warm light
+- "Neither cart can leave" is now a night stand-off (like the reference's night street and candle-lit shop): deep blue night grade, stars, and a lantern on each cart glowing warm. Both vendors hold their scoops (props in hand, like the reference's characters).
+- Vendors keep to the outer side of their cart until the carts are far apart (fixes vendors crossing over when the carts edge away).
+- Render `icecream_v8.mp4`, sheet `compare_v8.jpg` (the time-lapse pair is swapped for a night pair: ref 26.5 s vs ours 49.5 s). QA WARN only: right-column content 35.5-38.8 s and 60.8-66.5 s; wide shot at the edges 13.5-16 s.
+- Biggest gap now: **night contrast.** Ours is hazy and washed out (the bloom and haze lift the blacks). The reference's night is deep, saturated blue with crisp warm highlights.
