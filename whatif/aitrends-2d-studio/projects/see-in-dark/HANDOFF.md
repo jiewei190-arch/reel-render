@@ -1,14 +1,14 @@
 # HANDOFF: shot writers for "What If You Could See in Complete Darkness?"
 
-Project: `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studio\projects\see-in-dark\` (all paths below are relative to it). 16:9, 1080p, 24 fps, style `dusk`, 414.56 s, 120 shots. Voiceover and timings are final; `story/shots.json` owns timing. Read first: **`QUALITY_BAR.md` (mandatory, checkable rules; every shot is judged against it)**, `story/bible.md`, this file, `scenes/shots/S_showcase.js` (6 finished shots = the working pattern) and the kit docs (`..\..\SETUP_NOTES.md`, style-bible/engine-api in the plugin skills).
+Project: `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studio\projects\see-in-dark\` (all paths below are relative to it). 16:9, 1080p, 24 fps, style `dusk`, 373.594 s (v2 voice, whisper-aligned 97%), 119 shots. Voiceover and timings are final; `story/shots.json` owns timing. Read first: **`QUALITY_BAR.md` (mandatory, checkable rules; every shot is judged against it)**, `story/bible.md`, this file, `scenes/shots/S_showcase.js` (6 finished shots = the working pattern) and the kit docs (`..\..\SETUP_NOTES.md`, style-bible/engine-api in the plugin skills).
 
 ## Batches (each shot has `batch`, `type`, `view` ("thermal" or "normal"), `scene` in shots.json; implement what `scene` says)
 | Batch | Ids | Time | Write only |
 |---|---|---|---|
-| A | s001-s039 | 0:00-2:22 | `scenes/shots/A_*.js` |
-| B | s040-s081 | 2:22-4:41 | `scenes/shots/B_*.js` |
-| C | s082-s120 | 4:41-end | `scenes/shots/C_*.js` |
-DONE in the showcase (`scenes/shots/S_showcase.js`; do NOT redefine): **s001** blackout street walk, **s008** thermal view, **s011** RULE 1 card, **s012** blueprint eye, plus two NEW showcase shots that **temporarily reuse the ids s002 (giant-face reaction) and s005 (Mina + Hero + Biscuit apartment scene)** so they render on the sheet. When the new script/shot list lands, either keep them under their real ids by renaming `registerShot('s002'...)`/`('s005'...)`, or copy them as templates and delete them from S_showcase.js. The old stage-1 file is kept as `scenes/shots/_stage1_examples_old.js` (skipped by the loader, reference only). Shot timings in shots.json are being replaced: bind beats to words with `wordTime()` (see `shotWord()` in S_showcase.js), never to hard-coded seconds.
+| A | s001-s039 (39 shots; 6 done in showcase) | 0:00.00-2:08.49 (0-128.49 s): cold open, title, Rule 1, Rule 2 up to the lab/eye science | `scenes/shots/A_*.js` |
+| B | s040-s081 (42 shots) | 2:08.49-4:12.69 (128.49-252.69 s): pit viper, street/kitten/window, Rule 3, Rule 4 | `scenes/shots/B_*.js` |
+| C | s082-s119 (38 shots) | 4:12.69-end (252.69-373.594 s): Rule 5 forest climax, reunion, ending, end screen | `scenes/shots/C_*.js` |
+DONE in the showcase (`scenes/shots/S_showcase.js`, re-bound to the v2 ids and word cues; do NOT redefine): **s001** street goes dark + walk, **s003** Mina + Hero + Biscuit apartment trio, **s005** thermal mouse/toast, **s010** RULE 1 card, **s011** blueprint eye (rods), **s029** HERO giant-face reaction ("Everything's already glowing"). All in batch A; batch A writes the other 33. The old stage-1 file is kept as `scenes/shots/_stage1_examples_old.js` (skipped by the loader, reference only). Bind beats to words with `wordTime()` (see `shotWord()` in S_showcase.js), never to hard-coded seconds.
 Name files like `B_s040_s044_viper.js` (several `registerShot` per file is fine; one file per scene cluster).
 
 ## Rules
@@ -75,10 +75,10 @@ BP.wavelength(g, t, { k, peak: 9.5 });  BP.photon(g, t, { from, to, k });
 BP.draw(g, pts, k, { w, color });  BP.label(g, t, { at, to, str, start });    // start from wordTime(...) - shot start
 chip(g, t, { str: 'About 120 million rods', at: tWord, x, y, tone: 'gold'|'blue'|'coral' });   // <= 6 words
 ```
-Gold = key numbers/labels, light blue = line art. Draw-on diagrams over ~1.5 s, then hold with a slow camera scale (see s012).
+Gold = key numbers/labels, light blue = line art. Draw-on diagrams over ~1.5 s, then hold with a slow camera scale (see s011).
 
 ## RULE title cards and other helpers (`../sets/hud.js`)
-`ruleCard(g, t, info, { n: 2, title: "DARK ISN'T EMPTY", accent, bg: (g,t) => {...a set drawn dim...} })` (see s011; use `bars:"scope"`, `in: dip` is already set). `darkness(g, k, {x,y,r})` pitch-black overlay with an optional clear spot. Also use `UI.titleCard / bigLine / dataCard / endScreen(cast: [HERO, MINA, DEV, LIN, TOMAS])` from the kit for s010 (title), s116, s109, s120.
+`ruleCard(g, t, info, { n: 2, title: "DARK ISN'T EMPTY", accent, bg: (g,t) => {...a set drawn dim...} })` (see s010; use `bars:"scope"`, `in: dip` is already set). `darkness(g, k, {x,y,r})` pitch-black overlay with an optional clear spot. Also use `UI.titleCard / bigLine / dataCard / endScreen(cast: [HERO, MINA, DEV, LIN, TOMAS])` from the kit for s008 (title), s109 (the question), s110 (checklist), s119 (end screen).
 
 ## QC loop (run from `C:\Users\jiewe\Howitreallyworks\reel-render\longform\aitrends-2d-studio`, in a shell with the kit PATH: Git Bash `export PATH="$PWD/bin:$PWD/.venv/Scripts:$PATH"`; PowerShell `$env:PATH = "$PWD\bin;$PWD\.venv\Scripts;$env:PATH"`)
 ```
@@ -86,4 +86,4 @@ node render.mjs --project projects/see-in-dark --sheet --scale 0.4              
 node render.mjs --project projects/see-in-dark --stills 40.5,43,47 --scale 0.6      # exact times (global seconds) -> build/stills
 node render.mjs --project projects/see-in-dark --from 142 --to 160 --scale 0.5      # motion preview -> build/preview.mp4
 ```
-Checks per shot: matches its `line`/`scene`; camera moves; rim light; mostly dark with 1-3 bright accents; figures grounded and not cropped; chips <= 6 words and in the safe area; no console `SHOT ERROR`. Parallel writers: use `--stills` for your own times (the full sheet renders all 120 shots and other batches will show MISSING). Keep shots under ~1.5 s of render cost each: avoid stacking many `blurLayer`s; thermal shots are the heaviest (about 3x a normal shot).
+Checks per shot: matches its `line`/`scene`; camera moves; rim light; mostly dark with 1-3 bright accents; figures grounded and not cropped; chips <= 6 words and in the safe area; no console `SHOT ERROR`. Parallel writers: use `--stills` for your own times (the full sheet renders all 119 shots and other batches will show MISSING). Keep shots under ~1.5 s of render cost each: avoid stacking many `blurLayer`s; thermal shots are the heaviest (about 3x a normal shot).
