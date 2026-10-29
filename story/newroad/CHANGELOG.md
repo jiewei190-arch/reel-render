@@ -88,3 +88,7 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
   - Interiors: the reference's are painted with fabric, fire and textured walls; ours are cleaner and flatter.
   - Bands: the sky is still a little pale (s0.18 vs 0.25) and the horizon a little warm (s0.19 vs 0.09).
   - The jam street and Stuttgart sets read sparser than the reference's packed streets.
+
+## Paused after v7 (Oct 29)
+- Paused at the main session's request for the priority "What If You Could See in Complete Darkness?" job (batch B).
+- v7 (de5fa54) is the current best; resume from the gaps listed under v7.
