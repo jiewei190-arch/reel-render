@@ -73,7 +73,7 @@ registerShot('s094', { draw(g, t, info) {
   chip(g, t, { str: 'Every minute matters', at: tMin, x: E.W * 0.36, y: E.H * 0.86, tone: 'coral' });
 } });
 
-// s095 — '"Lights out," you croak. "Everybody."'  HERO raises a flat hand (no lip-sync); TOMAS and DEV turn to him; torch still on
+// s095 — '"Lights out," you croak. "Everybody."'  HERO raises a flat hand and croaks the line (lip-sync, small mouth); TOMAS and DEV turn to him; torch still on
 registerShot('s095', { draw(g, t, info) {
   const st = info.shot.start, tLights = shotWord('lights', st, 0.1), tCroak = shotWord('croak', st, 0.8), tEvery = shotWord('everybody', st, 1.5);
   const cam = camMove(t, info.dur, { z: [1.12, 1.17], x: [-200, -150], y: [70, 76] });
@@ -84,7 +84,7 @@ registerShot('s095', { draw(g, t, info) {
     actor(g, 'TOMAS', { ...to, pose: tp, expr: exprAt(t, [[0, 'determined'], [tEvery + 0.2, 'surprised']]), blink: blinkFlag(t, 2.8, 5), look: t > tCroak - 0.2 ? lookToward(1, 0) : lookToward(1, -0.2), rim: { color: '#fff2d0', dir: [1, -0.4] }, prop: { type: 'flashlight' }, t });
     const [hx, hy] = handWorld(to, tp); torchBeam(g, hx + 14, hy - 4, 0.05, 0.85, 1200);
     actor(g, 'DEV', { x: CX - 430, y: GY + 14, s: 1.75, facing: 1, pose: idle(POSES.relaxed, t, 2), expr: exprAt(t, [[0, 'worried'], [tCroak, 'surprised']]), blink: blinkFlag(t, 3.2, 2), look: t > tCroak - 0.2 ? lookToward(1, 0) : lookToward(-1, 0), rim: F.rim, t });
-    actor(g, 'HERO', { x: CX - 80, y: GY + 28, s: 1.95, facing: -1, pose: idle(poseAt(t, [[0, 'stand'], [tLights, STOP]], 0.25), t, 3), expr: exprAt(t, [[0, 'sad'], [tCroak, 'determined']]), blink: true, rim: { color: '#fff2d0', dir: [-1, -0.3] }, t });
+    actor(g, 'HERO', { x: CX - 80, y: GY + 28, s: 1.95, facing: -1, pose: idle(poseAt(t, [[0, 'stand'], [tLights, STOP]], 0.25), t, 3), expr: exprAt(t, [[0, 'sad'], [tCroak, 'determined']]), talk: 0.7 * talkAmount(info.globalT, st + tLights - 0.05, st + tEvery + 0.6), blink: true, rim: { color: '#fff2d0', dir: [-1, -0.3] }, t });
   });
   forestFg(g, t, cam); atmos(g, t, cam, { color: '#dfe8ff' });
   chip(g, t, { str: '"Lights out. Everybody."', at: tCroak, x: E.W * 0.62, y: E.H * 0.18, tone: 'gold' });

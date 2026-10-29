@@ -61,12 +61,13 @@ registerShot('s103', { draw(g, t, info) {
   chip(g, t, { str: '"You found me."', at: tFound, x: E.W * 0.66, y: E.H * 0.18, tone: 'coral' });
 } });
 
-// s104 — 'And you say, "Of course I did."'  GIANT FACE HERO, tender joy, no lip-sync; warm glow from below, rain easing, soft sparkles
+// s104 — 'And you say, "Of course I did."'  GIANT FACE HERO, tender joy, says the line (mouth open driven by talkAmount over 'Of course I did'); warm glow from below, rain easing, soft sparkles
 registerShot('s104', { draw(g, t, info) {
-  const st = info.shot.start, tCourse = shotWord('course', st, 0.8);
+  const st = info.shot.start, tOf = shotWord('of', st, 0.6), tCourse = shotWord('course', st, 0.8), tDid = shotWord('did', st, 1.3);
   const cam = camMove(t, info.dur, { z: [1.0, 1.06] });
   g.fillStyle = '#05060e'; g.fillRect(0, 0, E.W, E.H); blurLayer(g, 18, (g) => forest(g, t, { z: 1.4, x: 160 }, { view: 'cave', rain: false }), null, 1); veil(g, '#03040c', 0.45);
-  const f = faceAt(t, [[0, 'neutral'], [tCourse - 0.2, { eye: 0.8, arc: 0.6, brow: 0.4, smile: 0.7, w: 1.0, blush: 0.4 }], [tCourse + 0.5, 'joy']], 0.2);
+  const f0 = faceAt(t, [[0, 'neutral'], [tOf - 0.1, { eye: 0.8, arc: 0.6, brow: 0.4, smile: 0.7, w: 1.0, blush: 0.4 }], [tCourse + 0.5, 'joy']], 0.2);
+  const talk = talkAmount(info.globalT, st + tOf - 0.05, st + tDid + 0.35); const f = talk > 0 ? { ...f0, open: 0.1 + 0.75 * talk } : f0;
   layer(g, cam, 1, (g) => { glow(g, E.W * 0.5, E.H * 1.05, 900, '#ffb24a', 0.3); giantFace(g, E.W * 0.5, E.H * 0.54, 330, { who: 'HERO', f, rimSide: 1, rimColor: '#ffcf8a', glint: '#ffe0b0', blink: blinkAmt(t, 3.2, 0.8), breath: Math.sin(t * 2.1), tilt: lerp(0.02, -0.04, ease.inOut(t / info.dur)) }); });
   for (let i = 0; i < 4; i++) { const ph = (t * 0.9 + i * 0.27) % 1; FX.sparkle(g, E.W * 0.5 + (i - 1.5) * 260, E.H * 0.18 + Math.sin(i * 2) * 50, 16 * Math.sin(ph * Math.PI), '#ffe0b0', 0.8); }
   FX.rain(g, t, { count: lerp(90, 20, t / info.dur) | 0, len: 70, a: 0.18, angle: 0.18, seed: 83 });
