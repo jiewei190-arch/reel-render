@@ -60,3 +60,11 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
 - Biggest gaps now:
   1. **Midground density behind the rivals:** the reference stacks each side's people (the armies) right behind its king, so every wide shot is full of red and teal. Ours has small blurred umbrellas there.
   2. **Single-character close shots** are framed looser than the reference's (head about a third of the frame width).
+
+## v6 (Oct 29): crowds behind the rivals, tighter close shots
+- Each side's customers (18 per side, round-head figures in red- or teal-side costumes with bucket hats, stripes, moustaches; some holding cones) queue behind their vendor in every wide and two-shot, filling the midground like the reference's armies behind the kings. The nearest four per side get the rim light and cast shadow.
+- Single-character close shots moved in (camera distance 225 -> 170), closer to the reference's framing. The hook's sign drops out once the camera pushes past it.
+- Render `icecream_v6.mp4`, sheet `compare_v6.jpg`. QA WARN only (as before).
+- Biggest gaps now:
+  1. **Distant scenery:** the reference's far layer (snowy mountains, a castle on green hills, tree clumps) rises well above the horizon and reads clearly through the haze. Our headland and town are low and small, so the sky dominates the upper half.
+  2. **Sky depth:** the reference layers clouds at several distances, the far ones smaller and hazed. Ours has four similar clouds.

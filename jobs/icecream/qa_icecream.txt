@@ -9,7 +9,7 @@ QA icecream: WARN   (/home/user/reel-render/jobs/icecream/icecream.mp4, 67.0 s)
   PASS  length          67.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 11.4 (min 1.0), contrast 50.3 (min 18.0)
+  PASS  frame 0         edge 11.5 (min 1.0), contrast 50.7 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      icecream.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
