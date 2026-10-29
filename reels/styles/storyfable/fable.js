@@ -15,7 +15,7 @@ export const INK = '#33211a', CREAM = '#fff4dc', SKIN = '#f7ecdc';
 
 // ---------- palette (bands tuned to STYLE_STORY 3b) ----------
 export const PAL = {
-  skyTop: '#5aa0e0', sky: '#94c5f0', haze: '#e6dfcf', hill1: '#a9c4a8', hill2: '#8fb38a',
+  skyTop: '#4f97dc', sky: '#84baea', haze: '#e6dfcf', hill1: '#a9c4a8', hill2: '#8fb38a',
   grass: '#a3c556', grassDark: '#7fa43e', dirt: '#c6a65a', dirtLow: '#a07c3e', rut: '#86683a',
   red: '#d4402f', redDark: '#9e2a20', teal: '#2a9d98', tealDark: '#1d6f6c', wood: '#c08a4e', woodDark: '#8a5a2e', lemon: '#f3cf3a',
 };
@@ -52,7 +52,7 @@ export function flush() {
     if (q.o.shadow && !q.o.rim) castShadow(c, q);
     if (q.o.rim) rimDraw(c, q); else { c.save(); c.translate(q.p.x, q.p.y); q.fn(c, q.p.s, q.p); c.restore(); } }
   const bf = clamp(cam.dof * 1.6, 0, 14), bn = clamp(cam.dof * 2.2, 0, 22);
-  softDraw(L.far, bf, ' saturate(.9) contrast(.93) brightness(1.04)'); g.drawImage(L.mid, 0, 0); softDraw(L.near, bn);
+  softDraw(L.far, bf, ' saturate(.86) contrast(.9) brightness(1.06)'); g.drawImage(L.mid, 0, 0); softDraw(L.near, bn);
 }
 // cheap depth-of-field blur: blur at quarter resolution, scale back up
 const SM = mk(W / 4, H / 4), smg = SM.getContext('2d');
@@ -102,7 +102,7 @@ export function hills(c, o = {}) { const h = cam.hor, px = -cam.x * .02;
   if (o.mill !== false) { const mx = W * .8 + px * 2, my = h - 48; c.fillStyle = 'rgba(200,190,175,.9)'; c.beginPath(); c.moveTo(mx - 14, my); c.lineTo(mx - 9, my - 60); c.lineTo(mx + 9, my - 60); c.lineTo(mx + 14, my); c.fill();
     c.strokeStyle = 'rgba(150,140,130,.9)'; c.lineWidth = 3; const ang = performance.now ? 0 : 0; for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + (o.t || 0) * .6; c.beginPath(); c.moveTo(mx, my - 60); c.lineTo(mx + Math.cos(a) * 40, my - 60 + Math.sin(a) * 40); c.stroke(); } }
   // cream horizon mist band
-  const mg = c.createLinearGradient(0, h - 70, 0, h + 50); mg.addColorStop(0, 'rgba(236,228,210,0)'); mg.addColorStop(.55, 'rgba(238,231,214,.92)'); mg.addColorStop(1, 'rgba(236,228,210,0)'); c.fillStyle = mg; c.fillRect(0, h - 70, W, 120); }
+  const mg = c.createLinearGradient(0, h - 110, 0, h + 80); mg.addColorStop(0, 'rgba(236,228,210,0)'); mg.addColorStop(.5, 'rgba(240,234,218,.97)'); mg.addColorStop(1, 'rgba(236,228,210,0)'); c.fillStyle = mg; c.fillRect(0, h - 110, W, 190); }
 export const hazeK = d => clamp((d - 900) / 5000, 0, .7);
 
 // ---------- ground ----------
@@ -113,8 +113,8 @@ export function street(c, o = {}) { const h = cam.hor, z0 = cam.z + 10, zF = 300
   const dg = c.createLinearGradient(0, h, 0, H); dg.addColorStop(0, '#d8cba0'); dg.addColorStop(.2, PAL.dirt); dg.addColorStop(1, PAL.dirtLow);
   quad(c, [[-lw, z0], [lw, z0], [lw, zF], [-lw, zF]], dg);
   quad(c, [[-lw - 30, z0], [-lw, z0], [-lw, zF], [-lw - 30, zF]], 'rgba(120,95,50,.35)'); quad(c, [[lw, z0], [lw + 30, z0], [lw + 30, zF], [lw, zF]], 'rgba(120,95,50,.35)');
-  for (const rx of [-150, 150]) { quad(c, [[rx - 34, z0], [rx + 34, z0], [rx + 34, zF], [rx - 34, zF]], 'rgba(120,90,45,.42)'); quad(c, [[rx - 10, z0], [rx + 10, z0], [rx + 10, zF], [rx - 10, zF]], 'rgba(95,70,35,.35)'); }
-  quad(c, [[-46, z0], [46, z0], [46, zF], [-46, zF]], 'rgba(160,180,90,.5)');           // grass strip in the middle
+  for (const rx of [-110, 110]) { quad(c, [[rx - 40, z0], [rx + 40, z0], [rx + 40, zF], [rx - 40, zF]], 'rgba(120,88,42,.5)'); quad(c, [[rx - 12, z0], [rx + 12, z0], [rx + 12, zF], [rx - 12, zF]], 'rgba(85,60,28,.5)'); quad(c, [[rx + 40, z0], [rx + 48, z0], [rx + 48, zF], [rx + 40, zF]], 'rgba(235,215,170,.45)'); }
+  quad(c, [[-22, z0], [22, z0], [22, zF], [-22, zF]], 'rgba(150,172,80,.55)');           // grass strip in the middle
   // pebbles and dimples (bigger and sparser near the camera)
   const zs = Math.max(cam.z + 40, 0) | 0; for (let zi = Math.floor(zs / 60); zi < Math.floor(zs / 60) + 140; zi++) { const Z = zi * 60 + 30; for (let k = 0; k < 3; k++) { const X = (hash(zi * 3.1 + k) - .5) * lw * 2.2, p = proj(X, 0, Z + hash(zi + k * 9) * 50); if (!p || p.y > H + 20 || p.s < .04) continue;
       const r = (2 + hash(zi * 7 + k) * 4) * p.s * 1.5; c.fillStyle = k ? 'rgba(110,85,45,.45)' : 'rgba(240,225,190,.55)'; c.beginPath(); c.ellipse(p.x, p.y, r * 1.6, r * .6, 0, 0, TAU); c.fill(); } }
@@ -309,6 +309,9 @@ export function grade(c, tod) { if (tod <= .01) return; c.save();
   if (sun > 0) { c.globalCompositeOperation = 'multiply'; c.fillStyle = `rgba(255,170,110,${.55 * sun})`; c.fillRect(0, 0, W, H); c.globalCompositeOperation = 'screen'; const sg = c.createLinearGradient(0, 0, 0, H); sg.addColorStop(0, `rgba(120,60,140,${.25 * sun})`); sg.addColorStop(.45, `rgba(255,150,80,${.35 * sun})`); sg.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = sg; c.fillRect(0, 0, W, H); }
   if (night > 0) { c.globalCompositeOperation = 'multiply'; c.fillStyle = `rgba(70,85,160,${.75 * night})`; c.fillRect(0, 0, W, H); c.globalCompositeOperation = 'source-over'; c.fillStyle = `rgba(20,25,70,${.25 * night})`; c.fillRect(0, 0, W, H); }
   c.restore(); }
+// coloured side light for medium shots (the reference's warm key from one side, cool fill on the other)
+export function sideLight(c, side = -1, a = 1) { c.save(); const x0 = side < 0 ? 0 : W, x1 = side < 0 ? W : 0; let gr = c.createLinearGradient(x0, 0, x1, 0); gr.addColorStop(0, `rgba(255,178,92,${.26 * a})`); gr.addColorStop(.55, 'rgba(255,178,92,0)'); c.globalCompositeOperation = 'screen'; c.fillStyle = gr; c.fillRect(0, 0, W, H);
+  gr = c.createLinearGradient(x1, 0, x0, 0); gr.addColorStop(0, `rgba(110,130,200,${.22 * a})`); gr.addColorStop(.5, 'rgba(110,130,200,0)'); c.globalCompositeOperation = 'multiply'; c.fillStyle = gr; c.fillRect(0, 0, W, H); c.restore(); }
 // soft diagonal sun rays from the top right (the reference's day shots)
 export function rays(c, t, a = .1) { c.save(); c.globalCompositeOperation = 'screen'; for (let i = 0; i < 5; i++) { const x0 = W * (.55 + i * .16) + Math.sin(t * .2 + i) * 20, w = 60 + hash(i) * 90;
     const gr = c.createLinearGradient(x0, -40, x0 - 700, 1500); gr.addColorStop(0, `rgba(255,248,220,${a * (1 - i * .12)})`); gr.addColorStop(1, 'rgba(255,248,220,0)'); c.fillStyle = gr;
@@ -316,7 +319,7 @@ export function rays(c, t, a = .1) { c.save(); c.globalCompositeOperation = 'scr
 export function glow(c, x, y, r, col = '255,200,120', a = .8) { const rg = c.createRadialGradient(x, y, 0, x, y, r); rg.addColorStop(0, `rgba(${col},${a})`); rg.addColorStop(1, `rgba(${col},0)`); c.save(); c.globalCompositeOperation = 'screen'; c.fillStyle = rg; c.fillRect(x - r, y - r, r * 2, r * 2); c.restore(); }
 export function post(t, o = {}) { // light bloom, contrast lift, vignette, grain
   bg6.clearRect(0, 0, bloomC.width, bloomC.height); bg6.filter = 'blur(6px) brightness(1.15)'; bg6.drawImage(main, 0, 0, bloomC.width, bloomC.height); bg6.filter = 'none';
-  g.save(); g.globalCompositeOperation = 'screen'; g.globalAlpha = o.bloom ?? .16; g.drawImage(bloomC, 0, 0, W, H); g.restore();
+  g.save(); g.globalCompositeOperation = 'screen'; g.globalAlpha = o.bloom ?? .09; g.drawImage(bloomC, 0, 0, W, H); g.restore();
   g.save(); g.filter = 'contrast(1.1) saturate(1.03)'; g.drawImage(main, 0, 0); g.restore();
   const vg = g.createRadialGradient(W / 2, H * .46, H * .32, W / 2, H * .5, H * .78); vg.addColorStop(0, 'rgba(20,10,5,0)'); vg.addColorStop(1, `rgba(20,10,5,${o.vig ?? .32})`); g.fillStyle = vg; g.fillRect(0, 0, W, H);
   g.save(); g.globalCompositeOperation = 'overlay'; g.globalAlpha = .07; const ox = (t * 977) % 256 | 0, oy = (t * 613) % 256 | 0; g.translate(-ox, -oy); g.fillStyle = g.createPattern(grainC, 'repeat'); g.fillRect(0, 0, W + 256, H + 256); g.restore(); }

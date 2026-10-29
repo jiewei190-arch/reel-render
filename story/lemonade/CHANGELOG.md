@@ -151,3 +151,33 @@ Paused at v6 (6ad11e3) for the owner's priority job (whatif "See in Complete Dar
 - haze/blur on the far houses (detail energy is above the reference);
 - coloured side light in the mediums;
 - move the teal side inward for a clean right-column QA.
+
+## v7 (Oct 29): resumed after the whatif batch C job
+- Main session: the What If shots are paused (new script and voice coming), so back to this reel from our fable.js.
+- Fixed the biggest v6 gap, seen side by side with the reference's 16.6 s field frame. Our wide was soft and hazy (far-layer blur plus bloom) where the reference is crisp from front to back.
+  - Wide camera: depth of field 2.6 -> 1.0 (sharp to the vanishing point), camera a bit farther back and higher (z -20, y 172, horizon 870).
+  - Bloom .16 -> .09.
+  - Track: a narrower green centre strip (22 cm); darker, wider ruts with a pale edge; more like the reference's rutted path.
+- Colour:
+  - the owner's sky palette (#4f97dc / #84baea);
+  - a wider, denser cream horizon mist;
+  - stronger aerial perspective on the far layer (saturate .86, contrast .9, brightness 1.06).
+- Mediums: a new F.sideLight (a warm key screened in from the left, a cool multiply fill from the right) on every street medium, toward the reference's side-lit mediums.
+- QA: WARN (right column, frame edge); rest PASS (-15.8 LUFS).
+- style_measure, wide frame, ref vs ours:
+
+  | Band | Reference | Ours v7 |
+  |---|---|---|
+  | sky mid | #b4d6f0 .25 | #c6dff5 .19 |
+  | near horizon | #e2dbcd | #aea090 |
+  | ground mid | #b69d5d .49 | #a38a5b .44 |
+  | ground low | #957541 .56 | #997f4b .51 (close) |
+  | saturation | .352 | .367 |
+  | contrast | 49.3 | 52.7 |
+  | detail | 19.2 | 24.8 |
+- Still off (compare_v7.jpg):
+  1. **Sky mid band:** still pale because our big clouds sit in it.
+  2. **Horizon band:** houses and stands instead of cream haze.
+  3. **Detail energy:** above the reference (the village is busier than its fields).
+  4. **Interiors:** the shop could use the reference's strong orange glow and darker corners.
+  5. **Right-column QA:** WARN.

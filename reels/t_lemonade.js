@@ -66,7 +66,7 @@ function streetSet(t, o = {}) { F.begin(); const c0 = F.drawGround.bind(null);
   // foreground dressing: tufts near the camera, blurred
   for (let i = 0; i < 10; i++) { const Z = F.cam.z + 120 + i * 70, X = F.cam.x + (i % 2 ? 1 : -1) * (200 + hash(i * 3) * 260); F.put(X, Z, (c, s) => F.tuft(c, s * 1.6, i + 1), { layer: Z - F.cam.z < F.cam.focus * .55 ? 'near' : undefined }); }
   if (o.extra) o.extra();
-  F.flush(); F.SUN.a = .26; if (!o.sky) F.rays(g, t, .09); }
+  F.flush(); F.SUN.a = .26; if (!o.sky) { F.rays(g, t, .09); if (F.cam.dof >= 6) F.sideLight(g, -1); } }
 
 function Q_extra(t) { for (const [Z, k] of [[1100, 0], [2400, 1]]) F.put(0, Z + 1, c => { c.setTransform(1, 0, 0, 1, 0, 0); F.bunting(c, [-330, 330, Z], [330, 330, Z], k ? [PAL.teal, PAL.red, '#f3cf3a'] : [PAL.red, PAL.teal, '#fbf3df'], t); }, {});
   for (const [X, Z] of [[-275, 700], [275, 700]]) F.put(X + (X < 0 ? -40 : 40), Z - 90, (c, s) => F.crate(c, s * 1.1), { shadow: true, rim: true, h: 50, w: 90, sw: 70 });
@@ -186,7 +186,7 @@ const K0 = { x: 0, y: 150, z: -900, hor: 840, focus: 2400, dof: 1.6, f: 1150 };
 const CAM_BOARD = { x: 0, y: 230, z: BZ - 520, hor: 880, focus: 520, dof: 6, f: 1150 };
 const camRed = (dz = 0) => ({ x: RX - 30, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
 const camTeal = (dz = 0) => ({ x: TX + 10, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
-const WIDE = (dz = 0, x = 0) => ({ x, y: 150, z: 40 + dz, hor: 840, focus: 560 - dz, dof: 1.8, f: 1150 });
+const WIDE = (dz = 0, x = 0) => ({ x, y: 172, z: -20 + dz, hor: 870, focus: 620 - dz, dof: 1.0, f: 1150 });
 const CARD_R = { x: RSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
 const CARD_T = { x: TSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
 
