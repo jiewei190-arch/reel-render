@@ -1,0 +1,1 @@
+seg_C DONE: 252.69s-end, 1920x1080 24fps, 2902 frames, 120.917s (ends 373.61), 65 MB, crf 20 medium, video only. Frames checked incl. end screen.
