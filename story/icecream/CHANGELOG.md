@@ -68,3 +68,10 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
 - Biggest gaps now:
   1. **Distant scenery:** the reference's far layer (snowy mountains, a castle on green hills, tree clumps) rises well above the horizon and reads clearly through the haze. Our headland and town are low and small, so the sky dominates the upper half.
   2. **Sky depth:** the reference layers clouds at several distances, the far ones smaller and hazed. Ours has four similar clouds.
+
+## v7 (Oct 29): the far layer
+- Far scenery like the reference's mountains and castle hills: blue-grey peaks with snow caps, green coastal hills with tree clumps, a cliff lighthouse with red bands, small hazed far clouds. Drawn as one offscreen layer, blurred once, then lifted toward the cream horizon haze.
+- Render `icecream_v7.mp4`, sheet `compare_v7.jpg`. QA WARN only (as before).
+- Biggest gaps now:
+  1. **Lighting moods:** the reference cuts to night and candle-lit scenes (tent, street, blacksmith) for its dramatic beats. Ours is daylight except the time-lapse.
+  2. **Props in hand:** the reference's characters always hold something (spear, shield, money bags, candle); ours mostly stand empty-handed.

@@ -229,7 +229,7 @@ const CW = 290;
 function cartsAt(t) { if (t < T(5)) return [-CW, CW]; if (t < T(7)) return [-CW, lerp(CW, 200, ss(seg(t, T(5) + .5, T(6))))];
   if (t < T(8)) return [lerp(-CW, -150, ss(seg(t, T(7), r(7, 1.2)))), lerp(200, 120, ss(seg(t, r(7, 1.2), E(7))))];
   const u = ss(seg(t, T(8), r(8, 3.8))); return [lerp(-150, -47, u), lerp(120, 47, u)]; }
-const vendorX = (x, side) => x + (Math.abs(x) > 80 ? (side ? -100 : 100) : (side ? 88 : -88));
+const vendorX = (x, side) => x + (Math.abs(x) > 200 ? (side ? -100 : 100) : (side ? 88 : -88));
 function wideCarts(t, o = {}) { const [xr, xt] = o.at || cartsAt(t); cart(xr, 540, 0); cart(xt, 540, 1); queues(t, vendorX(xr, 0), vendorX(xt, 1), o);
   fig(vendorX(xr, 0) + (o.jigR || 0), 470, { ...RED, t, expr: o.exprR || 'glare', look: 1, turn: .4, armF: 70, bendF: 150, armB: 70, bendB: 150, ...o.red });
   fig(vendorX(xt, 1) - (o.jigT || 0), 470, { ...TEAL, t, expr: o.exprT || 'glare', look: 1, turn: .4, flip: true, armF: 70, bendF: 150, armB: 70, bendB: 150, ...o.teal }); }
@@ -287,7 +287,9 @@ shot(r(9, 2.2), T(10), t => { const u = seg(t, r(9, 2.2), T(10)), x = lerp(-1300
 // 10 neither can leave: each edges away and slides back
 shot(T(10), T(11), t => { cam(t, [[T(10), { x: 0, z: 60, hor: 830, focus: 410, dof: 5 }], [T(11), { x: 0, z: 110, hor: 830, focus: 360, dof: 5 }]]); set(t);
   const k1 = Math.sin(clamp((t - r(10, .3)) / 1.2) * Math.PI) * 60, k2 = Math.sin(clamp((t - r(10, 1.7)) / 1.2) * Math.PI) * 60;
-  wideCarts(t, { at: [-47 - k1, 47 + k2], exprR: k1 > 8 ? 'worried' : 'glare', exprT: k2 > 8 ? 'worried' : 'glare' }); foreground(1); F.flush(); });
+  wideCarts(t, { at: [-47 - k1, 47 + k2], exprR: k1 > 8 ? 'worried' : 'glare', exprT: k2 > 8 ? 'worried' : 'glare', red: { hold: 'scoop', armF: 40, bendF: -95 }, teal: { hold: 'scoop', armF: 40, bendF: -95 } }); foreground(1); F.flush();
+  // v8: the stand-off at night, lit by a lantern on each cart (the reference's candle-lit / night beats)
+  NIGHTK = 1; [[-47 - k1, 'rgba(255,190,110,1)'], [47 + k2, 'rgba(255,200,140,1)']].forEach(([x, col], i) => { const q = F.proj(x + (i ? 30 : -30), 175, 540); LAMPS.push([q.x, q.y, q.s, col]); }); });
 // 11 the blueprint states the law
 shot(T(11), T(12), t => blueprintShot(t));
 // 12 the question: both offer a cone; YES / NO pennants on the carts
@@ -306,12 +308,19 @@ function grade(k) { if (k <= 0) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 
     g.globalCompositeOperation = 'source-over'; g.globalAlpha = night; for (let i = 0; i < 90; i++) { const x = hash(i * 1.7) * W, y = 40 + hash(i * 2.9) * 640, tw = .5 + .5 * Math.sin(i * 3 + k * 40); g.fillStyle = `rgba(255,250,230,${.4 + .6 * tw})`; g.beginPath(); g.arc(x, y, 1.5 + 2 * hash(i * 4.3), 0, Math.PI * 2); g.fill(); }
     F.glow(820, 300, 220, 'rgba(255,250,230,.9)', .55 * night); g.fillStyle = '#fbf3da'; g.beginPath(); g.arc(820, 300, 46, 0, Math.PI * 2); g.fill(); g.fillStyle = 'rgba(30,28,74,.9)'; g.beginPath(); g.arc(842, 290, 42, 0, Math.PI * 2); g.fill(); }
   g.restore(); }
+let NIGHTK = 0, LAMPS = [];
+function nightLamps(t) { if (!NIGHTK) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalCompositeOperation = 'multiply'; g.fillStyle = F.vgrad(0, H, [[0, '#1c1b48'], [.45, '#3a4282'], [1, '#2c2a55']]); g.globalAlpha = .82; g.fillRect(0, 0, W, H);
+  g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1; for (let i = 0; i < 70; i++) { const x = hash(i * 1.7) * W, y = 40 + hash(i * 2.9) * 600; g.fillStyle = `rgba(255,250,230,${.35 + .4 * Math.sin(i + t * 2) ** 2})`; g.beginPath(); g.arc(x, y, 1.4 + 1.6 * hash(i), 0, Math.PI * 2); g.fill(); }
+  g.globalCompositeOperation = 'screen'; LAMPS.forEach(([x, y, s2, col]) => { const fl = 1 + .06 * Math.sin(t * 13 + x); F.glow(x, y, 230 * s2 * fl, col, .42); F.glow(x, y, 34 * s2, 'rgba(255,240,200,1)', .85); });
+  g.globalCompositeOperation = 'source-over'; LAMPS.forEach(([x, y, s2]) => { g.fillStyle = '#2b2422'; g.fillRect(x - 9 * s2, y - 14 * s2, 18 * s2, 26 * s2); g.fillStyle = '#ffe7a8'; g.fillRect(x - 6 * s2, y - 10 * s2, 12 * s2, 18 * s2); });
+  g.restore(); NIGHTK = 0; LAMPS = []; }
 const WHIPS = [T(1), T(5), r(7, 1.2), T(9), T(12)];
 function render(t) {
   g.setTransform(1, 0, 0, 1, 0, 0); g.filter = 'none'; g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
   (SH.find(s => t >= s.a && t < s.b) || SH[SH.length - 1]).fn(t);
   for (const w of WHIPS) { const d = Math.abs(t - w); if (d < WHIP) { const k = 1 - d / WHIP, sh = (t < w ? -1 : 1) * k * k * 300; const img = g.getImageData(0, 0, W, H); g.putImageData(img, sh, 0); g.putImageData(img, sh - Math.sign(sh) * W, 0); F.smear(k * 460); } }
   grade(t >= T(8) && t < T(9) ? seg(t, T(8), r(8, 3.9)) : 0);
+  nightLamps(t);
   F.post(t);
   F.captions(CAPS, t, 1340);
 }
