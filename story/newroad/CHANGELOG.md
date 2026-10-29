@@ -29,3 +29,18 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
   - The foreground floor is bare (no blurred near props); the reference frames the bottom with props.
   - Characters cut at the frame edge; the reference keeps them inside and overlapping, holding props.
   - The sign is small next to the reference's big board.
+
+## v3: horizon haze band, characters in the wide shot
+- Reel: newroad_v3.mp4 (66.2 s). Compare: compare_v3.jpg. QA: qa_v3.txt (PASS, no warnings).
+- Fix for v2's biggest gaps:
+  - **Ground haze:** a cream band lies on the ground just below the horizon in all outdoor sets. It goes on after the ground and before the sprites.
+    - Horizon band now #ddd4b7 s0.17 v0.87, from #b5b379 s0.33 v0.71 (ref #e2dbcd s0.09 v0.89).
+  - **Wide valley shot:** a red and a teal commuter now walk along their roads, flanking the path to the vanishing point as in the reference.
+  - **Opening/closing duo:** kept inside the frame (the outer-24 px warning is gone).
+  - **Counter sign:** 30% bigger.
+  - **End card:** moved above the sign.
+- Remaining gaps for v4:
+  - The sky is too pale (ours #cee4f4 s0.15 vs ref #b4d6f0 s0.25).
+  - Mid ground is too dark (v0.61 vs 0.71).
+  - Detail density: the reference packs the foreground with blurred props and gives every character a held prop; ours has bare floor at the bottom and empty hands.
+  - The backdrop hills have no illustrated landmark.
