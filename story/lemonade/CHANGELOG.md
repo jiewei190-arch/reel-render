@@ -28,3 +28,25 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   3. **Medium shots** are too loose. The reference's mediums fill the frame with a big head and a strongly lit, detailed background.
   4. **Lighting moods:** we only have day + the desk. The reference uses night street, candle interior and forge glow with characters in them.
   5. **Props:** no prop detail like the reference's anvil, spears and barrels (texture, highlights, rivets).
+
+## v2 (Oct 29)
+- Fixed the biggest v1 gap, the wide framing:
+  - the customer queues now stand outside the two owners and run back along the track, like the reference's two armies, so the track is clear to the vanishing point;
+  - the PRICE WAR board moved behind them into the distance; the board close-ups move the camera to it.
+- Mediums: camera at head height, head at about 40% of the frame, body to the bottom edge, background at dof 7 (closer to the reference's king/blacksmith mediums).
+- Night mood: "You see, neither one was being silly" is now a night street shot. Both owners hold lanterns (new lantern prop) with warm light pools, under a moon and a navy sky with dark-blue clouds. The candle desk follows.
+- Palette: bluer sky (#6eaee6/#a7d0f3), lighter cloud undersides, a stronger cream horizon mist, warmer and brighter dirt/grass.
+- QA: WARN (right-column content, frame-edge content); otherwise PASS (-15.8 LUFS, -2.1 dBTP).
+- Bands (wide frame), ref vs ours:
+
+  | Band | Reference | Ours |
+  |---|---|---|
+  | sky | #b3d5ef sat .25 | #cce2f4 sat .16 (too pale: the clouds dominate the band) |
+  | horizon | #e1dbcc | #ada892 (our owners stand in that band) |
+  | ground mid | #b49d5c sat .51 | #a89668 sat .41 |
+  | ground low | #937540 | #a39354 |
+- Still off (compare_v2.jpg):
+  1. **Characters** are the biggest gap now. The reference's heads are larger with an irregular brown outline (not black), warm soft shading, bigger and wider-set eyes, a bold moustache and a lit/shaded body. Our outlines scale up with the camera, so they are too thick in close-ups.
+  2. **Sky saturation and ground saturation** are low.
+  3. **Wide:** the owners stand too close to the camera; the reference's two characters are smaller, with more track and sky.
+  4. **Sets are emptier** than the reference (no detailed props or textures).

@@ -17,7 +17,7 @@ const PERSON = { rim: true, shadow: true, h: 165, w: 90, sw: 50 };
 // ---------- world layout (street set) ----------
 const RX = -118, TX = 118, OZ = 600;          // owners stand at the track edge
 const RSX = -275, TSX = 275, SZ = 640;        // their stands, just outside them
-const BX = 0, BZ = 720;                      // the price board (open/close prop)
+const BX = 0, BZ = 1550;                      // the price board (open/close prop)
 
 // prices over time (cents), with flip timing
 function prices(t) { let red = 100, teal = 100, rp = 100, tp = 100, rk = 1, tk = 1;
@@ -30,7 +30,7 @@ function prices(t) { let red = 100, teal = 100, rp = 100, tp = 100, rk = 1, tk =
 const NC = 16;
 function customers(t, mode) { const out = [];
   for (let i = 0; i < NC; i++) { const red = i % 2 === 0, q = i >> 1; let X, Z, walk = -1, turn = 0, hold = null;
-    const rq = n => [-62 - (n % 2) * 26, 820 + n * 150], tq = n => [62 + (n % 2) * 26, 820 + n * 150];
+    const rq = n => [-196 - (n % 2) * 34, 900 + n * 135], tq = n => [196 + (n % 2) * 34, 900 + n * 135];    // queues outside the owners, like the reference's armies
     if (mode === 'split' || mode === 'calm') { [X, Z] = red ? rq(q) : tq(q); turn = red ? -.5 : .5; }
     else if (mode === 'toRed') { const k = ss(seg(t, T(8) + .1 + q * .18, T(8) + 1.9 + q * .18)); const [ax, az] = red ? rq(q) : tq(q), [bx, bz] = rq(red ? q * 2 : q * 2 + 1); X = lerp(ax, bx, k); Z = lerp(az, bz, k); if (k > 0 && k < 1) walk = t * 1.6 + i; turn = -.5; }
     else if (mode === 'crowd') { const a = hash(i * 4.1) * TAU; X = (hash(i * 2.3) - .5) * 300; Z = 760 + hash(i * 5.7) * 1100 + Math.sin(t * .6 + a) * 30; X += Math.sin(t * .5 + a) * 40; turn = Math.sin(t * .8 + i) * .6; hold = 'cup'; }
@@ -85,7 +85,7 @@ function pageCost(t) { const c = blueprint(t); const a = T(16) - .5;
   drawOn(c, [[300, 960], [700, 960]], seg(t, a + 1.8, a + 2.1)); label(c, '= 30¢', 500, 1050, seg(t, a + 2.0, a + 2.3), { size: 84 });
   stamp(c, 'BREAK EVEN', 500, 1220, seg(t, a + 2.5, a + 2.9), { size: 62 });
   return tip1 || null; }
-function pageGame(t) { const c = blueprint(t); const a = T(20) - .6;
+function pageGame(t) { const c = blueprint(t); const a = T(21) - .5;
   label(c, 'RED  vs  TEAL', 500, 120, seg(t, a, a + .4), { size: 58 });
   c.strokeStyle = '#eaf3ff'; c.lineWidth = 6; c.lineCap = 'round';
   const x0 = 260, y0 = 300, cw = 330, rh = 330; const k = seg(t, a + .2, a + 1.6);
@@ -95,7 +95,7 @@ function pageGame(t) { const c = blueprint(t); const a = T(20) - .6;
   c.save(); c.translate(x0 - 50, y0 + rh * 1.5); c.rotate(-Math.PI / 2); label(c, 'RED CUTS', 0, 0, seg(t, a + 1.3, a + 1.6), { size: 30, col: '#ff9d8f' }); c.restore();
   // cells: red's take (left) / teal's take (right)
   const cell = (cx, cy, r, tl, at) => { label(c, r, cx - 70, cy, seg(t, at, at + .3), { size: 52, col: '#ff9d8f' }); label(c, tl, cx + 70, cy, seg(t, at + .1, at + .4), { size: 52, col: '#7fe3dd' }); };
-  cell(x0 + cw / 2, y0 + rh / 2, 'OK', 'OK', T(20) + .8);
+  cell(x0 + cw / 2, y0 + rh / 2, 'OK', 'OK', T(21) + .9);
   cell(x0 + cw / 2, y0 + rh * 1.5, 'WIN', '0', T(21) + .4);                      // red cuts, teal keeps
   cell(x0 + cw * 1.5, y0 + rh / 2, '0', 'WIN', T(22) + .2);                      // red keeps, teal cuts
   cell(x0 + cw * 1.5, y0 + rh * 1.5, '0', '0', T(22) + 1.4);
@@ -136,8 +136,8 @@ function desk(t, pageFn, camK) { const tip = pageFn(t);
 // ---------- shots ----------
 const K0 = { x: 0, y: 150, z: -900, hor: 840, focus: 2400, dof: 1.6, f: 1150 };
 const CAM_BOARD = { x: 0, y: 230, z: BZ - 520, hor: 880, focus: 520, dof: 6, f: 1150 };
-const camRed = (dz = 0) => ({ x: RX - 40, y: 190, z: OZ - 290 + dz, hor: 1000, focus: 290 - dz, dof: 6.5, f: 1150 });
-const camTeal = (dz = 0) => ({ x: TX + 40, y: 190, z: OZ - 290 + dz, hor: 1000, focus: 290 - dz, dof: 6.5, f: 1150 });
+const camRed = (dz = 0) => ({ x: RX - 30, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
+const camTeal = (dz = 0) => ({ x: TX + 10, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
 const WIDE = (dz = 0, x = 0) => ({ x, y: 150, z: 150 + dz, hor: 840, focus: 450 - dz, dof: 1.8, f: 1150 });
 const CARD_R = { x: RSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
 const CARD_T = { x: TSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
@@ -174,8 +174,12 @@ shot(T(16) - .2, T(17) - .2, t => desk(t, pageCost, { zoom: lerp(1, 1.12, seg(t,
 shot(T(17) - .2, T(18) - .1, t => { F.setCam(F.camKeys(t, [[T(17) - .2, WIDE(0)], [T(18), WIDE(200, 40)]])); streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired' }); });
 shot(T(18) - .1, T(20) - .2, t => { F.setCam(F.camKeys(t, [[T(18) - .1, { x: 0, y: 170, z: OZ - 470, hor: 940, focus: 470, dof: 5, f: 1150 }], [T(20), { x: 0, y: 170, z: OZ - 400, hor: 940, focus: 400, dof: 5, f: 1150 }]]));
   streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired', redHold: 'jar', tealHold: 'jar', redArm: 150, tealArm: 150, extra: () => zeroTags(t) }); });
-// K: night desk, the payoff table, then the name (T20 - T26)
-shot(T(20) - .2, T(26) - .2, t => desk(t, pageGame, { zoom: lerp(1, 1.18, seg(t, T(20), T(26))), cx: 540 + Math.sin(t * .3) * 10 }), { flash: true });
+// K0: night: the two owners by lantern light at their stands, the board between them ("You see...")
+shot(T(20) - .2, T(21) - .2, t => { F.setCam(F.camKeys(t, [[T(20) - .2, { x: 0, y: 175, z: OZ - 420, hor: 930, focus: 420, dof: 5, f: 1150 }], [T(21), { x: 0, y: 175, z: OZ - 330, hor: 930, focus: 330, dof: 5, f: 1150 }]]));
+  streetSet(t, { redExpr: 'tired', tealExpr: 'tired', redHold: 'lantern', tealHold: 'lantern', redArm: 150, tealArm: 150, redTurn: .6, tealTurn: -.6, sky: { top: '#1d2552', mid: '#36407a', low: '#5a5a8a', haze: '#6f6a8c' }, cloud: { under: '#3a4270', top: '#8088b8', line: 'rgba(30,30,70,.5)' } });
+  F.grade(g, 2); nightLights(t); }, { flash: true });
+// K: night desk, the payoff table, then the name (T21 - T26)
+shot(T(21) - .2, T(26) - .2, t => desk(t, pageGame, { zoom: lerp(1, 1.18, seg(t, T(20), T(26))), cx: 540 + Math.sin(t * .3) * 10 }), { flash: true });
 // M: being different: pink lemonade, the shady tree, a loyal regular (day, wide -> medium)
 shot(T(26) - .2, T(28) - .2, t => { F.setCam(F.camKeys(t, [[T(26) - .2, WIDE(0)], [T(28), WIDE(350, 0)]])); streetSet(t, { crowd: 'split', redExpr: 'happy', tealExpr: 'happy', redLabel: 'PINK LEMONADE', bigTree: true, redHold: 'pink' }); });
 // N: next summer: Red's pink lemonade, Teal under the tree, the board flips back to $1.00
@@ -184,6 +188,10 @@ shot(T(29) - .1, T(30) - .2, t => { F.setCam(F.camKeys(t, [[T(29) - .1, camTeal(
 // O: the board again: flips back to $1.00, hold as the opening frame (loop)
 shot(T(30) - .2, TOT + 1, t => { F.setCam(F.camKeys(t, [[T(30) - .2, { ...CAM_BOARD, z: BZ - 560 }], [TOT - .4, { ...CAM_BOARD, z: BZ - 420 }]])); streetSet(t, { crowd: 'calm', redLabel: 'PINK LEMONADE', bigTree: true }); });
 
+// lantern light at night: warm pools around both owners and the board
+function nightLights(t) { const fl = 1 + .05 * Math.sin(t * 19) + .03 * Math.sin(t * 31);
+  for (const X of [RX + 34, TX + 34]) { const p = F.proj(X, 52, OZ - 8); if (p) { F.glow(g, p.x, p.y, Math.min(420, 90 * p.s) * fl, '255,170,80', .42); F.glow(g, p.x, p.y, Math.min(120, 22 * p.s) * fl, '255,235,170', .75); } }
+  const m = F.proj(-900, 1500, 9000); if (m) { g.save(); g.fillStyle = '#fff3cf'; g.beginPath(); g.arc(m.x, 260, 46, 0, TAU); g.fill(); g.restore(); F.glow(g, m.x, 260, 260, '220,225,255', .5); } }
 // bird gag during the time-lapse: lands on Red's cap
 function bird(t) { const k = ss(seg(t, T(13) + .2, T(13) + 1.1)); const X = lerp(RX - 300, RX + 8, k), Y = lerp(520, 1.55 * 112, k), Z = OZ;
   F.put(X, Z - 1, (c, s) => { c.save(); c.translate(0, -Y * s); c.scale(s * 1.4, s * 1.4); const fl = k < 1 ? Math.sin(t * 30) * .6 : 0; c.fillStyle = '#3f8fd6'; c.strokeStyle = INK; c.lineWidth = 1.6;

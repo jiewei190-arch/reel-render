@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 REF, OURS, OUT = sys.argv[1:4]; LABEL = sys.argv[4] if len(sys.argv) > 4 else ''
 PAIRS = [  # (kind, reference time, our time)
     ('open/close prop', 7.5, 0.6), ('roaming medium', 3.0, 6.0), ('wide, track to vanishing point', 16.6, 10.0),
-    ('medium close-up', 40.5, 21.0), ('time-lapse grade', 19.5, 23.0), ('night interior', 24.0, 41.0),
+    ('medium close-up', 40.5, 21.0), ('time-lapse grade', 19.5, 23.0), ('night scene', 26.5, 39.0),
     ('blueprint', 36.0, 50.0), ('symmetric two-sided', 30.0, 35.0), ('loop ending', 43.5, 69.5)]
 def frame(path, t):
     raw = subprocess.run(['ffmpeg', '-loglevel', 'error', '-ss', str(t), '-i', path, '-frames:v', '1', '-vf', 'scale=540:960', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], capture_output=True).stdout
