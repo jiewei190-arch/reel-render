@@ -93,3 +93,18 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   1. **No warm interior with characters** (the reference's symmetrical shop, red client left, teal right, candles) is the biggest remaining scene-type gap.
   2. **Sky band** is paler (sat .19 vs .25) and the **horizon band** greener/darker (#b1aa92 vs the cream #e1dbcc) because our owners and stands stand in it.
   3. **Medium shots:** the reference heads fill more of the frame, with strong side light.
+
+## v5 (Oct 29)
+- Fixed the biggest v4 gap, the missing warm interior with characters. "Exactly what the lemons and sugar cost" is now a lantern-lit grocer's shop:
+  - a symmetrical layout like the reference's blacksmith shop: Red at the left end of the counter, Teal at the right, the grocer between them on a step, turning his head side to side;
+  - a timber-framed back wall with red and teal banners and shelves of lemons and sugar sacks;
+  - a plank floor in perspective; two hanging lanterns with warm light pools under a warm multiply grade;
+  - the costs as physical tags popping onto the counter: LEMONS 20¢, SUGAR 10¢, = 30¢ (STYLE_STORY rule 2: every fact is an object).
+  - It replaces v4's blueprint cost sheet; the blueprint desk stays for the payoff table and the name.
+- compare.py: the "symmetric two-sided" pair now uses the shop (30.4 s).
+- QA: WARN (right column, frame edge); rest PASS. Bands unchanged from v4.
+- Still off (compare_v5.jpg):
+  1. **Detail density:** reference sets carry many more textured props (weapons, barrels, shields with rivets and highlights, castles on hills, crop patchwork with rows of soldiers).
+  2. **Medium shots:** the reference heads fill more of the frame, with stronger side light and coloured light spill (orange forge, candle). Ours stay evenly lit by day.
+  3. **Sky band** is paler (sat .19 vs .25) and the **horizon band** darker/greener than the reference's cream haze (our owners and stands sit in that band in the wide).
+  4. **QA:** content in the right column (x>900, y 900-1650) during wides and the shop. It is a WARN, not a FAIL, but the teal side would need to move inward for a clean pass.

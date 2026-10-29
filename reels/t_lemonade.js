@@ -84,15 +84,15 @@ function shop(t) { F.begin(); const a = T(16);
     const sg = wall(0, 470, 900); c.fillStyle = '#f4e3c0'; c.strokeStyle = INK; c.lineWidth = 3 * sx; c.fillRect(sg.x - 120 * sx, sg.y - 30 * sx, 240 * sx, 56 * sx); c.strokeRect(sg.x - 120 * sx, sg.y - 30 * sx, 240 * sx, 56 * sx);
     c.fillStyle = '#5a3420'; c.font = `700 ${30 * sx}px Cinzel`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('GROCER', sg.x, sg.y); });
   // the grocer behind the counter, the two owners in front of it, one each side
-  F.put(0, 700, person(GROCER, { t, seed: 5, expr: 'smug', turn: Math.sin(t * 1.3) * .8, look: Math.sin(t * 1.3), armF: 150, bendF: -30, armB: 210, bendB: 30 }), PERSON);
-  F.put(0, 640, (c, s) => { c.save(); c.scale(s, s); c.fillStyle = PAL.wood; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(-260, -110, 520, 110); c.strokeRect(-260, -110, 520, 110); c.fillStyle = '#e9d2a6'; c.fillRect(-270, -122, 540, 14); c.strokeRect(-270, -122, 540, 14);
-    c.strokeStyle = 'rgba(90,55,25,.55)'; c.lineWidth = 2; for (let i = 1; i < 5; i++) { c.beginPath(); c.moveTo(-260, -110 + i * 22); c.lineTo(260, -110 + i * 22); c.stroke(); }
+  F.put(0, 700, person(GROCER, { t, seed: 5, expr: 'smug', turn: Math.sin(t * 1.3) * .8, look: Math.sin(t * 1.3), armF: 150, bendF: -30, armB: 210, bendB: 30 }), { ...PERSON, Y: 40 });
+  F.put(0, 640, (c, s) => { c.save(); c.scale(s, s); c.fillStyle = PAL.wood; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(-215, -76, 430, 76); c.strokeRect(-215, -76, 430, 76); c.fillStyle = '#e9d2a6'; c.fillRect(-225, -88, 450, 14); c.strokeRect(-225, -88, 450, 14);
+    c.strokeStyle = 'rgba(90,55,25,.55)'; c.lineWidth = 2; for (let i = 1; i < 4; i++) { c.beginPath(); c.moveTo(-215, -76 + i * 19); c.lineTo(215, -76 + i * 19); c.stroke(); }
     // price tags on the counter: lemons, sugar, and the sum
-    const tag = (x, txt, k, col = '#fbf3df') => { if (k <= 0) return; c.save(); c.translate(x, -60); c.scale(backOut(k), backOut(k)); c.fillStyle = col; c.strokeStyle = INK; c.lineWidth = 3; c.beginPath(); c.moveTo(-70, -30); c.lineTo(56, -30); c.lineTo(76, 0); c.lineTo(56, 30); c.lineTo(-70, 30); c.closePath(); c.fill(); c.stroke();
-      c.fillStyle = INK; c.font = '900 30px Nunito'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(txt, -4, 2); c.restore(); };
-    tag(-170, 'LEMONS 20¢', seg(t, a + .4, a + .7)); tag(0, 'SUGAR 10¢', seg(t, a + 1.0, a + 1.3)); tag(170, '= 30¢', seg(t, a + 1.6, a + 1.9), '#ffd77a'); c.restore(); }, { rim: true, shadow: true, h: 140, w: 600, sw: 520 });
-  F.put(-230, 520, person(RED, { t, seed: 1, expr: 'worried', turn: .7, look: 1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
-  F.put(230, 520, person(TEAL, { t, seed: 2, expr: 'worried', turn: -.7, look: -1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
+    const tag = (x, txt, k, col = '#fbf3df') => { if (k <= 0) return; c.save(); c.translate(x, -38); c.scale(backOut(k) * .9, backOut(k) * .9); c.fillStyle = col; c.strokeStyle = INK; c.lineWidth = 2.6; c.beginPath(); c.moveTo(-58, -22); c.lineTo(46, -22); c.lineTo(62, 0); c.lineTo(46, 22); c.lineTo(-58, 22); c.closePath(); c.fill(); c.stroke();
+      c.fillStyle = INK; c.font = '900 21px Nunito'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(txt, -4, 2); c.restore(); };
+    tag(-136, 'LEMONS 20¢', seg(t, a + .4, a + .7)); tag(0, 'SUGAR 10¢', seg(t, a + 1.0, a + 1.3)); tag(136, '= 30¢', seg(t, a + 1.6, a + 1.9), '#ffd77a'); c.restore(); }, { rim: true, shadow: true, h: 140, w: 500, sw: 430 });
+  F.put(-188, 662, person(RED, { t, seed: 1, expr: 'worried', turn: .7, look: 1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
+  F.put(188, 662, person(TEAL, { t, seed: 2, expr: 'worried', turn: -.7, look: -1, armF: 120, bendF: -40, hold: 'coin' }), PERSON);
   // two hanging lanterns
   for (const X of [-200, 200]) F.put(X, 600, (c, s) => { c.save(); c.scale(s, s); c.strokeStyle = INK; c.lineWidth = 2; c.beginPath(); c.moveTo(0, -520); c.lineTo(0, -330); c.stroke(); c.fillStyle = '#5a4030'; c.fillRect(-14, -330, 28, 6); c.fillStyle = '#ffd77a'; c.fillRect(-12, -324, 24, 34); c.strokeRect(-12, -324, 24, 34); c.restore(); }, { Y: 0 });
   F.flush();
@@ -207,7 +207,7 @@ shot(T(13) - .2, T(14) - .2, t => { F.setCam(F.camKeys(t, [[T(13) - .2, WIDE(100
 // H: the board flips 60, 50, 40 ... 30
 shot(T(14) - .2, T(16) - .2, t => { F.setCam(F.camKeys(t, [[T(14) - .2, { ...CAM_BOARD, z: BZ - 520 }], [T(16), { ...CAM_BOARD, z: BZ - 420 }]]), t); streetSet(t, { crowd: 'split', redExpr: 'worried', tealExpr: 'worried' }); });
 // I: the grocer's shop at dusk, symmetrical: Red left, Teal right, the grocer between them; LEMONS 20¢ + SUGAR 10¢ = 30¢ on tags (light-flash in)
-shot(T(16) - .2, T(17) - .2, t => { F.setCam(F.camKeys(t, [[T(16) - .2, { x: 0, y: 150, z: -120, hor: 780, focus: 640, dof: 4, f: 1150 }], [T(17), { x: 0, y: 150, z: 20, hor: 780, focus: 500, dof: 4.5, f: 1150 }]]), t); shop(t); }, { flash: true });
+shot(T(16) - .2, T(17) - .2, t => { F.setCam(F.camKeys(t, [[T(16) - .2, { x: 0, y: 150, z: 40, hor: 900, focus: 560, dof: 4.5, f: 1150 }], [T(17), { x: 0, y: 150, z: 120, hor: 900, focus: 480, dof: 5, f: 1150 }]]), t); shop(t); }, { flash: true });
 // J: the crowded happy street; then the two tired owners and their empty jars
 shot(T(17) - .2, T(18) - .1, t => { F.setCam(F.camKeys(t, [[T(17) - .2, WIDE(0)], [T(18), WIDE(200, 40)]]), t); streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired' }); });
 shot(T(18) - .1, T(20) - .2, t => { F.setCam(F.camKeys(t, [[T(18) - .1, { x: 0, y: 170, z: OZ - 470, hor: 940, focus: 470, dof: 5, f: 1150 }], [T(20), { x: 0, y: 170, z: OZ - 400, hor: 940, focus: 400, dof: 5, f: 1150 }]]), t);
