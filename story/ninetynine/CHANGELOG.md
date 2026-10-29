@@ -171,3 +171,6 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 2. **Ground saturation** is 0.05-0.06 over the reference after the module's post contrast. The road palette needs pulling back a little.
 3. **Screen-space inserts** (blueprint, overhead, night till) don't use the module's rim light or cast shadows. The cashier has no rim.
 4. **Hook board** touches the right safe column.
+
+## Paused (Oct 29)
+Paused at v5 (commit 7ce16e7) on the main session's request, to work on the "What If You Could See in Complete Darkness?" batch A job. Next step when resumed: set dressing density (gap 1 above).
