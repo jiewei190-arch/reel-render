@@ -100,22 +100,34 @@ registerShot('s024', { draw(g, t, info) {
 
 // s025 — "Upside, no more stubbed toes."  foot-level insert in the dark flat: the bare foot glides over a table leg and a toy brick and lands softly
 registerShot('s025', { draw(g, t, info) {
-  const st = info.shot.start, tUp = sw('upside', st, 0.15), tToes = sw('toes', st, 1.7), GY = E.H * 0.8;
-  const fx = key(t, [[0, E.W * 0.08], [tToes, E.W * 0.58], [info.dur, E.W * 0.86]], ease.inOut), cam = { z: 1.05, x: (fx - E.W * 0.45) * 0.35 + Math.sin(t * 0.6) * 6, y: Math.cos(t * 0.5) * 4 };
-  layer(g, cam, 0.5, (g) => { backdrop(g, ['#0d1024', '#141a33', '#0a0b16']); glow(g, E.W * 0.15, E.H * 0.05, 900, '#7f9cff', 0.2); FX.stars(g, t * 0.2, { count: 30, area: [0, 0, E.W, E.H * 0.3] }); });
-  layer(g, cam, 0.8, (g) => { g.fillStyle = '#121528'; for (let i = 0; i < 5; i++) rr(g, -200 + i * 520, GY - 520, 300, 520, 8), g.fill(); });           // sofa / shelf silhouettes behind
+  const st = info.shot.start, tUp = sw('upside', st, 0.15), tToes = sw('toes', st, 1.7), CX = E.W / 2, GY = apartmentGround();
+  const tableX = CX - 120, legX = tableX + 150, brickX = tableX + 520;
+  const fx = key(t, [[0, tableX - 480], [tToes, legX + 160], [info.dur, brickX + 330]], ease.inOut);
+  // low, foot-level camera sliding with the foot through the real flat (sofa, bookcase, window, plant behind; parallax from the set)
+  const cam = { z: 2.15, x: lerp(tableX - CX - 160, brickX - CX - 60, ease.inOut(t / info.dur)) + Math.sin(t * 0.7) * 5, y: GY - E.H / 2 - 150 + Math.cos(t * 0.6) * 4, r: Math.sin(t * 0.5) * 0.004 };
+  apartment(g, t, cam, { power: 0, moon: 1.2 });
   layer(g, cam, 1, (g) => {
-    g.fillStyle = '#0c0e1c'; g.fillRect(-E.W, GY, E.W * 3, E.H); g.fillStyle = alpha('#9fb6ff', 0.14); g.fillRect(-E.W, GY, E.W * 3, 4);
-    const lx = E.W * 0.42; rr(g, lx - 34, GY - 380, 68, 380, 10); g.fillStyle = '#3a2a2a'; g.fill(); g.fillStyle = alpha('#cfe0ff', 0.3); g.fillRect(lx - 34, GY - 380, 6, 380);   // coffee-table leg
-    rr(g, E.W * 0.66, GY - 46, 90, 46, 6); g.fillStyle = '#d4262e'; g.fill(); for (let i = 0; i < 2; i++) { rr(g, E.W * 0.66 + 12 + i * 40, GY - 60, 26, 16, 4); g.fill(); }   // stray toy brick
-    const hop = Math.max(Math.sin(prog(t, 0.35, 1.0) * Math.PI), Math.sin(prog(t, tToes - 0.15, tToes + 0.5) * Math.PI)) * 120;
-    g.save(); g.translate(fx, GY - hop); rr(g, -220, -170, 130, 190, 54); g.fillStyle = shade(HERO.legs, -0.2); g.fill();
+    // floor clutter (the set's own coffee table is behind): a rug edge, a stray toy brick, a sock, a magazine
+    g.fillStyle = alpha('#5a3a5a', 0.55); g.fillRect(tableX - 700, GY - 2, 1100, 8);
+    rr(g, brickX, GY - 30, 60, 30, 4); g.fillStyle = '#d4262e'; g.fill(); for (let i = 0; i < 2; i++) { rr(g, brickX + 8 + i * 26, GY - 40, 18, 12, 3); g.fill(); }
+    g.save(); g.translate(brickX + 170, GY - 6); g.rotate(0.2); rr(g, -40, -10, 80, 18, 8); g.fillStyle = '#6a7aa0'; g.fill(); g.restore();
+    g.save(); g.translate(tableX - 260, GY - 4); g.rotate(-0.08); rr(g, -60, -8, 120, 10, 2); g.fillStyle = '#c9c2d6'; g.fill(); g.restore();
+    // the bare foot (ink like the rig, moonlit rim) with the trouser hem, hopping the leg and the brick
+    const hop = Math.max(Math.sin(prog(t, 0.35, 1.0) * Math.PI), Math.sin(prog(t, tToes - 0.15, tToes + 0.5) * Math.PI)) * 70;
+    g.save(); g.translate(fx, GY - hop); g.scale(0.55, 0.55); rr(g, -220, -170, 130, 190, 54); g.fillStyle = shade(HERO.legs, -0.1); g.fill();
     const foot = () => { g.beginPath(); g.ellipse(-60, -26, 150, 48, 0, 0, Math.PI * 2); for (let i = 0; i < 5; i++) { const tx = 80 - i * 7, ty = -52 + i * 13, tr = 19 - i * 1.8; g.moveTo(tx + tr, ty); g.arc(tx, ty, tr, 0, Math.PI * 2); } };
-    g.save(); g.translate(-6, -6); g.scale(1.03, 1.06); foot(); g.fillStyle = alpha('#cfe0ff', 0.7); g.fill(); g.restore(); foot(); g.fillStyle = S().ink; g.fill(); g.restore();
-    if (hop < 10 && t > tToes + 0.3) for (let i = 0; i < 6; i++) circle(g, fx - 60 + (i - 2.5) * 50, GY - 4 - i % 2 * 6, 4, alpha('#dfe6ff', 0.3));        // soft landing puff
+    g.save(); g.translate(-6, -6); g.scale(1.03, 1.06); foot(); g.fillStyle = alpha('#cfe0ff', 0.75); g.fill(); g.restore(); foot(); g.fillStyle = S().ink; g.fill(); g.restore();
+    g.fillStyle = 'rgba(0,0,0,.35)'; g.beginPath(); g.ellipse(fx - 20, GY + 4, 70 * (1 - hop / 140), 8, 0, 0, Math.PI * 2); g.fill();
+    if (hop < 6 && t > tToes + 0.3) for (let i = 0; i < 6; i++) circle(g, fx - 40 + (i - 2.5) * 26, GY - 4 - (i % 2) * 4, 3, alpha('#dfe6ff', 0.35));
+    FX.pool(g, legX + 200, GY + 4, 420, 40, '#cfe0ff', 0.12);                                                     // moonlight pool on the floor
   });
-  FX.dust(g, t, { count: 26, color: '#c9d4ff', a: 0.22 }); FX.dust(g, t * 1.6, { count: 8, color: '#c9d4ff', a: 0.3, seed: 9, size: 3 });
-  chip(g, t, { str: 'UPSIDE', at: tUp, x: E.W * 0.22, y: E.H * 0.2, tone: 'blue', dur: info.dur - 0.05 });
+  // blurred foreground: a sofa cushion corner (left) and plant leaves (right), close to the lens
+  blurLayer(g, 10, (g) => {
+    rr(g, -80, E.H * 0.62, 420, 520, 90); g.fillStyle = '#3a3050'; g.fill(); g.fillStyle = alpha('#cfe0ff', 0.25); g.fillRect(-80, E.H * 0.62, 420, 8);
+    for (let i = 0; i < 5; i++) { g.save(); g.translate(E.W - 60, E.H + 40); g.rotate(-2.2 + i * 0.28 + Math.sin(t * 0.8 + i) * 0.03); g.fillStyle = i % 2 ? '#1f3a2a' : '#284a34'; g.beginPath(); g.ellipse(0, -220, 50, 230, 0, 0, Math.PI * 2); g.fill(); g.restore(); }
+  }, null, 1);
+  atmos(g, t, cam, { color: '#c9d4ff' });
+  chip(g, t, { str: 'UPSIDE', at: tUp, x: E.W * 0.3, y: E.H * 0.18, tone: 'blue', dur: info.dur - 0.05 });
 } });
 
 // s026 — "Downside, Dev wants to know why you keep staring at him in the dark."  dark cinema row: Dev turns, finds HERO staring with a faint orange glint
