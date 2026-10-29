@@ -22,7 +22,7 @@ Updated: 2026-10-28 ~14:40 UTC. Update this file whenever something below change
 Production is pausing. Workers finish what's in flight, then rest. The buffer is full through Nov 17. Next: study the accounts (handoff/STUDY.md) before building more.
 
 ## Open items (Oct 29)
-- **PAUSED (Oct 29, the Creator session's request): the What If job.** The owner is rewriting the script and voice, so shots.json timing will change. Nothing is integrated into whatif/see-in-dark. Wait for a new brief. H2-H4 pushed their partial shots to their own branches and went back to story-fable.
+- **CANCELLED for the cloud (Oct 29, Creator): the What If job.** The owner's PC animates it locally with a new script and voice. The partial shots on H2-H4's branches are left in place, not deleted (deleting needs the owner's OK). Previously **PAUSED:** The owner is rewriting the script and voice, so shots.json timing will change. Nothing is integrated into whatif/see-in-dark. Wait for a new brief. H2-H4 pushed their partial shots to their own branches and went back to story-fable.
 - (was) **What If "See in Complete Darkness" (owner's new channel, job from the PC "Creator" session):** branch `whatif/see-in-dark` (base 4f77e31), brief at `whatif/CLOUD_JOB.md`.
   - Batch A (s001-s039) = H2, batch B (s040-s081) = H3, batch C (s082-s120) = H4. Workers merge that branch into their own and push there.
   - The main session copies their `scenes/shots/{A,B,C}_*.js` into `whatif/see-in-dark` and pushes. When all 120 pass: sheets + CLOUD_REPORT.md. No final render or mix (the PC does that).
