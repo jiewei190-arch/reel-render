@@ -29,10 +29,10 @@ Other creatures: mouse, pit viper, deer, fox, kitten (all in actors.js). Volunte
 
 ## Motifs
 - **Thermal view** (sets/thermal.js): false-colour black > purple > red > orange > yellow > white, with HUD brackets and a palette bar. Used for everything the hero sees in the dark. Light hitting it = whiteOut.
-- **The white spark**: the hand warmer. Planted in s059 (burns like a coal), paid off in s102/s103, echoed at s119.
+- **The white spark**: the hand warmer. Planted in s058-s060 (tucked in the pocket, burns like a coal), paid off in s099-s101 (the tiny white spark, Mina's twin), echoed at s118.
 - **Gold fact chips** (6 words or fewer) and **RULE cards** (big numeral, cream title).
 - **Blackout / lights**: the power parameter on street, apartment and lab: lights die in sequence.
 - **Cat eyeshine**, Dev popcorn, "Ten out of ten" stamp (comic beats).
 
-## Music plan (story/shots.json `music`)
-0-29 mystery .35 (blackout, cold open) · 29-94 wonder .5 (title, Rule 1) · 94-179 wonder .65 (Rule 2, thermal discovery) · 179-238 playful .45 (Rule 3 gags) · 238-287 tension .6 (Rule 4, flash, blindness) · 287-332 tension .8 (forest search) · 332-348 dark .3 (sixty seconds) · 348-373 triumph .6 (the spark, reunion) · 373-399 mystery .35 (is it real) · 399-415 hopeful .4 (outro, end screen). SFX and ambience beds are per shot in shots.json.
+## Music plan (story/shots.json `music`, v2 timings)
+0-27.7 mystery .35 (cold open) · 27.7-95.4 wonder .5 (title, Rule 1) · 95.4-166.4 wonder .65 (Rule 2, thermal discovery) · 166.4-213.7 playful .45 (Rule 3 gags) · 213.7-252.7 tension .6 (Rule 4, flash, blindness) · 252.7-295.6 tension .8 (forest search, torch whiteout, the choice) · 295.6-309.3 dark .3 (lights out, sixty seconds) · 309.3-338.0 triumph .6 (the spark, reunion) · 338.0-359.7 mystery .35 (is it real) · 359.7-373.6 hopeful .4 (outro, end screen). SFX and ambience beds are per shot in shots.json.

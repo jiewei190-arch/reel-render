@@ -1,8 +1,8 @@
-// S_showcase.js — the QUALITY-BAR showcase: s001 s008 s011 s012 (re-done stage-1 shots) + s002 / s005 (TEMPORARY ids reused for two new showcase shots,
-// see HANDOFF.md: s002 = giant-face reaction, s005 = three-character apartment scene). Read QUALITY_BAR.md first; copy the patterns here.
-//   s001 street walk-and-blackout (medium tracking shot, crowd with signature colours, torches)   s002 HERO giant face shocked -> delighted
-//   s005 apartment trio (Mina + Hero + Biscuit, torch beam sweeps to the cat)                    s008 thermal view (bright, legible, big mouse + toast + cat)
-//   s011 RULE 1 lock-up over the audience hall                                                    s012 blueprint eye with rods inset
+// S_showcase.js — the QUALITY-BAR showcase, bound to the v2 shot list (story/shots.json, re-timed to the new voice). These 6 shots are DONE; workers do not redefine them.
+// Read QUALITY_BAR.md first; copy the patterns here. All beats are bound to spoken words with shotWord()/wordTime().
+//   s001 street walk-and-blackout (medium tracking shot, crowd with signature colours, torches)   s029 HERO giant face shocked -> delighted ('Everything's already glowing')
+//   s003 apartment trio (Mina + Hero + Biscuit, torch beam sweeps to the cat)                    s005 thermal view (bright, legible, big mouse + toast + cat)
+//   s010 RULE 1 lock-up over the audience hall                                                    s011 blueprint eye with rods inset
 import { E, V, registerShot, mood, layer, blurLayer, veil, ease, prog, key, clamp, lerp, wordTime, talkAmount, alpha, glow, shake, shade, mix } from '/engine/core.js';
 import { POSES, drawFigure, headPos } from '/engine/rig2d.js';
 import * as FX from '/engine/fx2d.js';
@@ -21,11 +21,11 @@ const shotWord = (w, st, fb) => { const g = wordTime(w, st); return (g == null ?
 const handWorld = (o, pose, hand = 'hF') => { const s = (o.s ?? 1) * (o.kid ? 0.72 : 1), f = o.facing ?? 1; return [o.x + pose[hand][0] * f * s, o.y + pose[hand][1] * s]; };
 
 // ===================================================================================================
-// s001 — "Blackout. Every light on your street dies at once. You keep walking."
+// s001 — "The whole street goes dark at once, and you just keep walking."
 // MEDIUM tracking shot: hero ~42% of frame height, camera follows him, bystanders with signature colours look up from their phones and switch on torches,
 // the hero (who needs no light) keeps walking. 4 parallax depths (sky .12, skyline .3, facades .6, street 1.0, blurred railing 1.7).
 registerShot('s001', { draw(g, t, info) {
-  const st = info.shot.start, tB = shotWord('blackout', st, 0.9), SPEED = 160;                 // walk speed in world units / s (foot phase is locked to x, so no sliding)
+  const st = info.shot.start, tB = shotWord('dark', st, 1.0), SPEED = 160;                 // walk speed in world units / s (foot phase is locked to x, so no sliding)
   const heroX = (u) => 1920 / 2 - 560 + SPEED * u + Math.sin(u * 1.4) * 6;
   const cam = camMove(t, info.dur, { z: [1.02, 1.09], y: [-10, 6] }); cam.x = heroX(t) - 960 + 300 + Math.sin(t * 0.8) * 8;
   const power = key(t, [[tB - 0.05, 1], [tB + 1.9, 0]], ease.linear);                           // lights die house by house
@@ -59,17 +59,18 @@ registerShot('s001', { draw(g, t, info) {
 } });
 
 // ===================================================================================================
-// s002 (TEMP id) — GIANT FACE reaction: HERO goes from searching in the dark -> double-take -> SHOCKED -> DELIGHTED (he can see heat).
+// s029 — "Easy: nothing has to shine. Everything's already glowing." GIANT FACE reaction: HERO goes from searching in the dark -> double-take -> SHOCKED -> DELIGHTED (he can see heat).
 // Face fills ~76% of frame height incl. hood, orange light from off-screen right, eyes pick up an orange glint on delight, blink -> pop, sweat drop, punch-in + shake.
-registerShot('s002', { draw(g, t, info) {
-  const T_SHOCK = 0.82, T_JOY = 1.55;                                                          // beats: bind these to wordTime() in the real script
+registerShot('s029', { draw(g, t, info) {
+  // beats bound to the words: shock on "Everything's", delight on "glowing"; the searching / double-take keys before them shift with O
+  const st = info.shot.start, T_SHOCK = shotWord('everything', st, 2.37), T_JOY = Math.max(T_SHOCK + 0.5, shotWord('glowing', st, 3.17)), O = T_SHOCK - 0.82;
   const punch = ease.out(prog(t, T_SHOCK, T_SHOCK + 0.12)) * (1 - ease.out(prog(t, T_SHOCK + 0.12, T_SHOCK + 0.55)));
   const cam = camMove(t, info.dur, { z: [1.0, 1.07] }); cam.z += 0.045 * punch; { const sk = shake(t * 3, 14 * punch, 4, 3); cam.x += sk[0]; cam.y += sk[1]; }
   blurLayer(g, 16, (c) => apartment(c, t, cam, { power: 0 }), null, 1); veil(g, '#05060f', 0.45);
   glow(g, E.W * 0.84, E.H * 0.55, 900, '#ff7a30', 0.2 + 0.28 * ease.out(prog(t, T_SHOCK, T_JOY)));                 // heat-glow off-screen right
   FX.lightCone(g, E.W + 80, E.H * 0.6, { angle: Math.PI, spread: 0.9, len: 1500, color: '#ff8a40', a: 0.12 * ease.out(prog(t, T_SHOCK, T_JOY)) });
-  const f = faceAt(t, [[0, 'squint'], [0.35, { ...{ look: [-0.6, 0.1] }, eye: 0.55, brow: -0.2, tilt: 0.5, smile: 0, w: 0.8 }], [0.5, 'neutral'], [T_SHOCK, 'shocked'], [T_JOY, 'delighted'], [2.2, 'joy']], 0.14);
-  const bl = Math.max(blinkAmt(t, 3.1, 0.6) * (t < 0.7 || t > 1.7 ? 1 : 0), ease.out(prog(t, 0.56, 0.62)) * (1 - ease.out(prog(t, 0.66, 0.74))));   // blink -> double take -> eyes pop
+  const f = faceAt(t, [[0, 'squint'], [0.35 + O, { ...{ look: [-0.6, 0.1] }, eye: 0.55, brow: -0.2, tilt: 0.5, smile: 0, w: 0.8 }], [0.5 + O, 'neutral'], [T_SHOCK, 'shocked'], [T_JOY, 'delighted'], [T_JOY + 0.65, 'joy']], 0.14);
+  const bl = Math.max(blinkAmt(t, 3.1, 0.6) * (t < 0.7 + O || t > T_JOY + 0.15 ? 1 : 0), ease.out(prog(t, 0.56 + O, 0.62 + O)) * (1 - ease.out(prog(t, 0.66 + O, 0.74 + O))));   // blink -> double take -> eyes pop
   const gl = ease.out(prog(t, T_SHOCK + 0.2, T_JOY + 0.2)), br = Math.sin(t * 2.2);
   layer(g, cam, 1, (g) => {
     const cx = E.W * 0.5 + (t > T_SHOCK ? 0 : Math.sin(t * 3) * 6), cy = E.H * 0.55;
@@ -82,9 +83,10 @@ registerShot('s002', { draw(g, t, info) {
 } });
 
 // ===================================================================================================
-// s005 (TEMP id) — THREE CHARACTERS in the apartment: Mina stumbles in torch-first, Hero turns, Biscuit on the fridge catches the torch beam (eyeshine) and looks offended.
+// s003 — "Your little sister Mina stumbles in, phone torch first. 'How are you DOING this?'" THREE CHARACTERS in the apartment: Mina stumbles in torch-first, Hero turns, Biscuit on the fridge catches the torch beam (eyeshine) and looks offended.
 // Medium-wide pan with 3 figures at 36-41% of frame height, walk locked to x, talk gestures, expression changes on beats, 4 parallax depths + blurred plant foreground.
-registerShot('s005', { draw(g, t, info) {
+registerShot('s003', { draw(g, t, info) {
+  const tHow = shotWord('how', info.shot.start, 3.6);                                         // Mina's quoted line starts on 'How'
   const k = ease.inOut(t / info.dur), cam = { z: lerp(1.02, 1.1, k), x: lerp(-180, 230, k) + Math.sin(t * 0.6) * 6, y: lerp(-10, 0, k) + Math.cos(t * 0.5) * 4, r: Math.sin(t * 0.37) * 0.002 };
   const A = apartment(g, t, cam, { power: 0 }), GY = A.GY, CX = A.CX, P = A.pos;
   const minaX = lerp(CX - 640, CX - 270, ease.out(prog(t, 0, 1.9))), walking = t < 1.9;
@@ -98,7 +100,7 @@ registerShot('s005', { draw(g, t, info) {
   layer(g, cam, 1, (g) => {
     actor(g, 'HERO', { ...hero, pose: heroPose, t, rim: A.rim, expr: exprAt(t, [[0, 'neutral'], [0.5, 'surprised'], [1.3, 'smirk'], [2.5, 'smirk']]), blink: blinkFlag(t, 3.6, 3), look: lookToward(-1, t < 1.0 ? -0.4 : 0.1) });
     const [bx, by] = handWorld(mina, minaPose, 'hF');
-    actor(g, 'MINA', { ...mina, pose: minaPose, t, rim: A.rim, expr: exprAt(t, [[0, 'worried'], [1.0, 'nervous'], [2.0, 'smile'], [2.6, 'surprised']]), talk: t > 2.0 ? talkAmount(info.globalT, info.shot.start + 2.0, info.shot.end) : 0, blink: blinkFlag(t, 2.8, 9), look: lookToward(1, 0.1), prop: { type: 'phone', glow: '#ffffff' } });
+    actor(g, 'MINA', { ...mina, pose: minaPose, t, rim: A.rim, expr: exprAt(t, [[0, 'worried'], [1.0, 'nervous'], [2.0, 'smile'], [2.6, 'surprised']]), talk: t > tHow ? talkAmount(info.globalT, info.shot.start + tHow, info.shot.start + tHow + 1.05) : 0, blink: blinkFlag(t, 2.8, 9), look: lookToward(1, 0.1), prop: { type: 'phone', glow: '#ffffff' } });
     FX.lightCone(g, bx + 14, by - 18, { angle: beamAng, spread: 0.34, len: 1500, color: '#f4f8ff', a: 0.42 * beamOn }); glow(g, bx + 14, by - 18, 110, '#ffffff', 0.55 * beamOn);
     cat(g, { x: P.fridgeX + 30, y: P.fridgeTop - 2, s: 1.9, facing: -1, pose: 'sit', eyes: catEyes, t, rim: { color: A.rim.color, dir: [-0.4, -1] } });
     if (catGlint > 0.1) glow(g, P.fridgeX + 30 - 14 * 1.9, P.fridgeTop - 78 * 1.9, 120, '#c8f07a', 0.5 * catGlint * (t > 3.0 ? 0.3 : 1));
@@ -109,9 +111,9 @@ registerShot('s005', { draw(g, t, info) {
 } });
 
 // ===================================================================================================
-// s008 — THERMAL VIEW: "You can see the mouse by the bin. You can see the toast cooling."
+// s005 — THERMAL VIEW: "You can see the mouse by the bin and the toast going cold."
 // Bright and legible: violet-magenta cool background with real structure, white-yellow mouse (ears hot), toast fading white -> orange, cat on the fridge, warm kettle + mug.
-registerShot('s008', { draw(g, t, info) {
+registerShot('s005', { draw(g, t, info) {
   const k = ease.inOut(t / info.dur), cam = { z: lerp(1.2, 1.34, k), x: lerp(640, 780, k), y: lerp(-30, -50, k) };
   const GY = apartmentGround(), CX = E.W / 2, st = info.shot.start;
   const P = { binX: CX + 960, plateX: CX + 1150, fridgeX: CX + 640, fridgeTop: GY - 440, kettleX: CX + 1000 };
@@ -129,12 +131,12 @@ registerShot('s008', { draw(g, t, info) {
     hud: { label: 'THERMAL', temp: fr ? '34 C  MOUSE' : `${(24 + toastHeat * 30).toFixed(0)} C  TOAST`, track: fr ? [(mx - E.W / 2 - cam.x) * cam.z + E.W / 2, (GY - 40 - E.H / 2 - cam.y) * cam.z + E.H / 2] : [(P.plateX - E.W / 2 - cam.x) * cam.z + E.W / 2, (GY - 234 - E.H / 2 - cam.y) * cam.z + E.H / 2] },
   });
   FX.dust(g, t, { count: 30, color: '#ffb070', a: 0.28 }); FX.dust(g, t * 1.6, { count: 10, color: '#ffd8a0', a: 0.35, seed: 8, size: 3.2 });
-  chip(g, t, { str: 'Mouse. Toast. No charger.', at: tToast + 0.15, x: E.W / 2, y: E.H * 0.88 });
+  chip(g, t, { str: 'Mouse. Toast. Cooling fast.', at: tToast + 0.15, x: E.W / 2, y: E.H * 0.88 });
 } });
 
 // ===================================================================================================
-// s011 — RULE 1 lock-up over the audience hall (heads in varied colours, screen flicker). Big extruded numeral, outlined title on a banner.
-registerShot('s011', { draw(g, t, info) {
+// s010 — RULE 1 lock-up over the audience hall (heads in varied colours, screen flicker). Big extruded numeral, outlined title on a banner.
+registerShot('s010', { draw(g, t, info) {
   const cam = camMove(t, info.dur, { z: [1.0, 1.07], x: [-30, 30] });
   ruleCard(g, t, info, { n: 1, title: 'YOUR EYES QUIT FIRST', accent: '#ffd47e', bg: (g, t) => {
     cinema(g, t, cam, { screen: 0.55, door: 0 }); FX.dust(g, t, { count: 44, color: '#9fb6ff', a: 0.4 }); cinemaFg(g, t, cam);
@@ -142,9 +144,9 @@ registerShot('s011', { draw(g, t, info) {
 } });
 
 // ===================================================================================================
-// s012 — BLUEPRINT: "A human eye holds about one hundred and twenty million rods."
+// s011 — BLUEPRINT: "They've got about one hundred and twenty million rods for the dark"
 // Clean line-art eye (cornea, iris, lens, retina, fovea, optic nerve) draws on, light rays converge, gold labels, dashed zoom to a rods inset with disc-stripe rods.
-registerShot('s012', { draw(g, t, info) {
+registerShot('s011', { draw(g, t, info) {
   const st = info.shot.start, tMil = shotWord('million', st, 2.4), tRods = shotWord('rods', st, 3.0);
   const k = ease.out(prog(t, 0.1, 1.9)), z = 1 + 0.035 * (t / info.dur);
   g.save(); g.translate(E.W / 2, E.H / 2); g.scale(z, z); g.translate(-E.W / 2 + Math.sin(t * 0.5) * 3, -E.H / 2);
