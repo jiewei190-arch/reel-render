@@ -36,6 +36,11 @@ export function farLand(t, mood = 0) {
     // tree clumps on the hills
     for (let i = 0; i < 14; i++) { const x = hash(i * 9.1 + k * 31) * W, yb = y0 - off - amp * Math.sin(x * .007 + k * 2.1) - 10 * Math.sin(x * .023 + k) + 6, r = (k ? 16 : 11) + 8 * hash(i * 2.3 + k);
       g.fillStyle = N ? '#2c3260' : S ? '#8f7a4a' : (k ? '#5f9450' : '#78a865'); g.beginPath(); g.arc(x, yb - r, r, 0, TAU); g.arc(x + r * .8, yb - r * .7, r * .75, 0, TAU); g.fill(); g.fillStyle = N ? 'rgba(255,255,255,.04)' : 'rgba(255,255,230,.25)'; g.beginPath(); g.arc(x - r * .3, yb - r * 1.35, r * .45, 0, TAU); g.fill(); } }
+  // a hill-top town hall with two flags, red and teal (v6 set dressing), drifting with the camera a little
+  { const cx = 780 - CAM.x * 0.04, cy = y0 - 96, col = N ? '#2c3260' : S ? '#b89a8a' : '#c9d3dc', dk = N ? '#252a55' : S ? '#a08478' : '#aebbc8';
+    g.fillStyle = col; g.fillRect(cx - 70, cy - 70, 140, 70); g.fillRect(cx - 100, cy - 110, 34, 110); g.fillRect(cx + 66, cy - 120, 34, 120); g.fillRect(cx - 16, cy - 150, 32, 150);
+    g.fillStyle = dk; for (const [x, w, h] of [[cx - 100, 34, 110], [cx + 66, 34, 120], [cx - 16, 32, 150]]) { g.beginPath(); g.moveTo(x - 6, cy - h); g.lineTo(x + w / 2, cy - h - 34); g.lineTo(x + w + 6, cy - h); g.closePath(); g.fill(); }
+    for (const [x, h, c] of [[cx - 83, 144, '#c8443a'], [cx + 83, 154, '#1f8f8a']]) { g.strokeStyle = dk; g.lineWidth = 2; g.beginPath(); g.moveTo(x, cy - h); g.lineTo(x, cy - h - 30); g.stroke(); g.fillStyle = N ? '#3a3a5a' : c; g.beginPath(); g.moveTo(x, cy - h - 30); g.lineTo(x + 22 + Math.sin(t * 3 + x) * 3, cy - h - 24); g.lineTo(x, cy - h - 18); g.fill(); } }
   const mist = g.createLinearGradient(0, y0 - 70, 0, y0 + 30); mist.addColorStop(0, 'rgba(0,0,0,0)'); mist.addColorStop(.7, N ? 'rgba(110,110,160,.45)' : 'rgba(236,230,214,.7)'); mist.addColorStop(1, 'rgba(236,230,214,0)'); g.fillStyle = mist; g.fillRect(0, y0 - 70, W, 100);
   g.restore();
 }
@@ -47,8 +52,8 @@ export function street(t, o = {}) { const { mood = 0, x0 = -2600, x1 = 2600, zFa
   const base = mood === 2 ? '#585a7c' : '#b79f5f', baseD = mood === 2 ? '#47496a' : '#967742';
   g.save(); const pH = proj(0, 0, zFar); const gr = g.createLinearGradient(0, pH ? pH.y : CAM.hor, 0, H); gr.addColorStop(0, mood === 2 ? '#6b6c90' : '#e3ddce'); gr.addColorStop(.18, base); gr.addColorStop(1, baseD); g.fillStyle = gr; g.fillRect(0, pH ? pH.y : CAM.hor, W, H); g.restore();
   // road (darker band) with cobbles
-  quad([[-320, zN], [320, zN], [320, zFar], [-320, zFar]], mood === 2 ? '#4c4e6e' : '#a2834a');
-  for (let z = Math.ceil(zN / 120) * 120; z < 4000; z += 120) { const row = Math.round(z / 120); for (let x = -320 + (row % 2) * 40; x < 320; x += 80) { quad([[x + 6, z + 6], [x + 74, z + 6], [x + 74, z + 112], [x + 6, z + 112]], mood === 2 ? '#56587a' : (hash(row * 7 + x) > .5 ? '#b8954f' : '#ad8a47'), { stroke: mood === 2 ? 'rgba(30,30,50,.35)' : 'rgba(110,80,40,.45)', lw: 1.5 }); if (z < 1600) quad([[x + 16, z + 60], [x + 64, z + 60], [x + 60, z + 100], [x + 20, z + 100]], mood === 2 ? 'rgba(200,200,240,.08)' : 'rgba(255,236,190,.22)'); } }
+  quad([[-320, zN], [320, zN], [320, zFar], [-320, zFar]], mood === 2 ? '#4c4e6e' : '#a08652');
+  for (let z = Math.ceil(zN / 120) * 120; z < 4000; z += 120) { const row = Math.round(z / 120); for (let x = -320 + (row % 2) * 40; x < 320; x += 80) { quad([[x + 6, z + 6], [x + 74, z + 6], [x + 74, z + 112], [x + 6, z + 112]], mood === 2 ? '#56587a' : (hash(row * 7 + x) > .5 ? '#b3965c' : '#a88d54'), { stroke: mood === 2 ? 'rgba(30,30,50,.35)' : 'rgba(110,80,40,.45)', lw: 1.5 }); if (z < 1600) quad([[x + 16, z + 60], [x + 64, z + 60], [x + 60, z + 100], [x + 20, z + 100]], mood === 2 ? 'rgba(200,200,240,.08)' : 'rgba(255,236,190,.22)'); } }
   for (const rx of [-130, 130]) quad([[rx - 22, zN], [rx + 22, zN], [rx + 22, zFar], [rx - 22, zFar]], mood === 2 ? 'rgba(20,20,40,.18)' : 'rgba(110,75,35,.22)');
   // pavement slabs both sides
   for (const sd of [-1, 1]) for (let z = Math.ceil(zN / 200) * 200; z < 5000; z += 200) { const xa = sd * 520, xb = sd * 1500; for (let x = 520; x < 1500; x += 245) { const h = hash(z * .37 + x * .11 + sd); if (h > .55) quad([[sd * (x + 8), z + 8], [sd * (x + 237), z + 8], [sd * (x + 237), z + 192], [sd * (x + 8), z + 192]], mood === 2 ? 'rgba(20,20,40,.12)' : (h > .8 ? 'rgba(255,235,190,.16)' : 'rgba(120,85,40,.12)')); } quad([[xa, z], [xb, z], [xb, z + 200], [xa, z + 200]], null, { stroke: mood === 2 ? 'rgba(30,30,50,.3)' : 'rgba(120,100,70,.3)', lw: 2 }); }

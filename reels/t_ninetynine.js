@@ -28,6 +28,28 @@ const lamp = () => cached('lamp', -40, -400, 80, 420, 2, () => { stick(0, 0, 0, 
 const barrel = () => cached('barrel', -80, -160, 160, 170, 2, () => { ink(() => { g.beginPath(); g.roundRect(-60, -110, 120, 110, 12); }, '#8a5a34', { shade: '#6e4628', sx: 20, lw: 4 }); g.fillStyle = '#5c8a3a'; g.fillRect(-56, -118, 112, 10); for (let i = 0; i < 7; i++) { g.fillStyle = ['#e85a5a', '#f2c24e', '#ffffff'][i % 3]; g.beginPath(); g.arc(-48 + i * 16, -126 - 10 * hash(i), 12, 0, TAU); g.fill(); } });
 function board(title, value, prev, flip, team, o = {}) { if ((prev && flip < 1 && prev !== value) || o.glow != null) return priceBoard(title, value, prev, flip, team, o);
   cached('board' + title + value + (o.unit || ''), -170, -260, 340, 400, 2, () => priceBoard(title, value, null, 1, team, o)); }
+// set dressing (v6): team banners on poles, bread crates, flour sacks, a bread cart, flower pots
+const banner = (team, teamS) => cached('banner' + team, -70, -620, 200, 640, 1.5, () => {
+  stick(0, 0, 0, -600, 0, 9); ink(() => { g.beginPath(); g.arc(0, -604, 12, 0, TAU); }, '#e9b949', { lw: 4 });
+  stick(-6, -560, 110, -560, 0, 6);
+  ink(() => { g.beginPath(); g.moveTo(10, -556); g.lineTo(104, -556); g.lineTo(104, -250); g.lineTo(57, -290); g.lineTo(10, -250); g.closePath(); }, team, { shade: teamS, sx: 70, lw: 5 });
+  ink(() => { g.beginPath(); g.arc(57, -440, 30, 0, TAU); }, '#f2e3bf', { lw: 4 }); g.fillStyle = team; g.font = '700 40px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('¢', 57, -438);
+  dashes([[18, -540], [18, -262]], 'rgba(255,240,215,.6)', 2.5); });
+const crates = () => cached('crates', -150, -260, 300, 280, 2, () => {
+  const crate = (x, y, w, h) => { ink(() => { g.beginPath(); g.rect(x, y, w, h); }, '#a8743f', { shade: '#8a5c30', sx: x + w * 0.7, lw: 4.5 }); g.strokeStyle = 'rgba(70,40,20,.6)'; g.lineWidth = 3; for (let i = 1; i < 3; i++) { g.beginPath(); g.moveTo(x, y + h * i / 3); g.lineTo(x + w, y + h * i / 3); g.stroke(); } };
+  crate(-130, -110, 130, 110); crate(4, -110, 130, 110); crate(-62, -220, 130, 110);
+  for (let i = 0; i < 3; i++) loaf(-30 + i * 32, -226, 0.85); });
+const sacks = () => cached('sacks', -130, -190, 260, 210, 2, () => {
+  const sack = (x, s2) => { ink(() => { g.beginPath(); g.moveTo(x - 48 * s2, 0); g.quadraticCurveTo(x - 60 * s2, -110 * s2, x - 24 * s2, -150 * s2); g.lineTo(x + 24 * s2, -150 * s2); g.quadraticCurveTo(x + 60 * s2, -110 * s2, x + 48 * s2, 0); g.closePath(); }, '#efe3c6', { shade: '#d8c8a2', sx: x + 18, lw: 4 });
+    stick(x - 26 * s2, -146 * s2, x + 26 * s2, -146 * s2, 0, 4); g.fillStyle = '#9b6a3a'; g.font = `700 ${22 * s2}px Cinzel`; g.textAlign = 'center'; g.fillText('FLOUR', x, -64 * s2); };
+  sack(-60, 1); sack(62, 0.85); });
+const cart = (team, teamS) => cached('cart' + team, -190, -330, 380, 350, 1.6, () => {
+  stick(-150, -110, -200, -30, 0, 7); stick(150, -110, 200, -30, 0, 7);
+  ink(() => { g.beginPath(); g.roundRect(-160, -200, 320, 110, 10); }, '#b98a5a', { shade: '#966a3f', sx: 80, lw: 5 });
+  for (let i = -1; i <= 1; i++) loaf(i * 80, -206, 1.05);
+  ink(() => { g.beginPath(); g.moveTo(-170, -200); g.lineTo(0, -320); g.lineTo(170, -200); g.closePath(); }, team, { shade: teamS, sx: 60, lw: 5 });
+  for (const wx of [-100, 100]) { ink(() => { g.beginPath(); g.arc(wx, -60, 52, 0, TAU); }, '#5a4434', { lw: 5 }); ink(() => { g.beginPath(); g.arc(wx, -60, 14, 0, TAU); }, '#c9a46b', { lw: 3 }); for (let a = 0; a < 6; a++) stick(wx, -60, wx + Math.cos(a) * 46, -60 + Math.sin(a) * 46, 0, 3); } });
+const pot = (c) => cached('pot' + c, -60, -150, 120, 160, 2, () => { ink(() => { g.beginPath(); g.moveTo(-40, -60); g.lineTo(40, -60); g.lineTo(30, 0); g.lineTo(-30, 0); g.closePath(); }, '#b0603c', { shade: '#8e4a2c', sx: 14, lw: 4 }); for (let i = 0; i < 6; i++) { g.fillStyle = i % 2 ? '#5f9447' : c; g.beginPath(); g.arc(-30 + i * 12, -78 - 16 * Math.sin(i * 1.7) ** 2, 14, 0, TAU); g.fill(); } });
 function shop(name, team, teamS, t, mood) { cached('shop' + name + mood, -320, -800, 640, 820, 1.4, () => bakery(name, team, teamS, 0, { mood, lit: 0, smoke: false }));
   for (let i = 0; i < 3; i++) { const u = (t * .25 + i / 3) % 1; g.fillStyle = `rgba(240,240,245,${.55 * (1 - u)})`; g.beginPath(); g.arc(167 + Math.sin(u * 6 + i) * 18, -790 - u * 220, 26 + u * 40, 0, TAU); g.fill(); }
   g.save(); g.globalCompositeOperation = 'lighter'; const lg = g.createRadialGradient(-95, -140, 20, -95, -100, 420); lg.addColorStop(0, 'rgba(255,200,120,.15)'); lg.addColorStop(1, 'rgba(255,200,120,0)'); g.fillStyle = lg; g.fillRect(-520, -500, 840, 800); g.restore(); }
@@ -69,6 +91,12 @@ function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.
   F.put(-900, 1500, 1, () => shop('RED', RED, REDS, t, mood)); F.put(900, 1500, 1, () => shop('TEAL', TEAL, TEALS, t, mood));
   for (const sd of [-1, 1]) for (let z = 2400; z < 7000; z += 1100) F.put(sd * 1100, z, 1, () => house((Math.round(z / 1100) + (sd > 0 ? 1 : 0)) % 2 ? '#c0503f' : '#2a8a84', '#9cc0d8'));
   for (const sd of [-1, 1]) F.put(sd * 420, 1100, 1, lamp);
+  // set dressing around each shop (team colour on every prop)
+  for (const sd of [-1, 1]) { const tc = sd < 0 ? RED : TEAL, ts = sd < 0 ? REDS : TEALS;
+    F.put(sd * 560, 1330, 1, () => { g.save(); g.rotate(Math.sin(t * 1.3 + sd) * 0.015); banner(tc, ts); g.restore(); });
+    F.put(sd * 1240, 1420, 1, () => banner(tc, ts));
+    F.put(sd * 680, 1260, 1, crates); F.put(sd * 1150, 1300, 1, sacks);
+    F.put(sd * 980, 1180, 1, () => cart(tc, ts)); F.put(sd * 470, 1450, 0.9, () => pot(sd < 0 ? '#e2483f' : '#f2c24e')); F.put(sd * 1320, 1250, 1, () => pot('#fff4dc')); }
   // price boards
   F.put(-bx, bz, 1, () => board('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
   F.put(bx, bz, 1, () => board('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });

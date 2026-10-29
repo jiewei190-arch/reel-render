@@ -174,3 +174,32 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 
 ## Paused (Oct 29)
 Paused at v5 (commit 7ce16e7) on the main session's request, to work on the "What If You Could See in Complete Darkness?" batch A job. Next step when resumed: set dressing density (gap 1 above).
+
+## v6 (Oct 29, resumed after the see-in-dark stop)
+**Fixed: the biggest v5 gap, set dressing density.**
+- **Around each bakery:**
+  - two tall team banners on poles (swallowtail cloth with a ¢ coin badge, stitched seam), the near one swaying
+  - stacked bread crates with loaves on top
+  - flour sacks
+  - a bread cart with a team-coloured canopy and spoked wheels
+  - flower pots
+- **Distance:** a hill-top town hall with a red flag and a teal flag in the far hills.
+- **Colour coding:** every new prop carries its side's colour, so red and teal now appear on banners, carts, bunting, roofs, boards, the emblem and the aprons.
+- **Road:** slightly desaturated.
+- **Measured bands** (ref 16.6 s vs ours 5.4 s):
+
+  | Band | Reference | v6 |
+  |---|---|---|
+  | Ground mid | s .51 | s .49 |
+  | Ground low | s .57 | s .56 |
+  | Whole frame | s .35, luma SD 49 | s .36, luma SD 48 |
+
+- QA: WARN only.
+  - Right column: the edges of the hook and loop-end boards, and the pushed-in blueprint.
+  - Outer 24 px.
+
+**Still off (biggest first)**
+1. **Hook and loop end.** The reference's opening prop shares the frame with three characters. Ours shows the boards alone, with the bakers only arriving on the pull-back. Bring the bakers in beside the boards for the hook.
+2. **Insert sets.** Blueprint, overhead and night till still lack the module's rim light and cast shadows. The cashier has no rim.
+3. **Near horizon** is still a little dark (v .77 vs .89).
+4. **Medium shots** don't have the reference's near floor emblem or the big props framing the bottom edge.
