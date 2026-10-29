@@ -7,7 +7,7 @@ const F = createFable(document.getElementById('c'));
 const TLV = window.TL, P = TLV.p, DUR = TLV.total, N = P.length, s = i => P[i].start;
 const FIG = 170 / 640, CAR = 150 / 420, SIGN = 230 / 760;
 const C = () => F.ctx();
-PAL.skyMid = '#6aa9e0'; PAL.skyTop = '#3f8bd6'; // v4: sky band measured paler than the reference (s0.15 vs 0.25)
+PAL.skyMid = '#5c9fdc'; PAL.skyTop = '#3784d4'; // v4: sky band measured paler than the reference (s0.15 vs 0.25)
 const mixc = (a, b, k) => { const h = x => parseInt(x.slice(1), 16), A = h(a), B = h(b); return '#' + [16, 8, 0].map(sh => Math.round(lerp((A >> sh) & 255, (B >> sh) & 255, k)).toString(16).padStart(2, '0')).join(''); };
 
 // ---------- cast (ours) ----------
@@ -53,6 +53,10 @@ function tree(o = {}) { const c = C(); F.fs(F.rr(-22, -300, 44, 300, 14), PAL.wo
 function tuft(i, k = 1) { const c = C(); for (let j = 0; j < 7; j++) { const a = -1.9 + j * .13 + (hash(i + j) - .5) * .2, l = (90 + hash(i * 3 + j) * 110) * k; c.strokeStyle = j % 2 ? PAL.leafD : '#8fb35e'; c.lineWidth = 9; c.lineCap = 'round'; c.beginPath(); c.moveTo(j * 6 - 20, 0); c.quadraticCurveTo(Math.cos(a) * l * .4, -l * .6, Math.cos(a) * l, Math.sin(a) * l); c.stroke(); }
   if (i % 3 === 0) [0, 1, 2].forEach(j => F.fs(F.ell(-30 + j * 30, -150 - 30 * hash(i + j), 16, 16), j % 2 ? '#f1d15a' : PAL.sideA, 3)); }
 function flowerBox(col) { const b = F.rr(-200, -120, 400, 120, 14); F.fs(b, PAL.wood, 6); F.shade(b, PAL.woodD, 0, -20); F.fs(b, null, 6); for (let i = 0; i < 9; i++) { const x = -170 + i * 42; F.line([[x, -120], [x + 6, -200 - 30 * hash(i)]], 6, PAL.leafD); F.fs(F.ell(x + 6, -206 - 30 * hash(i), 20, 18), i % 2 ? col : PAL.cream, 4); } }
+// v8 prop clusters (the reference crowds every set with clustered props): road cones, a crate stack
+function cone() { F.fs(F.rr(-110, -24, 220, 24, 6), '#3e3a44', 5); F.fs(F.poly([[-80, -24], [80, -24], [22, -300], [-22, -300]]), '#f08a24', 5); F.shade(F.poly([[-80, -24], [80, -24], [22, -300], [-22, -300]]), '#c4651a', 18, 0);
+  F.fs(F.poly([[-62, -110], [62, -110], [48, -160], [-48, -160]]), '#f4efe4', 0); F.fs(F.poly([[-40, -210], [40, -210], [30, -250], [-30, -250]]), '#f4efe4', 0); F.fs(F.poly([[-80, -24], [80, -24], [22, -300], [-22, -300]]), null, 5); }
+function crates() { [[-130, 0, 1], [130, 0, 1], [0, -230, .9]].forEach(([x, y, k]) => { const b = F.rr(x - 120 * k, y - 230 * k, 240 * k, 230 * k, 10); F.fs(b, PAL.wood, 6); F.shade(b, PAL.woodD, -18, 0); F.fs(b, null, 6); F.line([[x - 110 * k, y - 220 * k], [x + 110 * k, y - 10 * k]], 6, PAL.woodD); F.line([[x - 120 * k, y - 115 * k], [x + 120 * k, y - 115 * k]], 5, PAL.woodD); }); }
 function lamp(lit = 0) { F.fs(F.rr(-14, -620, 28, 620, 8), '#3e3a44', 5); F.fs(F.poly([[-50, -620], [50, -620], [34, -700], [-34, -700]]), lit ? '#ffe39a' : '#cfd6dc', 5); if (lit) F.glow(0, -660, 220, 'rgba(255,220,140,.8)', .8); F.fs(F.poly([[-58, -700], [58, -700], [0, -760]]), '#3e3a44', 5); }
 function fountain(t) { const c = C(); F.fs(F.ell(0, -40, 380, 90), '#cfc3ae', 7); F.fs(F.ell(0, -60, 330, 64), '#78b9d3', 5); F.fs(F.rr(-50, -360, 100, 300, 16), '#d9cdb6', 6); F.fs(F.ell(0, -360, 150, 36), '#cfc3ae', 6);
   for (let k = -1; k <= 1; k += 2) for (let j = 0; j < 3; j++) { c.strokeStyle = 'rgba(220,240,255,.9)'; c.lineWidth = 8; c.beginPath(); c.moveTo(0, -380); c.quadraticCurveTo(k * (120 + j * 40), -520 + Math.sin(t * 6 + j) * 8, k * (200 + j * 50), -80); c.stroke(); } }
@@ -120,6 +124,8 @@ function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const
   F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
   // the two commuters stand up front, the reference's big-heads-in-the-foreground staging
+  if (o.duo) { [[-250, 760, .34], [-190, 830, .3], [-300, 880, .3]].forEach(([x, z, k]) => F.put(x, z, k, cone, { rim: true, shadow: true }));
+    F.put(230, 980, .5, crates, { rim: true, shadow: true }); }
   if (o.duo) { const [ea, eb] = o.duo; F.put(-104, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
     F.put(52, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 80, bendF: 10, hold: caseProp }), { rim: true, shadow: true }); }
   F.put(-330, 240, .5, () => flowerBox(PAL.sideA), {}); F.put(380, 230, .5, () => flowerBox(PAL.sideB), {});
@@ -180,19 +186,27 @@ function setJam(t, o) { F.sky(t, { sunX: 300, sunY: 300 }); skyline(t, { town: f
   g.fillStyle = F.vgrad(hor, H, [[0, '#c8b894'], [1, '#a8906a']]); g.fillRect(0, hor, W, H - hor); tiles(-800, 800, F.cam().z + 20, 6000, '#cdb98f', '#bfa982', 80); F.groundQuad(-190, F.cam().z + 20, 190, 9000, '#9a8b74', 0);
   for (let z = 700; z < 9000; z += 900) { F.put(-640, z, 1, () => house({ roof: PAL.sideA, shut: PAL.sideAD, timber: true, w: 480, h: 520, lit: o.night }), { rim: true, shadow: true }); F.put(640, z + 450, 1, () => house({ roof: PAL.sideB, shut: PAL.sideBD, timber: true, w: 480, h: 500, lit: o.night }), { rim: true, shadow: true }); }
   for (let i = 0; i < 24; i++) { const z = 520 + i * 340, sd = i % 2, col = (i % 3 === 1) ? 1 - sd : sd; F.put(sd ? 80 : -80, z, CAR, () => car(col ? PAL.sideB : PAL.sideA, col ? PAL.sideBD : PAL.sideAD, { t, idle: true, seed: i, lights: o.night, honk: i === 1 ? clamp(Math.sin(t * 3)) : 0, plate: col ? 'TEAL' : 'RED', driver: () => driver(col, t, { expr: i < 4 ? 'glare' : 'neutral' }) }), { rim: true, shadow: true }); }
+  // v8: pedestrians on the pavement overtake the jammed cars (the joke of the jam)
+  for (let i = 0; i < 4; i++) { const sd = i % 2, z = 700 + i * 650 - ((t * 120 + i * 200) % 600); F.put(sd ? 330 : -330, z, FIG, () => F.figure({ ...(sd ? TEALD : REDD), t, walk: t * 1.6 + i * .4, expr: 'smug', turn: sd ? -.3 : .3, flip: !!sd }), { rim: true, shadow: true }); }
   F.put(-330, 200, .5, () => tuft(6)); F.put(360, 190, .5, () => tuft(12)); mottle(); groundHaze(); F.flush(); }
 function setStuttgart(t) { F.sky(t, { sunX: 820, sunY: 380 }); skyline(t, { town: true }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#c9b998'], [1, '#a99070']]); g.fillRect(0, hor, W, H - hor); tiles(-1200, 1200, F.cam().z + 20, 6000, '#cfbd96', '#c1ad86', 80); F.groundQuad(-240, F.cam().z + 20, 240, 9000, '#8f8a82', 0);
   for (let z = 1200; z < 9000; z += 1200) { F.put(-760, z, 1.1, () => house({ roof: '#b8583f', w: 500, h: 600, timber: true, chimney: true }), { rim: true, shadow: true }); F.put(760, z + 500, 1.1, () => house({ roof: '#6e7f8f', w: 500, h: 560, timber: true }), { rim: true, shadow: true }); }
   F.put(0, 1200, .5, () => barrier('CLOSED'), { rim: true, shadow: true, sharp: true }); F.put(-430, 800, SIGN, () => signpost(['STUTTGART', '1969', 'new road']), { rim: true, shadow: true, sharp: true });
-  F.put(260, 520, FIG, () => driver(0, t, { expr: 'smug', turn: -.4, look: -1, flip: true }), { rim: true, shadow: true }); F.put(-200, 200, .5, () => tuft(9)); mottle(); groundHaze(.65); F.flush(); }
+  F.put(260, 520, FIG, () => driver(0, t, { expr: 'smug', turn: -.4, look: -1, flip: true }), { rim: true, shadow: true });
+  // v8 crowding: townsfolk gathered behind the barrier, a cone cluster at each end, a queue of stalled cars beyond
+  [[-200, 1330, 0, 'worried'], [-20, 1400, 1, 'glare'], [170, 1320, 0, 'neutral'], [330, 1430, 1, 'worried']].forEach(([x, z, sd, ex], i) => F.put(x, z, FIG, () => driver(sd, t + i, { expr: ex, turn: x < 0 ? .3 : -.3, look: x < 0 ? 1 : -1, flip: x > 0 }), { rim: true, shadow: true }));
+  [[-400, 1180, .3], [-460, 1260, .26], [420, 1200, .3], [470, 1290, .26]].forEach(([x, z, k]) => F.put(x, z, k, cone, { rim: true, shadow: true }));
+  [[-10, 560, 0], [-170, 860, 1]].forEach(([x, z, sd], i) => F.put(x, z, CAR, () => car(sd ? PAL.sideB : PAL.sideA, sd ? PAL.sideBD : PAL.sideAD, { back: true, t, idle: true, seed: i + 60, honk: i === 0 ? clamp(Math.sin(t * 2.4)) : 0, driver: () => driver(sd, t, { expr: 'glare' }) }), { rim: true, shadow: true }));   // the queue at the barrier
+  for (let i = 0; i < 5; i++) F.put(i % 2 ? 90 : -90, 2200 + i * 520, CAR, () => car(i % 2 ? PAL.sideB : PAL.sideA, i % 2 ? PAL.sideBD : PAL.sideAD, { t, idle: true, seed: i + 40, plate: i % 2 ? 'TEAL' : 'RED' }), { rim: true, shadow: true });
+  F.put(-200, 200, .5, () => tuft(9)); mottle(); groundHaze(.65); F.flush(); }
 function setSeoul(t) { F.sky(t, { sunX: 760, sunY: 300 }); skyline(t, { town: true }); const g = F.g, hor = F.cam().hor;
   g.fillStyle = F.vgrad(hor, H, [[0, '#c8bfa6'], [1, '#a99a7a']]); g.fillRect(0, hor, W, H - hor);
   F.groundQuad(-300, F.cam().z + 20, 300, 9000, '#4c9fc4', 0); for (let z = Math.max(200, F.cam().z + 60); z < 7000; z += 160) { const a = F.proj(-200 + 150 * Math.sin(z * .01 + t), 0, z), b = F.proj(-120 + 150 * Math.sin(z * .01 + t), 0, z); g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = Math.max(1, 6 * a.s); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
   for (let z = 400; z < 6000; z += 700) [-1, 1].forEach(sd => F.put(sd * 120, z, .3, () => F.fs(F.ell(0, -20, 90, 40), '#d8cdb6', 5)));
   for (let z = 1200; z < 9000; z += 1300) [-1, 1].forEach(sd => F.put(sd * 520, z, 1, () => willow(), { rim: true, shadow: true }));
   for (let z = 2200; z < 9000; z += 1600) { F.put(-1100, z, 1.3, () => house({ roof: '#7d8fa3', w: 560, h: 900, wall: '#e8e2d6' }), { rim: true }); F.put(1100, z + 600, 1.3, () => house({ roof: '#9a7d6a', w: 560, h: 800, wall: '#ece4d8' }), { rim: true }); }
-  for (let i = 0; i < 6; i++) { const sd = i % 2, z = 400 + i * 420 + ((t * 40 + i * 90) % 300); F.put(sd ? 420 : -420, z, FIG, () => F.figure({ ...(sd ? TEALD : REDD), t, walk: t * 1.2 + i * .3, expr: 'smug', turn: sd ? -.3 : .3, flip: !!sd }), { rim: true, shadow: true }); }
+  for (let i = 0; i < 12; i++) { const sd = i % 2, z = 300 + i * 260 + ((t * 40 + i * 90) % 200); F.put(sd ? 420 : -420, z, FIG, () => F.figure({ ...(sd ? TEALD : REDD), t, walk: t * 1.2 + i * .3, expr: 'smug', turn: sd ? -.3 : .3, flip: !!sd }), { rim: true, shadow: true }); }
   F.put(-760, 1400 + ((t * 160) % 900), CAR * .9, () => bus(PAL.sideB), { rim: true, shadow: true }); F.put(560, 900, SIGN, () => signpost(['SEOUL', 'bus + subway', 'riders up']), { rim: true, shadow: true, sharp: true }); F.put(260, 200, .5, () => tuft(3)); mottle(); groundHaze(.65); F.flush(); }
 
 // ---------- camera keys ----------
