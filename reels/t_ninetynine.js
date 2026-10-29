@@ -19,7 +19,7 @@ function camKeys(t, keys) { let a = keys[0], b = keys[keys.length - 1]; for (let
 const CUST = [['#d9a441', '#b78327'], ['#7d5aa6', '#5f4383'], ['#6f8f5a', '#55703f'], ['#c27a8a', '#9e5d6c'], ['#5a7ea6', '#425f83'], ['#b98a5a', '#966a3f']];
 function baker(side, t, o = {}) { const red = side < 0; return figure({ col: red ? RED : TEAL, colS: red ? REDS : TEALS, apron: '#f4eedf', hat: 'toque', hatBand: red ? RED : TEAL, stache: red ? 'handle' : null, goatee: !red, t, ...o }); }
 function customer(i, t, o = {}) { const [c, cs] = CUST[i % CUST.length]; return figure({ col: c, colS: cs, stache: i % 3 === 0 ? 'brush' : null, hat: i % 4 === 1 ? 'cap' : null, hatBand: cs, t, scale: .92, ...o }); }
-function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.00', '2.99'], prev = null, flip = 1, bakersOn = true, walkIn = 1, bird = 0, bk = [620, 1050], bx = 330, bz = 900 } = o;
+function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.00', '2.99'], prev = null, flip = 1, bakersOn = true, walkIn = 1, bird = 0, bk = [620, 1050], bx = 158, bz = 900 } = o;
   sky(t, mood); if (mood !== 2) { cloud(200 + t * 6, 260, 1.6, 3); cloud(880 + t * 4, 150, 1.3, 7); cloud(640 + t * 5, 700, 1.1, 11); cloud(60 + t * 3, 740, .8, 5, .95); } farLand(t, mood); street(t, { mood });
   put(-900, 0, 1500, (g2, p) => bakery('RED', RED, REDS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
   put(900, 0, 1500, (g2, p) => bakery('TEAL', TEAL, TEALS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
@@ -31,11 +31,11 @@ function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.
     for (let i = 1; i < 12; i++) { const u = i / 12, x = lerp(a.x, b.x, u), y = (1 - u) * (1 - u) * a.y + 2 * u * (1 - u) * (a.y + sag * 2) + u * u * b.y, w = 15 * a.k, sw = Math.sin(t * 3 + i) * 3 * a.k;
       g.fillStyle = i % 2 ? (mood === 2 ? '#7a3045' : RED) : (mood === 2 ? '#1f5056' : TEAL); g.strokeStyle = INK; g.lineWidth = Math.max(1, 1.6 * a.k); g.beginPath(); g.moveTo(x - w, y); g.lineTo(x + w, y); g.lineTo(x + sw, y + 30 * a.k); g.closePath(); g.fill(); g.stroke(); } g.restore(); } }
   // painted floor emblem in the road: a coin, half red half teal
-  { const R0 = 150, N = 28, ring = (rad, a0, a1) => { const P = []; for (let i = 0; i <= N; i++) { const a = lerp(a0, a1, i / N); P.push(proj(Math.cos(a) * rad, 0, 1500 + Math.sin(a) * rad)); } return P; };
-    const half = (a0, a1, col) => { const P = ring(R0, a0, a1); if (P.some(p => !p)) return; g.beginPath(); const c = proj(0, 0, 1500); g.moveTo(c.x, c.y); P.forEach(p => g.lineTo(p.x, p.y)); g.closePath(); g.fillStyle = col; g.fill(); };
+  { const EZ = o.emZ === 'near' ? CAM.z + 460 : o.emZ ?? 600, R0 = 150, N = 28, ring = (rad, a0, a1) => { const P = []; for (let i = 0; i <= N; i++) { const a = lerp(a0, a1, i / N); P.push(proj(Math.cos(a) * rad, 0, EZ + Math.sin(a) * rad)); } return P; };
+    const half = (a0, a1, col) => { const P = ring(R0, a0, a1); if (P.some(p => !p)) return; g.beginPath(); const c = proj(0, 0, EZ); g.moveTo(c.x, c.y); P.forEach(p => g.lineTo(p.x, p.y)); g.closePath(); g.fillStyle = col; g.fill(); };
     half(Math.PI / 2, Math.PI * 1.5, mood === 2 ? '#6a3a50' : '#c75a48'); half(-Math.PI / 2, Math.PI / 2, mood === 2 ? '#2a5560' : '#2f8f86');
     const P = ring(R0, 0, TAU); if (!P.some(p => !p)) { g.beginPath(); P.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.strokeStyle = '#f2e3bf'; g.lineWidth = 6 * P[0].k; g.stroke(); g.strokeStyle = INK; g.lineWidth = 2.5 * P[0].k; g.stroke(); }
-    const c = proj(0, 0, 1500); if (c) { g.save(); g.translate(c.x, c.y); g.scale(c.k, c.k * .32); g.fillStyle = '#f7ead0'; g.font = '700 150px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('¢', 0, 10); g.restore(); } }
+    const c = proj(0, 0, EZ); if (c) { g.save(); g.translate(c.x, c.y); g.scale(c.k, c.k * .32); g.fillStyle = '#f7ead0'; g.font = '700 150px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('¢', 0, 10); g.restore(); } }
   // price boards
   put(-bx, 0, bz, () => priceBoard('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
   put(bx, 0, bz, () => priceBoard('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });
@@ -69,7 +69,7 @@ function sheetContent(k) {   // the blueprint sheet itself (840x940), drawn flat
   g.restore(); return d2;
 }
 function blueprint(t, t0) { const k = t - t0;   // a baker's desk seen from above at an angle: brick wall + glowing oven behind, the blue sheet in perspective, a pen draws on it, a red stamp slams
-  const YH = 300, HC = 520, F = 1100, push = 26 * k, cx = 20 * Math.sin(k * .4);
+  const YH = 300, HC = 520, F = 1100, push = 15 * k, cx = 20 * Math.sin(k * .4);
   const P = (X, z) => ({ x: 540 + (X - cx) * F / (z - push), y: YH + HC * F / (z - push), k: F / (z - push) });
   // back wall: warm bricks, a glowing bread oven, a shelf of red and teal jars
   const wy = P(0, 2600).y; g.fillStyle = '#8a4b34'; g.fillRect(0, 0, W, wy + 4);
@@ -79,15 +79,15 @@ function blueprint(t, t0) { const k = t - t0;   // a baker's desk seen from abov
   const og = g.createRadialGradient(ox, oy - 120, 10, ox, oy - 120, 260); og.addColorStop(0, '#fff2b0'); og.addColorStop(.45, '#ffb347'); og.addColorStop(1, '#c4521f'); ink(() => { g.beginPath(); g.moveTo(ox - 150, oy); g.lineTo(ox - 150, oy - 190); g.arc(ox, oy - 190, 150, Math.PI, 0); g.lineTo(ox + 150, oy); g.closePath(); }, og, { lw: 6, rim: false });
   for (let i = 0; i < 3; i++) loaf(ox - 70 + i * 70, oy - 40, 1.1);
   g.save(); g.globalCompositeOperation = 'lighter'; const gl = g.createRadialGradient(ox, oy - 150, 20, ox, oy - 150, 700 * fl); gl.addColorStop(0, 'rgba(255,170,80,.55)'); gl.addColorStop(1, 'rgba(255,120,40,0)'); g.fillStyle = gl; g.fillRect(0, 0, W, H); g.restore();
-  ink(() => { g.beginPath(); g.rect(600, 170, 480, 22); }, '#6b4a30', { lw: 5, rim: false });
-  for (let i = 0; i < 5; i++) { const x = 650 + i * 92, c = i % 2 ? '#1f8f8a' : '#c8443a'; ink(() => { g.beginPath(); g.roundRect(x - 30, 70, 60, 100, 12); }, c, { lw: 4, shade: i % 2 ? '#16706c' : '#9b2f29', sx: 10 }); ink(() => { g.beginPath(); g.rect(x - 22, 56, 44, 18); }, '#f4eedf', { lw: 3.5, rim: false }); }
+  ink(() => { g.beginPath(); g.rect(600, 390, 480, 22); }, '#6b4a30', { lw: 5, rim: false });
+  for (let i = 0; i < 5; i++) { const x = 650 + i * 92, c = i % 2 ? '#1f8f8a' : '#c8443a'; ink(() => { g.beginPath(); g.roundRect(x - 30, 290, 60, 100, 12); }, c, { lw: 4, shade: i % 2 ? '#16706c' : '#9b2f29', sx: 10 }); ink(() => { g.beginPath(); g.rect(x - 22, 276, 44, 18); }, '#f4eedf', { lw: 3.5, rim: false }); }
   // desk: planks running away from us
   const d0 = 380, d1 = 2600; g.beginPath(); const c0 = P(-1400, d0), c1 = P(1400, d0), c2 = P(1400, d1), c3 = P(-1400, d1); g.moveTo(c0.x, c0.y); g.lineTo(c1.x, c1.y); g.lineTo(c2.x, c2.y); g.lineTo(c3.x, c3.y); g.closePath(); const dg = g.createLinearGradient(0, c3.y, 0, H); dg.addColorStop(0, '#b77d4a'); dg.addColorStop(1, '#7c4d2b'); g.fillStyle = dg; g.fill();
   g.strokeStyle = 'rgba(60,30,15,.45)'; g.lineWidth = 3; for (let X = -1400; X <= 1400; X += 200) { const a = P(X, d0), b = P(X, d1); g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke(); }
   const de = P(0, d1); g.fillStyle = '#5a3420'; g.fillRect(0, de.y - 6, W, 14); g.strokeStyle = INK; g.lineWidth = 4; g.beginPath(); g.moveTo(0, de.y - 6); g.lineTo(W, de.y - 6); g.stroke();
   // the sheet in perspective, drawn in thin strips
   let dd = 0; withCtx(SC.getContext('2d'), () => { dd = sheetContent(k); });
-  const zN = 700, zF = 1500, SW = 640; const S = v => { const z = zF + (zN - zF) * v; return P(0, z); };
+  const zN = 560, zF = 1330, SW = 700; const S = v => { const z = zF + (zN - zF) * v; return P(0, z); };
   const shadow = [P(-SW / 2 + 30, zN + 30), P(SW / 2 + 30, zN + 30), P(SW / 2 + 30, zF + 30), P(-SW / 2 + 30, zF + 30)]; g.fillStyle = 'rgba(40,20,10,.35)'; g.beginPath(); shadow.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.fill();
   for (let r = 0; r < 940; r += 4) { const a = S(r / 940), b = S((r + 4) / 940), w = SW * a.k; g.drawImage(SC, 0, r, 840, 4, 540 + (-SW / 2 - cx) * a.k, a.y, w, b.y - a.y + .6); }
   const e = [P(-SW / 2, zN), P(SW / 2, zN), P(SW / 2, zF), P(-SW / 2, zF)]; g.strokeStyle = INK; g.lineWidth = 5; g.beginPath(); e.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.stroke();
@@ -158,7 +158,7 @@ function nightTill(t, t0) { const k = t - t0;   // night, inside the shop: panel
   ink(() => { g.beginPath(); g.rect(550 - 20 * dr, 990 + dr * 40, 400 + 40 * dr, 60 + dr * 40); }, '#a87a2c', { lw: 5 }); if (dr > 0) for (let i = 0; i < 3; i++) { g.fillStyle = '#f2d16b'; g.strokeStyle = INK; g.lineWidth = 3; g.beginPath(); g.ellipse(640 + i * 110, 1040 + dr * 40, 34, 12, 0, 0, TAU); g.fill(); g.stroke(); }
   g.restore();
   // blurred foreground: a basket of loaves at the lower left, close to the lens
-  g.save(); g.filter = 'blur(9px)'; g.translate(150, 1760); g.scale(3.2, 3.2); ink(() => { g.beginPath(); g.moveTo(-90, -40); g.lineTo(90, -40); g.lineTo(70, 40); g.lineTo(-70, 40); g.closePath(); }, '#b07a3c', { lw: 5, shade: '#8e5f2b', sx: 30 }); for (let i = 0; i < 3; i++) loaf(-50 + i * 50, -46, 1); g.restore();
+  g.save(); g.filter = 'blur(9px)'; g.translate(110, 1840); g.scale(2.2, 2.2); ink(() => { g.beginPath(); g.moveTo(-90, -40); g.lineTo(90, -40); g.lineTo(70, 40); g.lineTo(-70, 40); g.closePath(); }, '#b07a3c', { lw: 5, shade: '#8e5f2b', sx: 30 }); for (let i = 0; i < 3; i++) loaf(-50 + i * 50, -46, 1); g.restore();
   // candle on the counter + warm glow over everything
   ink(() => { g.beginPath(); g.roundRect(120, 840, 64, 170, 10); }, '#f3ead6', { lw: 4.5, shade: '#e0d2b4', sx: 160 }); const fl = 1 + .08 * Math.sin(k * 13);
   g.save(); g.globalCompositeOperation = 'lighter'; const cg = g.createRadialGradient(152, 810, 2, 152, 810, 520 * fl); cg.addColorStop(0, 'rgba(255,200,120,.7)'); cg.addColorStop(.5, 'rgba(255,150,70,.18)'); cg.addColorStop(1, 'rgba(255,150,70,0)'); g.fillStyle = cg; g.fillRect(-400, 300, 1100, 1100); g.restore(); g.fillStyle = '#ffd27a'; g.beginPath(); g.ellipse(152, 816, 11 * fl, 24 * fl, 0, 0, TAU); g.fill();
@@ -166,29 +166,28 @@ function nightTill(t, t0) { const k = t - t0;   // night, inside the shop: panel
 
 // ---------------- shots ----------------
 const SH = [
-  [0, s(1) - .15, t => { camKeys(t, [[0, { x: 0, y: 70, z: 120, focus: 900, dof: 4 }], [1.6, { x: -30, y: 70, z: 160, focus: 900, dof: 4 }], [s(1) - .5, { x: 0, y: 80, z: 20, focus: 900, dof: 3 }]]); world(t, { sharpBoards: true, fg: -1, bx: 158, bk: [520, 1300] }); }],
-  [s(1) - .15, s(2) - .15, t => { camKeys(t, [[s(1) - .15, { x: 0, z: -700, focus: 1100, dof: 1.8 }], [s(2), { x: 60, z: -560, focus: 1100, dof: 1.8 }]]); world(t, { walkIn: seg(t, s(1), s(1) + 1.8), bk: [175, -40] }); }],
-  [s(2) - .15, s(3) - .1, t => { camKeys(t, [[s(2) - .15, { x: -540, z: 560, focus: 490, dof: 7 }], [s(3), { x: -570, z: 620, focus: 430, dof: 7 }]]); world(t, { redTalk: 0, fg: -1 }); }],
-  [s(3) - .1, s(4) - .1, t => { camKeys(t, [[s(3) - .1, { x: 540, z: 560, focus: 490, dof: 7 }], [s(4), { x: 570, z: 620, focus: 430, dof: 7 }]]); world(t, { fg: 1, tealExpr: 'smug' }); }],
+  [0, s(2) - .15, t => { camKeys(t, [[0, { x: 0, y: 190, z: 120, focus: 900, dof: 4 }], [1.6, { x: -30, y: 190, z: 160, focus: 900, dof: 4 }], [s(1) - .4, { x: 0, y: 200, z: 40, focus: 900, dof: 3 }], [s(1) + 1.0, { x: 0, y: 150, z: -700, focus: 1100, dof: 1.8 }], [s(2) - .15, { x: 60, y: 150, z: -580, focus: 1100, dof: 1.8 }]]); world(t, { sharpBoards: t < s(1) + .3, fg: -1, bk: [175, -40], walkIn: seg(t, s(1), s(1) + 1.8) }); }],
+  [s(2) - .15, s(3) - .1, t => { camKeys(t, [[s(2) - .15, { x: -540, z: 520, focus: 530, dof: 7 }], [s(2) + 1.5, { x: -600, z: 640, focus: 420, dof: 7 }], [s(3), { x: -520, z: 600, focus: 460, dof: 7 }]]); world(t, { redTalk: 0, fg: -1 }); }],
+  [s(3) - .1, s(4) - .1, t => { camKeys(t, [[s(3) - .1, { x: 600, z: 560, focus: 490, dof: 7 }], [s(3) + 1.8, { x: 520, z: 640, focus: 420, dof: 7 }], [s(4), { x: 560, z: 600, focus: 460, dof: 7 }]]); world(t, { fg: 1, tealExpr: 'smug' }); }],
   [s(4) - .1, s(5) - .1, t => { camKeys(t, [[s(4) - .1, { x: 0, y: 60, z: 260, focus: 560, dof: 7 }], [s(5), { x: 0, y: 70, z: 320, focus: 560, dof: 7 }]]); world(t, { fg: 1 });
     const sp = (t - s(4)) * 9; const p = proj(0, 0, 560); if (p) { g.save(); g.translate(p.x, p.y - 50 * p.k * Math.abs(Math.sin(sp * .3)) * (1 - seg(t, s(4) + .8, s(4) + 1.4))); coin(0, 0, p.k * 1.2, sp, t); g.restore(); } }],
-  [s(5) - .1, s(7) - .2, t => { camKeys(t, [[s(5) - .1, { x: 330, y: 150, z: 400, focus: 900, dof: 6 }], [s(7), { x: 310, y: 150, z: 450, focus: 900, dof: 6 }]]); const sweep = seg(t, s(5) + .4, s(5) + 2.0);
+  [s(5) - .1, s(7) - .2, t => { camKeys(t, [[s(5) - .1, { x: 158, y: 150, z: 380, focus: 520, dof: 6 }], [s(6), { x: 175, y: 160, z: 450, focus: 450, dof: 6 }], [s(7), { x: 150, y: 150, z: 430, focus: 470, dof: 6 }]]); const sweep = seg(t, s(5) + .4, s(5) + 2.0);
     world(t, { sharpBoards: true, fg: 1, boardO1: { glow: Math.min(3, Math.floor(sweep * 4)), glowK: sweep < 1 ? 1 : .6 + .4 * Math.sin(t * 4) } });
     if (t > s(6) - .1) { const k = back(seg(t, s(6), s(6) + .3), 2); g.save(); g.translate(300, 520); g.scale(k, k); ink(() => { g.beginPath(); g.ellipse(0, 0, 230, 110, 0, 0, TAU); }, '#fbf3df', { lw: 5 }); for (let i = 0; i < 3; i++) ink(() => { g.beginPath(); g.arc(150 - i * 40, 130 + i * 40, 18 - i * 4, 0, TAU); }, '#fbf3df', { lw: 4, rim: false }); g.fillStyle = INK; g.font = '700 60px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('2-something', 0, 4); g.restore(); } }],
   [s(7) - .2, s(9) - .2, t => blueprint(t, s(7) - .2)],
   [s(9) - .2, s(11) - .2, t => overhead(t, s(9) - .2)],
   [s(11) - .2, s(12) - .15, t => nightTill(t, s(11) - .2)],
   [s(12) - .15, s(13) - .15, t => { const u = seg(t, s(12), s(12) + 1.2); camKeys(t, [[s(12) - .15, { x: -360, z: 300, focus: 700, dof: 6 }], [s(13), { x: -380, z: 360, focus: 640, dof: 6 }]]);
-    world(t, { mood: u < .5 ? 1 : 0, boards: ['2.99', '2.99'], prev: ['3.00', '2.99'], flip: seg(t, s(12) + 1.4, s(12) + 2.2), sharpBoards: true, redExpr: 'sly', fg: -1 }); if (u < 1) { g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .5 * (1 - u); g.fillStyle = '#f3a46b'; g.fillRect(0, 0, W, H); g.restore(); } }],
-  [s(13) - .15, s(14) - .15, t => { camKeys(t, [[s(13) - .15, { x: 0, z: -720, focus: 1100, dof: 1.8 }], [s(14), { x: 0, z: -600, focus: 1100, dof: 1.8 }]]); world(t, { boards: ['2.99', '2.99'], redQ: 4, tealQ: 4, bird: seg(t, s(13) + 1.0, s(13) + 1.6), bk: [175, -40] }); }],
+    world(t, { mood: u < .5 ? 1 : 0, boards: ['2.99', '2.99'], prev: ['3.00', '2.99'], flip: seg(t, s(12) + 1.4, s(12) + 2.2), sharpBoards: true, redExpr: 'sly', fg: -1, bx: 330 }); if (u < 1) { g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .5 * (1 - u); g.fillStyle = '#f3a46b'; g.fillRect(0, 0, W, H); g.restore(); } }],
+  [s(13) - .15, s(14) - .15, t => { camKeys(t, [[s(13) - .15, { x: 0, z: -740, focus: 1100, dof: 1.8 }], [s(13) + 1.5, { x: -70, z: -660, focus: 1100, dof: 1.8 }], [s(14), { x: 50, z: -580, focus: 1100, dof: 1.8 }]]); world(t, { boards: ['2.99', '2.99'], redQ: 4, tealQ: 4, bird: seg(t, s(13) + 1.0, s(13) + 1.6), bk: [175, -40] }); }],
   [s(14) - .15, s(15) - .15, t => { camKeys(t, [[s(14) - .15, { x: -540, z: 200, focus: 600, dof: 6 }], [s(15), { x: -520, z: 280, focus: 520, dof: 6 }]]); world(t, { boards: ['10.00', '2.99'], sharpBoards: true, bk: [720, 800], bx: 470, boardO0: { unit: 'per cake' }, redExpr: 'smug', redO: { armF: { x: 54, y: -118, bend: 10 }, hold: (x, y) => cake(x + 4, y - 6) }, fg: 1 }); }],
-  [s(15) - .15, s(16) - .1, t => { camKeys(t, [[s(15) - .15, { x: 0, z: 460, focus: 440, dof: 6 }], [s(16), { x: 0, z: 520, focus: 380, dof: 6 }]]); world(t, { boards: ['2.99', '2.99'], redExpr: 'glare', tealExpr: 'glare', bk: [95, 900], fg: -1 }); }],
-  [s(16) - .1, TOT + 1, t => { camKeys(t, [[s(16) - .1, { x: 0, y: 80, z: 20, focus: 900, dof: 3 }], [TOT, { x: 0, y: 70, z: 120, focus: 900, dof: 4 }]]); world(t, { boards: ['2.99', '2.99'], sharpBoards: true, fg: -1, bx: 158, bk: [520, 1300] }); }],
+  [s(15) - .15, s(16) - .1, t => { camKeys(t, [[s(15) - .15, { x: 0, z: 460, focus: 440, dof: 6 }], [s(16), { x: 0, z: 520, focus: 380, dof: 6 }]]); world(t, { boards: ['2.99', '2.99'], redExpr: 'glare', tealExpr: 'glare', bk: [95, 900], bx: 330, fg: -1 }); }],
+  [s(16) - .1, TOT + 1, t => { camKeys(t, [[s(16) - .1, { x: 0, y: 200, z: 20, focus: 900, dof: 3 }], [TOT, { x: 0, y: 190, z: 120, focus: 900, dof: 4 }]]); world(t, { boards: ['2.99', '2.99'], sharpBoards: true, fg: -1, bk: [175, -40] }); }],
 ];
 function render(t) { g.setTransform(1, 0, 0, 1, 0, 0); g.filter = 'none'; g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
   const i = SH.findIndex(([a, b]) => t >= a && t < b); const [a, b, fn] = SH[i < 0 ? SH.length - 1 : i]; fn(t);
   // whip pan smear around the red→teal cut; light flash into the night till
-  const wc = s(3) - .1, dw = Math.abs(t - wc); if (dw < .16) { const sm = (1 - dw / .16) * 60; g.save(); g.filter = `blur(${sm.toFixed(0)}px)`; g.drawImage(g.canvas, t < wc ? -sm * 2 : sm * 2, 0); g.restore(); }
+  for (const wc of [s(3) - .1, s(13) - .15]) { const dw = Math.abs(t - wc); if (dw < .16) { const sm = (1 - dw / .16) * 60; g.save(); g.filter = `blur(${sm.toFixed(0)}px)`; g.drawImage(g.canvas, t < wc ? -sm * 2 : sm * 2, 0); g.restore(); } }
   const fc = s(11) - .2, df = Math.abs(t - fc); if (df < .2) { g.save(); g.globalCompositeOperation = 'lighter'; g.globalAlpha = (1 - df / .2) * .85; g.fillStyle = '#ffd9a0'; g.fillRect(0, 0, W, H); g.restore(); }
   post(t, { warm: SH[i]?.[0] === s(11) - .2 ? .1 : 0 });
   const c = CH.find(c => t >= c.t0 && t < c.t1 + .05 && c.i < PH.length - 1); if (c) caption(c.s, 1330);

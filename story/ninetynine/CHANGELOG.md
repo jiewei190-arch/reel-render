@@ -76,3 +76,30 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 3. **Near horizon is too dark** (v .69 vs .89). The shops and characters sit in that band; the reference's band is open, cream haze.
 4. **Medium shots.** Their foreground blur props are boards and a queue customer, which hide too much of the frame.
 5. **Blueprint shelf** sits in the top safe zone.
+
+## v3 (Oct 29)
+**Fixed: the biggest v2 gap, flat insert sets.**
+- **Overhead:** now a real drone view straight down on the street.
+  - grass with mottling, the cobbled street with lit stones, pavement
+  - the coin emblem
+  - shop roofs from above (tiles, ridge, smoking chimneys, striped awnings)
+  - tree crowns with cast shadows
+  - villagers seen from above (coloured shoulders, round heads, caps and toques, shadows); the teal queue shuffles in and grows from 3 to 9
+  - slow rotate and push
+- **Night till:** now a candle-lit interior.
+  - panelled plum wall and a moonlit window with twinkling stars
+  - a shelf of loaves, and the LEGEND note pinned to the wall, which gets the UNPROVEN stamp
+  - a cashier (round head, cap, moustache) behind the counter; the cashier's face changes from sly to shocked when the drawer slides out with coins
+  - a blurred basket of loaves in the foreground
+  - a warm candle glow
+- **Blueprint:** the sheet sits closer and larger on the desk, the push is gentler, and the jar shelf is out of the top safe zone.
+- **Hook and loop end:** the camera is higher, so the half-red/half-teal coin emblem fills the lower frame under the boards. The reference's opening has the same layout: prop above, floor emblem below.
+- QA: WARN only.
+  - Right safe column: the hook emblem's edge, the pushed-in blueprint sheet's edge, and the till's right side.
+  - Outer 24 px.
+
+**Still off (biggest first)**
+1. **Camera motion.** The reference roams one set for its whole opening, with a new framing every 1-1.5 s. Ours cuts between static-ish slow pushes. (Being built for v4: one continuous move from the boards back past the bakers to the wide shot, plus three-key moves inside each medium and wide shot and a second whip pan.)
+2. **Wide shot.** The boards still sit by the shops. The reference has a central object on the track between the two sides.
+3. **Right safe-column overlaps** (above).
+4. **Near-horizon band is darker than the reference's cream haze.**
