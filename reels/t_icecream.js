@@ -5,6 +5,7 @@ import { createFable, PAL, W, H, seg, ss, eio, lerp, hash, clamp } from './style
 await Promise.all(['900 50px Nunito', '800 50px Cinzel'].map(f => document.fonts.load(f)));
 const F = createFable(document.getElementById('c')), g = F.g, X = () => F.ctx();
 const TLV = window.TL, P = TLV.p, DUR = TLV.total, T = i => P[i].start, E = i => P[i].end, r = (i, d) => T(i) + d;
+Object.assign(PAL, { sand: '#bba465', sandL: '#d8c793', sandD: '#957541' });   // v3: muted sand matched to the reference's ground bands
 const FIG = 170 / 640, CART = 165 / 650, SIGN = 230 / 760, UMB = 210 / 300, SHORE = 6000, WHIP = .16;
 
 // ---------- captions: 1-2 words, timed by character share of the line ----------
@@ -47,10 +48,10 @@ function headland(t) { const shore = F.proj(0, 0, SHORE).y, hor = F.cam().hor, p
 }
 function beach(t, o = {}) {
   const shore = F.proj(0, 0, SHORE).y;
-  g.fillStyle = F.vgrad(shore, H, [[0, PAL.sandL], [.12, PAL.sand], [1, '#a1773f']]); g.fillRect(0, shore, W, H - shore);
+  g.fillStyle = F.vgrad(shore, H, [[0, PAL.sandL], [.14, PAL.sand], [.6, '#b39a5c'], [1, '#8f7343']]); g.fillRect(0, shore, W, H - shore);
   // wet sand + foam line at the water's edge
   g.fillStyle = 'rgba(150,120,80,.35)'; g.fillRect(0, shore, W, 10); g.fillStyle = 'rgba(255,255,255,.85)'; g.fillRect(0, shore, W, 3 + Math.sin(t * 2) * 1.5);
-  F.horizonHaze(.7);
+  F.horizonHaze(.92);
   // pebbles, shell bits and dimples in perspective
   for (let i = 0; i < 700; i++) { const Xw = (hash(i * 1.31) - .5) * 3000, Z = F.cam().z + 40 + Math.pow(hash(i * 2.17), 1.7) * 3000, q = F.proj(Xw, 0, Z); if (q.dz < 30 || q.x < -20 || q.x > W + 20 || q.y > H + 10 || q.y < shore) continue;
     const rr = Math.min(9, (3 + hash(i * 5.7) * 5) * q.s), kind = i % 4; g.fillStyle = kind === 0 ? '#f1dcae' : kind === 1 ? '#a8803f' : kind === 2 ? 'rgba(140,100,50,.45)' : '#cfa665';
@@ -58,6 +59,13 @@ function beach(t, o = {}) {
   for (let i = 0; i < 260; i++) { const v = hash(i * 1.7), y = shore + Math.pow(v, 1.8) * (H - shore), x = hash(i * 3.3) * W, s = 1 + (y - shore) / 260; if (i % 3) { g.fillStyle = 'rgba(120,85,40,.18)'; g.fillRect(x, y, 5 * s, 2 * s); } }
   for (let z = F.cam().z + 80; z < SHORE; z *= 1.09) { const a = F.proj(-3000, 0, z), b = F.proj(3000, 0, z), w = Math.sin(z * .013);
     g.strokeStyle = 'rgba(190,150,90,.28)'; g.lineWidth = Math.max(1, 900 / (z - F.cam().z + 1)); g.beginPath(); g.moveTo(a.x, a.y); for (let i = 1; i <= 12; i++) { const u = i / 12; g.lineTo(lerp(a.x, b.x, u), a.y + Math.sin(u * 14 + w * 3) * g.lineWidth * 1.4); } g.stroke(); z += 40; }
+  // cart-wheel ruts and sea-grass verges along the boardwalk, flowers in perspective
+  for (const rx of [-150, -105, 105, 150]) F.groundQuad(rx - 7, F.cam().z + 40, rx + 7, SHORE - 300, 'rgba(110,85,45,.28)');
+  for (const side of [-1, 1]) { F.groundQuad(side > 0 ? 44 : -95, F.cam().z + 40, side > 0 ? 95 : -44, SHORE - 300, 'rgba(120,150,70,.55)'); F.groundQuad(side > 0 ? 190 : -330, F.cam().z + 40, side > 0 ? 330 : -190, SHORE - 300, 'rgba(120,150,70,.35)'); }
+  for (let i = 0; i < 160; i++) { const side = i % 2 ? 1 : -1, Xw = side * (50 + hash(i * 3.3) * 280), Z = F.cam().z + 60 + Math.pow(hash(i * 1.9), 1.5) * 3200, q = F.proj(Xw, 0, Z); if (q.dz < 40 || q.y > H + 20 || q.x < -30 || q.x > W + 30) continue;
+    const s2 = q.s, hz = F.hazeK(q.dz); g.globalAlpha = 1 - hz * .7; if (i % 3) { g.strokeStyle = i % 2 ? PAL.leafD : '#8fb35e'; g.lineWidth = Math.max(1, 3 * s2); for (let k = 0; k < 4; k++) { g.beginPath(); g.moveTo(q.x + (k - 1.5) * 4 * s2, q.y); g.quadraticCurveTo(q.x + (k - 1.5) * 8 * s2, q.y - 20 * s2, q.x + (k - 1.5) * 14 * s2, q.y - (34 + k * 6) * s2); g.stroke(); } }
+    else { g.fillStyle = ['#e85a6a', '#f2c84a', '#fff4e0', '#b36ad6'][i % 4]; for (let k = 0; k < 5; k++) { g.beginPath(); g.arc(q.x + Math.cos(k * 1.26) * 5 * s2, q.y - 22 * s2 + Math.sin(k * 1.26) * 5 * s2, 3.6 * s2, 0, Math.PI * 2); g.fill(); } g.fillStyle = '#7a4a20'; g.beginPath(); g.arc(q.x, q.y - 22 * s2, 2.4 * s2, 0, Math.PI * 2); g.fill(); g.strokeStyle = PAL.leafD; g.lineWidth = Math.max(1, 2 * s2); g.beginPath(); g.moveTo(q.x, q.y); g.lineTo(q.x, q.y - 18 * s2); g.stroke(); } }
+  g.globalAlpha = 1;
   // the boardwalk down the middle (the reference's track to the vanishing point)
   const z0 = F.cam().z + 60; F.groundQuad(-36, z0, 36, SHORE - 200, PAL.woodD, .4);
   for (let z = Math.floor(z0 / 26) * 26; z < SHORE - 200; z += 26) { const k = hash(Math.floor(z / 26)); F.groundQuad(-36, z, 36, z + 22, k < .33 ? PAL.wood : k < .66 ? PAL.woodL : '#bd8a5c', .5); }
@@ -166,7 +174,7 @@ function paperShot(t) { // the 1929 journal lying on a striped towel, seen from 
   F.glow(860, 260, 380, 'rgba(255,240,200,.8)', .5); }
 function blueprintShot(t) { // the law on a blueprint on a desk at an angle; a glowing pen draws it, labels pop, a red stamp slams
   const k = t - T(11); g.fillStyle = '#3a2a22'; g.fillRect(0, 0, W, H); for (let i = 0; i < 12; i++) { g.fillStyle = i % 2 ? '#4a3428' : '#432f25'; g.fillRect(0, i * 170, W, 170); }
-  g.save(); g.translate(540, 980); const s = 1 + .02 * k; g.scale(s, s); g.transform(1, 0, -.12, .92, 0, 0);
+  g.save(); g.translate(495, 940); const s = (1 + .02 * k) * .86; g.scale(s, s); g.transform(1, 0, -.12, .92, 0, 0);
   g.fillStyle = 'rgba(0,0,0,.4)'; g.filter = 'blur(14px)'; g.fillRect(-440, -700, 900, 1400); g.filter = 'none';
   g.fillStyle = '#1f4f9a'; g.fillRect(-460, -720, 920, 1400); g.strokeStyle = 'rgba(255,255,255,.12)'; g.lineWidth = 2; for (let x = -460; x <= 460; x += 46) { g.beginPath(); g.moveTo(x, -720); g.lineTo(x, 680); g.stroke(); } for (let y = -720; y <= 680; y += 46) { g.beginPath(); g.moveTo(-460, y); g.lineTo(460, y); g.stroke(); }
   g.strokeStyle = '#eaf2ff'; g.lineWidth = 5; g.strokeRect(-430, -690, 860, 1340);
@@ -185,7 +193,7 @@ function blueprintShot(t) { // the law on a blueprint on a desk at an angle; a g
   const sk = ss(seg(k, 3.2, 3.45)); if (sk > 0) { g.save(); g.translate(250, -40); g.rotate(-.2); const sc = lerp(2.4, 1, sk); g.scale(sc, sc); g.globalAlpha = clamp(sk * 2); g.lineWidth = 10; g.strokeStyle = '#d0392b'; g.beginPath(); g.roundRect(-130, -60, 260, 120, 14); g.stroke(); F.text('STUCK', 0, 4, { size: 66, col: '#d0392b', font: 'Cinzel', weight: 900 }); g.restore(); }
   g.restore();
   // glowing pen tip while drawing, a candle glow at the top left, the pen blurred in the foreground
-  if (lk > 0 && lk < 1) { const px = 540 + (-360 + 720 * lk) * s - (-260) * .12 * s, py = 980 + (-260) * .92 * s; F.glow(px, py, 90, 'rgba(255,255,255,1)', .9); }
+  if (lk > 0 && lk < 1) { const px = 495 + (-360 + 720 * lk) * s - (-260) * .12 * s, py = 940 + (-260) * .92 * s; F.glow(px, py, 90, 'rgba(255,255,255,1)', .9); }
   F.glow(120, 160, 420, 'rgba(255,200,120,.9)', .55); g.save(); g.filter = 'blur(8px)'; g.translate(900, 1560); g.rotate(-.7); g.fillStyle = PAL.woodD; g.fillRect(-20, -340, 40, 420); g.fillStyle = '#c8ccd2'; g.beginPath(); g.moveTo(-20, 80); g.lineTo(20, 80); g.lineTo(0, 150); g.fill(); g.restore(); }
 
 // ---------- story timeline ----------
@@ -201,16 +209,16 @@ function wideCarts(t, o = {}) { const [xr, xt] = o.at || cartsAt(t); cart(xr, 54
 const SH = [];
 const shot = (a, b, fn) => SH.push({ a, b, fn });
 // 0 hook: the sign (open prop) close, then the camera roams: wide on the carts side by side, push to red, across to teal
-shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 2.2, f: 760 }], [3.0, { x: -135, z: 245, hor: 640, focus: 225, dof: 5 }], [T(1) + WHIP, { x: 135, z: 255, hor: 640, focus: 215, dof: 5 }]]);
+shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 760 }], [3.0, { x: -135, z: 245, hor: 780, focus: 225, dof: 5 }], [T(1) + WHIP, { x: 135, z: 255, hor: 780, focus: 215, dof: 5 }]]);
   UMODE = 'split'; UBOUND = 0; set(t); sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
 // 1 medium two-shot: they glare (heads turn), then the paper with the 1929 stamp
-shot(T(1), r(1, 2.6), t => { cam(t, [[T(1) - WHIP, { x: -60, z: 60, hor: 700, focus: 410, dof: 5 }], [r(1, 1.3), { x: -30, z: 90, hor: 700, focus: 380, dof: 5 }], [r(1, 2.6), { x: 50, z: 100, hor: 700, focus: 370, dof: 5 }]]);
+shot(T(1), r(1, 2.6), t => { cam(t, [[T(1) - WHIP, { x: -60, z: 60, hor: 830, focus: 410, dof: 5 }], [r(1, 1.3), { x: -30, z: 90, hor: 830, focus: 380, dof: 5 }], [r(1, 2.6), { x: 50, z: 100, hor: 830, focus: 370, dof: 5 }]]);
   set(t); const k = seg(t, r(1, .9), r(1, 1.4)); wideCarts(t, { at: [-47, 47], exprR: k > 0 ? 'glare' : 'sly', red: { turn: lerp(0, .5, k), talk: t < r(1, 1.2) ? Math.abs(Math.sin(t * 14)) : 0 } }); foreground(1); F.flush(); });
 shot(r(1, 2.6), T(2), t => paperShot(t));
 // 2 overhead: towels and umbrellas spread evenly along the beach
 shot(T(2), T(3), t => overhead(t, { zoom: lerp(1.06, 1.14, seg(t, T(2), T(3))), rot: .02 * Math.sin(t * .4), redK: 0, tealK: 0 }));
 // 3 wide down the beach: the two carts at the edges, same price; then overhead, they drop in at a quarter and three quarters
-shot(T(3), r(3, 2.6), t => { cam(t, [[T(3), { x: 0, z: 120, hor: 860, focus: 520, dof: 2, f: 760 }], [r(3, 2.6), { x: 0, z: 180, hor: 860, focus: 520, dof: 2, f: 760 }]]); UMODE = 'mixed'; set(t);
+shot(T(3), r(3, 2.6), t => { cam(t, [[T(3), { x: 0, z: 120, hor: 860, focus: 520, dof: 1.2, f: 760 }], [r(3, 2.6), { x: 0, z: 180, hor: 860, focus: 520, dof: 1.2, f: 760 }]]); UMODE = 'mixed'; set(t);
   wideCarts(t, { exprR: 'smug', exprT: 'smug', red: { turn: 0, look: 0 }, teal: { turn: 0, look: 0 } }); priceTag(-CW + 70, 420, 0); priceTag(CW - 70, 420, 1); foreground(1); F.flush(); });
 shot(r(3, 2.6), T(4), t => overhead(t, { zoom: 1.14, redK: ss(seg(t, r(3, 3.0), r(3, 3.6))), tealK: ss(seg(t, r(3, 4.6), r(3, 5.2))), redL: '¼', tealL: '¾' }));
 // 4 overhead: everyone walks to the nearest cart: half and half
@@ -222,7 +230,7 @@ shot(T(5), T(6), t => { const [, xt] = cartsAt(t), push = seg(t, T(5) + .5, T(6)
   F.put(xt + 120, 110, .45, () => tuft(41)); F.put(xt - 200, 105, .45, () => tuft(52)); F.flush(); });
 // 6 overhead: teal's half grows past the middle; then red, worried
 shot(T(6), r(6, 2.6), t => overhead(t, { zoom: 1.04, zones: 1, red: .25, teal: lerp(.75, .6, ss(seg(t, T(6), r(6, 1.4)))) }));
-shot(r(6, 2.6), T(7), t => { cam(t, [[r(6, 2.6), { x: vendorX(-CW, 0) - 30, z: 245, y: 128, hor: 640, focus: 225, dof: 7 }], [T(7) + WHIP, { x: vendorX(-CW, 0) - 10, z: 265, y: 128, hor: 640, focus: 205, dof: 7 }]]); UBOUND = 60; set(t);
+shot(r(6, 2.6), T(7), t => { cam(t, [[r(6, 2.6), { x: vendorX(-CW, 0) - 30, z: 245, y: 128, hor: 780, focus: 225, dof: 7 }], [T(7) + WHIP, { x: vendorX(-CW, 0) - 10, z: 265, y: 128, hor: 780, focus: 205, dof: 7 }]]); UBOUND = 60; set(t);
   cart(-CW, 540, 0); fig(vendorX(-CW, 0), 470, { ...RED, t, expr: 'worried', look: 1, turn: .5, armF: 60, bendF: 120, armB: 70, bendB: 150 }); foreground(-1); F.flush(); });
 // 7 red does the same, then teal again (two tracking shots with a whip between)
 shot(T(7), r(7, 1.2), t => { const [xr] = cartsAt(t), push = seg(t, T(7), r(7, 1.2)); cam(t, [[T(7) - WHIP, { x: xr + 10, z: 0, y: 128, hor: 760, focus: 200, dof: 8 }], [r(7, 1.2), { x: xr + 60, z: 25, y: 128, hor: 760, focus: 175, dof: 8 }]]); F.cam().x = xr + 40; set(t);
@@ -232,35 +240,37 @@ shot(r(7, 1.2), T(8), t => { const [, xt] = cartsAt(t), push = seg(t, r(7, 1.2),
   F.put(xt - 105, 212, CART, () => F.cart({ col: PAL.sideB, colD: PAL.sideBD, handle: 'right', roll: -xt / 40 }), { rim: true, shadow: true });
   fig(xt, 200, { ...TEAL, t, flip: true, expr: 'glare', look: 1, turn: .35, armF: 35, bendF: 0, armB: 30, bendB: 0, reach: true, walk: push > 0 && push < 1 ? (200 - xt) / 30 : -1 }); F.put(xt + 120, 110, .45, () => tuft(41)); F.flush(); });
 // 8 time-lapse: day -> sunset -> night -> day while they creep together; the sign counts down in the foreground
-shot(T(8), T(9), t => { cam(t, [[T(8), { x: 0, z: 150, hor: 860, focus: 520, dof: 2.2, f: 760 }], [T(9), { x: 0, z: 200, hor: 860, focus: 520, dof: 2.2, f: 760 }]]); const [xr, xt] = cartsAt(t); UBOUND = (xr + xt) / 2; set(t);
+shot(T(8), T(9), t => { cam(t, [[T(8), { x: 0, z: 150, hor: 860, focus: 520, dof: 1.2, f: 760 }], [T(9), { x: 0, z: 200, hor: 860, focus: 520, dof: 1.2, f: 760 }]]); const [xr, xt] = cartsAt(t); UBOUND = (xr + xt) / 2; set(t);
   wideCarts(t, { exprR: 'glare', exprT: 'glare' }); const u = ss(seg(t, T(8), r(8, 3.8))), v = Math.round(lerp(400, 0, u) / 10) * 10, pv = Math.round(lerp(400, 0, Math.max(0, u - .03)) / 10) * 10;
   sign(-150, 230, .7, `${v} m`, { prev: `${pv} m`, flip: v !== pv ? .6 : 0 }); F.flush(); });
 // 9 side by side in the middle; then a sunbather at the far end walks a long way for a cone
-shot(T(9), r(9, 2.2), t => { cam(t, [[T(9) - WHIP, { x: 0, z: 240, hor: 860, focus: 240, dof: 2.4, f: 760 }], [r(9, 2.2), { x: 0, z: 200, hor: 860, focus: 280, dof: 2.2, f: 760 }]]); UBOUND = 0; set(t); wideCarts(t, { at: [-47, 47], exprR: 'smug', exprT: 'smug' }); foreground(1); F.flush(); });
+shot(T(9), r(9, 2.2), t => { cam(t, [[T(9) - WHIP, { x: 0, z: 240, hor: 860, focus: 240, dof: 1.2, f: 760 }], [r(9, 2.2), { x: 0, z: 200, hor: 860, focus: 280, dof: 1.2, f: 760 }]]); UBOUND = 0; set(t); wideCarts(t, { at: [-47, 47], exprR: 'smug', exprT: 'smug' }); foreground(1); F.flush(); });
 shot(r(9, 2.2), T(10), t => { const u = seg(t, r(9, 2.2), T(10)), x = lerp(-1300, -1000, u); cam(t, [[r(9, 2.2), { x: -1250, z: 0, y: 128, hor: 760, focus: 200, dof: 8 }], [T(10), { x: -960, z: 25, y: 128, hor: 760, focus: 200, dof: 8 }]]); set(t);
   fig(x, 200, { ...BATHER, t, expr: 'worried', look: 1, turn: .4, walk: t * 1.4, armF: 50, bendF: 30, armB: 110, bendB: 0 });
   for (let i = 0; i < 8; i++) F.put(x - 60 - i * 62, 200 + (i % 2) * 16, .2, () => F.fs(F.ell(0, -4, 50, 18), 'rgba(140,100,55,.32)', 0));
   F.put(x + 110, 620, .3, () => { F.line([[0, 0], [0, -420]], 12, PAL.woodD); F.fs(F.poly([[-170, -560], [150, -560], [210, -490], [150, -420], [-170, -420]]), PAL.wood, 7); F.text('2× FARTHER', -10, -490, { size: 52, col: PAL.cream, font: 'Cinzel', weight: 900, stroke: 7 }); }, { sharp: true, rim: true });
   F.put(x - 140, 110, .45, () => tuft(19)); F.flush(); });
 // 10 neither can leave: each edges away and slides back
-shot(T(10), T(11), t => { cam(t, [[T(10), { x: 0, z: 60, hor: 700, focus: 410, dof: 5 }], [T(11), { x: 0, z: 110, hor: 700, focus: 360, dof: 5 }]]); set(t);
+shot(T(10), T(11), t => { cam(t, [[T(10), { x: 0, z: 60, hor: 830, focus: 410, dof: 5 }], [T(11), { x: 0, z: 110, hor: 830, focus: 360, dof: 5 }]]); set(t);
   const k1 = Math.sin(clamp((t - r(10, .3)) / 1.2) * Math.PI) * 60, k2 = Math.sin(clamp((t - r(10, 1.7)) / 1.2) * Math.PI) * 60;
   wideCarts(t, { at: [-47 - k1, 47 + k2], exprR: k1 > 8 ? 'worried' : 'glare', exprT: k2 > 8 ? 'worried' : 'glare' }); foreground(1); F.flush(); });
 // 11 the blueprint states the law
 shot(T(11), T(12), t => blueprintShot(t));
 // 12 the question: both offer a cone; YES / NO pennants on the carts
-shot(T(12), T(13), t => { cam(t, [[T(12) - WHIP, { x: 0, z: 70, hor: 700, focus: 400, dof: 5 }], [T(13), { x: 0, z: 120, hor: 700, focus: 350, dof: 5 }]]); set(t);
+shot(T(12), T(13), t => { cam(t, [[T(12) - WHIP, { x: 0, z: 70, hor: 830, focus: 400, dof: 5 }], [T(13), { x: 0, z: 120, hor: 830, focus: 350, dof: 5 }]]); set(t);
   wideCarts(t, { at: [-47, 47], exprR: 'smug', exprT: 'smug', red: { hold: 'cone', armF: 40, bendF: -95, turn: 0, look: 0 }, teal: { hold: 'cone', armF: 40, bendF: -95, turn: 0, look: 0 } });
   [[-47, 0, 'YES'], [47, 1, 'NO']].forEach(([x, s2, w]) => F.put(x, 535, CART, () => { const d = s2 ? 1 : -1; F.line([[0, -650], [0, -760]], 8); F.fs(F.poly([[0, -760], [d * 170, -720], [0, -680]]), s2 ? PAL.sideB : PAL.sideA, 5); F.text(w, d * 62, -722, { size: 40, col: PAL.cream, font: 'Nunito', weight: 900 }); }, { sharp: true }));
   foreground(1); F.flush(); });
 // 13 back to the sign (loop into frame 0)
-shot(T(13), DUR + 1, t => { cam(t, [[T(13), { x: 0, z: 190, hor: 860, focus: 300, dof: 2.2, f: 760 }], [r(13, 1.2), { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [DUR, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }]]);
+shot(T(13), DUR + 1, t => { cam(t, [[T(13), { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 760 }], [r(13, 1.2), { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [DUR, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }]]);
   set(t); sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
 
 // time-lapse grade: day -> sunset -> night -> day
 function grade(k) { if (k <= 0) return; g.save(); g.setTransform(1, 0, 0, 1, 0, 0); const sun = clamp(1 - Math.abs(k - .35) / .3), night = clamp(1 - Math.abs(k - .7) / .25);
   if (sun > 0) { g.globalCompositeOperation = 'multiply'; g.globalAlpha = sun * .75; g.fillStyle = F.vgrad(0, H, [[0, '#5b4a9a'], [.45, '#e58a6a'], [1, '#c98a7a']]); g.fillRect(0, 0, W, H); g.globalCompositeOperation = 'screen'; g.globalAlpha = sun * .35; F.glow(W / 2, 760, 700, 'rgba(255,170,90,1)'); }
-  if (night > 0) { g.globalCompositeOperation = 'multiply'; g.globalAlpha = night * .85; g.fillStyle = F.vgrad(0, H, [[0, '#24204f'], [.5, '#4a4a8a'], [1, '#3a3060']]); g.fillRect(0, 0, W, H); g.globalCompositeOperation = 'screen'; g.globalAlpha = night * .5; F.glow(820, 300, 160, 'rgba(240,240,255,1)'); }
+  if (night > 0) { g.globalCompositeOperation = 'multiply'; g.globalAlpha = night * .88; g.fillStyle = F.vgrad(0, H, [[0, '#1e1c4a'], [.45, '#3e4488'], [1, '#33305e']]); g.fillRect(0, 0, W, H);
+    g.globalCompositeOperation = 'source-over'; g.globalAlpha = night; for (let i = 0; i < 90; i++) { const x = hash(i * 1.7) * W, y = 40 + hash(i * 2.9) * 640, tw = .5 + .5 * Math.sin(i * 3 + k * 40); g.fillStyle = `rgba(255,250,230,${.4 + .6 * tw})`; g.beginPath(); g.arc(x, y, 1.5 + 2 * hash(i * 4.3), 0, Math.PI * 2); g.fill(); }
+    F.glow(820, 300, 220, 'rgba(255,250,230,.9)', .55 * night); g.fillStyle = '#fbf3da'; g.beginPath(); g.arc(820, 300, 46, 0, Math.PI * 2); g.fill(); g.fillStyle = 'rgba(30,28,74,.9)'; g.beginPath(); g.arc(842, 290, 42, 0, Math.PI * 2); g.fill(); }
   g.restore(); }
 const WHIPS = [T(1), T(5), r(7, 1.2), T(9), T(12)];
 function render(t) {
