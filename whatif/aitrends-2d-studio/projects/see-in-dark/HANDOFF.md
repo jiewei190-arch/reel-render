@@ -15,7 +15,7 @@ Name files like `B_s040_s044_viper.js` (several `registerShot` per file is fine;
 - Write ONLY your own `X_*.js`. `scenes/cast.js`, everything in `scenes/sets/`, `story/*`, `config.json` and the kit (`engine/`, `tools/`) are SHARED and READ-ONLY. Need a new prop/set tweak? Draw it inside your own shot file (a local helper) and tell the coordinator.
 - No `Math.random` / `Date.now` (use `rng(seed)`, `t`). Colours from `mood()` / `S()` / the set returns (`A.rim`, `A.M`). `V(h, v)` for aspect-dependent numbers. Imports use absolute `/engine/...` and relative `../sets/...`.
 - Every shot: moving camera (cam z/x/y over the shot with `ease.inOut`), atmosphere (`FX.dust`, rain, glows), rim light on every lit figure (`rim: A.rim`), figures grounded at `GY` with `breathe(...)`, expression changes on word beats using `wordTime('word', info.shot.start)` (returns global seconds; subtract `info.shot.start` for shot-local t).
-- Graphics (chips <= 6 words, titles) pop with the spoken word; remove before the cut. No sentences on screen except titles/end screen. Narrator is never lip-synced (only quoted lines: Mina, Dev, Dr Lin, Tomas may use `talk: talkAmount(info.globalT, from, to)`).
+- Graphics (chips <= 6 words, titles) pop with the spoken word; remove before the cut. No sentences on screen except titles/end screen. Narrator is never lip-synced (only quoted lines: Mina, Dev, Dr Lin, Tomas, and HERO in s095/s104 only, may use `talk: talkAmount(info.globalT, from, to)`).
 - Don't edit `shots.json` timing. You may add `sfx`/`amb` tweaks only if the coordinator allows.
 
 ## Core API cheat sheet

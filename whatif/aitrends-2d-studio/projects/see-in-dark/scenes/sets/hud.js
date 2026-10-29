@@ -19,11 +19,11 @@ export function ruleCard(g, t, info, o = {}) {
   if (bg) bg(g, t); else { backdrop(g, ['#05060f', '#0b1228']); FX.stars(g, t, { count: 90, area: [0, 0, E.W, E.H] }); }
   g.save(); g.fillStyle = 'rgba(0,0,0,.36)'; g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); g.restore();
   const aIn = ease.out(prog(t, 0.0, 0.4)), aOut = clamp((dur - t) / 0.4), a = aIn * aOut;
-  const nk = ease.outBack(prog(t, 0.05, 0.6)), sx = 1 + 0.025 * t, ny = E.H * V(0.4, 0.34);
+  const nk = ease.outBack(prog(t, 0.05, 0.6)), sx = 1 + 0.025 * t, ny = E.H * V(0.445, 0.36);
   g.save(); g.globalAlpha *= a; g.translate(cx, ny); g.scale(sx, sx);
   glow(g, 0, 0, 640, accent, 0.26); glow(g, 0, 0, 300, '#ffffff', 0.1);
   for (let i = 0; i < 14; i++) { const ang = i / 14 * Math.PI * 2 + t * 0.12; g.save(); g.globalCompositeOperation = 'lighter'; g.fillStyle = alpha(accent, 0.07); g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, 760, ang, ang + 0.1); g.closePath(); g.fill(); g.restore(); }     // slow rotating sun-rays
-  text(g, 'RULE', 0, -V(190, 240), { size: V(70, 80), color: ui.cream, glow: 26, glowColor: 'rgba(255,170,90,.8)', spacing: 26, stroke: 10, strokeColor: 'rgba(8,6,16,.9)' });
+  text(g, 'RULE', 0, -V(248, 300), { size: V(70, 80), color: ui.cream, glow: 26, glowColor: 'rgba(255,170,90,.8)', spacing: 26, stroke: 10, strokeColor: 'rgba(8,6,16,.9)' });
   g.save(); g.scale(nk, nk); const sz = V(450, 420), num = String(n);
   for (let i = 14; i >= 1; i--) text(g, num, i * 1.6, i * 2.6, { size: sz, color: shade(accent, -0.62), font: FONTS.title, weight: 700, stroke: 24, strokeColor: shade(accent, -0.7) });    // extrusion
   text(g, num, 0, 0, { size: sz, color: accent, glow: 70, glowColor: alpha(accent, 0.9), font: FONTS.title, weight: 700, stroke: 12, strokeColor: '#1a1006' });
