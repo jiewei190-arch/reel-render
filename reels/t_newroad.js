@@ -115,13 +115,13 @@ function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const
   F.put(0, 2600, .9, () => fountain(t), { rim: true }); F.put(-900, 2300, .9, () => stall(PAL.sideA), { rim: true, shadow: true }); F.put(900, 2400, .9, () => stall(PAL.sideB), { rim: true, shadow: true });
   F.put(-560, 1500, .45, () => banner(PAL.sideA, PAL.sideAD, t, 0), { rim: true, shadow: true }); F.put(560, 1500, .45, () => banner(PAL.sideB, PAL.sideBD, t, 2), { rim: true, shadow: true });
   F.put(-760, 1100, .35, () => lamp(0), { rim: true, shadow: true }); F.put(760, 1100, .35, () => lamp(0), { rim: true, shadow: true });
-  if (o.duo) decal(0, 380, .3, emblem); else F.put(0, 760, .42, () => emblem(), {});
+  if (o.duo) decal(0, 380, .26, emblem); else F.put(0, 760, .42, () => emblem(), {});
   F.put(o.duo ? 0 : -120, o.duo ? 720 : 640, SIGN * (o.duo ? 1.4 : 1.08), () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
   F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
   // the two commuters stand up front, the reference's big-heads-in-the-foreground staging
-  if (o.duo) { const [ea, eb] = o.duo; F.put(-98, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
-    F.put(84, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 80, bendF: 10, hold: caseProp }), { rim: true, shadow: true }); }
+  if (o.duo) { const [ea, eb] = o.duo; F.put(-104, 330, FIG, () => driver(0, t, { expr: ea, turn: .45, look: 1, armF: 20, hold: wheelProp }), { rim: true, shadow: true });
+    F.put(52, 340, FIG, () => driver(1, t, { expr: eb, turn: -.45, look: -1, flip: true, armF: 80, bendF: 10, hold: caseProp }), { rim: true, shadow: true }); }
   F.put(-330, 240, .5, () => flowerBox(PAL.sideA), {}); F.put(380, 230, .5, () => flowerBox(PAL.sideB), {});
   mottle(); groundHaze(); F.flush(); }
 function setValley(t, o) { F.sky(t, { sunX: 780, sunY: 340 }); skyline(t, { town: false }); const g = F.g, hor = F.cam().hor;

@@ -72,3 +72,10 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
 - Next (v6):
   - shrink the decal to clear the safe zones and edges;
   - then work on the remaining look gaps: the backdrop landmark and the denser prop clusters around the characters.
+
+## v6: storybook landmark, framing fixes
+- Reel: newroad_v6.mp4 (66.2 s). Compare: compare_v6.jpg. QA: qa_v6.txt (edge warning fixed; WARN right safe column 0-4.8 s and 58.5-66.2 s, from the teal commuter).
+- **Landmark:** Hilltown's town hall now stands on its own hill on the skyline: walls, red and teal towers with waving flags, a gold clock tower. This mirrors the reference's far-hill castles with our own building.
+- **Floor emblem:** the decal is shrunk to sit under the pair's feet.
+- **Camera:** the opening and closing cameras are centred on the duo, so neither is cut on the push-in (outer-24 px warning gone).
+- Next (v7): move the duo closer together and shrink the decal again, to clear the right column.
