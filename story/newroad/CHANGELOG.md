@@ -44,3 +44,16 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
   - Mid ground is too dark (v0.61 vs 0.71).
   - Detail density: the reference packs the foreground with blurred props and gives every character a held prop; ours has bare floor at the bottom and empty hands.
   - The backdrop hills have no illustrated landmark.
+
+## v4: colour bands closer, held props
+- Reel: newroad_v4.mp4 (66.2 s). Compare: compare_v4.jpg. QA: qa_v4.txt (pass; WARN outer 24 px 0.8-3.2 s, where the steering wheel nears the left edge on the push-in).
+- **Fix for v3's band gap**, wide shot, ours v3 -> v4 (ref):
+  - Sky: s0.15 -> 0.20 (ref 0.25), from a bluer skyTop and skyMid.
+  - Mid ground: v0.61 -> 0.67 (ref 0.71); low ground v0.60 -> 0.72 (ref 0.59). Warmer ochre fields and a lighter road.
+  - Horizon unchanged at #e4d6b9 s0.19 (ref #e2dbcd s0.09).
+- **Held props**, like the reference's spears and shields: red commuters grip a steering wheel and teal ones carry a briefcase (a new `hold` callback in fable.js's arm code).
+- The floor emblem moved behind the pair so it no longer covers their legs.
+- Remaining gaps for v5:
+  - **Texture:** the reference's grass and floors are painterly, with mottling and hatching; ours are flat fills, most visibly on the overhead map.
+  - **Square foreground:** the lower third is bare tiles and the yellow road.
+  - **Edges:** the wheel touches the frame edge on the opening push-in.
