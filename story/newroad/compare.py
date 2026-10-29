@@ -5,10 +5,11 @@ import sys, subprocess, tempfile, pathlib
 from PIL import Image, ImageDraw, ImageStat
 import colorsys
 ref, ours, out = sys.argv[1:4]
-PAIRS = [  # (ref t, our t, label)
-    (1.0, 1.0, 'medium: characters + sign'), (8.0, 38.0, 'open/close prop'), (16.6, 8.0, 'wide: two sides, path to VP'),
-    (12.0, 15.0, 'overhead graphic'), (25.0, 24.5, 'night interior, candle'), (35.0, 44.5, 'blueprint + stamp'),
-    (29.0, 34.0, 'two sides in one shot'), (40.0, 50.5, 'character close-up')]
+PAIRS = [  # (ref t, our t, label); our times follow the current shot list (v2+)
+    (1.0, 1.0, 'medium: characters + sign'), (8.0, 61.0, 'open/close prop'), (16.6, 9.0, 'wide: two sides, path to VP'),
+    (12.0, 15.0, 'overhead graphic'), (25.0, 24.5, 'night interior, candle'), (35.0, 44.6, 'blueprint + stamp'),
+    (29.0, 34.0, 'two sides in one shot'), (40.0, 3.2, 'character close-up')]
+if len(sys.argv) > 4: PAIRS = [(a, float(b), c) for (a, _, c), b in zip(PAIRS, sys.argv[4].split(','))]
 tmp = pathlib.Path(tempfile.mkdtemp())
 def grab(src, t, name):
     p = tmp / f'{name}.png'; subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(t), '-i', src, '-frames:v', '1', str(p)], check=True); return Image.open(p).convert('RGB')
