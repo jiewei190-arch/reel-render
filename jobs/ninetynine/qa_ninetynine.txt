@@ -1,15 +1,15 @@
 QA ninetynine: WARN   (/home/user/reel-render/jobs/ninetynine/ninetynine.mp4, 67.8 s)
   PASS  static          longest no-change run 0.25 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
-  WARN  safe zones      right x>900 y900-1650: content 0.0-4.0s, 64.5-67.8s
-  WARN  outer 24 px     content at the frame edge 0.0-4.0s, 18.8-22.5s, 40.5-43.0s, 60.0-63.0s ...
+  WARN  safe zones      right x>900 y900-1650: content 0.0-3.8s, 31.2-34.8s
+  WARN  outer 24 px     content at the frame edge 0.5-2.8s, 14.2-16.5s, 18.8-22.5s, 40.5-43.0s
   PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
   PASS  true peak       -2.9 dBTP (WARN above -1.0, FAIL above 0.0)
   PASS  voice over bed  speech 14.0 dB above the pauses (16 pauses; FAIL < 3.5, WARN < 6.0)
   PASS  length          67.8 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 11.3 (min 1.0), contrast 53.3 (min 18.0)
+  PASS  frame 0         edge 12.0 (min 1.0), contrast 52.7 (min 18.0)
   PASS  blank frames    none
   PASS  9:16 frame      ninetynine.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 2% of samples (median widest bar 0 px)

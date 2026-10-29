@@ -135,3 +135,39 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 3. **Hook and end boards** still touch the right safe column.
 4. **Sky band** is a little paler (s .18 vs .25), and the reference's clouds have more contour arcs.
 5. **Fine texture.** The reference has more texture on characters' clothes (stitch seams, patterns) and props (wood grain).
+
+## v5 (Oct 29)
+**Changed: rebuilt on the owner's style module, as the main session asked.** The module is `reels/styles/storyfable/fable.js` from reference/story-fable, commit 6b5e283. The story, shots and props are unchanged.
+- **From the owner's module:**
+  - perspective camera, depth-sorted sprites, depth of field
+  - aerial haze: far shops now lift toward cream, which fixes most of v4's near-horizon gap
+  - sticker rim light and long sheared cast shadows on every near character
+  - the round-head characters with A-line robes, so the bakers now wear long red and teal robes with cream aprons
+  - painted sky and clouds, horizon haze band, whip-pan smear, post grade, captions
+- **Our props** moved to `reels/styles/storyfable/bakery_kit.js`:
+  - street and far hills
+  - bakeries, flip-digit boards, loaves, the penny
+  - the toque, loaf, cake and the bird gag are drawn with the module's own pen, so they get its rim light
+- **Two speed changes to fable.js** (marked "speed (ninetynine v5)"). The look is unchanged and sprites without a box behave as before.
+  - An optional sprite `box` limits filtered compositing to the sprite's screen rectangle.
+  - The rim halo and the sprite are stacked unfiltered and composited with the depth/haze filter once, instead of nine filtered full-canvas draws. A rim-lit figure went from 617 ms to 126 ms, a street frame from 7.4 s to 2.8 s.
+- The v1-v4 build is kept as `reels/t_ninetynine_v4.*` plus `styles/storyfable/fable_h2.js`.
+- **Measured bands** (ref 16.6 s vs ours 5.4 s):
+
+  | Band | Reference | v4 | v5 |
+  |---|---|---|---|
+  | Sky | s .25 | s .18 | s .23 |
+  | Near horizon | v .89 | v .65 | v .79 |
+  | Ground mid | s .51 | s .48 | s .56 |
+  | Ground low | s .57 | s .54 | s .63 |
+
+  Ground saturation is now a little high.
+- QA: WARN only.
+  - Right column: the hook board's edge, and the pushed-in blueprint.
+  - Outer 24 px.
+
+**Still off (biggest first)**
+1. **Set dressing density.** This is the owner's known gap. Every reference frame is packed with illustrated props: banners on poles, an anvil, barrels, spears, a castle on a hill, and a floor emblem close to the camera. Our street mediums show a shop, a lamp and grass.
+2. **Ground saturation** is 0.05-0.06 over the reference after the module's post contrast. The road palette needs pulling back a little.
+3. **Screen-space inserts** (blueprint, overhead, night till) don't use the module's rim light or cast shadows. The cashier has no rim.
+4. **Hook board** touches the right safe column.
