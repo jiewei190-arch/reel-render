@@ -16,7 +16,7 @@ Target: sit next to IFinity ("What If You Could Turn Invisible") and Awaken fram
 9. **Nobody stands frozen**: wrap every standing/sitting pose in `idle(pose, t, seed)` (breathing + weight shift). Gestures: `poseAt` / `reaction('shock'|'delight'|'wince'|'lookUp'|'sheepish', t, t0)` for snaps with overshoot, `talkGesture(t, seed)` for quoted lines only, `pointAndLook` (eyes first, arm 0.25 s later).
 10. Walking: `walkAlong(x, s, {kid})` locks the foot phase to world x so feet never slide; move x with a smooth function (about 150-170 units/s at s 1.9). Do NOT drive `walkPose` by time at a different speed.
 11. Eyes lead, bodies follow: give `look:` to every figure that notices something (`lookToward(dx,dy)`), 0.15-0.3 s before the body reaction.
-12. Only quoted lines (Mina, Dev, Dr Lin, Tomas) get `talk:`; the narrator is never lip-synced. The hero never talks.
+12. Only quoted lines get `talk:` (Mina, Dev, Dr Lin, Tomas, and the HERO on his two quoted lines s095/s104 only); the narrator is never lip-synced otherwise.
 13. Props in hands (phone, torch, cup) must actually be at `handWorld` of the pose; torches cast a `FX.lightCone` + `glow` from that hand.
 
 ## 3. Camera, depth, atmosphere
