@@ -57,3 +57,18 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
   - **Texture:** the reference's grass and floors are painterly, with mottling and hatching; ours are flat fills, most visibly on the overhead map.
   - **Square foreground:** the lower third is bare tiles and the yellow road.
   - **Edges:** the wheel touches the frame edge on the opening push-in.
+
+## v5: painterly texture
+- Reel: newroad_v5.mp4 (66.2 s). Compare: compare_v5.jpg. QA: qa_v5.txt.
+  - WARN: the right safe column (60-66 s) and the outer 24 px (opening and close).
+  - Both come from the new floor emblem decal, which is too big. This is a regression to fix in v6.
+- **Fix for v4's texture gap:**
+  - Built a painterly mottle tile once (soft light and dark blotches plus short hatch strokes) and laid it over every
+    outdoor ground with soft-light; it drifts with the camera.
+  - The overhead map is muted from bright checker greens to olive and gets the same mottle. It now reads much closer to the reference's painted field.
+- **Floor emblem** is now a ground decal (drawn under the sprites), so the commuters stand on it the way the reference's figures stand on the round red/teal floor badge.
+  - It came out too large: it fills the lower half and crosses the safe column.
+- Bands unchanged from v4.
+- Next (v6):
+  - shrink the decal to clear the safe zones and edges;
+  - then work on the remaining look gaps: the backdrop landmark and the denser prop clusters around the characters.
