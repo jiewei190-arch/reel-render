@@ -9,7 +9,7 @@
 ## Cast (signature item fixed for the whole video; code in scenes/cast.js)
 | Id | Role | Outfit | Notes / expressions |
 |---|---|---|---|
-| HERO ("you") | the viewer | mustard hoodie `#E1AD01`, dark-teal trousers `#1f5f66`, no headwear | calm smirk, awe, determined, squint; never talks (narrator is the voice) |
+| HERO ("you") | the viewer | mustard hoodie `#E1AD01`, dark-teal trousers `#1f5f66`, no headwear | calm smirk, awe, determined, squint; speaks only his two quoted lines (s095 "Lights out... Everybody.", s104 "Of course I did."), lip-synced to those words; otherwise the narrator is the voice and he never talks |
 | MINA | little sister | child scale, RED scarf `#d4262e`, dark top, hair bun | cheeky, worried, sleepy-smile; she has the twin hand warmer |
 | DEV | best friend | ORANGE beanie `#f08a24`, blue-grey tee | confused, suspicious, laughing, cheering |
 | DR LIN | scientist | white lab coat, round glasses, GREEN lanyard `#2fb85a` | thrilled, whispering, grinning in the dark |
