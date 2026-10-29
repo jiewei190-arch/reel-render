@@ -143,3 +143,11 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   3. **Detail energy** is now above the reference; the far houses could be hazier and blurrier.
   4. **Medium shots** lack the reference's coloured side light.
   5. **QA:** right-column WARN.
+
+## Paused (Oct 29)
+Paused at v6 (6ad11e3) for the owner's priority job (whatif "See in Complete Darkness", batch C). Next steps when resumed:
+- sky band saturation;
+- cream horizon haze in the wide;
+- haze/blur on the far houses (detail energy is above the reference);
+- coloured side light in the mediums;
+- move the teal side inward for a clean right-column QA.
