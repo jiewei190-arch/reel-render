@@ -21,13 +21,13 @@ Updated: 2026-10-28 ~14:40 UTC. Update this file whenever something below change
 ## Pace (owner, Oct 28 afternoon; HANDOFF rule 20)
 Production is pausing. Workers finish what's in flight, then rest. The buffer is full through Nov 17. Next: study the accounts (handoff/STUDY.md) before building more.
 
-## Open items
-- Every slot through Nov 17 is filled (EP 1-104). All four workers are resting until the Nov 2 study.
-- Parked: compass, helium (were EP 105-106).
-- First analytics read: owner pastes handoff/ANALYTICS_PULL.md into the PC session before Mon Nov 2; the weekly study on Nov 2 does the first study (handoff/STUDY_LOG.md).
-- Thanksgiving reels (unbadged until slotted ~Nov 22-26): popuptimer, cranberries, turkeysleepy.
-- Optional: barcode/faceid one-frame flashes (owner may re-upload).
-- Owner-only: YouTube phone verification (lifts the daily upload limit, enables custom thumbnails).
+## Open items (Oct 29)
+- **What If "See in Complete Darkness" (owner's new channel, job from the PC "Creator" session):** branch `whatif/see-in-dark` (base 4f77e31), brief at `whatif/CLOUD_JOB.md`.
+  - Batch A (s001-s039) = H2, batch B (s040-s081) = H3, batch C (s082-s120) = H4. Workers merge that branch into their own and push there.
+  - The main session copies their `scenes/shots/{A,B,C}_*.js` into `whatif/see-in-dark` and pushes. When all 120 pass: sheets + CLOUD_REPORT.md. No final render or mix (the PC does that).
+- **Story-fable look (handoff/STORYFABLE_JOB.md):** H1 continues the ice-cream reel from the owner's t_storytest/fable.js (branch `reference/story-fable` 6b5e283). H2-H4's story-fable reels are paused.
+- Inside Your Brain (Remotion): in progress, see series/inside-your-brain/HANDOFF.md; the owner moved it to Claude Code on the PC.
+- Posting: the owner posts by hand, 1 every 1-2 days (handoff/LAUNCH_ORDER.md). YouTube moved to the owner's aged account; TikTok to the owner's 3k-follower account.
 
 ## Scheduled check-ins
 - No hourly check-in any more (deleted Oct 28); worker messages wake the main session. Weekly review + study: trigger trig_01E7MHWPVzXj9wPm1rAKtG8X (Mondays 13:23 ET).
