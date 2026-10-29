@@ -1,0 +1,90 @@
+{
+ "name": "thermos",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  7,
+  8,
+  10,
+  11,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Your thermos has **no idea** if your drink is hot or cold.",
+   "Your thermos has no idea if your drink is hot or cold."
+  ],
+  [
+   "But then, **how does a thermos keep drinks hot and cold?**",
+   "But then, how does a thermos keep drinks hot and cold?"
+  ],
+  [
+   "It doesn't make heat or cold. It just **blocks heat** from crossing, **both ways.**",
+   "It doesn't make heat or cold. It just blocks heat from crossing, both ways."
+  ],
+  [
+   "Heat travels three ways: **conduction, convection** and **radiation.**",
+   "Heat travels three ways. Conduction, convection, and radiation."
+  ],
+  [
+   "So a thermos has **two walls,** with almost nothing between them: a **vacuum.**",
+   "So a thermos has two walls, with almost nothing between them. A vacuum."
+  ],
+  [
+   "Here's the trick: with no air, heat can't **conduct** across, and no **currents** can carry it.",
+   "Here's the trick. With no air, heat can't conduct across, and no currents can carry it."
+  ],
+  [
+   "That leaves **radiation:** invisible infrared light.",
+   "That leaves radiation. Invisible infrared light."
+  ],
+  [
+   "So the walls are **silvered,** like a mirror, to **bounce it back** inside.",
+   "So the walls are silvered, like a mirror, to bounce it back inside."
+  ],
+  [
+   "So where does heat still sneak out? **The top.**",
+   "So where does heat still sneak out? The top."
+  ],
+  [
+   "The two walls **join at the neck,** so that's where heat can still conduct.",
+   "The two walls join at the neck, so that's where heat can still conduct."
+  ],
+  [
+   "That's why the neck is **narrow,** and the stopper is **thick.**",
+   "That's why the neck is narrow, and the stopper is thick."
+  ],
+  [
+   "The idea came from **James Dewar,** who showed it in London on Christmas Day, 1892.",
+   "The idea came from James Dewar, who showed it in London on Christmas Day, eighteen ninety-two."
+  ],
+  [
+   "He built it to keep **super-cold liquid gases** cold, and he **never patented** it.",
+   "He built it to keep super-cold liquid gases cold, and he never patented it."
+  ],
+  [
+   "A German company later patented its own version, and called it **Thermos.**",
+   "A German company later patented its own version, and called it Thermos."
+  ],
+  [
+   "So hot stays hot and cold stays cold for the same reason: heat **can't get across.**",
+   "So hot stays hot and cold stays cold for the same reason. Heat can't get across."
+  ],
+  [
+   "Coffee or ice water in yours? **One word.**",
+   "Coffee or ice water in yours? One word."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

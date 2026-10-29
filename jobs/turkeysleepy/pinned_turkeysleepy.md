@@ -1,0 +1,1 @@
+Turkey gets blamed every year, but chicken has about as much tryptophan, and nobody naps after a chicken sandwich. It's the size of the feast (plus the pie). Do you nap after Thanksgiving dinner? Yes or no?

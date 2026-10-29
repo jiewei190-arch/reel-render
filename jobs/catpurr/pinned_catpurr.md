@@ -1,0 +1,1 @@
+Bonus: the "food purr" isn't in your head. In a 2009 study, people who'd never owned a cat still rated purrs with the hidden cry as more urgent and less pleasant. Is your cat a loud purrer? Yes or no?

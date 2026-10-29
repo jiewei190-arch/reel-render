@@ -1,0 +1,127 @@
+{
+ "id": "ep01",
+ "title": "You accidentally liked someone's photo from 2022",
+ "series": "Inside Your Brain",
+ "cast": {
+  "anxiety": {
+   "voice": "af_bella",
+   "speed": 1.16,
+   "pitch": 1.04
+  },
+  "logic": {
+   "voice": "bm_george",
+   "speed": 0.94,
+   "pitch": 1.0
+  },
+  "confidence": {
+   "voice": "am_michael",
+   "speed": 1.02,
+   "pitch": 0.93
+  }
+ },
+ "lines": [
+  {
+   "who": "anxiety",
+   "text": "Code red! Code red! We just double-tapped Jordan's photo... from 2022!",
+   "pre": 1.4
+  },
+  {
+   "who": "logic",
+   "text": "Okay. Nobody panic. We just unlike it.",
+   "pre": 0.5
+  },
+  {
+   "who": "anxiety",
+   "text": "They still get the notification! Now they know we were down there. In the archives. At two A M!"
+  },
+  {
+   "who": "confidence",
+   "text": "Easy. We like every photo they've ever posted. Then it looks like a strategy.",
+   "pre": 0.5
+  },
+  {
+   "who": "logic",
+   "text": "That's not a strategy. That's a confession."
+  },
+  {
+   "who": "anxiety",
+   "text": "Plan B! Throw the phone in a lake!",
+   "pre": 0.4
+  },
+  {
+   "who": "logic",
+   "text": "The like is on the internet. Not the phone.",
+   "pre": 1.2
+  },
+  {
+   "who": "confidence",
+   "text": "Then we throw the internet in a lake."
+  },
+  {
+   "who": "anxiety",
+   "text": "Delete the account! Change our name! Move to another country!",
+   "pre": 0.6
+  },
+  {
+   "who": "confidence",
+   "text": "I've always wanted to be a Gerald.",
+   "pre": 0.4
+  },
+  {
+   "who": "logic",
+   "text": "Or... we put the phone down. And act normal.",
+   "pre": 0.5
+  },
+  {
+   "who": "anxiety",
+   "text": "Act... normal?",
+   "pre": 0.6
+  },
+  {
+   "who": "confidence",
+   "text": "Never heard of it.",
+   "pre": 0.3
+  },
+  {
+   "who": "anxiety",
+   "text": "Incoming! Jordan replied!",
+   "pre": 1.4
+  },
+  {
+   "who": "anxiety",
+   "text": "Read it! No, don't read it! Okay, read it!",
+   "pre": 0.5
+  },
+  {
+   "who": "logic",
+   "text": "Ha ha, oh my god. I just accidentally liked your photo from 2019.",
+   "pre": 0.6
+  },
+  {
+   "who": "confidence",
+   "text": "They were in the archives too! Now we're even!",
+   "pre": 0.5
+  },
+  {
+   "who": "anxiety",
+   "text": "Oh, thank goodness.",
+   "pre": 0.4
+  },
+  {
+   "who": "confidence",
+   "text": "Now let's like one from 2015. Show them who's boss.",
+   "pre": 0.7
+  },
+  {
+   "who": "logic",
+   "text": "Don't touch that!",
+   "pre": 0.2
+  },
+  {
+   "who": "anxiety",
+   "text": "Code red!",
+   "pre": 1.0
+  }
+ ],
+ "tail": 2.2
+}

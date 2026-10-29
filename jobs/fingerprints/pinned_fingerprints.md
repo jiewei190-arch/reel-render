@@ -1,0 +1,1 @@
+Bonus: the touch idea comes from a lab sensor with a ridged "skin", not a living finger, so scientists still call it a leading idea, not a final answer (Scheibert et al., Science 2009). Can you feel the ridges on your fingertip? Yes or no? 👆

@@ -22,6 +22,7 @@ Read this before scripting any reel. When the owner (or a reviewer) says somethi
 | Oct 28 | darkeyes | only Wikipedia as a source | each reel cites at least one primary or institutional source (university, government, peer-reviewed) next to any encyclopaedia |
 | Oct 28 | barcode, onion (badges) | badge under TikTok's right-hand buttons | keep everything important out of x > 900, y 900-1650 (TikTok/Shorts buttons) and the bottom 220 px |
 | Oct 28 | skeleton, catseyes | labels caught mid-handwrite looked clipped in the contact sheet | check write-on text at its finished frame before calling it clipped |
+| Oct 28 | wetdog, planelift, turkeysleepy (storyboards) | same template as a reel 2-6 episodes earlier; a template not on the approved list; a male voice | check the last ~8 episodes' templates before picking (handoff/topics_next30.md + STYLE_FIT); only TEMPLATES.md styles; af_heart only |
 
 ## Craft rules learned so far (short version)
 1. The hook image is the template's most striking frame, already moving.
