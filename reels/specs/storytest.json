@@ -1,0 +1,17 @@
+{
+  "name": "storytest",
+  "voice": "am_michael",
+  "speed": 1.06,
+  "music": "popup",
+  "bpm": 104,
+  "lead": 0.3,
+  "tail": 1.4,
+  "breath": [1, 2, 3],
+  "phrases": [
+    ["Two ice cream carts.", "Two ice cream carts."],
+    ["One beach.", "One beach."],
+    ["Each one creeps to the middle...", "Each one creeps to the middle..."],
+    ["until they're side by side.", "until they're side by side."],
+    ["Forever.", "Forever."]
+  ]
+}
