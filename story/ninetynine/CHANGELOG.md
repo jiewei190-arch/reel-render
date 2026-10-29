@@ -31,3 +31,48 @@ Story-fable reel, "Why do prices end in .99?" Two rival bakeries, Red and Teal. 
 3. **Clouds.** The reference clouds are bigger and puffier, with blue-grey undersides and contour arcs. Ours are small and greyish.
 4. **Flat insert sets.** Our blueprint, overhead and night-till shots are flat graphics. The reference builds these in perspective too: the blueprint lies on a desk with a forge behind it, and the overhead is textured terrain.
 5. **Line weight.** The reference outlines are a little heavier, and its heads slightly bigger relative to the body.
+
+## v2 (Oct 29)
+**Fixed: the biggest v1 gap, set density and saturation.** The second gap, ground texture, is also mostly fixed.
+- **Far landscape:**
+  - pale mountain ridge with snowcaps
+  - two layers of green rolling hills with tree clumps and highlights
+  - lighter horizon mist
+- **Street:**
+  - the road is now a saturated dirt-cobble with highlighted stones near the camera and wheel ruts
+  - green grass verges with tufts and red/white flowers
+  - pavement slabs in varied tones
+  - 420 pebbles with highlights
+  - a darker band toward the bottom of the frame, like the reference's lower ground
+- **Colour coding:**
+  - red/teal bunting across the street
+  - a half-red/half-teal coin emblem painted in the road
+  - far-house roofs alternating red and teal
+- **Clouds:** bigger (scale 1.6), deeper blue sky.
+- **Grade:** vignette cut from .38 to .16 and bloom from .22 to .14, which had been washing out the colour.
+- **Characters:**
+  - outlines 4.5 → 5.5 px
+  - heads 44 → 48 radius
+  - bakers wear team-coloured tunics with cream aprons
+  - toque lobes no longer show inner outlines
+- **Blueprint (gap 4, started):** now a real set.
+  - a desk in perspective under a brick wall with a glowing bread oven and red/teal jars
+  - the sheet is laid on the desk in perspective
+  - a pen with a glowing tip draws the lines
+  - a candle in the foreground
+- **Band measurement** (`measure.py`, wide frame: ref 16.6 s vs ours 55 s). Ground mid and low now match on saturation:
+
+  | Band | Reference | v1 | v2 |
+  |---|---|---|---|
+  | Ground mid | s .51 | s .32 | s .49 |
+  | Ground low | s .57 | s .34 | s .56 |
+  | Whole frame | s .35, luma SD 49 | s .26, luma SD 43 | s .36, luma SD 48 |
+
+- QA: WARN only. The jar shelf sits in the top 150 px during the blueprint, and props touch the outer 24 px.
+
+**Still off (biggest first)**
+1. **Overhead and night-till sets are still flat graphics.** (Rebuilt for v3 but not in this render.)
+2. **Hook and end boards.** They sit small in a big empty foreground. The reference's opening prop shares the frame with characters and a foreground emblem.
+3. **Near horizon is too dark** (v .69 vs .89). The shops and characters sit in that band; the reference's band is open, cream haze.
+4. **Medium shots.** Their foreground blur props are boards and a queue customer, which hide too much of the frame.
+5. **Blueprint shelf** sits in the top safe zone.
