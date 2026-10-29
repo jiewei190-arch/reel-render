@@ -1,58 +1,88 @@
 // t_ninetynine.js: "Why do prices end in .99?" in template #30 "story fable" (reference: reference/story-fable, STYLE_STORY.md).
-// Our story and characters: two rival bakeries, Red (handlebar moustache) and Teal (goatee), facing each other across a cobbled street.
-// The price boards (flip digits) open and close the reel (loop). Every fact is a physical object: boards, a penny, a blueprint with the
-// finding stamped on it, an overhead queue map, a brass till for the cash-register legend ("UNPROVEN" stamp).
-// Camera roams inside each set, hard cuts / one whip pan / a light-flash, captions 1-2 words (Nunito 900) at y 1330.
-// Safe zones: top 250, bottom 1440, right column x>900 from y 840 (faces and key props kept out). Pure function of t.
-import { W, H, TAU, clamp, lerp, seg, ss, eo, eio, back, hash, mix, INK, HEAD, create, g, CAM, setCam, proj, put, flush, sky, cloud, farLand, street, ink, stick, dashes, castShadow, figure, priceBoard, bakery, loaf, coin, post, caption, chunks, mk, withCtx, RIM as RIMC } from './styles/storyfable/fable.js';
+// v5: built on the owner's style module styles/storyfable/fable.js (camera, depth of field, haze, rim light + cast shadows,
+// round-head characters, sky, clouds, whip-pan smear, post grade, captions). Our own props and sets live in
+// styles/storyfable/bakery_kit.js. Our story and characters: two rival bakeries, Red (handlebar moustache) and Teal (goatee),
+// facing each other across a cobbled street. The price boards (flip digits) open and close the reel (loop). Every fact is a
+// physical object: boards, a penny, a blueprint with the finding stamped on it, an overhead queue map, a brass till ("UNPROVEN").
+// Safe zones: top 250, bottom 1440, right column x>900 from y 840. Pure function of t.
+import { createFable, PAL } from './styles/storyfable/fable.js';
+import { W, H, TAU, clamp, lerp, seg, ss, eo, eio, back, hash, mk, INK, HEAD, RIM as RIMC, g, useFable, sync, CAM, proj, quad, farLand, street, ink, stick, dashes, castShadow, priceBoard, bakery, loaf, coin, chunks, withCtx } from './styles/storyfable/bakery_kit.js';
 await Promise.all(['900 60px Nunito', '700 40px Cinzel'].map(f => document.fonts.load(f)));
-create(document.getElementById('c'));
+const F = createFable(document.getElementById('c')); useFable(F);
 const TL = window.TL, PH = TL.p, s = i => PH[i].start, TOT = TL.total;
-const RED = '#c8443a', REDS = '#9b2f29', TEAL = '#1f8f8a', TEALS = '#16706c';
-const CH = chunks(PH);
+const RED = PAL.sideA, REDS = PAL.sideAD, REDL = PAL.sideAL, TEAL = PAL.sideB, TEALS = PAL.sideBD, TEALL = PAL.sideBL;
+const CAPS = chunks(PH).filter(c => c.i < PH.length - 1).map(c => ({ a: c.t0, b: c.t1 + .05, w: c.s }));
+const FIG = 235 / 640, BBOX = [-330, -1300, 330, 40], VBOX = [-230, -780, 230, 40];   // the owner's figure is ~640 units tall; ours stand ~2.35 m in world units (cm), as in v1-v4 framing
 
-// ---------------- camera keys ----------------
+// ---------------- camera keys (eased), mapped onto the owner's camera ----------------
 function camKeys(t, keys) { let a = keys[0], b = keys[keys.length - 1]; for (let i = 0; i < keys.length - 1; i++) if (t >= keys[i][0] && t < keys[i + 1][0]) { a = keys[i]; b = keys[i + 1]; break; } if (t >= b[0]) a = b;
-  const u = a === b ? 1 : eio((t - a[0]) / (b[0] - a[0])); const c = {}; for (const k of Object.keys(b[1])) c[k] = lerp(a[1][k] ?? b[1][k], b[1][k], u); setCam({ y: 150, hor: 840, f: 1150, dof: 1.8, ...c }); }
+  const u = a === b ? 1 : eio((t - a[0]) / (b[0] - a[0])); const c = {}; for (const k of Object.keys(b[1])) c[k] = lerp(a[1][k] ?? b[1][k], b[1][k], u);
+  const o = { y: 150, hor: 840, f: 1150, dof: 1.8, ...c }; o.dof *= 1.4; F.setCam(o); sync(); }
+
+// ---------------- cached props (drawn once per variant into an offscreen canvas; one filtered draw per frame) ----------------
+const CACHE = new Map();
+function cached(key, x0, y0, w, h, R, draw) { let c = CACHE.get(key); if (!c) { c = mk(Math.ceil(w * R), Math.ceil(h * R)); const cx = c.getContext('2d'); cx.scale(R, R); cx.translate(-x0, -y0); withCtx(cx, draw); CACHE.set(key, c); }
+  g.drawImage(c, x0, y0, w, h); }
+const house = (roof, win) => cached('house' + roof + win, -220, -560, 440, 580, 1, () => { ink(() => { g.beginPath(); g.rect(-160, -380, 320, 380); }, '#e8d9b8', { shade: '#d4c19c', sx: 60, lw: 6 }); ink(() => { g.beginPath(); g.moveTo(-190, -380); g.lineTo(0, -520); g.lineTo(190, -380); g.closePath(); }, roof, { lw: 6 }); ink(() => { g.beginPath(); g.rect(-60, -260, 120, 100); }, win, { lw: 5 }); });
+const lamp = () => cached('lamp', -40, -400, 80, 420, 2, () => { stick(0, 0, 0, -330, 0, 8); ink(() => { g.beginPath(); g.roundRect(-22, -380, 44, 54, 8); }, '#e9e2c8', { lw: 4 }); });
+const barrel = () => cached('barrel', -80, -160, 160, 170, 2, () => { ink(() => { g.beginPath(); g.roundRect(-60, -110, 120, 110, 12); }, '#8a5a34', { shade: '#6e4628', sx: 20, lw: 4 }); g.fillStyle = '#5c8a3a'; g.fillRect(-56, -118, 112, 10); for (let i = 0; i < 7; i++) { g.fillStyle = ['#e85a5a', '#f2c24e', '#ffffff'][i % 3]; g.beginPath(); g.arc(-48 + i * 16, -126 - 10 * hash(i), 12, 0, TAU); g.fill(); } });
+function board(title, value, prev, flip, team, o = {}) { if ((prev && flip < 1 && prev !== value) || o.glow != null) return priceBoard(title, value, prev, flip, team, o);
+  cached('board' + title + value + (o.unit || ''), -170, -260, 340, 400, 2, () => priceBoard(title, value, null, 1, team, o)); }
+function shop(name, team, teamS, t, mood) { cached('shop' + name + mood, -320, -800, 640, 820, 1.4, () => bakery(name, team, teamS, 0, { mood, lit: 0, smoke: false }));
+  for (let i = 0; i < 3; i++) { const u = (t * .25 + i / 3) % 1; g.fillStyle = `rgba(240,240,245,${.55 * (1 - u)})`; g.beginPath(); g.arc(167 + Math.sin(u * 6 + i) * 18, -790 - u * 220, 26 + u * 40, 0, TAU); g.fill(); }
+  g.save(); g.globalCompositeOperation = 'lighter'; const lg = g.createRadialGradient(-95, -140, 20, -95, -100, 420); lg.addColorStop(0, 'rgba(255,200,120,.15)'); lg.addColorStop(1, 'rgba(255,200,120,0)'); g.fillStyle = lg; g.fillRect(-520, -500, 840, 800); g.restore(); }
+
+// ---------------- characters: the owner's F.figure, dressed as our bakers and villagers ----------------
+// hand position of the figure's front arm (same construction as F.figure), for props held in the hand
+function hand(o) { const a = (o.armF ?? 75) * Math.PI / 180, b = ((o.armF ?? 75) + (o.bendF ?? 20)) * Math.PI / 180, ex = 56 + Math.cos(a) * 80, ey = -400 + Math.sin(a) * 80; return [ex + Math.cos(b) * 74, ey + Math.sin(b) * 74]; }
+function bob(o) { return Math.sin(((o.t || 0) + (o.phase || 0)) * Math.PI * 1.4) * 3; }
+function bakerFig(red, t, o = {}) { const f = { robe: red ? RED : TEAL, robeD: red ? REDS : TEALS, robeL: red ? REDL : TEALL, long: true, apron: PAL.cream, stache: red, goatee: !red, t, phase: red ? 0 : .45, ...o };
+  F.figure(f); const by = bob(f) - 548;   // then a toque (white puffed hat with a team band), drawn with the module's own pen so it gets the rim light too
+  const puffs = [F.ell(-52, by - 132, 56, 52), F.ell(52, by - 132, 56, 52), F.ell(0, by - 160, 68, 62)];
+  puffs.forEach(p => F.fs(p, null, 11)); puffs.forEach(p => F.fs(p, '#fbf8f0', 0)); F.fs(F.rr(-86, by - 120, 172, 52, 8), '#fbf8f0', 5);
+  F.fs(F.rr(-87, by - 92, 174, 22, 5), red ? RED : TEAL, 4);
+  const m = f.flip ? -1 : 1;   // F.figure mirrors itself inside; props drawn here mirror their x by hand
+  if (f.loaf) { const [hx0, hy] = hand(f), hx = m * hx0 - (m < 0 ? 28 : 0); const lf = F.ell(hx + 14, hy + bob(f) - 26, 74, 40); F.fs(lf, '#d9944a', 5); F.shade(lf, '#b8763a', 14, 10); F.fs(lf, null, 5); for (let i = -1; i <= 1; i++) F.line([[hx + 14 + i * 26 - 10, hy + bob(f) - 46], [hx + 14 + i * 26 + 10, hy + bob(f) - 16]], 5, '#f6d9a6'); }
+  if (f.cake) { const [hx0, hy] = hand(f), hx = m * hx0, cx = hx + 10 * m, cy = hy + bob(f) - 10; const t1 = F.rr(cx - 84, cy - 70, 168, 70, 14), t2 = F.rr(cx - 56, cy - 128, 112, 60, 14);
+    F.fs(t1, '#f2b8c6', 5); F.shade(t1, '#d995a6', 20, 0); F.fs(t1, null, 5); F.fs(t2, '#fbe6ea', 5); F.shade(t2, '#efc9d1', 14, 0); F.fs(t2, null, 5); F.fs(F.ell(cx, cy - 146, 16, 16), '#d8343a', 4); }
+  if (f.bird > 0) { const yb = by - 236 - (1 - ss(f.bird)) * 500, xb = m * (10 + (1 - ss(f.bird)) * 300); const bd = F.ell(xb, yb, 38, 28); F.fs(bd, '#7a6a5a', 5); F.fs(F.ell(xb + 30, yb - 22, 20, 18), '#7a6a5a', 4); F.fs(F.poly([[xb + 48, yb - 24], [xb + 66, yb - 18], [xb + 48, yb - 14]]), PAL.gold, 3); F.fs(F.ell(xb + 34, yb - 26, 4, 4), INK, 0);
+    if (f.bird < 1) F.fs(F.poly([[xb - 10, yb - 10], [xb - 60, yb - 60 + 40 * Math.sin(t * 40)], [xb + 10, yb - 20]]), '#8f7e6c', 4); }
+}
+const CUST = [['#d9a441', '#b78327', '#ecc06a'], ['#7d5aa6', '#5f4383', '#9a7cc0'], ['#6f8f5a', '#55703f', '#8fae78'], ['#c27a8a', '#9e5d6c', '#d99aa8'], ['#5a7ea6', '#425f83', '#7c9cc2'], ['#b98a5a', '#966a3f', '#d0a676']];
+function villager(i, t, o = {}) { const [c, cd, cl] = CUST[i % CUST.length]; F.figure({ robe: c, robeD: cd, robeL: cl, long: i % 3 === 2, stripes: i % 4 === 3, stache: i % 3 === 0, hat: ['none', 'bucket', 'none', 'paper', 'bucket'][i % 5], hatCol: cd, t, phase: hash(i) * 2, ...o }); }
 
 // ---------------- the street set ----------------
-const CUST = [['#d9a441', '#b78327'], ['#7d5aa6', '#5f4383'], ['#6f8f5a', '#55703f'], ['#c27a8a', '#9e5d6c'], ['#5a7ea6', '#425f83'], ['#b98a5a', '#966a3f']];
-function baker(side, t, o = {}) { const red = side < 0; return figure({ col: red ? RED : TEAL, colS: red ? REDS : TEALS, apron: '#f4eedf', hat: 'toque', hatBand: red ? RED : TEAL, stache: red ? 'handle' : null, goatee: !red, t, ...o }); }
-function customer(i, t, o = {}) { const [c, cs] = CUST[i % CUST.length]; return figure({ col: c, colS: cs, stache: i % 3 === 0 ? 'brush' : null, hat: i % 4 === 1 ? 'cap' : null, hatBand: cs, t, scale: .92, ...o }); }
+// sprites: F.put(X, Z, size, draw, { sharp, rim, shadow }) — the module sorts them, blurs by depth and hazes the far ones
 function world(t, o = {}) { const { mood = 0, redQ = 2, tealQ = 5, boards = ['3.00', '2.99'], prev = null, flip = 1, bakersOn = true, walkIn = 1, bird = 0, bk = [620, 1050], bx = 158, bz = 900 } = o;
-  sky(t, mood); if (mood !== 2) { cloud(200 + t * 6, 260, 1.6, 3); cloud(880 + t * 4, 150, 1.3, 7); cloud(640 + t * 5, 700, 1.1, 11); cloud(60 + t * 3, 740, .8, 5, .95); } farLand(t, mood); street(t, { mood });
-  put(-900, 0, 1500, (g2, p) => bakery('RED', RED, REDS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
-  put(900, 0, 1500, (g2, p) => bakery('TEAL', TEAL, TEALS, t, { mood }), { hazeBox: [-300, -800, 600, 820] });
-  // street lamps + far houses
-  for (const sd of [-1, 1]) for (let z = 2400; z < 7000; z += 1100) put(sd * 1100, 0, z, () => { ink(() => { g.beginPath(); g.rect(-160, -380, 320, 380); }, mood === 2 ? '#6a6688' : '#e8d9b8', { shade: mood === 2 ? '#56537a' : '#d4c19c', sx: 60, lw: 5 }); ink(() => { g.beginPath(); g.moveTo(-190, -380); g.lineTo(0, -520); g.lineTo(190, -380); g.closePath(); }, (Math.round(z / 1100) + (sd > 0 ? 1 : 0)) % 2 ? (mood === 2 ? '#5a3550' : '#c0503f') : (mood === 2 ? '#2e4a5a' : '#2a8a84'), { lw: 5 }); ink(() => { g.beginPath(); g.rect(-60, -260, 120, 100); }, mood === 2 ? '#f5c66b' : '#9cc0d8', { lw: 4 }); }, { hazeBox: [-200, -540, 400, 560] });
-  for (const sd of [-1, 1]) put(sd * 420, 0, 1100, () => { stick(0, 0, 0, -330, 0, 8); ink(() => { g.beginPath(); g.roundRect(-22, -380, 44, 54, 8); }, mood === 2 ? '#ffd27a' : '#e9e2c8', { lw: 4 }); if (mood === 2) { g.save(); g.globalCompositeOperation = 'lighter'; const lg = g.createRadialGradient(0, -352, 4, 0, -352, 160); lg.addColorStop(0, 'rgba(255,210,120,.6)'); lg.addColorStop(1, 'rgba(255,210,120,0)'); g.fillStyle = lg; g.fillRect(-160, -512, 320, 320); g.restore(); } });
-  // bunting: a string of red and teal pennants strung across the street, two rows
-  for (const bz of [1100, 2300]) { const a = proj(-420, 360, bz), b = proj(420, 360, bz); if (a && b) { const sag = 60 * a.k; g.save(); g.strokeStyle = INK; g.lineWidth = Math.max(1.2, 2.2 * a.k); g.beginPath(); g.moveTo(a.x, a.y); g.quadraticCurveTo((a.x + b.x) / 2, a.y + sag * 2, b.x, b.y); g.stroke();
+  F.sky(t); farLand(t, mood); street(t, { mood }); F.horizonHaze(.55);
+  // bunting across the street, two rows
+  for (const bz2 of [1100, 2300]) { const a = proj(-420, 360, bz2), b = proj(420, 360, bz2); if (a && b) { const sag = 60 * a.k; g.save(); g.strokeStyle = INK; g.lineWidth = Math.max(1.2, 2.2 * a.k); g.beginPath(); g.moveTo(a.x, a.y); g.quadraticCurveTo((a.x + b.x) / 2, a.y + sag * 2, b.x, b.y); g.stroke();
     for (let i = 1; i < 12; i++) { const u = i / 12, x = lerp(a.x, b.x, u), y = (1 - u) * (1 - u) * a.y + 2 * u * (1 - u) * (a.y + sag * 2) + u * u * b.y, w = 15 * a.k, sw = Math.sin(t * 3 + i) * 3 * a.k;
-      g.fillStyle = i % 2 ? (mood === 2 ? '#7a3045' : RED) : (mood === 2 ? '#1f5056' : TEAL); g.strokeStyle = INK; g.lineWidth = Math.max(1, 1.6 * a.k); g.beginPath(); g.moveTo(x - w, y); g.lineTo(x + w, y); g.lineTo(x + sw, y + 30 * a.k); g.closePath(); g.fill(); g.stroke(); } g.restore(); } }
+      g.fillStyle = i % 2 ? RED : TEAL; g.strokeStyle = INK; g.lineWidth = Math.max(1, 1.6 * a.k); g.beginPath(); g.moveTo(x - w, y); g.lineTo(x + w, y); g.lineTo(x + sw, y + 30 * a.k); g.closePath(); g.fill(); g.stroke(); } g.restore(); } }
   // painted floor emblem in the road: a coin, half red half teal
-  { const EZ = o.emZ === 'near' ? CAM.z + 460 : o.emZ ?? 600, R0 = 150, N = 28, ring = (rad, a0, a1) => { const P = []; for (let i = 0; i <= N; i++) { const a = lerp(a0, a1, i / N); P.push(proj(Math.cos(a) * rad, 0, EZ + Math.sin(a) * rad)); } return P; };
-    const half = (a0, a1, col) => { const P = ring(R0, a0, a1); if (P.some(p => !p)) return; g.beginPath(); const c = proj(0, 0, EZ); g.moveTo(c.x, c.y); P.forEach(p => g.lineTo(p.x, p.y)); g.closePath(); g.fillStyle = col; g.fill(); };
-    half(Math.PI / 2, Math.PI * 1.5, mood === 2 ? '#6a3a50' : '#c75a48'); half(-Math.PI / 2, Math.PI / 2, mood === 2 ? '#2a5560' : '#2f8f86');
+  { const EZ = o.emZ ?? 600, R0 = 150, N = 28, ring = (rad, a0, a1) => { const P = []; for (let i = 0; i <= N; i++) { const a = lerp(a0, a1, i / N); P.push(proj(Math.cos(a) * rad, 0, EZ + Math.sin(a) * rad)); } return P; };
+    const half = (a0, a1, col) => { const P = ring(R0, a0, a1); const c = proj(0, 0, EZ); if (!c || P.some(p => !p)) return; g.beginPath(); g.moveTo(c.x, c.y); P.forEach(p => g.lineTo(p.x, p.y)); g.closePath(); g.fillStyle = col; g.fill(); };
+    half(Math.PI / 2, Math.PI * 1.5, '#c75a48'); half(-Math.PI / 2, Math.PI / 2, '#2f8f86');
     const P = ring(R0, 0, TAU); if (!P.some(p => !p)) { g.beginPath(); P.forEach((p, i) => i ? g.lineTo(p.x, p.y) : g.moveTo(p.x, p.y)); g.closePath(); g.strokeStyle = '#f2e3bf'; g.lineWidth = 6 * P[0].k; g.stroke(); g.strokeStyle = INK; g.lineWidth = 2.5 * P[0].k; g.stroke(); }
     const c = proj(0, 0, EZ); if (c) { g.save(); g.translate(c.x, c.y); g.scale(c.k, c.k * .32); g.fillStyle = '#f7ead0'; g.font = '700 150px Cinzel'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('¢', 0, 10); g.restore(); } }
+  // shops, far houses (roofs alternate red / teal), lamps
+  F.put(-900, 1500, 1, () => shop('RED', RED, REDS, t, mood)); F.put(900, 1500, 1, () => shop('TEAL', TEAL, TEALS, t, mood));
+  for (const sd of [-1, 1]) for (let z = 2400; z < 7000; z += 1100) F.put(sd * 1100, z, 1, () => house((Math.round(z / 1100) + (sd > 0 ? 1 : 0)) % 2 ? '#c0503f' : '#2a8a84', '#9cc0d8'));
+  for (const sd of [-1, 1]) F.put(sd * 420, 1100, 1, lamp);
   // price boards
-  put(-bx, 0, bz, () => priceBoard('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
-  put(bx, 0, bz, () => priceBoard('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });
-  // bakers by their doors
-  if (bakersOn) { put(-bk[0], 0, bk[1], () => baker(-1, t, { expr: o.redExpr || 'glare', look: .6, turn: .3, armF: { x: 52, y: -100, bend: 12 }, talk: o.redTalk || 0, bird, ...(o.redO || {}) }));
-    put(bk[0], 0, bk[1], () => baker(1, t, { expr: o.tealExpr || 'smug', look: -.6, turn: -.3, armF: { x: 40, y: -160, bend: 20 }, hold: (x, y) => loaf(x + 6, y - 20, .9), talk: o.tealTalk || 0 })); }
-  // queues
-  for (let i = 0; i < tealQ; i++) { const z = 1150 - i * 120, x = 560 - i * 30 + (1 - walkIn) * (i * 160 - 500); put(x, 0, z, () => customer(i, t, { look: .8, turn: .2, walk: walkIn < 1 ? (t * 1.6 + i * .3) % 1 : -1 })); }
-  for (let i = 0; i < redQ; i++) { const z = 1150 - i * 120, x = -560 + i * 30; put(x, 0, z, () => customer(i + 3, t, { look: -.8, turn: -.2, expr: 'neutral' })); }
-  // foreground element: a flower barrel near the camera (blurred)
-  const fs = o.fg ?? -1; if (fs) put(CAM.x + fs * 230, 0, CAM.z + 330, () => { ink(() => { g.beginPath(); g.roundRect(-60, -110, 120, 110, 12); }, '#8a5a34', { shade: '#6e4628', sx: 20, lw: 4 }); for (let i = 0; i < 7; i++) { g.fillStyle = ['#e85a5a', '#f2c24e', '#ffffff'][i % 3]; g.beginPath(); g.arc(-48 + i * 16, -126 - 10 * hash(i), 12, 0, TAU); g.fill(); } g.fillStyle = '#5c8a3a'; g.fillRect(-56, -118, 112, 10); });
-  flush();
+  F.put(-bx, bz, 1, () => board('RED', boards[0], prev ? prev[0] : null, flip, RED, o.boardO0 || {}), { sharp: !!o.sharpBoards });
+  F.put(bx, bz, 1, () => board('TEAL', boards[1], prev ? prev[1] : null, flip, TEAL, o.boardO1 || {}), { sharp: !!o.sharpBoards });
+  // bakers (rim light + long cast shadow from the module)
+  if (bakersOn) { F.put(-bk[0], bk[1], FIG, () => bakerFig(true, t, { expr: o.redExpr || 'glare', look: .6, turn: .3, armF: 80, bendF: -30, talk: o.redTalk || 0, bird, ...(o.redO || {}) }), { rim: true, shadow: true, box: BBOX });
+    F.put(bk[0], bk[1], FIG, () => bakerFig(false, t, { expr: o.tealExpr || 'smug', look: -.6, turn: -.3, armF: -10, bendF: -40, loaf: true, talk: o.tealTalk || 0, flip: true }), { rim: true, shadow: true, box: BBOX }); }
+  // queues of villagers
+  for (let i = 0; i < tealQ; i++) { const z = 1150 - i * 120, x = 560 - i * 30 + (1 - walkIn) * (i * 160 - 500); F.put(x, z, FIG * .92, () => villager(i, t, { look: .8, turn: .2, walk: walkIn < 1 ? (t * 1.6 + i * .3) % 1 : -1 }), { rim: i < 3, shadow: i < 3, box: VBOX }); }
+  for (let i = 0; i < redQ; i++) { const z = 1150 - i * 120, x = -560 + i * 30; F.put(x, z, FIG * .92, () => villager(i + 3, t, { look: -.8, turn: -.2, expr: 'neutral', flip: true }), { rim: i < 2, shadow: i < 2, box: VBOX }); }
+  // foreground: a flower barrel near the lens (blurred by the module's depth of field)
+  const fs = o.fg ?? -1; if (fs) F.put(CAM.x + fs * 230, CAM.z + 330, 1, barrel);
+  F.flush();
 }
 
-// a two-tier birthday cake with a round tag (the round-price twist)
-function cake(x, y) { g.save(); g.translate(x, y); ink(() => { g.beginPath(); g.roundRect(-46, -40, 92, 40, 8); }, '#f2b8c6', { shade: '#d995a6', sx: 20, lw: 3.5 }); ink(() => { g.beginPath(); g.roundRect(-30, -72, 60, 34, 8); }, '#fbe6ea', { shade: '#efc9d1', sx: 12, lw: 3.5 });
-  ink(() => { g.beginPath(); g.arc(0, -82, 9, 0, TAU); }, '#d8343a', { lw: 3 }); dashes([[-40, -20], [40, -20]], 'rgba(255,255,255,.8)', 2.5); g.restore(); }
 // ---------------- other sets (screen space) ----------------
 const SC = mk(840, 940);
 function sheetContent(k) {   // the blueprint sheet itself (840x940), drawn flat into SC, later laid onto the desk in perspective
@@ -148,7 +178,7 @@ function nightTill(t, t0) { const k = t - t0;   // night, inside the shop: panel
   const pk = back(seg(k, .3, .6), 2); if (pk > 0) { g.save(); g.translate(280, 450); g.rotate(-.06); g.scale(pk, pk); ink(() => { g.beginPath(); g.rect(-200, -140, 400, 280); }, '#efe0bd', { lw: 5, shade: '#e0cca2', sx: 120 }); ink(() => { g.beginPath(); g.arc(0, -122, 12, 0, TAU); }, '#c8443a', { lw: 3, rim: false }); g.fillStyle = INK; g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = '700 50px Cinzel'; g.fillText('LEGEND', 0, -70); g.font = '700 32px Cinzel'; g.fillText('odd price =', 0, -8); g.fillText('open the till', 0, 38); g.fillText('for change', 0, 84);
     const st = seg(k, 4.6, 4.85); if (st > 0) { g.save(); g.translate(10, 10); g.rotate(-.16); const sc = lerp(2.2, 1, eo(st)); g.scale(sc, sc); g.globalAlpha = clamp(st * 2) * .92; g.strokeStyle = '#d8382c'; g.lineWidth = 9; g.strokeRect(-190, -54, 380, 108); g.fillStyle = '#d8382c'; g.font = '700 58px Cinzel'; g.fillText('UNPROVEN', 0, 6); g.restore(); } g.restore(); }
   // the cashier behind the counter (only the top half shows)
-  const dr = ss(seg(k, 1.4, 1.9)); g.save(); g.translate(330, 1290); g.scale(2.7, 2.7); figure({ col: '#7d5aa6', colS: '#5f4383', hat: 'cap', hatBand: '#2a8a84', stache: 'brush', expr: dr > .5 ? 'shock' : 'sly', look: dr > .5 ? .9 : .3, turn: dr > .5 ? .5 : .1, t, shadow: false, armF: { x: 64, y: -110 + 20 * dr, bend: 10 } }); g.restore();
+  const dr = ss(seg(k, 1.4, 1.9)); g.save(); g.translate(330, 1290); g.scale(1.0, 1.0); F.figure({ robe: '#7d5aa6', robeD: '#5f4383', robeL: '#9a7cc0', hat: 'paper', hatCol: TEAL, stache: true, expr: dr > .5 ? 'shock' : 'sly', look: dr > .5 ? .9 : .3, turn: dr > .5 ? .5 : .1, t, armF: -20 + 30 * dr, bendF: 10 }); g.restore();
   // counter: top surface + plank front
   ink(() => { g.beginPath(); g.moveTo(-100, 1000); g.lineTo(W + 100, 1000); g.lineTo(W + 100, 1080); g.lineTo(-100, 1080); g.closePath(); }, '#9a6a3e', { lw: 6, rim: false });
   ink(() => { g.beginPath(); g.rect(-100, 1080, W + 200, 1200); }, '#6b4428', { lw: 6, rim: false }); for (let x = -100; x < W + 100; x += 110) { g.strokeStyle = 'rgba(30,15,10,.5)'; g.lineWidth = 4; g.beginPath(); g.moveTo(x, 1080); g.lineTo(x, 2280); g.stroke(); } g.strokeStyle = 'rgba(30,15,10,.6)'; g.lineWidth = 8; g.beginPath(); g.moveTo(-100, 1180); g.lineTo(W + 100, 1180); g.stroke();
@@ -181,22 +211,22 @@ const SH = [
   [s(12) - .15, s(13) - .15, t => { const u = seg(t, s(12), s(12) + 1.2); camKeys(t, [[s(12) - .15, { x: -360, z: 300, focus: 700, dof: 6 }], [s(13), { x: -380, z: 360, focus: 640, dof: 6 }]]);
     world(t, { mood: u < .5 ? 1 : 0, boards: ['2.99', '2.99'], prev: ['3.00', '2.99'], flip: seg(t, s(12) + 1.4, s(12) + 2.2), sharpBoards: true, redExpr: 'sly', fg: -1, bx: 330 }); if (u < 1) { g.save(); g.globalCompositeOperation = 'multiply'; g.globalAlpha = .5 * (1 - u); g.fillStyle = '#f3a46b'; g.fillRect(0, 0, W, H); g.restore(); } }],
   [s(13) - .15, s(14) - .15, t => { camKeys(t, [[s(13) - .15, { x: 0, z: -740, focus: 1100, dof: 1.8 }], [s(13) + 1.5, { x: -70, z: -660, focus: 1100, dof: 1.8 }], [s(14), { x: 50, z: -580, focus: 1100, dof: 1.8 }]]); world(t, { boards: ['2.99', '2.99'], redQ: 4, tealQ: 4, bird: seg(t, s(13) + 1.0, s(13) + 1.6), bk: [175, -40] }); }],
-  [s(14) - .15, s(15) - .15, t => { camKeys(t, [[s(14) - .15, { x: -540, z: 200, focus: 600, dof: 6 }], [s(15), { x: -520, z: 280, focus: 520, dof: 6 }]]); world(t, { boards: ['10.00', '2.99'], sharpBoards: true, bk: [720, 800], bx: 470, boardO0: { unit: 'per cake' }, redExpr: 'smug', redO: { armF: { x: 54, y: -118, bend: 10 }, hold: (x, y) => cake(x + 4, y - 6) }, fg: 1 }); }],
+  [s(14) - .15, s(15) - .15, t => { camKeys(t, [[s(14) - .15, { x: -540, z: 200, focus: 600, dof: 6 }], [s(15), { x: -520, z: 280, focus: 520, dof: 6 }]]); world(t, { boards: ['10.00', '2.99'], sharpBoards: true, bk: [720, 800], bx: 470, boardO0: { unit: 'per cake' }, redExpr: 'smug', redO: { armF: -10, bendF: -40, cake: true }, fg: 1 }); }],
   [s(15) - .15, s(16) - .1, t => { camKeys(t, [[s(15) - .15, { x: 0, z: 460, focus: 440, dof: 6 }], [s(16), { x: 0, z: 520, focus: 380, dof: 6 }]]); world(t, { boards: ['2.99', '2.99'], redExpr: 'glare', tealExpr: 'glare', bk: [95, 900], bx: 330, fg: -1 }); }],
   [s(16) - .1, TOT + 1, t => { camKeys(t, [[s(16) - .1, { x: 0, y: 200, z: 20, focus: 900, dof: 3 }], [TOT, { x: 0, y: 190, z: 120, focus: 900, dof: 4 }]]); world(t, { boards: ['2.99', '2.99'], sharpBoards: true, fg: -1, bk: [175, -40] }); }],
 ];
 function render(t) { g.setTransform(1, 0, 0, 1, 0, 0); g.filter = 'none'; g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
   const i = SH.findIndex(([a, b]) => t >= a && t < b); const [a, b, fn] = SH[i < 0 ? SH.length - 1 : i]; fn(t);
   // whip pan smear around the red→teal cut; light flash into the night till
-  for (const wc of [s(3) - .1, s(13) - .15]) { const dw = Math.abs(t - wc); if (dw < .16) { const sm = (1 - dw / .16) * 60; g.save(); g.filter = `blur(${sm.toFixed(0)}px)`; g.drawImage(g.canvas, t < wc ? -sm * 2 : sm * 2, 0); g.restore(); } }
+  for (const wc of [s(3) - .1, s(13) - .15]) { const dw = Math.abs(t - wc); if (dw < .16) F.smear((1 - dw / .16) * 260); }
   const fc = s(11) - .2, df = Math.abs(t - fc); if (df < .2) { g.save(); g.globalCompositeOperation = 'lighter'; g.globalAlpha = (1 - df / .2) * .85; g.fillStyle = '#ffd9a0'; g.fillRect(0, 0, W, H); g.restore(); }
-  post(t, { warm: SH[i]?.[0] === s(11) - .2 ? .1 : 0 });
-  const c = CH.find(c => t >= c.t0 && t < c.t1 + .05 && c.i < PH.length - 1); if (c) caption(c.s, 1330);
+  F.post(t);
+  F.captions(CAPS, t, 1330);
   const L = TOT - t; if (L < .35) { g.save(); g.globalAlpha = (1 - L / .35) * .35; g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.restore(); }
 }
-window.DUR = TOT;
+window.DUR = TOT; window.__F = F; window.__world = world; window.__camKeys = camKeys;
 window.seek = t => render(t);
 window.render = window.seek;
-window.thumb = () => { const t = 1.2; camKeys(t, [[0, { x: 0, z: 60, focus: 900, dof: 3 }]]); g.setTransform(1, 0, 0, 1, 0, 0); world(t, { sharpBoards: true }); post(t);
+window.thumb = () => { const t = 1.2; camKeys(t, [[0, { x: 0, y: 190, z: 120, focus: 900, dof: 4 }]]); g.setTransform(1, 0, 0, 1, 0, 0); world(t, { sharpBoards: true }); F.post(t);
   g.save(); g.font = '900 120px Nunito'; g.textAlign = 'center'; g.lineJoin = 'round'; g.strokeStyle = '#1a1420'; g.lineWidth = 18; g.strokeText('WHY .99?', 540, 330); g.fillStyle = '#fff'; g.fillText('WHY .99?', 540, 330); g.restore(); };
 window.seek(0); window.ready = true; window.READY = true;
