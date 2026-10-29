@@ -9,7 +9,7 @@ import { thermalView, heat, heatActor, heatDeer, heatFox, heatOwl, heatGecko, he
 import { chip, ruleCard, darkness } from '../sets/hud.js';
 import { blinkFlag, exprAt, poseAt, idle, talkGesture, reaction, walkAlong, lookToward, camMove, atmos } from '../sets/acting.js';
 import * as BP from '../sets/bp.js';
-import { shotWord, handWorld, scr, EXTRAS, hangingRain } from './C_lib.js';
+import { shotWord, handWorld, scr, EXTRAS, hangingRain, coldForms, coldRain, hunt } from './C_lib.js';
 
 const torchBeam = (g, hx, hy, ang, a = 1, len = 1300) => { FX.lightCone(g, hx, hy, { angle: ang, spread: 0.38, len, color: '#f4f8ff', a: 0.4 * a }); glow(g, hx, hy, 90, '#ffffff', 0.6 * a); };
 
@@ -132,16 +132,18 @@ registerShot('s088', { draw(g, t, info) {
 } });
 
 // s089 — THERMAL close on the ledge: "Her skin is cool, and she's blending into the rock."  nothing marked
+const REF089 = { z: 1.75, x: -90, y: 100 };
 registerShot('s089', { draw(g, t, info) {
   const st = info.shot.start, tCool = shotWord('cool', st, 0.9), tBlend = shotWord('blending', st, 2.0), F0 = { ledgeX: E.W / 2 + 120, ledgeY: forestGround() - 150 };
   const cam = { z: lerp(1.75, 1.95, ease.inOut(t / info.dur)), x: -90 + Math.sin(t * 0.5) * 6, y: 100 + Math.cos(t * 0.4) * 4 }, GY = forestGround();
   thermalView(g, t, {
     coldGain: 0.95, coldMax: 0.4, halo: 8, haloGain: 0.18,
-    cold: (c) => forest(c, t, cam, { view: 'cave', rain: true }),
+    cold: (c) => { forest(c, t, cam, { view: 'cave', rain: true }); coldForms(c, t, cam, REF089); coldRain(c, t, { count: 110, a: 0.55, seed: 17 }); },
     hot: (c) => layer(c, cam, 1, (c) => { const mx = F0.ledgeX - 250, br = 1 + 0.02 * Math.sin(t * 2.3); c.fillStyle = heat(0.288); c.beginPath(); c.ellipse(mx, GY - 66, 118 * br, 70 * br, -0.08, 0, 7); c.fill(); c.beginPath(); c.arc(mx + 96, GY - 118, 44, 0, 7); c.fill(); c.fillStyle = heat(0.297); c.beginPath(); c.arc(mx + 104, GY - 124, 30, 0, 7); c.fill(); heatBlob(c, mx + 30, GY - 80, 170, 110, 0.03, 0.9);   /* a curled small shape, barely warmer than the rock */ }),
-    hud: { label: 'THERMAL', temp: `${Math.round(lerp(26, 22, ease.out(prog(t, tCool, tBlend + 0.6))))} C` },
+    /* the crosshair hunts the rock and never locks: nothing warm enough to mark */
+    hud: { label: 'THERMAL', temp: `${Math.round(lerp(26, 22, ease.out(prog(t, tCool, tBlend + 0.6))))} C`, track: hunt(t, [[E.W * 0.7, E.H * 0.3], [E.W * 0.42, E.H * 0.36], [E.W * 0.78, E.H * 0.7], [E.W * 0.22, E.H * 0.24], [E.W * 0.55, E.H * 0.62]], 1.05) },
   });
-  FX.rain(g, t, { count: 150, angle: 0.18, color: '#3a2a70', a: 0.45, seed: 17 });
+  FX.rain(g, t, { count: 90, angle: 0.18, color: '#5a4a90', a: 0.35, seed: 18 });
 } });
 
 // s090 — "Ranger Tomas, in his blue cap, shouts that it's hopeless,"  Tomas shouts into the rain, torch in hand; HERO and DEV behind

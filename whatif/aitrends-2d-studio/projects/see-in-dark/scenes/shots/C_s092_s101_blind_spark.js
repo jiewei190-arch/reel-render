@@ -11,7 +11,7 @@ import { chip, darkness } from '../sets/hud.js';
 import { giantFace, faceAt } from '../sets/faces.js';
 import { blinkFlag, blinkAmt, exprAt, poseAt, idle, reaction, walkAlong, lookToward, camMove, atmos } from '../sets/acting.js';
 import { MINA } from '../cast.js';
-import { shotWord, handWorld, scr, warmer, hangingRain, breath } from './C_lib.js';
+import { shotWord, handWorld, scr, warmer, hangingRain, breath, unscr, coldForms, coldRain, hunt } from './C_lib.js';
 
 const MOONRIM = { color: '#b8c8ff', dir: [-0.4, -1], w: 6 };
 const torchBeam = (g, hx, hy, ang, a = 1, len = 1300) => { if (a <= 0.01) return; FX.lightCone(g, hx, hy, { angle: ang, spread: 0.38, len, color: '#f4f8ff', a: 0.4 * a }); glow(g, hx, hy, 90, '#ffffff', 0.6 * a); };
@@ -135,33 +135,44 @@ registerShot('s097', { draw(g, t, info) {
 } });
 const ring_ = (g, x, y, r, col) => { g.strokeStyle = col; g.lineWidth = 8; g.beginPath(); g.arc(x, y, r, 0, 7); g.stroke(); };
 
-// s098 — THERMAL returns: "And slowly, the grey comes back. Rock. Rain."  fade from black, HUD reboots, labels on the words
+// s098 — THERMAL returns: "And slowly, the grey comes back. Rock. Rain."  fade from black, HUD reboots with boot lines, the cold forms
+//   reassemble one by one (flicker + slide in), the crosshair sweeps, then locks 'ROCK' on 'Rock' and 'RAIN' on 'Rain'
 registerShot('s098', { draw(g, t, info) {
   const st = info.shot.start, tBack = shotWord('back', st, 1.3), tRock = shotWord('rock', st, 2.4), tRain = shotWord('rain', st, 3.3);
-  const cam = camMove(t, info.dur, { z: [1.06, 1.12], x: [-60, 40], drift: 0.6 }), GY = forestGround(), CX = E.W / 2, back = 0.18 + 0.82 * ease.inOut(prog(t, 0.1, tBack + 0.8));
+  const CM = { z: [1.06, 1.12], x: [-60, 40], drift: 0.6 }, cam = camMove(t, info.dur, CM), ref = camMove(0, info.dur, CM), back = 0.18 + 0.82 * ease.inOut(prog(t, 0.1, tBack + 0.8));
+  const k = ease.out(prog(t, 0.35, tRock + 0.25)), boot = back < 0.95;
+  const [rwx, rwy] = unscr(ref, E.W * 0.255, E.H * 0.82), rock = scr(cam, rwx, rwy), rain = [E.W * 0.64, E.H * 0.3];
+  const sweep = hunt(t, [[E.W * 0.3, E.H * 0.3], [E.W * 0.7, E.H * 0.45], [E.W * 0.5, E.H * 0.7], [E.W * 0.2, E.H * 0.55]], 0.9);
+  const lr = ease.inOut(prog(t, tRock - 0.25, tRock + 0.05)), ln = ease.inOut(prog(t, tRain - 0.25, tRain + 0.05));
+  const track = [lerp(lerp(sweep[0], rock[0], lr), rain[0], ln), lerp(lerp(sweep[1], rock[1], lr), rain[1], ln)];
   thermalView(g, t, {
     coldGain: lerp(0.3, 0.9, back), coldMax: lerp(0.16, 0.38, back), noise: lerp(0.12, 0.03, back),
-    cold: (c) => forest(c, t, cam, { view: 'cave', rain: true }), hot: (c) => {},
-    hud: { label: back < 0.95 ? 'THERMAL  REBOOT' : 'THERMAL', temp: back < 0.95 ? `${Math.round(back * 100)}%` : '11 C' },
+    cold: (c) => { forest(c, t, cam, { view: 'cave', rain: true }); coldForms(c, t, cam, ref, { k }); coldRain(c, t, { count: 120, a: 0.6 * back, seed: 72 }); }, hot: (c) => {},
+    hud: { label: boot ? 'THERMAL  REBOOT' : 'THERMAL', temp: t < tRock - 0.1 ? `${Math.round(back * 100)}%` : t < tRain - 0.1 ? '9 C' : '7 C', track },
   });
   veil(g, '#000', 1 - back);
-  FX.rain(g, t, { count: 170, angle: 0.18, color: '#6a5a98', a: 0.45 * back, seed: 72 });
-  const ui = S().ui; for (const [tw, str, x, y] of [[tRock, 'ROCK', 0.34, 0.42], [tRain, 'RAIN', 0.66, 0.3]]) { const a = ease.out(prog(t, tw, tw + 0.3)); if (a <= 0) continue; const [px, py] = [E.W * x, E.H * y];
-    g.save(); g.globalAlpha *= a; g.strokeStyle = alpha('#fff', 0.85); g.lineWidth = 3; g.beginPath(); g.arc(px, py, 26, 0, 7); g.moveTo(px - 40, py); g.lineTo(px - 14, py); g.moveTo(px + 14, py); g.lineTo(px + 40, py); g.stroke(); text(g, str, px + 56, py, { size: 40, color: ui.gold, font: FONTS.ui, weight: 900, align: 'left', spacing: 4 }); g.restore(); }
+  // reboot glitch: a few torn scan bands while the sensor wakes
+  if (boot) { const r = rng(Math.floor(t * 12) + 5); for (let i = 0; i < 4; i++) { const y = r() * E.H, h = 4 + r() * 18; g.fillStyle = alpha(r() > 0.5 ? '#c080ff' : '#ffffff', 0.12 * (1 - back) + 0.05); g.fillRect(r() * E.W * 0.3, y, E.W * (0.4 + r() * 0.6), h); } }
+  // boot lines under the label (gold, small), then a live SCAN line
+  const ui = S().ui, m = V(70, 50), lines = [['SENSOR', 'OK', 0.2], ['CALIBRATE', `${Math.round(back * 100)}%`, 0.6], ['FORMS', `${Math.round(k * 10)}/10`, 1.1]];
+  lines.forEach(([a, v, at], i) => { const al = ease.out(prog(t, at, at + 0.2)); if (al <= 0) return; g.save(); g.globalAlpha *= al * (boot && Math.sin(t * 30 + i) > 0.85 ? 0.4 : 1); text(g, `${a}  ${v}`, m + 62, m + 92 + i * 34, { size: 22, color: ui.gold, font: FONTS.ui, weight: 800, align: 'left', spacing: 3 }); g.restore(); });
+  FX.rain(g, t, { count: 120, angle: 0.18, color: '#6a5a98', a: 0.35 * back, seed: 73 });
+  for (const [tw, str, [px, py]] of [[tRock, 'ROCK', rock], [tRain, 'RAIN', rain]]) { const a = ease.out(prog(t, tw, tw + 0.3)); if (a <= 0) continue;
+    g.save(); g.globalAlpha *= a; g.strokeStyle = alpha(ui.gold, 0.9); g.lineWidth = 3; g.beginPath(); g.arc(px, py, 30 + 10 * (1 - a), 0, 7); g.stroke(); text(g, str, px + 52, py + 34, { size: 40, color: ui.gold, font: FONTS.ui, weight: 900, align: 'left', spacing: 4 }); g.restore(); }
 } });
 
 // s099 — THERMAL: "And then, low down, one tiny white spark."  slow push down to the low ledge; the spark appears on 'spark'; crosshair snaps to it
 registerShot('s099', { draw(g, t, info) {
   const st = info.shot.start, tLow = shotWord('low', st, 0.9), tSpark = shotWord('spark', st, 2.4), GY = forestGround(), CX = E.W / 2;
-  const cam = camMove(t, info.dur, { z: [1.1, 1.38], x: [0, 140], y: [-40, 90], drift: 0.5 }), sx = CX + 170, sy = GY - 70, on = ease.out(prog(t, tSpark - 0.25, tSpark + 0.15));
+  const CM = { z: [1.1, 1.38], x: [0, 140], y: [-40, 90], drift: 0.5 }, cam = camMove(t, info.dur, CM), ref = camMove(0, info.dur, CM), sx = CX + 170, sy = GY - 70, on = ease.out(prog(t, tSpark - 0.25, tSpark + 0.15));
   const shim = 0.9 + 0.1 * Math.sin(t * 17);
   thermalView(g, t, {
-    cold: (c) => forest(c, t, cam, { view: 'cave', rain: true }),
+    cold: (c) => { forest(c, t, cam, { view: 'cave', rain: true }); coldForms(c, t, cam, ref); coldRain(c, t, { count: 110, a: 0.55, seed: 74 }); },
     hot: (c) => layer(c, cam, 1, (c) => { heatRect(c, sx - 7, sy - 5, 14, 10, on * shim, 3); heatBlob(c, sx, sy, 34, 26, 0.7 * on, 0.5); }),
-    hud: { label: 'THERMAL', temp: on > 0.5 ? '54 C  !' : '--', track: on > 0.3 ? scr(cam, sx, sy) : scr(cam, lerp(CX - 300, sx, prog(t, tLow, tSpark)), lerp(GY - 360, sy, prog(t, tLow, tSpark))) },
+    hud: { label: 'THERMAL', temp: on > 0.5 ? '54 C  !' : '--', track: on > 0.3 ? scr(cam, sx, sy) : (() => { const h = hunt(t, [[E.W * 0.3, E.H * 0.35], [E.W * 0.7, E.H * 0.3], [E.W * 0.6, E.H * 0.65], [E.W * 0.35, E.H * 0.7]], 0.85), [lx, ly] = scr(cam, sx, sy), d = ease.inOut(prog(t, tLow, tSpark - 0.1)) * 0.7; return [lerp(h[0], lx, d), lerp(h[1], ly, d)]; })() },
   });
   const [px, py] = scr(cam, sx, sy); glow(g, px, py, 120 * on, '#ffffff', 0.5 * on); FX.sparkle(g, px, py, 40 * on * shim, '#ffffff', 0.9 * on);
-  FX.rain(g, t, { count: 150, angle: 0.18, color: '#3a2a70', a: 0.45, seed: 73 });
+  FX.rain(g, t, { count: 100, angle: 0.18, color: '#5a4a90', a: 0.35, seed: 73 });
   chip(g, t, { str: 'One tiny white spark', at: tSpark + 0.1, x: E.W * 0.5, y: E.H * 0.86, tone: 'gold' });
 } });
 
