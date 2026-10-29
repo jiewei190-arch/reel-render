@@ -79,3 +79,12 @@ Each version: render → compare_vN.jpg (reference left, ours right, at matching
 - **Floor emblem:** the decal is shrunk to sit under the pair's feet.
 - **Camera:** the opening and closing cameras are centred on the duo, so neither is cut on the push-in (outer-24 px warning gone).
 - Next (v7): move the duo closer together and shrink the decal again, to clear the right column.
+
+## v7: clean QA
+- Reel: newroad_v7.mp4 (66.2 s). Compare: compare_v7.jpg. QA: qa_v7.txt (PASS, no warnings).
+- **Duo:** moved closer together (teal x 84 -> 52) and the floor decal shrunk (.3 -> .26). The right safe column is clear in the opening and closing.
+- **Still distinguishable from the reference:**
+  - Crowding: the reference has three or more characters per frame, overlapping and holding props, with prop clusters (anvil, barrels, banners).
+  - Interiors: the reference's are painted with fabric, fire and textured walls; ours are cleaner and flatter.
+  - Bands: the sky is still a little pale (s0.18 vs 0.25) and the horizon a little warm (s0.19 vs 0.09).
+  - The jam street and Stuttgart sets read sparser than the reference's packed streets.
