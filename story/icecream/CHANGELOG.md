@@ -13,3 +13,13 @@ Compare sheets: `compare_vN.jpg`, reference frame left, ours right, matched by k
   4. **Top-down shot reads as a diagram,** not a painted overhead like the reference's armies on a field.
   5. **The time-lapse grade is too weak;** the blueprint is too empty (no desk, candle or perspective).
 - Decision: switch to the owner's `fable.js` (commit 6b5e283) as main asked, and grow the owner's 10 s ice-cream test into the full reel.
+
+## v2 (Oct 29): the owner's fable.js, full story, richer beach set
+- Rebuilt on `reels/styles/storyfable/fable.js` (owner, 6b5e283), grown from `t_storytest.js` into the full 67 s reel (`reels/t_icecream.js`), af_heart. Render: `icecream_v2.mp4`. Sheet: `compare_v2.jpg`.
+- Set: seaside town with red/teal roofs and a lighthouse on the headland, sailboats, a pier, beach huts, lifeguard towers, dune grass, palms, umbrellas coloured by side, bunting and distance posts along the boardwalk to the vanishing point, a beach ball and bucket in the foreground. Overhead: a painted plan view (sea, foam, sand, dunes, umbrellas, carts). Props: the 1929 journal on a towel with a stamp; a blueprint on a desk with a glowing pen and a "STUCK" stamp.
+- Engine speed-ups marked "H1" in fable.js (same look): bounding-box sprites, batched DOF/haze layers, single-pass rim, one blur for the cloud layer. 112 s -> 1.6 s per frame on this CPU-only box.
+- QA: WARN only. Blueprint reaches the right UI column (52.8-60.5 s); wide shot touches the frame edge (13.5-16 s).
+- Biggest gaps against the reference (sheet):
+  1. **Ground and colour bands:** our lower half is a flat orange boardwalk and plain sand. The reference has a varied ground: ruts, grass verges and flowers along the path, muted yellow-green earth. Measured: ground mid ours #b4884d (sat .57) vs ref #b69d5d (.49); ground low #a87641 (.61) vs #957541 (.56); the near-horizon band is umbrellas/sand (#b8a380) instead of a cream haze (#e2dbcd), because our horizon sits at 36% down vs about 44%.
+  2. **Midground reads as noise:** the umbrella rows melt into a blurred stripe; the reference midground (soldiers, trees, castle) stays readable but hazed.
+  3. The overhead looks like candy icons rather than a painted field. The time-lapse night is too weak (no stars or moon).
