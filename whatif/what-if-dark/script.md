@@ -3,80 +3,67 @@
 
 **[COLD OPEN]**
 
-1. Blackout. Every light on your street dies at once. You keep walking.
-2. Round the coffee table. Over the shoe. Past the door that always eats your knee.
-3. You find the cat on top of the fridge. Biscuit blinks. She looks offended.
-4. Your little sister Mina stumbles in, torch first. How are you doing this? You shrug.
-5. You can see the mouse by the bin. You can see the toast cooling. You still cannot find your phone charger.
-6. What if you could see in complete darkness?
+1. The whole street goes dark at once, and you just keep walking. Round the coffee table, over the shoe, past the door that always eats your knee.
+2. Your little sister Mina stumbles in, phone torch first. "How are you DOING this?" she asks, and you shrug, because honestly, you have no idea.
+3. You can see the mouse by the bin and the toast going cold. Biscuit the cat blinks down at you from the fridge like you've insulted her. And you still can't find your phone charger.
+4. So, what if you could see in complete darkness? Stay with me, because there are five rules, and the fifth one decides whether you find her.
 
 **[RULE 1: Your Eyes Quit First]**
 
-7. Rule one... your eyes quit first. A human eye holds about one hundred and twenty million rods. Rods handle the dark.
-8. It also holds about six million cones. Cones handle colour. And at night, they clock out.
-9. Walk from sunshine into a cinema. You are blind. Your rods need twenty to thirty minutes to catch up.
-10. Dev shuffles in beside you, orange beanie first, popcorn flying. Where is row F? he groans. You walk straight to it.
-11. A cat needs roughly a sixth of the light you do. You? None. But even a cat is blind in true darkness.
-12. Humans are not hopeless, though. In a 2016 experiment, volunteers spotted single photons better than chance. One photon. One.
-13. Upside, no more stubbed toes. Downside, Dev wants to know why you keep staring at him. Fair question.
-14. So how do you see where nothing shines? Simple... nothing has to shine. Everything is already glowing.
+5. Rule one. Before any new powers, your old eyes quit first. They've got about one hundred and twenty million rods for the dark and about six million cones for colour, and at night, the cones basically clock out.
+6. That sounds fine, until you walk out of sunshine into a cinema and can't see a thing. Your rods need twenty to thirty minutes to catch up.
+7. Your best mate Dev shuffles in, orange beanie on, popcorn flying. "Where's row F?" he groans, and you walk him straight to it.
+8. A cat needs roughly a sixth of the light you do, but even a cat is helpless in true darkness.
+9. And humans aren't hopeless. In a 2016 experiment, volunteers spotted single photons, the tiniest bits of light, a little better than chance.
+10. Upside, no more stubbed toes. Downside, Dev wants to know why you keep staring at him in the dark. Fair question, honestly.
+11. So how do you see where nothing shines? Easy: nothing has to shine. Everything's already glowing.
 
 **[RULE 2: Dark Isn't Empty]**
 
-15. Rule two... dark isn't empty. Anything above absolute zero glows with infrared. Your couch. Your cat. You.
-16. Dr. Lin, in her green lanyard, kills every light in the lab. She holds up one hand. You count five warm fingers.
-17. She is not scared. She is thrilled. This is thermal vision, she whispers. Not magic. Physics.
-18. Human skin glows most strongly near nine and a half micrometres. That is long-wave infrared. Thermal cameras read exactly that band.
-19. Your own eyes can't. One reason? They are warm too. It's like reading a dim screen with a torch in your face.
-20. Nature found a workaround. Pit vipers have a hollow pit on their face. It works like a pinhole camera for heat.
-21. Its nerves use a heat-sensitive protein called TRPA1. Scientists pinned that down in 2010.
-22. A snake finds a mouse in total darkness. You? The mouse... and the remote.
-23. Out on the dark street, you spot a kitten under a parked car. A small orange glow. You rescue it.
-24. Then you walk face first into a shop window. Ordinary glass blocks thermal infrared. To you, it is a flat, cold wall.
-25. Dev wheezes with laughter. Mate... that was a window. Ten out of ten.
+12. That's rule two. The dark isn't empty. Anything warmer than absolute zero glows with infrared. Your couch, your cat, you.
+13. Dr. Lin, in her green lanyard, kills every light in the lab and tells you to hold up a hand. You count five warm fingers. "Not magic," she whispers, thrilled. "Physics."
+14. Human skin glows most strongly near nine and a half micrometres, and thermal cameras read exactly that. Your eyes can't, and one reason is that they're warm too. It's like reading a dim screen with a torch in your face.
+15. Nature found a workaround. A pit viper has a hollow pit on its face that works like a pinhole camera for heat, and in 2010 scientists traced its heat sensor to a protein called TRPA1.
+16. So a snake can find a mouse in total darkness. You can find a mouse... and, finally, the remote.
+17. Out on the dark street, you spot a small orange glow under a parked car and rescue a kitten. Then you walk face first into a shop window, because ordinary glass blocks thermal infrared. To you, it's a flat, cold wall.
+18. Dev wheezes. "Mate, that was a window. Ten out of ten."
 
 **[RULE 3: Heat Has No Colour]**
 
-26. Rule three... heat has no colour. Mina slides a birthday card across the table. In the dark, it is a blank, warm rectangle.
-27. Ink and paper sit at the same temperature. No contrast. No words. You guess happy birthday. It says get well soon.
-28. She tucks a hand warmer into your hoodie pocket. Keep it, she says. I have the twin. In your sight, it burns like a coal.
-29. Night-vision goggles work differently. They amplify the faint light already there. Starlight. Moonlight. In true darkness? Nothing to amplify.
-30. So thermal wins the pitch black... but only for warm things.
-31. Colour is a bigger ask. Helmet geckos told blue from grey at moonlight levels in 2004.
-32. You? Hot, warm, cold. That is your entire palette. Upside, you win hide and seek forever. Downside, you can't read a menu.
+19. Rule three. Heat has no colour. Mina slides a birthday card across the table, and in the dark it's a blank, warm rectangle, because ink and paper are the same temperature. You guess "happy birthday." It says "get well soon."
+20. Then she tucks a hand warmer into your hoodie pocket. "Keep it," she says, "I've got the twin." To you, it burns like a tiny coal. Hold on to that.
+21. Night-vision goggles amplify faint light that's already there, so in true darkness, they've got nothing. Thermal wins the pitch black, but only for warm things.
+22. Colour is a much bigger ask. In 2004, helmet geckos told blue from grey at about moonlight levels. You? Hot, warm, cold. That's your whole palette.
+23. Upside, you win hide and seek forever. Downside, you can't read a menu.
 
 **[RULE 4: Light Is The Enemy]**
 
-33. Rule four... light is the enemy. You step off the kerb at midnight. A cyclist, no lamp, glows like a ghost. You yank Dev back.
-34. Saved him. Dev stares at you. How did you see that? Then the cyclist's lamp snaps on.
-35. It is one bright flash. Your thermal view whites out. Your old eyes are not ready either. Total blindness.
-36. Bright light floods your rods. They need twenty to thirty minutes to recover. Your new sight takes about a minute. A long, shaky minute.
-37. Dev guides you home by the sleeve. Amazing. And awful. Usually both at once.
-38. So the rule is simple. Dark is your friend. Light is a punch. Remember that... because you are about to need it.
+24. Rule four: light is now your enemy. You step off the kerb at midnight, and a cyclist with no lamp glows like a ghost. You yank Dev back.
+25. "How did you SEE that?" Dev asks. And right then, the cyclist's lamp snaps on.
+26. One bright flash, your thermal view whites out, and your old eyes aren't ready either. Total blindness.
+27. Bright light floods your rods, which normally need twenty to thirty minutes to recover. Your new sight takes about a minute, a long, shaky minute, with Dev leading you home by the sleeve.
+28. It's amazing and awful, usually both at once. So remember: dark is your friend, light is a punch. You're about to need that.
 
 **[RULE 5: Cold Hides]**
 
-39. Rule five... cold hides. A school camping trip. Rain on the trees. Mina is gone.
-40. You scan the forest. Deer. A fox. Dev, glowing beside you. Everything alive shows up. Except her. Why?
-41. Rain has soaked everything cold. Warm and cool fade to the same grey. So where is she?
-42. Ranger Tomas, in his blue cap, shouts that it is hopeless.
-43. You find a cave mouth. Mina's coat is zipped, her skin cool, her body blending into the rock. Almost enough. Not quite.
-44. Tomas swings his torch at the cave. Light slams into your eyes. Everything goes white. You are blind... again.
-45. Time is short. Mina is cold, and you are blind. Run in blind... or wait in the dark?
-46. Lights out, you croak. Everybody. Tomas clicks off his torch. You count sixty seconds in the dark.
-47. Then it comes back. Grey rock. Grey rain. And one tiny white spark, as a small hand pulls it from a coat. Mina's hand warmer. The twin.
-48. You reach her, curled under a rock ledge. She is cold. She is smiling. You found me, she mumbles. Of course you did.
-49. Dev cheers. Tomas wipes his eyes and blames the rain.
-50. Mina waves the little brick. Best twin ever... and you owe me hot chocolate.
+29. Which brings us to rule five. Cold things hide. School camping trip, rain pouring through the trees, and Mina is gone.
+30. You scan the forest. A deer, a fox, Dev glowing beside you. Everything alive shows up, except her. Why?
+31. Because the rain has soaked everything cold, warm and cool fade into the same grey. Her skin is cool, and she's blending into the rock.
+32. Ranger Tomas, in his blue cap, shouts that it's hopeless, and swings his torch at a cave mouth. The light slams into your eyes, everything goes white, and you're blind again.
+33. And now, a choice. Run in blind, or wait in the dark? Mina is cold, and every minute matters.
+34. "Lights out," you croak. "Everybody." Tomas clicks off his torch.
+35. So you wait. Sixty seconds, in the dark, listening to the rain.
+36. And slowly, the grey comes back. Rock. Rain. And then, low down, one tiny white spark. A small hand pulling something out of a coat. Mina's hand warmer. The twin.
+37. You run to her. She's curled up under a rock ledge, cold and shivering, and smiling. "You found me," she mumbles. And you say, "Of course I did."
+38. Dev cheers. Tomas wipes his eyes and blames the rain. Mina waves the little brick at you. "Best twin ever," she says. "You owe me hot chocolate."
 
 **[ENDING]**
 
-51. So... is any of this real? Pit vipers are. Thermal cameras are. Night-vision goggles are. Even single photons are, barely.
-52. But no human can see heat. Goggles are not eyes. And without any light, cats and goggles are blind.
-53. Your power would need infrared sensors, and a body that doesn't glow itself. Are we close? Not yet.
-54. The dark was never empty. It was only quiet.
-55. So what would you do... if you could see in complete darkness? Tell us in the comments.
-56. And if you would trust that tiny white spark... hit like, and subscribe for more What Ifs.
+39. So, is any of this real? Pit vipers are. Thermal cameras are. Night-vision goggles are. Even spotting single photons is real, barely.
+40. But no human can see heat, goggles aren't eyes, and without light, cats and goggles are blind. You'd need infrared sensors, and a body that doesn't glow itself. Are we close? Not yet.
+41. The dark was never empty. It was only quiet.
+42. So what would you do if you could see in complete darkness? Tell us in the comments.
+43. And if you'd trust that tiny white spark, hit like, and subscribe for more What Ifs.
 
 ## SCENES
 

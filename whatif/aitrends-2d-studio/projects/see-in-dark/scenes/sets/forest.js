@@ -38,6 +38,15 @@ export function forest(g, t, cam, o = {}) {
       const ly = pos.ledgeY; g.fillStyle = shade(rc, -0.2); g.beginPath(); g.moveTo(pos.ledgeX - 160, ly); g.lineTo(pos.ledgeX + 330, ly - 18); g.lineTo(pos.ledgeX + 360, ly + 30); g.lineTo(pos.ledgeX - 140, ly + 40); g.closePath(); g.fill();
       g.fillStyle = alpha(M.key, 0.12); g.fillRect(pos.ledgeX - 160, ly - 4, 500, 4);
     }
+    if (view === 'camp') {                                        // log seats round the dead fire, a backpack, a lantern, mug, boots
+      for (const [lx, a] of [[pos.fireX - 150, 0.06], [pos.fireX + 160, -0.05]]) { g.save(); g.translate(lx, GY + 30); g.rotate(a); rr(g, -62, -22, 124, 44, 20); g.fillStyle = shade('#5a4a38', -0.7); g.fill(); g.fillStyle = shade('#8a7a58', -0.6); g.beginPath(); g.ellipse(62, 0, 9, 22, 0, 0, 7); g.fill(); g.fillStyle = alpha(M.key, 0.14); g.fillRect(-62, -22, 124, 4); g.restore(); }
+      rr(g, pos.tentX + 230, GY - 92, 70, 92, 16); g.fillStyle = shade('#d4262e', -0.62); g.fill(); rr(g, pos.tentX + 244, GY - 58, 42, 30, 6); g.fillStyle = shade('#a02a2a', -0.7); g.fill(); seg(g, [[pos.tentX + 250, GY - 92], [pos.tentX + 252, GY - 110], [pos.tentX + 280, GY - 110], [pos.tentX + 282, GY - 92]], 4, '#0a0810');
+      const lnx = pos.fireX + 280; rr(g, lnx - 14, GY - 44, 28, 44, 5); g.fillStyle = '#14121c'; g.fill(); g.fillStyle = alpha('#ffd9a0', 0.1); g.fillRect(lnx - 10, GY - 38, 20, 30); seg(g, [[lnx - 12, GY - 44], [lnx, GY - 62], [lnx + 12, GY - 44]], 3, '#14121c');
+      for (const bx of [pos.tentX - 120, pos.tentX - 90]) { g.fillStyle = shade('#5a4a38', -0.75); g.beginPath(); g.ellipse(bx, GY + 4, 24, 12, 0, 0, 7); g.fill(); rr(g, bx - 14, GY - 26, 28, 32, 6); g.fill(); }
+      circle(g, pos.fireX + 10, GY + 18, 0, '#000');
+    }
+    for (const [mx, my] of [[CX - 760, GY + 30], [CX - 700, GY + 44], [CX + 700, GY + 40], [CX + 1020, GY + 26]]) { seg(g, [[mx, my], [mx, my - 20]], 5, shade('#d8d0c0', -0.6)); g.fillStyle = shade('#c8503a', -0.6); g.beginPath(); g.ellipse(mx, my - 22, 16, 9, 0, Math.PI, 0); g.fill(); circle(g, mx - 5, my - 27, 2, alpha('#fff', 0.4)); }
+    for (const fx2 of [CX - 880, CX - 520, CX + 560, CX + 900]) for (let i = 0; i < 7; i++) { g.save(); g.translate(fx2, GY + 36); g.rotate(-1.1 + i * 0.37 + Math.sin(t * 0.6 + i + fx2) * 0.02); g.strokeStyle = shade(M.grass, -0.55); g.lineWidth = 3; g.beginPath(); g.moveTo(0, 0); g.quadraticCurveTo(0, -60, 8, -110); g.stroke(); for (let k = 1; k < 7; k++) seg(g, [[k * 0.8, -k * 16], [-18 + k, -k * 16 - 8]], 2.5, shade(M.grass, -0.55)); g.restore(); }
     // wet tree trunks at the edges of the frame
     for (const [x, w] of [[CX - 1000, 70], [CX + 1100, 84]]) { g.fillStyle = shade(M.dark, -0.5); g.fillRect(x, GY - 1000, w, 1010); g.fillStyle = alpha(M.key, 0.14); g.fillRect(x, GY - 1000, 8, 1010); }
   });
