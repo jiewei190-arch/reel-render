@@ -41,11 +41,15 @@ function customers(t, mode) { const out = [];
 function streetSet(t, o = {}) { F.begin(); const c0 = F.drawGround.bind(null);
   F.drawGround(c => { F.sky(c, o.sky || {}); const px = -F.cam.x * .08;
     for (const [x, y, s, sd] of [[180, 300, 1.1, 1], [760, 210, .9, 2], [520, 470, 1.35, 3], [960, 420, .8, 4], [80, 560, .7, 5], [700, 640, .6, 6]]) F.cloud(c, x + px + ((t * 6 * s) % 80), y * (F.cam.hor / 840), s, sd, o.cloud || {});
-    F.hills(c, o.hills || {}); F.fields(c, -1); F.fields(c, 1); F.street(c); });
+    F.hills(c, { ...(o.hills || {}), t }); F.fields(c, -1); F.fields(c, 1); F.street(c); });
   const pr = prices(t);
   // trees and fence posts along the street, receding to the vanishing point
   for (const [Z] of [[1100], [2400]]) for (const X of [-330, 330]) F.put(X, Z, (c, s) => { c.save(); c.scale(s, s); c.fillStyle = PAL.woodDark; c.strokeStyle = INK; c.lineWidth = 2.4; c.fillRect(-5, -340, 10, 340); c.strokeRect(-5, -340, 10, 340); c.restore(); }, { shadow: true, h: 340, sw: 12 });
-  for (let i = 0; i < 9; i++) { const Z = 1900 + i * 900; F.put(-760 - hash(i) * 200, Z, (c, s) => F.tree(c, s * 1.2, i), { h: 330 }); F.put(760 + hash(i + 3) * 200, Z + 450, (c, s) => F.tree(c, s * 1.15, i + 7), { h: 330 }); }
+  // the town: illustrated houses lining both sides of the street, lamp posts, then trees behind
+  for (let i = 0; i < 10; i++) for (const side of [-1, 1]) { const Z = 1350 + i * 620 + (side > 0 ? 300 : 0), seed = i * 2 + (side > 0 ? 1 : 0);
+    F.put(side * (600 + hash(seed * 1.3) * 60), Z, (c, s) => F.house(c, s, seed + 1, { awning: i % 3 === 0 ? (side < 0 ? PAL.red : PAL.teal) : null }), { h: 420, w: 420 }); }
+  for (const Z of [1700, 3100, 4500]) for (const side of [-1, 1]) F.put(side * 345, Z, (c, s) => F.lamp(c, s * (side < 0 ? 1 : -1) * -1 * -1), { shadow: true, h: 340, sw: 14 });
+  for (let i = 0; i < 9; i++) { const Z = 1900 + i * 900; F.put(-1150 - hash(i) * 200, Z, (c, s) => F.tree(c, s * 1.2, i), { h: 330 }); F.put(1150 + hash(i + 3) * 200, Z + 450, (c, s) => F.tree(c, s * 1.15, i + 7), { h: 330 }); }
   if (o.bigTree) F.put(TSX + 120, SZ + 260, (c, s) => F.tree(c, s * 2.1, 11, { dark: '#3f7a32', light: '#69a646' }), { h: 600, shadow: true, sw: 240 });
   // dressing: bunting across the street in both colours, lemon crates, flower clumps on the verges
   Q_extra(t);
@@ -167,6 +171,12 @@ function desk(t, pageFn, camK) { const tip = pageFn(t);
   const fl = 1 + .06 * Math.sin(t * 23) + .04 * Math.sin(t * 37); const kx = cx - 330 * zoom, ky = ytop + 90;
   c.fillStyle = '#efe3c8'; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(kx - 18, ky - 110, 36, 120); c.strokeRect(kx - 18, ky - 110, 36, 120);
   c.fillStyle = '#ffd36b'; c.beginPath(); c.ellipse(kx, ky - 132, 9 * fl, 22 * fl, 0, 0, TAU); c.fill(); F.glow(c, kx, ky - 132, 260 * fl, '255,190,90', .7); F.glow(c, kx, ky - 40, 520, '255,170,80', .25);
+  // desk props around the sheet: a ruler, a pencil, two lemons, a coin stack
+  const prop = (x, y, fn) => { c.save(); c.translate(x, y); fn(); c.restore(); };
+  prop(cx + 360 * zoom, ytop + 260, () => { c.rotate(.5); c.fillStyle = '#e8c46a'; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(-20, -220, 40, 440); c.strokeRect(-20, -220, 40, 440); for (let i = -200; i < 220; i += 20) { c.beginPath(); c.moveTo(20, i); c.lineTo(i % 100 ? 8 : 0, i); c.stroke(); } });
+  prop(cx - 420 * zoom, ybot - 520, () => { for (let i = 0; i < 2; i++) { c.fillStyle = PAL.lemon; c.strokeStyle = INK; c.lineWidth = 3; c.beginPath(); c.ellipse(i * 80, i * 30, 52, 40, .3 * i - .2, 0, TAU); c.fill(); c.stroke(); c.fillStyle = 'rgba(255,255,255,.55)'; c.beginPath(); c.ellipse(i * 80 - 16, i * 30 - 14, 12, 8, -.4, 0, TAU); c.fill(); } });
+  prop(cx + 400 * zoom, ybot - 420, () => { for (let i = 0; i < 6; i++) { c.fillStyle = i === 5 ? '#f6d873' : '#e2b746'; c.strokeStyle = INK; c.lineWidth = 3; c.beginPath(); c.ellipse(0, -i * 14, 44, 16, 0, 0, TAU); c.fill(); c.stroke(); } });
+  prop(cx - 150 * zoom, ybot - 300, () => { c.rotate(-.35); c.fillStyle = '#f2c94c'; c.strokeStyle = INK; c.lineWidth = 3; c.fillRect(-150, -12, 260, 24); c.strokeRect(-150, -12, 260, 24); c.fillStyle = '#f3d9b0'; c.beginPath(); c.moveTo(110, -12); c.lineTo(150, 0); c.lineTo(110, 12); c.closePath(); c.fill(); c.stroke(); c.fillStyle = '#e88c9a'; c.fillRect(-170, -12, 22, 24); c.strokeRect(-170, -12, 22, 24); });
   // pen tip glow where lines are being drawn
   if (tip) { const v = tip[1] / 1400, sy = lerp(ytop, ybot, v * v * .35 + v * .65), w0 = lerp(620, 1240, v) * zoom, sx = cx - w0 / 2 + tip[0] / 1000 * w0; F.glow(c, sx, sy, 90, '255,240,200', .9); c.fillStyle = '#fff'; c.beginPath(); c.arc(sx, sy, 6, 0, TAU); c.fill(); }
   c.restore(); }
@@ -229,6 +239,7 @@ shot(T(30) - .2, TOT + 1, t => { F.setCam(F.camKeys(t, [[T(30) - .2, { ...CAM_BO
 // lantern light at night: warm pools around both owners and the board
 function nightLights(t) { const fl = 1 + .05 * Math.sin(t * 19) + .03 * Math.sin(t * 31);
   for (const X of [RX + 34, TX + 34]) { const p = F.proj(X, 52, OZ - 8); if (p) { F.glow(g, p.x, p.y, Math.min(420, 90 * p.s) * fl, '255,170,80', .42); F.glow(g, p.x, p.y, Math.min(120, 22 * p.s) * fl, '255,235,170', .75); } }
+  for (const Z of [1700, 3100, 4500]) for (const side of [-1, 1]) { const q = F.proj(side * 345 + 35, 315, Z); if (q && q.d > 90) { F.glow(g, q.x, q.y, Math.min(300, 160 * q.s), '255,190,100', .5); F.glow(g, q.x, q.y, Math.min(60, 30 * q.s), '255,240,190', .9); } }
   const m = F.proj(-900, 1500, 9000); if (m) { g.save(); g.fillStyle = '#fff3cf'; g.beginPath(); g.arc(m.x, 260, 46, 0, TAU); g.fill(); g.restore(); F.glow(g, m.x, 260, 260, '220,225,255', .5); } }
 // bird gag during the time-lapse: lands on Red's cap
 function bird(t) { const k = ss(seg(t, T(13) + .2, T(13) + 1.1)); const X = lerp(RX - 300, RX + 8, k), Y = lerp(520, 1.55 * 112, k), Z = OZ;

@@ -49,22 +49,26 @@ export function drawGround(fn) { fn(LG.far); }               // ground/sky go to
 export function flush() {
   Q.sort((a, b) => b.d - a.d);
   for (const q of Q) { const lay = layerFor(q.d, q.o), c = LG[lay];
-    if (q.o.shadow) castShadow(c, q);
+    if (q.o.shadow && !q.o.rim) castShadow(c, q);
     if (q.o.rim) rimDraw(c, q); else { c.save(); c.translate(q.p.x, q.p.y); q.fn(c, q.p.s, q.p); c.restore(); } }
   const bf = clamp(cam.dof * 1.6, 0, 14), bn = clamp(cam.dof * 2.2, 0, 22);
-  softDraw(L.far, bf); g.drawImage(L.mid, 0, 0); softDraw(L.near, bn);
+  softDraw(L.far, bf, ' saturate(.9) contrast(.93) brightness(1.04)'); g.drawImage(L.mid, 0, 0); softDraw(L.near, bn);
 }
 // cheap depth-of-field blur: blur at quarter resolution, scale back up
 const SM = mk(W / 4, H / 4), smg = SM.getContext('2d');
-function softDraw(src, b) { if (b < .6) { g.drawImage(src, 0, 0); return; } smg.clearRect(0, 0, SM.width, SM.height); smg.filter = `blur(${(b / 4).toFixed(2)}px)`; smg.drawImage(src, 0, 0, SM.width, SM.height); smg.filter = 'none';
+function softDraw(src, b, extra = '') { if (b < .6) { g.drawImage(src, 0, 0); return; } smg.clearRect(0, 0, SM.width, SM.height); smg.filter = `blur(${(b / 4).toFixed(2)}px)` + extra; smg.drawImage(src, 0, 0, SM.width, SM.height); smg.filter = 'none';
   g.save(); g.imageSmoothingQuality = 'high'; g.drawImage(SM, 0, 0, W, H); g.restore(); }
 // rim light: draw into scratch at 1:1 screen scale, then composite with a cream halo (drop-shadow) outside the dark outline
 const tint = mk(1100, 1700), tng = tint.getContext('2d');
 function rimDraw(c, q) { const s = q.p.s, hh = (q.o.h || 120) * s, ww = (q.o.w || 110) * s;
   const sc = Math.min(1, 1600 / Math.max(hh * 1.25, 1), 1040 / Math.max(ww * 1.6, 1)); const cw = Math.min(1100, Math.ceil(ww * 1.6 * sc) + 40), ch = Math.min(1700, Math.ceil(hh * 1.25 * sc) + 40);
   tg.setTransform(1, 0, 0, 1, 0, 0); tg.clearRect(0, 0, cw, ch); tg.save(); tg.translate(cw / 2, ch - 20); tg.scale(sc, sc); q.fn(tg, s, q.p); tg.restore();
-  tng.globalCompositeOperation = 'source-over'; tng.clearRect(0, 0, cw, ch); tng.drawImage(tmp, 0, 0, cw, ch, 0, 0, cw, ch); tng.globalCompositeOperation = 'source-in'; tng.fillStyle = 'rgb(255,247,226)'; tng.fillRect(0, 0, cw, ch);
+  const tintTo = col => { tng.globalCompositeOperation = 'source-over'; tng.clearRect(0, 0, cw, ch); tng.drawImage(tmp, 0, 0, cw, ch, 0, 0, cw, ch); tng.globalCompositeOperation = 'source-in'; tng.fillStyle = col; tng.fillRect(0, 0, cw, ch); };
   const r = clamp(1.15 * s, 1.8, 4.2), dx = q.p.x - cw / 2 / sc, dy = q.p.y - (ch - 20) / sc, dw = cw / sc, dh = ch / sc;
+  // the owner's technique: a long cast shadow as the sprite's own silhouette sheared onto the ground (lower right), plus a contact shadow
+  if (q.o.shadow) { tintTo('rgb(58,42,28)'); c.save(); c.globalAlpha = SUN.a; c.translate(q.p.x, q.p.y); c.transform(1, 0, -SUN.dx * 1.05, -SUN.dy * .7, 0, 0); c.drawImage(tint, 0, 0, cw, ch, dx - q.p.x, dy - q.p.y, dw, dh); c.restore();
+    const wid = (q.o.sw || 34) * s; c.save(); c.translate(q.p.x, q.p.y); c.scale(1, .2); const rg = c.createRadialGradient(0, 0, 0, 0, 0, wid * .8); rg.addColorStop(0, 'rgba(50,30,15,.42)'); rg.addColorStop(1, 'rgba(50,30,15,0)'); c.fillStyle = rg; c.fillRect(-wid, -wid, wid * 2, wid * 2); c.restore(); }
+  tintTo('rgb(255,247,226)');
   c.save(); c.globalAlpha = .55; for (let i = 0; i < 8; i++) { const a = i / 8 * TAU; c.drawImage(tint, 0, 0, cw, ch, dx + Math.cos(a) * r * 1.5, dy + Math.sin(a) * r * 1.5, dw, dh); }
   c.globalAlpha = 1; for (let i = 0; i < 8; i++) { const a = i / 8 * TAU + .4; c.drawImage(tint, 0, 0, cw, ch, dx + Math.cos(a) * r * .8, dy + Math.sin(a) * r * .8, dw, dh); } c.restore();
   c.drawImage(tmp, 0, 0, cw, ch, dx, dy, dw, dh); }
@@ -95,6 +99,8 @@ export function hills(c, o = {}) { const h = cam.hor, px = -cam.x * .02;
   band(o.c1 || '#c3d3cf', 34, 18, .006, 1.2); band(o.c2 || '#acc6ad', 22, 4, .011, 3.1);
   // a tiny hazy town on the horizon
   if (o.town !== false) for (let i = 0; i < 9; i++) { const x = (W * .5 + (i - 4) * 46 + px * 3), w = 22 + hash(i) * 16, hh = 18 + hash(i + 9) * 26; c.fillStyle = `rgba(${200 + hash(i) * 30 | 0},${190 + hash(i * 2) * 25 | 0},${185},.75)`; c.fillRect(x, h - hh - 2, w, hh); c.fillStyle = 'rgba(190,120,110,.6)'; c.beginPath(); c.moveTo(x - 3, h - hh - 2); c.lineTo(x + w / 2, h - hh - 14); c.lineTo(x + w + 3, h - hh - 2); c.fill(); }
+  if (o.mill !== false) { const mx = W * .8 + px * 2, my = h - 48; c.fillStyle = 'rgba(200,190,175,.9)'; c.beginPath(); c.moveTo(mx - 14, my); c.lineTo(mx - 9, my - 60); c.lineTo(mx + 9, my - 60); c.lineTo(mx + 14, my); c.fill();
+    c.strokeStyle = 'rgba(150,140,130,.9)'; c.lineWidth = 3; const ang = performance.now ? 0 : 0; for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + (o.t || 0) * .6; c.beginPath(); c.moveTo(mx, my - 60); c.lineTo(mx + Math.cos(a) * 40, my - 60 + Math.sin(a) * 40); c.stroke(); } }
   // cream horizon mist band
   const mg = c.createLinearGradient(0, h - 70, 0, h + 50); mg.addColorStop(0, 'rgba(236,228,210,0)'); mg.addColorStop(.55, 'rgba(238,231,214,.92)'); mg.addColorStop(1, 'rgba(236,228,210,0)'); c.fillStyle = mg; c.fillRect(0, h - 70, W, 120); }
 export const hazeK = d => clamp((d - 900) / 5000, 0, .7);
@@ -272,6 +278,30 @@ export function crate(c, s) { c.save(); c.scale(s, s); c.strokeStyle = INK; c.li
 export function flowers(c, s, seed = 1) { c.save(); c.scale(s, s); for (let i = 0; i < 5; i++) { const x = (hash(seed + i) - .5) * 40, h = 14 + hash(seed * 2 + i) * 16; c.strokeStyle = '#5d8a34'; c.lineWidth = 2; c.beginPath(); c.moveTo(x, 0); c.lineTo(x + 2, -h); c.stroke();
     c.fillStyle = ['#e4553f', '#f2f0e8', '#f3cf3a', '#7fa6e0'][(seed + i) % 4]; c.beginPath(); c.arc(x + 2, -h, 4.2, 0, TAU); c.fill(); c.fillStyle = '#f3cf3a'; c.beginPath(); c.arc(x + 2, -h, 1.4, 0, TAU); c.fill(); } c.restore(); }
 
+// an illustrated timber-framed house facing the street (origin: ground centre of the facade)
+const WALLS = ['#f1e3c6', '#e9d3b0', '#f3e6d2', '#e6cfa8', '#efdcc0'], ROOFS = ['#b5523e', '#8f5a44', '#c2683f', '#7d5c4f', '#a44a3a'];
+export function house(c, s, seed = 1, o = {}) { c.save(); c.scale(s, s); const w = 300 + hash(seed) * 80, h = 240 + hash(seed * 2) * 90, wall = WALLS[seed % 5], roof = ROOFS[(seed * 3) % 5]; c.strokeStyle = INK; c.lineWidth = 3.2; c.lineJoin = 'round';
+  // wall with a soft shade on the right, timber frame
+  c.fillStyle = wall; c.fillRect(-w / 2, -h, w, h); c.fillStyle = 'rgba(120,80,50,.14)'; c.fillRect(w * .18, -h, w * .32, h); c.strokeRect(-w / 2, -h, w, h);
+  c.strokeStyle = '#6a4630'; c.lineWidth = 7; for (const x of [-w / 2 + 6, w / 2 - 6, -w / 6, w / 6]) { c.beginPath(); c.moveTo(x, -h + 4); c.lineTo(x, -4); c.stroke(); } c.beginPath(); c.moveTo(-w / 2, -h * .52); c.lineTo(w / 2, -h * .52); c.stroke();
+  c.lineWidth = 5; c.beginPath(); c.moveTo(-w / 2 + 6, -h * .52); c.lineTo(-w / 6, -h + 6); c.moveTo(w / 2 - 6, -h * .52); c.lineTo(w / 6, -h + 6); c.stroke(); c.strokeStyle = INK; c.lineWidth = 3.2;
+  // roof with tiles and a chimney
+  c.fillStyle = roof; c.beginPath(); c.moveTo(-w / 2 - 26, -h); c.lineTo(0, -h - w * .45); c.lineTo(w / 2 + 26, -h); c.closePath(); c.fill(); c.stroke();
+  c.save(); c.clip(); c.strokeStyle = 'rgba(60,25,15,.3)'; c.lineWidth = 2.5; for (let i = 1; i < 6; i++) { c.beginPath(); c.moveTo(-w, -h - i * w * .075); c.lineTo(w, -h - i * w * .075); c.stroke(); } c.fillStyle = 'rgba(255,255,255,.12)'; c.beginPath(); c.moveTo(-w / 2 - 26, -h); c.lineTo(0, -h - w * .45); c.lineTo(-w * .1, -h); c.fill(); c.restore();
+  if (hash(seed * 5) > .35) { c.fillStyle = '#9a5a40'; c.fillRect(w * .22, -h - w * .38, 30, 70); c.strokeRect(w * .22, -h - w * .38, 30, 70); }
+  // windows with shutters and flower boxes
+  const win = (x, y) => { c.fillStyle = '#7fb3d6'; c.fillRect(x - 24, y - 30, 48, 56); c.fillStyle = 'rgba(255,255,255,.35)'; c.beginPath(); c.moveTo(x - 24, y - 30); c.lineTo(x - 2, y - 30); c.lineTo(x - 24, y); c.fill(); c.strokeRect(x - 24, y - 30, 48, 56); c.beginPath(); c.moveTo(x, y - 30); c.lineTo(x, y + 26); c.moveTo(x - 24, y - 2); c.lineTo(x + 24, y - 2); c.stroke();
+    const sh = o.shutter || ['#3f7d6b', '#a8483a', '#4a6f9c'][seed % 3]; c.fillStyle = sh; c.fillRect(x - 40, y - 30, 14, 56); c.strokeRect(x - 40, y - 30, 14, 56); c.fillRect(x + 26, y - 30, 14, 56); c.strokeRect(x + 26, y - 30, 14, 56);
+    c.fillStyle = PAL.woodDark; c.fillRect(x - 30, y + 26, 60, 12); c.strokeRect(x - 30, y + 26, 60, 12); for (let k = 0; k < 4; k++) { c.fillStyle = ['#e4553f', '#f3cf3a', '#f2f0e8', '#e4553f'][(k + seed) % 4]; c.beginPath(); c.arc(x - 22 + k * 15, y + 22, 6, 0, TAU); c.fill(); } };
+  win(-w * .3, -h * .76); win(w * .3, -h * .76); win(-w * .3, -h * .27);
+  // door, and an awning in a team colour on some houses
+  c.fillStyle = '#7a4a2c'; c.fillRect(w * .18, -h * .42, 60, h * .42); c.strokeRect(w * .18, -h * .42, 60, h * .42); c.fillStyle = PAL.lemon; c.beginPath(); c.arc(w * .18 + 48, -h * .2, 4, 0, TAU); c.fill();
+  if (o.awning) { const y = -h * .5, col = o.awning; c.save(); for (let i = 0; i < 6; i++) { c.fillStyle = i % 2 ? '#fbf3df' : col; c.fillRect(-w / 2 + 10 + i * (w - 20) / 6, y, (w - 20) / 6, 26); } c.strokeRect(-w / 2 + 10, y, w - 20, 26); c.restore(); }
+  c.restore(); }
+// lamp post (lit at night by the reel)
+export function lamp(c, s) { c.save(); c.scale(s, s); c.strokeStyle = INK; c.lineWidth = 2.6; c.fillStyle = '#3a3438'; c.fillRect(-4, -300, 8, 300); c.strokeRect(-4, -300, 8, 300); c.fillRect(-12, -8, 24, 8);
+  c.beginPath(); c.moveTo(0, -300); c.quadraticCurveTo(0, -330, 34, -330); c.stroke(); c.fillStyle = '#ffd77a'; c.fillRect(24, -330, 22, 30); c.strokeRect(24, -330, 22, 30); c.fillStyle = '#3a3438'; c.beginPath(); c.moveTo(20, -330); c.lineTo(35, -344); c.lineTo(50, -330); c.closePath(); c.fill(); c.stroke(); c.restore(); }
+
 // ---------- grade, finish, captions ----------
 // tod: 0 day, 1 sunset, 2 night (fractional values blend)
 export function grade(c, tod) { if (tod <= .01) return; c.save();
@@ -287,7 +317,7 @@ export function glow(c, x, y, r, col = '255,200,120', a = .8) { const rg = c.cre
 export function post(t, o = {}) { // light bloom, contrast lift, vignette, grain
   bg6.clearRect(0, 0, bloomC.width, bloomC.height); bg6.filter = 'blur(6px) brightness(1.15)'; bg6.drawImage(main, 0, 0, bloomC.width, bloomC.height); bg6.filter = 'none';
   g.save(); g.globalCompositeOperation = 'screen'; g.globalAlpha = o.bloom ?? .16; g.drawImage(bloomC, 0, 0, W, H); g.restore();
-  g.save(); g.globalCompositeOperation = 'soft-light'; g.globalAlpha = .18; g.fillStyle = '#808080'; g.fillRect(0, 0, W, H); g.restore();
+  g.save(); g.filter = 'contrast(1.1) saturate(1.03)'; g.drawImage(main, 0, 0); g.restore();
   const vg = g.createRadialGradient(W / 2, H * .46, H * .32, W / 2, H * .5, H * .78); vg.addColorStop(0, 'rgba(20,10,5,0)'); vg.addColorStop(1, `rgba(20,10,5,${o.vig ?? .32})`); g.fillStyle = vg; g.fillRect(0, 0, W, H);
   g.save(); g.globalCompositeOperation = 'overlay'; g.globalAlpha = .07; const ox = (t * 977) % 256 | 0, oy = (t * 613) % 256 | 0; g.translate(-ox, -oy); g.fillStyle = g.createPattern(grainC, 'repeat'); g.fillRect(0, 0, W + 256, H + 256); g.restore(); }
 // captions: 1-2 word chunks across each phrase, weighted by syllable-ish length

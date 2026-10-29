@@ -108,3 +108,38 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   2. **Medium shots:** the reference heads fill more of the frame, with stronger side light and coloured light spill (orange forge, candle). Ours stay evenly lit by day.
   3. **Sky band** is paler (sat .19 vs .25) and the **horizon band** darker/greener than the reference's cream haze (our owners and stands sit in that band in the wide).
   4. **QA:** content in the right column (x>900, y 900-1650) during wides and the shop. It is a WARN, not a FAIL, but the teal side would need to move inward for a clean pass.
+
+## v6 (Oct 29): after the owner's module landed (reference/story-fable 6b5e283)
+- The main session asked us to start from the owner's fable.js and put the effort into rich sets. That message was queued at 05:15, before v1-v5 were built here.
+- Decision: keep our module (it already covers the reel: interiors, desk, flip props, night grade, 70 s of shots) and port the owner's distinctive techniques into it, rather than rewrite the reel on the owner's API.
+  - The owner's per-sprite full-frame compositing would also cost several seconds a frame on this CPU-only container.
+  - Ported:
+    1. **Sheared-silhouette cast shadow:** the sprite's own silhouette, tinted, sheared onto the ground to the lower right, plus a contact shadow. It replaces our polygon shadow.
+    2. **Aerial perspective:** the far layer is composited with saturate(.9) contrast(.93) brightness(1.04), so the background lifts toward cream.
+    3. **Finish:** contrast(1.1) saturate(1.03) instead of a neutral soft-light pass.
+  - Added the owner's reels/style_measure.py and used it alongside compare.py.
+- Rich sets (the main session's named gap):
+  - **Village street:** illustrated timber-framed houses line both sides into the distance. They have tiled roofs with a highlight, chimneys, windows with shutters and flower boxes, doors, and red/teal striped awnings on every third house.
+  - Lamp posts along the street, which light up at night (warm pools on the night shot).
+  - A turning windmill on the far hill.
+  - Trees moved behind the houses.
+  - **Desk:** a ruler, a pencil, two lemons and a coin stack around the blueprint.
+- Render: 4 workers instead of 2 (about 20 minutes a full render).
+- QA: WARN (right column, frame edge); rest PASS.
+- style_measure.py, wide field frame, ref vs ours:
+
+  | Band | Reference | Ours v6 |
+  |---|---|---|
+  | sky mid | #b4d6f0 .25 | #cde4fa .18 |
+  | near horizon | #e2dbcd .09 | #b3a594 .18 |
+  | ground mid | #b69d5d .49 | #ab945c .46 |
+  | ground low | #957541 .56 | #a89453 .50 |
+  | saturation | .352 | .361 |
+  | contrast (L std) | 49.3 | 48.2 |
+  | detail | 19.2 | 24.2 (busier now) |
+- Still off (compare_v6.jpg):
+  1. **Sky band** too light and pale.
+  2. **Horizon band** has our owners and stands instead of cream haze.
+  3. **Detail energy** is now above the reference; the far houses could be hazier and blurrier.
+  4. **Medium shots** lack the reference's coloured side light.
+  5. **QA:** right-column WARN.
