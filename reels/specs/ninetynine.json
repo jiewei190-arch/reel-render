@@ -1,0 +1,92 @@
+{
+ "name": "ninetynine",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "popup",
+ "bpm": 104,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "music_gain": 0.5,
+ "tail": 0.7,
+ "phrases": [
+  [
+   "Two bakeries. Same bread. **One cent** apart.",
+   "Two bakeries. Same bread. One cent apart."
+  ],
+  [
+   "So **why do prices end in ninety-nine?**",
+   "So, why do prices end in ninety-nine?"
+  ],
+  [
+   "Red Bakery sells its loaf for **three dollars.**",
+   "Red Bakery sells its loaf for three dollars."
+  ],
+  [
+   "Teal Bakery, right across the street, charges **two ninety-nine.**",
+   "Teal Bakery, right across the street, charges two ninety-nine."
+  ],
+  [
+   "One penny. It **shouldn't matter.**",
+   "One penny. It shouldn't matter."
+  ],
+  [
+   "But we read prices **left to right,** and that **first digit** sticks.",
+   "But we read prices left to right, and that first digit sticks."
+  ],
+  [
+   "Two ninety-nine can feel like **two-something,** not three.",
+   "Two ninety-nine can feel like two-something, not three."
+  ],
+  [
+   "Researchers Manoj Thomas and Vicki Morwitz called it the **left-digit effect.**",
+   "Researchers Manoj Thomas and Vicki Morwitz called it the left-digit effect."
+  ],
+  [
+   "It mostly works when that **first digit changes,** like three dollars down to two ninety-nine.",
+   "It mostly works when that first digit changes, like three dollars down to two ninety-nine."
+  ],
+  [
+   "In field tests with a clothing catalog, prices **ending in nine** sold more.",
+   "In field tests with a clothing catalog, prices ending in nine sold more."
+  ],
+  [
+   "A nine can also whisper: **this one's a deal.**",
+   "A nine can also whisper: this one's a deal."
+  ],
+  [
+   "And the old tale about **cashiers?** Odd prices forced them to open the register. **Nobody's proven it.**",
+   "And the old tale about cashiers? Odd prices forced them to open the register. Nobody's proven it."
+  ],
+  [
+   "So Red Bakery fights back. **Two ninety-nine.**",
+   "So Red Bakery fights back. Two ninety-nine."
+  ],
+  [
+   "Same bread. Same penny trick. **Even again.**",
+   "Same bread. Same penny trick. Even again."
+  ],
+  [
+   "Which bakery would you pick? **Red or teal?**",
+   "Which bakery would you pick? Red or teal?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
