@@ -6,8 +6,8 @@ import * as FX from '/engine/fx2d.js';
 import * as UI from '/engine/ui2d.js';
 import { actor, cat } from '../sets/actors.js';
 import { apartment, apartmentFg, apartmentGround } from '../sets/apartment.js';
-import { thermalView, heatActor, heatBlob, heatRect } from '../sets/thermal.js';
-import { chip } from '../sets/hud.js';
+import { thermalView, heatActor, heatBlob, heatRect, whiteOut } from '../sets/thermal.js';
+import { chip, darkness } from '../sets/hud.js';
 import { giantFace, faceAt } from '../sets/faces.js';
 import { blinkFlag, blinkAmt, exprAt, poseAt, idle, reaction, walkAlong, lookToward, camMove, atmos } from '../sets/acting.js';
 
@@ -19,7 +19,7 @@ const toScreen = (x, y, cam) => [(x - E.W / 2 - (cam.x || 0)) * cam.z + E.W / 2,
 // s002 — "Round the coffee table, over the shoe, past the door that always eats your knee."
 // Side-on follow cam in the dark flat (moonlight key from the window): HERO strolls past the coffee table, steps high over the shoe on "shoe",
 // swerves past a half-open door edge on "door", smug smirk on "knee". Foot phase locked to x.
-registerShot('s002', { draw(g, t, info) {
+function s002Normal(g, t, info) {   // the pitch-dark normal view (first ~0.8 s of s002)
   const st = info.shot.start, tShoe = sw('shoe', st, 1.6), tDoor = sw('door', st, 2.6), tKnee = sw('knee', st, 3.7), CX = E.W / 2;
   const V0 = 175, heroX = (u) => CX - 420 - V0 * tShoe + V0 * u;                           // reaches the shoe exactly on "shoe"
   const cam = camMove(t, info.dur, { z: [1.12, 1.18], y: [60, 50] }); cam.x = heroX(t) - CX + 260;
@@ -39,6 +39,27 @@ registerShot('s002', { draw(g, t, info) {
   apartmentFg(g, t, cam);
   atmos(g, t, cam, { color: '#c9d4ff' });
   const [shx, shy] = toScreen(P.shoeX, GY + 4, cam); if (t < tShoe + 1.4) UI.callout(g, t, { at: [shx, shy], to: [shx + 140, shy - 260], str: 'SHOE', start: tShoe - 0.1 });
+}
+registerShot('s002', { draw(g, t, info) {
+  const st = info.shot.start, tShoe = sw('shoe', st, 1.6), tDoor = sw('door', st, 2.6), tKnee = sw('knee', st, 3.7), CX = E.W / 2, GY = apartmentGround();
+  const tFlip = Math.max(0.8, sw('round', st, 0.15) + 0.65);
+  if (t < tFlip) { s002Normal(g, t, info); darkness(g, 0.55, { x: E.W * 0.38, y: E.H * 0.55, r: 700 }); whiteOut(g, ease.in(prog(t, tFlip - 0.12, tFlip)) * 0.9); return; }
+  // THERMAL POV: the camera is the hero's eyes, gliding round the coffee table; the shoe is faintly warm (worn), the door edge is cold
+  const u = t - tFlip, k = ease.inOut(prog(t, tFlip, info.dur));
+  const cam = { z: 1.55 + 0.08 * k + Math.sin(t * 5.6) * 0.004, x: lerp(-560, 120, k) + Math.sin(t * 5.6) * 6, y: 150 + Math.abs(Math.sin(t * 5.6)) * 5, r: Math.sin(t * 0.9) * 0.01 };
+  const shoeX = CX - 420, doorScr = key(t, [[tDoor - 0.5, E.W + 300], [tDoor + 0.6, -400]], ease.inOut);
+  thermalView(g, t, {
+    cold: (c) => { apartment(c, t, cam, { power: 0 });
+      if (t > tDoor - 0.6 && t < tDoor + 0.8) { c.fillStyle = '#4a4a5a'; c.fillRect(doorScr, -40, 150, E.H + 80); c.fillStyle = '#6a6a7a'; c.fillRect(doorScr, -40, 14, E.H + 80); } },     // the door edge sliding past, close to the lens (cold)
+    hot: (c) => {
+      layer(c, cam, 1, (c) => { heatRect(c, shoeX - 46, GY - 6, 92, 30, 0.42 + 0.12 * ease.out(prog(t, tShoe - 0.1, tShoe + 0.3)), 14); heatBlob(c, shoeX, GY + 8, 80, 26, 0.25, 0.9); });   // the shoe, still a bit warm
+      for (const sd of [-1, 1]) { const ph = Math.sin(t * 5.6 + (sd > 0 ? Math.PI : 0)); heatBlob(c, E.W * 0.5 + sd * 470 + ph * 30, E.H - 20 - Math.max(0, ph) * 60, 130, 100, 0.85, 0.5); }      // own hands swinging at the bottom edge
+    },
+    hud: { label: 'THERMAL', temp: t > tShoe - 0.1 && t < tDoor - 0.3 ? '27 C  SHOE' : null, track: t > tShoe - 0.1 && t < tDoor - 0.3 ? toScreen(shoeX, GY + 4, cam) : null },
+  });
+  whiteOut(g, (1 - ease.out(prog(u, 0, 0.35))) * 0.9);
+  chip(g, t, { str: 'Door: dodged', at: tDoor + 0.1, x: E.W * 0.5, y: E.H * 0.86, tone: 'blue', dur: info.dur - 0.05 });
+  if (t > tKnee) FX.sparkle(g, E.W * 0.2, E.H * 0.5, 22 * Math.sin(prog(t, tKnee, info.dur) * Math.PI), '#ffe9b0', 0.8);
 } });
 
 // s004 — "she asks, and you shrug, because honestly, you have no idea."  GIANT FACE: neutral -> sheepish on "shrug" -> cheeky on "idea"
