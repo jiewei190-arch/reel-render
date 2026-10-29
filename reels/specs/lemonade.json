@@ -1,0 +1,152 @@
+{
+ "name": "lemonade",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "popup",
+ "bpm": 96,
+ "breath": [
+  2,
+  5,
+  9,
+  13,
+  16,
+  19,
+  23,
+  25,
+  27,
+  30
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.6,
+ "tail": 0.8,
+ "phrases": [
+  [
+   "Two lemonade stands.",
+   "Two lemonade stands."
+  ],
+  [
+   "One street.",
+   "One street."
+  ],
+  [
+   "And a price war neither could win.",
+   "And a price war neither could win."
+  ],
+  [
+   "Red sold a cup for one dollar.",
+   "Red sold a cup for one dollar."
+  ],
+  [
+   "So did Teal.",
+   "So did Teal."
+  ],
+  [
+   "Each kept half the customers, and made money.",
+   "Each kept half the customers, and made money."
+  ],
+  [
+   "Then Red had an idea.",
+   "Then Red had an idea."
+  ],
+  [
+   "Ninety cents.",
+   "Ninety cents."
+  ],
+  [
+   "Every customer walked to Red.",
+   "Every customer walked to Red."
+  ],
+  [
+   "For one day.",
+   "For one day."
+  ],
+  [
+   "So Teal fought back.",
+   "So Teal fought back."
+  ],
+  [
+   "Teal went to eighty.",
+   "Teal went to eighty."
+  ],
+  [
+   "Red went to seventy.",
+   "Red went to seventy."
+  ],
+  [
+   "And the whole summer went like that.",
+   "And the whole summer went like that."
+  ],
+  [
+   "Sixty. Fifty. Forty.",
+   "Sixty. Fifty. Forty."
+  ],
+  [
+   "Until the sign said thirty cents.",
+   "Until the sign said thirty cents."
+  ],
+  [
+   "Exactly what the lemons and sugar cost.",
+   "Exactly what the lemons and sugar cost."
+  ],
+  [
+   "A street full of happy customers.",
+   "A street full of happy customers."
+  ],
+  [
+   "And two stands earning nothing.",
+   "And two stands earning nothing."
+  ],
+  [
+   "Every cup sold. Zero profit.",
+   "Every cup sold. Zero profit."
+  ],
+  [
+   "You see, neither one was being silly.",
+   "You see, neither one was being silly."
+  ],
+  [
+   "If Teal held its price, cutting won.",
+   "If Teal held its price, cutting won."
+  ],
+  [
+   "If Teal cut, cutting still beat being undercut.",
+   "If Teal cut, cutting still beat being undercut."
+  ],
+  [
+   "So both cut. And both lost.",
+   "So both cut. And both lost."
+  ],
+  [
+   "Game theorists call it the prisoner's dilemma.",
+   "Game theorists call it the prisoner's dilemma."
+  ],
+  [
+   "Each side's best move leaves both worse off.",
+   "Each side's best move leaves both worse off."
+  ],
+  [
+   "Real shops escape it by being different.",
+   "Real shops escape it by being different."
+  ],
+  [
+   "Better lemonade. A shady spot. A loyal regular.",
+   "Better lemonade. A shady spot. A loyal regular."
+  ],
+  [
+   "So next summer, Red made pink lemonade.",
+   "So next summer, Red made pink lemonade."
+  ],
+  [
+   "Teal moved under a big shady tree.",
+   "Teal moved under a big shady tree."
+  ],
+  [
+   "And the sign said one dollar again.",
+   "And the sign said one dollar again."
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
