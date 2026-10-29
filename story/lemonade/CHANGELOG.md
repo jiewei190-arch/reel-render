@@ -50,3 +50,31 @@ Compare sheets: story/lemonade/compare_vN.jpg (reference left, ours right, match
   2. **Sky saturation and ground saturation** are low.
   3. **Wide:** the owners stand too close to the camera; the reference's two characters are smaller, with more track and sky.
   4. **Sets are emptier** than the reference (no detailed props or textures).
+
+## v3 (Oct 29)
+- Fixed the biggest v2 gap, the characters (STYLE_STORY section 1 against the reference's close-ups):
+  - brown outline (#33211a) instead of near-black, with screen-normalised line weight (3-6.5 px at 1080 wide, so close-ups no longer get heavy outlines);
+  - a bigger head (radius 19.5) with a slightly irregular hand-drawn outline;
+  - warm soft shading on the head (a light upper left, a warm shade at the lower right);
+  - face features 1.22x larger and set wider;
+  - a lit left side and shaded right side on the capsule body, plus a shoulder shade.
+- Rim light: thinner (1.8-4.2 px), a backlit sticker edge like the reference instead of a thick glow.
+- Palette: more saturated sky (#5aa0e0/#94c5f0); warmer, more saturated dirt and grass.
+- Wide camera pulled back slightly (more track and sky).
+- Soft diagonal sun rays on day shots.
+- QA: WARN (right column, frame edge); rest PASS.
+- Bands, ref vs ours:
+
+  | Band | Reference | Ours |
+  |---|---|---|
+  | sky | #b3d5ef sat .25 | #c5def3 sat .19 |
+  | horizon | #e1dbcc | #b4ad95 |
+  | ground mid | #b49d5c sat .51 | #a99358 sat .49 (close) |
+  | ground low | #937540 | #a18f4b |
+  | whole frame | sat .36, luma std 49 | sat .37, luma std 46 (matched) |
+- Note: the code in this commit already contains the v4 set dressing being worked on (bunting, fields, crates, flowers, camera drift); lemonade_v3.mp4 was rendered before those edits.
+- Still off (compare_v3.jpg):
+  1. **Sets are empty** next to the reference, which is dense with props (anvil, barrels, spear racks, flags, crop patchwork, castles).
+  2. **The camera holds** two-key eases; the reference roams constantly.
+  3. **The time-lapse sunset is weak**; the reference shifts strongly to purple dusk with stars.
+  4. **No warm interior with characters** (the reference's shop and forge).

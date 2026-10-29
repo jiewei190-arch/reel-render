@@ -41,11 +41,14 @@ function customers(t, mode) { const out = [];
 function streetSet(t, o = {}) { F.begin(); const c0 = F.drawGround.bind(null);
   F.drawGround(c => { F.sky(c, o.sky || {}); const px = -F.cam.x * .08;
     for (const [x, y, s, sd] of [[180, 300, 1.1, 1], [760, 210, .9, 2], [520, 470, 1.35, 3], [960, 420, .8, 4], [80, 560, .7, 5], [700, 640, .6, 6]]) F.cloud(c, x + px + ((t * 6 * s) % 80), y * (F.cam.hor / 840), s, sd, o.cloud || {});
-    F.hills(c, o.hills || {}); F.street(c); });
+    F.hills(c, o.hills || {}); F.fields(c, -1); F.fields(c, 1); F.street(c); });
   const pr = prices(t);
   // trees and fence posts along the street, receding to the vanishing point
+  for (const [Z] of [[1100], [2400]]) for (const X of [-330, 330]) F.put(X, Z, (c, s) => { c.save(); c.scale(s, s); c.fillStyle = PAL.woodDark; c.strokeStyle = INK; c.lineWidth = 2.4; c.fillRect(-5, -340, 10, 340); c.strokeRect(-5, -340, 10, 340); c.restore(); }, { shadow: true, h: 340, sw: 12 });
   for (let i = 0; i < 9; i++) { const Z = 1900 + i * 900; F.put(-760 - hash(i) * 200, Z, (c, s) => F.tree(c, s * 1.2, i), { h: 330 }); F.put(760 + hash(i + 3) * 200, Z + 450, (c, s) => F.tree(c, s * 1.15, i + 7), { h: 330 }); }
   if (o.bigTree) F.put(TSX + 120, SZ + 260, (c, s) => F.tree(c, s * 2.1, 11, { dark: '#3f7a32', light: '#69a646' }), { h: 600, shadow: true, sw: 240 });
+  // dressing: bunting across the street in both colours, lemon crates, flower clumps on the verges
+  Q_extra(t);
   // the price board in the middle
   F.put(BX, BZ, (c, s) => F.board(c, s, { red: pr.red, redPrev: pr.rp, redFlip: pr.rk, teal: pr.teal, tealPrev: pr.tp, tealFlip: pr.tk }), { shadow: true, rim: true, h: 310, w: 240, sw: 200 });
   // owners behind their stands (slightly farther than the counter)
@@ -59,8 +62,11 @@ function streetSet(t, o = {}) { F.begin(); const c0 = F.drawGround.bind(null);
   // foreground dressing: tufts near the camera, blurred
   for (let i = 0; i < 10; i++) { const Z = F.cam.z + 120 + i * 70, X = F.cam.x + (i % 2 ? 1 : -1) * (200 + hash(i * 3) * 260); F.put(X, Z, (c, s) => F.tuft(c, s * 1.6, i + 1), { layer: Z - F.cam.z < F.cam.focus * .55 ? 'near' : undefined }); }
   if (o.extra) o.extra();
-  F.flush(); F.SUN.a = .26; }
+  F.flush(); F.SUN.a = .26; if (!o.sky) F.rays(g, t, .09); }
 
+function Q_extra(t) { for (const [Z, k] of [[1100, 0], [2400, 1]]) F.put(0, Z + 1, c => { c.setTransform(1, 0, 0, 1, 0, 0); F.bunting(c, [-330, 330, Z], [330, 330, Z], k ? [PAL.teal, PAL.red, '#f3cf3a'] : [PAL.red, PAL.teal, '#fbf3df'], t); }, {});
+  for (const [X, Z] of [[-275, 700], [275, 700]]) F.put(X + (X < 0 ? -40 : 40), Z - 90, (c, s) => F.crate(c, s * 1.1), { shadow: true, rim: true, h: 50, w: 90, sw: 70 });
+  for (let i = 0; i < 8; i++) { const side = i % 2 ? 1 : -1, Z = 800 + i * 380; F.put(side * (330 + hash(i * 7) * 120), Z, (c, s) => F.flowers(c, s * 1.4, i + 2), {}); } }
 // ---------- blueprint desk set (night, candle) ----------
 const BP = document.createElement('canvas'); BP.width = 1000; BP.height = 1400; const bp = BP.getContext('2d');
 function blueprint(t, page) { const c = bp; c.setTransform(1, 0, 0, 1, 0, 0);
@@ -138,7 +144,7 @@ const K0 = { x: 0, y: 150, z: -900, hor: 840, focus: 2400, dof: 1.6, f: 1150 };
 const CAM_BOARD = { x: 0, y: 230, z: BZ - 520, hor: 880, focus: 520, dof: 6, f: 1150 };
 const camRed = (dz = 0) => ({ x: RX - 30, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
 const camTeal = (dz = 0) => ({ x: TX + 10, y: 132, z: OZ - 235 + dz, hor: 700, focus: 235 - dz, dof: 7, f: 1150 });
-const WIDE = (dz = 0, x = 0) => ({ x, y: 150, z: 150 + dz, hor: 840, focus: 450 - dz, dof: 1.8, f: 1150 });
+const WIDE = (dz = 0, x = 0) => ({ x, y: 150, z: 40 + dz, hor: 840, focus: 560 - dz, dof: 1.8, f: 1150 });
 const CARD_R = { x: RSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
 const CARD_T = { x: TSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 1150 };
 
@@ -146,47 +152,47 @@ const CARD_T = { x: TSX, y: 60, z: SZ - 300, hor: 860, focus: 300, dof: 7, f: 11
 const S = [];
 const shot = (a, b, fn, o = {}) => S.push({ a, b, fn, ...o });
 // A: hook, the board, then roam the set (0 - T3)
-shot(0, T(3) - .2, t => { F.setCam(F.camKeys(t, [[0, { ...CAM_BOARD, z: BZ - 420 }], [1.7, { ...CAM_BOARD, z: BZ - 500 }], [2.6, { ...camRed(60) }], [3.4, { ...camRed(40) }], [4.4, WIDE(300)], [5.2, WIDE(380)]])); streetSet(t, { crowd: 'calm' }); });
+shot(0, T(3) - .2, t => { F.setCam(F.camKeys(t, [[0, { ...CAM_BOARD, z: BZ - 420 }], [1.7, { ...CAM_BOARD, z: BZ - 500 }], [2.6, { ...camRed(60) }], [3.4, { ...camRed(40) }], [4.4, WIDE(300)], [5.2, WIDE(380)]]), t); streetSet(t, { crowd: 'calm' }); });
 // B: Red with a cup, whip to Teal
-shot(T(3) - .2, T(4) - .1, t => { F.setCam(F.camKeys(t, [[T(3) - .2, camRed(0)], [T(4), camRed(70)]])); streetSet(t, { crowd: 'calm', redExpr: 'smug', redTurn: .5, redArm: 120, redTalk: .4 }); });
-shot(T(4) - .1, T(5) - .2, t => { F.setCam(F.camKeys(t, [[T(4) - .1, camTeal(0)], [T(5), camTeal(60)]])); streetSet(t, { crowd: 'calm', tealExpr: 'smug', tealTurn: -.5, tealArm: 120 }); }, { whip: true });
+shot(T(3) - .2, T(4) - .1, t => { F.setCam(F.camKeys(t, [[T(3) - .2, camRed(0)], [T(4), camRed(70)]]), t); streetSet(t, { crowd: 'calm', redExpr: 'smug', redTurn: .5, redArm: 120, redTalk: .4 }); });
+shot(T(4) - .1, T(5) - .2, t => { F.setCam(F.camKeys(t, [[T(4) - .1, camTeal(0)], [T(5), camTeal(60)]]), t); streetSet(t, { crowd: 'calm', tealExpr: 'smug', tealTurn: -.5, tealArm: 120 }); }, { whip: true });
 // C: wide, two queues, both making money
-shot(T(5) - .2, T(6) - .2, t => { F.setCam(F.camKeys(t, [[T(5) - .2, WIDE(0, -60)], [T(6), WIDE(160, 60)]])); streetSet(t, { crowd: 'split', redExpr: 'happy', tealExpr: 'happy' }); });
+shot(T(5) - .2, T(6) - .2, t => { F.setCam(F.camKeys(t, [[T(5) - .2, WIDE(0, -60)], [T(6), WIDE(160, 60)]]), t); streetSet(t, { crowd: 'split', redExpr: 'happy', tealExpr: 'happy' }); });
 // D: Red has an idea; push to his card; flip to 90
-shot(T(6) - .2, T(7) + .05, t => { F.setCam(F.camKeys(t, [[T(6) - .2, camRed(-20)], [T(7), camRed(110)]])); streetSet(t, { crowd: 'split', redExpr: 'sly', redTurn: .7, redLook: 1, redArm: 30, redHold: null }); });
-shot(T(7) + .05, T(8) - .1, t => { F.setCam(F.camKeys(t, [[T(7), CARD_R], [T(8), { ...CARD_R, z: CARD_R.z + 60 }]])); streetSet(t, { crowd: 'split', redExpr: 'sly' }); });
+shot(T(6) - .2, T(7) + .05, t => { F.setCam(F.camKeys(t, [[T(6) - .2, camRed(-20)], [T(7), camRed(110)]]), t); streetSet(t, { crowd: 'split', redExpr: 'sly', redTurn: .7, redLook: 1, redArm: 30, redHold: null }); });
+shot(T(7) + .05, T(8) - .1, t => { F.setCam(F.camKeys(t, [[T(7), CARD_R], [T(8), { ...CARD_R, z: CARD_R.z + 60 }]]), t); streetSet(t, { crowd: 'split', redExpr: 'sly' }); });
 // E: customers walk over to Red; Teal worried. "For one day" - a quick dusk flash
-shot(T(8) - .1, T(10) - .2, t => { F.setCam(F.camKeys(t, [[T(8) - .1, WIDE(80, 40)], [T(10), WIDE(260, -80)]])); const dk = ss(seg(t, T(9), T(9) + .5)) * (1 - ss(seg(t, T(10) - .5, T(10) - .2)));
+shot(T(8) - .1, T(10) - .2, t => { F.setCam(F.camKeys(t, [[T(8) - .1, WIDE(80, 40)], [T(10), WIDE(260, -80)]]), t); const dk = ss(seg(t, T(9), T(9) + .5)) * (1 - ss(seg(t, T(10) - .5, T(10) - .2)));
   streetSet(t, { crowd: 'toRed', redExpr: 'smug', tealExpr: t > T(8) + 1 ? 'worried' : 'neutral', tealSweat: t > T(8) + 1.2 });
   F.grade(g, dk * 1.0); });
 // F: Teal fights back (glare, flips to 80), whip to Red (70)
-shot(T(10) - .2, T(11) + .05, t => { F.setCam(F.camKeys(t, [[T(10) - .2, camTeal(0)], [T(11), camTeal(120)]])); streetSet(t, { crowd: 'split', tealExpr: 'glare', tealTurn: -.7, tealArm: 30, tealHold: null }); });
-shot(T(11) + .05, T(12) - .1, t => { F.setCam(F.camKeys(t, [[T(11), CARD_T], [T(12), { ...CARD_T, z: CARD_T.z + 50 }]])); streetSet(t, { crowd: 'split', tealExpr: 'glare' }); });
-shot(T(12) - .1, T(13) - .2, t => { F.setCam(F.camKeys(t, [[T(12) - .1, camRed(30)], [T(13), camRed(110)]])); streetSet(t, { crowd: 'split', redExpr: 'glare', redTurn: .7, redLook: 1, redArm: 30, redHold: null }); }, { whip: true });
+shot(T(10) - .2, T(11) + .05, t => { F.setCam(F.camKeys(t, [[T(10) - .2, camTeal(0)], [T(11), camTeal(120)]]), t); streetSet(t, { crowd: 'split', tealExpr: 'glare', tealTurn: -.7, tealArm: 30, tealHold: null }); });
+shot(T(11) + .05, T(12) - .1, t => { F.setCam(F.camKeys(t, [[T(11), CARD_T], [T(12), { ...CARD_T, z: CARD_T.z + 50 }]]), t); streetSet(t, { crowd: 'split', tealExpr: 'glare' }); });
+shot(T(12) - .1, T(13) - .2, t => { F.setCam(F.camKeys(t, [[T(12) - .1, camRed(30)], [T(13), camRed(110)]]), t); streetSet(t, { crowd: 'split', redExpr: 'glare', redTurn: .7, redLook: 1, redArm: 30, redHold: null }); }, { whip: true });
 // G: "the whole summer": time-lapse grade sweep on the wide street, a bird lands on Red's cap
-shot(T(13) - .2, T(14) - .2, t => { F.setCam(F.camKeys(t, [[T(13) - .2, WIDE(100)], [T(14), WIDE(420)]])); const u = seg(t, T(13), T(14) - .3), tod = u < .5 ? u * 4 : (1 - u) * 4;
+shot(T(13) - .2, T(14) - .2, t => { F.setCam(F.camKeys(t, [[T(13) - .2, WIDE(100)], [T(14), WIDE(420)]]), t); const u = seg(t, T(13), T(14) - .3), tod = u < .5 ? u * 4 : (1 - u) * 4;
   streetSet(t, { crowd: 'calm', redExpr: 'tired', tealExpr: 'tired', extra: () => bird(t) }); F.grade(g, clamp(tod, 0, 2)); });
 // H: the board flips 60, 50, 40 ... 30
-shot(T(14) - .2, T(16) - .2, t => { F.setCam(F.camKeys(t, [[T(14) - .2, { ...CAM_BOARD, z: BZ - 520 }], [T(16), { ...CAM_BOARD, z: BZ - 420 }]])); streetSet(t, { crowd: 'split', redExpr: 'worried', tealExpr: 'worried' }); });
+shot(T(14) - .2, T(16) - .2, t => { F.setCam(F.camKeys(t, [[T(14) - .2, { ...CAM_BOARD, z: BZ - 520 }], [T(16), { ...CAM_BOARD, z: BZ - 420 }]]), t); streetSet(t, { crowd: 'split', redExpr: 'worried', tealExpr: 'worried' }); });
 // I: the cost sheet on the desk (light-flash in)
 shot(T(16) - .2, T(17) - .2, t => desk(t, pageCost, { zoom: lerp(1, 1.12, seg(t, T(16), T(17))), cx: 540 }), { flash: true });
 // J: the crowded happy street; then the two tired owners and their empty jars
-shot(T(17) - .2, T(18) - .1, t => { F.setCam(F.camKeys(t, [[T(17) - .2, WIDE(0)], [T(18), WIDE(200, 40)]])); streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired' }); });
-shot(T(18) - .1, T(20) - .2, t => { F.setCam(F.camKeys(t, [[T(18) - .1, { x: 0, y: 170, z: OZ - 470, hor: 940, focus: 470, dof: 5, f: 1150 }], [T(20), { x: 0, y: 170, z: OZ - 400, hor: 940, focus: 400, dof: 5, f: 1150 }]]));
+shot(T(17) - .2, T(18) - .1, t => { F.setCam(F.camKeys(t, [[T(17) - .2, WIDE(0)], [T(18), WIDE(200, 40)]]), t); streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired' }); });
+shot(T(18) - .1, T(20) - .2, t => { F.setCam(F.camKeys(t, [[T(18) - .1, { x: 0, y: 170, z: OZ - 470, hor: 940, focus: 470, dof: 5, f: 1150 }], [T(20), { x: 0, y: 170, z: OZ - 400, hor: 940, focus: 400, dof: 5, f: 1150 }]]), t);
   streetSet(t, { crowd: 'crowd', redExpr: 'tired', tealExpr: 'tired', redHold: 'jar', tealHold: 'jar', redArm: 150, tealArm: 150, extra: () => zeroTags(t) }); });
 // K0: night: the two owners by lantern light at their stands, the board between them ("You see...")
-shot(T(20) - .2, T(21) - .2, t => { F.setCam(F.camKeys(t, [[T(20) - .2, { x: 0, y: 175, z: OZ - 420, hor: 930, focus: 420, dof: 5, f: 1150 }], [T(21), { x: 0, y: 175, z: OZ - 330, hor: 930, focus: 330, dof: 5, f: 1150 }]]));
+shot(T(20) - .2, T(21) - .2, t => { F.setCam(F.camKeys(t, [[T(20) - .2, { x: 0, y: 175, z: OZ - 420, hor: 930, focus: 420, dof: 5, f: 1150 }], [T(21), { x: 0, y: 175, z: OZ - 330, hor: 930, focus: 330, dof: 5, f: 1150 }]]), t);
   streetSet(t, { redExpr: 'tired', tealExpr: 'tired', redHold: 'lantern', tealHold: 'lantern', redArm: 150, tealArm: 150, redTurn: .6, tealTurn: -.6, sky: { top: '#1d2552', mid: '#36407a', low: '#5a5a8a', haze: '#6f6a8c' }, cloud: { under: '#3a4270', top: '#8088b8', line: 'rgba(30,30,70,.5)' } });
   F.grade(g, 2); nightLights(t); }, { flash: true });
 // K: night desk, the payoff table, then the name (T21 - T26)
 shot(T(21) - .2, T(26) - .2, t => desk(t, pageGame, { zoom: lerp(1, 1.18, seg(t, T(20), T(26))), cx: 540 + Math.sin(t * .3) * 10 }), { flash: true });
 // M: being different: pink lemonade, the shady tree, a loyal regular (day, wide -> medium)
-shot(T(26) - .2, T(28) - .2, t => { F.setCam(F.camKeys(t, [[T(26) - .2, WIDE(0)], [T(28), WIDE(350, 0)]])); streetSet(t, { crowd: 'split', redExpr: 'happy', tealExpr: 'happy', redLabel: 'PINK LEMONADE', bigTree: true, redHold: 'pink' }); });
+shot(T(26) - .2, T(28) - .2, t => { F.setCam(F.camKeys(t, [[T(26) - .2, WIDE(0)], [T(28), WIDE(350, 0)]]), t); streetSet(t, { crowd: 'split', redExpr: 'happy', tealExpr: 'happy', redLabel: 'PINK LEMONADE', bigTree: true, redHold: 'pink' }); });
 // N: next summer: Red's pink lemonade, Teal under the tree, the board flips back to $1.00
-shot(T(28) - .2, T(29) - .1, t => { F.setCam(F.camKeys(t, [[T(28) - .2, camRed(0)], [T(29), camRed(80)]])); streetSet(t, { crowd: 'split', redExpr: 'smug', redLabel: 'PINK LEMONADE', bigTree: true, redHold: 'pink', redArm: 120 }); });
-shot(T(29) - .1, T(30) - .2, t => { F.setCam(F.camKeys(t, [[T(29) - .1, camTeal(-40)], [T(30), camTeal(40)]])); streetSet(t, { crowd: 'split', tealExpr: 'happy', redLabel: 'PINK LEMONADE', bigTree: true }); }, { whip: true });
+shot(T(28) - .2, T(29) - .1, t => { F.setCam(F.camKeys(t, [[T(28) - .2, camRed(0)], [T(29), camRed(80)]]), t); streetSet(t, { crowd: 'split', redExpr: 'smug', redLabel: 'PINK LEMONADE', bigTree: true, redHold: 'pink', redArm: 120 }); });
+shot(T(29) - .1, T(30) - .2, t => { F.setCam(F.camKeys(t, [[T(29) - .1, camTeal(-40)], [T(30), camTeal(40)]]), t); streetSet(t, { crowd: 'split', tealExpr: 'happy', redLabel: 'PINK LEMONADE', bigTree: true }); }, { whip: true });
 // O: the board again: flips back to $1.00, hold as the opening frame (loop)
-shot(T(30) - .2, TOT + 1, t => { F.setCam(F.camKeys(t, [[T(30) - .2, { ...CAM_BOARD, z: BZ - 560 }], [TOT - .4, { ...CAM_BOARD, z: BZ - 420 }]])); streetSet(t, { crowd: 'calm', redLabel: 'PINK LEMONADE', bigTree: true }); });
+shot(T(30) - .2, TOT + 1, t => { F.setCam(F.camKeys(t, [[T(30) - .2, { ...CAM_BOARD, z: BZ - 560 }], [TOT - .4, { ...CAM_BOARD, z: BZ - 420 }]]), t); streetSet(t, { crowd: 'calm', redLabel: 'PINK LEMONADE', bigTree: true }); });
 
 // lantern light at night: warm pools around both owners and the board
 function nightLights(t) { const fl = 1 + .05 * Math.sin(t * 19) + .03 * Math.sin(t * 31);
