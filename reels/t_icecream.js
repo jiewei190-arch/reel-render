@@ -5,7 +5,7 @@ import { createFable, PAL, W, H, seg, ss, eio, lerp, hash, clamp } from './style
 await Promise.all(['900 50px Nunito', '800 50px Cinzel'].map(f => document.fonts.load(f)));
 const F = createFable(document.getElementById('c')), g = F.g, X = () => F.ctx();
 const TLV = window.TL, P = TLV.p, DUR = TLV.total, T = i => P[i].start, E = i => P[i].end, r = (i, d) => T(i) + d;
-Object.assign(PAL, { sand: '#bba465', sandL: '#d8c793', sandD: '#957541' });   // v3: muted sand matched to the reference's ground bands
+Object.assign(PAL, { sand: '#bba465', sandL: '#d8c793', sandD: '#957541', wood: '#94744e', woodL: '#a6865c', woodD: '#6b4f34' });   // v4: earthier wood   // v3: muted sand matched to the reference's ground bands
 const FIG = 170 / 640, CART = 165 / 650, SIGN = 230 / 760, UMB = 210 / 300, SHORE = 6000, WHIP = .16;
 
 // ---------- captions: 1-2 words, timed by character share of the line ----------
@@ -68,7 +68,7 @@ function beach(t, o = {}) {
   g.globalAlpha = 1;
   // the boardwalk down the middle (the reference's track to the vanishing point)
   const z0 = F.cam().z + 60; F.groundQuad(-36, z0, 36, SHORE - 200, PAL.woodD, .4);
-  for (let z = Math.floor(z0 / 26) * 26; z < SHORE - 200; z += 26) { const k = hash(Math.floor(z / 26)); F.groundQuad(-36, z, 36, z + 22, k < .33 ? PAL.wood : k < .66 ? PAL.woodL : '#bd8a5c', .5); }
+  for (let z = Math.floor(z0 / 26) * 26; z < SHORE - 200; z += 26) { const k = hash(Math.floor(z / 26)); F.groundQuad(-36, z, 36, z + 22, k < .33 ? PAL.wood : k < .66 ? PAL.woodL : '#9f8358', .5); }
   F.groundQuad(-41, z0, -36, SHORE - 200, PAL.woodD, .6); F.groundQuad(36, z0, 41, SHORE - 200, PAL.woodD, .6);
   // bunting between the distance posts: red on the left, teal on the right
   for (let z = 400; z + 380 < SHORE - 400; z += 380) [-70, 70].forEach(x => { const a = F.proj(x, 150, z), b = F.proj(x, 150, z + 380); if (a.dz < 520) return;
@@ -119,43 +119,57 @@ const sign = (x, z, size, value, o = {}) => F.put(x, z, SIGN * size, () => F.cou
 function priceTag(x, z, side) { F.put(x, z, .3, () => { F.line([[0, 0], [0, -330]], 10, PAL.woodD); F.fs(F.rr(-110, -470, 220, 140, 14), PAL.cream, 6); F.fs(F.rr(-110, -470, 220, 34, 10), side ? PAL.sideB : PAL.sideA, 5); F.text('$3', 0, -385, { size: 74, col: PAL.ink, font: 'Cinzel', weight: 900 }); }, { sharp: true, rim: true }); }
 
 // ---------- the overhead (painted plan view of the beach; the beach runs top to bottom, the sea on the left) ----------
-const AUMB = Array.from({ length: 44 }, (_, i) => ({ u: (i % 22 + .5) / 22 + (hash(i) - .5) * .02, x: 520 + (i >= 22 ? 220 : 0) + (hash(i * 3) - .5) * 90, i }));
-function overhead(t, o = {}) { const zm = o.zoom || 1, rot = o.rot || 0, by = 200, ey = 1700, yAt = u => lerp(by, ey, u);
+// v4: a painted overhead like the reference's field: textured sand, foam, dune grass, dense small umbrellas, and the crowds
+// as red / teal formations streaming toward their cart (arrow-shaped, like the reference's armies), glints, tilt-shift blur.
+const AUMB = Array.from({ length: 150 }, (_, i) => ({ u: hash(i * 1.37) * 1.1 - .05, x: 430 + hash(i * 2.91) * 430, i, r: 13 + hash(i * 5.1) * 7 }));
+const CROWD = Array.from({ length: 520 }, (_, i) => ({ u: hash(i * 3.17), x: 420 + hash(i * 4.33) * 460, i }));
+let OVER = null;
+function overhead(t, o = {}) { const zm = o.zoom || 1, rot = o.rot || 0, by = 160, ey = 1760, yAt = u => lerp(by, ey, u);
   g.save(); g.translate(540, 940); g.rotate(rot); g.scale(zm, zm); g.translate(-540, -940);
-  // sea with wave bands and foam
-  g.fillStyle = F.vgrad(0, H, [[0, '#3d8fb8'], [1, '#4c9fc4']]); g.fillRect(-400, -300, 760, 2600);
-  const sg = g.createLinearGradient(220, 0, 380, 0); sg.addColorStop(0, '#4c9fc4'); sg.addColorStop(1, '#79c7cf'); g.fillStyle = sg; g.fillRect(220, -300, 160, 2600);
-  for (let j = 0; j < 7; j++) { g.strokeStyle = `rgba(255,255,255,${.25 + .1 * (j % 3)})`; g.lineWidth = 5; g.beginPath(); for (let y = -300; y < 2300; y += 24) g.lineTo(40 + j * 48 + 12 * Math.sin(y * .012 + t * 1.4 + j), y); g.stroke(); }
-  // sand strip, wet edge, dunes and grass on the right
-  g.fillStyle = PAL.sandL; g.fillRect(370, -300, 600, 2600); g.fillStyle = 'rgba(150,120,80,.35)'; g.fillRect(370, -300, 26, 2600);
-  g.strokeStyle = 'rgba(255,255,255,.9)'; g.lineWidth = 7; g.beginPath(); for (let y = -300; y < 2300; y += 20) g.lineTo(372 + 6 * Math.sin(y * .02 + t * 2), y); g.stroke();
-  g.fillStyle = PAL.sand; g.fillRect(900, -300, 600, 2600); for (let i = 0; i < 60; i++) { const x = 920 + hash(i * 5) * 200, y = -300 + hash(i * 7) * 2600; g.fillStyle = i % 2 ? PAL.leafD : '#8fb35e'; g.beginPath(); g.arc(x, y, 14 + 12 * hash(i), 0, Math.PI * 2); g.fill(); }
-  for (let i = 0; i < 400; i++) { g.fillStyle = i % 3 ? 'rgba(140,100,50,.25)' : 'rgba(255,240,205,.5)'; g.beginPath(); g.ellipse(400 + hash(i) * 500, -300 + hash(i * 3) * 2600, 4, 3, 0, 0, Math.PI * 2); g.fill(); }
+  // sea: depth bands, wave crests, foam lace at the shore
+  g.fillStyle = F.vgrad(0, H, [[0, '#2f7fa8'], [1, '#3a8fb6']]); g.fillRect(-400, -300, 780, 2600);
+  const sg = g.createLinearGradient(160, 0, 400, 0); sg.addColorStop(0, 'rgba(76,159,196,0)'); sg.addColorStop(1, '#7fcfd2'); g.fillStyle = sg; g.fillRect(160, -300, 240, 2600);
+  for (let j = 0; j < 10; j++) { g.strokeStyle = `rgba(255,255,255,${.18 + .12 * (j % 3)})`; g.lineWidth = 3 + (j % 2) * 2; g.beginPath(); for (let y = -300; y < 2300; y += 18) g.lineTo(-20 + j * 40 + 10 * Math.sin(y * .011 + t * 1.2 + j * 1.7) + 4 * Math.sin(y * .05 + j), y); g.stroke(); }
+  for (let i = 0; i < 90; i++) { const y = -300 + hash(i * 7.1) * 2600, x = 20 + hash(i * 3.3) * 330, tw = .5 + .5 * Math.sin(t * 3 + i); g.fillStyle = `rgba(255,255,240,${.5 * tw})`; g.fillRect(x, y, 10, 2); }
+  // sand: base gradient, wet edge, foam lace, ripples, speckle
+  g.fillStyle = F.vgrad(-300, 2300, [[0, '#cdb882'], [1, '#c2aa70']]); g.fillRect(380, -300, 640, 2600);
+  g.fillStyle = 'rgba(140,115,70,.45)'; g.fillRect(380, -300, 34, 2600);
+  g.strokeStyle = 'rgba(255,255,255,.95)'; g.lineWidth = 6; g.beginPath(); for (let y = -300; y < 2300; y += 14) g.lineTo(382 + 7 * Math.sin(y * .03 + t * 2) + 3 * Math.sin(y * .11), y); g.stroke();
+  g.strokeStyle = 'rgba(150,120,70,.22)'; g.lineWidth = 3; for (let j = 0; j < 70; j++) { const y0 = -300 + j * 38; g.beginPath(); for (let x = 420; x < 1000; x += 20) g.lineTo(x, y0 + 6 * Math.sin(x * .03 + j)); g.stroke(); }
+  if (!OVER) { OVER = document.createElement('canvas'); OVER.width = 700; OVER.height = 2600; const c = OVER.getContext('2d'); for (let i = 0; i < 9000; i++) { const k = hash(i * .73); c.fillStyle = k < .4 ? 'rgba(120,90,50,.28)' : k < .75 ? 'rgba(255,245,215,.5)' : 'rgba(90,70,40,.35)'; c.fillRect(hash(i * 1.9) * 700, hash(i * 2.3) * 2600, 2 + k * 3, 2); } }
+  g.drawImage(OVER, 380, -300);
+  // dunes and grass on the right, a dirt path
+  g.fillStyle = F.vgrad(-300, 2300, [[0, '#a99a5c'], [1, '#9c8e55']]); g.fillRect(900, -300, 600, 2600);
+  for (let i = 0; i < 260; i++) { const x = 890 + hash(i * 5.3) * 230, y = -300 + hash(i * 7.7) * 2600, l = 14 + hash(i) * 18; g.strokeStyle = i % 3 ? PAL.leafD : '#8fb35e'; g.lineWidth = 3; g.beginPath(); g.moveTo(x, y); g.lineTo(x + 6, y - l); g.moveTo(x, y); g.lineTo(x - 6, y - l * .8); g.stroke(); }
   // boardwalk across the middle of the beach
-  g.fillStyle = PAL.woodD; g.fillRect(370, yAt(.5) - 22, 540, 44); for (let x = 372; x < 908; x += 18) { g.fillStyle = hash(x) < .5 ? PAL.wood : PAL.woodL; g.fillRect(x, yAt(.5) - 19, 15, 38); }
-  // zones (red / teal halves) and the boundary rope
+  g.fillStyle = '#6e5236'; g.fillRect(380, yAt(.5) - 20, 540, 40); for (let x = 382; x < 918; x += 16) { g.fillStyle = hash(x) < .5 ? '#9a7a52' : '#a8875c'; g.fillRect(x, yAt(.5) - 17, 13, 34); }
+  // the crowd: each beachgoer a tiny head + towel; coloured by the cart they walk to, streaming in formation toward it
   const R = o.red ?? .25, Tq = o.teal ?? .75, mid = (R + Tq) / 2, zk = o.zones || 0;
-  if (zk > 0) { g.globalAlpha = .22 * zk; g.fillStyle = PAL.sideA; g.fillRect(380, yAt(-.1), 520, yAt(mid) - yAt(-.1)); g.fillStyle = PAL.sideB; g.fillRect(380, yAt(mid), 520, yAt(1.1) - yAt(mid)); g.globalAlpha = 1;
-    g.save(); g.setLineDash([22, 14]); g.lineWidth = 8; g.strokeStyle = PAL.cream; g.beginPath(); g.moveTo(380, yAt(mid)); g.lineTo(900, yAt(mid)); g.stroke(); g.restore(); }
-  // umbrellas from above: striped discs with an outline and a soft shadow; towels beside them
-  AUMB.forEach(a => { const y = yAt(a.u), side = a.u < mid, col = zk > 0 ? (side ? PAL.sideA : PAL.sideB) : MIXED[a.i % 4], rr = 34;
-    g.fillStyle = 'rgba(60,40,20,.25)'; g.beginPath(); g.ellipse(a.x + 16, y + 18, rr, rr * .9, 0, 0, Math.PI * 2); g.fill();
-    g.save(); g.translate(a.x + 40, y + 6); g.rotate(.3 * (hash(a.i) - .5)); F.fs(F.rr(-22, -12, 44, 24, 4), a.i % 2 ? '#fff6e2' : '#f2b54a', 3); g.restore();
-    for (let j = 0; j < 6; j++) { g.fillStyle = j % 2 ? PAL.cream : col; g.beginPath(); g.moveTo(a.x, y); g.arc(a.x, y, rr, j * Math.PI / 3, (j + 1) * Math.PI / 3); g.closePath(); g.fill(); }
-    g.lineWidth = 4; g.strokeStyle = PAL.ink; g.beginPath(); g.arc(a.x, y, rr, 0, Math.PI * 2); g.stroke(); g.fillStyle = PAL.ink; g.beginPath(); g.arc(a.x, y, 4, 0, Math.PI * 2); g.fill();
-    if (o.walk && zk > 0) { const cy = side ? yAt(R) : yAt(Tq), k = (t * .6 + hash(a.i)) % 1, py = lerp(y, cy, k), px = lerp(a.x + 40, 760, k); g.fillStyle = PAL.head; g.strokeStyle = PAL.ink; g.lineWidth = 3; g.beginPath(); g.arc(px, py, 9, 0, Math.PI * 2); g.fill(); g.stroke(); } });
-  // the carts from above: big striped umbrellas with a name board
-  const cartTop = (u, col, colD, k, label) => { if (k <= 0) return; const y = yAt(u), x = 760, s = lerp(2.4, 1, eio(k)); g.save(); g.globalAlpha = clamp(k * 3); g.translate(x, y); g.scale(s, s);
-    g.fillStyle = 'rgba(40,30,20,.32)'; g.beginPath(); g.ellipse(18, 22, 70, 64, 0, 0, Math.PI * 2); g.fill();
-    for (let j = 0; j < 8; j++) { g.fillStyle = j % 2 ? PAL.cream : col; g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, 66, j * Math.PI / 4 + t * .15, (j + 1) * Math.PI / 4 + t * .15); g.closePath(); g.fill(); }
-    g.lineWidth = 6; g.strokeStyle = PAL.ink; g.beginPath(); g.arc(0, 0, 66, 0, Math.PI * 2); g.stroke(); g.fillStyle = PAL.ink; g.beginPath(); g.arc(0, 0, 7, 0, Math.PI * 2); g.fill();
-    if (label) { F.fs(F.rr(84, -40, 120, 80, 14), PAL.cream, 6); F.text(label, 144, 2, { size: 54, col: colD, font: 'Nunito', weight: 900 }); }
-    g.restore(); };
+  AUMB.forEach(a => { const y = yAt(a.u), side = a.u < mid, col = zk > .5 ? (side ? PAL.sideA : PAL.sideB) : MIXED[a.i % 4], rr = a.r;
+    g.fillStyle = 'rgba(60,40,20,.28)'; g.beginPath(); g.ellipse(a.x + 8, y + 9, rr, rr * .85, 0, 0, Math.PI * 2); g.fill();
+    for (let j = 0; j < 6; j++) { g.fillStyle = j % 2 ? '#fbf3e2' : col; g.beginPath(); g.moveTo(a.x, y); g.arc(a.x, y, rr, j * Math.PI / 3 + a.i, (j + 1) * Math.PI / 3 + a.i); g.closePath(); g.fill(); }
+    g.lineWidth = 2.5; g.strokeStyle = 'rgba(43,36,34,.85)'; g.beginPath(); g.arc(a.x, y, rr, 0, Math.PI * 2); g.stroke(); });
+  CROWD.forEach(c => { const y0 = yAt(c.u), side = c.u < mid, tgt = side ? yAt(R) : yAt(Tq), walk = o.walk ? clamp((t - (o.walkT || 0)) * .35 - hash(c.i) * .5) : 0;
+    // walkers move into a tight arrow-shaped column that points at their cart
+    const lane = (hash(c.i * 9.1) - .5), ty = lerp(y0, tgt + Math.sign(y0 - tgt) * (40 + Math.abs(lane) * 220), walk * .8), tx = lerp(c.x, 760 + lane * 120 * (1 - walk * .5), walk * .8);
+    const col = zk > .5 ? (side ? PAL.sideA : PAL.sideB) : '#f4f0e8'; g.fillStyle = col; g.beginPath(); g.arc(tx, ty, 5.5, 0, Math.PI * 2); g.fill(); g.strokeStyle = 'rgba(43,36,34,.8)'; g.lineWidth = 1.6; g.stroke(); });
+  if (zk > 0) { g.save(); g.globalAlpha = zk; g.setLineDash([22, 14]); g.lineWidth = 7; g.strokeStyle = PAL.cream; g.beginPath(); g.moveTo(400, yAt(mid)); g.lineTo(890, yAt(mid)); g.stroke(); g.restore(); }
+  // the carts from above: striped umbrellas, a soft shadow, a name board; a glint on each
+  const cartTop = (u, col, colD, k, label) => { if (k <= 0) return; const y = yAt(u), x = 760, s2 = lerp(2.4, 1, eio(k)); g.save(); g.globalAlpha = clamp(k * 3); g.translate(x, y); g.scale(s2, s2);
+    g.fillStyle = 'rgba(40,30,20,.35)'; g.beginPath(); g.ellipse(20, 24, 66, 60, 0, 0, Math.PI * 2); g.fill();
+    for (let j = 0; j < 8; j++) { g.fillStyle = j % 2 ? PAL.cream : col; g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, 62, j * Math.PI / 4 + t * .15, (j + 1) * Math.PI / 4 + t * .15); g.closePath(); g.fill(); }
+    const gl = g.createRadialGradient(-20, -24, 2, 0, 0, 62); gl.addColorStop(0, 'rgba(255,255,255,.45)'); gl.addColorStop(1, 'rgba(0,0,0,.12)'); g.fillStyle = gl; g.beginPath(); g.arc(0, 0, 62, 0, Math.PI * 2); g.fill();
+    g.lineWidth = 6; g.strokeStyle = PAL.ink; g.beginPath(); g.arc(0, 0, 62, 0, Math.PI * 2); g.stroke(); g.fillStyle = PAL.ink; g.beginPath(); g.arc(0, 0, 7, 0, Math.PI * 2); g.fill();
+    if (label) { F.fs(F.rr(80, -40, 116, 80, 14), PAL.cream, 6); F.text(label, 138, 2, { size: 52, col: colD, font: 'Nunito', weight: 900 }); }
+    g.restore(); F.glow(x - 18, y - 24, 70, 'rgba(255,255,255,.9)', .35 * k * (.6 + .4 * Math.sin(t * 5 + u * 9))); };
   cartTop(R, PAL.sideA, PAL.sideAD, o.redK ?? 1, o.redL); cartTop(Tq, PAL.sideB, PAL.sideBD, o.tealK ?? 1, o.tealL);
-  if (o.sign) { g.save(); g.translate(560, 360); F.fs(F.rr(-200, -60, 400, 120, 18), PAL.wood, 7); F.fs(F.rr(-180, -44, 180, 88, 10), PAL.sideA, 5); F.fs(F.rr(0, -44, 180, 88, 10), PAL.sideB, 5); F.text('½', -90, 2, { size: 72, col: PAL.cream, stroke: 8 }); F.text('½', 90, 2, { size: 72, col: PAL.cream, stroke: 8 }); g.restore(); }
+  if (o.sign) { g.save(); g.translate(600, 330); F.fs(F.rr(-200, -60, 400, 120, 18), PAL.wood, 7); F.fs(F.rr(-180, -44, 180, 88, 10), PAL.sideA, 5); F.fs(F.rr(0, -44, 180, 88, 10), PAL.sideB, 5); F.text('½', -90, 2, { size: 72, col: PAL.cream, stroke: 8 }); F.text('½', 90, 2, { size: 72, col: PAL.cream, stroke: 8 }); g.restore(); }
   g.restore();
-  // drone haze at the top, soft vignette
-  g.fillStyle = F.vgrad(0, 520, [[0, 'rgba(236,230,214,.55)'], [1, 'rgba(236,230,214,0)']]); g.fillRect(0, 0, W, 520); }
+  // tilt-shift: blur the top and bottom of the frame (the reference's drone shot), haze at the top
+  const snap = g.getImageData(0, 0, W, H); F.layer(c => { c.putImageData(snap, 0, 0); }, 'blur(7px)');
+  // put the sharp middle band back over the blurred frame
+  g.save(); F.layer(c => { c.putImageData(snap, 0, 0); c.globalCompositeOperation = 'destination-in'; const m = c.createLinearGradient(0, 0, 0, H); m.addColorStop(0, 'rgba(0,0,0,0)'); m.addColorStop(.22, 'rgba(0,0,0,1)'); m.addColorStop(.74, 'rgba(0,0,0,1)'); m.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = m; c.fillRect(0, 0, W, H); c.globalCompositeOperation = 'source-over'; }, 'none'); g.restore();
+  g.fillStyle = F.vgrad(0, 520, [[0, 'rgba(236,230,214,.6)'], [1, 'rgba(236,230,214,0)']]); g.fillRect(0, 0, W, 520); }
 
 // ---------- props as full-frame shots ----------
 function paperShot(t) { // the 1929 journal lying on a striped towel, seen from above at an angle; a stamp slams down
@@ -209,7 +223,7 @@ function wideCarts(t, o = {}) { const [xr, xt] = o.at || cartsAt(t); cart(xr, 54
 const SH = [];
 const shot = (a, b, fn) => SH.push({ a, b, fn });
 // 0 hook: the sign (open prop) close, then the camera roams: wide on the carts side by side, push to red, across to teal
-shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 760 }], [3.0, { x: -135, z: 245, hor: 780, focus: 225, dof: 5 }], [T(1) + WHIP, { x: 135, z: 255, hor: 780, focus: 215, dof: 5 }]]);
+shot(0, T(1), t => { cam(t, [[0, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }], [1.2, { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [2.0, { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 940 }], [3.0, { x: -135, z: 245, hor: 780, focus: 225, dof: 5 }], [T(1) + WHIP, { x: 135, z: 255, hor: 780, focus: 215, dof: 5 }]]);
   UMODE = 'split'; UBOUND = 0; set(t); sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
 // 1 medium two-shot: they glare (heads turn), then the paper with the 1929 stamp
 shot(T(1), r(1, 2.6), t => { cam(t, [[T(1) - WHIP, { x: -60, z: 60, hor: 830, focus: 410, dof: 5 }], [r(1, 1.3), { x: -30, z: 90, hor: 830, focus: 380, dof: 5 }], [r(1, 2.6), { x: 50, z: 100, hor: 830, focus: 370, dof: 5 }]]);
@@ -222,7 +236,7 @@ shot(T(3), r(3, 2.6), t => { cam(t, [[T(3), { x: 0, z: 120, hor: 860, focus: 520
   wideCarts(t, { exprR: 'smug', exprT: 'smug', red: { turn: 0, look: 0 }, teal: { turn: 0, look: 0 } }); priceTag(-CW + 70, 420, 0); priceTag(CW - 70, 420, 1); foreground(1); F.flush(); });
 shot(r(3, 2.6), T(4), t => overhead(t, { zoom: 1.14, redK: ss(seg(t, r(3, 3.0), r(3, 3.6))), tealK: ss(seg(t, r(3, 4.6), r(3, 5.2))), redL: '¼', tealL: '¾' }));
 // 4 overhead: everyone walks to the nearest cart: half and half
-shot(T(4), T(5), t => overhead(t, { zoom: lerp(1.14, 1.02, seg(t, T(4), T(5))), zones: ss(seg(t, T(4), r(4, 1.2))), walk: true, sign: t > r(4, 2.4) }));
+shot(T(4), T(5), t => overhead(t, { zoom: lerp(1.14, 1.02, seg(t, T(4), T(5))), zones: ss(seg(t, T(4), r(4, 1.2))), walk: true, walkT: T(4), sign: t > r(4, 2.4) }));
 // 5 tracking shot: teal rolls toward the middle one morning
 shot(T(5), T(6), t => { const [, xt] = cartsAt(t), push = seg(t, T(5) + .5, T(6)); cam(t, [[T(5) - WHIP, { x: xt + 40, z: 30, y: 128, hor: 760, focus: 175, dof: 8 }], [T(6), { x: xt + 60, z: 50, y: 128, hor: 760, focus: 155, dof: 8 }]]); F.cam().x = xt + 50; UMODE = 'split'; UBOUND = 0; set(t);
   F.put(xt - 105, 212, CART, () => F.cart({ col: PAL.sideB, colD: PAL.sideBD, handle: 'right', roll: -xt / 40 }), { rim: true, shadow: true });
@@ -244,7 +258,7 @@ shot(T(8), T(9), t => { cam(t, [[T(8), { x: 0, z: 150, hor: 860, focus: 520, dof
   wideCarts(t, { exprR: 'glare', exprT: 'glare' }); const u = ss(seg(t, T(8), r(8, 3.8))), v = Math.round(lerp(400, 0, u) / 10) * 10, pv = Math.round(lerp(400, 0, Math.max(0, u - .03)) / 10) * 10;
   sign(-150, 230, .7, `${v} m`, { prev: `${pv} m`, flip: v !== pv ? .6 : 0 }); F.flush(); });
 // 9 side by side in the middle; then a sunbather at the far end walks a long way for a cone
-shot(T(9), r(9, 2.2), t => { cam(t, [[T(9) - WHIP, { x: 0, z: 240, hor: 860, focus: 240, dof: 1.2, f: 760 }], [r(9, 2.2), { x: 0, z: 200, hor: 860, focus: 280, dof: 1.2, f: 760 }]]); UBOUND = 0; set(t); wideCarts(t, { at: [-47, 47], exprR: 'smug', exprT: 'smug' }); foreground(1); F.flush(); });
+shot(T(9), r(9, 2.2), t => { cam(t, [[T(9) - WHIP, { x: 0, z: 240, hor: 860, focus: 240, dof: 1.2, f: 940 }], [r(9, 2.2), { x: 0, z: 200, hor: 860, focus: 280, dof: 1.2, f: 940 }]]); UBOUND = 0; set(t); wideCarts(t, { at: [-47, 47], exprR: 'smug', exprT: 'smug' }); foreground(1); F.flush(); });
 shot(r(9, 2.2), T(10), t => { const u = seg(t, r(9, 2.2), T(10)), x = lerp(-1300, -1000, u); cam(t, [[r(9, 2.2), { x: -1250, z: 0, y: 128, hor: 760, focus: 200, dof: 8 }], [T(10), { x: -960, z: 25, y: 128, hor: 760, focus: 200, dof: 8 }]]); set(t);
   fig(x, 200, { ...BATHER, t, expr: 'worried', look: 1, turn: .4, walk: t * 1.4, armF: 50, bendF: 30, armB: 110, bendB: 0 });
   for (let i = 0; i < 8; i++) F.put(x - 60 - i * 62, 200 + (i % 2) * 16, .2, () => F.fs(F.ell(0, -4, 50, 18), 'rgba(140,100,55,.32)', 0));
@@ -262,7 +276,7 @@ shot(T(12), T(13), t => { cam(t, [[T(12) - WHIP, { x: 0, z: 70, hor: 830, focus:
   [[-47, 0, 'YES'], [47, 1, 'NO']].forEach(([x, s2, w]) => F.put(x, 535, CART, () => { const d = s2 ? 1 : -1; F.line([[0, -650], [0, -760]], 8); F.fs(F.poly([[0, -760], [d * 170, -720], [0, -680]]), s2 ? PAL.sideB : PAL.sideA, 5); F.text(w, d * 62, -722, { size: 40, col: PAL.cream, font: 'Nunito', weight: 900 }); }, { sharp: true }));
   foreground(1); F.flush(); });
 // 13 back to the sign (loop into frame 0)
-shot(T(13), DUR + 1, t => { cam(t, [[T(13), { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 760 }], [r(13, 1.2), { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [DUR, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }]]);
+shot(T(13), DUR + 1, t => { cam(t, [[T(13), { x: 0, z: 190, hor: 860, focus: 300, dof: 1.2, f: 940 }], [r(13, 1.2), { x: 0, z: 90, y: 160, hor: 760, focus: 430, dof: 6 }], [DUR, { x: 0, z: 40, y: 160, hor: 760, focus: 430, dof: 6 }]]);
   set(t); sign(0, 450, 1.05, '0 m'); wideCarts(t, { at: [-47, 47] }); foreground(-1, false); F.flush(); });
 
 // time-lapse grade: day -> sunset -> night -> day
