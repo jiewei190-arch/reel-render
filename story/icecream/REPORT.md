@@ -5,3 +5,9 @@
 - v2 (688acdf): rebuilt on the owner's `fable.js` and grown from `t_storytest` into the full 67 s story with af_heart. Richer sets: beach huts, pier, sailboats, a seaside town, lifeguard towers, dune grass, a painted overhead, a journal prop and a blueprint on a desk. Full render running; `compare_v2.jpg` follows.
 - Engine note: on this cloud box (no GPU) the owner's `fable.js` took 112 s per frame, because per-sprite canvas filters run over the whole frame. H1 speed-ups (same look, marked "H1" in `fable.js`): bounding-box sprites, batched DOF/haze layers for consecutive sprites with the same filter, a single-pass rim light, and a cloud layer blurred once. Now about 1.6 s per frame.
 - Band measurements (`style_measure.py`, ref 16.6 s vs our wide shot): sky mid ours #cde6f4 vs ref #b4d6f0 (too pale); near horizon ours #b8a380 vs ref #e2dbcd (our horizon is higher in frame, 36% vs about 44%, and lacks the cream haze); ground mid ours #b4884d sat .57 vs ref #b69d5d .49 (too orange/saturated); ground low ours #a87641 .61 vs ref #957541 .56.
+
+## Oct 29, v3 + v4 + v5
+- v3 (b9f8df5): ground and colour bands matched to the reference (sand palette, horizon ~44%, cream haze, ruts + grass/flower verges, sharper wide midground, night stars and moon). Sheet `compare_v3.jpg`.
+- v4: painted overhead (textured sand, foam, crowds in red/teal formations, glints, tilt-shift), bigger rivals in the side-by-side wides, earthier wood. Sheet `compare_v4.jpg`.
+- v5 (rendering): material pass on characters and props (soft lit-to-shaded volume, light grain), narrower boardwalk.
+- Every version's notes and remaining gaps: `CHANGELOG.md`. QA has been WARN-only throughout (right-column flags on the end-card question; wide shot touching the frame edges).
