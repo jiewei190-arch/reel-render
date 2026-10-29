@@ -1,0 +1,27 @@
+{
+ "name": "icecream",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "music": "popup",
+ "bpm": 96,
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "breath": [1, 4, 6, 9, 11, 13],
+ "phrases": [
+  ["Why do rival ice-cream carts always end up side by side?", "Why do rival ice-cream carts always end up side by side?"],
+  ["But it's no accident. It's a trap, and an economist spotted it in 1929.", "But it's no accident. It's a trap, and an economist spotted it in nineteen twenty-nine."],
+  ["Picture a long beach, with sunbathers spread out evenly.", "Picture a long beach, with sunbathers spread out evenly."],
+  ["Two carts, same ice cream, same price. Red parks a quarter of the way along. Teal parks three quarters along.", "Two carts, same ice cream, same price. Red parks a quarter of the way along. Teal parks three quarters along."],
+  ["Everyone walks to the nearest cart, so each one gets half the beach. Nobody walks far.", "Everyone walks to the nearest cart, so each one gets half the beach. Nobody walks far."],
+  ["Then one morning, Teal rolls a little closer to the middle.", "Then one morning, Teal rolls a little closer to the middle."],
+  ["Teal keeps everyone behind it, and steals some of Red's customers in between.", "Teal keeps everyone behind it, and steals some of Red's customers in between."],
+  ["So Red does the same. Then Teal again.", "So Red does the same. Then Teal again."],
+  ["Day after day, they creep toward the center, until they're parked side by side, right in the middle.", "Day after day, they creep toward the center, until they're parked side by side, right in the middle."],
+  ["Each still gets half the beach. But now, people at the far ends walk twice as far for a cone.", "Each still gets half the beach. But now, people at the far ends walk twice as far for a cone."],
+  ["And neither cart can leave. Whoever moves away loses customers.", "And neither cart can leave. Whoever moves away loses customers."],
+  ["That's Hotelling's law: rivals end up right next to each other. It's why shops, and even politicians, so often look alike.", "That's Hotelling's law: rivals end up right next to each other. It's why shops, and even politicians, so often look alike."],
+  ["Seen two rival shops side by side? Yes or no?", "Seen two rival shops side by side? Yes or no?"],
+  ["Follow for more of how it really works.", "Follow for more of how it really works."]
+ ]
+}
