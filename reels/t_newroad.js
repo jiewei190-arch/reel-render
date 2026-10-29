@@ -75,6 +75,15 @@ function skyline(t, o = {}) { F.layer(1.6, () => skylineRaw(t, o)); }
 function skylineRaw(t, o) { const g = F.g, hor = F.cam().hor, px = -F.cam().x * .05; g.save();
   g.fillStyle = '#9fb5c9'; g.beginPath(); g.moveTo(-50, hor + 4); for (let x = -50; x <= 1130; x += 60) g.lineTo(x + px * .5, hor - 120 - 70 * Math.abs(Math.sin(x * .004 + 1)) - 30 * Math.sin(x * .013)); g.lineTo(1130, hor + 4); g.fill();
   g.fillStyle = '#8fae74'; g.beginPath(); g.moveTo(-50, hor + 4); for (let x = -50; x <= 1130; x += 40) g.lineTo(x + px, hor - 40 - 26 * Math.sin(x * .009 + 2)); g.lineTo(1130, hor + 4); g.fill();
+  // v6 landmark: Hilltown's town hall on its own hill (the reference always has a storybook landmark on the far hills)
+  if (o.hall !== false) { const hx = 830 + px * .8, hy = hor - 70; g.fillStyle = '#93b276'; g.beginPath(); g.ellipse(hx, hy + 40, 210, 90, 0, Math.PI, 0); g.fill();
+    g.fillStyle = '#f1e8d6'; g.fillRect(hx - 90, hy - 70, 180, 80); g.fillStyle = '#c9bfa9'; g.fillRect(hx + 30, hy - 70, 60, 80);
+    for (let k = 0; k < 5; k++) { g.fillStyle = '#f1e8d6'; g.fillRect(hx - 90 + k * 40, hy - 84, 22, 16); }
+    [[-70, PAL.sideA, 150], [70, PAL.sideB, 130]].forEach(([dx, col, h]) => { g.fillStyle = '#f6eee0'; g.fillRect(hx + dx - 20, hy - h, 40, h); g.fillStyle = col; g.beginPath(); g.moveTo(hx + dx - 28, hy - h); g.lineTo(hx + dx, hy - h - 52); g.lineTo(hx + dx + 28, hy - h); g.fill();
+      g.strokeStyle = '#6b5a48'; g.lineWidth = 3; g.beginPath(); g.moveTo(hx + dx, hy - h - 52); g.lineTo(hx + dx, hy - h - 82); g.stroke(); g.fillStyle = col; g.beginPath(); g.moveTo(hx + dx, hy - h - 82); g.lineTo(hx + dx + 22 + 4 * Math.sin(t * 5 + dx), hy - h - 75); g.lineTo(hx + dx, hy - h - 68); g.fill(); });
+    g.fillStyle = '#f6eee0'; g.fillRect(hx - 24, hy - 190, 48, 130); g.fillStyle = '#e9b949'; g.beginPath(); g.moveTo(hx - 32, hy - 190); g.lineTo(hx, hy - 250); g.lineTo(hx + 32, hy - 190); g.fill();
+    g.fillStyle = '#fffaf0'; g.beginPath(); g.arc(hx, hy - 150, 16, 0, Math.PI * 2); g.fill(); g.strokeStyle = '#5a4a3a'; g.lineWidth = 3; g.stroke(); g.beginPath(); g.moveTo(hx, hy - 150); g.lineTo(hx, hy - 162); g.moveTo(hx, hy - 150); g.lineTo(hx + 9, hy - 146); g.stroke();
+    g.fillStyle = '#7a6a5a'; g.beginPath(); g.arc(hx, hy + 10, 18, Math.PI, 0); g.fill(); g.fillRect(hx - 18, hy + 10, 36, 0); }
   if (o.town !== false) for (let i = 0; i < 22; i++) { const x = 20 + i * 48 + px, h = 30 + 30 * hash(i), y = hor - 34 - (i % 4) * 8; g.fillStyle = '#efe6d4'; g.fillRect(x, y - h, 38, h); g.fillStyle = i % 2 ? PAL.sideA : PAL.sideB; g.beginPath(); g.moveTo(x - 4, y - h); g.lineTo(x + 19, y - h - 18); g.lineTo(x + 42, y - h); g.fill();
     if (i === 11) { g.fillStyle = '#efe6d4'; g.fillRect(x + 6, y - h - 90, 26, 90); g.fillStyle = PAL.sideB; g.beginPath(); g.moveTo(x + 2, y - h - 90); g.lineTo(x + 19, y - h - 126); g.lineTo(x + 36, y - h - 90); g.fill(); } }
   for (let i = 0; i < 14; i++) { const x = hash(i * 7) * 1080 + px * 1.2, y = hor - 14 - hash(i) * 10; g.fillStyle = i % 2 ? '#6f9a52' : '#5f8a46'; g.beginPath(); g.arc(x, y, 14 + 10 * hash(i + 2), 0, Math.PI * 2); g.fill(); }
@@ -106,7 +115,7 @@ function setSquare(t, o) { F.sky(t, { sunX: 860, sunY: 320 }); skyline(t); const
   F.put(0, 2600, .9, () => fountain(t), { rim: true }); F.put(-900, 2300, .9, () => stall(PAL.sideA), { rim: true, shadow: true }); F.put(900, 2400, .9, () => stall(PAL.sideB), { rim: true, shadow: true });
   F.put(-560, 1500, .45, () => banner(PAL.sideA, PAL.sideAD, t, 0), { rim: true, shadow: true }); F.put(560, 1500, .45, () => banner(PAL.sideB, PAL.sideBD, t, 2), { rim: true, shadow: true });
   F.put(-760, 1100, .35, () => lamp(0), { rim: true, shadow: true }); F.put(760, 1100, .35, () => lamp(0), { rim: true, shadow: true });
-  if (o.duo) decal(0, 330, .5, emblem); else F.put(0, 760, .42, () => emblem(), {});
+  if (o.duo) decal(0, 380, .3, emblem); else F.put(0, 760, .42, () => emblem(), {});
   F.put(o.duo ? 0 : -120, o.duo ? 720 : 640, SIGN * (o.duo ? 1.4 : 1.08), () => F.counterSign(o.sign), { sharp: true, rim: true, shadow: true });
   F.put(o.mayorX ?? 200, o.mayorZ ?? 560, FIG, () => mayor(t, { expr: o.mayorExpr || 'smug', look: o.look ?? -1, turn: o.turn ?? -.4, armF: 30, bendF: -70, flip: true }), { rim: true, shadow: true });
   (o.cars || []).forEach(([x, z, side, ex]) => F.put(x, z, CAR, () => car(side ? PAL.sideB : PAL.sideA, side ? PAL.sideBD : PAL.sideAD, { t, plate: side ? 'TEAL' : 'RED', driver: () => driver(side, t, { expr: ex || 'glare', turn: side ? -.3 : .3 }) }), { rim: true, shadow: true }));
@@ -196,7 +205,7 @@ function night(k) { if (k <= 0) return; const g = F.g; g.save(); g.setTransform(
 // ---------- shots ----------
 const S = i => s(i) - .15;
 const SHOTS = [
-  [0, t => { cam(t, [[0, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }], [1.4, { x: -25, z: 80, hor: 690, focus: 255, dof: 5 }], [2.2, { x: 25, z: 95, hor: 690, focus: 240, dof: 5 }], [3.6, { x: 35, z: 130, hor: 690, focus: 205, dof: 5 }], [S(2), { x: 0, z: 40, hor: 760, focus: 500, dof: 3, f: 900 }]]);
+  [0, t => { cam(t, [[0, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }], [1.4, { x: -12, z: 55, hor: 690, focus: 270, dof: 5 }], [2.2, { x: -6, z: 65, hor: 690, focus: 255, dof: 5 }], [3.6, { x: -4, z: 80, hor: 690, focus: 235, dof: 5 }], [S(2), { x: 0, z: 40, hor: 760, focus: 500, dof: 3, f: 900 }]]);
     const fl = seg(t, .9, 1.4); setSquare(t, { sign: { title: 'MINUTES TO WORK', value: t < .9 ? '65 min' : '80 min', prev: '65 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: t > 1.4 ? 'worried' : 'smug', look: t > 2.2 ? 1 : -1, mayorX: 300, mayorZ: 900, duo: t < .9 ? ['neutral', 'neutral'] : ['worried', 'glare'], cars: [[-620, 1000, 0], [620, 1050, 1]] }); }],
   [S(2), (t, lt) => { cam(lt, [[0, { x: 0, y: 300, z: -500, hor: 700, focus: 1400, dof: 1.6, f: 900 }], [S(4) - S(2), { x: 0, y: 240, z: 150, focus: 1100 }]]); setValley(t, { posts: lt > 3.4 }); }],
   [S(4), (t, lt) => setMap(t, { routes: [{ col: PAL.sideA, segs: [['home', 'A'], ['A', 'mill']] }, { col: PAL.sideB, segs: [['home', 'B'], ['B', 'mill']] }], tags: [[230, 600, 'NARROW', '#8a5a3a', lt - .2], [230, 1040, '45 MIN', '#4a4a52', lt - 1.4], [850, 600, '45 MIN', '#4a4a52', lt - 1.6], [850, 1040, 'NARROW', '#8a5a3a', lt - .4], [260, 300, '2000', PAL.sideA, lt - 5.6], [820, 300, '2000', PAL.sideB, lt - 5.8], [540, 1380, '65 MIN', '#3b3b44', lt - 6.4]] })],
@@ -207,7 +216,7 @@ const SHOTS = [
   [S(12), (t, lt) => setDesk(t, { draw: 1, push: lt * 50, fgMayor: 1, mayorExpr: lt > 4.4 ? 'shock' : 'sly', texts: [['BRAESS\'S PARADOX', 0, 1140, 76, '#ffffff', lt - 2.6], ['more road, slower trip', 0, 1020, 50, '#e8f0ff', lt - 3]], stamp: clamp((lt - 4.4) / 1), stampText: 'WORSE!' })],
   [S(14), (t, lt) => { cam(lt, [[0, { x: 0, y: 160, z: -200, hor: 760, focus: 520, dof: 4 }], [6, { x: -40, y: 150, z: 0, focus: 520 }]]); setStuttgart(t); }],
   [S(15), (t, lt) => { cam(lt, [[0, { x: 0, y: 220, z: -300, hor: 760, focus: 700, dof: 3 }], [5, { x: 60, y: 200, z: 100, focus: 700 }]]); setSeoul(t); }],
-  [S(16), (t, lt) => { const fl = seg(lt, 2.3, 2.8); cam(lt, [[0, { x: 60, z: 160, hor: 690, focus: 210, dof: 5 }], [2.4, { x: 20, z: 100, hor: 690, focus: 250, dof: 5 }], [DUR - S(16) - 1.1, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }]]);
+  [S(16), (t, lt) => { const fl = seg(lt, 2.3, 2.8); cam(lt, [[0, { x: -4, z: 80, hor: 690, focus: 230, dof: 5 }], [2.4, { x: -8, z: 60, hor: 690, focus: 260, dof: 5 }], [DUR - S(16) - 1.1, { x: -10, z: 40, hor: 690, focus: 295, dof: 5 }]]);
     setSquare(t, { sign: { title: 'MINUTES TO WORK', value: lt < 2.3 ? '80 min' : '65 min', prev: '80 min', flip: fl > 0 && fl < 1 ? fl : 0 }, mayorExpr: fl >= 1 ? 'smug' : 'neutral', look: -1, mayorX: 300, mayorZ: 900, duo: lt > 2.6 && t < DUR - 1.2 ? ['smug', 'smug'] : lt > 2.6 ? ['neutral', 'neutral'] : ['worried', 'glare'], cars: [[-620, 1000, 0], [620, 1050, 1]] }); }],
 ];
 // captions: 1-2 words per chunk, timed by characters through each line
