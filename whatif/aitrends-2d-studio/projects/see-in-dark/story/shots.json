@@ -1,0 +1,2589 @@
+{
+ "title": "What If You Could See in Complete Darkness?",
+ "duration": 414.56,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 4.96,
+   "line": "Blackout. Every light on your street dies at once. You keep walking.",
+   "scene": "Wide night street, every house lit. On 'Blackout' the lamps and windows die house by house (street power 1->0). Slow push-in, rain-free. HERO silhouette keeps walking along the pavement under the last lamp, unbothered (walkPose), then into the dark.",
+   "set": "street",
+   "type": "est",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "impact",
+     "gain": -8
+    },
+    {
+     "at": 1.6,
+     "name": "hum",
+     "gain": -14
+    }
+   ],
+   "notes": "EXAMPLE DONE stage 1",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s002",
+   "start": 4.96,
+   "end": 7.64,
+   "line": "Round the coffee table. Over the shoe.",
+   "scene": "Top-down diagram of the flat: furniture as dark shapes, HERO's path draws on as a glowing ink line round the coffee table, over the shoe (tiny hop arc). Dotted trajectory, label 'COFFEE TABLE' / 'SHOE' pop on the words.",
+   "set": "apartment",
+   "type": "top",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s003",
+   "start": 7.64,
+   "end": 10.4,
+   "line": "Past the door that always eats your knee.",
+   "scene": "Macro: the door edge swings in, HERO's knee glides past it by a centimetre, a little 'whoosh' of air; dust puffs. Dry-humour hold on the gap.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "swish",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 10.4,
+   "end": 12.92,
+   "line": "You find the cat on top of the fridge.",
+   "scene": "Medium two-shot: HERO beside the fridge looking up; BISCUIT sits on top of the fridge, purple collar, eyes glint in the dark. Slow push. HERO smiles proudly.",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s005",
+   "start": 12.92,
+   "end": 16.24,
+   "line": "Biscuit blinks. She looks offended.",
+   "scene": "Giant close-up of Biscuit's face: green eyeshine, slow blink, then the eyes drop to heavy-lidded 'offended' on 'offended'. Purple collar in frame. Whiskers twitch.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "cat head drawn big via cat() with s~5"
+  },
+  {
+   "id": "s006",
+   "start": 16.24,
+   "end": 19.58,
+   "line": "Your little sister Mina stumbles in, torch first.",
+   "scene": "Doorway: MINA (child scale, red scarf) stumbles in torch-first, phone torch beam swinging, bumps the door. HERO in the foreground smirking, lit by the torch rim. Camera drifts right.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 19.58,
+   "end": 22.36,
+   "line": "How are you doing this? You shrug.",
+   "scene": "Over-the-shoulder: big blurred HERO shoulder in the foreground, MINA sharp in the torch glow, confused ('how are you doing this?'), talking with ring pulses; HERO shrugs on 'You shrug'.",
+   "set": "apartment",
+   "type": "ots",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s008",
+   "start": 22.36,
+   "end": 26.64,
+   "line": "You can see the mouse by the bin. You can see the toast cooling.",
+   "scene": "THERMAL VIEW (hero's POV): the dark flat in false colour; a mouse glows orange by the bin, then the camera pans to toast on a plate cooling from yellow to purple. Chip 'Mouse. Toast. No charger.' HUD brackets.",
+   "set": "apartment",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "notes": "EXAMPLE DONE stage 1 (thermal)"
+  },
+  {
+   "id": "s009",
+   "start": 26.64,
+   "end": 29.2,
+   "line": "You still cannot find your phone charger.",
+   "scene": "Insert: HERO's hands pat the side table, the charger brick is a dead black rectangle in thermal view (cold), cable invisible. Hand glows, charger does not. Sigh, expression sad.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s010",
+   "start": 29.2,
+   "end": 30.92,
+   "line": "What if you could see in complete darkness?",
+   "scene": "TITLE CARD over a black frame that fades up into the night skyline: 'WHAT IF YOU COULD SEE IN COMPLETE DARKNESS?' with slow warm glow and stars. Flash in.",
+   "set": "",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s011",
+   "start": 30.92,
+   "end": 35.08,
+   "line": "Rule one... your eyes quit first.",
+   "scene": "RULE 1 title card: 'RULE 1 / YOUR EYES QUIT FIRST' over the dark cinema hall, projector beam and dust.",
+   "set": "cinema",
+   "type": "rule",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": "EXAMPLE DONE stage 1 (rule card)",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s012",
+   "start": 35.08,
+   "end": 40.38,
+   "line": "A human eye holds about one hundred and twenty million rods. Rods handle the dark.",
+   "scene": "Blueprint: the eye cross-section draws on, light rays enter; rods highlighted in the retina. Chip 'About 120 million rods' on the number.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "notes": "EXAMPLE DONE stage 1 (blueprint)"
+  },
+  {
+   "id": "s013",
+   "start": 40.38,
+   "end": 43.56,
+   "line": "It also holds about six million cones.",
+   "scene": "Blueprint: retina inset swaps to cones (triangles, red/green/blue) filling in. Chip 'About 6 million cones'.",
+   "set": "blueprint",
+   "type": "macro",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s014",
+   "start": 43.56,
+   "end": 46.78,
+   "line": "Cones handle colour. And at night, they clock out.",
+   "scene": "Gag: a rainbow poster on the cinema wall; cones as tiny workers punch out at a time clock one by one as the colour drains to grey. Dry humour.",
+   "set": "cinema",
+   "type": "gag",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s015",
+   "start": 46.78,
+   "end": 50.42,
+   "line": "Walk from sunshine into a cinema. You are blind.",
+   "scene": "Wide: a blazing white doorway at left; HERO and DEV silhouettes step into the black hall and stop, blind. Doorway light shrinks as the door closes. Slow push.",
+   "set": "cinema",
+   "type": "est",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "whip"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.6,
+     "name": "impact",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s016",
+   "start": 50.42,
+   "end": 53.56,
+   "line": "Your rods need twenty to thirty minutes to catch up.",
+   "scene": "Data: giant clock face sweeps 20 to 30 minutes over the dark hall, rods icon refilling like a battery. Chip 'Rods: 20-30 minutes'.",
+   "set": "cinema",
+   "type": "data",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "clock",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s017",
+   "start": 53.56,
+   "end": 57.7,
+   "line": "Dev shuffles in beside you, orange beanie first, popcorn flying.",
+   "scene": "Medium two-shot in the hall: DEV (orange beanie) shuffles in beside HERO, popcorn flying in slow arcs, rim from the screen. Dev stumbles; HERO stands steady.",
+   "set": "cinema",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s018",
+   "start": 57.7,
+   "end": 61.96,
+   "line": "Where is row F? he groans. You walk straight to it.",
+   "scene": "Medium: DEV groans 'Where is row F?' squinting at nothing. Row F sign glows in the foreground blur; then HERO walks straight to it, confident, Dev bumping seats behind. Camera tracks with them.",
+   "set": "cinema",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s019",
+   "start": 61.96,
+   "end": 64.76,
+   "line": "A cat needs roughly a sixth of the light you do.",
+   "scene": "Giant close-up of Biscuit: huge eyeshine pupils contracting; chip 'Cat: about 1/6 the light'.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s020",
+   "start": 64.76,
+   "end": 69.6,
+   "line": "You? None. But even a cat is blind in true darkness.",
+   "scene": "Medium: HERO sits calm on the sofa in the pitch dark, a big floating '0' chip; Biscuit tries to cross the room and bonks into the wall ('even a cat is blind in true darkness').",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.6,
+     "name": "hit",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s021",
+   "start": 69.6,
+   "end": 74.16,
+   "line": "Humans are not hopeless, though. In a 2016 experiment,",
+   "scene": "Lab in near dark: a row of volunteers (plain grey figures) sit with notepads, an eye-chart glow at the far end. Slow push. Chip 'Nature Comms, 2016'.",
+   "set": "lab",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s022",
+   "start": 74.16,
+   "end": 79.08,
+   "line": "volunteers spotted single photons better than chance. One photon. One.",
+   "scene": "Blueprint: a single glowing photon travels from the left into the eye and hits the retina with a ripple; big gold '1' counts up. 'One photon. One.'",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.0,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s023",
+   "start": 79.08,
+   "end": 81.2,
+   "line": "Upside, no more stubbed toes.",
+   "scene": "Insert: HERO's bare foot slides past the coffee-table leg with a little checkmark sparkle. Thumbs-up. Quick.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s024",
+   "start": 81.2,
+   "end": 86.54,
+   "line": "Downside, Dev wants to know why you keep staring at him. Fair question.",
+   "scene": "Two-shot: DEV leans away from HERO (hold for 'Fair question': slow push on Dev squinting), hugging the popcorn bucket, suspicious sideways look; HERO keeps staring (eyes wide).",
+   "set": "cinema",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s025",
+   "start": 86.54,
+   "end": 89.5,
+   "line": "So how do you see where nothing shines?",
+   "scene": "Medium: HERO alone in the dark row, looking around the hall, head slowly turning, eyes searching. Projector dust.",
+   "set": "cinema",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s026",
+   "start": 89.5,
+   "end": 91.8,
+   "line": "Simple... nothing has to shine.",
+   "scene": "Giant face of HERO: eyes widen (awe) as a faint warm glow reflects in them. Slow push-in.",
+   "set": "cinema",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s027",
+   "start": 91.8,
+   "end": 94.64,
+   "line": "Everything is already glowing.",
+   "scene": "FREEZE-FRAME with a flash: the whole cinema blooms into thermal colours - Dev, popcorn, seats glowing in the palette, particles hanging in the air, 'THERMAL' badge in the corner.",
+   "set": "cinema",
+   "type": "freeze",
+   "view": "thermal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "freeze",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s028",
+   "start": 94.64,
+   "end": 97.6,
+   "line": "Rule two... dark isn't empty.",
+   "scene": "RULE 2 title card: 'RULE 2 / DARK ISN'T EMPTY' over the blacked-out apartment, a faint thermal glow breathing behind the letters.",
+   "set": "apartment",
+   "type": "rule",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s029",
+   "start": 97.6,
+   "end": 101.4,
+   "line": "Anything above absolute zero glows with infrared.",
+   "scene": "Blueprint: infrared wavy lines radiate from a sun-warm cup, a rock and a body, gold label 'INFRARED'. Chip 'Everything warm glows'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s030",
+   "start": 101.4,
+   "end": 104.64,
+   "line": "Your couch. Your cat. You.",
+   "scene": "THERMAL VIEW of the flat: couch faint purple, Biscuit orange, HERO white-hot, each labelled as spoken ('COUCH' 'CAT' 'YOU') by wordTime. Slow push.",
+   "set": "apartment",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.3,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s031",
+   "start": 104.64,
+   "end": 108.7,
+   "line": "Dr. Lin, in her green lanyard, kills every light in the lab.",
+   "scene": "Lab wide: DR LIN (white coat, green lanyard) at the light switch, ceiling strips die in a ripple, the room drops to blueprint-wall glow + exit light. HERO nearby, tiny.",
+   "set": "lab",
+   "type": "est",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 1.8,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s032",
+   "start": 108.7,
+   "end": 112.42,
+   "line": "She holds up one hand. You count five warm fingers.",
+   "scene": "THERMAL insert: one hand held up, five fingers glow yellow-white, counted off with tiny gold numbers 1-5 on the words 'five warm fingers'.",
+   "set": "lab",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.4,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s033",
+   "start": 112.42,
+   "end": 115.68,
+   "line": "She is not scared. She is thrilled.",
+   "scene": "Giant face of DR LIN in the dark, lit by blueprint-wall glow: grinning, glasses glinting, thrilled. Slow push.",
+   "set": "lab",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s034",
+   "start": 115.68,
+   "end": 121.0,
+   "line": "This is thermal vision, she whispers. Not magic. Physics.",
+   "scene": "Two-shot: LIN whispering to HERO in the glow, HERO leaning in. At 'Physics' chip 'Not magic. Physics.'",
+   "set": "lab",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.8,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s035",
+   "start": 121.0,
+   "end": 125.2,
+   "line": "Human skin glows most strongly near nine and a half micrometres.",
+   "scene": "Blueprint: wavelength chart draws on, curve peaks at 9.5 um with a gold marker. Chip 'Skin peak: ~9.5 micrometres'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.4,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s036",
+   "start": 125.2,
+   "end": 130.06,
+   "line": "That is long-wave infrared. Thermal cameras read exactly that band.",
+   "scene": "Insert: LIN's thermal camera on its tripod, its little screen showing HERO in the false-colour palette; band label 'LONG-WAVE INFRARED'. Rack-focus to the screen.",
+   "set": "lab",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s037",
+   "start": 130.06,
+   "end": 134.12,
+   "line": "Your own eyes can't. One reason? They are warm too.",
+   "scene": "Blueprint: eye cross-section where the retina is washed with the eye's own orange glow (glowK), gold label 'EYES ARE WARM TOO'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s038",
+   "start": 134.12,
+   "end": 137.38,
+   "line": "It's like reading a dim screen with a torch in your face.",
+   "scene": "Gag: HERO squints at a dim phone screen while a torch points straight into his own face. Washed-out, he winces. Dry humour.",
+   "set": "lab",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "flash",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s039",
+   "start": 137.38,
+   "end": 142.2,
+   "line": "Nature found a workaround. Pit vipers have a hollow pit on their face.",
+   "scene": "Macro: a pit viper's head in the dark undergrowth, the pit organ circled in gold on 'hollow pit'. Rain drips. Slow push.",
+   "set": "forest",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s040",
+   "start": 142.2,
+   "end": 144.8,
+   "line": "It works like a pinhole camera for heat.",
+   "scene": "THERMAL snake's-eye POV: a circular pinhole vignette, a warm mouse blurred as a heat blob that sharpens through the pinhole. Label 'PINHOLE CAMERA FOR HEAT'.",
+   "set": "forest",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s041",
+   "start": 144.8,
+   "end": 148.86,
+   "line": "Its nerves use a heat-sensitive protein called TRPA1.",
+   "scene": "Blueprint: a nerve ending with the TRPA1 channel as a gate; heat arrows open it. Gold label 'TRPA1'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s042",
+   "start": 148.86,
+   "end": 151.34,
+   "line": "Scientists pinned that down in 2010.",
+   "scene": "Data card: 'TRPA1, Nature 2010' with an animated journal-page stamp. Navy card over the blueprint grid.",
+   "set": "",
+   "type": "data",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s043",
+   "start": 151.34,
+   "end": 153.86,
+   "line": "A snake finds a mouse in total darkness.",
+   "scene": "THERMAL medium: viper coiled, a mouse glows and darts; the viper lunges and strikes in one beat. Rain static in the cold layer.",
+   "set": "forest",
+   "type": "med",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "swish",
+     "gain": -8
+    },
+    {
+     "at": 1.8,
+     "name": "hit",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s044",
+   "start": 153.86,
+   "end": 157.7,
+   "line": "You? The mouse... and the remote.",
+   "scene": "HERO on the sofa, lifts the TV remote which glows warm in his thermal view (cut to normal view, remote in his hand), triumphant, Biscuit watching.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.6,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s045",
+   "start": 157.7,
+   "end": 160.78,
+   "line": "Out on the dark street, you spot a kitten under a parked car.",
+   "scene": "THERMAL wide of the dark street (power 0): a small orange glow under a parked car; HERO and DEV walk in, HERO points. Slow push.",
+   "set": "street",
+   "type": "est",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s046",
+   "start": 160.78,
+   "end": 164.4,
+   "line": "A small orange glow. You rescue it.",
+   "scene": "Insert: HERO kneels on the kerb, cups a tiny kitten (warm, in his hands), warm light on his face. Expression: tender smile. Normal view, soft rim.",
+   "set": "street",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s047",
+   "start": 164.4,
+   "end": 168.02,
+   "line": "Then you walk face first into a shop window.",
+   "scene": "Medium two-shot: HERO strides confidently with DEV beside him, bonks flat face-first into the invisible shop window. Dev flinches.",
+   "set": "street",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.6,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s048",
+   "start": 168.02,
+   "end": 170.72,
+   "line": "Ordinary glass blocks thermal infrared.",
+   "scene": "THERMAL: the shop window is a flat cold purple slab while the warm people in the shop wall are invisible; HERO's heat bounces back as a faint reflection. Chip 'Glass blocks thermal infrared'.",
+   "set": "street",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s049",
+   "start": 170.72,
+   "end": 173.56,
+   "line": "To you, it is a flat, cold wall.",
+   "scene": "FREEZE-FRAME: HERO's face pressed flat against the glass, cheeks squished, particles hanging, 'COLD WALL' label.",
+   "set": "street",
+   "type": "freeze",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "freeze",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s050",
+   "start": 173.56,
+   "end": 177.04,
+   "line": "Dev wheezes with laughter. Mate... that was a window.",
+   "scene": "Two-shot: DEV doubled over laughing, wheezing; HERO rubs his nose. 'Mate... that was a window.'",
+   "set": "street",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s051",
+   "start": 177.04,
+   "end": 179.34,
+   "line": "Ten out of ten.",
+   "scene": "Data: a big gold stamp '10/10' slaps down over HERO's squished face freeze; confetti sparkle. Dry humour.",
+   "set": "street",
+   "type": "data",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "impact",
+     "gain": -8
+    },
+    {
+     "at": 0.5,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s052",
+   "start": 179.34,
+   "end": 183.1,
+   "line": "Rule three... heat has no colour.",
+   "scene": "RULE 3 title card: 'RULE 3 / HEAT HAS NO COLOUR' over a thermal-palette gradient wash with the cream title.",
+   "set": "apartment",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s053",
+   "start": 183.1,
+   "end": 185.68,
+   "line": "Mina slides a birthday card across the table.",
+   "scene": "Medium two-shot at the coffee table: MINA slides a birthday card across, red scarf swaying, HERO leaning in. Torch on the table.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s054",
+   "start": 185.68,
+   "end": 189.22,
+   "line": "In the dark, it is a blank, warm rectangle.",
+   "scene": "THERMAL insert: the card is a blank warm rectangle, perfectly even yellow, the ink invisible; fingers hover above.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s055",
+   "start": 189.22,
+   "end": 194.28,
+   "line": "Ink and paper sit at the same temperature. No contrast. No words.",
+   "scene": "Blueprint: two thermometers (INK, PAPER) at the same level, equals sign. Chip 'Same temperature, no contrast'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s056",
+   "start": 194.28,
+   "end": 196.54,
+   "line": "You guess happy birthday.",
+   "scene": "Giant face of HERO, confidently guessing, big proud smile.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s057",
+   "start": 196.54,
+   "end": 198.56,
+   "line": "It says get well soon.",
+   "scene": "Insert in torchlight: the card reads GET WELL SOON in rainbow letters, HERO's hand freezes, smile drops.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "stinger",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s058",
+   "start": 198.56,
+   "end": 202.96,
+   "line": "She tucks a hand warmer into your hoodie pocket. Keep it, she says.",
+   "scene": "Two-shot: MINA tucks a hand warmer into HERO's hoodie pocket, pats it. 'Keep it, I have the twin.' MINA smiles up.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s059",
+   "start": 202.96,
+   "end": 206.7,
+   "line": "I have the twin. In your sight, it burns like a coal.",
+   "scene": "THERMAL insert: the hand warmer in HERO's pocket burns white-hot like a coal; Mina's twin glows white-hot in her own pocket, a bright spark pair. PLANT for the payoff.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s060",
+   "start": 206.7,
+   "end": 209.5,
+   "line": "Night-vision goggles work differently.",
+   "scene": "Insert: a pair of night-vision goggles on a bench, green lenses faintly glowing, dust in the beam.",
+   "set": "lab",
+   "type": "macro",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s061",
+   "start": 209.5,
+   "end": 212.4,
+   "line": "They amplify the faint light already there.",
+   "scene": "Blueprint: goggle tube diagram, faint starlight in, amplified green image out; gold labels AMPLIFIER.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s062",
+   "start": 212.4,
+   "end": 217.34,
+   "line": "Starlight. Moonlight. In true darkness? Nothing to amplify.",
+   "scene": "Night sky over the forest: stars and moon, a goggle-green vignette that fades to black as the light drains away; chip 'No light, nothing to amplify'.",
+   "set": "forest",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s063",
+   "start": 217.34,
+   "end": 221.16,
+   "line": "So thermal wins the pitch black... but only for warm things.",
+   "scene": "Top-down thermal map of the flat: warm things (cat, mug, HERO) lit in the palette, cold things (shoe, charger, sofa) flat grey.",
+   "set": "apartment",
+   "type": "top",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s064",
+   "start": 221.16,
+   "end": 223.82,
+   "line": "Colour is a bigger ask.",
+   "scene": "Giant face of HERO, squinting at a grey world, brows up, 'what colour?'",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s065",
+   "start": 223.82,
+   "end": 228.5,
+   "line": "Helmet geckos told blue from grey at moonlight levels in 2004. You?",
+   "scene": "Macro: a helmet gecko on a rock in moonlight; two swatches (blue, grey) are picked out correctly. Chip 'Gecko colour vision, 2004'.",
+   "set": "forest",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s066",
+   "start": 228.5,
+   "end": 232.06,
+   "line": "Hot, warm, cold. That is your entire palette.",
+   "scene": "Blueprint: the hero's whole palette as three swatches HOT, WARM, COLD that slide in on the words 'hot', 'warm', 'cold'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s067",
+   "start": 232.06,
+   "end": 235.86,
+   "line": "Upside, you win hide and seek forever.",
+   "scene": "THERMAL medium: DEV hides behind the curtain, glowing like a lantern; HERO points straight at him. 'Hide and seek forever.'",
+   "set": "apartment",
+   "type": "two",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s068",
+   "start": 235.86,
+   "end": 238.88,
+   "line": "Downside, you can't read a menu.",
+   "scene": "Medium: HERO squints at the blank, dim concession menu board, Dev waiting with a wallet. Cold blank slab on the menu.",
+   "set": "cinema",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s069",
+   "start": 238.88,
+   "end": 241.48,
+   "line": "Rule four... light is the enemy.",
+   "scene": "RULE 4 title card: 'RULE 4 / LIGHT IS THE ENEMY' over the dark street, a single lamp flaring behind the title.",
+   "set": "street",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s070",
+   "start": 241.48,
+   "end": 243.6,
+   "line": "You step off the kerb at midnight.",
+   "scene": "Wide: HERO and DEV at the kerb at midnight, a clock tower reads 12:00 above, empty road. Slow push.",
+   "set": "street",
+   "type": "est",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s071",
+   "start": 243.6,
+   "end": 246.98,
+   "line": "A cyclist, no lamp, glows like a ghost.",
+   "scene": "THERMAL: a cyclist with no lamp glides down the road like a white-orange ghost, bike frame faint purple, tyres cold. Camera pans with them.",
+   "set": "street",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "carpass",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s072",
+   "start": 246.98,
+   "end": 250.2,
+   "line": "You yank Dev back. Saved him.",
+   "scene": "Medium: HERO grabs DEV's sleeve and yanks him back; the cyclist whips past in the road. Hat flies.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "swish",
+     "gain": -8
+    },
+    {
+     "at": 0.9,
+     "name": "carpass",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s073",
+   "start": 250.2,
+   "end": 252.62,
+   "line": "Dev stares at you. How did you see that?",
+   "scene": "Giant face of DEV, wide-eyed, 'How did you see that?'",
+   "set": "street",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s074",
+   "start": 252.62,
+   "end": 255.4,
+   "line": "Then the cyclist's lamp snaps on.",
+   "scene": "Insert: the bike lamp snaps on, a hard white-yellow starburst, lens streak, flash.",
+   "set": "street",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "flash",
+     "gain": -6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s075",
+   "start": 255.4,
+   "end": 258.8,
+   "line": "It is one bright flash. Your thermal view whites out.",
+   "scene": "THERMAL view blooms from palette colours to total white (whiteOut) over the street. Corner readout glitches.",
+   "set": "street",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "glitch",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s076",
+   "start": 258.8,
+   "end": 262.88,
+   "line": "Your old eyes are not ready either. Total blindness.",
+   "scene": "Giant face of HERO: pupils shrink, squeeze shut, the frame whites out then drops to black. Total blindness.",
+   "set": "street",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s077",
+   "start": 262.88,
+   "end": 267.08,
+   "line": "Bright light floods your rods. They need twenty to thirty minutes to recover.",
+   "scene": "Blueprint: retina inset with rods flooding white-hot; recovery bar creeping. Chip 'Recovery: 20-30 minutes'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s078",
+   "start": 267.08,
+   "end": 271.42,
+   "line": "Your new sight takes about a minute. A long, shaky minute.",
+   "scene": "Medium: HERO stands blind, hands out, a 60-second stopwatch ring ticking in the corner. A long, shaky minute.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.8,
+     "name": "heartbeat",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s079",
+   "start": 271.42,
+   "end": 273.4,
+   "line": "Dev guides you home by the sleeve.",
+   "scene": "Over the shoulder: DEV leads HERO by the sleeve, HERO eyes shut, lamp light blurred in the foreground.",
+   "set": "street",
+   "type": "ots",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s080",
+   "start": 273.4,
+   "end": 278.0,
+   "line": "Amazing. And awful. Usually both at once.",
+   "scene": "Wide: the two figures walk home down the long street, lamps flicker on in order, camera slowly pulls back.",
+   "set": "street",
+   "type": "est",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s081",
+   "start": 278.0,
+   "end": 281.5,
+   "line": "So the rule is simple. Dark is your friend.",
+   "scene": "Medium: HERO and MINA in the dark flat, HERO's hand on the light switch, off. Moonlight, calm.",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s082",
+   "start": 281.5,
+   "end": 284.24,
+   "line": "Light is a punch. Remember that...",
+   "scene": "FREEZE-FRAME: the lamp bulb flares to full glare, white-hot starburst, particles hanging; HERO flinches.",
+   "set": "apartment",
+   "type": "freeze",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "freeze",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s083",
+   "start": 284.24,
+   "end": 287.1,
+   "line": "because you are about to need it.",
+   "scene": "Giant face of HERO, ominous, slow push, eyes fixed off camera. Music turns tense.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "riser",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s084",
+   "start": 287.1,
+   "end": 289.8,
+   "line": "Rule five... cold hides.",
+   "scene": "RULE 5 title card: 'RULE 5 / COLD HIDES' over rainy pines, rain streaks across the letters.",
+   "set": "forest",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "thunder",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s085",
+   "start": 289.8,
+   "end": 294.1,
+   "line": "A school camping trip. Rain on the trees. Mina is gone.",
+   "scene": "Wide rainy campsite: two tents, HERO, DEV, MINA (red scarf), RANGER TOMAS (blue cap) huddled, lantern glow. Heavy rain. On 'Mina is gone' push to the empty tent and FREEZE: rain hangs in the air.",
+   "set": "forest",
+   "type": "est",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s086",
+   "start": 294.1,
+   "end": 298.24,
+   "line": "You scan the forest. Deer. A fox.",
+   "scene": "THERMAL forest sweep: a deer and a fox glow orange between the black trunks, rain streaks cold. Camera pans left to right.",
+   "set": "forest",
+   "type": "wide",
+   "view": "thermal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "powerup",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s087",
+   "start": 298.24,
+   "end": 301.94,
+   "line": "Dev, glowing beside you. Everything alive shows up.",
+   "scene": "THERMAL two-shot: DEV glows white-hot beside HERO. 'Everything alive shows up.'",
+   "set": "forest",
+   "type": "two",
+   "view": "thermal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s088",
+   "start": 301.94,
+   "end": 304.42,
+   "line": "Except her. Why?",
+   "scene": "Giant face of HERO, searching, eyes darting. 'Except her. Why?'",
+   "set": "forest",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s089",
+   "start": 304.42,
+   "end": 308.64,
+   "line": "Rain has soaked everything cold. Warm and cool fade to the same grey.",
+   "scene": "Blueprint: a thermal scene whose contrast slowly drains to flat grey; two thermometers converging. Chip 'Wet = same temperature'.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s090",
+   "start": 308.64,
+   "end": 313.52,
+   "line": "So where is she? Ranger Tomas, in his blue cap, shouts that it is hopeless.",
+   "scene": "Medium: RANGER TOMAS shouts over the rain that it is hopeless, waving his arms; HERO silent beside him looking around.",
+   "set": "forest",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s091",
+   "start": 313.52,
+   "end": 315.82,
+   "line": "You find a cave mouth.",
+   "scene": "Wide: a cave mouth in the rock, everything grey; HERO approaches slowly. Slow push.",
+   "set": "forest",
+   "type": "est",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s092",
+   "start": 315.82,
+   "end": 320.02,
+   "line": "Mina's coat is zipped, her skin cool, her body blending into the rock.",
+   "scene": "THERMAL insert: a curled shape against the cave rock, barely a shade warmer than the stone, Mina's scarf the faintest smear.",
+   "set": "forest",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s093",
+   "start": 320.02,
+   "end": 321.82,
+   "line": "Almost enough. Not quite.",
+   "scene": "Giant face of HERO squinting hard. 'Almost enough. Not quite.'",
+   "set": "forest",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s094",
+   "start": 321.82,
+   "end": 325.04,
+   "line": "Tomas swings his torch at the cave.",
+   "scene": "Over the shoulder: TOMAS swings his torch beam toward the cave, a blast of white light across HERO's shoulder.",
+   "set": "forest",
+   "type": "ots",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "flash",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s095",
+   "start": 325.04,
+   "end": 328.46,
+   "line": "Light slams into your eyes. Everything goes white.",
+   "scene": "FREEZE-FRAME: white flash across the frame, HERO's silhouette recoiling, everything blown out.",
+   "set": "forest",
+   "type": "freeze",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s096",
+   "start": 328.46,
+   "end": 331.88,
+   "line": "You are blind... again. Time is short.",
+   "scene": "Giant face of HERO, eyes squeezed shut, rim white. Dark and still.",
+   "set": "forest",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s097",
+   "start": 331.88,
+   "end": 335.6,
+   "line": "Mina is cold, and you are blind. Run in blind...",
+   "scene": "Wide-ish two-shot: HERO, DEV, TOMAS in a tight worried line facing the cave. Decision beat.",
+   "set": "forest",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s098",
+   "start": 335.6,
+   "end": 339.46,
+   "line": "or wait in the dark? Lights out, you croak. Everybody.",
+   "scene": "Big line over blurred forest: 'RUN BLIND... OR WAIT?' Chip 'Run blind or wait?'",
+   "set": "forest",
+   "type": "data",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "heartbeat",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s099",
+   "start": 339.46,
+   "end": 342.08,
+   "line": "Tomas clicks off his torch.",
+   "scene": "Two-shot: TOMAS clicks his torch off - the beam snaps out and the forest drops back to blue-black.",
+   "set": "forest",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s100",
+   "start": 342.08,
+   "end": 344.56,
+   "line": "You count sixty seconds in the dark.",
+   "scene": "Data: a 60-second countdown ring on near-black, tiny rain, chip 'Sixty seconds'.",
+   "set": "forest",
+   "type": "data",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "clock",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s101",
+   "start": 344.56,
+   "end": 347.88,
+   "line": "Then it comes back. Grey rock. Grey rain.",
+   "scene": "THERMAL wide, grey rock, grey rain, everything the same flat grey as the thermal view slowly returns.",
+   "set": "forest",
+   "type": "est",
+   "view": "thermal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s102",
+   "start": 347.88,
+   "end": 352.06,
+   "line": "And one tiny white spark, as a small hand pulls it from a coat.",
+   "scene": "THERMAL insert: a small hand pulls the twin hand warmer from a coat; one tiny white spark in the grey. PAYOFF.",
+   "set": "forest",
+   "type": "insert",
+   "view": "thermal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "shimmer",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s103",
+   "start": 352.06,
+   "end": 355.4,
+   "line": "Mina's hand warmer. The twin.",
+   "scene": "Giant face of HERO: realisation, awe, tears of relief, spark reflected in his eyes.",
+   "set": "forest",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "ding",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s104",
+   "start": 355.4,
+   "end": 358.24,
+   "line": "You reach her, curled under a rock ledge.",
+   "scene": "Two-shot: HERO crouches under a rock ledge reaching MINA, curled up in her coat, red scarf. Embrace.",
+   "set": "forest",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s105",
+   "start": 358.24,
+   "end": 360.94,
+   "line": "She is cold. She is smiling.",
+   "scene": "Giant face of MINA, cold-tinted but smiling, sleepy.",
+   "set": "forest",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s106",
+   "start": 360.94,
+   "end": 364.56,
+   "line": "You found me, she mumbles. Of course you did.",
+   "scene": "Two-shot: MINA mumbles 'You found me', HERO holds her, 'Of course you did.' Warm rim.",
+   "set": "forest",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s107",
+   "start": 364.56,
+   "end": 368.44,
+   "line": "Dev cheers. Tomas wipes his eyes and blames the rain.",
+   "scene": "Medium: DEV cheers, arms up; TOMAS wipes his eyes and blames the rain.",
+   "set": "forest",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "cheer",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s108",
+   "start": 368.44,
+   "end": 373.4,
+   "line": "Mina waves the little brick. Best twin ever... and you owe me hot chocolate.",
+   "scene": "Two-shot: MINA holds up the brick - 'Best twin ever, you owe me hot chocolate' - HERO grins. End on a slow push into the spark.",
+   "set": "forest",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s109",
+   "start": 373.4,
+   "end": 376.8,
+   "line": "So... is any of this real?",
+   "scene": "Big line 'IS ANY OF THIS REAL?' in gold over the lab, LIN silhouetted at the blueprint wall.",
+   "set": "lab",
+   "type": "title",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s110",
+   "start": 376.8,
+   "end": 379.36,
+   "line": "Pit vipers are. Thermal cameras are.",
+   "scene": "Blueprint icons draw on and tick: pit viper, thermal camera. Gold ticks on the words.",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s111",
+   "start": 379.36,
+   "end": 384.28,
+   "line": "Night-vision goggles are. Even single photons are, barely.",
+   "scene": "Data: icons of goggles and an eye get ticked; chip 'Real: all four'.",
+   "set": "blueprint",
+   "type": "data",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s112",
+   "start": 384.28,
+   "end": 386.5,
+   "line": "But no human can see heat.",
+   "scene": "Giant face of HERO looking at his own hand, no glow. Chip 'No human can see heat'.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s113",
+   "start": 386.5,
+   "end": 388.7,
+   "line": "Goggles are not eyes.",
+   "scene": "Insert: night-vision goggles on a bench, their screens blank.",
+   "set": "lab",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s114",
+   "start": 388.7,
+   "end": 391.98,
+   "line": "And without any light, cats and goggles are blind.",
+   "scene": "Blueprint: goggles and a cat both showing blank black screens. 'Cats and goggles are blind.'",
+   "set": "blueprint",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s115",
+   "start": 391.98,
+   "end": 396.66,
+   "line": "Your power would need infrared sensors, and a body that doesn't glow itself.",
+   "scene": "Medium: LIN beside the blueprint wall pointing out an infrared sensor beside a glowing body; HERO nods. Wall draws on.",
+   "set": "lab",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s116",
+   "start": 396.66,
+   "end": 399.16,
+   "line": "Are we close? Not yet.",
+   "scene": "Data: big line 'NOT CLOSE. NOT YET.' with a small progress bar stuck near the left.",
+   "set": "",
+   "type": "data",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s117",
+   "start": 399.16,
+   "end": 402.22,
+   "line": "The dark was never empty. It was only quiet.",
+   "scene": "Wide: the quiet night street, HERO alone, lamps off, slow pull back; stars appear. Music resolves.",
+   "set": "street",
+   "type": "est",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s118",
+   "start": 402.22,
+   "end": 407.64,
+   "line": "So what would you do... if you could see in complete darkness? Tell us in the comments.",
+   "scene": "Two-shot: HERO and BISCUIT on the sofa look to camera, moonlight, a comment bubble pops. Warm.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s119",
+   "start": 407.64,
+   "end": 410.54,
+   "line": "And if you would trust that tiny white spark...",
+   "scene": "FREEZE-FRAME: Mina's white spark glowing in the dark, HERO and MINA holding hands in silhouette.",
+   "set": "forest",
+   "type": "freeze",
+   "view": "normal",
+   "batch": "C",
+   "bars": "scope",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s120",
+   "start": 410.54,
+   "end": 414.56,
+   "line": "hit like, and subscribe for more What Ifs.",
+   "scene": "End screen: 'WHAT WOULD YOU DO?' with comment bubble, subscribe pill, whole cast lined up.",
+   "set": "",
+   "type": "end",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 29.0,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 29.0,
+   "end": 94.4,
+   "mood": "wonder",
+   "intensity": 0.5
+  },
+  {
+   "start": 94.4,
+   "end": 179.2,
+   "mood": "wonder",
+   "intensity": 0.65
+  },
+  {
+   "start": 179.2,
+   "end": 237.6,
+   "mood": "playful",
+   "intensity": 0.45
+  },
+  {
+   "start": 237.6,
+   "end": 287.0,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 287.0,
+   "end": 331.8,
+   "mood": "tension",
+   "intensity": 0.8
+  },
+  {
+   "start": 331.8,
+   "end": 347.6,
+   "mood": "dark",
+   "intensity": 0.3
+  },
+  {
+   "start": 347.6,
+   "end": 373.3,
+   "mood": "triumph",
+   "intensity": 0.6
+  },
+  {
+   "start": 373.3,
+   "end": 399.0,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 399.0,
+   "end": 414.56,
+   "mood": "hopeful",
+   "intensity": 0.4
+  }
+ ]
+}
