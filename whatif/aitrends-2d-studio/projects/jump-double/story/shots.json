@@ -1,0 +1,3679 @@
+{
+ "title": "What If Every Day, Your Jump Doubled?",
+ "duration": 358.69,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 3.39,
+   "line": "You wake up, stretch, and jump off your bed. You hit the ceiling.",
+   "scene": "COLD OPEN, bedroom at sunrise. apartment(g,t,cam,{mood:'day',power:1}) re-dressed as the bedroom with a LOCAL bed + alarm clock helper (warm sun through the big window = key). Alarm clock rattles (0-0.5 s), HERO sits up and stretches (poseAt stretch, idle, blinkFlag 3.4) on 'stretch', crouches on the mattress and does a small hop on 'jump': jumpPose(t, tJump, 300) with the follow cam jumpCam, he rockets up out of frame top and SLAMS into the ceiling on 'ceiling' (head through the plaster: impactFrame + jumpShake 26, plaster dust/chunks falling). apartmentFg foreground, atmos dust in the sunbeam.",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 1.58,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 3.22,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "notes": "Line continues: 'You hit the ceiling.' The impact lands on 'ceiling' (word 12).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s002",
+   "start": 3.39,
+   "end": 7.29,
+   "line": "Hard. Nobody knows why, but the rule is simple:",
+   "scene": "GIANT FACE HERO, dazed: giantFace r 330, plaster dust on his hair and a cartoon crack halo overhead; faceAt [[0,'shocked'],[0.6,'squint'],[2.4,'suspicious']] (eyes uncross on 'rule'), little bird-tweet sparkles circle and fade; rimColor warm sunrise from the window side. Punch-in camMove z 1.0->1.08, plaster flakes drift (atmos).",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.95,
+     "name": "shimmer",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s003",
+   "start": 7.29,
+   "end": 9.49,
+   "line": "every day, your jump doubles.",
+   "scene": "INSERT, the DAY counter is born: dayCounter({keys:[[0,0],[0.25,1]]}) big centre-right on the bedroom wall over the dimmed bed (blurLayer bg), flips '00' -> 'DAY 01' on 'every' with a tick; a gold 'x2' stamp pops on 'doubles' (outBack). Slow push camMove z 1.04->1.1, dust in the sunbeam.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.19,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s004",
+   "start": 9.49,
+   "end": 13.11,
+   "line": "Today, you jump like a normal person. About half a metre.",
+   "scene": "Bedroom medium: HERO in pyjamas does a normal little hop in place on 'jump' (jumpPose height 0.5*M2U=130, landing 'soft'), MINA in the doorway yawning. heightMeter({value: 0.5}) on the right edge, gold '0.5 m' readout pops on 'half'; exprAt neutral -> smirk on 'person'. camMove x drift, apartmentFg.",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.67,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.71,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.73,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s005",
+   "start": 13.11,
+   "end": 16.29,
+   "line": "Tomorrow, one metre. Then two. Then four.",
+   "scene": "GRAPHIC: doublingGraph({values:[0.5,1,2,4], start:0.2, per:0.65, unit:'m'}) on a warm blueprint-navy board; bars grow on 'one', 'two', 'four' (gold numbers, x2 hops between bars); a tiny HERO silhouette stands on top of each new bar. Slow pull camMove z 1.1->1.0.",
+   "set": "devices",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.49,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.19,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 16.29,
+   "end": 19.77,
+   "line": "That doesn't sound like much. Until you keep doubling.",
+   "scene": "GRAPHIC continue: the camera keeps pulling back from the doubling bars (8, 16, 32 ... bars squeeze), then on 'doubling' one RUNAWAY bar (doublingGraph runaway, runAt) shoots off the top of the frame with a whoosh and a gold motion streak; heightMeter flicks off the scale. The little HERO on top is carried away.",
+   "set": "devices",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -18,
+     "dur": 1.6
+    },
+    {
+     "at": 2.33,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 19.77,
+   "end": 24.57,
+   "line": "Let's see how far you get. And whether you make it back down.",
+   "scene": "TITLE lock-up: roofs({view:'houses', mood:'dusk', moon:1}) from roof height, a huge rising moon; HERO silhouetted mid-jump against the moon (jumper apex hang, hoodie flutter, slow spin) while a slow push camMove z 1.0->1.08. Title 'WHAT IF EVERY DAY, YOUR JUMP DOUBLED?' (outlined cream, >= 10 px outline + glow, as ep 1 title) pops on 'see' and the DAY counter sits small under it. roofsFg leaves, atmos fireflies.",
+   "set": "roofs",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -8,
+     "minor": false
+    },
+    {
+     "at": 1.55,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s008",
+   "start": 24.57,
+   "end": 28.27,
+   "line": "Day one. Dev bets you can't touch the basketball rim.",
+   "scene": "COURT, golden hour: court({mood:'dusk', hoopFt:10, crowd:0}). DAY counter flips 01 in the top-left corner (dayCounter small, tick on 'Day'). DEV (s 1.9) spins a basketball on one finger (basketball helper at handWorld) and points at the rim on 'rim' (pointAndLook, eyes first); HERO (s 1.95) smirks, cracks knuckles. Biscuit sleeps on the bench (cat s 1.9, purple collar). camMove x drift right, courtFg.",
+   "set": "court",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 3.15,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s009",
+   "start": 28.27,
+   "end": 31.85,
+   "line": "You jump, you miss, and Biscuit doesn't even look up.",
+   "scene": "COURT medium: HERO jumps for the rim on 'jump' (jumpPose height 0.5 m = 130 units, landing 'thud'), fingertips miss by a mile (gap gag); heightMeter value 0.5 with the hoop tick at 3.05 m far above. On 'Biscuit' cut-in framing slides to the bench: Biscuit yawns (blink, tail flick), does not look up. exprAt determined -> sheepish on 'miss'.",
+   "set": "court",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 0.91,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.53,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s010",
+   "start": 31.85,
+   "end": 34.31,
+   "line": "Day two. One metre. You take one step,",
+   "scene": "COURT: counter flips 01 -> 02 (tick on 'Day'), heightMeter jumps to 1 m on 'One'. HERO takes ONE step toward the hoop (walkAlong, s 1.95) on 'step', ball in hand, eyes locked on the rim (lookToward up). DEV in the background, arms crossed, smirking. Low angle camMove z 1.05->1.12.",
+   "set": "court",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.73,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.11,
+     "name": "footstep",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s011",
+   "start": 34.31,
+   "end": 37.13,
+   "line": "rise, and dunk on a regular ten-foot hoop.",
+   "scene": "SLOW-MOTION DUNK: jumpPose(t, tRise, 1*M2U, {hang:0.6}) launch on 'rise' with dust ring, the camera dollies up beside him (jumpCam follow, lag), apex hang with hoodie flutter, DUNK on 'dunk' (court swish 0->1->0, wobble decays), rim rattle. Gold chip '10 ft' on 'ten-foot'. heightMeter 1 m with the hoop tick.",
+   "set": "court",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.43,
+     "name": "slowmo",
+     "gain": -18
+    },
+    {
+     "at": 0.83,
+     "name": "swish",
+     "gain": -8
+    },
+    {
+     "at": 0.95,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s012",
+   "start": 37.13,
+   "end": 40.51,
+   "line": "The whole court goes silent. Dev drops his phone.",
+   "scene": "FREEZE three-shot: court({crowd:0.6}) onlookers behind the fence with phones; everyone freezes on 'silent' (motion stops, only wind in the net and a rolling ball keep moving), DEV mouth open (exprAt shocked), HERO hanging off the rim then dropping down. On 'drops' DEV's phone slips from his hand: insert-style punch-in on the phone falling (rotating), clack on 'phone'.",
+   "set": "court",
+   "type": "three",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.53,
+     "name": "freeze",
+     "gain": -16
+    },
+    {
+     "at": 3.01,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s013",
+   "start": 40.51,
+   "end": 42.61,
+   "line": "\"Do that again.\" Day three.",
+   "scene": "GIANT FACE DEV (orange beanie), lip-sync talk on \"Do that again\": giantFace who 'DEV', faceAt [[0,'shocked'],[0.3,'delighted'],[1.2,'determined']] with the mouth open keyed to the words; sweat drop, eye glint; rimColor golden sun. At ~1.6 s ('Day three') a small DAY counter in the corner flips 02 -> 03 with a tick. Punch zoom + shake on 'again'.",
+   "set": "court",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.49,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "notes": "DEV is lip-synced (quoted line).",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s014",
+   "start": 42.61,
+   "end": 47.03,
+   "line": "Two metres. Dev raises the hoop to twelve feet, as high as it goes.",
+   "scene": "CRANK INSERT then reveal: heightMeter value 2 m pops on 'Two'. DEV cranks the hoop pole (court crank 0->1, hoopFt 10 -> 12 on 'twelve') close on the crank box and a gauge, then camMove tilts up the telescoping pole to the 12 ft rim; gold chip '12 ft' on 'twelve', 'MAX' sticker on 'high'. HERO waits, bored (idle, blink).",
+   "set": "court",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.35,
+     "name": "clock",
+     "gain": -18,
+     "dur": 2.0,
+     "rate": 6.0
+    },
+    {
+     "at": 3.81,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s015",
+   "start": 47.03,
+   "end": 49.87,
+   "line": "You dunk it like it's nothing. Your jump is now",
+   "scene": "EFFORTLESS DUNK at 2 m: jumpPose height 2*M2U, HERO rises with his hands in his pockets, takes one hand out and dunks on 'dunk' (court swish, wobble), lands soft and walks off ('like it's nothing'), DEV in the background throws his beanie. Follow cam (jumpCam). heightMeter 2 m above the 12 ft tick.",
+   "set": "court",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.29,
+     "name": "swish",
+     "gain": -8
+    },
+    {
+     "at": 0.29,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.07,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s016",
+   "start": 49.87,
+   "end": 54.51,
+   "line": "higher than the best vertical leap any athlete has ever recorded.",
+   "scene": "BLUEPRINT mini-card: board({title:'FIG 1 - VERTICAL LEAP'}), two figures side by side drawn on (BP.draw): an athlete reaching the record bar (gold '1.6 m' label, 'GUINNESS' tag) vs HERO at '2 m' rising past it on 'higher'; labels pop on their words (label start = wordTime). Slow scale <= 4%.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.97,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 3.45,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Script says 'best vertical leap any athlete has ever recorded'; use ~1.6 m (Guinness standing/vertical record, see sources.md)."
+  },
+  {
+   "id": "s017",
+   "start": 54.51,
+   "end": 58.35,
+   "line": "Dev films everything. By dinner, the clip has a million views.",
+   "scene": "PHONE INSERT: DEV films (phone at handWorld, court blurred behind), then cut-in to the phone UI: phone({views:[0,1000000], at:1.2, dur:2.4, video:true}) the clip of the dunk loops on the screen while the views counter ticks to 1,000,000 on 'million' (gold), little hearts float up. Hand drift + camMove.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 1.45,
+     "name": "counter",
+     "gain": -16
+    },
+    {
+     "at": 2.81,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s018",
+   "start": 58.35,
+   "end": 61.35,
+   "line": "The comments all say the same thing: fake.",
+   "scene": "GIANT FACE HERO at dinner time, lit by the phone screen (cool blue rim): giantFace faceAt [[0,'delighted'],[1.0,'suspicious'],[2.0,'sheepish']] as he reads; the phone's FAKE comments (phone comments helper) scroll reflected in his eyes / as floating bubbles beside him, 'FAKE' stamps on 'fake'. Punch in on 'fake'.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.23,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 1.23,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 2.15,
+     "name": "hit",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s019",
+   "start": 61.35,
+   "end": 65.63,
+   "line": "Mina just wants to know one thing. \"Can you get my kite out of the tree?\"",
+   "scene": "ROOFS houses view, afternoon: roofs({view:'houses', mood:'day', kite:1, ladder:0}). MINA (s 2.0, red scarf) tugs HERO's sleeve, points up at the kite stuck in the big tree (pointAndLook), MINA lip-sync on \"Can you get my kite out of the tree?\" (talk only on her quote). HERO looks up (lookToward, eyes first). roofsFg leaves, atmos pollen.",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 2.83,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "MINA is lip-synced (quoted line).",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s020",
+   "start": 65.63,
+   "end": 68.99,
+   "line": "You can. Easily. For now.",
+   "scene": "KITE RESCUE: HERO hops up on 'can' (jumpPose 2 m into the tree, leaves burst), grabs the kite on 'Easily', drops back and lands with a little stumble (recover 'stumble') on 'now'; MINA claps (reaction delight). heightMeter 2 m with the tree tick. exprAt joy -> worried on 'now' (foreshadow). Follow cam.",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.59,
+     "name": "swish",
+     "gain": -14
+    },
+    {
+     "at": 1.27,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s021",
+   "start": 68.99,
+   "end": 73.27,
+   "line": "Here's the thing nobody tells you. Every metre you go up, you have to come down.",
+   "scene": "RULE 1 CARD: ruleCard(g,t,info,{n:1, title:'JUMPING IS EASY. LANDING ISN\\'T.', bg: dimmed court (court mood dusk, blurLayer + veil)}) extruded numeral, cream title on the dark banner, sun-rays, sparkles. The banner lands on 'nobody'; on 'down' a small HERO silhouette drops through the bottom of the card with a thud.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 4.11,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s022",
+   "start": 73.27,
+   "end": 75.83,
+   "line": "Day four. Four metres.",
+   "scene": "STADIUM establishing (<= 3 s, hero >= 12%): stadium({mood:'dusk', hjBar:2.45, crowd:0.6, board:'HIGH JUMP  2.45 m'}). DAY counter flips 03 -> 04 on 'Day' (tick), heightMeter 4 m on 'Four'. HERO (s 1.9) stands next to the high-jump bar, which is way above his head; floodlights glow, crowd murmurs. camMove x pan right, stadiumFg hurdle.",
+   "set": "stadium",
+   "type": "est",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.63,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s023",
+   "start": 75.83,
+   "end": 78.27,
+   "line": "You float over the world record high-jump bar,",
+   "scene": "STANDING JUMP: no run-up, HERO crouches and launches on 'float' (jumpPose height 4*M2U, dust ring on the track), rises past the bar; the camera ORBITS (camMove x + slight r) at the apex as the bar slides underneath him on 'bar'. Crowd heads turn (lookToward up).",
+   "set": "stadium",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.19,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.55,
+     "name": "whoosh",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s024",
+   "start": 78.27,
+   "end": 81.49,
+   "line": "two point four five metres, from a standing start,",
+   "scene": "APEX HANG over the bar (hang time, hoodie flutter, slow-mo): gold label '2.45 m' pops on 'two' with leader to the bar (BP-style label over the live set), chip 'standing start' on 'standing'. heightMeter 4 m with the 2.45 m record tick. exprAt joy, blinkFlag. Crowd cheer swells (stadium cheer 0->1).",
+   "set": "stadium",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.09,
+     "name": "cheer",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s025",
+   "start": 81.49,
+   "end": 83.61,
+   "line": "and land with a crunch.",
+   "scene": "LANDING CRUNCH: fall with speed lines, he misses the mat and lands on the track on 'land' (jumpPose landing 'thud', recover 'wince'), impactFrame + jumpShake 24, track cracks, dust; the bar knocked off (barDrop 0->1).",
+   "set": "stadium",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "impact",
+     "gain": -6
+    },
+    {
+     "at": 1.19,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s026",
+   "start": 83.61,
+   "end": 85.53,
+   "line": "Your knees hurt. That's new.",
+   "scene": "GIANT FACE HERO 'ow': giantFace faceAt [[0,'shocked'],[0.25,'worried'],[1.2,'sheepish']] (teeth gritted, sweat drop, a tear welling), stadium floodlight rim; little pain stars around the frame bottom (knees). Small shake on 'hurt'.",
+   "set": "stadium",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s027",
+   "start": 85.53,
+   "end": 89.15,
+   "line": "Day five. Eight metres. You clear the pole-vault world record,",
+   "scene": "NEIGHBOURHOOD / track side: roofs({view:'houses', mood:'day'}) with a pole-vault pole lying abandoned on the lawn (local prop) and a tall '6.31 m' marker post (stadium-style gold plate drawn locally). DAY counter flips 04 -> 05 on 'Day', heightMeter 8 m on 'Eight'. HERO crouches next to the pole, ignores it (looks at it, shrugs).",
+   "set": "roofs",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.83,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.03,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s028",
+   "start": 89.15,
+   "end": 91.33,
+   "line": "six point three one, without a pole,",
+   "scene": "SOARING past the marker: jumper rising (jumpCam follow), the '6.31 m' gold plate slides past on 'six', chip 'no pole' pops on 'without'; the pole on the ground below. heightMeter climbs through the 6.31 m tick to 8 m. Hoodie flutter, motion trail.",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 1.35,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s029",
+   "start": 91.33,
+   "end": 93.77,
+   "line": "and land on your neighbour's roof.",
+   "scene": "ROOF LANDING: he comes down onto the neighbour's flat garage roof (R.pos.nextRoofX/Y) on 'land': jumpFX thud, tiles jump, a satellite dish spins; he stands, wobbles, looks down at the drop (lookToward down, exprAt worried on 'roof').",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.11,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s030",
+   "start": 93.77,
+   "end": 95.59,
+   "line": "Mina has to bring a ladder.",
+   "scene": "WIDE gag: MINA (s 2.0) marches across the lawn carrying a ladder way too big for her (walkAlong kid, ladder at hands), HERO sits on the roof edge waiting, chin in hands. roofs ladder 0 -> she leans it on the garage at 'ladder'. roofsFg leaves.",
+   "set": "roofs",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.21,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 0.59,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 0.85,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s031",
+   "start": 95.59,
+   "end": 98.79,
+   "line": "Biscuit watches from the window, deeply unimpressed.",
+   "scene": "BISCUIT INSERT: cat (s >= 2.0) sitting in the house window (lit window frame + curtain), watches HERO on the roof; eyes 'offended' half-lidded on 'unimpressed', slow blink, tail flick, ear twitch. Window reflection of HERO. Slow push camMove.",
+   "set": "roofs",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.17,
+     "name": "pop",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s032",
+   "start": 98.79,
+   "end": 102.71,
+   "line": "She's been jumping on roofs her whole life.",
+   "scene": "BISCUIT shows him how it's done: she leaps from the window ledge onto the neighbour's roof in one elegant bound (cat jump arc, tail as rudder), lands silently next to HERO, sits and licks a paw; HERO deadpan (exprAt sheepish). Camera follows the cat arc.",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.07,
+     "name": "pop",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s033",
+   "start": 102.71,
+   "end": 107.05,
+   "line": "Day six. Sixteen metres. That's a five-storey building.",
+   "scene": "APARTMENT BLOCK: street({mood:'dusk', power:1}) with a LOCAL 5-storey apartment block drawn in the shot (windows, balconies, storey numbers 1-5). DAY counter flips 05 -> 06 on 'Day' (tick). HERO at its foot; camMove tilts UP the building as heightMeter({value:16, danger:[4*3.2,999]}) climbs to 16 m on 'Sixteen'; '5 storeys' chip on 'five-storey'.",
+   "set": "street",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.09,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.69,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s034",
+   "start": 107.05,
+   "end": 109.97,
+   "line": "Jumping up is fine. But falling sixteen metres",
+   "scene": "THE 16 m JUMP: jumpPose height 16*M2U, launch on 'Jumping' (dust ring), rise past the balconies with jumpCam (lag), apex at the roof line: HERO grins, thumbs up on 'fine'. On 'But falling' the fall begins: speed lines, the heightMeter's red danger zone lights up, exprAt joy -> shocked.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.63,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s035",
+   "start": 109.97,
+   "end": 113.63,
+   "line": "is the same fall, no matter how you got there.",
+   "scene": "RULE 2 CARD: ruleCard({n:2, title:'GRAVITY DOESN\\'T CARE HOW YOU GOT UP THERE.', bg: dimmed apartment block at dusk}) with a falling HERO silhouette frozen mid-fall behind the banner. Banner lands on 'same'.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": "The voice has no spoken rule title, so the card sits on the line that says it (line 17)."
+  },
+  {
+   "id": "s036",
+   "start": 113.63,
+   "end": 115.81,
+   "line": "Doctors say that from about four storeys up,",
+   "scene": "BLUEPRINT: board({title:'FIG 2 - FALL HEIGHT'}), a 5-storey building in line art with storey lines drawn on; a gold dashed line at '4 storeys' on 'four' with a hospital-chart icon (cross) on 'Doctors'. Labels <= 3.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.17,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s037",
+   "start": 115.81,
+   "end": 118.37,
+   "line": "roughly half of falls are fatal.",
+   "scene": "GIANT FACE HERO gulps: giantFace faceAt [[0,'worried'],[0.6,'shocked'],[1.8,'determined']], sweat drop; gold chip '~50%' on 'half' (chip, coral tone). Street dusk rim light, slight shake on 'fatal'.",
+   "set": "street",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.51,
+     "name": "heartbeat",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s038",
+   "start": 118.37,
+   "end": 121.59,
+   "line": "So you stop jumping, and start planning your landings.",
+   "scene": "PLANNING: backyard (roofs houses view, day), HERO, MINA and DEV kneel around a big paper plan on the lawn (local prop: sketches of landing gear), DEV draws, MINA points; HERO stops mid-crouch on 'stop jumping' (exprAt sheepish), nods on 'landings'. Camera slowly cranes down.",
+   "set": "roofs",
+   "type": "three",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.83,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s039",
+   "start": 121.59,
+   "end": 124.71,
+   "line": "A trampoline. A pool. A very large haystack.",
+   "scene": "LANDING-GADGET MONTAGE (3 beats, quick wipes): 'A trampoline' -> HERO drops onto a trampoline (jumpFX landing 'boing', bounces back up); 'A pool' -> into a paddling pool (landing 'splash'); 'A very large haystack' -> into a haystack (landing 'puff', hay flying). Each beat on its word, chips name each one.",
+   "set": "jump",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "blip",
+     "gain": -10,
+     "pitch": 0.35,
+     "dur": 0.45
+    },
+    {
+     "at": 1.27,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.27,
+     "name": "rain",
+     "gain": -10,
+     "dur": 0.9,
+     "seed": 7
+    },
+    {
+     "at": 2.77,
+     "name": "whoosh",
+     "gain": -10,
+     "pitch": 0.45,
+     "dur": 0.4
+    }
+   ],
+   "notes": "Reference: demo_jump_big (boing) and demo_jump_land (splash/puff) in DEMO_jump.js.",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s040",
+   "start": 124.71,
+   "end": 127.61,
+   "line": "Day seven. Thirty-two metres.",
+   "scene": "STREET LAUNCH SET-UP: street({mood:'day'}), DAY counter 06 -> 07 on 'Day' (tick), heightMeter 32 m on 'Thirty-two'. HERO crouches deep in the middle of the empty street (jumpPose crouch, anticipation), DEV filming from the kerb (phone at handWorld), MINA covers her ears.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.47,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s041",
+   "start": 127.61,
+   "end": 131.17,
+   "line": "To go that high, you leave the ground at ninety kilometres an hour.",
+   "scene": "LAUNCH at 90 km/h: on 'leave' he blasts off (jumpPose 32*M2U, dust ring + a shockwave that flips DEV's beanie), gauge({preset:'launch', at:'ninety'}) dial swings to '90 km/h' (gold) on 'ninety'. jumpCam follow with lag, speed lines.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.11,
+     "name": "whoosh",
+     "gain": -6
+    },
+    {
+     "at": 1.85,
+     "name": "whoosh",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s042",
+   "start": 131.17,
+   "end": 133.61,
+   "line": "The wind rips your hoodie off.",
+   "scene": "THE HOODIE: high above the street the wind RIPS the mustard hoodie off on 'rips' (hoodie peels up and away, HERO in a T-shirt, exprAt shocked), cut down: the hoodie flutters down and lands on DEV's head (DEV reaction 'shock' then deadpan). Wind streaks.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.57,
+     "name": "swish",
+     "gain": -12
+    },
+    {
+     "at": 1.51,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s043",
+   "start": 133.61,
+   "end": 137.63,
+   "line": "Day eight. Sixty-four metres. You could jump over Niagara Falls.",
+   "scene": "NIAGARA LOOKOUT: roofs({view:'falls', mood:'day'}) horseshoe falls, mist, rainbow. DAY counter 07 -> 08 (tick on 'Day'), heightMeter 64 m on 'Sixty-four' (Niagara tick ~51 m). HERO at the railing sizing up the falls (lookToward), mist spray, roofsFg railing.",
+   "set": "roofs",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.47,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s044",
+   "start": 137.63,
+   "end": 140.43,
+   "line": "You don't. Mina has hidden your shoes.",
+   "scene": "SHOES GAG: HERO in socks at the railing turns, searching (exprAt suspicious on 'don't'); MINA (s 2.0) stands behind him with his trainers hidden behind her back (as demo_falls), whistling innocently, eyes darting (lookToward away); cheeky smile on 'shoes'. Mist, rainbow, roofsFg railing.",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.77,
+     "name": "whistle",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s045",
+   "start": 140.43,
+   "end": 143.13,
+   "line": "Day nine. A hundred and twenty-eight metres.",
+   "scene": "TOWN POND: roofs({view:'pond', mood:'day', ducks:0}) calm ducks on the water. DAY counter 08 -> 09 (tick on 'Day'), heightMeter 128 m on 'hundred'. HERO is a falling speck growing out of the sky above the pond (jumper fall, speed lines), ducks look up one by one.",
+   "set": "roofs",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.04,
+     "name": "whoosh",
+     "gain": -14,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s046",
+   "start": 143.13,
+   "end": 146.85,
+   "line": "You land in the town pond, and the ducks file a complaint.",
+   "scene": "SPLASH: HERO hits the pond on 'land' (roofs splash {x, k}, crown + rings), ducks fly up outraged (ducks 0->1), feathers; he surfaces with pond weed on his head; one duck squares up to him and quacks in his face on 'complaint' (tiny gold 'COMPLAINT' paper in its beak).",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.31,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.31,
+     "name": "rain",
+     "gain": -6,
+     "dur": 0.9,
+     "seed": 7
+    },
+    {
+     "at": 1.45,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 2.73,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s047",
+   "start": 146.85,
+   "end": 149.79,
+   "line": "Day ten. Two hundred and fifty-six metres.",
+   "scene": "TV IN THE FLAT: tv(g,t,{...}) in the living room at night (apartment mood night, blurred), on screen an aerial news shot of the town with a tiny jumper arcing over the rooftops; DAY counter 09 -> 10 (tick on 'Day'), heightMeter 256 m on 'Two hundred'. Slow push into the TV.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.77,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s048",
+   "start": 149.79,
+   "end": 152.95,
+   "line": "The local news calls you \"the boy who won't stay down\".",
+   "scene": "NEWS LOWER-THIRD: full-frame TV content, newsLowerThird({at:0.3, kicker:'LOCAL NEWS', title:'THE BOY WHO WON\\'T STAY DOWN', ticker:'...'}) slides in, LIVE bug, the title lands on 'boy'; HERO's school photo in the box. Scanlines, screen glow.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.73,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s049",
+   "start": 152.95,
+   "end": 156.05,
+   "line": "Day eleven. Five hundred metres.",
+   "scene": "CROSSROADS: street({mood:'day'}) at a junction with a LOCAL traffic light on a pole (red/amber/green, glow). DAY counter 10 -> 11 (tick on 'Day'), heightMeter 500 m on 'Five'. HERO waits at the kerb among pedestrians with signature colours (no cast colours), crouching like a sprinter.",
+   "set": "street",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.0,
+     "name": "carpass",
+     "gain": -22
+    },
+    {
+     "at": 1.56,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s050",
+   "start": 156.05,
+   "end": 159.57,
+   "line": "Every jump takes ten seconds up and ten seconds down.",
+   "scene": "STOPWATCH: a gold stopwatch chip ticking 0 -> 10 s 'UP' on 'ten seconds up', then 10 -> 0 'DOWN' on 'ten seconds down', over the sky with HERO a tiny dot rising and falling against the traffic-light pole (split frame); heightMeter 500 m.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "clock",
+     "gain": -16,
+     "dur": 3.0,
+     "rate": 2.0
+    },
+    {
+     "at": 2.91,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s051",
+   "start": 159.57,
+   "end": 163.97,
+   "line": "You start timing your jumps with the traffic lights.",
+   "scene": "TIMING WITH THE LIGHTS: light turns RED on 'start', HERO launches straight up (jumpPose, dust ring), pedestrians cross under; light goes GREEN on 'lights' and he drops back onto the zebra crossing exactly in time (landing thud, impactFrame), gives a thumbs up. Camera tilts with jumpCam.",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.21,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 0.49,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 2.17,
+     "name": "impact",
+     "gain": -10
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s052",
+   "start": 163.97,
+   "end": 168.45,
+   "line": "Here's a surprise. The higher you go, the more the air starts to matter.",
+   "scene": "RULE 3 CARD: ruleCard({n:3, title:'AIR FIGHTS BACK.', bg: dimmed sky with streaming cloud wisps (stratosphere alt 0 or peaks cloudLayer)}) wind lines streak across the banner on 'air'.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 2.75,
+     "name": "wind",
+     "gain": -22,
+     "dur": 2.0
+    }
+   ],
+   "notes": "Spoken line: 'Here's a surprise. The higher you go, the more the air starts to matter.'"
+  },
+  {
+   "id": "s053",
+   "start": 168.45,
+   "end": 171.41,
+   "line": "Falling through air, your body can't go faster than",
+   "scene": "SKYDIVE FALL: stratosphere({alt:0}) bright blue sky with clouds below, HERO falls belly-down like a skydiver (jumper fall pose, arms spread), hoodie-less T-shirt rippling, speed lines, skyFg cirrus racing past. Follow cam with drift. exprAt determined.",
+   "set": "sky",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": -16,
+     "dur": 3.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s054",
+   "start": 171.41,
+   "end": 174.31,
+   "line": "about two hundred kilometres an hour.",
+   "scene": "TERMINAL GAUGE: gauge({preset:'terminal'}) big in the lower right over the falling HERO: the needle climbs and PINS at ~200 km/h on 'two hundred' (jitter), gold readout '200 km/h'. HERO behind it, falling.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -18,
+     "dur": 1.4
+    },
+    {
+     "at": 0.45,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s055",
+   "start": 174.31,
+   "end": 177.37,
+   "line": "Skydivers call it terminal velocity. So",
+   "scene": "BLUEPRINT: board({title:'FIG 3 - TERMINAL VELOCITY'}) a falling figure in line art with a GRAVITY arrow (down) and a DRAG arrow (up) growing until they balance on 'velocity'; gold labels 'gravity', 'drag', '~200 km/h'.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.27,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s056",
+   "start": 177.37,
+   "end": 180.15,
+   "line": "from day ten, every landing hits about the same:",
+   "scene": "SAME HIT EVERY TIME: three quick landings in a row (day 10, 11, 12 tags) on the same street spot, each with the identical dust crater size and identical impact meter (a gold bar maxing at the same mark on 'same'); jumpFX thud x3, jumpShake.",
+   "set": "jump",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.31,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.83,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.59,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s057",
+   "start": 180.15,
+   "end": 184.69,
+   "line": "like a car crash at highway speed. Every single time.",
+   "scene": "CRASH-TEST CARTOON (no gore): blueprint-style test track, a cartoon crash-test dummy in a little car hits a wall on 'crash' (impact star, dummy's head bobbles), gold chip 'highway speed'; on 'Every single time' the clip replays x3 in small panels. Keep it light.",
+   "set": "bp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "hit",
+     "gain": -8
+    },
+    {
+     "at": 2.37,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.01,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.39,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s058",
+   "start": 184.69,
+   "end": 189.09,
+   "line": "Day twelve. One kilometre. You sail over the tallest building on Earth,",
+   "scene": "CITY SKYLINE at sunset: skyline({mood:'golden', sun:1}). DAY counter 11 -> 12 (tick on 'Day'), heightMeter 1 km on 'One'. HERO launches from the lakeside promenade on 'sail' and the camera starts its slow rise up the supertall (cam.y negative; K.pos.screenTop).",
+   "set": "skyline",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.83,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.13,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s059",
+   "start": 189.09,
+   "end": 192.71,
+   "line": "the Burj Khalifa, eight hundred and twenty-eight metres.",
+   "scene": "PAST THE BURJ: the camera keeps rising past the spire, label 1 draws the gold '828 m' marker on 'eight hundred' (tick + dashed leader); HERO crests ABOVE the spire on 'metres', sunset glint across his face, hoodie-less shirt fluttering. heightMeter passes the Burj tick.",
+   "set": "skyline",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -18,
+     "dur": 1.4
+    },
+    {
+     "at": 1.13,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 3.24,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s060",
+   "start": 192.71,
+   "end": 196.29,
+   "line": "The view is incredible. The landing needs a lake.",
+   "scene": "GIANT FACE HERO at the apex, golden sunset rim: faceAt [[0,'awe'],[0.9,'joy'],[1.7,'worried']] eyes reflecting the city; on 'landing' his eyes flick DOWN (look [0,1]); the last 0.5 s a tiny splash ring on the lake far below is shown in an inset bubble (skyline splash 0->1).",
+   "set": "skyline",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 2.53,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.5
+    },
+    {
+     "at": 2.53,
+     "name": "rain",
+     "gain": -14,
+     "dur": 0.9,
+     "seed": 7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s061",
+   "start": 196.29,
+   "end": 200.39,
+   "line": "Days thirteen and fourteen are a blur. Two kilometres. Four.",
+   "scene": "BLUR MONTAGE: the DAY counter flips fast 12 -> 13 -> 14 (tick each, on 'thirteen' and 'fourteen') over streaking sky, heightMeter races 2 km on 'Two' -> 4 km on 'Four'; motion-blurred HERO zips up through frame twice.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.91,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 2.53,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 3.69,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s062",
+   "start": 200.39,
+   "end": 204.07,
+   "line": "You jump above the clouds, and they're colder and wetter than they look.",
+   "scene": "THROUGH THE CLOUDS: cloudLayer(g,t,cam,{burst:1 on 'above', crystals:1}) HERO punches up through the deck; ice crystals sparkle; on 'colder' he shivers (exprAt shocked, breath puff), on 'wetter' he is dripping. Peaks backdrop far off, peaksFg wisps.",
+   "set": "peaks",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.79,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s063",
+   "start": 204.07,
+   "end": 206.71,
+   "line": "You come down soaked. Day fifteen.",
+   "scene": "SOAKED: back on the lawn (roofs houses view), HERO lands with a squelch, drenched, a little rain cloud of drips; DEV hands him a towel, deadpan (two-shot). At 'Day fifteen' the DAY counter flips 14 -> 15 in the corner (tick).",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.27,
+     "name": "rain",
+     "gain": -16,
+     "dur": 0.9,
+     "seed": 7
+    },
+    {
+     "at": 1.17,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s064",
+   "start": 206.71,
+   "end": 211.05,
+   "line": "Eight kilometres. You almost reach the top of Mount Everest.",
+   "scene": "HIMALAYA: peaks({mood:'golden', label:0, wind:1}); heightMeter 8 km on 'Eight'. HERO rises up the frame beside Everest (P.pos.summitScreen(cam)), camera rising with him, summit flags whipping; on 'Everest' the mountain's name chip pops.",
+   "set": "peaks",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": -18,
+     "dur": 3.0
+    },
+    {
+     "at": 3.15,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s065",
+   "start": 211.05,
+   "end": 214.07,
+   "line": "Almost. Eight thousand eight hundred and forty-nine metres.",
+   "scene": "STALL BELOW THE SUMMIT: HERO hangs at the apex just BELOW the flag (as demo_peaks): heightMeter reads 8,192 m vs the gold label '8,849 m' on 'Eight thousand' (label 0->1); he stretches a hand out, fingertips centimetres from the flag; hang time, hoodie-less shirt flutter, peaksFg wisps.",
+   "set": "peaks",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "riser",
+     "gain": -20,
+     "dur": 2.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s066",
+   "start": 214.07,
+   "end": 216.61,
+   "line": "So close.",
+   "scene": "GIANT FACE: SO CLOSE. giantFace HERO faceAt [[0,'determined'],[0.4,'worried'],[1.3,'sheepish']], frost on his eyebrows, the flag reflected in his eyes; then he drops out of frame bottom (face slides down) with a whoosh. Golden rim.",
+   "set": "peaks",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s067",
+   "start": 216.61,
+   "end": 218.97,
+   "line": "Day sixteen. Sixteen kilometres.",
+   "scene": "STRATOSPHERE: stratosphere({alt:0.05}). DAY counter 15 -> 16 (tick on 'Day'), heightMeter 16 km on 'Sixteen'. HERO rises into the frame from below, the sky a deep blue with Earth's haze line far below.",
+   "set": "sky",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.07,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s068",
+   "start": 218.97,
+   "end": 222.39,
+   "line": "You're higher than Everest, higher than passenger jets.",
+   "scene": "JET BELOW: stratosphere({alt:0.1, jet:0->1}) a passenger jet + contrail slides across BELOW the hero on 'passenger jets'; Everest tick passes on the heightMeter on 'Everest'. HERO waves down at the jet windows (tiny faces). skyFg cirrus.",
+   "set": "sky",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.01,
+     "name": "carpass",
+     "gain": -18,
+     "dur": 2.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s069",
+   "start": 222.39,
+   "end": 224.81,
+   "line": "And there's barely anything left to breathe.",
+   "scene": "RULE 4 CARD: ruleCard({n:4, title:'THE SKY RUNS OUT OF AIR.', bg: dimmed stratosphere alt 0.4}), the banner's letters gasp (slight squash) on 'breathe'.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": "Spoken line: 'And there's barely anything left to breathe.'"
+  },
+  {
+   "id": "s070",
+   "start": 224.81,
+   "end": 227.49,
+   "line": "Up here, you'd pass out in seconds.",
+   "scene": "GIANT FACE HERO high up: breathFog at the mouth fading from thick to nothing (k 1->0 by 'seconds'), vision(g,k) pass-out vignette closing from the edges, faceAt [[0,'worried'],[0.8,'squint'],[1.8,'shocked']] eyes drooping. Dark-indigo sky behind.",
+   "set": "sky",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "heartbeat",
+     "gain": -12,
+     "bpm": 50
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s071",
+   "start": 227.49,
+   "end": 229.75,
+   "line": "Mina makes you wear a diving tank.",
+   "scene": "GEAR-UP GAG 1: backyard, MINA (s 2.0) straps a huge diving tank onto HERO's back on 'tank' (he sags under the weight), mask on his forehead, MINA all business (exprAt determined). roofs houses view, day.",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.51,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s072",
+   "start": 229.75,
+   "end": 232.09,
+   "line": "Dev makes you wear a helmet with his name on it.",
+   "scene": "GEAR-UP GAG 2: DEV plonks a bike helmet on HERO's head with 'DEV' written on it in orange marker on 'name' (gold chip 'DEV'), DEV grinning, HERO deadpan in full gear (tank + mask + helmet).",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.01,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.73,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s073",
+   "start": 232.09,
+   "end": 236.53,
+   "line": "On days seventeen and eighteen, you go higher than any balloon.",
+   "scene": "HIGHER THAN BALLOONS: DAY counter flips 16 -> 17 -> 18 (ticks on 'seventeen' and 'eighteen'), stratosphere alt 0.3 -> 0.5, a weather balloon drifts below HERO (in gear) on 'balloon', stars faintly appear.",
+   "set": "sky",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.05,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.93,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 2.81,
+     "name": "whoosh",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s074",
+   "start": 236.53,
+   "end": 240.67,
+   "line": "Higher than the highest skydive ever, forty-one kilometres up.",
+   "scene": "41 km MARKER: stratosphere({alt:0.55, balloon:1}) the record balloon with its gold '41 km' marker fades in on 'forty-one', a tiny skydiver silhouette standing on its gondola; HERO rises past it, heightMeter 41 km.",
+   "set": "sky",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.71,
+     "name": "shimmer",
+     "gain": -18
+    },
+    {
+     "at": 2.17,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s075",
+   "start": 240.67,
+   "end": 243.87,
+   "line": "The sky above you turns from blue to black.",
+   "scene": "BLUE TO BLACK: camera looks UP past the hero as stratosphere alt animates 0.55 -> 1 on 'blue'..'black': the sky deepens from indigo to black, stars pop in, the hero a silhouette with a thin blue rim from Earth.",
+   "set": "sky",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -18,
+     "dur": 3.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s076",
+   "start": 243.87,
+   "end": 246.99,
+   "line": "Day nineteen. A hundred and thirty-one kilometres.",
+   "scene": "EDGE OF SPACE: spaceEdge({line:0}) black sky, stars, Milky Way, Earth's curve with a thin blue atmosphere. DAY counter 18 -> 19 (tick on 'Day'), heightMeter 131 km on 'hundred'. HERO floats up into frame.",
+   "set": "orbit",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.27,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "Music near-silent from here (see music plan)."
+  },
+  {
+   "id": "s077",
+   "start": 246.99,
+   "end": 250.53,
+   "line": "You've passed the edge of space, a hundred kilometres up.",
+   "scene": "THE 100 km LINE: spaceEdge({line:1, lineY animated}) the dashed Karman line with its gold '100 km' label slides DOWN past the floating hero on 'edge of space' (as demo_orbit 0-2 s). Total calm, slow drift.",
+   "set": "orbit",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.67,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s078",
+   "start": 250.53,
+   "end": 253.13,
+   "line": "For a few minutes, you're technically an astronaut.",
+   "scene": "GIANT FACE HERO in space (diving mask pushed up, DEV helmet): faceAt [[0,'awe'],[1.2,'delighted'],[2.2,'awe']] Earth reflected in his eyes as a blue arc, eye glint; cool blue Earthlight rim. 'ASTRONAUT?' chip on 'astronaut'.",
+   "set": "orbit",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.85,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s079",
+   "start": 253.13,
+   "end": 255.21,
+   "line": "The Earth curves below you. It's silent.",
+   "scene": "SILENCE: wide, the Earth curves across the bottom of frame (spaceEdge curve), the hero tiny but >= 12% (s 1.9 at the near plane), floating at the apex, slow rotation; stars; no SFX, no ambience.",
+   "set": "orbit",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s080",
+   "start": 255.21,
+   "end": 257.67,
+   "line": "Then you fall. All the way.",
+   "scene": "THEN YOU FALL: on 'fall' the hero's expression flips (exprAt awe -> shocked), he drops out of frame bottom; the camera follows (jumpCam fall), speed lines appear as he hits the upper atmosphere, a faint orange glow begins.",
+   "set": "orbit",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.23,
+     "name": "whoosh",
+     "gain": -12,
+     "dur": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s081",
+   "start": 257.67,
+   "end": 261.51,
+   "line": "To leave the ground that fast, you'd be moving faster than a rifle bullet,",
+   "scene": "RE-ENTRY: stratosphere alt 1 -> 0.6, the hero falling head-first with a heat-glow aura (glow + 'lighter' orange plasma around him) growing; gauge({preset:'escape'}) style readout or a chip 'faster than a bullet' with a bullet icon on 'rifle bullet'.",
+   "set": "sky",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -16,
+     "dur": 2.0
+    },
+    {
+     "at": 3.21,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s082",
+   "start": 261.51,
+   "end": 264.31,
+   "line": "and air at that speed glows hot.",
+   "scene": "SHOOTING STAR over the town at night: roofs({view:'houses', mood:'night'}) the hero streaks across the sky as a glowing fireball on 'glows hot' (trail, embers); neighbours at windows look up. Big moon.",
+   "set": "roofs",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -12,
+     "dur": 1.5
+    },
+    {
+     "at": 1.83,
+     "name": "impact",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s083",
+   "start": 264.31,
+   "end": 266.29,
+   "line": "That night, Mina can't sleep.",
+   "scene": "BEDROOM AT NIGHT establishing (<= 2 s): apartment({mood:'night', power:0.2}) moonlight through the window, HERO in bed under the covers, the DEV helmet on the bedside table; MINA in pyjamas peeks in the doorway, can't sleep.",
+   "set": "apartment",
+   "type": "est",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "footstep",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s084",
+   "start": 266.29,
+   "end": 270.71,
+   "line": "She sits on the end of your bed and asks the question nobody else will.",
+   "scene": "MINA SITS: MINA (s 2.0) pads in and sits on the end of the bed (walkAlong kid then sit pose), HERO props himself up on an elbow (lookToward her); moonlight key, rim light; slow push camMove z 1.0->1.06. Quiet.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "footstep",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s085",
+   "start": 270.71,
+   "end": 272.89,
+   "line": "\"What happens when it doesn't stop?\"",
+   "scene": "GIANT FACE MINA, lip-sync on \"What happens when it doesn't stop?\": giantFace who 'MINA' faceAt [[0,'worried'],[0.8,'worried'],[1.6,'sad'/'worried' with tilt]] moonlight rim, eyes glistening.",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "MINA is lip-synced (quoted line). If FACE has no 'sad', use 'worried' with a tear.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s086",
+   "start": 272.89,
+   "end": 276.21,
+   "line": "You don't have an answer. You do the maths instead.",
+   "scene": "GIANT FACE HERO: no answer: faceAt [[0,'worried'],[0.7,'suspicious'],[1.8,'determined']] on 'maths' he reaches for the notebook (hand slides in at frame bottom), lamp clicks on (warm key).",
+   "set": "apartment",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.97,
+     "name": "blip",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s087",
+   "start": 276.21,
+   "end": 278.51,
+   "line": "And the maths says there's a day when you go up,",
+   "scene": "NOTEBOOK INSERT: lamp-lit notebook, doubling maths scrawled on (BP.draw-style handwriting in pencil grey): 0.5, 1, 2, 4 ... 131 km, 524 km ... a gold arrow toward the bottom of the page.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.2,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s088",
+   "start": 278.51,
+   "end": 281.85,
+   "line": "and gravity can't bring you back.",
+   "scene": "THE CIRCLED DAY: slow push into the notebook as the pencil circles 'DAY 25' in gold on 'gravity', with 'escape?' underneath; the lamp flickers; heartbeat.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.41,
+     "name": "heartbeat",
+     "gain": -12
+    },
+    {
+     "at": 1.35,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s089",
+   "start": 281.85,
+   "end": 285.53,
+   "line": "Day twenty-one. Over five hundred kilometres.",
+   "scene": "LOW ORBIT. Set: orbit(g,t,cam,{iss:0, wave:0, night:0}) from sets/orbit.js (Earth fills the lower half, clouds, terminator line). DAY counter (dayCounter from sets/devices.js, top-left, keys [[0,19],[tDay,21]], tick on 'Day' at ~0.15 s) flips 19 -> 21; heightMeter (devices.js, right edge) 500 km on 'five hundred'. HERO (actor 'HERO', s 1.9, in the diving mask + 'DEV' helmet, T-shirt, no hoodie) rises into frame from below at the apex of his jump. camMove slow drift, orbitFg lens flare.",
+   "set": "orbit",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.97,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s090",
+   "start": 285.53,
+   "end": 288.25,
+   "line": "You pass the International Space Station.",
+   "scene": "ISS PASS: orbit({iss: 0->0.6 over the shot}) the ISS (iss() helper: truss, 8 solar wings, cupola) drifts across behind the hero on 'International Space Station'; HERO turns his head to follow it (lookToward, eyes first), mouth open (exprAt awe). Gold chip 'ISS ~400 km' on 'Station'. orbitFg.",
+   "set": "orbit",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -22,
+     "dur": 2.0
+    },
+    {
+     "at": 1.69,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s091",
+   "start": 288.25,
+   "end": 292.33,
+   "line": "The astronauts wave. They're not floating because they're high.",
+   "scene": "ASTRONAUTS WAVE: closer on the ISS cupola window (iss(g,x,y,s,t,{wave:1}) at s ~2.5) with two astronauts waving on 'wave'; HERO in the foreground right waves back (reaction delight). On 'not floating because they're high' a gold chip 'not because high' pops. Earth below.",
+   "set": "orbit",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.91,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s092",
+   "start": 292.33,
+   "end": 294.51,
+   "line": "They're floating because they're falling sideways,",
+   "scene": "BLUEPRINT (sets/bp.js board, FIG 4 - ORBIT): Newton's cannonball: a mountain on a line-art Earth, cannonballs fired sideways drawn on with BP.draw (short arc lands, longer arc lands, the last arc wraps all the way round) on 'falling sideways'. Gold labels <= 3 pop on their words.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.39,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s093",
+   "start": 294.51,
+   "end": 298.23,
+   "line": "around the Earth, at almost eight kilometres a second.",
+   "scene": "BLUEPRINT continue: the orbit circle completes 'around the Earth', a gold velocity arrow tangent to the orbit with '7.8 km/s' on 'eight kilometres a second' (label), the ISS icon riding the circle. Slow scale <= 4%.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.79,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s094",
+   "start": 298.23,
+   "end": 300.97,
+   "line": "You're only going up. So you always come back down.",
+   "scene": "RULE 5 CARD: ruleCard(g,t,info,{n:5, title:'UP ISN\\'T ORBIT.', bg: dimmed orbit set (orbit + blurLayer + veil)}) from sets/hud.js; a tiny hero silhouette goes straight up and straight back down behind the banner on 'come back down'.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": "Spoken line: 'You're only going up. So you always come back down.'"
+  },
+  {
+   "id": "s095",
+   "start": 300.97,
+   "end": 303.77,
+   "line": "Days twenty-two, twenty-three, twenty-four.",
+   "scene": "COUNTER RUN: big dayCounter centre-left over the dimmed orbit set flips 21 -> 22 -> 23 -> 24 on 'twenty-two', 'twenty-three', 'twenty-four' (tick each, keys from those word times); Earth slowly rotating behind.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.07,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.7,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 2.33,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s096",
+   "start": 303.77,
+   "end": 308.17,
+   "line": "A thousand kilometres. Two thousand. Four thousand.",
+   "scene": "HIGHER AND HIGHER: Earth shrinks in steps (orbit set scaled down / spaceEdge curve flattening into a full globe) on 'thousand', 'Two thousand', 'Four thousand'; heightMeter 1,000 km -> 2,000 km -> 4,000 km (gold) on each word; HERO a small silhouette above the globe (>= 12% of frame).",
+   "set": "orbit",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.78,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.04,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.29,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s097",
+   "start": 308.17,
+   "end": 310.27,
+   "line": "Every fall takes longer than the last.",
+   "scene": "LONG FALL: HERO falling in space, bored, lying on his back like on a sofa (jumper fall pose rotated), a gold stopwatch chip racing past minutes '00:12:00 ... 00:31:00' on 'longer'; Earth below.",
+   "set": "orbit",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -18,
+     "dur": 2.0,
+     "rate": 4.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s098",
+   "start": 310.27,
+   "end": 312.57,
+   "line": "You've started bringing snacks.",
+   "scene": "GIANT FACE HERO munching snacks mid-fall (giantFace + a crisp packet drawn locally at the frame bottom, crumbs floating in zero-g): faceAt [[0,'cheeky'],[1.0,'joy'],[1.8,'cheeky']] chewing (mouth open/close cycle), Earthlight rim.",
+   "set": "orbit",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.13,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.6,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s099",
+   "start": 312.57,
+   "end": 317.15,
+   "line": "Until day twenty-five. Day twenty-five.",
+   "scene": "UNTIL DAY 25: backyard at dawn, dimmed (roofs({view:'houses', mood:'dusk'}) with a pale dawn sky, blurLayer). The big dayCounter flips SLOWLY 24 -> 25 on 'twenty-five' (one heavy tick + a low thud), then holds while the camera pushes in; on 'Day twenty-five' (spoken again) the '25' glows gold. Heartbeat starts. The music drops to a heartbeat (see music plan).",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.59,
+     "name": "impact",
+     "gain": -14
+    },
+    {
+     "at": 3.09,
+     "name": "heartbeat",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s100",
+   "start": 317.15,
+   "end": 320.39,
+   "line": "To jump this high, you'd have to leave the ground faster than",
+   "scene": "BACKYARD AT DAWN: roofs({view:'houses', mood:'dusk'}) (pale dawn), HERO (s 1.95, helmet under his arm) stands in the middle of the lawn looking straight up at the pale sky with the last stars (lookToward(0,-1)); exprAt neutral -> determined on 'faster'. Slow push camMove z 1.0->1.06, roofsFg leaves, atmos dawn mist.",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": -24,
+     "dur": 3.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s101",
+   "start": 320.39,
+   "end": 323.23,
+   "line": "eleven point two kilometres a second.",
+   "scene": "ESCAPE GAUGE: gauge(g,t,{preset:'escape'}) from sets/devices.js, big, over the dimmed dawn sky: the needle sweeps far past the dial to '11.2 km/s' (gold readout, heat glow) on 'eleven point two'.",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -16,
+     "dur": 2.0
+    },
+    {
+     "at": 0.96,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s102",
+   "start": 323.23,
+   "end": 327.21,
+   "line": "That's escape velocity. The speed where gravity never pulls you back.",
+   "scene": "BLUEPRINT (FIG 5 - ESCAPE VELOCITY): a line-art Earth with three launch arcs drawn on: slow (falls back), orbit speed (circles), escape (a gold arc that never returns, off the sheet) on 'escape velocity'; label 'gravity never pulls back' on 'never'. <= 3 labels.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.61,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.03,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s103",
+   "start": 327.21,
+   "end": 331.29,
+   "line": "Mina holds your hand. \"Don't,\" she says. \"Please.\"",
+   "scene": "MINA HOLDS HIS HAND: two-shot at dawn in the backyard (roofs houses view, dawn); MINA (s 2.0, red scarf, pyjamas) takes HERO's hand on 'holds your hand' (hands meet at handWorld), looks up at him; MINA lip-sync on \"Don't\" and \"Please\" only (talk on her quoted words), exprAt worried, eyes glistening. HERO looks down at her (lookToward). Slow push, roofsFg.",
+   "set": "roofs",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "heartbeat",
+     "gain": -14
+    }
+   ],
+   "notes": "MINA is lip-synced on 'Don't' and 'Please'.",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s104",
+   "start": 331.29,
+   "end": 334.29,
+   "line": "Dev holds up a sign: \"Bring me a moon rock.\"",
+   "scene": "DEV'S SIGN: DEV (s 1.9, orange beanie) by the fence holds up a cardboard sign 'BRING ME A MOON ROCK' (gold-lettered, drawn locally at handWorld) on 'holds up', grinning, then a small thumbs up; DEV lip-sync on the quoted 'Bring me a moon rock' optional (the narrator reads it, so keep the mouth closed and act it). roofsFg leaves.",
+   "set": "roofs",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s105",
+   "start": 334.29,
+   "end": 336.01,
+   "line": "Biscuit finally looks up.",
+   "scene": "BISCUIT LOOKS UP: cat (s >= 2.2, purple collar, green slit eyes) on the garden wall, for the FIRST time lifts her head and looks up (look up, eyes 'glint' from the dawn sky) on 'looks up', ears forward, tail still. Slow push.",
+   "set": "roofs",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.63,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s106",
+   "start": 336.01,
+   "end": 338.81,
+   "line": "You bend your knees.",
+   "scene": "GIANT FACE HERO, determined: giantFace faceAt [[0,'worried'],[0.4,'determined'],[1.6,'determined']] dawn rim, brow down; on 'bend your knees' the frame drops with him (camera dips 40 px = the crouch, dust lifting at frame bottom); heartbeat accelerates and swell peaks; HARD CUT TO BLACK at ~2.3 s (frame black for the last ~0.5 s).",
+   "set": "roofs",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -10,
+     "bpm": 90
+    },
+    {
+     "at": 0.4,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.9
+    }
+   ],
+   "notes": "Cut to black on the crouch: the jump is never shown.",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s107",
+   "start": 338.81,
+   "end": 341.79,
+   "line": "In real life, nobody's jump doubles.",
+   "scene": "LOOP: back in the sunny bedroom (apartment mood 'day', dimmed). The big dayCounter spins BACK through the numbers (fast flips 25 ... 03, 02) and lands on 'DAY 01' on 'doubles' with a tick; HERO in bed stretching in the background (the cold open again).",
+   "set": "devices",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "counter",
+     "gain": -16
+    },
+    {
+     "at": 2.29,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s108",
+   "start": 341.79,
+   "end": 345.69,
+   "line": "The best human leap is about a metre and a half, and that's plenty.",
+   "scene": "REALITY CHECK card (blueprint, FIG 6 - REAL LIFE): a line-art athlete next to a gold bar '~1.5 m' on 'metre and a half' (best human leap, see sources), a tiny basketball hoop for scale; 'that's plenty' check mark pops on 'plenty'.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.71,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.07,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s109",
+   "start": 345.69,
+   "end": 348.89,
+   "line": "But if it did, the scariest part wouldn't be going up.",
+   "scene": "MONTAGE UP: a quick collage of the rises from the episode as small framed panels (court dunk, stadium float, Burj, Everest, space) sliding up the frame, warm; HERO smiling in each; on 'wouldn't be going up' the panels freeze.",
+   "set": "jump",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 2.03,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s110",
+   "start": 348.89,
+   "end": 351.89,
+   "line": "It would be every single time you came down.",
+   "scene": "MONTAGE DOWN: the same panels now show the LANDINGS (ceiling, track crunch, roof, pond splash, lake, street thud) each popping in with an impact flash on 'every', 'single', 'time', 'down'; the screen shakes slightly with each one.",
+   "set": "jump",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.27,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.93,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.93,
+     "name": "rain",
+     "gain": -14,
+     "dur": 0.9,
+     "seed": 7
+    },
+    {
+     "at": 2.15,
+     "name": "impact",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s111",
+   "start": 351.89,
+   "end": 355.15,
+   "line": "So, what day would you stop? Tell us in the comments.",
+   "scene": "QUESTION lock-up: 'WHAT DAY WOULD YOU STOP?' (title style: cream, thick outline + glow) over a dimmed doubling graph; the dayCounter beneath it cycles 01..25 slowly as if asking; on 'comments' a comment-bubble icon pops.",
+   "set": "devices",
+   "type": "title",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.81,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s112",
+   "start": 355.15,
+   "end": 358.69,
+   "line": "And subscribe for more What Ifs.",
+   "scene": "END SCREEN (UI.endScreen as ep 1): subscribe pill, like icon, the cast lined up (HERO, MINA, DEV + Biscuit) on the lawn at sunrise, the DAY counter reading 'DAY 01' above them (loop). Fade out at the end.",
+   "set": "",
+   "type": "end",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 24.57,
+   "mood": "playful",
+   "intensity": 0.4
+  },
+  {
+   "start": 24.57,
+   "end": 102.71,
+   "mood": "playful",
+   "intensity": 0.55
+  },
+  {
+   "start": 102.71,
+   "end": 163.97,
+   "mood": "tension",
+   "intensity": 0.45
+  },
+  {
+   "start": 163.97,
+   "end": 216.61,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 216.61,
+   "end": 243.87,
+   "mood": "tension",
+   "intensity": 0.75
+  },
+  {
+   "start": 243.87,
+   "end": 264.31,
+   "mood": "calm",
+   "intensity": 0.05
+  },
+  {
+   "start": 264.31,
+   "end": 281.85,
+   "mood": "sad",
+   "intensity": 0.3
+  },
+  {
+   "start": 281.85,
+   "end": 312.57,
+   "mood": "wonder",
+   "intensity": 0.45
+  },
+  {
+   "start": 312.57,
+   "end": 327.21,
+   "mood": "dark",
+   "intensity": 0.3
+  },
+  {
+   "start": 327.21,
+   "end": 338.81,
+   "mood": "epic",
+   "intensity": 0.9
+  },
+  {
+   "start": 338.81,
+   "end": 358.69,
+   "mood": "hopeful",
+   "intensity": 0.4
+  }
+ ]
+}

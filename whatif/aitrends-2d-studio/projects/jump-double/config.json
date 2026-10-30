@@ -6,7 +6,7 @@
  "style": "dusk",
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
- "duration": null,
+ "duration": 358.69,
  "captions": false,
  "bars": null,
  "fadeIn": 0.5,
