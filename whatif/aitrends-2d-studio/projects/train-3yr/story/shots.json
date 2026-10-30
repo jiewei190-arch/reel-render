@@ -1,1365 +1,4321 @@
 {
  "title": "What If You Trained Every Day for 3 Years?",
- "duration": 409.66,
+ "duration": 409.555,
  "shots": [
   {
    "id": "s001",
    "start": 0.0,
    "end": 2.73,
    "line": "You roll out of bed and make a promise.",
-   "scene": "TODO",
-   "set": null,
+   "scene": "COLD OPEN, HERO BEDROOM training corner at dawn: home3 bedroom (alarm clock on the nightstand, wall calendar with no X marks yet, posters, rolled mat; the window is the key light, pale gold). The alarm rattles (0-0.5 s); HERO (s 1.9, big dark curls, green hoodie, white sweatband with green stripe, grey trousers) rolls out of the bed on 'roll' (poseAt lie -> sit -> stand), stands, idle, blinkFlag 3.4; on 'promise' he slaps his chest and points at the calendar (pointAndLook, eyes first), exprAt [[0,'sleepy'],[tPromise,'determined']]. camMove z 1.05->1.12, x drifts right; home3 foreground (blurred lamp/desk edge), atmos dust in the sunbeam.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
-    "type": "cut"
+    "type": "fade"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 0.44,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.66,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.1
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s002",
    "start": 2.73,
-   "end": 4.61,
-   "line": "Every day, for three years:",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "end": 5.83,
+   "line": "Every day, for three years: a hundred push-ups,",
+   "scene": "THE ROUTINE CARD, part 1: the bedroom wall blurred behind (blurLayer + dark veil); a four-slot checklist slides in on the left (push-ups / sit-ups / squats / run icons). Gold '3 YEARS' stamps on 'three' (outBack + pop). On 'hundred' the first slot fills: HERO in profile (s 2.0) does a crisp pushUp(t, 1.6) beside it, repCounter(g, 100) flips up big in gold on 'push-ups'. Slow push camMove z 1.0->1.06, dust motes.",
+   "set": "train",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.99,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.05,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.41,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s003",
-   "start": 4.61,
-   "end": 11.63,
-   "line": "a hundred push-ups, a hundred sit-ups, a hundred squats, and a ten kilometre run. About six miles.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 5.83,
+   "end": 9.93,
+   "line": "a hundred sit-ups, a hundred squats, and a ten kilometre run.",
+   "scene": "THE ROUTINE CARD, part 2 (same layout, the camera pans down the checklist with camMove y): slot 2 on 'sit-ups' (HERO sitUp loop + gold '100'), slot 3 on 'squats' (deep squat loop + gold '100'), slot 4 on 'run' (runCycle jog on a treadmill strip, gold '10 km'). Each slot ticks green with a pop as its word lands; on 'run' a tiny park path (park.js spring, blurred) slides under the runner.",
+   "set": "train",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 1.63,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.49,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.11,
+     "name": "whoosh",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s004",
-   "start": 11.63,
+   "start": 9.93,
    "end": 13.13,
-   "line": "No days off.",
-   "scene": "TODO",
-   "set": null,
+   "line": "About six miles. No days off.",
+   "scene": "ESTABLISHING the 10 km route (<= 3 s of wide, hero >= 12%): park(g,t,cam,{season:'spring', mood:'dawn'}), river, bridge, km markers; the distance sign '10 km (6.2 mi)' in the foreground right, gold '6.2 mi' pops on 'six'. HERO (s 1.7) jogs past the sign (runCycle jog, walkAlong locking feet). On 'off' a red 'NO DAYS OFF' stamp slams on the corner of the sign (shake 6). Pan camMove x following the jog, parkFg reeds, morning mist.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.39,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.33,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s005",
    "start": 13.13,
    "end": 15.57,
    "line": "No idea what you're getting into.",
-   "scene": "TODO",
-   "set": null,
+   "scene": "GIANT FACE HERO, eager and clueless: giantFace r 330 (curls fill the top of frame, white sweatband with green stripe), faceAt [[0,'joy'],[0.9,'determined'],[1.8,'cheeky']] with a thumbs-up drifting in from frame bottom; rimColor warm dawn. A slow ominous pull-back (camMove z 1.08->1.0) reveals the calendar behind him with 1,095 empty squares; on 'into' one squeaky gulp (sweat drop).",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -20
+    },
+    {
+     "at": 1.31,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s006",
    "start": 15.57,
-   "end": 17.65,
-   "line": "Mina looks at your hair, then at you.",
-   "scene": "TODO",
-   "set": null,
+   "end": 18.43,
+   "line": "Mina looks at your hair, then at you. \"Everyone says",
+   "scene": "TWO-SHOT in the bedroom doorway: MINA (s 2.0, red scarf, pyjamas) leans in, eyes go UP to HERO's curls on 'hair' (lookToward(0,-1), 0.2 s before her head tilts), then level to his eyes on 'you' (exprAt suspicious). On \"Everyone says\" she starts talking (talk on her quoted words only, talkGesture). HERO (s 1.9) pats his curls, blinkFlag 3.1. camMove x slides toward Mina, home3 foreground.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.71,
+     "name": "swish",
+     "gain": -24,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "MINA lip-synced on \"Everyone says\" only.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s007",
-   "start": 17.65,
-   "end": 24.57,
-   "line": "\"Everyone says if you train that hard, your hair falls out.\" Dev nods, very seriously. \"It's a known thing.\"",
-   "scene": "TODO",
-   "set": null,
+   "start": 18.43,
+   "end": 21.71,
+   "line": "if you train that hard, your hair falls out.\"",
+   "scene": "GIANT FACE MINA, lip-sync on the quote: giantFace who 'MINA' r 320, faceAt [[0,'suspicious'],[1.0,'worried'],[2.2,'squint']] while her mouth keys to the words; on 'falls out' a tiny cartoon tuft of hair drifts down past her face (local leaf-like curl sprite). rimColor dawn window, punch-in camMove z 1.0->1.07.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.85,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "MINA lip-synced (quoted line). The running hair joke starts here.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s008",
-   "start": 24.57,
-   "end": 28.07,
-   "line": "Is it? Three years.",
-   "scene": "TODO",
-   "set": null,
+   "start": 21.71,
+   "end": 24.57,
+   "line": "Dev nods, very seriously. \"It's a known thing.\"",
+   "scene": "DEV (s 1.9, orange beanie, phone in hand) appears behind Mina in the doorway; slow grave nod on 'nods' (poseAt nod x2), arms folded; lip-sync on \"It's a known thing.\" only, exprAt [[0,'neutral'],[tKnown,'serious/squint']]. HERO between them (s 1.9) eyes flick Dev -> Mina (lookToward). Push in camMove z 1.05->1.12.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.19,
+     "name": "hit",
+     "gain": -24,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "DEV lip-synced on \"It's a known thing.\" only.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s009",
-   "start": 28.07,
-   "end": 34.11,
-   "line": "One thousand and ninety-five days. Let's find out. Day one.",
-   "scene": "TODO",
-   "set": null,
+   "start": 24.57,
+   "end": 28.07,
+   "line": "Is it? Three years.",
+   "scene": "GIANT FACE HERO, doubt: giantFace r 330, faceAt [[0,'suspicious'],[0.8,'worried'],[2.0,'determined']]; his hand grabs a fistful of curls on 'Is it' (a curl springs back, boing = blip pitch 0.35). Gold '3 YEARS' chip pops on 'Three' bottom third. rimColor dawn, camMove z 1.0->1.06.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    },
+    {
+     "at": 2.13,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s010",
-   "start": 34.11,
-   "end": 36.37,
-   "line": "Push-ups first.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 28.07,
+   "end": 30.37,
+   "line": "One thousand and ninety-five days.",
+   "scene": "INSERT, the wall calendar: home3 timeSkip(g,t,'DAY 1') then the pages RIFFLE fast (flip after flip, tick on each) to 'DAY 1,095' landing on 'days' with a gold stamp '1,095' (outBack). Blurred bedroom behind, slow push camMove z 1.08->1.14.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.5
+    },
+    {
+     "at": 1.31,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s011",
-   "start": 36.37,
-   "end": 40.31,
-   "line": "You hit twenty-three, and your arms just... stop.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 30.37,
+   "end": 33.69,
+   "line": "Let's find out.",
+   "scene": "TITLE lock-up: park(g,t,cam,{season:'spring', mood:'dawn'}) from low on the bridge, sun rising over the river; HERO silhouetted mid-stride on the bridge (runCycle jog, rim gold), Biscuit sitting on the rail. Title 'WHAT IF YOU TRAINED EVERY DAY FOR 3 YEARS?' (outlined cream, >= 10 px outline + glow, '3' in gold) pops on 'find'; slow push camMove z 1.0->1.08; parkFg leaves, atmos mist + dawn god rays.",
+   "set": "park",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -8,
+     "minor": false
+    },
+    {
+     "at": 0.47,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s012",
-   "start": 40.31,
-   "end": 43.87,
-   "line": "You finish the rest in tiny sets, then on your knees.",
-   "scene": "TODO",
-   "set": null,
+   "start": 33.69,
+   "end": 36.37,
+   "line": "Day one. Push-ups first.",
+   "scene": "DAY 1, bedroom training corner on the mat: home3 timeSkip(g,t,'DAY 1') flips in top-left on 'Day' (tick hook). HERO (s 2.0) drops into the push-up position on 'Push-ups' (poseAt stand -> plank), side view low camera so the figure is >= 25% of frame; exprAt [[0,'determined'],[tFirst,'joy']]. Calendar behind gets its first X mark on 'first'. camMove x drift + z 1.1->1.16.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 0.57,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s013",
-   "start": 43.87,
-   "end": 46.03,
-   "line": "Biscuit sits on your back to help.",
-   "scene": "TODO",
-   "set": null,
+   "start": 36.37,
+   "end": 40.31,
+   "line": "You hit twenty-three, and your arms just... stop.",
+   "scene": "PUSH-UPS: pushUp(t, 1.4) with repCounter(g, n) ticking 1..23 in gold over his back (counts land fast at first, then slower); from 'arms' tremble ramps up (fatigue tremble 0->1), sweat drops fly; on 'stop' the train.js collapse: face-plant onto the mat (squash), counter freezes at '23' and wobbles. exprAt [[0,'determined'],[tArms,'worried'],[tStop,'shocked']]. Low side camera, camMove z 1.12->1.2, punch-in + shake 8 on 'stop'.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.51,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 3.05,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s014",
-   "start": 46.03,
-   "end": 50.51,
-   "line": "The run takes an hour and twenty minutes. A lot of it is walking.",
-   "scene": "TODO",
-   "set": null,
+   "start": 40.31,
+   "end": 43.87,
+   "line": "You finish the rest in tiny sets, then on your knees.",
+   "scene": "TINY SETS montage in one shot: HERO does 3 push-ups, flops, 3 more (pushUp with sag), the repCounter ticks 24..60 in bursts; on 'knees' he switches to kneePushUp (knees on the mat) and the counter rolls on 61..100. A small chip 'tiny sets' on 'tiny'. Breath puffs, sweat. exprAt [[0,'tired'],[tKnees,'determined']]. Camera slow orbit camMove x 0->-40, z 1.15.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.19,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 2.45,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s015",
-   "start": 50.51,
-   "end": 53.81,
-   "line": "Day two, you can't lift your arms to brush your hair.",
-   "scene": "TODO",
-   "set": null,
+   "start": 43.87,
+   "end": 46.03,
+   "line": "Biscuit sits on your back to help.",
+   "scene": "GAG INSERT: BISCUIT (cat s 2.0, purple collar) hops up on 'sits' and settles as a loaf on HERO's back mid-kneePushUp (train.js Biscuit-on-the-back helper; she rides the rep up and down). eyes 'offended' slow blink on 'help', tail flick. HERO's arms tremble harder, repCounter wobbles. Close low camera, camMove z 1.25->1.3.",
+   "set": "train",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "hit",
+     "gain": -22,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "Known short shot (2.2 s), keep it punchy.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s016",
-   "start": 53.81,
-   "end": 59.91,
-   "line": "Mina does it, then checks the brush. \"Still all there.\" That ache has a name:",
-   "scene": "TODO",
-   "set": null,
+   "start": 46.03,
+   "end": 50.51,
+   "line": "The run takes an hour and twenty minutes. A lot of it is walking.",
+   "scene": "DAY 1 RUN: park(g,t,cam,{season:'spring', mood:'day'}), km marker '3' on the path. HERO (s 1.9) jogs (runCycle jog), sweat; stopwatch(g, sec) top-right counts up and lands on '1:20:00' in gold on 'twenty minutes'. On 'walking' his runCycle drops to the walk variant (shoulders slumped, sag), an old man walking a dog OVERTAKES him (extra in a purple cap #9a5ad6). Follow cam camMove x, parkFg branches.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 1.43,
+     "name": "clock",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 3.37,
+     "name": "whoosh",
+     "gain": -24,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s017",
-   "start": 59.91,
-   "end": 62.19,
-   "line": "delayed onset muscle soreness.",
-   "scene": "TODO",
-   "set": null,
+   "start": 50.51,
+   "end": 53.81,
+   "line": "Day two, you can't lift your arms to brush your hair.",
+   "scene": "DAY 2, BATHROOM: home3 bathroom (mirror, tiles, towel), timeSkip(g,t,'DAY 2') flips in on 'Day'. HERO (s 1.9) in front of the mirror tries to lift the hairbrush to his curls on 'lift' -> arms only rise to chest height, tremble (fatigue tremble), exprAt [[0,'sleepy'],[tLift,'wince']]. Mirror reflection repeats the struggle. camMove z 1.08->1.14.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.25,
+     "name": "hit",
+     "gain": -24,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s018",
-   "start": 62.19,
-   "end": 65.75,
-   "line": "It usually peaks one to three days after the workout.",
-   "scene": "TODO",
-   "set": null,
+   "start": 53.81,
+   "end": 56.33,
+   "line": "Mina does it, then checks the brush.",
+   "scene": "TWO-SHOT bathroom: MINA (s 2.0) stands on a step stool and brushes his curls on 'does' (brush at handWorld, curls bounce); on 'checks' she holds the brush up to the light and squints at it (lookToward brush, exprAt suspicious). HERO droops (idle). camMove x slight, bathroom foreground towel.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.05,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s019",
-   "start": 65.75,
-   "end": 69.35,
-   "line": "It hits hardest after moves your muscles aren't used to,",
-   "scene": "TODO",
-   "set": null,
+   "start": 56.33,
+   "end": 58.67,
+   "line": "\"Still all there.\"",
+   "scene": "GIANT FACE MINA, lip-sync on \"Still all there.\": giantFace who 'MINA' r 320, holding the clean brush up beside her face (no hairs in it); faceAt [[0,'squint'],[0.4,'suspicious'],[1.1,'smirk']], tiny nod. rimColor bathroom light, slow push.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "ding",
+     "gain": -20
+    }
+   ],
+   "notes": "MINA lip-synced (quoted line).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s020",
-   "start": 69.35,
-   "end": 74.61,
-   "line": "especially the lowering part, like sinking into a squat. The good news?",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 58.67,
+   "end": 62.19,
+   "line": "That ache has a name: delayed onset muscle soreness.",
+   "scene": "RULE 1 CARD: ruleCard(g,t,info,{n:1, title:'SORE ISN\\'T BROKEN.', bg: the dimmed bedroom training corner (home3, blurLayer + veil)}) extruded numeral, cream title on the dark banner, sun-rays, sparkles. The banner lands on 'ache'; on 'delayed' a gold chip 'DOMS' pops under it (chip tone gold).",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.39,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s021",
-   "start": 74.61,
-   "end": 79.35,
-   "line": "Do the same workout again, and the soreness is usually much milder.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 62.19,
+   "end": 65.75,
+   "line": "It usually peaks one to three days after the workout.",
+   "scene": "BLUEPRINT FIG 1 - DOMS: body.js muscle-fibre blueprint (cream line on navy) drawing on over 1.5 s; a small time axis under it 'DAY 0 / 1 / 2 / 3' and a soreness curve that rises and peaks; gold '1-3 DAYS' bracket pops on 'one to three'. Slow scale <= 4%.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.17,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s022",
-   "start": 79.35,
-   "end": 83.61,
-   "line": "Scientists call it the repeated bout effect. Your muscles learn.",
-   "scene": "TODO",
-   "set": null,
+   "start": 65.75,
+   "end": 69.35,
+   "line": "It hits hardest after moves your muscles aren't used to,",
+   "scene": "NEW MOVE: bedroom corner, DEV (s 1.9) demonstrates a jump-lunge; HERO (s 1.9) copies it on 'moves' and wobbles, the lowering half is shaky (fatigue tremble), exprAt [[0,'determined'],[tHardest,'wince']]; a gold chip 'NEW MOVE' on 'used'; tiny red glow on the thighs. camMove x drift, home3 foreground.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    },
+    {
+     "at": 2.79,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s023",
-   "start": 83.61,
-   "end": 90.59,
-   "line": "By week one, you can walk downstairs without the rail. Mostly. Month one.",
-   "scene": "TODO",
-   "set": null,
+   "start": 69.35,
+   "end": 73.15,
+   "line": "especially the lowering part, like sinking into a squat.",
+   "scene": "SQUAT, slow: bedroom corner, HERO (s 2.0) sinks into a deep squat (train.js squat, deep slow lowering) on 'lowering', a gold down-arrow 'LOWERING' rides along his hips; on 'squat' the thighs flash a faint red glow (pain) and tremble, exprAt [[0,'determined'],[tSquat,'wince']]. camMove y follows him down, z 1.1->1.16.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.6
+    },
+    {
+     "at": 2.87,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s024",
-   "start": 90.59,
-   "end": 94.55,
-   "line": "A hundred push-ups in five sets. Dev films it.",
-   "scene": "TODO",
-   "set": null,
+   "start": 73.15,
+   "end": 75.99,
+   "line": "The good news? Do the same workout again,",
+   "scene": "CALENDAR INSERT: the bedroom wall calendar fills the frame; red X marks slap onto days 2, 3, 4 on 'news' (one tick each); in the blurred foreground the HERO's arms and curls bob through the same push-up set again at a faster cadence on 'again'. Slow push camMove z 1.1->1.15.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.51,
+     "name": "ding",
+     "gain": -20
+    },
+    {
+     "at": 2.63,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s025",
-   "start": 94.55,
-   "end": 101.01,
-   "line": "Mina measures your hairline and writes it in a notebook labelled \"Hair Log\". Your abs, though? Nothing.",
-   "scene": "TODO",
-   "set": null,
+   "start": 75.99,
+   "end": 79.35,
+   "line": "and the soreness is usually much milder.",
+   "scene": "SECOND TIME: bathroom morning, HERO (s 1.9) lifts the brush to his curls with only a small wince this time; a little gold SORENESS gauge chip in the corner swings from the red to the low green zone on 'milder'. exprAt [[0,'worried'],[tMilder,'joy']]. camMove z 1.08->1.12.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.67,
+     "name": "swish",
+     "gain": -22
+    },
+    {
+     "at": 2.11,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s026",
-   "start": 101.01,
-   "end": 105.05,
-   "line": "Sit-ups don't burn the fat on top of those muscles.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 79.35,
+   "end": 83.61,
+   "line": "Scientists call it the repeated bout effect. Your muscles learn.",
+   "scene": "BLUEPRINT continue: the label 'REPEATED BOUT EFFECT' writes on in gold on 'repeated'; on 'learn' the repaired fibre gets a tiny graduation cap and the fibres thicken slightly (scale 1.0->1.03), a sparkle.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 1.05,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.27,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s027",
-   "start": 105.05,
-   "end": 109.97,
-   "line": "In one study, six weeks of ab exercises made stomach muscles last longer,",
-   "scene": "TODO",
-   "set": null,
+   "start": 83.61,
+   "end": 87.15,
+   "line": "By week one, you can walk downstairs without the rail.",
+   "scene": "WEEK 1, staircase in the house (home3 hallway corner or a LOCAL staircase helper: banister, family photos, runner carpet, lamp). timeSkip(g,t,'WEEK 1') flips in on 'week'. HERO (s 1.9) walks down the stairs stiffly (walkAlong with a stair-step y), hand hovering just off the rail on 'without', exprAt [[0,'worried'],[tRail,'smirk']]. camMove follows diagonally down, blinkFlag 3.3.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.31,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.31,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.29,
+     "name": "footstep",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s028",
-   "start": 109.97,
-   "end": 112.73,
-   "line": "but didn't shrink belly fat at all.",
-   "scene": "TODO",
-   "set": null,
+   "start": 87.15,
+   "end": 89.35,
+   "line": "Mostly.",
+   "scene": "GAG: his knee buckles on the last step, he grabs the rail with both hands (hit), then GIANT FACE HERO pop-in: giantFace r 320, faceAt [[0,'shocked'],[0.5,'sheepish'],[1.4,'smirk']], one sweat drop. Quick punch-in + shake 5.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 0.6,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "Short gag shot (2.2 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s029",
-   "start": 112.73,
-   "end": 120.15,
-   "line": "You can't choose where fat comes off. Month three. The hundreds get... easy.",
-   "scene": "TODO",
-   "set": null,
+   "start": 89.35,
+   "end": 92.99,
+   "line": "Month one. A hundred push-ups in five sets.",
+   "scene": "MONTH 1: timeSkip(g,t,'MONTH 1') flips in on 'Month'. Bedroom corner, the calendar now a block of X marks. HERO (s 2.0) does clean pushUp(t, 2.0); a 5-slot tally under him fills one slot per set (5 sets x 20) on 'five', repCounter to '100' in gold on 'hundred'. exprAt determined, sweatband dark with sweat. Low side camera, camMove x 0->30.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.49,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 2.33,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s030",
-   "start": 120.15,
-   "end": 126.05,
-   "line": "A hundred push-ups in two sets. You're not tired. You're bored.",
-   "scene": "TODO",
-   "set": null,
+   "start": 92.99,
+   "end": 95.83,
+   "line": "Dev films it. Mina measures your hairline",
+   "scene": "THREE-SHOT in the training corner: DEV (s 1.9) crouches with his phone sideways, home3 Dev's phone UI overlay (REC dot blinking, timer 00:00 -> 00:03) pops on 'films'; MINA (s 2.0) walks in on 'Mina' with a tape measure, stretches it from HERO's eyebrows to his hairline on 'hairline' (gold '6.0 cm' tick). HERO (s 1.9, kneeling) holds still, eyes up (lookToward(0,-1)). camMove z 1.05->1.1.",
+   "set": "home3",
+   "type": "three",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.83,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s031",
-   "start": 126.05,
-   "end": 131.21,
-   "line": "Your body adapts to exactly what you do. Coaches call it specificity.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 95.83,
+   "end": 99.11,
+   "line": "and writes it in a notebook labelled \"Hair Log\".",
+   "scene": "INSERT, Mina's notebook (home3 HAIR LOG prop): cover reads 'HAIR LOG' (big marker letters, a doodled curl); it flips open on 'notebook', her pencil writes 'Day 30: 6.0 cm' on 'writes' (gold numbers); a tiny tape-measure doodle. Top-down camera, slow rotation camMove r small, desk lamp warm key.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.23,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s032",
-   "start": 131.21,
-   "end": 135.61,
-   "line": "Ask for a hundred push-ups, and it gets brilliant at a hundred push-ups.",
-   "scene": "TODO",
-   "set": null,
+   "start": 99.11,
+   "end": 101.01,
+   "line": "Your abs, though? Nothing.",
+   "scene": "MIRROR GAG: bathroom, HERO (s 1.9) lifts the green hoodie to check his stomach in the mirror on 'abs' (exprAt hopeful/joy); on 'Nothing' a soft flat tummy, no abs; a sad little tumbleweed-style dust puff in the mirror, exprAt [[0,'joy'],[tNothing,'worried']]. camMove z 1.1->1.14.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "swish",
+     "gain": -22
+    },
+    {
+     "at": 1.81,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "Known short shot (1.9 s); whisper packs 'Nothing.' into 0.24 s, so the cut lands at its tail.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s033",
-   "start": 135.61,
-   "end": 141.23,
-   "line": "But once that's easy, the question stops being hard, and the answer stops changing.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 101.01,
+   "end": 105.05,
+   "line": "Sit-ups don't burn the fat on top of those muscles.",
+   "scene": "BLUEPRINT FIG 3 - ABS: body.js abs cross-section: the six-pack muscle layer underneath, a soft FAT LAYER on top (cream hatch), skin line. On 'Sit-ups' the muscle layer pulses brighter (gold label 'MUSCLE'); on 'fat' the fat layer stays exactly the same (gold label 'FAT - unchanged'). Draw-on 1.5 s then slow scale.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.11,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s034",
-   "start": 141.23,
-   "end": 146.39,
-   "line": "Light exercises can build muscle, but mainly when you push close to your limit.",
-   "scene": "TODO",
-   "set": null,
+   "start": 105.05,
+   "end": 107.67,
+   "line": "In one study, six weeks of ab exercises",
+   "scene": "SIT-UPS: bedroom corner, HERO (s 2.0) does train.js sitUp on the mat, feet tucked under the bed, Biscuit watching; a gold week strip '6 WEEKS' fills above him on 'six weeks', small chip 'ONE STUDY' on 'study'. Low camera camMove x.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.61,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.17,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s035",
-   "start": 146.39,
-   "end": 149.03,
-   "line": "And for raw strength, heavier loads win.",
-   "scene": "TODO",
-   "set": null,
+   "start": 107.67,
+   "end": 109.97,
+   "line": "made stomach muscles last longer,",
+   "scene": "PLANK INSERT: HERO holds a plank on the mat (side view, close), a stopwatch(g, sec) ticking up past '2:00' in gold; chip 'ENDURANCE +' on 'longer'. Calm face, steady breath puffs. camMove z 1.2->1.25.",
+   "set": "train",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "clock",
+     "gain": -20,
+     "dur": 1.2
+    },
+    {
+     "at": 1.71,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s036",
-   "start": 149.03,
-   "end": 151.87,
-   "line": "Real training plans keep adding a little more.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 109.97,
+   "end": 112.73,
+   "line": "but didn't shrink belly fat at all.",
+   "scene": "BLUEPRINT continue: a BELLY FAT bar beside it stays flat; a gold '= 0' badge stamps on 'all' and the fat layer on the cross-section does not move (a dashed 'before' outline sits exactly on it).",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.81,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.9
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s037",
-   "start": 151.87,
-   "end": 157.41,
-   "line": "It's called progressive overload. Your plan has a hundred. Forever.",
-   "scene": "TODO",
-   "set": null,
+   "start": 112.73,
+   "end": 115.85,
+   "line": "You can't choose where fat comes off.",
+   "scene": "BATHROOM again: HERO (s 1.9) pokes his belly, then tries to 'point' fat away from his stomach toward his arm (pointAndLook), nothing happens; a gold chip 'NO SPOT REDUCTION' on 'choose'; exprAt [[0,'determined'],[tOff,'sheepish']]. Biscuit on the sink watches (offended blink). camMove x drift.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.31,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s038",
-   "start": 157.41,
-   "end": 165.39,
-   "line": "Dev hands you a backpack full of textbooks. \"Wear this.\" Suddenly it's day one again. Year one.",
-   "scene": "TODO",
-   "set": null,
+   "start": 115.85,
+   "end": 118.95,
+   "line": "Month three. The hundreds get...",
+   "scene": "MONTH 3: timeSkip(g,t,'MONTH 3') flips in on 'Month'. Bedroom corner, summer light, HERO (s 2.0) mid-squat set, repCounter climbing fast to 100; on 'get' he pauses at the top expecting it to hurt (exprAt worried).",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.65,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s039",
-   "start": 165.39,
-   "end": 168.45,
-   "line": "Ten kilometres in under fifty-five minutes.",
-   "scene": "TODO",
-   "set": null,
+   "start": 118.95,
+   "end": 122.41,
+   "line": "easy. A hundred push-ups in two sets.",
+   "scene": "EASY: on 'easy' he grins (exprAt joy); pushUp(t, 2.6) fast and clean, the tally shows only TWO slots (50 + 50), repCounter hits '100' in gold on 'hundred' and he pops up to standing on 'sets' with a light hop. camMove z 1.1->1.18, sweat drops minimal.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "ding",
+     "gain": -18
+    },
+    {
+     "at": 1.43,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 2.51,
+     "name": "whoosh",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s040",
-   "start": 168.45,
-   "end": 173.35,
-   "line": "Running burns roughly one calorie per kilo of body weight, per kilometre.",
-   "scene": "TODO",
-   "set": null,
+   "start": 122.41,
+   "end": 126.05,
+   "line": "You're not tired. You're bored.",
+   "scene": "GIANT FACE HERO, bored: giantFace r 330, faceAt [[0,'neutral'],[0.9,'squint'],[1.9,'bored/neutral heavy-lidded']], a loud yawn on 'bored' (mouth open), sweatband dry. rimColor summer window. Slow drift camMove x.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.87,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "If FACE has no 'bored', use 'neutral' with heavy lids (blinkAmt 0.5).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s041",
-   "start": 173.35,
-   "end": 179.55,
-   "line": "For someone weighing seventy kilos, that's around seven hundred calories. Every day.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 126.05,
+   "end": 129.05,
+   "line": "Your body adapts to exactly what you do.",
+   "scene": "RULE 2 CARD: ruleCard(g,t,info,{n:2, title:'YOUR BODY ONLY ANSWERS THE QUESTION YOU ASK.', bg: dimmed bedroom training corner (home3, blurLayer + veil)}); the banner lands on 'adapts'.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s042",
-   "start": 179.55,
-   "end": 185.05,
-   "line": "More than a quarter of what an adult man typically needs. You're always hungry.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 129.05,
+   "end": 132.63,
+   "line": "Coaches call it specificity. Ask for a hundred push-ups,",
+   "scene": "BLUEPRINT FIG 4 - SPECIFICITY: body.js SAID panel draws on: a big '?' card 'THE QUESTION' -> body silhouette -> 'THE ANSWER'. Gold label 'SPECIFICITY' on 'specificity'; on 'hundred push-ups' the question card fills with '100 PUSH-UPS' (gold '100').",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.81,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.87,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s043",
-   "start": 185.05,
-   "end": 190.55,
-   "line": "Mina hides the cereal anyway. \"For your own good.\" It isn't.",
-   "scene": "TODO",
-   "set": null,
+   "start": 132.63,
+   "end": 135.61,
+   "line": "and it gets brilliant at a hundred push-ups.",
+   "scene": "SHOWOFF: HERO (s 2.0) does one-tempo perfect push-ups, then claps between reps on 'brilliant' (pushUp with a pop-up clap), sparkles; repCounter '100' with a gold star. Dev (s 1.9, background) films on his phone. exprAt joy, camMove orbit x 0->40.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.83,
+     "name": "shimmer",
+     "gain": -18
+    },
+    {
+     "at": 1.91,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s044",
-   "start": 190.55,
-   "end": 193.45,
-   "line": "Then your shins start to ache, right along the bone.",
-   "scene": "TODO",
-   "set": null,
+   "start": 135.61,
+   "end": 138.53,
+   "line": "But once that's easy, the question stops being hard,",
+   "scene": "TOO EASY: HERO (s 2.0) does push-ups one-handed while scrolling his phone with the other; a small difficulty gauge chip swings from red to green on 'easy' and stalls on 'hard'; exprAt bored, yawn. camMove x drift.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.93,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 2.65,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s045",
-   "start": 193.45,
-   "end": 197.05,
-   "line": "Shin splints. An overuse injury:",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 138.53,
+   "end": 141.23,
+   "line": "and the answer stops changing.",
+   "scene": "BLUEPRINT continue: a muscle-size graph line climbs, then FLATTENS into a plateau on 'stops changing' (gold label 'PLATEAU'); a tiny line-art HERO sits on the plateau bored.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.91,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.9
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s046",
-   "start": 197.05,
-   "end": 199.59,
-   "line": "too much running, too little recovery.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 141.23,
+   "end": 143.51,
+   "line": "Light exercises can build muscle,",
+   "scene": "BLUEPRINT FIG 5 - LIGHT vs HEAVY (body.js SAID panel): LEFT 'LIGHT LOAD, MANY REPS' (small dumbbell, many tick marks), RIGHT 'HEAVY LOAD' (plate dumbbell, few ticks); the left muscle icon grows on 'build' (gold 'MUSCLE +').",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.45,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s047",
-   "start": 199.59,
-   "end": 204.45,
-   "line": "Keep pounding, and it can become a stress fracture, a tiny crack in the bone.",
-   "scene": "TODO",
-   "set": null,
+   "start": 143.51,
+   "end": 146.39,
+   "line": "but mainly when you push close to your limit.",
+   "scene": "LIVE ACTION of the idea: HERO (s 2.0) does push-ups until the trembling last reps (fatigue tremble 1, sweat, breath puffs), a red 'LIMIT' line on a side gauge that his rep bar creeps up to on 'limit'; exprAt [[0,'determined'],[tLimit,'wince']]. Low camera, camMove z 1.14->1.22.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.05,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.95,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s048",
-   "start": 204.45,
-   "end": 209.61,
-   "line": "In studies that follow runners over time, about four in ten get injured.",
-   "scene": "TODO",
-   "set": null,
+   "start": 146.39,
+   "end": 149.03,
+   "line": "And for raw strength, heavier loads win.",
+   "scene": "HEAVY GAG: apartment living room (mood 'day'), HERO (s 1.9) tries to lift the end of the sofa with DEV (s 1.9) sitting on it eating crisps; it barely budges on 'heavier' (strain, tremble, exprAt wince); a gold chip 'HEAVY = STRENGTH' on 'win'. DEV shrugs. camMove z 1.05->1.1, apartmentFg plant.",
+   "set": "apartment",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.21,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.69,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s049",
-   "start": 209.61,
-   "end": 212.67,
-   "line": "Your body doesn't get stronger during a workout.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 149.03,
+   "end": 151.87,
+   "line": "Real training plans keep adding a little more.",
+   "scene": "INSERT, a coach's training plan on a clipboard (LOCAL prop): week columns with numbers that climb '10 -> 12 -> 15 -> 18' in gold, a pencil adds one more on 'adding'; an up-arrow 'add difficulty' on 'more'. Top-down, slow rotate camMove r.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.47,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.05,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s050",
-   "start": 212.67,
-   "end": 215.23,
-   "line": "It rebuilds in the rest afterwards.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 151.87,
+   "end": 154.23,
+   "line": "It's called progressive overload.",
+   "scene": "BLUEPRINT continue: the climbing staircase gets the gold label 'PROGRESSIVE OVERLOAD' on 'progressive'; on 'overload' a FLAT line labelled 'YOUR PLAN' slides in beside it (a flat road next to the staircase).",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.07,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s051",
-   "start": 215.23,
-   "end": 220.03,
-   "line": "Skip the rest, and the damage outruns the repairs. So you bend your rule.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 154.23,
+   "end": 157.41,
+   "line": "Your plan has a hundred. Forever.",
+   "scene": "INSERT GAG: the wall calendar (home3 bedroom) where '100' is written in every day square; gold '100' pops on 'hundred', then the camera pans along endless '100 100 100' squares into the distance (camMove x long) and a gold 'FOREVER' stamp slams down on 'Forever'.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.83,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.91,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s052",
-   "start": 220.03,
-   "end": 222.91,
-   "line": "On bad days, you walk the ten kilometres.",
-   "scene": "TODO",
-   "set": null,
+   "start": 157.41,
+   "end": 160.05,
+   "line": "Dev hands you a backpack full of textbooks.",
+   "scene": "TWO-SHOT bedroom: DEV (s 1.9) staggers in hauling a bulging backpack (train.js backpack, textbooks poking out: MATHS, PHYSICS, a dictionary), drops it into HERO's arms on 'backpack' (thud: hit 0.75); HERO (s 1.9) sinks under the weight. exprAt Dev cheeky, HERO surprised. camMove z 1.05->1.1.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.19,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 0.77,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s053",
-   "start": 222.91,
-   "end": 228.53,
-   "line": "Biscuit watches from the window, like she always knew. Year two.",
-   "scene": "TODO",
-   "set": null,
+   "start": 160.05,
+   "end": 163.73,
+   "line": "\"Wear this.\" Suddenly it's day one again.",
+   "scene": "DEV lip-sync on \"Wear this.\" (talkGesture, points at the floor). HERO, backpack on, drops into a pushUp and immediately trembles (tremble 1, sag); on 'day one' the home3 timeSkip card flips BACKWARDS to 'DAY 1?' with a sad trombone-ish blip; repCounter stuck at '1'. exprAt [[0,'determined'],[tDay,'shocked']]. Low camera, shake 4 on the drop.",
+   "set": "train",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 1.51,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.09,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 2.41,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "DEV lip-synced on \"Wear this.\" only.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s054",
-   "start": 228.53,
-   "end": 236.17,
-   "line": "One morning, there's hair in the shower drain. A lot of it. Dev gasps. \"It's happening.\"",
-   "scene": "TODO",
-   "set": null,
+   "start": 163.73,
+   "end": 166.09,
+   "line": "Year one. Ten kilometres",
+   "scene": "YEAR 1: timeSkip(g,t,'YEAR 1') flips in on 'Year' over the park. park(g,t,cam,{season:'summer', mood:'dawn'}), HERO (s 1.7, >= 12%) runs past km marker '10' on 'Ten' (runCycle jog fast, good form, light sweat); gold '10 km' pops. Follow cam camMove x, parkFg grass.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 0.6,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 1.81,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s055",
-   "start": 236.17,
-   "end": 237.85,
-   "line": "First, relax.",
-   "scene": "TODO",
-   "set": null,
+   "start": 166.09,
+   "end": 168.45,
+   "line": "in under fifty-five minutes.",
+   "scene": "FINISH SPRINT (summer, dawn): HERO (s 1.9) crosses the bench end-point, stops the stopwatch(g, sec) on 'fifty-five' -> '54:48' in gold (big, top-right) with a gold chip '< 55 MIN' on 'under', fist pump, exprAt [[0,'determined'],[tFive,'delighted']]; breath puffs. camMove z 1.05->1.12.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.73,
+     "name": "clock",
+     "gain": -18,
+     "dur": 0.6
+    },
+    {
+     "at": 1.31,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s056",
-   "start": 237.85,
-   "end": 241.11,
-   "line": "Everyone sheds fifty to a hundred hairs a day.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 168.45,
+   "end": 171.79,
+   "line": "Running burns roughly one calorie per kilo of body weight,",
+   "scene": "BLUEPRINT FIG 6 - FUEL: a line-art runner on a scale with a flame icon; gold equation builds on the words: '1 kcal' on 'calorie', 'x 1 kg' on 'kilo'; '~' sign on 'roughly'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 1.31,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.29,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s057",
-   "start": 241.11,
-   "end": 244.43,
-   "line": "Male pattern baldness is mostly genetic.",
-   "scene": "TODO",
-   "set": null,
+   "start": 171.79,
+   "end": 175.69,
+   "line": "per kilometre. For someone weighing seventy kilos,",
+   "scene": "SCALE: bathroom, HERO (s 1.9) steps onto the bathroom scale on 'someone'; the dial spins and lands on gold '70 kg' on 'seventy'; chip '1 kcal / kg / km' rides in the corner from the last shot. exprAt neutral -> smile. camMove tilt down.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 2.63,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s058",
-   "start": 244.43,
-   "end": 252.91,
-   "line": "Twin studies suggest around eighty percent of the difference between men comes down to their genes. Exercise can nudge hormones.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 175.69,
+   "end": 179.55,
+   "line": "that's around seven hundred calories. Every day.",
+   "scene": "SEASONS SWIPE: a big gold '~700 kcal' lands on 'seven hundred' over a run; then on 'Every day' four quick vertical wipe panels of HERO running the same path: spring blossom / summer sun / autumn leaves / winter snow (park seasons), each with a '700' flame chip.",
+   "set": "park",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "counter",
+     "gain": -16,
+     "dur": 0.8
+    },
+    {
+     "at": 2.53,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.89,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s059",
-   "start": 252.91,
-   "end": 254.55,
-   "line": "In one year-long trial,",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 179.55,
+   "end": 183.13,
+   "line": "More than a quarter of what an adult man typically needs.",
+   "scene": "PLATE PIE INSERT: kitchen table top-down, a big dinner plate is a pie chart '~2,500 kcal / day' (gold); a slice just over a quarter lights up gold on 'quarter' with '> 1/4'; HERO's fork reaches in for it on 'needs'.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.71,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.51,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s060",
-   "start": 254.55,
-   "end": 260.03,
-   "line": "men doing an hour of cardio six days a week ended up with slightly more DHT,",
-   "scene": "TODO",
-   "set": null,
+   "start": 183.13,
+   "end": 187.23,
+   "line": "You're always hungry. Mina hides the cereal anyway.",
+   "scene": "KITCHEN (home3 kitchen, morning): HERO (s 1.9) inhales a giant plate (the '700 kcal' plate label in gold), stomach growls on 'hungry' (wobble lines); MINA (s 2.0) on a chair slides the cereal box onto the top of the fridge on 'hides' (the home3 hidden-cereal spot), glancing back (lookToward). camMove x pan toward the fridge.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.67,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.4
+    },
+    {
+     "at": 2.17,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s061",
-   "start": 260.03,
-   "end": 262.25,
-   "line": "a hormone linked to balding.",
-   "scene": "TODO",
-   "set": null,
+   "start": 187.23,
+   "end": 190.55,
+   "line": "\"For your own good.\" It isn't.",
+   "scene": "MINA lip-sync on \"For your own good.\" (hands on hips, smug exprAt smirk, talkGesture). On 'It isn't' cut-in to HERO (s 1.9) staring up at the cereal box way out of reach (lookToward up), exprAt worried, belly growl. camMove z 1.08->1.14.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -20
+    },
+    {
+     "at": 1.91,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.4
+    }
+   ],
+   "notes": "MINA lip-synced on \"For your own good.\" only.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s062",
-   "start": 262.25,
-   "end": 265.87,
-   "line": "But no study has shown that working out makes you bald.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 190.55,
+   "end": 193.45,
+   "line": "Then your shins start to ache, right along the bone.",
+   "scene": "RULE 3 CARD: ruleCard(g,t,info,{n:3, title:'EVERY STEP ADDS UP. SO DOES THE DAMAGE.', bg: the dimmed park path (park autumn, blurLayer + veil)}); banner lands on 'shins'; on 'bone' a thin red glow line pulses down the bottom of the card like a shin.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 2.75,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s063",
-   "start": 265.87,
-   "end": 272.83,
-   "line": "What can make hair fall out is a shock to the body, like serious stress or losing a lot of weight fast.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 193.45,
+   "end": 197.05,
+   "line": "Shin splints. An overuse injury:",
+   "scene": "BLUEPRINT FIG 7 - SHIN: body.js tibia line art (lower leg); the inner edge glows red-gold (shin-splint glow) on 'splints', gold label 'SHIN SPLINTS'; on 'overuse' a repeating footstrike counter ticks rapidly.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 1.13,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.49,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s064",
-   "start": 272.83,
-   "end": 275.77,
-   "line": "A few months later, hair sheds in handfuls.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 197.05,
+   "end": 199.59,
+   "line": "too much running, too little recovery.",
+   "scene": "CALENDAR INSERT: bedroom wall calendar, every square says 'RUN' (gold), on 'much' more RUN stickers pile on; on 'little' the one tiny 'REST' sticker peels off and flutters down.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.15,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s065",
-   "start": 275.77,
-   "end": 277.51,
-   "line": "Doctors call it telogen effluvium.",
-   "scene": "TODO",
-   "set": null,
+   "start": 199.59,
+   "end": 202.29,
+   "line": "Keep pounding, and it can become a stress fracture,",
+   "scene": "POUNDING: park autumn (park season 'autumn', falling leaves, puddles), HERO (s 1.9) runs with a slight limp (runCycle limp variant), each footstrike on the path sends an impact ring up the shin (red flash), exprAt wince, on 'fracture' the camera punches in to his shin (shake 6). Follow cam.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 2.01,
+     "name": "impact",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s066",
-   "start": 277.51,
-   "end": 282.45,
-   "line": "Seven hundred calories a day, and no cereal. That's you.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 202.29,
+   "end": 204.45,
+   "line": "a tiny crack in the bone.",
+   "scene": "MACRO INSERT on the tibia blueprint: a hairline stress fracture draws on as a jagged gold line on 'crack' (body.js hairline fracture), magnifier circle with 'TINY CRACK' label.",
+   "set": "body",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "Short insert (2.2 s)."
   },
   {
    "id": "s067",
-   "start": 282.45,
-   "end": 284.69,
-   "line": "So you eat properly again.",
-   "scene": "TODO",
-   "set": null,
+   "start": 204.45,
+   "end": 207.11,
+   "line": "In studies that follow runners over time,",
+   "scene": "RUNNERS (<= 3 s of wide, hero >= 12%): park(g,t,cam,{season:'autumn', mood:'day', leaves:true}), a group of 10 runners on the path (extras, one signature colour each from #d4262e #2f6fd0 #f08a24 #9a5ad6 #e08aa8 #e0e0d0) with HERO among them; a dashed 'OVER TIME' arrow along the path. Follow cam camMove x.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s068",
-   "start": 284.69,
-   "end": 291.97,
-   "line": "Dermatologists say this shedding is usually temporary, and within about six to nine months, your curls are back.",
-   "scene": "TODO",
-   "set": null,
+   "start": 207.11,
+   "end": 209.61,
+   "line": "about four in ten get injured.",
+   "scene": "FOUR IN TEN: same group, four runners pull up one after another on 'four' clutching knees/shins (a little red flash each), the others jog on; gold '4 / 10' chip on 'ten'. HERO glances back (lookToward), exprAt worried. camMove x.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.49,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s069",
-   "start": 291.97,
-   "end": 295.47,
-   "line": "Mina writes one word in the Hair Log: \"Unchanged.\"",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 209.61,
+   "end": 212.67,
+   "line": "Your body doesn't get stronger during a workout.",
+   "scene": "BLUEPRINT FIG 9 - REBUILD: body.js muscle fibre during a workout: micro-tears appear (strength bar dips) on 'during'; label 'WORKOUT = DAMAGE'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 1.13,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.53,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s070",
-   "start": 295.47,
-   "end": 299.93,
-   "line": "Dev looks almost disappointed. Year three.",
-   "scene": "TODO",
-   "set": null,
+   "start": 212.67,
+   "end": 215.23,
+   "line": "It rebuilds in the rest afterwards.",
+   "scene": "REST: HERO (s 1.9) asleep in the bedroom at night, Biscuit curled on his feet; a small blueprint thought-bubble over him shows the fibres knitting back thicker on 'rebuilds'; the strength bar rises above where it started on 'rest' (gold 'REPAIR'). Moonlight key, slow push.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "shimmer",
+     "gain": -18
+    },
+    {
+     "at": 0.99,
+     "name": "ding",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s071",
-   "start": 299.93,
-   "end": 306.09,
-   "line": "You check your pulse on the sofa. It's slow. Really slow.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 215.23,
+   "end": 218.29,
+   "line": "Skip the rest, and the damage outruns the repairs.",
+   "scene": "BLUEPRINT: two lines race: 'DAMAGE' (red) and 'REPAIR' (cream); on 'outruns' the damage line pulls ahead and the gap shades red; gold label 'NO REST'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -20
+    },
+    {
+     "at": 1.33,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s072",
-   "start": 306.09,
-   "end": 308.97,
-   "line": "Endurance training lowers your resting heart rate.",
-   "scene": "TODO",
-   "set": null,
+   "start": 218.29,
+   "end": 220.69,
+   "line": "So you bend your rule. On bad days,",
+   "scene": "BEDROOM at the calendar (rainy window, autumn): HERO (s 1.9) crosses out 'RUN' on the routine poster and writes 'WALK' on 'bend' (marker at handWorld), exprAt [[0,'worried'],[tBend,'determined']]; rain streaks on the window, thunder far away on 'bad'.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.99,
+     "name": "thunder",
+     "gain": -26,
+     "dur": 2.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -26
+   }
   },
   {
    "id": "s073",
-   "start": 308.97,
-   "end": 312.97,
-   "line": "For most adults, normal is sixty to a hundred beats a minute.",
-   "scene": "TODO",
-   "set": null,
+   "start": 220.69,
+   "end": 222.91,
+   "line": "you walk the ten kilometres.",
+   "scene": "WALK IN THE RAIN: park(g,t,cam,{season:'autumn', mood:'dusk', rain:true}), puddles; HERO (s 1.7) walks (runCycle walk) under a small umbrella past km marker '7'; gold '10 km' chip pops on 'ten'. parkFg wet leaves, rain atmos.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 0.75,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -26
+   }
   },
   {
    "id": "s074",
-   "start": 312.97,
-   "end": 316.09,
-   "line": "A well-trained athlete can be closer to forty.",
-   "scene": "TODO",
-   "set": null,
+   "start": 222.91,
+   "end": 227.25,
+   "line": "Biscuit watches from the window, like she always knew.",
+   "scene": "BISCUIT INSERT: cat s 2.2 sits on the inside windowsill (purple collar, rain on the glass, home3 bedroom window), tiny HERO walking in the rain far below in the street reflection; on 'knew' eyes 'offended' slow blink + tail flick, ear twitch. Warm lamp key inside, cool rain outside. camMove z 1.12->1.18.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "blip",
+     "gain": -24,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -26
+   }
   },
   {
    "id": "s075",
-   "start": 316.09,
-   "end": 320.39,
-   "line": "A trained heart pumps more blood per beat, so it beats less often.",
-   "scene": "TODO",
-   "set": null,
+   "start": 227.25,
+   "end": 231.09,
+   "line": "Year two. One morning, there's hair in the shower drain.",
+   "scene": "YEAR 2: timeSkip(g,t,'YEAR 2') flips in on 'Year' (winter: frost on the bathroom window). BATHROOM: HERO (s 1.9, towel on shoulders, curls wet) looks down at the shower on 'drain' (lookToward down), exprAt [[0,'sleepy'],[tDrain,'shocked']]; home3 shower drain with a hair clump. camMove tilts down.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 2.91,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s076",
-   "start": 320.39,
-   "end": 323.09,
-   "line": "But people improve by different amounts.",
-   "scene": "TODO",
-   "set": null,
+   "start": 231.09,
+   "end": 233.87,
+   "line": "A lot of it. Dev gasps.",
+   "scene": "INSERT then reveal: HERO's fingers lift a dripping hair clump out of the drain on 'lot' (drip = rain dur 0.5); camera whips (camMove x) to the bathroom door: DEV (s 1.9) pops in, hands on cheeks, gasping on 'gasps' (exprAt shocked, phone up already recording, REC dot).",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "rain",
+     "gain": -20,
+     "dur": 0.5
+    },
+    {
+     "at": 1.59,
+     "name": "whoosh",
+     "gain": -18
+    },
+    {
+     "at": 1.73,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s077",
-   "start": 323.09,
-   "end": 329.07,
-   "line": "In one big study, over seven hundred inactive adults did the same twenty-week program.",
-   "scene": "TODO",
-   "set": null,
+   "start": 233.87,
+   "end": 236.17,
+   "line": "\"It's happening.\"",
+   "scene": "GIANT FACE DEV, lip-sync on \"It's happening.\": giantFace who 'DEV' r 320 (orange beanie), faceAt [[0,'shocked'],[0.5,'awe'],[1.4,'worried']], phone screen glow on his cheek; dramatic punch-in camMove z 1.0->1.12 + shake 4. Music drops to the worry section here.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -18,
+     "dur": 1.6
+    },
+    {
+     "at": 0.45,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "DEV lip-synced (quoted line).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s078",
-   "start": 329.07,
-   "end": 335.03,
-   "line": "Some boosted their fitness hugely. Some barely changed. You're a good responder.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 236.17,
+   "end": 241.11,
+   "line": "First, relax. Everyone sheds fifty to a hundred hairs a day.",
+   "scene": "RULE 4 CARD: ruleCard(g,t,info,{n:4, title:'YOUR HAIR LISTENS TO YOUR GENES, NOT YOUR PUSH-UPS.', bg: dimmed bathroom (home3, blurLayer + veil)}); banner lands on 'relax'; on 'fifty' the body.js '50-100 HAIRS / DAY' counter sits under the banner as a gold chip, ticking.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 2.47,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.2
+    }
+   ],
+   "notes": "Long title card (4.9 s): the title is long, keep it on screen to read."
   },
   {
    "id": "s079",
-   "start": 335.03,
-   "end": 339.03,
-   "line": "Biscuit, who has trained for zero days, is not.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 241.11,
+   "end": 244.43,
+   "line": "Male pattern baldness is mostly genetic.",
+   "scene": "BLUEPRINT FIG 10 - FOLLICLE: body.js hair follicle growth cycle draws on (GROWING / RESTING / SHEDDING, a hair in each); a DNA helix grows from the follicle root on 'genetic' with gold label 'MOSTLY GENES'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.95,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s080",
-   "start": 339.03,
-   "end": 343.49,
-   "line": "Day one thousand and ninety-five. Mina rides beside you.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 244.43,
+   "end": 248.07,
+   "line": "Twin studies suggest around eighty percent of the difference between men",
+   "scene": "BLUEPRINT FIG 11 - TWINS: body.js twin silhouettes side by side with identical hairlines; a bar fills to gold '~80%' on 'eighty' labelled 'GENES'; the rest stays grey.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.53,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s081",
-   "start": 343.49,
-   "end": 346.55,
-   "line": "Dev holds a finish line made of toilet paper.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 248.07,
+   "end": 251.05,
+   "line": "comes down to their genes.",
+   "scene": "FAMILY PHOTO INSERT: the hallway family photo wall (LOCAL frames): Dad, Grandpa and Uncle all with big dark curls, all with the same hairline; a gold dashed line links the hairlines down to HERO's school photo on 'genes'. Slow pan camMove x.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.33,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s082",
-   "start": 346.55,
-   "end": 349.39,
-   "line": "Over a hundred and nine thousand push-ups.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 251.05,
+   "end": 254.55,
+   "line": "Exercise can nudge hormones. In one year-long trial,",
+   "scene": "BLUEPRINT FIG 12 - HORMONES: body.js DHT molecule (hexagon line art) floats in; on 'nudge' a small arrow nudges it up a notch; on 'year-long trial' a 12-month calendar strip draws on with a gold '1 YEAR'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 2.35,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s083",
-   "start": 349.39,
-   "end": 351.83,
-   "line": "Nearly eleven thousand kilometres.",
-   "scene": "TODO",
-   "set": null,
+   "start": 254.55,
+   "end": 257.33,
+   "line": "men doing an hour of cardio six days a week",
+   "scene": "STUDY GROUP visual: park(g,t,cam,{season:'winter', mood:'day', snow:true}) jogging group of 4 middle-aged men (extras, one signature colour each: #d4262e, #9a5ad6, #e0e0d0, #f08a24 - not near DEV), HERO (s 1.9) jogs among them; gold chips '1 HOUR' on 'hour' and '6 DAYS / WEEK' on 'six'. Follow cam camMove x.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.83,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.71,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s084",
-   "start": 351.83,
-   "end": 358.91,
-   "line": "More than a quarter of the way around the Earth. Dev grabs a pillow. \"Okay. One punch.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 257.33,
+   "end": 260.03,
+   "line": "ended up with slightly more DHT,",
+   "scene": "BLUEPRINT: a DHT bar goes up a SMALL step on 'slightly more' (gold label 'DHT +'), the molecule glows faintly.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.97,
+     "name": "blip",
+     "gain": -18
+    },
+    {
+     "at": 1.75,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s085",
-   "start": 358.91,
-   "end": 366.59,
-   "line": "Show us what three years did.\" You wind up. Everyone holds their breath. You punch. Flump.",
-   "scene": "TODO",
-   "set": null,
+   "start": 260.03,
+   "end": 262.25,
+   "line": "a hormone linked to balding.",
+   "scene": "GAG TWO-SHOT kitchen: MINA (s 2.0) reads from the HAIR LOG to DEV (s 1.9); on 'balding' DEV quietly pulls his orange beanie further down over his ears (exprAt worried), MINA raises an eyebrow (suspicious). camMove x drift.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.33,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s086",
-   "start": 366.59,
-   "end": 368.51,
-   "line": "The pillow wobbles.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 262.25,
+   "end": 265.87,
+   "line": "But no study has shown that working out makes you bald.",
+   "scene": "MYTH STAMP: Mina's HAIR LOG page full screen with the old rumour 'TRAINING = BALD?' handwritten; a big cream 'NO STUDY SHOWS IT' stamp slams down on 'no study' and the rumour gets crossed out on 'bald'. Slow push.",
+   "set": "body",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.61,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.83,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.3
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s087",
-   "start": 368.51,
-   "end": 371.65,
-   "line": "Biscuit, asleep on top of it, opens one eye.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 265.87,
+   "end": 268.73,
+   "line": "What can make hair fall out is a shock to the body,",
+   "scene": "BLUEPRINT FIG 13 - SHOCK: body.js follicle cycle again; a lightning-bolt 'SHOCK' icon hits the body silhouette on 'shock' and pushes many follicles from GROWING into RESTING at once.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 2.11,
+     "name": "impact",
+     "gain": -18
+    }
+   ],
    "notes": ""
   },
   {
    "id": "s088",
-   "start": 371.65,
-   "end": 374.57,
-   "line": "And your hair doesn't move at all.",
-   "scene": "TODO",
-   "set": null,
+   "start": 268.73,
+   "end": 272.83,
+   "line": "like serious stress or losing a lot of weight fast.",
+   "scene": "LOSING WEIGHT FAST: bathroom, HERO (s 1.9) on the scale; the needle slides DOWN on 'losing' (gold '-5 kg' chip), his green hoodie hangs loose, a STRESS storm-cloud chip on 'stress'; exprAt worried. camMove z 1.05->1.1.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 1.09,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.89,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s089",
-   "start": 374.57,
-   "end": 378.01,
-   "line": "In real life, three years of this would change you a lot.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 272.83,
+   "end": 277.51,
+   "line": "A few months later, hair sheds in handfuls. Doctors call it telogen effluvium.",
+   "scene": "BLUEPRINT continue: a 'FEW MONTHS' timeline arrow; on 'handfuls' the resting hairs drop out together (a little cascade); gold label 'TELOGEN EFFLUVIUM' writes on with leader to the shedding follicles on 'telogen'.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.71,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.2
+    },
+    {
+     "at": 3.79,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "4.7 s: label beat needs the room."
   },
   {
    "id": "s090",
-   "start": 378.01,
-   "end": 382.23,
-   "line": "A stronger heart, serious endurance, and a lot of laundry.",
-   "scene": "TODO",
-   "set": null,
+   "start": 277.51,
+   "end": 281.11,
+   "line": "Seven hundred calories a day, and no cereal.",
+   "scene": "KITCHEN REVEAL: HERO (s 1.9) at the table, the '700 kcal' burn chip (gold) floats over him on 'Seven hundred'; on 'no cereal' the camera tilts up to the cereal box still hidden on top of the fridge with cobwebs on it; MINA (s 2.0) in the doorway freezes, guilty (exprAt sheepish).",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.63,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s091",
-   "start": 382.23,
-   "end": 388.33,
-   "line": "Health experts suggest adults get at least a hundred and fifty minutes of moderate activity a week.",
-   "scene": "TODO",
-   "set": null,
+   "start": 281.11,
+   "end": 284.69,
+   "line": "That's you. So you eat properly again.",
+   "scene": "On 'That's you' MINA pulls the cereal box down and plonks it on the table; HERO (s 1.9) now eats a full breakfast on 'eat' (bowl, toast, fruit, glass of milk), exprAt [[0,'sheepish'],[tEat,'joy']]; MINA sits opposite, writing in the HAIR LOG. Warm morning key, camMove z 1.05->1.1.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.85,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s092",
-   "start": 388.33,
-   "end": 390.19,
-   "line": "This blows past that.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 284.69,
+   "end": 287.61,
+   "line": "Dermatologists say this shedding is usually temporary,",
+   "scene": "DRAIN INSERT, weeks later: the shower drain with only a couple of hairs, water swirling; gold chip 'TEMPORARY' on 'temporary', a sparkle on the clean chrome.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "rain",
+     "gain": -24,
+     "dur": 1.0
+    },
+    {
+     "at": 2.49,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s093",
-   "start": 390.19,
-   "end": 392.45,
-   "line": "But it won't make you superhuman.",
-   "scene": "TODO",
-   "set": null,
+   "start": 287.61,
+   "end": 291.97,
+   "line": "and within about six to nine months, your curls are back.",
+   "scene": "CURLS BACK: a quick season wipe winter -> spring (park season), HERO (s 1.9) runs toward camera, his big dark curls bouncing fuller in the breeze; gold '6-9 MONTHS' chip on 'six'; on 'curls' a bounce + sparkle on the hair, exprAt delighted. Follow cam, parkFg blossom.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 1.17,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.67,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
   },
   {
    "id": "s094",
-   "start": 392.45,
-   "end": 398.75,
-   "line": "You'd stall unless you made it harder, and without rest, your body pushes back. As for your hair?",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 291.97,
+   "end": 295.47,
+   "line": "Mina writes one word in the Hair Log: \"Unchanged.\"",
+   "scene": "HAIR LOG INSERT: the notebook (home3 prop) with dozens of measurement lines (all '6.0 cm'); MINA's hand writes 'UNCHANGED.' big and underlined on 'Unchanged' (gold underline). Over-the-shoulder MINA (s 2.0) mouths the word as she writes it. Desk lamp key, slow push.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.09,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "MINA mouths \"Unchanged.\" (talk on that word only).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s095",
-   "start": 398.75,
-   "end": 401.63,
-   "line": "That was always up to your family tree.",
-   "scene": "TODO",
-   "set": null,
+   "start": 295.47,
+   "end": 298.01,
+   "line": "Dev looks almost disappointed.",
+   "scene": "GIANT FACE DEV, disappointed: giantFace who 'DEV' r 320, phone lowered, faceAt [[0,'neutral'],[0.8,'worried'],[1.8,'sheepish']], lips pursed; his phone's REC dot stops on 'disappointed'. Slow drift.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.77,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s096",
-   "start": 401.63,
-   "end": 407.29,
-   "line": "So, would you take the challenge? What would you add, or drop? Tell us in the comments.",
-   "scene": "TODO",
-   "set": null,
+   "start": 298.01,
+   "end": 302.07,
+   "line": "Year three. You check your pulse on the sofa.",
+   "scene": "YEAR 3: timeSkip(g,t,'YEAR 3') flips in on 'Year'. LIVING ROOM: apartment(g,t,cam,{mood:'day', power:1}) with snow outside the window (winter); HERO (s 1.9) on the sofa presses two fingers to his neck on 'pulse', a phone stopwatch(g, sec) running beside him; Biscuit loafs on the cushion next to him. exprAt [[0,'neutral'],[tPulse,'squint']]. apartmentFg, camMove z 1.05->1.1.",
+   "set": "apartment",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 2.45,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 40,
+     "dur": 2.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
   },
   {
    "id": "s097",
-   "start": 407.29,
-   "end": 409.66,
-   "line": "And subscribe for more What Ifs.",
-   "scene": "TODO",
-   "set": null,
+   "start": 302.07,
+   "end": 306.09,
+   "line": "It's slow. Really slow.",
+   "scene": "GIANT FACE HERO, surprise to awe: giantFace r 330, faceAt [[0,'squint'],[0.4,'shocked'],[1.6,'awe']], fingers on his neck; a slow ECG line crawls across the bottom third with long gaps between beats (each beat a soft pulse of the rim). Slow push camMove z 1.0->1.08.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
    "bars": null,
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "heartbeat",
+     "gain": -16,
+     "bpm": 40,
+     "dur": 3.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s098",
+   "start": 306.09,
+   "end": 308.97,
+   "line": "Endurance training lowers your resting heart rate.",
+   "scene": "RULE 5 CARD: ruleCard(g,t,info,{n:5, title:'A FIT HEART DOES LESS WORK.', bg: the dimmed living room (apartment, blurLayer + veil)}); banner lands on 'lowers'; a faint ECG line runs along the bottom edge of the card.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.75,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 50,
+     "dur": 2.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s099",
+   "start": 308.97,
+   "end": 312.97,
+   "line": "For most adults, normal is sixty to a hundred beats a minute.",
+   "scene": "BLUEPRINT FIG 14 - BPM: body.js BPM monitor draws on, a shaded 'NORMAL' band with gold '60' and '100' on 'sixty' and 'hundred'; the needle wanders inside the band.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -24
+    },
+    {
+     "at": 1.61,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.45,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s100",
+   "start": 312.97,
+   "end": 316.09,
+   "line": "A well-trained athlete can be closer to forty.",
+   "scene": "WATCH INSERT: HERO's wrist on the sofa armrest, a sports watch reading a slow BPM; the number ticks down and lands on gold '41 BPM' on 'forty', next to a small chip 'ATHLETE ~40'. Biscuit's paw in the corner. camMove z 1.2->1.25.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 40,
+     "dur": 2.0
+    },
+    {
+     "at": 2.25,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s101",
+   "start": 316.09,
+   "end": 320.39,
+   "line": "A trained heart pumps more blood per beat, so it beats less often.",
+   "scene": "BLUEPRINT FIG 15 - HEART: body.js heart pumping; on 'more blood' a bigger blood pulse fills a gold measuring cup 'PER BEAT +'; on 'less often' the beat interval stretches (the metronome swings slower). 2 labels max.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.99,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 55,
+     "dur": 2.5
+    },
+    {
+     "at": 3.11,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s102",
+   "start": 320.39,
+   "end": 323.09,
+   "line": "But people improve by different amounts.",
+   "scene": "THREE-SHOT park (winter, day, snow): HERO, DEV and MINA (s 1.9 / 1.9 / 2.0) finish the same lap; HERO barely puffed, DEV bent over gasping (breath puffs), MINA in between; on 'different' three gold bars rise above their heads to different heights. camMove x drift, parkFg snowy branch.",
+   "set": "park",
+   "type": "three",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.63,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 1.43,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s103",
+   "start": 323.09,
+   "end": 326.47,
+   "line": "In one big study, over seven hundred inactive adults",
+   "scene": "BLUEPRINT FIG 16 - THE STUDY (big study): a grid of tiny line-art people fills the panel in rows on 'big study'; gold '700+' pops on 'seven hundred'; label 'INACTIVE ADULTS' on 'inactive'. Draw-on 1.5 s, slow scale <= 4%. Blueprint: cream line on navy, gold numbers, bars none.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.89,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.77,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.39,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s104",
+   "start": 326.47,
+   "end": 329.07,
+   "line": "did the same twenty-week program.",
+   "scene": "THE PROGRAM (<= 3 s of wide): park(g,t,cam,{season:'spring', mood:'day'}), a crowd of beginner joggers (extras in varied colours, no cast colours) sets off together under a banner '20 WEEKS' (gold) on 'twenty-week'; HERO (s 1.7) among them. Pan camMove x.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.53,
+     "name": "whistle",
+     "gain": -18
+    },
+    {
+     "at": 0.81,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s105",
+   "start": 329.07,
+   "end": 333.13,
+   "line": "Some boosted their fitness hugely. Some barely changed.",
+   "scene": "BLUEPRINT continue: each tiny person grows a fitness bar above their head; on 'hugely' some bars shoot UP (gold sparkles, label 'HUGE'), on 'barely' others stay stubby (label 'BARELY'). A bell-curve outline draws over the grid. <= 3 labels.",
+   "set": "body",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.23,
+     "name": "riser",
+     "gain": -20,
+     "dur": 0.8
+    },
+    {
+     "at": 2.67,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s106",
+   "start": 333.13,
+   "end": 335.03,
+   "line": "You're a good responder.",
+   "scene": "GIANT FACE HERO, proud: giantFace r 330 (big dark curls, white sweatband with green stripe), faceAt [[0,'neutral'],[0.5,'determined'],[1.3,'smirk']]; a small gold medal/star sparkle 'GOOD RESPONDER' chip pops on 'good'. rimColor warm window light, slow push camMove z 1.0->1.06.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "Short shot (1.9 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s107",
+   "start": 335.03,
+   "end": 339.03,
+   "line": "Biscuit, who has trained for zero days, is not.",
+   "scene": "BISCUIT GAG: apartment(g,t,cam,{mood:'day'}) sofa, BISCUIT (cat s 2.2, pose 'loaf', purple collar) sprawled on the cushion; a little body.js-style fitness bar above her reads gold '0 DAYS' on 'zero' and stays flat; on 'not' she rolls onto her back, paws up, eyes 'offended' slow blink, tail flick. Close camera, camMove z 1.15->1.2, apartmentFg plant.",
+   "set": "apartment",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.25,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.21,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s108",
+   "start": 339.03,
+   "end": 341.53,
+   "line": "Day one thousand and ninety-five.",
+   "scene": "DAY 1,095, THE LAST RUN at dawn, full circle to the DAY 1 season: park(g,t,cam,{season:'spring', mood:'dawn'}), blossom petals falling; the home3 timeSkip(g,t,'DAY 1,095') card flips in top-left on 'Day' and lands with a gold '1,095' on 'ninety-five'. HERO (s 1.9, curls, green hoodie, white sweatband with green stripe) runs toward camera with easy, strong form (train.js runCycle jog, no sweat). Follow cam camMove x + z 1.05->1.1, parkFg reeds, dawn god rays.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 1.11,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s109",
+   "start": 341.53,
+   "end": 343.49,
+   "line": "Mina rides beside you.",
+   "scene": "TRACKING TWO-SHOT: park spring dawn, MINA (s 2.0, red scarf, helmet) pedals her small bike (park.js Mina-on-bike) beside HERO (s 1.9, runCycle jog), side-on; she rings the bell on 'rides' and grins at him (lookToward HERO, exprAt joy); HERO smiles back. Camera tracks sideways at their speed (camMove x linear), parkFg blurred fence posts whipping past, km marker '9' slides by.",
+   "set": "park",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.25,
+     "name": "ding",
+     "gain": -18,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "Short shot (2.0 s).",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s110",
+   "start": 343.49,
+   "end": 346.55,
+   "line": "Dev holds a finish line made of toilet paper.",
+   "scene": "FINISH LINE WIDE (<= 3 s of wide, hero >= 12%): park spring dawn at km '10' (distance sign '10 km (6.2 mi)'); DEV (s 1.9, orange beanie) stands between the two posts holding up the park.js toilet-paper finish ribbon on 'finish line', the roll unspooling at his feet on 'toilet paper' (exprAt proud/joy); HERO (s 1.7) and MINA on the bike approach from the left. Slow push camMove z 1.0->1.06, parkFg petals.",
+   "set": "park",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.95,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s111",
+   "start": 346.55,
+   "end": 349.39,
+   "line": "Over a hundred and nine thousand push-ups.",
+   "scene": "TOTALS 1: HERO breaks the toilet-paper ribbon in slow motion (it tears and flutters, petals) behind a dimmed veil; over it a giant train.js repCounter rolls up fast to gold '109,500' on 'nine thousand' with the label 'PUSH-UPS' (a little push-up icon). camMove z 1.04->1.1.",
+   "set": "train",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "slowmo",
+     "gain": -18
+    },
+    {
+     "at": 0.45,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.8
+    },
+    {
+     "at": 1.63,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s112",
+   "start": 349.39,
+   "end": 351.83,
+   "line": "Nearly eleven thousand kilometres.",
+   "scene": "TOTALS 2: the camera rises above the park route: the dashed path draws on as a gold line that loops round and round; a big gold counter reads '10,950 km' landing on 'eleven thousand' with the label 'NEARLY 11,000 km'. Dawn light, slow rise camMove y.",
+   "set": "park",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.4
+    },
+    {
+     "at": 1.15,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s113",
+   "start": 351.83,
+   "end": 354.49,
+   "line": "More than a quarter of the way around the Earth.",
+   "scene": "TOTALS 3, GLOBE: blueprint-style Earth (bp.js line art circle, cream on navy, continents simplified) with a gold arc travelling round it from a pin 'HOME'; the arc stops just past the 1/4 mark on 'quarter' (gold '> 1/4' label) and a tiny running HERO icon rides the arc tip, on 'Earth' sparkle. Slow rotation, draw-on 1.5 s.",
+   "set": "bp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.81,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s114",
+   "start": 354.49,
+   "end": 357.51,
+   "line": "Dev grabs a pillow. \"Okay.",
+   "scene": "AFTER THE FINISH (park spring dawn, by the bench): DEV (s 1.9) grabs the train.js pillow off the bench on 'grabs' and holds it up in front of his chest like a target pad (BISCUIT, cat s 1.6, is already asleep as a loaf on top of the pillow, half cropped by the top of frame and NOT called attention to, so the s118 reveal still lands); lip-sync on \"Okay.\" only, exprAt cheeky; HERO (s 1.9) catches his breath (breath puffs, idle), looks at the pillow (lookToward). MINA (s 2.0) on her bike in the background. camMove x drift.",
+   "set": "park",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.83,
+     "name": "pop",
+     "gain": -20
+    }
+   ],
+   "notes": "DEV lip-synced on \"Okay.\" only.",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s115",
+   "start": 357.51,
+   "end": 360.87,
+   "line": "One punch. Show us what three years did.\"",
+   "scene": "GIANT FACE DEV, lip-sync on \"One punch. Show us what three years did.\": giantFace who 'DEV' r 320 (orange beanie), the pillow edge visible in the bottom of frame; faceAt [[0,'cheeky'],[1.2,'determined'],[2.4,'smirk']]; gold '1 PUNCH' chip on 'One', small '3 YEARS' on 'three'. rimColor dawn, slow push.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.05,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": "DEV lip-synced (quoted line).",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s116",
+   "start": 360.87,
+   "end": 364.29,
+   "line": "You wind up. Everyone holds their breath.",
+   "scene": "THE WIND-UP: three-shot, HERO (s 1.9) in the foreground left, back three-quarter to camera, train.js punchPose(t, t0) wind-up on 'wind' (fist back, curls still), a golden aura shimmer; DEV braces behind the pillow (Biscuit still asleep on top, small, eyes closed), MINA on the bike behind with both hands over her mouth on 'holds' (exprAt worried), petals freeze mid-air (slow). Music cuts to near-silence. Slow push camMove z 1.05->1.15, parkFg petals.",
+   "set": "park",
+   "type": "three",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "riser",
+     "gain": -16,
+     "dur": 2.4
+    },
+    {
+     "at": 2.03,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 50,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s117",
+   "start": 364.29,
+   "end": 366.59,
+   "line": "You punch. Flump.",
+   "scene": "THE PUNCH: punchPose punch on 'punch' (speed lines, impactFrame flash, shake 12, petals blown back) into the pillow (train.js pillow) held by DEV; on 'Flump' the pillow just squashes softly (pillow squash 'flump') with a tiny puff of dust, no feathers, nothing breaks. DEV does not move an inch; Biscuit, asleep on top, just bobs once with the squash. Close side camera on the impact, punch zoom camMove z 1.2->1.3.",
+   "set": "train",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.71,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.71,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s118",
+   "start": 366.59,
+   "end": 368.85,
+   "line": "The pillow wobbles. Biscuit,",
+   "scene": "POST-PUNCH INSERT: the pillow wobbles like jelly (train.js pillow wobble) in DEV's hands; on 'Biscuit' the camera tilts up to the top of the pillow where BISCUIT (cat s 2.0, loaf, purple collar) has been asleep all along. Slow tilt camMove y.",
+   "set": "train",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    },
+    {
+     "at": 2.07,
+     "name": "swish",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s119",
+   "start": 368.85,
+   "end": 371.65,
+   "line": "asleep on top of it, opens one eye.",
+   "scene": "BISCUIT CLOSE-UP (cat s 2.6): eyes closed, ears twitch; on 'opens' one eye opens (green slit pupil, eyes 'offended'), the other stays shut; tail flick on 'eye'. Dawn rim, very slow push camMove z 1.25->1.3.",
+   "set": "train",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.21,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s120",
+   "start": 371.65,
+   "end": 374.57,
+   "line": "And your hair doesn't move at all.",
+   "scene": "GIANT FACE HERO after the punch: giantFace r 330, faceAt [[0,'determined'],[0.8,'neutral'],[1.8,'smirk']]; petals blow past in the wind but his big dark curls stay totally full and still; on 'at all' a gold check mark chip 'HAIR: 100%' pops. Never bald, curls full. Slow push camMove z 1.0->1.06, rimColor dawn.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.29,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s121",
+   "start": 374.57,
+   "end": 378.01,
+   "line": "In real life, three years of this would change you a lot.",
+   "scene": "REAL LIFE MONTAGE: a three-panel strip of the same park path (park.js) left to right YEAR 1 summer / YEAR 2 winter / YEAR 3 spring, the HERO in each a little leaner and stronger; gold '3 YEARS' on 'three'. Slow pan camMove x.",
+   "set": "park",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.19,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.23,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s122",
+   "start": 378.01,
+   "end": 382.23,
+   "line": "A stronger heart, serious endurance, and a lot of laundry.",
+   "scene": "THREE ICONS + GAG: on 'heart' a gold heart icon pulses, on 'endurance' a gold '10 km' running icon, on 'laundry' cut-in to the home3 bathroom where a MOUNTAIN of green hoodies and white sweatbands spills out of the laundry basket, Biscuit on top of the pile. camMove z 1.1->1.15.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.75,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 50,
+     "dur": 1.2
+    },
+    {
+     "at": 1.55,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 3.01,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s123",
+   "start": 382.23,
+   "end": 385.87,
+   "line": "Health experts suggest adults get at least a hundred and fifty minutes",
+   "scene": "BLUEPRINT FIG 17 - THE GUIDELINE: a weekly bar chart (7 day columns, cream line on navy) with a dashed target line labelled gold '150 MIN / WEEK' on 'hundred and fifty'. Draw-on 1.5 s.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.59,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s124",
+   "start": 385.87,
+   "end": 390.19,
+   "line": "of moderate activity a week. This blows past that.",
+   "scene": "BLUEPRINT continue: HERO's own bar (a line-art runner on top) grows past the 150 line and keeps going off the top of the frame on 'blows past' (gold '~7 HOURS'); the target line gets a tiny check mark.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.91,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 3.17,
+     "name": "riser",
+     "gain": -20,
+     "dur": 1.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s125",
+   "start": 390.19,
+   "end": 392.45,
+   "line": "But it won't make you superhuman.",
+   "scene": "REALITY GAG: park spring day, HERO (s 1.9) tries to jump over the river from the bank (a small hop), lands a metre short with one foot in a puddle (splash = rain dur 0.9 + low hit) on 'superhuman'; exprAt [[0,'determined'],[tSuper,'sheepish']]. MINA laughing on the bench. camMove x.",
+   "set": "park",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.01,
+     "name": "rain",
+     "gain": -18,
+     "dur": 0.9
+    },
+    {
+     "at": 1.01,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s126",
+   "start": 392.45,
+   "end": 395.37,
+   "line": "You'd stall unless you made it harder, and without rest,",
+   "scene": "TWO-SHOT callback: bedroom, DEV (s 1.9) slides one more textbook into the backpack on 'harder' (gold up-arrow 'add difficulty'), MINA (s 2.0) points firmly at the bed on 'rest' with a gold chip 'REST DAY'; HERO (s 1.9) between them looks from one to the other (lookToward). camMove z 1.05->1.1.",
+   "set": "home3",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.71,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.63,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s127",
+   "start": 395.37,
+   "end": 397.47,
+   "line": "your body pushes back.",
+   "scene": "BODY PUSHES BACK: bedroom training corner, HERO (s 2.0) mid-push-up when his own arms buckle (fatigue collapse) and he flops onto the mat on 'back', Biscuit stepping onto his back immediately (train.js Biscuit-on-the-back helper); exprAt [[0,'determined'],[tBack,'sheepish']]. Low camera, shake 4.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.83,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.17,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s128",
+   "start": 397.47,
+   "end": 401.63,
+   "line": "As for your hair? That was always up to your family tree.",
+   "scene": "FAMILY TREE: the hallway photo wall (LOCAL frames) - Grandpa, Dad, Uncle and HERO, all with big dark curls; a hand-drawn gold family tree connects the frames on 'family tree'; MINA's 'HAIR LOG' notebook is pinned beside them open on 'UNCHANGED.'. Slow pan camMove x, warm hallway lamp key.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.65,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 3.13,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s129",
+   "start": 401.63,
+   "end": 403.61,
+   "line": "So, would you take the challenge?",
+   "scene": "QUESTION lock-up: 'WOULD YOU TAKE THE CHALLENGE?' (title style: cream, thick outline + glow) over the dimmed bedroom wall calendar full of X marks; pops on 'would' (outBack).",
+   "set": "home3",
+   "type": "title",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Short lock-up (2.0 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s130",
+   "start": 403.61,
+   "end": 407.29,
+   "line": "What would you add, or drop? Tell us in the comments.",
+   "scene": "QUESTION continue: the routine checklist (push-ups / sit-ups / squats / run icons) under the title; a gold '+' slot slides in on 'add', one slot wobbles and crosses itself out on 'drop'; on 'comments' a comment-bubble icon pops.",
+   "set": "home3",
+   "type": "title",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.07,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.63,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s131",
+   "start": 407.29,
+   "end": 409.555,
+   "line": "And subscribe for more What Ifs.",
+   "scene": "END SCREEN (UI.endScreen as ep 1/2): subscribe pill, like icon, the cast lined up at the park finish line at dawn (HERO with curls + white sweatband with green stripe, MINA on her bike, DEV with the toilet-paper ribbon, BISCUIT on the pillow), the timeSkip card reading 'DAY 1' above them (loop back to the start). Fade out at the end.",
+   "set": "",
+   "type": "end",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
    "notes": ""
   }
  ],
- "music": []
+ "music": [
+  {
+   "start": 0.0,
+   "end": 33.69,
+   "mood": "playful",
+   "intensity": 0.4
+  },
+  {
+   "start": 33.69,
+   "end": 58.67,
+   "mood": "tension",
+   "intensity": 0.3
+  },
+  {
+   "start": 58.67,
+   "end": 89.35,
+   "mood": "calm",
+   "intensity": 0.35
+  },
+  {
+   "start": 89.35,
+   "end": 163.73,
+   "mood": "action",
+   "intensity": 0.45
+  },
+  {
+   "start": 163.73,
+   "end": 190.55,
+   "mood": "action",
+   "intensity": 0.6
+  },
+  {
+   "start": 190.55,
+   "end": 227.25,
+   "mood": "tension",
+   "intensity": 0.45
+  },
+  {
+   "start": 227.25,
+   "end": 282.45,
+   "mood": "dark",
+   "intensity": 0.35
+  },
+  {
+   "start": 282.45,
+   "end": 298.01,
+   "mood": "calm",
+   "intensity": 0.4
+  },
+  {
+   "start": 298.01,
+   "end": 339.03,
+   "mood": "wonder",
+   "intensity": 0.4
+  },
+  {
+   "start": 339.03,
+   "end": 360.87,
+   "mood": "triumph",
+   "intensity": 0.75
+  },
+  {
+   "start": 360.87,
+   "end": 364.29,
+   "mood": "calm",
+   "intensity": 0.05
+  },
+  {
+   "start": 364.29,
+   "end": 374.57,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 374.57,
+   "end": 409.555,
+   "mood": "hopeful",
+   "intensity": 0.4
+  }
+ ]
 }
