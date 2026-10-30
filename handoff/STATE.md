@@ -38,5 +38,8 @@ Production is pausing. Workers finish what's in flight, then rest. The buffer is
 ## What If channel
 - Episode 1 "What If You Could See in Complete Darkness?" FINISHED Oct 29 in the cloud: 6:13.6, 1080p24, -14 LUFS. Sent to the owner; the file is too big for git (175 MB). Branch whatif/see-in-dark has all shots, sheets, CLOUD_REPORT.md and VOICE.md (the owner locked this voice).
 
+- **What If episode 2 "What If Every Day, Your Jump Doubled?" FINISHED Oct 29 ~11:30 PM ET:** voice am_fenrir (owner's pick), 112 shots (A H1, B H2, C H3, D H4, E owner's PC), final render + mix on the owner's PC (358.7 s, 1080p24, -14.5 LUFS). The file is on the PC at reel-render/longform/what-if-jump-UPLOAD/. Branch whatif/see-in-dark ef42c89+. Posting: 2-3 days after ep 1, or once ep 1 slows.
+- Fixed in the engine: rig2d.js worried/angry brows were swapped (24d528e).
+
 ## Scheduled check-ins
 - No hourly check-in any more (deleted Oct 28); worker messages wake the main session. Weekly review + study: trigger trig_01E7MHWPVzXj9wPm1rAKtG8X (Mondays 13:23 ET).
