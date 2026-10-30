@@ -94,7 +94,7 @@ registerShot('s050', { draw(g, t, info) {
 registerShot('s051', { draw(g, t, info) {
   const tStart = wt(info, 'start', 0.21), tTim = wt(info, 'timing', 0.49), tLights = wt(info, 'lights', 2.17);
   const t0 = Math.max(tStart + 0.28, tTim), H = 1500, opt = { up: 0.85, hang: 0.12, down: tLights - t0 - 0.97, landing: 'thud' }, J = jumpPose(t, t0, H, opt), T = J.times;
-  const cam = jumpCam(t, t0, H, { ...opt, z: 1.12, x: -60, y: 40, follow: 0.32, lag: 0.08, zoomOut: 0.06, shake: 20 });
+  const cam = jumpCam(t, t0, H, { ...opt, z: 1.12, x: -60, y: 40, follow: 0.14, lag: 0.08, zoomOut: 0.06, shake: 20 });
   const St = street(g, t, cam, { mood: 'day', power: 0.2 }), GY = St.GY, CX = St.CX, hx = CX + 40, gy = St.GY + 150, lx = CX - 470;
   veil(g, '#fff0d8', 0.16, 'screen'); const state = t < tStart ? 'amber' : t < T.tL ? 'red' : 'green';
   layer(g, cam, 1, (g) => {
@@ -105,7 +105,7 @@ registerShot('s051', { draw(g, t, info) {
     [[0, 1, 0.0], [1, -1, 0.25], [2, 1, 0.55], [3, -1, 0.8]].forEach(([i, f, d]) => {
       const k = prog(t, tStart + 0.2 + d * 0.5, T.tL - 0.05), x = f > 0 ? lerp(CX - 760, CX + 760, k) : lerp(CX + 820, CX - 700, k), y = gy + 30 + (i % 2) * 40;
       if (k <= 0 || k >= 1) return; const looking = J.phase === 'apex' || J.phase === 'fall';
-      actor(g, ped(i + 1), { x, y, s: 1.75, facing: f, pose: walkAlong(x, 1.75, { facing: f }), expr: looking ? 'surprised' : 'neutral', blink: blinkFlag(t, 2.9 + i * 0.4, i), look: looking ? lookToward(f * 0.3, -1) : lookToward(f, 0), rim: RIM, t }); });
+      actor(g, ped(i + 1), { x, y, s: 1.75, facing: f, pose: walkAlong(x, 1.75, { facing: f }).pose, expr: looking ? 'surprised' : 'neutral', blink: blinkFlag(t, 2.9 + i * 0.4, i), look: looking ? lookToward(f * 0.3, -1) : lookToward(f, 0), rim: RIM, t }); });
     jumpFX(g, t, J, { x: hx, gy, s: 1.9, landing: 'thud', dustColor: '#d8d4cc' });
     const pose = J.landed && t > T.tL + 0.45 ? idle({ ...POSES.stand, eF: [30, -150], hF: [40, -190] }, t, 3) : J.pose;            // thumbs up
     jumper(g, TEE, { ...J, pose }, { x: hx, gy, s: 1.9, facing: -1, expr: exprAt(t, [[0, 'determined'], [T.t0, 'joy'], [T.tB, 'surprised'], [T.tL, 'determined'], [T.tL + 0.45, 'smirk']]), blink: blinkFlag(t, 3.4, 6), look: J.phase === 'ground' ? lookToward(-1, -0.4) : [0, 1], rim: RIM, t });
