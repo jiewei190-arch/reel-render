@@ -167,7 +167,7 @@ function living(g, t, cam, o, GY, CX) {
     pos.headX = cx - 410; pos.headY = ct - 20;
     const zz = (t * 0.5) % 1; text(g, 'z', pos.headX + 40 + zz * 40, pos.headY - 60 - zz * 80, { size: 34 + zz * 20, color: alpha('#c8d4ff', 0.5 * (1 - zz)), font: FONTS.ui, weight: 900 });
   });
-  outsideLight(g, t, { x: pos.doorX - pos.doorW / 2, y: GY, w: pos.doorW, glow: k, under: 1, creep: o.creep ?? 0.3, shadow: o.shadow ?? 0, gaps: k > 0 ? gaps : null });
+  layer(g, cam, 1, (g) => outsideLight(g, t, { x: pos.doorX - pos.doorW / 2, y: GY, w: pos.doorW, glow: k, under: 1, creep: o.creep ?? 0.3, shadow: o.shadow ?? 0, gaps: k > 0 ? gaps : null }));
   // cold dark over the room, the outside light the only warmth
   return pos;
 }
@@ -189,7 +189,7 @@ function door(g, t, cam, o, GY, CX) {
     // coat hooks + a family photo beside the door
     seg(g, [[CX + w / 2 + 70, top + 200], [CX + w / 2 + 230, top + 200]], 12, '#2a1e18'); poly(g, [[CX + w / 2 + 100, top + 200], [CX + w / 2 + 190, top + 200], [CX + w / 2 + 220, top + 640], [CX + w / 2 + 80, top + 620]], '#2a3348');
   });
-  outsideLight(g, t, { x: CX - w / 2 + 10, y: GY, w: w - 20, glow: k, under: 1, creep: o.creep ?? 0.4, shadow: o.shadow ?? 0 });
+  layer(g, cam, 1, (g) => outsideLight(g, t, { x: CX - w / 2 + 10, y: GY, w: w - 20, glow: k, under: 1, creep: o.creep ?? 0.4, shadow: o.shadow ?? 0 }));
   return pos;
 }
 
@@ -204,7 +204,7 @@ function windowView(g, t, cam, o, GY, CX) {
     poly(g, [[pos.x - 150, pos.y - 80], [pos.x - 30, pos.y - 80], [pos.x - 60, pos.y + pos.h + 120], [pos.x - 170, pos.y + pos.h + 120]], '#2a2440');
     rr(g, pos.x + pos.w - 130, pos.y + pos.h - 60, 90, 70, 10); g.fillStyle = '#4a3428'; g.fill(); for (let i = 0; i < 5; i++) seg(g, [[pos.x + pos.w - 85, pos.y + pos.h - 60], [pos.x + pos.w - 85 + (i - 2) * 24, pos.y + pos.h - 170 - (i % 2) * 30]], 8, '#1a2a1a');
   });
-  outsideLight(g, t, { x: pos.x, y: pos.y + pos.h, w: 0, under: 0, glow: k, creep: o.creep ?? 0.4, gaps: pos.gaps });
+  layer(g, cam, 1, (g) => outsideLight(g, t, { x: pos.x, y: pos.y + pos.h, w: 0, under: 0, glow: k, creep: o.creep ?? 0.4, gaps: pos.gaps }));
   return pos;
 }
 
