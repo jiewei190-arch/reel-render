@@ -437,37 +437,37 @@
     {
      "at": 0.0,
      "name": "hit",
-     "gain": -12,
+     "gain": -6,
      "pitch": 1.7
     },
     {
      "at": 0.0,
      "name": "tick",
-     "gain": -16,
+     "gain": -10,
      "pitch": 0.9
     },
     {
      "at": 0.35,
      "name": "hit",
-     "gain": -12,
+     "gain": -6,
      "pitch": 1.7
     },
     {
      "at": 0.35,
      "name": "tick",
-     "gain": -16,
+     "gain": -10,
      "pitch": 0.9
     },
     {
      "at": 0.7,
      "name": "hit",
-     "gain": -11,
+     "gain": -5,
      "pitch": 1.7
     },
     {
      "at": 0.7,
      "name": "tick",
-     "gain": -15,
+     "gain": -9,
      "pitch": 0.9
     },
     {
@@ -923,13 +923,13 @@
     {
      "at": 0.0,
      "name": "rain",
-     "gain": -14,
+     "gain": -6,
      "dur": 0.6
     },
     {
      "at": 0.02,
      "name": "glitch",
-     "gain": -20
+     "gain": -12
     },
     {
      "at": 0.0,
@@ -991,18 +991,18 @@
     {
      "at": 0.0,
      "name": "rain",
-     "gain": -14,
+     "gain": -6,
      "dur": 0.5
     },
     {
      "at": 0.02,
      "name": "glitch",
-     "gain": -20
+     "gain": -12
     },
     {
      "at": 0.0,
      "name": "hit",
-     "gain": -14,
+     "gain": -9,
      "pitch": 0.5
     },
     {
