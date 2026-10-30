@@ -53,7 +53,7 @@ Narrator: the locked What If voice (whatif/VOICE.md), second person, calm and wa
 28. Day sixteen. Sixteen kilometres. You're higher than Everest, higher than passenger jets.
 29. And there's barely anything left to breathe. Up here, you'd pass out in seconds.
 30. Mina makes you wear a diving tank. Dev makes you wear a helmet with his name on it.
-30b. Day seventeen and eighteen, you go higher than any balloon. Higher than the highest skydive ever, forty-one kilometres up. The sky above you turns from blue to black.
+30b. On days seventeen and eighteen, you go higher than any balloon. Higher than the highest skydive ever, forty-one kilometres up. The sky above you turns from blue to black.
 31. Day nineteen. A hundred and thirty-one kilometres. You've passed the edge of space, a hundred kilometres up.
 32. For a few minutes, you're technically an astronaut. The Earth curves below you. It's silent.
 33. Then you fall. All the way. To leave the ground that fast, you'd be moving faster than a rifle bullet, and air at that speed glows hot.
