@@ -28,7 +28,7 @@ registerShot('s027', { draw(g, t, info) {
   const R = roofs(g, t, cam, { view: 'houses', mood: 'day', ladder: 0 });
   const hx = POLE - 40;
   layer(g, cam, 1, (g) => {
-    vaultPole(g, POLE + 160, R.GY + 14, 1000);
+    vaultPole(g, POLE + 160, R.GY - 4, 1000);
     markerPost(g, MK, R.GY + 30, 6.31, { sub: 'POLE VAULT WR' });
     actor(g, 'MINA', { x: CX - 980, y: R.GY + 24, s: 2.0, facing: 1, pose: idle(poseAt(t, [[0, 'stand'], [t0 + 0.2, 'pointUp']]), t, 1), expr: exprAt(t, [[0, 'smile'], [t0 + 0.2, 'awe']]), blink: blinkFlag(t, 2.9, 1), look: t > t0 ? lookToward(0.5, -1) : lookToward(1, 0.1), rim: R.rim, t });
     jumpFX(g, t, J, { x: hx, gy: R.GY + 24, s: 1.9, landing: 'soft', dustColor: '#c8d8a0' });
@@ -49,7 +49,7 @@ registerShot('s028', { draw(g, t, info) {
   const cam = jumpCam(t, t0, JH, { z: 0.92, x: -380, y: -170, follow: 0.96, lag: 0.16, zoomOut: 0.08, shake: 0 });
   const R = roofs(g, t, cam, { view: 'houses', mood: 'day', ladder: 0 });
   layer(g, cam, 1, (g) => {
-    vaultPole(g, POLE + 160, R.GY + 14, 1000);
+    vaultPole(g, POLE + 160, R.GY - 4, 1000);
     markerPost(g, MK, R.GY + 30, 6.31, { sub: 'POLE VAULT WR' });
     jumpFX(g, t, J, { x: hx, gy: R.GY + 24, s: 1.9, landing: 'soft', dustColor: '#c8d8a0' });
     jumper(g, 'HERO', J, { x: hx, gy: R.GY + 24, s: 1.9, facing: -1, expr: exprAt(t, [[0, 'joy'], [tWith, 'smirk']]), blink: blinkFlag(t, 3.2, 4), look: lookToward(-1, 0.3), rim: R.rim, t });
