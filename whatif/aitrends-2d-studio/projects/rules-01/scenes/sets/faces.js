@@ -103,7 +103,15 @@ export function giantFace(g, cx, cy, r, o = {}) {
   if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 11; i++) {          // big mop of curls around the top of the head
     const a = Math.PI * (0.98 + i * 0.104); circle(g, Math.cos(a) * r * 0.93, Math.sin(a) * r * 0.93, r * (0.3 + (i % 2) * 0.05), st.ink);
   }
+  const pony = who === 'HERO' && HERO_FIT.head === 'ponytail', sway = Math.sin((o.t ?? 0) * 1.3);   // rules-01 babysitter (look from the PC's batch C)
+  if (pony) { g.fillStyle = '#16121a'; g.beginPath(); g.moveTo(r * 0.55, -r * 0.7); g.quadraticCurveTo(r * 1.45 + sway * r * 0.1, -r * 0.6, r * 1.25 + sway * r * 0.18, r * 0.65); g.quadraticCurveTo(r * 1.0, r * 0.2, r * 0.6, -r * 0.3); g.closePath(); g.fill(); }
   circle(g, 0, 0, r, st.ink);
+  if (pony) {                                                                               // hair cap with bangs + the hair-tie bump, so the head never reads bald
+    g.save(); g.beginPath(); g.arc(0, 0, r * 1.01, 0, Math.PI * 2); g.clip();
+    g.fillStyle = '#16121a'; g.beginPath(); g.moveTo(-r * 1.1, -r * 0.2); g.quadraticCurveTo(-r * 0.7, -r * 0.62, -r * 0.1, -r * 0.6); g.quadraticCurveTo(r * 0.5, -r * 0.58, r * 1.1, -r * 0.25); g.lineTo(r * 1.1, -r * 1.2); g.lineTo(-r * 1.1, -r * 1.2); g.closePath(); g.fill();
+    g.strokeStyle = alpha('#8fb0ff', 0.2); g.lineWidth = r * 0.02; for (let i = 0; i < 5; i++) { g.beginPath(); g.moveTo(-r * 0.6 + i * r * 0.3, -r * 0.95); g.quadraticCurveTo(-r * 0.4 + i * r * 0.28, -r * 0.75, -r * 0.5 + i * r * 0.3, -r * 0.62); g.stroke(); }
+    g.restore(); circle(g, r * 0.72, -r * 0.68, r * 0.12, '#16121a');
+  }
   if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 9; i++) {           // curl highlights so the mop reads on a black head
     const a = Math.PI * (1.04 + i * 0.115); g.strokeStyle = alpha(shade(st.ink, 0.6), 0.6); g.lineWidth = r * 0.03; g.beginPath(); g.arc(Math.cos(a) * r * 0.95, Math.sin(a) * r * 0.95, r * 0.2, a - 1.2, a + 0.6); g.stroke();
   }
