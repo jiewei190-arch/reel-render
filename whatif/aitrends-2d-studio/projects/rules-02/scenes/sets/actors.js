@@ -36,6 +36,13 @@ export function actor(g, who, o = {}) {
     seg(g, [[hx - 17, hy - 15], [hx, hy - 19], [hx + 17, hy - 15]], 6.5, outfit.sweatband);
     seg(g, [[hx - 16, hy - 15], [hx, hy - 19], [hx + 16, hy - 15]], 1.8, outfit.color);
   }
+  if (outfit.hair && outfit.head === 'none') {   // short hair cap (rules-02 clerk) so the head never reads bald
+    const [hx, hy] = pose.head || [sx + 2, sy - 30];
+    g.fillStyle = outfit.hair; g.beginPath(); g.ellipse(hx - 1, hy - 7, 15.5, 11, 0, Math.PI * 0.95, Math.PI * 2.05); g.fill();
+  }
+  if (outfit.nametag) {          // white name tag on the chest
+    rr(g, sx + 4, sy + 18, 12, 7, 1.5); g.fillStyle = '#eef0f2'; g.fill();
+  }
   if (outfit.lanyard) {          // green lanyard: V from the neck to a badge on the chest
     const c = outfit.lanyard;
     seg(g, [[sx - 6, sy - 6], [sx + 5, sy + 30]], 3.4, c); seg(g, [[sx + 11, sy - 6], [sx + 5, sy + 30]], 3.4, c);

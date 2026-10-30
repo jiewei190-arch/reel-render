@@ -1,6 +1,6 @@
 // cast.js — THE RULES #2 cast (horror shorts). Signature colours fixed. Signature colours are FIXED for the whole video.
 // Outfits feed drawFigure(). Accessories the rig has no field for (scarf, lanyard) are drawn by sets/actors.js.
-export const HERO  = { top: 'tshirt',    color: '#2f5a43', legs: '#24272f', head: 'none', nametag: true };                 // "you": the night clerk, DARK GREEN work polo + name tag, short hair
+export const HERO  = { top: 'tshirt',    color: '#2f5a43', legs: '#24272f', head: 'none', hair: '#3a2c22', nametag: true };                 // "you": the night clerk, DARK GREEN work polo + name tag, short hair
 export const MINA  = { top: 'tshirt',    color: '#34293f', legs: '#2a2438', head: 'bun',    kid: true, scarf: '#d4262e' };       // little sister: child scale, RED SCARF
 export const DEV   = { top: 'tshirt',    color: '#3c4058', legs: '#262a3c', head: 'beanie', headColor: '#f08a24' };             // best friend: ORANGE BEANIE
 export const LIN   = { top: 'labcoat',   face: 'glasses', head: 'bun', legs: '#2c3040', lanyard: '#2fb85a' };                    // scientist: white coat, GREEN LANYARD
