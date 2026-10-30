@@ -1,0 +1,95 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:29.25,Title,,0,0,0,,Day 3: a 12-foot dunk
+Dialogue: 0,0:00:00.15,0:00:00.19,Cap,,0,0,0,,{\c&H00E6FF&}DAY{\c&HFFFFFF&} TWO.
+Dialogue: 0,0:00:00.19,0:00:00.73,Cap,,0,0,0,,DAY {\c&H00E6FF&}TWO.{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.73,0:00:00.89,Cap,,0,0,0,,{\c&H00E6FF&}ONE{\c&HFFFFFF&} METRE.
+Dialogue: 0,0:00:00.89,0:00:01.53,Cap,,0,0,0,,ONE {\c&H00E6FF&}METRE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.53,0:00:01.59,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} TAKE ONE
+Dialogue: 0,0:00:01.59,0:00:01.79,Cap,,0,0,0,,YOU {\c&H00E6FF&}TAKE{\c&HFFFFFF&} ONE
+Dialogue: 0,0:00:01.79,0:00:02.11,Cap,,0,0,0,,YOU TAKE {\c&H00E6FF&}ONE{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.11,0:00:02.61,Cap,,0,0,0,,{\c&H00E6FF&}STEP,{\c&HFFFFFF&} RISE, AND
+Dialogue: 0,0:00:02.61,0:00:02.89,Cap,,0,0,0,,STEP, {\c&H00E6FF&}RISE,{\c&HFFFFFF&} AND
+Dialogue: 0,0:00:02.89,0:00:03.29,Cap,,0,0,0,,STEP, RISE, {\c&H00E6FF&}AND{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.29,0:00:03.59,Cap,,0,0,0,,{\c&H00E6FF&}DUNK{\c&HFFFFFF&} ON A
+Dialogue: 0,0:00:03.59,0:00:03.83,Cap,,0,0,0,,DUNK {\c&H00E6FF&}ON{\c&HFFFFFF&} A
+Dialogue: 0,0:00:03.83,0:00:03.97,Cap,,0,0,0,,DUNK ON {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.97,0:00:04.33,Cap,,0,0,0,,{\c&H00E6FF&}REGULAR{\c&HFFFFFF&} TEN-FOOT HOOP.
+Dialogue: 0,0:00:04.33,0:00:04.85,Cap,,0,0,0,,REGULAR {\c&H00E6FF&}TEN-FOOT{\c&HFFFFFF&} HOOP.
+Dialogue: 0,0:00:04.85,0:00:05.43,Cap,,0,0,0,,REGULAR TEN-FOOT {\c&H00E6FF&}HOOP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.43,0:00:05.57,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} WHOLE COURT
+Dialogue: 0,0:00:05.57,0:00:05.81,Cap,,0,0,0,,THE {\c&H00E6FF&}WHOLE{\c&HFFFFFF&} COURT
+Dialogue: 0,0:00:05.81,0:00:06.09,Cap,,0,0,0,,THE WHOLE {\c&H00E6FF&}COURT{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.09,0:00:06.37,Cap,,0,0,0,,{\c&H00E6FF&}GOES{\c&HFFFFFF&} SILENT.
+Dialogue: 0,0:00:06.37,0:00:07.45,Cap,,0,0,0,,GOES {\c&H00E6FF&}SILENT.{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.61,0:00:07.75,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} DROPS HIS
+Dialogue: 0,0:00:07.75,0:00:08.05,Cap,,0,0,0,,DEV {\c&H00E6FF&}DROPS{\c&HFFFFFF&} HIS
+Dialogue: 0,0:00:08.05,0:00:08.29,Cap,,0,0,0,,DEV DROPS {\c&H00E6FF&}HIS{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.29,0:00:08.81,Cap,,0,0,0,,{\c&H00E6FF&}PHONE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.81,0:00:08.93,Cap,,0,0,0,,{\c&H00E6FF&}"DO{\c&HFFFFFF&} THAT AGAIN."
+Dialogue: 0,0:00:08.93,0:00:09.11,Cap,,0,0,0,,"DO {\c&H00E6FF&}THAT{\c&HFFFFFF&} AGAIN."
+Dialogue: 0,0:00:09.11,0:00:10.01,Cap,,0,0,0,,"DO THAT {\c&H00E6FF&}AGAIN."{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.15,0:00:10.31,Cap,,0,0,0,,{\c&H00E6FF&}DAY{\c&HFFFFFF&} THREE.
+Dialogue: 0,0:00:10.31,0:00:10.91,Cap,,0,0,0,,DAY {\c&H00E6FF&}THREE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.91,0:00:11.05,Cap,,0,0,0,,{\c&H00E6FF&}TWO{\c&HFFFFFF&} METRES.
+Dialogue: 0,0:00:11.05,0:00:12.05,Cap,,0,0,0,,TWO {\c&H00E6FF&}METRES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.05,0:00:12.11,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} RAISES THE
+Dialogue: 0,0:00:12.11,0:00:12.63,Cap,,0,0,0,,DEV {\c&H00E6FF&}RAISES{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:12.63,0:00:12.85,Cap,,0,0,0,,DEV RAISES {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.85,0:00:13.03,Cap,,0,0,0,,{\c&H00E6FF&}HOOP{\c&HFFFFFF&} TO TWELVE
+Dialogue: 0,0:00:13.03,0:00:13.25,Cap,,0,0,0,,HOOP {\c&H00E6FF&}TO{\c&HFFFFFF&} TWELVE
+Dialogue: 0,0:00:13.25,0:00:13.53,Cap,,0,0,0,,HOOP TO {\c&H00E6FF&}TWELVE{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.53,0:00:13.81,Cap,,0,0,0,,{\c&H00E6FF&}FEET,{\c&HFFFFFF&} AS HIGH
+Dialogue: 0,0:00:13.81,0:00:14.05,Cap,,0,0,0,,FEET, {\c&H00E6FF&}AS{\c&HFFFFFF&} HIGH
+Dialogue: 0,0:00:14.05,0:00:14.37,Cap,,0,0,0,,FEET, AS {\c&H00E6FF&}HIGH{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.37,0:00:14.57,Cap,,0,0,0,,{\c&H00E6FF&}AS{\c&HFFFFFF&} IT GOES.
+Dialogue: 0,0:00:14.57,0:00:14.69,Cap,,0,0,0,,AS {\c&H00E6FF&}IT{\c&HFFFFFF&} GOES.
+Dialogue: 0,0:00:14.69,0:00:15.33,Cap,,0,0,0,,AS IT {\c&H00E6FF&}GOES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.33,0:00:15.47,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} DUNK IT
+Dialogue: 0,0:00:15.47,0:00:15.67,Cap,,0,0,0,,YOU {\c&H00E6FF&}DUNK{\c&HFFFFFF&} IT
+Dialogue: 0,0:00:15.67,0:00:15.81,Cap,,0,0,0,,YOU DUNK {\c&H00E6FF&}IT{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.81,0:00:15.99,Cap,,0,0,0,,{\c&H00E6FF&}LIKE{\c&HFFFFFF&} IT'S NOTHING.
+Dialogue: 0,0:00:15.99,0:00:16.25,Cap,,0,0,0,,LIKE {\c&H00E6FF&}IT'S{\c&HFFFFFF&} NOTHING.
+Dialogue: 0,0:00:16.25,0:00:16.51,Cap,,0,0,0,,LIKE IT'S {\c&H00E6FF&}NOTHING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.51,0:00:17.35,Cap,,0,0,0,,{\c&H00E6FF&}YOUR{\c&HFFFFFF&} JUMP IS
+Dialogue: 0,0:00:17.35,0:00:17.69,Cap,,0,0,0,,YOUR {\c&H00E6FF&}JUMP{\c&HFFFFFF&} IS
+Dialogue: 0,0:00:17.69,0:00:17.89,Cap,,0,0,0,,YOUR JUMP {\c&H00E6FF&}IS{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.89,0:00:18.17,Cap,,0,0,0,,{\c&H00E6FF&}NOW{\c&HFFFFFF&} HIGHER THAN
+Dialogue: 0,0:00:18.17,0:00:18.53,Cap,,0,0,0,,NOW {\c&H00E6FF&}HIGHER{\c&HFFFFFF&} THAN
+Dialogue: 0,0:00:18.53,0:00:18.85,Cap,,0,0,0,,NOW HIGHER {\c&H00E6FF&}THAN{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.85,0:00:18.99,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} BEST VERTICAL
+Dialogue: 0,0:00:18.99,0:00:19.25,Cap,,0,0,0,,THE {\c&H00E6FF&}BEST{\c&HFFFFFF&} VERTICAL
+Dialogue: 0,0:00:19.25,0:00:19.65,Cap,,0,0,0,,THE BEST {\c&H00E6FF&}VERTICAL{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.65,0:00:20.01,Cap,,0,0,0,,{\c&H00E6FF&}LEAP{\c&HFFFFFF&} ANY ATHLETE
+Dialogue: 0,0:00:20.01,0:00:20.41,Cap,,0,0,0,,LEAP {\c&H00E6FF&}ANY{\c&HFFFFFF&} ATHLETE
+Dialogue: 0,0:00:20.41,0:00:20.91,Cap,,0,0,0,,LEAP ANY {\c&H00E6FF&}ATHLETE{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.91,0:00:21.15,Cap,,0,0,0,,{\c&H00E6FF&}HAS{\c&HFFFFFF&} EVER RECORDED.
+Dialogue: 0,0:00:21.15,0:00:21.47,Cap,,0,0,0,,HAS {\c&H00E6FF&}EVER{\c&HFFFFFF&} RECORDED.
+Dialogue: 0,0:00:21.47,0:00:22.63,Cap,,0,0,0,,HAS EVER {\c&H00E6FF&}RECORDED.{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.81,0:00:22.85,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} FILMS EVERYTHING.
+Dialogue: 0,0:00:22.85,0:00:23.25,Cap,,0,0,0,,DEV {\c&H00E6FF&}FILMS{\c&HFFFFFF&} EVERYTHING.
+Dialogue: 0,0:00:23.25,0:00:24.11,Cap,,0,0,0,,DEV FILMS {\c&H00E6FF&}EVERYTHING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.11,0:00:24.29,Cap,,0,0,0,,{\c&H00E6FF&}BY{\c&HFFFFFF&} DINNER, THE
+Dialogue: 0,0:00:24.29,0:00:24.55,Cap,,0,0,0,,BY {\c&H00E6FF&}DINNER,{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:24.55,0:00:24.81,Cap,,0,0,0,,BY DINNER, {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.81,0:00:25.03,Cap,,0,0,0,,{\c&H00E6FF&}CLIP{\c&HFFFFFF&} HAS A
+Dialogue: 0,0:00:25.03,0:00:25.27,Cap,,0,0,0,,CLIP {\c&H00E6FF&}HAS{\c&HFFFFFF&} A
+Dialogue: 0,0:00:25.27,0:00:25.47,Cap,,0,0,0,,CLIP HAS {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.47,0:00:25.73,Cap,,0,0,0,,{\c&H00E6FF&}MILLION{\c&HFFFFFF&} VIEWS.
+Dialogue: 0,0:00:25.73,0:00:26.65,Cap,,0,0,0,,MILLION {\c&H00E6FF&}VIEWS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.65,0:00:26.73,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} COMMENTS ALL
+Dialogue: 0,0:00:26.73,0:00:27.13,Cap,,0,0,0,,THE {\c&H00E6FF&}COMMENTS{\c&HFFFFFF&} ALL
+Dialogue: 0,0:00:27.13,0:00:27.45,Cap,,0,0,0,,THE COMMENTS {\c&H00E6FF&}ALL{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.45,0:00:27.73,Cap,,0,0,0,,{\c&H00E6FF&}SAY{\c&HFFFFFF&} THE SAME
+Dialogue: 0,0:00:27.73,0:00:27.93,Cap,,0,0,0,,SAY {\c&H00E6FF&}THE{\c&HFFFFFF&} SAME
+Dialogue: 0,0:00:27.93,0:00:28.17,Cap,,0,0,0,,SAY THE {\c&H00E6FF&}SAME{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.17,0:00:28.65,Cap,,0,0,0,,{\c&H00E6FF&}THING:{\c&HFFFFFF&} FAKE.
+Dialogue: 0,0:00:28.65,0:00:29.27,Cap,,0,0,0,,THING: {\c&H00E6FF&}FAKE.{\c&HFFFFFF&}
