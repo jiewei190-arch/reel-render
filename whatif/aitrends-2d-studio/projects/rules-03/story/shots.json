@@ -5,241 +5,1366 @@
   {
    "id": "s001",
    "start": 0.0,
-   "end": 2.09,
+   "end": 1.55,
    "line": "Three a.m.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). THREE A.M. (cold open, short): home4(g,t,cam,{view:'street', glow:0}) - a row of dark suburban houses at 3 a.m., vertical framing, roofs at y ~420-600, the houses' black windows at y ~600-1000, a dead streetlight (unlit) left, empty street, no cars, cold blue night. Absolutely nothing moves except the grain. Slow push z 1.00->1.04. Unsettling detail: every single house is dark - not one porch light, not one TV. Fade in from black (config fadeIn 0.5). hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
-    "type": "cut"
+    "type": "fade"
    },
    "sfx": [],
-   "notes": ""
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
   },
   {
    "id": "s002",
-   "start": 2.09,
-   "end": 5.95,
-   "line": "Every phone on your street screams at once. Emergency alert.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 1.55,
+   "end": 5.03,
+   "line": "Every phone on your street screams at once.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). EVERY PHONE SCREAMS AT ONCE (the cut lands on the alert scream): same street framing (home4 view:'street'), at 0.00 EVERY window on the street lights up at the same frame - phonesWindow(...) in every house: small cold blue-white rectangles of phone glow, several per window, all pulsing in sync with the alert tone (bright 0.0-0.4 s, dim, bright again every 0.5 s); a bedroom light flicks on upstairs in one house at 0.6 s. Hard 2% punch-in on the cut, then slow push z 1.02->1.08 toward the house at centre (ours, x ~540). On 'screams' (2.01 s) the pulse doubles; on 'once' (2.55 s) all the glows strobe on the same frame. Unsettling detail: nobody comes to any window - only the phones' light, no silhouettes. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "blip",
+     "gain": -6,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 0.01,
+     "name": "blip",
+     "gain": -6,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -8,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 0.51,
+     "name": "blip",
+     "gain": -8,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 1.0,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 1.01,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 1.5,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 1.51,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 2.01,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 2.5,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 2.51,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 3.0,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 3.01,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 0.0,
+     "name": "glitch",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "phonebuzz",
+     "gain": -16,
+     "dur": 3.4
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
   },
   {
    "id": "s003",
-   "start": 5.95,
-   "end": 9.67,
-   "line": "Three rules.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 5.03,
+   "end": 6.95,
+   "line": "Emergency alert.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). EMERGENCY ALERT: home4(g,t,cam,{view:'living', glow:0, boarded:0}) - the dark living room, HERO 'you' (cast.js HERO: teen, DARK RED hoodie, short dark hair; actor('HERO', ...) with acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 1.9, centre-left, sitting up fast on the armchair) holding the screaming phone in front of her chest; its red/white alert light strobes on her face and hoodie (the only light, pulsing every 0.5 s), the couch and the black uncovered windows behind. poseAt sit -> holdFront; exprAt sleepy -> scared on 'Emergency' (0.15 s), eyes go to the screen on 'alert' (0.79 s). Camera slow push z 1.00->1.06. Unsettling detail: in the black window behind her, the houses across the street are all lit by phones - and every phone glow is pointed at THIS house. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 0.01,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 0.51,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 1.0,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 1.0,
+     "dur": 0.42
+    },
+    {
+     "at": 1.01,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 1.13,
+     "dur": 0.42
+    },
+    {
+     "at": 0.0,
+     "name": "phonebuzz",
+     "gain": -20,
+     "dur": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s004",
-   "start": 9.67,
-   "end": 15.67,
-   "line": "Rule one. Stay inside. Cover every window.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 6.95,
+   "end": 9.49,
+   "line": "Three rules.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). THREE RULES (the alert screen): alertPhone(g, 540, 760, 2.4, {t, rules:n, buzz}) - a black phone filling the upper frame (screen y ~360-1180), full-screen generic EMERGENCY ALERT: red/black banner 'EMERGENCY ALERT' at the top, then the rule lines (no agency names or logos); rules:0 - under the banner, 'FOLLOW THESE RULES' and the numbers '1.' '2.' '3.' down the left edge, the rule texts still blank. The banner pulses red; HERO's thumb (dark red hoodie cuff at the lower left, above y 1270) holds the phone. On 'Three' (0.15 s) the screen stops pulsing and goes still; on 'rules' (0.54 s) the three numbers blink once together. Slow push z 1.00->1.08. Unsettling detail: the phone's clock in the status bar reads 3:00 and its seconds do not move. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.8,
+     "dur": 0.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s005",
-   "start": 15.67,
-   "end": 17.25,
-   "line": "Rule two.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 9.49,
+   "end": 12.81,
+   "line": "Rule one. Stay inside.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). RULE 1 APPEARS + STAY INSIDE: same alert screen (alertPhone rules:0 -> 1): on 'Rule' (0.15 s) rule 1 types on line by line, '1. STAY INSIDE. COVER EVERY WINDOW.' - finished by 'one' (0.52 s); on 'Stay' (1.73 s) the screen's light flares and the phone vibrates (buzz 1, 2 px shake); on 'inside' (2.10 s) the phone tilts slightly toward the front door side (her hand turns). Push z 1.06->1.12. Unsettling detail: the word INSIDE is underlined, and no other word is. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.0,
+     "dur": 0.18
+    },
+    {
+     "at": 0.35,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.13,
+     "dur": 0.18
+    },
+    {
+     "at": 1.73,
+     "name": "phonebuzz",
+     "gain": -20,
+     "dur": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s006",
-   "start": 17.25,
-   "end": 22.75,
-   "line": "If it looks like morning outside, it isn't. Don't look.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 12.81,
+   "end": 15.69,
+   "line": "Cover every window.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). COVER EVERY WINDOW (dread hold ~2.9 s): home4(g,t,cam,{view:'window', glow:0, boarded:0}) - the big living-room window from inside, uncovered, black glass, a thin curtain pulled to the side; outside, the houses across the street still glow with phone light, dimmer now. HERO stands at the left edge of frame (s 1.6, x ~200, back three-quarter), phone hanging in her hand. Very slow push z 1.00->1.06 toward the glass. On 'Cover' (0.15 s) she steps back from the window; on 'window' (0.84 s) the phone-glow windows across the street go dark, all on the same frame. Unsettling detail: after they go dark, one window across the street stays faintly warm, like a lamp - but no lamp is on. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 2.88
+    },
+    {
+     "at": 0.94,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s007",
-   "start": 22.75,
-   "end": 24.33,
-   "line": "Rule three.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 15.69,
+   "end": 17.33,
+   "line": "Rule two.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). RULE 2 APPEARS: alert screen close (alertPhone rules:1 -> 2), rule 1 dimmed above; on 'Rule' (0.15 s) rule 2 types on: '2. IF IT LOOKS LIKE MORNING OUTSIDE, IT ISN'T. DON'T LOOK.' - the words IT ISN'T in bold red. Push z 1.04->1.10, 1 px hand tremble. Unsettling detail: the screen brightness drops by itself as rule 2 appears, as if to protect her eyes. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.0,
+     "dur": 0.18
+    },
+    {
+     "at": 0.35,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.13,
+     "dur": 0.18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s008",
-   "start": 24.33,
-   "end": 28.81,
-   "line": "If someone knocks, count your family before you answer.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 17.33,
+   "end": 20.39,
+   "line": "If it looks like morning outside, it isn't.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). IF IT LOOKS LIKE MORNING OUTSIDE, IT ISN'T (dread hold ~3 s): home4(g,t,cam,{view:'window', glow:0 -> 0.08, boarded:0}) - the same window, now framed over HERO's shoulder (dark red hood, short dark hair, lower-left x 120-420, y 820-1250): outside, the dark street and the black roofline across it. On 'morning' (1.06 s) a faint warm line (#ffd9a0, alpha 0.12) appears low on the horizon between two roofs, like the first edge of dawn - at 3 a.m.; on 'isn't' (2.02 s) it is still there, very slightly brighter. Very slow push z 1.00->1.05 toward it. Unsettling detail: the warm line lights the undersides of the clouds, but the street lamps and windows beneath it stay pitch black. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 3.06
+    },
+    {
+     "at": 1.06,
+     "name": "shimmer",
+     "gain": -32
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s009",
-   "start": 28.81,
-   "end": 32.07,
-   "line": "You tape cardboard over the windows.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 20.39,
+   "end": 22.77,
+   "line": "Don't look.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). DON'T LOOK: giantFace(g, 470, 720, 330, {who:'HERO'}) - HERO (short dark hair, dark red hood up around the neck) in profile-three-quarter, the window to the right of frame (soft, x ~760-900), its faint warm line catching the tip of her nose and one eye (rimSide 1, warm, very low), the rest cold blue. faceAt [[0,'curious'],[0.15 s,'scared']]: on 'Don't' (0.15 s) she snaps her eyes AWAY from the window (look [-0.9, 0]) and squeezes them shut on 'look' (0.48 s); she pulls the curtain closed with one hand (the warm rim disappears). Slow push z 1.00->1.06. Unsettling detail: with her eyes shut, the warm light on her eyelid gets brighter for a moment, then the curtain cuts it. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.6,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 80,
+     "dur": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s010",
-   "start": 32.07,
-   "end": 34.31,
-   "line": "Your little brother falls asleep on the couch.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 22.77,
+   "end": 24.45,
+   "line": "Rule three.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). RULE 3 APPEARS (punch): alert screen close (alertPhone rules:2 -> 3), rules 1-2 dimmed above; on 'Rule' (0.15 s) rule 3 types on in heavier letters: '3. IF SOMEONE KNOCKS, COUNT YOUR FAMILY BEFORE YOU ANSWER.'; on 'three' (0.52 s) the banner flashes red twice and the whole screen shakes 2 px (buzz 1). Push z 1.06->1.14. Unsettling detail: the word FAMILY flickers, as if the phone is unsure how to spell it. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "blip",
+     "gain": -14,
+     "pitch": 1.0,
+     "dur": 0.18
+    },
+    {
+     "at": 0.35,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.13,
+     "dur": 0.18
+    },
+    {
+     "at": 0.72,
+     "name": "hit",
+     "gain": -22,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s011",
-   "start": 34.31,
-   "end": 37.05,
-   "line": "Four a.m.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 24.45,
+   "end": 25.47,
+   "line": "If someone knocks,",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). IF SOMEONE KNOCKS: home4(g,t,cam,{view:'door', glow:0, boarded:0}) - the front door from inside: old painted wood, brass knob (doorKnob(g, ~690, ~900, 1.2, {turn:0})), deadbolt above it, the shoe rack at the lower left, a coat hook; the gap under the door (y ~1180) is a dead black line - no light yet. Slow push z 1.00->1.08 toward the knob. On 'knocks' (0.78 s) the door's wood ticks once (settling), nothing else. Unsettling detail: one pair of shoes on the rack is a size too big for anyone in this family. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 1.02
+    },
+    {
+     "at": 0.93,
+     "name": "tick",
+     "gain": -22,
+     "pitch": 0.45
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s012",
-   "start": 37.05,
-   "end": 44.37,
-   "line": "Light pours in under the front door. White and warm, like sunrise. Then a knock. Sweetheart?",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 25.47,
+   "end": 29.3,
+   "line": "count your family before you answer.",
+   "scene": "[A is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'street'|'living'|'door'|'window'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js alertPhone / phonesWindow / tapeRoll / cardboard / doorKnob / fingerCount, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, cast.js HERO, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story: 3 a.m., every phone on a dead-quiet street screams the same emergency alert with three rules; a teen ('you', dark red hoodie) and a sleeping little brother in a family house; the windows are NOT boarded yet (boarded 0) and there is NO outside light yet (glow 0). COUNT YOUR FAMILY BEFORE YOU ANSWER (dread hold ~3.4 s): home4(g,t,cam,{view:'stairs', glow:0}) - from the bottom of the stairs looking up: banister, the dark landing, and at the top two CLOSED bedroom doors side by side (MOM's door left with a dried-flower wreath, DAD's door right with a small coat hook; never people), y ~380-700. HERO's hand on the banister at the lower left (above y 1270). Very slow push z 1.00->1.07 up the stairs. On 'count' (0.15 s) the camera settles; on 'family' (0.78 s) a hairline of cold light under MOM's door blinks off; on 'answer' (1.80 s) both doors are dark and silent. Unsettling detail: there are three family photos on the stairway wall, and in the last frame one is hanging upside down. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 3.83
+    },
+    {
+     "at": 1.2,
+     "name": "heartbeat",
+     "gain": -26,
+     "bpm": 72,
+     "dur": 2.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s013",
-   "start": 44.37,
-   "end": 52.09,
-   "line": "It's Mom. The sun's up. Come and see. Mom is asleep upstairs. You're almost sure.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 29.3,
+   "end": 32.01,
+   "line": "You tape cardboard over the windows.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. YOU TAPE CARDBOARD OVER THE WINDOWS: home4(g,t,cam,{view:'window', glow:0, boarded:0 -> 0.85}) - close-medium on the living-room window: HERO 'you' (cast.js HERO: teen, DARK RED hoodie, short dark hair; actor('HERO', ...) with acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 2.0, back three-quarter, centre-left, arms up) presses a flattened moving-box cardboard(g, ~540, ~720, 1.6, {gaps:0.3}) over the glass and tears silver tape off a tapeRoll(...) with her teeth/hand; strips go on at 'tape' (0.37 s) and 'cardboard' (0.64 s), the second panel on 'over' (1.13 s); by 'windows' (1.62 s) the window is mostly covered (boarded 0.85), thin black gaps between the panels. Camera slow push z 1.00->1.05. Unsettling detail: the cardboard's printed arrows say THIS SIDE UP - and they point at the floor. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "swish",
+     "gain": -16,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.74,
+     "name": "hit",
+     "gain": -22,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.13,
+     "name": "swish",
+     "gain": -17,
+     "pitch": 0.55
+    },
+    {
+     "at": 1.62,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.65
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s014",
-   "start": 52.09,
-   "end": 60.43,
-   "line": "So you count. Mom, upstairs. Dad, upstairs. Your brother, on the couch.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 32.01,
+   "end": 35.22,
+   "line": "Your little brother falls asleep on the couch.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. YOUR LITTLE BROTHER FALLS ASLEEP ON THE COUCH (dread hold ~3.2 s): home4(g,t,cam,{view:'living', glow:0, boarded:1}) - the living room, every window now covered in taped cardboard (boarded 1), TV off (a black mirror), coffee table with the alert phone face-down; BROTHER (cast.js BROTHER, kid scale: actor('BROTHER', ...) lying on his side on the couch under a grey-blue blanket, only his head and one hand out, asleep - slow breathing rise of the blanket; he NEVER wakes) on the couch (centre, y ~820-1000); HERO sits on the floor against the couch (s 1.6, left, knees up), keeping watch toward the front door at the right (x ~760-880, in soft focus). On 'little' (0.41 s) the brother's eyes close slowly; on 'asleep' (1.44 s) his hand slips off the couch edge; HERO pulls the blanket over it on 'couch' (2.17 s) (exprAt tired -> uneasy). Very slow push z 1.00->1.05. Unsettling detail: in the black TV screen, the reflection of the couch shows the blanket - but no small shape under it. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 3.21
+    },
+    {
+     "at": 2.17,
+     "name": "swish",
+     "gain": -28,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s015",
-   "start": 60.43,
-   "end": 60.67,
-   "line": "You.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 35.22,
+   "end": 37.0,
+   "line": "Four a.m.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. FOUR A.M.: the alert phone on the coffee table, screen lights up by itself (alertPhone(g, 540, 760, 1.8, {rules:3, buzz:0}) lock-screen style): the big clock reads 3:59 -> 4:00 on 'Four' (0.15 s), the three rules still underneath. Cold blue room, the cardboard window soft behind. Static camera with slow drift z 1.03->1.07. Unsettling detail: as the clock hits 4:00, the edge of the phone (the side facing the front door) picks up a faint warm rim of light. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -28,
+     "dur": 1.78
+    },
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -16,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -26,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s016",
-   "start": 60.67,
-   "end": 62.13,
-   "line": "Four.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 37.0,
+   "end": 39.57,
+   "line": "Light pours in under the front door.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. LIGHT POURS IN UNDER THE FRONT DOOR: home4(g,t,cam,{view:'door', glow:1, boarded:1}) + outsideLight(g,t,{under:0 -> 1, gaps:0.2, creep:0 -> 0.25}) - the front door from inside, low angle (floor at y ~1150), shoe rack left; the gap under the door ignites from black to a white-warm line on 'Light' (0.15 s) and the glow spills across the floorboards like slow liquid ('pours' 0.42 s), creeping toward the camera; dust motes turn gold in it. The keyhole glows too. Slow push z 1.00->1.07 toward the gap. Unsettling detail: the light pools around the shoes on the rack - and the shoes cast no shadows. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
-   "notes": ""
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "shimmer",
+     "gain": -24
+    },
+    {
+     "at": 0.45,
+     "name": "riser",
+     "gain": -30,
+     "dur": 2.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
   },
   {
    "id": "s017",
-   "start": 62.13,
-   "end": 66.512,
-   "line": "Five.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
+   "start": 39.57,
+   "end": 41.96,
+   "line": "White and warm, like sunrise.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. WHITE AND WARM, LIKE SUNRISE (dread hold): giantFace(g, 450, 740, 330, {who:'HERO'}) - HERO on the floor by the couch, face lit from below-right by the warm floor glow (rimSide 1, warm #ffd9a0) as it creeps onto her, her far side cold blue; thin blades of the same light through the cardboard gaps behind her (outsideLight gaps 0.6) cross the wall in diagonal stripes with drifting dust motes (motes). faceAt [[0,'scared'],[0.71 s,'calm'],[1.27 s,'scared']]: on 'warm' (0.71 s) her face softens, almost peaceful (eyes half-close, lips part - the light is pulling at her); on 'sunrise' (1.27 s) she catches herself and her eyes snap open wide. Slow push z 1.00->1.07. Unsettling detail: the light moves across her face like a sun rising - but it rises from the floor. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
    "in": {
     "type": "cut"
    },
-   "sfx": [],
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "shimmer",
+     "gain": -28
+    },
+    {
+     "at": 0.8,
+     "name": "heartbeat",
+     "gain": -26,
+     "bpm": 70,
+     "dur": 1.59
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s018",
+   "start": 41.96,
+   "end": 42.9,
+   "line": "Then a knock.",
+   "scene": "[B is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'window', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js tapeRoll / cardboard(g,...,{gaps}) / doorKnob / alertPhone, sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed the same emergency alert: 1 stay inside, cover every window; 2 if it looks like morning outside it isn't, don't look; 3 if someone knocks, count your family before you answer. A teen ('you', dark red hoodie) and a little brother are downstairs; Mom and Dad are behind two closed bedroom doors upstairs. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. THEN A KNOCK. (the silence before it): home4(g,t,cam,{view:'living', glow:1, boarded:1}) + outsideLight(g,t,{under:1, gaps:0.6, creep:0.45}) - wide living room: the warm glow under the front door (right side, x ~700-880, y ~1150) has crept a third of the way across the floor toward the couch; BROTHER (cast.js BROTHER, kid scale: actor('BROTHER', ...) lying on his side on the couch under a grey-blue blanket, only his head and one hand out, asleep - slow breathing rise of the blanket; he NEVER wakes) asleep on the couch (left, y ~900); HERO standing between them (s 1.6, centre, facing the door, back to camera). Everything holds dead still; on 'knock' (0.55 s) HERO's shoulders lift a fraction. Camera barely drifts z 1.02->1.04. Unsettling detail: the dust motes in the light stop drifting and hang in the air. The cut lands on the first knock (next shot). hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 0.94
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s019",
+   "start": 42.9,
+   "end": 45.45,
+   "line": "Sweetheart? It's Mom.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. THE KNOCK + [MOM] 'Sweetheart? It's Mom.' (the cut lands on knock 1): home4(g,t,cam,{view:'door', glow:1}) + outsideLight(g,t,{under:1, creep:0.5}) - tight on the lower half of the front door, brass doorKnob(g, ~640, ~760, 1.6, {turn:0}) upper-centre, the blazing white-warm gap under the door at y ~1180 (above the caption band). Three SOFT knocks at 0.00, 0.33, 0.66 s: the door shivers 1-2 px each (knockAt(t,[0,0.33,0.66])), dust jumps off the frame into the light. Then the muffled voice: 'Sweetheart?' (0.99 s), 'It's Mom.' (1.62 s-2.00 s) - too slow, too calm. On 'Mom' the knob gets a soft glint as if a hand rested on it outside - it does NOT turn. Camera dead still, then a creeping push z 1.00->1.05. Unsettling detail: the knocks came from the bottom of the door, at the height of a crawling person. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.33,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.66,
+     "name": "hit",
+     "gain": -5,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.0,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 84,
+     "dur": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s020",
+   "start": 45.45,
+   "end": 48.08,
+   "line": "The sun's up. Come and see.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. [MOM] 'The sun's up. Come and see.' - THE SHADOW BREAKS THE LIGHT: floor level, the camera on the floorboards looking at the gap under the front door: outsideLight(g,t,{under:1, creep:0.55, shadow:0 -> 1}) - the white-warm line fills the frame width at y ~900 (above the caption band), its glow pooling toward camera with gold dust motes. On 'sun's' (0.35 s) two dark bars (the shadow of something standing close) slide into the light from the left and stop in the middle; on 'Come' (1.02 s) the bars shift - as if leaning toward the gap; on 'see' (1.46 s) the light flares brighter around them for a moment. Slow push z 1.00->1.06 toward the gap. Unsettling detail: the two shadow bars are far too thin and far too far apart to be feet. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 90,
+     "dur": 2.63
+    },
+    {
+     "at": 1.02,
+     "name": "shimmer",
+     "gain": -30
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s021",
+   "start": 48.08,
+   "end": 50.33,
+   "line": "Mom is asleep upstairs.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. MOM IS ASLEEP UPSTAIRS: home4(g,t,cam,{view:'stairs', glow:0.3}) - from the bottom of the stairs looking up: the banister, the dark landing, the two CLOSED bedroom doors at the top (MOM's door left with a dried-flower wreath, DAD's door right with a coat hook), y ~380-700; a faint warm spill from the front-door light reaches the bottom steps only. HERO's hand on the banister newel at lower left (above y 1270). Slow push z 1.00->1.06 up the stairs. On 'asleep' (0.61 s) the camera rises one step; on 'upstairs' (1.02 s) MOM's door is perfectly still and silent. Unsettling detail: MOM's door is closed - but the doormat in front of it is pushed slightly OUT, as if it was opened earlier. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 2.25
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 90,
+     "dur": 2.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s022",
+   "start": 50.33,
+   "end": 52.99,
+   "line": "You're almost sure.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. YOU'RE ALMOST SURE: giantFace(g, 460, 730, 330, {who:'HERO'}) - HERO at the foot of the stairs, warm light from the front door on her right cheek (rimSide 1, warm) and cold blue from the stairwell above on her left; faceAt [[0,'uneasy'],[0.15 s,'scared'],[0.77 s,'doubt']]: her eyes go up the stairs (look [0, -0.8]) on 'You're' (0.15 s), then back toward the door on 'almost' (0.46 s); a swallow on 'sure' (0.77 s), lips pressed; no blink. Slow push z 1.00->1.08. Unsettling detail: the warm light on her cheek pulses slowly like breathing - in time with nothing in this room. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 96,
+     "dur": 2.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s023",
+   "start": 52.99,
+   "end": 54.63,
+   "line": "So you count.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. SO YOU COUNT: fingerCount(g, t, 0) - HERO's hand (dark red hoodie cuff) rises into frame in the dark living room, a loose fist, soft warm rim light on the knuckles from the door side (right), everything else blue-black; hand centred at y ~760. On 'count' (0.58 s) the fist tightens and the thumb tucks in, ready to count. Slow push z 1.00->1.06. Unsettling detail: the rim light on the hand comes from the right - but so does a second, fainter rim on the left, where there is no light source. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 96,
+     "dur": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s024",
+   "start": 54.63,
+   "end": 56.51,
+   "line": "Mom, upstairs.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. 'MOM, UPSTAIRS.': home4(g,t,cam,{view:'upstairs', glow:0}) - MOM's closed bedroom door, centred (wreath, brass knob), seen from the landing; cold blue dark, a thin line of black under it. Foreground lower-left (x 100-380, y 980-1250, above the caption band): HERO's hand silhouette with ONE finger raised (fingerCount(g,t,1), warm rim). On 'Mom' (0.15 s) the finger goes up; on 'upstairs' (0.48 s) nothing - the door stays shut and silent. Slow push z 1.00->1.05 toward the door. Unsettling detail: no sound of breathing or sleep behind it, and the knob is cold-fogged. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 96,
+     "dur": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s025",
+   "start": 56.51,
+   "end": 58.3,
+   "line": "Dad, upstairs.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. 'DAD, UPSTAIRS.': home4(g,t,cam,{view:'upstairs', glow:0}) - DAD's closed bedroom door, centred (coat hook with a jacket on it), same framing as MOM's door (match cut). Foreground lower-left: the hand, now TWO fingers (fingerCount(g,t,2)), raised on 'Dad' (0.15 s). On 'upstairs' (0.46 s) the jacket on the hook sways once, very slightly. Slow push z 1.00->1.05. Unsettling detail: the jacket sways but the air is dead still. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 96,
+     "dur": 1.79
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s026",
+   "start": 58.3,
+   "end": 60.41,
+   "line": "Your brother, on the couch.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. 'YOUR BROTHER, ON THE COUCH.': home4(g,t,cam,{view:'living', glow:1, boarded:1}) + outsideLight(g,t,{under:1, gaps:0.6, creep:0.6}) - BROTHER (cast.js BROTHER, kid scale: actor('BROTHER', ...) lying on his side on the couch under a grey-blue blanket, only his head and one hand out, asleep - slow breathing rise of the blanket; he NEVER wakes) on the couch (centre, y ~820-1000), the warm floor glow now reaching the couch legs; blades of light through the cardboard gaps behind. Foreground lower-left: the hand, THREE fingers (fingerCount(g,t,3)), raised on 'brother' (0.40 s). On 'couch' (1.13 s) the blanket rises and falls - he is breathing, asleep. Slow push z 1.00->1.05. Unsettling detail: the glow on the floor has stopped exactly at the couch's edge, as if waiting. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 2.11
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s027",
+   "start": 60.41,
+   "end": 61.81,
+   "line": "You.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. 'YOU.': home4(g,t,cam,{view:'living', glow:1, boarded:1}) - medium on HERO 'you' (cast.js HERO: teen, DARK RED hoodie, short dark hair; actor('HERO', ...) with acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 2.0, centre, facing camera) standing in the dark living room, warm door light on her right side (rim), cold blue left; she touches her own chest with the counting hand on 'You' (0.15 s) (poseAt stand -> handChest), exprAt scared -> focused. Behind her, left side of frame: dark, empty room. Slow push z 1.00->1.04. Unsettling detail: the space at her left shoulder is darker than the rest of the dark room. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 100,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s028",
+   "start": 61.81,
+   "end": 63.25,
+   "line": "Four.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. 'FOUR.' + HOLD (dread): fingerCount(g, t, 4) - close on HERO's hand in the dark holding up FOUR fingers (thumb folded), centred at y ~740, soft warm rim from the right (door side), everything else black-blue; dust motes drift through the thin rim light. On 'Four' (0.15 s) the fourth finger straightens - then the hand holds dead still, a 1 px tremble only; the silence holds ~0.8 s after the word. Slow push z 1.00->1.05. Unsettling detail: the dust motes to the left of the hand drift AROUND an empty space, as if something is standing there. The cut lands on the whisper (next shot). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 104,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s029",
+   "start": 63.25,
+   "end": 64.64,
+   "line": "Five.",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. [VOICE] 'FIVE.' (cut lands on the whisper) + 0.6 s HOLD: giantFace(g, 330, 760, 320, {who:'HERO'}) placed LEFT of centre - HERO's face lit only by a thin warm rim from the door on her far (left) cheek; the RIGHT half of the frame (x 540-900) is pure black, empty. The whisper comes from that black. faceAt [[0,'focused'],[0.25,'terrified']]: at ~0.25 s her eyes slide sideways RIGHT into the black (look [0.95, 0]) without turning her head, pupils shrink; no blink, no breath. NOTHING appears in the black - no shape, no eyes, no hand. After the word ends (0.79 s) a dead-still 0.6 s hold: only grain. Camera dead still (no push). Hard cut to black at the end (no fade). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "home4",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.45
+    }
+   ],
+   "notes": "Cut lands on the [VOICE] whisper onset (63.28); voice ends 64.04 (global); hold 0.6 s -> hard cut at 64.64.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s030",
+   "start": 64.64,
+   "end": 66.512,
+   "line": "",
+   "scene": "[C is self-contained] Uses sets/home4.js home4(g,t,cam,{view:'living'|'door'|'stairs'|'upstairs', glow, boarded}) + outsideLight(g,t,{under, gaps, creep, shadow}), sets/rules3.js doorKnob(g,...,{turn}) / fingerCount(g,t,n), sets/horror.js grain/vignette/coldGrade/flicker/breathe/motes/endCard, sets/house.js knockAt(t,[times]) for the door shiver, cast.js HERO + BROTHER, acting.js, faces.js giantFace; follow DEMO_home4.js / DEMO_rules3.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Story so far: at 3 a.m. every phone on the street screamed an emergency alert with three rules (stay inside and cover every window; if it looks like morning outside it isn't, don't look; if someone knocks, count your family before you answer). A teen ('you', dark red hoodie, short dark hair) taped cardboard over the windows; the little brother fell asleep on the couch; Mom and Dad are behind two closed bedroom doors upstairs. At 4 a.m. a white-warm light poured in under the front door. THE LIGHT (the monster, never seen directly): white-warm #fff3d6 -> #ffd9a0, only as a glow under the door, blades through gaps, dust motes in it, and its warmth on faces/floor; everything else cold blue dark. The thing at the door and the fifth one are NEVER shown. HARD CUT TO BLACK + END CARD: pure black frame at 0.0 (no fade), a low hit on the cut. grain(g,t) stays at very low strength so it is not dead digital black. endCard(g, t, 'Follow for the next rule.') - small white handwritten-ink text, centred at y ~820 (well above y 1270, inside x < 900), fades in from ~0.15 s over 0.3 s, a faint ink bleed; nothing else on screen. config fadeOut 0.8 overlaps the tail; keep the text readable until ~66.0 s. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "horror",
+   "type": "end",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.45
+    }
+   ],
    "notes": ""
   }
  ],
- "music": []
+ "music": [
+  {
+   "start": 0.0,
+   "end": 1.55,
+   "mood": "dark",
+   "intensity": 0.12
+  },
+  {
+   "start": 1.55,
+   "end": 6.95,
+   "mood": "dark",
+   "intensity": 0.5
+  },
+  {
+   "start": 6.95,
+   "end": 29.3,
+   "mood": "dark",
+   "intensity": 0.28
+  },
+  {
+   "start": 29.3,
+   "end": 37.0,
+   "mood": "dark",
+   "intensity": 0.2
+  },
+  {
+   "start": 37.0,
+   "end": 42.9,
+   "mood": "dark",
+   "intensity": 0.42
+  },
+  {
+   "start": 42.9,
+   "end": 48.08,
+   "mood": "dark",
+   "intensity": 0.03
+  },
+  {
+   "start": 48.08,
+   "end": 52.99,
+   "mood": "dark",
+   "intensity": 0.45
+  },
+  {
+   "start": 52.99,
+   "end": 61.81,
+   "mood": "dark",
+   "intensity": 0.6
+  },
+  {
+   "start": 61.81,
+   "end": 63.25,
+   "mood": "dark",
+   "intensity": 0.06
+  },
+  {
+   "start": 63.25,
+   "end": 64.64,
+   "mood": "dark",
+   "intensity": 0.02
+  },
+  {
+   "start": 64.64,
+   "end": 66.512,
+   "mood": "dark",
+   "intensity": 0.02
+  }
+ ],
+ "wordTimesCorrected": {
+  "note": "timeline/words.json was re-timed from the voice envelope for every line (words spread across each burst, weighted by length); wordTime() is now safe to use everywhere.",
+  "Three a.m.": [
+   0.48,
+   1.34
+  ],
+  "Every phone on your street screams at once.": [
+   2.23,
+   4.35
+  ],
+  "Emergency alert.": [
+   5.18,
+   6.22
+  ],
+  "Three rules.": [
+   7.1,
+   7.89
+  ],
+  "Rule one.": [
+   9.64,
+   10.31
+  ],
+  "Stay inside.": [
+   11.22,
+   12.09
+  ],
+  "Cover every window.": [
+   12.96,
+   14.04
+  ],
+  "Rule two.": [
+   15.84,
+   16.59
+  ],
+  "If it looks like morning outside, it isn't.": [
+   17.48,
+   19.65
+  ],
+  "Don't look.": [
+   20.54,
+   21.16
+  ],
+  "Rule three.": [
+   22.92,
+   23.72
+  ],
+  "If someone knocks, count your family before you answer.": [
+   24.6,
+   27.66
+  ],
+  "You tape cardboard over the windows.": [
+   29.45,
+   31.32
+  ],
+  "Your little brother falls asleep on the couch.": [
+   32.16,
+   34.48
+  ],
+  "Four a.m.": [
+   35.37,
+   36.26
+  ],
+  "Light pours in under the front door.": [
+   37.15,
+   38.79
+  ],
+  "White and warm, like sunrise.": [
+   39.72,
+   41.26
+  ],
+  "Then a knock.": [
+   42.11,
+   42.82
+  ],
+  "Sweetheart?": [
+   43.89,
+   44.4
+  ],
+  "It's Mom.": [
+   44.52,
+   45.22
+  ],
+  "The sun's up.": [
+   45.6,
+   46.24
+  ],
+  "Come and see.": [
+   46.47,
+   47.11
+  ],
+  "Mom is asleep upstairs.": [
+   48.23,
+   49.61
+  ],
+  "You're almost sure.": [
+   50.48,
+   51.33
+  ],
+  "So you count.": [
+   53.14,
+   53.9
+  ],
+  "Mom, upstairs.": [
+   54.78,
+   55.78
+  ],
+  "Dad, upstairs.": [
+   56.66,
+   57.58
+  ],
+  "Your brother, on the couch.": [
+   58.45,
+   59.72
+  ],
+  "You.": [
+   60.56,
+   61.05
+  ],
+  "Four.": [
+   61.96,
+   62.42
+  ],
+  "Five.": [
+   63.28,
+   64.04
+  ]
+ },
+ "soundCuts": {
+  "s002": "alert scream",
+  "s019": "knock 1",
+  "s029": "[VOICE] 'Five.' whisper",
+  "s030": "hard cut to black"
+ }
 }
