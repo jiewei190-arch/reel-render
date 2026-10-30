@@ -1,4 +1,4 @@
-"""THE RULES voice: narrator = Kokoro am_fenrir, slower than What If; [MONITOR] lines = af_nicole whisper, pitched up and band-passed
+"""THE RULES voice ([MAN]/[PHONE] character lines added for #2): narrator = Kokoro am_fenrir, slower than What If; [MONITOR] lines = af_nicole whisper, pitched up and band-passed
 like a cheap baby monitor, with static. Spoken text = numbered lines; '## ' headers add a long beat.
 Usage: python voice.py script.md out.wav plain.txt"""
 import re, sys, subprocess, tempfile, os
@@ -27,6 +27,21 @@ def monitor(text):
     out = st.copy(); out[int(SR * 0.3): int(SR * 0.3) + len(y)] += y
     return out
 
+def character(who, text):
+    """[MAN]: am_onyx, slow, pitched down ~3 semitones, a little room echo. [PHONE]: am_michael, brisk, landline band + light static."""
+    voice, speed, af = {
+        "MAN": ("am_onyx", 0.78, f"asetrate={SR}*0.84,aresample={SR},atempo=1/0.84,aecho=0.8:0.5:60:0.25,volume=1.3"),
+        "PHONE": ("am_michael", 1.05, "highpass=f=300,lowpass=f=3400,acompressor=threshold=-18dB:ratio=5,volume=1.4"),
+    }[who]
+    a, _ = k.create(text, voice=voice, speed=speed, lang="en-us")
+    with tempfile.TemporaryDirectory() as d:
+        i, o = os.path.join(d, "i.wav"), os.path.join(d, "o.wav")
+        sf.write(i, a, SR)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", i, "-af", af, o], check=True)
+        y, _ = sf.read(o, dtype="float32")
+    if who == "PHONE": y = y + rng.normal(0, 1, len(y)).astype(np.float32) * 0.012
+    return y
+
 for raw in open(sys.argv[1], encoding="utf-8"):
     line = raw.strip()
     if line.startswith("## ") and pieces:
@@ -34,6 +49,10 @@ for raw in open(sys.argv[1], encoding="utf-8"):
     m = re.match(r"^\d+\.\s+(.*)", line)
     if not m: continue
     text = m.group(1)
+    tag = re.match(r"^\[(MAN|PHONE)\]\s*(.*)", text)
+    if tag:
+        who, t = tag.groups(); spoken.append(t)
+        pieces.append(character(who, t)); sil(0.9); continue
     if text.startswith("[MONITOR]"):
         t = text[len("[MONITOR]"):].strip(); spoken.append(t)
         pieces.append(monitor(t)); sil(0.9); continue

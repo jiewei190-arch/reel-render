@@ -1,0 +1,170 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.05,
+  "speechEnd": 2.39,
+  "text": "Your first night shift at the gas station.",
+  "end": 3.3
+ },
+ {
+  "i": 1,
+  "start": 3.3,
+  "speechStart": 3.45,
+  "speechEnd": 5.51,
+  "text": "Your manager left a note on the register.",
+  "end": 5.36
+ },
+ {
+  "i": 2,
+  "start": 5.36,
+  "speechStart": 5.51,
+  "speechEnd": 7.15,
+  "text": "Three rules.",
+  "end": 8.54
+ },
+ {
+  "i": 3,
+  "start": 8.54,
+  "speechStart": 8.69,
+  "speechEnd": 10.29,
+  "text": "Rule one.",
+  "end": 10.14
+ },
+ {
+  "i": 4,
+  "start": 10.14,
+  "speechStart": 10.29,
+  "speechEnd": 12.01,
+  "text": "At two a.m., lock the door.",
+  "end": 13.12
+ },
+ {
+  "i": 5,
+  "start": 13.12,
+  "speechStart": 13.27,
+  "speechEnd": 14.63,
+  "text": "Serve customers through the window.",
+  "end": 16.1
+ },
+ {
+  "i": 6,
+  "start": 16.1,
+  "speechStart": 16.25,
+  "speechEnd": 18.01,
+  "text": "Rule two.",
+  "end": 17.86
+ },
+ {
+  "i": 7,
+  "start": 17.86,
+  "speechStart": 18.01,
+  "speechEnd": 20.65,
+  "text": "If someone asks for the usual, tell them we're out.",
+  "end": 22.2
+ },
+ {
+  "i": 8,
+  "start": 22.2,
+  "speechStart": 22.35,
+  "speechEnd": 24.13,
+  "text": "Rule three.",
+  "end": 23.98
+ },
+ {
+  "i": 9,
+  "start": 23.98,
+  "speechStart": 24.13,
+  "speechEnd": 25.82,
+  "text": "Never look at camera four.",
+  "end": 25.67
+ },
+ {
+  "i": 10,
+  "start": 25.67,
+  "speechStart": 25.82,
+  "speechEnd": 27.64,
+  "text": "Two a.m.",
+  "end": 27.49
+ },
+ {
+  "i": 11,
+  "start": 27.49,
+  "speechStart": 27.64,
+  "speechEnd": 29.75,
+  "text": "You lock the door.",
+  "end": 29.6
+ },
+ {
+  "i": 12,
+  "start": 29.6,
+  "speechStart": 29.75,
+  "speechEnd": 37.13,
+  "text": "Two forty. A man taps on the glass. He doesn't blink. The usual.",
+  "end": 38.44
+ },
+ {
+  "i": 13,
+  "start": 38.44,
+  "speechStart": 38.59,
+  "speechEnd": 39.63,
+  "text": "We're out, you tell him.",
+  "end": 40.36
+ },
+ {
+  "i": 14,
+  "start": 40.36,
+  "speechStart": 40.51,
+  "speechEnd": 43.23,
+  "text": "He smiles too wide, and walks back into the dark.",
+  "end": 43.08
+ },
+ {
+  "i": 15,
+  "start": 43.08,
+  "speechStart": 43.23,
+  "speechEnd": 49.77,
+  "text": "Three a.m. The phone rings. It's your manager. Hey!",
+  "end": 49.76
+ },
+ {
+  "i": 16,
+  "start": 49.76,
+  "speechStart": 49.91,
+  "speechEnd": 52.43,
+  "text": "Sorry, I forgot to leave you a note. Easy night.",
+  "end": 52.82
+ },
+ {
+  "i": 17,
+  "start": 52.82,
+  "speechStart": 52.97,
+  "speechEnd": 54.53,
+  "text": "Nothing weird ever happens there.",
+  "end": 55.92
+ },
+ {
+  "i": 18,
+  "start": 55.92,
+  "speechStart": 56.07,
+  "speechEnd": 57.59,
+  "text": "You look down at the note.",
+  "end": 58.38
+ },
+ {
+  "i": 19,
+  "start": 58.38,
+  "speechStart": 58.53,
+  "speechEnd": 65.01,
+  "text": "Then, without meaning to, you look at camera four. It shows the counter. From behind you.",
+  "end": 65.76
+ },
+ {
+  "i": 20,
+  "start": 65.76,
+  "speechStart": 65.91,
+  "speechEnd": 67.85,
+  "text": "And something standing right behind you.",
+  "end": 69.864
+ }
+]
