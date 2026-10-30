@@ -7,7 +7,8 @@ import { E, V, S, registerShot, layer, blurLayer, veil, ease, prog, key, clamp, 
 import { POSES } from '/engine/rig2d.js';
 import { actor } from '../sets/actors.js';
 import { HERO } from '../cast.js';
-import { giantFace, faceAt, FACE } from '../sets/faces.js';
+import { faceAt, FACE } from '../sets/faces.js';
+import { clerk } from '../sets/clerk.js';
 import { blinkFlag, exprAt, poseAt, idle, reaction, lookToward, camMove } from '../sets/acting.js';
 import { gas, gasFg, gasGround } from '../sets/gas.js';
 import { stickyNote, wallPhone, stranger, glassPane, tapRings } from '../sets/rules2.js';
@@ -145,9 +146,9 @@ registerShot('s017', { draw(g, t, info) {
   blurLayer(g, 14, (g) => gas(g, t, { z: 1.6, x: 120, y: -380 }, { view: 'window', lights: { tubes: 1 } }), null, 1); veil(g, '#03060a', 0.35);
   const fAt = (tt) => { const f = faceAt(tt, [[0, 'shocked'], [tOut, 'worried'], [tHim, 'shocked']], 0.15); return { ...f, look: tt > tTell && tt < tHim ? [0.3, 0.9] : [0.6, -0.1] }; };
   g.save(); push(g, z, 430, 760);
-  g.save(); g.globalAlpha *= 0.18; giantFace(g, 860, 700, 220, { who: 'HERO', f: fAt(t - 0.3), rimSide: -1, rimColor: '#bfe0e8', blink: 0 }); g.restore();   // the late reflection
+  g.save(); g.globalAlpha *= 0.18; clerk(g, 860, 700, 220, { f: fAt(t - 0.3), rimSide: -1, rimColor: '#bfe0e8', blink: 0, t }); g.restore();   // the late reflection
   glow(g, 430, 1260, 520, AMBER, 0.25);
-  giantFace(g, 430, 760, 330, { who: 'HERO', f: fAt(t), rimSide: 1, rimColor: '#bfe0e8', glint: '#e8f8ff', blink: 0, breath: Math.sin(t * 2.2) * 0.4 });
+  clerk(g, 430, 760, 330, { f: fAt(t), rimSide: 1, rimColor: '#bfe0e8', blink: 0, t, lit: 0.55 });
   g.restore();
   finish(g, t);
 } });
@@ -217,7 +218,7 @@ registerShot('s022', { draw(g, t, info) {
   const f = t > tNote + 0.25 ? { ...f0, look: [0.2, 0.9] } : f0;
   g.save(); push(g, z, 440, 740);
   glow(g, 440, 1260, 520, AMBER, 0.22);
-  giantFace(g, 440, 740, 330, { who: 'HERO', f, rimSide: 1, rimColor: '#bfe0e8', glint: '#e8f8ff', blink: t > tNote ? 0 : undefined, breath: t > tNote ? 0 : Math.sin(t * 1.6) });
+  clerk(g, 440, 740, 330, { f, rimSide: 1, rimColor: '#bfe0e8', blink: t > tNote ? 0 : undefined, t, lit: 0.55 });
   // the handset at her ear (left side of the face) + the coiled cord
   g.save(); g.translate(150, 760); g.rotate(-0.35); rr(g, -60, -230, 120, 460, 50); g.fillStyle = '#d8cfb6'; g.fill(); rr(g, -40, -210, 80, 90, 30); g.fillStyle = '#c8bea6'; g.fill(); g.restore();
   g.strokeStyle = '#c8bea6'; g.lineWidth = 6; g.beginPath(); for (let i = 0; i <= 40; i++) { const u = i / 40, x = 120 - u * 140 + Math.sin(u * 50) * 14, y = 980 + u * 260; i ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke();
