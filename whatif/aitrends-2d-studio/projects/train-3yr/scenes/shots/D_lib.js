@@ -1,7 +1,6 @@
 // D_lib.js — ep 3 batch D (s082-s107) shared helpers. Registers no shots; imported by the D_*.js shot files.
 //   shotWord(w, st, fb [, after])        shot-local seconds of a spoken word (fallback fb)
-//   heroFace(g, cx, cy, r, o)            giant face of the ep 3 HERO: big dark curls (never thinner), green hoodie, white sweatband with a green stripe
-//   devFace(g, cx, cy, r, o)             giant face of DEV with his orange beanie (o.pull 0..1 pulls it down over the ears)
+//   heroFace / devFace(g, cx, cy, r, o)  thin wrappers over faces.js giantFace (who 'HERO' / 'DEV')
 //   jogPose(x, s, o)                     train.js runCycle jog, foot phase locked to world x
 //   EXTRAS                               background people, one signature colour each (never a cast colour)
 //   bathScale(g, x, y, s, kg, o)         a bathroom scale with a dial needle; smartwatch(g, x, y, s, bpm, t, o)
@@ -20,41 +19,9 @@ export const EXTRAS = [
   { top: 'tshirt', color: '#2f6fd0', legs: '#223a30', head: 'ponytail' }, { top: 'hoodie', color: '#e08aa8', legs: '#2a2438', head: 'bun' }, { top: 'tshirt', color: '#5fd3c0', legs: '#2a2a38', head: 'none' },
 ];
 
-// ---------- ep 3 HERO giant face ----------
-const GREEN = '#3f9a4a';
-export function heroFace(g, cx, cy, r, o = {}) {
-  const ink = S().ink, side = o.rimSide ?? -1, rc = o.rimColor || '#ffc68a', tilt = o.tilt ?? 0, br = o.breath ?? 0, bounce = o.bounce ?? 0;
-  g.save(); g.translate(cx, cy + br * r * 0.012); g.rotate(tilt);
-  // green hoodie shoulders + collar + drawstrings
-  const c = GREEN; g.fillStyle = c; g.beginPath(); g.moveTo(-r * 1.9, r * 2.3); g.quadraticCurveTo(-r * 1.7, r * 1.1, -r * 0.6, r * 0.96); g.lineTo(r * 0.6, r * 0.96); g.quadraticCurveTo(r * 1.7, r * 1.1, r * 1.9, r * 2.3); g.closePath(); g.fill();
-  g.fillStyle = linGrad(g, 0, r, 0, r * 2.3, [shade(c, 0.05), shade(c, -0.4)]); g.fill();
-  g.fillStyle = shade(c, -0.25); g.beginPath(); g.ellipse(0, r * 1.02, r * 0.8, r * 0.22, 0, 0, Math.PI * 2); g.fill();
-  for (const s of [-1, 1]) { seg(g, [[s * r * 0.22, r * 1.12], [s * r * 0.24, r * 1.7]], r * 0.045, '#f4f1e8'); circle(g, s * r * 0.24, r * 1.74, r * 0.045, '#f4f1e8'); }
-  // big dark curls behind the head (rimmed), bouncing a little
-  const curls = []; for (let i = 0; i < 13; i++) { const a = Math.PI * (0.92 + i * 0.097), rr2 = r * (0.98 + 0.05 * Math.sin(i * 2.3)); curls.push([Math.cos(a) * rr2, Math.sin(a) * rr2 - bounce * r * 0.04 * Math.sin(i + (o.t ?? 0) * 12), r * (0.36 + 0.06 * Math.sin(i * 1.7))]); }
-  for (const [x, y, cr] of curls) circle(g, x - side * r * 0.03, y - r * 0.02, cr + r * 0.03, rc);
-  for (const [x, y, cr] of curls) circle(g, x, y, cr, ink);
-  g.strokeStyle = alpha('#3a3048', 0.8); g.lineWidth = r * 0.02; for (const [x, y, cr] of curls) { g.beginPath(); g.arc(x, y, cr * 0.55, -2.4, -0.4); g.stroke(); }
-  g.restore();
-  giantFace(g, cx, cy, r, { ...o, who: 'NONE' });
-  // white sweatband with a green stripe, high on the forehead (in front of the head)
-  g.save(); g.translate(cx, cy + br * r * 0.012); g.rotate(tilt); g.lineCap = 'round';
-  g.strokeStyle = '#f4f1e8'; g.lineWidth = r * 0.17; g.beginPath(); g.arc(0, r * 0.12, r * 0.98, Math.PI * 1.2, Math.PI * 1.8); g.stroke();
-  g.strokeStyle = GREEN; g.lineWidth = r * 0.04; g.beginPath(); g.arc(0, r * 0.12, r * 0.98, Math.PI * 1.22, Math.PI * 1.78); g.stroke();
-  for (const [x, y, cr] of [[-r * 0.5, -r * 0.92, r * 0.2], [-r * 0.1, -r * 1.02, r * 0.22], [r * 0.32, -r * 0.98, r * 0.2]]) circle(g, x, y, cr, S().ink);   // curls spilling over the band
-  g.restore();
-}
-// ---------- DEV giant face + beanie ----------
-export function devFace(g, cx, cy, r, o = {}) {
-  giantFace(g, cx, cy, r, { ...o, who: 'DEV' });
-  const pull = clamp(o.pull ?? 0), tilt = o.tilt ?? 0, c = '#f08a24', by = -r * 0.32 + pull * r * 0.22;
-  g.save(); g.translate(cx, cy); g.rotate(tilt);
-  g.fillStyle = c; g.beginPath(); g.arc(0, by, r * 1.06, Math.PI * 1.04, Math.PI * 1.96); g.closePath(); g.fill();
-  g.fillStyle = shade(c, -0.15); for (let i = -4; i <= 4; i++) { g.fillRect(i * r * 0.2 - r * 0.03, by - r * 0.9 + Math.abs(i) * r * 0.08, r * 0.06, r * 0.82 - Math.abs(i) * r * 0.08); }
-  rr(g, -r * 1.08, by - r * 0.06, r * 2.16, r * 0.3, r * 0.1); g.fillStyle = shade(c, -0.08); g.fill(); g.strokeStyle = shade(c, -0.35); g.lineWidth = r * 0.02; g.stroke();
-  circle(g, 0, by - r * 1.12, r * 0.16, shade(c, 0.15));
-  g.restore();
-}
+// ---------- giant faces: faces.js now draws the ep 3 HERO (curls, green hoodie, sweatband) and DEV's beanie itself ----------
+export function heroFace(g, cx, cy, r, o = {}) { giantFace(g, cx, cy, r, { ...o, who: 'HERO' }); }
+export function devFace(g, cx, cy, r, o = {}) { giantFace(g, cx, cy, r, { ...o, who: 'DEV' }); }
 
 // ---------- props ----------
 export function bathScale(g, x, y, s, kg, o = {}) {
