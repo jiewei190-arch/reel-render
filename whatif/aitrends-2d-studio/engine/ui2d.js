@@ -83,7 +83,13 @@ export function endScreen(g, t, o = {}) {
 export function captions(g, globalT, o = {}) {
   const words = E.words; if (!words.length) return; const { y = V(E.H - 150, E.H * 0.79), size = V(58, 74), max = 4, color = '#ffffff', hi = S().ui.gold } = o;
   let i = -1; for (let k = words.length - 1; k >= 0; k--) if (globalT >= words[k].start - 0.05) { if (globalT <= words[k].end + 0.35) i = k; break; } if (i < 0) return;
-  const st = Math.floor(i / max) * max, group = words.slice(st, st + max); const strs = group.map(w => w.word.trim().toUpperCase());
+  // phrase groups of up to `max` words that never run across a sentence end (".", "?", "!")
+  if (!E._capGroups || E._capGroups.n !== words.length || E._capGroups.max !== max) {
+    const gs = []; let st0 = 0; words.forEach((w, k) => { if (k - st0 === max) st0 = k; gs[k] = st0; if (/[.?!]["”)]?$/.test(w.word.trim())) st0 = k + 1; });
+    E._capGroups = { n: words.length, max, gs };
+  }
+  const st = E._capGroups.gs[i]; let en = st; while (en < words.length && E._capGroups.gs[en] === st) en++;
+  const group = words.slice(st, en); const strs = group.map(w => w.word.trim().toUpperCase());
   const w0 = strs.map(s => measure(g, s, size)).reduce((a, b) => a + b, 0) + size * 0.3 * (strs.length - 1);
   const sz = size * Math.min(1, (E.W * 0.88) / w0);   // shrink long phrases to fit the frame
   const gap = sz * 0.3, widths = strs.map(s => measure(g, s, sz)), total = widths.reduce((a, b) => a + b, 0) + gap * (strs.length - 1);
