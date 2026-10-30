@@ -1,0 +1,96 @@
+{
+ "name": "hairgray",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "jazz",
+ "bpm": 112,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "music_gain": 0.55,
+ "phrases": [
+  [
+   "Your hair doesn't turn gray. It **grows in** gray.",
+   "Your hair doesn't turn gray. It grows in gray."
+  ],
+  [
+   "So **why does hair turn gray?**",
+   "So, why does hair turn gray?"
+  ],
+  [
+   "Hair gets its color from **melanin,** a pigment made by cells in the root called **melanocytes.**",
+   "Hair gets its color from melanin, a pigment made by cells in the root called melanocytes."
+  ],
+  [
+   "Each strand is colored as it grows, so once it's out, its color is **set.**",
+   "Each strand is colored as it grows, so once it's out, its color is set."
+  ],
+  [
+   "Gray or white hair simply has little or no **melanin.**",
+   "Gray or white hair simply has little or no melanin."
+  ],
+  [
+   "The pigment cells are refilled by **stem cells** that live in each hair follicle.",
+   "The pigment cells are refilled by stem cells that live in each hair follicle."
+  ],
+  [
+   "In a **2023** study in mice, those stem cells normally **shuttle** between two spots in the follicle.",
+   "In a twenty twenty-three study in mice, those stem cells normally shuttle between two spots in the follicle."
+  ],
+  [
+   "Only in one spot do they get the signal to make **pigment.**",
+   "Only in one spot do they get the signal to make pigment."
+  ],
+  [
+   "But as hairs shed and regrow, more and more of them get **stuck,** and stop making color.",
+   "But as hairs shed and regrow, more and more of them get stuck, and stop making color."
+  ],
+  [
+   "The hair keeps growing, just without its **color.**",
+   "The hair keeps growing, just without its color."
+  ],
+  [
+   "Another clue: aging follicles build up **hydrogen peroxide,** which blocks a key pigment enzyme.",
+   "Another clue. Aging follicles build up hydrogen peroxide, which blocks a key pigment enzyme."
+  ],
+  [
+   "And stress? In mice, a jolt of stress made nerves release **noradrenaline.**",
+   "And stress? In mice, a jolt of stress made nerves release noradrenaline."
+  ],
+  [
+   "It burned through their pigment stem cells within **days,** and the fur grew in gray.",
+   "It burned through their pigment stem cells within days, and the fur grew in gray."
+  ],
+  [
+   "Whether it works the same way in people is **still being studied.**",
+   "Whether it works the same way in people is still being studied."
+  ],
+  [
+   "Your **genes** matter most: they set when those first gray hairs show up.",
+   "Your genes matter most. They set when those first gray hairs show up."
+  ],
+  [
+   "Have you found your first gray hair yet? **Yes or no?**",
+   "Have you found your first gray hair yet? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "tail": 0.5
+}

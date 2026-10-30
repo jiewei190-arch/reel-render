@@ -1,0 +1,96 @@
+{
+ "name": "pickles",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "music_gain": 0.55,
+ "tail": 0.7,
+ "phrases": [
+  [
+   "The sour in a real pickle is **made by bacteria.**",
+   "The sour in a real pickle is made by bacteria."
+  ],
+  [
+   "So **how does a cucumber turn into a pickle?**",
+   "So, how does a cucumber turn into a pickle?"
+  ],
+  [
+   "Classic fermented dills start with **cucumbers, salt water, and dill.** Most of the sour isn't poured in. It's **grown.**",
+   "Classic fermented dills start with cucumbers, salt water, and dill. Most of the sour isn't poured in. It's grown."
+  ],
+  [
+   "The cucumbers already carry **lactic acid bacteria** on their skins.",
+   "The cucumbers already carry lactic acid bacteria on their skins."
+  ],
+  [
+   "Sink them in **salty brine,** and those bacteria start eating the cucumber's **sugars.**",
+   "Sink them in salty brine, and those bacteria start eating the cucumber's sugars."
+  ],
+  [
+   "They turn the sugar into **lactic acid,** plus little **bubbles** of carbon dioxide.",
+   "They turn the sugar into lactic acid, plus little bubbles of carbon dioxide."
+  ],
+  [
+   "Over about **three weeks,** the brine gets more and more sour, and the colors and flavors change.",
+   "Over about three weeks, the brine gets more and more sour, and the colors and flavors change."
+  ],
+  [
+   "So **why all the salt?**",
+   "So, why all the salt?"
+  ],
+  [
+   "Salt holds back many of the microbes that would **rot** the cucumber, but the lactic acid bacteria **handle it fine.**",
+   "Salt holds back many of the microbes that would rot the cucumber, but the lactic acid bacteria handle it fine."
+  ],
+  [
+   "It also draws **water and sugar** out of the cucumber and into the brine.",
+   "It also draws water and sugar out of the cucumber and into the brine."
+  ],
+  [
+   "Then the **acid** takes over. Once it's sour enough, harmful bacteria **can't grow.**",
+   "Then the acid takes over. Once it's sour enough, harmful bacteria can't grow."
+  ],
+  [
+   "That's why tested recipes say **never cut the salt** in a fermented pickle.",
+   "That's why tested recipes say never cut the salt in a fermented pickle."
+  ],
+  [
+   "And the quick way? **Quick pickles** skip the bacteria.",
+   "And the quick way? Quick pickles skip the bacteria."
+  ],
+  [
+   "They're covered in **vinegar,** acid that's already made, so there's **no waiting** for bacteria.",
+   "They're covered in vinegar, acid that's already made, so there's no waiting for bacteria."
+  ],
+  [
+   "Same goal either way: **enough acid** to keep spoilers out.",
+   "Same goal either way: enough acid to keep spoilers out."
+  ],
+  [
+   "Have you ever made your own pickles? **Yes or no?**",
+   "Have you ever made your own pickles? Yes or no?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

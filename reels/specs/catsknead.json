@@ -1,0 +1,116 @@
+{
+ "name": "catsknead",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "popup",
+ "bpm": 92,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18
+ ],
+ "phrases": [
+  [
+   "Your cat is pushing its paws into you like **bread dough.**",
+   "Your cat is pushing its paws into you like bread dough."
+  ],
+  [
+   "**But** why? Why do cats knead?",
+   "But why? Why do cats knead?"
+  ],
+  [
+   "Vets call it kneading. The internet calls it **making biscuits.**",
+   "Vets call it kneading. The internet calls it making biscuits."
+  ],
+  [
+   "It starts in the first days of life, with a **newborn kitten.**",
+   "It starts in the first days of life, with a newborn kitten."
+  ],
+  [
+   "A nursing kitten presses its paws against its mother's belly,",
+   "A nursing kitten presses its paws against its mother's belly,"
+  ],
+  [
+   "and that pressing helps get the **milk flowing.**",
+   "and that pressing helps get the milk flowing."
+  ],
+  [
+   "Each push helps release **oxytocin,** the hormone that lets milk out.",
+   "Each push helps release oxytocin, the hormone that lets milk out."
+  ],
+  [
+   "Push, milk, warmth, safety. They all arrive **together.**",
+   "Push, milk, warmth, safety. They all arrive together."
+  ],
+  [
+   "Here's the twist: **grown-up cats** never stopped.",
+   "Here's the twist: grown-up cats never stopped."
+  ],
+  [
+   "Scientists call it **neoteny:** keeping a baby habit as an adult.",
+   "Scientists call it neoteny: keeping a baby habit as an adult."
+  ],
+  [
+   "The leading theory: kneading still brings back that **comfort.**",
+   "The leading theory: kneading still brings back that comfort."
+  ],
+  [
+   "That's why it so often comes with **purring,** on a soft lap.",
+   "That's why it so often comes with purring, on a soft lap."
+  ],
+  [
+   "**But** there's a second, sneakier theory.",
+   "But there's a second, sneakier theory."
+  ],
+  [
+   "Cats have **scent glands** in their soft paw pads.",
+   "Cats have scent glands in their soft paw pads."
+  ],
+  [
+   "They release **pheromones:** chemical messages for other cats.",
+   "They release pheromones: chemical messages for other cats."
+  ],
+  [
+   "Each press may leave a smell you can't detect: **this one's mine.**",
+   "Each press may leave a smell you can't detect: this one's mine."
+  ],
+  [
+   "A third idea: wild cats trampled grass into a **soft bed.**",
+   "A third idea: wild cats trampled grass into a soft bed."
+  ],
+  [
+   "So a kneading cat is usually a cat that feels **safe,** and maybe one that's claiming you.",
+   "So a kneading cat is usually a cat that feels safe, and maybe one that's claiming you."
+  ],
+  [
+   "If it turns frantic or nonstop, that's worth a call to the **vet.**",
+   "If it turns frantic or nonstop, that's worth a call to the vet."
+  ],
+  [
+   "Claws out? A **thick blanket** on your lap saves your legs.",
+   "Claws out? A thick blanket on your lap saves your legs."
+  ],
+  [
+   "**Biscuits?**",
+   "Biscuits?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

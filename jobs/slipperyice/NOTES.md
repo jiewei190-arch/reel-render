@@ -14,24 +14,30 @@
 ## Softened / not used
 See sources_slipperyice.md ("mostly not pressure", "suggests" for the 2025 simulation, the chart is schematic, 466 atm on screen only).
 
-## Audio note
+## v2 (main-session storyboard notes, Oct 28)
+- On-screen years are digits (tag "year: 1886", readout "2018", subtitles "1886", "1850s", "2018", "2025"); the spoken field keeps them in words.
+- Every subtitle sits on the template's dark plate (ink, 86%), so it reads over white ice and the molecule wall.
+- Hook: Spud is mid-glide at t=0 and the carved skate trail grows behind him from frame 0 (Spud is the skater in this reel; Juno hosts in the lab).
+- Re-encoded with the fixed enc_hq.sh (limit 0.7, no latency): -1.7 dBTP; no separate re-mux needed any more.
+
+## Audio note (v1)
 enc_hq.sh's `alimiter ... latency=true` produced a single +3.6 dBTP click at 31.8 s in the AAC (the source mix peaks at -1.3 dB). Final audio re-muxed from out/slipperyice.mp4 with `alimiter=limit=0.79:level=false` at AAC 96k: -1.5 dBTP. The shared script is unchanged (reported to the main session).
 
-## QA (python3 -I reels/qa.py slipperyice)
+## QA (python3 -I reels/qa.py slipperyice), v2
 ```
 QA slipperyice: WARN   (/home/user/reel-render/jobs/slipperyice/slipperyice.mp4, 72.0 s)
   PASS  static          longest no-change run 1.00 s (limit 4.0 s)
   PASS  empty thirds    no third near-blank > 6.0 s (longest 0.2 s)
   WARN  safe zones      right x>900 y900-1650: content 3.8-7.2s, 7.8-17.8s, 58.2-67.8s
   WARN  outer 24 px     content at the frame edge 7.5-17.8s, 33.0-49.0s
-  PASS  loudness        -15.3 LUFS integrated (want -16.0..-14.0)
-  PASS  true peak       -1.5 dBTP (WARN above -1.0, FAIL above 0.0)
-  PASS  voice over bed  speech 7.4 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -1.7 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 7.1 dB above the pauses (11 pauses; FAIL < 3.5, WARN < 6.0)
   PASS  length          72.0 s (want 66-86)
   PASS  closing line    last spoken: "Follow for more of how it really works."
   PASS  spoken years    no 4-digit years in the spoken text
-  PASS  frame 0         edge 13.7 (min 1.0), contrast 50.4 (min 18.0)
-  PASS  9:16 frame      slipperyice.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  frame 0         edge 13.8 (min 1.0), contrast 50.4 (min 18.0)
+  PASS  9:16 frame      slipperyice.mp4 1080x1920 SAR 1:1; slipperyice_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
   PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
 ```
 The WARNs are character art (Juno at the right edge in the lab and press shots, the clipped molecule slab), not text.

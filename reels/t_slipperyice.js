@@ -48,7 +48,7 @@ function rink(t, o = {}) {          // home ice: pale blue + coral boards
   shape(rect(X0, 760, X1 - X0, 120), { fill: '#ff7a6b', lw: 7, shade: () => { for (let x = -800; x < 2000; x += 180) fillOnly(rect(x, 790, 90, 30), '#fff3d6', { boil: .3 }); } });
   shape(rect(X0, 880, X1 - X0, 1200), { fill: '#eef9ff', lw: 7, shade: () => { for (let i = 0; i < 9; i++) { const y = 940 + i * 60 + i * i * 6; stroke([[X0, y], [X1, y + 20]], 3, { line: '#cfe9f6' }); } stroke(ell(540, 1180, 300, 90, 40), 6, { line: '#ff7a6b' }); } });
   for (let i = 0; i < 7; i++) { const y = 1460 + i * 70; stroke(arc(540 + (i % 2 ? 180 : -180), y + 260, 420 + i * 30, 240, -Math.PI * .85, -Math.PI * .15, 24), 5, { line: i % 3 ? '#cfe9f6' : '#ffb3a8' }); }
-  if (o.trail) for (let i = 0; i < 3; i++) stroke([[o.trail - 600 + i * 30, 1310 + i * 8], [o.trail - 60, 1306 + i * 6]], 4, { line: '#9fd2ef' });
+  if (o.trail) { const Lt = Math.min(760, 300 + t * 260), x0 = o.trail - 60 - Lt; for (let i = 0; i < 2; i++) { const P_ = []; for (let j = 0; j <= 16; j++) { const u = j / 16, x = lerp(x0, o.trail - 60, u); P_.push([x, 1312 + i * 14 + Math.sin(x / 140) * 10]); } stroke(P_, 6, { line: i ? '#9fd2ef' : '#6fb2dc' }); } }
 }
 function labW(t, o = {}) {          // home lab: sage walls, blackboard with the suspect line-up
   fillOnly(rect(X0, -800, X1 - X0, 2400), '#a7c3b1', { boil: 0 }); for (let x = -800; x < 2000; x += 240) stroke([[x, -800], [x, FLOOR]], 4, { line: '#7c9d8a' });
@@ -99,7 +99,7 @@ const HCUT = s(1) - .1;
 const WIPES = [[s(2) - .3, .3], [s(5) - .3, .3], [s(8) - .3, .3], [s(13) - .3, .3], [s(15) - .25, .25]];
 const CUTS = WIPES.map(w => w[0]);
 const SHOT = t => { if (t < HCUT) return 'hook'; const k = CUTS.filter(c => t >= c).length; return ['lab', 'press', 'fric', 'surf', 'lab3', 'end'][k]; };
-const TAGS = [[s(2) - .1, s(5) - .4, 'U-1  PRESSURE WORLD', 'year: eighteen eighty-six', '#3a2410', '#f3d9a4'], [s(5) - .1, s(8) - .4, 'U-2  FRICTION WORLD', 'sliding makes heat', '#0f3b3a', '#ffb862'], [s(8) - .1, s(13) - .4, 'U-3  THE SURFACE', 'zoom: molecules', '#1c0d38', '#9cf2ff']];
+const TAGS = [[s(2) - .1, s(5) - .4, 'U-1  PRESSURE WORLD', 'year: 1886', '#3a2410', '#f3d9a4'], [s(5) - .1, s(8) - .4, 'U-2  FRICTION WORLD', 'sliding makes heat', '#0f3b3a', '#ffb862'], [s(8) - .1, s(13) - .4, 'U-3  THE SURFACE', 'zoom: molecules', '#1c0d38', '#9cf2ff']];
 
 const SH = {
   hook(t, tq) {   // frame 0: Spud already gliding across the rink, ice spray; the old theory gets stamped
@@ -163,7 +163,7 @@ const SH = {
       if (t > s(10) + .6 && t < s(11) - .2) { const k1 = back(seg(tq, s(10) + .6, s(10) + .85), 2), k2 = back(seg(tq, s(10) + 1.4, s(10) + 1.65), 2);
         push(); translate(300, 560); scale(k1); shape(rr(-210, -60, 420, 120, 16), { fill: '#8fd3ff', lw: 7 }); text('3 BONDS = STUCK', 0, 4, { font: '400 36px Bungee', fill: INK }); pop();
         push(); translate(720, 700); scale(k2); shape(rr(-230, -60, 460, 120, 16), { fill: '#ffe066', lw: 7 }); text('2 BONDS = ROLL', 0, 4, { font: '400 36px Bungee', fill: INK }); pop(); }
-      if (t > s(10) && t < s(11) - .2) readout(540, 420, 520, 'AMSTERDAM + MAINZ', 'twenty eighteen', { bg: '#1c0d38', fg: '#9cf2ff' });
+      if (t > s(10) && t < s(11) - .2) readout(540, 420, 520, 'AMSTERDAM + MAINZ', '2018', { bg: '#1c0d38', fg: '#9cf2ff' });
       if (scr) { // a block slides over: the top layer scrambles, the thermometer stays cold
         const bx = lerp(-300, 760, ss(seg(t, s(12) + .3, s(12) + 3.6))); push(); translate(bx, y0 - 150 * z); shape(rr(-170, -90, 340, 120, 14), { fill: '#3a3d4a', lw: 7, shade: () => fillOnly(rect(80, -90, 90, 120), '#2a2c36', { boil: .3 }) }); pop();
         readout(540, 420, 560, 'SIMULATION · 2025', 'rubbing, no melting', { bg: '#1c0d38', fg: '#ffe066' });
@@ -220,7 +220,8 @@ function subs(t) {   // Baloo ExtraBold, white with thick ink outline, speaker p
   const i = PH.findIndex((p, k) => t >= p.start - .05 && t < (PH[k + 1] ? PH[k + 1].start - .05 : p.end + 1)); if (i < 0 || SHOT(t) === 'end') return; const p = PH[i]; if (t > p.end + .6) return;
   const cut = CUTS.find(c => c > p.start + .1); if (cut && t > cut - .02 && t < cut + .02) return;
   const str = p.cap.replace(/\*\*/g, ''), lines = wrapSub(str), pp = back(seg(t, p.start - .05, p.start + .07), 2);
-  const y0 = 1330 - (lines.length - 1) * 66; reset(); push(); translate(540, y0 - 68); scale(pp); shape(rr(-70, -24, 140, 48, 14), { fill: PAL.suit, lw: 5 }); text('JUNO', 0, 2, { font: '800 30px "Baloo 2"', fill: INK }); pop();
+  const y0 = 1330 - (lines.length - 1) * 66; g.setTransform(1, 0, 0, 1, 0, 0); g.font = '800 54px "Baloo 2"'; const mw = Math.max(...lines.map(l => g.measureText(l).width)) + 64;
+  reset(); shape(rr(540 - mw / 2, y0 - 46, mw, lines.length * 66 + 26, 18), { fill: 'rgba(27,20,34,.86)', lw: 6, alpha: clamp(pp) }); push(); translate(540, y0 - 68); scale(pp); shape(rr(-70, -24, 140, 48, 14), { fill: PAL.suit, lw: 5 }); text('JUNO', 0, 2, { font: '800 30px "Baloo 2"', fill: INK }); pop();
   lines.forEach((l, k) => text(l, 540, y0 + k * 66, { font: '800 54px "Baloo 2"', fill: '#fff', outlineW: 12 }));
 }
 

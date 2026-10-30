@@ -1,0 +1,1 @@
+Try it: stand near a fan or a fridge with noise-cancelling headphones on, music off, and flip ANC on and off. The hum drops away, but someone talking is still easy to hear. Do you use noise cancelling on flights? Yes or no?

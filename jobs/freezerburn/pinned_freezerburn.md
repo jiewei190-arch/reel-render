@@ -1,0 +1,1 @@
+Quick test: check the ice cream in your freezer. If the top is covered in crunchy crystals, that's freezer burn starting. Press plastic wrap right onto the surface before the lid next time. Have you found freezer burn in your freezer? Yes or no?
