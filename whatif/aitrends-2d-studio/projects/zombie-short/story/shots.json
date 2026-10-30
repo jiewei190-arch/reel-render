@@ -1,0 +1,147 @@
+{
+ "title": "What If You Were in a Zombie Apocalypse With Zero Experience?",
+ "duration": 65.452,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 9.01,
+   "line": "Day one of the zombie apocalypse. No weapons. No plan. No experience.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s002",
+   "start": 9.01,
+   "end": 16.87,
+   "line": "The power's out. The whole city is dark. You hide in the supermarket. Lights off.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s003",
+   "start": 16.87,
+   "end": 20.33,
+   "line": "Doors locked. Mistake number one.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 20.33,
+   "end": 22.69,
+   "line": "You turn on your flashlight.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s005",
+   "start": 22.69,
+   "end": 31.27,
+   "line": "Something hits the front glass. Then another. Then a hundred. Mistake number two.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 31.27,
+   "end": 39.95,
+   "line": "You run to the back, into the freezer room, and pull the door shut. Cold. Dark. Silent.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 39.95,
+   "end": 43.31,
+   "line": "Safe. Mistake number three.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s008",
+   "start": 43.31,
+   "end": 50.71,
+   "line": "The door only opens from the outside. Hours pass. Your phone dies.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s009",
+   "start": 50.71,
+   "end": 59.05,
+   "line": "Then, a knock. Slow. Patient. Hey. It's me. Open up. It's Dev.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s010",
+   "start": 59.05,
+   "end": 65.452,
+   "line": "But Dev didn't make it out on day one. Would you open the door?",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  }
+ ],
+ "music": []
+}

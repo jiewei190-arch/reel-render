@@ -1,0 +1,550 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Day",
+   "start": 0.08,
+   "end": 0.62
+  },
+  {
+   "word": "one",
+   "start": 0.62,
+   "end": 0.86
+  },
+  {
+   "word": "of",
+   "start": 0.86,
+   "end": 1.02
+  },
+  {
+   "word": "the",
+   "start": 1.02,
+   "end": 1.16
+  },
+  {
+   "word": "zombie",
+   "start": 1.16,
+   "end": 1.46
+  },
+  {
+   "word": "apocalypse.",
+   "start": 1.46,
+   "end": 2.08
+  },
+  {
+   "word": "No",
+   "start": 3.18,
+   "end": 3.34
+  },
+  {
+   "word": "weapons.",
+   "start": 3.34,
+   "end": 3.76
+  },
+  {
+   "word": "No",
+   "start": 4.74,
+   "end": 5.04
+  },
+  {
+   "word": "plan.",
+   "start": 5.04,
+   "end": 5.38
+  },
+  {
+   "word": "No",
+   "start": 6.34,
+   "end": 6.62
+  },
+  {
+   "word": "experience.",
+   "start": 6.62,
+   "end": 7.3
+  },
+  {
+   "word": "The",
+   "start": 9.16,
+   "end": 9.3
+  },
+  {
+   "word": "power's",
+   "start": 9.3,
+   "end": 9.72
+  },
+  {
+   "word": "out.",
+   "start": 9.72,
+   "end": 9.94
+  },
+  {
+   "word": "The",
+   "start": 10.9,
+   "end": 11.0
+  },
+  {
+   "word": "whole",
+   "start": 11.0,
+   "end": 11.22
+  },
+  {
+   "word": "city",
+   "start": 11.22,
+   "end": 11.44
+  },
+  {
+   "word": "is",
+   "start": 11.44,
+   "end": 11.7
+  },
+  {
+   "word": "dark.",
+   "start": 11.7,
+   "end": 12.02
+  },
+  {
+   "word": "You",
+   "start": 13.0,
+   "end": 13.18
+  },
+  {
+   "word": "hide",
+   "start": 13.18,
+   "end": 13.42
+  },
+  {
+   "word": "in",
+   "start": 13.42,
+   "end": 13.58
+  },
+  {
+   "word": "the",
+   "start": 13.58,
+   "end": 13.7
+  },
+  {
+   "word": "supermarket.",
+   "start": 13.7,
+   "end": 14.16
+  },
+  {
+   "word": "Lights",
+   "start": 15.46,
+   "end": 15.62
+  },
+  {
+   "word": "off.",
+   "start": 15.62,
+   "end": 15.98
+  },
+  {
+   "word": "Doors",
+   "start": 17.02,
+   "end": 17.22
+  },
+  {
+   "word": "locked.",
+   "start": 17.22,
+   "end": 17.66
+  },
+  {
+   "word": "Mistake",
+   "start": 18.7,
+   "end": 19.1
+  },
+  {
+   "word": "number",
+   "start": 19.1,
+   "end": 19.3
+  },
+  {
+   "word": "one.",
+   "start": 19.3,
+   "end": 19.68
+  },
+  {
+   "word": "You",
+   "start": 20.48,
+   "end": 20.76
+  },
+  {
+   "word": "turn",
+   "start": 20.76,
+   "end": 20.96
+  },
+  {
+   "word": "on",
+   "start": 20.96,
+   "end": 21.12
+  },
+  {
+   "word": "your",
+   "start": 21.12,
+   "end": 21.24
+  },
+  {
+   "word": "flashlight.",
+   "start": 21.24,
+   "end": 21.74
+  },
+  {
+   "word": "Something",
+   "start": 22.84,
+   "end": 23.06
+  },
+  {
+   "word": "hits",
+   "start": 23.06,
+   "end": 23.38
+  },
+  {
+   "word": "the",
+   "start": 23.38,
+   "end": 23.58
+  },
+  {
+   "word": "front",
+   "start": 23.58,
+   "end": 23.78
+  },
+  {
+   "word": "glass.",
+   "start": 23.78,
+   "end": 24.16
+  },
+  {
+   "word": "Then",
+   "start": 24.94,
+   "end": 25.28
+  },
+  {
+   "word": "another.",
+   "start": 25.28,
+   "end": 25.72
+  },
+  {
+   "word": "Then",
+   "start": 26.64,
+   "end": 26.9
+  },
+  {
+   "word": "a",
+   "start": 26.9,
+   "end": 27.04
+  },
+  {
+   "word": "hundred.",
+   "start": 27.04,
+   "end": 27.46
+  },
+  {
+   "word": "Mistake",
+   "start": 29.48,
+   "end": 29.82
+  },
+  {
+   "word": "number",
+   "start": 29.82,
+   "end": 30.0
+  },
+  {
+   "word": "two.",
+   "start": 30.0,
+   "end": 30.46
+  },
+  {
+   "word": "You",
+   "start": 31.42,
+   "end": 31.58
+  },
+  {
+   "word": "run",
+   "start": 31.58,
+   "end": 31.84
+  },
+  {
+   "word": "to",
+   "start": 31.84,
+   "end": 32.02
+  },
+  {
+   "word": "the",
+   "start": 32.02,
+   "end": 32.14
+  },
+  {
+   "word": "back,",
+   "start": 32.14,
+   "end": 32.4
+  },
+  {
+   "word": "into",
+   "start": 32.4,
+   "end": 32.68
+  },
+  {
+   "word": "the",
+   "start": 32.68,
+   "end": 32.86
+  },
+  {
+   "word": "freezer",
+   "start": 32.86,
+   "end": 33.16
+  },
+  {
+   "word": "room,",
+   "start": 33.16,
+   "end": 33.58
+  },
+  {
+   "word": "and",
+   "start": 33.58,
+   "end": 33.86
+  },
+  {
+   "word": "pull",
+   "start": 33.86,
+   "end": 34.12
+  },
+  {
+   "word": "the",
+   "start": 34.12,
+   "end": 34.28
+  },
+  {
+   "word": "door",
+   "start": 34.28,
+   "end": 34.56
+  },
+  {
+   "word": "shut.",
+   "start": 34.56,
+   "end": 34.94
+  },
+  {
+   "word": "Cold.",
+   "start": 36.22,
+   "end": 36.22
+  },
+  {
+   "word": "Dark.",
+   "start": 37.16,
+   "end": 37.6
+  },
+  {
+   "word": "Silent.",
+   "start": 38.82,
+   "end": 39.08
+  },
+  {
+   "word": "Safe.",
+   "start": 40.1,
+   "end": 40.4
+  },
+  {
+   "word": "Mistake",
+   "start": 41.46,
+   "end": 41.94
+  },
+  {
+   "word": "number",
+   "start": 41.94,
+   "end": 42.12
+  },
+  {
+   "word": "three.",
+   "start": 42.12,
+   "end": 42.6
+  },
+  {
+   "word": "The",
+   "start": 43.46,
+   "end": 43.64
+  },
+  {
+   "word": "door",
+   "start": 43.64,
+   "end": 43.86
+  },
+  {
+   "word": "only",
+   "start": 43.86,
+   "end": 44.22
+  },
+  {
+   "word": "opens",
+   "start": 44.22,
+   "end": 44.56
+  },
+  {
+   "word": "from",
+   "start": 44.56,
+   "end": 44.8
+  },
+  {
+   "word": "the",
+   "start": 44.8,
+   "end": 45.14
+  },
+  {
+   "word": "outside.",
+   "start": 45.14,
+   "end": 47.64
+  },
+  {
+   "word": "Hours",
+   "start": 47.64,
+   "end": 47.64
+  },
+  {
+   "word": "pass.",
+   "start": 47.64,
+   "end": 48.04
+  },
+  {
+   "word": "Your",
+   "start": 49.08,
+   "end": 49.18
+  },
+  {
+   "word": "phone",
+   "start": 49.18,
+   "end": 49.46
+  },
+  {
+   "word": "dies.",
+   "start": 49.46,
+   "end": 49.86
+  },
+  {
+   "word": "Then,",
+   "start": 50.86,
+   "end": 51.08
+  },
+  {
+   "word": "a",
+   "start": 51.08,
+   "end": 51.24
+  },
+  {
+   "word": "knock.",
+   "start": 51.24,
+   "end": 51.52
+  },
+  {
+   "word": "Slow.",
+   "start": 52.68,
+   "end": 52.86
+  },
+  {
+   "word": "Patient.",
+   "start": 53.88,
+   "end": 54.36
+  },
+  {
+   "word": "Hey.",
+   "start": 55.58,
+   "end": 55.58
+  },
+  {
+   "word": "It's",
+   "start": 55.6,
+   "end": 55.86
+  },
+  {
+   "word": "me.",
+   "start": 55.86,
+   "end": 55.96
+  },
+  {
+   "word": "Open",
+   "start": 56.06,
+   "end": 56.26
+  },
+  {
+   "word": "up.",
+   "start": 56.26,
+   "end": 56.58
+  },
+  {
+   "word": "It's",
+   "start": 57.68,
+   "end": 58.1
+  },
+  {
+   "word": "Dev.",
+   "start": 58.1,
+   "end": 58.34
+  },
+  {
+   "word": "But",
+   "start": 59.2,
+   "end": 59.5
+  },
+  {
+   "word": "Dev",
+   "start": 59.5,
+   "end": 59.74
+  },
+  {
+   "word": "didn't",
+   "start": 59.74,
+   "end": 60.04
+  },
+  {
+   "word": "make",
+   "start": 60.04,
+   "end": 60.2
+  },
+  {
+   "word": "it",
+   "start": 60.2,
+   "end": 60.34
+  },
+  {
+   "word": "out",
+   "start": 60.34,
+   "end": 60.56
+  },
+  {
+   "word": "on",
+   "start": 60.56,
+   "end": 60.78
+  },
+  {
+   "word": "day",
+   "start": 60.78,
+   "end": 60.96
+  },
+  {
+   "word": "one.",
+   "start": 60.96,
+   "end": 61.26
+  },
+  {
+   "word": "Would",
+   "start": 62.16,
+   "end": 62.4
+  },
+  {
+   "word": "you",
+   "start": 62.4,
+   "end": 62.56
+  },
+  {
+   "word": "open",
+   "start": 62.56,
+   "end": 62.82
+  },
+  {
+   "word": "the",
+   "start": 62.82,
+   "end": 63.0
+  },
+  {
+   "word": "door?",
+   "start": 63.0,
+   "end": 63.24
+  }
+ ]
+}
