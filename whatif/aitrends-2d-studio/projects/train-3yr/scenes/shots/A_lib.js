@@ -1,7 +1,6 @@
 // A_lib.js — shared helpers for batch A (s001-s026). Registers no shots.
 //   sw(word, st, fb)            seconds into the shot when `word` is spoken (fallback fb)
-//   heroFace(g, cx, cy, r, o)   giantFace for the ep 3 HERO: GREEN hoodie + hood, BIG DARK CURLS, white sweatband with a green stripe
-//                               (faces.js still draws the ep 2 mustard hoodie / bald head for 'HERO', so batch A wraps it). o = giantFace opts.
+//   heroFace(g, cx, cy, r, o)   giantFace(..., { who: 'HERO' }) (faces.js draws the ep 3 hero look)
 //   stamp(g, t, at, str, x, y, o)   rubber stamp that slams in (outBack + overshoot), red or gold, rotated
 //   hairbrush(g, x, y, rot, s, o)   the hairbrush prop (o.hairs: count of hairs caught in it)
 //   stepStool(g, x, gy, s)          Mina's bathroom step stool
@@ -16,42 +15,8 @@ export const sw = (w, st, fb) => { const m = w.toLowerCase(); const hit = E.word
 export const handAt = (o, p, which = 'F') => { const s = (o.s ?? 1), f = o.facing ?? 1, h = p['h' + which]; return [o.x + h[0] * f * s, o.y + h[1] * s]; };
 
 const CURL = '#17111a', CURL_HI = '#3d3043';
-// the hood + green hoodie shoulders (behind the head), then the face, then curls + sweatband on top
-export function heroFace(g, cx, cy, r, o = {}) {
-  const c = HERO.color, d = shade(c, -0.32), side = o.rimSide ?? -1, rc = o.rimColor || '#ffc68a', br = o.breath ?? 0;
-  g.save(); g.translate(cx, cy + br * r * 0.012); if (o.tilt) g.rotate(o.tilt);
-  g.fillStyle = shade(c, -0.22); g.beginPath(); g.ellipse(0, r * 0.1, r * 1.22, r * 1.16, 0, 0, Math.PI * 2); g.fill();                     // hood bunched behind
-  g.fillStyle = alpha('#000', 0.32); g.beginPath(); g.ellipse(0, r * 0.12, r * 1.06, r * 1.02, 0, 0, Math.PI * 2); g.fill();
-  const gr = g.createLinearGradient(0, r, 0, r * 2.3); gr.addColorStop(0, shade(c, 0.06)); gr.addColorStop(1, shade(c, -0.38));
-  g.fillStyle = gr; g.beginPath(); g.moveTo(-r * 1.95, r * 2.4); g.quadraticCurveTo(-r * 1.75, r * 1.15, -r * 0.62, r * 0.98); g.lineTo(r * 0.62, r * 0.98); g.quadraticCurveTo(r * 1.75, r * 1.15, r * 1.95, r * 2.4); g.closePath(); g.fill();
-  g.strokeStyle = d; g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(-r * 0.62, r * 0.98); g.quadraticCurveTo(0, r * 1.32, r * 0.62, r * 0.98); g.stroke();
-  for (const s of [-1, 1]) { seg(g, [[s * r * 0.2, r * 1.12], [s * r * 0.26, r * 1.5], [s * r * 0.22, r * 1.8]], r * 0.05, '#f4f1e8'); circle(g, s * r * 0.22, r * 1.84, r * 0.045, '#d8d4c8'); }
-  g.strokeStyle = alpha(d, 0.7); g.lineWidth = r * 0.04; g.beginPath(); g.moveTo(-r * 1.1, r * 1.6); g.quadraticCurveTo(-r * 0.9, r * 1.9, -r * 1.0, r * 2.2); g.stroke();
-  // curls behind the head silhouette (rim pass + dark pass) so the head reads as a big curly mop
-  const curls = (rad, fill, dx = 0, dy = 0) => {
-    for (let i = 0; i < 13; i++) { const a = Math.PI * (1.0 + i / 12), rr2 = r * (i % 2 ? 0.98 : 0.9); circle(g, dx + Math.cos(a) * rr2, dy + Math.sin(a) * rr2 * 0.96 - r * 0.02, r * rad * (i % 3 === 1 ? 1.08 : 1), fill); }
-    for (let i = 0; i < 6; i++) { const a = Math.PI * (1.12 + i / 6.6); circle(g, dx + Math.cos(a) * r * 0.72, dy + Math.sin(a) * r * 0.78 - r * 0.12, r * rad * 0.95, fill); }
-  };
-  g.save(); g.translate(-side * r * 0.05, -r * 0.03); curls(0.33, rc); g.restore();
-  curls(0.31, CURL);
-  g.restore();
-  giantFace(g, cx, cy, r, { ...o, who: 'HERO3' });                                         // unknown `who` -> faces.js draws no outfit, just the head + face
-  g.save(); g.translate(cx, cy + br * r * 0.012); if (o.tilt) g.rotate(o.tilt);
-  // curls on top of the skull (cover the hairline), with highlight arcs so they read as hair, not a bigger head
-  for (let i = 0; i < 9; i++) {
-    const a = Math.PI * (1.08 + i / 9.6), x = Math.cos(a) * r * 0.8, y = Math.sin(a) * r * 0.86 - r * 0.06, rad = r * (0.27 + (i % 2) * 0.04);
-    circle(g, x, y, rad, CURL);
-    g.strokeStyle = alpha(CURL_HI, 0.9); g.lineWidth = r * 0.03; g.lineCap = 'round'; g.beginPath(); g.arc(x, y, rad * 0.62, Math.PI * 1.1 + i * 0.3, Math.PI * 1.75 + i * 0.3); g.stroke();
-  }
-  // sweatband across the forehead (white, green stripe), following the head curve
-  const bandY = -r * 0.62, bw = r * 0.86;
-  g.strokeStyle = '#f4f1e8'; g.lineWidth = r * 0.17; g.lineCap = 'round'; g.beginPath(); g.moveTo(-bw, bandY + r * 0.1); g.quadraticCurveTo(0, bandY - r * 0.1, bw, bandY + r * 0.1); g.stroke();
-  g.strokeStyle = c; g.lineWidth = r * 0.045; g.beginPath(); g.moveTo(-bw * 0.98, bandY + r * 0.1); g.quadraticCurveTo(0, bandY - r * 0.1, bw * 0.98, bandY + r * 0.1); g.stroke();
-  g.strokeStyle = alpha(rc, 0.6); g.lineWidth = r * 0.025; g.beginPath(); g.moveTo(-side * bw * 0.2, bandY - r * 0.07); g.quadraticCurveTo(-side * bw * 0.6, bandY - r * 0.06, -side * bw, bandY + r * 0.04); g.stroke();
-  // a couple of curls springing over the band
-  for (const [x, y, rad] of [[-0.42, -0.74, 0.16], [0.08, -0.8, 0.17], [0.5, -0.72, 0.15]]) circle(g, x * r, y * r, rad * r, CURL);
-  g.restore();
-}
+// the ep 3 HERO giant face: faces.js now draws the green hoodie, curls and sweatband itself (lead fix, 461662a), so this is a pass-through.
+export const heroFace = (g, cx, cy, r, o = {}) => giantFace(g, cx, cy, r, { ...o, who: 'HERO' });
 
 export function stamp(g, t, at, str, x, y, o = {}) {
   const k = prog(t, at, at + 0.22); if (k <= 0) return;
