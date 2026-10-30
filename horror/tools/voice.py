@@ -28,10 +28,12 @@ def monitor(text):
     return out
 
 def character(who, text):
-    """[MAN]: am_onyx, slow, pitched down ~3 semitones, a little room echo. [PHONE]: am_michael, brisk, landline band + light static."""
+    """[MOM]: af_heart, slow, muffled by a door. [VOICE]: af_nicole whisper, slightly low, dry and close. [MAN]: am_onyx, slow, pitched down ~3 semitones, a little room echo. [PHONE]: am_michael, brisk, landline band + light static."""
     voice, speed, af = {
         "MAN": ("am_onyx", 0.78, f"asetrate={SR}*0.84,aresample={SR},atempo=1/0.84,aecho=0.8:0.5:60:0.25,volume=1.3"),
         "PHONE": ("am_michael", 1.05, "highpass=f=300,lowpass=f=3400,acompressor=threshold=-18dB:ratio=5,volume=1.4"),
+        "MOM": ("af_heart", 0.8, "lowpass=f=1800,aecho=0.8:0.6:35:0.3,volume=1.5"),                          # through a wooden door, a bit too slow
+        "VOICE": ("af_nicole", 0.85, f"asetrate={SR}*0.9,aresample={SR},atempo=1/0.9,highpass=f=200,volume=1.8"),  # dry whisper, close, slightly low
     }[who]
     a, _ = k.create(text, voice=voice, speed=speed, lang="en-us")
     with tempfile.TemporaryDirectory() as d:
@@ -49,7 +51,7 @@ for raw in open(sys.argv[1], encoding="utf-8"):
     m = re.match(r"^\d+\.\s+(.*)", line)
     if not m: continue
     text = m.group(1)
-    tag = re.match(r"^\[(MAN|PHONE)\]\s*(.*)", text)
+    tag = re.match(r"^\[(MAN|PHONE|MOM|VOICE)\]\s*(.*)", text)
     if tag:
         who, t = tag.groups(); spoken.append(t)
         pieces.append(character(who, t)); sil(0.9); continue
