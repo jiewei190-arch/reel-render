@@ -18,3 +18,4 @@ reels/contact_*.jpg
 whatif/aitrends-2d-studio/projects/*/build/
 whatif/aitrends-2d-studio/node_modules/
 __pycache__/
+whatif/aitrends-2d-studio/projects/*/out/
