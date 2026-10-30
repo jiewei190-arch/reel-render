@@ -35,7 +35,8 @@ export function faceAt(t, keys, blend = 0.16) {
 }
 
 // ---- local outfit bits ----
-const HOODY = '#E1AD01';
+import { HERO as HERO_FIT, DEV as DEV_FIT } from '../cast.js';
+const HOODY = HERO_FIT.color;   // ep 3: green hoodie (from cast.js)
 function body(g, r, who, st) {
   if (who === 'HERO') {
     const c = HOODY, d = shade(c, -0.3);
@@ -99,9 +100,30 @@ export function giantFace(g, cx, cy, r, o = {}) {
   g.save(); g.translate(cx, cy + br * r * 0.012); if (o.tilt) g.rotate(o.tilt);
   body(g, r, who, st);
   g.save(); g.beginPath(); g.arc(0, 0, r * 1.045, 0, Math.PI * 2); g.arc(-side * r * 0.12, r * 0.03, r, 0, Math.PI * 2, true); g.fillStyle = rc; g.fill('evenodd'); g.restore();       // rim crescent
+  if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 11; i++) {          // big mop of curls around the top of the head
+    const a = Math.PI * (0.98 + i * 0.104); circle(g, Math.cos(a) * r * 0.93, Math.sin(a) * r * 0.93, r * (0.3 + (i % 2) * 0.05), st.ink);
+  }
   circle(g, 0, 0, r, st.ink);
+  if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 9; i++) {           // curl highlights so the mop reads on a black head
+    const a = Math.PI * (1.04 + i * 0.115); g.strokeStyle = alpha(shade(st.ink, 0.6), 0.6); g.lineWidth = r * 0.03; g.beginPath(); g.arc(Math.cos(a) * r * 0.95, Math.sin(a) * r * 0.95, r * 0.2, a - 1.2, a + 0.6); g.stroke();
+  }
   g.save(); g.beginPath(); g.arc(0, 0, r, 0, Math.PI * 2); g.clip(); glow(g, -side * r * 0.5, -r * 0.5, r * 1.1, shade(st.ink, 0.5), 0.1); g.restore();          // soft top light on the head
   if (f.blush > 0.02) for (const s of [-1, 1]) { g.fillStyle = alpha('#ff6a7a', 0.28 * f.blush); g.beginPath(); g.ellipse(s * r * 0.58, r * 0.3, r * 0.15, r * 0.085, 0, 0, Math.PI * 2); g.fill(); }
+  if (who === 'HERO' && HERO_FIT.sweatband) {                                               // white sweatband with a green stripe, high on the forehead
+    g.save(); g.beginPath(); g.arc(0, 0, r * 1.02, 0, Math.PI * 2); g.clip();
+    g.fillStyle = HERO_FIT.sweatband; g.beginPath(); g.ellipse(0, -r * 0.56, r * 1.1, r * 0.15, 0, 0, Math.PI * 2); g.fill();
+    g.strokeStyle = HERO_FIT.color; g.lineWidth = r * 0.045; g.beginPath(); g.ellipse(0, -r * 0.56, r * 1.1, r * 0.02, 0, 0, Math.PI * 2); g.stroke();
+    g.restore();
+  }
+  if (who === 'DEV' && DEV_FIT.head === 'beanie') {                                          // orange beanie: dome, folded cuff, pom-pom
+    const c = DEV_FIT.headColor || '#f08a24';
+    g.save(); g.beginPath(); g.arc(0, 0, r * 1.06, 0, Math.PI * 2); g.clip();
+    g.fillStyle = c; g.fillRect(-r * 1.2, -r * 1.2, r * 2.4, r * 0.72);
+    g.fillStyle = shade(c, -0.18); g.fillRect(-r * 1.2, -r * 0.62, r * 2.4, r * 0.22);
+    g.strokeStyle = alpha(shade(c, -0.35), 0.6); g.lineWidth = r * 0.035; for (let x = -r; x <= r; x += r * 0.2) { g.beginPath(); g.moveTo(x, -r * 0.6); g.lineTo(x, -r * 0.42); g.stroke(); }
+    g.restore();
+    circle(g, 0, -r * 1.05, r * 0.2, shade(c, 0.12));
+  }
   const ey = -r * 0.04, ex = r * 0.34, bl = o.blink ?? 0;
   eye(g, -ex, ey, r, f, true, bl, st, o.glint || '#ff9a40'); eye(g, ex, ey, r, f, false, bl, st, o.glint || '#ff9a40');
   brow(g, -ex, ey - r * 0.36, r, f, true, st.feature); brow(g, ex, ey - r * 0.36, r, f, false, st.feature);
