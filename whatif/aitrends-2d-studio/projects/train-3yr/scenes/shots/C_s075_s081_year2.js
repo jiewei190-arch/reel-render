@@ -80,8 +80,6 @@ registerShot('s077', { draw(g, t, info) {
   const talk = talkAmount(st + t, st + 0.1, st + tHap + 0.55), f = faceAt(t, [[0, 'shocked'], [0.5, 'awe'], [1.4, 'worried']]);
   g.save(); g.translate(cx, cy); g.scale(z, z); g.translate(-cx, -cy);
   giantFace(g, cx, cy, 320, { who: 'DEV', f: { ...f, open: Math.max(f.open ?? 0, talk * 0.8) }, rimSide: 1, rimColor: '#9fc8ff', blink: blinkAmt(t, 3.3, 2), breath: Math.sin(t * 2.6), tilt: Math.sin(t * 0.9) * 0.02 });
-  // his orange beanie (bible: DEV = orange beanie) over the giant face
-  g.fillStyle = '#f08a24'; g.beginPath(); g.arc(cx, cy - 60, 330, Math.PI * 1.08, Math.PI * 1.92); g.closePath(); g.fill(); rr(g, cx - 330, cy - 200, 660, 70, 30); g.fillStyle = shade('#f08a24', -0.2); g.fill();
   g.restore();
   glow(g, E.W * 0.75, E.H * 0.85, 420, '#8fb8ff', 0.3);                                                       // phone screen glow from below-right
   atmos(g, t, cam, { color: '#c9d4ff', far: 10, near: 4 });
