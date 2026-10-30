@@ -40,15 +40,7 @@ function gripHand(g, x, y, s, side, o = {}) {
   g.restore();
 }
 // the hero's ponytail + hairline for her giant face (faces.js knows hoodie colour, not the ponytail)
-function ponytailBack(g, cx, cy, r, sway) { g.save(); g.translate(cx, cy); g.fillStyle = '#16121a'; g.beginPath(); g.moveTo(r * 0.55, -r * 0.7); g.quadraticCurveTo(r * 1.45 + sway * r * 0.1, -r * 0.6, r * 1.25 + sway * r * 0.18, r * 0.65); g.quadraticCurveTo(r * 1.0, r * 0.2, r * 0.6, -r * 0.3); g.closePath(); g.fill(); g.restore(); }
-function hairCap(g, cx, cy, r) {
-  g.save(); g.translate(cx, cy); g.beginPath(); g.arc(0, 0, r * 1.01, 0, Math.PI * 2); g.clip();
-  g.fillStyle = '#16121a'; g.beginPath(); g.moveTo(-r * 1.1, -r * 0.2); g.quadraticCurveTo(-r * 0.7, -r * 0.62, -r * 0.1, -r * 0.6); g.quadraticCurveTo(r * 0.5, -r * 0.58, r * 1.1, -r * 0.25); g.lineTo(r * 1.1, -r * 1.2); g.lineTo(-r * 1.1, -r * 1.2); g.closePath(); g.fill();
-  g.strokeStyle = alpha('#8fb0ff', 0.2); g.lineWidth = r * 0.02; for (let i = 0; i < 5; i++) { g.beginPath(); g.moveTo(-r * 0.6 + i * r * 0.3, -r * 0.95); g.quadraticCurveTo(-r * 0.4 + i * r * 0.28, -r * 0.75, -r * 0.5 + i * r * 0.3, -r * 0.62); g.stroke(); }
-  g.restore();
-  g.save(); g.translate(cx, cy); circle(g, r * 0.72, -r * 0.68, r * 0.12, '#16121a'); g.restore();          // the hair tie bump
-}
-function heroFace(g, t, cx, cy, r, o) { ponytailBack(g, cx, cy, r, Math.sin(t * 1.3)); giantFace(g, cx, cy, r, { ...o, who: 'HERO' }); hairCap(g, cx, cy, r); }
+function heroFace(g, t, cx, cy, r, o) { giantFace(g, cx, cy, r, { ...o, who: 'HERO', t }); }   // ponytail + hair cap now live in sets/faces.js
 const fxStack = (g, t, o = {}) => { coldGrade(g, o.cold ?? 0.5); vignette(g, o.vig ?? 0.8); breathe(g, t, o.breathe ?? 0.3); grain(g, t, o.grain ?? 0.08); };
 
 // ---------------------------------------------------------------------------------------------------
