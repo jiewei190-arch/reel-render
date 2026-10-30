@@ -2,7 +2,7 @@
 
 Narrator: the locked What If voice (whatif/VOICE.md), second person, calm and warm. Cast: HERO ("you", never lip-synced except quoted lines), MINA (little sister, keeps the "Hair Log"), DEV (best friend, basketball, films everything), BISCUIT (the cat). About 990 spoken words, so ~6 minutes at the ep 2 pace.
 
-Hero look for this episode (original design, keep it this way): a big mop of dark curls the whole way through, a green hoodie, an orange sweatband, grey running shoes. Never bald, never in a jumpsuit, cape or gloves. The anime nod stays a wink: the routine itself, Mina's running "does training make you bald?" joke, and the one-punch gag at the end. No names, no catchphrases.
+Hero look for this episode (original design, keep it this way): a big mop of dark curls the whole way through, a green hoodie, a white sweatband with a green stripe (orange is Dev's beanie colour), grey running shoes. Never bald, never in a jumpsuit, cape or gloves. The anime nod stays a wink: the routine itself, Mina's running "does training make you bald?" joke, and the one-punch gag at the end. No names, no catchphrases.
 
 ## COLD OPEN
 1. You roll out of bed and make a promise. Every day, for three years: a hundred push-ups, a hundred sit-ups, a hundred squats, and a ten kilometre run. About six miles.
