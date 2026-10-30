@@ -1,50 +1,45 @@
-// DEMO_zombies.js — sheet-check shots for sets/zombies.js (temporary ids, not in the real shot list). Vertical 9:16.
-//   demo_lineup   the 6 zombie variants shuffling past on the dusk street (office, tracksuit, chef, granny, kid, delivery)
-//   demo_horde    "Squeak. Squeak. Forty heads turn.": a 40-zombie horde, all heads snap to camera at 1.4 s
-//   demo_sniff    the delivery scooter pulls up and the horde stops and sniffs; one happy zombie with fries
-//   demo_props    beanbag pushed over gently; the delivery app (ORDER ARRIVING -> 5 stars); the zombie who tips in shoes
-import { E, registerShot, layer, ease, prog, clamp, lerp } from '/engine/core.js';
-import { POSES } from '/engine/rig2d.js';
-import { actor } from '../sets/actors.js';
-import { street, streetFg } from '../sets/street.js';
-import { apartment } from '../sets/apartment.js';
-import { blinkFlag, exprAt, idle, lookToward, camMove, atmos } from '../sets/acting.js';
-import { zombie, horde, scooter, takeoutBag, fries, deliveryPhone, beanbag, shoeTip } from '../sets/zombies.js';
+// DEMO_zombies.js — sheet-check shots for sets/zombies.js (HORROR version; temporary ids, not in the real shot list). Vertical 9:16.
+//   demo_sil    a dark aisle: a slumped silhouette at the end, the flashlight sweeps across and its eyes catch the light, then it's gone
+//   demo_glass  the store front from inside: moonlit lot, the horde packs against the glass, palms slap on the thuds (1.0, 1.6, 2.1 s)
+//   demo_hands  close on the glass: three hands press, one slides down leaving a condensation smear, breath fog blooms
+import { E, registerShot, ease, prog, clamp, lerp, linGrad, glow } from '/engine/core.js';
+import { grain, vignette, coldGrade, breathe, flashlight, motes } from '../sets/horror.js';
+import { zombieSil, glassHorde, handsOnGlass, thudShake } from '../sets/zombies.js';
 
-registerShot('demo_lineup', { draw(g, t, info) {
-  const cam = camMove(t, info.dur, { z: [1.05, 1.1], x: [-60, 60], y: [-80, -90] });
-  const S0 = street(g, t, cam, { mood: 'dusk', power: 0.4 });
-  layer(g, cam, 1, (g) => { for (let i = 0; i < 6; i++) { const x = S0.CX - 900 + i * 360 + t * 40; zombie(g, x, S0.GY + 10 + (i % 2) * 30, 1.9, { t: t + i, variant: i, walk: x, facing: 1, seed: i, rim: S0.rim }); } });
-  streetFg(g, t, cam); atmos(g, t, cam, { color: '#ffc8a0' });
+registerShot('demo_sil', { draw(g, t, info) {
+  const z = lerp(1.0, 1.06, ease.inOut(t / info.dur));
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0c1018', '#05070a']); g.fillRect(0, 0, E.W, E.H);
+  g.save(); g.translate(E.W / 2, E.H * 0.45); g.scale(z, z); g.translate(-E.W / 2, -E.H * 0.45);
+  for (const sd of [-1, 1]) for (let i = 0; i < 6; i++) { const yy = E.H * (0.2 + i * 0.09); g.fillStyle = '#141820'; g.beginPath(); g.moveTo(E.W / 2 + sd * 120, E.H * 0.38 + i * 18); g.lineTo(E.W / 2 + sd * E.W * 0.7, yy + i * 30); g.lineTo(E.W / 2 + sd * E.W * 0.7, yy + i * 30 + 16); g.lineTo(E.W / 2 + sd * 120, E.H * 0.38 + i * 18 + 6); g.fill(); }   // empty shelves in perspective
+  g.fillStyle = '#0a0c12'; g.beginPath(); g.moveTo(E.W / 2 - 120, E.H * 0.5); g.lineTo(E.W / 2 + 120, E.H * 0.5); g.lineTo(E.W, E.H); g.lineTo(0, E.H); g.fill();
+  glow(g, E.W * 0.5, E.H * 0.36, 420, '#8aa0d0', 0.22); g.fillStyle = 'rgba(120,140,190,.18)'; g.fillRect(E.W * 0.42, E.H * 0.22, E.W * 0.16, E.H * 0.16);   // a moonlit window at the end of the aisle (backlights the shape)
+  const ang = lerp(-2.4, -1.4, ease.inOut(prog(t, 0.3, 2.6))), hitEyes = clamp(1 - Math.abs(ang + 1.62) / 0.12);
+  zombieSil(g, E.W * 0.52, E.H * 0.5, 0.9, { t, eyes: hitEyes, rim: 0.4, seed: 2, tilt: 0.5 });
+  g.restore();
+  coldGrade(g, 0.4);
+  flashlight(g, E.W * 0.5, E.H * 0.95, ang, { len: E.H * 0.85, spread: 0.22, dark: 0.92, intensity: 0.28 });
+  motes(g, t, { x: E.W * 0.2, y: E.H * 0.4, w: E.W * 0.6, h: E.H * 0.4, count: 40 });
+  vignette(g, 0.8); breathe(g, t, 0.4); grain(g, t, 0.1);
 } });
 
-registerShot('demo_horde', { draw(g, t, info) {
-  const cam = camMove(t, info.dur, { z: [1.0, 1.06], x: [0, 0], y: [-60, -70] });
-  const S0 = street(g, t, cam, { mood: 'dusk', power: 0.3 });
-  layer(g, cam, 1, (g) => horde(g, t, { n: 40, rows: 5, x: S0.CX - 1000, w: 2000, y: S0.GY + 120, s: 1.7, turn: ease.out(prog(t, 1.4, 1.7)), seed: 3 }));
-  atmos(g, t, cam, { color: '#ffc8a0' });
+registerShot('demo_glass', { draw(g, t, info) {
+  const hits = [1.0, 1.6, 2.1], sh = thudShake(t, hits, 14), z = lerp(1.0, 1.05, ease.inOut(t / info.dur));
+  g.fillStyle = '#05060a'; g.fillRect(0, 0, E.W, E.H);
+  g.save(); g.translate(E.W / 2 + sh[0], E.H * 0.4 + sh[1]); g.scale(z, z); g.translate(-E.W / 2, -E.H * 0.4);
+  glassHorde(g, t, { x: -20, y: E.H * 0.12, w: E.W + 40, h: E.H * 0.6, n: 20, press: ease.out(prog(t, 0, 0.8)), hits, seed: 7 });
+  g.fillStyle = '#0c0d12'; g.fillRect(-40, E.H * 0.72, E.W + 80, E.H * 0.3);                                       // the dark shop floor inside
+  for (let i = 0; i < 4; i++) { g.fillStyle = alpha2(0.12); g.fillRect(i * 280, E.H * 0.72, 140, E.H * 0.3); }    // moonlight panes on the floor
+  g.restore();
+  coldGrade(g, 0.45); vignette(g, 0.85); grain(g, t, 0.1);
 } });
+const alpha2 = (a) => `rgba(150,170,220,${a})`;
 
-registerShot('demo_sniff', { draw(g, t, info) {
-  const cam = camMove(t, info.dur, { z: [1.0, 1.04], x: [0, 20], y: [-60, -60] });
-  const S0 = street(g, t, cam, { mood: 'dusk', power: 0.3 }), arrive = ease.out(prog(t, 0, 1.4)), sn = ease.inOut(prog(t, 1.4, 2.2));
-  layer(g, cam, 1, (g) => {
-    horde(g, t, { n: 24, rows: 3, x: S0.CX - 900, w: 1800, y: S0.GY + 40, s: 1.6, sniff: sn, seed: 9, facing: -1 });
-    scooter(g, lerp(S0.CX + 1200, S0.CX + 380, arrive), S0.GY + 230, 1.5, { t, facing: -1, speed: 1 - arrive, rider: 'DEV', expr: t > 2 ? 'surprised' : 'smile' });
-    zombie(g, S0.CX - 120, S0.GY + 260, 2.2, { t, variant: 3, happy: prog(t, 2.6, 3.0), facing: 1, seed: 2, rim: S0.rim });
-  });
-  atmos(g, t, cam, { color: '#ffc8a0' });
-} });
-
-registerShot('demo_props', { draw(g, t, info) {
-  const cam = camMove(t, info.dur, { z: [1.15, 1.2], x: [-120, -100], y: [60, 60] });
-  const A = apartment(g, t, cam, { power: 1, mood: 'dusk' });
-  layer(g, cam, 1, (g) => {
-    beanbag(g, A.CX - 180, A.GY + 10, 1.1, { t, tip: prog(t, 0.6, 2.0) });
-    zombie(g, A.CX - 420 + lerp(0, 160, prog(t, 0.6, 2.0)), A.GY + 10, 1.9, { t, variant: 0, walk: t * 60, facing: 1, rim: A.rim });
-    zombie(g, A.CX + 260, A.GY + 10, 1.9, { t, variant: 5, tip: prog(t, 2.0, 2.4), facing: -1, seed: 4, rim: A.rim });
-  });
-  deliveryPhone(g, E.W * 0.74, E.H * 0.22, 0.6, { t, state: t < 2.6 ? 'arriving' : 'rated', stars: Math.floor(lerp(0, 5.99, prog(t, 2.8, 3.6))), buzz: t < 0.8 ? 1 : 0 });
-  takeoutBag(g, E.W * 0.15, E.H * 0.62, 0.9, { rot: -0.05 }); fries(g, E.W * 0.32, E.H * 0.62, 0.9, { t, aroma: 1 }); shoeTip(g, E.W * 0.55, E.H * 0.64, 0.8, {});
-  atmos(g, t, cam, { color: '#ffd8b0' });
+registerShot('demo_hands', { draw(g, t, info) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#1a2436', '#0a0e16']); g.fillRect(0, 0, E.W, E.H);
+  glow(g, E.W * 0.7, E.H * 0.1, 700, '#c8d8ff', 0.2);
+  zombieSil(g, E.W * 0.5, E.H * 1.25, 3.4, { t, arms: 'reach', rim: 0.6, seed: 4, tilt: 0.25 });                    // the body behind, out of focus
+  handsOnGlass(g, t, E.W * 0.32, E.H * 0.36, 1.6, { press: ease.out(prog(t, 0.3, 0.5)), slide: ease.inOut(prog(t, 1.4, 3.6)), rot: -0.2, seed: 1, fog: prog(t, 0.4, 1.4) });
+  handsOnGlass(g, t, E.W * 0.68, E.H * 0.3, 1.5, { press: ease.out(prog(t, 0.8, 1.0)), rot: 0.25, seed: 2, fog: prog(t, 0.9, 1.8) });
+  handsOnGlass(g, t, E.W * 0.5, E.H * 0.5, 1.2, { press: ease.out(prog(t, 2.0, 2.15)), rot: 0.05, seed: 3, fog: prog(t, 2.0, 3.0) });
+  coldGrade(g, 0.45); vignette(g, 0.85); breathe(g, t, 0.35); grain(g, t, 0.1);
 } });
