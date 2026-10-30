@@ -139,7 +139,7 @@ registerShot('s016', { draw(g, t, info) {
   // hero distance: jog at 280 u/s, eases to a 110 u/s shuffle from just before "walking"
   const vJ = 280, vW = 110, tb = tWalk - 0.3, ramp = 0.6;
   const hxAt = (tt) => tt < tb ? vJ * tt : vJ * tb + vW * (tt - tb) + (vJ - vW) * (Math.min(tt - tb, ramp) - Math.min(tt - tb, ramp) ** 2 / (2 * ramp));
-  const s = 1.9, X0 = E.W / 2 - 200, hx = X0 + hxAt(t), mx = X0 - 300 + 360 * t;
+  const s = 1.9, X0 = E.W / 2 - 200, hx = X0 + hxAt(t), mx = X0 - 420 + 380 * t;
   const cam = camMove(t, info.dur, { z: [1.08, 1.12], y: [-60, -66] }); cam.x += hx - X0 - 40;
   const P = park(g, t, cam, { season: 'spring', mood: 'day', km: 3 });
   layer(g, cam, 1, (g) => {
