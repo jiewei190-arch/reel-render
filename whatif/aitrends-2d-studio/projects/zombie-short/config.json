@@ -9,7 +9,7 @@
  "duration": 65.452,
  "captions": true,
  "bars": null,
- "fadeIn": 0.5,
+ "fadeIn": 0,
  "fadeOut": 0.8,
  "music": {
   "enabled": true,
