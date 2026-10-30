@@ -1,0 +1,1208 @@
+{
+ "title": "THE RULES #2: The Night Shift",
+ "duration": 69.864,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 3.3,
+   "line": "Your first night shift at the gas station.",
+   "scene": "COLD OPEN, EXTERIOR: gas(g,t,cam,{view:'exterior', lights:1, flicker:0.15}) - the QUIK STOP alone off a dark highway, vertical framing: the canopy with buzzing cold-white tubes over 2 pumps (upper-middle), the tall price sign upper-left, the shop's lit window behind the pumps, the empty highway running off into pitch black both ways. Moths circle the canopy tubes. Slow push camMove z 1.00->1.07 toward the shop. Through the shop window, small: HERO (green polo) walks behind the counter on 'shift' (1.29 s). The shop's coffee-machine glow is the one warm practical. Unsettling detail: one canopy tube over pump 2 stutters off on 'station' (2.16 s) and the moths all freeze mid-air for that flicker. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Fade in from black (config fadeIn 0.5). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": -24,
+     "dur": 3.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s002",
+   "start": 3.3,
+   "end": 6.34,
+   "line": "Your manager left a note on the register.",
+   "scene": "THE NOTE ON THE REGISTER: gas(g,t,cam,{view:'counter', lights:1, flicker:0.1}) - HERO (cast.js HERO: dark green work polo, white name tag, short dark hair - no ponytail; acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 1.9, left-centre, behind the counter, three-quarter facing right) puts down a coffee cup; the register is right-centre with a small yellow sticky note on its display (stickyNote(g, ~640, ~780, 0.9, {rules:0}), folded edge, too small to read). On 'manager' (0.21 s) she notices it, on 'note' (1.19 s) she peels it off (poseAt stand -> holdFront), exprAt neutral -> curious. The register's amber display is the warm practical. Camera slow push z 1.02->1.08. Unsettling detail: the pay window behind her (soft focus, upper-left) is pure black, but the store's fluorescent reflection in it shows one more ceiling tube than the store has. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": -32,
+     "dur": 3.04
+    },
+    {
+     "at": 1.24,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s003",
+   "start": 6.34,
+   "end": 8.88,
+   "line": "Three rules.",
+   "scene": "THREE RULES (the note): macro, the sticky note held in HERO's fingers (green polo cuff at the bottom edge, above y 1270): stickyNote(g, 540, 720, 2.6, {rules:0}) - only the numbers '1.' '2.' '3.' are visible yet, in black marker, down the left edge; the rule texts are still blank paper. On 'Three' (0.15 s) the camera settles, on 'rules' (0.54 s) a tiny tremble in the hand. Light: cold fluorescent from above, amber register glow from below on the paper edge. Slow push z 1.00->1.08. Unsettling detail: the paper's glue strip is on the WRONG side - it was stuck on from the inside of the register display. stickyNote text (H2's, or this): '1. At 2AM lock the door. Serve customers through the window.' / '2. If someone asks for \"the usual\", tell them we're out.' / '3. Never look at camera four.'. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -26,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s004",
+   "start": 8.88,
+   "end": 10.43,
+   "line": "Rule one.",
+   "scene": "RULE 1 INK-ON (short, punchy): same macro framing as the previous shot, stickyNote(g, 540, 720, 2.6, {rules:0 -> 1}): on 'Rule' (0.15 s) rule 1 starts writing itself on in black marker, finishing at the cut ('1. At 2AM lock the door. Serve customers through the window.'). Hand tremble 1 px. Push continues z 1.08->1.12. Unsettling detail: the marker stroke bleeds as if just written, though the note has been here all day. ruleTitle is NOT used in this film (the sticky note is the hero prop, like #1's note). hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s005",
+   "start": 10.43,
+   "end": 12.89,
+   "line": "At two a.m., lock the door.",
+   "scene": "AT TWO A.M., LOCK THE DOOR: gas(g,t,cam,{view:'door', lights:1}) - the glass front door from inside, the brass deadbolt at the centre-left (y ~900), the red/blue 'OPEN 24 HRS' neon sign glowing upper-right inside the glass (x < 900), the black forecourt and the empty highway beyond. Slow push toward the deadbolt z 1.00->1.10. On 'two' (0.36 s) the open-sign neon buzzes; on 'lock' (0.82 s) a glint runs along the deadbolt. Unsettling detail: on the outside of the glass, high up (well above a person's head, y ~380), a single greasy handprint with fingers too long. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": -30,
+     "dur": 2.46
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s006",
+   "start": 12.89,
+   "end": 16.27,
+   "line": "Serve customers through the window.",
+   "scene": "SERVE THROUGH THE WINDOW (dread hold ~3.4 s): gas(g,t,cam,{view:'window', lights:1}) - the night pay window: thick glass in a steel frame, the pass-through drawer at the bottom of the glass (y ~1150, above the caption band), the round speaker grille at mouth height (y ~760), a small green 'TALK' light. Outside: the pumps under the canopy, then nothing. HERO's faint reflection in the glass (left). Very slow push z 1.00->1.06 toward the grille. On 'window' (1.42 s) the drawer rattles once in its rail. Unsettling detail: condensation on the OUTSIDE of the glass, with two long fingertip streaks dragged down through it. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -32,
+     "dur": 3.38
+    },
+    {
+     "at": 1.52,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s007",
+   "start": 16.27,
+   "end": 17.86,
+   "line": "Rule two.",
+   "scene": "RULE 2 INK-ON: back on the sticky note, now stuck to the counter beside the register (amber glow from the display): stickyNote(g, 540, 700, 2.6, {rules:1 -> 2}); on 'Rule' (0.15 s) rule 2 writes itself on: '2. If someone asks for \"the usual\", tell them we're out.' - the words 'the usual' in quotes, pressed harder. Push z 1.04->1.10. Unsettling detail: rule 1 above it has smudged, as if a finger dragged across it while it was wet. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s008",
+   "start": 17.86,
+   "end": 22.24,
+   "line": "If someone asks for the usual, tell them we're out.",
+   "scene": "IF SOMEONE ASKS FOR THE USUAL (dread hold ~4.3 s): gas(g,t,cam,{view:'counter', lights:1, flicker:0.2}) - HERO (cast.js HERO: dark green work polo, white name tag, short dark hair - no ponytail; acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 2.0, centre-left, behind the counter, facing camera) reads the note in her hand, idle; behind her the coffee machine (warm orange 'ON' light = the warm practical) and the snack aisle receding into a darker end. On 'usual' (1.31 s) exprAt curious -> uneasy, brow pinches, she half-laughs (small smile breath); on 'out' (2.41 s) she glances over her shoulder at the pay window. Camera slow push z 1.00->1.07. Unsettling detail: on 'usual' the pay window's green TALK light (soft focus, upper-left) turns on by itself for one second - nobody is outside. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -32,
+     "dur": 4.38
+    },
+    {
+     "at": 1.31,
+     "name": "blip",
+     "gain": -30,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s009",
+   "start": 22.24,
+   "end": 23.93,
+   "line": "Rule three.",
+   "scene": "RULE 3 INK-ON (punch): sticky note macro, stickyNote(g, 540, 700, 2.8, {rules:2 -> 3}); on 'Rule' (0.15 s) rule 3 writes itself on in heavier, shakier marker: '3. Never look at camera four.' and on 'three' (0.52 s) it is underlined twice (two fast strokes). Push z 1.06->1.14, 2 px tremble. Unsettling detail: the underline presses so hard it tears the paper, and the tear is dark behind. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.2
+    },
+    {
+     "at": 0.77,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 0.97,
+     "name": "hit",
+     "gain": -24,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s010",
+   "start": 23.93,
+   "end": 27.06,
+   "line": "Never look at camera four.",
+   "scene": "NEVER LOOK AT CAMERA FOUR (dread hold ~3.1 s): the CCTV monitor under the counter: cctv(g, 130, 480, 760, 760, {cams:4, focus:0, static:0.05, time:'01:58:40'}) - a 2x2 grid of grainy green-grey feeds labelled CAM 1 (forecourt + pumps), CAM 2 (the door), CAM 3 (the aisle), CAM 4 (bottom-right: the counter from behind the clerk), REC dot + timestamp; the screen's glow lights the edge of the counter. Camera drifts slowly toward the CAM 4 tile (z 1.00->1.12) but stops short of it. On 'camera' (0.88 s) CAM 4's tile flickers static once; on 'four' (1.22 s) its REC dot keeps blinking out of rhythm with the others. Unsettling detail: in the CAM 4 tile, behind the tiny clerk at the counter, there is a darker vertical smear that could be a shelf. Keep the whole grid above y 1270 and left of x 900. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -30,
+     "dur": 3.13
+    },
+    {
+     "at": 0.88,
+     "name": "glitch",
+     "gain": -28
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s011",
+   "start": 27.06,
+   "end": 28.78,
+   "line": "Two a.m.",
+   "scene": "TWO A.M.: the wall clock above the coffee machine (gas clock option, or draw a round clock locally): reads 1:59, the minute hand clicks to 2:00 on 'Two' (0.15 s). Cold fluorescent light, the coffee machine's orange light below (warm practical). Slow push z 1.00->1.08. Unsettling detail: the second hand stops at 12 and stays there. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -26,
+     "dur": 1.72
+    },
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s012",
+   "start": 28.78,
+   "end": 30.59,
+   "line": "You lock the door.",
+   "scene": "YOU LOCK THE DOOR: gas(g,t,cam,{view:'door', lights:1}) - tight on the deadbolt (y ~820) with the glass and the dark forecourt behind; HERO's hand (green polo cuff) enters frame left and turns the bolt on 'lock' (0.36 s) with a heavy clunk; she flips the hanging card but the 'OPEN 24 HRS' neon stays on. On 'door' (0.83 s) the canopy tubes over pump 2 outside go dark. Push z 1.00->1.06. Unsettling detail: the handprint high on the outside of the glass from earlier is now lower, at the height of her face. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.36,
+     "name": "tick",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s013",
+   "start": 30.59,
+   "end": 31.7,
+   "line": "Two forty.",
+   "scene": "TWO FORTY: same wall clock; the hands sweep from 2:00 to 2:40 in the first 0.3 s (time-skip smear), then settle; on 'forty' (0.46 s) the coffee machine's orange light flickers. Static camera with a slight drift z 1.04->1.07. Unsettling detail: the clock now ticks backwards, one tick. The cut lands on the first knuckle tap (next shot). hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -28,
+     "pitch": 1.6
+    },
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -20,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s014",
+   "start": 31.7,
+   "end": 34.52,
+   "line": "A man taps on the glass.",
+   "scene": "A MAN TAPS ON THE GLASS (the cut lands on tap 1): gas(g,t,cam,{view:'window', lights:1}) from inside, the pay window fills the frame; outside, filling the glass: STRANGER (rules2.js stranger(g,x,y,s,{smile, lit, tap}) drawn ~1.15x HERO scale, cast.js STRANGER long dark coat; his face is NEVER lit (lit <= 0.25), only the too-wide pale smile catches light; he NEVER blinks) - only his long coat front and one pale bony hand visible, his head ABOVE the top of the window frame (out of shot). Three knuckle taps on the glass at 0.00, 0.35, 0.70 s: stranger {tap: 0->1->0 over 0.12 s each}, the glass shivers 2 px, a tiny punch zoom 1% each tap; then 'A man taps on the glass' is spoken (0.67-2.08 s). On 'glass' (1.75 s) he slowly bends down so his face drops into the window, still black (lit 0.1). Camera otherwise dead still. Unsettling detail: his knuckles leave no mark on the condensation. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 1.7
+    },
+    {
+     "at": 0.0,
+     "name": "tick",
+     "gain": -16,
+     "pitch": 0.9
+    },
+    {
+     "at": 0.35,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 1.7
+    },
+    {
+     "at": 0.35,
+     "name": "tick",
+     "gain": -16,
+     "pitch": 0.9
+    },
+    {
+     "at": 0.7,
+     "name": "hit",
+     "gain": -11,
+     "pitch": 1.7
+    },
+    {
+     "at": 0.7,
+     "name": "tick",
+     "gain": -15,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.0,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 76,
+     "dur": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s015",
+   "start": 34.52,
+   "end": 36.34,
+   "line": "He doesn't blink.",
+   "scene": "HE DOESN'T BLINK: close on the stranger's face through the pay-window glass (stranger smile 0, lit 0.15): a black oval under a hat-less head, only two wet pin-points of reflected tube light where the eyes are, dead centre (y ~700); they never blink, never move. HERO's faint reflection overlaid on the glass (left, x ~300). Very slow push z 1.00->1.10. On 'blink' (0.71 s) the reflected eye-glints shift to look straight into the lens. Unsettling detail: his breath doesn't fog the glass - the condensation stays untouched in front of his mouth. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 76,
+     "dur": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s016",
+   "start": 36.34,
+   "end": 38.44,
+   "line": "The usual.",
+   "scene": "[MAN] 'The usual.' (near-silent music): extreme close on the round speaker grille in the glass (centre, y ~720), the green TALK light on; behind it, out of focus, the black of his lower face. The grille's mesh vibrates with the filtered voice on 'The' (0.15 s) and 'usual' (0.41 s) (speaker crackle). Then the pass-through drawer below (y ~1150) slides open an inch by itself and stops. Push z 1.00->1.08. Unsettling detail: the TALK light is on, but the button that switches it on (inside, on HERO's side) is not pressed. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.07,
+     "name": "rain",
+     "gain": -26,
+     "dur": 0.3
+    },
+    {
+     "at": 0.09,
+     "name": "glitch",
+     "gain": -32
+    },
+    {
+     "at": 1.4,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s017",
+   "start": 38.44,
+   "end": 40.36,
+   "line": "We're out, you tell him.",
+   "scene": "WE'RE OUT, YOU TELL HIM: giantFace(g, 430, 760, 330, {who:'HERO'}) - HERO leans toward the grille (short dark hair, green polo collar + name tag), lit cold from the window (rimSide 1, cold) and amber from the register below. faceAt [[0,'scared'],[0.37 s,'nervous'],[0.91 s,'scared']]: she says it small ('We're out' 0.15 s), eyes flick down to the note on 'tell' (0.71 s), back up on 'him' (0.91 s). Not lip-synced (narrator). Slow push z 1.00->1.06. Unsettling detail: in the glass beside her face, her reflection is a beat late following her eye movement. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 84,
+     "dur": 1.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s018",
+   "start": 40.36,
+   "end": 44.09,
+   "line": "He smiles too wide, and walks back into the dark.",
+   "scene": "HE SMILES TOO WIDE, AND WALKS BACK INTO THE DARK (dread hold ~3.6 s): gas(g,t,cam,{view:'window', lights:1, flicker:0.3}) - through the pay window: STRANGER (rules2.js stranger(g,x,y,s,{smile, lit, tap}) drawn ~1.15x HERO scale, cast.js STRANGER long dark coat; his face is NEVER lit (lit <= 0.25), only the too-wide pale smile catches light; he NEVER blinks) bent to the glass (face black, lit 0.15). On 'smiles' (0.33 s) the smile opens: stranger {smile: 0 -> 1} over 0.8 s, pale and far too wide - it stretches past where the cheeks should be, the only lit thing on him; it peaks on 'wide' (1.03 s). On 'walks' (1.67 s) he straightens and walks BACKWARDS without turning, past the pumps, into the black beyond the canopy (scale shrinking, legs barely moving); the smile is the last thing to fade on 'dark' (2.59 s). The pump-2 canopy tube flickers as he passes under it. Camera slow push z 1.00->1.08. Unsettling detail: he never stops facing the window, and never blinks. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": -30,
+     "dur": 3.73
+    },
+    {
+     "at": 1.77,
+     "name": "footstep",
+     "gain": -28
+    },
+    {
+     "at": 2.37,
+     "name": "footstep",
+     "gain": -28
+    },
+    {
+     "at": 2.97,
+     "name": "footstep",
+     "gain": -28
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s019",
+   "start": 44.09,
+   "end": 45.3,
+   "line": "Three a.m.",
+   "scene": "THREE A.M. (fast): the wall clock, 2:59 -> 3:00 on 'Three' (0.15 s), the minute hand slams. Tight, push z 1.04->1.10. Unsettling detail: the clock's second hand is gone. The cut lands on the phone's first ring (next shot). hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -26,
+     "dur": 1.21
+    },
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -16,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s020",
+   "start": 45.3,
+   "end": 47.54,
+   "line": "The phone rings.",
+   "scene": "THE PHONE RINGS (the cut lands on the ring): the beige wall phone by the back-room door: wallPhone(g, 520, 700, 2.2, {ring: 1}) - the handset rattles in its cradle on each ring (2 px shake, coiled cord swinging), the ring is the loudest thing in the film so far. 'The phone rings.' is spoken under it (0.68-1.56 s). Cold fluorescent light; the amber register glow from the right edge. Slow push z 1.00->1.08. Unsettling detail: the phone's cord is unplugged from the wall jack - the plug hangs loose under it. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "phonering",
+     "gain": -10,
+     "dur": 2.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s021",
+   "start": 47.54,
+   "end": 49.44,
+   "line": "It's your manager.",
+   "scene": "IT'S YOUR MANAGER: gas(g,t,cam,{view:'counter', lights:1}) with the wall phone at left - HERO (cast.js HERO: dark green work polo, white name tag, short dark hair - no ponytail; acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 1.9, left-centre) lifts the receiver at 0.2 s (wallPhone {ring:0, offHook:true}, cord stretched), the ring cuts off; on 'manager' (0.68 s) exprAt scared -> relieved, her shoulders drop, a small breath-smile. Behind her, right side (x < 900), the pay window is black and empty. Camera slow push z 1.00->1.05. Unsettling detail: the drawer in the pay window is still open an inch. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "phonering",
+     "gain": -12,
+     "dur": 0.25
+    },
+    {
+     "at": 0.22,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s022",
+   "start": 49.44,
+   "end": 51.86,
+   "line": "Hey! Sorry, I forgot to leave you a note.",
+   "scene": "[PHONE] 'Hey! Sorry, I forgot to leave you a note.' (cheerful landline voice; music near-silent): giantFace(g, 440, 740, 330, {who:'HERO'}) with the receiver to her ear (draw the handset locally, left side of the face). faceAt [[0,'relieved'],[0.15 s,'happy'],[1.03 s,'confused'],[1.89 s,'shocked']]: half-smile on 'Hey!' (0.15 s), it fades on 'forgot' (1.03 s), on 'note' (1.89 s) she freezes: eyes widen, pupils shrink, then slide down toward the register (look [0.2, 0.9]); no blink. Cold light from the window side, amber from below. Slow push z 1.00->1.10. Unsettling detail: a faint second breath on the line, under the manager's voice. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.08,
+     "name": "rain",
+     "gain": -32,
+     "dur": 0.2
+    },
+    {
+     "at": 0.1,
+     "name": "glitch",
+     "gain": -38
+    },
+    {
+     "at": 1.89,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 96,
+     "dur": 1.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s023",
+   "start": 51.86,
+   "end": 52.8,
+   "line": "Easy night.",
+   "scene": "EASY NIGHT (shock cut, ~1 s): snap to the sticky note on the register display, all three rules visible: stickyNote(g, 540, 700, 3.0, {rules:3}) (rule 3 double-underlined, the tear). Hard 3% punch-in at 0.0, then still. On 'night' (0.27 s) the amber register light under it flickers. Unsettling detail: in this light the handwriting is tall, narrow and slanted backwards - not a hand that writes notes for a living. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 96,
+     "dur": 0.98
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s024",
+   "start": 52.8,
+   "end": 56.38,
+   "line": "Nothing weird ever happens there.",
+   "scene": "NOTHING WEIRD EVER HAPPENS THERE (dread hold ~3.6 s): high-angle wide from the ceiling corner above the snack aisle (like a security camera, but NOT CAM 4): gas(g,t,cam,{view:'aisle', lights:1, flicker:0.15}) - the whole bright, empty store; HERO small at the counter (s 1.2, centre, y ~880) holding the receiver, not moving; the windows are a solid black wall all around. On 'weird' (0.39 s) the fluorescent tube above the counter flickers off for 2 frames: in those frames the black window reflects TWO figures at the counter (the second taller, behind her) - back on, only one. On 'there' (1.39 s) she lowers the receiver. Very slow push z 1.00->1.05. Unsettling detail: the reflection flash. hfx: grain(g,t) + vignette + coldGrade; slow drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "buzz",
+     "gain": -28,
+     "dur": 3.58
+    },
+    {
+     "at": 0.39,
+     "name": "glitch",
+     "gain": -30
+    },
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 96,
+     "dur": 3.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s025",
+   "start": 56.38,
+   "end": 58.44,
+   "line": "You look down at the note.",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. YOU LOOK DOWN AT THE NOTE: low angle from the register looking up at HERO: giantFace(g, 470, 700, 320, {who:'HERO'}) tilted down, the receiver lowered by her shoulder (handset drawn locally, cord hanging), lit amber from below by the register display (the sticky note's yellow edge in the foreground bottom-left, out of focus, above y 1270). faceAt [[0,'shocked'],[0.56 s,'scared']]: eyes drop on 'down' (0.56 s), she reads; no blink. Slow push z 1.00->1.06. Unsettling detail: the fluorescent light behind her head dims slowly, as if something tall stepped between her and it. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 96,
+     "dur": 2.1
+    },
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 2.06
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s026",
+   "start": 58.44,
+   "end": 61.4,
+   "line": "Then, without meaning to, you look at camera four.",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. THE SLOW HEAD TURN: gas(g,t,cam,{view:'counter', lights:1}) - over-the-counter medium: HERO (cast.js HERO: dark green work polo, white name tag, short dark hair - no ponytail; acting.js poses, idle(), blinkFlag 3.3 seed 7) (s 2.0, left-centre, facing camera, note in her hand) and the CCTV monitor on the counter edge at the right (cctv(g, 600, 560, 280, 280, {cams:4, focus:0, time:'03:02:38'}), keep it left of x 900, its green glow on her cheek). On 'Then' (0.15 s) her head starts to turn toward the monitor, VERY slowly (ease.inOut over ~2.4 s, against her will: the head leads, the eyes resist and drag behind), exprAt scared -> terrified; on 'four' (2.45 s) her eyes land on the CAM 4 tile. Camera very slow push z 1.00->1.08 toward the monitor. Unsettling detail: the other three tiles go to static one by one as she turns, leaving only CAM 4 lit. The cut lands on a static burst (next shot). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 104,
+     "dur": 3.0
+    },
+    {
+     "at": 0.3,
+     "name": "riser",
+     "gain": -24,
+     "dur": 2.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s027",
+   "start": 61.4,
+   "end": 63.88,
+   "line": "It shows the counter.",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. CAM 4 FILLS THE SCREEN (cut lands on a static burst): cctv(g, 0, 0, 1080, 1920, {cams:4, focus:4, static:1 -> 0.15, time:'03:02:41'}) - full-frame grainy green-grey CCTV feed, label 'CAM 4' + blinking REC dot top-left, timestamp top-right (both left of x 900), scanlines, slight barrel distortion. The feed shows gas view:'behind': the counter seen from high and BEHIND the clerk: HERO's back (green polo, short dark hair; s ~1.6, centre, y ~620-1100), the register with the sticky note, the CCTV monitor, the black pay window beyond. 0.00-0.25 s heavy static/interference(g,t,1) settles. 'It shows the counter' spoken 0.65-1.76 s. The space right behind her (the dark aisle mouth) is empty and black. Slow digital push z 1.00->1.06 toward HERO's back. Unsettling detail: in the feed, HERO is NOT looking at the monitor - her head faces straight ahead. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -14,
+     "dur": 0.6
+    },
+    {
+     "at": 0.02,
+     "name": "glitch",
+     "gain": -20
+    },
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -30,
+     "dur": 2.48
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s028",
+   "start": 63.88,
+   "end": 65.3,
+   "line": "From behind you.",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. FROM BEHIND YOU (fast): giantFace(g, 450, 740, 340, {who:'HERO'}) - HERO staring at the monitor, lit only by its green glow from the right (rimSide 1, green) and the amber register from below; the store behind her soft and dark. faceAt [[0,'terrified'],[0.33 s,'shocked']]: on 'behind' (0.33 s) pupils shrink to pin-points; she does NOT turn around. A 1-2 px tremble, push z 1.04->1.10. Unsettling detail: the light behind her shoulder (soft focus, upper-left) goes dark from the aisle side, as if blocked. The cut lands on a static burst (next shot). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "gas",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -16,
+     "bpm": 110,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s029",
+   "start": 65.3,
+   "end": 68.45,
+   "line": "And something standing right behind you.",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. AND SOMETHING STANDING RIGHT BEHIND YOU (cut lands on static + a low hit) + 0.6 s HOLD: CAM 4 full frame again, same framing as the earlier CAM 4 shot (cctv focus 4, static 1 -> 0.1 in 0.2 s, time '03:02:44'): HERO's back at the counter, unmoved. Now, RIGHT behind her, filling the dark aisle mouth: a tall dark shape - stranger(g, ~520, ~560, 1.15*HERO scale, {smile:0, lit:0}) - just a long dark coat and a head a full head higher than hers, NO face, never fully shown (edges dissolve into the CCTV noise, keep it above y 1270). On 'something' (0.73 s) it is simply there; on 'right' (1.45 s) it leans down toward her shoulder; on 'behind' (1.81 s) the too-wide pale smile opens just above her shoulder (smile 0 -> 1 over 0.5 s, the only bright thing in the feed, smile centre y ~520). After 'you' ends (2.55 s) a dead-still 0.6 s hold: no motion except the REC dot and the grain; the timestamp seconds stop counting. Slow digital push z 1.00->1.10 the whole shot. Hard cut to black at the end (no fade). Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "rules2",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -14,
+     "dur": 0.5
+    },
+    {
+     "at": 0.02,
+     "name": "glitch",
+     "gain": -20
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.81,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.45
+    }
+   ],
+   "notes": "Voice ends 67.85 (global); hold 0.6 s -> hard cut at 68.45.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s030",
+   "start": 68.45,
+   "end": 69.864,
+   "line": "",
+   "scene": "[C is self-contained] Uses sets/gas.js gas(g,t,cam,{view:'exterior'|'counter'|'window'|'door'|'aisle'|'behind', lights, flicker}), sets/rules2.js stickyNote(g,x,y,s,{rules:n}) / cctv(g,x,y,w,h,{cams:4, focus:0..4, static, time}) / wallPhone(g,x,y,s,{ring, offHook}) / stranger(g,x,y,s,{smile, lit, tap}), sets/horror.js grain/vignette/coldGrade/flicker/breathe/interference/endCard, cast.js HERO + STRANGER, acting.js, faces.js giantFace; follow DEMO_gas.js / DEMO_rules2.js (if H1/H2 shipped other names or options, use theirs). Canvas 1080x1920 vertical. Look: cold fluorescent + blue-black night, ONE warm practical (the register's amber display), film grain, vignette, cold grade, slow pushes. Story so far: a new night clerk (HERO: dark green work polo, white name tag, short dark hair) at a lonely 24-hour gas station found a sticky note with 3 rules on the register (3 = 'Never look at camera four.', double-underlined); at 2:40 a tall man in a long dark coat who never blinks asked for 'the usual' through the pay window and walked off smiling too wide; at 3:00 the manager phoned: she never left a note. The CCTV monitor under the counter shows a 2x2 grid; CAM 4 = the counter seen from behind the clerk. HARD CUT TO BLACK + END CARD: pure black frame at 0.0 (no fade), a low hit on the cut. grain(g,t) stays at very low strength so it is not dead digital black. endCard(g, t, 'Follow for the next rule.') - small white handwritten-ink text, centred at y ~820 (well above y 1270, inside x < 900), fades in from ~0.15 s over 0.3 s, a faint ink bleed; nothing else on screen. config fadeOut 0.8 overlaps the tail; keep the text readable until ~69.3 s. Safe zones: captions burn in at y 1330 - keep faces, hands and key action above y 1270 (caption band y 1270-1400 stays clear while words are up), nothing important below y 1440 or right of x 900.",
+   "set": "horror",
+   "type": "end",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.45
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 27.06,
+   "mood": "dark",
+   "intensity": 0.25
+  },
+  {
+   "start": 27.06,
+   "end": 31.7,
+   "mood": "dark",
+   "intensity": 0.35
+  },
+  {
+   "start": 31.7,
+   "end": 36.34,
+   "mood": "dark",
+   "intensity": 0.5
+  },
+  {
+   "start": 36.34,
+   "end": 38.44,
+   "mood": "dark",
+   "intensity": 0.04
+  },
+  {
+   "start": 38.44,
+   "end": 45.3,
+   "mood": "dark",
+   "intensity": 0.45
+  },
+  {
+   "start": 45.3,
+   "end": 49.44,
+   "mood": "dark",
+   "intensity": 0.3
+  },
+  {
+   "start": 49.44,
+   "end": 56.38,
+   "mood": "dark",
+   "intensity": 0.05
+  },
+  {
+   "start": 56.38,
+   "end": 61.4,
+   "mood": "dark",
+   "intensity": 0.6
+  },
+  {
+   "start": 61.4,
+   "end": 68.45,
+   "mood": "dark",
+   "intensity": 0.04
+  },
+  {
+   "start": 68.45,
+   "end": 69.864,
+   "mood": "dark",
+   "intensity": 0.02
+  }
+ ],
+ "wordTimesCorrected": {
+  "note": "timeline/words.json was re-timed from the voice envelope for these lines (words spread across each burst, weighted by length); wordTime() is now safe to use everywhere.",
+  "Your first night shift at the gas station.": [
+   0.45,
+   2.54
+  ],
+  "Three rules.": [
+   6.49,
+   7.27
+  ],
+  "Rule one.": [
+   9.03,
+   9.67
+  ],
+  "At two a.m., lock the door.": [
+   10.58,
+   12.13
+  ],
+  "Serve customers through the window.": [
+   13.04,
+   14.63
+  ],
+  "Rule two.": [
+   16.42,
+   17.17
+  ],
+  "Rule three.": [
+   22.39,
+   23.19
+  ],
+  "Never look at camera four.": [
+   24.08,
+   25.41
+  ],
+  "Two a.m.": [
+   27.21,
+   28.02
+  ],
+  "You lock the door.": [
+   28.93,
+   29.86
+  ],
+  "Two forty.": [
+   30.74,
+   31.48
+  ],
+  "A man taps on the glass.": [
+   32.37,
+   33.78
+  ],
+  "He doesn't blink.": [
+   34.67,
+   35.53
+  ],
+  "The usual.": [
+   36.49,
+   37.11
+  ],
+  "Three a.m.": [
+   44.24,
+   45.1
+  ],
+  "The phone rings.": [
+   45.98,
+   46.86
+  ],
+  "It's your manager.": [
+   47.69,
+   48.62
+  ],
+  "You look down at the note.": [
+   56.53,
+   57.72
+  ],
+  "Then, without meaning to,": [
+   58.59,
+   59.82
+  ],
+  "you look at camera four.": [
+   59.98,
+   61.13
+  ],
+  "It shows the counter.": [
+   62.05,
+   63.16
+  ]
+ },
+ "soundCuts": {
+  "s014": "knuckle tap 1",
+  "s020": "phone ring",
+  "s027": "CCTV static",
+  "s029": "CCTV static + low hit",
+  "s030": "hard cut to black"
+ }
+}
