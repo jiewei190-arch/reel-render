@@ -16,3 +16,7 @@ reels/enc_hq.log
 reels/*.log
 reels/contact_*.jpg
 jobs/long_tech/long_tech.mp4
+whatif/aitrends-2d-studio/projects/*/build/
+whatif/aitrends-2d-studio/node_modules/
+__pycache__/
+whatif/aitrends-2d-studio/projects/*/out/
