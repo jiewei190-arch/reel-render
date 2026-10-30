@@ -1,5 +1,7 @@
 # What If You Were in an Apocalypse With Zero Experience? (Short, script v1, Oct 30)
 
+> SUPERSEDED (Oct 31): the owner switched this Short to a fictional ZOMBIE apocalypse, see ../zombie/. Kept for reference.
+
 Format: standalone YouTube Short, vertical 9:16, under 80 s. Narrator: the locked What If voice (whatif/VOICE.md: Kokoro am_fenrir, speed 0.95), second person, calm, warm, funny. Captions ON (burned in, 3 words at a time). 168 spoken words (~67 s at 150 wpm, ~75 s with pauses).
 
 Cast: HERO ("you"), MINA (little sister, red scarf), DEV (best friend, orange beanie), BISCUIT (the cat).
