@@ -98,7 +98,7 @@ export function bulletIcon(g, x, y, s = 1) {
 }
 
 // ---------- the notebook page ----------
-export const NOTE_ROWS = [['DAY 1', '0.5 m'], ['DAY 2', '1 m'], ['DAY 3', '2 m'], ['DAY 4', '4 m'], ['...', ''], ['DAY 19', '131 km'], ['DAY 21', '524 km'], ['DAY 25', '8,000 km ?']];
+export const NOTE_ROWS = [['DAY 1', '0.5 m'], ['DAY 2', '1 m'], ['DAY 3', '2 m'], ['DAY 4', '4 m'], ['...', ''], ['DAY 19', '131 km'], ['DAY 21', '524 km'], ['DAY 25', '8,389 km ?']];
 export function notebook(g, t, o = {}) {
   const ui = S().ui, x = o.x ?? E.W * 0.5, y = o.y ?? E.H * 0.5, W = o.w ?? 1240, H = o.h ?? 900, reveal = o.reveal ?? 1, lamp = o.lamp ?? 1, x0 = x - W / 2, y0 = y - H / 2;
   // desk + page + spine shadow
@@ -119,13 +119,13 @@ export function notebook(g, t, o = {}) {
     g.restore(); });
   // gold arrow down the page toward the last row
   const ak = clamp((reveal - 0.9) * 10); if (ak > 0) { const ax = x0 + W - 150, a0 = rows[0] + 10, a1 = lerp(a0, rows[n - 1] - 30, ease.out(ak)); seg(g, [[ax, a0], [ax + Math.sin(a1 * 0.01) * 6, a1]], 7, ui.gold); poly(g, [[ax - 20, a1 - 8], [ax + 20, a1 - 8], [ax, a1 + 24]], ui.gold); }
-  // the circle around DAY 25 and 'escape?' (s088)
-  const ck = clamp(o.circle ?? 0); if (ck > 0) { const cy = rows[n - 1]; g.save(); g.strokeStyle = ui.gold; g.lineWidth = 8; g.lineCap = 'round'; g.shadowColor = alpha(ui.gold, 0.7); g.shadowBlur = 16; g.beginPath();
-    for (let j = 0; j <= 60 * ck; j++) { const a = -2.6 + (j / 60) * Math.PI * 2.15, rx = 190 + Math.sin(j * 0.4) * 4, ry = 58; const px = x0 + 330 + Math.cos(a) * rx, py = cy + Math.sin(a) * ry + j * 0.15; j ? g.lineTo(px, py) : g.moveTo(px, py); } g.stroke(); g.restore(); }
-  const ek = clamp(o.escape ?? 0); if (ek > 0) { g.save(); g.beginPath(); g.rect(x0 + 200, rows[n - 1] + 50, 480 * ek, 110); g.clip(); text(g, 'escape?', x0 + 240, rows[n - 1] + 108, { size: 62, color: ui.gold, font: FONTS.serif, weight: 900, italic: true, align: 'left', glow: 10, glowColor: alpha(ui.gold, 0.5) }); g.restore(); }
   // the lamp: warm pool from the upper right + falloff
   g.save(); g.globalCompositeOperation = 'multiply'; g.fillStyle = radGrad(g, x0 + W * 0.75, y0 - 80, 80, W * 1.1, ['rgba(255,255,255,1)', `rgba(${Math.round(150 + 60 * lamp)},${Math.round(110 + 40 * lamp)},${Math.round(80 + 20 * lamp)},1)`, 'rgba(40,24,20,1)']); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); g.restore();
   glow(g, x0 + W * 0.78, y0 - 40, 600, '#ffcf8a', 0.22 * lamp);
+  // the circle around DAY 25 and 'escape?' (s088)
+  const ck = clamp(o.circle ?? 0); if (ck > 0) { const cy = rows[n - 1]; g.save(); g.strokeStyle = ui.gold; g.lineWidth = 8; g.lineCap = 'round'; g.shadowColor = alpha(ui.gold, 0.7); g.shadowBlur = 16; g.beginPath();
+    for (let j = 0; j <= 60 * ck; j++) { const a = -2.6 + (j / 60) * Math.PI * 2.15, rx = 190 + Math.sin(j * 0.4) * 4, ry = 58; const px = x0 + 330 + Math.cos(a) * rx, py = cy + Math.sin(a) * ry + j * 0.15; j ? g.lineTo(px, py) : g.moveTo(px, py); } g.stroke(); g.restore(); }
+  const ek = clamp(o.escape ?? 0); if (ek > 0) { g.save(); g.beginPath(); g.rect(x0 + 200, rows[n - 1] + 34, 480 * ek, 110); g.clip(); text(g, 'escape?', x0 + 240, rows[n - 1] + 86, { size: 62, color: ui.gold, font: FONTS.serif, weight: 900, italic: true, align: 'left', glow: 10, glowColor: alpha(ui.gold, 0.5) }); g.restore(); }
   return { rows, x0, y0 };
 }
 
