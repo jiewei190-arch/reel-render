@@ -1,182 +1,200 @@
 [
  {
   "i": 0,
-  "start": 0.0,
-  "end": 2.3,
-  "text": "The zombie apocalypse starts on a Tuesday."
+  "start": 0.08,
+  "end": 2.08,
+  "text": "Day one of the zombie apocalypse."
  },
  {
   "i": 1,
-  "start": 3.24,
-  "end": 5.74,
-  "text": "Your only survival skill is ordering takeout."
+  "start": 3.18,
+  "end": 3.76,
+  "text": "No weapons."
  },
  {
   "i": 2,
-  "start": 7.36,
-  "end": 8.38,
-  "text": "Day one."
+  "start": 4.74,
+  "end": 5.38,
+  "text": "No plan."
  },
  {
   "i": 3,
-  "start": 8.38,
-  "end": 10.18,
-  "text": "You barricade the door with a beanbag."
+  "start": 6.34,
+  "end": 7.3,
+  "text": "No experience."
  },
  {
   "i": 4,
-  "start": 10.98,
-  "end": 12.08,
-  "text": "The zombies push it over."
+  "start": 9.16,
+  "end": 9.94,
+  "text": "The power's out."
  },
  {
   "i": 5,
-  "start": 12.86,
-  "end": 13.2,
-  "text": "Gently."
+  "start": 10.9,
+  "end": 12.02,
+  "text": "The whole city is dark."
  },
  {
   "i": 6,
-  "start": 14.9,
-  "end": 16.2,
-  "text": "Day two."
+  "start": 13.0,
+  "end": 14.16,
+  "text": "You hide in the supermarket."
  },
  {
   "i": 7,
-  "start": 16.2,
-  "end": 17.86,
-  "text": "You sneak past them in squeaky shoes."
+  "start": 15.46,
+  "end": 15.98,
+  "text": "Lights off."
  },
  {
   "i": 8,
-  "start": 18.88,
-  "end": 19.1,
-  "text": "Squeak."
+  "start": 17.02,
+  "end": 17.66,
+  "text": "Doors locked."
  },
  {
   "i": 9,
-  "start": 19.72,
-  "end": 20.34,
-  "text": "Squeak."
+  "start": 18.7,
+  "end": 19.68,
+  "text": "Mistake number one."
  },
  {
   "i": 10,
-  "start": 20.34,
-  "end": 21.9,
-  "text": "Forty heads turn."
+  "start": 20.48,
+  "end": 21.74,
+  "text": "You turn on your flashlight."
  },
  {
   "i": 11,
-  "start": 22.64,
-  "end": 23.54,
-  "text": "You run."
+  "start": 22.84,
+  "end": 24.16,
+  "text": "Something hits the front glass."
  },
  {
   "i": 12,
-  "start": 23.54,
-  "end": 25.02,
-  "text": "Mina runs faster."
+  "start": 24.94,
+  "end": 25.72,
+  "text": "Then another."
  },
  {
   "i": 13,
-  "start": 25.82,
-  "end": 27.12,
-  "text": "Biscuit is already on the roof."
+  "start": 26.64,
+  "end": 27.46,
+  "text": "Then a hundred."
  },
  {
   "i": 14,
-  "start": 28.58,
-  "end": 29.72,
-  "text": "Then your phone buzzes."
+  "start": 29.48,
+  "end": 30.46,
+  "text": "Mistake number two."
  },
  {
   "i": 15,
-  "start": 30.44,
-  "end": 32.8,
-  "text": "Your takeout, from Tuesday, is finally here."
+  "start": 31.42,
+  "end": 34.94,
+  "text": "You run to the back, into the freezer room, and pull the door shut."
  },
  {
   "i": 16,
-  "start": 33.48,
-  "end": 36.46,
-  "text": "The scooter pulls up, and every zombie on the street stops."
+  "start": 36.22,
+  "end": 36.22,
+  "text": "Cold."
  },
  {
   "i": 17,
-  "start": 37.26,
-  "end": 37.82,
-  "text": "And sniffs."
+  "start": 37.16,
+  "end": 37.6,
+  "text": "Dark."
  },
  {
   "i": 18,
-  "start": 38.72,
-  "end": 40.36,
-  "text": "Turns out zombies don't want brains."
+  "start": 38.82,
+  "end": 39.08,
+  "text": "Silent."
  },
  {
   "i": 19,
-  "start": 41.18,
-  "end": 41.88,
-  "text": "They want fries."
+  "start": 40.1,
+  "end": 40.4,
+  "text": "Safe."
  },
  {
   "i": 20,
-  "start": 43.38,
-  "end": 45.26,
-  "text": "So you do the one thing you're good at."
+  "start": 41.46,
+  "end": 42.6,
+  "text": "Mistake number three."
  },
  {
   "i": 21,
-  "start": 45.92,
-  "end": 46.62,
-  "text": "You order more."
+  "start": 43.46,
+  "end": 47.64,
+  "text": "The door only opens from the outside."
  },
  {
   "i": 22,
-  "start": 47.27,
-  "end": 48.94,
-  "text": "Day thirty."
+  "start": 47.64,
+  "end": 48.04,
+  "text": "Hours pass."
  },
  {
   "i": 23,
-  "start": 48.94,
-  "end": 51.54,
-  "text": "You run the only delivery service in the apocalypse."
+  "start": 49.08,
+  "end": 49.86,
+  "text": "Your phone dies."
  },
  {
   "i": 24,
-  "start": 52.44,
-  "end": 53.04,
-  "text": "Five stars."
+  "start": 50.86,
+  "end": 51.52,
+  "text": "Then, a knock."
  },
  {
   "i": 25,
-  "start": 53.94,
-  "end": 55.06,
-  "text": "The zombies always tip."
+  "start": 52.68,
+  "end": 52.86,
+  "text": "Slow."
  },
  {
   "i": 26,
-  "start": 55.06,
-  "end": 57.18,
-  "text": "In shoes."
+  "start": 53.88,
+  "end": 54.36,
+  "text": "Patient."
  },
  {
   "i": 27,
-  "start": 57.18,
-  "end": 57.92,
-  "text": "Would you survive?"
+  "start": 55.58,
+  "end": 55.58,
+  "text": "Hey."
  },
  {
   "i": 28,
-  "start": 58.8,
-  "end": 59.72,
-  "text": "Tell me your one skill."
+  "start": 55.6,
+  "end": 55.96,
+  "text": "It's me."
  },
  {
   "i": 29,
-  "start": 60.44,
-  "end": 61.88,
-  "text": "Full What If stories on the channel."
+  "start": 56.06,
+  "end": 56.58,
+  "text": "Open up."
+ },
+ {
+  "i": 30,
+  "start": 57.68,
+  "end": 58.34,
+  "text": "It's Dev."
+ },
+ {
+  "i": 31,
+  "start": 59.2,
+  "end": 61.26,
+  "text": "But Dev didn't make it out on day one."
+ },
+ {
+  "i": 32,
+  "start": 62.16,
+  "end": 63.24,
+  "text": "Would you open the door?"
  }
 ]
