@@ -32,7 +32,7 @@ export function ruleCard(g, t, info, o = {}) {
   g.restore();
   g.restore();
   const tk = ease.out(prog(t, 0.4, 0.95)); g.save(); g.globalAlpha *= tk * aOut;
-  const ty = ny + V(300, 360), sz2 = Math.min(V(104, 80), (E.W * 0.84) / Math.max(1, measure(g, title, 100) / 100)), bw = measure(g, title, sz2) + 150, bh = sz2 + 56;
+  const ty = ny + V(300, 360), sp = 6 * title.length, sz2 = Math.min(V(104, 80), (E.W * 0.84 - 150 - sp) / Math.max(1, measure(g, title, 100) / 100)), bw = measure(g, title, sz2) + sp + 150, bh = sz2 + 56;   // letter spacing (6 px/char) counts toward the fit
   g.translate(0, (1 - tk) * 26); rr(g, cx - bw / 2 * tk, ty - bh / 2, bw * tk, bh, 18); g.fillStyle = 'rgba(6,5,14,.78)'; g.fill(); g.strokeStyle = alpha(accent, 0.85); g.lineWidth = 4; g.stroke();
   glow(g, cx, ty, bw * 0.5, accent, 0.12);
   for (let i = 5; i >= 1; i--) text(g, title, cx + i * 0.8, ty + i * 1.6 + 2, { size: sz2, color: 'rgba(0,0,0,.55)', spacing: 6 });
