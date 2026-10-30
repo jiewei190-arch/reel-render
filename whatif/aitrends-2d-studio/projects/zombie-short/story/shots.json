@@ -1,12 +1,12 @@
 {
  "title": "What If You Were in a Zombie Apocalypse With Zero Experience?",
- "duration": 62.68,
+ "duration": 65.452,
  "shots": [
   {
    "id": "s001",
    "start": 0.0,
-   "end": 3.09,
-   "line": "The zombie apocalypse starts on a Tuesday.",
+   "end": 9.01,
+   "line": "Day one of the zombie apocalypse. No weapons. No plan. No experience.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -18,9 +18,9 @@
   },
   {
    "id": "s002",
-   "start": 3.09,
-   "end": 8.23,
-   "line": "Your only survival skill is ordering takeout. Day one.",
+   "start": 9.01,
+   "end": 16.87,
+   "line": "The power's out. The whole city is dark. You hide in the supermarket. Lights off.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -32,9 +32,9 @@
   },
   {
    "id": "s003",
-   "start": 8.23,
-   "end": 14.75,
-   "line": "You barricade the door with a beanbag. The zombies push it over. Gently.",
+   "start": 16.87,
+   "end": 20.33,
+   "line": "Doors locked. Mistake number one.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -46,9 +46,9 @@
   },
   {
    "id": "s004",
-   "start": 14.75,
-   "end": 16.05,
-   "line": "Day two.",
+   "start": 20.33,
+   "end": 22.69,
+   "line": "You turn on your flashlight.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -60,9 +60,9 @@
   },
   {
    "id": "s005",
-   "start": 16.05,
-   "end": 20.19,
-   "line": "You sneak past them in squeaky shoes. Squeak. Squeak.",
+   "start": 22.69,
+   "end": 31.27,
+   "line": "Something hits the front glass. Then another. Then a hundred. Mistake number two.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -74,9 +74,9 @@
   },
   {
    "id": "s006",
-   "start": 20.19,
-   "end": 23.39,
-   "line": "Forty heads turn. You run.",
+   "start": 31.27,
+   "end": 39.95,
+   "line": "You run to the back, into the freezer room, and pull the door shut. Cold. Dark. Silent.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -88,9 +88,9 @@
   },
   {
    "id": "s007",
-   "start": 23.39,
-   "end": 25.67,
-   "line": "Mina runs faster.",
+   "start": 39.95,
+   "end": 43.31,
+   "line": "Safe. Mistake number three.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -102,9 +102,9 @@
   },
   {
    "id": "s008",
-   "start": 25.67,
-   "end": 30.29,
-   "line": "Biscuit is already on the roof. Then your phone buzzes.",
+   "start": 43.31,
+   "end": 50.71,
+   "line": "The door only opens from the outside. Hours pass. Your phone dies.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -116,9 +116,9 @@
   },
   {
    "id": "s009",
-   "start": 30.29,
-   "end": 33.33,
-   "line": "Your takeout, from Tuesday, is finally here.",
+   "start": 50.71,
+   "end": 59.05,
+   "line": "Then, a knock. Slow. Patient. Hey. It's me. Open up. It's Dev.",
    "scene": "TODO",
    "set": null,
    "bars": null,
@@ -130,93 +130,9 @@
   },
   {
    "id": "s010",
-   "start": 33.33,
-   "end": 38.57,
-   "line": "The scooter pulls up, and every zombie on the street stops. And sniffs.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s011",
-   "start": 38.57,
-   "end": 43.23,
-   "line": "Turns out zombies don't want brains. They want fries.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s012",
-   "start": 43.23,
-   "end": 47.12,
-   "line": "So you do the one thing you're good at. You order more.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s013",
-   "start": 47.12,
-   "end": 48.79,
-   "line": "Day thirty.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s014",
-   "start": 48.79,
-   "end": 54.91,
-   "line": "You run the only delivery service in the apocalypse. Five stars. The zombies always tip.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s015",
-   "start": 54.91,
-   "end": 60.29,
-   "line": "In shoes. Would you survive? Tell me your one skill.",
-   "scene": "TODO",
-   "set": null,
-   "bars": null,
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "notes": ""
-  },
-  {
-   "id": "s016",
-   "start": 60.29,
-   "end": 62.68,
-   "line": "Full What If stories on the channel.",
+   "start": 59.05,
+   "end": 65.452,
+   "line": "But Dev didn't make it out on day one. Would you open the door?",
    "scene": "TODO",
    "set": null,
    "bars": null,

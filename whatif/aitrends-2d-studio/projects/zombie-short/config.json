@@ -6,7 +6,7 @@
  "style": "dusk",
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
- "duration": 62.675,
+ "duration": 65.452,
  "captions": true,
  "bars": null,
  "fadeIn": 0.5,
@@ -23,6 +23,7 @@
  "captionStyle": {
   "y": 1330,
   "size": 70,
-  "max": 3
+  "max": 3,
+  "hi": "#ff5a5a"
  }
 }

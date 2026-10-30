@@ -1,30 +1,33 @@
-[00:00.00 -> 00:02.30] The zombie apocalypse starts on a Tuesday.
-[00:03.24 -> 00:05.74] Your only survival skill is ordering takeout.
-[00:07.36 -> 00:08.38] Day one.
-[00:08.38 -> 00:10.18] You barricade the door with a beanbag.
-[00:10.98 -> 00:12.08] The zombies push it over.
-[00:12.86 -> 00:13.20] Gently.
-[00:14.90 -> 00:16.20] Day two.
-[00:16.20 -> 00:17.86] You sneak past them in squeaky shoes.
-[00:18.88 -> 00:19.10] Squeak.
-[00:19.72 -> 00:20.34] Squeak.
-[00:20.34 -> 00:21.90] Forty heads turn.
-[00:22.64 -> 00:23.54] You run.
-[00:23.54 -> 00:25.02] Mina runs faster.
-[00:25.82 -> 00:27.12] Biscuit is already on the roof.
-[00:28.58 -> 00:29.72] Then your phone buzzes.
-[00:30.44 -> 00:32.80] Your takeout, from Tuesday, is finally here.
-[00:33.48 -> 00:36.46] The scooter pulls up, and every zombie on the street stops.
-[00:37.26 -> 00:37.82] And sniffs.
-[00:38.72 -> 00:40.36] Turns out zombies don't want brains.
-[00:41.18 -> 00:41.88] They want fries.
-[00:43.38 -> 00:45.26] So you do the one thing you're good at.
-[00:45.92 -> 00:46.62] You order more.
-[00:47.27 -> 00:48.94] Day thirty.
-[00:48.94 -> 00:51.54] You run the only delivery service in the apocalypse.
-[00:52.44 -> 00:53.04] Five stars.
-[00:53.94 -> 00:55.06] The zombies always tip.
-[00:55.06 -> 00:57.18] In shoes.
-[00:57.18 -> 00:57.92] Would you survive?
-[00:58.80 -> 00:59.72] Tell me your one skill.
-[01:00.44 -> 01:01.88] Full What If stories on the channel.
+[00:00.08 -> 00:02.08] Day one of the zombie apocalypse.
+[00:03.18 -> 00:03.76] No weapons.
+[00:04.74 -> 00:05.38] No plan.
+[00:06.34 -> 00:07.30] No experience.
+[00:09.16 -> 00:09.94] The power's out.
+[00:10.90 -> 00:12.02] The whole city is dark.
+[00:13.00 -> 00:14.16] You hide in the supermarket.
+[00:15.46 -> 00:15.98] Lights off.
+[00:17.02 -> 00:17.66] Doors locked.
+[00:18.70 -> 00:19.68] Mistake number one.
+[00:20.48 -> 00:21.74] You turn on your flashlight.
+[00:22.84 -> 00:24.16] Something hits the front glass.
+[00:24.94 -> 00:25.72] Then another.
+[00:26.64 -> 00:27.46] Then a hundred.
+[00:29.48 -> 00:30.46] Mistake number two.
+[00:31.42 -> 00:34.94] You run to the back, into the freezer room, and pull the door shut.
+[00:36.22 -> 00:36.22] Cold.
+[00:37.16 -> 00:37.60] Dark.
+[00:38.82 -> 00:39.08] Silent.
+[00:40.10 -> 00:40.40] Safe.
+[00:41.46 -> 00:42.60] Mistake number three.
+[00:43.46 -> 00:47.64] The door only opens from the outside.
+[00:47.64 -> 00:48.04] Hours pass.
+[00:49.08 -> 00:49.86] Your phone dies.
+[00:50.86 -> 00:51.52] Then, a knock.
+[00:52.68 -> 00:52.86] Slow.
+[00:53.88 -> 00:54.36] Patient.
+[00:55.58 -> 00:55.58] Hey.
+[00:55.60 -> 00:55.96] It's me.
+[00:56.06 -> 00:56.58] Open up.
+[00:57.68 -> 00:58.34] It's Dev.
+[00:59.20 -> 01:01.26] But Dev didn't make it out on day one.
+[01:02.16 -> 01:03.24] Would you open the door?

@@ -1,31 +1,29 @@
-# What If Short: "What If You Were in a Zombie Apocalypse With Zero Experience?" (vertical 9:16, under 80 s)
+# What If Short: "What If You Were in a Zombie Apocalypse With Zero Experience?" (vertical 9:16, under 80 s) — HORROR version
 
-Owner's pick (Oct 31): a ZOMBIE apocalypse, and the owner said it can be FICTIONAL (pure comedy story, no science claims to source).
-CAPTIONS ON (rule 23). Narrator = Fenrir. Cast: "you" (mustard hoodie, the ep 1 hero look), Mina (red scarf), Dev (orange beanie),
-Biscuit. Tone: comedy, kid-friendly. Cartoon zombies are slow, goofy, green-grey, arms out, groaning; NO gore, no bites, no weapons, no
-fighting. Original gags only: no nods to any zombie show, film or game (no "rules" lists like a certain zombie comedy).
-Look: an overgrown hometown at dusk, the living room with a beanbag barricade, a street full of shuffling zombies, a delivery scooter.
+Owner's direction (Oct 31): ZOMBIE apocalypse, fiction, and HORROR: the place must be DARK. (The comedy draft is in git history.)
+CAPTIONS ON (rule 23). Narrator = Fenrir, horror pacing (horror/tools/voice.py, speed 0.86). [DEV] = Dev's voice muffled through a
+steel freezer door. Cast: "you" (mustard hoodie), Dev (orange beanie) only as a voice + a shadow under the door.
+Look: the THE RULES horror look: a dead, powerless city at night, a dark supermarket with empty shelves, moonlight through the front
+glass, one flashlight beam, then the freezer room (cold blue, frost, breath fog). Zombies are silhouettes: dark shapes pressed against
+the glass, hands on the glass, a crowd you never see clearly. No gore, no bites shown, no weapons. Hard cut to black at the end.
 
 ## HOOK
-1. The zombie apocalypse starts on a Tuesday. Your only survival skill is ordering takeout.
+1. Day one of the zombie apocalypse. No weapons. No plan. No experience.
 
-## DAY ONE
-2. Day one. You barricade the door with a beanbag.
-3. The zombies push it over. Gently.
+## THE STORE
+2. The power's out. The whole city is dark.
+3. You hide in the supermarket. Lights off. Doors locked.
+4. Mistake number one. You turn on your flashlight.
+5. Something hits the front glass. Then another. Then a hundred.
 
-## DAY TWO
-4. Day two. You sneak past them in squeaky shoes.
-5. Squeak. Squeak. Forty heads turn.
-6. You run. Mina runs faster. Biscuit is already on the roof.
+## THE FREEZER
+6. Mistake number two. You run to the back, into the freezer room, and pull the door shut.
+7. Cold. Dark. Silent. Safe.
+8. Mistake number three. The door only opens from the outside.
 
-## THE TWIST
-7. Then your phone buzzes. Your takeout, from Tuesday, is finally here.
-8. The scooter pulls up, and every zombie on the street stops. And sniffs.
-9. Turns out zombies don't want brains. They want fries.
-
-## DAY THIRTY
-10. So you do the one thing you're good at. You order more.
-11. Day thirty. You run the only delivery service in the apocalypse. Five stars.
-12. The zombies always tip. In shoes.
-13. Would you survive? Tell me your one skill.
-14. Full What If stories on the channel.
+## THE KNOCK
+9. Hours pass. Your phone dies.
+10. Then, a knock. Slow. Patient.
+11. [DEV] Hey. It's me. Open up.
+12. It's Dev. But Dev didn't make it out on day one.
+13. Would you open the door?
