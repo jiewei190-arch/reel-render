@@ -1,0 +1,189 @@
+{
+ "title": "THE RULES #1: The Babysitting Job",
+ "duration": 65.644,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 1.84,
+   "line": "Mrs.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s002",
+   "start": 1.84,
+   "end": 5.8,
+   "line": "Hale pays you fifty dollars to watch the house tonight.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s003",
+   "start": 5.8,
+   "end": 12.14,
+   "line": "On the fridge, she left a note. Four rules. Rule one.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 12.14,
+   "end": 19.04,
+   "line": "Never open the basement door. Whatever you hear. Rule two.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s005",
+   "start": 19.04,
+   "end": 24.0,
+   "line": "If the hallway light goes off, don't touch the switch. Just wait.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 24.0,
+   "end": 26.9,
+   "line": "Rule three.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 26.9,
+   "end": 33.46,
+   "line": "Keep the baby monitor on. All night. Ten past eleven.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s008",
+   "start": 33.46,
+   "end": 41.28,
+   "line": "Something knocks on the basement door. Three times. You don't move. Eleven forty.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s009",
+   "start": 41.28,
+   "end": 46.94,
+   "line": "The hallway light goes off. You wait. It comes back on.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s010",
+   "start": 46.94,
+   "end": 48.22,
+   "line": "Then the monitor crackles.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s011",
+   "start": 48.22,
+   "end": 51.92,
+   "line": "Can you come tuck me in?",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s012",
+   "start": 51.92,
+   "end": 58.52,
+   "line": "You're halfway up the stairs when you turn the note over. Rule four.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s013",
+   "start": 58.52,
+   "end": 65.644,
+   "line": "There are no kids in this house. I can see you on the stairs.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  }
+ ],
+ "music": []
+}
