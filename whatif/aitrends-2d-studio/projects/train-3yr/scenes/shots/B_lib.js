@@ -87,27 +87,6 @@ export const BORED = { eye: 0.28, brow: -0.05, tilt: 0.1, smile: -0.15, w: 0.8, 
 export const YAWN = { eye: 0.15, brow: 0.3, tilt: -0.3, open: 1.0, smile: -0.1, w: 0.55 };
 
 // ---------- ep 3 hero giant face ----------
-// faces.js still draws the HERO with the ep 2 mustard hoodie and no hair, so for the HERO we draw the ep 3 look here:
-// green hoodie + hood behind, then the face (who: 'NONE' = no body), then the big dark curls and the white sweatband with a green stripe.
+// faces.js now draws the ep 3 hero (green hoodie, curls, sweatband), so this is just giantFace for the HERO.
 import { giantFace } from '../sets/faces.js';
-import { HERO } from '../cast.js';
-export function heroFace(g, cx, cy, r, o = {}) {
-  const c = HERO.color, d = shade(c, -0.3), ink = S().ink;
-  g.save(); g.translate(cx, cy + (o.breath ?? 0) * r * 0.012);
-  g.fillStyle = shade(c, -0.18); g.beginPath(); g.ellipse(0, r * 0.04, r * 1.24, r * 1.2, 0, 0, Math.PI * 2); g.fill();
-  g.fillStyle = alpha('#000', 0.35); g.beginPath(); g.ellipse(0, r * 0.06, r * 1.08, r * 1.06, 0, 0, Math.PI * 2); g.fill();
-  const gr = g.createLinearGradient(0, r, 0, r * 2.3); gr.addColorStop(0, shade(c, 0.05)); gr.addColorStop(1, shade(c, -0.35));
-  g.fillStyle = gr; g.beginPath(); g.moveTo(-r * 1.9, r * 2.3); g.quadraticCurveTo(-r * 1.7, r * 1.15, -r * 0.62, r * 0.98); g.lineTo(r * 0.62, r * 0.98); g.quadraticCurveTo(r * 1.7, r * 1.15, r * 1.9, r * 2.3); g.closePath(); g.fill();
-  g.strokeStyle = d; g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(-r * 0.62, r * 0.98); g.quadraticCurveTo(0, r * 1.32, r * 0.62, r * 0.98); g.stroke();
-  for (const s of [-1, 1]) { g.strokeStyle = shade(c, 0.5); g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(s * r * 0.2, r * 1.12); g.quadraticCurveTo(s * r * 0.26, r * 1.5, s * r * 0.22, r * 1.8); g.stroke(); circle(g, s * r * 0.22, r * 1.84, r * 0.045, shade(c, 0.5)); }
-  g.restore();
-  giantFace(g, cx, cy, r, { ...o, who: 'NONE' });
-  g.save(); g.translate(cx, cy + (o.breath ?? 0) * r * 0.012); if (o.tilt) g.rotate(o.tilt);
-  const bob = Math.sin((o.t ?? 0) * 2) * r * 0.01;
-  for (let i = 0; i < 13; i++) { const a = Math.PI * (1.02 + i * 0.08), rr2 = r * (0.26 + 0.05 * Math.sin(i * 2.1)); circle(g, Math.cos(a) * r * 0.95, Math.sin(a) * r * 0.95 + bob, rr2, ink); }   // the big mop of curls
-  for (let i = 0; i < 7; i++) { const a = Math.PI * (1.15 + i * 0.12); circle(g, Math.cos(a) * r * 1.16, Math.sin(a) * r * 1.12 + bob, r * 0.2, ink); }
-  for (let i = 0; i < 6; i++) { const a = Math.PI * (1.12 + i * 0.15); g.strokeStyle = alpha('#5a4a6a', 0.6); g.lineWidth = r * 0.02; g.beginPath(); g.arc(Math.cos(a) * r * 1.0, Math.sin(a) * r * 1.0 + bob, r * 0.12, 0, Math.PI * 1.2); g.stroke(); }
-  g.fillStyle = HERO.sweatband; g.beginPath(); g.moveTo(-r * 0.93, -r * 0.42); g.quadraticCurveTo(0, -r * 0.62, r * 0.93, -r * 0.42); g.lineTo(r * 0.88, -r * 0.62); g.quadraticCurveTo(0, -r * 0.82, -r * 0.88, -r * 0.62); g.closePath(); g.fill();
-  g.strokeStyle = '#3f9a4a'; g.lineWidth = r * 0.045; g.beginPath(); g.moveTo(-r * 0.9, -r * 0.52); g.quadraticCurveTo(0, -r * 0.72, r * 0.9, -r * 0.52); g.stroke();
-  g.restore();
-}
+export const heroFace = (g, cx, cy, r, o = {}) => giantFace(g, cx, cy, r, { ...o, who: 'HERO' });
