@@ -147,9 +147,8 @@ registerShot('s102', { draw(g, t, info) {
 
 // ===================================================================================================
 // s103 — "Mina holds your hand. 'Don't,' she says. 'Please.'"
-// rig2d draws 'worried' brows inner-end DOWN (reads angry) and 'angry' inner-end UP; until the engine is fixed, ask for the
-// 'angry' brow shape so worried / sad / cry faces read tender (inner ends raised).
-const SAD_BROWS = { brows: 'angry' };
+// worried / sad brows: inner ends raised (engine rig2d.js brow slants fixed by the lead)
+const SAD_BROWS = { brows: 'worried' };
 
 registerShot('s103', { draw(g, t, info) {
   const st = info.shot.start, tHold = shotWord('holds', st, 1.05), tDont = shotWord("don't", st, 2.23), tPlease = shotWord('please', st, 3.03);
