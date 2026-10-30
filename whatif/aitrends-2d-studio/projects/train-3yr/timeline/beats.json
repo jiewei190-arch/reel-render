@@ -1,0 +1,778 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 2.06,
+  "text": "You roll out of bed and make a promise.",
+  "end": 2.73
+ },
+ {
+  "i": 1,
+  "start": 2.73,
+  "speechStart": 2.88,
+  "speechEnd": 4.32,
+  "text": "Every day, for three years:",
+  "end": 4.61
+ },
+ {
+  "i": 2,
+  "start": 4.61,
+  "speechStart": 4.76,
+  "speechEnd": 10.94,
+  "text": "a hundred push-ups, a hundred sit-ups, a hundred squats, and a ten kilometre run. About six miles.",
+  "end": 11.63
+ },
+ {
+  "i": 3,
+  "start": 11.63,
+  "speechStart": 11.78,
+  "speechEnd": 12.56,
+  "text": "No days off.",
+  "end": 13.13
+ },
+ {
+  "i": 4,
+  "start": 13.13,
+  "speechStart": 13.28,
+  "speechEnd": 14.8,
+  "text": "No idea what you're getting into.",
+  "end": 15.57
+ },
+ {
+  "i": 5,
+  "start": 15.57,
+  "speechStart": 15.72,
+  "speechEnd": 17.16,
+  "text": "Mina looks at your hair, then at you.",
+  "end": 17.65
+ },
+ {
+  "i": 6,
+  "start": 17.65,
+  "speechStart": 17.8,
+  "speechEnd": 24.72,
+  "text": "\"Everyone says if you train that hard, your hair falls out.\" Dev nods, very seriously. \"It's a known thing.\"",
+  "end": 24.57
+ },
+ {
+  "i": 7,
+  "start": 24.57,
+  "speechStart": 24.72,
+  "speechEnd": 27.3,
+  "text": "Is it? Three years.",
+  "end": 28.07
+ },
+ {
+  "i": 8,
+  "start": 28.07,
+  "speechStart": 28.22,
+  "speechEnd": 34.26,
+  "text": "One thousand and ninety-five days. Let's find out. Day one.",
+  "end": 34.11
+ },
+ {
+  "i": 9,
+  "start": 34.11,
+  "speechStart": 34.26,
+  "speechEnd": 35.72,
+  "text": "Push-ups first.",
+  "end": 36.37
+ },
+ {
+  "i": 10,
+  "start": 36.37,
+  "speechStart": 36.52,
+  "speechEnd": 39.66,
+  "text": "You hit twenty-three, and your arms just... stop.",
+  "end": 40.31
+ },
+ {
+  "i": 11,
+  "start": 40.31,
+  "speechStart": 40.46,
+  "speechEnd": 43.06,
+  "text": "You finish the rest in tiny sets, then on your knees.",
+  "end": 43.87
+ },
+ {
+  "i": 12,
+  "start": 43.87,
+  "speechStart": 44.02,
+  "speechEnd": 45.44,
+  "text": "Biscuit sits on your back to help.",
+  "end": 46.03
+ },
+ {
+  "i": 13,
+  "start": 46.03,
+  "speechStart": 46.18,
+  "speechEnd": 49.7,
+  "text": "The run takes an hour and twenty minutes. A lot of it is walking.",
+  "end": 50.51
+ },
+ {
+  "i": 14,
+  "start": 50.51,
+  "speechStart": 50.66,
+  "speechEnd": 53.3,
+  "text": "Day two, you can't lift your arms to brush your hair.",
+  "end": 53.81
+ },
+ {
+  "i": 15,
+  "start": 53.81,
+  "speechStart": 53.96,
+  "speechEnd": 59.78,
+  "text": "Mina does it, then checks the brush. \"Still all there.\" That ache has a name:",
+  "end": 59.91
+ },
+ {
+  "i": 16,
+  "start": 59.91,
+  "speechStart": 60.06,
+  "speechEnd": 61.74,
+  "text": "delayed onset muscle soreness.",
+  "end": 62.19
+ },
+ {
+  "i": 17,
+  "start": 62.19,
+  "speechStart": 62.34,
+  "speechEnd": 65.2,
+  "text": "It usually peaks one to three days after the workout.",
+  "end": 65.75
+ },
+ {
+  "i": 18,
+  "start": 65.75,
+  "speechStart": 65.9,
+  "speechEnd": 69.22,
+  "text": "It hits hardest after moves your muscles aren't used to,",
+  "end": 69.35
+ },
+ {
+  "i": 19,
+  "start": 69.35,
+  "speechStart": 69.5,
+  "speechEnd": 73.96,
+  "text": "especially the lowering part, like sinking into a squat. The good news?",
+  "end": 74.61
+ },
+ {
+  "i": 20,
+  "start": 74.61,
+  "speechStart": 74.76,
+  "speechEnd": 78.78,
+  "text": "Do the same workout again, and the soreness is usually much milder.",
+  "end": 79.35
+ },
+ {
+  "i": 21,
+  "start": 79.35,
+  "speechStart": 79.5,
+  "speechEnd": 83.02,
+  "text": "Scientists call it the repeated bout effect. Your muscles learn.",
+  "end": 83.61
+ },
+ {
+  "i": 22,
+  "start": 83.61,
+  "speechStart": 83.76,
+  "speechEnd": 90.02,
+  "text": "By week one, you can walk downstairs without the rail. Mostly. Month one.",
+  "end": 90.59
+ },
+ {
+  "i": 23,
+  "start": 90.59,
+  "speechStart": 90.74,
+  "speechEnd": 93.86,
+  "text": "A hundred push-ups in five sets. Dev films it.",
+  "end": 94.55
+ },
+ {
+  "i": 24,
+  "start": 94.55,
+  "speechStart": 94.7,
+  "speechEnd": 101.16,
+  "text": "Mina measures your hairline and writes it in a notebook labelled \"Hair Log\". Your abs, though? Nothing.",
+  "end": 101.01
+ },
+ {
+  "i": 25,
+  "start": 101.01,
+  "speechStart": 101.16,
+  "speechEnd": 104.46,
+  "text": "Sit-ups don't burn the fat on top of those muscles.",
+  "end": 105.05
+ },
+ {
+  "i": 26,
+  "start": 105.05,
+  "speechStart": 105.2,
+  "speechEnd": 109.86,
+  "text": "In one study, six weeks of ab exercises made stomach muscles last longer,",
+  "end": 109.97
+ },
+ {
+  "i": 27,
+  "start": 109.97,
+  "speechStart": 110.12,
+  "speechEnd": 112.1,
+  "text": "but didn't shrink belly fat at all.",
+  "end": 112.73
+ },
+ {
+  "i": 28,
+  "start": 112.73,
+  "speechStart": 112.88,
+  "speechEnd": 119.34,
+  "text": "You can't choose where fat comes off. Month three. The hundreds get... easy.",
+  "end": 120.15
+ },
+ {
+  "i": 29,
+  "start": 120.15,
+  "speechStart": 120.3,
+  "speechEnd": 124.58,
+  "text": "A hundred push-ups in two sets. You're not tired. You're bored.",
+  "end": 126.05
+ },
+ {
+  "i": 30,
+  "start": 126.05,
+  "speechStart": 126.2,
+  "speechEnd": 130.3,
+  "text": "Your body adapts to exactly what you do. Coaches call it specificity.",
+  "end": 131.21
+ },
+ {
+  "i": 31,
+  "start": 131.21,
+  "speechStart": 131.36,
+  "speechEnd": 135.76,
+  "text": "Ask for a hundred push-ups, and it gets brilliant at a hundred push-ups.",
+  "end": 135.61
+ },
+ {
+  "i": 32,
+  "start": 135.61,
+  "speechStart": 135.76,
+  "speechEnd": 140.5,
+  "text": "But once that's easy, the question stops being hard, and the answer stops changing.",
+  "end": 141.23
+ },
+ {
+  "i": 33,
+  "start": 141.23,
+  "speechStart": 141.38,
+  "speechEnd": 145.78,
+  "text": "Light exercises can build muscle, but mainly when you push close to your limit.",
+  "end": 146.39
+ },
+ {
+  "i": 34,
+  "start": 146.39,
+  "speechStart": 146.54,
+  "speechEnd": 148.42,
+  "text": "And for raw strength, heavier loads win.",
+  "end": 149.03
+ },
+ {
+  "i": 35,
+  "start": 149.03,
+  "speechStart": 149.18,
+  "speechEnd": 151.42,
+  "text": "Real training plans keep adding a little more.",
+  "end": 151.87
+ },
+ {
+  "i": 36,
+  "start": 151.87,
+  "speechStart": 152.02,
+  "speechEnd": 156.52,
+  "text": "It's called progressive overload. Your plan has a hundred. Forever.",
+  "end": 157.41
+ },
+ {
+  "i": 37,
+  "start": 157.41,
+  "speechStart": 157.56,
+  "speechEnd": 164.9,
+  "text": "Dev hands you a backpack full of textbooks. \"Wear this.\" Suddenly it's day one again. Year one.",
+  "end": 165.39
+ },
+ {
+  "i": 38,
+  "start": 165.39,
+  "speechStart": 165.54,
+  "speechEnd": 167.78,
+  "text": "Ten kilometres in under fifty-five minutes.",
+  "end": 168.45
+ },
+ {
+  "i": 39,
+  "start": 168.45,
+  "speechStart": 168.6,
+  "speechEnd": 173.5,
+  "text": "Running burns roughly one calorie per kilo of body weight, per kilometre.",
+  "end": 173.35
+ },
+ {
+  "i": 40,
+  "start": 173.35,
+  "speechStart": 173.5,
+  "speechEnd": 178.86,
+  "text": "For someone weighing seventy kilos, that's around seven hundred calories. Every day.",
+  "end": 179.55
+ },
+ {
+  "i": 41,
+  "start": 179.55,
+  "speechStart": 179.7,
+  "speechEnd": 184.18,
+  "text": "More than a quarter of what an adult man typically needs. You're always hungry.",
+  "end": 185.05
+ },
+ {
+  "i": 42,
+  "start": 185.05,
+  "speechStart": 185.2,
+  "speechEnd": 189.62,
+  "text": "Mina hides the cereal anyway. \"For your own good.\" It isn't.",
+  "end": 190.55
+ },
+ {
+  "i": 43,
+  "start": 190.55,
+  "speechStart": 190.7,
+  "speechEnd": 193.6,
+  "text": "Then your shins start to ache, right along the bone.",
+  "end": 193.45
+ },
+ {
+  "i": 44,
+  "start": 193.45,
+  "speechStart": 193.6,
+  "speechEnd": 196.9,
+  "text": "Shin splints. An overuse injury:",
+  "end": 197.05
+ },
+ {
+  "i": 45,
+  "start": 197.05,
+  "speechStart": 197.2,
+  "speechEnd": 198.92,
+  "text": "too much running, too little recovery.",
+  "end": 199.59
+ },
+ {
+  "i": 46,
+  "start": 199.59,
+  "speechStart": 199.74,
+  "speechEnd": 203.8,
+  "text": "Keep pounding, and it can become a stress fracture, a tiny crack in the bone.",
+  "end": 204.45
+ },
+ {
+  "i": 47,
+  "start": 204.45,
+  "speechStart": 204.6,
+  "speechEnd": 209.02,
+  "text": "In studies that follow runners over time, about four in ten get injured.",
+  "end": 209.61
+ },
+ {
+  "i": 48,
+  "start": 209.61,
+  "speechStart": 209.76,
+  "speechEnd": 212.02,
+  "text": "Your body doesn't get stronger during a workout.",
+  "end": 212.67
+ },
+ {
+  "i": 49,
+  "start": 212.67,
+  "speechStart": 212.82,
+  "speechEnd": 214.32,
+  "text": "It rebuilds in the rest afterwards.",
+  "end": 215.23
+ },
+ {
+  "i": 50,
+  "start": 215.23,
+  "speechStart": 215.38,
+  "speechEnd": 219.44,
+  "text": "Skip the rest, and the damage outruns the repairs. So you bend your rule.",
+  "end": 220.03
+ },
+ {
+  "i": 51,
+  "start": 220.03,
+  "speechStart": 220.18,
+  "speechEnd": 223.06,
+  "text": "On bad days, you walk the ten kilometres.",
+  "end": 222.91
+ },
+ {
+  "i": 52,
+  "start": 222.91,
+  "speechStart": 223.06,
+  "speechEnd": 227.82,
+  "text": "Biscuit watches from the window, like she always knew. Year two.",
+  "end": 228.53
+ },
+ {
+  "i": 53,
+  "start": 228.53,
+  "speechStart": 228.68,
+  "speechEnd": 234.66,
+  "text": "One morning, there's hair in the shower drain. A lot of it. Dev gasps. \"It's happening.\"",
+  "end": 236.17
+ },
+ {
+  "i": 54,
+  "start": 236.17,
+  "speechStart": 236.32,
+  "speechEnd": 237.1,
+  "text": "First, relax.",
+  "end": 237.85
+ },
+ {
+  "i": 55,
+  "start": 237.85,
+  "speechStart": 238.0,
+  "speechEnd": 240.44,
+  "text": "Everyone sheds fifty to a hundred hairs a day.",
+  "end": 241.11
+ },
+ {
+  "i": 56,
+  "start": 241.11,
+  "speechStart": 241.26,
+  "speechEnd": 243.52,
+  "text": "Male pattern baldness is mostly genetic.",
+  "end": 244.43
+ },
+ {
+  "i": 57,
+  "start": 244.43,
+  "speechStart": 244.58,
+  "speechEnd": 252.14,
+  "text": "Twin studies suggest around eighty percent of the difference between men comes down to their genes. Exercise can nudge hormones.",
+  "end": 252.91
+ },
+ {
+  "i": 58,
+  "start": 252.91,
+  "speechStart": 253.06,
+  "speechEnd": 254.42,
+  "text": "In one year-long trial,",
+  "end": 254.55
+ },
+ {
+  "i": 59,
+  "start": 254.55,
+  "speechStart": 254.7,
+  "speechEnd": 259.78,
+  "text": "men doing an hour of cardio six days a week ended up with slightly more DHT,",
+  "end": 260.03
+ },
+ {
+  "i": 60,
+  "start": 260.03,
+  "speechStart": 260.18,
+  "speechEnd": 261.9,
+  "text": "a hormone linked to balding.",
+  "end": 262.25
+ },
+ {
+  "i": 61,
+  "start": 262.25,
+  "speechStart": 262.4,
+  "speechEnd": 265.32,
+  "text": "But no study has shown that working out makes you bald.",
+  "end": 265.87
+ },
+ {
+  "i": 62,
+  "start": 265.87,
+  "speechStart": 266.02,
+  "speechEnd": 272.16,
+  "text": "What can make hair fall out is a shock to the body, like serious stress or losing a lot of weight fast.",
+  "end": 272.83
+ },
+ {
+  "i": 63,
+  "start": 272.83,
+  "speechStart": 272.98,
+  "speechEnd": 275.52,
+  "text": "A few months later, hair sheds in handfuls.",
+  "end": 275.77
+ },
+ {
+  "i": 64,
+  "start": 275.77,
+  "speechStart": 275.92,
+  "speechEnd": 277.66,
+  "text": "Doctors call it telogen effluvium.",
+  "end": 277.51
+ },
+ {
+  "i": 65,
+  "start": 277.51,
+  "speechStart": 277.66,
+  "speechEnd": 281.98,
+  "text": "Seven hundred calories a day, and no cereal. That's you.",
+  "end": 282.45
+ },
+ {
+  "i": 66,
+  "start": 282.45,
+  "speechStart": 282.6,
+  "speechEnd": 283.9,
+  "text": "So you eat properly again.",
+  "end": 284.69
+ },
+ {
+  "i": 67,
+  "start": 284.69,
+  "speechStart": 284.84,
+  "speechEnd": 291.24,
+  "text": "Dermatologists say this shedding is usually temporary, and within about six to nine months, your curls are back.",
+  "end": 291.97
+ },
+ {
+  "i": 68,
+  "start": 291.97,
+  "speechStart": 292.12,
+  "speechEnd": 294.56,
+  "text": "Mina writes one word in the Hair Log: \"Unchanged.\"",
+  "end": 295.47
+ },
+ {
+  "i": 69,
+  "start": 295.47,
+  "speechStart": 295.62,
+  "speechEnd": 299.2,
+  "text": "Dev looks almost disappointed. Year three.",
+  "end": 299.93
+ },
+ {
+  "i": 70,
+  "start": 299.93,
+  "speechStart": 300.08,
+  "speechEnd": 304.18,
+  "text": "You check your pulse on the sofa. It's slow. Really slow.",
+  "end": 306.09
+ },
+ {
+  "i": 71,
+  "start": 306.09,
+  "speechStart": 306.24,
+  "speechEnd": 308.48,
+  "text": "Endurance training lowers your resting heart rate.",
+  "end": 308.97
+ },
+ {
+  "i": 72,
+  "start": 308.97,
+  "speechStart": 309.12,
+  "speechEnd": 312.44,
+  "text": "For most adults, normal is sixty to a hundred beats a minute.",
+  "end": 312.97
+ },
+ {
+  "i": 73,
+  "start": 312.97,
+  "speechStart": 313.12,
+  "speechEnd": 316.24,
+  "text": "A well-trained athlete can be closer to forty.",
+  "end": 316.09
+ },
+ {
+  "i": 74,
+  "start": 316.09,
+  "speechStart": 316.24,
+  "speechEnd": 319.9,
+  "text": "A trained heart pumps more blood per beat, so it beats less often.",
+  "end": 320.39
+ },
+ {
+  "i": 75,
+  "start": 320.39,
+  "speechStart": 320.54,
+  "speechEnd": 322.46,
+  "text": "But people improve by different amounts.",
+  "end": 323.09
+ },
+ {
+  "i": 76,
+  "start": 323.09,
+  "speechStart": 323.24,
+  "speechEnd": 328.42,
+  "text": "In one big study, over seven hundred inactive adults did the same twenty-week program.",
+  "end": 329.07
+ },
+ {
+  "i": 77,
+  "start": 329.07,
+  "speechStart": 329.22,
+  "speechEnd": 334.4,
+  "text": "Some boosted their fitness hugely. Some barely changed. You're a good responder.",
+  "end": 335.03
+ },
+ {
+  "i": 78,
+  "start": 335.03,
+  "speechStart": 335.18,
+  "speechEnd": 337.6,
+  "text": "Biscuit, who has trained for zero days, is not.",
+  "end": 339.03
+ },
+ {
+  "i": 79,
+  "start": 339.03,
+  "speechStart": 339.18,
+  "speechEnd": 342.8,
+  "text": "Day one thousand and ninety-five. Mina rides beside you.",
+  "end": 343.49
+ },
+ {
+  "i": 80,
+  "start": 343.49,
+  "speechStart": 343.64,
+  "speechEnd": 345.9,
+  "text": "Dev holds a finish line made of toilet paper.",
+  "end": 346.55
+ },
+ {
+  "i": 81,
+  "start": 346.55,
+  "speechStart": 346.7,
+  "speechEnd": 349.54,
+  "text": "Over a hundred and nine thousand push-ups.",
+  "end": 349.39
+ },
+ {
+  "i": 82,
+  "start": 349.39,
+  "speechStart": 349.54,
+  "speechEnd": 351.98,
+  "text": "Nearly eleven thousand kilometres.",
+  "end": 351.83
+ },
+ {
+  "i": 83,
+  "start": 351.83,
+  "speechStart": 351.98,
+  "speechEnd": 358.2,
+  "text": "More than a quarter of the way around the Earth. Dev grabs a pillow. \"Okay. One punch.",
+  "end": 358.91
+ },
+ {
+  "i": 84,
+  "start": 358.91,
+  "speechStart": 359.06,
+  "speechEnd": 366.14,
+  "text": "Show us what three years did.\" You wind up. Everyone holds their breath. You punch. Flump.",
+  "end": 366.59
+ },
+ {
+  "i": 85,
+  "start": 366.59,
+  "speechStart": 366.74,
+  "speechEnd": 367.88,
+  "text": "The pillow wobbles.",
+  "end": 368.51
+ },
+ {
+  "i": 86,
+  "start": 368.51,
+  "speechStart": 368.66,
+  "speechEnd": 371.06,
+  "text": "Biscuit, asleep on top of it, opens one eye.",
+  "end": 371.65
+ },
+ {
+  "i": 87,
+  "start": 371.65,
+  "speechStart": 371.8,
+  "speechEnd": 373.26,
+  "text": "And your hair doesn't move at all.",
+  "end": 374.57
+ },
+ {
+  "i": 88,
+  "start": 374.57,
+  "speechStart": 374.72,
+  "speechEnd": 377.62,
+  "text": "In real life, three years of this would change you a lot.",
+  "end": 378.01
+ },
+ {
+  "i": 89,
+  "start": 378.01,
+  "speechStart": 378.16,
+  "speechEnd": 381.46,
+  "text": "A stronger heart, serious endurance, and a lot of laundry.",
+  "end": 382.23
+ },
+ {
+  "i": 90,
+  "start": 382.23,
+  "speechStart": 382.38,
+  "speechEnd": 387.8,
+  "text": "Health experts suggest adults get at least a hundred and fifty minutes of moderate activity a week.",
+  "end": 388.33
+ },
+ {
+  "i": 91,
+  "start": 388.33,
+  "speechStart": 388.48,
+  "speechEnd": 389.76,
+  "text": "This blows past that.",
+  "end": 390.19
+ },
+ {
+  "i": 92,
+  "start": 390.19,
+  "speechStart": 390.34,
+  "speechEnd": 391.72,
+  "text": "But it won't make you superhuman.",
+  "end": 392.45
+ },
+ {
+  "i": 93,
+  "start": 392.45,
+  "speechStart": 392.6,
+  "speechEnd": 398.36,
+  "text": "You'd stall unless you made it harder, and without rest, your body pushes back. As for your hair?",
+  "end": 398.75
+ },
+ {
+  "i": 94,
+  "start": 398.75,
+  "speechStart": 398.9,
+  "speechEnd": 401.0,
+  "text": "That was always up to your family tree.",
+  "end": 401.63
+ },
+ {
+  "i": 95,
+  "start": 401.63,
+  "speechStart": 401.78,
+  "speechEnd": 406.58,
+  "text": "So, would you take the challenge? What would you add, or drop? Tell us in the comments.",
+  "end": 407.29
+ },
+ {
+  "i": 96,
+  "start": 407.29,
+  "speechStart": 407.44,
+  "speechEnd": 408.96,
+  "text": "And subscribe for more What Ifs.",
+  "end": 409.66
+ }
+]

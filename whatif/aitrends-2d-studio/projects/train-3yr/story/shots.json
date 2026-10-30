@@ -1,0 +1,1365 @@
+{
+ "title": "What If You Trained Every Day for 3 Years?",
+ "duration": 409.66,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.73,
+   "line": "You roll out of bed and make a promise.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s002",
+   "start": 2.73,
+   "end": 4.61,
+   "line": "Every day, for three years:",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s003",
+   "start": 4.61,
+   "end": 11.63,
+   "line": "a hundred push-ups, a hundred sit-ups, a hundred squats, and a ten kilometre run. About six miles.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 11.63,
+   "end": 13.13,
+   "line": "No days off.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s005",
+   "start": 13.13,
+   "end": 15.57,
+   "line": "No idea what you're getting into.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 15.57,
+   "end": 17.65,
+   "line": "Mina looks at your hair, then at you.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 17.65,
+   "end": 24.57,
+   "line": "\"Everyone says if you train that hard, your hair falls out.\" Dev nods, very seriously. \"It's a known thing.\"",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s008",
+   "start": 24.57,
+   "end": 28.07,
+   "line": "Is it? Three years.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s009",
+   "start": 28.07,
+   "end": 34.11,
+   "line": "One thousand and ninety-five days. Let's find out. Day one.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s010",
+   "start": 34.11,
+   "end": 36.37,
+   "line": "Push-ups first.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s011",
+   "start": 36.37,
+   "end": 40.31,
+   "line": "You hit twenty-three, and your arms just... stop.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s012",
+   "start": 40.31,
+   "end": 43.87,
+   "line": "You finish the rest in tiny sets, then on your knees.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s013",
+   "start": 43.87,
+   "end": 46.03,
+   "line": "Biscuit sits on your back to help.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s014",
+   "start": 46.03,
+   "end": 50.51,
+   "line": "The run takes an hour and twenty minutes. A lot of it is walking.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s015",
+   "start": 50.51,
+   "end": 53.81,
+   "line": "Day two, you can't lift your arms to brush your hair.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s016",
+   "start": 53.81,
+   "end": 59.91,
+   "line": "Mina does it, then checks the brush. \"Still all there.\" That ache has a name:",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s017",
+   "start": 59.91,
+   "end": 62.19,
+   "line": "delayed onset muscle soreness.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s018",
+   "start": 62.19,
+   "end": 65.75,
+   "line": "It usually peaks one to three days after the workout.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s019",
+   "start": 65.75,
+   "end": 69.35,
+   "line": "It hits hardest after moves your muscles aren't used to,",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s020",
+   "start": 69.35,
+   "end": 74.61,
+   "line": "especially the lowering part, like sinking into a squat. The good news?",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s021",
+   "start": 74.61,
+   "end": 79.35,
+   "line": "Do the same workout again, and the soreness is usually much milder.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s022",
+   "start": 79.35,
+   "end": 83.61,
+   "line": "Scientists call it the repeated bout effect. Your muscles learn.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s023",
+   "start": 83.61,
+   "end": 90.59,
+   "line": "By week one, you can walk downstairs without the rail. Mostly. Month one.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s024",
+   "start": 90.59,
+   "end": 94.55,
+   "line": "A hundred push-ups in five sets. Dev films it.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s025",
+   "start": 94.55,
+   "end": 101.01,
+   "line": "Mina measures your hairline and writes it in a notebook labelled \"Hair Log\". Your abs, though? Nothing.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s026",
+   "start": 101.01,
+   "end": 105.05,
+   "line": "Sit-ups don't burn the fat on top of those muscles.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s027",
+   "start": 105.05,
+   "end": 109.97,
+   "line": "In one study, six weeks of ab exercises made stomach muscles last longer,",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s028",
+   "start": 109.97,
+   "end": 112.73,
+   "line": "but didn't shrink belly fat at all.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s029",
+   "start": 112.73,
+   "end": 120.15,
+   "line": "You can't choose where fat comes off. Month three. The hundreds get... easy.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s030",
+   "start": 120.15,
+   "end": 126.05,
+   "line": "A hundred push-ups in two sets. You're not tired. You're bored.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s031",
+   "start": 126.05,
+   "end": 131.21,
+   "line": "Your body adapts to exactly what you do. Coaches call it specificity.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s032",
+   "start": 131.21,
+   "end": 135.61,
+   "line": "Ask for a hundred push-ups, and it gets brilliant at a hundred push-ups.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s033",
+   "start": 135.61,
+   "end": 141.23,
+   "line": "But once that's easy, the question stops being hard, and the answer stops changing.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s034",
+   "start": 141.23,
+   "end": 146.39,
+   "line": "Light exercises can build muscle, but mainly when you push close to your limit.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s035",
+   "start": 146.39,
+   "end": 149.03,
+   "line": "And for raw strength, heavier loads win.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s036",
+   "start": 149.03,
+   "end": 151.87,
+   "line": "Real training plans keep adding a little more.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s037",
+   "start": 151.87,
+   "end": 157.41,
+   "line": "It's called progressive overload. Your plan has a hundred. Forever.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s038",
+   "start": 157.41,
+   "end": 165.39,
+   "line": "Dev hands you a backpack full of textbooks. \"Wear this.\" Suddenly it's day one again. Year one.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s039",
+   "start": 165.39,
+   "end": 168.45,
+   "line": "Ten kilometres in under fifty-five minutes.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s040",
+   "start": 168.45,
+   "end": 173.35,
+   "line": "Running burns roughly one calorie per kilo of body weight, per kilometre.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s041",
+   "start": 173.35,
+   "end": 179.55,
+   "line": "For someone weighing seventy kilos, that's around seven hundred calories. Every day.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s042",
+   "start": 179.55,
+   "end": 185.05,
+   "line": "More than a quarter of what an adult man typically needs. You're always hungry.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s043",
+   "start": 185.05,
+   "end": 190.55,
+   "line": "Mina hides the cereal anyway. \"For your own good.\" It isn't.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s044",
+   "start": 190.55,
+   "end": 193.45,
+   "line": "Then your shins start to ache, right along the bone.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s045",
+   "start": 193.45,
+   "end": 197.05,
+   "line": "Shin splints. An overuse injury:",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s046",
+   "start": 197.05,
+   "end": 199.59,
+   "line": "too much running, too little recovery.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s047",
+   "start": 199.59,
+   "end": 204.45,
+   "line": "Keep pounding, and it can become a stress fracture, a tiny crack in the bone.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s048",
+   "start": 204.45,
+   "end": 209.61,
+   "line": "In studies that follow runners over time, about four in ten get injured.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s049",
+   "start": 209.61,
+   "end": 212.67,
+   "line": "Your body doesn't get stronger during a workout.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s050",
+   "start": 212.67,
+   "end": 215.23,
+   "line": "It rebuilds in the rest afterwards.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s051",
+   "start": 215.23,
+   "end": 220.03,
+   "line": "Skip the rest, and the damage outruns the repairs. So you bend your rule.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s052",
+   "start": 220.03,
+   "end": 222.91,
+   "line": "On bad days, you walk the ten kilometres.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s053",
+   "start": 222.91,
+   "end": 228.53,
+   "line": "Biscuit watches from the window, like she always knew. Year two.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s054",
+   "start": 228.53,
+   "end": 236.17,
+   "line": "One morning, there's hair in the shower drain. A lot of it. Dev gasps. \"It's happening.\"",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s055",
+   "start": 236.17,
+   "end": 237.85,
+   "line": "First, relax.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s056",
+   "start": 237.85,
+   "end": 241.11,
+   "line": "Everyone sheds fifty to a hundred hairs a day.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s057",
+   "start": 241.11,
+   "end": 244.43,
+   "line": "Male pattern baldness is mostly genetic.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s058",
+   "start": 244.43,
+   "end": 252.91,
+   "line": "Twin studies suggest around eighty percent of the difference between men comes down to their genes. Exercise can nudge hormones.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s059",
+   "start": 252.91,
+   "end": 254.55,
+   "line": "In one year-long trial,",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s060",
+   "start": 254.55,
+   "end": 260.03,
+   "line": "men doing an hour of cardio six days a week ended up with slightly more DHT,",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s061",
+   "start": 260.03,
+   "end": 262.25,
+   "line": "a hormone linked to balding.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s062",
+   "start": 262.25,
+   "end": 265.87,
+   "line": "But no study has shown that working out makes you bald.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s063",
+   "start": 265.87,
+   "end": 272.83,
+   "line": "What can make hair fall out is a shock to the body, like serious stress or losing a lot of weight fast.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s064",
+   "start": 272.83,
+   "end": 275.77,
+   "line": "A few months later, hair sheds in handfuls.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s065",
+   "start": 275.77,
+   "end": 277.51,
+   "line": "Doctors call it telogen effluvium.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s066",
+   "start": 277.51,
+   "end": 282.45,
+   "line": "Seven hundred calories a day, and no cereal. That's you.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s067",
+   "start": 282.45,
+   "end": 284.69,
+   "line": "So you eat properly again.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s068",
+   "start": 284.69,
+   "end": 291.97,
+   "line": "Dermatologists say this shedding is usually temporary, and within about six to nine months, your curls are back.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s069",
+   "start": 291.97,
+   "end": 295.47,
+   "line": "Mina writes one word in the Hair Log: \"Unchanged.\"",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s070",
+   "start": 295.47,
+   "end": 299.93,
+   "line": "Dev looks almost disappointed. Year three.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s071",
+   "start": 299.93,
+   "end": 306.09,
+   "line": "You check your pulse on the sofa. It's slow. Really slow.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s072",
+   "start": 306.09,
+   "end": 308.97,
+   "line": "Endurance training lowers your resting heart rate.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s073",
+   "start": 308.97,
+   "end": 312.97,
+   "line": "For most adults, normal is sixty to a hundred beats a minute.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s074",
+   "start": 312.97,
+   "end": 316.09,
+   "line": "A well-trained athlete can be closer to forty.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s075",
+   "start": 316.09,
+   "end": 320.39,
+   "line": "A trained heart pumps more blood per beat, so it beats less often.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s076",
+   "start": 320.39,
+   "end": 323.09,
+   "line": "But people improve by different amounts.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s077",
+   "start": 323.09,
+   "end": 329.07,
+   "line": "In one big study, over seven hundred inactive adults did the same twenty-week program.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s078",
+   "start": 329.07,
+   "end": 335.03,
+   "line": "Some boosted their fitness hugely. Some barely changed. You're a good responder.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s079",
+   "start": 335.03,
+   "end": 339.03,
+   "line": "Biscuit, who has trained for zero days, is not.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s080",
+   "start": 339.03,
+   "end": 343.49,
+   "line": "Day one thousand and ninety-five. Mina rides beside you.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s081",
+   "start": 343.49,
+   "end": 346.55,
+   "line": "Dev holds a finish line made of toilet paper.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s082",
+   "start": 346.55,
+   "end": 349.39,
+   "line": "Over a hundred and nine thousand push-ups.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s083",
+   "start": 349.39,
+   "end": 351.83,
+   "line": "Nearly eleven thousand kilometres.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s084",
+   "start": 351.83,
+   "end": 358.91,
+   "line": "More than a quarter of the way around the Earth. Dev grabs a pillow. \"Okay. One punch.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s085",
+   "start": 358.91,
+   "end": 366.59,
+   "line": "Show us what three years did.\" You wind up. Everyone holds their breath. You punch. Flump.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s086",
+   "start": 366.59,
+   "end": 368.51,
+   "line": "The pillow wobbles.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s087",
+   "start": 368.51,
+   "end": 371.65,
+   "line": "Biscuit, asleep on top of it, opens one eye.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s088",
+   "start": 371.65,
+   "end": 374.57,
+   "line": "And your hair doesn't move at all.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s089",
+   "start": 374.57,
+   "end": 378.01,
+   "line": "In real life, three years of this would change you a lot.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s090",
+   "start": 378.01,
+   "end": 382.23,
+   "line": "A stronger heart, serious endurance, and a lot of laundry.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s091",
+   "start": 382.23,
+   "end": 388.33,
+   "line": "Health experts suggest adults get at least a hundred and fifty minutes of moderate activity a week.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s092",
+   "start": 388.33,
+   "end": 390.19,
+   "line": "This blows past that.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s093",
+   "start": 390.19,
+   "end": 392.45,
+   "line": "But it won't make you superhuman.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s094",
+   "start": 392.45,
+   "end": 398.75,
+   "line": "You'd stall unless you made it harder, and without rest, your body pushes back. As for your hair?",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s095",
+   "start": 398.75,
+   "end": 401.63,
+   "line": "That was always up to your family tree.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s096",
+   "start": 401.63,
+   "end": 407.29,
+   "line": "So, would you take the challenge? What would you add, or drop? Tell us in the comments.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  },
+  {
+   "id": "s097",
+   "start": 407.29,
+   "end": 409.66,
+   "line": "And subscribe for more What Ifs.",
+   "scene": "TODO",
+   "set": null,
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": ""
+  }
+ ],
+ "music": []
+}
