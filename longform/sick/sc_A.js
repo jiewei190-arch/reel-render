@@ -327,10 +327,10 @@ const A = {
 // 0 ---------------------------------------------------------------- HOOK: Borneo, 31,000 years ago; the child survived, for years
 hook_borneo: (lt, D, on, t) => pick(on(1),
   () => { const k = 1 + .06 * easeIO(lt / 7.6); return jungle(t, { sky: 'aMorn', sx: 1520, sy: 300 }) + limestone(1400, 820, 1.0, t) + jungleMid(t, { blur: 1 }) + litter(850)
-      + push(leafMat(860, 1030, 1.8) + campfire(560, 1000, .8, t) + person(820, 1030, 1.15, { kid: 1, pose: 'sit', face: 'smile', seed: 11, R: [110, -170] }, t)
-        + E(820 + 70 * .7 * 1.15 * 1.3, 1030 - 44, 20, 34, '#6fae45', 5) + P(`M${820 + 50} ${1030 - 60} l40 6 M${820 + 50} ${1030 - 34} l40 6`, 'none', 3, '', '#3a6a22')
-        + person(1180, 1050, 1.3, { pose: 'sit', face: 'happy', hair: 'long', seed: 12, flip: 1, R: [150, -190], hold: { R: 'cup' } }, t), k, 900, 900)
-      + glowAt(560, 900, 600, 'aFire', .45 * flick(t)) + leafFrame()
+      + push(leafMat(880, 990, 1.7) + campfire(520, 980, .8, t) + person(820, 985, .85, { kid: 1, pose: 'sit', face: 'smile', seed: 11, R: [110, -170] }, t)
+        + E(820 + 49 * .85 * 1.3, 985 - 36, 22, 30, '#6fae45', 5) + P(`M${820 + 40} ${985 - 50} l30 4 M${820 + 40} ${985 - 30} l30 4`, 'none', 3, '', '#3a6a22') + leaf(820 + 54, 985 - 66, 1.2, 20, '#7cbc4a')
+        + person(1150, 1000, 1.05, { pose: 'sit', face: 'happy', hair: 'long', seed: 12, flip: 1, R: [150, -190], hold: { R: 'cup' } }, t), k, 900, 900)
+      + glowAt(520, 900, 600, 'aFire', .45 * flick(t)) + leafFrame()
       + headline('31,000 YEARS AGO', 960, 150, 120, on(0, .5, .2)) + placeTag('BORNEO', 1500, 300, on(0, .5, 2.0)) + hand('a child had part of a leg removed by surgery', 960, 250, 56, '#fff', 'middle', on(0, .5, 3.6)) + grain() + vig(.7); },
   () => { const w = prog(lt, 7.61, D), x = 700 + w * 260; return jungle(t, { sky: 'aGold', sx: 1600, sy: 220 }) + jungleMid(t, { blur: 1 }) + litter(860) + P('M-40 960 Q700 900 1960 930', 'none', 60, 'opacity=".35"', '#c9a86a')
       + person(x - 260, 1000, .7, { kid: 1, pose: 'walk', walkSpeed: 5, face: 'happy', seed: 13 }, t) + person(x + 300, 1000, .72, { kid: 1, pose: 'walk', walkSpeed: 5, face: 'happy', seed: 14, hair: 'bun' }, t + .4)
@@ -442,7 +442,7 @@ shanidar: (lt, D, on, t) => pick(on(1),
   () => FULL('url(#aDusk)') + sunBig(1600, 560, 80) + G(peaks(640, '#7a6a8a', 7, '#f3cdb8') + ridge(700, 160, '#8a6a5a', 3), '', 'filter="url(#aFar)"') + haze(680, 220, false, .6)
       + P('M200 1120 L260 400 Q500 120 960 120 Q1420 120 1660 400 L1720 1120 Z', '#a88a6a', 8) + `<path d="M200 1120 L260 400 Q500 120 960 120 Q1420 120 1660 400 L1720 1120 Z" fill="url(#rockT)"/>` + P('M520 1120 Q520 420 960 380 Q1400 420 1400 1120 Z', '#2a1a10', 7)
       + glowAt(960, 820, 600, 'aSunG', .5) + dirt(1000) + person(960, 1100, 1.4, { nean: 1, face: 'smile', seed: 91 }, t) + fgFrame('grass')
-      + headline('~50,000 YEARS AGO', 960, 140, 110, on(0, .5, .3)) + placeTag('SHANIDAR CAVE, IRAQ', 960, 260, on(0, .5, 1.6)) + hand('a Neanderthal man', 960, 340, 64, '#fff', 'middle', on(0, .5, 4.0)) + grain() + vig(.6),
+      + headline('~50,000 YEARS AGO', 960, 140, 110, on(0, .5, .3)) + placeTag('SHANIDAR CAVE, IRAQ', 960, 260, on(0, .5, 1.6)) + hand('a Neanderthal man', 1520, 620, 64, '#fff', 'middle', on(0, .5, 4.0)) + grain() + vig(.6),
   () => { const sp = t * 4; return caveRoom(t, { mouthX: 1780, mouthY: 340, mouthW: 220, mouthH: 260, fireX: 1400, view: 'dusk' }) + rock(1060, 1080, 300, 150, '#8a8078')
       + person(760, 1140, 1.5, { nean: 1, pose: 'sit', face: 'shocked', seed: 92, R: [40, -360] }, t) + C(760 - 20, 1140 - 400 * 1.5 * 1.3, 22, '#e3c39b', 4)
       + [0, 1, 2].map(i => G(P('M0 -16 L4 -4 L16 -4 L6 4 L10 16 L0 8 L-10 16 L-6 4 L-16 -4 L-4 -4 Z', '#ffd93b', 3), `translate(${f(760 + Math.cos(sp + i * 2.1) * 110)} ${f(1140 - 640 + Math.sin(sp + i * 2.1) * 26)})`)).join('')
@@ -456,10 +456,10 @@ shanidar_list: (lt, D, on, t) => {
     + person(780, 1120, 1.1, { nean: 1, face: 'happy', talk: 1, seed: 96, flip: 1, hair: 'long' }, t) + [0, 1, 2].map(i => P(`M${640 - i * 24} ${f(560 - i * 10)} q-14 30 0 60`, 'none', 5, '', '#fff')).join('')
     + fgFrame('cave', { night: 1, dim: .6 }) + item(2, .1, 'WALKED WITH A LIMP', 360) + item(3, 2.0, 'VERY HARD OF HEARING', 560, 'scientists think') + whip(on(1, .18)) + grain() + vig(); }
   return caveRoom(t, { mouthX: 1780, mouthY: 300, mouthW: 200, mouthH: 220, fireX: 760, view: 'dusk' }) + campfire(820, 1040, .8, t)
-    + person(480, 1140, 1.4, { nean: 1, pose: 'sit', face: 'smile', seed: 97, R: [56, -230], L: [-60, -150] }, t) + E(480 - 18, 1140 - 345 * 1.4 * 1.3 + 40, 20, 15, '#2a2018', 4) + P(`M${480 - 50} ${1140 - 345 * 1.4 * 1.3 + 30} L${480 + 40} ${1140 - 345 * 1.4 * 1.3 + 20}`, 'none', 4)
-    + E(480 + 56 * 1.4 * 1.3, 1140 - 230 * 1.4 * 1.3, 26, 22, 'url(#hide)', 5)
+    + person(560, 1180, 1.8, { nean: 1, pose: 'sit', face: 'smile', seed: 97, R: [56, -230], L: [-60, -150] }, t) + E(560 - 22, 1180 - 345 * 1.8 * 1.3 + 50, 26, 20, '#2a2018', 4) + P(`M${560 - 66} ${1180 - 345 * 1.8 * 1.3 + 36} L${560 + 54} ${1180 - 345 * 1.8 * 1.3 + 24}`, 'none', 5)
+    + E(560 + 56 * 1.8 * 1.3, 1180 - 230 * 1.8 * 1.3, 32, 28, 'url(#hide)', 5)
     + gradeN() + glowAt(800, 920, 700, 'aFire', .85 * flick(t)) + fgFrame('cave', { night: 1, dim: .6 }) + item(0, .1, 'PROBABLY BLIND IN ONE EYE', 300) + item(1, 2.4, 'ONE ARM LOST AT THE ELBOW', 460) + grain() + vig();
 },
 };
-for (const k in A) SC[k] = (lt, D, on, t) => DEF + A[k](lt, D, on, t);
+for (const k in A) SC[k] = (lt, D, on, t) => DEF + A[k](lt, D, (i, dur = .45, delay = 0) => on(i, Math.min(dur, .3), Math.min(delay * .25, .35)), t);   // slideshow: compress reveal delays so each line's still is complete
 })();
