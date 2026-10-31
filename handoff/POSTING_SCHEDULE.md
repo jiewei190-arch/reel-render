@@ -16,12 +16,13 @@
 | Sun Nov 8 | 6 PM | Short: train3_punch "3 Years of Training. ONE Punch." | ep 3 |
 | ~Sun Nov 15 | 12 PM | EPISODE 5: Level Up Your Strength (if the art upgrade is approved and rendered) | — |
 
-## Instagram (horror, THE RULES)
-| Date | Time | Post |
-|---|---|---|
-| Fri Oct 30 | done | THE RULES #1 The Babysitting Job (1.8k views after 5 h) |
-| when #1 slows, latest Mon Nov 2 | 9 PM | THE RULES #2 The Night Shift |
-| Thu Nov 5 | 9 PM | THE RULES #3 The Alert |
-| Sat Nov 7 | 9 PM | Zombie Short (cross-post) |
+## Instagram (horror) — EVERY NIGHT AT 8 PM ET (owner, Oct 31)
+| Date | Post |
+|---|---|
+| Fri Oct 30 | done: THE RULES #1 The Babysitting Job |
+| Sat Oct 31 | THE RULES #2 The Night Shift |
+| Sun Nov 1 | THE RULES #3 The Alert |
+| Mon Nov 2 | Zombie Short (horror cross-post) |
+| Tue Nov 3 + | THE RULES #4, #5, ... (lead keeps 2-3 ready ahead; one new reel a day) |
 
 Also cross-post the What If Shorts to Instagram/TikTok when there's room; put the YouTube link in the IG bio.
