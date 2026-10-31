@@ -36,6 +36,8 @@ window.seek = t => SHOTS ? seekImg(t) : seekDraw(t);
 (async () => {
   TL = await (await fetch(N + '/tl.json')).json();
   await new Promise(r => { const sc = document.createElement('script'); sc.src = N + '/scenes.js'; sc.onload = r; document.body.appendChild(sc); });
+  // optional split scene files: scenes.js may set SCENE_PARTS = ['sc_A.js', ...]; each does Object.assign(SC, {...})
+  for (const f of (typeof SCENE_PARTS !== 'undefined' ? SCENE_PARTS : [])) await new Promise(r => { const sc = document.createElement('script'); sc.src = N + '/' + f; sc.onload = r; sc.onerror = r; document.body.appendChild(sc); });
   await document.fonts.load('40px "Luckiest Guy"'); await document.fonts.load('40px "Patrick Hand"');
   if (new URLSearchParams(location.search).get('mode') === 'img') {
     const sp = await (await fetch(N + '/shots.json')).json(); const lines = TL.scenes.flatMap(s => s.lines);
