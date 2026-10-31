@@ -10,6 +10,9 @@
 //   scenery: sky(id: skyDay|skyWarm|skyDusk|skyNight|skyDawn|skyGrey|skyCave), stars, moon, sun, cloud, mountains, hills, ground, grassField, trees
 //   (acacia, pine, poplar, oak, bush), rock, caveMouth, caveInside, campfire, hearth, fireLight, hut, grassHut, haze, grain, vignette, backdrop(kind, t)
 //   props: grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator('lion'|'leopard'|'hyena'), wristband, zzz, clock, scienceCard, hourglass
+// v2.3: the kit lives in a closure and is published on globalThis (configurable), so a scene file may declare its own helper with
+// the same name (const or function) without a SyntaxError; ink.js keeps using its own versions internally.
+(function () {
 const K = '#1b1b1b';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const ease = x => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
@@ -169,15 +172,16 @@ function hairInk(R, seed, col, t, style) {
   if (style === 'none') return s;
   if (style === 'bun') return C(0, -R * 1.12, R * .34, col, 5) + P(`M${-R * .96} ${-R * .14} Q${-R * .86} ${-R * 1.04} 0 ${-R * 1.02} Q${R * .86} ${-R * 1.04} ${R * .96} ${-R * .14} Q${R * .5} ${-R * .62} 0 ${-R * .56} Q${-R * .5} ${-R * .62} ${-R * .96} ${-R * .14} Z`, col, 5);
   // a dense tuft on TOP of the head: dozens of thick tapered strokes rising from a crown cap (nothing below ear level)
-  const n = 42, sp = [];
+  const n = 64, sp = [];
   for (let i = 0; i < n; i++) {
-    const u = i / (n - 1), a = rad(-156 + u * 132 + (hash(i + seed) - .5) * 10), w = rad(4 + hash(i * 3 + seed) * 4.5);
-    const mid = 1 - Math.abs(u - .5) * 1.3, L = R * (1.1 + mid * .55 + hash(i * 7 + seed) * .32), bend = (hash(i * 5 + seed) - .5) * .55 + (u - .5) * .25 + Math.sin(t * 2.2 + i) * .02;
+    const inner = i >= 40, u = inner ? (i - 40) / 23 : i / 39, a = rad(-156 + u * 132 + (hash(i + seed) - .5) * 12), w = rad((inner ? 6 : 4.5) + hash(i * 3 + seed) * 5);
+    const mid = 1 - Math.abs(u - .5) * 1.3, L = R * ((inner ? .98 : 1.1) + mid * (inner ? .3 : .55) + hash(i * 7 + seed) * .3), bend = (hash(i * 5 + seed) - .5) * .55 + (u - .5) * .25 + Math.sin(t * 2.2 + i) * .02;
     const r0 = R * .74, b1 = [Math.cos(a - w) * r0, Math.sin(a - w) * r0], b2 = [Math.cos(a + w) * r0, Math.sin(a + w) * r0], tip = [Math.cos(a + bend) * L, Math.sin(a + bend) * L];
     const m = [Math.cos(a + bend * .45) * (r0 + L) / 2, Math.sin(a + bend * .45) * (r0 + L) / 2];
     sp.push(`M${f1(b1[0])} ${f1(b1[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(tip[0])} ${f1(tip[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(b2[0])} ${f1(b2[1])} Z`);
   }
   s += `<path d="${sp.join(' ')}" fill="${col}" stroke="${col}" stroke-width="1.2" stroke-linejoin="round"/>`;
+  if (col === K) for (let i = 0; i < 9; i++) { const a = rad(-140 + i * 13 + hash(i * 17 + seed) * 8), L = R * (1.15 + hash(i * 19 + seed) * .3); s += P(`M${f1(Math.cos(a) * R * .8)} ${f1(Math.sin(a) * R * .8)} Q${f1(Math.cos(a + .08) * L * .9)} ${f1(Math.sin(a + .08) * L * .9)} ${f1(Math.cos(a) * L)} ${f1(Math.sin(a) * L)}`, 'none', 2, 'opacity=".55"', '#4a4a56'); }
   // crown cap with an uneven hairline high on the forehead, sides ending above the ears
   let d = `M${f1(-R * .9)} ${f1(-R * .4)} Q${f1(-R * .98)} ${f1(-R * 1.08)} 0 ${f1(-R * 1.1)} Q${f1(R * .98)} ${f1(-R * 1.08)} ${f1(R * .9)} ${f1(-R * .4)}`;
   const fr = 12; for (let i = 0; i <= fr; i++) { const x = R * .88 - i * (1.76 * R / fr), y = -R * .6 + Math.pow(Math.abs(x) / R, 2) * R * .26 + (i % 2 ? R * .07 : 0) + (hash(i + seed) - .5) * R * .06; d += ` L${f1(x)} ${f1(y)}`; }
@@ -285,6 +289,7 @@ function person(x, y, s, o = {}, t = 0) {
   } else {
     out += P(`M0 ${f1(hipY)} L${-14 * lf} ${f1(-75 * lf)} L${-34 * lf} -8`, 'none', LW) + foot(-34 * lf, 0, -1) + P(`M0 ${f1(hipY)} L${14 * lf} ${f1(-75 * lf)} L${34 * lf} -8`, 'none', LW) + foot(34 * lf, 0, 1);
   }
+  if (o.tattoo && pose !== 'sit' && pose !== 'kneel') for (const sd of [-1, 1]) out += tattooDashes(sd * 22 * lf, -46 * lf, .9, 4, sd * 14) + tattooDashes(sd * 12 * lf, -96 * lf, .8, 3, sd * 8);
   const up = upperInk(o, face, t, seed, hipY, breathe, kid);
   out += o.elder ? G(up.svg, `rotate(6 0 ${f1(hipY)})`) : up.svg;
   if (o.blanket) out += P(`M-80 ${f1(hipY - 70)} Q0 ${f1(hipY - 96)} 90 ${f1(hipY - 66)} L100 ${f1(hipY + 40)} Q0 ${f1(hipY + 60)} -90 ${f1(hipY + 40)} Z`, 'url(#fur)', 5);
@@ -351,7 +356,10 @@ function stars(t = 0, n = 140, seed = 1, yMax = 700) {
   for (let i = 0; i < 9; i++) { const x = hash(i * 17 + seed) * 1920, y = hash(i * 19 + seed) * yMax * .8, r = 6 + hash(i * 23) * 6, tw = 1 + .25 * Math.sin(t * 2 + i); s += G(`<path d="M0 ${-r * 2} Q2 -2 ${r * 2} 0 Q2 2 0 ${r * 2} Q-2 2 ${-r * 2} 0 Q-2 -2 0 ${-r * 2} Z" fill="#fff8d0"/>`, `translate(${f1(x)} ${f1(y)}) scale(${f1(tw * 50) / 100})`); }
   return `<path d="M-50 ${yMax * .9} Q600 ${yMax * .2} 1980 ${yMax * .05} L1980 ${yMax * .3} Q700 ${yMax * .45} -50 ${yMax * 1.05} Z" fill="#9fb4ff" opacity=".08" filter="url(#soft)"/>` + s;
 }
-function cloud(x, y, s = 1, t = 0) { x += (t * 8) % 2400; if (x > 2100) x -= 2400; const d = 'M-90 30 Q-110 -10 -70 -20 Q-60 -60 -10 -55 Q20 -85 60 -50 Q110 -55 105 -10 Q130 20 95 32 Z'; return G(P(d, '#fff', 5) + SH(d, 'darkBot', .5) + `<ellipse cx="-20" cy="-30" rx="40" ry="14" fill="#fff" opacity=".7"/>`, `translate(${f1(x)} ${y}) scale(${s})`); }
+function cloud(x, y, s = 1, t = 0) { x += (t * 8) % 2400; if (x > 2100) x -= 2400;
+  const puffs = [[-70, 0, 46], [-30, -26, 52], [22, -36, 58], [70, -14, 46], [100, 8, 34], [-104, 14, 30], [10, 6, 54]];
+  const d = puffs.map(([px, py, r]) => `M${px - r} ${py} a${r} ${r * .82} 0 1 0 ${r * 2} 0 a${r} ${r * .82} 0 1 0 ${-r * 2} 0`).join(' ');
+  return G(`<path d="${d}" fill="#c4d2ea" stroke="#9fb0cc" stroke-width="3"/>` + puffs.map(([px, py, r]) => `<ellipse cx="${px - r * .12}" cy="${py - r * .18}" rx="${r * .86}" ry="${r * .66}" fill="#f4f8ff"/>`).join('') + puffs.slice(0, 4).map(([px, py, r]) => `<ellipse cx="${px - r * .3}" cy="${py - r * .38}" rx="${r * .45}" ry="${r * .28}" fill="#fffbea" opacity=".9"/>`).join('') + `<path d="M-110 30 Q0 46 120 28" stroke="#a8b8d4" stroke-width="5" fill="none" opacity=".5"/>`, `translate(${f1(x)} ${y}) scale(${s})`); }
 function mountains(y = 640, col = '#7d86a6', snow = true, seed = 1) {
   // a ridgeline by midpoint displacement between peak / valley keypoints -> jagged, natural
   const ridge = (yy, amp, sd) => {
@@ -360,12 +368,12 @@ function mountains(y = 640, col = '#7d86a6', snow = true, seed = 1) {
     return pts;
   };
   const shape = (pts, yy) => `M-200 ${yy + 160} ` + pts.map(([x, z]) => `L${f1(x)} ${f1(z)}`).join(' ') + ` L2100 ${yy + 160} Z`;
-  const tint = (c, k) => { const n = parseInt(c.slice(1), 16), r = n >> 16, g2 = (n >> 8) & 255, b = n & 255, m = v => Math.round(v + (235 - v) * k); return `rgb(${m(r)},${m(g2)},${m(b)})`; };
+  const tint = (c, k) => { const n = parseInt(c.slice(1), 16), r = n >> 16, g2 = (n >> 8) & 255, b = n & 255, dark = (r * .3 + g2 * .59 + b * .11) < 90, T = dark ? [58, 72, 128] : [235, 235, 235], m = (v, i) => Math.round(v + (T[i] - v) * k * (dark ? .6 : 1)); return `rgb(${m(r, 0)},${m(g2, 1)},${m(b, 2)})`; };
   const layer = (yy, amp, sd, c, far) => {
     const pts = ridge(yy, amp, sd), d = shape(pts, yy);
     let g = P(d, c, far ? 3 : 5) + SH(d, 'litTop', .9) + SH(d, 'darkBot', .8);
     // shaded east faces: from each local peak down the right flank
-    for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) { let j = i; while (j < pts.length - 1 && pts[j + 1][1] >= pts[j][1]) j++; const fl = pts.slice(i, j + 1), v = fl[fl.length - 1], foot = [pts[i][0] + (v[0] - pts[i][0]) * .25, v[1] + (yy + 120 - v[1]) * .7]; g += `<path d="M${fl.map(p => f1(p[0]) + ' ' + f1(p[1])).join(' L')} L${f1(foot[0])} ${f1(foot[1])} Z" fill="#1c1640" opacity="${far ? .12 : .22}"/>`; }
+    for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) { let j = i; while (j < pts.length - 1 && pts[j + 1][1] >= pts[j][1]) j++; const fl = pts.slice(i, j + 1), v = fl[fl.length - 1], foot = [pts[i][0] + (v[0] - pts[i][0]) * .35, pts[i][1] + (v[1] - pts[i][1]) * 1.6 + 30]; g += `<path d="M${fl.map(p => f1(p[0]) + ' ' + f1(p[1])).join(' L')} L${f1(foot[0])} ${f1(foot[1])} Z" fill="#1c1640" opacity="${far ? .12 : .22}"/>`; }
     if (snow) { const sl = yy - amp * (far ? .62 : .72), id = `snw${Math.round(yy)}${sd}`; let zz = `M-200 -400 L2100 -400 L2100 ${f1(sl)}`; for (let x = 2100; x >= -200; x -= 46) zz += ` L${x} ${f1(sl + (hash(x * .1 + sd) - .3) * 40)}`;
       g += `<clipPath id="${id}"><path d="${zz} Z"/></clipPath><g clip-path="url(#${id})"><path d="${d}" fill="#f2f6ff" stroke="${K}" stroke-width="${far ? 3 : 4}"/><path d="${d}" fill="url(#shadeR)" opacity=".7"/></g>`;
       for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < sl - 10 && pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) g += `<path d="M${f1(pts[i][0])} ${f1(pts[i][1])} l40 ${f1(sl - pts[i][1])} l-60 0 Z" fill="#9fb0d8" opacity=".45"/>`; }
@@ -378,18 +386,20 @@ function hills(y = 700, col = '#7fb35a', seed = 3, amp = 60) {
   let d = `M-40 ${y + 300} L-40 ${y}`; for (let i = 0; i <= 8; i++) { const x = i * 250, yy = y - hash(i + seed) * amp; d += ` Q${f1(x - 125)} ${f1(yy - amp * .5)} ${f1(x)} ${f1(yy)}`; } d += ` L1960 ${y + 300} Z`;
   return P(d, col, 5) + SH(d, 'litTop') + SH(d, 'darkBot', .6);
 }
-function ground(y = 760, col = '#9fcf6a', wav = 18) { const d = `M-20 ${y + 10} Q480 ${y - wav} 960 ${y} T1940 ${y - 6} L1940 1100 L-20 1100 Z`; return P(d, col, 6) + SH(d, 'darkBot') + SH(d, 'litTop', .6) + blotches(0, y + 20, 1920, 1080 - y, '#000', 9, Math.round(y), .08) + blotches(0, y + 10, 1920, 200, '#fff', 6, Math.round(y) + 3, .1); }
-function grass(x, y, s = 1, col = '#5e9e3a') { return G(P('M-14 0 L-20 -34 L-6 -8 L0 -44 L6 -8 L22 -32 L14 0', col, 4) + P('M-4 -4 L0 -36', 'none', 2, 'opacity=".5"', '#cfe89a'), `translate(${x} ${y}) scale(${s})`); }
+function ground(y = 760, col = '#9fcf6a', wav = 18) { const d = `M-20 ${y + 10} Q480 ${y - wav} 960 ${y} T1940 ${y - 6} L1940 1100 L-20 1100 Z`; let tf = ''; for (let k = 0; k < 90; k++) { const gx = hash(k * 3.3 + y) * 1960 - 20, gy = y + 14 + Math.pow(hash(k * 5.1 + y), 1.6) * (1080 - y), sc = .4 + (gy - y) / (1080 - y) * .9; tf += `<path d="M${f1(gx - 8 * sc)} ${f1(gy)} l${f1(-4 * sc)} ${f1(-18 * sc)} M${f1(gx)} ${f1(gy)} l${f1(1 * sc)} ${f1(-24 * sc)} M${f1(gx + 8 * sc)} ${f1(gy)} l${f1(5 * sc)} ${f1(-16 * sc)}" stroke="${['#4a7a2a', '#6a9a3a', '#2f5a24'][k % 3]}" stroke-width="${f1(2.2 * sc + 1)}" stroke-linecap="round" opacity=".75"/>`; if (k % 3 === 0) tf += `<ellipse cx="${f1(gx + 20)}" cy="${f1(gy - 2)}" rx="${f1(5 * sc + 2)}" ry="${f1(3 * sc + 1.5)}" fill="#9a9488" opacity=".7"/>`; }
+  return P(d, col, 6) + speckle(d, .45) + tf + SH(d, 'darkBot') + SH(d, 'litTop', .6) + blotches(0, y + 20, 1920, 1080 - y, '#000', 9, Math.round(y), .08) + blotches(0, y + 10, 1920, 200, '#fff', 6, Math.round(y) + 3, .1); }
+function grass(x, y, s = 1, col = '#5e9e3a') { return G(P('M-14 0 L-20 -34 L-6 -8 L0 -44 L6 -8 L22 -32 L14 0', col, 4) + P('M-4 -4 L0 -36 M-12 -4 L-17 -28', 'none', 2, 'opacity=".55"', '#cfe89a') + P('M8 -4 L18 -26', 'none', 2.5, 'opacity=".4"', '#1d3a14'), `translate(${x} ${y}) scale(${s})`); }
 function grassField(y, n = 14, seed = 2, col) { let s = ''; for (let i = 0; i < n; i++) s += grass(60 + hash(i + seed) * 1800, y + hash(i * 7 + seed) * 200, .8 + hash(i * 3) * .6, col); return s; }
 // a layered foliage clump: dark underside, mid body, sunny top blobs
 function foliage(cx, cy, w, h, cols = ['#3f7a34', '#5f9f3f', '#8cc45a'], seed = 1) {
   // clustered clumps: each clump a scalloped blob; dark outlined base -> mid tone shifted to the light -> sunny scallops -> leaf ticks
   const sc = (x, y, r, k) => { const n = 8; let d = ''; for (let i = 0; i <= n; i++) { const a = rad(i * 360 / n + k * 20), rr = r * (.86 + hash(i + k * 7 + seed) * .2), px = x + Math.cos(a) * rr, py = y + Math.sin(a) * rr * .86; if (!i) d = `M${f1(px)} ${f1(py)}`; else { const am = rad((i - .5) * 360 / n + k * 20), cr = rr * 1.28; d += ` Q${f1(x + Math.cos(am) * cr)} ${f1(y + Math.sin(am) * cr * .86)} ${f1(px)} ${f1(py)}`; } } return d + ' Z'; };
-  const cl = []; for (let i = 0; i < 15; i++) { const a = hash(i * 3 + seed) * Math.PI * 2, rr = Math.sqrt(hash(i * 5 + seed)); cl.push([cx + Math.cos(a) * rr * w * .4, cy + Math.sin(a) * rr * h * .36, (.13 + hash(i * 7 + seed) * .09) * w]); }
+  const cl = []; for (let i = 0; i < 22; i++) { const a = hash(i * 3 + seed) * Math.PI * 2, rr = Math.sqrt(hash(i * 5 + seed)); cl.push([cx + Math.cos(a) * rr * w * .4, cy + Math.sin(a) * rr * h * .36, (.13 + hash(i * 7 + seed) * .09) * w]); }
   cl.sort((a, b) => a[1] - b[1]);
   let s = `<path d="${cl.map((c, i) => sc(c[0], c[1], c[2], i)).join(' ')}" fill="${cols[0]}" stroke="${K}" stroke-width="5" stroke-linejoin="round"/>`;
   s += `<path d="${cl.map((c, i) => sc(c[0] - c[2] * .16, c[1] - c[2] * .2, c[2] * .78, i + 3)).join(' ')}" fill="${cols[1]}"/>`;
   s += `<path d="${cl.filter(c => c[1] < cy + h * .05).map((c, i) => sc(c[0] - c[2] * .3, c[1] - c[2] * .38, c[2] * .4, i + 5)).join(' ')}" fill="${cols[2]}"/>`;
+  for (let i = 0; i < 70; i++) { const c = cl[i % cl.length], a = hash(i * 17 + seed) * 6.28, r = c[2] * hash(i * 19 + seed) * .85, lx = c[0] + Math.cos(a) * r, ly = c[1] + Math.sin(a) * r * .8, up = ly < c[1]; s += `<ellipse cx="${f1(lx)}" cy="${f1(ly)}" rx="${f1(5 + hash(i * 23) * 4)}" ry="${f1(3 + hash(i * 29) * 2)}" fill="${up ? cols[2] : cols[0]}" opacity="${up ? .9 : .7}" transform="rotate(${f1(hash(i * 31) * 180)} ${f1(lx)} ${f1(ly)})"/>`; }
   for (let i = 0; i < 30; i++) { const c = cl[i % cl.length], a = hash(i * 11 + seed) * 6.28, r = c[2] * hash(i * 13 + seed) * .8; s += P(`M${f1(c[0] + Math.cos(a) * r)} ${f1(c[1] + Math.sin(a) * r)} q4 3 9 1`, 'none', 2.5, 'opacity=".4"', '#1d3a1a'); }
   return s + `<ellipse cx="${cx}" cy="${cy + h * .32}" rx="${w * .42}" ry="${h * .12}" fill="#1c1640" opacity=".18"/>`;
 }
@@ -457,17 +467,19 @@ function stipple(x, y, w, h, col = '#5a3c24', n = 220, seed = 3, op = .35) { let
 function grassHut(x, y, s = 1, t = 0) {
   const d = 'M-150 0 Q-160 -150 0 -170 Q160 -150 150 0 Z';
   let st = ''; for (let i = 0; i < 16; i++) { const a = rad(200 + i * 9), r = 150; st += P(`M${f1(Math.cos(a) * r * .2)} ${f1(-160 + i % 2 * 6)} Q${f1(Math.cos(a) * r * .9)} ${f1(-110)} ${f1(Math.cos(a) * r)} ${f1(-4)}`, 'none', 3, 'opacity=".55"', '#8a6420'); }
-  return G(P(d, 'url(#thatch)', 6) + st + SH(d, 'shadeR') + SH(d, 'litTop') + P('M-44 0 Q-46 -80 0 -86 Q46 -80 44 0 Z', '#22170f', 5) + P('M-150 -6 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0', 'none', 4, '', '#a7792a'), `translate(${x} ${y}) scale(${s})`);
+  for (let i = 0; i < 170; i++) { const v = Math.sqrt(hash(i * 3.7)), a = rad(180 + hash(i * 5.3) * 180), rx = 150 * v, ry = 165 * v, px = Math.cos(a) * rx * .98, py = Math.sin(a) * ry * .95, ang = Math.atan2(py, px), L = 10 + hash(i * 7) * 12; if (py > -6) continue; st += `<line x1="${f1(px)}" y1="${f1(py)}" x2="${f1(px + Math.cos(ang) * L)}" y2="${f1(py + Math.sin(ang) * L)}" stroke="${['#8a5c18', '#f3cf7a', '#b07e2a'][i % 3]}" stroke-width="2" opacity=".7"/>`; }
+  return G(P(d, 'url(#thatch)', 6) + st + speckle(d, .7) + SH(d, 'shadeR') + SH(d, 'litTop') + P('M-44 0 Q-46 -80 0 -86 Q46 -80 44 0 Z', '#22170f', 5) + P('M-150 -6 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0', 'none', 4, '', '#a7792a'), `translate(${x} ${y}) scale(${s})`);
 }
 function wheat(x, y, s = 1, t = 0) { const sw = Math.sin(t * 1.6 + x * .02) * 6; let g = P(`M0 0 Q2 -60 ${sw} -120`, 'none', 4); for (let i = 0; i < 5; i++) { const yy = -96 - i * 12; g += E(sw - 7, yy, 6, 10, '#e7bb4a', 3, `transform="rotate(-25 ${sw - 7} ${yy})"`) + E(sw + 7, yy, 6, 10, '#e7bb4a', 3, `transform="rotate(25 ${sw + 7} ${yy})"`); } g += E(sw, -158, 5, 10, '#e7bb4a', 3); return G(g, `translate(${f1(x)} ${f1(y)}) scale(${s})`); }
 function field(y, t, n = 26) { let s = P(`M-20 ${y} L1940 ${y - 20} L1940 1100 L-20 1100 Z`, '#d9b95e', 6); for (let i = 0; i < n; i++) s += wheat(40 + i * 75, y + 40 + (i % 3) * 30, .9, t); return s; }
 // ready-made painterly backdrops: savanna | savannaDusk | savannaNight | dawn | cave | caveNight | cliff | camp | snowCave
 function backdrop(kind = 'savanna', t = 0) {
+  if (kind === 'rainforest' || kind === 'jungle') return rainforest(t, { cave: kind === 'rainforest' });
   const night = kind === 'savannaNight' || kind === 'camp' || kind === 'caveNight';
   if (kind === 'cave') return caveInside(t, true);
   if (kind === 'caveNight') return caveInside(t, true) + `<rect width="1920" height="1080" fill="#0a1030" opacity=".25"/>`;
   if (kind === 'savannaDusk') return sky('skyDusk') + `<circle cx="1500" cy="640" r="420" fill="url(#sunL)"/>` + C(1500, 640, 70, '#ffd27a', 0) + mountains(650, '#7a5e8c', false, 4) + hills(720, '#8f8a4a', 6, 40) + ground(780, '#b59a4a') + acacia(1560, 800, 1.1) + acacia(300, 780, .7) + grassField(800, 18, 3, '#7a7a2a') + grain(.4) + vignette();
-  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + treeLine(712, '#1d2a44', 4, 26, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + grain(.35);
+  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + treeLine(712, '#1d2a44', 4, 26, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + `<rect width="1920" height="1080" fill="#1a2350" opacity=".38" style="mix-blend-mode:multiply"/>` + grain(.35);
   if (kind === 'dawn') return sky('skyDawn') + `<circle cx="1400" cy="760" r="520" fill="url(#sunL)" opacity=".7"/>` + mountains(640, '#8a92b0', false, 4) + hills(720, '#6f8a68', 6, 40) + ground(790, '#7e9a62') + grassField(810, 16, 3, '#5b7a48') + grain(.35);
   if (kind === 'cliff') return sky('skyDay') + cloud(400, 160, 1, t) + cloud(1400, 120, .8, t) + hills(760, '#6faa52', 2, 50) + P('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', '#b7a48c', 7) + `<path d="M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z" fill="url(#rockT)"/>` + SH('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', 'shadeR') + grain(.35);
   if (kind === 'snowCave') return sky('skyGrey') + snow(t, 50) + mountains(600, '#a9b6c8', true, 8) + ground(800, '#eef3f8', 10) + caveMouth(960, 820, 1.4) + grain(.25);
@@ -499,8 +511,10 @@ function chimp(x, y, s = 1, o = {}, t = 0) {
   let g = E(0, -80 + br, 78, 70, fur, 6) + SH('M-78 -80 a78 70 0 1 0 156 0 a78 70 0 1 0 -156 0', 'shadeR');
   g += E(-62, -20, 34, 22, fur, 6) + E(64, -20, 34, 22, fur, 6);
   g += C(-58, -170, 20, face, 5) + C(58, -170, 20, face, 5) + C(0, -175, 62, fur, 6) + E(0, -160, 46, 44, face, 5) + E(0, -136, 34, 24, '#e6c49c', 4);
-  g += asleep ? P('M-28 -176 q10 8 20 0 M8 -176 q10 8 20 0', 'none', 4.5) : C(-18, -178, 6, K, 0) + C(18, -178, 6, K, 0);
-  g += P('M-12 -132 Q0 -124 12 -132', 'none', 4) + C(-6, -150, 3, K, 0) + C(6, -150, 3, K, 0);
+  const yuck = o.chew || o.expr === 'yuck';
+  g += asleep ? P('M-28 -176 q10 8 20 0 M8 -176 q10 8 20 0', 'none', 4.5) : yuck ? P('M-28 -186 L-12 -178 L-28 -170 M28 -186 L12 -178 L28 -170', 'none', 5) : C(-18, -178, 6, K, 0) + C(18, -178, 6, K, 0);
+  g += (yuck ? P(`M-16 -132 q4 ${f1(-5 + Math.sin(t * 9) * 3)} 8 0 q4 5 8 0 q4 -5 8 0`, 'none', 4) : P('M-12 -132 Q0 -124 12 -132', 'none', 4)) + C(-6, -150, 3, K, 0) + C(6, -150, 3, K, 0);
+  if (o.chew) { const cw = Math.sin(t * 9) * 3; g += P(`M-70 -60 Q-40 -110 ${f1(-6 + cw)} -134`, 'none', 9, '', '#7a8a3a') + P(`M-70 -60 Q-40 -110 ${f1(-6 + cw)} -134`, 'none', 4, '', '#e8e0b0') + E(-60, -70, 22, 18, fur, 5) + P('M-90 -40 l-26 -10 M-84 -30 l-22 6', 'none', 4, '', '#5a8a3a'); }
   return G(g + (asleep && o.zzz !== false ? zzz(80, -240, .8, t) : ''), `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
 }
 // a tree with a leafy sleeping nest in its crown (o.chimp: a chimp asleep in it)
@@ -645,3 +659,73 @@ function village(t = 0, o = {}) {
   s += dirt(700, '#c58a48');
   return s;
 }
+
+// ---------- v2.3: rainforest + limestone cave (Borneo / Sumatra), apes, healing props, Ötzi kit ----------
+// tattoo dashes (Ötzi-style groups of short parallel lines), light on the black limbs by default
+function tattooDashes(x, y, s = 1, n = 3, rot = 0, col = '#d8ecff') { let g = ''; for (let i = 0; i < n; i++) g += Ln(-9, (i - (n - 1) / 2) * 7, 9, (i - (n - 1) / 2) * 7, 3, col); return G(g, `translate(${f1(x)} ${f1(y)}) rotate(${rot}) scale(${s})`); }
+function palm(x, y, s = 1, t = 0) {
+  const sw = Math.sin(t * 1.2 + x * .01) * 4; let g = P(`M0 0 Q-30 -160 ${f1(10 + sw)} -330`, 'none', 22, '', '#6a5232') + P(`M0 0 Q-30 -160 ${f1(10 + sw)} -330`, 'none', 22, 'stroke-dasharray="4 26" opacity=".5"', '#3e2e1c');
+  for (let i = 0; i < 8; i++) { const a = rad(-170 + i * 26) , L = 170 + (i % 3) * 30, ex = Math.cos(a) * L, ey = Math.sin(a) * L * .55 + 40, mx = ex * .5, my = ey * .5 - 50;
+    g += G(P(`M0 0 Q${f1(mx)} ${f1(my - 20)} ${f1(ex)} ${f1(ey)} Q${f1(mx)} ${f1(my + 16)} 0 0 Z`, i % 2 ? '#3f8a3a' : '#2f7a3a', 4) + P(`M0 0 Q${f1(mx)} ${f1(my - 2)} ${f1(ex)} ${f1(ey)}`, 'none', 2.5, 'opacity=".5"', '#1d4a20'), `translate(${f1(10 + sw)} -330)`); }
+  return G(g + C(10 + sw, -326, 14, '#5a4a2a', 4), `translate(${x} ${y}) scale(${s})`);
+}
+function fern(x, y, s = 1, flip = 1) { let g = ''; for (let k = 0; k < 5; k++) { const a = -150 + k * 30, L = 110 - Math.abs(k - 2) * 14, ex = Math.cos(rad(a)) * L, ey = Math.sin(rad(a)) * L; g += P(`M0 0 Q${f1(ex * .5)} ${f1(ey - 30)} ${f1(ex)} ${f1(ey)}`, 'none', 3, '', '#2d6a32'); for (let i = 1; i < 7; i++) { const u = i / 7, px = ex * u, py = ey * u - Math.sin(u * Math.PI) * 30 * u; g += E(px, py, 11 * (1 - u * .5), 4.5, '#4a9a48', 0, `transform="rotate(${f1(a + 60)} ${f1(px)} ${f1(py)})"`) + E(px, py, 11 * (1 - u * .5), 4.5, '#3a8a3e', 0, `transform="rotate(${f1(a - 60)} ${f1(px)} ${f1(py)})"`); } } return G(g, `translate(${x} ${y}) scale(${flip * s} ${s})`); }
+function vine(x, y, len = 300, t = 0, seed = 1) { const sw = Math.sin(t * 1.1 + seed) * 10; let g = P(`M0 0 Q${f1(sw + 20)} ${f1(len * .5)} ${f1(sw)} ${len}`, 'none', 4, '', '#2f5a28'); for (let i = 1; i < 9; i++) { const u = i / 9, px = sw * u + Math.sin(u * 3) * 10, py = len * u; g += P(`M${f1(px)} ${f1(py)} q${i % 2 ? 14 : -14} -6 ${i % 2 ? 20 : -20} 6 q${i % 2 ? -10 : 10} 4 ${i % 2 ? -20 : 20} -6 Z`, '#4f9a3e', 2.5); } return G(g, `translate(${x} ${y})`); }
+// a pale limestone cliff with vertical streaks and an arched cave mouth (x = mouth centre on the ground line y)
+function limestoneCave(x, y, s = 1, o = {}) {
+  const cliff = 'M-520 0 L-500 -360 Q-460 -520 -300 -560 Q-120 -640 80 -600 Q300 -620 420 -500 Q520 -420 540 -240 L560 0 Z', mouth = 'M-170 0 Q-190 -230 -40 -290 Q120 -310 170 -170 Q190 -80 180 0 Z';
+  let g = P(cliff, '#c9c6b4', 6) + `<path d="${cliff}" fill="url(#rockT)"/>` + SH(cliff, 'litTop') + SH(cliff, 'shadeR') + speckle(cliff, .7);
+  for (let i = 0; i < 16; i++) { const sx = -460 + i * 62 + hash(i) * 20, sy = -520 + hash(i * 3) * 100; g += P(`M${f1(sx)} ${f1(sy)} q${f1((hash(i * 5) - .5) * 20)} ${f1(180 + hash(i * 7) * 200)} ${f1((hash(i * 9) - .5) * 10)} ${f1(300 + hash(i * 11) * 200)}`, 'none', 3, 'opacity=".35"', '#6a6a5a'); }
+  for (const [fx, fy, fw] of [[-420, -470, 150], [-260, -560, 170], [-60, -610, 150], [130, -610, 170], [320, -560, 150], [460, -430, 120], [-470, -300, 90], [500, -280, 90]]) g += foliage(fx, fy, fw, fw * .55, ['#2f6a34', '#4a8a3a', '#7ab352'], Math.round(fx));
+  for (const [lx, ly] of [[-480, -180], [470, -140], [-300, -420], [380, -380]]) g += fern(lx, ly, .6, lx < 0 ? 1 : -1);
+  g += P(mouth, '#1c1712', 5) + `<path d="M-130 0 Q-140 -190 -30 -240 Q90 -256 130 -150 Q146 -70 140 0 Z" fill="#0b0806"/>`;
+  for (let i = 0; i < 5; i++) g += vine(-150 + i * 70, -250 - hash(i) * 30, 120 + hash(i * 3) * 90, o.t || 0, i);
+  return G(g, `translate(${x} ${y}) scale(${s})`);
+}
+// misty dawn rainforest: karst towers in the haze, a limestone cliff + cave (o.cave), giant trees, palms, ferns, vines, mist bands
+function rainforest(t = 0, o = {}) {
+  let s = `<rect width="1920" height="1080" fill="url(#skyDawn)"/><rect width="1920" height="1080" fill="#a8dcc0" opacity=".3"/>` + lightWash(1500, 200, 1200, 'sunL', .45);
+  let far = ''; for (let i = 0; i < 7; i++) { const x = i * 300 + hash(i + 3) * 120, w = 120 + hash(i * 5) * 90, h = 260 + hash(i * 7) * 260, d = `M${f1(x - w)} 720 Q${f1(x - w * 1.05)} ${f1(720 - h)} ${f1(x)} ${f1(720 - h - 30)} Q${f1(x + w * 1.05)} ${f1(720 - h)} ${f1(x + w)} 720 Z`; far += P(d, '#9fb8b0', 3) + SH(d, 'shadeR', .7) + foliage(x, 720 - h - 10, w * 1.7, 70, ['#6a9a80', '#80ac90', '#a0c8a8'], i); }
+  s += blurLayer(far, 3) + haze(700, 220, false, 1);
+  s += blurLayer(oak(160, 760, 1.3) + palm(1500, 780, 1.1, t) + oak(1780, 770, 1.2) + hills(720, '#3f7a42', 4, 30), 2);
+  if (o.cave !== false) s += limestoneCave(960, 800, .95, { t });
+  s += haze(560, 140, false, .6);
+  const fl = 'M-20 790 Q600 770 1200 800 T1940 785 L1940 1100 L-20 1100 Z'; s += P(fl, '#3f6a34', 5) + SH(fl, 'darkBot') + speckle(fl, .6) + blotches(0, 800, 1920, 280, '#203a1a', 10, 6, .25) + blotches(0, 790, 1920, 120, '#8ac070', 6, 8, .18);
+  s += fern(120, 880, 1.2) + fern(1820, 900, 1.3, -1) + fern(560, 940, .9) + fern(1380, 950, 1, -1) + vine(260, -20, 380, t, 2) + vine(1660, -20, 300, t, 5) + vine(1720, -20, 460, t, 7);
+  return s + grain(.35) + vignette();
+}
+// a big orange male orangutan sitting (o: { mood: 'neutral'|'grumpy'|'proud', scratch, badge, clipboard, flip })
+function orangutan(x, y, s = 1, o = {}, t = 0) {
+  const fur = '#c8641e', dk = '#8a3e10', face = '#6a4a3a', br = Math.sin(t * 1.4) * 2;
+  let g = E(0, -130 + br, 120, 110, fur, 6) + SH('M-120 -130 a120 110 0 1 0 240 0 a120 110 0 1 0 -240 0', 'shadeR');
+  for (let i = 0; i < 14; i++) g += P(`M${f1(-90 + i * 14)} ${f1(-60 + hash(i) * 30)} q${f1((hash(i * 3) - .5) * 10)} 30 ${f1((hash(i * 5) - .5) * 14)} 56`, 'none', 4, 'opacity=".5"', dk);
+  g += P('M-110 -150 Q-200 -60 -150 10', 'none', 46, '', K) + P('M-110 -150 Q-200 -60 -150 10', 'none', 36, '', fur) + P('M110 -150 Q200 -60 150 10', 'none', 46, '', K) + P('M110 -150 Q200 -60 150 10', 'none', 36, '', fur);
+  g += E(-150, 14, 30, 18, face, 5) + E(150, 14, 30, 18, face, 5) + E(-60, 0, 40, 20, fur, 5) + E(60, 0, 40, 20, fur, 5);
+  g += E(0, -270 + br, 72, 66, fur, 6) + E(0, -256 + br, 128, 76, '#9a6a4a', 5) + `<ellipse cx="0" cy="${-256 + br}" rx="110" ry="60" fill="none" stroke="#7a4a30" stroke-width="4" opacity=".5"/>`;     // the wide flat cheek pads framing the face
+  g += E(0, -258 + br, 58, 56, face, 5) + E(0, -222 + br, 40, 22, '#7a5a48', 4);
+  const grumpy = o.mood === 'grumpy', proud = o.mood === 'proud';
+  g += C(-20, -276 + br, 6, K, 0) + C(20, -276 + br, 6, K, 0) + C(-22, -279 + br, 2, '#fff', 0) + C(18, -279 + br, 2, '#fff', 0);
+  g += grumpy ? P(`M-38 ${-298 + br} L-8 ${-288 + br} M38 ${-298 + br} L8 ${-288 + br}`, 'none', 6) : P(`M-38 ${-296 + br} Q-22 ${-304 + br} -8 ${-296 + br} M38 ${-296 + br} Q22 ${-304 + br} 8 ${-296 + br}`, 'none', 5);
+  g += grumpy ? P(`M-20 ${-212 + br} Q0 ${-224 + br} 20 ${-212 + br}`, 'none', 5) : proud ? P(`M-24 ${-218 + br} Q0 ${-200 + br} 24 ${-218 + br}`, 'none', 5) : P(`M-16 ${-214 + br} L16 ${-214 + br}`, 'none', 5);
+  if (o.scratch) g += P(`M-70 ${-256 + br} l22 10 M-74 ${-244 + br} l24 10 M-70 ${-232 + br} l20 8`, 'none', 3.5, '', '#d8645a');
+  if (o.badge) g += P(`M-60 ${-200 + br} Q0 ${-150 + br} 60 ${-200 + br}`, 'none', 4, '', '#4f8a38') + G(P('M0 -18 L5 -6 L18 -6 L8 2 L12 15 L0 7 L-12 15 L-8 2 L-18 -6 L-5 -6 Z', '#ffd93b', 3.5), `translate(0 ${-160 + br})`);
+  if (o.clipboard) g += G(P('M-40 -60 L40 -60 L44 50 L-44 50 Z', '#5aa04a', 5) + `<rect x="-18" y="-68" width="36" height="14" rx="4" fill="#8a6a3a" stroke="${K}" stroke-width="3"/>` + Ln(-26, -30, 26, -30, 3, '#2f6a28') + Ln(-26, -10, 20, -10, 3, '#2f6a28') + Ln(-26, 10, 24, 10, 3, '#2f6a28'), `translate(150 -60) rotate(-10)`);
+  return G(g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
+}
+// a tied bundle of healing herbs (leaf sprigs fanned out, twine wraps)
+function herbBundle(x, y, s = 1, rot = 0) { let g = ''; const cols = ['#4f9a3e', '#6ab04a', '#3d7a34', '#8ac060', '#5a8a3a']; for (let i = 0; i < 9; i++) { const a = -40 + i * 10, L = 120 + (i % 3) * 20; g += G(P(`M0 0 L0 ${-L}`, 'none', 3.5, '', '#4a6a2a') + E(0, -L, 16, 30, cols[i % 5], 3.5) + E(-12, -L * .7, 10, 18, cols[(i + 2) % 5], 3) + E(12, -L * .55, 10, 18, cols[(i + 3) % 5], 3) + (i % 4 === 1 ? C(0, -L - 30, 7, '#f2d24a', 3) : ''), `rotate(${a})`); } g += P('M-14 -20 L14 -20 L12 30 L-12 30 Z', '#7a5a2a', 4) + P('M-16 -12 Q0 -6 16 -12 M-16 0 Q0 6 16 0 M-14 12 Q0 18 14 12', 'none', 4, '', '#e8d8a0'); return G(g, `translate(${x} ${y}) rotate(${rot}) scale(${s})`); }
+// a friendly cartoon skull (not gory) with o.holes healed round openings (smooth thick rim = healed bone)
+function skull(x, y, s = 1, o = {}) {
+  const d = 'M-100 20 Q-120 -120 0 -140 Q120 -120 100 20 Q96 60 60 70 L60 100 L-60 100 L-60 70 Q-96 60 -100 20 Z';
+  let g = P(d, '#f2ead6', 6) + SH(d, 'shadeR') + SH(d, 'litTop');
+  g += E(-40, 10, 26, 24, '#4a3a30', 4) + E(40, 10, 26, 24, '#4a3a30', 4) + P('M0 40 L-12 62 L12 62 Z', '#4a3a30', 3);
+  for (let i = 0; i < 5; i++) g += Ln(-40 + i * 20, 80, -40 + i * 20, 100, 3);
+  const HP = [[42, -112, 13], [-58, -88, 10], [10, -128, 9]], n = o.holes ?? 1; for (let i = 0; i < Math.min(n, 3); i++) { const [hx, hy, r] = HP[i]; g += `<ellipse cx="${hx}" cy="${hy}" rx="${r + 7}" ry="${r + 5}" fill="#e2d4b4" stroke="#b8a888" stroke-width="3"/>` + E(hx, hy, r * .7, r * .55, '#7a6a54', 0); }
+  return G(g, `translate(${x} ${y}) rotate(${o.rot || 0}) scale(${s})`);
+}
+// Ötzi kit: birch fungus lumps on a leather cord, and the wooden backpack frame (a bent hazel rod + two crossboards)
+function birchFungus(x, y, s = 1) { const lump = (cx, cy, r, c) => P(`M${cx - r} ${cy} Q${cx - r * 1.1} ${cy - r * .9} ${cx - r * .2} ${cy - r} Q${cx + r * .9} ${cy - r * 1.05} ${cx + r} ${cy - r * .1} Q${cx + r * 1.05} ${cy + r * .9} ${cx + r * .1} ${cy + r * .95} Q${cx - r * .9} ${cy + r} ${cx - r} ${cy} Z`, c, 4.5) + `<path d="M${cx - r * .5} ${cy - r * .3} q${r * .3} -${r * .25} ${r * .6} 0" stroke="#fff" stroke-width="3" fill="none" opacity=".45"/>`; return G(P('M-110 -70 Q0 -20 110 -70', 'none', 5, '', '#6a4424') + P('M-44 -44 L-46 10 M48 -44 L50 24', 'none', 3.5, '', '#6a4424') + C(-44, -44, 6, '#6a4424', 0) + C(48, -44, 6, '#6a4424', 0) + lump(-46, 30, 26, '#cbb48a') + lump(50, 46, 22, '#b8946a') + speckle(`M-72 30 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0`, .6), `translate(${x} ${y}) scale(${s})`); }
+function backpackFrame(x, y, s = 1) { return G(P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 18, '', '#8a6a3a') + P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 6, 'opacity=".4"', '#c8a070') + `<rect x="-80" y="-120" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/><rect x="-80" y="-230" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/>` + lashing(-70, -110, 24, 90) + lashing(70, -110, 24, 90) + lashing(-70, -220, 24, 90) + lashing(70, -220, 24, 90), `translate(${x} ${y}) scale(${s})`); }
+
+/* __INK_EXPORTS__ */ Object.assign(globalThis, { K, clamp, ease, easeIO, back, rad, f1, G, P, C, Ln, E, SH, popAt, fade, hash, DEFS, ik, eyes, mouth, FACE_ALIAS, faceInk, hairInk, boneClip, headInk, PS, jaw, handDot, tunicInk, upperInk, person, lying, moss, held, sky, paper, grain, vignette, haze, blotches, sun, moon, fullMoon, stars, cloud, mountains, hills, ground, grass, grassField, foliage, acacia, pine, poplar, oak, bush, rock, caveMouth, campfire, fireLight, hearth, caveInside, rain, snow, hut, treeLine, lightWash, stipple, grassHut, wheat, field, backdrop, zzz, grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator, wristband, clock, hourglass, scienceCard, tooth, bug, sugarCube, acorn, flint, bowdrill, honey, bee, mold, dna, microscope, bowl, loaf, pot, chair, esc, headline, hand, placeTag, yearBanner, arrow, cross, check, card, lens, blurLayer, speckle, warmGrade, lake, pineForest, pole, lashing, thatchHut, dirt, spear, basket, logs, swoosh, spinRings, dust, village, tattooDashes, palm, fern, vine, limestoneCave, rainforest, orangutan, herbBundle, skull, birchFungus, backpackFrame });
+})();
