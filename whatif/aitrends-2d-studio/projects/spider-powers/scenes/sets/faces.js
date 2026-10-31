@@ -103,7 +103,25 @@ export function giantFace(g, cx, cy, r, o = {}) {
   if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 11; i++) {          // big mop of curls around the top of the head
     const a = Math.PI * (0.98 + i * 0.104); circle(g, Math.cos(a) * r * 0.93, Math.sin(a) * r * 0.93, r * (0.3 + (i % 2) * 0.05), st.ink);
   }
+  const spiky = who === 'HERO' && HERO_FIT.head === 'spiky' && HERO_FIT.hair;              // ep 4: messy sandy-brown hair sticking up at the back
+  if (spiky) {
+    g.fillStyle = HERO_FIT.hair;
+    const tufts = [[1.12, 0.16, -0.25], [1.26, 0.26, -0.15], [1.4, 0.2, 0.1], [1.52, 0.34, 0.3], [1.63, 0.28, 0.45], [1.74, 0.38, 0.6], [1.84, 0.22, 0.5]];  // [angle/π, length/r, lean] — messier at the back (right)
+    for (const [ap, lp, lean] of tufts) {
+      const a = Math.PI * ap, L = r * lp, w = 0.17, tip = a + lean * 0.35;
+      g.beginPath(); g.moveTo(Math.cos(a - w) * r * 0.92, Math.sin(a - w) * r * 0.92);
+      g.quadraticCurveTo(Math.cos(a) * (r + L * 0.5), Math.sin(a) * (r + L * 0.5), Math.cos(tip) * (r + L), Math.sin(tip) * (r + L));
+      g.lineTo(Math.cos(a + w) * r * 0.92, Math.sin(a + w) * r * 0.92); g.closePath(); g.fill();
+    }
+  }
   circle(g, 0, 0, r, st.ink);
+  if (spiky) {                                                                              // sandy fringe over the forehead
+    g.save(); g.beginPath(); g.arc(0, 0, r * 1.01, 0, Math.PI * 2); g.clip();
+    g.fillStyle = HERO_FIT.hair; g.beginPath(); g.moveTo(-r * 1.1, -r * 0.3);
+    for (let i = 0; i <= 6; i++) { const x = -r * 1.05 + i * r * 0.35; g.lineTo(x, -r * [0.55, 0.62, 0.5, 0.64, 0.52, 0.6, 0.45][i]); }
+    g.lineTo(r * 1.1, -r * 1.2); g.lineTo(-r * 1.1, -r * 1.2); g.closePath(); g.fill();
+    g.restore();
+  }
   if (who === 'HERO' && HERO_FIT.head === 'curly') for (let i = 0; i < 9; i++) {           // curl highlights so the mop reads on a black head
     const a = Math.PI * (1.04 + i * 0.115); g.strokeStyle = alpha(shade(st.ink, 0.6), 0.6); g.lineWidth = r * 0.03; g.beginPath(); g.arc(Math.cos(a) * r * 0.95, Math.sin(a) * r * 0.95, r * 0.2, a - 1.2, a + 0.6); g.stroke();
   }
