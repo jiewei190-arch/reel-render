@@ -55,8 +55,8 @@ const DEFS = `<defs>
 <radialGradient id="vigN" cx=".5" cy=".5" r=".72"><stop offset=".5" stop-color="#05081a" stop-opacity="0"/><stop offset="1" stop-color="#05081a" stop-opacity=".6"/></radialGradient>
 <radialGradient id="headG" cx=".4" cy=".36" r=".72"><stop offset="0" stop-color="#ffffff"/><stop offset=".62" stop-color="#f6f3ec"/><stop offset="1" stop-color="#d9d3c6"/></radialGradient>
 <linearGradient id="litTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<linearGradient id="darkBot" x1="0" y1="0" x2="0" y2="1"><stop offset=".35" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".32"/></linearGradient>
-<linearGradient id="shadeR" x1="0" y1="0" x2="1" y2="0"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
+<linearGradient id="darkBot" x1="0" y1="0" x2="0" y2="1"><stop offset=".35" stop-color="#1c1640" stop-opacity="0"/><stop offset="1" stop-color="#1c1640" stop-opacity=".4"/></linearGradient>
+<linearGradient id="shadeR" x1="0" y1="0" x2="1" y2="0"><stop offset=".45" stop-color="#1c1640" stop-opacity="0"/><stop offset="1" stop-color="#1c1640" stop-opacity=".38"/></linearGradient>
 <linearGradient id="shadeL" x1="1" y1="0" x2="0" y2="0"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
 <linearGradient id="litL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <linearGradient id="hazeW" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".6" stop-color="#fff" stop-opacity=".42"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
@@ -168,21 +168,24 @@ function hairInk(R, seed, col, t, style) {
   let s = '';
   if (style === 'none') return s;
   if (style === 'bun') return C(0, -R * 1.12, R * .34, col, 5) + P(`M${-R * .96} ${-R * .14} Q${-R * .86} ${-R * 1.04} 0 ${-R * 1.02} Q${R * .86} ${-R * 1.04} ${R * .96} ${-R * .14} Q${R * .5} ${-R * .62} 0 ${-R * .56} Q${-R * .5} ${-R * .62} ${-R * .96} ${-R * .14} Z`, col, 5);
-  const n = 34, sp = [];
+  // a dense tuft on TOP of the head: dozens of thick tapered strokes rising from a crown cap (nothing below ear level)
+  const n = 42, sp = [];
   for (let i = 0; i < n; i++) {
-    const a = rad(-190 + i * (200 / (n - 1)) + (hash(i + seed) - .5) * 9), w = rad(3.2 + hash(i * 3 + seed) * 3.4);
-    const L = R * (1.3 + hash(i * 7 + seed) * .48) * (Math.abs(i - (n - 1) / 2) > 11 ? .86 : 1), bend = (hash(i * 5 + seed) - .5) * .5 + Math.sin(t * 2.2 + i) * .02;
-    const r0 = R * .78, b1 = [Math.cos(a - w) * r0, Math.sin(a - w) * r0], b2 = [Math.cos(a + w) * r0, Math.sin(a + w) * r0], tip = [Math.cos(a + bend) * L, Math.sin(a + bend) * L];
-    const m = [Math.cos(a + bend * .4) * (r0 + L) / 2, Math.sin(a + bend * .4) * (r0 + L) / 2];
+    const u = i / (n - 1), a = rad(-156 + u * 132 + (hash(i + seed) - .5) * 10), w = rad(4 + hash(i * 3 + seed) * 4.5);
+    const mid = 1 - Math.abs(u - .5) * 1.3, L = R * (1.1 + mid * .55 + hash(i * 7 + seed) * .32), bend = (hash(i * 5 + seed) - .5) * .55 + (u - .5) * .25 + Math.sin(t * 2.2 + i) * .02;
+    const r0 = R * .74, b1 = [Math.cos(a - w) * r0, Math.sin(a - w) * r0], b2 = [Math.cos(a + w) * r0, Math.sin(a + w) * r0], tip = [Math.cos(a + bend) * L, Math.sin(a + bend) * L];
+    const m = [Math.cos(a + bend * .45) * (r0 + L) / 2, Math.sin(a + bend * .45) * (r0 + L) / 2];
     sp.push(`M${f1(b1[0])} ${f1(b1[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(tip[0])} ${f1(tip[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(b2[0])} ${f1(b2[1])} Z`);
   }
-  s += `<path d="${sp.join(' ')}" fill="${col}" stroke="${col}" stroke-width="1.5" stroke-linejoin="round"/>`;
-  // crown: a dark mass on the top of the head with an uneven hairline + a few strands drooping on the forehead
-  let d = `M${f1(-R * 1.04)} ${f1(-R * .2)} Q${f1(-R * 1.1)} ${f1(-R * 1.08)} 0 ${f1(-R * 1.1)} Q${f1(R * 1.1)} ${f1(-R * 1.08)} ${f1(R * 1.04)} ${f1(-R * .2)}`;
-  const fr = 10; for (let i = 0; i <= fr; i++) { const x = R * .95 - i * (1.9 * R / fr), y = -R * .56 + Math.pow(Math.abs(x) / R, 2) * R * .42 + (hash(i + seed) - .5) * R * .1; d += ` L${f1(x)} ${f1(y)}`; }
+  s += `<path d="${sp.join(' ')}" fill="${col}" stroke="${col}" stroke-width="1.2" stroke-linejoin="round"/>`;
+  // crown cap with an uneven hairline high on the forehead, sides ending above the ears
+  let d = `M${f1(-R * .9)} ${f1(-R * .4)} Q${f1(-R * .98)} ${f1(-R * 1.08)} 0 ${f1(-R * 1.1)} Q${f1(R * .98)} ${f1(-R * 1.08)} ${f1(R * .9)} ${f1(-R * .4)}`;
+  const fr = 12; for (let i = 0; i <= fr; i++) { const x = R * .88 - i * (1.76 * R / fr), y = -R * .6 + Math.pow(Math.abs(x) / R, 2) * R * .26 + (i % 2 ? R * .07 : 0) + (hash(i + seed) - .5) * R * .06; d += ` L${f1(x)} ${f1(y)}`; }
   s += `<path d="${d} Z" fill="${col}" stroke="${col}" stroke-width="3" stroke-linejoin="round"/>`;
-  for (let i = 0; i < 5; i++) { const x = (i - 2) * R * .22 + (hash(i * 11 + seed) - .5) * 10, y0 = -R * .62; s += P(`M${f1(x)} ${f1(y0)} q${f1((hash(i + seed) - .5) * 14)} ${f1(R * .12)} ${f1((hash(i * 3 + seed) - .5) * 18)} ${f1(R * (.16 + hash(i * 5 + seed) * .12))}`, 'none', 3, '', col); }
-  for (let i = 0; i < 3; i++) { const a = rad(-150 + i * 50 + hash(i * 9 + seed) * 10), L = R * (1.45 + hash(i * 13 + seed) * .3); s += P(`M${f1(Math.cos(a) * R * .8)} ${f1(Math.sin(a) * R * .8)} Q${f1(Math.cos(a + .2) * L * .8)} ${f1(Math.sin(a + .2) * L * .8)} ${f1(Math.cos(a - .1) * L)} ${f1(Math.sin(a - .1) * L)}`, 'none', 2.4, '', col); }
+  // a few wild strands + short strands falling over the forehead
+  for (let i = 0; i < 4; i++) { const a = rad(-140 + i * 32 + hash(i * 9 + seed) * 12), L = R * (1.7 + hash(i * 13 + seed) * .3); s += P(`M${f1(Math.cos(a) * R * .85)} ${f1(Math.sin(a) * R * .85)} Q${f1(Math.cos(a + .25) * L * .78)} ${f1(Math.sin(a + .25) * L * .78)} ${f1(Math.cos(a - .12) * L)} ${f1(Math.sin(a - .12) * L)}`, 'none', 3.2, '', col); }
+  for (let i = 0; i < 6; i++) { const x = (i - 2.5) * R * .2 + (hash(i * 11 + seed) - .5) * 8, y0 = -R * .62, dx = (hash(i + seed) - .5) * 16, L = R * (.14 + hash(i * 5 + seed) * .12);
+    s += `<path d="M${f1(x - 4)} ${f1(y0)} Q${f1(x + dx * .5)} ${f1(y0 + L * .6)} ${f1(x + dx)} ${f1(y0 + L)} Q${f1(x + dx * .3)} ${f1(y0 + L * .4)} ${f1(x + 4)} ${f1(y0)} Z" fill="${col}" stroke="${col}" stroke-width="1.5"/>`; }
   if (style === 'long') for (const sd of [-1, 1]) s += P(`M${f1(sd * R * .92)} ${f1(-R * .3)} Q${f1(sd * R * 1.18)} ${f1(R * .4)} ${f1(sd * R * .86)} ${f1(R * 1.05)} L${f1(sd * R * .66)} ${f1(R * .3)} Z`, col, 4);
   return s;
 }
@@ -195,9 +198,10 @@ function headInk(o, face, t, seed, R = 68) {
   s += `<circle cx="0" cy="0" r="${R - 3}" fill="url(#hatch)" opacity=".18"/>`;                      // a hint of paper tooth
   if (nean) s += P(`M${-R * .7} ${-R * .42} Q0 ${-R * .62} ${R * .7} ${-R * .42}`, 'none', 8);
   if (o.elder) s += P(`M${-R * .5} ${-R * .52} q14 -5 26 0 M${R * .24} ${-R * .52} q14 -5 26 0`, 'none', 2.5, 'opacity=".45"');
+  if (o.rimCol) { const sd = o.rimDir || -1; s += `<path d="M${f1(sd * R * .35)} ${f1(-R * .9)} A${R - 5} ${R - 5} 0 0 ${sd < 0 ? 0 : 1} ${f1(sd * R * .55)} ${f1(R * .78)}" stroke="${o.rimCol}" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85"/>`; }
   s += faceInk(face, t, seed, R, o);
   s += hairInk(R, seed * 7 + 1, nean ? '#6b4423' : hc, t, style);
-  if (o.hairclip === 'bone') s += boneClip(R * .5, -R * .78, .95, -30);
+  if (o.hairclip === 'bone') s += boneClip(R * .66, -R * 1.02, .9, 58) + P(`M${f1(R * .5)} ${f1(-R * .9)} q${f1(R * .12)} ${f1(-R * .2)} ${f1(R * .3)} ${f1(-R * .34)}`, 'none', 4, '', K);
   if (o.goggles) s += `<rect x="${-R * .66}" y="${-R * .3}" width="${R * 1.32}" height="${R * .46}" rx="${R * .22}" fill="#bfe6ff" fill-opacity=".55" stroke="${K}" stroke-width="5"/>`;
   if (face === 'pain' || face === 'worried') s += E(R * .8, -R * .55, 7, 11, '#8fd3ff', 3);
   if (face === 'pain') s += `<circle cx="${R * .6}" cy="${R * .45}" r="${f1(16 + Math.sin(t * 10) * 4)}" fill="#ff5a4a" opacity=".4"/>`;
@@ -237,6 +241,7 @@ function upperInk(o, face, t, seed, hipY, breathe, kid) {
   const top = hipY - (kid ? 92 : 122) + breathe, al = kid ? [52, 50] : [70, 66];
   out += Ln(0, hipY, 0, top - 6, LW);
   out += tunicInk(o.tunic || 'teal', top, hipY, seed);
+  if (o.rimCol) { const sd = o.rimDir || -1; out += P(`M${sd * 33} ${f1(top + 24)} Q${sd * 46} ${f1(hipY - 30)} ${sd * 51} ${f1(hipY + 12)}`, 'none', 5, 'opacity=".75"', o.rimCol); }
   const sy = top + 16, pose = o.pose || 'stand';
   const def = { L: [-62, hipY + 10 + Math.sin(t * 1.7 + seed) * 4], R: [62, hipY + 10 + Math.sin(t * 1.9 + seed + 1) * 4] };
   if (pose === 'walk') { const sw = Math.sin(t * (o.walkSpeed || 7) + seed) * 40; def.L = [-36 - sw, hipY]; def.R = [36 + sw, hipY]; }
@@ -255,11 +260,14 @@ function upperInk(o, face, t, seed, hipY, breathe, kid) {
 }
 function person(x, y, s, o = {}, t = 0) {
   s *= PS;
+  const RIMC = { sun: '#ffd27a', fire: '#ffae4a', moon: '#b8ccff' };
+  if (o.rim !== false && !o.rimCol) o = { ...o, rimCol: RIMC[o.rim || 'sun'] || o.rim };
   const seed = o.seed || x * .013, face = o.face || 'sleepy', pose = o.pose || 'stand', kid = !!o.kid;
   const breathe = Math.sin(t * 2.2 + seed) * 2;
   let out = '';
-  if (pose === 'lie' || pose === 'curl') return G(lying(o, face, t, seed, pose, kid), `translate(${f1(x)} ${f1(y)}) scale(${o.flip ? -s : s} ${s})`);
+  if (pose === 'lie' || pose === 'curl') return G((o.shadow === false ? '' : E(20, 2, 250, 18, '#24140a', 0, 'opacity=".3"')) + lying(o, face, t, seed, pose, kid), `translate(${f1(x)} ${f1(y)}) scale(${o.flip ? -s : s} ${s})`);
   const lf = kid ? .7 : 1, hipY = (pose === 'sit' ? -95 : pose === 'kneel' ? -132 : -150) * lf;
+  if (o.shadow !== false) out += E(pose === 'kneel' ? -20 : 10, 2, (pose === 'kneel' ? 150 : 96) * lf, 16, '#24140a', 0, 'opacity=".3"');
   // legs (thick ink) with round feet
   const foot = (fx, fy, dir) => E(fx + dir * 16, fy - 12, 28, 15, K, 0);
   if (pose === 'walk') {
@@ -293,7 +301,7 @@ function lying(o, face, t, seed, pose, kid) {
     const up = upperInk({ ...o, pose: 'stand', L: o.L || [-58, 30], R: o.R || [56, 26] }, face, t, seed, 0, br * .6, kid);
     out += G(up.svg, 'translate(0 -62) rotate(-90)');
     const bd = `M${-100 * lf} -112 Q${20 * lf} ${-126 + br} ${170 * lf} -84 Q${206 * lf} -40 ${196 * lf} 0 L${-96 * lf} 0 Q${-122 * lf} -60 ${-100 * lf} -112 Z`;
-    if (o.blanket) out += P(bd, 'url(#hide)', 5) + SH(bd, 'darkBot') + SH(bd, 'litTop');
+    if (o.blanket !== false) out += P(bd, 'url(#hide)', 5) + `<path d="${bd}" fill="url(#speck)" opacity=".6"/>` + SH(bd, 'darkBot') + SH(bd, 'litTop');
     if (face === 'asleep' && o.zzz !== false) out += zzz(-200 * lf, -190, .9, t + seed);
   } else {
     // curl: knees drawn up toward the chest, hands tucked under the chin
@@ -302,7 +310,7 @@ function lying(o, face, t, seed, pose, kid) {
     const up = upperInk({ ...o, pose: 'stand', L: o.L || [-24, -150], R: o.R || [30, -146] }, face, t, seed, 0, br * .6, kid);
     out += G(up.svg, 'translate(6 -54) rotate(-78)');
     const bd = `M${-90 * lf} -130 Q${0 * lf} ${-150 + br} ${80 * lf} -96 Q${116 * lf} -40 ${96 * lf} 0 L${-110 * lf} 0 Q${-126 * lf} -70 ${-90 * lf} -130 Z`;
-    if (o.blanket) out += P(bd, 'url(#hide)', 5) + SH(bd, 'darkBot') + SH(bd, 'litTop');
+    if (o.blanket !== false) out += P(bd, 'url(#hide)', 5) + `<path d="${bd}" fill="url(#speck)" opacity=".6"/>` + SH(bd, 'darkBot') + SH(bd, 'litTop');
     if (face === 'asleep' && o.zzz !== false) out += zzz(-180 * lf, -220, .9, t + seed);
   }
   return out;
@@ -345,14 +353,25 @@ function stars(t = 0, n = 140, seed = 1, yMax = 700) {
 }
 function cloud(x, y, s = 1, t = 0) { x += (t * 8) % 2400; if (x > 2100) x -= 2400; const d = 'M-90 30 Q-110 -10 -70 -20 Q-60 -60 -10 -55 Q20 -85 60 -50 Q110 -55 105 -10 Q130 20 95 32 Z'; return G(P(d, '#fff', 5) + SH(d, 'darkBot', .5) + `<ellipse cx="-20" cy="-30" rx="40" ry="14" fill="#fff" opacity=".7"/>`, `translate(${f1(x)} ${y}) scale(${s})`); }
 function mountains(y = 640, col = '#7d86a6', snow = true, seed = 1) {
-  const pts = []; for (let i = 0; i <= 5; i++) pts.push([i * 400 - 60 + hash(i + seed) * 140, y - 90 - hash(i * 3 + seed) * 190]);
-  let d = `M-100 ${y + 120} L-100 ${y + 20}`;
-  for (let i = 0; i < pts.length; i++) { const [px, py] = pts[i]; const nx = i + 1 < pts.length ? pts[i + 1][0] : 2100; const vx = (px + nx) / 2, vy = y + 10 - hash(i * 9 + seed) * 50; d += ` Q${f1(px - 90)} ${f1(py + 6)} ${f1(px)} ${f1(py)} Q${f1(px + 90)} ${f1(py + 6)} ${f1(vx)} ${f1(vy)}`; }
-  d += ` L2050 ${y + 20} L2050 ${y + 120} Z`;
-  let s = P(d, col, 5) + SH(d, 'litTop', .9);
-  for (const [px, py] of pts) s += `<path d="M${f1(px)} ${f1(py)} L${f1(px + 30)} ${f1(py + 40)} L${f1(px + 110)} ${f1(y + 20)} L${f1(px + 10)} ${f1(y + 20)} Q${f1(px + 20)} ${f1(py + 80)} ${f1(px)} ${f1(py)} Z" fill="#000" opacity=".12"/>`;   // shaded east faces
-  if (snow) for (const [px, py] of pts) s += P(`M${f1(px - 48)} ${f1(py + 22)} Q${f1(px - 20)} ${f1(py + 1)} ${f1(px)} ${f1(py)} Q${f1(px + 20)} ${f1(py + 1)} ${f1(px + 48)} ${f1(py + 22)} L${f1(px + 22)} ${f1(py + 34)} L${f1(px)} ${f1(py + 22)} L${f1(px - 22)} ${f1(py + 36)} Z`, '#f4f6fb', 4);
-  return s + haze(y + 40, 180, false, .8);
+  // a ridgeline by midpoint displacement between peak / valley keypoints -> jagged, natural
+  const ridge = (yy, amp, sd) => {
+    let pts = []; for (let i = 0; i <= 6; i++) { const x = -160 + i * 380 + hash(i + sd) * 120; pts.push([x, yy - (i % 2 ? amp * (.15 + hash(i * 9 + sd) * .25) : amp * (.65 + hash(i * 3 + sd) * .35))]); }
+    for (let lvl = 0, dz = amp * .22; lvl < 4; lvl++, dz *= .5) { const nx = []; for (let i = 0; i < pts.length - 1; i++) { const [a, b] = [pts[i], pts[i + 1]]; nx.push(a, [(a[0] + b[0]) / 2 + (hash(i * 7 + lvl * 31 + sd) - .5) * 30, (a[1] + b[1]) / 2 + (hash(i * 13 + lvl * 17 + sd) - .5) * 2 * dz]); } nx.push(pts[pts.length - 1]); pts = nx; }
+    return pts;
+  };
+  const shape = (pts, yy) => `M-200 ${yy + 160} ` + pts.map(([x, z]) => `L${f1(x)} ${f1(z)}`).join(' ') + ` L2100 ${yy + 160} Z`;
+  const tint = (c, k) => { const n = parseInt(c.slice(1), 16), r = n >> 16, g2 = (n >> 8) & 255, b = n & 255, m = v => Math.round(v + (235 - v) * k); return `rgb(${m(r)},${m(g2)},${m(b)})`; };
+  const layer = (yy, amp, sd, c, far) => {
+    const pts = ridge(yy, amp, sd), d = shape(pts, yy);
+    let g = P(d, c, far ? 3 : 5) + SH(d, 'litTop', .9) + SH(d, 'darkBot', .8);
+    // shaded east faces: from each local peak down the right flank
+    for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) { let j = i; while (j < pts.length - 1 && pts[j + 1][1] >= pts[j][1]) j++; const fl = pts.slice(i, j + 1), v = fl[fl.length - 1], foot = [pts[i][0] + (v[0] - pts[i][0]) * .25, v[1] + (yy + 120 - v[1]) * .7]; g += `<path d="M${fl.map(p => f1(p[0]) + ' ' + f1(p[1])).join(' L')} L${f1(foot[0])} ${f1(foot[1])} Z" fill="#1c1640" opacity="${far ? .12 : .22}"/>`; }
+    if (snow) { const sl = yy - amp * (far ? .62 : .72), id = `snw${Math.round(yy)}${sd}`; let zz = `M-200 -400 L2100 -400 L2100 ${f1(sl)}`; for (let x = 2100; x >= -200; x -= 46) zz += ` L${x} ${f1(sl + (hash(x * .1 + sd) - .3) * 40)}`;
+      g += `<clipPath id="${id}"><path d="${zz} Z"/></clipPath><g clip-path="url(#${id})"><path d="${d}" fill="#f2f6ff" stroke="${K}" stroke-width="${far ? 3 : 4}"/><path d="${d}" fill="url(#shadeR)" opacity=".7"/></g>`;
+      for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < sl - 10 && pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) g += `<path d="M${f1(pts[i][0])} ${f1(pts[i][1])} l40 ${f1(sl - pts[i][1])} l-60 0 Z" fill="#9fb0d8" opacity=".45"/>`; }
+    return g;
+  };
+  return blurLayer(layer(y - 60, 230, seed + 5, tint(col, .45), true), 2) + haze(y - 40, 160, false, .9) + layer(y, 170, seed, col, false) + haze(y + 50, 170, false, .8);
 }
 // rolling hills band (painterly, two tones)
 function hills(y = 700, col = '#7fb35a', seed = 3, amp = 60) {
@@ -364,16 +383,31 @@ function grass(x, y, s = 1, col = '#5e9e3a') { return G(P('M-14 0 L-20 -34 L-6 -
 function grassField(y, n = 14, seed = 2, col) { let s = ''; for (let i = 0; i < n; i++) s += grass(60 + hash(i + seed) * 1800, y + hash(i * 7 + seed) * 200, .8 + hash(i * 3) * .6, col); return s; }
 // a layered foliage clump: dark underside, mid body, sunny top blobs
 function foliage(cx, cy, w, h, cols = ['#3f7a34', '#5f9f3f', '#8cc45a'], seed = 1) {
-  let s = ''; const blob = (x, y, rx, ry, c, sw) => `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="${f1(rx)}" ry="${f1(ry)}" fill="${c}" stroke="${sw ? K : 'none'}" stroke-width="${sw}"/>`;
-  for (let i = 0; i < 7; i++) s += blob(cx + (hash(i + seed) - .5) * w * .8, cy + (hash(i * 3 + seed) - .3) * h * .5, w * (.22 + hash(i * 5 + seed) * .12), h * (.28 + hash(i * 7 + seed) * .12), cols[0], 6);
-  for (let i = 0; i < 7; i++) s += blob(cx + (hash(i + seed) - .5) * w * .8, cy + (hash(i * 3 + seed) - .3) * h * .5 - 6, w * (.22 + hash(i * 5 + seed) * .12) - 6, h * (.28 + hash(i * 7 + seed) * .12) - 8, cols[1], 0);
-  for (let i = 0; i < 5; i++) s += blob(cx + (hash(i * 11 + seed) - .6) * w * .6, cy - h * (.15 + hash(i * 13 + seed) * .25), w * .1 + hash(i) * 20, h * .1 + hash(i * 2) * 10, cols[2], 0);
-  return s;
+  // clustered clumps: each clump a scalloped blob; dark outlined base -> mid tone shifted to the light -> sunny scallops -> leaf ticks
+  const sc = (x, y, r, k) => { const n = 8; let d = ''; for (let i = 0; i <= n; i++) { const a = rad(i * 360 / n + k * 20), rr = r * (.86 + hash(i + k * 7 + seed) * .2), px = x + Math.cos(a) * rr, py = y + Math.sin(a) * rr * .86; if (!i) d = `M${f1(px)} ${f1(py)}`; else { const am = rad((i - .5) * 360 / n + k * 20), cr = rr * 1.28; d += ` Q${f1(x + Math.cos(am) * cr)} ${f1(y + Math.sin(am) * cr * .86)} ${f1(px)} ${f1(py)}`; } } return d + ' Z'; };
+  const cl = []; for (let i = 0; i < 15; i++) { const a = hash(i * 3 + seed) * Math.PI * 2, rr = Math.sqrt(hash(i * 5 + seed)); cl.push([cx + Math.cos(a) * rr * w * .4, cy + Math.sin(a) * rr * h * .36, (.13 + hash(i * 7 + seed) * .09) * w]); }
+  cl.sort((a, b) => a[1] - b[1]);
+  let s = `<path d="${cl.map((c, i) => sc(c[0], c[1], c[2], i)).join(' ')}" fill="${cols[0]}" stroke="${K}" stroke-width="5" stroke-linejoin="round"/>`;
+  s += `<path d="${cl.map((c, i) => sc(c[0] - c[2] * .16, c[1] - c[2] * .2, c[2] * .78, i + 3)).join(' ')}" fill="${cols[1]}"/>`;
+  s += `<path d="${cl.filter(c => c[1] < cy + h * .05).map((c, i) => sc(c[0] - c[2] * .3, c[1] - c[2] * .38, c[2] * .4, i + 5)).join(' ')}" fill="${cols[2]}"/>`;
+  for (let i = 0; i < 30; i++) { const c = cl[i % cl.length], a = hash(i * 11 + seed) * 6.28, r = c[2] * hash(i * 13 + seed) * .8; s += P(`M${f1(c[0] + Math.cos(a) * r)} ${f1(c[1] + Math.sin(a) * r)} q4 3 9 1`, 'none', 2.5, 'opacity=".4"', '#1d3a1a'); }
+  return s + `<ellipse cx="${cx}" cy="${cy + h * .32}" rx="${w * .42}" ry="${h * .12}" fill="#1c1640" opacity=".18"/>`;
 }
 function acacia(x, y, s = 1) { return G(P('M-8 0 L-6 -150 L-50 -210 M-6 -150 L30 -230 M-6 -150 L4 -200', 'none', 14, '', '#5a3a22') + P('M-8 0 L-6 -150 L-50 -210 M-6 -150 L30 -230', 'none', 5, 'opacity=".5"', '#8a6040') + P('M-170 -215 Q-160 -265 -60 -262 Q0 -300 80 -270 Q170 -268 168 -222 Q90 -200 0 -208 Q-90 -198 -170 -215 Z', '#4f8a38', 6) + `<path d="M-150 -232 Q-100 -262 -40 -258 Q10 -288 70 -266 Q130 -262 150 -238 Q60 -232 0 -244 Q-80 -230 -150 -232 Z" fill="#7ab24e"/>` + `<path d="M-120 -250 Q-60 -272 0 -270 Q50 -282 100 -262" stroke="#a9d46e" stroke-width="7" fill="none" stroke-linecap="round" opacity=".7"/>`, `translate(${x} ${y}) scale(${s})`); }
-function pine(x, y, s = 1, snow = false) { return G(Ln(0, 0, 0, -40, 12, '#6a4a2a') + P('M-70 -30 L0 -200 L70 -30 Z', '#2f6a46', 5) + SH('M-70 -30 L0 -200 L70 -30 Z', 'shadeR') + P('M-56 -90 L0 -250 L56 -90 Z', '#3f8a5a', 5) + SH('M-56 -90 L0 -250 L56 -90 Z', 'shadeR') + `<path d="M-30 -110 L0 -230 L-6 -110 Z" fill="#6fb07a" opacity=".6"/>` + (snow ? P('M-24 -190 L0 -250 L24 -190 L10 -200 L0 -186 L-10 -200 Z', '#fff', 3) : ''), `translate(${x} ${y}) scale(${s})`); }
+function pine(x, y, s = 1, snow = false) {
+  // trunk with bark + 5 tiers of drooping, saw-edged boughs (two tones), narrowing to the tip
+  let g = `<path d="M-9 0 L-6 -60 L6 -60 L9 0 Z" fill="#6a4a2a" stroke="${K}" stroke-width="5"/>` + Ln(-2, -6, -1, -50, 2, '#3a2614');
+  for (let i = 0; i < 5; i++) { const yb = -30 - i * 46, w = 82 - i * 14, h = 90 - i * 6; let d = `M0 ${yb - h}`; d += ` Q${f1(w * .3)} ${f1(yb - h * .5)} ${f1(w)} ${f1(yb + 6)}`; for (let k = 0; k < 6; k++) { const xx = w - (k + 1) * (2 * w / 6); d += ` L${f1(xx + w / 6)} ${f1(yb - 4 + (k % 2) * 4)} L${f1(xx)} ${f1(yb + 8)}`; } d += ` Q${f1(-w * .3)} ${f1(yb - h * .5)} 0 ${yb - h} Z`;
+    g += P(d, i % 2 ? '#2f6a46' : '#356f4a', 5) + `<path d="M0 ${yb - h} Q${f1(-w * .25)} ${f1(yb - h * .5)} ${f1(-w * .8)} ${f1(yb + 2)} L${f1(-w * .2)} ${f1(yb)} Z" fill="#5f9f6e" opacity=".55"/>` + SH(d, 'shadeR') + (snow ? P(`M${f1(-w * .5)} ${f1(yb - h * .38)} Q0 ${f1(yb - h * .56)} ${f1(w * .45)} ${f1(yb - h * .38)}`, 'none', 7, '', '#f4f8ff') : ''); }
+  return G(g, `translate(${x} ${y}) scale(${s})`);
+}
 function poplar(x, y, s = 1, t = 0) { const sw = Math.sin(t * 1.3 + x) * 4, d = `M0 -60 Q-70 -200 ${-8 + sw} -470 Q${8 + sw} -480 ${14 + sw} -470 Q70 -200 0 -60 Z`; return G(Ln(0, 0, 0, -120, 14, '#7b6a55') + P(d, '#5f9f45', 6) + SH(d, 'shadeR') + `<path d="M-30 -140 Q-40 -280 ${-4 + sw} -440 Q-10 -280 -6 -140 Z" fill="#9ccf6a" opacity=".55"/>`, `translate(${x} ${y}) scale(${s})`); }
-function oak(x, y, s = 1) { return G(`<path d="M-22 0 L-14 -170 L14 -170 L22 0 Z" fill="url(#wood)" stroke="${K}" stroke-width="6"/>` + SH('M-22 0 L-14 -170 L14 -170 L22 0 Z', 'shadeR') + P('M-14 -150 L-70 -220 M12 -160 L60 -230', 'none', 12, '', '#6a4a2a') + foliage(0, -270, 380, 220, ['#3f7a34', '#5f9f3f', '#8cc45a'], Math.round(x)), `translate(${x} ${y}) scale(${s})`); }
+function oak(x, y, s = 1) {
+  const tr = 'M-26 0 Q-18 -90 -16 -170 L16 -170 Q18 -90 26 0 Z';
+  let g = P(tr, '#7a5634', 6) + SH(tr, 'shadeR') + speckle(tr) + P('M-8 -20 Q-12 -80 -6 -150 M6 -30 Q10 -90 4 -140 M-14 -60 q4 -20 0 -40', 'none', 2.5, 'opacity=".5"');
+  g += P('M-12 -150 Q-50 -190 -90 -230 M10 -160 Q50 -200 80 -240 M0 -170 L-6 -260', 'none', 13, '', '#6a4a2a') + P('M-12 -150 Q-50 -190 -90 -230 M10 -160 Q50 -200 80 -240', 'none', 4, 'opacity=".4"', '#9a7450');
+  return G(g + foliage(0, -290, 400, 250, ['#3f7a34', '#5f9f3f', '#8cc45a'], Math.round(x)), `translate(${x} ${y}) scale(${s})`);
+}
 const bush = (x, y, s = 1, seed = 2) => G(foliage(0, -40, 200, 110, ['#3f7a34', '#5a9a3e', '#86c058'], seed), `translate(${x} ${y}) scale(${s})`);
 function rock(x, y, w = 160, h = 90, col = '#9aa0a6') { const d = `M${x - w / 2} ${y} Q${x - w / 2} ${y - h * .9} ${x - w * .1} ${y - h} Q${x + w * .4} ${y - h * 1.05} ${x + w / 2} ${y - h * .3} L${x + w / 2} ${y} Z`; return P(d, col, 6) + SH(d, 'shadeR') + SH(d, 'litTop') + `<path d="${d}" fill="url(#rockT)" stroke="none"/>` + P(`M${x - w * .25} ${y - h * .6} q${w * .1} ${-h * .1} ${w * .2} 0`, 'none', 4); }
 function caveMouth(x, y, s = 1) { const d = 'M-260 0 Q-270 -230 -60 -280 Q160 -300 250 -150 Q290 -60 280 0 Z'; return G(P(d, '#9aa0a6', 6) + SH(d, 'shadeR') + SH(d, 'litTop') + `<path d="${d}" fill="url(#rockT)"/>` + P('M-150 0 Q-150 -160 -20 -180 Q120 -180 140 0 Z', '#2e2723', 5) + `<path d="M-120 0 Q-120 -130 -20 -146 Q90 -146 110 0 Z" fill="#150f0c" opacity=".7"/>` + P('M-200 -120 q30 -10 50 6 M150 -200 q30 -4 46 14', 'none', 4), `translate(${x} ${y}) scale(${s})`); }
@@ -407,7 +441,7 @@ function snow(t, n = 70) { let s = ''; for (let i = 0; i < n; i++) { const x = (
 function hut(x, y, s = 1) {
   const wall = 'M-120 0 L-118 -112 L118 -112 L120 0 Z', roof = 'M-158 -96 Q-120 -150 -40 -240 Q0 -270 40 -240 Q120 -150 158 -96 Q0 -76 -158 -96 Z';
   let st = ''; for (let i = 0; i < 11; i++) st += Ln(-110 + i * 22, -4, -108 + i * 22, -110, 4, '#7a5530');
-  return G(P(wall, '#c48d5a', 6) + st + SH(wall, 'shadeR') + P('M-30 0 L-30 -70 Q0 -92 30 -70 L30 0 Z', '#2a1d14', 5) + P(roof, 'url(#thatch)', 6) + SH(roof, 'shadeR') + SH(roof, 'litTop') + P('M-150 -98 Q0 -80 150 -98', 'none', 4, 'stroke-dasharray="3 9"') + P('M-10 -258 L0 -290 L10 -258', 'none', 5, '', '#7a5530'), `translate(${x} ${y}) scale(${s})`);
+  return G(P(wall, '#c48d5a', 6) + st + SH(wall, 'shadeR') + P('M-30 0 L-30 -70 Q0 -92 30 -70 L30 0 Z', '#2a1d14', 5) + P(roof, 'url(#thatch)', 6) + SH(roof, 'shadeR') + SH(roof, 'litTop') + speckle(roof) + (() => { let st = ''; for (let i = 0; i < 160; i++) { const v = Math.sqrt(hash(i * 5.7)), yy = -250 + v * 150, half = 20 + v * 130, xx = (hash(i * 3.1) - .5) * 2 * half * .9, a = Math.atan2(yy + 270, xx), L = 10 + hash(i * 7) * 14; st += `<line x1="${f1(xx)}" y1="${f1(yy)}" x2="${f1(xx + Math.cos(a) * L)}" y2="${f1(yy + Math.sin(a) * L)}" stroke="${['#8a5c18', '#f3cf7a', '#b07e2a'][i % 3]}" stroke-width="2" opacity=".7"/>`; } return st; })() + P('M-150 -98 Q0 -80 150 -98', 'none', 4, 'stroke-dasharray="3 9"') + P('M-10 -258 L0 -290 L10 -258', 'none', 5, '', '#7a5530'), `translate(${x} ${y}) scale(${s})`);
 }
 // a hazy distant tree line (round crowns + a few conifers) for depth
 function treeLine(y = 700, col = '#6f9a7a', seed = 5, n = 26, night = false) {
@@ -572,7 +606,7 @@ const warmGrade = (a = .22) => `<rect width="1920" height="1080" fill="#ffb25a" 
 function lake(y = 640, x0 = 900, x1 = 1960, col = '#4f9fd6') { const d = `M${x0} ${y} Q${(x0 + x1) / 2} ${y - 14} ${x1} ${y - 4} L${x1} ${y + 60} Q${(x0 + x1) / 2} ${y + 50} ${x0 + 60} ${y + 40} Q${x0 - 20} ${y + 24} ${x0} ${y} Z`; let s = P(d, col, 4) + SH(d, 'litTop'); for (let i = 0; i < 9; i++) { const x = x0 + 80 + hash(i) * (x1 - x0 - 160), yy = y + 8 + hash(i * 3) * 36; s += Ln(x, yy, x + 30 + hash(i * 5) * 50, yy, 3, '#dff3ff'); } return s; }
 function pineForest(y = 660, x0 = -40, x1 = 1960, n = 30, cols = ['#2f5f48', '#3f7a58', '#4f8f66'], seed = 3) { let s = ''; for (let i = 0; i < n; i++) { const x = x0 + (i + hash(i + seed) * .6) * (x1 - x0) / n, sc = .45 + hash(i * 3 + seed) * .4; s += G(P('M-50 0 L0 -150 L50 0 Z', cols[i % 3], 4) + P('M-40 -60 L0 -200 L40 -60 Z', cols[(i + 1) % 3], 4) + SH('M-50 0 L0 -200 L50 0 Z', 'shadeR'), `translate(${f1(x)} ${f1(y + hash(i * 7 + seed) * 20)}) scale(${f1(sc * 100) / 100})`); } return s; }
 // a wooden pole between two points (wood grain + speckle + outline); lashing() = rope wraps at a point
-function pole(x1, y1, x2, y2, w = 26, col = '#a7743f') { const a = Math.atan2(y2 - y1, x2 - x1), L = Math.hypot(x2 - x1, y2 - y1), d = `M0 ${-w / 2} L${f1(L)} ${-w / 2 * .9} Q${f1(L + w * .3)} 0 ${f1(L)} ${w / 2 * .9} L0 ${w / 2} Q${-w * .3} 0 0 ${-w / 2} Z`; return G(P(d, col, 5) + `<path d="${d}" fill="url(#wood)" opacity=".55"/>` + SH(d, 'darkBot') + speckle(d) + `<ellipse cx="${f1(L)}" cy="0" rx="${f1(w * .22)}" ry="${f1(w * .42)}" fill="#d8b07a" stroke="${K}" stroke-width="3"/>`, `translate(${f1(x1)} ${f1(y1)}) rotate(${f1(a * 180 / Math.PI)})`); }
+function pole(x1, y1, x2, y2, w = 26, col = '#a7743f') { const a = Math.atan2(y2 - y1, x2 - x1), L = Math.hypot(x2 - x1, y2 - y1), d = `M0 ${-w / 2} L${f1(L)} ${-w / 2 * .9} Q${f1(L + w * .3)} 0 ${f1(L)} ${w / 2 * .9} L0 ${w / 2} Q${-w * .3} 0 0 ${-w / 2} Z`; return G(P(d, col, 5) + `<path d="${d}" fill="url(#wood)" opacity=".55"/>` + SH(d, 'darkBot') + speckle(d) + `<path d="M${f1(L * .05)} ${f1(-w * .18)} Q${f1(L * .5)} ${f1(-w * .26)} ${f1(L * .92)} ${f1(-w * .12)} M${f1(L * .1)} ${f1(w * .14)} Q${f1(L * .5)} ${f1(w * .22)} ${f1(L * .85)} ${f1(w * .1)} M${f1(L * .3)} ${f1(-w * .02)} l${f1(L * .3)} 2" stroke="#5a3416" stroke-width="2" fill="none" opacity=".55"/>` + `<ellipse cx="${f1(L)}" cy="0" rx="${f1(w * .22)}" ry="${f1(w * .42)}" fill="#d8b07a" stroke="${K}" stroke-width="3"/>`, `translate(${f1(x1)} ${f1(y1)}) rotate(${f1(a * 180 / Math.PI)})`); }
 function lashing(x, y, w = 30, ang = 0, col = '#c98a3e') { let s = ''; for (let i = 0; i < 4; i++) s += P(`M${-w / 2} ${-9 + i * 6} Q0 ${-5 + i * 6} ${w / 2} ${-9 + i * 6}`, 'none', 6, '', col) + P(`M${-w / 2} ${-9 + i * 6} Q0 ${-5 + i * 6} ${w / 2} ${-9 + i * 6}`, 'none', 1.5, 'opacity=".5"'); return G(s, `translate(${f1(x)} ${f1(y)}) rotate(${ang})`); }
 // the reference hut: mud-and-wattle wall, lashed timber frame, a deep thatched roof with hanging straw strands, dark doorway
 function thatchHut(x, y, s = 1, o = {}) {
@@ -580,6 +614,7 @@ function thatchHut(x, y, s = 1, o = {}) {
   let g = P(wall, '#b98a5a', 6) + speckle(wall) + SH(wall, 'shadeR') + P(door, '#2a1a10', 5) + `<path d="M-64 0 L-64 -170 L64 -170 L64 0 Z" fill="#140c07" opacity=".7"/>`;
   g += pole(-250, 0, -250, -250, 30) + pole(250, 0, 250, -250, 30) + pole(-90, 0, -90, -210, 22) + pole(90, 0, 90, -210, 22) + pole(-280, -205, 280, -205, 24) + lashing(-250, -205, 40, 90) + lashing(250, -205, 40, 90) + lashing(-90, -205, 30, 90) + lashing(90, -205, 30, 90);
   g += P(roof, 'url(#thatch)', 6) + SH(roof, 'litTop') + SH(roof, 'shadeR') + speckle(roof);
+  { let st = ''; for (let i = 0; i < 420; i++) { const u = hash(i * 3.1 + 1), v = Math.sqrt(hash(i * 5.7 + 2)), yy = -450 + v * 255, half = 40 + (yy + 450) / 255 * 290, xx = (u - .5) * 2 * half * .96, a = Math.atan2(yy + 470, xx), L = 14 + hash(i * 7) * 22; st += `M${f1(xx)} ${f1(yy)} l${f1(Math.cos(a) * L)} ${f1(Math.sin(a) * L)} `; if (i % 3 === 2) { g += `<path d="${st}" stroke="${['#8a5c18', '#f3cf7a', '#b07e2a'][i % 9 < 3 ? 0 : i % 9 < 6 ? 1 : 2]}" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>`; st = ''; } } }
   for (let i = 0; i < 70; i++) { const u = i / 69, xx = -330 + u * 660, yy = -190 + Math.sin(u * Math.PI) * 30 + hash(i) * 6, L = 24 + hash(i * 3) * 40; g += Ln(xx, yy - 4, xx + (hash(i * 5) - .5) * 14, yy + L, 3, ['#c7932f', '#e8bb5a', '#9a6c22'][i % 3]); }
   for (let i = 0; i < 26; i++) { const u = hash(i * 7), v = hash(i * 11); g += Ln(-200 + u * 400, -420 + v * 200, -196 + u * 400 + (hash(i) - .5) * 30, -380 + v * 200, 2.5, '#f3cf7a'); }
   return G(g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
