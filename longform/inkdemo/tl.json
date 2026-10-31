@@ -1,0 +1,5 @@
+{"total": 12, "scenes": [
+ {"v": "demo_day", "start": 0, "end": 4, "lines": [{"text": "", "start": 0, "end": 4}]},
+ {"v": "demo_night", "start": 4, "end": 8, "lines": [{"text": "", "start": 4, "end": 8}]},
+ {"v": "demo_props", "start": 8, "end": 12, "lines": [{"text": "", "start": 8, "end": 12}]}
+]}
