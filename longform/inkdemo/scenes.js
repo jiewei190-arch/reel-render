@@ -1,7 +1,7 @@
 // inkdemo: H1 look-dev for the ink.js v2 upgrade (not part of any episode). node render.js inkdemo stills 2 6 10
 const SC = {
-demo_day: (lt, D, on, t) => sky('skyDay') + sun(1640, 170, 58, t) + cloud(380, 150, 1, t) + cloud(1150, 110, .75, t) + mountains(600, '#8f9fc4', true, 4) + hills(690, '#7fb35a', 6, 50)
-  + hut(1480, 740, .8) + grassHut(1760, 760, .7, t) + oak(240, 760, .9) + ground(760, '#b8c56e') + rock(1200, 860, 200, 90, '#a7a39a') + grassField(790, 14, 3, '#6a9a3a') + grain(.45)
+demo_day: (lt, D, on, t) => sky('skyDay') + sun(1640, 170, 58, t) + cloud(380, 150, 1, t) + cloud(1150, 110, .75, t) + mountains(600, '#8f9fc4', true, 4) + treeLine(680, '#8fb39a', 4) + hills(690, '#7fb35a', 6, 50)
+  + hut(1480, 740, .8) + grassHut(1760, 760, .7, t) + oak(240, 760, .9) + ground(760, '#c2c06a') + stipple(0, 780, 1920, 300, '#6a5a2a', 280, 4, .3) + rock(1200, 860, 200, 90, '#a7a39a') + grassField(790, 14, 3, '#6a9a3a') + lightWash(1640, 170) + grain(.45)
   + moss(620, 960, 1.15, { face: 'happy', R: [70, -330], hold: { R: 'torch' } }, t) + person(930, 980, 1, { face: 'smile', kid: 1, seed: 3, flip: 1 }, t)
   + person(1180, 980, 1.05, { face: 'grumpy', elder: 1, seed: 7, flip: 1, hold: { R: 'stick' } }, t) + person(360, 990, .95, { face: 'worried', seed: 9, hair: 'long' }, t) + vignette(),
 demo_night: (lt, D, on, t) => backdrop('camp', t) + grassHut(380, 780, .75, t) + grassHut(1500, 770, .65, t) + bush(1760, 840, 1.1) + predator('lion', 1830, 790, .42, t, { flip: 1 }) + predator('hyena', 110, 800, .4, t) + predator('leopard', 1240, 760, .3, t, { flip: 1 })

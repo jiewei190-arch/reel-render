@@ -403,6 +403,16 @@ function hut(x, y, s = 1) {
   let st = ''; for (let i = 0; i < 11; i++) st += Ln(-110 + i * 22, -4, -108 + i * 22, -110, 4, '#7a5530');
   return G(P(wall, '#c48d5a', 6) + st + SH(wall, 'shadeR') + P('M-30 0 L-30 -70 Q0 -92 30 -70 L30 0 Z', '#2a1d14', 5) + P(roof, 'url(#thatch)', 6) + SH(roof, 'shadeR') + SH(roof, 'litTop') + P('M-150 -98 Q0 -80 150 -98', 'none', 4, 'stroke-dasharray="3 9"') + P('M-10 -258 L0 -290 L10 -258', 'none', 5, '', '#7a5530'), `translate(${x} ${y}) scale(${s})`);
 }
+// a hazy distant tree line (round crowns + a few conifers) for depth
+function treeLine(y = 700, col = '#6f9a7a', seed = 5, n = 26, night = false) {
+  let s = ''; for (let i = 0; i < n; i++) { const x = i * (1960 / n) - 20 + hash(i + seed) * 40, h = 40 + hash(i * 3 + seed) * 50, w = 30 + hash(i * 5 + seed) * 26;
+    s += hash(i * 7 + seed) > .6 ? `<path d="M${f1(x - w * .5)} ${y} L${f1(x)} ${f1(y - h * 1.5)} L${f1(x + w * .5)} ${y} Z" fill="${col}"/>` : `<ellipse cx="${f1(x)}" cy="${f1(y - h * .6)}" rx="${f1(w)}" ry="${f1(h * .7)}" fill="${col}"/>`; }
+  return s + `<rect x="-20" y="${y - 6}" width="1960" height="40" fill="${col}"/>` + haze(y - 30, 120, night, .7);
+}
+// a big soft sunlit (or moonlit) wash from a light source, screened over the scene
+const lightWash = (x, y, r = 1400, kind = 'sunL', a = .55) => `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#${kind})" opacity="${a}" style="mix-blend-mode:screen"/>`;
+// stippled dirt texture patch (the reference's dotted paint) inside a box
+function stipple(x, y, w, h, col = '#5a3c24', n = 220, seed = 3, op = .35) { let s = ''; for (let i = 0; i < n; i++) s += `<circle cx="${f1(x + hash(i + seed) * w)}" cy="${f1(y + Math.pow(hash(i * 3 + seed), .8) * h)}" r="${f1(1.2 + hash(i * 5 + seed) * 2.6)}" fill="${col}"/>`; return `<g opacity="${op}">${s}</g>`; }
 // a small domed grass hut (savanna sleeping shelter)
 function grassHut(x, y, s = 1, t = 0) {
   const d = 'M-150 0 Q-160 -150 0 -170 Q160 -150 150 0 Z';
@@ -417,11 +427,11 @@ function backdrop(kind = 'savanna', t = 0) {
   if (kind === 'cave') return caveInside(t, true);
   if (kind === 'caveNight') return caveInside(t, true) + `<rect width="1920" height="1080" fill="#0a1030" opacity=".25"/>`;
   if (kind === 'savannaDusk') return sky('skyDusk') + `<circle cx="1500" cy="640" r="420" fill="url(#sunL)"/>` + C(1500, 640, 70, '#ffd27a', 0) + mountains(650, '#7a5e8c', false, 4) + hills(720, '#8f8a4a', 6, 40) + ground(780, '#b59a4a') + acacia(1560, 800, 1.1) + acacia(300, 780, .7) + grassField(800, 18, 3, '#7a7a2a') + grain(.4) + vignette();
-  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + grain(.35);
+  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + treeLine(712, '#1d2a44', 4, 26, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + grain(.35);
   if (kind === 'dawn') return sky('skyDawn') + `<circle cx="1400" cy="760" r="520" fill="url(#sunL)" opacity=".7"/>` + mountains(640, '#8a92b0', false, 4) + hills(720, '#6f8a68', 6, 40) + ground(790, '#7e9a62') + grassField(810, 16, 3, '#5b7a48') + grain(.35);
   if (kind === 'cliff') return sky('skyDay') + cloud(400, 160, 1, t) + cloud(1400, 120, .8, t) + hills(760, '#6faa52', 2, 50) + P('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', '#b7a48c', 7) + `<path d="M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z" fill="url(#rockT)"/>` + SH('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', 'shadeR') + grain(.35);
   if (kind === 'snowCave') return sky('skyGrey') + snow(t, 50) + mountains(600, '#a9b6c8', true, 8) + ground(800, '#eef3f8', 10) + caveMouth(960, 820, 1.4) + grain(.25);
-  return sky('skyDay') + sun(1600, 190, 62, t) + cloud(300, 170, 1, t) + cloud(1100, 120, .8, t) + mountains(640, '#9aa6c4', true, 4) + hills(720, '#86b85e', 6, 40) + ground(780, '#a8cf6e') + acacia(1500, 800, 1.1) + grassField(800, 16, 3) + grain(.35);
+  return sky('skyDay') + sun(1600, 190, 62, t) + cloud(300, 170, 1, t) + cloud(1100, 120, .8, t) + mountains(640, '#9aa6c4', true, 4) + treeLine(712, '#8fb39a', 4) + hills(720, '#86b85e', 6, 40) + ground(780, '#b4c96e') + stipple(0, 800, 1920, 280, '#6a5a2a', 260, 4, .3) + acacia(1500, 800, 1.1) + grassField(800, 16, 3) + lightWash(1600, 190) + grain(.35);
 }
 
 // ---------- sleep props ----------
@@ -456,7 +466,7 @@ function chimp(x, y, s = 1, o = {}, t = 0) {
 // a tree with a leafy sleeping nest in its crown (o.chimp: a chimp asleep in it)
 function nestTree(x, y, s = 1, t = 0, o = {}) {
   let g = `<path d="M-30 0 L-18 -330 L18 -330 L30 0 Z" fill="url(#wood)" stroke="${K}" stroke-width="6"/>` + SH('M-30 0 L-18 -330 L18 -330 L30 0 Z', 'shadeR') + P('M-10 -300 L-170 -420 M10 -320 L180 -440 M0 -330 L-20 -500', 'none', 16, '', '#6a4a2a');
-  g += foliage(0, -640, 560, 260, ['#335f2c', '#4f8a38', '#7fb352'], 7);
+  g += foliage(0, -620, 440, 210, ['#335f2c', '#4f8a38', '#7fb352'], 7);
   const nest = 'M-150 -400 Q-150 -330 0 -326 Q150 -330 150 -400 Q0 -370 -150 -400 Z';
   if (o.chimp) g += chimp(0, -380, .7, { asleep: true, zzz: o.zzz }, t);
   g += P(nest, '#7a5a2a', 6); for (let i = 0; i < 18; i++) g += Ln(-140 + i * 16, -398 + hash(i) * 10, -120 + i * 16, -340 - hash(i * 3) * 10, 4, i % 2 ? '#9a7434' : '#5f8a34');
