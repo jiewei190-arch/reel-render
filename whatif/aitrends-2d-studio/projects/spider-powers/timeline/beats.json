@@ -1,0 +1,746 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 0.76,
+  "text": "Saturday.",
+  "end": 1.37
+ },
+ {
+  "i": 1,
+  "start": 1.37,
+  "speechStart": 1.52,
+  "speechEnd": 6.6,
+  "text": "You're in the garden shed looking for Mina's bike pump, and something is looking back at you.",
+  "end": 7.03
+ },
+ {
+  "i": 2,
+  "start": 7.03,
+  "speechStart": 7.18,
+  "speechEnd": 13.28,
+  "text": "A tiny, fuzzy spider. Two enormous eyes. It tilts its head. You tilt yours.",
+  "end": 13.93
+ },
+ {
+  "i": 3,
+  "start": 13.93,
+  "speechStart": 14.08,
+  "speechEnd": 20.1,
+  "text": "It hops onto your thumb. No bite. Just a very long stare. Mina names it Pip.",
+  "end": 20.69
+ },
+ {
+  "i": 4,
+  "start": 20.69,
+  "speechStart": 20.84,
+  "speechEnd": 24.7,
+  "text": "Next morning, you wake up stuck to the ceiling. For about two seconds.",
+  "end": 25.41
+ },
+ {
+  "i": 5,
+  "start": 25.41,
+  "speechStart": 25.56,
+  "speechEnd": 27.52,
+  "text": "Then you're on the bed, and Biscuit isn't.",
+  "end": 28.01
+ },
+ {
+  "i": 6,
+  "start": 28.01,
+  "speechStart": 28.16,
+  "speechEnd": 32.86,
+  "text": "Nobody knows how a staring contest gives you spider powers. Not even Pip.",
+  "end": 33.49
+ },
+ {
+  "i": 7,
+  "start": 33.49,
+  "speechStart": 33.64,
+  "speechEnd": 38.13,
+  "text": "Let's see what one week does to you. Day one.",
+  "end": 38.7
+ },
+ {
+  "i": 8,
+  "start": 38.7,
+  "speechStart": 38.85,
+  "speechEnd": 42.87,
+  "text": "You press your hands on the hallway wall, and they stick. So do your socks.",
+  "end": 43.5
+ },
+ {
+  "i": 9,
+  "start": 43.5,
+  "speechStart": 43.65,
+  "speechEnd": 47.01,
+  "text": "You climb, then slowly slide back down, like a wet sticker.",
+  "end": 47.74
+ },
+ {
+  "i": 10,
+  "start": 47.74,
+  "speechStart": 47.89,
+  "speechEnd": 49.31,
+  "text": "Dev drops his cereal anyway.",
+  "end": 50.08
+ },
+ {
+  "i": 11,
+  "start": 50.08,
+  "speechStart": 50.23,
+  "speechEnd": 53.99,
+  "text": "Mina checks your palms with a magnifying glass. \"No glue.\"",
+  "end": 55.52
+ },
+ {
+  "i": 12,
+  "start": 55.52,
+  "speechStart": 55.67,
+  "speechEnd": 57.55,
+  "text": "Jumping spiders don't use glue either.",
+  "end": 58.16
+ },
+ {
+  "i": 13,
+  "start": 58.16,
+  "speechStart": 58.31,
+  "speechEnd": 62.59,
+  "text": "Each foot has a tuft of hairs, and every hair splits into even tinier ones.",
+  "end": 63.14
+ },
+ {
+  "i": 14,
+  "start": 63.14,
+  "speechStart": 63.29,
+  "speechEnd": 65.55,
+  "text": "Up that close, molecules pull on each other.",
+  "end": 66.16
+ },
+ {
+  "i": 15,
+  "start": 66.16,
+  "speechStart": 66.31,
+  "speechEnd": 69.61,
+  "text": "It's called van der Waals force. One tip barely grips.",
+  "end": 70.36
+ },
+ {
+  "i": 16,
+  "start": 70.36,
+  "speechStart": 70.51,
+  "speechEnd": 72.19,
+  "text": "Hundreds of thousands grip a lot.",
+  "end": 72.76
+ },
+ {
+  "i": 17,
+  "start": 72.76,
+  "speechStart": 72.91,
+  "speechEnd": 78.35,
+  "text": "In one study, scientists estimated that a jumping spider's feet could hold more than a hundred",
+  "end": 78.2
+ },
+ {
+  "i": 18,
+  "start": 78.2,
+  "speechStart": 78.35,
+  "speechEnd": 80.29,
+  "text": "and seventy times its own weight.",
+  "end": 81.04
+ },
+ {
+  "i": 19,
+  "start": 81.04,
+  "speechStart": 81.19,
+  "speechEnd": 86.29,
+  "text": "Geckos stick the same way, and peel their feet off like tape. Day two.",
+  "end": 87.0
+ },
+ {
+  "i": 20,
+  "start": 87.0,
+  "speechStart": 87.15,
+  "speechEnd": 89.57,
+  "text": "Halfway up the drainpipe, you start sliding again.",
+  "end": 90.14
+ },
+ {
+  "i": 21,
+  "start": 90.14,
+  "speechStart": 90.29,
+  "speechEnd": 96.03,
+  "text": "Not because the trick stopped working. Because you're enormous. Here's the problem.",
+  "end": 96.68
+ },
+ {
+  "i": 22,
+  "start": 96.68,
+  "speechStart": 96.83,
+  "speechEnd": 100.39,
+  "text": "Make something twice as tall, and its weight goes up eight times,",
+  "end": 100.24
+ },
+ {
+  "i": 23,
+  "start": 100.24,
+  "speechStart": 100.39,
+  "speechEnd": 103.61,
+  "text": "but the area of its feet only goes up four times.",
+  "end": 104.16
+ },
+ {
+  "i": 24,
+  "start": 104.16,
+  "speechStart": 104.31,
+  "speechEnd": 105.77,
+  "text": "It's called the square-cube law.",
+  "end": 105.62
+ },
+ {
+  "i": 25,
+  "start": 105.62,
+  "speechStart": 105.77,
+  "speechEnd": 110.05,
+  "text": "It's also why tiny creatures seem super strong for their size.",
+  "end": 110.84
+ },
+ {
+  "i": 26,
+  "start": 110.84,
+  "speechStart": 110.99,
+  "speechEnd": 113.01,
+  "text": "Scale them up, and that advantage disappears.",
+  "end": 113.84
+ },
+ {
+  "i": 27,
+  "start": 113.84,
+  "speechStart": 113.99,
+  "speechEnd": 119.87,
+  "text": "Cambridge researchers compared two hundred and twenty-five climbing species, from mites to geckos.",
+  "end": 120.26
+ },
+ {
+  "i": 28,
+  "start": 120.26,
+  "speechStart": 120.41,
+  "speechEnd": 123.49,
+  "text": "The bigger the animal, the more of its body was sticky foot.",
+  "end": 124.08
+ },
+ {
+  "i": 29,
+  "start": 124.08,
+  "speechStart": 124.23,
+  "speechEnd": 129.31,
+  "text": "For a human to climb that way, about forty percent of your whole body would need sticky pads.",
+  "end": 129.98
+ },
+ {
+  "i": 30,
+  "start": 129.98,
+  "speechStart": 130.13,
+  "speechEnd": 134.07,
+  "text": "Or shoes in US size one hundred and fourteen. Their verdict:",
+  "end": 134.22
+ },
+ {
+  "i": 31,
+  "start": 134.22,
+  "speechStart": 134.37,
+  "speechEnd": 137.67,
+  "text": "geckos are about the size limit for climbing with sticky feet.",
+  "end": 138.28
+ },
+ {
+  "i": 32,
+  "start": 138.28,
+  "speechStart": 138.43,
+  "speechEnd": 140.15,
+  "text": "Mina covers your hoodie in sticky notes.",
+  "end": 140.0
+ },
+ {
+  "i": 33,
+  "start": 140.0,
+  "speechStart": 140.15,
+  "speechEnd": 146.95,
+  "text": "\"Forty percent,\" she says. It does not help. Day three. Silk.",
+  "end": 147.54
+ },
+ {
+  "i": 34,
+  "start": 147.54,
+  "speechStart": 147.69,
+  "speechEnd": 148.33,
+  "text": "Bad news:",
+  "end": 148.18
+ },
+ {
+  "i": 35,
+  "start": 148.18,
+  "speechStart": 148.33,
+  "speechEnd": 150.23,
+  "text": "spiders don't make it with their hands.",
+  "end": 150.82
+ },
+ {
+  "i": 36,
+  "start": 150.82,
+  "speechStart": 150.97,
+  "speechEnd": 152.87,
+  "text": "It comes from spinnerets, at the back end.",
+  "end": 153.56
+ },
+ {
+  "i": 37,
+  "start": 153.56,
+  "speechStart": 153.71,
+  "speechEnd": 155.23,
+  "text": "So that's where yours comes from too.",
+  "end": 155.98
+ },
+ {
+  "i": 38,
+  "start": 155.98,
+  "speechStart": 156.13,
+  "speechEnd": 162.19,
+  "text": "Dev films you walking backwards across the garden, trailing a shiny line. He's never been happier.",
+  "end": 163.7
+ },
+ {
+  "i": 39,
+  "start": 163.7,
+  "speechStart": 163.85,
+  "speechEnd": 166.13,
+  "text": "Inside a spider, silk is a liquid protein.",
+  "end": 166.72
+ },
+ {
+  "i": 40,
+  "start": 166.72,
+  "speechStart": 166.87,
+  "speechEnd": 170.65,
+  "text": "As it's pulled out through tiny nozzles, it turns into solid thread.",
+  "end": 171.12
+ },
+ {
+  "i": 41,
+  "start": 171.12,
+  "speechStart": 171.27,
+  "speechEnd": 173.71,
+  "text": "The safety line, dragline silk, is amazing.",
+  "end": 174.38
+ },
+ {
+  "i": 42,
+  "start": 174.38,
+  "speechStart": 174.53,
+  "speechEnd": 176.07,
+  "text": "Weight for weight, it rivals steel.",
+  "end": 176.6
+ },
+ {
+  "i": 43,
+  "start": 176.6,
+  "speechStart": 176.75,
+  "speechEnd": 179.99,
+  "text": "And it's tougher than Kevlar, the fibre in bulletproof vests.",
+  "end": 180.8
+ },
+ {
+  "i": 44,
+  "start": 180.8,
+  "speechStart": 180.95,
+  "speechEnd": 184.39,
+  "text": "Thread for thread, steel still wins. Silk is just much lighter.",
+  "end": 184.98
+ },
+ {
+  "i": 45,
+  "start": 184.98,
+  "speechStart": 185.13,
+  "speechEnd": 186.61,
+  "text": "But protein comes from food.",
+  "end": 187.24
+ },
+ {
+  "i": 46,
+  "start": 187.24,
+  "speechStart": 187.39,
+  "speechEnd": 190.49,
+  "text": "Some spiders even eat their old webs to recycle it.",
+  "end": 190.9
+ },
+ {
+  "i": 47,
+  "start": 190.9,
+  "speechStart": 191.05,
+  "speechEnd": 196.29,
+  "text": "By lunch, you've eaten nine eggs and all of Dev's sandwiches. Day four.",
+  "end": 197.02
+ },
+ {
+  "i": 48,
+  "start": 197.02,
+  "speechStart": 197.17,
+  "speechEnd": 199.33,
+  "text": "Mina creeps up behind you with a water balloon.",
+  "end": 199.88
+ },
+ {
+  "i": 49,
+  "start": 199.88,
+  "speechStart": 200.03,
+  "speechEnd": 203.25,
+  "text": "You step aside without looking. You felt the air move.",
+  "end": 204.78
+ },
+ {
+  "i": 50,
+  "start": 204.78,
+  "speechStart": 204.93,
+  "speechEnd": 207.31,
+  "text": "Spiders have special hairs called trichobothria.",
+  "end": 207.82
+ },
+ {
+  "i": 51,
+  "start": 207.82,
+  "speechStart": 207.97,
+  "speechEnd": 209.65,
+  "text": "The faintest puff of air bends them.",
+  "end": 210.1
+ },
+ {
+  "i": 52,
+  "start": 210.1,
+  "speechStart": 210.25,
+  "speechEnd": 214.19,
+  "text": "They work close to the physical limit of what any sensor can detect.",
+  "end": 214.82
+ },
+ {
+  "i": 53,
+  "start": 214.82,
+  "speechStart": 214.97,
+  "speechEnd": 221.41,
+  "text": "In 2016, Cornell researchers found jumping spiders reacting to sounds three metres away.",
+  "end": 222.06
+ },
+ {
+  "i": 54,
+  "start": 222.06,
+  "speechStart": 222.21,
+  "speechEnd": 226.33,
+  "text": "About six hundred body lengths. No ears. Just hairs.",
+  "end": 227.08
+ },
+ {
+  "i": 55,
+  "start": 227.08,
+  "speechStart": 227.23,
+  "speechEnd": 234.11,
+  "text": "When the team played a low hum, like the wingbeat of the wasps that hunt them, most froze. Then there are the eight eyes.",
+  "end": 234.7
+ },
+ {
+  "i": 56,
+  "start": 234.7,
+  "speechStart": 234.85,
+  "speechEnd": 237.99,
+  "text": "Two big front ones see sharp detail, like zoom lenses.",
+  "end": 238.48
+ },
+ {
+  "i": 57,
+  "start": 238.48,
+  "speechStart": 238.63,
+  "speechEnd": 241.39,
+  "text": "The rest spot movement almost all the way around.",
+  "end": 242.08
+ },
+ {
+  "i": 58,
+  "start": 242.08,
+  "speechStart": 242.23,
+  "speechEnd": 248.97,
+  "text": "Biscuit fails to sneak up on you for the first time ever. She takes it personally. Day five.",
+  "end": 249.64
+ },
+ {
+  "i": 59,
+  "start": 249.64,
+  "speechStart": 249.79,
+  "speechEnd": 256.95,
+  "text": "You leap from the back step onto the garden fence. Clean. But your knees feel strange. Like water balloons.",
+  "end": 258.4
+ },
+ {
+  "i": 60,
+  "start": 258.4,
+  "speechStart": 258.55,
+  "speechEnd": 260.51,
+  "text": "Spiders have muscles to bend their legs.",
+  "end": 261.04
+ },
+ {
+  "i": 61,
+  "start": 261.04,
+  "speechStart": 261.19,
+  "speechEnd": 264.74,
+  "text": "But at two big leg joints, they have no muscles to straighten them.",
+  "end": 265.23
+ },
+ {
+  "i": 62,
+  "start": 265.23,
+  "speechStart": 265.38,
+  "speechEnd": 268.72,
+  "text": "Instead, they raise the pressure of the fluid inside them,",
+  "end": 268.57
+ },
+ {
+  "i": 63,
+  "start": 268.57,
+  "speechStart": 268.72,
+  "speechEnd": 272.26,
+  "text": "like a hydraulic machine, and that pushes the legs straight.",
+  "end": 273.01
+ },
+ {
+  "i": 64,
+  "start": 273.01,
+  "speechStart": 273.16,
+  "speechEnd": 277.6,
+  "text": "A jumping spider can leap up to six times its body length from a standing start.",
+  "end": 278.23
+ },
+ {
+  "i": 65,
+  "start": 278.23,
+  "speechStart": 278.38,
+  "speechEnd": 280.56,
+  "text": "The best humans manage about one and a half.",
+  "end": 281.25
+ },
+ {
+  "i": 66,
+  "start": 281.25,
+  "speechStart": 281.4,
+  "speechEnd": 284.48,
+  "text": "Scientists still argue how much jumping uses that pressure.",
+  "end": 285.13
+ },
+ {
+  "i": 67,
+  "start": 285.13,
+  "speechStart": 285.28,
+  "speechEnd": 290.7,
+  "text": "One spider, trained to jump on cue in Manchester, suggests muscle alone could be enough.",
+  "end": 291.47
+ },
+ {
+  "i": 68,
+  "start": 291.47,
+  "speechStart": 291.62,
+  "speechEnd": 297.94,
+  "text": "Dev measures your fence jump. One body length. Very human. Day six.",
+  "end": 298.73
+ },
+ {
+  "i": 69,
+  "start": 298.73,
+  "speechStart": 298.88,
+  "speechEnd": 303.4,
+  "text": "Dev hands you a burger, and your body has an idea. Most spiders can't chew.",
+  "end": 303.93
+ },
+ {
+  "i": 70,
+  "start": 303.93,
+  "speechStart": 304.08,
+  "speechEnd": 308.3,
+  "text": "They cover their food in digestive juices, wait for soup, and slurp.",
+  "end": 308.67
+ },
+ {
+  "i": 71,
+  "start": 308.67,
+  "speechStart": 308.82,
+  "speechEnd": 311.62,
+  "text": "You look at the burger. The burger looks at you.",
+  "end": 312.07
+ },
+ {
+  "i": 72,
+  "start": 312.07,
+  "speechStart": 312.22,
+  "speechEnd": 315.74,
+  "text": "You have a milkshake instead. Day seven.",
+  "end": 316.21
+ },
+ {
+  "i": 73,
+  "start": 316.21,
+  "speechStart": 316.36,
+  "speechEnd": 321.48,
+  "text": "A storm blows Mina's red scarf into the apple tree. Biscuit goes after it.",
+  "end": 321.89
+ },
+ {
+  "i": 74,
+  "start": 321.89,
+  "speechStart": 322.04,
+  "speechEnd": 323.28,
+  "text": "Now Biscuit's stuck too.",
+  "end": 323.85
+ },
+ {
+  "i": 75,
+  "start": 323.85,
+  "speechStart": 324.0,
+  "speechEnd": 327.56,
+  "text": "You climb branch by branch, the normal way. Rule two.",
+  "end": 328.09
+ },
+ {
+  "i": 76,
+  "start": 328.09,
+  "speechStart": 328.24,
+  "speechEnd": 332.8,
+  "text": "But you feel every gust coming on your arm hairs, and hug the trunk before it hits.",
+  "end": 333.27
+ },
+ {
+  "i": 77,
+  "start": 333.27,
+  "speechStart": 333.42,
+  "speechEnd": 335.72,
+  "text": "At the top, you can't hold on and hold a cat.",
+  "end": 336.23
+ },
+ {
+  "i": 78,
+  "start": 336.23,
+  "speechStart": 336.38,
+  "speechEnd": 340.6,
+  "text": "So you tie off a silk line, wrap Biscuit in the scarf, and lower her down.",
+  "end": 341.15
+ },
+ {
+  "i": 79,
+  "start": 341.15,
+  "speechStart": 341.3,
+  "speechEnd": 342.56,
+  "text": "One soggy cat is easy.",
+  "end": 343.21
+ },
+ {
+  "i": 80,
+  "start": 343.21,
+  "speechStart": 343.36,
+  "speechEnd": 345.24,
+  "text": "Biscuit lands in Mina's arms, furious.",
+  "end": 345.95
+ },
+ {
+  "i": 81,
+  "start": 345.95,
+  "speechStart": 346.1,
+  "speechEnd": 348.62,
+  "text": "Next morning, you wake up in bed, not on the ceiling.",
+  "end": 349.19
+ },
+ {
+  "i": 82,
+  "start": 349.19,
+  "speechStart": 349.34,
+  "speechEnd": 351.06,
+  "text": "In the shed, Pip waves one leg.",
+  "end": 352.45
+ },
+ {
+  "i": 83,
+  "start": 352.45,
+  "speechStart": 352.6,
+  "speechEnd": 357.54,
+  "text": "In real life, a staring contest with a spider gives you nothing but a staring contest.",
+  "end": 358.13
+ },
+ {
+  "i": 84,
+  "start": 358.13,
+  "speechStart": 358.28,
+  "speechEnd": 359.8,
+  "text": "But people are borrowing the tricks.",
+  "end": 360.47
+ },
+ {
+  "i": 85,
+  "start": 360.47,
+  "speechStart": 360.62,
+  "speechEnd": 363.42,
+  "text": "With gecko-inspired hand pads from Stanford,",
+  "end": 363.65
+ },
+ {
+  "i": 86,
+  "start": 363.65,
+  "speechStart": 363.8,
+  "speechEnd": 367.98,
+  "text": "a seventy-kilo climber went up a glass wall nearly four metres tall.",
+  "end": 367.83
+ },
+ {
+  "i": 87,
+  "start": 367.83,
+  "speechStart": 367.98,
+  "speechEnd": 370.84,
+  "text": "Labs spin artificial spider silk, too.",
+  "end": 371.33
+ },
+ {
+  "i": 88,
+  "start": 371.33,
+  "speechStart": 371.48,
+  "speechEnd": 375.4,
+  "text": "So far, it's weaker than the real thing. The catch is always size.",
+  "end": 376.09
+ },
+ {
+  "i": 89,
+  "start": 376.09,
+  "speechStart": 376.24,
+  "speechEnd": 379.98,
+  "text": "What works at the size of a raisin falls apart at the size of you.",
+  "end": 380.45
+ },
+ {
+  "i": 90,
+  "start": 380.45,
+  "speechStart": 380.6,
+  "speechEnd": 381.96,
+  "text": "So which power would you keep:",
+  "end": 382.27
+ },
+ {
+  "i": 91,
+  "start": 382.27,
+  "speechStart": 382.42,
+  "speechEnd": 386.4,
+  "text": "sticky hands, the silk, or the hairs that hear? Tell us in the comments.",
+  "end": 387.07
+ },
+ {
+  "i": 92,
+  "start": 387.07,
+  "speechStart": 387.22,
+  "speechEnd": 388.82,
+  "text": "And subscribe for more What Ifs.",
+  "end": 389.52
+ }
+]
