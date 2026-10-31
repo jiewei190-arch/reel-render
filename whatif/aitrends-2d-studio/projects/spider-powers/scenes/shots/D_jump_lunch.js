@@ -121,14 +121,14 @@ function jumpScene(g, t, cam, J, o = {}) {
     if (J) { const oo = { x: J.x, y: J.y, s: HS, facing: 1, pose: J.pose, expr: o.expr || 'determined', blink: blinkFlag(t, 3.1, 2), look: o.look || lookToward(1, 0.1), rim: G.rim, t }; actor(g, 'HERO', oo); gloves(g, oo, J.pose, { t }); }
     if (o.after) o.after(g, G);
   });
-  gardenFg(g, t, cam, { view: 'garden' });
+  if (!o.noFg) gardenFg(g, t, cam, { view: 'garden' });
   return G;
 }
 registerShot('s079', { draw(g, t, info) {
   const st = info.shot.start, tl = shotWord('leap', st, 1.59), tf = shotWord('fence', st, 3.43);
-  const k = ease.inOut(prog(t, tl, tf)), cam = camMove(t, info.dur, { z: [1.0, 1.03], drift: 0.3 }); cam.x += lerp(-140, 60, k);
+  const k = ease.inOut(prog(t, tl, tf)), cam = camMove(t, info.dur, { z: [1.0, 1.03], drift: 0.3 }); cam.x += lerp(-140, 60, k); cam.y -= 110 * Math.sin(k * Math.PI);
   const P0 = { stepX: E.W / 2 - 760, stepTop: E.H * 0.8 - 60 }, fx = E.W / 2 - 560 + 240, ftop = E.H * 0.8 - 330;
-  const J = fenceJump(t, { from: [P0.stepX + 30, P0.stepTop], to: [fx, ftop], at: tl - 0.25, dur: tf - tl, h: 220 });
+  const J = fenceJump(t, { from: [P0.stepX + 30, P0.stepTop], to: [fx, ftop], at: tl - 0.25, dur: tf - tl, h: 70 });
   jumpScene(g, t, cam, J, { wobble: t > tf ? Math.exp(-(t - tf) * 4) : 0, expr: exprAt(t, [[0, 'determined'], [tf, 'happy']]), look: lookToward(1, -0.2) });
   g.save(); g.globalAlpha *= 1 - prog(t, 1.25, 1.55); dayCard(g, t, { day: 5, title: 'THE JUMP', at: 0.17, y: E.H * 0.3 }); g.restore();
 } });
@@ -163,7 +163,7 @@ registerShot('s081', { draw(g, t, info) {
   // right: two water balloons in exact sync
   g.save(); g.beginPath(); g.rect(E.W / 2 + 6, 0, E.W / 2, E.H); g.clip(); g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#fbf6ea', '#e8dcc4']); g.fillRect(E.W / 2, 0, E.W / 2, E.H);
   const bk = k * (t > tb ? 1.2 : 1); waterBalloon(g, E.W * 0.64, 480, 3.2, { t, wobble: bk }); waterBalloon(g, E.W * 0.86, 480, 3.2, { t, wobble: bk });
-  text(g, '=', E.W * 0.75, 480, { size: 90, color: ui().cream, font: FONTS.title, weight: 700, stroke: 8, strokeColor: '#1a1622', alpha: pop(t, tw - 0.05) });
+  const ek = pop(t, tw - 0.05); if (ek > 0.01) { g.save(); g.translate(E.W * 0.75, 480); g.scale(ek, ek); for (const dy of [-16, 16]) { rr(g, -40, dy - 8, 80, 16, 8); g.fillStyle = ui().cream; g.fill(); g.strokeStyle = '#1a1622'; g.lineWidth = 3; g.stroke(); } g.restore(); }
   g.restore(); g.restore();
 } });
 
@@ -172,7 +172,7 @@ registerShot('s082', { draw(g, t, info) {
   const st = info.shot.start, tb = shotWord('bend', st, 1.47);
   ruleCard(g, t, info, { n: 5, title: 'SPIDER LEGS RUN ON PRESSURE.', bg: (g, t) => {
     const cam = camMove(t, info.dur, { z: [1.12, 1.14], x: [-180, -180], y: [-60, -60], drift: 0.2 }), fx = E.W / 2 - 320, ftop = E.H * 0.8 - 330;
-    g.save(); g.filter = 'blur(7px)'; jumpScene(g, t, cam, { x: fx, y: ftop, pose: kneeWobble(blendPose('crouch', 'stand', 0.55), t, 1) }, { wobble: 0.6, expr: 'worried' }); g.restore();
+    jumpScene(g, t, cam, { x: fx, y: ftop, pose: kneeWobble(blendPose('crouch', 'stand', 0.55), t, 1) }, { wobble: 0.6, expr: 'worried' }); g.fillStyle = 'rgba(10,14,30,.35)'; g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3);
   } });
   const k = pop(t, tb), bend = Math.sin(clamp((t - tb) / 0.8) * Math.PI) * 0.9; if (k > 0.01) { g.save(); g.translate(E.W / 2, E.H * 0.93); g.scale(k, k); const U = ui(), j = [0, -10], end = [Math.cos(0.2 + bend) * 110, -10 + Math.sin(0.2 + bend) * 110];
     seg(g, [[-120, -50], j], 22, U.cream); seg(g, [j, end], 18, U.cream); circle(g, ...j, 14, U.gold); g.restore(); }
@@ -250,15 +250,15 @@ registerShot('s088', { draw(g, t, info) {
 // ============================== s089 THE MANCHESTER SPIDER ==============================
 registerShot('s089', { draw(g, t, info) {
   const st = info.shot.start, tj = shotWord('jump', st, 1.47), tc = shotWord('cue', st, 2.03), tm = shotWord('manchester', st, 2.47);
-  const j0 = tc - 0.08, j1 = tc + 0.3, k = clamp((t - j0) / (j1 - j0)), cam = camMove(t, info.dur, { z: [1.9, 1.95], y: [10, 10], drift: 0.2 }); cam.x += lerp(-760, -640, ease.inOut(k));
+  const j0 = tc - 0.08, j1 = tc + 0.3, k = clamp((t - j0) / (j1 - j0)), cam = camMove(t, info.dur, { z: [1.9, 1.95], y: [10, 10], drift: 0.2 }); cam.x += lerp(-600, -480, ease.inOut(k));
   const L = lab(g, t, cam, { mood: 'day' }), top = L.GY - 300;
   layer(g, cam, 1, (g) => {
-    for (const px of [170, 400]) { rr(g, px - 50, top - 46, 100, 30, 6); g.fillStyle = '#f4f6f8'; g.fill(); g.strokeStyle = '#1a1622'; g.lineWidth = 2.5; g.stroke(); seg(g, [[px, top - 16], [px, top - 2]], 10, '#9aa0aa'); }
-    const x = lerp(170, 400, ease.inOut(k)), y = top - 46 - Math.sin(k * Math.PI) * 90;
+    for (const px of [330, 530]) { rr(g, px - 50, top - 46, 100, 30, 6); g.fillStyle = '#f4f6f8'; g.fill(); g.strokeStyle = '#1a1622'; g.lineWidth = 2.5; g.stroke(); seg(g, [[px, top - 16], [px, top - 2]], 10, '#9aa0aa'); }
+    const x = lerp(330, 530, ease.inOut(k)), y = top - 46 - Math.sin(k * Math.PI) * 90;
     labSpider(g, x, y, 0.9, { t, hop: k > 0 && k < 1 ? 0.5 : 0, look: [1, 0], facing: 1, tilt: 0.15 });
-    const ck = t > tj && t < tj + 0.12 ? 1 : 0; g.save(); g.translate(560, top - 170 + ck * 6); g.rotate(-0.5); rr(g, -18, 0, 36, 300, 14); g.fillStyle = '#f4f6f8'; g.fill(); g.strokeStyle = '#9aa0aa'; g.lineWidth = 2; g.stroke();
+    const ck = t > tj && t < tj + 0.12 ? 1 : 0; g.save(); g.translate(660, top - 170 + ck * 6); g.rotate(-0.5); rr(g, -18, 0, 36, 300, 14); g.fillStyle = '#f4f6f8'; g.fill(); g.strokeStyle = '#9aa0aa'; g.lineWidth = 2; g.stroke();
     g.fillStyle = '#e8c8a8'; g.beginPath(); g.ellipse(0, -6, 22, 26, 0, 0, 7); g.fill(); rr(g, -14, -38, 28, 20, 5); g.fillStyle = '#2f6fd0'; g.fill(); circle(g, 0, -40 + ck * 3, 5, '#c8ccd4'); g.restore();   // the clicker hand
-    if (ck) { g.strokeStyle = alpha('#1a1622', 0.6); g.lineWidth = 2; for (let i = 0; i < 3; i++) { g.beginPath(); g.moveTo(520 + i * 10, top - 230); g.lineTo(510 + i * 16, top - 250); g.stroke(); } }
+    if (ck) { g.strokeStyle = alpha('#1a1622', 0.6); g.lineWidth = 2; for (let i = 0; i < 3; i++) { g.beginPath(); g.moveTo(620 + i * 10, top - 230); g.lineTo(610 + i * 16, top - 250); g.stroke(); } }
   });
   const mk = pop(t, tm); if (mk > 0) { g.save(); g.translate(E.W * 0.72, E.H * 0.2); g.rotate(-0.04); g.scale(mk, mk); rr(g, -200, -40, 400, 80, 12); g.fillStyle = ui().cream; g.fill(); g.strokeStyle = '#1a1622'; g.lineWidth = 4; g.stroke(); text(g, 'MANCHESTER', 0, 3, { size: 44, color: '#1a1622', font: FONTS.ui, weight: 900, spacing: 4 }); g.restore(); }
 } });
@@ -291,7 +291,7 @@ registerShot('s091', { draw(g, t, info) {
 registerShot('s092', { draw(g, t, info) {
   const st = info.shot.start, tb = shotWord('body', st, 0.34), tv = shotWord('very', st, 1.70), th = shotWord('human', st, 2.0), GY = E.H * 0.8;
   const cam = camMove(t, info.dur, { z: [2.1, 2.2], x: [-420, -410], y: [250, 245], drift: 0.15 });
-  jumpScene(g, t, cam, null, { after: (g) => {
+  jumpScene(g, t, cam, null, { noFg: true, after: (g) => {
     bodyLength(g, 163, GY + 60, 455, { k: 0.85 + 0.15 * prog(t, tb - 0.1, tb + 0.1), label: '1 BODY LENGTH' });
     const sk = pop(t, tv), px = 690, py = GY - 330 * 0.22 - 10;
     pip(g, px, py, 0.75, { t, tilt: t > tv ? 0.8 : 0.1, wave: sk, look: [-1, 0.3], blink: blinkFlag(t, 3.5, 2) ? 1 : 0 });
