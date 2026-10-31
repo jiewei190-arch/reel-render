@@ -123,7 +123,7 @@ registerShot('s019', { draw(g, t, info) {
     board(g, t, { title: 'FIG 1 - MORE FIBRES AT ONCE', fig: 'STRENGTH = NERVES + MUSCLE' });
     const lit = Math.round(6 + 13 * ease.inOut(prog(t, tSw, tO)));
     nerve(g, 1, (t * 0.8) % 1); muscle(g, 1, lit, t, { bundles: true });
-    label(g, t, { at: [700, 440], to: [520, 250], str: 'nervous system recruits more fibres', start: tN });
+    label(g, t, { at: [760, 450], to: [800, 250], str: 'nervous system recruits more fibres', start: tN });
     const f = Math.max(0, 1 - (t - tO) * 3); if (t > tO && f > 0) glow(g, MX, MY, 420, GOLD, 0.5 * f);
     T(g, `${lit} / 20 working`, MX, MY + 250, { color: GOLD, size: 40 });
   });

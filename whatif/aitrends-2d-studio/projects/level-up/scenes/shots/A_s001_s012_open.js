@@ -225,7 +225,7 @@ registerShot('s012', { draw(g, t, info) {
     actor(g, 'DEV', { x: hx + 380, y: K.GY + 10, s: 1.9, facing: -1, pose: idle(POSES.phone, t, 4), expr: 'happy', blink: blinkFlag(t, 3.1, 5), look: lookToward(-0.6, -0.6), t });
     hero(g, { ...ho, pose: hp, expr: 'joy', blink: blinkFlag(t, 3.3, 2), look: lookToward(0, -1), t, rim: { color: CYAN, dir: [1, -0.4] } });
     const h = handAt(ho, hp, 'F'); bowl(g, h[0] - 10, h[1] - 10, 0.9);
-    statCard(g, t, { x: hx + 300, y: K.GY - 520, s: 0.6, lv: 1, str: 50, xp: 0.1 });
+    statCard(g, t, { x: hx + 560, y: K.GY - 640, s: 0.6, lv: 1, str: 50, xp: 0.1 });
     cat(g, { x: P.tableX + 230, y: P.tableTop, s: 1.5, facing: -1, pose: 'sit', t });
   }));
   atmos(g, t, cam, { color: '#ffe0b0' });
