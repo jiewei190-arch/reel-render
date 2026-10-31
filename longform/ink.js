@@ -10,6 +10,9 @@
 //   scenery: sky(id: skyDay|skyWarm|skyDusk|skyNight|skyDawn|skyGrey|skyCave), stars, moon, sun, cloud, mountains, hills, ground, grassField, trees
 //   (acacia, pine, poplar, oak, bush), rock, caveMouth, caveInside, campfire, hearth, fireLight, hut, grassHut, haze, grain, vignette, backdrop(kind, t)
 //   props: grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator('lion'|'leopard'|'hyena'), wristband, zzz, clock, scienceCard, hourglass
+// v2.3: the kit lives in a closure and is published on globalThis (configurable), so a scene file may declare its own helper with
+// the same name (const or function) without a SyntaxError; ink.js keeps using its own versions internally.
+(function () {
 const K = '#1b1b1b';
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const ease = x => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
@@ -285,6 +288,7 @@ function person(x, y, s, o = {}, t = 0) {
   } else {
     out += P(`M0 ${f1(hipY)} L${-14 * lf} ${f1(-75 * lf)} L${-34 * lf} -8`, 'none', LW) + foot(-34 * lf, 0, -1) + P(`M0 ${f1(hipY)} L${14 * lf} ${f1(-75 * lf)} L${34 * lf} -8`, 'none', LW) + foot(34 * lf, 0, 1);
   }
+  if (o.tattoo && pose !== 'sit' && pose !== 'kneel') for (const sd of [-1, 1]) out += tattooDashes(sd * 22 * lf, -46 * lf, .9, 4, sd * 14) + tattooDashes(sd * 12 * lf, -96 * lf, .8, 3, sd * 8);
   const up = upperInk(o, face, t, seed, hipY, breathe, kid);
   out += o.elder ? G(up.svg, `rotate(6 0 ${f1(hipY)})`) : up.svg;
   if (o.blanket) out += P(`M-80 ${f1(hipY - 70)} Q0 ${f1(hipY - 96)} 90 ${f1(hipY - 66)} L100 ${f1(hipY + 40)} Q0 ${f1(hipY + 60)} -90 ${f1(hipY + 40)} Z`, 'url(#fur)', 5);
@@ -463,6 +467,7 @@ function wheat(x, y, s = 1, t = 0) { const sw = Math.sin(t * 1.6 + x * .02) * 6;
 function field(y, t, n = 26) { let s = P(`M-20 ${y} L1940 ${y - 20} L1940 1100 L-20 1100 Z`, '#d9b95e', 6); for (let i = 0; i < n; i++) s += wheat(40 + i * 75, y + 40 + (i % 3) * 30, .9, t); return s; }
 // ready-made painterly backdrops: savanna | savannaDusk | savannaNight | dawn | cave | caveNight | cliff | camp | snowCave
 function backdrop(kind = 'savanna', t = 0) {
+  if (kind === 'rainforest' || kind === 'jungle') return rainforest(t, { cave: kind === 'rainforest' });
   const night = kind === 'savannaNight' || kind === 'camp' || kind === 'caveNight';
   if (kind === 'cave') return caveInside(t, true);
   if (kind === 'caveNight') return caveInside(t, true) + `<rect width="1920" height="1080" fill="#0a1030" opacity=".25"/>`;
@@ -499,8 +504,10 @@ function chimp(x, y, s = 1, o = {}, t = 0) {
   let g = E(0, -80 + br, 78, 70, fur, 6) + SH('M-78 -80 a78 70 0 1 0 156 0 a78 70 0 1 0 -156 0', 'shadeR');
   g += E(-62, -20, 34, 22, fur, 6) + E(64, -20, 34, 22, fur, 6);
   g += C(-58, -170, 20, face, 5) + C(58, -170, 20, face, 5) + C(0, -175, 62, fur, 6) + E(0, -160, 46, 44, face, 5) + E(0, -136, 34, 24, '#e6c49c', 4);
-  g += asleep ? P('M-28 -176 q10 8 20 0 M8 -176 q10 8 20 0', 'none', 4.5) : C(-18, -178, 6, K, 0) + C(18, -178, 6, K, 0);
-  g += P('M-12 -132 Q0 -124 12 -132', 'none', 4) + C(-6, -150, 3, K, 0) + C(6, -150, 3, K, 0);
+  const yuck = o.chew || o.expr === 'yuck';
+  g += asleep ? P('M-28 -176 q10 8 20 0 M8 -176 q10 8 20 0', 'none', 4.5) : yuck ? P('M-28 -186 L-12 -178 L-28 -170 M28 -186 L12 -178 L28 -170', 'none', 5) : C(-18, -178, 6, K, 0) + C(18, -178, 6, K, 0);
+  g += (yuck ? P(`M-16 -132 q4 ${f1(-5 + Math.sin(t * 9) * 3)} 8 0 q4 5 8 0 q4 -5 8 0`, 'none', 4) : P('M-12 -132 Q0 -124 12 -132', 'none', 4)) + C(-6, -150, 3, K, 0) + C(6, -150, 3, K, 0);
+  if (o.chew) { const cw = Math.sin(t * 9) * 3; g += P(`M-70 -60 Q-40 -110 ${f1(-6 + cw)} -134`, 'none', 9, '', '#7a8a3a') + P(`M-70 -60 Q-40 -110 ${f1(-6 + cw)} -134`, 'none', 4, '', '#e8e0b0') + E(-60, -70, 22, 18, fur, 5) + P('M-90 -40 l-26 -10 M-84 -30 l-22 6', 'none', 4, '', '#5a8a3a'); }
   return G(g + (asleep && o.zzz !== false ? zzz(80, -240, .8, t) : ''), `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
 }
 // a tree with a leafy sleeping nest in its crown (o.chimp: a chimp asleep in it)
@@ -645,3 +652,73 @@ function village(t = 0, o = {}) {
   s += dirt(700, '#c58a48');
   return s;
 }
+
+// ---------- v2.3: rainforest + limestone cave (Borneo / Sumatra), apes, healing props, Ötzi kit ----------
+// tattoo dashes (Ötzi-style groups of short parallel lines), light on the black limbs by default
+function tattooDashes(x, y, s = 1, n = 3, rot = 0, col = '#d8ecff') { let g = ''; for (let i = 0; i < n; i++) g += Ln(-9, (i - (n - 1) / 2) * 7, 9, (i - (n - 1) / 2) * 7, 3, col); return G(g, `translate(${f1(x)} ${f1(y)}) rotate(${rot}) scale(${s})`); }
+function palm(x, y, s = 1, t = 0) {
+  const sw = Math.sin(t * 1.2 + x * .01) * 4; let g = P(`M0 0 Q-30 -160 ${f1(10 + sw)} -330`, 'none', 22, '', '#6a5232') + P(`M0 0 Q-30 -160 ${f1(10 + sw)} -330`, 'none', 22, 'stroke-dasharray="4 26" opacity=".5"', '#3e2e1c');
+  for (let i = 0; i < 8; i++) { const a = rad(-170 + i * 26) , L = 170 + (i % 3) * 30, ex = Math.cos(a) * L, ey = Math.sin(a) * L * .55 + 40, mx = ex * .5, my = ey * .5 - 50;
+    g += G(P(`M0 0 Q${f1(mx)} ${f1(my - 20)} ${f1(ex)} ${f1(ey)} Q${f1(mx)} ${f1(my + 16)} 0 0 Z`, i % 2 ? '#3f8a3a' : '#2f7a3a', 4) + P(`M0 0 Q${f1(mx)} ${f1(my - 2)} ${f1(ex)} ${f1(ey)}`, 'none', 2.5, 'opacity=".5"', '#1d4a20'), `translate(${f1(10 + sw)} -330)`); }
+  return G(g + C(10 + sw, -326, 14, '#5a4a2a', 4), `translate(${x} ${y}) scale(${s})`);
+}
+function fern(x, y, s = 1, flip = 1) { let g = ''; for (let k = 0; k < 5; k++) { const a = -150 + k * 30, L = 110 - Math.abs(k - 2) * 14, ex = Math.cos(rad(a)) * L, ey = Math.sin(rad(a)) * L; g += P(`M0 0 Q${f1(ex * .5)} ${f1(ey - 30)} ${f1(ex)} ${f1(ey)}`, 'none', 3, '', '#2d6a32'); for (let i = 1; i < 7; i++) { const u = i / 7, px = ex * u, py = ey * u - Math.sin(u * Math.PI) * 30 * u; g += E(px, py, 11 * (1 - u * .5), 4.5, '#4a9a48', 0, `transform="rotate(${f1(a + 60)} ${f1(px)} ${f1(py)})"`) + E(px, py, 11 * (1 - u * .5), 4.5, '#3a8a3e', 0, `transform="rotate(${f1(a - 60)} ${f1(px)} ${f1(py)})"`); } } return G(g, `translate(${x} ${y}) scale(${flip * s} ${s})`); }
+function vine(x, y, len = 300, t = 0, seed = 1) { const sw = Math.sin(t * 1.1 + seed) * 10; let g = P(`M0 0 Q${f1(sw + 20)} ${f1(len * .5)} ${f1(sw)} ${len}`, 'none', 4, '', '#2f5a28'); for (let i = 1; i < 9; i++) { const u = i / 9, px = sw * u + Math.sin(u * 3) * 10, py = len * u; g += P(`M${f1(px)} ${f1(py)} q${i % 2 ? 14 : -14} -6 ${i % 2 ? 20 : -20} 6 q${i % 2 ? -10 : 10} 4 ${i % 2 ? -20 : 20} -6 Z`, '#4f9a3e', 2.5); } return G(g, `translate(${x} ${y})`); }
+// a pale limestone cliff with vertical streaks and an arched cave mouth (x = mouth centre on the ground line y)
+function limestoneCave(x, y, s = 1, o = {}) {
+  const cliff = 'M-520 0 L-500 -360 Q-460 -520 -300 -560 Q-120 -640 80 -600 Q300 -620 420 -500 Q520 -420 540 -240 L560 0 Z', mouth = 'M-170 0 Q-190 -230 -40 -290 Q120 -310 170 -170 Q190 -80 180 0 Z';
+  let g = P(cliff, '#c9c6b4', 6) + `<path d="${cliff}" fill="url(#rockT)"/>` + SH(cliff, 'litTop') + SH(cliff, 'shadeR') + speckle(cliff, .7);
+  for (let i = 0; i < 16; i++) { const sx = -460 + i * 62 + hash(i) * 20, sy = -520 + hash(i * 3) * 100; g += P(`M${f1(sx)} ${f1(sy)} q${f1((hash(i * 5) - .5) * 20)} ${f1(180 + hash(i * 7) * 200)} ${f1((hash(i * 9) - .5) * 10)} ${f1(300 + hash(i * 11) * 200)}`, 'none', 3, 'opacity=".35"', '#6a6a5a'); }
+  for (const [fx, fy, fw] of [[-420, -470, 150], [-260, -560, 170], [-60, -610, 150], [130, -610, 170], [320, -560, 150], [460, -430, 120], [-470, -300, 90], [500, -280, 90]]) g += foliage(fx, fy, fw, fw * .55, ['#2f6a34', '#4a8a3a', '#7ab352'], Math.round(fx));
+  for (const [lx, ly] of [[-480, -180], [470, -140], [-300, -420], [380, -380]]) g += fern(lx, ly, .6, lx < 0 ? 1 : -1);
+  g += P(mouth, '#1c1712', 5) + `<path d="M-130 0 Q-140 -190 -30 -240 Q90 -256 130 -150 Q146 -70 140 0 Z" fill="#0b0806"/>`;
+  for (let i = 0; i < 5; i++) g += vine(-150 + i * 70, -250 - hash(i) * 30, 120 + hash(i * 3) * 90, o.t || 0, i);
+  return G(g, `translate(${x} ${y}) scale(${s})`);
+}
+// misty dawn rainforest: karst towers in the haze, a limestone cliff + cave (o.cave), giant trees, palms, ferns, vines, mist bands
+function rainforest(t = 0, o = {}) {
+  let s = `<rect width="1920" height="1080" fill="url(#skyDawn)"/><rect width="1920" height="1080" fill="#a8dcc0" opacity=".3"/>` + lightWash(1500, 200, 1200, 'sunL', .45);
+  let far = ''; for (let i = 0; i < 7; i++) { const x = i * 300 + hash(i + 3) * 120, w = 120 + hash(i * 5) * 90, h = 260 + hash(i * 7) * 260, d = `M${f1(x - w)} 720 Q${f1(x - w * 1.05)} ${f1(720 - h)} ${f1(x)} ${f1(720 - h - 30)} Q${f1(x + w * 1.05)} ${f1(720 - h)} ${f1(x + w)} 720 Z`; far += P(d, '#9fb8b0', 3) + SH(d, 'shadeR', .7) + foliage(x, 720 - h - 10, w * 1.7, 70, ['#6a9a80', '#80ac90', '#a0c8a8'], i); }
+  s += blurLayer(far, 3) + haze(700, 220, false, 1);
+  s += blurLayer(oak(160, 760, 1.3) + palm(1500, 780, 1.1, t) + oak(1780, 770, 1.2) + hills(720, '#3f7a42', 4, 30), 2);
+  if (o.cave !== false) s += limestoneCave(960, 800, .95, { t });
+  s += haze(560, 140, false, .6);
+  const fl = 'M-20 790 Q600 770 1200 800 T1940 785 L1940 1100 L-20 1100 Z'; s += P(fl, '#3f6a34', 5) + SH(fl, 'darkBot') + speckle(fl, .6) + blotches(0, 800, 1920, 280, '#203a1a', 10, 6, .25) + blotches(0, 790, 1920, 120, '#8ac070', 6, 8, .18);
+  s += fern(120, 880, 1.2) + fern(1820, 900, 1.3, -1) + fern(560, 940, .9) + fern(1380, 950, 1, -1) + vine(260, -20, 380, t, 2) + vine(1660, -20, 300, t, 5) + vine(1720, -20, 460, t, 7);
+  return s + grain(.35) + vignette();
+}
+// a big orange male orangutan sitting (o: { mood: 'neutral'|'grumpy'|'proud', scratch, badge, clipboard, flip })
+function orangutan(x, y, s = 1, o = {}, t = 0) {
+  const fur = '#c8641e', dk = '#8a3e10', face = '#6a4a3a', br = Math.sin(t * 1.4) * 2;
+  let g = E(0, -130 + br, 120, 110, fur, 6) + SH('M-120 -130 a120 110 0 1 0 240 0 a120 110 0 1 0 -240 0', 'shadeR');
+  for (let i = 0; i < 14; i++) g += P(`M${f1(-90 + i * 14)} ${f1(-60 + hash(i) * 30)} q${f1((hash(i * 3) - .5) * 10)} 30 ${f1((hash(i * 5) - .5) * 14)} 56`, 'none', 4, 'opacity=".5"', dk);
+  g += P('M-110 -150 Q-200 -60 -150 10', 'none', 46, '', K) + P('M-110 -150 Q-200 -60 -150 10', 'none', 36, '', fur) + P('M110 -150 Q200 -60 150 10', 'none', 46, '', K) + P('M110 -150 Q200 -60 150 10', 'none', 36, '', fur);
+  g += E(-150, 14, 30, 18, face, 5) + E(150, 14, 30, 18, face, 5) + E(-60, 0, 40, 20, fur, 5) + E(60, 0, 40, 20, fur, 5);
+  g += E(0, -270 + br, 72, 66, fur, 6) + E(0, -256 + br, 128, 76, '#9a6a4a', 5) + `<ellipse cx="0" cy="${-256 + br}" rx="110" ry="60" fill="none" stroke="#7a4a30" stroke-width="4" opacity=".5"/>`;     // the wide flat cheek pads framing the face
+  g += E(0, -258 + br, 58, 56, face, 5) + E(0, -222 + br, 40, 22, '#7a5a48', 4);
+  const grumpy = o.mood === 'grumpy', proud = o.mood === 'proud';
+  g += C(-20, -276 + br, 6, K, 0) + C(20, -276 + br, 6, K, 0) + C(-22, -279 + br, 2, '#fff', 0) + C(18, -279 + br, 2, '#fff', 0);
+  g += grumpy ? P(`M-38 ${-298 + br} L-8 ${-288 + br} M38 ${-298 + br} L8 ${-288 + br}`, 'none', 6) : P(`M-38 ${-296 + br} Q-22 ${-304 + br} -8 ${-296 + br} M38 ${-296 + br} Q22 ${-304 + br} 8 ${-296 + br}`, 'none', 5);
+  g += grumpy ? P(`M-20 ${-212 + br} Q0 ${-224 + br} 20 ${-212 + br}`, 'none', 5) : proud ? P(`M-24 ${-218 + br} Q0 ${-200 + br} 24 ${-218 + br}`, 'none', 5) : P(`M-16 ${-214 + br} L16 ${-214 + br}`, 'none', 5);
+  if (o.scratch) g += P(`M-70 ${-256 + br} l22 10 M-74 ${-244 + br} l24 10 M-70 ${-232 + br} l20 8`, 'none', 3.5, '', '#d8645a');
+  if (o.badge) g += P(`M-60 ${-200 + br} Q0 ${-150 + br} 60 ${-200 + br}`, 'none', 4, '', '#4f8a38') + G(P('M0 -18 L5 -6 L18 -6 L8 2 L12 15 L0 7 L-12 15 L-8 2 L-18 -6 L-5 -6 Z', '#ffd93b', 3.5), `translate(0 ${-160 + br})`);
+  if (o.clipboard) g += G(P('M-40 -60 L40 -60 L44 50 L-44 50 Z', '#5aa04a', 5) + `<rect x="-18" y="-68" width="36" height="14" rx="4" fill="#8a6a3a" stroke="${K}" stroke-width="3"/>` + Ln(-26, -30, 26, -30, 3, '#2f6a28') + Ln(-26, -10, 20, -10, 3, '#2f6a28') + Ln(-26, 10, 24, 10, 3, '#2f6a28'), `translate(150 -60) rotate(-10)`);
+  return G(g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
+}
+// a tied bundle of healing herbs (leaf sprigs fanned out, twine wraps)
+function herbBundle(x, y, s = 1, rot = 0) { let g = ''; const cols = ['#4f9a3e', '#6ab04a', '#3d7a34', '#8ac060', '#5a8a3a']; for (let i = 0; i < 9; i++) { const a = -40 + i * 10, L = 120 + (i % 3) * 20; g += G(P(`M0 0 L0 ${-L}`, 'none', 3.5, '', '#4a6a2a') + E(0, -L, 16, 30, cols[i % 5], 3.5) + E(-12, -L * .7, 10, 18, cols[(i + 2) % 5], 3) + E(12, -L * .55, 10, 18, cols[(i + 3) % 5], 3) + (i % 4 === 1 ? C(0, -L - 30, 7, '#f2d24a', 3) : ''), `rotate(${a})`); } g += P('M-14 -20 L14 -20 L12 30 L-12 30 Z', '#7a5a2a', 4) + P('M-16 -12 Q0 -6 16 -12 M-16 0 Q0 6 16 0 M-14 12 Q0 18 14 12', 'none', 4, '', '#e8d8a0'); return G(g, `translate(${x} ${y}) rotate(${rot}) scale(${s})`); }
+// a friendly cartoon skull (not gory) with o.holes healed round openings (smooth thick rim = healed bone)
+function skull(x, y, s = 1, o = {}) {
+  const d = 'M-100 20 Q-120 -120 0 -140 Q120 -120 100 20 Q96 60 60 70 L60 100 L-60 100 L-60 70 Q-96 60 -100 20 Z';
+  let g = P(d, '#f2ead6', 6) + SH(d, 'shadeR') + SH(d, 'litTop');
+  g += E(-40, 10, 26, 24, '#4a3a30', 4) + E(40, 10, 26, 24, '#4a3a30', 4) + P('M0 40 L-12 62 L12 62 Z', '#4a3a30', 3);
+  for (let i = 0; i < 5; i++) g += Ln(-40 + i * 20, 80, -40 + i * 20, 100, 3);
+  const HP = [[42, -112, 13], [-58, -88, 10], [10, -128, 9]], n = o.holes ?? 1; for (let i = 0; i < Math.min(n, 3); i++) { const [hx, hy, r] = HP[i]; g += `<ellipse cx="${hx}" cy="${hy}" rx="${r + 7}" ry="${r + 5}" fill="#e2d4b4" stroke="#b8a888" stroke-width="3"/>` + E(hx, hy, r * .7, r * .55, '#7a6a54', 0); }
+  return G(g, `translate(${x} ${y}) rotate(${o.rot || 0}) scale(${s})`);
+}
+// Ötzi kit: birch fungus lumps on a leather cord, and the wooden backpack frame (a bent hazel rod + two crossboards)
+function birchFungus(x, y, s = 1) { const lump = (cx, cy, r, c) => P(`M${cx - r} ${cy} Q${cx - r * 1.1} ${cy - r * .9} ${cx - r * .2} ${cy - r} Q${cx + r * .9} ${cy - r * 1.05} ${cx + r} ${cy - r * .1} Q${cx + r * 1.05} ${cy + r * .9} ${cx + r * .1} ${cy + r * .95} Q${cx - r * .9} ${cy + r} ${cx - r} ${cy} Z`, c, 4.5) + `<path d="M${cx - r * .5} ${cy - r * .3} q${r * .3} -${r * .25} ${r * .6} 0" stroke="#fff" stroke-width="3" fill="none" opacity=".45"/>`; return G(P('M-110 -70 Q0 -20 110 -70', 'none', 5, '', '#6a4424') + P('M-44 -44 L-46 10 M48 -44 L50 24', 'none', 3.5, '', '#6a4424') + C(-44, -44, 6, '#6a4424', 0) + C(48, -44, 6, '#6a4424', 0) + lump(-46, 30, 26, '#cbb48a') + lump(50, 46, 22, '#b8946a') + speckle(`M-72 30 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0`, .6), `translate(${x} ${y}) scale(${s})`); }
+function backpackFrame(x, y, s = 1) { return G(P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 18, '', '#8a6a3a') + P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 6, 'opacity=".4"', '#c8a070') + `<rect x="-80" y="-120" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/><rect x="-80" y="-230" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/>` + lashing(-70, -110, 24, 90) + lashing(70, -110, 24, 90) + lashing(-70, -220, 24, 90) + lashing(70, -220, 24, 90), `translate(${x} ${y}) scale(${s})`); }
+
+/* __INK_EXPORTS__ */ Object.assign(globalThis, { K, clamp, ease, easeIO, back, rad, f1, G, P, C, Ln, E, SH, popAt, fade, hash, DEFS, ik, eyes, mouth, FACE_ALIAS, faceInk, hairInk, boneClip, headInk, PS, jaw, handDot, tunicInk, upperInk, person, lying, moss, held, sky, paper, grain, vignette, haze, blotches, sun, moon, fullMoon, stars, cloud, mountains, hills, ground, grass, grassField, foliage, acacia, pine, poplar, oak, bush, rock, caveMouth, campfire, fireLight, hearth, caveInside, rain, snow, hut, treeLine, lightWash, stipple, grassHut, wheat, field, backdrop, zzz, grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator, wristband, clock, hourglass, scienceCard, tooth, bug, sugarCube, acorn, flint, bowdrill, honey, bee, mold, dna, microscope, bowl, loaf, pot, chair, esc, headline, hand, placeTag, yearBanner, arrow, cross, check, card, lens, blurLayer, speckle, warmGrade, lake, pineForest, pole, lashing, thatchHut, dirt, spear, basket, logs, swoosh, spinRings, dust, village, tattooDashes, palm, fern, vine, limestoneCave, rainforest, orangutan, herbBundle, skull, birchFungus, backpackFrame });
+})();

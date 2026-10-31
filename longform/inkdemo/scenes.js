@@ -22,5 +22,15 @@ demo_ref: (lt, D, on, t) => { const bx = 640, by = 1040, k = 1.72 * 1.3, B = (wx
   + pole(300 + d, 700, 1500 + d, 740, 36, '#a7743f') + lashing(1490 + d, 740, 40, 90) + lashing(330 + d, 702, 40, 90) + Ln(320 + d, 690, sx, 650, 3.5, '#f0e6d0') + Ln(sx, 700, 1480 + d, 724, 3.5, '#f0e6d0') + lashing(sx, 676, 36, 90, '#e8dcc0')
   + spinRings(sx, 560, 90, t, 4, 90) + swoosh(260 + d, 700, 90, 70, 140, 250, 7) + swoosh(1560 + d, 740, 90, 70, -70, 40, 7) + dust(sx, base + 40, 1.6, t)
   + spear(300, 1040, 1.3, 7) + spear(1500, 960, 1.05, -6) + basket(1800, 1080, 1.6) + warmGrade(.3) + grain(.7) + vignette(); },
-
+// v2.3 (sick video): misty Borneo rainforest + limestone cave, a chimp chewing a bitter stem, an orangutan with a scratch, Moss with herbs
+demo_sick: (lt, D, on, t) => backdrop('rainforest', t) + leafMat(1080, 990, .9) + campfire(1180, 960, .55, t)
+  + chimp(330, 990, 1.25, { chew: 1 }, t) + orangutan(1620, 1000, 1.05, { mood: 'grumpy', scratch: 1 }, t)
+  + moss(700, 1000, 1.15, { face: 'happy', R: [56, -250], seed: 3 }, t) + herbBundle(790, 760, .8, 15) + person(1340, 1010, .95, { face: 'sleepy', kid: 1, seed: 8, flip: 1 }, t)
+  + fireLight(1180, 930, 520, t, .7) + warmGrade(.18) + vignette(),
+// v2.3 props sheet: healed skull, Ötzi kit (birch fungus, backpack frame, tattoo dashes), herb bundle, the 'doctor' orangutan
+demo_sick_props: (lt, D, on, t) => paper('#f3ead6') + `<rect width="1920" height="1080" fill="url(#hatch)" opacity=".18"/>`
+  + skull(300, 460, 1.4, { holes: 2 }) + hand('healed holes', 300, 700, 46) + birchFungus(700, 420, 1.3) + hand('birch fungus', 700, 560, 46)
+  + backpackFrame(1020, 700, 1.1) + hand('backpack frame', 1020, 760, 46) + herbBundle(1330, 600, 1.1, -8) + hand('herbs', 1330, 700, 46)
+  + orangutan(1680, 760, .8, { mood: 'proud', badge: 1, clipboard: 1 }, t) + person(520, 1040, .7, { face: 'smile', tattoo: 1, seed: 4 }, t) + hand('tattoo dashes', 760, 990, 40)
+  + grain(.25),
 };
