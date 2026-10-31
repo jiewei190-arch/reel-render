@@ -1,5 +1,4 @@
 """Vertical cut for Stone Age Stories reels (from whatif make_short.py; 16:9 source, 4:3 centre crop 1440x1080 at x 240). Usage: reel_vertical.py words.json video.mp4 start end "TITLE" out.mp4"""
-hook title on top, word-timed captions below. Usage: make_short.py words.json episode.mp4 start end "TITLE" out.mp4"""
 import json, subprocess, sys
 words_p, src, t0, t1, title, out = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4]), sys.argv[5], sys.argv[6]
 W = [w for w in json.load(open(words_p))['words'] if w['start'] >= t0 - 0.05 and w['end'] <= t1 + 0.3]
