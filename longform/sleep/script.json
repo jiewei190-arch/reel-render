@@ -1,7 +1,10 @@
 {
  "name": "sleep",
  "title": "How Did Ancient Humans Actually Sleep? (It's Weirder Than You Think)",
- "voice": "am_fenrir",
+ "voice": {
+  "af_heart": 0.5,
+  "bf_emma": 0.5
+ },
  "speed": 0.95,
  "scenes": [
   {
@@ -314,5 +317,6 @@
     "Follow for more of how ancient humans really lived."
    ]
   }
- ]
+ ],
+ "lang": "en-gb"
 }
