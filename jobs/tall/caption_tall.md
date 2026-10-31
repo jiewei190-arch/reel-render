@@ -2,5 +2,5 @@ You're shorter right now than when you woke up 📏 In one study, people lost al
 
 Sources: Tyrrell, Reilly & Troup, Spine 1985 (circadian variation in stature); StatPearls, Intervertebral Discs (NCBI); NASA scientists via Scientific American, 2013.
 
-Follow for more of how it really works.
-#spine #humanbody #science #howitworks #reels
+Follow for more.
+#spine #humanbody #science #stickman #reels

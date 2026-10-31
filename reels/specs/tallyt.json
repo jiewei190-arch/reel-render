@@ -283,8 +283,8 @@
    "Did you know you were shrinking right now? Tell us in the comments."
   ],
   [
-   "Follow for more of **how it really works.**",
-   "Follow for more of how it really works."
+   "**Subscribe** for more videos like this.",
+   "Subscribe for more videos like this."
   ]
  ],
  "boards": [
@@ -769,7 +769,9 @@
   },
   {},
   {},
-  {}
+  {
+   "cta": "**Subscribe for more**"
+  }
  ],
  "title": "Why you're taller in the morning"
 }

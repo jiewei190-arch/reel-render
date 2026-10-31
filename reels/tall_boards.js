@@ -31,8 +31,8 @@ export function hook(D, T, K, o = {}) {
   D.hatch([[fx, top], [fx + 30, top + 20], [fx + 30, floor], [fx, floor]], C.org, { k: K(0, 1), gap: 9, seed: 4, alpha: .5 });
   // person: shrinks a little in the evening stage
   const shrink = ss(K(1, 1.2)); const sq = 1 - .1 * shrink;
-  D.person(fx + 120, floor - 70 * sq, 1.85, { k: K(0, .8), sq, face: K(1, .1) > 0 && !tonight ? 'o' : 'smile', seed: 7 });
-  const headTop = sq0 => floor - 70 * sq0 - (130 + 30) * 1.85 * sq0;
+  D.person(fx + 120, floor - 72 * sq, 1.85, { k: K(0, .8), sq, face: K(3, .1) > 0 ? 'worried' : K(1, .1) > 0 && !tonight ? 'o' : 'smile', arm: K(3, .1) > 0 ? 'hips' : 'down', seed: 7 });
+  const headTop = sq0 => floor - 72 * sq0 - 162 * 1.85 * sq0;
   const yM = headTop(1), yE = headTop(1 - .1);
   // morning mark
   const kM = K(0, .6, .6); if (kM > 0) { D.line(fx - 60, yM, fx + 4, yM, { w: 4, draw: kM, seed: 11 }); D.txt(tonight ? 'morning' : '7:00 AM', fx - 70, yM - 2, { size: 40, align: 'right', write: kM }); D.sun(170, 160, 42, K(0, .8, .4), T); }
@@ -51,9 +51,10 @@ export function spineBoard(D, T, K, o = {}) {
   const kL = K(0, .8, 1.0); if (kL > 0) { D.arrow(260, 230, 380, 200, { draw: kL, bend: 20, seed: 4 }); D.lines(['vertebrae', '(bone)'], 120, 250, { size: 42, write: kL }); }
   const kD = K(1, .8, .8); if (kD > 0) { D.arrow(260, 470, 395, sp.discs[4][1], { draw: kD, bend: -20, seed: 5 }); D.lines(['**discs**', '(soft cushions)'], 100, 490, { size: 42, write: kD }); }
   const kB = K(2, .9); if (kB > 0) { D.bracket(620, 110, sp.bottom, { draw: kB }); D.txt('discs =', 690, 420, { size: 44, write: R(kB, .3, .5) }); D.txt('**¼ – ⅓**', 690, 480, { size: 62, write: R(kB, .45, .5) }); D.txt('of spine length', 690, 540, { size: 38, write: R(kB, .6, .5) }); }
-  if (o.count) { const kc = K(o.count, .8); if (kc > 0) D.note(770, 760, 120, ['around', '**two dozen**', 'discs'], { k: kc, size: 36, sx: 1.1 }); }
-  if (o.hard) { const kh = K(o.hard, .8); if (kh > 0) { D.txt('bone = **hard**', 130, 800, { size: 42, write: kh }); D.check(95, 800, 16, kh); }
-    const ks = K(o.hard + 1, .8); if (ks > 0) { D.txt('disc = **soft**', 130, 870, { size: 42, write: ks }); D.poly(Array.from({ length: 9 }, (_, i) => [75 + i * 5, 870 + Math.sin(i * 1.6) * 8]), { col: C.blue, w: 3, draw: ks }); } }
+  if (o.count) { const kc = K(o.count, .8); if (kc > 0) D.note(290, 690, 100, ['around', '**two dozen**', 'discs'], { k: kc, size: 36, sx: 1.1 }); }
+  if (o.hard) { const kh = K(o.hard, .8); if (kh > 0) { D.txt('bone = **hard**', 130, 850, { size: 42, write: kh }); D.check(95, 850, 16, kh); }
+    const ks = K(o.hard + 1, .8); if (ks > 0) { D.txt('disc = **soft**', 130, 915, { size: 42, write: ks }); D.poly(Array.from({ length: 9 }, (_, i) => [75 + i * 5, 915 + Math.sin(i * 1.6) * 8]), { col: C.blue, w: 3, draw: ks }); } }
+  D.person(870, 900, 1.1, { k: K(0, .8), arm: 'pointL', face: K(2, .1) > 0 ? 'o' : 'smile', seed: 81 });
 }
 
 // ---------- 2: inside one disc ----------
@@ -68,11 +69,12 @@ export function discBoard(D, T, K, o = {}) {
   const kW = K(2, 1); if (kW > 0) { for (let i = 0; i < 6; i++) { const k = R(kW, i * .08, .4); if (k > 0) D.drop(cx - 70 + (i % 3) * 70, cy - 30 + Math.floor(i / 3) * 70 + Math.sin(T * 2 + i) * 4, 16 * bo(k)); }
     D.note(830, 470, 125, o.waterNote || ['mostly', '**water**'], { k: R(kW, .3, .7), size: 38, sx: 1.05 }); }
   if (o.tower) { const kt = K(o.tower, .9); if (kt > 0) { D.txt('a tower of bones on', 800, 800, { size: 34, align: 'center', write: kt }); D.txt('little **water cushions**', 800, 845, { size: 38, align: 'center', write: R(kt, .3, .6) }); } }
+  D.person(130, 905, 1.05, { k: K(0, .8), arm: K(1, .1) > 0 ? 'point' : 'down', face: K(2, .1) > 0 ? 'happy' : 'smile', seed: 82 });
 }
 
 // ---------- 3: the daily squeeze ----------
 export function squeeze(D, T, K, o = {}) {
-  const kS = K(0, .8); D.person(150, 820, 1.25, { k: kS, seed: 2 }); D.sun(150, 330, 36, kS, T);
+  const kS = K(0, .8); D.person(150, 810, 1.25, { k: kS, seed: 2, face: K(2, .1) > 0 ? 'worried' : 'smile', arm: K(1, .1) > 0 ? 'up' : 'down' }); D.sun(150, 330, 36, kS, T);
   const kP = K(1, .8); for (let i = 0; i < 3; i++) { const x = 400 + i * 120; D.arrow(x, 90, x, 200 + Math.sin(T * 4 + i) * 6, { draw: R(kP, i * .15, .5), seed: 30 + i, w: 4.5, head: 22 }); }
   if (kP > 0) D.txt('body weight + gravity', 520, 60, { size: 40, align: 'center', write: R(kP, .2, .6) });
   const sq = 1 - .42 * ss(K(2, 2.4)); const sp = spine(D, 520, 240, 4, { vw: 230, vh: 80, dh: 54, sq, seed: 5, curve: 0, drops: K(2, .5) * (o.dropsOff ? 1 - K(o.dropsOff, .6) : 1), T });
@@ -126,7 +128,7 @@ export function night(D, T, K, o = {}) {
 // ---------- 12: reclined rest vs standing ----------
 export function recline(D, T, K) {
   const k0 = K(0, .9); D.poly([[160, 640], [440, 640], [440, 560], [300, 600], [160, 640]], { draw: k0, seed: 3 });
-  D.person(300, 580, 1.4, { pose: 'recline', k: k0, seed: 2 }); D.person(700, 560, 1.3, { k: k0, seed: 9 }); D.line(100, 650, 900, 650, { draw: k0, seed: 1 });
+  D.person(300, 580, 1.4, { pose: 'recline', k: k0, seed: 2 }); D.person(700, 570, 1.3, { k: k0, seed: 9, face: 'worried' }); D.line(100, 650, 900, 650, { draw: k0, seed: 1 });
   const k1 = K(0, .9, .8); if (k1 > 0) { D.txt('reclined, knees up', 300, 740, { size: 40, align: 'center', write: k1 }); D.txt('standing', 700, 740, { size: 40, align: 'center', write: k1 }); D.txt('height came back **faster**', 300, 800, { size: 38, align: 'center', write: R(k1, .4, .6) }); D.check(300, 860, 22, R(k1, .7, .3)); }
   D.txt('1985 study', 500, 160, { size: 46, align: 'center', write: k0 });
 }
@@ -142,6 +144,7 @@ export function feed(D, T, K, o = {}) {
   if (o.age) { const ka = K(o.age, 1); if (ka > 0) { const ox = 500, oy = 820; D.ell(ox - 200, oy, 120, 50, { seed: 30, fill: C.bone, draw: ka }); D.ell(ox - 200, oy, 60, 25, { seed: 31, fill: C.water, draw: ka });
       D.arrow(ox - 50, oy, ox + 50, oy, { draw: ka, seed: 32 }); D.ell(ox + 200, oy + 10, 120, 36, { seed: 33, fill: C.bone, draw: ka }); D.ell(ox + 200, oy + 10, 40, 14, { seed: 34, fill: C.water, draw: ka, fa: .4 });
       D.txt('young', ox - 200, oy - 80, { size: 34, align: 'center', write: ka }); D.txt('older: less **water-pulling** stuff', ox + 200, oy - 80, { size: 34, align: 'center', write: ka }); } }
+  D.person(915, 915, .95, { k: K(0, .8), arm: 'pointL', face: o.age && K(o.age, .1) > 0 ? 'worried' : 'smile', seed: 83 });
 }
 function g(D, x, y, a) { if (a <= 0) return; D.g.save(); D.g.globalAlpha = D.A() * a; D.g.fillStyle = C.grn; D.g.beginPath(); D.g.arc(x, y, 7, 0, TAU); D.g.fill(); D.g.restore(); }
 
@@ -153,7 +156,7 @@ export function space(D, T, K, o = {}) {
   // station
   const ks = K(0, .8, .6); if (ks > 0) { D.rr(700, 120, 120, 50, 10, { draw: ks, seed: 5, fill: C.faint, fk: ks }); D.rr(620, 128, 70, 34, 4, { draw: ks, seed: 6, fill: C.blue, fk: ks, fa: .5 }); D.rr(830, 128, 70, 34, 4, { draw: ks, seed: 7, fill: C.blue, fk: ks, fa: .5 }); }
   const grow = ss(K(2, 1.4)); const bob = Math.sin(T * 1.2) * 10;
-  D.person(380, 560 + bob, 1.6, { pose: 'float', sq: 1 + .03 * grow + .0, k: K(1, .8), seed: 1, shirt: '#f2f2f2', face: 'smile' });
+  D.person(380, 560 + bob, 1.6, { pose: 'float', sq: 1 + .03 * grow, k: K(1, .8), seed: 1, face: 'happy', arm: 'up' });
   const k2 = K(2, .9); if (k2 > 0) { D.txt('up to **3% taller**', 640, 420, { size: 52, write: k2 }); D.txt('(NASA scientists)', 650, 475, { size: 32, col: C.soft, write: R(k2, .4, .5) });
     for (let i = 0; i < 2; i++) D.arrow(380, 300 - i * 0 + bob, 380, 250 + bob - grow * 20, { draw: k2, seed: 40, head: 12 }); }
   if (o.stretch) { const kx = K(o.stretch, .9) * (o.cm ? 1 - K(o.cm, .5) : 1); if (kx > 0) D.note(760, 640, 120, ['no weight', 'pressing down:', 'spine **stretches**'], { k: kx, size: 30, sx: 1.2 }); }
@@ -165,7 +168,7 @@ export function space(D, T, K, o = {}) {
 // ---------- 7: back on Earth ----------
 export function earth(D, T, K, o = {}) {
   const k0 = K(0, .9); D.line(80, 860, 920, 860, { draw: k0, seed: 1 });
-  const sh = ss(K(0, 3, .4)); D.person(330, 790, 2, { k: k0, sq: 1.03 - .03 * sh, seed: 3, shirt: '#f2f2f2' });
+  const sh = ss(K(0, 3, .4)); D.person(330, 780, 2, { k: k0, sq: 1.03 - .03 * sh, seed: 3, face: sh > .5 ? 'worried' : 'happy' });
   D.line(470, 450, 520, 450, { draw: k0, seed: 4, dash: [6, 8] }); D.arrow(500, 380, 500, 440, { draw: K(0, 1, .4), seed: 5 });
   // calendar
   const kc = K(0, .9, .6); if (kc > 0) { D.rr(600, 260, 260, 240, 14, { draw: kc, seed: 6 }); D.hatch(D.rrPts(600, 260, 260, 60, 14), C.red, { k: kc, seed: 7 }); for (let i = 0; i < 9; i++) { const kk = R(kc, .3 + i * .06, .1); if (kk > 0) D.poly([[625 + (i % 3) * 80, 340 + Math.floor(i / 3) * 50], [665 + (i % 3) * 80, 370 + Math.floor(i / 3) * 50]], { draw: kk, seed: 8 + i }); }
@@ -182,6 +185,7 @@ export function tallest(D, T, K, o = {}) {
   if (o.choice) { const kc = K(o.choice, .9); if (kc > 0) { D.sun(470, 700, 44, kc, T); D.txt('morning?', 470, 820, { size: 46, align: 'center', write: kc }); D.txt('or', 620, 705, { size: 44, col: C.soft, align: 'center', write: R(kc, .3, .4) });
     D.moon(770, 700, 44, R(kc, .4, .5)); D.txt('night?', 770, 820, { size: 46, align: 'center', write: R(kc, .5, .5) }); } }
   const k4 = K(4, .9); if (k4 > 0) D.txt('tell us in the comments ✎', 620, 880, { size: 40, align: 'center', col: C.blue, write: k4 });
+  D.person(300, 830, 1.25, { k: K(0, .8), arm: 'pointL', face: K(3, .1) > 0 || (o.choice && K(o.choice, .1) > 0) ? 'happy' : K(2, .1) > 0 ? 'o' : 'smile', seed: 84 });
 }
 
 // ---------- 13: contents page ----------
@@ -189,6 +193,7 @@ export function contents(D, T, K) {
   const items = ['A famous measuring study', "What's inside your spine", 'The daily squeeze', 'The overnight refill', 'Astronauts: the extreme version'];
   D.txt('In this video', 160, 160, { size: 64, write: K(0, .8) }); D.line(160, 205, 560, 205, { draw: K(0, .8, .4), col: C.blue, w: 4 });
   items.forEach((s, i) => { const k = K(i < 2 ? 0 : 1, .6, .6 + (i % 3) * .55); if (k <= 0) return; D.rr(170, 280 + i * 120, 44, 44, 8, { draw: k, seed: i }); D.check(192, 300 + i * 120, 16, R(k, .5, .4), C.blue); D.txt(s, 250, 302 + i * 120, { size: 46, write: k }); });
+  D.person(860, 880, 1, { k: K(0, .8), arm: 'wave', face: 'happy', seed: 85 });
 }
 
 // ---------- 15: recap ----------
@@ -198,15 +203,16 @@ export function recap(D, T, K) {
   const k1 = K(1, .9); if (k1 > 0) { D.sun(500, 280, 40, k1, T); D.arrow(500, 380, 500, 520, { draw: k1, w: 5, head: 24 }); D.txt('day: squeeze,', 500, 600, { size: 36, align: 'center', write: k1 }); D.txt('you **shrink**', 500, 645, { size: 36, align: 'center', write: k1 }); }
   const k2 = K(2, .9); if (k2 > 0) { D.moon(800, 280, 40, k2); D.arrow(800, 520, 800, 380, { draw: k2, w: 5, head: 24 }); D.txt('night: refill,', 800, 600, { size: 36, align: 'center', write: k2 }); D.txt('you **grow back**', 800, 645, { size: 36, align: 'center', write: k2 }); }
   [[350, 0], [650, 1]].forEach(([x, i]) => D.line(x, 230, x, 680, { draw: K(i + 1, .6), dash: [6, 10], col: C.faint }));
+  D.person(500, 900, 1.05, { k: K(2, .8), arm: 'up', face: 'happy', seed: 86 });
 }
 
 // ---------- 9: end card ----------
-export function endcard(D, T, K) {
-  const k = K(0, 1.2); spine(D, 500, 140, 6, { vw: 120, vh: 36, dh: 18, kV: k, kD: k, curve: 10, plump: Math.sin(T * 2) * .5 + .5 });
-  D.txt('Follow for more of', 500, 640, { size: 66, align: 'center', write: K(0, .8, .2) });
-  D.txt('**how it really works.**', 500, 730, { size: 80, align: 'center', write: K(0, .9, .7) });
-  D.line(200, 790, 800, 790, { draw: K(0, .6, 1.4), col: C.blue, w: 5 });
-  D.txt('@howitreallyworkstudio', 500, 860, { size: 40, align: 'center', col: C.soft, write: K(0, .6, 1.6) });
+export function endcard(D, T, K, o = {}) {
+  const k = K(0, 1.2); spine(D, 330, 140, 6, { vw: 120, vh: 36, dh: 18, kV: k, kD: k, curve: 10, plump: Math.sin(T * 2) * .5 + .5 });
+  D.person(640, 470, 1.2, { k, arm: 'wave', face: 'happy', seed: 87 });
+  D.txt('Thanks for watching!', 500, 680, { size: 66, align: 'center', write: K(0, .8, .2) });
+  D.txt(o.cta || '**Follow for more**', 500, 775, { size: 84, align: 'center', write: K(0, .9, .7) });
+  D.line(230, 835, 770, 835, { draw: K(0, .6, 1.4), col: C.blue, w: 5 });
 }
 
 export const BOARDS = { 0: hook, 1: spineBoard, 2: discBoard, 3: squeeze, 4: graph, 5: night, 6: space, 7: earth, 8: tallest, 9: endcard, 10: graph, 11: feed, 12: recline, 13: contents, 14: hook, 15: recap };

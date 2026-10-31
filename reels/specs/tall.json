@@ -91,8 +91,8 @@
    "So if you want to be measured at your tallest, what time should you go?"
   ],
   [
-   "Follow for more of **how it really works.**",
-   "Follow for more of how it really works."
+   "**Follow** for more.",
+   "Follow for more."
   ]
  ],
  "boards": [
@@ -294,6 +294,8 @@
   {
    "choice": 5
   },
-  {}
+  {
+   "cta": "**Follow for more**"
+  }
  ]
 }

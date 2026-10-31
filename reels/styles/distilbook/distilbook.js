@@ -86,25 +86,28 @@ export function createDB(canvas, W, H) {
   D.star = (x, y, r, k = 1) => { if (k <= 0) return; D.line(x - r * k, y, x + r * k, y, { w: 2.6, seed: x }); D.line(x, y - r * k, x, y + r * k, { w: 2.6, seed: y }); };
   D.check = (x, y, r, k = 1, col = C.grn) => { if (k > 0) D.poly([[x - r, y], [x - r * .3, y + r * .7], [x + r, y - r * .8]], { col, w: 5, draw: k, seed: 5 }); };
   D.bracket = (x, y0, y1, o = {}) => { const { side = 1, w = 3, draw = 1 } = o; const d = 16 * side; D.poly([[x, y0], [x + d, y0 + 10], [x + d, (y0 + y1) / 2 - 10], [x + d * 2, (y0 + y1) / 2], [x + d, (y0 + y1) / 2 + 10], [x + d, y1 - 10], [x, y1]], { w, draw, seed: 33 }); };
-  // simple doodle person (round head, rounded body, stick limbs). pose: stand | lie | float | recline. sq = vertical squash (1 = normal)
-  D.person = (x, y, s, o = {}) => { const { pose = 'stand', sq = 1, k = 1, face = 'smile', seed = 0, col = C.ink, shirt = C.blueL } = o; if (k <= 0) return; g.save(); g.translate(x, y); g.scale(s, s);
+  // stick man: big white round head, single-line body and limbs, dot eyes. Origin = hip. pose: stand | lie | float | recline.
+  // arm: down | point | pointL | wave | up | hips. face: smile | happy | o | worried | sleep. sq = vertical squash (1 = normal)
+  D.person = (x, y, s, o = {}) => { const { pose = 'stand', sq = 1, k = 1, face = 'smile', seed = 0, col = C.ink, arm = 'down' } = o; if (k <= 0) return; g.save(); g.translate(x, y); g.scale(s, s);
     if (pose === 'lie') g.rotate(-Math.PI / 2); if (pose === 'float') g.rotate(Math.sin(seed) * .25 - .2); g.scale(1, sq);
-    const al = ss(k); const op = { w: 3.4 / s, col, seed: seed + 1, alpha: al };
-    if (pose === 'recline') { // reclined on a wedge, knees raised (Fowler's-like)
-      D.poly([[-60, 0], [10, -5], [40, -40], [70, 0]], op); D.poly([[-60, 0], [-20, -50]], { ...op, seed: seed + 2 }); D.ell(-30, -80, 22, 22, { ...op, seed: seed + 3 });
-      D.poly([[-40, -40], [-5, -18]], { ...op, seed: seed + 4 }); g.restore(); return; }
-    // legs
-    D.poly([[-12, 0], [-14, 70]], { ...op, seed: seed + 2 }); D.poly([[12, 0], [14, 70]], { ...op, seed: seed + 3 });
-    // body
-    const body = rrPts(-30, -95, 60, 100, 26); D.hatch(body, shirt, { k: al, seed: seed + 4, gap: 6 }); D.poly(body, { ...op, seed: seed + 5 });
-    // arms
-    D.poly([[-28, -80], [-48, -30]], { ...op, seed: seed + 6 }); D.poly([[28, -80], [48, -30]], { ...op, seed: seed + 7 });
-    // head
-    D.ell(0, -130, 30, 30, { ...op, seed: seed + 8, fill: '#f7e3cf', fk: al });
-    if (face === 'smile') D.poly(ellPts(0, -128, 12, 9, 10, 0, .08, .42), { ...op, w: 2.6 / s, seed: seed + 9 });
-    else if (face === 'o') D.ell(0, -120, 5, 6, { ...op, w: 2.4 / s, seed: seed + 9 });
-    else if (face === 'sleep') { D.line(-15, -134, -5, -134, { ...op, w: 2.4 / s }); D.line(5, -134, 15, -134, { ...op, w: 2.4 / s }); }
-    if (face !== 'sleep') { g.fillStyle = col; g.globalAlpha = GA * al; g.beginPath(); g.arc(-10, -136, 3, 0, TAU); g.arc(10, -136, 3, 0, TAU); g.fill(); }
+    const al = ss(k); const op = { w: 5, col, seed: seed + 1, alpha: al, amp: .8 };
+    const head = (hx, hy, r) => { D.wash(ellPts(hx, hy, r, r), '#ffffff', al); D.poly(ellPts(hx, hy, r, r, 0, -1.3), { ...op, seed: seed + 8 });
+      const e = r * .32, ey = hy - r * .12; g.fillStyle = col; g.globalAlpha = GA * al;
+      if (face === 'sleep') { D.line(hx - e - 7, ey, hx - e + 7, ey, { ...op, w: 3.6 }); D.line(hx + e - 7, ey, hx + e + 7, ey, { ...op, w: 3.6, seed: seed + 3 }); }
+      else { g.beginPath(); g.arc(hx - e, ey, 4.2, 0, TAU); g.arc(hx + e, ey, 4.2, 0, TAU); g.fill(); }
+      const my = hy + r * .38;
+      if (face === 'smile' || face === 'sleep') D.poly(ellPts(hx, my - 8, 11, 8, 10, 0, .1, .4), { ...op, w: 3.6, seed: seed + 9 });
+      else if (face === 'happy') { const P = ellPts(hx, my - 6, 15, 12, 12, 0, 0, .5); D.wash(P, col, al * .85); D.poly(P, { ...op, w: 3.6, seed: seed + 9 }); }
+      else if (face === 'o') D.ell(hx, my, 6, 8, { ...op, w: 3.6, seed: seed + 9 });
+      else if (face === 'worried') { D.poly([[hx - 12, my + 2], [hx - 4, my - 3], [hx + 4, my + 2], [hx + 12, my - 3]], { ...op, w: 3.4, seed: seed + 9 });
+        D.line(hx - e - 9, ey - 14, hx - e + 6, ey - 10, { ...op, w: 3.2 }); D.line(hx + e + 9, ey - 14, hx + e - 6, ey - 10, { ...op, w: 3.2, seed: seed + 4 }); } };
+    if (pose === 'recline') { // reclined on a wedge, knees raised
+      D.poly([[-55, -50], [0, 0], [45, -48], [88, 0]], op); D.poly([[-40, -36], [-2, -14]], { ...op, seed: seed + 4 }); head(-82, -80, 32); g.restore(); return; }
+    D.poly([[0, 0], [-18, 72]], { ...op, seed: seed + 2 }); D.poly([[0, 0], [18, 72]], { ...op, seed: seed + 3 });
+    D.poly([[0, -86], [0, 0]], { ...op, seed: seed + 5 });
+    const L = { down: [[-30, -18], [30, -18]], point: [[-30, -18], [78, -80]], pointL: [[-78, -80], [30, -18]], wave: [[-30, -18], [52, -148]], up: [[-52, -146], [52, -146]], hips: [[-26, -40, -40, -66], [26, -40, 40, -66]] }[arm] || [[-30, -18], [30, -18]];
+    L.forEach((a, i) => { const pts = a.length === 4 ? [[0, -68], [a[2], a[3]], [a[0], a[1]]] : [[0, -68], a]; D.poly(pts, { ...op, seed: seed + 6 + i }); });
+    head(0, -124, 38);
     g.restore(); };
 
   // ---------------- frame, card, player, caption ----------------
@@ -116,10 +119,10 @@ export function createDB(canvas, W, H) {
     g.save(); g.strokeStyle = 'rgba(40,40,46,.35)'; g.lineWidth = 2; const m = 26, c = 34;
     [[m, m, 1, 1], [W - m, m, -1, 1], [m, H - m, 1, -1], [W - m, H - m, -1, -1]].forEach(([px, py, sx, sy]) => { g.beginPath(); g.moveTo(px, py + c * sy); g.lineTo(px, py); g.lineTo(px + c * sx, py); g.stroke(); });
     g.font = `600 ${L.land ? 15 : 19}px ${SANS}`; g.fillStyle = 'rgba(40,40,46,.55)'; g.letterSpacing = '2px'; g.textBaseline = 'middle';
-    const ty = L.land ? 20 : 70; g.textAlign = 'left'; g.fillText('■ HOW IT REALLY WORKS  ·  SKETCHBOOK', L.land ? 70 : 60, ty);
-    g.textAlign = 'right'; g.fillText(o.right || 'EP. 16  ·  88 BPM', W - (L.land ? 70 : 60), ty);
+    const ty = L.land ? 20 : 70; g.textAlign = 'left'; g.fillText('■ STICKMAN SKETCHBOOK', L.land ? 70 : 60, ty);
+    g.textAlign = 'right'; g.fillText(o.right || '', W - (L.land ? 70 : 60), ty);
     const tc = s => { const m = Math.floor(s / 60), r = Math.floor(s % 60), f = Math.floor((s % 1) * 30); return `${String(m).padStart(2, '0')}:${String(r).padStart(2, '0')}:${String(f).padStart(2, '0')}`; };
-    g.textAlign = 'right'; g.fillText('TC ' + tc(t), W - (L.land ? 70 : 60), H - (L.land ? 14 : 60)); g.textAlign = 'left'; g.fillText(o.left || '@howitreallyworkstudio', L.land ? 70 : 60, H - (L.land ? 14 : 60));
+    g.textAlign = 'right'; g.fillText('TC ' + tc(t), W - (L.land ? 70 : 60), H - (L.land ? 14 : 60)); g.textAlign = 'left'; g.fillText(o.left || '', L.land ? 70 : 60, H - (L.land ? 14 : 60));
     g.restore();
     // card: shadow + white sheet + grain
     g.save(); g.shadowColor = 'rgba(30,30,40,.16)'; g.shadowBlur = 40; g.shadowOffsetY = 14; g.fillStyle = C.card; g.beginPath(); g.roundRect(x, y, w, h, 22); g.fill(); g.restore();

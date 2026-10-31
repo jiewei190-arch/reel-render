@@ -1,5 +1,9 @@
 # tall: "Why you're taller in the morning" (Short + long-form)
 
+FOR THE OWNER'S NEW STICK-MAN CHANNEL, NOT howitreallyworkstudio. No HIRW branding: header reads "STICKMAN SKETCHBOOK",
+no @handle, end card "Thanks for watching! / Follow for more" (Short) or "Subscribe for more" (long-form), and the spoken
+closing line is "Follow for more." / "Subscribe for more videos like this." Characters are stick men (D.person in distilbook.js).
+
 Template: #15 handdrawn "Distilbook" (awesome-opus-5-5-video-styles, styles/handdrawn.md, "Distilbook Motion Graphics Showreel").
 Why: the topic is an anatomy-plus-data explainer (spine stack, disc cross-section, a 24 h height graph), which is exactly
 the Distilbook demo's grammar: a white sketchbook card on a pale studio frame, fine wobbly ink diagrams, coloured-pencil
@@ -18,5 +22,5 @@ Outputs (not in git, too big): reels/up/tall.mp4 (Short, 2-pass ~9.6 MB), reels/
 
 Caveats
 - Human ear check of the voice is still pending.
-- Long-form is the first 16:9 build; the closing line is kept for brand consistency.
+- Long-form is the first 16:9 build. Channel name not decided yet: add it to the end card once chosen.
 - See sources_tall.md for softened claims.

@@ -7,14 +7,14 @@ You lose almost 2 cm of height every day, and get it back every night. Here's wh
 
 Sources: Tyrrell, Reilly & Troup, Spine 1985; StatPearls, Intervertebral Discs (NCBI); NASA scientists via Scientific American, 2013.
 
-Follow for more of how it really works.
-#spine #humanbody #science #howitworks #Shorts
+Follow for more.
+#spine #humanbody #science #stickman #Shorts
 Thumbnail text: SHORTER NOW?
 
-## Long-form (out/tallyt.mp4, 1920x1080, 5:38)
+## Long-form (tallyt.mp4, 1920x1080, 5:38)
 Title: Why You're Taller in the Morning (And Shorter Right Now)
 Description:
-Right now, you are shorter than you were when you woke up. In this hand-drawn explainer we look at the 1985 study that measured people shrinking through the day, what's inside your spine, the daily squeeze, the overnight refill, and what happens to astronauts when gravity disappears.
+Right now, you are shorter than you were when you woke up. In this stick-figure explainer we look at the 1985 study that measured people shrinking through the day, what's inside your spine, the daily squeeze, the overnight refill, and what happens to astronauts when gravity disappears.
 
 0:00 You're shorter right now
 0:32 Measuring a shrinking person
@@ -36,6 +36,6 @@ RESEARCH & SOURCES
 ▸ Strange but True: Astronauts Get Taller in Space. Scientific American, 2013. https://scientificamerican.com/article/astronauts-get-taller-in-space
 
 Educational only, not medical advice.
-Follow for more of how it really works.
+Subscribe for more videos like this.
 #science #humanbody #explained
 Thumbnail: thumb_tallyt.jpg (1280x720)

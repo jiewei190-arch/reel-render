@@ -24,7 +24,7 @@ export async function run(name) {
   const drawRun = (r, t, a) => { if (a <= 0) return; const T = t - r.start; const K = (k, d = .8, off = 0) => k < r.st.length ? R(T, r.st[k] + off, d) : 0;
     D.alpha(a); BOARDS[r.b](D, T, K, r.opts); D.alpha(1); };
   function scene(t) {
-    D.begin(t); D.frame(t, { right: land ? 'LONG-FORM  ·  88 BPM' : 'EP. 16  ·  88 BPM' });
+    D.begin(t); D.frame(t, { right: land ? 'LONG-FORM  ·  HUMAN BODY' : 'HUMAN BODY' });
     let ri = 0; runs.forEach((r, k) => { if (t >= r.start) ri = k; }); const r = runs[ri];
     D.enterBoard();
     const x = R(t, r.start, .45);
