@@ -172,15 +172,16 @@ function hairInk(R, seed, col, t, style) {
   if (style === 'none') return s;
   if (style === 'bun') return C(0, -R * 1.12, R * .34, col, 5) + P(`M${-R * .96} ${-R * .14} Q${-R * .86} ${-R * 1.04} 0 ${-R * 1.02} Q${R * .86} ${-R * 1.04} ${R * .96} ${-R * .14} Q${R * .5} ${-R * .62} 0 ${-R * .56} Q${-R * .5} ${-R * .62} ${-R * .96} ${-R * .14} Z`, col, 5);
   // a dense tuft on TOP of the head: dozens of thick tapered strokes rising from a crown cap (nothing below ear level)
-  const n = 42, sp = [];
+  const n = 64, sp = [];
   for (let i = 0; i < n; i++) {
-    const u = i / (n - 1), a = rad(-156 + u * 132 + (hash(i + seed) - .5) * 10), w = rad(4 + hash(i * 3 + seed) * 4.5);
-    const mid = 1 - Math.abs(u - .5) * 1.3, L = R * (1.1 + mid * .55 + hash(i * 7 + seed) * .32), bend = (hash(i * 5 + seed) - .5) * .55 + (u - .5) * .25 + Math.sin(t * 2.2 + i) * .02;
+    const inner = i >= 40, u = inner ? (i - 40) / 23 : i / 39, a = rad(-156 + u * 132 + (hash(i + seed) - .5) * 12), w = rad((inner ? 6 : 4.5) + hash(i * 3 + seed) * 5);
+    const mid = 1 - Math.abs(u - .5) * 1.3, L = R * ((inner ? .98 : 1.1) + mid * (inner ? .3 : .55) + hash(i * 7 + seed) * .3), bend = (hash(i * 5 + seed) - .5) * .55 + (u - .5) * .25 + Math.sin(t * 2.2 + i) * .02;
     const r0 = R * .74, b1 = [Math.cos(a - w) * r0, Math.sin(a - w) * r0], b2 = [Math.cos(a + w) * r0, Math.sin(a + w) * r0], tip = [Math.cos(a + bend) * L, Math.sin(a + bend) * L];
     const m = [Math.cos(a + bend * .45) * (r0 + L) / 2, Math.sin(a + bend * .45) * (r0 + L) / 2];
     sp.push(`M${f1(b1[0])} ${f1(b1[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(tip[0])} ${f1(tip[1])} Q${f1(m[0])} ${f1(m[1])} ${f1(b2[0])} ${f1(b2[1])} Z`);
   }
   s += `<path d="${sp.join(' ')}" fill="${col}" stroke="${col}" stroke-width="1.2" stroke-linejoin="round"/>`;
+  if (col === K) for (let i = 0; i < 9; i++) { const a = rad(-140 + i * 13 + hash(i * 17 + seed) * 8), L = R * (1.15 + hash(i * 19 + seed) * .3); s += P(`M${f1(Math.cos(a) * R * .8)} ${f1(Math.sin(a) * R * .8)} Q${f1(Math.cos(a + .08) * L * .9)} ${f1(Math.sin(a + .08) * L * .9)} ${f1(Math.cos(a) * L)} ${f1(Math.sin(a) * L)}`, 'none', 2, 'opacity=".55"', '#4a4a56'); }
   // crown cap with an uneven hairline high on the forehead, sides ending above the ears
   let d = `M${f1(-R * .9)} ${f1(-R * .4)} Q${f1(-R * .98)} ${f1(-R * 1.08)} 0 ${f1(-R * 1.1)} Q${f1(R * .98)} ${f1(-R * 1.08)} ${f1(R * .9)} ${f1(-R * .4)}`;
   const fr = 12; for (let i = 0; i <= fr; i++) { const x = R * .88 - i * (1.76 * R / fr), y = -R * .6 + Math.pow(Math.abs(x) / R, 2) * R * .26 + (i % 2 ? R * .07 : 0) + (hash(i + seed) - .5) * R * .06; d += ` L${f1(x)} ${f1(y)}`; }
@@ -355,7 +356,10 @@ function stars(t = 0, n = 140, seed = 1, yMax = 700) {
   for (let i = 0; i < 9; i++) { const x = hash(i * 17 + seed) * 1920, y = hash(i * 19 + seed) * yMax * .8, r = 6 + hash(i * 23) * 6, tw = 1 + .25 * Math.sin(t * 2 + i); s += G(`<path d="M0 ${-r * 2} Q2 -2 ${r * 2} 0 Q2 2 0 ${r * 2} Q-2 2 ${-r * 2} 0 Q-2 -2 0 ${-r * 2} Z" fill="#fff8d0"/>`, `translate(${f1(x)} ${f1(y)}) scale(${f1(tw * 50) / 100})`); }
   return `<path d="M-50 ${yMax * .9} Q600 ${yMax * .2} 1980 ${yMax * .05} L1980 ${yMax * .3} Q700 ${yMax * .45} -50 ${yMax * 1.05} Z" fill="#9fb4ff" opacity=".08" filter="url(#soft)"/>` + s;
 }
-function cloud(x, y, s = 1, t = 0) { x += (t * 8) % 2400; if (x > 2100) x -= 2400; const d = 'M-90 30 Q-110 -10 -70 -20 Q-60 -60 -10 -55 Q20 -85 60 -50 Q110 -55 105 -10 Q130 20 95 32 Z'; return G(P(d, '#fff', 5) + SH(d, 'darkBot', .5) + `<ellipse cx="-20" cy="-30" rx="40" ry="14" fill="#fff" opacity=".7"/>`, `translate(${f1(x)} ${y}) scale(${s})`); }
+function cloud(x, y, s = 1, t = 0) { x += (t * 8) % 2400; if (x > 2100) x -= 2400;
+  const puffs = [[-70, 0, 46], [-30, -26, 52], [22, -36, 58], [70, -14, 46], [100, 8, 34], [-104, 14, 30], [10, 6, 54]];
+  const d = puffs.map(([px, py, r]) => `M${px - r} ${py} a${r} ${r * .82} 0 1 0 ${r * 2} 0 a${r} ${r * .82} 0 1 0 ${-r * 2} 0`).join(' ');
+  return G(`<path d="${d}" fill="#c4d2ea" stroke="#9fb0cc" stroke-width="3"/>` + puffs.map(([px, py, r]) => `<ellipse cx="${px - r * .12}" cy="${py - r * .18}" rx="${r * .86}" ry="${r * .66}" fill="#f4f8ff"/>`).join('') + puffs.slice(0, 4).map(([px, py, r]) => `<ellipse cx="${px - r * .3}" cy="${py - r * .38}" rx="${r * .45}" ry="${r * .28}" fill="#fffbea" opacity=".9"/>`).join('') + `<path d="M-110 30 Q0 46 120 28" stroke="#a8b8d4" stroke-width="5" fill="none" opacity=".5"/>`, `translate(${f1(x)} ${y}) scale(${s})`); }
 function mountains(y = 640, col = '#7d86a6', snow = true, seed = 1) {
   // a ridgeline by midpoint displacement between peak / valley keypoints -> jagged, natural
   const ridge = (yy, amp, sd) => {
@@ -364,12 +368,12 @@ function mountains(y = 640, col = '#7d86a6', snow = true, seed = 1) {
     return pts;
   };
   const shape = (pts, yy) => `M-200 ${yy + 160} ` + pts.map(([x, z]) => `L${f1(x)} ${f1(z)}`).join(' ') + ` L2100 ${yy + 160} Z`;
-  const tint = (c, k) => { const n = parseInt(c.slice(1), 16), r = n >> 16, g2 = (n >> 8) & 255, b = n & 255, m = v => Math.round(v + (235 - v) * k); return `rgb(${m(r)},${m(g2)},${m(b)})`; };
+  const tint = (c, k) => { const n = parseInt(c.slice(1), 16), r = n >> 16, g2 = (n >> 8) & 255, b = n & 255, dark = (r * .3 + g2 * .59 + b * .11) < 90, T = dark ? [58, 72, 128] : [235, 235, 235], m = (v, i) => Math.round(v + (T[i] - v) * k * (dark ? .6 : 1)); return `rgb(${m(r, 0)},${m(g2, 1)},${m(b, 2)})`; };
   const layer = (yy, amp, sd, c, far) => {
     const pts = ridge(yy, amp, sd), d = shape(pts, yy);
     let g = P(d, c, far ? 3 : 5) + SH(d, 'litTop', .9) + SH(d, 'darkBot', .8);
     // shaded east faces: from each local peak down the right flank
-    for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) { let j = i; while (j < pts.length - 1 && pts[j + 1][1] >= pts[j][1]) j++; const fl = pts.slice(i, j + 1), v = fl[fl.length - 1], foot = [pts[i][0] + (v[0] - pts[i][0]) * .25, v[1] + (yy + 120 - v[1]) * .7]; g += `<path d="M${fl.map(p => f1(p[0]) + ' ' + f1(p[1])).join(' L')} L${f1(foot[0])} ${f1(foot[1])} Z" fill="#1c1640" opacity="${far ? .12 : .22}"/>`; }
+    for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) { let j = i; while (j < pts.length - 1 && pts[j + 1][1] >= pts[j][1]) j++; const fl = pts.slice(i, j + 1), v = fl[fl.length - 1], foot = [pts[i][0] + (v[0] - pts[i][0]) * .35, pts[i][1] + (v[1] - pts[i][1]) * 1.6 + 30]; g += `<path d="M${fl.map(p => f1(p[0]) + ' ' + f1(p[1])).join(' L')} L${f1(foot[0])} ${f1(foot[1])} Z" fill="#1c1640" opacity="${far ? .12 : .22}"/>`; }
     if (snow) { const sl = yy - amp * (far ? .62 : .72), id = `snw${Math.round(yy)}${sd}`; let zz = `M-200 -400 L2100 -400 L2100 ${f1(sl)}`; for (let x = 2100; x >= -200; x -= 46) zz += ` L${x} ${f1(sl + (hash(x * .1 + sd) - .3) * 40)}`;
       g += `<clipPath id="${id}"><path d="${zz} Z"/></clipPath><g clip-path="url(#${id})"><path d="${d}" fill="#f2f6ff" stroke="${K}" stroke-width="${far ? 3 : 4}"/><path d="${d}" fill="url(#shadeR)" opacity=".7"/></g>`;
       for (let i = 1; i < pts.length - 1; i++) if (pts[i][1] < sl - 10 && pts[i][1] < pts[i - 1][1] && pts[i][1] < pts[i + 1][1]) g += `<path d="M${f1(pts[i][0])} ${f1(pts[i][1])} l40 ${f1(sl - pts[i][1])} l-60 0 Z" fill="#9fb0d8" opacity=".45"/>`; }
@@ -382,18 +386,20 @@ function hills(y = 700, col = '#7fb35a', seed = 3, amp = 60) {
   let d = `M-40 ${y + 300} L-40 ${y}`; for (let i = 0; i <= 8; i++) { const x = i * 250, yy = y - hash(i + seed) * amp; d += ` Q${f1(x - 125)} ${f1(yy - amp * .5)} ${f1(x)} ${f1(yy)}`; } d += ` L1960 ${y + 300} Z`;
   return P(d, col, 5) + SH(d, 'litTop') + SH(d, 'darkBot', .6);
 }
-function ground(y = 760, col = '#9fcf6a', wav = 18) { const d = `M-20 ${y + 10} Q480 ${y - wav} 960 ${y} T1940 ${y - 6} L1940 1100 L-20 1100 Z`; return P(d, col, 6) + SH(d, 'darkBot') + SH(d, 'litTop', .6) + blotches(0, y + 20, 1920, 1080 - y, '#000', 9, Math.round(y), .08) + blotches(0, y + 10, 1920, 200, '#fff', 6, Math.round(y) + 3, .1); }
-function grass(x, y, s = 1, col = '#5e9e3a') { return G(P('M-14 0 L-20 -34 L-6 -8 L0 -44 L6 -8 L22 -32 L14 0', col, 4) + P('M-4 -4 L0 -36', 'none', 2, 'opacity=".5"', '#cfe89a'), `translate(${x} ${y}) scale(${s})`); }
+function ground(y = 760, col = '#9fcf6a', wav = 18) { const d = `M-20 ${y + 10} Q480 ${y - wav} 960 ${y} T1940 ${y - 6} L1940 1100 L-20 1100 Z`; let tf = ''; for (let k = 0; k < 90; k++) { const gx = hash(k * 3.3 + y) * 1960 - 20, gy = y + 14 + Math.pow(hash(k * 5.1 + y), 1.6) * (1080 - y), sc = .4 + (gy - y) / (1080 - y) * .9; tf += `<path d="M${f1(gx - 8 * sc)} ${f1(gy)} l${f1(-4 * sc)} ${f1(-18 * sc)} M${f1(gx)} ${f1(gy)} l${f1(1 * sc)} ${f1(-24 * sc)} M${f1(gx + 8 * sc)} ${f1(gy)} l${f1(5 * sc)} ${f1(-16 * sc)}" stroke="${['#4a7a2a', '#6a9a3a', '#2f5a24'][k % 3]}" stroke-width="${f1(2.2 * sc + 1)}" stroke-linecap="round" opacity=".75"/>`; if (k % 3 === 0) tf += `<ellipse cx="${f1(gx + 20)}" cy="${f1(gy - 2)}" rx="${f1(5 * sc + 2)}" ry="${f1(3 * sc + 1.5)}" fill="#9a9488" opacity=".7"/>`; }
+  return P(d, col, 6) + speckle(d, .45) + tf + SH(d, 'darkBot') + SH(d, 'litTop', .6) + blotches(0, y + 20, 1920, 1080 - y, '#000', 9, Math.round(y), .08) + blotches(0, y + 10, 1920, 200, '#fff', 6, Math.round(y) + 3, .1); }
+function grass(x, y, s = 1, col = '#5e9e3a') { return G(P('M-14 0 L-20 -34 L-6 -8 L0 -44 L6 -8 L22 -32 L14 0', col, 4) + P('M-4 -4 L0 -36 M-12 -4 L-17 -28', 'none', 2, 'opacity=".55"', '#cfe89a') + P('M8 -4 L18 -26', 'none', 2.5, 'opacity=".4"', '#1d3a14'), `translate(${x} ${y}) scale(${s})`); }
 function grassField(y, n = 14, seed = 2, col) { let s = ''; for (let i = 0; i < n; i++) s += grass(60 + hash(i + seed) * 1800, y + hash(i * 7 + seed) * 200, .8 + hash(i * 3) * .6, col); return s; }
 // a layered foliage clump: dark underside, mid body, sunny top blobs
 function foliage(cx, cy, w, h, cols = ['#3f7a34', '#5f9f3f', '#8cc45a'], seed = 1) {
   // clustered clumps: each clump a scalloped blob; dark outlined base -> mid tone shifted to the light -> sunny scallops -> leaf ticks
   const sc = (x, y, r, k) => { const n = 8; let d = ''; for (let i = 0; i <= n; i++) { const a = rad(i * 360 / n + k * 20), rr = r * (.86 + hash(i + k * 7 + seed) * .2), px = x + Math.cos(a) * rr, py = y + Math.sin(a) * rr * .86; if (!i) d = `M${f1(px)} ${f1(py)}`; else { const am = rad((i - .5) * 360 / n + k * 20), cr = rr * 1.28; d += ` Q${f1(x + Math.cos(am) * cr)} ${f1(y + Math.sin(am) * cr * .86)} ${f1(px)} ${f1(py)}`; } } return d + ' Z'; };
-  const cl = []; for (let i = 0; i < 15; i++) { const a = hash(i * 3 + seed) * Math.PI * 2, rr = Math.sqrt(hash(i * 5 + seed)); cl.push([cx + Math.cos(a) * rr * w * .4, cy + Math.sin(a) * rr * h * .36, (.13 + hash(i * 7 + seed) * .09) * w]); }
+  const cl = []; for (let i = 0; i < 22; i++) { const a = hash(i * 3 + seed) * Math.PI * 2, rr = Math.sqrt(hash(i * 5 + seed)); cl.push([cx + Math.cos(a) * rr * w * .4, cy + Math.sin(a) * rr * h * .36, (.13 + hash(i * 7 + seed) * .09) * w]); }
   cl.sort((a, b) => a[1] - b[1]);
   let s = `<path d="${cl.map((c, i) => sc(c[0], c[1], c[2], i)).join(' ')}" fill="${cols[0]}" stroke="${K}" stroke-width="5" stroke-linejoin="round"/>`;
   s += `<path d="${cl.map((c, i) => sc(c[0] - c[2] * .16, c[1] - c[2] * .2, c[2] * .78, i + 3)).join(' ')}" fill="${cols[1]}"/>`;
   s += `<path d="${cl.filter(c => c[1] < cy + h * .05).map((c, i) => sc(c[0] - c[2] * .3, c[1] - c[2] * .38, c[2] * .4, i + 5)).join(' ')}" fill="${cols[2]}"/>`;
+  for (let i = 0; i < 70; i++) { const c = cl[i % cl.length], a = hash(i * 17 + seed) * 6.28, r = c[2] * hash(i * 19 + seed) * .85, lx = c[0] + Math.cos(a) * r, ly = c[1] + Math.sin(a) * r * .8, up = ly < c[1]; s += `<ellipse cx="${f1(lx)}" cy="${f1(ly)}" rx="${f1(5 + hash(i * 23) * 4)}" ry="${f1(3 + hash(i * 29) * 2)}" fill="${up ? cols[2] : cols[0]}" opacity="${up ? .9 : .7}" transform="rotate(${f1(hash(i * 31) * 180)} ${f1(lx)} ${f1(ly)})"/>`; }
   for (let i = 0; i < 30; i++) { const c = cl[i % cl.length], a = hash(i * 11 + seed) * 6.28, r = c[2] * hash(i * 13 + seed) * .8; s += P(`M${f1(c[0] + Math.cos(a) * r)} ${f1(c[1] + Math.sin(a) * r)} q4 3 9 1`, 'none', 2.5, 'opacity=".4"', '#1d3a1a'); }
   return s + `<ellipse cx="${cx}" cy="${cy + h * .32}" rx="${w * .42}" ry="${h * .12}" fill="#1c1640" opacity=".18"/>`;
 }
@@ -461,7 +467,8 @@ function stipple(x, y, w, h, col = '#5a3c24', n = 220, seed = 3, op = .35) { let
 function grassHut(x, y, s = 1, t = 0) {
   const d = 'M-150 0 Q-160 -150 0 -170 Q160 -150 150 0 Z';
   let st = ''; for (let i = 0; i < 16; i++) { const a = rad(200 + i * 9), r = 150; st += P(`M${f1(Math.cos(a) * r * .2)} ${f1(-160 + i % 2 * 6)} Q${f1(Math.cos(a) * r * .9)} ${f1(-110)} ${f1(Math.cos(a) * r)} ${f1(-4)}`, 'none', 3, 'opacity=".55"', '#8a6420'); }
-  return G(P(d, 'url(#thatch)', 6) + st + SH(d, 'shadeR') + SH(d, 'litTop') + P('M-44 0 Q-46 -80 0 -86 Q46 -80 44 0 Z', '#22170f', 5) + P('M-150 -6 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0', 'none', 4, '', '#a7792a'), `translate(${x} ${y}) scale(${s})`);
+  for (let i = 0; i < 170; i++) { const v = Math.sqrt(hash(i * 3.7)), a = rad(180 + hash(i * 5.3) * 180), rx = 150 * v, ry = 165 * v, px = Math.cos(a) * rx * .98, py = Math.sin(a) * ry * .95, ang = Math.atan2(py, px), L = 10 + hash(i * 7) * 12; if (py > -6) continue; st += `<line x1="${f1(px)}" y1="${f1(py)}" x2="${f1(px + Math.cos(ang) * L)}" y2="${f1(py + Math.sin(ang) * L)}" stroke="${['#8a5c18', '#f3cf7a', '#b07e2a'][i % 3]}" stroke-width="2" opacity=".7"/>`; }
+  return G(P(d, 'url(#thatch)', 6) + st + speckle(d, .7) + SH(d, 'shadeR') + SH(d, 'litTop') + P('M-44 0 Q-46 -80 0 -86 Q46 -80 44 0 Z', '#22170f', 5) + P('M-150 -6 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0 q20 -14 40 0', 'none', 4, '', '#a7792a'), `translate(${x} ${y}) scale(${s})`);
 }
 function wheat(x, y, s = 1, t = 0) { const sw = Math.sin(t * 1.6 + x * .02) * 6; let g = P(`M0 0 Q2 -60 ${sw} -120`, 'none', 4); for (let i = 0; i < 5; i++) { const yy = -96 - i * 12; g += E(sw - 7, yy, 6, 10, '#e7bb4a', 3, `transform="rotate(-25 ${sw - 7} ${yy})"`) + E(sw + 7, yy, 6, 10, '#e7bb4a', 3, `transform="rotate(25 ${sw + 7} ${yy})"`); } g += E(sw, -158, 5, 10, '#e7bb4a', 3); return G(g, `translate(${f1(x)} ${f1(y)}) scale(${s})`); }
 function field(y, t, n = 26) { let s = P(`M-20 ${y} L1940 ${y - 20} L1940 1100 L-20 1100 Z`, '#d9b95e', 6); for (let i = 0; i < n; i++) s += wheat(40 + i * 75, y + 40 + (i % 3) * 30, .9, t); return s; }
@@ -472,7 +479,7 @@ function backdrop(kind = 'savanna', t = 0) {
   if (kind === 'cave') return caveInside(t, true);
   if (kind === 'caveNight') return caveInside(t, true) + `<rect width="1920" height="1080" fill="#0a1030" opacity=".25"/>`;
   if (kind === 'savannaDusk') return sky('skyDusk') + `<circle cx="1500" cy="640" r="420" fill="url(#sunL)"/>` + C(1500, 640, 70, '#ffd27a', 0) + mountains(650, '#7a5e8c', false, 4) + hills(720, '#8f8a4a', 6, 40) + ground(780, '#b59a4a') + acacia(1560, 800, 1.1) + acacia(300, 780, .7) + grassField(800, 18, 3, '#7a7a2a') + grain(.4) + vignette();
-  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + treeLine(712, '#1d2a44', 4, 26, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + grain(.35);
+  if (night) return sky('skyNight') + stars(t, 160, 3) + fullMoon(1580, 190, 46) + mountains(640, '#2a3360', false, 4) + haze(660, 200, true) + treeLine(712, '#1d2a44', 4, 26, true) + hills(720, '#24384a', 6, 40) + ground(790, '#2c3f36') + acacia(1600, 810, 1.1) + grassField(820, 14, 3, '#1f3a2a') + `<rect width="1920" height="1080" fill="#1a2350" opacity=".38" style="mix-blend-mode:multiply"/>` + grain(.35);
   if (kind === 'dawn') return sky('skyDawn') + `<circle cx="1400" cy="760" r="520" fill="url(#sunL)" opacity=".7"/>` + mountains(640, '#8a92b0', false, 4) + hills(720, '#6f8a68', 6, 40) + ground(790, '#7e9a62') + grassField(810, 16, 3, '#5b7a48') + grain(.35);
   if (kind === 'cliff') return sky('skyDay') + cloud(400, 160, 1, t) + cloud(1400, 120, .8, t) + hills(760, '#6faa52', 2, 50) + P('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', '#b7a48c', 7) + `<path d="M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z" fill="url(#rockT)"/>` + SH('M900 1100 L960 420 Q1100 300 1400 330 Q1700 330 1760 520 L1940 560 L1940 1100 Z', 'shadeR') + grain(.35);
   if (kind === 'snowCave') return sky('skyGrey') + snow(t, 50) + mountains(600, '#a9b6c8', true, 8) + ground(800, '#eef3f8', 10) + caveMouth(960, 820, 1.4) + grain(.25);
