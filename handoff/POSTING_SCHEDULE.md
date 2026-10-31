@@ -26,3 +26,10 @@
 | Tue Nov 3 + | THE RULES #4, #5, ... (lead keeps 2-3 ready ahead; one new reel a day) |
 
 Also cross-post the What If Shorts to Instagram/TikTok when there's room; put the YouTube link in the IG bio.
+
+## History channel (NEW, "Stone Age Stories" suggested name; owner created the account Oct 31). Voice: 50/50 af_heart + bf_emma, en-gb (longform/VOICE.md). Slideshow format (longform/slideshow.py).
+| Date | Time | Post |
+|---|---|---|
+| Sat Oct 31 | ~7 PM ET | #1 How Did Ancient Humans Actually Sleep? (thumbnail "18 MINUTES") |
+| Wed Nov 4 | ~7 PM ET | #2 What Did Ancient Humans Do When They Got Sick? (thumbnail "STONE AGE SURGERY") |
+| then | 1-2 a week | #3+ (winter / fun / food / ...) |
