@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Luckiest Guy";src:url(fonts/LuckiestGuy-Regular.ttf)}
+@font-face{font-family:"Patrick Hand";src:url(fonts/PatrickHand-Regular.ttf)}
+html,body{margin:0;background:#000;overflow:hidden}svg{display:block}
+</style></head><body>
+<svg id="s" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"></svg>
+<script src="ink.js"></script>
+<script>
+const N = new URLSearchParams(location.search).get('n');
+const sEl = document.getElementById('s');
+let TL;
+function seekDraw(t) {
+  let i = TL.scenes.findIndex(s => t >= s.start && t < s.end); if (i < 0) i = TL.scenes.length - 1;
+  const sc = TL.scenes[i], lt = t - sc.start, D = sc.end - sc.start;
+  const L = sc.lines.map(l => l.start - sc.start);
+  const on = (k, dur = .45, delay = 0) => k >= L.length ? 0 : clamp((lt - L[k] - delay) / dur);
+  const fn = SC[sc.v]; let body = fn ? fn(lt, D, on, t) : paper() + headline(sc.v, 960, 540, 100);
+  const z = 1 + .055 * easeIO(lt / D), dx = (i % 2 ? 1 : -1) * 18 * easeIO(lt / D);
+  const seed = Math.floor(t * 8) % 7 + 1;
+  const fadeIn = i ? clamp(lt / .18) : 1;
+  sEl.innerHTML = DEFS.replace('SEED', seed) + `<rect width="1920" height="1080" fill="#111"/>` + `<g opacity="${fadeIn.toFixed(3)}"><g filter="url(#boil)" transform="translate(${960 + dx} 540) scale(${z.toFixed(4)}) translate(-960 -540)">${body}</g></g>`;
+}
+let SHOTS = null, IMG = {};
+function seekImg(t) {
+  let k = SHOTS.findIndex(s => t >= s.start && t < s.end); if (k < 0) k = SHOTS.length - 1;
+  const layer = (j, op) => { const s = SHOTS[j], lt = t - s.start, d = s.end - s.start, u = easeIO(clamp(lt / (d + .4)));
+    const z = 1.04 + .07 * (j % 2 ? 1 - u : u), dx = ((j % 3) - 1) * 30 * (u - .5), dy = (j % 2 ? 12 : -12) * (u - .5);
+    const im = IMG[j] ? `<image href="${IMG[j]}" x="0" y="0" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>` : '';
+    const txt = s.txt ? headline(s.txt, 960, 150, s.txt.length > 22 ? 78 : 110, clamp((lt - .3) / .45)) : '';
+    return `<g opacity="${op.toFixed(3)}"><g transform="translate(${960 + dx} ${540 + dy}) scale(${z.toFixed(4)}) translate(-960 -540)">${im}</g>${txt}</g>`; };
+  const lt = t - SHOTS[k].start, xf = .3;
+  if (!IMG[k]) return seekDraw(t);
+  sEl.innerHTML = DEFS.replace('SEED', 1) + `<rect width="1920" height="1080" fill="#111"/>` + (k && lt < xf && IMG[k - 1] ? layer(k - 1, 1) : '') + layer(k, k ? clamp(lt / xf) : 1);
+}
+window.seek = t => SHOTS ? seekImg(t) : seekDraw(t);
+(async () => {
+  TL = await (await fetch(N + '/tl.json')).json();
+  await new Promise(r => { const sc = document.createElement('script'); sc.src = N + '/scenes.js'; sc.onload = r; document.body.appendChild(sc); });
+  await document.fonts.load('40px "Luckiest Guy"'); await document.fonts.load('40px "Patrick Hand"');
+  if (new URLSearchParams(location.search).get('mode') === 'img') {
+    const sp = await (await fetch(N + '/shots.json')).json(); const lines = TL.scenes.flatMap(s => s.lines);
+    SHOTS = sp.shots.map((s, i) => ({ txt: s.txt, start: i ? lines[i].start - .2 : 0, end: i + 1 < lines.length ? lines[i + 1].start - .2 : TL.total }));
+    await Promise.all(SHOTS.map((_, i) => new Promise(r => { const u = `${N}/images/img${String(i + 1).padStart(3, '0')}.png`; const im = new Image(); im.onload = () => { IMG[i] = u; r(); }; im.onerror = r; im.src = u; })));
+  }
+  window.DUR = TL.total; window.seek(+(new URLSearchParams(location.search).get('t') || 0)); window.ready = true;
+})();
+</script></body></html>
