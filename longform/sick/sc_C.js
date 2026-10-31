@@ -55,6 +55,14 @@ function skullIcon(x, y, s, healed = 1) { return G(P('M-40 10 Q-46 -46 0 -48 Q46
 function pathTo(x, y, h, w, col) { return P(`M${x - w} ${y} L${x} ${y - h} L${x + w} ${y}`, col, 6); }
 const alps = (t) => CDEF + R('url(#kAlp)') + cloud(400, 160, 1, t) + cloud(1300, 110, .8, t) + blurLayer(mountains(520, '#7a8ab8', true, 13) + haze(560, 220), 2) + mountains(640, '#9aa6c4', true, 7) + P('M-20 760 Q500 720 960 740 Q1400 760 1940 720 L1940 1100 L-20 1100 Z', '#f4f8fc', 7) + SH('M-20 760 Q500 720 960 740 Q1400 760 1940 720 L1940 1100 L-20 1100 Z', 'darkBot', .45) + stipple(0, 740, 1920, 340, '#6a7a90', 160, 3, .25) + snow(t, 40);
 function arc(x, y, k) { return k > .05 && k < .95 ? swoosh(x - 60, y + 60, 120, 40, 120, 220) : ''; }
+function museumBg() {   // a small museum hall: spotlights, side cases with artefacts, wall plaques, a rope barrier, a tiled floor
+  let g = CDEF + R('url(#kMuseum)') + P('M-20 900 L1940 900 L1940 1100 L-20 1100 Z', '#4a4038', 6);
+  for (let i = 0; i < 12; i++) g += Ln(-20 + i * 180, 900, -200 + i * 220, 1100, 3, 'rgba(0,0,0,.25)'); g += Ln(-20, 980, 1940, 980, 3, 'rgba(0,0,0,.2)');
+  for (const x of [120, 1800]) { g += `<rect x="${x - 90}" y="420" width="180" height="300" fill="#bfe4ff" fill-opacity=".16" stroke="#d8e8f4" stroke-width="6"/><rect x="${x - 100}" y="720" width="200" height="180" fill="#3a3a4e" stroke="${K}" stroke-width="6"/>` + fungus(x, 640, .5, 10) + `<circle cx="${x}" cy="300" r="200" fill="url(#kSpot)"/>`; }
+  for (const x of [480, 1440]) g += `<rect x="${x - 70}" y="240" width="140" height="90" fill="#e8dcc0" stroke="${K}" stroke-width="5"/>` + Ln(x - 50, 270, x + 50, 270, 4, '#8a7a6a') + Ln(x - 50, 295, x + 30, 295, 4, '#8a7a6a');
+  g += [300, 960, 1620].map(x => Ln(x, 900, x, 790, 10, '#c8a040') + C(x, 786, 12, '#e8c060', 4)).join('') + P('M300 800 Q630 860 960 800 Q1290 860 1620 800', 'none', 10, '', '#a8323a');
+  return g;
+}
 const camp = (t) => caveW(t) + campfire(1380, 960, 1, t) + fireLight(1380, 900, 1000, t);
 
 Object.assign(SC, {
@@ -96,9 +104,9 @@ otzi: (lt, D, on, t) => seq(on, [
 ]),
 // ============================== 34 otzi_name ==============================
 otzi_name: (lt, D, on, t) => seq(on, [
-  () => CDEF + R('url(#kMuseum)') + `<circle cx="1180" cy="200" r="600" fill="url(#kSpot)"/>` + `<rect x="900" y="300" width="560" height="560" fill="#bfe4ff" fill-opacity=".18" stroke="#d8e8f4" stroke-width="8"/>` + P('M920 320 L1000 320 L920 460 Z', '#fff', 0, 'opacity=".2"') + `<rect x="880" y="860" width="600" height="80" fill="#4a4a5e" stroke="${K}" stroke-width="7"/>` + P('M-20 940 L1940 940 L1940 1100 L-20 1100 Z', '#5a4a3e', 6) + stipple(0, 940, 1920, 140, '#2a1a10', 120, 3, .3)
+  () => museumBg() + `<circle cx="1180" cy="200" r="600" fill="url(#kSpot)"/>` + `<rect x="900" y="300" width="560" height="560" fill="#bfe4ff" fill-opacity=".18" stroke="#d8e8f4" stroke-width="8"/>` + P('M920 320 L1000 320 L920 460 Z', '#fff', 0, 'opacity=".2"') + `<rect x="880" y="860" width="600" height="80" fill="#4a4a5e" stroke="${K}" stroke-width="7"/>` + P('M-20 940 L1940 940 L1940 1100 L-20 1100 Z', '#5a4a3e', 6) + stipple(0, 940, 1920, 140, '#2a1a10', 120, 3, .3)
     + iceman(620, 1150, 1.8, { face: 'happy', R: [80, -380] }, t) + G(fungus(0, 0, .6, 10) + fungus(80, 40, .5, -20), 'translate(1180 760)') + headline('OTZI THE ICEMAN', 1180, 170, 110, on(0, .5, .4)) + finish(true, .3),
-  () => CDEF + R('url(#kMuseum)') + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>` + P('M200 700 Q960 600 1720 700 L1760 1000 L160 1000 Z', 'url(#fur)', 8) + SH('M200 700 Q960 600 1720 700 L1760 1000 L160 1000 Z', 'darkBot')
+  () => museumBg() + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>` + P('M200 700 Q960 600 1720 700 L1760 1000 L160 1000 Z', 'url(#fur)', 8) + SH('M200 700 Q960 600 1720 700 L1760 1000 L160 1000 Z', 'darkBot')
     + G(Ln(-300, 0, 260, -20, 22, '#7a5230') + P('M240 -70 L340 -40 L330 40 L240 30 Z', '#c87a3a', 6) + SH('M240 -70 L340 -40 L330 40 L240 30 Z', 'shadeR'), 'translate(560 820) rotate(-6)') + G(`<rect x="-50" y="-260" width="100" height="280" rx="20" fill="#8a5a3a" stroke="${K}" stroke-width="6"/>` + Array.from({ length: 4 }, (_, i) => Ln(-30 + i * 20, -260, -36 + i * 22, -340, 6, '#7a5230')).join(''), 'translate(1500 860) rotate(12)')
     + P('M760 640 Q860 700 920 820', 'none', 8, '', '#5a3a1e') + P('M1020 640 Q1080 720 1180 800', 'none', 8, '', '#5a3a1e') + fungus(940, 840, 1.1, 10) + fungus(1190, 820, 1, -14) + headline('BIRCH FUNGUS', 960, 170, 110, on(1, .5, 1.6)) + hand('threaded on leather strips', 960, 270, 58, '#fff', 'middle', on(1, .5, 2.2)) + finish(true, .3),
 ]),
@@ -117,10 +125,10 @@ otzi_medicine: (lt, D, on, t) => seq(on, [
 ]),
 // ============================== 37 otzi_tattoos ==============================
 otzi_tattoos: (lt, D, on, t) => seq(on, [
-  () => { const n = Math.round(61 * ease(on(0, 3, .5))), spots = Array.from({ length: 61 }, (_, i) => [[-60, -80], [60, -80], [-90, 260], [90, 260], [-80, 420], [80, 420], [0, -40]][i % 7]); return CDEF + R('url(#kMuseum)') + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>`
+  () => { const n = Math.round(61 * ease(on(0, 3, .5))), spots = Array.from({ length: 61 }, (_, i) => [[-60, -80], [60, -80], [-90, 260], [90, 260], [-80, 420], [80, 420], [0, -40]][i % 7]); return museumBg() + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>`
     + parchment(960, 600, 900, 880, P('M-110 -380 Q-140 -200 -120 0 L-100 180 L-120 440 L-60 440 L-20 200 L20 200 L60 440 L120 440 L100 180 L120 0 Q140 -200 110 -380 Q0 -420 -110 -380 Z', '#f6e6d0', 7) + C(0, -420, 60, '#f6e6d0', 7) + spots.slice(0, n).map(([x, y], i) => { const dx = (i % 3 - 1) * 12, dy = Math.floor(i / 7) * 10 - 40; return i % 5 === 4 ? P(`M${x + dx - 8} ${y + dy - 8} l16 16 M${x + dx + 8} ${y + dy - 8} l-16 16`, 'none', 4, '', '#2a3a4a') : Ln(x + dx - 10, y + dy, x + dx + 10, y + dy, 4, '#2a3a4a'); }).join(''), 0)
     + headline(`${n} TATTOOS`, 960, 130, 110, on(0, .5, .3)) + hand('little lines and crosses', 960, 1040, 58, '#fff', 'middle', on(0, .5, 3)) + finish(true, .3); },
-  () => CDEF + R('url(#kMuseum)') + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>` + iceman(760, 1130, 1.6, { face: 'pain', R: [40, -110], L: [-40, -160] }, t)
+  () => museumBg() + `<circle cx="960" cy="560" r="700" fill="url(#kSpot)"/>` + iceman(760, 1130, 1.6, { face: 'pain', R: [40, -110], L: [-40, -160] }, t)
     + [['lower back', 1300, 420, 760 - 20, 1130 - 160 * 1.6 * 1.3], ['knees', 1340, 640, 760 + 14, 1130 - 75 * 1.6 * 1.3], ['ankles', 1340, 860, 760 + 34, 1130 - 10]].map(([s2, lx, ly, x, y], i) => { const p = on(1, .5, 1 + i * .8); return p <= 0 ? '' : `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(80 * p)}" fill="url(#kAche)"/>` + Ln(x - 16, y - 6, x + 16, y - 6, 5, '#2a3a4a') + Ln(x - 16, y + 6, x + 16, y + 6, 5, '#2a3a4a') + arrow(lx - 40, ly, x + 40, y, p, 20) + hand(s2, lx + 20, ly + 14, 54, '#fff', 'start', p); }).join('')
     + headline('ACHY JOINTS', 960, 150, 110, on(1, .5, 4)) + finish(true, .3),
 ]),
@@ -165,5 +173,10 @@ follow: (lt, D, on, t) => CDEF + R('url(#kSunset)') + `<circle cx="1500" cy="700
   + (() => { const s2 = 1.75, x = 560, y = 1170; return moss(x, y, s2, { face: 'happy', R: [80 + Math.sin(t * 6) * 30, -460], L: [-60, -170] }, t) + P(`M${x - 62 * s2 * 1.3 - 26} ${y - 170 * s2 * 1.3 - 10} q26 -26 52 0 q-26 22 -52 0 Z`, '#6fbf4a', 4); })()
   + `<rect width="1920" height="1080" fill="#000" opacity="${f1(.18 * ease(on(0, 1)))}"/>` + headline('FOLLOW FOR MORE', 1180, 300, 124, on(0, .5, .2)) + hand('of how ancient humans really lived', 1180, 400, 66, '#fff', 'middle', on(0, .5, .8)) + fgBasket() + finish(),
 });
+// SLIDESHOW (owner, Oct 31): every line is ONE finished still (slideshow.py adds the Ken Burns + crossfades), so reveals are
+// stepped: a line's elements are fully on from its first frame, no fades or write-ons.
+for (const id of ['ensisheim_heal', 'trepan_world', 'trepan_why', 'otzi', 'otzi_name', 'otzi_fungus', 'otzi_medicine', 'otzi_tattoos', 'otzi_debate', 'moss_recap', 'honest', 'ending', 'callback', 'follow']) {
+  const f = SC[id]; SC[id] = (lt, D, on, t) => f(lt, D, (k) => on(k, .001, 0) > 0 ? 1 : 0, t);
+}
 function rr2(x, y) { return G(`<rect x="-40" y="-60" width="80" height="80" rx="16" fill="#8a5a3a" stroke="${K}" stroke-width="6"/>` + Ln(-20, -60, -20, -90, 5, '#5a3a1e'), `translate(${x} ${y})`); }
 })();
