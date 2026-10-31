@@ -1,0 +1,926 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "end": 0.74,
+  "text": "Monday."
+ },
+ {
+  "i": 1,
+  "start": 1.56,
+  "end": 1.92,
+  "text": "Breakfast."
+ },
+ {
+  "i": 2,
+  "start": 2.76,
+  "end": 5.76,
+  "text": "You lift your spoon, and the air above your cereal unzips."
+ },
+ {
+  "i": 3,
+  "start": 6.46,
+  "end": 9.04,
+  "text": "A tiny glowing tear, edged with gold sparks."
+ },
+ {
+  "i": 4,
+  "start": 9.84,
+  "end": 12.08,
+  "text": "Out of it floats a screen, like a video game."
+ },
+ {
+  "i": 5,
+  "start": 12.82,
+  "end": 13.86,
+  "text": "A big gold number one."
+ },
+ {
+  "i": 6,
+  "start": 14.54,
+  "end": 15.36,
+  "text": "A little dumbbell."
+ },
+ {
+  "i": 7,
+  "start": 15.36,
+  "end": 17.3,
+  "text": "And the words \"LEVEL UP!\""
+ },
+ {
+  "i": 8,
+  "start": 18.1,
+  "end": 19.04,
+  "text": "Dev reads it out loud."
+ },
+ {
+  "i": 9,
+  "start": 20.18,
+  "end": 21.16,
+  "text": "\"Strength, fifty kilos.\""
+ },
+ {
+  "i": 10,
+  "start": 21.86,
+  "end": 22.58,
+  "text": "He's already filming."
+ },
+ {
+  "i": 11,
+  "start": 23.48,
+  "end": 24.78,
+  "text": "Every morning, one more level."
+ },
+ {
+  "i": 12,
+  "start": 25.56,
+  "end": 27.64,
+  "text": "Each one makes you about a quarter stronger."
+ },
+ {
+  "i": 13,
+  "start": 28.58,
+  "end": 29.96,
+  "text": "Stack three, and your strength doubles."
+ },
+ {
+  "i": 14,
+  "start": 30.8,
+  "end": 32.28,
+  "text": "Nobody knows where it came from."
+ },
+ {
+  "i": 15,
+  "start": 33.04,
+  "end": 34.18,
+  "text": "Biscuit tries to eat it."
+ },
+ {
+  "i": 16,
+  "start": 34.84,
+  "end": 36.98,
+  "text": "Let's see what thirty days does to you."
+ },
+ {
+  "i": 17,
+  "start": 39.09,
+  "end": 39.59,
+  "text": "Level one."
+ },
+ {
+  "i": 18,
+  "start": 40.39,
+  "end": 42.57,
+  "text": "You carry all the shopping home in one hand."
+ },
+ {
+  "i": 19,
+  "start": 43.39,
+  "end": 44.27,
+  "text": "Dev squints at your arms."
+ },
+ {
+  "i": 20,
+  "start": 45.03,
+  "end": 46.47,
+  "text": "\"They look exactly the same.\""
+ },
+ {
+  "i": 21,
+  "start": 47.15,
+  "end": 47.71,
+  "text": "He's right."
+ },
+ {
+  "i": 22,
+  "start": 48.53,
+  "end": 49.75,
+  "text": "And that's real life, too."
+ },
+ {
+  "i": 23,
+  "start": 51.27,
+  "end": 54.15,
+  "text": "When people start lifting weights, they get stronger fast."
+ },
+ {
+  "i": 24,
+  "start": 54.89,
+  "end": 56.73,
+  "text": "But at first, their muscles barely grow."
+ },
+ {
+  "i": 25,
+  "start": 57.51,
+  "end": 58.83,
+  "text": "What changes is the wiring."
+ },
+ {
+  "i": 26,
+  "start": 59.59,
+  "end": 63.39,
+  "text": "Your nervous system learns to switch on more muscle fibres at once."
+ },
+ {
+  "i": 27,
+  "start": 64.11,
+  "end": 70.05,
+  "text": "A classic study from 1979 found most early strength gain came from the nerves."
+ },
+ {
+  "i": 28,
+  "start": 71.15,
+  "end": 72.99,
+  "text": "Muscle growth took over later, after weeks."
+ },
+ {
+  "i": 29,
+  "start": 74.61,
+  "end": 75.15,
+  "text": "Level six."
+ },
+ {
+  "i": 30,
+  "start": 76.03,
+  "end": 77.47,
+  "text": "A hundred and sixty kilos."
+ },
+ {
+  "i": 31,
+  "start": 78.17,
+  "end": 79.77,
+  "text": "The TV remote is under the sofa."
+ },
+ {
+  "i": 32,
+  "start": 80.67,
+  "end": 82.3,
+  "text": "You lift the sofa with one hand."
+ },
+ {
+  "i": 33,
+  "start": 83.1,
+  "end": 84.78,
+  "text": "Biscuit stays asleep on it."
+ },
+ {
+  "i": 34,
+  "start": 86.04,
+  "end": 86.624,
+  "text": "Level eleven."
+ },
+ {
+  "i": 35,
+  "start": 86.624,
+  "end": 89.56,
+  "text": "\"Five hundred and eight kilos,\" Dev reads."
+ },
+ {
+  "i": 36,
+  "start": 90.32,
+  "end": 91.24,
+  "text": "Then he goes quiet."
+ },
+ {
+  "i": 37,
+  "start": 91.94,
+  "end": 96.14,
+  "text": "The heaviest deadlift ever recorded is five hundred and one kilos."
+ },
+ {
+  "i": 38,
+  "start": 96.14,
+  "end": 99.52,
+  "text": "Hafþór Björnsson, in Iceland, in 2020."
+ },
+ {
+  "i": 39,
+  "start": 100.42,
+  "end": 101.44,
+  "text": "You beat it at breakfast."
+ },
+ {
+  "i": 40,
+  "start": 102.28,
+  "end": 103.28,
+  "text": "Then a red line appears."
+ },
+ {
+  "i": 41,
+  "start": 104.26,
+  "end": 105.22,
+  "text": "\"Bones: not included.\""
+ },
+ {
+  "i": 42,
+  "start": 106.66,
+  "end": 112.2,
+  "text": "Muscles pull on your bones through tough cords called tendons, and the bones take the load."
+ },
+ {
+  "i": 43,
+  "start": 113.08,
+  "end": 113.62,
+  "text": "Bone is amazing."
+ },
+ {
+  "i": 44,
+  "start": 114.5,
+  "end": 120.46,
+  "text": "A piece of thigh bone the size of your fingernail can take around two tonnes of squeezing along its length."
+ },
+ {
+  "i": 45,
+  "start": 121.1,
+  "end": 124.2,
+  "text": "But pull, bend or twist it, and it gives up much sooner."
+ },
+ {
+  "i": 46,
+  "start": 125.14,
+  "end": 129.18,
+  "text": "Training makes bones and tendons stronger too, but more slowly than muscle."
+ },
+ {
+  "i": 47,
+  "start": 129.94,
+  "end": 135.24,
+  "text": "In teen athletes, muscle can outpace tendon, and that gap may raise the risk of injury."
+ },
+ {
+  "i": 48,
+  "start": 135.94,
+  "end": 137.1,
+  "text": "That record took years."
+ },
+ {
+  "i": 49,
+  "start": 137.1,
+  "end": 141.52,
+  "text": "Level-eleven muscles on level-zero bones would snap something."
+ },
+ {
+  "i": 50,
+  "start": 142.22,
+  "end": 144.76,
+  "text": "Next morning, the line reads \"Bones: upgraded.\""
+ },
+ {
+  "i": 51,
+  "start": 145.52,
+  "end": 146.9,
+  "text": "Real life has no update."
+ },
+ {
+  "i": 52,
+  "start": 148.62,
+  "end": 150.02,
+  "text": "Level sixteen."
+ },
+ {
+  "i": 53,
+  "start": 150.02,
+  "end": 151.8,
+  "text": "Over sixteen hundred kilos."
+ },
+ {
+  "i": 54,
+  "start": 151.8,
+  "end": 154.96,
+  "text": "Mina's football is under the car, parked on the grass."
+ },
+ {
+  "i": 55,
+  "start": 155.72,
+  "end": 158.46,
+  "text": "A small family car weighs about one and a half tonnes."
+ },
+ {
+  "i": 56,
+  "start": 158.46,
+  "end": 159.78,
+  "text": "You lift."
+ },
+ {
+  "i": 57,
+  "start": 160.54,
+  "end": 161.38,
+  "text": "The car goes up."
+ },
+ {
+  "i": 58,
+  "start": 162.06,
+  "end": 162.84,
+  "text": "You go down."
+ },
+ {
+  "i": 59,
+  "start": 163.62,
+  "end": 164.54,
+  "text": "Ankle deep in the lawn."
+ },
+ {
+  "i": 60,
+  "start": 165.24,
+  "end": 166.66,
+  "text": "You try the patio instead."
+ },
+ {
+  "i": 61,
+  "start": 166.66,
+  "end": 167.75,
+  "text": "Crack."
+ },
+ {
+  "i": 62,
+  "start": 167.75,
+  "end": 169.16,
+  "text": "Mum's tiles."
+ },
+ {
+  "i": 63,
+  "start": 170.88,
+  "end": 175.48,
+  "text": "Newton's third law: when you push on something, it pushes back on you just as hard."
+ },
+ {
+  "i": 64,
+  "start": 176.24,
+  "end": 178.62,
+  "text": "Push up on a car, and it pushes down on you."
+ },
+ {
+  "i": 65,
+  "start": 179.2,
+  "end": 182.22,
+  "text": "That weight, plus yours, goes through your feet into the ground."
+ },
+ {
+  "i": 66,
+  "start": 183.1,
+  "end": 184.76,
+  "text": "Pressure is force divided by area."
+ },
+ {
+  "i": 67,
+  "start": 185.6,
+  "end": 186.64,
+  "text": "Two shoe soles are tiny."
+ },
+ {
+  "i": 68,
+  "start": 187.48,
+  "end": 193.78,
+  "text": "Holding that car, your feet press more than five times harder than soft, wet ground is rated to hold."
+ },
+ {
+  "i": 69,
+  "start": 194.64,
+  "end": 197.42,
+  "text": "Spread the force over a bigger area, and the pressure drops."
+ },
+ {
+  "i": 70,
+  "start": 198.18,
+  "end": 199.3,
+  "text": "That's how snowshoes work."
+ },
+ {
+  "i": 71,
+  "start": 199.3,
+  "end": 201.76,
+  "text": "Mina fetches two planks."
+ },
+ {
+  "i": 72,
+  "start": 203.06,
+  "end": 204.72,
+  "text": "Level nineteen."
+ },
+ {
+  "i": 73,
+  "start": 204.72,
+  "end": 208.3,
+  "text": "Daylight lifting is getting awkward, so you train at night, in the park."
+ },
+ {
+  "i": 74,
+  "start": 208.3,
+  "end": 211.3,
+  "text": "Push-ups under the streetlights."
+ },
+ {
+  "i": 75,
+  "start": 211.3,
+  "end": 212.26,
+  "text": "Squats with the park bench."
+ },
+ {
+  "i": 76,
+  "start": 212.26,
+  "end": 213.72,
+  "text": "Mina times."
+ },
+ {
+  "i": 77,
+  "start": 214.58,
+  "end": 215.0,
+  "text": "Dev films."
+ },
+ {
+  "i": 78,
+  "start": 215.84,
+  "end": 218.0,
+  "text": "As the night gets colder, you start to glow."
+ },
+ {
+  "i": 79,
+  "start": 218.76,
+  "end": 220.96,
+  "text": "A shimmering aura rises off your shoulders."
+ },
+ {
+  "i": 80,
+  "start": 221.86,
+  "end": 222.72,
+  "text": "Dev leans closer."
+ },
+ {
+  "i": 81,
+  "start": 223.5,
+  "end": 223.78,
+  "text": "\"Wait."
+ },
+ {
+  "i": 82,
+  "start": 224.6,
+  "end": 225.32,
+  "text": "Is that steam?\""
+ },
+ {
+  "i": 83,
+  "start": 226.9,
+  "end": 232.06,
+  "text": "Muscles turn food energy into movement, but your body only manages about a quarter."
+ },
+ {
+  "i": 84,
+  "start": 232.9,
+  "end": 234.34,
+  "text": "Most of the rest becomes heat."
+ },
+ {
+  "i": 85,
+  "start": 235.06,
+  "end": 240.24,
+  "text": "The heat warms your skin, and moisture rising off it turns to cloud in the cold air."
+ },
+ {
+  "i": 86,
+  "start": 240.96,
+  "end": 241.88,
+  "text": "Your aura is steam."
+ },
+ {
+  "i": 87,
+  "start": 242.6,
+  "end": 249.06,
+  "text": "Here's a surprise: lifting a car half a metre, once, uses about the food energy of one bite of an apple."
+ },
+ {
+  "i": 88,
+  "start": 249.8,
+  "end": 251.02,
+  "text": "Doing it all night adds up."
+ },
+ {
+  "i": 89,
+  "start": 251.02,
+  "end": 255.52,
+  "text": "Hafþór has said he eats around ten thousand calories a day in training."
+ },
+ {
+  "i": 90,
+  "start": 256.32,
+  "end": 258.72,
+  "text": "Most adults need about two thousand."
+ },
+ {
+  "i": 91,
+  "start": 258.72,
+  "end": 260.1,
+  "text": "At home, you empty the fridge."
+ },
+ {
+  "i": 92,
+  "start": 261.0,
+  "end": 262.04,
+  "text": "Biscuit guards her bowl."
+ },
+ {
+  "i": 93,
+  "start": 263.7,
+  "end": 265.36,
+  "text": "Level twenty-three."
+ },
+ {
+  "i": 94,
+  "start": 265.36,
+  "end": 266.92,
+  "text": "Over eight tonnes."
+ },
+ {
+  "i": 95,
+  "start": 266.92,
+  "end": 267.9,
+  "text": "And it's nearly Halloween."
+ },
+ {
+  "i": 96,
+  "start": 268.72,
+  "end": 274.66,
+  "text": "By the park, a truck of festival pumpkins has slid off the path, one back wheel sunk in mud."
+ },
+ {
+  "i": 97,
+  "start": 275.44,
+  "end": 277.86,
+  "text": "The sticker says seven and a half tonnes."
+ },
+ {
+  "i": 98,
+  "start": 277.86,
+  "end": 278.24,
+  "text": "Easy."
+ },
+ {
+  "i": 99,
+  "start": 278.92,
+  "end": 279.56,
+  "text": "You push."
+ },
+ {
+  "i": 100,
+  "start": 280.32,
+  "end": 281.16,
+  "text": "Your trainers spin."
+ },
+ {
+  "i": 101,
+  "start": 282.18,
+  "end": 282.68,
+  "text": "Squeak, squeak."
+ },
+ {
+  "i": 102,
+  "start": 283.2,
+  "end": 284.42,
+  "text": "The truck doesn't move."
+ },
+ {
+  "i": 103,
+  "start": 285.22,
+  "end": 286.2,
+  "text": "You slide into a puddle."
+ },
+ {
+  "i": 104,
+  "start": 287.74,
+  "end": 290.78,
+  "text": "To push something forward, your feet push back on the ground."
+ },
+ {
+  "i": 105,
+  "start": 291.6,
+  "end": 293.08,
+  "text": "Only friction stops them sliding."
+ },
+ {
+  "i": 106,
+  "start": 293.88,
+  "end": 299.36,
+  "text": "The most grip you can get is roughly your weight times a number called the coefficient of friction."
+ },
+ {
+  "i": 107,
+  "start": 300.32,
+  "end": 302.28,
+  "text": "Rubber on dry concrete is close to one."
+ },
+ {
+  "i": 108,
+  "start": 303.2,
+  "end": 304.04,
+  "text": "Wet mud is much lower."
+ },
+ {
+  "i": 109,
+  "start": 304.84,
+  "end": 306.18,
+  "text": "You weigh about fifty kilos."
+ },
+ {
+  "i": 110,
+  "start": 306.92,
+  "end": 309.88,
+  "text": "On dry concrete, that's about as hard as you can push."
+ },
+ {
+  "i": 111,
+  "start": 310.6,
+  "end": 312.62,
+  "text": "On mud, far less, however strong you are."
+ },
+ {
+  "i": 112,
+  "start": 313.2,
+  "end": 315.64,
+  "text": "Your muscles are level twenty-three."
+ },
+ {
+  "i": 113,
+  "start": 315.64,
+  "end": 316.94,
+  "text": "Your grip is level one."
+ },
+ {
+  "i": 114,
+  "start": 318.32,
+  "end": 320.28,
+  "text": "So you stop pushing, and lift instead."
+ },
+ {
+  "i": 115,
+  "start": 321.18,
+  "end": 322.82,
+  "text": "Lifting pushes you down, not sideways."
+ },
+ {
+  "i": 116,
+  "start": 323.68,
+  "end": 328.2,
+  "text": "You stand on Mina's planks, rule three, and slowly raise the truck's back corner."
+ },
+ {
+  "i": 117,
+  "start": 328.8,
+  "end": 330.56,
+  "text": "Dev wedges gravel under the wheel."
+ },
+ {
+  "i": 118,
+  "start": 331.44,
+  "end": 334.04,
+  "text": "Mina pours playground sand in front of it, for grip."
+ },
+ {
+  "i": 119,
+  "start": 334.7,
+  "end": 336.0,
+  "text": "The truck crawls out of the mud."
+ },
+ {
+  "i": 120,
+  "start": 336.7,
+  "end": 337.82,
+  "text": "Not one pumpkin falls."
+ },
+ {
+  "i": 121,
+  "start": 338.56,
+  "end": 340.28,
+  "text": "The driver gives you the biggest one."
+ },
+ {
+  "i": 122,
+  "start": 340.9,
+  "end": 342.5,
+  "text": "You carry it home on one finger."
+ },
+ {
+  "i": 123,
+  "start": 344.12,
+  "end": 345.46,
+  "text": "Day thirty."
+ },
+ {
+  "i": 124,
+  "start": 345.46,
+  "end": 345.86,
+  "text": "Breakfast."
+ },
+ {
+  "i": 125,
+  "start": 346.8,
+  "end": 348.88,
+  "text": "The air unzips, and the screen floats out."
+ },
+ {
+  "i": 126,
+  "start": 349.7,
+  "end": 351.02,
+  "text": "Level thirty."
+ },
+ {
+  "i": 127,
+  "start": 351.02,
+  "end": 352.72,
+  "text": "Over forty tonnes."
+ },
+ {
+  "i": 128,
+  "start": 352.72,
+  "end": 353.28,
+  "text": "\"LEVEL UP!\""
+ },
+ {
+  "i": 129,
+  "start": 354.1,
+  "end": 354.88,
+  "text": "Then it flips over."
+ },
+ {
+  "i": 130,
+  "start": 355.96,
+  "end": 356.42,
+  "text": "\"Trial over."
+ },
+ {
+  "i": 131,
+  "start": 357.52,
+  "end": 358.04,
+  "text": "Levels returned.\""
+ },
+ {
+  "i": 132,
+  "start": 358.8,
+  "end": 360.28,
+  "text": "You're back to forty kilos."
+ },
+ {
+  "i": 133,
+  "start": 360.98,
+  "end": 361.8,
+  "text": "Dev stops filming."
+ },
+ {
+  "i": 134,
+  "start": 362.6,
+  "end": 364.14,
+  "text": "Then the screen blinks once more."
+ },
+ {
+  "i": 135,
+  "start": 365.16,
+  "end": 366.04,
+  "text": "\"Strength, forty-four.\""
+ },
+ {
+  "i": 136,
+  "start": 366.04,
+  "end": 367.9,
+  "text": "Four extra kilos."
+ },
+ {
+  "i": 137,
+  "start": 368.58,
+  "end": 369.38,
+  "text": "Not from the screen."
+ },
+ {
+  "i": 138,
+  "start": 370.2,
+  "end": 371.52,
+  "text": "From those nights in the park."
+ },
+ {
+  "i": 139,
+  "start": 372.38,
+  "end": 372.8,
+  "text": "Rule one."
+ },
+ {
+  "i": 140,
+  "start": 373.48,
+  "end": 374.58,
+  "text": "The screen zips away."
+ },
+ {
+  "i": 141,
+  "start": 375.32,
+  "end": 377.86,
+  "text": "Then a tiny new one opens above Biscuit's head."
+ },
+ {
+  "i": 142,
+  "start": 378.68,
+  "end": 379.2,
+  "text": "\"Level one.\""
+ },
+ {
+  "i": 143,
+  "start": 380.4,
+  "end": 383.18,
+  "text": "In real life, no screen pops out of the air."
+ },
+ {
+  "i": 144,
+  "start": 383.82,
+  "end": 384.98,
+  "text": "But training really works."
+ },
+ {
+  "i": 145,
+  "start": 385.92,
+  "end": 393.36,
+  "text": "Strength comes fast at first, from your nervous system, then slowly, over years, as muscles, bones and tendons catch up."
+ },
+ {
+  "i": 146,
+  "start": 393.94,
+  "end": 395.66,
+  "text": "Nobody doubles every three days."
+ },
+ {
+  "i": 147,
+  "start": 396.46,
+  "end": 398.32,
+  "text": "Getting bigger isn't a shortcut either."
+ },
+ {
+  "i": 148,
+  "start": 399.12,
+  "end": 400.36,
+  "text": "Remember the square-cube law?"
+ },
+ {
+  "i": 149,
+  "start": 401.12,
+  "end": 405.08,
+  "text": "Twice as tall, you'd be about four times stronger, but eight times heavier."
+ },
+ {
+  "i": 150,
+  "start": 405.96,
+  "end": 410.9,
+  "text": "Doctors say kids and teens can strength train safely, with good coaching and technique."
+ },
+ {
+  "i": 151,
+  "start": 411.56,
+  "end": 414.32,
+  "text": "If you levelled up every morning, what would you lift first?"
+ },
+ {
+  "i": 152,
+  "start": 414.98,
+  "end": 415.98,
+  "text": "Tell us in the comments."
+ },
+ {
+  "i": 153,
+  "start": 416.78,
+  "end": 418.34,
+  "text": "And subscribe for more What Ifs."
+ }
+]
