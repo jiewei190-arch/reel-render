@@ -1,0 +1,301 @@
+{
+ "name": "tall",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  2,
+  5,
+  6,
+  8,
+  9,
+  10,
+  13,
+  14,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Right now, you're **shorter** than when you woke up.",
+   "Right now, you're shorter than when you woke up."
+  ],
+  [
+   "In one study, people lost almost **2 centimeters** of height every day.",
+   "In one study, people lost almost two centimeters of height, every single day."
+  ],
+  [
+   "So where does it **go?**",
+   "So where does it go?"
+  ],
+  [
+   "Your spine is a stack of bones called **vertebrae.**",
+   "Your spine is a stack of bones, called vertebrae."
+  ],
+  [
+   "Between them sit soft, squishy **discs.**",
+   "Between them sit soft, squishy discs."
+  ],
+  [
+   "Together, the discs make up about **a quarter** of your spine's length.",
+   "Together, the discs make up about a quarter of your spine's length."
+  ],
+  [
+   "Each disc has a jelly-like center that's mostly **water.**",
+   "Each disc has a jelly-like center that's mostly water."
+  ],
+  [
+   "All day, gravity and your **body weight** press down on them.",
+   "All day, gravity and your body weight press down on them."
+  ],
+  [
+   "A little water gets **squeezed out**, and each disc gets a bit **flatter.**",
+   "Slowly, a little water gets squeezed out, and each disc gets a little flatter."
+  ],
+  [
+   "About 23 discs, each a bit flatter, add up to a **shorter you.**",
+   "About twenty-three discs, each a little flatter, add up to a shorter you."
+  ],
+  [
+   "And it happens fast: about **half** the loss comes in the **first hour** after you get up.",
+   "And it happens fast. About half the loss comes in the first hour after you get up."
+  ],
+  [
+   "At night you lie down, the pressure is **off**...",
+   "Then at night, you lie down, and the pressure is off."
+  ],
+  [
+   "...and the discs soak **water back up.**",
+   "And the discs soak water back up."
+  ],
+  [
+   "Most of your height returns in the **first half of the night.**",
+   "Most of your height comes back in the first half of the night."
+  ],
+  [
+   "Astronauts take this to the **extreme.**",
+   "Astronauts take this to the extreme."
+  ],
+  [
+   "With no gravity squeezing them, NASA scientists say they can grow up to **3% taller** in space.",
+   "With no gravity squeezing their spines, NASA scientists say they can grow up to three percent taller in space."
+  ],
+  [
+   "Back on Earth, they **shrink back** to normal.",
+   "Back on Earth, they shrink back to normal."
+  ],
+  [
+   "So if you want to be measured at your **tallest**, when should you go?",
+   "So if you want to be measured at your tallest, what time should you go?"
+  ],
+  [
+   "**Follow** for more.",
+   "Follow for more."
+  ]
+ ],
+ "boards": [
+  0,
+  0,
+  0,
+  1,
+  1,
+  1,
+  2,
+  3,
+  3,
+  3,
+  4,
+  5,
+  5,
+  5,
+  6,
+  6,
+  7,
+  8,
+  9
+ ],
+ "title": "Why you're **taller** in the morning",
+ "stages": [
+  [
+   [
+    0,
+    -1.1
+   ],
+   [
+    0,
+    1.0
+   ],
+   [
+    1,
+    0.3
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ],
+   [
+    0,
+    0.9
+   ],
+   [
+    0,
+    1.8
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0.8
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1.6
+   ]
+  ],
+  [
+   [
+    0,
+    -0.3
+   ],
+   [
+    0,
+    0.2
+   ],
+   [
+    0,
+    1.4
+   ],
+   [
+    0,
+    2.2
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ],
+   [
+    0,
+    1.0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ],
+   [
+    0,
+    0.5
+   ],
+   [
+    1,
+    1.0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ],
+   [
+    0,
+    999
+   ],
+   [
+    0,
+    0.5
+   ],
+   [
+    0,
+    999
+   ],
+   [
+    0,
+    999
+   ],
+   [
+    0,
+    1.8
+   ]
+  ],
+  [
+   [
+    0,
+    -0.3
+   ]
+  ]
+ ],
+ "opts": [
+  {},
+  {},
+  {},
+  {
+   "add": 3
+  },
+  {
+   "night": false,
+   "lossText": "about **2 cm** a day"
+  },
+  {
+   "half": 3
+  },
+  {},
+  {},
+  {
+   "choice": 5
+  },
+  {
+   "cta": "**Follow for more**"
+  }
+ ]
+}

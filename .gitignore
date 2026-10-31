@@ -3,3 +3,4 @@ tts/*.bin
 reels/frames/
 reels/out/
 *.wav
+reels/up/*.mp4
