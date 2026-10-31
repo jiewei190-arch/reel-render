@@ -1,6 +1,6 @@
-// cast.js — the "What If You Had Spider Powers?" cast (ep 4). Signature colours are FIXED for the whole video.
+// cast.js — the "What If You Could Level Up Your Strength Every Day?" cast (ep 5, classic What If style). Signature colours are FIXED for the whole video.
 // Outfits feed drawFigure(). Accessories the rig has no field for (scarf, lanyard) are drawn by sets/actors.js.
-export const HERO  = { top: 'hoodie',    color: '#E1AD01', legs: '#6b6f78', head: 'spiky', hair: '#c8a46a', gloves: '#7b4bb3', boots: '#3f8f4a' }; // "you": MESSY SANDY-BROWN hair, MUSTARD zip hoodie, oversized PURPLE gardening gloves, grey cargo trousers, GREEN wellies. Never a mask/suit/web pattern/red-and-blue.
+export const HERO  = { top: 'hoodie',    color: '#1f2d52', legs: '#3a3d44', head: 'spiky', hair: '#6b3f23' }; // "you": NAVY bomber-style jacket (cyan trim drawn locally), short dark CHESTNUT hair with a front swoop, charcoal joggers, white trainers. Eyes never glow.
 export const MINA  = { top: 'tshirt',    color: '#34293f', legs: '#2a2438', head: 'bun',    kid: true, scarf: '#d4262e' };       // little sister: child scale, RED SCARF
 export const DEV   = { top: 'tshirt',    color: '#3c4058', legs: '#262a3c', head: 'beanie', headColor: '#f08a24' };             // best friend: ORANGE BEANIE
 export const LIN   = { top: 'labcoat',   face: 'glasses', head: 'bun', legs: '#2c3040', lanyard: '#2fb85a' };                    // scientist: white coat, GREEN LANYARD
