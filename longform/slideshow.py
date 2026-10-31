@@ -6,7 +6,7 @@ HERE = pathlib.Path(__file__).resolve().parent; name = sys.argv[1]; FPS = int(sy
 D = HERE / name; OUT = D / 'out'; ST = OUT / 'slides'; ST.mkdir(parents=True, exist_ok=True)
 tl = json.load(open(D / 'tl.json')); lines = [l for s in tl['scenes'] for l in s['lines']]; total = tl['total']
 starts = [0.0] + [l['start'] - .2 for l in lines[1:]]; ends = starts[1:] + [total]
-need = [i for i in range(len(lines)) if not (D / 'images' / f'img{i + 1:03d}.png').exists()]
+need = [i for i in range(len(lines)) if not (D / 'images' / f'img{i + 1:03d}.png').exists() and not (ST / f'{i + 1:03d}.jpg').exists()]   # resume: keep grabbed stills
 if need:   # grab the code-drawn frame near the end of each line (everything revealed), in one browser session
     ts = [f'{max(starts[i] + .3, min(lines[i]["end"] + .1, ends[i] - .15)):.2f}' for i in need]
     subprocess.run(['node', str(HERE / 'render.js'), name, 'stills', *ts], check=True, cwd=HERE)
@@ -19,6 +19,7 @@ for i in range(len(lines)):
     z = f"if(eq(on,0),{1.0 if zin else 1.08},{'zoom+0.0009' if zin else 'max(zoom-0.0009,1.0)'})"
     x = f"iw/2-(iw/zoom/2){'-' if i % 4 < 2 else '+'}on*0.15"
     p = ST / f'p{i + 1:03d}.mp4'; parts.append((p, dur))
+    if p.exists() and p.stat().st_size > 1000: continue   # resume: clip already encoded
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-loop', '1', '-i', str(src), '-vf',
                     f"scale=2880:1620,zoompan=z='{z}':x='{x}':y='ih/2-(ih/zoom/2)':d={n}:s=1920x1080:fps={FPS},format=yuv420p",
                     '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', str(p)], check=True)
