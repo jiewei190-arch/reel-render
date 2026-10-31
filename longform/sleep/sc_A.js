@@ -114,23 +114,12 @@ function savDay(t, o = {}) {
     + acacia(1500, 800, 1.1) + acacia(240, 780, .7) + tufts(780, 1060, 30, 8, '#6d8a34', 1.2);
 }
 // ---------- characters + props ----------
-const moss = (x, y, s, o = {}, t = 0) => person(x, y, s, { hair: 'messy', hairclip: 'bone', seed: 5, ...o }, t);
 // a sleeping (or lying awake) figure under a hide: head at the left end. o: {flip, awake, look, band, moss, hide, z, t0}
 function sleeper(x, y, s = 1, o = {}, t = 0) {
-  const br = Math.sin(t * 1.6 + x * .01) * 3, hide = o.hide || (o.moss ? '#3f9a8f' : ['#8a5a32', '#3f9a8f', '#b07a42', '#6a8a9a'][Math.floor(hash(x) * 4)]);
-  let g = E(40, 6, 210, 18, 'rgba(0,0,0,.28)', 0);
-  g += P('M-150 -26 Q-160 2 -110 4 L210 4 Q240 2 236 -20 Q220 -64 120 -70 Q20 ' + f(-88 - br) + ' -80 -66 Q-140 -60 -150 -26 Z', hide, 6);
-  if (hide === '#3f9a8f') for (let i = 0; i < 5; i++) g += P(`M${-40 + i * 50} ${-74 + Math.abs(i - 2) * 4} q8 30 2 70`, 'none', 5, 'opacity=".55"', '#20605a');
-  g += P('M-150 6 Q-60 -14 40 6 Q120 -10 240 6', 'none', 5, '', '#c9a85a');                                   // grass bed edge
-  if (o.band) { g += P('M60 -40 Q90 -20 120 -18', 'none', 6) + `<rect x="92" y="-30" width="20" height="14" rx="4" fill="#232833" stroke="${K}" stroke-width="3"/>`; const on = .5 + .5 * Math.sin(t * 3 + x); g += `<circle cx="102" cy="-23" r="3.5" fill="#7dff9a" opacity="${f(on * 100) / 100}"/>` + glowAt(102, -23, 26, 'aEye', .5 * on); }
-  // head
-  const hx = -150, hy = -58;
-  g += C(hx, hy, 50, '#f4f1ea', 6);
-  g += P(`M${hx - 44} ${hy - 22} Q${hx - 60} ${hy - 56} ${hx - 30} ${hy - 62} L${hx - 22} ${hy - 80} L${hx - 8} ${hy - 60} L${hx + 6} ${hy - 82} L${hx + 16} ${hy - 58} L${hx + 34} ${hy - 72} Q${hx + 50} ${hy - 50} ${hx + 46} ${hy - 26} Q${hx + 20} ${hy - 46} ${hx} ${hy - 40} Q${hx - 22} ${hy - 50} ${hx - 44} ${hy - 22} Z`, '#1e1a18', 4);
-  if (o.moss) g += P(`M${hx + 22} ${hy - 58} l26 -10 m-26 10 l-4 -8 m30 -2 l4 -8`, 'none', 7, '', '#f4f1ea') + P(`M${hx + 22} ${hy - 58} l26 -10`, 'none', 2.5);
-  if (o.awake) { const lk = o.look ?? Math.sin(t * 2.4) * 5; for (const ex of [-16, 16]) g += E(hx + ex, hy, 11, 12, '#fff', 4) + C(hx + ex + lk, hy + 2, 4.5, K, 0); g += P(`M${hx - 28} ${hy - 22} L${hx - 6} ${hy - 16} M${hx + 28} ${hy - 22} L${hx + 6} ${hy - 16}`, 'none', 4) + P(`M${hx - 9} ${hy + 24} Q${hx} ${hy + 18} ${hx + 9} ${hy + 24}`, 'none', 4); }
-  else g += P(`M${hx - 26} ${hy} Q${hx - 16} ${hy + 9} ${hx - 6} ${hy}`, 'none', 4) + P(`M${hx + 6} ${hy} Q${hx + 16} ${hy + 9} ${hx + 26} ${hy}`, 'none', 4) + E(hx + 2, hy + 24, 5, 3 + Math.abs(Math.sin(t * 1.6)) * 2, '#5a1d1d', 3);
-  if (o.z !== false && !o.awake) for (let i = 0; i < 3; i++) { const k = ((t * .45 + i / 3 + hash(x)) % 1), zx = hx + 40 + k * 70, zy = hy - 60 - k * 110; g += `<text x="${f(zx)}" y="${f(zy)}" font-family="Luckiest Guy" font-size="${f(26 + k * 18)}" fill="#fff" stroke="${K}" stroke-width="5" paint-order="stroke" opacity="${f(Math.sin(k * Math.PI) * 100) / 100}">z</text>`; }
+  // ink.js v2 lying pose under a hide; o: {flip, awake, look, band, moss, z}
+  let g = E(40, 6, 230, 20, 'rgba(0,0,0,.28)', 0) + P('M-200 6 Q-80 -16 40 6 Q140 -10 260 6', 'none', 5, '', '#c9a85a');
+  g += person(0, 0, 1, { pose: 'lie', face: o.awake ? 'worried' : 'asleep', look: o.look, blanket: 1, hairclip: o.moss ? 'bone' : 'none', seed: o.moss ? 5 : x * .013, zzz: o.z !== false && !o.awake }, t);
+  if (o.band) { const on = .5 + .5 * Math.sin(t * 3 + x); g += `<rect x="60" y="-128" width="26" height="16" rx="5" fill="#232833" stroke="${K}" stroke-width="3"/><circle cx="73" cy="-120" r="4" fill="#7dff9a" opacity="${f(on * 100) / 100}"/>` + glowAt(73, -120, 30, 'aEye', .6 * on); }
   return G(g, `translate(${f(x)} ${f(y)}) scale(${o.flip ? -s : s} ${s})`);
 }
 function chimp(x, y, s = 1, o = {}, t = 0) {
@@ -205,7 +194,7 @@ hook_watch: (lt, D, on, t) => {
   const L1 = on(1, 1.2), k = 1 + .08 * easeIO(lt / D);
   let g = nightSav(t, { mx: 1560, my: 200, mr: 86 });
   const camp = domeHut(300, 830, 1.2, 1) + domeHut(1640, 820, 1.0, 1) + domeHut(1860, 860, .75, 1)
-    + sleeper(600, 920, 1.05, { band: 1 }, t) + sleeper(1330, 920, 1.05, { flip: 1, band: 1 }, t) + sleeper(780, 1030, 1.2, { band: 1, moss: 1 }, t) + sleeper(1160, 1040, 1.15, { flip: 1, band: 1 }, t) + sleeper(360, 1060, 1.0, { band: 1 }, t) + sleeper(1560, 1060, 1.0, { flip: 1, band: 1 }, t);
+    + sleeper(600, 920, 0.65, { band: 1 }, t) + sleeper(1330, 920, 0.65, { flip: 1, band: 1 }, t) + sleeper(780, 1030, 0.74, { band: 1, moss: 1 }, t) + sleeper(1160, 1040, 0.71, { flip: 1, band: 1 }, t) + sleeper(360, 1060, 0.62, { band: 1 }, t) + sleeper(1560, 1060, 0.62, { flip: 1, band: 1 }, t);
   g += push(camp + campfire(960, 960, 1.15, t) + gradeN() + glowAt(960, 880, 620, 'aFire', .75 * flick(t)), k, 960, 900);
   // the 20-night counter: twenty moons light up across the top
   const nk = prog(lt, .6, 4.6), night = 1 + Math.floor(19 * nk);
@@ -217,21 +206,21 @@ hook_watch: (lt, D, on, t) => {
 // 1 ---------------------------------------------------------------- 18 minutes. 20 nights. So how?
 hook_q: (lt, D, on, t) => pick(on(1),
   () => { const up = ease(prog(lt, .2, .6)); return nightSav(t, { mx: 1650, my: 170, mr: 70, seed: 3 }) + hillCave(1350, 800, .9, 1, t) + campfire(1180, 960, .7, t) + grassPile(780, 1000, 1.5, t, '#b89848', '#8a6a2a')
-      + moss(760, 990, 1.25, { pose: 'sit', face: 'shock', L: [-80, -170 - up * 40], R: [80, -170 - up * 40] }, t) + gradeN() + glowAt(1100, 900, 700, 'aFire', .7 * flick(t)) + headline('!', 900, 330 - up * 20, 140, up, '#fff')
+      + moss(760, 990, 1.25, { pose: 'sit', face: 'shocked', L: [-80, -170 - up * 40], R: [80, -170 - up * 40] }, t) + gradeN() + glowAt(1100, 900, 700, 'aFire', .7 * flick(t)) + headline('!', 900, 330 - up * 20, 140, up, '#fff')
       + headline('18 MINUTES', 1420, 330, 120, on(0, .4, .1)) + headline('IN 20 NIGHTS', 1420, 470, 100, on(0, .4, 1.0), '#fff3cf') + vig() + grain(); },
   () => { const y = Math.sin(lt * 1.5); return FULL('url(#aDusk)') + sunBig(1520, 640, 90) + peaks(700, '#6a5a86', 7, '#f6d6c0') + ridge(760, 80, '#5a4a6a', 2, 0) + hillCave(1000, 900, 1.5, 1, t, '#7a6458')
-      + grassPile(1000, 900, .7, t) + moss(1000, 990, 1.3, { face: 'shock', L: [-90, -430 - y * 10], R: [90, -430 - y * 10] }, t) + glowAt(1000, 780, 500, 'aFire', .5 * flick(t))
+      + grassPile(1000, 900, .7, t) + moss(1000, 990, 1.3, { face: 'shocked', L: [-90, -430 - y * 10], R: [90, -430 - y * 10] }, t) + glowAt(1000, 780, 500, 'aFire', .5 * flick(t))
       + headline('HOW DID ANCIENT HUMANS', 960, 170, 96, on(1, .5, .1)) + headline('ACTUALLY SLEEP?', 960, 300, 140, on(1, .5, .5)) + whip(on(1, .18)) + vig(.8) + grain(); }),
 // 2 ---------------------------------------------------------------- three questions, then "weirder than you think"
 hook_promise: (lt, D, on, t) => pick(on(1),
   () => { const panel = (i, inner, q) => { const p = on(0, .45, [0, 1.6, 3.4][i]); if (p <= 0) return ''; const x = 330 + i * 630, id = `aP${i}`; return popAt(x, 560, p, `<clipPath id="${id}"><rect x="${x - 290}" y="250" width="580" height="620" rx="10"/></clipPath>` + G(inner(x), '', `clip-path="url(#${id})"`) + `<rect x="${x - 290}" y="250" width="580" height="620" rx="10" fill="none" stroke="${K}" stroke-width="12"/>` + headline(q, x, 960, 64, 1, '#fff')); };
     return FULL('#f3e6c8') + blotch(0, 0, 1920, 1080, 30, ['#e8d2a4', '#fff4dc'], 4, 60, 200, .5)
       + panel(0, x => FULL('url(#aGold)') + ridge(700, 60, '#c9a86a', 3, 0) + R(x - 300, 700, 600, 400, '#c9a25a') + grassPile(x + 60, 820, 1.1, t) + moss(x - 120, 860, .9, { face: 'worried', R: [110, -150 + Math.sin(t * 6) * 10] }, t) + headline('?', x + 150, 420, 120, 1, '#fff'), 'WHERE?')
-      + panel(1, x => nightSav(t, { mx: x + 160, my: 330, mr: 50, seed: 6 }) + sleeper(x, 840, .7, {}, t) + campfire(x + 170, 860, .5, t) + P(`M${x - 300} 700 Q${x - 200} 600 ${x - 60} 650 Q${x + 60} 580 ${x + 300} 660 L${x + 300} 760 L${x - 300} 760 Z`, '#0c1424', 0) + eyePair(x - 160, 670, 1.1, t, 1) + eyePair(x + 140, 650, 1, t, 2) + gradeN(), 'LIONS?')
-      + panel(2, x => FULL('url(#aNight)') + stars(60, 600, t, 9, 6) + moonBig(x - 160, 360, 50) + P(`M${x - 300} 760 Q${x} 720 ${x + 300} 750 L${x + 300} 900 L${x - 300} 900 Z`, '#1a2040', 5) + sleeper(x + 40, 820, .85, { awake: 1, moss: 1, look: -4 }, t), 'LIKE US?')
+      + panel(1, x => nightSav(t, { mx: x + 160, my: 330, mr: 50, seed: 6 }) + sleeper(x, 840, 0.43, {}, t) + campfire(x + 170, 860, .5, t) + P(`M${x - 300} 700 Q${x - 200} 600 ${x - 60} 650 Q${x + 60} 580 ${x + 300} 660 L${x + 300} 760 L${x - 300} 760 Z`, '#0c1424', 0) + eyePair(x - 160, 670, 1.1, t, 1) + eyePair(x + 140, 650, 1, t, 2) + gradeN(), 'LIONS?')
+      + panel(2, x => FULL('url(#aNight)') + stars(60, 600, t, 9, 6) + moonBig(x - 160, 360, 50) + P(`M${x - 300} 760 Q${x} 720 ${x + 300} 750 L${x + 300} 900 L${x - 300} 900 Z`, '#1a2040', 5) + sleeper(x + 40, 820, 0.53, { awake: 1, moss: 1, look: -4 }, t), 'LIKE US?')
       + grain(); },
   () => { const lean = ease(prog(lt, 5.5, 6.3)); return caveRoom(t, { mouthX: 1720, mouthY: 420, mouthW: 260, mouthH: 300, fire: false }) + FULL('#000', 'opacity=".45"')
-      + push(moss(860, 1190, 1.75, { face: 'determined', L: [-40, -260], R: [60, -300], hold: { R: 'hand' } }, t) + torch(940, 860, 1.1, t), 1 + lean * .1, 900, 600)
+      + push(moss(860, 1240, 1.75, { face: 'determined', L: [-40, -260], R: [60, -300], hold: { R: 'hand' } }, t) + torch(940, 860, 1.1, t), 1 + lean * .1, 900, 600)
       + glowAt(900, 520, 560, 'aFire', .45 * flick(t)) + headline('WEIRDER', 1420, 360, 150, on(1, .5, .6), '#ffb347', 'middle', -4) + headline('THAN YOU THINK', 1420, 500, 92, on(1, .5, 1.0), '#fff3cf', 'middle', -4) + whip(on(1, .18)) + vig() + grain(); }),
 // 3 ---------------------------------------------------------------- meet Moss; follow him to bed
 meet_moss: (lt, D, on, t) => pick(on(1),
@@ -258,10 +247,10 @@ chimp_nest: (lt, D, on, t) => {
 // 5 ---------------------------------------------------------------- down to the ground
 ground: (lt, D, on, t) => pick(on(1),
   () => { const w = prog(lt, 0, 4); return savDay(t, { sky: 'url(#aGold)', sx: 1700, sy: 250 }) + G(canopy(160, 380, 600, 700, 3, ['#2f5a2a', '#3f7034', '#4f8a3a']), '', '') + Ln(260, 1100, 240, 300, 60, '#5a3a22') + chimp(300, 420, .7, { pose: 'build', flip: 1 }, t)
-      + [0, 1, 2, 3].map(i => moss(620 + i * 230 + w * 200, 1000 - (i % 2) * 30, .95 - i * .05, { pose: 'walk', walkSpeed: 6, seed: i, face: i ? 'happy' : 'sleepy', hairclip: i ? undefined : 'bone', L: i === 3 ? [-60, -420] : undefined }, t + i)).join('')
+      + [0, 1, 2, 3].map(i => moss(620 + i * 230 + w * 200, 1000 - (i % 2) * 30, .95 - i * .05, { pose: 'walk', walkSpeed: 6, seed: i, face: i ? 'happy' : 'sleepy', hairclip: i ? 'none' : 'bone', L: i === 3 ? [-60, -420] : undefined }, t + i)).join('')
       + headline('DOWN FROM THE TREES', 1200, 200, 96, on(0, .5, 1.2)) + vig(.6) + grain(); },
   () => nightSav(t, { mx: 1500, my: 200, mr: 80, seed: 8 }) + P('M-40 640 Q300 560 600 650 Q900 560 1300 640 Q1600 570 1960 650 L1960 760 L-40 760 Z', '#0b1020', 0) + eyePair(1500, 640, .8, t, 5)
-      + push(sleeper(980, 960, 1.6, { awake: 1, moss: 1 }, t), 1 + .08 * prog(lt, 4, D), 760, 900) + gradeN() + headline('A PROBLEM', 960, 220, 140, on(1, .5, .9), '#ff8a6a') + whip(on(1, .18)) + vig() + grain()),
+      + push(sleeper(980, 960, 0.99, { awake: 1, moss: 1 }, t), 1 + .08 * prog(lt, 4, D), 760, 900) + gradeN() + headline('A PROBLEM', 960, 220, 140, on(1, .5, .9), '#ff8a6a') + whip(on(1, .18)) + vig() + grain()),
 // 6 ---------------------------------------------------------------- things with teeth
 predators: (lt, D, on, t) => pick(on(1),
   () => FULL('#070b1c') + stars(40, 300, t, 4, 2) + [0, 1, 2, 3, 4].map(i => eyePair(260 + i * 340 + Math.sin(i * 2) * 60, 420 + hash(i) * 260, 1.4 + hash(i * 3) * .8, t, i)).join('')
@@ -275,7 +264,7 @@ fire: (lt, D, on, t) => pick(on(1),
   () => { const b = .5 + .5 * Math.sin(t * 3); return FULL('#05060f') + push(grassPile(1000, 900, .9, t, '#7a6230', '#4a3a1a') + ember(1000, 860, 1 + b * .4, t) + moss(800, 960, 1.4, { pose: 'sit', face: 'worried', L: [90, -170], R: [140, -170] }, t), 1 + .1 * easeIO(lt / 3.3), 960, 760)
       + glowAt(980, 820, 520, 'aFire', .45 + b * .25) + [0, 1, 2].map(i => C(1010 + i * 12, 820 - ((lt * 60 + i * 30) % 120), 4, '#ffd27a', 0)).join('') + hand('something no other animal does', 960, 200, 70, '#ffd27a', 'middle', on(0, .5, .8)) + vig() + grain(); },
   () => nightSav(t, { mx: 1650, my: 170, mr: 60, seed: 12 }) + eyePair(220, 760, .9, t, 1) + eyePair(1720, 740, .8, t, 4) + eyePair(1840, 860, .7, t, 6)
-      + sleeper(760, 980, 1.3, { moss: 1 }, t) + campfire(1180, 980, 1.2, t) + gradeN() + glowAt(1100, 860, 760, 'aFire', .9 * flick(t)) + C(1100, 880, 640, 'none', 0, `stroke="#ffcf7a" stroke-width="5" stroke-dasharray="14 22" opacity=".35"`)
+      + sleeper(760, 980, 0.81, { moss: 1 }, t) + campfire(1180, 980, 1.2, t) + gradeN() + glowAt(1100, 860, 760, 'aFire', .9 * flick(t)) + C(1100, 880, 640, 'none', 0, `stroke="#ffcf7a" stroke-width="5" stroke-dasharray="14 22" opacity=".35"`)
       + headline('FIRE TO BED!', 960, 210, 150, on(1, .5, .2)) + whip(on(1, .18)) + vig() + grain()),
 // 8 ---------------------------------------------------------------- Wonderwerk Cave ~1 million years
 wonderwerk: (lt, D, on, t) => pick(on(1),
@@ -305,11 +294,11 @@ fire_benefits: (lt, D, on, t) => {
 // 10 ---------------------------------------------------------------- a fire doesn't make a bed
 cliff_bed: (lt, D, on, t) => pick(on(1),
   () => { const ow = Math.sin(t * 8) * 4; return caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 260, mouthH: 300, fireX: 1250 }) + [0, 1, 2, 3, 4].map(i => rock(560 + i * 130, 1000, 160, 60 + hash(i) * 50, '#8a8078')).join('') + campfire(1300, 990, .8, t)
-      + G(sleeper(0, 0, 1.4, { awake: 1, moss: 1, look: 6, z: false }, t), `translate(820 ${930 + ow}) rotate(-6)`) + P('M900 940 L930 900 L950 945', '#9a9088', 5) + headline('OUCH', 1000, 760, 90, on(0, .3, .9), '#ff8a6a', 'middle', -8)
+      + G(sleeper(0, 0, 0.87, { awake: 1, moss: 1, look: 6, z: false }, t), `translate(820 ${930 + ow}) rotate(-6)`) + P('M900 940 L930 900 L950 945', '#9a9088', 5) + headline('OUCH', 1000, 760, 90, on(0, .3, .9), '#ff8a6a', 'middle', -8)
       + gradeN() + glowAt(1300, 880, 700, 'aFire', .9 * flick(t)) + headline("FIRE ≠ BED", 960, 220, 130, on(0, .5, .3)) + vig() + grain(); },
   () => { const g0 = ease(prog(lt, 2.2, 3.2)); return caveRoom(t, { mouthX: 300, mouthY: 380, mouthW: 260, mouthH: 300, fire: false }) + FULL('#000', 'opacity=".35"') + G(P('M1300 0 L1100 1080 L1700 1080 L1520 0 Z', 'url(#aGoldG)', 0), '', `opacity="${f(g0 * .5 * 100) / 100}" filter="url(#aSoft)"`)
       + glowAt(1380, 900, 520, 'aGoldG', g0 * .9) + grassPile(1380, 980, 1.5, t) + [0, 1, 2, 3, 4].map(i => sparkle(1200 + i * 90, 760 - (i % 2) * 70, 22, t, i)).join('')
-      + moss(640, 990, 1.4, { face: 'shock', L: [-60, -300], R: [120, -330] }, t) + headline('SURPRISINGLY COSY', 960, 200, 110, on(1, .5, .6), '#ffe08a') + whip(on(1, .18)) + vig() + grain(); }),
+      + moss(640, 990, 1.4, { face: 'shocked', L: [-60, -300], R: [120, -330] }, t) + headline('SURPRISINGLY COSY', 960, 200, 110, on(1, .5, .6), '#ffe08a') + whip(on(1, .18)) + vig() + grain(); }),
 // 11 ---------------------------------------------------------------- Border Cave, 200,000 years
 border_cave: (lt, D, on, t) => pick(on(1),
   () => FULL('url(#aMorn)') + sunBig(300, 220, 70) + cloud(1300, 160, 1, t) + peaks(620, '#a9b8d0', 11, '#f4f2ee', .35) + ridge(760, 130, '#7fae5a', 3, 0) + ridge(840, 80, '#5f9a44', 7, 0)
@@ -326,7 +315,7 @@ grass: (lt, D, on, t) => pick(on(1),
   () => { const w = ease(prog(lt, .3, 4.5)), x = 1500 - w * 760; return caveRoom(t, { mouthX: 1780, mouthY: 380, mouthW: 220, mouthH: 280, fireX: 1000, fireY: 960 }) + grassPile(560, 990, 1.0 + w * .3, t, '#7fae4a', '#4f7a2e')
       + moss(x, 990, 1.25, { pose: w < 1 ? 'walk' : 'stand', walkSpeed: 6, face: 'happy', flip: 1, L: [-80, -250], R: [80, -250] }, t) + bundle(x, 990 - 1.25 * 1.3 * 250, .9, -6) + campfire(1000, 990, .8, t)
       + gradeN() + glowAt(1000, 880, 720, 'aFire', .9 * flick(t)) + headline('BROAD-LEAFED GRASS', 960, 190, 96, on(0, .5, .8), '#c9f08a') + hand('near the back, close to the fire', 960, 280, 60, '#fff3cf', 'middle', on(0, .5, 2.6)) + vig() + grain(); },
-  () => caveRoom(t, { mouthX: 1720, mouthY: 470, mouthW: 140, mouthH: 180, fireX: 980, fireY: 960 }) + grassPile(620, 1000, 1.6, t, '#7fae4a', '#4f7a2e') + sleeper(640, 960, 1.35, { moss: 1 }, t) + campfire(980, 990, .9, t)
+  () => caveRoom(t, { mouthX: 1720, mouthY: 470, mouthW: 140, mouthH: 180, fireX: 980, fireY: 960 }) + grassPile(620, 1000, 1.6, t, '#7fae4a', '#4f7a2e') + sleeper(640, 960, 0.84, { moss: 1 }, t) + campfire(980, 990, .9, t)
       + gradeN() + glowAt(900, 880, 820, 'aFire', 1.0 * flick(t)) + headline('WARMEST + SAFEST', 1220, 260, 110, on(1, .5, .3)) + hand('spot in the house', 1220, 350, 64, '#fff3cf', 'middle', on(1, .5, .8)) + whip(on(1, .18)) + vig() + grain()),
 // 13 ---------------------------------------------------------------- the clever part: ash underneath
 ash: (lt, D, on, t) => pick(on(1),
