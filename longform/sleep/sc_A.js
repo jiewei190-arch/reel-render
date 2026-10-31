@@ -25,6 +25,12 @@ const DEF = `<defs>
 <linearGradient id="aAsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9c6c0"/><stop offset="1" stop-color="#8f8b85"/></linearGradient>
 <linearGradient id="aBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6c8" stop-opacity=".7"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></linearGradient>
 <filter id="aRim" x="-10%" y="-10%" width="120%" height="120%"><feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/><feFlood flood-color="#7a88c8"/><feComposite in2="d" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="aFar" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="3.2"/></filter>
+<filter id="aMid" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="1.2"/></filter>
+<pattern id="aStip" width="96" height="96" patternUnits="userSpaceOnUse">${Array.from({ length: 90 }, (_, i) => `<circle cx="${f1(hash(i * 2.3 + 7) * 96)}" cy="${f1(hash(i * 4.1 + 3) * 96)}" r="${f1(.6 + hash(i * 6.7) * 1.5)}" fill="#24150a" opacity="${f1(.35 + hash(i * 8.9) * .5)}"/>`).join('')}</pattern>
+<linearGradient id="aDirt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a866"/><stop offset=".5" stop-color="#c08a4e"/><stop offset="1" stop-color="#8e5e30"/></linearGradient>
+<linearGradient id="aDirtN" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a52"/><stop offset="1" stop-color="#191a2c"/></linearGradient>
+<linearGradient id="aRiver" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8fd0ea"/><stop offset=".5" stop-color="#d6f2fb"/><stop offset="1" stop-color="#8fd0ea"/></linearGradient>
 <filter id="aSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
 <filter id="aBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
 <pattern id="aGrainP" width="160" height="160" patternUnits="userSpaceOnUse">${Array.from({ length: 140 }, (_, i) => `<circle cx="${f1(hash(i * 1.7) * 160)}" cy="${f1(hash(i * 3.3 + 1) * 160)}" r="${f1(.8 + hash(i * 5.1) * 1.6)}" fill="${i % 2 ? '#3a2a18' : '#fff8e0'}" opacity="${f1(.08 + hash(i * 7.7) * .12)}"/>`).join('')}</pattern>
@@ -33,7 +39,8 @@ const f = n => f1(n);
 const prog = (x, a, b) => clamp((x - a) / (b - a));
 const R = (x, y, w, h, fill, ex = '') => `<rect x="${f(x)}" y="${f(y)}" width="${f(w)}" height="${f(h)}" fill="${fill}" ${ex}/>`;
 const FULL = (fill, ex = '') => R(-200, -200, 2320, 1480, fill, ex);
-const grain = () => FULL('url(#aGrainP)');
+const grain = (a = .14) => FULL('url(#aStip)', `opacity="${a}"`) + FULL('url(#aGrainP)');
+const tex = (a = .55) => FULL('url(#aStip)', `opacity="${a}"`);
 const vig = (a = 1) => FULL('url(#aVig)', `opacity="${a}"`);
 const gradeN = () => FULL('url(#aGradeN)', 'style="mix-blend-mode:multiply"');
 const glowAt = (x, y, r, id = 'aFire', a = 1) => `<circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}" fill="url(#${id})" opacity="${f(a * 100) / 100}" style="mix-blend-mode:screen"/>`;
@@ -91,28 +98,72 @@ function hillCave(x, y, s = 1, glow = 1, t = 0, col = '#8c7a6a') {
 function caveRoom(t, o = {}) {
   const mx = o.mouthX ?? 1500, my = o.mouthY ?? 520, mw = o.mouthW ?? 300, mh = o.mouthH ?? 360;
   let s = FULL('#2a1a12') + `<ellipse cx="${mx}" cy="${my + 20}" rx="${mw * .55}" ry="${mh * .55}" fill="${o.skyFill || 'url(#aNight)'}" stroke="${K}" stroke-width="7"/>`;
-  if (o.mouthStars !== false) s += G(stars(26, 1080, t, 5, 3), '', `clip-path="url(#aMouthClip)"`);
+  if (o.view) s += G(far(o.view, t, { y: my + mh * .25, lx: mx + mw * .1, ly: my - mh * .25, mr: 34 }) + dirt(my + mh * .38, o.view === 'night'), '', `clip-path="url(#aMouthClip)"`);
+  else if (o.mouthStars !== false) s += G(stars(26, 1080, t, 5, 3), '', `clip-path="url(#aMouthClip)"`);
   s = `<clipPath id="aMouthClip"><ellipse cx="${mx}" cy="${my + 20}" rx="${mw * .55}" ry="${mh * .55}"/></clipPath>` + s;
   const rockD = `M-40 -40 L1960 -40 L1960 1120 L-40 1120 Z M${mx - mw * .55} ${my + 20} A${mw * .55} ${mh * .55} 0 1 0 ${mx + mw * .55} ${my + 20} A${mw * .55} ${mh * .55} 0 1 0 ${mx - mw * .55} ${my + 20} Z`;
   s += `<clipPath id="aRockClip"><path d="${rockD}" clip-rule="evenodd"/></clipPath>` + P(rockD, 'url(#aCaveL)', 0, 'fill-rule="evenodd"');
   s += G(blotch(0, 0, 1920, 900, 34, ['#8a5a36', '#3a2418', '#a8703e'], 3, 40, 140, .22) + P('M120 220 q60 -40 130 -8 M1700 180 q50 -10 80 36 M300 600 q40 30 90 10 M820 140 q50 -30 110 0 M1100 260 q40 -20 90 6', 'none', 5, 'opacity=".7"'), '', 'clip-path="url(#aRockClip)"');
   s += `<ellipse cx="${mx}" cy="${my + 20}" rx="${mw * .55}" ry="${mh * .55}" fill="none" stroke="${K}" stroke-width="7"/>`;
   s += P('M-40 860 Q500 800 960 820 Q1500 790 1960 850 L1960 1120 L-40 1120 Z', '#4a2e1e', 6) + blotch(0, 830, 1920, 250, 18, ['#6a4430', '#2e1c12'], 7, 40, 110, .3);
+  s += tex(.5);
   if (o.fire !== false) { const fx = o.fireX ?? 960, fy = o.fireY ?? 930; s += glowAt(fx, fy - 120, 900, 'aFire', .55 * flick(t)); }
   return s;
 }
-// ---------- sky sets ----------
-function nightSav(t, o = {}) {
-  return FULL('url(#aNight)') + milky() + stars(150, 640, t, o.seed || 1) + (o.moon !== false ? moonBig(o.mx ?? 1560, o.my ?? 220, o.mr ?? 90) : '')
-    + ridge(700, 120, '#232a4e', 4) + ridge(760, 70, '#1a2040', 8) + acaciaSil(260, 780, 1.1) + acaciaSil(1700, 770, .9, '#141a33')
-    + P('M-40 790 Q600 750 960 770 Q1400 790 1960 760 L1960 1120 L-40 1120 Z', 'url(#aSavNight)', 6) + blotch(0, 780, 1920, 300, 20, ['#3a4466', '#0e1226'], 2, 40, 120, .3) + tufts(800, 1060, 26, 3, '#2c3a3a', 1.2);
+// ---------- depth layers (the reference look: blurred far range, sharp mid world, sharp framing props up front) ----------
+// FAR: sky + light + snowy range + forested foothills (+ river), all softly blurred. kind: gold | dusk | night | morn
+function far(kind = 'gold', t = 0, o = {}) {
+  const night = kind === 'night', sky = { gold: 'aGold', dusk: 'aDusk', night: 'aNight', morn: 'aMorn' }[kind];
+  const lx = o.lx ?? (kind === 'dusk' ? 1500 : 1560), ly = o.ly ?? (kind === 'dusk' ? 600 : 200);
+  let g = FULL(`url(#${sky})`);
+  if (night) g += milky() + stars(150, 640, t, o.seed || 1) + (o.moon !== false ? moonBig(lx, ly, o.mr ?? 80) : '');
+  else g += sunBig(lx, ly, 70) + (kind !== 'dusk' ? cloud(300, 150, 1, t) + cloud(1150, 110, .8, t) : '');
+  const pk = { gold: ['#8fa3cc', '#f6f4f0'], morn: ['#9fb2d4', '#f6f4f0'], dusk: ['#7a6a9a', '#f3cdb8'], night: ['#2c3560', '#8c98c8'] }[kind];
+  let range = peaks(o.y ?? 640, pk[0], o.seed ?? 5, pk[1]) + treeLine((o.y ?? 640) + 50, night ? '#1d2a44' : kind === 'dusk' ? '#5a4a66' : '#5f8a7a', 4, 30, night);
+  if (o.river) range += P(`M-40 ${(o.y ?? 640) + 70} Q600 ${(o.y ?? 640) + 50} 1000 ${(o.y ?? 640) + 74} T1960 ${(o.y ?? 640) + 60} L1960 ${(o.y ?? 640) + 96} Q1000 ${(o.y ?? 640) + 110} -40 ${(o.y ?? 640) + 96} Z`, night ? '#3a4a7a' : 'url(#aRiver)', 0);
+  g += G(range, '', 'filter="url(#aFar)"') + haze((o.y ?? 640) + 40, 220, night, .8);
+  return g + tex(.4);
 }
-function savDay(t, o = {}) {
-  return FULL(o.sky || 'url(#aDay)') + sunBig(o.sx ?? 1580, o.sy ?? 210, 70) + cloud(300, 170, 1, t) + cloud(1150, 120, .8, t)
-    + peaks(660, '#9fb0cc', 5, '#f4f2ee', .25) + ridge(700, 90, '#a7b58a', 6) + ridge(750, 60, '#c2b46a', 9, 0)
-    + P('M-40 770 Q600 730 960 750 Q1400 770 1960 740 L1960 1120 L-40 1120 Z', 'url(#aSavDay)', 6) + blotch(0, 760, 1920, 320, 26, ['#e6c77a', '#9a7434', '#7d9a46'], 5, 40, 140, .3)
-    + acacia(1500, 800, 1.1) + acacia(240, 780, .7) + tufts(780, 1060, 30, 8, '#6d8a34', 1.2);
+// lashed wooden pole (rope bands)
+function pole(x1, y1, x2, y2, w = 22, bands = [.2, .8]) {
+  const a = Math.atan2(y2 - y1, x2 - x1), nx = -Math.sin(a) * w * .62, ny = Math.cos(a) * w * .62;
+  let g = Ln(x1, y1, x2, y2, w + 10, K) + Ln(x1, y1, x2, y2, w, '#a7743f') + Ln(x1 + nx * .4, y1 + ny * .4, x2 + nx * .4, y2 + ny * .4, w * .25, '#c9965a') + Ln(x1 - nx * .4, y1 - ny * .4, x2 - nx * .4, y2 - ny * .4, w * .2, '#6e4622');
+  for (const b of bands) { const bx = lerp(x1, x2, b), by = lerp(y1, y2, b); for (let k = -1; k <= 1; k++) { const ox = Math.cos(a) * k * 7, oy = Math.sin(a) * k * 7; g += Ln(bx + ox - nx, by + oy - ny, bx + ox + nx, by + oy + ny, 9, K) + Ln(bx + ox - nx * .9, by + oy - ny * .9, bx + ox + nx * .9, by + oy + ny * .9, 5, '#d98a3a'); } }
+  return g;
 }
+const lerp = (a, b, k) => a + (b - a) * k;
+// a lashed pole fence
+function fence(x0, x1, y, h = 150, n = 7) { let g = ''; for (let i = 0; i < n; i++) { const x = lerp(x0, x1, i / (n - 1)); g += pole(x, y + 6, x + (i % 2 ? 4 : -4), y - h - (i % 3) * 14, 16, [.32, .7]); } g += pole(x0 - 30, y - h * .35, x1 + 30, y - h * .4, 12, []) + pole(x0 - 30, y - h * .72, x1 + 30, y - h * .75, 12, []); return g; }
+// MID: a thatched village row (ink.js hut + grassHut) with a fence and trees
+function village(t, o = {}) {
+  const y = o.y ?? 790, s = o.s ?? .8;
+  let g = bush(150, y - 10, 1.2, 3) + hut(330, y, 1.1 * s) + grassHut(1500, y + 10, .9 * s, t) + hut(1760, y - 10, .9 * s) + fence(560, 1020, y + 6, 110 * s, 7) + bush(1280, y, .9, 5);
+  g += stipple(0, y - 300, 1920, 320, '#24150a', 500, 12, .35);
+  return o.blur ? G(g, '', 'filter="url(#aMid)"') : g;
+}
+// dirt ground with stipple + blotches; night tint
+function dirt(y = 800, night = false) { return P(`M-40 ${y} Q600 ${y - 26} 960 ${y - 6} Q1400 ${y + 14} 1960 ${y - 10} L1960 1120 L-40 1120 Z`, night ? 'url(#aDirtN)' : 'url(#aDirt)', 6) + blotch(0, y + 10, 1920, 1100 - y, 22, night ? ['#4a4a66', '#10111e'] : ['#e8bc7a', '#8a5a2e', '#a3b25a'], 5, 40, 140, .3) + stipple(0, y + 10, 1920, 1100 - y, night ? '#06070f' : '#4a2c12', 420, 6, .4) + (night ? '' : tufts(y + 20, y + 120, 14, 3, '#6d8a34', 1.1)); }
+// FOREGROUND framing props (sharp, big, at the bottom corners). kind: camp | cave | grass. night darkens them.
+function log(x, y, len, w, rot) { const d = `M0 ${-w / 2} L${len} ${-w / 2} Q${len + w * .3} 0 ${len} ${w / 2} L0 ${w / 2} Z`; return G(P(d, 'url(#wood)', 7) + SH(d, 'darkBot') + E(0, 0, w * .32, w / 2, '#d9b07a', 6) + E(0, 0, w * .18, w * .3, 'none', 3) + E(0, 0, w * .06, w * .1, '#8a5a2e', 0), `translate(${f(x)} ${f(y)}) rotate(${rot})`); }
+function spearProp(x1, y1, x2, y2) { const a = Math.atan2(y2 - y1, x2 - x1); return pole(x1, y1, x2, y2, 18, [.92]) + G(P('M0 -22 L90 0 L0 22 L14 0 Z', '#b9bcc0', 6) + P('M14 0 L90 0', 'none', 3, 'opacity=".5"') + stipple(10, -16, 70, 32, '#3a3a3a', 40, 3, .6), `translate(${f(x2)} ${f(y2)}) rotate(${f(a * 180 / Math.PI)})`); }
+function basket(x, y, s = 1) { const d = 'M-110 -120 L110 -120 L90 0 L-90 0 Z'; let g = P(d, '#b9813f', 6); for (let i = 0; i < 6; i++) g += P(`M-106 ${-104 + i * 20} Q0 ${-96 + i * 20} 104 ${-104 + i * 20}`, 'none', 4, '', '#7a4e22'); for (let i = 0; i < 9; i++) g += Ln(-96 + i * 24, -120, -80 + i * 20, 0, 3, '#8a5a2a'); g += SH(d, 'shadeR') + E(0, -120, 110, 22, '#8a5a2a', 6); for (let i = 0; i < 14; i++) g += P(`M${-80 + i * 12} -124 q${6 - hash(i) * 12} -40 ${20 - hash(i * 2) * 40} -60`, 'none', 3.5, '', i % 2 ? '#f2d98a' : '#c9a24a'); return G(g, `translate(${f(x)} ${f(y)}) scale(${s})`); }
+function clayBowl(x, y, s = 1) { const d = 'M-120 -50 Q-110 40 0 40 Q110 40 120 -50 Z'; return G(P(d, '#b5673a', 6) + SH(d, 'shadeR') + E(0, -50, 120, 22, '#5a3018', 6) + P('M-60 -58 q20 -30 50 -10 M10 -60 q16 -36 50 -16', 'none', 9, '', '#c98a4a'), `translate(${f(x)} ${f(y)}) scale(${s})`); }
+function bigBlades(x, y, s, flip, col = '#4f7a2e') { let g = ''; for (let i = 0; i < 9; i++) { const bx = i * 26, h = 220 + hash(i * 3) * 160, lean = 30 + hash(i) * 60; g += P(`M${bx - 10} 0 Q${bx + lean * .4} ${-h * .6} ${bx + lean} ${-h} Q${bx + lean * .3} ${-h * .55} ${bx + 12} 0 Z`, i % 2 ? col : '#6d9a3a', 4); } return G(g, `translate(${f(x)} ${f(y)}) scale(${flip ? -s : s} ${s})`); }
+function fgFrame(kind = 'camp', o = {}) {
+  let g = '';
+  if (kind === 'camp') g = log(-120, 1010, 560, 110, -8) + spearProp(80, 1090, 760, 1010) + bigBlades(-40, 1100, 1, 0) + rock(1760, 1100, 460, 220, '#a7a19a') + basket(1540, 1080, .9) + bigBlades(1960, 1100, .9, 1);
+  else if (kind === 'cave') g = rock(140, 1110, 520, 260, '#8a7a6c') + clayBowl(520, 1070, .9) + rock(1820, 1110, 440, 300, '#7a6c60') + P('M1420 1060 l120 -30 m-120 30 l-14 -12 m14 12 l-12 14 m132 -44 l14 -12 m-14 12 l12 14', 'none', 16, '', '#efe6d0') + P('M1420 1060 l120 -30', 'none', 5);
+  else if (kind === 'grass') g = bigBlades(-40, 1100, 1.2, 0) + bigBlades(1960, 1100, 1.1, 1) + rock(1700, 1110, 300, 120, '#8a8478');
+  g += stipple(0, 880, 1920, 220, '#1d1108', 520, 9, .45);
+  return o.night ? G(g, '', `style="filter:brightness(${o.dim ?? .45}) saturate(.75)"`) : g;
+}
+// white motion swoosh arcs (with an ink edge)
+function swoosh(x, y, r, a0, a1, sw = 7, op = 1) { const p0 = [x + Math.cos(rad(a0)) * r, y + Math.sin(rad(a0)) * r], p1 = [x + Math.cos(rad(a1)) * r, y + Math.sin(rad(a1)) * r], lg = Math.abs(a1 - a0) > 180 ? 1 : 0, sd = a1 > a0 ? 1 : 0;
+  const d = `M${f(p0[0])} ${f(p0[1])} A${r} ${r} 0 ${lg} ${sd} ${f(p1[0])} ${f(p1[1])}`; return G(P(d, 'none', sw + 5) + P(d, 'none', sw, '', '#fff'), '', `opacity="${op}"`); }
+const swooshes = (x, y, r, a, t, n = 3) => Array.from({ length: n }, (_, i) => swoosh(x, y, r + i * 22, a - 30 + i * 8 + Math.sin(t * 8) * 6, a + 30 - i * 8 + Math.sin(t * 8) * 6, 6 - i)).join('');
+// ---------- sky sets (kept names) ----------
+function nightSav(t, o = {}) { return far('night', t, { lx: o.mx ?? 1560, ly: o.my ?? 200, mr: o.mr ?? 80, seed: o.seed }) + (o.village ? G(village(t, { y: 790, s: .7 }), '', 'style="filter:brightness(.45) saturate(.7)"') : acaciaSil(260, 790, 1.0) + acaciaSil(1700, 780, .85, '#141a33')) + dirt(800, true); }
+function savDay(t, o = {}) { return far(o.kind || 'gold', t, { lx: o.sx, ly: o.sy, river: o.river }) + (o.village !== false ? village(t, { y: 790, s: .75 }) : acacia(1500, 800, 1.1)) + dirt(800); }
 // ---------- characters + props ----------
 // a sleeping (or lying awake) figure under a hide: head at the left end. o: {flip, awake, look, band, moss, hide, z, t0}
 function sleeper(x, y, s = 1, o = {}, t = 0) {
@@ -189,148 +240,147 @@ function layers(x, y, w, rows, k, t, hatchFn) {
 }
 
 const A = {
-// 0 ---------------------------------------------------------------- HOOK: 20 nights, 18 minutes
+// 0 ---------------------------------------------------------------- HOOK: 20 nights, 18 minutes (night village camp, Moss asleep up front)
 hook_watch: (lt, D, on, t) => {
-  const L1 = on(1, 1.2), k = 1 + .08 * easeIO(lt / D);
-  let g = nightSav(t, { mx: 1560, my: 200, mr: 86 });
-  const camp = domeHut(300, 830, 1.2, 1) + domeHut(1640, 820, 1.0, 1) + domeHut(1860, 860, .75, 1)
-    + sleeper(600, 920, 0.65, { band: 1 }, t) + sleeper(1330, 920, 0.65, { flip: 1, band: 1 }, t) + sleeper(780, 1030, 0.74, { band: 1, moss: 1 }, t) + sleeper(1160, 1040, 0.71, { flip: 1, band: 1 }, t) + sleeper(360, 1060, 0.62, { band: 1 }, t) + sleeper(1560, 1060, 0.62, { flip: 1, band: 1 }, t);
-  g += push(camp + campfire(960, 960, 1.15, t) + gradeN() + glowAt(960, 880, 620, 'aFire', .75 * flick(t)), k, 960, 900);
-  // the 20-night counter: twenty moons light up across the top
+  const L1 = on(1, 1.2), k = 1 + .07 * easeIO(lt / D);
+  let g = far('night', t, { lx: 1560, ly: 190, mr: 80 }) + G(hut(260, 800, .8) + grassHut(1500, 800, .7, t) + hut(1760, 790, .65) + fence(520, 900, 800, 90, 6), '', 'style="filter:brightness(.4) saturate(.7)"') + dirt(810, true);
+  const camp = sleeper(560, 905, .5, { band: 1 }, t) + sleeper(1360, 905, .5, { flip: 1, band: 1 }, t) + sleeper(1180, 960, .55, { flip: 1, band: 1 }, t) + sleeper(700, 960, .55, { band: 1 }, t) + campfire(960, 930, .8, t);
+  g += push(camp + gradeN() + glowAt(960, 860, 620, 'aFire', .8 * flick(t)) + sleeper(1180, 1090, .95, { moss: 1, band: 1 }, t) + fgFrame('camp', { night: 1, dim: .5 }) + glowAt(960, 940, 900, 'aFire', .35 * flick(t)), k, 960, 900);
   const nk = prog(lt, .6, 4.6), night = 1 + Math.floor(19 * nk);
   g += moonRow(20, 390, 92, 60, nk, t) + (on(0, .5, 3.9) > 0 ? headline('20 NIGHTS', 960, 196, 96, on(0, .5, 3.9), '#fff3cf') : headline(`NIGHT ${night}`, 960, 196, 96, 1, '#fff3cf'));
-  // the stone clock: only a thin sliver lights up
-  if (L1 > 0) g += fade(L1 * 2, stoneClock(560, 400, 190, .03 * ease(prog(lt, 5.6, 6.6)), t)) + headline('18 MINUTES', 1250, 430, 170, on(1, .5, 1.2)) + hand('everyone asleep at once', 1250, 520, 60, '#fff3cf', 'middle', on(1, .5, 1.8));
-  return g + vig(.9) + grain();
+  if (L1 > 0) g += fade(L1 * 2, stoneClock(560, 420, 190, .03 * ease(prog(lt, 5.6, 6.6)), t)) + headline('18 MINUTES', 1260, 430, 170, on(1, .5, 1.2)) + hand('everyone asleep at once', 1260, 520, 60, '#fff3cf', 'middle', on(1, .5, 1.8));
+  return g + grain() + vig(.9);
 },
 // 1 ---------------------------------------------------------------- 18 minutes. 20 nights. So how?
 hook_q: (lt, D, on, t) => pick(on(1),
-  () => { const up = ease(prog(lt, .2, .6)); return nightSav(t, { mx: 1650, my: 170, mr: 70, seed: 3 }) + hillCave(1350, 800, .9, 1, t) + campfire(1180, 960, .7, t) + grassPile(780, 1000, 1.5, t, '#b89848', '#8a6a2a')
-      + moss(760, 990, 1.25, { pose: 'sit', face: 'shocked', L: [-80, -170 - up * 40], R: [80, -170 - up * 40] }, t) + gradeN() + glowAt(1100, 900, 700, 'aFire', .7 * flick(t)) + headline('!', 900, 330 - up * 20, 140, up, '#fff')
-      + headline('18 MINUTES', 1420, 330, 120, on(0, .4, .1)) + headline('IN 20 NIGHTS', 1420, 470, 100, on(0, .4, 1.0), '#fff3cf') + vig() + grain(); },
-  () => { const y = Math.sin(lt * 1.5); return FULL('url(#aDusk)') + sunBig(1520, 640, 90) + peaks(700, '#6a5a86', 7, '#f6d6c0') + ridge(760, 80, '#5a4a6a', 2, 0) + hillCave(1000, 900, 1.5, 1, t, '#7a6458')
-      + grassPile(1000, 900, .7, t) + moss(1000, 990, 1.3, { face: 'shocked', L: [-90, -430 - y * 10], R: [90, -430 - y * 10] }, t) + glowAt(1000, 780, 500, 'aFire', .5 * flick(t))
-      + headline('HOW DID ANCIENT HUMANS', 960, 170, 96, on(1, .5, .1)) + headline('ACTUALLY SLEEP?', 960, 300, 140, on(1, .5, .5)) + whip(on(1, .18)) + vig(.8) + grain(); }),
+  () => { const up = ease(prog(lt, .2, .6)); return nightSav(t, { mx: 1650, my: 170, mr: 64, seed: 3, village: 1 }) + campfire(1420, 980, .8, t) + gradeN() + glowAt(1380, 900, 760, 'aFire', .8 * flick(t))
+      + grassBed(760, 1080, 1.6) + moss(760, 1130, 1.75, { pose: 'sit', face: 'shocked', L: [-90, -190 - up * 50], R: [90, -190 - up * 50] }, t) + swooshes(760, 380, 210, -90, t, 3)
+      + fgFrame('grass', { night: 1, dim: .4 }) + headline('18 MINUTES', 1380, 300, 120, on(0, .4, .1)) + headline('IN 20 NIGHTS', 1380, 440, 100, on(0, .4, 1.0), '#fff3cf') + grain() + vig(); },
+  () => { const y = Math.sin(lt * 1.5); return far('dusk', t, { lx: 1520, ly: 620 }) + village(t, { y: 800, s: .7 }) + dirt(810) + hillCave(380, 900, 1.1, 1, t, '#7a6458') + lightWash(1520, 620, 1300, 'sunL', .45)
+      + moss(1000, 1140, 1.8, { face: 'shocked', L: [-100, -470 - y * 12], R: [100, -470 - y * 12] }, t) + swooshes(1000, 300, 250, -120, t, 2) + swooshes(1000, 300, 250, -60, t, 2) + fgFrame('camp')
+      + headline('HOW DID ANCIENT HUMANS', 960, 140, 92, on(1, .5, .1)) + headline('ACTUALLY SLEEP?', 960, 260, 130, on(1, .5, .5)) + whip(on(1, .18)) + grain() + vig(.8); }),
 // 2 ---------------------------------------------------------------- three questions, then "weirder than you think"
 hook_promise: (lt, D, on, t) => pick(on(1),
-  () => { const panel = (i, inner, q) => { const p = on(0, .45, [0, 1.6, 3.4][i]); if (p <= 0) return ''; const x = 330 + i * 630, id = `aP${i}`; return popAt(x, 560, p, `<clipPath id="${id}"><rect x="${x - 290}" y="250" width="580" height="620" rx="10"/></clipPath>` + G(inner(x), '', `clip-path="url(#${id})"`) + `<rect x="${x - 290}" y="250" width="580" height="620" rx="10" fill="none" stroke="${K}" stroke-width="12"/>` + headline(q, x, 960, 64, 1, '#fff')); };
-    return FULL('#f3e6c8') + blotch(0, 0, 1920, 1080, 30, ['#e8d2a4', '#fff4dc'], 4, 60, 200, .5)
-      + panel(0, x => FULL('url(#aGold)') + ridge(700, 60, '#c9a86a', 3, 0) + R(x - 300, 700, 600, 400, '#c9a25a') + grassPile(x + 60, 820, 1.1, t) + moss(x - 120, 860, .9, { face: 'worried', R: [110, -150 + Math.sin(t * 6) * 10] }, t) + headline('?', x + 150, 420, 120, 1, '#fff'), 'WHERE?')
-      + panel(1, x => nightSav(t, { mx: x + 160, my: 330, mr: 50, seed: 6 }) + sleeper(x, 840, 0.43, {}, t) + campfire(x + 170, 860, .5, t) + P(`M${x - 300} 700 Q${x - 200} 600 ${x - 60} 650 Q${x + 60} 580 ${x + 300} 660 L${x + 300} 760 L${x - 300} 760 Z`, '#0c1424', 0) + eyePair(x - 160, 670, 1.1, t, 1) + eyePair(x + 140, 650, 1, t, 2) + gradeN(), 'LIONS?')
-      + panel(2, x => FULL('url(#aNight)') + stars(60, 600, t, 9, 6) + moonBig(x - 160, 360, 50) + P(`M${x - 300} 760 Q${x} 720 ${x + 300} 750 L${x + 300} 900 L${x - 300} 900 Z`, '#1a2040', 5) + sleeper(x + 40, 820, 0.53, { awake: 1, moss: 1, look: -4 }, t), 'LIKE US?')
-      + grain(); },
-  () => { const lean = ease(prog(lt, 5.5, 6.3)); return caveRoom(t, { mouthX: 1720, mouthY: 420, mouthW: 260, mouthH: 300, fire: false }) + FULL('#000', 'opacity=".45"')
-      + push(moss(860, 1240, 1.75, { face: 'determined', L: [-40, -260], R: [60, -300], hold: { R: 'hand' } }, t) + torch(940, 860, 1.1, t), 1 + lean * .1, 900, 600)
-      + glowAt(900, 520, 560, 'aFire', .45 * flick(t)) + headline('WEIRDER', 1420, 360, 150, on(1, .5, .6), '#ffb347', 'middle', -4) + headline('THAN YOU THINK', 1420, 500, 92, on(1, .5, 1.0), '#fff3cf', 'middle', -4) + whip(on(1, .18)) + vig() + grain(); }),
-// 3 ---------------------------------------------------------------- meet Moss; follow him to bed
+  () => { const panel = (i, inner, q) => { const p = on(0, .45, [0, 1.6, 3.4][i]); if (p <= 0) return ''; const x = 340 + i * 620, id = `aP${i}`; return popAt(x, 540, p, `<clipPath id="${id}"><rect x="${x - 290}" y="200" width="580" height="660" rx="10"/></clipPath>` + G(G(inner(x), `translate(${x - 960} 0)`), '', `clip-path="url(#${id})"`) + `<rect x="${x - 290}" y="200" width="580" height="660" rx="10" fill="none" stroke="${K}" stroke-width="12"/>` + headline(q, x, 960, 70, 1, '#fff')); };
+    return far('gold', t, { river: 1 }) + village(t, { y: 800, s: .7, blur: 1 }) + dirt(810) + FULL('#1b1208', 'opacity=".55"')
+      + panel(0, x => far('gold', t) + dirt(760) + grassPile(1060, 900, 1.3, t) + moss(830, 1000, 1.25, { face: 'worried', R: [130, -160 + Math.sin(t * 6) * 12] }, t) + swooshes(1040, 840, 70, -60, t, 2) + headline('?', 1100, 400, 140, 1, '#fff'), 'WHERE?')
+      + panel(1, x => far('night', t, { lx: 1120, ly: 330, mr: 46, seed: 6 }) + dirt(780, true) + sleeper(960, 900, .55, {}, t) + campfire(1140, 920, .5, t) + P('M660 760 Q760 640 900 690 Q1020 620 1260 700 L1260 800 L660 800 Z', '#0c1424', 0) + eyePair(800, 710, 1.3, t, 1) + eyePair(1110, 690, 1.2, t, 2) + gradeN(), 'LIONS?')
+      + panel(2, x => far('night', t, { lx: 800, ly: 330, mr: 50, seed: 9 }) + dirt(780, true) + sleeper(1000, 900, .7, { awake: 1, moss: 1, look: -4 }, t), 'LIKE US?')
+      + grain() + vig(.7); },
+  () => { const lean = ease(prog(lt, 5.5, 6.3)); return caveRoom(t, { mouthX: 1720, mouthY: 380, mouthW: 300, mouthH: 330, fire: false, view: 'night' }) + FULL('#000', 'opacity=".45"')
+      + push(moss(860, 1260, 1.85, { face: 'determined', L: [-40, -260], R: [60, -300], hold: { R: 'hand' } }, t) + torch(950, 880, 1.15, t), 1 + lean * .1, 900, 600)
+      + glowAt(900, 520, 600, 'aFire', .5 * flick(t)) + fgFrame('cave', { night: 1, dim: .55 }) + headline('WEIRDER', 1440, 360, 150, on(1, .5, .6), '#ffb347', 'middle', -4) + headline('THAN YOU THINK', 1440, 500, 92, on(1, .5, 1.0), '#fff3cf', 'middle', -4) + whip(on(1, .18)) + grain() + vig(); }),
+// 3 ---------------------------------------------------------------- meet Moss (golden village, like the reference); follow him to bed
 meet_moss: (lt, D, on, t) => pick(on(1),
-  () => { const sl = Math.sin(lt * 1.2) * 4; return savDay(t, { sky: 'url(#aGold)', sx: 1600, sy: 300 }) + shadow(900, 990, 180)
-      + moss(900, 990, 1.45, { face: 'sleepy', R: [70, -150 + sl], hold: { R: 'spear' }, L: [-40, -150] }, t)
-      + placeTag('MOSS', 1380, 380, on(0, .5, .4)) + hand('Stone Age human', 1380, 470, 56, K, 'middle', on(0, .5, 1.0)) + headline('VERY, VERY TIRED', 1380, 600, 84, on(0, .5, 2.6), '#fff3cf', 'middle', -3)
-      + (lt > 2.6 ? `<text x="${640}" y="${420 - (lt % 1.4) * 40}" font-family="Luckiest Guy" font-size="54" fill="#fff" stroke="${K}" stroke-width="6" paint-order="stroke" opacity="${f((1 - (lt % 1.4) / 1.4) * 100) / 100}">yawn</text>` : '') + vig(.6) + grain(); },
-  () => { const w = prog(lt, 4.44, D), x = 760 + w * 180, s = 1.15 - w * .25; return FULL('url(#aDusk)') + sunBig(1700, 560, 80) + peaks(650, '#7a6a96', 2, '#f6d6c0') + ridge(720, 90, '#6e5a74', 5, 0)
-      + hillCave(1340, 830, 1.0, 1, t, '#7a6458') + P('M-40 820 Q600 780 960 800 Q1400 820 1960 790 L1960 1120 L-40 1120 Z', '#c09a50', 6) + blotch(0, 800, 1920, 300, 20, ['#d8b066', '#8a6a34'], 3, 40, 120, .3) + tufts(820, 1060, 20, 4, '#7d6a2a', 1.2)
-      + P(`M${x} 1000 L${x - 520} 1080 L${x - 470} 1100 L${x + 20} 1004 Z`, 'rgba(40,20,40,.35)', 0)
-      + moss(x, 1000, s, { pose: 'walk', walkSpeed: 5, face: 'sleepy', hold: { R: 'spear' }, flip: 0 }, t) + hand('...to bed', 1340, 560, 64, '#fff', 'middle', on(1, .5, .5)) + whip(on(1, .18)) + vig(.7) + grain(); }),
+  () => { const sl = Math.sin(lt * 1.2) * 4; return far('gold', t, { river: 1, lx: 1620, ly: 160 }) + village(t, { y: 790, s: .85 }) + dirt(800) + lightWash(1620, 160, 1400, 'sunL', .5)
+      + moss(820, 1150, 1.85, { face: 'tired', R: [80, -150 + sl], hold: { R: 'spear' }, L: [-50, -150] }, t) + swooshes(640, 470, 60, 200, t, 2) + fgFrame('camp')
+      + placeTag('MOSS', 1380, 330, on(0, .5, .4)) + hand('Stone Age human', 1380, 420, 60, K, 'middle', on(0, .5, 1.0)) + headline('VERY, VERY TIRED', 1380, 560, 88, on(0, .5, 2.6), '#fff3cf', 'middle', -3)
+      + (lt > 2.6 ? `<text x="560" y="${380 - (lt % 1.4) * 40}" font-family="Luckiest Guy" font-size="60" fill="#fff" stroke="${K}" stroke-width="7" paint-order="stroke" opacity="${f((1 - (lt % 1.4) / 1.4) * 100) / 100}">yawn</text>` : '') + grain() + vig(.6); },
+  () => { const w = prog(lt, 4.44, D), x = 900 + w * 160, s = 1.25 - w * .2; return far('dusk', t, { lx: 1700, ly: 560 }) + G(village(t, { y: 800, s: .6 }), '', 'filter="url(#aMid)"') + dirt(810)
+      + hillCave(1420, 840, 1.0, 1, t, '#7a6458') + lightWash(1700, 560, 1300, 'sunL', .5) + P(`M${x} 1060 L${x - 620} 1110 L${x - 560} 1130 L${x + 20} 1064 Z`, 'rgba(40,20,40,.35)', 0)
+      + moss(x, 1060, s, { pose: 'walk', walkSpeed: 5, face: 'tired', hold: { R: 'spear' } }, t) + fgFrame('camp') + hand('...to bed', 1420, 560, 70, '#fff', 'middle', on(1, .5, .5)) + whip(on(1, .18)) + grain() + vig(.7); }),
 // 4 ---------------------------------------------------------------- chimp nests
 chimp_nest: (lt, D, on, t) => {
-  const forest = () => FULL('url(#aGold)') + sunBig(1500, 420, 80) + ridge(720, 100, '#7a9a6a', 3, 0) + G(canopy(960, 260, 2200, 420, 4, ['#2f5a2a', '#3f7034', '#4f8a3a']), '', 'opacity=".9"');
-  if (on(2) > 0) return FULL('url(#aDusk)') + sunBig(1450, 760, 90) + G(canopy(960, 900, 2400, 360, 8, ['#2a3a3a', '#34503a', '#3a5e3a']), '', 'opacity=".95"')
-    + push(nest(900, 700, 2.0, 1, t) + chimp(900, 640, 1.5, { pose: 'lounge', face: 'smug' }, t), 1 + .06 * prog(lt, 8.86, D), 900, 640)
-    + headline('A FEW MINUTES', 1350, 230, 120, on(2, .5, .2)) + whip(on(2, .18)) + vig(.7) + grain();
+  const forest = () => far('gold', t, { lx: 1500, ly: 380 }) + G(canopy(960, 300, 2200, 420, 4, ['#2f5a2a', '#3f7034', '#4f8a3a']), '', 'filter="url(#aMid)" opacity=".9"');
+  const leavesFg = G(canopy(-60, 160, 300, 380, 2, ['#2c4a22', '#3a6a2a', '#5a8a3a']) + canopy(1980, 980, 340, 300, 6, ['#2c4a22', '#3a6a2a', '#5a8a3a']), '', '');
+  if (on(2) > 0) return far('dusk', t, { lx: 1450, ly: 700 }) + G(canopy(960, 980, 2400, 360, 8, ['#2a3a3a', '#34503a', '#3a5e3a']), '', 'opacity=".95"')
+    + push(pole(200, 760, 1700, 700, 40, []) + nest(900, 700, 2.0, 1, t) + chimp(900, 640, 1.5, { pose: 'lounge', face: 'smug' }, t), 1 + .06 * prog(lt, 8.86, D), 900, 640)
+    + leavesFg + headline('A FEW MINUTES', 1350, 230, 120, on(2, .5, .2)) + whip(on(2, .18)) + grain() + vig(.7);
   if (on(1) > 0) { const k = prog(lt, 2.4, 8.4); return forest() + Ln(400, 1100, 900, 640, 46, '#5a3a22') + Ln(900, 640, 1500, 560, 30, '#5a3a22') + Ln(900, 640, 1100, 300, 26, '#5a3a22')
-    + nest(960, 640, 1.9, k, t) + chimp(960, 560, 1.4, { pose: 'build' }, t) + [0, 1, 2, 3].map(i => leaf(700 + i * 180 + Math.sin(t * 2 + i) * 30, (lt * 80 + i * 200) % 900 + 100, 1.4, t * 90 + i * 70, '#7cbc4a')).join('')
-    + hand('a fresh bed, every evening', 960, 1000, 66, '#fff', 'middle', on(1, .5, 1)) + whip(on(1, .18)) + vig(.7) + grain(); }
-  return forest() + Ln(1350, 1100, 1300, 300, 70, '#5a3a22') + Ln(1300, 420, 1650, 300, 34, '#5a3a22') + canopy(1360, 260, 800, 360, 9) + chimp(1450, 400, 1, { pose: 'peek', flip: 1 }, t)
-    + P('M-40 900 Q960 860 1960 900 L1960 1120 L-40 1120 Z', '#6a8a3a', 6) + moss(700, 1010, 1.3, { face: 'wide', R: [60, -300], L: [-40, -150] }, t) + headline('?', 820, 330, 110, on(0, .5, .2), '#fff') + vig(.6) + grain();
+    + nest(960, 640, 1.9, k, t) + chimp(960, 560, 1.4, { pose: 'build' }, t) + swooshes(960, 460, 200, -150, t, 2) + swooshes(960, 460, 200, -30, t, 2) + [0, 1, 2, 3].map(i => leaf(700 + i * 180 + Math.sin(t * 2 + i) * 30, (lt * 80 + i * 200) % 900 + 100, 1.4, t * 90 + i * 70, '#7cbc4a')).join('')
+    + leavesFg + hand('a fresh bed, every evening', 960, 1010, 70, '#fff', 'middle', on(1, .5, 1)) + whip(on(1, .18)) + grain() + vig(.7); }
+  return forest() + dirt(880) + Ln(1350, 1100, 1300, 300, 70, '#5a3a22') + Ln(1300, 420, 1650, 300, 34, '#5a3a22') + canopy(1360, 260, 800, 360, 9) + chimp(1450, 400, 1, { pose: 'peek', flip: 1 }, t)
+    + moss(640, 1160, 1.8, { face: 'wide', R: [60, -310], L: [-40, -150] }, t) + fgFrame('grass') + headline('?', 820, 230, 120, on(0, .5, .2), '#fff') + grain() + vig(.6);
 },
 // 5 ---------------------------------------------------------------- down to the ground
 ground: (lt, D, on, t) => pick(on(1),
-  () => { const w = prog(lt, 0, 4); return savDay(t, { sky: 'url(#aGold)', sx: 1700, sy: 250 }) + G(canopy(160, 380, 600, 700, 3, ['#2f5a2a', '#3f7034', '#4f8a3a']), '', '') + Ln(260, 1100, 240, 300, 60, '#5a3a22') + chimp(300, 420, .7, { pose: 'build', flip: 1 }, t)
-      + [0, 1, 2, 3].map(i => moss(620 + i * 230 + w * 200, 1000 - (i % 2) * 30, .95 - i * .05, { pose: 'walk', walkSpeed: 6, seed: i, face: i ? 'happy' : 'sleepy', hairclip: i ? 'none' : 'bone', L: i === 3 ? [-60, -420] : undefined }, t + i)).join('')
-      + headline('DOWN FROM THE TREES', 1200, 200, 96, on(0, .5, 1.2)) + vig(.6) + grain(); },
-  () => nightSav(t, { mx: 1500, my: 200, mr: 80, seed: 8 }) + P('M-40 640 Q300 560 600 650 Q900 560 1300 640 Q1600 570 1960 650 L1960 760 L-40 760 Z', '#0b1020', 0) + eyePair(1500, 640, .8, t, 5)
-      + push(sleeper(980, 960, 0.99, { awake: 1, moss: 1 }, t), 1 + .08 * prog(lt, 4, D), 760, 900) + gradeN() + headline('A PROBLEM', 960, 220, 140, on(1, .5, .9), '#ff8a6a') + whip(on(1, .18)) + vig() + grain()),
+  () => { const w = prog(lt, 0, 4); return far('gold', t, { lx: 1700, ly: 220, river: 1 }) + dirt(800) + G(canopy(120, 380, 600, 700, 3, ['#2f5a2a', '#3f7034', '#4f8a3a']), '', '') + Ln(220, 1100, 220, 300, 60, '#5a3a22') + chimp(260, 420, .7, { pose: 'build', flip: 1 }, t)
+      + [3, 2, 1, 0].map(i => moss(640 + i * 260 + w * 160, 1000 + (i === 0 ? 130 : 0) - i * 10, i ? .85 - i * .04 : 1.5, { pose: 'walk', walkSpeed: 6, seed: i, face: i ? 'happy' : 'tired', hairclip: i ? 'none' : 'bone', L: i === 3 ? [-60, -420] : undefined }, t + i)).join('')
+      + fgFrame('grass') + headline('DOWN FROM THE TREES', 1200, 180, 96, on(0, .5, 1.2)) + grain() + vig(.6); },
+  () => far('night', t, { lx: 1500, ly: 200, mr: 72, seed: 8 }) + dirt(800, true) + P('M-40 690 Q300 600 600 690 Q900 600 1300 680 Q1600 610 1960 690 L1960 800 L-40 800 Z', '#0b1020', 0) + eyePair(1500, 690, .9, t, 5) + eyePair(380, 700, .8, t, 2)
+      + push(sleeper(900, 1060, 1.15, { awake: 1, moss: 1 }, t), 1 + .08 * prog(lt, 4, D), 760, 900) + gradeN() + fgFrame('grass', { night: 1, dim: .35 }) + headline('A PROBLEM', 960, 220, 140, on(1, .5, .9), '#ff8a6a') + whip(on(1, .18)) + grain() + vig()),
 // 6 ---------------------------------------------------------------- things with teeth
 predators: (lt, D, on, t) => pick(on(1),
-  () => FULL('#070b1c') + stars(40, 300, t, 4, 2) + [0, 1, 2, 3, 4].map(i => eyePair(260 + i * 340 + Math.sin(i * 2) * 60, 420 + hash(i) * 260, 1.4 + hash(i * 3) * .8, t, i)).join('')
-    + G(Array.from({ length: 70 }, (_, i) => { const x = i * 29 - 20, h = 380 + hash(i) * 260, sw = Math.sin(t * 1.2 + i) * 14; return P(`M${x} 1100 Q${x + 6} ${1100 - h * .5} ${x + sw} ${1100 - h}`, 'none', 14, '', i % 2 ? '#0f1a22' : '#16242c'); }).join(''))
-    + headline('THINGS WITH TEETH', 960, 200, 120, on(0, .5, .4), '#ffe24a') + vig() + grain(),
-  () => nightSav(t, { mx: 300, my: 190, mr: 70, seed: 10 }) + P('M1100 860 Q1180 720 1360 720 Q1480 740 1520 860 Z', '#1a2038', 6) + lion(1290, 735, 1.1)
-      + acaciaSil(420, 870, 1.6, '#10142a') + leopard(360, 540, .9, '#161b36', t) + hyena(1500 - prog(lt, 1.5, D) * 220, 1000, 1, '#161b36', t) + gradeN()
-      + headline('LIONS', 1300, 470, 84, on(1, .45, .05), '#ffe24a') + headline('LEOPARDS', 420, 300, 84, on(1, .45, .6), '#ffe24a') + headline('HYENAS', 1380, 880, 84, on(1, .45, 1.2), '#ffe24a') + whip(on(1, .18)) + vig() + grain()),
+  () => far('night', t, { moon: false, seed: 4 }) + FULL('#04060f', 'opacity=".55"') + [0, 1, 2, 3, 4].map(i => eyePair(260 + i * 340 + Math.sin(i * 2) * 60, 480 + hash(i) * 220, 1.4 + hash(i * 3) * .8, t, i)).join('')
+    + G(Array.from({ length: 70 }, (_, i) => { const x = i * 29 - 20, h = 380 + hash(i) * 300, sw = Math.sin(t * 1.2 + i) * 14; return P(`M${x - 8} 1100 Q${x + 6} ${1100 - h * .5} ${x + sw} ${1100 - h} Q${x + 12} ${1100 - h * .5} ${x + 10} 1100 Z`, i % 2 ? '#0f1a22' : '#16242c', 3); }).join(''))
+    + headline('THINGS WITH TEETH', 960, 200, 120, on(0, .5, .4), '#ffe24a') + grain() + vig(),
+  () => far('night', t, { lx: 300, ly: 190, mr: 64, seed: 10 }) + dirt(820, true) + rock(1300, 840, 420, 150, '#3a3e58') + predator('lion', 1220, 720, .95, t, { col: '#141826' })
+      + acaciaSil(420, 880, 1.6, '#10142a') + predator('leopard', 330, 560, .8, t, { col: '#141826' }) + predator('hyena', 1500 - prog(lt, 1.5, D) * 220, 1040, .9, t, { col: '#141826', flip: 1 }) + gradeN() + fgFrame('grass', { night: 1, dim: .3 })
+      + headline('LIONS', 1300, 470, 84, on(1, .45, .05), '#ffe24a') + headline('LEOPARDS', 420, 300, 84, on(1, .45, .6), '#ffe24a') + headline('HYENAS', 1380, 880, 84, on(1, .45, 1.2), '#ffe24a') + whip(on(1, .18)) + grain() + vig()),
 // 7 ---------------------------------------------------------------- fire to bed
 fire: (lt, D, on, t) => pick(on(1),
-  () => { const b = .5 + .5 * Math.sin(t * 3); return FULL('#05060f') + push(grassPile(1000, 900, .9, t, '#7a6230', '#4a3a1a') + ember(1000, 860, 1 + b * .4, t) + moss(800, 960, 1.4, { pose: 'sit', face: 'worried', L: [90, -170], R: [140, -170] }, t), 1 + .1 * easeIO(lt / 3.3), 960, 760)
-      + glowAt(980, 820, 520, 'aFire', .45 + b * .25) + [0, 1, 2].map(i => C(1010 + i * 12, 820 - ((lt * 60 + i * 30) % 120), 4, '#ffd27a', 0)).join('') + hand('something no other animal does', 960, 200, 70, '#ffd27a', 'middle', on(0, .5, .8)) + vig() + grain(); },
-  () => nightSav(t, { mx: 1650, my: 170, mr: 60, seed: 12 }) + eyePair(220, 760, .9, t, 1) + eyePair(1720, 740, .8, t, 4) + eyePair(1840, 860, .7, t, 6)
-      + sleeper(760, 980, 0.81, { moss: 1 }, t) + campfire(1180, 980, 1.2, t) + gradeN() + glowAt(1100, 860, 760, 'aFire', .9 * flick(t)) + C(1100, 880, 640, 'none', 0, `stroke="#ffcf7a" stroke-width="5" stroke-dasharray="14 22" opacity=".35"`)
-      + headline('FIRE TO BED!', 960, 210, 150, on(1, .5, .2)) + whip(on(1, .18)) + vig() + grain()),
+  () => { const b = .5 + .5 * Math.sin(t * 3); return FULL('#05060f') + G(far('night', t, { moon: false }), '', 'opacity=".35"') + push(grassPile(1060, 1000, 1.1, t, '#7a6230', '#4a3a1a') + ember(1060, 950, 1.2 + b * .4, t) + moss(780, 1130, 1.9, { pose: 'sit', face: 'worried', L: [110, -190], R: [160, -190] }, t), 1 + .1 * easeIO(lt / 3.3), 960, 760)
+      + glowAt(1040, 900, 600, 'aFire', .5 + b * .25) + [0, 1, 2].map(i => C(1070 + i * 12, 900 - ((lt * 60 + i * 30) % 140), 4, '#ffd27a', 0)).join('') + swoosh(1000, 760, 60, 200, 260, 5) + fgFrame('camp', { night: 1, dim: .3 }) + hand('something no other animal does', 960, 170, 74, '#ffd27a', 'middle', on(0, .5, .8)) + grain() + vig(); },
+  () => nightSav(t, { mx: 1650, my: 170, mr: 56, seed: 12, village: 1 }) + eyePair(220, 760, .9, t, 1) + eyePair(1720, 740, .8, t, 4) + eyePair(1840, 860, .7, t, 6)
+      + campfire(1240, 1000, 1.3, t) + sleeper(820, 1070, 1.0, { moss: 1 }, t) + gradeN() + glowAt(1160, 900, 820, 'aFire', .95 * flick(t)) + C(1160, 900, 680, 'none', 0, `stroke="#ffcf7a" stroke-width="5" stroke-dasharray="14 22" opacity=".35"`)
+      + fgFrame('camp', { night: 1, dim: .55 }) + headline('FIRE TO BED!', 960, 200, 150, on(1, .5, .2)) + whip(on(1, .18)) + grain() + vig()),
 // 8 ---------------------------------------------------------------- Wonderwerk Cave ~1 million years
 wonderwerk: (lt, D, on, t) => pick(on(1),
-  () => { const tr = 820; return caveRoom(t, { mouthX: 1900, mouthY: 420, mouthW: 900, mouthH: 1000, skyFill: 'url(#aMorn)', mouthStars: false, fire: false }) + G(P('M1340 400 L700 1080 L1300 1080 L1820 420 Z', 'url(#aBeam)', 0), '', 'opacity=".5"')
-      + R(300, tr, 1000, 230, '#5a3a24', `stroke="${K}" stroke-width="7"`) + R(300, tr + 60, 1000, 34, '#6e6a66', `stroke="${K}" stroke-width="4"`) + blotch(300, tr + 62, 1000, 30, 30, ['#3a3836', '#9a9690'], 2, 6, 16, .8)
-      + [0, 1, 2, 3, 4].map(i => P(`M${420 + i * 180} ${tr + 76} l18 -8 l10 10 l-14 8 Z`, '#2a2420', 3)).join('') + Ln(300, tr, 1300, tr, 4, '#e8e0d0') + [0, 1, 2, 3, 4, 5].map(i => Ln(300 + i * 200, tr - 10, 300 + i * 200, tr + 230, 3, '#e8e0d0')).join('')
-      + person(980, tr + 10, 1.0, { tunic: 'shirt', hair: 'bun', face: 'wide', pose: 'sit', R: [60, -70 + Math.sin(t * 6) * 6], hold: { R: 'stick' } }, t) + C(980, tr + 10 - 420, 12, '#fff8c0', 4) + G(P(`M980 ${tr - 410} L760 ${tr + 60} L900 ${tr + 90} Z`, '#fff8c0', 0), '', 'opacity=".25"')
-      + headline('WONDERWERK CAVE', 640, 170, 84, on(0, .5, .2), '#fff3cf') + hand('South Africa', 640, 250, 60, '#fff3cf', 'middle', on(0, .5, 1.4)) + headline('ASH', 330, 760, 70, on(0, .4, 3.2), '#e0ddd8', 'start') + hand('+ burned bone', 470, 760, 52, '#fff', 'start', on(0, .5, 3.6))
-      + headline('~1,000,000 YEARS', 1300, 650, 110, on(0, .5, 4.9)) + vig(.8) + grain(); },
-  () => caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 300, mouthH: 340, fireX: 820, fireY: 950 }) + [0, 1, 2, 3].map(i => person(560 + i * 180 + (i > 1 ? 120 : 0), 980, .7, { pose: 'sit', face: i % 2 ? 'happy' : 'sleepy', hair: i % 2 ? 'long' : 'messy', seed: i + 3, flip: i > 1 ? 1 : 0 }, t)).join('') + campfire(820, 960, .7, t)
-      + gradeN() + glowAt(820, 850, 800, 'aFire', .95 * flick(t)) + headline('EARLIEST SIGNS', 960, 190, 110, on(1, .5, .3)) + hand('of fire used inside a cave', 960, 280, 64, '#fff3cf', 'middle', on(1, .5, .8)) + whip(on(1, .18)) + vig() + grain()),
+  () => { const tr = 820; return caveRoom(t, { mouthX: 1900, mouthY: 420, mouthW: 900, mouthH: 1000, view: 'morn', fire: false }) + G(P('M1340 400 L700 1080 L1300 1080 L1820 420 Z', 'url(#aBeam)', 0), '', 'opacity=".5"')
+      + R(240, tr, 1060, 230, '#5a3a24', `stroke="${K}" stroke-width="7"`) + R(240, tr + 60, 1060, 34, '#6e6a66', `stroke="${K}" stroke-width="4"`) + blotch(240, tr + 62, 1060, 30, 30, ['#3a3836', '#9a9690'], 2, 6, 16, .8)
+      + [0, 1, 2, 3, 4].map(i => P(`M${380 + i * 190} ${tr + 76} l18 -8 l10 10 l-14 8 Z`, '#2a2420', 3)).join('') + Ln(240, tr, 1300, tr, 4, '#e8e0d0') + [0, 1, 2, 3, 4, 5].map(i => Ln(240 + i * 212, tr - 10, 240 + i * 212, tr + 230, 3, '#e8e0d0')).join('')
+      + person(1000, tr + 10, 1.1, { tunic: 'shirt', hair: 'bun', face: 'wide', pose: 'sit', R: [60, -70 + Math.sin(t * 6) * 6], hold: { R: 'stick' } }, t) + swoosh(1080, tr - 20, 50, 190, 260, 5)
+      + fgFrame('cave') + headline('WONDERWERK CAVE', 640, 170, 84, on(0, .5, .2), '#fff3cf') + hand('South Africa', 640, 250, 60, '#fff3cf', 'middle', on(0, .5, 1.4)) + headline('ASH', 270, 760, 70, on(0, .4, 3.2), '#e0ddd8', 'start') + hand('+ burned bone', 410, 760, 52, '#fff', 'start', on(0, .5, 3.6))
+      + headline('~1,000,000 YEARS', 1300, 640, 110, on(0, .5, 4.9)) + grain() + vig(.8); },
+  () => caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 300, mouthH: 340, fireX: 820, fireY: 950, view: 'night' }) + [0, 1, 2, 3].map(i => person(520 + i * 200 + (i > 1 ? 120 : 0), 1000, .8, { pose: 'sit', face: i % 2 ? 'happy' : 'sleepy', hair: i % 2 ? 'long' : 'ink', seed: i + 3, flip: i > 1 ? 1 : 0 }, t)).join('') + campfire(840, 980, .8, t)
+      + gradeN() + glowAt(840, 870, 820, 'aFire', .95 * flick(t)) + fgFrame('cave', { night: 1, dim: .5 }) + headline('EARLIEST SIGNS', 960, 180, 110, on(1, .5, .3)) + hand('of fire used inside a cave', 960, 270, 64, '#fff3cf', 'middle', on(1, .5, .8)) + whip(on(1, .18)) + grain() + vig()),
 // 9 ---------------------------------------------------------------- warmth, light, distance; evenings; stories
 fire_benefits: (lt, D, on, t) => {
-  if (on(2) > 0) { const wave = Math.sin(t * 5) * 40; return caveRoom(t, { mouthX: 1760, mouthY: 300, mouthW: 220, mouthH: 260, fireX: 900, fireY: 960 })
+  if (on(2) > 0) { const wave = Math.sin(t * 5) * 40; return caveRoom(t, { mouthX: 1760, mouthY: 300, mouthW: 220, mouthH: 260, fireX: 900, fireY: 960, view: 'night' })
     + G(P('M1000 520 Q1020 330 1240 320 Q1420 300 1480 420 L1500 560 L1460 560 L1450 470 L1420 560 L1380 560 L1370 470 L1180 470 L1170 560 L1130 560 L1120 470 Q1060 520 1060 600 Q1040 620 1010 600 Z', '#1a0e08', 0), '', 'opacity=".55" filter="url(#aBlur)"')
-    + moss(700, 990, 1.25, { face: 'happy', talk: 1, L: [-110, -380 + wave], R: [110, -380 - wave] }, t) + person(1130, 1000, .75, { pose: 'sit', face: 'happy', seed: 8, flip: 1, hair: 'long' }, t) + person(1330, 1010, .6, { pose: 'sit', face: 'happy', seed: 9, flip: 1, hold: { R: 'leaf' } }, t) + person(420, 1010, .62, { pose: 'sit', face: 'happy', seed: 10 }, t)
-    + campfire(920, 990, .75, t) + gradeN() + glowAt(920, 880, 760, 'aFire', .95 * flick(t)) + headline('HA HA', 1250, 760, 54, 1, '#fff', 'middle', 8) + hand('share food, tell stories', 960, 170, 72, '#fff3cf', 'middle', on(2, .5, .4)) + whip(on(2, .18)) + vig() + grain(); }
-  if (on(1) > 0) { const mr = prog(lt, 5.9, 9.9); return FULL('url(#aNight)') + milky() + stars(170, 700, t, 13) + moonBig(1500, 420 - mr * 160, 70) + ridge(760, 110, '#1e2448', 3, 0) + hillCave(860, 900, 1.3, 1, t, '#4a4050')
-    + [0, 1, 2].map(i => person(760 + i * 90, 900, .32, { pose: 'sit', face: 'happy', seed: i }, t)).join('') + campfire(860, 905, .3, t) + gradeN() + glowAt(860, 860, 380, 'aFire', .9 * flick(t)) + headline('EVENINGS', 960, 220, 160, on(1, .5, 2.6)) + whip(on(1, .18)) + vig() + grain(); }
-  const icon = (i, d, lbl, x) => popAt(x, 210, on(0, .45, d), C(x, 210, 70, '#fff8e6', 6) + headline(lbl, x, 330, 52, 1, '#fff'));
-  return caveRoom(t, { mouthX: 1500, mouthY: 560, mouthW: 900, mouthH: 760, fireX: 700, fireY: 960 }) + G(P('M900 860 Q1400 820 2000 860 L2000 1120 L900 1120 Z', '#1a2038', 0), '', 'clip-path="url(#aMouthClip)"')
-    + hyena(1540, 960, 1.0, '#8a7a5a', t * .2, { rim: false }) + P('M1360 830 L1400 846 M1430 826 L1396 846', 'none', 6) + headline('hmph', 1460, 780, 50, on(0, .4, 3.4), '#fff')
-    + moss(560, 990, 1.3, { pose: 'sit', face: 'happy', L: [90, -200], R: [130, -190] }, t) + campfire(760, 980, .8, t) + gradeN() + glowAt(760, 880, 700, 'aFire', .95 * flick(t))
-    + icon(0, .2, 'WARMTH', 300) + G(P('M290 170 Q270 200 290 230 Q310 260 290 280', 'none', 8, '', '#ff8a2a') + P('M320 160 Q300 190 320 220', 'none', 8, '', '#ff8a2a'), '', on(0, .4, .2) > 0 ? '' : 'opacity="0"')
-    + icon(1, 1.3, 'LIGHT', 560) + (on(0, .4, 1.3) > 0 ? sunBig(560, 210, 34) : '') + icon(2, 2.6, 'SAFETY?', 820) + (on(0, .4, 2.6) > 0 ? eyePair(820, 210, .9, t, 1) + cross(820, 210, on(0, .5, 3.0), 50) : '') + vig() + grain();
+    + person(1130, 1010, .8, { pose: 'sit', face: 'happy', seed: 8, flip: 1, hair: 'long' }, t) + person(1340, 1020, .66, { pose: 'sit', face: 'happy', seed: 9, flip: 1, kid: 1, hold: { R: 'leaf' } }, t) + campfire(940, 1000, .8, t)
+    + moss(620, 1150, 1.7, { face: 'happy', talk: 1, L: [-120, -390 + wave], R: [120, -390 - wave] }, t) + swooshes(620, 500, 260, -150, t, 2) + swooshes(620, 500, 260, -30, t, 2)
+    + gradeN() + glowAt(940, 880, 800, 'aFire', .95 * flick(t)) + fgFrame('cave', { night: 1, dim: .55 }) + headline('HA HA', 1260, 740, 56, 1, '#fff', 'middle', 8) + hand('share food, tell stories', 1300, 170, 72, '#fff3cf', 'middle', on(2, .5, .4)) + whip(on(2, .18)) + grain() + vig(); }
+  if (on(1) > 0) { const mr = prog(lt, 5.9, 9.9); return FULL('url(#aNight)') + milky() + stars(170, 700, t, 13) + moonBig(1500, 420 - mr * 160, 70) + G(peaks(700, '#2c3560', 7, '#8c98c8'), '', 'filter="url(#aFar)"') + ridge(760, 110, '#1e2448', 3, 0) + hillCave(860, 900, 1.3, 1, t, '#4a4050')
+    + [0, 1, 2].map(i => person(760 + i * 90, 900, .32, { pose: 'sit', face: 'happy', seed: i }, t)).join('') + campfire(860, 905, .3, t) + gradeN() + glowAt(860, 860, 380, 'aFire', .9 * flick(t)) + fgFrame('grass', { night: 1, dim: .3 }) + headline('EVENINGS', 960, 220, 160, on(1, .5, 2.6)) + whip(on(1, .18)) + grain() + vig(); }
+  const icon = (d, lbl, x) => popAt(x, 210, on(0, .45, d), C(x, 210, 70, '#fff8e6', 6) + headline(lbl, x, 330, 52, 1, '#fff'));
+  return caveRoom(t, { mouthX: 1500, mouthY: 560, mouthW: 900, mouthH: 760, fireX: 700, fireY: 960, view: 'night' })
+    + predator('hyena', 1560, 960, .8, t * .2, { col: '#3a3428', flip: 1 }) + headline('hmph', 1600, 740, 50, on(0, .4, 3.4), '#fff')
+    + moss(520, 1150, 1.7, { pose: 'sit', face: 'happy', L: [110, -210], R: [150, -200] }, t) + campfire(820, 1000, .9, t) + gradeN() + glowAt(800, 880, 760, 'aFire', .95 * flick(t)) + fgFrame('cave', { night: 1, dim: .55 })
+    + icon(.2, 'WARMTH', 300) + (on(0, .4, .2) > 0 ? P('M290 170 Q270 200 290 230 Q310 260 290 280', 'none', 8, '', '#ff8a2a') + P('M320 160 Q300 190 320 220', 'none', 8, '', '#ff8a2a') : '')
+    + icon(1.3, 'LIGHT', 560) + (on(0, .4, 1.3) > 0 ? sunBig(560, 210, 34) : '') + icon(2.6, 'SAFETY?', 820) + (on(0, .4, 2.6) > 0 ? eyePair(820, 210, .9, t, 1) + cross(820, 210, on(0, .5, 3.0), 50) : '') + grain() + vig();
 },
 // 10 ---------------------------------------------------------------- a fire doesn't make a bed
 cliff_bed: (lt, D, on, t) => pick(on(1),
-  () => { const ow = Math.sin(t * 8) * 4; return caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 260, mouthH: 300, fireX: 1250 }) + [0, 1, 2, 3, 4].map(i => rock(560 + i * 130, 1000, 160, 60 + hash(i) * 50, '#8a8078')).join('') + campfire(1300, 990, .8, t)
-      + G(sleeper(0, 0, 0.87, { awake: 1, moss: 1, look: 6, z: false }, t), `translate(820 ${930 + ow}) rotate(-6)`) + P('M900 940 L930 900 L950 945', '#9a9088', 5) + headline('OUCH', 1000, 760, 90, on(0, .3, .9), '#ff8a6a', 'middle', -8)
-      + gradeN() + glowAt(1300, 880, 700, 'aFire', .9 * flick(t)) + headline("FIRE ≠ BED", 960, 220, 130, on(0, .5, .3)) + vig() + grain(); },
-  () => { const g0 = ease(prog(lt, 2.2, 3.2)); return caveRoom(t, { mouthX: 300, mouthY: 380, mouthW: 260, mouthH: 300, fire: false }) + FULL('#000', 'opacity=".35"') + G(P('M1300 0 L1100 1080 L1700 1080 L1520 0 Z', 'url(#aGoldG)', 0), '', `opacity="${f(g0 * .5 * 100) / 100}" filter="url(#aSoft)"`)
-      + glowAt(1380, 900, 520, 'aGoldG', g0 * .9) + grassPile(1380, 980, 1.5, t) + [0, 1, 2, 3, 4].map(i => sparkle(1200 + i * 90, 760 - (i % 2) * 70, 22, t, i)).join('')
-      + moss(640, 990, 1.4, { face: 'shocked', L: [-60, -300], R: [120, -330] }, t) + headline('SURPRISINGLY COSY', 960, 200, 110, on(1, .5, .6), '#ffe08a') + whip(on(1, .18)) + vig() + grain(); }),
+  () => { const ow = Math.sin(t * 8) * 4; return caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 280, mouthH: 300, fireX: 1300, view: 'night' }) + [0, 1, 2, 3, 4].map(i => rock(520 + i * 160, 1050, 190, 70 + hash(i) * 50, '#8a8078')).join('') + campfire(1420, 1040, .9, t)
+      + G(sleeper(0, 0, .95, { awake: 1, moss: 1, look: 6, z: false }, t), `translate(840 ${990 + ow}) rotate(-6)`) + P('M920 980 L950 930 L972 984', '#9a9088', 5) + headline('OUCH', 1040, 760, 96, on(0, .3, .9), '#ff8a6a', 'middle', -8) + swooshes(760, 860, 120, -110, t, 2)
+      + gradeN() + glowAt(1400, 920, 760, 'aFire', .9 * flick(t)) + fgFrame('cave', { night: 1, dim: .55 }) + headline("FIRE ≠ BED", 960, 200, 130, on(0, .5, .3)) + grain() + vig(); },
+  () => { const g0 = ease(prog(lt, 2.2, 3.2)); return caveRoom(t, { mouthX: 300, mouthY: 380, mouthW: 260, mouthH: 300, fire: false, view: 'night' }) + FULL('#000', 'opacity=".35"') + G(P('M1300 0 L1100 1080 L1700 1080 L1520 0 Z', 'url(#aGoldG)', 0), '', `opacity="${f(g0 * .5 * 100) / 100}" filter="url(#aSoft)"`)
+      + glowAt(1380, 900, 560, 'aGoldG', g0 * .9) + grassPile(1380, 1000, 1.6, t) + [0, 1, 2, 3, 4].map(i => sparkle(1180 + i * 100, 760 - (i % 2) * 70, 24, t, i)).join('')
+      + moss(620, 1160, 1.85, { face: 'shocked', L: [-70, -310], R: [130, -340] }, t) + swooshes(620, 330, 200, -90, t, 2) + fgFrame('cave', { night: 1, dim: .6 }) + headline('SURPRISINGLY COSY', 1150, 190, 110, on(1, .5, .6), '#ffe08a') + whip(on(1, .18)) + grain() + vig(); }),
 // 11 ---------------------------------------------------------------- Border Cave, 200,000 years
 border_cave: (lt, D, on, t) => pick(on(1),
-  () => FULL('url(#aMorn)') + sunBig(300, 220, 70) + cloud(1300, 160, 1, t) + peaks(620, '#a9b8d0', 11, '#f4f2ee', .35) + ridge(760, 130, '#7fae5a', 3, 0) + ridge(840, 80, '#5f9a44', 7, 0)
-    + P('M900 1120 L960 600 Q1050 280 1300 240 Q1600 220 1720 380 Q1860 560 1900 1120 Z', '#9a8a78', 7) + blotch(980, 280, 900, 800, 26, ['#7d6e60', '#b4a490'], 3, 30, 90, .35) + P('M1080 520 q60 -20 120 10 M1500 700 q60 -10 110 30 M1200 860 q50 20 110 0', 'none', 5)
+  () => far('morn', t, { lx: 300, ly: 220, y: 660, river: 1 }) + hills(780, '#6fa852', 7, 50) + dirt(860)
+    + P('M900 1120 L960 600 Q1050 280 1300 240 Q1600 220 1720 380 Q1860 560 1900 1120 Z', '#9a8a78', 7) + `<path d="M900 1120 L960 600 Q1050 280 1300 240 Q1600 220 1720 380 Q1860 560 1900 1120 Z" fill="url(#rockT)"/>` + blotch(980, 280, 900, 800, 26, ['#7d6e60', '#b4a490'], 3, 30, 90, .35) + P('M1080 520 q60 -20 120 10 M1500 700 q60 -10 110 30 M1200 860 q50 20 110 0', 'none', 5)
     + P('M1300 470 Q1300 380 1400 372 Q1500 380 1500 470 Z', '#1d120c', 6) + G([0, 1, 2, 3].map(i => Ln(1300 + i * 66, 470, 1300 + i * 66, 440, 3, '#fff')).join('') + Ln(1300, 455, 1500, 455, 3, '#fff'))
-    + Ln(1250, 480, 1210, 760, 7, '#a07040') + Ln(1290, 480, 1250, 760, 7, '#a07040') + [0, 1, 2, 3, 4, 5].map(i => Ln(1250 - i * 7, 520 + i * 44, 1290 - i * 7, 520 + i * 44, 6, '#a07040')).join('')
-    + person(1240, 1000, .5, { tunic: 'shirt', hair: 'bun', face: 'happy', L: [-60, -380] }, t) + placeTag('BORDER CAVE', 540, 360, on(0, .5, .2)) + hand('South Africa', 540, 450, 56, K, 'middle', on(0, .5, 1.3))
-    + headline('200,000 YEARS', 560, 640, 120, on(0, .5, 5.0)) + hand('ago', 560, 720, 64, K, 'middle', on(0, .5, 5.4)) + vig(.6) + grain(),
-  () => { const k = prog(lt, 8.2, 10.4); return FULL('#3a2a1e') + layers(260, 220, 1100, [['', '#6a4a30', 90], ['grass', '#cbd38a', 34], ['ash', 'url(#aAsh)', 70], ['grass', '#d4dc92', 30], ['ash', 'url(#aAsh)', 80], ['grass', '#c6cf84', 36], ['ash', 'url(#aAsh)', 70], ['', '#5a3c26', 200]], 1, t, (i, x, y, w, h) => h < 40 ? Array.from({ length: 30 }, (_, j) => Ln(x + j * 36 + 6, y + h * .5, x + j * 36 + 28, y + h * .5 - 4, 3, '#8a9a4a')).join('') : '')
-    + G(P('M0 0 L80 -40 L140 -10 L60 30 Z', '#b0b4b8', 5) + Ln(60, 30, 150, 120, 14, '#7a5230'), 'translate(1200 820)') + lens(1500, 520, 170, `<rect x="1330" y="350" width="340" height="340" fill="#cbd38a"/>` + Array.from({ length: 12 }, (_, j) => P(`M${1360 + j * 26} 600 Q${1370 + j * 26} 520 ${1380 + j * 26} 440`, 'none', 6, '', '#7a8a3a')).join(''), on(1, .5, .6))
-    + headline('OLDEST KNOWN', 960, 110, 96, on(1, .5, .3)) + headline('GRASS BEDS', 960, 990, 130, on(1, .5, .9)) + whip(on(1, .18)) + vig() + grain(); }),
+    + pole(1250, 480, 1200, 820, 14, [.1, .5, .9]) + pole(1300, 480, 1260, 820, 14, [.1, .5, .9]) + [0, 1, 2, 3, 4, 5].map(i => pole(1244 - i * 8, 530 + i * 50, 1294 - i * 7, 530 + i * 50, 9, [])).join('')
+    + person(1240, 1060, .6, { tunic: 'shirt', hair: 'bun', face: 'happy', L: [-60, -380] }, t) + fgFrame('grass') + headline('BORDER CAVE', 520, 340, 96, on(0, .5, .2), '#fff3cf') + hand('South Africa', 520, 420, 60, K, 'middle', on(0, .5, 1.3))
+    + headline('200,000 YEARS', 540, 620, 120, on(0, .5, 5.0)) + hand('ago', 540, 700, 64, K, 'middle', on(0, .5, 5.4)) + grain() + vig(.6),
+  () => FULL('#3a2a1e') + layers(260, 220, 1100, [['', '#6a4a30', 90], ['grass', '#cbd38a', 34], ['ash', 'url(#aAsh)', 70], ['grass', '#d4dc92', 30], ['ash', 'url(#aAsh)', 80], ['grass', '#c6cf84', 36], ['ash', 'url(#aAsh)', 70], ['', '#5a3c26', 200]], 1, t, (i, x, y, w, h) => h < 40 ? Array.from({ length: 30 }, (_, j) => Ln(x + j * 36 + 6, y + h * .5, x + j * 36 + 28, y + h * .5 - 4, 3, '#8a9a4a')).join('') : '')
+    + G(P('M0 0 L80 -40 L140 -10 L60 30 Z', '#b0b4b8', 5) + pole(60, 30, 200, 160, 16, [.3]), 'translate(1180 800)') + lens(1500, 520, 170, `<rect x="1330" y="350" width="340" height="340" fill="#cbd38a"/>` + Array.from({ length: 12 }, (_, j) => P(`M${1360 + j * 26} 600 Q${1370 + j * 26} 520 ${1380 + j * 26} 440`, 'none', 6, '', '#7a8a3a')).join(''), on(1, .5, .6))
+    + headline('OLDEST KNOWN', 960, 110, 96, on(1, .5, .3)) + headline('GRASS BEDS', 960, 990, 130, on(1, .5, .9)) + whip(on(1, .18)) + grain() + vig()),
 // 12 ---------------------------------------------------------------- grass bundles at the back, near the fire
 grass: (lt, D, on, t) => pick(on(1),
-  () => { const w = ease(prog(lt, .3, 4.5)), x = 1500 - w * 760; return caveRoom(t, { mouthX: 1780, mouthY: 380, mouthW: 220, mouthH: 280, fireX: 1000, fireY: 960 }) + grassPile(560, 990, 1.0 + w * .3, t, '#7fae4a', '#4f7a2e')
-      + moss(x, 990, 1.25, { pose: w < 1 ? 'walk' : 'stand', walkSpeed: 6, face: 'happy', flip: 1, L: [-80, -250], R: [80, -250] }, t) + bundle(x, 990 - 1.25 * 1.3 * 250, .9, -6) + campfire(1000, 990, .8, t)
-      + gradeN() + glowAt(1000, 880, 720, 'aFire', .9 * flick(t)) + headline('BROAD-LEAFED GRASS', 960, 190, 96, on(0, .5, .8), '#c9f08a') + hand('near the back, close to the fire', 960, 280, 60, '#fff3cf', 'middle', on(0, .5, 2.6)) + vig() + grain(); },
-  () => caveRoom(t, { mouthX: 1720, mouthY: 470, mouthW: 140, mouthH: 180, fireX: 980, fireY: 960 }) + grassPile(620, 1000, 1.6, t, '#7fae4a', '#4f7a2e') + sleeper(640, 960, 0.84, { moss: 1 }, t) + campfire(980, 990, .9, t)
-      + gradeN() + glowAt(900, 880, 820, 'aFire', 1.0 * flick(t)) + headline('WARMEST + SAFEST', 1220, 260, 110, on(1, .5, .3)) + hand('spot in the house', 1220, 350, 64, '#fff3cf', 'middle', on(1, .5, .8)) + whip(on(1, .18)) + vig() + grain()),
+  () => { const w = ease(prog(lt, .3, 4.5)), x = 1560 - w * 700; return caveRoom(t, { mouthX: 1780, mouthY: 380, mouthW: 220, mouthH: 280, fireX: 1000, fireY: 960, view: 'night' }) + grassPile(520, 1000, 1.0 + w * .4, t, '#7fae4a', '#4f7a2e') + campfire(1060, 1000, .85, t)
+      + moss(x, 1150, 1.75, { pose: w < 1 ? 'walk' : 'stand', walkSpeed: 6, face: 'happy', flip: 1, L: [-80, -250], R: [80, -250] }, t) + bundle(x, 1150 - 1.75 * 1.3 * 250, 1.25, -6) + swooshes(x + 260, 640, 80, 0, t, 2)
+      + gradeN() + glowAt(1040, 880, 760, 'aFire', .9 * flick(t)) + fgFrame('cave', { night: 1, dim: .55 }) + headline('BROAD-LEAFED GRASS', 960, 170, 96, on(0, .5, .8), '#c9f08a') + hand('near the back, close to the fire', 960, 260, 62, '#fff3cf', 'middle', on(0, .5, 2.6)) + grain() + vig(); },
+  () => caveRoom(t, { mouthX: 1720, mouthY: 470, mouthW: 140, mouthH: 180, fireX: 980, fireY: 960, view: 'night' }) + grassPile(860, 1010, 2.0, t, '#7fae4a', '#4f7a2e') + sleeper(880, 990, .95, { moss: 1 }, t) + campfire(1300, 1010, 1.0, t)
+      + gradeN() + glowAt(1080, 920, 860, 'aFire', 1.0 * flick(t)) + fgFrame('cave', { night: 1, dim: .5 }) + headline('WARMEST + SAFEST', 1240, 240, 110, on(1, .5, .3)) + hand('spot in the house', 1240, 330, 64, '#fff3cf', 'middle', on(1, .5, .8)) + whip(on(1, .18)) + grain() + vig()),
 // 13 ---------------------------------------------------------------- the clever part: ash underneath
 ash: (lt, D, on, t) => pick(on(1),
-  () => { const tap = Math.abs(Math.sin(t * 9)) * 10; return caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 220, mouthH: 260, fireX: 1300 }) + push(moss(900, 1080, 1.8, { face: 'determined', R: [72, -460 - tap], L: [-40, -170] }, t), 1.0, 900, 700)
-      + ember(1040, 160 + Math.sin(t * 3) * 8, 2.2, t) + C(1040, 160 + Math.sin(t * 3) * 8, 48, 'none', 5) + P(`M1020 ${206 + Math.sin(t * 3) * 8} L1060 ${206 + Math.sin(t * 3) * 8} M1024 ${222 + Math.sin(t * 3) * 8} L1056 ${222 + Math.sin(t * 3) * 8}`, 'none', 7, '', '#9a8a7a') + gradeN() + glowAt(1040, 200, 300, 'aFire', .8) + headline('THE CLEVER PART', 1450, 560, 92, on(0, .5, .3), '#ffe08a', 'middle', -4) + vig() + grain(); },
-  () => { const k = prog(lt, 1.9, 3.6); return FULL('#2c1d14') + blotch(0, 0, 1920, 1080, 30, ['#4a3020', '#1d120c'], 2, 60, 200, .4) + layers(360, 330, 1000, [['GRASS', '#7fae4a', 150], ['ASH', 'url(#aAsh)', 180], ['cave floor', '#6a4a30', 170]], k, t, (i, x, y, w, h) => i === 0 ? Array.from({ length: 34 }, (_, j) => P(`M${x + j * 30} ${y + h} Q${x + j * 30 + 10} ${y + h * .4} ${x + j * 30 + 22} ${y - 20}`, 'none', 5, '', j % 2 ? '#a8d36a' : '#4f7a2e')).join('') : i === 1 ? blotch(x, y + 10, w, h - 20, 40, ['#e8e6e0', '#6a6660'], 4, 4, 12, .7) : '')
-      + moss(250, 1000, 1.15, { face: 'wide', R: [70, -300], L: [-40, -150] }, t) + headline('UNDERNEATH: ASH', 960, 170, 110, on(1, .5, .6)) + whip(on(1, .18)) + vig(.7) + grain(); }),
+  () => { const tap = Math.abs(Math.sin(t * 9)) * 10, by = 150 + Math.sin(t * 3) * 8; return caveRoom(t, { mouthX: 1700, mouthY: 380, mouthW: 220, mouthH: 260, fireX: 1300, view: 'night' }) + moss(820, 1200, 2.0, { face: 'determined', R: [72, -460 - tap], L: [-40, -170] }, t)
+      + ember(1080, by, 2.2, t) + C(1080, by, 48, 'none', 5) + P(`M1060 ${by + 46} L1100 ${by + 46} M1064 ${by + 62} L1096 ${by + 62}`, 'none', 7, '', '#9a8a7a') + swooshes(980, 240, 70, -40, t, 2) + gradeN() + glowAt(1080, by, 300, 'aFire', .8)
+      + fgFrame('cave', { night: 1, dim: .55 }) + headline('THE CLEVER PART', 1480, 560, 92, on(0, .5, .3), '#ffe08a', 'middle', -4) + grain() + vig(); },
+  () => { const k = prog(lt, 1.9, 3.6); return FULL('#2c1d14') + blotch(0, 0, 1920, 1080, 30, ['#4a3020', '#1d120c'], 2, 60, 200, .4) + layers(420, 330, 980, [['GRASS', '#7fae4a', 150], ['ASH', 'url(#aAsh)', 180], ['cave floor', '#6a4a30', 170]], k, t, (i, x, y, w, h) => i === 0 ? Array.from({ length: 33 }, (_, j) => P(`M${x + j * 30} ${y + h} Q${x + j * 30 + 10} ${y + h * .4} ${x + j * 30 + 22} ${y - 20}`, 'none', 5, '', j % 2 ? '#a8d36a' : '#4f7a2e')).join('') : i === 1 ? blotch(x, y + 10, w, h - 20, 40, ['#e8e6e0', '#6a6660'], 4, 4, 12, .7) : '')
+      + moss(230, 1140, 1.6, { face: 'wide', R: [80, -310], L: [-40, -150] }, t) + headline('UNDERNEATH: ASH', 960, 170, 110, on(1, .5, .6)) + whip(on(1, .18)) + grain() + vig(.7); }),
 // 14 ---------------------------------------------------------------- a bug barrier
 ash_why: (lt, D, on, t) => pick(on(1),
-  () => { const m = prog(lt, 0, 2.2); return FULL('#5a3a26') + blotch(0, 0, 1920, 1080, 40, ['#7a5236', '#3e2618', '#8a6040'], 6, 40, 160, .35) + P('M980 1100 Q960 700 1300 640 Q1700 600 1960 660 L1960 1100 Z', 'url(#aAsh)', 7) + blotch(1000, 650, 960, 450, 60, ['#f0eee8', '#7a7670'], 9, 6, 18, .6)
-      + [0, 1, 2, 3, 4, 5].map(i => { const x = Math.min(-80 + i * 150 + m * 700, 760 + i * 30 - (5 - i) * 6), y = 820 + (i % 2) * 70, st = x >= 760 + i * 30 - (5 - i) * 6 - 1; return ant(x, y, 3.6, t, i, st) + (st && lt > 2 ? headline('?', x + 40, y - 70, 60, 1, '#fff') : ''); }).join('')
-      + beetle(Math.min(-100 + lt * 300, 600), 980, 1.2, t, { slow: lt > 2.4 }) + headline('BUG BARRIER', 960, 230, 150, on(0, .5, .8)) + hand('scientists think', 960, 330, 60, '#fff3cf', 'middle', on(0, .5, 1.3)) + vig() + grain(); },
-  () => { const c = (lt - 2.71) % 2.2; return FULL('#5a3a26') + push(P('M-40 820 Q500 760 960 790 Q1500 770 1960 820 L1960 1120 L-40 1120 Z', 'url(#aAsh)', 7) + blotch(0, 780, 1920, 330, 70, ['#f0eee8', '#7a7670'], 3, 6, 22, .6)
+  () => { const m = prog(lt, 0, 2.2); return FULL('#5a3a26') + blotch(0, 0, 1920, 1080, 40, ['#7a5236', '#3e2618', '#8a6040'], 6, 40, 160, .35) + G(rock(300, 560, 600, 300, '#6a5a4a') + rock(1600, 520, 700, 260, '#6a5a4a'), '', 'filter="url(#aFar)" opacity=".7"') + P('M980 1100 Q960 700 1300 640 Q1700 600 1960 660 L1960 1100 Z', 'url(#aAsh)', 7) + blotch(1000, 650, 960, 450, 60, ['#f0eee8', '#7a7670'], 9, 6, 18, .6)
+      + [0, 1, 2, 3, 4, 5].map(i => { const x = Math.min(-80 + i * 150 + m * 700, 760 + i * 30 - (5 - i) * 6), y = 820 + (i % 2) * 70, st = x >= 760 + i * 30 - (5 - i) * 6 - 1; return ant(x, y, 3.6, t, i, st) + (st && lt > 2 ? headline('?', x + 40, y - 80, 64, 1, '#fff') : ''); }).join('')
+      + beetle(Math.min(-100 + lt * 300, 600), 1000, 1.4, t, { slow: lt > 2.4 }) + G(rock(80, 1130, 360, 160, '#7a6a5a') + rock(1840, 1130, 300, 140, '#8a7a6a'), '', '') + headline('BUG BARRIER', 960, 230, 150, on(0, .5, .8)) + hand('scientists think', 960, 330, 60, '#fff3cf', 'middle', on(0, .5, 1.3)) + grain() + vig(); },
+  () => { const c = (lt - 2.71) % 2.2; return FULL('#5a3a26') + G(rock(400, 620, 700, 300, '#6a5a4a') + rock(1500, 600, 800, 280, '#6a5a4a'), '', 'filter="url(#aFar)" opacity=".6"') + push(P('M-40 820 Q500 760 960 790 Q1500 770 1960 820 L1960 1120 L-40 1120 Z', 'url(#aAsh)', 7) + blotch(0, 780, 1920, 330, 70, ['#f0eee8', '#7a7670'], 3, 6, 22, .6)
       + beetle(900 + Math.sin(lt * 2) * 10, 830, 4.2, t, { slow: 1 }) + E(900, 900, 520, 90, '#bdb9b2', 6) + blotch(420, 840, 960, 110, 50, ['#e8e6e0', '#8a8680'], 11, 4, 14, .7) + puff(1250, 640, 2.4, c / 1.2) + headline('*cough*', 1450, 520, 70, c > .1 && c < 1.4 ? 1 : 0, '#fff', 'middle', -8), 1 + .05 * prog(lt, 2.71, D), 960, 760)
-      + headline('POWDER = HARD TO CRAWL', 960, 170, 88, on(1, .5, .6)) + hand('and it clogs their breathing holes', 960, 260, 60, '#fff3cf', 'middle', on(1, .5, 3.8)) + whip(on(1, .18)) + vig() + grain(); }),
+      + headline('POWDER = HARD TO CRAWL', 960, 170, 88, on(1, .5, .6)) + hand('and it clogs their breathing holes', 960, 260, 60, '#fff3cf', 'middle', on(1, .5, 3.8)) + whip(on(1, .18)) + grain() + vig(); }),
 };
 for (const k in A) SC[k] = (lt, D, on, t) => DEF + A[k](lt, D, on, t);
 })();
