@@ -3,7 +3,10 @@
 Script + sources + STYLE: `whatif/what-if-levelup/` (script.md, sources.md, **STYLE.md: read it first, its DO/DON'T list is mandatory**).
 Voice landed: Fenrir, `input/voiceover.wav` 418.97 s, 1,003 words, transcribe 95%; `timeline/words.json` is the word clock.
 
-## WHY THIS EPISODE IS DIFFERENT: an ART UPGRADE (owner: "the art looks off, the next one we make better")
+## OWNER DECISION (Oct 31): ep 5 uses the SAME CLASSIC STYLE as eps 1-4 (aitrends kit: black round heads, rig2d actors, giantFace, ruleCard, bp blueprints).
+The rig5/town5 look-dev below is SHELVED (kept on the worker branches, not used). KEEP from Stage 0: sets/statcard.js (H2: The Zip + Stat Card + LEVEL UP pop) and sets/fx5.js (H3: steam aura, bloom, slow-mo, ground crack...), both integrated here, plus all the ep 1-4 sets (home3 kitchen/bedroom, apartment living room, garden driveway/lawn/patio, park at night, street). HERO = cast.js (navy jacket, chestnut spiky hair via faces.js; draw the cyan zip/cuff trim locally).
+
+## (shelved) WHY THIS EPISODE WAS GOING TO BE DIFFERENT: an ART UPGRADE (owner: "the art looks off, the next one we make better")
 The owner wants a leveling-anime FEEL (dark ink-navy night, cyan holographic stat card, gold LEVEL UP pop, bloom, rim light, steam aura,
 low angles, smash cuts, hype level-ups) with ORIGINAL designs (STYLE.md DON'T list: nothing copied from the series that inspired it).
 The old flat black-round-head look is NOT good enough for this one. Stage 0 builds NEW, sharper models and look-dev frames that the OWNER
