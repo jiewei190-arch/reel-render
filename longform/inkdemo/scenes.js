@@ -12,4 +12,15 @@ demo_props: (lt, D, on, t) => caveInside(t, true) + campfire(1720, 990, .7, t)
   + ['sleepy', 'happy', 'tired', 'worried', 'shocked', 'grumpy', 'asleep'].map((f, i) => G(headInk({ hairclip: i === 0 ? 'bone' : '' }, f, t, i + 1, 58), `translate(${130 + i * 132} 140) scale(.85)`) + hand(f, 130 + i * 132, 250, 32, '#fff')).join('')
   + ashLayer(460, 470, 640, .8) + scienceCard(1460, 250, '18 MIN', 'awake at night', 1, -3, .8) + wristband(1580, 470, 1.1, { txt: '6:42' }, t) + clock(1180, 520, .8, 4.2) + hourglass(1440, 720, .7, .6, t)
   + camphor(260, 1010, .9, -10) + nestTree(820, 1080, .62, t, { chimp: 1 }) + fireLight(1720, 950, 700, t) + vignette(),
+// the owner's reference composition, redrawn in code: kneeling bow-drill fire-starting in front of a thatched hut, village + lake behind
+demo_ref: (lt, D, on, t) => { const bx = 640, by = 1040, k = 1.72 * 1.3, B = (wx, wy) => [(wx - bx) / k, (wy - by) / k];
+  const sx = 990, top = 520, base = 940, d = Math.sin(t * 14) * 70;
+  return village(t) + thatchHut(1700, 700, .7) + rock(1450, 820, 260, 120, '#b8a48a') + thatchHut(190, 900, 1.9) + rock(160, 990, 300, 120, '#b8a48a')
+  + logs(1040, 1050, 1.1, 1) + pole(820, base + 30, 1260, base + 40, 60, '#b07a42') + pole(840, base - 20, 1230, base - 12, 54, '#a7743f')
+  + moss(bx, by, 1.72, { pose: 'kneel', face: 'focused', L: B(330 + d, 700), R: B(sx - 16, top + 10), seed: 3 }, t)
+  + pole(sx, top + 10, sx, base, 30, '#b07a42') + `<ellipse cx="${sx}" cy="${top}" rx="70" ry="24" fill="#9b6a3a" stroke="${K}" stroke-width="6"/>` + P(`M${sx - 14} ${base} L${sx} ${base + 50} L${sx + 14} ${base} Z`, '#a9adb3', 5)
+  + pole(300 + d, 700, 1500 + d, 740, 36, '#a7743f') + lashing(1490 + d, 740, 40, 90) + lashing(330 + d, 702, 40, 90) + Ln(320 + d, 690, sx, 650, 3.5, '#f0e6d0') + Ln(sx, 700, 1480 + d, 724, 3.5, '#f0e6d0') + lashing(sx, 676, 36, 90, '#e8dcc0')
+  + spinRings(sx, 560, 90, t, 4, 90) + swoosh(260 + d, 700, 90, 70, 140, 250, 7) + swoosh(1560 + d, 740, 90, 70, -70, 40, 7) + dust(sx, base + 40, 1.6, t)
+  + spear(300, 1040, 1.3, 7) + spear(1500, 960, 1.05, -6) + basket(1800, 1080, 1.6) + warmGrade(.3) + grain(.7) + vignette(); },
+
 };
