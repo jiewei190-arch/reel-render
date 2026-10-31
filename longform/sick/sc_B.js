@@ -1,4 +1,5 @@
 // sick/sc_B.js (H3): scenes 15-29, shanidar_age ... ensisheim. Each fn(lt, D, on, t) -> svg (pattern: ../teeth/scenes.js). ink.js current.
+// SLIDESHOW: one complete still per narration line (see the wrapper at the bottom); the on(i) calls only choose which line's picture shows.
 // Composed like REFERENCE_owner_style.png: low camera, a big character up front, mid-ground action, soft-focus far world, sharp foreground
 // props framing the shot, stipple over everything, white swoosh motion arcs. KID-SAFE: no wounds, no blood, no surgery shown; bones and
 // skulls are friendly museum-style drawings; the trepanation patient is only a peaceful sleeping face.
@@ -87,7 +88,7 @@
   function timeline(x0, x1, y, p) { return P(`M${x0} ${y} L${f1(lerpN(x0, x1, ease(p)))} ${y}`, 'none', 12, '', '#7a5230') + [...Array(11)].map((_, i) => { const x = lerpN(x0, x1, i / 10); return i / 10 <= p ? Ln(x, y - 16, x, y + 16, 6) : ''; }).join(''); }
   function marker(x, y, label, sub, p, col = '#fff6d8') { if (p <= 0) return ''; return popAt(x, y, p, P(`M${x} ${y} L${x - 30} ${y - 60} L${x + 30} ${y - 60} Z`, '#e8453c', 5) + card(x, y - 140, 300, 120, col, 1) + headline(label, x, y - 140, 52, 1, '#ffffff') + hand(sub, x, y - 96, 34, K)); }
 
-  Object.assign(SC, {
+  const SCN = {
     // 15 all those injuries had healed; he lived to around forty, or even older
     shanidar_age: (lt, D, on, t) => {
       if (on(1, .01) > 0) { const l1 = lt - 2.45;
@@ -194,7 +195,7 @@
       if (on(1, .01) > 0) { const up = ease(clamp((lt - 3.5) / 4)) * 120;
         return DEF + karst(t, 700) + P('M-20 1100 L-20 900 Q600 820 1100 560 Q1500 360 1940 300 L1940 1100 Z', 'url(#k_lime)', 6) + `<path d="M-20 1100 L-20 900 Q600 820 1100 560 Q1500 360 1940 300 L1940 1100 Z" fill="url(#rockT)"/>`
           + G(person(760, 900, 1.25, { face: 'determined', seed: 60, hair: 'long', R: [60, -150], L: [-60, -240] }, t) + crutch(760 + 60 * 1.62, 900 - 150 * 1.62, 760 + 80 * 1.62, 900) + person(980, 820, 1.2, { face: 'happy', seed: 65, L: [-110, -230] }, t) + basket(1000, 640, .55) + person(560, 960, 1.15, { face: 'smile', seed: 66, R: [110, -200] }, t), `translate(${f1(up)} ${f1(-up * .6)})`)
-          + jungleFg(-1) + hand('a lot of help, for a lot of years', 1480, 960, 62, K, 'middle', on(1, .5, .6)) + fin(false, 59); }
+          + jungleFg(-1) + hand('a lot of help, for a lot of years', 1380, 960, 62, K, 'middle', on(1, .5, .6)) + fin(false, 59); }
       return DEF + karst(t, 820) + P('M800 1100 Q900 900 1100 760 Q1300 600 1500 420', 'none', 40, '', '#c8b48a') + person(820, 1060, .9, { face: 'worried', seed: 60, hair: 'long', R: [60, -150] }, t) + crutch(820 + 60 * 1.17, 1060 - 150 * 1.17, 820 + 80 * 1.17, 1060)
         + jungleFg(1) + jungleFg(-1) + headline('STEEP, ROCKY HILLS', 960, 170, 110, on(0, .5, .8)) + fin(false, 60);
     },
@@ -204,7 +205,7 @@
       return DEF + caveIn(t, 960) + R(120, 300, 1680, 420, '#c8a880', `stroke="${K}" stroke-width="6" rx="30"`) + stipple(120, 300, 1680, 420, '#5a3a20', 300, 13, .35) + timeline(200, 1720, 620, on(0, 1.2, .2))
         + marker(1560, 600, '~7,000', 'FRANCE', on(0, .5, 2.4)) + farmer(1720, 1060, 1.1, t, jaw) + marker(bx, 600, '~31,000', 'BORNEO', on(0, .5, 3.8), '#e8ffd8')
         + (slide > 0 && slide < 1 ? [0, 1, 2, 3].map(i => Ln(bx + 160 + i * 60, 450 + i * 30, bx + 320 + i * 60, 450 + i * 30, 6, '#fff')).join('') : '') + headline('+24,000 YEARS', 960, 180, 120, on(1, .5, .6))
-        + moss(150, 1110, .9, { face: jaw ? 'shocked' : 'happy', R: [140, -280] }, t) + fin(false, 61);
+        + moss(240, 1110, .9, { face: jaw ? 'shocked' : 'happy', R: [140, -280] }, t) + fin(false, 61);
     },
     // 27 an even stranger kind of Stone Age surgery... it involves the head (Moss covers his head; a friendly museum skull)
     trepan_tease: (lt, D, on, t) => {
@@ -229,7 +230,17 @@
       return DEF + farmland(t) + dirt(820, '#a87a48', 15) + E(1000, 900, 420, 70, '#5a3a20', 0, 'opacity=".35"') + skeletonLying(1000, 900, 1.0) + person(620, 1070, 1.3, { tunic: 'coat', face: 'determined', hair: 'none', seed: 91, pose: 'sit', R: [130, -120] }, t)
         + person(1420, 1070, 1.25, { tunic: 'shirt', face: 'happy', hair: 'bun', seed: 92, pose: 'sit', flip: 1 }, t) + placeTag('ENSISHEIM, FRANCE', 1500, 420, on(0, .5, 1.0)) + yearBanner('~7,000 YEARS AGO', on(0, .5, 2.8)) + fin(false, 66);
     },
-  });
+  };
+  // SLIDESHOW format (owner, Oct 31): slideshow.py grabs ONE still per narration line (near the line's end) and adds the Ken Burns move and
+  // crossfades. So every element of a line shows in full from the moment the line starts (no reveal timing), and each line gets its own
+  // camera framing (CAMS, cycled per line) so consecutive stills never share a frame.
+  const CAMS = [[1, 960, 200], [1.05, 860, 200], [1.04, 1080, 200]];
+  for (const id in SCN) SC[id] = (lt, D, on, t) => {
+    let li = 0; while (li < 4 && on(li + 1, 1e-4) > 0) li++;
+    const step = (k) => (on(k, 1e-4) > 0 ? 1 : 0);
+    const svg = SCN[id](lt, D, step, t), [z, cx, cy] = CAMS[(li + (id.length % 2)) % CAMS.length];
+    return z === 1 ? svg : `<g transform="translate(${cx} ${cy}) scale(${z}) translate(${-cx} ${-cy})">${svg}</g>`;
+  };
   function medValleyDry(t) { return sky('skyWarm') + sun(1640, 160, 52, t) + blurLayer(mountains(540, '#a89aa0', true, 7) + haze(580, 150), 3) + blurLayer(hills(660, '#c8b070', 5, 40), 2) + ground(780, '#d6b878') + stipple(0, 800, 1920, 280, '#6a5a2a', 260, 4, .3); }
   function FXstar5(x, y, t) { const k = (.7 + .3 * Math.sin(t * 5)) * 26; return P(`M${x} ${f1(y - k)} L${f1(x + k * .25)} ${f1(y - k * .25)} L${f1(x + k)} ${y} L${f1(x + k * .25)} ${f1(y + k * .25)} L${x} ${f1(y + k)} L${f1(x - k * .25)} ${f1(y + k * .25)} L${f1(x - k)} ${y} L${f1(x - k * .25)} ${f1(y - k * .25)} Z`, '#fff6b0', 3); }
 })();
