@@ -1,0 +1,98 @@
+{
+ "name": "fire",
+ "title": "How Did Cavemen Make Fire? (400,000-Year-Old Sparks!)",
+ "voice": {
+  "af_heart": 0.5,
+  "bf_emma": 0.5
+ },
+ "lang": "en-gb",
+ "speed": 0.95,
+ "format": "reel",
+ "scenes": [
+  {
+   "v": "hook_fire",
+   "lines": [
+    "The oldest proof of people making fire was found in England.",
+    "And it's about four hundred thousand years old."
+   ]
+  },
+  {
+   "v": "hook_q",
+   "lines": [
+    "So how did cavemen make fire?"
+   ]
+  },
+  {
+   "v": "meet_moss",
+   "lines": [
+    "Meet Moss. He's rubbing sticks. Nothing."
+   ]
+  },
+  {
+   "v": "wonderwerk",
+   "lines": [
+    "Surprise one: using fire is even older.",
+    "In Wonderwerk Cave, South Africa, there's ash and burnt bone from about a million years ago."
+   ]
+  },
+  {
+   "v": "use_vs_make",
+   "lines": [
+    "But using fire isn't making it.",
+    "Maybe they grabbed flames from wildfires."
+   ]
+  },
+  {
+   "v": "barnham",
+   "lines": [
+    "Surprise two: at Barnham, people lit fires in one spot, again and again.",
+    "It got hotter than seven hundred degrees."
+   ]
+  },
+  {
+   "v": "pyrite",
+   "lines": [
+    "Surprise three: two little pieces of a rock called pyrite.",
+    "Strike it with flint, and you get sparks."
+   ]
+  },
+  {
+   "v": "brought",
+   "lines": [
+    "Pyrite isn't found naturally there.",
+    "So someone probably brought it, to start fires."
+   ]
+  },
+  {
+   "v": "who",
+   "lines": [
+    "Who? Experts think early Neanderthals."
+   ]
+  },
+  {
+   "v": "handaxes",
+   "lines": [
+    "Surprise four: Neanderthals in France left clues too.",
+    "Scratches on their hand axes suggest striking pyrite for sparks."
+   ]
+  },
+  {
+   "v": "sticks",
+   "lines": [
+    "Rubbing sticks? Maybe. But wood rots, so there's no proof that old."
+   ]
+  },
+  {
+   "v": "moss_spark",
+   "lines": [
+    "Moss tried pyrite. A spark! Right onto his hair."
+   ]
+  },
+  {
+   "v": "follow",
+   "lines": [
+    "Follow for more Stone Age Stories."
+   ]
+  }
+ ]
+}
