@@ -6,10 +6,16 @@ def ts(t):
     t = max(0.0, t); return f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
 # group 3 words per caption, current word highlighted yellow
 lines = []
-for i in range(0, len(W), 3):
-    g = W[i:i+3]
+import re
+groups, cur = [], []                      # up to 3 words per caption, never across a sentence end
+for w in W:
+    cur.append(w)
+    if len(cur) == 3 or re.search(r'[.!?]["”]?$', w['word'].strip()): groups.append(cur); cur = []
+if cur: groups.append(cur)
+for gi, g in enumerate(groups):
+    nxt = groups[gi + 1][0]['start'] if gi + 1 < len(groups) else None
     for j, w in enumerate(g):
-        s = w['start'] - t0; e = (g[j+1]['start'] if j+1 < len(g) else (W[i+3]['start'] if i+3 < len(W) else w['end'] + 0.4)) - t0
+        s = w['start'] - t0; e = (g[j+1]['start'] if j+1 < len(g) else (min(nxt, w['end'] + 0.4) if nxt else w['end'] + 0.4)) - t0
         txt = ' '.join(('{\\c&H00E6FF&}' + x['word'].strip().upper() + '{\\c&HFFFFFF&}') if k == j else x['word'].strip().upper() for k, x in enumerate(g))
         lines.append(f"Dialogue: 0,{ts(s)},{ts(e)},Cap,,0,0,0,,{txt}")
 dur = t1 - t0
