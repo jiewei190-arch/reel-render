@@ -727,5 +727,71 @@ function skull(x, y, s = 1, o = {}) {
 function birchFungus(x, y, s = 1) { const lump = (cx, cy, r, c) => P(`M${cx - r} ${cy} Q${cx - r * 1.1} ${cy - r * .9} ${cx - r * .2} ${cy - r} Q${cx + r * .9} ${cy - r * 1.05} ${cx + r} ${cy - r * .1} Q${cx + r * 1.05} ${cy + r * .9} ${cx + r * .1} ${cy + r * .95} Q${cx - r * .9} ${cy + r} ${cx - r} ${cy} Z`, c, 4.5) + `<path d="M${cx - r * .5} ${cy - r * .3} q${r * .3} -${r * .25} ${r * .6} 0" stroke="#fff" stroke-width="3" fill="none" opacity=".45"/>`; return G(P('M-110 -70 Q0 -20 110 -70', 'none', 5, '', '#6a4424') + P('M-44 -44 L-46 10 M48 -44 L50 24', 'none', 3.5, '', '#6a4424') + C(-44, -44, 6, '#6a4424', 0) + C(48, -44, 6, '#6a4424', 0) + lump(-46, 30, 26, '#cbb48a') + lump(50, 46, 22, '#b8946a') + speckle(`M-72 30 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0`, .6), `translate(${x} ${y}) scale(${s})`); }
 function backpackFrame(x, y, s = 1) { return G(P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 18, '', '#8a6a3a') + P('M-70 0 L-70 -300 Q0 -380 70 -300 L70 0', 'none', 6, 'opacity=".4"', '#c8a070') + `<rect x="-80" y="-120" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/><rect x="-80" y="-230" width="160" height="20" rx="6" fill="url(#wood)" stroke="${K}" stroke-width="4"/>` + lashing(-70, -110, 24, 90) + lashing(70, -110, 24, 90) + lashing(-70, -220, 24, 90) + lashing(70, -220, 24, 90), `translate(${x} ${y}) scale(${s})`); }
 
-/* __INK_EXPORTS__ */ Object.assign(globalThis, { K, clamp, ease, easeIO, back, rad, f1, G, P, C, Ln, E, SH, popAt, fade, hash, DEFS, ik, eyes, mouth, FACE_ALIAS, faceInk, hairInk, boneClip, headInk, PS, jaw, handDot, tunicInk, upperInk, person, lying, moss, held, sky, paper, grain, vignette, haze, blotches, sun, moon, fullMoon, stars, cloud, mountains, hills, ground, grass, grassField, foliage, acacia, pine, poplar, oak, bush, rock, caveMouth, campfire, fireLight, hearth, caveInside, rain, snow, hut, treeLine, lightWash, stipple, grassHut, wheat, field, backdrop, zzz, grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator, wristband, clock, hourglass, scienceCard, tooth, bug, sugarCube, acorn, flint, bowdrill, honey, bee, mold, dna, microscope, bowl, loaf, pot, chair, esc, headline, hand, placeTag, yearBanner, arrow, cross, check, card, lens, blurLayer, speckle, warmGrade, lake, pineForest, pole, lashing, thatchHut, dirt, spear, basket, logs, swoosh, spinRings, dust, village, tattooDashes, palm, fern, vine, limestoneCave, rainforest, orangutan, herbBundle, skull, birchFungus, backpackFrame });
+// ---------- v2.5: pets (Stone Age Stories) ----------
+// a CUTE puppy: big round head, huge shiny eyes, floppy ears, round body, stubby legs, wagging tail.
+//   o: { pose: 'sit'|'lie'|'run'|'curl', mood: 'happy'|'sad'|'sick'|'sleep'|'beg', col, col2, carry: 'drumstick', flip, wag }
+function puppy(x, y, s = 1, o = {}, t = 0) {
+  const col = o.col || '#c89a64', c2 = o.col2 || '#f4e2c4', dk = '#7a5634', pose = o.pose || 'sit', mood = o.mood || 'happy';
+  const sick = mood === 'sick', sleep = mood === 'sleep' || pose === 'curl', wag = (o.wag ?? (sick || sleep ? 0 : 1)) * Math.sin(t * 14) * 18;
+  let g = '', hx = 0, hy = -120, tilt = 0;
+  const leg = (lx, ly, l = 34) => P(`M${lx} ${ly} L${lx} ${ly + l}`, 'none', 20, '', K) + P(`M${lx} ${ly} L${lx} ${ly + l}`, 'none', 13, '', col) + E(lx + 3, ly + l + 2, 13, 8, c2, 4);
+  const tail = (tx, ty, a) => G(P('M0 0 Q-10 -30 6 -52', 'none', 16, '', K) + P('M0 0 Q-10 -30 6 -52', 'none', 9, '', col) + C(6, -54, 7, c2, 3.5), `translate(${tx} ${ty}) rotate(${f1(a)})`);
+  if (pose === 'sit') { g += tail(-46, -40, -30 + wag) + E(0, -48, 52, 50, col, 6) + E(10, -36, 26, 30, c2, 0) + leg(-24, -30, 30) + leg(22, -30, 30) + E(-40, -8, 26, 14, col, 5); hy = -118; }
+  else if (pose === 'run') { const ph = Math.sin(t * 16); g += tail(-62, -64, -60 + wag) + leg(-40, -56, 34 + ph * 6) + leg(34, -56, 34 - ph * 6) + E(-4, -64, 64, 40, col, 6) + E(8, -54, 30, 18, c2, 0) + leg(-24, -54, 36 - ph * 8) + leg(48, -56, 36 + ph * 8); hx = 66; hy = -104; tilt = 8; }
+  else { g += tail(-70, -24, -100 + wag * .4) + E(0, -30, 74, 32, col, 6) + E(10, -20, 40, 14, c2, 0) + E(56, -8, 22, 12, c2, 4) + E(-50, -6, 22, 12, c2, 4); hx = 70; hy = -48; tilt = pose === 'curl' ? 10 : 0; }
+  if (o.blanket) g += P('M-110 -10 Q-100 -90 -10 -96 Q90 -100 110 -30 Q100 10 -100 6 Z', 'url(#fur)', 5) + SH('M-110 -10 Q-100 -90 -10 -96 Q90 -100 110 -30 Q100 10 -100 6 Z', 'darkBot');
+  // head: ears behind, head, muzzle, eyes, nose, mouth
+  let h = '';
+  const earDrop = sick || mood === 'sad' ? 18 : 0;
+  h += E(-50, -6 + earDrop, 20, 38, dk, 5, `transform="rotate(${20 + earDrop} -50 ${-6 + earDrop})"`) + E(50, -6 + earDrop, 20, 38, dk, 5, `transform="rotate(${-20 - earDrop} 50 ${-6 + earDrop})"`);
+  h += C(0, 0, 56, col, 6) + `<ellipse cx="-14" cy="-18" rx="22" ry="14" fill="#fff" opacity=".22"/>` + E(0, 22, 32, 24, c2, 4);
+  if (sleep || (sick && o.eyesClosed)) h += P('M-34 -6 q12 10 24 0 M10 -6 q12 10 24 0', 'none', 5);
+  else { const ey = sick ? 6 : 0, er = mood === 'beg' ? 19 : 16; for (const ex of [-22, 22]) h += C(ex, -4 + ey, er, K, 0) + C(ex - 5, -10 + ey, er * .38, '#fff', 0) + C(ex + 5, 2 + ey, er * .16, '#fff', 0); if (sick) h += P('M-40 -14 l16 6 M40 -14 l-16 6', 'none', 4); }
+  h += E(0, 12, 11, 8, K, 0) + C(-3, 9, 3, '#fff', 0);
+  h += mood === 'happy' || mood === 'beg' ? P('M-14 26 Q0 40 14 26', 'none', 4) + (o.carry ? '' : P('M-6 32 Q0 50 8 34', '#ff8fa0', 3)) : sick || mood === 'sad' ? P('M-12 34 Q0 26 12 34', 'none', 4) : P('M-8 30 L8 30', 'none', 4);
+  if (sick) h += `<circle cx="0" cy="-10" r="90" fill="#ff8a5a" opacity=".16"/>` + E(46, -30, 6, 9, '#8fd3ff', 3);
+  if (mood === 'happy' || mood === 'beg') h += E(-36, 18, 9, 5, '#ff9a9a', 0, 'opacity=".55"') + E(36, 18, 9, 5, '#ff9a9a', 0, 'opacity=".55"');
+  if (o.carry === 'drumstick') h += G(P('M-10 0 L40 -6', 'none', 12, '', '#f2ead6') + C(46, -12, 9, '#f2ead6', 4) + C(46, 0, 9, '#f2ead6', 4) + P('M-60 6 Q-70 -26 -36 -30 Q-6 -30 -2 0 Q-20 22 -60 6 Z', '#b0602a', 5) + `<path d="M-52 -6 q14 -14 34 -12" stroke="#e8a060" stroke-width="5" fill="none"/>`, 'translate(10 34) rotate(-10)');
+  g += G(h, `translate(${hx} ${hy}) rotate(${tilt}) scale(${pose === 'lie' || pose === 'curl' ? .9 : 1})`);
+  if (sleep && o.zzz !== false) g += zzz(hx + 50, hy - 70, .55, t);
+  return G(E(0, 4, 80, 10, '#24140a', 0, 'opacity=".25"') + g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
+}
+// an adult wolf-like Stone Age dog (grey), o: { pose: 'sit'|'walk'|'lie', flip, col, mood: 'happy'|'calm'|'sleep' }
+function dog(x, y, s = 1, o = {}, t = 0) {
+  const col = o.col || '#8a8478', c2 = o.col2 || '#e4ddd0', pose = o.pose || 'sit', sleep = o.mood === 'sleep' || pose === 'lie', ph = Math.sin(t * 9);
+  const leg = (lx, ly, l, k = 0) => P(`M${lx} ${ly} L${lx + k} ${ly + l}`, 'none', 22, '', K) + P(`M${lx} ${ly} L${lx + k} ${ly + l}`, 'none', 15, '', col) + E(lx + k + 5, ly + l + 2, 13, 7, col, 4);
+  let g = '', hx = 96, hy = -150;
+  if (pose === 'walk') { g += P(`M-92 -110 Q-140 ${-110 + ph * 6} -150 -60`, 'none', 26, '', K) + P(`M-92 -110 Q-140 ${-110 + ph * 6} -150 -60`, 'none', 18, '', col) + leg(-70, -100, 100, ph * 14) + leg(60, -100, 100, -ph * 14) + E(-6, -116, 104, 40, col, 6) + E(10, -96, 60, 16, c2, 0) + leg(-50, -96, 96, -ph * 14) + leg(80, -96, 96, ph * 14); }
+  else if (pose === 'lie') { g += P('M-120 -30 Q-170 -20 -168 10', 'none', 24, '', K) + P('M-120 -30 Q-170 -20 -168 10', 'none', 16, '', col) + E(-10, -40, 120, 40, col, 6) + E(10, -26, 70, 14, c2, 0) + E(110, -10, 34, 12, col, 4); hx = 110; hy = -66; }
+  else { g += P('M-60 -30 Q-120 -20 -110 10', 'none', 24, '', K) + P('M-60 -30 Q-120 -20 -110 10', 'none', 16, '', col) + E(-6, -70, 66, 70, col, 6) + E(16, -84, 30, 40, c2, 0) + leg(30, -60, 60) + leg(-10, -60, 60) + E(-50, -10, 34, 14, col, 5); hx = 40; hy = -170; }
+  let h = P('M-36 -20 L-30 -76 L-6 -36 Z', col, 5) + P('M30 -26 L44 -78 L54 -30 Z', col, 5) + P('M-24 -40 L-24 -64 L-12 -42 Z', '#d8a8a0', 0);
+  h += E(0, 0, 46, 40, col, 6) + P('M20 -6 Q70 -4 84 16 Q70 30 24 24 Z', col, 5) + E(30, 14, 30, 12, c2, 0) + E(84, 12, 9, 7, K, 0);
+  h += sleep ? P('M-4 -6 q10 8 20 0', 'none', 4.5) : C(6, -6, 8, K, 0) + C(4, -9, 3, '#fff', 0);
+  h += P(sleep ? 'M44 24 L66 24' : 'M44 22 Q58 30 70 22', 'none', 4);
+  g += G(h, `translate(${hx} ${hy}) rotate(${pose === 'lie' ? 6 : 0})`);
+  if (sleep && o.zzz !== false) g += zzz(hx + 20, hy - 70, .55, t);
+  return G(E(0, 4, 140, 14, '#24140a', 0, 'opacity=".25"') + g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
+}
+// a bright-eyed red fox: o: { pose: 'sit'|'curl'|'peek', mood: 'happy'|'surprised'|'calm'|'sleep', flip }
+function fox(x, y, s = 1, o = {}, t = 0) {
+  const col = '#e0702a', c2 = '#fbeedd', dk = '#3a2216', pose = o.pose || 'sit', mood = o.mood || 'happy', sw = Math.sin(t * 2) * 6;
+  let g = '', hx = 20, hy = -150;
+  const tailD = pose === 'curl' ? 'M60 -20 Q120 -60 60 -100 Q20 -120 -40 -80 Q0 -70 40 -50 Q50 -36 60 -20 Z' : `M-40 -20 Q-140 ${-20 + sw} -150 -100 Q-110 -70 -70 -50 Q-50 -40 -40 -20 Z`;
+  if (pose === 'peek') { hx = 0; hy = -40; }
+  else {
+    g += P(tailD, col, 5) + P(pose === 'curl' ? 'M-40 -80 Q-20 -96 10 -96 Q-10 -82 -30 -74 Z' : 'M-150 -100 Q-140 -80 -118 -78 Q-138 -92 -150 -100 Z', c2, 4);
+    if (pose === 'curl') { g += E(0, -40, 90, 42, col, 6) + E(14, -30, 50, 16, c2, 0); hx = 70; hy = -56; }
+    else g += E(0, -60, 50, 62, col, 6) + E(14, -60, 24, 40, c2, 0) + P('M10 -20 L10 0 M30 -20 L30 0', 'none', 12, '', dk) + E(-36, -8, 26, 12, col, 4);
+  }
+  let h = P('M-40 -14 L-46 -78 L-8 -40 Z', col, 5) + P('M40 -14 L46 -78 L8 -40 Z', col, 5) + P('M-36 -28 L-40 -64 L-16 -40 Z', dk, 0) + P('M36 -28 L40 -64 L16 -40 Z', dk, 0);
+  h += P('M-46 -10 Q-40 -46 0 -48 Q40 -46 46 -10 Q30 30 0 40 Q-30 30 -46 -10 Z', col, 6) + P('M-30 10 Q0 0 30 10 Q16 34 0 40 Q-16 34 -30 10 Z', c2, 0) + E(0, 34, 8, 6, K, 0);
+  const sleep = mood === 'sleep' || pose === 'curl' && mood !== 'surprised';
+  if (sleep) h += P('M-24 -10 q8 6 16 0 M8 -10 q8 6 16 0', 'none', 4);
+  else { const er = mood === 'surprised' ? 12 : 9; for (const ex of [-17, 17]) h += C(ex, -10, er, K, 0) + C(ex - 3, -14, er * .38, '#fff', 0); }
+  h += mood === 'surprised' ? E(0, 46, 6, 8, '#5a1d1d', 3) : P('M-8 44 Q0 50 8 44', 'none', 3.5);
+  g += G(h, `translate(${hx} ${hy}) scale(${pose === 'peek' ? 1.1 : 1})`);
+  return G((pose === 'peek' ? '' : E(0, 4, 90, 10, '#24140a', 0, 'opacity=".25"')) + g, `translate(${x} ${y}) scale(${o.flip ? -s : s} ${s})`);
+}
+
+/* __INK_EXPORTS__ */ Object.assign(globalThis, { puppy, dog, fox, K, clamp, ease, easeIO, back, rad, f1, G, P, C, Ln, E, SH, popAt, fade, hash, DEFS, ik, eyes, mouth, FACE_ALIAS, faceInk, hairInk, boneClip, headInk, PS, jaw, handDot, tunicInk, upperInk, person, lying, moss, held, sky, paper, grain, vignette, haze, blotches, sun, moon, fullMoon, stars, cloud, mountains, hills, ground, grass, grassField, foliage, acacia, pine, poplar, oak, bush, rock, caveMouth, campfire, fireLight, hearth, caveInside, rain, snow, hut, treeLine, lightWash, stipple, grassHut, wheat, field, backdrop, zzz, grassBed, leafMat, ashLayer, camphor, chimp, nestTree, predator, wristband, clock, hourglass, scienceCard, tooth, bug, sugarCube, acorn, flint, bowdrill, honey, bee, mold, dna, microscope, bowl, loaf, pot, chair, esc, headline, hand, placeTag, yearBanner, arrow, cross, check, card, lens, blurLayer, speckle, warmGrade, lake, pineForest, pole, lashing, thatchHut, dirt, spear, basket, logs, swoosh, spinRings, dust, village, tattooDashes, palm, fern, vine, limestoneCave, rainforest, orangutan, herbBundle, skull, birchFungus, backpackFrame });
 })();
