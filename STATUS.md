@@ -6,3 +6,5 @@ STATE: animating
 - **Now:** shot list + animation by 4 cloud workers (sets first, then batches). Final render + mix in the cloud.
 - **Delivery (when STATE: ready):** `iawaken/out/stoptime/video.part-000…` (each < 95 MB), `video.sha256` (whole file), `UPLOAD.md`. Join + verify steps: `iawaken/HANDOFF.md`.
 - Captions/description include "Voice is synthetic." Nothing is posted, uploaded or scheduled by the cloud.
+
+VOICE: CLOUD
