@@ -1,0 +1,4 @@
+channel: Horror Reels
+file: THE_RULES_3_The_Alert_captions.mp4
+bytes: 24151988
+join (Windows): copy /b video.part-000+... THE_RULES_3_The_Alert_captions.mp4
