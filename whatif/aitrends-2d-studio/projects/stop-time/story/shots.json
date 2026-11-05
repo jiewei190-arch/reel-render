@@ -1,0 +1,4264 @@
+{
+ "title": "What If You Could Freeze Time for 10 Seconds?",
+ "duration": 405.964,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.76,
+   "line": "Tuesday. Breakfast.",
+   "scene": "COLD OPEN, TUESDAY BREAKFAST: THE BREAKFAST KITCHEN: morning.js (H4) breakfast kitchen, mood 'morning' (window light, fridge, table with cereal, juice, the butter dish, toast; use H4's DEMO name; fallback home3(g,t,cam,{room:'kitchen', mood:'day', cereal:0, plate:0}) with pos.tableX/tableTop) + its blurred foreground; atmos dust. Gold chip 'TUESDAY' pops top-left on 'Tuesday.' (0.00 s) (hud chip). HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist) sits at the table (pose sit, idle), spoon over a cereal bowl, sleepy (exprAt [[0,'neutral']], blinkFlag). MINA (actor 'MINA', s 2.0, kid, red scarf #d4262e, her stopwatch on a cord) opposite, a full orange-juice glass (stopprops.js JUICE GLASS) right at the table edge by her elbow; DEV (actor 'DEV', s 1.9, orange beanie #f08a24, phone in hand) leans on the counter; BISCUIT (creatures cat(), dark fur #2a2230, purple collar #9a5ad6, green eyes) (s 1.6, loaf) on the windowsill staring at the butter dish. On 'Breakfast.' (1.68 s) Mina reaches across for the toast. Slow push camMove z 0.96->1.04. Warm normal-time colours. Fade in (config fadeIn 0.5). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s002",
+   "start": 2.76,
+   "end": 5.49,
+   "line": "Mina knocks her orange juice off the table,",
+   "scene": "THE JUICE GOES OVER: close on the table edge (kitchen soft behind, blurLayer): MINA's elbow catches the JUICE GLASS on 'knocks' (0.42 s); it tips and leaves the table on 'off' (1.82 s) with juice sloshing out in an arc (normal time, real motion); her hand grabs at air on 'table,' (2.24 s). HERO's striped sleeve enters frame right. camMove z 1.3->1.38, slight shake on the knock. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.42,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.82,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s003",
+   "start": 5.49,
+   "end": 8.53,
+   "line": "and without thinking, you snap your fingers.",
+   "scene": "THE FIRST SNAP: macro on HERO's raised right hand (LOCAL: striped teal/cream cuff, the chunky black watch on the other wrist in soft focus); the falling glass behind it. On 'you' (1.23 s)-'snap' (1.37 s) freeze.js (H1) THE SNAP: finger-snap pose on the hand + the ring ripple from the fingertips; behind the ring the frame stills and freezeGrade(g,k) ramps k 0->1 over 0.4 s - the ring sweeps out over the juice arc, which stops dead in the air. On 'fingers.' (1.93 s) the edges of the frame begin to darken (freeze.js BLACK view k 0->0.3).  10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 00.5 s across the shot, the dial appearing on the snap. camMove z 1.5->1.56. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.37,
+     "name": "pop",
+     "gain": -10,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 1.38,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.9
+    },
+    {
+     "at": 1.42,
+     "name": "freeze",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 8.53,
+   "end": 10.29,
+   "line": "Everything goes black.",
+   "scene": "EVERYTHING GOES BLACK: the frozen kitchen (as s003) and on 'Everything' (0.09 s)-'black.' (0.71 s) the light dies from the edges in: freeze.js (H1) BLACK view k 0.3->1 (total darkness; only the gold read-out dial stays as the viewer's guide).  10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.5 -> 01.5 s across the shot. Music drops out. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.71,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.09,
+     "name": "swish",
+     "gain": -24,
+     "pitch": 0.4,
+     "dur": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s005",
+   "start": 10.29,
+   "end": 13.77,
+   "line": "Silent. You can't even see your own hand.",
+   "scene": "SILENT. YOU CAN'T SEE YOUR OWN HAND: freeze.js BLACK view k 1 (pitch dark). On 'You' (1.41 s)-'hand.' (2.49 s) a barely-there cream dashed outline (alpha 0.12, the BLACK view's faint-outline helper) of the HERO's hand waves in front of where his face would be, never lit; nothing else.  10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 01.5 -> 04.0 s across the shot. Very slow push z 1.0->1.03. (QUALITY_BAR 18 exception: the whole joke is that nothing is visible; the gold dial is the accent.) LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.41,
+     "name": "heartbeat",
+     "gain": -26,
+     "dur": 1.0
+    },
+    {
+     "at": 2.15,
+     "name": "heartbeat",
+     "gain": -26,
+     "dur": 1.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 13.77,
+   "end": 15.36,
+   "line": "You count to ten.",
+   "scene": "YOU COUNT TO TEN: black frame; the STOPWATCH read-out now big and centred (stopprops.js STOPWATCH s 1.2, gold digits) racing 04.0 -> 10.0 and landing on gold '10' on 'ten.' (0.67 s) with a gold pulse ring; ten tiny cream tally ticks light up one by one beside it (LOCAL). Short and punchy. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "counter",
+     "gain": -20,
+     "dur": 1.0
+    },
+    {
+     "at": 0.67,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "Short (1.6 s)."
+  },
+  {
+   "id": "s007",
+   "start": 15.36,
+   "end": 17.43,
+   "line": "Then the light comes back, the juice lands,",
+   "scene": "THE LIGHT COMES BACK, THE JUICE LANDS: kitchen. On 'Then' (0.08 s)-'light' (0.46 s) warm light floods back in from the window (BLACK view k 1->0, freezeGrade 1->0, freeze.js UNFREEZE whoosh); HERO is now STANDING beside his chair (he got up in the dark), arms out. On 'juice' (1.60 s)-'lands,' (1.88 s) the juice slaps down onto the floor and splashes up over MINA's feet (stopprops.js orange-sock splash). The read-out flashes '10.0' once and fades. camMove z 1.0->1.04, small shake on the splash. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.08,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.88,
+     "name": "rain",
+     "gain": -18,
+     "dur": 0.5
+    },
+    {
+     "at": 1.88,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s008",
+   "start": 17.43,
+   "end": 19.86,
+   "line": "and Mina's socks are orange.",
+   "scene": "MINA'S SOCKS ARE ORANGE: close on MINA's feet in a juice puddle: her white socks soaked bright orange (stopprops.js orange-sock splash), drips falling; she wiggles her toes on 'socks' (0.81 s). Tilt up (camMove y) to MINA's face going exprAt [[0,'surprised'],[1.33,'offended']]. HERO's mismatched socks (green/yellow) dry at frame edge for contrast. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.81,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.33,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s009",
+   "start": 19.86,
+   "end": 22.53,
+   "line": "Nobody knows why your snap does this.",
+   "scene": "NOBODY KNOWS WHY: kitchen three-shot: HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist) stares at his own right hand (pose holdFront, look at the hand); DEV and MINA lean in staring at it too. On 'snap' (1.22 s) he tries a tiny test snap: nothing happens (a puff of three cream sparkles only, NO ripple). A cream '?' chip floats over the hand on 'this.' (1.74 s). camMove z 1.0->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.22,
+     "name": "pop",
+     "gain": -20,
+     "pitch": 2.0,
+     "dur": 0.06
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s010",
+   "start": 22.53,
+   "end": 24.03,
+   "line": "Not even you.",
+   "scene": "GIANT FACE HERO, 'not even you': giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'neutral'],[0.33,'worried'],[0.55,'sheepish']]; he looks at his hand below frame then back to camera with a small shrug of the brows; blinkAmt; warm kitchen rimColor. Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "Short (1.5 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s011",
+   "start": 24.03,
+   "end": 28.05,
+   "line": "Let's see what ten seconds can do.",
+   "scene": "TITLE lock-up: the kitchen frozen mid-breakfast (FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks.) - juice drops hanging (freeze.js FROZEN LIQUIDS), BISCUIT mid-leap over the table, DEV mid-sip; HERO (the only warm figure) steps through with one hand up, mid-snap. A gold chip '10 SECONDS' pops on 'ten' (0.59 s). Title 'WHAT IF YOU COULD FREEZE TIME FOR 10 SECONDS?' (outlined cream, >= 10 px outline + glow, gold '10 SECONDS') snaps on at 2.0 s with a snap ripple ring expanding behind the letters. Slow push z 1.0->1.06. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "stinger",
+     "gain": -8,
+     "minor": false
+    },
+    {
+     "at": 2.05,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s012",
+   "start": 28.05,
+   "end": 31.53,
+   "line": "You tell Dev and Mina. Dev starts filming.",
+   "scene": "YOU TELL DEV AND MINA / DEV STARTS FILMING: kitchen (puddle mopped, Mina in orange socks): HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist) explains with big hands (poseAt explain -> point at his snapping fingers on 'Dev' (0.43 s); NOT lip-synced, narrator only); DEV (actor 'DEV', s 1.9, orange beanie #f08a24, phone in hand) grins and raises his phone on 'Dev' (1.91 s)-'filming.' (2.35 s) (stopprops.js Dev filming UI / home3 filmPhone REC dot on the back); MINA (actor 'MINA', s 2.0, kid, red scarf #d4262e, her stopwatch on a cord) arms crossed, sceptical. camMove z 1.0->1.04. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.35,
+     "name": "blip",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s013",
+   "start": 31.53,
+   "end": 33.65,
+   "line": "Mina starts her stopwatch.",
+   "scene": "MINA STARTS HER STOPWATCH: close on MINA's hands and her STOPWATCH (stopprops.js, big readable digits): her thumb clicks the button on 'starts' (0.41 s); the digits start running 00.0 -> 01.5 in gold on 'stopwatch.' (0.81 s). Her red scarf end swings in. camMove z 1.2->1.26. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.41,
+     "name": "tick",
+     "gain": -14,
+     "pitch": 1.3
+    },
+    {
+     "at": 0.81,
+     "name": "blip",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s014",
+   "start": 33.65,
+   "end": 35.58,
+   "line": "To them, nothing happened.",
+   "scene": "TO THEM, NOTHING HAPPENED: kitchen: DEV (phone lowered) and MINA (stopwatch up) look at each other then shrug in sync on 'nothing' (0.49 s) (poseAt shrug), exprAt confused. HERO in the soft foreground left, back to camera, cowlick up. camMove z 1.02->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "swish",
+     "gain": -24,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s015",
+   "start": 35.58,
+   "end": 39.72,
+   "line": "One moment you were in your chair, the next, you were standing in a puddle.",
+   "scene": "DEV'S CLIP - IN THE CHAIR, THEN IN THE PUDDLE: over DEV's shoulder onto his phone (stopprops.js Dev filming UI or home3 filmPhone(g,t,{x:W*0.5,y:H*0.5,s:1.25,at:0},(g,w,h)=>...)): frame 1 HERO sitting in his chair with the glass falling, on 'chair,' (1.32 s); on 'next,' (2.00 s) a one-frame white glitch and HERO is suddenly STANDING in the juice puddle (jump cut inside the phone); the REC timer reads gold '00:03' on both frames. Dev's thumb scrubs back and forth on 'standing' (2.64 s). camMove z 1.1->1.15. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "glitch",
+     "gain": -20
+    },
+    {
+     "at": 3.28,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s016",
+   "start": 39.72,
+   "end": 41.46,
+   "line": "But why was it dark?",
+   "scene": "BUT WHY WAS IT DARK?: HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist) medium, standing by the table: he looks up and around (lookToward up-left on 'why' (0.26 s)), scratching his cowlick, exprAt [[0,'neutral'],[0.78,'thinking']]. Kitchen window light on his glasses (two small highlights). camMove z 1.0->1.04. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.78,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s017",
+   "start": 41.46,
+   "end": 45.4,
+   "line": "The lights were on. The sun was out.",
+   "scene": "THE LIGHTS WERE ON. THE SUN WAS OUT.: kitchen wide pan (camMove x -120->120): starts on the glowing pendant lamp (glow pulse on 'lights' (0.24 s)), pans past HERO pointing at it, to the window with bright morning sun and a sunbeam across the table on 'sun' (1.82 s). Gold-cream practical glows; atmos dust in the beam. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "blip",
+     "gain": -22
+    },
+    {
+     "at": 1.82,
+     "name": "shimmer",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s018",
+   "start": 45.4,
+   "end": 47.7,
+   "line": "Light is the fastest thing there is.",
+   "scene": "RULE 1 CARD: ruleCard(g,t,info,{n:1, title:'YOU ONLY SEE LIGHT THAT ARRIVES.', bg: the dimmed kitchen window with the sunbeam (blurLayer + veil)}). Banner lands ~0.95 s; a single gold photon dot streaks across the bg on 'fastest' (0.66 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s019",
+   "start": 47.7,
+   "end": 51.39,
+   "line": "About three hundred thousand kilometres every second.",
+   "scene": "FIG 1 - LIGHT SPEED: timebp.js (H3) LIGHT SPEED board (bp.js board(g,t,{title:'FIG 1 - THE FASTEST THING', fig:'LIGHT'})): a glowing gold photon streaks across the navy grid leaving a cream trail; a gold readout rolls to '~300,000 km' on 'three' (0.40 s)-'kilometres' (1.60 s) and '/ s' joins on 'second.' (2.60 s). bp label 'nothing is faster' on 'About' (0.14 s). Slow push <= 4%. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.14,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.6
+    },
+    {
+     "at": 0.4,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 1.6,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.6,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s020",
+   "start": 51.39,
+   "end": 53.54,
+   "line": "Even so, it has to travel.",
+   "scene": "IT STILL HAS TO TRAVEL: same board: a cream lamp on the left and a cream eye on the right; a single photon (bp.js photon) travels the dashed line between them, a tiny cream stopwatch ticking above it; gold arrow along the path on 'travel.' (1.13 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.13,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s021",
+   "start": 53.54,
+   "end": 58.19,
+   "line": "Sunlight takes about eight minutes and twenty seconds to get here from the Sun.",
+   "scene": "FIG 2 - SUN TO EARTH: timebp.js (H3) SUNLIGHT 8 min 20 s board: a cream Sun left, small Earth right, '~150 million km' in cream between; a photon leaves the Sun on 'Sunlight' (0.24 s) and travels the whole way while a gold clock readout rolls to '8 min 20 s' on 'eight' (1.24 s)-'seconds' (2.46 s) (lands on 'seconds'), the photon arriving at Earth on 'Sun.' (3.74 s). One continuous trip, slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.24,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.2
+    },
+    {
+     "at": 2.46,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.74,
+     "name": "blip",
+     "gain": -18
+    }
+   ],
+   "notes": "Long (4.65 s): one continuous trip."
+  },
+  {
+   "id": "s022",
+   "start": 58.19,
+   "end": 63.02,
+   "line": "You see when light lands inside your eye, on the back wall, called the retina.",
+   "scene": "FIG 3 - THE EYE: bp.js board(g,t,{title:'FIG 3 - WHERE YOU SEE', fig:'THE EYE'}) + eye(g,t,{x,y,r,k,rays}) (draw-on 1 s): light rays enter the cornea on 'light' (0.71 s), bend through the lens and LAND on the retina on 'lands' (1.01 s) (gold spark); on 'back' (2.91 s) 'back wall' a dashed zoom into retina(g,t,{...}) inset; gold label 'RETINA' with leader line on 'retina.' (3.89 s). <= 3 labels. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "bp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.07,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.01,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 3.89,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Long (4.8 s): one continuous diagram."
+  },
+  {
+   "id": "s023",
+   "start": 63.02,
+   "end": 65.73,
+   "line": "Freeze the light, and every bit of it hangs in the air,",
+   "scene": "FREEZE THE LIGHT: the kitchen frozen (FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks.) - on 'Freeze' (0.06 s) the sunbeam from the window turns into thousands of hanging gold photon dots (timebp.js (H3) photons as frozen particles), stuck in mid-air between the window and the table; HERO (warm, HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) reaches into the beam on 'hangs' (1.82 s) and the dots don't move around his fingers. camMove z 1.0->1.06. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.06,
+     "name": "freeze",
+     "gain": -20
+    },
+    {
+     "at": 1.82,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s024",
+   "start": 65.73,
+   "end": 69.8,
+   "line": "between the window and your eyes. None of it arrives.",
+   "scene": "BETWEEN THE WINDOW AND YOUR EYES - NONE ARRIVES: timebp.js (H3) LIGHT board: window on the left, a cream eye on the right; the photon dots hang in the gap with a gold bracket 'STUCK' on 'window' (0.69 s); on 'None' (2.65 s) zoom into the retina inset: dark, a gold counter 'LIGHT ARRIVING: 0' on 'arrives.' (2.99 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.65,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.6
+    },
+    {
+     "at": 2.99,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s025",
+   "start": 69.8,
+   "end": 72.39,
+   "line": "So frozen time wouldn't look frozen.",
+   "scene": "WOULDN'T LOOK FROZEN: a split frame (LOCAL): left panel cream label 'WHAT YOU'D EXPECT' - the frozen kitchen as a blue-grey still picture (freezeGrade); right panel 'WHAT YOU'D SEE' - on 'frozen.' (1.52 s) it drains to black (freeze.js BLACK view). Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 1.52,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s026",
+   "start": 72.39,
+   "end": 75.3,
+   "line": "It would look like nothing at all.",
+   "scene": "LIKE NOTHING AT ALL: the right (black) panel slides over the whole frame on 'It' (0.15 s); HERO's faint warm outline in the centre fades away on 'nothing' (0.67 s) until only black remains (BLACK view k 1), tiny cream dust hangs. Slow push z 1.0->1.03. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.5,
+     "dur": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s027",
+   "start": 75.3,
+   "end": 79.24,
+   "line": "Second snap. This time, the snap seems to have learned.",
+   "scene": "SECOND SNAP - THE SNAP HAS LEARNED: kitchen breakfast again; gold chip 'SNAP 2' top-left on 'Second' (0.14 s). Close on HERO's hand: on 'snap.' (0.48 s) freeze.js (H1) THE SNAP: finger-snap pose on the hand + the ring ripple from the fingertips; behind the ring the frame stills and freezeGrade(g,k) ramps k 0->1 over 0.4 s; but this time the light STAYS: the kitchen remains lit, just cool blue-grey and still. HERO's eyebrows lift on 'learned.' (3.00 s) (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist), pull back to a medium, camMove z 1.4->1.0). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 01.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.48,
+     "name": "pop",
+     "gain": -10,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 0.49,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.9
+    },
+    {
+     "at": 0.53,
+     "name": "freeze",
+     "gain": -14
+    },
+    {
+     "at": 3.0,
+     "name": "ding",
+     "gain": -22,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s028",
+   "start": 79.24,
+   "end": 82.65,
+   "line": "The light keeps moving. And it's beautiful.",
+   "scene": "THE LIGHT KEEPS MOVING. IT'S BEAUTIFUL.: HERO turns slowly in the frozen kitchen (FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks.): the sunbeam shimmers (light still moving, dust motes hanging) on 'keeps' (0.42 s); on 'beautiful.' (2.22 s) he breathes out in wonder, exprAt [[0,'surprised'],[2.22,'awe']]. Slow orbit camMove x 60->-60. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 01.0 -> 02.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.94,
+     "name": "shimmer",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s029",
+   "start": 82.65,
+   "end": 85.09,
+   "line": "Juice drops hang like glass beads.",
+   "scene": "JUICE DROPS LIKE GLASS BEADS: macro: Mina's (refilled) juice glass knocked again, the pour frozen as an arc of separate orange drops hanging in the air with glassy highlights (freeze.js FROZEN LIQUIDS); HERO's finger taps one drop on 'glass' (1.13 s) - it stays put, a tiny gold glint. freezeGrade 1 on everything but the hero's hand. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 02.0 -> 03.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.13,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s030",
+   "start": 85.09,
+   "end": 87.22,
+   "line": "Dev is frozen mid-sneeze.",
+   "scene": "DEV FROZEN MID-SNEEZE: DEV frozen mid-sneeze (H1 frozen-mid-action pose: eyes squeezed shut, head tipped back, a few tiny hanging droplets - cute, never gross - phone in hand), the 'still' sparkle; HERO (warm) waves a hand in front of his face on 'mid-sneeze.' (0.87 s). freezeGrade on Dev and the room. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 03.0 -> 04.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.87,
+     "name": "swish",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s031",
+   "start": 87.22,
+   "end": 89.86,
+   "line": "Biscuit is mid-leap, aiming at the butter.",
+   "scene": "BISCUIT MID-LEAP AT THE BUTTER: BISCUIT frozen mid-leap over the table (cat pose 'stand' rotated -0.3, paws reaching, tail straight out, H1 frozen pose) aimed at the BUTTER DISH (stopprops.js) on 'the' (1.64 s); HERO crouches to her eye level on 'mid-leap,' (0.62 s), amused (exprAt smirk). freezeGrade. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 04.0 -> 05.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.74,
+     "name": "pop",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s032",
+   "start": 89.86,
+   "end": 92.99,
+   "line": "You step forward, and walk into something soft.",
+   "scene": "WALK INTO SOMETHING SOFT: HERO steps forward on 'step' (0.26 s)-'forward,' (0.48 s) (walkAlong) and on 'walk' (1.16 s)-'soft.' (1.98 s) bumps into an invisible wall: freeze.js (H1) WALL OF AIR view - the air-molecule speckle field shows only where he presses, his cheek and glasses squash flat, he bounces back slightly. Small shake on contact. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 05.0 -> 06.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.26,
+     "name": "footstep",
+     "gain": -24
+    },
+    {
+     "at": 1.64,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s033",
+   "start": 92.99,
+   "end": 95.03,
+   "line": "Like a mattress you can't see.",
+   "scene": "LIKE A MATTRESS YOU CAN'T SEE: side view: HERO leaning into a dashed cream outline of a mattress (LOCAL ghost mattress) that dents around him on 'mattress' (0.39 s); the molecule speckle glitters at the dent; his arms sink in, then it pushes back on 'see.' (1.15 s). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 06.0 -> 07.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.4,
+     "dur": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s034",
+   "start": 95.03,
+   "end": 96.64,
+   "line": "You try to gasp.",
+   "scene": "GIANT FACE HERO, 'try to gasp': giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'shocked'],[0.63,'worried']], mouth open wide on 'gasp.' (0.63 s) but NOTHING moves: a few frozen cream molecule dots hang at his lips (H1 WALL OF AIR speckle); sweat drop; freezeGrade on the background only. Punch zoom on 'gasp.' (0.63 s). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 07.0 -> 07.5 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.63,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.3,
+     "dur": 0.4
+    }
+   ],
+   "notes": "Short (1.6 s)."
+  },
+  {
+   "id": "s035",
+   "start": 96.64,
+   "end": 99.12,
+   "line": "Nothing comes in.",
+   "scene": "NOTHING COMES IN: macro on HERO's mouth and nose (side profile, glasses edge): the WALL OF AIR speckle frozen solid in front of his lips; a gold 'in' arrow toward the mouth gets a coral cross on 'comes' (0.44 s); his chest doesn't rise. Cool grade, very still. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 07.5 -> 08.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "buzz",
+     "gain": -28,
+     "dur": 0.5
+    }
+   ],
+   "notes": "End of batch A."
+  },
+  {
+   "id": "s036",
+   "start": 99.12,
+   "end": 102.49,
+   "line": "Air looks like nothing, but it's packed with molecules.",
+   "scene": "RULE 2 CARD: ruleCard(g,t,info,{n:2, title:'AIR IS STUFF.', bg: the frozen kitchen with HERO puffed against the WALL OF AIR speckle (blurLayer + veil + freezeGrade)}). Banner lands ~0.95 s; on 'molecules.' (2.06 s) the bg speckle sparkles cream. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 2.06,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s037",
+   "start": 102.49,
+   "end": 106.04,
+   "line": "In one cubic centimetre, about the size of a fingertip,",
+   "scene": "FIG 4 - ONE CUBIC CENTIMETRE: timebp.js (H3) AIR MOLECULES board (title 'FIG 4 - AIR IS STUFF', fig 'MOLECULES'): a cream cube draws on, gold label '1 cm³' on 'cubic' (0.61 s)-'centimetre,' (0.89 s); on 'fingertip,' (2.85 s) a cream fingertip outline slides beside it for size (bp label 'about a fingertip'). Slow push <= 4%. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.09,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.89,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.85,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s038",
+   "start": 106.04,
+   "end": 109.35,
+   "line": "there are around twenty-five billion billion.",
+   "scene": "TWENTY-FIVE BILLION BILLION: the cube fills with cream dots in a flood; a gold counter rolls and lands on '~25 BILLION BILLION' on 'twenty-five' (0.84 s)-'billion.' (2.20 s), with '2.5 × 10¹⁹' in smaller gold beneath on 'billion.' (2.20 s). Footnote 'sea level, ~15 °C' cream. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.4
+    },
+    {
+     "at": 1.64,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.2,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s039",
+   "start": 109.35,
+   "end": 111.2,
+   "line": "And they never sit still.",
+   "scene": "THEY NEVER SIT STILL: back in the warm, normal-time kitchen (THE BREAKFAST KITCHEN: morning.js (H4) breakfast kitchen, mood 'morning' (window light, fridge, table with cereal, juice, the butter dish, toast; use H4's DEMO name; fallback home3(g,t,cam,{room:'kitchen', mood:'day', cereal:0, plate:0}) with pos.tableX/tableTop) + its blurred foreground; atmos dust): a round magnifier circle (LOCAL, cream rim) floats over the air above the table and inside it cream molecules jiggle and bounce; MINA blows on her cocoa on 'never' (0.35 s) and the dots in the lens scatter. camMove z 1.0->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "blip",
+     "gain": -22,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s040",
+   "start": 111.2,
+   "end": 115.82,
+   "line": "At room temperature, they zoom around at roughly five hundred metres a second,",
+   "scene": "FIVE HUNDRED METRES A SECOND: timebp.js (H3) AIR MOLECULES board: a cream thermometer chip 'ROOM TEMPERATURE' on 'room' (0.28 s); molecules zoom with motion trails; one is highlighted and a gold speed readout rolls to '~500 m/s' on 'five' (2.74 s)-'second,' (4.14 s). Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 1.52,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.5
+    },
+    {
+     "at": 2.42,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.9
+    },
+    {
+     "at": 4.14,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Long (4.6 s): one continuous zoom."
+  },
+  {
+   "id": "s041",
+   "start": 115.82,
+   "end": 118.35,
+   "line": "faster than a jet airliner.",
+   "scene": "FASTER THAN A JET: a race lane on the board: a generic cream jet airliner silhouette (no airline marks) with gold '~250 m/s' vs the molecule dot with gold '~500 m/s'; on 'jet' (1.02 s) the molecule zips past the jet, which looks slow. speed lines. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.88,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.2
+    },
+    {
+     "at": 1.3,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s042",
+   "start": 118.35,
+   "end": 120.57,
+   "line": "All that bumping is air pressure.",
+   "scene": "AIR PRESSURE: molecules bounce off a cream wall; every hit flashes a tiny gold spark; a bp label 'AIR PRESSURE' with leader to the wall on 'air' (0.95 s)-'pressure.' (1.17 s); a small cream pressure gauge needle lifts. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "tick",
+     "gain": -22
+    },
+    {
+     "at": 0.79,
+     "name": "tick",
+     "gain": -22,
+     "pitch": 1.2
+    },
+    {
+     "at": 1.17,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s043",
+   "start": 120.57,
+   "end": 123.95,
+   "line": "When you breathe in, your diaphragm makes room in your chest,",
+   "scene": "FIG 5 - BREATHING IN: board(g,t,{title:'FIG 5 - BREATHING IN', fig:'CHEST'}): a cream chest cross-section with lungs and the dome-shaped diaphragm; on 'breathe' (0.43 s) the diaphragm flattens downward (gold arrow down) and the chest space grows on 'makes' (1.97 s) 'makes room'; bp label 'DIAPHRAGM' on 'diaphragm' (1.25 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.25,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s044",
+   "start": 123.95,
+   "end": 126.98,
+   "line": "and the air outside pushes itself in.",
+   "scene": "THE AIR PUSHES ITSELF IN: same board: outside the mouth the crowded cream molecules (higher pressure) bump their way in; gold arrows stream into the lungs on 'pushes' (1.21 s); the lungs inflate. bp label 'outside air pushes in' on 'itself' (1.59 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.21,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s045",
+   "start": 126.98,
+   "end": 129.63,
+   "line": "Frozen molecules can't push anything.",
+   "scene": "FROZEN MOLECULES CAN'T PUSH: frozen kitchen, HERO (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) pressed against the freeze.js WALL OF AIR, cheeks puffed, trying to suck in air; the speckle at his mouth stays perfectly still; a small inset (top-right) of the FIG 5 lungs in freezeGrade with the gold arrows turning grey and a coral cross on 'push' (1.44 s). FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.44,
+     "name": "buzz",
+     "gain": -28,
+     "dur": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s046",
+   "start": 129.63,
+   "end": 131.92,
+   "line": "So nothing flows into your lungs.",
+   "scene": "NOTHING FLOWS INTO YOUR LUNGS: the FIG 5 chest diagram, frozen blue-grey: the lungs stay flat; a cream flow meter's needle sits on gold '0' on 'flows' (0.51 s); the diaphragm tries to move and nothing follows. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.51,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s047",
+   "start": 131.92,
+   "end": 133.5,
+   "line": "And air is heavy.",
+   "scene": "AIR IS HEAVY: a cream bathroom scale on the board; a big cream bubble labelled 'AIR' drops onto it with a thump on 'heavy.' (0.60 s) and the needle swings. Short. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "Short (1.6 s)."
+  },
+  {
+   "id": "s048",
+   "start": 133.5,
+   "end": 137.43,
+   "line": "The air in a small kitchen weighs about as much as you do.",
+   "scene": "FIG 6 - THE KITCHEN'S AIR: timebp.js (H3) KITCHEN AIR board: a cream kitchen box '4 × 4 × 2.5 m' on 'kitchen' (1.14 s); '= 40 m³ × 1.2 kg/m³' then gold '~48 kg' on 'weighs' (1.58 s); on 'you' (2.94 s) a balance: the kitchen-air block on one pan, HERO's cream outline (cowlick, glasses) on the other - level. Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.58,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.94,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s049",
+   "start": 137.43,
+   "end": 139.21,
+   "line": "If every molecule stayed stuck,",
+   "scene": "IF EVERY MOLECULE STAYED STUCK: the frozen kitchen with the freeze.js WALL OF AIR speckle visible EVERYWHERE (full density, a glittering cream haze in every corner) on 'molecule' (0.57 s); HERO small in the middle, frozen grey too. Slow pull-back camMove z 1.08->1.0. FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s050",
+   "start": 139.21,
+   "end": 142.74,
+   "line": "you couldn't open a door, or even move your hand.",
+   "scene": "COULDN'T OPEN A DOOR OR MOVE YOUR HAND: HERO pulls at the kitchen door handle (morning.js doorway gag): it won't budge on 'open' (0.73 s) (speckle sparkles at the door edge); on 'move' (2.09 s) he tries to lift his hand from the handle - stuck too. exprAt strain. freezeGrade on the room; hero mostly warm. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.73,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    },
+    {
+     "at": 2.09,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s051",
+   "start": 142.74,
+   "end": 144.63,
+   "line": "You'd be a statue too.",
+   "scene": "YOU'D BE A STATUE TOO: HERO freezes mid-pose, his colours drain to stone grey (freezeGrade on him too) and a LOCAL cream plinth slides up under his feet on 'statue' (0.50 s) - a comic museum statue of a boy in pyjamas; a pigeon-free, clean gag. camMove z 1.0->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "Short (1.9 s)."
+  },
+  {
+   "id": "s052",
+   "start": 144.63,
+   "end": 147.93,
+   "line": "Luckily, ten seconds of holding your breath is fine.",
+   "scene": "TEN SECONDS IS FINE: back in snap 2's moment: the STOPWATCH read-out large in the foreground (stopprops.js, s 1.0) with gold '10 s' marker on 'ten' (0.49 s); behind it HERO (soft) holding his breath, cheeks round; a cream tick chip 'FINE' on 'fine.' (2.31 s). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 08.0 -> 08.5 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.31,
+     "name": "ding",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s053",
+   "start": 147.93,
+   "end": 152.14,
+   "line": "You count, cheeks puffed, until the world starts again.",
+   "scene": "GIANT FACE HERO, COUNTING, CHEEKS PUFFED: giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'squint'],[0.53,'determined'],[2.05,'shocked'],[2.35,'joy']], LOCAL puffed cheek circles + blush, eyes squeezed, counting on fingers at frame bottom; the read-out counts 08.5 -> 10.0 and lands on 'starts' (2.05 s); on 'starts' (2.05 s) freeze.js UNFREEZE: freezeGrade 1->0, warm colour washes back, he exhales a huge gasp on 'again.' (2.35 s). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 08.5 -> 10.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "tick",
+     "gain": -20
+    },
+    {
+     "at": 0.89,
+     "name": "tick",
+     "gain": -20
+    },
+    {
+     "at": 1.71,
+     "name": "tick",
+     "gain": -20
+    },
+    {
+     "at": 2.05,
+     "name": "ding",
+     "gain": -18
+    },
+    {
+     "at": 2.15,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 2.27,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s054",
+   "start": 152.14,
+   "end": 155.51,
+   "line": "Third snap. Now the air around you moves.",
+   "scene": "THIRD SNAP - THE AIR MOVES: gold chip 'SNAP 3' on 'Third' (0.15 s); HERO's hand snaps on 'snap.' (0.30 s): freeze.js (H1) THE SNAP: finger-snap pose on the hand + the ring ripple from the fingertips; behind the ring the frame stills and freezeGrade(g,k) ramps k 0->1 over 0.4 s; then around HERO a bubble of moving air (the WALL OF AIR speckle jiggling only inside a ~1.5 m sphere around him, still everywhere else) grows on 'around' (1.98 s)-'moves.' (2.38 s). Pull back to medium. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 01.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -10,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 0.31,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.9
+    },
+    {
+     "at": 0.35,
+     "name": "freeze",
+     "gain": -14
+    },
+    {
+     "at": 2.22,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s055",
+   "start": 155.51,
+   "end": 158.4,
+   "line": "You can breathe. You can walk.",
+   "scene": "YOU CAN BREATHE. YOU CAN WALK.: HERO takes a big breath on 'breathe.' (0.45 s) (chest up, relief, exprAt joy), then walks (walkAlong, locked feet) past the frozen DEV and MINA on 'walk.' (1.93 s), the moving-air bubble travelling with him. FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 01.0 -> 03.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "whoosh",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.93,
+     "name": "footstep",
+     "gain": -24
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s056",
+   "start": 158.4,
+   "end": 162.84,
+   "line": "Biscuit is still frozen mid-leap, paws out, inches from the butter.",
+   "scene": "BISCUIT STILL MID-LEAP: BISCUIT frozen mid-leap over the table (H1 frozen pose, paws out on 'paws' (2.18 s)-'out,' (2.32 s)), a cream gap bracket between her paw and the BUTTER DISH (stopprops.js) pops on 'inches' (2.92 s); HERO leans in, hands on knees. FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 03.0 -> 05.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.92,
+     "name": "pop",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s057",
+   "start": 162.84,
+   "end": 166.84,
+   "line": "You gently lift her out of the air, and set her down on the floor.",
+   "scene": "LIFT HER OUT OF THE AIR: HERO gently takes the rigid, still-leaping BISCUIT in both hands on 'lift' (0.58 s) (she stays in her leap pose, frozen, like a cat statue), turns and sets her down on the floor tiles on 'set' (2.12 s)-'floor.' (3.06 s). Careful, tender acting (exprAt focused). FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 05.0 -> 08.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.58,
+     "name": "swish",
+     "gain": -22
+    },
+    {
+     "at": 3.06,
+     "name": "pop",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s058",
+   "start": 166.84,
+   "end": 169.84,
+   "line": "Butter saved. Time restarts.",
+   "scene": "BUTTER SAVED. TIME RESTARTS.: close on the BUTTER DISH (stopprops.js) untouched, a gold tick sparkles on 'saved.' (0.36 s); the read-out lands on '10.0' on 'Time' (1.62 s); on 'Time' (1.62 s) freeze.js UNFREEZE: grade warms, a whoosh ripples across the frame. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 08.0 -> 10.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "ding",
+     "gain": -18
+    },
+    {
+     "at": 1.62,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.74,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s059",
+   "start": 169.84,
+   "end": 174.23,
+   "line": "And Biscuit shoots sideways across the tiles like a furry hockey puck,",
+   "scene": "THE FURRY HOCKEY PUCK: normal time, kitchen wide low on the floor tiles: BISCUIT, still in her leap pose, shoots sideways across the tiles on 'shoots' (0.66 s) at full leap speed, spinning slowly like a puck (motion streaks + speed lines, LOCAL); a cream hockey-puck ghost outline flashes over her on 'hockey' (3.46 s). MINA and DEV's heads whip round. Truck camMove x with her. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "whoosh",
+     "gain": -16,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.54,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.5,
+     "dur": 0.6
+    },
+    {
+     "at": 3.46,
+     "name": "pop",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s060",
+   "start": 174.23,
+   "end": 176.96,
+   "line": "straight into the bin.",
+   "scene": "STRAIGHT INTO THE BIN: the kitchen BIN (stopprops.js) by the counter; BISCUIT flies in on 'bin.' (0.93 s), the bin rocks, the lid spins and clatters; only her tail sticks out, twitching. Shake 3. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.93,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.98,
+     "name": "impact",
+     "gain": -22,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.33,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s061",
+   "start": 176.96,
+   "end": 180.51,
+   "line": "Newton's first law: a moving thing keeps moving the same way,",
+   "scene": "RULE 3 CARD: ruleCard(g,t,info,{n:3, title:\"MOTION DOESN'T PAUSE.\", bg: the bin still rocking with Biscuit's tail sticking out (blurLayer + veil)}). Banner lands ~0.95 s; a small gold chip 'NEWTON'S 1ST LAW' pops lower-left on 'first' (0.66 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 0.66,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s062",
+   "start": 180.51,
+   "end": 183.49,
+   "line": "unless a force pushes or pulls it.",
+   "scene": "FIG 7 - THE FIRST LAW: timebp.js (H3) NEWTON/MOMENTUM board (title 'FIG 7 - NEWTON'S FIRST LAW'): a cream puck slides right forever with a gold 'v' arrow; on 'pushes' (1.07 s) a gold 'F' arrow from behind and on 'pulls' (1.87 s) one from the front change it. Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.07,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.87,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s063",
+   "start": 183.49,
+   "end": 187.97,
+   "line": "Moving things carry momentum. It's their mass times their speed.",
+   "scene": "MOMENTUM = MASS × SPEED: same board: a rolling cream ball carries a gold arrow; bp label 'MOMENTUM' on 'momentum.' (0.95 s); on 'mass' (2.65 s)-'speed.' (3.45 s) the gold formula 'p = m × v' builds term by term ('mass' on 'mass' (2.65 s), 'times' 'times' (2.93 s), 'speed' 'speed.' (3.45 s)). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.95,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.65,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 3.45,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s064",
+   "start": 187.97,
+   "end": 190.98,
+   "line": "A heavier or faster thing is harder to stop.",
+   "scene": "HEAVIER OR FASTER IS HARDER TO STOP: two cream objects roll at a cream hand: a small tennis ball (short gold arrow) and a bowling ball (long fat gold arrow); on 'harder' (1.59 s) the hand stops the small one easily and gets pushed back by the big one. Light comic. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.77,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 1.59,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s065",
+   "start": 190.98,
+   "end": 193.96,
+   "line": "Picking Biscuit up didn't take her speed away.",
+   "scene": "PICKING HER UP DIDN'T TAKE HER SPEED: replay of the lift in the frozen kitchen (freezeGrade): HERO lifts BISCUIT and a big gold velocity arrow stays attached to her, travelling with her to the floor; the arrow pulses on 'speed' (1.66 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.66,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s066",
+   "start": 193.96,
+   "end": 198.86,
+   "line": "In our story, freezing doesn't delete motion. It saves it for later.",
+   "scene": "IN OUR STORY: SAVED FOR LATER: same frozen frame: a cream chip 'IN OUR STORY' pops top-left on 'story,' (0.38 s) (story rule, not a fact); the word 'DELETE' in cream over Biscuit gets a coral strikethrough on 'delete' (1.70 s); on 'saves' (3.34 s) a gold 'SAVED' bookmark tag clips onto her arrow; on 'later.' (3.92 s) a tiny gold play icon waits next to it. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.38,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.7,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 3.34,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.92,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "Long (4.9 s): two linked beats on one frame."
+  },
+  {
+   "id": "s067",
+   "start": 198.86,
+   "end": 202.62,
+   "line": "To stop a moving thing, you have to push against its motion.",
+   "scene": "PUSH AGAINST ITS MOTION: normal kitchen: MINA rolls an orange across the table toward the edge; HERO's open hand stops it on 'push' (1.92 s) - a gold arrow on the orange (motion) and an opposite gold arrow from his palm (push) meet. exprAt focus -> smile. camMove z 1.0->1.04. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.68,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.92,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s068",
+   "start": 202.62,
+   "end": 204.57,
+   "line": "Like a goalkeeper's gloves.",
+   "scene": "LIKE A GOALKEEPER'S GLOVES: a quick cream-line insert on the board: generic goalkeeper gloves (no brand) catch a ball on 'goalkeeper's' (0.40 s); the ball's gold arrow shrinks to nothing as the gloves give back. Short. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "Short (1.95 s). End of batch B."
+  },
+  {
+   "id": "s069",
+   "start": 204.57,
+   "end": 209.39,
+   "line": "Biscuit climbs out of the bin and gives you a long, cold look.",
+   "scene": "THE LONG, COLD LOOK: kitchen, normal time: BISCUIT climbs out of the BIN (stopprops.js) on 'climbs' (0.47 s), a paper napkin stuck on one ear (cute, no mess), drops to the floor, sits, and on 'long,' (2.17 s) turns to HERO with eyes 'offended' (cat eyes 'offended', a slow tail flick); HERO (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) crouched, sheepish (exprAt sheepish) on 'look.' (2.97 s). Slow push camMove z 1.0->1.08 onto Biscuit. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "pop",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.17,
+     "name": "swish",
+     "gain": -24,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "Long (4.8 s): one continuous stare.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s070",
+   "start": 209.39,
+   "end": 212.61,
+   "line": "Fourth snap. Ten quiet seconds.",
+   "scene": "FOURTH SNAP - TEN QUIET SECONDS: gold chip 'SNAP 4' on 'Fourth' (0.19 s); HERO's hand snaps on 'snap.' (0.39 s): freeze.js (H1) THE SNAP: finger-snap pose on the hand + the ring ripple from the fingertips; behind the ring the frame stills and freezeGrade(g,k) ramps k 0->1 over 0.4 s. Then the quietest shot of the episode: the frozen kitchen, HERO just sits back in his chair with his cocoa (frozen steam curls) while the read-out runs in a time-lapse 00.0 -> 10.0, a gold '10' pulsing on 'Ten' (1.59 s) and landing on 'seconds.' (2.09 s). FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 10.0 s across the shot, fast. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "pop",
+     "gain": -10,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 0.4,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.9
+    },
+    {
+     "at": 0.44,
+     "name": "freeze",
+     "gain": -14
+    },
+    {
+     "at": 1.59,
+     "name": "clock",
+     "gain": -28,
+     "dur": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s071",
+   "start": 212.61,
+   "end": 214.37,
+   "line": "Then time restarts.",
+   "scene": "TIME RESTARTS: freeze.js UNFREEZE on 'time' (0.35 s): grade warms, MINA's spoon moves, DEV's phone wobbles, the cocoa steam rises again; HERO relaxed. camMove z 1.0->1.04. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.47,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s072",
+   "start": 214.37,
+   "end": 216.61,
+   "line": "You glance up at the kitchen clock.",
+   "scene": "YOU GLANCE UP AT THE KITCHEN CLOCK: HERO (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) at the table glances up (lookToward up-right, eyes first) on 'glance' (0.27 s); the stopprops.js KITCHEN CLOCK on the wall above the door enters frame top-right on 'kitchen' (0.97 s). camMove y tilt up. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "tick",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s073",
+   "start": 216.61,
+   "end": 218.7,
+   "line": "The second hand doesn't move.",
+   "scene": "THE SECOND HAND DOESN'T MOVE: close on the KITCHEN CLOCK (stopprops.js, second hand 'stick' mode): the red second hand sits on one mark and doesn't move through 'hand' (0.51 s)-'move.' (1.13 s); the room sound drops out (no tick). Very slow push, a faint vignette. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s074",
+   "start": 218.7,
+   "end": 220.27,
+   "line": "Your heart jumps.",
+   "scene": "GIANT FACE HERO, HEART JUMPS: giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'neutral'],[0.26,'shocked'],[0.52,'worried']], punch zoom + shake 2 on 'jumps.' (0.52 s); the clock reflected small in his glasses. Warm kitchen rim. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.26,
+     "name": "heartbeat",
+     "gain": -16,
+     "dur": 1.0
+    }
+   ],
+   "notes": "Short (1.6 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s075",
+   "start": 220.27,
+   "end": 223.4,
+   "line": "Is it still frozen? Then it ticks.",
+   "scene": "IS IT STILL FROZEN? THEN IT TICKS: HERO looks from the clock to MINA (still moving? she blinks) on 'still' (0.35 s), exprAt worried; foreground soft KITCHEN CLOCK; on 'ticks.' (2.17 s) the second hand jumps one tick with a tiny gold spark and the room sound returns. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.17,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s076",
+   "start": 223.4,
+   "end": 227.02,
+   "line": "And ticks again. Normal.",
+   "scene": "AND TICKS AGAIN. NORMAL.: the KITCHEN CLOCK ticking normally on 'ticks' (0.26 s) and on 'again.' (0.48 s)+0.9; HERO soft in the background exhales (exprAt relief) on 'Normal.' (1.65 s); a cream chip 'NORMAL' on 'Normal.' (1.65 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.26,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 1.38,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 1.65,
+     "name": "pop",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s077",
+   "start": 227.02,
+   "end": 230.59,
+   "line": "That has a real name. The stopped clock illusion.",
+   "scene": "RULE 4 CARD: ruleCard(g,t,info,{n:4, title:'YOUR BRAIN CAN STOP A CLOCK.', bg: the kitchen clock (blurLayer + veil)}). Banner lands ~0.95 s; a gold chip 'STOPPED CLOCK ILLUSION' pops lower-left on 'stopped' (1.96 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.96,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s078",
+   "start": 230.59,
+   "end": 232.42,
+   "line": "Your eyes don't glide.",
+   "scene": "FIG 8 - YOUR EYES DON'T GLIDE: timebp.js (H3) STOPPED-CLOCK board (title 'FIG 8 - HOW EYES MOVE'): a cream picture of the kitchen; a smooth dashed eye-path glides across it and gets a coral cross on 'glide.' (0.83 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.83,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s079",
+   "start": 232.42,
+   "end": 234.95,
+   "line": "They jump, about three times a second.",
+   "scene": "THEY JUMP, ~3 TIMES A SECOND: same board: the eye-path becomes hops (dots joined by jumps) landing on the clock, the window, the toast on 'jump,' (0.28 s); a gold readout '~3 jumps / s' on 'three' (0.80 s)-'second.' (1.58 s); bp label 'saccades'. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 0.54,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.2
+    },
+    {
+     "at": 1.58,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s080",
+   "start": 234.95,
+   "end": 239.38,
+   "line": "During each jump, the view is a blur. Your brain hides the blur.",
+   "scene": "THE BLUR, HIDDEN: during a jump the view smears (motion-blur strip of the kitchen) on 'jump,' (0.57 s); on 'brain' (2.69 s) a cream brain icon slides a curtain over the blur and the strip goes clean on 'the' (3.29 s) 'hides'; bp label 'the brain hides it'. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.97,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "Long-ish (4.4 s): one jump."
+  },
+  {
+   "id": "s081",
+   "start": 239.38,
+   "end": 242.46,
+   "line": "It fills the gap with whatever your eyes land on.",
+   "scene": "IT FILLS THE GAP: a timeline strip of view-frames: the blurred gap gets filled with copies of the clock picture (whatever the eyes land on) on 'fills' (0.24 s)-'land' (1.90 s); gold bracket 'filled in' on 'gap' (0.66 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.9,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s082",
+   "start": 242.46,
+   "end": 245.67,
+   "line": "So the first tick you see seems to last too long.",
+   "scene": "THE FIRST TICK LASTS TOO LONG: the KITCHEN CLOCK; under it a cream bar for each second; the first bar visibly stretches longer than the rest on 'last' (1.76 s) with a gold bracket 'TOO LONG' on 'long.' (2.26 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "tick",
+     "gain": -16
+    },
+    {
+     "at": 2.26,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s083",
+   "start": 245.67,
+   "end": 247.31,
+   "line": "In 2001,",
+   "scene": "IN 2001: a cream journal card slides in ('NATURE, 2001'); gold '2001' stamps on it on '2001,' (0.29 s). Short. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.29,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "Short (1.6 s)."
+  },
+  {
+   "id": "s084",
+   "start": 247.31,
+   "end": 251.23,
+   "line": "scientists in London showed the brain stretches that moment back in time,",
+   "scene": "SCIENTISTS IN LONDON: timebp.js (H3) STOPPED-CLOCK board, timeline: a cream chip 'UCL, LONDON' on 'London' (0.89 s) with a small cream footnote 'Yarrow et al., 2001' (plain text, no faces); a saccade marker on the timeline; the new view's gold bar STRETCHES backwards in time (gold arrow pointing left) on 'stretches' (2.03 s)-'time,' (3.71 s) 'back in time'. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.89,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.03,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s085",
+   "start": 251.23,
+   "end": 253.92,
+   "line": "to just before your eyes moved.",
+   "scene": "TO JUST BEFORE YOUR EYES MOVED: the stretched bar reaches just before the saccade-onset marker on 'before' (0.73 s); bp label 'eyes move' on 'eyes' (1.23 s); the timeline glows. Slow push <= 4%. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.73,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.23,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s086",
+   "start": 253.92,
+   "end": 256.0,
+   "line": "Everyone has frozen a clock.",
+   "scene": "GIANT FACE DEV, 'everyone has frozen a clock': giantFace(g,cx,cy,330,{who:'DEV', f: faceAt(t,[[0,'neutral'],[0.66,'awe'],[1.14,'delighted']])}) (orange beanie) staring up at a clock off-frame; his eyes do a visible jump on 'frozen' (0.66 s); a small kitchen clock reflected in his eyes. Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.14,
+     "name": "tick",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s087",
+   "start": 256.0,
+   "end": 258.84,
+   "line": "Just for a split second.",
+   "scene": "JUST FOR A SPLIT SECOND: kitchen: HERO, MINA and DEV all glance up at the KITCHEN CLOCK at the same time on 'Just' (0.15 s); the second hand hesitates (holds 0.3 s) then ticks on 'split' (0.70 s); all three blink. camMove z 1.0->1.04. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.7,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s088",
+   "start": 258.84,
+   "end": 263.22,
+   "line": "That evening, Mina checks your big black watch against the oven clock.",
+   "scene": "THAT EVENING: THE WATCH VS THE OVEN CLOCK: THE EVENING KITCHEN/HALLWAY: morning.js (H4) evening set (hallway into the kitchen, warm lamps, dark window; fallback home3 kitchen mood 'dusk') with the oven and its clock; gold chip 'THAT EVENING' on 'evening,' (0.30 s). MINA holds HERO's wrist up next to the oven: on 'watch' (2.16 s) a split read-out: the HERO's chunky black WATCH (stopprops.js, big digits '18:30:40') beside the OVEN CLOCK ('18:30:00'), gold digits, on 'clock.' (3.38 s). HERO (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) standing, curious. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.16,
+     "name": "blip",
+     "gain": -18
+    },
+    {
+     "at": 3.38,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s089",
+   "start": 263.22,
+   "end": 266.14,
+   "line": "\"Yours is forty seconds fast,\" she says.",
+   "scene": "\"YOURS IS FORTY SECONDS FAST\": evening kitchen two-shot: MINA taps the watch face; lip-sync MINA on \"Yours is forty seconds fast,\" only (talk from 'Yours' (0.22 s) to 'fast,' (1.32 s); exprAt [[0,'thinking'],[0.64,'suspicious']]), then she just raises an eyebrow on 'says.' (1.98 s) (mouth closed). Gold '+40 s' pops by the watch on 'forty' (0.64 s)-'seconds' (0.94 s). HERO glances at his fingers. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.94,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s090",
+   "start": 266.14,
+   "end": 269.16,
+   "line": "Four snaps. Ten seconds each.",
+   "scene": "FOUR SNAPS, TEN SECONDS EACH: four cream snapping-hand icons pop in a row on 'Four' (0.12 s)-'snaps.' (0.34 s) ('Four snaps'), each tagged gold '10 s' on 'Ten' (1.55 s)-'each.' (2.06 s); a gold sum '4 × 10 = 40 s' slams under them on 'each.' (2.06 s). Evening bg blurred. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 0.34,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.15
+    },
+    {
+     "at": 1.55,
+     "name": "counter",
+     "gain": -20,
+     "dur": 0.6
+    },
+    {
+     "at": 2.06,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s091",
+   "start": 269.16,
+   "end": 273.59,
+   "line": "You've lived forty seconds more than everyone else today.",
+   "scene": "GIANT FACE HERO, 'forty seconds more': giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'awe'],[0.60,'delighted'],[2.58,'smirk']]; gold '+40 s' floats beside his head on 'forty' (0.60 s); evening lamp rimColor warm amber. Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.68,
+     "name": "shimmer",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s092",
+   "start": 273.59,
+   "end": 275.7,
+   "line": "In real life, that happens.",
+   "scene": "RULE 5 CARD: ruleCard(g,t,info,{n:5, title:'CLOCKS REALLY CAN DISAGREE.', bg: the oven clock + the watch side by side (blurLayer + veil)}). Banner lands ~0.95 s. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s093",
+   "start": 275.7,
+   "end": 277.6,
+   "line": "Just much, much smaller.",
+   "scene": "MUCH, MUCH SMALLER: the gold '+40 s' shrinks in two steps on 'much,' (0.34 s) and 'much' (0.74 s) to a tiny gold dot on 'smaller.' (0.80 s), with a cream magnifier circle around it. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.34,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 0.74,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.8
+    }
+   ],
+   "notes": "Short (1.9 s)."
+  },
+  {
+   "id": "s094",
+   "start": 277.6,
+   "end": 281.35,
+   "line": "Satellites for GPS, the system behind maps on phones,",
+   "scene": "FIG 9 - GPS: timebp.js (H3) GPS board (title 'FIG 9 - GPS SATELLITES'): a cream Earth, satellites drawing on in orbit on 'Satellites' (0.15 s); gold chip 'GPS' on 'GPS,' (0.94 s); a cream phone with a generic map pin (no brand, no app logo) on Earth on 'maps' (2.76 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.94,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.76,
+     "name": "blip",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s095",
+   "start": 281.35,
+   "end": 283.77,
+   "line": "carry super-accurate clocks.",
+   "scene": "SUPER-ACCURATE CLOCKS: zoom into one satellite: a cream atomic-clock box inside with gold digits ticking on 'super-accurate' (0.49 s); label 'atomic clock' on 'clocks.' (1.31 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "hum",
+     "gain": -28,
+     "dur": 1.5
+    },
+    {
+     "at": 1.31,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s096",
+   "start": 283.77,
+   "end": 288.38,
+   "line": "Up there, gravity is weaker, so their clocks tick a tiny bit faster.",
+   "scene": "WEAKER GRAVITY, FASTER CLOCKS: gravity field lines thin out with height (cream) on 'gravity' (1.03 s); the satellite clock ticks quicker: gold '+45 µs / day' on 'tiny' (2.95 s)-'faster.' (3.49 s). Footnote 'µs = millionth of a second'. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.29,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 2.95,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Long (4.6 s): one diagram."
+  },
+  {
+   "id": "s097",
+   "start": 288.38,
+   "end": 291.47,
+   "line": "They're also moving fast, which slows them a little.",
+   "scene": "MOVING FAST SLOWS THEM: the satellite streaks along its orbit with speed lines on 'moving' (0.58 s); gold '−7 µs / day' on 'slows' (1.66 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.58,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.66,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s098",
+   "start": 291.47,
+   "end": 295.84,
+   "line": "Add it up, and they gain about thirty-eight millionths of a second every day,",
+   "scene": "ADD IT UP: +38 µs EVERY DAY: '+45 − 7' builds on 'Add' (0.15 s)-'up,' (0.53 s) and lands on a big gold '+38 µs' on 'thirty-eight' (1.75 s); 'every day' tag on 'day,' (3.97 s); bp label 'millionths of a second'. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.77,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 1.75,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.97,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s099",
+   "start": 295.84,
+   "end": 299.88,
+   "line": "compared to clocks down here. Einstein predicted it.",
+   "scene": "COMPARED TO CLOCKS DOWN HERE / EINSTEIN PREDICTED IT: a ground clock and a satellite clock side by side, the satellite one edging ahead on 'clocks' (0.66 s); on 'Einstein' (2.30 s) a plain cream text card 'EINSTEIN - RELATIVITY' (text only, no portrait) slides in with a gold underline on 'predicted' (2.72 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "tick",
+     "gain": -18
+    },
+    {
+     "at": 2.3,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 2.72,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s100",
+   "start": 299.88,
+   "end": 301.84,
+   "line": "If engineers didn't correct for it,",
+   "scene": "IF ENGINEERS DIDN'T CORRECT FOR IT: on the satellite a cream 'CORRECTION' dial (set before launch) switches off on 'correct' (1.20 s); the clock starts drifting (digits flicker). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s101",
+   "start": 301.84,
+   "end": 305.62,
+   "line": "your map would soon be off by kilometres.",
+   "scene": "YOUR MAP WOULD BE OFF BY KILOMETRES: a generic phone map (LOCAL, no brand): the blue location dot drifts away across town streets and off over the river; gold chip 'KILOMETRES OFF' on 'kilometres.' (1.74 s). DEV's hand holds the phone, his thumb tapping in confusion. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.74,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "End of batch C."
+  },
+  {
+   "id": "s102",
+   "start": 305.62,
+   "end": 308.23,
+   "line": "Wednesday. Breakfast.",
+   "scene": "WEDNESDAY. BREAKFAST.: gold chip 'WEDNESDAY' top-left on 'Wednesday.' (0.15 s). THE BREAKFAST KITCHEN: morning.js (H4) breakfast kitchen, mood 'morning' (window light, fridge, table with cereal, juice, the butter dish, toast; use H4's DEMO name; fallback home3(g,t,cam,{room:'kitchen', mood:'day', cereal:0, plate:0}) with pos.tableX/tableTop) + its blurred foreground; atmos dust with Mina's school project on the table (stopprops.js SCHOOL PROJECT / morning.js Mina's table), the MILK JUG beside it, the BUTTER DISH, a big MIXING BOWL on the counter; MINA (actor 'MINA', s 2.0, kid, red scarf #d4262e, her stopwatch on a cord) proudly adjusting her project, DEV (actor 'DEV', s 1.9, orange beanie #f08a24, phone in hand) filming it, HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist) with toast; BISCUIT (creatures cat(), dark fur #2a2230, purple collar #9a5ad6, green eyes) crouched on the windowsill, eyes locked on the butter on 'Breakfast.' (1.44 s). camMove z 0.96->1.03. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s103",
+   "start": 308.23,
+   "end": 311.82,
+   "line": "Biscuit leaps for the butter again, and hits the milk jug.",
+   "scene": "BISCUIT LEAPS AGAIN, HITS THE MILK JUG: BISCUIT launches off the windowsill on 'leaps' (0.51 s) (pose arch -> stand, outstretched), sails over the butter, and her back paw clips the MILK JUG on 'hits' (1.97 s); it rocks. camMove whip pan x. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.51,
+     "name": "whoosh",
+     "gain": -16,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.97,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s104",
+   "start": 311.82,
+   "end": 316.0,
+   "line": "It tips off the table, straight towards Mina's school project.",
+   "scene": "IT TIPS TOWARD MINA'S PROJECT: close: the MILK JUG tips off the table edge on 'tips' (0.24 s) (milk starting to pour out), its path heading straight for MINA's SCHOOL PROJECT below/beside on 'Mina's' (2.20 s)-'project.' (2.90 s); slight slow-motion feel; MINA's horrified face soft in the bg (exprAt shocked). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.88,
+     "name": "riser",
+     "gain": -22,
+     "dur": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s105",
+   "start": 316.0,
+   "end": 318.69,
+   "line": "Snap. Light: moving.",
+   "scene": "SNAP. LIGHT: MOVING.: HERO's hand snaps on 'Snap.' (0.14 s): freeze.js (H1) THE SNAP: finger-snap pose on the hand + the ring ripple from the fingertips; behind the ring the frame stills and freezeGrade(g,k) ramps k 0->1 over 0.4 s; the milk freezes in a hanging arc out of the jug (freeze.js FROZEN LIQUIDS). On 'Light:' (1.40 s)-'moving.' (1.54 s) a cream chip 'LIGHT: MOVING' with a gold tick pops lower-left (the window light still shimmers). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 01.5 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.14,
+     "name": "pop",
+     "gain": -10,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 0.15,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.9
+    },
+    {
+     "at": 0.19,
+     "name": "freeze",
+     "gain": -14
+    },
+    {
+     "at": 1.54,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s106",
+   "start": 318.69,
+   "end": 321.67,
+   "line": "Air: moving. You take a breath.",
+   "scene": "AIR: MOVING. YOU TAKE A BREATH.: a second chip 'AIR: MOVING' + gold tick on 'moving.' (0.33 s); HERO (HERO (actor 'HERO', s 1.9: cast.js teal tee #2f8f8a + black 'spiky' hair #16141c; LOCAL: one black cowlick tuft sticking straight up, round tortoiseshell glasses #8a5a2b, cream #efe3c8 stripes + long sleeves on the tee, tiny cream stars on the navy pyjama legs #24305e, mismatched socks green #3aa05a / yellow #ffd23c, the chunky black digital watch on his left wrist)) draws a deliberate breath on 'breath.' (2.09 s) (chest up), eyes on the frozen jug. FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 01.5 -> 03.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.09,
+     "name": "whoosh",
+     "gain": -24,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s107",
+   "start": 321.67,
+   "end": 325.21,
+   "line": "Rule three. You can't just put the jug back.",
+   "scene": "RULE THREE: CAN'T PUT THE JUG BACK: gold chip 'RULE 3: MOTION DOESN'T PAUSE.' pops on 'Rule' (0.19 s) (hud chip); HERO reaches for the frozen jug and stops his hand an inch away on 'jug' (2.37 s) - a gold velocity arrow appears on the jug pointing down. exprAt thinking. FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 03.0 -> 05.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.19,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.37,
+     "name": "blip",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s108",
+   "start": 325.21,
+   "end": 326.99,
+   "line": "It would still be falling.",
+   "scene": "IT WOULD STILL BE FALLING: inset (timebp.js (H3) style, cream on navy) over the frozen kitchen: a ghost jug placed back on the table still carries its gold arrow and immediately tumbles off again on 'falling.' (0.71 s). 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 05.0 -> 06.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.71,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s109",
+   "start": 326.99,
+   "end": 329.41,
+   "line": "So you slide Mina's project away,",
+   "scene": "SLIDE MINA'S PROJECT AWAY: HERO slides the SCHOOL PROJECT along the table, out of the milk's path on 'slide' (0.47 s)-'away,' (1.83 s) 'slide ... away' (careful, both hands). FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 06.0 -> 08.0 s across the shot. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.5,
+     "dur": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s110",
+   "start": 329.41,
+   "end": 332.63,
+   "line": "and put the big mixing bowl underneath the jug.",
+   "scene": "THE BIG MIXING BOWL UNDERNEATH: HERO lifts the big MIXING BOWL from the counter on 'big' (0.59 s) and sets it right under the frozen milk arc on 'underneath' (1.57 s)-'jug.' (2.29 s) 'underneath the jug'; he steps back, hands up, grinning (exprAt cheeky). FROZEN TIME: freeze.js (H1) freezeGrade(g, k) drawn LAST (cool blue-grey, desaturated, dust motes hanging); only the HERO keeps his warm colours and moves; frozen people/cat use H1's FROZEN-MID-ACTION pose helper (tiny 'still' sparkle), never idle breathing or blinks. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 08.0 -> 10.0 s across the shot, landing on 10.0 at the end. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 2.29,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s111",
+   "start": 332.63,
+   "end": 335.46,
+   "line": "Time restarts. Splash.",
+   "scene": "TIME RESTARTS. SPLASH.: freeze.js UNFREEZE on 'Time' (0.11 s); the milk pours down into the MIXING BOWL with a big SPLASH on 'Splash.' (1.71 s) (white splash crown, droplets, kid-friendly). Small shake. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.11,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.23,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.71,
+     "name": "rain",
+     "gain": -18,
+     "dur": 0.5
+    },
+    {
+     "at": 1.71,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s112",
+   "start": 335.46,
+   "end": 337.6,
+   "line": "Every drop lands in the bowl.",
+   "scene": "EVERY DROP LANDS IN THE BOWL: macro on the bowl: the last drops fall in on 'drop' (0.40 s)-'bowl.' (1.24 s), each a small ring; not one on the table; a gold tick chip on 'bowl.' (1.24 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.68,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.16,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.8
+    },
+    {
+     "at": 1.24,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s113",
+   "start": 337.6,
+   "end": 339.96,
+   "line": "Mina looks at her dry project.",
+   "scene": "MINA LOOKS AT HER DRY PROJECT: MINA (actor 'MINA', s 2.0, kid, red scarf #d4262e, her stopwatch on a cord) looks down at her perfectly dry SCHOOL PROJECT on 'looks' (0.36 s)-'project.' (1.12 s) (lookToward down), touches it, exprAt [[0,'shocked'],[1.12,'thinking']]. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.12,
+     "name": "blip",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s114",
+   "start": 339.96,
+   "end": 343.18,
+   "line": "Then at you. Then at her stopwatch.",
+   "scene": "GIANT FACE MINA, 'then at you, then at her stopwatch': giantFace(g,cx,cy,330,{who:'MINA', f: faceAt(t,[[0,'neutral'],[0.52,'suspicious'],[1.92,'squint']])}) (red scarf); her eyes slide to camera (HERO) on 'you.' (0.52 s), then down to her STOPWATCH (stopprops.js) rising into frame bottom on 'stopwatch.' (1.92 s). Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.52,
+     "name": "swish",
+     "gain": -24
+    },
+    {
+     "at": 1.92,
+     "name": "tick",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s115",
+   "start": 343.18,
+   "end": 346.27,
+   "line": "\"Zero point zero seconds.\"",
+   "scene": "\"ZERO POINT ZERO SECONDS.\": MINA holds up her STOPWATCH to HERO (two-shot, kitchen): the digits read gold '0.0' (stopprops.js STOPWATCH, big digits) on 'Zero' (0.15 s); lip-sync MINA on \"Zero point zero seconds.\" only (talk 'Zero' (0.15 s)-'seconds.' (1.16 s)), deadpan (exprAt suspicious); HERO grins sheepishly. camMove z 1.0->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 0.87,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s116",
+   "start": 346.27,
+   "end": 350.24,
+   "line": "But during those ten seconds, something moved that shouldn't have.",
+   "scene": "SOMETHING MOVED THAT SHOULDN'T HAVE: flashback to the frozen rescue (freezeGrade 1, slight vignette): HERO busy with the bowl in the foreground; the camera drifts past him toward the windowsill... a gold '10' faint in the corner read-out on 'ten' (0.79 s); on 'moved' (2.07 s) something dark shifts at the edge of frame. Slow, eerie push. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 10.0 -> 10.0 s across the shot, held. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "riser",
+     "gain": -22,
+     "dur": 1.6
+    },
+    {
+     "at": 2.07,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s117",
+   "start": 350.24,
+   "end": 353.04,
+   "line": "Biscuit. She blinked at you, stretched,",
+   "scene": "BISCUIT. SHE BLINKED AND STRETCHED.: frozen kitchen (freezeGrade on everything EXCEPT Biscuit, who keeps her colour): BISCUIT on the windowsill, looking straight at the HERO; she blinks on 'blinked' (1.54 s) (eyes 'blink') and does a long stretch (pose arch) on 'stretched,' (2.18 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.54,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s118",
+   "start": 353.04,
+   "end": 355.59,
+   "line": "and walked across the frozen kitchen.",
+   "scene": "SHE WALKED ACROSS THE FROZEN KITCHEN: wide frozen kitchen: BISCUIT (in colour) strolls along the counter, under the hanging milk arc, past the frozen DEV and MINA, tail up, on 'walked' (0.28 s)-'kitchen.' (1.44 s); HERO (back to her) never notices. Truck camMove x with her. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "footstep",
+     "gain": -30
+    },
+    {
+     "at": 0.86,
+     "name": "footstep",
+     "gain": -30
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s119",
+   "start": 355.59,
+   "end": 359.94,
+   "line": "Maybe that's why cats always appear in places they couldn't have reached.",
+   "scene": "WHY CATS APPEAR WHERE THEY COULDN'T HAVE: normal-time montage in one frame: BISCUIT pops up in three impossible places one per beat: on top of the fridge on 'cats' (0.99 s), inside the top cupboard on 'appear' (1.77 s), on the high shelf by the clock on 'couldn't' (2.97 s) 'couldn't'; each with a tiny cream sparkle. Biscuit always with the same calm stare. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.99,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.77,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.6
+    },
+    {
+     "at": 2.97,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s120",
+   "start": 359.94,
+   "end": 363.33,
+   "line": "Next morning, you snap. Nothing happens.",
+   "scene": "NEXT MORNING: THE SNAP DOES NOTHING: gold chip 'NEXT MORNING' on 'Next' (0.12 s); HERO's hand snaps on 'snap.' (0.82 s) - freeze.js THE SNAP pose but the ring is a tiny ripple that pops like a soap bubble and fizzles; NO freezeGrade; the read-out dial appears at '00.0' and just blinks, never runs, on 'Nothing' (2.00 s)-'happens.' (2.24 s) 'Nothing happens'. MINA keeps eating in the background. 10-SECOND READ-OUT: stopprops.js (H2) STOPWATCH as a small HUD dial top-right (s 0.55, big gold digits) showing the hero's frozen time 00.0 -> 00.0 s across the shot, blinking. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.82,
+     "name": "pop",
+     "gain": -12,
+     "pitch": 2.2,
+     "dur": 0.08
+    },
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s121",
+   "start": 363.33,
+   "end": 364.98,
+   "line": "Your snap is gone.",
+   "scene": "GIANT FACE HERO, 'your snap is gone': giantFace(g,cx,cy,330,{who:'HERO', f: faceAt(...)}) (faces.js draws the black spiky hair from cast.js; LOCAL: the cowlick tuft, round tortoiseshell glasses over the eyes, and paint the faces.js teal hood/shoulders over as a teal/cream striped crew-neck tee), faceAt [[0,'worried'],[0.73,'sad']]; he snaps his fingers again in front of his face (hand at frame bottom) on 'snap' (0.27 s) - nothing. Morning rimColor. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 2.0,
+     "dur": 0.06
+    }
+   ],
+   "notes": "Short (1.65 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s122",
+   "start": 364.98,
+   "end": 366.9,
+   "line": "Biscuit flicks her tail.",
+   "scene": "BISCUIT FLICKS HER TAIL: close on BISCUIT sitting on the floor, back to us; her tail flicks on 'flicks' (0.52 s)-'tail.' (0.96 s); she glances over her shoulder (eyes 'glint'). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.52,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s123",
+   "start": 366.9,
+   "end": 371.29,
+   "line": "And somehow, she's already on the table, eating your toast.",
+   "scene": "ALREADY ON THE TABLE, EATING YOUR TOAST: HERO turns back to his plate on 'somehow,' (0.26 s) - BISCUIT is already on the table (she was on the floor a blink ago), eating his TOAST (stopprops.js) on 'eating' (1.88 s)-'toast.' (2.54 s); HERO's jaw drops (exprAt shocked -> laugh), MINA and DEV laugh. Warm light. camMove z 1.0->1.05. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.26,
+     "name": "pop",
+     "gain": -18
+    },
+    {
+     "at": 1.88,
+     "name": "tick",
+     "gain": -20,
+     "pitch": 0.5
+    },
+    {
+     "at": 2.54,
+     "name": "tick",
+     "gain": -20,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s124",
+   "start": 371.29,
+   "end": 374.03,
+   "line": "In real life, nobody can stop time.",
+   "scene": "IN REAL LIFE, NOBODY CAN STOP TIME: gold chip 'REAL LIFE' on 'In' (0.15 s); over the dimmed warm kitchen a cream clock face with a cream pause icon gets a coral cross on 'stop' (1.45 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "morning",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.45,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.1
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s125",
+   "start": 374.03,
+   "end": 378.96,
+   "line": "And if it did stop, you'd be stuck in the dark, unable to breathe or move.",
+   "scene": "STUCK IN THE DARK, UNABLE TO BREATHE OR MOVE: two recap panels slide in: left the BLACK view (pitch dark) on 'dark,' (2.07 s); right the WALL OF AIR (HERO puffed against the speckle) on 'breathe' (3.29 s); a coral cross on 'move.' (3.91 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.95,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 3.29,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.8
+    },
+    {
+     "at": 3.91,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "Long (4.9 s): two recap panels."
+  },
+  {
+   "id": "s126",
+   "start": 378.96,
+   "end": 381.14,
+   "line": "But scientists have stopped light.",
+   "scene": "SCIENTISTS HAVE STOPPED LIGHT: timebp.js (H3) HAU STOPPED-LIGHT board (title 'FIG 10 - STOPPED LIGHT'): a gold light pulse travelling along the grid slows to a halt on 'stopped' (0.86 s) with a gold 'STOPPED' tag. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "slowmo",
+     "gain": -20,
+     "dur": 1.4
+    },
+    {
+     "at": 0.86,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s127",
+   "start": 381.14,
+   "end": 383.11,
+   "line": "In 2001, at Harvard,",
+   "scene": "IN 2001, AT HARVARD: gold '2001' stamps on the board on '2001,' (0.28 s); a cream text chip 'HARVARD' (plain text, no crest or logo) on 'Harvard,' (1.64 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.64,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s128",
+   "start": 383.11,
+   "end": 387.65,
+   "line": "Lene Hau's team trapped a pulse of light in a cloud of super-cold atoms",
+   "scene": "LENE HAU'S TEAM TRAPPED A PULSE OF LIGHT IN SUPER-COLD ATOMS: a cream name plate 'LENE HAU'S TEAM' (text only, no likeness) on 'Lene' (0.15 s); the gold pulse flies into a glowing cloud of cream dots on 'trapped' (1.37 s) and stops inside; bp label 'super-cold atoms' on 'super-cold' (3.51 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.37,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.2
+    },
+    {
+     "at": 3.07,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": "Long (4.5 s): one diagram."
+  },
+  {
+   "id": "s129",
+   "start": 387.65,
+   "end": 391.62,
+   "line": "for about a thousandth of a second, then let it go again.",
+   "scene": "A THOUSANDTH OF A SECOND, THEN LET GO: the pulse held in the cloud with a gold readout '~1/1,000 s' on 'thousandth' (0.79 s); on 'let' (2.49 s) it shoots out of the far side, free again. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.79,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.49,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s130",
+   "start": 391.62,
+   "end": 394.3,
+   "line": "Your brain stretches moments every day.",
+   "scene": "YOUR BRAIN STRETCHES MOMENTS EVERY DAY: the KITCHEN CLOCK with the stretched first-tick bar from FIG 8 returning; gold chip 'RULE 4' on 'brain' (0.28 s); the bar stretches on 'stretches' (0.52 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "stopprops",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 0.52,
+     "name": "tick",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s131",
+   "start": 394.3,
+   "end": 397.88,
+   "line": "And satellite clocks really do run at a different speed.",
+   "scene": "SATELLITE CLOCKS RUN AT A DIFFERENT SPEED: the GPS satellite from FIG 9 orbiting over the cream Earth with gold '+38 µs / day' on 'clocks' (0.70 s); gold chip 'RULE 5' on 'different' (2.32 s). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "timebp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.26,
+     "name": "hum",
+     "gain": -28,
+     "dur": 1.5
+    },
+    {
+     "at": 0.7,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.32,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s132",
+   "start": 397.88,
+   "end": 401.96,
+   "line": "So if you had ten frozen seconds, what would you do with them?",
+   "scene": "QUESTION lock-up: the breakfast kitchen frozen (freezeGrade 0.7: juice beads hanging, BISCUIT mid-leap, everyone still, HERO warm with his hand up to snap); gold '10' pops on 'ten' (0.88 s); the question 'IF YOU HAD 10 FROZEN SECONDS, WHAT WOULD YOU DO?' (title style: outlined cream, >= 10 px outline + glow, gold '10 FROZEN SECONDS') snaps on on 'what' (2.46 s). Slow push. LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "freeze",
+   "type": "title",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.88,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.46,
+     "name": "stinger",
+     "gain": -10,
+     "minor": false
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s133",
+   "start": 401.96,
+   "end": 405.964,
+   "line": "Tell us in the comments. And subscribe for more What Ifs.",
+   "scene": "END SCREEN (UI.endScreen as earlier episodes): a comment-bubble icon pops on 'Tell' (0.06 s) ('Tell us in the comments'), the subscribe pill + like icon on 'subscribe' (1.98 s); the cast lined up in the warm kitchen: HERO (cowlick, glasses, striped tee, star pyjamas, mismatched socks, big black watch), MINA (red scarf, stopwatch), DEV (orange beanie, filming), BISCUIT on the table finishing the toast. Fade out at the end (config fadeOut 0.8). LEGAL: original story and designs; no film/show/anime/game/comic names, characters, catchphrases or look-alikes. The power is ONLY a finger snap (no remote, no stopwatch or pocket watch as the power, no gadget, no glowing eyes, no clock-face symbols on the hero); no goggles, headphones, silver/white hair streak, lightning-bolt jacket, cape or costume; never a sped-up runner circling the room to music: the hero walks, reaches and moves things by hand. Real people (Einstein, Lene Hau, the 2001 London team) only as plain text, never a likeness.",
+   "set": "",
+   "type": "end",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.06,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.98,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "notes": "End of batch D.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 8.53,
+   "mood": "playful",
+   "intensity": 0.4,
+   "note": "playful: cold open breakfast, the juice, the first snap"
+  },
+  {
+   "start": 8.53,
+   "end": 15.36,
+   "mood": "dark",
+   "intensity": 0.3,
+   "note": "eerie: the black, count to ten"
+  },
+  {
+   "start": 15.36,
+   "end": 39.72,
+   "mood": "playful",
+   "intensity": 0.45,
+   "note": "playful: orange socks, title, Dev's clip"
+  },
+  {
+   "start": 39.72,
+   "end": 75.3,
+   "mood": "dark",
+   "intensity": 0.35,
+   "note": "eerie: why was it dark? + rule 1 (light that never arrives)"
+  },
+  {
+   "start": 75.3,
+   "end": 89.86,
+   "mood": "wonder",
+   "intensity": 0.35,
+   "note": "eerie-beautiful: the frozen kitchen (juice beads, Dev, Biscuit)"
+  },
+  {
+   "start": 89.86,
+   "end": 152.14,
+   "mood": "tension",
+   "intensity": 0.45,
+   "note": "tension: the wall of air, rule 2, holding the breath"
+  },
+  {
+   "start": 152.14,
+   "end": 209.39,
+   "mood": "playful",
+   "intensity": 0.5,
+   "note": "comedy: the cat, the hockey puck, the bin, rule 3"
+  },
+  {
+   "start": 209.39,
+   "end": 258.84,
+   "mood": "mystery",
+   "intensity": 0.35,
+   "note": "curious: the stuck clock + rule 4"
+  },
+  {
+   "start": 258.84,
+   "end": 305.62,
+   "mood": "wonder",
+   "intensity": 0.35,
+   "note": "curious: the 40-second watch + rule 5 GPS"
+  },
+  {
+   "start": 305.62,
+   "end": 316.0,
+   "mood": "tension",
+   "intensity": 0.45,
+   "note": "rescue build: Biscuit leaps, the jug tips"
+  },
+  {
+   "start": 316.0,
+   "end": 332.63,
+   "mood": "epic",
+   "intensity": 0.45,
+   "note": "heroic: the frozen rescue"
+  },
+  {
+   "start": 332.63,
+   "end": 346.27,
+   "mood": "triumph",
+   "intensity": 0.6,
+   "note": "heroic payoff: splash, every drop, zero point zero"
+  },
+  {
+   "start": 346.27,
+   "end": 371.29,
+   "mood": "mystery",
+   "intensity": 0.45,
+   "note": "twist: Biscuit moved, the snap is gone, the toast"
+  },
+  {
+   "start": 371.29,
+   "end": 397.88,
+   "mood": "hopeful",
+   "intensity": 0.4,
+   "note": "warm: real life, stopped light, recap"
+  },
+  {
+   "start": 397.88,
+   "end": 405.964,
+   "mood": "calm",
+   "intensity": 0.45,
+   "note": "warm: the question + end screen"
+  }
+ ],
+ "wordTimesCorrected": {
+  "note": "audio-envelope onsets (the voice has digital silence between phrases) used for cut points and sentence starts where words.json is off by >= 0.1 s; later = words.json glued the word onto the previous one",
+  "Mina knocks": 2.91,
+  "Silent.": 10.44,
+  "You can't": 11.7,
+  "You count": 13.92,
+  "You tell": 28.2,
+  "Dev starts": 29.96,
+  "So frozen": 69.95,
+  "It would": 72.54,
+  "And it's": 81.18,
+  "Juice drops": 82.8,
+  "Dev is": 85.24,
+  "You try": 95.18,
+  "Air looks": 99.27,
+  "And they": 109.5,
+  "and the": 124.1,
+  "Frozen molecules": 127.13,
+  "So nothing": 129.78,
+  "You'd be": 142.89,
+  "Third snap.": 152.29,
+  "straight into": 174.38,
+  "It saves": 197.2,
+  "Ten quiet": 210.98,
+  "You glance": 214.52,
+  "The second": 216.76,
+  "Your heart": 218.85,
+  "And ticks": 223.55,
+  "Normal.": 225.05,
+  "That has": 227.17,
+  "It fills": 239.53,
+  "Just for": 256.15,
+  "Ten seconds": 267.69,
+  "In real": 273.74,
+  "Satellites for": 277.75,
+  "They're also": 288.53,
+  "Add it": 291.62,
+  "compared to": 295.99,
+  "Wednesday.": 305.77,
+  "Breakfast.": 307.06,
+  "It tips": 311.97,
+  "You take": 320.3,
+  "You can't (#793)": 323.25,
+  "It would (#800)": 325.36,
+  "and put": 329.56,
+  "Mina looks": 337.75,
+  "\"Zero point": 343.33,
+  "But during": 346.42,
+  "and walked": 353.19,
+  "Biscuit flicks": 365.13,
+  "In real (#904)": 371.44,
+  "But scientists": 379.11
+ }
+}
