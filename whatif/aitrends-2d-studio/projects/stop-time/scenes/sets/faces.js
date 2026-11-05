@@ -40,12 +40,14 @@ const HOODY = HERO_FIT.color;   // ep 3: green hoodie (from cast.js)
 function body(g, r, who, st) {
   if (who === 'HERO') {
     const c = HOODY, d = shade(c, -0.3);
+    if (HERO_FIT.top === 'hoodie') {   // hood only for hoodie heroes (ep 3-5); stop-time hero wears a tee
     g.fillStyle = shade(c, -0.18); g.beginPath(); g.ellipse(0, r * 0.04, r * 1.24, r * 1.2, 0, 0, Math.PI * 2); g.fill();      // hood bunched behind the head
     g.fillStyle = alpha('#000', 0.35); g.beginPath(); g.ellipse(0, r * 0.06, r * 1.08, r * 1.06, 0, 0, Math.PI * 2); g.fill();  // inner hood shadow
+    }
     g.fillStyle = c; g.beginPath(); g.moveTo(-r * 1.9, r * 2.3); g.quadraticCurveTo(-r * 1.7, r * 1.15, -r * 0.62, r * 0.98); g.lineTo(r * 0.62, r * 0.98); g.quadraticCurveTo(r * 1.7, r * 1.15, r * 1.9, r * 2.3); g.closePath(); g.fill();
     g.fillStyle = linGradV(g, r, c); g.fill();
     g.strokeStyle = d; g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(-r * 0.62, r * 0.98); g.quadraticCurveTo(0, r * 1.32, r * 0.62, r * 0.98); g.stroke();          // neckline
-    for (const s of [-1, 1]) { g.strokeStyle = shade(c, 0.5); g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(s * r * 0.2, r * 1.12); g.quadraticCurveTo(s * r * 0.26, r * 1.5, s * r * 0.22, r * 1.8); g.stroke(); circle(g, s * r * 0.22, r * 1.84, r * 0.045, shade(c, 0.5)); }
+    if (HERO_FIT.top === 'hoodie') for (const s of [-1, 1]) { g.strokeStyle = shade(c, 0.5); g.lineWidth = r * 0.05; g.beginPath(); g.moveTo(s * r * 0.2, r * 1.12); g.quadraticCurveTo(s * r * 0.26, r * 1.5, s * r * 0.22, r * 1.8); g.stroke(); circle(g, s * r * 0.22, r * 1.84, r * 0.045, shade(c, 0.5)); }
     g.strokeStyle = alpha(d, 0.7); g.lineWidth = r * 0.04; g.beginPath(); g.moveTo(-r * 1.1, r * 1.6); g.quadraticCurveTo(-r * 0.9, r * 1.9, -r * 1.0, r * 2.2); g.stroke();       // fabric fold
   } else if (who === 'MINA') {
     g.fillStyle = '#34293f'; g.beginPath(); g.ellipse(0, r * 1.85, r * 1.35, r * 0.95, 0, Math.PI, Math.PI * 2); g.fill();
