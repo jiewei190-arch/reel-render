@@ -74,7 +74,8 @@ export function eye(g, t, o = {}) {
 // ---- retina inset: light enters from the TOP, passes nerve/ganglion/bipolar cells, hits the receptors (rods = long capsules with disc stripes, cones = tapered), pigment layer at the base ----
 export function retina(g, t, o = {}) {
   const { x = E.W / 2, y = E.H / 2, w = 900, h = 420, rods = true, cones = false, flood = 0, dim = 0 } = o, ui = S().ui, x0 = x - w / 2, y0 = y - h / 2;
-  g.save(); rr(g, x0, y0, w, h, 20); g.clip(); g.fillStyle = alpha(ui.bpBg, 0.97); g.fillRect(x0, y0, w, h);
+  if (!(w > 2 && h > 2)) return;   // zoom-in from 0: nothing to draw yet (avoids a negative arcTo radius)
+  g.save(); rr(g, x0, y0, w, h, Math.min(20, w / 2, h / 2)); g.clip(); g.fillStyle = alpha(ui.bpBg, 0.97); g.fillRect(x0, y0, w, h);
   const base = y0 + h - 44, top = y0 + 128, n = Math.max(8, Math.round(w / 52)), gap = w / (n + 1);
   g.fillStyle = alpha(ui.blueprint, 0.1); g.fillRect(x0, y0, w, 112);
   for (let i = 0; i < n + 1; i++) { const cx = x0 + gap * (i + 0.5), cy = y0 + 28 + (i % 2) * 24; circle(g, cx, cy, 9, alpha(ui.blueprint, 0.45)); seg(g, [[cx, cy + 9], [cx + (i % 3 - 1) * 8, y0 + 112]], 1.6, alpha(ui.blueprint, 0.4)); }
