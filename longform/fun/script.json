@@ -1,0 +1,107 @@
+{
+ "name": "fun",
+ "title": "What Did Cavemen Do For Fun? (A 35,000-Year-Old Flute!)",
+ "voice": {
+  "af_heart": 0.5,
+  "bf_emma": 0.5
+ },
+ "lang": "en-gb",
+ "speed": 0.95,
+ "format": "reel",
+ "scenes": [
+  {
+   "v": "hook_flute",
+   "lines": [
+    "Someone in the Stone Age made a flute from a vulture's wing bone.",
+    "And it's at least thirty-five thousand years old."
+   ]
+  },
+  {
+   "v": "hook_q",
+   "lines": [
+    "So what did cavemen do for fun?"
+   ]
+  },
+  {
+   "v": "meet_moss",
+   "lines": [
+    "Meet Moss. He's bored."
+   ]
+  },
+  {
+   "v": "flute_cave",
+   "lines": [
+    "Surprise one: music.",
+    "Found in Hohle Fels cave, Germany, it has five finger holes."
+   ]
+  },
+  {
+   "v": "flute_replica",
+   "lines": [
+    "Experts carved a copy from vulture bone.",
+    "And yes, it plays."
+   ]
+  },
+  {
+   "v": "finger_flutings",
+   "lines": [
+    "Surprise two: kids' doodles.",
+    "In Rouffignac cave, France, over thirteen thousand years ago, children dragged fingers through soft clay."
+   ]
+  },
+  {
+   "v": "lifted_up",
+   "lines": [
+    "Some lines reach the ceiling.",
+    "Scientists think grown-ups lifted them up."
+   ]
+  },
+  {
+   "v": "hand_stencils",
+   "lines": [
+    "Surprise three: tiny hands.",
+    "In Spanish caves, maybe a quarter of hand outlines are children's."
+   ]
+  },
+  {
+   "v": "stencil_how",
+   "lines": [
+    "Paint was blown around a hand on the wall.",
+    "Like a Stone Age selfie."
+   ]
+  },
+  {
+   "v": "fire_stories",
+   "lines": [
+    "Surprise four: stories.",
+    "Among Kalahari hunter-gatherers today, most long fireside chats at night are stories."
+   ]
+  },
+  {
+   "v": "dance",
+   "lines": [
+    "There's singing and dancing too.",
+    "It's a modern clue, but a lovely one."
+   ]
+  },
+  {
+   "v": "ending",
+   "lines": [
+    "So Stone Age fun sounds like ours.",
+    "Music. Messy art. A really good story."
+   ]
+  },
+  {
+   "v": "moss_flute",
+   "lines": [
+    "And Moss? Still can't play the flute."
+   ]
+  },
+  {
+   "v": "follow",
+   "lines": [
+    "Follow for more Stone Age Stories."
+   ]
+  }
+ ]
+}
