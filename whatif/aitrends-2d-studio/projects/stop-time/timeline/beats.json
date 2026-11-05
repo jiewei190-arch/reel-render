@@ -1,0 +1,802 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 2.0,
+  "text": "Tuesday. Breakfast.",
+  "end": 2.87
+ },
+ {
+  "i": 1,
+  "start": 2.87,
+  "speechStart": 3.02,
+  "speechEnd": 9.64,
+  "text": "Mina knocks her orange juice off the table, and without thinking, you snap your fingers. Everything goes black.",
+  "end": 10.65
+ },
+ {
+  "i": 2,
+  "start": 10.65,
+  "speechStart": 10.8,
+  "speechEnd": 10.8,
+  "text": "Silent.",
+  "end": 11.39
+ },
+ {
+  "i": 3,
+  "start": 11.39,
+  "speechStart": 11.54,
+  "speechEnd": 14.66,
+  "text": "You can't even see your own hand. You count to ten.",
+  "end": 15.29
+ },
+ {
+  "i": 4,
+  "start": 15.29,
+  "speechStart": 15.44,
+  "speechEnd": 19.12,
+  "text": "Then the light comes back, the juice lands, and Mina's socks are orange.",
+  "end": 19.89
+ },
+ {
+  "i": 5,
+  "start": 19.89,
+  "speechStart": 20.04,
+  "speechEnd": 23.36,
+  "text": "Nobody knows why your snap does this. Not even you.",
+  "end": 23.97
+ },
+ {
+  "i": 6,
+  "start": 23.97,
+  "speechStart": 24.12,
+  "speechEnd": 25.74,
+  "text": "Let's see what ten seconds can do.",
+  "end": 27.83
+ },
+ {
+  "i": 7,
+  "start": 27.83,
+  "speechStart": 27.98,
+  "speechEnd": 34.92,
+  "text": "You tell Dev and Mina. Dev starts filming. Mina starts her stopwatch. To them, nothing happened.",
+  "end": 35.51
+ },
+ {
+  "i": 8,
+  "start": 35.51,
+  "speechStart": 35.66,
+  "speechEnd": 42.4,
+  "text": "One moment you were in your chair, the next, you were standing in a puddle. But why was it dark? The lights were on.",
+  "end": 42.97
+ },
+ {
+  "i": 9,
+  "start": 42.97,
+  "speechStart": 43.12,
+  "speechEnd": 43.94,
+  "text": "The sun was out.",
+  "end": 45.39
+ },
+ {
+  "i": 10,
+  "start": 45.39,
+  "speechStart": 45.54,
+  "speechEnd": 47.2,
+  "text": "Light is the fastest thing there is.",
+  "end": 47.69
+ },
+ {
+  "i": 11,
+  "start": 47.69,
+  "speechStart": 47.84,
+  "speechEnd": 50.7,
+  "text": "About three hundred thousand kilometres every second.",
+  "end": 51.41
+ },
+ {
+  "i": 12,
+  "start": 51.41,
+  "speechStart": 51.56,
+  "speechEnd": 52.92,
+  "text": "Even so, it has to travel.",
+  "end": 53.63
+ },
+ {
+  "i": 13,
+  "start": 53.63,
+  "speechStart": 53.78,
+  "speechEnd": 57.52,
+  "text": "Sunlight takes about eight minutes and twenty seconds to get here from the Sun.",
+  "end": 58.11
+ },
+ {
+  "i": 14,
+  "start": 58.11,
+  "speechStart": 58.26,
+  "speechEnd": 62.36,
+  "text": "You see when light lands inside your eye, on the back wall, called the retina.",
+  "end": 62.93
+ },
+ {
+  "i": 15,
+  "start": 62.93,
+  "speechStart": 63.08,
+  "speechEnd": 69.08,
+  "text": "Freeze the light, and every bit of it hangs in the air, between the window and your eyes. None of it arrives.",
+  "end": 69.69
+ },
+ {
+  "i": 16,
+  "start": 69.69,
+  "speechStart": 69.84,
+  "speechEnd": 71.72,
+  "text": "So frozen time wouldn't look frozen.",
+  "end": 72.23
+ },
+ {
+  "i": 17,
+  "start": 72.23,
+  "speechStart": 72.38,
+  "speechEnd": 76.08,
+  "text": "It would look like nothing at all. Second snap.",
+  "end": 76.79
+ },
+ {
+  "i": 18,
+  "start": 76.79,
+  "speechStart": 76.94,
+  "speechEnd": 81.94,
+  "text": "This time, the snap seems to have learned. The light keeps moving. And it's beautiful.",
+  "end": 82.79
+ },
+ {
+  "i": 19,
+  "start": 82.79,
+  "speechStart": 82.94,
+  "speechEnd": 84.44,
+  "text": "Juice drops hang like glass beads.",
+  "end": 85.23
+ },
+ {
+  "i": 20,
+  "start": 85.23,
+  "speechStart": 85.38,
+  "speechEnd": 87.38,
+  "text": "Dev is frozen mid-sneeze.",
+  "end": 87.23
+ },
+ {
+  "i": 21,
+  "start": 87.23,
+  "speechStart": 87.38,
+  "speechEnd": 89.18,
+  "text": "Biscuit is mid-leap, aiming at the butter.",
+  "end": 89.81
+ },
+ {
+  "i": 22,
+  "start": 89.81,
+  "speechStart": 89.96,
+  "speechEnd": 92.32,
+  "text": "You step forward, and walk into something soft.",
+  "end": 92.89
+ },
+ {
+  "i": 23,
+  "start": 92.89,
+  "speechStart": 93.04,
+  "speechEnd": 97.76,
+  "text": "Like a mattress you can't see. You try to gasp. Nothing comes in.",
+  "end": 98.91
+ },
+ {
+  "i": 24,
+  "start": 98.91,
+  "speechStart": 99.06,
+  "speechEnd": 101.72,
+  "text": "Air looks like nothing, but it's packed with molecules.",
+  "end": 102.43
+ },
+ {
+  "i": 25,
+  "start": 102.43,
+  "speechStart": 102.58,
+  "speechEnd": 108.68,
+  "text": "In one cubic centimetre, about the size of a fingertip, there are around twenty-five billion billion.",
+  "end": 109.11
+ },
+ {
+  "i": 26,
+  "start": 109.11,
+  "speechStart": 109.26,
+  "speechEnd": 110.56,
+  "text": "And they never sit still.",
+  "end": 111.15
+ },
+ {
+  "i": 27,
+  "start": 111.15,
+  "speechStart": 111.3,
+  "speechEnd": 117.62,
+  "text": "At room temperature, they zoom around at roughly five hundred metres a second, faster than a jet airliner.",
+  "end": 118.25
+ },
+ {
+  "i": 28,
+  "start": 118.25,
+  "speechStart": 118.4,
+  "speechEnd": 119.9,
+  "text": "All that bumping is air pressure.",
+  "end": 120.47
+ },
+ {
+  "i": 29,
+  "start": 120.47,
+  "speechStart": 120.62,
+  "speechEnd": 126.38,
+  "text": "When you breathe in, your diaphragm makes room in your chest, and the air outside pushes itself in.",
+  "end": 127.27
+ },
+ {
+  "i": 30,
+  "start": 127.27,
+  "speechStart": 127.42,
+  "speechEnd": 129.0,
+  "text": "Frozen molecules can't push anything.",
+  "end": 128.85
+ },
+ {
+  "i": 31,
+  "start": 128.85,
+  "speechStart": 129.0,
+  "speechEnd": 132.8,
+  "text": "So nothing flows into your lungs. And air is heavy.",
+  "end": 133.47
+ },
+ {
+  "i": 32,
+  "start": 133.47,
+  "speechStart": 133.62,
+  "speechEnd": 136.88,
+  "text": "The air in a small kitchen weighs about as much as you do.",
+  "end": 137.41
+ },
+ {
+  "i": 33,
+  "start": 137.41,
+  "speechStart": 137.56,
+  "speechEnd": 142.14,
+  "text": "If every molecule stayed stuck, you couldn't open a door, or even move your hand.",
+  "end": 141.99
+ },
+ {
+  "i": 34,
+  "start": 141.99,
+  "speechStart": 142.14,
+  "speechEnd": 143.96,
+  "text": "You'd be a statue too.",
+  "end": 144.63
+ },
+ {
+  "i": 35,
+  "start": 144.63,
+  "speechStart": 144.78,
+  "speechEnd": 147.3,
+  "text": "Luckily, ten seconds of holding your breath is fine.",
+  "end": 147.89
+ },
+ {
+  "i": 36,
+  "start": 147.89,
+  "speechStart": 148.04,
+  "speechEnd": 154.84,
+  "text": "You count, cheeks puffed, until the world starts again. Third snap. Now the air around you moves.",
+  "end": 155.45
+ },
+ {
+  "i": 37,
+  "start": 155.45,
+  "speechStart": 155.6,
+  "speechEnd": 157.74,
+  "text": "You can breathe. You can walk.",
+  "end": 158.49
+ },
+ {
+  "i": 38,
+  "start": 158.49,
+  "speechStart": 158.64,
+  "speechEnd": 162.16,
+  "text": "Biscuit is still frozen mid-leap, paws out, inches from the butter.",
+  "end": 162.75
+ },
+ {
+  "i": 39,
+  "start": 162.75,
+  "speechStart": 162.9,
+  "speechEnd": 169.24,
+  "text": "You gently lift her out of the air, and set her down on the floor. Butter saved. Time restarts.",
+  "end": 169.85
+ },
+ {
+  "i": 40,
+  "start": 169.85,
+  "speechStart": 170.0,
+  "speechEnd": 175.42,
+  "text": "And Biscuit shoots sideways across the tiles like a furry hockey puck, straight into the bin.",
+  "end": 176.89
+ },
+ {
+  "i": 41,
+  "start": 176.89,
+  "speechStart": 177.04,
+  "speechEnd": 178.26,
+  "text": "Newton's first law:",
+  "end": 178.39
+ },
+ {
+  "i": 42,
+  "start": 178.39,
+  "speechStart": 178.54,
+  "speechEnd": 183.04,
+  "text": "a moving thing keeps moving the same way, unless a force pushes or pulls it.",
+  "end": 183.53
+ },
+ {
+  "i": 43,
+  "start": 183.53,
+  "speechStart": 183.68,
+  "speechEnd": 184.98,
+  "text": "Moving things carry momentum.",
+  "end": 185.65
+ },
+ {
+  "i": 44,
+  "start": 185.65,
+  "speechStart": 185.8,
+  "speechEnd": 187.3,
+  "text": "It's their mass times their speed.",
+  "end": 187.87
+ },
+ {
+  "i": 45,
+  "start": 187.87,
+  "speechStart": 188.02,
+  "speechEnd": 190.34,
+  "text": "A heavier or faster thing is harder to stop.",
+  "end": 191.01
+ },
+ {
+  "i": 46,
+  "start": 191.01,
+  "speechStart": 191.16,
+  "speechEnd": 193.28,
+  "text": "Picking Biscuit up didn't take her speed away.",
+  "end": 193.93
+ },
+ {
+  "i": 47,
+  "start": 193.93,
+  "speechStart": 194.08,
+  "speechEnd": 198.12,
+  "text": "In our story, freezing doesn't delete motion. It saves it for later.",
+  "end": 198.81
+ },
+ {
+  "i": 48,
+  "start": 198.81,
+  "speechStart": 198.96,
+  "speechEnd": 203.9,
+  "text": "To stop a moving thing, you have to push against its motion. Like a goalkeeper's gloves.",
+  "end": 204.59
+ },
+ {
+  "i": 49,
+  "start": 204.59,
+  "speechStart": 204.74,
+  "speechEnd": 210.18,
+  "text": "Biscuit climbs out of the bin and gives you a long, cold look. Fourth snap.",
+  "end": 210.03
+ },
+ {
+  "i": 50,
+  "start": 210.03,
+  "speechStart": 210.18,
+  "speechEnd": 213.72,
+  "text": "Ten quiet seconds. Then time restarts.",
+  "end": 214.23
+ },
+ {
+  "i": 51,
+  "start": 214.23,
+  "speechStart": 214.38,
+  "speechEnd": 215.98,
+  "text": "You glance up at the kitchen clock.",
+  "end": 216.41
+ },
+ {
+  "i": 52,
+  "start": 216.41,
+  "speechStart": 216.56,
+  "speechEnd": 222.66,
+  "text": "The second hand doesn't move. Your heart jumps. Is it still frozen? Then it ticks.",
+  "end": 223.27
+ },
+ {
+  "i": 53,
+  "start": 223.27,
+  "speechStart": 223.42,
+  "speechEnd": 224.24,
+  "text": "And ticks again.",
+  "end": 224.09
+ },
+ {
+  "i": 54,
+  "start": 224.09,
+  "speechStart": 224.24,
+  "speechEnd": 226.76,
+  "text": "Normal.",
+  "end": 226.61
+ },
+ {
+  "i": 55,
+  "start": 226.61,
+  "speechStart": 226.76,
+  "speechEnd": 231.7,
+  "text": "That has a real name. The stopped clock illusion. Your eyes don't glide.",
+  "end": 232.35
+ },
+ {
+  "i": 56,
+  "start": 232.35,
+  "speechStart": 232.5,
+  "speechEnd": 234.3,
+  "text": "They jump, about three times a second.",
+  "end": 234.95
+ },
+ {
+  "i": 57,
+  "start": 234.95,
+  "speechStart": 235.1,
+  "speechEnd": 236.66,
+  "text": "During each jump, the view is a blur.",
+  "end": 237.29
+ },
+ {
+  "i": 58,
+  "start": 237.29,
+  "speechStart": 237.44,
+  "speechEnd": 238.72,
+  "text": "Your brain hides the blur.",
+  "end": 239.27
+ },
+ {
+  "i": 59,
+  "start": 239.27,
+  "speechStart": 239.42,
+  "speechEnd": 241.92,
+  "text": "It fills the gap with whatever your eyes land on.",
+  "end": 242.37
+ },
+ {
+  "i": 60,
+  "start": 242.37,
+  "speechStart": 242.52,
+  "speechEnd": 245.06,
+  "text": "So the first tick you see seems to last too long.",
+  "end": 245.67
+ },
+ {
+  "i": 61,
+  "start": 245.67,
+  "speechStart": 245.82,
+  "speechEnd": 251.38,
+  "text": "In 2001, scientists in London showed the brain stretches that moment back in time,",
+  "end": 251.23
+ },
+ {
+  "i": 62,
+  "start": 251.23,
+  "speechStart": 251.38,
+  "speechEnd": 253.24,
+  "text": "to just before your eyes moved.",
+  "end": 253.87
+ },
+ {
+  "i": 63,
+  "start": 253.87,
+  "speechStart": 254.02,
+  "speechEnd": 257.3,
+  "text": "Everyone has frozen a clock. Just for a split second.",
+  "end": 258.85
+ },
+ {
+  "i": 64,
+  "start": 258.85,
+  "speechStart": 259.0,
+  "speechEnd": 262.56,
+  "text": "That evening, Mina checks your big black watch against the oven clock.",
+  "end": 263.29
+ },
+ {
+  "i": 65,
+  "start": 263.29,
+  "speechStart": 263.44,
+  "speechEnd": 266.82,
+  "text": "\"Yours is forty seconds fast,\" she says. Four snaps.",
+  "end": 266.67
+ },
+ {
+  "i": 66,
+  "start": 266.67,
+  "speechStart": 266.82,
+  "speechEnd": 268.5,
+  "text": "Ten seconds each.",
+  "end": 269.17
+ },
+ {
+  "i": 67,
+  "start": 269.17,
+  "speechStart": 269.32,
+  "speechEnd": 272.1,
+  "text": "You've lived forty seconds more than everyone else today.",
+  "end": 273.41
+ },
+ {
+  "i": 68,
+  "start": 273.41,
+  "speechStart": 273.56,
+  "speechEnd": 276.94,
+  "text": "In real life, that happens. Just much, much smaller.",
+  "end": 277.77
+ },
+ {
+  "i": 69,
+  "start": 277.77,
+  "speechStart": 277.92,
+  "speechEnd": 283.08,
+  "text": "Satellites for GPS, the system behind maps on phones, carry super-accurate clocks.",
+  "end": 283.73
+ },
+ {
+  "i": 70,
+  "start": 283.73,
+  "speechStart": 283.88,
+  "speechEnd": 287.74,
+  "text": "Up there, gravity is weaker, so their clocks tick a tiny bit faster.",
+  "end": 288.21
+ },
+ {
+  "i": 71,
+  "start": 288.21,
+  "speechStart": 288.36,
+  "speechEnd": 290.84,
+  "text": "They're also moving fast, which slows them a little.",
+  "end": 291.37
+ },
+ {
+  "i": 72,
+  "start": 291.37,
+  "speechStart": 291.52,
+  "speechEnd": 297.48,
+  "text": "Add it up, and they gain about thirty-eight millionths of a second every day, compared to clocks down here.",
+  "end": 297.99
+ },
+ {
+  "i": 73,
+  "start": 297.99,
+  "speechStart": 298.14,
+  "speechEnd": 299.36,
+  "text": "Einstein predicted it.",
+  "end": 299.79
+ },
+ {
+  "i": 74,
+  "start": 299.79,
+  "speechStart": 299.94,
+  "speechEnd": 306.06,
+  "text": "If engineers didn't correct for it, your map would soon be off by kilometres. Wednesday.",
+  "end": 306.77
+ },
+ {
+  "i": 75,
+  "start": 306.77,
+  "speechStart": 306.92,
+  "speechEnd": 307.46,
+  "text": "Breakfast.",
+  "end": 308.25
+ },
+ {
+  "i": 76,
+  "start": 308.25,
+  "speechStart": 308.4,
+  "speechEnd": 311.16,
+  "text": "Biscuit leaps for the butter again, and hits the milk jug.",
+  "end": 311.65
+ },
+ {
+  "i": 77,
+  "start": 311.65,
+  "speechStart": 311.8,
+  "speechEnd": 319.02,
+  "text": "It tips off the table, straight towards Mina's school project. Snap. Light: moving. Air:",
+  "end": 318.87
+ },
+ {
+  "i": 78,
+  "start": 318.87,
+  "speechStart": 319.02,
+  "speechEnd": 322.4,
+  "text": "moving. You take a breath. Rule three.",
+  "end": 322.95
+ },
+ {
+  "i": 79,
+  "start": 322.95,
+  "speechStart": 323.1,
+  "speechEnd": 326.24,
+  "text": "You can't just put the jug back. It would still be falling.",
+  "end": 326.91
+ },
+ {
+  "i": 80,
+  "start": 326.91,
+  "speechStart": 327.06,
+  "speechEnd": 333.54,
+  "text": "So you slide Mina's project away, and put the big mixing bowl underneath the jug. Time restarts.",
+  "end": 334.19
+ },
+ {
+  "i": 81,
+  "start": 334.19,
+  "speechStart": 334.34,
+  "speechEnd": 334.66,
+  "text": "Splash.",
+  "end": 335.43
+ },
+ {
+  "i": 82,
+  "start": 335.43,
+  "speechStart": 335.58,
+  "speechEnd": 336.98,
+  "text": "Every drop lands in the bowl.",
+  "end": 337.75
+ },
+ {
+  "i": 83,
+  "start": 337.75,
+  "speechStart": 337.9,
+  "speechEnd": 342.5,
+  "text": "Mina looks at her dry project. Then at you. Then at her stopwatch.",
+  "end": 342.35
+ },
+ {
+  "i": 84,
+  "start": 342.35,
+  "speechStart": 342.5,
+  "speechEnd": 344.66,
+  "text": "\"Zero point zero seconds.\"",
+  "end": 346.11
+ },
+ {
+  "i": 85,
+  "start": 346.11,
+  "speechStart": 346.26,
+  "speechEnd": 350.82,
+  "text": "But during those ten seconds, something moved that shouldn't have. Biscuit.",
+  "end": 351.41
+ },
+ {
+  "i": 86,
+  "start": 351.41,
+  "speechStart": 351.56,
+  "speechEnd": 354.88,
+  "text": "She blinked at you, stretched, and walked across the frozen kitchen.",
+  "end": 355.63
+ },
+ {
+  "i": 87,
+  "start": 355.63,
+  "speechStart": 355.78,
+  "speechEnd": 362.6,
+  "text": "Maybe that's why cats always appear in places they couldn't have reached. Next morning, you snap. Nothing happens.",
+  "end": 363.33
+ },
+ {
+  "i": 88,
+  "start": 363.33,
+  "speechStart": 363.48,
+  "speechEnd": 366.2,
+  "text": "Your snap is gone. Biscuit flicks her tail.",
+  "end": 366.89
+ },
+ {
+  "i": 89,
+  "start": 366.89,
+  "speechStart": 367.04,
+  "speechEnd": 369.76,
+  "text": "And somehow, she's already on the table, eating your toast.",
+  "end": 371.15
+ },
+ {
+  "i": 90,
+  "start": 371.15,
+  "speechStart": 371.3,
+  "speechEnd": 373.42,
+  "text": "In real life, nobody can stop time.",
+  "end": 373.95
+ },
+ {
+  "i": 91,
+  "start": 373.95,
+  "speechStart": 374.1,
+  "speechEnd": 378.3,
+  "text": "And if it did stop, you'd be stuck in the dark, unable to breathe or move.",
+  "end": 378.85
+ },
+ {
+  "i": 92,
+  "start": 378.85,
+  "speechStart": 379.0,
+  "speechEnd": 380.44,
+  "text": "But scientists have stopped light.",
+  "end": 381.11
+ },
+ {
+  "i": 93,
+  "start": 381.11,
+  "speechStart": 381.26,
+  "speechEnd": 383.26,
+  "text": "In 2001, at Harvard,",
+  "end": 383.11
+ },
+ {
+  "i": 94,
+  "start": 383.11,
+  "speechStart": 383.26,
+  "speechEnd": 389.5,
+  "text": "Lene Hau's team trapped a pulse of light in a cloud of super-cold atoms for about a thousandth of a second,",
+  "end": 389.85
+ },
+ {
+  "i": 95,
+  "start": 389.85,
+  "speechStart": 390.0,
+  "speechEnd": 390.98,
+  "text": "then let it go again.",
+  "end": 391.63
+ },
+ {
+  "i": 96,
+  "start": 391.63,
+  "speechStart": 391.78,
+  "speechEnd": 393.74,
+  "text": "Your brain stretches moments every day.",
+  "end": 394.29
+ },
+ {
+  "i": 97,
+  "start": 394.29,
+  "speechStart": 394.44,
+  "speechEnd": 397.22,
+  "text": "And satellite clocks really do run at a different speed.",
+  "end": 397.83
+ },
+ {
+  "i": 98,
+  "start": 397.83,
+  "speechStart": 397.98,
+  "speechEnd": 402.96,
+  "text": "So if you had ten frozen seconds, what would you do with them? Tell us in the comments.",
+  "end": 403.65
+ },
+ {
+  "i": 99,
+  "start": 403.65,
+  "speechStart": 403.8,
+  "speechEnd": 405.38,
+  "text": "And subscribe for more What Ifs.",
+  "end": 406.08
+ }
+]
