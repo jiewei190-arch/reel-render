@@ -1,0 +1,40 @@
+{
+ "title": "What If You Shrank to the Size of an Ant",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 26.75,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "ant",
+   "forest",
+   "skyscraper",
+   "hundred",
+   "parachute",
+   "two",
+   "barely",
+   "walking",
+   "raindrop",
+   "water",
+   "gravity",
+   "subscribe"
+  ]
+ },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0.25,
+ "music": {
+  "enabled": true,
+  "gainDb": -17
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

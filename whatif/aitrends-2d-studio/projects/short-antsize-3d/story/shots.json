@@ -1,0 +1,497 @@
+{
+ "title": "What If You Shrank to the Size of an Ant?",
+ "duration": 26.75,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.31,
+   "line": "What if you shrank to the size of an ant?",
+   "scene": "HOOK: hero mid-shrink on frame 1, world zooms up around them, giant sneaker + grass shooting up; shocked on 'shrank', awe on 'ant'; chip ANT-SIZED YOU",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "riser",
+     "gain": -10,
+     "pitch": 1.4
+    },
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -8,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.46,
+     "name": "pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s002",
+   "start": 2.31,
+   "end": 3.75,
+   "line": "Grass becomes a forest.",
+   "scene": "Low angle: grass blades as trees, car-sized dew drop glints; hero looks up, awe on 'forest'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s003",
+   "start": 3.75,
+   "end": 4.97,
+   "line": "Then a gust throws you off a",
+   "scene": "Ant-scale rooftop parapet at golden hour; gust streaks on 'gust', hero swept toward the edge on 'throws'",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "wind",
+     "gain": -8,
+     "dur": 1.2
+    },
+    {
+     "at": 0.55,
+     "name": "whoosh",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s004",
+   "start": 4.97,
+   "end": 6.19,
+   "line": "skyscraper.",
+   "scene": "Looking down the facade: hero tumbles off the edge, street far below",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "whip",
+    "dir": 1,
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -6,
+     "pitch": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s005",
+   "start": 6.19,
+   "end": 7.61,
+   "line": "A hundred floors.",
+   "scene": "Falling past the glass facade; gold floor counter 100 -> down; shocked on 'floors'",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "counter",
+     "gain": -14,
+     "dur": 1.1
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s006",
+   "start": 7.61,
+   "end": 8.89,
+   "line": "No parachute.",
+   "scene": "Giant face, wind-blasted: shocked -> worried on 'parachute'",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s007",
+   "start": 8.89,
+   "end": 10.57,
+   "line": "Full size, you'd hit at around",
+   "scene": "Blueprint: a full-size line figure drops fast down a 100-floor tower outline; gold FULL SIZE label",
+   "set": "lab",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "swish",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "riser",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ]
+  },
+  {
+   "id": "s008",
+   "start": 10.57,
+   "end": 12.65,
+   "line": "two hundred kilometres an hour.",
+   "scene": "Blueprint gauge: needle swings to ~200 km/h on 'two', gold number pops",
+   "set": "lab",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 1.5,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s009",
+   "start": 12.65,
+   "end": 14.61,
+   "line": "But tiny bodies barely fall.",
+   "scene": "Real world again: tiny hero drifting slowly beside the facade, air streamlines; surprised on 'barely', smile on 'fall'; chip TINY = SLOW FALL",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "shimmer",
+     "gain": -12
+    },
+    {
+     "at": 0.97,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s010",
+   "start": 14.61,
+   "end": 15.99,
+   "line": "The air holds you.",
+   "scene": "Hero lounges on rising air like a hammock, a leaf floats beside; smirk on 'holds'",
+   "set": "tower",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "whoosh",
+     "gain": -16,
+     "pitch": 0.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s011",
+   "start": 15.99,
+   "end": 18.51,
+   "line": "You land at walking speed, and walk away.",
+   "scene": "Ant-scale pavement: soft landing + dust puff on 'land', gold ~7 km/h on 'walking', walks away delighted on 'walk'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "footstep",
+     "gain": -8
+    },
+    {
+     "at": 0.65,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 1.57,
+     "name": "footstep",
+     "gain": -12
+    },
+    {
+     "at": 2.0,
+     "name": "footstep",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s012",
+   "start": 18.51,
+   "end": 19.41,
+   "line": "Then one raindrop",
+   "scene": "A drop's shadow grows round the walking hero; lookUp on 'raindrop'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "rain",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 0.4,
+     "name": "riser",
+     "gain": -12,
+     "pitch": 1.2
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s013",
+   "start": 19.41,
+   "end": 21.49,
+   "line": "grabs you, and won't let go.",
+   "scene": "SPLASH: the drop engulfs the hero; they push the wall, it bulges and snaps back; chip SURFACE TENSION on 'won't'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 1.4
+    },
+    {
+     "at": 0.05,
+     "name": "pop",
+     "gain": -6,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.03,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.5
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s014",
+   "start": 21.49,
+   "end": 23.81,
+   "line": "For you, water is scarier than gravity.",
+   "scene": "Giant face inside the drop, bubbles: worried -> shocked on 'scarier'; chip WATER > GRAVITY on 'gravity'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.93,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.51,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s015",
+   "start": 23.81,
+   "end": 25.15,
+   "line": "Would you risk it?",
+   "scene": "Pull back: hero in the drop on the pavement, rain around; cheeky look to camera on 'risk'",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s016",
+   "start": 25.15,
+   "end": 26.75,
+   "line": "Subscribe for more.",
+   "scene": "CLOSER: the drop pops, the soaked hero shakes off and points at the lens with a grin; red SUBSCRIBE pill",
+   "set": "micro",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "pop",
+     "gain": -6,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.12,
+     "name": "rain",
+     "gain": -20,
+     "dur": 0.6
+    },
+    {
+     "at": 0.95,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -34
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 3.75,
+   "mood": "wonder",
+   "intensity": 0.55
+  },
+  {
+   "start": 3.75,
+   "end": 8.89,
+   "mood": "tension",
+   "intensity": 0.7
+  },
+  {
+   "start": 8.89,
+   "end": 12.65,
+   "mood": "tension",
+   "intensity": 0.5
+  },
+  {
+   "start": 12.65,
+   "end": 18.51,
+   "mood": "playful",
+   "intensity": 0.6
+  },
+  {
+   "start": 18.51,
+   "end": 23.81,
+   "mood": "tension",
+   "intensity": 0.55
+  },
+  {
+   "start": 23.81,
+   "end": 26.75,
+   "mood": "playful",
+   "intensity": 0.5
+  }
+ ]
+}
