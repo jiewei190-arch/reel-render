@@ -1,6 +1,12 @@
-STATE: ready-for-gpu-render
+STATE: ready
 
 # I.Awaken Short: short-blackhole-3d — "What If You Fell Into a Black Hole?" (Toon 3D remake)
+
+## FINAL (rendered in the cloud: the owner's PC was off, per the main session)
+- **`video.mp4`**: 1080x1920, 24 fps, **617 frames = the silent render**, 25.708 s, **-14.1 LUFS integrated, true peak -1.1 dBFS**, AAC 192k 48 kHz, 12.5 MB (no split needed).
+- `video.sha256`: `2da96e287f3def3f41167e622bd4dfee3d5a68b2797da0197b437bad700de9bc`
+- Made with: `node render.mjs --project projects/short-blackhole-3d --workers 4` (SwiftShader, 6m25s) -> `audio/mix.py` -> `master.py` (commands below; the PC can re-run them with `--gl gpu`).
+- Build frames deleted afterwards. Ready for the owner's review; nothing posted.
 
 - Branch: `iawaken/short-blackhole-3d` (cut from `iawaken/toon3d`, which has the kit). Project: `whatif/aitrends-2d-studio/projects/short-blackhole-3d/`.
 - 9:16, 1080x1920, 24 fps, **25.70 s (617 frames)**, 15 shots, captions on (kits/toon3d/captions.js, y 0.70, gold words). `fadeIn 0`, `fadeOut 0` (hard cut = loop).
@@ -26,7 +32,7 @@ STATE: ready-for-gpu-render
 - "SMALL: ~10 SUNS" = an example inside the stellar-mass range (5-20 Suns). "4,300,000 SUNS / LIKE OUR GALAXY'S CENTRE" = the NASA SVS mass (Sgr A*);
   narration only says "millions of suns". The chalkboard "TIDAL ∝ M / r³" is the standard scaling, shown as a doodle.
 
-## GPU render + mix on the owner's PC (from `reel-render\whatif\aitrends-2d-studio`, kit PATH from SETUP_NOTES.md)
+## Re-render on the owner's PC GPU (optional; the final above already exists) (from `reel-render\whatif\aitrends-2d-studio`, kit PATH from SETUP_NOTES.md)
 ```
 git fetch origin iawaken/short-blackhole-3d && git checkout iawaken/short-blackhole-3d && git pull
 cd whatif/aitrends-2d-studio
