@@ -84,11 +84,11 @@
   {
    "word": "pour",
    "start": 7.84,
-   "end": 8.18
+   "end": 8.2
   },
   {
    "word": "into",
-   "start": 8.18,
+   "start": 8.2,
    "end": 8.42
   },
   {
@@ -104,7 +104,7 @@
   {
    "word": "Torches.",
    "start": 9.94,
-   "end": 10.26
+   "end": 10.24
   },
   {
    "word": "Smoke.",
@@ -158,12 +158,12 @@
   },
   {
    "word": "enemies",
-   "start": 15.26,
-   "end": 15.46
+   "start": 15.28,
+   "end": 15.44
   },
   {
    "word": "are",
-   "start": 15.46,
+   "start": 15.44,
    "end": 15.86
   },
   {
@@ -178,7 +178,7 @@
   },
   {
    "word": "And",
-   "start": 17.7,
+   "start": 17.72,
    "end": 17.84
   },
   {
@@ -208,7 +208,7 @@
   },
   {
    "word": "A",
-   "start": 19.56,
+   "start": 19.58,
    "end": 19.84
   },
   {
@@ -259,11 +259,11 @@
   {
    "word": "family's",
    "start": 22.7,
-   "end": 23.3
+   "end": 23.32
   },
   {
    "word": "old",
-   "start": 23.3,
+   "start": 23.32,
    "end": 23.56
   },
   {
@@ -319,11 +319,11 @@
   {
    "word": "up",
    "start": 27.44,
-   "end": 27.64
+   "end": 27.62
   },
   {
    "word": "here?",
-   "start": 27.64,
+   "start": 27.62,
    "end": 27.94
   },
   {
@@ -359,21 +359,21 @@
   {
    "word": "and",
    "start": 30.52,
-   "end": 30.88
+   "end": 30.86
   },
   {
    "word": "five",
-   "start": 30.88,
+   "start": 30.86,
    "end": 31.22
   },
   {
    "word": "big",
    "start": 31.22,
-   "end": 31.5
+   "end": 31.52
   },
   {
    "word": "mistakes.",
-   "start": 31.5,
+   "start": 31.52,
    "end": 31.94
   },
   {
@@ -534,11 +534,11 @@
   {
    "word": "soldier",
    "start": 46.58,
-   "end": 47.02
+   "end": 47.04
   },
   {
    "word": "in",
-   "start": 47.02,
+   "start": 47.04,
    "end": 47.32
   },
   {
@@ -584,7 +584,7 @@
   {
    "word": "peak.",
    "start": 49.7,
-   "end": 50.0
+   "end": 50.02
   },
   {
    "word": "Under",
@@ -604,16 +604,16 @@
   {
    "word": "Trajan,",
    "start": 51.52,
-   "end": 52.08
+   "end": 52.06
   },
   {
    "word": "the",
-   "start": 52.32,
-   "end": 52.4
+   "start": 52.06,
+   "end": 52.38
   },
   {
    "word": "empire",
-   "start": 52.4,
+   "start": 52.38,
    "end": 52.86
   },
   {
@@ -634,16 +634,16 @@
   {
    "word": "to",
    "start": 53.94,
-   "end": 54.24
+   "end": 54.26
   },
   {
    "word": "Egypt,",
-   "start": 54.24,
-   "end": 54.66
+   "start": 54.26,
+   "end": 54.7
   },
   {
    "word": "and",
-   "start": 54.66,
+   "start": 54.7,
    "end": 55.1
   },
   {
@@ -664,41 +664,41 @@
   {
    "word": "the",
    "start": 56.04,
-   "end": 56.22
+   "end": 56.2
   },
   {
    "word": "rivers",
-   "start": 56.22,
-   "end": 56.42
+   "start": 56.2,
+   "end": 56.46
   },
   {
    "word": "of",
-   "start": 56.42,
-   "end": 56.7
+   "start": 56.46,
+   "end": 56.72
   },
   {
    "word": "Mesopotamia.",
-   "start": 56.7,
-   "end": 57.54
+   "start": 56.72,
+   "end": 57.56
   },
   {
    "word": "Around",
    "start": 58.28,
-   "end": 58.56
+   "end": 58.6
   },
   {
    "word": "five",
-   "start": 58.56,
-   "end": 59.06
+   "start": 58.6,
+   "end": 59.04
   },
   {
    "word": "million",
-   "start": 59.06,
-   "end": 59.48
+   "start": 59.04,
+   "end": 59.46
   },
   {
    "word": "square",
-   "start": 59.48,
+   "start": 59.46,
    "end": 59.8
   },
   {
@@ -714,61 +714,61 @@
   {
    "word": "somewhere",
    "start": 60.82,
-   "end": 61.24
+   "end": 61.22
   },
   {
    "word": "between",
-   "start": 61.24,
+   "start": 61.22,
    "end": 61.58
   },
   {
    "word": "fifty",
    "start": 61.58,
-   "end": 62.08
+   "end": 62.1
   },
   {
    "word": "and",
-   "start": 62.08,
+   "start": 62.1,
    "end": 62.36
   },
   {
    "word": "seventy-five",
    "start": 62.36,
-   "end": 63.06
+   "end": 63.08
   },
   {
    "word": "million",
-   "start": 63.06,
+   "start": 63.08,
    "end": 63.44
   },
   {
    "word": "people.",
    "start": 63.44,
-   "end": 63.96
+   "end": 63.94
   },
   {
    "word": "One",
-   "start": 64.72,
+   "start": 64.66,
    "end": 64.88
   },
   {
    "word": "army.",
    "start": 64.88,
-   "end": 65.3
+   "end": 65.28
   },
   {
    "word": "One",
-   "start": 66.08,
-   "end": 66.28
+   "start": 66.04,
+   "end": 66.3
   },
   {
    "word": "money.",
-   "start": 66.28,
+   "start": 66.3,
    "end": 66.62
   },
   {
    "word": "And",
-   "start": 67.42,
+   "start": 67.46,
    "end": 67.56
   },
   {
@@ -779,11 +779,11 @@
   {
    "word": "is",
    "start": 67.88,
-   "end": 68.04
+   "end": 68.06
   },
   {
    "word": "paid",
-   "start": 68.04,
+   "start": 68.06,
    "end": 68.26
   },
   {
@@ -814,31 +814,31 @@
   {
    "word": "silver",
    "start": 69.62,
-   "end": 69.88
+   "end": 69.9
   },
   {
    "word": "coin",
-   "start": 69.88,
-   "end": 70.24
+   "start": 69.9,
+   "end": 70.22
   },
   {
    "word": "called",
-   "start": 70.24,
-   "end": 70.52
+   "start": 70.22,
+   "end": 70.54
   },
   {
    "word": "a",
-   "start": 70.52,
+   "start": 70.54,
    "end": 70.64
   },
   {
    "word": "denarius.",
    "start": 70.64,
-   "end": 71.02
+   "end": 71.04
   },
   {
    "word": "He",
-   "start": 71.76,
+   "start": 71.74,
    "end": 71.98
   },
   {
@@ -853,47 +853,47 @@
   },
   {
    "word": "It",
-   "start": 73.3,
+   "start": 73.28,
    "end": 73.44
   },
   {
    "word": "becomes",
    "start": 73.44,
-   "end": 73.7
+   "end": 73.68
   },
   {
    "word": "the",
-   "start": 73.7,
+   "start": 73.68,
    "end": 73.88
   },
   {
    "word": "family's",
    "start": 73.88,
-   "end": 74.36
+   "end": 74.34
   },
   {
    "word": "lucky",
-   "start": 74.36,
+   "start": 74.34,
    "end": 74.52
   },
   {
    "word": "coin.",
    "start": 74.52,
-   "end": 74.92
+   "end": 74.94
   },
   {
    "word": "For",
-   "start": 75.7,
+   "start": 75.68,
    "end": 75.84
   },
   {
    "word": "a",
    "start": 75.84,
-   "end": 75.96
+   "end": 75.94
   },
   {
    "word": "while,",
-   "start": 75.96,
+   "start": 75.94,
    "end": 76.24
   },
   {
@@ -913,7 +913,7 @@
   },
   {
    "word": "But",
-   "start": 78.02,
+   "start": 78.04,
    "end": 78.22
   },
   {
@@ -929,16 +929,16 @@
   {
    "word": "years",
    "start": 78.62,
-   "end": 78.88
+   "end": 78.9
   },
   {
    "word": "later,",
-   "start": 78.88,
-   "end": 79.3
+   "start": 78.9,
+   "end": 79.28
   },
   {
    "word": "the",
-   "start": 79.52,
+   "start": 79.28,
    "end": 79.58
   },
   {
@@ -954,16 +954,16 @@
   {
    "word": "to",
    "start": 80.14,
-   "end": 80.34
+   "end": 80.3
   },
   {
    "word": "show.",
-   "start": 80.34,
-   "end": 80.6
+   "start": 80.3,
+   "end": 80.62
   },
   {
    "word": "In",
-   "start": 82.02,
+   "start": 82.18,
    "end": 82.34
   },
   {
@@ -979,11 +979,11 @@
   {
    "word": "235,",
    "start": 82.62,
-   "end": 83.42
+   "end": 83.44
   },
   {
    "word": "his",
-   "start": 84.16,
+   "start": 83.44,
    "end": 84.26
   },
   {
@@ -1009,76 +1009,76 @@
   {
    "word": "emperor",
    "start": 85.82,
-   "end": 86.26
+   "end": 86.24
   },
   {
    "word": "Severus",
-   "start": 86.26,
-   "end": 86.72
+   "start": 86.24,
+   "end": 86.7
   },
   {
    "word": "Alexander.",
-   "start": 86.72,
-   "end": 87.4
+   "start": 86.7,
+   "end": 87.36
   },
   {
    "word": "What",
-   "start": 88.26,
-   "end": 88.3
+   "start": 88.16,
+   "end": 88.32
   },
   {
    "word": "comes",
-   "start": 88.3,
-   "end": 88.54
+   "start": 88.32,
+   "end": 88.56
   },
   {
    "word": "next,",
-   "start": 88.54,
+   "start": 88.56,
    "end": 89.06
   },
   {
    "word": "historians",
-   "start": 89.26,
-   "end": 89.74
+   "start": 89.06,
+   "end": 89.58
   },
   {
    "word": "call",
-   "start": 89.74,
+   "start": 89.58,
    "end": 90.16
   },
   {
    "word": "the",
    "start": 90.16,
-   "end": 90.34
+   "end": 90.32
   },
   {
    "word": "Crisis",
-   "start": 90.34,
-   "end": 90.7
+   "start": 90.32,
+   "end": 90.66
   },
   {
    "word": "of",
-   "start": 90.7,
+   "start": 90.66,
    "end": 90.98
   },
   {
    "word": "the",
    "start": 90.98,
-   "end": 91.14
+   "end": 91.12
   },
   {
    "word": "Third",
-   "start": 91.14,
-   "end": 91.34
+   "start": 91.12,
+   "end": 91.84
   },
   {
    "word": "Century.",
-   "start": 91.34,
-   "end": 91.86
+   "start": 91.84,
+   "end": 91.84
   },
   {
    "word": "In",
-   "start": 92.64,
+   "start": 92.52,
    "end": 92.72
   },
   {
@@ -1094,16 +1094,16 @@
   {
    "word": "years,",
    "start": 93.3,
-   "end": 93.64
+   "end": 93.66
   },
   {
    "word": "Rome",
-   "start": 94.04,
-   "end": 94.1
+   "start": 93.66,
+   "end": 94.08
   },
   {
    "word": "has",
-   "start": 94.1,
+   "start": 94.08,
    "end": 94.38
   },
   {
@@ -1119,16 +1119,16 @@
   {
    "word": "twenty",
    "start": 94.76,
-   "end": 95.04
+   "end": 95.06
   },
   {
    "word": "emperors.",
-   "start": 95.04,
-   "end": 95.5
+   "start": 95.06,
+   "end": 95.46
   },
   {
    "word": "Most",
-   "start": 96.34,
+   "start": 96.36,
    "end": 96.5
   },
   {
@@ -1149,16 +1149,16 @@
   {
    "word": "violently,",
    "start": 97.14,
-   "end": 97.74
+   "end": 97.76
   },
   {
    "word": "killed",
-   "start": 98.2,
-   "end": 98.4
+   "start": 97.76,
+   "end": 98.38
   },
   {
    "word": "by",
-   "start": 98.4,
+   "start": 98.38,
    "end": 98.64
   },
   {
@@ -1174,4807 +1174,5057 @@
   {
    "word": "by",
    "start": 99.42,
-   "end": 99.64
+   "end": 99.62
   },
   {
    "word": "their",
-   "start": 99.64,
+   "start": 99.62,
    "end": 99.78
   },
   {
    "word": "own",
    "start": 99.78,
-   "end": 100.02
+   "end": 100.04
   },
   {
    "word": "troops.",
-   "start": 100.02,
+   "start": 100.04,
    "end": 100.42
   },
   {
-   "word": "An",
-   "start": 101.06,
-   "end": 101.28
+   "word": "Emperor",
+   "start": 101.52,
+   "end": 101.52
   },
   {
-   "word": "army",
-   "start": 101.28,
-   "end": 101.58
-  },
-  {
-   "word": "crowns",
-   "start": 101.58,
-   "end": 102.08
-  },
-  {
-   "word": "its",
-   "start": 102.08,
-   "end": 102.2
-  },
-  {
-   "word": "general,",
-   "start": 102.2,
-   "end": 102.64
-  },
-  {
-   "word": "he",
-   "start": 102.94,
-   "end": 103.06
-  },
-  {
-   "word": "marches",
-   "start": 103.06,
-   "end": 103.44
-  },
-  {
-   "word": "on",
-   "start": 103.44,
-   "end": 103.8
-  },
-  {
-   "word": "Rome",
-   "start": 103.8,
-   "end": 104.12
-  },
-  {
-   "word": "and",
-   "start": 104.12,
-   "end": 104.34
-  },
-  {
-   "word": "wins.",
-   "start": 104.34,
-   "end": 104.58
-  },
-  {
-   "word": "Then",
-   "start": 105.38,
-   "end": 105.58
-  },
-  {
-   "word": "another",
-   "start": 105.58,
-   "end": 105.92
-  },
-  {
-   "word": "army",
-   "start": 105.92,
-   "end": 106.26
-  },
-  {
-   "word": "does",
-   "start": 106.26,
-   "end": 106.5
+   "word": "becomes",
+   "start": 101.52,
+   "end": 101.92
   },
   {
    "word": "the",
-   "start": 106.5,
-   "end": 106.72
+   "start": 101.92,
+   "end": 102.12
   },
   {
-   "word": "same",
-   "start": 106.72,
-   "end": 106.92
+   "word": "most",
+   "start": 102.12,
+   "end": 102.32
   },
   {
-   "word": "to",
-   "start": 106.92,
-   "end": 107.12
+   "word": "dangerous",
+   "start": 102.32,
+   "end": 102.88
   },
   {
-   "word": "him.",
-   "start": 107.12,
-   "end": 107.4
-  },
-  {
-   "word": "Gaius's",
-   "start": 108.22,
-   "end": 108.56
-  },
-  {
-   "word": "great-grandson",
-   "start": 108.56,
-   "end": 109.24
-  },
-  {
-   "word": "Felix",
-   "start": 109.24,
-   "end": 109.66
-  },
-  {
-   "word": "runs",
-   "start": 109.66,
-   "end": 110.04
-  },
-  {
-   "word": "a",
-   "start": 110.04,
-   "end": 110.22
-  },
-  {
-   "word": "bakery",
-   "start": 110.22,
-   "end": 110.46
+   "word": "job",
+   "start": 102.88,
+   "end": 103.36
   },
   {
    "word": "in",
-   "start": 110.46,
-   "end": 110.84
-  },
-  {
-   "word": "Rome.",
-   "start": 110.84,
-   "end": 111.12
-  },
-  {
-   "word": "The",
-   "start": 111.12,
-   "end": 111.98
-  },
-  {
-   "word": "faces",
-   "start": 111.98,
-   "end": 112.34
-  },
-  {
-   "word": "on",
-   "start": 112.34,
-   "end": 112.62
+   "start": 103.36,
+   "end": 103.62
   },
   {
    "word": "the",
-   "start": 112.62,
-   "end": 112.76
-  },
-  {
-   "word": "coins",
-   "start": 112.76,
-   "end": 113.14
-  },
-  {
-   "word": "change",
-   "start": 113.14,
-   "end": 113.64
-  },
-  {
-   "word": "faster",
-   "start": 113.64,
-   "end": 114.14
-  },
-  {
-   "word": "than",
-   "start": 114.14,
-   "end": 114.38
-  },
-  {
-   "word": "he",
-   "start": 114.38,
-   "end": 114.52
-  },
-  {
-   "word": "can",
-   "start": 114.52,
-   "end": 114.68
-  },
-  {
-   "word": "learn",
-   "start": 114.68,
-   "end": 114.9
-  },
-  {
-   "word": "the",
-   "start": 114.9,
-   "end": 115.06
-  },
-  {
-   "word": "names.",
-   "start": 115.06,
-   "end": 115.46
-  },
-  {
-   "word": "And",
-   "start": 116.22,
-   "end": 116.32
-  },
-  {
-   "word": "Rome's",
-   "start": 116.32,
-   "end": 116.68
-  },
-  {
-   "word": "enemies",
-   "start": 116.68,
-   "end": 116.88
-  },
-  {
-   "word": "smell",
-   "start": 116.88,
-   "end": 117.24
-  },
-  {
-   "word": "weakness.",
-   "start": 117.24,
-   "end": 117.66
-  },
-  {
-   "word": "In",
-   "start": 118.5,
-   "end": 118.6
-  },
-  {
-   "word": "260,",
-   "start": 118.6,
-   "end": 119.4
-  },
-  {
-   "word": "the",
-   "start": 120.02,
-   "end": 120.06
-  },
-  {
-   "word": "Persians",
-   "start": 120.06,
-   "end": 120.5
-  },
-  {
-   "word": "capture",
-   "start": 120.5,
-   "end": 120.98
-  },
-  {
-   "word": "the",
-   "start": 120.98,
-   "end": 121.18
-  },
-  {
-   "word": "emperor",
-   "start": 121.18,
-   "end": 121.6
-  },
-  {
-   "word": "Valerian",
-   "start": 121.6,
-   "end": 122.16
-  },
-  {
-   "word": "alive.",
-   "start": 122.16,
-   "end": 122.62
-  },
-  {
-   "word": "A",
-   "start": 123.48,
-   "end": 123.56
+   "start": 103.62,
+   "end": 103.72
   },
   {
    "word": "Roman",
-   "start": 123.56,
-   "end": 123.82
+   "start": 103.72,
+   "end": 103.96
   },
   {
-   "word": "emperor,",
-   "start": 123.82,
-   "end": 124.3
-  },
-  {
-   "word": "taken",
-   "start": 124.3,
-   "end": 124.66
-  },
-  {
-   "word": "prisoner.",
-   "start": 124.66,
-   "end": 125.2
-  },
-  {
-   "word": "Things",
-   "start": 126.0,
-   "end": 126.18
-  },
-  {
-   "word": "get",
-   "start": 126.18,
-   "end": 126.38
-  },
-  {
-   "word": "so",
-   "start": 126.38,
-   "end": 126.66
-  },
-  {
-   "word": "bad",
-   "start": 126.66,
-   "end": 127.0
-  },
-  {
-   "word": "that",
-   "start": 127.0,
-   "end": 127.26
-  },
-  {
-   "word": "Rome",
-   "start": 127.26,
-   "end": 127.54
-  },
-  {
-   "word": "builds",
-   "start": 127.54,
-   "end": 127.9
-  },
-  {
-   "word": "huge",
-   "start": 127.9,
-   "end": 128.24
-  },
-  {
-   "word": "new",
-   "start": 128.24,
-   "end": 128.58
-  },
-  {
-   "word": "walls",
-   "start": 128.58,
-   "end": 128.9
-  },
-  {
-   "word": "around",
-   "start": 128.9,
-   "end": 129.28
-  },
-  {
-   "word": "the",
-   "start": 129.28,
-   "end": 129.46
-  },
-  {
-   "word": "city",
-   "start": 129.46,
-   "end": 129.64
-  },
-  {
-   "word": "itself.",
-   "start": 129.64,
-   "end": 130.06
-  },
-  {
-   "word": "Remember",
-   "start": 130.9,
-   "end": 131.14
-  },
-  {
-   "word": "those",
-   "start": 131.14,
-   "end": 131.44
-  },
-  {
-   "word": "walls.",
-   "start": 131.44,
-   "end": 131.8
-  },
-  {
-   "word": "But",
-   "start": 132.52,
-   "end": 132.7
-  },
-  {
-   "word": "all",
-   "start": 132.7,
-   "end": 132.82
-  },
-  {
-   "word": "this",
-   "start": 132.82,
-   "end": 133.0
-  },
-  {
-   "word": "fighting",
-   "start": 133.0,
-   "end": 133.3
-  },
-  {
-   "word": "costs",
-   "start": 133.3,
-   "end": 133.64
-  },
-  {
-   "word": "money.",
-   "start": 133.64,
-   "end": 134.06
-  },
-  {
-   "word": "A",
-   "start": 134.78,
-   "end": 134.9
-  },
-  {
-   "word": "lot",
-   "start": 134.9,
-   "end": 135.06
-  },
-  {
-   "word": "of",
-   "start": 135.06,
-   "end": 135.18
-  },
-  {
-   "word": "money.",
-   "start": 135.18,
-   "end": 135.48
-  },
-  {
-   "word": "So",
-   "start": 136.86,
-   "end": 137.24
-  },
-  {
-   "word": "the",
-   "start": 137.24,
-   "end": 137.36
-  },
-  {
-   "word": "emperors",
-   "start": 137.36,
-   "end": 137.68
-  },
-  {
-   "word": "cheat.",
-   "start": 137.68,
-   "end": 138.06
-  },
-  {
-   "word": "Every",
-   "start": 138.82,
-   "end": 139.12
-  },
-  {
-   "word": "new",
-   "start": 139.12,
-   "end": 139.32
-  },
-  {
-   "word": "batch",
-   "start": 139.32,
-   "end": 139.52
-  },
-  {
-   "word": "of",
-   "start": 139.52,
-   "end": 139.72
-  },
-  {
-   "word": "coins",
-   "start": 139.72,
-   "end": 140.12
-  },
-  {
-   "word": "gets",
-   "start": 140.12,
-   "end": 140.4
-  },
-  {
-   "word": "a",
-   "start": 140.4,
-   "end": 140.58
-  },
-  {
-   "word": "little",
-   "start": 140.58,
-   "end": 140.7
-  },
-  {
-   "word": "less",
-   "start": 140.7,
-   "end": 141.02
-  },
-  {
-   "word": "silver,",
-   "start": 141.02,
-   "end": 141.48
-  },
-  {
-   "word": "and",
-   "start": 141.48,
-   "end": 141.94
-  },
-  {
-   "word": "a",
-   "start": 141.94,
-   "end": 142.04
-  },
-  {
-   "word": "little",
-   "start": 142.04,
-   "end": 142.2
-  },
-  {
-   "word": "more",
-   "start": 142.2,
-   "end": 142.4
-  },
-  {
-   "word": "cheap",
-   "start": 142.4,
-   "end": 142.72
-  },
-  {
-   "word": "copper.",
-   "start": 142.72,
-   "end": 143.2
-  },
-  {
-   "word": "It",
-   "start": 143.96,
-   "end": 144.08
-  },
-  {
-   "word": "works,",
-   "start": 144.08,
-   "end": 144.32
-  },
-  {
-   "word": "until",
-   "start": 144.32,
-   "end": 144.64
-  },
-  {
-   "word": "people",
-   "start": 144.64,
-   "end": 144.96
-  },
-  {
-   "word": "notice.",
-   "start": 144.96,
-   "end": 145.34
-  },
-  {
-   "word": "By",
-   "start": 146.12,
-   "end": 146.28
-  },
-  {
-   "word": "the",
-   "start": 146.28,
-   "end": 146.4
-  },
-  {
-   "word": "270s,",
-   "start": 146.4,
-   "end": 147.78
-  },
-  {
-   "word": "Rome's",
-   "start": 147.96,
-   "end": 148.32
-  },
-  {
-   "word": "everyday",
-   "start": 148.32,
-   "end": 148.64
-  },
-  {
-   "word": "silver",
-   "start": 148.64,
-   "end": 149.06
-  },
-  {
-   "word": "coin",
-   "start": 149.06,
-   "end": 149.5
-  },
-  {
-   "word": "is",
-   "start": 149.5,
-   "end": 149.76
-  },
-  {
-   "word": "often",
-   "start": 149.76,
-   "end": 150.16
-  },
-  {
-   "word": "less",
-   "start": 150.16,
-   "end": 150.46
-  },
-  {
-   "word": "than",
-   "start": 150.46,
-   "end": 150.76
-  },
-  {
-   "word": "five",
-   "start": 150.76,
-   "end": 151.2
-  },
-  {
-   "word": "percent",
-   "start": 151.2,
-   "end": 151.64
-  },
-  {
-   "word": "silver.",
-   "start": 151.64,
-   "end": 152.14
-  },
-  {
-   "word": "It's",
-   "start": 152.74,
-   "end": 153.08
-  },
-  {
-   "word": "basically",
-   "start": 153.08,
-   "end": 153.48
-  },
-  {
-   "word": "copper,",
-   "start": 153.48,
-   "end": 153.9
-  },
-  {
-   "word": "with",
-   "start": 153.9,
-   "end": 154.2
-  },
-  {
-   "word": "a",
-   "start": 154.2,
-   "end": 154.34
-  },
-  {
-   "word": "shiny",
-   "start": 154.34,
-   "end": 154.6
-  },
-  {
-   "word": "coat.",
-   "start": 154.6,
-   "end": 154.92
-  },
-  {
-   "word": "Felix's",
-   "start": 155.72,
-   "end": 156.18
-  },
-  {
-   "word": "son",
-   "start": 156.18,
-   "end": 156.44
-  },
-  {
-   "word": "holds",
-   "start": 156.44,
-   "end": 156.78
-  },
-  {
-   "word": "a",
-   "start": 156.78,
-   "end": 157.0
-  },
-  {
-   "word": "new",
-   "start": 157.0,
-   "end": 157.22
-  },
-  {
-   "word": "coin",
-   "start": 157.22,
-   "end": 157.56
-  },
-  {
-   "word": "next",
-   "start": 157.56,
-   "end": 157.88
-  },
-  {
-   "word": "to",
-   "start": 157.88,
-   "end": 158.18
+   "word": "world.",
+   "start": 103.96,
+   "end": 104.3
   },
   {
    "word": "Gaius's",
-   "start": 158.18,
-   "end": 158.5
+   "start": 105.24,
+   "end": 105.6
   },
   {
-   "word": "old",
-   "start": 158.5,
-   "end": 158.76
+   "word": "great-grandson",
+   "start": 105.6,
+   "end": 106.28
   },
   {
-   "word": "one.",
-   "start": 158.76,
-   "end": 159.08
+   "word": "Felix",
+   "start": 106.28,
+   "end": 106.68
   },
   {
-   "word": "One",
-   "start": 159.7,
-   "end": 159.92
+   "word": "runs",
+   "start": 106.68,
+   "end": 107.08
   },
   {
-   "word": "is",
-   "start": 159.92,
-   "end": 160.08
+   "word": "a",
+   "start": 107.08,
+   "end": 107.26
   },
   {
-   "word": "real",
-   "start": 160.08,
-   "end": 160.34
-  },
-  {
-   "word": "silver.",
-   "start": 160.34,
-   "end": 160.78
-  },
-  {
-   "word": "The",
-   "start": 161.46,
-   "end": 161.68
-  },
-  {
-   "word": "other",
-   "start": 161.68,
-   "end": 161.86
-  },
-  {
-   "word": "only",
-   "start": 161.86,
-   "end": 162.16
-  },
-  {
-   "word": "looks",
-   "start": 162.16,
-   "end": 162.42
-  },
-  {
-   "word": "like",
-   "start": 162.42,
-   "end": 162.7
-  },
-  {
-   "word": "it.",
-   "start": 162.7,
-   "end": 162.9
-  },
-  {
-   "word": "When",
-   "start": 163.6,
-   "end": 163.72
-  },
-  {
-   "word": "money",
-   "start": 163.72,
-   "end": 163.9
-  },
-  {
-   "word": "is",
-   "start": 163.9,
-   "end": 164.12
-  },
-  {
-   "word": "worth",
-   "start": 164.12,
-   "end": 164.32
-  },
-  {
-   "word": "less,",
-   "start": 164.32,
-   "end": 164.66
-  },
-  {
-   "word": "prices",
-   "start": 164.86,
-   "end": 165.06
-  },
-  {
-   "word": "go",
-   "start": 165.06,
-   "end": 165.38
-  },
-  {
-   "word": "up.",
-   "start": 165.38,
-   "end": 165.66
-  },
-  {
-   "word": "Historians",
-   "start": 166.42,
-   "end": 166.78
-  },
-  {
-   "word": "argue",
-   "start": 166.78,
-   "end": 167.24
-  },
-  {
-   "word": "about",
-   "start": 167.24,
-   "end": 167.52
-  },
-  {
-   "word": "how",
-   "start": 167.52,
-   "end": 167.76
-  },
-  {
-   "word": "bad",
-   "start": 167.76,
-   "end": 167.98
-  },
-  {
-   "word": "it",
-   "start": 167.98,
-   "end": 168.1
-  },
-  {
-   "word": "got.",
-   "start": 168.1,
-   "end": 168.42
-  },
-  {
-   "word": "But",
-   "start": 169.08,
-   "end": 169.28
+   "word": "bakery",
+   "start": 107.26,
+   "end": 107.54
   },
   {
    "word": "in",
-   "start": 169.28,
-   "end": 169.44
+   "start": 107.54,
+   "end": 107.9
   },
   {
-   "word": "301,",
-   "start": 169.44,
-   "end": 170.16
+   "word": "Rome.",
+   "start": 107.9,
+   "end": 108.14
+  },
+  {
+   "word": "The",
+   "start": 108.84,
+   "end": 109.04
+  },
+  {
+   "word": "faces",
+   "start": 109.04,
+   "end": 109.38
+  },
+  {
+   "word": "on",
+   "start": 109.38,
+   "end": 109.66
   },
   {
    "word": "the",
-   "start": 170.72,
-   "end": 170.76
+   "start": 109.66,
+   "end": 109.8
   },
   {
-   "word": "emperor",
-   "start": 170.76,
-   "end": 171.14
+   "word": "coins",
+   "start": 109.8,
+   "end": 110.18
   },
   {
-   "word": "Diocletian",
-   "start": 171.14,
-   "end": 171.74
+   "word": "change",
+   "start": 110.18,
+   "end": 110.68
   },
   {
-   "word": "sets",
-   "start": 171.74,
-   "end": 172.06
-  },
-  {
-   "word": "maximum",
-   "start": 172.06,
-   "end": 172.66
-  },
-  {
-   "word": "prices",
-   "start": 172.66,
-   "end": 173.1
-  },
-  {
-   "word": "for",
-   "start": 173.1,
-   "end": 173.44
-  },
-  {
-   "word": "more",
-   "start": 173.44,
-   "end": 173.72
+   "word": "faster",
+   "start": 110.68,
+   "end": 111.16
   },
   {
    "word": "than",
-   "start": 173.72,
-   "end": 173.96
+   "start": 111.16,
+   "end": 111.4
   },
   {
-   "word": "a",
-   "start": 173.96,
-   "end": 174.1
+   "word": "he",
+   "start": 111.4,
+   "end": 111.54
   },
   {
-   "word": "thousand",
-   "start": 174.1,
-   "end": 174.5
+   "word": "can",
+   "start": 111.54,
+   "end": 111.72
   },
   {
-   "word": "goods",
-   "start": 174.5,
-   "end": 175.0
-  },
-  {
-   "word": "and",
-   "start": 175.0,
-   "end": 175.26
-  },
-  {
-   "word": "wages,",
-   "start": 175.26,
-   "end": 175.7
-  },
-  {
-   "word": "and",
-   "start": 175.7,
-   "end": 176.2
-  },
-  {
-   "word": "threatens",
-   "start": 176.2,
-   "end": 176.58
-  },
-  {
-   "word": "death",
-   "start": 176.58,
-   "end": 176.94
-  },
-  {
-   "word": "for",
-   "start": 176.94,
-   "end": 177.2
-  },
-  {
-   "word": "breaking",
-   "start": 177.2,
-   "end": 177.46
-  },
-  {
-   "word": "them.",
-   "start": 177.46,
-   "end": 177.8
-  },
-  {
-   "word": "It",
-   "start": 178.48,
-   "end": 178.58
-  },
-  {
-   "word": "doesn't",
-   "start": 178.58,
-   "end": 178.86
-  },
-  {
-   "word": "work.",
-   "start": 178.86,
-   "end": 179.14
-  },
-  {
-   "word": "Goods",
-   "start": 179.96,
-   "end": 180.12
-  },
-  {
-   "word": "vanish",
-   "start": 180.12,
-   "end": 180.44
-  },
-  {
-   "word": "from",
-   "start": 180.44,
-   "end": 180.7
+   "word": "learn",
+   "start": 111.72,
+   "end": 111.94
   },
   {
    "word": "the",
-   "start": 180.7,
-   "end": 180.82
+   "start": 111.94,
+   "end": 112.1
   },
   {
-   "word": "markets.",
-   "start": 180.82,
-   "end": 181.14
+   "word": "names.",
+   "start": 112.1,
+   "end": 112.44
   },
   {
    "word": "And",
-   "start": 181.82,
-   "end": 182.04
+   "start": 113.12,
+   "end": 113.34
+  },
+  {
+   "word": "Rome's",
+   "start": 113.34,
+   "end": 113.74
+  },
+  {
+   "word": "enemies",
+   "start": 113.74,
+   "end": 113.92
+  },
+  {
+   "word": "smell",
+   "start": 113.92,
+   "end": 114.28
+  },
+  {
+   "word": "weakness.",
+   "start": 114.28,
+   "end": 114.7
+  },
+  {
+   "word": "In",
+   "start": 115.44,
+   "end": 115.64
+  },
+  {
+   "word": "260,",
+   "start": 115.64,
+   "end": 116.44
   },
   {
    "word": "the",
-   "start": 182.04,
-   "end": 182.14
+   "start": 116.44,
+   "end": 117.1
   },
   {
-   "word": "army",
-   "start": 182.14,
-   "end": 182.34
+   "word": "Persians",
+   "start": 117.1,
+   "end": 117.54
   },
   {
-   "word": "still",
-   "start": 182.34,
-   "end": 182.62
+   "word": "capture",
+   "start": 117.54,
+   "end": 118.02
   },
   {
-   "word": "needs",
-   "start": 182.62,
-   "end": 182.84
+   "word": "the",
+   "start": 118.02,
+   "end": 118.22
   },
   {
-   "word": "paying,",
-   "start": 182.84,
-   "end": 183.26
+   "word": "emperor",
+   "start": 118.22,
+   "end": 118.64
   },
   {
-   "word": "so",
-   "start": 183.26,
-   "end": 183.62
+   "word": "Valerian",
+   "start": 118.64,
+   "end": 119.18
   },
   {
-   "word": "taxes",
-   "start": 183.62,
-   "end": 184.04
-  },
-  {
-   "word": "keep",
-   "start": 184.04,
-   "end": 184.3
-  },
-  {
-   "word": "rising.",
-   "start": 184.3,
-   "end": 184.78
-  },
-  {
-   "word": "Diocletian",
-   "start": 185.6,
-   "end": 186.1
-  },
-  {
-   "word": "sees",
-   "start": 186.1,
-   "end": 186.36
-  },
-  {
-   "word": "another",
-   "start": 186.36,
-   "end": 186.68
-  },
-  {
-   "word": "problem",
-   "start": 186.68,
-   "end": 187.08
-  },
-  {
-   "word": "too.",
-   "start": 187.08,
-   "end": 187.5
-  },
-  {
-   "word": "The",
-   "start": 188.18,
-   "end": 188.36
-  },
-  {
-   "word": "empire",
-   "start": 188.36,
-   "end": 188.68
-  },
-  {
-   "word": "is",
-   "start": 188.68,
-   "end": 188.92
-  },
-  {
-   "word": "just",
-   "start": 188.92,
-   "end": 189.1
-  },
-  {
-   "word": "too",
-   "start": 189.1,
-   "end": 189.34
-  },
-  {
-   "word": "big",
-   "start": 189.34,
-   "end": 189.56
-  },
-  {
-   "word": "for",
-   "start": 189.56,
-   "end": 189.76
-  },
-  {
-   "word": "one",
-   "start": 189.76,
-   "end": 189.98
-  },
-  {
-   "word": "man.",
-   "start": 189.98,
-   "end": 190.3
+   "word": "alive.",
+   "start": 119.18,
+   "end": 119.66
   },
   {
    "word": "A",
-   "start": 191.7,
-   "end": 191.98
+   "start": 120.48,
+   "end": 120.6
   },
   {
-   "word": "message",
-   "start": 191.98,
-   "end": 192.26
+   "word": "Roman",
+   "start": 120.6,
+   "end": 120.84
   },
   {
-   "word": "from",
-   "start": 192.26,
-   "end": 192.52
+   "word": "emperor,",
+   "start": 120.84,
+   "end": 121.32
   },
   {
-   "word": "one",
-   "start": 192.52,
-   "end": 192.78
+   "word": "taken",
+   "start": 121.32,
+   "end": 121.68
   },
   {
-   "word": "end",
-   "start": 192.78,
-   "end": 192.94
+   "word": "prisoner.",
+   "start": 121.68,
+   "end": 122.2
   },
   {
-   "word": "to",
-   "start": 192.94,
-   "end": 193.08
+   "word": "Things",
+   "start": 122.98,
+   "end": 123.22
   },
   {
-   "word": "the",
-   "start": 193.08,
-   "end": 193.2
+   "word": "get",
+   "start": 123.22,
+   "end": 123.42
   },
   {
-   "word": "other",
-   "start": 193.2,
-   "end": 193.46
+   "word": "so",
+   "start": 123.42,
+   "end": 123.7
   },
   {
-   "word": "could",
-   "start": 193.46,
-   "end": 193.7
+   "word": "bad",
+   "start": 123.7,
+   "end": 124.02
   },
   {
-   "word": "take",
-   "start": 193.7,
-   "end": 193.94
+   "word": "that",
+   "start": 124.02,
+   "end": 124.28
   },
   {
-   "word": "weeks.",
-   "start": 193.94,
-   "end": 194.4
-  },
-  {
-   "word": "By",
-   "start": 195.06,
-   "end": 195.2
-  },
-  {
-   "word": "then,",
-   "start": 195.2,
-   "end": 195.42
-  },
-  {
-   "word": "an",
-   "start": 195.42,
-   "end": 195.54
-  },
-  {
-   "word": "invasion",
-   "start": 195.54,
-   "end": 195.94
-  },
-  {
-   "word": "is",
-   "start": 195.94,
-   "end": 196.2
-  },
-  {
-   "word": "old",
-   "start": 196.2,
-   "end": 196.48
-  },
-  {
-   "word": "news.",
-   "start": 196.48,
-   "end": 196.9
-  },
-  {
-   "word": "So",
-   "start": 197.6,
-   "end": 197.84
-  },
-  {
-   "word": "in",
-   "start": 197.84,
-   "end": 198.0
-  },
-  {
-   "word": "293,",
-   "start": 198.0,
-   "end": 199.02
-  },
-  {
-   "word": "Diocletian",
-   "start": 199.48,
-   "end": 199.88
-  },
-  {
-   "word": "splits",
-   "start": 199.88,
-   "end": 200.2
-  },
-  {
-   "word": "the",
-   "start": 200.2,
-   "end": 200.48
-  },
-  {
-   "word": "job:",
-   "start": 200.48,
-   "end": 200.84
-  },
-  {
-   "word": "four",
-   "start": 201.34,
-   "end": 201.54
-  },
-  {
-   "word": "rulers,",
-   "start": 201.54,
-   "end": 201.96
-  },
-  {
-   "word": "each",
-   "start": 202.26,
-   "end": 202.38
-  },
-  {
-   "word": "guarding",
-   "start": 202.38,
-   "end": 202.7
-  },
-  {
-   "word": "his",
-   "start": 202.7,
-   "end": 202.94
-  },
-  {
-   "word": "own",
-   "start": 202.94,
-   "end": 203.16
-  },
-  {
-   "word": "part",
-   "start": 203.16,
-   "end": 203.48
-  },
-  {
-   "word": "of",
-   "start": 203.48,
-   "end": 203.66
-  },
-  {
-   "word": "the",
-   "start": 203.66,
-   "end": 203.78
-  },
-  {
-   "word": "empire.",
-   "start": 203.78,
-   "end": 204.22
-  },
-  {
-   "word": "It",
-   "start": 204.86,
-   "end": 205.14
-  },
-  {
-   "word": "works,",
-   "start": 205.14,
-   "end": 205.42
-  },
-  {
-   "word": "until",
-   "start": 205.42,
-   "end": 205.8
-  },
-  {
-   "word": "they",
-   "start": 205.8,
-   "end": 205.98
-  },
-  {
-   "word": "fight",
-   "start": 205.98,
-   "end": 206.22
-  },
-  {
-   "word": "each",
-   "start": 206.22,
-   "end": 206.46
-  },
-  {
-   "word": "other.",
-   "start": 206.46,
-   "end": 206.68
-  },
-  {
-   "word": "The",
-   "start": 207.38,
-   "end": 207.52
-  },
-  {
-   "word": "winner,",
-   "start": 207.52,
-   "end": 207.82
-  },
-  {
-   "word": "Constantine,",
-   "start": 208.1,
-   "end": 208.54
+   "word": "Rome",
+   "start": 124.28,
+   "end": 124.58
   },
   {
    "word": "builds",
-   "start": 208.8,
-   "end": 209.1
+   "start": 124.58,
+   "end": 124.94
   },
   {
-   "word": "a",
-   "start": 209.1,
-   "end": 209.26
+   "word": "huge",
+   "start": 124.94,
+   "end": 125.26
   },
   {
    "word": "new",
-   "start": 209.26,
-   "end": 209.46
+   "start": 125.26,
+   "end": 125.6
   },
   {
-   "word": "capital",
-   "start": 209.46,
-   "end": 209.84
+   "word": "walls",
+   "start": 125.6,
+   "end": 125.94
   },
   {
-   "word": "in",
-   "start": 209.84,
-   "end": 210.1
+   "word": "around",
+   "start": 125.94,
+   "end": 126.3
   },
   {
    "word": "the",
-   "start": 210.1,
-   "end": 210.22
+   "start": 126.3,
+   "end": 126.5
+  },
+  {
+   "word": "city",
+   "start": 126.5,
+   "end": 126.68
+  },
+  {
+   "word": "itself.",
+   "start": 126.68,
+   "end": 127.1
+  },
+  {
+   "word": "Remember",
+   "start": 127.92,
+   "end": 128.18
+  },
+  {
+   "word": "those",
+   "start": 128.18,
+   "end": 128.48
+  },
+  {
+   "word": "walls.",
+   "start": 128.48,
+   "end": 128.82
+  },
+  {
+   "word": "But",
+   "start": 129.48,
+   "end": 129.74
+  },
+  {
+   "word": "all",
+   "start": 129.74,
+   "end": 129.9
+  },
+  {
+   "word": "this",
+   "start": 129.9,
+   "end": 130.02
+  },
+  {
+   "word": "fighting",
+   "start": 130.02,
+   "end": 130.36
+  },
+  {
+   "word": "costs",
+   "start": 130.36,
+   "end": 130.66
+  },
+  {
+   "word": "money.",
+   "start": 130.66,
+   "end": 131.12
+  },
+  {
+   "word": "A",
+   "start": 131.84,
+   "end": 131.94
+  },
+  {
+   "word": "lot",
+   "start": 131.94,
+   "end": 132.1
+  },
+  {
+   "word": "of",
+   "start": 132.1,
+   "end": 132.24
+  },
+  {
+   "word": "money.",
+   "start": 132.24,
+   "end": 132.5
+  },
+  {
+   "word": "So",
+   "start": 134.02,
+   "end": 134.28
+  },
+  {
+   "word": "the",
+   "start": 134.28,
+   "end": 134.42
+  },
+  {
+   "word": "emperors",
+   "start": 134.42,
+   "end": 134.72
+  },
+  {
+   "word": "cheat.",
+   "start": 134.72,
+   "end": 135.1
+  },
+  {
+   "word": "Every",
+   "start": 135.88,
+   "end": 136.16
+  },
+  {
+   "word": "new",
+   "start": 136.16,
+   "end": 136.36
+  },
+  {
+   "word": "batch",
+   "start": 136.36,
+   "end": 136.58
+  },
+  {
+   "word": "of",
+   "start": 136.58,
+   "end": 136.84
+  },
+  {
+   "word": "coins",
+   "start": 136.84,
+   "end": 137.12
+  },
+  {
+   "word": "gets",
+   "start": 137.12,
+   "end": 137.44
+  },
+  {
+   "word": "a",
+   "start": 137.44,
+   "end": 137.62
+  },
+  {
+   "word": "little",
+   "start": 137.62,
+   "end": 137.74
+  },
+  {
+   "word": "less",
+   "start": 137.74,
+   "end": 138.06
+  },
+  {
+   "word": "silver,",
+   "start": 138.06,
+   "end": 138.44
+  },
+  {
+   "word": "and",
+   "start": 138.44,
+   "end": 138.96
+  },
+  {
+   "word": "a",
+   "start": 138.96,
+   "end": 139.08
+  },
+  {
+   "word": "little",
+   "start": 139.08,
+   "end": 139.22
+  },
+  {
+   "word": "more",
+   "start": 139.22,
+   "end": 139.44
+  },
+  {
+   "word": "cheap",
+   "start": 139.44,
+   "end": 139.74
+  },
+  {
+   "word": "copper.",
+   "start": 139.74,
+   "end": 140.24
+  },
+  {
+   "word": "It",
+   "start": 140.94,
+   "end": 141.12
+  },
+  {
+   "word": "works,",
+   "start": 141.12,
+   "end": 141.36
+  },
+  {
+   "word": "until",
+   "start": 141.36,
+   "end": 141.68
+  },
+  {
+   "word": "people",
+   "start": 141.68,
+   "end": 141.94
+  },
+  {
+   "word": "notice.",
+   "start": 141.94,
+   "end": 142.38
+  },
+  {
+   "word": "People",
+   "start": 143.22,
+   "end": 143.46
+  },
+  {
+   "word": "always",
+   "start": 143.46,
+   "end": 143.86
+  },
+  {
+   "word": "notice.",
+   "start": 143.86,
+   "end": 144.3
+  },
+  {
+   "word": "By",
+   "start": 145.08,
+   "end": 145.2
+  },
+  {
+   "word": "the",
+   "start": 145.2,
+   "end": 145.34
+  },
+  {
+   "word": "270s,",
+   "start": 145.34,
+   "end": 146.74
+  },
+  {
+   "word": "Rome's",
+   "start": 146.74,
+   "end": 147.26
+  },
+  {
+   "word": "everyday",
+   "start": 147.26,
+   "end": 147.54
+  },
+  {
+   "word": "silver",
+   "start": 147.54,
+   "end": 148.0
+  },
+  {
+   "word": "coin",
+   "start": 148.0,
+   "end": 148.44
+  },
+  {
+   "word": "is",
+   "start": 148.44,
+   "end": 148.7
+  },
+  {
+   "word": "often",
+   "start": 148.7,
+   "end": 149.08
+  },
+  {
+   "word": "less",
+   "start": 149.08,
+   "end": 149.4
+  },
+  {
+   "word": "than",
+   "start": 149.4,
+   "end": 149.7
+  },
+  {
+   "word": "five",
+   "start": 149.7,
+   "end": 150.16
+  },
+  {
+   "word": "percent",
+   "start": 150.16,
+   "end": 150.62
+  },
+  {
+   "word": "silver.",
+   "start": 150.62,
+   "end": 151.08
+  },
+  {
+   "word": "It's",
+   "start": 151.7,
+   "end": 152.0
+  },
+  {
+   "word": "basically",
+   "start": 152.0,
+   "end": 152.4
+  },
+  {
+   "word": "copper,",
+   "start": 152.4,
+   "end": 152.82
+  },
+  {
+   "word": "with",
+   "start": 152.82,
+   "end": 153.12
+  },
+  {
+   "word": "a",
+   "start": 153.12,
+   "end": 153.3
+  },
+  {
+   "word": "shiny",
+   "start": 153.3,
+   "end": 153.5
+  },
+  {
+   "word": "coat.",
+   "start": 153.5,
+   "end": 153.84
+  },
+  {
+   "word": "Felix's",
+   "start": 154.66,
+   "end": 155.14
+  },
+  {
+   "word": "son",
+   "start": 155.14,
+   "end": 155.36
+  },
+  {
+   "word": "holds",
+   "start": 155.36,
+   "end": 155.72
+  },
+  {
+   "word": "a",
+   "start": 155.72,
+   "end": 155.92
+  },
+  {
+   "word": "new",
+   "start": 155.92,
+   "end": 156.16
+  },
+  {
+   "word": "coin",
+   "start": 156.16,
+   "end": 156.5
+  },
+  {
+   "word": "next",
+   "start": 156.5,
+   "end": 156.78
+  },
+  {
+   "word": "to",
+   "start": 156.78,
+   "end": 157.02
+  },
+  {
+   "word": "Gaius's",
+   "start": 157.02,
+   "end": 157.44
+  },
+  {
+   "word": "old",
+   "start": 157.44,
+   "end": 157.68
+  },
+  {
+   "word": "one.",
+   "start": 157.68,
+   "end": 158.02
+  },
+  {
+   "word": "One",
+   "start": 158.64,
+   "end": 158.86
+  },
+  {
+   "word": "is",
+   "start": 158.86,
+   "end": 159.0
+  },
+  {
+   "word": "real",
+   "start": 159.0,
+   "end": 159.28
+  },
+  {
+   "word": "silver.",
+   "start": 159.28,
+   "end": 159.66
+  },
+  {
+   "word": "The",
+   "start": 160.34,
+   "end": 160.6
+  },
+  {
+   "word": "other",
+   "start": 160.6,
+   "end": 160.8
+  },
+  {
+   "word": "only",
+   "start": 160.8,
+   "end": 161.12
+  },
+  {
+   "word": "looks",
+   "start": 161.12,
+   "end": 161.34
+  },
+  {
+   "word": "like",
+   "start": 161.34,
+   "end": 161.62
+  },
+  {
+   "word": "it.",
+   "start": 161.62,
+   "end": 161.86
+  },
+  {
+   "word": "When",
+   "start": 162.54,
+   "end": 162.64
+  },
+  {
+   "word": "money",
+   "start": 162.64,
+   "end": 162.84
+  },
+  {
+   "word": "is",
+   "start": 162.84,
+   "end": 163.06
+  },
+  {
+   "word": "worth",
+   "start": 163.06,
+   "end": 163.24
+  },
+  {
+   "word": "less,",
+   "start": 163.24,
+   "end": 163.6
+  },
+  {
+   "word": "prices",
+   "start": 163.6,
+   "end": 163.96
+  },
+  {
+   "word": "go",
+   "start": 163.96,
+   "end": 164.3
+  },
+  {
+   "word": "up.",
+   "start": 164.3,
+   "end": 164.66
+  },
+  {
+   "word": "Historians",
+   "start": 165.36,
+   "end": 165.72
+  },
+  {
+   "word": "argue",
+   "start": 165.72,
+   "end": 166.18
+  },
+  {
+   "word": "about",
+   "start": 166.18,
+   "end": 166.46
+  },
+  {
+   "word": "how",
+   "start": 166.46,
+   "end": 166.7
+  },
+  {
+   "word": "bad",
+   "start": 166.7,
+   "end": 166.92
+  },
+  {
+   "word": "it",
+   "start": 166.92,
+   "end": 167.06
+  },
+  {
+   "word": "got.",
+   "start": 167.06,
+   "end": 167.38
+  },
+  {
+   "word": "But",
+   "start": 168.06,
+   "end": 168.22
+  },
+  {
+   "word": "in",
+   "start": 168.22,
+   "end": 168.36
+  },
+  {
+   "word": "301,",
+   "start": 168.36,
+   "end": 169.08
+  },
+  {
+   "word": "the",
+   "start": 169.08,
+   "end": 169.68
+  },
+  {
+   "word": "emperor",
+   "start": 169.68,
+   "end": 170.08
+  },
+  {
+   "word": "Diocletian",
+   "start": 170.08,
+   "end": 170.68
+  },
+  {
+   "word": "sets",
+   "start": 170.68,
+   "end": 170.98
+  },
+  {
+   "word": "maximum",
+   "start": 170.98,
+   "end": 171.56
+  },
+  {
+   "word": "prices",
+   "start": 171.56,
+   "end": 172.04
+  },
+  {
+   "word": "for",
+   "start": 172.04,
+   "end": 172.34
+  },
+  {
+   "word": "more",
+   "start": 172.34,
+   "end": 172.66
+  },
+  {
+   "word": "than",
+   "start": 172.66,
+   "end": 172.88
+  },
+  {
+   "word": "a",
+   "start": 172.88,
+   "end": 173.02
+  },
+  {
+   "word": "thousand",
+   "start": 173.02,
+   "end": 173.44
+  },
+  {
+   "word": "goods",
+   "start": 173.44,
+   "end": 173.92
+  },
+  {
+   "word": "and",
+   "start": 173.92,
+   "end": 174.18
+  },
+  {
+   "word": "wages,",
+   "start": 174.18,
+   "end": 174.62
+  },
+  {
+   "word": "and",
+   "start": 174.62,
+   "end": 175.12
+  },
+  {
+   "word": "threatens",
+   "start": 175.12,
+   "end": 175.5
+  },
+  {
+   "word": "death",
+   "start": 175.5,
+   "end": 175.86
+  },
+  {
+   "word": "for",
+   "start": 175.86,
+   "end": 176.14
+  },
+  {
+   "word": "breaking",
+   "start": 176.14,
+   "end": 176.42
+  },
+  {
+   "word": "them.",
+   "start": 176.42,
+   "end": 176.92
+  },
+  {
+   "word": "Bold",
+   "start": 177.48,
+   "end": 177.64
+  },
+  {
+   "word": "plan.",
+   "start": 177.64,
+   "end": 178.0
+  },
+  {
+   "word": "It",
+   "start": 178.74,
+   "end": 178.92
+  },
+  {
+   "word": "doesn't",
+   "start": 178.92,
+   "end": 179.22
+  },
+  {
+   "word": "work.",
+   "start": 179.22,
+   "end": 179.48
+  },
+  {
+   "word": "Goods",
+   "start": 180.46,
+   "end": 180.46
+  },
+  {
+   "word": "vanish",
+   "start": 180.46,
+   "end": 180.78
+  },
+  {
+   "word": "from",
+   "start": 180.78,
+   "end": 181.02
+  },
+  {
+   "word": "the",
+   "start": 181.02,
+   "end": 181.16
+  },
+  {
+   "word": "markets.",
+   "start": 181.16,
+   "end": 181.46
+  },
+  {
+   "word": "And",
+   "start": 182.24,
+   "end": 182.38
+  },
+  {
+   "word": "the",
+   "start": 182.38,
+   "end": 182.52
+  },
+  {
+   "word": "army",
+   "start": 182.52,
+   "end": 182.68
+  },
+  {
+   "word": "still",
+   "start": 182.68,
+   "end": 182.96
+  },
+  {
+   "word": "needs",
+   "start": 182.96,
+   "end": 183.18
+  },
+  {
+   "word": "paying,",
+   "start": 183.18,
+   "end": 183.56
+  },
+  {
+   "word": "so",
+   "start": 183.56,
+   "end": 183.96
+  },
+  {
+   "word": "taxes",
+   "start": 183.96,
+   "end": 184.38
+  },
+  {
+   "word": "keep",
+   "start": 184.38,
+   "end": 184.62
+  },
+  {
+   "word": "rising.",
+   "start": 184.62,
+   "end": 185.16
+  },
+  {
+   "word": "Diocletian",
+   "start": 186.04,
+   "end": 186.42
+  },
+  {
+   "word": "sees",
+   "start": 186.42,
+   "end": 186.7
+  },
+  {
+   "word": "another",
+   "start": 186.7,
+   "end": 187.02
+  },
+  {
+   "word": "problem",
+   "start": 187.02,
+   "end": 187.44
+  },
+  {
+   "word": "too.",
+   "start": 187.44,
+   "end": 187.84
+  },
+  {
+   "word": "The",
+   "start": 188.54,
+   "end": 188.7
+  },
+  {
+   "word": "empire",
+   "start": 188.7,
+   "end": 189.02
+  },
+  {
+   "word": "is",
+   "start": 189.02,
+   "end": 189.24
+  },
+  {
+   "word": "just",
+   "start": 189.24,
+   "end": 189.44
+  },
+  {
+   "word": "too",
+   "start": 189.44,
+   "end": 189.66
+  },
+  {
+   "word": "big",
+   "start": 189.66,
+   "end": 189.88
+  },
+  {
+   "word": "for",
+   "start": 189.88,
+   "end": 190.08
+  },
+  {
+   "word": "one",
+   "start": 190.08,
+   "end": 190.3
+  },
+  {
+   "word": "man.",
+   "start": 190.3,
+   "end": 190.64
+  },
+  {
+   "word": "A",
+   "start": 192.06,
+   "end": 192.32
+  },
+  {
+   "word": "message",
+   "start": 192.32,
+   "end": 192.6
+  },
+  {
+   "word": "from",
+   "start": 192.6,
+   "end": 192.86
+  },
+  {
+   "word": "one",
+   "start": 192.86,
+   "end": 193.12
+  },
+  {
+   "word": "end",
+   "start": 193.12,
+   "end": 193.26
+  },
+  {
+   "word": "to",
+   "start": 193.26,
+   "end": 193.42
+  },
+  {
+   "word": "the",
+   "start": 193.42,
+   "end": 193.54
+  },
+  {
+   "word": "other",
+   "start": 193.54,
+   "end": 193.8
+  },
+  {
+   "word": "could",
+   "start": 193.8,
+   "end": 194.04
+  },
+  {
+   "word": "take",
+   "start": 194.04,
+   "end": 194.28
+  },
+  {
+   "word": "weeks.",
+   "start": 194.28,
+   "end": 194.68
+  },
+  {
+   "word": "By",
+   "start": 195.44,
+   "end": 195.54
+  },
+  {
+   "word": "then,",
+   "start": 195.54,
+   "end": 195.76
+  },
+  {
+   "word": "an",
+   "start": 195.76,
+   "end": 195.88
+  },
+  {
+   "word": "invasion",
+   "start": 195.88,
+   "end": 196.28
+  },
+  {
+   "word": "is",
+   "start": 196.28,
+   "end": 196.52
+  },
+  {
+   "word": "old",
+   "start": 196.52,
+   "end": 196.82
+  },
+  {
+   "word": "news.",
+   "start": 196.82,
+   "end": 197.24
+  },
+  {
+   "word": "So",
+   "start": 197.94,
+   "end": 198.18
+  },
+  {
+   "word": "in",
+   "start": 198.18,
+   "end": 198.32
+  },
+  {
+   "word": "293,",
+   "start": 198.32,
+   "end": 199.14
+  },
+  {
+   "word": "Diocletian",
+   "start": 199.14,
+   "end": 200.24
+  },
+  {
+   "word": "splits",
+   "start": 200.24,
+   "end": 200.54
+  },
+  {
+   "word": "the",
+   "start": 200.54,
+   "end": 200.8
+  },
+  {
+   "word": "job:",
+   "start": 200.8,
+   "end": 201.18
+  },
+  {
+   "word": "four",
+   "start": 201.7,
+   "end": 201.88
+  },
+  {
+   "word": "rulers,",
+   "start": 201.88,
+   "end": 202.28
+  },
+  {
+   "word": "each",
+   "start": 202.28,
+   "end": 202.72
+  },
+  {
+   "word": "guarding",
+   "start": 202.72,
+   "end": 203.04
+  },
+  {
+   "word": "his",
+   "start": 203.04,
+   "end": 203.26
+  },
+  {
+   "word": "own",
+   "start": 203.26,
+   "end": 203.48
+  },
+  {
+   "word": "part",
+   "start": 203.48,
+   "end": 203.82
+  },
+  {
+   "word": "of",
+   "start": 203.82,
+   "end": 204.0
+  },
+  {
+   "word": "the",
+   "start": 204.0,
+   "end": 204.12
+  },
+  {
+   "word": "empire.",
+   "start": 204.12,
+   "end": 204.58
+  },
+  {
+   "word": "It",
+   "start": 205.34,
+   "end": 205.48
+  },
+  {
+   "word": "works,",
+   "start": 205.48,
+   "end": 205.76
+  },
+  {
+   "word": "until",
+   "start": 205.76,
+   "end": 206.14
+  },
+  {
+   "word": "they",
+   "start": 206.14,
+   "end": 206.34
+  },
+  {
+   "word": "fight",
+   "start": 206.34,
+   "end": 206.54
+  },
+  {
+   "word": "each",
+   "start": 206.54,
+   "end": 206.78
+  },
+  {
+   "word": "other.",
+   "start": 206.78,
+   "end": 207.0
+  },
+  {
+   "word": "The",
+   "start": 207.0,
+   "end": 207.84
+  },
+  {
+   "word": "winner,",
+   "start": 207.84,
+   "end": 208.12
+  },
+  {
+   "word": "Constantine,",
+   "start": 208.12,
+   "end": 208.88
+  },
+  {
+   "word": "builds",
+   "start": 208.88,
+   "end": 209.42
+  },
+  {
+   "word": "a",
+   "start": 209.42,
+   "end": 209.6
+  },
+  {
+   "word": "new",
+   "start": 209.6,
+   "end": 209.8
+  },
+  {
+   "word": "capital",
+   "start": 209.8,
+   "end": 210.18
+  },
+  {
+   "word": "in",
+   "start": 210.18,
+   "end": 210.44
+  },
+  {
+   "word": "the",
+   "start": 210.44,
+   "end": 210.58
   },
   {
    "word": "East,",
-   "start": 210.22,
-   "end": 210.56
+   "start": 210.58,
+   "end": 210.9
   },
   {
    "word": "where",
    "start": 210.9,
-   "end": 210.98
+   "end": 211.32
   },
   {
    "word": "Europe",
-   "start": 210.98,
-   "end": 211.38
+   "start": 211.32,
+   "end": 211.72
   },
   {
    "word": "meets",
-   "start": 211.38,
-   "end": 211.64
+   "start": 211.72,
+   "end": 212.02
   },
   {
    "word": "Asia:",
-   "start": 211.64,
-   "end": 212.16
+   "start": 212.02,
+   "end": 212.52
   },
   {
    "word": "Constantinople.",
-   "start": 212.64,
-   "end": 213.08
+   "start": 213.12,
+   "end": 213.52
   },
   {
    "word": "After",
-   "start": 214.24,
-   "end": 214.5
+   "start": 214.68,
+   "end": 214.8
   },
   {
    "word": "him,",
-   "start": 214.5,
-   "end": 214.76
+   "start": 214.8,
+   "end": 215.12
   },
   {
    "word": "the",
-   "start": 214.88,
-   "end": 214.96
+   "start": 215.12,
+   "end": 215.3
   },
   {
    "word": "empire",
-   "start": 214.96,
-   "end": 215.36
-  },
-  {
-   "word": "usually",
-   "start": 215.36,
+   "start": 215.3,
    "end": 215.72
   },
   {
-   "word": "has",
+   "word": "usually",
    "start": 215.72,
-   "end": 216.06
+   "end": 216.08
+  },
+  {
+   "word": "has",
+   "start": 216.08,
+   "end": 216.4
   },
   {
    "word": "two",
-   "start": 216.06,
-   "end": 216.32
+   "start": 216.4,
+   "end": 216.66
   },
   {
    "word": "emperors:",
-   "start": 216.32,
-   "end": 216.78
+   "start": 216.66,
+   "end": 217.14
   },
   {
    "word": "one",
-   "start": 217.32,
-   "end": 217.46
+   "start": 217.74,
+   "end": 217.8
   },
   {
    "word": "for",
-   "start": 217.46,
-   "end": 217.64
-  },
-  {
-   "word": "the",
-   "start": 217.64,
-   "end": 217.78
-  },
-  {
-   "word": "West,",
-   "start": 217.78,
+   "start": 217.8,
    "end": 217.98
   },
   {
-   "word": "one",
+   "word": "the",
    "start": 217.98,
-   "end": 218.24
+   "end": 218.12
+  },
+  {
+   "word": "West,",
+   "start": 218.12,
+   "end": 218.34
+  },
+  {
+   "word": "one",
+   "start": 218.34,
+   "end": 218.58
   },
   {
    "word": "for",
-   "start": 218.24,
-   "end": 218.44
+   "start": 218.58,
+   "end": 218.78
   },
   {
    "word": "the",
-   "start": 218.44,
-   "end": 218.56
+   "start": 218.78,
+   "end": 218.9
   },
   {
    "word": "East.",
-   "start": 218.56,
-   "end": 218.88
+   "start": 218.9,
+   "end": 219.22
   },
   {
    "word": "The",
-   "start": 219.58,
-   "end": 219.72
+   "start": 220.04,
+   "end": 220.06
   },
   {
    "word": "East",
-   "start": 219.72,
-   "end": 219.94
+   "start": 220.06,
+   "end": 220.28
   },
   {
    "word": "is",
-   "start": 219.94,
-   "end": 220.12
+   "start": 220.28,
+   "end": 220.44
   },
   {
    "word": "richer,",
-   "start": 220.12,
-   "end": 220.36
+   "start": 220.44,
+   "end": 220.8
   },
   {
    "word": "with",
-   "start": 220.36,
-   "end": 220.82
+   "start": 220.8,
+   "end": 221.14
   },
   {
    "word": "bigger",
-   "start": 220.82,
-   "end": 221.12
-  },
-  {
-   "word": "cities.",
-   "start": 221.12,
+   "start": 221.14,
    "end": 221.44
   },
   {
+   "word": "cities.",
+   "start": 221.44,
+   "end": 221.76
+  },
+  {
    "word": "The",
-   "start": 222.22,
-   "end": 222.38
+   "start": 222.64,
+   "end": 222.72
   },
   {
    "word": "West",
-   "start": 222.38,
-   "end": 222.6
+   "start": 222.72,
+   "end": 222.92
   },
   {
    "word": "has",
-   "start": 222.6,
-   "end": 222.82
+   "start": 222.92,
+   "end": 223.16
   },
   {
    "word": "long",
-   "start": 222.82,
-   "end": 223.14
+   "start": 223.16,
+   "end": 223.48
   },
   {
    "word": "borders,",
-   "start": 223.14,
-   "end": 223.54
+   "start": 223.48,
+   "end": 223.9
   },
   {
    "word": "and",
-   "start": 223.54,
-   "end": 223.98
+   "start": 223.9,
+   "end": 224.3
   },
   {
    "word": "less",
-   "start": 223.98,
-   "end": 224.16
+   "start": 224.3,
+   "end": 224.5
   },
   {
    "word": "money",
-   "start": 224.16,
-   "end": 224.38
+   "start": 224.5,
+   "end": 224.7
   },
   {
    "word": "to",
-   "start": 224.38,
-   "end": 224.58
+   "start": 224.7,
+   "end": 224.92
   },
   {
    "word": "guard",
-   "start": 224.58,
-   "end": 224.8
-  },
-  {
-   "word": "them.",
-   "start": 224.8,
+   "start": 224.92,
    "end": 225.14
   },
   {
+   "word": "them.",
+   "start": 225.14,
+   "end": 225.48
+  },
+  {
    "word": "Keep",
-   "start": 225.78,
-   "end": 225.94
+   "start": 226.18,
+   "end": 226.26
   },
   {
    "word": "that",
-   "start": 225.94,
-   "end": 226.18
+   "start": 226.26,
+   "end": 226.52
   },
   {
    "word": "in",
-   "start": 226.18,
-   "end": 226.32
-  },
-  {
-   "word": "mind.",
-   "start": 226.32,
+   "start": 226.52,
    "end": 226.66
   },
   {
+   "word": "mind.",
+   "start": 226.66,
+   "end": 227.02
+  },
+  {
    "word": "Around",
-   "start": 228.28,
-   "end": 228.52
-  },
-  {
-   "word": "the",
-   "start": 228.52,
-   "end": 228.66
-  },
-  {
-   "word": "year",
-   "start": 228.66,
+   "start": 228.68,
    "end": 228.84
   },
   {
-   "word": "370,",
+   "word": "the",
    "start": 228.84,
-   "end": 229.84
+   "end": 229.0
+  },
+  {
+   "word": "year",
+   "start": 229.0,
+   "end": 229.18
+  },
+  {
+   "word": "370,",
+   "start": 229.18,
+   "end": 230.16
   },
   {
    "word": "a",
-   "start": 230.44,
-   "end": 230.5
+   "start": 230.16,
+   "end": 230.82
   },
   {
    "word": "new",
-   "start": 230.5,
-   "end": 230.72
+   "start": 230.82,
+   "end": 231.06
   },
   {
    "word": "people",
-   "start": 230.72,
-   "end": 231.02
+   "start": 231.06,
+   "end": 231.36
   },
   {
    "word": "rides",
-   "start": 231.02,
-   "end": 231.38
+   "start": 231.36,
+   "end": 231.72
   },
   {
    "word": "out",
-   "start": 231.38,
-   "end": 231.64
+   "start": 231.72,
+   "end": 231.98
   },
   {
    "word": "of",
-   "start": 231.64,
-   "end": 231.74
+   "start": 231.98,
+   "end": 232.08
   },
   {
    "word": "the",
-   "start": 231.74,
-   "end": 231.84
+   "start": 232.08,
+   "end": 232.18
   },
   {
    "word": "steppes.",
-   "start": 231.84,
-   "end": 232.36
+   "start": 232.18,
+   "end": 233.42
   },
   {
    "word": "Horse",
-   "start": 233.0,
-   "end": 233.18
+   "start": 233.42,
+   "end": 233.52
   },
   {
    "word": "archers.",
-   "start": 233.18,
-   "end": 233.64
+   "start": 233.52,
+   "end": 233.96
   },
   {
    "word": "The",
-   "start": 234.46,
-   "end": 234.6
+   "start": 233.96,
+   "end": 234.9
   },
   {
    "word": "Huns.",
-   "start": 234.6,
-   "end": 235.1
+   "start": 234.9,
+   "end": 235.86
   },
   {
    "word": "Historians",
-   "start": 235.78,
-   "end": 236.22
+   "start": 236.1,
+   "end": 236.58
   },
   {
    "word": "still",
-   "start": 236.22,
-   "end": 236.62
+   "start": 236.58,
+   "end": 236.96
   },
   {
    "word": "argue",
-   "start": 236.62,
-   "end": 237.04
+   "start": 236.96,
+   "end": 237.38
   },
   {
    "word": "about",
-   "start": 237.04,
-   "end": 237.36
+   "start": 237.38,
+   "end": 237.7
   },
   {
    "word": "where",
-   "start": 237.36,
-   "end": 237.56
+   "start": 237.7,
+   "end": 237.9
   },
   {
    "word": "they",
-   "start": 237.56,
-   "end": 237.74
+   "start": 237.9,
+   "end": 238.1
   },
   {
    "word": "came",
-   "start": 237.74,
-   "end": 238.0
+   "start": 238.1,
+   "end": 238.34
   },
   {
    "word": "from.",
-   "start": 238.0,
-   "end": 238.32
+   "start": 238.34,
+   "end": 238.64
   },
   {
    "word": "But",
-   "start": 238.8,
-   "end": 239.1
+   "start": 239.36,
+   "end": 239.44
   },
   {
    "word": "the",
-   "start": 239.1,
-   "end": 239.28
+   "start": 239.44,
+   "end": 239.6
   },
   {
    "word": "Goths,",
-   "start": 239.28,
-   "end": 239.82
-  },
-  {
-   "word": "north",
-   "start": 239.82,
-   "end": 239.94
-  },
-  {
-   "word": "of",
-   "start": 239.94,
+   "start": 239.6,
    "end": 240.12
   },
   {
-   "word": "the",
+   "word": "north",
    "start": 240.12,
-   "end": 240.3
+   "end": 240.28
+  },
+  {
+   "word": "of",
+   "start": 240.28,
+   "end": 240.48
+  },
+  {
+   "word": "the",
+   "start": 240.48,
+   "end": 240.6
   },
   {
    "word": "Danube",
-   "start": 240.3,
-   "end": 240.58
+   "start": 240.6,
+   "end": 240.92
   },
   {
    "word": "river,",
-   "start": 240.58,
-   "end": 240.82
+   "start": 240.92,
+   "end": 241.14
   },
   {
    "word": "are",
-   "start": 240.82,
-   "end": 241.2
+   "start": 241.14,
+   "end": 241.52
   },
   {
    "word": "terrified.",
-   "start": 241.2,
-   "end": 241.68
+   "start": 241.52,
+   "end": 242.04
   },
   {
    "word": "In",
-   "start": 242.38,
-   "end": 242.64
+   "start": 242.9,
+   "end": 242.96
   },
   {
    "word": "376,",
-   "start": 242.64,
-   "end": 243.36
+   "start": 242.96,
+   "end": 243.7
   },
   {
    "word": "tens",
-   "start": 244.2,
-   "end": 244.34
+   "start": 243.7,
+   "end": 244.66
   },
   {
    "word": "of",
-   "start": 244.34,
-   "end": 244.58
+   "start": 244.66,
+   "end": 244.9
   },
   {
    "word": "thousands",
-   "start": 244.58,
-   "end": 245.02
+   "start": 244.9,
+   "end": 245.38
   },
   {
    "word": "of",
-   "start": 245.02,
-   "end": 245.4
+   "start": 245.38,
+   "end": 245.62
   },
   {
    "word": "Goths",
-   "start": 245.4,
-   "end": 245.88
+   "start": 245.62,
+   "end": 246.2
   },
   {
    "word": "gather",
-   "start": 245.88,
-   "end": 246.0
+   "start": 246.2,
+   "end": 246.34
   },
   {
    "word": "on",
-   "start": 246.0,
-   "end": 246.3
+   "start": 246.34,
+   "end": 246.7
   },
   {
    "word": "the",
-   "start": 246.3,
-   "end": 246.52
+   "start": 246.7,
+   "end": 246.82
   },
   {
    "word": "riverbank,",
-   "start": 246.52,
-   "end": 247.04
+   "start": 246.82,
+   "end": 247.4
   },
   {
    "word": "begging",
-   "start": 247.44,
-   "end": 247.6
+   "start": 247.4,
+   "end": 247.94
   },
   {
    "word": "to",
-   "start": 247.6,
-   "end": 247.88
+   "start": 247.94,
+   "end": 248.22
   },
   {
    "word": "be",
-   "start": 247.88,
-   "end": 248.02
+   "start": 248.22,
+   "end": 248.34
   },
   {
    "word": "let",
-   "start": 248.02,
-   "end": 248.24
+   "start": 248.34,
+   "end": 248.58
   },
   {
    "word": "into",
-   "start": 248.24,
-   "end": 248.52
+   "start": 248.58,
+   "end": 248.84
   },
   {
    "word": "the",
-   "start": 248.52,
-   "end": 248.68
+   "start": 248.84,
+   "end": 249.04
   },
   {
    "word": "empire.",
-   "start": 248.68,
-   "end": 249.18
+   "start": 249.04,
+   "end": 249.48
   },
   {
    "word": "The",
-   "start": 249.98,
-   "end": 250.1
+   "start": 250.42,
+   "end": 250.42
   },
   {
    "word": "emperor",
-   "start": 250.1,
-   "end": 250.28
+   "start": 250.42,
+   "end": 250.62
   },
   {
    "word": "of",
-   "start": 250.28,
-   "end": 250.48
+   "start": 250.62,
+   "end": 250.82
   },
   {
    "word": "the",
-   "start": 250.48,
-   "end": 250.54
+   "start": 250.82,
+   "end": 250.88
   },
   {
    "word": "East,",
-   "start": 250.54,
-   "end": 250.86
+   "start": 250.88,
+   "end": 251.18
   },
   {
    "word": "Valens,",
-   "start": 250.86,
-   "end": 251.26
+   "start": 251.18,
+   "end": 251.58
   },
   {
    "word": "says",
-   "start": 251.26,
-   "end": 251.5
+   "start": 251.58,
+   "end": 251.84
   },
   {
    "word": "yes.",
-   "start": 251.5,
-   "end": 251.82
+   "start": 251.84,
+   "end": 252.16
   },
   {
    "word": "He",
-   "start": 252.62,
-   "end": 252.72
+   "start": 252.96,
+   "end": 253.06
   },
   {
    "word": "wants",
-   "start": 252.72,
-   "end": 252.92
+   "start": 253.06,
+   "end": 253.26
   },
   {
    "word": "new",
-   "start": 252.92,
-   "end": 253.16
+   "start": 253.26,
+   "end": 253.5
   },
   {
    "word": "farmers",
-   "start": 253.16,
-   "end": 253.52
+   "start": 253.5,
+   "end": 253.86
   },
   {
    "word": "and",
-   "start": 253.52,
-   "end": 253.84
+   "start": 253.86,
+   "end": 254.18
   },
   {
    "word": "new",
-   "start": 253.84,
-   "end": 254.02
+   "start": 254.18,
+   "end": 254.36
   },
   {
    "word": "soldiers.",
-   "start": 254.02,
-   "end": 254.44
+   "start": 254.36,
+   "end": 254.78
+  },
+  {
+   "word": "What",
+   "start": 255.64,
+   "end": 255.74
+  },
+  {
+   "word": "could",
+   "start": 255.74,
+   "end": 255.88
+  },
+  {
+   "word": "possibly",
+   "start": 255.88,
+   "end": 256.22
+  },
+  {
+   "word": "go",
+   "start": 256.22,
+   "end": 256.52
+  },
+  {
+   "word": "wrong?",
+   "start": 256.52,
+   "end": 256.78
   },
   {
    "word": "But",
-   "start": 255.22,
-   "end": 255.4
+   "start": 257.5,
+   "end": 257.68
   },
   {
    "word": "the",
-   "start": 255.4,
-   "end": 255.54
+   "start": 257.68,
+   "end": 257.82
   },
   {
    "word": "Roman",
-   "start": 255.54,
-   "end": 255.8
+   "start": 257.82,
+   "end": 258.08
   },
   {
    "word": "officers",
-   "start": 255.8,
-   "end": 256.28
+   "start": 258.08,
+   "end": 258.6
   },
   {
    "word": "in",
-   "start": 256.28,
-   "end": 256.7
+   "start": 258.6,
+   "end": 258.98
   },
   {
    "word": "charge",
-   "start": 256.7,
-   "end": 257.1
+   "start": 258.98,
+   "end": 259.38
   },
   {
    "word": "make",
-   "start": 257.1,
-   "end": 257.44
+   "start": 259.38,
+   "end": 259.7
   },
   {
    "word": "a",
-   "start": 257.44,
-   "end": 257.6
+   "start": 259.7,
+   "end": 259.88
   },
   {
    "word": "mess",
-   "start": 257.6,
-   "end": 257.74
+   "start": 259.88,
+   "end": 260.02
   },
   {
    "word": "of",
-   "start": 257.74,
-   "end": 257.94
+   "start": 260.02,
+   "end": 260.22
   },
   {
    "word": "it.",
-   "start": 257.94,
-   "end": 258.14
+   "start": 260.22,
+   "end": 260.38
   },
   {
    "word": "Food",
-   "start": 258.7,
-   "end": 258.9
+   "start": 260.86,
+   "end": 261.18
   },
   {
    "word": "runs",
-   "start": 258.9,
-   "end": 259.2
+   "start": 261.18,
+   "end": 261.46
   },
   {
    "word": "out,",
-   "start": 259.2,
-   "end": 259.48
+   "start": 261.46,
+   "end": 261.76
   },
   {
    "word": "and",
-   "start": 259.48,
-   "end": 259.72
+   "start": 261.76,
+   "end": 262.0
   },
   {
    "word": "the",
-   "start": 259.72,
-   "end": 259.82
+   "start": 262.0,
+   "end": 262.1
   },
   {
    "word": "hungry",
-   "start": 259.82,
-   "end": 260.18
+   "start": 262.1,
+   "end": 262.46
   },
   {
    "word": "Goths",
-   "start": 260.18,
-   "end": 260.6
+   "start": 262.46,
+   "end": 262.86
   },
   {
    "word": "are",
-   "start": 260.6,
-   "end": 260.7
+   "start": 262.86,
+   "end": 262.98
   },
   {
    "word": "cheated",
-   "start": 260.7,
-   "end": 261.12
+   "start": 262.98,
+   "end": 263.38
   },
   {
    "word": "and",
-   "start": 261.12,
-   "end": 261.42
+   "start": 263.38,
+   "end": 263.68
   },
   {
    "word": "mistreated.",
-   "start": 261.42,
-   "end": 261.86
+   "start": 263.68,
+   "end": 264.1
   },
   {
    "word": "The",
-   "start": 262.54,
-   "end": 262.76
+   "start": 264.84,
+   "end": 265.02
   },
   {
    "word": "Goths",
-   "start": 262.76,
-   "end": 263.14
+   "start": 265.02,
+   "end": 265.42
   },
   {
    "word": "rise",
-   "start": 263.14,
-   "end": 263.3
+   "start": 265.42,
+   "end": 265.58
   },
   {
    "word": "up.",
-   "start": 263.3,
-   "end": 263.64
+   "start": 265.58,
+   "end": 265.9
   },
   {
    "word": "And",
-   "start": 264.3,
-   "end": 264.46
-  },
-  {
-   "word": "on",
-   "start": 264.46,
-   "end": 264.62
-  },
-  {
-   "word": "the",
-   "start": 264.62,
-   "end": 264.72
-  },
-  {
-   "word": "9th",
-   "start": 264.72,
-   "end": 265.04
-  },
-  {
-   "word": "of",
-   "start": 265.04,
-   "end": 265.22
-  },
-  {
-   "word": "August,",
-   "start": 265.22,
-   "end": 265.5
-  },
-  {
-   "word": "378,",
-   "start": 265.5,
+   "start": 266.6,
    "end": 266.72
   },
   {
-   "word": "near",
+   "word": "on",
    "start": 266.72,
-   "end": 267.42
+   "end": 266.88
   },
   {
    "word": "the",
-   "start": 267.42,
-   "end": 267.6
+   "start": 266.88,
+   "end": 266.98
+  },
+  {
+   "word": "9th",
+   "start": 266.98,
+   "end": 267.32
+  },
+  {
+   "word": "of",
+   "start": 267.32,
+   "end": 267.76
+  },
+  {
+   "word": "August,",
+   "start": 267.76,
+   "end": 267.76
+  },
+  {
+   "word": "378,",
+   "start": 267.76,
+   "end": 268.98
+  },
+  {
+   "word": "near",
+   "start": 268.98,
+   "end": 269.7
+  },
+  {
+   "word": "the",
+   "start": 269.7,
+   "end": 269.88
   },
   {
    "word": "city",
-   "start": 267.6,
-   "end": 267.84
+   "start": 269.88,
+   "end": 270.1
   },
   {
    "word": "of",
-   "start": 267.84,
-   "end": 268.06
+   "start": 270.1,
+   "end": 270.34
   },
   {
    "word": "Adrianople,",
-   "start": 268.06,
-   "end": 268.7
+   "start": 270.34,
+   "end": 271.0
   },
   {
    "word": "Valens",
-   "start": 269.16,
-   "end": 269.42
+   "start": 271.0,
+   "end": 271.7
   },
   {
    "word": "attacks",
-   "start": 269.42,
-   "end": 269.86
+   "start": 271.7,
+   "end": 272.14
   },
   {
    "word": "them.",
-   "start": 269.86,
-   "end": 270.26
+   "start": 272.14,
+   "end": 272.52
   },
   {
    "word": "It's",
-   "start": 270.86,
-   "end": 271.1
+   "start": 273.12,
+   "end": 273.38
   },
   {
    "word": "a",
-   "start": 271.1,
-   "end": 271.2
+   "start": 273.38,
+   "end": 273.46
   },
   {
    "word": "disaster.",
-   "start": 271.2,
-   "end": 271.54
+   "start": 273.46,
+   "end": 273.84
   },
   {
    "word": "Valens",
-   "start": 272.68,
-   "end": 273.04
+   "start": 274.98,
+   "end": 275.32
   },
   {
    "word": "is",
-   "start": 273.04,
-   "end": 273.24
+   "start": 275.32,
+   "end": 275.54
   },
   {
    "word": "killed,",
-   "start": 273.24,
-   "end": 273.58
+   "start": 275.54,
+   "end": 275.86
   },
   {
    "word": "and",
-   "start": 273.58,
-   "end": 273.92
+   "start": 275.86,
+   "end": 276.2
   },
   {
    "word": "so",
-   "start": 273.92,
-   "end": 274.14
+   "start": 276.2,
+   "end": 276.42
   },
   {
    "word": "are",
-   "start": 274.14,
-   "end": 274.36
+   "start": 276.42,
+   "end": 276.64
   },
   {
    "word": "about",
-   "start": 274.36,
-   "end": 274.66
+   "start": 276.64,
+   "end": 276.94
   },
   {
    "word": "two-thirds",
-   "start": 274.66,
-   "end": 275.26
+   "start": 276.94,
+   "end": 277.5
   },
   {
    "word": "of",
-   "start": 275.26,
-   "end": 275.46
+   "start": 277.5,
+   "end": 277.72
   },
   {
    "word": "his",
-   "start": 275.46,
-   "end": 275.56
+   "start": 277.72,
+   "end": 277.84
   },
   {
    "word": "army,",
-   "start": 275.56,
-   "end": 276.0
+   "start": 277.84,
+   "end": 278.26
   },
   {
    "word": "according",
-   "start": 276.52,
-   "end": 276.56
+   "start": 278.26,
+   "end": 278.82
   },
   {
    "word": "to",
-   "start": 276.56,
-   "end": 276.86
+   "start": 278.82,
+   "end": 279.14
   },
   {
    "word": "the",
-   "start": 276.86,
-   "end": 276.98
+   "start": 279.14,
+   "end": 279.26
   },
   {
    "word": "historian",
-   "start": 276.98,
-   "end": 277.56
-  },
-  {
-   "word": "Ammianus.",
-   "start": 277.56,
-   "end": 278.66
-  },
-  {
-   "word": "An",
-   "start": 278.66,
-   "end": 279.06
-  },
-  {
-   "word": "emperor,",
-   "start": 279.06,
-   "end": 279.4
-  },
-  {
-   "word": "killed",
-   "start": 279.4,
+   "start": 279.26,
    "end": 279.82
   },
   {
-   "word": "by",
+   "word": "Ammianus.",
    "start": 279.82,
-   "end": 280.08
+   "end": 281.2
   },
   {
-   "word": "people",
-   "start": 280.08,
-   "end": 280.44
+   "word": "An",
+   "start": 281.2,
+   "end": 281.34
   },
   {
-   "word": "Rome",
-   "start": 280.44,
-   "end": 280.68
+   "word": "emperor,",
+   "start": 281.34,
+   "end": 281.7
   },
   {
-   "word": "had",
-   "start": 280.68,
-   "end": 280.86
+   "word": "killed",
+   "start": 281.7,
+   "end": 282.08
   },
   {
-   "word": "let",
-   "start": 280.86,
-   "end": 281.04
-  },
-  {
-   "word": "in.",
-   "start": 281.04,
-   "end": 281.32
-  },
-  {
-   "word": "And",
-   "start": 282.0,
-   "end": 282.14
-  },
-  {
-   "word": "Rome",
-   "start": 282.14,
+   "word": "by",
+   "start": 282.08,
    "end": 282.36
   },
   {
-   "word": "can't",
+   "word": "people",
    "start": 282.36,
    "end": 282.7
   },
   {
-   "word": "beat",
-   "start": 282.7,
-   "end": 282.84
-  },
-  {
-   "word": "them.",
-   "start": 282.84,
-   "end": 283.12
-  },
-  {
-   "word": "So",
-   "start": 283.74,
-   "end": 283.94
-  },
-  {
-   "word": "it",
-   "start": 283.94,
-   "end": 284.04
-  },
-  {
-   "word": "tries",
-   "start": 284.04,
-   "end": 284.32
-  },
-  {
-   "word": "something",
-   "start": 284.32,
-   "end": 284.64
-  },
-  {
-   "word": "else.",
-   "start": 284.64,
-   "end": 284.98
-  },
-  {
-   "word": "In",
-   "start": 286.72,
-   "end": 287.28
-  },
-  {
-   "word": "382,",
-   "start": 287.28,
-   "end": 287.84
-  },
-  {
-   "word": "the",
-   "start": 288.14,
-   "end": 288.16
-  },
-  {
-   "word": "emperor",
-   "start": 288.16,
-   "end": 288.54
-  },
-  {
-   "word": "Theodosius",
-   "start": 288.54,
-   "end": 289.3
-  },
-  {
-   "word": "makes",
-   "start": 289.3,
-   "end": 289.54
-  },
-  {
-   "word": "a",
-   "start": 289.54,
-   "end": 289.74
-  },
-  {
-   "word": "deal.",
-   "start": 289.74,
-   "end": 290.0
-  },
-  {
-   "word": "The",
-   "start": 290.64,
-   "end": 290.84
-  },
-  {
-   "word": "Goths",
-   "start": 290.84,
-   "end": 291.26
-  },
-  {
-   "word": "can",
-   "start": 291.26,
-   "end": 291.4
-  },
-  {
-   "word": "live",
-   "start": 291.4,
-   "end": 291.66
-  },
-  {
-   "word": "inside",
-   "start": 291.66,
-   "end": 292.14
-  },
-  {
-   "word": "the",
-   "start": 292.14,
-   "end": 292.36
-  },
-  {
-   "word": "empire,",
-   "start": 292.36,
-   "end": 292.86
-  },
-  {
-   "word": "under",
-   "start": 293.06,
-   "end": 293.28
-  },
-  {
-   "word": "their",
-   "start": 293.28,
-   "end": 293.48
-  },
-  {
-   "word": "own",
-   "start": 293.48,
-   "end": 293.74
-  },
-  {
-   "word": "leaders,",
-   "start": 293.74,
-   "end": 294.08
-  },
-  {
-   "word": "if",
-   "start": 294.3,
-   "end": 294.54
-  },
-  {
-   "word": "they",
-   "start": 294.54,
-   "end": 294.7
-  },
-  {
-   "word": "fight",
-   "start": 294.7,
-   "end": 294.98
-  },
-  {
-   "word": "for",
-   "start": 294.98,
-   "end": 295.24
-  },
-  {
-   "word": "Rome.",
-   "start": 295.24,
-   "end": 295.56
-  },
-  {
-   "word": "More",
-   "start": 296.26,
-   "end": 296.6
-  },
-  {
-   "word": "and",
-   "start": 296.6,
-   "end": 296.76
-  },
-  {
-   "word": "more,",
-   "start": 296.76,
-   "end": 297.02
-  },
-  {
-   "word": "Rome's",
-   "start": 297.24,
-   "end": 297.58
-  },
-  {
-   "word": "armies",
-   "start": 297.58,
-   "end": 297.94
-  },
-  {
-   "word": "are",
-   "start": 297.94,
-   "end": 298.22
-  },
-  {
-   "word": "outsiders,",
-   "start": 298.22,
-   "end": 298.74
-  },
-  {
-   "word": "fighting",
-   "start": 298.74,
-   "end": 299.3
-  },
-  {
-   "word": "for",
-   "start": 299.3,
-   "end": 299.62
-  },
-  {
-   "word": "pay,",
-   "start": 299.62,
-   "end": 300.0
-  },
-  {
-   "word": "loyal",
-   "start": 300.36,
-   "end": 300.5
-  },
-  {
-   "word": "to",
-   "start": 300.5,
-   "end": 300.8
-  },
-  {
-   "word": "their",
-   "start": 300.8,
-   "end": 300.9
-  },
-  {
-   "word": "own",
-   "start": 300.9,
-   "end": 301.18
-  },
-  {
-   "word": "commanders.",
-   "start": 301.18,
-   "end": 301.7
-  },
-  {
-   "word": "In",
-   "start": 302.62,
-   "end": 302.7
-  },
-  {
-   "word": "394,",
-   "start": 302.7,
-   "end": 303.88
-  },
-  {
-   "word": "a",
-   "start": 304.18,
-   "end": 304.26
-  },
-  {
-   "word": "young",
-   "start": 304.26,
-   "end": 304.58
-  },
-  {
-   "word": "Gothic",
-   "start": 304.58,
-   "end": 305.06
-  },
-  {
-   "word": "commander",
-   "start": 305.06,
-   "end": 305.6
-  },
-  {
-   "word": "fights",
-   "start": 305.6,
-   "end": 306.0
-  },
-  {
-   "word": "for",
-   "start": 306.0,
-   "end": 306.28
-  },
-  {
-   "word": "Theodosius",
-   "start": 306.28,
-   "end": 307.0
-  },
-  {
-   "word": "in",
-   "start": 307.0,
-   "end": 307.22
-  },
-  {
-   "word": "a",
-   "start": 307.22,
-   "end": 307.4
-  },
-  {
-   "word": "civil",
-   "start": 307.4,
-   "end": 307.58
-  },
-  {
-   "word": "war.",
-   "start": 307.58,
-   "end": 308.0
-  },
-  {
-   "word": "Thousands",
-   "start": 308.98,
-   "end": 308.98
-  },
-  {
-   "word": "of",
-   "start": 308.98,
-   "end": 309.14
-  },
-  {
-   "word": "his",
-   "start": 309.14,
-   "end": 309.3
-  },
-  {
-   "word": "Goths",
-   "start": 309.3,
-   "end": 309.74
-  },
-  {
-   "word": "die.",
-   "start": 309.74,
-   "end": 309.92
-  },
-  {
-   "word": "He",
-   "start": 310.62,
-   "end": 310.82
-  },
-  {
-   "word": "feels",
-   "start": 310.82,
-   "end": 311.06
-  },
-  {
    "word": "Rome",
-   "start": 311.06,
-   "end": 311.3
-  },
-  {
-   "word": "used",
-   "start": 311.3,
-   "end": 311.62
-  },
-  {
-   "word": "them.",
-   "start": 311.62,
-   "end": 311.92
-  },
-  {
-   "word": "His",
-   "start": 312.56,
-   "end": 312.78
-  },
-  {
-   "word": "name",
-   "start": 312.78,
-   "end": 313.0
-  },
-  {
-   "word": "is",
-   "start": 313.0,
-   "end": 313.24
-  },
-  {
-   "word": "Alaric.",
-   "start": 313.24,
-   "end": 313.66
-  },
-  {
-   "word": "A",
-   "start": 314.32,
-   "end": 314.5
-  },
-  {
-   "word": "few",
-   "start": 314.5,
-   "end": 314.68
-  },
-  {
-   "word": "months",
-   "start": 314.68,
-   "end": 314.9
-  },
-  {
-   "word": "later,",
-   "start": 314.9,
-   "end": 315.28
-  },
-  {
-   "word": "Theodosius",
-   "start": 315.52,
-   "end": 316.14
-  },
-  {
-   "word": "dies,",
-   "start": 316.14,
-   "end": 316.54
-  },
-  {
-   "word": "and",
-   "start": 316.54,
-   "end": 316.98
-  },
-  {
-   "word": "the",
-   "start": 316.98,
-   "end": 317.1
-  },
-  {
-   "word": "empire",
-   "start": 317.1,
-   "end": 317.52
-  },
-  {
-   "word": "is",
-   "start": 317.52,
-   "end": 317.84
-  },
-  {
-   "word": "split",
-   "start": 317.84,
-   "end": 318.14
-  },
-  {
-   "word": "between",
-   "start": 318.14,
-   "end": 318.46
-  },
-  {
-   "word": "his",
-   "start": 318.46,
-   "end": 318.64
-  },
-  {
-   "word": "two",
-   "start": 318.64,
-   "end": 318.88
-  },
-  {
-   "word": "sons,",
-   "start": 318.88,
-   "end": 319.2
-  },
-  {
-   "word": "for",
-   "start": 319.2,
-   "end": 319.58
-  },
-  {
-   "word": "good.",
-   "start": 319.58,
-   "end": 319.86
-  },
-  {
-   "word": "The",
-   "start": 320.6,
-   "end": 320.72
-  },
-  {
-   "word": "West",
-   "start": 320.72,
-   "end": 320.9
-  },
-  {
-   "word": "gets",
-   "start": 320.9,
-   "end": 321.1
-  },
-  {
-   "word": "a",
-   "start": 321.1,
-   "end": 321.24
-  },
-  {
-   "word": "ten-year-old",
-   "start": 321.24,
-   "end": 321.76
-  },
-  {
-   "word": "boy,",
-   "start": 321.76,
-   "end": 322.08
-  },
-  {
-   "word": "Honorius.",
-   "start": 322.28,
-   "end": 322.74
-  },
-  {
-   "word": "Alaric",
-   "start": 323.4,
-   "end": 323.9
-  },
-  {
-   "word": "wants",
-   "start": 323.9,
-   "end": 324.22
-  },
-  {
-   "word": "land",
-   "start": 324.22,
-   "end": 324.56
-  },
-  {
-   "word": "for",
-   "start": 324.56,
-   "end": 324.78
-  },
-  {
-   "word": "his",
-   "start": 324.78,
-   "end": 324.94
-  },
-  {
-   "word": "people,",
-   "start": 324.94,
-   "end": 325.32
-  },
-  {
-   "word": "gold,",
-   "start": 325.32,
-   "end": 325.74
-  },
-  {
-   "word": "and",
-   "start": 326.1,
-   "end": 326.12
-  },
-  {
-   "word": "a",
-   "start": 326.12,
-   "end": 326.26
-  },
-  {
-   "word": "top",
-   "start": 326.26,
-   "end": 326.5
-  },
-  {
-   "word": "job",
-   "start": 326.5,
-   "end": 326.88
-  },
-  {
-   "word": "in",
-   "start": 326.88,
-   "end": 327.12
-  },
-  {
-   "word": "the",
-   "start": 327.12,
-   "end": 327.24
-  },
-  {
-   "word": "Roman",
-   "start": 327.24,
-   "end": 327.52
-  },
-  {
-   "word": "army.",
-   "start": 327.52,
-   "end": 327.9
-  },
-  {
-   "word": "The",
-   "start": 328.68,
-   "end": 328.74
-  },
-  {
-   "word": "West",
-   "start": 328.74,
-   "end": 328.94
-  },
-  {
-   "word": "keeps",
-   "start": 328.94,
-   "end": 329.16
-  },
-  {
-   "word": "saying",
-   "start": 329.16,
-   "end": 329.52
-  },
-  {
-   "word": "no.",
-   "start": 329.52,
-   "end": 329.86
-  },
-  {
-   "word": "Then,",
-   "start": 330.58,
-   "end": 330.86
-  },
-  {
-   "word": "in",
-   "start": 330.98,
-   "end": 331.1
-  },
-  {
-   "word": "408,",
-   "start": 331.1,
-   "end": 331.7
-  },
-  {
-   "word": "the",
-   "start": 332.24,
-   "end": 332.34
-  },
-  {
-   "word": "West",
-   "start": 332.34,
-   "end": 332.6
-  },
-  {
-   "word": "executes",
-   "start": 332.6,
-   "end": 333.16
-  },
-  {
-   "word": "its",
-   "start": 333.16,
-   "end": 333.44
-  },
-  {
-   "word": "best",
-   "start": 333.44,
-   "end": 333.76
-  },
-  {
-   "word": "general,",
-   "start": 333.76,
-   "end": 334.24
-  },
-  {
-   "word": "Stilicho.",
-   "start": 334.24,
-   "end": 335.72
-  },
-  {
-   "word": "Roman",
-   "start": 335.72,
-   "end": 336.1
-  },
-  {
-   "word": "soldiers",
-   "start": 336.1,
-   "end": 336.58
-  },
-  {
-   "word": "attack",
-   "start": 336.58,
-   "end": 337.1
-  },
-  {
-   "word": "the",
-   "start": 337.1,
-   "end": 337.34
-  },
-  {
-   "word": "families",
-   "start": 337.34,
-   "end": 337.78
-  },
-  {
-   "word": "of",
-   "start": 337.78,
-   "end": 338.1
-  },
-  {
-   "word": "barbarian",
-   "start": 338.1,
-   "end": 338.64
-  },
-  {
-   "word": "troops",
-   "start": 338.64,
-   "end": 338.98
-  },
-  {
-   "word": "in",
-   "start": 338.98,
-   "end": 339.24
-  },
-  {
-   "word": "Italy,",
-   "start": 339.24,
-   "end": 339.56
-  },
-  {
-   "word": "and",
-   "start": 339.9,
-   "end": 340.04
-  },
-  {
-   "word": "thousands",
-   "start": 340.04,
-   "end": 340.48
-  },
-  {
-   "word": "of",
-   "start": 340.48,
-   "end": 340.74
-  },
-  {
-   "word": "those",
-   "start": 340.74,
-   "end": 340.98
-  },
-  {
-   "word": "troops",
-   "start": 340.98,
-   "end": 341.3
-  },
-  {
-   "word": "join",
-   "start": 341.3,
-   "end": 341.7
-  },
-  {
-   "word": "Alaric.",
-   "start": 341.7,
-   "end": 342.22
-  },
-  {
-   "word": "Alaric",
-   "start": 342.86,
-   "end": 343.28
-  },
-  {
-   "word": "marches",
-   "start": 343.28,
-   "end": 343.6
-  },
-  {
-   "word": "on",
-   "start": 343.6,
-   "end": 343.86
-  },
-  {
-   "word": "Rome.",
-   "start": 343.86,
-   "end": 344.12
-  },
-  {
-   "word": "Twice,",
-   "start": 344.94,
-   "end": 345.16
-  },
-  {
-   "word": "he",
-   "start": 345.16,
-   "end": 345.44
-  },
-  {
-   "word": "surrounds",
-   "start": 345.44,
-   "end": 345.82
-  },
-  {
-   "word": "the",
-   "start": 345.82,
-   "end": 346.02
-  },
-  {
-   "word": "city",
-   "start": 346.02,
-   "end": 346.22
-  },
-  {
-   "word": "and",
-   "start": 346.22,
-   "end": 346.52
-  },
-  {
-   "word": "it",
-   "start": 346.52,
-   "end": 346.64
-  },
-  {
-   "word": "pays",
-   "start": 346.64,
-   "end": 346.84
-  },
-  {
-   "word": "him",
-   "start": 346.84,
-   "end": 347.04
-  },
-  {
-   "word": "to",
-   "start": 347.04,
-   "end": 347.22
-  },
-  {
-   "word": "leave.",
-   "start": 347.22,
-   "end": 347.5
-  },
-  {
-   "word": "The",
-   "start": 348.22,
-   "end": 348.42
-  },
-  {
-   "word": "third",
-   "start": 348.42,
-   "end": 348.64
-  },
-  {
-   "word": "time,",
-   "start": 348.64,
-   "end": 348.96
-  },
-  {
-   "word": "nobody",
-   "start": 348.96,
-   "end": 349.22
-  },
-  {
-   "word": "pays.",
-   "start": 349.22,
-   "end": 349.64
-  },
-  {
-   "word": "The",
-   "start": 350.88,
-   "end": 351.44
-  },
-  {
-   "word": "night",
-   "start": 351.44,
-   "end": 351.64
-  },
-  {
-   "word": "of",
-   "start": 351.64,
-   "end": 351.84
-  },
-  {
-   "word": "the",
-   "start": 351.84,
-   "end": 351.94
-  },
-  {
-   "word": "24th",
-   "start": 351.94,
-   "end": 352.6
-  },
-  {
-   "word": "of",
-   "start": 352.6,
-   "end": 352.76
-  },
-  {
-   "word": "August,",
-   "start": 352.76,
-   "end": 353.02
-  },
-  {
-   "word": "410.",
-   "start": 353.42,
-   "end": 353.82
-  },
-  {
-   "word": "The",
-   "start": 355.1,
-   "end": 355.24
-  },
-  {
-   "word": "gate",
-   "start": 355.24,
-   "end": 355.42
-  },
-  {
-   "word": "opens.",
-   "start": 355.42,
-   "end": 355.84
-  },
-  {
-   "word": "Now",
-   "start": 356.9,
-   "end": 357.06
-  },
-  {
-   "word": "you",
-   "start": 357.06,
-   "end": 357.24
-  },
-  {
-   "word": "know",
-   "start": 357.24,
-   "end": 357.38
-  },
-  {
-   "word": "how",
-   "start": 357.38,
-   "end": 357.56
-  },
-  {
-   "word": "it",
-   "start": 357.56,
-   "end": 357.7
-  },
-  {
-   "word": "got",
-   "start": 357.7,
-   "end": 357.86
-  },
-  {
-   "word": "here.",
-   "start": 357.86,
-   "end": 358.16
-  },
-  {
-   "word": "For",
-   "start": 358.94,
-   "end": 359.16
-  },
-  {
-   "word": "three",
-   "start": 359.16,
-   "end": 359.42
-  },
-  {
-   "word": "days,",
-   "start": 359.42,
-   "end": 359.78
-  },
-  {
-   "word": "the",
-   "start": 359.96,
-   "end": 360.02
-  },
-  {
-   "word": "Goths",
-   "start": 360.02,
-   "end": 360.4
-  },
-  {
-   "word": "loot",
-   "start": 360.4,
-   "end": 360.46
-  },
-  {
-   "word": "the",
-   "start": 360.46,
-   "end": 360.66
-  },
-  {
-   "word": "city.",
-   "start": 360.66,
-   "end": 360.92
-  },
-  {
-   "word": "But",
-   "start": 361.78,
-   "end": 361.98
-  },
-  {
-   "word": "many",
-   "start": 361.98,
-   "end": 362.24
-  },
-  {
-   "word": "are",
-   "start": 362.24,
-   "end": 362.56
-  },
-  {
-   "word": "Christians,",
-   "start": 362.56,
-   "end": 363.0
-  },
-  {
-   "word": "and",
-   "start": 363.0,
-   "end": 363.54
-  },
-  {
-   "word": "they",
-   "start": 363.54,
-   "end": 363.68
-  },
-  {
-   "word": "spare",
-   "start": 363.68,
-   "end": 363.98
-  },
-  {
-   "word": "the",
-   "start": 363.98,
-   "end": 364.18
-  },
-  {
-   "word": "great",
-   "start": 364.18,
-   "end": 364.4
-  },
-  {
-   "word": "churches",
-   "start": 364.4,
-   "end": 364.86
-  },
-  {
-   "word": "and",
-   "start": 364.86,
-   "end": 365.22
-  },
-  {
-   "word": "the",
-   "start": 365.22,
-   "end": 365.32
-  },
-  {
-   "word": "people",
-   "start": 365.32,
-   "end": 365.62
-  },
-  {
-   "word": "hiding",
-   "start": 365.62,
-   "end": 365.98
-  },
-  {
-   "word": "inside.",
-   "start": 365.98,
-   "end": 366.56
-  },
-  {
-   "word": "Livia",
-   "start": 367.62,
-   "end": 367.8
-  },
-  {
-   "word": "survives.",
-   "start": 367.8,
-   "end": 368.24
-  },
-  {
-   "word": "Far",
-   "start": 369.26,
-   "end": 369.5
-  },
-  {
-   "word": "away",
-   "start": 369.5,
-   "end": 369.8
-  },
-  {
-   "word": "in",
-   "start": 369.8,
-   "end": 370.08
-  },
-  {
-   "word": "Bethlehem,",
-   "start": 370.08,
-   "end": 370.48
-  },
-  {
-   "word": "a",
-   "start": 370.84,
-   "end": 370.94
-  },
-  {
-   "word": "scholar",
-   "start": 370.94,
-   "end": 371.26
-  },
-  {
-   "word": "named",
-   "start": 371.26,
-   "end": 371.68
-  },
-  {
-   "word": "Jerome",
-   "start": 371.68,
-   "end": 372.12
-  },
-  {
-   "word": "hears",
-   "start": 372.12,
-   "end": 372.46
-  },
-  {
-   "word": "the",
-   "start": 372.46,
-   "end": 372.7
-  },
-  {
-   "word": "news",
-   "start": 372.7,
-   "end": 373.02
-  },
-  {
-   "word": "and",
-   "start": 373.02,
-   "end": 373.26
-  },
-  {
-   "word": "writes:",
-   "start": 373.26,
-   "end": 373.52
-  },
-  {
-   "word": "the",
-   "start": 374.0,
-   "end": 374.2
-  },
-  {
-   "word": "city",
-   "start": 374.2,
-   "end": 374.44
-  },
-  {
-   "word": "that",
-   "start": 374.44,
-   "end": 374.66
+   "start": 282.7,
+   "end": 282.94
   },
   {
    "word": "had",
-   "start": 374.66,
-   "end": 374.8
+   "start": 282.94,
+   "end": 283.14
   },
   {
-   "word": "taken",
-   "start": 374.8,
-   "end": 375.06
+   "word": "let",
+   "start": 283.14,
+   "end": 283.32
   },
   {
-   "word": "the",
-   "start": 375.06,
-   "end": 375.28
-  },
-  {
-   "word": "whole",
-   "start": 375.28,
-   "end": 375.58
-  },
-  {
-   "word": "world",
-   "start": 375.58,
-   "end": 375.98
-  },
-  {
-   "word": "was",
-   "start": 375.98,
-   "end": 376.26
-  },
-  {
-   "word": "itself",
-   "start": 376.26,
-   "end": 376.64
-  },
-  {
-   "word": "taken.",
-   "start": 376.64,
-   "end": 377.12
-  },
-  {
-   "word": "But",
-   "start": 377.73,
-   "end": 378.08
-  },
-  {
-   "word": "it",
-   "start": 378.08,
-   "end": 378.2
-  },
-  {
-   "word": "doesn't",
-   "start": 378.2,
-   "end": 378.46
-  },
-  {
-   "word": "stop",
-   "start": 378.46,
-   "end": 378.76
-  },
-  {
-   "word": "there.",
-   "start": 378.76,
-   "end": 379.18
-  },
-  {
-   "word": "In",
-   "start": 380.02,
-   "end": 380.14
-  },
-  {
-   "word": "455,",
-   "start": 380.14,
-   "end": 380.92
-  },
-  {
-   "word": "the",
-   "start": 381.72,
-   "end": 381.78
-  },
-  {
-   "word": "Vandals",
-   "start": 381.78,
-   "end": 382.16
-  },
-  {
-   "word": "sail",
-   "start": 382.16,
-   "end": 382.54
-  },
-  {
-   "word": "from",
-   "start": 382.54,
-   "end": 382.86
-  },
-  {
-   "word": "North",
-   "start": 382.86,
-   "end": 383.16
-  },
-  {
-   "word": "Africa",
-   "start": 383.16,
-   "end": 383.58
-  },
-  {
-   "word": "and",
-   "start": 383.58,
-   "end": 384.0
-  },
-  {
-   "word": "loot",
-   "start": 384.0,
-   "end": 384.26
-  },
-  {
-   "word": "Rome",
-   "start": 384.26,
-   "end": 384.56
-  },
-  {
-   "word": "again.",
-   "start": 384.56,
-   "end": 384.94
-  },
-  {
-   "word": "This",
-   "start": 385.78,
-   "end": 385.98
-  },
-  {
-   "word": "time,",
-   "start": 385.98,
-   "end": 386.24
-  },
-  {
-   "word": "for",
-   "start": 386.24,
-   "end": 386.44
-  },
-  {
-   "word": "two",
-   "start": 386.44,
-   "end": 386.62
-  },
-  {
-   "word": "weeks.",
-   "start": 386.62,
-   "end": 386.94
+   "word": "in.",
+   "start": 283.32,
+   "end": 283.58
   },
   {
    "word": "And",
-   "start": 387.84,
-   "end": 388.04
+   "start": 284.26,
+   "end": 284.42
   },
   {
-   "word": "in",
-   "start": 388.04,
-   "end": 388.16
+   "word": "Rome",
+   "start": 284.42,
+   "end": 284.62
   },
   {
-   "word": "476,",
-   "start": 388.16,
-   "end": 389.56
+   "word": "can't",
+   "start": 284.62,
+   "end": 284.94
+  },
+  {
+   "word": "beat",
+   "start": 284.94,
+   "end": 285.12
+  },
+  {
+   "word": "them.",
+   "start": 285.12,
+   "end": 285.42
+  },
+  {
+   "word": "So",
+   "start": 286.06,
+   "end": 286.22
+  },
+  {
+   "word": "it",
+   "start": 286.22,
+   "end": 286.3
+  },
+  {
+   "word": "tries",
+   "start": 286.3,
+   "end": 286.62
+  },
+  {
+   "word": "something",
+   "start": 286.62,
+   "end": 286.94
+  },
+  {
+   "word": "else.",
+   "start": 286.94,
+   "end": 287.26
+  },
+  {
+   "word": "In",
+   "start": 288.82,
+   "end": 288.98
+  },
+  {
+   "word": "382,",
+   "start": 288.98,
+   "end": 290.1
+  },
+  {
+   "word": "the",
+   "start": 290.1,
+   "end": 290.44
+  },
+  {
+   "word": "emperor",
+   "start": 290.44,
+   "end": 290.82
+  },
+  {
+   "word": "Theodosius",
+   "start": 290.82,
+   "end": 291.58
+  },
+  {
+   "word": "makes",
+   "start": 291.58,
+   "end": 291.8
   },
   {
    "word": "a",
-   "start": 389.94,
-   "end": 390.0
+   "start": 291.8,
+   "end": 292.02
   },
   {
-   "word": "general",
-   "start": 390.0,
-   "end": 390.26
+   "word": "deal.",
+   "start": 292.02,
+   "end": 292.28
   },
   {
-   "word": "named",
-   "start": 390.26,
-   "end": 390.82
+   "word": "The",
+   "start": 293.0,
+   "end": 293.14
   },
   {
-   "word": "Odoacer,",
-   "start": 390.82,
-   "end": 391.74
+   "word": "Goths",
+   "start": 293.14,
+   "end": 293.52
+  },
+  {
+   "word": "can",
+   "start": 293.52,
+   "end": 293.68
+  },
+  {
+   "word": "live",
+   "start": 293.68,
+   "end": 293.94
+  },
+  {
+   "word": "inside",
+   "start": 293.94,
+   "end": 294.4
   },
   {
    "word": "the",
-   "start": 391.74,
-   "end": 391.8
+   "start": 294.4,
+   "end": 294.62
   },
   {
-   "word": "leader",
-   "start": 391.8,
-   "end": 392.12
+   "word": "empire,",
+   "start": 294.62,
+   "end": 295.08
+  },
+  {
+   "word": "under",
+   "start": 295.08,
+   "end": 295.54
+  },
+  {
+   "word": "their",
+   "start": 295.54,
+   "end": 295.76
+  },
+  {
+   "word": "own",
+   "start": 295.76,
+   "end": 296.02
+  },
+  {
+   "word": "leaders,",
+   "start": 296.02,
+   "end": 296.38
+  },
+  {
+   "word": "if",
+   "start": 296.38,
+   "end": 296.8
+  },
+  {
+   "word": "they",
+   "start": 296.8,
+   "end": 296.98
+  },
+  {
+   "word": "fight",
+   "start": 296.98,
+   "end": 297.26
+  },
+  {
+   "word": "for",
+   "start": 297.26,
+   "end": 297.54
+  },
+  {
+   "word": "Rome.",
+   "start": 297.54,
+   "end": 297.8
+  },
+  {
+   "word": "More",
+   "start": 298.56,
+   "end": 298.86
+  },
+  {
+   "word": "and",
+   "start": 298.86,
+   "end": 299.04
+  },
+  {
+   "word": "more,",
+   "start": 299.04,
+   "end": 299.3
+  },
+  {
+   "word": "Rome's",
+   "start": 299.3,
+   "end": 299.9
+  },
+  {
+   "word": "armies",
+   "start": 299.9,
+   "end": 300.22
+  },
+  {
+   "word": "are",
+   "start": 300.22,
+   "end": 300.48
+  },
+  {
+   "word": "outsiders,",
+   "start": 300.48,
+   "end": 301.02
+  },
+  {
+   "word": "fighting",
+   "start": 301.02,
+   "end": 301.58
+  },
+  {
+   "word": "for",
+   "start": 301.58,
+   "end": 301.92
+  },
+  {
+   "word": "pay,",
+   "start": 301.92,
+   "end": 302.28
+  },
+  {
+   "word": "loyal",
+   "start": 302.28,
+   "end": 302.76
+  },
+  {
+   "word": "to",
+   "start": 302.76,
+   "end": 303.06
+  },
+  {
+   "word": "their",
+   "start": 303.06,
+   "end": 303.18
+  },
+  {
+   "word": "own",
+   "start": 303.18,
+   "end": 303.46
+  },
+  {
+   "word": "commanders.",
+   "start": 303.46,
+   "end": 303.96
+  },
+  {
+   "word": "In",
+   "start": 304.76,
+   "end": 304.98
+  },
+  {
+   "word": "394,",
+   "start": 304.98,
+   "end": 306.16
+  },
+  {
+   "word": "a",
+   "start": 306.16,
+   "end": 306.52
+  },
+  {
+   "word": "young",
+   "start": 306.52,
+   "end": 306.86
+  },
+  {
+   "word": "Gothic",
+   "start": 306.86,
+   "end": 307.32
+  },
+  {
+   "word": "commander",
+   "start": 307.32,
+   "end": 307.88
+  },
+  {
+   "word": "fights",
+   "start": 307.88,
+   "end": 308.26
+  },
+  {
+   "word": "for",
+   "start": 308.26,
+   "end": 308.52
+  },
+  {
+   "word": "Theodosius",
+   "start": 308.52,
+   "end": 309.3
+  },
+  {
+   "word": "in",
+   "start": 309.3,
+   "end": 309.5
+  },
+  {
+   "word": "a",
+   "start": 309.5,
+   "end": 309.66
+  },
+  {
+   "word": "civil",
+   "start": 309.66,
+   "end": 309.84
+  },
+  {
+   "word": "war.",
+   "start": 309.84,
+   "end": 310.26
+  },
+  {
+   "word": "Thousands",
+   "start": 311.24,
+   "end": 311.24
   },
   {
    "word": "of",
-   "start": 392.12,
-   "end": 392.4
+   "start": 311.24,
+   "end": 311.56
+  },
+  {
+   "word": "his",
+   "start": 311.56,
+   "end": 311.61
+  },
+  {
+   "word": "Goths",
+   "start": 311.56,
+   "end": 312.0
+  },
+  {
+   "word": "die.",
+   "start": 312.0,
+   "end": 312.22
+  },
+  {
+   "word": "He",
+   "start": 312.94,
+   "end": 313.1
+  },
+  {
+   "word": "feels",
+   "start": 313.1,
+   "end": 313.32
+  },
+  {
+   "word": "Rome",
+   "start": 313.32,
+   "end": 313.58
+  },
+  {
+   "word": "used",
+   "start": 313.58,
+   "end": 313.9
+  },
+  {
+   "word": "them.",
+   "start": 313.9,
+   "end": 314.2
+  },
+  {
+   "word": "His",
+   "start": 314.92,
+   "end": 315.04
+  },
+  {
+   "word": "name",
+   "start": 315.04,
+   "end": 315.3
+  },
+  {
+   "word": "is",
+   "start": 315.3,
+   "end": 315.5
+  },
+  {
+   "word": "Alaric.",
+   "start": 315.5,
+   "end": 315.96
+  },
+  {
+   "word": "A",
+   "start": 316.66,
+   "end": 316.76
+  },
+  {
+   "word": "few",
+   "start": 316.76,
+   "end": 316.96
+  },
+  {
+   "word": "months",
+   "start": 316.96,
+   "end": 317.16
+  },
+  {
+   "word": "later,",
+   "start": 317.16,
+   "end": 317.58
+  },
+  {
+   "word": "Theodosius",
+   "start": 317.58,
+   "end": 318.46
+  },
+  {
+   "word": "dies,",
+   "start": 318.46,
+   "end": 318.82
+  },
+  {
+   "word": "and",
+   "start": 318.82,
+   "end": 319.26
   },
   {
    "word": "the",
-   "start": 392.4,
-   "end": 392.52
+   "start": 319.26,
+   "end": 319.36
+  },
+  {
+   "word": "empire",
+   "start": 319.36,
+   "end": 319.82
+  },
+  {
+   "word": "is",
+   "start": 319.82,
+   "end": 320.1
+  },
+  {
+   "word": "split",
+   "start": 320.1,
+   "end": 320.4
+  },
+  {
+   "word": "between",
+   "start": 320.4,
+   "end": 320.74
+  },
+  {
+   "word": "his",
+   "start": 320.74,
+   "end": 320.92
+  },
+  {
+   "word": "two",
+   "start": 320.92,
+   "end": 321.18
+  },
+  {
+   "word": "sons,",
+   "start": 321.18,
+   "end": 321.48
+  },
+  {
+   "word": "for",
+   "start": 321.48,
+   "end": 321.86
+  },
+  {
+   "word": "good.",
+   "start": 321.86,
+   "end": 322.14
+  },
+  {
+   "word": "The",
+   "start": 322.92,
+   "end": 322.98
+  },
+  {
+   "word": "West",
+   "start": 322.98,
+   "end": 323.18
+  },
+  {
+   "word": "gets",
+   "start": 323.18,
+   "end": 323.36
+  },
+  {
+   "word": "a",
+   "start": 323.36,
+   "end": 323.5
+  },
+  {
+   "word": "ten-year-old",
+   "start": 323.5,
+   "end": 324.08
+  },
+  {
+   "word": "boy,",
+   "start": 324.08,
+   "end": 324.34
+  },
+  {
+   "word": "Honorius.",
+   "start": 324.34,
+   "end": 325.04
+  },
+  {
+   "word": "Alaric",
+   "start": 325.7,
+   "end": 326.18
+  },
+  {
+   "word": "wants",
+   "start": 326.18,
+   "end": 326.54
+  },
+  {
+   "word": "land",
+   "start": 326.54,
+   "end": 326.84
+  },
+  {
+   "word": "for",
+   "start": 326.84,
+   "end": 327.06
+  },
+  {
+   "word": "his",
+   "start": 327.06,
+   "end": 327.22
+  },
+  {
+   "word": "people,",
+   "start": 327.22,
+   "end": 327.6
+  },
+  {
+   "word": "gold,",
+   "start": 327.9,
+   "end": 328.1
+  },
+  {
+   "word": "and",
+   "start": 328.36,
+   "end": 328.4
+  },
+  {
+   "word": "a",
+   "start": 328.4,
+   "end": 328.54
+  },
+  {
+   "word": "top",
+   "start": 328.54,
+   "end": 328.82
+  },
+  {
+   "word": "job",
+   "start": 328.82,
+   "end": 329.14
+  },
+  {
+   "word": "in",
+   "start": 329.14,
+   "end": 329.4
+  },
+  {
+   "word": "the",
+   "start": 329.4,
+   "end": 329.5
+  },
+  {
+   "word": "Roman",
+   "start": 329.5,
+   "end": 329.8
+  },
+  {
+   "word": "army.",
+   "start": 329.8,
+   "end": 330.12
+  },
+  {
+   "word": "The",
+   "start": 330.92,
+   "end": 331.02
+  },
+  {
+   "word": "West",
+   "start": 331.02,
+   "end": 331.22
+  },
+  {
+   "word": "keeps",
+   "start": 331.22,
+   "end": 331.42
+  },
+  {
+   "word": "saying",
+   "start": 331.42,
+   "end": 331.8
+  },
+  {
+   "word": "no.",
+   "start": 331.8,
+   "end": 332.14
+  },
+  {
+   "word": "Then,",
+   "start": 332.88,
+   "end": 333.12
+  },
+  {
+   "word": "in",
+   "start": 333.12,
+   "end": 333.34
+  },
+  {
+   "word": "408,",
+   "start": 333.34,
+   "end": 334.02
+  },
+  {
+   "word": "the",
+   "start": 334.02,
+   "end": 334.6
+  },
+  {
+   "word": "West",
+   "start": 334.6,
+   "end": 334.88
+  },
+  {
+   "word": "executes",
+   "start": 334.88,
+   "end": 335.44
+  },
+  {
+   "word": "its",
+   "start": 335.44,
+   "end": 335.7
+  },
+  {
+   "word": "best",
+   "start": 335.7,
+   "end": 336.02
+  },
+  {
+   "word": "general,",
+   "start": 336.02,
+   "end": 336.52
+  },
+  {
+   "word": "Stilicho.",
+   "start": 336.52,
+   "end": 338.0
+  },
+  {
+   "word": "Roman",
+   "start": 338.0,
+   "end": 338.34
+  },
+  {
+   "word": "soldiers",
+   "start": 338.34,
+   "end": 338.74
+  },
+  {
+   "word": "attack",
+   "start": 338.74,
+   "end": 339.38
+  },
+  {
+   "word": "the",
+   "start": 339.38,
+   "end": 339.62
+  },
+  {
+   "word": "families",
+   "start": 339.62,
+   "end": 340.04
+  },
+  {
+   "word": "of",
+   "start": 340.04,
+   "end": 340.34
   },
   {
    "word": "barbarian",
-   "start": 392.52,
-   "end": 393.12
+   "start": 340.34,
+   "end": 340.92
   },
   {
    "word": "troops",
+   "start": 340.92,
+   "end": 341.26
+  },
+  {
+   "word": "in",
+   "start": 341.26,
+   "end": 341.52
+  },
+  {
+   "word": "Italy,",
+   "start": 341.52,
+   "end": 341.82
+  },
+  {
+   "word": "and",
+   "start": 341.82,
+   "end": 342.3
+  },
+  {
+   "word": "thousands",
+   "start": 342.3,
+   "end": 342.78
+  },
+  {
+   "word": "of",
+   "start": 342.78,
+   "end": 343.0
+  },
+  {
+   "word": "those",
+   "start": 343.0,
+   "end": 343.24
+  },
+  {
+   "word": "troops",
+   "start": 343.24,
+   "end": 343.58
+  },
+  {
+   "word": "join",
+   "start": 343.58,
+   "end": 343.98
+  },
+  {
+   "word": "Alaric.",
+   "start": 343.98,
+   "end": 344.5
+  },
+  {
+   "word": "Alaric",
+   "start": 345.26,
+   "end": 345.56
+  },
+  {
+   "word": "marches",
+   "start": 345.56,
+   "end": 345.84
+  },
+  {
+   "word": "on",
+   "start": 345.84,
+   "end": 346.14
+  },
+  {
+   "word": "Rome.",
+   "start": 346.14,
+   "end": 346.38
+  },
+  {
+   "word": "Twice,",
+   "start": 347.22,
+   "end": 347.44
+  },
+  {
+   "word": "he",
+   "start": 347.44,
+   "end": 347.72
+  },
+  {
+   "word": "surrounds",
+   "start": 347.72,
+   "end": 348.08
+  },
+  {
+   "word": "the",
+   "start": 348.08,
+   "end": 348.3
+  },
+  {
+   "word": "city",
+   "start": 348.3,
+   "end": 348.5
+  },
+  {
+   "word": "and",
+   "start": 348.5,
+   "end": 348.8
+  },
+  {
+   "word": "it",
+   "start": 348.8,
+   "end": 348.92
+  },
+  {
+   "word": "pays",
+   "start": 348.92,
+   "end": 349.12
+  },
+  {
+   "word": "him",
+   "start": 349.12,
+   "end": 349.3
+  },
+  {
+   "word": "to",
+   "start": 349.3,
+   "end": 349.48
+  },
+  {
+   "word": "leave.",
+   "start": 349.48,
+   "end": 349.76
+  },
+  {
+   "word": "The",
+   "start": 350.54,
+   "end": 350.7
+  },
+  {
+   "word": "third",
+   "start": 350.7,
+   "end": 350.92
+  },
+  {
+   "word": "time,",
+   "start": 350.92,
+   "end": 351.24
+  },
+  {
+   "word": "nobody",
+   "start": 351.24,
+   "end": 351.5
+  },
+  {
+   "word": "pays.",
+   "start": 351.5,
+   "end": 351.92
+  },
+  {
+   "word": "The",
+   "start": 353.58,
+   "end": 353.72
+  },
+  {
+   "word": "night",
+   "start": 353.72,
+   "end": 353.92
+  },
+  {
+   "word": "of",
+   "start": 353.92,
+   "end": 354.12
+  },
+  {
+   "word": "the",
+   "start": 354.12,
+   "end": 354.22
+  },
+  {
+   "word": "24th",
+   "start": 354.22,
+   "end": 354.9
+  },
+  {
+   "word": "of",
+   "start": 354.9,
+   "end": 355.02
+  },
+  {
+   "word": "August,",
+   "start": 355.02,
+   "end": 355.3
+  },
+  {
+   "word": "410.",
+   "start": 355.3,
+   "end": 356.08
+  },
+  {
+   "word": "The",
+   "start": 357.32,
+   "end": 357.52
+  },
+  {
+   "word": "gate",
+   "start": 357.52,
+   "end": 357.7
+  },
+  {
+   "word": "opens.",
+   "start": 357.7,
+   "end": 358.14
+  },
+  {
+   "word": "Now",
+   "start": 359.18,
+   "end": 359.34
+  },
+  {
+   "word": "you",
+   "start": 359.34,
+   "end": 359.52
+  },
+  {
+   "word": "know",
+   "start": 359.52,
+   "end": 359.66
+  },
+  {
+   "word": "how",
+   "start": 359.66,
+   "end": 359.84
+  },
+  {
+   "word": "it",
+   "start": 359.84,
+   "end": 359.96
+  },
+  {
+   "word": "got",
+   "start": 359.96,
+   "end": 360.14
+  },
+  {
+   "word": "here.",
+   "start": 360.14,
+   "end": 360.44
+  },
+  {
+   "word": "For",
+   "start": 361.16,
+   "end": 361.44
+  },
+  {
+   "word": "three",
+   "start": 361.44,
+   "end": 361.7
+  },
+  {
+   "word": "days,",
+   "start": 361.7,
+   "end": 362.04
+  },
+  {
+   "word": "the",
+   "start": 362.04,
+   "end": 362.26
+  },
+  {
+   "word": "Goths",
+   "start": 362.26,
+   "end": 362.68
+  },
+  {
+   "word": "loot",
+   "start": 362.68,
+   "end": 362.74
+  },
+  {
+   "word": "the",
+   "start": 362.74,
+   "end": 362.94
+  },
+  {
+   "word": "city.",
+   "start": 362.94,
+   "end": 363.18
+  },
+  {
+   "word": "But",
+   "start": 364.12,
+   "end": 364.26
+  },
+  {
+   "word": "many",
+   "start": 364.26,
+   "end": 364.52
+  },
+  {
+   "word": "are",
+   "start": 364.52,
+   "end": 364.78
+  },
+  {
+   "word": "Christians,",
+   "start": 364.78,
+   "end": 365.32
+  },
+  {
+   "word": "and",
+   "start": 365.32,
+   "end": 365.82
+  },
+  {
+   "word": "they",
+   "start": 365.82,
+   "end": 365.96
+  },
+  {
+   "word": "spare",
+   "start": 365.96,
+   "end": 366.26
+  },
+  {
+   "word": "the",
+   "start": 366.26,
+   "end": 366.44
+  },
+  {
+   "word": "great",
+   "start": 366.44,
+   "end": 366.7
+  },
+  {
+   "word": "churches",
+   "start": 366.7,
+   "end": 367.18
+  },
+  {
+   "word": "and",
+   "start": 367.18,
+   "end": 367.5
+  },
+  {
+   "word": "the",
+   "start": 367.5,
+   "end": 367.6
+  },
+  {
+   "word": "people",
+   "start": 367.6,
+   "end": 367.88
+  },
+  {
+   "word": "hiding",
+   "start": 367.88,
+   "end": 368.26
+  },
+  {
+   "word": "inside.",
+   "start": 368.26,
+   "end": 368.9
+  },
+  {
+   "word": "Livia",
+   "start": 369.96,
+   "end": 370.08
+  },
+  {
+   "word": "survives.",
+   "start": 370.08,
+   "end": 370.52
+  },
+  {
+   "word": "In",
+   "start": 371.58,
+   "end": 371.66
+  },
+  {
+   "word": "Ravenna,",
+   "start": 371.66,
+   "end": 372.18
+  },
+  {
+   "word": "safe",
+   "start": 372.34,
+   "end": 372.56
+  },
+  {
+   "word": "behind",
+   "start": 372.56,
+   "end": 372.94
+  },
+  {
+   "word": "the",
+   "start": 372.94,
+   "end": 373.12
+  },
+  {
+   "word": "marshes,",
+   "start": 373.12,
+   "end": 373.6
+  },
+  {
+   "word": "the",
+   "start": 373.86,
+   "end": 373.92
+  },
+  {
+   "word": "emperor",
+   "start": 373.92,
+   "end": 374.36
+  },
+  {
+   "word": "Honorius",
+   "start": 374.36,
+   "end": 374.98
+  },
+  {
+   "word": "hears",
+   "start": 374.98,
+   "end": 375.28
+  },
+  {
+   "word": "that",
+   "start": 375.28,
+   "end": 375.6
+  },
+  {
+   "word": "Roma",
+   "start": 375.6,
+   "end": 375.92
+  },
+  {
+   "word": "has",
+   "start": 375.92,
+   "end": 376.24
+  },
+  {
+   "word": "perished.",
+   "start": 376.24,
+   "end": 376.72
+  },
+  {
+   "word": "One",
+   "start": 377.64,
+   "end": 377.88
+  },
+  {
+   "word": "later",
+   "start": 377.88,
+   "end": 378.14
+  },
+  {
+   "word": "story",
+   "start": 378.14,
+   "end": 378.52
+  },
+  {
+   "word": "says",
+   "start": 378.52,
+   "end": 378.86
+  },
+  {
+   "word": "he",
+   "start": 378.86,
+   "end": 379.06
+  },
+  {
+   "word": "panicked,",
+   "start": 379.06,
+   "end": 379.46
+  },
+  {
+   "word": "because",
+   "start": 379.46,
+   "end": 379.98
+  },
+  {
+   "word": "Roma",
+   "start": 379.98,
+   "end": 380.4
+  },
+  {
+   "word": "was",
+   "start": 380.4,
+   "end": 380.68
+  },
+  {
+   "word": "the",
+   "start": 380.68,
+   "end": 380.86
+  },
+  {
+   "word": "name",
+   "start": 380.86,
+   "end": 381.12
+  },
+  {
+   "word": "of",
+   "start": 381.12,
+   "end": 381.32
+  },
+  {
+   "word": "his",
+   "start": 381.32,
+   "end": 381.46
+  },
+  {
+   "word": "favourite",
+   "start": 381.46,
+   "end": 381.86
+  },
+  {
+   "word": "chicken.",
+   "start": 381.86,
+   "end": 382.3
+  },
+  {
+   "word": "Historians",
+   "start": 383.34,
+   "end": 383.74
+  },
+  {
+   "word": "doubt",
+   "start": 383.74,
+   "end": 384.02
+  },
+  {
+   "word": "it",
+   "start": 384.02,
+   "end": 384.18
+  },
+  {
+   "word": "happened.",
+   "start": 384.18,
+   "end": 384.6
+  },
+  {
+   "word": "But",
+   "start": 385.42,
+   "end": 385.6
+  },
+  {
+   "word": "people",
+   "start": 385.6,
+   "end": 385.88
+  },
+  {
+   "word": "kept",
+   "start": 385.88,
+   "end": 386.14
+  },
+  {
+   "word": "telling",
+   "start": 386.14,
+   "end": 386.52
+  },
+  {
+   "word": "it.",
+   "start": 386.52,
+   "end": 386.82
+  },
+  {
+   "word": "Far",
+   "start": 387.58,
+   "end": 387.86
+  },
+  {
+   "word": "away",
+   "start": 387.86,
+   "end": 388.16
+  },
+  {
+   "word": "in",
+   "start": 388.16,
+   "end": 388.44
+  },
+  {
+   "word": "Bethlehem,",
+   "start": 388.44,
+   "end": 388.86
+  },
+  {
+   "word": "a",
+   "start": 388.86,
+   "end": 389.3
+  },
+  {
+   "word": "scholar",
+   "start": 389.3,
+   "end": 389.66
+  },
+  {
+   "word": "named",
+   "start": 389.66,
+   "end": 390.04
+  },
+  {
+   "word": "Jerome",
+   "start": 390.04,
+   "end": 390.48
+  },
+  {
+   "word": "hears",
+   "start": 390.48,
+   "end": 390.8
+  },
+  {
+   "word": "the",
+   "start": 390.8,
+   "end": 391.06
+  },
+  {
+   "word": "news",
+   "start": 391.06,
+   "end": 391.4
+  },
+  {
+   "word": "and",
+   "start": 391.4,
+   "end": 391.62
+  },
+  {
+   "word": "writes:",
+   "start": 391.62,
+   "end": 391.9
+  },
+  {
+   "word": "the",
+   "start": 392.34,
+   "end": 392.54
+  },
+  {
+   "word": "city",
+   "start": 392.54,
+   "end": 392.8
+  },
+  {
+   "word": "that",
+   "start": 392.8,
+   "end": 393.02
+  },
+  {
+   "word": "had",
+   "start": 393.02,
+   "end": 393.12
+  },
+  {
+   "word": "taken",
    "start": 393.12,
    "end": 393.44
   },
   {
-   "word": "in",
+   "word": "the",
    "start": 393.44,
-   "end": 393.72
+   "end": 393.64
   },
   {
-   "word": "Italy,",
-   "start": 393.72,
-   "end": 394.1
+   "word": "whole",
+   "start": 393.64,
+   "end": 393.94
   },
   {
-   "word": "removes",
-   "start": 394.44,
-   "end": 394.84
-  },
-  {
-   "word": "the",
-   "start": 394.84,
-   "end": 395.14
-  },
-  {
-   "word": "last",
-   "start": 395.14,
-   "end": 395.56
-  },
-  {
-   "word": "western",
-   "start": 395.56,
-   "end": 396.06
-  },
-  {
-   "word": "emperor.",
-   "start": 396.06,
-   "end": 396.52
-  },
-  {
-   "word": "A",
-   "start": 396.52,
-   "end": 397.54
-  },
-  {
-   "word": "boy.",
-   "start": 397.54,
-   "end": 398.56
-  },
-  {
-   "word": "His",
-   "start": 398.56,
-   "end": 398.94
-  },
-  {
-   "word": "name",
-   "start": 398.94,
-   "end": 399.2
-  },
-  {
-   "word": "is",
-   "start": 399.2,
-   "end": 399.42
-  },
-  {
-   "word": "Romulus",
-   "start": 399.42,
-   "end": 399.9
-  },
-  {
-   "word": "Augustulus.",
-   "start": 399.9,
-   "end": 400.58
-  },
-  {
-   "word": "He",
-   "start": 401.4,
-   "end": 401.62
-  },
-  {
-   "word": "doesn't",
-   "start": 401.62,
-   "end": 401.97
-  },
-  {
-   "word": "even",
-   "start": 401.97,
-   "end": 402.02
-  },
-  {
-   "word": "kill",
-   "start": 401.97,
-   "end": 402.35
-  },
-  {
-   "word": "him.",
-   "start": 402.35,
-   "end": 402.69
-  },
-  {
-   "word": "He",
-   "start": 403.55,
-   "end": 403.71
-  },
-  {
-   "word": "sends",
-   "start": 403.71,
-   "end": 403.99
-  },
-  {
-   "word": "the",
-   "start": 403.99,
-   "end": 404.27
-  },
-  {
-   "word": "boy",
-   "start": 404.27,
-   "end": 404.51
-  },
-  {
-   "word": "to",
-   "start": 404.51,
-   "end": 404.75
-  },
-  {
-   "word": "a",
-   "start": 404.75,
-   "end": 404.89
-  },
-  {
-   "word": "villa,",
-   "start": 404.89,
-   "end": 405.27
-  },
-  {
-   "word": "and",
-   "start": 405.27,
-   "end": 405.59
-  },
-  {
-   "word": "ships",
-   "start": 405.59,
-   "end": 405.89
-  },
-  {
-   "word": "the",
-   "start": 405.89,
-   "end": 406.19
-  },
-  {
-   "word": "emperor's",
-   "start": 406.19,
-   "end": 406.75
-  },
-  {
-   "word": "crown",
-   "start": 406.75,
-   "end": 407.09
-  },
-  {
-   "word": "and",
-   "start": 407.09,
-   "end": 407.37
-  },
-  {
-   "word": "purple",
-   "start": 407.37,
-   "end": 407.75
-  },
-  {
-   "word": "robes",
-   "start": 407.75,
-   "end": 408.15
-  },
-  {
-   "word": "to",
-   "start": 408.15,
-   "end": 408.45
-  },
-  {
-   "word": "Constantinople.",
-   "start": 408.45,
-   "end": 408.93
-  },
-  {
-   "word": "The",
-   "start": 409.95,
-   "end": 410.29
-  },
-  {
-   "word": "West",
-   "start": 410.29,
-   "end": 410.53
-  },
-  {
-   "word": "doesn't",
-   "start": 410.53,
-   "end": 410.89
-  },
-  {
-   "word": "need",
-   "start": 410.89,
-   "end": 411.11
-  },
-  {
-   "word": "an",
-   "start": 411.11,
-   "end": 411.27
-  },
-  {
-   "word": "emperor",
-   "start": 411.27,
-   "end": 411.61
-  },
-  {
-   "word": "anymore.",
-   "start": 411.61,
-   "end": 412.03
-  },
-  {
-   "word": "Most",
-   "start": 413.07,
-   "end": 413.19
-  },
-  {
-   "word": "history",
-   "start": 413.19,
-   "end": 413.57
-  },
-  {
-   "word": "books",
-   "start": 413.57,
-   "end": 413.87
-  },
-  {
-   "word": "stop",
-   "start": 413.87,
-   "end": 414.19
-  },
-  {
-   "word": "right",
-   "start": 414.19,
-   "end": 414.47
-  },
-  {
-   "word": "there.",
-   "start": 414.47,
-   "end": 414.93
-  },
-  {
-   "word": "476.",
-   "start": 416.09,
-   "end": 416.73
-  },
-  {
-   "word": "The",
-   "start": 417.77,
-   "end": 417.87
-  },
-  {
-   "word": "fall",
-   "start": 417.87,
-   "end": 418.05
-  },
-  {
-   "word": "of",
-   "start": 418.05,
-   "end": 418.25
-  },
-  {
-   "word": "Rome.",
-   "start": 418.25,
-   "end": 418.55
-  },
-  {
-   "word": "But",
-   "start": 420.09,
-   "end": 420.43
-  },
-  {
-   "word": "remember",
-   "start": 420.43,
-   "end": 420.75
-  },
-  {
-   "word": "the",
-   "start": 420.75,
-   "end": 420.95
-  },
-  {
-   "word": "split?",
-   "start": 420.95,
-   "end": 421.25
-  },
-  {
-   "word": "Rome",
-   "start": 422.33,
-   "end": 422.45
-  },
-  {
-   "word": "had",
-   "start": 422.45,
-   "end": 422.63
-  },
-  {
-   "word": "two",
-   "start": 422.63,
-   "end": 422.79
-  },
-  {
-   "word": "halves.",
-   "start": 422.79,
-   "end": 423.13
-  },
-  {
-   "word": "And",
-   "start": 424.01,
-   "end": 424.15
-  },
-  {
-   "word": "the",
-   "start": 424.15,
-   "end": 424.25
-  },
-  {
-   "word": "eastern",
-   "start": 424.25,
-   "end": 424.53
-  },
-  {
-   "word": "half",
-   "start": 424.53,
-   "end": 424.85
+   "word": "world",
+   "start": 393.94,
+   "end": 394.4
   },
   {
    "word": "was",
-   "start": 424.85,
-   "end": 425.03
+   "start": 394.4,
+   "end": 394.62
   },
   {
-   "word": "still",
-   "start": 425.03,
-   "end": 425.27
+   "word": "itself",
+   "start": 394.62,
+   "end": 394.98
   },
   {
-   "word": "standing.",
-   "start": 425.27,
-   "end": 425.73
+   "word": "taken.",
+   "start": 394.98,
+   "end": 395.48
   },
   {
-   "word": "Its",
-   "start": 426.43,
-   "end": 426.77
+   "word": "But",
+   "start": 396.32,
+   "end": 396.46
   },
   {
-   "word": "emperors",
-   "start": 426.77,
-   "end": 427.21
+   "word": "it",
+   "start": 396.46,
+   "end": 396.58
   },
   {
-   "word": "still",
-   "start": 427.21,
-   "end": 427.55
+   "word": "doesn't",
+   "start": 396.58,
+   "end": 396.82
   },
   {
-   "word": "ruled",
-   "start": 427.55,
-   "end": 427.89
+   "word": "stop",
+   "start": 396.82,
+   "end": 397.1
+  },
+  {
+   "word": "there.",
+   "start": 397.1,
+   "end": 397.5
+  },
+  {
+   "word": "In",
+   "start": 398.36,
+   "end": 398.5
+  },
+  {
+   "word": "455,",
+   "start": 398.5,
+   "end": 399.26
+  },
+  {
+   "word": "the",
+   "start": 399.26,
+   "end": 400.12
+  },
+  {
+   "word": "Vandals",
+   "start": 400.12,
+   "end": 400.52
+  },
+  {
+   "word": "sail",
+   "start": 400.52,
+   "end": 400.9
   },
   {
    "word": "from",
-   "start": 427.89,
-   "end": 428.23
+   "start": 400.9,
+   "end": 401.24
   },
   {
-   "word": "Constantinople.",
-   "start": 428.23,
-   "end": 428.83
+   "word": "North",
+   "start": 401.24,
+   "end": 401.5
   },
   {
-   "word": "Its",
-   "start": 430.01,
-   "end": 430.13
-  },
-  {
-   "word": "people",
-   "start": 430.13,
-   "end": 430.49
-  },
-  {
-   "word": "still",
-   "start": 430.49,
-   "end": 430.77
-  },
-  {
-   "word": "called",
-   "start": 430.77,
-   "end": 431.07
-  },
-  {
-   "word": "themselves",
-   "start": 431.07,
-   "end": 431.59
-  },
-  {
-   "word": "Romans.",
-   "start": 431.59,
-   "end": 431.95
-  },
-  {
-   "word": "About",
-   "start": 433.01,
-   "end": 433.27
-  },
-  {
-   "word": "sixty",
-   "start": 433.27,
-   "end": 433.69
-  },
-  {
-   "word": "years",
-   "start": 433.69,
-   "end": 433.99
-  },
-  {
-   "word": "later,",
-   "start": 433.99,
-   "end": 434.39
-  },
-  {
-   "word": "they",
-   "start": 434.39,
-   "end": 434.65
-  },
-  {
-   "word": "even",
-   "start": 434.65,
-   "end": 434.97
-  },
-  {
-   "word": "took",
-   "start": 434.97,
-   "end": 435.19
-  },
-  {
-   "word": "back",
-   "start": 435.19,
-   "end": 435.51
-  },
-  {
-   "word": "Italy,",
-   "start": 435.51,
-   "end": 435.87
+   "word": "Africa",
+   "start": 401.5,
+   "end": 401.94
   },
   {
    "word": "and",
-   "start": 435.87,
-   "end": 436.33
+   "start": 401.94,
+   "end": 402.38
   },
   {
-   "word": "the",
-   "start": 436.33,
-   "end": 436.45
-  },
-  {
-   "word": "city",
-   "start": 436.45,
-   "end": 436.69
-  },
-  {
-   "word": "of",
-   "start": 436.69,
-   "end": 436.93
+   "word": "loot",
+   "start": 402.38,
+   "end": 402.62
   },
   {
    "word": "Rome",
-   "start": 436.93,
-   "end": 437.23
+   "start": 402.62,
+   "end": 402.92
   },
   {
-   "word": "itself,",
-   "start": 437.23,
-   "end": 437.67
+   "word": "again.",
+   "start": 402.92,
+   "end": 403.3
   },
   {
-   "word": "for",
-   "start": 437.67,
-   "end": 438.01
+   "word": "This",
+   "start": 404.1,
+   "end": 404.34
   },
   {
-   "word": "a",
-   "start": 438.01,
-   "end": 438.15
-  },
-  {
-   "word": "while.",
-   "start": 438.15,
-   "end": 438.49
-  },
-  {
-   "word": "Today",
-   "start": 439.39,
-   "end": 439.59
-  },
-  {
-   "word": "we",
-   "start": 439.59,
-   "end": 439.79
-  },
-  {
-   "word": "call",
-   "start": 439.79,
-   "end": 440.03
-  },
-  {
-   "word": "it",
-   "start": 440.03,
-   "end": 440.17
-  },
-  {
-   "word": "the",
-   "start": 440.17,
-   "end": 440.29
-  },
-  {
-   "word": "Byzantine",
-   "start": 440.29,
-   "end": 440.75
-  },
-  {
-   "word": "Empire.",
-   "start": 440.75,
-   "end": 441.31
-  },
-  {
-   "word": "They",
-   "start": 442.31,
-   "end": 442.49
-  },
-  {
-   "word": "just",
-   "start": 442.49,
-   "end": 442.71
-  },
-  {
-   "word": "called",
-   "start": 442.71,
-   "end": 442.95
-  },
-  {
-   "word": "it",
-   "start": 442.95,
-   "end": 443.09
-  },
-  {
-   "word": "Rome.",
-   "start": 443.09,
-   "end": 443.39
-  },
-  {
-   "word": "And",
-   "start": 444.25,
-   "end": 444.41
-  },
-  {
-   "word": "it",
-   "start": 444.41,
-   "end": 444.51
-  },
-  {
-   "word": "lasted",
-   "start": 444.51,
-   "end": 444.83
-  },
-  {
-   "word": "almost",
-   "start": 444.83,
-   "end": 445.29
-  },
-  {
-   "word": "another",
-   "start": 445.29,
-   "end": 445.65
-  },
-  {
-   "word": "thousand",
-   "start": 445.65,
-   "end": 446.07
-  },
-  {
-   "word": "years.",
-   "start": 446.07,
-   "end": 446.51
-  },
-  {
-   "word": "Until",
-   "start": 447.47,
-   "end": 447.81
-  },
-  {
-   "word": "the",
-   "start": 447.81,
-   "end": 447.97
-  },
-  {
-   "word": "29th",
-   "start": 447.97,
-   "end": 448.65
-  },
-  {
-   "word": "of",
-   "start": 448.65,
-   "end": 448.79
-  },
-  {
-   "word": "May,",
-   "start": 448.79,
-   "end": 448.97
-  },
-  {
-   "word": "1453,",
-   "start": 448.97,
-   "end": 451.31
-  },
-  {
-   "word": "when",
-   "start": 451.31,
-   "end": 451.87
-  },
-  {
-   "word": "Ottoman",
-   "start": 451.87,
-   "end": 452.29
-  },
-  {
-   "word": "cannons",
-   "start": 452.29,
-   "end": 452.77
-  },
-  {
-   "word": "broke",
-   "start": 452.77,
-   "end": 453.23
-  },
-  {
-   "word": "the",
-   "start": 453.23,
-   "end": 453.47
-  },
-  {
-   "word": "walls",
-   "start": 453.47,
-   "end": 453.75
-  },
-  {
-   "word": "of",
-   "start": 453.75,
-   "end": 454.11
-  },
-  {
-   "word": "Constantinople.",
-   "start": 454.11,
-   "end": 454.79
-  },
-  {
-   "word": "So",
-   "start": 455.73,
-   "end": 456.13
-  },
-  {
-   "word": "did",
-   "start": 456.13,
-   "end": 456.29
-  },
-  {
-   "word": "Rome",
-   "start": 456.29,
-   "end": 456.57
-  },
-  {
-   "word": "really",
-   "start": 456.57,
-   "end": 456.97
-  },
-  {
-   "word": "fall",
-   "start": 456.97,
-   "end": 457.29
-  },
-  {
-   "word": "in",
-   "start": 457.29,
-   "end": 457.55
-  },
-  {
-   "word": "476?",
-   "start": 457.55,
-   "end": 458.75
-  },
-  {
-   "word": "Historians",
-   "start": 459.89,
-   "end": 460.25
-  },
-  {
-   "word": "still",
-   "start": 460.25,
-   "end": 460.61
-  },
-  {
-   "word": "fight",
-   "start": 460.61,
-   "end": 460.91
-  },
-  {
-   "word": "about",
-   "start": 460.91,
-   "end": 461.21
-  },
-  {
-   "word": "it.",
-   "start": 461.21,
-   "end": 461.55
-  },
-  {
-   "word": "Some",
-   "start": 462.25,
-   "end": 462.37
-  },
-  {
-   "word": "see",
-   "start": 462.37,
-   "end": 462.59
-  },
-  {
-   "word": "a",
-   "start": 462.59,
-   "end": 462.69
-  },
-  {
-   "word": "real",
-   "start": 462.69,
-   "end": 462.91
-  },
-  {
-   "word": "collapse:",
-   "start": 462.91,
-   "end": 463.35
-  },
-  {
-   "word": "life",
-   "start": 463.87,
-   "end": 464.11
-  },
-  {
-   "word": "in",
-   "start": 464.11,
-   "end": 464.29
-  },
-  {
-   "word": "the",
-   "start": 464.29,
-   "end": 464.39
-  },
-  {
-   "word": "West",
-   "start": 464.39,
-   "end": 464.61
-  },
-  {
-   "word": "got",
-   "start": 464.61,
-   "end": 464.87
-  },
-  {
-   "word": "poorer",
-   "start": 464.87,
-   "end": 465.15
+   "word": "time,",
+   "start": 404.34,
+   "end": 404.6
   },
   {
    "word": "for",
-   "start": 465.15,
-   "end": 465.39
-  },
-  {
-   "word": "centuries.",
-   "start": 465.39,
-   "end": 465.87
-  },
-  {
-   "word": "Others",
-   "start": 466.87,
-   "end": 467.03
-  },
-  {
-   "word": "see",
-   "start": 467.03,
-   "end": 467.29
-  },
-  {
-   "word": "a",
-   "start": 467.29,
-   "end": 467.41
-  },
-  {
-   "word": "slow",
-   "start": 467.41,
-   "end": 467.67
-  },
-  {
-   "word": "change",
-   "start": 467.67,
-   "end": 468.13
-  },
-  {
-   "word": "into",
-   "start": 468.13,
-   "end": 468.37
-  },
-  {
-   "word": "the",
-   "start": 468.37,
-   "end": 468.53
-  },
-  {
-   "word": "Middle",
-   "start": 468.53,
-   "end": 468.71
-  },
-  {
-   "word": "Ages.",
-   "start": 468.71,
-   "end": 469.07
-  },
-  {
-   "word": "One",
-   "start": 470.09,
-   "end": 470.33
-  },
-  {
-   "word": "historian",
-   "start": 470.33,
-   "end": 470.91
-  },
-  {
-   "word": "counted",
-   "start": 470.91,
-   "end": 471.45
+   "start": 404.6,
+   "end": 404.8
   },
   {
    "word": "two",
-   "start": 471.45,
-   "end": 471.645
+   "start": 404.8,
+   "end": 404.98
   },
   {
-   "word": "hundred",
-   "start": 471.645,
-   "end": 471.84
-  },
-  {
-   "word": "and",
-   "start": 471.84,
-   "end": 472.035
-  },
-  {
-   "word": "ten",
-   "start": 472.035,
-   "end": 472.23
-  },
-  {
-   "word": "reasons",
-   "start": 472.23,
-   "end": 473.03
-  },
-  {
-   "word": "people",
-   "start": 473.03,
-   "end": 473.39
-  },
-  {
-   "word": "have",
-   "start": 473.39,
-   "end": 473.73
-  },
-  {
-   "word": "given",
-   "start": 473.73,
-   "end": 473.99
-  },
-  {
-   "word": "for",
-   "start": 473.99,
-   "end": 474.23
-  },
-  {
-   "word": "the",
-   "start": 474.23,
-   "end": 474.39
-  },
-  {
-   "word": "fall.",
-   "start": 474.39,
-   "end": 474.71
-  },
-  {
-   "word": "Maybe",
-   "start": 475.61,
-   "end": 475.83
-  },
-  {
-   "word": "Rome",
-   "start": 475.83,
-   "end": 476.17
-  },
-  {
-   "word": "wasn't",
-   "start": 476.17,
-   "end": 476.51
-  },
-  {
-   "word": "destroyed",
-   "start": 476.51,
-   "end": 476.93
-  },
-  {
-   "word": "in",
-   "start": 476.93,
-   "end": 477.13
-  },
-  {
-   "word": "a",
-   "start": 477.13,
-   "end": 477.25
-  },
-  {
-   "word": "day.",
-   "start": 477.25,
-   "end": 477.43
-  },
-  {
-   "word": "Maybe",
-   "start": 478.29,
-   "end": 478.53
-  },
-  {
-   "word": "it",
-   "start": 478.53,
-   "end": 478.69
-  },
-  {
-   "word": "never",
-   "start": 478.69,
-   "end": 478.93
-  },
-  {
-   "word": "fully",
-   "start": 478.93,
-   "end": 479.23
-  },
-  {
-   "word": "fell",
-   "start": 479.23,
-   "end": 479.49
-  },
-  {
-   "word": "at",
-   "start": 479.49,
-   "end": 479.65
-  },
-  {
-   "word": "all.",
-   "start": 479.65,
-   "end": 479.93
+   "word": "weeks.",
+   "start": 404.98,
+   "end": 405.28
   },
   {
    "word": "And",
-   "start": 480.73,
-   "end": 480.83
+   "start": 406.2,
+   "end": 406.4
   },
   {
-   "word": "Livia's",
-   "start": 480.83,
-   "end": 481.21
-  },
-  {
-   "word": "coin?",
-   "start": 481.21,
-   "end": 481.43
-  },
-  {
-   "word": "It's",
-   "start": 482.31,
-   "end": 482.59
-  },
-  {
-   "word": "still",
-   "start": 482.59,
-   "end": 482.77
-  },
-  {
-   "word": "silver.",
-   "start": 482.77,
-   "end": 483.19
-  },
-  {
-   "word": "So",
-   "start": 484.63,
-   "end": 485.11
-  },
-  {
-   "word": "what",
-   "start": 485.11,
-   "end": 485.29
-  },
-  {
-   "word": "do",
-   "start": 485.29,
-   "end": 485.39
-  },
-  {
-   "word": "you",
-   "start": 485.39,
-   "end": 485.51
-  },
-  {
-   "word": "think?",
-   "start": 485.51,
-   "end": 485.77
-  },
-  {
-   "word": "When",
-   "start": 486.77,
-   "end": 486.87
-  },
-  {
-   "word": "did",
-   "start": 486.87,
-   "end": 487.01
-  },
-  {
-   "word": "the",
-   "start": 487.01,
-   "end": 487.13
-  },
-  {
-   "word": "Roman",
-   "start": 487.13,
-   "end": 487.41
-  },
-  {
-   "word": "Empire",
-   "start": 487.41,
-   "end": 487.89
-  },
-  {
-   "word": "really",
-   "start": 487.89,
-   "end": 488.29
-  },
-  {
-   "word": "end:",
-   "start": 488.29,
-   "end": 488.69
-  },
-  {
-   "word": "410,",
-   "start": 490.07,
-   "end": 490.07
+   "word": "in",
+   "start": 406.4,
+   "end": 406.54
   },
   {
    "word": "476,",
-   "start": 490.07,
-   "end": 491.47
+   "start": 406.54,
+   "end": 407.92
   },
   {
-   "word": "or",
-   "start": 491.47,
-   "end": 492.13
+   "word": "a",
+   "start": 407.92,
+   "end": 408.34
   },
   {
-   "word": "1453?",
-   "start": 492.13,
-   "end": 494.21
+   "word": "general",
+   "start": 408.34,
+   "end": 408.7
   },
   {
-   "word": "Tell",
-   "start": 495.17,
-   "end": 495.27
+   "word": "named",
+   "start": 408.7,
+   "end": 409.16
   },
   {
-   "word": "me",
-   "start": 495.27,
-   "end": 495.41
+   "word": "Odoacer,",
+   "start": 409.16,
+   "end": 410.12
+  },
+  {
+   "word": "the",
+   "start": 410.12,
+   "end": 410.18
+  },
+  {
+   "word": "leader",
+   "start": 410.18,
+   "end": 410.46
+  },
+  {
+   "word": "of",
+   "start": 410.46,
+   "end": 410.74
+  },
+  {
+   "word": "the",
+   "start": 410.74,
+   "end": 410.9
+  },
+  {
+   "word": "barbarian",
+   "start": 410.9,
+   "end": 411.46
+  },
+  {
+   "word": "troops",
+   "start": 411.46,
+   "end": 411.8
   },
   {
    "word": "in",
-   "start": 495.41,
-   "end": 495.49
+   "start": 411.8,
+   "end": 412.08
+  },
+  {
+   "word": "Italy,",
+   "start": 412.08,
+   "end": 412.46
+  },
+  {
+   "word": "removes",
+   "start": 412.8,
+   "end": 413.2
   },
   {
    "word": "the",
-   "start": 495.49,
-   "end": 495.59
+   "start": 413.2,
+   "end": 413.5
   },
   {
-   "word": "comments.",
-   "start": 495.59,
-   "end": 495.93
+   "word": "last",
+   "start": 413.5,
+   "end": 413.94
   },
   {
-   "word": "And",
-   "start": 496.95,
-   "end": 497.07
+   "word": "western",
+   "start": 413.94,
+   "end": 414.42
   },
   {
-   "word": "if",
-   "start": 497.07,
-   "end": 497.21
+   "word": "emperor.",
+   "start": 414.42,
+   "end": 414.94
   },
   {
-   "word": "you",
-   "start": 497.21,
-   "end": 497.37
+   "word": "A",
+   "start": 415.84,
+   "end": 415.92
   },
   {
-   "word": "like",
-   "start": 497.37,
-   "end": 497.61
+   "word": "boy.",
+   "start": 415.92,
+   "end": 416.18
   },
   {
-   "word": "stories",
-   "start": 497.61,
-   "end": 497.95
+   "word": "His",
+   "start": 417.06,
+   "end": 417.3
   },
   {
-   "word": "like",
-   "start": 497.95,
-   "end": 498.31
-  },
-  {
-   "word": "this,",
-   "start": 498.31,
-   "end": 498.63
-  },
-  {
-   "word": "the",
-   "start": 498.81,
-   "end": 498.93
-  },
-  {
-   "word": "next",
-   "start": 498.93,
-   "end": 499.17
-  },
-  {
-   "word": "one",
-   "start": 499.17,
-   "end": 499.35
+   "word": "name",
+   "start": 417.3,
+   "end": 417.56
   },
   {
    "word": "is",
-   "start": 499.35,
-   "end": 499.49
+   "start": 417.56,
+   "end": 417.76
+  },
+  {
+   "word": "Romulus",
+   "start": 417.76,
+   "end": 418.26
+  },
+  {
+   "word": "Augustulus.",
+   "start": 418.26,
+   "end": 418.94
+  },
+  {
+   "word": "He",
+   "start": 419.76,
+   "end": 419.98
+  },
+  {
+   "word": "doesn't",
+   "start": 419.98,
+   "end": 420.26
+  },
+  {
+   "word": "even",
+   "start": 420.26,
+   "end": 420.46
+  },
+  {
+   "word": "kill",
+   "start": 420.46,
+   "end": 420.74
+  },
+  {
+   "word": "him.",
+   "start": 420.74,
+   "end": 421.04
+  },
+  {
+   "word": "He",
+   "start": 421.86,
+   "end": 422.04
+  },
+  {
+   "word": "sends",
+   "start": 422.04,
+   "end": 422.26
+  },
+  {
+   "word": "the",
+   "start": 422.26,
+   "end": 422.46
+  },
+  {
+   "word": "boy",
+   "start": 422.46,
+   "end": 422.64
+  },
+  {
+   "word": "to",
+   "start": 422.64,
+   "end": 422.84
+  },
+  {
+   "word": "a",
+   "start": 422.84,
+   "end": 423.02
+  },
+  {
+   "word": "villa",
+   "start": 423.02,
+   "end": 423.32
+  },
+  {
+   "word": "with",
+   "start": 423.32,
+   "end": 423.44
+  },
+  {
+   "word": "a",
+   "start": 423.44,
+   "end": 423.56
+  },
+  {
+   "word": "pension.",
+   "start": 423.56,
+   "end": 423.9
+  },
+  {
+   "word": "The",
+   "start": 424.82,
+   "end": 424.98
+  },
+  {
+   "word": "last",
+   "start": 424.98,
+   "end": 425.26
+  },
+  {
+   "word": "emperor",
+   "start": 425.26,
+   "end": 425.5
+  },
+  {
+   "word": "of",
+   "start": 425.5,
+   "end": 425.7
+  },
+  {
+   "word": "the",
+   "start": 425.7,
+   "end": 425.8
+  },
+  {
+   "word": "West",
+   "start": 425.8,
+   "end": 426.04
+  },
+  {
+   "word": "just",
+   "start": 426.04,
+   "end": 426.3
+  },
+  {
+   "word": "retires.",
+   "start": 426.3,
+   "end": 426.98
+  },
+  {
+   "word": "Then",
+   "start": 427.9,
+   "end": 428.08
+  },
+  {
+   "word": "Odoacer",
+   "start": 428.08,
+   "end": 428.58
+  },
+  {
+   "word": "ships",
+   "start": 428.58,
+   "end": 428.96
+  },
+  {
+   "word": "the",
+   "start": 428.96,
+   "end": 429.26
+  },
+  {
+   "word": "crown",
+   "start": 429.26,
+   "end": 429.6
+  },
+  {
+   "word": "and",
+   "start": 429.6,
+   "end": 429.9
+  },
+  {
+   "word": "purple",
+   "start": 429.9,
+   "end": 430.28
+  },
+  {
+   "word": "robes",
+   "start": 430.28,
+   "end": 430.64
+  },
+  {
+   "word": "to",
+   "start": 430.64,
+   "end": 430.94
+  },
+  {
+   "word": "Constantinople.",
+   "start": 430.94,
+   "end": 431.38
+  },
+  {
+   "word": "The",
+   "start": 432.42,
+   "end": 432.74
+  },
+  {
+   "word": "West",
+   "start": 432.74,
+   "end": 433.0
+  },
+  {
+   "word": "doesn't",
+   "start": 433.0,
+   "end": 433.34
+  },
+  {
+   "word": "need",
+   "start": 433.34,
+   "end": 433.56
+  },
+  {
+   "word": "an",
+   "start": 433.56,
+   "end": 433.74
+  },
+  {
+   "word": "emperor",
+   "start": 433.74,
+   "end": 434.08
+  },
+  {
+   "word": "anymore.",
+   "start": 434.08,
+   "end": 434.48
+  },
+  {
+   "word": "Most",
+   "start": 435.48,
+   "end": 435.66
+  },
+  {
+   "word": "history",
+   "start": 435.66,
+   "end": 436.04
+  },
+  {
+   "word": "books",
+   "start": 436.04,
+   "end": 436.32
+  },
+  {
+   "word": "stop",
+   "start": 436.32,
+   "end": 436.64
   },
   {
    "word": "right",
-   "start": 499.49,
-   "end": 499.71
+   "start": 436.64,
+   "end": 436.92
+  },
+  {
+   "word": "there.",
+   "start": 436.92,
+   "end": 437.36
+  },
+  {
+   "word": "476.",
+   "start": 438.56,
+   "end": 439.16
+  },
+  {
+   "word": "The",
+   "start": 440.18,
+   "end": 440.32
+  },
+  {
+   "word": "fall",
+   "start": 440.32,
+   "end": 440.5
+  },
+  {
+   "word": "of",
+   "start": 440.5,
+   "end": 440.7
+  },
+  {
+   "word": "Rome.",
+   "start": 440.7,
+   "end": 440.98
+  },
+  {
+   "word": "But",
+   "start": 442.46,
+   "end": 442.88
+  },
+  {
+   "word": "remember",
+   "start": 442.88,
+   "end": 443.2
+  },
+  {
+   "word": "the",
+   "start": 443.2,
+   "end": 443.4
+  },
+  {
+   "word": "split?",
+   "start": 443.4,
+   "end": 443.72
+  },
+  {
+   "word": "Rome",
+   "start": 444.76,
+   "end": 444.9
+  },
+  {
+   "word": "had",
+   "start": 444.9,
+   "end": 445.06
+  },
+  {
+   "word": "two",
+   "start": 445.06,
+   "end": 445.22
+  },
+  {
+   "word": "halves.",
+   "start": 445.22,
+   "end": 445.56
+  },
+  {
+   "word": "And",
+   "start": 446.48,
+   "end": 446.62
+  },
+  {
+   "word": "the",
+   "start": 446.62,
+   "end": 446.7
+  },
+  {
+   "word": "eastern",
+   "start": 446.7,
+   "end": 446.98
+  },
+  {
+   "word": "half",
+   "start": 446.98,
+   "end": 447.3
+  },
+  {
+   "word": "was",
+   "start": 447.3,
+   "end": 447.48
+  },
+  {
+   "word": "still",
+   "start": 447.48,
+   "end": 447.74
+  },
+  {
+   "word": "standing.",
+   "start": 447.74,
+   "end": 448.18
+  },
+  {
+   "word": "Its",
+   "start": 449.1,
+   "end": 449.26
+  },
+  {
+   "word": "emperors",
+   "start": 449.26,
+   "end": 449.66
+  },
+  {
+   "word": "still",
+   "start": 449.66,
+   "end": 450.0
+  },
+  {
+   "word": "ruled",
+   "start": 450.0,
+   "end": 450.36
+  },
+  {
+   "word": "from",
+   "start": 450.36,
+   "end": 450.68
+  },
+  {
+   "word": "Constantinople.",
+   "start": 450.68,
+   "end": 451.28
+  },
+  {
+   "word": "Its",
+   "start": 452.44,
+   "end": 452.58
+  },
+  {
+   "word": "people",
+   "start": 452.58,
+   "end": 452.94
+  },
+  {
+   "word": "still",
+   "start": 452.94,
+   "end": 453.24
+  },
+  {
+   "word": "called",
+   "start": 453.24,
+   "end": 453.54
+  },
+  {
+   "word": "themselves",
+   "start": 453.54,
+   "end": 454.06
+  },
+  {
+   "word": "Romans.",
+   "start": 454.06,
+   "end": 454.46
+  },
+  {
+   "word": "About",
+   "start": 455.46,
+   "end": 455.72
+  },
+  {
+   "word": "sixty",
+   "start": 455.72,
+   "end": 456.16
+  },
+  {
+   "word": "years",
+   "start": 456.16,
+   "end": 456.44
+  },
+  {
+   "word": "later,",
+   "start": 456.44,
+   "end": 456.84
+  },
+  {
+   "word": "they",
+   "start": 456.84,
+   "end": 457.1
+  },
+  {
+   "word": "even",
+   "start": 457.1,
+   "end": 457.42
+  },
+  {
+   "word": "took",
+   "start": 457.42,
+   "end": 457.64
+  },
+  {
+   "word": "back",
+   "start": 457.64,
+   "end": 457.98
+  },
+  {
+   "word": "Italy,",
+   "start": 457.98,
+   "end": 458.36
+  },
+  {
+   "word": "and",
+   "start": 458.36,
+   "end": 458.78
+  },
+  {
+   "word": "the",
+   "start": 458.78,
+   "end": 458.9
+  },
+  {
+   "word": "city",
+   "start": 458.9,
+   "end": 459.16
+  },
+  {
+   "word": "of",
+   "start": 459.16,
+   "end": 459.38
+  },
+  {
+   "word": "Rome",
+   "start": 459.38,
+   "end": 459.68
+  },
+  {
+   "word": "itself,",
+   "start": 459.68,
+   "end": 460.14
+  },
+  {
+   "word": "for",
+   "start": 460.14,
+   "end": 460.46
+  },
+  {
+   "word": "a",
+   "start": 460.46,
+   "end": 460.6
+  },
+  {
+   "word": "while.",
+   "start": 460.6,
+   "end": 460.96
+  },
+  {
+   "word": "Today",
+   "start": 461.82,
+   "end": 462.04
+  },
+  {
+   "word": "we",
+   "start": 462.04,
+   "end": 462.24
+  },
+  {
+   "word": "call",
+   "start": 462.24,
+   "end": 462.48
+  },
+  {
+   "word": "it",
+   "start": 462.48,
+   "end": 462.62
+  },
+  {
+   "word": "the",
+   "start": 462.62,
+   "end": 462.74
+  },
+  {
+   "word": "Byzantine",
+   "start": 462.74,
+   "end": 463.2
+  },
+  {
+   "word": "Empire.",
+   "start": 463.2,
+   "end": 463.76
+  },
+  {
+   "word": "They",
+   "start": 464.72,
+   "end": 464.94
+  },
+  {
+   "word": "just",
+   "start": 464.94,
+   "end": 465.16
+  },
+  {
+   "word": "called",
+   "start": 465.16,
+   "end": 465.4
+  },
+  {
+   "word": "it",
+   "start": 465.4,
+   "end": 465.56
+  },
+  {
+   "word": "Rome.",
+   "start": 465.56,
+   "end": 465.86
+  },
+  {
+   "word": "And",
+   "start": 466.68,
+   "end": 466.86
+  },
+  {
+   "word": "it",
+   "start": 466.86,
+   "end": 466.96
+  },
+  {
+   "word": "lasted",
+   "start": 466.96,
+   "end": 467.28
+  },
+  {
+   "word": "almost",
+   "start": 467.28,
+   "end": 467.76
+  },
+  {
+   "word": "another",
+   "start": 467.76,
+   "end": 468.14
+  },
+  {
+   "word": "thousand",
+   "start": 468.14,
+   "end": 468.52
+  },
+  {
+   "word": "years.",
+   "start": 468.52,
+   "end": 469.0
+  },
+  {
+   "word": "Until",
+   "start": 469.9,
+   "end": 470.26
+  },
+  {
+   "word": "the",
+   "start": 470.26,
+   "end": 470.44
+  },
+  {
+   "word": "29th",
+   "start": 470.44,
+   "end": 471.12
+  },
+  {
+   "word": "of",
+   "start": 471.12,
+   "end": 471.24
+  },
+  {
+   "word": "May,",
+   "start": 471.24,
+   "end": 471.44
+  },
+  {
+   "word": "1453,",
+   "start": 471.44,
+   "end": 473.74
+  },
+  {
+   "word": "when",
+   "start": 473.74,
+   "end": 474.32
+  },
+  {
+   "word": "Ottoman",
+   "start": 474.32,
+   "end": 474.74
+  },
+  {
+   "word": "cannons",
+   "start": 474.74,
+   "end": 475.24
+  },
+  {
+   "word": "broke",
+   "start": 475.24,
+   "end": 475.7
+  },
+  {
+   "word": "the",
+   "start": 475.7,
+   "end": 475.94
+  },
+  {
+   "word": "walls",
+   "start": 475.94,
+   "end": 476.22
+  },
+  {
+   "word": "of",
+   "start": 476.22,
+   "end": 476.56
+  },
+  {
+   "word": "Constantinople.",
+   "start": 476.56,
+   "end": 477.2
+  },
+  {
+   "word": "So",
+   "start": 477.91,
+   "end": 478.22
+  },
+  {
+   "word": "did",
+   "start": 478.22,
+   "end": 478.74
+  },
+  {
+   "word": "Rome",
+   "start": 478.74,
+   "end": 479.0
+  },
+  {
+   "word": "really",
+   "start": 479.0,
+   "end": 479.42
+  },
+  {
+   "word": "fall",
+   "start": 479.42,
+   "end": 479.74
+  },
+  {
+   "word": "in",
+   "start": 479.74,
+   "end": 480.0
+  },
+  {
+   "word": "476?",
+   "start": 480.0,
+   "end": 481.2
+  },
+  {
+   "word": "Historians",
+   "start": 482.32,
+   "end": 482.72
+  },
+  {
+   "word": "still",
+   "start": 482.72,
+   "end": 483.06
+  },
+  {
+   "word": "fight",
+   "start": 483.06,
+   "end": 483.36
+  },
+  {
+   "word": "about",
+   "start": 483.36,
+   "end": 483.66
+  },
+  {
+   "word": "it.",
+   "start": 483.66,
+   "end": 484.0
+  },
+  {
+   "word": "Some",
+   "start": 484.72,
+   "end": 484.82
+  },
+  {
+   "word": "see",
+   "start": 484.82,
+   "end": 485.04
+  },
+  {
+   "word": "a",
+   "start": 485.04,
+   "end": 485.14
+  },
+  {
+   "word": "real",
+   "start": 485.14,
+   "end": 485.38
+  },
+  {
+   "word": "collapse:",
+   "start": 485.38,
+   "end": 485.8
+  },
+  {
+   "word": "life",
+   "start": 486.34,
+   "end": 486.54
+  },
+  {
+   "word": "in",
+   "start": 486.54,
+   "end": 486.74
+  },
+  {
+   "word": "the",
+   "start": 486.74,
+   "end": 486.86
+  },
+  {
+   "word": "West",
+   "start": 486.86,
+   "end": 487.06
+  },
+  {
+   "word": "got",
+   "start": 487.06,
+   "end": 487.32
+  },
+  {
+   "word": "poorer",
+   "start": 487.32,
+   "end": 487.62
+  },
+  {
+   "word": "for",
+   "start": 487.62,
+   "end": 487.84
+  },
+  {
+   "word": "centuries.",
+   "start": 487.84,
+   "end": 488.34
+  },
+  {
+   "word": "Others",
+   "start": 489.32,
+   "end": 489.48
+  },
+  {
+   "word": "see",
+   "start": 489.48,
+   "end": 489.74
+  },
+  {
+   "word": "a",
+   "start": 489.74,
+   "end": 489.86
+  },
+  {
+   "word": "slow",
+   "start": 489.86,
+   "end": 490.12
+  },
+  {
+   "word": "change",
+   "start": 490.12,
+   "end": 490.56
+  },
+  {
+   "word": "into",
+   "start": 490.56,
+   "end": 490.82
+  },
+  {
+   "word": "the",
+   "start": 490.82,
+   "end": 490.98
+  },
+  {
+   "word": "Middle",
+   "start": 490.98,
+   "end": 491.18
+  },
+  {
+   "word": "Ages.",
+   "start": 491.18,
+   "end": 491.52
+  },
+  {
+   "word": "One",
+   "start": 492.56,
+   "end": 492.78
+  },
+  {
+   "word": "historian",
+   "start": 492.78,
+   "end": 493.38
+  },
+  {
+   "word": "counted",
+   "start": 493.38,
+   "end": 493.9
+  },
+  {
+   "word": "two",
+   "start": 493.9,
+   "end": 494.1
+  },
+  {
+   "word": "hundred",
+   "start": 494.1,
+   "end": 494.3
+  },
+  {
+   "word": "and",
+   "start": 494.3,
+   "end": 494.5
+  },
+  {
+   "word": "ten",
+   "start": 494.5,
+   "end": 494.7
+  },
+  {
+   "word": "reasons",
+   "start": 494.7,
+   "end": 495.46
+  },
+  {
+   "word": "people",
+   "start": 495.46,
+   "end": 495.86
+  },
+  {
+   "word": "have",
+   "start": 495.86,
+   "end": 496.18
+  },
+  {
+   "word": "given",
+   "start": 496.18,
+   "end": 496.44
+  },
+  {
+   "word": "for",
+   "start": 496.44,
+   "end": 496.68
+  },
+  {
+   "word": "the",
+   "start": 496.68,
+   "end": 496.84
+  },
+  {
+   "word": "fall.",
+   "start": 496.84,
+   "end": 497.16
+  },
+  {
+   "word": "Maybe",
+   "start": 498.04,
+   "end": 498.28
+  },
+  {
+   "word": "Rome",
+   "start": 498.28,
+   "end": 498.62
+  },
+  {
+   "word": "wasn't",
+   "start": 498.62,
+   "end": 498.96
+  },
+  {
+   "word": "destroyed",
+   "start": 498.96,
+   "end": 499.36
+  },
+  {
+   "word": "in",
+   "start": 499.36,
+   "end": 499.58
+  },
+  {
+   "word": "a",
+   "start": 499.58,
+   "end": 499.68
+  },
+  {
+   "word": "day.",
+   "start": 499.68,
+   "end": 499.94
+  },
+  {
+   "word": "Maybe",
+   "start": 500.82,
+   "end": 500.98
+  },
+  {
+   "word": "it",
+   "start": 500.98,
+   "end": 501.14
+  },
+  {
+   "word": "never",
+   "start": 501.14,
+   "end": 501.38
+  },
+  {
+   "word": "fully",
+   "start": 501.38,
+   "end": 501.68
+  },
+  {
+   "word": "fell",
+   "start": 501.68,
+   "end": 501.94
+  },
+  {
+   "word": "at",
+   "start": 501.94,
+   "end": 502.1
+  },
+  {
+   "word": "all.",
+   "start": 502.1,
+   "end": 502.38
+  },
+  {
+   "word": "And",
+   "start": 503.2,
+   "end": 503.32
+  },
+  {
+   "word": "Livia's",
+   "start": 503.32,
+   "end": 503.66
+  },
+  {
+   "word": "coin?",
+   "start": 503.66,
+   "end": 503.9
+  },
+  {
+   "word": "It's",
+   "start": 504.82,
+   "end": 505.04
+  },
+  {
+   "word": "still",
+   "start": 505.04,
+   "end": 505.24
+  },
+  {
+   "word": "silver.",
+   "start": 505.24,
+   "end": 505.64
+  },
+  {
+   "word": "So",
+   "start": 507.08,
+   "end": 507.58
+  },
+  {
+   "word": "what",
+   "start": 507.58,
+   "end": 507.74
+  },
+  {
+   "word": "do",
+   "start": 507.74,
+   "end": 507.82
+  },
+  {
+   "word": "you",
+   "start": 507.82,
+   "end": 507.96
+  },
+  {
+   "word": "think?",
+   "start": 507.96,
+   "end": 508.22
+  },
+  {
+   "word": "When",
+   "start": 509.14,
+   "end": 509.34
+  },
+  {
+   "word": "did",
+   "start": 509.34,
+   "end": 509.46
+  },
+  {
+   "word": "the",
+   "start": 509.46,
+   "end": 509.58
+  },
+  {
+   "word": "Roman",
+   "start": 509.58,
+   "end": 509.86
+  },
+  {
+   "word": "Empire",
+   "start": 509.86,
+   "end": 510.34
+  },
+  {
+   "word": "really",
+   "start": 510.34,
+   "end": 510.74
+  },
+  {
+   "word": "end:",
+   "start": 510.74,
+   "end": 511.14
+  },
+  {
+   "word": "410,",
+   "start": 511.76,
+   "end": 512.28
+  },
+  {
+   "word": "476,",
+   "start": 512.28,
+   "end": 513.78
+  },
+  {
+   "word": "or",
+   "start": 513.78,
+   "end": 514.58
+  },
+  {
+   "word": "1453?",
+   "start": 514.58,
+   "end": 516.66
+  },
+  {
+   "word": "Tell",
+   "start": 517.6,
+   "end": 517.72
+  },
+  {
+   "word": "me",
+   "start": 517.72,
+   "end": 517.86
+  },
+  {
+   "word": "in",
+   "start": 517.86,
+   "end": 517.94
+  },
+  {
+   "word": "the",
+   "start": 517.94,
+   "end": 518.06
+  },
+  {
+   "word": "comments.",
+   "start": 518.06,
+   "end": 518.4
+  },
+  {
+   "word": "And",
+   "start": 519.4,
+   "end": 519.52
+  },
+  {
+   "word": "if",
+   "start": 519.52,
+   "end": 519.66
+  },
+  {
+   "word": "you",
+   "start": 519.66,
+   "end": 519.82
+  },
+  {
+   "word": "like",
+   "start": 519.82,
+   "end": 520.04
+  },
+  {
+   "word": "stories",
+   "start": 520.04,
+   "end": 520.4
+  },
+  {
+   "word": "like",
+   "start": 520.4,
+   "end": 520.76
+  },
+  {
+   "word": "this,",
+   "start": 520.76,
+   "end": 521.08
+  },
+  {
+   "word": "the",
+   "start": 521.26,
+   "end": 521.4
+  },
+  {
+   "word": "next",
+   "start": 521.4,
+   "end": 521.62
+  },
+  {
+   "word": "one",
+   "start": 521.62,
+   "end": 521.8
+  },
+  {
+   "word": "is",
+   "start": 521.8,
+   "end": 521.94
+  },
+  {
+   "word": "right",
+   "start": 521.94,
+   "end": 522.16
   },
   {
    "word": "here.",
-   "start": 499.71,
-   "end": 500.07
+   "start": 522.16,
+   "end": 522.52
   }
  ]
 }
