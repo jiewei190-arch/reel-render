@@ -1,4 +1,8 @@
-STATE: ready-for-gpu-render
+STATE: ready
+
+**Final video (rendered in the cloud, the PC was off):** `video.mp4` (1080x1920, 24 fps, 624 frames, 26.00 s, -14.2 LUFS, true peak -1.5 dBTP, 14.5 MB, one file, no split), checksum in `video.sha256`.
+Frame count and duration match the silent render (624 frames / 26.00 s); the mix did not trim anything. Build frames deleted.
+Cloud render: SwiftShader, 4 workers, 1.87 fps (5m38s). The GPU commands below stay valid for a re-render.
 
 # short-stopspin-3d: What If the Earth Stopped Spinning for One Second? (Toon 3D remake)
 
