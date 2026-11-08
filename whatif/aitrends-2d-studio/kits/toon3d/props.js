@@ -156,3 +156,60 @@ export function chicken(o = {}) {
 }
 // marble bust of an ancestor/emperor on a plinth (a bean head in marble)
 export const bust = (o = {}) => { const { color = '#ece6dc' } = o; const g = G(rbox(0.7, 1.4, 0.7, shadeHex(color, -0.05), 0, 0.7, 0, 0.05), ball(0.3, color, 0, 1.55, 0, 16), ball(0.38, color, 0, 2.05, 0, 20)); g.children[1].scale.set(1.2, 0.6, 0.9); return done(g); };
+
+// ---------- 1930s / outback pack (emu-war Short) ----------
+// 1930s army truck: cab, bonnet with grille, round fenders, flatbed. .wheels (spin them), .bedTop (local y of the bed floor)
+export function truck(o = {}) {
+  const { color = '#5a6a3a' } = o; const dark = shadeHex(color, -0.3); const g = G();
+  g.add(rbox(1.7, 0.25, 4.4, dark, 0, 0.75, 0, 0.04));                                          // chassis
+  g.add(rbox(1.6, 1.1, 1.3, color, 0, 1.45, 0.75, 0.1), rbox(1.3, 0.75, 1.3, color, 0, 1.25, 1.95, 0.12));   // cab + bonnet
+  g.add(box(1.1, 0.55, 0.06, '#2a2a26', 0, 1.25, 2.61), box(1.3, 0.5, 0.06, '#9fc8e0', 0, 1.65, 1.41));      // grille, windscreen
+  for (const sx of [-0.45, 0.45]) g.add(ball(0.11, '#f2e6b0', sx, 1.35, 2.62, 12));                 // headlamps
+  for (const sx of [-1, 1]) g.add(rbox(0.06, 0.45, 0.8, '#2a2a26', sx * 0.81, 1.6, 0.75, 0.02));      // side windows
+  g.add(rbox(1.9, 0.12, 2.3, shadeHex(color, -0.1), 0, 1.0, -1.15, 0.03));                          // bed floor
+  for (const sx of [-1, 1]) g.add(rbox(0.08, 0.45, 2.3, color, sx * 0.91, 1.28, -1.15, 0.03)); g.add(rbox(1.9, 0.45, 0.08, color, 0, 1.28, -2.28, 0.03));
+  const wheels = []; for (const z of [1.75, -1.4]) for (const sx of [-1, 1]) { const wg = new THREE.Group(); wg.position.set(sx * 0.85, 0.45, z); const tyre = new THREE.Mesh(new THREE.TorusGeometry(0.33, 0.13, 10, 24), toon('#262422')); tyre.rotation.y = Math.PI / 2; tyre.castShadow = true; wg.add(tyre); const hub = cyl(0.2, 0.2, 0.12, '#8a8a80', 0, 0, 0, 14); hub.rotation.z = Math.PI / 2; wg.add(hub); for (let k = 0; k < 4; k++) { const sp = box(0.06, 0.36, 0.05, '#5a5a52', 0, 0, 0); sp.rotation.x = (k * Math.PI) / 4; wg.add(sp); } g.add(wg); wheels.push(wg);
+    const fender = new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.52, 0.32, 16, 1, true, -Math.PI / 2, Math.PI), toon(dark, { side: THREE.DoubleSide })); fender.rotation.z = Math.PI / 2; fender.position.set(sx * 0.85, 0.5, z); g.add(fender); }
+  g.add(blob(2.6, 0.3)); done(g, 2.6); g.wheels = wheels; g.bedTop = 1.06;
+  g.drive = (dist) => { wheels.forEach(w => (w.rotation.x = dist / 0.45)); };
+  return g;
+}
+// Lewis gun on a tripod (prop only; nothing is ever hit). Barrel points +Z.
+export function lewisGun() {
+  const g = G(); const m = '#3a3a36'; const top = new THREE.Group(); top.position.y = 0.95; g.add(top);
+  const shroud = cyl(0.09, 0.09, 1.0, '#4a4a44', 0, 0, 0.35, 14); shroud.rotation.x = Math.PI / 2; top.add(shroud);
+  const muzzle = cyl(0.035, 0.035, 0.25, m, 0, 0, 0.95, 8); muzzle.rotation.x = Math.PI / 2; top.add(muzzle);
+  top.add(rbox(0.12, 0.16, 0.5, m, 0, -0.02, -0.3, 0.03), rbox(0.08, 0.18, 0.4, '#6a4a2a', 0, -0.08, -0.7, 0.03));
+  const drum = cyl(0.26, 0.26, 0.07, m, 0, 0.13, -0.15, 22); top.add(drum); g.drum = drum;
+  for (let i = 0; i < 3; i++) { const a = (i / 3) * Math.PI * 2; const leg = cyl(0.025, 0.025, 1.05, m, Math.sin(a) * 0.3, 0.47, Math.cos(a) * 0.3 - 0.05, 6); leg.rotation.set(Math.cos(a) * 0.3, 0, -Math.sin(a) * 0.3); g.add(leg); }
+  g.top = top; return done(g, 2.2);
+}
+export const ammoBox = (o = {}) => { const g = G(rbox(0.6, 0.35, 0.35, '#5a6a3a', 0, 0.175, 0, 0.03), box(0.62, 0.05, 0.37, '#3a4428', 0, 0.3, 0)); if (o.open) { const lid = rbox(0.6, 0.04, 0.35, '#5a6a3a', 0, 0.4, -0.2, 0.02); lid.rotation.x = -1.2; g.add(lid); } return done(g, 2.2); };
+// chalk scoreboard on two legs. lines: ['EMUS 1', 'ARMY 0']
+export function scoreboard(o = {}) {
+  const { lines = ['EMUS  1', 'ARMY  0'], w = 2.0, h = 1.3, title = 'FINAL SCORE' } = o;
+  const t = canvasTex(512, 340, (x, W, H) => { x.fillStyle = '#26332c'; x.fillRect(0, 0, W, H); x.fillStyle = '#f2ead6'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = '700 44px Fredoka, sans-serif'; x.fillText(title, W / 2, 52); x.fillRect(60, 86, W - 120, 4); x.font = '700 92px Fredoka, sans-serif'; lines.forEach((l, i) => { x.fillStyle = i === 0 ? '#ffd25a' : '#f2ead6'; x.fillText(l, W / 2, 150 + i * 105); }); });
+  const board = new THREE.Mesh(new THREE.PlaneGeometry(w, h), toon('#ffffff', { map: t })); board.position.set(0, 1.55, 0.06); board.userData.noOutline = true;
+  const g = G(rbox(w + 0.2, h + 0.2, 0.1, '#7a5032', 0, 1.55, 0, 0.04), board); for (const sx of [-1, 1]) g.add(cyl(0.05, 0.05, 1.3, '#6a4228', sx * (w / 2 - 0.1), 0.65, -0.05, 8)); g.add(blob(1.2, 0.25)); return done(g, 2.4);
+}
+// outback windmill water pump: lattice tower + tail vane + fan (.fan spins on z)
+export function windmill(o = {}) {
+  const { h = 7 } = o; const g = G(); const m = '#8a8a86';
+  for (const [x, z] of [[-0.8, -0.8], [0.8, -0.8], [-0.8, 0.8], [0.8, 0.8]]) { const leg = cyl(0.05, 0.05, h, m, x * 0.55, h / 2, z * 0.55, 6); leg.rotation.set(-z * 0.11, 0, x * 0.11); g.add(leg); }
+  for (let y = 1.5; y < h; y += 1.6) g.add(box(1.2 * (1 - y / h * 0.6), 0.05, 0.05, m, 0, y, 0.45 * (1 - y / h * 0.6)), box(1.2 * (1 - y / h * 0.6), 0.05, 0.05, m, 0, y, -0.45 * (1 - y / h * 0.6)));
+  const head = new THREE.Group(); head.position.y = h; g.add(head); head.add(rbox(0.3, 0.3, 0.6, '#6a6a66', 0, 0, 0, 0.04)); head.add(box(0.05, 0.8, 1.4, '#c9c4bc', 0, 0.2, -1.2));
+  const fan = new THREE.Group(); fan.position.z = 0.4; head.add(fan); for (let i = 0; i < 12; i++) { const b = box(0.22, 1.2, 0.02, i % 2 ? '#d8d2c8' : '#b8b2a8', 0, 0.75, 0); const piv = new THREE.Group(); piv.rotation.z = (i / 12) * Math.PI * 2; piv.add(b); b.rotation.y = 0.3; fan.add(piv); } fan.add(ball(0.12, '#6a6a66'));
+  g.fan = fan; return done(g, 2.0);
+}
+// eucalyptus / gum tree: pale trunk, branching, clumps of grey-green leaves
+export function gumTree(o = {}) {
+  const { s = 1, seed = 3 } = o; const r = rng(seed); const g = G(); const bark = '#d8cfc0', leaf = ['#7f9a6a', '#6a8a5a', '#8faa78'];
+  const trunk = cyl(0.14 * s, 0.22 * s, 3.2 * s, bark, 0, 1.6 * s, 0, 10); trunk.rotation.z = (r() - 0.5) * 0.15; g.add(trunk);
+  for (let i = 0; i < 3; i++) { const a = (i / 3) * Math.PI * 2 + r(); const br = cyl(0.06 * s, 0.1 * s, 1.6 * s, bark, Math.cos(a) * 0.45 * s, 3.4 * s, Math.sin(a) * 0.45 * s, 8); br.rotation.set(Math.sin(a) * 0.55, 0, -Math.cos(a) * 0.55); g.add(br); }
+  for (let i = 0; i < 7; i++) { const a = r() * Math.PI * 2, d = 0.4 + r() * 0.9; g.add(ball((0.55 + r() * 0.35) * s, leaf[i % 3], Math.cos(a) * d * s, (3.7 + r() * 1.0) * s, Math.sin(a) * d * s, 12)); }
+  g.add(blob(1.4 * s, 0.22)); return done(g, 2.2);
+}
+// post-and-wire farm fence along X (length len)
+export function fence(o = {}) { const { len = 12, gap = 2.0 } = o; const g = G(); for (let x = -len / 2; x <= len / 2 + 0.01; x += gap) g.add(cyl(0.07, 0.08, 1.3, '#7a6448', x, 0.65, 0, 7)); for (const y of [0.55, 0.95, 1.2]) { const wire = cyl(0.012, 0.012, len, '#5a5a56', 0, y, 0, 4); wire.rotation.z = Math.PI / 2; g.add(wire); } return done(g, 1.8); }
+// field desk with papers and an inkwell (the commander's report)
+export const fieldDesk = () => { const g = G(rbox(1.5, 0.08, 0.8, '#7a5a3a', 0, 0.95, 0, 0.02)); for (const sx of [-1, 1]) for (const sz of [-1, 1]) g.add(cyl(0.03, 0.03, 0.95, '#5a4028', sx * 0.65, 0.475, sz * 0.32, 6)); const paper = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.01, 0.56), toon('#f2ead6')); paper.position.set(0.1, 1.0, 0.05); paper.rotation.y = 0.15; g.add(paper); g.add(cyl(0.05, 0.06, 0.08, '#2a2a3a', -0.45, 1.03, -0.15, 10)); g.paper = paper; return done(g, 2.2); };

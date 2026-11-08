@@ -21,3 +21,5 @@ __pycache__/
 whatif/aitrends-2d-studio/projects/*/out/
 whatif/aitrends-2d-studio/kits/*/sheet/build/
 whatif/aitrends-2d-studio/examples/*/build/
+iawaken/shorts/*/project/build/
+iawaken/shorts/*/project/out/

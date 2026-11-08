@@ -1,0 +1,221 @@
+{
+ "duration": 34.9,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.92,
+   "line": "Australia declared war on birds.",
+   "scene": "charge",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.92,
+   "end": 3.96,
+   "line": "And lost.",
+   "scene": "commander",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.96,
+   "end": 6.28,
+   "line": "The army brought machine guns.",
+   "scene": "guns"
+  },
+  {
+   "id": "s04",
+   "start": 6.28,
+   "end": 7.67,
+   "line": "The emus brought...",
+   "scene": "general"
+  },
+  {
+   "id": "s05",
+   "start": 7.67,
+   "end": 8.6,
+   "line": "running.",
+   "scene": "sprint",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -6
+    },
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.6,
+   "end": 10.63,
+   "line": "It's 1932.",
+   "scene": "farm",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s07",
+   "start": 10.63,
+   "end": 12.9,
+   "line": "About twenty thousand emus are eating",
+   "scene": "flock"
+  },
+  {
+   "id": "s08",
+   "start": 12.9,
+   "end": 15.07,
+   "line": "the wheat in Western Australia.",
+   "scene": "farmer"
+  },
+  {
+   "id": "s09",
+   "start": 15.07,
+   "end": 17.94,
+   "line": "So the soldiers mount a gun on a truck.",
+   "scene": "truck",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "kick",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 17.94,
+   "end": 20.03,
+   "line": "The emus are faster than the truck.",
+   "scene": "chase",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "carpass",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 20.03,
+   "end": 22.45,
+   "line": "Thousands of rounds later,",
+   "scene": "ammo",
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s12",
+   "start": 22.45,
+   "end": 25.7,
+   "line": "the commander reported nine hundred and eighty-six birds.",
+   "scene": "report"
+  },
+  {
+   "id": "s13",
+   "start": 25.7,
+   "end": 27.27,
+   "line": "Out of twenty thousand.",
+   "scene": "stare",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "swish",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 27.27,
+   "end": 28.68,
+   "line": "The army went home.",
+   "scene": "leave",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "carpass",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 28.68,
+   "end": 30.07,
+   "line": "The emus stayed.",
+   "scene": "stayed"
+  },
+  {
+   "id": "s16",
+   "start": 30.07,
+   "end": 33.26,
+   "line": "Final score: Emus, one. Army, zero.",
+   "scene": "score",
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "ding",
+     "gain": -10
+    },
+    {
+     "at": 2.3,
+     "name": "ding",
+     "gain": -12,
+     "pitch": 0.8
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 33.26,
+   "end": 34.9,
+   "line": "Subscribe for more.",
+   "scene": "loop",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ]
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 34.9,
+   "mood": "playful",
+   "intensity": 0.5
+  }
+ ]
+}

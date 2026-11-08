@@ -133,4 +133,31 @@ export function applyLight(st, name, extra = {}) {
   if (L.bg) st.scene.background = Array.isArray(L.bg) ? canvasTex(4, 256, (x, w, h) => { const gr = x.createLinearGradient(0, 0, 0, h); L.bg.forEach((c, i) => gr.addColorStop(i / (L.bg.length - 1), c)); x.fillStyle = gr; x.fillRect(0, 0, w, h); }) : new THREE.Color(L.bg);
   st.exposure = L.exposure ?? 1;
 }
-export const SETS = { romanStreet, romanHouse, cityGate };
+
+// ---------------------------------------------------------------------------------------------
+// OUTBACK WHEAT FARM (Western Australia, 1930s): ochre ground, a golden wheat field (instanced stalks), wire fence,
+// windmill pump, gum trees, a tin-roof farmhouse, low hills. Options: { wheat: true, field: [w, d, z0], seed }
+// Extras: windmill (.fan), wheatMesh. Spots: field, road, fence, house.
+export function outbackFarm(st, o = {}) {
+  const { wheat = true, seed = 4, field = [26, 22, -4] } = o; const g = new THREE.Group(); st.add(g); const fx = fxList(); const r = rng(seed);
+  const dirt = PR.TEX.plaster('#c9965a', [8, 8]); const gr = texFloor(160, 160, dirt); gr.position.z = -40; g.add(gr);
+  const road = texFloor(3.2, 120, PR.TEX.plaster('#b98a58', [1, 30])); road.position.set(-7, 0.01, -20); g.add(road);
+  let wheatMesh = null;
+  if (wheat) { const [fw, fd, fz] = field; const n = Math.round(fw * fd * 9); const geo = new THREE.ConeGeometry(0.06, 1.0, 4); geo.translate(0, 0.5, 0);
+    wheatMesh = new THREE.InstancedMesh(geo, toon('#e0b452'), n); const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), col = new THREE.Color(); const cs = ['#e0b452', '#d4a242', '#ebc468', '#c99a3a'];
+    for (let i = 0; i < n; i++) { const x = (r() - 0.5) * fw, z = fz + (r() - 0.5) * fd; e.set((r() - 0.5) * 0.3, r() * 3, (r() - 0.5) * 0.3); q.setFromEuler(e); const h = 0.5 + r() * 0.3; m4.compose(new THREE.Vector3(x, 0, z), q, new THREE.Vector3(1, h, 1)); wheatMesh.setMatrixAt(i, m4); wheatMesh.setColorAt(i, col.set(cs[i % 4])); }
+    wheatMesh.receiveShadow = true; wheatMesh.castShadow = false; g.add(wheatMesh);
+    const fb = texFloor(fw, fd, PR.TEX.plaster('#c8a050', [4, 4])); fb.position.set(0, 0.008, fz); g.add(fb); }
+  const fc = PR.fence({ len: 30 }).at(0, 0, field[2] + field[1] / 2 + 0.6); g.add(fc);
+  const wm = PR.windmill({ h: 7 }).at(9, 0, -18, -0.4); g.add(wm); fx.push({ update: (t) => (wm.fan.rotation.z = t * 2.2) });
+  g.add(PR.gumTree({ s: 1.3, seed: 2 }).at(-11, 0, -14), PR.gumTree({ s: 1.0, seed: 5 }).at(13, 0, -6), PR.gumTree({ s: 1.5, seed: 8 }).at(-16, 0, -32), PR.gumTree({ s: 1.1, seed: 9 }).at(18, 0, -30));
+  // farmhouse with a corrugated tin roof
+  const house = PR.facade({ w: 6, h: 3.2, d: 4, color: '#e8dcc0', trim: '#8a8a86', windows: 2 }).at(-14, 0, -24, 0.35); g.add(house);
+  const hill = new THREE.Mesh(new THREE.SphereGeometry(40, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2), toon('#b88a5a')); hill.scale.set(1.6, 0.12, 0.4); hill.position.set(0, 0, -95); hill.userData.noOutline = true; g.add(hill);
+  return {
+    group: g, fx, update: fx.run, windmill: wm, wheatMesh,
+    spots: { field: [0, -4], road: [-7, 2], fence: [0, field[2] + field[1] / 2 + 0.6], house: [-14, -21] },
+    cams: { wide: { pos: [0, 3.2, 14], look: [0, 1.5, -4], fov: 44 }, low: { pos: [0.5, 0.6, 8], look: [0, 2.2, -2], fov: 46 } },
+  };
+}
+export const SETS = { romanStreet, romanHouse, cityGate, outbackFarm };
