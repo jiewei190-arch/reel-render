@@ -1,4 +1,4 @@
-STATE: ready-for-gpu-render
+STATE: ready
 
 # Toon 3D kit + test Short "The Day Rome Got Sacked" (branch iawaken/toon3d, draft PR #11)
 
@@ -14,10 +14,17 @@ STATE: ready-for-gpu-render
 - 9:16, 1080x1920, 30 fps, **38.85 s**, 15 shots. HOOK (gate, 410, the Roman HERO as the bored guard) -> BUILD-UP (the gate opens "from the inside", silhouettes, 3 days of looting, the 408 pepper ransom) -> PAYOFF (Honorius in Ravenna and his chicken "Roma", "Or so the story goes.") -> closer: "How did the greatest empire on Earth end up here? **Subscribe to find out.**" (spoken, caption, and a gold "SUBSCRIBE TO FIND OUT" end card).
 - Narrator: Kokoro **am_fenrir** via `whatif/voice/fenrir.py --gap 0.3 --comma 0.15 --lead 0.15` (shortened gaps; new opt-in flags, defaults unchanged). 102 words. Only the closer was re-voiced (same settings) and spliced into the original take at its sentence gap (36.56 s); all earlier word timings are unchanged. **Voice is synthetic.**
 - Facts and softened claims: `projects/rome-sacked-short/sources.md` (Britannica, Procopius, Zosimus, Orosius, Heather). No gore: fire, smoke, silhouettes, sound.
-- **Preview (half scale, with mixed audio):** `projects/rome-sacked-short/preview/rome_sacked_preview_540x960.mp4` (new ending; loudness in the commit message). Contact sheet: `preview/contact_sheet.png`.
+- **Preview (half scale, with mixed audio):** `projects/rome-sacked-short/preview/rome_sacked_preview_540x960.mp4` (new ending; -14.5 LUFS, TP -1.1 dBFS). Contact sheet: `preview/contact_sheet.png`.
 - Cloud render speed (SwiftShader, 4 vCPUs, no GPU): 540x960 = 3.4 fps (the Short in ~5m40s). Full res would be ~4x slower, so the full render is for the PC GPU.
 
-## Full-res render on the owner's PC (GPU), from `reel-render\whatif\aitrends-2d-studio` (Git Bash or PowerShell with the kit PATH, see SETUP_NOTES.md)
+## FINAL VIDEO (rendered in the cloud, Nov 8; the owner's PC was off)
+- **`iawaken/shorts/rome-sacked-short/video.mp4`**: 1080x1920, 30 fps, 1166 frames, 38.87 s (audio 38.85 s), H.264 + AAC, **-14.5 LUFS, true peak -1.1 dBFS**, 26.7 MB (no split needed).
+- `video.sha256`: `dcf4998651c8ed5f1a6ef02d4016d50e883d73f1dc5c810874e37f7583e7cda4  video.mp4` (Git Bash: `sha256sum -c video.sha256`; PowerShell: `Get-FileHash video.mp4 -Algorithm SHA256`).
+- How: `CHROMIUM_PATH=/opt/pw-browsers/chromium node render.mjs --project projects/rome-sacked-short --workers 4` (SwiftShader, 16m12s, ~1.2 fps) -> `python3 audio/mix.py --project projects/rome-sacked-short`.
+  mix.py's output had 1165 frames (it trims the last frame), so the final file is the full 1166-frame silent render with the mixed audio stream copied in (`ffmpeg -i build/video_silent.mp4 -i out/The_Day_Rome_Got_Sacked.mp4 -map 0:v:0 -map 1:a:0 -c copy -movflags +faststart video.mp4`).
+- Description must include "Voice is synthetic." Sources: `whatif/aitrends-2d-studio/projects/rome-sacked-short/sources.md`. Closer: "Subscribe to find out." (playbook "Short closers").
+
+## Re-render on the owner's PC (GPU), only if a change is needed, from `reel-render\whatif\aitrends-2d-studio` (Git Bash or PowerShell with the kit PATH, see SETUP_NOTES.md)
 ```
 git fetch origin iawaken/toon3d && git checkout iawaken/toon3d && git pull
 cd whatif/aitrends-2d-studio
