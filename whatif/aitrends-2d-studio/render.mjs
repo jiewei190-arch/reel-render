@@ -1,6 +1,7 @@
 // render.mjs — deterministic frame renderer (headless Chromium -> ffmpeg), parallel workers.
 //   node render.mjs --project projects/my-video                      full video  -> build/video_silent.mp4
 //   node render.mjs --project P --from 30 --to 45 --scale 0.5         preview a range
+//   node render.mjs --project P --shots s001-s040 [--out F]          full-res silent part for that shot range (-> build/silent_s001-s040.mp4)
 //   node render.mjs --project P --sheet                               one still per shot -> build/sheets/*.png
 //   node render.mjs --project P --stills 3.5,12,40                    stills at times -> build/stills
 //   node render.mjs --project P --ids s001,s010-s020 [--sheet]       3 stills per shot (start+0.3, mid, end-0.3), or a sheet of only those ids
@@ -38,6 +39,15 @@ const LAUNCH = { ...(CHROME ? { executablePath: CHROME } : {}), args: ['--ignore
 const FORMAT = args.format === 'jpeg' ? 'jpeg' : 'png';
 const CFG = JSON.parse(fs.readFileSync(path.join(PROJECT, 'config.json'), 'utf8'));
 const FPS = CFG.fps || 24;
+// --shots s001-s040 (or one id): render exactly that shot range = --from <start of first> --to <end of last> (frame-exact; adjacent ranges
+// share their boundary frame index, so the parts concat with no gap or overlap). Used to split a full-res render across machines.
+if (args.shots) {
+  const SL = JSON.parse(fs.readFileSync(path.join(PROJECT, args.story || 'story/shots.json'), 'utf8')).shots;
+  const [a0, b0] = String(args.shots).split('-'), A = SL.find(s => s.id === a0), B = SL.find(s => s.id === (b0 || a0));
+  if (!A || !B) { console.error(`--shots ${args.shots}: id not found in shots.json`); process.exit(1); }
+  args.from = String(A.start); args.to = String(B.end);
+  if (!args.out) args.out = path.join(BUILD, `silent_${A.id}-${B.id}.mp4`);
+}
 
 async function openPlayer(browser, style) {
   const qs = new URLSearchParams(); if (args.scale) qs.set('scale', args.scale); if (style || args.style) qs.set('style', style || args.style); if (args.debug) qs.set('debug', '1'); if (args.story) qs.set('story', args.story);
@@ -60,7 +70,7 @@ async function renderVideo() {
   await b0.close();
   const f0 = Math.max(0, Math.round((+args.from || 0) * fps)), f1 = Math.min(total, args.to ? Math.round(+args.to * fps) : total);
   const W = Math.max(1, Math.min(+(args.workers || Math.max(1, Math.min(8, Math.floor(os.cpus().length / 2)))), Math.ceil((f1 - f0) / 24)));
-  const partsDir = path.join(BUILD, 'parts'); fs.rmSync(partsDir, { recursive: true, force: true }); fs.mkdirSync(partsDir, { recursive: true });
+  const partsDir = path.join(BUILD, args.shots ? `parts_${String(args.shots)}` : 'parts'); fs.rmSync(partsDir, { recursive: true, force: true }); fs.mkdirSync(partsDir, { recursive: true });
   const chunk = Math.ceil((f1 - f0) / W); let done = 0; const t0 = Date.now(); const errs = new Set();
   console.log(`Rendering frames ${f0}-${f1} (${((f1 - f0) / fps).toFixed(1)} s) with ${W} worker(s)…`);
   const work = async (k) => {
