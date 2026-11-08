@@ -9,23 +9,23 @@ Spoken text = the numbered lines only. Every fact is sourced in `sources.md`.
    - Frame 1: the hero mid-shrink, spinning down past a giant sneaker, grass blades shooting up around them. "ANT SIZE" chip.
 
 ## BUILD-UP (3-~16 s)
-2. Grass towers over you like a forest.
+2. Grass becomes a forest.
    - Low angle, blades like trees, a dew drop the size of a car glinting.
-3. Then a gust of wind throws you off a skyscraper.
+3. Then a gust throws you off a skyscraper.
    - Rooftop edge, the hero swept off, city far below.
-4. A hundred floors down. No parachute.
+4. A hundred floors. No parachute.
    - Gold "100 FLOORS" counter ticking, the hero tumbling, buildings racing.
-5. A human would hit the ground at around two hundred kilometres an hour.
+5. Full size, you'd hit at around two hundred kilometres an hour.
    - Blueprint split: human silhouette vs ant-size you, gold "~200 km/h".
 
 ## PAYOFF (~16-28 s)
-6. But tiny bodies barely fall. The air holds you back.
+6. But tiny bodies barely fall. The air holds you.
    - The tumble slows, air streamlines curling around the tiny hero, gold "~7 km/h".
-7. You land at walking speed, and simply walk away.
+7. You land at walking speed, and walk away.
    - Soft landing on the pavement, the hero dusts off and strolls. Delight face.
-8. Then one raindrop lands on you, and it won't let go.
+8. Then one raindrop grabs you, and won't let go.
    - A huge clear drop engulfs the hero, they push against the bubble wall. "SURFACE TENSION" chip.
-9. For an ant, water is scarier than gravity.
+9. For you, water is scarier than gravity.
    - Giant face inside the drop, wide eyes.
-10. Would you risk it? Follow for more What Ifs.
-   - Closer, then a hard cut (end card at most 1 s).
+10. Would you risk it?
+   - Closer, then a hard cut; end card "Follow for more What Ifs." (at most 1 s).
