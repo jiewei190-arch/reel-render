@@ -220,7 +220,7 @@ export function sign(o = {}) {
   const { lines = ['NO DOGS'], w = 1.5, h = 0.95, post = true, bg = '#f2ead6', fg = '#2a1e1a', sub = null, postH = 1.6 } = o;
   const t = cached(`sg${lines.join('|')}${sub}${bg}`, () => canvasTex(512, Math.round(512 * h / w), (g, W, H) => { g.fillStyle = bg; g.fillRect(0, 0, W, H); g.strokeStyle = '#7a1e1e'; g.lineWidth = 14; g.strokeRect(14, 14, W - 28, H - 28);
     g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle'; const fs = Math.min(120, (H * (sub ? 0.62 : 0.8)) / lines.length); g.font = `700 ${fs}px "Playfair Display", serif`;
-    lines.forEach((L, i) => g.fillText(L, W / 2, H * (sub ? 0.42 : 0.5) + (i - (lines.length - 1) / 2) * fs * 1.05));
+    const fit = Math.min(1, (W - 80) / Math.max(...lines.map(L => g.measureText(L).width))); const fs2 = fs * fit; g.font = `700 ${fs2}px "Playfair Display", serif`; lines.forEach((L, i) => g.fillText(L, W / 2, H * (sub ? 0.42 : 0.5) + (i - (lines.length - 1) / 2) * fs2 * 1.05));
     if (sub) { g.font = `italic 600 ${fs * 0.36}px "Playfair Display", serif`; g.fillText(sub, W / 2, H * 0.8); } }));
   const g = G(); const bd = rbox(w + 0.1, h + 0.1, 0.08, '#5a3a22', 0, post ? postH + h / 2 : h / 2, 0, 0.03); g.add(bd);
   const face = new THREE.Mesh(new THREE.PlaneGeometry(w, h), texMat(t)); face.position.set(0, bd.position.y, 0.045); face.userData.noOutline = true; g.add(face); g.board = face; g.boardY = bd.position.y;

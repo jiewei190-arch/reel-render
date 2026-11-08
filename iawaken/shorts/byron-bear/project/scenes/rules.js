@@ -21,7 +21,7 @@ registerShot('s04', { kind: '3d',
   draw(s, t, info) { s.set.update(t); const b = at(info, 'bears.', 0.8); const up = ease.inOut(prog(t, b - 0.35, b));
     s.po.pose(addPose({ ...POSE.holdFront, lean: 0.35 * (1 - up), headNod: 0.55 * (1 - up) }, idle(t, 3))); s.po.face(mixExpr({ ...EXPR.neutral, pupil: [0, -0.8], lid: 0.45 }, { ...EXPR.deadpan, pupil: [0, 0], lid: 0.5 }, up), t);
     const lean = ease.outBack(prog(t, b + 0.15, b + 0.45)); s.be.position.x = lerp(7.4, 6.45, clamp(lean)); s.be.update(t, { lid: 0.3, look: [-0.4, 0], headTilt: -0.25 * lean, wave: clamp(lean), smile: 1 });
-    camMove(s.stage, t, [[0, { pos: [5.6, 2.3, 10.2], look: [5.6, 1.8, 3.6], fov: 28 }], [info.dur, { pos: [5.6, 2.25, 9.6], look: [5.6, 1.8, 3.6], fov: 28 }]]); },
+    camMove(s.stage, t, [[0, { pos: [5.45, 2.3, 10.2], look: [5.45, 1.8, 3.6], fov: 30 }], [info.dur, { pos: [5.45, 2.25, 9.6], look: [5.45, 1.8, 3.6], fov: 30 }]]); },
   overlay(g, t, info) { const b = at(info, 'bears.', 0.8); tag(g, 'BEARS: NOT MENTIONED', ease.out(prog(t, b, b + 0.3)), 0.14); },
 });
 // s07 "Dogs? Not allowed." — the porter by the NO DOGS sign wags a finger; banned-dog badge pops
