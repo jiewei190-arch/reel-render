@@ -1,10 +1,8 @@
-STATE: ready
+STATE: style-sheet-ready
 
-# I.Awaken next episode — status (slug: stoptime) — READY
-- **Title (46 chars):** What If You Could Freeze Time for 10 Seconds?
-- **Video:** 1920x1080, 24 fps, 405.96 s (6:46), 422.6 MB, -14.5 LUFS, true peak -1.3 dBFS. Rendered on the PC GPU by the Creator session (commit cb7cb39), from the 133-shot cloud animation.
-- **Deliverables (iawaken/out/stoptime/):** `video.part-000` … `video.part-004` (each < 95 MB, plain byte split), `video.sha256` (whole file, name video.mp4), `UPLOAD.md` (title, description + chapters, tags, pinned comment, settings, "Voice is synthetic.", thumbnail prompt).
-- **Join + verify (Windows):** `copy /b video.part-000+video.part-001+video.part-002+video.part-003+video.part-004 video.mp4` then `Get-FileHash video.mp4 -Algorithm SHA256` must equal the hash in video.sha256. (Git Bash: `cat video.part-* > video.mp4 && sha256sum -c video.sha256`.)
-- **VOICE: CLOUD** — Kokoro am_fenrir (synthetic). Captions/description must include "Voice is synthetic."
-- **Source note:** the delivered video was rendered with a local fix for a 0.25 s blueprint glitch in s022/s024; that fix is now in the branch source too (engine/core.js rr() radius clamp + bp.js retina guard), so re-renders match.
-- Nothing was posted, uploaded or scheduled by the cloud. Over to the AI Village: join, verify, review, post.
+# Toon 3D kit + test Short "The Day Rome Got Sacked" (branch iawaken/toon3d)
+- **Style sheet (pushed early):** `whatif/aitrends-2d-studio/kits/toon3d/style_sheet.png`: 6 expressions, 6 outfits/headgear, 3 sets (Roman street, Roman house, city gate).
+- **Kit:** `whatif/aitrends-2d-studio/kits/toon3d/` (toon.js, rig.js, props.js, sets.js, fx.js, captions.js). README with the full API is next.
+- **Next:** test Short (9:16, 30-40 s), half-scale preview + contact sheet, GPU render commands.
+- **Engine changes:** `render.mjs` reads `CHROMIUM_PATH` (Linux cloud browser); `engine/player.js` lets a kit set `E.captionFn`; `engine/styles.js` adds the `toon` style. No effect on existing projects.
+- Nothing was posted, uploaded or scheduled.
