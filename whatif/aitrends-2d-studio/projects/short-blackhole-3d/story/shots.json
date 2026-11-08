@@ -1,0 +1,445 @@
+{
+ "title": "What If You Fell Into a Black Hole?",
+ "duration": 25.7,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.02,
+   "line": "What if you fell into a black hole?",
+   "scene": "HOOK: hero tumbling toward a giant glowing black hole from frame 1, title lock-up top",
+   "set": "space",
+   "type": "insert",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -8,
+     "pitch": 0.7
+    },
+    {
+     "at": 0,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.9,
+     "name": "riser",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s002",
+   "start": 2.02,
+   "end": 3.25,
+   "line": "At first, nothing.",
+   "scene": "medium: hero drifting, calm, shrug on 'nothing'",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s003",
+   "start": 3.25,
+   "end": 4.47,
+   "line": "You just fall.",
+   "scene": "over-the-shoulder wide: hero small against the huge disk, sliding down toward it",
+   "set": "space",
+   "type": "wide",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s004",
+   "start": 4.47,
+   "end": 5.55,
+   "line": "But gravity pulls",
+   "scene": "medium: hero feet-first, eyes snap down to his feet, a gold pull glow grabs the shoes",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.2
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s005",
+   "start": 5.55,
+   "end": 7.29,
+   "line": "your feet harder than your head.",
+   "scene": "BLUEPRINT: body outline, long gold arrow at the feet on 'feet', short arrow at the head on 'head'",
+   "set": "space",
+   "type": "graphic",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.13,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.13,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s006",
+   "start": 7.29,
+   "end": 8.69,
+   "line": "And it gets worse.",
+   "scene": "GIANT FACE: worried -> shocked on 'worse', red-orange light floods",
+   "set": "space",
+   "type": "face",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s007",
+   "start": 8.69,
+   "end": 10.19,
+   "line": "Near a small black hole,",
+   "scene": "small fierce black hole, chip '10 SUNS', hero approaching, wary",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 0,
+     "name": "hum",
+     "gain": -22,
+     "dur": 1.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s008",
+   "start": 10.19,
+   "end": 12.8,
+   "line": "that pull stretches you thin like spaghetti.",
+   "scene": "cartoon rubber-band stretch: hero pulled long and thin on 'stretches', noodle wiggle on 'spaghetti' (comic, no injury)",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "slowmo",
+     "gain": -12
+    },
+    {
+     "at": 1.7,
+     "name": "swish",
+     "gain": -10
+    },
+    {
+     "at": 2.05,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s009",
+   "start": 12.8,
+   "end": 15.41,
+   "line": "Scientists really call it spaghettification.",
+   "scene": "scientist (LIN, labcoat) at a chalkboard, gold word chip SPAGHETTIFICATION pops on the word, hero noodle sheepish in the corner",
+   "set": "lab",
+   "type": "two-shot",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.38,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s010",
+   "start": 15.41,
+   "end": 17.21,
+   "line": "But fall into a giant one,",
+   "scene": "REVEAL: enormous black hole fills the frame, hero normal size again, awe on 'giant'",
+   "set": "space",
+   "type": "wide",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "stinger",
+     "gain": -12,
+     "minor": false
+    },
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s011",
+   "start": 17.21,
+   "end": 18.79,
+   "line": "millions of suns heavy,",
+   "scene": "tiny suns stream into the giant hole, gold counter '4,300,000 SUNS' on 'millions'",
+   "set": "space",
+   "type": "graphic",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "counter",
+     "gain": -16
+    },
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s012",
+   "start": 18.79,
+   "end": 20.9,
+   "line": "and you'd cross the point of no return",
+   "scene": "hero floats calmly through the dashed gold EVENT HORIZON ring on 'cross'",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s013",
+   "start": 20.9,
+   "end": 22.8,
+   "line": "without even noticing.",
+   "scene": "hero relaxed, lying back, cheeky smile on 'noticing', chip 'FELT NOTHING (YET)'",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.55,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s014",
+   "start": 22.8,
+   "end": 23.95,
+   "line": "Which one would you pick?",
+   "scene": "split: SMALL vs GIANT black hole, hero in the middle looks left then right on 'pick', hard cut",
+   "set": "space",
+   "type": "two-shot",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s015",
+   "start": 23.95,
+   "end": 25.7,
+   "line": "Subscribe for more.",
+   "scene": "CLOSER: hero grins and waves, gold SUBSCRIBE FOR MORE pill pops; the hole tugs him away (loops to frame 1)",
+   "set": "space",
+   "type": "medium",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 1.35,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -36
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 7.29,
+   "mood": "mystery",
+   "intensity": 0.5,
+   "note": "hook + falling"
+  },
+  {
+   "start": 7.29,
+   "end": 15.41,
+   "mood": "tension",
+   "intensity": 0.55,
+   "note": "it gets worse, spaghetti"
+  },
+  {
+   "start": 15.41,
+   "end": 25.7,
+   "mood": "wonder",
+   "intensity": 0.5,
+   "note": "payoff: the giant one"
+  }
+ ]
+}
