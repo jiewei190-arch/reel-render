@@ -1,4 +1,4 @@
-STATE: ready-for-gpu-render
+STATE: ready
 # short-earthhole-3d: "What If You Jumped Into a Hole Through the Earth?" (Toon 3D remake)
 
 - Duration: **29.75 s** = 714 frames at 24 fps, 1080x1920 (9:16), style `toon`, Toon 3D captions (kits/toon3d/captions.js, y 0.70, gold numbers/key words).
@@ -11,9 +11,10 @@ STATE: ready-for-gpu-render
 - Preview: `preview_short-earthhole-3d.mp4` (540x960, 714 frames, 29.75 s, mixed): **-14.4 LUFS integrated, -1.3 dBFS true peak**. Cloud SwiftShader render took 2m27s (4 workers).
 - QC: `contact_short-earthhole-3d.png` (one frame per shot at its midpoint + the last frame). Facts and chips unchanged from the 2D version; new chips "+35 km/h EVERY SECOND" and "ABOUT 28,800 km/h" are sourced in sources.md.
 - Files: project `whatif/aitrends-2d-studio/projects/short-earthhole-3d/` (config.json, input/voiceover.wav [committed with -f], input/script.txt, timeline/, story/shots.json, scenes/{kit,_lib,polar,shaft,globe,core}.js); here: script.md, sources.md, UPLOAD.md, voice/closer.md + voice/closer_fenrir.wav.
-- NOT posted, uploaded or scheduled. The full-resolution render was NOT done in the cloud.
+- **Final: `video.mp4`** (1080x1920, 24 fps, 714 frames, 29.75 s, H.264 + AAC), rendered in the cloud on the main session's go-ahead (owner's PC off): SwiftShader, 4 workers, 7m14s. Mixed with audio/mix.py: **-14.4 LUFS integrated, -1.3 dBFS true peak**. Video and audio both 29.75 s; frame count = silent render (714), mix.py trimmed nothing. Checksum in `video.sha256`.
+- NOT posted, uploaded or scheduled.
 
-## PC GPU render + mix (Creator session). Git Bash, from the repo root, kit PATH set as in whatif/aitrends-2d-studio/SETUP_NOTES.md
+## Re-render on the PC (only if needed; the final is already here). PC GPU render + mix (Creator session). Git Bash, from the repo root, kit PATH set as in whatif/aitrends-2d-studio/SETUP_NOTES.md
     git fetch origin iawaken/short-earthhole-3d && git checkout iawaken/short-earthhole-3d
     cd whatif/aitrends-2d-studio
     export PATH="$PWD/bin:$PWD/.venv/Scripts:$PATH"
