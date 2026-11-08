@@ -17,7 +17,7 @@ registerShot('s09', { kind: '3d',
   init(T) { const s = room(T); writer(s); return s; },
   draw(s, t, info) { s.set.update(t); s.lt.setText(LINES, 0); s.by.pose(addPose(addPose(WRITE, scribble(t)), idle(t, 2, 0.5))); s.by.face({ ...EXPR.happy, lid: 0.45, pupil: [0, -0.6] }, t);
     camMove(s.stage, t, [[0, { pos: [0.5, 2.5, 5.2], look: [0.1, 1.55, -1.2], fov: 36 }], [info.dur, { pos: [0.35, 2.3, 3.6], look: [0.1, 1.6, -1.2], fov: 34 }]]); },
-  overlay(g, t, info) { const y = at(info, 'eighteen-oh-seven,', 0.15); tag(g, 'CAMBRIDGE, 1807', ease.out(prog(t, y, y + 0.3)), 0.14); },
+  overlay(g, t, info) { const y = at(info, '1807,', 0.15); tag(g, 'CAMBRIDGE, 1807', ease.out(prog(t, y, y + 0.3)), 0.14); },
 });
 // s10 "I have a new friend," — the letter: Byron's real words appear in handwriting under the quill
 registerShot('s10', { kind: '3d',
