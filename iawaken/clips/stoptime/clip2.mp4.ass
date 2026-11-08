@@ -1,0 +1,91 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+Style: End,Inter ExtraBold,84,&H0040C8FF,&H0040C8FF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,22,0,8,80,80,1395,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:29.76,Title,,0,0,0,,You can't BREATHE frozen air
+Dialogue: 1,0:00:28.26,0:00:29.86,End,,0,0,0,,{\fad(120,0)}Full story on the channel.
+Dialogue: 0,0:00:00.12,0:00:00.28,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} STEP FORWARD,
+Dialogue: 0,0:00:00.28,0:00:00.50,Cap,,0,0,0,,YOU {\c&H00E6FF&}STEP{\c&HFFFFFF&} FORWARD,
+Dialogue: 0,0:00:00.50,0:00:00.90,Cap,,0,0,0,,YOU STEP {\c&H00E6FF&}FORWARD,{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.90,0:00:01.18,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} WALK INTO
+Dialogue: 0,0:00:01.18,0:00:01.40,Cap,,0,0,0,,AND {\c&H00E6FF&}WALK{\c&HFFFFFF&} INTO
+Dialogue: 0,0:00:01.40,0:00:01.66,Cap,,0,0,0,,AND WALK {\c&H00E6FF&}INTO{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.66,0:00:02.00,Cap,,0,0,0,,{\c&H00E6FF&}SOMETHING{\c&HFFFFFF&} SOFT.
+Dialogue: 0,0:00:02.00,0:00:03.08,Cap,,0,0,0,,SOMETHING {\c&H00E6FF&}SOFT.{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.20,0:00:03.42,Cap,,0,0,0,,{\c&H00E6FF&}LIKE{\c&HFFFFFF&} A MATTRESS
+Dialogue: 0,0:00:03.42,0:00:03.54,Cap,,0,0,0,,LIKE {\c&H00E6FF&}A{\c&HFFFFFF&} MATTRESS
+Dialogue: 0,0:00:03.54,0:00:03.84,Cap,,0,0,0,,LIKE A {\c&H00E6FF&}MATTRESS{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.84,0:00:04.04,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} CAN'T SEE.
+Dialogue: 0,0:00:04.04,0:00:04.30,Cap,,0,0,0,,YOU {\c&H00E6FF&}CAN'T{\c&HFFFFFF&} SEE.
+Dialogue: 0,0:00:04.30,0:00:05.16,Cap,,0,0,0,,YOU CAN'T {\c&H00E6FF&}SEE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.20,0:00:05.46,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} TRY TO
+Dialogue: 0,0:00:05.46,0:00:05.68,Cap,,0,0,0,,YOU {\c&H00E6FF&}TRY{\c&HFFFFFF&} TO
+Dialogue: 0,0:00:05.68,0:00:05.82,Cap,,0,0,0,,YOU TRY {\c&H00E6FF&}TO{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.82,0:00:06.70,Cap,,0,0,0,,{\c&H00E6FF&}GASP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.00,0:00:07.24,Cap,,0,0,0,,{\c&H00E6FF&}NOTHING{\c&HFFFFFF&} COMES IN.
+Dialogue: 0,0:00:07.24,0:00:07.52,Cap,,0,0,0,,NOTHING {\c&H00E6FF&}COMES{\c&HFFFFFF&} IN.
+Dialogue: 0,0:00:07.52,0:00:08.34,Cap,,0,0,0,,NOTHING COMES {\c&H00E6FF&}IN.{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.34,0:00:08.68,Cap,,0,0,0,,{\c&H00E6FF&}AIR{\c&HFFFFFF&} LOOKS LIKE
+Dialogue: 0,0:00:08.68,0:00:08.88,Cap,,0,0,0,,AIR {\c&H00E6FF&}LOOKS{\c&HFFFFFF&} LIKE
+Dialogue: 0,0:00:08.88,0:00:09.12,Cap,,0,0,0,,AIR LOOKS {\c&H00E6FF&}LIKE{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.12,0:00:09.50,Cap,,0,0,0,,{\c&H00E6FF&}NOTHING,{\c&HFFFFFF&} BUT IT'S
+Dialogue: 0,0:00:09.50,0:00:09.78,Cap,,0,0,0,,NOTHING, {\c&H00E6FF&}BUT{\c&HFFFFFF&} IT'S
+Dialogue: 0,0:00:09.78,0:00:09.98,Cap,,0,0,0,,NOTHING, BUT {\c&H00E6FF&}IT'S{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.98,0:00:10.22,Cap,,0,0,0,,{\c&H00E6FF&}PACKED{\c&HFFFFFF&} WITH MOLECULES.
+Dialogue: 0,0:00:10.22,0:00:10.46,Cap,,0,0,0,,PACKED {\c&H00E6FF&}WITH{\c&HFFFFFF&} MOLECULES.
+Dialogue: 0,0:00:10.46,0:00:11.42,Cap,,0,0,0,,PACKED WITH {\c&H00E6FF&}MOLECULES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.42,0:00:11.42,Cap,,0,0,0,,{\c&H00E6FF&}FROZEN{\c&HFFFFFF&} MOLECULES CAN'T
+Dialogue: 0,0:00:11.42,0:00:11.94,Cap,,0,0,0,,FROZEN {\c&H00E6FF&}MOLECULES{\c&HFFFFFF&} CAN'T
+Dialogue: 0,0:00:11.94,0:00:12.42,Cap,,0,0,0,,FROZEN MOLECULES {\c&H00E6FF&}CAN'T{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.42,0:00:12.58,Cap,,0,0,0,,{\c&H00E6FF&}PUSH{\c&HFFFFFF&} ANYTHING.
+Dialogue: 0,0:00:12.58,0:00:13.00,Cap,,0,0,0,,PUSH {\c&H00E6FF&}ANYTHING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.00,0:00:13.86,Cap,,0,0,0,,{\c&H00E6FF&}SO{\c&HFFFFFF&} NOTHING FLOWS
+Dialogue: 0,0:00:13.86,0:00:14.14,Cap,,0,0,0,,SO {\c&H00E6FF&}NOTHING{\c&HFFFFFF&} FLOWS
+Dialogue: 0,0:00:14.14,0:00:14.52,Cap,,0,0,0,,SO NOTHING {\c&H00E6FF&}FLOWS{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.52,0:00:14.76,Cap,,0,0,0,,{\c&H00E6FF&}INTO{\c&HFFFFFF&} YOUR LUNGS.
+Dialogue: 0,0:00:14.76,0:00:14.96,Cap,,0,0,0,,INTO {\c&H00E6FF&}YOUR{\c&HFFFFFF&} LUNGS.
+Dialogue: 0,0:00:14.96,0:00:15.90,Cap,,0,0,0,,INTO YOUR {\c&H00E6FF&}LUNGS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.08,0:00:16.16,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} AIR IS
+Dialogue: 0,0:00:16.16,0:00:16.32,Cap,,0,0,0,,AND {\c&H00E6FF&}AIR{\c&HFFFFFF&} IS
+Dialogue: 0,0:00:16.32,0:00:16.52,Cap,,0,0,0,,AND AIR {\c&H00E6FF&}IS{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.52,0:00:17.40,Cap,,0,0,0,,{\c&H00E6FF&}HEAVY.{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.62,0:00:17.74,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} AIR IN
+Dialogue: 0,0:00:17.74,0:00:17.98,Cap,,0,0,0,,THE {\c&H00E6FF&}AIR{\c&HFFFFFF&} IN
+Dialogue: 0,0:00:17.98,0:00:18.20,Cap,,0,0,0,,THE AIR {\c&H00E6FF&}IN{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.20,0:00:18.34,Cap,,0,0,0,,{\c&H00E6FF&}A{\c&HFFFFFF&} SMALL KITCHEN
+Dialogue: 0,0:00:18.34,0:00:18.64,Cap,,0,0,0,,A {\c&H00E6FF&}SMALL{\c&HFFFFFF&} KITCHEN
+Dialogue: 0,0:00:18.64,0:00:19.08,Cap,,0,0,0,,A SMALL {\c&H00E6FF&}KITCHEN{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.08,0:00:19.54,Cap,,0,0,0,,{\c&H00E6FF&}WEIGHS{\c&HFFFFFF&} ABOUT AS
+Dialogue: 0,0:00:19.54,0:00:19.88,Cap,,0,0,0,,WEIGHS {\c&H00E6FF&}ABOUT{\c&HFFFFFF&} AS
+Dialogue: 0,0:00:19.88,0:00:20.06,Cap,,0,0,0,,WEIGHS ABOUT {\c&H00E6FF&}AS{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.06,0:00:20.24,Cap,,0,0,0,,{\c&H00E6FF&}MUCH{\c&HFFFFFF&} AS YOU
+Dialogue: 0,0:00:20.24,0:00:20.44,Cap,,0,0,0,,MUCH {\c&H00E6FF&}AS{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:20.44,0:00:20.60,Cap,,0,0,0,,MUCH AS {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.60,0:00:21.48,Cap,,0,0,0,,{\c&H00E6FF&}DO.{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.56,0:00:21.68,Cap,,0,0,0,,{\c&H00E6FF&}IF{\c&HFFFFFF&} EVERY MOLECULE
+Dialogue: 0,0:00:21.68,0:00:22.00,Cap,,0,0,0,,IF {\c&H00E6FF&}EVERY{\c&HFFFFFF&} MOLECULE
+Dialogue: 0,0:00:22.00,0:00:22.56,Cap,,0,0,0,,IF EVERY {\c&H00E6FF&}MOLECULE{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.56,0:00:22.94,Cap,,0,0,0,,{\c&H00E6FF&}STAYED{\c&HFFFFFF&} STUCK, YOU
+Dialogue: 0,0:00:22.94,0:00:23.36,Cap,,0,0,0,,STAYED {\c&H00E6FF&}STUCK,{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:23.36,0:00:23.66,Cap,,0,0,0,,STAYED STUCK, {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.66,0:00:23.94,Cap,,0,0,0,,{\c&H00E6FF&}COULDN'T{\c&HFFFFFF&} OPEN A
+Dialogue: 0,0:00:23.94,0:00:24.20,Cap,,0,0,0,,COULDN'T {\c&H00E6FF&}OPEN{\c&HFFFFFF&} A
+Dialogue: 0,0:00:24.20,0:00:24.40,Cap,,0,0,0,,COULDN'T OPEN {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.40,0:00:24.64,Cap,,0,0,0,,{\c&H00E6FF&}DOOR,{\c&HFFFFFF&} OR EVEN
+Dialogue: 0,0:00:24.64,0:00:24.96,Cap,,0,0,0,,DOOR, {\c&H00E6FF&}OR{\c&HFFFFFF&} EVEN
+Dialogue: 0,0:00:24.96,0:00:25.30,Cap,,0,0,0,,DOOR, OR {\c&H00E6FF&}EVEN{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.30,0:00:25.54,Cap,,0,0,0,,{\c&H00E6FF&}MOVE{\c&HFFFFFF&} YOUR HAND.
+Dialogue: 0,0:00:25.54,0:00:25.76,Cap,,0,0,0,,MOVE {\c&H00E6FF&}YOUR{\c&HFFFFFF&} HAND.
+Dialogue: 0,0:00:25.76,0:00:26.14,Cap,,0,0,0,,MOVE YOUR {\c&H00E6FF&}HAND.{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.14,0:00:27.00,Cap,,0,0,0,,{\c&H00E6FF&}YOU'D{\c&HFFFFFF&} BE A
+Dialogue: 0,0:00:27.00,0:00:27.12,Cap,,0,0,0,,YOU'D {\c&H00E6FF&}BE{\c&HFFFFFF&} A
+Dialogue: 0,0:00:27.12,0:00:27.24,Cap,,0,0,0,,YOU'D BE {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.24,0:00:27.54,Cap,,0,0,0,,{\c&H00E6FF&}STATUE{\c&HFFFFFF&} TOO.
+Dialogue: 0,0:00:27.54,0:00:28.26,Cap,,0,0,0,,STATUE {\c&H00E6FF&}TOO.{\c&HFFFFFF&}
