@@ -1,6 +1,6 @@
 # UPLOAD: space-nosuit (I.Awaken Short). Prepared only: nothing was posted, uploaded or scheduled by the cloud.
 
-**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, 35.6 s, -14 LUFS.
+**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, 855 frames, 35.6 s, -14.3 LUFS, true peak -1.3 dBFS.
 
 **Title** (45 chars, 1 emoji, no hashtags):
 ```
