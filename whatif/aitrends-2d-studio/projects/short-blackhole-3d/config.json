@@ -1,0 +1,35 @@
+{
+ "title": "What If You Fell Into a Black Hole?",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 25.7,
+ "captions": true,
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "gainDb": -17
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "spaghetti",
+   "spaghettification",
+   "giant",
+   "millions",
+   "suns",
+   "small",
+   "subscribe"
+  ]
+ }
+}
