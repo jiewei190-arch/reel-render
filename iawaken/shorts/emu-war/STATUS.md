@@ -1,4 +1,4 @@
-STATE: ready
+STATE: animating
 
 # I.Awaken Short: emu-war ("Australia Lost a War to Birds 🐦")
 - **Final video:** `video.mp4`: 1080x1920, 24 fps, **838 frames, 34.92 s** (audio 34.90 s), H.264 + AAC, **-14.6 LUFS, true peak -1.0 dBFS**, 23.5 MB (no split needed).

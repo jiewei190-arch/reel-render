@@ -6,7 +6,7 @@ Narrator: Kokoro am_fenrir, deadpan. "## beat" lines = a beat of silence before 
 3. The army brought machine guns.
 ## beat
 4. The emus brought... running.
-5. It's 1932. About twenty thousand emus are eating the wheat in Western Australia.
+5. It's nineteen thirty-two. About twenty thousand emus are eating the wheat in Western Australia.
 6. So the soldiers mount a gun on a truck.
 ## beat
 7. The emus are faster than the truck.

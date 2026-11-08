@@ -1,5 +1,5 @@
 {
- "source": "fenrir TTS segments (energy) + script, proportional words",
+ "source": "fenrir TTS segments (energy) + script, proportional words + re-voiced line \"It's nineteen thirty-two.\" (spliced, delta -0.180s)",
  "words": [
   {
    "word": "Australia",
@@ -83,308 +83,308 @@
   },
   {
    "word": "It's",
-   "start": 8.6,
-   "end": 9.284
+   "start": 8.605,
+   "end": 8.842
   },
   {
    "word": "1932.",
-   "start": 9.284,
-   "end": 10.14
+   "start": 8.842,
+   "end": 9.97
   },
   {
    "word": "About",
-   "start": 10.63,
-   "end": 10.972
+   "start": 10.45,
+   "end": 10.792
   },
   {
    "word": "twenty",
-   "start": 10.972,
-   "end": 11.37
+   "start": 10.792,
+   "end": 11.19
   },
   {
    "word": "thousand",
-   "start": 11.37,
-   "end": 11.883
+   "start": 11.19,
+   "end": 11.703
   },
   {
    "word": "emus",
-   "start": 11.883,
-   "end": 12.168
+   "start": 11.703,
+   "end": 11.988
   },
   {
    "word": "are",
-   "start": 12.168,
-   "end": 12.396
+   "start": 11.988,
+   "end": 12.216
   },
   {
    "word": "eating",
-   "start": 12.396,
-   "end": 12.794
+   "start": 12.216,
+   "end": 12.614
   },
   {
    "word": "the",
-   "start": 12.794,
-   "end": 13.022
+   "start": 12.614,
+   "end": 12.842
   },
   {
    "word": "wheat",
-   "start": 13.022,
-   "end": 13.364
+   "start": 12.842,
+   "end": 13.184
   },
   {
    "word": "in",
-   "start": 13.364,
-   "end": 13.535
+   "start": 13.184,
+   "end": 13.355
   },
   {
    "word": "Western",
-   "start": 13.535,
-   "end": 13.99
+   "start": 13.355,
+   "end": 13.81
   },
   {
    "word": "Australia.",
-   "start": 13.99,
-   "end": 14.56
+   "start": 13.81,
+   "end": 14.38
   },
   {
    "word": "So",
-   "start": 15.07,
-   "end": 15.202
+   "start": 14.89,
+   "end": 15.022
   },
   {
    "word": "the",
-   "start": 15.202,
-   "end": 15.379
+   "start": 15.022,
+   "end": 15.199
   },
   {
    "word": "soldiers",
-   "start": 15.379,
-   "end": 15.776
+   "start": 15.199,
+   "end": 15.596
   },
   {
    "word": "mount",
-   "start": 15.776,
-   "end": 16.041
+   "start": 15.596,
+   "end": 15.861
   },
   {
    "word": "a",
-   "start": 16.041,
-   "end": 16.174
+   "start": 15.861,
+   "end": 15.994
   },
   {
    "word": "gun",
-   "start": 16.174,
-   "end": 16.35
+   "start": 15.994,
+   "end": 16.17
   },
   {
    "word": "on",
-   "start": 16.35,
-   "end": 16.483
+   "start": 16.17,
+   "end": 16.303
   },
   {
    "word": "a",
-   "start": 16.483,
-   "end": 16.615
+   "start": 16.303,
+   "end": 16.435
   },
   {
    "word": "truck.",
-   "start": 16.615,
-   "end": 16.88
+   "start": 16.435,
+   "end": 16.7
   },
   {
    "word": "The",
-   "start": 17.94,
-   "end": 18.108
+   "start": 17.76,
+   "end": 17.928
   },
   {
    "word": "emus",
-   "start": 18.108,
-   "end": 18.318
+   "start": 17.928,
+   "end": 18.138
   },
   {
    "word": "are",
-   "start": 18.318,
-   "end": 18.486
+   "start": 18.138,
+   "end": 18.306
   },
   {
    "word": "faster",
-   "start": 18.486,
-   "end": 18.78
+   "start": 18.306,
+   "end": 18.6
   },
   {
    "word": "than",
-   "start": 18.78,
-   "end": 18.99
+   "start": 18.6,
+   "end": 18.81
   },
   {
    "word": "the",
-   "start": 18.99,
-   "end": 19.158
+   "start": 18.81,
+   "end": 18.978
   },
   {
    "word": "truck.",
-   "start": 19.158,
-   "end": 19.41
+   "start": 18.978,
+   "end": 19.23
   },
   {
    "word": "Thousands",
-   "start": 20.03,
-   "end": 20.615
+   "start": 19.85,
+   "end": 20.435
   },
   {
    "word": "of",
-   "start": 20.615,
-   "end": 20.791
+   "start": 20.435,
+   "end": 20.611
   },
   {
    "word": "rounds",
-   "start": 20.791,
-   "end": 21.201
+   "start": 20.611,
+   "end": 21.021
   },
   {
    "word": "later,",
-   "start": 21.201,
-   "end": 21.552
+   "start": 21.021,
+   "end": 21.372
   },
   {
    "word": "the",
-   "start": 21.552,
-   "end": 21.786
+   "start": 21.372,
+   "end": 21.606
   },
   {
    "word": "commander",
-   "start": 21.786,
-   "end": 22.371
+   "start": 21.606,
+   "end": 22.191
   },
   {
    "word": "reported",
-   "start": 22.371,
-   "end": 22.898
+   "start": 22.191,
+   "end": 22.718
   },
   {
    "word": "nine",
-   "start": 22.898,
-   "end": 23.191
+   "start": 22.718,
+   "end": 23.011
   },
   {
    "word": "hundred",
-   "start": 23.191,
-   "end": 23.659
+   "start": 23.011,
+   "end": 23.479
   },
   {
    "word": "and",
-   "start": 23.659,
-   "end": 23.893
+   "start": 23.479,
+   "end": 23.713
   },
   {
    "word": "eighty-six",
-   "start": 23.893,
-   "end": 24.479
+   "start": 23.713,
+   "end": 24.299
   },
   {
    "word": "birds.",
-   "start": 24.479,
-   "end": 24.83
+   "start": 24.299,
+   "end": 24.65
   },
   {
    "word": "Out",
-   "start": 25.7,
-   "end": 25.89
+   "start": 25.52,
+   "end": 25.71
   },
   {
    "word": "of",
-   "start": 25.89,
-   "end": 26.032
+   "start": 25.71,
+   "end": 25.852
   },
   {
    "word": "twenty",
-   "start": 26.032,
-   "end": 26.363
+   "start": 25.852,
+   "end": 26.183
   },
   {
    "word": "thousand.",
-   "start": 26.363,
-   "end": 26.79
+   "start": 26.183,
+   "end": 26.61
   },
   {
    "word": "The",
-   "start": 27.27,
-   "end": 27.462
+   "start": 27.09,
+   "end": 27.282
   },
   {
    "word": "army",
-   "start": 27.462,
-   "end": 27.701
+   "start": 27.282,
+   "end": 27.521
   },
   {
    "word": "went",
-   "start": 27.701,
-   "end": 27.941
+   "start": 27.521,
+   "end": 27.761
   },
   {
    "word": "home.",
-   "start": 27.941,
-   "end": 28.18
+   "start": 27.761,
+   "end": 28.0
   },
   {
    "word": "The",
-   "start": 28.68,
-   "end": 28.902
+   "start": 28.5,
+   "end": 28.722
   },
   {
    "word": "emus",
-   "start": 28.902,
-   "end": 29.181
+   "start": 28.722,
+   "end": 29.001
   },
   {
    "word": "stayed.",
-   "start": 29.181,
-   "end": 29.57
+   "start": 29.001,
+   "end": 29.39
   },
   {
    "word": "Final",
-   "start": 30.07,
-   "end": 30.484
+   "start": 29.89,
+   "end": 30.304
   },
   {
    "word": "score:",
-   "start": 30.484,
-   "end": 30.899
+   "start": 30.304,
+   "end": 30.719
   },
   {
    "word": "Emus,",
-   "start": 30.899,
-   "end": 31.244
+   "start": 30.719,
+   "end": 31.064
   },
   {
    "word": "one.",
-   "start": 31.244,
-   "end": 31.52
+   "start": 31.064,
+   "end": 31.34
   },
   {
    "word": "Army,",
-   "start": 32.0,
-   "end": 32.375
+   "start": 31.82,
+   "end": 32.195
   },
   {
    "word": "zero.",
-   "start": 32.375,
-   "end": 32.75
+   "start": 32.195,
+   "end": 32.57
   },
   {
    "word": "Subscribe",
-   "start": 33.26,
-   "end": 33.802
+   "start": 33.08,
+   "end": 33.622
   },
   {
    "word": "for",
-   "start": 33.802,
-   "end": 34.019
+   "start": 33.622,
+   "end": 33.839
   },
   {
    "word": "more.",
-   "start": 34.019,
-   "end": 34.29
+   "start": 33.839,
+   "end": 34.11
   }
  ]
 }

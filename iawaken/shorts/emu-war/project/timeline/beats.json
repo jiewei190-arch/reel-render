@@ -2,73 +2,73 @@
  {
   "i": 0,
   "start": 0.0,
-  "speechStart": 0.0,
-  "speechEnd": 1.96,
-  "text": "Australia declared war on birds.",
-  "end": 1.81
+  "speechStart": 0.18,
+  "speechEnd": 3.5,
+  "text": "Australia declared war on birds. And lost.",
+  "end": 3.81
  },
  {
   "i": 1,
-  "start": 1.81,
-  "speechStart": 1.96,
-  "speechEnd": 3.36,
-  "text": "And lost.",
-  "end": 3.77
+  "start": 3.81,
+  "speechStart": 3.96,
+  "speechEnd": 8.14,
+  "text": "The army brought machine guns. The emus brought... running.",
+  "end": 8.455
  },
  {
   "i": 2,
-  "start": 3.77,
-  "speechStart": 3.92,
-  "speechEnd": 9.64,
-  "text": "The army brought machine guns. The emus brought... running. It's 1932.",
-  "end": 10.49
+  "start": 8.455,
+  "speechStart": 8.605,
+  "speechEnd": 9.97,
+  "text": "It's 1932.",
+  "end": 10.3
  },
  {
   "i": 3,
-  "start": 10.49,
-  "speechStart": 10.64,
-  "speechEnd": 14.52,
+  "start": 10.3,
+  "speechStart": 10.45,
+  "speechEnd": 14.38,
   "text": "About twenty thousand emus are eating the wheat in Western Australia.",
-  "end": 14.71
+  "end": 14.74
  },
  {
   "i": 4,
-  "start": 14.71,
-  "speechStart": 14.86,
-  "speechEnd": 16.96,
+  "start": 14.74,
+  "speechStart": 14.89,
+  "speechEnd": 16.7,
   "text": "So the soldiers mount a gun on a truck.",
-  "end": 17.71
+  "end": 17.61
  },
  {
   "i": 5,
-  "start": 17.71,
-  "speechStart": 17.86,
-  "speechEnd": 19.48,
+  "start": 17.61,
+  "speechStart": 17.76,
+  "speechEnd": 19.23,
   "text": "The emus are faster than the truck.",
-  "end": 19.93
+  "end": 19.7
  },
  {
   "i": 6,
-  "start": 19.93,
-  "speechStart": 20.08,
-  "speechEnd": 24.66,
-  "text": "Thousands of rounds later, the commander reported nine hundred and eighty-six birds.",
-  "end": 25.29
+  "start": 19.7,
+  "speechStart": 19.85,
+  "speechEnd": 26.61,
+  "text": "Thousands of rounds later, the commander reported nine hundred and eighty-six birds. Out of twenty thousand.",
+  "end": 26.94
  },
  {
   "i": 7,
-  "start": 25.29,
-  "speechStart": 25.44,
-  "speechEnd": 30.66,
-  "text": "Out of twenty thousand. The army went home. The emus stayed. Final score:",
-  "end": 30.51
+  "start": 26.94,
+  "speechStart": 27.09,
+  "speechEnd": 32.57,
+  "text": "The army went home. The emus stayed. Final score: Emus, one. Army, zero.",
+  "end": 32.93
  },
  {
   "i": 8,
-  "start": 30.51,
-  "speechStart": 30.66,
-  "speechEnd": 34.18,
-  "text": "Emus, one. Army, zero. Subscribe for more.",
-  "end": 35.68
+  "start": 32.93,
+  "speechStart": 33.08,
+  "speechEnd": 34.11,
+  "text": "Subscribe for more.",
+  "end": 35.61
  }
 ]

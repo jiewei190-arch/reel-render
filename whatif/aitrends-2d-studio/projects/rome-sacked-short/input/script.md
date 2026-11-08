@@ -1,5 +1,5 @@
 # The Day Rome Got Sacked (Toon 3D test Short)
-1. August 24th, 410.
+1. August twenty-fourth, four-ten.
 2. Nobody has broken into Rome in almost eight hundred years.
 3. So this guard is very relaxed.
 4. Then the Salarian Gate opens.

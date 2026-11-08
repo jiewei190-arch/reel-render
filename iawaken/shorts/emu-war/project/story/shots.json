@@ -1,5 +1,5 @@
 {
- "duration": 34.9,
+ "duration": 34.72,
  "shots": [
   {
    "id": "s01",
@@ -65,7 +65,7 @@
   {
    "id": "s06",
    "start": 8.6,
-   "end": 10.63,
+   "end": 10.45,
    "line": "It's 1932.",
    "scene": "farm",
    "sfx": [
@@ -82,22 +82,22 @@
   },
   {
    "id": "s07",
-   "start": 10.63,
-   "end": 12.9,
+   "start": 10.45,
+   "end": 12.72,
    "line": "About twenty thousand emus are eating",
    "scene": "flock"
   },
   {
    "id": "s08",
-   "start": 12.9,
-   "end": 15.07,
+   "start": 12.72,
+   "end": 14.89,
    "line": "the wheat in Western Australia.",
    "scene": "farmer"
   },
   {
    "id": "s09",
-   "start": 15.07,
-   "end": 17.94,
+   "start": 14.89,
+   "end": 17.76,
    "line": "So the soldiers mount a gun on a truck.",
    "scene": "truck",
    "sfx": [
@@ -110,8 +110,8 @@
   },
   {
    "id": "s10",
-   "start": 17.94,
-   "end": 20.03,
+   "start": 17.76,
+   "end": 19.85,
    "line": "The emus are faster than the truck.",
    "scene": "chase",
    "sfx": [
@@ -124,8 +124,8 @@
   },
   {
    "id": "s11",
-   "start": 20.03,
-   "end": 22.45,
+   "start": 19.85,
+   "end": 22.27,
    "line": "Thousands of rounds later,",
    "scene": "ammo",
    "in": {
@@ -135,15 +135,15 @@
   },
   {
    "id": "s12",
-   "start": 22.45,
-   "end": 25.7,
+   "start": 22.27,
+   "end": 25.52,
    "line": "the commander reported nine hundred and eighty-six birds.",
    "scene": "report"
   },
   {
    "id": "s13",
-   "start": 25.7,
-   "end": 27.27,
+   "start": 25.52,
+   "end": 27.09,
    "line": "Out of twenty thousand.",
    "scene": "stare",
    "sfx": [
@@ -156,8 +156,8 @@
   },
   {
    "id": "s14",
-   "start": 27.27,
-   "end": 28.68,
+   "start": 27.09,
+   "end": 28.5,
    "line": "The army went home.",
    "scene": "leave",
    "sfx": [
@@ -170,15 +170,15 @@
   },
   {
    "id": "s15",
-   "start": 28.68,
-   "end": 30.07,
+   "start": 28.5,
+   "end": 29.89,
    "line": "The emus stayed.",
    "scene": "stayed"
   },
   {
    "id": "s16",
-   "start": 30.07,
-   "end": 33.26,
+   "start": 29.89,
+   "end": 33.08,
    "line": "Final score: Emus, one. Army, zero.",
    "scene": "score",
    "sfx": [
@@ -197,8 +197,8 @@
   },
   {
    "id": "s17",
-   "start": 33.26,
-   "end": 34.9,
+   "start": 33.08,
+   "end": 34.72,
    "line": "Subscribe for more.",
    "scene": "loop",
    "sfx": [
@@ -213,7 +213,7 @@
  "music": [
   {
    "start": 0,
-   "end": 34.9,
+   "end": 34.72,
    "mood": "playful",
    "intensity": 0.5
   }

@@ -1,4 +1,4 @@
-STATE: ready
+STATE: animating
 
 # Toon 3D kit + test Short "The Day Rome Got Sacked" (branch iawaken/toon3d, draft PR #11)
 
