@@ -1,0 +1,1398 @@
+{
+ "lines": [
+  {
+   "n": 1,
+   "start": 0.3,
+   "end": 7.071,
+   "speed": 0.9,
+   "text": "August, the year 410. Midnight. A gate in the walls of Rome swings open."
+  },
+  {
+   "n": 2,
+   "start": 7.071,
+   "end": 12.541,
+   "speed": 0.9,
+   "text": "Gothic warriors pour into the streets. Torches. Smoke."
+  },
+  {
+   "n": 3,
+   "start": 12.541,
+   "end": 19.687,
+   "speed": 0.9,
+   "text": "For the first time in about eight hundred years, enemies are inside Rome. And parts of it are burning."
+  },
+  {
+   "n": 4,
+   "start": 19.687,
+   "end": 25.265,
+   "speed": 0.9,
+   "text": "A girl named Livia hides in the dark, gripping her family's old silver coin."
+  },
+  {
+   "n": 5,
+   "start": 25.265,
+   "end": 28.709,
+   "speed": 0.9,
+   "text": "How did the greatest empire on Earth end up here?"
+  },
+  {
+   "n": 6,
+   "start": 28.709,
+   "end": 36.623,
+   "speed": 0.9,
+   "text": "The answer takes three hundred years and five big mistakes. And it ends with a twist most people have never heard."
+  },
+  {
+   "n": 7,
+   "start": 38.323,
+   "end": 42.196,
+   "speed": 0.97,
+   "text": "To understand how, we have to go back. To that coin."
+  },
+  {
+   "n": 8,
+   "start": 42.196,
+   "end": 50.741,
+   "speed": 0.97,
+   "text": "The year 117. Livia's ancestor Gaius is a young soldier in a Roman legion, and Rome is at its peak."
+  },
+  {
+   "n": 9,
+   "start": 50.741,
+   "end": 58.246,
+   "speed": 0.97,
+   "text": "Under the emperor Trajan, the empire stretches from Britain to Egypt, and from Spain to the rivers of Mesopotamia."
+  },
+  {
+   "n": 10,
+   "start": 58.246,
+   "end": 64.663,
+   "speed": 0.97,
+   "text": "Around five million square kilometres, and somewhere between fifty and seventy-five million people."
+  },
+  {
+   "n": 11,
+   "start": 64.663,
+   "end": 71.853,
+   "speed": 0.97,
+   "text": "One army. One money. And Gaius is paid in that money: a heavy silver coin called a denarius."
+  },
+  {
+   "n": 12,
+   "start": 71.853,
+   "end": 78.133,
+   "speed": 0.97,
+   "text": "He keeps one. It becomes the family's lucky coin. For a while, Rome looks unbeatable."
+  },
+  {
+   "n": 13,
+   "start": 78.133,
+   "end": 81.349,
+   "speed": 0.97,
+   "text": "But a hundred years later, the cracks start to show."
+  },
+  {
+   "n": 14,
+   "start": 82.199,
+   "end": 92.601,
+   "speed": 0.97,
+   "text": "In the year 235, his own soldiers kill the emperor Severus Alexander. What comes next, historians call the Crisis of the Third Century."
+  },
+  {
+   "n": 15,
+   "start": 92.601,
+   "end": 101.146,
+   "speed": 0.97,
+   "text": "In about fifty years, Rome has more than twenty emperors. Most of them die violently, killed by rivals or by their own troops."
+  },
+  {
+   "n": 16,
+   "start": 101.146,
+   "end": 105.109,
+   "speed": 0.97,
+   "text": "Emperor becomes the most dangerous job in the Roman world."
+  },
+  {
+   "n": 17,
+   "start": 105.109,
+   "end": 113.207,
+   "speed": 0.97,
+   "text": "Gaius's great-grandson Felix runs a bakery in Rome. The faces on the coins change faster than he can learn the names."
+  },
+  {
+   "n": 18,
+   "start": 113.207,
+   "end": 122.985,
+   "speed": 0.97,
+   "text": "And Rome's enemies smell weakness. In 260, the Persians capture the emperor Valerian alive. A Roman emperor, taken prisoner."
+  },
+  {
+   "n": 19,
+   "start": 122.985,
+   "end": 129.631,
+   "speed": 0.97,
+   "text": "Things get so bad that Rome builds huge new walls around the city itself. Remember those walls."
+  },
+  {
+   "n": 20,
+   "start": 129.631,
+   "end": 133.291,
+   "speed": 0.97,
+   "text": "But all this fighting costs money. A lot of money."
+  },
+  {
+   "n": 21,
+   "start": 134.141,
+   "end": 145.088,
+   "speed": 0.97,
+   "text": "So the emperors cheat. Every new batch of coins gets a little less silver, and a little more cheap copper. It works, until people notice. People always notice."
+  },
+  {
+   "n": 22,
+   "start": 145.088,
+   "end": 154.593,
+   "speed": 0.97,
+   "text": "By the 270s, Rome's everyday silver coin is often less than five percent silver. It's basically copper, with a shiny coat."
+  },
+  {
+   "n": 23,
+   "start": 154.593,
+   "end": 162.515,
+   "speed": 0.97,
+   "text": "Felix's son holds a new coin next to Gaius's old one. One is real silver. The other only looks like it."
+  },
+  {
+   "n": 24,
+   "start": 162.515,
+   "end": 177.413,
+   "speed": 0.97,
+   "text": "When money is worth less, prices go up. Historians argue about how bad it got. But in 301, the emperor Diocletian sets maximum prices for more than a thousand goods and wages, and threatens death for breaking them."
+  },
+  {
+   "n": 25,
+   "start": 177.413,
+   "end": 185.885,
+   "speed": 0.97,
+   "text": "Bold plan. It doesn't work. Goods vanish from the markets. And the army still needs paying, so taxes keep rising."
+  },
+  {
+   "n": 26,
+   "start": 185.885,
+   "end": 191.337,
+   "speed": 0.97,
+   "text": "Diocletian sees another problem too. The empire is just too big for one man."
+  },
+  {
+   "n": 27,
+   "start": 192.187,
+   "end": 197.98,
+   "speed": 0.97,
+   "text": "A message from one end to the other could take weeks. By then, an invasion is old news."
+  },
+  {
+   "n": 28,
+   "start": 197.98,
+   "end": 205.351,
+   "speed": 0.97,
+   "text": "So in 293, Diocletian splits the job: four rulers, each guarding his own part of the empire."
+  },
+  {
+   "n": 29,
+   "start": 205.351,
+   "end": 214.552,
+   "speed": 0.97,
+   "text": "It works, until they fight each other. The winner, Constantine, builds a new capital in the East, where Europe meets Asia: Constantinople."
+  },
+  {
+   "n": 30,
+   "start": 214.552,
+   "end": 219.938,
+   "speed": 0.97,
+   "text": "After him, the empire usually has two emperors: one for the West, one for the East."
+  },
+  {
+   "n": 31,
+   "start": 219.938,
+   "end": 227.732,
+   "speed": 0.97,
+   "text": "The East is richer, with bigger cities. The West has long borders, and less money to guard them. Keep that in mind."
+  },
+  {
+   "n": 32,
+   "start": 228.582,
+   "end": 236.035,
+   "speed": 0.97,
+   "text": "Around the year 370, a new people rides out of the steppes. Horse archers. The Huns."
+  },
+  {
+   "n": 33,
+   "start": 236.035,
+   "end": 242.831,
+   "speed": 0.97,
+   "text": "Historians still argue about where they came from. But the Goths, north of the Danube river, are terrified."
+  },
+  {
+   "n": 34,
+   "start": 242.831,
+   "end": 250.314,
+   "speed": 0.97,
+   "text": "In 376, tens of thousands of Goths gather on the riverbank, begging to be let into the empire."
+  },
+  {
+   "n": 35,
+   "start": 250.314,
+   "end": 257.554,
+   "speed": 0.97,
+   "text": "The emperor of the East, Valens, says yes. He wants new farmers and new soldiers. What could possibly go wrong?"
+  },
+  {
+   "n": 36,
+   "start": 257.554,
+   "end": 264.904,
+   "speed": 0.97,
+   "text": "But the Roman officers in charge make a mess of it. Food runs out, and the hungry Goths are cheated and mistreated."
+  },
+  {
+   "n": 37,
+   "start": 264.904,
+   "end": 273.194,
+   "speed": 0.97,
+   "text": "The Goths rise up. And on the 9th of August, 378, near the city of Adrianople, Valens attacks them."
+  },
+  {
+   "n": 38,
+   "start": 273.194,
+   "end": 281.206,
+   "speed": 0.97,
+   "text": "It's a disaster. Valens is killed, and so are about two-thirds of his army, according to the historian Ammianus."
+  },
+  {
+   "n": 39,
+   "start": 281.206,
+   "end": 287.997,
+   "speed": 0.97,
+   "text": "An emperor, killed by people Rome had let in. And Rome can't beat them. So it tries something else."
+  },
+  {
+   "n": 40,
+   "start": 288.847,
+   "end": 298.566,
+   "speed": 0.97,
+   "text": "In 382, the emperor Theodosius makes a deal. The Goths can live inside the empire, under their own leaders, if they fight for Rome."
+  },
+  {
+   "n": 41,
+   "start": 298.566,
+   "end": 304.812,
+   "speed": 0.97,
+   "text": "More and more, Rome's armies are outsiders, fighting for pay, loyal to their own commanders."
+  },
+  {
+   "n": 42,
+   "start": 304.812,
+   "end": 316.633,
+   "speed": 0.97,
+   "text": "In 394, a young Gothic commander fights for Theodosius in a civil war. Thousands of his Goths die. He feels Rome used them. His name is Alaric."
+  },
+  {
+   "n": 43,
+   "start": 316.633,
+   "end": 325.754,
+   "speed": 0.97,
+   "text": "A few months later, Theodosius dies, and the empire is split between his two sons, for good. The West gets a ten-year-old boy, Honorius."
+  },
+  {
+   "n": 44,
+   "start": 325.754,
+   "end": 332.87,
+   "speed": 0.97,
+   "text": "Alaric wants land for his people, gold, and a top job in the Roman army. The West keeps saying no."
+  },
+  {
+   "n": 45,
+   "start": 332.87,
+   "end": 345.192,
+   "speed": 0.97,
+   "text": "Then, in 408, the West executes its best general, Stilicho. Roman soldiers attack the families of barbarian troops in Italy, and thousands of those troops join Alaric."
+  },
+  {
+   "n": 46,
+   "start": 345.192,
+   "end": 350.558,
+   "speed": 0.97,
+   "text": "Alaric marches on Rome. Twice, he surrounds the city and it pays him to leave."
+  },
+  {
+   "n": 47,
+   "start": 350.558,
+   "end": 352.73,
+   "speed": 0.97,
+   "text": "The third time, nobody pays."
+  },
+  {
+   "n": 48,
+   "start": 353.58,
+   "end": 361.29,
+   "speed": 0.9,
+   "text": "The night of the 24th of August, 410. The gate opens. Now you know how it got here."
+  },
+  {
+   "n": 49,
+   "start": 361.29,
+   "end": 369.8,
+   "speed": 0.9,
+   "text": "For three days, the Goths loot the city. But many are Christians, and they spare the great churches and the people hiding inside."
+  },
+  {
+   "n": 50,
+   "start": 369.8,
+   "end": 371.496,
+   "speed": 0.9,
+   "text": "Livia survives."
+  },
+  {
+   "n": 51,
+   "start": 371.496,
+   "end": 387.578,
+   "speed": 0.9,
+   "text": "In Ravenna, safe behind the marshes, the emperor Honorius hears that Roma has perished. One later story says he panicked, because Roma was the name of his favourite chicken. Historians doubt it happened. But people kept telling it."
+  },
+  {
+   "n": 52,
+   "start": 387.578,
+   "end": 396.35,
+   "speed": 0.9,
+   "text": "Far away in Bethlehem, a scholar named Jerome hears the news and writes: the city that had taken the whole world was itself taken."
+  },
+  {
+   "n": 53,
+   "start": 396.35,
+   "end": 406.172,
+   "speed": 0.9,
+   "text": "But it doesn't stop there. In 455, the Vandals sail from North Africa and loot Rome again. This time, for two weeks."
+  },
+  {
+   "n": 54,
+   "start": 406.172,
+   "end": 419.856,
+   "speed": 0.9,
+   "text": "And in 476, a general named Odoacer, the leader of the barbarian troops in Italy, removes the last western emperor. A boy. His name is Romulus Augustulus."
+  },
+  {
+   "n": 55,
+   "start": 419.856,
+   "end": 435.436,
+   "speed": 0.9,
+   "text": "He doesn't even kill him. He sends the boy to a villa with a pension. The last emperor of the West just retires. Then Odoacer ships the crown and purple robes to Constantinople. The West doesn't need an emperor anymore."
+  },
+  {
+   "n": 56,
+   "start": 435.436,
+   "end": 441.888,
+   "speed": 0.9,
+   "text": "Most history books stop right there. 476. The fall of Rome."
+  },
+  {
+   "n": 57,
+   "start": 442.738,
+   "end": 449.082,
+   "speed": 0.9,
+   "text": "But remember the split? Rome had two halves. And the eastern half was still standing."
+  },
+  {
+   "n": 58,
+   "start": 449.082,
+   "end": 455.438,
+   "speed": 0.9,
+   "text": "Its emperors still ruled from Constantinople. Its people still called themselves Romans."
+  },
+  {
+   "n": 59,
+   "start": 455.438,
+   "end": 461.784,
+   "speed": 0.9,
+   "text": "About sixty years later, they even took back Italy, and the city of Rome itself, for a while."
+  },
+  {
+   "n": 60,
+   "start": 461.784,
+   "end": 466.732,
+   "speed": 0.9,
+   "text": "Today we call it the Byzantine Empire. They just called it Rome."
+  },
+  {
+   "n": 61,
+   "start": 466.732,
+   "end": 478.4,
+   "speed": 0.9,
+   "text": "And it lasted almost another thousand years. Until the 29th of May, 1453, when Ottoman cannons broke the walls of Constantinople."
+  },
+  {
+   "n": 62,
+   "start": 478.4,
+   "end": 498.007,
+   "speed": 0.9,
+   "text": "So did Rome really fall in 476? Historians still fight about it. Some see a real collapse: life in the West got poorer for centuries. Others see a slow change into the Middle Ages. One historian counted two hundred and ten reasons people have given for the fall."
+  },
+  {
+   "n": 63,
+   "start": 498.007,
+   "end": 503.147,
+   "speed": 0.9,
+   "text": "Maybe Rome wasn't destroyed in a day. Maybe it never fully fell at all."
+  },
+  {
+   "n": 64,
+   "start": 503.147,
+   "end": 506.559,
+   "speed": 0.9,
+   "text": "And Livia's coin? It's still silver."
+  },
+  {
+   "n": 65,
+   "start": 507.409,
+   "end": 519.38,
+   "speed": 0.9,
+   "text": "So what do you think? When did the Roman Empire really end: 410, 476, or 1453? Tell me in the comments."
+  },
+  {
+   "n": 66,
+   "start": 519.38,
+   "end": 523.315,
+   "speed": 0.9,
+   "text": "And if you like stories like this, the next one is right here."
+  }
+ ],
+ "sentences": [
+  {
+   "line": 1,
+   "start": 0.3,
+   "text": "August, the year 410.",
+   "end": 2.113
+  },
+  {
+   "line": 1,
+   "start": 2.763,
+   "text": "Midnight.",
+   "end": 3.531
+  },
+  {
+   "line": 1,
+   "start": 4.181,
+   "text": "A gate in the walls of Rome swings open.",
+   "end": 6.421
+  },
+  {
+   "line": 2,
+   "start": 7.071,
+   "text": "Gothic warriors pour into the streets.",
+   "end": 9.119
+  },
+  {
+   "line": 2,
+   "start": 9.769,
+   "text": "Torches.",
+   "end": 10.559
+  },
+  {
+   "line": 2,
+   "start": 11.209,
+   "text": "Smoke.",
+   "end": 11.891
+  },
+  {
+   "line": 3,
+   "start": 12.541,
+   "text": "For the first time in about eight hundred years, enemies are inside Rome.",
+   "end": 17.043
+  },
+  {
+   "line": 3,
+   "start": 17.693,
+   "text": "And parts of it are burning.",
+   "end": 19.037
+  },
+  {
+   "line": 4,
+   "start": 19.687,
+   "text": "A girl named Livia hides in the dark, gripping her family's old silver coin.",
+   "end": 24.615
+  },
+  {
+   "line": 5,
+   "start": 25.265,
+   "text": "How did the greatest empire on Earth end up here?",
+   "end": 28.059
+  },
+  {
+   "line": 6,
+   "start": 28.709,
+   "text": "The answer takes three hundred years and five big mistakes.",
+   "end": 32.272
+  },
+  {
+   "line": 6,
+   "start": 32.922,
+   "text": "And it ends with a twist most people have never heard.",
+   "end": 35.973
+  },
+  {
+   "line": 7,
+   "start": 38.323,
+   "text": "To understand how, we have to go back.",
+   "end": 40.264
+  },
+  {
+   "line": 7,
+   "start": 40.814,
+   "text": "To that coin.",
+   "end": 41.646
+  },
+  {
+   "line": 8,
+   "start": 42.196,
+   "text": "The year 117.",
+   "end": 43.817
+  },
+  {
+   "line": 8,
+   "start": 44.367,
+   "text": "Livia's ancestor Gaius is a young soldier in a Roman legion, and Rome is at its peak.",
+   "end": 50.191
+  },
+  {
+   "line": 9,
+   "start": 50.741,
+   "text": "Under the emperor Trajan, the empire stretches from Britain to Egypt, and from Spain to the rivers of Mesopotamia.",
+   "end": 57.696
+  },
+  {
+   "line": 10,
+   "start": 58.246,
+   "text": "Around five million square kilometres, and somewhere between fifty and seventy-five million people.",
+   "end": 64.113
+  },
+  {
+   "line": 11,
+   "start": 64.663,
+   "text": "One army.",
+   "end": 65.516
+  },
+  {
+   "line": 11,
+   "start": 66.066,
+   "text": "One money.",
+   "end": 66.855
+  },
+  {
+   "line": 11,
+   "start": 67.405,
+   "text": "And Gaius is paid in that money:",
+   "end": 69.048
+  },
+  {
+   "line": 11,
+   "start": 69.298,
+   "text": "a heavy silver coin called a denarius.",
+   "end": 71.303
+  },
+  {
+   "line": 12,
+   "start": 71.853,
+   "text": "He keeps one.",
+   "end": 72.771
+  },
+  {
+   "line": 12,
+   "start": 73.321,
+   "text": "It becomes the family's lucky coin.",
+   "end": 75.134
+  },
+  {
+   "line": 12,
+   "start": 75.684,
+   "text": "For a while, Rome looks unbeatable.",
+   "end": 77.583
+  },
+  {
+   "line": 13,
+   "start": 78.133,
+   "text": "But a hundred years later, the cracks start to show.",
+   "end": 80.799
+  },
+  {
+   "line": 14,
+   "start": 82.199,
+   "text": "In the year 235, his own soldiers kill the emperor Severus Alexander.",
+   "end": 87.618
+  },
+  {
+   "line": 14,
+   "start": 88.168,
+   "text": "What comes next, historians call the Crisis of the Third Century.",
+   "end": 92.051
+  },
+  {
+   "line": 15,
+   "start": 92.601,
+   "text": "In about fifty years, Rome has more than twenty emperors.",
+   "end": 95.694
+  },
+  {
+   "line": 15,
+   "start": 96.244,
+   "text": "Most of them die violently, killed by rivals or by their own troops.",
+   "end": 100.596
+  },
+  {
+   "line": 16,
+   "start": 101.146,
+   "text": "Emperor becomes the most dangerous job in the Roman world.",
+   "end": 104.559
+  },
+  {
+   "line": 17,
+   "start": 105.109,
+   "text": "Gaius's great-grandson Felix runs a bakery in Rome.",
+   "end": 108.373
+  },
+  {
+   "line": 17,
+   "start": 108.923,
+   "text": "The faces on the coins change faster than he can learn the names.",
+   "end": 112.657
+  },
+  {
+   "line": 18,
+   "start": 113.207,
+   "text": "And Rome's enemies smell weakness.",
+   "end": 114.956
+  },
+  {
+   "line": 18,
+   "start": 115.506,
+   "text": "In 260, the Persians capture the emperor Valerian alive.",
+   "end": 119.943
+  },
+  {
+   "line": 18,
+   "start": 120.493,
+   "text": "A Roman emperor, taken prisoner.",
+   "end": 122.435
+  },
+  {
+   "line": 19,
+   "start": 122.985,
+   "text": "Things get so bad that Rome builds huge new walls around the city itself.",
+   "end": 127.337
+  },
+  {
+   "line": 19,
+   "start": 127.887,
+   "text": "Remember those walls.",
+   "end": 129.081
+  },
+  {
+   "line": 20,
+   "start": 129.631,
+   "text": "But all this fighting costs money.",
+   "end": 131.253
+  },
+  {
+   "line": 20,
+   "start": 131.803,
+   "text": "A lot of money.",
+   "end": 132.741
+  },
+  {
+   "line": 21,
+   "start": 134.141,
+   "text": "So the emperors cheat.",
+   "end": 135.336
+  },
+  {
+   "line": 21,
+   "start": 135.886,
+   "text": "Every new batch of coins gets a little less silver, and a little more cheap copper.",
+   "end": 140.451
+  },
+  {
+   "line": 21,
+   "start": 141.001,
+   "text": "It works, until people notice.",
+   "end": 142.644
+  },
+  {
+   "line": 21,
+   "start": 143.194,
+   "text": "People always notice.",
+   "end": 144.538
+  },
+  {
+   "line": 22,
+   "start": 145.088,
+   "text": "By the 270s, Rome's everyday silver coin is often less than five percent silver.",
+   "end": 151.253
+  },
+  {
+   "line": 22,
+   "start": 151.803,
+   "text": "It's basically copper, with a shiny coat.",
+   "end": 154.043
+  },
+  {
+   "line": 23,
+   "start": 154.593,
+   "text": "Felix's son holds a new coin next to Gaius's old one.",
+   "end": 158.156
+  },
+  {
+   "line": 23,
+   "start": 158.706,
+   "text": "One is real silver.",
+   "end": 159.922
+  },
+  {
+   "line": 23,
+   "start": 160.472,
+   "text": "The other only looks like it.",
+   "end": 161.965
+  },
+  {
+   "line": 24,
+   "start": 162.515,
+   "text": "When money is worth less, prices go up.",
+   "end": 164.691
+  },
+  {
+   "line": 24,
+   "start": 165.241,
+   "text": "Historians argue about how bad it got.",
+   "end": 167.567
+  },
+  {
+   "line": 24,
+   "start": 168.117,
+   "text": "But in 301, the emperor Diocletian sets maximum prices for more than a thousand goods and wages, and threatens death for breaking them.",
+   "end": 176.863
+  },
+  {
+   "line": 25,
+   "start": 177.413,
+   "text": "Bold plan.",
+   "end": 178.267
+  },
+  {
+   "line": 25,
+   "start": 178.817,
+   "text": "It doesn't work.",
+   "end": 179.691
+  },
+  {
+   "line": 25,
+   "start": 180.241,
+   "text": "Goods vanish from the markets.",
+   "end": 181.692
+  },
+  {
+   "line": 25,
+   "start": 182.242,
+   "text": "And the army still needs paying, so taxes keep rising.",
+   "end": 185.335
+  },
+  {
+   "line": 26,
+   "start": 185.885,
+   "text": "Diocletian sees another problem too.",
+   "end": 188.019
+  },
+  {
+   "line": 26,
+   "start": 188.569,
+   "text": "The empire is just too big for one man.",
+   "end": 190.787
+  },
+  {
+   "line": 27,
+   "start": 192.187,
+   "text": "A message from one end to the other could take weeks.",
+   "end": 194.875
+  },
+  {
+   "line": 27,
+   "start": 195.425,
+   "text": "By then, an invasion is old news.",
+   "end": 197.43
+  },
+  {
+   "line": 28,
+   "start": 197.98,
+   "text": "So in 293, Diocletian splits the job:",
+   "end": 201.372
+  },
+  {
+   "line": 28,
+   "start": 201.622,
+   "text": "four rulers, each guarding his own part of the empire.",
+   "end": 204.801
+  },
+  {
+   "line": 29,
+   "start": 205.351,
+   "text": "It works, until they fight each other.",
+   "end": 207.186
+  },
+  {
+   "line": 29,
+   "start": 207.736,
+   "text": "The winner, Constantine, builds a new capital in the East, where Europe meets Asia:",
+   "end": 212.642
+  },
+  {
+   "line": 29,
+   "start": 212.892,
+   "text": "Constantinople.",
+   "end": 214.002
+  },
+  {
+   "line": 30,
+   "start": 214.552,
+   "text": "After him, the empire usually has two emperors:",
+   "end": 217.346
+  },
+  {
+   "line": 30,
+   "start": 217.596,
+   "text": "one for the West, one for the East.",
+   "end": 219.388
+  },
+  {
+   "line": 31,
+   "start": 219.938,
+   "text": "The East is richer, with bigger cities.",
+   "end": 222.05
+  },
+  {
+   "line": 31,
+   "start": 222.6,
+   "text": "The West has long borders, and less money to guard them.",
+   "end": 225.544
+  },
+  {
+   "line": 31,
+   "start": 226.094,
+   "text": "Keep that in mind.",
+   "end": 227.182
+  },
+  {
+   "line": 32,
+   "start": 228.582,
+   "text": "Around the year 370, a new people rides out of the steppes.",
+   "end": 232.678
+  },
+  {
+   "line": 32,
+   "start": 233.228,
+   "text": "Horse archers.",
+   "end": 234.231
+  },
+  {
+   "line": 32,
+   "start": 234.781,
+   "text": "The Huns.",
+   "end": 235.485
+  },
+  {
+   "line": 33,
+   "start": 236.035,
+   "text": "Historians still argue about where they came from.",
+   "end": 238.766
+  },
+  {
+   "line": 33,
+   "start": 239.316,
+   "text": "But the Goths, north of the Danube river, are terrified.",
+   "end": 242.281
+  },
+  {
+   "line": 34,
+   "start": 242.831,
+   "text": "In 376, tens of thousands of Goths gather on the riverbank, begging to be let into the empire.",
+   "end": 249.764
+  },
+  {
+   "line": 35,
+   "start": 250.314,
+   "text": "The emperor of the East, Valens, says yes.",
+   "end": 252.405
+  },
+  {
+   "line": 35,
+   "start": 252.955,
+   "text": "He wants new farmers and new soldiers.",
+   "end": 255.067
+  },
+  {
+   "line": 35,
+   "start": 255.617,
+   "text": "What could possibly go wrong?",
+   "end": 257.004
+  },
+  {
+   "line": 36,
+   "start": 257.554,
+   "text": "But the Roman officers in charge make a mess of it.",
+   "end": 260.391
+  },
+  {
+   "line": 36,
+   "start": 260.941,
+   "text": "Food runs out, and the hungry Goths are cheated and mistreated.",
+   "end": 264.354
+  },
+  {
+   "line": 37,
+   "start": 264.904,
+   "text": "The Goths rise up.",
+   "end": 266.035
+  },
+  {
+   "line": 37,
+   "start": 266.585,
+   "text": "And on the 9th of August, 378, near the city of Adrianople, Valens attacks them.",
+   "end": 272.644
+  },
+  {
+   "line": 38,
+   "start": 273.194,
+   "text": "It's a disaster.",
+   "end": 274.26
+  },
+  {
+   "line": 38,
+   "start": 274.81,
+   "text": "Valens is killed, and so are about two-thirds of his army, according to the historian Ammianus.",
+   "end": 280.656
+  },
+  {
+   "line": 39,
+   "start": 281.206,
+   "text": "An emperor, killed by people Rome had let in.",
+   "end": 283.723
+  },
+  {
+   "line": 39,
+   "start": 284.273,
+   "text": "And Rome can't beat them.",
+   "end": 285.553
+  },
+  {
+   "line": 39,
+   "start": 286.103,
+   "text": "So it tries something else.",
+   "end": 287.447
+  },
+  {
+   "line": 40,
+   "start": 288.847,
+   "text": "In 382, the emperor Theodosius makes a deal.",
+   "end": 292.431
+  },
+  {
+   "line": 40,
+   "start": 292.981,
+   "text": "The Goths can live inside the empire, under their own leaders, if they fight for Rome.",
+   "end": 298.016
+  },
+  {
+   "line": 41,
+   "start": 298.566,
+   "text": "More and more, Rome's armies are outsiders, fighting for pay, loyal to their own commanders.",
+   "end": 304.262
+  },
+  {
+   "line": 42,
+   "start": 304.812,
+   "text": "In 394, a young Gothic commander fights for Theodosius in a civil war.",
+   "end": 310.401
+  },
+  {
+   "line": 42,
+   "start": 310.951,
+   "text": "Thousands of his Goths die.",
+   "end": 312.444
+  },
+  {
+   "line": 42,
+   "start": 312.994,
+   "text": "He feels Rome used them.",
+   "end": 314.338
+  },
+  {
+   "line": 42,
+   "start": 314.888,
+   "text": "His name is Alaric.",
+   "end": 316.083
+  },
+  {
+   "line": 43,
+   "start": 316.633,
+   "text": "A few months later, Theodosius dies, and the empire is split between his two sons, for good.",
+   "end": 322.329
+  },
+  {
+   "line": 43,
+   "start": 322.879,
+   "text": "The West gets a ten-year-old boy, Honorius.",
+   "end": 325.204
+  },
+  {
+   "line": 44,
+   "start": 325.754,
+   "text": "Alaric wants land for his people, gold, and a top job in the Roman army.",
+   "end": 330.362
+  },
+  {
+   "line": 44,
+   "start": 330.912,
+   "text": "The West keeps saying no.",
+   "end": 332.32
+  },
+  {
+   "line": 45,
+   "start": 332.87,
+   "text": "Then, in 408, the West executes its best general, Stilicho.",
+   "end": 337.414
+  },
+  {
+   "line": 45,
+   "start": 337.964,
+   "text": "Roman soldiers attack the families of barbarian troops in Italy, and thousands of those troops join Alaric.",
+   "end": 344.642
+  },
+  {
+   "line": 46,
+   "start": 345.192,
+   "text": "Alaric marches on Rome.",
+   "end": 346.621
+  },
+  {
+   "line": 46,
+   "start": 347.171,
+   "text": "Twice, he surrounds the city and it pays him to leave.",
+   "end": 350.008
+  },
+  {
+   "line": 47,
+   "start": 350.558,
+   "text": "The third time, nobody pays.",
+   "end": 352.18
+  },
+  {
+   "line": 48,
+   "start": 353.58,
+   "text": "The night of the 24th of August, 410.",
+   "end": 356.737
+  },
+  {
+   "line": 48,
+   "start": 357.387,
+   "text": "The gate opens.",
+   "end": 358.475
+  },
+  {
+   "line": 48,
+   "start": 359.125,
+   "text": "Now you know how it got here.",
+   "end": 360.64
+  },
+  {
+   "line": 49,
+   "start": 361.29,
+   "text": "For three days, the Goths loot the city.",
+   "end": 363.444
+  },
+  {
+   "line": 49,
+   "start": 364.094,
+   "text": "But many are Christians, and they spare the great churches and the people hiding inside.",
+   "end": 369.15
+  },
+  {
+   "line": 50,
+   "start": 369.8,
+   "text": "Livia survives.",
+   "end": 370.846
+  },
+  {
+   "line": 51,
+   "start": 371.496,
+   "text": "In Ravenna, safe behind the marshes, the emperor Honorius hears that Roma has perished.",
+   "end": 376.957
+  },
+  {
+   "line": 51,
+   "start": 377.607,
+   "text": "One later story says he panicked, because Roma was the name of his favourite chicken.",
+   "end": 382.556
+  },
+  {
+   "line": 51,
+   "start": 383.206,
+   "text": "Historians doubt it happened.",
+   "end": 384.806
+  },
+  {
+   "line": 51,
+   "start": 385.456,
+   "text": "But people kept telling it.",
+   "end": 386.928
+  },
+  {
+   "line": 52,
+   "start": 387.578,
+   "text": "Far away in Bethlehem, a scholar named Jerome hears the news and writes:",
+   "end": 392.165
+  },
+  {
+   "line": 52,
+   "start": 392.415,
+   "text": "the city that had taken the whole world was itself taken.",
+   "end": 395.7
+  },
+  {
+   "line": 53,
+   "start": 396.35,
+   "text": "But it doesn't stop there.",
+   "end": 397.694
+  },
+  {
+   "line": 53,
+   "start": 398.344,
+   "text": "In 455, the Vandals sail from North Africa and loot Rome again.",
+   "end": 403.507
+  },
+  {
+   "line": 53,
+   "start": 404.157,
+   "text": "This time, for two weeks.",
+   "end": 405.522
+  },
+  {
+   "line": 54,
+   "start": 406.172,
+   "text": "And in 476, a general named Odoacer, the leader of the barbarian troops in Italy, removes the last western emperor.",
+   "end": 415.154
+  },
+  {
+   "line": 54,
+   "start": 415.804,
+   "text": "A boy.",
+   "end": 416.486
+  },
+  {
+   "line": 54,
+   "start": 417.136,
+   "text": "His name is Romulus Augustulus.",
+   "end": 419.206
+  },
+  {
+   "line": 55,
+   "start": 419.856,
+   "text": "He doesn't even kill him.",
+   "end": 421.242
+  },
+  {
+   "line": 55,
+   "start": 421.892,
+   "text": "He sends the boy to a villa with a pension.",
+   "end": 424.175
+  },
+  {
+   "line": 55,
+   "start": 424.825,
+   "text": "The last emperor of the West just retires.",
+   "end": 427.193
+  },
+  {
+   "line": 55,
+   "start": 427.843,
+   "text": "Then Odoacer ships the crown and purple robes to Constantinople.",
+   "end": 431.96
+  },
+  {
+   "line": 55,
+   "start": 432.61,
+   "text": "The West doesn't need an emperor anymore.",
+   "end": 434.786
+  },
+  {
+   "line": 56,
+   "start": 435.436,
+   "text": "Most history books stop right there.",
+   "end": 437.484
+  },
+  {
+   "line": 56,
+   "start": 438.134,
+   "text": "476.",
+   "end": 439.542
+  },
+  {
+   "line": 56,
+   "start": 440.192,
+   "text": "The fall of Rome.",
+   "end": 441.238
+  },
+  {
+   "line": 57,
+   "start": 442.738,
+   "text": "But remember the split?",
+   "end": 443.996
+  },
+  {
+   "line": 57,
+   "start": 444.646,
+   "text": "Rome had two halves.",
+   "end": 445.82
+  },
+  {
+   "line": 57,
+   "start": 446.47,
+   "text": "And the eastern half was still standing.",
+   "end": 448.432
+  },
+  {
+   "line": 58,
+   "start": 449.082,
+   "text": "Its emperors still ruled from Constantinople.",
+   "end": 451.77
+  },
+  {
+   "line": 58,
+   "start": 452.42,
+   "text": "Its people still called themselves Romans.",
+   "end": 454.788
+  },
+  {
+   "line": 59,
+   "start": 455.438,
+   "text": "About sixty years later, they even took back Italy, and the city of Rome itself, for a while.",
+   "end": 461.134
+  },
+  {
+   "line": 60,
+   "start": 461.784,
+   "text": "Today we call it the Byzantine Empire.",
+   "end": 464.11
+  },
+  {
+   "line": 60,
+   "start": 464.76,
+   "text": "They just called it Rome.",
+   "end": 466.082
+  },
+  {
+   "line": 61,
+   "start": 466.732,
+   "text": "And it lasted almost another thousand years.",
+   "end": 469.207
+  },
+  {
+   "line": 61,
+   "start": 469.857,
+   "text": "Until the 29th of May, 1453, when Ottoman cannons broke the walls of Constantinople.",
+   "end": 477.75
+  },
+  {
+   "line": 62,
+   "start": 478.4,
+   "text": "So did Rome really fall in 476?",
+   "end": 481.515
+  },
+  {
+   "line": 62,
+   "start": 482.165,
+   "text": "Historians still fight about it.",
+   "end": 484.0
+  },
+  {
+   "line": 62,
+   "start": 484.65,
+   "text": "Some see a real collapse:",
+   "end": 486.058
+  },
+  {
+   "line": 62,
+   "start": 486.308,
+   "text": "life in the West got poorer for centuries.",
+   "end": 488.612
+  },
+  {
+   "line": 62,
+   "start": 489.262,
+   "text": "Others see a slow change into the Middle Ages.",
+   "end": 491.864
+  },
+  {
+   "line": 62,
+   "start": 492.514,
+   "text": "One historian counted two hundred and ten reasons people have given for the fall.",
+   "end": 497.357
+  },
+  {
+   "line": 63,
+   "start": 498.007,
+   "text": "Maybe Rome wasn't destroyed in a day.",
+   "end": 500.076
+  },
+  {
+   "line": 63,
+   "start": 500.726,
+   "text": "Maybe it never fully fell at all.",
+   "end": 502.497
+  },
+  {
+   "line": 64,
+   "start": 503.147,
+   "text": "And Livia's coin?",
+   "end": 504.171
+  },
+  {
+   "line": 64,
+   "start": 504.821,
+   "text": "It's still silver.",
+   "end": 505.909
+  },
+  {
+   "line": 65,
+   "start": 507.409,
+   "text": "So what do you think?",
+   "end": 508.497
+  },
+  {
+   "line": 65,
+   "start": 509.147,
+   "text": "When did the Roman Empire really end:",
+   "end": 511.323
+  },
+  {
+   "line": 65,
+   "start": 511.573,
+   "text": "410, 476, or 1453?",
+   "end": 516.906
+  },
+  {
+   "line": 65,
+   "start": 517.556,
+   "text": "Tell me in the comments.",
+   "end": 518.73
+  },
+  {
+   "line": 66,
+   "start": 519.38,
+   "text": "And if you like stories like this, the next one is right here.",
+   "end": 522.665
+  }
+ ]
+}
