@@ -1,4 +1,4 @@
-STATE: ready
+STATE: animating
 
 - **Owner fix (Nov 8):** the year is now voiced "eighteen fifty-nine" (Kokoro had read "1859" as "one thousand eight hundred fifty-nine"; checked via its phonemes + whisper word timestamps at 6.1-7.4 s). Same Fenrir settings; everything after the year is sample-identical, so shots s05-s20 moved 0.94 s earlier and captions follow the new word timings. On-screen tag still reads 1859. Nothing else changed.
 # I.Awaken Short: pig-war ("Two Empires Almost Went to War Over a Pig 🐖")
