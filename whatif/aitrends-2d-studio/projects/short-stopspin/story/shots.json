@@ -1,0 +1,437 @@
+{
+ "title": "What If the Earth Stopped Spinning for One Second?",
+ "duration": 26.0,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.62,
+   "line": "What if the Earth stopped spinning for one second?",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "hook",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s002",
+   "start": 2.62,
+   "end": 4.95,
+   "line": "Right now, the ground under you is racing east,",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.5,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s003",
+   "start": 4.95,
+   "end": 6.7,
+   "line": "and you can't feel it.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s004",
+   "start": 6.7,
+   "end": 7.95,
+   "line": "Then it stops.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "riser",
+     "gain": -16,
+     "dur": 0.42
+    },
+    {
+     "at": 0.42,
+     "name": "freeze",
+     "gain": -8
+    },
+    {
+     "at": 0.42,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.7
+    }
+   ]
+  },
+  {
+   "id": "s005",
+   "start": 7.95,
+   "end": 9.1,
+   "line": "Instantly.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "face",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.11,
+     "name": "hit",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s006",
+   "start": 9.1,
+   "end": 10.25,
+   "line": "But you don't.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.32,
+     "name": "whoosh",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s007",
+   "start": 10.25,
+   "end": 11.58,
+   "line": "Neither does the air.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -16
+   }
+  },
+  {
+   "id": "s008",
+   "start": 11.58,
+   "end": 13.05,
+   "line": "Neither do the oceans.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s009",
+   "start": 13.05,
+   "end": 15.05,
+   "line": "So how fast are you still going?",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "riser",
+     "gain": -14,
+     "dur": 1.6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s010",
+   "start": 15.05,
+   "end": 17.22,
+   "line": "At the equator, about sixteen hundred",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 0.9,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.2
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s011",
+   "start": 17.22,
+   "end": 19.38,
+   "line": "seventy kilometers an hour.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.04,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 0.04,
+     "name": "impact",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s012",
+   "start": 19.38,
+   "end": 20.75,
+   "line": "Faster than a jet.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "carpass",
+     "gain": -12
+    },
+    {
+     "at": 0.64,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s013",
+   "start": 20.75,
+   "end": 22.1,
+   "line": "Everything not bolted",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -16
+   }
+  },
+  {
+   "id": "s014",
+   "start": 22.1,
+   "end": 23.85,
+   "line": "to bedrock flies east.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "blueprint",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "ding",
+     "gain": -14
+    },
+    {
+     "at": 0.85,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s015",
+   "start": 23.85,
+   "end": 26.0,
+   "line": "Follow for more What Ifs.",
+   "scene": "see scenes/shots/A_stopspin.js header",
+   "set": "spin",
+   "type": "closer",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 6.7,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 6.7,
+   "end": 13.05,
+   "mood": "tension",
+   "intensity": 0.65
+  },
+  {
+   "start": 13.05,
+   "end": 23.85,
+   "mood": "epic",
+   "intensity": 0.75
+  },
+  {
+   "start": 23.85,
+   "end": 26.0,
+   "mood": "triumph",
+   "intensity": 0.55
+  }
+ ],
+ "soundCuts": {
+  "s001": "hook whoosh on frame 1",
+  "s004": "freeze + impact on 'stops'",
+  "s006": "launch whoosh on \"don't\"",
+  "s011": "stinger on 'seventy'",
+  "s015": "hard cut after the end card"
+ }
+}
