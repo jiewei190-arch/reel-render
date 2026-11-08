@@ -4,13 +4,13 @@ Format: I.Awaken "History Hook" (IAWAKEN_PLAYBOOK.md, NEW FORMAT), animated in t
 
 Recurring cast (Toon 3D bean people: big round head on a pill body, stick arms and legs, ball hands and feet, big white eyes with heavy lids, thick brows; each has ONE signature item; original designs, no real person's likeness):
 - **LIVIA** (410): a Roman girl of about twelve, the story's heart. Signature: a MOSS-GREEN palla (shawl) over dark curls, and the family coin on a cord. Default face: wide-eyed and brave. She's in the cold open, the thumbnail and the ending. Fictional.
-- **GAIUS** (117): Livia's ancestor, the BORED LEGIONARY. Signature: a red helmet with a ridiculously tall crest, half-closed eyes. He is paid the silver coin. Fictional.
-- **FELIX** (235-260s): Gaius's great-grandson, a baker, played by the channel HERO as a cameo. Signature: a MUSTARD tunic, a flour-dusted moss-green apron and big reactions. Fictional.
-- **FELIX'S SON** (270s-301): the same mustard tunic with a short beard, a suspicious squint and the moss-green apron. Fictional.
+- **GAIUS** (117): Livia's ancestor, the BORED LEGIONARY, played by the channel HERO as a legionary (the same look as the guard in the Rome Short). Signature: a mustard crest made ridiculously tall, half-closed eyes. He is paid the silver coin. Fictional.
+- **FELIX** (235-260s): Gaius's great-grandson, a baker. Signature: a flour-dusted MOSS-GREEN apron over a cream tunic, curly hair and big reactions. Fictional.
+- **FELIX'S SON** (270s-301): the same cream tunic with a short beard, a suspicious squint and the moss-green apron. Fictional.
 - **THE NERVOUS EMPEROR**: every Roman emperor is the SAME sweaty, nervous bean in a purple toga and a gold laurel wreath. Only a NAME CHIP changes (Trajan, Severus Alexander, Valerian, Diocletian, Constantine, Valens, Theodosius, Honorius, and the boy Romulus Augustulus is a mini version). It's a running gag: the wreath keeps changing heads. No portrait likeness.
 - **THE GOTHS**: a Gothic family on the Danube bank (a tired dad, a mum and a boy), told as people. ALARIC: a tall bean with a long braid, a fur collar and a round shield with a red sun. Unamused and determined.
 - **ODOACER**: a huge calm bean with a big beard and a dark-red cloak. He is unbothered and never shown fighting.
-- **BISCUIT** (cast cameo): a judgemental Roman street cat (purple collar, green slit eyes) who turns up in every era, unimpressed.
+- **BISCUIT** (cast cameo): a judgemental ginger Roman street cat (purple collar, green slit eyes) who turns up in every era, unimpressed.
 
 Violence rule: NO gore. Fighting and the sacks are shown only as silhouettes, torchlight, fire, smoke, falling shadows, banners and sound. Nobody is shown wounded or dead. Deaths are told by the narrator over a fallen symbol (a helmet in the grass, a dropped wreath, an empty throne). The comedy is never about the suffering: it's about bad decisions, coins and emperors.
 

@@ -1,14 +1,24 @@
-STATE: waiting-style-kit
+STATE: paused
 
 # I.Awaken History Hook ep 1 — status (slug: history-rome, branch iawaken/ep-rome)
+Paused by the owner on Nov 8 ("skip the long video today"). Nothing was rendered, posted, uploaded or scheduled.
+
+## Done
 - **Title (39 chars):** How Did the Roman Empire Get Destroyed?
-- **Style:** Toon 3D (owner's direction change, Nov 8; IAWAKEN_PLAYBOOK "NEW ANIMATION STYLE"). Waiting for the Toon 3D kit (branch iawaken/toon3d) to be approved; no 2D sets/shots were built.
-- **Done:**
-  - `whatif/history-rome/`: package.md (title, 3 thumbnail concepts, the 0:20 open loop), script.md v2 (66 lines, 1,245 words, deadpan Toon 3D tone with sourced facts), sources.md (claim by claim + dropped/softened + the tone pass), narrate.py, gen_shots.py.
-  - Voice: `whatif/aitrends-2d-studio/projects/history-rome/input/voiceover.wav` 523.91 s (Kokoro am_fenrir; clip 0.90, story 0.97, return/twist 0.90). Video 538.12 s incl. a ~15 s end-screen tail.
-  - Word timings: `projects/history-rome/timeline/words.json` (98% script match, onsets snapped to the exact TTS clock).
-  - Shot list: `projects/history-rome/story/shots.json` v2: 149 shots, 44 sets, cast table, music plan; every scene written for 3D bean characters (framing, set, cast, faces on the words, camera, on-screen gold numbers, sfx).
-  - `iawaken/out/history-rome/UPLOAD.md` draft (chapters from the word clock, first at 0:00, "Voice is synthetic.").
-  - Project handoff: `projects/history-rome/HANDOFF.md`.
-- **Next (after the kit is approved):** animate batches A-D with the Toon 3D kit, QC sheets, half-scale preview, then STATE ready-for-gpu-render with the exact GPU render commands.
-- Nothing is posted, uploaded or scheduled by the cloud.
+- **Words, all pushed:**
+  - `whatif/history-rome/`: package.md, script.md v2 (Toon 3D deadpan tone, 66 lines, 1,245 words), sources.md, narrate.py, gen_shots.py.
+  - `iawaken/out/history-rome/UPLOAD.md` draft: chapters start at 0:00 and it includes "Voice is synthetic."
+- **Voice and timing:** `whatif/aitrends-2d-studio/projects/history-rome/`
+  - `input/voiceover.wav`: 523.91 s, Kokoro am_fenrir.
+  - `timeline/words.json`: snapped to the exact TTS clock.
+  - `story/shots.json` v2: 149 shots, 44 sets, cast table, music plan, scenes written for Toon 3D.
+  - `config.json`: style toon, captions on, gold caption words.
+  - `scenes/kit.js`: captions.
+  - `HANDOFF.md`.
+- **Toon 3D kit:** merged from `iawaken/toon3d` (`kits/toon3d/`, approved by the owner). In `render.mjs` the browser path can come from `CHROMIUM_PATH` or `CHROME_PATH`, and there are new QC options: `--ids`, `--outdir`, `--story`.
+
+## Left (when resumed)
+1. **Extra sets, Stage A:** the city (walls, gate, skyline, Forum, storeroom, market, basilica), the rooms (throne room, Ravenna, Constantinople hall, library, bakery, mint, Jerome's cell, villa), the outdoor sets (legion camp, Danube, battlefield, the Frigidus pass, Gothic camp, Constantinople and its walls) and an episode cast/graphics layer (cast builders, war table, coin macro, year counter, name chips, chapter cards).
+2. **Shot batches A-D** (Stage B), with QC sheets.
+3. A **half-scale preview**.
+4. Set **STATE: ready-for-gpu-render** with the exact GPU commands.

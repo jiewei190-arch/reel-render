@@ -22,16 +22,16 @@ STYLE = (" STYLE: Toon 3D (IAWAKEN_PLAYBOOK 'NEW ANIMATION STYLE'): bean people 
 
 CAST_NOTE = {
  "LIVIA": "LIVIA (girl ~12, moss-green palla over dark curls, family coin on a cord)",
- "GAIUS": "GAIUS (bored legionary: red helmet with a ridiculously tall crest, red tunic, segmented armour, half-lidded eyes)",
- "FELIX": "FELIX (the HERO cameo as a Roman baker: MUSTARD tunic, flour-dusted moss-green apron, big reactions)",
- "FELIX2": "FELIX'S SON (mustard tunic, short beard, suspicious squint, moss-green apron)",
+ "GAIUS": "GAIUS (bored legionary = the channel HERO as a legionary, kit castMember('heroLegionary'): armour over a mustard tunic, a mustard crest made ridiculously tall, half-lidded eyes; the same look as the guard in the Rome Short)",
+ "FELIX": "FELIX (Gaius's great-grandson, a baker: cream tunic, flour-dusted MOSS-GREEN apron, curly hair, round cheeks, big reactions)",
+ "FELIX2": "FELIX'S SON (cream tunic, short beard, suspicious squint, moss-green apron)",
  "EMP": "THE NERVOUS EMPEROR (the same sweaty bean for every emperor: purple toga, gold laurel wreath slightly too small, worried brows; only the NAME CHIP changes)",
  "ALARIC": "ALARIC (tall bean, long braid, fur collar, round shield with a red sun, unamused/determined lids)",
  "ODOACER": "ODOACER (huge calm bean, big beard, dark-red cloak, sleepy relaxed lids)",
  "ROMULUS": "ROMULUS AUGUSTULUS (mini nervous-emperor: small boy bean, wreath far too big, slipping)",
  "HONORIUS": "HONORIUS (the nervous-emperor bean as a ten-year-old/young man: same toga, wreath too big)",
  "GOTHS": "the GOTHIC FAMILY (tired dad with a beard and a brown cloak, mum with a headscarf, a small boy with a wooden toy horse)",
- "BISCUIT": "BISCUIT (cast cameo: a judgemental Roman street cat, purple collar, green slit eyes, unimpressed)",
+ "BISCUIT": "BISCUIT (cast cameo, kit cat(): the ginger toon cat with a purple collar and green slit eyes, heavy lids, unimpressed)",
 }
 S = []
 def shot(anchor, batch, typ, set_, scene, sfx=(), amb=None, tin="cut", cast=()):

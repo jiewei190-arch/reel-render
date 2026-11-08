@@ -3,15 +3,52 @@
  "aspect": "16:9",
  "resolution": "1080p",
  "fps": 24,
- "style": "dusk",
+ "style": "toon",
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
  "duration": 538.12,
- "captions": false,
- "bars": null,
+ "captions": true,
+ "bars": "none",
  "fadeIn": 0.3,
  "fadeOut": 0.8,
- "music": { "enabled": true, "gainDb": -17 },
- "sfx": { "enabled": true, "gainDb": -6 },
- "loudness": -14
+ "music": {
+  "enabled": true,
+  "gainDb": -18
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "117",
+   "1453",
+   "235",
+   "260",
+   "270s",
+   "293",
+   "301",
+   "330",
+   "370",
+   "376",
+   "378",
+   "382",
+   "394",
+   "408",
+   "410",
+   "455",
+   "476",
+   "800",
+   "alaric",
+   "constantinople",
+   "odoacer",
+   "roma",
+   "seventyfive",
+   "tenyearold",
+   "twenty",
+   "twothirds"
+  ]
+ }
 }
