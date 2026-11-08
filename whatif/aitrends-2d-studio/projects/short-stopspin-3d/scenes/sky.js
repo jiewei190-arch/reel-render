@@ -29,9 +29,9 @@ registerShot('s009', { kind: '3d',
 // s011 "seventy kilometers an hour." — the number SLAMS in on "seventy": 1,670 km/h, the hero rockets past, shake
 registerShot('s011', { kind: '3d',
   init(T) { return skyScene(T, { seed: 33 }); },
-  draw(s, t, info) { s.update(t, 1.5); const sv = at(info, 'seventy', 0.04); flyAt(s, t, { x: lerp(-1.5, 1.2, prog(t, 0, info.dur)), y: -0.6 });
+  draw(s, t, info) { s.update(t, 1.5); const sv = at(info, 'seventy', 0.04); flyAt(s, t, { x: lerp(-1.6, -0.2, prog(t, 0, info.dur)), y: -0.6 });
     s.hero.pose(flyPose(t * 1.4, 1.1)); s.hero.face(t > sv + 0.6 ? { ...EXPR.shocked, pupil: [0, 0] } : EXPR.panic, t);
-    const sh = Math.max(0, 1 - (t - sv) * 3) * 0.1 * (t > sv); s.stage.cam([Math.sin(t * 80) * sh, 1.4 + Math.cos(t * 71) * sh, 9.5], [0, 0.6, 0], 40); },
+    const sh = Math.max(0, 1 - (t - sv) * 3) * 0.1 * (t > sv); s.stage.cam([0.3 + Math.sin(t * 80) * sh, 1.4 + Math.cos(t * 71) * sh, 9.5], [0.4, 0.6, 0], 40); },
   overlay(g, t, info) { speedLines(g, t, 0.9, { n: 28 }); const sv = at(info, 'seventy', 0.04); slam(g, '1,670', E.W / 2, E.H * 0.2, prog(t, sv, sv + 0.25), { size: 230 }); slam(g, 'km/h', E.W / 2, E.H * 0.31, prog(t, sv + 0.12, sv + 0.35), { size: 110, color: '#ffffff' }); },
 });
 // s012 "Faster than a jet." — an airliner cruising east; the hero overtakes it and gives the window a deadpan wave on "jet"
