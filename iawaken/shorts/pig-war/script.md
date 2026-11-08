@@ -3,7 +3,7 @@ Narrator: Kokoro am_fenrir, deadpan. "## beat" lines = a beat of silence before 
 1. America and Britain almost went to war over a pig.
 ## beat
 2. The pig was the only casualty.
-3. It's 1859. Both countries claim one island.
+3. It's eighteen fifty-nine. Both countries claim one island.
 4. A British company's pig eats an American farmer's potatoes.
 5. So he shoots it.
 6. Britain threatens to arrest him. The US Army lands. Britain sends warships.

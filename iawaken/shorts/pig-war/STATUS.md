@@ -1,5 +1,6 @@
-STATE: ready
+STATE: animating
 
+- **Re-voice in progress (owner fix):** the year is now spoken "eighteen fifty-nine" (was read as "one thousand eight hundred fifty-nine"). New VO is 0.94 s shorter; shots from s05 on are shifted to match. video.mp4 below is the OLD cut until the re-render is pushed.
 # I.Awaken Short: pig-war ("Two Empires Almost Went to War Over a Pig 🐖")
 - `video.mp4`: 1080x1920, 24 fps, 926 frames, 38.58 s, -14.4 LUFS integrated, true peak -1.2 dBFS (ffmpeg ebur128). 19.2 MB, single file (no split needed). Verify: `sha256sum -c video.sha256`.
   mix.py's own mux came out at 923 frames, so the mix (`build/mix.wav`) was muxed onto the full 926-frame silent render with `-c:v copy` (audio AAC 192k).
