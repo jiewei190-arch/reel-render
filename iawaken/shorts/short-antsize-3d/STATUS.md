@@ -1,4 +1,11 @@
-STATE: ready-for-gpu-render
+STATE: ready
+Duration 26.75 s (642 frames, 24 fps, 1080x1920) | -14.7 LUFS integrated | true peak -1.4 dBFS
+
+## Final render (cloud, 2026-11-08)
+- `video.mp4` (16.1 MB, single file, no split needed) + `video.sha256` (`sha256sum -c video.sha256`).
+- Rendered with `render.mjs` full res, 4 workers, SwiftShader (`CHROMIUM_PATH=/opt/pw-browsers/chromium`), 6m40s. Mixed with `audio/mix.py` (no trim: video and audio both 26.75 s, so no re-mux needed).
+- Checks: 1080x1920, 642/642 frames, frame 1 not blank (HERO in grass, caption "What if you"), last frame = SUBSCRIBE chip + "more." caption. Whisper transcription of the last 3.3 s: "Would you risk it? Subscribe for more." (ends 26.3 s).
+- Loudness is mix.py's loudnorm output (target -14, TP -1.5); measured -14.7 LUFS. Raising it to exactly -14 would push the true peak above -1 dBFS, so it was left as is.
 
 # short-antsize-3d: "What If You Shrank to the Size of an Ant?" in Toon 3D
 Branch `iawaken/short-antsize-3d` (built on `iawaken/toon3d`, uses `kits/toon3d`). Project: `whatif/aitrends-2d-studio/projects/short-antsize-3d/`.
