@@ -82,7 +82,7 @@ export function surface(g, t, cam, o = {}) {
     g.strokeStyle = south ? '#8a9ad8' : '#ffffff'; g.lineWidth = 12; g.beginPath(); g.ellipse(Hh.x, Hh.y, Hh.rx, Hh.ry, 0, Math.PI, Math.PI * 2); g.stroke();
     // props
     if (south) { polePost(g, 900, GY + 30, true); penguin(g, 120, GY + 160, 1.5, t, 1); penguin(g, 230, GY + 120, 1.15, t, 2.4); penguin(g, 960, GY + 230, 1.3, t, 4); }
-    else { polePost(g, 130, GY + 40, false); sign(g, 930, GY + 60, 'SOUTH POLE ↓', 0.05);
+    else { polePost(g, 130, GY + 40, false); sign(g, 820, GY + 60, 'NORTH POLE', 0.05);
       rr(g, 760, GY + 230, 170, 34, 10); g.fillStyle = '#c23a2a'; g.fill(); seg(g, [[760, GY + 270], [940, GY + 270]], 6, '#3a2a2a'); }
   });
   return { GY, hole: Hh, rim: south ? '#9fc0ff' : '#ffd6a0', south };

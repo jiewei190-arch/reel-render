@@ -178,6 +178,7 @@ registerShot('s014', { draw(g, t, info) {
   holeFront(g, Hh, cam, true);
   if (t > pT) { FX.rings(g, 540, Hh.y, t - pT, { count: 2, r0: 60, r1: 320, color: '#ffe6c0', a: 0.5 * (1 - prog(t, pT, pT + 0.8)) }); FX.dust(g, t, { count: 30, color: '#ffffff', a: 0.6, seed: 13, area: [300, Hh.y - 300, 480, 300] }); }
   FX.snow(g, t, { count: 40, speed: 30, seed: 6 });
+  chip(g, t, 'SOUTH POLE', 540, 140, 0.05, { size: 52, color: CREAM });
 }});
 
 // ======================= s015 With no air to stop you,  (you hang at the top...)

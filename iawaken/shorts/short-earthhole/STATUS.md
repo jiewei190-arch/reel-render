@@ -30,3 +30,10 @@ Expected: 684 frames, 1080x1920, 28.5 s. Cloud preview render at 0.5 scale took 
 ## Cloud notes
 - Linux cloud: the kit pins playwright 1.56 (chromium rev 1194) but the container ships chromium 1243; the local `node_modules/playwright(-core)` was symlinked to the global playwright 1.63 (node_modules is gitignored, nothing committed). Not needed on the PC.
 - NOT posted, uploaded or scheduled. The full-resolution render was not done in the cloud.
+
+## Fix 1 (main-session review: "wrong animals on the exit side")
+The geography was already right: the hero jumps in at the NORTH Pole (s001) and pops out at the SOUTH Pole (s014-s016), where penguins live.
+The entry sign used to read "SOUTH POLE ↓" (meaning "this way down to the South Pole"), which made it look like the entry was the South Pole.
+Fixed the ambiguity instead of the animals: the entry sign now reads "NORTH POLE" (moved left, out of the right-side UI zone), and s014 gets a
+"SOUTH POLE" chip at the top. Penguins stay on the south side only (none on the north side). No polar bears or Arctic foxes, since there are none in
+Antarctica. Voice, captions and timing are unchanged. Preview and contact sheet re-rendered (-14.5 LUFS, -1.4 dBFS peak).
