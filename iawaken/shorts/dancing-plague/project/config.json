@@ -1,0 +1,17 @@
+{
+ "title": "The Year a Whole City Couldnt Stop Dancing",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "gold": ["1518", "dancing", "four", "hundred", "hot", "blood", "band", "banned", "music", "stress", "one", "step"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
