@@ -102,3 +102,35 @@ period characters; a cast cameo is a nice recurring touch. The channel avatar an
 ## Owner decisions, Nov 8 (later)
 - **Toon 3D look APPROVED** (style sheet + "The Day Rome Got Sacked" test Short). kits/toon3d on branch iawaken/toon3d is the house style for all new I.Awaken videos.
 - **Short closers:** never "Full story on the channel." A Short that ends on an open question/cliffhanger ends with the spoken and on-screen line **"Subscribe to find out."** A Short that already answered its question ends with **"Subscribe for more."** (No "Follow for more ..." on YouTube.)
+
+## SHORTS-ONLY FOCUS (owner, Nov 8): how an I.Awaken Short is built to blow up
+Long-form is paused. Every Short must pass this list before it is sent to the owner.
+
+### What the feed rewards (check in YouTube Studio per Short)
+- **Viewed vs swiped away**: the first 1-2 s decide it. Target >= 70 % viewed. Below 60 % = the hook failed.
+- **Average % viewed**: target >= 90 %; over 100 % means people loop/rewatch (best signal). Low = the middle sags.
+- **Shares, comments, subscribers per view**: shares (sent to a friend) push hardest.
+
+### The formula (every Short)
+1. **Frame 1 = the craziest image, already moving.** No setup, no title card, no "did you know".
+2. **Line 1 = the crazy claim in <= 10 words**, said as fact: "This man begged to stay in prison." /
+   "Rome paid its enemies in pepper." / "You could fall off a skyscraper and walk away."
+3. **Twist by 3-5 s** ("...and the guards said yes." / "but that's not the weird part").
+4. **New visual every 1.5-3 s**, captions 1-3 words, a reaction face after every reveal.
+5. **Escalate 2-3 times**, each beat weirder than the last. Comedy: deadpan narrator, silence before punchlines.
+6. **Payoff in the last 3-5 s**, then the closer ("Subscribe to find out." for a cliffhanger / Part 2,
+   "Subscribe for more." otherwise). Keep the closer under 1.5 s.
+7. **Loop:** the last line or image leads back into the first (the viewer replays without noticing).
+8. **Length 25-40 s.** Shorter is better if the story is complete.
+9. **Title = the claim** (<= 60 chars, 1 emoji, no hashtags in the title); description: 1 line + 2-3 hashtags + #shorts.
+   Pinned comment: an either/or question people can answer in one word.
+
+### Content pillars (test both, then double down on the winner)
+- **CRAZY TRUE STORIES** (history and real people), the format of the owner's reference Short: an absurd real event,
+  told deadpan with the Toon 3D cast. Sourced; say "according to ..." for legends; no gore.
+- **WHAT IF** (science): the 4 existing Shorts, remade in Toon 3D.
+- Series + parts: a story too big for 40 s becomes "Part 1/2" (the "Subscribe to find out" closer earns the subscribe).
+
+### Pace and measuring
+- 1-2 Shorts a day at the same times. Batch-build 7-10 at a time so there's always a week in the buffer.
+- After 10 posted Shorts: compare viewed-vs-swiped and avg % viewed per pillar, kill what loses, make more of what wins.
