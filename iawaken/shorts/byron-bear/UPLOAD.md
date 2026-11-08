@@ -1,6 +1,6 @@
 # UPLOAD: byron-bear (I.Awaken Short). Prepared only: nothing was posted, uploaded or scheduled by the cloud.
 
-**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, ~34.4 s, -14 LUFS.
+**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, ~33.5 s, -14 LUFS.
 
 **Title** (41 chars, 1 emoji, no hashtags):
 ```
@@ -23,7 +23,7 @@ Voice is synthetic.
 Bear or dog: better roommate? 🐻🐶
 ```
 
-**Cover frame:** 2.4 s (the porter's jaw drop as the bear strolls past). Second choice: 28.3 s (the bear in a mortarboard at the fellowship exam, dons gasping).
+**Cover frame:** 2.4 s (the porter's jaw drop as the bear strolls past). Second choice: 27.4 s (the bear in a mortarboard at the fellowship exam, dons gasping).
 
 **Settings:** Not made for kids. Altered or synthetic content: yes (animated, synthetic voice). Category: Education (or Comedy). Related video: none needed.
 
