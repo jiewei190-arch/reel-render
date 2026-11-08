@@ -1,4 +1,4 @@
-STATE: ready
+STATE: animating
 
 # I.Awaken Short: byron-bear ("Banned From Having a Dog, He Got a Bear 🐻")
 - Final: `video.mp4` (18.5 MB, no split needed), 1080x1920, 24 fps, 825 frames, 34.38 s, -14.6 LUFS, true peak -1.4 dBFS. Verify with `video.sha256`.

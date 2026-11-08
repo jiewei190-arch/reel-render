@@ -1,14 +1,14 @@
 [00:00.00 -> 00:01.42] His college banned dogs.
-[00:01.82 -> 00:02.76] So he got a bear.
-[00:03.34 -> 00:06.14] According to legend, the rules said nothing about bears.
-[00:06.78 -> 00:10.66] This is the poet Lord Byron, a student at Trinity College, Cambridge.
-[00:11.42 -> 00:11.64] Dogs?
-[00:12.42 -> 00:12.82] Not allowed.
+[00:01.82 -> 00:02.74] So he got a bear.
+[00:03.30 -> 00:06.12] According to legend, the rules said nothing about bears.
+[00:06.76 -> 00:10.66] This is the poet Lord Byron, a student at Trinity College, Cambridge.
+[00:11.44 -> 00:11.64] Dogs?
+[00:12.40 -> 00:12.80] Not allowed.
 [00:13.60 -> 00:14.16] Bears?
-[00:14.86 -> 00:15.62] Apparently fine.
-[00:16.18 -> 00:22.04] In 1807, he wrote to a friend: I have a new friend, the finest in the world.
-[00:23.02 -> 00:23.66] A tame bear.
-[00:24.22 -> 00:26.14] They asked him what he planned to do with it.
-[00:26.77 -> 00:28.58] He said it should sit for a fellowship.
-[00:29.50 -> 00:32.32] Cambridge is still telling the story two hundred years later.
-[00:32.86 -> 00:33.74] Subscribe for more.
+[00:14.84 -> 00:15.62] Apparently fine.
+[00:16.18 -> 00:21.18] In eighteen-oh-seven, he wrote to a friend: I have a new friend, the finest in the world.
+[00:22.16 -> 00:22.80] A tame bear.
+[00:23.34 -> 00:25.30] They asked him what he planned to do with it.
+[00:25.94 -> 00:27.72] He said it should sit for a fellowship.
+[00:28.52 -> 00:31.46] Cambridge is still telling the story two hundred years later.
+[00:32.00 -> 00:32.88] Subscribe for more.

@@ -7,7 +7,7 @@ Target ~30 s. Loop: the last shot is the "NO DOGS" gate again with the bear stro
 4. Dogs? Not allowed.
 ## beat
 5. Bears? Apparently fine.
-6. In 1807, he wrote to a friend: I have a new friend, the finest in the world.
+6. In eighteen-oh-seven, he wrote to a friend: I have a new friend, the finest in the world.
 ## beat
 7. A tame bear.
 8. They asked him what he planned to do with it.
@@ -24,7 +24,7 @@ Target ~30 s. Loop: the last shot is the "NO DOGS" gate again with the bear stro
 | 3 | "This is the poet Lord Byron..." | Byron poses in the court with a quill, chin up; the bear copies the pose. Title tag "LORD BYRON". |
 | 4 | "Dogs? Not allowed." | The NO DOGS sign gets a red stamp; the porter wags a finger. |
 | 5 | "Bears? Apparently fine." | The bear waves at the porter. Porter shrugs, lid-heavy deadpan. |
-| 6 | "In 1807, he wrote to a friend..." | Byron at a desk by candlelight, quill scratching; the letter text appears in handwriting. |
+| 6 | "In eighteen-oh-seven, he wrote to a friend..." | Byron at a desk by candlelight, quill scratching; the letter text appears in handwriting. |
 | 7 | "A tame bear." | The bear leans into frame behind him and smiles. Reaction: Byron grins at the lens. |
 | 8 | "They asked him what he planned to do with it." | Two old dons in gowns and mortarboards stare at Byron. |
 | 9 | "He said it should sit for a fellowship." | The bear sits at an exam desk in a mortarboard, holding a quill. Dons: shocked. |

@@ -7,11 +7,31 @@
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
  "captions": true,
- "captionStyle": { "y": 0.66, "gold": ["bear.", "bears.", "bears?", "bear", "1807,", "fellowship.", "dogs.", "two", "hundred"] },
+ "captionStyle": {
+  "y": 0.66,
+  "gold": [
+   "bear.",
+   "bears.",
+   "bears?",
+   "bear",
+   "1807,",
+   "fellowship.",
+   "dogs.",
+   "two",
+   "hundred",
+   "eighteen-oh-seven,"
+  ]
+ },
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
- "music": { "enabled": true, "gainDb": -19 },
- "sfx": { "enabled": true, "gainDb": -6 },
+ "music": {
+  "enabled": true,
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
  "loudness": -14
 }
