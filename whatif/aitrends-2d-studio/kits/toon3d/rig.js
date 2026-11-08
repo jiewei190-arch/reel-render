@@ -164,6 +164,22 @@ function bodyTexture(outfit, c) {
       band(0.42, 0.47, c.belt || '#3a2a1a');
     } else if (outfit === 'robe') {
       band(0, 1, c.main || '#6a3a7a'); g.fillStyle = c.trim || '#e8c25a'; g.fillRect(cx - 18, 0, 36, H); band(0, 0.04, c.trim || '#e8c25a'); band(0.96, 1, c.trim || '#e8c25a');
+    } else if (outfit === 'hoodie') {
+      band(0, 1, c.main || '#d9a21b'); band(0, 0.4, c.legsTop || '#2e3a52');
+      band(0.4, 0.46, shadeHex(c.main || '#d9a21b', -0.18));
+      g.fillStyle = shadeHex(c.main || '#d9a21b', -0.1); g.beginPath(); g.roundRect(cx - 80, Y(0.68), 160, H * 0.2, 24); g.fill();
+      g.strokeStyle = shadeHex(c.main || '#d9a21b', -0.35); g.lineWidth = 5; g.stroke();
+      g.strokeStyle = '#f2ead6'; g.lineWidth = 7; g.lineCap = 'round'; for (const dx of [-26, 26]) { g.beginPath(); g.moveTo(cx + dx, Y(1)); g.lineTo(cx + dx * 1.1, Y(0.8)); g.stroke(); }
+    } else if (outfit === 'labcoat') {
+      band(0, 1, c.main || '#f4f2ec'); band(0, 0.4, c.legsTop || '#3a3f4a'); g.fillStyle = c.main || '#f4f2ec'; g.fillRect(0, Y(0.4), W, H * 0.12);
+      g.fillStyle = c.shirt || '#7aa0c8'; g.beginPath(); g.moveTo(cx - 46, Y(1)); g.lineTo(cx, Y(0.62)); g.lineTo(cx + 46, Y(1)); g.fill();
+      g.strokeStyle = 'rgba(80,80,90,.45)'; g.lineWidth = 5; g.beginPath(); g.moveTo(cx - 46, Y(1)); g.lineTo(cx, Y(0.62)); g.lineTo(cx + 46, Y(1)); g.moveTo(cx, Y(0.62)); g.lineTo(cx, Y(0.28)); g.stroke();
+      for (const dx of [-90, 90]) g.strokeRect(cx + dx - 32, Y(0.5), 64, H * 0.1);
+      if (c.lanyard) { g.strokeStyle = c.lanyard; g.lineWidth = 10; g.beginPath(); g.moveTo(cx - 60, Y(1)); g.lineTo(cx - 12, Y(0.7)); g.moveTo(cx + 60, Y(1)); g.lineTo(cx + 12, Y(0.7)); g.stroke(); g.fillStyle = '#ffffff'; g.fillRect(cx - 28, Y(0.71), 56, H * 0.1); g.fillStyle = c.lanyard; g.fillRect(cx - 28, Y(0.71), 56, H * 0.03); g.strokeStyle = 'rgba(0,0,0,.4)'; g.lineWidth = 3; g.strokeRect(cx - 28, Y(0.71), 56, H * 0.1); }
+    } else if (outfit === 'tee') {
+      band(0, 1, c.main || '#3f8a7a'); band(0, 0.4, c.legsTop || '#c2a878'); band(0.4, 0.43, shadeHex(c.legsTop || '#c2a878', -0.3));
+      g.strokeStyle = shadeHex(c.main || '#3f8a7a', -0.3); g.lineWidth = 8; g.beginPath(); g.arc(cx, Y(1.02), 46, 0, Math.PI); g.stroke();
+      if (c.print) { g.fillStyle = c.print; g.beginPath(); g.arc(cx, Y(0.72), 40, 0, 7); g.fill(); g.fillStyle = c.main || '#3f8a7a'; g.beginPath(); g.arc(cx, Y(0.72), 22, 0, 7); g.fill(); }
     } else band(0, 1, c.main || '#888');
   }, { wrap: true, offset: [0.5, 0] });
 }
@@ -179,10 +195,13 @@ const OUTFIT = {
   striped: { main: '#f2efe8', stripe: '#23222a', legs: '#262a3a', feet: '#1e1a18', sleeve: true },
   rags:    { main: '#7a6a52', legs: 'skin', feet: '#4a3020', sleeve: false },
   robe:    { main: '#6a3a7a', trim: '#e8c25a', legs: '#6a3a7a', feet: '#c9a14a', sleeve: true },
+  hoodie:  { main: '#d9a21b', legs: '#2e3a52', feet: '#f2ead6', longSleeve: true },
+  labcoat: { main: '#f4f2ec', legs: '#3a3f4a', feet: '#2a2220', longSleeve: true },
+  tee:     { main: '#3f8a7a', legs: '#c2a878', feet: '#3a2a22', sleeve: true },
 };
 export const OUTFITS = Object.keys(OUTFIT);
-export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood'];
-export const HAIRS = ['bald', 'bowl', 'curly', 'swoop', 'spiky', 'bun', 'horseshoe', 'long'];
+export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood', 'beanie', 'ballcap'];
+export const HAIRS = ['bald', 'bowl', 'curly', 'swoop', 'spiky', 'bun', 'horseshoe', 'long', 'bob', 'pigtails', 'messy'];
 
 // pill-shaped body profile (slightly fuller at the hips), uv.y = height 0..1 so outfit bands line up
 function bodyGeometry() {
@@ -231,17 +250,17 @@ export function bean(o = {}) {
   const arms = {};
   for (const [side, s] of [['L', 1], ['R', -1]]) {
     const sh = new THREE.Group(); sh.position.set(s * D.shoulderX, D.shoulderY, 0); sh.rotation.order = 'ZXY'; upper.add(sh);
-    const up = new THREE.Mesh(limbGeo(), m(skinC)); up.scale.set(D.armR, D.upper, D.armR); up.castShadow = true; sh.add(up);
+    const up = new THREE.Mesh(limbGeo(), m(c.longSleeve ? (c.sleeveColor || c.main) : skinC)); up.scale.set(D.armR * (c.longSleeve ? 1.5 : 1), D.upper, D.armR * (c.longSleeve ? 1.5 : 1)); up.castShadow = true; sh.add(up);
     if (c.sleeve) { const sl = new THREE.Mesh(sph(), outfitName === 'striped' && !sil ? toon('#ffffff', { map: stripeTex(c) }) : m(c.sleeveColor || (outfitName === 'armour' ? c.main : c.main))); sl.scale.set(0.068, 0.15, 0.068); sl.position.y = -0.06; sl.castShadow = true; sh.add(sl); }
     const el = new THREE.Group(); el.position.y = -D.upper; sh.add(el);
-    const ej = new THREE.Mesh(sph(), m(skinC)); ej.scale.setScalar(D.armR); ej.userData.noOutline = true; el.add(ej);
-    const fo = new THREE.Mesh(limbGeo(), m(skinC)); fo.scale.set(D.armR, D.fore, D.armR); fo.castShadow = true; el.add(fo);
+    const ej = new THREE.Mesh(sph(), m(c.longSleeve ? (c.sleeveColor || c.main) : skinC)); ej.scale.setScalar(D.armR * (c.longSleeve ? 1.45 : 1)); ej.userData.noOutline = true; el.add(ej);
+    const fo = new THREE.Mesh(limbGeo(), m(c.longSleeve ? (c.sleeveColor || c.main) : skinC)); fo.scale.set(D.armR * (c.longSleeve ? 1.4 : 1), D.fore * (c.longSleeve ? 0.9 : 1), D.armR * (c.longSleeve ? 1.4 : 1)); fo.castShadow = true; el.add(fo);
     const hand = new THREE.Group(); hand.position.y = -D.fore; el.add(hand);
     const hb = new THREE.Mesh(sph(), m(c.gloves || skinC)); hb.scale.setScalar(D.handR); hb.castShadow = true; hand.add(hb);
     arms[side] = { sh, el, hand };
   }
   // head
-  const head = new THREE.Group(); head.position.y = D.headY; upper.add(head);
+  const head = new THREE.Group(); head.position.y = D.headY; upper.add(head); if (o.headScale) head.scale.set(...o.headScale);
   const R = D.headR;
   const skull = new THREE.Mesh(sph(), m(skinC)); skull.scale.set(R * 1.02, R * 0.97, R * 0.97); skull.castShadow = true; skull.receiveShadow = true; head.add(skull);
   const surf = (x, y) => { const v = new THREE.Vector3(x, y, Math.sqrt(Math.max(0.0001, 1 - x * x - y * y))); return v.normalize(); };
@@ -296,6 +315,9 @@ export function bean(o = {}) {
   if (hair === 'long') { const b = new THREE.Mesh(sph(), hM); b.scale.set(R * 0.9, R * 0.85, R * 0.45); b.position.set(0, -R * 0.15, -R * 0.62); b.castShadow = true; hairG.add(b); }
   if (hair === 'spiky') { hairG.add(cap(0.95, 1.03, 0.4)); for (let i = 0; i < 7; i++) { const sp = new THREE.Mesh(new THREE.ConeGeometry(R * 0.16, R * 0.45, 8), hM); const a = -0.9 + i * 0.3; sp.position.set(Math.sin(a) * R * 0.55, R * 0.92, Math.cos(a) * R * 0.1 - R * 0.05); sp.rotation.z = -a * 0.7; sp.castShadow = true; hairG.add(sp); } }
   if (hair === 'bun') { hairG.add(cap(1.1, 1.05, 0.4)); const b = new THREE.Mesh(sph(), hM); b.scale.setScalar(R * 0.3); b.position.set(0, R * 0.95, -R * 0.35); b.castShadow = true; hairG.add(b); }
+  if (hair === 'bob') { hairG.add(cap(1.15, 1.06, 0.3)); for (const sx of [1, -1]) { const sd = new THREE.Mesh(sph(), hM); sd.scale.set(R * 0.3, R * 0.62, R * 0.62); sd.position.set(sx * R * 0.86, -R * 0.08, -R * 0.2); sd.castShadow = true; hairG.add(sd); } const bk = new THREE.Mesh(sph(), hM); bk.scale.set(R * 0.9, R * 0.65, R * 0.4); bk.position.set(0, -R * 0.1, -R * 0.7); hairG.add(bk); }
+  if (hair === 'pigtails') { hairG.add(cap(1.12, 1.05, 0.38)); for (const sx of [1, -1]) { const pt = new THREE.Mesh(sph(), hM); pt.scale.set(R * 0.2, R * 0.38, R * 0.2); pt.position.set(sx * R * 1.05, R * 0.15, -R * 0.25); pt.rotation.z = sx * 0.6; pt.castShadow = true; hairG.add(pt); const tie = new THREE.Mesh(sph(), m(o.tieColor || '#d63a3a')); tie.scale.setScalar(R * 0.08); tie.position.set(sx * R * 0.9, R * 0.4, -R * 0.25); hairG.add(tie); } }
+  if (hair === 'messy') { hairG.add(cap(1.1, 1.06, 0.36)); const r = rng(seed + 2); for (let i = 0; i < 4; i++) { const tf = new THREE.Mesh(new THREE.ConeGeometry(R * 0.13, R * 0.42, 8), hM); const a = -0.5 + i * 0.33; tf.position.set(Math.sin(a) * R * 0.5, R * 0.95, R * 0.28 - i * 0.04); tf.rotation.set(0.6 + r() * 0.3, 0, -a * 1.2 - 0.3); tf.castShadow = true; hairG.add(tf); } }
   if (hair === 'horseshoe') { const r = rng(seed + 5); for (let i = 0; i < 13; i++) { const a = Math.PI * (0.95 + i / 12 * 1.1); const v = new THREE.Vector3(Math.cos(a) * 0.93, 0.18 + r() * 0.08, Math.sin(a) * 0.93 * -1); if (v.z > 0.45) continue; const b = new THREE.Mesh(sph(), hM); b.scale.setScalar(R * 0.2); b.position.copy(v.multiplyScalar(R)); b.castShadow = true; hairG.add(b); } }
   // beard
   if (o.beard) { const g = new THREE.SphereGeometry(R * 1.05, 32, 12, Math.PI / 2 - 1.45, 2.9, Math.PI / 2 + 0.5, 0.95); const b = new THREE.Mesh(g, m(o.beardColor || hairC)); b.scale.set(1.02, 0.98, 1.02); b.castShadow = true; head.add(b); }
@@ -325,8 +347,17 @@ export function bean(o = {}) {
     const rimm = new THREE.Mesh(new THREE.TorusGeometry(R * 1.0, R * 0.07, 8, 28), m(shadeHex(hc || '#8a8580', -0.25))); rimm.rotation.x = Math.PI / 2 - 0.18; rimm.position.set(0, R * 0.47, -R * 0.08); head.add(rimm);
     const nose = new THREE.Mesh(sph(), cm); nose.scale.set(R * 0.07, R * 0.3, R * 0.06); nose.position.set(0, R * 0.32, R * 0.92); nose.rotation.x = 0.3; head.add(nose);
   }
-  if (hg === 'hood') { const hm = m(hc || '#5a4a3a'); const hd = new THREE.Mesh(new THREE.SphereGeometry(R * 1.12, 32, 14, Math.PI * 0.5 + 0.75, Math.PI * 2 - 1.5, 0, 2.3), hm); hd.material.side = THREE.DoubleSide; hd.castShadow = true; head.add(hd); }
+  if (hg === 'hood') { const hm = m(hc || '#5a4a3a'); const hd = new THREE.Mesh(new THREE.SphereGeometry(R * 1.12, 32, 14, Math.PI * 0.5 + 0.75, Math.PI * 2 - 1.5, 0, 2.3), hm); hd.material.side = THREE.DoubleSide; hd.castShadow = false; head.add(hd); }
 
+  if (hg === 'beanie') { const bm = m(hc || '#e8712a'); const dome = new THREE.Mesh(new THREE.SphereGeometry(R * 1.08, 32, 14, 0, Math.PI * 2, 0, 1.25), bm); dome.rotation.x = -0.22; dome.scale.y = 1.12; dome.castShadow = true; head.add(dome);
+    const cuff = new THREE.Mesh(new THREE.TorusGeometry(R * 1.0, R * 0.12, 10, 32), m(shadeHex(hc || '#e8712a', -0.12))); cuff.rotation.x = Math.PI / 2 - 0.22; cuff.position.set(0, R * 0.36, -R * 0.08); head.add(cuff);
+    if (o.pompom !== false) { const pom = new THREE.Mesh(sph(), m(shadeHex(hc || '#e8712a', 0.25))); pom.scale.setScalar(R * 0.2); pom.position.set(0, R * 1.22, -R * 0.25); head.add(pom); } }
+  if (hg === 'ballcap') { const cm = m(hc || '#2f6fc0'); const dome = new THREE.Mesh(new THREE.SphereGeometry(R * 1.07, 32, 12, 0, Math.PI * 2, 0, 1.2), cm); dome.rotation.x = -0.2; dome.castShadow = true; head.add(dome);
+    const brim = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.62, R * 0.62, R * 0.06, 24, 1, false, -1.25, 2.5), cm); brim.position.set(0, R * 0.5, R * 0.62); brim.rotation.x = 0.22; brim.scale.z = 1.2; brim.castShadow = true; head.add(brim);
+    const btn = new THREE.Mesh(sph(), cm); btn.scale.setScalar(R * 0.08); btn.position.set(0, R * 1.06, -R * 0.2); head.add(btn); }
+  if (hg === 'hoodDown' || o.hoodDown) { const hm = m(hc || c.main); const hd = new THREE.Mesh(new THREE.TorusGeometry(R * 0.62, R * 0.2, 10, 28), hm); hd.rotation.x = Math.PI / 2 + 0.35; hd.position.set(0, D.headY - R * 0.75, -R * 0.28); hd.scale.set(1, 1.15, 1); hd.castShadow = true; upper.add(hd); }
+  if (o.glasses) { const gm = m(o.glassesColor || '#2a2228'); for (const sx of [1, -1]) { const ring = new THREE.Mesh(new THREE.TorusGeometry(R * 0.33, R * 0.035, 8, 28), gm); const n = surf(sx * 0.36, 0.08); ring.position.copy(n).multiplyScalar(R * 1.07); ring.quaternion.setFromUnitVectors(Zv, n); ring.userData.noOutline = true; head.add(ring); } const br = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.03, R * 0.03, R * 0.14, 6), gm); br.rotation.z = Math.PI / 2; br.position.set(0, R * 0.16, R * 1.02); head.add(br); }
+  if (o.scarf) { const sm = m(o.scarf); const ring = new THREE.Mesh(new THREE.TorusGeometry(R * 0.6, R * 0.17, 10, 28), sm); ring.rotation.x = Math.PI / 2; ring.position.y = D.headY - R * 0.82; ring.castShadow = true; upper.add(ring); const tail = new THREE.Mesh(sph(), sm); tail.scale.set(R * 0.17, R * 0.42, R * 0.08); tail.position.set(R * 0.32, D.headY - R * 1.25, R * 0.62); tail.rotation.z = 0.15; tail.castShadow = true; upper.add(tail); }
   // contact shadow
   if (o.shadowBlob !== false) root.add(blob(0.55, 0.3));
   outline(rig, { px: o.outlinePx ?? 3.2 });

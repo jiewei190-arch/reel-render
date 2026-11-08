@@ -24,4 +24,13 @@ for title, im in (('6 expressions  (EXPR.*: lids, brows, pupils, mouth)', ex), (
     d.text((pad, y + 14), title, font=font(38), fill='#f2ead6'); y += head; img.paste(im, (0, y)); y += im.height
 d.text((pad, y + 14), '3 sets  (SETS.romanStreet / romanHouse / cityGate)', font=font(38), fill='#f2ead6'); y += head
 for i, s in enumerate(sets): img.paste(s, (pad + i * (s.width + pad), y))
-out = os.path.join(HERE, 'style_sheet.png'); img.save(out, optimize=True); print(out, img.size)
+y += sets[0].height + pad
+# ---- cast redesign page
+line = Image.open(f(5.5)); xs = [Image.open(f(t)).resize((int((W - 4 * pad) / 3), int((W - 4 * pad) / 3 * 9 / 16)), Image.LANCZOS) for t in (6.5, 7.5, 8.5)]
+H2 = y + head + line.height + head + xs[0].height + pad * 2
+img2 = Image.new('RGB', (W, H2), '#1c1418'); img2.paste(img, (0, 0)); d = ImageDraw.Draw(img2)
+d.text((pad, y + 14), 'I.Awaken cast as Toon 3D  (kits/toon3d/cast.js: castMember(id), cat())', font=font(38), fill='#ffd25a'); y += head; img2.paste(line, (0, y)); y += line.height
+d.text((pad, y + 14), '3 expressions each: HERO / DEV / MINA', font=font(38), fill='#f2ead6'); y += head
+for i, s in enumerate(xs): img2.paste(s, (pad + i * (s.width + pad), y))
+out = os.path.join(HERE, 'style_sheet.png'); img2.save(out, optimize=True); print(out, img2.size)
+av = Image.open(f(9.5)); cx, cy = av.width // 2, av.height // 2; av.crop((cx - 400, cy - 400, cx + 400, cy + 400)).save(os.path.join(HERE, 'avatar_hero_800.png'), optimize=True); print('avatar 800x800')
