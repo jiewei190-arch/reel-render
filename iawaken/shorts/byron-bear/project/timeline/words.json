@@ -1,0 +1,440 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "His",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "college",
+   "start": 0.3,
+   "end": 0.66
+  },
+  {
+   "word": "banned",
+   "start": 0.66,
+   "end": 1.0
+  },
+  {
+   "word": "dogs.",
+   "start": 1.0,
+   "end": 1.42
+  },
+  {
+   "word": "So",
+   "start": 1.82,
+   "end": 2.08
+  },
+  {
+   "word": "he",
+   "start": 2.08,
+   "end": 2.22
+  },
+  {
+   "word": "got",
+   "start": 2.22,
+   "end": 2.36
+  },
+  {
+   "word": "a",
+   "start": 2.36,
+   "end": 2.5
+  },
+  {
+   "word": "bear.",
+   "start": 2.5,
+   "end": 2.76
+  },
+  {
+   "word": "According",
+   "start": 3.34,
+   "end": 3.56
+  },
+  {
+   "word": "to",
+   "start": 3.56,
+   "end": 3.86
+  },
+  {
+   "word": "legend,",
+   "start": 3.86,
+   "end": 4.2
+  },
+  {
+   "word": "the",
+   "start": 4.48,
+   "end": 4.56
+  },
+  {
+   "word": "rules",
+   "start": 4.56,
+   "end": 4.84
+  },
+  {
+   "word": "said",
+   "start": 4.84,
+   "end": 5.12
+  },
+  {
+   "word": "nothing",
+   "start": 5.12,
+   "end": 5.42
+  },
+  {
+   "word": "about",
+   "start": 5.42,
+   "end": 5.78
+  },
+  {
+   "word": "bears.",
+   "start": 5.78,
+   "end": 6.14
+  },
+  {
+   "word": "This",
+   "start": 6.78,
+   "end": 6.9
+  },
+  {
+   "word": "is",
+   "start": 6.9,
+   "end": 7.16
+  },
+  {
+   "word": "the",
+   "start": 7.16,
+   "end": 7.36
+  },
+  {
+   "word": "poet",
+   "start": 7.36,
+   "end": 7.62
+  },
+  {
+   "word": "Lord",
+   "start": 7.62,
+   "end": 7.96
+  },
+  {
+   "word": "Byron,",
+   "start": 7.96,
+   "end": 8.34
+  },
+  {
+   "word": "a",
+   "start": 8.8,
+   "end": 8.86
+  },
+  {
+   "word": "student",
+   "start": 8.86,
+   "end": 9.16
+  },
+  {
+   "word": "at",
+   "start": 9.16,
+   "end": 9.42
+  },
+  {
+   "word": "Trinity",
+   "start": 9.42,
+   "end": 9.68
+  },
+  {
+   "word": "College,",
+   "start": 9.68,
+   "end": 10.12
+  },
+  {
+   "word": "Cambridge.",
+   "start": 10.44,
+   "end": 10.66
+  },
+  {
+   "word": "Dogs?",
+   "start": 11.42,
+   "end": 11.64
+  },
+  {
+   "word": "Not",
+   "start": 12.42,
+   "end": 12.48
+  },
+  {
+   "word": "allowed.",
+   "start": 12.48,
+   "end": 12.82
+  },
+  {
+   "word": "Bears?",
+   "start": 13.6,
+   "end": 14.16
+  },
+  {
+   "word": "Apparently",
+   "start": 14.86,
+   "end": 15.16
+  },
+  {
+   "word": "fine.",
+   "start": 15.16,
+   "end": 15.62
+  },
+  {
+   "word": "In",
+   "start": 16.18,
+   "end": 16.3
+  },
+  {
+   "word": "1807,",
+   "start": 16.3,
+   "end": 17.9
+  },
+  {
+   "word": "he",
+   "start": 17.9,
+   "end": 18.3
+  },
+  {
+   "word": "wrote",
+   "start": 18.3,
+   "end": 18.48
+  },
+  {
+   "word": "to",
+   "start": 18.48,
+   "end": 18.72
+  },
+  {
+   "word": "a",
+   "start": 18.72,
+   "end": 18.9
+  },
+  {
+   "word": "friend:",
+   "start": 18.9,
+   "end": 19.18
+  },
+  {
+   "word": "I",
+   "start": 19.66,
+   "end": 19.76
+  },
+  {
+   "word": "have",
+   "start": 19.76,
+   "end": 19.96
+  },
+  {
+   "word": "a",
+   "start": 19.96,
+   "end": 20.08
+  },
+  {
+   "word": "new",
+   "start": 20.08,
+   "end": 20.2
+  },
+  {
+   "word": "friend,",
+   "start": 20.2,
+   "end": 20.6
+  },
+  {
+   "word": "the",
+   "start": 20.86,
+   "end": 20.9
+  },
+  {
+   "word": "finest",
+   "start": 20.9,
+   "end": 21.24
+  },
+  {
+   "word": "in",
+   "start": 21.24,
+   "end": 21.6
+  },
+  {
+   "word": "the",
+   "start": 21.6,
+   "end": 21.68
+  },
+  {
+   "word": "world.",
+   "start": 21.68,
+   "end": 22.04
+  },
+  {
+   "word": "A",
+   "start": 23.02,
+   "end": 23.12
+  },
+  {
+   "word": "tame",
+   "start": 23.12,
+   "end": 23.38
+  },
+  {
+   "word": "bear.",
+   "start": 23.38,
+   "end": 23.66
+  },
+  {
+   "word": "They",
+   "start": 24.22,
+   "end": 24.34
+  },
+  {
+   "word": "asked",
+   "start": 24.34,
+   "end": 24.62
+  },
+  {
+   "word": "him",
+   "start": 24.62,
+   "end": 24.8
+  },
+  {
+   "word": "what",
+   "start": 24.8,
+   "end": 25.0
+  },
+  {
+   "word": "he",
+   "start": 25.0,
+   "end": 25.14
+  },
+  {
+   "word": "planned",
+   "start": 25.14,
+   "end": 25.38
+  },
+  {
+   "word": "to",
+   "start": 25.38,
+   "end": 25.6
+  },
+  {
+   "word": "do",
+   "start": 25.6,
+   "end": 25.76
+  },
+  {
+   "word": "with",
+   "start": 25.76,
+   "end": 25.9
+  },
+  {
+   "word": "it.",
+   "start": 25.9,
+   "end": 26.14
+  },
+  {
+   "word": "He",
+   "start": 26.77,
+   "end": 27.1
+  },
+  {
+   "word": "said",
+   "start": 27.1,
+   "end": 27.28
+  },
+  {
+   "word": "it",
+   "start": 27.28,
+   "end": 27.4
+  },
+  {
+   "word": "should",
+   "start": 27.4,
+   "end": 27.54
+  },
+  {
+   "word": "sit",
+   "start": 27.54,
+   "end": 27.74
+  },
+  {
+   "word": "for",
+   "start": 27.74,
+   "end": 27.96
+  },
+  {
+   "word": "a",
+   "start": 27.96,
+   "end": 28.12
+  },
+  {
+   "word": "fellowship.",
+   "start": 28.12,
+   "end": 28.58
+  },
+  {
+   "word": "Cambridge",
+   "start": 29.5,
+   "end": 29.5
+  },
+  {
+   "word": "is",
+   "start": 29.5,
+   "end": 29.82
+  },
+  {
+   "word": "still",
+   "start": 29.82,
+   "end": 30.04
+  },
+  {
+   "word": "telling",
+   "start": 30.04,
+   "end": 30.42
+  },
+  {
+   "word": "the",
+   "start": 30.42,
+   "end": 30.56
+  },
+  {
+   "word": "story",
+   "start": 30.56,
+   "end": 30.94
+  },
+  {
+   "word": "two",
+   "start": 30.94,
+   "end": 31.17
+  },
+  {
+   "word": "hundred",
+   "start": 31.17,
+   "end": 31.4
+  },
+  {
+   "word": "years",
+   "start": 31.4,
+   "end": 31.88
+  },
+  {
+   "word": "later.",
+   "start": 31.88,
+   "end": 32.32
+  },
+  {
+   "word": "Subscribe",
+   "start": 32.86,
+   "end": 33.2
+  },
+  {
+   "word": "for",
+   "start": 33.2,
+   "end": 33.46
+  },
+  {
+   "word": "more.",
+   "start": 33.46,
+   "end": 33.74
+  }
+ ]
+}

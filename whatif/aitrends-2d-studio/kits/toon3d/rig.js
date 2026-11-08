@@ -180,6 +180,19 @@ function bodyTexture(outfit, c) {
       band(0, 1, c.main || '#3f8a7a'); band(0, 0.4, c.legsTop || '#c2a878'); band(0.4, 0.43, shadeHex(c.legsTop || '#c2a878', -0.3));
       g.strokeStyle = shadeHex(c.main || '#3f8a7a', -0.3); g.lineWidth = 8; g.beginPath(); g.arc(cx, Y(1.02), 46, 0, Math.PI); g.stroke();
       if (c.print) { g.fillStyle = c.print; g.beginPath(); g.arc(cx, Y(0.72), 40, 0, 7); g.fill(); g.fillStyle = c.main || '#3f8a7a'; g.beginPath(); g.arc(cx, Y(0.72), 22, 0, 7); g.fill(); }
+    } else if (outfit === 'gown') {   // Regency student: open black scholar's gown over a waistcoat, white shirt + cravat, breeches
+      band(0, 1, c.main || '#22202a'); const v = c.vest || '#d9a21b';
+      g.fillStyle = c.legsTop || '#4a4252'; g.fillRect(cx - 70, Y(0.42), 140, H * 0.42);
+      g.fillStyle = v; g.beginPath(); g.moveTo(cx - 72, Y(0.98)); g.lineTo(cx + 72, Y(0.98)); g.lineTo(cx + 76, Y(0.44)); g.lineTo(cx, Y(0.38)); g.lineTo(cx - 76, Y(0.44)); g.closePath(); g.fill();
+      g.fillStyle = '#f6f2ea'; g.beginPath(); g.moveTo(cx - 44, Y(1)); g.lineTo(cx, Y(0.74)); g.lineTo(cx + 44, Y(1)); g.fill();
+      g.fillStyle = shadeHex(v, -0.3); for (let i = 0; i < 4; i++) { g.beginPath(); g.arc(cx, Y(0.7 - i * 0.075), 7, 0, 7); g.fill(); }
+      g.strokeStyle = shadeHex(c.main || '#22202a', 0.25); g.lineWidth = 8; for (const dx of [-80, 80]) { g.beginPath(); g.moveTo(cx + dx, 0); g.lineTo(cx + dx, H); g.stroke(); }
+    } else if (outfit === 'coat') {   // porter's frock coat: buttons, white cravat, waistcoat strip
+      band(0, 1, c.main || '#2f3a4a'); band(0, 0.4, c.legsTop || '#4a4038');
+      g.fillStyle = c.main || '#2f3a4a'; g.fillRect(0, Y(0.4), W, H * 0.1);
+      g.fillStyle = c.vest || '#8a2a2a'; g.fillRect(cx - 34, Y(0.98), 68, H * 0.5);
+      g.fillStyle = '#f6f2ea'; g.beginPath(); g.moveTo(cx - 34, Y(1)); g.lineTo(cx, Y(0.8)); g.lineTo(cx + 34, Y(1)); g.fill();
+      g.fillStyle = c.trim || '#d8b04a'; for (let i = 0; i < 4; i++) for (const dx of [-56, 56]) { g.beginPath(); g.arc(cx + dx, Y(0.86 - i * 0.11), 8, 0, 7); g.fill(); }
     } else band(0, 1, c.main || '#888');
   }, { wrap: true, offset: [0.5, 0] });
 }
@@ -198,9 +211,11 @@ const OUTFIT = {
   hoodie:  { main: '#d9a21b', legs: '#2e3a52', feet: '#f2ead6', longSleeve: true },
   labcoat: { main: '#f4f2ec', legs: '#3a3f4a', feet: '#2a2220', longSleeve: true },
   tee:     { main: '#3f8a7a', legs: '#c2a878', feet: '#3a2a22', sleeve: true },
+  gown:    { main: '#22202a', vest: '#d9a21b', legsTop: '#4a4252', legs: '#e8e2d4', feet: '#1e1a18', longSleeve: true },
+  coat:    { main: '#2f3a4a', legsTop: '#4a4038', legs: '#4a4038', feet: '#1e1a18', longSleeve: true },
 };
 export const OUTFITS = Object.keys(OUTFIT);
-export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood', 'beanie', 'ballcap', 'slouch'];
+export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood', 'beanie', 'ballcap', 'slouch', 'mortarboard', 'tophat'];
 export const HAIRS = ['bald', 'bowl', 'curly', 'swoop', 'spiky', 'bun', 'horseshoe', 'long', 'bob', 'pigtails', 'messy'];
 
 // pill-shaped body profile (slightly fuller at the hips), uv.y = height 0..1 so outfit bands line up
@@ -363,6 +378,17 @@ export function bean(o = {}) {
     const brimR = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.55, R * 1.55, R * 0.05, 32, 1, false, Math.PI, Math.PI), hm); brimR.position.set(0, R * 0.6, 0); brimR.rotation.x = -0.08; brimR.castShadow = true; head.add(brimR);
     const brimL = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.75, R * 0.75, R * 0.05, 32, 1, false, 0, Math.PI), hm); brimL.scale.set(1, 1, 1.9); brimL.position.set(R * 0.9, R * 0.95, 0); brimL.rotation.z = 1.45; brimL.castShadow = true; head.add(brimL);
     const badge = new THREE.Mesh(sph(), m('#d8b04a')); badge.scale.set(R * 0.05, R * 0.12, R * 0.12); badge.position.set(R * 0.97, R * 0.95, 0); head.add(badge);
+  }
+  if (hg === 'mortarboard') {   // academic cap: skullcap + flat square board + tassel
+    const mm = m(hc || '#1e1c24'); const cap = new THREE.Mesh(new THREE.SphereGeometry(R * 1.06, 32, 12, 0, Math.PI * 2, 0, 1.15), mm); cap.rotation.x = -0.12; cap.castShadow = true; head.add(cap);
+    const brd = new THREE.Mesh(new THREE.BoxGeometry(R * 2.3, R * 0.08, R * 2.3), mm); brd.position.set(0, R * 0.98, -R * 0.08); brd.rotation.set(-0.12, Math.PI / 4, 0); brd.castShadow = true; head.add(brd);
+    const btn = new THREE.Mesh(sph(), mm); btn.scale.setScalar(R * 0.08); btn.position.set(0, R * 1.04, -R * 0.08); head.add(btn);
+    const tas = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.035, R * 0.06, R * 0.6, 6), m(o.tasselColor || '#e0b84a')); tas.position.set(R * 0.95, R * 0.7, R * 0.15); tas.userData.noOutline = true; head.add(tas);
+  }
+  if (hg === 'tophat') {   // early-1800s top hat (porters, dons in town)
+    const hm = m(hc || '#1e1c24'); const crown = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.78, R * 0.7, R * 1.1, 28), hm); crown.position.set(0, R * 1.25, -R * 0.05); crown.rotation.x = -0.08; crown.castShadow = true; head.add(crown);
+    const brim = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.2, R * 1.2, R * 0.06, 32), hm); brim.position.set(0, R * 0.7, -R * 0.02); brim.rotation.x = -0.08; brim.castShadow = true; head.add(brim);
+    const band = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.72, R * 0.72, R * 0.16, 28), m(o.bandColor || '#6a2a2a')); band.position.set(0, R * 0.82, -R * 0.03); band.rotation.x = -0.08; head.add(band);
   }
   if (o.moustache) { const mm = m(o.moustache === true ? shadeHex(hairC, -0.1) : o.moustache); for (const sx of [1, -1]) { const ms = new THREE.Mesh(sph(), mm); ms.scale.set(R * 0.2, R * 0.08, R * 0.08); const n = surf(sx * 0.13, -0.2); ms.position.copy(n).multiplyScalar(R * 1.0); ms.rotation.z = sx * -0.25; ms.castShadow = true; head.add(ms); } }
   if (o.glasses) { const gm = m(o.glassesColor || '#2a2228'); for (const sx of [1, -1]) { const ring = new THREE.Mesh(new THREE.TorusGeometry(R * 0.33, R * 0.035, 8, 28), gm); const n = surf(sx * 0.36, 0.08); ring.position.copy(n).multiplyScalar(R * 1.07); ring.quaternion.setFromUnitVectors(Zv, n); ring.userData.noOutline = true; head.add(ring); } const br = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.03, R * 0.03, R * 0.14, 6), gm); br.rotation.z = Math.PI / 2; br.position.set(0, R * 0.16, R * 1.02); head.add(br); }

@@ -213,3 +213,50 @@ export function gumTree(o = {}) {
 export function fence(o = {}) { const { len = 12, gap = 2.0 } = o; const g = G(); for (let x = -len / 2; x <= len / 2 + 0.01; x += gap) g.add(cyl(0.07, 0.08, 1.3, '#7a6448', x, 0.65, 0, 7)); for (const y of [0.55, 0.95, 1.2]) { const wire = cyl(0.012, 0.012, len, '#5a5a56', 0, y, 0, 4); wire.rotation.z = Math.PI / 2; g.add(wire); } return done(g, 1.8); }
 // field desk with papers and an inkwell (the commander's report)
 export const fieldDesk = () => { const g = G(rbox(1.5, 0.08, 0.8, '#7a5a3a', 0, 0.95, 0, 0.02)); for (const sx of [-1, 1]) for (const sz of [-1, 1]) g.add(cyl(0.03, 0.03, 0.95, '#5a4028', sx * 0.65, 0.475, sz * 0.32, 6)); const paper = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.01, 0.56), toon('#f2ead6')); paper.position.set(0.1, 1.0, 0.05); paper.rotation.y = 0.15; g.add(paper); g.add(cyl(0.05, 0.06, 0.08, '#2a2a3a', -0.45, 1.03, -0.15, 10)); g.paper = paper; return done(g, 2.2); };
+
+// ---------- Regency Cambridge pack (byron-bear Short) ----------
+// sign({ lines: ['NO DOGS'], w, h, post: true, bg, fg, sub }) — painted board on a post. .board = the board mesh (for stamps)
+export function sign(o = {}) {
+  const { lines = ['NO DOGS'], w = 1.5, h = 0.95, post = true, bg = '#f2ead6', fg = '#2a1e1a', sub = null, postH = 1.6 } = o;
+  const t = cached(`sg${lines.join('|')}${sub}${bg}`, () => canvasTex(512, Math.round(512 * h / w), (g, W, H) => { g.fillStyle = bg; g.fillRect(0, 0, W, H); g.strokeStyle = '#7a1e1e'; g.lineWidth = 14; g.strokeRect(14, 14, W - 28, H - 28);
+    g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle'; const fs = Math.min(120, (H * (sub ? 0.62 : 0.8)) / lines.length); g.font = `700 ${fs}px "Playfair Display", serif`;
+    lines.forEach((L, i) => g.fillText(L, W / 2, H * (sub ? 0.42 : 0.5) + (i - (lines.length - 1) / 2) * fs * 1.05));
+    if (sub) { g.font = `italic 600 ${fs * 0.36}px "Playfair Display", serif`; g.fillText(sub, W / 2, H * 0.8); } }));
+  const g = G(); const bd = rbox(w + 0.1, h + 0.1, 0.08, '#5a3a22', 0, post ? postH + h / 2 : h / 2, 0, 0.03); g.add(bd);
+  const face = new THREE.Mesh(new THREE.PlaneGeometry(w, h), texMat(t)); face.position.set(0, bd.position.y, 0.045); face.userData.noOutline = true; g.add(face); g.board = face; g.boardY = bd.position.y;
+  if (post) { g.add(cyl(0.06, 0.07, postH + 0.1, '#5a3a22', 0, (postH + 0.1) / 2, -0.06, 8)); g.add(blob(0.3, 0.25)); }
+  return done(g, 2.4);
+}
+// rule book: open book on its back; pages are canvas textures. book({ left: [...lines], right: [...lines], title })
+export function book(o = {}) {
+  const { left = [], right = [], w = 1.6, d = 1.1, cover = '#6a1e22', title = '' } = o;
+  const page = (L, side) => canvasTex(512, 700, (g, W, H) => { g.fillStyle = '#f4ead2'; g.fillRect(0, 0, W, H); const gr = g.createLinearGradient(side ? 0 : W, 0, side ? 60 : W - 60, 0); gr.addColorStop(0, 'rgba(120,90,50,.35)'); gr.addColorStop(1, 'rgba(120,90,50,0)'); g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    g.fillStyle = '#2a1e1a'; g.textAlign = 'left'; g.textBaseline = 'top'; if (title && !side) { g.font = '700 46px "Playfair Display", serif'; g.textAlign = 'center'; g.fillText(title, W / 2, 50); g.textAlign = 'left'; }
+    L.forEach((ln, i) => { g.font = (ln.startsWith('*') ? '700 ' : '500 ') + '40px "Playfair Display", serif'; g.fillStyle = ln.startsWith('~') ? 'rgba(42,30,26,.25)' : '#2a1e1a'; g.fillText(ln.replace(/^[*~]/, ''), 50, (title && !side ? 140 : 70) + i * 62); }); });
+  const g = G(rbox(w + 0.12, 0.08, d + 0.1, cover, 0, 0.04, 0, 0.03));
+  for (const [s, L] of [[-1, left], [1, right]]) { const m = new THREE.Mesh(new THREE.BoxGeometry(w / 2, 0.06, d), [toon('#efe3c4'), toon('#efe3c4'), texMat(page(L, s > 0)), toon('#efe3c4'), toon('#efe3c4'), toon('#efe3c4')]); m.position.set(s * w / 4, 0.12, 0); m.rotation.z = -s * 0.06; m.receiveShadow = true; g.add(m); }
+  return done(g, 2.2);
+}
+// writing desk with drawers; .top = desk height
+export function desk(o = {}) { const { w = 2.0, d = 1.0, h = 1.05, color = '#6a3e24' } = o; const g = G(rbox(w, 0.1, d, color, 0, h, 0, 0.03), rbox(w * 0.3, h - 0.1, d * 0.9, shadeHex(color, -0.08), -w * 0.33, (h - 0.1) / 2, 0, 0.03), rbox(w * 0.3, h - 0.1, d * 0.9, shadeHex(color, -0.08), w * 0.33, (h - 0.1) / 2, 0, 0.03));
+  for (const sx of [-1, 1]) for (const y of [0.3, 0.65]) g.add(ball(0.035, '#d8b04a', sx * w * 0.33, y, d * 0.46, 8)); g.add(blob(w * 0.6, 0.25)); g.top = h + 0.05; return done(g); }
+// candle in a brass holder; .flameAt local point for FX.fire
+export function candle(o = {}) { const { h = 0.32 } = o; const g = G(cyl(0.12, 0.14, 0.03, '#c9a14a', 0, 0.015, 0, 16), cyl(0.04, 0.05, 0.06, '#c9a14a', 0, 0.06, 0, 10), cyl(0.04, 0.04, h, '#f4ecd8', 0, 0.09 + h / 2, 0, 12)); g.flameAt = new THREE.Vector3(0, 0.12 + h, 0); return done(g, 2); }
+// quill: a white feather on a thin shaft (hold it with bean.hold('R', q)); tip at the origin
+export function quill() { const g = G(cyl(0.008, 0.012, 0.5, '#efe8da', 0, 0.25, 0, 6)); const v = ball(0.06, '#f6f2ea', 0, 0.38, 0, 10); v.scale.set(0.5, 3.2, 0.25); g.add(v); return done(g, 1.6); }
+// inkpot
+export const inkpot = () => done(G(cyl(0.08, 0.1, 0.12, '#1e1c2a', 0, 0.06, 0, 12), cyl(0.04, 0.04, 0.04, '#1e1c2a', 0, 0.14, 0, 10)), 2);
+// a sheet of paper with optional handwriting (lines) — lies flat, texture faces up. .tex redraws progressively: setText(lines, k 0..1)
+export function letter(o = {}) { const { w = 0.62, d = 0.82 } = o; const c = document.createElement('canvas'); c.width = 512; c.height = 680; const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, 0.01, d), [toon('#f2e6c8'), toon('#f2e6c8'), toon('#ffffff', { map: tex, fresh: true }), toon('#f2e6c8'), toon('#f2e6c8'), toon('#f2e6c8')]); m.receiveShadow = true;
+  const g = G(m); g.setText = (lines = [], k = 1) => { const x = c.getContext('2d'); x.fillStyle = '#f3e7c9'; x.fillRect(0, 0, 512, 680); x.strokeStyle = 'rgba(120,90,50,.18)'; x.lineWidth = 2; for (let y = 120; y < 680; y += 64) { x.beginPath(); x.moveTo(40, y); x.lineTo(472, y); x.stroke(); }
+    const total = lines.join('').length; let n = Math.floor(total * k); x.fillStyle = '#2a2236'; x.font = 'italic 600 44px "Playfair Display", serif'; x.textBaseline = 'alphabetic';
+    lines.forEach((L, i) => { if (n <= 0) return; const s = L.slice(0, n); n -= L.length; x.fillText(s, 50, 110 + i * 64); }); tex.needsUpdate = true; };
+  g.setText([], 0); return done(g, 1.6); }
+// the court fountain (Trinity's Great Court has one): octagonal basin + canopy
+export function fountain(o = {}) { const { stone = '#d8c8a4' } = o; const g = G(cyl(1.6, 1.7, 0.6, stone, 0, 0.3, 0, 8), cyl(1.4, 1.4, 0.05, '#7ab0c8', 0, 0.58, 0, 8)); g.children[1].userData.noOutline = true;
+  for (let i = 0; i < 8; i++) { const a = (i / 8) * Math.PI * 2 + Math.PI / 8; g.add(cyl(0.09, 0.1, 2.6, stone, Math.sin(a) * 1.15, 1.9, Math.cos(a) * 1.15, 8)); }
+  g.add(cyl(1.45, 1.45, 0.35, stone, 0, 3.3, 0, 8), new THREE.Mesh(new THREE.ConeGeometry(1.45, 1.4, 8), toon(shadeHex(stone, -0.1))).translateY(4.15), ball(0.18, '#d8b04a', 0, 4.95, 0, 10));
+  g.add(cyl(0.18, 0.25, 1.4, stone, 0, 1.2, 0, 8)); g.add(blob(1.9, 0.25)); return done(g, 2.2); }
+// a low stone wall / ledge (BISCUIT sits on it)
+export const ledge = (o = {}) => { const { w = 3, h = 1.0, stone = '#cdbb98' } = o; return done(G(rbox(w, h, 0.6, stone, 0, h / 2, 0, 0.04), rbox(w + 0.1, 0.12, 0.7, shadeHex(stone, 0.08), 0, h + 0.06, 0, 0.03))); };
