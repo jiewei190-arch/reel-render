@@ -1,0 +1,18 @@
+{
+ "title": "What If You Jumped Into a Hole Through the Earth?",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 29.75,
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["earth", "fall", "glow", "heat", "pressure", "sun", "weirder", "weightless", "eight", "kilometers", "thirtyeight", "minutes", "forever", "jump", "subscribe"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "gainDb": -17 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
