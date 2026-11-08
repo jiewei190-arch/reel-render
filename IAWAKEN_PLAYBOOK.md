@@ -43,3 +43,23 @@ on "Full story on the channel." Related video = the episode. Plus original Short
 | EP | `iawaken/ep-blackhole` | Long episode "What If You Fell Into a Black Hole?" (5-7 min, 16:9), built to the retention rules above, hoodie hero + Dev/Mina. Pairs with the Short `short-blackhole` (its Related video). Follow `iawaken/HANDOFF.md` (the loop, STATUS.md states) on top of `iawaken/next-episode`. |
 | THUMBS | `iawaken/thumbs` | 3 Test & Compare thumbnails each for: Moon Disappeared, Freeze Time, Jump Doubled, and the new Black Hole episode. |
 | CLIPS | `iawaken/clips-stoptime` | 3 vertical Shorts cut from the Freeze Time episode (`iawaken/out/stoptime/video.part-*`, words in `whatif/aitrends-2d-studio/projects/stop-time/timeline/words.json`, tool `whatif/shorts/see-in-dark/make_short.py`). |
+
+## NEW FORMAT (owner, Nov 8): "History Hook" story videos
+The owner's direction: "start off with a strong hook, show a crazy clip, then get into the story. Like: the Roman Empire
+got absolutely destroyed back in the day, then explain why."
+Structure (long-form, 6-9 min, 16:9; every rule above still applies):
+1. **THE CLIP (0-20 s):** cold open on the most dramatic moment of the story, animated like a movie scene: fire,
+   crowds, walls, a fallen symbol, big sound. 2-4 short narrated lines, present tense ("It's the year 410. For the
+   first time in 800 years, enemies are inside Rome."). End the clip on a hard stop + the question ("How did the
+   greatest empire on Earth end up here?").
+2. **TITLE CARD (2 s)** then **REWIND:** "To understand how, we have to go back..." Show the peak (Rome at its height).
+3. **THE STORY in 4-5 escalating chapters**, each one a cause, told through people and scenes (an emperor, a soldier,
+   a family), not lists. Each chapter ends on a cliffhanger line into the next.
+4. **RETURN TO THE CLIP** with full context: the viewer now understands the opening.
+5. **THE TWIST (last 60 s):** the fact that changes the whole story (planted as an open loop at 0:20).
+6. **THE QUESTION:** one line for the comments, then an end screen to the next episode.
+Narrator: am_fenrir, documentary-storyteller pacing (slower in the clip, faster in the story). Visuals: the aiTrends 2D
+kit, cinematic and dark-lit for the clip, warm and rich for the past; maps with moving arrows, a year counter in
+gold, character close-ups. NO gore: violence is shown through silhouettes, fire, smoke and sound, never wounds or blood.
+Accuracy: history is argued about. Use mainstream sources (Britannica, academic books/articles, university pages),
+say "historians argue..." where scholars disagree, give exact dates and numbers only when sourced.
