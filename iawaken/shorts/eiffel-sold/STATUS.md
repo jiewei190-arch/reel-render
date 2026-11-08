@@ -1,10 +1,10 @@
-STATE: animating
+STATE: ready
 
-- **Year fix in progress (owner request):** the narration now says "Paris, nineteen twenty-five" (it was read as "one thousand nine hundred twenty-five"). The new VO, words and shot timings are pushed; the full re-render of `video.mp4` is running. The `video.mp4` currently on the branch is the old take.
 # I.Awaken Short: eiffel-sold ("He Sold the Eiffel Tower… Twice 🗼")
-- **Final video:** `video.mp4` (1080x1920, 24 fps, 873 frames, 36.375 s, AAC 192k; -14.1 LUFS integrated, true peak -1.2 dBFS; 23 MB, no split needed). Verify with `sha256sum -c video.sha256`.
-  Audio: `audio/mix.py` (music + SFX + Fenrir VO). mix.py's own mux trimmed the video to 870 frames, so the mixed audio was muxed onto the full 873-frame silent render with `-c:v copy` (+0.7 dB under a -1.5 dBFS limiter to sit at -14 LUFS).
+- **Final video:** `video.mp4` (1080x1920, 24 fps, 866 frames, 36.08 s, AAC 192k; -14.1 LUFS integrated, true peak -1.1 dBFS; 23 MB, no split needed). Verify with `sha256sum -c video.sha256`.
+  Audio: `audio/mix.py` (music + SFX + Fenrir VO). mix.py's own mux trimmed the video to 870 frames, so the mixed audio was muxed onto the full silent render (866 frames) with `-c:v copy` (+0.7 dB under a -1.5 dBFS limiter to sit at -14 LUFS).
 - Checked on the final file: frame 1 = Lustig in front of the tower with the SOLD tag, already walking (no title card); the last frame is the same image (loop); captions are 1-3 words at 66 % height, clear of the Shorts bottom bar and right-side buttons; top labels at 14 % height.
+- **Year fix (owner request, Nov 8):** the year is now spoken as "Paris, nineteen twenty-five" (before, Kokoro read the digits as "one thousand nine hundred twenty-five"). Re-voiced with the same Fenrir settings; every later word moved 0.299 s earlier, and the shots and captions moved with it. A whisper check on the final file hears "nineteen twenty-five". The on-screen tag still reads "PARIS · 1925". Nothing else changed.
 - Script: `script.md` (11 lines, Fenrir 0.95, short gaps + 3 silent beats). Line 1 = 7 words; twist at 3.6 s; closer "Subscribe for more." = 0.86 s.
 - Sources: `sources.md` (3 topic-bank sources, all loaded and checked). "According to the story" covers why Poisson stayed quiet. The video says the second buyer went to the police, because the second "sale" was never paid. No dealer count or delay is given, because no source gives one.
 - Project: `project/` (Toon 3D kit, 19 shots). Re-render from `whatif/aitrends-2d-studio`: `node render.mjs --project ../../iawaken/shorts/eiffel-sold/project` then `python3 audio/mix.py --project ../../iawaken/shorts/eiffel-sold/project`.
