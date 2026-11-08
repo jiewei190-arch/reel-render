@@ -1,0 +1,490 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "America",
+   "start": 0.0,
+   "end": 0.52
+  },
+  {
+   "word": "and",
+   "start": 0.52,
+   "end": 0.8
+  },
+  {
+   "word": "Britain",
+   "start": 0.8,
+   "end": 1.12
+  },
+  {
+   "word": "almost",
+   "start": 1.12,
+   "end": 1.62
+  },
+  {
+   "word": "went",
+   "start": 1.62,
+   "end": 1.92
+  },
+  {
+   "word": "to",
+   "start": 1.92,
+   "end": 2.08
+  },
+  {
+   "word": "war",
+   "start": 2.08,
+   "end": 2.34
+  },
+  {
+   "word": "over",
+   "start": 2.34,
+   "end": 2.6
+  },
+  {
+   "word": "a",
+   "start": 2.6,
+   "end": 2.82
+  },
+  {
+   "word": "pig.",
+   "start": 2.82,
+   "end": 3.0
+  },
+  {
+   "word": "The",
+   "start": 4.0,
+   "end": 4.02
+  },
+  {
+   "word": "pig",
+   "start": 4.02,
+   "end": 4.24
+  },
+  {
+   "word": "was",
+   "start": 4.24,
+   "end": 4.38
+  },
+  {
+   "word": "the",
+   "start": 4.38,
+   "end": 4.54
+  },
+  {
+   "word": "only",
+   "start": 4.54,
+   "end": 4.82
+  },
+  {
+   "word": "casualty.",
+   "start": 4.82,
+   "end": 5.42
+  },
+  {
+   "word": "It's",
+   "start": 6.02,
+   "end": 6.16
+  },
+  {
+   "word": "1859.",
+   "start": 6.16,
+   "end": 8.5
+  },
+  {
+   "word": "Both",
+   "start": 8.5,
+   "end": 8.66
+  },
+  {
+   "word": "countries",
+   "start": 8.66,
+   "end": 9.04
+  },
+  {
+   "word": "claim",
+   "start": 9.04,
+   "end": 9.3
+  },
+  {
+   "word": "one",
+   "start": 9.3,
+   "end": 9.54
+  },
+  {
+   "word": "island.",
+   "start": 9.54,
+   "end": 9.92
+  },
+  {
+   "word": "A",
+   "start": 10.4,
+   "end": 10.58
+  },
+  {
+   "word": "British",
+   "start": 10.58,
+   "end": 10.8
+  },
+  {
+   "word": "company's",
+   "start": 10.8,
+   "end": 11.46
+  },
+  {
+   "word": "pig",
+   "start": 11.46,
+   "end": 11.68
+  },
+  {
+   "word": "eats",
+   "start": 11.68,
+   "end": 12.06
+  },
+  {
+   "word": "an",
+   "start": 12.06,
+   "end": 12.24
+  },
+  {
+   "word": "American",
+   "start": 12.24,
+   "end": 12.64
+  },
+  {
+   "word": "farmer's",
+   "start": 12.64,
+   "end": 13.24
+  },
+  {
+   "word": "potatoes.",
+   "start": 13.24,
+   "end": 13.7
+  },
+  {
+   "word": "So",
+   "start": 14.22,
+   "end": 14.44
+  },
+  {
+   "word": "he",
+   "start": 14.44,
+   "end": 14.58
+  },
+  {
+   "word": "shoots",
+   "start": 14.58,
+   "end": 14.8
+  },
+  {
+   "word": "it.",
+   "start": 14.8,
+   "end": 15.08
+  },
+  {
+   "word": "Britain",
+   "start": 15.56,
+   "end": 15.74
+  },
+  {
+   "word": "threatens",
+   "start": 15.74,
+   "end": 16.16
+  },
+  {
+   "word": "to",
+   "start": 16.16,
+   "end": 16.4
+  },
+  {
+   "word": "arrest",
+   "start": 16.4,
+   "end": 16.68
+  },
+  {
+   "word": "him.",
+   "start": 16.68,
+   "end": 16.96
+  },
+  {
+   "word": "The",
+   "start": 17.38,
+   "end": 17.5
+  },
+  {
+   "word": "US",
+   "start": 17.5,
+   "end": 17.88
+  },
+  {
+   "word": "Army",
+   "start": 17.88,
+   "end": 18.1
+  },
+  {
+   "word": "lands.",
+   "start": 18.1,
+   "end": 18.42
+  },
+  {
+   "word": "Britain",
+   "start": 18.98,
+   "end": 19.16
+  },
+  {
+   "word": "sends",
+   "start": 19.16,
+   "end": 19.46
+  },
+  {
+   "word": "warships.",
+   "start": 19.46,
+   "end": 19.94
+  },
+  {
+   "word": "All",
+   "start": 20.86,
+   "end": 21.12
+  },
+  {
+   "word": "over",
+   "start": 21.12,
+   "end": 21.32
+  },
+  {
+   "word": "one",
+   "start": 21.32,
+   "end": 21.56
+  },
+  {
+   "word": "pig.",
+   "start": 21.56,
+   "end": 21.88
+  },
+  {
+   "word": "But",
+   "start": 22.38,
+   "end": 22.48
+  },
+  {
+   "word": "a",
+   "start": 22.48,
+   "end": 22.58
+  },
+  {
+   "word": "British",
+   "start": 22.58,
+   "end": 22.82
+  },
+  {
+   "word": "admiral",
+   "start": 22.82,
+   "end": 23.44
+  },
+  {
+   "word": "refuses",
+   "start": 23.44,
+   "end": 23.9
+  },
+  {
+   "word": "to",
+   "start": 23.9,
+   "end": 24.24
+  },
+  {
+   "word": "fight",
+   "start": 24.24,
+   "end": 24.5
+  },
+  {
+   "word": "over",
+   "start": 24.5,
+   "end": 24.76
+  },
+  {
+   "word": "a",
+   "start": 24.76,
+   "end": 24.92
+  },
+  {
+   "word": "pig.",
+   "start": 24.92,
+   "end": 25.18
+  },
+  {
+   "word": "So",
+   "start": 25.18,
+   "end": 25.78
+  },
+  {
+   "word": "both",
+   "start": 25.78,
+   "end": 26.04
+  },
+  {
+   "word": "armies",
+   "start": 26.04,
+   "end": 26.38
+  },
+  {
+   "word": "share",
+   "start": 26.38,
+   "end": 26.64
+  },
+  {
+   "word": "the",
+   "start": 26.64,
+   "end": 26.82
+  },
+  {
+   "word": "island.",
+   "start": 26.82,
+   "end": 27.16
+  },
+  {
+   "word": "For",
+   "start": 27.66,
+   "end": 27.78
+  },
+  {
+   "word": "twelve",
+   "start": 27.78,
+   "end": 28.08
+  },
+  {
+   "word": "years.",
+   "start": 28.08,
+   "end": 28.42
+  },
+  {
+   "word": "Then",
+   "start": 29.0,
+   "end": 29.14
+  },
+  {
+   "word": "Germany's",
+   "start": 29.14,
+   "end": 29.72
+  },
+  {
+   "word": "emperor",
+   "start": 29.72,
+   "end": 29.98
+  },
+  {
+   "word": "settles",
+   "start": 29.98,
+   "end": 30.32
+  },
+  {
+   "word": "it.",
+   "start": 30.32,
+   "end": 30.64
+  },
+  {
+   "word": "The",
+   "start": 31.04,
+   "end": 31.14
+  },
+  {
+   "word": "US",
+   "start": 31.14,
+   "end": 31.48
+  },
+  {
+   "word": "gets",
+   "start": 31.48,
+   "end": 31.62
+  },
+  {
+   "word": "the",
+   "start": 31.62,
+   "end": 31.84
+  },
+  {
+   "word": "island.",
+   "start": 31.84,
+   "end": 32.22
+  },
+  {
+   "word": "And",
+   "start": 33.14,
+   "end": 33.26
+  },
+  {
+   "word": "the",
+   "start": 33.26,
+   "end": 33.36
+  },
+  {
+   "word": "pig",
+   "start": 33.36,
+   "end": 33.54
+  },
+  {
+   "word": "gets",
+   "start": 33.54,
+   "end": 33.78
+  },
+  {
+   "word": "a",
+   "start": 33.78,
+   "end": 33.92
+  },
+  {
+   "word": "bronze",
+   "start": 33.92,
+   "end": 34.2
+  },
+  {
+   "word": "statue.",
+   "start": 34.2,
+   "end": 34.76
+  },
+  {
+   "word": "With",
+   "start": 34.76,
+   "end": 35.36
+  },
+  {
+   "word": "a",
+   "start": 35.36,
+   "end": 35.48
+  },
+  {
+   "word": "potato",
+   "start": 35.48,
+   "end": 35.86
+  },
+  {
+   "word": "in",
+   "start": 35.86,
+   "end": 36.08
+  },
+  {
+   "word": "its",
+   "start": 36.08,
+   "end": 36.22
+  },
+  {
+   "word": "mouth.",
+   "start": 36.22,
+   "end": 36.54
+  },
+  {
+   "word": "Subscribe",
+   "start": 37.1,
+   "end": 37.46
+  },
+  {
+   "word": "for",
+   "start": 37.46,
+   "end": 37.74
+  },
+  {
+   "word": "more.",
+   "start": 37.74,
+   "end": 38.0
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 3.0,
+  "text": "America and Britain almost went to war over a pig.",
+  "end": 3.85
+ },
+ {
+  "i": 1,
+  "start": 3.85,
+  "speechStart": 4.0,
+  "speechEnd": 5.42,
+  "text": "The pig was the only casualty.",
+  "end": 5.87
+ },
+ {
+  "i": 2,
+  "start": 5.87,
+  "speechStart": 6.02,
+  "speechEnd": 8.5,
+  "text": "It's 1859.",
+  "end": 8.35
+ },
+ {
+  "i": 3,
+  "start": 8.35,
+  "speechStart": 8.5,
+  "speechEnd": 9.92,
+  "text": "Both countries claim one island.",
+  "end": 10.25
+ },
+ {
+  "i": 4,
+  "start": 10.25,
+  "speechStart": 10.4,
+  "speechEnd": 15.08,
+  "text": "A British company's pig eats an American farmer's potatoes. So he shoots it.",
+  "end": 15.41
+ },
+ {
+  "i": 5,
+  "start": 15.41,
+  "speechStart": 15.56,
+  "speechEnd": 21.88,
+  "text": "Britain threatens to arrest him. The US Army lands. Britain sends warships. All over one pig.",
+  "end": 22.23
+ },
+ {
+  "i": 6,
+  "start": 22.23,
+  "speechStart": 22.38,
+  "speechEnd": 25.18,
+  "text": "But a British admiral refuses to fight over a pig.",
+  "end": 25.03
+ },
+ {
+  "i": 7,
+  "start": 25.03,
+  "speechStart": 25.18,
+  "speechEnd": 28.42,
+  "text": "So both armies share the island. For twelve years.",
+  "end": 28.85
+ },
+ {
+  "i": 8,
+  "start": 28.85,
+  "speechStart": 29.0,
+  "speechEnd": 32.22,
+  "text": "Then Germany's emperor settles it. The US gets the island.",
+  "end": 32.99
+ },
+ {
+  "i": 9,
+  "start": 32.99,
+  "speechStart": 33.14,
+  "speechEnd": 34.76,
+  "text": "And the pig gets a bronze statue.",
+  "end": 34.61
+ },
+ {
+  "i": 10,
+  "start": 34.61,
+  "speechStart": 34.76,
+  "speechEnd": 38.0,
+  "text": "With a potato in its mouth. Subscribe for more.",
+  "end": 39.5
+ }
+]
