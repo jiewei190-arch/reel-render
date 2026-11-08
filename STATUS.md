@@ -1,10 +1,8 @@
-STATE: ready
+STATE: scripting
 
-# I.Awaken next episode — status (slug: stoptime) — READY
-- **Title (46 chars):** What If You Could Freeze Time for 10 Seconds?
-- **Video:** 1920x1080, 24 fps, 405.96 s (6:46), 422.6 MB, -14.5 LUFS, true peak -1.3 dBFS. Rendered on the PC GPU by the Creator session (commit cb7cb39), from the 133-shot cloud animation.
-- **Deliverables (iawaken/out/stoptime/):** `video.part-000` … `video.part-004` (each < 95 MB, plain byte split), `video.sha256` (whole file, name video.mp4), `UPLOAD.md` (title, description + chapters, tags, pinned comment, settings, "Voice is synthetic.", thumbnail prompt).
-- **Join + verify (Windows):** `copy /b video.part-000+video.part-001+video.part-002+video.part-003+video.part-004 video.mp4` then `Get-FileHash video.mp4 -Algorithm SHA256` must equal the hash in video.sha256. (Git Bash: `cat video.part-* > video.mp4 && sha256sum -c video.sha256`.)
-- **VOICE: CLOUD** — Kokoro am_fenrir (synthetic). Captions/description must include "Voice is synthetic."
-- **Source note:** the delivered video was rendered with a local fix for a 0.25 s blueprint glitch in s022/s024; that fix is now in the branch source too (engine/core.js rr() radius clamp + bp.js retina guard), so re-renders match.
-- Nothing was posted, uploaded or scheduled by the cloud. Over to the AI Village: join, verify, review, post.
+# I.Awaken History Hook ep 1 — status (slug: history-rome, branch iawaken/ep-rome)
+- **Title (39 chars):** How Did the Roman Empire Get Destroyed?
+- **Done:** whatif/history-rome/package.md (title, 3 thumbnail concepts, the 0:20 open loop), script.md (67 lines, ~1,260 words), sources.md, narrate.py (Fenrir with documentary pacing).
+- **Next:** Fenrir narration + word timings, story/shots.json, new sets (Rome/Forum, walls + gate, legion camp, Danube, palace, maps, year counter, coins), then animation in batches with QC sheets.
+- **GPU render (later, owner's PC):** commands will be written here when STATE is ready-for-gpu-render.
+- Nothing is posted, uploaded or scheduled by the cloud.
