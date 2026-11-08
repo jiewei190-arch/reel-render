@@ -1,0 +1,435 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "What",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "if",
+   "start": 0.22,
+   "end": 0.32
+  },
+  {
+   "word": "you",
+   "start": 0.32,
+   "end": 0.48
+  },
+  {
+   "word": "jumped",
+   "start": 0.48,
+   "end": 0.68
+  },
+  {
+   "word": "into",
+   "start": 0.68,
+   "end": 0.92
+  },
+  {
+   "word": "a",
+   "start": 0.92,
+   "end": 1.08
+  },
+  {
+   "word": "hole",
+   "start": 1.08,
+   "end": 1.3
+  },
+  {
+   "word": "straight",
+   "start": 1.3,
+   "end": 1.68
+  },
+  {
+   "word": "through",
+   "start": 1.68,
+   "end": 2.0
+  },
+  {
+   "word": "the",
+   "start": 2.0,
+   "end": 2.2
+  },
+  {
+   "word": "Earth?",
+   "start": 2.2,
+   "end": 2.4
+  },
+  {
+   "word": "You",
+   "start": 2.94,
+   "end": 3.12
+  },
+  {
+   "word": "fall.",
+   "start": 3.12,
+   "end": 3.44
+  },
+  {
+   "word": "Faster",
+   "start": 4.08,
+   "end": 4.26
+  },
+  {
+   "word": "every",
+   "start": 4.26,
+   "end": 4.62
+  },
+  {
+   "word": "second.",
+   "start": 4.62,
+   "end": 4.98
+  },
+  {
+   "word": "But",
+   "start": 5.5,
+   "end": 5.7
+  },
+  {
+   "word": "then",
+   "start": 5.7,
+   "end": 5.84
+  },
+  {
+   "word": "the",
+   "start": 5.84,
+   "end": 5.94
+  },
+  {
+   "word": "rock",
+   "start": 5.94,
+   "end": 6.16
+  },
+  {
+   "word": "starts",
+   "start": 6.16,
+   "end": 6.44
+  },
+  {
+   "word": "to",
+   "start": 6.44,
+   "end": 6.66
+  },
+  {
+   "word": "glow.",
+   "start": 6.66,
+   "end": 6.92
+  },
+  {
+   "word": "The",
+   "start": 7.42,
+   "end": 7.6
+  },
+  {
+   "word": "heat",
+   "start": 7.6,
+   "end": 7.76
+  },
+  {
+   "word": "and",
+   "start": 7.76,
+   "end": 7.9
+  },
+  {
+   "word": "pressure",
+   "start": 7.9,
+   "end": 8.16
+  },
+  {
+   "word": "keep",
+   "start": 8.16,
+   "end": 8.4
+  },
+  {
+   "word": "rising.",
+   "start": 8.4,
+   "end": 8.92
+  },
+  {
+   "word": "Near",
+   "start": 9.52,
+   "end": 9.66
+  },
+  {
+   "word": "the",
+   "start": 9.66,
+   "end": 9.86
+  },
+  {
+   "word": "core,",
+   "start": 9.86,
+   "end": 10.16
+  },
+  {
+   "word": "it's",
+   "start": 10.16,
+   "end": 10.54
+  },
+  {
+   "word": "about",
+   "start": 10.54,
+   "end": 10.72
+  },
+  {
+   "word": "as",
+   "start": 10.72,
+   "end": 10.92
+  },
+  {
+   "word": "hot",
+   "start": 10.92,
+   "end": 11.16
+  },
+  {
+   "word": "as",
+   "start": 11.16,
+   "end": 11.4
+  },
+  {
+   "word": "the",
+   "start": 11.4,
+   "end": 11.54
+  },
+  {
+   "word": "surface",
+   "start": 11.54,
+   "end": 11.82
+  },
+  {
+   "word": "of",
+   "start": 11.82,
+   "end": 12.08
+  },
+  {
+   "word": "the",
+   "start": 12.08,
+   "end": 12.2
+  },
+  {
+   "word": "Sun.",
+   "start": 12.2,
+   "end": 12.44
+  },
+  {
+   "word": "And",
+   "start": 12.88,
+   "end": 13.06
+  },
+  {
+   "word": "it",
+   "start": 13.06,
+   "end": 13.16
+  },
+  {
+   "word": "gets",
+   "start": 13.16,
+   "end": 13.4
+  },
+  {
+   "word": "weirder.",
+   "start": 13.4,
+   "end": 13.8
+  },
+  {
+   "word": "At",
+   "start": 14.28,
+   "end": 14.48
+  },
+  {
+   "word": "the",
+   "start": 14.48,
+   "end": 14.62
+  },
+  {
+   "word": "center,",
+   "start": 14.62,
+   "end": 14.92
+  },
+  {
+   "word": "you're",
+   "start": 14.92,
+   "end": 15.32
+  },
+  {
+   "word": "weightless,",
+   "start": 15.32,
+   "end": 15.82
+  },
+  {
+   "word": "racing",
+   "start": 16.04,
+   "end": 16.36
+  },
+  {
+   "word": "at",
+   "start": 16.36,
+   "end": 16.6
+  },
+  {
+   "word": "eight",
+   "start": 16.6,
+   "end": 16.91
+  },
+  {
+   "word": "kilometers",
+   "start": 16.91,
+   "end": 17.22
+  },
+  {
+   "word": "per",
+   "start": 17.22,
+   "end": 17.72
+  },
+  {
+   "word": "second.",
+   "start": 17.72,
+   "end": 18.1
+  },
+  {
+   "word": "Then",
+   "start": 18.52,
+   "end": 18.76
+  },
+  {
+   "word": "you",
+   "start": 18.76,
+   "end": 18.94
+  },
+  {
+   "word": "slow",
+   "start": 18.94,
+   "end": 19.2
+  },
+  {
+   "word": "down,",
+   "start": 19.2,
+   "end": 19.58
+  },
+  {
+   "word": "and",
+   "start": 19.58,
+   "end": 19.88
+  },
+  {
+   "word": "about",
+   "start": 19.88,
+   "end": 20.12
+  },
+  {
+   "word": "thirty-eight",
+   "start": 20.12,
+   "end": 20.72
+  },
+  {
+   "word": "minutes",
+   "start": 20.72,
+   "end": 21.1
+  },
+  {
+   "word": "later,",
+   "start": 21.1,
+   "end": 21.52
+  },
+  {
+   "word": "you",
+   "start": 21.52,
+   "end": 21.82
+  },
+  {
+   "word": "pop",
+   "start": 21.82,
+   "end": 22.06
+  },
+  {
+   "word": "out",
+   "start": 22.06,
+   "end": 22.34
+  },
+  {
+   "word": "on",
+   "start": 22.34,
+   "end": 22.56
+  },
+  {
+   "word": "the",
+   "start": 22.56,
+   "end": 22.66
+  },
+  {
+   "word": "other",
+   "start": 22.66,
+   "end": 22.88
+  },
+  {
+   "word": "side.",
+   "start": 22.88,
+   "end": 23.3
+  },
+  {
+   "word": "With",
+   "start": 23.3,
+   "end": 23.88
+  },
+  {
+   "word": "no",
+   "start": 23.88,
+   "end": 24.14
+  },
+  {
+   "word": "air",
+   "start": 24.14,
+   "end": 24.32
+  },
+  {
+   "word": "to",
+   "start": 24.32,
+   "end": 24.46
+  },
+  {
+   "word": "stop",
+   "start": 24.46,
+   "end": 24.72
+  },
+  {
+   "word": "you,",
+   "start": 24.72,
+   "end": 24.94
+  },
+  {
+   "word": "you",
+   "start": 24.94,
+   "end": 25.08
+  },
+  {
+   "word": "fall",
+   "start": 25.08,
+   "end": 25.26
+  },
+  {
+   "word": "back.",
+   "start": 25.26,
+   "end": 25.68
+  },
+  {
+   "word": "Forever.",
+   "start": 26.16,
+   "end": 26.42
+  },
+  {
+   "word": "Would",
+   "start": 27.1,
+   "end": 27.22
+  },
+  {
+   "word": "you",
+   "start": 27.22,
+   "end": 27.38
+  },
+  {
+   "word": "jump?",
+   "start": 27.38,
+   "end": 27.66
+  }
+ ]
+}

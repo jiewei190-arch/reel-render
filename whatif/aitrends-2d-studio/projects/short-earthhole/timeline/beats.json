@@ -1,0 +1,98 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 3.44,
+  "text": "What if you jumped into a hole straight through the Earth? You fall.",
+  "end": 3.93
+ },
+ {
+  "i": 1,
+  "start": 3.93,
+  "speechStart": 4.08,
+  "speechEnd": 4.98,
+  "text": "Faster every second.",
+  "end": 5.35
+ },
+ {
+  "i": 2,
+  "start": 5.35,
+  "speechStart": 5.5,
+  "speechEnd": 6.92,
+  "text": "But then the rock starts to glow.",
+  "end": 7.27
+ },
+ {
+  "i": 3,
+  "start": 7.27,
+  "speechStart": 7.42,
+  "speechEnd": 8.92,
+  "text": "The heat and pressure keep rising.",
+  "end": 9.37
+ },
+ {
+  "i": 4,
+  "start": 9.37,
+  "speechStart": 9.52,
+  "speechEnd": 12.44,
+  "text": "Near the core, it's about as hot as the surface of the Sun.",
+  "end": 12.73
+ },
+ {
+  "i": 5,
+  "start": 12.73,
+  "speechStart": 12.88,
+  "speechEnd": 13.8,
+  "text": "And it gets weirder.",
+  "end": 14.13
+ },
+ {
+  "i": 6,
+  "start": 14.13,
+  "speechStart": 14.28,
+  "speechEnd": 15.82,
+  "text": "At the center, you're weightless,",
+  "end": 15.89
+ },
+ {
+  "i": 7,
+  "start": 15.89,
+  "speechStart": 16.04,
+  "speechEnd": 18.1,
+  "text": "racing at eight kilometers per second.",
+  "end": 18.37
+ },
+ {
+  "i": 8,
+  "start": 18.37,
+  "speechStart": 18.52,
+  "speechEnd": 21.52,
+  "text": "Then you slow down, and about thirty-eight minutes later,",
+  "end": 21.37
+ },
+ {
+  "i": 9,
+  "start": 21.37,
+  "speechStart": 21.52,
+  "speechEnd": 23.3,
+  "text": "you pop out on the other side.",
+  "end": 23.15
+ },
+ {
+  "i": 10,
+  "start": 23.15,
+  "speechStart": 23.3,
+  "speechEnd": 26.42,
+  "text": "With no air to stop you, you fall back. Forever.",
+  "end": 26.95
+ },
+ {
+  "i": 11,
+  "start": 26.95,
+  "speechStart": 27.1,
+  "speechEnd": 27.66,
+  "text": "Would you jump?",
+  "end": 29.16
+ }
+]
