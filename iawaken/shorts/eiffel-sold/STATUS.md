@@ -1,4 +1,4 @@
-STATE: ready
+STATE: animating
 
 # I.Awaken Short: eiffel-sold ("He Sold the Eiffel Tower… Twice 🗼")
 - **Final video:** `video.mp4` (1080x1920, 24 fps, 866 frames, 36.08 s, AAC 192k; -14.1 LUFS integrated, true peak -1.1 dBFS; 23 MB, no split needed). Verify with `sha256sum -c video.sha256`.
