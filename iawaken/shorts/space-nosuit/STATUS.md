@@ -1,5 +1,6 @@
-STATE: ready
+STATE: animating
 # space-nosuit: "What If You Went to Space Without a Suit? 🚀" (I.Awaken Short, Toon 3D)
+- **Re-voice in progress (owner fix):** the year is now spoken "nineteen sixty-six" (Kokoro read "1966" as "nineteen hundred sixty-six"). The full re-render is running; video.mp4 below is the old cut until this flips back to ready.
 
 - **Final: `video.mp4`** (1080x1920, 24 fps, 855 frames, 35.6 s, H.264 + AAC 192k, 16.9 MB, no split needed). Checksum in `video.sha256`.
   Rendered in the cloud (SwiftShader, 4 workers, 9m31s). Audio: `audio/mix.py` (Fenrir VO + procedural music playful -> tension -> hopeful + 26 SFX cues),

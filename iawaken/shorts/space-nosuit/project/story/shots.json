@@ -1,10 +1,10 @@
 {
- "duration": 35.6,
+ "duration": 35.24,
  "shots": [
   {
    "id": "s01",
    "start": 0,
-   "end": 1.62,
+   "end": 1.64,
    "line": "You have about ten seconds.",
    "scene": "driftOut",
    "sfx": [
@@ -17,7 +17,7 @@
   },
   {
    "id": "s02",
-   "start": 1.62,
+   "start": 1.64,
    "end": 2.8,
    "line": "Use them.",
    "scene": "useThem"
@@ -39,7 +39,7 @@
   {
    "id": "s04",
    "start": 4.48,
-   "end": 5.8,
+   "end": 5.74,
    "line": "No suit.",
    "scene": "noSuit",
    "sfx": [
@@ -52,8 +52,8 @@
   },
   {
    "id": "s05",
-   "start": 5.8,
-   "end": 7.45,
+   "start": 5.74,
+   "end": 7.47,
    "line": "But you don't explode.",
    "scene": "explode",
    "sfx": [
@@ -72,14 +72,14 @@
   },
   {
    "id": "s06",
-   "start": 7.45,
-   "end": 8.78,
+   "start": 7.47,
+   "end": 8.8,
    "line": "That's a movie thing.",
    "scene": "movie"
   },
   {
    "id": "s07",
-   "start": 8.78,
+   "start": 8.8,
    "end": 10.72,
    "line": "You don't freeze solid either.",
    "scene": "freeze",
@@ -95,7 +95,7 @@
   {
    "id": "s08",
    "start": 10.72,
-   "end": 12.98,
+   "end": 13.0,
    "line": "Space is basically a giant thermos.",
    "scene": "thermos",
    "sfx": [
@@ -108,14 +108,14 @@
   },
   {
    "id": "s09",
-   "start": 12.98,
-   "end": 14.8,
+   "start": 13.0,
+   "end": 14.84,
    "line": "The spit on your tongue, though?",
    "scene": "tongue"
   },
   {
    "id": "s10",
-   "start": 14.8,
+   "start": 14.84,
    "end": 16.18,
    "line": "That boils.",
    "scene": "boils",
@@ -148,7 +148,7 @@
   {
    "id": "s11",
    "start": 16.18,
-   "end": 18.1,
+   "end": 17.9,
    "line": "In 1966,",
    "scene": "lab66",
    "sfx": [
@@ -165,8 +165,8 @@
   },
   {
    "id": "s12",
-   "start": 18.1,
-   "end": 20.85,
+   "start": 17.9,
+   "end": 20.53,
    "line": "a NASA test volunteer felt it bubbling...",
    "scene": "hose",
    "sfx": [
@@ -190,8 +190,8 @@
   },
   {
    "id": "s13",
-   "start": 20.85,
-   "end": 22.62,
+   "start": 20.53,
+   "end": 22.28,
    "line": "right before he blacked out.",
    "scene": "blackout",
    "sfx": [
@@ -205,8 +205,8 @@
   },
   {
    "id": "s14",
-   "start": 22.62,
-   "end": 24.45,
+   "start": 22.28,
+   "end": 24.11,
    "line": "Because about ten seconds in,",
    "scene": "tenIn",
    "sfx": [
@@ -233,8 +233,8 @@
   },
   {
    "id": "s15",
-   "start": 24.45,
-   "end": 26.62,
+   "start": 24.11,
+   "end": 26.28,
    "line": "your brain runs out of oxygen.",
    "scene": "oxygen",
    "sfx": [
@@ -248,15 +248,15 @@
   },
   {
    "id": "s16",
-   "start": 26.62,
-   "end": 27.85,
+   "start": 26.28,
+   "end": 27.51,
    "line": "Lights out.",
    "scene": "lightsOut"
   },
   {
    "id": "s17",
-   "start": 27.85,
-   "end": 29.18,
+   "start": 27.51,
+   "end": 28.84,
    "line": "That volunteer?",
    "scene": "button",
    "sfx": [
@@ -273,8 +273,8 @@
   },
   {
    "id": "s18",
-   "start": 29.18,
-   "end": 30.5,
+   "start": 28.84,
+   "end": 30.16,
    "line": "They pumped the air back in,",
    "scene": "airIn",
    "sfx": [
@@ -294,8 +294,8 @@
   },
   {
    "id": "s19",
-   "start": 30.5,
-   "end": 32.45,
+   "start": 30.16,
+   "end": 32.11,
    "line": "in under ninety seconds.",
    "scene": "ninety",
    "sfx": [
@@ -308,8 +308,8 @@
   },
   {
    "id": "s20",
-   "start": 32.45,
-   "end": 33.98,
+   "start": 32.11,
+   "end": 33.62,
    "line": "He woke up fine.",
    "scene": "fine",
    "sfx": [
@@ -323,8 +323,8 @@
   },
   {
    "id": "s21",
-   "start": 33.98,
-   "end": 35.6,
+   "start": 33.62,
+   "end": 35.24,
    "line": "Subscribe for more.",
    "scene": "loop",
    "sfx": [
@@ -345,13 +345,13 @@
   },
   {
    "start": 16.18,
-   "end": 28.0,
+   "end": 27.66,
    "mood": "tension",
    "intensity": 0.4
   },
   {
-   "start": 28.0,
-   "end": 35.6,
+   "start": 27.66,
+   "end": 35.24,
    "mood": "hopeful",
    "intensity": 0.5
   }

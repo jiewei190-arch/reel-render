@@ -14,21 +14,21 @@
   {
    "word": "about",
    "start": 0.4,
-   "end": 0.6
+   "end": 0.62
   },
   {
    "word": "ten",
-   "start": 0.6,
-   "end": 0.84
+   "start": 0.62,
+   "end": 0.86
   },
   {
    "word": "seconds.",
-   "start": 0.84,
-   "end": 1.34
+   "start": 0.86,
+   "end": 1.32
   },
   {
    "word": "Use",
-   "start": 1.78,
+   "start": 1.8,
    "end": 2.06
   },
   {
@@ -73,7 +73,7 @@
   },
   {
    "word": "But",
-   "start": 6.02,
+   "start": 5.96,
    "end": 6.28
   },
   {
@@ -93,7 +93,7 @@
   },
   {
    "word": "That's",
-   "start": 7.62,
+   "start": 7.64,
    "end": 7.88
   },
   {
@@ -113,7 +113,7 @@
   },
   {
    "word": "You",
-   "start": 8.94,
+   "start": 8.96,
    "end": 9.08
   },
   {
@@ -164,11 +164,11 @@
   {
    "word": "thermos.",
    "start": 12.18,
-   "end": 12.66
+   "end": 12.68
   },
   {
    "word": "The",
-   "start": 13.14,
+   "start": 13.16,
    "end": 13.26
   },
   {
@@ -194,17 +194,17 @@
   {
    "word": "though?",
    "start": 13.94,
-   "end": 14.24
+   "end": 14.22
   },
   {
    "word": "That",
-   "start": 15.1,
+   "start": 15.14,
    "end": 15.4
   },
   {
    "word": "boils.",
    "start": 15.4,
-   "end": 15.66
+   "end": 15.64
   },
   {
    "word": "In",
@@ -214,227 +214,227 @@
   {
    "word": "1966,",
    "start": 16.48,
-   "end": 17.4
+   "end": 18.04
   },
   {
    "word": "a",
-   "start": 18.24,
-   "end": 18.36
+   "start": 18.04,
+   "end": 18.16
   },
   {
    "word": "NASA",
-   "start": 18.36,
-   "end": 18.72
+   "start": 18.16,
+   "end": 18.5
   },
   {
    "word": "test",
-   "start": 18.72,
-   "end": 19.14
+   "start": 18.5,
+   "end": 18.88
   },
   {
    "word": "volunteer",
-   "start": 19.14,
-   "end": 19.68
+   "start": 18.88,
+   "end": 19.4
   },
   {
    "word": "felt",
-   "start": 19.68,
-   "end": 19.98
+   "start": 19.4,
+   "end": 19.68
   },
   {
    "word": "it",
-   "start": 19.98,
-   "end": 20.18
+   "start": 19.68,
+   "end": 19.86
   },
   {
    "word": "bubbling...",
-   "start": 20.18,
-   "end": 20.6
+   "start": 19.86,
+   "end": 20.26
   },
   {
    "word": "right",
-   "start": 21.02,
-   "end": 21.24
+   "start": 20.7,
+   "end": 20.9
   },
   {
    "word": "before",
-   "start": 21.24,
-   "end": 21.46
+   "start": 20.9,
+   "end": 21.14
   },
   {
    "word": "he",
-   "start": 21.46,
-   "end": 21.66
+   "start": 21.14,
+   "end": 21.32
   },
   {
    "word": "blacked",
-   "start": 21.66,
-   "end": 22.02
+   "start": 21.32,
+   "end": 21.72
   },
   {
    "word": "out.",
-   "start": 22.02,
-   "end": 22.3
+   "start": 21.72,
+   "end": 21.98
   },
   {
    "word": "Because",
-   "start": 22.78,
-   "end": 22.98
+   "start": 22.44,
+   "end": 22.64
   },
   {
    "word": "about",
-   "start": 22.98,
-   "end": 23.28
+   "start": 22.64,
+   "end": 22.94
   },
   {
    "word": "ten",
-   "start": 23.28,
-   "end": 23.6
+   "start": 22.94,
+   "end": 23.28
   },
   {
    "word": "seconds",
-   "start": 23.6,
-   "end": 23.98
+   "start": 23.28,
+   "end": 23.64
   },
   {
    "word": "in,",
-   "start": 23.98,
-   "end": 24.28
+   "start": 23.64,
+   "end": 23.94
   },
   {
    "word": "your",
-   "start": 24.56,
-   "end": 24.7
+   "start": 24.22,
+   "end": 24.36
   },
   {
    "word": "brain",
-   "start": 24.7,
-   "end": 25.04
+   "start": 24.36,
+   "end": 24.7
   },
   {
    "word": "runs",
-   "start": 25.04,
-   "end": 25.42
+   "start": 24.7,
+   "end": 25.08
   },
   {
    "word": "out",
-   "start": 25.42,
-   "end": 25.7
+   "start": 25.08,
+   "end": 25.36
   },
   {
    "word": "of",
-   "start": 25.7,
-   "end": 25.84
+   "start": 25.36,
+   "end": 25.5
   },
   {
    "word": "oxygen.",
-   "start": 25.84,
-   "end": 26.2
+   "start": 25.5,
+   "end": 25.86
   },
   {
    "word": "Lights",
-   "start": 26.77,
-   "end": 27.06
+   "start": 26.43,
+   "end": 26.72
   },
   {
    "word": "out.",
-   "start": 27.06,
-   "end": 27.48
+   "start": 26.72,
+   "end": 27.12
   },
   {
    "word": "That",
-   "start": 27.98,
-   "end": 28.14
+   "start": 27.64,
+   "end": 27.8
   },
   {
    "word": "volunteer?",
-   "start": 28.14,
-   "end": 28.68
+   "start": 27.8,
+   "end": 28.32
   },
   {
    "word": "They",
-   "start": 29.3,
-   "end": 29.4
+   "start": 28.96,
+   "end": 29.06
   },
   {
    "word": "pumped",
-   "start": 29.4,
-   "end": 29.62
+   "start": 29.06,
+   "end": 29.28
   },
   {
    "word": "the",
-   "start": 29.62,
-   "end": 29.82
+   "start": 29.28,
+   "end": 29.48
   },
   {
    "word": "air",
-   "start": 29.82,
-   "end": 30.0
+   "start": 29.48,
+   "end": 29.66
   },
   {
    "word": "back",
-   "start": 30.0,
-   "end": 30.24
+   "start": 29.66,
+   "end": 29.9
   },
   {
    "word": "in,",
-   "start": 30.24,
-   "end": 30.54
+   "start": 29.9,
+   "end": 30.2
   },
   {
    "word": "in",
-   "start": 30.54,
-   "end": 30.8
+   "start": 30.2,
+   "end": 30.46
   },
   {
    "word": "under",
-   "start": 30.8,
-   "end": 30.98
+   "start": 30.46,
+   "end": 30.64
   },
   {
    "word": "ninety",
-   "start": 30.98,
-   "end": 31.26
+   "start": 30.64,
+   "end": 30.96
   },
   {
    "word": "seconds.",
-   "start": 31.26,
-   "end": 31.8
+   "start": 30.96,
+   "end": 31.46
   },
   {
    "word": "He",
-   "start": 32.68,
-   "end": 32.88
+   "start": 32.34,
+   "end": 32.54
   },
   {
    "word": "woke",
-   "start": 32.88,
-   "end": 33.02
+   "start": 32.54,
+   "end": 32.68
   },
   {
    "word": "up",
-   "start": 33.02,
-   "end": 33.22
+   "start": 32.68,
+   "end": 32.9
   },
   {
    "word": "fine.",
-   "start": 33.22,
-   "end": 33.54
+   "start": 32.9,
+   "end": 33.2
   },
   {
    "word": "Subscribe",
-   "start": 34.12,
-   "end": 34.52
+   "start": 33.76,
+   "end": 34.18
   },
   {
    "word": "for",
-   "start": 34.52,
-   "end": 34.78
+   "start": 34.18,
+   "end": 34.44
   },
   {
    "word": "more.",
-   "start": 34.78,
-   "end": 35.08
+   "start": 34.44,
+   "end": 34.72
   }
  ]
 }

@@ -14,7 +14,7 @@ No gore: no swelling, no bleeding. Danger reads as a comic gasp, fizzing cartoon
 5. The spit on your tongue, though?
 ## beat
 6. That boils.
-7. In 1966, a NASA test volunteer felt it bubbling... right before he blacked out.
+7. In nineteen sixty-six, a NASA test volunteer felt it bubbling... right before he blacked out.
 8. Because about ten seconds in, your brain runs out of oxygen.
 9. Lights out.
 10. That volunteer? They pumped the air back in, in under ninety seconds.

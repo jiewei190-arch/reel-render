@@ -1,19 +1,18 @@
-[00:00.00 -> 00:01.34] You have about ten seconds.
-[00:01.78 -> 00:02.40] Use them.
+[00:00.00 -> 00:01.32] You have about ten seconds.
+[00:01.80 -> 00:02.40] Use them.
 [00:02.92 -> 00:04.02] You just stepped into space.
 [00:04.62 -> 00:05.22] No suit.
-[00:06.02 -> 00:07.02] But you don't explode.
-[00:07.62 -> 00:08.44] That's a movie thing.
-[00:08.94 -> 00:10.22] You don't freeze solid either.
-[00:10.88 -> 00:12.66] Space is basically a giant thermos.
-[00:13.14 -> 00:14.24] The spit on your tongue, though?
-[00:15.10 -> 00:15.66] That boils.
-[00:16.34 -> 00:17.40] In 1966,
-[00:18.24 -> 00:20.60] a NASA test volunteer felt it bubbling...
-[00:21.02 -> 00:22.30] right before he blacked out.
-[00:22.78 -> 00:26.20] Because about ten seconds in, your brain runs out of oxygen.
-[00:26.77 -> 00:27.48] Lights out.
-[00:27.98 -> 00:28.68] That volunteer?
-[00:29.30 -> 00:31.80] They pumped the air back in, in under ninety seconds.
-[00:32.68 -> 00:33.54] He woke up fine.
-[00:34.12 -> 00:35.08] Subscribe for more.
+[00:05.96 -> 00:07.02] But you don't explode.
+[00:07.64 -> 00:08.44] That's a movie thing.
+[00:08.96 -> 00:10.22] You don't freeze solid either.
+[00:10.88 -> 00:12.68] Space is basically a giant thermos.
+[00:13.16 -> 00:14.22] The spit on your tongue, though?
+[00:15.14 -> 00:15.64] That boils.
+[00:16.34 -> 00:20.26] In nineteen sixty-six, a NASA test volunteer felt it bubbling...
+[00:20.70 -> 00:21.98] right before he blacked out.
+[00:22.44 -> 00:25.86] Because about ten seconds in, your brain runs out of oxygen.
+[00:26.43 -> 00:27.12] Lights out.
+[00:27.64 -> 00:28.32] That volunteer?
+[00:28.96 -> 00:31.46] They pumped the air back in, in under ninety seconds.
+[00:32.34 -> 00:33.20] He woke up fine.
+[00:33.76 -> 00:34.72] Subscribe for more.

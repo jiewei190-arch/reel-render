@@ -1,0 +1,66 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 7.02,
+  "text": "You have about ten seconds. Use them. You just stepped into space. No suit. But you don't explode.",
+  "end": 7.49
+ },
+ {
+  "i": 1,
+  "start": 7.49,
+  "speechStart": 7.64,
+  "speechEnd": 8.44,
+  "text": "That's a movie thing.",
+  "end": 8.81
+ },
+ {
+  "i": 2,
+  "start": 8.81,
+  "speechStart": 8.96,
+  "speechEnd": 10.22,
+  "text": "You don't freeze solid either.",
+  "end": 10.73
+ },
+ {
+  "i": 3,
+  "start": 10.73,
+  "speechStart": 10.88,
+  "speechEnd": 15.64,
+  "text": "Space is basically a giant thermos. The spit on your tongue, though? That boils.",
+  "end": 16.19
+ },
+ {
+  "i": 4,
+  "start": 16.19,
+  "speechStart": 16.34,
+  "speechEnd": 20.26,
+  "text": "In 1966, a NASA test volunteer felt it bubbling...",
+  "end": 20.55
+ },
+ {
+  "i": 5,
+  "start": 20.55,
+  "speechStart": 20.7,
+  "speechEnd": 21.98,
+  "text": "right before he blacked out.",
+  "end": 22.29
+ },
+ {
+  "i": 6,
+  "start": 22.29,
+  "speechStart": 22.44,
+  "speechEnd": 28.32,
+  "text": "Because about ten seconds in, your brain runs out of oxygen. Lights out. That volunteer?",
+  "end": 28.81
+ },
+ {
+  "i": 7,
+  "start": 28.81,
+  "speechStart": 28.96,
+  "speechEnd": 34.72,
+  "text": "They pumped the air back in, in under ninety seconds. He woke up fine. Subscribe for more.",
+  "end": 36.22
+ }
+]
