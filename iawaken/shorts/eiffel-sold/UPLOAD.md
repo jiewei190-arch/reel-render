@@ -1,6 +1,6 @@
 # UPLOAD: eiffel-sold (I.Awaken Short). Prepared only: nothing was posted, uploaded or scheduled by the cloud.
 
-**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, 36.4 s, ~-14.6 LUFS integrated, true peak <= -1.5 dBFS.
+**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, 36.375 s (873 frames), -14.1 LUFS integrated, true peak -1.2 dBFS, 23 MB (single file, no split needed).
 
 **Title** (33 chars, 1 emoji, no hashtags):
 ```
