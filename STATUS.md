@@ -1,4 +1,4 @@
-STATE: animating
+STATE: ready
 
 # Toon 3D kit + test Short "The Day Rome Got Sacked" (branch iawaken/toon3d, draft PR #11)
 
@@ -18,10 +18,11 @@ STATE: animating
 - Cloud render speed (SwiftShader, 4 vCPUs, no GPU): 540x960 = 3.4 fps (the Short in ~5m40s). Full res would be ~4x slower, so the full render is for the PC GPU.
 
 ## FINAL VIDEO (rendered in the cloud, Nov 8; the owner's PC was off)
-- **`iawaken/shorts/rome-sacked-short/video.mp4`**: 1080x1920, 30 fps, 1166 frames, 38.87 s (audio 38.85 s), H.264 + AAC, **-14.5 LUFS, true peak -1.1 dBFS**, 26.7 MB (no split needed).
-- `video.sha256`: `dcf4998651c8ed5f1a6ef02d4016d50e883d73f1dc5c810874e37f7583e7cda4  video.mp4` (Git Bash: `sha256sum -c video.sha256`; PowerShell: `Get-FileHash video.mp4 -Algorithm SHA256`).
+- **`iawaken/shorts/rome-sacked-short/video.mp4`**: 1080x1920, 30 fps, 1152 frames, 38.40 s (audio 38.39 s), H.264 + AAC, **-14.6 LUFS, true peak -1.3 dBFS**, 26.6 MB (no split needed).
+- `video.sha256`: `e930a750c3ee611c00bebe1137dd90dc72c5f618155cb51c6154030569585a48  video.mp4` (Git Bash: `sha256sum -c video.sha256`; PowerShell: `Get-FileHash video.mp4 -Algorithm SHA256`).
 - How: `CHROMIUM_PATH=/opt/pw-browsers/chromium node render.mjs --project projects/rome-sacked-short --workers 4` (SwiftShader, 16m12s, ~1.2 fps) -> `python3 audio/mix.py --project projects/rome-sacked-short`.
-  mix.py's output had 1165 frames (it trims the last frame), so the final file is the full 1166-frame silent render with the mixed audio stream copied in (`ffmpeg -i build/video_silent.mp4 -i out/The_Day_Rome_Got_Sacked.mp4 -map 0:v:0 -map 1:a:0 -c copy -movflags +faststart video.mp4`).
+  mix.py trims the last frame(s), so the final file is the full 1166-frame silent render with the mixed audio stream copied in (`ffmpeg -i build/video_silent.mp4 -i out/The_Day_Rome_Got_Sacked.mp4 -map 0:v:0 -map 1:a:0 -c copy -movflags +faststart video.mp4`).
+- **Year fix (owner, Nov 8):** the voice now says "August twenty-fourth, four-ten" (Kokoro had read "410" as "four hundred ten"; checked with Kokoro's phonemes and Whisper). Only line 1 was re-voiced (same fenrir settings) and spliced; everything after it moved by -0.465 s. Captions keep the digits ("August 24th," / "410."). The half-scale preview in `projects/rome-sacked-short/preview/` is from before this fix.
 - Description must include "Voice is synthetic." Sources: `whatif/aitrends-2d-studio/projects/rome-sacked-short/sources.md`. Closer: "Subscribe to find out." (playbook "Short closers").
 
 ## Re-render on the owner's PC (GPU), only if a change is needed, from `reel-render\whatif\aitrends-2d-studio` (Git Bash or PowerShell with the kit PATH, see SETUP_NOTES.md)
