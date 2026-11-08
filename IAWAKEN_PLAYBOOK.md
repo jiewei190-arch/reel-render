@@ -134,3 +134,9 @@ Long-form is paused. Every Short must pass this list before it is sent to the ow
 ### Pace and measuring
 - 1-2 Shorts a day at the same times. Batch-build 7-10 at a time so there's always a week in the buffer.
 - After 10 posted Shorts: compare viewed-vs-swiped and avg % viewed per pillar, kill what loses, make more of what wins.
+
+## Workflow rule (owner, Nov 8): reuse sessions
+Do NOT start a new cloud session for each job. Send the next job as a message to an existing, idle session (it keeps
+its setup and context). Current workers: 3D Shorts x4 (antsize-3d, stopspin-3d, earthhole-3d, blackhole-3d sessions),
+toon3d kit session, topic-bank session, thumbnails session, clips session. Only start a new session if all are busy
+and the owner wants more in parallel.
