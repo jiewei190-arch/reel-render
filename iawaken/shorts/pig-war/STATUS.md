@@ -1,6 +1,7 @@
-STATE: animating
+STATE: ready
 
 - **Owner fix (Nov 8):** the year is now voiced "eighteen fifty-nine" (Kokoro had read "1859" as "one thousand eight hundred fifty-nine"; checked via its phonemes + whisper word timestamps at 6.1-7.4 s). Same Fenrir settings; everything after the year is sample-identical, so shots s05-s20 moved 0.94 s earlier and captions follow the new word timings. On-screen tag still reads 1859. Nothing else changed.
+- **Owner follow-up (Nov 8):** captions show the year as digits ("It's 1859.", one chunk timed across "eighteen fifty-nine", 6.12-7.58 s); voice and mixed audio unchanged (audio stream copied bit-for-bit from the previous cut, -c copy).
 # I.Awaken Short: pig-war ("Two Empires Almost Went to War Over a Pig 🐖")
 - `video.mp4`: 1080x1920, 24 fps, 903 frames, 37.63 s, -14.4 LUFS integrated, true peak -1.2 dBFS (ffmpeg ebur128). 19.0 MB, single file (no split needed). Verify: `sha256sum -c video.sha256`.
   As before, the mix (`build/mix.wav`) was muxed onto the full 903-frame silent render with `-c:v copy` (audio AAC 192k).
