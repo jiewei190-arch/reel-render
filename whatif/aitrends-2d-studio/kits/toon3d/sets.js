@@ -160,4 +160,62 @@ export function outbackFarm(st, o = {}) {
     cams: { wide: { pos: [0, 3.2, 14], look: [0, 1.5, -4], fov: 44 }, low: { pos: [0.5, 0.6, 8], look: [0, 2.2, -2], fov: 46 } },
   };
 }
-export const SETS = { romanStreet, romanHouse, cityGate, outbackFarm };
+
+// ---------------------------------------------------------------------------------------------
+// REGENCY CAMBRIDGE pack (byron-bear Short). Not a replica of any real building: a toon "college" with a brick gatehouse,
+// stone ranges with tall windows, striped lawns and a fountain.
+const rangeTex = (stone = '#d9c49a', n = 4) => PR.texMat(canvasTex(1024, 512, (g, W, H) => { g.fillStyle = stone; g.fillRect(0, 0, W, H); const r = rng(6);
+  for (let j = 0; j < 16; j++) for (let i = 0; i < 16; i++) { g.fillStyle = shadeHex(stone, (r() - 0.5) * 0.08); g.fillRect(i * 64 + (j % 2) * 32 + 2, j * 32 + 2, 60, 28); }
+  for (let i = 0; i < n; i++) { const x = (i + 0.5) * (W / n); for (const [y0, hh] of [[0.18, 0.28], [0.58, 0.3]]) { const y = H * y0, h = H * hh, w = 70;
+    g.fillStyle = shadeHex(stone, -0.18); g.beginPath(); g.moveTo(x - w / 2 - 8, y + h + 8); g.lineTo(x - w / 2 - 8, y + 30); g.quadraticCurveTo(x, y - 34, x + w / 2 + 8, y + 30); g.lineTo(x + w / 2 + 8, y + h + 8); g.fill();
+    g.fillStyle = '#4a5a72'; g.beginPath(); g.moveTo(x - w / 2, y + h); g.lineTo(x - w / 2, y + 34); g.quadraticCurveTo(x, y - 22, x + w / 2, y + 34); g.lineTo(x + w / 2, y + h); g.fill();
+    g.strokeStyle = shadeHex(stone, -0.05); g.lineWidth = 6; g.beginPath(); g.moveTo(x, y); g.lineTo(x, y + h); g.moveTo(x - w / 2, y + h * 0.5); g.lineTo(x + w / 2, y + h * 0.5); g.stroke();
+    g.fillStyle = 'rgba(255,255,255,.22)'; g.fillRect(x - w / 2 + 6, y + 40, 12, h - 50); } }
+  g.fillStyle = shadeHex(stone, -0.1); g.fillRect(0, H * 0.5, W, 10); }, { repeat: [1, 1] }));
+const lawnTex = () => canvasTex(256, 256, (g, W, H) => { for (let i = 0; i < 8; i++) { g.fillStyle = i % 2 ? '#7fae4e' : '#8dbb58'; g.fillRect(0, i * 32, W, 32); } }, { repeat: [1, 3] });
+export function collegeCourt(st, o = {}) {
+  const { open = 1, sign = true, signLines = ['NO DOGS'], signSub = 'By Order of the College', seed = 1, brick = '#b4694e', stone = '#d9c49a' } = o; const g = new THREE.Group(); st.add(g); const fx = fxList();
+  // court floor: stone path + two striped lawns
+  { const fl = texFloor(40, 40, PR.TEX.stone('#cdbf9f', [10, 10])); fl.position.z = 14; g.add(fl); }
+  for (const s of [-1, 1]) { const lw = texFloor(8.5, 26, lawnTex()); lw.position.set(s * 6.2, 0.012, 15); g.add(lw); }
+  // the gatehouse: brick wall with an arch, a taller central block, two turrets, stone dressing
+  const gt = PR.gate({ w: 3.0, h: 4.3, wallW: 9, wallH: 7.8, depth: 1.8, stone: brick }); g.add(gt);
+  g.add(rbox(6.2, 3.4, 2.0, brick, 0, 9.4, -0.9, 0.04));
+  for (let x = -2.8; x <= 2.81; x += 0.8) g.add(rbox(0.45, 0.55, 0.5, stone, x, 11.35, 0.0, 0.04));
+  for (const s of [-1, 1]) { const tw = PR.tower({ r: 0.7, h: 12.2, stone: brick }).at(s * 3.4, 0, 0.2); g.add(tw); g.add(new THREE.Mesh(new THREE.ConeGeometry(0.85, 1.2, 8), toon('#5a5560')).translateX(s * 3.4).translateY(12.95 + 0.6).translateZ(0.2)); }
+  g.add(rbox(1.4, 1.6, 0.15, stone, 0, 6.2, 0.08, 0.05), rbox(0.9, 1.0, 0.1, '#d8b04a', 0, 6.25, 0.17, 0.05));
+  for (const y of [8.9, 10.0]) for (const x of [-1.3, 1.3]) g.add(box(0.6, 0.9, 0.06, '#3a4458', x, y, 0.13));
+  // ranges either side of the gate + the two side ranges of the court
+  for (const s of [-1, 1]) { const w = wallBox(12, 8.5, 1.5, rangeTex(stone, 4), s * 10.5, 4.25, -0.9); g.add(w); for (let x = 5; x < 16.4; x += 0.9) g.add(rbox(0.42, 0.5, 0.5, stone, s * x, 8.75, -0.3, 0.04)); }
+  for (const s of [-1, 1]) { const w = wallBox(1.5, 8.5, 30, rangeTex(stone, 8), s * 11.2, 4.25, 15); g.add(w); }
+  // street beyond the gate: cobbles, a house front, sky
+  const beyond = new THREE.Group(); g.add(beyond);
+  { const fl = texFloor(30, 20, PR.TEX.cobble('#a89a86', [10, 8])); fl.position.z = -11; beyond.add(fl); }
+  beyond.add(PR.facade({ w: 8, h: 6.5, d: 3, color: '#e2cfa8', trim: '#6a4a3a', windows: 3, seed: 4 }).at(0, 0, -12));
+  // fountain, sign, a bench
+  const ft = PR.fountain({ stone }).at(-4.5, 0, 13); g.add(ft);
+  let sg = null; if (sign) { sg = PR.sign({ lines: signLines, sub: signSub }).at(2.35, 0, 1.1, -0.18); g.add(sg); }
+  const setDoors = (k) => { gt.doors[0].rotation.y = -k * 1.6; gt.doors[1].rotation.y = k * 1.6; }; setDoors(open);
+  return { group: g, fx, update: fx.run, setDoors, gate: gt, beyond, sign: sg, fountain: ft,
+    spots: { gate: [0, 0.8], sign: [2.55, 1.1], court: [0, 6], fountain: [-4.5, 13] },
+    cams: { wide: { pos: [0, 3.2, 14], look: [0, 3.5, 0], fov: 50 }, gate: { pos: [0.4, 1.9, 8.5], look: [0.4, 2.0, 0.5], fov: 38 } } };
+}
+// a panelled college room: desk by a leaded window, bookshelf, candle. { evening: bool, desk: bool }
+export function collegeRoom(st, o = {}) {
+  const { evening = true, deskOn = true, seed = 2 } = o; const g = new THREE.Group(); st.add(g); const fx = fxList();
+  g.add(texFloor(12, 10, PR.TEX.planks('#7a5032', [6, 5], 8)));
+  const panel = PR.texMat(PR.TEX.planks('#5a3420', [8, 1], 10)), plaster = PR.texMat(PR.TEX.plaster('#e6d6b6', [3, 1]));
+  g.add(wallBox(12, 2.0, 0.3, panel, 0, 1.0, -2.6), wallBox(12, 3.4, 0.3, plaster, 0, 3.7, -2.6));
+  for (const s of [-1, 1]) g.add(wallBox(0.3, 5.4, 10, plaster, s * 6, 2.7, 2.4));
+  // leaded window (glows) behind the desk
+  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 2.2), new THREE.MeshBasicMaterial({ color: new THREE.Color(evening ? '#3a4a7a' : '#cfe6ff') })); win.position.set(1.6, 2.9, -2.43); win.userData.noOutline = true; g.add(win);
+  g.add(PR.propGroup(rbox(1.8, 0.12, 0.25, '#cdbb98', 1.6, 1.75, -2.35, 0.03), rbox(0.12, 2.4, 0.2, '#cdbb98', 0.7, 2.9, -2.4, 0.03), rbox(0.12, 2.4, 0.2, '#cdbb98', 2.5, 2.9, -2.4, 0.03), rbox(1.8, 0.12, 0.2, '#cdbb98', 1.6, 4.05, -2.4, 0.03), rbox(0.06, 2.2, 0.08, '#3a3434', 1.6, 2.9, -2.38, 0.02), rbox(1.6, 0.06, 0.08, '#3a3434', 1.6, 2.9, -2.38, 0.02)));
+  if (evening) { const moon = new THREE.Mesh(new THREE.CircleGeometry(0.18, 20), new THREE.MeshBasicMaterial({ color: '#fff4d0' })); moon.position.set(2.0, 3.5, -2.42); moon.userData.noOutline = true; g.add(moon); }
+  g.add(PR.shelf({ w: 2.2, h: 3.0, seed }).at(-3.2, 0, -2.2));
+  g.add(PR.rug({ w: 4, d: 3, color: '#7a2a2a', trim: '#d8b04a' }).at(0, 0, 0.5));
+  let dk = null, cd = null; if (deskOn) { dk = PR.desk().at(0, 0, -0.9); g.add(dk); cd = PR.candle().at(-0.6, dk.top, -1.05); g.add(cd); g.add(PR.inkpot().at(0.55, dk.top, -1.0));
+    const f = FX.fire({ size: 0.09, seed: 3, tongues: 2, spread: 0.05, light: evening ? 2.2 : 0, lightRange: 8 }); f.position.copy(cd.flameAt).add(cd.position); g.add(f); fx.push(f); }
+  return { group: g, fx, update: fx.run, desk: dk, candle: cd, spots: { desk: [0, -0.2], center: [0, 1.0] }, cams: { medium: { pos: [0, 2.2, 6], look: [0, 1.6, -0.5], fov: 36 } } };
+}
+
+export const SETS = { romanStreet, romanHouse, cityGate, outbackFarm, collegeCourt, collegeRoom };

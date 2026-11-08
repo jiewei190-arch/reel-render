@@ -17,7 +17,7 @@ Runs inside the aiTrends 2D Studio engine as `kind: '3d'` shots (Three.js 0.169,
 | `toon.js` | `toonStage`, `toon()` material, `outline()` (inverted hull, constant on-screen width), primitives (`rbox`, `cyl`, `ball`, `lathe`, `floor`, `blob`), `LIGHT` presets, `camMove`, `drift` |
 | `rig.js` | `bean(opts)` character factory, `POSE`, `EXPR`, `walk`, `run`, `point`, `shrug`, `idle`, `nod`, `shake`, `tremble`, `mixPose`, `addPose`, `mixExpr`, `CAST` presets |
 | `cast.js` | the I.Awaken main cast as beans: `castMember(id, opts)`, `CAST3D`, `cat()` (BISCUIT), `phone()`, `stopwatch()` |
-| `animals.js` | toon animals in the bean style: `emu({ general })` with `.update(t, { run, peck, lid, lidAngle, look, headTurn })` (used by the emu-war Short) |
+| `animals.js` | toon animals in the bean style: `emu({ general })` with `.update(t, { run, peck, lid, lidAngle, look, headTurn })` (emu-war Short); `bear({ scale, bow, mortarboard })` with `.update(t, { walk, wave, waveL, armsUp, sit, lid, look, headTurn, headTilt, smile, open, pose: { armL, armR } })`, `.paw.L/.R`, `.parts.upper` (byron-bear Short) |
 | `props.js` | furniture + Roman props (`column`, `templeFront`, `facade`, `gate`, `tower`, `table`, `couch`, `throne`, `shelf`, `amphora`, `sack`, `shield`, `spear`, `torch`, `banner`, `stall`, `cart`, `chicken`, ...), textures `TEX.*` |
 | `sets.js` | `SETS.romanStreet`, `SETS.romanHouse` (with `palace: true` for a throne room), `SETS.cityGate`, `applyLight` |
 | `fx.js` | toon `fire`, puffy `smoke`, `embers`, additive `glow`, `skyGlow` (no gore: danger reads as fire, smoke, silhouettes) |
@@ -161,6 +161,14 @@ All return outlined groups with `.at(x, y, z, rotY)` and `.s(scale)`. Architectu
 (Australian slouch hat), `moustache: true | '#hex'`. Set: `SETS.outbackFarm(st, { wheat, field: [w, d, zCentre] })`, a
 wheat field (instanced stalks), fence, windmill, gum trees, farmhouse. Move `field` back (e.g. `[26, 14, -16]`) for shots that
 need bare dirt in front.
+
+### Regency Cambridge pack (byron-bear Short)
+Rig: outfits `gown` (open black scholar's gown over `colors.vest`, white cravat, breeches + stockings) and `coat` (frock coat,
+`colors.vest`); headgear `mortarboard` (`tasselColor`) and `tophat` (`bandColor`). Props: `sign({ lines, sub })`, `book({ title, left, right })`
+(lines starting `*` bold, `~` faint), `desk()` (`.top`), `candle()` (`.flameAt`), `quill()`, `inkpot()`, `letter()` (`.setText(lines, k)`
+writes progressively in handwriting), `fountain()`, `ledge()`. Sets: `SETS.collegeCourt(st, { signLines, signSub, open })` (brick
+gatehouse with turrets, stone ranges with tall windows, striped lawns, fountain, NO DOGS sign; extras `gate`, `sign`, `setDoors`) and
+`SETS.collegeRoom(st, { evening, deskOn })` (panelled study, leaded window, shelf, desk + candle with light).
 
 ## FX (`fx.js`)
 `fire({ size, tongues, seed, light, lightRange, spread })`, `smoke({ count, size, rise, life, spread, drift, color, seed })`,

@@ -72,3 +72,65 @@ export function emu(o = {}) {
   root.update(0); return root;
 }
 function shadeC(hex, k) { const c = new THREE.Color(hex); c.lerp(k < 0 ? new THREE.Color(0, 0, 0) : new THREE.Color(1, 1, 1), Math.abs(k)); return '#' + c.getHexString(); }
+
+// bear({ seed, scale, fur, muzzle, bow: '#hex' | false (ribbon bow at the neck), lead: bool (ribbon lead from the bow), mortarboard: bool })
+// A friendly upright toon bear (~2.5 units to the ear tips, bean scale): pear body, cream belly + muzzle, round ears, lidded eyes.
+// .update(t, { walk 0..1, wave 0..1 (right paw), waveL, armsUp 0..1, lid, lidAngle, look:[x,y], headTurn, headTilt, smile 0..1, open 0..1, sit 0..1, bob, ph })
+// .paw.L / .paw.R are groups at the paws (attach props). Never hurt, never scary: it waves, smiles, poses, sits exams.
+export function bear(o = {}) {
+  const { seed = 3, scale = 1, fur = '#8a5a36', muzzle: muzC = '#e8cfa6', bow = '#c0392b', mortarboard = false } = o;
+  const root = new THREE.Group(); const g = new THREE.Group(); g.scale.setScalar(scale); root.add(g);
+  const F = toon(fur), F2 = toon(shadeC(fur, -0.15)), MZ = toon(muzC), INKM = toon('#2a1a16');
+  const hipsY = 0.72; const upper = new THREE.Group(); upper.position.y = hipsY; g.add(upper);
+  const body = new THREE.Mesh(sph, F); body.scale.set(0.62, 0.72, 0.52); body.position.y = 0.42; body.castShadow = true; upper.add(body);
+  const belly = new THREE.Mesh(sph, MZ); belly.scale.set(0.42, 0.5, 0.3); belly.position.set(0, 0.36, 0.28); upper.add(belly);
+  // head
+  const head = new THREE.Group(); head.position.set(0, 1.34, 0.04); upper.add(head);
+  const hs = new THREE.Mesh(sph, F); hs.scale.set(0.5, 0.45, 0.44); hs.castShadow = true; head.add(hs);
+  for (const s of [-1, 1]) { const ear = new THREE.Mesh(sph, F); ear.scale.set(0.16, 0.16, 0.09); ear.position.set(s * 0.34, 0.34, -0.04); ear.castShadow = true; head.add(ear); const ei = new THREE.Mesh(sph, MZ); ei.scale.set(0.09, 0.09, 0.04); ei.position.set(s * 0.34, 0.33, 0.03); ei.userData.noOutline = true; head.add(ei); }
+  const muz = new THREE.Mesh(sph, MZ); muz.scale.set(0.24, 0.17, 0.18); muz.position.set(0, -0.12, 0.34); head.add(muz);
+  const nose = new THREE.Mesh(sph, INKM); nose.scale.set(0.085, 0.06, 0.06); nose.position.set(0, -0.04, 0.5); head.add(nose);
+  const smileM = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.016, 6, 16, Math.PI), flat('#2a1a16')); smileM.rotation.z = Math.PI; smileM.position.set(0, -0.16, 0.505); smileM.userData.noOutline = true; head.add(smileM);
+  const mouthO = new THREE.Mesh(sph, flat('#5a1e22')); mouthO.scale.set(0.07, 0.05, 0.02); mouthO.position.set(0, -0.19, 0.51); mouthO.userData.noOutline = true; head.add(mouthO);
+  const eyes = [-1, 1].map(s => lidEye(head, new THREE.Vector3(s * 0.17, 0.08, 0.37), new THREE.Vector3(s * 0.35, 0.1, 0.93).normalize(), 0.085, { lid: shadeC(fur, -0.05) }));
+  const brows = [-1, 1].map(s => { const b = new THREE.Mesh(sph, F2); b.scale.set(0.08, 0.025, 0.03); b.position.set(s * 0.17, 0.2, 0.4); b.userData.noOutline = true; head.add(b); return b; });
+  if (mortarboard) { const mm = toon('#1e1c24'); const cap = new THREE.Mesh(new THREE.SphereGeometry(0.42, 24, 10, 0, Math.PI * 2, 0, 1.0), mm); cap.position.y = 0.1; cap.scale.set(1.15, 1, 1.0); head.add(cap);
+    const brd = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.035, 0.85), mm); brd.position.set(0, 0.5, -0.02); brd.rotation.set(-0.1, Math.PI / 4, 0.08); brd.castShadow = true; head.add(brd);
+    const tas = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.025, 0.24, 6), toon('#e0b84a')); tas.position.set(0.4, 0.38, 0.06); tas.userData.noOutline = true; head.add(tas); }
+  if (bow) { const bm = toon(bow); for (const s of [-1, 1]) { const w = new THREE.Mesh(sph, bm); w.scale.set(0.11, 0.07, 0.05); w.position.set(s * 0.1, 0.98, 0.36); w.rotation.z = s * 0.3; head.parent.add(w); } const k = new THREE.Mesh(sph, bm); k.scale.setScalar(0.045); k.position.set(0, 0.98, 0.39); upper.add(k);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.4, 0.03, 6, 24), bm); ring.rotation.x = Math.PI / 2 + 0.25; ring.position.set(0, 1.0, 0.0); ring.userData.noOutline = true; upper.add(ring); }
+  // arms: shoulder pivot -> thick limb -> paw
+  const arm = {}; const paw = {};
+  for (const [side, s] of [['L', 1], ['R', -1]]) { const sh = new THREE.Group(); sh.position.set(s * 0.52, 0.82, 0.02); sh.rotation.order = 'ZXY'; upper.add(sh);
+    const a = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.11, 0.62, 12).translate(0, -0.31, 0), F); a.castShadow = true; sh.add(a);
+    const p = new THREE.Group(); p.position.y = -0.64; sh.add(p); const pb = new THREE.Mesh(sph, F); pb.scale.set(0.15, 0.15, 0.14); pb.castShadow = true; p.add(pb); const pad = new THREE.Mesh(sph, MZ); pad.scale.set(0.08, 0.08, 0.03); pad.position.set(0, -0.02, 0.12); pad.userData.noOutline = true; p.add(pad);
+    arm[side] = sh; paw[side] = p; }
+  // legs: short and stubby
+  const leg = {};
+  for (const [side, s] of [['L', 1], ['R', -1]]) { const hp = new THREE.Group(); hp.position.set(s * 0.26, hipsY + 0.1, 0); g.add(hp);
+    const l = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.15, 0.6, 12).translate(0, -0.3, 0), F); l.castShadow = true; hp.add(l);
+    const ft = new THREE.Mesh(sph, F); ft.scale.set(0.19, 0.12, 0.26); ft.position.set(0, -0.74, 0.08); ft.castShadow = true; hp.add(ft);
+    const sole = new THREE.Mesh(sph, MZ); sole.scale.set(0.12, 0.08, 0.04); sole.position.set(0, -0.72, 0.33); sole.userData.noOutline = true; hp.add(sole); leg[side] = hp; }
+  const tail = new THREE.Mesh(sph, F); tail.scale.setScalar(0.12); tail.position.set(0, 0.12, -0.5); upper.add(tail);
+  root.add(blob(0.7, 0.3)); outline(g, { px: 3.0 });
+  const blinkAt = (t) => { const tt = (t + seed * 1.37) % 3.9; return tt < 0.14 ? Math.sin((tt / 0.14) * Math.PI) : 0; };
+  root.paw = paw; root.parts = { head, upper, body, arm, leg };
+  root.update = (t, u = {}) => {
+    const { walk = 0, wave = 0, waveL = 0, armsUp = 0, lid = 0.3, lidAngle = 0, look = [0, 0], headTurn = 0, headTilt = 0, smile = 1, open = 0, sit = 0, blink = true, ph = seed, brow = 0, pose = null } = u;
+    const w = (t * 1.6 + ph * 0.1) * Math.PI * 2, wk = clamp(walk);
+    const sL = Math.sin(w), sR = Math.sin(w + Math.PI);
+    leg.L.rotation.x = -sL * 0.5 * wk - sit * 1.45; leg.R.rotation.x = -sR * 0.5 * wk - sit * 1.45;
+    upper.position.y = hipsY + Math.abs(Math.sin(w)) * 0.06 * wk + Math.sin(t * 2.1 + ph) * 0.012; upper.rotation.z = Math.sin(w) * 0.07 * wk; upper.rotation.y = Math.sin(w) * 0.08 * wk;
+    // arms: swing when walking, wave, arms up
+    const wv = clamp(wave), wvL = clamp(waveL), up = clamp(armsUp);
+    arm.L.rotation.set(lerp(sR * 0.5 * wk - 0.05, -2.6, Math.max(up, wvL)), 0, lerp(0.25, 0.5, Math.max(up, wvL)) + wvL * Math.sin(t * 9) * 0.35);
+    arm.R.rotation.set(lerp(sL * 0.5 * wk - 0.05, -2.6, Math.max(up, wv)), 0, -lerp(0.25, 0.5, Math.max(up, wv)) - wv * Math.sin(t * 9) * 0.35);
+    if (pose) { if (pose.armL) arm.L.rotation.set(...pose.armL); if (pose.armR) arm.R.rotation.set(...pose.armR); }
+    head.rotation.set(Math.sin(t * 1.7 + ph) * 0.03, headTurn + Math.sin(w) * 0.05 * wk, -headTilt);
+    const bl = blink ? blinkAt(t) : 0;
+    eyes.forEach((e, i) => { e.lp.rotation.x = lerp(-1.05, 1.5708, Math.max(lid, bl)); e.roll.rotation.z = (i ? 1 : -1) * lidAngle; e.pg.rotation.set(-look[1] * 0.4, look[0] * 0.5, 0); });
+    brows.forEach(b => { b.position.y = 0.2 + brow * 0.05; });
+    smileM.visible = open < 0.5; smileM.scale.set(1, lerp(0.4, 1, smile), 1); mouthO.visible = open >= 0.5; mouthO.scale.set(0.07, 0.04 + open * 0.05, 0.02);
+  };
+  root.update(0); return root;
+}

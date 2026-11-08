@@ -1,0 +1,251 @@
+{
+ "duration": 34.36,
+ "music": [
+  {
+   "start": 0,
+   "end": 34.36,
+   "mood": "playful",
+   "intensity": 0.45
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.7,
+   "line": "His college banned dogs.",
+   "scene": "gate",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "footstep",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.7,
+   "end": 3.2,
+   "line": "So he got a bear.",
+   "scene": "porter",
+   "sfx": [
+    {
+     "at": 0.75,
+     "name": "pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.2,
+   "end": 5.0,
+   "line": "According to legend, the rules said",
+   "scene": "book",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "swish",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.0,
+   "end": 6.6,
+   "line": "nothing about bears.",
+   "scene": "stare",
+   "sfx": [
+    {
+     "at": 0.95,
+     "name": "blip",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.6,
+   "end": 8.7,
+   "line": "This is the poet Lord Byron,",
+   "scene": "poet",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.7,
+   "end": 11.25,
+   "line": "a student at Trinity College, Cambridge.",
+   "scene": "wide",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s07",
+   "start": 11.25,
+   "end": 13.45,
+   "line": "Dogs? Not allowed.",
+   "scene": "nodogs",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "buzz",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 13.45,
+   "end": 16.05,
+   "line": "Bears? Apparently fine.",
+   "scene": "bearsok",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 16.05,
+   "end": 19.5,
+   "line": "In 1807, he wrote to a friend:",
+   "scene": "desk",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s10",
+   "start": 19.5,
+   "end": 21.15,
+   "line": "I have a new friend,",
+   "scene": "letter"
+  },
+  {
+   "id": "s10b",
+   "start": 21.15,
+   "end": 22.85,
+   "line": "the finest in the world.",
+   "scene": "dreamy"
+  },
+  {
+   "id": "s11",
+   "start": 22.85,
+   "end": 24.1,
+   "line": "A tame bear.",
+   "scene": "tamebear",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whip",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s12",
+   "start": 24.1,
+   "end": 26.6,
+   "line": "They asked him what he planned to do with it.",
+   "scene": "dons"
+  },
+  {
+   "id": "s13",
+   "start": 26.6,
+   "end": 29.35,
+   "line": "He said it should sit for a fellowship.",
+   "scene": "exam",
+   "sfx": [
+    {
+     "at": 1.5,
+     "name": "hit",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 29.35,
+   "end": 30.85,
+   "line": "Cambridge is still telling the story",
+   "scene": "today",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s14b",
+   "start": 30.85,
+   "end": 32.7,
+   "line": "two hundred years later.",
+   "scene": "mina",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 32.7,
+   "end": 34.36,
+   "line": "Subscribe for more.",
+   "scene": "loop",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
