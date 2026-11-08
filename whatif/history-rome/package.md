@@ -33,7 +33,7 @@ palla), heavy cream type with a thick black outline + gold glow, deep night blue
    left side; right side, across a glowing split line, the walls and domes of Constantinople still standing in gold
    dawn light. Words: NOT OVER (or 1,000 MORE YEARS?). Plants the twist without giving the date.
 
-Prompts for the THUMBS job go in UPLOAD.md; the frames can be pulled from shots s010 (Livia's giant face), s047 (two coins) and
+Prompts for the THUMBS job go in UPLOAD.md; the frames can be pulled from shots s010 (Livia's giant face), s048 (two coins), s049 (Felix's son's face) and
 s121 (the boy emperor) of the render (`node render.mjs --project projects/history-rome --stills <id> --scale 1`) and
 composited with type.
 
