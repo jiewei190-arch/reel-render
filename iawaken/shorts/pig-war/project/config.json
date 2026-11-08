@@ -1,0 +1,17 @@
+{
+ "title": "Two Empires Almost Went to War Over a Pig",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "gold": ["pig", "pig.", "casualty.", "1859.", "potatoes.", "warships.", "twelve", "years.", "bronze", "potato"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
