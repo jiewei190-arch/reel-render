@@ -105,7 +105,7 @@ export const LIGHT = {
   warm:   { sky: '#fff3e6', ground: '#a08878', ambient: 1.2, key: ['#ffeedd', 2.5, [-5, 10, 8]], fill: ['#e8eeff', 0.4, [7, 4, 7]], bg: ['#efe3d2', '#f6ece0'], exposure: 1.0 },
   dusk:   { sky: '#c9a0b8', ground: '#5a3a3a', ambient: 1.0, key: ['#ffb070', 2.4, [-9, 7, 6]], fill: ['#9fb0e0', 0.5, [8, 5, 6]], bg: ['#4a4878', '#d38a72', '#f5c08a'], exposure: 1.0 },
   night:  { sky: '#8a90b8', ground: '#3a3232', ambient: 0.85, key: ['#c4ccf0', 1.0, [6, 12, 6]], fill: ['#ffb070', 0.15, [0, 3, 8]], bg: ['#0e1430', '#1e2550', '#3a3466'], exposure: 1.05 },
-  fire:   { sky: '#6a5a8a', ground: '#3a1a10', ambient: 0.8, key: ['#ff9a4a', 2.4, [4, 6, -8]], fill: ['#7f8fd0', 0.5, [-6, 6, 8]], bg: ['#140c1c', '#4a1e1e', '#c0562a'], exposure: 1.05 },
+  fire:   { sky: '#6a5a8a', ground: '#3a1a10', ambient: 0.8, key: ['#ff9a4a', 2.4, [4, 6, -8]], fill: ['#d0a090', 0.7, [-3, 5, 9]], bg: ['#140c1c', '#4a1e1e', '#c0562a'], exposure: 1.05 },
 };
 export function toonStage(T, o = {}) {
   const R = T.getRenderer(); const L = { ...(LIGHT[o.light || 'warm']), ...o };
@@ -118,7 +118,7 @@ export function toonStage(T, o = {}) {
   const tgt = o.target || [0, 0, 0]; keyL.target.position.set(...tgt);
   if (o.shadow !== false) {
     keyL.castShadow = true; const ss = o.shadowSize || 9; keyL.shadow.mapSize.set(o.shadowMap || 2048, o.shadowMap || 2048);
-    Object.assign(keyL.shadow.camera, { left: -ss, right: ss, top: ss, bottom: -ss, near: 0.5, far: 80 }); keyL.shadow.bias = -0.0005; keyL.shadow.normalBias = 0.03; keyL.shadow.radius = 4;
+    Object.assign(keyL.shadow.camera, { left: -ss, right: ss, top: ss, bottom: -ss, near: 0.5, far: 80 }); keyL.shadow.bias = -0.0008; keyL.shadow.normalBias = 0.06; keyL.shadow.radius = 4;
     keyL.position.set(tgt[0] + kp[0], tgt[1] + kp[1], tgt[2] + kp[2]);
   }
   scene.add(keyL, keyL.target);

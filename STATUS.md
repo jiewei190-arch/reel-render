@@ -1,4 +1,4 @@
-STATE: style-sheet-ready
+STATE: building
 
 # Toon 3D kit + test Short "The Day Rome Got Sacked" (branch iawaken/toon3d)
 - **Style sheet (pushed early):** `whatif/aitrends-2d-studio/kits/toon3d/style_sheet.png`: 6 expressions, 6 outfits/headgear, 3 sets (Roman street, Roman house, city gate).

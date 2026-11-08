@@ -57,7 +57,7 @@ export function romanStreet(st, o = {}) {
 // ROMAN HOUSE INTERIOR (domus room): fresco walls, mosaic floor, couch, table with fruit, scroll shelf, amphorae, lamp,
 // a doorway (left) and a window (right). Options: { palace: bool (throne, purple curtains, gold), papers: bool, mess: bool, seed }
 export function romanHouse(st, o = {}) {
-  const { palace = false, papers = false, mess = false, seed = 2 } = o; const g = new THREE.Group(); st.add(g); const fx = fxList();
+  const { palace = false, papers = false, mess = false, seed = 2, window: winColor = '#bfe0ff' } = o; const g = new THREE.Group(); st.add(g); const fx = fxList();
   const W = 10, Dp = 7, H = 4.4;
   g.add(texFloor(W, Dp + 4, PR.TEX.mosaic(palace ? '#efe6d4' : '#e9dcc0', palace ? '#5a2a6a' : '#8a3a2a', [4, 4])));
   const fres = PR.texMat(PR.TEX.fresco(palace ? '#5a2a6a' : '#a8352a', 4));
@@ -68,7 +68,7 @@ export function romanHouse(st, o = {}) {
   const rw = new THREE.Mesh(new THREE.PlaneGeometry(Dp + 2, H), side); rw.rotation.y = -Math.PI / 2; rw.position.set(W / 2, H / 2, 0.5); rw.receiveShadow = true; g.add(rw);
   // doorway in the back wall (dark corridor) and a window with daylight
   g.add(box(1.5, 2.7, 0.05, '#3a2620', -3.2, 1.35, -Dp / 2 + 0.02), PR.column(2.6, { r: 0.1, color: '#e6dcc6' }).at(-4.05, 0, -Dp / 2 + 0.15), PR.column(2.6, { r: 0.1, color: '#e6dcc6' }).at(-2.35, 0, -Dp / 2 + 0.15));
-  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.3), new THREE.MeshBasicMaterial({ color: new THREE.Color('#bfe0ff') })); win.position.set(2.6, 2.6, -Dp / 2 + 0.02); win.userData.noOutline = true; g.add(win);
+  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 1.3), new THREE.MeshBasicMaterial({ color: new THREE.Color(winColor) })); win.position.set(2.6, 2.6, -Dp / 2 + 0.02); win.userData.noOutline = true; g.add(win);
   for (let i = 0; i < 4; i++) g.add(box(0.06, 1.3, 0.06, '#3a2a24', 2.6 - 0.6 + i * 0.4, 2.6, -Dp / 2 + 0.05));
   g.add(PR.propGroup(box(1.9, 0.12, 0.25, '#e6dcc6', 2.6, 1.9, -Dp / 2 + 0.12)));
   // a soft shaft of window light on the floor (additive)
