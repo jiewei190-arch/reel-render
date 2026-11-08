@@ -16,11 +16,12 @@ Runs inside the aiTrends 2D Studio engine as `kind: '3d'` shots (Three.js 0.169,
 |---|---|
 | `toon.js` | `toonStage`, `toon()` material, `outline()` (inverted hull, constant on-screen width), primitives (`rbox`, `cyl`, `ball`, `lathe`, `floor`, `blob`), `LIGHT` presets, `camMove`, `drift` |
 | `rig.js` | `bean(opts)` character factory, `POSE`, `EXPR`, `walk`, `run`, `point`, `shrug`, `idle`, `nod`, `shake`, `tremble`, `mixPose`, `addPose`, `mixExpr`, `CAST` presets |
+| `cast.js` | the I.Awaken main cast as beans: `castMember(id, opts)`, `CAST3D`, `cat()` (BISCUIT), `phone()`, `stopwatch()` |
 | `props.js` | furniture + Roman props (`column`, `templeFront`, `facade`, `gate`, `tower`, `table`, `couch`, `throne`, `shelf`, `amphora`, `sack`, `shield`, `spear`, `torch`, `banner`, `stall`, `cart`, `chicken`, ...), textures `TEX.*` |
 | `sets.js` | `SETS.romanStreet`, `SETS.romanHouse` (with `palace: true` for a throne room), `SETS.cityGate`, `applyLight` |
 | `fx.js` | toon `fire`, puffy `smoke`, `embers`, additive `glow`, `skyGlow` (no gore: danger reads as fire, smoke, silhouettes) |
 | `captions.js` | `useToonCaptions(opts)`, `drawToonCaption`, `chunkWords` (1-3 word chunks timed from `timeline/words.json`) |
-| `sheet/` + `tools/make_sheet.py` | the style-sheet project and the script that composes `style_sheet.png` |
+| `sheet/` + `tools/make_sheet.py` | the style-sheet project and the script that composes `style_sheet.png` and `avatar_hero_800.png` |
 
 Engine hooks this kit relies on (added with the kit, backward compatible): `engine/player.js` uses `E.captionFn` when a kit
 sets it; `engine/styles.js` has a `toon` style (no grain, light vignette); `render.mjs` honours `CHROMIUM_PATH`.
@@ -116,6 +117,22 @@ squint), `brow` -1..1, `browAngle` (+ angry, - worried), `browL`/`browR` (one ra
 Presets: `neutral bored smug shocked panic angry sad happy grin worried suspicious asleep deadpan`.
 `mixExpr(a, b, k)` blends; shapes switch at k = 0.5. Comedy timing: hold a deadpan (`lid ~0.5`), snap to `shocked` on the word,
 then ease into a stare at the lens (`pupil: [0, 0]`).
+
+## The I.Awaken cast (`cast.js`, playbook "CAST REDESIGN")
+| id | Signature (kept) | Look |
+|---|---|---|
+| `hero` | mustard hoodie, `hood: 'up'` (default) or `'down'` | round head, messy brown hair, olive skin |
+| `dev` | orange beanie, phone in right hand (`.prop`) | wide head, dark skin, teal tee |
+| `mina` | red scarf, stopwatch in right hand (`.prop.tick(t)`) | scale 0.78 with a bigger head, pigtails, olive skin |
+| `lin` | lab coat, green lanyard + badge, glasses | tall egg head, black bob, light skin |
+| `tomas` | blue cap | squarish wide head, tan skin, grey tee |
+| `cat()` BISCUIT | purple collar, green slit eyes, heavy lids | ginger toon cat; `.update(t, { lid, look:[x,y], tail, earsBack, headTurn, headTilt })` |
+| `heroRoman` / `heroLegionary` | mustard tunic / armour over mustard with a mustard crest | the HERO in history episodes |
+
+`castMember('dev', { prop: false, colors: { main: '#c0392b' } })` takes any `bean()` override. Rig options added for the
+cast and usable by anyone: outfits `hoodie`, `labcoat` (`colors.lanyard`), `tee` (`colors.print`); headgear `beanie`, `ballcap`,
+`hoodDown: true`; `scarf: '#hex'`, `glasses: true`; hair `bob`, `pigtails` (`tieColor`), `messy`; `headScale: [x, y, z]`.
+Channel avatar: `avatar_hero_800.png` (HERO face, centred, 800x800, from the `avatar` shot of `sheet/`).
 
 ## Sets
 Each `SETS.x(stage, opts)` adds itself to the stage and returns `{ group, spots, cams, update(t), fx }` (+ extras).

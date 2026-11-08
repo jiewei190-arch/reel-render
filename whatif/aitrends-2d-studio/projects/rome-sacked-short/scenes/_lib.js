@@ -2,6 +2,7 @@
 import { E, wordTime, text, ease, prog, clamp, FONTS } from '/engine/core.js';
 import { THREE, toonStage } from '/kits/toon3d/toon.js';
 import { bean, CAST } from '/kits/toon3d/rig.js';
+import { castMember } from '/kits/toon3d/cast.js';
 import { SETS } from '/kits/toon3d/sets.js';
 import * as PR from '/kits/toon3d/props.js';
 export { THREE };
@@ -17,7 +18,7 @@ export function zzz(g, x, y, t, k = 1) { if (k <= 0) return; for (let i = 0; i <
 export function gateScene(T, o = {}) {
   const st = toonStage(T, { light: 'night', fov: 40, shadowSize: 10, target: [0, 0, 1], samples: 4, ...(o.stage || {}) });
   const set = SETS.cityGate(st, { night: true, fireBeyond: true, open: o.open || 0 });
-  const guard = bean(CAST.guard); guard.position.set(-2.35, 0, 1.6); guard.rotation.y = 0.35; st.add(guard);
+  const guard = castMember('heroLegionary'); /* the I.Awaken HERO as a Roman legionary (mustard tunic + crest) */ guard.position.set(-2.35, 0, 1.6); guard.rotation.y = 0.35; st.add(guard);
   const spear = PR.spear({ len: 3.0 }); st.add(spear);
   const gateLight = new THREE.PointLight(new THREE.Color('#ff8a3a'), 0, 18, 1.4); gateLight.position.set(0, 2.2, -1.2); st.add(gateLight);
   return { stage: st, set, guard, spear, gateLight };
