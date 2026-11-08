@@ -1,5 +1,6 @@
-STATE: ready
+STATE: animating
 
+- **Year fix in progress (owner request):** the narration now says "Paris, nineteen twenty-five" (it was read as "one thousand nine hundred twenty-five"). The new VO, words and shot timings are pushed; the full re-render of `video.mp4` is running. The `video.mp4` currently on the branch is the old take.
 # I.Awaken Short: eiffel-sold ("He Sold the Eiffel Tower… Twice 🗼")
 - **Final video:** `video.mp4` (1080x1920, 24 fps, 873 frames, 36.375 s, AAC 192k; -14.1 LUFS integrated, true peak -1.2 dBFS; 23 MB, no split needed). Verify with `sha256sum -c video.sha256`.
   Audio: `audio/mix.py` (music + SFX + Fenrir VO). mix.py's own mux trimmed the video to 870 frames, so the mixed audio was muxed onto the full 873-frame silent render with `-c:v copy` (+0.7 dB under a -1.5 dBFS limiter to sit at -14 LUFS).

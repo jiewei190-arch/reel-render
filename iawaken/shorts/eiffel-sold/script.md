@@ -12,7 +12,7 @@ Notes:
 1. This man sold the Eiffel Tower. Twice.
 ## beat
 2. He didn't own it.
-3. Paris, 1925. Victor Lustig poses as a French government official.
+3. Paris, nineteen twenty-five. Victor Lustig poses as a French government official.
 4. He tells scrap dealers the city will tear the tower down. Seven thousand tons of metal. For sale.
 5. One dealer, André Poisson, pays up.
 6. Lustig vanishes.

@@ -7,11 +7,30 @@
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
  "captions": true,
- "captionStyle": { "y": 0.66, "gold": ["twice", "1925", "seven", "thousand", "tons", "again", "police", "sold"] },
+ "captionStyle": {
+  "y": 0.66,
+  "gold": [
+   "twice",
+   "nineteen",
+   "twenty-five",
+   "seven",
+   "thousand",
+   "tons",
+   "again",
+   "police",
+   "sold"
+  ]
+ },
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
- "music": { "enabled": true, "gainDb": -19 },
- "sfx": { "enabled": true, "gainDb": -6 },
+ "music": {
+  "enabled": true,
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
  "loudness": -14
 }

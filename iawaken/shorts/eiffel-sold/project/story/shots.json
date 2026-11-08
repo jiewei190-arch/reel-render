@@ -1,5 +1,5 @@
 {
- "duration": 36.374,
+ "duration": 36.075,
  "shots": [
   {
    "id": "s01",
@@ -51,7 +51,7 @@
   {
    "id": "s04",
    "start": 4.7,
-   "end": 6.85,
+   "end": 6.551,
    "line": "Paris, 1925.",
    "scene": "paris",
    "sfx": [
@@ -68,8 +68,8 @@
   },
   {
    "id": "s05",
-   "start": 6.85,
-   "end": 10.05,
+   "start": 6.551,
+   "end": 9.751,
    "line": "Victor Lustig poses as a French government official.",
    "scene": "official",
    "sfx": [
@@ -82,8 +82,8 @@
   },
   {
    "id": "s06",
-   "start": 10.05,
-   "end": 12.85,
+   "start": 9.751,
+   "end": 12.551,
    "line": "He tells scrap dealers the city will tear the tower down.",
    "scene": "meeting",
    "sfx": [
@@ -96,8 +96,8 @@
   },
   {
    "id": "s07",
-   "start": 12.85,
-   "end": 15.05,
+   "start": 12.551,
+   "end": 14.751,
    "line": "Seven thousand tons of metal.",
    "scene": "tons",
    "sfx": [
@@ -115,15 +115,15 @@
   },
   {
    "id": "s08",
-   "start": 15.05,
-   "end": 16.15,
+   "start": 14.751,
+   "end": 15.851,
    "line": "For sale.",
    "scene": "forsale"
   },
   {
    "id": "s09",
-   "start": 16.15,
-   "end": 18.55,
+   "start": 15.851,
+   "end": 18.251,
    "line": "One dealer, Andr\u00e9 Poisson, pays up.",
    "scene": "pays",
    "sfx": [
@@ -136,8 +136,8 @@
   },
   {
    "id": "s10",
-   "start": 18.55,
-   "end": 19.85,
+   "start": 18.251,
+   "end": 19.551,
    "line": "Lustig vanishes.",
    "scene": "vanish",
    "sfx": [
@@ -155,15 +155,15 @@
   },
   {
    "id": "s11",
-   "start": 19.85,
-   "end": 21.25,
+   "start": 19.551,
+   "end": 20.951,
    "line": "According to the story,",
    "scene": "alone"
   },
   {
    "id": "s12",
-   "start": 21.25,
-   "end": 24.1,
+   "start": 20.951,
+   "end": 23.801,
    "line": "Poisson was too embarrassed to tell anyone.",
    "scene": "embarrassed",
    "in": {
@@ -173,8 +173,8 @@
   },
   {
    "id": "s13",
-   "start": 24.1,
-   "end": 25.65,
+   "start": 23.801,
+   "end": 25.351,
    "line": "So Lustig came back,",
    "scene": "back",
    "sfx": [
@@ -187,8 +187,8 @@
   },
   {
    "id": "s14",
-   "start": 25.65,
-   "end": 27.15,
+   "start": 25.351,
+   "end": 26.851,
    "line": "and ran the exact same scam.",
    "scene": "same",
    "sfx": [
@@ -201,8 +201,8 @@
   },
   {
    "id": "s15",
-   "start": 27.15,
-   "end": 28.5,
+   "start": 26.851,
+   "end": 28.201,
    "line": "Again.",
    "scene": "again",
    "sfx": [
@@ -215,8 +215,8 @@
   },
   {
    "id": "s16",
-   "start": 28.5,
-   "end": 31.05,
+   "start": 28.201,
+   "end": 30.751,
    "line": "This time, a dealer went to the police.",
    "scene": "police",
    "sfx": [
@@ -233,8 +233,8 @@
   },
   {
    "id": "s17",
-   "start": 31.05,
-   "end": 32.62,
+   "start": 30.751,
+   "end": 32.321,
    "line": "Lustig just...",
    "scene": "freeze",
    "sfx": [
@@ -247,8 +247,8 @@
   },
   {
    "id": "s18",
-   "start": 32.62,
-   "end": 34.7,
+   "start": 32.321,
+   "end": 34.401,
    "line": "left the country. Again.",
    "scene": "leave",
    "sfx": [
@@ -266,8 +266,8 @@
   },
   {
    "id": "s19",
-   "start": 34.7,
-   "end": 36.374,
+   "start": 34.401,
+   "end": 36.075,
    "line": "Subscribe for more.",
    "scene": "loop"
   }
@@ -275,7 +275,7 @@
  "music": [
   {
    "start": 0,
-   "end": 36.374,
+   "end": 36.075,
    "mood": "playful",
    "intensity": 0.45
   }
