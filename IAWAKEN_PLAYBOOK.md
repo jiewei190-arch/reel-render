@@ -63,3 +63,23 @@ kit, cinematic and dark-lit for the clip, warm and rich for the past; maps with 
 gold, character close-ups. NO gore: violence is shown through silhouettes, fire, smoke and sound, never wounds or blood.
 Accuracy: history is argued about. Use mainstream sources (Britannica, academic books/articles, university pages),
 say "historians argue..." where scholars disagree, give exact dates and numbers only when sourced.
+
+## NEW ANIMATION STYLE (owner, Nov 8): "Toon 3D" (reference: a story Short by @Celyxi, "He Begged to Stay in Prison
+## for 5 More Years!", youtube.com/shorts/w_ucy_7HNas; one frame saved as docs/style_ref_toon3d.jpg)
+Match the LOOK, never copy that channel's characters, names or scenes. Our characters are original designs.
+- **Characters:** stylised 3D "bean" people. A big round head on a pill/capsule body, thin stick arms and legs,
+  ball hands and ball feet, no neck. Smooth matte toon shading with a dark outline (inverted-hull outline or a post
+  edge pass). Simple clothing as body colour/texture (striped shirt, uniform with buttons and a cap, toga, armour).
+  Each character has one signature item (hat, helmet, hair shape, colour).
+- **Faces do the acting:** big white eyes with dark pupils and heavy upper LIDS (half-closed bored/smug, wide shocked,
+  angry slanted), thick expressive brows, a small simple mouth. Expression changes on spoken words; blinks.
+- **Sets:** small furnished 3D rooms and streets with real props (bed, toilet, posters, papers on the floor, a barred
+  window). Warm soft key light, real soft shadows, slight ambient occlusion feel. Clean, not gritty. Shallow depth.
+- **Camera:** mostly medium shots of 1-3 characters at eye level, slow push-ins, quick cuts on punchlines, an
+  occasional low/high angle for drama. 9:16 for Shorts, 16:9 for long-form.
+- **Captions:** 1-3 words at a time, white, bold rounded sans, dark outline + soft shadow, centred in the lower-middle
+  of the frame (not at the very bottom).
+- **Tone:** a deadpan funny storyteller voice over a true, surprising story. Comedy timing: a beat of silence
+  before the punchline, a reaction face after it.
+- Engine: the kit's 3D shots (`kind: '3d'`, engine/three-kit.js, Three.js with shadows). Build the reusable
+  character rig + sets once (toon3d kit), then every episode reuses it.
