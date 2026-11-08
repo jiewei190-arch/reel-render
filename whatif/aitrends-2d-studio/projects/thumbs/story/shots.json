@@ -1,0 +1,89 @@
+{
+ "duration": 12.0,
+ "shots": [
+  {
+   "id": "moon_v1",
+   "start": 0.0,
+   "end": 1.0,
+   "line": "moon_v1",
+   "bars": "none"
+  },
+  {
+   "id": "moon_v2",
+   "start": 1.0,
+   "end": 2.0,
+   "line": "moon_v2",
+   "bars": "none"
+  },
+  {
+   "id": "moon_v3",
+   "start": 2.0,
+   "end": 3.0,
+   "line": "moon_v3",
+   "bars": "none"
+  },
+  {
+   "id": "stop_v1",
+   "start": 3.0,
+   "end": 4.0,
+   "line": "stop_v1",
+   "bars": "none"
+  },
+  {
+   "id": "stop_v2",
+   "start": 4.0,
+   "end": 5.0,
+   "line": "stop_v2",
+   "bars": "none"
+  },
+  {
+   "id": "stop_v3",
+   "start": 5.0,
+   "end": 6.0,
+   "line": "stop_v3",
+   "bars": "none"
+  },
+  {
+   "id": "jump_v1",
+   "start": 6.0,
+   "end": 7.0,
+   "line": "jump_v1",
+   "bars": "none"
+  },
+  {
+   "id": "jump_v2",
+   "start": 7.0,
+   "end": 8.0,
+   "line": "jump_v2",
+   "bars": "none"
+  },
+  {
+   "id": "jump_v3",
+   "start": 8.0,
+   "end": 9.0,
+   "line": "jump_v3",
+   "bars": "none"
+  },
+  {
+   "id": "bh_v1",
+   "start": 9.0,
+   "end": 10.0,
+   "line": "bh_v1",
+   "bars": "none"
+  },
+  {
+   "id": "bh_v2",
+   "start": 10.0,
+   "end": 11.0,
+   "line": "bh_v2",
+   "bars": "none"
+  },
+  {
+   "id": "bh_v3",
+   "start": 11.0,
+   "end": 12.0,
+   "line": "bh_v3",
+   "bars": "none"
+  }
+ ]
+}
