@@ -1,0 +1,435 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "This",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "man",
+   "start": 0.28,
+   "end": 0.52
+  },
+  {
+   "word": "sold",
+   "start": 0.52,
+   "end": 0.76
+  },
+  {
+   "word": "the",
+   "start": 0.76,
+   "end": 0.96
+  },
+  {
+   "word": "Eiffel",
+   "start": 0.96,
+   "end": 1.26
+  },
+  {
+   "word": "Tower.",
+   "start": 1.26,
+   "end": 1.6
+  },
+  {
+   "word": "Twice.",
+   "start": 2.1,
+   "end": 2.36
+  },
+  {
+   "word": "He",
+   "start": 3.62,
+   "end": 3.7
+  },
+  {
+   "word": "didn't",
+   "start": 3.7,
+   "end": 3.96
+  },
+  {
+   "word": "own",
+   "start": 3.96,
+   "end": 4.12
+  },
+  {
+   "word": "it.",
+   "start": 4.12,
+   "end": 4.52
+  },
+  {
+   "word": "Paris,",
+   "start": 4.82,
+   "end": 5.12
+  },
+  {
+   "word": "1925.",
+   "start": 5.22,
+   "end": 6.14
+  },
+  {
+   "word": "Victor",
+   "start": 7.04,
+   "end": 7.24
+  },
+  {
+   "word": "Lustig",
+   "start": 7.24,
+   "end": 7.64
+  },
+  {
+   "word": "poses",
+   "start": 7.64,
+   "end": 8.04
+  },
+  {
+   "word": "as",
+   "start": 8.04,
+   "end": 8.44
+  },
+  {
+   "word": "a",
+   "start": 8.44,
+   "end": 8.58
+  },
+  {
+   "word": "French",
+   "start": 8.58,
+   "end": 8.86
+  },
+  {
+   "word": "government",
+   "start": 8.86,
+   "end": 9.28
+  },
+  {
+   "word": "official.",
+   "start": 9.28,
+   "end": 9.72
+  },
+  {
+   "word": "He",
+   "start": 10.2,
+   "end": 10.28
+  },
+  {
+   "word": "tells",
+   "start": 10.28,
+   "end": 10.54
+  },
+  {
+   "word": "scrap",
+   "start": 10.54,
+   "end": 10.84
+  },
+  {
+   "word": "dealers",
+   "start": 10.84,
+   "end": 11.22
+  },
+  {
+   "word": "the",
+   "start": 11.22,
+   "end": 11.52
+  },
+  {
+   "word": "city",
+   "start": 11.52,
+   "end": 11.7
+  },
+  {
+   "word": "will",
+   "start": 11.7,
+   "end": 11.92
+  },
+  {
+   "word": "tear",
+   "start": 11.92,
+   "end": 12.12
+  },
+  {
+   "word": "the",
+   "start": 12.12,
+   "end": 12.3
+  },
+  {
+   "word": "tower",
+   "start": 12.3,
+   "end": 12.52
+  },
+  {
+   "word": "down.",
+   "start": 12.52,
+   "end": 12.9
+  },
+  {
+   "word": "Seven",
+   "start": 12.9,
+   "end": 13.49
+  },
+  {
+   "word": "thousand",
+   "start": 13.49,
+   "end": 14.08
+  },
+  {
+   "word": "tons",
+   "start": 14.08,
+   "end": 14.24
+  },
+  {
+   "word": "of",
+   "start": 14.24,
+   "end": 14.44
+  },
+  {
+   "word": "metal.",
+   "start": 14.44,
+   "end": 14.7
+  },
+  {
+   "word": "For",
+   "start": 15.2,
+   "end": 15.38
+  },
+  {
+   "word": "sale.",
+   "start": 15.38,
+   "end": 15.68
+  },
+  {
+   "word": "One",
+   "start": 16.3,
+   "end": 16.48
+  },
+  {
+   "word": "dealer,",
+   "start": 16.48,
+   "end": 16.74
+  },
+  {
+   "word": "André",
+   "start": 16.74,
+   "end": 17.18
+  },
+  {
+   "word": "Poisson,",
+   "start": 17.18,
+   "end": 17.6
+  },
+  {
+   "word": "pays",
+   "start": 17.6,
+   "end": 17.92
+  },
+  {
+   "word": "up.",
+   "start": 17.92,
+   "end": 18.24
+  },
+  {
+   "word": "Lustig",
+   "start": 18.74,
+   "end": 19.0
+  },
+  {
+   "word": "vanishes.",
+   "start": 19.0,
+   "end": 19.44
+  },
+  {
+   "word": "According",
+   "start": 20.1,
+   "end": 20.32
+  },
+  {
+   "word": "to",
+   "start": 20.32,
+   "end": 20.58
+  },
+  {
+   "word": "the",
+   "start": 20.58,
+   "end": 20.66
+  },
+  {
+   "word": "story,",
+   "start": 20.66,
+   "end": 21.02
+  },
+  {
+   "word": "Poisson",
+   "start": 21.36,
+   "end": 21.6
+  },
+  {
+   "word": "was",
+   "start": 21.6,
+   "end": 21.8
+  },
+  {
+   "word": "too",
+   "start": 21.8,
+   "end": 22.06
+  },
+  {
+   "word": "embarrassed",
+   "start": 22.06,
+   "end": 22.52
+  },
+  {
+   "word": "to",
+   "start": 22.52,
+   "end": 22.76
+  },
+  {
+   "word": "tell",
+   "start": 22.76,
+   "end": 22.94
+  },
+  {
+   "word": "anyone.",
+   "start": 22.94,
+   "end": 23.36
+  },
+  {
+   "word": "So",
+   "start": 24.28,
+   "end": 24.58
+  },
+  {
+   "word": "Lustig",
+   "start": 24.58,
+   "end": 24.94
+  },
+  {
+   "word": "came",
+   "start": 24.94,
+   "end": 25.16
+  },
+  {
+   "word": "back,",
+   "start": 25.16,
+   "end": 25.5
+  },
+  {
+   "word": "and",
+   "start": 25.5,
+   "end": 25.8
+  },
+  {
+   "word": "ran",
+   "start": 25.8,
+   "end": 25.98
+  },
+  {
+   "word": "the",
+   "start": 25.98,
+   "end": 26.14
+  },
+  {
+   "word": "exact",
+   "start": 26.14,
+   "end": 26.48
+  },
+  {
+   "word": "same",
+   "start": 26.48,
+   "end": 26.86
+  },
+  {
+   "word": "scam.",
+   "start": 26.86,
+   "end": 27.24
+  },
+  {
+   "word": "Again.",
+   "start": 27.24,
+   "end": 28.04
+  },
+  {
+   "word": "This",
+   "start": 28.68,
+   "end": 28.82
+  },
+  {
+   "word": "time,",
+   "start": 28.82,
+   "end": 29.1
+  },
+  {
+   "word": "a",
+   "start": 29.1,
+   "end": 29.28
+  },
+  {
+   "word": "dealer",
+   "start": 29.28,
+   "end": 29.52
+  },
+  {
+   "word": "went",
+   "start": 29.52,
+   "end": 29.76
+  },
+  {
+   "word": "to",
+   "start": 29.76,
+   "end": 29.92
+  },
+  {
+   "word": "the",
+   "start": 29.92,
+   "end": 30.02
+  },
+  {
+   "word": "police.",
+   "start": 30.02,
+   "end": 30.4
+  },
+  {
+   "word": "Lustig",
+   "start": 31.6,
+   "end": 31.88
+  },
+  {
+   "word": "just...",
+   "start": 31.88,
+   "end": 32.16
+  },
+  {
+   "word": "left",
+   "start": 32.78,
+   "end": 32.92
+  },
+  {
+   "word": "the",
+   "start": 32.92,
+   "end": 33.1
+  },
+  {
+   "word": "country.",
+   "start": 33.1,
+   "end": 33.52
+  },
+  {
+   "word": "Again.",
+   "start": 34.02,
+   "end": 34.38
+  },
+  {
+   "word": "Subscribe",
+   "start": 35.0,
+   "end": 35.34
+  },
+  {
+   "word": "for",
+   "start": 35.34,
+   "end": 35.6
+  },
+  {
+   "word": "more.",
+   "start": 35.6,
+   "end": 35.86
+  }
+ ]
+}
