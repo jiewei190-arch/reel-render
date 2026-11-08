@@ -14,10 +14,10 @@ Every spoken claim, with its source. Softened claims are marked.
 | 9 | "This time, pepper won't fix it." | Narrative line: after 408 (ransom) and 409 (second siege, puppet emperor Attalus), negotiations with Honorius failed and the 410 siege ended in the sack. Heather (2005); Britannica, "Alaric". |
 | 10 | The emperor (**Honorius**) was not in Rome but in **Ravenna**. | The Western court moved to Ravenna in 402 AD. Britannica, "Honorius" and "Ravenna". |
 | 11-12 | Told "Rome has perished", he panicked about his **chicken named Roma**. (softened: "Or so the story goes.") | Procopius, *History of the Wars* III.2.25-26: a eunuch, keeper of the poultry, told Honorius that Roma had perished; Honorius cried out that it had just eaten from his hand, thinking of his favourite bird "Roma", until told it was the city. Procopius wrote ~140 years later; most historians regard it as a legend/satire, so the Short says "Or so the story goes." |
-| 13 | "How did the greatest empire on Earth end up here?" | Open question, the hook into the long History Hook episode. "Greatest empire" is rhetorical, not a measured claim. |
+| 13 | "How did the greatest empire on Earth end up here? Subscribe to find out." | Open question, the hook into the long History Hook episode (closer per the playbook's "Short closers" rule). "Greatest empire" is rhetorical, not a measured claim. |
 
 ## Visuals that are artistic licence (not claims)
-- Gaius the guard, Senator Pomponius, the messenger and all faces are invented characters. The emperor is a cartoon, not a portrait of Honorius.
+- The guard (the I.Awaken HERO as a Roman legionary), Senator Pomponius, the messenger and all faces are invented characters. The emperor is a cartoon, not a portrait of Honorius.
 - The chicken's look, its perch and the "ROMA" plaque are invented to stage Procopius' story.
 - The "PIPER" sacks (Latin *piper* = pepper) and the house where the ransom is handed over are staging. The 408 ransom was paid to Alaric's army outside the city.
 - Visigoth soldiers are drawn as dark silhouettes with simple conical helmets (no horned helmets, which are a myth). No violence is shown: fire, smoke, silhouettes and sound only.

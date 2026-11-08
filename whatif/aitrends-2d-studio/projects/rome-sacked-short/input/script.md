@@ -11,4 +11,4 @@
 10. And the emperor? He's not even in Rome. He's in Ravenna.
 11. Told that Rome has perished, he panics. About his chicken. Named Roma.
 12. Or so the story goes.
-13. How did the greatest empire on Earth end up here? Full story on the channel.
+13. How did the greatest empire on Earth end up here? Subscribe to find out.

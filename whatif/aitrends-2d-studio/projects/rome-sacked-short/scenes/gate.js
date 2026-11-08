@@ -3,7 +3,7 @@ import { registerShot, ease, prog, key, clamp, lerp } from '/engine/core.js';
 import { bean, CAST, POSE, EXPR, idle, addPose, mixPose, mixExpr, walk, shrug, tremble, WALK_STRIDE } from '/kits/toon3d/rig.js';
 import { camMove, drift } from '/kits/toon3d/toon.js';
 import * as FX from '/kits/toon3d/fx.js';
-import { THREE, at, screen, zzz, gateScene, holdSpear, openGate } from './_lib.js';
+import { THREE, at, screen, zzz, tag, gateScene, holdSpear, openGate } from './_lib.js';
 
 const guardIdle = (s, t, pose = POSE.lean, seed = 3) => { s.guard.pose(addPose(pose, idle(t, seed))); holdSpear(s.guard, s.spear); };
 
@@ -57,11 +57,13 @@ registerShot('s06', { kind: '3d',
     guardIdle(s, t, POSE.spearRest); s.guard.face(EXPR.shocked, t);
     camMove(s.stage, t, [[0, { pos: [0.4, 0.55, 5.5], look: [0, 2.3, -4], fov: 50 }], [info.dur, { pos: [0.3, 0.5, 4.6], look: [0, 2.4, -4], fov: 48 }]]); },
 });
-// s15 "How did the greatest empire on Earth end up here? Full story on the channel." — gate wide open, fire, Gaius shrugs; pull back
+// s15 "How did the greatest empire on Earth end up here? Subscribe to find out." — gate wide open, fire, the guard shrugs; pull back; gold end card
 registerShot('s15', { kind: '3d',
   init(T) { const s = gateScene(T, { open: 1 }); const sm = FX.smoke({ size: 1.8, rise: 1.1, seed: 91, life: 6, spread: 4, color: '#2a2428' }); sm.position.set(0, 4, -3); s.stage.add(sm); s.sm = sm; const em = FX.embers({ area: [10, 9, 6] }); em.position.set(0, 0, -1); s.stage.add(em); s.em = em; return s; },
   draw(s, t, info) { s.set.update(t); s.sm.update(t); s.em.update(t); openGate(s, 1);
     const sh = ease.inOut(prog(t, 0.6, 1.4)) * (1 - ease.inOut(prog(t, 3.4, 4.2)));
     guardIdle(s, t, shrug(POSE.stand, sh)); s.guard.face(mixExpr(EXPR.deadpan, EXPR.worried, sh), t); s.spear.position.set(-2.95, 1.45, 1.4); s.guard.position.x = -1.9; s.spear.rotation.set(0, 0, 0.25);
     camMove(s.stage, t, [[0, { pos: [-1.4, 2.2, 5.6], look: [-1.6, 2.0, 0.8], fov: 36 }], [info.dur, { pos: [0.2, 4.2, 14.5], look: [0, 3.4, 0], fov: 44 }]], ease.inOut); },
+  // end card (playbook "Short closers": open question -> "Subscribe to find out.")
+  overlay(g, t, info) { const k = ease.out(prog(t, at(info, 'Subscribe', 3.2) - 0.05, at(info, 'Subscribe', 3.2) + 0.3)); tag(g, 'SUBSCRIBE TO FIND OUT', k, 0.2); },
 });

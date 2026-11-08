@@ -1,5 +1,5 @@
 {
- "source": "whisper:small.en+script",
+ "source": "whisper:small.en+script (closer re-voiced + spliced)",
  "words": [
   {
    "word": "August",
@@ -492,29 +492,24 @@
    "end": 36.08
   },
   {
-   "word": "Full",
-   "start": 36.58,
-   "end": 36.7
+   "word": "Subscribe",
+   "start": 36.6,
+   "end": 37.0
   },
   {
-   "word": "story",
-   "start": 36.7,
-   "end": 37.02
+   "word": "to",
+   "start": 37.0,
+   "end": 37.2
   },
   {
-   "word": "on",
-   "start": 37.02,
-   "end": 37.22
+   "word": "find",
+   "start": 37.2,
+   "end": 37.46
   },
   {
-   "word": "the",
-   "start": 37.22,
-   "end": 37.34
-  },
-  {
-   "word": "channel.",
-   "start": 37.34,
-   "end": 37.66
+   "word": "out.",
+   "start": 37.46,
+   "end": 37.78
   }
  ]
 }
