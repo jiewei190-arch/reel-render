@@ -1,6 +1,6 @@
 STATE: ready
 
-- Fix (owner, Nov 8): the year is now voiced "eighteen-oh-seven" (Kokoro had read "1807" as "one thousand eight hundred seven"; checked with Kokoro's phonemes `ˈeɪtiːnˈoʊsˈɛvən` and whisper word timestamps: the year now lasts 0.84 s at 16.30 s, was 1.6 s). Re-voiced, re-transcribed, shots after s09 re-timed (-0.85 s), full re-render. The on-screen tag still reads "CAMBRIDGE, 1807".
+- Fix (owner, Nov 8): the year is now voiced "eighteen-oh-seven" (Kokoro had read "1807" as "one thousand eight hundred seven"; checked with Kokoro's phonemes `ˈeɪtiːnˈoʊsˈɛvən` and whisper word timestamps: the year now lasts 0.84 s at 16.30 s, was 1.6 s). Re-voiced, re-transcribed, shots after s09 re-timed (-0.85 s), full re-render. The on-screen tag still reads "CAMBRIDGE, 1807", and (owner follow-up) the caption shows the digits "In 1807," while the voice says "eighteen-oh-seven".
 # I.Awaken Short: byron-bear ("Banned From Having a Dog, He Got a Bear 🐻")
 - Final: `video.mp4` (18.2 MB, no split needed), 1080x1920, 24 fps, 804 frames, 33.50 s, -14.6 LUFS, true peak -1.3 dBFS. Verify with `video.sha256`.
   Built with audio/mix.py; the mix (build/mix.wav) was muxed onto the full 804-frame silent render with video `-c:v copy` (audio AAC 192k).
