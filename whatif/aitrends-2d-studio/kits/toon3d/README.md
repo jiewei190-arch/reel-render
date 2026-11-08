@@ -17,6 +17,7 @@ Runs inside the aiTrends 2D Studio engine as `kind: '3d'` shots (Three.js 0.169,
 | `toon.js` | `toonStage`, `toon()` material, `outline()` (inverted hull, constant on-screen width), primitives (`rbox`, `cyl`, `ball`, `lathe`, `floor`, `blob`), `LIGHT` presets, `camMove`, `drift` |
 | `rig.js` | `bean(opts)` character factory, `POSE`, `EXPR`, `walk`, `run`, `point`, `shrug`, `idle`, `nod`, `shake`, `tremble`, `mixPose`, `addPose`, `mixExpr`, `CAST` presets |
 | `cast.js` | the I.Awaken main cast as beans: `castMember(id, opts)`, `CAST3D`, `cat()` (BISCUIT), `phone()`, `stopwatch()` |
+| `animals.js` | toon animals in the bean style: `emu({ general })` with `.update(t, { run, peck, lid, lidAngle, look, headTurn })` (used by the emu-war Short) |
 | `props.js` | furniture + Roman props (`column`, `templeFront`, `facade`, `gate`, `tower`, `table`, `couch`, `throne`, `shelf`, `amphora`, `sack`, `shield`, `spear`, `torch`, `banner`, `stall`, `cart`, `chicken`, ...), textures `TEX.*` |
 | `sets.js` | `SETS.romanStreet`, `SETS.romanHouse` (with `palace: true` for a throne room), `SETS.cityGate`, `applyLight` |
 | `fx.js` | toon `fire`, puffy `smoke`, `embers`, additive `glow`, `skyGlow` (no gore: danger reads as fire, smoke, silhouettes) |
@@ -153,6 +154,13 @@ All return outlined groups with `.at(x, y, z, rotY)` and `.s(scale)`. Architectu
 `rug`, `curtain`. Small: `amphora`, `vase`, `bowlFruit`, `lamp`, `lampStand` (`.flameAt`), `scroll`, `papers`, `sack({ label })`,
 `crate`, `barrel`, `spear`, `shield` (scutum), `torch` (`.flameAt`), `banner({ txt })`, `plant`, `cart`, `stall`, `bust`,
 `chicken()` (`.update(t, { peck, flap, look, panic })`). Textures: `TEX.stone cobble mosaic plaster fresco planks roof label`.
+
+### 1930s / outback pack (emu-war Short)
+`truck()` (`.drive(dist)` spins the wheels, `.bedTop`), `lewisGun()` (a prop; nothing is ever hit), `ammoBox({ open })`,
+`scoreboard({ lines, title })`, `windmill()` (`.fan`), `gumTree()`, `fence({ len })`, `fieldDesk()`. Rig: head `slouch`
+(Australian slouch hat), `moustache: true | '#hex'`. Set: `SETS.outbackFarm(st, { wheat, field: [w, d, zCentre] })`, a
+wheat field (instanced stalks), fence, windmill, gum trees, farmhouse. Move `field` back (e.g. `[26, 14, -16]`) for shots that
+need bare dirt in front.
 
 ## FX (`fx.js`)
 `fire({ size, tongues, seed, light, lightRange, spread })`, `smoke({ count, size, rise, life, spread, drift, color, seed })`,
