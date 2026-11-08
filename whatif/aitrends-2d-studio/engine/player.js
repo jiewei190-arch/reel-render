@@ -19,7 +19,7 @@ async function loadFonts() {
 }
 async function boot() {
   const cfg = await (await fetch(`${PROJ}/config.json`)).json();
-  const story = await (await fetch(`${PROJ}/story/shots.json`)).json();
+  const story = await (await fetch(`${PROJ}/${q.get('story') || 'story/shots.json'}`)).json();   // ?story=story/demo_x.json for set demos
   let words = []; try { const r = await fetch(`${PROJ}/timeline/words.json`); if (r.ok) words = await r.json(); } catch {}
   const vertical = (cfg.aspect || '16:9') === '9:16';
   const short = RES[cfg.resolution || '1080p'] || 1080, long = Math.round((short * 16) / 9 / 2) * 2;

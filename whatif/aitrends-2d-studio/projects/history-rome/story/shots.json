@@ -1,0 +1,4155 @@
+{
+ "title": "How Did the Roman Empire Get Destroyed?",
+ "duration": 516.0,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.61,
+   "line": "August, the year 410.",
+   "scene": "FRAME 1 (the thumbnail world): frontier.js view 'walls' at NIGHT, outside the Aurelian Walls: brick curtain wall, round gate towers of the SALARIAN GATE, torches on the battlements, Alaric's army as a sea of torch points and campfires below (besiegers 1). A gold YEAR COUNTER (history.js yearCounter, 'AD 410', top-left) slams in on '410' with a stinger. Slow push-in camMove z 1.0->1.12. Low drums: music starts here. WORD BEATS (s from shot start): 'August,' 0.30, '410.' 1.28. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -12
+    },
+    {
+     "at": 1.28,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s002",
+   "start": 2.61,
+   "end": 4.03,
+   "line": "Midnight.",
+   "scene": "Insert on the gate's wooden doors from INSIDE (frontier.js view 'gateIn', gate 0): the great beam-bar across the doors; on 'Midnight.' a hand (silhouette, no face) lifts the bar; dust sifts from the hinges. Rim light from a torch outside leaking through the crack. camMove z 1.25->1.3. WORD BEATS (s from shot start): 'Midnight.' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s003",
+   "start": 4.03,
+   "end": 6.92,
+   "line": "A gate in the walls of Rome swings open.",
+   "scene": "frontier.js view 'gateIn' (from inside the city street): the doors SWING OPEN on 'swings' (gate 0->1 over 1.2 s, ease.out), a wall of torchlight floods the street, long shadows race toward camera. Silhouettes appear in the gap (romans.js crowdSil goths, torches). Camera push z 1.0->1.15 + small shake on the doors hitting the wall. WORD BEATS (s from shot start): 'A' 0.15, 'Rome' 1.20. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.42,
+     "name": "whoosh",
+     "gain": -12,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.8,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s004",
+   "start": 6.92,
+   "end": 9.62,
+   "line": "Gothic warriors pour into the streets.",
+   "scene": "rome.js view 'street' mood 'fire': romans.js crowdSil (Gothic warrior SILHOUETTES with torches, spears and round shields, black against firelight) pour left->right down the narrow lane of insulae (pour 0->1), shutters slam (doorsBroken), sparks. Parallax foreground: a blurred column + hanging laundry (romeFg). Camera tracks with the runners x 0->-120. WORD BEATS (s from shot start): 'Gothic' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "murmur",
+     "gain": -18
+    },
+    {
+     "at": 0.5,
+     "name": "footstep",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s005",
+   "start": 9.62,
+   "end": 11.06,
+   "line": "Torches.",
+   "scene": "MACRO: a torch head passes close to camera (history.js/rome.js torch prop, big flame, embers), the street behind it soft. Punch zoom on 'Torches.' (z 1.4->1.5). WORD BEATS (s from shot start): 'Torches.' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s006",
+   "start": 11.06,
+   "end": 12.39,
+   "line": "Smoke.",
+   "scene": "Smoke rolls across a rooftop with a bronze statue silhouette (rome.js 'skyline' mood 'fire', close on the Capitol roofline), the statue's outline appears and disappears in the smoke. WORD BEATS (s from shot start): 'Smoke.' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "wind",
+     "gain": -16,
+     "dur": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s007",
+   "start": 12.39,
+   "end": 17.54,
+   "line": "For the first time in about eight hundred years, enemies are inside Rome.",
+   "scene": "rome.js view 'skyline' mood 'fire' (fire 0.6): the city of seven hills at night - temples, the Colosseum, aqueduct arches - with several fires and smoke columns. GOLD chip-number on 'eight hundred': history.js bigNumber '~800 YEARS' (gold, outlined) center-top with a slam. On 'burning.' the fires flare up (fire 0.6->0.9) and the camera slowly cranes down z 1.05->1.0, y up. WORD BEATS (s from shot start): 'For' 0.15, 'Rome.' 4.18. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.47,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s008",
+   "start": 17.54,
+   "end": 19.54,
+   "line": "And parts of it are burning.",
+   "scene": "rome.js 'skyline' mood 'fire' closer on the Forum roofs: on 'burning.' a temple roof flares, sparks shoot up, smoke columns lean in the wind; slow crane down z 1.12->1.05. WORD BEATS (s from shot start): 'And' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.01,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s009",
+   "start": 19.54,
+   "end": 25.12,
+   "line": "A girl named Livia hides in the dark, gripping her family's old silver coin.",
+   "scene": "rome.js view 'hide' mood 'fire': LIVIA (romans.js roman 'LIVIA', s 2.1, crouched pose, moss-green palla) hides in a dark storeroom under a stair between amphorae; through a slit doorway behind her torchlight sweeps and running silhouettes pass (torchSweep). Expression worried -> on 'gripping' she clutches the family coin at her chest (coin glints on 'silver'). Blink, breathing fast (idle). Rim light orange from the doorway. camMove z 1.15->1.25. WORD BEATS (s from shot start): 'A' 0.15, 'Livia' 1.00. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.21,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s010",
+   "start": 25.12,
+   "end": 28.56,
+   "line": "How did the greatest empire on Earth end up here?",
+   "scene": "GIANT FACE LIVIA (romans.js romanFace 'LIVIA', r 320, firelight from the right, rimColor #ff8a3a, eye glint orange): worried -> shocked on 'greatest', the reflection of flames dancing in her eyes; embers drift past. On 'here?' HARD STOP: the frame freezes and desaturates 50% for the last 0.4 s (the clip ends on the question). WORD BEATS (s from shot start): 'How' 0.14, 'Earth' 1.78. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.59,
+     "name": "stinger",
+     "gain": -10,
+     "minor": true
+    },
+    {
+     "at": 2.59,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s011",
+   "start": 28.56,
+   "end": 32.77,
+   "line": "The answer takes three hundred years and five big mistakes.",
+   "scene": "Dark graphic: the family coin (history.js coin 'silver', r 220) spins slowly on black with firelight on its rim; around it FIVE cracks appear one by one, gold numerals 1-5 next to them, on 'five big mistakes' (pop on 'five'). Gold '300 YEARS' chip on 'three hundred'. On 'twist' (next line) the coin flips to its other side. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.43,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.55,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s012",
+   "start": 32.77,
+   "end": 36.32,
+   "line": "And it ends with a twist most people have never heard.",
+   "scene": "The coin flips (history.js coin flip) and splits in half along a glowing line (a hint at West/East, unexplained), the right half stays bright gold-silver, the left goes dark. A '?' in gold rises behind. Hold, then dip to black for the title. WORD BEATS (s from shot start): 'And' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.06,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.8
+    },
+    {
+     "at": 2.72,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s013",
+   "start": 36.32,
+   "end": 40.66,
+   "line": "To understand how, we have to go back.",
+   "scene": "TITLE CARD (2 s before the line, then into the rewind): history.js titleCard 'HOW DID THE ROMAN EMPIRE GET DESTROYED?' over the burning skyline (rome.js skyline fire, dimmed + blurred), cream outlined type, gold glow, ember sparks; then on 'go back' a REWIND effect: the yearCounter spins down 410 -> 117 fast (gold digits blur) with a tape-rewind whoosh, the fire colours drain to warm daylight. (This shot starts in the 1.4 s break before the line: start it at the end of 'heard.' + 0.4 s.) WORD BEATS (s from shot start): 'To' 2.00. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "title",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10,
+     "minor": false
+    },
+    {
+     "at": 0.1,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 3.62,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s014",
+   "start": 40.66,
+   "end": 42.05,
+   "line": "To that coin.",
+   "scene": "MACRO on the family coin, now NEW and shiny in warm sunlight (history.js coin 'silver' with a sunlit glint sweep), laurel-head design, resting in an open palm (GAIUS's hand, red tunic cuff). Gold chip 'AD 117' after. WORD BEATS (s from shot start): 'To' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s015",
+   "start": 42.05,
+   "end": 44.22,
+   "line": "The year 117.",
+   "scene": "ESTABLISHING (<= 3 s): rome.js view 'skyline' mood 'golden': Rome at its peak in morning sun, marble temples, the Colosseum gleaming, aqueduct arches, banners, birds. yearCounter lands on 'AD 117' (gold) on '117'. Crane up z 1.0->1.08. WORD BEATS (s from shot start): 'The' 0.15, '117.' 0.52. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.52,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s016",
+   "start": 44.22,
+   "end": 50.59,
+   "line": "Livia's ancestor Gaius is a young soldier in a Roman legion, and Rome is at its peak.",
+   "scene": "frontier.js view 'camp' mood 'golden': GAIUS (romans.js roman 'GAIUS', s 1.95, red tunic, segmented armour, helmet with cheek guards, MOSS-GREEN scarf) stands at attention among other legionaries (SOLDIER extras, shield emblems varied) and leather tents, the eagle standard glinting behind. Name chip 'GAIUS - LIVIA'S ANCESTOR' on 'Gaius'. Proud smile on 'peak.' Blink, idle. camMove x 40->-20. WORD BEATS (s from shot start): 'Livia's' 0.15, 'Gaius' 1.07, 'Roman' 3.25, 'Rome' 4.57. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s017",
+   "start": 50.59,
+   "end": 54.57,
+   "line": "Under the emperor Trajan, the empire stretches from Britain to Egypt,",
+   "scene": "history.js mapEU view 'empire' year 117: the empire's territory fills in red-gold from Italy outward (area 0->1 across the line) while gold labels pop on their words: BRITAIN, EGYPT, SPAIN, MESOPOTAMIA. EMPEROR figure small in a corner medallion with NAME CHIP 'TRAJAN' on 'Trajan' (no likeness). Camera drifts over the map. WORD BEATS (s from shot start): 'Under' 0.15, 'Trajan,' 0.94, 'Britain' 3.16, 'Egypt,' 3.70. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.94,
+     "name": "stinger",
+     "gain": -18
+    },
+    {
+     "at": 3.16,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 3.7,
+     "name": "blip",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s018",
+   "start": 54.57,
+   "end": 58.1,
+   "line": "and from Spain to the rivers of Mesopotamia.",
+   "scene": "Same map, camera pans east: SPAIN pops at the left edge, then the arrow sweeps across to MESOPOTAMIA's rivers (Tigris + Euphrates drawn in blue) at the far right on 'Mesopotamia'. WORD BEATS (s from shot start): 'and' 0.15, 'Spain' 0.80, 'Mesopotamia.' 2.22. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 2.22,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s019",
+   "start": 58.1,
+   "end": 64.51,
+   "line": "Around five million square kilometres, and somewhere between fifty and seventy-five million people.",
+   "scene": "Same map, zoomed out: big GOLD numbers slam on their words: '~5,000,000 km²' on 'five million', then '50-75 MILLION PEOPLE' on 'fifty' (history.js bigNumber), tiny crowd icons fill the provinces. Small 'ESTIMATES' tag under the number. WORD BEATS (s from shot start): 'Around' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 3.53,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s020",
+   "start": 64.51,
+   "end": 65.92,
+   "line": "One army.",
+   "scene": "frontier.js 'camp': a legion marching past in step (rows of SOLDIER rigs with walkAlong, shields, standards), dust, golden light. Quick cut, camMove x 60->-60. WORD BEATS (s from shot start): 'One' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s021",
+   "start": 65.92,
+   "end": 67.25,
+   "line": "One money.",
+   "scene": "Coins rain onto a table and stack (history.js coinPile, silver), a ring of gold light on 'money'. WORD BEATS (s from shot start): 'One' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.6
+    },
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s022",
+   "start": 67.25,
+   "end": 71.7,
+   "line": "And Gaius is paid in that money: a heavy silver coin called a denarius.",
+   "scene": "frontier.js 'camp' PAY TABLE: the paymaster (CITIZEN in a cream tunic, ledger, strongbox) slides silver coins across the table to GAIUS (s 2.0, over-the-shoulder from the paymaster's side). On 'denarius' a gold chip 'DENARIUS' + the coin glints in Gaius's palm. Gaius grins (exprAt). Blink, idle. WORD BEATS (s from shot start): 'And' 0.16, 'Gaius' 0.31. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.41,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 3.57,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s023",
+   "start": 71.7,
+   "end": 73.17,
+   "line": "He keeps one.",
+   "scene": "Close: GAIUS tucks one coin into a little leather pouch on a cord around his neck, next to the moss-green scarf; a wink. WORD BEATS (s from shot start): 'He' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s024",
+   "start": 73.17,
+   "end": 75.53,
+   "line": "It becomes the family's lucky coin.",
+   "scene": "FAMILY TREE beat: the coin hangs on its cord center; to the right a faint gold dotted line ('GENERATIONS') with small silhouettes of the family (Gaius -> Felix -> Felix's son -> Livia, each with a moss-green item) appearing left->right, the coin passing along. Warm glow. Chip 'THE FAMILY COIN' on 'lucky'. WORD BEATS (s from shot start): 'It' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.3,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s025",
+   "start": 75.53,
+   "end": 77.98,
+   "line": "For a while, Rome looks unbeatable.",
+   "scene": "rome.js 'forum' mood 'golden', crowd 1: a triumph-day Forum: crowds, banners, a gilded statue, petals in the air, GAIUS and comrades marching in the foreground (s 1.8). Camera rises z 1.0->1.06. WORD BEATS (s from shot start): 'For' 0.15, 'Rome' 0.73. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "cheer",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s026",
+   "start": 77.98,
+   "end": 82.05,
+   "line": "But a hundred years later, the cracks start to show.",
+   "scene": "Same Forum skyline: the light shifts golden -> grey (mood 'golden'->'dusk' over the shot), a CRACK runs up a marble column across the frame (draw-on crack line, dust puff) on 'cracks'. yearCounter ticks 117 -> 217. WORD BEATS (s from shot start): 'But' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 1.73,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.48,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s027",
+   "start": 82.05,
+   "end": 88.02,
+   "line": "In the year 235, his own soldiers kill the emperor Severus Alexander.",
+   "scene": "CHAPTER CARD 1 (history.js chapterCard n 1, title 'EMPERORS, ONE AFTER ANOTHER', Roman numeral I carved in marble with gold edge, embers) holds ~1.6 s, then the card slides away to a palace night: history/palace view 'throne' mood 'night': the EMPEROR (name chip 'SEVERUS ALEXANDER') in a tent-palace; soldiers' SILHOUETTES with spears close in through the tent flap; on 'kill' the lamp is knocked over and the frame goes dark - only the laurel wreath rolls into the light. yearCounter 'AD 235' gold. WORD BEATS (s from shot start): 'In' 0.15, '235,' 0.75, 'Severus' 4.38, 'Alexander.' 4.84. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "card",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 3.24,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.5
+    },
+    {
+     "at": 3.24,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s028",
+   "start": 88.02,
+   "end": 92.45,
+   "line": "What comes next, historians call the Crisis of the Third Century.",
+   "scene": "The fallen laurel wreath in close-up on a stone floor; title type 'THE CRISIS OF THE THIRD CENTURY' (gold, outlined) draws on above it on 'Crisis'. Slow push-in. WORD BEATS (s from shot start): 'What' 0.15, 'Crisis' 2.36, 'Third' 3.21, 'Century.' 3.43. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.36,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s029",
+   "start": 92.45,
+   "end": 96.09,
+   "line": "In about fifty years, Rome has more than twenty emperors.",
+   "scene": "THE EMPEROR CONVEYOR (history.js wreathBelt): a line of EMPEROR busts (generic, different beards/colours) slides past on a conveyor belt; the gold wreath jumps from head to head faster and faster; a gold counter clicks 1 -> 20+ ('20+ EMPERORS') on 'twenty'; '~50 YEARS' chip on 'fifty'. Comic-grim tone. WORD BEATS (s from shot start): 'In' 0.15, 'Rome' 1.64. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 2.41,
+     "name": "counter",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s030",
+   "start": 96.09,
+   "end": 101.0,
+   "line": "Most of them die violently, killed by rivals or by their own troops.",
+   "scene": "Same conveyor: on 'die violently' the busts behind start TIPPING OFF the belt one by one (silhouettes falling out of frame, no gore), each fall with a dull thud; a red X stamps over a few of the small name plates. WORD BEATS (s from shot start): 'Most' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.6
+    },
+    {
+     "at": 2.58,
+     "name": "hit",
+     "gain": -15,
+     "pitch": 0.55
+    },
+    {
+     "at": 4.03,
+     "name": "hit",
+     "gain": -15,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s031",
+   "start": 101.0,
+   "end": 105.3,
+   "line": "An army crowns its general, he marches on Rome and wins.",
+   "scene": "frontier.js 'camp' mood 'dusk': soldiers lift a general on a shield (SOLDIER rigs + an EMPEROR figure being raised), they put the purple cloak on him; then history.js mapEU view 'italy' small inset bottom-right: an arrow marches to ROME on 'marches', a crossed-swords icon flashes 'wins'. WORD BEATS (s from shot start): 'An' 0.15, 'Rome' 3.03. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "cheer",
+     "gain": -18
+    },
+    {
+     "at": 2.25,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s032",
+   "start": 105.3,
+   "end": 107.92,
+   "line": "Then another army does the same to him.",
+   "scene": "The same map inset now full-frame: a SECOND arrow from another frontier marches on Rome and knocks the first general's wreath icon off. Loop gag: a third arrow starts as we cut. WORD BEATS (s from shot start): 'Then' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 1.49,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 0.9
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s033",
+   "start": 107.92,
+   "end": 111.73,
+   "line": "Gaius's great-grandson Felix runs a bakery in Rome.",
+   "scene": "rome.js view 'bakery' mood 'day': FELIX (romans.js 'FELIX', s 1.95, cream tunic, MOSS-GREEN apron, flour on the sleeves) pulls bread from the domed oven (oven glow = key light); customers at the counter. Name chip 'FELIX - GAIUS'S GREAT-GRANDSON' on 'Felix'. He smiles at a customer. Blink, idle. The family coin hangs on a nail by the oven. WORD BEATS (s from shot start): 'Gaius's' 0.15, 'Felix' 1.28, 'Rome.' 3.05. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "murmur",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s034",
+   "start": 111.73,
+   "end": 116.02,
+   "line": "The faces on the coins change faster than he can learn the names.",
+   "scene": "MACRO on Felix's palm: coins in his hand FLIP over and over, each landing with a different emperor profile (history.js coin face 0..6), faster; a small name tag under each flickers through invented-but-generic tags: 'MAXIMINUS', 'GORDIAN', 'PHILIP', 'DECIUS', 'GALLUS', 'VALERIAN' (all real 3rd-c. emperors). Felix's eyes in the soft background go cross-eyed on 'names'. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -18
+    },
+    {
+     "at": 0.6,
+     "name": "tick",
+     "gain": -18
+    },
+    {
+     "at": 1.0,
+     "name": "tick",
+     "gain": -18
+    },
+    {
+     "at": 1.4,
+     "name": "tick",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s035",
+   "start": 116.02,
+   "end": 118.32,
+   "line": "And Rome's enemies smell weakness.",
+   "scene": "history.js mapEU view 'empire' year 250: dark enemy arrows press in on every border at once (from the Rhine, the Danube, Persia), the empire's red fill flickers at the edges. WORD BEATS (s from shot start): 'And' 0.15, 'Rome's' 0.27. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s036",
+   "start": 118.32,
+   "end": 123.3,
+   "line": "In 260, the Persians capture the emperor Valerian alive.",
+   "scene": "frontier.js view 'battle' mood 'dusk' (dust, no fighting): the EMPEROR (name chip 'VALERIAN', purple cloak) on his horse surrounded by Persian cavalry SILHOUETTES with tall banners; on 'capture' his wreath falls into the dust. yearCounter 'AD 260' on '260'. WORD BEATS (s from shot start): 'In' 0.15, '260,' 0.25, 'Persians' 1.81, 'Valerian' 3.45. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 2.28,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s037",
+   "start": 123.3,
+   "end": 125.79,
+   "line": "A Roman emperor, taken prisoner.",
+   "scene": "GIANT FACE: the EMPEROR (romans.js romanFace 'EMPEROR', no likeness, name chip 'VALERIAN') - neutral -> shocked -> worried; his wreath askew; cold blue rim light. Chip 'TAKEN PRISONER' on 'prisoner.' WORD BEATS (s from shot start): 'A' 0.15, 'Roman' 0.24. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.45,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s038",
+   "start": 125.79,
+   "end": 130.7,
+   "line": "Things get so bad that Rome builds huge new walls around the city itself.",
+   "scene": "frontier.js view 'walls' build 0->1, mood 'day': the AURELIAN WALLS rise around the city: scaffolding, cranes (treadwheel crane), workers (CITIZEN rigs) hauling bricks, the wall grows across the frame. Gold chip 'AURELIAN WALLS - AD 271' on 'walls'. WORD BEATS (s from shot start): 'Things' 0.15, 'Rome' 1.49. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.1
+    },
+    {
+     "at": 1.2,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s039",
+   "start": 130.7,
+   "end": 132.44,
+   "line": "Remember those walls.",
+   "scene": "Close on the finished SALARIAN GATE (frontier.js 'walls', gate closed, mood 'dusk'): the camera pushes in on the wooden doors and the image briefly flashes forward to the 410 night version (a 3-frame flash of torches through the same doors) on 'Remember'. WORD BEATS (s from shot start): 'Remember' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "flash",
+     "gain": -16
+    },
+    {
+     "at": 0.83,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s040",
+   "start": 132.44,
+   "end": 134.61,
+   "line": "But all this fighting costs money.",
+   "scene": "rome.js 'bakery' mood 'day': a tax collector (CITIZEN, dark-blue tunic, wax tablet) holds out his hand to FELIX; Felix's smile drops (exprAt neutral -> worried on 'costs'). On 'A lot of money.' the collector's other hand opens a sack. WORD BEATS (s from shot start): 'But' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.3,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s041",
+   "start": 134.61,
+   "end": 136.95,
+   "line": "A lot of money.",
+   "scene": "A tall stack of silver coins on the counter shrinks fast as hands sweep them into the collector's sack (coinPile k 1->0.2). WORD BEATS (s from shot start): 'A' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 0.5,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s042",
+   "start": 136.95,
+   "end": 138.7,
+   "line": "So the emperors cheat.",
+   "scene": "CHAPTER CARD 2 (chapterCard n 2 'THE MONEY MELTS', numeral II), ~1.5 s, then a dark mint: history/palace or a LOCAL mint room - a furnace glow, a crucible; an EMPEROR silhouette (name chip 'THE EMPERORS') sneakily tips a jug of copper into the silver melt on 'cheat'. WORD BEATS (s from shot start): 'So' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "card",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 0.93,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s043",
+   "start": 138.7,
+   "end": 143.81,
+   "line": "Every new batch of coins gets a little less silver, and a little more cheap copper.",
+   "scene": "history.js coin melt diagram: a row of 5 coins, left to right each shows its silver/copper split as a fill bar (silver shrinking, copper growing) and the coins themselves turn from bright silver to brown-copper; gold labels 'SILVER' and 'COPPER' on their words. WORD BEATS (s from shot start): 'Every' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.42,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 4.17,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s044",
+   "start": 143.81,
+   "end": 146.0,
+   "line": "It works, until people notice.",
+   "scene": "rome.js 'market' mood 'day', stock 1: a fruit seller (CITIZEN, coral headscarf) bites a coin and squints suspiciously on 'notice.'; FELIX2 beside her shrugs. Blink, idle. WORD BEATS (s from shot start): 'It' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.31,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s045",
+   "start": 146.0,
+   "end": 152.72,
+   "line": "By the 270s, Rome's everyday silver coin is often less than five percent silver.",
+   "scene": "BIG GRAPH (dataviz in gold on dark): 'SILVER IN THE COIN' line falls from ~95% (Augustus) to ~50% (c. 200) to '<5%' (270s) with year ticks; the '<5%' number slams on 'five percent'. yearCounter shows 'AD 270s'. (Numbers exactly as sources.md; '~' marks.) WORD BEATS (s from shot start): 'By' 0.16, '270s,' 0.44, 'Rome's' 2.02. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "tick",
+     "gain": -16
+    },
+    {
+     "at": 4.87,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s046",
+   "start": 152.72,
+   "end": 155.51,
+   "line": "It's basically copper, with a shiny coat.",
+   "scene": "MACRO: a 270s coin under a magnifier; the shiny silver skin peels/flakes to reveal brown copper underneath on 'copper'; on 'shiny coat' the thin coat glints and cracks. WORD BEATS (s from shot start): 'It's' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.89,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 2.02,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s047",
+   "start": 155.51,
+   "end": 159.62,
+   "line": "Felix's son holds a new coin next to Gaius's old one.",
+   "scene": "rome.js 'bakery' mood 'dusk': FELIX2 (romans.js 'FELIX2', s 2.0, beard, moss-green apron) holds up the old family coin (bright silver) next to a new coin (dull brown) at the window light. Name chip 'FELIX'S SON'. Expression neutral -> suspicious. WORD BEATS (s from shot start): 'Felix's' 0.15, 'Gaius's' 2.72. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s048",
+   "start": 159.62,
+   "end": 161.39,
+   "line": "One is real silver.",
+   "scene": "SPLIT MACRO: left the OLD coin rings bright (sparkle, glow), right the NEW coin dull; a gold check-mark under the old one on 'real silver'. WORD BEATS (s from shot start): 'One' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.84,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s049",
+   "start": 161.39,
+   "end": 163.43,
+   "line": "The other only looks like it.",
+   "scene": "GIANT FACE FELIX2: suspicious -> disgusted/worried on 'looks', he lowers the new coin; warm window rim. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s050",
+   "start": 163.43,
+   "end": 166.16,
+   "line": "When money is worth less, prices go up.",
+   "scene": "PRICE TAG gag: a loaf of bread on the counter with a hanging price tag whose number climbs (gold digits rolling up) on 'prices go up'; small coin icon beside it shrinks. WORD BEATS (s from shot start): 'When' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.99,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s051",
+   "start": 166.16,
+   "end": 169.03,
+   "line": "Historians argue about how bad it got.",
+   "scene": "Three scholar silhouettes (plain dark silhouettes with scrolls) argue around a giant question mark; chip 'HISTORIANS DISAGREE' on 'argue'. WORD BEATS (s from shot start): 'Historians' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.56,
+     "name": "murmur",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s052",
+   "start": 169.03,
+   "end": 175.64,
+   "line": "But in 301, the emperor Diocletian sets maximum prices for more than a thousand goods and wages,",
+   "scene": "palace view 'throne' mood 'day': the EMPEROR (name chip 'DIOCLETIAN') on a throne unrolls a long edict (history.js edict unroll 0->1: rows of items and prices, tiny icons: wheat, oil, shoes, a day's wage); gold '1,000+ PRICES' slams on 'thousand'; on 'death' a red wax seal stamps down (stamp k) + chip 'DEATH PENALTY'. yearCounter 'AD 301'. WORD BEATS (s from shot start): 'But' 0.15, '301,' 0.51, 'Diocletian' 2.21. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.51,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 5.16,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s053",
+   "start": 175.64,
+   "end": 178.33,
+   "line": "and threatens death for breaking them.",
+   "scene": "MACRO: the red wax seal STAMPS onto the edict (history.js edict stamp 0->1) on 'death'; chip 'DEATH PENALTY'; the camera jolts. WORD BEATS (s from shot start): 'and' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.02,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s054",
+   "start": 178.33,
+   "end": 179.75,
+   "line": "It doesn't work.",
+   "scene": "The edict scroll on a market wall gets slapped down; it flutters to the ground in the wind. WORD BEATS (s from shot start): 'It' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s055",
+   "start": 179.75,
+   "end": 181.75,
+   "line": "Goods vanish from the markets.",
+   "scene": "rome.js 'market' stock 1->0 over the shot: produce on the stalls disappears row by row (fade out with puffs), shutters come down; a couple of shoppers (CITIZEN rigs) turn in disbelief. WORD BEATS (s from shot start): 'Goods' 0.16. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 0.8,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s056",
+   "start": 181.75,
+   "end": 185.4,
+   "line": "And the army still needs paying, so taxes keep rising.",
+   "scene": "A tax collector with two soldiers (LATE_SOLDIER) at a farm gate on the edge of the city (rome.js 'street' mood 'day' or LOCAL farm wall + fields): the farmer hands over a basket; a gold arrow on screen 'TAXES' goes up and up on 'rising'. WORD BEATS (s from shot start): 'And' 0.16. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.71,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s057",
+   "start": 185.4,
+   "end": 188.08,
+   "line": "Diocletian sees another problem too.",
+   "scene": "palace view 'throne' mood 'dusk': DIOCLETIAN (EMPEROR, name chip) walks around a huge floor map, thinking (idle, lookToward map). WORD BEATS (s from shot start): 'Diocletian' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s058",
+   "start": 188.08,
+   "end": 191.7,
+   "line": "The empire is just too big for one man.",
+   "scene": "TOP-DOWN on that map: the tiny EMPEROR figure stands in the middle of the giant empire map (mapEU 'empire' year 290) and the map keeps growing around him (zoom out) until he's a dot; chip 'TOO BIG' on 'big'. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.34,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s059",
+   "start": 191.7,
+   "end": 194.94,
+   "line": "A message from one end to the other could take weeks.",
+   "scene": "CHAPTER CARD 3 (n 3 'TOO BIG FOR ONE EMPEROR', numeral III) ~1.5 s, then mapEU 'empire': a messenger rider icon (horse + rider silhouette) crawls along a dotted road from Britain to Syria while a day counter ticks to 'WEEKS' (gold) on 'weeks'. WORD BEATS (s from shot start): 'A' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "card",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 2.34,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s060",
+   "start": 194.94,
+   "end": 197.49,
+   "line": "By then, an invasion is old news.",
+   "scene": "frontier.js 'walls'-style frontier fort at dusk, already smoking: the messenger (SOLDIER on a LOCAL horse) arrives at a gallop, then slumps; chip 'OLD NEWS' on 'old news'. WORD BEATS (s from shot start): 'By' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 1.66,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s061",
+   "start": 197.49,
+   "end": 201.14,
+   "line": "So in 293, Diocletian splits the job:",
+   "scene": "mapEU 'empire' year 293: the map divides into FOUR coloured regions (tetrarchy) one by one on 'four rulers', each with a small EMPEROR medallion; gold '293' yearCounter; chip 'THE TETRARCHY'. WORD BEATS (s from shot start): 'So' 0.15, '293,' 0.57, 'Diocletian' 2.09. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s062",
+   "start": 201.14,
+   "end": 204.86,
+   "line": "four rulers, each guarding his own part of the empire.",
+   "scene": "The map splits into FOUR regions one after another (pop, pop, pop, pop), each gets a little EMPEROR medallion with a gold numeral 1-4; chip 'THE TETRARCHY'. WORD BEATS (s from shot start): 'four' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s063",
+   "start": 204.86,
+   "end": 207.25,
+   "line": "It works, until they fight each other.",
+   "scene": "The four medallions turn their spears on each other: arrows clash between regions, regions flash red; dust puffs. WORD BEATS (s from shot start): 'It' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.72,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s064",
+   "start": 207.25,
+   "end": 210.83,
+   "line": "The winner, Constantine, builds a new capital in the East,",
+   "scene": "constantinople view 'skyline' mood 'golden', build 0->1: on the Bosporus between Europe and Asia a new city RISES (walls, domes, harbour ships), the EMPEROR (name chip 'CONSTANTINE') on a hill in the foreground pointing; gold labels 'EUROPE' / 'ASIA' on each shore; title 'CONSTANTINOPLE' on the word + yearCounter 'AD 330'. WORD BEATS (s from shot start): 'The' 0.15, 'Constantine,' 0.88, 'East,' 3.03. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "wide",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.88,
+     "name": "stinger",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s065",
+   "start": 210.83,
+   "end": 214.06,
+   "line": "where Europe meets Asia: Constantinople.",
+   "scene": "mapEU zoom on the Bosporus: EUROPE / ASIA labels pop on each shore and a gold star pin 'CONSTANTINOPLE' lands between them on 'Constantinople'; yearCounter 'AD 330'. WORD BEATS (s from shot start): 'where' 0.15, 'Europe' 0.23, 'Asia:' 0.90, 'Constantinople.' 1.73. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.23,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 1.73,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s066",
+   "start": 214.06,
+   "end": 219.45,
+   "line": "After him, the empire usually has two emperors: one for the West, one for the East.",
+   "scene": "mapEU 'empire' year 364: a glowing SPLIT line draws down through the Balkans (split 0->1); WEST tinted red-brown, EAST tinted gold; an EMPEROR medallion on each side on 'two emperors'; gold labels 'WEST' / 'EAST'. WORD BEATS (s from shot start): 'After' 0.16, 'West,' 3.71, 'East.' 4.59. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.12,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.8
+    },
+    {
+     "at": 4.59,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s067",
+   "start": 219.45,
+   "end": 222.11,
+   "line": "The East is richer, with bigger cities.",
+   "scene": "Same map: the EAST side fills with gold coin icons and big city dots (Constantinople, Antioch, Alexandria) on 'richer'; it glows. WORD BEATS (s from shot start): 'The' 0.15, 'East' 0.31. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.75,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s068",
+   "start": 222.11,
+   "end": 225.61,
+   "line": "The West has long borders, and less money to guard them.",
+   "scene": "Same map: the WEST's long Rhine-Danube border lights up as a long thin red line and a few coins roll off it on 'less money'. WORD BEATS (s from shot start): 'The' 0.15, 'West' 0.31. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.07,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 1.9,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s069",
+   "start": 225.61,
+   "end": 228.1,
+   "line": "Keep that in mind.",
+   "scene": "The split line pulses once; the West half dims, the East half stays lit; push in; a gold '!' pin on the East. (Mini open loop.) WORD BEATS (s from shot start): 'Keep' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.78,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s070",
+   "start": 228.1,
+   "end": 232.74,
+   "line": "Around the year 370, a new people rides out of the steppes.",
+   "scene": "CHAPTER CARD 4 (n 4 'A STORM FROM THE EAST', numeral IV) ~1.5 s, then frontier.js open STEPPE (LOCAL or 'battle' view without wagons, mood 'dusk', huge sky): a dust cloud on the horizon grows; yearCounter 'AD 370'. WORD BEATS (s from shot start): 'Around' 0.15, '370,' 0.70. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "card",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 1.6,
+     "name": "wind",
+     "gain": -18,
+     "dur": 2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s071",
+   "start": 232.74,
+   "end": 234.29,
+   "line": "Horse archers.",
+   "scene": "romans.js horseArcher silhouettes GALLOP right->left across the frame at sunset (3-5 riders, parallax depths, dust), bows raised. WORD BEATS (s from shot start): 'Horse' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "footstep",
+     "gain": -10,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -10,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s072",
+   "start": 234.29,
+   "end": 235.55,
+   "line": "The Huns.",
+   "scene": "One rider pulls up, rearing, dark against the setting sun (no face detail); gold chip 'THE HUNS' slams on 'Huns.' WORD BEATS (s from shot start): 'The' 0.15, 'Huns.' 0.30. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "insert",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s073",
+   "start": 235.55,
+   "end": 238.83,
+   "line": "Historians still argue about where they came from.",
+   "scene": "mapEU view 'danube' zoomed out to the steppes: a dotted '?' trail wanders from Central Asia toward the Black Sea, three faint candidate origins with '?' pins on 'argue'. WORD BEATS (s from shot start): 'Historians' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.03,
+     "name": "blip",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s074",
+   "start": 238.83,
+   "end": 242.34,
+   "line": "But the Goths, north of the Danube river, are terrified.",
+   "scene": "frontier.js view 'danube' mood 'dusk', north bank: the GOTHIC FAMILY (GOTH_MUM, GOTH_DAD, GOTH_BOY, s 2.0) with a wagon and other families; they look back over their shoulders at a red glow on the horizon; the boy clutches his mother (worried -> shocked on 'terrified'). WORD BEATS (s from shot start): 'But' 0.15, 'Goths,' 0.63, 'Danube' 1.67. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.58,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s075",
+   "start": 242.34,
+   "end": 244.19,
+   "line": "In 376,",
+   "scene": "ESTABLISHING: frontier.js 'danube' crowd 1: the wide river at dusk, the north bank packed with tens of thousands of campfires, wagons, tents; the Roman fort on the near (south) bank. yearCounter 'AD 376' on '376'. WORD BEATS (s from shot start): 'In' 0.15, '376,' 0.42. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.42,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s076",
+   "start": 244.19,
+   "end": 249.83,
+   "line": "tens of thousands of Goths gather on the riverbank, begging to be let into the empire.",
+   "scene": "Riverbank close: GOTH_DAD raises open hands toward the Roman watchtower across the water, begging; GOTH_MUM holds the boy; others kneel. Gold chip 'TENS OF THOUSANDS' on 'tens' (0.1 s); gold arrow on a small map inset pointing 'INTO THE EMPIRE' on 'empire'. WORD BEATS (s from shot start): 'tens' 0.15, 'Goths' 1.36. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 0.4,
+     "name": "murmur",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s077",
+   "start": 249.83,
+   "end": 252.47,
+   "line": "The emperor of the East, Valens, says yes.",
+   "scene": "palace view 'throne' (eastern, mood 'day'): the EMPEROR (name chip 'VALENS') reads a letter, then nods and stamps it 'YES' on 'says yes.' (exprAt neutral -> smirk). WORD BEATS (s from shot start): 'The' 0.15, 'East,' 0.77, 'Valens,' 1.12. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.83,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 1.1
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s078",
+   "start": 252.47,
+   "end": 255.13,
+   "line": "He wants new farmers and new soldiers.",
+   "scene": "Valens' thought bubble (gold line art): Gothic families turn into icons of FARMERS (sheaf) and SOLDIERS (shield) on the words. WORD BEATS (s from shot start): 'He' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.76,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.73,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s079",
+   "start": 255.13,
+   "end": 258.52,
+   "line": "But the Roman officers in charge make a mess of it.",
+   "scene": "frontier.js 'danube' south bank, night, rain: boats/rafts overloaded with families crossing (boats k), Roman officers (LATE_SOLDIER, one in a fancy cloak) shouting and pointing in confusion, a raft spinning. No drowning, no bodies. WORD BEATS (s from shot start): 'But' 0.15, 'Roman' 0.46. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "rain",
+     "gain": -18,
+     "dur": 2.5
+    },
+    {
+     "at": 1.0,
+     "name": "murmur",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s080",
+   "start": 258.52,
+   "end": 262.48,
+   "line": "Food runs out, and the hungry Goths are cheated and mistreated.",
+   "scene": "Refugee camp on the Roman side (frontier.js 'gothCamp' mood 'night', rain): an officer sells a small sack of grain to GOTH_DAD for a big pile of coins and a silver brooch (cheated); empty pots; GOTH_BOY looks at an empty bowl. Chip 'CHEATED' on 'cheated'. WORD BEATS (s from shot start): 'Food' 0.15, 'Goths' 1.72. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.28,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s081",
+   "start": 262.48,
+   "end": 264.16,
+   "line": "The Goths rise up.",
+   "scene": "Night camp: GOTH_DAD stands up, others rise behind him with torches (romans.js crowdSil goths), the camera tilts up with them. WORD BEATS (s from shot start): 'The' 0.15, 'Goths' 0.37. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -14,
+     "dur": 1.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s082",
+   "start": 264.16,
+   "end": 266.6,
+   "line": "And on the 9th of August, 378,",
+   "scene": "frontier.js view 'battle' mood 'day' (hot August haze): the Gothic WAGON CIRCLE on a ridge, Valens' army marching in column toward it (army silhouettes, standards); yearCounter '9 AUGUST 378' gold on '378'; city pin 'ADRIANOPLE' on 'Adrianople'. WORD BEATS (s from shot start): 'And' 0.15, '9th' 0.57, 'August,' 1.08, '378,' 1.36. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.36,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s083",
+   "start": 266.6,
+   "end": 270.77,
+   "line": "near the city of Adrianople, Valens attacks them.",
+   "scene": "frontier.js 'battle' mood 'day': Valens' army (army silhouettes, standards) marches in column through the August haze toward the Gothic WAGON CIRCLE on the ridge; city pin 'ADRIANOPLE' on 'Adrianople'; on 'attacks' the Roman line surges forward. WORD BEATS (s from shot start): 'near' 0.15, 'Adrianople,' 1.50, 'Valens' 2.61. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.87,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s084",
+   "start": 270.77,
+   "end": 272.39,
+   "line": "It's a disaster.",
+   "scene": "Same battlefield: Gothic CAVALRY silhouettes sweep down from the side into the Roman flank (charge 0->1), a great dust storm swallows the Roman line, banners topple in silhouette. Big shake + dust. WORD BEATS (s from shot start): 'It's' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -12,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s085",
+   "start": 272.39,
+   "end": 278.78,
+   "line": "Valens is killed, and so are about two-thirds of his army, according to the historian Ammianus.",
+   "scene": "THE FALLEN SYMBOL: after the dust, an emperor's purple-plumed helmet lies in the trampled grass beside a toppled standard (frontier.js 'battle' fallen true, mood 'dusk'), smoke drifting; NO bodies. Gold '2/3 OF THE ARMY' slams on 'two-thirds' with small 'AMMIANUS' tag on 'Ammianus'. WORD BEATS (s from shot start): 'Valens' 0.15, 'Ammianus.' 4.88. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "insert",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.07,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.6
+    },
+    {
+     "at": 4.88,
+     "name": "stinger",
+     "gain": -16,
+     "minor": true
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s086",
+   "start": 278.78,
+   "end": 281.85,
+   "line": "An emperor, killed by people Rome had let in.",
+   "scene": "GIANT FACE GOTH_BOY (romans.js romanFace 'GOTH_BOY', a few years older, dusk light) looking out over the battlefield: awe -> worried; reflected smoke. WORD BEATS (s from shot start): 'An' 0.15, 'Rome' 1.80. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "heartbeat",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s087",
+   "start": 281.85,
+   "end": 283.68,
+   "line": "And Rome can't beat them.",
+   "scene": "mapEU 'danube': Gothic arrows roam freely through the Balkans, the Roman red pulls back; a broken sword icon on 'can't'. WORD BEATS (s from shot start): 'And' 0.15, 'Rome' 0.30. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.54,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s088",
+   "start": 283.68,
+   "end": 286.42,
+   "line": "So it tries something else.",
+   "scene": "The broken sword icon turns into a handshake icon (gold) - cliffhanger. WORD BEATS (s from shot start): 'So' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.09,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s089",
+   "start": 286.42,
+   "end": 290.56,
+   "line": "In 382, the emperor Theodosius makes a deal.",
+   "scene": "CHAPTER CARD 5 (n 5 'HIRING THE ENEMY', numeral V) ~1.5 s, then palace 'throne' mood 'day': the EMPEROR (name chip 'THEODOSIUS') and GOTH_DAD (older now, with Gothic chiefs) clasp forearms over a treaty table; yearCounter 'AD 382'. WORD BEATS (s from shot start): 'In' 0.15, '382,' 0.76, 'Theodosius' 2.12. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "card",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -10
+    },
+    {
+     "at": 3.41,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 1.0
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s090",
+   "start": 290.56,
+   "end": 296.14,
+   "line": "The Goths can live inside the empire, under their own leaders, if they fight for Rome.",
+   "scene": "mapEU 'danube': a Gothic settlement area appears INSIDE the border (Thrace, hatched gold), its own banner on 'their own leaders', then a line of shields marches out toward Rome's enemies on 'fight for Rome'. WORD BEATS (s from shot start): 'The' 0.15, 'Goths' 0.35, 'Rome.' 4.81. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.29,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 4.81,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s091",
+   "start": 296.14,
+   "end": 302.39,
+   "line": "More and more, Rome's armies are outsiders, fighting for pay, loyal to their own commanders.",
+   "scene": "frontier.js 'camp' (4th-c. style) mood 'day': a line of LATE_SOLDIERs where more and more of them are GOTHIC warriors (fur, braids, round shields) - the camera dollies past them; a pay chest opens; they salute their OWN commander, not the emperor's banner. Chip 'LOYAL TO THEIR COMMANDER' on 'loyal'. WORD BEATS (s from shot start): 'More' 0.15, 'Rome's' 1.17. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 3.64,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s092",
+   "start": 302.39,
+   "end": 308.53,
+   "line": "In 394, a young Gothic commander fights for Theodosius in a civil war.",
+   "scene": "frontier.js view 'pass' (the Frigidus): a mountain valley, a howling storm wind blowing dust and banners; two armies' silhouettes; in the foreground ALARIC (romans.js 'ALARIC', young, s 1.9, fur-trimmed cloak, braid, red-sun shield) leads Goths forward. yearCounter 'AD 394'. WORD BEATS (s from shot start): 'In' 0.15, '394,' 0.23, 'Gothic' 2.17, 'Theodosius' 3.92. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.23,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 1.0,
+     "name": "wind",
+     "gain": -14,
+     "dur": 3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s093",
+   "start": 308.53,
+   "end": 310.57,
+   "line": "Thousands of his Goths die.",
+   "scene": "'pass' after the battle: smoke; many Gothic round shields lie scattered in the grass (no bodies), banners down; ALARIC stands in silhouette looking at them. Gold 'THOUSANDS' chip on 'Thousands'. WORD BEATS (s from shot start): 'Thousands' 0.15, 'Goths' 0.64. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s094",
+   "start": 310.57,
+   "end": 312.47,
+   "line": "He feels Rome used them.",
+   "scene": "ALARIC turns from the field toward camera, jaw set; behind him a Roman officer rides away without a look back. WORD BEATS (s from shot start): 'He' 0.15, 'Rome' 0.59. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "footstep",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s095",
+   "start": 312.47,
+   "end": 314.21,
+   "line": "His name is Alaric.",
+   "scene": "GIANT FACE ALARIC (romanFace 'ALARIC', storm light, braid): determined; on 'Alaric.' a gold NAME CHIP 'ALARIC' slams + a low drum. WORD BEATS (s from shot start): 'His' 0.14, 'Alaric.' 0.85. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.85,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s096",
+   "start": 314.21,
+   "end": 320.46,
+   "line": "A few months later, Theodosius dies, and the empire is split between his two sons, for good.",
+   "scene": "palace 'throne' mood 'night': THEODOSIUS's empty throne with his wreath on the cushion, a candle goes out on 'dies'; then the map (mapEU 'empire' year 395): the split line snaps into a hard wall, WEST and EAST fully separate, each with a small boy-emperor medallion, on 'for good.' A gold lock icon clicks. WORD BEATS (s from shot start): 'A' 0.15, 'Theodosius' 1.37. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 5.51,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s097",
+   "start": 320.46,
+   "end": 323.33,
+   "line": "The West gets a ten-year-old boy, Honorius.",
+   "scene": "palace view 'throne' (Ravenna-style, small) mood 'day': a 10-year-old EMPEROR (romans.js 'ROMULUS' design reused with name chip 'HONORIUS', aged 10 chip) sits on a big throne, feet dangling, pigeons pecking at grain near the throne as set dressing. Gold '10' on 'ten-year-old'. WORD BEATS (s from shot start): 'The' 0.15, 'West' 0.27, 'Honorius.' 1.93. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.83,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s098",
+   "start": 323.33,
+   "end": 328.49,
+   "line": "Alaric wants land for his people, gold, and a top job in the Roman army.",
+   "scene": "frontier.js 'gothCamp' mood 'dusk': ALARIC in his tent dictates to a scribe; three gold icons pop on the words: a field (land), a coin pile (gold), a general's cloak pin (top job). WORD BEATS (s from shot start): 'Alaric' 0.15, 'Roman' 4.04. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.98,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.1,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.3
+    },
+    {
+     "at": 3.29,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s099",
+   "start": 328.49,
+   "end": 330.45,
+   "line": "The West keeps saying no.",
+   "scene": "Gag montage on one frame: three letters arrive back on Alaric's table, each stamped red 'NO' one after another (stamp, stamp, stamp). WORD BEATS (s from shot start): 'The' 0.15, 'West' 0.22. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "impact",
+     "gain": -16,
+     "pitch": 1.2
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -16,
+     "pitch": 1.2
+    },
+    {
+     "at": 1.0,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 1.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s100",
+   "start": 330.45,
+   "end": 335.54,
+   "line": "Then, in 408, the West executes its best general, Stilicho.",
+   "scene": "palace 'throne' (Ravenna) mood 'night': the general's chair (name plate 'STILICHO', his helmet on it) - two guards' shadows lead a figure away down a corridor; the chair is left empty; yearCounter 'AD 408'. No execution shown. WORD BEATS (s from shot start): 'Then,' 0.15, '408,' 0.60, 'West' 1.69, 'Stilicho.' 3.35. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 1.91,
+     "name": "hit",
+     "gain": -12,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s101",
+   "start": 335.54,
+   "end": 339.8,
+   "line": "Roman soldiers attack the families of barbarian troops in Italy,",
+   "scene": "mapEU view 'italy': red flashes in Italian cities; then thousands of small shield icons stream out of Italy north-east to ALARIC's banner (gold arrow), his army icon swelling; 'THOUSANDS' chip on 'thousands'. WORD BEATS (s from shot start): 'Roman' 0.15, 'Italy,' 3.74. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.03,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s102",
+   "start": 339.8,
+   "end": 342.77,
+   "line": "and thousands of those troops join Alaric.",
+   "scene": "frontier.js 'gothCamp' mood 'dusk': columns of barbarian soldiers (LATE_SOLDIER + Goths) walk into Alaric's camp with their wagons; ALARIC (s 1.9) watches them come, his banner raised; gold 'THOUSANDS' chip on 'thousands'. WORD BEATS (s from shot start): 'and' 0.15, 'Alaric.' 1.99. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s103",
+   "start": 342.77,
+   "end": 344.75,
+   "line": "Alaric marches on Rome.",
+   "scene": "frontier.js 'walls' mood 'dusk', besiegers 0->1: Alaric's army arrives under the Aurelian Walls (the same walls - 'Remember those walls' payoff), campfires spread around the city. WORD BEATS (s from shot start): 'Alaric' 0.15, 'Rome.' 1.24. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "murmur",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s104",
+   "start": 344.75,
+   "end": 348.14,
+   "line": "Twice, he surrounds the city and it pays him to leave.",
+   "scene": "mapEU 'italy' close on ROME: a ring of Gothic camps encircles the city (draw-on ring) - '1' - a cart of gold leaves the gate; the ring lifts; again '2' - another cart. Gold counters '408' and '409' over each ring. WORD BEATS (s from shot start): 'Twice,' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s105",
+   "start": 348.14,
+   "end": 351.16,
+   "line": "The third time, nobody pays.",
+   "scene": "frontier.js 'walls' night: the ring closes a THIRD time ('3' in gold); the gate stays shut and no cart comes; silence, wind; hard cut. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "insert",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 1.25,
+     "name": "stinger",
+     "gain": -10,
+     "minor": true
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s106",
+   "start": 351.16,
+   "end": 354.96,
+   "line": "The night of the 24th of August, 410.",
+   "scene": "THE RETURN: frontier.js 'walls' night, exactly the FRAME-1 composition (same camera), torches; yearCounter rolls up to '24 AUGUST 410' (gold) on '410'. The music from the clip returns. WORD BEATS (s from shot start): 'The' 0.15, '24th' 1.27, 'August,' 2.13, '410.' 2.83. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.83,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s107",
+   "start": 354.96,
+   "end": 356.7,
+   "line": "The gate opens.",
+   "scene": "frontier.js 'gateIn': the doors swing open again (same move as the clip), torchlight floods in, silhouettes pour through. WORD BEATS (s from shot start): 'The' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "frontier",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -12,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s108",
+   "start": 356.7,
+   "end": 358.87,
+   "line": "Now you know how it got here.",
+   "scene": "rome.js 'hide' mood 'fire': LIVIA in her hiding place again; this time a soft gold ECHO montage flickers around her (tiny vignettes of the wreath conveyor, the copper coin, the split map, the Danube, Alaric's face) as she grips the coin - the viewer now knows the story. WORD BEATS (s from shot start): 'Now' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s109",
+   "start": 358.87,
+   "end": 361.67,
+   "line": "For three days, the Goths loot the city.",
+   "scene": "rome.js 'forum' mood 'fire': Gothic silhouettes carry loot (chests, silver plates, statues on carts) through the smoke; a gold '3 DAYS' chip on 'three'; day/night cycle flickers 3 times (mood 'fire'->'day'->'fire'). WORD BEATS (s from shot start): 'For' 0.15, 'Goths' 1.29. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.38,
+     "name": "counter",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s110",
+   "start": 361.67,
+   "end": 367.38,
+   "line": "But many are Christians, and they spare the great churches and the people hiding inside.",
+   "scene": "rome.js 'church' mood 'fire': the great basilica doors; inside candlelit, families sheltering (CITIZEN rigs + LIVIA's family moss-green item); Gothic silhouettes at the door lower their torches and step back on 'spare'. WORD BEATS (s from shot start): 'But' 0.15, 'Christians,' 0.97. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.14,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s111",
+   "start": 367.38,
+   "end": 369.07,
+   "line": "Livia survives.",
+   "scene": "rome.js 'church' interior, dawn light through high windows: LIVIA (s 2.1) steps into a shaft of light, coin in hand, relieved (exprAt worried -> relieved/joy small). Blink, idle. WORD BEATS (s from shot start): 'Livia' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s112",
+   "start": 369.07,
+   "end": 373.91,
+   "line": "Far away in Bethlehem, a scholar named Jerome hears the news and writes:",
+   "scene": "palace/history LOCAL 'jerome' cell: a lamp-lit stone room in Bethlehem, an old scholar (generic, white beard, name chip 'JEROME') writing on a scroll; on 'writes:' the quote draws on in gold script over the frame: 'THE CITY THAT HAD TAKEN THE WHOLE WORLD WAS ITSELF TAKEN.' (title-style lock-up, the one allowed sentence here; Latin small below: CAPITUR URBS QUAE TOTUM CEPIT ORBEM). WORD BEATS (s from shot start): 'Far' 0.15, 'Bethlehem,' 1.03, 'Jerome' 2.73. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.41,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s113",
+   "start": 373.91,
+   "end": 377.84,
+   "line": "the city that had taken the whole world was itself taken.",
+   "scene": "Jerome's cell, close on the scroll: the quote draws on in gold script, word by word with the narration: 'THE CITY THAT HAD TAKEN THE WHOLE WORLD WAS ITSELF TAKEN.' (title-style lock-up, the one allowed sentence here; Latin small below: CAPITUR URBS QUAE TOTUM CEPIT ORBEM). Lamp flicker. WORD BEATS (s from shot start): 'the' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "title",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.89,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s114",
+   "start": 377.84,
+   "end": 379.84,
+   "line": "But it doesn't stop there.",
+   "scene": "rome.js 'skyline' mood 'dusk', slightly damaged and smoky; yearCounter spins 410 -> 455. WORD BEATS (s from shot start): 'But' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -16,
+     "dur": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s115",
+   "start": 379.84,
+   "end": 381.61,
+   "line": "In 455,",
+   "scene": "mapEU 'west' year 455: a fleet of ship icons sails from CARTHAGE (North Africa) to ROME (gold dotted sea route), name chip 'VANDALS'; yearCounter 'AD 455'. WORD BEATS (s from shot start): 'In' 0.15, '455,' 0.27. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "ding",
+     "gain": -16
+    },
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s116",
+   "start": 381.61,
+   "end": 385.65,
+   "line": "the Vandals sail from North Africa and loot Rome again.",
+   "scene": "LOCAL harbour/river view or rome.js 'forum' mood 'day' smoke: Vandal ships' sails in silhouette, looters carrying away gilded bronze roof tiles and treasure (silhouettes), no fighting. WORD BEATS (s from shot start): 'the' 0.14, 'Vandals' 0.21, 'North' 1.33, 'Africa' 1.64, 'Rome' 2.78. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "murmur",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s117",
+   "start": 385.65,
+   "end": 387.67,
+   "line": "This time, for two weeks.",
+   "scene": "A day-counter of tally marks scratches on a wall: 14 marks, gold '2 WEEKS' slams on 'two weeks'. WORD BEATS (s from shot start): 'This' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "counter",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s118",
+   "start": 387.67,
+   "end": 394.46,
+   "line": "And in 476, a general named Odoacer, the leader of the barbarian troops in Italy,",
+   "scene": "palace view 'ravenna' mood 'day': ODOACER (romans.js 'ODOACER', s 2.0, big beard, dark-red cloak, calm) walks into the small throne hall; yearCounter 'AD 476'; NAME CHIP 'ODOACER' on 'Odoacer'; his troops' silhouettes behind; on 'removes' the camera swings to the throne. WORD BEATS (s from shot start): 'And' 0.15, '476,' 0.47, 'Odoacer,' 3.21, 'Italy,' 6.20. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "ding",
+     "gain": -14
+    },
+    {
+     "at": 3.21,
+     "name": "stinger",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s119",
+   "start": 394.46,
+   "end": 397.3,
+   "line": "removes the last western emperor.",
+   "scene": "palace 'ravenna': the camera swings from ODOACER to the too-big THRONE at the end of the hall; a small figure on it (the boy, back-lit, not yet seen clearly). WORD BEATS (s from shot start): 'removes' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s120",
+   "start": 397.3,
+   "end": 398.63,
+   "line": "A boy.",
+   "scene": "palace 'ravenna': ROMULUS (romans.js 'ROMULUS', the boy emperor, s 2.0, tiny on the huge throne, too-big wreath slipping) looks up at Odoacer, legs dangling. WORD BEATS (s from shot start): 'A' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s121",
+   "start": 398.63,
+   "end": 401.35,
+   "line": "His name is Romulus Augustulus.",
+   "scene": "GIANT FACE ROMULUS (romanFace 'ROMULUS'): worried -> shocked, the wreath slides down over one eye; NAME CHIP 'ROMULUS AUGUSTULUS' on 'Romulus'; small chip 'LITTLE AUGUSTUS' under it. WORD BEATS (s from shot start): 'His' 0.15, 'Romulus' 1.01, 'Augustulus.' 1.49. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.01,
+     "name": "stinger",
+     "gain": -14,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s122",
+   "start": 401.35,
+   "end": 403.39,
+   "line": "He doesn't even kill him.",
+   "scene": "palace 'ravenna': ODOACER lifts the wreath off the boy's head gently and points to the door; the boy shrugs (relieved). No violence. WORD BEATS (s from shot start): 'He' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.74,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.0
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s123",
+   "start": 403.39,
+   "end": 410.01,
+   "line": "He sends the boy to a villa, and ships the emperor's crown and purple robes to Constantinople.",
+   "scene": "SPLIT FRAME: left, the boy rides off in a cart toward a sunny seaside villa (LOCAL, cypresses); right, a messenger ship carries a chest with the crown and the purple robes to CONSTANTINOPLE (mapEU inset arrow Italy -> Constantinople). Gold labels 'VILLA', 'CROWN + PURPLE ROBES'. WORD BEATS (s from shot start): 'He' 0.15, 'Constantinople.' 5.54. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.62,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 5.54,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s124",
+   "start": 410.01,
+   "end": 412.84,
+   "line": "The West doesn't need an emperor anymore.",
+   "scene": "palace 'ravenna': the EMPTY THRONE, a pigeon lands on it, dust in the light; the purple cushion is bare. WORD BEATS (s from shot start): 'The' 0.15, 'West' 0.50. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.85,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s125",
+   "start": 412.84,
+   "end": 415.53,
+   "line": "Most history books stop right there.",
+   "scene": "A big old history book (LOCAL) slams shut; on its cover in gold 'THE FALL OF ROME'. WORD BEATS (s from shot start): 'Most' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.35,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s126",
+   "start": 415.53,
+   "end": 417.59,
+   "line": "476.",
+   "scene": "yearCounter BIG center: '476' slams in gold with a stone-crack + dust. WORD BEATS (s from shot start): '476.' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s127",
+   "start": 417.59,
+   "end": 420.14,
+   "line": "The fall of Rome.",
+   "scene": "rome.js 'forum' mood 'dusk' overgrown and quiet (LOCAL ivy + a fallen column), a lone crow; title text 'THE FALL OF ROME' fades in, then - on the last frame - a red question mark stamps over 'FALL'? (sets up the twist). WORD BEATS (s from shot start): 'The' 0.15, 'Rome.' 0.76. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.76,
+     "name": "stinger",
+     "gain": -12,
+     "minor": true
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s128",
+   "start": 420.14,
+   "end": 422.05,
+   "line": "But remember the split?",
+   "scene": "mapEU 'empire' year 476: the split line glows; the WEST goes grey and breaks into pieces (new kingdom tints); on 'split?' camera pushes toward the EAST. WORD BEATS (s from shot start): 'But' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.04,
+     "name": "whoosh",
+     "gain": -14,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s129",
+   "start": 422.05,
+   "end": 423.87,
+   "line": "Rome had two halves.",
+   "scene": "The two halves pull apart a little; gold '2' on 'two'; WEST label grey, EAST label gold. WORD BEATS (s from shot start): 'Rome' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s130",
+   "start": 423.87,
+   "end": 426.48,
+   "line": "And the eastern half was still standing.",
+   "scene": "constantinople view 'skyline' mood 'golden': the city at dawn - domes, the sea walls, ships, banners, crowds; it glows and STANDS; chip 'STILL STANDING'. WORD BEATS (s from shot start): 'And' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.55,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s131",
+   "start": 426.48,
+   "end": 429.82,
+   "line": "Its emperors still ruled from Constantinople.",
+   "scene": "palace view 'constHall' (gold mosaics, Byzantine): an EASTERN EMPEROR (EMPEROR design with a jewelled crown + name chip 'EMPEROR IN CONSTANTINOPLE') enthroned, courtiers bowing. WORD BEATS (s from shot start): 'Its' 0.15, 'Constantinople.' 2.13. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s132",
+   "start": 429.82,
+   "end": 432.84,
+   "line": "Its people still called themselves Romans.",
+   "scene": "constantinople 'skyline' street level / harbour market: citizens (CITIZEN rigs, Byzantine colours) - a speech-bubble-free chip 'ROMANS' and the Greek word 'ΡΩΜΑΙΟΙ' (Rhomaioi) small in gold. WORD BEATS (s from shot start): 'Its' 0.15, 'Romans.' 2.04. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.04,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s133",
+   "start": 432.84,
+   "end": 439.18,
+   "line": "About sixty years later, they even took back Italy, and the city of Rome itself, for a while.",
+   "scene": "mapEU year 536-554: gold arrows from the East sweep back into North Africa and ITALY, ROME's pin turns gold again on 'Rome itself'; yearCounter 'AD 536'; small chip 'FOR A WHILE' on 'while'. WORD BEATS (s from shot start): 'About' 0.15, 'Italy,' 2.72, 'Rome' 4.19. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.42,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 2.72,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 5.44,
+     "name": "blip",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s134",
+   "start": 439.18,
+   "end": 442.16,
+   "line": "Today we call it the Byzantine Empire.",
+   "scene": "A modern textbook label 'BYZANTINE EMPIRE' pins onto the map ... WORD BEATS (s from shot start): 'Today' 0.15, 'Byzantine' 1.22, 'Empire.' 1.76. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.22,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s135",
+   "start": 442.16,
+   "end": 444.13,
+   "line": "They just called it Rome.",
+   "scene": "... and gets crossed out by a gold stroke and replaced with 'ROME' on 'Rome.' WORD BEATS (s from shot start): 'They' 0.15, 'Rome.' 1.07. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.07,
+     "name": "stinger",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s136",
+   "start": 444.13,
+   "end": 447.26,
+   "line": "And it lasted almost another thousand years.",
+   "scene": "yearCounter races 476 -> 1453 (gold digits spinning) over a time-lapse of Constantinople's skyline (domes rising, a great dome appearing); gold '~1,000 MORE YEARS' on 'thousand'. WORD BEATS (s from shot start): 'And' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "riser",
+     "gain": -14,
+     "dur": 2.2
+    },
+    {
+     "at": 1.65,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s137",
+   "start": 447.26,
+   "end": 451.37,
+   "line": "Until the 29th of May, 1453,",
+   "scene": "constantinople view 'walls1453' mood 'dusk': the triple land walls; Ottoman cannon smoke and muzzle flashes along a far ridge (cannon k), stones crumble from a tower on 'broke'; NO fighting figures close-up. yearCounter '29 MAY 1453' on '1453'. WORD BEATS (s from shot start): 'Until' 0.15, '29th' 0.68, 'May,' 1.56, '1453,' 1.75. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.75,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s138",
+   "start": 451.37,
+   "end": 455.8,
+   "line": "when Ottoman cannons broke the walls of Constantinople.",
+   "scene": "constantinople 'walls1453' closer: cannon muzzle flashes and big smoke rings from the far ridge (cannon k 0->1), a stone tower of the land walls cracks and crumbles on 'broke' (stones falling, dust); NO figures close. WORD BEATS (s from shot start): 'when' 0.15, 'Ottoman' 0.75, 'Constantinople.' 3.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.71,
+     "name": "impact",
+     "gain": -10,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s139",
+   "start": 455.8,
+   "end": 459.56,
+   "line": "So did Rome really fall in 476?",
+   "scene": "TIMELINE in gold on dark: three pins 410 - 476 - 1453 on a long line; a question mark hovers and hops between 476 and 1453 on '476?'. WORD BEATS (s from shot start): 'So' 0.15, 'Rome' 0.72, '476?' 2.00. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "stinger",
+     "gain": -12,
+     "minor": true
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s140",
+   "start": 459.56,
+   "end": 462.05,
+   "line": "Historians still fight about it.",
+   "scene": "Two groups of scholar silhouettes on either side of the timeline, gold labels on their words: left 'COLLAPSE' (a cracked column icon, 'life got poorer'), right 'CHANGE' (a column turning into a medieval arch); they argue. WORD BEATS (s from shot start): 'Historians' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.93,
+     "name": "murmur",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s141",
+   "start": 462.05,
+   "end": 466.66,
+   "line": "Some see a real collapse: life in the West got poorer for centuries.",
+   "scene": "rome.js 'street' mood 'dusk' decayed (LOCAL: weeds, broken roof tiles, a family moving out with a cart): 'COLLAPSE' chip on 'collapse'. WORD BEATS (s from shot start): 'Some' 0.15, 'West' 2.39. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "medium",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.96,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s142",
+   "start": 466.66,
+   "end": 469.91,
+   "line": "Others see a slow change into the Middle Ages.",
+   "scene": "The same street dissolves forward in time into an early-medieval town: a church tower, a market, the same moss-green cloth on a stall - 'CHANGE' chip on 'change'. WORD BEATS (s from shot start): 'Others' 0.15, 'Middle' 2.08, 'Ages.' 2.29. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 1.08,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "city",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s143",
+   "start": 469.91,
+   "end": 475.41,
+   "line": "One historian counted two hundred and ten reasons people have given for the fall.",
+   "scene": "A huge scroll unrolls down the screen with a list of tiny reasons scrolling fast; gold counter 1 -> 210 on 'two hundred and ten'. WORD BEATS (s from shot start): 'One' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "graphic",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.56,
+     "name": "counter",
+     "gain": -12
+    },
+    {
+     "at": 2.17,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s144",
+   "start": 475.41,
+   "end": 478.13,
+   "line": "Maybe Rome wasn't destroyed in a day.",
+   "scene": "rome.js 'skyline' mood 'golden' at sunrise, the old city standing in light, slow push; a faint ghost of 117 Rome overlays it. WORD BEATS (s from shot start): 'Maybe' 0.15, 'Rome' 0.39. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "rome",
+   "type": "wide",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s145",
+   "start": 478.13,
+   "end": 480.55,
+   "line": "Maybe it never fully fell at all.",
+   "scene": "GIANT FACE LIVIA, now in dawn light (warm gold rim), thoughtful -> a small knowing smile. WORD BEATS (s from shot start): 'Maybe' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "romans",
+   "type": "face",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "shimmer",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s146",
+   "start": 480.55,
+   "end": 482.22,
+   "line": "And Livia's coin?",
+   "scene": "MACRO: the family coin in Livia's open palm, dawn light; it catches the sun. WORD BEATS (s from shot start): 'And' 0.15, 'Livia's' 0.28. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.81,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s147",
+   "start": 482.22,
+   "end": 484.81,
+   "line": "It's still silver.",
+   "scene": "The coin turns, a full bright silver glint sweep on 'silver', then slow push out. WORD BEATS (s from shot start): 'It's' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "insert",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s148",
+   "start": 484.81,
+   "end": 486.55,
+   "line": "So what do you think?",
+   "scene": "THE QUESTION lock-up (title style): three big gold year medallions '410' / '476' / '1453' over the dusk skyline, each one pops on its word in the next line; the question 'WHEN DID ROME REALLY END?' outlined cream on top. WORD BEATS (s from shot start): 'So' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "title",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -12,
+     "minor": false
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s149",
+   "start": 486.55,
+   "end": 494.96,
+   "line": "When did the Roman Empire really end: 410, 476, or 1453?",
+   "scene": "Same lock-up continues: medallions pop on '410', '476', '1453'; a comment-bubble icon bounces on 'comments'. WORD BEATS (s from shot start): 'When' 0.15, 'Roman' 0.55, 'Empire' 0.85, '410,' 2.57, '476,' 2.57, '1453?' 5.20. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "title",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.57,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.57,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.2
+    },
+    {
+     "at": 5.2,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s150",
+   "start": 494.96,
+   "end": 496.78,
+   "line": "Tell me in the comments.",
+   "scene": "Comment icon + 'COMMENT 410, 476 OR 1453' chip; hold. WORD BEATS (s from shot start): 'Tell' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "title",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.77,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s151",
+   "start": 496.78,
+   "end": 516.0,
+   "line": "And if you like stories like this, the next one is right here.",
+   "scene": "END SCREEN (~19 s, music only after the line): history.js endScreen: dark rich background (the Roman skyline at dusk, blurred), a big empty 16:9 slot on the right for YouTube's 'next video' element and a round slot for subscribe (keep them empty/outlined), the channel name I.AWAKEN small; LIVIA small at the left pointing toward the slot on 'right here.' Gentle embers. WORD BEATS (s from shot start): 'And' 0.15. LEGAL/NO GORE: original designs; real people are stylised generic figures told apart by a NAME CHIP, no portrait likeness; violence ONLY as silhouettes, fire, smoke, dust, banners, falling shadows and sound - no wounds, no blood, no bodies; nothing from any film, show, game or comic.",
+   "set": "history",
+   "type": "end",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 36.32,
+   "mood": "dark",
+   "intensity": 0.55,
+   "note": "THE CLIP: drums + drone, fire night"
+  },
+  {
+   "start": 36.32,
+   "end": 77.98,
+   "mood": "triumph",
+   "intensity": 0.45,
+   "note": "the rewind to Rome at its peak (117)"
+  },
+  {
+   "start": 77.98,
+   "end": 136.95,
+   "mood": "tension",
+   "intensity": 0.45,
+   "note": "ch1: emperors one after another"
+  },
+  {
+   "start": 136.95,
+   "end": 191.7,
+   "mood": "mystery",
+   "intensity": 0.4,
+   "note": "ch2: the money melts"
+  },
+  {
+   "start": 191.7,
+   "end": 228.1,
+   "mood": "wonder",
+   "intensity": 0.35,
+   "note": "ch3: too big, Constantinople, the split"
+  },
+  {
+   "start": 228.1,
+   "end": 286.42,
+   "mood": "action",
+   "intensity": 0.5,
+   "note": "ch4: the Huns, the Danube, Adrianople"
+  },
+  {
+   "start": 286.42,
+   "end": 351.16,
+   "mood": "tension",
+   "intensity": 0.5,
+   "note": "ch5: hiring the enemy, Alaric"
+  },
+  {
+   "start": 351.16,
+   "end": 367.38,
+   "mood": "dark",
+   "intensity": 0.55,
+   "note": "back to 410 (the clip's music returns)"
+  },
+  {
+   "start": 367.38,
+   "end": 377.84,
+   "mood": "sad",
+   "intensity": 0.35,
+   "note": "Livia survives, Jerome"
+  },
+  {
+   "start": 377.84,
+   "end": 420.14,
+   "mood": "epic",
+   "intensity": 0.5,
+   "note": "455 + 476, the boy emperor"
+  },
+  {
+   "start": 420.14,
+   "end": 455.8,
+   "mood": "wonder",
+   "intensity": 0.45,
+   "note": "THE TWIST: the East stands until 1453"
+  },
+  {
+   "start": 455.8,
+   "end": 484.81,
+   "mood": "hopeful",
+   "intensity": 0.4,
+   "note": "did Rome really fall? the coin"
+  },
+  {
+   "start": 484.81,
+   "end": 516.0,
+   "mood": "calm",
+   "intensity": 0.5,
+   "note": "the question + end screen"
+  }
+ ]
+}

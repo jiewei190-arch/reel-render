@@ -3,6 +3,8 @@
 //   node render.mjs --project P --from 30 --to 45 --scale 0.5         preview a range
 //   node render.mjs --project P --sheet                               one still per shot -> build/sheets/*.png
 //   node render.mjs --project P --stills 3.5,12,40                    stills at times -> build/stills
+//   node render.mjs --project P --ids s001,s010-s020 [--sheet]       3 stills per shot (start+0.3, mid, end-0.3), or a sheet of only those ids
+//   --outdir NAME (build/NAME instead of stills/sheets, so parallel workers don't clobber each other)   --story story/demo_x.json (alt shot list)
 //   node render.mjs --project P --styles dusk,midnight,golden,neon --at 3.5,12,40   style comparison grid
 // Options: --workers N  --scale K  --style ID  --debug  --format png|jpeg  --crf 18  --gl auto|gpu|swiftshader  --out FILE
 import http from 'node:http';
@@ -30,13 +32,13 @@ const server = http.createServer((req, res) => {
 }).listen(0);
 const PORT = server.address().port;
 const gl = args.gl || (process.platform === 'linux' ? 'swiftshader' : 'auto');
-const LAUNCH = { args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader', '--disable-dev-shm-usage', ...(gl === 'swiftshader' ? ['--use-angle=swiftshader'] : []), ...(gl === 'gpu' ? ['--enable-gpu', '--use-angle=default'] : [])] };
+const LAUNCH = { ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}), args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader', '--disable-dev-shm-usage', ...(gl === 'swiftshader' ? ['--use-angle=swiftshader'] : []), ...(gl === 'gpu' ? ['--enable-gpu', '--use-angle=default'] : [])] };
 const FORMAT = args.format === 'jpeg' ? 'jpeg' : 'png';
 const CFG = JSON.parse(fs.readFileSync(path.join(PROJECT, 'config.json'), 'utf8'));
 const FPS = CFG.fps || 24;
 
 async function openPlayer(browser, style) {
-  const qs = new URLSearchParams(); if (args.scale) qs.set('scale', args.scale); if (style || args.style) qs.set('style', style || args.style); if (args.debug) qs.set('debug', '1');
+  const qs = new URLSearchParams(); if (args.scale) qs.set('scale', args.scale); if (style || args.style) qs.set('style', style || args.style); if (args.debug) qs.set('debug', '1'); if (args.story) qs.set('story', args.story);
   const page = await browser.newPage({ viewport: { width: 640, height: 360 } });
   page.on('pageerror', e => console.log('[pageerror]', e.message));
   page.on('console', m => { const t = m.text(); if (/ERROR|missing/i.test(t)) console.log('[page]', t); });
@@ -86,12 +88,14 @@ async function contactSheet(browser, items, outFile, cols = 4, cellW = 480) {
 }
 async function renderStills() {
   const browser = await chromium.launch(LAUNCH); const styles = args.styles ? String(args.styles).split(',') : [args.style || null];
-  const dir = path.join(BUILD, args.styles ? 'styles' : args.sheet ? 'sheets' : 'stills'); fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
+  const dir = path.join(BUILD, args.outdir || (args.styles ? 'styles' : args.sheet ? 'sheets' : 'stills')); fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
   const all = [];
   for (const st of styles) {
     const page = await openPlayer(browser, st); const fps = FPS;
     let targets;
-    if (args.sheet) targets = (await page.evaluate('window.SHOT_LIST')).map(s => ({ t: s.start + (s.end - s.start) * 0.45, label: `${s.id}  ${s.start.toFixed(1)}s${s.ok ? '' : '  (MISSING)'}` }));
+    const IDS = args.ids ? String(args.ids).split(',') : null, inIds = s => !IDS || IDS.some(x => x.includes('-') ? (s.id >= x.split('-')[0] && s.id <= x.split('-')[1]) : s.id === x);
+    if (args.ids && !args.sheet) targets = (await page.evaluate('window.SHOT_LIST')).filter(inIds).flatMap(s => [s.start + 0.3, (s.start + s.end) / 2, s.end - 0.3].map((t, k) => ({ t, label: `${s.id}_${'abc'[k]}  ${t.toFixed(1)}s${s.ok ? '' : '  (MISSING)'}` })));
+    else if (args.sheet) targets = (await page.evaluate('window.SHOT_LIST')).filter(inIds).map(s => ({ t: s.start + (s.end - s.start) * 0.45, label: `${s.id}  ${s.start.toFixed(1)}s${s.ok ? '' : '  (MISSING)'}` }));
     else targets = String(args.stills || args.at || '1').split(',').map(Number).map(t => ({ t, label: `${t}s` }));
     for (const tg of targets) { const img = await shot(page, Math.round(tg.t * fps)); const name = `${st ? st + '_' : ''}${tg.label.split(' ')[0].replace(/[^\w.]/g, '')}_${tg.t.toFixed(2)}.${FORMAT}`; fs.writeFileSync(path.join(dir, name), img); all.push({ img, label: `${st ? `[${st}] ` : ''}${tg.label}`, st }); }
     (await page.evaluate('window.ERRORS')).forEach(e => console.log('  shot error:', e)); await page.close();
@@ -100,6 +104,6 @@ async function renderStills() {
   else { const per = 24; for (let i = 0; i < all.length; i += per) await contactSheet(browser, all.slice(i, i + per), path.join(dir, `sheet_${String(i / per + 1).padStart(2, '0')}.png`), 4, 440); }
   await browser.close(); console.log(`Wrote ${all.length} stills + contact sheet(s) to ${dir}`);
 }
-try { if (args.sheet || args.stills || args.styles) await renderStills(); else await renderVideo(); }
+try { if (args.sheet || args.stills || args.styles || args.ids) await renderStills(); else await renderVideo(); }
 catch (e) { console.error('RENDER FAILED:', e.message); process.exitCode = 1; }
 finally { server.close(); }
