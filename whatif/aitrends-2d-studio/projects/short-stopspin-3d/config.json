@@ -1,0 +1,18 @@
+{
+ "title": "What If the Earth Stopped Spinning for One Second?",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 26.0,
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["east", "stops", "instantly", "sixteen", "hundred", "seventy", "jet", "bedrock", "subscribe"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0.0,
+ "music": { "enabled": true, "gainDb": -17 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
