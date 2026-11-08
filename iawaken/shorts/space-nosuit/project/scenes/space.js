@@ -18,19 +18,19 @@ function driftDraw(s, u) {
   s.P.position.set(0.15 + 0.1 * k, 2.15 - 0.06 * k, 2.6 + 0.55 * k);
   s.P.rotation.set(-0.12 + 0.07 * k, Math.PI + 0.22 * Math.sin(k * 0.9), 0.32 - 0.18 * k);
   s.h.pose(floatPose(u + 10, 1)); s.h.face(GASP, u + 10);
-  const c = s.P.position; s.stage.cam([0.3 + 0.05 * Math.sin(u * 2), 2.75, -0.25], [c.x, c.y + 0.35, c.z], 42);
+  const c = s.P.position; s.stage.cam([0.3 + 0.05 * Math.sin(u * 2), 2.75, -0.25], [c.x, c.y + 0.95, c.z], 44);
 }
-registerShot('s01', { kind: '3d', init: driftInit, draw(s, t) { driftDraw(s, t); }, overlay(g, t) { countdown(g, 10 - t * 0.7, 1); } });
+registerShot('s01', { kind: '3d', init: driftInit, draw(s, t) { driftDraw(s, t); }, overlay(g, t) { countdown(g, 10 - t * 0.7, 1, 0.165, { r: 100 }); } });
 registerShot('s21', { kind: '3d', init: driftInit, draw(s, t, info) { driftDraw(s, t - info.dur); },
-  overlay(g, t, info) { countdown(g, 10, 1); subPill(g, prog(t, 0.05, 0.3) * (1 - prog(t, info.dur - 0.35, info.dur - 0.08)), 0.34); } });
+  overlay(g, t, info) { countdown(g, 10, 1, 0.165, { r: 100 }); subPill(g, prog(t, 0.05, 0.3) * (1 - prog(t, info.dur - 0.35, info.dur - 0.08)), 0.265); } });
 
 // ---- s02 "Use them." — closer, he steadies and stares into the lens (deadpan)
 registerShot('s02', { kind: '3d', init: driftInit,
   draw(s, t) { const u = 1.62 + t, k = u + 1.8; s.set.update(u + 10);
     s.P.position.set(0.15 + 0.1 * k, 2.15 - 0.06 * k, 2.6 + 0.55 * k); s.P.rotation.set(0.05, Math.PI + 0.06 * Math.sin(t * 1.3), 0.08 * Math.sin(t * 0.9));
     s.h.pose(floatPose(u + 10, 0.25)); s.h.face(mixExpr(GASP, { ...EXPR.deadpan, pupil: [0, 0] }, ease.inOut(prog(t, 0.05, 0.4))), u + 10);
-    const c = s.P.position; s.stage.cam([c.x - 0.05, c.y + 0.95, c.z - 2.1 + t * 0.25], [c.x, c.y + 0.8, c.z], 34); },
-  overlay(g, t) { countdown(g, 10 - (1.62 + t) * 0.7, 1); } });
+    const c = s.P.position; s.stage.cam([c.x - 0.05, c.y + 1.0, c.z - 3.4 + t * 0.3], [c.x, c.y + 0.95, c.z], 38); },
+  overlay(g, t) { countdown(g, 10 - (1.62 + t) * 0.7, 1, 0.165, { r: 100 }); } });
 
 // ---- s03 "You just stepped into space." — wide from space: he walks out of the airlock onto nothing
 registerShot('s03', { kind: '3d', init(T) { const s = space(T, { target: [0, 2, 1] }); heroIn(s); return s; },
@@ -111,7 +111,7 @@ registerShot('s14', { kind: '3d', init: portInit('mina'),
     s.h.pose(floatPose(t, 0.3)); s.h.face({ ...EXPR.worried, lid: 0.35 }, t);
     s.c.position.y = 0.55; s.c.pose(addPose({ ...POSE.stand, armR: [1.85, 0.1, -0.3], elbowR: 0.5 }, idle(t, 3))); s.c.prop.tick(t); s.c.face({ ...EXPR.deadpan, pupil: [0, 0] }, t);
     camMove(s.stage, t, [[0, { pos: [-2.1, 2.75, 7.4], look: [-2.65, 2.45, 0.8], fov: 37 }], [info.dur, { pos: [-2.2, 2.75, 6.6], look: [-2.75, 2.5, 0.8], fov: 35 }]]); },
-  overlay(g, t) { countdown(g, 3.2 - t * 1.55, 1); } });
+  overlay(g, t) { countdown(g, 3.2 - t * 1.55, 1, 0.165, { r: 100 }); } });
 
 // ---- s15 "your brain runs out of oxygen." — eyelids get heavy, the O2 bar drains
 registerShot('s15', { kind: '3d', init(T) { const s = space(T, { target: [0.3, 2, 3.6], outward: true }); heroIn(s); return s; },

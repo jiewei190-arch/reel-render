@@ -24,7 +24,7 @@ export function countdown(g, n, k = 1, y = 0.215, o = {}) {
   g.beginPath(); g.moveTo(0, 0); g.arc(0, 0, r - 10, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * left); g.closePath(); g.fillStyle = red ? 'rgba(230,60,50,.28)' : 'rgba(255,190,60,.30)'; g.fill();
   const shown = Math.max(0, Math.ceil(n - 0.001));
   const pulse = 1 + 0.08 * Math.max(0, Math.sin((n % 1) * Math.PI)) * (red ? 1.6 : 0.6);
-  g.save(); g.scale(pulse, pulse); text(g, String(shown), 0, 6, { size: 118, color: red ? '#e8392e' : '#20161a', weight: 700 }); g.restore();
+  g.save(); g.scale(pulse, pulse); text(g, String(shown), 0, 6, { size: r, color: red ? '#e8392e' : '#20161a', weight: 700 }); g.restore();
   g.restore();
 }
 // O2 meter (2D): level 0..1
@@ -156,7 +156,7 @@ export function lab(T, o = {}) {
   const pr = new THREE.Mesh(new THREE.TorusGeometry(CH_PORT[2] + 0.06, 0.16, 12, 40), toon('#4f6370')); pr.position.set(CH_PORT[0], CH_PORT[1], 0.08); G.add(pr);
   const glass = new THREE.Mesh(new THREE.CircleGeometry(CH_PORT[2], 40), new THREE.MeshBasicMaterial({ color: new THREE.Color('#cfeaff'), transparent: true, opacity: 0.14, depthWrite: false })); glass.position.set(CH_PORT[0], CH_PORT[1], 0.05); glass.userData.noOutline = true; G.add(glass);
   const lamp = new THREE.PointLight(new THREE.Color('#fff0d0'), 7, 5, 1.4); lamp.position.set(0, 3.8, -1.2); G.add(lamp); set.lamp = lamp;
-  const sg = sign('VACUUM CHAMBER', 2.6, 0.5, { bg: '#f2ead6' }); sg.position.set(0, 3.9, 0.22); G.add(sg);
+  const sg = sign('VACUUM CHAMBER', 2.0, 0.4, { bg: '#f2ead6' }); sg.position.set(0.8, 3.75, 0.22); G.add(sg);
   const gg = gauge(0.5); gg.position.set(1.75, 2.6, 0.22); G.add(gg); set.gauge = gg;
   // inside: a stool
   G.add(cyl(0.3, 0.3, 0.1, '#6a5040', 0, 0.75, -1.2), cyl(0.05, 0.05, 0.75, '#3a3f48', 0, 0.37, -1.2));
