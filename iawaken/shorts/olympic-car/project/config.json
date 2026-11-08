@@ -1,0 +1,18 @@
+{
+ "title": "The Olympic Winner Rode in a Car",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 32.0,
+ "captions": true,
+ "captionStyle": { "y": 0.68, "gold": ["car", "noticed", "nine", "nineteen", "strychnine", "science", "legend", "fourth", "slowest", "hour", "subscribe"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}

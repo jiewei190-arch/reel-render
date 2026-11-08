@@ -1,0 +1,584 @@
+{
+ "title": "The Olympic Winner Rode in a Car",
+ "duration": 32.0,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.55,
+   "line": "The Olympic marathon winner rode in a car.",
+   "scene": "road",
+   "set": "road",
+   "type": "hook",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "carpass",
+     "gain": -10
+    },
+    {
+     "at": 0,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s02",
+   "start": 2.55,
+   "end": 4.35,
+   "line": "He crossed the line first.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "cheer",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "whistle",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s03",
+   "start": 4.35,
+   "end": 5.95,
+   "line": "Then someone noticed.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.65,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.1,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s04",
+   "start": 5.95,
+   "end": 7.5,
+   "line": "Fred Lorz quit at mile nine,",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s05",
+   "start": 7.5,
+   "end": 8.8,
+   "line": "and hopped in a car.",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "carpass",
+     "gain": -12
+    },
+    {
+     "at": 0.55,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s06",
+   "start": 8.8,
+   "end": 9.9,
+   "line": "When it broke down,",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "hit",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "freeze",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s07",
+   "start": 9.9,
+   "end": 11.3,
+   "line": "he jogged the rest.",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.65,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "footstep",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s08",
+   "start": 11.3,
+   "end": 13.1,
+   "line": "The real winner, Thomas Hicks,",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s09",
+   "start": 13.1,
+   "end": 14.62,
+   "line": "was kept going with strychnine,",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s10",
+   "start": 14.62,
+   "end": 16.45,
+   "line": "egg whites, and brandy.",
+   "scene": "road",
+   "set": "road",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 0.95,
+     "name": "pop",
+     "gain": -13
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s11",
+   "start": 16.45,
+   "end": 18.45,
+   "line": "1904 sports science.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "phonebuzz",
+     "gain": -22
+    },
+    {
+     "at": 0.9,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s12",
+   "start": 18.45,
+   "end": 19.9,
+   "line": "And according to legend,",
+   "scene": "orchard",
+   "set": "orchard",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s13",
+   "start": 19.9,
+   "end": 22.6,
+   "line": "a Cuban runner stopped for some rotten apples,",
+   "scene": "orchard",
+   "set": "orchard",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "swish",
+     "gain": -16
+    },
+    {
+     "at": 2.0,
+     "name": "buzz",
+     "gain": -20
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s14",
+   "start": 22.6,
+   "end": 23.65,
+   "line": "took a nap,",
+   "scene": "orchard",
+   "set": "orchard",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "slowmo",
+     "gain": -20
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s15",
+   "start": 23.65,
+   "end": 24.95,
+   "line": "and still finished fourth.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "impact",
+     "gain": -12
+    },
+    {
+     "at": 0.9,
+     "name": "cheer",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s16",
+   "start": 24.95,
+   "end": 26.4,
+   "line": "The winning time?",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "clock",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s17",
+   "start": 26.4,
+   "end": 28.45,
+   "line": "The slowest in Olympic history.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "stinger",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s18",
+   "start": 28.45,
+   "end": 30.2,
+   "line": "By almost half an hour.",
+   "scene": "stadium",
+   "set": "stadium",
+   "type": "medium",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
+     "name": "impact",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "murmur",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s19",
+   "start": 30.2,
+   "end": 32.0,
+   "line": "Subscribe for more.",
+   "scene": "road",
+   "set": "road",
+   "type": "closer",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "carpass",
+     "gain": -12
+    },
+    {
+     "at": 0.25,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   },
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 5.95,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 5.95,
+   "end": 16.45,
+   "mood": "playful",
+   "intensity": 0.6
+  },
+  {
+   "start": 16.45,
+   "end": 25.0,
+   "mood": "mystery",
+   "intensity": 0.5
+  },
+  {
+   "start": 25.0,
+   "end": 30.2,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 30.2,
+   "end": 32.0,
+   "mood": "playful",
+   "intensity": 0.5
+  }
+ ]
+}

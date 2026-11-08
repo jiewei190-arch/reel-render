@@ -1,0 +1,440 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "The",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "Olympic",
+   "start": 0.26,
+   "end": 0.54
+  },
+  {
+   "word": "marathon",
+   "start": 0.54,
+   "end": 1.1
+  },
+  {
+   "word": "winner",
+   "start": 1.1,
+   "end": 1.42
+  },
+  {
+   "word": "rode",
+   "start": 1.42,
+   "end": 1.76
+  },
+  {
+   "word": "in",
+   "start": 1.76,
+   "end": 1.92
+  },
+  {
+   "word": "a",
+   "start": 1.92,
+   "end": 2.02
+  },
+  {
+   "word": "car.",
+   "start": 2.02,
+   "end": 2.3
+  },
+  {
+   "word": "He",
+   "start": 2.72,
+   "end": 2.86
+  },
+  {
+   "word": "crossed",
+   "start": 2.86,
+   "end": 3.1
+  },
+  {
+   "word": "the",
+   "start": 3.1,
+   "end": 3.28
+  },
+  {
+   "word": "line",
+   "start": 3.28,
+   "end": 3.48
+  },
+  {
+   "word": "first.",
+   "start": 3.48,
+   "end": 3.84
+  },
+  {
+   "word": "Then",
+   "start": 4.52,
+   "end": 4.74
+  },
+  {
+   "word": "someone",
+   "start": 4.74,
+   "end": 5.06
+  },
+  {
+   "word": "noticed.",
+   "start": 5.06,
+   "end": 5.46
+  },
+  {
+   "word": "Fred",
+   "start": 6.06,
+   "end": 6.2
+  },
+  {
+   "word": "Lorz",
+   "start": 6.2,
+   "end": 6.52
+  },
+  {
+   "word": "quit",
+   "start": 6.52,
+   "end": 6.68
+  },
+  {
+   "word": "at",
+   "start": 6.68,
+   "end": 6.86
+  },
+  {
+   "word": "mile",
+   "start": 6.86,
+   "end": 6.98
+  },
+  {
+   "word": "nine,",
+   "start": 6.98,
+   "end": 7.36
+  },
+  {
+   "word": "and",
+   "start": 7.36,
+   "end": 7.76
+  },
+  {
+   "word": "hopped",
+   "start": 7.76,
+   "end": 7.96
+  },
+  {
+   "word": "in",
+   "start": 7.96,
+   "end": 8.12
+  },
+  {
+   "word": "a",
+   "start": 8.12,
+   "end": 8.24
+  },
+  {
+   "word": "car.",
+   "start": 8.24,
+   "end": 8.5
+  },
+  {
+   "word": "When",
+   "start": 8.9,
+   "end": 9.06
+  },
+  {
+   "word": "it",
+   "start": 9.06,
+   "end": 9.18
+  },
+  {
+   "word": "broke",
+   "start": 9.18,
+   "end": 9.36
+  },
+  {
+   "word": "down,",
+   "start": 9.36,
+   "end": 9.78
+  },
+  {
+   "word": "he",
+   "start": 9.98,
+   "end": 10.16
+  },
+  {
+   "word": "jogged",
+   "start": 10.16,
+   "end": 10.46
+  },
+  {
+   "word": "the",
+   "start": 10.46,
+   "end": 10.64
+  },
+  {
+   "word": "rest.",
+   "start": 10.64,
+   "end": 10.9
+  },
+  {
+   "word": "The",
+   "start": 11.42,
+   "end": 11.54
+  },
+  {
+   "word": "real",
+   "start": 11.54,
+   "end": 11.84
+  },
+  {
+   "word": "winner,",
+   "start": 11.84,
+   "end": 12.2
+  },
+  {
+   "word": "Thomas",
+   "start": 12.34,
+   "end": 12.64
+  },
+  {
+   "word": "Hicks,",
+   "start": 12.64,
+   "end": 12.88
+  },
+  {
+   "word": "was",
+   "start": 13.2,
+   "end": 13.32
+  },
+  {
+   "word": "kept",
+   "start": 13.32,
+   "end": 13.54
+  },
+  {
+   "word": "going",
+   "start": 13.54,
+   "end": 13.88
+  },
+  {
+   "word": "with",
+   "start": 13.88,
+   "end": 14.12
+  },
+  {
+   "word": "strychnine,",
+   "start": 14.12,
+   "end": 14.68
+  },
+  {
+   "word": "egg",
+   "start": 14.68,
+   "end": 14.98
+  },
+  {
+   "word": "whites,",
+   "start": 14.98,
+   "end": 15.28
+  },
+  {
+   "word": "and",
+   "start": 15.28,
+   "end": 15.52
+  },
+  {
+   "word": "brandy.",
+   "start": 15.52,
+   "end": 15.96
+  },
+  {
+   "word": "1904",
+   "start": 16.62,
+   "end": 16.971
+  },
+  {
+   "word": "sports",
+   "start": 16.971,
+   "end": 17.498
+  },
+  {
+   "word": "science.",
+   "start": 17.498,
+   "end": 18.2
+  },
+  {
+   "word": "And",
+   "start": 18.62,
+   "end": 18.763
+  },
+  {
+   "word": "according",
+   "start": 18.763,
+   "end": 19.191
+  },
+  {
+   "word": "to",
+   "start": 19.191,
+   "end": 19.287
+  },
+  {
+   "word": "legend,",
+   "start": 19.287,
+   "end": 19.62
+  },
+  {
+   "word": "a",
+   "start": 19.96,
+   "end": 20.04
+  },
+  {
+   "word": "Cuban",
+   "start": 20.04,
+   "end": 20.34
+  },
+  {
+   "word": "runner",
+   "start": 20.34,
+   "end": 20.76
+  },
+  {
+   "word": "stopped",
+   "start": 20.76,
+   "end": 21.12
+  },
+  {
+   "word": "for",
+   "start": 21.12,
+   "end": 21.4
+  },
+  {
+   "word": "some",
+   "start": 21.4,
+   "end": 21.64
+  },
+  {
+   "word": "rotten",
+   "start": 21.64,
+   "end": 21.98
+  },
+  {
+   "word": "apples,",
+   "start": 21.98,
+   "end": 22.38
+  },
+  {
+   "word": "took",
+   "start": 22.7,
+   "end": 22.86
+  },
+  {
+   "word": "a",
+   "start": 22.86,
+   "end": 23.02
+  },
+  {
+   "word": "nap,",
+   "start": 23.02,
+   "end": 23.22
+  },
+  {
+   "word": "and",
+   "start": 23.76,
+   "end": 24.04
+  },
+  {
+   "word": "still",
+   "start": 24.04,
+   "end": 24.26
+  },
+  {
+   "word": "finished",
+   "start": 24.26,
+   "end": 24.54
+  },
+  {
+   "word": "fourth.",
+   "start": 24.54,
+   "end": 24.88
+  },
+  {
+   "word": "The",
+   "start": 25.56,
+   "end": 25.6
+  },
+  {
+   "word": "winning",
+   "start": 25.6,
+   "end": 25.74
+  },
+  {
+   "word": "time?",
+   "start": 25.74,
+   "end": 26.16
+  },
+  {
+   "word": "The",
+   "start": 26.68,
+   "end": 26.76
+  },
+  {
+   "word": "slowest",
+   "start": 26.76,
+   "end": 27.22
+  },
+  {
+   "word": "in",
+   "start": 27.22,
+   "end": 27.32
+  },
+  {
+   "word": "Olympic",
+   "start": 27.32,
+   "end": 27.6
+  },
+  {
+   "word": "history.",
+   "start": 27.6,
+   "end": 28.08
+  },
+  {
+   "word": "By",
+   "start": 28.75,
+   "end": 28.871
+  },
+  {
+   "word": "almost",
+   "start": 28.871,
+   "end": 29.234
+  },
+  {
+   "word": "half",
+   "start": 29.234,
+   "end": 29.476
+  },
+  {
+   "word": "an",
+   "start": 29.476,
+   "end": 29.597
+  },
+  {
+   "word": "hour.",
+   "start": 29.597,
+   "end": 29.9
+  },
+  {
+   "word": "Subscribe",
+   "start": 30.36,
+   "end": 30.921
+  },
+  {
+   "word": "for",
+   "start": 30.921,
+   "end": 31.108
+  },
+  {
+   "word": "more.",
+   "start": 31.108,
+   "end": 31.42
+  }
+ ]
+}

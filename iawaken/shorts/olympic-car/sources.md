@@ -1,0 +1,17 @@
+# Sources: The Olympic Winner Rode in a Car (1904 St. Louis Olympic marathon)
+
+| # | Claim in the script | Source |
+|---|---|---|
+| 1 | Fred Lorz dropped out around mile 9 and rode in a car (about 10-11 miles). | Smithsonian Magazine, "How the 1904 Olympic Marathon May Have Been the Strangest Ever": "At the nine-mile mark, cramps also plagued Lorz" ... "his 11-mile ride in the automobile." https://www.smithsonianmag.com/history/how-the-1904-marathon-became-one-of-the-weirdest-olympic-events-of-all-time-14910747/ ; Olympedia, 1904 Marathon, Men: "dropped out at nine miles" https://www.olympedia.org/results/56131 ; History.com ("ridden 10 miles") https://www.history.com/news/the-olympic-marathons-outlandish-early-history |
+| 2 | The car broke down; Lorz ran the rest, entered the stadium first and was cheered as the winner; then it was discovered and he was disqualified. | History.com: "When his car broke down, a rejuvenated Lorz ran the final 5 miles" ... "The hoax ... was quickly exposed." Smithsonian (Lorz enters the stadium first, crowd cheers; "One of Hicks' handlers saw him and ordered him off the course"). Olympedia: "disqualified after it was found that he took a ride". Links above. |
+| 3 | The real winner, Thomas Hicks, was kept going by his handlers with strychnine mixed with egg whites, and brandy; this was within the rules at the time. | Smithsonian: "strychnine and egg whites" ... "the first recorded instance of drug use in the modern Olympics, which had no rules about performance-enhancing drugs at the time"; second dose "with some brandy". History.com: "Potentially lethal, but perfectly within the rules at the time." Olympedia: "strychnine sulfate in an egg white" ... "sips of brandy". |
+| 4 | **Said as "according to legend":** a Cuban runner (Félix "Andarín" Carvajal) stopped for (rotten) apples, took a nap, and still finished fourth. | Smithsonian: "stopped at an orchard and snacked on some apples, which turned out to be rotten" ... "laid down and took a nap". History.com / Olympedia: green apples, cramps. Fourth place: Olympedia ("Still, he finished fourth."). The topic bank flags the orchard-and-nap story as widely told but not documented (a historian says there is no record of it), hence "according to legend". |
+| 5 | The winning time (Hicks, 3:28:53) is the slowest in Olympic marathon history, by almost half an hour. | Olympedia, 1904: Hicks 3-28:53 https://www.olympedia.org/results/56131 ; the next slowest winning time is 1900, Michel Théato 2-59:45 (Olympedia https://www.olympedia.org/results/56066), about 29 minutes faster; 1896 was 2:58:50 and every Olympic marathon since 1908 was won faster (Wikipedia, "Marathon at the Olympics", list of winners https://en.wikipedia.org/wiki/Marathon_at_the_Olympics). |
+| 6 | Year and place: St. Louis, 1904. | All sources above; also Olympics.com (IOC), "The strange case of the St. Louis 1904 marathon" https://www.olympics.com/ioc/news/the-strange-case-of-the-st-louis-1904-marathon |
+
+Softened / framing choices
+- "He crossed the line first" (not "he got the gold medal"): the sources agree he entered the stadium first and was hailed
+  as the winner; none we read says a medal was actually handed over.
+- Strychnine is framed as "1904 sports science" (the era's practice, legal then); Hicks is never shown sick or hurt.
+- "Almost half an hour" (3:28:53 vs 2:59:45 = 29 min 8 s).
+- Characters are original toon beans, not portraits. Voice is synthetic.
