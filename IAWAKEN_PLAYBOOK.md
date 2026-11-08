@@ -98,3 +98,7 @@ cast stays recognisable:
 | BISCUIT (cat) | purple collar, green slit eyes | judgemental, unimpressed |
 History episodes may dress the cast in period costume (the hero as a Roman with a mustard tunic, etc.) or use new
 period characters; a cast cameo is a nice recurring touch. The channel avatar and new thumbnails use the bean HERO.
+
+## Owner decisions, Nov 8 (later)
+- **Toon 3D look APPROVED** (style sheet + "The Day Rome Got Sacked" test Short). kits/toon3d on branch iawaken/toon3d is the house style for all new I.Awaken videos.
+- **Short closers:** never "Full story on the channel." A Short that ends on an open question/cliffhanger ends with the spoken and on-screen line **"Subscribe to find out."** A Short that already answered its question ends with **"Subscribe for more."** (No "Follow for more ..." on YouTube.)
