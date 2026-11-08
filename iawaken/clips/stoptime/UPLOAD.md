@@ -2,7 +2,7 @@
 
 Cut from the long episode **"What If You Could Freeze Time for 10 Seconds?"** (`iawaken/out/stoptime`).
 All three: 1080x1920, 24 fps, H.264 + AAC 48 kHz, -14.2 LUFS integrated, true peak -1.6 to -1.8 dBFS.
-Each one ends on a 1.5 s card that says "Full story on the channel." QC sheet: `contact_stoptime.png`. Rebuild with `cuts.sh`.
+Each one ends on a 1.5 s card that says "Subscribe for more." (all three answer their hook, so none uses "Subscribe to find out."). QC sheet: `contact_stoptime.png`. Rebuild with `cuts.sh`.
 **Do not post automatically.** The owner uploads them by hand, one Short a day (playbook pace).
 For each clip, set YouTube's "Related video" field to the full episode.
 

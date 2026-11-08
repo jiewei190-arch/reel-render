@@ -1,13 +1,15 @@
 """Multi-segment vertical Short cutter (adapted from whatif/shorts/see-in-dark/make_short.py + the jump-double
 sentence-aware captions). 1080x1920: blurred fill, 4:3 centre crop, hook title on top, word-timed captions,
-segments joined with 30 ms audio fades, then a ~1.5 s freeze-frame end card "Full story on the channel.",
+segments joined with 30 ms audio fades, then a ~1.5 s freeze-frame end card (END_LINE),
 then two-pass loudnorm to -14 LUFS / TP -1 dBFS.
 
 Usage: make_clip.py words.json episode.mp4 "HOOK TITLE" out.mp4 A-B [C-D ...]   (segment times in episode seconds)
+End line: env END_LINE (default "Subscribe for more."; use "Subscribe to find out." when the clip ends on an open question).
 """
 import json, os, re, subprocess, sys
 
 words_p, src, title, out = sys.argv[1:5]
+END_LINE = os.environ.get("END_LINE", "Subscribe for more.")
 segs = [tuple(map(float, s.split('-'))) for s in sys.argv[5:]]
 END_LEN, FADE = 1.5, 0.03
 ALL = json.load(open(words_p))['words']
@@ -54,7 +56,7 @@ Style: End,Inter ExtraBold,84,&H0040C8FF,&H0040C8FF,&H00000000,&HC0000000,1,0,0,
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 1,{ts(0)},{ts(dur)},Title,,0,0,0,,{title}
-Dialogue: 1,{ts(body)},{ts(dur + 0.1)},End,,0,0,0,,{{\\fad(120,0)}}Full story on the channel.
+Dialogue: 1,{ts(body)},{ts(dur + 0.1)},End,,0,0,0,,{{\\fad(120,0)}}{END_LINE}
 """ + '\n'.join(lines) + '\n'
 ass_p = out + '.ass'
 open(ass_p, 'w').write(ass)
