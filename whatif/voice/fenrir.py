@@ -1,7 +1,15 @@
 """Narrate a What If script.md with the locked Fenrir voice (whatif/VOICE.md).
 Spoken text = numbered lines only; '## ' headers (sections, rule cards) add a 1.4 s break.
-Usage: python fenrir.py script.md out.wav [plain.txt]"""
+Usage: python fenrir.py script.md out.wav [plain.txt] [--gap 0.55] [--comma 0.25] [--section 1.4] [--lead 0.3]
+Shorts use shortened gaps, e.g. --gap 0.3 --comma 0.15 --lead 0.15 (defaults = the locked long-form pacing)."""
 import re, sys
+args = [a for a in sys.argv[1:]]
+def opt(name, default):
+    if name in args:
+        i = args.index(name); v = float(args[i + 1]); del args[i:i + 2]; return v
+    return default
+GAP, COMMA, SECTION, LEAD = opt("--gap", 0.55), opt("--comma", 0.25), opt("--section", 1.4), opt("--lead", 0.3)
+sys.argv = [sys.argv[0]] + args
 import numpy as np, soundfile as sf
 from kokoro_onnx import Kokoro
 
@@ -14,7 +22,7 @@ def sil(s): pieces.append(np.zeros(int(SR * s), np.float32))
 for raw in open(sys.argv[1], encoding="utf-8"):
     line = raw.strip()
     if line.startswith("## ") and pieces:
-        sil(1.4 - 0.55)  # topped up to 1.4 s on top of the last sentence gap
+        sil(SECTION - GAP)  # topped up to 1.4 s on top of the last sentence gap
         continue
     m = re.match(r"^\d+[a-z]?\.\s+(.*)", line)
     if not m:
@@ -26,9 +34,9 @@ for raw in open(sys.argv[1], encoding="utf-8"):
             continue
         audio, _ = k.create(sent, voice="am_fenrir", speed=0.95, lang="en-us")
         pieces.append(audio.astype(np.float32))
-        sil(0.55 if re.search(r'[.!?…]["”]?$', sent) else 0.25)
+        sil(GAP if re.search(r'[.!?…]["”]?$', sent) else COMMA)
 
-y = np.concatenate([np.zeros(int(SR * 0.3), np.float32)] + pieces)
+y = np.concatenate([np.zeros(int(SR * LEAD), np.float32)] + pieces)
 y = y / np.abs(y).max() * 0.89
 sf.write(sys.argv[2], y, SR)
 if len(sys.argv) > 3:
