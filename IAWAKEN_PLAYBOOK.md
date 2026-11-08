@@ -83,3 +83,18 @@ Match the LOOK, never copy that channel's characters, names or scenes. Our chara
   before the punchline, a reaction face after it.
 - Engine: the kit's 3D shots (`kind: '3d'`, engine/three-kit.js, Three.js with shadows). Build the reusable
   character rig + sets once (toon3d kit), then every episode reuses it.
+
+## CAST REDESIGN (owner, Nov 8): the I.Awaken cast becomes Toon 3D bean characters
+From now on every new I.Awaken video (Shorts and long-form, What If and History Hook) uses the cast in the Toon 3D
+style. Old videos keep their 2D look (their thumbnails must match their content). Keep each signature item so the
+cast stays recognisable:
+| Character | Signature (keep) | Personality |
+|---|---|---|
+| HERO ("you") | mustard hoodie, hood often up | curious, gets into trouble, big reactions |
+| DEV (best friend) | orange beanie, phone always filming | hype man, bad ideas |
+| MINA (little sister) | red scarf, stopwatch | smart, deadpan, times everything |
+| DR LIN (scientist) | green lanyard, lab coat | explains, slightly tired |
+| TOMAS | blue cap | the normal guy, skeptical |
+| BISCUIT (cat) | purple collar, green slit eyes | judgemental, unimpressed |
+History episodes may dress the cast in period costume (the hero as a Roman with a mustard tunic, etc.) or use new
+period characters; a cast cameo is a nice recurring touch. The channel avatar and new thumbnails use the bean HERO.
