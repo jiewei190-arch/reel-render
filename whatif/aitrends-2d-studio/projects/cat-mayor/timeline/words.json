@@ -1,0 +1,500 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "This",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "town's",
+   "start": 0.3,
+   "end": 0.72
+  },
+  {
+   "word": "mayor",
+   "start": 0.72,
+   "end": 0.86
+  },
+  {
+   "word": "was",
+   "start": 0.86,
+   "end": 1.06
+  },
+  {
+   "word": "a",
+   "start": 1.06,
+   "end": 1.2
+  },
+  {
+   "word": "cat.",
+   "start": 1.2,
+   "end": 1.4
+  },
+  {
+   "word": "For",
+   "start": 1.92,
+   "end": 2.04
+  },
+  {
+   "word": "almost",
+   "start": 2.04,
+   "end": 2.32
+  },
+  {
+   "word": "20",
+   "start": 2.32,
+   "end": 2.62
+  },
+  {
+   "word": "years.",
+   "start": 2.62,
+   "end": 2.98
+  },
+  {
+   "word": "And",
+   "start": 3.52,
+   "end": 3.66
+  },
+  {
+   "word": "according",
+   "start": 3.66,
+   "end": 3.96
+  },
+  {
+   "word": "to",
+   "start": 3.96,
+   "end": 4.2
+  },
+  {
+   "word": "legend,",
+   "start": 4.2,
+   "end": 4.52
+  },
+  {
+   "word": "he",
+   "start": 4.84,
+   "end": 4.92
+  },
+  {
+   "word": "beat",
+   "start": 4.92,
+   "end": 5.18
+  },
+  {
+   "word": "the",
+   "start": 5.18,
+   "end": 5.32
+  },
+  {
+   "word": "humans.",
+   "start": 5.32,
+   "end": 5.58
+  },
+  {
+   "word": "Talkeetna,",
+   "start": 6.26,
+   "end": 6.72
+  },
+  {
+   "word": "Alaska.",
+   "start": 6.84,
+   "end": 7.2
+  },
+  {
+   "word": "Population:",
+   "start": 7.86,
+   "end": 8.46
+  },
+  {
+   "word": "about",
+   "start": 8.46,
+   "end": 8.8
+  },
+  {
+   "word": "900.",
+   "start": 8.88,
+   "end": 10.14
+  },
+  {
+   "word": "No",
+   "start": 10.1,
+   "end": 10.34
+  },
+  {
+   "word": "human",
+   "start": 10.34,
+   "end": 10.64
+  },
+  {
+   "word": "mayor.",
+   "start": 10.64,
+   "end": 10.94
+  },
+  {
+   "word": "Wait,",
+   "start": 11.56,
+   "end": 11.78
+  },
+  {
+   "word": "how?",
+   "start": 11.78,
+   "end": 12.08
+  },
+  {
+   "word": "You",
+   "start": 12.66,
+   "end": 12.8
+  },
+  {
+   "word": "see,",
+   "start": 12.8,
+   "end": 13.06
+  },
+  {
+   "word": "it's",
+   "start": 13.06,
+   "end": 13.28
+  },
+  {
+   "word": "a",
+   "start": 13.28,
+   "end": 13.32
+  },
+  {
+   "word": "historic",
+   "start": 13.32,
+   "end": 13.74
+  },
+  {
+   "word": "district,",
+   "start": 13.74,
+   "end": 14.24
+  },
+  {
+   "word": "not",
+   "start": 14.5,
+   "end": 14.6
+  },
+  {
+   "word": "a",
+   "start": 14.6,
+   "end": 14.76
+  },
+  {
+   "word": "real",
+   "start": 14.76,
+   "end": 15.0
+  },
+  {
+   "word": "city.",
+   "start": 15.0,
+   "end": 15.34
+  },
+  {
+   "word": "So",
+   "start": 15.86,
+   "end": 16.1
+  },
+  {
+   "word": "in",
+   "start": 16.1,
+   "end": 16.32
+  },
+  {
+   "word": "1998,",
+   "start": 16.32,
+   "end": 17.02
+  },
+  {
+   "word": "the",
+   "start": 17.02,
+   "end": 17.62
+  },
+  {
+   "word": "story",
+   "start": 17.62,
+   "end": 17.94
+  },
+  {
+   "word": "goes,",
+   "start": 17.94,
+   "end": 18.26
+  },
+  {
+   "word": "voters",
+   "start": 18.78,
+   "end": 18.94
+  },
+  {
+   "word": "wrote",
+   "start": 18.94,
+   "end": 19.34
+  },
+  {
+   "word": "in",
+   "start": 19.34,
+   "end": 19.56
+  },
+  {
+   "word": "a",
+   "start": 19.56,
+   "end": 19.66
+  },
+  {
+   "word": "kitten",
+   "start": 19.66,
+   "end": 19.88
+  },
+  {
+   "word": "named",
+   "start": 19.88,
+   "end": 20.2
+  },
+  {
+   "word": "Stubbs.",
+   "start": 20.2,
+   "end": 20.84
+  },
+  {
+   "word": "He",
+   "start": 21.6,
+   "end": 21.84
+  },
+  {
+   "word": "won.",
+   "start": 21.84,
+   "end": 22.1
+  },
+  {
+   "word": "His",
+   "start": 22.62,
+   "end": 22.8
+  },
+  {
+   "word": "office?",
+   "start": 22.8,
+   "end": 23.16
+  },
+  {
+   "word": "The",
+   "start": 23.78,
+   "end": 23.9
+  },
+  {
+   "word": "general",
+   "start": 23.9,
+   "end": 24.16
+  },
+  {
+   "word": "store.",
+   "start": 24.16,
+   "end": 24.54
+  },
+  {
+   "word": "His",
+   "start": 25.14,
+   "end": 25.32
+  },
+  {
+   "word": "drink?",
+   "start": 25.32,
+   "end": 25.56
+  },
+  {
+   "word": "Catnip",
+   "start": 26.08,
+   "end": 26.58
+  },
+  {
+   "word": "water,",
+   "start": 26.58,
+   "end": 26.88
+  },
+  {
+   "word": "from",
+   "start": 26.88,
+   "end": 27.16
+  },
+  {
+   "word": "a",
+   "start": 27.16,
+   "end": 27.26
+  },
+  {
+   "word": "margarita",
+   "start": 27.26,
+   "end": 27.74
+  },
+  {
+   "word": "glass.",
+   "start": 27.74,
+   "end": 28.04
+  },
+  {
+   "word": "In",
+   "start": 28.04,
+   "end": 28.58
+  },
+  {
+   "word": "2014,",
+   "start": 28.58,
+   "end": 29.38
+  },
+  {
+   "word": "he",
+   "start": 29.38,
+   "end": 29.88
+  },
+  {
+   "word": "even",
+   "start": 29.88,
+   "end": 30.14
+  },
+  {
+   "word": "ran",
+   "start": 30.14,
+   "end": 30.4
+  },
+  {
+   "word": "for",
+   "start": 30.4,
+   "end": 30.6
+  },
+  {
+   "word": "the",
+   "start": 30.6,
+   "end": 30.74
+  },
+  {
+   "word": "Senate.",
+   "start": 30.74,
+   "end": 31.02
+  },
+  {
+   "word": "He",
+   "start": 32.02,
+   "end": 32.16
+  },
+  {
+   "word": "lost.",
+   "start": 32.16,
+   "end": 32.52
+  },
+  {
+   "word": "But",
+   "start": 33.0,
+   "end": 33.16
+  },
+  {
+   "word": "he",
+   "start": 33.16,
+   "end": 33.24
+  },
+  {
+   "word": "stayed",
+   "start": 33.24,
+   "end": 33.52
+  },
+  {
+   "word": "honorary",
+   "start": 33.52,
+   "end": 34.02
+  },
+  {
+   "word": "mayor",
+   "start": 34.02,
+   "end": 34.44
+  },
+  {
+   "word": "until",
+   "start": 34.44,
+   "end": 34.98
+  },
+  {
+   "word": "2017.",
+   "start": 34.98,
+   "end": 35.84
+  },
+  {
+   "word": "As",
+   "start": 36.58,
+   "end": 36.76
+  },
+  {
+   "word": "one",
+   "start": 36.76,
+   "end": 37.04
+  },
+  {
+   "word": "local",
+   "start": 37.04,
+   "end": 37.38
+  },
+  {
+   "word": "put",
+   "start": 37.38,
+   "end": 37.68
+  },
+  {
+   "word": "it:",
+   "start": 37.68,
+   "end": 37.88
+  },
+  {
+   "word": "he",
+   "start": 38.12,
+   "end": 38.2
+  },
+  {
+   "word": "never",
+   "start": 38.2,
+   "end": 38.46
+  },
+  {
+   "word": "voted",
+   "start": 38.46,
+   "end": 38.82
+  },
+  {
+   "word": "for",
+   "start": 38.82,
+   "end": 39.04
+  },
+  {
+   "word": "anything",
+   "start": 39.04,
+   "end": 39.48
+  },
+  {
+   "word": "I",
+   "start": 39.48,
+   "end": 39.8
+  },
+  {
+   "word": "wouldn't",
+   "start": 39.8,
+   "end": 40.12
+  },
+  {
+   "word": "have.",
+   "start": 40.12,
+   "end": 40.26
+  },
+  {
+   "word": "Subscribe",
+   "start": 40.74,
+   "end": 41.04
+  },
+  {
+   "word": "for",
+   "start": 41.04,
+   "end": 41.46
+  },
+  {
+   "word": "more.",
+   "start": 41.46,
+   "end": 41.66
+  }
+ ]
+}

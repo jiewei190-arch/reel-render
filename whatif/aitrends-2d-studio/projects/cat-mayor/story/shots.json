@@ -1,0 +1,412 @@
+{
+ "duration": 42.27,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.85,
+   "line": "This town's mayor was a cat.",
+   "scene": "porch: Stubbs on a crate, locals cheer",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "word": "cat",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.85,
+   "end": 3.4,
+   "line": "For almost 20 years.",
+   "scene": "close: smug blink",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "20",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.4,
+   "end": 6.05,
+   "line": "And according to legend, he beat the humans.",
+   "scene": "podiums: humans ??? then sweat",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "beat",
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "humans",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.05,
+   "end": 7.75,
+   "line": "Talkeetna, Alaska.",
+   "scene": "wide street + mountain + god rays",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.75,
+   "end": 11.35,
+   "line": "Population: about 900. No human mayor.",
+   "scene": "insert bigtext POP ~900",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    },
+    {
+     "word": "no",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.35,
+   "end": 12.5,
+   "line": "Wait, how?",
+   "scene": "Tomas ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.5,
+   "end": 15.7,
+   "line": "You see, it's a historic district, not a real city.",
+   "scene": "insert document",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "real",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.7,
+   "end": 18.6,
+   "line": "So in 1998, the story goes,",
+   "scene": "ballot drop",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "at": 2.4,
+     "name": "toon3d:drop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.6,
+   "end": 21.45,
+   "line": "voters wrote in a kitten named Stubbs.",
+   "scene": "kitten pops out of the box: hearts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "stubbs",
+     "offset": -0.3,
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "stubbs",
+     "offset": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 21.45,
+   "end": 22.5,
+   "line": "He won.",
+   "scene": "hat drop + confetti + !",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "won",
+     "name": "toon3d:success",
+     "gain": -8
+    },
+    {
+     "word": "won",
+     "offset": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.5,
+   "end": 25.0,
+   "line": "His office? The general store.",
+   "scene": "store interior: MAYOR'S OFFICE",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:door",
+     "gain": -12
+    },
+    {
+     "word": "store",
+     "name": "toon3d:ding",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.0,
+   "end": 27.95,
+   "line": "His drink? Catnip water, from a margarita glass.",
+   "scene": "close: lapping, hearts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "word": "margarita",
+     "name": "toon3d:glass",
+     "gain": -14
+    },
+    {
+     "word": "margarita",
+     "offset": 0.1,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.95,
+   "end": 31.75,
+   "line": "In 2014, he even ran for the Senate.",
+   "scene": "STUBBS FOR SENATE stage",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:horn",
+     "gain": -16
+    },
+    {
+     "word": "senate",
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.75,
+   "end": 32.85,
+   "line": "He lost.",
+   "scene": "close deadpan + sweat",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "word": "lost",
+     "name": "toon3d:fail",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 32.85,
+   "end": 36.4,
+   "line": "But he stayed honorary mayor until 2017.",
+   "scene": "insert timeline",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "honorary",
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "2017",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 36.4,
+   "end": 40.6,
+   "line": "As one local put it: he never voted for anything I wouldn't have.",
+   "scene": "granny nods, hearts",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "have",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 40.6,
+   "end": 42.27,
+   "line": "Subscribe for more.",
+   "scene": "porch again (= frame 1, loop)",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
