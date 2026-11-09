@@ -1,18 +1,31 @@
-# Sticks After Dark #2: "Two Texts" (9:16, ~30 s)
+# Sticks After Dark #2: "Two Texts" (9:16, 60-70 s extended cut)
 
 Original story. Narrator: Kokoro am_fenrir, slow (0.88), low, close, deadpan. Captions ON (1-3 words, punch word alone).
 Look: Sticks After Dark kit. Dark house at night, no bulbs: the ONLY light is the phone, ONE accent: red phone glow (#ff3b3b).
 '##' lines are long silent beats; '## 2.2' is the held silent frame before the twist.
 
 ## NARRATION
-Mom texted me. "Locked out. Open the door."
-I heard the knock, so I went downstairs.
+My parents went out to dinner. I had the house to myself.
+At eleven fifty, my phone lit up.
+Mom. "Locked out. Open the door."
+That was weird. She always has her keys.
+Then I heard it. Three slow knocks on the front door.
+I went downstairs in the dark, phone in my hand.
+Through the frosted glass, someone was standing there.
+Tall. Very still.
+"Mom?" I said.
+The knocking started again. Slow. Patient.
 My hand was on the lock when my phone buzzed again.
 ##
 "Running late. Home in an hour. Don't open the door for anyone."
 ##
-The knocking stopped.
-## 2.2
+I didn't move. I didn't breathe.
+The shape in the glass didn't move either.
+##
+Then the knocking stopped.
+The shape was gone.
+I ran back upstairs to my room.
+## 2.4
 Then it started at my window.
 ##
 Follow for more.

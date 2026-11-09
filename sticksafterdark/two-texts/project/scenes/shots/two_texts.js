@@ -8,8 +8,9 @@ const RED = K.K.accent;
 
 // ------------------------------------------------------------------ helpers
 // door knocks (global times) -> shake offset that decays fast
-const DOOR_KNOCKS = [4.85, 5.11, 5.35, 8.35, 8.58, 15.05, 15.30, 16.65, 16.90, 17.72, 17.98];
-const GLASS_KNOCKS = [21.88, 22.16, 24.05, 24.35];
+// extended cut: three slow knocks, the knocking again (slow, patient), one at the lock, sparse ones in the standoff, last two before it stops
+const DOOR_KNOCKS = [16.85, 17.75, 18.65, 31.55, 32.25, 32.95, 34.20, 35.55, 36.55, 45.60, 47.30, 51.75, 52.30];
+const GLASS_KNOCKS = [61.00, 61.30, 63.00, 63.30];
 function shake(times, amp = 7) { const T = K.K.now; let s = 0; for (const k of times) { const d = T - k; if (d >= 0 && d < 0.16) s = Math.max(s, 1 - d / 0.16); } const r = rng(K.K.frame * 5 + 1); return [(r() - 0.5) * 2 * amp * s, (r() - 0.5) * amp * s, s]; }
 // phone light: steady red with a slight breathing + buzz bursts
 function phoneLight(buzzAt = []) { const T = K.K.now; let b = 0; for (const a of buzzAt) if (T >= a && T < a + 1.3) b = Math.max(b, 0.5 + 0.5 * Math.sin((T - a) * 60)); return 0.82 + 0.08 * noise(T * 1.7, 3) + 0.18 * b; }
@@ -83,7 +84,7 @@ function phoneScreen(g, t, msgs, o = {}) {
   // header
   K.circleLine(g, sx0 + 70, sy0 + 70, 34, { w: 3, seed: 703 });
   K.text(g, 'Mom', sx0 + 124, sy0 + 62, { size: 46, font: 'Nunito', weight: 800, color: INK.chalk, align: 'left' });
-  K.text(g, '11:52 PM', sx0 + 124, sy0 + 104, { size: 26, font: 'Nunito', weight: 700, color: INK.dim, align: 'left' });
+  K.text(g, 'mobile', sx0 + 124, sy0 + 104, { size: 26, font: 'Nunito', weight: 700, color: INK.dim, align: 'left' });
   line(g, sx0 + 10, sy0 + 145, sx0 + sw - 10, sy0 + 145, { w: 2, seed: 704, a: 0.5 });
   // bubbles
   let yy = sy0 + 190; const T = K.K.now;
@@ -93,7 +94,9 @@ function phoneScreen(g, t, msgs, o = {}) {
     g.save(); g.globalAlpha *= pop; g.translate(sx0 + 30, yy); g.scale(0.92 + 0.08 * pop, 0.92 + 0.08 * pop);
     g.fillStyle = mix('#050507', RED, i === msgs.length - 1 ? 0.62 : 0.34); g.beginPath(); g.roundRect(0, 0, bw, bh, 26); g.fill();
     m.lines.forEach((s, j) => K.text(g, s, 28, 18 + lh * 0.5 + j * lh, { size: 40, font: 'Nunito', weight: 800, color: '#ffffff', align: 'left' }));
-    g.restore(); yy += bh + 26;
+    g.restore();
+    if (m.time) K.text(g, m.time, sx0 + 40, yy + bh + 22, { size: 24, font: 'Nunito', weight: 700, color: INK.dim, align: 'left', alpha: pop });
+    yy += bh + (m.time ? 60 : 26);
   });
   if (o.typing != null && T >= o.typing && T < (msgs[msgs.length - 1].at)) {
     g.fillStyle = mix('#050507', RED, 0.34); g.beginPath(); g.roundRect(sx0 + 30, yy, 130, 64, 26); g.fill();
@@ -131,63 +134,214 @@ function flatHand(g, x, y, s, o = {}) {
   g.restore();
 }
 
-// ------------------------------------------------------------------ shots
-// s01: pitch-dark stairwell, phone already buzzing in my hand, red glow from below on my face
-K.stickShot('s01_stairwell', (g, t) => {
-  const z = 1.0 + 0.04 * t; g.save(); K.camera(g, z, 520, 760);
-  K.stairs(g, t);
-  const [ox, oy] = buzzOffset([0.0], 3);
-  const R = stickFigure(g, 'phone', { eyes: 'dot', look: [0.2, 1], brows: 'worried', blink: (t > 1.3 && t < 1.42) ? 1 : 0 }, { x: 520, y: 1520, s: 1.75 });
-  const px = R.hR[0] + 6 + ox, py = R.hR[1] - 18 + oy, k = phoneLight([0.0]);
-  heldPhone(g, px, py, 1.4, k);
+// ------------------------------------------------------------------ shared shot pieces
+const TEXT1 = { lines: ['Locked out.', 'Open the door.'], time: '11:50 PM' };
+const TEXT2 = { lines: ['Running late.', 'Home in an hour.', "Don't open the door", 'for anyone.'], time: '11:53 PM' };
+// my face, close, lit from below by the phone
+function glowFace(g, t, f, o = {}) {
+  const { x = 500, y = 560, r = 220, z0 = 1.0, zs = 0.05, buzz = [], phoneOn = true, hand = null } = o;
+  const z = z0 + zs * t; g.save(); K.camera(g, z, x, y + 140);
+  const [ox, oy] = buzzOffset(buzz, 7);
+  stickHead(g, x, y, r, f, { seed: 31 });
+  if (hand) hand(g);
+  const k = phoneLight(buzz);
+  if (phoneOn) { chalk(g, [[x + 260, 1700], [x + 100 + ox, 1150 + oy]], { w: 12, seed: 690 });
+    g.save(); g.translate(x + 60 + ox, 1060 + oy); g.rotate(-0.25); g.fillStyle = mix(INK.bg, RED, 0.8 * k); g.fillRect(-60, -105, 120, 210); rect(g, -64, -109, 128, 218, { w: 4, seed: 691, double: false }); g.restore(); }
   g.restore();
-  const P = [(px - 520) * z + 520, (py - 760) * z + 760];
-  darkness(g, 0.95, [{ x: P[0], y: P[1] - 120, r: 560 * k, k: 0.95 }]);
-  lightPool(g, P[0], P[1] - 60, 520, RED, 0.75 * k); lightPool(g, P[0], P[1], 90, '#ffffff', 0.25 * k);
+  darkness(g, 0.9, [{ x: x + 40, y: 900, r: 820 * k, k: 0.95 }]);
+  lightPool(g, x + 40, 1020, 760, RED, 0.85 * k); lightPool(g, x + 40, 1040, 160, '#ffffff', 0.2 * k);
+}
+// the front door seen from the hall (wide), optional me standing in front
+function doorWide(g, t, o = {}) {
+  const { shadow = 0, z0 = 1.0, zs = 0.025, me = null } = o;
+  g.save(); K.camera(g, z0 + zs * t, 540, 900);
+  K.roomBox(g, { back: [200, 300, 680, 1250], seed: 612, wall: '#090b11' });
+  frontDoor(g, 330, 420, 420, 1130, { shadow, sx: 545, armUp: o.armUp || 0 });
+  let R = null; if (me) R = me(g);
+  g.restore(); return R;
+}
+// bedroom window close (from inside), with the hand on the glass when handA > 0
+const WIN = [210, 300, 640, 760];
+function bedroomWindow(g, t, handA, handS = 1, curl = 0) {
+  const [wx, wy, ww, wh] = WIN; const [dx, dy] = shake(GLASS_KNOCKS, 4);
+  g.fillStyle = '#08090e'; g.fillRect(0, 0, E.W, E.H);
+  line(g, 90, -40, 90, 1980, { w: 3, seed: 860, a: 0.5 }); line(g, 990, -40, 990, 1980, { w: 3, seed: 861, a: 0.5 });
+  g.save(); g.translate(dx, dy);
+  g.save(); g.beginPath(); g.rect(wx, wy, ww, wh); g.clip();
+  g.fillStyle = '#0b0f1c'; g.fillRect(wx, wy, ww, wh);
+  chalk(g, [[wx + ww + 40, wy + wh * 0.2], [wx + ww * 0.7, wy + wh * 0.35], [wx + ww * 0.45, wy + wh * 0.3]], { w: 4, seed: 862, a: 0.35 });
+  chalk(g, [[wx + ww * 0.7, wy + wh * 0.35], [wx + ww * 0.62, wy + wh * 0.12]], { w: 3, seed: 863, a: 0.3 });
+  if (handA > 0) flatHand(g, wx + ww * 0.52, wy + wh * 0.6, handS, { a: handA, curl });
+  lightPool(g, wx + ww * 0.18, wy + wh * 0.88, 260, RED, 0.35);
+  g.globalCompositeOperation = 'lighter'; g.strokeStyle = alpha('#ffffff', 0.05); g.lineWidth = 16; g.beginPath(); g.moveTo(wx + ww * 0.1, wy + wh); g.lineTo(wx + ww * 0.5, wy); g.stroke();
+  g.restore();
+  rect(g, wx - 14, wy - 14, ww + 28, wh + 28, { w: 5, seed: 864 }); rect(g, wx, wy, ww, wh, { w: 3, seed: 865, a: 0.7 });
+  line(g, wx + ww / 2, wy, wx + ww / 2, wy + wh, { w: 4, seed: 866 });
+  g.restore();
+  chalk(g, [[wx - 60, wy + wh + 40], [wx + ww + 60, wy + wh + 40]], { w: 6, seed: 867 });
+  chalk(g, [[wx - 60, wy + wh + 70], [wx + ww + 60, wy + wh + 70]], { w: 3, seed: 868, a: 0.7 });
+}
+// side-view staircase (descending left -> right). Returns a function giving the floor y at x.
+function sideStairs(g) {
+  g.fillStyle = INK.bg; g.fillRect(0, 0, E.W, E.H);
+  const N = 9, x0 = 40, y0 = 760, run = 120, rise = 92;
+  for (let i = 0; i < N; i++) chalk(g, [[x0 + i * run, y0 + i * rise], [x0 + (i + 1) * run, y0 + i * rise], [x0 + (i + 1) * run, y0 + (i + 1) * rise]], { w: 4, seed: 650 + i });
+  chalk(g, [[x0, y0 - 300], [x0 + N * run, y0 + N * rise - 300]], { w: 4, seed: 670, a: 0.8 });
+  for (let i = 0; i < N; i += 2) line(g, x0 + i * run + 60, y0 + i * rise - 300 + 46, x0 + i * run + 60, y0 + i * rise, { w: 2.5, seed: 671 + i, a: 0.6 });
+  return (x) => y0 + ((x - x0) / run) * rise - 6;
+}
+
+// ------------------------------------------------------------------ shots (extended cut, 66.85 s)
+// s01 0.0: the house at night, my parents' car pulling away (tail lights), one upstairs window lit red by my phone
+K.stickShot('s01_house', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.03 * t, 540, 1100);
+  const L = K.outside(g, t, { litWindow: true, moonColor: INK.dim });
+  const gy = L.groundY, cx = lerp(480, 1180, ease.in(prog(t, 0, 2.5)));
+  chalk(g, [[cx - 150, gy - 10], [cx - 150, gy - 70], [cx - 90, gy - 120], [cx + 70, gy - 120], [cx + 130, gy - 70], [cx + 150, gy - 70], [cx + 150, gy - 10]], { w: 4, seed: 30 });
+  K.circleLine(g, cx - 90, gy - 6, 26, { w: 4, seed: 31 }); K.circleLine(g, cx + 90, gy - 6, 26, { w: 4, seed: 32 });
+  lightPool(g, cx - 150, gy - 60, 120, RED, 0.8); g.fillStyle = RED; g.fillRect(cx - 158, gy - 72, 12, 18);
+  g.restore();
+  darkness(g, 0.45, [{ x: 360, y: 1000, r: 500, k: 0.6 }]);
 }, { vignette: 0.85 });
-
-// s02: the first text
-K.stickShot('s02_text_one', (g, t) => {
-  phoneScreen(g, t, [{ at: 2.15, lines: ['Locked out.', 'Open the door.'] }], { zoom: 1.0 + 0.03 * t });
+// s02 2.5: me alone on the couch in the dark, phone in my lap
+K.stickShot('s02_alone', (g, t) => {
+  g.save(); K.camera(g, 1.15 + 0.03 * t, 540, 1100, 0, -330);
+  const L = K.livingRoom(g, t, { tv: 0, moon: false });
+  const R = stickFigure(g, { ...K.POSES.sit, tilt: 0.3, aR: K.POSES.phone.aR }, { eyes: 'dot', look: [0, 1], blink: (t > 1.4 && t < 1.52) ? 1 : 0 }, { x: 540, y: L.couchY + 10, s: 1, anchor: 'hip' });
+  heldPhone(g, R.hR[0] + 4, R.hR[1] - 10, 0.9, 0.7);
+  g.restore();
+  darkness(g, 0.9, [{ x: 560, y: 760, r: 560, k: 0.85 }]);
+  lightPool(g, 570, 820, 420, RED, 0.5);
+}, { vignette: 0.85 });
+// s03 4.8: the lock screen lights up: 11:50, then the notification from Mom
+K.stickShot('s03_lockscreen', (g, t) => {
+  const T = K.K.now, on = ease.out(prog(T, 4.9, 5.2)), cx = 540, cy = 640, w = 600, h = 1020;
+  g.save(); K.camera(g, 1.0 + 0.03 * t, cx, cy);
+  lightPool(g, cx, cy, 900, RED, 0.55 * on);
+  g.fillStyle = '#050507'; g.fillRect(cx - w / 2, cy - h / 2, w, h);
+  g.fillStyle = mix('#050507', RED, 0.16 * on); g.fillRect(cx - w / 2 + 26, cy - h / 2 + 70, w - 52, h - 150);
+  rect(g, cx - w / 2, cy - h / 2, w, h, { w: 5, seed: 700 });
+  if (on > 0) {
+    K.text(g, '11:50', cx, cy - 300, { size: 150, font: 'Nunito', weight: 800, color: INK.chalk, alpha: on });
+    K.text(g, 'Saturday', cx, cy - 195, { size: 34, font: 'Nunito', weight: 700, color: INK.dim, alpha: on });
+    const n = ease.out(prog(T, 6.55, 6.8));
+    if (n > 0) { g.save(); g.globalAlpha *= n; g.translate(0, (1 - n) * -40); g.fillStyle = mix('#050507', RED, 0.55); g.beginPath(); g.roundRect(cx - 250, cy - 60, 500, 150, 26); g.fill();
+      K.text(g, 'Mom', cx - 220, cy - 18, { size: 34, font: 'Nunito', weight: 800, color: '#ffffff', align: 'left' });
+      K.text(g, 'Locked out. Open the door.', cx - 220, cy + 36, { size: 32, font: 'Nunito', weight: 700, color: '#ffffff', align: 'left' }); g.restore(); }
+  }
+  g.restore();
+  darkness(g, 0.55, [{ x: cx, y: cy, r: 1000, k: on }]);
 });
-
-// s03: from the top of the stairs: the front door below, a tall shadow in the frosted glass (it knocks)
-K.stickShot('s03_door_glass', (g, t) => {
+// s04 6.9: the chat: "Mom." ... the bubble arrives
+K.stickShot('s04_text_one', (g, t) => { phoneScreen(g, t, [{ at: 8.85, ...TEXT1 }], { zoom: 1.0 + 0.03 * t, typing: 7.6 }); });
+// s05 9.8: my face reading it
+K.stickShot('s05_reading', (g, t) => { glowFace(g, t, { eyes: 'dot', look: [Math.sin(t * 3) * 0.6, 1], brows: 'flat', mouth: 'flat' }); });
+// s06 12.0: "That was weird."
+K.stickShot('s06_weird', (g, t) => { glowFace(g, t, { eyes: 'dot', look: [-0.8, 0.2], brows: 'raised', mouth: 'frown' }, { x: 470, z0: 1.08 }); });
+// s07 13.5: the key rack by the door: DAD and MOM hooks empty (she has her keys), mine hanging
+K.stickShot('s07_keys', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.05 * t, 540, 760);
+  g.fillStyle = '#090b11'; g.fillRect(0, 0, E.W, E.H);
+  chalk(g, [[180, 560], [900, 560]], { w: 6, seed: 800 }); chalk(g, [[180, 620], [900, 620]], { w: 3, seed: 801, a: 0.7 });
+  const H = [[300, 'DAD'], [540, 'MOM'], [780, 'ME']];
+  H.forEach(([x, lab], i) => { chalk(g, [[x, 600], [x, 660], [x + 18, 676]], { w: 5, seed: 810 + i }); K.text(g, lab, x, 740, { size: 42, font: 'Nunito', weight: 800, color: INK.dim }); });
+  const sw = Math.sin(t * 2.2) * 0.12; g.save(); g.translate(780, 672); g.rotate(sw); K.circleLine(g, 0, 26, 24, { w: 4, seed: 820 });
+  chalk(g, [[0, 50], [-10, 160]], { w: 7, seed: 821 }); chalk(g, [[-10, 130], [-36, 128]], { w: 5, seed: 822 }); chalk(g, [[10, 46], [44, 140]], { w: 6, seed: 823 }); g.restore();
+  g.restore();
+  // my phone light sweeps across the empty MOM hook
+  const lx = lerp(260, 700, ease.inOut(prog(t, 0, 2.0)));
+  darkness(g, 0.9, [{ x: lx, y: 700, r: 460, k: 0.95 }]);
+  lightPool(g, lx, 760, 420, RED, 0.5);
+}, { vignette: 0.85 });
+// s08 15.6: "Then I heard it." (first knock lands at 16.85)
+K.stickShot('s08_heard', (g, t) => {
+  const T = K.K.now, hit = T >= 16.85;
+  glowFace(g, t, { eyes: hit ? 'wide' : 'dot', look: hit ? [-1, -0.4] : [0, 1], brows: 'worried', mouth: hit ? 'o' : 'flat' }, { x: 520, z0: 1.12, zs: 0.02 });
+}, { jitter: [16.85], jitterAmp: 8 });
+// s09 17.2: three slow knocks: the front door below, seen from the top of the stairs
+K.stickShot('s09_three_knocks', (g, t) => {
   g.save(); K.camera(g, 1.0 + 0.025 * t, 540, 900);
   K.roomBox(g, { back: [250, 380, 580, 1080], seed: 610, wall: '#090b11' });
-  const D = frontDoor(g, 380, 560, 320, 900, { shadow: 0.95, sx: 560 });
-  // banister falling away toward the door (we're at the top)
+  frontDoor(g, 380, 560, 320, 900, { shadow: 0 });
   chalk(g, [[-40, 1050], [330, 1500], [380, 1980]], { w: 6, seed: 620 }); for (let i = 0; i < 6; i++) line(g, 30 + i * 60, 1130 + i * 70, 30 + i * 60, 1380 + i * 80, { w: 3.5, seed: 621 + i, a: 0.8 });
   g.restore();
-  // my back, bottom-left foreground, phone glow
-  const R = stickFigure(g, 'phone', {}, { x: 170, y: 2230, s: 1.9, back: true });
-  const k = phoneLight();
+  const R = stickFigure(g, 'phone', {}, { x: 170, y: 2230, s: 1.9, back: true }), k = phoneLight();
   darkness(g, 0.82, [{ x: 540, y: 880, r: 560, k: 0.75 }, { x: R.hR[0], y: R.hR[1], r: 420, k: 0.9 }]);
   lightPool(g, R.hR[0] + 40, R.hR[1] - 40, 440, RED, 0.7 * k);
 }, { vignette: 0.8 });
-
-// s04: side view, walking down the stairs with the phone (glow swings)
-K.stickShot('s04_downstairs', (g, t) => {
-  const u = ease.inOut(prog(t, 0, 1.75));
-  g.fillStyle = INK.bg; g.fillRect(0, 0, E.W, E.H);
-  // steps descending left -> right
-  const N = 9, x0 = 40, y0 = 760, run = 120, rise = 92;
-  for (let i = 0; i < N; i++) chalk(g, [[x0 + i * run, y0 + i * rise], [x0 + (i + 1) * run, y0 + i * rise], [x0 + (i + 1) * run, y0 + (i + 1) * rise]], { w: 4, seed: 650 + i });
-  chalk(g, [[x0, y0 - 300], [x0 + N * run, y0 + N * rise - 300]], { w: 4, seed: 670, a: 0.8 });   // handrail
-  for (let i = 0; i < N; i += 2) line(g, x0 + i * run + 60, y0 + i * rise - 300 + 46, x0 + i * run + 60, y0 + i * rise, { w: 2.5, seed: 671 + i, a: 0.6 });
-  const fx = lerp(220, 640, u), fy = y0 + ((fx - x0) / run) * rise - 6;
-  const R = stickFigure(g, K.walk(t * 1.15), { eyes: 'dot', look: [1, 0.6], brows: 'worried' }, { x: fx, y: fy, s: 1.45 });
-  const k = phoneLight();
+// s10 19.8: down the stairs in the dark, phone in my hand
+K.stickShot('s10_downstairs', (g, t) => {
+  const fyAt = sideStairs(g), u = ease.inOut(prog(t, 0, 3.0)), fx = lerp(200, 700, u);
+  const R = stickFigure(g, K.walk(t * 1.0), { eyes: 'dot', look: [1, 0.6], brows: 'worried' }, { x: fx, y: fyAt(fx), s: 1.45 }), k = phoneLight();
   heldPhone(g, R.hR[0] + 10, R.hR[1] - 8, 1.1, k, 0.3);
   darkness(g, 0.94, [{ x: R.hR[0], y: R.hR[1] - 60, r: 520, k: 0.95 }]);
   lightPool(g, R.hR[0], R.hR[1] - 40, 460, RED, 0.7 * k);
 }, { vignette: 0.85 });
-
-// s05: close: my hand on the deadbolt, the shadow right behind the glass
-K.stickShot('s05_lock', (g, t) => {
+// s11 22.8: "Through the frosted glass," the shape fades in as I reach the bottom
+K.stickShot('s11_glass', (g, t) => {
+  const sh = ease.inOut(prog(K.K.now, 23.6, 24.8));
+  doorWide(g, t, { shadow: sh, z0: 1.0, zs: 0.04, me: (g) => stickFigure(g, 'phone', {}, { x: 380, y: 2290, s: 1.9, back: true }) });
+  const k = phoneLight();
+  darkness(g, 0.86, [{ x: 545, y: 760, r: 520, k: 0.75 }, { x: 380, y: 1650, r: 520, k: 0.9 }]);
+  lightPool(g, 360, 1700, 520, RED, 0.7 * k);
+}, { vignette: 0.8 });
+// s12 25.0: "someone was standing there." closer on the glass
+K.stickShot('s12_standing', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.03 * t, 540, 760);
+  frontDoor(g, 200, 160, 680, 1800, { shadow: 1, sx: 540, sh: 0.85 });
+  g.restore();
+  darkness(g, 0.78, [{ x: 540, y: 600, r: 640, k: 0.75 }, { x: 160, y: 1500, r: 500, k: 0.9 }]);
+  lightPool(g, 120, 1550, 560, RED, 0.55 * phoneLight());
+}, { vignette: 0.8 });
+// s13 26.8: "Tall." me beside the door: its head sits far above mine
+K.stickShot('s13_tall', (g, t) => {
+  g.save(); K.camera(g, 1.0 - 0.02 * t, 540, 800);
+  K.roomBox(g, { back: [120, 160, 840, 1420], seed: 616, wall: '#090b11' });
+  frontDoor(g, 420, 260, 420, 1300, { shadow: 1, sx: 630 });
+  const R = stickFigure(g, 'freeze', { eyes: 'wide', look: [1, -1], brows: 'worried', mouth: 'flat' }, { x: 200, y: 1560, s: 1.15 });
+  g.restore();
+  const k = phoneLight();
+  darkness(g, 0.82, [{ x: 630, y: 560, r: 420, k: 0.7 }, { x: 200, y: 1250, r: 460, k: 0.9 }]);
+  lightPool(g, 230, 1330, 420, RED, 0.6 * k);
+}, { vignette: 0.8 });
+// s14 28.0: "Very still." extreme close on the head in the glass (no sway, no breath)
+K.stickShot('s14_still', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.04 * t, 540, 600);
+  frontDoor(g, -500, -40, 2080, 4400, { shadow: 1, sx: 520, sh: 0.9, shakeAmp: 0 });
+  g.restore();
+  darkness(g, 0.6, [{ x: 540, y: 600, r: 800, k: 0.7 }]);
+  lightPool(g, 80, 1700, 600, RED, 0.45 * phoneLight());
+}, { vignette: 0.85 });
+// s15 29.5: '"Mom?" I said.'  my face at the door edge, the shape blurred beyond
+K.stickShot('s15_mom', (g, t) => {
+  g.fillStyle = INK.bg; g.fillRect(0, 0, E.W, E.H);
+  frostedGlass(g, 560, 120, 560, 1000, { shadow: 1, sx: 820, sh: 1.2 });
+  const T = K.K.now, speak = T > 29.6 && T < 30.1;
+  stickHead(g, 330, 720, 200, { eyes: 'dot', look: [1, -0.6], brows: 'worried', mouth: speak ? 'o' : 'flat' }, { seed: 33 });
+  const k = phoneLight();
+  darkness(g, 0.85, [{ x: 330, y: 900, r: 640, k: 0.95 }, { x: 840, y: 500, r: 520, k: 0.6 }]);
+  lightPool(g, 330, 1080, 620, RED, 0.75 * k);
+}, { vignette: 0.8 });
+// s16 31.3: the knocking starts again; the long arm rises behind the glass
+K.stickShot('s16_again', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.02 * t, 540, 760);
+  frontDoor(g, 200, 160, 680, 1800, { shadow: 1, sx: 540, sh: 0.85, shakeAmp: 9 });
+  g.restore();
+  darkness(g, 0.78, [{ x: 540, y: 600, r: 640, k: 0.75 }, { x: 160, y: 1500, r: 500, k: 0.9 }]);
+  lightPool(g, 120, 1550, 560, RED, 0.55 * phoneLight());
+}, { vignette: 0.8 });
+// s17 33.3: "Slow. Patient." very close on the glass and the knocking arm
+K.stickShot('s17_patient', (g, t) => {
+  g.save(); K.camera(g, 1.05 + 0.03 * t, 540, 700);
+  frontDoor(g, -300, -20, 1680, 3600, { shadow: 1, sx: 440, sh: 0.9, shakeAmp: 12 });
+  g.restore();
+  darkness(g, 0.65, [{ x: 540, y: 700, r: 800, k: 0.7 }]);
+  lightPool(g, 80, 1700, 600, RED, 0.45 * phoneLight());
+}, { vignette: 0.85 });
+// s18 35.9: my hand on the lock, the shape right behind the glass
+K.stickShot('s18_lock', (g, t) => {
   g.save(); K.camera(g, 1.0 + 0.03 * t, 540, 900);
   const D = frontDoor(g, 120, -170, 840, 1900, { shadow: 1, sx: 520, sh: 0.8, shakeAmp: 10 });
-  // my arm comes in from bottom-left, fingers on the thumb-turn
   const reach = ease.out(prog(t, 0, 0.9)), [lx, ly] = D.lock;
   const hx = lerp(lx - 260, lx - 30, reach), hy = lerp(ly + 300, ly + 6, reach);
   chalk(g, [[-60, 1780], [hx - 260, hy + 170], [hx, hy]], { w: 12, seed: 680 });
@@ -197,108 +351,96 @@ K.stickShot('s05_lock', (g, t) => {
   darkness(g, 0.8, [{ x: 520, y: 600, r: 700, k: 0.7 }, { x: lx - 40, y: ly + 120, r: 520, k: 0.95 }]);
   lightPool(g, lx - 140, ly + 330, 600, RED, 0.75 * k);
 }, { vignette: 0.8 });
-
-// s06: the phone buzzes again: face close-up lit from below
-K.stickShot('s06_buzz', (g, t) => {
-  const T = K.K.now, z = 1.0 + 0.05 * t; g.save(); K.camera(g, z, 500, 700);
-  const wide = T > 10.75;
-  const [ox, oy] = buzzOffset([10.2], 7);
-  stickHead(g, 500, 560, 220, { eyes: wide ? 'wide' : 'dot', look: [0.1, wide ? 1 : 0.4], brows: 'worried', mouth: wide ? 'o' : 'flat' }, { seed: 31 });
-  // phone + hand coming up from below
-  chalk(g, [[760, 1700], [600 + ox, 1150 + oy]], { w: 12, seed: 690 });
-  const k = phoneLight([10.2]);
-  g.save(); g.translate(560 + ox, 1060 + oy); g.rotate(-0.25); g.fillStyle = mix(INK.bg, RED, 0.8 * k); g.fillRect(-60, -105, 120, 210); rect(g, -64, -109, 128, 218, { w: 4, seed: 691, double: false }); g.restore();
-  g.restore();
-  darkness(g, 0.9, [{ x: 540, y: 900, r: 820 * k, k: 0.95 }]);
-  lightPool(g, 540, 1020, 760, RED, 0.85 * k); lightPool(g, 540, 1040, 160, '#ffffff', 0.2 * k);
+// s19 37.8: the phone buzzes again
+K.stickShot('s19_buzz', (g, t) => {
+  const wide = K.K.now > 38.4;
+  glowFace(g, t, { eyes: wide ? 'wide' : 'dot', look: [0.1, wide ? 1 : 0.4], brows: 'worried', mouth: wide ? 'o' : 'flat' }, { buzz: [37.85] });
 }, { vignette: 0.85 });
-
-// s07: the second text appears under the first
-K.stickShot('s07_text_two', (g, t) => {
-  phoneScreen(g, t, [{ at: 0, lines: ['Locked out.', 'Open the door.'] }, { at: 12.25, lines: ['Running late.', 'Home in an hour.', "Don't open the door", 'for anyone.'] }], { zoom: 1.04 + 0.05 * t, typing: 11.95, buzz: [12.2] });
-});
-
-// s08: wide from behind me at the door; the shadow is still there; my hand slowly comes off the lock
-K.stickShot('s08_back_away', (g, t) => {
-  g.save(); K.camera(g, 1.06 - 0.03 * t, 540, 900);
-  K.roomBox(g, { back: [200, 300, 680, 1250], seed: 612, wall: '#090b11' });
-  const D = frontDoor(g, 330, 420, 420, 1130, { shadow: 0.95, sx: 545 });
-  const off = ease.inOut(prog(t, 0.8, 2.4));
-  const pose = K.posesMix('reach', 'freeze', off);
-  const R = stickFigure(g, pose, {}, { x: 380 - off * 30, y: 2290 + off * 40, s: 1.9, back: true });
-  g.restore();
+// s20 39.7: the second text under the first
+K.stickShot('s20_text_two', (g, t) => { phoneScreen(g, t, [{ at: 0, ...TEXT1 }, { at: 40.05, ...TEXT2 }], { zoom: 1.04 + 0.04 * t, typing: 39.7, buzz: [40.0] }); });
+// s21 42.6: "Don't open the door for anyone." my hand slowly comes off the lock
+K.stickShot('s21_dont', (g, t) => {
+  const off = ease.inOut(prog(t, 0.5, 2.2));
+  doorWide(g, t, { shadow: 1, z0: 1.06, zs: -0.02, me: (g) => stickFigure(g, K.posesMix('reach', 'freeze', off), {}, { x: 380 - off * 30, y: 2290 + off * 40, s: 1.9, back: true }) });
   const k = phoneLight();
   darkness(g, 0.86, [{ x: 545, y: 760, r: 520, k: 0.75 }, { x: 380, y: 1650, r: 520, k: 0.9 }]);
   lightPool(g, 330, 1700, 520, RED, 0.7 * k);
 }, { vignette: 0.8 });
-
-// s09: the knocking stops; the shadow slides out of the glass
-K.stickShot('s09_stopped', (g, t) => {
-  const T = K.K.now, go = ease.inOut(prog(T, 18.75, 19.6));
-  g.save(); K.camera(g, 1.0 + 0.02 * t, 540, 760);
-  const D = frontDoor(g, 200, 160, 680, 1800, { shadow: 1 - go, sx: 540 - go * 300, sh: 0.85, shakeAmp: 9 });
+// s22 45.2: "I didn't move." frozen face, no blink, glow trembling
+K.stickShot('s22_frozen', (g, t) => { glowFace(g, t, { eyes: 'wide', look: [0, -0.5], brows: 'worried', mouth: 'flat' }, { z0: 1.15, zs: 0.03, phoneOn: true }); }, { vignette: 0.9 });
+// s23 47.6: "I didn't breathe." my hand over my mouth
+K.stickShot('s23_breathe', (g, t) => {
+  glowFace(g, t, { eyes: 'wide', look: [0, -0.4], brows: 'worried', mouth: 'none' }, { z0: 1.25, zs: 0.02, phoneOn: false, hand: (g) => {
+    chalk(g, [[760, 1600], [620, 760]], { w: 14, seed: 840 });                                   // forearm from below
+    K.blob(g, 560, 690, 120, 70, INK.head, { seed: 845, wob: 3 });                               // palm over the mouth
+    K.ellipse(g, 560, 690, 124, 74, { w: 6, color: INK.feature, seed: 847, double: false });
+    for (let i = 0; i < 4; i++) chalk(g, [[620, 650 + i * 26], [440 - i * 6, 640 + i * 28]], { w: 9, color: INK.feature, seed: 841 + i, double: false });
+    chalk(g, [[680, 640], [600, 700], [480, 740], [440, 700]], { w: 8, color: INK.chalk, seed: 846, double: false });
+  } });
+}, { vignette: 0.9 });
+// s24 49.4: two-shot: me and the shape in the glass, both still
+K.stickShot('s24_standoff', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.02 * t, 540, 900);
+  K.roomBox(g, { back: [120, 220, 840, 1300], seed: 618, wall: '#090b11' });
+  frontDoor(g, 470, 320, 400, 1200, { shadow: 1, sx: 670 });
+  const R = stickFigure(g, 'freeze', { eyes: 'wide', look: [1, -0.6], brows: 'worried' }, { x: 230, y: 2280, s: 1.9 });
   g.restore();
   const k = phoneLight();
-  darkness(g, 0.78, [{ x: 540, y: 600, r: 640, k: 0.75 }, { x: 160, y: 1500, r: 500, k: 0.9 }]);
-  lightPool(g, 120, 1550, 560, RED, 0.55 * k);
+  darkness(g, 0.84, [{ x: 670, y: 650, r: 420, k: 0.7 }, { x: 240, y: 1560, r: 520, k: 0.9 }]);
+  lightPool(g, 260, 1640, 480, RED, 0.6 * k);
 }, { vignette: 0.8 });
-
-// s10: held silence: the empty glass. I back away, slowly. (no captions here: nothing is spoken)
-K.stickShot('s10_held', (g, t) => {
-  g.save(); K.camera(g, 1.0 + 0.035 * t, 540, 760);
-  K.roomBox(g, { back: [200, 260, 680, 1300], seed: 614, wall: '#090b11' });
-  frontDoor(g, 330, 380, 420, 1180, { shadow: 0 });
+// s25 52.4: "Then the knocking stopped." (the last knock fell at 52.3)
+K.stickShot('s25_stopped', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.02 * t, 540, 760);
+  frontDoor(g, 200, 160, 680, 1800, { shadow: 1, sx: 540, sh: 0.85, shakeAmp: 9 });
   g.restore();
-  const back = ease.out(prog(t, 0, 2.0));
-  const R = stickFigure(g, 'scared', {}, { x: 560 - back * 40, y: 1900 + back * 200, s: 1.7 + back * 0.35, back: true });
-  const k = phoneLight() * (0.92 + 0.08 * Math.sin(t * 13));
-  darkness(g, 0.86, [{ x: 540, y: 700, r: 520, k: 0.7 }, { x: R.hR[0], y: R.hR[1], r: 520, k: 0.9 }]);
-  lightPool(g, R.hR[0], R.hR[1] - 40, 540, RED, 0.7 * k);
+  darkness(g, 0.78, [{ x: 540, y: 600, r: 640, k: 0.75 }, { x: 160, y: 1500, r: 500, k: 0.9 }]);
+  lightPool(g, 120, 1550, 560, RED, 0.55 * phoneLight());
+}, { vignette: 0.8 });
+// s26 54.7: "The shape was gone." it slides out of the glass
+K.stickShot('s26_gone', (g, t) => {
+  const go = ease.inOut(prog(K.K.now, 54.8, 55.7));
+  g.save(); K.camera(g, 1.04 + 0.02 * t, 540, 760);
+  frontDoor(g, 200, 160, 680, 1800, { shadow: 1 - go, sx: 540 - go * 300, sh: 0.85 });
+  g.restore();
+  darkness(g, 0.78, [{ x: 540, y: 600, r: 640, k: 0.75 }, { x: 160, y: 1500, r: 500, k: 0.9 }]);
+  lightPool(g, 120, 1550, 560, RED, 0.55 * phoneLight());
+}, { vignette: 0.8 });
+// s27 56.6: I run back upstairs (right -> left, up)
+K.stickShot('s27_run', (g, t) => {
+  const fyAt = sideStairs(g), u = ease.inOut(prog(t, 0, 2.0)), fx = lerp(980, 260, u);
+  const R = stickFigure(g, K.walk(t * 2.4, { stride: 0.55 }), { eyes: 'wide', look: [-1, -0.3], brows: 'worried', mouth: 'o' }, { x: fx, y: fyAt(fx), s: 1.45, flip: -1 }), k = phoneLight();
+  heldPhone(g, R.hR[0] - 10, R.hR[1] - 8, 1.1, k, -0.3);
+  darkness(g, 0.94, [{ x: R.hR[0], y: R.hR[1] - 60, r: 520, k: 0.95 }]);
+  lightPool(g, R.hR[0], R.hR[1] - 40, 460, RED, 0.7 * k);
 }, { vignette: 0.85 });
-
-// s11: hard cut upstairs: my bedroom window. Knock, knock. A long hand flat on the glass.
-const WIN = [210, 300, 640, 760];
-function bedroomWindow(g, t, handA, handS = 1, curl = 0) {
-  const [wx, wy, ww, wh] = WIN; const [dx, dy] = shake(GLASS_KNOCKS, 4);
-  g.fillStyle = '#08090e'; g.fillRect(0, 0, E.W, E.H);
-  // wall corner + sill + curtain lines
-  line(g, 90, -40, 90, 1980, { w: 3, seed: 860, a: 0.5 }); line(g, 990, -40, 990, 1980, { w: 3, seed: 861, a: 0.5 });
-  g.save(); g.translate(dx, dy);
-  g.save(); g.beginPath(); g.rect(wx, wy, ww, wh); g.clip();
-  g.fillStyle = '#0b0f1c'; g.fillRect(wx, wy, ww, wh);
-  // bare branches outside
-  chalk(g, [[wx + ww + 40, wy + wh * 0.2], [wx + ww * 0.7, wy + wh * 0.35], [wx + ww * 0.45, wy + wh * 0.3]], { w: 4, seed: 862, a: 0.35 });
-  chalk(g, [[wx + ww * 0.7, wy + wh * 0.35], [wx + ww * 0.62, wy + wh * 0.12]], { w: 3, seed: 863, a: 0.3 });
-  if (handA > 0) flatHand(g, wx + ww * 0.52, wy + wh * 0.6, handS, { a: handA, curl });
-  // reflection of my phone in the glass, lower left
-  lightPool(g, wx + ww * 0.18, wy + wh * 0.88, 260, RED, 0.35);
-  g.globalCompositeOperation = 'lighter'; g.strokeStyle = alpha('#ffffff', 0.05); g.lineWidth = 16; g.beginPath(); g.moveTo(wx + ww * 0.1, wy + wh); g.lineTo(wx + ww * 0.5, wy); g.stroke();
+// s28 58.6: held silence in my room: on the bed, the window dark and empty behind me
+K.stickShot('s28_held', (g, t) => {
+  g.save(); K.camera(g, 1.0 + 0.05 * t, 360, 760);
+  const L = K.bedroom(g, t, { moon: false, doorOpen: 0 });
+  const R = stickFigure(g, 'phone', { eyes: 'wide', look: [0.6, 0.4], brows: 'worried' }, { x: 620, y: L.floorY - 150, s: 1.0, anchor: 'hip' });
+  heldPhone(g, R.hR[0] + 4, R.hR[1] - 10, 0.9, 0.85);
   g.restore();
-  rect(g, wx - 14, wy - 14, ww + 28, wh + 28, { w: 5, seed: 864 }); rect(g, wx, wy, ww, wh, { w: 3, seed: 865, a: 0.7 });
-  line(g, wx + ww / 2, wy, wx + ww / 2, wy + wh, { w: 4, seed: 866 });
-  g.restore();
-  chalk(g, [[wx - 60, wy + wh + 40], [wx + ww + 60, wy + wh + 40]], { w: 6, seed: 867 });   // sill
-  chalk(g, [[wx - 60, wy + wh + 70], [wx + ww + 60, wy + wh + 70]], { w: 3, seed: 868, a: 0.7 });
-}
-K.stickShot('s11_window', (g, t) => {
-  const T = K.K.now, handA = T >= 22.95 ? 1 : 0;
-  g.save(); K.camera(g, 1.0 + (T >= 22.95 ? 0.06 * ease.out(prog(T, 22.95, 23.5)) : 0.015 * t), 530, 680);
+  darkness(g, 0.88, [{ x: 640, y: 1100, r: 520, k: 0.85 }, { x: 330, y: 760, r: 380, k: 0.5 }]);
+  lightPool(g, 650, 1150, 460, RED, 0.5);
+}, { vignette: 0.85 });
+// s29 60.91: hard cut to the window. Knock, knock. The hand at "window".
+K.stickShot('s29_window', (g, t) => {
+  const T = K.K.now, handA = T >= 62.03 ? 1 : 0;
+  g.save(); K.camera(g, 1.0 + (T >= 62.03 ? 0.06 * ease.out(prog(T, 62.03, 62.45)) : 0.015 * t), 530, 680);
   bedroomWindow(g, t, handA, 1.05);
   g.restore();
-  const k = phoneLight();
   darkness(g, 0.72, [{ x: 530, y: 650, r: 640, k: 0.8 }, { x: 120, y: 1500, r: 500, k: 0.9 }]);
-  lightPool(g, 90, 1560, 600, RED, 0.6 * k);
+  lightPool(g, 90, 1560, 600, RED, 0.6 * phoneLight());
 });
-
-// s12: closer on the hand on the glass; the fingertips tap
-K.stickShot('s12_hand', (g, t) => {
-  const T = K.K.now; let curl = 0; for (const k0 of [24.05, 24.35]) if (T >= k0 - 0.08 && T < k0 + 0.1) curl = 1;
+// s30 62.45: closer on the hand; the fingertips tap
+K.stickShot('s30_hand', (g, t) => {
+  const T = K.K.now; let curl = 0; for (const k0 of [63.0, 63.3]) if (T >= k0 - 0.08 && T < k0 + 0.1) curl = 1;
   g.save(); K.camera(g, 1.35 + 0.08 * t, 545, 720);
   bedroomWindow(g, t, 1, 1.05, curl);
   g.restore();
   darkness(g, 0.66, [{ x: 545, y: 640, r: 700, k: 0.8 }]);
   lightPool(g, 60, 1600, 620, RED, 0.55 * phoneLight());
 });
-
-// s13: hard cut to the end card
-K.stickShot('s13_end', (g, t) => { K.endCard(g, t); }, { captions: false, fx: false });
+// s31 64.1: hard cut to the end card
+K.stickShot('s31_end', (g, t) => { K.endCard(g, t); }, { captions: false, fx: false });

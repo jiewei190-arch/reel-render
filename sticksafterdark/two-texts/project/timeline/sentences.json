@@ -2,67 +2,187 @@
  {
   "i": 0,
   "start": 0.45,
-  "end": 1.619,
-  "text": "Mom texted me."
+  "end": 2.038,
+  "text": "My parents went out to dinner."
  },
  {
   "i": 1,
-  "start": 2.169,
-  "end": 3.029,
-  "text": "\"Locked out."
+  "start": 2.588,
+  "end": 4.121,
+  "text": "I had the house to myself."
  },
  {
   "i": 2,
-  "start": 3.579,
-  "end": 4.642,
-  "text": "Open the door.\""
+  "start": 4.871,
+  "end": 6.963,
+  "text": "At eleven fifty, my phone lit up."
  },
  {
   "i": 3,
-  "start": 5.392,
-  "end": 7.635,
-  "text": "I heard the knock, so I went downstairs."
+  "start": 7.713,
+  "end": 8.337,
+  "text": "Mom."
  },
  {
   "i": 4,
-  "start": 8.385,
-  "end": 11.076,
-  "text": "My hand was on the lock when my phone buzzed again."
+  "start": 8.887,
+  "end": 9.747,
+  "text": "\"Locked out."
  },
  {
   "i": 5,
-  "start": 12.376,
-  "end": 13.248,
-  "text": "\"Running late."
+  "start": 10.297,
+  "end": 11.361,
+  "text": "Open the door.\""
  },
  {
   "i": 6,
-  "start": 13.798,
-  "end": 14.834,
-  "text": "Home in an hour."
+  "start": 12.111,
+  "end": 13.02,
+  "text": "That was weird."
  },
  {
   "i": 7,
-  "start": 15.384,
-  "end": 17.188,
-  "text": "Don't open the door for anyone.\""
+  "start": 13.57,
+  "end": 14.956,
+  "text": "She always has her keys."
  },
  {
   "i": 8,
-  "start": 18.488,
-  "end": 19.617,
-  "text": "The knocking stopped."
+  "start": 15.706,
+  "end": 16.726,
+  "text": "Then I heard it."
  },
  {
   "i": 9,
-  "start": 21.817,
-  "end": 23.308,
-  "text": "Then it started at my window."
+  "start": 17.276,
+  "end": 19.179,
+  "text": "Three slow knocks on the front door."
  },
  {
   "i": 10,
-  "start": 25.108,
-  "end": 26.154,
+  "start": 19.929,
+  "end": 22.745,
+  "text": "I went downstairs in the dark, phone in my hand."
+ },
+ {
+  "i": 11,
+  "start": 23.495,
+  "end": 26.155,
+  "text": "Through the frosted glass, someone was standing there."
+ },
+ {
+  "i": 12,
+  "start": 26.905,
+  "end": 27.516,
+  "text": "Tall."
+ },
+ {
+  "i": 13,
+  "start": 28.066,
+  "end": 28.912,
+  "text": "Very still."
+ },
+ {
+  "i": 14,
+  "start": 29.662,
+  "end": 30.012,
+  "text": "\"Mom?\""
+ },
+ {
+  "i": 15,
+  "start": 30.012,
+  "end": 30.712,
+  "text": "I said."
+ },
+ {
+  "i": 16,
+  "start": 31.462,
+  "end": 32.887,
+  "text": "The knocking started again."
+ },
+ {
+  "i": 17,
+  "start": 33.437,
+  "end": 34.083,
+  "text": "Slow."
+ },
+ {
+  "i": 18,
+  "start": 34.633,
+  "end": 35.377,
+  "text": "Patient."
+ },
+ {
+  "i": 19,
+  "start": 36.127,
+  "end": 38.818,
+  "text": "My hand was on the lock when my phone buzzed again."
+ },
+ {
+  "i": 20,
+  "start": 40.118,
+  "end": 40.99,
+  "text": "\"Running late."
+ },
+ {
+  "i": 21,
+  "start": 41.54,
+  "end": 42.576,
+  "text": "Home in an hour."
+ },
+ {
+  "i": 22,
+  "start": 43.126,
+  "end": 44.93,
+  "text": "Don't open the door for anyone.\""
+ },
+ {
+  "i": 23,
+  "start": 46.23,
+  "end": 47.213,
+  "text": "I didn't move."
+ },
+ {
+  "i": 24,
+  "start": 47.763,
+  "end": 48.796,
+  "text": "I didn't breathe."
+ },
+ {
+  "i": 25,
+  "start": 49.546,
+  "end": 51.508,
+  "text": "The shape in the glass didn't move either."
+ },
+ {
+  "i": 26,
+  "start": 52.808,
+  "end": 54.127,
+  "text": "Then the knocking stopped."
+ },
+ {
+  "i": 27,
+  "start": 54.877,
+  "end": 55.962,
+  "text": "The shape was gone."
+ },
+ {
+  "i": 28,
+  "start": 56.712,
+  "end": 58.511,
+  "text": "I ran back upstairs to my room."
+ },
+ {
+  "i": 29,
+  "start": 60.911,
+  "end": 62.402,
+  "text": "Then it started at my window."
+ },
+ {
+  "i": 30,
+  "start": 64.202,
+  "end": 65.249,
   "text": "Follow for more."
  }
 ]

@@ -1,11 +1,31 @@
-[00:00.45 -> 00:01.62] Mom texted me.
-[00:02.17 -> 00:03.03] "Locked out.
-[00:03.58 -> 00:04.64] Open the door."
-[00:05.39 -> 00:07.63] I heard the knock, so I went downstairs.
-[00:08.38 -> 00:11.08] My hand was on the lock when my phone buzzed again.
-[00:12.38 -> 00:13.25] "Running late.
-[00:13.80 -> 00:14.83] Home in an hour.
-[00:15.38 -> 00:17.19] Don't open the door for anyone."
-[00:18.49 -> 00:19.62] The knocking stopped.
-[00:21.82 -> 00:23.31] Then it started at my window.
-[00:25.11 -> 00:26.15] Follow for more.
+[00:00.45 -> 00:02.04] My parents went out to dinner.
+[00:02.59 -> 00:04.12] I had the house to myself.
+[00:04.87 -> 00:06.96] At eleven fifty, my phone lit up.
+[00:07.71 -> 00:08.34] Mom.
+[00:08.89 -> 00:09.75] "Locked out.
+[00:10.30 -> 00:11.36] Open the door."
+[00:12.11 -> 00:13.02] That was weird.
+[00:13.57 -> 00:14.96] She always has her keys.
+[00:15.71 -> 00:16.73] Then I heard it.
+[00:17.28 -> 00:19.18] Three slow knocks on the front door.
+[00:19.93 -> 00:22.75] I went downstairs in the dark, phone in my hand.
+[00:23.50 -> 00:26.16] Through the frosted glass, someone was standing there.
+[00:26.91 -> 00:27.52] Tall.
+[00:28.07 -> 00:28.91] Very still.
+[00:29.66 -> 00:30.01] "Mom?"
+[00:30.01 -> 00:30.71] I said.
+[00:31.46 -> 00:32.89] The knocking started again.
+[00:33.44 -> 00:34.08] Slow.
+[00:34.63 -> 00:35.38] Patient.
+[00:36.13 -> 00:38.82] My hand was on the lock when my phone buzzed again.
+[00:40.12 -> 00:40.99] "Running late.
+[00:41.54 -> 00:42.58] Home in an hour.
+[00:43.13 -> 00:44.93] Don't open the door for anyone."
+[00:46.23 -> 00:47.21] I didn't move.
+[00:47.76 -> 00:48.80] I didn't breathe.
+[00:49.55 -> 00:51.51] The shape in the glass didn't move either.
+[00:52.81 -> 00:54.13] Then the knocking stopped.
+[00:54.88 -> 00:55.96] The shape was gone.
+[00:56.71 -> 00:58.51] I ran back upstairs to my room.
+[01:00.91 -> 01:02.40] Then it started at my window.
+[01:04.20 -> 01:05.25] Follow for more.
