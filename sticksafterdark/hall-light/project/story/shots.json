@@ -1,0 +1,227 @@
+{
+ "title": "Sticks After Dark 4 Hall Light",
+ "duration": 27.578,
+ "shots": [
+  {
+   "id": "s01_hall_lit",
+   "start": 0.0,
+   "end": 2.1,
+   "line": "My little brother is scared of the dark,",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "sfx": []
+  },
+  {
+   "id": "s02_his_door",
+   "start": 2.1,
+   "end": 4.7,
+   "line": "so we leave the hall light on.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s03_clock",
+   "start": 4.7,
+   "end": 6.0,
+   "line": "Tonight, at midnight, it",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.84,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04_click",
+   "start": 6.0,
+   "end": 7.45,
+   "line": "clicked off.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.22,
+     "name": "tick",
+     "gain": -4,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.24,
+     "name": "impact",
+     "gain": -20,
+     "dur": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s05_crack",
+   "start": 7.45,
+   "end": 9.75,
+   "line": "I got up to turn it back on.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
+     "name": "footstep",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s06_end_dark",
+   "start": 9.75,
+   "end": 11.9,
+   "line": "From his room, he whispered:",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s07_under_door",
+   "start": 11.9,
+   "end": 13.85,
+   "line": "Don't. It turned it off",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s08_frozen",
+   "start": 13.85,
+   "end": 15.9,
+   "line": "so you'd come out.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "heartbeat",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09_back_bed",
+   "start": 15.9,
+   "end": 18.1,
+   "line": "I got back in bed.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 0.95,
+     "name": "footstep",
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "s10_held",
+   "start": 18.1,
+   "end": 20.12,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s11_calendar",
+   "start": 20.12,
+   "end": 21.75,
+   "line": "My brother is at Grandma's this",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "sfx": [
+    {
+     "at": 0.91,
+     "name": "stinger",
+     "gain": -3
+    }
+   ]
+  },
+  {
+   "id": "s12_empty_bed",
+   "start": 21.75,
+   "end": 23.25,
+   "line": "week.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s13_eyes",
+   "start": 23.25,
+   "end": 24.88,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s14_end",
+   "start": 24.88,
+   "end": 27.578,
+   "line": "Follow for more.",
+   "in": "cut",
+   "params": {
+    "captions": false
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 24.88,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ]
+}

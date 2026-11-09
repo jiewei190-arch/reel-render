@@ -1,0 +1,42 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.45,
+  "speechEnd": 4.4,
+  "text": "My little brother is scared of the dark, so we leave the hall light on.",
+  "end": 4.92
+ },
+ {
+  "i": 1,
+  "start": 4.92,
+  "speechStart": 5.07,
+  "speechEnd": 6.6,
+  "text": "Tonight, at midnight, it clicked off.",
+  "end": 7.38
+ },
+ {
+  "i": 2,
+  "start": 7.38,
+  "speechStart": 7.53,
+  "speechEnd": 12.54,
+  "text": "I got up to turn it back on. From his room, he whispered: Don't.",
+  "end": 12.39
+ },
+ {
+  "i": 3,
+  "start": 12.39,
+  "speechStart": 12.54,
+  "speechEnd": 17.62,
+  "text": "It turned it off so you'd come out. I got back in bed.",
+  "end": 20.081
+ },
+ {
+  "i": 4,
+  "start": 20.081,
+  "speechStart": 20.231,
+  "speechEnd": 24.69,
+  "text": "My brother is at Grandma's this week. Follow for more.",
+  "end": 26.19
+ }
+]
