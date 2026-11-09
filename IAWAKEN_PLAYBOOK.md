@@ -154,7 +154,8 @@ When the owner's PC is on, cloud sessions build (script, voice, timing, scenes, 
 (RTX 4060: Toon 3D ~12.5 fps at 1080x1920 with `--gl gpu`, vs ~1 fps in the cloud). Per job, the cloud session must:
 - `git add -f .../input/voiceover.wav` (*.wav is gitignored) and every other .wav the mix needs.
 - Put the project at `whatif/aitrends-2d-studio/projects/<slug>` (or say where it is so Creator copies it there).
-- Write in STATUS.md: exact render + mix commands (mix to an explicit `--out` path; the default name dropped 3 frames),
+- Write in STATUS.md: exact render + mix commands (render.mjs resolves `--out` from the KIT folder: use
+  `--out projects/<slug>/build/video_silent.mp4`; mix to an explicit `--out` path; the default name dropped 3 frames),
   expected frame count and duration, and `STATE: render-on-pc`.
 MAIN then asks Creator (one job at a time) with the branch name; Creator renders, checks, and pushes video.mp4 +
 video.sha256 + STATUS.md (`STATE: ready`) to the same branch. Nothing is posted.
