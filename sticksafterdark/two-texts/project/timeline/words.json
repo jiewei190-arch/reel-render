@@ -1,0 +1,260 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "Mom",
+   "start": 0.45,
+   "end": 0.742
+  },
+  {
+   "word": "texted",
+   "start": 0.742,
+   "end": 1.327
+  },
+  {
+   "word": "me.",
+   "start": 1.327,
+   "end": 1.619
+  },
+  {
+   "word": "\"Locked",
+   "start": 2.169,
+   "end": 2.742
+  },
+  {
+   "word": "out.",
+   "start": 2.742,
+   "end": 3.029
+  },
+  {
+   "word": "Open",
+   "start": 3.579,
+   "end": 4.111
+  },
+  {
+   "word": "the",
+   "start": 4.111,
+   "end": 4.376
+  },
+  {
+   "word": "door.\"",
+   "start": 4.376,
+   "end": 4.642
+  },
+  {
+   "word": "I",
+   "start": 5.392,
+   "end": 5.642
+  },
+  {
+   "word": "heard",
+   "start": 5.642,
+   "end": 5.891
+  },
+  {
+   "word": "the",
+   "start": 5.891,
+   "end": 6.14
+  },
+  {
+   "word": "knock,",
+   "start": 6.14,
+   "end": 6.389
+  },
+  {
+   "word": "so",
+   "start": 6.389,
+   "end": 6.639
+  },
+  {
+   "word": "I",
+   "start": 6.639,
+   "end": 6.888
+  },
+  {
+   "word": "went",
+   "start": 6.888,
+   "end": 7.137
+  },
+  {
+   "word": "downstairs.",
+   "start": 7.137,
+   "end": 7.635
+  },
+  {
+   "word": "My",
+   "start": 8.385,
+   "end": 8.578
+  },
+  {
+   "word": "hand",
+   "start": 8.578,
+   "end": 8.77
+  },
+  {
+   "word": "was",
+   "start": 8.77,
+   "end": 8.962
+  },
+  {
+   "word": "on",
+   "start": 8.962,
+   "end": 9.154
+  },
+  {
+   "word": "the",
+   "start": 9.154,
+   "end": 9.346
+  },
+  {
+   "word": "lock",
+   "start": 9.346,
+   "end": 9.539
+  },
+  {
+   "word": "when",
+   "start": 9.539,
+   "end": 9.731
+  },
+  {
+   "word": "my",
+   "start": 9.731,
+   "end": 9.923
+  },
+  {
+   "word": "phone",
+   "start": 9.923,
+   "end": 10.307
+  },
+  {
+   "word": "buzzed",
+   "start": 10.307,
+   "end": 10.692
+  },
+  {
+   "word": "again.",
+   "start": 10.692,
+   "end": 11.076
+  },
+  {
+   "word": "\"Running",
+   "start": 12.376,
+   "end": 12.812
+  },
+  {
+   "word": "late.",
+   "start": 12.812,
+   "end": 13.248
+  },
+  {
+   "word": "Home",
+   "start": 13.798,
+   "end": 14.213
+  },
+  {
+   "word": "in",
+   "start": 14.213,
+   "end": 14.42
+  },
+  {
+   "word": "an",
+   "start": 14.42,
+   "end": 14.627
+  },
+  {
+   "word": "hour.",
+   "start": 14.627,
+   "end": 14.834
+  },
+  {
+   "word": "Don't",
+   "start": 15.384,
+   "end": 15.585
+  },
+  {
+   "word": "open",
+   "start": 15.585,
+   "end": 15.986
+  },
+  {
+   "word": "the",
+   "start": 15.986,
+   "end": 16.186
+  },
+  {
+   "word": "door",
+   "start": 16.186,
+   "end": 16.387
+  },
+  {
+   "word": "for",
+   "start": 16.387,
+   "end": 16.587
+  },
+  {
+   "word": "anyone.\"",
+   "start": 16.587,
+   "end": 17.188
+  },
+  {
+   "word": "The",
+   "start": 18.488,
+   "end": 18.714
+  },
+  {
+   "word": "knocking",
+   "start": 18.714,
+   "end": 19.165
+  },
+  {
+   "word": "stopped.",
+   "start": 19.165,
+   "end": 19.617
+  },
+  {
+   "word": "Then",
+   "start": 21.817,
+   "end": 22.003
+  },
+  {
+   "word": "it",
+   "start": 22.003,
+   "end": 22.19
+  },
+  {
+   "word": "started",
+   "start": 22.19,
+   "end": 22.563
+  },
+  {
+   "word": "at",
+   "start": 22.563,
+   "end": 22.749
+  },
+  {
+   "word": "my",
+   "start": 22.749,
+   "end": 22.935
+  },
+  {
+   "word": "window.",
+   "start": 22.935,
+   "end": 23.308
+  },
+  {
+   "word": "Follow",
+   "start": 25.108,
+   "end": 25.527
+  },
+  {
+   "word": "for",
+   "start": 25.527,
+   "end": 25.736
+  },
+  {
+   "word": "more.",
+   "start": 25.736,
+   "end": 26.154
+  }
+ ]
+}
