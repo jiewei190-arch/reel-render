@@ -5,7 +5,7 @@ Branch `justinclips/batch2-b`, commit fdf1edb (project + this folder). Project: 
 
 ## Full render (Creator, from `whatif/aitrends-2d-studio`)
 ```
-node render.mjs --project projects/dead-pope-trial --gl gpu
+node render.mjs --project projects/dead-pope-trial --gl gpu --out projects/dead-pope-trial/build/video_silent.mp4
 ```
 -> `projects/dead-pope-trial/build/video_silent.mp4`. **Expected: 1080x1920, 24 fps, 841 frames, 35.04 s.**
 
