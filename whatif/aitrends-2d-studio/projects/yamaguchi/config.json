@@ -1,0 +1,17 @@
+{
+ "title": "He Survived Both Atomic Bombs",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "gold": ["hiroshima", "nagasaki", "1945", "6", "9", "3", "km", "2009", "93", "both", "again"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:mystery", "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -8 },
+ "loudness": -14
+}

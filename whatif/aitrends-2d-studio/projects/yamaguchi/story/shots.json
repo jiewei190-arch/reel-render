@@ -1,0 +1,26 @@
+{
+ "duration": 54.0,
+ "shots": [
+  { "id": "y01", "start": 0, "end": 4.0, "line": "He survived Hiroshima. Then he went home to Nagasaki.", "scene": "on the train", "sfx": [ { "at": 0, "name": "toon3d:rumble", "gain": -22 } ] },
+  { "id": "y02", "start": 4.0, "end": 6.45, "line": "Three days later, it happened again.", "scene": "train close, soft light on the horizon", "in": { "type": "fade", "dur": 0.3 } },
+  { "id": "y03", "start": 6.45, "end": 8.9, "line": "His name was Tsutomu Yamaguchi,", "scene": "portrait + name tag", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "at": 0.6, "name": "toon3d:chime", "gain": -16 } ] },
+  { "id": "y04", "start": 8.9, "end": 11.2, "line": "a ship designer from Nagasaki.", "scene": "drafting table", "in": { "type": "cut" }, "sfx": [ { "at": 0.3, "name": "toon3d:paper", "gain": -16 } ] },
+  { "id": "y05", "start": 11.2, "end": 13.5, "line": "In August 1945,", "scene": "Hiroshima street, morning", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "at": 0.2, "name": "toon3d:chime", "gain": -18 } ] },
+  { "id": "y06", "start": 13.5, "end": 15.95, "line": "he was in Hiroshima on a business trip.", "scene": "walking with the briefcase", "in": { "type": "cut" }, "sfx": [ { "at": 0, "name": "toon3d:footsteps", "gain": -20 } ] },
+  { "id": "y07", "start": 15.95, "end": 18.3, "line": "On August 6, the first atomic bomb", "scene": "he stops on the street", "in": { "type": "fade", "dur": 0.3 } },
+  { "id": "y08", "start": 18.3, "end": 21.0, "line": "exploded about 3 km away.", "scene": "rooftops, distant white light (no people)", "in": { "type": "cut" },
+    "sfx": [ { "word": "exploded", "name": "toon3d:rumble", "gain": -12 }, { "word": "exploded", "offset": 0.2, "name": "toon3d:wind", "gain": -18 } ] },
+  { "id": "y09", "start": 21.0, "end": 23.85, "line": "He was badly burned. But he survived.", "scene": "dusk bench", "in": { "type": "dipWhite", "dur": 0.5 } },
+  { "id": "y10", "start": 23.85, "end": 26.2, "line": "The next day he went home to Nagasaki.", "scene": "insert: map", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "at": 0.1, "name": "toon3d:swoosh", "gain": -18 } ] },
+  { "id": "y11", "start": 26.2, "end": 30.8, "line": "On August 9, he was at work, telling his boss what he had seen.", "scene": "office with the boss", "in": { "type": "fade", "dur": 0.3 } },
+  { "id": "y12", "start": 30.8, "end": 33.4, "line": "Then the second bomb fell on Nagasaki.", "scene": "window fills with white light", "in": { "type": "cut" },
+    "sfx": [ { "word": "fell", "name": "toon3d:rumble", "gain": -12 }, { "word": "fell", "offset": 0.3, "name": "toon3d:wind", "gain": -18 } ] },
+  { "id": "y13", "start": 33.4, "end": 34.9, "line": "He survived again.", "scene": "morning hillside", "in": { "type": "dipWhite", "dur": 0.4 }, "sfx": [ { "word": "again", "name": "toon3d:chime", "gain": -16 } ] },
+  { "id": "y14", "start": 34.9, "end": 38.1, "line": "For decades, his papers only listed Nagasaki.", "scene": "insert: document", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "at": 0.1, "name": "toon3d:paper", "gain": -14 } ] },
+  { "id": "y15", "start": 38.1, "end": 41.6, "line": "In his later years, he spoke out against nuclear weapons.", "scene": "older Yamaguchi at a lectern", "in": { "type": "fade", "dur": 0.3 } },
+  { "id": "y16", "start": 41.6, "end": 44.4, "line": "In 2009, at 93,", "scene": "insert: timeline", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "at": 0.1, "name": "toon3d:swoosh", "gain": -18 }, { "at": 1.1, "name": "toon3d:chime", "gain": -16 } ] },
+  { "id": "y17", "start": 44.4, "end": 48.3, "line": "Japan officially recognized him as a survivor of both.", "scene": "holding the certificate", "in": { "type": "fade", "dur": 0.3 }, "sfx": [ { "word": "both", "name": "toon3d:sparkle", "gain": -18 } ] },
+  { "id": "y18", "start": 48.3, "end": 52.25, "line": "The first and so far only person to get that recognition.", "scene": "at the window, evening", "in": { "type": "fade", "dur": 0.4 } },
+  { "id": "y19", "start": 52.25, "end": 54.0, "line": "Subscribe for more.", "scene": "back on the train (loop)", "in": { "type": "fade", "dur": 0.3 } }
+ ]
+}
