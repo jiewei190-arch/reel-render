@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #9: wojtek-bear ("A Bear Served in WW2 With a Real Rank 🐻")
 Branch `justinclips/batch2-a`, project commit `9d906a9`. Project: `whatif/aitrends-2d-studio/projects/wojtek-bear` (15 shots, Toon 3D + BEANMEN FX).
@@ -25,3 +25,9 @@ Cloud measurement of `mix_final.wav`: **-13.8 LUFS, true peak -1.3 dBFS**. The l
 - No combat, weapons or injuries shown; Monte Cassino = far hills at dusk + crates. Ammunition-carrying said as "reported" (+ on-screen "(reported by his unit)").
 - Sources: `sources.md` (IWM memorial record + Wikipedia; Britannica/iwm.org.uk returned 403 from the cloud).
 - Nothing posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **977 frames (counted), 40.71 s**, 20.6 MB; audio 48 kHz.
+- Loudness measured on the final file: **-13.87 LUFS, true peak -1.09 dBTP**.
+- Render 50 s. Commands run exactly as listed above. Contact sheet checked (cards animate in, captions, parade loop ending OK).
+- Nothing posted, uploaded or scheduled.
