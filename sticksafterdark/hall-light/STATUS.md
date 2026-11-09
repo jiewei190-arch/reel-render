@@ -1,4 +1,4 @@
-STATE: ready
+STATE: rendering
 
 Sticks After Dark #4 "hall-light", full render done in the cloud.
 - video.mp4: 1080x1920, 24 fps, 662 frames, 27.58 s, H.264 + AAC 192k, 7.3 MB (single file, no split needed). Checksum: video.sha256.
