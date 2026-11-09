@@ -1,12 +1,12 @@
 STATE: render-on-pc
 
 # Justin clips Short #12: meat-rain ("The Day It Rained Meat in Kentucky 🥩")
-Branch `justinclips/batch2-c`. Project: `whatif/aitrends-2d-studio/projects/meat-rain` (Toon 3D kit + BEANMEN FX, 16 shots).
+Branch `justinclips/batch2-c` (project commit c09bb4f; `--out` made explicit per Creator). Project: `whatif/aitrends-2d-studio/projects/meat-rain` (Toon 3D kit + BEANMEN FX, 16 shots).
 Cloud built everything up to a checked half-size preview; **Creator renders the full 1080x1920 final.**
 
 ## Full render (Creator, from `whatif/aitrends-2d-studio`)
 ```
-node render.mjs --project projects/meat-rain --gl gpu
+node render.mjs --project projects/meat-rain --gl gpu --out projects/meat-rain/build/video_silent.mp4
 ```
 -> `projects/meat-rain/build/video_silent.mp4`. **Expected: 926 frames, 38.58 s** (24 fps, 1080x1920).
 
