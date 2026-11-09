@@ -1,4 +1,4 @@
-# Sticks After Dark #1: "Mirror Lag" (9:16, ~30 s)
+# Sticks After Dark #1: "Mirror Lag" (9:16, 60-70 s)
 
 Original story. Narrator: Kokoro am_fenrir, slow (0.88), low, close, deadpan. Captions ON (1-3 words, punch word alone).
 Look: Sticks After Dark kit. Bathroom at night, ONE accent: sickly yellow bulb (#d9cf6a).
@@ -6,14 +6,25 @@ Look: Sticks After Dark kit. Bathroom at night, ONE accent: sickly yellow bulb (
 
 ## NARRATION
 Every night, I brush my teeth in the same mirror.
+Same sink. Same yellow bulb. Same tired face.
 Tonight, my reflection blinked a little late.
 Just once.
-I told myself I was tired.
+I told myself I was tired. I'd been up since five.
+I rinsed. I spat. I looked up.
+It was already looking at me.
+##
+So I tried a test. I raised my left hand.
+It raised its right. Like it should.
+I tilted my head. It tilted too.
+I laughed at myself, and it laughed with me.
+Right on time.
+##
+I turned off the tap. The quiet felt wrong.
 I leaned in close. I smiled, to prove I was fine.
 My reflection smiled too.
 ##
 Then I stopped smiling.
-## 2.4
+## 2.6
 It didn't.
 ## 1.6
 Follow for more.

@@ -1,15 +1,15 @@
 {
  "title": "Sticks After Dark 1 Mirror Lag",
- "duration": 27.08,
+ "duration": 61.25,
  "shots": [
   {
    "id": "s01",
-   "start": 0,
-   "end": 1.75,
-   "line": "Every night, I brush my teeth",
+   "start": 0.0,
+   "end": 1.89,
    "in": {
     "type": "cut"
    },
+   "line": "Every night, I brush my",
    "amb": {
     "name": "roomtone",
     "gain": -22
@@ -25,12 +25,12 @@
   },
   {
    "id": "s02",
-   "start": 1.75,
-   "end": 3.5,
-   "line": "in the same mirror.",
+   "start": 1.89,
+   "end": 3.74,
    "in": {
     "type": "cut"
    },
+   "line": "teeth in the same mirror.",
    "amb": {
     "name": "roomtone",
     "gain": -22
@@ -38,12 +38,12 @@
   },
   {
    "id": "s03",
-   "start": 3.5,
-   "end": 4.9,
-   "line": "Tonight, my reflection",
+   "start": 3.74,
+   "end": 5.12,
    "in": {
     "type": "cut"
    },
+   "line": "Same sink.",
    "amb": {
     "name": "roomtone",
     "gain": -22
@@ -51,46 +51,33 @@
   },
   {
    "id": "s04",
-   "start": 4.9,
-   "end": 6.9,
-   "line": "blinked a little late.",
+   "start": 5.12,
+   "end": 6.84,
    "in": {
     "type": "cut"
    },
+   "line": "Same yellow bulb.",
    "amb": {
     "name": "roomtone",
     "gain": -22
    },
    "sfx": [
     {
-     "at": 0.6,
-     "name": "tick",
-     "gain": -24,
-     "pitch": 0.5
+     "at": 0.1,
+     "name": "hum",
+     "gain": -22,
+     "dur": 1.6
     }
    ]
   },
   {
    "id": "s05",
-   "start": 6.9,
-   "end": 8.4,
-   "line": "Just once.",
+   "start": 6.84,
+   "end": 8.79,
    "in": {
     "type": "cut"
    },
-   "amb": {
-    "name": "roomtone",
-    "gain": -22
-   }
-  },
-  {
-   "id": "s06",
-   "start": 8.4,
-   "end": 10.9,
-   "line": "I told myself I was tired.",
-   "in": {
-    "type": "cut"
-   },
+   "line": "Same tired face.",
    "amb": {
     "name": "roomtone",
     "gain": -22
@@ -98,25 +85,33 @@
   },
   {
    "id": "s07",
-   "start": 10.9,
-   "end": 12.6,
-   "line": "I leaned in close.",
+   "start": 8.79,
+   "end": 11.9,
    "in": {
     "type": "cut"
    },
+   "line": "Tonight, my reflection blinked a little late.",
    "amb": {
     "name": "roomtone",
     "gain": -22
-   }
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "tick",
+     "gain": -24,
+     "pitch": 0.5
+    }
+   ]
   },
   {
    "id": "s08",
-   "start": 12.6,
-   "end": 15.2,
-   "line": "I smiled, to prove I was fine.",
+   "start": 11.9,
+   "end": 13.53,
    "in": {
     "type": "cut"
    },
+   "line": "Just once.",
    "amb": {
     "name": "roomtone",
     "gain": -22
@@ -124,15 +119,273 @@
   },
   {
    "id": "s09",
-   "start": 15.2,
-   "end": 18.1,
-   "line": "My reflection smiled too.",
+   "start": 13.53,
+   "end": 15.88,
    "in": {
     "type": "cut"
    },
+   "line": "I told myself I was tired.",
    "amb": {
     "name": "roomtone",
     "gain": -22
+   }
+  },
+  {
+   "id": "s10",
+   "start": 15.88,
+   "end": 17.94,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I'd been up since five.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s11",
+   "start": 17.94,
+   "end": 19.23,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I rinsed.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -20,
+     "dur": 1.4
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 19.23,
+   "end": 20.55,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I spat.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s13",
+   "start": 20.55,
+   "end": 22.13,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I looked up.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s14",
+   "start": 22.13,
+   "end": 24.85,
+   "in": {
+    "type": "cut"
+   },
+   "line": "It was already looking at me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -22,
+     "pitch": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 24.85,
+   "end": 26.67,
+   "in": {
+    "type": "cut"
+   },
+   "line": "So I tried a test.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s16",
+   "start": 26.67,
+   "end": 28.85,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I raised my left hand.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s17",
+   "start": 28.85,
+   "end": 30.56,
+   "in": {
+    "type": "cut"
+   },
+   "line": "It raised its right.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s18",
+   "start": 30.56,
+   "end": 32.23,
+   "in": {
+    "type": "cut"
+   },
+   "line": "Like it should.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s19",
+   "start": 32.23,
+   "end": 34.0,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I tilted my head.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s20",
+   "start": 34.0,
+   "end": 35.89,
+   "in": {
+    "type": "cut"
+   },
+   "line": "It tilted too.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s21",
+   "start": 35.89,
+   "end": 38.9,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I laughed at myself, and it laughed with me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s22",
+   "start": 38.9,
+   "end": 41.2,
+   "in": {
+    "type": "cut"
+   },
+   "line": "Right on time.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s23",
+   "start": 41.2,
+   "end": 42.96,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I turned off the tap.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "tick",
+     "gain": -18,
+     "pitch": 0.35
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "start": 42.96,
+   "end": 44.97,
+   "in": {
+    "type": "cut"
+   },
+   "line": "The quiet felt wrong.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s25",
+   "start": 44.97,
+   "end": 46.61,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I leaned in close.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s26",
+   "start": 46.61,
+   "end": 49.15,
+   "in": {
+    "type": "cut"
+   },
+   "line": "I smiled, to prove I was fine.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s27",
+   "start": 49.15,
+   "end": 52.08,
+   "in": {
+    "type": "cut"
+   },
+   "line": "My reflection smiled too.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
    },
    "sfx": [
     {
@@ -144,16 +397,16 @@
    ]
   },
   {
-   "id": "s10",
-   "start": 18.1,
-   "end": 21.95,
-   "line": "Then I stopped smiling. (held silence)",
+   "id": "s28",
+   "start": 52.08,
+   "end": 55.93,
    "in": {
     "type": "cut"
    },
+   "line": "Then I stopped smiling.",
    "amb": {
     "name": "roomtone",
-    "gain": -22
+    "gain": -26
    },
    "sfx": [
     {
@@ -171,50 +424,50 @@
    ]
   },
   {
-   "id": "s11",
-   "start": 21.95,
-   "end": 24.25,
-   "line": "It didn't.",
+   "id": "s29",
+   "start": 55.93,
+   "end": 58.38,
    "in": {
     "type": "cut"
    },
+   "line": "It didn't.",
    "amb": {
     "name": "roomtone",
     "gain": -22
    },
    "jitter": [
-    22.43
+    56.58
    ],
    "sfx": [
     {
-     "at": 0.44,
+     "at": 0.66,
      "name": "stinger",
      "gain": -4,
      "dur": 3.0
     },
     {
-     "at": 1.55,
+     "at": 1.97,
      "name": "flash",
      "gain": -14
     }
    ]
   },
   {
-   "id": "s12",
-   "start": 24.25,
-   "end": 27.08,
-   "line": "Follow for more.",
+   "id": "s30",
+   "start": 58.38,
+   "end": 61.25,
    "in": {
     "type": "cut"
-   }
+   },
+   "line": "Follow for more."
   }
  ],
  "music": [
   {
    "start": 0,
-   "end": 24.25,
+   "end": 58.38,
    "mood": "dark",
-   "intensity": 0.2
+   "intensity": 0.22
   }
  ]
 }

@@ -8,55 +8,163 @@
  {
   "i": 1,
   "start": 3.888,
-  "end": 6.245,
-  "text": "Tonight, my reflection blinked a little late."
+  "end": 4.722,
+  "text": "Same sink."
  },
  {
   "i": 2,
-  "start": 6.995,
-  "end": 7.876,
-  "text": "Just once."
+  "start": 5.272,
+  "end": 6.436,
+  "text": "Same yellow bulb."
  },
  {
   "i": 3,
-  "start": 8.626,
-  "end": 10.423,
-  "text": "I told myself I was tired."
+  "start": 6.986,
+  "end": 8.192,
+  "text": "Same tired face."
  },
  {
   "i": 4,
-  "start": 11.173,
-  "end": 12.265,
-  "text": "I leaned in close."
+  "start": 8.942,
+  "end": 11.3,
+  "text": "Tonight, my reflection blinked a little late."
  },
  {
   "i": 5,
-  "start": 12.815,
-  "end": 14.602,
-  "text": "I smiled, to prove I was fine."
+  "start": 12.05,
+  "end": 12.931,
+  "text": "Just once."
  },
  {
   "i": 6,
-  "start": 15.352,
-  "end": 16.98,
-  "text": "My reflection smiled too."
+  "start": 13.681,
+  "end": 15.478,
+  "text": "I told myself I was tired."
  },
  {
   "i": 7,
-  "start": 18.28,
-  "end": 19.634,
-  "text": "Then I stopped smiling."
+  "start": 16.028,
+  "end": 17.338,
+  "text": "I'd been up since five."
  },
  {
   "i": 8,
-  "start": 22.034,
-  "end": 22.832,
-  "text": "It didn't."
+  "start": 18.088,
+  "end": 18.834,
+  "text": "I rinsed."
  },
  {
   "i": 9,
-  "start": 24.432,
-  "end": 25.478,
+  "start": 19.384,
+  "end": 20.148,
+  "text": "I spat."
+ },
+ {
+  "i": 10,
+  "start": 20.698,
+  "end": 21.53,
+  "text": "I looked up."
+ },
+ {
+  "i": 11,
+  "start": 22.28,
+  "end": 23.696,
+  "text": "It was already looking at me."
+ },
+ {
+  "i": 12,
+  "start": 24.996,
+  "end": 26.267,
+  "text": "So I tried a test."
+ },
+ {
+  "i": 13,
+  "start": 26.817,
+  "end": 28.254,
+  "text": "I raised my left hand."
+ },
+ {
+  "i": 14,
+  "start": 29.004,
+  "end": 30.158,
+  "text": "It raised its right."
+ },
+ {
+  "i": 15,
+  "start": 30.708,
+  "end": 31.632,
+  "text": "Like it should."
+ },
+ {
+  "i": 16,
+  "start": 32.382,
+  "end": 33.596,
+  "text": "I tilted my head."
+ },
+ {
+  "i": 17,
+  "start": 34.146,
+  "end": 35.288,
+  "text": "It tilted too."
+ },
+ {
+  "i": 18,
+  "start": 36.038,
+  "end": 38.304,
+  "text": "I laughed at myself, and it laughed with me."
+ },
+ {
+  "i": 19,
+  "start": 39.054,
+  "end": 40.054,
+  "text": "Right on time."
+ },
+ {
+  "i": 20,
+  "start": 41.354,
+  "end": 42.556,
+  "text": "I turned off the tap."
+ },
+ {
+  "i": 21,
+  "start": 43.106,
+  "end": 44.371,
+  "text": "The quiet felt wrong."
+ },
+ {
+  "i": 22,
+  "start": 45.121,
+  "end": 46.213,
+  "text": "I leaned in close."
+ },
+ {
+  "i": 23,
+  "start": 46.763,
+  "end": 48.549,
+  "text": "I smiled, to prove I was fine."
+ },
+ {
+  "i": 24,
+  "start": 49.299,
+  "end": 50.927,
+  "text": "My reflection smiled too."
+ },
+ {
+  "i": 25,
+  "start": 52.227,
+  "end": 53.581,
+  "text": "Then I stopped smiling."
+ },
+ {
+  "i": 26,
+  "start": 56.181,
+  "end": 56.979,
+  "text": "It didn't."
+ },
+ {
+  "i": 27,
+  "start": 58.579,
+  "end": 59.626,
   "text": "Follow for more."
  }
 ]
