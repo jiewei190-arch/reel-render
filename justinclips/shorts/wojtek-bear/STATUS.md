@@ -1,7 +1,7 @@
 STATE: render-on-pc
 
 # Justin clips Short #9: wojtek-bear ("A Bear Served in WW2 With a Real Rank 🐻")
-Branch `justinclips/batch2-a`, project commit COMMIT. Project: `whatif/aitrends-2d-studio/projects/wojtek-bear` (15 shots, Toon 3D + BEANMEN FX).
+Branch `justinclips/batch2-a`, project commit `467710b`. Project: `whatif/aitrends-2d-studio/projects/wojtek-bear` (15 shots, Toon 3D + BEANMEN FX).
 Expected: **977 frames, 40.71 s** (voice 40.71 s), 1080x1920, 24 fps. Preview checked: `preview_wojtek-bear.mp4` (540x960, mixed) + `contact_wojtek-bear.png`.
 
 ## Creator: full render (from `whatif/aitrends-2d-studio`)
