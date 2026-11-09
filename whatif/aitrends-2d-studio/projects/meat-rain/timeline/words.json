@@ -1,0 +1,641 @@
+{
+ "source": "Kokoro am_fenrir 0.95 TTS sentence segments + faster-whisper base.en word timestamps (voice_words.py)",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.1,
+   "end": 0.22,
+   "spoken": "In"
+  },
+  {
+   "word": "1876,",
+   "start": 0.22,
+   "end": 1.62,
+   "spoken": "eighteen seventy-six,"
+  },
+  {
+   "word": "it",
+   "start": 1.62,
+   "end": 1.72,
+   "spoken": "it"
+  },
+  {
+   "word": "rained",
+   "start": 1.72,
+   "end": 1.98,
+   "spoken": "rained"
+  },
+  {
+   "word": "meat",
+   "start": 1.98,
+   "end": 2.3,
+   "spoken": "meat"
+  },
+  {
+   "word": "in",
+   "start": 2.3,
+   "end": 2.54,
+   "spoken": "in"
+  },
+  {
+   "word": "Kentucky.",
+   "start": 2.54,
+   "end": 2.74,
+   "spoken": "Kentucky."
+  },
+  {
+   "word": "Out",
+   "start": 4.019,
+   "end": 4.139,
+   "spoken": "Out"
+  },
+  {
+   "word": "of",
+   "start": 4.139,
+   "end": 4.26,
+   "spoken": "of"
+  },
+  {
+   "word": "a",
+   "start": 4.26,
+   "end": 4.38,
+   "spoken": "a"
+  },
+  {
+   "word": "clear",
+   "start": 4.38,
+   "end": 4.5,
+   "spoken": "clear"
+  },
+  {
+   "word": "blue",
+   "start": 4.5,
+   "end": 4.64,
+   "spoken": "blue"
+  },
+  {
+   "word": "sky.",
+   "start": 4.64,
+   "end": 4.94,
+   "spoken": "sky."
+  },
+  {
+   "word": "A",
+   "start": 5.58,
+   "end": 5.64,
+   "spoken": "A"
+  },
+  {
+   "word": "woman",
+   "start": 5.64,
+   "end": 5.88,
+   "spoken": "woman"
+  },
+  {
+   "word": "was",
+   "start": 5.88,
+   "end": 6.14,
+   "spoken": "was"
+  },
+  {
+   "word": "outside,",
+   "start": 6.14,
+   "end": 6.44,
+   "spoken": "outside,"
+  },
+  {
+   "word": "making",
+   "start": 6.44,
+   "end": 7.08,
+   "spoken": "making"
+  },
+  {
+   "word": "soap,",
+   "start": 7.08,
+   "end": 7.56,
+   "spoken": "soap,"
+  },
+  {
+   "word": "when",
+   "start": 7.56,
+   "end": 7.94,
+   "spoken": "when"
+  },
+  {
+   "word": "chunks",
+   "start": 7.94,
+   "end": 8.18,
+   "spoken": "chunks"
+  },
+  {
+   "word": "of",
+   "start": 8.18,
+   "end": 8.52,
+   "spoken": "of"
+  },
+  {
+   "word": "meat",
+   "start": 8.52,
+   "end": 8.72,
+   "spoken": "meat"
+  },
+  {
+   "word": "started",
+   "start": 8.72,
+   "end": 9.12,
+   "spoken": "started"
+  },
+  {
+   "word": "falling",
+   "start": 9.12,
+   "end": 9.52,
+   "spoken": "falling"
+  },
+  {
+   "word": "all",
+   "start": 9.52,
+   "end": 9.94,
+   "spoken": "all"
+  },
+  {
+   "word": "around",
+   "start": 9.94,
+   "end": 10.32,
+   "spoken": "around"
+  },
+  {
+   "word": "her.",
+   "start": 10.32,
+   "end": 10.52,
+   "spoken": "her."
+  },
+  {
+   "word": "Some",
+   "start": 10.94,
+   "end": 11.06,
+   "spoken": "Some"
+  },
+  {
+   "word": "pieces",
+   "start": 11.06,
+   "end": 11.42,
+   "spoken": "pieces"
+  },
+  {
+   "word": "were",
+   "start": 11.42,
+   "end": 11.66,
+   "spoken": "were"
+  },
+  {
+   "word": "4",
+   "start": 11.66,
+   "end": 11.9,
+   "spoken": "four"
+  },
+  {
+   "word": "inches",
+   "start": 11.9,
+   "end": 12.2,
+   "spoken": "inches"
+  },
+  {
+   "word": "wide.",
+   "start": 12.2,
+   "end": 12.56,
+   "spoken": "wide."
+  },
+  {
+   "word": "So",
+   "start": 13.108,
+   "end": 13.26,
+   "spoken": "So"
+  },
+  {
+   "word": "two",
+   "start": 13.26,
+   "end": 13.44,
+   "spoken": "two"
+  },
+  {
+   "word": "men",
+   "start": 13.44,
+   "end": 13.7,
+   "spoken": "men"
+  },
+  {
+   "word": "did",
+   "start": 13.7,
+   "end": 13.88,
+   "spoken": "did"
+  },
+  {
+   "word": "the",
+   "start": 13.88,
+   "end": 14.0,
+   "spoken": "the"
+  },
+  {
+   "word": "obvious",
+   "start": 14.0,
+   "end": 14.28,
+   "spoken": "obvious"
+  },
+  {
+   "word": "thing.",
+   "start": 14.28,
+   "end": 14.64,
+   "spoken": "thing."
+  },
+  {
+   "word": "They",
+   "start": 15.56,
+   "end": 15.66,
+   "spoken": "They"
+  },
+  {
+   "word": "tasted",
+   "start": 15.66,
+   "end": 16.0,
+   "spoken": "tasted"
+  },
+  {
+   "word": "it.",
+   "start": 16.0,
+   "end": 16.28,
+   "spoken": "it."
+  },
+  {
+   "word": "Verdict:",
+   "start": 16.78,
+   "end": 17.04,
+   "spoken": "Verdict:"
+  },
+  {
+   "word": "mutton.",
+   "start": 17.04,
+   "end": 17.56,
+   "spoken": "mutton."
+  },
+  {
+   "word": "Or",
+   "start": 18.04,
+   "end": 18.12,
+   "spoken": "Or"
+  },
+  {
+   "word": "maybe",
+   "start": 18.12,
+   "end": 18.28,
+   "spoken": "maybe"
+  },
+  {
+   "word": "venison.",
+   "start": 18.28,
+   "end": 18.7,
+   "spoken": "venison."
+  },
+  {
+   "word": "It",
+   "start": 19.4,
+   "end": 19.45,
+   "spoken": "It"
+  },
+  {
+   "word": "made",
+   "start": 19.44,
+   "end": 19.54,
+   "spoken": "made"
+  },
+  {
+   "word": "The",
+   "start": 19.54,
+   "end": 19.7,
+   "spoken": "The"
+  },
+  {
+   "word": "New",
+   "start": 19.7,
+   "end": 19.8,
+   "spoken": "New"
+  },
+  {
+   "word": "York",
+   "start": 19.8,
+   "end": 20.04,
+   "spoken": "York"
+  },
+  {
+   "word": "Times.",
+   "start": 20.04,
+   "end": 20.32,
+   "spoken": "Times."
+  },
+  {
+   "word": "Scientists",
+   "start": 21.36,
+   "end": 21.41,
+   "spoken": "Scientists"
+  },
+  {
+   "word": "found",
+   "start": 21.4,
+   "end": 21.7,
+   "spoken": "found"
+  },
+  {
+   "word": "lung,",
+   "start": 21.7,
+   "end": 21.94,
+   "spoken": "lung,"
+  },
+  {
+   "word": "muscle",
+   "start": 22.18,
+   "end": 22.4,
+   "spoken": "muscle"
+  },
+  {
+   "word": "and",
+   "start": 22.68,
+   "end": 22.73,
+   "spoken": "and"
+  },
+  {
+   "word": "cartilage.",
+   "start": 22.72,
+   "end": 23.16,
+   "spoken": "cartilage."
+  },
+  {
+   "word": "Wait,",
+   "start": 23.86,
+   "end": 23.91,
+   "spoken": "Wait,"
+  },
+  {
+   "word": "how",
+   "start": 23.9,
+   "end": 24.22,
+   "spoken": "how"
+  },
+  {
+   "word": "does",
+   "start": 24.22,
+   "end": 24.38,
+   "spoken": "does"
+  },
+  {
+   "word": "meat",
+   "start": 24.38,
+   "end": 24.56,
+   "spoken": "meat"
+  },
+  {
+   "word": "fall",
+   "start": 24.56,
+   "end": 24.86,
+   "spoken": "fall"
+  },
+  {
+   "word": "out",
+   "start": 24.86,
+   "end": 25.02,
+   "spoken": "out"
+  },
+  {
+   "word": "of",
+   "start": 25.02,
+   "end": 25.14,
+   "spoken": "of"
+  },
+  {
+   "word": "a",
+   "start": 25.14,
+   "end": 25.19,
+   "spoken": "a"
+  },
+  {
+   "word": "clear",
+   "start": 25.18,
+   "end": 25.32,
+   "spoken": "clear"
+  },
+  {
+   "word": "sky?",
+   "start": 25.32,
+   "end": 25.6,
+   "spoken": "sky?"
+  },
+  {
+   "word": "You",
+   "start": 26.247,
+   "end": 26.3,
+   "spoken": "You"
+  },
+  {
+   "word": "see,",
+   "start": 26.3,
+   "end": 26.46,
+   "spoken": "see,"
+  },
+  {
+   "word": "the",
+   "start": 26.46,
+   "end": 26.62,
+   "spoken": "the"
+  },
+  {
+   "word": "best",
+   "start": 26.62,
+   "end": 26.8,
+   "spoken": "best"
+  },
+  {
+   "word": "guess",
+   "start": 26.8,
+   "end": 27.02,
+   "spoken": "guess"
+  },
+  {
+   "word": "is",
+   "start": 27.02,
+   "end": 27.24,
+   "spoken": "is"
+  },
+  {
+   "word": "vultures.",
+   "start": 27.24,
+   "end": 27.7,
+   "spoken": "vultures."
+  },
+  {
+   "word": "Scared",
+   "start": 28.42,
+   "end": 28.54,
+   "spoken": "Scared"
+  },
+  {
+   "word": "vultures",
+   "start": 28.54,
+   "end": 29.02,
+   "spoken": "vultures"
+  },
+  {
+   "word": "throw",
+   "start": 29.02,
+   "end": 29.26,
+   "spoken": "throw"
+  },
+  {
+   "word": "up,",
+   "start": 29.26,
+   "end": 29.52,
+   "spoken": "up,"
+  },
+  {
+   "word": "to",
+   "start": 29.52,
+   "end": 29.8,
+   "spoken": "to"
+  },
+  {
+   "word": "fly",
+   "start": 29.8,
+   "end": 30.02,
+   "spoken": "fly"
+  },
+  {
+   "word": "away",
+   "start": 30.02,
+   "end": 30.28,
+   "spoken": "away"
+  },
+  {
+   "word": "lighter.",
+   "start": 30.28,
+   "end": 30.64,
+   "spoken": "lighter."
+  },
+  {
+   "word": "And",
+   "start": 31.28,
+   "end": 31.33,
+   "spoken": "And"
+  },
+  {
+   "word": "when",
+   "start": 31.32,
+   "end": 31.44,
+   "spoken": "when"
+  },
+  {
+   "word": "one",
+   "start": 31.44,
+   "end": 31.66,
+   "spoken": "one"
+  },
+  {
+   "word": "does",
+   "start": 31.66,
+   "end": 31.86,
+   "spoken": "does"
+  },
+  {
+   "word": "it...",
+   "start": 31.86,
+   "end": 32.06,
+   "spoken": "it..."
+  },
+  {
+   "word": "the",
+   "start": 32.3,
+   "end": 32.35,
+   "spoken": "the"
+  },
+  {
+   "word": "whole",
+   "start": 32.34,
+   "end": 32.48,
+   "spoken": "whole"
+  },
+  {
+   "word": "flock",
+   "start": 32.48,
+   "end": 32.76,
+   "spoken": "flock"
+  },
+  {
+   "word": "joins",
+   "start": 32.76,
+   "end": 33.2,
+   "spoken": "joins"
+  },
+  {
+   "word": "in.",
+   "start": 33.2,
+   "end": 33.58,
+   "spoken": "in."
+  },
+  {
+   "word": "So",
+   "start": 34.479,
+   "end": 34.62,
+   "spoken": "So"
+  },
+  {
+   "word": "that",
+   "start": 34.62,
+   "end": 34.78,
+   "spoken": "that"
+  },
+  {
+   "word": "clear",
+   "start": 34.78,
+   "end": 34.98,
+   "spoken": "clear"
+  },
+  {
+   "word": "blue",
+   "start": 34.98,
+   "end": 35.24,
+   "spoken": "blue"
+  },
+  {
+   "word": "sky...",
+   "start": 35.24,
+   "end": 35.52,
+   "spoken": "sky..."
+  },
+  {
+   "word": "wasn't",
+   "start": 35.52,
+   "end": 36.22,
+   "spoken": "wasn't"
+  },
+  {
+   "word": "empty.",
+   "start": 36.22,
+   "end": 36.48,
+   "spoken": "empty."
+  },
+  {
+   "word": "Subscribe",
+   "start": 37.3,
+   "end": 37.35,
+   "spoken": "Subscribe"
+  },
+  {
+   "word": "for",
+   "start": 37.34,
+   "end": 37.78,
+   "spoken": "for"
+  },
+  {
+   "word": "more.",
+   "start": 37.78,
+   "end": 38.0,
+   "spoken": "more."
+  }
+ ]
+}
