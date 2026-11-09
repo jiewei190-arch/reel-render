@@ -1,7 +1,8 @@
 # I.Awaken growth playbook (owner decision, Nov 8 2026)
 
 > **Nov 9 2026:** the 3D (Toon 3D) Shorts are now for the **Justin clips** account (owner renamed it). Keep channel
-> names out of the video itself. **Lengths for every new video, all accounts:** YouTube Shorts 30-60 s, Instagram
+> names out of the video itself. **Lengths for every new video:** YouTube Shorts = whatever length the topic needs
+> (no padding to hit a number, no trimming a good story; BEANMEN's 61-71 s renders stay as they are); Instagram
 > Reels 60-70 s (incl. sticksafterdark horror). Years/numbers: spelled out in the TTS script, digits in captions.
 > **Platforms (owner, Nov 9 2026):** Toon 3D and BEANMEN (2D bean men in 3D places, the Remotion "stickmen-engine")
 > are **YouTube only**. Instagram uses **no 3D at all**: fully 2D styles only (e.g. Sticks After Dark).
@@ -127,8 +128,8 @@ Long-form is paused. Every Short must pass this list before it is sent to the ow
 6. **Payoff in the last 3-5 s**, then the closer ("Subscribe to find out." for a cliffhanger / Part 2,
    "Subscribe for more." otherwise). Keep the closer under 1.5 s.
 7. **Loop:** the last line or image leads back into the first (the viewer replays without noticing).
-8. **Length (owner rule, Nov 9 2026): YouTube Shorts 30-60 s; Instagram Reels 60-70 s.** Never under 30 s on YouTube
-   or under 60 s on Instagram: if the voice runs short, add story beats (build-up, escalation), not slower speech.
+8. **Length (owner rule, Nov 9 2026): YouTube Shorts = the length the script needs** (never pad or stretch to hit a number;
+   cut only filler). **Instagram Reels 60-70 s:** if the voice runs short there, add story beats, not slower speech.
 9. **Title = the claim** (<= 60 chars, 1 emoji, no hashtags in the title); description: 1 line + 2-3 hashtags + #shorts.
    Pinned comment: an either/or question people can answer in one word.
 
