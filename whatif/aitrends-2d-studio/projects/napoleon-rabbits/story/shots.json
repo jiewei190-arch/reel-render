@@ -1,0 +1,453 @@
+{
+ "duration": 42.58,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.4,
+   "line": "According to one general, rabbits attacked Napoleon.",
+   "scene": "swarm (frame 1)",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    },
+    {
+     "word": "Napoleon",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.4,
+   "end": 5.25,
+   "line": "Hundreds of them.",
+   "scene": "wide meadow full of rabbits",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "Hundreds",
+     "name": "toon3d:rumble",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.25,
+   "end": 6.4,
+   "line": "And they won.",
+   "scene": "rabbit wears the hat",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "word": "won",
+     "name": "toon3d:fail",
+     "gain": -10
+    },
+    {
+     "word": "won",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.4,
+   "end": 7.95,
+   "line": "It's 1807.",
+   "scene": "insert JULY 1807",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.95,
+   "end": 10.15,
+   "line": "Napoleon just signed a peace treaty.",
+   "scene": "signing at the field desk",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "signed",
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "word": "treaty",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.15,
+   "end": 13.45,
+   "line": "To celebrate, his chief of staff sets up a rabbit hunt.",
+   "scene": "Berthier + cages",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "word": "celebrate",
+     "name": "toon3d:horn",
+     "gain": -16
+    },
+    {
+     "word": "hunt",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.45,
+   "end": 16.65,
+   "line": "Hundreds of rabbits. Some say 3,000.",
+   "scene": "insert counter 3,000",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:coins",
+     "gain": -14
+    },
+    {
+     "word": "say",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.65,
+   "end": 18.6,
+   "line": "The cages open...",
+   "scene": "cage doors drop, beat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "open",
+     "name": "toon3d:creak",
+     "gain": -8
+    },
+    {
+     "word": "open",
+     "offset": 0.35,
+     "name": "toon3d:click",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.6,
+   "end": 21.75,
+   "line": "and the rabbits charge. Straight at Napoleon.",
+   "scene": "the charge",
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "charge",
+     "name": "toon3d:rumble",
+     "gain": -8
+    },
+    {
+     "word": "charge",
+     "name": "toon3d:footsteps",
+     "gain": -10
+    },
+    {
+     "word": "Napoleon",
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "word": "Napoleon",
+     "offset": 0.05,
+     "name": "toon3d:gasp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 21.75,
+   "end": 23.6,
+   "line": "Wait, why would rabbits charge?",
+   "scene": "Berthier ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.6,
+   "end": 27.4,
+   "line": "You see, they were tame farm rabbits. They thought he was bringing dinner.",
+   "scene": "heart-eyed bunny",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "word": "tame",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "dinner",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "dinner",
+     "offset": 0.1,
+     "name": "toon3d:magic",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 27.4,
+   "end": 29.75,
+   "line": "He swats them with his riding crop.",
+   "scene": "crop flailing",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "word": "swats",
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "riding",
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "crop",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 29.75,
+   "end": 31.6,
+   "line": "The coachmen crack their whips.",
+   "scene": "whip cracks in the air",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "crack",
+     "name": "toon3d:zap",
+     "gain": -10
+    },
+    {
+     "word": "whips",
+     "name": "toon3d:click",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.6,
+   "end": 32.75,
+   "line": "More rabbits.",
+   "scene": "wide: more rabbits",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 32.75,
+   "end": 37.45,
+   "line": "Napoleon runs for his carriage. Reportedly, some jump in after him.",
+   "scene": "run to the carriage",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -10
+    },
+    {
+     "word": "carriage",
+     "name": "toon3d:door",
+     "gain": -10
+    },
+    {
+     "word": "some",
+     "offset": 0.5,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "after",
+     "offset": 0.3,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 37.45,
+   "end": 39.45,
+   "line": "The man who conquered Europe...",
+   "scene": "peeking from the carriage",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 39.45,
+   "end": 40.95,
+   "line": "defeated by bunnies.",
+   "scene": "insert FINAL SCORE",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "bunnies",
+     "name": "toon3d:fail",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 40.95,
+   "end": 42.58,
+   "line": "Subscribe for more.",
+   "scene": "hat bunny (loop to frame 1)",
+   "in": {
+    "type": "iris",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}
