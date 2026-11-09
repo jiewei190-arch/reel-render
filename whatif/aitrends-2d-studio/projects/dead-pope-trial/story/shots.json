@@ -1,0 +1,394 @@
+{
+ "duration": 35.04,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.95,
+   "line": "A pope once put a dead pope on trial.",
+   "scene": "trial wide",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 0.12,
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "word": "dead",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.95,
+   "end": 4.45,
+   "line": "The dead pope lost.",
+   "scene": "dead pope close",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "word": "lost",
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "word": "lost",
+     "offset": 0.05,
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.45,
+   "end": 5.95,
+   "line": "Rome, 897.",
+   "scene": "insert ROME 897",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:bell",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.95,
+   "end": 8.4,
+   "line": "Pope Stephen the Sixth has his predecessor,",
+   "scene": "Stephen VI",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "predecessor",
+     "name": "toon3d:click",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.4,
+   "end": 9.95,
+   "line": "Formosus, dug up.",
+   "scene": "tomb lid",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "word": "dug",
+     "name": "toon3d:slide",
+     "gain": -8
+    },
+    {
+     "word": "up",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.95,
+   "end": 11.85,
+   "line": "He'd been dead for nine months.",
+   "scene": "insert counter 9 months",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "nine",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 11.85,
+   "end": 15.4,
+   "line": "They dress him in his papal robes, and sit him on a throne.",
+   "scene": "dressing on throne",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "dress",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "throne",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "throne",
+     "offset": 0.05,
+     "name": "toon3d:chime",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.4,
+   "end": 18.45,
+   "line": "Wait. How does a dead man defend himself?",
+   "scene": "cardinal ???",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:squeak",
+     "gain": -10
+    },
+    {
+     "word": "How",
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "How",
+     "offset": 0.4,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.45,
+   "end": 22.5,
+   "line": "You see, a deacon stands next to him and answers for him.",
+   "scene": "deacon puppets",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "word": "deacon",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "answers",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 22.5,
+   "end": 23.6,
+   "line": "Badly.",
+   "scene": "deacon shrug",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:fail",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.6,
+   "end": 24.95,
+   "line": "Verdict: guilty.",
+   "scene": "insert GUILTY",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "guilty",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "word": "guilty",
+     "offset": 0.05,
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.95,
+   "end": 27.75,
+   "line": "Everything he did as pope? Cancelled.",
+   "scene": "scrolls tossed",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "Cancelled",
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "Cancelled",
+     "offset": 0.02,
+     "name": "toon3d:crash",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.75,
+   "end": 31.1,
+   "line": "Months later, a new pope cancelled the verdict...",
+   "scene": "new pope rips verdict",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:clock",
+     "gain": -14
+    },
+    {
+     "word": "cancelled",
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "cancelled",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.1,
+   "end": 33.4,
+   "line": "and banned putting dead people on trial.",
+   "scene": "NO TRIALS FOR THE DEAD sign",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "word": "banned",
+     "name": "toon3d:thud",
+     "gain": -6
+    },
+    {
+     "word": "banned",
+     "offset": 0.3,
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 33.4,
+   "end": 35.04,
+   "line": "Subscribe for more.",
+   "scene": "empty throne (loop to frame 1)",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:chime",
+     "gain": -16
+    }
+   ]
+  }
+ ]
+}
