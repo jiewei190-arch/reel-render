@@ -1,0 +1,605 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "Every",
+   "start": 0.45,
+   "end": 1.026
+  },
+  {
+   "word": "night,",
+   "start": 1.026,
+   "end": 1.218
+  },
+  {
+   "word": "I",
+   "start": 1.218,
+   "end": 1.41
+  },
+  {
+   "word": "brush",
+   "start": 1.41,
+   "end": 1.602
+  },
+  {
+   "word": "my",
+   "start": 1.602,
+   "end": 1.794
+  },
+  {
+   "word": "teeth",
+   "start": 1.794,
+   "end": 1.986
+  },
+  {
+   "word": "in",
+   "start": 1.986,
+   "end": 2.178
+  },
+  {
+   "word": "the",
+   "start": 2.178,
+   "end": 2.37
+  },
+  {
+   "word": "same",
+   "start": 2.37,
+   "end": 2.754
+  },
+  {
+   "word": "mirror.",
+   "start": 2.754,
+   "end": 3.138
+  },
+  {
+   "word": "Same",
+   "start": 3.888,
+   "end": 4.444
+  },
+  {
+   "word": "sink.",
+   "start": 4.444,
+   "end": 4.722
+  },
+  {
+   "word": "Same",
+   "start": 5.272,
+   "end": 5.738
+  },
+  {
+   "word": "yellow",
+   "start": 5.738,
+   "end": 6.203
+  },
+  {
+   "word": "bulb.",
+   "start": 6.203,
+   "end": 6.436
+  },
+  {
+   "word": "Same",
+   "start": 6.986,
+   "end": 7.388
+  },
+  {
+   "word": "tired",
+   "start": 7.388,
+   "end": 7.79
+  },
+  {
+   "word": "face.",
+   "start": 7.79,
+   "end": 8.192
+  },
+  {
+   "word": "Tonight,",
+   "start": 8.942,
+   "end": 9.305
+  },
+  {
+   "word": "my",
+   "start": 9.305,
+   "end": 9.486
+  },
+  {
+   "word": "reflection",
+   "start": 9.486,
+   "end": 10.031
+  },
+  {
+   "word": "blinked",
+   "start": 10.031,
+   "end": 10.393
+  },
+  {
+   "word": "a",
+   "start": 10.393,
+   "end": 10.575
+  },
+  {
+   "word": "little",
+   "start": 10.575,
+   "end": 10.937
+  },
+  {
+   "word": "late.",
+   "start": 10.937,
+   "end": 11.3
+  },
+  {
+   "word": "Just",
+   "start": 12.05,
+   "end": 12.344
+  },
+  {
+   "word": "once.",
+   "start": 12.344,
+   "end": 12.931
+  },
+  {
+   "word": "I",
+   "start": 13.681,
+   "end": 13.905
+  },
+  {
+   "word": "told",
+   "start": 13.905,
+   "end": 14.13
+  },
+  {
+   "word": "myself",
+   "start": 14.13,
+   "end": 14.579
+  },
+  {
+   "word": "I",
+   "start": 14.579,
+   "end": 14.804
+  },
+  {
+   "word": "was",
+   "start": 14.804,
+   "end": 15.029
+  },
+  {
+   "word": "tired.",
+   "start": 15.029,
+   "end": 15.478
+  },
+  {
+   "word": "I'd",
+   "start": 16.028,
+   "end": 16.215
+  },
+  {
+   "word": "been",
+   "start": 16.215,
+   "end": 16.402
+  },
+  {
+   "word": "up",
+   "start": 16.402,
+   "end": 16.589
+  },
+  {
+   "word": "since",
+   "start": 16.589,
+   "end": 16.963
+  },
+  {
+   "word": "five.",
+   "start": 16.963,
+   "end": 17.338
+  },
+  {
+   "word": "I",
+   "start": 18.088,
+   "end": 18.336
+  },
+  {
+   "word": "rinsed.",
+   "start": 18.336,
+   "end": 18.834
+  },
+  {
+   "word": "I",
+   "start": 19.384,
+   "end": 19.766
+  },
+  {
+   "word": "spat.",
+   "start": 19.766,
+   "end": 20.148
+  },
+  {
+   "word": "I",
+   "start": 20.698,
+   "end": 20.906
+  },
+  {
+   "word": "looked",
+   "start": 20.906,
+   "end": 21.322
+  },
+  {
+   "word": "up.",
+   "start": 21.322,
+   "end": 21.53
+  },
+  {
+   "word": "It",
+   "start": 22.28,
+   "end": 22.438
+  },
+  {
+   "word": "was",
+   "start": 22.438,
+   "end": 22.595
+  },
+  {
+   "word": "already",
+   "start": 22.595,
+   "end": 23.067
+  },
+  {
+   "word": "looking",
+   "start": 23.067,
+   "end": 23.381
+  },
+  {
+   "word": "at",
+   "start": 23.381,
+   "end": 23.539
+  },
+  {
+   "word": "me.",
+   "start": 23.539,
+   "end": 23.696
+  },
+  {
+   "word": "So",
+   "start": 24.996,
+   "end": 25.25
+  },
+  {
+   "word": "I",
+   "start": 25.25,
+   "end": 25.504
+  },
+  {
+   "word": "tried",
+   "start": 25.504,
+   "end": 25.758
+  },
+  {
+   "word": "a",
+   "start": 25.758,
+   "end": 26.013
+  },
+  {
+   "word": "test.",
+   "start": 26.013,
+   "end": 26.267
+  },
+  {
+   "word": "I",
+   "start": 26.817,
+   "end": 27.056
+  },
+  {
+   "word": "raised",
+   "start": 27.056,
+   "end": 27.535
+  },
+  {
+   "word": "my",
+   "start": 27.535,
+   "end": 27.775
+  },
+  {
+   "word": "left",
+   "start": 27.775,
+   "end": 28.014
+  },
+  {
+   "word": "hand.",
+   "start": 28.014,
+   "end": 28.254
+  },
+  {
+   "word": "It",
+   "start": 29.004,
+   "end": 29.235
+  },
+  {
+   "word": "raised",
+   "start": 29.235,
+   "end": 29.696
+  },
+  {
+   "word": "its",
+   "start": 29.696,
+   "end": 29.927
+  },
+  {
+   "word": "right.",
+   "start": 29.927,
+   "end": 30.158
+  },
+  {
+   "word": "Like",
+   "start": 30.708,
+   "end": 31.17
+  },
+  {
+   "word": "it",
+   "start": 31.17,
+   "end": 31.401
+  },
+  {
+   "word": "should.",
+   "start": 31.401,
+   "end": 31.632
+  },
+  {
+   "word": "I",
+   "start": 32.382,
+   "end": 32.625
+  },
+  {
+   "word": "tilted",
+   "start": 32.625,
+   "end": 33.111
+  },
+  {
+   "word": "my",
+   "start": 33.111,
+   "end": 33.353
+  },
+  {
+   "word": "head.",
+   "start": 33.353,
+   "end": 33.596
+  },
+  {
+   "word": "It",
+   "start": 34.146,
+   "end": 34.431
+  },
+  {
+   "word": "tilted",
+   "start": 34.431,
+   "end": 35.002
+  },
+  {
+   "word": "too.",
+   "start": 35.002,
+   "end": 35.288
+  },
+  {
+   "word": "I",
+   "start": 36.038,
+   "end": 36.227
+  },
+  {
+   "word": "laughed",
+   "start": 36.227,
+   "end": 36.604
+  },
+  {
+   "word": "at",
+   "start": 36.604,
+   "end": 36.793
+  },
+  {
+   "word": "myself,",
+   "start": 36.793,
+   "end": 37.171
+  },
+  {
+   "word": "and",
+   "start": 37.171,
+   "end": 37.36
+  },
+  {
+   "word": "it",
+   "start": 37.36,
+   "end": 37.549
+  },
+  {
+   "word": "laughed",
+   "start": 37.549,
+   "end": 37.926
+  },
+  {
+   "word": "with",
+   "start": 37.926,
+   "end": 38.115
+  },
+  {
+   "word": "me.",
+   "start": 38.115,
+   "end": 38.304
+  },
+  {
+   "word": "Right",
+   "start": 39.054,
+   "end": 39.304
+  },
+  {
+   "word": "on",
+   "start": 39.304,
+   "end": 39.554
+  },
+  {
+   "word": "time.",
+   "start": 39.554,
+   "end": 40.054
+  },
+  {
+   "word": "I",
+   "start": 41.354,
+   "end": 41.554
+  },
+  {
+   "word": "turned",
+   "start": 41.554,
+   "end": 41.955
+  },
+  {
+   "word": "off",
+   "start": 41.955,
+   "end": 42.155
+  },
+  {
+   "word": "the",
+   "start": 42.155,
+   "end": 42.356
+  },
+  {
+   "word": "tap.",
+   "start": 42.356,
+   "end": 42.556
+  },
+  {
+   "word": "The",
+   "start": 43.106,
+   "end": 43.422
+  },
+  {
+   "word": "quiet",
+   "start": 43.422,
+   "end": 43.738
+  },
+  {
+   "word": "felt",
+   "start": 43.738,
+   "end": 44.055
+  },
+  {
+   "word": "wrong.",
+   "start": 44.055,
+   "end": 44.371
+  },
+  {
+   "word": "I",
+   "start": 45.121,
+   "end": 45.303
+  },
+  {
+   "word": "leaned",
+   "start": 45.303,
+   "end": 45.667
+  },
+  {
+   "word": "in",
+   "start": 45.667,
+   "end": 45.849
+  },
+  {
+   "word": "close.",
+   "start": 45.849,
+   "end": 46.213
+  },
+  {
+   "word": "I",
+   "start": 46.763,
+   "end": 46.941
+  },
+  {
+   "word": "smiled,",
+   "start": 46.941,
+   "end": 47.299
+  },
+  {
+   "word": "to",
+   "start": 47.299,
+   "end": 47.477
+  },
+  {
+   "word": "prove",
+   "start": 47.477,
+   "end": 47.834
+  },
+  {
+   "word": "I",
+   "start": 47.834,
+   "end": 48.013
+  },
+  {
+   "word": "was",
+   "start": 48.013,
+   "end": 48.192
+  },
+  {
+   "word": "fine.",
+   "start": 48.192,
+   "end": 48.549
+  },
+  {
+   "word": "My",
+   "start": 49.299,
+   "end": 49.532
+  },
+  {
+   "word": "reflection",
+   "start": 49.532,
+   "end": 50.229
+  },
+  {
+   "word": "smiled",
+   "start": 50.229,
+   "end": 50.695
+  },
+  {
+   "word": "too.",
+   "start": 50.695,
+   "end": 50.927
+  },
+  {
+   "word": "Then",
+   "start": 52.227,
+   "end": 52.453
+  },
+  {
+   "word": "I",
+   "start": 52.453,
+   "end": 52.679
+  },
+  {
+   "word": "stopped",
+   "start": 52.679,
+   "end": 53.13
+  },
+  {
+   "word": "smiling.",
+   "start": 53.13,
+   "end": 53.581
+  },
+  {
+   "word": "It",
+   "start": 56.181,
+   "end": 56.58
+  },
+  {
+   "word": "didn't.",
+   "start": 56.58,
+   "end": 56.979
+  },
+  {
+   "word": "Follow",
+   "start": 58.579,
+   "end": 58.998
+  },
+  {
+   "word": "for",
+   "start": 58.998,
+   "end": 59.207
+  },
+  {
+   "word": "more.",
+   "start": 59.207,
+   "end": 59.626
+  }
+ ]
+}

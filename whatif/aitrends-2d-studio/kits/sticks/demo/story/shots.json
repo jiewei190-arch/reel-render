@@ -1,0 +1,78 @@
+{
+ "title": "demo",
+ "duration": 12.0,
+ "shots": [
+  {
+   "id": "d01_poses",
+   "start": 0.0,
+   "end": 1.0,
+   "line": "d01_poses"
+  },
+  {
+   "id": "d02_poses2",
+   "start": 1.0,
+   "end": 2.0,
+   "line": "d02_poses2"
+  },
+  {
+   "id": "d03_faces",
+   "start": 2.0,
+   "end": 3.0,
+   "line": "d03_faces"
+  },
+  {
+   "id": "d04_bathroom",
+   "start": 3.0,
+   "end": 4.0,
+   "line": "d04_bathroom"
+  },
+  {
+   "id": "d05_bedroom_eyes",
+   "start": 4.0,
+   "end": 5.0,
+   "line": "d05_bedroom_eyes"
+  },
+  {
+   "id": "d06_hall_tall",
+   "start": 5.0,
+   "end": 6.0,
+   "line": "d06_hall_tall"
+  },
+  {
+   "id": "d07_kitchen_hand",
+   "start": 6.0,
+   "end": 7.0,
+   "line": "d07_kitchen_hand"
+  },
+  {
+   "id": "d08_living_peek",
+   "start": 7.0,
+   "end": 8.0,
+   "line": "d08_living_peek"
+  },
+  {
+   "id": "d09_stairs_dark",
+   "start": 8.0,
+   "end": 9.0,
+   "line": "d09_stairs_dark"
+  },
+  {
+   "id": "d10_outside",
+   "start": 9.0,
+   "end": 10.0,
+   "line": "d10_outside"
+  },
+  {
+   "id": "d11_captions",
+   "start": 10.0,
+   "end": 11.0,
+   "line": "d11_captions"
+  },
+  {
+   "id": "d12_endcard",
+   "start": 11.0,
+   "end": 12.0,
+   "line": "d12_endcard"
+  }
+ ]
+}
