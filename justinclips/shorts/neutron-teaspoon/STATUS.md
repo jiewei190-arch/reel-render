@@ -10,7 +10,7 @@ Project ready for Creator (PC GPU). Branch `justinclips/batch2-d`. Commit: the o
 ## Commands (run from `whatif/aitrends-2d-studio`)
 ```
 # 1. full render (~629 frames; Creator adds --gl gpu)
-node render.mjs --project projects/neutron-teaspoon --gl gpu
+node render.mjs --project projects/neutron-teaspoon --gl gpu --out projects/neutron-teaspoon/build/video_silent.mp4
 #    -> projects/neutron-teaspoon/build/video_silent.mp4 (check: 629 frames)
 # 2. mix (voice + toon3d:curious music + 29 sfx cues, -14 LUFS, TP -1.5) to an explicit path
 python audio/mix.py --project projects/neutron-teaspoon --video projects/neutron-teaspoon/build/video_silent.mp4 --out projects/neutron-teaspoon/out/neutron-teaspoon_mixed.mp4
