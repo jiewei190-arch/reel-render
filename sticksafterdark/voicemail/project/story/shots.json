@@ -1,0 +1,32 @@
+{
+ "title": "Sticks After Dark 5 Voicemail",
+ "duration": 22.92,
+ "music": [{ "start": 0, "end": 20.1, "mood": "dark", "intensity": 0.25 }],
+ "shots": [
+  { "id": "s01_bed_buzz",   "start": 0.0,   "end": 2.0,   "line": "I woke up to a voicemail",
+    "amb": { "name": "roomtone", "gain": -22 }, "sfx": [{ "at": 0.0, "name": "phonebuzz", "gain": -12 }] },
+  { "id": "s02_vm_screen",  "start": 2.0,   "end": 3.6,   "line": "from my own number.",
+    "amb": { "name": "roomtone", "gain": -22 }, "sfx": [{ "at": 1.15, "name": "tick", "gain": -16 }] },
+  { "id": "s03_head_pillow","start": 3.6,   "end": 5.45,  "line": "Three twelve a.m.",
+    "amb": { "name": "roomtone", "gain": -22 } },
+  { "id": "s04_breath_wave","start": 5.45,  "end": 7.75,  "line": "At first, just breathing.",
+    "amb": { "name": "roomtone", "gain": -22 }, "sfx": [{ "at": 0.05, "name": "sfx/breath.wav", "gain": -10 }] },
+  { "id": "s05_phone_ear",  "start": 7.75,  "end": 9.95,  "line": "Then my own voice, whispering.",
+    "amb": { "name": "roomtone", "gain": -22 } },
+  { "id": "s06_speaker",    "start": 9.95,  "end": 11.4,  "line": "[WHISPER] Don't get out of bed.",
+    "amb": { "name": "roomtone", "gain": -24 } },
+  { "id": "s07_eyes_down",  "start": 11.4,  "end": 12.55, "line": "[WHISPER] It's under there.",
+    "amb": { "name": "roomtone", "gain": -24 } },
+  { "id": "s08_tilt_gap",   "start": 12.55, "end": 14.05, "line": "(beat) tilt down to the gap under the bed",
+    "amb": { "name": "roomtone", "gain": -22 } },
+  { "id": "s09_check_time", "start": 14.05, "end": 15.6,  "line": "I checked the time.",
+    "amb": { "name": "roomtone", "gain": -22 } },
+  { "id": "s10_held",       "start": 15.6,  "end": 17.25, "line": "(held silent beat)",
+    "amb": { "name": "roomtone", "gain": -22 } },
+  { "id": "s11_clock",      "start": 17.25, "end": 18.85, "line": "It was three eleven.", "jitter": [17.92],
+    "amb": { "name": "roomtone", "gain": -22 }, "sfx": [{ "at": 0.6, "name": "stinger", "gain": -4 }] },
+  { "id": "s12_gap_eyes",   "start": 18.85, "end": 20.1,  "line": "(the gap under the bed: two eyes open)",
+    "amb": { "name": "roomtone", "gain": -26 } },
+  { "id": "s13_end",        "start": 20.1,  "end": 22.92, "line": "Follow for more.", "captions": false }
+ ]
+}
