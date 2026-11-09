@@ -10,7 +10,20 @@
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
- "music": { "enabled": false },
- "sfx": { "enabled": true, "gainDb": -6 },
- "loudness": -14
+ "music": {
+  "enabled": true,
+  "gainDb": -24,
+  "seed": 3
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "stickCaptions": {
+  "punch": [
+   "late.",
+   "didn't."
+  ]
+ }
 }

@@ -34,8 +34,8 @@ export function flicker(o = {}) {
   let v = 1 - depth * (0.5 + 0.5 * noise(t * 2.3 * rate, seed));
   const r = rng(seed * 977 + Math.floor(t * 8 * rate))();               // 8 chances per second
   if (r < 0.06 * dips) v *= 0.25 + 0.5 * rng(seed + Math.floor(t * 24))();
-  if (dies != null && t > dies - 0.6) {                                   // stutter before it dies
-    const k = prog(t, dies - 0.6, dies), f = Math.floor(t * 24);
+  if (dies != null && t > dies - 0.35) {                                  // stutter before it dies
+    const k = prog(t, dies - 0.35, dies), f = Math.floor(t * 24);
     v *= (f % 3 === 0 || rng(seed + f)() < k) ? 0.05 : 1;
   }
   return clamp(v);
@@ -166,8 +166,8 @@ export function face(g, cx, cy, r, f = {}, o = {}) {
   drawMouth(g, cx, cy, r, typeof mouth === 'string' ? MOUTHS[mouth] : mouth, color, lw, seed);
 }
 function drawMouth(g, cx, cy, r, m, color, lw, seed) {
-  if (!m) return; const my = cy + r * 0.42, hw = (m.w * r) / 2, c = m.c * r;
-  const pts = []; for (let i = 0; i <= 16; i++) { const u = i / 16 * 2 - 1; pts.push([cx + u * hw, my + c * 0.5 * (1 - u * u) * 1.6 - c * 0.35 * u * u * (m.w > 1.6 ? (m.w - 1.2) : 0.4)]); }
+  if (!m) return; const wide = clamp((m.w - 1.2) / 0.8), my = cy + r * (0.42 - 0.3 * wide), hw = (m.w * r) / 2, c = m.c * r;
+  const pts = []; for (let i = 0; i <= 16; i++) { const u = i / 16 * 2 - 1; pts.push([cx + u * hw, my + c * (0.55 + 0.15 * wide) * (1 - u * u) - c * 0.14 * u * u - c * 0.5 * Math.max(0, m.w - 1.2) * u ** 4]); }
   if (m.o > 0.01) { g.save(); g.fillStyle = color; g.beginPath(); g.ellipse(cx, my, Math.max(hw, r * 0.08), m.o * r * 0.6, 0, 0, Math.PI * 2); g.fill(); g.restore(); if (m.w < 0.4) return; }
   if (hw <= r * 0.92) { chalk(g, pts, { w: lw, color, wob: 0.5, double: false, seed: seed + 21, step: 18 }); return; }
   // the part of the mouth ON the head is dark ink; the part that runs past the head is drawn in chalk (wrong, too wide)
@@ -418,11 +418,11 @@ export function stickShot(id, draw, o = {}) {
     draw(g, t, info) {
       K.now = info.globalT; K.frame = Math.round(info.globalT * E.fps);
       g.fillStyle = o.bg || INK.bg; g.fillRect(-60, -60, E.W + 120, E.H + 120);
-      const j = jitterAt(info.jitter || o.jitter || [], o.jitterAmp || 22);
+      const j = jitterAt(info.jitter || info.shot?.jitter || o.jitter || [], o.jitterAmp || 22);
       g.save(); if (j) { g.translate(E.W / 2 + j[0], E.H / 2 + j[1]); g.rotate(j[2]); g.translate(-E.W / 2, -E.H / 2); }
       draw(g, t, info); g.restore();
       if (o.fx !== false) { vignette(g, o.vignette ?? 0.78); specks(g); }
-      if (o.captions !== false && info.captions !== false) captions(g, info.globalT);
+      if (o.captions !== false && info.captions !== false && info.shot?.captions !== false) captions(g, info.globalT);
       if (new URLSearchParams(location.search).has('debug')) safeZones(g);
     },
   });
