@@ -1,7 +1,7 @@
 STATE: render-on-pc
 
 # Justin clips Short #10: dead-pope-trial ("A Pope Put a Dead Pope on Trial ⚖️")
-Branch `justinclips/batch2-b`. Project: `whatif/aitrends-2d-studio/projects/dead-pope-trial` (Toon 3D kit + BEANMEN FX, 15 shots).
+Branch `justinclips/batch2-b`, commit fdf1edb (project + this folder). Project: `whatif/aitrends-2d-studio/projects/dead-pope-trial` (Toon 3D kit + BEANMEN FX, 15 shots).
 
 ## Full render (Creator, from `whatif/aitrends-2d-studio`)
 ```
