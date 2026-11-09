@@ -1,0 +1,250 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "Every",
+   "start": 0.45,
+   "end": 1.026
+  },
+  {
+   "word": "night,",
+   "start": 1.026,
+   "end": 1.218
+  },
+  {
+   "word": "I",
+   "start": 1.218,
+   "end": 1.41
+  },
+  {
+   "word": "brush",
+   "start": 1.41,
+   "end": 1.602
+  },
+  {
+   "word": "my",
+   "start": 1.602,
+   "end": 1.794
+  },
+  {
+   "word": "teeth",
+   "start": 1.794,
+   "end": 1.986
+  },
+  {
+   "word": "in",
+   "start": 1.986,
+   "end": 2.178
+  },
+  {
+   "word": "the",
+   "start": 2.178,
+   "end": 2.37
+  },
+  {
+   "word": "same",
+   "start": 2.37,
+   "end": 2.754
+  },
+  {
+   "word": "mirror.",
+   "start": 2.754,
+   "end": 3.138
+  },
+  {
+   "word": "Tonight,",
+   "start": 3.888,
+   "end": 4.25
+  },
+  {
+   "word": "my",
+   "start": 4.25,
+   "end": 4.432
+  },
+  {
+   "word": "reflection",
+   "start": 4.432,
+   "end": 4.976
+  },
+  {
+   "word": "blinked",
+   "start": 4.976,
+   "end": 5.338
+  },
+  {
+   "word": "a",
+   "start": 5.338,
+   "end": 5.52
+  },
+  {
+   "word": "little",
+   "start": 5.52,
+   "end": 5.882
+  },
+  {
+   "word": "late.",
+   "start": 5.882,
+   "end": 6.245
+  },
+  {
+   "word": "Just",
+   "start": 6.995,
+   "end": 7.289
+  },
+  {
+   "word": "once.",
+   "start": 7.289,
+   "end": 7.876
+  },
+  {
+   "word": "I",
+   "start": 8.626,
+   "end": 8.85
+  },
+  {
+   "word": "told",
+   "start": 8.85,
+   "end": 9.075
+  },
+  {
+   "word": "myself",
+   "start": 9.075,
+   "end": 9.525
+  },
+  {
+   "word": "I",
+   "start": 9.525,
+   "end": 9.749
+  },
+  {
+   "word": "was",
+   "start": 9.749,
+   "end": 9.974
+  },
+  {
+   "word": "tired.",
+   "start": 9.974,
+   "end": 10.423
+  },
+  {
+   "word": "I",
+   "start": 11.173,
+   "end": 11.355
+  },
+  {
+   "word": "leaned",
+   "start": 11.355,
+   "end": 11.719
+  },
+  {
+   "word": "in",
+   "start": 11.719,
+   "end": 11.901
+  },
+  {
+   "word": "close.",
+   "start": 11.901,
+   "end": 12.265
+  },
+  {
+   "word": "I",
+   "start": 12.815,
+   "end": 12.994
+  },
+  {
+   "word": "smiled,",
+   "start": 12.994,
+   "end": 13.351
+  },
+  {
+   "word": "to",
+   "start": 13.351,
+   "end": 13.53
+  },
+  {
+   "word": "prove",
+   "start": 13.53,
+   "end": 13.887
+  },
+  {
+   "word": "I",
+   "start": 13.887,
+   "end": 14.066
+  },
+  {
+   "word": "was",
+   "start": 14.066,
+   "end": 14.244
+  },
+  {
+   "word": "fine.",
+   "start": 14.244,
+   "end": 14.602
+  },
+  {
+   "word": "My",
+   "start": 15.352,
+   "end": 15.584
+  },
+  {
+   "word": "reflection",
+   "start": 15.584,
+   "end": 16.282
+  },
+  {
+   "word": "smiled",
+   "start": 16.282,
+   "end": 16.747
+  },
+  {
+   "word": "too.",
+   "start": 16.747,
+   "end": 16.98
+  },
+  {
+   "word": "Then",
+   "start": 18.28,
+   "end": 18.505
+  },
+  {
+   "word": "I",
+   "start": 18.505,
+   "end": 18.731
+  },
+  {
+   "word": "stopped",
+   "start": 18.731,
+   "end": 19.182
+  },
+  {
+   "word": "smiling.",
+   "start": 19.182,
+   "end": 19.634
+  },
+  {
+   "word": "It",
+   "start": 22.034,
+   "end": 22.433
+  },
+  {
+   "word": "didn't.",
+   "start": 22.433,
+   "end": 22.832
+  },
+  {
+   "word": "Follow",
+   "start": 24.432,
+   "end": 24.85
+  },
+  {
+   "word": "for",
+   "start": 24.85,
+   "end": 25.06
+  },
+  {
+   "word": "more.",
+   "start": 25.06,
+   "end": 25.478
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "source": "demo",
+ "words": [
+  {
+   "word": "Then",
+   "start": 10.05,
+   "end": 10.2
+  },
+  {
+   "word": "I",
+   "start": 10.2,
+   "end": 10.3
+  },
+  {
+   "word": "stopped",
+   "start": 10.3,
+   "end": 10.6
+  },
+  {
+   "word": "smiling.",
+   "start": 10.6,
+   "end": 10.95
+  }
+ ]
+}
