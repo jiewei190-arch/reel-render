@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #10: dead-pope-trial ("A Pope Put a Dead Pope on Trial ⚖️")
 Branch `justinclips/batch2-b`, commit fdf1edb (project + this folder). Project: `whatif/aitrends-2d-studio/projects/dead-pope-trial` (Toon 3D kit + BEANMEN FX, 15 shots).
@@ -42,3 +42,9 @@ Then `sha256sum video.mp4 > video.sha256` and set `STATE: ready`.
 - Captions 1-3 words at 66 % height: clear of the bottom title area and the right-hand buttons on every checked frame.
 - Tone guard: no corpse, bones, decay or injury. The dead pope is a robed bean with closed eyes; the tomb stays closed on screen.
 - Nothing was posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **841 frames, 35.04 s**, 23.5 MB; audio 48 kHz AAC 192k, 35.04 s.
+- Loudness measured on the final file: **-14.5 LUFS, true peak -1.34 dBTP**.
+- Render 56 s. Render, mix and mux run exactly as listed above (full silent video, `-c:v copy`, all frames kept).
+- Contact sheet checked (inserts, captions, sign, empty-throne loop ending OK). Nothing posted, uploaded or scheduled.
