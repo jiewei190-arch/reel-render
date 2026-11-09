@@ -1,0 +1,42 @@
+{
+ "title": "This Town's Mayor Was a Cat",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.27,
+ "captions": true,
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -17
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.66,
+  "gold": [
+   "cat",
+   "20",
+   "humans",
+   "900",
+   "1998",
+   "stubbs",
+   "won",
+   "margarita",
+   "2014",
+   "senate",
+   "lost",
+   "honorary",
+   "2017"
+  ]
+ }
+}

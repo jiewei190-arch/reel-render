@@ -1,0 +1,353 @@
+{
+ "duration": 40.708,
+ "shots": [
+  {
+   "id": "w01",
+   "start": 0,
+   "end": 3.25,
+   "line": "A bear served in the Polish army in World War II.",
+   "scene": "parade: bear carries crate between soldiers",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    },
+    {
+     "word": "army",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "ii",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "w02",
+   "start": 3.25,
+   "end": 5.75,
+   "line": "He had a rank. And a serial number.",
+   "scene": "insert document SERVICE RECORD",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -11
+    },
+    {
+     "word": "serial",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "w03",
+   "start": 5.75,
+   "end": 10.2,
+   "line": "In 1942, Polish soldiers in Iran adopted a bear cub.",
+   "scene": "soldiers + cub, hearts",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "cub",
+     "name": "toon3d:pop",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "w04",
+   "start": 10.2,
+   "end": 11.8,
+   "line": "They named him Wojtek.",
+   "scene": "close cub waves",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "wojtek",
+     "name": "toon3d:chime",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "w05",
+   "start": 11.8,
+   "end": 14.0,
+   "line": "His favourite drink? Beer.",
+   "scene": "bear sits with a mug",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "beer",
+     "name": "toon3d:pop",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "w06",
+   "start": 14.0,
+   "end": 16.6,
+   "line": "His hobby? Wrestling the soldiers.",
+   "scene": "playful wrestle, stars",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "wrestling",
+     "name": "toon3d:boing",
+     "gain": -9
+    },
+    {
+     "word": "wrestling",
+     "offset": 0.25,
+     "name": "toon3d:laugh",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "w07",
+   "start": 16.6,
+   "end": 19.8,
+   "line": "Then the British ship to Italy said: no pets allowed.",
+   "scene": "dock, NO PETS sign, officer",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:horn",
+     "gain": -14
+    },
+    {
+     "word": "no",
+     "name": "toon3d:buzz",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "w08",
+   "start": 19.8,
+   "end": 22.3,
+   "line": "Wait, how do you get a bear on a troop ship?",
+   "scene": "soldier ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "w09",
+   "start": 22.3,
+   "end": 23.7,
+   "line": "You see, he wasn't a pet.",
+   "scene": "bear deadpan",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": []
+  },
+  {
+   "id": "w10",
+   "start": 23.7,
+   "end": 25.6,
+   "line": "He was a private.",
+   "scene": "cap + salute, officer !",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "private",
+     "name": "toon3d:success",
+     "gain": -8
+    },
+    {
+     "word": "private",
+     "offset": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "w11",
+   "start": 25.6,
+   "end": 28.8,
+   "line": "In 1944, at Monte Cassino,",
+   "scene": "insert map route",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "word": "cassino",
+     "name": "toon3d:impact",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "w12",
+   "start": 28.8,
+   "end": 32.2,
+   "line": "he is reported to have carried crates of artillery shells.",
+   "scene": "bear carries crate past soldiers (dusk)",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "word": "crates",
+     "name": "toon3d:thud",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "w13",
+   "start": 32.2,
+   "end": 35.3,
+   "line": "So his company made its badge a bear carrying a shell.",
+   "scene": "badge emblem card",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "badge",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "w14",
+   "start": 35.3,
+   "end": 39.05,
+   "line": "He was promoted to corporal, and retired to Edinburgh Zoo.",
+   "scene": "zoo: salute then wave",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "corporal",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "edinburgh",
+     "name": "toon3d:chime",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "w15",
+   "start": 39.05,
+   "end": 40.708,
+   "line": "Subscribe for more.",
+   "scene": "parade again (= frame 1, loop)",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
