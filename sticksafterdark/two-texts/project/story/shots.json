@@ -1,0 +1,534 @@
+{
+ "title": "two-texts",
+ "duration": 66.85,
+ "shots": [
+  {
+   "id": "s01_house",
+   "start": 0.0,
+   "end": 2.5,
+   "line": "My parents went out to dinner.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "wind",
+     "gain": -24
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s02_alone",
+   "start": 2.5,
+   "end": 4.8,
+   "line": "I had the house to myself.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s03_lockscreen",
+   "start": 4.8,
+   "end": 6.9,
+   "line": "At eleven fifty, my phone lit up.",
+   "sfx": [
+    {
+     "at": 1.75,
+     "name": "phonebuzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s04_text_one",
+   "start": 6.9,
+   "end": 9.8,
+   "line": "Mom. \"Locked out.\"",
+   "sfx": [
+    {
+     "at": 1.95,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s05_reading",
+   "start": 9.8,
+   "end": 12.0,
+   "line": "\"Open the door.\"",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s06_weird",
+   "start": 12.0,
+   "end": 13.5,
+   "line": "That was weird.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s07_keys",
+   "start": 13.5,
+   "end": 15.6,
+   "line": "She always has her keys.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s08_heard",
+   "start": 15.6,
+   "end": 17.2,
+   "line": "Then I heard it.",
+   "sfx": [
+    {
+     "at": 1.25,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s09_three_knocks",
+   "start": 17.2,
+   "end": 19.8,
+   "line": "Three slow knocks on the front door.",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    },
+    {
+     "at": 1.45,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s10_downstairs",
+   "start": 19.8,
+   "end": 22.8,
+   "line": "I went downstairs in the dark, phone in my hand.",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "footstep",
+     "gain": -21
+    },
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -21
+    },
+    {
+     "at": 1.4,
+     "name": "footstep",
+     "gain": -21
+    },
+    {
+     "at": 2.0,
+     "name": "footstep",
+     "gain": -21
+    },
+    {
+     "at": 2.6,
+     "name": "footstep",
+     "gain": -21
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s11_glass",
+   "start": 22.8,
+   "end": 25.0,
+   "line": "Through the frosted glass,",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s12_standing",
+   "start": 25.0,
+   "end": 26.5,
+   "line": "someone was standing there.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s13_tall",
+   "start": 26.5,
+   "end": 28.0,
+   "line": "Tall.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s14_still",
+   "start": 28.0,
+   "end": 29.5,
+   "line": "Very still.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s15_mom",
+   "start": 29.5,
+   "end": 31.3,
+   "line": "\"Mom?\" I said.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s16_again",
+   "start": 31.3,
+   "end": 33.3,
+   "line": "The knocking started again.",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    },
+    {
+     "at": 0.95,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    },
+    {
+     "at": 1.65,
+     "name": "sfx/knock_door.wav",
+     "gain": -11
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s17_patient",
+   "start": 33.3,
+   "end": 35.9,
+   "line": "Slow. Patient.",
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    },
+    {
+     "at": 2.25,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s18_lock",
+   "start": 35.9,
+   "end": 37.8,
+   "line": "My hand was on the lock",
+   "sfx": [
+    {
+     "at": 0.65,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s19_buzz",
+   "start": 37.8,
+   "end": 39.7,
+   "line": "when my phone buzzed again.",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "phonebuzz",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s20_text_two",
+   "start": 39.7,
+   "end": 42.6,
+   "line": "\"Running late. Home in an hour.\"",
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s21_dont",
+   "start": 42.6,
+   "end": 45.2,
+   "line": "\"Don't open the door for anyone.\"",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s22_frozen",
+   "start": 45.2,
+   "end": 47.6,
+   "line": "I didn't move.",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    },
+    {
+     "at": 2.1,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    },
+    {
+     "at": 0.2,
+     "name": "heartbeat",
+     "gain": -22,
+     "dur": 4.0
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s23_breathe",
+   "start": 47.6,
+   "end": 49.4,
+   "line": "I didn't breathe.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s24_standoff",
+   "start": 49.4,
+   "end": 52.4,
+   "line": "The shape in the glass didn't move either.",
+   "sfx": [
+    {
+     "at": 2.35,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    },
+    {
+     "at": 2.9,
+     "name": "sfx/knock_door.wav",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s25_stopped",
+   "start": 52.4,
+   "end": 54.7,
+   "line": "Then the knocking stopped.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s26_gone",
+   "start": 54.7,
+   "end": 56.6,
+   "line": "The shape was gone.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s27_run",
+   "start": 56.6,
+   "end": 58.6,
+   "line": "I ran back upstairs to my room.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 0.45,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 1.15,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 1.5,
+     "name": "footstep",
+     "gain": -17
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s28_held",
+   "start": 58.6,
+   "end": 60.91,
+   "line": "(held silence)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s29_window",
+   "start": 60.91,
+   "end": 62.45,
+   "line": "Then it started at my window.",
+   "sfx": [
+    {
+     "at": 0.09,
+     "name": "sfx/knock_glass.wav",
+     "gain": -10
+    },
+    {
+     "at": 0.39,
+     "name": "sfx/knock_glass.wav",
+     "gain": -10
+    },
+    {
+     "at": 1.12,
+     "name": "stinger",
+     "gain": -5
+    },
+    {
+     "at": 1.12,
+     "name": "impact",
+     "gain": -14
+    }
+   ],
+   "jitter": [
+    62.03
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s30_hand",
+   "start": 62.45,
+   "end": 64.1,
+   "line": "(hand on the glass)",
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "sfx/knock_glass.wav",
+     "gain": -15
+    },
+    {
+     "at": 0.85,
+     "name": "sfx/knock_glass.wav",
+     "gain": -15
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s31_end",
+   "start": 64.1,
+   "end": 66.85,
+   "line": "Follow for more.",
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 52.6,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ]
+}

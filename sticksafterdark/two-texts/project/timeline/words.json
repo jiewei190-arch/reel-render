@@ -1,0 +1,675 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "My",
+   "start": 0.45,
+   "end": 0.648
+  },
+  {
+   "word": "parents",
+   "start": 0.648,
+   "end": 1.045
+  },
+  {
+   "word": "went",
+   "start": 1.045,
+   "end": 1.244
+  },
+  {
+   "word": "out",
+   "start": 1.244,
+   "end": 1.442
+  },
+  {
+   "word": "to",
+   "start": 1.442,
+   "end": 1.641
+  },
+  {
+   "word": "dinner.",
+   "start": 1.641,
+   "end": 2.038
+  },
+  {
+   "word": "I",
+   "start": 2.588,
+   "end": 2.779
+  },
+  {
+   "word": "had",
+   "start": 2.779,
+   "end": 2.971
+  },
+  {
+   "word": "the",
+   "start": 2.971,
+   "end": 3.163
+  },
+  {
+   "word": "house",
+   "start": 3.163,
+   "end": 3.546
+  },
+  {
+   "word": "to",
+   "start": 3.546,
+   "end": 3.738
+  },
+  {
+   "word": "myself.",
+   "start": 3.738,
+   "end": 4.121
+  },
+  {
+   "word": "At",
+   "start": 4.871,
+   "end": 5.061
+  },
+  {
+   "word": "11:50,",
+   "start": 5.061,
+   "end": 6.012
+  },
+  {
+   "word": "my",
+   "start": 6.012,
+   "end": 6.202
+  },
+  {
+   "word": "phone",
+   "start": 6.202,
+   "end": 6.583
+  },
+  {
+   "word": "lit",
+   "start": 6.583,
+   "end": 6.773
+  },
+  {
+   "word": "up.",
+   "start": 6.773,
+   "end": 6.963
+  },
+  {
+   "word": "Mom.",
+   "start": 7.713,
+   "end": 8.337
+  },
+  {
+   "word": "\"Locked",
+   "start": 8.887,
+   "end": 9.46
+  },
+  {
+   "word": "out.",
+   "start": 9.46,
+   "end": 9.747
+  },
+  {
+   "word": "Open",
+   "start": 10.297,
+   "end": 10.829
+  },
+  {
+   "word": "the",
+   "start": 10.829,
+   "end": 11.095
+  },
+  {
+   "word": "door.\"",
+   "start": 11.095,
+   "end": 11.361
+  },
+  {
+   "word": "That",
+   "start": 12.111,
+   "end": 12.414
+  },
+  {
+   "word": "was",
+   "start": 12.414,
+   "end": 12.717
+  },
+  {
+   "word": "weird.",
+   "start": 12.717,
+   "end": 13.02
+  },
+  {
+   "word": "She",
+   "start": 13.57,
+   "end": 13.801
+  },
+  {
+   "word": "always",
+   "start": 13.801,
+   "end": 14.263
+  },
+  {
+   "word": "has",
+   "start": 14.263,
+   "end": 14.494
+  },
+  {
+   "word": "her",
+   "start": 14.494,
+   "end": 14.725
+  },
+  {
+   "word": "keys.",
+   "start": 14.725,
+   "end": 14.956
+  },
+  {
+   "word": "Then",
+   "start": 15.706,
+   "end": 15.961
+  },
+  {
+   "word": "I",
+   "start": 15.961,
+   "end": 16.216
+  },
+  {
+   "word": "heard",
+   "start": 16.216,
+   "end": 16.471
+  },
+  {
+   "word": "it.",
+   "start": 16.471,
+   "end": 16.726
+  },
+  {
+   "word": "3",
+   "start": 17.276,
+   "end": 17.548
+  },
+  {
+   "word": "slow",
+   "start": 17.548,
+   "end": 17.82
+  },
+  {
+   "word": "knocks",
+   "start": 17.82,
+   "end": 18.092
+  },
+  {
+   "word": "on",
+   "start": 18.092,
+   "end": 18.363
+  },
+  {
+   "word": "the",
+   "start": 18.363,
+   "end": 18.635
+  },
+  {
+   "word": "front",
+   "start": 18.635,
+   "end": 18.907
+  },
+  {
+   "word": "door.",
+   "start": 18.907,
+   "end": 19.179
+  },
+  {
+   "word": "I",
+   "start": 19.929,
+   "end": 20.164
+  },
+  {
+   "word": "went",
+   "start": 20.164,
+   "end": 20.399
+  },
+  {
+   "word": "downstairs",
+   "start": 20.399,
+   "end": 20.868
+  },
+  {
+   "word": "in",
+   "start": 20.868,
+   "end": 21.102
+  },
+  {
+   "word": "the",
+   "start": 21.102,
+   "end": 21.337
+  },
+  {
+   "word": "dark,",
+   "start": 21.337,
+   "end": 21.572
+  },
+  {
+   "word": "phone",
+   "start": 21.572,
+   "end": 22.041
+  },
+  {
+   "word": "in",
+   "start": 22.041,
+   "end": 22.276
+  },
+  {
+   "word": "my",
+   "start": 22.276,
+   "end": 22.51
+  },
+  {
+   "word": "hand.",
+   "start": 22.51,
+   "end": 22.745
+  },
+  {
+   "word": "Through",
+   "start": 23.495,
+   "end": 23.7
+  },
+  {
+   "word": "the",
+   "start": 23.7,
+   "end": 23.904
+  },
+  {
+   "word": "frosted",
+   "start": 23.904,
+   "end": 24.313
+  },
+  {
+   "word": "glass,",
+   "start": 24.313,
+   "end": 24.518
+  },
+  {
+   "word": "someone",
+   "start": 24.518,
+   "end": 25.132
+  },
+  {
+   "word": "was",
+   "start": 25.132,
+   "end": 25.337
+  },
+  {
+   "word": "standing",
+   "start": 25.337,
+   "end": 25.746
+  },
+  {
+   "word": "there.",
+   "start": 25.746,
+   "end": 26.155
+  },
+  {
+   "word": "Tall.",
+   "start": 26.905,
+   "end": 27.516
+  },
+  {
+   "word": "Very",
+   "start": 28.066,
+   "end": 28.63
+  },
+  {
+   "word": "still.",
+   "start": 28.63,
+   "end": 28.912
+  },
+  {
+   "word": "\"Mom?\"",
+   "start": 29.662,
+   "end": 30.012
+  },
+  {
+   "word": "I",
+   "start": 30.012,
+   "end": 30.362
+  },
+  {
+   "word": "said.",
+   "start": 30.362,
+   "end": 30.712
+  },
+  {
+   "word": "The",
+   "start": 31.462,
+   "end": 31.666
+  },
+  {
+   "word": "knocking",
+   "start": 31.666,
+   "end": 32.073
+  },
+  {
+   "word": "started",
+   "start": 32.073,
+   "end": 32.48
+  },
+  {
+   "word": "again.",
+   "start": 32.48,
+   "end": 32.887
+  },
+  {
+   "word": "Slow.",
+   "start": 33.437,
+   "end": 34.083
+  },
+  {
+   "word": "Patient.",
+   "start": 34.633,
+   "end": 35.377
+  },
+  {
+   "word": "My",
+   "start": 36.127,
+   "end": 36.32
+  },
+  {
+   "word": "hand",
+   "start": 36.32,
+   "end": 36.512
+  },
+  {
+   "word": "was",
+   "start": 36.512,
+   "end": 36.704
+  },
+  {
+   "word": "on",
+   "start": 36.704,
+   "end": 36.896
+  },
+  {
+   "word": "the",
+   "start": 36.896,
+   "end": 37.088
+  },
+  {
+   "word": "lock",
+   "start": 37.088,
+   "end": 37.281
+  },
+  {
+   "word": "when",
+   "start": 37.281,
+   "end": 37.473
+  },
+  {
+   "word": "my",
+   "start": 37.473,
+   "end": 37.665
+  },
+  {
+   "word": "phone",
+   "start": 37.665,
+   "end": 38.049
+  },
+  {
+   "word": "buzzed",
+   "start": 38.049,
+   "end": 38.434
+  },
+  {
+   "word": "again.",
+   "start": 38.434,
+   "end": 38.818
+  },
+  {
+   "word": "\"Running",
+   "start": 40.118,
+   "end": 40.554
+  },
+  {
+   "word": "late.",
+   "start": 40.554,
+   "end": 40.99
+  },
+  {
+   "word": "Home",
+   "start": 41.54,
+   "end": 41.955
+  },
+  {
+   "word": "in",
+   "start": 41.955,
+   "end": 42.162
+  },
+  {
+   "word": "an",
+   "start": 42.162,
+   "end": 42.369
+  },
+  {
+   "word": "hour.",
+   "start": 42.369,
+   "end": 42.576
+  },
+  {
+   "word": "Don't",
+   "start": 43.126,
+   "end": 43.327
+  },
+  {
+   "word": "open",
+   "start": 43.327,
+   "end": 43.728
+  },
+  {
+   "word": "the",
+   "start": 43.728,
+   "end": 43.928
+  },
+  {
+   "word": "door",
+   "start": 43.928,
+   "end": 44.129
+  },
+  {
+   "word": "for",
+   "start": 44.129,
+   "end": 44.329
+  },
+  {
+   "word": "anyone.\"",
+   "start": 44.329,
+   "end": 44.93
+  },
+  {
+   "word": "I",
+   "start": 46.23,
+   "end": 46.476
+  },
+  {
+   "word": "didn't",
+   "start": 46.476,
+   "end": 46.722
+  },
+  {
+   "word": "move.",
+   "start": 46.722,
+   "end": 47.213
+  },
+  {
+   "word": "I",
+   "start": 47.763,
+   "end": 48.021
+  },
+  {
+   "word": "didn't",
+   "start": 48.021,
+   "end": 48.28
+  },
+  {
+   "word": "breathe.",
+   "start": 48.28,
+   "end": 48.796
+  },
+  {
+   "word": "The",
+   "start": 49.546,
+   "end": 49.724
+  },
+  {
+   "word": "shape",
+   "start": 49.724,
+   "end": 50.081
+  },
+  {
+   "word": "in",
+   "start": 50.081,
+   "end": 50.259
+  },
+  {
+   "word": "the",
+   "start": 50.259,
+   "end": 50.438
+  },
+  {
+   "word": "glass",
+   "start": 50.438,
+   "end": 50.616
+  },
+  {
+   "word": "didn't",
+   "start": 50.616,
+   "end": 50.795
+  },
+  {
+   "word": "move",
+   "start": 50.795,
+   "end": 51.151
+  },
+  {
+   "word": "either.",
+   "start": 51.151,
+   "end": 51.508
+  },
+  {
+   "word": "Then",
+   "start": 52.808,
+   "end": 53.028
+  },
+  {
+   "word": "the",
+   "start": 53.028,
+   "end": 53.248
+  },
+  {
+   "word": "knocking",
+   "start": 53.248,
+   "end": 53.688
+  },
+  {
+   "word": "stopped.",
+   "start": 53.688,
+   "end": 54.127
+  },
+  {
+   "word": "The",
+   "start": 54.877,
+   "end": 55.058
+  },
+  {
+   "word": "shape",
+   "start": 55.058,
+   "end": 55.419
+  },
+  {
+   "word": "was",
+   "start": 55.419,
+   "end": 55.6
+  },
+  {
+   "word": "gone.",
+   "start": 55.6,
+   "end": 55.962
+  },
+  {
+   "word": "I",
+   "start": 56.712,
+   "end": 56.936
+  },
+  {
+   "word": "ran",
+   "start": 56.936,
+   "end": 57.161
+  },
+  {
+   "word": "back",
+   "start": 57.161,
+   "end": 57.386
+  },
+  {
+   "word": "upstairs",
+   "start": 57.386,
+   "end": 57.836
+  },
+  {
+   "word": "to",
+   "start": 57.836,
+   "end": 58.061
+  },
+  {
+   "word": "my",
+   "start": 58.061,
+   "end": 58.286
+  },
+  {
+   "word": "room.",
+   "start": 58.286,
+   "end": 58.511
+  },
+  {
+   "word": "Then",
+   "start": 60.911,
+   "end": 61.097
+  },
+  {
+   "word": "it",
+   "start": 61.097,
+   "end": 61.284
+  },
+  {
+   "word": "started",
+   "start": 61.284,
+   "end": 61.657
+  },
+  {
+   "word": "at",
+   "start": 61.657,
+   "end": 61.843
+  },
+  {
+   "word": "my",
+   "start": 61.843,
+   "end": 62.029
+  },
+  {
+   "word": "window.",
+   "start": 62.029,
+   "end": 62.402
+  },
+  {
+   "word": "Follow",
+   "start": 64.202,
+   "end": 64.621
+  },
+  {
+   "word": "for",
+   "start": 64.621,
+   "end": 64.83
+  },
+  {
+   "word": "more.",
+   "start": 64.83,
+   "end": 65.249
+  }
+ ]
+}
