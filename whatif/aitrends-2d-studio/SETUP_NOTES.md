@@ -79,3 +79,8 @@ add a tuft in drawHeadwear; mirror in bigFace and figure3D if Sam appears in gia
 rim light/silhouette pass would also need to work with a light head (rim on a pale head may look odd). Doable; the engine is ~800 lines and readable. Not something the kit supports out of the box.
 Storybook preset: YES, `storybook` exists in engine/styles.js ("Soft Storybook": pastel, low contrast, lavender shadows, paper grain). Others: dusk, midnight, golden, neon.
 It is a colour grade + palette only (not a hand-drawn/illustrated look); flat vector shapes remain. Try: `--styles dusk,storybook --at t1,t2,t3`.
+
+## Toon 3D FX pack (2026-11-09, cloud)
+- Linux cloud: `pip install numpy scipy`, `npm install`, `export CHROMIUM_PATH=/opt/pw-browsers/chromium` (PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers; never `playwright install`). Use `python3`.
+- Kit audio WAVs are under `kits/toon3d/audio/`; the repo `.gitignore` ignores `*.wav`, so add new ones with `git add -f`.
+- FX demo: 16.6 s, 1080x1920 full render with 4 workers (SwiftShader) in the cloud; see kits/toon3d/README.md "BEANMEN effects".

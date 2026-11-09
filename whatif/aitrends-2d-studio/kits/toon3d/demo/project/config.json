@@ -1,0 +1,17 @@
+{
+ "title": "Toon3D FX Demo",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["twenty", "thousand", "faster", "one", "zero"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0.3,
+ "music": { "enabled": true, "file": "toon3d:upbeat", "gainDb": -17 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
