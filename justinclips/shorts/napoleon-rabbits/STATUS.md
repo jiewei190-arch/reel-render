@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #11: napoleon-rabbits ("Napoleon Was Defeated by Rabbits 🐇")
 Branch `justinclips/batch2-b`, commit 710c9ea (project + this folder). Project: `whatif/aitrends-2d-studio/projects/napoleon-rabbits` (Toon 3D kit + BEANMEN FX, 18 shots).
@@ -40,3 +40,9 @@ silent render (video copied, all 1022 frames) + `mix.wav`. Check: 1022 frames / 
 - Captions 1-3 words at 66 % height, clear of the bottom title area and the right-hand buttons on every checked frame.
 - Nobody hurt: no guns, the crop and whip swing in the air, rabbits only swarm. Original bean designs, not portraits.
 - Nothing was posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **1022 frames (counted), 42.58 s**, 37.6 MB; audio 48 kHz.
+- Loudness measured on the final file: **-14.60 LUFS, true peak -1.30 dBTP**.
+- Render 66 s. Commands run exactly as listed above. Contact sheet checked (cards, captions, ending OK).
+- Nothing posted, uploaded or scheduled.
