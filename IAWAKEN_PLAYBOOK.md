@@ -148,3 +148,13 @@ Do NOT start a new cloud session for each job. Send the next job as a message to
 its setup and context). Current workers: 3D Shorts x4 (antsize-3d, stopspin-3d, earthhole-3d, blackhole-3d sessions),
 toon3d kit session, topic-bank session, thumbnails session, clips session. Only start a new session if all are busy
 and the owner wants more in parallel.
+
+## PC render handoff (Creator, owner's PC; Nov 9 2026)
+When the owner's PC is on, cloud sessions build (script, voice, timing, scenes, preview) and **Creator renders the finals**
+(RTX 4060: Toon 3D ~12.5 fps at 1080x1920 with `--gl gpu`, vs ~1 fps in the cloud). Per job, the cloud session must:
+- `git add -f .../input/voiceover.wav` (*.wav is gitignored) and every other .wav the mix needs.
+- Put the project at `whatif/aitrends-2d-studio/projects/<slug>` (or say where it is so Creator copies it there).
+- Write in STATUS.md: exact render + mix commands (mix to an explicit `--out` path; the default name dropped 3 frames),
+  expected frame count and duration, and `STATE: render-on-pc`.
+MAIN then asks Creator (one job at a time) with the branch name; Creator renders, checks, and pushes video.mp4 +
+video.sha256 + STATUS.md (`STATE: ready`) to the same branch. Nothing is posted.
