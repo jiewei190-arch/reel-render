@@ -1,0 +1,209 @@
+{
+ "title": "Head Count",
+ "duration": 28.63,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.5,
+   "line": "Five of us went camping.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "audio/fire_crackle.wav",
+     "gain": -14
+    },
+    {
+     "at": 1.25,
+     "name": "audio/fire_pop.wav",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s02",
+   "start": 2.5,
+   "end": 4.0,
+   "line": "Every night by the fire,",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s03",
+   "start": 4.0,
+   "end": 5.6,
+   "line": "I counted heads.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s04",
+   "start": 5.6,
+   "end": 8.0,
+   "line": "One. Two.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s05",
+   "start": 8.0,
+   "end": 10.2,
+   "line": "Three. Four.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s06",
+   "start": 10.2,
+   "end": 11.6,
+   "line": "Five.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s07",
+   "start": 11.6,
+   "end": 12.9,
+   "line": "On night three,",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s08",
+   "start": 12.9,
+   "end": 14.05,
+   "line": "I counted six.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "sfx": [
+    {
+     "at": 0.1999999999999993,
+     "name": "audio/fire_pop.wav",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.05,
+   "end": 15.6,
+   "line": "Everyone laughed.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s10",
+   "start": 15.6,
+   "end": 17.2,
+   "line": "I counted again.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s11",
+   "start": 17.2,
+   "end": 19.1,
+   "line": "Five.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s12",
+   "start": 19.1,
+   "end": 20.6,
+   "line": "Good.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s13",
+   "start": 20.6,
+   "end": 22.15,
+   "line": "(held, silent)",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "sfx": [
+    {
+     "at": 0.6499999999999986,
+     "name": "audio/fire_pop.wav",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 22.15,
+   "end": 23.9,
+   "line": "Then I realized I never count",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s15",
+   "start": 23.9,
+   "end": 25.9,
+   "line": "myself.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "sfx": [
+    {
+     "at": 0.08000000000000185,
+     "name": "stinger",
+     "gain": -6
+    },
+    {
+     "at": 1.25,
+     "name": "audio/fire_pop.wav",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 25.9,
+   "end": 28.63,
+   "line": "Follow for more.",
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 25.9,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ]
+}
