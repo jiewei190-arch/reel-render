@@ -1,0 +1,334 @@
+{
+ "title": "Sticks After Dark 5 Voicemail",
+ "duration": 61.63,
+ "music": [
+  {
+   "start": 0,
+   "end": 57.5,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ],
+ "shots": [
+  {
+   "id": "v01_silent_light",
+   "start": 0.0,
+   "end": 2.2,
+   "line": "I always sleep with my phone on silent.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v02_phone_silent",
+   "start": 2.2,
+   "end": 3.9,
+   "line": "(the phone lights up with no sound)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v03_eyes_open",
+   "start": 3.9,
+   "end": 5.6,
+   "line": "So it was the light that woke me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v04_notification",
+   "start": 5.6,
+   "end": 7.4,
+   "line": "One new voicemail.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v05_list_me",
+   "start": 7.4,
+   "end": 9.3,
+   "line": "From my own number.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v06_card_macro",
+   "start": 9.3,
+   "end": 11.4,
+   "line": "Three twelve a.m.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v07_glitch",
+   "start": 11.4,
+   "end": 13.3,
+   "line": "I thought it was a glitch.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v08_delete_hover",
+   "start": 13.3,
+   "end": 16.3,
+   "line": "Spam. I almost deleted it.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v09_press_play",
+   "start": 16.3,
+   "end": 18.6,
+   "line": "I pressed play.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "v10_listen",
+   "start": 18.6,
+   "end": 20.3,
+   "line": "(beat) listening; the breathing starts",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "sfx/breath.wav",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "v11_breath_wave",
+   "start": 20.3,
+   "end": 22.3,
+   "line": "At first, just breathing.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v12_breath_macro",
+   "start": 22.3,
+   "end": 24.2,
+   "line": "Slow. Close to the phone.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v13_frozen_bed",
+   "start": 24.2,
+   "end": 26.4,
+   "line": "Like someone lying very still,",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v14_hand_mouth",
+   "start": 26.4,
+   "end": 29.4,
+   "line": "trying not to make a sound.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v15_phone_ear",
+   "start": 29.4,
+   "end": 31.7,
+   "line": "Then my own voice, whispering.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v16_speaker",
+   "start": 31.7,
+   "end": 33.3,
+   "line": "[WHISPER] Don't get out of bed.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v17_eyes_down",
+   "start": 33.3,
+   "end": 35.6,
+   "line": "[WHISPER] Don't look under it. It's under there.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v18_tilt_gap",
+   "start": 35.6,
+   "end": 38.4,
+   "line": "(3 s silence) tilt down to the gap under the bed",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v19_frozen",
+   "start": 38.4,
+   "end": 40.1,
+   "line": "I didn't move.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v20_replay",
+   "start": 40.1,
+   "end": 42.2,
+   "line": "I played it again, to be sure.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "v21_its_me",
+   "start": 42.2,
+   "end": 43.7,
+   "line": "It was me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v22_realise",
+   "start": 43.7,
+   "end": 45.6,
+   "line": "It was definitely me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v23_never",
+   "start": 45.6,
+   "end": 47.9,
+   "line": "But I never said that.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v24_room_gap",
+   "start": 47.9,
+   "end": 49.4,
+   "line": "(silence) still; drift toward the gap",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v25_check_time",
+   "start": 49.4,
+   "end": 51.2,
+   "line": "I checked the time.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v26_held",
+   "start": 51.2,
+   "end": 53.75,
+   "line": "(held silent beat)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "v27_clock",
+   "start": 53.75,
+   "end": 55.6,
+   "line": "It was three eleven.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "params": {
+    "jitter": [
+     54.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "stinger",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "v28_gap_eyes",
+   "start": 55.6,
+   "end": 57.5,
+   "line": "(the gap under the bed: two eyes open)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "v29_end",
+   "start": 57.5,
+   "end": 61.63,
+   "line": "Follow for more.",
+   "captions": false
+  }
+ ]
+}
