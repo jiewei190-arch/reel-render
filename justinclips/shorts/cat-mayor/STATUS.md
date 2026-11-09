@@ -6,7 +6,7 @@ Expected: **1015 frames, 42.29 s** (voice 42.27 s), 1080x1920, 24 fps. Preview c
 
 ## Creator: full render (from `whatif/aitrends-2d-studio`)
 ```
-node render.mjs --project projects/cat-mayor --gl gpu --out build/video_silent.mp4
+node render.mjs --project projects/cat-mayor --gl gpu --out projects/cat-mayor/build/video_silent.mp4
 ```
 -> `projects/cat-mayor/build/video_silent.mp4` (check: 1015 frames).
 
