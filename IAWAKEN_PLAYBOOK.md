@@ -1,5 +1,9 @@
 # I.Awaken growth playbook (owner decision, Nov 8 2026)
 
+> **Nov 9 2026:** the 3D (Toon 3D) Shorts are now for the **Justin clips** account (owner renamed it). Keep channel
+> names out of the video itself. **Lengths for every new video, all accounts:** YouTube Shorts 30-60 s, Instagram
+> Reels 60-70 s (incl. sticksafterdark horror). Years/numbers: spelled out in the TTS script, digits in captions.
+
 Goal: YouTube Partner Program through long-form watch hours (1,000 subs + 4,000 public watch hours in 12 months;
 Shorts views do not count toward watch hours). Shorts are the discovery funnel: every Short links (Related video)
 to a long episode. Pace: 1 long episode every few days + 1 Short a day (no spam bursts). Instagram is secondary.
@@ -121,7 +125,8 @@ Long-form is paused. Every Short must pass this list before it is sent to the ow
 6. **Payoff in the last 3-5 s**, then the closer ("Subscribe to find out." for a cliffhanger / Part 2,
    "Subscribe for more." otherwise). Keep the closer under 1.5 s.
 7. **Loop:** the last line or image leads back into the first (the viewer replays without noticing).
-8. **Length 25-40 s.** Shorter is better if the story is complete.
+8. **Length (owner rule, Nov 9 2026): YouTube Shorts 30-60 s; Instagram Reels 60-70 s.** Never under 30 s on YouTube
+   or under 60 s on Instagram: if the voice runs short, add story beats (build-up, escalation), not slower speech.
 9. **Title = the claim** (<= 60 chars, 1 emoji, no hashtags in the title); description: 1 line + 2-3 hashtags + #shorts.
    Pinned comment: an either/or question people can answer in one word.
 
