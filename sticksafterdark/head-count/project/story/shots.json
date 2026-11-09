@@ -1,33 +1,107 @@
 {
  "title": "Head Count",
- "duration": 28.63,
+ "duration": 69.511,
  "shots": [
   {
-   "id": "s01",
+   "id": "h01",
    "start": 0,
-   "end": 2.5,
+   "end": 2.35,
    "line": "Five of us went camping.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
    "sfx": [
     {
-     "at": 0,
-     "name": "audio/fire_crackle.wav",
-     "gain": -14
+     "at": 0.35,
+     "name": "footstep",
+     "gain": -20
     },
     {
-     "at": 1.25,
-     "name": "audio/fire_pop.wav",
-     "gain": -12
+     "at": 0.95,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 1.55,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 2.15,
+     "name": "footstep",
+     "gain": -20
     }
-   ],
+   ]
+  },
+  {
+   "id": "h02",
+   "start": 2.35,
+   "end": 4.0,
+   "line": "Way out in the woods.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "sfx": [
+    {
+     "at": 0.65,
+     "name": "audio/fire_pop.wav",
+     "gain": -13
+    },
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 1.0,
+     "name": "footstep",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "h03",
+   "start": 4.0,
+   "end": 5.7,
+   "line": "No signal.",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s02",
-   "start": 2.5,
-   "end": 4.0,
+   "id": "h04",
+   "start": 5.7,
+   "end": 7.0,
+   "line": "I'm the one who worries,",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h05",
+   "start": 7.0,
+   "end": 8.5,
+   "line": "so I made a rule.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "audio/fire_crackle.wav",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "h06",
+   "start": 8.5,
+   "end": 10.1,
    "line": "Every night by the fire,",
    "amb": {
     "name": "wind",
@@ -35,9 +109,9 @@
    }
   },
   {
-   "id": "s03",
-   "start": 4.0,
-   "end": 5.6,
+   "id": "h07",
+   "start": 10.1,
+   "end": 11.6,
    "line": "I counted heads.",
    "amb": {
     "name": "wind",
@@ -45,29 +119,29 @@
    }
   },
   {
-   "id": "s04",
-   "start": 5.6,
-   "end": 8.0,
-   "line": "One. Two.",
+   "id": "h08",
+   "start": 11.6,
+   "end": 14.0,
+   "line": "One. Two. Three.",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s05",
-   "start": 8.0,
-   "end": 10.2,
-   "line": "Three. Four.",
+   "id": "h09",
+   "start": 14.0,
+   "end": 16.2,
+   "line": "Four.",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s06",
-   "start": 10.2,
-   "end": 11.6,
+   "id": "h10",
+   "start": 16.2,
+   "end": 17.6,
    "line": "Five.",
    "amb": {
     "name": "wind",
@@ -75,36 +149,146 @@
    }
   },
   {
-   "id": "s07",
-   "start": 11.6,
-   "end": 12.9,
-   "line": "On night three,",
+   "id": "h11",
+   "start": 17.6,
+   "end": 19.4,
+   "line": "Night one, five.",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s08",
-   "start": 12.9,
-   "end": 14.05,
-   "line": "I counted six.",
+   "id": "h12",
+   "start": 19.4,
+   "end": 21.1,
+   "line": "Night two, five.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h13",
+   "start": 21.1,
+   "end": 22.6,
+   "line": "Everyone made fun of me.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h14",
+   "start": 22.6,
+   "end": 23.9,
+   "line": "(me)",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h15",
+   "start": 23.9,
+   "end": 26.3,
+   "line": "Night three, the fog rolled in.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h16",
+   "start": 26.3,
+   "end": 28.0,
+   "line": "The fire got low.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h17",
+   "start": 28.0,
+   "end": 29.4,
+   "line": "Someone told a ghost story.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h18",
+   "start": 29.4,
+   "end": 30.4,
+   "line": "(listeners)",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h19",
+   "start": 30.4,
+   "end": 32.6,
+   "line": "I counted, like always.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h20",
+   "start": 32.6,
+   "end": 35.0,
+   "line": "One. Two. Three.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h21",
+   "start": 35.0,
+   "end": 37.2,
+   "line": "Four.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h22",
+   "start": 37.2,
+   "end": 38.6,
+   "line": "Five.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h23",
+   "start": 38.6,
+   "end": 41.0,
+   "line": "(silence) Six.",
    "amb": {
     "name": "wind",
     "gain": -30
    },
    "sfx": [
     {
-     "at": 0.1999999999999993,
+     "at": 0.67,
      "name": "audio/fire_pop.wav",
-     "gain": -10
+     "gain": -9
     }
    ]
   },
   {
-   "id": "s09",
-   "start": 14.05,
-   "end": 15.6,
+   "id": "h24",
+   "start": 41.0,
+   "end": 42.6,
    "line": "Everyone laughed.",
    "amb": {
     "name": "wind",
@@ -112,19 +296,29 @@
    }
   },
   {
-   "id": "s10",
-   "start": 15.6,
-   "end": 17.2,
-   "line": "I counted again.",
+   "id": "h25",
+   "start": 42.6,
+   "end": 45.2,
+   "line": "They said I counted someone twice.",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s11",
-   "start": 17.2,
-   "end": 19.1,
+   "id": "h26",
+   "start": 45.2,
+   "end": 47.4,
+   "line": "So I counted again, slowly.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h27",
+   "start": 47.4,
+   "end": 49.3,
    "line": "Five.",
    "amb": {
     "name": "wind",
@@ -132,9 +326,9 @@
    }
   },
   {
-   "id": "s12",
-   "start": 19.1,
-   "end": 20.6,
+   "id": "h28",
+   "start": 49.3,
+   "end": 51.2,
    "line": "Good.",
    "amb": {
     "name": "wind",
@@ -142,9 +336,69 @@
    }
   },
   {
-   "id": "s13",
-   "start": 20.6,
-   "end": 22.15,
+   "id": "h29",
+   "start": 51.2,
+   "end": 53.0,
+   "line": "I felt stupid.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h30",
+   "start": 53.0,
+   "end": 55.0,
+   "line": "I went back to my spot.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h31",
+   "start": 55.0,
+   "end": 56.9,
+   "line": "Later,",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h32",
+   "start": 56.9,
+   "end": 58.6,
+   "line": "lying in my tent, I went over it again.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h33",
+   "start": 58.6,
+   "end": 60.1,
+   "line": "Five of us.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h34",
+   "start": 60.1,
+   "end": 61.6,
+   "line": "Four friends, and me.",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "h35",
+   "start": 61.6,
+   "end": 63.75,
    "line": "(held, silent)",
    "amb": {
     "name": "wind",
@@ -152,26 +406,26 @@
    },
    "sfx": [
     {
-     "at": 0.6499999999999986,
+     "at": 1.0,
      "name": "audio/fire_pop.wav",
      "gain": -9
     }
    ]
   },
   {
-   "id": "s14",
-   "start": 22.15,
-   "end": 23.9,
-   "line": "Then I realized I never count",
+   "id": "h36",
+   "start": 63.75,
+   "end": 64.8,
+   "line": "And I never count",
    "amb": {
     "name": "wind",
     "gain": -30
    }
   },
   {
-   "id": "s15",
-   "start": 23.9,
-   "end": 25.9,
+   "id": "h37",
+   "start": 64.8,
+   "end": 66.7,
    "line": "myself.",
    "amb": {
     "name": "wind",
@@ -179,21 +433,21 @@
    },
    "sfx": [
     {
-     "at": 0.08000000000000185,
-     "name": "stinger",
-     "gain": -6
-    },
-    {
-     "at": 1.25,
+     "at": 1.15,
      "name": "audio/fire_pop.wav",
      "gain": -7
+    },
+    {
+     "at": 0.04,
+     "name": "stinger",
+     "gain": -6
     }
    ]
   },
   {
-   "id": "s16",
-   "start": 25.9,
-   "end": 28.63,
+   "id": "h38",
+   "start": 66.7,
+   "end": 69.511,
    "line": "Follow for more.",
    "captions": false
   }
@@ -201,7 +455,7 @@
  "music": [
   {
    "start": 0,
-   "end": 25.9,
+   "end": 66.7,
    "mood": "dark",
    "intensity": 0.25
   }

@@ -1,4 +1,4 @@
-STATE: ready
+STATE: rendering
 
 Sticks After Dark #3 "Head Count" — final render pushed.
 - video.mp4: 1080x1920, 24 fps, 688 frames, 28.67 s, H.264 + AAC 192k, 17.3 MB (single file, no split needed). sha256 in video.sha256.

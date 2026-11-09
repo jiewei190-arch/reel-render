@@ -105,13 +105,14 @@ export function friends(g, t, o = {}) {
   const list = FRIENDS.map((f, i) => ({ ...f, i })).sort((a, b) => a.y - b.y);
   for (const f of list) {
     const base = f.side ? SIT_SIDE : SIT_FRONT;
-    const pose = { ...base, tilt: (base.tilt || 0) + noise(t * 0.5, f.seed) * 0.08 + (o.tilt ? o.tilt(f.i) : 0), lean: (base.lean || 0) + (o.bob ? o.bob(f.i) : 0) };
+    const pose = { ...base, ...(o.pose ? o.pose(f.i) || {} : {}), tilt: (base.tilt || 0) + noise(t * 0.5, f.seed) * 0.08 + (o.tilt ? o.tilt(f.i) : 0), lean: (base.lean || 0) + (o.bob ? o.bob(f.i) : 0) };
     const lookToFire = f.side ? [1, 0.2] : [(FIRE[0] - f.x) / 300, 0.3];
     const fc = { eyes: 'dot', mouth: 'flat', look: o.lookAtMe ? [0, 0.2] : lookToFire, blink: ((t + f.seed * 0.37) % 3.7) < 0.12 ? 1 : 0, ...(o.faces ? o.faces(f.i) || {} : {}) };
     if (o.skip && o.skip(f.i)) continue;
     const yOff = o.hop ? o.hop(f.i) : 0;
     const R = K.stickFigure(g, pose, fc, { x: f.x, y: f.y - yOff, s: f.s, flip: f.side === -1 ? -1 : 1, anchor: 'hip', seed: f.seed });
     if (o.light) { const k = o.light(f.i); if (k > 0) K.lightPool(g, R.head[0], R.head[1], 120 * f.s, '#ffffff', 0.55 * k); }
+    if (o.after) o.after(g, f.i, R);
   }
   logs(g, FRIENDS.map(f => [f.x, f.y + 12 * f.s, f.side ? 150 * f.s : 130 * f.s]));
 }
@@ -141,4 +142,16 @@ export function hand(g, p, o = {}) {
 }
 // fingertip target just under a head (screen)
 export const under = (h, c, s) => { const p = toScreen(c, h); return [p[0] + 4, p[1] + 70 * c.z * s]; };
+// fog: soft grey banks drifting across the ground (k 0..1)
+export function fog(g, t, k = 1) {
+  if (k <= 0) return; g.save();
+  for (let i = 0; i < 9; i++) {
+    const r = rng(500 + i), y = HORIZON - 40 + r() * 520, w = 520 + r() * 620, h = 70 + r() * 90, sp = (14 + r() * 22) * (i % 2 ? 1 : -1);
+    const x = ((r() * 2200 + t * sp) % 2200 + 2200) % 2200 - 560;
+    g.save(); g.translate(x, y); g.scale(1, h / w);
+    const grd = g.createRadialGradient(0, 0, 0, 0, 0, w); grd.addColorStop(0, alpha('#b9b4a6', 0.13 * k)); grd.addColorStop(0.6, alpha('#b9b4a6', 0.05 * k)); grd.addColorStop(1, alpha('#b9b4a6', 0));
+    g.fillStyle = grd; g.fillRect(-w, -w, w * 2, w * 2); g.restore();
+  }
+  g.restore();
+}
 export { K };

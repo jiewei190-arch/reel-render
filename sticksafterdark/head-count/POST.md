@@ -1,16 +1,16 @@
-# POST: Sticks After Dark #3 "Head Count"
+# POST: Sticks After Dark #3 "Head Count" (Instagram cut, 69.5 s)
 
 **Hook caption (1 line):**
-Five of us went camping. I counted heads every night.
+I counted heads every night. Night three, I got six.
 
 **Story tease (2 lines):**
-Every night by the fire I counted five. On night three, I counted six.
-Everyone laughed, so I counted again… and forgot the one head I never count.
+Five of us went camping, and every night by the fire I counted the others: five, every time.
+On night three the fog rolled in, I counted six... and only later remembered the one head I never count.
 
 Voice is synthetic.
 
-**Hashtags:** #horror #scarystories #stickfigure #creepy #campfirestories #shortscary #animation
+**Hashtags:** #horror #scarystories #stickfigure #campfirestories #creepy #shortscary #animation
 
-**Pinned comment:** Pause at 0:13 and count the heads. How many were really at that fire? 🔥
+**Pinned comment:** Pause on the tent wall at 0:59 and count the shadows. Who was still sitting at the fire? 🔥
 
-**Cover frame:** 13.6 s (night three: the sixth, too-tall figure at the edge of the firelight, my finger on it, caption "6").
+**Cover frame:** 39.7 s (night three in the fog: the sixth, too-tall figure at the edge of the firelight, my finger on it, caption "6").

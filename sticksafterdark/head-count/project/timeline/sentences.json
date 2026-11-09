@@ -7,80 +7,206 @@
  },
  {
   "i": 1,
-  "start": 2.594,
-  "end": 4.992,
-  "text": "Every night by the fire, I counted heads."
+  "start": 2.394,
+  "end": 3.542,
+  "text": "Way out in the woods."
  },
  {
   "i": 2,
-  "start": 5.742,
-  "end": 6.288,
-  "text": "One."
+  "start": 4.092,
+  "end": 5.023,
+  "text": "No signal."
  },
  {
   "i": 3,
-  "start": 6.838,
-  "end": 7.42,
-  "text": "Two."
+  "start": 5.773,
+  "end": 7.882,
+  "text": "I'm the one who worries, so I made a rule."
  },
  {
   "i": 4,
-  "start": 7.97,
-  "end": 8.583,
-  "text": "Three."
+  "start": 8.632,
+  "end": 11.03,
+  "text": "Every night by the fire, I counted heads."
  },
  {
   "i": 5,
-  "start": 9.133,
-  "end": 9.742,
-  "text": "Four."
+  "start": 11.78,
+  "end": 12.326,
+  "text": "One."
  },
  {
   "i": 6,
-  "start": 10.292,
-  "end": 10.931,
-  "text": "Five."
+  "start": 12.876,
+  "end": 13.457,
+  "text": "Two."
  },
  {
   "i": 7,
-  "start": 11.681,
-  "end": 13.356,
-  "text": "On night three, I counted six."
+  "start": 14.007,
+  "end": 14.62,
+  "text": "Three."
  },
  {
   "i": 8,
-  "start": 14.106,
-  "end": 15.114,
-  "text": "Everyone laughed."
+  "start": 15.17,
+  "end": 15.78,
+  "text": "Four."
  },
  {
   "i": 9,
-  "start": 15.664,
-  "end": 16.72,
-  "text": "I counted again."
- },
- {
-  "i": 10,
-  "start": 17.27,
-  "end": 17.908,
+  "start": 16.33,
+  "end": 16.968,
   "text": "Five."
  },
  {
+  "i": 10,
+  "start": 17.718,
+  "end": 18.834,
+  "text": "Night one, five."
+ },
+ {
   "i": 11,
-  "start": 19.208,
-  "end": 19.786,
-  "text": "Good."
+  "start": 19.584,
+  "end": 20.715,
+  "text": "Night two, five."
  },
  {
   "i": 12,
-  "start": 22.186,
-  "end": 24.384,
-  "text": "Then I realized I never count myself."
+  "start": 21.265,
+  "end": 22.724,
+  "text": "Everyone made fun of me."
  },
  {
   "i": 13,
-  "start": 25.984,
-  "end": 27.03,
+  "start": 24.024,
+  "end": 25.702,
+  "text": "Night three, the fog rolled in."
+ },
+ {
+  "i": 14,
+  "start": 26.452,
+  "end": 27.591,
+  "text": "The fire got low."
+ },
+ {
+  "i": 15,
+  "start": 28.141,
+  "end": 29.788,
+  "text": "Someone told a ghost story."
+ },
+ {
+  "i": 16,
+  "start": 30.538,
+  "end": 32.029,
+  "text": "I counted, like always."
+ },
+ {
+  "i": 17,
+  "start": 32.779,
+  "end": 33.325,
+  "text": "One."
+ },
+ {
+  "i": 18,
+  "start": 33.875,
+  "end": 34.457,
+  "text": "Two."
+ },
+ {
+  "i": 19,
+  "start": 35.007,
+  "end": 35.62,
+  "text": "Three."
+ },
+ {
+  "i": 20,
+  "start": 36.17,
+  "end": 36.779,
+  "text": "Four."
+ },
+ {
+  "i": 21,
+  "start": 37.329,
+  "end": 37.968,
+  "text": "Five."
+ },
+ {
+  "i": 22,
+  "start": 39.268,
+  "end": 39.879,
+  "text": "Six."
+ },
+ {
+  "i": 23,
+  "start": 41.179,
+  "end": 42.187,
+  "text": "Everyone laughed."
+ },
+ {
+  "i": 24,
+  "start": 42.737,
+  "end": 44.659,
+  "text": "They said I counted someone twice."
+ },
+ {
+  "i": 25,
+  "start": 45.409,
+  "end": 46.992,
+  "text": "So I counted again, slowly."
+ },
+ {
+  "i": 26,
+  "start": 47.542,
+  "end": 48.181,
+  "text": "Five."
+ },
+ {
+  "i": 27,
+  "start": 49.481,
+  "end": 50.058,
+  "text": "Good."
+ },
+ {
+  "i": 28,
+  "start": 51.358,
+  "end": 52.496,
+  "text": "I felt stupid."
+ },
+ {
+  "i": 29,
+  "start": 53.046,
+  "end": 54.471,
+  "text": "I went back to my spot."
+ },
+ {
+  "i": 30,
+  "start": 55.221,
+  "end": 57.981,
+  "text": "Later, lying in my tent, I went over it again."
+ },
+ {
+  "i": 31,
+  "start": 58.731,
+  "end": 59.578,
+  "text": "Five of us."
+ },
+ {
+  "i": 32,
+  "start": 60.128,
+  "end": 61.372,
+  "text": "Four friends, and me."
+ },
+ {
+  "i": 33,
+  "start": 63.772,
+  "end": 65.265,
+  "text": "And I never count myself."
+ },
+ {
+  "i": 34,
+  "start": 66.865,
+  "end": 67.911,
   "text": "Follow for more."
  }
 ]
