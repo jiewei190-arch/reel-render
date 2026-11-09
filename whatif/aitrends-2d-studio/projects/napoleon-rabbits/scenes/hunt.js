@@ -11,7 +11,7 @@ import { THREE, at, tag, meadow, napoleon, berthier, coachman, crop, rabbit, war
 
 const SUN = { rays: { from: [-60, -80], strength: 0.9 }, tint: '#ffcf8a' };
 const look = (g, t, rays = true) => sunnyLook(g, t, rays ? SUN : { rays: false, tint: '#ffcf8a' });
-const swat = (t, k = 1) => ({ armR: [1.2 + Math.sin(t * 13) * 0.8 * k, 0.6, 0.3], elbowR: 0.4, armL: [0.6, 1.4, 0], elbowL: 0.5 });
+const swat = (t, k = 1) => ({ armR: [0.5 + Math.sin(t * 13) * 0.5 * k, 1.5, 0], elbowR: 0.3, armL: [0.6, 1.4, 0], elbowL: 0.5 });
 const withCrop = (b) => { const c = crop(); c.rotation.x = Math.PI - 0.5; b.hand.R.add(c); b.crop = c; return c; };
 // rabbits circling Napoleon's feet (swarm), each on its own little orbit, hopping
 const swarm = (list, t, c = [0, 0], rad = [0.6, 1.5]) => list.forEach((b, i) => { const a = i * 2.39 + t * (0.6 + (i % 3) * 0.15) * (i % 2 ? 1 : -1); const r = rad[0] + ((i * 0.37) % 1) * (rad[1] - rad[0]);
@@ -136,11 +136,11 @@ registerShot('s16', { kind: '3d',
     s.roof = [0, 1].map(i => { const b = rabbit({ seed: 70 + i }); b.position.set(i ? 0.8 : -0.7, 2.48, 0.25); s.stage.add(b); return b; }); s.r = warren(s.stage, 12, [-2.5, 2.5, 0.9, 2.4], 37); return s; },
   draw(s, t, info) { s.update(t); s.n.pose(addPose({ ...POSE.sit, armL: [1.0, 0.1, 0.6], armR: [1.0, 0.1, 0.6], elbowL: 1.2, elbowR: 1.2, headNod: 0.1 }, tremble(t))); s.n.face({ ...EXPR.sad, pupil: [0, 0] }, t);
     s.roof.forEach(b => { b.rotation.y = 0; b.update(t, { lid: 0.6, look: [0, 0] }); }); s.r.forEach(b => { b.rotation.y = Math.PI; b.update(t, { look: [0, 1] }); });
-    camMove(s.stage, t, [[0, { pos: [0.1, 3.0, 5.2], look: [0.1, 2.2, 0], fov: 44 }], [info.dur, { pos: [0.1, 2.95, 4.5], look: [0.1, 2.3, 0], fov: 44 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0.1, 3.5, 5.8], look: [0.1, 2.9, 0], fov: 44 }], [info.dur, { pos: [0.1, 3.45, 5.1], look: [0.1, 2.95, 0], fov: 44 }]]); },
   overlay(g, t, info, s) { look(g, t, false); reactions(g, t, s, [{ fx: 'sweat', on: 'n', at: 0.4 }]); },
 });
 // s17 "defeated by bunnies." — FINAL SCORE card over the carriage scene
-insertShot('s17', { scene: { init(T) { const s = meadow(T, { carriage: [0, 0, 0], carRot: 0 }); s.r = warren(s.stage, 12, [-2.5, 2.5, 0.9, 2.2], 37); return s; }, draw(s, t) { s.update(t); s.r.forEach(b => b.update(t, {})); camMove(s.stage, t, [[0, { pos: [0.1, 2.95, 4.5], look: [0.1, 2.3, 0], fov: 44 }]]); } },
+insertShot('s17', { scene: { init(T) { const s = meadow(T, { carriage: [0, 0, 0], carRot: 0 }); s.r = warren(s.stage, 12, [-2.5, 2.5, 0.9, 2.2], 37); return s; }, draw(s, t) { s.update(t); s.r.forEach(b => b.update(t, {})); camMove(s.stage, t, [[0, { pos: [0.1, 3.45, 5.1], look: [0.1, 2.95, 0], fov: 44 }]]); } },
   insert: { type: 'versus', title: 'FINAL SCORE', lines: ['BUNNIES  1', 'NAPOLEON  0'], colorL: '#f2a0b8', color: '#2a4a9a' } });
 // s18 "Subscribe for more." — the hat-wearing bunny on the roof, sparkle; the camera drifts down into the swarm (loop to frame 1)
 registerShot('s18', { kind: '3d',
