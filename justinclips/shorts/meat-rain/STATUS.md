@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #12: meat-rain ("The Day It Rained Meat in Kentucky 🥩")
 Branch `justinclips/batch2-c` (project commit c09bb4f; `--out` made explicit per Creator). Project: `whatif/aitrends-2d-studio/projects/meat-rain` (Toon 3D kit + BEANMEN FX, 16 shots).
@@ -37,3 +37,9 @@ committed `kits/toon3d/audio` wavs (`toon3d:curious` bed + 46 cues). Python need
 - Preview render in the cloud: 540x960, 5m20s (SwiftShader, 4 workers). Build frames are gitignored.
 
 Nothing was posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **926 frames (counted), 38.58 s**, 23.3 MB; audio 48 kHz, 38.58 s.
+- Loudness measured on the final file: **-14.55 LUFS, true peak -1.42 dBTP** (same as the preview's -14.5).
+- Render 62 s. Render, mix and mux run exactly as listed above.
+- Contact sheet checked (cards, captions, vultures, loop ending matches frame 1). Nothing posted, uploaded or scheduled.
