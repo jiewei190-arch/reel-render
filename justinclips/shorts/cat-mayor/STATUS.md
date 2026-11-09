@@ -1,7 +1,7 @@
 STATE: render-on-pc
 
 # Justin clips Short #8: cat-mayor ("This Town's Mayor Was a Cat for Almost 20 Years 🐱")
-Branch `justinclips/batch2-a`. Project: `whatif/aitrends-2d-studio/projects/cat-mayor` (17 shots, Toon 3D + BEANMEN FX).
+Branch `justinclips/batch2-a`, project commit `f7c87b3`. Project: `whatif/aitrends-2d-studio/projects/cat-mayor` (17 shots, Toon 3D + BEANMEN FX).
 Expected: **1015 frames, 42.29 s** (voice 42.27 s), 1080x1920, 24 fps. Preview checked: `preview_cat-mayor.mp4` (540x960, mixed) + `contact_cat-mayor.png`.
 
 ## Creator: full render (from `whatif/aitrends-2d-studio`)
