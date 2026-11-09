@@ -1,0 +1,629 @@
+{
+ "source": "Kokoro am_fenrir 0.95 TTS sentence segments + faster-whisper base.en word timestamps (voice_words.py)",
+ "words": [
+  {
+   "word": "Imagine",
+   "start": 0.1,
+   "end": 0.42,
+   "spoken": "Imagine"
+  },
+  {
+   "word": "the",
+   "start": 0.42,
+   "end": 0.62,
+   "spoken": "the"
+  },
+  {
+   "word": "Sun",
+   "start": 0.62,
+   "end": 0.76,
+   "spoken": "Sun"
+  },
+  {
+   "word": "just",
+   "start": 0.76,
+   "end": 1.0,
+   "spoken": "just"
+  },
+  {
+   "word": "vanished.",
+   "start": 1.0,
+   "end": 1.18,
+   "spoken": "vanished."
+  },
+  {
+   "word": "You",
+   "start": 1.98,
+   "end": 2.03,
+   "spoken": "You"
+  },
+  {
+   "word": "wouldn't",
+   "start": 2.02,
+   "end": 2.24,
+   "spoken": "wouldn't"
+  },
+  {
+   "word": "know",
+   "start": 2.24,
+   "end": 2.42,
+   "spoken": "know"
+  },
+  {
+   "word": "for",
+   "start": 2.42,
+   "end": 2.64,
+   "spoken": "for"
+  },
+  {
+   "word": "8",
+   "start": 2.64,
+   "end": 2.82,
+   "spoken": "eight"
+  },
+  {
+   "word": "minutes.",
+   "start": 2.82,
+   "end": 3.04,
+   "spoken": "minutes."
+  },
+  {
+   "word": "Even",
+   "start": 4.069,
+   "end": 4.32,
+   "spoken": "Even"
+  },
+  {
+   "word": "gravity",
+   "start": 4.32,
+   "end": 4.58,
+   "spoken": "gravity"
+  },
+  {
+   "word": "takes",
+   "start": 4.58,
+   "end": 5.1,
+   "spoken": "takes"
+  },
+  {
+   "word": "8",
+   "start": 5.1,
+   "end": 5.36,
+   "spoken": "eight"
+  },
+  {
+   "word": "minutes",
+   "start": 5.36,
+   "end": 5.66,
+   "spoken": "minutes"
+  },
+  {
+   "word": "to",
+   "start": 5.66,
+   "end": 5.88,
+   "spoken": "to"
+  },
+  {
+   "word": "get",
+   "start": 5.88,
+   "end": 6.0,
+   "spoken": "get"
+  },
+  {
+   "word": "the",
+   "start": 6.0,
+   "end": 6.14,
+   "spoken": "the"
+  },
+  {
+   "word": "news.",
+   "start": 6.14,
+   "end": 6.34,
+   "spoken": "news."
+  },
+  {
+   "word": "Sunlight",
+   "start": 7.16,
+   "end": 7.32,
+   "spoken": "Sunlight"
+  },
+  {
+   "word": "needs",
+   "start": 7.32,
+   "end": 7.5,
+   "spoken": "needs"
+  },
+  {
+   "word": "8",
+   "start": 7.5,
+   "end": 7.86,
+   "spoken": "eight"
+  },
+  {
+   "word": "minutes",
+   "start": 7.86,
+   "end": 8.1,
+   "spoken": "minutes"
+  },
+  {
+   "word": "to",
+   "start": 8.1,
+   "end": 8.34,
+   "spoken": "to"
+  },
+  {
+   "word": "reach",
+   "start": 8.34,
+   "end": 8.5,
+   "spoken": "reach"
+  },
+  {
+   "word": "us.",
+   "start": 8.5,
+   "end": 8.78,
+   "spoken": "us."
+  },
+  {
+   "word": "So",
+   "start": 9.295,
+   "end": 9.4,
+   "spoken": "So"
+  },
+  {
+   "word": "the",
+   "start": 9.4,
+   "end": 9.5,
+   "spoken": "the"
+  },
+  {
+   "word": "sky",
+   "start": 9.5,
+   "end": 9.68,
+   "spoken": "sky"
+  },
+  {
+   "word": "still",
+   "start": 9.68,
+   "end": 10.04,
+   "spoken": "still"
+  },
+  {
+   "word": "looks",
+   "start": 10.04,
+   "end": 10.26,
+   "spoken": "looks"
+  },
+  {
+   "word": "totally",
+   "start": 10.26,
+   "end": 10.54,
+   "spoken": "totally"
+  },
+  {
+   "word": "normal.",
+   "start": 10.54,
+   "end": 11.02,
+   "spoken": "normal."
+  },
+  {
+   "word": "And",
+   "start": 11.54,
+   "end": 11.6,
+   "spoken": "And"
+  },
+  {
+   "word": "Earth",
+   "start": 11.6,
+   "end": 11.78,
+   "spoken": "Earth"
+  },
+  {
+   "word": "keeps",
+   "start": 11.78,
+   "end": 11.98,
+   "spoken": "keeps"
+  },
+  {
+   "word": "circling...",
+   "start": 11.98,
+   "end": 12.26,
+   "spoken": "circling..."
+  },
+  {
+   "word": "nothing.",
+   "start": 12.76,
+   "end": 13.06,
+   "spoken": "nothing."
+  },
+  {
+   "word": "Wait,",
+   "start": 13.74,
+   "end": 13.79,
+   "spoken": "Wait,"
+  },
+  {
+   "word": "how?",
+   "start": 13.78,
+   "end": 14.06,
+   "spoken": "how?"
+  },
+  {
+   "word": "You",
+   "start": 14.68,
+   "end": 14.74,
+   "spoken": "You"
+  },
+  {
+   "word": "see,",
+   "start": 14.74,
+   "end": 14.92,
+   "spoken": "see,"
+  },
+  {
+   "word": "gravity",
+   "start": 14.92,
+   "end": 15.2,
+   "spoken": "gravity"
+  },
+  {
+   "word": "is",
+   "start": 15.2,
+   "end": 15.58,
+   "spoken": "is"
+  },
+  {
+   "word": "not",
+   "start": 15.58,
+   "end": 15.8,
+   "spoken": "not"
+  },
+  {
+   "word": "instant",
+   "start": 15.8,
+   "end": 16.06,
+   "spoken": "instant"
+  },
+  {
+   "word": "either.",
+   "start": 16.06,
+   "end": 16.52,
+   "spoken": "either."
+  },
+  {
+   "word": "It",
+   "start": 17.04,
+   "end": 17.09,
+   "spoken": "It"
+  },
+  {
+   "word": "travels",
+   "start": 17.08,
+   "end": 17.34,
+   "spoken": "travels"
+  },
+  {
+   "word": "at",
+   "start": 17.34,
+   "end": 17.62,
+   "spoken": "at"
+  },
+  {
+   "word": "the",
+   "start": 17.62,
+   "end": 17.68,
+   "spoken": "the"
+  },
+  {
+   "word": "speed",
+   "start": 17.68,
+   "end": 17.9,
+   "spoken": "speed"
+  },
+  {
+   "word": "of",
+   "start": 17.9,
+   "end": 18.06,
+   "spoken": "of"
+  },
+  {
+   "word": "light.",
+   "start": 18.06,
+   "end": 18.22,
+   "spoken": "light."
+  },
+  {
+   "word": "Then,",
+   "start": 18.84,
+   "end": 19.0,
+   "spoken": "Then,"
+  },
+  {
+   "word": "at",
+   "start": 19.0,
+   "end": 19.18,
+   "spoken": "at"
+  },
+  {
+   "word": "minute",
+   "start": 19.18,
+   "end": 19.34,
+   "spoken": "minute"
+  },
+  {
+   "word": "8...",
+   "start": 19.34,
+   "end": 19.56,
+   "spoken": "eight..."
+  },
+  {
+   "word": "lights",
+   "start": 20.652,
+   "end": 20.86,
+   "spoken": "lights"
+  },
+  {
+   "word": "out.",
+   "start": 20.86,
+   "end": 21.1,
+   "spoken": "out."
+  },
+  {
+   "word": "The",
+   "start": 21.76,
+   "end": 21.81,
+   "spoken": "The"
+  },
+  {
+   "word": "Moon",
+   "start": 21.8,
+   "end": 21.88,
+   "spoken": "Moon"
+  },
+  {
+   "word": "goes",
+   "start": 21.88,
+   "end": 22.16,
+   "spoken": "goes"
+  },
+  {
+   "word": "dark",
+   "start": 22.16,
+   "end": 22.4,
+   "spoken": "dark"
+  },
+  {
+   "word": "too.",
+   "start": 22.4,
+   "end": 22.72,
+   "spoken": "too."
+  },
+  {
+   "word": "Only",
+   "start": 23.26,
+   "end": 23.46,
+   "spoken": "Only"
+  },
+  {
+   "word": "the",
+   "start": 23.46,
+   "end": 23.66,
+   "spoken": "the"
+  },
+  {
+   "word": "stars",
+   "start": 23.66,
+   "end": 23.84,
+   "spoken": "stars"
+  },
+  {
+   "word": "are",
+   "start": 23.84,
+   "end": 24.14,
+   "spoken": "are"
+  },
+  {
+   "word": "left.",
+   "start": 24.14,
+   "end": 24.34,
+   "spoken": "left."
+  },
+  {
+   "word": "Earth",
+   "start": 25.04,
+   "end": 25.09,
+   "spoken": "Earth"
+  },
+  {
+   "word": "flies",
+   "start": 25.08,
+   "end": 25.3,
+   "spoken": "flies"
+  },
+  {
+   "word": "off",
+   "start": 25.3,
+   "end": 25.6,
+   "spoken": "off"
+  },
+  {
+   "word": "in",
+   "start": 25.6,
+   "end": 25.74,
+   "spoken": "in"
+  },
+  {
+   "word": "a",
+   "start": 25.74,
+   "end": 25.8,
+   "spoken": "a"
+  },
+  {
+   "word": "straight",
+   "start": 25.8,
+   "end": 25.96,
+   "spoken": "straight"
+  },
+  {
+   "word": "line,",
+   "start": 25.96,
+   "end": 26.3,
+   "spoken": "line,"
+  },
+  {
+   "word": "into",
+   "start": 26.3,
+   "end": 26.66,
+   "spoken": "into"
+  },
+  {
+   "word": "space.",
+   "start": 26.66,
+   "end": 26.98,
+   "spoken": "space."
+  },
+  {
+   "word": "In",
+   "start": 27.638,
+   "end": 27.688,
+   "spoken": "In"
+  },
+  {
+   "word": "a",
+   "start": 27.68,
+   "end": 27.78,
+   "spoken": "a"
+  },
+  {
+   "word": "few",
+   "start": 27.78,
+   "end": 27.94,
+   "spoken": "few"
+  },
+  {
+   "word": "weeks,",
+   "start": 27.94,
+   "end": 28.18,
+   "spoken": "weeks,"
+  },
+  {
+   "word": "the",
+   "start": 28.18,
+   "end": 28.46,
+   "spoken": "the"
+  },
+  {
+   "word": "whole",
+   "start": 28.46,
+   "end": 28.6,
+   "spoken": "whole"
+  },
+  {
+   "word": "planet",
+   "start": 28.6,
+   "end": 29.02,
+   "spoken": "planet"
+  },
+  {
+   "word": "freezes.",
+   "start": 29.02,
+   "end": 29.34,
+   "spoken": "freezes."
+  },
+  {
+   "word": "So",
+   "start": 30.08,
+   "end": 30.16,
+   "spoken": "So"
+  },
+  {
+   "word": "that",
+   "start": 30.16,
+   "end": 30.32,
+   "spoken": "that"
+  },
+  {
+   "word": "last",
+   "start": 30.32,
+   "end": 30.52,
+   "spoken": "last"
+  },
+  {
+   "word": "bit",
+   "start": 30.52,
+   "end": 30.82,
+   "spoken": "bit"
+  },
+  {
+   "word": "of",
+   "start": 30.82,
+   "end": 30.9,
+   "spoken": "of"
+  },
+  {
+   "word": "sunshine",
+   "start": 30.9,
+   "end": 31.16,
+   "spoken": "sunshine"
+  },
+  {
+   "word": "you",
+   "start": 31.16,
+   "end": 31.54,
+   "spoken": "you"
+  },
+  {
+   "word": "saw...",
+   "start": 31.54,
+   "end": 31.78,
+   "spoken": "saw..."
+  },
+  {
+   "word": "was",
+   "start": 32.791,
+   "end": 32.88,
+   "spoken": "was"
+  },
+  {
+   "word": "already",
+   "start": 32.88,
+   "end": 33.16,
+   "spoken": "already"
+  },
+  {
+   "word": "8",
+   "start": 33.16,
+   "end": 33.48,
+   "spoken": "eight"
+  },
+  {
+   "word": "minutes",
+   "start": 33.48,
+   "end": 33.72,
+   "spoken": "minutes"
+  },
+  {
+   "word": "old.",
+   "start": 33.72,
+   "end": 33.98,
+   "spoken": "old."
+  },
+  {
+   "word": "Subscribe",
+   "start": 34.74,
+   "end": 34.79,
+   "spoken": "Subscribe"
+  },
+  {
+   "word": "for",
+   "start": 34.78,
+   "end": 35.18,
+   "spoken": "for"
+  },
+  {
+   "word": "more.",
+   "start": 35.18,
+   "end": 35.42,
+   "spoken": "more."
+  }
+ ]
+}
