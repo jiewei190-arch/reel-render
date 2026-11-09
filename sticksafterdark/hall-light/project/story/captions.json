@@ -1,122 +1,307 @@
 [
  {
   "start": 0.41,
-  "end": 1.06,
+  "end": 1.04,
   "text": "My little brother"
  },
  {
-  "start": 1.08,
-  "end": 1.64,
-  "text": "is scared"
+  "start": 1.06,
+  "end": 1.76,
+  "text": "is scared of"
  },
  {
-  "start": 1.66,
-  "end": 2.26,
-  "text": "of the dark,"
+  "start": 1.78,
+  "end": 2.63,
+  "text": "the dark."
  },
  {
-  "start": 2.28,
-  "end": 3.04,
-  "text": "so we leave"
+  "start": 3.26,
+  "end": 3.9,
+  "text": "So every night,"
  },
  {
-  "start": 3.06,
-  "end": 3.74,
-  "text": "the hall light"
+  "start": 3.92,
+  "end": 4.46,
+  "text": "we leave the"
  },
  {
-  "start": 3.76,
-  "end": 4.75,
-  "text": "on."
+  "start": 4.48,
+  "end": 5.73,
+  "text": "hall light on."
  },
  {
-  "start": 5.03,
-  "end": 5.3,
+  "start": 6.22,
+  "end": 6.72,
+  "text": "It's an old"
+ },
+ {
+  "start": 6.74,
+  "end": 7.77,
+  "text": "yellow bulb."
+ },
+ {
+  "start": 8.192,
+  "end": 9.15,
+  "text": "It hums."
+ },
+ {
+  "start": 9.497,
+  "end": 10.04,
+  "text": "You get used"
+ },
+ {
+  "start": 10.06,
+  "end": 10.93,
+  "text": "to it."
+ },
+ {
+  "start": 11.375,
+  "end": 12.22,
+  "text": "Last month it"
+ },
+ {
+  "start": 12.24,
+  "end": 12.86,
+  "text": "burned out,"
+ },
+ {
+  "start": 12.88,
+  "end": 13.62,
+  "text": "and he screamed"
+ },
+ {
+  "start": 13.64,
+  "end": 14.32,
+  "text": "until Dad"
+ },
+ {
+  "start": 14.34,
+  "end": 15.61,
+  "text": "changed it."
+ },
+ {
+  "start": 15.977,
+  "end": 16.46,
+  "text": "So we never"
+ },
+ {
+  "start": 16.48,
+  "end": 16.78,
+  "text": "let it"
+ },
+ {
+  "start": 16.8,
+  "end": 17.69,
+  "text": "go out."
+ },
+ {
+  "start": 18.763,
+  "end": 19.04,
   "text": "Tonight,"
  },
  {
-  "start": 5.32,
-  "end": 5.78,
-  "text": "at 12:00"
+  "start": 19.06,
+  "end": 19.52,
+  "text": "at 12:00,"
  },
  {
-  "start": 5.8,
-  "end": 6.16,
-  "text": "it clicked"
+  "start": 19.54,
+  "end": 20.67,
+  "text": "it clicked off."
  },
  {
-  "start": 6.18,
-  "end": 6.95,
-  "text": "off."
+  "start": 21.224,
+  "end": 22.21,
+  "text": "No flicker."
  },
  {
-  "start": 7.49,
-  "end": 7.86,
+  "start": 22.727,
+  "end": 23.69,
+  "text": "No pop."
+ },
+ {
+  "start": 24.1,
+  "end": 24.34,
+  "text": "Just,"
+ },
+ {
+  "start": 24.36,
+  "end": 25.09,
+  "text": "click."
+ },
+ {
+  "start": 25.706,
+  "end": 26.77,
+  "text": "The hum stopped."
+ },
+ {
+  "start": 27.21,
+  "end": 27.78,
+  "text": "The whole house"
+ },
+ {
+  "start": 27.8,
+  "end": 28.73,
+  "text": "went quiet."
+ },
+ {
+  "start": 29.398,
+  "end": 30.203,
+  "text": "I waited for"
+ },
+ {
+  "start": 30.223,
+  "end": 30.821,
+  "text": "my brother"
+ },
+ {
+  "start": 30.841,
+  "end": 31.557,
+  "text": "to scream."
+ },
+ {
+  "start": 32.003,
+  "end": 32.89,
+  "text": "He didn't."
+ },
+ {
+  "start": 33.565,
+  "end": 33.96,
   "text": "I got up"
  },
  {
-  "start": 7.88,
-  "end": 8.3,
+  "start": 33.98,
+  "end": 34.4,
   "text": "to turn it"
  },
  {
-  "start": 8.32,
-  "end": 9.35,
+  "start": 34.42,
+  "end": 35.43,
   "text": "back on."
  },
  {
-  "start": 9.809,
-  "end": 10.34,
-  "text": "From his room,"
+  "start": 35.884,
+  "end": 36.58,
+  "text": "My hand was"
  },
  {
-  "start": 10.36,
-  "end": 11.29,
+  "start": 36.6,
+  "end": 36.88,
+  "text": "on the"
+ },
+ {
+  "start": 36.9,
+  "end": 37.58,
+  "text": "doorknob when,"
+ },
+ {
+  "start": 37.6,
+  "end": 38.44,
+  "text": "from his room,"
+ },
+ {
+  "start": 38.46,
+  "end": 39.43,
   "text": "he whispered:"
  },
  {
-  "start": 11.98,
-  "end": 12.48,
+  "start": 40.2,
+  "end": 40.96,
   "text": "Don't."
  },
  {
-  "start": 12.5,
-  "end": 13.8,
-  "text": "It turned it off"
+  "start": 40.98,
+  "end": 41.62,
+  "text": "It turned it"
  },
  {
-  "start": 13.82,
-  "end": 14.5,
-  "text": "so you'd"
+  "start": 41.64,
+  "end": 42.64,
+  "text": "off so you'd"
  },
  {
-  "start": 14.52,
-  "end": 15.59,
+  "start": 42.66,
+  "end": 43.67,
   "text": "come out."
  },
  {
-  "start": 16.577,
-  "end": 17.08,
+  "start": 44.8,
+  "end": 45.16,
+  "text": "I let go"
+ },
+ {
+  "start": 45.18,
+  "end": 46.23,
+  "text": "of the doorknob."
+ },
+ {
+  "start": 46.866,
+  "end": 47.38,
   "text": "I got back"
  },
  {
-  "start": 17.1,
-  "end": 18.03,
+  "start": 47.4,
+  "end": 48.23,
   "text": "in bed."
  },
  {
-  "start": 20.191,
-  "end": 20.63,
-  "text": "My brother"
+  "start": 48.631,
+  "end": 49.18,
+  "text": "I pulled the"
  },
  {
-  "start": 20.65,
-  "end": 21.59,
-  "text": "is at Grandma's"
+  "start": 49.2,
+  "end": 49.74,
+  "text": "blanket over"
  },
  {
-  "start": 21.61,
-  "end": 22.82,
+  "start": 49.76,
+  "end": 50.69,
+  "text": "my head."
+ },
+ {
+  "start": 51.202,
+  "end": 51.46,
+  "text": "And I"
+ },
+ {
+  "start": 51.48,
+  "end": 52.0,
+  "text": "lay there,"
+ },
+ {
+  "start": 52.02,
+  "end": 52.68,
+  "text": "listening to"
+ },
+ {
+  "start": 52.7,
+  "end": 53.16,
+  "text": "the quiet,"
+ },
+ {
+  "start": 53.18,
+  "end": 54.51,
+  "text": "until morning."
+ },
+ {
+  "start": 55.615,
+  "end": 56.83,
+  "text": "Then I remembered."
+ },
+ {
+  "start": 59.128,
+  "end": 59.75,
+  "text": "My brother is"
+ },
+ {
+  "start": 59.77,
+  "end": 60.55,
+  "text": "at Grandma's"
+ },
+ {
+  "start": 60.57,
+  "end": 61.46,
   "text": "this week."
  }
 ]

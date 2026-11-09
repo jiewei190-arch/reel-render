@@ -2,55 +2,157 @@
  {
   "i": 0,
   "start": 0.08,
-  "end": 4.4,
-  "text": "My little brother is scared of the dark, so we leave the hall light on."
+  "end": 2.28,
+  "text": "My little brother is scared of the dark."
  },
  {
   "i": 1,
-  "start": 4.4,
-  "end": 6.6,
-  "text": "Tonight, at midnight, it clicked off."
+  "start": 3.3,
+  "end": 5.38,
+  "text": "So every night, we leave the hall light on."
  },
  {
   "i": 2,
-  "start": 7.12,
-  "end": 9.0,
-  "text": "I got up to turn it back on."
+  "start": 6.14,
+  "end": 7.42,
+  "text": "It's an old yellow bulb."
  },
  {
   "i": 3,
-  "start": 9.0,
-  "end": 10.94,
-  "text": "From his room, he whispered:"
+  "start": 8.16,
+  "end": 8.8,
+  "text": "It hums."
  },
  {
   "i": 4,
-  "start": 12.02,
-  "end": 12.54,
-  "text": "Don't."
+  "start": 9.44,
+  "end": 10.58,
+  "text": "You get used to it."
  },
  {
   "i": 5,
-  "start": 12.54,
-  "end": 15.24,
-  "text": "It turned it off so you'd come out."
+  "start": 11.4,
+  "end": 15.26,
+  "text": "Last month it burned out, and he screamed until Dad changed it."
  },
  {
   "i": 6,
-  "start": 16.22,
-  "end": 17.68,
-  "text": "I got back in bed."
+  "start": 15.9,
+  "end": 17.34,
+  "text": "So we never let it go out."
  },
  {
   "i": 7,
-  "start": 19.85,
-  "end": 22.47,
-  "text": "My brother is at Grandma's this week."
+  "start": 18.72,
+  "end": 20.32,
+  "text": "Tonight, at midnight, it clicked off."
  },
  {
   "i": 8,
-  "start": 24.39,
-  "end": 25.69,
+  "start": 21.08,
+  "end": 21.86,
+  "text": "No flicker."
+ },
+ {
+  "i": 9,
+  "start": 22.72,
+  "end": 23.34,
+  "text": "No pop."
+ },
+ {
+  "i": 10,
+  "start": 24.14,
+  "end": 24.74,
+  "text": "Just, click."
+ },
+ {
+  "i": 11,
+  "start": 25.56,
+  "end": 26.42,
+  "text": "The hum stopped."
+ },
+ {
+  "i": 12,
+  "start": 27.24,
+  "end": 28.38,
+  "text": "The whole house went quiet."
+ },
+ {
+  "i": 13,
+  "start": 28.38,
+  "end": 31.08,
+  "text": "I waited for my brother to scream."
+ },
+ {
+  "i": 14,
+  "start": 31.92,
+  "end": 32.54,
+  "text": "He didn't."
+ },
+ {
+  "i": 15,
+  "start": 33.44,
+  "end": 35.08,
+  "text": "I got up to turn it back on."
+ },
+ {
+  "i": 16,
+  "start": 35.9,
+  "end": 39.08,
+  "text": "My hand was on the doorknob when, from his room, he whispered:"
+ },
+ {
+  "i": 17,
+  "start": 40.24,
+  "end": 40.66,
+  "text": "Don't."
+ },
+ {
+  "i": 18,
+  "start": 41.02,
+  "end": 43.32,
+  "text": "It turned it off so you'd come out."
+ },
+ {
+  "i": 19,
+  "start": 44.84,
+  "end": 45.88,
+  "text": "I let go of the doorknob."
+ },
+ {
+  "i": 20,
+  "start": 46.8,
+  "end": 47.88,
+  "text": "I got back in bed."
+ },
+ {
+  "i": 21,
+  "start": 48.54,
+  "end": 50.34,
+  "text": "I pulled the blanket over my head."
+ },
+ {
+  "i": 22,
+  "start": 51.22,
+  "end": 54.16,
+  "text": "And I lay there, listening to the quiet, until morning."
+ },
+ {
+  "i": 23,
+  "start": 55.3,
+  "end": 56.48,
+  "text": "Then I remembered."
+ },
+ {
+  "i": 24,
+  "start": 58.77,
+  "end": 61.11,
+  "text": "My brother is at Grandma's this week."
+ },
+ {
+  "i": 25,
+  "start": 64.04,
+  "end": 64.62,
   "text": "Follow for more."
  }
 ]

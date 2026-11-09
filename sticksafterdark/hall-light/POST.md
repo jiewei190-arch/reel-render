@@ -12,4 +12,6 @@ Voice is synthetic.
 
 **Pinned comment:** Would you have gone back out to turn the light on? 👀
 
-**Cover frame:** 24.0 s (the dark hall, two warm dot-eyes in his doorway). Alt: 21.2 s (calendar "GRANDMA'S →").
+**Cover frame:** 63.0 s (the dark hall, two warm dot-eyes in his doorway). Alt: 60.3 s (calendar "GRANDMA'S →").
+
+Length: 66.5 s (60-70 s Instagram cut).
