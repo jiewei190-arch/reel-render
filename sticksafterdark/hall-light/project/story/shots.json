@@ -1,0 +1,456 @@
+{
+ "title": "Sticks After Dark 4 Hall Light",
+ "duration": 66.515,
+ "shots": [
+  {
+   "id": "s01_hall_lit",
+   "start": 0.0,
+   "end": 2.2,
+   "line": "My little brother is scared of the dark.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s02_his_door",
+   "start": 2.2,
+   "end": 4.4,
+   "line": "So every night, we leave the",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s03_switch",
+   "start": 4.4,
+   "end": 6.1,
+   "line": "hall light on.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s04_bulb",
+   "start": 6.1,
+   "end": 8.1,
+   "line": "It's an old yellow bulb.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s05_used",
+   "start": 8.1,
+   "end": 11.2,
+   "line": "It hums. You get used to it.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s06_burned",
+   "start": 11.2,
+   "end": 13.1,
+   "line": "Last month it burned out, and",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "glitch",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s07_scream",
+   "start": 13.1,
+   "end": 14.4,
+   "line": "he screamed until Dad changed",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s08_ladder",
+   "start": 14.4,
+   "end": 16.0,
+   "line": "it.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.7,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09_never",
+   "start": 16.0,
+   "end": 18.4,
+   "line": "So we never let it go out.",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s10_clock",
+   "start": 18.4,
+   "end": 19.75,
+   "line": "Tonight, at midnight, it",
+   "in": "cut",
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.88,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11_click",
+   "start": 19.75,
+   "end": 21.2,
+   "line": "clicked off.",
+   "in": "cut",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "tick",
+     "gain": -4,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.12,
+     "name": "impact",
+     "gain": -20,
+     "dur": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s12_noflicker",
+   "start": 21.2,
+   "end": 22.7,
+   "line": "No flicker.",
+   "in": "cut"
+  },
+  {
+   "id": "s13_nopop",
+   "start": 22.7,
+   "end": 24.1,
+   "line": "No pop.",
+   "in": "cut"
+  },
+  {
+   "id": "s14_line_off",
+   "start": 24.1,
+   "end": 25.7,
+   "line": "Just, click.",
+   "in": "cut",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "tick",
+     "gain": -10,
+     "pitch": 0.7
+    }
+   ]
+  },
+  {
+   "id": "s15_hum_stop",
+   "start": 25.7,
+   "end": 27.2,
+   "line": "The hum stopped.",
+   "in": "cut"
+  },
+  {
+   "id": "s16_quiet",
+   "start": 27.2,
+   "end": 29.4,
+   "line": "The whole house went quiet.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s17_wait",
+   "start": 29.4,
+   "end": 32.0,
+   "line": "I waited for my brother to scream.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s18_didnt",
+   "start": 32.0,
+   "end": 33.6,
+   "line": "He didn't.",
+   "in": "cut"
+  },
+  {
+   "id": "s19_get_up",
+   "start": 33.6,
+   "end": 35.9,
+   "line": "I got up to turn it back on.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 1.7,
+     "name": "footstep",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s20_knob",
+   "start": 35.9,
+   "end": 38.4,
+   "line": "My hand was on the doorknob when, from his room,",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s21_crack_pov",
+   "start": 38.4,
+   "end": 40.2,
+   "line": "he whispered:",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s22_under_door",
+   "start": 40.2,
+   "end": 42.4,
+   "line": "Don't. It turned it off so",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s23_frozen",
+   "start": 42.4,
+   "end": 44.7,
+   "line": "you'd come out.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "heartbeat",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s24_let_go",
+   "start": 44.7,
+   "end": 46.8,
+   "line": "I let go of the doorknob.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s25_back_bed",
+   "start": 46.8,
+   "end": 48.6,
+   "line": "I got back in bed.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 0.85,
+     "name": "footstep",
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "s26_blanket",
+   "start": 48.6,
+   "end": 51.1,
+   "line": "I pulled the blanket over my head.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "swish",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s27_lump",
+   "start": 51.1,
+   "end": 53.6,
+   "line": "And I lay there, listening to the quiet, until",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s28_morning",
+   "start": 53.6,
+   "end": 55.5,
+   "line": "morning.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s29_remember",
+   "start": 55.5,
+   "end": 57.8,
+   "line": "Then I remembered.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s30_held",
+   "start": 57.8,
+   "end": 59.1,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s31_calendar",
+   "start": 59.1,
+   "end": 61.0,
+   "line": "My brother is at Grandma's this week.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.87,
+     "name": "stinger",
+     "gain": -3
+    }
+   ]
+  },
+  {
+   "id": "s32_empty_bed",
+   "start": 61.0,
+   "end": 62.4,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s33_eyes",
+   "start": 62.4,
+   "end": 64.0,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s34_end",
+   "start": 64.0,
+   "end": 66.515,
+   "line": "Follow for more.",
+   "in": "cut",
+   "params": {
+    "captions": false
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 64.0,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ]
+}

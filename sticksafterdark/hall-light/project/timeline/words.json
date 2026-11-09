@@ -1,0 +1,740 @@
+{
+ "source": "whisper:small.en+script (chunk starts from kokoro)",
+ "words": [
+  {
+   "word": "My",
+   "start": 0.45,
+   "end": 0.62
+  },
+  {
+   "word": "little",
+   "start": 0.62,
+   "end": 0.84
+  },
+  {
+   "word": "brother",
+   "start": 0.84,
+   "end": 1.1
+  },
+  {
+   "word": "is",
+   "start": 1.1,
+   "end": 1.36
+  },
+  {
+   "word": "scared",
+   "start": 1.36,
+   "end": 1.68
+  },
+  {
+   "word": "of",
+   "start": 1.68,
+   "end": 1.82
+  },
+  {
+   "word": "the",
+   "start": 1.82,
+   "end": 1.94
+  },
+  {
+   "word": "dark.",
+   "start": 1.94,
+   "end": 2.28
+  },
+  {
+   "word": "So",
+   "start": 3.3,
+   "end": 3.38
+  },
+  {
+   "word": "every",
+   "start": 3.38,
+   "end": 3.66
+  },
+  {
+   "word": "night,",
+   "start": 3.66,
+   "end": 3.96
+  },
+  {
+   "word": "we",
+   "start": 3.96,
+   "end": 4.2
+  },
+  {
+   "word": "leave",
+   "start": 4.2,
+   "end": 4.38
+  },
+  {
+   "word": "the",
+   "start": 4.38,
+   "end": 4.52
+  },
+  {
+   "word": "hall",
+   "start": 4.52,
+   "end": 4.76
+  },
+  {
+   "word": "light",
+   "start": 4.76,
+   "end": 5.02
+  },
+  {
+   "word": "on.",
+   "start": 5.02,
+   "end": 5.38
+  },
+  {
+   "word": "It's",
+   "start": 6.26,
+   "end": 6.44
+  },
+  {
+   "word": "an",
+   "start": 6.44,
+   "end": 6.52
+  },
+  {
+   "word": "old",
+   "start": 6.52,
+   "end": 6.78
+  },
+  {
+   "word": "yellow",
+   "start": 6.78,
+   "end": 7.04
+  },
+  {
+   "word": "bulb.",
+   "start": 7.04,
+   "end": 7.42
+  },
+  {
+   "word": "It",
+   "start": 8.232,
+   "end": 8.36
+  },
+  {
+   "word": "hums.",
+   "start": 8.36,
+   "end": 8.8
+  },
+  {
+   "word": "You",
+   "start": 9.537,
+   "end": 9.66
+  },
+  {
+   "word": "get",
+   "start": 9.66,
+   "end": 9.82
+  },
+  {
+   "word": "used",
+   "start": 9.82,
+   "end": 10.1
+  },
+  {
+   "word": "to",
+   "start": 10.1,
+   "end": 10.3
+  },
+  {
+   "word": "it.",
+   "start": 10.3,
+   "end": 10.58
+  },
+  {
+   "word": "Last",
+   "start": 11.415,
+   "end": 11.74
+  },
+  {
+   "word": "month",
+   "start": 11.74,
+   "end": 12.0
+  },
+  {
+   "word": "it",
+   "start": 12.0,
+   "end": 12.28
+  },
+  {
+   "word": "burned",
+   "start": 12.28,
+   "end": 12.54
+  },
+  {
+   "word": "out,",
+   "start": 12.54,
+   "end": 12.92
+  },
+  {
+   "word": "and",
+   "start": 12.92,
+   "end": 13.18
+  },
+  {
+   "word": "he",
+   "start": 13.18,
+   "end": 13.32
+  },
+  {
+   "word": "screamed",
+   "start": 13.32,
+   "end": 13.68
+  },
+  {
+   "word": "until",
+   "start": 13.68,
+   "end": 14.06
+  },
+  {
+   "word": "Dad",
+   "start": 14.06,
+   "end": 14.38
+  },
+  {
+   "word": "changed",
+   "start": 14.38,
+   "end": 14.84
+  },
+  {
+   "word": "it.",
+   "start": 14.84,
+   "end": 15.26
+  },
+  {
+   "word": "So",
+   "start": 16.017,
+   "end": 16.18
+  },
+  {
+   "word": "we",
+   "start": 16.18,
+   "end": 16.3
+  },
+  {
+   "word": "never",
+   "start": 16.3,
+   "end": 16.52
+  },
+  {
+   "word": "let",
+   "start": 16.52,
+   "end": 16.72
+  },
+  {
+   "word": "it",
+   "start": 16.72,
+   "end": 16.84
+  },
+  {
+   "word": "go",
+   "start": 16.84,
+   "end": 17.0
+  },
+  {
+   "word": "out.",
+   "start": 17.0,
+   "end": 17.34
+  },
+  {
+   "word": "Tonight,",
+   "start": 18.803,
+   "end": 19.1
+  },
+  {
+   "word": "at",
+   "start": 19.1,
+   "end": 19.28
+  },
+  {
+   "word": "midnight,",
+   "start": 19.28,
+   "end": 19.58
+  },
+  {
+   "word": "it",
+   "start": 19.58,
+   "end": 19.8
+  },
+  {
+   "word": "clicked",
+   "start": 19.8,
+   "end": 19.98
+  },
+  {
+   "word": "off.",
+   "start": 19.98,
+   "end": 20.32
+  },
+  {
+   "word": "No",
+   "start": 21.264,
+   "end": 21.5
+  },
+  {
+   "word": "flicker.",
+   "start": 21.5,
+   "end": 21.86
+  },
+  {
+   "word": "No",
+   "start": 22.767,
+   "end": 23.0
+  },
+  {
+   "word": "pop.",
+   "start": 23.0,
+   "end": 23.34
+  },
+  {
+   "word": "Just,",
+   "start": 24.14,
+   "end": 24.4
+  },
+  {
+   "word": "click.",
+   "start": 24.4,
+   "end": 24.74
+  },
+  {
+   "word": "The",
+   "start": 25.746,
+   "end": 25.88
+  },
+  {
+   "word": "hum",
+   "start": 25.88,
+   "end": 26.04
+  },
+  {
+   "word": "stopped.",
+   "start": 26.04,
+   "end": 26.42
+  },
+  {
+   "word": "The",
+   "start": 27.25,
+   "end": 27.34
+  },
+  {
+   "word": "whole",
+   "start": 27.34,
+   "end": 27.56
+  },
+  {
+   "word": "house",
+   "start": 27.56,
+   "end": 27.84
+  },
+  {
+   "word": "went",
+   "start": 27.84,
+   "end": 28.06
+  },
+  {
+   "word": "quiet.",
+   "start": 28.06,
+   "end": 28.38
+  },
+  {
+   "word": "I",
+   "start": 29.438,
+   "end": 29.644
+  },
+  {
+   "word": "waited",
+   "start": 29.644,
+   "end": 30.056
+  },
+  {
+   "word": "for",
+   "start": 30.056,
+   "end": 30.176
+  },
+  {
+   "word": "my",
+   "start": 30.263,
+   "end": 30.383
+  },
+  {
+   "word": "brother",
+   "start": 30.469,
+   "end": 30.589
+  },
+  {
+   "word": "to",
+   "start": 30.881,
+   "end": 31.001
+  },
+  {
+   "word": "scream.",
+   "start": 31.087,
+   "end": 31.207
+  },
+  {
+   "word": "He",
+   "start": 32.043,
+   "end": 32.18
+  },
+  {
+   "word": "didn't.",
+   "start": 32.18,
+   "end": 32.54
+  },
+  {
+   "word": "I",
+   "start": 33.605,
+   "end": 33.72
+  },
+  {
+   "word": "got",
+   "start": 33.72,
+   "end": 33.88
+  },
+  {
+   "word": "up",
+   "start": 33.88,
+   "end": 34.02
+  },
+  {
+   "word": "to",
+   "start": 34.02,
+   "end": 34.18
+  },
+  {
+   "word": "turn",
+   "start": 34.18,
+   "end": 34.32
+  },
+  {
+   "word": "it",
+   "start": 34.32,
+   "end": 34.46
+  },
+  {
+   "word": "back",
+   "start": 34.46,
+   "end": 34.64
+  },
+  {
+   "word": "on.",
+   "start": 34.64,
+   "end": 35.08
+  },
+  {
+   "word": "My",
+   "start": 35.924,
+   "end": 36.12
+  },
+  {
+   "word": "hand",
+   "start": 36.12,
+   "end": 36.46
+  },
+  {
+   "word": "was",
+   "start": 36.46,
+   "end": 36.64
+  },
+  {
+   "word": "on",
+   "start": 36.64,
+   "end": 36.82
+  },
+  {
+   "word": "the",
+   "start": 36.82,
+   "end": 36.94
+  },
+  {
+   "word": "doorknob",
+   "start": 36.94,
+   "end": 37.34
+  },
+  {
+   "word": "when,",
+   "start": 37.34,
+   "end": 37.64
+  },
+  {
+   "word": "from",
+   "start": 37.64,
+   "end": 38.0
+  },
+  {
+   "word": "his",
+   "start": 38.0,
+   "end": 38.16
+  },
+  {
+   "word": "room,",
+   "start": 38.16,
+   "end": 38.5
+  },
+  {
+   "word": "he",
+   "start": 38.5,
+   "end": 38.72
+  },
+  {
+   "word": "whispered:",
+   "start": 38.72,
+   "end": 39.08
+  },
+  {
+   "word": "Don't.",
+   "start": 40.24,
+   "end": 40.66
+  },
+  {
+   "word": "It",
+   "start": 41.02,
+   "end": 41.2
+  },
+  {
+   "word": "turned",
+   "start": 41.2,
+   "end": 41.46
+  },
+  {
+   "word": "it",
+   "start": 41.46,
+   "end": 41.68
+  },
+  {
+   "word": "off",
+   "start": 41.68,
+   "end": 42.0
+  },
+  {
+   "word": "so",
+   "start": 42.0,
+   "end": 42.46
+  },
+  {
+   "word": "you'd",
+   "start": 42.46,
+   "end": 42.7
+  },
+  {
+   "word": "come",
+   "start": 42.7,
+   "end": 42.88
+  },
+  {
+   "word": "out.",
+   "start": 42.88,
+   "end": 43.32
+  },
+  {
+   "word": "I",
+   "start": 44.84,
+   "end": 44.95
+  },
+  {
+   "word": "let",
+   "start": 44.95,
+   "end": 45.04
+  },
+  {
+   "word": "go",
+   "start": 45.04,
+   "end": 45.22
+  },
+  {
+   "word": "of",
+   "start": 45.22,
+   "end": 45.34
+  },
+  {
+   "word": "the",
+   "start": 45.34,
+   "end": 45.46
+  },
+  {
+   "word": "doorknob.",
+   "start": 45.46,
+   "end": 45.88
+  },
+  {
+   "word": "I",
+   "start": 46.906,
+   "end": 47.04
+  },
+  {
+   "word": "got",
+   "start": 47.04,
+   "end": 47.18
+  },
+  {
+   "word": "back",
+   "start": 47.18,
+   "end": 47.44
+  },
+  {
+   "word": "in",
+   "start": 47.44,
+   "end": 47.62
+  },
+  {
+   "word": "bed.",
+   "start": 47.62,
+   "end": 47.88
+  },
+  {
+   "word": "I",
+   "start": 48.671,
+   "end": 48.8
+  },
+  {
+   "word": "pulled",
+   "start": 48.8,
+   "end": 49.06
+  },
+  {
+   "word": "the",
+   "start": 49.06,
+   "end": 49.24
+  },
+  {
+   "word": "blanket",
+   "start": 49.24,
+   "end": 49.56
+  },
+  {
+   "word": "over",
+   "start": 49.56,
+   "end": 49.8
+  },
+  {
+   "word": "my",
+   "start": 49.8,
+   "end": 50.0
+  },
+  {
+   "word": "head.",
+   "start": 50.0,
+   "end": 50.34
+  },
+  {
+   "word": "And",
+   "start": 51.242,
+   "end": 51.38
+  },
+  {
+   "word": "I",
+   "start": 51.38,
+   "end": 51.52
+  },
+  {
+   "word": "lay",
+   "start": 51.52,
+   "end": 51.72
+  },
+  {
+   "word": "there,",
+   "start": 51.72,
+   "end": 52.06
+  },
+  {
+   "word": "listening",
+   "start": 52.06,
+   "end": 52.48
+  },
+  {
+   "word": "to",
+   "start": 52.48,
+   "end": 52.74
+  },
+  {
+   "word": "the",
+   "start": 52.74,
+   "end": 52.86
+  },
+  {
+   "word": "quiet,",
+   "start": 52.86,
+   "end": 53.22
+  },
+  {
+   "word": "until",
+   "start": 53.22,
+   "end": 53.72
+  },
+  {
+   "word": "morning.",
+   "start": 53.72,
+   "end": 54.16
+  },
+  {
+   "word": "Then",
+   "start": 55.655,
+   "end": 55.82
+  },
+  {
+   "word": "I",
+   "start": 55.82,
+   "end": 56.02
+  },
+  {
+   "word": "remembered.",
+   "start": 56.02,
+   "end": 56.48
+  },
+  {
+   "word": "My",
+   "start": 59.168,
+   "end": 59.31
+  },
+  {
+   "word": "brother",
+   "start": 59.31,
+   "end": 59.57
+  },
+  {
+   "word": "is",
+   "start": 59.57,
+   "end": 59.81
+  },
+  {
+   "word": "at",
+   "start": 59.81,
+   "end": 59.97
+  },
+  {
+   "word": "Grandma's",
+   "start": 59.97,
+   "end": 60.61
+  },
+  {
+   "word": "this",
+   "start": 60.61,
+   "end": 60.73
+  },
+  {
+   "word": "week.",
+   "start": 60.73,
+   "end": 61.11
+  },
+  {
+   "word": "Follow",
+   "start": 64.04,
+   "end": 64.14
+  },
+  {
+   "word": "for",
+   "start": 64.14,
+   "end": 64.42
+  },
+  {
+   "word": "more.",
+   "start": 64.42,
+   "end": 64.62
+  }
+ ]
+}
