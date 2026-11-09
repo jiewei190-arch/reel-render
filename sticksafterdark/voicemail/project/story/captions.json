@@ -1,92 +1,282 @@
 [
  {
   "start": 0.41,
-  "end": 1.14,
-  "text": "I woke up"
+  "end": 1.23,
+  "text": "I always sleep"
  },
  {
-  "start": 1.14,
-  "end": 2.03,
-  "text": "to a voicemail"
+  "start": 1.23,
+  "end": 2.06,
+  "text": "with my phone"
  },
  {
-  "start": 2.03,
-  "end": 2.56,
-  "text": "from my own"
+  "start": 2.06,
+  "end": 3.17,
+  "text": "on silent."
  },
  {
-  "start": 2.56,
-  "end": 3.4,
+  "start": 3.43,
+  "end": 3.99,
+  "text": "So it was"
+ },
+ {
+  "start": 3.99,
+  "end": 4.37,
+  "text": "the light"
+ },
+ {
+  "start": 4.37,
+  "end": 5.62,
+  "text": "that woke me."
+ },
+ {
+  "start": 5.68,
+  "end": 6.25,
+  "text": "One new"
+ },
+ {
+  "start": 6.25,
+  "end": 7.3,
+  "text": "voicemail."
+ },
+ {
+  "start": 7.56,
+  "end": 8.25,
+  "text": "From my own"
+ },
+ {
+  "start": 8.25,
+  "end": 9.2,
   "text": "number."
  },
  {
-  "start": 3.65,
-  "end": 5.5,
+  "start": 9.46,
+  "end": 11.38,
   "text": "3:12 a.m.​"
  },
  {
-  "start": 5.84,
-  "end": 6.42,
-  "text": "At first,"
- },
- {
-  "start": 6.42,
-  "end": 7.7,
-  "text": "just breathing."
- },
- {
-  "start": 7.99,
-  "end": 8.6,
-  "text": "Then my own"
- },
- {
-  "start": 8.6,
-  "end": 8.98,
-  "text": "voice,"
- },
- {
-  "start": 8.98,
-  "end": 9.95,
-  "text": "whispering."
- },
- {
-  "start": 10.3,
-  "end": 10.97,
-  "text": "Don't get out"
- },
- {
-  "start": 10.97,
-  "end": 11.41,
-  "text": "of bed."
- },
- {
-  "start": 11.41,
+  "start": 11.65,
   "end": 12.06,
-  "text": "It's under"
+  "text": "I thought"
  },
  {
   "start": 12.06,
-  "end": 12.95,
+  "end": 12.69,
+  "text": "it was a"
+ },
+ {
+  "start": 12.69,
+  "end": 13.39,
+  "text": "glitch."
+ },
+ {
+  "start": 13.45,
+  "end": 14.6,
+  "text": "Spam."
+ },
+ {
+  "start": 14.66,
+  "end": 15.22,
+  "text": "I almost"
+ },
+ {
+  "start": 15.22,
+  "end": 16.47,
+  "text": "deleted it."
+ },
+ {
+  "start": 16.73,
+  "end": 17.49,
+  "text": "I pressed"
+ },
+ {
+  "start": 17.49,
+  "end": 18.24,
+  "text": "play."
+ },
+ {
+  "start": 20.35,
+  "end": 20.91,
+  "text": "At first,"
+ },
+ {
+  "start": 20.91,
+  "end": 22.24,
+  "text": "just breathing."
+ },
+ {
+  "start": 22.3,
+  "end": 23.43,
+  "text": "Slow."
+ },
+ {
+  "start": 23.49,
+  "end": 24.05,
+  "text": "Close to"
+ },
+ {
+  "start": 24.05,
+  "end": 25.09,
+  "text": "the phone."
+ },
+ {
+  "start": 25.35,
+  "end": 26.46,
+  "text": "Like someone"
+ },
+ {
+  "start": 26.46,
+  "end": 26.68,
+  "text": "lying"
+ },
+ {
+  "start": 26.68,
+  "end": 27.34,
+  "text": "very still,"
+ },
+ {
+  "start": 27.34,
+  "end": 27.78,
+  "text": "trying not"
+ },
+ {
+  "start": 27.78,
+  "end": 28.45,
+  "text": "to make"
+ },
+ {
+  "start": 28.45,
+  "end": 29.38,
+  "text": "a sound."
+ },
+ {
+  "start": 29.64,
+  "end": 30.22,
+  "text": "Then my own"
+ },
+ {
+  "start": 30.22,
+  "end": 30.61,
+  "text": "voice,"
+ },
+ {
+  "start": 30.61,
+  "end": 31.69,
+  "text": "whispering."
+ },
+ {
+  "start": 31.95,
+  "end": 32.65,
+  "text": "Don't get out"
+ },
+ {
+  "start": 32.65,
+  "end": 33.11,
+  "text": "of bed."
+ },
+ {
+  "start": 33.11,
+  "end": 33.58,
+  "text": "Don't look"
+ },
+ {
+  "start": 33.58,
+  "end": 34.27,
+  "text": "under it."
+ },
+ {
+  "start": 34.27,
+  "end": 34.97,
+  "text": "It's under"
+ },
+ {
+  "start": 34.97,
+  "end": 35.92,
   "text": "there."
  },
  {
-  "start": 13.78,
-  "end": 14.36,
-  "text": "I checked"
+  "start": 38.43,
+  "end": 38.93,
+  "text": "I didn't"
  },
  {
-  "start": 14.36,
-  "end": 15.3,
-  "text": "the time."
+  "start": 38.93,
+  "end": 39.91,
+  "text": "move."
  },
  {
-  "start": 17.29,
-  "end": 17.68,
+  "start": 40.17,
+  "end": 40.69,
+  "text": "I played it"
+ },
+ {
+  "start": 40.69,
+  "end": 41.03,
+  "text": "again,"
+ },
+ {
+  "start": 41.03,
+  "end": 42.21,
+  "text": "to be sure."
+ },
+ {
+  "start": 42.27,
+  "end": 42.83,
   "text": "It was"
  },
  {
-  "start": 17.68,
-  "end": 18.85,
+  "start": 42.83,
+  "end": 43.59,
+  "text": "me."
+ },
+ {
+  "start": 43.65,
+  "end": 43.98,
+  "text": "It was"
+ },
+ {
+  "start": 43.98,
+  "end": 44.81,
+  "text": "definitely"
+ },
+ {
+  "start": 44.81,
+  "end": 45.47,
+  "text": "me."
+ },
+ {
+  "start": 45.73,
+  "end": 46.15,
+  "text": "But I"
+ },
+ {
+  "start": 46.15,
+  "end": 46.57,
+  "text": "never"
+ },
+ {
+  "start": 46.57,
+  "end": 47.48,
+  "text": "said that."
+ },
+ {
+  "start": 49.49,
+  "end": 50.04,
+  "text": "I checked"
+ },
+ {
+  "start": 50.04,
+  "end": 51.09,
+  "text": "the time."
+ },
+ {
+  "start": 53.8,
+  "end": 54.18,
+  "text": "It was"
+ },
+ {
+  "start": 54.18,
+  "end": 55.43,
   "text": "3:11"
  }
 ]

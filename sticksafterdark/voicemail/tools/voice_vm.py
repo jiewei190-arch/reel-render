@@ -33,6 +33,7 @@ ap.add_argument("--script", required=True); ap.add_argument("--project", require
 ap.add_argument("--speed", type=float, default=0.88); ap.add_argument("--voice", default="am_fenrir")
 ap.add_argument("--beat", type=float, default=1.3); ap.add_argument("--last-beat", type=float, default=1.8)
 ap.add_argument("--tail", type=float, default=1.6, help="silence after the last line")
+ap.add_argument("--whisper-db", type=float, default=-3.5, help="[WHISPER] speech level relative to the narrator (active-frame RMS, dB)")
 a = ap.parse_args()
 
 k = Kokoro(os.path.join(TTS, "kokoro-v1.0.onnx"), os.path.join(TTS, "voices-v1.0.bin"))
@@ -108,6 +109,7 @@ last_line = max(i for i, it in enumerate(items) if it[0] == "line")
 
 # ---- synth
 pieces, words, spoken, t = [], [], [], 0.45
+wspans, nspans = [], []
 pieces.append(np.zeros(int(SR * t), np.float32))
 def add(y):
     global t
@@ -125,13 +127,25 @@ for i, it in enumerate(items):
     sents = [text] if who else [s for s in re.split(r"(?<=[.!?])\s+", text) if s]
     for j, s in enumerate(sents):
         y = speak(s, who); st = t; add(y); en = t
+        (wspans if who == "WHISPER" else nspans).append((int(st * SR), int(en * SR)))
         toks = s.split(); wts = np.array([syl(w) for w in toks], float); edges = st + np.concatenate([[0], np.cumsum(wts)]) / wts.sum() * (en - st)
         for w, s0, s1 in zip(toks, edges[:-1], edges[1:]): words.append({"word": w, "start": round(float(s0), 3), "end": round(float(s1), 3)})
         if j < len(sents) - 1: sil(0.55)
     sil(0.75)
 sil(max(0, a.tail - 0.75))
 
-y = np.concatenate(pieces); y = y / (np.abs(y).max() + 1e-9) * 0.89
+y = np.concatenate(pieces)
+def active_db(spans, thr=-40):
+    fr = []
+    for a0, a1 in spans:
+        seg = y[a0:a1]; seg = seg[: len(seg) // 480 * 480].reshape(-1, 480); fr.append(np.sqrt((seg ** 2).mean(1)))
+    r = np.concatenate(fr) if fr else np.zeros(1); top = r.max() + 1e-9; r = r[r > top * 10 ** (thr / 20)]
+    return 20 * np.log10(np.sqrt((r ** 2).mean()) + 1e-12)
+if wspans and nspans:   # set the whisper to a fixed level under the narrator (clear on phone speakers)
+    gain = 10 ** ((active_db(nspans) + a.whisper_db - active_db(wspans)) / 20)
+    for a0, a1 in wspans: y[a0:a1] *= gain
+    print(f"whisper level: {active_db(wspans) - active_db(nspans):+.1f} dB vs narrator (gain x{gain:.2f})")
+y = y / (np.abs(y).max() + 1e-9) * 0.89
 P = a.project
 os.makedirs(os.path.join(P, "input"), exist_ok=True); os.makedirs(os.path.join(P, "timeline"), exist_ok=True)
 sf.write(os.path.join(P, "input", "voiceover.wav"), y, SR)

@@ -4,207 +4,552 @@
   {
    "word": "I",
    "start": 0.45,
-   "end": 0.628
+   "end": 0.656
   },
   {
-   "word": "woke",
-   "start": 0.628,
-   "end": 0.984
+   "word": "always",
+   "start": 0.656,
+   "end": 1.068
   },
   {
-   "word": "up",
-   "start": 0.984,
-   "end": 1.162
+   "word": "sleep",
+   "start": 1.068,
+   "end": 1.275
   },
   {
-   "word": "to",
-   "start": 1.162,
-   "end": 1.34
-  },
-  {
-   "word": "a",
-   "start": 1.34,
-   "end": 1.518
-  },
-  {
-   "word": "voicemail",
-   "start": 1.518,
-   "end": 2.051
-  },
-  {
-   "word": "from",
-   "start": 2.051,
-   "end": 2.229
+   "word": "with",
+   "start": 1.275,
+   "end": 1.481
   },
   {
    "word": "my",
-   "start": 2.229,
-   "end": 2.407
+   "start": 1.481,
+   "end": 1.687
   },
   {
-   "word": "own",
-   "start": 2.407,
-   "end": 2.585
+   "word": "phone",
+   "start": 1.687,
+   "end": 2.099
   },
   {
-   "word": "number.",
-   "start": 2.585,
-   "end": 2.941
+   "word": "on",
+   "start": 2.099,
+   "end": 2.305
   },
   {
-   "word": "Three",
-   "start": 3.691,
-   "end": 4.05
+   "word": "silent.",
+   "start": 2.305,
+   "end": 2.718
   },
   {
-   "word": "twelve",
-   "start": 4.05,
-   "end": 4.769
+   "word": "So",
+   "start": 3.468,
+   "end": 3.656
   },
   {
-   "word": "a.m.",
-   "start": 4.769,
-   "end": 5.128
-  },
-  {
-   "word": "At",
-   "start": 5.878,
-   "end": 6.158
-  },
-  {
-   "word": "first,",
-   "start": 6.158,
-   "end": 6.438
-  },
-  {
-   "word": "just",
-   "start": 6.438,
-   "end": 6.718
-  },
-  {
-   "word": "breathing.",
-   "start": 6.718,
-   "end": 7.278
-  },
-  {
-   "word": "Then",
-   "start": 8.028,
-   "end": 8.223
-  },
-  {
-   "word": "my",
-   "start": 8.223,
-   "end": 8.418
-  },
-  {
-   "word": "own",
-   "start": 8.418,
-   "end": 8.613
-  },
-  {
-   "word": "voice,",
-   "start": 8.613,
-   "end": 9.004
-  },
-  {
-   "word": "whispering.",
-   "start": 9.004,
-   "end": 9.589
-  },
-  {
-   "word": "Don't",
-   "start": 10.339,
-   "end": 10.557
-  },
-  {
-   "word": "get",
-   "start": 10.557,
-   "end": 10.775
-  },
-  {
-   "word": "out",
-   "start": 10.775,
-   "end": 10.993
-  },
-  {
-   "word": "of",
-   "start": 10.993,
-   "end": 11.211
-  },
-  {
-   "word": "bed.",
-   "start": 11.211,
-   "end": 11.429
-  },
-  {
-   "word": "It's",
-   "start": 11.429,
-   "end": 11.647
-  },
-  {
-   "word": "under",
-   "start": 11.647,
-   "end": 12.083
-  },
-  {
-   "word": "there.",
-   "start": 12.083,
-   "end": 12.519
-  },
-  {
-   "word": "I",
-   "start": 13.819,
-   "end": 14.004
-  },
-  {
-   "word": "checked",
-   "start": 14.004,
-   "end": 14.376
-  },
-  {
-   "word": "the",
-   "start": 14.376,
-   "end": 14.561
-  },
-  {
-   "word": "time.",
-   "start": 14.561,
-   "end": 14.933
-  },
-  {
-   "word": "It",
-   "start": 17.333,
-   "end": 17.523
+   "word": "it",
+   "start": 3.656,
+   "end": 3.845
   },
   {
    "word": "was",
-   "start": 17.523,
-   "end": 17.714
+   "start": 3.845,
+   "end": 4.034
+  },
+  {
+   "word": "the",
+   "start": 4.034,
+   "end": 4.222
+  },
+  {
+   "word": "light",
+   "start": 4.222,
+   "end": 4.411
+  },
+  {
+   "word": "that",
+   "start": 4.411,
+   "end": 4.6
+  },
+  {
+   "word": "woke",
+   "start": 4.6,
+   "end": 4.977
+  },
+  {
+   "word": "me.",
+   "start": 4.977,
+   "end": 5.166
+  },
+  {
+   "word": "One",
+   "start": 5.716,
+   "end": 6.095
+  },
+  {
+   "word": "new",
+   "start": 6.095,
+   "end": 6.285
+  },
+  {
+   "word": "voicemail.",
+   "start": 6.285,
+   "end": 6.853
+  },
+  {
+   "word": "From",
+   "start": 7.603,
+   "end": 7.832
+  },
+  {
+   "word": "my",
+   "start": 7.832,
+   "end": 8.061
+  },
+  {
+   "word": "own",
+   "start": 8.061,
+   "end": 8.291
+  },
+  {
+   "word": "number.",
+   "start": 8.291,
+   "end": 8.749
+  },
+  {
+   "word": "Three",
+   "start": 9.499,
+   "end": 9.858
+  },
+  {
+   "word": "twelve",
+   "start": 9.858,
+   "end": 10.576
+  },
+  {
+   "word": "a.m.",
+   "start": 10.576,
+   "end": 10.935
+  },
+  {
+   "word": "I",
+   "start": 11.685,
+   "end": 11.894
+  },
+  {
+   "word": "thought",
+   "start": 11.894,
+   "end": 12.103
+  },
+  {
+   "word": "it",
+   "start": 12.103,
+   "end": 12.311
+  },
+  {
+   "word": "was",
+   "start": 12.311,
+   "end": 12.52
+  },
+  {
+   "word": "a",
+   "start": 12.52,
+   "end": 12.728
+  },
+  {
+   "word": "glitch.",
+   "start": 12.728,
+   "end": 12.937
+  },
+  {
+   "word": "Spam.",
+   "start": 13.487,
+   "end": 14.149
+  },
+  {
+   "word": "I",
+   "start": 14.699,
+   "end": 14.887
+  },
+  {
+   "word": "almost",
+   "start": 14.887,
+   "end": 15.264
+  },
+  {
+   "word": "deleted",
+   "start": 15.264,
+   "end": 15.828
+  },
+  {
+   "word": "it.",
+   "start": 15.828,
+   "end": 16.016
+  },
+  {
+   "word": "I",
+   "start": 16.766,
+   "end": 17.021
+  },
+  {
+   "word": "pressed",
+   "start": 17.021,
+   "end": 17.532
+  },
+  {
+   "word": "play.",
+   "start": 17.532,
+   "end": 17.787
+  },
+  {
+   "word": "At",
+   "start": 20.387,
+   "end": 20.667
+  },
+  {
+   "word": "first,",
+   "start": 20.667,
+   "end": 20.947
+  },
+  {
+   "word": "just",
+   "start": 20.947,
+   "end": 21.227
+  },
+  {
+   "word": "breathing.",
+   "start": 21.227,
+   "end": 21.787
+  },
+  {
+   "word": "Slow.",
+   "start": 22.337,
+   "end": 22.983
+  },
+  {
+   "word": "Close",
+   "start": 23.533,
+   "end": 23.902
+  },
+  {
+   "word": "to",
+   "start": 23.902,
+   "end": 24.086
+  },
+  {
+   "word": "the",
+   "start": 24.086,
+   "end": 24.27
+  },
+  {
+   "word": "phone.",
+   "start": 24.27,
+   "end": 24.639
+  },
+  {
+   "word": "Like",
+   "start": 25.389,
+   "end": 25.832
+  },
+  {
+   "word": "someone",
+   "start": 25.832,
+   "end": 26.495
+  },
+  {
+   "word": "lying",
+   "start": 26.495,
+   "end": 26.716
+  },
+  {
+   "word": "very",
+   "start": 26.716,
+   "end": 27.159
+  },
+  {
+   "word": "still,",
+   "start": 27.159,
+   "end": 27.38
+  },
+  {
+   "word": "trying",
+   "start": 27.38,
+   "end": 27.601
+  },
+  {
+   "word": "not",
+   "start": 27.601,
+   "end": 27.822
+  },
+  {
+   "word": "to",
+   "start": 27.822,
+   "end": 28.044
+  },
+  {
+   "word": "make",
+   "start": 28.044,
+   "end": 28.486
+  },
+  {
+   "word": "a",
+   "start": 28.486,
+   "end": 28.707
+  },
+  {
+   "word": "sound.",
+   "start": 28.707,
+   "end": 28.928
+  },
+  {
+   "word": "Then",
+   "start": 29.678,
+   "end": 29.874
+  },
+  {
+   "word": "my",
+   "start": 29.874,
+   "end": 30.069
+  },
+  {
+   "word": "own",
+   "start": 30.069,
+   "end": 30.264
+  },
+  {
+   "word": "voice,",
+   "start": 30.264,
+   "end": 30.654
+  },
+  {
+   "word": "whispering.",
+   "start": 30.654,
+   "end": 31.239
+  },
+  {
+   "word": "Don't",
+   "start": 31.989,
+   "end": 32.221
+  },
+  {
+   "word": "get",
+   "start": 32.221,
+   "end": 32.454
+  },
+  {
+   "word": "out",
+   "start": 32.454,
+   "end": 32.686
+  },
+  {
+   "word": "of",
+   "start": 32.686,
+   "end": 32.918
+  },
+  {
+   "word": "bed.",
+   "start": 32.918,
+   "end": 33.151
+  },
+  {
+   "word": "Don't",
+   "start": 33.151,
+   "end": 33.383
+  },
+  {
+   "word": "look",
+   "start": 33.383,
+   "end": 33.615
+  },
+  {
+   "word": "under",
+   "start": 33.615,
+   "end": 34.08
+  },
+  {
+   "word": "it.",
+   "start": 34.08,
+   "end": 34.312
+  },
+  {
+   "word": "It's",
+   "start": 34.312,
+   "end": 34.545
+  },
+  {
+   "word": "under",
+   "start": 34.545,
+   "end": 35.009
+  },
+  {
+   "word": "there.",
+   "start": 35.009,
+   "end": 35.474
+  },
+  {
+   "word": "I",
+   "start": 38.474,
+   "end": 38.72
+  },
+  {
+   "word": "didn't",
+   "start": 38.72,
+   "end": 38.965
+  },
+  {
+   "word": "move.",
+   "start": 38.965,
+   "end": 39.457
+  },
+  {
+   "word": "I",
+   "start": 40.207,
+   "end": 40.379
+  },
+  {
+   "word": "played",
+   "start": 40.379,
+   "end": 40.552
+  },
+  {
+   "word": "it",
+   "start": 40.552,
+   "end": 40.725
+  },
+  {
+   "word": "again,",
+   "start": 40.725,
+   "end": 41.07
+  },
+  {
+   "word": "to",
+   "start": 41.07,
+   "end": 41.242
+  },
+  {
+   "word": "be",
+   "start": 41.242,
+   "end": 41.415
+  },
+  {
+   "word": "sure.",
+   "start": 41.415,
+   "end": 41.76
+  },
+  {
+   "word": "It",
+   "start": 42.31,
+   "end": 42.587
+  },
+  {
+   "word": "was",
+   "start": 42.587,
+   "end": 42.865
+  },
+  {
+   "word": "me.",
+   "start": 42.865,
+   "end": 43.142
+  },
+  {
+   "word": "It",
+   "start": 43.692,
+   "end": 43.858
+  },
+  {
+   "word": "was",
+   "start": 43.858,
+   "end": 44.024
+  },
+  {
+   "word": "definitely",
+   "start": 44.024,
+   "end": 44.852
+  },
+  {
+   "word": "me.",
+   "start": 44.852,
+   "end": 45.017
+  },
+  {
+   "word": "But",
+   "start": 45.767,
+   "end": 45.977
+  },
+  {
+   "word": "I",
+   "start": 45.977,
+   "end": 46.187
+  },
+  {
+   "word": "never",
+   "start": 46.187,
+   "end": 46.607
+  },
+  {
+   "word": "said",
+   "start": 46.607,
+   "end": 46.816
+  },
+  {
+   "word": "that.",
+   "start": 46.816,
+   "end": 47.026
+  },
+  {
+   "word": "I",
+   "start": 49.526,
+   "end": 49.712
+  },
+  {
+   "word": "checked",
+   "start": 49.712,
+   "end": 50.083
+  },
+  {
+   "word": "the",
+   "start": 50.083,
+   "end": 50.269
+  },
+  {
+   "word": "time.",
+   "start": 50.269,
+   "end": 50.64
+  },
+  {
+   "word": "It",
+   "start": 53.84,
+   "end": 54.031
+  },
+  {
+   "word": "was",
+   "start": 54.031,
+   "end": 54.221
   },
   {
    "word": "three",
-   "start": 17.714,
-   "end": 17.904
+   "start": 54.221,
+   "end": 54.411
   },
   {
    "word": "eleven.",
-   "start": 17.904,
-   "end": 18.475
+   "start": 54.411,
+   "end": 54.983
   },
   {
    "word": "Follow",
-   "start": 20.275,
-   "end": 20.694
+   "start": 57.583,
+   "end": 58.001
   },
   {
    "word": "for",
-   "start": 20.694,
-   "end": 20.903
+   "start": 58.001,
+   "end": 58.21
   },
   {
    "word": "more.",
-   "start": 20.903,
-   "end": 21.321
+   "start": 58.21,
+   "end": 58.629
   }
  ]
 }
