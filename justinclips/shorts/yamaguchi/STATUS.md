@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # yamaguchi (Justin clips Short #15): "He Survived Both Atomic Bombs 🕊️"
 Project ready for Creator (PC GPU). Branch `justinclips/batch2-d`. Commit: the one that set this file to render-on-pc (`git log -1 -- justinclips/shorts/yamaguchi/STATUS.md`).
@@ -39,3 +39,9 @@ cd ../../justinclips/shorts/yamaguchi && sha256sum video.mp4 > video.sha256
 - Voice: Kokoro am_fenrir 0.95 (`whatif/voice/fenrir.py --gap 0.35 --comma 0.15 --lead 0.15 --section 0.9`, with a phoneme patch for "Tsutomu").
 - Sources: `sources.md` (NBC/AP 2009, Wikipedia citing UK papers; "officially recognized" wording per the topic bank note). Upload text: `UPLOAD.md`.
   Nothing was posted or uploaded.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **1296 frames (counted), 54.00 s**, 26.3 MB; audio 48 kHz.
+- Loudness measured on the final file: **-14.72 LUFS, true peak -1.36 dBTP**.
+- Render 69 s. Commands run exactly as listed above. Tone check on a 2 s contact sheet (27 frames) plus close-ups of the 'burned' beat: nobody shown hurt, the blasts are only distant light, no comedy reactions; cards and captions OK.
+- Nothing posted, uploaded or scheduled.
