@@ -1,7 +1,7 @@
 STATE: render-on-pc
 
 # Justin clips Short #11: napoleon-rabbits ("Napoleon Was Defeated by Rabbits 🐇")
-Branch `justinclips/batch2-b`, commit COMMIT (project + this folder). Project: `whatif/aitrends-2d-studio/projects/napoleon-rabbits` (Toon 3D kit + BEANMEN FX, 18 shots).
+Branch `justinclips/batch2-b`, commit 710c9ea (project + this folder). Project: `whatif/aitrends-2d-studio/projects/napoleon-rabbits` (Toon 3D kit + BEANMEN FX, 18 shots).
 
 ## Full render (Creator, from `whatif/aitrends-2d-studio`)
 ```
