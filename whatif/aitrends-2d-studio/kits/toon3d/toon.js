@@ -105,6 +105,8 @@ export const LIGHT = {
   warm:   { sky: '#fff3e6', ground: '#a08878', ambient: 1.2, key: ['#ffeedd', 2.5, [-5, 10, 8]], fill: ['#e8eeff', 0.4, [7, 4, 7]], bg: ['#efe3d2', '#f6ece0'], exposure: 1.0 },
   dusk:   { sky: '#c9a0b8', ground: '#5a3a3a', ambient: 1.0, key: ['#ffb070', 2.4, [-9, 7, 6]], fill: ['#9fb0e0', 0.5, [8, 5, 6]], bg: ['#4a4878', '#d38a72', '#f5c08a'], exposure: 1.0 },
   night:  { sky: '#8a90b8', ground: '#3a3232', ambient: 0.85, key: ['#c4ccf0', 1.0, [6, 12, 6]], fill: ['#ffb070', 0.15, [0, 3, 8]], bg: ['#0e1430', '#1e2550', '#3a3466'], exposure: 1.05 },
+  // BEANMEN-style daylight (opt-in): warm low sun from the upper left, blue sky fill, golden ground bounce. Pair with sky.js sunnySky().
+  sunny:  { sky: '#bfe0ff', ground: '#c8a060', ambient: 1.15, key: ['#fff0d0', 2.9, [-7, 10, 5]], fill: ['#a8ccff', 0.5, [8, 5, 6]], bg: ['#2b7fd0', '#83c2ee', '#f2e3bd'], exposure: 1.02 },
   fire:   { sky: '#6a5a8a', ground: '#3a1a10', ambient: 0.8, key: ['#ff9a4a', 2.4, [4, 6, -8]], fill: ['#d0a090', 0.7, [-3, 5, 9]], bg: ['#140c1c', '#4a1e1e', '#c0562a'], exposure: 1.05 },
 };
 export function toonStage(T, o = {}) {

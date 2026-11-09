@@ -13,7 +13,7 @@ function lidEye(parent, pos, n, size, o = {}) {
   const roll = new THREE.Group(); eg.add(roll); const lp = new THREE.Group(); roll.add(lp);
   const lid = new THREE.Mesh(new THREE.SphereGeometry(1.1, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2), toon(o.lid || '#6a7890')); lid.userData.noOutline = true; lp.add(lid);
   const rim = new THREE.Mesh(new THREE.TorusGeometry(1.1, 0.08, 6, 20, Math.PI).rotateX(Math.PI / 2), flat(INK)); rim.userData.noOutline = true; lp.add(rim);
-  return { pg, lp, roll, p };
+  return { eg, pg, lp, roll, p };
 }
 
 // emu({ seed, scale, general: bool (tiny peaked cap + medal), body, neck }) — ~2.4 units tall (head), same scale as a bean
@@ -69,6 +69,7 @@ export function emu(o = {}) {
     const bl = blink ? blinkAt(t) : 0;
     eyes.forEach((e, i) => { e.lp.rotation.x = lerp(-1.05, 1.5708, Math.max(lid, bl)); e.roll.rotation.z = (i ? 1 : -1) * lidAngle; e.pg.rotation.set(-look[1] * 0.4, look[0] * 0.5, 0); });
   };
+  root.head = head; root.eyes = eyes; root.headR = 0.24;   // used by react.js (FX anchored over the head / eyes)
   root.update(0); return root;
 }
 function shadeC(hex, k) { const c = new THREE.Color(hex); c.lerp(k < 0 ? new THREE.Color(0, 0, 0) : new THREE.Color(1, 1, 1), Math.abs(k)); return '#' + c.getHexString(); }

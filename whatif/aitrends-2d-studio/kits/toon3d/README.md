@@ -22,6 +22,12 @@ Runs inside the aiTrends 2D Studio engine as `kind: '3d'` shots (Three.js 0.169,
 | `sets.js` | `SETS.romanStreet`, `SETS.romanHouse` (with `palace: true` for a throne room), `SETS.cityGate`, `applyLight` |
 | `fx.js` | toon `fire`, puffy `smoke`, `embers`, additive `glow`, `skyGlow` (no gore: danger reads as fire, smoke, silhouettes) |
 | `captions.js` | `useToonCaptions(opts)`, `drawToonCaption`, `chunkWords` (1-3 word chunks timed from `timeline/words.json`) |
+| `react.js` | reaction FX pinned over a character's head: `reactions`, `shakeCam`, `anchor`, `drawFx`, `godRays` (BEANMEN port) |
+| `insert.js` | full-screen INSERT cards (`bigtext counter versus list timeline map chart document phone`): `insertShot`, `drawInsert`, `dimScene` |
+| `transitions.js` | `useToonTransitions()` adds `iris` and `whipBlur` shot transitions |
+| `sky.js` | the sunny look: `sunnySky` (sky dome + sun glow + soft clouds), `sunnyLook` (god rays + soft-light tint), `applySunny`; `LIGHT.sunny` in toon.js |
+| `audio/sfx/` (54) + `audio/music/` (6) | the owner's BEANMEN sound library (procedurally generated, royalty-free; generator: `audio/gen_audio_assets.py`), used as `toon3d:<name>` |
+| `demo/` + `tools/make_fx_sheet.py` | `fx_sheet.png` (every FX/insert/transition + old vs new light), `fx_demo.mp4` (16.6 s proof clip), their projects |
 | `sheet/` + `tools/make_sheet.py` | the style-sheet project and the script that composes `style_sheet.png` and `avatar_hero_800.png` |
 
 Engine hooks this kit relies on (added with the kit, backward compatible): `engine/player.js` uses `E.captionFn` when a kit
@@ -184,3 +190,71 @@ White Fredoka 700, ~0.2 em dark outline, soft drop shadow, centred at 70 % of th
 Medium shots of 1-3 characters at eye level, slow push-ins, quick cuts on punchlines, an occasional low angle. A beat of
 stillness before the punchline and a reaction face after it. Warm, clean, never gritty. No gore: fire, smoke, silhouettes
 and sound only.
+
+## BEANMEN effects (FX pack)
+Ported from the owner's BEANMEN ANIMATION project and redrawn for the 3D beans. All opt-in: a project that doesn't import these
+renders exactly as before (checked pixel-for-pixel on emu-war). Proof: `demo/fx_sheet.png` and `demo/fx_demo.mp4` (project `demo/project/`).
+
+![fx sheet](demo/fx_sheet.png)
+
+### Reaction FX (`react.js`)
+```js
+import { reactions, shakeCam } from '/kits/toon3d/react.js';
+const FX = [{ fx: 'question', on: 'emu', at: 0.1, until: 1.0 },   // on = key of the shot state (s.emu), an Object3D, or [x,y,z]
+            { fx: 'hearts', on: 'emu', at: 1.1 }, { fx: 'heartEyes', on: 'emu', at: 1.1 },
+            { fx: 'exclaim', on: 'c', at: 2.5 }, { fx: 'shake', at: 2.5, amp: 0.09 }, { fx: 'flash', at: 2.5, dur: 0.25 }];
+draw(s, t)          { /* ... */ camMove(s.stage, t, KEYS); shakeCam(s.stage, t, FX); }   // shake jolts the 3D camera
+overlay(g, t, i, s) { reactions(g, t, s, FX); }                                      // the rest is drawn over the 3D frame
+```
+Effects: `sparkle sweat exclaim question hearts heartEyes stars zzz shake flash ripples godrays spotlight speedlines glow`.
+Item fields: `at`, `until` (fades out over 0.2 s), `scale`, `color`, `seed`, `dx`/`dy` (logical px), `dur` (flash/shake), `amp` (shake), `atFeet` (ripples).
+FX are sized from the head's on-screen size, so they read the same in wide and close shots. Beans (rig.js) and animals (animals.js:
+`root.head`, `root.eyes`) are anchored at the head; any other object at `o.height` (default 2.6). To land an FX on a word use the
+project's `at(info, 'word')` helper (see `demo/project/scenes/_lib.js`). Suggested sound per FX: `FX_SFX` in react.js.
+Faces: heart eyes = `heartEyes` FX; "???" = `question`; the squint is the existing `EXPR.happy`/`grin` lower lid (`lower: 0.5`).
+
+### Insert cards (`insert.js`)
+```js
+import { insertShot } from '/kits/toon3d/insert.js';
+insertShot('s07', { scene: chaseShotDef,                                   // any { init, draw } 3D shot: keeps playing, blurred + dimmed
+  insert: { type: 'bigtext', kicker: 'EMU TOP SPEED', title: '50 KM/H', lines: ['flat out'] } });
+insertShot('s08', { insert: { type: 'counter', title: 'BULLETS FIRED', value: 9860, lines: ['986 emus claimed'], color: '#ff5a4a' } });   // no scene = dark backdrop
+```
+Types: `bigtext {kicker,title,lines}`, `counter {value,from,prefix,suffix,decimals,title,lines}`, `versus {title,lines:[L,R],colorL,color}`,
+`list`, `timeline`, `document {title,lines,highlight}`, `map {title,lines=stops}`, `chart {title,data,lines=labels,highlight}`, `phone {title,lines=bubbles}`.
+Common: `color` (accent, default gold), `blur` (px, 9), `dim` (0..1). Inside any overlay: `dimScene(g, 9, 0.55); drawInsert(g, ins, t - t0)`.
+Style: Nunito 900, warm ink outline `#2a1c15`, pops in with an overshoot like BEANMEN. Give each card ~2.5 s and an `impact` + `whoosh`.
+
+### Transitions (`transitions.js`)
+`scenes/kit.js`: `import { useToonTransitions } from '/kits/toon3d/transitions.js'; useToonTransitions();` then on the incoming shot in shots.json:
+`"in": { "type": "iris" }` (close to a dot on black, open on the new shot; `"mode": "open"` = BEANMEN's single opening; `"at": [0.5, 0.45]`),
+`"in": { "type": "whipBlur", "dir": 1 }` (smeared, blurred whip pan, 0.3 s). Engine built-ins still work: `cut`, `fade` (dissolve), `flash`, `whip`, `dip`, `zoom`.
+BEANMEN rule of thumb: dissolve by default, `cut`/`flash` on punchlines, `iris` for "meanwhile", whips for fast jumps.
+(Engine hook: `engine/player.js` now calls `E.transitions[type](g, prevBuf, nextBuf, k, p, tr, W, H)` for unknown types; no change for existing types.)
+
+### Lighting: sunny sky (`sky.js`)
+```js
+const st = toonStage(T, { light: 'sunny', fov: 38 });   // warm sun from the upper left, blue fill, golden bounce
+const sky = sunnySky(st, { clouds: 9, seed: 3 });       // gradient dome (deep blue -> sky blue -> warm haze) + sun glow + soft clouds
+draw: sky.update(t)                                      // optional slow cloud drift
+overlay(g, t) { sunnyLook(g, t, { rays: { from: [-60, -80] }, tint: '#ffcf8a' }); }   // god rays + warm soft-light wash
+```
+`sunnySky` options: `top mid horizon sunGlow glow clouds cloudColor seed height:[min,max] arc:[a0,a1] drift sunDir`. `applySunny(st)` switches an
+existing stage. `rays: false` keeps just the tint (use it on close-ups and busy action), `tint: false` keeps just the rays.
+The old `day/warm/dusk/night/fire` presets are unchanged; `sunny` is the recommended default for new daylight Shorts.
+
+### Audio (`audio/`)
+54 sfx and 6 music beds (`curious warm mystery tense upbeat sad`) from BEANMEN, 44.1 kHz WAV. `audio/mix.py` resolves `toon3d:<name>`:
+```jsonc
+// config.json: one music mood per Short, ducked -9 dB under the voice by mix.py, final master -14 LUFS / TP -1.5
+"music": { "enabled": true, "file": "toon3d:upbeat", "gainDb": -17 }
+// story/shots.json, per shot: on a beat (seconds from shot start) or on a spoken word (timeline/words.json)
+"sfx": [ { "at": 0, "name": "toon3d:whoosh", "gain": -8 },
+         { "word": "zero", "name": "toon3d:thud", "gain": -6 }, { "word": "one", "offset": 0.1, "name": "toon3d:sparkle", "gain": -12 } ]
+```
+Word cues take the first match at/after the shot start (`nth`, `after` to pick later ones). Plain names (`whoosh`) still use the
+procedural library, so old projects are unaffected. SFX ids: alarm beep bell boing boom buzz cash chime click clock coins crash creak crowd
+ding door drop engine fail fire footsteps gasp glass gunshot heartbeat horn impact knock laugh magic metal paper pop punch rain riser rumble
+scratch slide sparkle splash squeak stamp success suspense swoosh thud thunder tick type water whoosh wind zap.
+Rebuild the demo: `python3 kits/toon3d/demo/make_voice.py` (slices 3 emu-war lines), `node render.mjs --project kits/toon3d/demo/project`,
+`python3 audio/mix.py --project kits/toon3d/demo/project`. Sheet: see `tools/make_fx_sheet.py`.
