@@ -1,6 +1,6 @@
 # I.Awaken SHORTS: brief for the 4 cloud workers (Nov 8 2026)
 
-Owner's request: I.Awaken Shorts, **20-30 s**, vertical. Every short is **HOOK -> BUILD-UP -> PAYOFF**.
+Owner's request: Shorts, vertical. **Length (owner rule, Nov 9 2026): YouTube Shorts 30-60 s, Instagram Reels 60-70 s** (supersedes the old 20-30 s). Every short is **HOOK -> BUILD-UP -> PAYOFF**.
 One short per worker, all four built in parallel. The cloud builds everything up to a render-ready project plus a half-scale preview.
 The **final full render is done on the owner's PC GPU** by the Creator session (faster), when the main session tells it to.
 
@@ -12,7 +12,7 @@ The **final full render is done on the owner's PC GPU** by the Creator session (
 - **PAYOFF (last 5-8 s):** the surprising, sourced answer to the hook's question, landing in the last seconds. Then a short closer
   ("Would you do it?" style question or "Follow for more What Ifs.") and a hard cut. No long end card: at most 1 s.
 - At least one of the 3 E's: entertainment + education (sourced science) together is the target.
-- Total 20-30 s including the closer. About 55-75 spoken words at Fenrir's pace.
+- Total 30-60 s (YouTube) or 60-70 s (Instagram) including the closer: about 80-150 spoken words (YouTube) or 150-170 (Instagram) at Fenrir's pace.
 
 ## Look and voice (the classic I.Awaken look, NOT the horror look)
 - Kit: `whatif/aitrends-2d-studio` on branch `iawaken/next-episode`. Read `SETUP_NOTES.md` (Linux: use `python3`, `npm install`;
