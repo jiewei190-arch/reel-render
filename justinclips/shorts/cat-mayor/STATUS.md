@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #8: cat-mayor ("This Town's Mayor Was a Cat for Almost 20 Years 🐱")
 Branch `justinclips/batch2-a`, project commit `f7c87b3`. Project: `whatif/aitrends-2d-studio/projects/cat-mayor` (17 shots, Toon 3D + BEANMEN FX).
@@ -26,3 +26,12 @@ no `-shortest`, so no frames are dropped. Then: `video.sha256`, `STATE: ready`.
 - Captions 1-3 words at 66 % height, clear of the Shorts bottom bar and right-side buttons (contact sheet has the zones tinted red).
 - Sources: `sources.md` (Smithsonian + CBS/AP). Fact fix vs the topic bank: 1998-2017 = ~19 years, so "almost 20".
 - Nothing posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **1015 frames, 42.29 s**, 22.9 MB; audio 48 kHz AAC 192k, 42.27 s.
+- Loudness measured on the final file: **-14.2 LUFS, true peak -1.26 dBTP**.
+- Render took ~66 s. Note: `--out build/video_silent.mp4` resolves from the kit folder, not the project, so the concat step failed;
+  the 8 parts were joined with the same concat into `projects/cat-mayor/build/video_silent.mp4` (1015 frames). Next time use
+  `--out projects/<slug>/build/video_silent.mp4`.
+- Mix, master and mux run exactly as listed above. Contact sheet checked (cards, captions, loop ending OK).
+- Nothing posted, uploaded or scheduled.
