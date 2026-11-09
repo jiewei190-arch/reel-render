@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # neutron-teaspoon (Justin clips Short #14): "This Teaspoon Weighs a Billion Tons 🥄"
 Project ready for Creator (PC GPU). Branch `justinclips/batch2-d`. Commit: the one that added this file (see `git log -1 -- justinclips/shorts/neutron-teaspoon/STATUS.md`).
@@ -32,3 +32,9 @@ cd ../../justinclips/shorts/neutron-teaspoon && sha256sum video.mp4 > video.sha2
 - Payoff "Dev tries to lift it." / "Dev does not lift it." at 21-24.5 s; closer "Subscribe for more." 1.1 s; the last shot returns to the frame-1 close-up (loop).
 - Voice: Kokoro am_fenrir 0.95 (`whatif/voice/fenrir.py --gap 0.3 --comma 0.15 --lead 0.15 --section 0.75`), 0.75 s beats before the punchlines.
 - Sources: `sources.md`. Upload text: `UPLOAD.md`. Nothing was posted or uploaded.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **629 frames (counted), 26.21 s**, 12.4 MB; audio 48 kHz.
+- Loudness measured on the final file: **-14.37 LUFS, true peak -1.44 dBTP**.
+- Render 41 s. Commands run exactly as listed above. Contact sheet checked (loop ending OK). Note: the insert card reads '979,203,125 TONS (about)' while the voice says '1 billion tons'.
+- Nothing posted, uploaded or scheduled.
