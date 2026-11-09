@@ -3,6 +3,8 @@
 > **Nov 9 2026:** the 3D (Toon 3D) Shorts are now for the **Justin clips** account (owner renamed it). Keep channel
 > names out of the video itself. **Lengths for every new video, all accounts:** YouTube Shorts 30-60 s, Instagram
 > Reels 60-70 s (incl. sticksafterdark horror). Years/numbers: spelled out in the TTS script, digits in captions.
+> **Platforms (owner, Nov 9 2026):** Toon 3D and BEANMEN (2D bean men in 3D places, the Remotion "stickmen-engine")
+> are **YouTube only**. Instagram uses **no 3D at all**: fully 2D styles only (e.g. Sticks After Dark).
 
 Goal: YouTube Partner Program through long-form watch hours (1,000 subs + 4,000 public watch hours in 12 months;
 Shorts views do not count toward watch hours). Shorts are the discovery funnel: every Short links (Related video)
