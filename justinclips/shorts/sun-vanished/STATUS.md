@@ -1,4 +1,4 @@
-STATE: render-on-pc
+STATE: ready
 
 # Justin clips Short #13: sun-vanished ("What If the Sun Vanished? You'd Have 8 Minutes ☀️")
 Branch `justinclips/batch2-c`. Project: `whatif/aitrends-2d-studio/projects/sun-vanished` (Toon 3D kit + BEANMEN FX, 17 shots).
@@ -39,3 +39,9 @@ Inputs committed: `input/voiceover.wav` (git add -f), `timeline/words.json`, `st
 - Preview render in the cloud: 540x960, 3m18s (SwiftShader, 4 workers).
 
 Nothing was posted, uploaded or logged into.
+
+## Rendered on PC (Creator, RTX 4060, `--gl gpu`)
+- `video.mp4`: 1080x1920, 24 fps, **864 frames (counted), 36.00 s**, 16.4 MB; audio 48 kHz.
+- Loudness measured on the final file: **-14.72 LUFS, true peak -1.47 dBTP**.
+- Render 42 s. Commands run exactly as listed above. Contact sheet checked (cards, dark sun-gone beats, loop ending matches frame 1).
+- Nothing posted, uploaded or scheduled.
