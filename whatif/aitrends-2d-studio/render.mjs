@@ -4,6 +4,7 @@
 //   node render.mjs --project P --sheet                               one still per shot -> build/sheets/*.png
 //   node render.mjs --project P --stills 3.5,12,40                    stills at times -> build/stills
 //   node render.mjs --project P --styles dusk,midnight,golden,neon --at 3.5,12,40   style comparison grid
+// Linux cloud: CHROMIUM_PATH=/opt/pw-browsers/chromium (pre-installed browser; never run `playwright install`).
 // Options: --workers N  --scale K  --style ID  --debug  --format png|jpeg  --crf 18  --gl auto|gpu|swiftshader  --out FILE
 import http from 'node:http';
 import fs from 'node:fs';
@@ -30,7 +31,7 @@ const server = http.createServer((req, res) => {
 }).listen(0);
 const PORT = server.address().port;
 const gl = args.gl || (process.platform === 'linux' ? 'swiftshader' : 'auto');
-const LAUNCH = { args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader', '--disable-dev-shm-usage', ...(gl === 'swiftshader' ? ['--use-angle=swiftshader'] : []), ...(gl === 'gpu' ? ['--enable-gpu', '--use-angle=default'] : [])] };
+const LAUNCH = { ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}), args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader', '--disable-dev-shm-usage', ...(gl === 'swiftshader' ? ['--use-angle=swiftshader'] : []), ...(gl === 'gpu' ? ['--enable-gpu', '--use-angle=default'] : [])] };
 const FORMAT = args.format === 'jpeg' ? 'jpeg' : 'png';
 const CFG = JSON.parse(fs.readFileSync(path.join(PROJECT, 'config.json'), 'utf8'));
 const FPS = CFG.fps || 24;

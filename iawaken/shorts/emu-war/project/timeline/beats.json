@@ -1,0 +1,74 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.18,
+  "speechEnd": 3.5,
+  "text": "Australia declared war on birds. And lost.",
+  "end": 3.81
+ },
+ {
+  "i": 1,
+  "start": 3.81,
+  "speechStart": 3.96,
+  "speechEnd": 8.14,
+  "text": "The army brought machine guns. The emus brought... running.",
+  "end": 8.455
+ },
+ {
+  "i": 2,
+  "start": 8.455,
+  "speechStart": 8.605,
+  "speechEnd": 9.97,
+  "text": "It's 1932.",
+  "end": 10.3
+ },
+ {
+  "i": 3,
+  "start": 10.3,
+  "speechStart": 10.45,
+  "speechEnd": 14.38,
+  "text": "About twenty thousand emus are eating the wheat in Western Australia.",
+  "end": 14.74
+ },
+ {
+  "i": 4,
+  "start": 14.74,
+  "speechStart": 14.89,
+  "speechEnd": 16.7,
+  "text": "So the soldiers mount a gun on a truck.",
+  "end": 17.61
+ },
+ {
+  "i": 5,
+  "start": 17.61,
+  "speechStart": 17.76,
+  "speechEnd": 19.23,
+  "text": "The emus are faster than the truck.",
+  "end": 19.7
+ },
+ {
+  "i": 6,
+  "start": 19.7,
+  "speechStart": 19.85,
+  "speechEnd": 26.61,
+  "text": "Thousands of rounds later, the commander reported nine hundred and eighty-six birds. Out of twenty thousand.",
+  "end": 26.94
+ },
+ {
+  "i": 7,
+  "start": 26.94,
+  "speechStart": 27.09,
+  "speechEnd": 32.57,
+  "text": "The army went home. The emus stayed. Final score: Emus, one. Army, zero.",
+  "end": 32.93
+ },
+ {
+  "i": 8,
+  "start": 32.93,
+  "speechStart": 33.08,
+  "speechEnd": 34.11,
+  "text": "Subscribe for more.",
+  "end": 35.61
+ }
+]
