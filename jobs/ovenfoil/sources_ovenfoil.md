@@ -1,0 +1,14 @@
+# Sources: ovenfoil ("Why does aluminum foil have a shiny side and a dull side?")
+
+| # | Claim in the script | Source |
+|---|---|---|
+| 1 | Foil starts as a sheet of aluminum about a millimeter thick, squeezed between steel rollers pass after pass | GDA (Gesamtverband der Aluminiumindustrie, the German aluminium industry association), factsheet "Aluminium foil – multitalented lightweight packaging" (2014), via the International Aluminium Institute: https://alustory.international-aluminium.org/wp-content/uploads/2022/03/FS6_Foil_3.pdf : "cold rolled in several steps or passes. The starting material is so-called re-roll stock between 0.6 and 1.5 millimetres thick" |
+| 2 | Really thin foil can tear at full speed, so for the last pass two sheets go through together | GDA (above): "Two webs are rolled simultaneously (so-called double rolling) ... this ensures that the foil web does not break under the high speeds and tensile forces"; Wikipedia, "Aluminium foil": for the final pass below 0.025 mm two sheets are rolled at the same time |
+| 3 | The outsides touch the polished steel rollers and come out shiny; the insides only touch each other and come out matte | GDA (above): "the outer surfaces of both foil webs come into contact with the polished surface of the working rolls and are thus smoothed out. In contrast, there is mutual contact between the inner surfaces and these are thus roughened, which leads to the matt appearance"; Reynolds (TODAY, "Why is only 1 side of aluminum foil shiny?" https://www.today.com/today/amp/tdna115229 ): "The side coming in contact with the mill's highly polished steel rollers becomes shiny" |
+| 4 | Then the sheets are peeled apart; each has a shiny side and a dull side | Follows from 2-3 (two webs rolled together, separated after rolling); Reynolds via TODAY (above) |
+| 5 | The rollers fly: up to 2,500 meters a minute | GDA (above): "rolling speeds of up to 2500 metres a minute" |
+| 6 | Reynolds, the foil maker, says no: both sides do the same job | Reynolds Kitchens (reynoldsbrands.com tips/FAQ: "it's perfectly fine to place your food on either side"); TODAY interview with a Reynolds marketing director (above) |
+| 7 | Germany's aluminum industry group agrees: the sides are equivalent | GDA (above): "both sides are equivalent from a function point of view" |
+| 8 | Exception: non-stick foil has its coating on the dull side, so that side faces the food | Reynolds (via EatingWell/AOL, "Should You Use the Shiny or Dull Side of Foil? Reynolds Settles the Debate"): "The non-stick coating is applied during manufacturing to the dull side of the foil. Always place the non-stick (dull) side toward the food." |
+
+Visual notes: the mill, roll sizes, strip thicknesses and the potato trays are schematic ("NOT TO SCALE" in the title block). The only numbers shown (~1 mm, 2,500 m/min) are from the GDA factsheet.

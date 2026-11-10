@@ -1,0 +1,98 @@
+{
+ "name": "sneeze",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "popup",
+ "bpm": 96,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  9,
+  10,
+  11,
+  12,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "A tickle, a gasp, and then: **achoo!**",
+   "A tickle, a gasp, and then: achoo!"
+  ],
+  [
+   "**But** what's actually going on? Why do we sneeze?",
+   "But what's actually going on? Why do we sneeze?"
+  ],
+  [
+   "A sneeze is a **reflex.** You don't decide to do it.",
+   "A sneeze is a reflex. You don't decide to do it."
+  ],
+  [
+   "It starts when dust, pollen or a germ irritates the lining of your **nose.**",
+   "It starts when dust, pollen or a germ irritates the lining of your nose."
+  ],
+  [
+   "The nerve endings there belong to the **trigeminal nerve,** the big nerve of your face.",
+   "The nerve endings there belong to the trigeminal nerve, the big nerve of your face."
+  ],
+  [
+   "It fires a signal down to your **brainstem,** where scientists think a sneeze centre sits.",
+   "It fires a signal down to your brainstem, where scientists think a sneeze centre sits."
+  ],
+  [
+   "Your eyes close. You take a deep **breath.**",
+   "Your eyes close. You take a deep breath."
+  ],
+  [
+   "Pressure builds in your chest, and then a **blast** of air shoots out,",
+   "Pressure builds in your chest, and then a blast of air shoots out,"
+  ],
+  [
+   "washing the dust and germs out of your **nose.**",
+   "washing the dust and germs out of your nose."
+  ],
+  [
+   "Here's the weird part: for about **one in four** people, bright light does it too.",
+   "Here's the weird part: for about one in four people, bright light does it too."
+  ],
+  [
+   "It's called the **photic sneeze reflex.** Step into the sun, and: achoo.",
+   "It's called the photic sneeze reflex. Step into the sun, and: achoo."
+  ],
+  [
+   "Nobody knows exactly why. One idea: light signals leak into that same **trigeminal nerve.**",
+   "Nobody knows exactly why. One idea: light signals leak into that same trigeminal nerve."
+  ],
+  [
+   "**But** what about the famous myth? Does your heart **stop** when you sneeze?",
+   "But what about the famous myth? Does your heart stop when you sneeze?"
+  ],
+  [
+   "No. The pressure in your chest can briefly change your heart's **rhythm,**",
+   "No. The pressure in your chest can briefly change your heart's rhythm,"
+  ],
+  [
+   "but its electrical signal keeps going. Your heart **doesn't stop.**",
+   "but its electrical signal keeps going. Your heart doesn't stop."
+  ],
+  [
+   "So a sneeze is your nose's **emergency exit:** a reflex built to blast irritants out.",
+   "So a sneeze is your nose's emergency exit: a reflex built to blast irritants out."
+  ],
+  [
+   "**Sun-sneezer?**",
+   "Sun-sneezer?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

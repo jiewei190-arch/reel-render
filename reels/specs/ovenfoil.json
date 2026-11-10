@@ -1,0 +1,90 @@
+{
+ "name": "ovenfoil",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  8,
+  9,
+  10,
+  13,
+  14
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Shiny side out? The two sides of your foil aren't a **cooking trick.**",
+   "Shiny side out? The two sides of your foil aren't a cooking trick."
+  ],
+  [
+   "But **why does aluminum foil have a shiny side and a dull side?** Blame the **factory.**",
+   "But why does aluminum foil have a shiny side and a dull side? Blame the factory."
+  ],
+  [
+   "Foil starts as a sheet of aluminum about **a millimeter** thick.",
+   "Foil starts as a sheet of aluminum about a millimeter thick."
+  ],
+  [
+   "It's squeezed between heavy **steel rollers,** pass after pass, thinner every time.",
+   "It's squeezed between heavy steel rollers, pass after pass, thinner every time."
+  ],
+  [
+   "Here's the catch: really thin foil can **tear** at full speed.",
+   "Here's the catch: really thin foil can tear at full speed."
+  ],
+  [
+   "So for the last pass, **two sheets** go through the rollers **together.**",
+   "So for the last pass, two sheets go through the rollers together."
+  ],
+  [
+   "The outsides touch the **polished steel rollers,** so they come out **shiny.**",
+   "The outsides touch the polished steel rollers, so they come out shiny."
+  ],
+  [
+   "The insides only touch **each other,** so they come out **matte.**",
+   "The insides only touch each other, so they come out matte."
+  ],
+  [
+   "Then the sheets are **peeled apart.** Each one has a shiny side and a dull side.",
+   "Then the sheets are peeled apart. Each one has a shiny side and a dull side."
+  ],
+  [
+   "And these rollers fly: up to **2,500 meters a minute.**",
+   "And these rollers fly: up to 2,500 meters a minute."
+  ],
+  [
+   "So does the side matter when you **cook?**",
+   "So does the side matter when you cook?"
+  ],
+  [
+   "Reynolds, the foil maker, says **no.** Both sides do the **same job.**",
+   "Reynolds, the foil maker, says no. Both sides do the same job."
+  ],
+  [
+   "Germany's aluminum industry group agrees: the sides are **equivalent.**",
+   "Germany's aluminum industry group agrees: the sides are equivalent."
+  ],
+  [
+   "One exception: **non-stick** foil. Its coating is on the **dull side,** so that side faces the food.",
+   "One exception: non-stick foil. Its coating is on the dull side, so that side faces the food."
+  ],
+  [
+   "So shiny or dull is just a **fingerprint from the factory.**",
+   "So shiny or dull is just a fingerprint from the factory."
+  ],
+  [
+   "Which side do you use? **Shiny or dull?**",
+   "Which side do you use? Shiny or dull?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

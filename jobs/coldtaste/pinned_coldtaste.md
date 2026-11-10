@@ -1,0 +1,1 @@
+Try it now: pinch your nose, chew a jellybean (or any fruity sweet) for a few seconds, then let go. The "cherry" arrives the moment air can flow up the back of your mouth again. Have you tried the nose-pinch test? Yes or no?

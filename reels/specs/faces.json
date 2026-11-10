@@ -1,0 +1,81 @@
+{
+ "name": "faces",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  6,
+  7,
+  9,
+  10,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Two dots and a line, and your brain yells: **face!**",
+   "Two dots and a line, and your brain yells: face!"
+  ],
+  [
+   "But there's no face there. So why can't you **un-see** it?",
+   "But there's no face there. So why can't you un-see it?"
+  ],
+  [
+   "It's called **pareidolia.** Faces in clouds, in outlets, in **pumpkins.**",
+   "It's called pareidolia. Faces in clouds, in outlets, in pumpkins."
+  ],
+  [
+   "Your brain runs a **face detector** that never switches off.",
+   "Your brain runs a face detector that never switches off."
+  ],
+  [
+   "And it's **fast.** Your eyes can start moving toward a face in about a **tenth of a second.**",
+   "And it's fast. Your eyes can start moving toward a face in about a tenth of a second."
+  ],
+  [
+   "In a 2020 brain-scan study, face-like objects were handled by the brain's **face areas,** like real faces.",
+   "In a twenty twenty brain scan study, face-like objects were handled by the brain's face areas, like real faces."
+  ],
+  [
+   "Within about a **quarter of a second,** the brain sorts them back into plain **objects.**",
+   "Within about a quarter of a second, the brain sorts them back into plain objects."
+  ],
+  [
+   "But by then, you've already **seen** the face.",
+   "But by then, you've already seen the face."
+  ],
+  [
+   "And it's not just us. **Monkeys** stare longer at face-like objects too.",
+   "And it's not just us. Monkeys stare longer at face-like objects too."
+  ],
+  [
+   "In one study, babies still in the **womb** turned toward three dots of light arranged like a **face.**",
+   "In one study, babies still in the womb turned toward three dots of light arranged like a face."
+  ],
+  [
+   "So why build a detector that makes **mistakes?**",
+   "So why build a detector that makes mistakes?"
+  ],
+  [
+   "Scientists describe it as tuned to **never miss,** even if that means **false alarms.**",
+   "Scientists describe it as tuned to never miss, even if that means false alarms."
+  ],
+  [
+   "Missing a real face could cost you. Seeing one in a pumpkin costs a **laugh.**",
+   "Missing a real face could cost you. Seeing one in a pumpkin costs a laugh."
+  ],
+  [
+   "So that **ghost** in the curtains tonight? It's your face detector, doing its **job.**",
+   "So that ghost in the curtains tonight? It's your face detector, doing its job."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

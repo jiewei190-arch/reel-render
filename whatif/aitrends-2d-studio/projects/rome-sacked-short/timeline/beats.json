@@ -1,0 +1,74 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.15,
+  "speechEnd": 1.735,
+  "text": "August 24th, 410.",
+  "end": 2.105
+ },
+ {
+  "i": 1,
+  "start": 2.105,
+  "speechStart": 2.255,
+  "speechEnd": 5.355,
+  "text": "Nobody has broken into Rome in almost eight hundred years.",
+  "end": 5.645
+ },
+ {
+  "i": 2,
+  "start": 5.645,
+  "speechStart": 5.795,
+  "speechEnd": 7.455,
+  "text": "So this guard is very relaxed.",
+  "end": 7.785
+ },
+ {
+  "i": 3,
+  "start": 7.785,
+  "speechStart": 7.935,
+  "speechEnd": 12.715,
+  "text": "Then the Salarian Gate opens. Some say, from the inside. The Visigoths are in.",
+  "end": 12.965
+ },
+ {
+  "i": 4,
+  "start": 12.965,
+  "speechStart": 13.115,
+  "speechEnd": 15.475,
+  "text": "For three days, the Eternal City gets looted.",
+  "end": 15.805
+ },
+ {
+  "i": 5,
+  "start": 15.805,
+  "speechStart": 15.955,
+  "speechEnd": 19.795,
+  "text": "Two years earlier, Rome paid them off with three thousand pounds of pepper.",
+  "end": 20.125
+ },
+ {
+  "i": 6,
+  "start": 20.125,
+  "speechStart": 20.275,
+  "speechEnd": 26.075,
+  "text": "This time, pepper won't fix it. And the emperor? He's not even in Rome. He's in Ravenna.",
+  "end": 26.365
+ },
+ {
+  "i": 7,
+  "start": 26.365,
+  "speechStart": 26.515,
+  "speechEnd": 32.375,
+  "text": "Told that Rome has perished, he panics. About his chicken. Named Roma. Or so the story goes.",
+  "end": 32.905
+ },
+ {
+  "i": 8,
+  "start": 32.905,
+  "speechStart": 33.055,
+  "speechEnd": 37.315,
+  "text": "How did the greatest empire on Earth end up here? Subscribe to find out.",
+  "end": 38.815
+ }
+]

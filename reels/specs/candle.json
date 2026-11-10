@@ -1,0 +1,86 @@
+{
+ "name": "candle",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "jazz",
+ "bpm": 96,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  6,
+  8,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "The wick isn't the **fuel.** The **wax** is, as a **gas.**",
+   "The wick isn't the fuel. The wax is, as a gas."
+  ],
+  [
+   "So **how does a candle actually burn?**",
+   "So how does a candle actually burn?"
+  ],
+  [
+   "In **1860,** Michael **Faraday** asked the same question, in a famous lecture for young people.",
+   "In eighteen sixty, Michael Faraday asked the same question, in a famous lecture for young people."
+  ],
+  [
+   "First, the flame's heat **melts** the wax at the top into a little **cup** of liquid.",
+   "First, the flame's heat melts the wax at the top into a little cup of liquid."
+  ],
+  [
+   "That liquid **climbs the wick,** the way water climbs up a **towel.**",
+   "That liquid climbs the wick, the way water climbs up a towel."
+  ],
+  [
+   "Near the flame, the hot liquid turns into **wax vapour,** a gas.",
+   "Near the flame, the hot liquid turns into wax vapour, a gas."
+  ],
+  [
+   "And that **vapour** is what actually **burns.**",
+   "And that vapour is what actually burns."
+  ],
+  [
+   "Inside the flame is a **dark core:** vapour that **hasn't burned yet.**",
+   "Inside the flame is a dark core. Vapour that hasn't burned yet."
+  ],
+  [
+   "The bright **yellow** glow? Tiny specks of solid **carbon,** so hot they **shine.**",
+   "The bright yellow glow? Tiny specks of solid carbon, so hot they shine."
+  ],
+  [
+   "Now **watch this.** Faraday blew a candle out, then **lit the smoke.**",
+   "Now watch this. Faraday blew a candle out, then lit the smoke."
+  ],
+  [
+   "A **trail of fire** runs down through the air and **relights the wick.**",
+   "A trail of fire runs down through the air and relights the wick."
+  ],
+  [
+   "Burning with oxygen from the air, the vapour turns into **water** and **carbon dioxide.**",
+   "Burning with oxygen from the air, the vapour turns into water and carbon dioxide."
+  ],
+  [
+   "Faraday even caught that **water,** condensing on a **cold** surface above the flame.",
+   "Faraday even caught that water, condensing on a cold surface above the flame."
+  ],
+  [
+   "So a candle is a tiny **fuel pump:** the wick lifts wax, heat makes it a **gas,** and the gas **burns.**",
+   "So a candle is a tiny fuel pump. The wick lifts wax, heat makes it a gas, and the gas burns."
+  ],
+  [
+   "Have you ever relit a candle **through its smoke?** **Yes or no?**",
+   "Have you ever relit a candle through its smoke? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.5
+}

@@ -1,0 +1,1 @@
+Bonus: thunder can be heard up to about 25 miles from the lightning, and NSSL notes the most distant parts of a flash can still be rumbling several tens of seconds after the first crack. What's the longest you've counted between flash and bang? ⚡👇

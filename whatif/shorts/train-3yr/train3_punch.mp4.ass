@@ -1,0 +1,92 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:34.90,Title,,0,0,0,,3 years of training. ONE punch.
+Dialogue: 0,0:00:00.18,0:00:00.34,Cap,,0,0,0,,{\c&H00E6FF&}DAY{\c&HFFFFFF&} ONE THOUSAND
+Dialogue: 0,0:00:00.34,0:00:00.56,Cap,,0,0,0,,DAY {\c&H00E6FF&}ONE{\c&HFFFFFF&} THOUSAND
+Dialogue: 0,0:00:00.56,0:00:00.92,Cap,,0,0,0,,DAY ONE {\c&H00E6FF&}THOUSAND{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.92,0:00:01.14,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} NINETY-FIVE.
+Dialogue: 0,0:00:01.14,0:00:02.68,Cap,,0,0,0,,AND {\c&H00E6FF&}NINETY-FIVE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.68,0:00:02.78,Cap,,0,0,0,,{\c&H00E6FF&}MINA{\c&HFFFFFF&} RIDES BESIDE
+Dialogue: 0,0:00:02.78,0:00:03.08,Cap,,0,0,0,,MINA {\c&H00E6FF&}RIDES{\c&HFFFFFF&} BESIDE
+Dialogue: 0,0:00:03.08,0:00:03.48,Cap,,0,0,0,,MINA RIDES {\c&H00E6FF&}BESIDE{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.48,0:00:04.40,Cap,,0,0,0,,{\c&H00E6FF&}YOU.{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.64,0:00:04.66,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} HOLDS A
+Dialogue: 0,0:00:04.66,0:00:04.94,Cap,,0,0,0,,DEV {\c&H00E6FF&}HOLDS{\c&HFFFFFF&} A
+Dialogue: 0,0:00:04.94,0:00:05.16,Cap,,0,0,0,,DEV HOLDS {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.16,0:00:05.42,Cap,,0,0,0,,{\c&H00E6FF&}FINISH{\c&HFFFFFF&} LINE MADE
+Dialogue: 0,0:00:05.42,0:00:05.82,Cap,,0,0,0,,FINISH {\c&H00E6FF&}LINE{\c&HFFFFFF&} MADE
+Dialogue: 0,0:00:05.82,0:00:06.04,Cap,,0,0,0,,FINISH LINE {\c&H00E6FF&}MADE{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.04,0:00:06.22,Cap,,0,0,0,,{\c&H00E6FF&}OF{\c&HFFFFFF&} TOILET PAPER.
+Dialogue: 0,0:00:06.22,0:00:06.44,Cap,,0,0,0,,OF {\c&H00E6FF&}TOILET{\c&HFFFFFF&} PAPER.
+Dialogue: 0,0:00:06.44,0:00:07.50,Cap,,0,0,0,,OF TOILET {\c&H00E6FF&}PAPER.{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.70,0:00:07.88,Cap,,0,0,0,,{\c&H00E6FF&}OVER{\c&HFFFFFF&} A HUNDRED
+Dialogue: 0,0:00:07.88,0:00:08.00,Cap,,0,0,0,,OVER {\c&H00E6FF&}A{\c&HFFFFFF&} HUNDRED
+Dialogue: 0,0:00:08.00,0:00:08.28,Cap,,0,0,0,,OVER A {\c&H00E6FF&}HUNDRED{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.28,0:00:08.54,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} NINE THOUSAND
+Dialogue: 0,0:00:08.54,0:00:08.78,Cap,,0,0,0,,AND {\c&H00E6FF&}NINE{\c&HFFFFFF&} THOUSAND
+Dialogue: 0,0:00:08.78,0:00:09.18,Cap,,0,0,0,,AND NINE {\c&H00E6FF&}THOUSAND{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.18,0:00:10.54,Cap,,0,0,0,,{\c&H00E6FF&}PUSH-UPS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.54,0:00:10.74,Cap,,0,0,0,,{\c&H00E6FF&}NEARLY{\c&HFFFFFF&} ELEVEN THOUSAND
+Dialogue: 0,0:00:10.74,0:00:11.10,Cap,,0,0,0,,NEARLY {\c&H00E6FF&}ELEVEN{\c&HFFFFFF&} THOUSAND
+Dialogue: 0,0:00:11.10,0:00:11.54,Cap,,0,0,0,,NEARLY ELEVEN {\c&H00E6FF&}THOUSAND{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.54,0:00:12.98,Cap,,0,0,0,,{\c&H00E6FF&}KILOMETRES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.98,0:00:13.14,Cap,,0,0,0,,{\c&H00E6FF&}MORE{\c&HFFFFFF&} THAN A
+Dialogue: 0,0:00:13.14,0:00:13.34,Cap,,0,0,0,,MORE {\c&H00E6FF&}THAN{\c&HFFFFFF&} A
+Dialogue: 0,0:00:13.34,0:00:13.42,Cap,,0,0,0,,MORE THAN {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.42,0:00:13.60,Cap,,0,0,0,,{\c&H00E6FF&}QUARTER{\c&HFFFFFF&} OF THE
+Dialogue: 0,0:00:13.60,0:00:13.78,Cap,,0,0,0,,QUARTER {\c&H00E6FF&}OF{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:13.78,0:00:13.90,Cap,,0,0,0,,QUARTER OF {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.90,0:00:14.12,Cap,,0,0,0,,{\c&H00E6FF&}WAY{\c&HFFFFFF&} AROUND THE
+Dialogue: 0,0:00:14.12,0:00:14.46,Cap,,0,0,0,,WAY {\c&H00E6FF&}AROUND{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:14.46,0:00:14.64,Cap,,0,0,0,,WAY AROUND {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.64,0:00:15.56,Cap,,0,0,0,,{\c&H00E6FF&}EARTH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.64,0:00:15.86,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} GRABS A
+Dialogue: 0,0:00:15.86,0:00:16.20,Cap,,0,0,0,,DEV {\c&H00E6FF&}GRABS{\c&HFFFFFF&} A
+Dialogue: 0,0:00:16.20,0:00:16.38,Cap,,0,0,0,,DEV GRABS {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.38,0:00:17.26,Cap,,0,0,0,,{\c&H00E6FF&}PILLOW.{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.32,0:00:18.46,Cap,,0,0,0,,{\c&H00E6FF&}"OKAY.{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.66,0:00:18.98,Cap,,0,0,0,,{\c&H00E6FF&}ONE{\c&HFFFFFF&} PUNCH.
+Dialogue: 0,0:00:18.98,0:00:19.80,Cap,,0,0,0,,ONE {\c&H00E6FF&}PUNCH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.06,0:00:20.22,Cap,,0,0,0,,{\c&H00E6FF&}SHOW{\c&HFFFFFF&} US WHAT
+Dialogue: 0,0:00:20.22,0:00:20.38,Cap,,0,0,0,,SHOW {\c&H00E6FF&}US{\c&HFFFFFF&} WHAT
+Dialogue: 0,0:00:20.38,0:00:20.56,Cap,,0,0,0,,SHOW US {\c&H00E6FF&}WHAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.56,0:00:20.80,Cap,,0,0,0,,{\c&H00E6FF&}THREE{\c&HFFFFFF&} YEARS DID."
+Dialogue: 0,0:00:20.80,0:00:21.00,Cap,,0,0,0,,THREE {\c&H00E6FF&}YEARS{\c&HFFFFFF&} DID."
+Dialogue: 0,0:00:21.00,0:00:21.90,Cap,,0,0,0,,THREE YEARS {\c&H00E6FF&}DID."{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.02,0:00:22.26,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} WIND UP.
+Dialogue: 0,0:00:22.26,0:00:22.50,Cap,,0,0,0,,YOU {\c&H00E6FF&}WIND{\c&HFFFFFF&} UP.
+Dialogue: 0,0:00:22.50,0:00:23.40,Cap,,0,0,0,,YOU WIND {\c&H00E6FF&}UP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.56,0:00:23.90,Cap,,0,0,0,,{\c&H00E6FF&}EVERYONE{\c&HFFFFFF&} HOLDS THEIR
+Dialogue: 0,0:00:23.90,0:00:24.18,Cap,,0,0,0,,EVERYONE {\c&H00E6FF&}HOLDS{\c&HFFFFFF&} THEIR
+Dialogue: 0,0:00:24.18,0:00:24.42,Cap,,0,0,0,,EVERYONE HOLDS {\c&H00E6FF&}THEIR{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.42,0:00:25.28,Cap,,0,0,0,,{\c&H00E6FF&}BREATH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:25.44,0:00:25.64,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} PUNCH.
+Dialogue: 0,0:00:25.64,0:00:26.60,Cap,,0,0,0,,YOU {\c&H00E6FF&}PUNCH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.00,0:00:27.74,Cap,,0,0,0,,{\c&H00E6FF&}FLUMP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:27.74,0:00:28.04,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} PILLOW WOBBLES.
+Dialogue: 0,0:00:28.04,0:00:28.28,Cap,,0,0,0,,THE {\c&H00E6FF&}PILLOW{\c&HFFFFFF&} WOBBLES.
+Dialogue: 0,0:00:28.28,0:00:29.48,Cap,,0,0,0,,THE PILLOW {\c&H00E6FF&}WOBBLES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:29.66,0:00:30.00,Cap,,0,0,0,,{\c&H00E6FF&}BISCUIT,{\c&HFFFFFF&} ASLEEP ON
+Dialogue: 0,0:00:30.00,0:00:30.34,Cap,,0,0,0,,BISCUIT, {\c&H00E6FF&}ASLEEP{\c&HFFFFFF&} ON
+Dialogue: 0,0:00:30.34,0:00:30.58,Cap,,0,0,0,,BISCUIT, ASLEEP {\c&H00E6FF&}ON{\c&HFFFFFF&}
+Dialogue: 0,0:00:30.58,0:00:30.78,Cap,,0,0,0,,{\c&H00E6FF&}TOP{\c&HFFFFFF&} OF IT,
+Dialogue: 0,0:00:30.78,0:00:30.90,Cap,,0,0,0,,TOP {\c&H00E6FF&}OF{\c&HFFFFFF&} IT,
+Dialogue: 0,0:00:30.90,0:00:31.06,Cap,,0,0,0,,TOP OF {\c&H00E6FF&}IT,{\c&HFFFFFF&}
+Dialogue: 0,0:00:31.06,0:00:31.40,Cap,,0,0,0,,{\c&H00E6FF&}OPENS{\c&HFFFFFF&} ONE EYE.
+Dialogue: 0,0:00:31.40,0:00:31.72,Cap,,0,0,0,,OPENS {\c&H00E6FF&}ONE{\c&HFFFFFF&} EYE.
+Dialogue: 0,0:00:31.72,0:00:32.66,Cap,,0,0,0,,OPENS ONE {\c&H00E6FF&}EYE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:32.80,0:00:32.90,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} YOUR HAIR
+Dialogue: 0,0:00:32.90,0:00:33.02,Cap,,0,0,0,,AND {\c&H00E6FF&}YOUR{\c&HFFFFFF&} HAIR
+Dialogue: 0,0:00:33.02,0:00:33.26,Cap,,0,0,0,,AND YOUR {\c&H00E6FF&}HAIR{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.26,0:00:33.58,Cap,,0,0,0,,{\c&H00E6FF&}DOESN'T{\c&HFFFFFF&} MOVE AT
+Dialogue: 0,0:00:33.58,0:00:33.76,Cap,,0,0,0,,DOESN'T {\c&H00E6FF&}MOVE{\c&HFFFFFF&} AT
+Dialogue: 0,0:00:33.76,0:00:33.94,Cap,,0,0,0,,DOESN'T MOVE {\c&H00E6FF&}AT{\c&HFFFFFF&}
+Dialogue: 0,0:00:33.94,0:00:34.66,Cap,,0,0,0,,{\c&H00E6FF&}ALL.{\c&HFFFFFF&}
