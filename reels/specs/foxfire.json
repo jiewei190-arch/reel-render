@@ -1,0 +1,88 @@
+{
+ "name": "foxfire",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  9,
+  10,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "Some mushrooms **glow in the dark,** all on their own.",
+   "Some mushrooms glow in the dark, all on their own."
+  ],
+  [
+   "**But** there's no battery, no fire, and no stored-up sunlight.",
+   "But there's no battery, no fire, and no stored-up sunlight."
+  ],
+  [
+   "So why would a mushroom **make light?**",
+   "So why would a mushroom make light?"
+  ],
+  [
+   "Over two thousand years ago, **Aristotle** wrote about a light that was **cold to the touch.**",
+   "Over two thousand years ago, Aristotle wrote about a light that was cold to the touch."
+  ],
+  [
+   "Today, the glow on rotting wood is called **foxfire.**",
+   "Today, the glow on rotting wood is called foxfire."
+  ],
+  [
+   "In the 1770s, it even lit the compass of an early submarine, the **Turtle.**",
+   "In the seventeen seventies, it even lit the compass of an early submarine, the Turtle."
+  ],
+  [
+   "The trick is chemistry. The fungus makes a fuel called **luciferin.**",
+   "The trick is chemistry. The fungus makes a fuel called luciferin."
+  ],
+  [
+   "An enzyme, **luciferase,** helps it react with **oxygen.**",
+   "An enzyme, luciferase, helps it react with oxygen."
+  ],
+  [
+   "That reaction gives off its energy as **green light,** not heat.",
+   "That reaction gives off its energy as green light, not heat."
+  ],
+  [
+   "Then the leftovers are **recycled** into new fuel, again and again.",
+   "Then the leftovers are recycled into new fuel, again and again."
+  ],
+  [
+   "**But** making light costs energy. So why bother?",
+   "But making light costs energy. So why bother?"
+  ],
+  [
+   "In Brazil, scientists set out **fake mushrooms** lit by green LEDs.",
+   "In Brazil, scientists set out fake mushrooms, lit by green L E Ds."
+  ],
+  [
+   "The glowing fakes drew **far more insects** than the dark ones.",
+   "The glowing fakes drew far more insects than the dark ones."
+  ],
+  [
+   "Insects crawling over a mushroom may carry its **spores** to new wood.",
+   "Insects crawling over a mushroom may carry its spores to new wood."
+  ],
+  [
+   "And its glow follows a **daily clock,** likely saving energy for the dark.",
+   "And its glow follows a daily clock, likely saving energy for the dark."
+  ],
+  [
+   "So the glow is probably a **night-time sign** for tiny helpers.",
+   "So the glow is probably a night-time sign, for tiny helpers."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

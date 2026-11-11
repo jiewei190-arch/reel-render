@@ -1,0 +1,1 @@
+Bonus: most of the rumble actually comes from your intestines, not your stomach, and the between-meal "cleaning wave" repeats roughly every couple of hours until you eat again. Does yours growl at the worst moment? Yes or no?

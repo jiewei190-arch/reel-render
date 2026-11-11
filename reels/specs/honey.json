@@ -4,96 +4,74 @@
  "speed": 0.97,
  "music": "crayon",
  "bpm": 88,
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "breath": [
+  1,
+  3,
+  4,
+  6,
+  8,
+  9,
+  10
+ ],
  "phrases": [
   [
-   "How does a bee turn **flower nectar** into honey?",
-   "How does a bee turn flower nectar into honey?"
+   "How do bees turn **nectar** into **honey?**",
+   "How do bees turn nectar into honey?"
   ],
   [
-   "First, a forager sips nectar into her **honey stomach.**",
-   "First, a forager sips nectar into her honey stomach."
+   "But honey isn't just stored nectar. Bees change it in **two ways.**",
+   "But honey isn't just stored nectar. Bees change it in two ways."
   ],
   [
-   "It's only for storage. **She doesn't digest it.**",
-   "It's only for storage. She doesn't digest it."
+   "A forager sips nectar from flowers into a special stomach called the **honey crop.**",
+   "A forager sips nectar from flowers into a special stomach called the honey crop."
   ],
   [
-   "One trip can take her to **50 to 100 flowers.**",
-   "One trip can take her to fifty to one hundred flowers."
+   "Back at the hive, she passes it to other bees, **mouth to mouth.**",
+   "Back at the hive, she passes it to other bees, mouth to mouth."
   ],
   [
-   "Back at the hive, she **passes the nectar** to a waiting bee.",
-   "Back at the hive, she passes the nectar to a waiting bee."
+   "Change one: **enzymes.** Bees add **invertase,** which splits the nectar's sucrose into two simpler sugars, **glucose** and **fructose.**",
+   "Change one: enzymes. Bees add invertase, which splits the nectar's sucrose into two simpler sugars, glucose and fructose."
   ],
   [
-   "Each pass adds an enzyme called **invertase.**",
-   "Each pass adds an enzyme called invertase."
+   "Here's the catch: nectar is **far too watery** to keep. Stored like that, it would **ferment.**",
+   "Here's the catch: nectar is far too watery to keep. Stored like that, it would ferment."
   ],
   [
-   "It splits plain sugar into **glucose and fructose.**",
-   "It splits plain sugar into glucose and fructose."
+   "Change two: **drying.** And it starts on the flight home: nectar in a forager's crop is already about **twice as sugary** as in the flower.",
+   "Change two: drying. And it starts on the flight home: nectar in a forager's crop is already about twice as sugary as in the flower."
   ],
   [
-   "But nectar is still about **70 percent water.**",
-   "But nectar is still about seventy percent water."
+   "In the hive, bees push out tiny droplets on their **tongues** and suck them back in, again and again, so water **evaporates.**",
+   "In the hive, bees push out tiny droplets on their tongues and suck them back in, again and again, so water evaporates."
   ],
   [
-   "Real honey has **less than 18.6 percent.**",
-   "Real honey has less than eighteen point six percent."
+   "Then they spread it into wax cells, and lots of bees **fan their wings** to move air through the hive.",
+   "Then they spread it into wax cells, and lots of bees fan their wings to move air through the hive."
   ],
   [
-   "So the bees spread it in the comb and **fan their wings.**",
-   "So the bees spread it in the comb and fan their wings."
+   "The water keeps dropping until the honey is only about **18% water.**",
+   "The water keeps dropping until the honey is only about eighteen percent water."
   ],
   [
-   "The moving air carries the water away, **cell by cell.**",
-   "The moving air carries the water away, cell by cell."
+   "When it's ripe, bees seal each cell with a **wax cap,** like a lid on a jar.",
+   "When it's ripe, bees seal each cell with a wax cap, like a lid on a jar."
   ],
   [
-   "Once it's ripe, they seal each cell with an **airtight wax cap.**",
-   "Once it's ripe, they seal each cell with an airtight wax cap."
+   "So honey is nectar that bees **change** with enzymes and **dry** with their tongues and wings, then **seal** in wax.",
+   "So honey is nectar that bees change with enzymes and dry with their tongues and wings, then seal in wax."
   ],
   [
-   "Without that seal, honey **soaks up moisture** and can spoil.",
-   "Without that seal, honey soaks up moisture and can spoil."
-  ],
-  [
-   "Sealed, with so little water and a little acid, **almost nothing can grow in it.**",
-   "Sealed, with so little water and a little acid, almost nothing can grow in it."
-  ],
-  [
-   "Pots of honey **thousands of years old** have been found in Egyptian tombs.",
-   "Pots of honey thousands of years old have been found in Egyptian tombs."
-  ],
-  [
-   "All that work, and one bee makes only **one twelfth of a teaspoon** in her life.",
-   "All that work, and one bee makes only one twelfth of a teaspoon in her life."
-  ],
-  [
-   "So every spoonful took **a whole team of bees.**",
-   "So every spoonful took a whole team of bees."
-  ],
-  [
-   "And that flower's nectar? **Now it's honey.**",
-   "And that flower's nectar? Now it's honey."
+   "Did you know bees dry honey with their **wings?** **Yes or no?**",
+   "Did you know bees dry honey with their wings? Yes or no?"
   ],
   [
    "Follow for more of **how it really works.**",
    "Follow for more of how it really works."
   ]
- ],
- "breath": [
-  0,
-  2,
-  3,
-  6,
-  8,
-  10,
-  11,
-  13,
-  14,
-  15,
-  16,
-  17
  ]
 }

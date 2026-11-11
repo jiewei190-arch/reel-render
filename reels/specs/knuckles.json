@@ -1,0 +1,90 @@
+{
+ "name": "knuckles",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "music_gain": 0.7,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "When you crack a knuckle, nothing breaks. A **bubble is born.**",
+   "When you crack a knuckle, nothing breaks. A bubble is born."
+  ],
+  [
+   "But why does cracking your knuckles make a **pop?**",
+   "But why does cracking your knuckles make a pop?"
+  ],
+  [
+   "Your knuckle is a capsule filled with slippery **joint fluid.**",
+   "Your knuckle is a capsule filled with slippery joint fluid."
+  ],
+  [
+   "Pull the bones apart, and the **pressure** in that fluid drops.",
+   "Pull the bones apart, and the pressure in that fluid drops."
+  ],
+  [
+   "Suddenly, gas comes out of the fluid, and a **cavity snaps open.**",
+   "Suddenly, gas comes out of the fluid, and a cavity snaps open."
+  ],
+  [
+   "In 2015, researchers filmed it inside an **MRI** scanner. The cavity formed at the **exact moment** of the crack.",
+   "In twenty fifteen, researchers filmed it inside an MRI scanner. The cavity formed at the exact moment of the crack."
+  ],
+  [
+   "And afterwards, the bubble was **still there.**",
+   "And afterwards, the bubble was still there."
+  ],
+  [
+   "But for decades, scientists said the pop was a bubble **collapsing,** not forming.",
+   "But for decades, scientists said the pop was a bubble collapsing, not forming."
+  ],
+  [
+   "In 2018, a math model showed a **partial collapse** could make the same sound, and still leave a bubble behind.",
+   "In twenty eighteen, a math model showed a partial collapse could make the same sound, and still leave a bubble behind."
+  ],
+  [
+   "So: born, or half-collapsing? The **debate isn't settled.**",
+   "So: born, or half-collapsing? The debate isn't settled."
+  ],
+  [
+   "That leftover gas is why you can't crack the same knuckle right away. It takes around **half an hour** to reset.",
+   "That leftover gas is why you can't crack the same knuckle right away. It takes around half an hour to reset."
+  ],
+  [
+   "And arthritis? One doctor cracked only his **left hand,** for more than **sixty years.**",
+   "And arthritis? One doctor cracked only his left hand, for more than sixty years."
+  ],
+  [
+   "No difference between his hands. It won him an **Ig Nobel Prize.**",
+   "No difference between his hands. It won him an Ig Nobel Prize."
+  ],
+  [
+   "A study of **300** people found no extra arthritis in crackers, though more hand **swelling** and a weaker **grip.**",
+   "A study of three hundred people found no extra arthritis in crackers, though more hand swelling and a weaker grip."
+  ],
+  [
+   "Are you a knuckle cracker? **Yes or no?**",
+   "Are you a knuckle cracker? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

@@ -1,0 +1,327 @@
+{
+ "duration": 32.773,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.95,
+   "line": "You drop a penny off the Empire State Building.",
+   "scene": "deck: HERO flicks a penny, camera tilts down after it",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.95,
+   "end": 5.3,
+   "line": "Everyone says it would kill someone.",
+   "scene": "street: crowd looks up, panic",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "kill",
+     "name": "toon3d:gasp",
+     "gain": -10
+    },
+    {
+     "word": "kill",
+     "name": "toon3d:impact",
+     "gain": -10,
+     "offset": 0.05
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s03",
+   "start": 5.3,
+   "end": 6.38,
+   "line": "It won't.",
+   "scene": "DR LIN deadpan head shake, MYTH: BUSTED",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "won't.",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s04",
+   "start": 6.38,
+   "end": 7.45,
+   "line": "Wait, how?",
+   "scene": "TOMAS shrug ???",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s05",
+   "start": 7.45,
+   "end": 11.05,
+   "line": "You see, a penny is flat and light, so it flutters, like a leaf.",
+   "scene": "midair: penny + leaf flutter",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "word": "flat",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "leaf.",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s06",
+   "start": 11.05,
+   "end": 15.4,
+   "line": "The air pushes back. After about 50 feet, it stops speeding up.",
+   "scene": "falling down the facade, air arrows + gauge",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "pushes",
+     "name": "toon3d:wind",
+     "gain": -10
+    },
+    {
+     "word": "50",
+     "name": "toon3d:tick",
+     "gain": -8
+    },
+    {
+     "word": "stops",
+     "name": "toon3d:ding",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s07",
+   "start": 15.4,
+   "end": 18.58,
+   "line": "Top speed? About 25 miles an hour.",
+   "scene": "INSERT counter ~25 MPH",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "25",
+     "name": "toon3d:cash",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s08",
+   "start": 18.58,
+   "end": 22.05,
+   "line": "With no air at all, it would hit 208.",
+   "scene": "INSERT versus NO AIR 208 / AIR 25",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "208.",
+     "name": "toon3d:alarm",
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s09",
+   "start": 22.05,
+   "end": 23.5,
+   "line": "Luckily, we have air.",
+   "scene": "TOMAS relaxes, leaf blows past",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s10",
+   "start": 23.5,
+   "end": 27.5,
+   "line": "One physicist says it would feel like a flick on the forehead.",
+   "scene": "penny lands on TOMAS's forehead: ! + stars",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "flick",
+     "name": "toon3d:boing",
+     "gain": -6
+    },
+    {
+     "word": "flick",
+     "name": "toon3d:ding",
+     "gain": -10,
+     "offset": 0.05
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s11",
+   "start": 27.5,
+   "end": 29.15,
+   "line": "And not even a hard one.",
+   "scene": "TOMAS deadpan, rubs forehead, sweat",
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s12",
+   "start": 29.15,
+   "end": 31.2,
+   "line": "Please don't test this on Tomas.",
+   "scene": "high angle: TOMAS glares up, angry !",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "tomas.",
+     "name": "toon3d:thud",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s13",
+   "start": 31.2,
+   "end": 32.773,
+   "line": "Subscribe for more.",
+   "scene": "back on the deck, new penny in hand (loop to frame 1)",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  }
+ ]
+}

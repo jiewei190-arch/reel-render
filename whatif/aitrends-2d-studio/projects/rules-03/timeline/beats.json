@@ -1,0 +1,138 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.08,
+  "speechEnd": 2.24,
+  "text": "Three a.m.",
+  "end": 2.09
+ },
+ {
+  "i": 1,
+  "start": 2.09,
+  "speechStart": 2.24,
+  "speechEnd": 6.1,
+  "text": "Every phone on your street screams at once. Emergency alert.",
+  "end": 5.95
+ },
+ {
+  "i": 2,
+  "start": 5.95,
+  "speechStart": 6.1,
+  "speechEnd": 7.76,
+  "text": "Three rules.",
+  "end": 9.67
+ },
+ {
+  "i": 3,
+  "start": 9.67,
+  "speechStart": 9.82,
+  "speechEnd": 13.98,
+  "text": "Rule one. Stay inside. Cover every window.",
+  "end": 15.67
+ },
+ {
+  "i": 4,
+  "start": 15.67,
+  "speechStart": 15.82,
+  "speechEnd": 17.4,
+  "text": "Rule two.",
+  "end": 17.25
+ },
+ {
+  "i": 5,
+  "start": 17.25,
+  "speechStart": 17.4,
+  "speechEnd": 21.06,
+  "text": "If it looks like morning outside, it isn't. Don't look.",
+  "end": 22.75
+ },
+ {
+  "i": 6,
+  "start": 22.75,
+  "speechStart": 22.9,
+  "speechEnd": 24.48,
+  "text": "Rule three.",
+  "end": 24.33
+ },
+ {
+  "i": 7,
+  "start": 24.33,
+  "speechStart": 24.48,
+  "speechEnd": 27.56,
+  "text": "If someone knocks, count your family before you answer.",
+  "end": 28.81
+ },
+ {
+  "i": 8,
+  "start": 28.81,
+  "speechStart": 28.96,
+  "speechEnd": 31.2,
+  "text": "You tape cardboard over the windows.",
+  "end": 32.07
+ },
+ {
+  "i": 9,
+  "start": 32.07,
+  "speechStart": 32.22,
+  "speechEnd": 34.46,
+  "text": "Your little brother falls asleep on the couch.",
+  "end": 34.31
+ },
+ {
+  "i": 10,
+  "start": 34.31,
+  "speechStart": 34.46,
+  "speechEnd": 37.2,
+  "text": "Four a.m.",
+  "end": 37.05
+ },
+ {
+  "i": 11,
+  "start": 37.05,
+  "speechStart": 37.2,
+  "speechEnd": 44.34,
+  "text": "Light pours in under the front door. White and warm, like sunrise. Then a knock. Sweetheart?",
+  "end": 44.37
+ },
+ {
+  "i": 12,
+  "start": 44.37,
+  "speechStart": 44.52,
+  "speechEnd": 51.22,
+  "text": "It's Mom. The sun's up. Come and see. Mom is asleep upstairs. You're almost sure.",
+  "end": 52.09
+ },
+ {
+  "i": 13,
+  "start": 52.09,
+  "speechStart": 52.24,
+  "speechEnd": 59.58,
+  "text": "So you count. Mom, upstairs. Dad, upstairs. Your brother, on the couch.",
+  "end": 60.43
+ },
+ {
+  "i": 14,
+  "start": 60.43,
+  "speechStart": 60.58,
+  "speechEnd": 60.82,
+  "text": "You.",
+  "end": 60.67
+ },
+ {
+  "i": 15,
+  "start": 60.67,
+  "speechStart": 60.82,
+  "speechEnd": 62.28,
+  "text": "Four.",
+  "end": 62.13
+ },
+ {
+  "i": 16,
+  "start": 62.13,
+  "speechStart": 62.28,
+  "speechEnd": 63.74,
+  "text": "Five.",
+  "end": 66.512
+ }
+]

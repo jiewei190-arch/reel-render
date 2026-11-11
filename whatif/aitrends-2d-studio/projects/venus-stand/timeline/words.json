@@ -1,0 +1,425 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "On",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "Venus,",
+   "start": 0.3,
+   "end": 0.58
+  },
+  {
+   "word": "you'd",
+   "start": 0.76,
+   "end": 0.96
+  },
+  {
+   "word": "be",
+   "start": 0.96,
+   "end": 1.0
+  },
+  {
+   "word": "crushed,",
+   "start": 1.0,
+   "end": 1.32
+  },
+  {
+   "word": "cooked",
+   "start": 1.48,
+   "end": 1.72
+  },
+  {
+   "word": "and",
+   "start": 1.82,
+   "end": 1.92
+  },
+  {
+   "word": "dissolved.",
+   "start": 1.92,
+   "end": 2.34
+  },
+  {
+   "word": "In",
+   "start": 2.96,
+   "end": 3.08
+  },
+  {
+   "word": "that",
+   "start": 3.08,
+   "end": 3.26
+  },
+  {
+   "word": "order?",
+   "start": 3.26,
+   "end": 3.62
+  },
+  {
+   "word": "No.",
+   "start": 4.6,
+   "end": 4.88
+  },
+  {
+   "word": "All",
+   "start": 5.44,
+   "end": 5.6
+  },
+  {
+   "word": "at",
+   "start": 5.6,
+   "end": 5.72
+  },
+  {
+   "word": "once.",
+   "start": 5.72,
+   "end": 6.1
+  },
+  {
+   "word": "Wait,",
+   "start": 6.6,
+   "end": 6.8
+  },
+  {
+   "word": "how?",
+   "start": 6.8,
+   "end": 7.12
+  },
+  {
+   "word": "You",
+   "start": 7.66,
+   "end": 7.84
+  },
+  {
+   "word": "see,",
+   "start": 7.84,
+   "end": 8.14
+  },
+  {
+   "word": "the",
+   "start": 8.32,
+   "end": 8.4
+  },
+  {
+   "word": "air",
+   "start": 8.4,
+   "end": 8.64
+  },
+  {
+   "word": "there",
+   "start": 8.64,
+   "end": 8.88
+  },
+  {
+   "word": "presses",
+   "start": 8.88,
+   "end": 9.2
+  },
+  {
+   "word": "down",
+   "start": 9.2,
+   "end": 9.6
+  },
+  {
+   "word": "over",
+   "start": 9.6,
+   "end": 9.9
+  },
+  {
+   "word": "90",
+   "start": 9.9,
+   "end": 10.24
+  },
+  {
+   "word": "times",
+   "start": 10.24,
+   "end": 10.72
+  },
+  {
+   "word": "harder",
+   "start": 10.72,
+   "end": 11.06
+  },
+  {
+   "word": "than",
+   "start": 11.06,
+   "end": 11.3
+  },
+  {
+   "word": "on",
+   "start": 11.3,
+   "end": 11.5
+  },
+  {
+   "word": "Earth.",
+   "start": 11.5,
+   "end": 11.76
+  },
+  {
+   "word": "Like",
+   "start": 12.28,
+   "end": 12.44
+  },
+  {
+   "word": "standing",
+   "start": 12.44,
+   "end": 12.8
+  },
+  {
+   "word": "3,000",
+   "start": 12.8,
+   "end": 13.66
+  },
+  {
+   "word": "feet",
+   "start": 13.66,
+   "end": 13.9
+  },
+  {
+   "word": "underwater.",
+   "start": 13.9,
+   "end": 14.46
+  },
+  {
+   "word": "The",
+   "start": 15.06,
+   "end": 15.16
+  },
+  {
+   "word": "ground",
+   "start": 15.16,
+   "end": 15.42
+  },
+  {
+   "word": "is",
+   "start": 15.42,
+   "end": 15.64
+  },
+  {
+   "word": "464",
+   "start": 15.64,
+   "end": 17.2
+  },
+  {
+   "word": "degrees",
+   "start": 17.2,
+   "end": 17.56
+  },
+  {
+   "word": "Celsius.",
+   "start": 17.56,
+   "end": 18.1
+  },
+  {
+   "word": "Hot",
+   "start": 18.7,
+   "end": 18.84
+  },
+  {
+   "word": "enough",
+   "start": 18.84,
+   "end": 19.04
+  },
+  {
+   "word": "to",
+   "start": 19.04,
+   "end": 19.24
+  },
+  {
+   "word": "melt",
+   "start": 19.24,
+   "end": 19.44
+  },
+  {
+   "word": "lead.",
+   "start": 19.44,
+   "end": 19.74
+  },
+  {
+   "word": "That's",
+   "start": 20.34,
+   "end": 20.62
+  },
+  {
+   "word": "hotter",
+   "start": 20.62,
+   "end": 20.88
+  },
+  {
+   "word": "than",
+   "start": 20.88,
+   "end": 21.14
+  },
+  {
+   "word": "Mercury,",
+   "start": 21.14,
+   "end": 21.54
+  },
+  {
+   "word": "and",
+   "start": 21.86,
+   "end": 22.02
+  },
+  {
+   "word": "Mercury",
+   "start": 22.04,
+   "end": 22.42
+  },
+  {
+   "word": "is",
+   "start": 22.42,
+   "end": 22.72
+  },
+  {
+   "word": "closer",
+   "start": 22.72,
+   "end": 22.98
+  },
+  {
+   "word": "to",
+   "start": 22.98,
+   "end": 23.24
+  },
+  {
+   "word": "the",
+   "start": 23.24,
+   "end": 23.36
+  },
+  {
+   "word": "Sun.",
+   "start": 23.36,
+   "end": 23.6
+  },
+  {
+   "word": "And",
+   "start": 24.14,
+   "end": 24.22
+  },
+  {
+   "word": "on",
+   "start": 24.22,
+   "end": 24.34
+  },
+  {
+   "word": "the",
+   "start": 24.34,
+   "end": 24.46
+  },
+  {
+   "word": "way",
+   "start": 24.46,
+   "end": 24.62
+  },
+  {
+   "word": "down?",
+   "start": 24.62,
+   "end": 24.96
+  },
+  {
+   "word": "Clouds",
+   "start": 25.6,
+   "end": 25.78
+  },
+  {
+   "word": "of",
+   "start": 25.78,
+   "end": 26.0
+  },
+  {
+   "word": "sulfuric",
+   "start": 26.0,
+   "end": 26.48
+  },
+  {
+   "word": "acid.",
+   "start": 26.48,
+   "end": 26.86
+  },
+  {
+   "word": "Luckily,",
+   "start": 27.88,
+   "end": 28.1
+  },
+  {
+   "word": "you",
+   "start": 28.14,
+   "end": 28.38
+  },
+  {
+   "word": "get",
+   "start": 28.38,
+   "end": 28.54
+  },
+  {
+   "word": "beamed",
+   "start": 28.54,
+   "end": 28.82
+  },
+  {
+   "word": "out.",
+   "start": 28.82,
+   "end": 29.1
+  },
+  {
+   "word": "The",
+   "start": 29.62,
+   "end": 29.7
+  },
+  {
+   "word": "longest",
+   "start": 29.68,
+   "end": 30.04
+  },
+  {
+   "word": "any",
+   "start": 30.04,
+   "end": 30.28
+  },
+  {
+   "word": "probe",
+   "start": 30.28,
+   "end": 30.56
+  },
+  {
+   "word": "has",
+   "start": 30.56,
+   "end": 30.74
+  },
+  {
+   "word": "lasted",
+   "start": 30.74,
+   "end": 31.1
+  },
+  {
+   "word": "there?",
+   "start": 31.1,
+   "end": 31.52
+  },
+  {
+   "word": "127",
+   "start": 31.91,
+   "end": 32.92
+  },
+  {
+   "word": "minutes.",
+   "start": 32.92,
+   "end": 33.64
+  },
+  {
+   "word": "Subscribe",
+   "start": 34.14,
+   "end": 34.54
+  },
+  {
+   "word": "for",
+   "start": 34.54,
+   "end": 34.8
+  },
+  {
+   "word": "more.",
+   "start": 34.8,
+   "end": 35.04
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "name": "hiccups",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  5,
+  6,
+  9,
+  12,
+  14
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Hic! That sound is your throat **slamming shut** mid-breath.",
+   "Hic! That sound is your throat slamming shut mid-breath."
+  ],
+  [
+   "But **why do we get hiccups?** It starts lower down, in your **diaphragm.**",
+   "But why do we get hiccups? It starts lower down, in your diaphragm."
+  ],
+  [
+   "That's the dome of muscle under your lungs that **pulls air in.**",
+   "That's the dome of muscle under your lungs that pulls air in."
+  ],
+  [
+   "In a hiccup, it suddenly **jerks,** and air rushes in.",
+   "In a hiccup, it suddenly jerks, and air rushes in."
+  ],
+  [
+   "About a **thirtieth of a second** later, your vocal cords **snap shut.** Hic!",
+   "About a thirtieth of a second later, your vocal cords snap shut. Hic!"
+  ],
+  [
+   "It's a **reflex loop,** running through nerves like the **vagus** and the **phrenic.**",
+   "It's a reflex loop, running through nerves like the vagus and the phrenic."
+  ],
+  [
+   "Here's the weird part: nobody knows for sure **what hiccups are for.**",
+   "Here's the weird part: nobody knows for sure what hiccups are for."
+  ],
+  [
+   "Babies hiccup a lot. Newborns spend about **2 and a half percent** of their time hiccuping, and it starts **in the womb.**",
+   "Babies hiccup a lot. Newborns spend about 2 and a half percent of their time hiccuping, and it starts in the womb."
+  ],
+  [
+   "One idea: hiccups help babies **burp,** pulling swallowed air out of the stomach to make **room for milk.**",
+   "One idea: hiccups help babies burp, pulling swallowed air out of the stomach to make room for milk."
+  ],
+  [
+   "Another idea is **stranger.**",
+   "Another idea is stranger."
+  ],
+  [
+   "Scientists suspect it's a leftover from **ancient ancestors** that breathed with **gills** and **lungs,** like today's tadpoles.",
+   "Scientists suspect it's a leftover from ancient ancestors that breathed with gills and lungs, like today's tadpoles."
+  ],
+  [
+   "Their gill-pumping rhythm also **shuts the throat** while breathing in, a lot like a hiccup.",
+   "Their gill-pumping rhythm also shuts the throat while breathing in, a lot like a hiccup."
+  ],
+  [
+   "Neither idea is **proven** yet.",
+   "Neither idea is proven yet."
+  ],
+  [
+   "And the cures? Many people swear by them, but there's **no proof** they work for everyone.",
+   "And the cures? Many people swear by them, but there's no proof they work for everyone."
+  ],
+  [
+   "If hiccups last **more than two days,** see a doctor.",
+   "If hiccups last more than two days, see a doctor."
+  ],
+  [
+   "What's your hiccup cure? **One word.**",
+   "What's your hiccup cure? One word."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

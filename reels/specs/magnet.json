@@ -1,0 +1,84 @@
+{
+ "name": "magnet",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  7,
+  9,
+  10,
+  12,
+  14
+ ],
+ "phrases": [
+  [
+   "Cut a magnet in half, and you get **two magnets.**",
+   "Cut a magnet in half, and you get two magnets."
+  ],
+  [
+   "Never a **north piece** and a **south piece.** Cut again, and every piece still has **both poles.**",
+   "Never a north piece and a south piece. Cut again, and every piece still has both poles."
+  ],
+  [
+   "Because a magnet was never one big magnet. It's built from **billions of tiny ones.**",
+   "Because a magnet was never one big magnet. It's built from billions of tiny ones."
+  ],
+  [
+   "The tiniest are **electrons.** Every electron acts like a teeny magnet, with its own north and south.",
+   "The tiniest are electrons. Every electron acts like a teeny magnet, with its own north and south."
+  ],
+  [
+   "In most materials, electrons **pair up** facing opposite ways, so their magnetism **cancels out.**",
+   "In most materials, electrons pair up facing opposite ways, so their magnetism cancels out."
+  ],
+  [
+   "But in **iron,** some electrons are unpaired, and neighbouring atoms **line them up** together.",
+   "But in iron, some electrons are unpaired, and neighbouring atoms line them up together."
+  ],
+  [
+   "They form little zones called **domains,** about a tenth of a millimetre to a few millimetres across.",
+   "They form little zones called domains, about a tenth of a millimetre to a few millimetres across."
+  ],
+  [
+   "In a plain iron nail, the domains point **every which way,** so they cancel each other out.",
+   "In a plain iron nail, the domains point every which way, so they cancel each other out."
+  ],
+  [
+   "Bring a magnet close, and the domains **swing into line.**",
+   "Bring a magnet close, and the domains swing into line."
+  ],
+  [
+   "Now the nail is a **magnet too.** That's why it sticks.",
+   "Now the nail is a magnet too. That's why it sticks."
+  ],
+  [
+   "Heat iron past about **seven hundred seventy degrees Celsius,** and that order shakes apart. The magnetism **vanishes.**",
+   "Heat iron past about seven hundred seventy degrees Celsius, and that order shakes apart. The magnetism vanishes."
+  ],
+  [
+   "Your fridge magnet is sneakier. It's made of **stripes** with alternating poles.",
+   "Your fridge magnet is sneakier. It's made of stripes with alternating poles."
+  ],
+  [
+   "That pattern pushes the grip to **one side.** Flip it over, and it barely sticks.",
+   "That pattern pushes the grip to one side. Flip it over, and it barely sticks."
+  ],
+  [
+   "So if every piece of a magnet is a magnet, could anything have just **one pole?**",
+   "So if every piece of a magnet is a magnet, could anything have just one pole?"
+  ],
+  [
+   "Physicists are **still searching.** Nobody has ever found one.",
+   "Physicists are still searching. Nobody has ever found one."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

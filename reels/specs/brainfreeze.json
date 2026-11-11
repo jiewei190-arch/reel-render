@@ -1,0 +1,97 @@
+{
+ "name": "brainfreeze",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  5,
+  8,
+  11,
+  12,
+  14,
+  16
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Eat ice cream too fast, and your forehead **screams.**",
+   "Eat ice cream too fast, and your forehead screams."
+  ],
+  [
+   "But **why do you get brain freeze?** Your brain isn't actually **freezing.**",
+   "But why do you get brain freeze? Your brain isn't actually freezing."
+  ],
+  [
+   "In fact, brain tissue itself has **no pain sensors** at all.",
+   "In fact, brain tissue itself has no pain sensors at all."
+  ],
+  [
+   "The trouble starts on the **roof of your mouth.**",
+   "The trouble starts on the roof of your mouth."
+  ],
+  [
+   "Something icy chills the palate, and the **blood vessels** there react.",
+   "Something icy chills the palate, and the blood vessels there react."
+  ],
+  [
+   "The leading idea: they **tighten up,** then swing **wide open,** rushing warm blood in.",
+   "The leading idea: they tighten up, then swing wide open, rushing warm blood in."
+  ],
+  [
+   "Here's the twist: scientists **watched it happen.**",
+   "Here's the twist: scientists watched it happen."
+  ],
+  [
+   "In a small 2012 study, 13 volunteers sipped **ice water** against the roof of the mouth.",
+   "In a small twenty twelve study, 13 volunteers sipped ice water against the roof of the mouth."
+  ],
+  [
+   "The scans suggest a big artery at the front of the brain **widens fast** as the pain hits, then narrows as it **fades.**",
+   "The scans suggest a big artery at the front of the brain widens fast as the pain hits, then narrows as it fades."
+  ],
+  [
+   "So who rings the alarm? A face nerve called the **trigeminal nerve.**",
+   "So who rings the alarm? A face nerve called the trigeminal nerve."
+  ],
+  [
+   "It carries feeling from your mouth **and** your forehead.",
+   "It carries feeling from your mouth and your forehead."
+  ],
+  [
+   "So your brain blames the **wrong spot.** That's called **referred pain.**",
+   "So your brain blames the wrong spot. That's called referred pain."
+  ],
+  [
+   "And **speed** matters.",
+   "And speed matters."
+  ],
+  [
+   "In a real experiment, 145 students ate ice cream.",
+   "In a real experiment, 145 students ate ice cream."
+  ],
+  [
+   "The ones told to finish in **under 5 seconds** got brain freeze **twice as often:** 27 percent, against 13.",
+   "The ones told to finish in under 5 seconds got brain freeze twice as often: 27 percent, against 13."
+  ],
+  [
+   "The fix: press your **tongue** to the roof of your mouth, and warm it back up.",
+   "The fix: press your tongue to the roof of your mouth, and warm it back up."
+  ],
+  [
+   "So brain freeze is an **alarm from your mouth,** not your brain turning to ice.",
+   "So brain freeze is an alarm from your mouth, not your brain turning to ice."
+  ],
+  [
+   "Ever had one? **Yes or no?**",
+   "Ever had one? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

@@ -1,0 +1,13 @@
+# Sources: coldbreath (why can you see your breath when it's cold?)
+
+| Claim in the script | Source |
+|---|---|
+| Your breath is warm and full of invisible water vapor | University of Washington, Dept. of Atmospheric Sciences, ATMS 101 lecture 18 overheads: https://atmos.uw.edu/academics/classes/2003Q2/101/lect18_overheads.pdf (worked example: "breath (B) 36 C 80% ... 55 mb (clear)") [university]; Library of Congress, Science Reference Services, Everyday Mysteries, "Why do I see my breath when it's cold outside?" (quoted in the LOC families blog, Dec 2021: https://blogs.loc.gov/families/2021/12/everyday-winter-mysteries-fun-science-facts-from-the-library/): "Cold air causes the warm moisture in our breath to condense into tiny droplets of water" [institution] |
+| Warm air can hold much more vapor than cold air; air at freezing holds only about a tenth as much as air at body temperature | UW ATMS 101 table: saturation vapor pressure 6 mb at 0 °C vs 63 mb at 36 °C (6/63 ≈ 0.095, "about a tenth") |
+| Breath crashing into cold air cools past its dew point; below the dew point the air can't hold all the vapor (saturation) | NOAA National Weather Service glossary, "Dew point": https://forecast.weather.gov/glossary.php?word=dew%20point ("the temperature to which air must be cooled in order to reach saturation"); UW ATMS 101 ("Condensation can occur when warm moist (but unsaturated) air mixes with cold dry (and unsaturated) air"; the 50-50 mix is at 140% → fog) |
+| The vapor condenses into tiny droplets of liquid water that look like a little white cloud | Library of Congress (above): "tiny droplets of water ... that appear like a small, misty cloud"; UW ATMS 101 ("The 50-50 mix visibly condenses into a short-lived cloud") |
+| Real clouds form the same way, just bigger | NOAA JetStream, "How clouds form": https://www.noaa.gov/jetstream/clouds/how-clouds-form ("the air temperature must also be below the dew point"; "water vapor will condense ... resulting in the formation of a cloud droplet"); UW ATMS 101 (steam fog: "Mixing produces condensation just like you see your breath") [government] |
+| It vanishes as it mixes with more dry air, and the droplets evaporate back into vapor | UW ATMS 101: the short-lived cloud "evaporates as breath is diluted" (the 90% cold mix at 4 °C is back to 90% RH, clear) |
+| Pinned bonus: you can see your breath above freezing on a damp day | UW ATMS 101 (what matters is the mix crossing saturation, which depends on the air's moisture as well as its temperature); NWS dew point glossary |
+
+Simplified on purpose: "molecules slow down and stick together" is the kid-level picture of condensation. Condensation nuclei (dust specks that droplets form on) are left out of the voice-over.
