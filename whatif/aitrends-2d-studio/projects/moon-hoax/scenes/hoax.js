@@ -83,7 +83,7 @@ registerShot('m06', { kind: '3d', init: obs.init,
   draw(s, t, info) { s.set.update(t); s.tel.updateWorldMatrix(true, true); const e = s.tel.eyeWorld(); s.h.position.set(e.x + 0.05, 0, e.z + 0.55); s.h.rotation.y = Math.PI;
     const l = at(info, 'life', 0.55); const jolt = t > l ? ease.outBack(prog(t, l, l + 0.25)) : 0;
     s.h.pose(addPose({ ...POSE.stand, lean: 0.15 - jolt * 0.2, headNod: -0.35, armL: [1.2, 0.4, 0.3], elbowL: 1.2 }, idle(t, 1))); s.h.face(t > l ? EXPR.shocked : EXPR.suspicious, t);
-    camMove(s.stage, t, [[0, { pos: [2.6, 2.3, 4.0], look: [0.2, 2.4, -0.6], fov: 40 }], [info.dur, { pos: [2.2, 2.4, 3.4], look: [0.2, 2.5, -0.6], fov: 40 }]]); },
+    camMove(s.stage, t, [[0, { pos: [3.6, 2.4, 6.0], look: [0.3, 2.2, -0.4], fov: 40 }], [info.dur, { pos: [3.2, 2.4, 5.2], look: [0.3, 2.3, -0.4], fov: 40 }]]); },
   overlay(g, t, info, s) { MOONY(g); const l = at(info, 'life', 0.55); reactions(g, t, s, [{ fx: 'exclaim', on: 'h', at: l }, { fx: 'flash', at: l, dur: 0.2 }]); } });
 // m07 "Through a giant new telescope." — low angle sweeping up the huge tube to the Moon
 registerShot('m07', { kind: '3d', init: obs.init,
@@ -135,7 +135,7 @@ registerShot('m14', { kind: '3d',
     const tm = new THREE.Mesh(new THREE.CylinderGeometry(18, 26, 9, 8), new THREE.MeshToonMaterial({ color: '#2a3550' })); tm.position.set(-8, 3, -70); tm.scale.z = 0.4; s.stage.add(tm); return s; },   // a flat-topped mountain on the skyline
   draw(s, t, info) { s.set.update(t); const n = at(info, 'idea', 2.6); s.h.pose(addPose(t < n ? { ...POSE.thinking, headNod: -0.3 } : shrug(POSE.stand, prog(t, n - 0.1, n + 0.2)), idle(t, 1))); s.h.face(t < n ? { ...EXPR.happy, pupil: [0, 0.7] } : EXPR.neutral, t);
     camMove(s.stage, t, [[0, { pos: [0, 2.0, 7.2], look: [0, 1.7, 0], fov: 38 }], [info.dur, { pos: [0, 2.0, 6.2], look: [0, 1.7, 0], fov: 38 }]]); },
-  overlay(g, t, info, s) { MOONY(g); tag(g, 'CAPE OF GOOD HOPE', prog(t, 0.6, 1.0)); const n = at(info, 'idea', 2.6); reactions(g, t, s, [{ fx: 'zzz', on: 'h', at: 0.3, until: n - 0.3, scale: 0.7 }, { fx: 'question', on: 'h', at: n }]); } });
+  overlay(g, t, info, s) { MOONY(g); tag(g, 'CAPE OF GOOD HOPE', prog(t, 0.6, 1.0)); const n = at(info, 'idea', 2.6); reactions(g, t, s, [{ fx: 'hearts', on: 'h', at: 0.3, until: n - 0.3, scale: 0.7 }, { fx: 'question', on: 'h', at: n }]); } });
 
 // ---------- the writer ----------
 const desk = { init(T) { const s = office(T); s.w = writer(); s.w.position.set(0, 0, -0.75); s.stage.add(s.w); s.quill = PR.propGroup(new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.5, 8), new THREE.MeshToonMaterial({ color: '#f2ead6' }))); s.stage.add(s.quill);
