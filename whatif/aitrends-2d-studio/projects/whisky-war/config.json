@@ -1,0 +1,17 @@
+{
+ "title": "Canada and Denmark Fought a War With Whisky",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "maxChars": 14, "gold": ["whisky", "50", "rock", "1973", "1984", "2022", "bottle", "flag", "decades", "peace", "bottles"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:upbeat", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}

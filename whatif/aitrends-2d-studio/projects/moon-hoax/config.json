@@ -1,0 +1,17 @@
+{
+ "title": "A Newspaper Said Bat-People Lived on the Moon",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "maxChars": 14, "gold": ["bat-people", "moon", "bought", "1835", "herschel", "bison", "unicorns", "beavers", "people", "bat", "wings", "60,000", "fake"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:mystery", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}

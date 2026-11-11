@@ -1,0 +1,532 @@
+{
+ "duration": 45.99,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.2,
+   "line": "Canada and Denmark fought a war with whisky.",
+   "scene": "face-off on the rock, bottles raised",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "war",
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "whisky",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.2,
+   "end": 5.25,
+   "line": "For almost 50 years.",
+   "scene": "insert bigtext ~50 YEARS",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.25,
+   "end": 6.45,
+   "line": "Over a rock.",
+   "scene": "super wide: tiny rock in the sea",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:boing",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.45,
+   "end": 7.65,
+   "line": "Hans Island.",
+   "scene": "sign HANS ISLAND",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.65,
+   "end": 11.55,
+   "line": "Just over one square kilometer, between Canada and Greenland.",
+   "scene": "insert map",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:paper",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.55,
+   "end": 14.0,
+   "line": "In 1973, the two countries drew a border...",
+   "scene": "1973 treaty table",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "drew",
+     "name": "toon3d:scratch",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 14.0,
+   "end": 16.75,
+   "line": "and left the rock out.",
+   "scene": "top-down map: the line skips the rock",
+   "sfx": [
+    {
+     "word": "rock",
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.75,
+   "end": 19.45,
+   "line": "In 1984, Denmark's minister for Greenland",
+   "scene": "Danish minister strides in with a bottle",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 19.45,
+   "end": 21.7,
+   "line": "left a bottle on it.",
+   "scene": "bottle planted, smug",
+   "sfx": [
+    {
+     "word": "bottle",
+     "name": "toon3d:glass",
+     "gain": -9
+    },
+    {
+     "word": "bottle",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 21.7,
+   "end": 23.6,
+   "line": "\"Welcome to the Danish island.\"",
+   "scene": "insert document: the note",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.6,
+   "end": 25.85,
+   "line": "Then Canadian soldiers showed up.",
+   "scene": "soldiers march in: ! and ???",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -12
+    },
+    {
+     "at": 1.55,
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 1.7,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.85,
+   "end": 26.9,
+   "line": "With a flag.",
+   "scene": "flag slammed in",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:thud",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:impact",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 26.9,
+   "end": 28.45,
+   "line": "And Canadian whisky.",
+   "scene": "whisky next to schnapps",
+   "sfx": [
+    {
+     "word": "whisky",
+     "name": "toon3d:glass",
+     "gain": -9
+    },
+    {
+     "word": "whisky",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 28.45,
+   "end": 31.2,
+   "line": "Wait. How is this a war?",
+   "scene": "HERO cameo ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "how",
+     "name": "toon3d:boing",
+     "gain": -9
+    },
+    {
+     "word": "how",
+     "offset": 0.4,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 31.2,
+   "end": 33.15,
+   "line": "You see, nobody fired a shot.",
+   "scene": "salute and bow",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 33.15,
+   "end": 36.45,
+   "line": "They just took turns. Plant a flag, leave a bottle.",
+   "scene": "flag flips, bottles pile up",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "at": 0.67,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 1.29,
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "at": 1.91,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 2.53,
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "at": 3.15,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 36.45,
+   "end": 37.7,
+   "line": "For decades.",
+   "scene": "insert bigtext DECADES",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:stamp",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 37.7,
+   "end": 40.55,
+   "line": "In 2022, they finally made peace.",
+   "scene": "handshake, hearts",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "peace",
+     "name": "toon3d:success",
+     "gain": -12
+    },
+    {
+     "word": "peace",
+     "offset": 0.1,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 40.55,
+   "end": 42.95,
+   "line": "They split the island in two...",
+   "scene": "dashed line along the ridge",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "word": "split",
+     "name": "toon3d:slide",
+     "gain": -10
+    },
+    {
+     "word": "split",
+     "offset": 0.6,
+     "name": "toon3d:magic",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 42.95,
+   "end": 44.4,
+   "line": "and swapped bottles.",
+   "scene": "bottles change hands, heart eyes",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.75,
+     "name": "toon3d:glass",
+     "gain": -9
+    },
+    {
+     "at": 0.82,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 44.4,
+   "end": 45.99,
+   "line": "Subscribe for more.",
+   "scene": "back to the face-off (loops to frame 1)",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}

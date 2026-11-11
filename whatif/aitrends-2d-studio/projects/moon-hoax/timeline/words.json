@@ -1,0 +1,600 @@
+{
+ "source": "Kokoro am_fenrir 0.95 sentence segments + faster-whisper small word timestamps",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.193,
+   "end": 0.286
+  },
+  {
+   "word": "newspaper",
+   "start": 0.286,
+   "end": 0.751
+  },
+  {
+   "word": "said",
+   "start": 0.751,
+   "end": 0.983
+  },
+  {
+   "word": "bat-people",
+   "start": 0.983,
+   "end": 1.494
+  },
+  {
+   "word": "lived",
+   "start": 1.494,
+   "end": 1.773
+  },
+  {
+   "word": "on",
+   "start": 1.773,
+   "end": 1.913
+  },
+  {
+   "word": "the",
+   "start": 1.913,
+   "end": 2.098
+  },
+  {
+   "word": "Moon.",
+   "start": 2.098,
+   "end": 2.377
+  },
+  {
+   "word": "And",
+   "start": 3.26,
+   "end": 3.38
+  },
+  {
+   "word": "people",
+   "start": 3.38,
+   "end": 3.68
+  },
+  {
+   "word": "bought",
+   "start": 3.68,
+   "end": 4.02
+  },
+  {
+   "word": "it.",
+   "start": 4.02,
+   "end": 4.22
+  },
+  {
+   "word": "New",
+   "start": 4.76,
+   "end": 4.9
+  },
+  {
+   "word": "York,",
+   "start": 4.9,
+   "end": 5.16
+  },
+  {
+   "word": "August",
+   "start": 5.16,
+   "end": 5.56
+  },
+  {
+   "word": "1835.",
+   "start": 5.56,
+   "end": 6.44
+  },
+  {
+   "word": "The",
+   "start": 7.261,
+   "end": 7.447
+  },
+  {
+   "word": "Sun",
+   "start": 7.447,
+   "end": 7.634
+  },
+  {
+   "word": "runs",
+   "start": 7.634,
+   "end": 7.867
+  },
+  {
+   "word": "a",
+   "start": 7.867,
+   "end": 7.961
+  },
+  {
+   "word": "front-page",
+   "start": 7.961,
+   "end": 8.474
+  },
+  {
+   "word": "scoop.",
+   "start": 8.474,
+   "end": 8.801
+  },
+  {
+   "word": "It",
+   "start": 9.22,
+   "end": 9.36
+  },
+  {
+   "word": "says",
+   "start": 9.36,
+   "end": 9.56
+  },
+  {
+   "word": "the",
+   "start": 9.56,
+   "end": 9.76
+  },
+  {
+   "word": "famous",
+   "start": 9.76,
+   "end": 10.12
+  },
+  {
+   "word": "astronomer",
+   "start": 10.12,
+   "end": 10.78
+  },
+  {
+   "word": "John",
+   "start": 10.78,
+   "end": 11.16
+  },
+  {
+   "word": "Herschel",
+   "start": 11.16,
+   "end": 11.68
+  },
+  {
+   "word": "has",
+   "start": 11.68,
+   "end": 11.9
+  },
+  {
+   "word": "seen",
+   "start": 11.9,
+   "end": 12.2
+  },
+  {
+   "word": "life",
+   "start": 12.2,
+   "end": 12.5
+  },
+  {
+   "word": "on",
+   "start": 12.5,
+   "end": 12.8
+  },
+  {
+   "word": "the",
+   "start": 12.8,
+   "end": 12.92
+  },
+  {
+   "word": "Moon.",
+   "start": 12.92,
+   "end": 13.22
+  },
+  {
+   "word": "Through",
+   "start": 13.693,
+   "end": 13.82
+  },
+  {
+   "word": "a",
+   "start": 13.82,
+   "end": 13.96
+  },
+  {
+   "word": "giant",
+   "start": 13.96,
+   "end": 14.26
+  },
+  {
+   "word": "new",
+   "start": 14.26,
+   "end": 14.42
+  },
+  {
+   "word": "telescope.",
+   "start": 14.42,
+   "end": 14.92
+  },
+  {
+   "word": "First,",
+   "start": 15.564,
+   "end": 15.78
+  },
+  {
+   "word": "animals",
+   "start": 15.78,
+   "end": 16.14
+  },
+  {
+   "word": "like",
+   "start": 16.14,
+   "end": 16.42
+  },
+  {
+   "word": "bison.",
+   "start": 16.42,
+   "end": 16.84
+  },
+  {
+   "word": "Then,",
+   "start": 17.407,
+   "end": 17.6
+  },
+  {
+   "word": "unicorns.",
+   "start": 17.6,
+   "end": 18.36
+  },
+  {
+   "word": "Then",
+   "start": 18.763,
+   "end": 18.92
+  },
+  {
+   "word": "beavers,",
+   "start": 18.92,
+   "end": 19.34
+  },
+  {
+   "word": "walking",
+   "start": 19.34,
+   "end": 19.74
+  },
+  {
+   "word": "on",
+   "start": 19.74,
+   "end": 20.04
+  },
+  {
+   "word": "two",
+   "start": 20.04,
+   "end": 20.24
+  },
+  {
+   "word": "legs,",
+   "start": 20.24,
+   "end": 20.6
+  },
+  {
+   "word": "carrying",
+   "start": 20.6,
+   "end": 21.02
+  },
+  {
+   "word": "their",
+   "start": 21.02,
+   "end": 21.26
+  },
+  {
+   "word": "babies.",
+   "start": 21.26,
+   "end": 21.58
+  },
+  {
+   "word": "And",
+   "start": 22.198,
+   "end": 22.34
+  },
+  {
+   "word": "finally...",
+   "start": 22.34,
+   "end": 22.8
+  },
+  {
+   "word": "people.",
+   "start": 23.48,
+   "end": 23.8
+  },
+  {
+   "word": "With",
+   "start": 24.416,
+   "end": 24.56
+  },
+  {
+   "word": "bat",
+   "start": 24.56,
+   "end": 24.82
+  },
+  {
+   "word": "wings.",
+   "start": 24.82,
+   "end": 25.06
+  },
+  {
+   "word": "Wait.",
+   "start": 25.765,
+   "end": 26.186
+  },
+  {
+   "word": "Did",
+   "start": 26.64,
+   "end": 26.802
+  },
+  {
+   "word": "Herschel",
+   "start": 26.802,
+   "end": 27.169
+  },
+  {
+   "word": "really",
+   "start": 27.169,
+   "end": 27.454
+  },
+  {
+   "word": "see",
+   "start": 27.454,
+   "end": 27.617
+  },
+  {
+   "word": "that?",
+   "start": 27.617,
+   "end": 27.861
+  },
+  {
+   "word": "You",
+   "start": 28.781,
+   "end": 28.9
+  },
+  {
+   "word": "see,",
+   "start": 28.9,
+   "end": 29.08
+  },
+  {
+   "word": "Herschel",
+   "start": 29.08,
+   "end": 29.56
+  },
+  {
+   "word": "was",
+   "start": 29.56,
+   "end": 29.7
+  },
+  {
+   "word": "in",
+   "start": 29.7,
+   "end": 29.84
+  },
+  {
+   "word": "South",
+   "start": 29.84,
+   "end": 30.14
+  },
+  {
+   "word": "Africa,",
+   "start": 30.14,
+   "end": 30.58
+  },
+  {
+   "word": "and",
+   "start": 30.58,
+   "end": 30.96
+  },
+  {
+   "word": "had",
+   "start": 30.96,
+   "end": 31.16
+  },
+  {
+   "word": "no",
+   "start": 31.16,
+   "end": 31.34
+  },
+  {
+   "word": "idea.",
+   "start": 31.34,
+   "end": 31.74
+  },
+  {
+   "word": "A",
+   "start": 32.32,
+   "end": 32.46
+  },
+  {
+   "word": "writer",
+   "start": 32.46,
+   "end": 32.7
+  },
+  {
+   "word": "at",
+   "start": 32.7,
+   "end": 32.88
+  },
+  {
+   "word": "the",
+   "start": 32.88,
+   "end": 32.96
+  },
+  {
+   "word": "Sun",
+   "start": 32.96,
+   "end": 33.24
+  },
+  {
+   "word": "made",
+   "start": 33.24,
+   "end": 33.44
+  },
+  {
+   "word": "it",
+   "start": 33.44,
+   "end": 33.56
+  },
+  {
+   "word": "up.",
+   "start": 33.56,
+   "end": 33.76
+  },
+  {
+   "word": "To",
+   "start": 34.24,
+   "end": 34.34
+  },
+  {
+   "word": "poke",
+   "start": 34.34,
+   "end": 34.58
+  },
+  {
+   "word": "fun",
+   "start": 34.58,
+   "end": 34.8
+  },
+  {
+   "word": "at",
+   "start": 34.8,
+   "end": 34.88
+  },
+  {
+   "word": "people,",
+   "start": 34.88,
+   "end": 35.16
+  },
+  {
+   "word": "and",
+   "start": 35.16,
+   "end": 35.46
+  },
+  {
+   "word": "to",
+   "start": 35.46,
+   "end": 35.58
+  },
+  {
+   "word": "sell",
+   "start": 35.58,
+   "end": 35.78
+  },
+  {
+   "word": "papers.",
+   "start": 35.78,
+   "end": 36.24
+  },
+  {
+   "word": "According",
+   "start": 36.82,
+   "end": 37.08
+  },
+  {
+   "word": "to",
+   "start": 37.08,
+   "end": 37.36
+  },
+  {
+   "word": "one",
+   "start": 37.36,
+   "end": 37.56
+  },
+  {
+   "word": "account,",
+   "start": 37.56,
+   "end": 37.94
+  },
+  {
+   "word": "the",
+   "start": 38.18,
+   "end": 38.24
+  },
+  {
+   "word": "story",
+   "start": 38.24,
+   "end": 38.58
+  },
+  {
+   "word": "sold",
+   "start": 38.58,
+   "end": 38.96
+  },
+  {
+   "word": "60,000",
+   "start": 38.96,
+   "end": 39.96
+  },
+  {
+   "word": "copies",
+   "start": 39.96,
+   "end": 40.36
+  },
+  {
+   "word": "as",
+   "start": 40.36,
+   "end": 40.68
+  },
+  {
+   "word": "a",
+   "start": 40.68,
+   "end": 40.76
+  },
+  {
+   "word": "pamphlet.",
+   "start": 40.76,
+   "end": 41.24
+  },
+  {
+   "word": "And",
+   "start": 41.638,
+   "end": 41.76
+  },
+  {
+   "word": "the",
+   "start": 41.76,
+   "end": 41.9
+  },
+  {
+   "word": "Sun?",
+   "start": 41.9,
+   "end": 42.22
+  },
+  {
+   "word": "It",
+   "start": 42.707,
+   "end": 42.82
+  },
+  {
+   "word": "never",
+   "start": 42.82,
+   "end": 43.08
+  },
+  {
+   "word": "admitted",
+   "start": 43.08,
+   "end": 43.44
+  },
+  {
+   "word": "it",
+   "start": 43.44,
+   "end": 43.6
+  },
+  {
+   "word": "was",
+   "start": 43.6,
+   "end": 43.74
+  },
+  {
+   "word": "fake.",
+   "start": 43.74,
+   "end": 43.98
+  },
+  {
+   "word": "Subscribe",
+   "start": 44.56,
+   "end": 44.88
+  },
+  {
+   "word": "for",
+   "start": 44.88,
+   "end": 45.26
+  },
+  {
+   "word": "more.",
+   "start": 45.26,
+   "end": 45.46
+  }
+ ]
+}

@@ -1,0 +1,527 @@
+{
+ "duration": 46.07,
+ "shots": [
+  {
+   "id": "m01",
+   "start": 0,
+   "end": 3.15,
+   "line": "A newspaper said bat-people lived on the Moon.",
+   "scene": "bat-person flapping over the hoax Moon",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "moon",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "m02",
+   "start": 3.15,
+   "end": 4.62,
+   "line": "And people bought it.",
+   "scene": "crowd rushes the newsboy",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -12
+    },
+    {
+     "word": "bought",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "m03",
+   "start": 4.62,
+   "end": 7.1,
+   "line": "New York, August 1835.",
+   "scene": "1835 street, THE SUN sign",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:bell",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "m04",
+   "start": 7.1,
+   "end": 9.1,
+   "line": "The Sun runs a front-page scoop.",
+   "scene": "front page fills the frame",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "scoop",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m05",
+   "start": 9.1,
+   "end": 11.6,
+   "line": "It says the famous astronomer John Herschel",
+   "scene": "top-hatted astronomer",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "famous",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m06",
+   "start": 11.6,
+   "end": 13.55,
+   "line": "has seen life on the Moon.",
+   "scene": "eye to the telescope, !",
+   "sfx": [
+    {
+     "word": "life",
+     "name": "toon3d:ding",
+     "gain": -9
+    },
+    {
+     "word": "life",
+     "offset": 0.02,
+     "name": "toon3d:impact",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "m07",
+   "start": 13.55,
+   "end": 15.45,
+   "line": "Through a giant new telescope.",
+   "scene": "low angle up the giant tube",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:riser",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "m08",
+   "start": 15.45,
+   "end": 17.3,
+   "line": "First, animals like bison.",
+   "scene": "lens: bison",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.45,
+    "at": [
+     0.5,
+     0.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "word": "bison",
+     "name": "toon3d:boing",
+     "gain": -11
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "m09",
+   "start": 17.3,
+   "end": 18.65,
+   "line": "Then, unicorns.",
+   "scene": "lens: blue unicorns",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "unicorns",
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "unicorns",
+     "offset": 0.3,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m10",
+   "start": 18.65,
+   "end": 22.1,
+   "line": "Then beavers, walking on two legs, carrying their babies.",
+   "scene": "lens: upright beavers carrying babies",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "beavers",
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "word": "walking",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "carrying",
+     "offset": 0.1,
+     "name": "toon3d:pop",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "m11",
+   "start": 22.1,
+   "end": 23.4,
+   "line": "And finally...",
+   "scene": "lens drifts over a dark ridge",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m12",
+   "start": 23.4,
+   "end": 25.7,
+   "line": "people. With bat wings.",
+   "scene": "bat-people rise into view",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "wings",
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "wings",
+     "offset": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m13",
+   "start": 25.7,
+   "end": 28.7,
+   "line": "Wait. Did Herschel really see that?",
+   "scene": "HERO cameo with the paper ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "did",
+     "name": "toon3d:boing",
+     "gain": -9
+    },
+    {
+     "word": "did",
+     "offset": 0.5,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "m14",
+   "start": 28.7,
+   "end": 32.2,
+   "line": "You see, Herschel was in South Africa, and had no idea.",
+   "scene": "the real astronomer at the Cape, oblivious",
+   "in": {
+    "type": "iris",
+    "dur": 0.6
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:clock",
+     "gain": -16
+    },
+    {
+     "word": "idea",
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "m15",
+   "start": 32.2,
+   "end": 34.15,
+   "line": "A writer at the Sun made it up.",
+   "scene": "writer by candlelight, grin",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:scratch",
+     "gain": -14
+    },
+    {
+     "word": "up",
+     "name": "toon3d:sparkle",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "m16",
+   "start": 34.15,
+   "end": 36.7,
+   "line": "To poke fun at people, and to sell papers.",
+   "scene": "street: everyone reading, newsboy cashes in",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:laugh",
+     "gain": -16
+    },
+    {
+     "word": "sell",
+     "name": "toon3d:cash",
+     "gain": -9
+    },
+    {
+     "word": "sell",
+     "offset": 0.15,
+     "name": "toon3d:coins",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m17",
+   "start": 36.7,
+   "end": 38.9,
+   "line": "According to one account, the story sold",
+   "scene": "pamphlet pile grows",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "at": 1.7,
+     "name": "toon3d:paper",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "m18",
+   "start": 38.9,
+   "end": 41.6,
+   "line": "60,000 copies as a pamphlet.",
+   "scene": "counter card 60,000",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:coins",
+     "gain": -11
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "m19",
+   "start": 41.6,
+   "end": 44.5,
+   "line": "And the Sun? It never admitted it was fake.",
+   "scene": "writer turns away, NEVER ADMITTED stamp",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.45,
+    "at": [
+     0.5,
+     0.4
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "never",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "fake",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "m20",
+   "start": 44.5,
+   "end": 46.07,
+   "line": "Subscribe for more.",
+   "scene": "back to the bat-person (loops to frame 1)",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:magic",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}
