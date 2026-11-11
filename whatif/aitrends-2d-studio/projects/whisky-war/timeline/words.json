@@ -1,0 +1,545 @@
+{
+ "source": "Kokoro am_fenrir 0.95 sentence segments + faster-whisper small word timestamps",
+ "words": [
+  {
+   "word": "Canada",
+   "start": 0.137,
+   "end": 0.46
+  },
+  {
+   "word": "and",
+   "start": 0.46,
+   "end": 0.68
+  },
+  {
+   "word": "Denmark",
+   "start": 0.68,
+   "end": 1.06
+  },
+  {
+   "word": "fought",
+   "start": 1.06,
+   "end": 1.44
+  },
+  {
+   "word": "a",
+   "start": 1.44,
+   "end": 1.58
+  },
+  {
+   "word": "war",
+   "start": 1.58,
+   "end": 1.8
+  },
+  {
+   "word": "with",
+   "start": 1.8,
+   "end": 1.98
+  },
+  {
+   "word": "whisky.",
+   "start": 1.98,
+   "end": 2.3
+  },
+  {
+   "word": "For",
+   "start": 3.319,
+   "end": 3.42
+  },
+  {
+   "word": "almost",
+   "start": 3.42,
+   "end": 3.68
+  },
+  {
+   "word": "50",
+   "start": 3.68,
+   "end": 3.98
+  },
+  {
+   "word": "years.",
+   "start": 3.98,
+   "end": 4.36
+  },
+  {
+   "word": "Over",
+   "start": 5.353,
+   "end": 5.58
+  },
+  {
+   "word": "a",
+   "start": 5.58,
+   "end": 5.76
+  },
+  {
+   "word": "rock.",
+   "start": 5.76,
+   "end": 5.94
+  },
+  {
+   "word": "Hans",
+   "start": 6.558,
+   "end": 6.8
+  },
+  {
+   "word": "Island.",
+   "start": 6.8,
+   "end": 7.16
+  },
+  {
+   "word": "Just",
+   "start": 7.753,
+   "end": 7.98
+  },
+  {
+   "word": "over",
+   "start": 7.98,
+   "end": 8.24
+  },
+  {
+   "word": "one",
+   "start": 8.24,
+   "end": 8.54
+  },
+  {
+   "word": "square",
+   "start": 8.54,
+   "end": 8.84
+  },
+  {
+   "word": "kilometer,",
+   "start": 8.84,
+   "end": 9.44
+  },
+  {
+   "word": "between",
+   "start": 9.44,
+   "end": 9.9
+  },
+  {
+   "word": "Canada",
+   "start": 9.9,
+   "end": 10.38
+  },
+  {
+   "word": "and",
+   "start": 10.38,
+   "end": 10.7
+  },
+  {
+   "word": "Greenland.",
+   "start": 10.7,
+   "end": 11.16
+  },
+  {
+   "word": "In",
+   "start": 11.671,
+   "end": 11.82
+  },
+  {
+   "word": "1973,",
+   "start": 11.82,
+   "end": 13.4
+  },
+  {
+   "word": "the",
+   "start": 13.4,
+   "end": 13.62
+  },
+  {
+   "word": "two",
+   "start": 13.62,
+   "end": 14.04
+  },
+  {
+   "word": "countries",
+   "start": 14.04,
+   "end": 14.3
+  },
+  {
+   "word": "drew",
+   "start": 14.3,
+   "end": 14.42
+  },
+  {
+   "word": "a",
+   "start": 14.42,
+   "end": 14.74
+  },
+  {
+   "word": "border...",
+   "start": 14.74,
+   "end": 14.975
+  },
+  {
+   "word": "and",
+   "start": 15.296,
+   "end": 15.42
+  },
+  {
+   "word": "left",
+   "start": 15.42,
+   "end": 15.64
+  },
+  {
+   "word": "the",
+   "start": 15.64,
+   "end": 15.82
+  },
+  {
+   "word": "rock",
+   "start": 15.82,
+   "end": 16.02
+  },
+  {
+   "word": "out.",
+   "start": 16.02,
+   "end": 16.3
+  },
+  {
+   "word": "In",
+   "start": 16.88,
+   "end": 16.94
+  },
+  {
+   "word": "1984,",
+   "start": 16.94,
+   "end": 17.7
+  },
+  {
+   "word": "Denmark's",
+   "start": 18.5,
+   "end": 19.02
+  },
+  {
+   "word": "minister",
+   "start": 19.02,
+   "end": 19.44
+  },
+  {
+   "word": "for",
+   "start": 19.44,
+   "end": 19.64
+  },
+  {
+   "word": "Greenland",
+   "start": 19.64,
+   "end": 20.2
+  },
+  {
+   "word": "left",
+   "start": 20.2,
+   "end": 20.48
+  },
+  {
+   "word": "a",
+   "start": 20.48,
+   "end": 20.64
+  },
+  {
+   "word": "bottle",
+   "start": 20.64,
+   "end": 20.92
+  },
+  {
+   "word": "on",
+   "start": 20.92,
+   "end": 21.22
+  },
+  {
+   "word": "it.",
+   "start": 21.22,
+   "end": 21.38
+  },
+  {
+   "word": "\"Welcome",
+   "start": 21.815,
+   "end": 22.16
+  },
+  {
+   "word": "to",
+   "start": 22.16,
+   "end": 22.4
+  },
+  {
+   "word": "the",
+   "start": 22.4,
+   "end": 22.48
+  },
+  {
+   "word": "Danish",
+   "start": 22.48,
+   "end": 22.76
+  },
+  {
+   "word": "island.\"",
+   "start": 22.76,
+   "end": 23.12
+  },
+  {
+   "word": "Then",
+   "start": 23.736,
+   "end": 23.9
+  },
+  {
+   "word": "Canadian",
+   "start": 23.9,
+   "end": 24.32
+  },
+  {
+   "word": "soldiers",
+   "start": 24.32,
+   "end": 24.74
+  },
+  {
+   "word": "showed",
+   "start": 24.74,
+   "end": 25.2
+  },
+  {
+   "word": "up.",
+   "start": 25.2,
+   "end": 25.5
+  },
+  {
+   "word": "With",
+   "start": 25.963,
+   "end": 26.203
+  },
+  {
+   "word": "a",
+   "start": 26.203,
+   "end": 26.3
+  },
+  {
+   "word": "flag.",
+   "start": 26.3,
+   "end": 26.588
+  },
+  {
+   "word": "And",
+   "start": 27.018,
+   "end": 27.14
+  },
+  {
+   "word": "Canadian",
+   "start": 27.14,
+   "end": 27.56
+  },
+  {
+   "word": "whisky.",
+   "start": 27.56,
+   "end": 27.9
+  },
+  {
+   "word": "Wait.",
+   "start": 28.576,
+   "end": 28.82
+  },
+  {
+   "word": "How",
+   "start": 29.469,
+   "end": 29.66
+  },
+  {
+   "word": "is",
+   "start": 29.66,
+   "end": 29.84
+  },
+  {
+   "word": "this",
+   "start": 29.84,
+   "end": 29.96
+  },
+  {
+   "word": "a",
+   "start": 29.96,
+   "end": 30.08
+  },
+  {
+   "word": "war?",
+   "start": 30.08,
+   "end": 30.32
+  },
+  {
+   "word": "You",
+   "start": 31.297,
+   "end": 31.42
+  },
+  {
+   "word": "see,",
+   "start": 31.42,
+   "end": 31.6
+  },
+  {
+   "word": "nobody",
+   "start": 31.6,
+   "end": 31.88
+  },
+  {
+   "word": "fired",
+   "start": 31.88,
+   "end": 32.28
+  },
+  {
+   "word": "a",
+   "start": 32.28,
+   "end": 32.42
+  },
+  {
+   "word": "shot.",
+   "start": 32.42,
+   "end": 32.7
+  },
+  {
+   "word": "They",
+   "start": 33.24,
+   "end": 33.36
+  },
+  {
+   "word": "just",
+   "start": 33.36,
+   "end": 33.54
+  },
+  {
+   "word": "took",
+   "start": 33.54,
+   "end": 33.72
+  },
+  {
+   "word": "turns.",
+   "start": 33.72,
+   "end": 34.1
+  },
+  {
+   "word": "Plant",
+   "start": 34.727,
+   "end": 34.88
+  },
+  {
+   "word": "a",
+   "start": 34.88,
+   "end": 35.02
+  },
+  {
+   "word": "flag,",
+   "start": 35.02,
+   "end": 35.24
+  },
+  {
+   "word": "leave",
+   "start": 35.48,
+   "end": 35.58
+  },
+  {
+   "word": "a",
+   "start": 35.58,
+   "end": 35.68
+  },
+  {
+   "word": "bottle.",
+   "start": 35.68,
+   "end": 35.96
+  },
+  {
+   "word": "For",
+   "start": 36.56,
+   "end": 36.66
+  },
+  {
+   "word": "decades.",
+   "start": 36.66,
+   "end": 37.08
+  },
+  {
+   "word": "In",
+   "start": 37.744,
+   "end": 37.86
+  },
+  {
+   "word": "2022,",
+   "start": 37.86,
+   "end": 38.48
+  },
+  {
+   "word": "they",
+   "start": 38.9,
+   "end": 39.0
+  },
+  {
+   "word": "finally",
+   "start": 39.0,
+   "end": 39.44
+  },
+  {
+   "word": "made",
+   "start": 39.44,
+   "end": 39.76
+  },
+  {
+   "word": "peace.",
+   "start": 39.76,
+   "end": 40.08
+  },
+  {
+   "word": "They",
+   "start": 40.66,
+   "end": 40.78
+  },
+  {
+   "word": "split",
+   "start": 40.78,
+   "end": 41.02
+  },
+  {
+   "word": "the",
+   "start": 41.02,
+   "end": 41.18
+  },
+  {
+   "word": "island",
+   "start": 41.18,
+   "end": 41.5
+  },
+  {
+   "word": "in",
+   "start": 41.5,
+   "end": 41.68
+  },
+  {
+   "word": "two...",
+   "start": 41.68,
+   "end": 42.04
+  },
+  {
+   "word": "and",
+   "start": 43.032,
+   "end": 43.18
+  },
+  {
+   "word": "swapped",
+   "start": 43.18,
+   "end": 43.38
+  },
+  {
+   "word": "bottles.",
+   "start": 43.38,
+   "end": 43.86
+  },
+  {
+   "word": "Subscribe",
+   "start": 44.477,
+   "end": 44.76
+  },
+  {
+   "word": "for",
+   "start": 44.76,
+   "end": 45.18
+  },
+  {
+   "word": "more.",
+   "start": 45.18,
+   "end": 45.38
+  }
+ ]
+}
