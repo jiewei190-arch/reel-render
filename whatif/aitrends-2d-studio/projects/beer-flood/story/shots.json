@@ -1,0 +1,458 @@
+{
+ "duration": 43.3,
+ "shots": [
+  {
+   "id": "b01",
+   "start": 0,
+   "end": 3.15,
+   "line": "In 1814, a wave of beer flooded London.",
+   "scene": "beer-flood",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crash",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:splash",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:water",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:rumble",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "b02",
+   "start": 3.15,
+   "end": 5.55,
+   "line": "Over a million pints. In one wave.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 1.5,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "b03",
+   "start": 5.55,
+   "end": 7.05,
+   "line": "October 17th.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:bell",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b04",
+   "start": 7.05,
+   "end": 9.4,
+   "line": "The Horse Shoe Brewery, central London.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "brewery",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "start": 9.4,
+   "end": 11.2,
+   "line": "Its giant vat of porter",
+   "scene": "beer-flood",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "porter",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "start": 11.2,
+   "end": 14.75,
+   "line": "stood 22 feet tall, held together by iron hoops.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "word": "22",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "hoops",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "b07",
+   "start": 14.75,
+   "end": 17.35,
+   "line": "That afternoon, one hoop slipped off.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "slipped",
+     "name": "toon3d:creak",
+     "gain": -8
+    },
+    {
+     "word": "slipped",
+     "offset": 0.55,
+     "name": "toon3d:metal",
+     "gain": -6
+    },
+    {
+     "word": "slipped",
+     "offset": 0.6,
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b08",
+   "start": 17.35,
+   "end": 18.85,
+   "line": "Nobody was too worried.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b09",
+   "start": 18.85,
+   "end": 21.25,
+   "line": "About an hour later, the whole vat burst.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:clock",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "word": "burst",
+     "name": "toon3d:boom",
+     "gain": -4
+    },
+    {
+     "word": "burst",
+     "offset": 0.05,
+     "name": "toon3d:splash",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "b10",
+   "start": 21.25,
+   "end": 23.35,
+   "line": "The wave knocked open other vats,",
+   "scene": "beer-flood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -8
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:crash",
+     "gain": -10
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:thud",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "b11",
+   "start": 23.35,
+   "end": 25.15,
+   "line": "and smashed down the brewery wall.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "smashed",
+     "name": "toon3d:crash",
+     "gain": -4
+    },
+    {
+     "word": "smashed",
+     "offset": 0.05,
+     "name": "toon3d:splash",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "b12",
+   "start": 25.15,
+   "end": 28.8,
+   "line": "Beer poured into St Giles, one of the poorest slums in London,",
+   "scene": "beer-flood",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "b13",
+   "start": 28.8,
+   "end": 31.6,
+   "line": "where families lived in basements.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b14",
+   "start": 31.6,
+   "end": 33.6,
+   "line": "Eight people died.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "dip",
+    "dur": 0.5
+   },
+   "sfx": []
+  },
+  {
+   "id": "b15",
+   "start": 33.6,
+   "end": 35.75,
+   "line": "The inquest called it an act of God.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "god",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "b16",
+   "start": 35.75,
+   "end": 37.45,
+   "line": "And the brewery? Parliament",
+   "scene": "beer-flood",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b17",
+   "start": 37.45,
+   "end": 39.8,
+   "line": "gave it back the tax it had paid on the beer.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:coins",
+     "gain": -8
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:cash",
+     "gain": -10
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "b18",
+   "start": 39.8,
+   "end": 41.45,
+   "line": "Accident, or negligence?",
+   "scene": "beer-flood",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "b19",
+   "start": 41.45,
+   "end": 43.3,
+   "line": "Subscribe for more.",
+   "scene": "beer-flood",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:creak",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}

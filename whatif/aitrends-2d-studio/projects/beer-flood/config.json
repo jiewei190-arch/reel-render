@@ -1,0 +1,36 @@
+{
+ "title": "A Wave of Beer Flooded London",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "1814",
+   "million",
+   "17th",
+   "22",
+   "god",
+   "tax",
+   "accident",
+   "negligence"
+  ]
+ },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

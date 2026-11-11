@@ -19,7 +19,7 @@ function xingDraw(s, t, uFn, toff = 0, face = EXPR.shocked) { s.set.update(t); s
   s.cars.forEach((c, k) => { moveCar(c, t, (c, tt) => { const u = clamp(uFn(tt - k * 0.06)); return [laneX(c.dir, u), c.z + c.dir * V * (tt + toff)]; }); c.driver.face(face, t + k); c.driver.pose(addPose(POSE.sit, { armL: [0.8, 0.1, 0], armR: [0.8, 0.1, 0], elbowL: 0.6, elbowR: 0.6, headTurn: Math.sin(t * 2 + k) * 0.15 })); }); }
 
 // s01 "At 5 AM, a whole country switched road sides." — FRAME 1: dawn, every car mid-swerve to the other side, clock at 5:00
-const S1 = (t) => (t < 0 ? 0.28 + t * 0.72 * 2 / 2.6 : lerp(0.28, 1, ease.out(prog(t, 0, 2.6))));   // linear lead-in before 0 so frame 1 is already mid-swerve
+const S1 = (t) => (t < 0 ? 0.28 + t * 0.72 * 3 / 2.6 : lerp(0.28, 1, ease.out(prog(t, 0, 2.6))));   // linear lead-in before 0 so frame 1 is already mid-swerve
 registerShot('s01', { kind: '3d', init: (T) => xingInit(T),
   draw(s, t, info) { s.set.clock.set(5, 0); xingDraw(s, t, S1);
     camMove(s.stage, t, [[0, { pos: [0.6, 8.2, 12.5], look: [0, 0.4, -12], fov: 46 }], [info.dur, { pos: [0.3, 6.6, 9.8], look: [0, 0.6, -12], fov: 44 }]], ease.sine); },
@@ -46,14 +46,14 @@ registerShot('s04', { kind: '3d', init: (T) => xingInit(T, 'day'),
 // s05 "Every neighbour drives on the right." — the border: a Swedish car and a Norwegian car meet nose to nose in the SAME lane. ??? on both
 registerShot('s05', { kind: '3d',
   init(T) { const s = stage(T, 'day', { target: [0, 0, -4], seed: 6 }); s.set = street(s.stage, { bare: true });
-    const bar = new THREE.Group(); bar.add(cyl(0.12, 0.14, 1.2, '#e8e2d2', 4.0, 0.6, -4, 10)); const arm = new THREE.Group(); arm.position.set(4.0, 1.15, -4); for (let i = 0; i < 6; i++) arm.add(box(1.1, 0.16, 0.16, i % 2 ? '#e8e2d2' : '#c0392b', -0.55 - i * 1.1, 0, 0)); arm.rotation.z = -1.35; bar.add(arm); outline(bar, { px: 2.4 }); s.stage.add(bar);
+    const bar = new THREE.Group(); bar.add(cyl(0.12, 0.14, 1.2, '#e8e2d2', -4.4, 0.6, -9, 10)); const arm = new THREE.Group(); arm.position.set(-4.4, 1.15, -9); for (let i = 0; i < 6; i++) arm.add(box(1.1, 0.16, 0.16, i % 2 ? '#e8e2d2' : '#c0392b', -0.55 - i * 1.1, 0, 0)); arm.rotation.z = -1.35; bar.add(arm); outline(bar, { px: 2.4 }); s.stage.add(bar);
     const sign = (txt, x, z, ry, c) => { const tx = canvasTex(320, 120, (g, W, H) => { g.fillStyle = c; g.fillRect(0, 0, W, H); g.fillStyle = '#fff'; g.font = '900 72px Fredoka, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(txt, W / 2, H / 2 + 4); }); const m = new THREE.Mesh(new THREE.PlaneGeometry(2.0, 0.75), toon('#fff', { map: tx, fresh: true, side: THREE.DoubleSide })); m.position.set(x, 2.6, z); m.rotation.y = ry; m.userData.noOutline = true; s.stage.add(m, cyl(0.05, 0.05, 2.3, '#9aa0a6', x, 1.15, z - 0.02, 8)); };
     sign('SVERIGE', -4.6, 1, 0.3, '#1f5fa8'); sign('NORGE', 4.8, -9, -0.3, '#b8302a');
     s.se = carN(0); s.se.dir = -1; s.no = carN(5, { color: '#2f6db0' }); s.no.dir = 1; s.stage.add(s.se, s.no); return s; },
   draw(s, t, info) { s.set.update(t); s.sky.update(t); const stop = 1.1, d = (tt) => 4.2 * Math.min(tt, stop) - 4.2 * 0.5 * Math.max(0, Math.min(tt, stop) - stop + 0.5) ** 2 / 0.5;
     moveCar(s.se, t, (c, tt) => [-LANE, 2.2 - d(tt)]); moveCar(s.no, t, (c, tt) => [-LANE, -10.4 + d(tt)]);
     const q = prog(t, stop - 0.1, stop + 0.2); [s.se, s.no].forEach((c, k) => { c.driver.pose(addPose(POSE.sit, { armL: [0.8, 0.1, 0], armR: [0.8, 0.1, 0], elbowL: 0.6, elbowR: 0.6, lean: -0.15 * q })); c.driver.face(mixExpr(EXPR.happy, { ...EXPR.shocked, pupil: [0, 0] }, q), t + k); });
-    camMove(s.stage, t, [[0, { pos: [8.5, 5.0, 3.0], look: [-1.6, 1.3, -4.1], fov: 40 }], [info.dur, { pos: [7.2, 4.4, 0.5], look: [-1.6, 1.4, -4.1], fov: 38 }]]);
+    camMove(s.stage, t, [[0, { pos: [19, 6.5, -1.0], look: [-1.6, 1.6, -4.1], fov: 43 }], [info.dur, { pos: [17, 5.8, -2.0], look: [-1.6, 1.7, -4.1], fov: 38 }]]);
     shakeCam(s.stage, t, [{ fx: 'shake', at: stop, amp: 0.05, dur: 0.3 }]); },
   overlay(g, t, info, s) { sunnyLook(g, t, DAY); reactions(g, t, s, [{ fx: 'question', on: s.se.driver, at: 1.25 }, { fx: 'question', on: s.no.driver, at: 1.4, seed: 4 }]); tag(g, 'RIGHT', ease.outBack(prog(t, at(info, 'right', 1.6) - 0.1, at(info, 'right', 1.6) + 0.25)), 0.14, 60); },
 });

@@ -9,7 +9,7 @@ import { sunnySky } from '/kits/toon3d/sky.js';
 export { THREE };
 export const at = (info, word, fb = 0) => { const g = wordTime(word, info.shot.start - 0.1); return g == null ? fb : g - info.shot.start; };
 export function tag(g, str, k = 1, y = 0.13, size = 54) { if (k <= 0) return; g.save(); const s = 0.8 + 0.2 * ease.outBack(k); g.translate(E.W / 2, E.H * y); g.scale(s, s); g.globalAlpha = clamp(k * 1.5); g.font = `700 ${size}px "${FONTS.title}"`; const w = g.measureText(str).width + 70; g.fillStyle = 'rgba(20,14,18,.82)'; g.beginPath(); g.roundRect(-w / 2, -size * 0.78, w, size * 1.56, size * 0.78); g.fill(); text(g, str, 0, 2, { size, color: '#ffd25a', weight: 700 }); g.restore(); }
-export const BEER = '#5a3216', FOAM = '#efdcb4';
+export const BEER = '#7a4420', FOAM = '#f4e4c0';
 
 // late-afternoon London (17 Oct, ~5:30 pm): warm low sun, hazy sky
 export function outside(T, o = {}) { const st = toonStage(T, { light: 'dusk', fov: 40, shadowSize: o.shadowSize || 12, target: o.target || [0, 0, 0], key: ['#ffc88a', 2.5, [-8, 7, 6]], ambient: 1.1 });
@@ -32,7 +32,7 @@ export function bigVat(o = {}) {
   outline(g, { px: 2.4 }); g.add(blob(R * 1.4, 0.35));
   g.staves = staves; g.hoops = hoops; g.R = R; g.H = H;
   g.slip = (k, i = 3) => { const hp = hoops[i]; hp.position.y = hp.y0 - k * (hp.y0 - 0.15); hp.rotation.z = k * 0.18; };
-  g.burst = (k) => { staves.forEach((p, i) => { const r = 1 + k * (3 + (i % 5) * 1.3); p.position.set(Math.sin(p.a) * R * r, H / 2 + k * (2 - (i % 4)) - k * k * 4, Math.cos(p.a) * R * r); p.rotation.x = k * (i % 3 - 1) * 1.2; p.rotation.z = k * ((i % 4) - 1.5) * 0.8; }); hoops.forEach((h, i) => { h.scale.setScalar(1 + k * 1.8); h.position.y = h.y0 - k * h.y0 * 0.6; h.visible = k < 0.6; }); top.position.y = H + 0.05 + k * 4 - k * k * 6; top.rotation.x = k * 1.4; };
+  g.burst = (k) => { staves.forEach((p, i) => { const r = 1 + k * (3 + (i % 5) * 1.3); p.position.set(Math.sin(p.a) * R * r, H / 2 + k * (2 - (i % 4)) - k * k * 4, Math.cos(p.a) * R * r); p.rotation.x = k * (i % 3 - 1) * 1.2; p.rotation.z = k * ((i % 4) - 1.5) * 0.8; }); hoops.forEach((h, i) => { h.scale.setScalar(1 + k * 1.8); h.position.y = h.y0 - k * h.y0 * 0.6; h.visible = k < 0.6; }); top.position.y = Math.max(0.3, H + 0.05 + k * 3 - k * k * 12); top.rotation.x = k * 1.4; };
   return g;
 }
 export function smallVat(o = {}) { const R = o.r || 1.2, H = o.h || 3.6; const g = new THREE.Group(); g.add(lathe([[0.001, 0], [R, 0.001], [R * 1.04, H * 0.5], [R, H], [0.001, H]], '#7e522c', 28)); for (const y of [0.3, H * 0.5, H - 0.3]) { const h = torus(R * 1.04 + 0.06, 0.06, '#3a3a3e', 0, y, 0); h.rotation.x = Math.PI / 2; g.add(h); } outline(g, { px: 2.4 }); g.add(blob(R * 1.4, 0.3)); return g; }
@@ -40,7 +40,7 @@ export function smallVat(o = {}) { const R = o.r || 1.2, H = o.h || 3.6; const g
 // beer wave: a sheet that floods along +Z. front(t) = z of the wave front; behind it the surface sits at `depth` with rolling waves,
 // a tall foamy crest at the front. Vertex colours: porter brown with cream foam on the crest.
 export function wave(o = {}) {
-  const W = o.w || 10, L = o.l || 40, nx = 40, nz = 120; const geo = new THREE.PlaneGeometry(W, L, nx, nz); geo.rotateX(-Math.PI / 2); geo.translate(0, 0, -L / 2);
+  const W = o.w || 10, L = o.l || 40, nx = 40, nz = 120; const geo = new THREE.PlaneGeometry(W, L, nx, nz); geo.rotateX(-Math.PI / 2); geo.translate(0, 0, -L / 2 + 1.5);   // 1.5 units ahead of the front drop to the ground = the wave face
   const col = new Float32Array(geo.attributes.position.count * 3); geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
   const m = new THREE.Mesh(geo, toon('#ffffff', { vertexColors: true, fresh: true, side: THREE.DoubleSide })); m.castShadow = false; m.receiveShadow = true; m.userData.noOutline = true;
   const p0 = geo.attributes.position.array.slice(); const cB = new THREE.Color(BEER), cF = new THREE.Color(FOAM), tmp = new THREE.Color();
@@ -48,8 +48,8 @@ export function wave(o = {}) {
   const foam = []; for (let i = 0; i < 26; i++) { const b = ball(0.35 + (i % 4) * 0.08, FOAM, 0, 0, 0, 12); b.castShadow = false; b.userData.noOutline = true; g.add(b); foam.push(b); }
   g.set = (front, t, depth = o.depth ?? 0.9, crest = o.crest ?? 1.4) => {
     const a = geo.attributes.position; for (let i = 0; i < a.count; i++) { const x = p0[i * 3], z0 = p0[i * 3 + 2]; const z = z0 + front; const d = front - z;   // distance behind the front (>= 0 inside the flood)
-      let y; if (d < 0) y = -0.2; else { const c = Math.exp(-d * 0.9) * crest, roll = Math.sin(z * 1.3 - t * 6 + x * 0.6) * 0.12 + Math.sin(x * 2.1 + t * 4) * 0.06; y = depth * clamp(d * 2) + c + roll * clamp(d); }
-      a.setXYZ(i, x, Math.max(-0.2, y), z); const f = d >= 0 ? clamp(Math.exp(-d * 1.2) * 1.3 + (Math.sin(x * 3 + z * 2 + t * 3) > 0.92 ? 0.5 : 0)) : 0; tmp.copy(cB).lerp(cF, f); col[i * 3] = tmp.r; col[i * 3 + 1] = tmp.g; col[i * 3 + 2] = tmp.b; }
+      let y; if (d < 0) y = Math.max(-0.2, (depth + crest) * (1 + d * 2.2)); else { const c = Math.exp(-d * 0.9) * crest, roll = Math.sin(z * 1.3 - t * 6 + x * 0.6) * 0.12 + Math.sin(x * 2.1 + t * 4) * 0.06; y = depth * clamp(d * 2) + c + roll * clamp(d); }
+      a.setXYZ(i, x, Math.max(-0.2, y), z); const f = d >= 0 ? clamp(Math.exp(-d * 1.5) * 1.2) : clamp(1 + d * 3.5); /* cream foam on the crest, porter-brown face */ tmp.copy(cB).lerp(cF, f); col[i * 3] = tmp.r; col[i * 3 + 1] = tmp.g; col[i * 3 + 2] = tmp.b; }
     a.needsUpdate = true; geo.attributes.color.needsUpdate = true; geo.computeVertexNormals();
     foam.forEach((b, i) => { const x = -W / 2 + 0.3 + ((i * 0.618) % 1) * (W - 0.6); b.position.set(x, depth + crest * 0.75 + Math.sin(t * 7 + i) * 0.15, front - 0.25 - (i % 3) * 0.2); b.visible = front > -L + 1; });
   };
