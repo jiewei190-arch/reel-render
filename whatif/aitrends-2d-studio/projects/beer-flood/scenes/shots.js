@@ -110,8 +110,8 @@ registerShot('b12', { kind: '3d', init: streetInit,
 });
 // b13 "where families lived in basements." — low at the basement railings; the beer rises over the basement windows (no one shown)
 registerShot('b13', { kind: '3d', init: streetInit,
-  draw(s, t, info) { streetDraw(s, t + 4, 0); s.w.set(12, t + 4, lerp(0.5, 1.15, ease.inOut(prog(t, 0, info.dur))), 0.3);
-    camMove(s.stage, t, [[0, { pos: [2.4, 1.0, -0.6], look: [4.47, 0.35, -4.4], fov: 40 }], [info.dur, { pos: [2.8, 0.9, -1.4], look: [4.47, 0.3, -4.4], fov: 38 }]]); },
+  draw(s, t, info) { streetDraw(s, t + 4, 0); s.w.set(12, t + 4, lerp(0.15, 1.0, ease.inOut(prog(t, 0.4, info.dur))), 0.25);
+    camMove(s.stage, t, [[0, { pos: [0.2, 2.3, 2.5], look: [4.47, 1.0, -4.4], fov: 46 }], [info.dur, { pos: [0.8, 2.0, 1.2], look: [4.47, 0.7, -4.4], fov: 42 }]]); },
   overlay(g, t) { sunnyLook(g, t, { rays: false, tint: '#b0a0b8', tintAmount: 0.18 }); },
 });
 // b14 "Eight people died." — quiet: eight candles on a windowsill at dusk. No FX, no sfx hits.
