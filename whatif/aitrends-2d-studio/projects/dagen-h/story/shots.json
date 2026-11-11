@@ -1,0 +1,487 @@
+{
+ "duration": 37.4,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.85,
+   "line": "At 5 AM, a whole country switched road sides.",
+   "scene": "dagen-h",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:horn",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.85,
+   "end": 4.7,
+   "line": "Every driver. Same minute.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "same",
+     "name": "toon3d:ding",
+     "gain": -8
+    },
+    {
+     "word": "same",
+     "name": "toon3d:thud",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.7,
+   "end": 6.8,
+   "line": "It's Sweden, 1967.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "sweden",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.8,
+   "end": 8.38,
+   "line": "Swedes drive on the left.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -18
+    },
+    {
+     "word": "left",
+     "name": "toon3d:pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.38,
+   "end": 10.5,
+   "line": "Every neighbour drives on the right.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 1.05,
+     "name": "toon3d:squeak",
+     "gain": -8
+    },
+    {
+     "at": 1.25,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "right",
+     "name": "toon3d:pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.5,
+   "end": 12.85,
+   "line": "In a vote, 83% of Swedes",
+   "scene": "dagen-h",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.85,
+   "end": 14.55,
+   "line": "said: keep the left.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -18
+    },
+    {
+     "word": "left",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.55,
+   "end": 16.3,
+   "line": "The government switched anyway.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "anyway",
+     "name": "toon3d:stamp",
+     "gain": -4
+    },
+    {
+     "word": "anyway",
+     "offset": 0.02,
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "anyway",
+     "offset": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 16.3,
+   "end": 18.05,
+   "line": "Sunday, September 3rd.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "iris",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:bell",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 18.05,
+   "end": 20.85,
+   "line": "At 4:50, every car in the country stops.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:clock",
+     "gain": -10
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:engine",
+     "gain": -16
+    },
+    {
+     "word": "stops",
+     "name": "toon3d:squeak",
+     "gain": -8
+    },
+    {
+     "word": "stops",
+     "offset": 0.05,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 20.85,
+   "end": 23.15,
+   "line": "Wait... how do you change sides?",
+   "scene": "dagen-h",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 23.15,
+   "end": 25.9,
+   "line": "You see, you just... carefully drive across.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "carefully",
+     "name": "toon3d:engine",
+     "gain": -16
+    },
+    {
+     "at": 2.4,
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 25.9,
+   "end": 27.95,
+   "line": "About 350,000 road signs",
+   "scene": "dagen-h",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "toon3d:metal",
+     "gain": -12
+    },
+    {
+     "at": 1.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 27.95,
+   "end": 29.85,
+   "line": "had to be swapped.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 29.85,
+   "end": 32.15,
+   "line": "Everyone expected chaos.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "word": "chaos",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 32.15,
+   "end": 34.05,
+   "line": "Instead, accidents went down.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:success",
+     "gain": -10
+    },
+    {
+     "word": "down",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 34.05,
+   "end": 35.5,
+   "line": "For a few weeks, anyway.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "anyway",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 35.5,
+   "end": 37.4,
+   "line": "Subscribe for more.",
+   "scene": "dagen-h",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "subscribe",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}

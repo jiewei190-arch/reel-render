@@ -1,0 +1,39 @@
+{
+ "title": "A Whole Country Switched Road Sides",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "5",
+   "am",
+   "1967",
+   "83%",
+   "left",
+   "right",
+   "anyway",
+   "3rd",
+   "4:50",
+   "350000",
+   "down"
+  ]
+ },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

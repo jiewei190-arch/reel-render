@@ -1,0 +1,585 @@
+{
+ "source": "kokoro am_fenrir 0.95 + faster-whisper small word timestamps",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.12,
+   "end": 0.22
+  },
+  {
+   "word": "1814,",
+   "start": 0.22,
+   "end": 1.0
+  },
+  {
+   "word": "a",
+   "start": 1.3,
+   "end": 1.55
+  },
+  {
+   "word": "wave",
+   "start": 1.55,
+   "end": 1.8
+  },
+  {
+   "word": "of",
+   "start": 1.8,
+   "end": 2.05
+  },
+  {
+   "word": "beer",
+   "start": 2.05,
+   "end": 2.3
+  },
+  {
+   "word": "flooded",
+   "start": 2.3,
+   "end": 2.55
+  },
+  {
+   "word": "London.",
+   "start": 2.55,
+   "end": 2.8
+  },
+  {
+   "word": "Over",
+   "start": 3.322,
+   "end": 3.585
+  },
+  {
+   "word": "a",
+   "start": 3.585,
+   "end": 3.848
+  },
+  {
+   "word": "million",
+   "start": 3.848,
+   "end": 4.11
+  },
+  {
+   "word": "pints.",
+   "start": 4.11,
+   "end": 4.373
+  },
+  {
+   "word": "In",
+   "start": 4.373,
+   "end": 4.636
+  },
+  {
+   "word": "one",
+   "start": 4.636,
+   "end": 4.899
+  },
+  {
+   "word": "wave.",
+   "start": 4.899,
+   "end": 5.162
+  },
+  {
+   "word": "October",
+   "start": 5.735,
+   "end": 6.075
+  },
+  {
+   "word": "17th.",
+   "start": 6.075,
+   "end": 6.755
+  },
+  {
+   "word": "The",
+   "start": 7.175,
+   "end": 7.485
+  },
+  {
+   "word": "Horse",
+   "start": 7.485,
+   "end": 7.795
+  },
+  {
+   "word": "Shoe",
+   "start": 7.795,
+   "end": 8.105
+  },
+  {
+   "word": "Brewery,",
+   "start": 8.105,
+   "end": 8.415
+  },
+  {
+   "word": "central",
+   "start": 8.415,
+   "end": 8.725
+  },
+  {
+   "word": "London.",
+   "start": 8.725,
+   "end": 9.035
+  },
+  {
+   "word": "Its",
+   "start": 9.579,
+   "end": 9.859
+  },
+  {
+   "word": "giant",
+   "start": 9.859,
+   "end": 10.139
+  },
+  {
+   "word": "vat",
+   "start": 10.139,
+   "end": 10.419
+  },
+  {
+   "word": "of",
+   "start": 10.419,
+   "end": 10.699
+  },
+  {
+   "word": "porter",
+   "start": 10.699,
+   "end": 10.979
+  },
+  {
+   "word": "stood",
+   "start": 10.979,
+   "end": 11.259
+  },
+  {
+   "word": "22",
+   "start": 11.259,
+   "end": 11.819
+  },
+  {
+   "word": "feet",
+   "start": 11.819,
+   "end": 12.199
+  },
+  {
+   "word": "tall,",
+   "start": 12.199,
+   "end": 12.579
+  },
+  {
+   "word": "held",
+   "start": 12.579,
+   "end": 12.959
+  },
+  {
+   "word": "together",
+   "start": 12.959,
+   "end": 13.339
+  },
+  {
+   "word": "by",
+   "start": 13.339,
+   "end": 13.719
+  },
+  {
+   "word": "iron",
+   "start": 13.719,
+   "end": 14.099
+  },
+  {
+   "word": "hoops.",
+   "start": 14.099,
+   "end": 14.479
+  },
+  {
+   "word": "That",
+   "start": 14.944,
+   "end": 15.207
+  },
+  {
+   "word": "afternoon,",
+   "start": 15.207,
+   "end": 15.47
+  },
+  {
+   "word": "one",
+   "start": 15.47,
+   "end": 15.734
+  },
+  {
+   "word": "hoop",
+   "start": 15.734,
+   "end": 15.997
+  },
+  {
+   "word": "slipped",
+   "start": 15.997,
+   "end": 16.26
+  },
+  {
+   "word": "off.",
+   "start": 16.26,
+   "end": 16.524
+  },
+  {
+   "word": "Nobody",
+   "start": 17.522,
+   "end": 17.762
+  },
+  {
+   "word": "was",
+   "start": 17.762,
+   "end": 18.002
+  },
+  {
+   "word": "too",
+   "start": 18.002,
+   "end": 18.242
+  },
+  {
+   "word": "worried.",
+   "start": 18.242,
+   "end": 18.482
+  },
+  {
+   "word": "About",
+   "start": 19.027,
+   "end": 19.252
+  },
+  {
+   "word": "an",
+   "start": 19.252,
+   "end": 19.477
+  },
+  {
+   "word": "hour",
+   "start": 19.477,
+   "end": 19.702
+  },
+  {
+   "word": "later,",
+   "start": 19.702,
+   "end": 19.927
+  },
+  {
+   "word": "the",
+   "start": 19.927,
+   "end": 20.152
+  },
+  {
+   "word": "whole",
+   "start": 20.152,
+   "end": 20.377
+  },
+  {
+   "word": "vat",
+   "start": 20.377,
+   "end": 20.602
+  },
+  {
+   "word": "burst.",
+   "start": 20.602,
+   "end": 20.827
+  },
+  {
+   "word": "The",
+   "start": 21.412,
+   "end": 21.7
+  },
+  {
+   "word": "wave",
+   "start": 21.7,
+   "end": 21.988
+  },
+  {
+   "word": "knocked",
+   "start": 21.988,
+   "end": 22.277
+  },
+  {
+   "word": "open",
+   "start": 22.277,
+   "end": 22.565
+  },
+  {
+   "word": "other",
+   "start": 22.565,
+   "end": 22.853
+  },
+  {
+   "word": "vats,",
+   "start": 22.853,
+   "end": 23.142
+  },
+  {
+   "word": "and",
+   "start": 23.142,
+   "end": 23.43
+  },
+  {
+   "word": "smashed",
+   "start": 23.43,
+   "end": 23.718
+  },
+  {
+   "word": "down",
+   "start": 23.718,
+   "end": 24.007
+  },
+  {
+   "word": "the",
+   "start": 24.007,
+   "end": 24.295
+  },
+  {
+   "word": "brewery",
+   "start": 24.295,
+   "end": 24.583
+  },
+  {
+   "word": "wall.",
+   "start": 24.583,
+   "end": 24.872
+  },
+  {
+   "word": "Beer",
+   "start": 25.306,
+   "end": 25.634
+  },
+  {
+   "word": "poured",
+   "start": 25.634,
+   "end": 25.963
+  },
+  {
+   "word": "into",
+   "start": 25.963,
+   "end": 26.291
+  },
+  {
+   "word": "St",
+   "start": 26.291,
+   "end": 26.619
+  },
+  {
+   "word": "Giles,",
+   "start": 26.619,
+   "end": 26.947
+  },
+  {
+   "word": "one",
+   "start": 26.947,
+   "end": 27.276
+  },
+  {
+   "word": "of",
+   "start": 27.276,
+   "end": 27.604
+  },
+  {
+   "word": "the",
+   "start": 27.604,
+   "end": 27.932
+  },
+  {
+   "word": "poorest",
+   "start": 27.932,
+   "end": 28.26
+  },
+  {
+   "word": "slums",
+   "start": 28.26,
+   "end": 28.589
+  },
+  {
+   "word": "in",
+   "start": 28.589,
+   "end": 28.917
+  },
+  {
+   "word": "London,",
+   "start": 28.917,
+   "end": 29.245
+  },
+  {
+   "word": "where",
+   "start": 29.245,
+   "end": 29.573
+  },
+  {
+   "word": "families",
+   "start": 29.573,
+   "end": 29.902
+  },
+  {
+   "word": "lived",
+   "start": 29.902,
+   "end": 30.23
+  },
+  {
+   "word": "in",
+   "start": 30.23,
+   "end": 30.558
+  },
+  {
+   "word": "basements.",
+   "start": 30.558,
+   "end": 30.886
+  },
+  {
+   "word": "Eight",
+   "start": 31.918,
+   "end": 32.185
+  },
+  {
+   "word": "people",
+   "start": 32.185,
+   "end": 32.451
+  },
+  {
+   "word": "died.",
+   "start": 32.451,
+   "end": 32.718
+  },
+  {
+   "word": "The",
+   "start": 33.771,
+   "end": 33.974
+  },
+  {
+   "word": "inquest",
+   "start": 33.974,
+   "end": 34.176
+  },
+  {
+   "word": "called",
+   "start": 34.176,
+   "end": 34.379
+  },
+  {
+   "word": "it",
+   "start": 34.379,
+   "end": 34.582
+  },
+  {
+   "word": "an",
+   "start": 34.582,
+   "end": 34.784
+  },
+  {
+   "word": "act",
+   "start": 34.784,
+   "end": 34.986
+  },
+  {
+   "word": "of",
+   "start": 34.986,
+   "end": 35.189
+  },
+  {
+   "word": "God.",
+   "start": 35.189,
+   "end": 35.391
+  },
+  {
+   "word": "And",
+   "start": 35.931,
+   "end": 36.164
+  },
+  {
+   "word": "the",
+   "start": 36.164,
+   "end": 36.397
+  },
+  {
+   "word": "brewery?",
+   "start": 36.397,
+   "end": 36.631
+  },
+  {
+   "word": "Parliament",
+   "start": 36.631,
+   "end": 36.864
+  },
+  {
+   "word": "gave",
+   "start": 36.864,
+   "end": 37.097
+  },
+  {
+   "word": "it",
+   "start": 37.097,
+   "end": 37.331
+  },
+  {
+   "word": "back",
+   "start": 37.331,
+   "end": 37.564
+  },
+  {
+   "word": "the",
+   "start": 37.564,
+   "end": 37.797
+  },
+  {
+   "word": "tax",
+   "start": 37.797,
+   "end": 38.031
+  },
+  {
+   "word": "it",
+   "start": 38.031,
+   "end": 38.264
+  },
+  {
+   "word": "had",
+   "start": 38.264,
+   "end": 38.497
+  },
+  {
+   "word": "paid",
+   "start": 38.497,
+   "end": 38.731
+  },
+  {
+   "word": "on",
+   "start": 38.731,
+   "end": 38.964
+  },
+  {
+   "word": "the",
+   "start": 38.964,
+   "end": 39.197
+  },
+  {
+   "word": "beer.",
+   "start": 39.197,
+   "end": 39.431
+  },
+  {
+   "word": "Accident,",
+   "start": 39.939,
+   "end": 40.312
+  },
+  {
+   "word": "or",
+   "start": 40.312,
+   "end": 40.686
+  },
+  {
+   "word": "negligence?",
+   "start": 40.686,
+   "end": 41.059
+  },
+  {
+   "word": "Subscribe",
+   "start": 41.576,
+   "end": 41.869
+  },
+  {
+   "word": "for",
+   "start": 41.869,
+   "end": 42.163
+  },
+  {
+   "word": "more.",
+   "start": 42.163,
+   "end": 42.456
+  }
+ ]
+}

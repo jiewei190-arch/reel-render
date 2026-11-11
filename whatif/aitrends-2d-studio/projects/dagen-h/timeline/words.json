@@ -1,0 +1,445 @@
+{
+ "source": "kokoro am_fenrir 0.95 + faster-whisper small word timestamps",
+ "words": [
+  {
+   "word": "At",
+   "start": 0.12,
+   "end": 0.2
+  },
+  {
+   "word": "5",
+   "start": 0.2,
+   "end": 0.54
+  },
+  {
+   "word": "AM,",
+   "start": 0.54,
+   "end": 0.88
+  },
+  {
+   "word": "a",
+   "start": 0.96,
+   "end": 1.223
+  },
+  {
+   "word": "whole",
+   "start": 1.223,
+   "end": 1.487
+  },
+  {
+   "word": "country",
+   "start": 1.487,
+   "end": 1.75
+  },
+  {
+   "word": "switched",
+   "start": 1.75,
+   "end": 2.013
+  },
+  {
+   "word": "road",
+   "start": 2.013,
+   "end": 2.277
+  },
+  {
+   "word": "sides.",
+   "start": 2.277,
+   "end": 2.54
+  },
+  {
+   "word": "Every",
+   "start": 3.093,
+   "end": 3.408
+  },
+  {
+   "word": "driver.",
+   "start": 3.408,
+   "end": 3.723
+  },
+  {
+   "word": "Same",
+   "start": 3.723,
+   "end": 4.038
+  },
+  {
+   "word": "minute.",
+   "start": 4.038,
+   "end": 4.353
+  },
+  {
+   "word": "It's",
+   "start": 4.845,
+   "end": 5.055
+  },
+  {
+   "word": "Sweden,",
+   "start": 5.055,
+   "end": 5.265
+  },
+  {
+   "word": "1967.",
+   "start": 5.265,
+   "end": 5.985
+  },
+  {
+   "word": "Swedes",
+   "start": 6.929,
+   "end": 7.223
+  },
+  {
+   "word": "drive",
+   "start": 7.223,
+   "end": 7.518
+  },
+  {
+   "word": "on",
+   "start": 7.518,
+   "end": 7.812
+  },
+  {
+   "word": "the",
+   "start": 7.812,
+   "end": 8.107
+  },
+  {
+   "word": "left.",
+   "start": 8.107,
+   "end": 8.401
+  },
+  {
+   "word": "Every",
+   "start": 8.401,
+   "end": 8.696
+  },
+  {
+   "word": "neighbour",
+   "start": 8.696,
+   "end": 8.99
+  },
+  {
+   "word": "drives",
+   "start": 8.99,
+   "end": 9.285
+  },
+  {
+   "word": "on",
+   "start": 9.285,
+   "end": 9.579
+  },
+  {
+   "word": "the",
+   "start": 9.579,
+   "end": 9.874
+  },
+  {
+   "word": "right.",
+   "start": 9.874,
+   "end": 10.169
+  },
+  {
+   "word": "In",
+   "start": 10.7,
+   "end": 10.813
+  },
+  {
+   "word": "a",
+   "start": 10.813,
+   "end": 10.926
+  },
+  {
+   "word": "vote,",
+   "start": 10.926,
+   "end": 11.04
+  },
+  {
+   "word": "83%",
+   "start": 11.2,
+   "end": 12.04
+  },
+  {
+   "word": "of",
+   "start": 12.04,
+   "end": 12.336
+  },
+  {
+   "word": "Swedes",
+   "start": 12.336,
+   "end": 12.633
+  },
+  {
+   "word": "said:",
+   "start": 12.633,
+   "end": 12.93
+  },
+  {
+   "word": "keep",
+   "start": 12.93,
+   "end": 13.226
+  },
+  {
+   "word": "the",
+   "start": 13.226,
+   "end": 13.523
+  },
+  {
+   "word": "left.",
+   "start": 13.523,
+   "end": 13.82
+  },
+  {
+   "word": "The",
+   "start": 14.753,
+   "end": 15.023
+  },
+  {
+   "word": "government",
+   "start": 15.023,
+   "end": 15.293
+  },
+  {
+   "word": "switched",
+   "start": 15.293,
+   "end": 15.563
+  },
+  {
+   "word": "anyway.",
+   "start": 15.563,
+   "end": 15.833
+  },
+  {
+   "word": "Sunday,",
+   "start": 16.458,
+   "end": 16.828
+  },
+  {
+   "word": "September",
+   "start": 16.828,
+   "end": 17.198
+  },
+  {
+   "word": "3rd.",
+   "start": 17.198,
+   "end": 18.078
+  },
+  {
+   "word": "At",
+   "start": 18.118,
+   "end": 18.258
+  },
+  {
+   "word": "4:50,",
+   "start": 18.258,
+   "end": 18.858
+  },
+  {
+   "word": "every",
+   "start": 18.858,
+   "end": 19.131
+  },
+  {
+   "word": "car",
+   "start": 19.131,
+   "end": 19.405
+  },
+  {
+   "word": "in",
+   "start": 19.405,
+   "end": 19.678
+  },
+  {
+   "word": "the",
+   "start": 19.678,
+   "end": 19.951
+  },
+  {
+   "word": "country",
+   "start": 19.951,
+   "end": 20.225
+  },
+  {
+   "word": "stops.",
+   "start": 20.225,
+   "end": 20.498
+  },
+  {
+   "word": "Wait...",
+   "start": 21.093,
+   "end": 21.296
+  },
+  {
+   "word": "how",
+   "start": 21.296,
+   "end": 21.5
+  },
+  {
+   "word": "do",
+   "start": 21.5,
+   "end": 21.703
+  },
+  {
+   "word": "you",
+   "start": 21.703,
+   "end": 21.906
+  },
+  {
+   "word": "change",
+   "start": 21.906,
+   "end": 22.11
+  },
+  {
+   "word": "sides?",
+   "start": 22.11,
+   "end": 22.313
+  },
+  {
+   "word": "You",
+   "start": 23.377,
+   "end": 23.666
+  },
+  {
+   "word": "see,",
+   "start": 23.666,
+   "end": 23.954
+  },
+  {
+   "word": "you",
+   "start": 23.954,
+   "end": 24.243
+  },
+  {
+   "word": "just...",
+   "start": 24.243,
+   "end": 24.531
+  },
+  {
+   "word": "carefully",
+   "start": 24.531,
+   "end": 24.82
+  },
+  {
+   "word": "drive",
+   "start": 24.82,
+   "end": 25.109
+  },
+  {
+   "word": "across.",
+   "start": 25.109,
+   "end": 25.397
+  },
+  {
+   "word": "About",
+   "start": 26.09,
+   "end": 26.29
+  },
+  {
+   "word": "350,000",
+   "start": 26.29,
+   "end": 28.03
+  },
+  {
+   "word": "road",
+   "start": 28.03,
+   "end": 28.27
+  },
+  {
+   "word": "signs",
+   "start": 28.27,
+   "end": 28.51
+  },
+  {
+   "word": "had",
+   "start": 28.51,
+   "end": 28.75
+  },
+  {
+   "word": "to",
+   "start": 28.75,
+   "end": 28.99
+  },
+  {
+   "word": "be",
+   "start": 28.99,
+   "end": 29.23
+  },
+  {
+   "word": "swapped.",
+   "start": 29.23,
+   "end": 29.47
+  },
+  {
+   "word": "Everyone",
+   "start": 30.075,
+   "end": 30.475
+  },
+  {
+   "word": "expected",
+   "start": 30.475,
+   "end": 30.875
+  },
+  {
+   "word": "chaos.",
+   "start": 30.875,
+   "end": 31.275
+  },
+  {
+   "word": "Instead,",
+   "start": 32.381,
+   "end": 32.711
+  },
+  {
+   "word": "accidents",
+   "start": 32.711,
+   "end": 33.041
+  },
+  {
+   "word": "went",
+   "start": 33.041,
+   "end": 33.371
+  },
+  {
+   "word": "down.",
+   "start": 33.371,
+   "end": 33.701
+  },
+  {
+   "word": "For",
+   "start": 34.21,
+   "end": 34.382
+  },
+  {
+   "word": "a",
+   "start": 34.382,
+   "end": 34.554
+  },
+  {
+   "word": "few",
+   "start": 34.554,
+   "end": 34.726
+  },
+  {
+   "word": "weeks,",
+   "start": 34.726,
+   "end": 34.898
+  },
+  {
+   "word": "anyway.",
+   "start": 34.898,
+   "end": 35.07
+  },
+  {
+   "word": "Subscribe",
+   "start": 35.715,
+   "end": 36.008
+  },
+  {
+   "word": "for",
+   "start": 36.008,
+   "end": 36.301
+  },
+  {
+   "word": "more.",
+   "start": 36.301,
+   "end": 36.595
+  }
+ ]
+}
