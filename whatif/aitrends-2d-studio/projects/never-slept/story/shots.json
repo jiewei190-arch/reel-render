@@ -1,0 +1,409 @@
+{
+ "duration": 39.82,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.2,
+   "line": "A 17-year-old stayed awake for 11 days.",
+   "scene": "s01",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.2,
+   "end": 4.4,
+   "line": "On purpose.",
+   "scene": "s02",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "purpose",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.4,
+   "end": 6.3,
+   "line": "For a science fair project.",
+   "scene": "s03",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "science",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.3,
+   "end": 8.1,
+   "line": "1963.",
+   "scene": "s04",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s05",
+   "start": 8.1,
+   "end": 11.45,
+   "line": "Randy Gardner wants the world record for staying awake.",
+   "scene": "s05",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "world",
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "world",
+     "offset": 0.2,
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.45,
+   "end": 13.1,
+   "line": "First, he gets moody.",
+   "scene": "s06",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "moody",
+     "name": "toon3d:punch",
+     "gain": -10
+    },
+    {
+     "word": "moody",
+     "offset": 0.1,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.1,
+   "end": 15.5,
+   "line": "Then he can't focus, or remember things.",
+   "scene": "s07",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.5,
+   "end": 17.9,
+   "line": "Then he starts seeing things that aren't there.",
+   "scene": "s08",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:zap",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.9,
+   "end": 19.7,
+   "line": "Wait, how is he still awake?",
+   "scene": "s09",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.7,
+   "end": 22.3,
+   "line": "You see, his friends took shifts keeping him up.",
+   "scene": "s10",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:bell",
+     "gain": -14
+    },
+    {
+     "at": 1.7,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.3,
+   "end": 25.95,
+   "line": "On day 10, he beats a Stanford sleep scientist at pinball.",
+   "scene": "s11",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:click",
+     "gain": -14
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:click",
+     "gain": -14
+    },
+    {
+     "word": "pinball",
+     "name": "toon3d:success",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.95,
+   "end": 29.3,
+   "line": "Day 11. 264 hours.",
+   "scene": "s12",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "hours",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s13",
+   "start": 29.3,
+   "end": 30.35,
+   "line": "Record.",
+   "scene": "s13",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "record",
+     "name": "toon3d:success",
+     "gain": -9
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 30.35,
+   "end": 32.65,
+   "line": "Then he sleeps for almost 15 hours.",
+   "scene": "s14",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:clock",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 32.65,
+   "end": 35.3,
+   "line": "Today, Guinness won't even accept this record.",
+   "scene": "s15",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "accept",
+     "name": "toon3d:buzz",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s16",
+   "start": 35.3,
+   "end": 37.85,
+   "line": "It's too dangerous. Don't try this.",
+   "scene": "s16",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "don't",
+     "name": "toon3d:ding",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 37.85,
+   "end": 39.82,
+   "line": "Subscribe for more.",
+   "scene": "s17",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

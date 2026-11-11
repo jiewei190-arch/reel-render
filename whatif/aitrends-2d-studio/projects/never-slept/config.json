@@ -1,0 +1,39 @@
+{
+ "title": "What If You Never Slept Again?",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "17-year-old",
+   "11",
+   "purpose",
+   "1963",
+   "record",
+   "moody",
+   "pinball",
+   "264",
+   "15",
+   "guinness",
+   "dangerous"
+  ]
+ },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -18
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}
