@@ -1,0 +1,356 @@
+{
+ "duration": 35.61,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.85,
+   "line": "On Venus, you'd be crushed, cooked and dissolved.",
+   "scene": "FRAME 1: suited HERO on Venus: squeeze, steam, acid drips",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -14
+    },
+    {
+     "word": "crushed,",
+     "name": "toon3d:metal",
+     "gain": -10
+    },
+    {
+     "word": "cooked",
+     "name": "toon3d:fire",
+     "gain": -12
+    },
+    {
+     "word": "dissolved.",
+     "name": "toon3d:zap",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.85,
+   "end": 4.45,
+   "line": "In that order?",
+   "scene": "HERO deadpan at the lens ???",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s03",
+   "start": 4.45,
+   "end": 6.45,
+   "line": "No. All at once.",
+   "scene": "everything at once: ! sweat shake",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "once.",
+     "name": "toon3d:crash",
+     "gain": -10
+    },
+    {
+     "word": "once.",
+     "name": "toon3d:alarm",
+     "gain": -18,
+     "offset": 0.1
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s04",
+   "start": 6.45,
+   "end": 7.55,
+   "line": "Wait, how?",
+   "scene": "TOMAS on sunny Earth: shrug ???",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s05",
+   "start": 7.55,
+   "end": 12.15,
+   "line": "You see, the air there presses down over 90 times harder than on Earth.",
+   "scene": "pressure arrows, soda can crumples on 90",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "presses",
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "90",
+     "name": "toon3d:metal",
+     "gain": -8
+    },
+    {
+     "word": "90",
+     "name": "toon3d:squeak",
+     "gain": -12,
+     "offset": 0.2
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s06",
+   "start": 12.15,
+   "end": 14.95,
+   "line": "Like standing 3,000 feet underwater.",
+   "scene": "deep sea: suited HERO, bubbles, fish double take",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:splash",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "at": 2.3,
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s07",
+   "start": 14.95,
+   "end": 18.55,
+   "line": "The ground is 464 degrees Celsius.",
+   "scene": "INSERT counter 464 C",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "464",
+     "name": "toon3d:fire",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s08",
+   "start": 18.55,
+   "end": 20.25,
+   "line": "Hot enough to melt lead.",
+   "scene": "lead ingot melts into a puddle",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "melt",
+     "name": "toon3d:fire",
+     "gain": -12
+    },
+    {
+     "word": "lead.",
+     "name": "toon3d:drop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s09",
+   "start": 20.25,
+   "end": 24.0,
+   "line": "That's hotter than Mercury, and Mercury is closer to the Sun.",
+   "scene": "INSERT versus Venus 464 vs Mercury 167",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "closer",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur"
+   }
+  },
+  {
+   "id": "s10",
+   "start": 24.0,
+   "end": 27.75,
+   "line": "And on the way down? Clouds of sulfuric acid.",
+   "scene": "sinking through acid clouds, drips sizzle on the helmet",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 1.5,
+     "name": "toon3d:fire",
+     "gain": -16
+    },
+    {
+     "word": "acid.",
+     "name": "toon3d:zap",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s11",
+   "start": 27.75,
+   "end": 29.5,
+   "line": "Luckily, you get beamed out.",
+   "scene": "teleport beam lifts the HERO out: sparkle + hearts",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -8
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s12",
+   "start": 29.5,
+   "end": 33.95,
+   "line": "The longest any probe has lasted there? 127 minutes.",
+   "scene": "lander on the plain, then counter 127 MIN",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "word": "127",
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "word": "127",
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "offset": 0.4
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s13",
+   "start": 33.95,
+   "end": 35.61,
+   "line": "Subscribe for more.",
+   "scene": "beam drops the HERO back on Venus (loop to frame 1)",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:thud",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  }
+ ]
+}
