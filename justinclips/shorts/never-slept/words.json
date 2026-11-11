@@ -1,0 +1,485 @@
+{
+ "source": "whisper:small.en word timestamps aligned to the TTS script (justinclips/tools/align.py) + 1963/Day 11/Record nudged to silencedetect boundaries",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "17-year-old",
+   "start": 0.26,
+   "end": 1.26
+  },
+  {
+   "word": "stayed",
+   "start": 1.26,
+   "end": 1.58
+  },
+  {
+   "word": "awake",
+   "start": 1.58,
+   "end": 1.88
+  },
+  {
+   "word": "for",
+   "start": 1.88,
+   "end": 2.14
+  },
+  {
+   "word": "11 days.",
+   "start": 2.14,
+   "end": 2.86
+  },
+  {
+   "word": "On",
+   "start": 3.48,
+   "end": 3.56
+  },
+  {
+   "word": "purpose.",
+   "start": 3.56,
+   "end": 3.96
+  },
+  {
+   "word": "For",
+   "start": 4.68,
+   "end": 4.74
+  },
+  {
+   "word": "a",
+   "start": 4.74,
+   "end": 4.88
+  },
+  {
+   "word": "science",
+   "start": 4.88,
+   "end": 5.18
+  },
+  {
+   "word": "fair",
+   "start": 5.18,
+   "end": 5.38
+  },
+  {
+   "word": "project.",
+   "start": 5.38,
+   "end": 5.94
+  },
+  {
+   "word": "1963.",
+   "start": 6.54,
+   "end": 7.71
+  },
+  {
+   "word": "Randy",
+   "start": 8.16,
+   "end": 8.46
+  },
+  {
+   "word": "Gardner",
+   "start": 8.46,
+   "end": 8.84
+  },
+  {
+   "word": "wants",
+   "start": 8.84,
+   "end": 9.28
+  },
+  {
+   "word": "the",
+   "start": 9.28,
+   "end": 9.54
+  },
+  {
+   "word": "world",
+   "start": 9.54,
+   "end": 9.78
+  },
+  {
+   "word": "record",
+   "start": 9.78,
+   "end": 10.1
+  },
+  {
+   "word": "for",
+   "start": 10.1,
+   "end": 10.44
+  },
+  {
+   "word": "staying",
+   "start": 10.44,
+   "end": 10.74
+  },
+  {
+   "word": "awake.",
+   "start": 10.74,
+   "end": 11.12
+  },
+  {
+   "word": "First,",
+   "start": 11.74,
+   "end": 11.92
+  },
+  {
+   "word": "he",
+   "start": 11.92,
+   "end": 12.12
+  },
+  {
+   "word": "gets",
+   "start": 12.12,
+   "end": 12.36
+  },
+  {
+   "word": "moody.",
+   "start": 12.36,
+   "end": 12.88
+  },
+  {
+   "word": "Then",
+   "start": 13.26,
+   "end": 13.38
+  },
+  {
+   "word": "he",
+   "start": 13.38,
+   "end": 13.5
+  },
+  {
+   "word": "can't",
+   "start": 13.5,
+   "end": 13.82
+  },
+  {
+   "word": "focus,",
+   "start": 13.82,
+   "end": 14.12
+  },
+  {
+   "word": "or",
+   "start": 14.12,
+   "end": 14.44
+  },
+  {
+   "word": "remember",
+   "start": 14.44,
+   "end": 14.74
+  },
+  {
+   "word": "things.",
+   "start": 14.74,
+   "end": 15.14
+  },
+  {
+   "word": "Then",
+   "start": 15.68,
+   "end": 15.82
+  },
+  {
+   "word": "he",
+   "start": 15.82,
+   "end": 15.94
+  },
+  {
+   "word": "starts",
+   "start": 15.94,
+   "end": 16.14
+  },
+  {
+   "word": "seeing",
+   "start": 16.14,
+   "end": 16.48
+  },
+  {
+   "word": "things",
+   "start": 16.48,
+   "end": 16.8
+  },
+  {
+   "word": "that",
+   "start": 16.8,
+   "end": 17.04
+  },
+  {
+   "word": "aren't",
+   "start": 17.04,
+   "end": 17.22
+  },
+  {
+   "word": "there.",
+   "start": 17.22,
+   "end": 17.56
+  },
+  {
+   "word": "Wait,",
+   "start": 18.12,
+   "end": 18.28
+  },
+  {
+   "word": "how",
+   "start": 18.28,
+   "end": 18.52
+  },
+  {
+   "word": "is",
+   "start": 18.52,
+   "end": 18.66
+  },
+  {
+   "word": "he",
+   "start": 18.66,
+   "end": 18.78
+  },
+  {
+   "word": "still",
+   "start": 18.78,
+   "end": 18.94
+  },
+  {
+   "word": "awake?",
+   "start": 18.94,
+   "end": 19.28
+  },
+  {
+   "word": "You",
+   "start": 19.9,
+   "end": 20.02
+  },
+  {
+   "word": "see,",
+   "start": 20.02,
+   "end": 20.24
+  },
+  {
+   "word": "his",
+   "start": 20.24,
+   "end": 20.44
+  },
+  {
+   "word": "friends",
+   "start": 20.44,
+   "end": 20.7
+  },
+  {
+   "word": "took",
+   "start": 20.7,
+   "end": 20.9
+  },
+  {
+   "word": "shifts",
+   "start": 20.9,
+   "end": 21.3
+  },
+  {
+   "word": "keeping",
+   "start": 21.3,
+   "end": 21.54
+  },
+  {
+   "word": "him",
+   "start": 21.54,
+   "end": 21.78
+  },
+  {
+   "word": "up.",
+   "start": 21.78,
+   "end": 22.0
+  },
+  {
+   "word": "On",
+   "start": 22.5,
+   "end": 22.64
+  },
+  {
+   "word": "day",
+   "start": 22.64,
+   "end": 22.8
+  },
+  {
+   "word": "10,",
+   "start": 22.8,
+   "end": 23.14
+  },
+  {
+   "word": "he",
+   "start": 23.14,
+   "end": 23.44
+  },
+  {
+   "word": "beats",
+   "start": 23.44,
+   "end": 23.64
+  },
+  {
+   "word": "a",
+   "start": 23.64,
+   "end": 23.82
+  },
+  {
+   "word": "Stanford",
+   "start": 23.82,
+   "end": 24.16
+  },
+  {
+   "word": "sleep",
+   "start": 24.16,
+   "end": 24.56
+  },
+  {
+   "word": "scientist",
+   "start": 24.56,
+   "end": 25.12
+  },
+  {
+   "word": "at",
+   "start": 25.12,
+   "end": 25.38
+  },
+  {
+   "word": "pinball.",
+   "start": 25.38,
+   "end": 25.86
+  },
+  {
+   "word": "Day",
+   "start": 26.36,
+   "end": 26.62
+  },
+  {
+   "word": "11.",
+   "start": 26.62,
+   "end": 27.03
+  },
+  {
+   "word": "264",
+   "start": 27.54,
+   "end": 28.14
+  },
+  {
+   "word": "hours.",
+   "start": 28.14,
+   "end": 28.84
+  },
+  {
+   "word": "Record.",
+   "start": 29.43,
+   "end": 29.97
+  },
+  {
+   "word": "Then",
+   "start": 30.44,
+   "end": 30.52
+  },
+  {
+   "word": "he",
+   "start": 30.52,
+   "end": 30.64
+  },
+  {
+   "word": "sleeps",
+   "start": 30.64,
+   "end": 30.88
+  },
+  {
+   "word": "for",
+   "start": 30.88,
+   "end": 31.16
+  },
+  {
+   "word": "almost",
+   "start": 31.16,
+   "end": 31.44
+  },
+  {
+   "word": "15",
+   "start": 31.44,
+   "end": 31.88
+  },
+  {
+   "word": "hours.",
+   "start": 31.88,
+   "end": 32.3
+  },
+  {
+   "word": "Today,",
+   "start": 32.9,
+   "end": 33.18
+  },
+  {
+   "word": "Guinness",
+   "start": 33.18,
+   "end": 33.5
+  },
+  {
+   "word": "won't",
+   "start": 33.5,
+   "end": 33.84
+  },
+  {
+   "word": "even",
+   "start": 33.84,
+   "end": 34.02
+  },
+  {
+   "word": "accept",
+   "start": 34.02,
+   "end": 34.36
+  },
+  {
+   "word": "this",
+   "start": 34.36,
+   "end": 34.6
+  },
+  {
+   "word": "record.",
+   "start": 34.6,
+   "end": 34.96
+  },
+  {
+   "word": "It's",
+   "start": 35.5,
+   "end": 35.7
+  },
+  {
+   "word": "too",
+   "start": 35.7,
+   "end": 35.86
+  },
+  {
+   "word": "dangerous.",
+   "start": 35.86,
+   "end": 36.36
+  },
+  {
+   "word": "Don't",
+   "start": 36.98,
+   "end": 37.26
+  },
+  {
+   "word": "try",
+   "start": 37.26,
+   "end": 37.46
+  },
+  {
+   "word": "this.",
+   "start": 37.46,
+   "end": 37.78
+  },
+  {
+   "word": "Subscribe",
+   "start": 38.36,
+   "end": 38.72
+  },
+  {
+   "word": "for",
+   "start": 38.72,
+   "end": 39.0
+  },
+  {
+   "word": "more.",
+   "start": 39.0,
+   "end": 39.26
+  }
+ ]
+}
