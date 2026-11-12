@@ -1,0 +1,660 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.45,
+   "end": 0.684
+  },
+  {
+   "word": "work",
+   "start": 0.684,
+   "end": 0.919
+  },
+  {
+   "word": "late.",
+   "start": 0.919,
+   "end": 1.387
+  },
+  {
+   "word": "Most",
+   "start": 1.937,
+   "end": 2.181
+  },
+  {
+   "word": "nights,",
+   "start": 2.181,
+   "end": 2.424
+  },
+  {
+   "word": "I'm",
+   "start": 2.424,
+   "end": 2.668
+  },
+  {
+   "word": "the",
+   "start": 2.668,
+   "end": 2.911
+  },
+  {
+   "word": "last",
+   "start": 2.911,
+   "end": 3.155
+  },
+  {
+   "word": "one",
+   "start": 3.155,
+   "end": 3.641
+  },
+  {
+   "word": "out.",
+   "start": 3.641,
+   "end": 3.885
+  },
+  {
+   "word": "Last",
+   "start": 4.635,
+   "end": 4.852
+  },
+  {
+   "word": "night,",
+   "start": 4.852,
+   "end": 5.069
+  },
+  {
+   "word": "I",
+   "start": 5.069,
+   "end": 5.286
+  },
+  {
+   "word": "got",
+   "start": 5.286,
+   "end": 5.503
+  },
+  {
+   "word": "in",
+   "start": 5.503,
+   "end": 5.72
+  },
+  {
+   "word": "the",
+   "start": 5.72,
+   "end": 5.937
+  },
+  {
+   "word": "elevator",
+   "start": 5.937,
+   "end": 6.805
+  },
+  {
+   "word": "on",
+   "start": 6.805,
+   "end": 7.022
+  },
+  {
+   "word": "the",
+   "start": 7.022,
+   "end": 7.239
+  },
+  {
+   "word": "ninth",
+   "start": 7.239,
+   "end": 7.456
+  },
+  {
+   "word": "floor",
+   "start": 7.456,
+   "end": 7.673
+  },
+  {
+   "word": "and",
+   "start": 7.673,
+   "end": 7.89
+  },
+  {
+   "word": "pressed",
+   "start": 7.89,
+   "end": 8.324
+  },
+  {
+   "word": "lobby.",
+   "start": 8.324,
+   "end": 8.758
+  },
+  {
+   "word": "On",
+   "start": 9.508,
+   "end": 9.733
+  },
+  {
+   "word": "eight,",
+   "start": 9.733,
+   "end": 9.958
+  },
+  {
+   "word": "it",
+   "start": 9.958,
+   "end": 10.183
+  },
+  {
+   "word": "stopped.",
+   "start": 10.183,
+   "end": 10.634
+  },
+  {
+   "word": "The",
+   "start": 11.184,
+   "end": 11.4
+  },
+  {
+   "word": "doors",
+   "start": 11.4,
+   "end": 11.617
+  },
+  {
+   "word": "opened.",
+   "start": 11.617,
+   "end": 12.266
+  },
+  {
+   "word": "Nobody",
+   "start": 13.016,
+   "end": 13.59
+  },
+  {
+   "word": "there.",
+   "start": 13.59,
+   "end": 13.973
+  },
+  {
+   "word": "Just",
+   "start": 14.523,
+   "end": 14.783
+  },
+  {
+   "word": "a",
+   "start": 14.783,
+   "end": 15.043
+  },
+  {
+   "word": "dark",
+   "start": 15.043,
+   "end": 15.303
+  },
+  {
+   "word": "hallway.",
+   "start": 15.303,
+   "end": 15.822
+  },
+  {
+   "word": "The",
+   "start": 16.572,
+   "end": 16.846
+  },
+  {
+   "word": "doors",
+   "start": 16.846,
+   "end": 17.12
+  },
+  {
+   "word": "closed.",
+   "start": 17.12,
+   "end": 17.668
+  },
+  {
+   "word": "On",
+   "start": 18.418,
+   "end": 18.608
+  },
+  {
+   "word": "seven,",
+   "start": 18.608,
+   "end": 18.987
+  },
+  {
+   "word": "it",
+   "start": 18.987,
+   "end": 19.177
+  },
+  {
+   "word": "stopped",
+   "start": 19.177,
+   "end": 19.557
+  },
+  {
+   "word": "again.",
+   "start": 19.557,
+   "end": 19.936
+  },
+  {
+   "word": "Nobody.",
+   "start": 20.486,
+   "end": 21.286
+  },
+  {
+   "word": "Six.",
+   "start": 22.036,
+   "end": 22.647
+  },
+  {
+   "word": "Five.",
+   "start": 23.197,
+   "end": 23.836
+  },
+  {
+   "word": "Four.",
+   "start": 24.386,
+   "end": 24.996
+  },
+  {
+   "word": "Every",
+   "start": 25.746,
+   "end": 26.31
+  },
+  {
+   "word": "floor,",
+   "start": 26.31,
+   "end": 26.498
+  },
+  {
+   "word": "the",
+   "start": 26.498,
+   "end": 26.686
+  },
+  {
+   "word": "doors",
+   "start": 26.686,
+   "end": 26.874
+  },
+  {
+   "word": "opened.",
+   "start": 26.874,
+   "end": 27.438
+  },
+  {
+   "word": "Every",
+   "start": 27.988,
+   "end": 28.562
+  },
+  {
+   "word": "floor,",
+   "start": 28.562,
+   "end": 28.754
+  },
+  {
+   "word": "nobody",
+   "start": 28.754,
+   "end": 29.328
+  },
+  {
+   "word": "got",
+   "start": 29.328,
+   "end": 29.52
+  },
+  {
+   "word": "on.",
+   "start": 29.52,
+   "end": 29.712
+  },
+  {
+   "word": "I",
+   "start": 30.462,
+   "end": 30.643
+  },
+  {
+   "word": "figured",
+   "start": 30.643,
+   "end": 31.186
+  },
+  {
+   "word": "it",
+   "start": 31.186,
+   "end": 31.367
+  },
+  {
+   "word": "was",
+   "start": 31.367,
+   "end": 31.548
+  },
+  {
+   "word": "broken.",
+   "start": 31.548,
+   "end": 31.91
+  },
+  {
+   "word": "I",
+   "start": 32.66,
+   "end": 32.865
+  },
+  {
+   "word": "stared",
+   "start": 32.865,
+   "end": 33.274
+  },
+  {
+   "word": "at",
+   "start": 33.274,
+   "end": 33.478
+  },
+  {
+   "word": "my",
+   "start": 33.478,
+   "end": 33.683
+  },
+  {
+   "word": "phone",
+   "start": 33.683,
+   "end": 34.092
+  },
+  {
+   "word": "and",
+   "start": 34.092,
+   "end": 34.296
+  },
+  {
+   "word": "tried",
+   "start": 34.296,
+   "end": 34.5
+  },
+  {
+   "word": "not",
+   "start": 34.5,
+   "end": 34.705
+  },
+  {
+   "word": "to",
+   "start": 34.705,
+   "end": 34.909
+  },
+  {
+   "word": "look",
+   "start": 34.909,
+   "end": 35.114
+  },
+  {
+   "word": "into",
+   "start": 35.114,
+   "end": 35.523
+  },
+  {
+   "word": "the",
+   "start": 35.523,
+   "end": 35.727
+  },
+  {
+   "word": "hallways.",
+   "start": 35.727,
+   "end": 36.136
+  },
+  {
+   "word": "The",
+   "start": 36.886,
+   "end": 37.103
+  },
+  {
+   "word": "light",
+   "start": 37.103,
+   "end": 37.319
+  },
+  {
+   "word": "flickered.",
+   "start": 37.319,
+   "end": 37.969
+  },
+  {
+   "word": "The",
+   "start": 38.719,
+   "end": 38.906
+  },
+  {
+   "word": "elevator",
+   "start": 38.906,
+   "end": 39.651
+  },
+  {
+   "word": "got",
+   "start": 39.651,
+   "end": 39.838
+  },
+  {
+   "word": "slower.",
+   "start": 39.838,
+   "end": 40.211
+  },
+  {
+   "word": "Heavier.",
+   "start": 40.761,
+   "end": 41.44
+  },
+  {
+   "word": "The",
+   "start": 42.19,
+   "end": 42.399
+  },
+  {
+   "word": "cable",
+   "start": 42.399,
+   "end": 42.816
+  },
+  {
+   "word": "groaned,",
+   "start": 42.816,
+   "end": 43.234
+  },
+  {
+   "word": "like",
+   "start": 43.234,
+   "end": 43.651
+  },
+  {
+   "word": "it",
+   "start": 43.651,
+   "end": 43.86
+  },
+  {
+   "word": "was",
+   "start": 43.86,
+   "end": 44.069
+  },
+  {
+   "word": "carrying",
+   "start": 44.069,
+   "end": 44.486
+  },
+  {
+   "word": "more",
+   "start": 44.486,
+   "end": 44.903
+  },
+  {
+   "word": "than",
+   "start": 44.903,
+   "end": 45.112
+  },
+  {
+   "word": "just",
+   "start": 45.112,
+   "end": 45.321
+  },
+  {
+   "word": "me.",
+   "start": 45.321,
+   "end": 45.529
+  },
+  {
+   "word": "Lobby.",
+   "start": 46.829,
+   "end": 47.505
+  },
+  {
+   "word": "The",
+   "start": 48.055,
+   "end": 48.245
+  },
+  {
+   "word": "doors",
+   "start": 48.245,
+   "end": 48.434
+  },
+  {
+   "word": "opened,",
+   "start": 48.434,
+   "end": 49.002
+  },
+  {
+   "word": "and",
+   "start": 49.002,
+   "end": 49.191
+  },
+  {
+   "word": "I",
+   "start": 49.191,
+   "end": 49.38
+  },
+  {
+   "word": "stepped",
+   "start": 49.38,
+   "end": 49.759
+  },
+  {
+   "word": "out.",
+   "start": 49.759,
+   "end": 49.948
+  },
+  {
+   "word": "Behind",
+   "start": 51.248,
+   "end": 51.694
+  },
+  {
+   "word": "me,",
+   "start": 51.694,
+   "end": 51.917
+  },
+  {
+   "word": "the",
+   "start": 51.917,
+   "end": 52.14
+  },
+  {
+   "word": "doors",
+   "start": 52.14,
+   "end": 52.363
+  },
+  {
+   "word": "started",
+   "start": 52.363,
+   "end": 52.809
+  },
+  {
+   "word": "to",
+   "start": 52.809,
+   "end": 53.032
+  },
+  {
+   "word": "close.",
+   "start": 53.032,
+   "end": 53.477
+  },
+  {
+   "word": "I",
+   "start": 54.227,
+   "end": 54.404
+  },
+  {
+   "word": "glanced",
+   "start": 54.404,
+   "end": 54.757
+  },
+  {
+   "word": "back",
+   "start": 54.757,
+   "end": 54.934
+  },
+  {
+   "word": "at",
+   "start": 54.934,
+   "end": 55.11
+  },
+  {
+   "word": "the",
+   "start": 55.11,
+   "end": 55.287
+  },
+  {
+   "word": "mirror",
+   "start": 55.287,
+   "end": 55.64
+  },
+  {
+   "word": "on",
+   "start": 55.64,
+   "end": 55.817
+  },
+  {
+   "word": "the",
+   "start": 55.817,
+   "end": 55.993
+  },
+  {
+   "word": "elevator",
+   "start": 55.993,
+   "end": 56.7
+  },
+  {
+   "word": "wall.",
+   "start": 56.7,
+   "end": 56.876
+  },
+  {
+   "word": "Someone",
+   "start": 59.276,
+   "end": 59.784
+  },
+  {
+   "word": "had",
+   "start": 59.784,
+   "end": 59.953
+  },
+  {
+   "word": "gotten",
+   "start": 59.953,
+   "end": 60.292
+  },
+  {
+   "word": "on",
+   "start": 60.292,
+   "end": 60.461
+  },
+  {
+   "word": "at",
+   "start": 60.461,
+   "end": 60.63
+  },
+  {
+   "word": "every",
+   "start": 60.63,
+   "end": 61.138
+  },
+  {
+   "word": "floor.",
+   "start": 61.138,
+   "end": 61.307
+  },
+  {
+   "word": "Follow",
+   "start": 63.107,
+   "end": 63.525
+  },
+  {
+   "word": "for",
+   "start": 63.525,
+   "end": 63.734
+  },
+  {
+   "word": "more.",
+   "start": 63.734,
+   "end": 64.153
+  }
+ ]
+}
