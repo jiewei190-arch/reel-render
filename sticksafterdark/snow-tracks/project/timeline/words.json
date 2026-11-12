@@ -1,0 +1,590 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "Our",
+   "start": 0.45,
+   "end": 0.669
+  },
+  {
+   "word": "cabin",
+   "start": 0.669,
+   "end": 1.107
+  },
+  {
+   "word": "is",
+   "start": 1.107,
+   "end": 1.326
+  },
+  {
+   "word": "six",
+   "start": 1.326,
+   "end": 1.544
+  },
+  {
+   "word": "miles",
+   "start": 1.544,
+   "end": 1.982
+  },
+  {
+   "word": "from",
+   "start": 1.982,
+   "end": 2.201
+  },
+  {
+   "word": "the",
+   "start": 2.201,
+   "end": 2.42
+  },
+  {
+   "word": "nearest",
+   "start": 2.42,
+   "end": 2.858
+  },
+  {
+   "word": "road.",
+   "start": 2.858,
+   "end": 3.077
+  },
+  {
+   "word": "Last",
+   "start": 3.827,
+   "end": 4.049
+  },
+  {
+   "word": "night,",
+   "start": 4.049,
+   "end": 4.272
+  },
+  {
+   "word": "it",
+   "start": 4.272,
+   "end": 4.494
+  },
+  {
+   "word": "snowed",
+   "start": 4.494,
+   "end": 4.939
+  },
+  {
+   "word": "for",
+   "start": 4.939,
+   "end": 5.162
+  },
+  {
+   "word": "the",
+   "start": 5.162,
+   "end": 5.384
+  },
+  {
+   "word": "first",
+   "start": 5.384,
+   "end": 5.607
+  },
+  {
+   "word": "time",
+   "start": 5.607,
+   "end": 6.051
+  },
+  {
+   "word": "this",
+   "start": 6.051,
+   "end": 6.274
+  },
+  {
+   "word": "winter.",
+   "start": 6.274,
+   "end": 6.719
+  },
+  {
+   "word": "This",
+   "start": 7.469,
+   "end": 7.691
+  },
+  {
+   "word": "morning,",
+   "start": 7.691,
+   "end": 8.135
+  },
+  {
+   "word": "I",
+   "start": 8.135,
+   "end": 8.357
+  },
+  {
+   "word": "looked",
+   "start": 8.357,
+   "end": 8.801
+  },
+  {
+   "word": "out",
+   "start": 8.801,
+   "end": 9.024
+  },
+  {
+   "word": "my",
+   "start": 9.024,
+   "end": 9.246
+  },
+  {
+   "word": "bedroom",
+   "start": 9.246,
+   "end": 9.69
+  },
+  {
+   "word": "window.",
+   "start": 9.69,
+   "end": 10.134
+  },
+  {
+   "word": "Footprints.",
+   "start": 10.884,
+   "end": 11.671
+  },
+  {
+   "word": "Bare",
+   "start": 12.221,
+   "end": 12.756
+  },
+  {
+   "word": "feet.",
+   "start": 12.756,
+   "end": 13.023
+  },
+  {
+   "word": "They",
+   "start": 13.773,
+   "end": 13.997
+  },
+  {
+   "word": "started",
+   "start": 13.997,
+   "end": 14.445
+  },
+  {
+   "word": "right",
+   "start": 14.445,
+   "end": 14.669
+  },
+  {
+   "word": "under",
+   "start": 14.669,
+   "end": 15.116
+  },
+  {
+   "word": "my",
+   "start": 15.116,
+   "end": 15.34
+  },
+  {
+   "word": "window",
+   "start": 15.34,
+   "end": 15.788
+  },
+  {
+   "word": "and",
+   "start": 15.788,
+   "end": 16.011
+  },
+  {
+   "word": "walked",
+   "start": 16.011,
+   "end": 16.459
+  },
+  {
+   "word": "away",
+   "start": 16.459,
+   "end": 16.907
+  },
+  {
+   "word": "into",
+   "start": 16.907,
+   "end": 17.354
+  },
+  {
+   "word": "the",
+   "start": 17.354,
+   "end": 17.578
+  },
+  {
+   "word": "woods.",
+   "start": 17.578,
+   "end": 17.802
+  },
+  {
+   "word": "No",
+   "start": 18.552,
+   "end": 18.779
+  },
+  {
+   "word": "tracks",
+   "start": 18.779,
+   "end": 19.006
+  },
+  {
+   "word": "coming",
+   "start": 19.006,
+   "end": 19.46
+  },
+  {
+   "word": "toward",
+   "start": 19.46,
+   "end": 19.914
+  },
+  {
+   "word": "the",
+   "start": 19.914,
+   "end": 20.14
+  },
+  {
+   "word": "cabin.",
+   "start": 20.14,
+   "end": 20.594
+  },
+  {
+   "word": "Only",
+   "start": 21.144,
+   "end": 21.614
+  },
+  {
+   "word": "away.",
+   "start": 21.614,
+   "end": 22.084
+  },
+  {
+   "word": "My",
+   "start": 23.884,
+   "end": 24.094
+  },
+  {
+   "word": "window",
+   "start": 24.094,
+   "end": 24.513
+  },
+  {
+   "word": "was",
+   "start": 24.513,
+   "end": 24.722
+  },
+  {
+   "word": "locked.",
+   "start": 24.722,
+   "end": 25.141
+  },
+  {
+   "word": "From",
+   "start": 25.691,
+   "end": 25.906
+  },
+  {
+   "word": "the",
+   "start": 25.906,
+   "end": 26.121
+  },
+  {
+   "word": "inside.",
+   "start": 26.121,
+   "end": 26.766
+  },
+  {
+   "word": "I",
+   "start": 27.516,
+   "end": 27.72
+  },
+  {
+   "word": "checked",
+   "start": 27.72,
+   "end": 28.128
+  },
+  {
+   "word": "it",
+   "start": 28.128,
+   "end": 28.332
+  },
+  {
+   "word": "twice.",
+   "start": 28.332,
+   "end": 28.741
+  },
+  {
+   "word": "So",
+   "start": 30.541,
+   "end": 30.72
+  },
+  {
+   "word": "whatever",
+   "start": 30.72,
+   "end": 31.259
+  },
+  {
+   "word": "made",
+   "start": 31.259,
+   "end": 31.618
+  },
+  {
+   "word": "them",
+   "start": 31.618,
+   "end": 31.797
+  },
+  {
+   "word": "was",
+   "start": 31.797,
+   "end": 31.977
+  },
+  {
+   "word": "in",
+   "start": 31.977,
+   "end": 32.156
+  },
+  {
+   "word": "here",
+   "start": 32.156,
+   "end": 32.516
+  },
+  {
+   "word": "with",
+   "start": 32.516,
+   "end": 32.695
+  },
+  {
+   "word": "me.",
+   "start": 32.695,
+   "end": 32.875
+  },
+  {
+   "word": "In",
+   "start": 33.625,
+   "end": 33.922
+  },
+  {
+   "word": "my",
+   "start": 33.922,
+   "end": 34.22
+  },
+  {
+   "word": "room.",
+   "start": 34.22,
+   "end": 34.517
+  },
+  {
+   "word": "While",
+   "start": 35.067,
+   "end": 35.554
+  },
+  {
+   "word": "I",
+   "start": 35.554,
+   "end": 35.797
+  },
+  {
+   "word": "slept.",
+   "start": 35.797,
+   "end": 36.041
+  },
+  {
+   "word": "And",
+   "start": 36.791,
+   "end": 37.029
+  },
+  {
+   "word": "then",
+   "start": 37.029,
+   "end": 37.267
+  },
+  {
+   "word": "it",
+   "start": 37.267,
+   "end": 37.505
+  },
+  {
+   "word": "left.",
+   "start": 37.505,
+   "end": 37.743
+  },
+  {
+   "word": "I",
+   "start": 39.543,
+   "end": 39.79
+  },
+  {
+   "word": "told",
+   "start": 39.79,
+   "end": 40.037
+  },
+  {
+   "word": "myself",
+   "start": 40.037,
+   "end": 40.531
+  },
+  {
+   "word": "that",
+   "start": 40.531,
+   "end": 40.778
+  },
+  {
+   "word": "was",
+   "start": 40.778,
+   "end": 41.026
+  },
+  {
+   "word": "the",
+   "start": 41.026,
+   "end": 41.273
+  },
+  {
+   "word": "good",
+   "start": 41.273,
+   "end": 41.52
+  },
+  {
+   "word": "part.",
+   "start": 41.52,
+   "end": 41.767
+  },
+  {
+   "word": "It",
+   "start": 42.317,
+   "end": 42.67
+  },
+  {
+   "word": "left.",
+   "start": 42.67,
+   "end": 43.024
+  },
+  {
+   "word": "I",
+   "start": 43.774,
+   "end": 43.965
+  },
+  {
+   "word": "locked",
+   "start": 43.965,
+   "end": 44.347
+  },
+  {
+   "word": "every",
+   "start": 44.347,
+   "end": 44.92
+  },
+  {
+   "word": "door.",
+   "start": 44.92,
+   "end": 45.111
+  },
+  {
+   "word": "I",
+   "start": 45.661,
+   "end": 46.004
+  },
+  {
+   "word": "didn't",
+   "start": 46.004,
+   "end": 46.347
+  },
+  {
+   "word": "sleep.",
+   "start": 46.347,
+   "end": 46.689
+  },
+  {
+   "word": "It",
+   "start": 48.489,
+   "end": 48.683
+  },
+  {
+   "word": "snowed",
+   "start": 48.683,
+   "end": 49.071
+  },
+  {
+   "word": "again",
+   "start": 49.071,
+   "end": 49.46
+  },
+  {
+   "word": "tonight.",
+   "start": 49.46,
+   "end": 49.848
+  },
+  {
+   "word": "I",
+   "start": 50.598,
+   "end": 50.794
+  },
+  {
+   "word": "just",
+   "start": 50.794,
+   "end": 50.99
+  },
+  {
+   "word": "checked",
+   "start": 50.99,
+   "end": 51.382
+  },
+  {
+   "word": "the",
+   "start": 51.382,
+   "end": 51.578
+  },
+  {
+   "word": "window.",
+   "start": 51.578,
+   "end": 51.97
+  },
+  {
+   "word": "There's",
+   "start": 54.37,
+   "end": 54.78
+  },
+  {
+   "word": "a",
+   "start": 54.78,
+   "end": 54.985
+  },
+  {
+   "word": "new",
+   "start": 54.985,
+   "end": 55.19
+  },
+  {
+   "word": "set",
+   "start": 55.19,
+   "end": 55.396
+  },
+  {
+   "word": "of",
+   "start": 55.396,
+   "end": 55.601
+  },
+  {
+   "word": "tracks.",
+   "start": 55.601,
+   "end": 55.806
+  },
+  {
+   "word": "Coming",
+   "start": 57.606,
+   "end": 58.184
+  },
+  {
+   "word": "back.",
+   "start": 58.184,
+   "end": 58.473
+  },
+  {
+   "word": "Follow",
+   "start": 60.673,
+   "end": 61.091
+  },
+  {
+   "word": "for",
+   "start": 61.091,
+   "end": 61.301
+  },
+  {
+   "word": "more.",
+   "start": 61.301,
+   "end": 61.719
+  }
+ ]
+}
