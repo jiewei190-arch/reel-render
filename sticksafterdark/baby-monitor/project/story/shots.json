@@ -1,0 +1,471 @@
+{
+ "title": "Sticks After Dark 9 Baby Monitor",
+ "duration": 64.85,
+ "music": [
+  {
+   "start": 0,
+   "end": 60.7,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01_monitor_bed",
+   "start": 0,
+   "end": 2.0,
+   "line": "We put a baby monitor",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/hum_again.wav",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s02_nursery_intro",
+   "start": 2.0,
+   "end": 4.6,
+   "line": "in our daughter's room when she turned two.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s03_clock",
+   "start": 4.6,
+   "end": 6.2,
+   "line": "Last night, around three,",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "s04_crackle",
+   "start": 6.2,
+   "end": 7.6,
+   "line": "it crackled on.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "sfx/crackle.wav",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05_humming",
+   "start": 7.6,
+   "end": 9.3,
+   "line": "Someone was humming.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sfx/hum_monitor.wav",
+     "gain": -3
+    }
+   ]
+  },
+  {
+   "id": "s06_leds",
+   "start": 9.3,
+   "end": 11.6,
+   "line": "Soft. Slow.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s07_lullaby",
+   "start": 11.6,
+   "end": 14.3,
+   "line": "A lullaby.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s08_shake",
+   "start": 14.3,
+   "end": 16.3,
+   "line": "I shook my wife awake.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s09_heard",
+   "start": 16.3,
+   "end": 18.2,
+   "line": "She heard it too.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s10_hall_run",
+   "start": 18.2,
+   "end": 19.7,
+   "line": "We ran down the hall",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 40
+    },
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 41
+    },
+    {
+     "at": 0.55,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 42
+    },
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 43
+    },
+    {
+     "at": 1.05,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 44
+    },
+    {
+     "at": 1.3,
+     "name": "footstep",
+     "gain": -12,
+     "seed": 45
+    }
+   ]
+  },
+  {
+   "id": "s11_door",
+   "start": 19.7,
+   "end": 21.1,
+   "line": "and opened the door.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s12_crib",
+   "start": 21.1,
+   "end": 23.5,
+   "line": "Our daughter was sitting up in her crib.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s13_wide",
+   "start": 23.5,
+   "end": 25.1,
+   "line": "Wide awake.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s14_nobody",
+   "start": 25.1,
+   "end": 27.0,
+   "line": "Nobody else in the room.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s15_window",
+   "start": 27.0,
+   "end": 28.7,
+   "line": "The window locked.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s16_ask",
+   "start": 28.7,
+   "end": 31.2,
+   "line": "\"Who was singing to you?\" I asked.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s17_point",
+   "start": 31.2,
+   "end": 33.7,
+   "line": "She pointed at the corner of the ceiling.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s18_corner",
+   "start": 33.7,
+   "end": 35.2,
+   "line": "(held: the corner, pure black)",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s19_lady",
+   "start": 35.2,
+   "end": 36.9,
+   "line": "[CHILD] The tall lady.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s20_folded",
+   "start": 36.9,
+   "end": 39.0,
+   "line": "[CHILD] She stopped when you came.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s20b_carry",
+   "start": 39.0,
+   "end": 40.4,
+   "line": "(carrying her down the hall)",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -16,
+     "seed": 60
+    },
+    {
+     "at": 0.6,
+     "name": "footstep",
+     "gain": -16,
+     "seed": 61
+    },
+    {
+     "at": 1.1,
+     "name": "footstep",
+     "gain": -16,
+     "seed": 62
+    }
+   ]
+  },
+  {
+   "id": "s21_three",
+   "start": 40.4,
+   "end": 43.0,
+   "line": "We brought her to sleep in our bed.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s22_quiet",
+   "start": 43.0,
+   "end": 46.0,
+   "line": "It's quiet now.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s23_me",
+   "start": 46.0,
+   "end": 48.3,
+   "line": "Everyone's asleep but me.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s23b_hall_dark",
+   "start": 48.3,
+   "end": 50.2,
+   "line": "(beat: the dark hall, her door closed)",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 56,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "s24_flat",
+   "start": 50.2,
+   "end": 52.9,
+   "line": "The monitor is still on the nightstand.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s25_empty",
+   "start": 52.9,
+   "end": 54.9,
+   "line": "Her room is empty.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s26_held",
+   "start": 54.9,
+   "end": 56.6,
+   "line": "(held silent frame 2.4 s)",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s26_again",
+   "start": 56.6,
+   "end": 58.5,
+   "line": "And it just started humming again.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "sfx/hum_again.wav",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s27_arm",
+   "start": 58.5,
+   "end": 60.7,
+   "line": "(final frame: the arm from the corner rocks the mobile)",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   },
+   "jitter": [
+    58.9
+   ],
+   "sfx": [
+    {
+     "at": 0.02,
+     "name": "stinger",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s28_end",
+   "start": 60.7,
+   "end": 64.85,
+   "line": "Follow for more.",
+   "in": "cut",
+   "captions": false
+  }
+ ]
+}

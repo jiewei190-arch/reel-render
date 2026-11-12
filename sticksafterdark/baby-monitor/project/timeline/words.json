@@ -1,0 +1,610 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "We",
+   "start": 0.45,
+   "end": 0.65
+  },
+  {
+   "word": "put",
+   "start": 0.65,
+   "end": 0.849
+  },
+  {
+   "word": "a",
+   "start": 0.849,
+   "end": 1.049
+  },
+  {
+   "word": "baby",
+   "start": 1.049,
+   "end": 1.448
+  },
+  {
+   "word": "monitor",
+   "start": 1.448,
+   "end": 2.046
+  },
+  {
+   "word": "in",
+   "start": 2.046,
+   "end": 2.246
+  },
+  {
+   "word": "our",
+   "start": 2.246,
+   "end": 2.446
+  },
+  {
+   "word": "daughter's",
+   "start": 2.446,
+   "end": 2.845
+  },
+  {
+   "word": "room",
+   "start": 2.845,
+   "end": 3.044
+  },
+  {
+   "word": "when",
+   "start": 3.044,
+   "end": 3.244
+  },
+  {
+   "word": "she",
+   "start": 3.244,
+   "end": 3.443
+  },
+  {
+   "word": "turned",
+   "start": 3.443,
+   "end": 3.843
+  },
+  {
+   "word": "two.",
+   "start": 3.843,
+   "end": 4.042
+  },
+  {
+   "word": "Last",
+   "start": 4.792,
+   "end": 5.034
+  },
+  {
+   "word": "night,",
+   "start": 5.034,
+   "end": 5.276
+  },
+  {
+   "word": "around",
+   "start": 5.276,
+   "end": 5.76
+  },
+  {
+   "word": "three,",
+   "start": 5.76,
+   "end": 6.002
+  },
+  {
+   "word": "it",
+   "start": 6.002,
+   "end": 6.244
+  },
+  {
+   "word": "crackled",
+   "start": 6.244,
+   "end": 6.728
+  },
+  {
+   "word": "on.",
+   "start": 6.728,
+   "end": 6.97
+  },
+  {
+   "word": "Someone",
+   "start": 7.72,
+   "end": 8.283
+  },
+  {
+   "word": "was",
+   "start": 8.283,
+   "end": 8.47
+  },
+  {
+   "word": "humming.",
+   "start": 8.47,
+   "end": 8.845
+  },
+  {
+   "word": "Soft.",
+   "start": 9.395,
+   "end": 10.031
+  },
+  {
+   "word": "Slow.",
+   "start": 10.581,
+   "end": 11.227
+  },
+  {
+   "word": "A",
+   "start": 11.777,
+   "end": 11.992
+  },
+  {
+   "word": "lullaby.",
+   "start": 11.992,
+   "end": 12.639
+  },
+  {
+   "word": "I",
+   "start": 14.439,
+   "end": 14.621
+  },
+  {
+   "word": "shook",
+   "start": 14.621,
+   "end": 14.804
+  },
+  {
+   "word": "my",
+   "start": 14.804,
+   "end": 14.986
+  },
+  {
+   "word": "wife",
+   "start": 14.986,
+   "end": 15.351
+  },
+  {
+   "word": "awake.",
+   "start": 15.351,
+   "end": 15.898
+  },
+  {
+   "word": "She",
+   "start": 16.448,
+   "end": 16.724
+  },
+  {
+   "word": "heard",
+   "start": 16.724,
+   "end": 16.999
+  },
+  {
+   "word": "it",
+   "start": 16.999,
+   "end": 17.275
+  },
+  {
+   "word": "too.",
+   "start": 17.275,
+   "end": 17.551
+  },
+  {
+   "word": "We",
+   "start": 18.301,
+   "end": 18.498
+  },
+  {
+   "word": "ran",
+   "start": 18.498,
+   "end": 18.696
+  },
+  {
+   "word": "down",
+   "start": 18.696,
+   "end": 18.894
+  },
+  {
+   "word": "the",
+   "start": 18.894,
+   "end": 19.092
+  },
+  {
+   "word": "hall",
+   "start": 19.092,
+   "end": 19.29
+  },
+  {
+   "word": "and",
+   "start": 19.29,
+   "end": 19.487
+  },
+  {
+   "word": "opened",
+   "start": 19.487,
+   "end": 20.081
+  },
+  {
+   "word": "the",
+   "start": 20.081,
+   "end": 20.278
+  },
+  {
+   "word": "door.",
+   "start": 20.278,
+   "end": 20.476
+  },
+  {
+   "word": "Our",
+   "start": 21.226,
+   "end": 21.409
+  },
+  {
+   "word": "daughter",
+   "start": 21.409,
+   "end": 21.775
+  },
+  {
+   "word": "was",
+   "start": 21.775,
+   "end": 21.958
+  },
+  {
+   "word": "sitting",
+   "start": 21.958,
+   "end": 22.324
+  },
+  {
+   "word": "up",
+   "start": 22.324,
+   "end": 22.507
+  },
+  {
+   "word": "in",
+   "start": 22.507,
+   "end": 22.69
+  },
+  {
+   "word": "her",
+   "start": 22.69,
+   "end": 22.873
+  },
+  {
+   "word": "crib.",
+   "start": 22.873,
+   "end": 23.056
+  },
+  {
+   "word": "Wide",
+   "start": 23.606,
+   "end": 23.946
+  },
+  {
+   "word": "awake.",
+   "start": 23.946,
+   "end": 24.457
+  },
+  {
+   "word": "Nobody",
+   "start": 25.207,
+   "end": 25.717
+  },
+  {
+   "word": "else",
+   "start": 25.717,
+   "end": 26.057
+  },
+  {
+   "word": "in",
+   "start": 26.057,
+   "end": 26.227
+  },
+  {
+   "word": "the",
+   "start": 26.227,
+   "end": 26.397
+  },
+  {
+   "word": "room.",
+   "start": 26.397,
+   "end": 26.567
+  },
+  {
+   "word": "The",
+   "start": 27.117,
+   "end": 27.316
+  },
+  {
+   "word": "window",
+   "start": 27.316,
+   "end": 27.716
+  },
+  {
+   "word": "locked.",
+   "start": 27.716,
+   "end": 28.115
+  },
+  {
+   "word": "\"Who",
+   "start": 28.865,
+   "end": 29.063
+  },
+  {
+   "word": "was",
+   "start": 29.063,
+   "end": 29.26
+  },
+  {
+   "word": "singing",
+   "start": 29.26,
+   "end": 29.655
+  },
+  {
+   "word": "to",
+   "start": 29.655,
+   "end": 29.853
+  },
+  {
+   "word": "you?\"",
+   "start": 29.853,
+   "end": 30.051
+  },
+  {
+   "word": "I",
+   "start": 30.051,
+   "end": 30.248
+  },
+  {
+   "word": "asked.",
+   "start": 30.248,
+   "end": 30.644
+  },
+  {
+   "word": "She",
+   "start": 31.394,
+   "end": 31.563
+  },
+  {
+   "word": "pointed",
+   "start": 31.563,
+   "end": 31.903
+  },
+  {
+   "word": "at",
+   "start": 31.903,
+   "end": 32.072
+  },
+  {
+   "word": "the",
+   "start": 32.072,
+   "end": 32.242
+  },
+  {
+   "word": "corner",
+   "start": 32.242,
+   "end": 32.581
+  },
+  {
+   "word": "of",
+   "start": 32.581,
+   "end": 32.751
+  },
+  {
+   "word": "the",
+   "start": 32.751,
+   "end": 32.921
+  },
+  {
+   "word": "ceiling.",
+   "start": 32.921,
+   "end": 33.26
+  },
+  {
+   "word": "The",
+   "start": 35.26,
+   "end": 35.589
+  },
+  {
+   "word": "tall",
+   "start": 35.589,
+   "end": 35.918
+  },
+  {
+   "word": "lady.",
+   "start": 35.918,
+   "end": 36.576
+  },
+  {
+   "word": "She",
+   "start": 36.576,
+   "end": 36.905
+  },
+  {
+   "word": "stopped",
+   "start": 36.905,
+   "end": 37.564
+  },
+  {
+   "word": "when",
+   "start": 37.564,
+   "end": 37.893
+  },
+  {
+   "word": "you",
+   "start": 37.893,
+   "end": 38.222
+  },
+  {
+   "word": "came.",
+   "start": 38.222,
+   "end": 38.88
+  },
+  {
+   "word": "We",
+   "start": 40.48,
+   "end": 40.695
+  },
+  {
+   "word": "brought",
+   "start": 40.695,
+   "end": 40.91
+  },
+  {
+   "word": "her",
+   "start": 40.91,
+   "end": 41.126
+  },
+  {
+   "word": "to",
+   "start": 41.126,
+   "end": 41.341
+  },
+  {
+   "word": "sleep",
+   "start": 41.341,
+   "end": 41.556
+  },
+  {
+   "word": "in",
+   "start": 41.556,
+   "end": 41.771
+  },
+  {
+   "word": "our",
+   "start": 41.771,
+   "end": 41.986
+  },
+  {
+   "word": "bed.",
+   "start": 41.986,
+   "end": 42.201
+  },
+  {
+   "word": "It's",
+   "start": 44.801,
+   "end": 45.151
+  },
+  {
+   "word": "quiet",
+   "start": 45.151,
+   "end": 45.501
+  },
+  {
+   "word": "now.",
+   "start": 45.501,
+   "end": 45.851
+  },
+  {
+   "word": "Everyone's",
+   "start": 46.401,
+   "end": 47.169
+  },
+  {
+   "word": "asleep",
+   "start": 47.169,
+   "end": 47.553
+  },
+  {
+   "word": "but",
+   "start": 47.553,
+   "end": 47.745
+  },
+  {
+   "word": "me.",
+   "start": 47.745,
+   "end": 47.937
+  },
+  {
+   "word": "The",
+   "start": 50.337,
+   "end": 50.53
+  },
+  {
+   "word": "monitor",
+   "start": 50.53,
+   "end": 51.111
+  },
+  {
+   "word": "is",
+   "start": 51.111,
+   "end": 51.305
+  },
+  {
+   "word": "still",
+   "start": 51.305,
+   "end": 51.498
+  },
+  {
+   "word": "on",
+   "start": 51.498,
+   "end": 51.692
+  },
+  {
+   "word": "the",
+   "start": 51.692,
+   "end": 51.885
+  },
+  {
+   "word": "nightstand.",
+   "start": 51.885,
+   "end": 52.272
+  },
+  {
+   "word": "Her",
+   "start": 53.022,
+   "end": 53.28
+  },
+  {
+   "word": "room",
+   "start": 53.28,
+   "end": 53.538
+  },
+  {
+   "word": "is",
+   "start": 53.538,
+   "end": 53.796
+  },
+  {
+   "word": "empty.",
+   "start": 53.796,
+   "end": 54.313
+  },
+  {
+   "word": "And",
+   "start": 56.713,
+   "end": 56.9
+  },
+  {
+   "word": "it",
+   "start": 56.9,
+   "end": 57.087
+  },
+  {
+   "word": "just",
+   "start": 57.087,
+   "end": 57.275
+  },
+  {
+   "word": "started",
+   "start": 57.275,
+   "end": 57.65
+  },
+  {
+   "word": "humming",
+   "start": 57.65,
+   "end": 58.025
+  },
+  {
+   "word": "again.",
+   "start": 58.025,
+   "end": 58.4
+  },
+  {
+   "word": "Follow",
+   "start": 60.8,
+   "end": 61.218
+  },
+  {
+   "word": "for",
+   "start": 61.218,
+   "end": 61.427
+  },
+  {
+   "word": "more.",
+   "start": 61.427,
+   "end": 61.846
+  }
+ ]
+}
