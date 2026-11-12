@@ -13,3 +13,5 @@ Voice is synthetic.
 **Pinned comment:** Do you take the stairs after dark now, or do you still check the elevator mirror?
 
 **Cover frame:** 26.7 s (inside the car, doors open on a black corridor, amber "3" above the doors). It does not spoil the twist; the crowd in the mirror only appears from 59.3 s.
+
+Length 65.79 s, 9:16 1080x1920, 24 fps, -14.1 LUFS, true peak -1.4 dBFS.
