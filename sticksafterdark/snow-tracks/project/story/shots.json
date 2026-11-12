@@ -1,0 +1,391 @@
+{
+ "title": "Sticks After Dark 7 Snow Tracks",
+ "duration": 63.919,
+ "shots": [
+  {
+   "id": "s01_window_night",
+   "start": 0.0,
+   "end": 2.3,
+   "line": "Our cabin is six miles from the",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s02_cabin_far",
+   "start": 2.3,
+   "end": 3.75,
+   "line": "nearest road.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s03_snowfall",
+   "start": 3.75,
+   "end": 5.6,
+   "line": "Last night, it snowed for the first",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s04_asleep",
+   "start": 5.6,
+   "end": 7.4,
+   "line": "time this winter.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s05_morning",
+   "start": 7.4,
+   "end": 10.5,
+   "line": "This morning, I looked out my bedroom window.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 0.7,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 1.3,
+     "name": "footstep",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s06_footprints",
+   "start": 10.5,
+   "end": 12.0,
+   "line": "Footprints.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s07_bare_feet",
+   "start": 12.0,
+   "end": 13.65,
+   "line": "Bare feet.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s08_under_window",
+   "start": 13.65,
+   "end": 15.8,
+   "line": "They started right under my window and",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s09_into_woods",
+   "start": 15.8,
+   "end": 18.4,
+   "line": "walked away into the woods.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s10_one_line",
+   "start": 18.4,
+   "end": 20.9,
+   "line": "No tracks coming toward the cabin.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s11_only_away",
+   "start": 20.9,
+   "end": 23.7,
+   "line": "Only away.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s12_latch",
+   "start": 23.7,
+   "end": 25.55,
+   "line": "My window was locked.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s13_inside",
+   "start": 25.55,
+   "end": 27.35,
+   "line": "From the inside.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s14_twice",
+   "start": 27.35,
+   "end": 30.35,
+   "line": "I checked it twice.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "tick",
+     "gain": -8
+    },
+    {
+     "at": 1.1,
+     "name": "tick",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s15_room",
+   "start": 30.35,
+   "end": 33.45,
+   "line": "So whatever made them was in here with me.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s16_from_corner",
+   "start": 33.45,
+   "end": 34.95,
+   "line": "In my room.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s17_slept",
+   "start": 34.95,
+   "end": 36.65,
+   "line": "While I slept.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s18_it_left",
+   "start": 36.65,
+   "end": 39.35,
+   "line": "And then it left.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s19_good_part",
+   "start": 39.35,
+   "end": 42.15,
+   "line": "I told myself that was the good part.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s20_it_left",
+   "start": 42.15,
+   "end": 43.65,
+   "line": "It left.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s21_locks",
+   "start": 43.65,
+   "end": 45.5,
+   "line": "I locked every door.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "impact",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
+     "name": "tick",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s22_awake",
+   "start": 45.5,
+   "end": 48.3,
+   "line": "I didn't sleep.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s23_snow_again",
+   "start": 48.3,
+   "end": 50.45,
+   "line": "It snowed again tonight.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s24_check",
+   "start": 50.45,
+   "end": 52.0,
+   "line": "I just checked the window.",
+   "in": "cut",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -20
+    },
+    {
+     "at": 0.7,
+     "name": "footstep",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s25_held",
+   "start": 52.0,
+   "end": 54.3,
+   "line": "",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "heartbeat",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s26_new_tracks",
+   "start": 54.3,
+   "end": 57.45,
+   "line": "There's a new set of tracks.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s27_coming_back",
+   "start": 57.45,
+   "end": 60.4,
+   "line": "Coming back.",
+   "in": "cut",
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "sfx": [
+    {
+     "at": 0.16,
+     "name": "stinger",
+     "gain": -3
+    }
+   ],
+   "jitter": [
+    57.61
+   ]
+  },
+  {
+   "id": "s28_end",
+   "start": 60.4,
+   "end": 63.919,
+   "line": "Follow for more.",
+   "in": "cut",
+   "params": {
+    "captions": false
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 60.4,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ]
+}
