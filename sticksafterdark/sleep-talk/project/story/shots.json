@@ -1,0 +1,347 @@
+{
+ "title": "Sticks After Dark 8 Sleep Talk",
+ "duration": 62.28,
+ "music": [
+  {
+   "start": 0,
+   "end": 57.9,
+   "mood": "dark",
+   "intensity": 0.25
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01_asleep_talking",
+   "start": 0.0,
+   "end": 2.0,
+   "line": "I use an app that records me talking",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s02_rec_screen",
+   "start": 2.0,
+   "end": 3.95,
+   "line": "in my sleep.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s03_history",
+   "start": 3.95,
+   "end": 6.2,
+   "line": "Most nights, it catches nothing.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s04_mumble",
+   "start": 6.2,
+   "end": 7.9,
+   "line": "Maybe a mumble.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s05_4107",
+   "start": 7.9,
+   "end": 10.7,
+   "line": "This morning, it had forty-one minutes.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s06_its_me",
+   "start": 10.7,
+   "end": 12.2,
+   "line": "It's me.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s07_whisper_wave",
+   "start": 12.2,
+   "end": 13.6,
+   "line": "Whispering.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s08_calm",
+   "start": 13.6,
+   "end": 15.0,
+   "line": "Calm.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s09_answering",
+   "start": 15.0,
+   "end": 17.3,
+   "line": "Like I'm answering questions.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s10_no_questions",
+   "start": 17.3,
+   "end": 19.3,
+   "line": "But there are no questions.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s11_pauses",
+   "start": 19.3,
+   "end": 21.9,
+   "line": "Just pauses. Long ones.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s12_doorway",
+   "start": 21.9,
+   "end": 23.9,
+   "line": "(beat) the dark bedroom doorway, slow push",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s13_then_voice",
+   "start": 23.9,
+   "end": 25.6,
+   "line": "Then my voice.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s14_yes",
+   "start": 25.6,
+   "end": 28.2,
+   "line": "[WHISPER] Yes. (beat)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s15_hallway",
+   "start": 28.2,
+   "end": 30.0,
+   "line": "[WHISPER] The second door on the left.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s16_door_close",
+   "start": 30.0,
+   "end": 31.6,
+   "line": "(beat) the second door on the left",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s17_heavy_sleeper",
+   "start": 31.6,
+   "end": 33.4,
+   "line": "[WHISPER] She's a heavy sleeper.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s18_frozen",
+   "start": 33.4,
+   "end": 35.3,
+   "line": "(beat) listening, frozen",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s19_her_door",
+   "start": 35.3,
+   "end": 37.2,
+   "line": "The second door on the left is",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s20_realise",
+   "start": 37.2,
+   "end": 39.1,
+   "line": "my little sister's room.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s21_ran_in",
+   "start": 39.1,
+   "end": 40.6,
+   "line": "I ran in.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "footstep",
+     "gain": -14
+    },
+    {
+     "at": 0.45,
+     "name": "footstep",
+     "gain": -15
+    },
+    {
+     "at": 0.8,
+     "name": "footstep",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s22_she_was_fine",
+   "start": 40.6,
+   "end": 42.1,
+   "line": "She was fine.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s23_still_asleep",
+   "start": 42.1,
+   "end": 43.8,
+   "line": "Still asleep.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s24_back_to_rec",
+   "start": 43.8,
+   "end": 46.6,
+   "line": "I went back to the recording. (beat)",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "tick",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s25_scrub_end",
+   "start": 46.6,
+   "end": 48.6,
+   "line": "At the very end, after a long silence,",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s26_one_more",
+   "start": 48.6,
+   "end": 50.9,
+   "line": "there's one more voice.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s27_isnt_mine",
+   "start": 50.9,
+   "end": 52.9,
+   "line": "It isn't mine.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s28_held",
+   "start": 52.9,
+   "end": 55.1,
+   "line": "(held silent frame, 2.2 s) last night: asleep in the violet glow",
+   "amb": {
+    "name": "roomtone",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s29_thank_you",
+   "start": 55.1,
+   "end": 57.9,
+   "line": "[OTHER] Thank you.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "jitter": [
+     56.5
+    ]
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "stinger",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s30_end",
+   "start": 57.9,
+   "end": 62.28,
+   "line": "Follow for more.",
+   "captions": false
+  }
+ ]
+}
