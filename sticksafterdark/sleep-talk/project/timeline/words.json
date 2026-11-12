@@ -1,0 +1,510 @@
+{
+ "source": "kokoro-chunks+syllables",
+ "words": [
+  {
+   "word": "I",
+   "start": 0.45,
+   "end": 0.661
+  },
+  {
+   "word": "use",
+   "start": 0.661,
+   "end": 1.082
+  },
+  {
+   "word": "an",
+   "start": 1.082,
+   "end": 1.292
+  },
+  {
+   "word": "app",
+   "start": 1.292,
+   "end": 1.503
+  },
+  {
+   "word": "that",
+   "start": 1.503,
+   "end": 1.714
+  },
+  {
+   "word": "records",
+   "start": 1.714,
+   "end": 2.135
+  },
+  {
+   "word": "me",
+   "start": 2.135,
+   "end": 2.345
+  },
+  {
+   "word": "talking",
+   "start": 2.345,
+   "end": 2.766
+  },
+  {
+   "word": "in",
+   "start": 2.766,
+   "end": 2.977
+  },
+  {
+   "word": "my",
+   "start": 2.977,
+   "end": 3.188
+  },
+  {
+   "word": "sleep.",
+   "start": 3.188,
+   "end": 3.398
+  },
+  {
+   "word": "Most",
+   "start": 4.148,
+   "end": 4.39
+  },
+  {
+   "word": "nights,",
+   "start": 4.39,
+   "end": 4.632
+  },
+  {
+   "word": "it",
+   "start": 4.632,
+   "end": 4.874
+  },
+  {
+   "word": "catches",
+   "start": 4.874,
+   "end": 5.359
+  },
+  {
+   "word": "nothing.",
+   "start": 5.359,
+   "end": 5.843
+  },
+  {
+   "word": "Maybe",
+   "start": 6.393,
+   "end": 6.795
+  },
+  {
+   "word": "a",
+   "start": 6.795,
+   "end": 6.995
+  },
+  {
+   "word": "mumble.",
+   "start": 6.995,
+   "end": 7.397
+  },
+  {
+   "word": "This",
+   "start": 8.147,
+   "end": 8.342
+  },
+  {
+   "word": "morning,",
+   "start": 8.342,
+   "end": 8.731
+  },
+  {
+   "word": "it",
+   "start": 8.731,
+   "end": 8.926
+  },
+  {
+   "word": "had",
+   "start": 8.926,
+   "end": 9.12
+  },
+  {
+   "word": "forty-one",
+   "start": 9.12,
+   "end": 9.704
+  },
+  {
+   "word": "minutes.",
+   "start": 9.704,
+   "end": 10.288
+  },
+  {
+   "word": "It's",
+   "start": 11.038,
+   "end": 11.402
+  },
+  {
+   "word": "me.",
+   "start": 11.402,
+   "end": 11.767
+  },
+  {
+   "word": "Whispering.",
+   "start": 12.317,
+   "end": 13.147
+  },
+  {
+   "word": "Calm.",
+   "start": 13.697,
+   "end": 14.296
+  },
+  {
+   "word": "Like",
+   "start": 15.046,
+   "end": 15.463
+  },
+  {
+   "word": "I'm",
+   "start": 15.463,
+   "end": 15.672
+  },
+  {
+   "word": "answering",
+   "start": 15.672,
+   "end": 16.297
+  },
+  {
+   "word": "questions.",
+   "start": 16.297,
+   "end": 16.714
+  },
+  {
+   "word": "But",
+   "start": 17.464,
+   "end": 17.637
+  },
+  {
+   "word": "there",
+   "start": 17.637,
+   "end": 17.984
+  },
+  {
+   "word": "are",
+   "start": 17.984,
+   "end": 18.33
+  },
+  {
+   "word": "no",
+   "start": 18.33,
+   "end": 18.503
+  },
+  {
+   "word": "questions.",
+   "start": 18.503,
+   "end": 18.85
+  },
+  {
+   "word": "Just",
+   "start": 19.4,
+   "end": 19.733
+  },
+  {
+   "word": "pauses.",
+   "start": 19.733,
+   "end": 20.398
+  },
+  {
+   "word": "Long",
+   "start": 20.948,
+   "end": 21.218
+  },
+  {
+   "word": "ones.",
+   "start": 21.218,
+   "end": 21.757
+  },
+  {
+   "word": "Then",
+   "start": 23.957,
+   "end": 24.216
+  },
+  {
+   "word": "my",
+   "start": 24.216,
+   "end": 24.474
+  },
+  {
+   "word": "voice.",
+   "start": 24.474,
+   "end": 24.991
+  },
+  {
+   "word": "Yes.",
+   "start": 25.741,
+   "end": 26.457
+  },
+  {
+   "word": "The",
+   "start": 28.257,
+   "end": 28.53
+  },
+  {
+   "word": "second",
+   "start": 28.53,
+   "end": 29.076
+  },
+  {
+   "word": "door",
+   "start": 29.076,
+   "end": 29.349
+  },
+  {
+   "word": "on",
+   "start": 29.349,
+   "end": 29.622
+  },
+  {
+   "word": "the",
+   "start": 29.622,
+   "end": 29.895
+  },
+  {
+   "word": "left.",
+   "start": 29.895,
+   "end": 30.168
+  },
+  {
+   "word": "She's",
+   "start": 31.668,
+   "end": 31.91
+  },
+  {
+   "word": "a",
+   "start": 31.91,
+   "end": 32.152
+  },
+  {
+   "word": "heavy",
+   "start": 32.152,
+   "end": 32.637
+  },
+  {
+   "word": "sleeper.",
+   "start": 32.637,
+   "end": 33.121
+  },
+  {
+   "word": "The",
+   "start": 35.321,
+   "end": 35.55
+  },
+  {
+   "word": "second",
+   "start": 35.55,
+   "end": 36.008
+  },
+  {
+   "word": "door",
+   "start": 36.008,
+   "end": 36.238
+  },
+  {
+   "word": "on",
+   "start": 36.238,
+   "end": 36.467
+  },
+  {
+   "word": "the",
+   "start": 36.467,
+   "end": 36.696
+  },
+  {
+   "word": "left",
+   "start": 36.696,
+   "end": 36.926
+  },
+  {
+   "word": "is",
+   "start": 36.926,
+   "end": 37.155
+  },
+  {
+   "word": "my",
+   "start": 37.155,
+   "end": 37.384
+  },
+  {
+   "word": "little",
+   "start": 37.384,
+   "end": 37.843
+  },
+  {
+   "word": "sister's",
+   "start": 37.843,
+   "end": 38.301
+  },
+  {
+   "word": "room.",
+   "start": 38.301,
+   "end": 38.53
+  },
+  {
+   "word": "I",
+   "start": 39.28,
+   "end": 39.564
+  },
+  {
+   "word": "ran",
+   "start": 39.564,
+   "end": 39.848
+  },
+  {
+   "word": "in.",
+   "start": 39.848,
+   "end": 40.132
+  },
+  {
+   "word": "She",
+   "start": 40.682,
+   "end": 40.908
+  },
+  {
+   "word": "was",
+   "start": 40.908,
+   "end": 41.135
+  },
+  {
+   "word": "fine.",
+   "start": 41.135,
+   "end": 41.588
+  },
+  {
+   "word": "Still",
+   "start": 42.138,
+   "end": 42.455
+  },
+  {
+   "word": "asleep.",
+   "start": 42.455,
+   "end": 43.088
+  },
+  {
+   "word": "I",
+   "start": 43.838,
+   "end": 44.031
+  },
+  {
+   "word": "went",
+   "start": 44.031,
+   "end": 44.224
+  },
+  {
+   "word": "back",
+   "start": 44.224,
+   "end": 44.417
+  },
+  {
+   "word": "to",
+   "start": 44.417,
+   "end": 44.61
+  },
+  {
+   "word": "the",
+   "start": 44.61,
+   "end": 44.804
+  },
+  {
+   "word": "recording.",
+   "start": 44.804,
+   "end": 45.383
+  },
+  {
+   "word": "At",
+   "start": 46.683,
+   "end": 46.87
+  },
+  {
+   "word": "the",
+   "start": 46.87,
+   "end": 47.057
+  },
+  {
+   "word": "very",
+   "start": 47.057,
+   "end": 47.431
+  },
+  {
+   "word": "end,",
+   "start": 47.431,
+   "end": 47.618
+  },
+  {
+   "word": "after",
+   "start": 47.618,
+   "end": 47.992
+  },
+  {
+   "word": "a",
+   "start": 47.992,
+   "end": 48.179
+  },
+  {
+   "word": "long",
+   "start": 48.179,
+   "end": 48.366
+  },
+  {
+   "word": "silence,",
+   "start": 48.366,
+   "end": 48.927
+  },
+  {
+   "word": "there's",
+   "start": 48.927,
+   "end": 49.3
+  },
+  {
+   "word": "one",
+   "start": 49.3,
+   "end": 49.674
+  },
+  {
+   "word": "more",
+   "start": 49.674,
+   "end": 50.048
+  },
+  {
+   "word": "voice.",
+   "start": 50.048,
+   "end": 50.422
+  },
+  {
+   "word": "It",
+   "start": 51.722,
+   "end": 51.974
+  },
+  {
+   "word": "isn't",
+   "start": 51.974,
+   "end": 52.225
+  },
+  {
+   "word": "mine.",
+   "start": 52.225,
+   "end": 52.727
+  },
+  {
+   "word": "Thank",
+   "start": 55.127,
+   "end": 55.783
+  },
+  {
+   "word": "you.",
+   "start": 55.783,
+   "end": 56.438
+  },
+  {
+   "word": "Follow",
+   "start": 58.238,
+   "end": 58.657
+  },
+  {
+   "word": "for",
+   "start": 58.657,
+   "end": 58.866
+  },
+  {
+   "word": "more.",
+   "start": 58.866,
+   "end": 59.284
+  }
+ ]
+}
