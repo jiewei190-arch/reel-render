@@ -24,7 +24,7 @@
     {
      "at": 0,
      "name": "sfx/hum_again.wav",
-     "gain": -30
+     "gain": -20
     }
    ]
   },
@@ -89,7 +89,7 @@
     {
      "at": 0.0,
      "name": "sfx/hum_monitor.wav",
-     "gain": -14
+     "gain": -3
     }
    ]
   },
@@ -434,7 +434,7 @@
     {
      "at": 0.4,
      "name": "sfx/hum_again.wav",
-     "gain": -18
+     "gain": -9
     }
    ]
   },
