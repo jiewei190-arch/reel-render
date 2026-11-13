@@ -1,22 +1,22 @@
-STATE: rendering
+STATE: ready
 
 # Switzerland Made Owning One Guinea Pig Illegal: status
 
-**Re-voice in progress (owner, via MAIN, Nov 13):** new narrator Chatterbox D2. The video below is the previous Kokoro take and will be replaced.
+**Re-voiced with Chatterbox D2** (owner's new narrator, via MAIN, Nov 13) and re-rendered in the cloud. Script, shots, captions, effects and packaging are unchanged; everything is re-timed to the new voiceover.
 
-Final video rendered in the cloud and pushed (the owner's PC "Creator" was off).
-
-- `video.mp4`: 1080×1920, 24 fps, 968 frames, 40.3 s, H.264 + AAC 48 kHz, 20 MB (no split needed). sha256 in `video.sha256`.
-- Audio: mix.py mix (Kokoro am_fenrir voice, music `toon3d:curious` ducked, 47 kit sfx cues, many on spoken words), then +0.65 dB through a limiter (as the FX demo was mastered). Result: **-14.1 LUFS integrated, true peak -1.5 dBFS**. mix.py's own mux dropped 1 frame, so the mix was muxed onto the full silent render with `-c:v copy` (968/968 frames).
-- Checked on the final (`contact_sheet.png`, magenta = Shorts UI zones; `preview_540x960.mp4`): frame 1 is moving (push-in, trembling pig, waving flag) with the 3-line hook "OWNING ONE GUINEA PIG IS ILLEGAL HERE". Captions are 1-3 words at y 0.70, clear of the top bar, the bottom title area and the action buttons. There are reaction FX after every reveal, 2 insert cards (the 2008 ordinance + LONELINESS = CRUELTY stamp; THE LEGAL MINIMUM 2), and whipBlur, iris, flash and dip transitions. The last frame is the sunset couple + GOV'T APPROVED, with a hard cut back to frame 1.
-- Voice: Whisper word timestamps snapped to the measured speech segments. No years or numbers are spoken ("2008" is on screen only). The closer "Subscribe for more." runs 1.06 s.
-- Tone: wholesome comedy. Nobody is hurt, and the funeral is cute (matchbox, flowers, veil). No photos, no channel name.
-- Script trim: "Parrots, even lovebirds." (the owner's sanctioned trim). Every claim is in `sources.md`.
+- `video.mp4`: 1080×1920, 24 fps, **987 frames, 41.125 s**, H.264 + AAC 48 kHz, 19.8 MB (no split needed). sha256 in `video.sha256`.
+- Voice: `whatif/voice/chatterbox_d2.py` (exaggeration 0.3, cfg 0.3, `--gap 0.3 --lead 0.15`), script `tts_script.md`. Per-line Whisper QA passed on all 12 lines (seeds in `input/voiceover.lines.json`). **QA: a full Whisper small.en transcript of both the voiceover and the final mixed video matches the script word for word (108 words).**
+- Held beats: after "lonely..." (0.85 s) and before "arranged by the government" (0.86 s, held on the blind-date shot). The closer "Subscribe for more." runs 1.14 s, then a hard cut back to frame 1.
+- Re-timing: Whisper word timestamps snapped to the measured speech segments (`timeline/words.json`). The 14 shot cuts sit in the silence before each line. Captions and all sfx word cues follow the new words automatically.
+- Audio: mix.py mix (music `toon3d:curious` ducked, 47 kit sfx cues), then +0.45 dB through a limiter. Result: **-14.1 LUFS integrated, true peak -1.5 dBFS**, muxed onto the full silent render with `-c:v copy` (987/987 frames).
+- Checked on the final: `contact_sheet.png` (magenta = Shorts UI zones) and `preview_540x960.mp4`. Frame 1 is moving, with the hook "OWNING ONE GUINEA PIG IS ILLEGAL HERE". Captions are 1-3 words at y 0.70, clear of the UI. The effects land on their words (gavel on "loud", stamp on "cruelty", thunder on "dies", door burst on "criminal", hearts on "date").
+- UPLOAD.md: runtime and the alt cover time updated (41.1 s; alt cover 25.0 s). Title, description and pinned comment are unchanged.
 
 Re-render (e.g. on the PC with `--gl gpu`), from whatif/aitrends-2d-studio:
     node render.mjs --project projects/lonely-guinea-pig --out projects/lonely-guinea-pig/build/video_silent.mp4
     python3 audio/mix.py --project projects/lonely-guinea-pig --video projects/lonely-guinea-pig/build/video_silent.mp4 --out projects/lonely-guinea-pig/build/video.mp4
-    # then mux build/mix.wav onto video_silent.mp4 with -c:v copy (keeps all 968 frames)
-Voice rebuild: `python3 projects/lonely-guinea-pig/input/make_voice.py` (Kokoro files in /home/user/reel-render/tts/).
+    # then mux build/mix.wav onto video_silent.mp4 with -c:v copy (keeps all 987 frames)
+Voice rebuild: `bash whatif/voice/setup_chatterbox.sh` once, then
+    ~/.venvs/chatterbox/bin/python whatif/voice/chatterbox_d2.py projects/lonely-guinea-pig/input/script_d2.md projects/lonely-guinea-pig/input/voiceover.wav projects/lonely-guinea-pig/input/script.txt --gap 0.3 --comma 0.15 --lead 0.15
 
 Nothing was posted, uploaded or logged into.
