@@ -6,7 +6,7 @@
  "style": "toon",
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
- "duration": 41.5,
+ "duration": 40.935,
  "captions": true,
  "bars": null,
  "fadeIn": 0.0,
