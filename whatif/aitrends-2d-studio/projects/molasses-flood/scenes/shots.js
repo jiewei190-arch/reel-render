@@ -45,8 +45,8 @@ registerShot('s02', { kind: '3d',
     s.gm.hand.L.getWorldPosition(v3); const a = v3.clone(); s.gm.hand.R.getWorldPosition(v3); s.kn.position.copy(a.add(v3).multiplyScalar(0.5)).add(new THREE.Vector3(0, 0.05, 0.12)); s.kn.rotation.z = knit * 0.6;
     camMove(s.stage, tt, [[0, { pos: [0.4, 2.0, 7.0], look: [-0.45, 1.55, 0], fov: 46 }], [3.7, { pos: [0.1, 1.9, 5.6], look: [-0.5, 1.6, 0], fov: 44 }]]); },
   overlay(g, t, info, s) { const fz = at(info, 'killed', 1.78) - 0.06; const an = anchor(s.stage, s.gm);
-    bubble(g, an.x, an.y, 'Slow as molasses, sweetie.', t - 0.1, { up: 170, size: 52 });
-    if (t >= fz) { freezeLook(g, 1, clamp(1 - (t - fz) / 0.18) * 0.7); scratchMark(g, t - fz, E.W / 2, E.H * 0.24); reactions(g, t, s, [{ fx: 'exclaim', on: 'gm', at: fz + 0.12, scale: 1.0 }]); }
+    bubble(g, an.x, an.y, 'Slow as molasses, sweetie.', t - 0.1, { up: 285, size: 52 });
+    if (t >= fz) { freezeLook(g, 1, clamp(1 - (t - fz) / 0.18) * 0.7); scratchMark(g, t - fz, E.W / 2, E.H * 0.24); reactions(g, t, s, [{ fx: 'exclaim', on: 'gm', at: fz + 0.12, scale: 1.0, dx: -170, dy: 40 }]); }
     else softTint(g, '#ffcf8a', 0.18); },
 });
 
@@ -202,7 +202,7 @@ registerShot('s15', { kind: '3d', init: modern.init,
 });
 registerShot('s16', { kind: '3d', init: modern.init,
   draw(s, t, info) { s.sky.update(t); const { sn } = modern.place(s, t + 2.9, 2.9 + 0.0, 2.9 + 0.05); const open = ease.inOut(prog(t, 0.45, 0.7));
-    s.p.face(mixExpr({ ...EXPR.neutral, lid: 1, lower: 0.2, brow: 0.3, mouth: 'line', mouthW: 0.5 }, { ...EXPR.suspicious, pupil: [0, 0], mouth: 'o', mouthW: 0.5 }, open), t);
+    s.p.face(mixExpr({ ...EXPR.neutral, lid: 1, lower: 0.2, brow: 0.3, mouth: 'line', mouthW: 0.5 }, { ...EXPR.shocked, lid: 0.12, brow: 0.7, pupil: [0, 0], mouth: 'o', mouthW: 0.45 }, open), t);
     const x = s.p.position.x; camMove(s.stage, t, [[0, { pos: [x + 0.35, 2.3, 4.6], look: [x + 0.05, 2.1, 1.2], fov: 38 }], [info.dur, { pos: [x + 0.3, 2.3, 4.0], look: [x + 0.05, 2.15, 1.2], fov: 36 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, { rays: false, tint: '#ffb070', tintAmount: 0.26 }); heatHaze(g, t, 0.7); const an = anchor(s.stage, s.p);
     bubble(g, an.x, an.y, '...molasses.', t - 0.5, { up: 210, size: 60, dx: 60 });
