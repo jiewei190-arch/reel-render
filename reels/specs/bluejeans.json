@@ -1,0 +1,87 @@
+{
+ "name": "bluejeans",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  7,
+  9,
+  10,
+  11,
+  12
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why do jeans have that **tiny pocket,** and those **little rivets?**",
+   "Why do jeans have that tiny pocket, and those little rivets?"
+  ],
+  [
+   "But they weren't made for **style.** They were made for **work.**",
+   "But they weren't made for style. They were made for work."
+  ],
+  [
+   "A woman asked a tailor named **Jacob Davis** to make her husband pants that **wouldn't fall apart.**",
+   "A woman asked a tailor named Jacob Davis to make her husband pants that wouldn't fall apart."
+  ],
+  [
+   "The weak spots were the **corners of the pockets.**",
+   "The weak spots were the corners of the pockets."
+  ],
+  [
+   "So he used **metal rivets** to pin down those **points of strain.**",
+   "So he used metal rivets to pin down those points of strain."
+  ],
+  [
+   "It worked. Davis bought his cloth from a merchant named **Levi Strauss,** and the two teamed up.",
+   "It worked. Davis bought his cloth from a merchant named Levi Strauss, and the two teamed up."
+  ],
+  [
+   "On **May 20, 1873,** they got **patent number 139,121.**",
+   "On May twentieth, eighteen seventy-three, they got patent number one three nine, one two one."
+  ],
+  [
+   "It covered a **metal rivet at each edge** of the pocket opening.",
+   "It covered a metal rivet at each edge of the pocket opening."
+  ],
+  [
+   "And that tiny pocket? It was there on the **very first pair.**",
+   "And that tiny pocket? It was there on the very first pair."
+  ],
+  [
+   "It was made for a **pocket watch,** something lots of people carried in the late eighteen hundreds.",
+   "It was made for a pocket watch, something lots of people carried in the late eighteen hundreds."
+  ],
+  [
+   "Back then, they weren't even called jeans. They were **waist overalls,** until **1960.**",
+   "Back then, they weren't even called jeans. They were waist overalls, until nineteen sixty."
+  ],
+  [
+   "During **World War Two,** the rivets on that little pocket were **removed,** to save metal.",
+   "During World War Two, the rivets on that little pocket were removed, to save metal."
+  ],
+  [
+   "And when the patent **ran out in 1890,** rivets showed up on **everyone's** work pants.",
+   "And when the patent ran out in eighteen ninety, rivets showed up on everyone's work pants."
+  ],
+  [
+   "So the rivets are **armor** for weak seams, and the tiny pocket is a **watch pocket.**",
+   "So the rivets are armor for weak seams, and the tiny pocket is a watch pocket."
+  ],
+  [
+   "Have you ever used it? **Yes or no?**",
+   "Have you ever used it? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

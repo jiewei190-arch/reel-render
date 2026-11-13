@@ -1,0 +1,83 @@
+{
+ "name": "skeleton",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  6,
+  9,
+  10,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Your skeleton isn't spooky. It's **alive**, and busy right now.",
+   "Your skeleton isn't spooky. It's alive, and busy right now."
+  ],
+  [
+   "But holding you up is only **one of its jobs.**",
+   "But holding you up is only one of its jobs."
+  ],
+  [
+   "You were born with around **300 bones.**",
+   "You were born with around 300 bones."
+  ],
+  [
+   "As you grew, many of them **fused together.** Adults end up with **206.**",
+   "As you grew, many of them fused together. Adults end up with 206."
+  ],
+  [
+   "Job one: **support.** Your skeleton carries your body's weight.",
+   "Job one: support. Your skeleton carries your body's weight."
+  ],
+  [
+   "Job two: **armour.** Your skull guards your brain, and your ribs shield your heart and lungs.",
+   "Job two: armour. Your skull guards your brain, and your ribs shield your heart and lungs."
+  ],
+  [
+   "Job three: **movement.** Muscles pull on bones, and joints let them bend.",
+   "Job three: movement. Muscles pull on bones, and joints let them bend."
+  ],
+  [
+   "Job four is hidden. Inside some bones is soft, spongy **marrow.**",
+   "Job four is hidden. Inside some bones is soft, spongy marrow."
+  ],
+  [
+   "And marrow is a **factory.** It makes your **red blood cells**,",
+   "And marrow is a factory. It makes your red blood cells,"
+  ],
+  [
+   "plus **white cells** that fight germs, and **platelets** that help blood clot.",
+   "plus white cells that fight germs, and platelets that help blood clot."
+  ],
+  [
+   "Your bones are also a **bank.** They store **calcium** and other minerals.",
+   "Your bones are also a bank. They store calcium and other minerals."
+  ],
+  [
+   "So is your skeleton alive? **Yes.** Its cells keep **tearing down** old bone and **building** new.",
+   "So is your skeleton alive? Yes. Its cells keep tearing down old bone and building new."
+  ],
+  [
+   "In adults, about **ten percent** of the skeleton is rebuilt **every year.**",
+   "In adults, about ten percent of the skeleton is rebuilt every year."
+  ],
+  [
+   "That rebuilding also keeps the right amount of **calcium** in your blood.",
+   "That rebuilding also keeps the right amount of calcium in your blood."
+  ],
+  [
+   "So the skeleton in your closet? It's really a **living factory.**",
+   "So the skeleton in your closet? It's really a living factory."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

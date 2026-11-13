@@ -1,4 +1,4 @@
-# TEMPLATES: the owner's 19 chosen styles and what is already built
+# TEMPLATES: the owner's chosen styles (29 approved) and what is already built
 
 Rule: a reel must reproduce its demo's actual animation language and formatting. Only topic, voice and objects are new. Source demos live in the cloned style repos (see README). Always read the demo source first.
 
@@ -21,3 +21,18 @@ In-house modules exist for several (crayon, impasto, urbansketch, lantern, colla
 3. Render queue: one render at a time (flock /tmp/render.lock); a reel waits its turn, so total time is dominated by rendering (about 20-30 min/reel).
 4. Unverified wording stays out or is softened ("half of the chemistry is on the box" is the agent's own summary; use "much of").
 5. Open the source URLs once before scheduling; they came from research notes.
+
+## Added by the owner on Oct 28 (picked in the Style Picker 100 artifact), templates #21-#29
+All are demos from awesome-opus-5-5-video-styles (X posts, no source code). Fetch the videos with `reels/fetch_demos.sh t21 ... t29` and study the frames. Stills: docs/approved_templates_extra.jpg. #20 is the in-house crayon colour style.
+| # | Name | Demo (case id / post) | What it is | Suggested topics |
+|---|---|---|---|---|
+| 21 | Storybook paint | 2102743212922384673 x.com/songkeys | painted storybook frames, a kid and a rocket under drawn constellations | space and big ideas; how stars are born |
+| 22 | Paper stop-motion ledger | 2102867033100616097 x.com/_nikolajankovic | typed paper slips and hand-drawn arrows in stop motion | money mechanics; how a card payment moves |
+| 23 | Recipe card | 2103418429248069973 x.com/Sarut0biSasuke | hand-drawn recipe card: glass, ice, ticked ingredient list | kitchen chemistry; why ice floats |
+| 24 | Stop-motion explainer | 2103206689755316718 x.com/chavis_ | paper chart pieces stepping up on a drawn board with a caption strip | growth and risk; compound interest |
+| 25 | Ink moon | 2103793821012345137 x.com/AmberPromptai | Chinese ink mountains, full moon, plum blossoms | moon, tides, seasons; the Moon's hidden side |
+| 26 | Doodle robot | 2103516101518987439 x.com/garmdotcom | cute sketched robot in a drawn room with tape labels | robots and gadgets; robot vacuum mapping |
+| 27 | Old-master painting | 2103832142245708192 x.com/AdornCurates | Bruegel-style painted village acting out proverbs | history of sayings and habits; 'bless you' |
+| 28 | Sand art | 2102592355165782312 x.com/Michaelzsguo | sand-animation silhouettes on a lit table | history of inventions; how a steam engine moves a train |
+| 29 | Particle flock | 2103541149709615243 x.com/ajith_io | particles moving like a flock over a sunset gradient | swarms and crowds; how starlings don't crash |
+Picks lean hard toward hand-made looks (8 of 9 are hand-drawn, paper, paint or sand). Use that when choosing.

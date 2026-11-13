@@ -1,0 +1,1 @@
+Bonus: scientists can grow near-twin snowflakes in a lab. Libbrecht at Caltech grows them side by side so they get exactly the same air, and they come out almost identical. Ever caught one on your mitten? Yes or no? ❄️👇

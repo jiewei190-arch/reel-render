@@ -1,0 +1,90 @@
+{
+ "name": "catpurr",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  5,
+  7,
+  9,
+  10,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Scientists still argue about how your cat **purrs.**",
+   "Scientists still argue about how your cat purrs."
+  ],
+  [
+   "So **how do cats purr?** It happens breathing **in,** and breathing **out.**",
+   "So how do cats purr? It happens breathing in, and breathing out."
+  ],
+  [
+   "One side says the **brain** sets a rhythm, and muscles in the **larynx,** the voice box, **twitch** on and off.",
+   "One side says the brain sets a rhythm, and muscles in the larynx, the voice box, twitch on and off."
+  ],
+  [
+   "About **20 to 30 times a second,** the vocal folds open and snap shut.",
+   "About twenty to thirty times a second, the vocal folds open and snap shut."
+  ],
+  [
+   "That chops the moving air into a **rumble,** both ways.",
+   "That chops the moving air into a rumble, both ways."
+  ],
+  [
+   "But in 2023, scientists tried something **surprising.**",
+   "But in twenty twenty-three, scientists tried something surprising."
+  ],
+  [
+   "They blew air through cat voice boxes in a **lab,** with **no nerves or muscles** working.",
+   "They blew air through cat voice boxes in a lab, with no nerves or muscles working."
+  ],
+  [
+   "And they **still purred,** at 25 to 30 times a second.",
+   "And they still purred, at twenty five to thirty times a second."
+  ],
+  [
+   "The secret: soft **pads** of tissue inside the vocal folds make them heavy, so they **vibrate slowly.**",
+   "The secret. Soft pads of tissue inside the vocal folds make them heavy, so they vibrate slowly."
+  ],
+  [
+   "That's how a small cat makes such a **deep** sound.",
+   "That's how a small cat makes such a deep sound."
+  ],
+  [
+   "So is it muscles or pads? Probably **both.** The debate is still **open.**",
+   "So is it muscles or pads? Probably both. The debate is still open."
+  ],
+  [
+   "And why purr? Not only when they're **happy.**",
+   "And why purr? Not only when they're happy."
+  ],
+  [
+   "Cats also purr at the **vet,** or when **hurt.** It may help them cope.",
+   "Cats also purr at the vet, or when hurt. It may help them cope."
+  ],
+  [
+   "Mother cats purr while **nursing,** and some cats hide a **cry** inside the purr to ask for food.",
+   "Mother cats purr while nursing, and some cats hide a cry inside the purr to ask for food."
+  ],
+  [
+   "So a purr is a **vibrating voice box,** and science is still working out **exactly how.**",
+   "So a purr is a vibrating voice box, and science is still working out exactly how."
+  ],
+  [
+   "Is your cat a loud purrer? **Yes or no?**",
+   "Is your cat a loud purrer? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

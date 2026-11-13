@@ -1,0 +1,88 @@
+{
+ "name": "cranberries",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  9,
+  10,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Cranberries **don't grow underwater.** But farmers **flood** the fields to pick them.",
+   "Cranberries don't grow underwater. But farmers flood the fields to pick them."
+  ],
+  [
+   "So **why do cranberries float?**",
+   "So why do cranberries float?"
+  ],
+  [
+   "Cut one in half. Inside are **four little air pockets.**",
+   "Cut one in half. Inside are four little air pockets."
+  ],
+  [
+   "That trapped air makes the whole berry **less dense than water,** so it **floats.**",
+   "That trapped air makes the whole berry less dense than water, so it floats."
+  ],
+  [
+   "In the wild, scientists think that helps the **seeds drift** to new places.",
+   "In the wild, scientists think that helps the seeds drift to new places."
+  ],
+  [
+   "Cranberries grow on **low vines,** in sandy beds called **bogs.**",
+   "Cranberries grow on low vines, in sandy beds called bogs."
+  ],
+  [
+   "At harvest, farmers **flood** the bog with water.",
+   "At harvest, farmers flood the bog with water."
+  ],
+  [
+   "A **water reel,** nicknamed an **egg-beater,** churns the vines and knocks the berries loose.",
+   "A water reel, nicknamed an egg-beater, churns the vines and knocks the berries loose."
+  ],
+  [
+   "Thanks to their air pockets, they **bob up** to the surface.",
+   "Thanks to their air pockets, they bob up to the surface."
+  ],
+  [
+   "Then floating **booms** sweep them into a bright **red raft.**",
+   "Then floating booms sweep them into a bright red raft."
+  ],
+  [
+   "**More than 90 percent** of the crop is picked this way, for **juice** and **sauce.**",
+   "More than ninety percent of the crop is picked this way, for juice and sauce."
+  ],
+  [
+   "Berries for the **fresh** market are combed off **dry,** by walk-behind machines, then graded with a **bounce.**",
+   "Berries for the fresh market are combed off dry, by walk-behind machines, then graded with a bounce."
+  ],
+  [
+   "Good, firm berries **bounce.** Soft ones **don't.**",
+   "Good, firm berries bounce. Soft ones don't."
+  ],
+  [
+   "Legend says a New Jersey grower, **John Webb,** noticed this when berries tumbled **down his stairs.**",
+   "Legend says a New Jersey grower, John Webb, noticed this when berries tumbled down his stairs."
+  ],
+  [
+   "So a cranberry is a little red **float,** built with its own **air pockets.**",
+   "So a cranberry is a little red float, built with its own air pockets."
+  ],
+  [
+   "Have you ever bounced a cranberry? **Yes or no?**",
+   "Have you ever bounced a cranberry? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

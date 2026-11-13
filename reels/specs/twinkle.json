@@ -1,0 +1,83 @@
+{
+ "name": "twinkle",
+ "voice": "af_heart",
+ "speed": 0.93,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  7,
+  10,
+  12
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "phrases": [
+  [
+   "Why do stars **twinkle,** but planets **don't?**",
+   "Why do stars twinkle, but planets don't?"
+  ],
+  [
+   "But the stars aren't flickering at all. Our **air** is.",
+   "But the stars aren't flickering at all. Our air is."
+  ],
+  [
+   "Starlight crosses empty space for years, perfectly **steady.**",
+   "Starlight crosses empty space for years, perfectly steady."
+  ],
+  [
+   "Then, in its last split second, it hits Earth's **atmosphere.**",
+   "Then, in its last split second, it hits Earth's atmosphere."
+  ],
+  [
+   "The air is full of moving **pockets:** warm and cool, thin and dense.",
+   "The air is full of moving pockets: warm and cool, thin and dense."
+  ],
+  [
+   "Here's the trick: every pocket **bends** light a tiny bit, in a different direction.",
+   "Here's the trick: every pocket bends light a tiny bit, in a different direction."
+  ],
+  [
+   "A star is so far away, it's just a **point.** One thin beam.",
+   "A star is so far away, it's just a point. One thin beam."
+  ],
+  [
+   "So when the air bends that beam, the star **jumps,** dims and flashes **colours.** That's twinkling.",
+   "So when the air bends that beam, the star jumps, dims and flashes colours. That's twinkling."
+  ],
+  [
+   "A **planet** is much closer. Through a telescope, it's a tiny **disk.**",
+   "A planet is much closer. Through a telescope, it's a tiny disk."
+  ],
+  [
+   "Its light comes from **lots of points** at once.",
+   "Its light comes from lots of points at once."
+  ],
+  [
+   "Each point wobbles a different way, so they **average out.** The planet shines **steady.**",
+   "Each point wobbles a different way, so they average out. The planet shines steady."
+  ],
+  [
+   "Want the most twinkling? Look near the **horizon.**",
+   "Want the most twinkling? Look near the horizon."
+  ],
+  [
+   "Down low, starlight crosses much **more air,** so it dances even more. Even planets can twinkle there.",
+   "Down low, starlight crosses much more air, so it dances even more. Even planets can twinkle there."
+  ],
+  [
+   "So stars twinkle because they're tiny **points** in shaky air. Planets are tiny **disks,** and the shakes **cancel out.**",
+   "So stars twinkle because they're tiny points in shaky air. Planets are tiny disks, and the shakes cancel out."
+  ],
+  [
+   "Have you spotted a **planet** tonight? Yes or no?",
+   "Have you spotted a planet tonight? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

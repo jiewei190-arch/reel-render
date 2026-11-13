@@ -1,0 +1,90 @@
+{
+ "name": "spidersilk",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  5,
+  6,
+  8,
+  10,
+  12,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "One thread of spider silk can stop a **flying insect.**",
+   "One thread of spider silk can stop a flying insect."
+  ],
+  [
+   "But it's **not** stronger than steel. That one's a myth, sort of.",
+   "But it's not stronger than steel. That one's a myth, sort of."
+  ],
+  [
+   "Thread for thread, good silk is about as strong as a **mid-range steel.**",
+   "Thread for thread, good silk is about as strong as a mid-range steel."
+  ],
+  [
+   "But it's about **six times lighter.** So for its **weight,** silk wins.",
+   "But it's about six times lighter. So for its weight, silk wins."
+  ],
+  [
+   "And it starts as a **liquid** protein, stored in glands inside the spider.",
+   "And it starts as a liquid protein, stored in glands inside the spider."
+  ],
+  [
+   "It's pulled out through tiny **spigots** on the spinnerets, and **hardens** into a fiber.",
+   "It's pulled out through tiny spigots on the spinnerets, and hardens into a fiber."
+  ],
+  [
+   "An orb weaver can make up to **seven kinds** of silk.",
+   "An orb weaver can make up to seven kinds of silk."
+  ],
+  [
+   "But the real trick is what happens when a bug **hits.**",
+   "But the real trick is what happens when a bug hits."
+  ],
+  [
+   "A springy net would fling it straight back out, like a **trampoline.**",
+   "A springy net would fling it straight back out, like a trampoline."
+  ],
+  [
+   "Silk is **tough:** it stretches and soaks up energy before it breaks.",
+   "Silk is tough. It stretches and soaks up energy before it breaks."
+  ],
+  [
+   "Pound for pound, some spider silks are even tougher than **Kevlar.**",
+   "Pound for pound, some spider silks are even tougher than Kevlar."
+  ],
+  [
+   "In a web, the stiff **spokes** take most of the hit.",
+   "In a web, the stiff spokes take most of the hit."
+  ],
+  [
+   "And much of that energy turns into **heat,** so the bug doesn't bounce out.",
+   "And much of that energy turns into heat, so the bug doesn't bounce out."
+  ],
+  [
+   "Then the **sticky spiral,** up to ten times stretchier, holds it in place.",
+   "Then the sticky spiral, up to ten times stretchier, holds it in place."
+  ],
+  [
+   "So walk into a web this Halloween, and you'll know why it **clings.**",
+   "So walk into a web this Halloween, and you'll know why it clings."
+  ],
+  [
+   "Silk isn't stronger than steel. It's **light, tough,** and built to catch.",
+   "Silk isn't stronger than steel. It's light, tough, and built to catch."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

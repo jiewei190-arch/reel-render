@@ -1,0 +1,78 @@
+{
+ "name": "rainbow",
+ "voice": "af_heart",
+ "speed": 0.95,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  7,
+  9,
+  11
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why are rainbows **curved?**",
+   "Why are rainbows curved?"
+  ],
+  [
+   "But a rainbow isn't really an arc. It's part of a **circle,** and everyone sees a **different one.**",
+   "But a rainbow isn't really an arc. It's part of a circle, and everyone sees a different one."
+  ],
+  [
+   "Sunlight enters a **raindrop** and bends, splitting into **colours.**",
+   "Sunlight enters a raindrop and bends, splitting into colours."
+  ],
+  [
+   "It reflects off the **back** of the drop and comes back out, toward **you.**",
+   "It reflects off the back of the drop and comes back out, toward you."
+  ],
+  [
+   "Red light comes back at about **42\u00b0** from the point straight opposite the Sun: the **shadow of your head.**",
+   "Red light comes back at about forty-two degrees from the point straight opposite the Sun: the shadow of your head."
+  ],
+  [
+   "Here's the trick: only drops at that **exact angle** send their colour to **your** eye.",
+   "Here's the trick: only drops at that exact angle send their colour to your eye."
+  ],
+  [
+   "All the drops at 42\u00b0, all around that point, form a **cone,** with its tip at your **eye.**",
+   "All the drops at forty-two degrees, all around that point, form a cone, with its tip at your eye."
+  ],
+  [
+   "Look down the cone, and you see a **circle.**",
+   "Look down the cone, and you see a circle."
+  ],
+  [
+   "So why just an arc? The **ground** gets in the way. There's no rain below the horizon to light up.",
+   "So why just an arc? The ground gets in the way. There's no rain below the horizon to light up."
+  ],
+  [
+   "But from a **plane** or a mountaintop, you can see the **whole circle.**",
+   "But from a plane or a mountaintop, you can see the whole circle."
+  ],
+  [
+   "And your rainbow isn't the same as the one the person next to you sees. Your cone **moves with you.**",
+   "And your rainbow isn't the same as the one the person next to you sees. Your cone moves with you."
+  ],
+  [
+   "Sometimes there's a fainter **second bow** outside, at about **50\u00b0,** with its colours **flipped.**",
+   "Sometimes there's a fainter second bow outside, at about fifty degrees, with its colours flipped."
+  ],
+  [
+   "So a rainbow is curved because it's a **circle of light** around your shadow, and the **ground** hides the rest.",
+   "So a rainbow is curved because it's a circle of light around your shadow, and the ground hides the rest."
+  ],
+  [
+   "Have you ever seen a **full-circle** rainbow? Yes or no?",
+   "Have you ever seen a full-circle rainbow? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

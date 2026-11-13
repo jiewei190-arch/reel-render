@@ -1,0 +1,99 @@
+{
+ "name": "pets",
+ "title": "Did Cavemen Have Pets? (A 14,000-Year-Old Puppy!)",
+ "voice": {
+  "af_heart": 0.5,
+  "bf_emma": 0.5
+ },
+ "lang": "en-gb",
+ "speed": 0.95,
+ "format": "reel",
+ "scenes": [
+  {
+   "v": "hook_puppy",
+   "lines": [
+    "Fourteen thousand years ago, people nursed a very sick puppy for weeks.",
+    "Its teeth tell the story."
+   ]
+  },
+  {
+   "v": "hook_q",
+   "lines": [
+    "So, did cavemen have pets?"
+   ]
+  },
+  {
+   "v": "meet_moss",
+   "lines": [
+    "Meet Moss. He wants a puppy."
+   ]
+  },
+  {
+   "v": "bonn_grave",
+   "lines": [
+    "Surprise one: in Germany, it was buried with a man and a woman."
+   ]
+  },
+  {
+   "v": "distemper",
+   "lines": [
+    "It had a nasty illness called distemper.",
+    "Without care, it would die within three weeks."
+   ]
+  },
+  {
+   "v": "nursed",
+   "lines": [
+    "But it lived about eight more weeks.",
+    "Experts think someone kept it warm, fed and clean."
+   ]
+  },
+  {
+   "v": "loved",
+   "lines": [
+    "A sick puppy can't work.",
+    "So it was probably loved."
+   ]
+  },
+  {
+   "v": "oldest_friends",
+   "lines": [
+    "Surprise two: dogs are our oldest animal friends.",
+    "They've lived with us at least fifteen thousand years."
+   ]
+  },
+  {
+   "v": "fox",
+   "lines": [
+    "Surprise three: a fox!",
+    "In Jordan, about sixteen thousand years ago, a fox was buried with a person.",
+    "A pet? Maybe. Scientists aren't sure."
+   ]
+  },
+  {
+   "v": "hand_puppy",
+   "lines": [
+    "Surprise four: in Israel, about twelve thousand years ago, a woman was buried with her hand on a puppy."
+   ]
+  },
+  {
+   "v": "ending",
+   "lines": [
+    "So yes, cavemen had furry friends.",
+    "Some were cared for like family."
+   ]
+  },
+  {
+   "v": "moss_puppy",
+   "lines": [
+    "And Moss? His puppy just stole his dinner."
+   ]
+  },
+  {
+   "v": "follow",
+   "lines": [
+    "Follow for more Stone Age Stories."
+   ]
+  }
+ ]
+}
