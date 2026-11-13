@@ -173,7 +173,7 @@ registerShot('s10', { kind: '3d',
     const c = cop(0); c.position.set(-4.3, 0, 1.6); c.rotation.y = Math.PI / 2; st.add(c);
     return { stage: st, set, o, p, c };
   },
-  draw(s, t, info) { const cg = at(info, 'congrats', 0.17), cr = at(info, 'criminal', 1.78), gr = at(info, 'grieving', 2.62);
+  draw(s, t, info) { const cg = at(info, 'congrats', 0.17), cr = at(info, 'criminal', 1.78), gr = at(info, 'rodent', 2.91) - 0.05;
     const burst = ease.out(prog(t, cr - 0.05, cr + 0.12)); s.set.setDoor(burst);
     const step = ease.out(prog(t, cr + 0.1, cr + 0.7)); s.c.position.set(lerp(-4.3, -3.0, step), 0, 1.6); s.c.rotation.y = lerp(Math.PI / 2, 1.0, step);
     s.c.pose(step < 1 && t > cr ? walk(t, { speed: 1.8 }) : point(addPose(POSE.attention, idle(t, 7)), 'R', clamp((t - cr - 0.7) / 0.3), { up: 0.1 }));
@@ -185,10 +185,10 @@ registerShot('s10', { kind: '3d',
       [cr + 0.08, { pos: [-1.0, 2.0, 6.4], look: [-3.2, 1.7, 1.4], fov: 44 }], [gr - 0.1, { pos: [-1.1, 2.0, 6.0], look: [-3.0, 1.7, 1.4], fov: 43 }],
       [gr, { pos: [1.4, 1.2, 0.6], look: [1.2, 0.95, -1.6], fov: 36 }], [info.dur, { pos: [1.35, 1.15, 0.3], look: [1.2, 0.95, -1.6], fov: 35 }]], ease.inOut);
     shakeCam(s.stage, t, [{ fx: 'shake', at: cr, amp: 0.12, dur: 0.45 }]); },
-  overlay(g, t, info, s) { const cg = at(info, 'congrats', 0.17), cr = at(info, 'criminal', 1.78), gr = at(info, 'grieving', 2.62);
+  overlay(g, t, info, s) { const cg = at(info, 'congrats', 0.17), cr = at(info, 'criminal', 1.78), gr = at(info, 'rodent', 2.91) - 0.05;
     confetti(g, t, cg, { y: E.H * 0.62 });
     if (t > cr && t < gr) { tag(g, 'SWISS PET POLICE', clamp((t - cr) / 0.2), { y: 0.115, color: '#ffffff', bg: 'rgba(30,50,110,.92)', size: 62 });
-      speech(g, E.W * 0.42, E.H * 0.235, ["WHERE'S THE", 'SECOND ONE?'], clamp((t - cr - 0.25) / 0.25), { size: 62, tail: [60, 200] }); }
+      speech(g, E.W * 0.42, E.H * 0.235, ["WHERE'S THE", 'SECOND ONE?'], clamp((t - cr - 0.08) / 0.18), { size: 62, tail: [60, 200] }); }
     reactions(g, t, s, [{ fx: 'sparkle', on: 'o', at: cg, scale: 0.8, until: cr }, { fx: 'flash', at: cr, dur: 0.2 }, { fx: 'sweat', on: 'p', at: gr + 0.05, scale: 0.8 }]); },
 });
 
