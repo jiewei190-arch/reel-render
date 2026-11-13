@@ -1,0 +1,42 @@
+{
+ "title": "Molasses Flood 1919",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "21",
+   "1919,",
+   "2.3",
+   "million",
+   "35",
+   "150",
+   "garbage",
+   "tank."
+  ],
+  "hide": [
+   [
+    39.55,
+    42.86
+   ]
+  ]
+ },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "input/music_bed.wav",
+  "gainDb": -18
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

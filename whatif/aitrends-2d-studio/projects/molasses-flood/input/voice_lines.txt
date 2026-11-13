@@ -1,0 +1,17 @@
+# TTS script (spoken form: numbers/years spelled out). "|" = extra beat (silence, seconds) before the next piece.
+You've heard the phrase slow as molasses.
+Nobody mentions the time molasses killed twenty-one people.
+January fifteenth, nineteen nineteen, Boston.
+A fifty-foot steel tank holding two point three million gallons of molasses|0.15
+rips open.
+What comes out is a fifteen-foot wave moving thirty-five miles per hour.|0.35
+That's faster than Usain Bolt.
+It flattens buildings and twists the elevated train tracks like spaghetti.|0.2
+Twenty-one people dead. A hundred and fifty injured.
+The company blamed anarchist bombers.
+The court said: no.|0.15
+You just built a garbage tank.
+And on hot days, locals swore the neighborhood smelled like molasses for decades.
+Slow as molasses?|0.3
+Biggest lie in history.
+Subscribe for more.
