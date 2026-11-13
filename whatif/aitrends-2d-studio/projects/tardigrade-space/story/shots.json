@@ -1,0 +1,440 @@
+{
+ "duration": 37.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.2,
+   "line": "In 2007,",
+   "scene": "frame 1: tardigrade floating in space, thumbs up + hook text",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.2,
+   "end": 5.4,
+   "line": "scientists strapped tiny animals to the OUTSIDE of a satellite.",
+   "scene": "lab: two scientists tape gummy tardigrades to the satellite tray; one shrugs at camera",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:scratch",
+     "gain": -14
+    },
+    {
+     "word": "outside",
+     "name": "toon3d:boing",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.4,
+   "end": 6.5,
+   "line": "No suits.",
+   "scene": "orbit: satellite above Earth",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:wind",
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.5,
+   "end": 7.6,
+   "line": "No oxygen.",
+   "scene": "tray close: tardigrades sunbathing in sunglasses",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.6,
+   "end": 10.2,
+   "line": "Just open space, for 10 straight days.",
+   "scene": "DAY 1 > DAY 10 counter, poses change each flip",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "10",
+     "name": "toon3d:ding",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.2,
+   "end": 12.35,
+   "line": "The radiation out there",
+   "scene": "radiation meter slams past max, glass cracks, alarm",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "at": 1.35,
+     "name": "toon3d:glass",
+     "gain": -7
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:alarm",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.35,
+   "end": 14.3,
+   "line": "is 1000x stronger than on Earth.",
+   "scene": "INSERT counter: 1,000x (solar radiation vs Earth's surface)",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.3,
+   "end": 15.9,
+   "line": "When the satellite came home,",
+   "scene": "capsule lands under a parachute on the sunny steppe",
+   "in": {
+    "type": "iris",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.95,
+     "name": "toon3d:thud",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 15.9,
+   "end": 17.35,
+   "line": "they checked the bodies.",
+   "scene": "scientist with tweezers, push-in to a sweating face",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:creak",
+     "gain": -13
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:heartbeat",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 17.35,
+   "end": 19.35,
+   "line": "And the animals were ALIVE.",
+   "scene": "microscope view: tardigrades strolling; ! + flash on ALIVE",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.45,
+    "at": [
+     0.5,
+     0.42
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "word": "alive",
+     "name": "toon3d:ding",
+     "gain": -7
+    },
+    {
+     "word": "alive",
+     "offset": 0.05,
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 19.35,
+   "end": 20.4,
+   "line": "Some even laid eggs.",
+   "scene": "egg pops out; scientist faints in the background",
+   "sfx": [
+    {
+     "word": "eggs",
+     "name": "toon3d:pop",
+     "gain": -6
+    },
+    {
+     "word": "eggs",
+     "offset": 0.3,
+     "name": "toon3d:slide",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.4,
+   "end": 22.35,
+   "line": "They're called TARDIGRADES.",
+   "scene": "close-up: cute tardigrade waves on the moss; name sticker",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "tardigrades",
+     "name": "toon3d:chime",
+     "gain": -9
+    },
+    {
+     "word": "tardigrades",
+     "offset": 0.2,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.35,
+   "end": 24.6,
+   "line": "Half a millimeter long, lives in moss,",
+   "scene": "moss world + ruler; chips 0.5 mm / lives in moss",
+   "sfx": [
+    {
+     "word": "millimeter",
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "word": "moss",
+     "name": "toon3d:pop",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.6,
+   "end": 27.05,
+   "line": "looks like a gummy bear with 8 legs.",
+   "scene": "next to a gummy bear: ??? then 8 LEGS chip",
+   "sfx": [
+    {
+     "word": "gummy",
+     "name": "toon3d:squeak",
+     "gain": -11
+    },
+    {
+     "word": "8",
+     "name": "toon3d:ding",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 27.05,
+   "end": 29.6,
+   "line": "And now it's the first animal in history",
+   "scene": "space: tardigrade floats proudly over Earth, spotlight",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "first",
+     "name": "toon3d:chime",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 29.6,
+   "end": 31.45,
+   "line": "to survive outer space.",
+   "scene": "INSERT versus: astronaut (suit + oxygen) vs tardigrade (nothing)",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 31.45,
+   "end": 32.6,
+   "line": "NAKED.",
+   "scene": "split: WINNER arrow to the tardigrade, astronaut ! + sweat",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.12,
+     "name": "toon3d:success",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 32.6,
+   "end": 34.85,
+   "line": "Which means the toughest astronaut ever.",
+   "scene": "tardigrade in a tiny helmet with the trophy",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "toughest",
+     "name": "toon3d:sparkle",
+     "gain": -11
+    },
+    {
+     "word": "ever",
+     "name": "toon3d:bell",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 34.85,
+   "end": 37.25,
+   "line": "Is this guy. Subscribe for more.",
+   "scene": "close: waves at the lens; helmet pops off -> loops to frame 1",
+   "sfx": [
+    {
+     "word": "guy",
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "word": "subscribe",
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  }
+ ]
+}
