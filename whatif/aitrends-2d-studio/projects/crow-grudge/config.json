@@ -10,7 +10,7 @@
  "captions": true,
  "bars": null,
  "fadeIn": 0.0,
- "fadeOut": 0.4,
+ "fadeOut": 0,
  "music": {
   "enabled": true,
   "file": "toon3d:mystery",

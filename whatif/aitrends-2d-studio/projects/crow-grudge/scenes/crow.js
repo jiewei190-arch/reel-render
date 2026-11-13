@@ -337,8 +337,8 @@ registerShot('s13', { kind: '3d',
     s.env.update(t);
     s.c.update(t, { perch: true, lid: lerp(0.3, 0.06, prog(t, 0.5, 2.0)), lidAngle: 0.14, look: [0, 0.02], headTurn: lerp(0.25, 0, prog(t, 0, 1.5)), blink: t < 2.0 });
     // slow zoom straight into the stare
-    camMove(s.stage, t, [[0, { pos: [0.8, 3.5, 4.2], look: [0, 3.25, -2], fov: 38 }],
-                      [info.dur, { pos: [0.08, 3.32, 2.1], look: [0, 3.28, -2], fov: 24 }]], ease.inOut);
+    camMove(s.stage, t, [[0, { pos: [0.8, 4.0, 4.4], look: [0, 3.85, -2], fov: 38 }],
+                      [info.dur, { pos: [0.06, 4.18, 0.1], look: [0, 4.12, -2], fov: 28 }]], ease.inOut);
   },
   overlay(g, t, info, s) { sunnyLook(g, t, softRays); },
 });
