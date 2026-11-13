@@ -1,0 +1,17 @@
+{
+ "title": "Tardigrade: The Animal That Survived Space Naked",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["2007", "outside", "1000x", "alive", "tardigrades", "naked", "guy", "10", "eggs"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:curious", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
