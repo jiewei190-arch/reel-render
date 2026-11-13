@@ -1,0 +1,18 @@
+{
+ "title": "Switzerland Made Owning One Guinea Pig Illegal",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 40.3,
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["one", "illegal", "lonely", "cruelty", "pairs", "criminal", "rent-a-guinea-pig", "zurich", "government"] },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:curious", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -5 },
+ "loudness": -14
+}

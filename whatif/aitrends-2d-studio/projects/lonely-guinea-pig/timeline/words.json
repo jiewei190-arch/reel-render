@@ -1,0 +1,525 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.19,
+   "end": 0.48
+  },
+  {
+   "word": "Switzerland,",
+   "start": 0.48,
+   "end": 0.887
+  },
+  {
+   "word": "owning",
+   "start": 1.196,
+   "end": 1.39
+  },
+  {
+   "word": "ONE",
+   "start": 1.39,
+   "end": 1.738
+  },
+  {
+   "word": "guinea",
+   "start": 1.738,
+   "end": 1.989
+  },
+  {
+   "word": "pig",
+   "start": 1.989,
+   "end": 2.241
+  },
+  {
+   "word": "is",
+   "start": 2.241,
+   "end": 2.454
+  },
+  {
+   "word": "basically",
+   "start": 2.454,
+   "end": 3.015
+  },
+  {
+   "word": "ILLEGAL.",
+   "start": 3.015,
+   "end": 3.46
+  },
+  {
+   "word": "Not",
+   "start": 3.92,
+   "end": 4.076
+  },
+  {
+   "word": "because",
+   "start": 4.076,
+   "end": 4.387
+  },
+  {
+   "word": "they're",
+   "start": 4.387,
+   "end": 4.676
+  },
+  {
+   "word": "loud.",
+   "start": 4.676,
+   "end": 5.01
+  },
+  {
+   "word": "Because",
+   "start": 5.47,
+   "end": 5.725
+  },
+  {
+   "word": "guinea",
+   "start": 5.725,
+   "end": 6.023
+  },
+  {
+   "word": "pigs",
+   "start": 6.023,
+   "end": 6.278
+  },
+  {
+   "word": "get",
+   "start": 6.278,
+   "end": 6.491
+  },
+  {
+   "word": "LONELY...",
+   "start": 6.491,
+   "end": 6.98
+  },
+  {
+   "word": "and",
+   "start": 7.44,
+   "end": 7.523
+  },
+  {
+   "word": "Switzerland",
+   "start": 7.523,
+   "end": 7.958
+  },
+  {
+   "word": "decided",
+   "start": 7.958,
+   "end": 8.559
+  },
+  {
+   "word": "loneliness",
+   "start": 8.559,
+   "end": 9.14
+  },
+  {
+   "word": "is",
+   "start": 9.14,
+   "end": 9.616
+  },
+  {
+   "word": "animal",
+   "start": 9.616,
+   "end": 10.031
+  },
+  {
+   "word": "cruelty.",
+   "start": 10.031,
+   "end": 10.57
+  },
+  {
+   "word": "The",
+   "start": 11.01,
+   "end": 11.032
+  },
+  {
+   "word": "law",
+   "start": 11.032,
+   "end": 11.253
+  },
+  {
+   "word": "says",
+   "start": 11.253,
+   "end": 11.539
+  },
+  {
+   "word": "social",
+   "start": 11.539,
+   "end": 11.914
+  },
+  {
+   "word": "pets",
+   "start": 11.914,
+   "end": 12.267
+  },
+  {
+   "word": "must",
+   "start": 12.267,
+   "end": 12.532
+  },
+  {
+   "word": "live",
+   "start": 12.532,
+   "end": 12.819
+  },
+  {
+   "word": "in",
+   "start": 12.819,
+   "end": 13.017
+  },
+  {
+   "word": "PAIRS.",
+   "start": 13.017,
+   "end": 13.37
+  },
+  {
+   "word": "Parrots,",
+   "start": 13.81,
+   "end": 13.963
+  },
+  {
+   "word": "even",
+   "start": 13.963,
+   "end": 14.27
+  },
+  {
+   "word": "lovebirds.",
+   "start": 14.27,
+   "end": 15.01
+  },
+  {
+   "word": "If",
+   "start": 15.43,
+   "end": 15.53
+  },
+  {
+   "word": "it",
+   "start": 15.53,
+   "end": 15.67
+  },
+  {
+   "word": "needs",
+   "start": 15.67,
+   "end": 15.91
+  },
+  {
+   "word": "a",
+   "start": 15.91,
+   "end": 16.09
+  },
+  {
+   "word": "friend,",
+   "start": 16.09,
+   "end": 16.37
+  },
+  {
+   "word": "you",
+   "start": 16.59,
+   "end": 16.77
+  },
+  {
+   "word": "are",
+   "start": 16.77,
+   "end": 16.93
+  },
+  {
+   "word": "legally",
+   "start": 16.93,
+   "end": 17.27
+  },
+  {
+   "word": "required",
+   "start": 17.27,
+   "end": 17.95
+  },
+  {
+   "word": "to",
+   "start": 17.95,
+   "end": 18.17
+  },
+  {
+   "word": "provide",
+   "start": 18.17,
+   "end": 18.49
+  },
+  {
+   "word": "one.",
+   "start": 18.49,
+   "end": 18.87
+  },
+  {
+   "word": "But",
+   "start": 19.35,
+   "end": 19.442
+  },
+  {
+   "word": "what",
+   "start": 19.442,
+   "end": 19.604
+  },
+  {
+   "word": "happens",
+   "start": 19.604,
+   "end": 20.065
+  },
+  {
+   "word": "when",
+   "start": 20.065,
+   "end": 20.388
+  },
+  {
+   "word": "one",
+   "start": 20.388,
+   "end": 20.596
+  },
+  {
+   "word": "of",
+   "start": 20.596,
+   "end": 20.688
+  },
+  {
+   "word": "your",
+   "start": 20.688,
+   "end": 20.803
+  },
+  {
+   "word": "pair",
+   "start": 20.803,
+   "end": 21.057
+  },
+  {
+   "word": "dies?",
+   "start": 21.057,
+   "end": 21.38
+  },
+  {
+   "word": "Congrats.",
+   "start": 22.12,
+   "end": 22.77
+  },
+  {
+   "word": "You're",
+   "start": 23.2,
+   "end": 23.332
+  },
+  {
+   "word": "now",
+   "start": 23.332,
+   "end": 23.531
+  },
+  {
+   "word": "a",
+   "start": 23.531,
+   "end": 23.73
+  },
+  {
+   "word": "criminal",
+   "start": 23.73,
+   "end": 24.039
+  },
+  {
+   "word": "with",
+   "start": 24.039,
+   "end": 24.415
+  },
+  {
+   "word": "a",
+   "start": 24.415,
+   "end": 24.569
+  },
+  {
+   "word": "grieving",
+   "start": 24.569,
+   "end": 24.856
+  },
+  {
+   "word": "rodent.",
+   "start": 24.856,
+   "end": 25.32
+  },
+  {
+   "word": "Enter",
+   "start": 25.72,
+   "end": 25.98
+  },
+  {
+   "word": "the",
+   "start": 25.98,
+   "end": 26.14
+  },
+  {
+   "word": "most",
+   "start": 26.14,
+   "end": 26.4
+  },
+  {
+   "word": "Swiss",
+   "start": 26.4,
+   "end": 26.76
+  },
+  {
+   "word": "solution",
+   "start": 26.76,
+   "end": 27.22
+  },
+  {
+   "word": "ever:",
+   "start": 27.22,
+   "end": 27.59
+  },
+  {
+   "word": "rent-a-guinea-pig",
+   "start": 27.8,
+   "end": 28.8
+  },
+  {
+   "word": "services.",
+   "start": 28.8,
+   "end": 29.43
+  },
+  {
+   "word": "You",
+   "start": 29.85,
+   "end": 29.973
+  },
+  {
+   "word": "lease",
+   "start": 29.973,
+   "end": 30.158
+  },
+  {
+   "word": "a",
+   "start": 30.158,
+   "end": 30.342
+  },
+  {
+   "word": "temporary",
+   "start": 30.342,
+   "end": 30.814
+  },
+  {
+   "word": "companion",
+   "start": 30.814,
+   "end": 31.429
+  },
+  {
+   "word": "for",
+   "start": 31.429,
+   "end": 31.819
+  },
+  {
+   "word": "your",
+   "start": 31.819,
+   "end": 32.024
+  },
+  {
+   "word": "widowed",
+   "start": 32.024,
+   "end": 32.331
+  },
+  {
+   "word": "pet.",
+   "start": 32.331,
+   "end": 32.68
+  },
+  {
+   "word": "Somewhere",
+   "start": 33.12,
+   "end": 33.407
+  },
+  {
+   "word": "in",
+   "start": 33.407,
+   "end": 33.633
+  },
+  {
+   "word": "Zurich",
+   "start": 33.633,
+   "end": 33.9
+  },
+  {
+   "word": "right",
+   "start": 33.9,
+   "end": 34.269
+  },
+  {
+   "word": "now,",
+   "start": 34.269,
+   "end": 34.639
+  },
+  {
+   "word": "a",
+   "start": 34.864,
+   "end": 34.926
+  },
+  {
+   "word": "guinea",
+   "start": 34.926,
+   "end": 35.213
+  },
+  {
+   "word": "pig",
+   "start": 35.213,
+   "end": 35.521
+  },
+  {
+   "word": "is",
+   "start": 35.521,
+   "end": 35.685
+  },
+  {
+   "word": "on",
+   "start": 35.685,
+   "end": 35.829
+  },
+  {
+   "word": "a",
+   "start": 35.829,
+   "end": 35.952
+  },
+  {
+   "word": "blind",
+   "start": 35.952,
+   "end": 36.178
+  },
+  {
+   "word": "date...",
+   "start": 36.178,
+   "end": 36.65
+  },
+  {
+   "word": "arranged",
+   "start": 37.43,
+   "end": 37.87
+  },
+  {
+   "word": "by",
+   "start": 37.87,
+   "end": 38.101
+  },
+  {
+   "word": "the",
+   "start": 38.101,
+   "end": 38.263
+  },
+  {
+   "word": "government.",
+   "start": 38.263,
+   "end": 38.68
+  },
+  {
+   "word": "Subscribe",
+   "start": 39.1,
+   "end": 39.51
+  },
+  {
+   "word": "for",
+   "start": 39.51,
+   "end": 39.823
+  },
+  {
+   "word": "more.",
+   "start": 39.823,
+   "end": 40.16
+  }
+ ]
+}

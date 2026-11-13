@@ -1,0 +1,33 @@
+{
+ "duration": 40.3,
+ "shots": [
+  { "id": "s01", "start": 0.00, "end": 3.70, "line": "In Switzerland, owning ONE guinea pig is basically ILLEGAL.", "scene": "FRAME 1: lonely pig behind jail bars, Swiss flag, hook text",
+    "sfx": [ { "at": 0.0, "name": "toon3d:wind", "gain": -20, "dur": 3.6 }, { "word": "one", "name": "toon3d:pop", "gain": -12 }, { "word": "illegal", "name": "toon3d:metal", "gain": -9 }, { "word": "illegal", "offset": 0.05, "name": "toon3d:ding", "gain": -12 } ] },
+  { "id": "s02", "start": 3.70, "end": 5.30, "line": "Not because they're loud.", "scene": "courtroom: judge slams the gavel", "in": { "type": "whipBlur", "dir": 1 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -10 }, { "at": 0.15, "name": "toon3d:boing", "gain": -14 }, { "word": "loud", "name": "toon3d:knock", "gain": -4 }, { "word": "loud", "offset": 0.02, "name": "toon3d:thud", "gain": -8 } ] },
+  { "id": "s03", "start": 5.30, "end": 7.30, "line": "Because guinea pigs get LONELY...", "scene": "witness box: lonely pig, spotlight", "in": { "type": "fade", "dur": 0.25 },
+    "sfx": [ { "word": "lonely", "name": "toon3d:click", "gain": -8 }, { "word": "lonely", "offset": 0.3, "name": "toon3d:squeak", "gain": -16 } ] },
+  { "id": "s04", "start": 7.30, "end": 10.85, "line": "and Switzerland decided loneliness is animal cruelty.", "scene": "INSERT document: Animal Protection Ordinance 2008 + stamp", "in": { "type": "flash", "dur": 0.25 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:impact", "gain": -7 }, { "at": 0.05, "name": "toon3d:paper", "gain": -10 }, { "word": "cruelty", "name": "toon3d:stamp", "gain": -5 } ] },
+  { "id": "s05", "start": 10.85, "end": 13.65, "line": "The law says social pets must live in PAIRS.", "scene": "police lineup: guinea pig + rat, WE NEED FRIENDS", "in": { "type": "iris", "dur": 0.5 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -10 }, { "at": 0.35, "name": "toon3d:click", "gain": -10 }, { "word": "pairs", "name": "toon3d:ding", "gain": -9 } ] },
+  { "id": "s06", "start": 13.65, "end": 15.30, "line": "Parrots, even lovebirds.", "scene": "lineup: parrot squawks, lovebirds snuggle", "in": { "type": "whipBlur", "dir": 1 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:whoosh", "gain": -10 }, { "word": "parrots", "name": "toon3d:squeak", "gain": -11 }, { "word": "lovebirds", "offset": 0.2, "name": "toon3d:pop", "gain": -10 } ] },
+  { "id": "s07", "start": 15.30, "end": 17.15, "line": "If it needs a friend,", "scene": "two pigs share a lettuce, hearts", "in": { "type": "fade", "dur": 0.3 },
+    "sfx": [ { "at": 0.1, "name": "toon3d:sparkle", "gain": -14 }, { "word": "friend", "name": "toon3d:pop", "gain": -10 } ] },
+  { "id": "s08", "start": 17.15, "end": 19.20, "line": "you are legally required to provide one.", "scene": "INSERT bigtext: THE LEGAL MINIMUM 2", "in": { "type": "flash", "dur": 0.25 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:impact", "gain": -7 }, { "at": 0.05, "name": "toon3d:whoosh", "gain": -11 }, { "word": "required", "name": "toon3d:stamp", "gain": -6 } ] },
+  { "id": "s09", "start": 19.20, "end": 21.95, "line": "But what happens when one of your pair dies?", "scene": "tiny cute funeral, thunder", "in": { "type": "dip", "dur": 0.35 },
+    "sfx": [ { "at": 0.1, "name": "toon3d:rain", "gain": -22, "dur": 2.6 }, { "word": "dies", "name": "toon3d:thunder", "gain": -5 } ] },
+  { "id": "s10", "start": 21.95, "end": 25.60, "line": "Congrats. You're now a criminal with a grieving rodent.", "scene": "living room: confetti, door explodes, SWISS PET POLICE",
+    "sfx": [ { "word": "congrats", "name": "toon3d:horn", "gain": -10 }, { "word": "congrats", "offset": 0.05, "name": "toon3d:pop", "gain": -10 }, { "word": "criminal", "offset": -0.05, "name": "toon3d:crash", "gain": -5 }, { "word": "criminal", "name": "toon3d:boom", "gain": -10 }, { "word": "grieving", "name": "toon3d:squeak", "gain": -14 } ] },
+  { "id": "s11", "start": 25.60, "end": 29.70, "line": "Enter the most Swiss solution ever: rent-a-guinea-pig services.", "scene": "RENT-A-PIG shop: pig in a tie with briefcase steps out", "in": { "type": "iris", "dur": 0.5 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -10 }, { "word": "swiss", "name": "toon3d:sparkle", "gain": -11 }, { "word": "rent-a-guinea-pig", "offset": -0.4, "name": "toon3d:bell", "gain": -10 }, { "word": "services", "name": "toon3d:stamp", "gain": -7 }, { "word": "services", "offset": 0.1, "name": "toon3d:cash", "gain": -12 } ] },
+  { "id": "s12", "start": 29.70, "end": 33.00, "line": "You lease a temporary companion for your widowed pet.", "scene": "RETO arrives at the widow's cage", "in": { "type": "whipBlur", "dir": -1 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:whoosh", "gain": -10 }, { "word": "temporary", "name": "toon3d:boing", "gain": -11 }, { "word": "companion", "offset": 0.3, "name": "toon3d:sparkle", "gain": -12 }, { "word": "widowed", "name": "toon3d:ding", "gain": -10 } ] },
+  { "id": "s13", "start": 33.00, "end": 37.30, "line": "Somewhere in Zurich right now, a guinea pig is on a blind date...", "scene": "Zurich terrace: candlelit blind date, business card", "in": { "type": "iris", "mode": "open", "dur": 0.5, "at": [0.5, 0.45] },
+    "sfx": [ { "at": 0.0, "name": "toon3d:chime", "gain": -12 }, { "word": "blind", "offset": -0.3, "name": "toon3d:slide", "gain": -11 }, { "word": "date", "name": "toon3d:pop", "gain": -9 }, { "word": "date", "offset": 0.1, "name": "toon3d:sparkle", "gain": -13 } ] },
+  { "id": "s14", "start": 37.30, "end": 40.30, "line": "arranged by the government. Subscribe for more.", "scene": "sunset over Zurich, GOV'T APPROVED stamp", "in": { "type": "fade", "dur": 0.35 },
+    "sfx": [ { "at": 0.4, "name": "toon3d:pop", "gain": -13 }, { "word": "government", "offset": 0.1, "name": "toon3d:stamp", "gain": -6 }, { "word": "subscribe", "name": "toon3d:pop", "gain": -12 } ] }
+ ]
+}
