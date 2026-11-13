@@ -1,0 +1,31 @@
+{
+ "duration": 41.5,
+ "shots": [
+  { "id": "s01", "start": 0.00,  "end": 4.20,  "line": "In 2006, scientists trapped a few crows for a study.",
+    "sfx": [ { "at": 0.05, "name": "toon3d:wind", "gain": -18, "dur": 4 }, { "at": 1.45, "name": "toon3d:whoosh", "gain": -7 }, { "at": 1.55, "name": "toon3d:thud", "gain": -10 }, { "word": "trapped", "name": "toon3d:pop", "gain": -12 } ] },
+  { "id": "s02", "start": 4.20,  "end": 6.17,  "line": "One of them wore a caveman mask.", "in": { "type": "whipBlur", "dir": 1 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -10 }, { "word": "caveman", "name": "toon3d:boing", "gain": -11 } ] },
+  { "id": "s03", "start": 6.17,  "end": 7.39,  "line": "Big mistake.", "in": { "type": "flash", "dur": 0.2 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:click", "gain": -4 }, { "at": 0.02, "name": "toon3d:boom", "gain": -12 }, { "at": 0.5, "name": "toon3d:click", "gain": -6 } ] },
+  { "id": "s04", "start": 7.39,  "end": 10.30, "line": "For the next 17 years,", "in": { "type": "iris", "dur": 0.5 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:whoosh", "gain": -9 }, { "word": "17", "name": "toon3d:impact", "gain": -6 }, { "word": "17", "offset": 0.05, "name": "toon3d:stamp", "gain": -9 } ] },
+  { "id": "s05", "start": 10.30, "end": 13.02, "line": "anyone in that mask got screamed at and dive-bombed on sight.", "in": { "type": "whip" },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -7 }, { "word": "screamed", "name": "toon3d:crowd", "gain": -10 }, { "word": "dive-bombed", "name": "toon3d:swoosh", "gain": -6 }, { "word": "sight", "name": "toon3d:squeak", "gain": -12 } ] },
+  { "id": "s06", "start": 13.02, "end": 16.54, "line": "It gets worse. Crows that were never trapped joined in.", "in": { "type": "whipBlur", "dir": -1 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -10 }, { "word": "worse", "name": "toon3d:thud", "gain": -9 }, { "word": "joined", "name": "toon3d:pop", "gain": -11 } ] },
+  { "id": "s07", "start": 16.54, "end": 18.34, "line": "They learned the hate by watching.", "in": { "type": "iris", "mode": "open", "dur": 0.45, "at": [0.33, 0.30] },
+    "sfx": [ { "at": 0.4, "name": "toon3d:boing", "gain": -12 }, { "word": "watching", "name": "toon3d:click", "gain": -12 } ] },
+  { "id": "s08", "start": 18.34, "end": 21.84, "line": "Then they taught it to their babies. A generational grudge.", "in": { "type": "whipBlur", "dir": 1 },
+    "sfx": [ { "at": 0.3, "name": "toon3d:paper", "gain": -12 }, { "word": "babies", "name": "toon3d:pop", "gain": -10 }, { "word": "grudge", "name": "toon3d:ding", "gain": -11 } ] },
+  { "id": "s09", "start": 21.84, "end": 26.71, "line": "The scientists tested a second mask to compare. They picked Dick Cheney.", "in": { "type": "iris", "dur": 0.5 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:door", "gain": -16 }, { "word": "picked", "name": "toon3d:slide", "gain": -12 }, { "word": "Cheney", "name": "toon3d:boing", "gain": -11 } ] },
+  { "id": "s10", "start": 26.71, "end": 29.53, "line": "The crows were completely fine with Dick Cheney.", "in": { "type": "whip" },
+    "sfx": [ { "at": 0.0, "name": "toon3d:swoosh", "gain": -8 }, { "at": 0.4, "name": "toon3d:crowd", "gain": -14 }, { "word": "fine", "name": "toon3d:sparkle", "gain": -12 } ] },
+  { "id": "s11", "start": 29.53, "end": 32.25, "line": "The feud only ended in 2023,", "in": { "type": "flash", "dur": 0.25 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:whoosh", "gain": -11 }, { "at": 0.3, "name": "toon3d:tick", "gain": -12 }, { "word": "2023", "name": "toon3d:ding", "gain": -9 } ] },
+  { "id": "s12", "start": 32.25, "end": 35.12, "line": "after the last crow from 2006 died.", "in": { "type": "fade", "dur": 0.5 },
+    "sfx": [ { "at": 0.3, "name": "toon3d:wind", "gain": -20, "dur": 3 } ] },
+  { "id": "s13", "start": 35.12, "end": 41.50, "line": "So if a crow is staring at you right now... what did you do in 2006? Subscribe for more.", "in": { "type": "iris", "dur": 0.55 },
+    "sfx": [ { "at": 0.0, "name": "toon3d:suspense", "gain": -16 }, { "word": "now", "name": "toon3d:thud", "gain": -12 }, { "word": "Subscribe", "name": "toon3d:pop", "gain": -10 } ] }
+ ]
+}
