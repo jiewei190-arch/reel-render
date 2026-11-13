@@ -9,7 +9,8 @@
 > **Voice (owner, Nov 13 2026):** Kokoro am_fenrir "sounds too AI". The narrator for the Justin clips Shorts is now
 > **Chatterbox deadpan "D2"** (exaggeration 0.3, cfg 0.3, built-in default voice, no cloning, MIT), via
 > `whatif/voice/chatterbox_d2.py` (branch `voice-test`, setup `whatif/voice/setup_chatterbox.sh`). Samples + test results:
-> `voice_test/` on `voice-test`.
+> `voice_test/` on `voice-test`. **Scope (owner):** "Only new Justin clips": D2 for NEW Justin clips Shorts only; do NOT re-voice
+> older batches (2 and 3). Sticks After Dark keeps its own slow Fenrir horror voice.
 
 Goal: YouTube Partner Program through long-form watch hours (1,000 subs + 4,000 public watch hours in 12 months;
 Shorts views do not count toward watch hours). Shorts are the discovery funnel: every Short links (Related video)
