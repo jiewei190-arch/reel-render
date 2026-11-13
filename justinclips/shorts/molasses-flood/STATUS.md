@@ -1,5 +1,6 @@
-STATE: ready
+STATE: rendering
 
+RE-VOICE in progress (MAIN, Nov 13): the owner picked the Chatterbox D2 narrator; re-voicing, re-timing and re-rendering. The video.mp4 below is the old Fenrir version until this says STATE: ready again.
 molasses-flood: "A Molasses Tsunami Killed 21 People in Boston" (Justin clips, YouTube Shorts). Rendered fully in the cloud
 (the owner's PC was off). Nothing posted or uploaded.
 
