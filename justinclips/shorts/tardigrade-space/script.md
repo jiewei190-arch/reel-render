@@ -4,7 +4,7 @@ Voice: **Chatterbox D2** (owner's pick, Nov 13: built-in voice, exaggeration 0.3
 Voice script: `projects/tardigrade-space/input/voice_script.md` = the owner's 8 lines (same text as the voice-test proof take) + "9. Subscribe for more.".
 Every part passed Whisper QA on seed 7 (lines 1-8 have the same timings as `voice_test/tardigrade_d2.lines.json`); "2007" is spoken "two thousand seven"
 and Whisper hears "In 2007". Captions show digits (2007, 1000x, 10, 8) from `input/script.txt`.
-Length 38.08 s (voice 38.22 s incl. tail silence; closer 36.72-37.92 s = 1.2 s), 914 frames @ 24 fps. The old Kokoro Fenrir take is replaced.
+Length 38.38 s (voice 38.54 s incl. tail silence; closer 37.04-38.24 s = 1.2 s), 921 frames @ 24 fps. The old Kokoro Fenrir take is replaced. "They're called tardigrades." is a seed-23 retake with a 0.3 s pause before it (clearer after "eggs"); times from row 20.5 on are +0.32 s.
 
 | # | t (s) | Narration (spoken) | Captions (digits) | Shot | FX / transition |
 |---|---|---|---|---|---|
