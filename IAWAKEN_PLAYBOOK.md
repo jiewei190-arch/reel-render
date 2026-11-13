@@ -6,6 +6,10 @@
 > Reels 60-70 s (incl. sticksafterdark horror). Years/numbers: spelled out in the TTS script, digits in captions.
 > **Platforms (owner, Nov 9 2026):** Toon 3D and BEANMEN (2D bean men in 3D places, the Remotion "stickmen-engine")
 > are **YouTube only**. Instagram uses **no 3D at all**: fully 2D styles only (e.g. Sticks After Dark).
+> **Voice (owner, Nov 13 2026):** Kokoro am_fenrir "sounds too AI". The narrator for the Justin clips Shorts is now
+> **Chatterbox deadpan "D2"** (exaggeration 0.3, cfg 0.3, built-in default voice, no cloning, MIT), via
+> `whatif/voice/chatterbox_d2.py` (branch `voice-test`, setup `whatif/voice/setup_chatterbox.sh`). Samples + test results:
+> `voice_test/` on `voice-test`.
 
 Goal: YouTube Partner Program through long-form watch hours (1,000 subs + 4,000 public watch hours in 12 months;
 Shorts views do not count toward watch hours). Shorts are the discovery funnel: every Short links (Related video)
