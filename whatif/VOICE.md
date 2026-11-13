@@ -16,3 +16,7 @@ Owner: "I like this voiceover, it's smooth and human-like, keep it like this."
 
 ## Episode 2 onward (owner's choice, Oct 30): Kokoro **am_fenrir**
 The owner listened to samples and picked **Fenrir**: Kokoro v1.0 (`tts/kokoro-v1.0.onnx` + `voices-v1.0.bin` on the handoff branch), voice `am_fenrir`, speed 0.95, lang en-us. A free local model under the Apache 2.0 licence, so commercial use is fine. Pauses: 0.55 s after sentences, 0.25 s otherwise, 1.4 s at each section/rule-card break; peak-normalised to 0.89. Ep 2 take: `aitrends-2d-studio/projects/jump-double/input/voiceover.wav` (358.7 s).
+
+
+## Justin clips Shorts (owner's choice, Nov 13): Chatterbox "D2"
+The owner listened to `voice_test/all_samples.mp4` and picked **D2**: Chatterbox (Resemble AI, MIT), built-in default voice (no cloning), exaggeration 0.3, cfg 0.3. Tool: `voice/chatterbox_d2.py` (drop-in for `fenrir.py`, same CLI/outputs, built-in Whisper QA + seed log); setup + usage in `voice/README.md`. Proof take: `voice_test/tardigrade_d2.wav`. Long-form What If episodes keep Fenrir unless the owner says otherwise.

@@ -1,6 +1,8 @@
-STATE: ready
+STATE: rendering
 
 # Switzerland Made Owning One Guinea Pig Illegal: status
+
+**Re-voice in progress (owner, via MAIN, Nov 13):** new narrator Chatterbox D2. The video below is the previous Kokoro take and will be replaced.
 
 Final video rendered in the cloud and pushed (the owner's PC "Creator" was off).
 
