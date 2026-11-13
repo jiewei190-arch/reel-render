@@ -1,10 +1,10 @@
 {
- "duration": 43.72,
+ "duration": 47.65,
  "shots": [
   {
    "id": "s01",
    "start": 0.0,
-   "end": 2.3,
+   "end": 2.46,
    "line": "You've heard the phrase slow as molasses.",
    "scene": "FRAME 1: wave towers over 1919 street, horse+wagon, hook text",
    "sfx": [
@@ -27,8 +27,8 @@
   },
   {
    "id": "s02",
-   "start": 2.3,
-   "end": 6.0,
+   "start": 2.46,
+   "end": 6.64,
    "line": "Nobody mentions the time molasses killed 21 people.",
    "scene": "grandma knitting -> record scratch + freeze on 'killed'",
    "in": {
@@ -62,8 +62,8 @@
   },
   {
    "id": "s03",
-   "start": 6.0,
-   "end": 8.6,
+   "start": 6.64,
+   "end": 9.6,
    "line": "January 15th, 1919, Boston.",
    "scene": "1919 Commercial Street, the giant tank",
    "in": {
@@ -95,8 +95,8 @@
   },
   {
    "id": "s04",
-   "start": 8.6,
-   "end": 10.1,
+   "start": 9.6,
+   "end": 10.96,
    "line": "A 50-foot steel tank holding",
    "scene": "tank groans, rivets pop like popcorn",
    "in": {
@@ -142,8 +142,8 @@
   },
   {
    "id": "s05",
-   "start": 10.1,
-   "end": 13.3,
+   "start": 10.96,
+   "end": 14.16,
    "line": "2.3 million gallons of molasses",
    "scene": "INSERT counter 2.3 MILLION + GALLONS stamp",
    "in": {
@@ -180,8 +180,8 @@
   },
   {
    "id": "s06",
-   "start": 13.3,
-   "end": 14.4,
+   "start": 14.16,
+   "end": 15.24,
    "line": "rips open.",
    "scene": "tank bursts, brown wave erupts",
    "in": {
@@ -209,8 +209,8 @@
   },
   {
    "id": "s07",
-   "start": 14.4,
-   "end": 16.8,
+   "start": 15.24,
+   "end": 17.3,
    "line": "What comes out is a 15-foot wave",
    "scene": "wave barrels down the empty street",
    "in": {
@@ -237,8 +237,8 @@
   },
   {
    "id": "s08",
-   "start": 16.8,
-   "end": 19.3,
+   "start": 17.3,
+   "end": 19.69,
    "line": "moving 35 miles per hour.",
    "scene": "INSERT speedometer 0->35 MPH",
    "in": {
@@ -271,8 +271,8 @@
   },
   {
    "id": "s09",
-   "start": 19.3,
-   "end": 21.25,
+   "start": 19.69,
+   "end": 21.82,
    "line": "That's faster than Usain Bolt.",
    "scene": "lane-sized wave overtakes a generic sprinter -> double take",
    "in": {
@@ -314,8 +314,8 @@
   },
   {
    "id": "s10",
-   "start": 21.25,
-   "end": 22.6,
+   "start": 21.82,
+   "end": 22.75,
    "line": "It flattens buildings",
    "scene": "buildings squash flat, firehouse slides off its foundation (empty)",
    "in": {
@@ -347,8 +347,8 @@
   },
   {
    "id": "s11",
-   "start": 22.6,
-   "end": 25.6,
+   "start": 22.75,
+   "end": 26.07,
    "line": "and twists the elevated train tracks like spaghetti.",
    "scene": "elevated railway wobbles into noodles",
    "in": {
@@ -380,8 +380,8 @@
   },
   {
    "id": "s12",
-   "start": 25.6,
-   "end": 29.0,
+   "start": 26.07,
+   "end": 29.16,
    "line": "21 people dead. 150 injured.",
    "scene": "AFTERMATH: quiet sticky street, wreckage, 21 dead / 150 injured",
    "in": {
@@ -398,8 +398,8 @@
   },
   {
    "id": "s13",
-   "start": 29.0,
-   "end": 31.4,
+   "start": 29.16,
+   "end": 31.92,
    "line": "The company blamed anarchist bombers.",
    "scene": "court: lawyer points at a cartoon anarchist with a round bomb: ???",
    "in": {
@@ -433,8 +433,8 @@
   },
   {
    "id": "s14",
-   "start": 31.4,
-   "end": 34.4,
+   "start": 31.92,
+   "end": 36.22,
    "line": "The court said: no. You just built a garbage tank.",
    "scene": "gavel slam on 'no' + GARBAGE TANK stamp",
    "in": {
@@ -468,8 +468,8 @@
   },
   {
    "id": "s15",
-   "start": 34.4,
-   "end": 37.3,
+   "start": 36.22,
+   "end": 39.4,
    "line": "And on hot days, locals swore the neighborhood",
    "scene": "modern Boston, hot day, a local walks + sweats",
    "in": {
@@ -496,8 +496,8 @@
   },
   {
    "id": "s16",
-   "start": 37.3,
-   "end": 39.55,
+   "start": 39.4,
+   "end": 42.17,
    "line": "smelled like molasses for decades.",
    "scene": "close: sniff, whisper '...molasses.'",
    "in": {
@@ -523,8 +523,8 @@
   },
   {
    "id": "s17",
-   "start": 39.55,
-   "end": 42.85,
+   "start": 42.17,
+   "end": 46.4,
    "line": "Slow as molasses? Biggest lie in history.",
    "scene": "SLOW AS MOLASSES? -> red X -> BIGGEST LIE IN HISTORY",
    "in": {
@@ -558,8 +558,8 @@
   },
   {
    "id": "s18",
-   "start": 42.85,
-   "end": 43.72,
+   "start": 46.4,
+   "end": 47.65,
    "line": "Subscribe for more.",
    "scene": "closer: back on the wave rising (loops into frame 1)",
    "in": {

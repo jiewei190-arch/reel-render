@@ -1,0 +1,230 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23,
+  31,
+  42
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 47.394,
+ "render_s": 316.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "You've heard the phrase slow as molasses.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "You've heard the phrase slow as molasses.",
+     "seed": 7,
+     "heard": "You've heard the phrase slow as molasses.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.167
+  },
+  {
+   "n": 2,
+   "text": "Nobody mentions the time molasses killed 21 people.",
+   "start": 2.467,
+   "parts": [
+    {
+     "tts": "Nobody mentions the time molasses killed twenty-one people.",
+     "seed": 7,
+     "heard": "Nobody mentions the time molasses killed 21 people.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.046
+  },
+  {
+   "n": 3,
+   "text": "January 15th, 1919, Boston.",
+   "start": 6.346,
+   "parts": [
+    {
+     "tts": "January fifteenth, nineteen nineteen, Boston.",
+     "seed": 7,
+     "heard": "January 15th, 1919, Boston.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.238
+  },
+  {
+   "n": 4,
+   "text": "A 50-foot steel tank holding 2.3 million gallons of molasses... rips open.",
+   "start": 9.538,
+   "parts": [
+    {
+     "tts": "A fifty-foot steel tank holding two point three million gallons of molasses...",
+     "seed": 7,
+     "heard": "a 50-foot steel tank holding 2.3 million gallons of molasses.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "rips open.",
+     "seed": 7,
+     "heard": "Rips open.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.033
+  },
+  {
+   "n": 5,
+   "text": "What comes out is a 15-foot wave moving 35 miles per hour... That's faster than Usain Bolt.",
+   "start": 15.333,
+   "parts": [
+    {
+     "tts": "What comes out is a fifteen-foot wave moving thirty-five miles per hour...",
+     "seed": 7,
+     "heard": "What comes out is a 15-foot wave moving 35 miles per hour.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "That's faster than Usain Bolt.",
+     "seed": 11,
+     "heard": "That's faster than Usain Bolt.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.642
+  },
+  {
+   "n": 6,
+   "text": "It flattens buildings and twists the elevated train tracks like spaghetti.",
+   "start": 21.942,
+   "parts": [
+    {
+     "tts": "It flattens buildings and twists the elevated train tracks like spaghetti.",
+     "seed": 7,
+     "heard": "It flattens buildings and twists the elevated train tracks like spaghetti.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.794
+  },
+  {
+   "n": 7,
+   "text": "21 people dead. 150 injured.",
+   "start": 26.094,
+   "parts": [
+    {
+     "tts": "twenty-one people dead. one hundred fifty injured.",
+     "seed": 7,
+     "heard": "21 people dead. 150 injured.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.581
+  },
+  {
+   "n": 8,
+   "text": "The company blamed anarchist bombers.",
+   "start": 28.881,
+   "parts": [
+    {
+     "tts": "The company blamed anarchist bombers.",
+     "seed": 7,
+     "heard": "the company blamed anarchist bombers.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.068
+  },
+  {
+   "n": 9,
+   "text": "The court said: no... You just built a garbage tank.",
+   "start": 31.368,
+   "parts": [
+    {
+     "tts": "The court said: no...",
+     "seed": 7,
+     "heard": "The court said, no.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "You just built a garbage tank.",
+     "seed": 7,
+     "heard": "you just built a garbage tank.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 35.304
+  },
+  {
+   "n": 10,
+   "text": "And on hot days, locals swore the neighborhood smelled like molasses for decades.",
+   "start": 35.604,
+   "parts": [
+    {
+     "tts": "And on hot days, locals swore the neighborhood smelled like molasses for decades.",
+     "seed": 7,
+     "heard": "And on hot days, locals swore the neighborhood smelled like molasses for decades.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.078
+  },
+  {
+   "n": 11,
+   "text": "Slow as molasses?... Biggest lie, in history.",
+   "start": 41.378,
+   "parts": [
+    {
+     "tts": "Slow as molasses?...",
+     "seed": 7,
+     "heard": "Slow as molasses?",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "Biggest lie, in history.",
+     "seed": 7,
+     "heard": "biggest lie in history.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 45.488
+  },
+  {
+   "n": 12,
+   "text": "Subscribe for more.",
+   "start": 45.788,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 47.094
+  }
+ ]
+}
