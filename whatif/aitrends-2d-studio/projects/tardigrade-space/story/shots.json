@@ -1,5 +1,5 @@
 {
- "duration": 38.05,
+ "duration": 38.371,
  "shots": [
   {
    "id": "s01",
@@ -254,7 +254,7 @@
   {
    "id": "s12",
    "start": 20.5,
-   "end": 22.05,
+   "end": 22.371,
    "line": "They're called TARDIGRADES.",
    "scene": "close-up: cute tardigrade waves on the moss; name sticker",
    "in": {
@@ -277,8 +277,8 @@
   },
   {
    "id": "s13",
-   "start": 22.05,
-   "end": 24.3,
+   "start": 22.371,
+   "end": 24.621,
    "line": "Half a millimeter long, lives in moss,",
    "scene": "moss world + ruler; chips 0.5 mm / lives in moss",
    "sfx": [
@@ -296,8 +296,8 @@
   },
   {
    "id": "s14",
-   "start": 24.3,
-   "end": 26.35,
+   "start": 24.621,
+   "end": 26.671,
    "line": "looks like a gummy bear with 8 legs.",
    "scene": "next to a gummy bear: ??? then 8 LEGS chip",
    "sfx": [
@@ -315,8 +315,8 @@
   },
   {
    "id": "s15",
-   "start": 26.35,
-   "end": 29.2,
+   "start": 26.671,
+   "end": 29.521,
    "line": "And now it's the first animal in history",
    "scene": "space: tardigrade floats proudly over Earth, spotlight",
    "in": {
@@ -338,8 +338,8 @@
   },
   {
    "id": "s16",
-   "start": 29.2,
-   "end": 31.4,
+   "start": 29.521,
+   "end": 31.721,
    "line": "to survive outer space.",
    "scene": "INSERT versus: astronaut (suit + oxygen) vs tardigrade (nothing)",
    "in": {
@@ -361,8 +361,8 @@
   },
   {
    "id": "s17",
-   "start": 31.4,
-   "end": 32.5,
+   "start": 31.721,
+   "end": 32.821,
    "line": "NAKED.",
    "scene": "split: WINNER arrow to the tardigrade, astronaut ! + sweat",
    "in": {
@@ -384,8 +384,8 @@
   },
   {
    "id": "s18",
-   "start": 32.5,
-   "end": 34.95,
+   "start": 32.821,
+   "end": 35.271,
    "line": "Which means the toughest astronaut ever.",
    "scene": "tardigrade in a tiny helmet with the trophy",
    "sfx": [
@@ -408,8 +408,8 @@
   },
   {
    "id": "s19",
-   "start": 34.95,
-   "end": 38.05,
+   "start": 35.271,
+   "end": 38.371,
    "line": "Is this guy. Subscribe for more.",
    "scene": "close: waves at the lens; helmet pops off -> loops to frame 1",
    "sfx": [

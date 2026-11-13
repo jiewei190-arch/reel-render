@@ -1,4 +1,4 @@
-STATE: ready
+STATE: rendering
 # tardigrade-space: "Tardigrade: The Animal That Survived Space Naked" (Justin clips, Toon 3D + BEANMEN effects), RE-VOICED with Chatterbox D2
 - **Final:** `video.mp4` 1080x1920, 24 fps, 914 frames, 38.08 s, H.264 + AAC 192k, 17 MB. **-14.4 LUFS, true peak -1.3 dBFS.**
   `video.sha256`: `a2e5aee7d3f816f67e1ba152f7fcb6996f684b4a3b40d60e9260f256a287257d  video.mp4`. No split needed (< 95 MB). Full silent render + mix.wav muxed with `-c:v copy` (no frame loss).

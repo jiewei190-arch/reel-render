@@ -12,7 +12,7 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 38.223,
+ "duration": 38.543,
  "render_s": 179.7,
  "qa_fail_lines": [],
  "lines": [
@@ -108,15 +108,23 @@
      "seed": 7,
      "heard": "They're called tardigrades. Half a millimeter long, lives in moss, looks like a gummy bear with eight legs.",
      "wrong_words": 0,
-     "qa": "ok"
+     "qa": "ok",
+     "retake": {
+      "text": "They're called tardigrades.",
+      "seed": 23,
+      "spliced_at": 20.3,
+      "pre_pause": 0.3,
+      "reason": "base/base.en heard \"to call tardigrades\" in the final mix",
+      "tool": "input/retake_line6.py"
+     }
     }
    ],
-   "end": 26.204
+   "end": 26.525
   },
   {
    "n": 7,
    "text": "And now it's the first animal in history to survive outer space... naked.",
-   "start": 26.504,
+   "start": 26.825,
    "parts": [
     {
      "tts": "And now it's the first animal in history to survive outer space...",
@@ -133,12 +141,12 @@
      "qa": "ok"
     }
    ],
-   "end": 32.114
+   "end": 32.435
   },
   {
    "n": 8,
    "text": "Which means the toughest astronaut ever... is this guy.",
-   "start": 32.414,
+   "start": 32.735,
    "parts": [
     {
      "tts": "Which means the toughest astronaut ever...",
@@ -155,12 +163,12 @@
      "qa": "ok"
     }
    ],
-   "end": 36.317
+   "end": 36.638
   },
   {
    "n": 9,
    "text": "Subscribe for more.",
-   "start": 36.617,
+   "start": 36.938,
    "parts": [
     {
      "tts": "Subscribe for more.",
@@ -170,7 +178,7 @@
      "qa": "ok"
     }
    ],
-   "end": 37.923
+   "end": 38.244
   }
  ]
 }
