@@ -1,0 +1,577 @@
+{
+ "duration": 43.72,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.3,
+   "line": "You've heard the phrase slow as molasses.",
+   "scene": "FRAME 1: wave towers over 1919 street, horse+wagon, hook text",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -10
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:ding",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:squeak",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.3,
+   "end": 6.0,
+   "line": "Nobody mentions the time molasses killed 21 people.",
+   "scene": "grandma knitting -> record scratch + freeze on 'killed'",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "killed",
+     "offset": -0.08,
+     "name": "toon3d:scratch",
+     "gain": -4
+    },
+    {
+     "word": "killed",
+     "offset": 0.05,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 6.0,
+   "end": 8.6,
+   "line": "January 15th, 1919, Boston.",
+   "scene": "1919 Commercial Street, the giant tank",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:wind",
+     "gain": -18
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:sparkle",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 8.6,
+   "end": 10.1,
+   "line": "A 50-foot steel tank holding",
+   "scene": "tank groans, rivets pop like popcorn",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:creak",
+     "gain": -6
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:squeak",
+     "gain": -14
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "at": 0.95,
+     "name": "toon3d:metal",
+     "gain": -12
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.1,
+   "end": 13.3,
+   "line": "2.3 million gallons of molasses",
+   "scene": "INSERT counter 2.3 MILLION + GALLONS stamp",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.25,
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "at": 1.8,
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "at": 2.4,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 13.3,
+   "end": 14.4,
+   "line": "rips open.",
+   "scene": "tank bursts, brown wave erupts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "rips",
+     "offset": -0.05,
+     "name": "toon3d:crash",
+     "gain": -3
+    },
+    {
+     "word": "rips",
+     "name": "toon3d:boom",
+     "gain": -6
+    },
+    {
+     "word": "rips",
+     "offset": 0.15,
+     "name": "toon3d:splash",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 14.4,
+   "end": 16.8,
+   "line": "What comes out is a 15-foot wave",
+   "scene": "wave barrels down the empty street",
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:water",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:rumble",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.8,
+   "end": 19.3,
+   "line": "moving 35 miles per hour.",
+   "scene": "INSERT speedometer 0->35 MPH",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:riser",
+     "gain": -12
+    },
+    {
+     "word": "35",
+     "offset": 0.4,
+     "name": "toon3d:ding",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:water",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 19.3,
+   "end": 21.25,
+   "line": "That's faster than Usain Bolt.",
+   "scene": "lane-sized wave overtakes a generic sprinter -> double take",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:water",
+     "gain": -12
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 21.25,
+   "end": 22.6,
+   "line": "It flattens buildings",
+   "scene": "buildings squash flat, firehouse slides off its foundation (empty)",
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:crash",
+     "gain": -6
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:slide",
+     "gain": -8
+    },
+    {
+     "at": 0.85,
+     "name": "toon3d:thud",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.6,
+   "end": 25.6,
+   "line": "and twists the elevated train tracks like spaghetti.",
+   "scene": "elevated railway wobbles into noodles",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:creak",
+     "gain": -6
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:metal",
+     "gain": -10
+    },
+    {
+     "word": "spaghetti",
+     "name": "toon3d:boing",
+     "gain": -6
+    },
+    {
+     "word": "spaghetti",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.6,
+   "end": 29.0,
+   "line": "21 people dead. 150 injured.",
+   "scene": "AFTERMATH: quiet sticky street, wreckage, 21 dead / 150 injured",
+   "in": {
+    "type": "fade",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:wind",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 29.0,
+   "end": 31.4,
+   "line": "The company blamed anarchist bombers.",
+   "scene": "court: lawyer points at a cartoon anarchist with a round bomb: ???",
+   "in": {
+    "type": "iris",
+    "mode": "open",
+    "dur": 0.5,
+    "at": [
+     0.5,
+     0.45
+    ]
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "anarchist",
+     "offset": 0.25,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "bombers.",
+     "offset": 0.2,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.4,
+   "end": 34.4,
+   "line": "The court said: no. You just built a garbage tank.",
+   "scene": "gavel slam on 'no' + GARBAGE TANK stamp",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "no.",
+     "offset": -0.02,
+     "name": "toon3d:knock",
+     "gain": -2
+    },
+    {
+     "word": "no.",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "garbage",
+     "offset": 0.0,
+     "name": "toon3d:stamp",
+     "gain": -3
+    },
+    {
+     "word": "tank.",
+     "offset": 0.25,
+     "name": "toon3d:fail",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 34.4,
+   "end": 37.3,
+   "line": "And on hot days, locals swore the neighborhood",
+   "scene": "modern Boston, hot day, a local walks + sweats",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -16
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 37.3,
+   "end": 39.55,
+   "line": "smelled like molasses for decades.",
+   "scene": "close: sniff, whisper '...molasses.'",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:gasp",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 39.55,
+   "end": 42.85,
+   "line": "Slow as molasses? Biggest lie in history.",
+   "scene": "SLOW AS MOLASSES? -> red X -> BIGGEST LIE IN HISTORY",
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:scratch",
+     "gain": -10
+    },
+    {
+     "word": "Biggest",
+     "offset": -0.08,
+     "name": "toon3d:fail",
+     "gain": -6
+    },
+    {
+     "word": "Biggest",
+     "offset": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 42.85,
+   "end": 43.72,
+   "line": "Subscribe for more.",
+   "scene": "closer: back on the wave rising (loops into frame 1)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
