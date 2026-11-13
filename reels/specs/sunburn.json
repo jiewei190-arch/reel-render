@@ -1,0 +1,92 @@
+{
+ "name": "sunburn",
+ "voice": "af_heart",
+ "speed": 0.92,
+ "music": "popup",
+ "bpm": 96,
+ "breath": [
+  1,
+  5,
+  7,
+  10,
+  13,
+  15
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "phrases": [
+  [
+   "Why can you get **sunburned** on a **cloudy** day?",
+   "Why can you get sunburned on a cloudy day?"
+  ],
+  [
+   "But clouds don't switch off the burn. What burns you is light you **can't see.**",
+   "But clouds don't switch off the burn. What burns you is light you can't see."
+  ],
+  [
+   "Sunburn comes from **ultraviolet,** or **UV,** light.",
+   "Sunburn comes from ultraviolet, or U V, light."
+  ],
+  [
+   "**UVB** is the main one that **burns** the top layer of your skin.",
+   "U V B is the main one that burns the top layer of your skin."
+  ],
+  [
+   "That's the **redness** and swelling, and in bad cases, **blisters.**",
+   "That's the redness and swelling, and in bad cases, blisters."
+  ],
+  [
+   "**UVA** goes **deeper,** and it gets through **clouds** and even windows.",
+   "U V A goes deeper, and it gets through clouds and even windows."
+  ],
+  [
+   "Here's the catch: thicker clouds block **more** UV, but **not all** of it.",
+   "Here's the catch: thicker clouds block more U V, but not all of it."
+  ],
+  [
+   "And you can't **feel** UV. A cool, grey day can still have **strong** UV.",
+   "And you can't feel U V. A cool, grey day can still have strong U V."
+  ],
+  [
+   "So don't check the **temperature.** Check the **UV index.**",
+   "So don't check the temperature. Check the U V index."
+  ],
+  [
+   "At **3 or higher,** health agencies say: **protect** your skin.",
+   "At three or higher, health agencies say: protect your skin."
+  ],
+  [
+   "UV is usually strongest from **late morning** to **mid-afternoon.**",
+   "U V is usually strongest from late morning to mid-afternoon."
+  ],
+  [
+   "And UV **bounces.** Water, sand and concrete **reflect** it back at you.",
+   "And U V bounces. Water, sand and concrete reflect it back at you."
+  ],
+  [
+   "Fresh **snow** can reflect up to **80%** of it.",
+   "Fresh snow can reflect up to eighty percent of it."
+  ],
+  [
+   "So UV can hit you from **above** and from **below.**",
+   "So U V can hit you from above and from below."
+  ],
+  [
+   "So clouds hide the **sun,** not the **UV.** The burn comes from light you can't **see** or **feel.**",
+   "So clouds hide the sun, not the U V. The burn comes from light you can't see or feel."
+  ],
+  [
+   "On grey days, check the **UV index,** and use **shade,** clothing and **sunscreen.**",
+   "On grey days, check the U V index, and use shade, clothing and sunscreen."
+  ],
+  [
+   "Ever burned on a **cloudy** day? Yes or no?",
+   "Ever burned on a cloudy day? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

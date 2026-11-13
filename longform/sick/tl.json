@@ -1,0 +1,768 @@
+{
+ "total": 387.555,
+ "scenes": [
+  {
+   "v": "hook_borneo",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Thirty-one thousand years ago, in a rainforest in Borneo, a child had part of their leg removed by surgery.",
+     "start": 0.6,
+     "end": 7.293
+    },
+    {
+     "text": "And the child survived. For years.",
+     "start": 7.613,
+     "end": 9.736
+    }
+   ],
+   "end": 10.106
+  },
+  {
+   "v": "hook_q",
+   "start": 10.106,
+   "lines": [
+    {
+     "text": "No hospitals. No metal tools. No idea that germs even existed.",
+     "start": 10.406,
+     "end": 14.994
+    },
+    {
+     "text": "So what did ancient humans actually do when they got sick?",
+     "start": 15.314,
+     "end": 18.394
+    }
+   ],
+   "end": 18.764
+  },
+  {
+   "v": "hook_promise",
+   "start": 18.764,
+   "lines": [
+    {
+     "text": "Did they have medicine? Did they have doctors? Did anybody look after them?",
+     "start": 19.064,
+     "end": 22.954
+    },
+    {
+     "text": "The answer is cleverer, and kinder, than you might think.",
+     "start": 23.274,
+     "end": 25.986
+    }
+   ],
+   "end": 26.356
+  },
+  {
+   "v": "meet_moss",
+   "start": 26.356,
+   "lines": [
+    {
+     "text": "Meet Moss. He has a sore tummy, a cut on his arm,",
+     "start": 26.656,
+     "end": 29.468
+    },
+    {
+     "text": "and a very bad case of feeling sorry for himself.",
+     "start": 29.628,
+     "end": 32.14
+    }
+   ],
+   "end": 32.51
+  },
+  {
+   "v": "chausiku",
+   "start": 32.51,
+   "lines": [
+    {
+     "text": "To see where medicine might have started, let's first visit our cousins.",
+     "start": 32.81,
+     "end": 36.483
+    },
+    {
+     "text": "In 1987, in the Mahale Mountains of Tanzania, scientists watched a sick chimpanzee do something odd.",
+     "start": 36.803,
+     "end": 44.023
+    },
+    {
+     "text": "She peeled the bark off a shrub, and slowly chewed the bitter pith inside.",
+     "start": 44.343,
+     "end": 48.114
+    }
+   ],
+   "end": 48.484
+  },
+  {
+   "v": "bitter_leaf",
+   "start": 48.484,
+   "lines": [
+    {
+     "text": "Chimps hardly ever eat that plant. It tastes horrible.",
+     "start": 48.784,
+     "end": 51.735
+    },
+    {
+     "text": "But local people use the very same plant for tummy troubles and worms.",
+     "start": 52.055,
+     "end": 56.027
+    }
+   ],
+   "end": 56.397
+  },
+  {
+   "v": "chimp_better",
+   "start": 56.397,
+   "lines": [
+    {
+     "text": "Within about a day, the chimp seemed to be feeling better.",
+     "start": 56.697,
+     "end": 59.5
+    },
+    {
+     "text": "Later tests found the plant contains chemicals that work against some of the worms chimps carry.",
+     "start": 59.82,
+     "end": 65.085
+    }
+   ],
+   "end": 65.455
+  },
+  {
+   "v": "rakus",
+   "start": 65.455,
+   "lines": [
+    {
+     "text": "Then, in 2022, in Sumatra, an orangutan called Rakus hurt his face, probably in a fight.",
+     "start": 65.755,
+     "end": 72.499
+    },
+    {
+     "text": "So he chewed up a climbing plant, and smeared the juice right onto the wound.",
+     "start": 72.819,
+     "end": 76.638
+    }
+   ],
+   "end": 77.008
+  },
+  {
+   "v": "rakus_bandage",
+   "start": 77.008,
+   "lines": [
+    {
+     "text": "Then he pressed the chewed plant on top. Like a little green plaster.",
+     "start": 77.308,
+     "end": 80.991
+    },
+    {
+     "text": "That plant is used in local medicine to fight swelling and germs.",
+     "start": 81.311,
+     "end": 84.988
+    }
+   ],
+   "end": 85.358
+  },
+  {
+   "v": "rakus_heal",
+   "start": 85.358,
+   "lines": [
+    {
+     "text": "Five days later, the wound had closed, with no sign of infection.",
+     "start": 85.658,
+     "end": 89.488
+    },
+    {
+     "text": "Scientists think it's the first time a wild animal has been seen treating a wound with a medicinal plant.",
+     "start": 89.808,
+     "end": 96.301
+    }
+   ],
+   "end": 96.671
+  },
+  {
+   "v": "instinct",
+   "start": 96.671,
+   "lines": [
+    {
+     "text": "So if apes can do it, our ancestors probably could too.",
+     "start": 96.971,
+     "end": 100.104
+    },
+    {
+     "text": "Scientists think early medicine may have grown from the same instinct: try a plant, feel better, remember it, pass it on.",
+     "start": 100.424,
+     "end": 106.925
+    }
+   ],
+   "end": 107.295
+  },
+  {
+   "v": "sidron_nod",
+   "start": 107.295,
+   "lines": [
+    {
+     "text": "Remember the Neanderthal from our teeth video, who may have chewed poplar, a natural source of painkiller?",
+     "start": 107.595,
+     "end": 113.283
+    },
+    {
+     "text": "That fits the pattern.",
+     "start": 113.603,
+     "end": 114.825
+    }
+   ],
+   "end": 115.195
+  },
+  {
+   "v": "people_too",
+   "start": 115.195,
+   "lines": [
+    {
+     "text": "But medicine isn't only about plants.",
+     "start": 115.495,
+     "end": 117.429
+    },
+    {
+     "text": "Sometimes, the medicine is people.",
+     "start": 117.749,
+     "end": 119.585
+    }
+   ],
+   "end": 119.955
+  },
+  {
+   "v": "shanidar",
+   "start": 119.955,
+   "lines": [
+    {
+     "text": "About fifty thousand years ago, in Shanidar Cave in Iraq, there lived a Neanderthal man.",
+     "start": 120.255,
+     "end": 125.488
+    },
+    {
+     "text": "Early in life, he took a terrible blow to the head.",
+     "start": 125.808,
+     "end": 128.513
+    }
+   ],
+   "end": 128.883
+  },
+  {
+   "v": "shanidar_list",
+   "start": 128.883,
+   "lines": [
+    {
+     "text": "He was probably blind in one eye. One arm was withered, and later lost at the elbow.",
+     "start": 129.183,
+     "end": 133.979
+    },
+    {
+     "text": "He walked with a limp. And scientists think he was very hard of hearing.",
+     "start": 134.299,
+     "end": 137.905
+    }
+   ],
+   "end": 138.275
+  },
+  {
+   "v": "shanidar_age",
+   "start": 138.275,
+   "lines": [
+    {
+     "text": "But all of those injuries had healed.",
+     "start": 138.575,
+     "end": 140.409
+    },
+    {
+     "text": "And he lived to around forty, or even older. That's old for a Neanderthal.",
+     "start": 140.729,
+     "end": 145.267
+    }
+   ],
+   "end": 145.637
+  },
+  {
+   "v": "shanidar_help",
+   "start": 145.637,
+   "lines": [
+    {
+     "text": "How do you hunt like that? Or hear a lion coming?",
+     "start": 145.937,
+     "end": 148.579
+    },
+    {
+     "text": "Scientists think the answer is simple. Other people helped him.",
+     "start": 148.899,
+     "end": 152.432
+    }
+   ],
+   "end": 152.802
+  },
+  {
+   "v": "tina",
+   "start": 152.802,
+   "lines": [
+    {
+     "text": "In a cave in Spain, scientists studied a tiny ear bone from a Neanderthal child they nicknamed Tina.",
+     "start": 153.102,
+     "end": 159.064
+    },
+    {
+     "text": "Its shape suggests Tina may have had Down syndrome, with poor hearing and bad dizzy spells.",
+     "start": 159.384,
+     "end": 164.369
+    }
+   ],
+   "end": 164.739
+  },
+  {
+   "v": "tina_care",
+   "start": 164.739,
+   "lines": [
+    {
+     "text": "Yet Tina lived to at least six years old.",
+     "start": 165.039,
+     "end": 167.219
+    },
+    {
+     "text": "Scientists think her mother couldn't have managed alone. The whole group probably pitched in.",
+     "start": 167.539,
+     "end": 172.248
+    }
+   ],
+   "end": 172.618
+  },
+  {
+   "v": "friends",
+   "start": 172.618,
+   "lines": [
+    {
+     "text": "So long before there were doctors, there were friends.",
+     "start": 172.918,
+     "end": 175.425
+    },
+    {
+     "text": "Being looked after may be one of the oldest medicines of all.",
+     "start": 175.745,
+     "end": 178.72
+    }
+   ],
+   "end": 179.09
+  },
+  {
+   "v": "back_borneo",
+   "start": 179.09,
+   "lines": [
+    {
+     "text": "Which brings us back to Borneo.",
+     "start": 179.39,
+     "end": 181.011
+    },
+    {
+     "text": "In 2020, scientists digging in a cave called Liang Tebo found a skeleton.",
+     "start": 181.331,
+     "end": 186.568
+    }
+   ],
+   "end": 186.938
+  },
+  {
+   "v": "borneo_young",
+   "start": 186.938,
+   "lines": [
+    {
+     "text": "It belonged to a young person, about nineteen or twenty years old.",
+     "start": 187.238,
+     "end": 190.884
+    },
+    {
+     "text": "And the lower part of their left leg was missing.",
+     "start": 191.204,
+     "end": 193.425
+    }
+   ],
+   "end": 193.795
+  },
+  {
+   "v": "borneo_cut",
+   "start": 193.795,
+   "lines": [
+    {
+     "text": "The bone ended neatly, and it had healed over smoothly.",
+     "start": 194.095,
+     "end": 197.042
+    },
+    {
+     "text": "Scientists think this wasn't an accident, or an animal attack. It was a planned operation.",
+     "start": 197.362,
+     "end": 202.706
+    }
+   ],
+   "end": 203.076
+  },
+  {
+   "v": "borneo_child",
+   "start": 203.076,
+   "lines": [
+    {
+     "text": "From the way the bone grew, the surgery probably happened when they were a child.",
+     "start": 203.376,
+     "end": 207.414
+    },
+    {
+     "text": "They then lived for another six to nine years.",
+     "start": 207.734,
+     "end": 210.063
+    }
+   ],
+   "end": 210.433
+  },
+  {
+   "v": "borneo_germs",
+   "start": 210.433,
+   "lines": [
+    {
+     "text": "So how did they avoid a deadly infection?",
+     "start": 210.733,
+     "end": 212.924
+    },
+    {
+     "text": "Nobody knows for sure. But the scientists suggest rainforest plants with medicinal powers may have helped.",
+     "start": 213.244,
+     "end": 219.373
+    }
+   ],
+   "end": 219.743
+  },
+  {
+   "v": "borneo_hills",
+   "start": 219.743,
+   "lines": [
+    {
+     "text": "And this person lived in steep, rocky, jungle hills.",
+     "start": 220.043,
+     "end": 222.911
+    },
+    {
+     "text": "Getting around on one leg there would have needed a lot of help, for a lot of years.",
+     "start": 223.231,
+     "end": 227.201
+    },
+    {
+     "text": "When they died, they were buried with care, with stones placed over the grave.",
+     "start": 227.521,
+     "end": 231.415
+    }
+   ],
+   "end": 231.785
+  },
+  {
+   "v": "borneo_record",
+   "start": 231.785,
+   "lines": [
+    {
+     "text": "Before this, the oldest known amputation was about seven thousand years old, from France.",
+     "start": 232.085,
+     "end": 237.379
+    },
+    {
+     "text": "Borneo pushed that back by twenty-four thousand years.",
+     "start": 237.699,
+     "end": 240.57
+    }
+   ],
+   "end": 240.94
+  },
+  {
+   "v": "trepan_tease",
+   "start": 240.94,
+   "lines": [
+    {
+     "text": "But there's an even stranger kind of Stone Age surgery.",
+     "start": 241.24,
+     "end": 244.199
+    },
+    {
+     "text": "And it involves the head.",
+     "start": 244.519,
+     "end": 245.849
+    }
+   ],
+   "end": 246.219
+  },
+  {
+   "v": "trepan",
+   "start": 246.219,
+   "lines": [
+    {
+     "text": "It's called trepanation. Making a small hole in a living person's skull,",
+     "start": 246.519,
+     "end": 250.475
+    },
+    {
+     "text": "by slowly scraping or cutting through the bone with stone tools.",
+     "start": 250.635,
+     "end": 254.066
+    }
+   ],
+   "end": 254.436
+  },
+  {
+   "v": "ensisheim",
+   "start": 254.436,
+   "lines": [
+    {
+     "text": "At Ensisheim, in France, archaeologists found a man buried around seven thousand years ago.",
+     "start": 254.736,
+     "end": 260.244
+    },
+    {
+     "text": "His skull had not one, but two of these holes.",
+     "start": 260.564,
+     "end": 262.866
+    }
+   ],
+   "end": 263.236
+  },
+  {
+   "v": "ensisheim_heal",
+   "start": 263.236,
+   "lines": [
+    {
+     "text": "And around the edges, new bone had grown back. One hole had closed over completely.",
+     "start": 263.536,
+     "end": 268.477
+    },
+    {
+     "text": "Bone only heals in someone who's alive. So he survived. Twice.",
+     "start": 268.797,
+     "end": 272.636
+    }
+   ],
+   "end": 273.006
+  },
+  {
+   "v": "trepan_world",
+   "start": 273.006,
+   "lines": [
+    {
+     "text": "He's not alone. Healed trepanned skulls turn up in many parts of the ancient world.",
+     "start": 273.306,
+     "end": 277.919
+    },
+    {
+     "text": "Many patients lived on afterwards.",
+     "start": 278.239,
+     "end": 280.144
+    }
+   ],
+   "end": 280.514
+  },
+  {
+   "v": "trepan_why",
+   "start": 280.514,
+   "lines": [
+    {
+     "text": "Why do it? Nobody is completely sure.",
+     "start": 280.814,
+     "end": 282.954
+    },
+    {
+     "text": "Maybe to treat a head injury, or bad headaches, or something people believed was trapped inside.",
+     "start": 283.274,
+     "end": 288.719
+    },
+    {
+     "text": "Either way, please don't try this at home.",
+     "start": 289.039,
+     "end": 291.262
+    }
+   ],
+   "end": 291.632
+  },
+  {
+   "v": "otzi",
+   "start": 291.632,
+   "lines": [
+    {
+     "text": "Now let's meet a patient who carried his own first-aid kit.",
+     "start": 291.932,
+     "end": 295.198
+    },
+    {
+     "text": "In 1991, hikers in the Alps found a man frozen in the ice. He'd died about five thousand three hundred years ago.",
+     "start": 295.518,
+     "end": 303.579
+    }
+   ],
+   "end": 303.949
+  },
+  {
+   "v": "otzi_name",
+   "start": 303.949,
+   "lines": [
+    {
+     "text": "Scientists call him Otzi, the Iceman.",
+     "start": 304.249,
+     "end": 306.374
+    },
+    {
+     "text": "And among his belongings were lumps of a fungus, threaded onto leather strips.",
+     "start": 306.694,
+     "end": 310.759
+    }
+   ],
+   "end": 311.129
+  },
+  {
+   "v": "otzi_fungus",
+   "start": 311.129,
+   "lines": [
+    {
+     "text": "It's called birch polypore, and it contains natural chemicals that fight germs.",
+     "start": 311.429,
+     "end": 315.979
+    },
+    {
+     "text": "Inside Otzi's gut, scientists found the eggs of whipworm, a parasite that can cause tummy pain.",
+     "start": 316.299,
+     "end": 322.221
+    }
+   ],
+   "end": 322.591
+  },
+  {
+   "v": "otzi_medicine",
+   "start": 322.591,
+   "lines": [
+    {
+     "text": "So some scientists think the fungus may have been his medicine.",
+     "start": 322.891,
+     "end": 325.892
+    },
+    {
+     "text": "We can't know for sure. But it would make sense.",
+     "start": 326.212,
+     "end": 328.603
+    }
+   ],
+   "end": 328.973
+  },
+  {
+   "v": "otzi_tattoos",
+   "start": 328.973,
+   "lines": [
+    {
+     "text": "Otzi also had sixty-one tattoos. Not pictures, just little lines and crosses.",
+     "start": 329.273,
+     "end": 334.299
+    },
+    {
+     "text": "Many sit over his lower back, knees and ankles, places where his joints were worn and may well have ached.",
+     "start": 334.619,
+     "end": 340.32
+    }
+   ],
+   "end": 340.69
+  },
+  {
+   "v": "otzi_debate",
+   "start": 340.69,
+   "lines": [
+    {
+     "text": "Some scientists think the tattoos may have been a kind of pain treatment.",
+     "start": 340.99,
+     "end": 344.38
+    },
+    {
+     "text": "Others aren't convinced. The debate is still going.",
+     "start": 344.7,
+     "end": 347.446
+    }
+   ],
+   "end": 347.816
+  },
+  {
+   "v": "moss_recap",
+   "start": 347.816,
+   "lines": [
+    {
+     "text": "So, here's what getting sick might have looked like for Moss.",
+     "start": 348.116,
+     "end": 350.841
+    },
+    {
+     "text": "A bitter plant for his sore tummy. A green plant paste on his cut.",
+     "start": 351.161,
+     "end": 354.846
+    },
+    {
+     "text": "And if things got really bad, friends who brought him food, and kept him warm.",
+     "start": 355.166,
+     "end": 359.187
+    }
+   ],
+   "end": 359.557
+  },
+  {
+   "v": "honest",
+   "start": 359.557,
+   "lines": [
+    {
+     "text": "Of course, ancient medicine wasn't magic.",
+     "start": 359.857,
+     "end": 362.062
+    },
+    {
+     "text": "Lots of people still died from things we can treat easily today.",
+     "start": 362.382,
+     "end": 365.801
+    }
+   ],
+   "end": 366.171
+  },
+  {
+   "v": "ending",
+   "start": 366.171,
+   "lines": [
+    {
+     "text": "But remember that child in Borneo, thirty-one thousand years ago?",
+     "start": 366.471,
+     "end": 370.172
+    },
+    {
+     "text": "Someone made a brave, careful plan to save them. And then people looked after them, for years.",
+     "start": 370.492,
+     "end": 375.743
+    }
+   ],
+   "end": 376.113
+  },
+  {
+   "v": "callback",
+   "start": 376.113,
+   "lines": [
+    {
+     "text": "Maybe the oldest medicine wasn't a plant at all.",
+     "start": 376.413,
+     "end": 378.793
+    },
+    {
+     "text": "Maybe it was people refusing to leave anyone behind.",
+     "start": 379.113,
+     "end": 382.04
+    }
+   ],
+   "end": 382.41
+  },
+  {
+   "v": "follow",
+   "start": 382.41,
+   "lines": [
+    {
+     "text": "Follow for more of how ancient humans really lived.",
+     "start": 382.71,
+     "end": 385.385
+    }
+   ],
+   "end": 387.555
+  }
+ ]
+}

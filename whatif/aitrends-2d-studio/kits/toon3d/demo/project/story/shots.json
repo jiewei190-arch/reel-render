@@ -1,0 +1,19 @@
+{
+ "duration": 16.6,
+ "shots": [
+  { "id": "d1", "start": 0, "end": 2.45, "line": "About twenty thousand emus are eating", "scene": "sunny wide + god rays",
+    "sfx": [ { "at": 0.05, "name": "toon3d:chime", "gain": -14 } ] },
+  { "id": "d2", "start": 2.45, "end": 5.0, "line": "the wheat in Western Australia.", "scene": "emu ??? then hearts", "in": { "type": "whipBlur", "dir": 1 },
+    "sfx": [ { "at": 0, "name": "toon3d:whoosh", "gain": -8 }, { "at": 0.12, "name": "toon3d:boing", "gain": -10 },
+             { "word": "western", "name": "toon3d:pop", "gain": -8 }, { "word": "western", "offset": 0.25, "name": "toon3d:sparkle", "gain": -12 } ] },
+  { "id": "d3", "start": 5.0, "end": 7.45, "line": "The emus are faster than the truck.", "scene": "chase + sweat", "in": { "type": "iris", "dur": 0.6 },
+    "sfx": [ { "at": 0, "name": "toon3d:swoosh", "gain": -10 }, { "at": 0.4, "name": "toon3d:engine", "gain": -16 }, { "word": "faster", "name": "toon3d:squeak", "gain": -12 } ] },
+  { "id": "d4", "start": 7.45, "end": 10.2, "line": "", "scene": "insert: EMU TOP SPEED 50 KM/H", "in": { "type": "flash", "dur": 0.3 },
+    "sfx": [ { "at": 0, "name": "toon3d:impact", "gain": -6 }, { "at": 0.05, "name": "toon3d:whoosh", "gain": -10 }, { "at": 0.4, "name": "toon3d:stamp", "gain": -10 } ] },
+  { "id": "d5", "start": 10.2, "end": 13.8, "line": "Final score: Emus, one. Army, zero.", "scene": "scoreboard: sparkle, exclaim, shake, sweat", "in": { "type": "iris", "mode": "open", "dur": 0.5, "at": [0.5, 0.45] },
+    "sfx": [ { "at": 0, "name": "toon3d:swoosh", "gain": -10 }, { "word": "one", "name": "toon3d:ding", "gain": -8 }, { "word": "one", "offset": 0.1, "name": "toon3d:sparkle", "gain": -12 },
+             { "word": "zero", "name": "toon3d:thud", "gain": -6 }, { "word": "zero", "offset": 0.05, "name": "toon3d:fail", "gain": -12 } ] },
+  { "id": "d6", "start": 13.8, "end": 16.6, "line": "", "scene": "insert: versus", "in": { "type": "fade", "dur": 0.3 },
+    "sfx": [ { "at": 0, "name": "toon3d:swoosh", "gain": -8 }, { "at": 0.35, "name": "toon3d:impact", "gain": -10 }, { "at": 0.9, "name": "toon3d:success", "gain": -10 } ] }
+ ]
+}

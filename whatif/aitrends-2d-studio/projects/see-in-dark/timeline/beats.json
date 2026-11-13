@@ -1,0 +1,762 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.0,
+  "speechEnd": 3.08,
+  "text": "The whole street goes dark at once, and you just keep walking.",
+  "end": 3.61
+ },
+ {
+  "i": 1,
+  "start": 3.61,
+  "speechStart": 3.76,
+  "speechEnd": 7.52,
+  "text": "Round the coffee table, over the shoe, past the door that always eats your knee.",
+  "end": 8.07
+ },
+ {
+  "i": 2,
+  "start": 8.07,
+  "speechStart": 8.22,
+  "speechEnd": 11.16,
+  "text": "Your little sister Mina stumbles in, phone torch first.",
+  "end": 11.51
+ },
+ {
+  "i": 3,
+  "start": 11.51,
+  "speechStart": 11.66,
+  "speechEnd": 12.9,
+  "text": "\"How are you DOING this?\"",
+  "end": 12.95
+ },
+ {
+  "i": 4,
+  "start": 12.95,
+  "speechStart": 13.1,
+  "speechEnd": 16.9,
+  "text": "she asks, and you shrug, because honestly, you have no idea.",
+  "end": 17.43
+ },
+ {
+  "i": 5,
+  "start": 17.43,
+  "speechStart": 17.58,
+  "speechEnd": 20.58,
+  "text": "You can see the mouse by the bin and the toast going cold.",
+  "end": 20.99
+ },
+ {
+  "i": 6,
+  "start": 20.99,
+  "speechStart": 21.14,
+  "speechEnd": 24.28,
+  "text": "Biscuit the cat blinks down at you from the fridge like you've insulted her.",
+  "end": 24.51
+ },
+ {
+  "i": 7,
+  "start": 24.51,
+  "speechStart": 24.66,
+  "speechEnd": 26.26,
+  "text": "And you still can't find your phone charger.",
+  "end": 26.79
+ },
+ {
+  "i": 8,
+  "start": 26.79,
+  "speechStart": 26.94,
+  "speechEnd": 29.62,
+  "text": "So, what if you could see in complete darkness?",
+  "end": 30.13
+ },
+ {
+  "i": 9,
+  "start": 30.13,
+  "speechStart": 30.28,
+  "speechEnd": 36.82,
+  "text": "Stay with me, because there are five rules, and the fifth one decides whether you find her. Rule one.",
+  "end": 36.67
+ },
+ {
+  "i": 10,
+  "start": 36.67,
+  "speechStart": 36.82,
+  "speechEnd": 39.82,
+  "text": "Before any new powers, your old eyes quit first.",
+  "end": 40.23
+ },
+ {
+  "i": 11,
+  "start": 40.23,
+  "speechStart": 40.38,
+  "speechEnd": 43.48,
+  "text": "They've got about one hundred and twenty million rods for the dark",
+  "end": 43.33
+ },
+ {
+  "i": 12,
+  "start": 43.33,
+  "speechStart": 43.48,
+  "speechEnd": 48.68,
+  "text": "and about six million cones for colour, and at night, the cones basically clock out.",
+  "end": 48.89
+ },
+ {
+  "i": 13,
+  "start": 48.89,
+  "speechStart": 49.04,
+  "speechEnd": 53.62,
+  "text": "That sounds fine, until you walk out of sunshine into a cinema and can't see a thing.",
+  "end": 54.09
+ },
+ {
+  "i": 14,
+  "start": 54.09,
+  "speechStart": 54.24,
+  "speechEnd": 56.78,
+  "text": "Your rods need twenty to thirty minutes to catch up.",
+  "end": 57.15
+ },
+ {
+  "i": 15,
+  "start": 57.15,
+  "speechStart": 57.3,
+  "speechEnd": 62.84,
+  "text": "Your best mate Dev shuffles in, orange beanie on, popcorn flying. \"Where's row F?\"",
+  "end": 62.93
+ },
+ {
+  "i": 16,
+  "start": 62.93,
+  "speechStart": 63.08,
+  "speechEnd": 65.06,
+  "text": "he groans, and you walk him straight to it.",
+  "end": 65.41
+ },
+ {
+  "i": 17,
+  "start": 65.41,
+  "speechStart": 65.56,
+  "speechEnd": 70.22,
+  "text": "A cat needs roughly a sixth of the light you do, but even a cat is helpless in true darkness.",
+  "end": 70.83
+ },
+ {
+  "i": 18,
+  "start": 70.83,
+  "speechStart": 70.98,
+  "speechEnd": 72.26,
+  "text": "And humans aren't hopeless.",
+  "end": 72.61
+ },
+ {
+  "i": 19,
+  "start": 72.61,
+  "speechStart": 72.76,
+  "speechEnd": 76.68,
+  "text": "In a 2016 experiment, volunteers spotted single photons,",
+  "end": 76.97
+ },
+ {
+  "i": 20,
+  "start": 76.97,
+  "speechStart": 77.12,
+  "speechEnd": 79.62,
+  "text": "the tiniest bits of light, a little better than chance.",
+  "end": 80.27
+ },
+ {
+  "i": 21,
+  "start": 80.27,
+  "speechStart": 80.42,
+  "speechEnd": 82.14,
+  "text": "Upside, no more stubbed toes.",
+  "end": 82.57
+ },
+ {
+  "i": 22,
+  "start": 82.57,
+  "speechStart": 82.72,
+  "speechEnd": 87.72,
+  "text": "Downside, Dev wants to know why you keep staring at him in the dark. Fair question, honestly.",
+  "end": 88.37
+ },
+ {
+  "i": 23,
+  "start": 88.37,
+  "speechStart": 88.52,
+  "speechEnd": 94.38,
+  "text": "So how do you see where nothing shines? Easy: nothing has to shine. Everything's already glowing.",
+  "end": 95.41
+ },
+ {
+  "i": 24,
+  "start": 95.41,
+  "speechStart": 95.56,
+  "speechEnd": 98.12,
+  "text": "That's rule two. The dark isn't empty.",
+  "end": 98.39
+ },
+ {
+  "i": 25,
+  "start": 98.39,
+  "speechStart": 98.54,
+  "speechEnd": 101.26,
+  "text": "Anything warmer than absolute zero glows with infrared.",
+  "end": 101.91
+ },
+ {
+  "i": 26,
+  "start": 101.91,
+  "speechStart": 102.06,
+  "speechEnd": 105.08,
+  "text": "Your couch, your cat, you. Dr.",
+  "end": 105.17
+ },
+ {
+  "i": 27,
+  "start": 105.17,
+  "speechStart": 105.32,
+  "speechEnd": 109.82,
+  "text": "Lin, in her green lanyard, kills every light in the lab and tells you to hold up a hand.",
+  "end": 109.67
+ },
+ {
+  "i": 28,
+  "start": 109.67,
+  "speechStart": 109.82,
+  "speechEnd": 112.0,
+  "text": "You count five warm fingers.",
+  "end": 112.39
+ },
+ {
+  "i": 29,
+  "start": 112.39,
+  "speechStart": 112.54,
+  "speechEnd": 115.24,
+  "text": "\"Not magic,\" she whispers, thrilled. \"Physics.\"",
+  "end": 116.25
+ },
+ {
+  "i": 30,
+  "start": 116.25,
+  "speechStart": 116.4,
+  "speechEnd": 121.66,
+  "text": "Human skin glows most strongly near nine and a half micrometres, and thermal cameras read exactly that.",
+  "end": 122.01
+ },
+ {
+  "i": 31,
+  "start": 122.01,
+  "speechStart": 122.16,
+  "speechEnd": 124.84,
+  "text": "Your eyes can't, and one reason is that they're warm too.",
+  "end": 125.05
+ },
+ {
+  "i": 32,
+  "start": 125.05,
+  "speechStart": 125.2,
+  "speechEnd": 129.66,
+  "text": "It's like reading a dim screen with a torch in your face. Nature found a workaround.",
+  "end": 130.15
+ },
+ {
+  "i": 33,
+  "start": 130.15,
+  "speechStart": 130.3,
+  "speechEnd": 134.76,
+  "text": "A pit viper has a hollow pit on its face that works like a pinhole camera for heat,",
+  "end": 134.61
+ },
+ {
+  "i": 34,
+  "start": 134.61,
+  "speechStart": 134.76,
+  "speechEnd": 140.18,
+  "text": "and in 2010 scientists traced its heat sensor to a protein called TRPA1.",
+  "end": 140.65
+ },
+ {
+  "i": 35,
+  "start": 140.65,
+  "speechStart": 140.8,
+  "speechEnd": 145.0,
+  "text": "So a snake can find a mouse in total darkness. You can find a mouse...",
+  "end": 145.11
+ },
+ {
+  "i": 36,
+  "start": 145.11,
+  "speechStart": 145.26,
+  "speechEnd": 147.06,
+  "text": "and, finally, the remote.",
+  "end": 147.77
+ },
+ {
+  "i": 37,
+  "start": 147.77,
+  "speechStart": 147.92,
+  "speechEnd": 152.68,
+  "text": "Out on the dark street, you spot a small orange glow under a parked car and rescue a kitten.",
+  "end": 153.15
+ },
+ {
+  "i": 38,
+  "start": 153.15,
+  "speechStart": 153.3,
+  "speechEnd": 157.98,
+  "text": "Then you walk face first into a shop window, because ordinary glass blocks thermal infrared.",
+  "end": 158.65
+ },
+ {
+  "i": 39,
+  "start": 158.65,
+  "speechStart": 158.8,
+  "speechEnd": 162.2,
+  "text": "To you, it's a flat, cold wall. Dev wheezes.",
+  "end": 162.51
+ },
+ {
+  "i": 40,
+  "start": 162.51,
+  "speechStart": 162.66,
+  "speechEnd": 164.1,
+  "text": "\"Mate, that was a window.",
+  "end": 163.95
+ },
+ {
+  "i": 41,
+  "start": 163.95,
+  "speechStart": 164.1,
+  "speechEnd": 167.68,
+  "text": "Ten out of ten.\" Rule three.",
+  "end": 167.53
+ },
+ {
+  "i": 42,
+  "start": 167.53,
+  "speechStart": 167.68,
+  "speechEnd": 169.08,
+  "text": "Heat has no colour.",
+  "end": 168.93
+ },
+ {
+  "i": 43,
+  "start": 168.93,
+  "speechStart": 169.08,
+  "speechEnd": 175.46,
+  "text": "Mina slides a birthday card across the table, and in the dark it's a blank, warm rectangle, because ink and paper are the same temperature.",
+  "end": 175.69
+ },
+ {
+  "i": 44,
+  "start": 175.69,
+  "speechStart": 175.84,
+  "speechEnd": 177.1,
+  "text": "You guess \"happy birthday.\"",
+  "end": 177.39
+ },
+ {
+  "i": 45,
+  "start": 177.39,
+  "speechStart": 177.54,
+  "speechEnd": 178.98,
+  "text": "It says \"get well soon.\"",
+  "end": 179.57
+ },
+ {
+  "i": 46,
+  "start": 179.57,
+  "speechStart": 179.72,
+  "speechEnd": 182.08,
+  "text": "Then she tucks a hand warmer into your hoodie pocket.",
+  "end": 182.47
+ },
+ {
+  "i": 47,
+  "start": 182.47,
+  "speechStart": 182.62,
+  "speechEnd": 184.48,
+  "text": "\"Keep it,\" she says, \"I've got the twin.\"",
+  "end": 184.87
+ },
+ {
+  "i": 48,
+  "start": 184.87,
+  "speechStart": 185.02,
+  "speechEnd": 187.82,
+  "text": "To you, it burns like a tiny coal. Hold on to that.",
+  "end": 187.67
+ },
+ {
+  "i": 49,
+  "start": 187.67,
+  "speechStart": 187.82,
+  "speechEnd": 193.34,
+  "text": "Night-vision goggles amplify faint light that's already there, so in true darkness, they've got nothing.",
+  "end": 194.31
+ },
+ {
+  "i": 50,
+  "start": 194.31,
+  "speechStart": 194.46,
+  "speechEnd": 196.94,
+  "text": "Thermal wins the pitch black, but only for warm things.",
+  "end": 196.79
+ },
+ {
+  "i": 51,
+  "start": 196.79,
+  "speechStart": 196.94,
+  "speechEnd": 199.1,
+  "text": "Colour is a much bigger ask.",
+  "end": 199.27
+ },
+ {
+  "i": 52,
+  "start": 199.27,
+  "speechStart": 199.42,
+  "speechEnd": 204.4,
+  "text": "In 2004, helmet geckos told blue from grey at about moonlight levels. You?",
+  "end": 204.55
+ },
+ {
+  "i": 53,
+  "start": 204.55,
+  "speechStart": 204.7,
+  "speechEnd": 206.96,
+  "text": "Hot, warm, cold. That's your whole palette.",
+  "end": 207.65
+ },
+ {
+  "i": 54,
+  "start": 207.65,
+  "speechStart": 207.8,
+  "speechEnd": 209.98,
+  "text": "Upside, you win hide and seek forever.",
+  "end": 210.65
+ },
+ {
+  "i": 55,
+  "start": 210.65,
+  "speechStart": 210.8,
+  "speechEnd": 215.9,
+  "text": "Downside, you can't read a menu. Rule four: light is now your enemy.",
+  "end": 216.33
+ },
+ {
+  "i": 56,
+  "start": 216.33,
+  "speechStart": 216.48,
+  "speechEnd": 220.96,
+  "text": "You step off the kerb at midnight, and a cyclist with no lamp glows like a ghost.",
+  "end": 221.23
+ },
+ {
+  "i": 57,
+  "start": 221.23,
+  "speechStart": 221.38,
+  "speechEnd": 225.02,
+  "text": "You yank Dev back. \"How did you SEE that?\" Dev asks.",
+  "end": 225.23
+ },
+ {
+  "i": 58,
+  "start": 225.23,
+  "speechStart": 225.38,
+  "speechEnd": 228.06,
+  "text": "And right then, the cyclist's lamp snaps on.",
+  "end": 228.55
+ },
+ {
+  "i": 59,
+  "start": 228.55,
+  "speechStart": 228.7,
+  "speechEnd": 234.54,
+  "text": "One bright flash, your thermal view whites out, and your old eyes aren't ready either. Total blindness.",
+  "end": 235.09
+ },
+ {
+  "i": 60,
+  "start": 235.09,
+  "speechStart": 235.24,
+  "speechEnd": 238.98,
+  "text": "Bright light floods your rods, which normally need twenty to thirty minutes to recover.",
+  "end": 239.43
+ },
+ {
+  "i": 61,
+  "start": 239.43,
+  "speechStart": 239.58,
+  "speechEnd": 243.98,
+  "text": "Your new sight takes about a minute, a long, shaky minute, with Dev leading you home by the sleeve.",
+  "end": 244.41
+ },
+ {
+  "i": 62,
+  "start": 244.41,
+  "speechStart": 244.56,
+  "speechEnd": 248.28,
+  "text": "It's amazing and awful, usually both at once. So remember:",
+  "end": 248.65
+ },
+ {
+  "i": 63,
+  "start": 248.65,
+  "speechStart": 248.8,
+  "speechEnd": 251.9,
+  "text": "dark is your friend, light is a punch. You're about to need that.",
+  "end": 252.69
+ },
+ {
+  "i": 64,
+  "start": 252.69,
+  "speechStart": 252.84,
+  "speechEnd": 255.98,
+  "text": "Which brings us to rule five. Cold things hide.",
+  "end": 256.39
+ },
+ {
+  "i": 65,
+  "start": 256.39,
+  "speechStart": 256.54,
+  "speechEnd": 261.82,
+  "text": "School camping trip, rain pouring through the trees, and Mina is gone. You scan the forest.",
+  "end": 262.25
+ },
+ {
+  "i": 66,
+  "start": 262.25,
+  "speechStart": 262.4,
+  "speechEnd": 265.18,
+  "text": "A deer, a fox, Dev glowing beside you.",
+  "end": 265.47
+ },
+ {
+  "i": 67,
+  "start": 265.47,
+  "speechStart": 265.62,
+  "speechEnd": 268.42,
+  "text": "Everything alive shows up, except her. Why?",
+  "end": 268.95
+ },
+ {
+  "i": 68,
+  "start": 268.95,
+  "speechStart": 269.1,
+  "speechEnd": 274.28,
+  "text": "Because the rain has soaked everything cold, warm and cool fade into the same grey.",
+  "end": 274.13
+ },
+ {
+  "i": 69,
+  "start": 274.13,
+  "speechStart": 274.28,
+  "speechEnd": 276.96,
+  "text": "Her skin is cool, and she's blending into the rock.",
+  "end": 277.55
+ },
+ {
+  "i": 70,
+  "start": 277.55,
+  "speechStart": 277.7,
+  "speechEnd": 282.96,
+  "text": "Ranger Tomas, in his blue cap, shouts that it's hopeless, and swings his torch at a cave mouth.",
+  "end": 283.57
+ },
+ {
+  "i": 71,
+  "start": 283.57,
+  "speechStart": 283.72,
+  "speechEnd": 287.76,
+  "text": "The light slams into your eyes, everything goes white, and you're blind again.",
+  "end": 288.23
+ },
+ {
+  "i": 72,
+  "start": 288.23,
+  "speechStart": 288.38,
+  "speechEnd": 289.8,
+  "text": "And now, a choice.",
+  "end": 290.27
+ },
+ {
+  "i": 73,
+  "start": 290.27,
+  "speechStart": 290.42,
+  "speechEnd": 292.34,
+  "text": "Run in blind, or wait in the dark?",
+  "end": 292.67
+ },
+ {
+  "i": 74,
+  "start": 292.67,
+  "speechStart": 292.82,
+  "speechEnd": 297.34,
+  "text": "Mina is cold, and every minute matters. \"Lights out,\" you croak. \"Everybody.\"",
+  "end": 298.07
+ },
+ {
+  "i": 75,
+  "start": 298.07,
+  "speechStart": 298.22,
+  "speechEnd": 301.26,
+  "text": "Tomas clicks off his torch. So you wait.",
+  "end": 301.11
+ },
+ {
+  "i": 76,
+  "start": 301.11,
+  "speechStart": 301.26,
+  "speechEnd": 304.5,
+  "text": "Sixty seconds, in the dark, listening to the rain.",
+  "end": 304.87
+ },
+ {
+  "i": 77,
+  "start": 304.87,
+  "speechStart": 305.02,
+  "speechEnd": 308.84,
+  "text": "And slowly, the grey comes back. Rock. Rain.",
+  "end": 309.25
+ },
+ {
+  "i": 78,
+  "start": 309.25,
+  "speechStart": 309.4,
+  "speechEnd": 312.16,
+  "text": "And then, low down, one tiny white spark.",
+  "end": 312.45
+ },
+ {
+  "i": 79,
+  "start": 312.45,
+  "speechStart": 312.6,
+  "speechEnd": 318.94,
+  "text": "A small hand pulling something out of a coat. Mina's hand warmer. The twin. You run to her.",
+  "end": 319.19
+ },
+ {
+  "i": 80,
+  "start": 319.19,
+  "speechStart": 319.34,
+  "speechEnd": 322.44,
+  "text": "She's curled up under a rock ledge, cold and shivering, and smiling.",
+  "end": 322.91
+ },
+ {
+  "i": 81,
+  "start": 322.91,
+  "speechStart": 323.06,
+  "speechEnd": 324.28,
+  "text": "\"You found me,\" she mumbles.",
+  "end": 324.51
+ },
+ {
+  "i": 82,
+  "start": 324.51,
+  "speechStart": 324.66,
+  "speechEnd": 327.32,
+  "text": "And you say, \"Of course I did.\" Dev cheers.",
+  "end": 327.97
+ },
+ {
+  "i": 83,
+  "start": 327.97,
+  "speechStart": 328.12,
+  "speechEnd": 330.26,
+  "text": "Tomas wipes his eyes and blames the rain.",
+  "end": 330.63
+ },
+ {
+  "i": 84,
+  "start": 330.63,
+  "speechStart": 330.78,
+  "speechEnd": 332.38,
+  "text": "Mina waves the little brick at you.",
+  "end": 332.85
+ },
+ {
+  "i": 85,
+  "start": 332.85,
+  "speechStart": 333.0,
+  "speechEnd": 334.9,
+  "text": "\"Best twin ever,\" she says.",
+  "end": 335.47
+ },
+ {
+  "i": 86,
+  "start": 335.47,
+  "speechStart": 335.62,
+  "speechEnd": 336.94,
+  "text": "\"You owe me hot chocolate.\"",
+  "end": 338.01
+ },
+ {
+  "i": 87,
+  "start": 338.01,
+  "speechStart": 338.16,
+  "speechEnd": 342.5,
+  "text": "So, is any of this real? Pit vipers are. Thermal cameras are.",
+  "end": 342.35
+ },
+ {
+  "i": 88,
+  "start": 342.35,
+  "speechStart": 342.5,
+  "speechEnd": 344.3,
+  "text": "Night-vision goggles are.",
+  "end": 344.75
+ },
+ {
+  "i": 89,
+  "start": 344.75,
+  "speechStart": 344.9,
+  "speechEnd": 347.54,
+  "text": "Even spotting single photons is real, barely.",
+  "end": 348.11
+ },
+ {
+  "i": 90,
+  "start": 348.11,
+  "speechStart": 348.26,
+  "speechEnd": 353.04,
+  "text": "But no human can see heat, goggles aren't eyes, and without light, cats and goggles are blind.",
+  "end": 352.89
+ },
+ {
+  "i": 91,
+  "start": 352.89,
+  "speechStart": 353.04,
+  "speechEnd": 359.12,
+  "text": "You'd need infrared sensors, and a body that doesn't glow itself. Are we close? Not yet.",
+  "end": 359.69
+ },
+ {
+  "i": 92,
+  "start": 359.69,
+  "speechStart": 359.84,
+  "speechEnd": 362.42,
+  "text": "The dark was never empty. It was only quiet.",
+  "end": 362.89
+ },
+ {
+  "i": 93,
+  "start": 362.89,
+  "speechStart": 363.04,
+  "speechEnd": 366.68,
+  "text": "So what would you do if you could see in complete darkness? Tell us in the comments.",
+  "end": 367.39
+ },
+ {
+  "i": 94,
+  "start": 367.39,
+  "speechStart": 367.54,
+  "speechEnd": 372.84,
+  "text": "And if you'd trust that tiny white spark, hit like, and subscribe for more What Ifs.",
+  "end": 373.594
+ }
+]

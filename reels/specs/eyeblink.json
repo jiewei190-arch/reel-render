@@ -1,0 +1,87 @@
+{
+ "name": "eyeblink",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "You go **blind** for a moment, about **fifteen times a minute.**",
+   "You go blind for a moment, about fifteen times a minute."
+  ],
+  [
+   "But **why do we blink so much?** Way more than your eyes need to stay wet.",
+   "But why do we blink so much? Way more than your eyes need to stay wet."
+  ],
+  [
+   "Each blink wipes a fresh layer of **tears** across your eye. That's the job everyone knows.",
+   "Each blink wipes a fresh layer of tears across your eye. That's the job everyone knows."
+  ],
+  [
+   "Glued to a **screen,** you blink only about **five to seven** times a minute, and your eyes cope.",
+   "Glued to a screen, you blink only about five to seven times a minute, and your eyes cope."
+  ],
+  [
+   "So scientists asked a stranger question: **when** do we blink?",
+   "So scientists asked a stranger question: when do we blink?"
+  ],
+  [
+   "Here's the weird part: in one study, people watching the same video **blinked together,** almost in sync.",
+   "Here's the weird part: in one study, people watching the same video blinked together, almost in sync."
+  ],
+  [
+   "The blinks landed on **calm moments.** An action ending. The main character leaving the screen.",
+   "The blinks landed on calm moments. An action ending. The main character leaving the screen."
+  ],
+  [
+   "Blinks seem to fall at **natural pauses,** where you're least likely to miss something.",
+   "Blinks seem to fall at natural pauses, where you're least likely to miss something."
+  ],
+  [
+   "Then a **brain-scan** study went further.",
+   "Then a brain-scan study went further."
+  ],
+  [
+   "Right after a blink, **attention** areas dipped, while the brain's resting network, the **default mode network,** lit up.",
+   "Right after a blink, attention areas dipped, while the brain's resting network, the default mode network, lit up."
+  ],
+  [
+   "So here's a wild idea: each blink may be a **micro-break,** a tiny reset for your attention.",
+   "So here's a wild idea: each blink may be a micro-break, a tiny reset for your attention."
+  ],
+  [
+   "Here's the catch: a **fake blink** didn't do it. When the screen went dark instead, the brain **didn't shift.**",
+   "Here's the catch: a fake blink didn't do it. When the screen went dark instead, the brain didn't shift."
+  ],
+  [
+   "So why do we blink so much? To keep eyes **wet,** yes. But studies suggest blinks may also give your brain **tiny breaks.** Scientists are still testing it.",
+   "So why do we blink so much? To keep eyes wet, yes. But studies suggest blinks may also give your brain tiny breaks. Scientists are still testing it."
+  ],
+  [
+   "Did you just blink at the **end of a sentence?** Yes or no?",
+   "Did you just blink at the end of a sentence? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7
+}
