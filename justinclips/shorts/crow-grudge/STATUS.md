@@ -1,4 +1,4 @@
-STATE: ready
+STATE: rendering
 
 # The Crow Grudge — status
 
