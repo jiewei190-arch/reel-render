@@ -58,7 +58,7 @@ insertShot('s16', { scene: { init: vs.init, draw: (s, t, info) => vs.draw(s, t, 
   insert: { type: 'versus', title: 'IN OPEN SPACE', lines: ['SUIT + OXYGEN', 'NOTHING'], colorL: '#2a6fd6', color: '#e0703a' } });
 // s17 "NAKED." — the reveal: WINNER arrow to the bear, the astronaut panics (!, sweat), shake
 registerShot('s17', { kind: '3d', init: vs.init,
-  draw(s, t, info) { vs.draw(s, t + 1.85, info, { shock: ease.out(prog(t, 0.05, 0.3)), thumb: ease.out(prog(t, 0.1, 0.35)), shake: 0.02 }); },
+  draw(s, t, info) { vs.draw(s, t + 2.2, info, { shock: ease.out(prog(t, 0.05, 0.3)), thumb: ease.out(prog(t, 0.1, 0.35)), shake: 0.02 }); },
   overlay(g, t, info, s) {
     fxr(g, t, s, [{ fx: 'exclaim', on: 'a', at: 0.05 }, { fx: 'sweat', on: 'a', at: 0.2 }, { fx: 'sparkle', on: 'tg', at: 0.15, scale: 0.9 }]);
     const a = anchor(s.stage, s.a), b = anchor(s.stage, s.tg);

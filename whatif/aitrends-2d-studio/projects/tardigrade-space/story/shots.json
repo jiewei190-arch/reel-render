@@ -1,10 +1,10 @@
 {
- "duration": 37.25,
+ "duration": 38.05,
  "shots": [
   {
    "id": "s01",
    "start": 0,
-   "end": 2.2,
+   "end": 2.0,
    "line": "In 2007,",
    "scene": "frame 1: tardigrade floating in space, thumbs up + hook text",
    "sfx": [
@@ -22,8 +22,8 @@
   },
   {
    "id": "s02",
-   "start": 2.2,
-   "end": 5.4,
+   "start": 2.0,
+   "end": 4.95,
    "line": "scientists strapped tiny animals to the OUTSIDE of a satellite.",
    "scene": "lab: two scientists tape gummy tardigrades to the satellite tray; one shrugs at camera",
    "in": {
@@ -50,8 +50,8 @@
   },
   {
    "id": "s03",
-   "start": 5.4,
-   "end": 6.5,
+   "start": 4.95,
+   "end": 5.85,
    "line": "No suits.",
    "scene": "orbit: satellite above Earth",
    "sfx": [
@@ -69,8 +69,8 @@
   },
   {
    "id": "s04",
-   "start": 6.5,
-   "end": 7.6,
+   "start": 5.85,
+   "end": 7.1,
    "line": "No oxygen.",
    "scene": "tray close: tardigrades sunbathing in sunglasses",
    "sfx": [
@@ -83,8 +83,8 @@
   },
   {
    "id": "s05",
-   "start": 7.6,
-   "end": 10.2,
+   "start": 7.1,
+   "end": 9.7,
    "line": "Just open space, for 10 straight days.",
    "scene": "DAY 1 > DAY 10 counter, poses change each flip",
    "in": {
@@ -111,8 +111,8 @@
   },
   {
    "id": "s06",
-   "start": 10.2,
-   "end": 12.35,
+   "start": 9.7,
+   "end": 11.6,
    "line": "The radiation out there",
    "scene": "radiation meter slams past max, glass cracks, alarm",
    "sfx": [
@@ -135,8 +135,8 @@
   },
   {
    "id": "s07",
-   "start": 12.35,
-   "end": 14.3,
+   "start": 11.6,
+   "end": 13.45,
    "line": "is 1000x stronger than on Earth.",
    "scene": "INSERT counter: 1,000x (solar radiation vs Earth's surface)",
    "in": {
@@ -163,8 +163,8 @@
   },
   {
    "id": "s08",
-   "start": 14.3,
-   "end": 15.9,
+   "start": 13.45,
+   "end": 15.0,
    "line": "When the satellite came home,",
    "scene": "capsule lands under a parachute on the sunny steppe",
    "in": {
@@ -186,8 +186,8 @@
   },
   {
    "id": "s09",
-   "start": 15.9,
-   "end": 17.35,
+   "start": 15.0,
+   "end": 16.75,
    "line": "they checked the bodies.",
    "scene": "scientist with tweezers, push-in to a sweating face",
    "sfx": [
@@ -205,8 +205,8 @@
   },
   {
    "id": "s10",
-   "start": 17.35,
-   "end": 19.35,
+   "start": 16.75,
+   "end": 18.6,
    "line": "And the animals were ALIVE.",
    "scene": "microscope view: tardigrades strolling; ! + flash on ALIVE",
    "in": {
@@ -239,8 +239,8 @@
   },
   {
    "id": "s11",
-   "start": 19.35,
-   "end": 20.4,
+   "start": 18.6,
+   "end": 20.5,
    "line": "Some even laid eggs.",
    "scene": "egg pops out; scientist faints in the background",
    "sfx": [
@@ -259,8 +259,8 @@
   },
   {
    "id": "s12",
-   "start": 20.4,
-   "end": 22.35,
+   "start": 20.5,
+   "end": 22.05,
    "line": "They're called TARDIGRADES.",
    "scene": "close-up: cute tardigrade waves on the moss; name sticker",
    "in": {
@@ -288,8 +288,8 @@
   },
   {
    "id": "s13",
-   "start": 22.35,
-   "end": 24.6,
+   "start": 22.05,
+   "end": 24.3,
    "line": "Half a millimeter long, lives in moss,",
    "scene": "moss world + ruler; chips 0.5 mm / lives in moss",
    "sfx": [
@@ -307,8 +307,8 @@
   },
   {
    "id": "s14",
-   "start": 24.6,
-   "end": 27.05,
+   "start": 24.3,
+   "end": 26.35,
    "line": "looks like a gummy bear with 8 legs.",
    "scene": "next to a gummy bear: ??? then 8 LEGS chip",
    "sfx": [
@@ -326,8 +326,8 @@
   },
   {
    "id": "s15",
-   "start": 27.05,
-   "end": 29.6,
+   "start": 26.35,
+   "end": 29.2,
    "line": "And now it's the first animal in history",
    "scene": "space: tardigrade floats proudly over Earth, spotlight",
    "in": {
@@ -349,8 +349,8 @@
   },
   {
    "id": "s16",
-   "start": 29.6,
-   "end": 31.45,
+   "start": 29.2,
+   "end": 31.4,
    "line": "to survive outer space.",
    "scene": "INSERT versus: astronaut (suit + oxygen) vs tardigrade (nothing)",
    "in": {
@@ -372,8 +372,8 @@
   },
   {
    "id": "s17",
-   "start": 31.45,
-   "end": 32.6,
+   "start": 31.4,
+   "end": 32.5,
    "line": "NAKED.",
    "scene": "split: WINNER arrow to the tardigrade, astronaut ! + sweat",
    "in": {
@@ -395,8 +395,8 @@
   },
   {
    "id": "s18",
-   "start": 32.6,
-   "end": 34.85,
+   "start": 32.5,
+   "end": 34.95,
    "line": "Which means the toughest astronaut ever.",
    "scene": "tardigrade in a tiny helmet with the trophy",
    "sfx": [
@@ -419,8 +419,8 @@
   },
   {
    "id": "s19",
-   "start": 34.85,
-   "end": 37.25,
+   "start": 34.95,
+   "end": 38.05,
    "line": "Is this guy. Subscribe for more.",
    "scene": "close: waves at the lens; helmet pops off -> loops to frame 1",
    "sfx": [

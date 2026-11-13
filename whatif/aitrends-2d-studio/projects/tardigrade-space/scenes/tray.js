@@ -23,7 +23,7 @@ const NEWS = () => { const g = new THREE.Group(); const p = rbox(0.95, 0.65, 0.0
 registerShot('s05', { kind: '3d',
   init(T) { const s = trayScene(T, { seed: 6 }); s.tg = tardigrade({ seed: 2, glasses: true }); s.stage.add(s.tg); s.news = NEWS(); s.news.position.set(0, 0.95, 0.75); s.news.rotation.x = -0.2; s.stage.add(s.news);
     s.pals = [[-2.1, -0.6], [2.2, -0.4]].map(([x, z], i) => { const p = tardigrade({ seed: 50 + i, glasses: true, scale: 0.8 }); p.position.set(x, 0, z); s.stage.add(p); return p; }); return s; },
-  draw(s, t, info) { s.stars.update(t); s.e.rotation.y = t * 0.2; const t0 = 0.12, dt = 0.23; const day = clamp(Math.floor((t - t0) / dt) + 1, 1, 10), mode = (day - 1) % 4;
+  draw(s, t, info) { s.stars.update(t); s.e.rotation.y = t * 0.2; const t0 = 0.12, dt = 0.2; const day = clamp(Math.floor((t - t0) / dt) + 1, 1, 10), mode = day === 10 ? 2 : (day - 1) % 4;
     const tg = s.tg; tg.rotation.set(0, 0, 0); tg.position.set(0, 0, 0); s.news.visible = mode === 0;
     if (mode === 0) tg.update(t, { lid: 0.5, look: [0, -0.4] });
     if (mode === 1) { tg.rotation.x = 1.2; tg.position.y = 0.35 + Math.abs(Math.sin(t * 14)) * 0.12; tg.update(t, { lid: 0.1, look: [0, 0.6] }); tg.legs.forEach(L => { if (L.pi === 0) L.sh.rotation.set(-1.3, 0, L.s * 0.6); }); }
@@ -32,7 +32,7 @@ registerShot('s05', { kind: '3d',
     if (mode === 0) tg.legs.forEach(L => { if (L.pi === 0) L.sh.rotation.set(1.3, 0, L.s * 0.45); });
     s.pals.forEach((p, i) => lounge(p, t, i + 3));
     camMove(s.stage, t, [[0, { pos: [0, 2.7, 7.4], look: [0, 0.65, 0], fov: 38 }], [info.dur, { pos: [0, 2.5, 6.6], look: [0, 0.7, 0], fov: 38 }]]); },
-  overlay(g, t, info, s) { const t0 = 0.12, dt = 0.23; const day = clamp(Math.floor((t - t0) / dt) + 1, 1, 10), age = t - (t0 + (day - 1) * dt);
+  overlay(g, t, info, s) { const t0 = 0.12, dt = 0.2; const day = clamp(Math.floor((t - t0) / dt) + 1, 1, 10), age = t - (t0 + (day - 1) * dt);
     const k = day === 10 ? ease.outBack(clamp(age / 0.3)) * 1.12 : 1 + 0.12 * (1 - clamp(age / 0.15));
     TXT(g, 'IN OPEN SPACE', E.W / 2, E.H * 0.155, 58, { color: '#ffffff', stroke: '#2a1c15' });
     g.save(); g.translate(E.W / 2, E.H * 0.25); g.scale(k, k); g.rotate(-3 * Math.PI / 180); chip(g, `DAY ${day}`, 0, 0, 1, { size: 120, color: day === 10 ? '#ffd23a' : '#ffffff' }); g.restore();
@@ -60,5 +60,5 @@ registerShot('s06', { kind: '3d', init: meterScene.init, draw: meterScene.draw,
     fxr(g, t, s, [{ fx: 'flash', at: hit, dur: 0.2 }, { fx: 'exclaim', on: [0, 3.9, 0], at: hit + 0.05, scale: 1.1 }, { fx: 'sparkle', on: 'tg', at: hit + 0.45, scale: 0.7 }]); },
 });
 // s07 "is 1000x stronger than on Earth." — INSERT counter over the alarm (still flashing, blurred)
-insertShot('s07', { scene: { init: meterScene.init, draw: (s, t) => meterScene.draw(s, t + 2.15), overlay: (g, t) => alarmTint(g, t + 2.15, 1) },
+insertShot('s07', { scene: { init: meterScene.init, draw: (s, t) => meterScene.draw(s, t + 1.9), overlay: (g, t) => alarmTint(g, t + 1.9, 1) },
   insert: { type: 'counter', title: 'SOLAR RADIATION OUT THERE', from: 1, value: 1000, suffix: 'x', lines: ["vs. Earth's surface"], color: '#ff5a4a' } });

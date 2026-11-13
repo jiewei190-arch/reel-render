@@ -1,0 +1,176 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 38.223,
+ "render_s": 179.7,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 2007, scientists strapped tiny animals to the OUTSIDE of a satellite.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "In two thousand seven, scientists strapped tiny animals to the outside of a satellite.",
+     "seed": 7,
+     "heard": "In 2007, scientists strapped tiny animals to the outside of a satellite.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.71
+  },
+  {
+   "n": 2,
+   "text": "No suits. No oxygen. Just open space for ten straight days.",
+   "start": 5.01,
+   "parts": [
+    {
+     "tts": "No suits. No oxygen. Just open space for ten straight days.",
+     "seed": 7,
+     "heard": "No suits, no oxygen, just open space for 10 straight days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.472
+  },
+  {
+   "n": 3,
+   "text": "The radiation out there is a thousand times stronger than on Earth.",
+   "start": 9.772,
+   "parts": [
+    {
+     "tts": "The radiation out there is a thousand times stronger than on Earth.",
+     "seed": 7,
+     "heard": "The radiation out there is a thousand times stronger than on Earth.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.217
+  },
+  {
+   "n": 4,
+   "text": "When the satellite came home, they checked the bodies... and the animals were alive.",
+   "start": 13.517,
+   "parts": [
+    {
+     "tts": "When the satellite came home, they checked the bodies...",
+     "seed": 7,
+     "heard": "When the satellite came home, they checked the bodies",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and the animals were alive.",
+     "seed": 7,
+     "heard": "and the animals were alive.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.266
+  },
+  {
+   "n": 5,
+   "text": "Some even laid eggs.",
+   "start": 18.566,
+   "parts": [
+    {
+     "tts": "Some even laid eggs.",
+     "seed": 7,
+     "heard": "some even laid eggs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.281
+  },
+  {
+   "n": 6,
+   "text": "They're called tardigrades. Half a millimeter long, lives in moss, looks like a gummy bear with eight legs.",
+   "start": 20.581,
+   "parts": [
+    {
+     "tts": "They're called tardigrades. Half a millimeter long, lives in moss, looks like a gummy bear with eight legs.",
+     "seed": 7,
+     "heard": "They're called tardigrades. Half a millimeter long, lives in moss, looks like a gummy bear with eight legs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.204
+  },
+  {
+   "n": 7,
+   "text": "And now it's the first animal in history to survive outer space... naked.",
+   "start": 26.504,
+   "parts": [
+    {
+     "tts": "And now it's the first animal in history to survive outer space...",
+     "seed": 7,
+     "heard": "And now it's the first animal in history to survive outer space.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "naked.",
+     "seed": 7,
+     "heard": "Naked.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.114
+  },
+  {
+   "n": 8,
+   "text": "Which means the toughest astronaut ever... is this guy.",
+   "start": 32.414,
+   "parts": [
+    {
+     "tts": "Which means the toughest astronaut ever...",
+     "seed": 7,
+     "heard": "which means the toughest astronaut ever.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "is this guy.",
+     "seed": 7,
+     "heard": "is this guy.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.317
+  },
+  {
+   "n": 9,
+   "text": "Subscribe for more.",
+   "start": 36.617,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.923
+  }
+ ]
+}
