@@ -1,4 +1,4 @@
-STATE: ready
+STATE: rendering
 # tardigrade-space: "Tardigrade: The Animal That Survived Space Naked" (Justin clips, Toon 3D + BEANMEN effects)
 - **Final:** `video.mp4` 1080x1920, 24 fps, 894 frames, 37.25 s, H.264 + AAC 192k, 17.3 MB. **-14.5 LUFS, true peak -1.4 dBFS.**
   `video.sha256`: `417dd49820583f6f66bc13505f34423ab5f256e3e1739656b6c0189da724ac1b  video.mp4`. No split needed (< 95 MB).
