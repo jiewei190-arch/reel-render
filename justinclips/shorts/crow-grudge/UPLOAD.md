@@ -1,6 +1,6 @@
 # UPLOAD — The Crow Grudge
 
-**File:** `video.mp4` (1080×1920, 24 fps, ~41.5 s, -14 LUFS / TP ≤ -1) · checksum in `video.sha256`
+**File:** `video.mp4` (1080×1920, 24 fps, ~41 s, -14 LUFS / TP ≤ -1) · checksum in `video.sha256`
 **Channel:** Justin clips (YouTube) · **Short** · (keep the channel name out of the video itself)
 
 ## Title (≤60 chars, 1 emoji)
@@ -20,8 +20,8 @@ Voice is synthetic.
 Would you wear the mask: yes or no? 🐦
 
 ## Cover frame
-**t ≈ 11.0 s** — the masked scientist mid-panic with crows swooping and a red "!" over his head (the chaos beat). Strong face + clear action, reads at phone size.
-Alt cover: **t ≈ 6.9 s** — the extreme close-up of the crow's eye with the mask reflected in it.
+**t ≈ 10.2 s** — the masked scientist mid-panic with crows swooping and a red "!" over his head (the chaos beat). Strong face + clear action, reads at phone size.
+Alt cover: **t ≈ 6.4 s** — the extreme close-up of the crow's eye with the mask reflected in it.
 
 ## Notes
 - Hook lands in frame 1 (text + the net drop); twist by ~4 s; new visual every 2–3 s; payoff + loop line in the last 6 s; the final "what did you do in 2006?" throws the viewer back to frame 1 ("2006").

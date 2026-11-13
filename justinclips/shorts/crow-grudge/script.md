@@ -1,7 +1,7 @@
 # The Crow Grudge — script & shot list
 
-**Slug:** `crow-grudge` · **Format:** YouTube Short, 9:16, 1080×1920, 24 fps · **Runtime:** ~41.5 s (loops) · **Style:** Toon 3D + BEANMEN effects
-**Voice:** Kokoro `am_fenrir`, deadpan, short gaps (0.95 speed); a beat of silence before the Cheney punchline.
+**Slug:** `crow-grudge` · **Format:** YouTube Short, 9:16, 1080×1920, 24 fps · **Runtime:** ~41 s (loops) · **Style:** Toon 3D + BEANMEN effects
+**Voice:** Chatterbox "D2" (owner pick, Nov 13): built-in default voice, exaggeration 0.3, cfg 0.3, via `whatif/voice/chatterbox_d2.py` (Whisper QA per line); +0.45 s held beat before the Cheney punchline.
 **Years/numbers:** spoken spelled-out in the TTS, shown as digits in captions (verified with Whisper — never read as "one thousand…").
 
 ## Frame-1 hook (kinetic text over shot 1, ~1 s)
@@ -23,19 +23,19 @@
 ## Shots (one scene per 2–4 s; Toon 3D kit + BEANMEN FX)
 | # | t (s) | Scene | FX / transition |
 |---|-------|-------|-----------------|
-| s01 | 0.0–4.2 | Campus 2006: masked scientist drops a net on a cartoon crow; snap-zoom to the mask | hook text, white flash on the net landing |
-| s02 | 4.2–6.2 | Medium on the scientist — the rubber caveman mask reads big; a crow clocks it | whipBlur in, "???" |
-| s03 | 6.2–7.4 | Extreme close-up: the trapped crow's eye, the mask reflected in it | shutter sfx, B&W flash frame |
-| s04 | 7.4–10.3 | Masked scientist crosses the quad; crows gather; "2006" stamp | iris in, **INSERT: "17 YEARS"** |
-| s05 | 10.3–13.0 | Crows swoop past his head (no contact), scolding | whip in, speedlines + "!" + sweat + cam shake |
-| s06 | 13.0–16.5 | A branch fills with crows; never-trapped birds fly in | whipBlur in |
-| s07 | 16.5–18.3 | One crow briefs three; speech bubble shows the mask icon; eyes narrow | iris-open, bubble + "NO" slash |
-| s08 | 18.3–21.8 | Crow family: parent points at a crayon "WANTED" poster; babies take notes | whipBlur in, hold on the babies, "!" |
-| s09 | 21.8–26.7 | Lab: a lineup of rubber masks; a scientist lifts the Dick Cheney mask | iris in, "???" + sparkle |
-| s10 | 26.7–29.5 | Split screen: caveman side = chaos; Cheney side = a calm bench, a crow sharing it | whip in, split-screen wipe, hearts |
-| s11 | 29.5–32.3 | Greyer campus; the aging scientist walks by | flash in, **INSERT: timeline 2008→2023** |
-| s12 | 32.3–35.1 | Quiet campus; a crow glances up, shrugs, goes back to eating; a tiny "2006" gravestone | fade in (sudden silence) |
-| s13 | 35.1–41.5 | POV: a crow on a wire stares dead into the lens, slow zoom; loop line + "Subscribe for more." | iris in; hard cut back to shot 1 |
+| s01 | 0.0–3.5 | Campus 2006: masked scientist drops a net on a cartoon crow; snap-zoom to the mask | hook text, white flash on the net landing |
+| s02 | 3.5–5.9 | Medium on the scientist — the rubber caveman mask reads big; a crow clocks it | whipBlur in, "???" |
+| s03 | 5.9–7.0 | Extreme close-up: the trapped crow's eye, the mask reflected in it | shutter sfx, B&W flash frame |
+| s04 | 7.0–8.8 | Masked scientist crosses the quad; crows gather; "2006" stamp | iris in, **INSERT: "17 YEARS"** |
+| s05 | 8.8–12.6 | Crows swoop past his head (no contact), scolding | whip in, speedlines + "!" + sweat + cam shake |
+| s06 | 12.6–15.5 | A branch fills with crows; never-trapped birds fly in | whipBlur in |
+| s07 | 15.5–17.3 | One crow briefs three; speech bubble shows the mask icon; eyes narrow | iris-open, bubble + "NO" slash |
+| s08 | 17.3–20.9 | Crow family: parent points at a crayon "WANTED" poster; babies take notes | whipBlur in, hold on the babies, "!" |
+| s09 | 20.9–25.3 | Lab: a lineup of rubber masks; a scientist lifts the Dick Cheney mask | iris in, "???" + sparkle |
+| s10 | 25.3–28.2 | Split screen: caveman side = chaos; Cheney side = a calm bench, a crow sharing it | whip in, split-screen wipe, hearts |
+| s11 | 28.2–30.3 | Greyer campus; the aging scientist walks by | flash in, **INSERT: timeline 2008→2023** |
+| s12 | 30.3–33.0 | Quiet campus; a crow glances up, shrugs, goes back to eating; a tiny "2006" gravestone | fade in (sudden silence) |
+| s13 | 33.0–41.0 | POV: a crow on a wire stares dead into the lens, slow zoom; loop line + "Subscribe for more." | iris in; hard cut back to shot 1 |
 
 ## Captions (burned, 1–3 words; ALL CAPS only on "17 YEARS" and the final line)
 2006 / scientists trapped / caveman mask / Big mistake / **17 YEARS** / screamed at / dive-bombed / It gets worse / never trapped / taught their babies / generational grudge / second mask / Dick Cheney / completely fine / 2023 / the feud ended / **…WHAT DID YOU DO IN 2006?**
