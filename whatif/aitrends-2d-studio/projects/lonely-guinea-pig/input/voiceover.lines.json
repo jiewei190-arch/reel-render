@@ -1,0 +1,214 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.418,
+ "render_s": 352.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In Switzerland, owning one guinea pig is basically illegal.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "In Switzerland, owning one guinea pig is basically illegal.",
+     "seed": 7,
+     "heard": "In Switzerland, owning one guinea pig is basically illegal.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.45
+  },
+  {
+   "n": 2,
+   "text": "Not because they're loud.",
+   "start": 3.75,
+   "parts": [
+    {
+     "tts": "Not because they're loud.",
+     "seed": 7,
+     "heard": "not because they're loud.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.021
+  },
+  {
+   "n": 3,
+   "text": "Because guinea pigs get lonely... and Switzerland decided loneliness is animal cruelty.",
+   "start": 5.321,
+   "parts": [
+    {
+     "tts": "Because guinea pigs get lonely...",
+     "seed": 7,
+     "heard": "Because guinea pigs get lonely.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and Switzerland decided loneliness is animal cruelty.",
+     "seed": 7,
+     "heard": "And Switzerland decided loneliness is animal cruelty.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.661
+  },
+  {
+   "n": 4,
+   "text": "The law says social pets must live in pairs.",
+   "start": 11.961,
+   "parts": [
+    {
+     "tts": "The law says social pets must live in pairs.",
+     "seed": 7,
+     "heard": "The law says social pets must live in pairs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.834
+  },
+  {
+   "n": 5,
+   "text": "Parrots, even lovebirds.",
+   "start": 15.134,
+   "parts": [
+    {
+     "tts": "Parrots, even lovebirds.",
+     "seed": 23,
+     "heard": "Parrots. Even lovebirds.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.922
+  },
+  {
+   "n": 6,
+   "text": "If it needs a friend, you are legally required to provide one.",
+   "start": 17.222,
+   "parts": [
+    {
+     "tts": "If it needs a friend, you are legally required to provide one.",
+     "seed": 7,
+     "heard": "If it needs a friend, you are legally required to provide one.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.198
+  },
+  {
+   "n": 7,
+   "text": "But what happens when one of your pair dies?",
+   "start": 20.498,
+   "parts": [
+    {
+     "tts": "But what happens when one of your pair dies?",
+     "seed": 7,
+     "heard": "But what happens when one of your pair dies?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.768
+  },
+  {
+   "n": 8,
+   "text": "Congrats. You're now a criminal with a grieving rodent.",
+   "start": 23.068,
+   "parts": [
+    {
+     "tts": "Congrats. You're now a criminal with a grieving rodent.",
+     "seed": 7,
+     "heard": "Congrats. You're now a criminal with a grieving rodent.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.195
+  },
+  {
+   "n": 9,
+   "text": "Enter the most Swiss solution ever: rent-a-guinea-pig services.",
+   "start": 26.495,
+   "parts": [
+    {
+     "tts": "Enter the most Swiss solution ever: rent-a-guinea-pig services.",
+     "seed": 23,
+     "heard": "Enter the most Swiss solution ever. Rent a guinea pig services.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.144
+  },
+  {
+   "n": 10,
+   "text": "You lease a temporary companion for your widowed pet.",
+   "start": 30.444,
+   "parts": [
+    {
+     "tts": "You lease a temporary companion for your widowed pet.",
+     "seed": 11,
+     "heard": "you lease a temporary companion for your widowed pet.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.145
+  },
+  {
+   "n": 11,
+   "text": "Somewhere in Zurich right now, a guinea pig is on a blind date... arranged by the government.",
+   "start": 33.445,
+   "parts": [
+    {
+     "tts": "Somewhere in Zurich right now, a guinea pig is on a blind date...",
+     "seed": 7,
+     "heard": "Somewhere in Zurich right now, a guinea pig is on a blind date.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "arranged by the government.",
+     "seed": 7,
+     "heard": "arranged by the government.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 39.512
+  },
+  {
+   "n": 12,
+   "text": "Subscribe for more.",
+   "start": 39.812,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.118
+  }
+ ]
+}

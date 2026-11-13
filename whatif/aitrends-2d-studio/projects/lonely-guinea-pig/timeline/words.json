@@ -1,525 +1,525 @@
 {
- "source": "whisper:small.en+script",
+ "source": "whisper:small.en+script, snapped to speech segments (Chatterbox D2 take)",
  "words": [
   {
    "word": "In",
    "start": 0.19,
-   "end": 0.48
+   "end": 0.51
   },
   {
    "word": "Switzerland,",
-   "start": 0.48,
-   "end": 0.887
+   "start": 0.51,
+   "end": 0.97
   },
   {
    "word": "owning",
-   "start": 1.196,
-   "end": 1.39
+   "start": 1.33,
+   "end": 1.53
   },
   {
    "word": "ONE",
-   "start": 1.39,
-   "end": 1.738
+   "start": 1.53,
+   "end": 1.83
   },
   {
    "word": "guinea",
-   "start": 1.738,
-   "end": 1.989
+   "start": 1.83,
+   "end": 2.05
   },
   {
    "word": "pig",
-   "start": 1.989,
-   "end": 2.241
+   "start": 2.05,
+   "end": 2.29
   },
   {
    "word": "is",
-   "start": 2.241,
-   "end": 2.454
+   "start": 2.29,
+   "end": 2.49
   },
   {
    "word": "basically",
-   "start": 2.454,
-   "end": 3.015
+   "start": 2.49,
+   "end": 2.91
   },
   {
    "word": "ILLEGAL.",
-   "start": 3.015,
-   "end": 3.46
+   "start": 2.91,
+   "end": 3.33
   },
   {
    "word": "Not",
-   "start": 3.92,
-   "end": 4.076
+   "start": 3.79,
+   "end": 3.954
   },
   {
    "word": "because",
-   "start": 4.076,
-   "end": 4.387
+   "start": 3.954,
+   "end": 4.235
   },
   {
    "word": "they're",
-   "start": 4.387,
-   "end": 4.676
+   "start": 4.235,
+   "end": 4.516
   },
   {
    "word": "loud.",
-   "start": 4.676,
-   "end": 5.01
+   "start": 4.516,
+   "end": 4.89
   },
   {
    "word": "Because",
-   "start": 5.47,
-   "end": 5.725
+   "start": 5.36,
+   "end": 5.723
   },
   {
    "word": "guinea",
-   "start": 5.725,
-   "end": 6.023
+   "start": 5.723,
+   "end": 6.043
   },
   {
    "word": "pigs",
-   "start": 6.023,
-   "end": 6.278
+   "start": 6.043,
+   "end": 6.299
   },
   {
    "word": "get",
-   "start": 6.278,
+   "start": 6.299,
    "end": 6.491
   },
   {
    "word": "LONELY...",
    "start": 6.491,
-   "end": 6.98
+   "end": 6.96
   },
   {
    "word": "and",
-   "start": 7.44,
-   "end": 7.523
+   "start": 7.81,
+   "end": 8.379
   },
   {
    "word": "Switzerland",
-   "start": 7.523,
-   "end": 7.958
+   "start": 8.379,
+   "end": 8.947
   },
   {
    "word": "decided",
-   "start": 7.958,
-   "end": 8.559
+   "start": 8.947,
+   "end": 9.407
   },
   {
    "word": "loneliness",
-   "start": 8.559,
-   "end": 9.14
+   "start": 9.407,
+   "end": 9.822
   },
   {
    "word": "is",
-   "start": 9.14,
-   "end": 9.616
+   "start": 9.822,
+   "end": 10.566
   },
   {
    "word": "animal",
-   "start": 9.616,
-   "end": 10.031
+   "start": 10.566,
+   "end": 11.003
   },
   {
    "word": "cruelty.",
-   "start": 10.031,
-   "end": 10.57
+   "start": 11.003,
+   "end": 11.55
   },
   {
    "word": "The",
-   "start": 11.01,
-   "end": 11.032
+   "start": 12.0,
+   "end": 12.112
   },
   {
    "word": "law",
-   "start": 11.032,
-   "end": 11.253
+   "start": 12.112,
+   "end": 12.337
   },
   {
    "word": "says",
-   "start": 11.253,
-   "end": 11.539
+   "start": 12.337,
+   "end": 12.877
   },
   {
    "word": "social",
-   "start": 11.539,
-   "end": 11.914
+   "start": 12.877,
+   "end": 13.371
   },
   {
    "word": "pets",
-   "start": 11.914,
-   "end": 12.267
+   "start": 13.371,
+   "end": 13.731
   },
   {
    "word": "must",
-   "start": 12.267,
-   "end": 12.532
+   "start": 13.731,
+   "end": 14.023
   },
   {
    "word": "live",
-   "start": 12.532,
-   "end": 12.819
+   "start": 14.023,
+   "end": 14.225
   },
   {
    "word": "in",
-   "start": 12.819,
-   "end": 13.017
+   "start": 14.225,
+   "end": 14.428
   },
   {
    "word": "PAIRS.",
-   "start": 13.017,
-   "end": 13.37
+   "start": 14.428,
+   "end": 14.72
   },
   {
    "word": "Parrots,",
-   "start": 13.81,
-   "end": 13.963
+   "start": 15.17,
+   "end": 15.435
   },
   {
    "word": "even",
-   "start": 13.963,
-   "end": 14.27
+   "start": 15.435,
+   "end": 16.016
   },
   {
    "word": "lovebirds.",
-   "start": 14.27,
-   "end": 15.01
+   "start": 16.016,
+   "end": 16.81
   },
   {
    "word": "If",
-   "start": 15.43,
-   "end": 15.53
+   "start": 17.26,
+   "end": 17.42
   },
   {
    "word": "it",
-   "start": 15.53,
-   "end": 15.67
+   "start": 17.42,
+   "end": 17.54
   },
   {
    "word": "needs",
-   "start": 15.67,
-   "end": 15.91
+   "start": 17.54,
+   "end": 17.72
   },
   {
    "word": "a",
-   "start": 15.91,
-   "end": 16.09
+   "start": 17.72,
+   "end": 17.88
   },
   {
    "word": "friend,",
-   "start": 16.09,
-   "end": 16.37
+   "start": 17.88,
+   "end": 18.12
   },
   {
    "word": "you",
-   "start": 16.59,
-   "end": 16.77
+   "start": 18.3,
+   "end": 18.56
   },
   {
    "word": "are",
-   "start": 16.77,
-   "end": 16.93
+   "start": 18.56,
+   "end": 18.66
   },
   {
    "word": "legally",
-   "start": 16.93,
-   "end": 17.27
+   "start": 18.66,
+   "end": 18.92
   },
   {
    "word": "required",
-   "start": 17.27,
-   "end": 17.95
+   "start": 18.92,
+   "end": 19.34
   },
   {
    "word": "to",
-   "start": 17.95,
-   "end": 18.17
+   "start": 19.34,
+   "end": 19.52
   },
   {
    "word": "provide",
-   "start": 18.17,
-   "end": 18.49
+   "start": 19.52,
+   "end": 19.76
   },
   {
    "word": "one.",
-   "start": 18.49,
-   "end": 18.87
+   "start": 19.76,
+   "end": 20.08
   },
   {
    "word": "But",
-   "start": 19.35,
-   "end": 19.442
+   "start": 20.53,
+   "end": 20.735
   },
   {
    "word": "what",
-   "start": 19.442,
-   "end": 19.604
+   "start": 20.735,
+   "end": 21.009
   },
   {
    "word": "happens",
-   "start": 19.604,
-   "end": 20.065
+   "start": 21.009,
+   "end": 21.442
   },
   {
    "word": "when",
-   "start": 20.065,
-   "end": 20.388
+   "start": 21.442,
+   "end": 21.784
   },
   {
    "word": "one",
-   "start": 20.388,
-   "end": 20.596
+   "start": 21.784,
+   "end": 21.966
   },
   {
    "word": "of",
-   "start": 20.596,
-   "end": 20.688
+   "start": 21.966,
+   "end": 22.08
   },
   {
    "word": "your",
-   "start": 20.688,
-   "end": 20.803
+   "start": 22.08,
+   "end": 22.194
   },
   {
    "word": "pair",
-   "start": 20.803,
-   "end": 21.057
+   "start": 22.194,
+   "end": 22.376
   },
   {
    "word": "dies?",
-   "start": 21.057,
-   "end": 21.38
+   "start": 22.376,
+   "end": 22.65
   },
   {
    "word": "Congrats.",
-   "start": 22.12,
-   "end": 22.77
+   "start": 23.1,
+   "end": 23.7
   },
   {
    "word": "You're",
-   "start": 23.2,
-   "end": 23.332
+   "start": 24.12,
+   "end": 24.298
   },
   {
    "word": "now",
-   "start": 23.332,
-   "end": 23.531
+   "start": 24.298,
+   "end": 24.476
   },
   {
    "word": "a",
-   "start": 23.531,
-   "end": 23.73
+   "start": 24.476,
+   "end": 24.632
   },
   {
    "word": "criminal",
-   "start": 23.73,
-   "end": 24.039
+   "start": 24.632,
+   "end": 24.9
   },
   {
    "word": "with",
-   "start": 24.039,
-   "end": 24.415
+   "start": 24.9,
+   "end": 25.3
   },
   {
    "word": "a",
-   "start": 24.415,
-   "end": 24.569
+   "start": 25.3,
+   "end": 25.434
   },
   {
    "word": "grieving",
-   "start": 24.569,
-   "end": 24.856
+   "start": 25.434,
+   "end": 25.679
   },
   {
    "word": "rodent.",
-   "start": 24.856,
-   "end": 25.32
+   "start": 25.679,
+   "end": 26.08
   },
   {
    "word": "Enter",
-   "start": 25.72,
-   "end": 25.98
+   "start": 26.53,
+   "end": 26.706
   },
   {
    "word": "the",
-   "start": 25.98,
-   "end": 26.14
+   "start": 26.706,
+   "end": 26.881
   },
   {
    "word": "most",
-   "start": 26.14,
-   "end": 26.4
+   "start": 26.881,
+   "end": 27.101
   },
   {
    "word": "Swiss",
-   "start": 26.4,
-   "end": 26.76
+   "start": 27.101,
+   "end": 27.408
   },
   {
    "word": "solution",
-   "start": 26.76,
-   "end": 27.22
+   "start": 27.408,
+   "end": 27.781
   },
   {
    "word": "ever:",
-   "start": 27.22,
-   "end": 27.59
+   "start": 27.781,
+   "end": 28.22
   },
   {
    "word": "rent-a-guinea-pig",
-   "start": 27.8,
-   "end": 28.8
+   "start": 28.54,
+   "end": 29.609
   },
   {
    "word": "services.",
-   "start": 28.8,
-   "end": 29.43
+   "start": 29.609,
+   "end": 30.03
   },
   {
    "word": "You",
-   "start": 29.85,
-   "end": 29.973
+   "start": 30.48,
+   "end": 30.626
   },
   {
    "word": "lease",
-   "start": 29.973,
-   "end": 30.158
+   "start": 30.626,
+   "end": 30.834
   },
   {
    "word": "a",
-   "start": 30.158,
-   "end": 30.342
+   "start": 30.834,
+   "end": 31.021
   },
   {
    "word": "temporary",
-   "start": 30.342,
-   "end": 30.814
+   "start": 31.021,
+   "end": 31.417
   },
   {
    "word": "companion",
-   "start": 30.814,
-   "end": 31.429
+   "start": 31.417,
+   "end": 31.917
   },
   {
    "word": "for",
-   "start": 31.429,
-   "end": 31.819
+   "start": 31.917,
+   "end": 32.25
   },
   {
    "word": "your",
-   "start": 31.819,
-   "end": 32.024
+   "start": 32.25,
+   "end": 32.395
   },
   {
    "word": "widowed",
-   "start": 32.024,
-   "end": 32.331
+   "start": 32.395,
+   "end": 32.666
   },
   {
    "word": "pet.",
-   "start": 32.331,
-   "end": 32.68
+   "start": 32.666,
+   "end": 33.02
   },
   {
    "word": "Somewhere",
-   "start": 33.12,
-   "end": 33.407
+   "start": 33.48,
+   "end": 33.878
   },
   {
    "word": "in",
-   "start": 33.407,
-   "end": 33.633
+   "start": 33.878,
+   "end": 34.13
   },
   {
    "word": "Zurich",
-   "start": 33.633,
-   "end": 33.9
+   "start": 34.13,
+   "end": 34.423
   },
   {
    "word": "right",
-   "start": 33.9,
-   "end": 34.269
+   "start": 34.423,
+   "end": 34.653
   },
   {
    "word": "now,",
-   "start": 34.269,
-   "end": 34.639
+   "start": 34.653,
+   "end": 35.094
   },
   {
    "word": "a",
-   "start": 34.864,
-   "end": 34.926
+   "start": 35.471,
+   "end": 35.534
   },
   {
    "word": "guinea",
-   "start": 34.926,
-   "end": 35.213
+   "start": 35.534,
+   "end": 35.827
   },
   {
    "word": "pig",
-   "start": 35.213,
-   "end": 35.521
+   "start": 35.827,
+   "end": 36.141
   },
   {
    "word": "is",
-   "start": 35.521,
-   "end": 35.685
+   "start": 36.141,
+   "end": 36.33
   },
   {
    "word": "on",
-   "start": 35.685,
-   "end": 35.829
+   "start": 36.33,
+   "end": 36.456
   },
   {
    "word": "a",
-   "start": 35.829,
-   "end": 35.952
+   "start": 36.456,
+   "end": 36.581
   },
   {
    "word": "blind",
-   "start": 35.952,
-   "end": 36.178
+   "start": 36.581,
+   "end": 36.77
   },
   {
    "word": "date...",
-   "start": 36.178,
-   "end": 36.65
+   "start": 36.77,
+   "end": 37.21
   },
   {
    "word": "arranged",
-   "start": 37.43,
-   "end": 37.87
+   "start": 38.07,
+   "end": 38.49
   },
   {
    "word": "by",
-   "start": 37.87,
-   "end": 38.101
+   "start": 38.49,
+   "end": 38.762
   },
   {
    "word": "the",
-   "start": 38.101,
-   "end": 38.263
+   "start": 38.762,
+   "end": 38.935
   },
   {
    "word": "government.",
-   "start": 38.263,
-   "end": 38.68
+   "start": 38.935,
+   "end": 39.38
   },
   {
    "word": "Subscribe",
-   "start": 39.1,
-   "end": 39.51
+   "start": 39.85,
+   "end": 40.278
   },
   {
    "word": "for",
-   "start": 39.51,
-   "end": 39.823
+   "start": 40.278,
+   "end": 40.681
   },
   {
    "word": "more.",
-   "start": 39.823,
-   "end": 40.16
+   "start": 40.681,
+   "end": 40.99
   }
  ]
 }
