@@ -4,7 +4,7 @@ STATE: ready
 
 Final video rendered in the cloud (owner's PC "Creator" was off) and pushed.
 
-- `video.mp4`: 1080×1920, 24 fps, 996 frames, 41.5 s, H.264 + AAC, 21.5 MB (no split needed). sha256 in `video.sha256`.
+- `video.mp4`: 1080×1920, 24 fps, 996 frames, 41.5 s, H.264 + AAC, 21 MB (no split needed). sha256 in `video.sha256`.
 - Audio: mix.py master −14.5 LUFS integrated, true peak −1.4 dBTP. Voice Kokoro am_fenrir; music toon3d:mystery; 37 kit sfx cues.
 - Checked: frame 1 is moving (net dropping) with the hook text; captions 1–3 words in the lower middle (y 0.72), digits for years, ALL CAPS only on "17 YEARS" and the loop line; Whisper confirms the years are spoken naturally ("2006", "17 years", "2023").
 - Loop: hard cut at the end (no fade). The last shot ends on the crow staring into the lens, then frame 1 says "2006".

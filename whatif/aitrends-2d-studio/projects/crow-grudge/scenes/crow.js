@@ -252,8 +252,10 @@ registerShot('s10', { kind: '3d',
     const angry = crow({ seed: 33, scale: 1.05 }); angry.position.set(-1.5, 0, -0.3); angry.rotation.y = 0.9; st.add(angry);
     // RIGHT: a calm scientist wearing the Cheney mask on a bench, a crow sharing the bench
     const bch = bench(); bch.position.set(1.9, 0, -2); st.add(bch);
-    const sci = scientist({ masked: false }); sci.position.set(1.6, 0, -1.9); sci.rotation.y = -0.1; st.add(sci);
-    const cheney = cheneyMask(); cheney.scale.setScalar(0.8); sci.parts.head.add(cheney); ['L', 'R'].forEach(k => { sci.parts.eyes[k].eg.visible = false; }); if (sci.parts.mouth) sci.parts.mouth.visible = false;
+    const sci = scientist({ masked: 'cheney' }); sci.position.set(1.6, 0, -1.9); sci.rotation.y = -0.1; st.add(sci);
+    // pull-over Cheney mask: slightly larger than the skull so it fully covers the head; hide the bean's own face + hair
+    const cheney = cheneyMask(); cheney.scale.setScalar(1.1); sci.parts.head.add(cheney); sci.parts.hairG.visible = false;
+    ['L', 'R'].forEach(k => { sci.parts.eyes[k].eg.visible = false; sci.parts.brows[k].bg.visible = false; }); if (sci.parts.mouth) sci.parts.mouth.visible = false;
     sci.pose(addPose(POSE.sit, {})); sci.position.y = bch.seatY - 0.8;
     const calm = crow({ seed: 12 }); calm.position.set(2.7, bch.seatY, -2); calm.rotation.y = -0.5; st.add(calm);
     return { stage: st, env, stand, angry, sci, calm, bch };
