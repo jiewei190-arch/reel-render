@@ -1,6 +1,6 @@
 # UPLOAD: molasses-flood (YouTube Shorts, Justin clips). NOT posted; the owner uploads.
 
-**File:** `video.mp4` (1080x1920, 24 fps, 43.7 s, -14 LUFS). Check `video.sha256` first.
+**File:** `video.mp4` (1080x1920, 24 fps, 47.7 s, -14 LUFS; Chatterbox D2 narrator). Check `video.sha256` first.
 
 **Title** (45 chars + emoji; the brief's long title is 61 chars, so it is shortened to the claim):
 A Molasses Tsunami Killed 21 People in Boston 🌊
@@ -23,4 +23,4 @@ Worst excuse in history: "anarchists blew up our tank" or "the dog ate my homewo
 **Cover frame:** 1.5 s (frame 1 look: the molasses wave towering over the 1919 street, the horse with "!", hook text
 "A MOLASSES TSUNAMI / KILLED 21 PEOPLE").
 
-Notes: no channel name in the video; closer "Subscribe for more." (0.87 s), hard cut, loops into frame 1.
+Notes: no channel name in the video; closer "Subscribe for more." (1.25 s), hard cut, loops into frame 1.
