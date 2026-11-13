@@ -11,7 +11,7 @@
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
- "music": { "enabled": true, "file": "toon3d:curious", "gainDb": -18 },
+ "music": { "enabled": true, "file": "toon3d:curious", "gainDb": -21 },
  "sfx": { "enabled": true, "gainDb": -6 },
  "loudness": -14
 }

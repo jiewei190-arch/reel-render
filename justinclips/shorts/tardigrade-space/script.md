@@ -4,7 +4,7 @@ Voice: **Chatterbox D2** (owner's pick, Nov 13: built-in voice, exaggeration 0.3
 Voice script: `projects/tardigrade-space/input/voice_script.md` = the owner's 8 lines (same text as the voice-test proof take) + "9. Subscribe for more.".
 Every part passed Whisper QA on seed 7 (lines 1-8 have the same timings as `voice_test/tardigrade_d2.lines.json`); "2007" is spoken "two thousand seven"
 and Whisper hears "In 2007". Captions show digits (2007, 1000x, 10, 8) from `input/script.txt`.
-Length 38.05 s (voice 38.22 s incl. tail silence; closer 36.72-37.92 s = 1.2 s), 913 frames @ 24 fps. The old Kokoro Fenrir take is replaced.
+Length 38.08 s (voice 38.22 s incl. tail silence; closer 36.72-37.92 s = 1.2 s), 914 frames @ 24 fps. The old Kokoro Fenrir take is replaced.
 
 | # | t (s) | Narration (spoken) | Captions (digits) | Shot | FX / transition |
 |---|---|---|---|---|---|
@@ -28,5 +28,5 @@ Length 38.05 s (voice 38.22 s incl. tail silence; closer 36.72-37.92 s = 1.2 s),
 | 10 | 32.5 | Which means the toughest astronaut ever... | | s18 tiny helmet + trophy "TOUGHEST ASTRONAUT EVER" | spotlight, sparkle, bell |
 | 11 | 34.95 | is this guy. Subscribe for more. | this guy. | s19 waves at the lens, helmet pops off on "Subscribe", pulls back to the frame-1 framing | hard cut -> loops to frame 1 |
 
-Music: kit bed `toon3d:curious` (-18 dB, ducked under the voice by mix.py). 44 kit sfx cues (several on spoken words).
+Music: kit bed `toon3d:curious` (-21 dB, ducked under the voice by mix.py). 42 kit sfx cues (several on spoken words); kept light around "They're called" so the line stays clear.
 The optional line "Some even laid eggs" was kept (verified, and it fits: 37 s total).

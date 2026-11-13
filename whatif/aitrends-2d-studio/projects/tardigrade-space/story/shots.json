@@ -247,12 +247,6 @@
     {
      "word": "eggs",
      "name": "toon3d:pop",
-     "gain": -6
-    },
-    {
-     "word": "eggs",
-     "offset": 0.3,
-     "name": "toon3d:slide",
      "gain": -12
     }
    ]
@@ -268,11 +262,6 @@
     "dir": 1
    },
    "sfx": [
-    {
-     "at": 0,
-     "name": "toon3d:whoosh",
-     "gain": -9
-    },
     {
      "word": "tardigrades",
      "name": "toon3d:chime",

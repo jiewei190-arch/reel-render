@@ -13,4 +13,4 @@ Voice is synthetic.
 **Cover frame:** 0.5 s (frame 1: the floating tardigrade + "THIS ANIMAL SURVIVED SPACE. NAKED.").
 Alt cover: 32.0 s (WINNER arrow on the tardigrade vs the astronaut).
 
-**File:** `video.mp4`, 1080x1920, 24 fps, 37.25 s, H.264 + AAC. Check `video.sha256` before uploading.
+**File:** `video.mp4`, 1080x1920, 24 fps, 38.08 s, H.264 + AAC. Check `video.sha256` before uploading.

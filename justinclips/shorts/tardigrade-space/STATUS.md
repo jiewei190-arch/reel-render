@@ -1,19 +1,18 @@
-STATE: rendering
-# tardigrade-space: "Tardigrade: The Animal That Survived Space Naked" (Justin clips, Toon 3D + BEANMEN effects)
-- **Final:** `video.mp4` 1080x1920, 24 fps, 894 frames, 37.25 s, H.264 + AAC 192k, 17.3 MB. **-14.5 LUFS, true peak -1.4 dBFS.**
-  `video.sha256`: `417dd49820583f6f66bc13505f34423ab5f256e3e1739656b6c0189da724ac1b  video.mp4`. No split needed (< 95 MB).
-  Built as the full silent render + mix.wav muxed with `-c copy` video (no `-shortest` frame loss).
-- Rendered in the cloud (owner's PC off): SwiftShader, 4 workers, 11m06s. Build frames not committed.
-- Checked: `contact_sheet.png` (20 frames from the final render, red boxes = Shorts UI zones: frame 1, captions vs UI, FX, last frame)
-  and `preview_540x960.mp4` (half-size copy of the final video, with audio).
-  Frame 1 = the floating tardigrade + hook "THIS ANIMAL SURVIVED SPACE. NAKED." already moving; last frame returns to the frame-1 framing (loop).
-- Voice: Kokoro am_fenrir 0.95. Whisper heard "In 2007," (spoken "two thousand seven"); captions show digits (2007, 1000x, 10, 8).
-- Effects: sunny sky preset (landing + moss shots), space look elsewhere; reaction FX after every reveal (??? ! sweat hearts stars zzz sparkle spotlight
-  shake flash); 2 INSERT cards (counter 1,000x, versus SUIT + OXYGEN vs NOTHING) + DAY 1>10 counter + stat chips; whipBlur/iris/flash transitions;
-  music `toon3d:curious` + 44 kit sfx cues (many on spoken words).
-- Fact notes: sources.md. Dramatized parts are named there; it notes that only a few survived the full radiation dose. CBC and New Scientist (listed
-  in the brief) could not be verified/opened, so they are not linked; the claims rest on Current Biology 2008, ESA, National Geographic, Space.com, SciAm.
-- Project: `whatif/aitrends-2d-studio/projects/tardigrade-space` (voiceover.wav force-added; mix uses only kit sfx/music wavs already in the repo).
-  Re-render: `node render.mjs --project projects/tardigrade-space --out projects/tardigrade-space/build/video_silent.mp4` (from the studio folder;
-  add `--gl gpu` on the PC), then `python audio/mix.py --project projects/tardigrade-space --out projects/tardigrade-space/build/mixed.mp4` and mux mix.wav onto the silent video with `-c:v copy`.
+STATE: ready
+# tardigrade-space: "Tardigrade: The Animal That Survived Space Naked" (Justin clips, Toon 3D + BEANMEN effects), RE-VOICED with Chatterbox D2
+- **Final:** `video.mp4` 1080x1920, 24 fps, 914 frames, 38.08 s, H.264 + AAC 192k, 17 MB. **-14.4 LUFS, true peak -1.3 dBFS.**
+  `video.sha256`: `a2e5aee7d3f816f67e1ba152f7fcb6996f684b4a3b40d60e9260f256a287257d  video.mp4`. No split needed (< 95 MB). Full silent render + mix.wav muxed with `-c:v copy` (no frame loss).
+- **Voice (owner's pick, Nov 13): Chatterbox D2** (built-in voice, exaggeration 0.3, cfg 0.3) via `whatif/voice/chatterbox_d2.py --gap 0.3 --comma 0.15 --lead 0.15`.
+  Voice script = the owner's 8 lines (identical to the voice-test proof take, same seeds/timings) + "9. Subscribe for more." Every part passed Whisper QA (seed 7).
+  Held 0.7 s beats before "and the animals were alive", "naked", "is this guy". Closer "Subscribe for more." 36.72-37.92 s (1.2 s), then hard cut -> loop to frame 1.
+- **QA (Whisper small.en on the final mix):** "In 2007, scientists strapped tiny animals to the outside of a satellite. No suits, no oxygen, just open space for 10 straight days.
+  The radiation out there is a thousand times stronger than on Earth. When the satellite came home, they checked the bodies, and the animals were alive, some even laid eggs.
+  They're called tardigrades. Half a millimeter long, lives in moss, looks like a gummy bear with eight legs. And now it's the first animal in history to survive outer space.
+  Naked, which means the toughest astronaut ever. Is this guy? Subscribe for more." = the script word for word; "2007" is spoken "two thousand seven".
+  (First mix had "They're called" masked -> music bed -18 -> -21 dB, pop on "eggs" -6 -> -12 dB, whoosh/slide next to it removed.)
+- Re-timed to the new VO: transcribe (timeline/words.json), all 19 shot cuts, sfx word cues, insert continuations, DAY counter. Same script, shots, captions, effects, packaging.
+- Checked: `contact_sheet.png` (20 frames of the final render, red = Shorts UI zones: frame 1, captions vs UI, FX, last frame = frame-1 framing) and `preview_540x960.mp4`.
+- Rendered in the cloud (owner's PC off): SwiftShader, 4 workers, 10m59s. UPLOAD.md: only the duration changed (cover frame 0.5 s / alt 32.0 s still valid).
+- Fact notes: sources.md (unchanged). Project: `whatif/aitrends-2d-studio/projects/tardigrade-space` (voiceover.wav force-added; `input/make_voice.py` = the old Kokoro take, superseded).
+  Re-render: `node render.mjs --project projects/tardigrade-space --out projects/tardigrade-space/build/video_silent.mp4` (add `--gl gpu` on the PC), then mix.py and mux mix.wav with `-c:v copy`.
 - Nothing was posted, uploaded or logged into.
