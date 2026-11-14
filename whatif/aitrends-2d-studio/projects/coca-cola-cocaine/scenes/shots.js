@@ -42,10 +42,10 @@ const pharmacy = {
   init(T) { const st = toonStage(T, { light: 'warm', fov: 36, target: [0, 0, 0], shadowSize: 6 });
     room(st, { wall: '#e4d2a8', paper: '#9a6a4a', w: 13 });
     for (const [x, sd] of [[-3.4, 3], [-1.6, 6], [1.8, 8], [3.6, 11]]) st.add(PR.shelf({ w: 1.7, h: 3.0, seed: sd, color: '#6a3a22' }).at(x, 0, -2.6));
-    const sign = board(signTex(['PHARMACY', 'ATLANTA'], { w: 640, h: 256, bg: '#2a1c14', fg: '#f2d27a', border: '#f2d27a', sizes: [86, 62] }), 2.4, 0.96).at(0.1, 4.0, -2.85); st.add(sign);
+    const sign = board(signTex(['PHARMACY', 'ATLANTA'], { w: 640, h: 256, bg: '#2a1c14', fg: '#f2d27a', border: '#f2d27a', sizes: [86, 62] }), 2.4, 0.96).at(-2.6, 3.3, -2.85); st.add(sign);
     // stove + pot
     const stove = PR.propGroup(rbox(1.3, 0.9, 1.0, '#2a2a30', 0, 0.45, 0, 0.05), cyl(0.06, 0.06, 2.4, '#2a2a30', -0.4, 2.0, -0.35, 8)); outline(stove, { px: 2.4 }); stove.position.set(0.9, 0, 0.3); st.add(stove);
-    const pot = PR.propGroup(PR.propGroup()); const body = cyl(0.42, 0.36, 0.55, '#8a5a3a', 0, 0.28, 0, 24); const liq = cyl(0.39, 0.39, 0.02, '#4a2010', 0, 0.5, 0, 24); liq.userData.noOutline = true;
+    const pot = PR.propGroup(PR.propGroup()); const body = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.36, 0.55, 24, 1, true), toon('#8a5a3a', { side: THREE.DoubleSide })); body.position.y = 0.28; body.castShadow = true; const liq = cyl(0.4, 0.4, 0.02, '#4a2010', 0, 0.42, 0, 24); liq.userData.noOutline = true;
     pot.add(body, liq, PR.propGroup()); outline(pot, { px: 2.6 }); pot.position.set(0.9, 0.9, 0.3); st.add(pot);
     const spoon = cyl(0.03, 0.03, 1.1, '#7a5032', 0, 0, 0, 8); outline(spoon, { px: 2 }); st.add(spoon);
     const steam = []; for (let i = 0; i < 5; i++) { const b = ball(0.12, '#ffffff', 0, 0, 0, 10); b.material = toon('#ffffff', { transparent: true, opacity: 0.5, fresh: true }); b.userData.noOutline = true; st.add(b); steam.push(b); }
@@ -53,7 +53,7 @@ const pharmacy = {
     // a small brown medicine bottle in the coat pocket
     const bottle = PR.propGroup(cyl(0.07, 0.07, 0.22, '#6a3a1a', 0, 0, 0, 12), cyl(0.04, 0.04, 0.06, '#2a1c14', 0, 0.14, 0, 8)); outline(bottle, { px: 2 });
     p.parts.body.add(bottle); bottle.position.set(-0.22, 0.95, 0.3);
-    const leaves = []; for (let i = 0; i < 7; i++) { const l = leaf(0.26); st.add(l); leaves.push(l); }
+    const leaves = []; for (let i = 0; i < 10; i++) { const l = leaf(0.42); st.add(l); leaves.push(l); }
     const basket = PR.propGroup(cyl(0.3, 0.24, 0.25, '#b8925a', 0, 0.12, 0, 16)); outline(basket, { px: 2.2 }); basket.position.set(2.1, 0.9, 0.4); st.add(basket);
     const tbl = PR.table({ w: 1.6, d: 0.9, h: 0.9 }).at(2.2, 0, 0.4); st.add(tbl);
     return { stage: st, p, pot, spoon, steam, leaves }; },
@@ -62,8 +62,8 @@ const pharmacy = {
     s.p.pose(addPose(mixPose(POSE.stand, { armR: [1.1, 0.6, -0.6], elbowR: 0.9, armL: [0.3, 0.2, 0], elbowL: 0.4 }, 1), { ...idle(t, 3), twist: Math.sin(stir) * 0.08 }));
     s.p.face(o.face ? o.face(t) : mixExpr(EXPR.deadpan, EXPR.smug, 0.4), t);
     s.steam.forEach((b, i) => { const ph = (t * 0.5 + i / 5) % 1; b.position.set(0.9 + Math.sin(i * 2 + t) * 0.15, 1.5 + ph * 1.4, 0.3); b.scale.setScalar(0.6 + ph * 1.4); b.material.opacity = 0.45 * (1 - ph); });
-    const drop = o.leafAt ?? 99; s.leaves.forEach((l, i) => { const lt = t - drop - i * 0.12; if (lt < 0) { l.visible = false; return; } l.visible = true; const y = Math.max(1.42, 3.2 - lt * lt * 6);
-      l.position.set(0.9 + Math.sin(i * 1.7) * 0.2, y, 0.3 + Math.cos(i * 2.3) * 0.2); l.rotation.set(-Math.PI / 2 + (y > 1.43 ? Math.sin(lt * 9 + i) * 0.8 : 0.1), 0, i + lt * (y > 1.43 ? 4 : 0.5)); });
+    const drop = o.leafAt ?? 99; s.leaves.forEach((l, i) => { const lt = t - drop - i * 0.12; if (lt < 0) { l.visible = false; return; } l.visible = true; const y = Math.max(1.34, 3.2 - lt * lt * 6);
+      l.position.set(0.9 + Math.sin(i * 1.7) * 0.2, y, 0.3 + Math.cos(i * 2.3) * 0.2); l.rotation.set(-Math.PI / 2 + (y > 1.35 ? Math.sin(lt * 9 + i) * 0.8 : 0.1), 0, i + lt * (y > 1.35 ? 4 : 0.5)); });
     if (o.cam) o.cam(s, t, info); },
 };
 // c02 "In 1886, a morphine-addicted pharmacist named John Pemberton invented it,"
@@ -81,7 +81,7 @@ registerShot('c03', { kind: '3d', init: pharmacy.init,
   overlay(g, t, info, s) { sunnyLook(g, t, WARM); const l = at(info, 'leaves', 0.5), pl = at(info, 'plant', 1.3);
     tag(g, t, l, 'COCA LEAVES', 0.13, { size: 100, color: '#7ad04a' });
     tag(g, t, pl, '= where cocaine comes from', 0.2, { size: 58 });
-    reactions(g, t, s, [{ fx: 'sparkle', on: [0.9, 1.6, 0.3], at: l + 0.15, scale: 1.2 }, { fx: 'exclaim', on: [0.9, 1.9, 0.3], at: at(info, 'cocaine', 1.8), scale: 1.1 }]); },
+    reactions(g, t, s, [{ fx: 'sparkle', on: [0.9, 1.6, 0.3], at: l + 0.15, scale: 0.75 }, { fx: 'exclaim', on: [0.1, 1.5, 0.3], at: at(info, 'cocaine', 1.8), scale: 1.1 }]); },
 });
 
 // ---------- c04 the Pope cameo: "It was sold as medicine." (coca WINE, not Coke: on-screen text says so) ----------
@@ -96,10 +96,10 @@ registerShot('c04', { kind: '3d',
   draw(s, t, info) { const raise = ease.outBack(prog(t, 0.15, 0.55));
     s.p.pose(addPose(mixPose(POSE.stand, { armR: [1.2, 0.35, 0.2], elbowR: 0.9, armL: [1.15, 0.3, -0.2], elbowL: 0.6, headTilt: 0.12 }, raise), idle(t, 5)));
     s.p.face(mixExpr(EXPR.happy, EXPR.grin, prog(t, 0.6, 1.0)), t);
-    camMove(s.stage, t, [[0, { pos: [0, 2.3, 5.4], look: [0, 1.95, 0.6], fov: 36 }], [info.dur, { pos: [0, 2.25, 4.5], look: [0, 1.95, 0.6], fov: 34 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0, 2.6, 5.8], look: [0, 2.35, 0.6], fov: 38 }], [info.dur, { pos: [0, 2.55, 4.9], look: [0, 2.35, 0.6], fov: 36 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, { tint: '#ffd0a0', tintAmount: 0.2, rays: { from: [-60, -80], strength: 0.6 } });
     tag(g, t, 0.1, 'EVEN THE POPE', 0.11, { size: 92 }); tag(g, t, 0.35, 'LOVED COCA WINE', 0.175, { size: 92, color: '#f2c230' });
-    reactions(g, t, s, [{ fx: 'hearts', on: 'p', at: 0.5 }, { fx: 'sparkle', on: 'md', at: 0.6, scale: 0.8 }]); },
+    reactions(g, t, s, [{ fx: 'hearts', on: 'p', at: 0.5, scale: 0.8 }, { fx: 'sparkle', on: 'md', at: 0.6, scale: 0.8 }]); },
 });
 
 // ---------- c05 the poster: "A temperance drink" — a comically long list of "cures" scrolling ----------

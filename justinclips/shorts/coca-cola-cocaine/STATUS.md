@@ -1,3 +1,3 @@
-STATE: building
+STATE: rendering
 
-Script, sources, voice (Chatterbox D2), timeline and scenes are done. The preview render is running in the cloud.
+The half-size preview is checked and in preview/. The full 1080x1920 render is running in the cloud.
