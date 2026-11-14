@@ -1,0 +1,545 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "1980,",
+   "start": 0.3,
+   "end": 0.82
+  },
+  {
+   "word": "one",
+   "start": 1.38,
+   "end": 1.48
+  },
+  {
+   "word": "tiny",
+   "start": 1.48,
+   "end": 1.82
+  },
+  {
+   "word": "drilling",
+   "start": 1.82,
+   "end": 2.08
+  },
+  {
+   "word": "mistake",
+   "start": 2.08,
+   "end": 2.58
+  },
+  {
+   "word": "swallowed",
+   "start": 2.58,
+   "end": 3.54
+  },
+  {
+   "word": "an",
+   "start": 3.54,
+   "end": 3.8
+  },
+  {
+   "word": "entire",
+   "start": 3.8,
+   "end": 4.26
+  },
+  {
+   "word": "lake.",
+   "start": 4.26,
+   "end": 4.58
+  },
+  {
+   "word": "A",
+   "start": 4.98,
+   "end": 5.14
+  },
+  {
+   "word": "Texaco",
+   "start": 5.14,
+   "end": 5.56
+  },
+  {
+   "word": "rig",
+   "start": 5.56,
+   "end": 5.74
+  },
+  {
+   "word": "was",
+   "start": 5.74,
+   "end": 5.96
+  },
+  {
+   "word": "drilling",
+   "start": 5.96,
+   "end": 6.22
+  },
+  {
+   "word": "for",
+   "start": 6.22,
+   "end": 6.46
+  },
+  {
+   "word": "oil",
+   "start": 6.46,
+   "end": 6.72
+  },
+  {
+   "word": "on",
+   "start": 6.72,
+   "end": 7.04
+  },
+  {
+   "word": "Lake",
+   "start": 7.04,
+   "end": 7.26
+  },
+  {
+   "word": "Peigneur,",
+   "start": 7.26,
+   "end": 8.12
+  },
+  {
+   "word": "Louisiana,",
+   "start": 8.12,
+   "end": 8.2
+  },
+  {
+   "word": "right",
+   "start": 8.58,
+   "end": 8.7
+  },
+  {
+   "word": "above",
+   "start": 8.7,
+   "end": 8.9
+  },
+  {
+   "word": "a",
+   "start": 8.9,
+   "end": 9.02
+  },
+  {
+   "word": "salt",
+   "start": 9.02,
+   "end": 9.22
+  },
+  {
+   "word": "mine.",
+   "start": 9.22,
+   "end": 9.48
+  },
+  {
+   "word": "At",
+   "start": 10.12,
+   "end": 10.26
+  },
+  {
+   "word": "about",
+   "start": 10.26,
+   "end": 10.58
+  },
+  {
+   "word": "1,230",
+   "start": 10.58,
+   "end": 11.56
+  },
+  {
+   "word": "feet",
+   "start": 11.56,
+   "end": 11.98
+  },
+  {
+   "word": "down,",
+   "start": 11.98,
+   "end": 12.32
+  },
+  {
+   "word": "the",
+   "start": 12.66,
+   "end": 12.84
+  },
+  {
+   "word": "drill",
+   "start": 12.84,
+   "end": 13.08
+  },
+  {
+   "word": "punched",
+   "start": 13.08,
+   "end": 13.38
+  },
+  {
+   "word": "into",
+   "start": 13.38,
+   "end": 13.66
+  },
+  {
+   "word": "the",
+   "start": 13.66,
+   "end": 13.8
+  },
+  {
+   "word": "mine.",
+   "start": 13.8,
+   "end": 14.04
+  },
+  {
+   "word": "The",
+   "start": 14.58,
+   "end": 14.76
+  },
+  {
+   "word": "lake",
+   "start": 14.76,
+   "end": 14.92
+  },
+  {
+   "word": "started",
+   "start": 14.92,
+   "end": 15.14
+  },
+  {
+   "word": "draining",
+   "start": 15.14,
+   "end": 15.42
+  },
+  {
+   "word": "like",
+   "start": 15.42,
+   "end": 15.64
+  },
+  {
+   "word": "a",
+   "start": 15.64,
+   "end": 15.76
+  },
+  {
+   "word": "bathtub.",
+   "start": 15.76,
+   "end": 16.22
+  },
+  {
+   "word": "The",
+   "start": 16.74,
+   "end": 16.9
+  },
+  {
+   "word": "whirlpool",
+   "start": 16.9,
+   "end": 17.38
+  },
+  {
+   "word": "swallowed",
+   "start": 17.38,
+   "end": 17.76
+  },
+  {
+   "word": "the",
+   "start": 17.76,
+   "end": 18.02
+  },
+  {
+   "word": "oil",
+   "start": 18.02,
+   "end": 18.26
+  },
+  {
+   "word": "rig,",
+   "start": 18.26,
+   "end": 18.56
+  },
+  {
+   "word": "eleven",
+   "start": 18.56,
+   "end": 19.18
+  },
+  {
+   "word": "barges,",
+   "start": 19.18,
+   "end": 19.66
+  },
+  {
+   "word": "a",
+   "start": 19.9,
+   "end": 20.02
+  },
+  {
+   "word": "tugboat,",
+   "start": 20.02,
+   "end": 20.44
+  },
+  {
+   "word": "and",
+   "start": 20.58,
+   "end": 20.72
+  },
+  {
+   "word": "65",
+   "start": 20.72,
+   "end": 21.12
+  },
+  {
+   "word": "acres",
+   "start": 21.12,
+   "end": 21.5
+  },
+  {
+   "word": "of",
+   "start": 21.5,
+   "end": 21.72
+  },
+  {
+   "word": "land.",
+   "start": 21.72,
+   "end": 21.96
+  },
+  {
+   "word": "Then",
+   "start": 22.56,
+   "end": 22.82
+  },
+  {
+   "word": "the",
+   "start": 22.82,
+   "end": 23.08
+  },
+  {
+   "word": "canal",
+   "start": 23.08,
+   "end": 23.34
+  },
+  {
+   "word": "reversed.",
+   "start": 23.34,
+   "end": 23.74
+  },
+  {
+   "word": "The",
+   "start": 24.4,
+   "end": 24.6
+  },
+  {
+   "word": "Gulf",
+   "start": 24.6,
+   "end": 24.78
+  },
+  {
+   "word": "of",
+   "start": 24.78,
+   "end": 24.94
+  },
+  {
+   "word": "Mexico",
+   "start": 24.94,
+   "end": 25.28
+  },
+  {
+   "word": "flowed",
+   "start": 25.28,
+   "end": 25.6
+  },
+  {
+   "word": "in",
+   "start": 25.6,
+   "end": 25.82
+  },
+  {
+   "word": "backwards,",
+   "start": 25.82,
+   "end": 26.16
+  },
+  {
+   "word": "creating",
+   "start": 26.56,
+   "end": 26.92
+  },
+  {
+   "word": "Louisiana's",
+   "start": 26.92,
+   "end": 27.74
+  },
+  {
+   "word": "tallest",
+   "start": 27.74,
+   "end": 27.96
+  },
+  {
+   "word": "waterfall.",
+   "start": 27.96,
+   "end": 28.54
+  },
+  {
+   "word": "Days",
+   "start": 28.54,
+   "end": 29.34
+  },
+  {
+   "word": "later,",
+   "start": 29.34,
+   "end": 29.76
+  },
+  {
+   "word": "nine",
+   "start": 30.02,
+   "end": 30.14
+  },
+  {
+   "word": "of",
+   "start": 30.14,
+   "end": 30.26
+  },
+  {
+   "word": "the",
+   "start": 30.26,
+   "end": 30.36
+  },
+  {
+   "word": "sunken",
+   "start": 30.36,
+   "end": 30.66
+  },
+  {
+   "word": "barges",
+   "start": 30.66,
+   "end": 31.02
+  },
+  {
+   "word": "popped",
+   "start": 31.02,
+   "end": 31.2
+  },
+  {
+   "word": "back",
+   "start": 31.2,
+   "end": 31.46
+  },
+  {
+   "word": "up",
+   "start": 31.46,
+   "end": 31.86
+  },
+  {
+   "word": "like",
+   "start": 32.34,
+   "end": 32.48
+  },
+  {
+   "word": "bath",
+   "start": 33.0,
+   "end": 33.16
+  },
+  {
+   "word": "toys.",
+   "start": 33.16,
+   "end": 33.48
+  },
+  {
+   "word": "Every",
+   "start": 34.28,
+   "end": 34.48
+  },
+  {
+   "word": "person",
+   "start": 34.48,
+   "end": 34.88
+  },
+  {
+   "word": "got",
+   "start": 34.88,
+   "end": 35.24
+  },
+  {
+   "word": "out",
+   "start": 35.24,
+   "end": 35.38
+  },
+  {
+   "word": "alive.",
+   "start": 35.38,
+   "end": 35.7
+  },
+  {
+   "word": "The",
+   "start": 36.4,
+   "end": 36.48
+  },
+  {
+   "word": "lake",
+   "start": 36.48,
+   "end": 36.66
+  },
+  {
+   "word": "went",
+   "start": 36.66,
+   "end": 36.86
+  },
+  {
+   "word": "from",
+   "start": 36.86,
+   "end": 37.04
+  },
+  {
+   "word": "10",
+   "start": 37.04,
+   "end": 37.26
+  },
+  {
+   "word": "feet",
+   "start": 37.26,
+   "end": 37.46
+  },
+  {
+   "word": "deep",
+   "start": 37.46,
+   "end": 37.78
+  },
+  {
+   "word": "to",
+   "start": 37.78,
+   "end": 38.4
+  },
+  {
+   "word": "200",
+   "start": 38.4,
+   "end": 38.72
+  },
+  {
+   "word": "feet",
+   "start": 38.72,
+   "end": 38.92
+  },
+  {
+   "word": "of",
+   "start": 38.92,
+   "end": 39.04
+  },
+  {
+   "word": "salt",
+   "start": 39.04,
+   "end": 39.55
+  },
+  {
+   "word": "water.",
+   "start": 39.55,
+   "end": 40.06
+  },
+  {
+   "word": "Subscribe",
+   "start": 40.06,
+   "end": 40.44
+  },
+  {
+   "word": "for",
+   "start": 40.44,
+   "end": 40.8
+  },
+  {
+   "word": "more.",
+   "start": 40.8,
+   "end": 41.04
+  }
+ ]
+}
