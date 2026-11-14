@@ -1,0 +1,369 @@
+{
+ "duration": 37.522,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.04,
+   "line": "The CEO of Nvidia just lost his job...",
+   "scene": "keynote stage + hook",
+   "sfx": [
+    {
+     "name": "toon3d:riser",
+     "at": 0,
+     "gain": -16
+    },
+    {
+     "name": "toon3d:thud",
+     "word": "job",
+     "gain": -6
+    },
+    {
+     "name": "toon3d:ding",
+     "word": "job",
+     "offset": 0.05,
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.04,
+   "end": 5.28,
+   "line": "over a suspected Chinese spy.",
+   "scene": "radar + stamp",
+   "sfx": [
+    {
+     "name": "toon3d:impact",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:beep",
+     "at": 0.3,
+     "gain": -18
+    },
+    {
+     "name": "toon3d:beep",
+     "at": 1.1,
+     "gain": -18
+    },
+    {
+     "name": "toon3d:stamp",
+     "word": "spy",
+     "gain": -5
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s03",
+   "start": 5.28,
+   "end": 7.92,
+   "line": "Jensen Huang admitted an affair on November eighth.",
+   "scene": "letter + 40 years frame",
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:paper",
+     "at": 0.15,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:pop",
+     "at": 1.3,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s04",
+   "start": 7.92,
+   "end": 11.58,
+   "line": "Her company reportedly bought nearly 5 billion dollars of his chips,",
+   "scene": "handshake + pallet + price tag",
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "at": 0,
+     "gain": -12
+    },
+    {
+     "name": "toon3d:cash",
+     "word": "billion",
+     "gain": -8
+    },
+    {
+     "name": "toon3d:sparkle",
+     "word": "billion",
+     "offset": 0.1,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s05",
+   "start": 11.58,
+   "end": 13.9,
+   "line": "and is suspected of funneling them to China.",
+   "scene": "insert: suspected route map",
+   "sfx": [
+    {
+     "name": "toon3d:impact",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:paper",
+     "at": 0.1,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:boing",
+     "at": 0.9,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s06",
+   "start": 13.9,
+   "end": 18.78,
+   "line": "Then the New York Times reported a second affair. Then Reuters reported a third.",
+   "scene": "newspapers + sweat",
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:paper",
+     "word": "york",
+     "gain": -8
+    },
+    {
+     "name": "toon3d:swoosh",
+     "word": "york",
+     "gain": -12
+    },
+    {
+     "name": "toon3d:paper",
+     "word": "reuters",
+     "gain": -8
+    },
+    {
+     "name": "toon3d:ding",
+     "word": "reuters",
+     "offset": 0.15,
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s07",
+   "start": 18.78,
+   "end": 20.66,
+   "line": "Four days later, he resigned.",
+   "scene": "boardroom, empty chair, resignation slides",
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "at": 0,
+     "gain": -12
+    },
+    {
+     "name": "toon3d:slide",
+     "word": "resigned",
+     "offset": -0.4,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:thud",
+     "word": "resigned",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s08",
+   "start": 20.66,
+   "end": 24.4,
+   "line": "And Nvidia lost about 500 billion dollars in value that week.",
+   "scene": "chart cliff dive + counter -$500B",
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:drop",
+     "at": 0.3,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:crash",
+     "word": "billion",
+     "offset": 0.2,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:fail",
+     "word": "billion",
+     "offset": 0.3,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s09",
+   "start": 24.4,
+   "end": 27.5,
+   "line": "Now Congress wants him to testify before Thanksgiving.",
+   "scene": "sunny capitol + letter + turkey",
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:paper",
+     "at": 0.35,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:pop",
+     "word": "thanksgiving",
+     "gain": -8
+    },
+    {
+     "name": "toon3d:boing",
+     "word": "thanksgiving",
+     "offset": 0.2,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s10",
+   "start": 27.5,
+   "end": 29.74,
+   "line": "And the president was reportedly briefed on the spy concern a year earlier.",
+   "scene": "insert: reported timeline",
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "at": 0,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:pop",
+     "at": 0.6,
+     "gain": -12
+    },
+    {
+     "name": "toon3d:pop",
+     "at": 1.0,
+     "gain": -12
+    },
+    {
+     "name": "toon3d:ding",
+     "word": "year",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s11",
+   "start": 29.74,
+   "end": 35.98,
+   "line": "The king of AI... brought down by the one thing he couldn't compute.",
+   "scene": "supercomputer melts",
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "at": 0,
+     "gain": -12
+    },
+    {
+     "name": "toon3d:rumble",
+     "word": "brought",
+     "gain": -10
+    },
+    {
+     "name": "toon3d:splash",
+     "word": "compute",
+     "offset": -0.6,
+     "gain": -10
+    },
+    {
+     "name": "toon3d:boing",
+     "word": "compute",
+     "offset": 0.1,
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s12",
+   "start": 35.98,
+   "end": 37.522,
+   "line": "Subscribe for more.",
+   "scene": "puddle + ERROR, hard cut to frame 1",
+   "sfx": [
+    {
+     "name": "toon3d:buzz",
+     "at": 0.1,
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  }
+ ]
+}

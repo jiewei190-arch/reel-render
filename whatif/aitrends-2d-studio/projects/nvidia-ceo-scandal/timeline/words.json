@@ -1,0 +1,530 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "The",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "CEO",
+   "start": 0.34,
+   "end": 0.68
+  },
+  {
+   "word": "of",
+   "start": 0.68,
+   "end": 0.8
+  },
+  {
+   "word": "Nvidia",
+   "start": 0.8,
+   "end": 1.08
+  },
+  {
+   "word": "just",
+   "start": 1.08,
+   "end": 1.58
+  },
+  {
+   "word": "lost",
+   "start": 1.58,
+   "end": 1.8
+  },
+  {
+   "word": "his",
+   "start": 1.8,
+   "end": 2.02
+  },
+  {
+   "word": "job...",
+   "start": 2.02,
+   "end": 2.36
+  },
+  {
+   "word": "over",
+   "start": 3.12,
+   "end": 3.38
+  },
+  {
+   "word": "a",
+   "start": 3.38,
+   "end": 3.54
+  },
+  {
+   "word": "suspected",
+   "start": 3.54,
+   "end": 3.84
+  },
+  {
+   "word": "Chinese",
+   "start": 3.84,
+   "end": 4.26
+  },
+  {
+   "word": "spy.",
+   "start": 4.26,
+   "end": 4.66
+  },
+  {
+   "word": "Jensen",
+   "start": 5.36,
+   "end": 5.46
+  },
+  {
+   "word": "Huang",
+   "start": 5.46,
+   "end": 5.78
+  },
+  {
+   "word": "admitted",
+   "start": 5.78,
+   "end": 6.12
+  },
+  {
+   "word": "an",
+   "start": 6.12,
+   "end": 6.36
+  },
+  {
+   "word": "affair",
+   "start": 6.36,
+   "end": 6.6
+  },
+  {
+   "word": "on",
+   "start": 6.6,
+   "end": 6.78
+  },
+  {
+   "word": "November",
+   "start": 6.78,
+   "end": 7.04
+  },
+  {
+   "word": "8th.",
+   "start": 7.04,
+   "end": 8.0
+  },
+  {
+   "word": "Her",
+   "start": 8.0,
+   "end": 8.14
+  },
+  {
+   "word": "company",
+   "start": 8.14,
+   "end": 8.4
+  },
+  {
+   "word": "reportedly",
+   "start": 8.4,
+   "end": 8.92
+  },
+  {
+   "word": "bought",
+   "start": 8.92,
+   "end": 9.2
+  },
+  {
+   "word": "nearly",
+   "start": 9.2,
+   "end": 9.48
+  },
+  {
+   "word": "~$5",
+   "start": 9.48,
+   "end": 9.84
+  },
+  {
+   "word": "billion",
+   "start": 9.84,
+   "end": 10.15
+  },
+  {
+   "word": "of",
+   "start": 10.1,
+   "end": 10.64
+  },
+  {
+   "word": "his",
+   "start": 10.64,
+   "end": 10.78
+  },
+  {
+   "word": "chips,",
+   "start": 10.78,
+   "end": 11.06
+  },
+  {
+   "word": "and",
+   "start": 11.66,
+   "end": 11.76
+  },
+  {
+   "word": "is",
+   "start": 11.76,
+   "end": 11.86
+  },
+  {
+   "word": "suspected",
+   "start": 11.86,
+   "end": 12.22
+  },
+  {
+   "word": "of",
+   "start": 12.22,
+   "end": 12.46
+  },
+  {
+   "word": "funneling",
+   "start": 12.46,
+   "end": 12.82
+  },
+  {
+   "word": "them",
+   "start": 12.82,
+   "end": 12.92
+  },
+  {
+   "word": "to",
+   "start": 12.92,
+   "end": 13.08
+  },
+  {
+   "word": "China.",
+   "start": 13.08,
+   "end": 13.36
+  },
+  {
+   "word": "Then",
+   "start": 13.98,
+   "end": 14.26
+  },
+  {
+   "word": "the",
+   "start": 14.26,
+   "end": 14.46
+  },
+  {
+   "word": "New",
+   "start": 14.46,
+   "end": 14.54
+  },
+  {
+   "word": "York",
+   "start": 14.54,
+   "end": 14.72
+  },
+  {
+   "word": "Times",
+   "start": 14.72,
+   "end": 15.02
+  },
+  {
+   "word": "reported",
+   "start": 15.02,
+   "end": 15.3
+  },
+  {
+   "word": "a",
+   "start": 15.3,
+   "end": 15.52
+  },
+  {
+   "word": "second",
+   "start": 15.52,
+   "end": 15.76
+  },
+  {
+   "word": "affair.",
+   "start": 15.76,
+   "end": 16.12
+  },
+  {
+   "word": "Then",
+   "start": 16.7,
+   "end": 17.02
+  },
+  {
+   "word": "Reuters",
+   "start": 17.02,
+   "end": 17.4
+  },
+  {
+   "word": "reported",
+   "start": 17.4,
+   "end": 17.86
+  },
+  {
+   "word": "a",
+   "start": 17.86,
+   "end": 18.08
+  },
+  {
+   "word": "third.",
+   "start": 18.08,
+   "end": 18.32
+  },
+  {
+   "word": "Four",
+   "start": 18.86,
+   "end": 19.08
+  },
+  {
+   "word": "days",
+   "start": 19.08,
+   "end": 19.22
+  },
+  {
+   "word": "later,",
+   "start": 19.22,
+   "end": 19.62
+  },
+  {
+   "word": "he",
+   "start": 19.9,
+   "end": 19.94
+  },
+  {
+   "word": "resigned.",
+   "start": 19.94,
+   "end": 20.3
+  },
+  {
+   "word": "And",
+   "start": 20.74,
+   "end": 21.02
+  },
+  {
+   "word": "Nvidia",
+   "start": 21.02,
+   "end": 21.4
+  },
+  {
+   "word": "lost",
+   "start": 21.4,
+   "end": 21.68
+  },
+  {
+   "word": "about",
+   "start": 21.68,
+   "end": 21.88
+  },
+  {
+   "word": "$500",
+   "start": 21.88,
+   "end": 22.3
+  },
+  {
+   "word": "billion",
+   "start": 22.3,
+   "end": 22.71
+  },
+  {
+   "word": "in",
+   "start": 22.66,
+   "end": 23.2
+  },
+  {
+   "word": "value",
+   "start": 23.2,
+   "end": 23.46
+  },
+  {
+   "word": "that",
+   "start": 23.46,
+   "end": 23.68
+  },
+  {
+   "word": "week.",
+   "start": 23.68,
+   "end": 23.94
+  },
+  {
+   "word": "Now",
+   "start": 24.48,
+   "end": 24.72
+  },
+  {
+   "word": "Congress",
+   "start": 24.72,
+   "end": 25.06
+  },
+  {
+   "word": "wants",
+   "start": 25.06,
+   "end": 25.44
+  },
+  {
+   "word": "him",
+   "start": 25.44,
+   "end": 25.68
+  },
+  {
+   "word": "to",
+   "start": 25.68,
+   "end": 25.92
+  },
+  {
+   "word": "testify",
+   "start": 25.92,
+   "end": 26.36
+  },
+  {
+   "word": "before",
+   "start": 26.36,
+   "end": 26.78
+  },
+  {
+   "word": "Thanksgiving.",
+   "start": 26.78,
+   "end": 27.28
+  },
+  {
+   "word": "And",
+   "start": 27.58,
+   "end": 27.86
+  },
+  {
+   "word": "the",
+   "start": 27.86,
+   "end": 28.26
+  },
+  {
+   "word": "president",
+   "start": 28.26,
+   "end": 28.54
+  },
+  {
+   "word": "was",
+   "start": 28.54,
+   "end": 28.78
+  },
+  {
+   "word": "reportedly",
+   "start": 28.78,
+   "end": 29.2
+  },
+  {
+   "word": "briefed",
+   "start": 29.2,
+   "end": 29.58
+  },
+  {
+   "word": "on",
+   "start": 29.58,
+   "end": 29.82
+  },
+  {
+   "word": "the",
+   "start": 29.82,
+   "end": 29.92
+  },
+  {
+   "word": "spy",
+   "start": 29.92,
+   "end": 30.14
+  },
+  {
+   "word": "concern",
+   "start": 30.14,
+   "end": 30.46
+  },
+  {
+   "word": "a",
+   "start": 30.46,
+   "end": 30.62
+  },
+  {
+   "word": "year",
+   "start": 30.62,
+   "end": 30.72
+  },
+  {
+   "word": "earlier.",
+   "start": 30.72,
+   "end": 31.2
+  },
+  {
+   "word": "The",
+   "start": 31.78,
+   "end": 31.88
+  },
+  {
+   "word": "king",
+   "start": 31.88,
+   "end": 32.06
+  },
+  {
+   "word": "of",
+   "start": 32.06,
+   "end": 32.24
+  },
+  {
+   "word": "AI...",
+   "start": 32.24,
+   "end": 32.56
+  },
+  {
+   "word": "brought",
+   "start": 33.54,
+   "end": 33.62
+  },
+  {
+   "word": "down",
+   "start": 33.62,
+   "end": 33.94
+  },
+  {
+   "word": "by",
+   "start": 33.94,
+   "end": 34.1
+  },
+  {
+   "word": "the",
+   "start": 34.1,
+   "end": 34.22
+  },
+  {
+   "word": "one",
+   "start": 34.22,
+   "end": 34.42
+  },
+  {
+   "word": "thing",
+   "start": 34.42,
+   "end": 34.62
+  },
+  {
+   "word": "he",
+   "start": 34.62,
+   "end": 34.82
+  },
+  {
+   "word": "couldn't",
+   "start": 34.82,
+   "end": 35.12
+  },
+  {
+   "word": "compute.",
+   "start": 35.12,
+   "end": 35.48
+  },
+  {
+   "word": "Subscribe",
+   "start": 36.06,
+   "end": 36.38
+  },
+  {
+   "word": "for",
+   "start": 36.38,
+   "end": 36.72
+  },
+  {
+   "word": "more.",
+   "start": 36.72,
+   "end": 36.98
+  }
+ ]
+}

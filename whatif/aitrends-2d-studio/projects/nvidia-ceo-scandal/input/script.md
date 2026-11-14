@@ -7,5 +7,5 @@
 5. Four days later, he resigned. And Nvidia lost about 500 billion dollars in value that week.
 6. Now Congress wants him to testify before Thanksgiving.
 7. And the president was reportedly briefed on the spy concern a year earlier.
-8. The king of AI... brought down by the one thing he couldn't compute.
+8. The king of A-I... brought down by the one thing he couldn't compute.
 9. Subscribe for more.
