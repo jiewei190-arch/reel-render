@@ -224,7 +224,8 @@
      "name": "toon3d:stamp",
      "gain": -8
     }
-   ]
+   ],
+   "captions": false
   },
   {
    "id": "s10",
@@ -379,7 +380,8 @@
      "name": "toon3d:whoosh",
      "gain": -12
     }
-   ]
+   ],
+   "captions": false
   },
   {
    "id": "s17",

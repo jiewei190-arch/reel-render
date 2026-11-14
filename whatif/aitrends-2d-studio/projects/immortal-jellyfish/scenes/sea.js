@@ -48,7 +48,7 @@ registerShot('s04', { kind: '3d',
   init(T) { const s = sea(T, { seed: 7 }); s.plate = new THREE.Group(); s.plate.add(cyl(0.7, 0.55, 0.08, '#f4f2ec', 0, 0.04, 0, 28)); s.plate.add(cyl(0.5, 0.5, 0.02, '#e2ded4', 0, 0.09, 0, 28)); s.plate.add(ball(0.04, '#c08040', 0.2, 0.11, 0.1, 6));
     const fork = rbox(0.06, 0.02, 0.7, '#c8ccd4', 0.9, 0.02, 0.1, 0.01); s.plate.add(fork); outline(s.plate, { px: 2.2 }); s.plate.position.set(0, 0, 0.6); s.stage.add(s.plate); return s; },
   draw(s, t, info) { s.sea.update(t); s.j.update(t, { lid: 0.5, mouth: 'frown', look: [0, -0.7], pulse: 0.4 }); s.j.position.y = 0.8;
-    camMove(s.stage, t, [[0, { pos: [0.6, 3.0, 7.6], look: [0, 1.3, 0], fov: 36 }], [info.dur, { pos: [0.4, 2.9, 7.0], look: [0, 1.35, 0], fov: 36 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0.6, 3.1, 7.8], look: [0, 1.5, 0], fov: 36 }], [info.dur, { pos: [0.4, 3.0, 7.2], look: [0, 1.55, 0], fov: 36 }]]); },
   overlay(g, t, info, s) { look(g, t); const st = at(info, 'starving', 0.4); fxr(g, t, s, [{ fx: 'sweat', on: 'j', at: st }, { fx: 'question', on: 'j', at: st + 0.35 }]); },
 });
 // s05 "it doesn't die. It hits the RESET BUTTON." — wink on "die", then it bonks a big red RESET button
