@@ -1,0 +1,451 @@
+{
+ "duration": 39.889,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.15,
+   "line": "There's a jellyfish that refuses to die of OLD AGE.",
+   "scene": "frame 1: glowing jelly with a halo in dark water + hook",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "old",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.15,
+   "end": 3.9,
+   "line": "EVER.",
+   "scene": "close-up smug wink",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.9,
+   "end": 5.92,
+   "line": "When the immortal jellyfish gets INJURED,",
+   "scene": "sunny sea: name chip, a pebble bonks it (stars, shake)",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "immortal",
+     "name": "toon3d:chime",
+     "gain": -16
+    },
+    {
+     "word": "injured",
+     "name": "toon3d:boing",
+     "gain": -9
+    },
+    {
+     "word": "injured",
+     "name": "toon3d:thud",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.92,
+   "end": 6.95,
+   "line": "or starts STARVING,",
+   "scene": "empty plate, frown, sweat, ???",
+   "sfx": [
+    {
+     "word": "starving",
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "starving",
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.95,
+   "end": 9.5,
+   "line": "it doesn't die. It hits the RESET BUTTON.",
+   "scene": "wink, dives onto the big red RESET button",
+   "sfx": [
+    {
+     "word": "die",
+     "name": "toon3d:click",
+     "gain": -12
+    },
+    {
+     "word": "reset",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "reset",
+     "name": "toon3d:zap",
+     "gain": -14
+    },
+    {
+     "word": "button",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.5,
+   "end": 12.3,
+   "line": "It melts into a blob, sinks to the seafloor,",
+   "scene": "melts into a blob, sinks in slow motion",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "word": "melts",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "sinks",
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "word": "seafloor",
+     "name": "toon3d:drop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.3,
+   "end": 14.25,
+   "line": "and transforms back into a BABY.",
+   "scene": "poof: blob -> polyp with a pacifier",
+   "sfx": [
+    {
+     "word": "transforms",
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "baby",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.25,
+   "end": 17.25,
+   "line": "Then it grows up again. And again. And again.",
+   "scene": "mini jellies bud off one per 'again'",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "word": "grows",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "and",
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "word": "and",
+     "nth": 2,
+     "name": "toon3d:pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.25,
+   "end": 19.4,
+   "line": "It's called TRANSDIFFERENTIATION.",
+   "scene": "life-cycle wheel spinning, TRANSDIFFERENTIATION stamp",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "transdifferentiation",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s10",
+   "start": 19.4,
+   "end": 23.85,
+   "line": "Imagine a butterfly turning back into a caterpillar every time life got hard.",
+   "scene": "sunny meadow: party-hat butterfly -> caterpillar, rain cloud",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "word": "butterfly",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "caterpillar",
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "life",
+     "name": "toon3d:rain",
+     "gain": -18
+    },
+    {
+     "word": "hard",
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.85,
+   "end": 25.65,
+   "line": "It's smaller than your pinky nail,",
+   "scene": "giant pinky on the sand, jelly next to the nail, 4.5 mm",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "nail",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.65,
+   "end": 28.15,
+   "line": "and in theory, it can do this FOREVER.",
+   "scene": "infinity loop of jellies, in theory... FOREVER",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "word": "theory",
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "forever",
+     "name": "toon3d:success",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 28.15,
+   "end": 29.2,
+   "line": "The catch?",
+   "scene": "content jelly with halo, ???",
+   "sfx": [
+    {
+     "word": "catch",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 29.2,
+   "end": 30.5,
+   "line": "Fish and turtles eat it.",
+   "scene": "fish + turtle in bibs queue at a LUNCH sign; jelly sweats",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "eat",
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 30.5,
+   "end": 32.65,
+   "line": "Immortal, but also...",
+   "scene": "close on the jelly posing with its halo, IMMORTAL chip",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "immortal",
+     "name": "toon3d:bell",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 32.65,
+   "end": 33.7,
+   "line": "LUNCH.",
+   "scene": "INSERT bigtext: BUT ALSO... LUNCH.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s17",
+   "start": 33.7,
+   "end": 35.75,
+   "line": "It cheats old age...",
+   "scene": "halo back on, sly look, OLD AGE stamp",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "word": "cheats",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "age",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 35.75,
+   "end": 38.25,
+   "line": "and it doesn't even have a brain.",
+   "scene": "brain scanner: NO BRAIN FOUND, shrug",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "word": "brain",
+     "name": "toon3d:fail",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 38.25,
+   "end": 39.889,
+   "line": "Subscribe for more.",
+   "scene": "dark water, pulls back to the frame-1 framing -> loops",
+   "sfx": [
+    {
+     "word": "subscribe",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}
