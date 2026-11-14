@@ -7,7 +7,7 @@
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
  "captions": true,
- "captionStyle": { "y": 0.70, "gold": ["nvidia", "spy", "8th", "~$5", "billion", "second", "third", "resigned", "$500", "thanksgiving", "year", "compute"] },
+ "captionStyle": { "y": 0.70, "gold": ["nvidia", "spy", "8th", "5", "billion", "second", "third", "resigned", "500", "thanksgiving", "year", "compute"] },
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
