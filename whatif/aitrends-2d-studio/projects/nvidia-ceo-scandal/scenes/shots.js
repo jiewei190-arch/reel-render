@@ -12,6 +12,9 @@ const W = () => E.W, H = () => E.H;
 const RR = (g, x, y, w, h, r, fill, lw = 8, stroke = INK) => { g.beginPath(); g.roundRect(x, y, w, h, r); if (fill) { g.fillStyle = fill; g.fill(); } if (lw) { g.lineWidth = lw; g.strokeStyle = stroke; g.lineJoin = 'round'; g.stroke(); } };
 const fakeAnchor = (x, y, r = 110, sz = 1.2) => ({ x, y, cx: x, cy: y + r, fx: x, fy: y + r * 1.5, r, s: 300, sz, eyes: [] });
 const pop = (t, d = 0.35) => ease.outBack(clamp(t / d));
+// insert card scaled down toward the top so it stays clear of the captions (y 0.70)
+function smallInsert(id, o, k = 0.8) { registerShot(id, { kind: '3d', init: o.scene.init, draw: o.scene.draw,
+  overlay(g, t, info, s) { dimScene(g, 9, o.dim ?? 0.55); g.save(); g.translate(E.W / 2, E.H * 0.06); g.scale(k, k); g.translate(-E.W / 2, -E.H * 0.06); drawInsert(g, o.insert, t); g.restore(); o.after?.(g, t, info, s); } }); }
 
 // ---------- hook text (frame 1 must read in 1 s) ----------
 function hook(g, t, a = 1) {
@@ -68,9 +71,9 @@ registerShot('s02', { draw(g, t, info) {
 
 // s03 "Jensen Huang admitted an affair on November eighth." — letter to employees + a neutral "40 YEARS MARRIED" frame
 const letterBack = { init: stageShot.init, draw: (s, t, info) => stageShot.draw(s, t + 3, info, { job: -10 }) };
-insertShot('s03', { scene: letterBack, dim: 0.6,
+smallInsert('s03', { scene: letterBack, dim: 0.6,
   insert: { type: 'document', title: 'LETTER TO STAFF', lines: ['"I was unfaithful', 'to my wife."', '', '— Nov 8, 2026'], highlight: 0, color: GREEN },
-  after(g, t) { const k = pop(t - 1.3, 0.4); if (k <= 0) return; g.save(); g.translate(E.W * 0.74, E.H * 0.73); g.rotate(0.06); g.scale(k, k);
+  after(g, t) { const k = pop(t - 1.3, 0.4); if (k <= 0) return; g.save(); g.translate(E.W * 0.78, E.H * 0.55); g.rotate(0.06); g.scale(k, k);
     RR(g, -150, -120, 300, 240, 10, '#c9a14a', 8); RR(g, -120, -92, 240, 184, 6, '#f4efe2', 4);
     g.lineWidth = 9; g.strokeStyle = '#c9a14a'; for (const dx of [-24, 24]) { g.beginPath(); g.arc(dx, -22, 34, 0, 7); g.stroke(); }
     T(g, '40 YEARS', 0, 40, 40, { maxW: 220 }); T(g, 'MARRIED', 0, 76, 30, { maxW: 220 }); g.restore(); } });
@@ -89,17 +92,17 @@ const deal = {
 registerShot('s04', { kind: '3d', init: deal.init, draw: deal.draw,
   overlay(g, t, info, s) { const bil = at(info, 'billion', 1.6);
     reactions(g, t, s, [{ fx: 'sparkle', on: 'pal', at: bil, height: 1.4, scale: 0.9 }, { fx: 'glow', on: 'pal', at: bil, height: 1.0, color: GREEN }]);
-    const k = pop(t - bil + 0.05, 0.35); if (k > 0) { g.save(); g.translate(E.W * 0.55, E.H * 0.31); g.rotate(-0.12 + Math.sin(t * 3) * 0.04); g.scale(k, k);
+    const k = pop(t - bil + 0.05, 0.35); if (k > 0) { g.save(); g.translate(E.W * 0.5, E.H * 0.47); g.rotate(-0.12 + Math.sin(t * 3) * 0.04); g.scale(k, k);
       g.beginPath(); g.moveTo(-260, -90); g.lineTo(220, -90); g.lineTo(300, 0); g.lineTo(220, 90); g.lineTo(-260, 90); g.closePath(); g.fillStyle = '#ffd23a'; g.fill(); g.lineWidth = 10; g.strokeStyle = INK; g.stroke();
-      g.beginPath(); g.arc(205, 0, 18, 0, 7); g.fillStyle = '#fff'; g.fill(); g.stroke(); T(g, '~$5 BILLION', -30, 4, 78, { maxW: 430 }); g.restore(); }
+      g.beginPath(); g.arc(205, 0, 18, 0, 7); g.fillStyle = '#fff'; g.fill(); g.stroke(); T(g, '~$5 BILLION', -40, 4, 74, { maxW: 360 }); g.restore(); }
     T(g, 'REPORTEDLY', E.W / 2, E.H * 0.2, 60, { color: '#ffffff', stroke: INK, a: clamp(t / 0.3) }); },
 });
 
 // s05 "and is suspected of funneling them to China." — suspected route card over the deal scene; "???" on "suspected"
-insertShot('s05', { scene: { init: deal.init, draw: (s, t, info) => deal.draw(s, t + 2.5, info) }, dim: 0.55,
+smallInsert('s05', { scene: { init: deal.init, draw: (s, t, info) => deal.draw(s, t + 2.5, info) }, dim: 0.55,
   insert: { type: 'map', title: 'SUSPECTED ROUTE', lines: ['US CHIPS', 'SINGAPORE', '???', 'CHINA'], color: '#d8342c' },
   after(g, t) { if (t > 0.9) drawFx(g, 'question', t - 0.9, fakeAnchor(E.W * 0.5, E.H * 0.19, 90, 0.9));
-    T(g, 'SUSPECTED, NOT PROVEN', E.W / 2, E.H * 0.81, 44, { color: '#ffffff', stroke: INK, a: clamp((t - 0.6) / 0.3) }); } });
+    T(g, 'SUSPECTED, NOT PROVEN', E.W / 2, E.H * 0.62, 44, { color: '#ffffff', stroke: INK, a: clamp((t - 0.6) / 0.3) }); } });
 
 // s06 "Then the New York Times reported a second affair. Then Reuters reported a third." — CEO sweats as two reports spin in
 function paper(g, t, x, y, rot, kicker, head) { const k = clamp(t / 0.45); if (k <= 0) return; const s = ease.outBack(k);
@@ -166,7 +169,7 @@ registerShot('s09', { kind: '3d', init: cap.init, draw: cap.draw,
 });
 
 // s10 "And the president was reportedly briefed on the spy concern a year earlier." — reported timeline card over the capitol
-insertShot('s10', { scene: { init: cap.init, draw: (s, t, info) => cap.draw(s, t + 2.4, info) }, dim: 0.55,
+smallInsert('s10', { scene: { init: cap.init, draw: (s, t, info) => cap.draw(s, t + 2.4, info) }, dim: 0.55,
   insert: { type: 'timeline', title: 'AS REPORTED', lines: ['Late 2025: president', 'briefed (per NYT)', 'Nov 8, 2026: the letter', 'Nov 12: he resigns'], highlight: 0, color: '#ffd23a' },
   after(g, t, info) { const y = at(info, 'year', 2.4); if (t > y) drawFx(g, 'exclaim', t - y, fakeAnchor(E.W * 0.82, E.H * 0.2, 80, 1.1)); } });
 
@@ -175,7 +178,7 @@ const melt = {
   init(T) { const s = racks(T); s.c = ceo(); s.c.position.set(-1.7, 0, 3.0); s.c.rotation.y = 0.4; s.stage.add(s.c); return s; },
   draw(s, t, info, o = {}) { const br = o.br ?? at(info, 'brought', 1.6); const k = ease.inOut(prog(t, br, br + 1.8)); s.melt(k, t); s.err.visible = k > 0.15 && Math.floor(t * 4) % 2 === 0 || k > 0.9; s.err.position.y = lerp(4.6, 1.2, k);
     s.c.pose(addPose(mixPose(POSE.stand, POSE.facepalm, ease.inOut(prog(t, br + 1.2, br + 1.6))), idle(t, 6))); s.c.face(mixExpr(EXPR.neutral, EXPR.sad, prog(t, br + 0.4, br + 1)), t);
-    camMove(s.stage, t, [[0, { pos: [-0.6, 3.2, 13.5], look: [-0.6, 2.0, 0], fov: 38 }], [info.dur, { pos: [-0.6, 2.4, 11.5], look: [-0.6, 1.3, 0.4], fov: 38 }]]); },
+    camMove(s.stage, t, [[0, { pos: [-0.6, 3.2, 13.5], look: [-0.9, 2.0, 0], fov: 38 }], [info.dur, { pos: [-0.9, 2.4, 11.5], look: [-0.9, 1.3, 0.4], fov: 38 }]]); },
 };
 registerShot('s11', { kind: '3d', init: melt.init, draw: melt.draw,
   overlay(g, t, info, s) { const br = at(info, 'brought', 1.6), cc = at(info, 'compute', 3.0);

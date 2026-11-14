@@ -82,7 +82,7 @@ export function racks(T) {
   for (let i = -2; i <= 2; i++) { const r = group(rbox(1.2, 3.6, 1.1, '#1f2228', 0, 1.8, 0, 0.05));
     for (let y = 0; y < 9; y++) { r.add(rbox(1.0, 0.28, 0.04, '#2b2f37', 0, 0.45 + y * 0.36, 0.56, 0.02)); for (let k = 0; k < 3; k++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.07, 0.02), new THREE.MeshBasicMaterial({ color: GREEN, toneMapped: false })); m.position.set(-0.35 + k * 0.12, 0.45 + y * 0.36, 0.59); r.add(m); lights.push(m); } }
     r.position.set(i * 1.35, 0, -Math.abs(i) * 0.5); st.add(r); rs.push(r); }
-  const puddle = cyl(1, 1, 0.04, '#1a2410', 0, 0.02, 0.6, 40); puddle.scale.set(0.01, 1, 0.01); st.add(puddle);
+  const puddle = cyl(1, 1, 0.04, '#3f7a12', 0, 0.02, 0.6, 40); puddle.scale.set(0.01, 1, 0.01); st.add(puddle);
   const errTex = canvasTex(512, 256, (g, w, h) => { g.fillStyle = '#140404'; g.fillRect(0, 0, w, h); g.strokeStyle = '#ff3b30'; g.lineWidth = 10; g.strokeRect(8, 8, w - 16, h - 16); g.fillStyle = '#ff3b30'; g.font = '900 70px "Nunito"'; g.textAlign = 'center'; g.fillText('ERROR', w / 2, 110); g.font = '900 40px "Nunito"'; g.fillText('CANNOT COMPUTE', w / 2, 185); });
   const err = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.2), new THREE.MeshBasicMaterial({ map: errTex, toneMapped: false })); err.position.set(0, 4.6, -0.2); st.add(err);
   return { stage: st, rs, lights, puddle, err,
