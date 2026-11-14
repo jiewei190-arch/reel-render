@@ -1,0 +1,203 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23,
+  31,
+  42
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 43.157,
+ "render_s": 491.3,
+ "qa_fail_lines": [
+  2,
+  9
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1980, one tiny drilling mistake... swallowed an entire lake.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "In nineteen eighty, one tiny drilling mistake...",
+     "seed": 7,
+     "heard": "In 1980, one tiny drilling mistake",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "swallowed an entire lake.",
+     "seed": 7,
+     "heard": "swallowed an entire lake.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.087
+  },
+  {
+   "n": 2,
+   "text": "A Texaco rig was drilling for oil on Lake Pan-yur, Louisiana, right above a salt mine.",
+   "start": 5.387,
+   "parts": [
+    {
+     "tts": "A Texaco rig was drilling for oil on Lake Pan-yur, Louisiana, right above a salt mine.",
+     "seed": 7,
+     "heard": "A Texaco rig was drilling for oil on Lake Pannier, Louisiana, right above a salt mine.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 10.217
+  },
+  {
+   "n": 3,
+   "text": "At about 1,230 feet down, the drill punched into the mine.",
+   "start": 10.517,
+   "parts": [
+    {
+     "tts": "At about one thousand two hundred thirty feet down, the drill punched into the mine.",
+     "seed": 7,
+     "heard": "At about 1,230 feet down, the drill punched into the mine.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.689
+  },
+  {
+   "n": 4,
+   "text": "The lake started draining like a bathtub.",
+   "start": 14.989,
+   "parts": [
+    {
+     "tts": "The lake started draining like a bathtub.",
+     "seed": 7,
+     "heard": "The lake started draining like a bathtub.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.865
+  },
+  {
+   "n": 5,
+   "text": "The whirlpool swallowed the oil rig, eleven barges, a tugboat, and 65 acres of land.",
+   "start": 17.165,
+   "parts": [
+    {
+     "tts": "The whirlpool swallowed the oil rig, eleven barges, a tugboat, and sixty-five acres of land.",
+     "seed": 7,
+     "heard": "The whirlpool swallowed the oil rig, 11 barges, a tugboat, and 65 acres of land.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.651
+  },
+  {
+   "n": 6,
+   "text": "Then the canal reversed... The Gulf of Mexico flowed in backwards, creating Louisiana's tallest waterfall.",
+   "start": 22.951,
+   "parts": [
+    {
+     "tts": "Then the canal reversed...",
+     "seed": 7,
+     "heard": "then the canal reversed.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "The Gulf of Mexico flowed in backwards, creating Louisiana's tallest waterfall.",
+     "seed": 7,
+     "heard": "The Gulf of Mexico flowed in backwards, creating Louisiana's tallest waterfall.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.659
+  },
+  {
+   "n": 7,
+   "text": "Days later, nine of the sunken barges popped back up... like bath toys.",
+   "start": 29.959,
+   "parts": [
+    {
+     "tts": "Days later, nine of the sunken barges popped back up...",
+     "seed": 7,
+     "heard": "Days later, nine of the sunken barges popped back up.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "like bath toys.",
+     "seed": 11,
+     "heard": "like bath toys.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 35.121
+  },
+  {
+   "n": 8,
+   "text": "Every person got out alive.",
+   "start": 35.421,
+   "parts": [
+    {
+     "tts": "Every person got out alive.",
+     "seed": 7,
+     "heard": "Every person got out alive.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.199
+  },
+  {
+   "n": 9,
+   "text": "The lake went from 10 feet deep... to 200 feet of salt water.",
+   "start": 37.499,
+   "parts": [
+    {
+     "tts": "The lake went from ten feet deep...",
+     "seed": 7,
+     "heard": "The lake went from 10 feet deep.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "to two hundred feet of salt water.",
+     "seed": 7,
+     "heard": "to 200 feet of saltwater.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 41.251
+  },
+  {
+   "n": 10,
+   "text": "Subscribe for more.",
+   "start": 41.551,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.857
+  }
+ ]
+}
