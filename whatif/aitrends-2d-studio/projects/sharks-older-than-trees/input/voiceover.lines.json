@@ -1,0 +1,154 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 35.265,
+ "render_s": 199.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Sharks are older than trees. Let that sink in.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Sharks are older than trees. Let that sink in.",
+     "seed": 7,
+     "heard": "Sharks are older than trees. Let that sink in.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.875
+  },
+  {
+   "n": 2,
+   "text": "Sharks have been around for about 450 million years. Trees? Only 350 to 390 million.",
+   "start": 3.175,
+   "parts": [
+    {
+     "tts": "Sharks have been around for about four hundred fifty million years. Trees? Only three hundred fifty to three hundred ninety million.",
+     "seed": 7,
+     "heard": "Sharks have been around for about 450 million years. Trees? Only 350 to 390 million.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.446
+  },
+  {
+   "n": 3,
+   "text": "Sharks were swimming for 60 million years before the first tree grew on land.",
+   "start": 9.746,
+   "parts": [
+    {
+     "tts": "Sharks were swimming for sixty million years before the first tree grew on land.",
+     "seed": 7,
+     "heard": "Sharks were swimming for 60 million years before the first tree grew on land.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.556
+  },
+  {
+   "n": 4,
+   "text": "They're older than dinosaurs by about 200 million years. Older than the Atlantic Ocean.",
+   "start": 13.856,
+   "parts": [
+    {
+     "tts": "They're older than dinosaurs by about two hundred million years. Older than the Atlantic Ocean.",
+     "seed": 7,
+     "heard": "They're older than dinosaurs by about 200 million years, older than the Atlantic Ocean.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.706
+  },
+  {
+   "n": 5,
+   "text": "They've survived all FIVE mass extinctions... including the one that killed the dinosaurs.",
+   "start": 19.006,
+   "parts": [
+    {
+     "tts": "They've survived all five mass extinctions...",
+     "seed": 7,
+     "heard": "they've survived all five mass extinctions",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "including the one that killed the dinosaurs.",
+     "seed": 7,
+     "heard": "including the one that killed the dinosaurs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.273
+  },
+  {
+   "n": 6,
+   "text": "Meaning the scariest thing in the ocean... is also the most experienced thing on Earth.",
+   "start": 24.573,
+   "parts": [
+    {
+     "tts": "Meaning the scariest thing in the ocean...",
+     "seed": 7,
+     "heard": "meaning the scariest thing in the ocean.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "is also the most experienced thing on Earth.",
+     "seed": 7,
+     "heard": "is also the most experienced thing on Earth.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.884
+  },
+  {
+   "n": 7,
+   "text": "Trees are the new kids. Sharks just let them stay.",
+   "start": 30.184,
+   "parts": [
+    {
+     "tts": "Trees are the new kids. Sharks just let them stay.",
+     "seed": 7,
+     "heard": "Trees are the new kids, sharks just let them stay.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.359
+  },
+  {
+   "n": 8,
+   "text": "Subscribe for more.",
+   "start": 33.659,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 34.965
+  }
+ ]
+}
