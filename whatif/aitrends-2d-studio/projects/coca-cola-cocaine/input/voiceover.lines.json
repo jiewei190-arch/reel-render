@@ -1,0 +1,177 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 40.491,
+ "render_s": 236.7,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Coca-Cola really had cocaine in it.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Coca-Cola really had cocaine in it.",
+     "seed": 7,
+     "heard": "Coca-Cola really had cocaine in it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 1.958
+  },
+  {
+   "n": 2,
+   "text": "That's not a rumor.",
+   "start": 2.258,
+   "parts": [
+    {
+     "tts": "That's not a rumor.",
+     "seed": 7,
+     "heard": "That's not a rumor.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.47
+  },
+  {
+   "n": 3,
+   "text": "In 1886, a morphine-addicted pharmacist named John Pemberton invented it, with coca leaves, the plant cocaine comes from.",
+   "start": 3.77,
+   "parts": [
+    {
+     "tts": "In eighteen eighty-six, a morphine-addicted pharmacist named John Pemberton invented it, with coca leaves, the plant cocaine comes from.",
+     "seed": 7,
+     "heard": "In 1886, a morphine-addicted pharmacist named John Pemberton invented it with coca leaves. The plant cocaine comes from.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.503
+  },
+  {
+   "n": 4,
+   "text": "It was sold as medicine.",
+   "start": 10.803,
+   "parts": [
+    {
+     "tts": "It was sold as medicine.",
+     "seed": 7,
+     "heard": "It was sold as medicine.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.108
+  },
+  {
+   "n": 5,
+   "text": "A temperance drink that supposedly fixed everything.",
+   "start": 12.408,
+   "parts": [
+    {
+     "tts": "A temperance drink that supposedly fixed everything.",
+     "seed": 7,
+     "heard": "A temperance drink that supposedly fixed everything.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.233
+  },
+  {
+   "n": 6,
+   "text": "Then America panicked about cocaine, and around 1903, the cocaine was out.",
+   "start": 15.533,
+   "parts": [
+    {
+     "tts": "Then America panicked about cocaine, and around nineteen oh-three, the cocaine was out.",
+     "seed": 7,
+     "heard": "Then America panicked about cocaine, and around 1903, the cocaine was out.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.534
+  },
+  {
+   "n": 7,
+   "text": "But here's the part nobody knows: Coke reportedly STILL uses coca leaves today.",
+   "start": 21.934,
+   "parts": [
+    {
+     "tts": "But here's the part nobody knows: Coke reportedly still uses coca leaves today.",
+     "seed": 7,
+     "heard": "But here's the part nobody knows. Coke reportedly still uses coca leaves today.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.816
+  },
+  {
+   "n": 8,
+   "text": "One company in New Jersey legally imports coca leaves, strips the cocaine out, and Coke uses what's left for flavor.",
+   "start": 27.116,
+   "parts": [
+    {
+     "tts": "One company in New Jersey legally imports coca leaves, strips the cocaine out, and Coke uses what's left for flavor.",
+     "seed": 7,
+     "heard": "One company in New Jersey legally imports coca leaves, strips the cocaine out, and Coke uses what's left for flavor.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.414
+  },
+  {
+   "n": 9,
+   "text": "Coca-Cola: still made with coca. Just... the legal part.",
+   "start": 33.714,
+   "parts": [
+    {
+     "tts": "Coca-Cola: still made with coca. Just...",
+     "seed": 7,
+     "heard": "Coca-Cola still made with coca, just\u2026",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the legal part.",
+     "seed": 7,
+     "heard": "the legal part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.585
+  },
+  {
+   "n": 10,
+   "text": "Subscribe for more.",
+   "start": 38.885,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.191
+  }
+ ]
+}
