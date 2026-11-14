@@ -1,0 +1,17 @@
+{
+ "title": "Nvidia CEO Resigns Over Suspected Spy",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["nvidia", "spy", "8th", "~$5", "billion", "second", "third", "resigned", "$500", "thanksgiving", "year", "compute"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:tense", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}

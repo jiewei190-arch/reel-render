@@ -1,5 +1,7 @@
-STATE: blocked
-WHAT DIFFERS (STEP 0 verification, 2026-11-14) — no build work started, waiting for MAIN:
+STATE: building
+MAIN resolved the blockers (2026-11-14): $500B per NBC ("about"), testimony sourced to TechCrunch (House, closed-door), chip figure "reportedly nearly $5 billion", keep "he resigned". Build in progress.
+
+EARLIER BLOCK NOTE — WHAT DIFFERED (STEP 0 verification, 2026-11-14) — no build work started, waiting for MAIN:
 
 1. "$570 billion in market value, gone in a week" (narration line 4, caption, INSERT card): NOT CONFIRMED by any major outlet I could reach. Reported figures conflict:
    - NBC News (Nov 12): shares "plunged about 11% this week, wiping out $500 billion in value" (through Thursday close).
