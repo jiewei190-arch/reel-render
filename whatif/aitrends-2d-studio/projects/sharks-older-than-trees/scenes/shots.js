@@ -14,7 +14,7 @@ const PI = Math.PI;
 function beach(T, o = {}) {
   const s = world(T, { fov: 40, target: [0, 0, 0], shadowSize: 8, sand: [2.3, 0.6, 2.0, 1.6], seed: 3 });
   s.sh = shark({ seed: 2 }); s.sh.position.set(-0.6, 0.4, 0.3); s.sh.rotation.y = 0.32; s.stage.add(s.sh);
-  s.tree = sapling({ seed: 4 }); s.tree.position.set(1.3, 0.3, 1.0); s.tree.rotation.y = -0.35; s.stage.add(s.tree);
+  s.tree = sapling({ seed: 4 }); s.tree.position.set(1.1, 0.3, 1.05); s.tree.rotation.y = -0.35; s.stage.add(s.tree);
   return s;
 }
 const BEACH_CAM = [[0, { pos: [0.3, 1.5, 7.4], look: [0.3, 1.15, 0.3], fov: 46 }], [3, { pos: [0.3, 1.4, 6.5], look: [0.3, 1.15, 0.3], fov: 46 }]];
@@ -107,7 +107,7 @@ registerShot('s05', { kind: '3d',
 // s06 "before the first tree grew on land." — the first tree pops out of the bare dirt (sparkle); the shark is not impressed
 registerShot('s06', { kind: '3d',
   init(T) { const s = barren(T); s.tree = sapling({ seed: 12, scale: 1.0 }); s.tree.position.set(0.4, 0.35, -3.0); s.stage.add(s.tree);
-    s.sh = shark({ seed: 8 }); s.sh.position.set(-1.5, 0.3, 0.9); s.sh.rotation.y = -0.5 + PI; s.stage.add(s.sh); return s; },
+    s.sh = shark({ seed: 8, scale: 0.7 }); s.sh.position.set(-1.2, 0.3, -0.6); s.sh.rotation.y = -0.5 + PI; s.stage.add(s.sh); return s; },
   draw(s, t, info) { tick(s, t); const gr = at(info, 'grew', 1.0); const k = ease.outBack(prog(t, gr - 0.15, gr + 0.25));
     s.tree.scale.setScalar(Math.max(0.001, k)); s.tree.update(t, { lid: 0.0, look: [-0.5, 0], bounce: t > gr ? 1 : 0 });
     s.sh.rotation.y = lerp(PI + 0.6, 0.9, ease.inOut(prog(t, gr + 0.1, gr + 0.5))); s.sh.update(t, { swim: 0.5, lid: 0.55, look: [0.5, 0] });
@@ -171,12 +171,12 @@ registerShot('s09', { kind: '3d',
 });
 // s10 "including the one that killed the dinosaurs." — a big asteroid falls far away; the shark floats past, unbothered. 5/5 SURVIVED.
 registerShot('s10', { kind: '3d',
-  init(T) { const s = meteorScene(T, { seed: 47, light: 'dusk', sky: { top: '#2a2a6a', mid: '#c87a8a', horizon: '#ffb86a' } });
+  init(T) { const s = meteorScene(T, { seed: 47, light: 'sunny', sky: { top: '#2a2a6a', mid: '#c87a8a', horizon: '#ffb86a' } });
     const land = mesh(new THREE.CylinderGeometry(1, 1.05, 0.7, 48), '#8a7a5a', { shadow: false }); land.scale.set(30, 1, 10); land.position.set(0, 0, -40); land.userData.noOutline = true; s.stage.add(land);
-    s.big = asteroid({ size: 2.2, seed: 9 }); s.big.rotation.z = -0.5; s.stage.add(s.big); s.gl = glowFx(30, '#ffb04a', 0); s.gl.position.set(6, 2, -42); s.stage.add(s.gl); return s; },
-  draw(s, t, info) { tick(s, t); const hit = Math.max(0.8, info.dur - 1.0); const k = clamp(t / hit); s.big.position.set(lerp(-6, 6, k), lerp(30, 0.5, k), -42); s.big.visible = t < hit; s.big.update(t);
+    s.big = asteroid({ size: 4.5, seed: 9 }); s.big.rotation.z = -0.5; s.stage.add(s.big); s.gl = glowFx(30, '#ffb04a', 0); s.gl.position.set(6, 2, -42); s.stage.add(s.gl); return s; },
+  draw(s, t, info) { tick(s, t); const hit = Math.max(0.8, info.dur - 1.0); const k = clamp(t / hit); s.big.position.set(lerp(-10, 6, k), lerp(26, 2, k), -42); s.big.visible = t < hit; s.big.update(t);
     s.gl.material.opacity = t > hit ? clamp(1 - (t - hit) / 1.2) * 0.9 : 0;
-    s.sh.position.set(lerp(-1.6, 1.4, t / info.dur), 0.3, 1.0); s.sh.rotation.y = PI / 2 - 0.5; s.sh.update(t, { swim: 0.5, lid: 0.6, look: [0.3, 0] });
+    s.sh.position.set(lerp(-1.2, 0.9, t / info.dur), 0.35, 1.6); s.sh.rotation.y = 0.55; s.sh.update(t, { swim: 0.5, lid: 0.6, look: [0.4, 0] });
     s.stage.cam([0, 1.7, 7.4], [0, 2.6, -6], 50); shakeCam(s.stage, t, [{ fx: 'shake', at: hit, amp: 0.05, dur: 0.6 }]); },
   overlay(g, t, info, s) { const hit = Math.max(0.8, info.dur - 1.0); reactions(g, t, s, [{ fx: 'flash', at: hit, dur: 0.4, color: '#fff2d0' }]);
     hud(g, t, t > hit ? 5 : 4, 5, true, t > hit); if (t > hit) { const p = ease.outBack(clamp((t - hit) / 0.3)); g.save(); g.translate(E.W / 2, E.H * 0.45); g.rotate(-0.12); g.scale(p, p); CT(g, '5/5', 0, 0, 230, { color: '#ffd23a', stroke: INK }); g.restore(); } },
