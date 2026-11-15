@@ -1,0 +1,91 @@
+{
+ "name": "glowdark",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "jazz",
+ "bpm": 96,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "music_gain": 0.5,
+ "tail": 0.7,
+ "phrases": [
+  [
+   "Your glow stars aren't making light. They're **giving back light** they stored.",
+   "Your glow stars aren't making light. They're giving back light they stored."
+  ],
+  [
+   "So **how do glow-in-the-dark stickers glow?**",
+   "So, how do glow-in-the-dark stickers glow?"
+  ],
+  [
+   "In daylight, light hits the sticker and gives tiny **electrons** a burst of energy.",
+   "In daylight, light hits the sticker and gives tiny electrons a burst of energy."
+  ],
+  [
+   "Normally, an excited electron drops right back and gives off its light **in a flash.**",
+   "Normally, an excited electron drops right back and gives off its light in a flash."
+  ],
+  [
+   "But these stickers have **traps:** crystal defects that catch excited electrons and **hold them.**",
+   "But these stickers have traps: crystal defects that catch excited electrons and hold them."
+  ],
+  [
+   "In the dark, the room's warmth slowly **shakes them loose,** a few at a time.",
+   "In the dark, the room's warmth slowly shakes them loose, a few at a time."
+  ],
+  [
+   "Each one that escapes gives off a tiny flash of **green.** Millions in a row make **the glow.**",
+   "Each one that escapes gives off a tiny flash of green. Millions in a row make the glow."
+  ],
+  [
+   "That's **phosphorescence:** light in, stored for a while, light out.",
+   "That's phosphorescence: light in, stored for a while, light out."
+  ],
+  [
+   "Older stickers used **zinc sulfide** with a pinch of copper. They fade much sooner.",
+   "Older stickers used zinc sulfide with a pinch of copper. They fade much sooner."
+  ],
+  [
+   "In the 1990s, chemists found something better: **strontium aluminate,** with a little **europium** and **dysprosium.**",
+   "In the nineteen nineties, chemists found something better: strontium aluminate, with a little europium and dysprosium."
+  ],
+  [
+   "Europium makes the **green light.** Dysprosium helps **trap the electrons,** so the glow can last for **hours.**",
+   "Europium makes the green light. Dysprosium helps trap the electrons, so the glow can last for hours."
+  ],
+  [
+   "And no, it's **not radioactive.**",
+   "And no, it's not radioactive."
+  ],
+  [
+   "That was the **radium paint** on old watch dials, which made many dial painters **very sick.**",
+   "That was the radium paint on old watch dials, which made many dial painters very sick."
+  ],
+  [
+   "Your stickers just need a **lamp.** Charge them with light, and they **glow it back.**",
+   "Your stickers just need a lamp. Charge them with light, and they glow it back."
+  ],
+  [
+   "Do you still have glow stars on a ceiling somewhere? **Yes or no?**",
+   "Do you still have glow stars on a ceiling somewhere? Yes or no?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

@@ -1,0 +1,78 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:23.60,Title,,0,0,0,,What if your jump DOUBLED every day?
+Dialogue: 0,0:00:00.02,0:00:00.50,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} WAKE UP,
+Dialogue: 0,0:00:00.50,0:00:00.72,Cap,,0,0,0,,YOU {\c&H00E6FF&}WAKE{\c&HFFFFFF&} UP,
+Dialogue: 0,0:00:00.72,0:00:01.14,Cap,,0,0,0,,YOU WAKE {\c&H00E6FF&}UP,{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.14,0:00:01.30,Cap,,0,0,0,,{\c&H00E6FF&}STRETCH,{\c&HFFFFFF&} AND JUMP
+Dialogue: 0,0:00:01.30,0:00:01.58,Cap,,0,0,0,,STRETCH, {\c&H00E6FF&}AND{\c&HFFFFFF&} JUMP
+Dialogue: 0,0:00:01.58,0:00:01.86,Cap,,0,0,0,,STRETCH, AND {\c&H00E6FF&}JUMP{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.86,0:00:02.06,Cap,,0,0,0,,{\c&H00E6FF&}OFF{\c&HFFFFFF&} YOUR BED.
+Dialogue: 0,0:00:02.06,0:00:02.24,Cap,,0,0,0,,OFF {\c&H00E6FF&}YOUR{\c&HFFFFFF&} BED.
+Dialogue: 0,0:00:02.24,0:00:02.78,Cap,,0,0,0,,OFF YOUR {\c&H00E6FF&}BED.{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.78,0:00:02.86,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} HIT THE
+Dialogue: 0,0:00:02.86,0:00:03.02,Cap,,0,0,0,,YOU {\c&H00E6FF&}HIT{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:03.02,0:00:03.22,Cap,,0,0,0,,YOU HIT {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.22,0:00:03.54,Cap,,0,0,0,,{\c&H00E6FF&}CEILING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.54,0:00:04.58,Cap,,0,0,0,,{\c&H00E6FF&}HARD.{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.78,0:00:05.02,Cap,,0,0,0,,{\c&H00E6FF&}NOBODY{\c&HFFFFFF&} KNOWS WHY,
+Dialogue: 0,0:00:05.02,0:00:05.34,Cap,,0,0,0,,NOBODY {\c&H00E6FF&}KNOWS{\c&HFFFFFF&} WHY,
+Dialogue: 0,0:00:05.34,0:00:05.84,Cap,,0,0,0,,NOBODY KNOWS {\c&H00E6FF&}WHY,{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.84,0:00:06.08,Cap,,0,0,0,,{\c&H00E6FF&}BUT{\c&HFFFFFF&} THE RULE
+Dialogue: 0,0:00:06.08,0:00:06.22,Cap,,0,0,0,,BUT {\c&H00E6FF&}THE{\c&HFFFFFF&} RULE
+Dialogue: 0,0:00:06.22,0:00:06.46,Cap,,0,0,0,,BUT THE {\c&H00E6FF&}RULE{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.46,0:00:06.70,Cap,,0,0,0,,{\c&H00E6FF&}IS{\c&HFFFFFF&} SIMPLE: EVERY
+Dialogue: 0,0:00:06.70,0:00:07.44,Cap,,0,0,0,,IS {\c&H00E6FF&}SIMPLE:{\c&HFFFFFF&} EVERY
+Dialogue: 0,0:00:07.44,0:00:07.64,Cap,,0,0,0,,IS SIMPLE: {\c&H00E6FF&}EVERY{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.64,0:00:07.92,Cap,,0,0,0,,{\c&H00E6FF&}DAY,{\c&HFFFFFF&} YOUR JUMP
+Dialogue: 0,0:00:07.92,0:00:08.18,Cap,,0,0,0,,DAY, {\c&H00E6FF&}YOUR{\c&HFFFFFF&} JUMP
+Dialogue: 0,0:00:08.18,0:00:08.48,Cap,,0,0,0,,DAY, YOUR {\c&H00E6FF&}JUMP{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.48,0:00:09.44,Cap,,0,0,0,,{\c&H00E6FF&}DOUBLES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.64,0:00:09.88,Cap,,0,0,0,,{\c&H00E6FF&}TODAY,{\c&HFFFFFF&} YOU JUMP
+Dialogue: 0,0:00:09.88,0:00:10.16,Cap,,0,0,0,,TODAY, {\c&H00E6FF&}YOU{\c&HFFFFFF&} JUMP
+Dialogue: 0,0:00:10.16,0:00:10.50,Cap,,0,0,0,,TODAY, YOU {\c&H00E6FF&}JUMP{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.50,0:00:10.74,Cap,,0,0,0,,{\c&H00E6FF&}LIKE{\c&HFFFFFF&} A NORMAL
+Dialogue: 0,0:00:10.74,0:00:10.90,Cap,,0,0,0,,LIKE {\c&H00E6FF&}A{\c&HFFFFFF&} NORMAL
+Dialogue: 0,0:00:10.90,0:00:11.20,Cap,,0,0,0,,LIKE A {\c&H00E6FF&}NORMAL{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.20,0:00:12.08,Cap,,0,0,0,,{\c&H00E6FF&}PERSON.{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.08,0:00:12.22,Cap,,0,0,0,,{\c&H00E6FF&}ABOUT{\c&HFFFFFF&} HALF A
+Dialogue: 0,0:00:12.22,0:00:12.48,Cap,,0,0,0,,ABOUT {\c&H00E6FF&}HALF{\c&HFFFFFF&} A
+Dialogue: 0,0:00:12.48,0:00:12.64,Cap,,0,0,0,,ABOUT HALF {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.64,0:00:13.26,Cap,,0,0,0,,{\c&H00E6FF&}METRE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.26,0:00:13.54,Cap,,0,0,0,,{\c&H00E6FF&}TOMORROW,{\c&HFFFFFF&} ONE METRE.
+Dialogue: 0,0:00:13.54,0:00:14.04,Cap,,0,0,0,,TOMORROW, {\c&H00E6FF&}ONE{\c&HFFFFFF&} METRE.
+Dialogue: 0,0:00:14.04,0:00:14.60,Cap,,0,0,0,,TOMORROW, ONE {\c&H00E6FF&}METRE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.60,0:00:14.70,Cap,,0,0,0,,{\c&H00E6FF&}THEN{\c&HFFFFFF&} TWO.
+Dialogue: 0,0:00:14.70,0:00:15.30,Cap,,0,0,0,,THEN {\c&H00E6FF&}TWO.{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.30,0:00:15.44,Cap,,0,0,0,,{\c&H00E6FF&}THEN{\c&HFFFFFF&} FOUR.
+Dialogue: 0,0:00:15.44,0:00:16.44,Cap,,0,0,0,,THEN {\c&H00E6FF&}FOUR.{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.44,0:00:16.74,Cap,,0,0,0,,{\c&H00E6FF&}THAT{\c&HFFFFFF&} DOESN'T SOUND
+Dialogue: 0,0:00:16.74,0:00:17.08,Cap,,0,0,0,,THAT {\c&H00E6FF&}DOESN'T{\c&HFFFFFF&} SOUND
+Dialogue: 0,0:00:17.08,0:00:17.32,Cap,,0,0,0,,THAT DOESN'T {\c&H00E6FF&}SOUND{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.32,0:00:17.54,Cap,,0,0,0,,{\c&H00E6FF&}LIKE{\c&HFFFFFF&} MUCH.
+Dialogue: 0,0:00:17.54,0:00:17.94,Cap,,0,0,0,,LIKE {\c&H00E6FF&}MUCH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.94,0:00:18.42,Cap,,0,0,0,,{\c&H00E6FF&}UNTIL{\c&HFFFFFF&} YOU KEEP
+Dialogue: 0,0:00:18.42,0:00:18.62,Cap,,0,0,0,,UNTIL {\c&H00E6FF&}YOU{\c&HFFFFFF&} KEEP
+Dialogue: 0,0:00:18.62,0:00:18.82,Cap,,0,0,0,,UNTIL YOU {\c&H00E6FF&}KEEP{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.82,0:00:19.84,Cap,,0,0,0,,{\c&H00E6FF&}DOUBLING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.92,0:00:20.22,Cap,,0,0,0,,{\c&H00E6FF&}LET'S{\c&HFFFFFF&} SEE HOW
+Dialogue: 0,0:00:20.22,0:00:20.36,Cap,,0,0,0,,LET'S {\c&H00E6FF&}SEE{\c&HFFFFFF&} HOW
+Dialogue: 0,0:00:20.36,0:00:20.60,Cap,,0,0,0,,LET'S SEE {\c&H00E6FF&}HOW{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.60,0:00:20.86,Cap,,0,0,0,,{\c&H00E6FF&}FAR{\c&HFFFFFF&} YOU GET.
+Dialogue: 0,0:00:20.86,0:00:21.06,Cap,,0,0,0,,FAR {\c&H00E6FF&}YOU{\c&HFFFFFF&} GET.
+Dialogue: 0,0:00:21.06,0:00:21.32,Cap,,0,0,0,,FAR YOU {\c&H00E6FF&}GET.{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.32,0:00:21.68,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} WHETHER YOU
+Dialogue: 0,0:00:21.68,0:00:21.86,Cap,,0,0,0,,AND {\c&H00E6FF&}WHETHER{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:21.86,0:00:22.08,Cap,,0,0,0,,AND WHETHER {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.08,0:00:22.26,Cap,,0,0,0,,{\c&H00E6FF&}MAKE{\c&HFFFFFF&} IT BACK
+Dialogue: 0,0:00:22.26,0:00:22.40,Cap,,0,0,0,,MAKE {\c&H00E6FF&}IT{\c&HFFFFFF&} BACK
+Dialogue: 0,0:00:22.40,0:00:22.60,Cap,,0,0,0,,MAKE IT {\c&H00E6FF&}BACK{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.60,0:00:23.44,Cap,,0,0,0,,{\c&H00E6FF&}DOWN.{\c&HFFFFFF&}

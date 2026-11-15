@@ -1,0 +1,47 @@
+{
+ "title": "The Cat Mayor of Alaska",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 25.283,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "mayor",
+   "20",
+   "stubbs",
+   "1997",
+   "honorary",
+   "catnip",
+   "wine",
+   "glass",
+   "30",
+   "40",
+   "tourists",
+   "dog",
+   "fryer",
+   "bb",
+   "gun",
+   "allegedly",
+   "talkeetna",
+   "alaska"
+  ]
+ }
+}

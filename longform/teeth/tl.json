@@ -1,0 +1,716 @@
+{
+ "total": 327.352,
+ "scenes": [
+  {
+   "v": "toothache_cave",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Imagine waking up with a toothache.",
+     "start": 0.6,
+     "end": 2.684
+    },
+    {
+     "text": "Not a little one. The kind that throbs every time your heart beats.",
+     "start": 3.004,
+     "end": 7.232
+    }
+   ],
+   "end": 7.602
+  },
+  {
+   "v": "no_list",
+   "start": 7.602,
+   "lines": [
+    {
+     "text": "Now imagine there is no dentist.",
+     "start": 7.902,
+     "end": 9.925
+    },
+    {
+     "text": "No toothbrush. No painkillers.",
+     "start": 10.245,
+     "end": 12.378
+    },
+    {
+     "text": "Nobody even knows what tooth decay is.",
+     "start": 12.698,
+     "end": 15.284
+    }
+   ],
+   "end": 15.654
+  },
+  {
+   "v": "title",
+   "start": 15.654,
+   "lines": [
+    {
+     "text": "So what did ancient humans actually do about their teeth?",
+     "start": 15.954,
+     "end": 19.316
+    }
+   ],
+   "end": 19.686
+  },
+  {
+   "v": "evidence",
+   "start": 19.686,
+   "lines": [
+    {
+     "text": "Surprisingly, a lot more than you'd think.",
+     "start": 19.986,
+     "end": 22.545
+    },
+    {
+     "text": "And a lot of the evidence is still stuck to their teeth today.",
+     "start": 22.865,
+     "end": 26.086
+    }
+   ],
+   "end": 26.456
+  },
+  {
+   "v": "savanna_group",
+   "start": 26.456,
+   "lines": [
+    {
+     "text": "Let's start with the good news.",
+     "start": 26.756,
+     "end": 28.485
+    },
+    {
+     "text": "For most of human history, cavities were actually pretty rare.",
+     "start": 28.805,
+     "end": 32.576
+    }
+   ],
+   "end": 32.946
+  },
+  {
+   "v": "tooth_bacteria",
+   "start": 32.946,
+   "lines": [
+    {
+     "text": "Cavities happen when bacteria in your mouth feed on sugars and starches,",
+     "start": 33.246,
+     "end": 37.569
+    },
+    {
+     "text": "and leave behind acid that slowly eats into your teeth.",
+     "start": 37.729,
+     "end": 41.006
+    }
+   ],
+   "end": 41.376
+  },
+  {
+   "v": "tooth_stats",
+   "start": 41.376,
+   "lines": [
+    {
+     "text": "And for a very long time, people just didn't eat much of that.",
+     "start": 41.676,
+     "end": 45.489
+    },
+    {
+     "text": "Studies of hunter-gatherer teeth usually find decay in somewhere between zero and about fourteen percent of teeth.",
+     "start": 45.809,
+     "end": 53.39
+    }
+   ],
+   "end": 53.76
+  },
+  {
+   "v": "gritty_food",
+   "start": 53.76,
+   "lines": [
+    {
+     "text": "But their food came with a different problem.",
+     "start": 54.06,
+     "end": 56.273
+    },
+    {
+     "text": "It was tough, and it was full of grit and sand.",
+     "start": 56.593,
+     "end": 59.188
+    },
+    {
+     "text": "Chewing it day after day slowly wore their teeth down.",
+     "start": 59.508,
+     "end": 62.642
+    }
+   ],
+   "end": 63.012
+  },
+  {
+   "v": "worn_tooth",
+   "start": 63.012,
+   "lines": [
+    {
+     "text": "So for most of our history, the big problem wasn't holes in teeth.",
+     "start": 63.312,
+     "end": 67.358
+    },
+    {
+     "text": "It was teeth that were worn, chipped and cracked.",
+     "start": 67.678,
+     "end": 70.138
+    }
+   ],
+   "end": 70.508
+  },
+  {
+   "v": "toothpick_man",
+   "start": 70.508,
+   "lines": [
+    {
+     "text": "And when something got stuck between their teeth?",
+     "start": 70.808,
+     "end": 73.088
+    },
+    {
+     "text": "They did what you might have done after lunch today.",
+     "start": 73.408,
+     "end": 75.996
+    },
+    {
+     "text": "They grabbed a toothpick.",
+     "start": 76.316,
+     "end": 77.518
+    }
+   ],
+   "end": 77.888
+  },
+  {
+   "v": "groove_tooth",
+   "start": 77.888,
+   "lines": [
+    {
+     "text": "Scientists have found tiny grooves on fossil teeth,",
+     "start": 78.188,
+     "end": 81.151
+    },
+    {
+     "text": "worn in by sticks or grass stems being pushed between the teeth again and again.",
+     "start": 81.311,
+     "end": 86.326
+    }
+   ],
+   "end": 86.696
+  },
+  {
+   "v": "habilis",
+   "start": 86.696,
+   "lines": [
+    {
+     "text": "Some of these toothpick grooves go back close to two million years,",
+     "start": 86.996,
+     "end": 90.705
+    },
+    {
+     "text": "to early human species like Homo habilis.",
+     "start": 90.865,
+     "end": 93.774
+    }
+   ],
+   "end": 94.144
+  },
+  {
+   "v": "krapina",
+   "start": 94.144,
+   "lines": [
+    {
+     "text": "But one Neanderthal from Krapina, in what is now Croatia, takes this further.",
+     "start": 94.444,
+     "end": 99.663
+    },
+    {
+     "text": "Around a hundred and thirty thousand years ago, this person had a tooth growing in crooked,",
+     "start": 99.983,
+     "end": 105.294
+    },
+    {
+     "text": "and it was very likely painful.",
+     "start": 105.454,
+     "end": 107.233
+    }
+   ],
+   "end": 107.603
+  },
+  {
+   "v": "krapina_poke",
+   "start": 107.603,
+   "lines": [
+    {
+     "text": "Their teeth show six toothpick grooves around the problem area, plus scratches and chips.",
+     "start": 107.903,
+     "end": 113.067
+    },
+    {
+     "text": "It looks like they were poking at it, over and over, trying to ease the pain.",
+     "start": 113.387,
+     "end": 117.839
+    }
+   ],
+   "end": 118.209
+  },
+  {
+   "v": "first_fix",
+   "start": 118.209,
+   "lines": [
+    {
+     "text": "It's not dentistry the way we know it.",
+     "start": 118.509,
+     "end": 120.659
+    },
+    {
+     "text": "But it may be one of the earliest signs of someone trying to treat their own toothache.",
+     "start": 120.979,
+     "end": 125.449
+    }
+   ],
+   "end": 125.819
+  },
+  {
+   "v": "sidron_cave",
+   "start": 125.819,
+   "lines": [
+    {
+     "text": "Then there's a Neanderthal from El Sidr\u00f3n cave, in Spain.",
+     "start": 126.119,
+     "end": 129.607
+    },
+    {
+     "text": "Scientists took the hardened plaque from this individual's teeth,",
+     "start": 129.927,
+     "end": 133.427
+    },
+    {
+     "text": "and read the ancient DNA trapped inside it.",
+     "start": 133.587,
+     "end": 136.157
+    }
+   ],
+   "end": 136.527
+  },
+  {
+   "v": "poplar",
+   "start": 136.527,
+   "lines": [
+    {
+     "text": "This Neanderthal had a painful dental abscess.",
+     "start": 136.827,
+     "end": 139.691
+    },
+    {
+     "text": "And in the plaque was DNA from poplar,",
+     "start": 140.011,
+     "end": 142.315
+    },
+    {
+     "text": "a tree that contains salicylic acid, the natural pain reliever behind aspirin.",
+     "start": 142.475,
+     "end": 147.955
+    }
+   ],
+   "end": 148.325
+  },
+  {
+   "v": "mold",
+   "start": 148.325,
+   "lines": [
+    {
+     "text": "There were also traces of Penicillium,",
+     "start": 148.625,
+     "end": 150.852
+    },
+    {
+     "text": "the same group of molds that penicillin comes from.",
+     "start": 151.012,
+     "end": 153.881
+    }
+   ],
+   "end": 154.251
+  },
+  {
+   "v": "wonder",
+   "start": 154.251,
+   "lines": [
+    {
+     "text": "So was this Neanderthal chewing poplar on purpose, to dull the pain?",
+     "start": 154.551,
+     "end": 158.944
+    },
+    {
+     "text": "The researchers say they can't prove it.",
+     "start": 159.264,
+     "end": 161.154
+    },
+    {
+     "text": "But it's hard not to wonder.",
+     "start": 161.474,
+     "end": 162.957
+    }
+   ],
+   "end": 163.327
+  },
+  {
+   "v": "italy_mountains",
+   "start": 163.327,
+   "lines": [
+    {
+     "text": "Now jump forward to about fourteen thousand years ago,",
+     "start": 163.627,
+     "end": 167.157
+    },
+    {
+     "text": "in the mountains of northern Italy.",
+     "start": 167.317,
+     "end": 169.365
+    }
+   ],
+   "end": 169.735
+  },
+  {
+   "v": "villabruna_cavity",
+   "start": 169.735,
+   "lines": [
+    {
+     "text": "A hunter-gatherer buried at a rock shelter called Villabruna",
+     "start": 170.035,
+     "end": 173.508
+    },
+    {
+     "text": "had a large cavity in one of his back molars.",
+     "start": 173.668,
+     "end": 176.551
+    }
+   ],
+   "end": 176.921
+  },
+  {
+   "v": "flint_scratch",
+   "start": 176.921,
+   "lines": [
+    {
+     "text": "Under a microscope, that cavity is covered in tiny scratches.",
+     "start": 177.221,
+     "end": 181.179
+    },
+    {
+     "text": "They match marks made by a pointed piece of flint,",
+     "start": 181.499,
+     "end": 184.292
+    },
+    {
+     "text": "used to scratch and lever out the rotten part of the tooth, while he was still alive.",
+     "start": 184.452,
+     "end": 189.424
+    }
+   ],
+   "end": 189.794
+  },
+  {
+   "v": "brave",
+   "start": 189.794,
+   "lines": [
+    {
+     "text": "No numbing. No drill.",
+     "start": 190.094,
+     "end": 191.541
+    },
+    {
+     "text": "Just a sharp stone, and a lot of courage.",
+     "start": 191.861,
+     "end": 194.448
+    }
+   ],
+   "end": 194.818
+  },
+  {
+   "v": "fredian",
+   "start": 194.818,
+   "lines": [
+    {
+     "text": "About a thousand years later, someone near Lucca, also in Italy, went a step further.",
+     "start": 195.118,
+     "end": 200.3
+    },
+    {
+     "text": "Two of this person's front teeth had been scraped out,",
+     "start": 200.62,
+     "end": 203.229
+    },
+    {
+     "text": "and the holes were packed with bitumen, a sticky natural tar, mixed with plant fibers and possibly hair.",
+     "start": 203.389,
+     "end": 210.005
+    }
+   ],
+   "end": 210.375
+  },
+  {
+   "v": "filling",
+   "start": 210.375,
+   "lines": [
+    {
+     "text": "In other words, it's one of the earliest fillings we know of.",
+     "start": 210.675,
+     "end": 214.076
+    }
+   ],
+   "end": 214.446
+  },
+  {
+   "v": "farming",
+   "start": 214.446,
+   "lines": [
+    {
+     "text": "And then, everything changed.",
+     "start": 214.746,
+     "end": 216.392
+    },
+    {
+     "text": "Around ten thousand years ago, people in several parts of the world started farming.",
+     "start": 216.712,
+     "end": 221.95
+    }
+   ],
+   "end": 222.32
+  },
+  {
+   "v": "grain_food",
+   "start": 222.32,
+   "lines": [
+    {
+     "text": "Grains. Porridge. Bread.",
+     "start": 222.62,
+     "end": 224.157
+    },
+    {
+     "text": "Starchy, sticky food, every single day.",
+     "start": 224.477,
+     "end": 227.053
+    },
+    {
+     "text": "Perfect food for the bacteria that cause cavities.",
+     "start": 227.373,
+     "end": 230.169
+    }
+   ],
+   "end": 230.539
+  },
+  {
+   "v": "acorns",
+   "start": 230.539,
+   "lines": [
+    {
+     "text": "Actually, one group got there early.",
+     "start": 230.839,
+     "end": 232.959
+    },
+    {
+     "text": "At Taforalt, in Morocco, about fifteen thousand years ago, hunter-gatherers ate a lot of acorns.",
+     "start": 233.279,
+     "end": 240.313
+    },
+    {
+     "text": "And almost every adult there had cavities.",
+     "start": 240.633,
+     "end": 243.054
+    }
+   ],
+   "end": 243.424
+  },
+  {
+   "v": "mehrgarh",
+   "start": 243.424,
+   "lines": [
+    {
+     "text": "More cavities meant more dentistry.",
+     "start": 243.724,
+     "end": 245.913
+    },
+    {
+     "text": "At Mehrgarh, in what is now Pakistan, people who lived around seven and a half to nine thousand years ago",
+     "start": 246.233,
+     "end": 253.331
+    },
+    {
+     "text": "had holes drilled into their molars.",
+     "start": 253.491,
+     "end": 255.64
+    }
+   ],
+   "end": 256.01
+  },
+  {
+   "v": "bowdrill",
+   "start": 256.01,
+   "lines": [
+    {
+     "text": "Researchers think the tool was a bow drill tipped with flint.",
+     "start": 256.31,
+     "end": 259.935
+    },
+    {
+     "text": "In tests, a drill like that could cut into tooth enamel in under a minute.",
+     "start": 260.255,
+     "end": 264.817
+    }
+   ],
+   "end": 265.187
+  },
+  {
+   "v": "alive",
+   "start": 265.187,
+   "lines": [
+    {
+     "text": "And these holes weren't made after death.",
+     "start": 265.487,
+     "end": 267.522
+    },
+    {
+     "text": "The patients were alive.",
+     "start": 267.842,
+     "end": 269.193
+    },
+    {
+     "text": "Some of them even had more than one tooth drilled.",
+     "start": 269.513,
+     "end": 272.368
+    }
+   ],
+   "end": 272.738
+  },
+  {
+   "v": "beeswax",
+   "start": 272.738,
+   "lines": [
+    {
+     "text": "Then, about sixty-five hundred years ago, in what is now Slovenia,",
+     "start": 273.038,
+     "end": 277.462
+    },
+    {
+     "text": "a man in his twenties had a cracked canine tooth.",
+     "start": 277.622,
+     "end": 280.639
+    },
+    {
+     "text": "Someone filled the crack with beeswax.",
+     "start": 280.959,
+     "end": 283.03
+    }
+   ],
+   "end": 283.4
+  },
+  {
+   "v": "beeswax_maybe",
+   "start": 283.4,
+   "lines": [
+    {
+     "text": "It may have been to stop the pain when he chewed.",
+     "start": 283.7,
+     "end": 285.968
+    },
+    {
+     "text": "Although scientists can't completely rule out that the wax was added after he died.",
+     "start": 286.288,
+     "end": 291.322
+    }
+   ],
+   "end": 291.692
+  },
+  {
+   "v": "fire_end",
+   "start": 291.692,
+   "lines": [
+    {
+     "text": "So, did ancient humans take care of their teeth?",
+     "start": 291.992,
+     "end": 294.578
+    },
+    {
+     "text": "Not the way we do. No brushing twice a day. No floss. No checkups.",
+     "start": 294.898,
+     "end": 299.488
+    }
+   ],
+   "end": 299.858
+  },
+  {
+   "v": "recap",
+   "start": 299.858,
+   "lines": [
+    {
+     "text": "But they picked at them, scraped out the rot with stone,",
+     "start": 300.158,
+     "end": 303.244
+    },
+    {
+     "text": "drilled with flint, and plugged the holes with tar and wax.",
+     "start": 303.404,
+     "end": 306.855
+    }
+   ],
+   "end": 307.225
+  },
+  {
+   "v": "irony",
+   "start": 307.225,
+   "lines": [
+    {
+     "text": "And the strangest part?",
+     "start": 307.525,
+     "end": 308.809
+    },
+    {
+     "text": "Their biggest tooth problem came from the very thing that made modern life possible.",
+     "start": 309.129,
+     "end": 313.943
+    },
+    {
+     "text": "Farming.",
+     "start": 314.263,
+     "end": 314.914
+    }
+   ],
+   "end": 315.284
+  },
+  {
+   "v": "dentist_chair",
+   "start": 315.284,
+   "lines": [
+    {
+     "text": "So next time you're sitting in a dentist's chair, remember.",
+     "start": 315.584,
+     "end": 318.827
+    },
+    {
+     "text": "It could be a lot worse.",
+     "start": 319.147,
+     "end": 320.535
+    },
+    {
+     "text": "It could be a sharp rock.",
+     "start": 320.855,
+     "end": 322.251
+    }
+   ],
+   "end": 322.621
+  },
+  {
+   "v": "endcard",
+   "start": 322.621,
+   "lines": [
+    {
+     "text": "Follow for more of how it really works.",
+     "start": 322.921,
+     "end": 325.182
+    }
+   ],
+   "end": 327.352
+  }
+ ]
+}

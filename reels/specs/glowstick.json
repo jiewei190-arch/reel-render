@@ -1,0 +1,88 @@
+{
+ "name": "glowstick",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  5,
+  6,
+  8,
+  11,
+  12,
+  13,
+  15
+ ],
+ "phrases": [
+  [
+   "Snap a glow stick, and it lights up with **no battery.**",
+   "Snap a glow stick, and it lights up with no battery."
+  ],
+  [
+   "But there's no wire inside. The light comes from a **chemical reaction.**",
+   "But there's no wire inside. The light comes from a chemical reaction."
+  ],
+  [
+   "Inside the plastic tube floats a thin **glass vial.**",
+   "Inside the plastic tube floats a thin glass vial."
+  ],
+  [
+   "The vial holds **hydrogen peroxide.**",
+   "The vial holds hydrogen peroxide."
+  ],
+  [
+   "Around it sits a different liquid: **diphenyl oxalate**, mixed with a **dye.**",
+   "Around it sits a different liquid: diphenyl oxalate, mixed with a dye."
+  ],
+  [
+   "While the glass is whole, the two never touch. So **nothing happens.**",
+   "While the glass is whole, the two never touch. So nothing happens."
+  ],
+  [
+   "Bend the stick, and the vial **cracks.** Now the liquids **mix.**",
+   "Bend the stick, and the vial cracks. Now the liquids mix."
+  ],
+  [
+   "The peroxide attacks the oxalate and builds a **very unstable molecule.**",
+   "The peroxide attacks the oxalate and builds a very unstable molecule."
+  ],
+  [
+   "It falls apart almost at once, into **carbon dioxide**, and lets go of **energy.**",
+   "It falls apart almost at once, into carbon dioxide, and lets go of energy."
+  ],
+  [
+   "But that energy isn't light yet. It gets **handed to the dye.**",
+   "But that energy isn't light yet. It gets handed to the dye."
+  ],
+  [
+   "The energy kicks the dye's **electrons** up to a higher level.",
+   "The energy kicks the dye's electrons up to a higher level."
+  ],
+  [
+   "When they drop back down, each one gives off a tiny **flash of light.**",
+   "When they drop back down, each one gives off a tiny flash of light."
+  ],
+  [
+   "So that's the answer: the **battery is the chemistry.** Stored energy comes out as light.",
+   "So that's the answer: the battery is the chemistry. Stored energy comes out as light."
+  ],
+  [
+   "And it's **cold light.** Most of the energy leaves as light, with very little heat.",
+   "And it's cold light. Most of the energy leaves as light, with very little heat."
+  ],
+  [
+   "The dye picks the **colour.** Change the dye, and you change the glow.",
+   "The dye picks the colour. Change the dye, and you change the glow."
+  ],
+  [
+   "Warm it up, and it glows **brighter but quits sooner.** Cool it, and it lasts **longer.**",
+   "Warm it up, and it glows brighter but quits sooner. Cool it, and it lasts longer."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
