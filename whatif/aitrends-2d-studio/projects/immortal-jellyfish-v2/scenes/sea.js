@@ -15,9 +15,9 @@ function sea(T, o = {}) { const s = seaStage(T, { fov: 36, seed: o.seed || 5, cl
 const look = (g, t) => waterLook(g, t);
 
 // ---------- the TEXT hook: one top caption that adds story, up for the first ~3.2 s (s01 + s02) ----------
-export function topHook(g, gt) { if (gt > 3.3) return; const a = clamp((3.3 - gt) / 0.2); const k = ease.outBack(clamp((gt + 0.25) / 0.3)); g.save(); g.globalAlpha = a; g.translate(E.W / 2, E.H * 0.095); g.scale(k, k);
-  g.font = '900 78px Nunito'; const w = Math.min(g.measureText('it just turns back into a baby').width, E.W * 0.86) + 70, h = 118; g.beginPath(); g.roundRect(-w / 2, -h / 2, w, h, 26); g.fillStyle = 'rgba(20,14,20,.78)'; g.fill();
-  TXT(g, 'it just turns back into a', -w / 2 + 35 + (w - 70) * 0.43, 2, 78, { color: '#ffffff', maxW: (w - 70) * 0.86 }); TXT(g, 'baby', w / 2 - 35 - (w - 70) * 0.075, 2, 78, { color: '#ffd23a', maxW: (w - 70) * 0.15 }); g.restore(); }
+export function topHook(g, gt) { if (gt > 3.3) return; const a = clamp((3.3 - gt) / 0.2);
+  [['it just turns back', '#ffffff'], ['into a BABY', '#ffd23a']].forEach(([l, c], i) => { const k = ease.outBack(clamp((gt + 0.3 - i * 0.08) / 0.3)); g.save(); g.globalAlpha = a; g.translate(E.W / 2, E.H * (0.075 + i * 0.07)); g.scale(k, k); g.rotate((i ? 1.2 : -1.2) * Math.PI / 180);
+    TXT(g, l, 0, 0, 112, { color: c, stroke: '#2a1c15', maxW: E.W * 0.9 }); g.restore(); }); }
 // s01 FRAME 1 "This jellyfish can't die of OLD AGE." — already mid-dive: it SMACKS the RESET button at 0.25 s (flash, shake, !) and starts to melt
 registerShot('s01', { kind: '3d',
   init(T) { const s = sea(T, { seed: 8, jp: [0, 1.1, 0] }); s.btn = resetButton(); s.btn.position.set(0, 0, 0.2); s.stage.add(s.btn); return s; },
@@ -25,9 +25,9 @@ registerShot('s01', { kind: '3d',
     const melt = 0.55 * ease.inOut(prog(t, 1.0, info.dur));
     s.j.position.y = lerp(0.9, 0.0, dive) + up * 0.75; s.btn.press(t > hit ? 1 - prog(t, hit + 0.35, hit + 0.7) : 0);
     s.j.update(t, { lid: t > hit ? 0.05 : 0.3, mouth: 'o', look: [0, t < hit ? -0.6 : 0], pulse: 1 - melt, melt });
-    camMove(s.stage, t, [[0, { pos: [0.6, 1.0, 6.4], look: [0, 1.25, 0], fov: 36 }], [info.dur, { pos: [0.3, 1.25, 5.4], look: [0, 1.15, 0], fov: 36 }]], ease.out);
+    camMove(s.stage, t, [[0, { pos: [0.6, 1.6, 7.6], look: [0, 1.75, 0], fov: 36 }], [info.dur, { pos: [0.3, 1.7, 6.6], look: [0, 1.6, 0], fov: 36 }]], ease.out);
     shakeCam(s.stage, t, [{ fx: 'shake', at: hit, amp: 0.12, dur: 0.45 }]); },
-  overlay(g, t, info, s) { look(g, t); const hit = 0.25; fxr(g, t, s, [{ fx: 'flash', at: hit, dur: 0.2 }, { fx: 'exclaim', on: 'j', at: hit + 0.03 }, { fx: 'ripples', on: 'btn', at: hit, atFeet: true }, { fx: 'sweat', on: 'j', at: 1.3 }]);
+  overlay(g, t, info, s) { look(g, t); const hit = 0.25; fxr(g, t, s, [{ fx: 'flash', at: hit, dur: 0.2 }, { fx: 'exclaim', on: 'j', at: hit + 0.03, until: hit + 0.9 }, { fx: 'ripples', on: 'btn', at: hit, atFeet: true }, { fx: 'sweat', on: 'j', at: 1.3 }]);
     topHook(g, info.shot.start + t); },
 });
 

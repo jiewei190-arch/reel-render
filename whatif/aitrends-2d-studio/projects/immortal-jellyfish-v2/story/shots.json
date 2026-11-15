@@ -1,0 +1,290 @@
+{
+ "duration": 22.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.6,
+   "line": "This jellyfish can't die of OLD AGE.",
+   "scene": "FRAME 1: mid-dive SMACK on the RESET button (flash, shake, !), starts melting; top hook caption 'it just turns back into a baby'",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.02,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "word": "old",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.6,
+   "end": 3.25,
+   "line": "INJURED,",
+   "scene": "a pebble bonks it (stars, shake)",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    },
+    {
+     "word": "injured",
+     "name": "toon3d:boing",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.25,
+   "end": 4.2,
+   "line": "or STARVING?",
+   "scene": "empty plate, frown, sweat, ???",
+   "sfx": [
+    {
+     "word": "starving",
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "starving",
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.2,
+   "end": 6.65,
+   "line": "It doesn't die. It hits RESET.",
+   "scene": "wink, dives onto the RESET button",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "word": "die",
+     "name": "toon3d:click",
+     "gain": -12
+    },
+    {
+     "word": "reset",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "reset",
+     "name": "toon3d:zap",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.65,
+   "end": 8.8,
+   "line": "It melts into a blob, sinks,",
+   "scene": "melts into a blob, sinks",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "word": "melts",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "sinks",
+     "name": "toon3d:drop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.8,
+   "end": 10.45,
+   "line": "and turns back into a BABY.",
+   "scene": "poof: blob -> polyp with a pacifier",
+   "sfx": [
+    {
+     "word": "turns",
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "baby",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.45,
+   "end": 12.7,
+   "line": "Then grows up again. And again.",
+   "scene": "mini jellies bud off; TRANSDIFFERENTIATION stamp",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:stamp",
+     "gain": -11
+    },
+    {
+     "word": "grows",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "again",
+     "nth": 1,
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "word": "again",
+     "nth": 2,
+     "name": "toon3d:pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.7,
+   "end": 14.45,
+   "line": "It's smaller than your pinky nail,",
+   "scene": "giant pinky, jelly over the nail, 4.5 mm + Latin name chips",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "nail",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.45,
+   "end": 17.05,
+   "line": "and in theory, it can do this FOREVER.",
+   "scene": "infinity loop of jellies, in theory... FOREVER",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "word": "theory",
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "forever",
+     "name": "toon3d:success",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 17.05,
+   "end": 19.5,
+   "line": "The catch? Fish and turtles eat it.",
+   "scene": "??? then fish + turtle in bibs queue at a LUNCH sign; jelly sweats",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "catch",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "eat",
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 19.5,
+   "end": 21.45,
+   "line": "Immortal, but also...",
+   "scene": "jelly poses with its halo, IMMORTAL chip",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "immortal",
+     "name": "toon3d:bell",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 21.45,
+   "end": 22.25,
+   "line": "LUNCH.",
+   "scene": "INSERT: BUT ALSO... LUNCH. -> hard cut to frame 1",
+   "in": {
+    "type": "flash"
+   },
+   "captions": false,
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

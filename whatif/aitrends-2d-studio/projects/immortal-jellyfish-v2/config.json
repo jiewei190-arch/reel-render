@@ -1,5 +1,5 @@
 {
- "title": "Immortal Jellyfish: The Animal That Never Dies of Old Age",
+ "title": "Immortal Jellyfish v2",
  "aspect": "9:16",
  "resolution": "1080p",
  "fps": 24,
@@ -7,11 +7,30 @@
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
  "captions": true,
- "captionStyle": { "y": 0.70, "gold": ["old", "age", "ever", "injured", "starving", "reset", "button", "baby", "transdifferentiation", "forever", "lunch", "brain"] },
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "old",
+   "age",
+   "injured",
+   "starving",
+   "reset",
+   "baby",
+   "forever",
+   "lunch"
+  ]
+ },
  "bars": "none",
  "fadeIn": 0,
  "fadeOut": 0,
- "music": { "enabled": true, "file": "toon3d:curious", "gainDb": -21 },
- "sfx": { "enabled": true, "gainDb": -6 },
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
  "loudness": -14
 }

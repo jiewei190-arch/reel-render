@@ -1,0 +1,117 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 22.5,
+ "render_s": 172.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This jellyfish can't die of old age.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "This jellyfish can't die of old age.",
+     "seed": 7,
+     "heard": "This jellyfish can't die of old age.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.387
+  },
+  {
+   "n": 2,
+   "text": "Injured, or starving? It doesn't die. It hits reset.",
+   "start": 2.637,
+   "parts": [
+    {
+     "tts": "Injured, or starving? It doesn't die. It hits reset.",
+     "seed": 7,
+     "heard": "Injured or starving? It doesn't die. It hits reset.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.605
+  },
+  {
+   "n": 3,
+   "text": "It melts into a blob, sinks, and turns back into a baby.",
+   "start": 6.855,
+   "parts": [
+    {
+     "tts": "It melts into a blob, sinks, and turns back into a baby.",
+     "seed": 7,
+     "heard": "it melts into a blob, sinks, and turns back into a baby.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.345
+  },
+  {
+   "n": 4,
+   "text": "Then grows up again. And again.",
+   "start": 10.595,
+   "parts": [
+    {
+     "tts": "Then grows up again. And again.",
+     "seed": 7,
+     "heard": "then grows up again. And again.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.586
+  },
+  {
+   "n": 5,
+   "text": "It's smaller than your pinky nail, and in theory, it can do this forever.",
+   "start": 12.836,
+   "parts": [
+    {
+     "tts": "It's smaller than your pinky nail, and in theory, it can do this forever.",
+     "seed": 7,
+     "heard": "It's smaller than your pinky nail, and in theory, it can do this forever.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.929
+  },
+  {
+   "n": 6,
+   "text": "The catch? Fish and turtles eat it. Immortal, but also... lunch.",
+   "start": 17.179,
+   "parts": [
+    {
+     "tts": "The catch? Fish and turtles eat it. Immortal, but also...",
+     "seed": 7,
+     "heard": "The catch? Fish and turtles eat it. Immortal, but also...",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "lunch.",
+     "seed": 11,
+     "heard": "lunch.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.25
+  }
+ ]
+}

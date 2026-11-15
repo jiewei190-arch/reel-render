@@ -1,2 +1,2 @@
-STATE: scripting
-# immortal-jellyfish-v2: "jail break" re-cut (EMOTION: WOW, target ~22 s). Voiceover + scenes in progress.
+STATE: rendering
+# immortal-jellyfish-v2: voice (22.5 s, Whisper QA ok) + shots done; full 1080x1920 cloud render in progress
