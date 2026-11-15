@@ -1,0 +1,41 @@
+{
+ "duration": 13.5,
+ "shots": [
+  {
+   "id": "stillA",
+   "start": 0,
+   "end": 1,
+   "line": "Justin A still"
+  },
+  {
+   "id": "stillB",
+   "start": 1,
+   "end": 2,
+   "line": "Justin B still"
+  },
+  {
+   "id": "stillC",
+   "start": 2,
+   "end": 3,
+   "line": "Justin C still"
+  },
+  {
+   "id": "introA",
+   "start": 3,
+   "end": 6.5,
+   "line": "Justin A intro"
+  },
+  {
+   "id": "introB",
+   "start": 6.5,
+   "end": 10.0,
+   "line": "Justin B intro"
+  },
+  {
+   "id": "introC",
+   "start": 10.0,
+   "end": 13.5,
+   "line": "Justin C intro"
+  }
+ ]
+}
