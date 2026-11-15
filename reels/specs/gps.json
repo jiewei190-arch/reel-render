@@ -1,35 +1,102 @@
-{"name":"gps","voice":"am_michael","speed":1.04,"root":55,"bpm":104,
- "arp":[220,261.6,329.6,392,329.6,261.6,293.7,392],
- "breath":[3,7,13,18,22,25],
- "phrases":[
-  ["Your phone knows **where you are.**","Your phone knows where you are."],
-  ["Within about **five meters.**","Within about five meters."],
-  ["But here's the **weird part:**","But here's the weird part:"],
-  ["it **never** tells the satellites a thing.","it never tells the satellites a thing."],
-  ["About **thirty satellites** circle Earth,","About thirty satellites circle Earth,"],
-  ["**twenty thousand** kilometers up,","twenty thousand kilometers up,"],
-  ["each one **shouting the time.**","each one shouting the time."],
-  ["Your phone just **listens.**","Your phone just listens."],
-  ["Hear **one** satellite?","Hear one satellite?"],
-  ["You're somewhere on a **giant sphere.**","You're somewhere on a giant sphere."],
-  ["**Two?** A circle.","Two? A circle."],
-  ["**Three?** Two points.","Three? Two points."],
-  ["A **fourth** satellite fixes your clock,","A fourth satellite fixes your clock,"],
-  ["and now it's **you.**","and now it's you."],
-  ["But there's a **catch.**","But there's a catch."],
-  ["Those signals move at the **speed of light.**","Those signals move at the speed of light."],
-  ["One **billionth** of a second is about","One billionth of a second is about"],
-  ["**thirty centimeters.**","thirty centimeters."],
-  ["So the clocks have to be **insanely precise.**","So the clocks have to be insanely precise."],
-  ["And that's where **Einstein** shows up.","And that's where Einstein shows up."],
-  ["Up there, gravity is weaker, so clocks run **faster.**","Up there, gravity is weaker, so clocks run faster."],
-  ["But they're also moving fast, so they run **slower.**","But they're also moving fast, so they run slower."],
-  ["Net result: about **thirty-eight microseconds** fast, every day.","Net result: about thirty-eight microseconds fast, every day."],
-  ["Ignore that, and you'd drift about **ten kilometers** a day.","Ignore that, and you'd drift about ten kilometers a day."],
-  ["So engineers **correct for it.**","So engineers correct for it."],
-  ["Every time you open Maps, you're using **relativity.**","Every time you open Maps, you're using relativity."],
-  ["**Follow** for more.","Follow for more."]
+{
+ "name": "gps",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  7,
+  8,
+  9,
+  10,
+  11,
+  13,
+  14,
+  15,
+  16
  ],
- "sfx":[["whoosh",4,-0.35],["whoosh",8,-0.35],["whoosh",14,-0.35],["whoosh",19,-0.35],["whoosh",25,-0.35],
-  ["blip",6,0.05,1500,0.07],["blip",6,0.35,1800,0.06],["chime",13,0.25,1318,0.9,0.1],["riser",22,-0.1,0.9,0.1],["thud",23,-0.05],
-  ["chime",24,0.3,988,0.8,0.1],["chime",25,0.6,1568,1.0,0.1]]}
+ "music_gain": 0.6,
+ "phrases": [
+  [
+   "Your phone finds you by timing **clocks in space.**",
+   "Your phone finds you by timing clocks in space."
+  ],
+  [
+   "So **how does your phone's GPS know where you are?**",
+   "So how does your phone's GPS know where you are?"
+  ],
+  [
+   "About **thirty** GPS satellites circle the Earth, twice a day, twenty thousand kilometers up.",
+   "About thirty GPS satellites circle the Earth, twice a day, twenty thousand kilometers up."
+  ],
+  [
+   "Each one keeps broadcasting two things: **where it is,** and **what time it is.**",
+   "Each one keeps broadcasting two things: where it is, and what time it is."
+  ],
+  [
+   "The signal travels at the **speed of light,** but it still takes a tiny moment to arrive.",
+   "The signal travels at the speed of light, but it still takes a tiny moment to arrive."
+  ],
+  [
+   "So that delay tells your phone **how far away** the satellite is.",
+   "So that delay tells your phone how far away the satellite is."
+  ],
+  [
+   "One satellite puts you somewhere on a giant **sphere.**",
+   "One satellite puts you somewhere on a giant sphere."
+  ],
+  [
+   "Two narrow it to a **circle.** Three, to just a couple of **points.**",
+   "Two narrow it to a circle. Three, to just a couple of points."
+  ],
+  [
+   "A **fourth** fixes your phone's own clock, and pins your spot.",
+   "A fourth fixes your phone's own clock, and pins your spot."
+  ],
+  [
+   "That's called **trilateration.**",
+   "That's called trilateration."
+  ],
+  [
+   "Here's the twist: the timing has to be perfect, so each satellite carries an **atomic clock.**",
+   "Here's the twist. The timing has to be perfect, so each satellite carries an atomic clock."
+  ],
+  [
+   "And even then, **Einstein** gets in the way.",
+   "And even then, Einstein gets in the way."
+  ],
+  [
+   "Moving fast makes their clocks run **slow,** by about seven microseconds a day.",
+   "Moving fast makes their clocks run slow, by about seven microseconds a day."
+  ],
+  [
+   "But weaker gravity up there makes them run **fast,** by about forty-five.",
+   "But weaker gravity up there makes them run fast, by about forty-five."
+  ],
+  [
+   "So they gain about **thirty-eight microseconds** every day.",
+   "So they gain about thirty-eight microseconds every day."
+  ],
+  [
+   "Left uncorrected, your position would drift by about **ten kilometers** a day.",
+   "Left uncorrected, your position would drift by about ten kilometers a day."
+  ],
+  [
+   "So GPS corrects for relativity, and your **blue dot** stays put.",
+   "So GPS corrects for relativity, and your blue dot stays put."
+  ],
+  [
+   "Did you know your phone needs Einstein? **Yes or no?**",
+   "Did you know your phone needs Einstein? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

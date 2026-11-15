@@ -1,0 +1,1 @@
+Bonus: the tiny pocket is often called the "fifth pocket", but Levi's says that title really belongs to the back left pocket, which didn't appear on their jeans until 1901. Have you ever used the tiny one? Yes or no? 👖

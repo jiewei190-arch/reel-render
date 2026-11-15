@@ -1,0 +1,1 @@
+Bonus: in the 2004 study of 119 cats, 96.5% survived their falls, but about a third had chest injuries and nearly half had broken legs. Screens on open windows beat reflexes every time. Does your cat sit on the windowsill? 🐈👇

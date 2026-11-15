@@ -1,0 +1,1 @@
+Bonus: you can measure the speed of light with a chocolate bar. Turntable out, heat a few seconds, measure the gap between melted spots (about 6 cm), double it and multiply by 2.45 GHz. You get about 294,000 km/s, within a few percent of the real value. Did you know your microwave could do that? Yes or no? 🍫

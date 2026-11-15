@@ -1,0 +1,27 @@
+[00:00.05 -> 00:00.83] Mrs.
+[00:01.99 -> 00:04.95] Hale pays you fifty dollars to watch the house tonight.
+[00:05.95 -> 00:07.33] On the fridge, she left a note.
+[00:08.23 -> 00:08.89] Four rules.
+[00:10.87 -> 00:11.33] Rule one.
+[00:12.29 -> 00:13.87] Never open the basement door.
+[00:14.89 -> 00:15.75] Whatever you hear.
+[00:17.69 -> 00:18.19] Rule two.
+[00:19.19 -> 00:21.79] If the hallway light goes off, don't touch the switch.
+[00:22.85 -> 00:23.41] Just wait.
+[00:24.15 -> 00:26.01] Rule three.
+[00:27.05 -> 00:28.39] Keep the baby monitor on.
+[00:29.17 -> 00:29.87] All night.
+[00:31.85 -> 00:32.59] Ten past eleven.
+[00:33.61 -> 00:35.41] Something knocks on the basement door.
+[00:36.35 -> 00:36.99] Three times.
+[00:37.95 -> 00:38.69] You don't move.
+[00:39.69 -> 00:40.39] Eleven forty.
+[00:41.43 -> 00:42.75] The hallway light goes off.
+[00:43.61 -> 00:44.15] You wait.
+[00:45.05 -> 00:46.15] It comes back on.
+[00:47.09 -> 00:48.37] Then the monitor crackles.
+[00:48.37 -> 00:52.07] Can you come tuck me in?
+[00:52.07 -> 00:55.47] You're halfway up the stairs when you turn the note over.
+[00:57.21 -> 00:57.61] Rule four.
+[00:58.67 -> 00:59.99] There are no kids in this house.
+[00:59.99 -> 01:00.04] I can see you on the stairs.

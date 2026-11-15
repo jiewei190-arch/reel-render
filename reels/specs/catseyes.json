@@ -1,0 +1,98 @@
+{
+ "name": "catseyes",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  8,
+  9,
+  12,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "In flash photos, a cat's eyes **glow,** but yours turn **red.**",
+   "In flash photos, a cat's eyes glow, but yours turn red."
+  ],
+  [
+   "**But** a cat's eyes don't make any light of their own.",
+   "But a cat's eyes don't make any light of their own."
+  ],
+  [
+   "So where does that **spooky glow** come from?",
+   "So where does that spooky glow come from?"
+  ],
+  [
+   "To see, light has to hit the **light-sensing cells** at the back of the eye.",
+   "To see, light has to hit the light-sensing cells at the back of the eye."
+  ],
+  [
+   "In dim light, some of it **slips right past** them.",
+   "In dim light, some of it slips right past them."
+  ],
+  [
+   "So cats have a secret layer behind the retina: the **tapetum lucidum.**",
+   "So cats have a secret layer behind the retina. The tapetum lucidum."
+  ],
+  [
+   "It works like a **mirror.**",
+   "It works like a mirror."
+  ],
+  [
+   "Light that slipped past **bounces back,** for a **second chance** to be seen.",
+   "Light that slipped past bounces back, for a second chance to be seen."
+  ],
+  [
+   "That helps cats make the most of **dim light.**",
+   "That helps cats make the most of dim light."
+  ],
+  [
+   "The catch? The bounce makes the picture **a little blurry.**",
+   "The catch? The bounce makes the picture a little blurry."
+  ],
+  [
+   "Now, the photo. On a phone, the **flash** sits right beside the **lens.**",
+   "Now, the photo. On a phone, the flash sits right beside the lens."
+  ],
+  [
+   "The flash goes in, hits the mirror, and comes **straight back** into the camera.",
+   "The flash goes in, hits the mirror, and comes straight back into the camera."
+  ],
+  [
+   "**That's** the glow you see.",
+   "That's the glow you see."
+  ],
+  [
+   "People **don't have** this mirror.",
+   "People don't have this mirror."
+  ],
+  [
+   "So the flash lights up the **blood-rich layer** at the back of your eye, and the photo shows **red.**",
+   "So the flash lights up the blood-rich layer at the back of your eye, and the photo shows red."
+  ],
+  [
+   "Kittens' eyes often shine **blue.** Grown cats shine **yellow to green.**",
+   "Kittens' eyes often shine blue. Grown cats shine yellow, to green."
+  ],
+  [
+   "Many night animals have this mirror too, from **dogs** to **owls** to some **spiders.**",
+   "Many night animals have this mirror too, from dogs, to owls, to some spiders."
+  ],
+  [
+   "So glowing eyes in the dark are just a **built-in mirror** for the night.",
+   "So glowing eyes in the dark are just a built-in mirror, for the night."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

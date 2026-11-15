@@ -1,0 +1,82 @@
+{
+ "name": "saltyocean",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  7,
+  10,
+  13
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "Why is the ocean **salty,** when rain and rivers are **fresh?**",
+   "Why is the ocean salty, when rain and rivers are fresh?"
+  ],
+  [
+   "But that fresh water is the whole **secret.** It starts with **rain.**",
+   "But that fresh water is the whole secret. It starts with rain."
+  ],
+  [
+   "Rain picks up a little **carbon dioxide** from the air, so it's slightly **acidic.**",
+   "Rain picks up a little carbon dioxide from the air, so it's slightly acidic."
+  ],
+  [
+   "Over time it wears down **rock,** and minerals dissolve into the water as **ions.**",
+   "Over time it wears down rock, and minerals dissolve into the water as ions."
+  ],
+  [
+   "Streams and rivers carry those ions all the way to the **sea.**",
+   "Streams and rivers carry those ions all the way to the sea."
+  ],
+  [
+   "Here's the catch: when the sun warms the sea, **water** rises into the air. The **salt** can't.",
+   "Here's the catch: when the sun warms the sea, water rises into the air. The salt can't."
+  ],
+  [
+   "That water falls as rain again, and the salt is **left behind.**",
+   "That water falls as rain again, and the salt is left behind."
+  ],
+  [
+   "Sea creatures use some of it. The rest **builds up** over time.",
+   "Sea creatures use some of it. The rest builds up over time."
+  ],
+  [
+   "And here's the strange part: the sea is salted from **below,** too.",
+   "And here's the strange part: the sea is salted from below, too."
+  ],
+  [
+   "Seawater seeps into cracks in the sea floor, gets heated by **magma,** and gushes back out of **vents,** full of minerals.",
+   "Seawater seeps into cracks in the sea floor, gets heated by magma, and gushes back out of vents, full of minerals."
+  ],
+  [
+   "Underwater **volcanoes** add even more.",
+   "Underwater volcanoes add even more."
+  ],
+  [
+   "Spread over the land, all that salt would make a layer more than **500 feet** thick.",
+   "Spread over the land, all that salt would make a layer more than five hundred feet thick."
+  ],
+  [
+   "So seawater is about **3.5% salt,** mostly **sodium** and **chloride,** the pair in table salt.",
+   "So seawater is about three and a half percent salt, mostly sodium and chloride, the pair in table salt."
+  ],
+  [
+   "**Rain** brings it in. The **sun** leaves it behind.",
+   "Rain brings it in. The sun leaves it behind."
+  ],
+  [
+   "Did you know the sea's salt came from **rocks?** Yes or no?",
+   "Did you know the sea's salt came from rocks? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

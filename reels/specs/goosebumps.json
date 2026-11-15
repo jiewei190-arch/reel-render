@@ -1,0 +1,97 @@
+{
+ "name": "goosebumps",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  7,
+  8,
+  9,
+  10,
+  12,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "A cold breeze hits, and your arm looks like a **plucked goose.**",
+   "A cold breeze hits, and your arm looks like a plucked goose."
+  ],
+  [
+   "**But** you don't have feathers. So why do we get goosebumps?",
+   "But you don't have feathers. So why do we get goosebumps?"
+  ],
+  [
+   "Under every hair, there's a tiny muscle called the **arrector pili.**",
+   "Under every hair, there's a tiny muscle called the arrector pilly."
+  ],
+  [
+   "When you get cold, a **nerve** tells it to squeeze.",
+   "When you get cold, a nerve tells it to squeeze."
+  ],
+  [
+   "The muscle pulls the hair **straight up,** and the skin around it bunches into a **bump.**",
+   "The muscle pulls the hair straight up, and the skin around it bunches into a bump."
+  ],
+  [
+   "Now picture a cat in the cold. Every hair stands up, and the fur **puffs out.**",
+   "Now picture a cat in the cold. Every hair stands up, and the fur puffs out."
+  ],
+  [
+   "That puffed fur traps a layer of **warm air,** like a fluffy coat.",
+   "That puffed fur traps a layer of warm air, like a fluffy coat."
+  ],
+  [
+   "Our ancestors were much **hairier,** so it really helped keep them warm.",
+   "Our ancestors were much hairier, so it really helped keep them warm."
+  ],
+  [
+   "We've lost most of that fur, so on us the bumps are mostly a **leftover.**",
+   "We've lost most of that fur, so on us the bumps are mostly a leftover."
+  ],
+  [
+   "**But** here's the twist: scientists at Harvard found that nerve has a **second job.**",
+   "But here's the twist: scientists at Harvard found that nerve has a second job."
+  ],
+  [
+   "It also connects to the **stem cells** that grow new hair.",
+   "It also connects to the stem cells that grow new hair."
+  ],
+  [
+   "In mice, a long cold spell made that nerve fire **harder,**",
+   "In mice, a long cold spell made that nerve fire harder,"
+  ],
+  [
+   "and the stem cells woke up and grew hair **faster.**",
+   "and the stem cells woke up and grew hair faster."
+  ],
+  [
+   "And the tiny goosebump muscle helps keep that nerve **plugged in.**",
+   "And the tiny goosebump muscle helps keep that nerve plugged in."
+  ],
+  [
+   "Quick cold: the fur stands up. Long cold, in mice: **more fur grows.**",
+   "Quick cold: the fur stands up. Long cold, in mice: more fur grows."
+  ],
+  [
+   "So goosebumps are your body's **old fur coat,** still trying to keep you warm.",
+   "So goosebumps are your body's old fur coat, still trying to keep you warm."
+  ],
+  [
+   "Do you get goosebumps from music too? **Yes or no?**",
+   "Do you get goosebumps from music too? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

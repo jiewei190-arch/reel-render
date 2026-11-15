@@ -1,0 +1,90 @@
+{
+ "name": "earpop",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  7,
+  9,
+  11,
+  12,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "That pop in your ears is a **bubble of air,** squeezing through.",
+   "That pop in your ears is a bubble of air, squeezing through."
+  ],
+  [
+   "But why do your **ears pop on a plane,** and why does **landing hurt** more?",
+   "But why do your ears pop on a plane, and why does landing hurt more?"
+  ],
+  [
+   "Behind each eardrum is a pocket of air: your **middle ear.** Its only door is a tube as thin as a **pencil lead.**",
+   "Behind each eardrum is a pocket of air: your middle ear. Its only door is a tube as thin as a pencil lead."
+  ],
+  [
+   "The **Eustachian tube.** It stays shut, until you **swallow or yawn.**",
+   "The Eustachian tube. It stays shut, until you swallow or yawn."
+  ],
+  [
+   "Up high, the cabin is kept like a **mountain town,** six to eight thousand feet up.",
+   "Up high, the cabin is kept like a mountain town, six to eight thousand feet up."
+  ],
+  [
+   "That's only about **three quarters** of the air pressure on the ground.",
+   "That's only about three quarters of the air pressure on the ground."
+  ],
+  [
+   "So on the climb, the air in your ear **pushes out** on the eardrum.",
+   "So on the climb, the air in your ear pushes out on the eardrum."
+  ],
+  [
+   "One swallow lets the extra air escape. **Pop.**",
+   "One swallow lets the extra air escape. Pop."
+  ],
+  [
+   "Then the plane comes down, and the cabin pressure **climbs back up.**",
+   "Then the plane comes down, and the cabin pressure climbs back up."
+  ],
+  [
+   "Cabin air **presses in,** and pushes your eardrum **inward.** Muffled, full, sometimes **painful.**",
+   "Cabin air presses in, and pushes your eardrum inward. Muffled, full, sometimes painful."
+  ],
+  [
+   "Here's the catch. This time, air has to get **in,** and the tube has to **open** to let it.",
+   "Here's the catch. This time, air has to get in, and the tube has to open to let it."
+  ],
+  [
+   "That's why ear trouble on flights happens **most on the way down.**",
+   "That's why ear trouble on flights happens most on the way down."
+  ],
+  [
+   "So swallow, **yawn,** or chew gum. Muscles tug the tube open, air slips in: **pop.**",
+   "So swallow, yawn, or chew gum. Muscles tug the tube open, air slips in: pop."
+  ],
+  [
+   "Babies can't pop their ears on purpose, and their tubes are **narrower.**",
+   "Babies can't pop their ears on purpose, and their tubes are narrower."
+  ],
+  [
+   "So many **cry near landing.** A bottle or pacifier makes them **swallow.**",
+   "So many cry near landing. A bottle or pacifier makes them swallow."
+  ],
+  [
+   "Your move next flight: **swallow, yawn, or gum?**",
+   "Your move, next flight. Swallow, yawn, or gum?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
