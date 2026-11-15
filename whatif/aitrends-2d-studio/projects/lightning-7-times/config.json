@@ -1,0 +1,40 @@
+{
+ "title": "Struck by Lightning 7 Times",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 24.75,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:tense",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "7",
+   "lightning",
+   "1942",
+   "1977",
+   "rolling",
+   "fire",
+   "septillion",
+   "Guinness",
+   "Record.",
+   "said",
+   "chased"
+  ]
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.12,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.35,
+ "sr": 24000,
+ "duration": 24.618,
+ "render_s": 200.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This man was struck by lightning 7 times.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "This man was struck by lightning seven times.",
+     "seed": 7,
+     "heard": "This man was struck by lightning seven times.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.455
+  },
+  {
+   "n": 2,
+   "text": "Roy Sullivan. A park ranger in Shenandoah.",
+   "start": 2.575,
+   "parts": [
+    {
+     "tts": "Roy Sullivan. A park ranger in Shenandoah.",
+     "seed": 7,
+     "heard": "Roy Sullivan, a park ranger in Shenandoah.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.192
+  },
+  {
+   "n": 3,
+   "text": "From 1942 to 1977.",
+   "start": 5.312,
+   "parts": [
+    {
+     "tts": "From nineteen forty-two to nineteen seventy-seven.",
+     "seed": 7,
+     "heard": "from 1942 to 1977.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.915
+  },
+  {
+   "n": 4,
+   "text": "Once, it knocked him out while driving... and the truck kept rolling.",
+   "start": 8.035,
+   "parts": [
+    {
+     "tts": "Once, it knocked him out while driving...",
+     "seed": 7,
+     "heard": "Once, it knocked him out while driving,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and the truck kept rolling.",
+     "seed": 7,
+     "heard": "and the truck kept rolling.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.291
+  },
+  {
+   "n": 5,
+   "text": "Fishing. His front yard. It set his hair on fire.",
+   "start": 12.411,
+   "parts": [
+    {
+     "tts": "Fishing. His front yard. It set his hair on fire.",
+     "seed": 7,
+     "heard": "fishing, his front yard. It set his hair on fire.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.828
+  },
+  {
+   "n": 6,
+   "text": "The odds? By one estimate, about 1 in 10 septillion.",
+   "start": 15.948,
+   "parts": [
+    {
+     "tts": "The odds? By one estimate, about one in ten septillion.",
+     "seed": 7,
+     "heard": "The odds? By one estimate, about 1 in 10 septillion.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.247
+  },
+  {
+   "n": 7,
+   "text": "He said a storm cloud chased him.",
+   "start": 20.367,
+   "parts": [
+    {
+     "tts": "He said a storm cloud chased him.",
+     "seed": 7,
+     "heard": "he said a storm cloud chased him.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.279
+  },
+  {
+   "n": 8,
+   "text": "He still holds the Guinness World Record.",
+   "start": 22.398,
+   "parts": [
+    {
+     "tts": "He still holds the Guinness World Record.",
+     "seed": 7,
+     "heard": "he still holds the Guinness World Record.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.498
+  }
+ ]
+}

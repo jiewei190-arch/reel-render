@@ -1,0 +1,354 @@
+{
+ "duration": 24.75,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.42,
+   "line": "This man was struck by lightning",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:zap",
+     "gain": -4
+    },
+    {
+     "at": 0,
+     "name": "toon3d:thunder",
+     "gain": -6
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:zap",
+     "gain": -9
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:zap",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.42,
+   "end": 2.55,
+   "line": "7 times.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:buzz",
+     "gain": -14,
+     "dur": 1.1
+    },
+    {
+     "word": "times.",
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 2.55,
+   "end": 5.3,
+   "line": "Roy Sullivan. A park ranger in Shenandoah.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:rumble",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.3,
+   "end": 7.95,
+   "line": "From 1942 to 1977.",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:thunder",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 0.57,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 0.94,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 1.31,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 1.68,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 2.05,
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "at": 2.42,
+     "name": "toon3d:zap",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.95,
+   "end": 10.65,
+   "line": "Once, it knocked him out while driving...",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -14,
+     "dur": 2.6
+    },
+    {
+     "word": "knocked",
+     "name": "toon3d:zap",
+     "gain": -5
+    },
+    {
+     "word": "knocked",
+     "offset": 0.02,
+     "name": "toon3d:thunder",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.65,
+   "end": 12.35,
+   "line": "and the truck kept rolling.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:creak",
+     "gain": -12
+    },
+    {
+     "at": 1.25,
+     "name": "toon3d:squeak",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.35,
+   "end": 13.25,
+   "line": "Fishing.",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "toon3d:zap",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:splash",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 13.25,
+   "end": 14.4,
+   "line": "His front yard.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "toon3d:zap",
+     "gain": -6
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:buzz",
+     "gain": -12,
+     "dur": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.4,
+   "end": 15.95,
+   "line": "It set his hair on fire.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -9
+    },
+    {
+     "word": "fire.",
+     "name": "toon3d:fire",
+     "gain": -14,
+     "dur": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 15.95,
+   "end": 18.1,
+   "line": "The odds? By one estimate,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "word": "estimate,",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 18.1,
+   "end": 20.35,
+   "line": "about 1 in 10 septillion.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:type",
+     "gain": -12,
+     "dur": 1.5
+    },
+    {
+     "word": "septillion.",
+     "name": "toon3d:impact",
+     "gain": -5
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.35,
+   "end": 22.35,
+   "line": "He said a storm cloud chased him.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -14,
+     "dur": 2.0
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:thunder",
+     "gain": -11
+    },
+    {
+     "word": "said",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.35,
+   "end": 24.75,
+   "line": "He still holds the Guinness World Record.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "World",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "Record.",
+     "name": "toon3d:success",
+     "gain": -10
+    },
+    {
+     "at": 2.15,
+     "name": "toon3d:zap",
+     "gain": -8
+    }
+   ]
+  }
+ ]
+}
