@@ -1,6 +1,6 @@
 # UPLOAD: ocean-bottom (Justin clips Short). Prepared only: nothing was posted, uploaded or scheduled.
 
-**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, ~22.1 s, -14 LUFS.
+**File:** `video.mp4` (verify with `video.sha256`). 9:16, 1080x1920, 24 fps, ~22.25 s, -14 LUFS.
 
 **Title** (37 chars + 1 emoji):
 ```

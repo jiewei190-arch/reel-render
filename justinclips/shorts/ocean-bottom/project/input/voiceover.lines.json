@@ -23,18 +23,19 @@
    "parts": [
     {
      "tts": "At the bottom of the ocean, the water weighs tons.",
-     "seed": 7,
+     "seed": 42,
      "heard": "At the bottom of the ocean, the water weighs tons.",
      "wrong_words": 0,
-     "qa": "ok"
+     "qa": "ok",
+     "note": "re-take: seed 7 was heard as 'waste'/'waterways' by Whisper base; seed 42 passes base.en, small.en, base, small"
     }
    ],
-   "end": 2.785
+   "end": 2.888
   },
   {
    "n": 2,
    "text": "Challenger Deep is about 11 kilometers down. The light dies fast.",
-   "start": 3.085,
+   "start": 3.188,
    "parts": [
     {
      "tts": "Challenger Deep is about eleven kilometers down. The light dies fast.",
@@ -44,12 +45,12 @@
      "qa": "ok"
     }
    ],
-   "end": 7.359
+   "end": 7.462
   },
   {
    "n": 3,
    "text": "Down there, over 8 tons press on every square inch.",
-   "start": 7.659,
+   "start": 7.762,
    "parts": [
     {
      "tts": "Down there, over eight tons press on every square inch.",
@@ -59,12 +60,12 @@
      "qa": "ok"
     }
    ],
-   "end": 10.999
+   "end": 11.102
   },
   {
    "n": 4,
    "text": "That's like stacking cars on your thumbnail.",
-   "start": 11.299,
+   "start": 11.402,
    "parts": [
     {
      "tts": "That's like stacking cars on your thumbnail.",
@@ -74,12 +75,12 @@
      "qa": "ok"
     }
    ],
-   "end": 13.459
+   "end": 13.562
   },
   {
    "n": 5,
    "text": "Drop Mount Everest in... and there's still over a mile of water on top.",
-   "start": 13.759,
+   "start": 13.862,
    "parts": [
     {
      "tts": "Drop Mount Everest in...",
@@ -96,12 +97,12 @@
      "qa": "ok"
     }
    ],
-   "end": 17.985
+   "end": 18.088
   },
   {
    "n": 6,
    "text": "Only a handful of people have ever been down there.",
-   "start": 18.285,
+   "start": 18.388,
    "parts": [
     {
      "tts": "Only a handful of people have ever been down there.",
@@ -111,7 +112,7 @@
      "qa": "ok"
     }
    ],
-   "end": 20.766
+   "end": 20.869
   }
  ]
 }

@@ -4,312 +4,312 @@
   {
    "word": "At",
    "start": 0.0,
-   "end": 0.3
+   "end": 0.26
   },
   {
    "word": "the",
-   "start": 0.3,
-   "end": 0.42
+   "start": 0.26,
+   "end": 0.36
   },
   {
    "word": "bottom",
-   "start": 0.42,
-   "end": 0.6
+   "start": 0.36,
+   "end": 0.54
   },
   {
    "word": "of",
-   "start": 0.6,
-   "end": 0.8
+   "start": 0.54,
+   "end": 0.72
   },
   {
    "word": "the",
-   "start": 0.8,
-   "end": 0.9
+   "start": 0.72,
+   "end": 0.82
   },
   {
    "word": "ocean,",
-   "start": 0.9,
-   "end": 1.24
+   "start": 0.82,
+   "end": 1.14
   },
   {
    "word": "the",
-   "start": 1.52,
-   "end": 1.58
+   "start": 1.56,
+   "end": 1.62
   },
   {
    "word": "water",
-   "start": 1.58,
-   "end": 1.82
+   "start": 1.62,
+   "end": 1.84
   },
   {
    "word": "weighs",
-   "start": 1.82,
-   "end": 2.02
+   "start": 1.84,
+   "end": 2.06
   },
   {
    "word": "tons.",
-   "start": 2.02,
-   "end": 2.38
+   "start": 2.06,
+   "end": 2.44
   },
   {
    "word": "Challenger",
-   "start": 3.5,
-   "end": 3.5
+   "start": 3.62,
+   "end": 3.62
   },
   {
    "word": "Deep",
-   "start": 3.5,
-   "end": 3.74
+   "start": 3.62,
+   "end": 3.84
   },
   {
    "word": "is",
-   "start": 3.74,
-   "end": 4.0
+   "start": 3.84,
+   "end": 4.1
   },
   {
    "word": "about",
-   "start": 4.0,
-   "end": 4.3
+   "start": 4.1,
+   "end": 4.4
   },
   {
    "word": "11",
-   "start": 4.3,
-   "end": 4.7
+   "start": 4.4,
+   "end": 4.8
   },
   {
    "word": "kilometers",
-   "start": 4.7,
-   "end": 5.0
+   "start": 4.8,
+   "end": 5.12
   },
   {
    "word": "down.",
-   "start": 5.0,
-   "end": 5.44
+   "start": 5.12,
+   "end": 5.54
   },
   {
    "word": "The",
-   "start": 6.1,
-   "end": 6.24
+   "start": 6.22,
+   "end": 6.34
   },
   {
    "word": "light",
-   "start": 6.24,
-   "end": 6.42
+   "start": 6.34,
+   "end": 6.52
   },
   {
    "word": "dies",
-   "start": 6.42,
-   "end": 6.66
+   "start": 6.52,
+   "end": 6.76
   },
   {
    "word": "fast.",
-   "start": 6.66,
-   "end": 7.08
+   "start": 6.76,
+   "end": 7.16
   },
   {
    "word": "Down",
-   "start": 7.8,
-   "end": 7.94
+   "start": 7.9,
+   "end": 8.04
   },
   {
    "word": "there,",
-   "start": 7.94,
-   "end": 8.26
+   "start": 8.04,
+   "end": 8.38
   },
   {
    "word": "over",
-   "start": 8.5,
-   "end": 8.7
+   "start": 8.6,
+   "end": 8.8
   },
   {
    "word": "8",
-   "start": 8.7,
-   "end": 8.94
+   "start": 8.8,
+   "end": 9.04
   },
   {
    "word": "tons",
-   "start": 8.94,
-   "end": 9.2
+   "start": 9.04,
+   "end": 9.28
   },
   {
    "word": "press",
-   "start": 9.2,
-   "end": 9.52
+   "start": 9.28,
+   "end": 9.62
   },
   {
    "word": "on",
-   "start": 9.52,
-   "end": 9.86
+   "start": 9.62,
+   "end": 9.96
   },
   {
    "word": "every",
-   "start": 9.86,
-   "end": 10.12
+   "start": 9.96,
+   "end": 10.22
   },
   {
    "word": "square",
-   "start": 10.12,
-   "end": 10.38
+   "start": 10.22,
+   "end": 10.48
   },
   {
    "word": "inch.",
-   "start": 10.38,
-   "end": 10.78
+   "start": 10.48,
+   "end": 10.88
   },
   {
    "word": "That's",
-   "start": 11.32,
-   "end": 11.6
+   "start": 11.42,
+   "end": 11.7
   },
   {
    "word": "like",
-   "start": 11.6,
-   "end": 11.76
+   "start": 11.7,
+   "end": 11.86
   },
   {
    "word": "stacking",
-   "start": 11.76,
-   "end": 12.16
+   "start": 11.86,
+   "end": 12.26
   },
   {
    "word": "cars",
-   "start": 12.16,
-   "end": 12.44
+   "start": 12.26,
+   "end": 12.56
   },
   {
    "word": "on",
-   "start": 12.44,
-   "end": 12.62
+   "start": 12.56,
+   "end": 12.72
   },
   {
    "word": "your",
-   "start": 12.62,
-   "end": 12.74
+   "start": 12.72,
+   "end": 12.86
   },
   {
    "word": "thumbnail.",
-   "start": 12.74,
-   "end": 13.1
+   "start": 12.86,
+   "end": 13.2
   },
   {
    "word": "Drop",
-   "start": 13.8,
-   "end": 14.0
+   "start": 13.9,
+   "end": 14.1
   },
   {
    "word": "Mount",
-   "start": 14.0,
-   "end": 14.16
+   "start": 14.1,
+   "end": 14.28
   },
   {
    "word": "Everest",
-   "start": 14.16,
-   "end": 14.54
+   "start": 14.28,
+   "end": 14.62
   },
   {
    "word": "in...",
-   "start": 14.54,
-   "end": 14.88
+   "start": 14.62,
+   "end": 15.0
   },
   {
    "word": "and",
-   "start": 15.64,
-   "end": 15.92
+   "start": 15.68,
+   "end": 16.0
   },
   {
    "word": "there's",
-   "start": 15.92,
-   "end": 16.2
+   "start": 16.0,
+   "end": 16.32
   },
   {
    "word": "still",
-   "start": 16.2,
-   "end": 16.38
+   "start": 16.32,
+   "end": 16.48
   },
   {
    "word": "over",
-   "start": 16.38,
-   "end": 16.66
+   "start": 16.48,
+   "end": 16.76
   },
   {
    "word": "a",
-   "start": 16.66,
-   "end": 16.8
+   "start": 16.76,
+   "end": 16.9
   },
   {
    "word": "mile",
-   "start": 16.8,
-   "end": 16.98
+   "start": 16.9,
+   "end": 17.08
   },
   {
    "word": "of",
-   "start": 16.98,
-   "end": 17.14
+   "start": 17.08,
+   "end": 17.26
   },
   {
    "word": "water",
-   "start": 17.14,
-   "end": 17.36
+   "start": 17.26,
+   "end": 17.46
   },
   {
    "word": "on",
-   "start": 17.36,
-   "end": 17.6
+   "start": 17.46,
+   "end": 17.7
   },
   {
    "word": "top.",
-   "start": 17.6,
-   "end": 17.86
+   "start": 17.7,
+   "end": 17.96
   },
   {
    "word": "Only",
-   "start": 18.34,
-   "end": 18.54
+   "start": 18.44,
+   "end": 18.64
   },
   {
    "word": "a",
-   "start": 18.54,
-   "end": 18.72
+   "start": 18.64,
+   "end": 18.82
   },
   {
    "word": "handful",
-   "start": 18.72,
-   "end": 19.0
+   "start": 18.82,
+   "end": 19.1
   },
   {
    "word": "of",
-   "start": 19.0,
-   "end": 19.24
+   "start": 19.1,
+   "end": 19.34
   },
   {
    "word": "people",
-   "start": 19.24,
-   "end": 19.5
+   "start": 19.34,
+   "end": 19.6
   },
   {
    "word": "have",
-   "start": 19.5,
-   "end": 19.74
+   "start": 19.6,
+   "end": 19.84
   },
   {
    "word": "ever",
-   "start": 19.74,
-   "end": 19.92
+   "start": 19.84,
+   "end": 20.02
   },
   {
    "word": "been",
-   "start": 19.92,
-   "end": 20.1
+   "start": 20.02,
+   "end": 20.2
   },
   {
    "word": "down",
-   "start": 20.1,
-   "end": 20.3
+   "start": 20.2,
+   "end": 20.4
   },
   {
    "word": "there.",
-   "start": 20.3,
-   "end": 20.6
+   "start": 20.4,
+   "end": 20.7
   }
  ]
 }
