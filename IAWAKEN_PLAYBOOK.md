@@ -115,6 +115,9 @@ period characters; a cast cameo is a nice recurring touch. The channel avatar an
 - **Toon 3D look APPROVED** (style sheet + "The Day Rome Got Sacked" test Short). kits/toon3d on branch iawaken/toon3d is the house style for all new I.Awaken videos.
 - **Short closers:** never "Full story on the channel." A Short that ends on an open question/cliffhanger ends with the spoken and on-screen line **"Subscribe to find out."** A Short that already answered its question ends with **"Subscribe for more."** (No "Follow for more ..." on YouTube.)
 
+## JUSTIN CLIPS AUTO-SCHEDULING (owner, Nov 15: "let's go with YouTube creator")
+The owner authorized Creator (their PC, their signed-in Chrome) to upload and SCHEDULE Justin clips Shorts in YouTube Studio, after MAIN has checked each one (transcript, facts, hook, tone guards, title/description). Scope: Justin clips YouTube only. Breaking-news Shorts (e.g. Nvidia) still need the owner's OK at posting time. Nothing else (Instagram, other channels, deleting, editing live videos, channel settings) is covered. Manifests: justinclips/schedule/*.json. Default slot: 1 a day, 17:00 America/New_York. Creator never types passwords/2FA: if Studio asks, it stops and reports.
+
 ## JUSTIN CLIPS: BREAK THE VIEW JAIL (owner, Nov 15; source: Creator Rant "How I FINALLY got out of Shorts Jail", notes in research/shortsjail_notes.md on origin/research/shortsjail)
 Diagnosis: Justin clips sits under 1K = "swipe jail": viewers leave in the first ~3 s, so the first ~100-impression test batch never unlocks more. Every new Justin clips Short MUST pass these, in this order:
 1. TRIPLE HOOK in the first 2 s, all three at once:
