@@ -1,0 +1,66 @@
+{
+ "title": "demo",
+ "duration": 10.0,
+ "shots": [
+  {
+   "id": "d01_cast",
+   "start": 0.0,
+   "end": 1.0,
+   "line": "d01_cast"
+  },
+  {
+   "id": "d02_expr",
+   "start": 1.0,
+   "end": 2.0,
+   "line": "d02_expr"
+  },
+  {
+   "id": "d03_expr2",
+   "start": 2.0,
+   "end": 3.0,
+   "line": "d03_expr2"
+  },
+  {
+   "id": "d04_loft_night",
+   "start": 3.0,
+   "end": 4.0,
+   "line": "d04_loft_night"
+  },
+  {
+   "id": "d05_fridge",
+   "start": 4.0,
+   "end": 5.0,
+   "line": "d05_fridge"
+  },
+  {
+   "id": "d06_pan",
+   "start": 5.0,
+   "end": 6.0,
+   "line": "d06_pan"
+  },
+  {
+   "id": "d07_cook_props",
+   "start": 6.0,
+   "end": 7.0,
+   "line": "d07_cook_props"
+  },
+  {
+   "id": "d08_eat",
+   "start": 7.0,
+   "end": 8.0,
+   "line": "d08_eat"
+  },
+  {
+   "id": "d09_fx",
+   "start": 8.0,
+   "end": 9.0,
+   "line": "d09_fx"
+  },
+  {
+   "id": "d10_final_warm",
+   "start": 9.0,
+   "end": 10.0,
+   "line": "d10_final_warm"
+  }
+ ]
+}

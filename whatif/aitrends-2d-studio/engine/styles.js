@@ -48,5 +48,11 @@ export const STYLES = {
     grade: { contrast: 0.92, sat: 0.92, lift: [0.07, 0.055, 0.085], gamma: [1.12, 1.1, 1.06], gain: [1.06, 1.03, 0.98], vignette: 0.3, grain: 0.07, bloom: 0.45 },
     moods: { night: { sky: ['#2a2f5a', '#4a4f80', '#6a6aa0'], wall: '#3e4266' }, dusk: { sky: ['#6a5a90', '#c08aa8', '#f2b0a0', '#fbe0b8'] } },
   },
+  cozy: {
+    name: 'Cozy Pastel', desc: 'Neutral grade for the hand-drawn cozy kit (kits/cozy): colours come from the kit palette; soft vignette + fine grain.',
+    ink: '#5b3a29', inkFar: '#8a6a55', feature: '#fffaf0', rimWidth: 4, ui: UI,
+    grade: { contrast: 1.0, sat: 1.0, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0.26, grain: 0.045, bloom: 0.4 },
+    moods: {},
+  },
 };
 export const STYLE_IDS = Object.keys(STYLES);
