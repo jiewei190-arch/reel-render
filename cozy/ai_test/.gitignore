@@ -3,3 +3,8 @@ work/final_frames/
 work/_*
 work/_trial/
 __pycache__/
+work/takes_cook*/
+cooking/project/ai/
+cooking/project/fg/
+cooking/project/build/
+cooking/project/out/

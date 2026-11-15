@@ -1,6 +1,58 @@
 STATE: ready
 
-# AI motion test, step 1: the bear stirring the pot (3 s), made on the owner's PC with free local AI
+# COOKING TEST (MAIN job, 2026-11-15): `cooking_test.mp4`, 14.0 s, 5 shots, made on the owner's PC with free local tools
+Nothing was posted or uploaded, and nothing was logged into. No paid tools. No new downloads (Real-ESRGAN not used; Lanczos/canvas scaling as asked).
+
+| file | what |
+|---|---|
+| `cooking_test.mp4` | 1080x1920, 24 fps, **336 frames = 14.00 s**, AAC 48 kHz. **-14.1 LUFS, peak -1.7 dBFS**. sha256 `dfdd11725bae5f56aa19ac6507ebd288f0023a70da8a5bc0cd4c9adb2b4dd56a` |
+| `cooking_test_sheet.jpg` | contact sheet, one frame per second (14 tiles) |
+| `cooking_drift_scores.json` | per-take DINOv2 / nightcap / outline checks for the 3 AI shots, kept take, scores after the palette lock |
+| `cooking/project/` | the kit project (config, `story/shots.json` with sfx + beds + lo-fi, `scenes/shots/cooking.js`) |
+| `tools/make_keys.py`, `tools/ai_layers.py`, `tools/make_fg.py` | keyframes from the owner's tiles; score/reject/palette-lock/export the AI bear layer; cut the owner's stove+bowl and table as foreground layers |
+
+## Shots (one pinned top caption "When the 2AM / hunger hits..." the whole time, a cut every 2.5-3 s)
+| # | time | what | how |
+|---|---|---|---|
+| 1 | 0-3.0 | wide: bear behind the low table, burner **clicks** on at 1.0 s, blue flame + sparkle, bear glances at it and ends on the "o" face | **AI**: first frame = owner's `happy`, last = owner's `o`; flame = owner's stove with the flame painted out, then faded back in |
+| 2 | 3.0-5.5 | insert: egg drops, **cracks**, splits, raw egg into the buttered pan | kit `egg` + `panTop` + `friedRice` (no bear, as MAIN allowed: AI paws holding an egg were not tried) |
+| 3 | 5.5-8.5 | top-down money shot: rice + ham + scallion sizzling, egg scrambling, cheese slice drops and melts, sesame | kit food helpers, slow push-in, whip transition |
+| 4 | 8.5-11.0 | the bear stirs the sage pot; **steam now rises from the pot rim** (left side, away from the face) | **AI**: the passing stir take (seed 11) |
+| 5 | 11.0-14.0 | the bear tastes from the spoon, eyes closed in bliss, chewing, **hearts** pop | **AI**: first = last = owner's `eat_spoon` drawing |
+
+## Issue 1 fixed: the bear stands BEHIND the table now
+- I cut the owner's own stove + bowl (closed by its brown outline) and the table (y >= 1092) from `bg_table_empty.png` into foreground layers, and draw them **over** the bear layer.
+- Shots 1 and 5: the bear is placed lower, so its legs are hidden by the table.
+- Shot 4: the owner's drawing has the pot at the bear's feet, so the pot must sit on the burner. Right of the pot, the bear's feet are replaced by its tummy row continuing straight down (`ai_layers.py --stand-cut`); the stove front, bowl and table cover the rest. The bear reads as standing behind the stove.
+- In shot 4 the bear is slightly smaller (1.3x instead of 1.55x) so the nightcap stays clear of the caption.
+
+## Auto-reject results (same rules as step 1: DINOv2 threshold calibrated per shot on the owner's other drawings, nightcap and outline 0.6-1.6x)
+| shot | refs | threshold | seed 11 | seed 22 | seed 33 | seed 44 | kept (after palette lock) |
+|---|---|---|---|---|---|---|---|
+| 1 | happy, o | see json | **PASS** 0.926 | REJECT nightcap 1.76x (by eye: glasses-like eyes) | REJECT nightcap 1.66x | REJECT nightcap 1.99x (face changes shape) | seed 11: mean 0.958, worst 0.931 |
+| 4 | stir_pot | 0.709 | **PASS** 0.915 | REJECT | REJECT | REJECT | seed 11: mean 0.956, worst 0.914 |
+| 5 | eat_spoon | see json | **PASS** 0.834 | REJECT nightcap 1.60x | REJECT nightcap 1.67x | REJECT nightcap 1.70x | seed 11: mean 0.950, worst 0.834 |
+
+- Honest note on shot 5: by eye, the three rejected takes also looked on-model. They were only just over the nightcap limit, so the nightcap check may be a bit strict for this pose. The rule was kept as is.
+- Shot 1, seed 11: the bear glances sideways with visible eye-whites mid-shot. That's a small off-sheet expression, but it reads as cute.
+
+## Audio
+Kit `cozy_audio.py`: click, whoosh, crack, eggdrop, stir, plop, butter, bloop, slurp, munch, chime and pop. There's a sizzle bed from 3.3 to 11 s and the generated lo-fi bed (76 bpm). Two-pass loudnorm -14 LUFS, then re-muxed with a limiter, because the AAC encode had pushed the sample peak to -0.3 dBFS.
+
+## PC time
+- AI: 8 new takes at ~3.2 min each = 26 min (shots 1 and 5, 4 seeds each). Shot 4 reused the step-1 takes.
+- Scoring and export: ~2 min per shot on the CPU.
+- Kit render: 47 s for 336 frames (GPU). Audio: ~10 s.
+- Re-render after a code change: `cd whatif/aitrends-2d-studio && node render.mjs --project ../../cozy/ai_test/cooking/project --gl gpu && python kits/cozy/tools/cozy_audio.py --project ../../cozy/ai_test/cooking/project`. The AI layer PNGs and fg layers are gitignored (68 MB); regenerate them with `tools/ai_layers.py` and `tools/make_fg.py`.
+
+## Open for MAIN / the owner
+- Upscale: the AI bear is still 640 px, scaled about 1.3-1.6x with canvas smoothing. Real-ESRGAN still needs the owner's OK.
+- Shot 2 uses the kit's egg (drawn in code), not the owner's art. The pan is the kit's sage pan, top-down.
+- No ingredient labels yet (Didi-style pills exist in the kit: `K.label`).
+
+---
+
+# (step 1, kept below) # AI motion test, step 1: the bear stirring the pot (3 s), made on the owner's PC with free local AI
 Branch `cozy/ai-motion` (based on `cozy/kit-ep01`, plus the owner's art and `BRIEF_ai_motion_pc.md` from MAIN's branch).
 Nothing was posted or uploaded, and nothing was logged into. No paid tools.
 

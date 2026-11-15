@@ -1,0 +1,16 @@
+{ "title": "cooking_test", "duration": 14.0,
+  "shots": [
+   { "id": "s1_wide_burner", "start": 0.0, "end": 3.0, "line": "AI bear (happy -> o) behind the low table, burner clicks on, blue flame",
+     "sfx": [{"at": 0.95, "name": "click", "gain": -4}, {"at": 1.05, "name": "whoosh", "gain": -16}, {"at": 2.2, "name": "pop", "gain": -14}] },
+   { "id": "s2_egg_crack", "start": 3.0, "end": 5.5, "line": "insert: egg cracks into the buttered pan (kit, no bear)",
+     "sfx": [{"at": 0.55, "name": "crack", "gain": -3}, {"at": 1.05, "name": "eggdrop", "gain": -5}] },
+   { "id": "s3_money_shot", "start": 5.5, "end": 8.5, "line": "top-down pan: rice sizzles, egg scrambles, cheese slice melts (kit)", "in": {"type": "whip", "dur": 0.3},
+     "sfx": [{"at": 0.2, "name": "stir", "gain": -6, "dur": 1.2, "strokes": 3}, {"at": 1.4, "name": "plop", "gain": -8}, {"at": 1.9, "name": "butter", "gain": -12}] },
+   { "id": "s4_stir", "start": 8.5, "end": 11.0, "line": "AI bear stirring the sage pot (seed 11), steam from the pot rim",
+     "sfx": [{"at": 0.1, "name": "stir", "gain": -5, "dur": 2.3, "strokes": 5}, {"at": 0.8, "name": "bloop", "gain": -14}, {"at": 1.7, "name": "bloop", "gain": -15, "seed": 9}] },
+   { "id": "s5_taste", "start": 11.0, "end": 14.0, "line": "AI bear tastes from the spoon, blissful closed eyes, hearts pop",
+     "sfx": [{"at": 0.2, "name": "slurp", "gain": -10}, {"at": 0.6, "name": "munch", "gain": -6, "dur": 1.6}, {"at": 0.7, "name": "chime", "gain": -12}, {"at": 0.75, "name": "pop", "gain": -14, "seed": 5}] }
+  ],
+  "beds": [{"start": 3.3, "end": 11.0, "name": "sizzle", "gain": -16}],
+  "lofi": {"bpm": 76, "seed": 4, "gainDb": -12, "fadeOut": 1.0}
+}

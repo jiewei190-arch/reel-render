@@ -1,0 +1,294 @@
+{
+ "s1_wide_burner": {
+  "refs": [
+   "happy",
+   "o"
+  ],
+  "threshold_dino": 0.7466,
+  "calibration": {
+   "bowl": 0.7889,
+   "cry": 0.9215,
+   "eat_spoon": 0.7527,
+   "grumpy": 0.9401,
+   "side_walk": 0.9379,
+   "stir_pot": 0.7466,
+   "wave": 0.9751
+  },
+  "ref_blue_share": 0.04029377613616662,
+  "ref_outline_share": 0.15415932036210342,
+  "takes": {
+   "seed11": {
+    "frames": 73,
+    "dino_mean": 0.9596,
+    "dino_worst": 0.9264,
+    "worst_frame": 42,
+    "blue_ratio": [
+     0.933,
+     1.349
+    ],
+    "outline_ratio": [
+     0.868,
+     1.011
+    ],
+    "pass": true,
+    "fails": []
+   },
+   "seed22": {
+    "frames": 73,
+    "dino_mean": 0.935,
+    "dino_worst": 0.7853,
+    "worst_frame": 49,
+    "blue_ratio": [
+     1.007,
+     1.765
+    ],
+    "outline_ratio": [
+     0.898,
+     0.99
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 1.01..1.76"
+    ]
+   },
+   "seed33": {
+    "frames": 73,
+    "dino_mean": 0.9623,
+    "dino_worst": 0.9055,
+    "worst_frame": 5,
+    "blue_ratio": [
+     0.983,
+     1.661
+    ],
+    "outline_ratio": [
+     0.882,
+     0.994
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.98..1.66"
+    ]
+   },
+   "seed44": {
+    "frames": 73,
+    "dino_mean": 0.9426,
+    "dino_worst": 0.8866,
+    "worst_frame": 2,
+    "blue_ratio": [
+     0.879,
+     1.992
+    ],
+    "outline_ratio": [
+     0.784,
+     1.241
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.88..1.99"
+    ]
+   }
+  },
+  "kept": "seed11",
+  "kept_note": "passed all checks",
+  "kept_after_palette_lock": {
+   "dino_mean": 0.9578,
+   "dino_worst": 0.9314
+  },
+  "exported_frames": 73
+ },
+ "s4_stir": {
+  "refs": [
+   "stir_pot"
+  ],
+  "threshold_dino": 0.709,
+  "calibration": {
+   "bowl": 0.7491,
+   "cry": 0.709,
+   "eat_spoon": 0.743,
+   "grumpy": 0.7368,
+   "happy": 0.7465,
+   "o": 0.7236,
+   "side_walk": 0.7523,
+   "wave": 0.7569
+  },
+  "ref_blue_share": 0.036425732041878954,
+  "ref_outline_share": 0.1640781591176306,
+  "takes": {
+   "seed11": {
+    "frames": 73,
+    "dino_mean": 0.9587,
+    "dino_worst": 0.9152,
+    "worst_frame": 25,
+    "blue_ratio": [
+     0.835,
+     1.424
+    ],
+    "outline_ratio": [
+     0.879,
+     0.974
+    ],
+    "pass": true,
+    "fails": []
+   },
+   "seed22": {
+    "frames": 73,
+    "dino_mean": 0.9382,
+    "dino_worst": 0.8099,
+    "worst_frame": 42,
+    "blue_ratio": [
+     0.934,
+     1.827
+    ],
+    "outline_ratio": [
+     0.876,
+     0.999
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.93..1.83"
+    ]
+   },
+   "seed33": {
+    "frames": 73,
+    "dino_mean": 0.9756,
+    "dino_worst": 0.9637,
+    "worst_frame": 57,
+    "blue_ratio": [
+     0.992,
+     1.406
+    ],
+    "outline_ratio": [
+     0.568,
+     1.01
+    ],
+    "pass": false,
+    "fails": [
+     "outline ratio 0.57..1.01"
+    ]
+   },
+   "seed44": {
+    "frames": 73,
+    "dino_mean": 0.9668,
+    "dino_worst": 0.9293,
+    "worst_frame": 5,
+    "blue_ratio": [
+     0.982,
+     1.67
+    ],
+    "outline_ratio": [
+     0.737,
+     0.998
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.98..1.67"
+    ]
+   }
+  },
+  "kept": "seed11",
+  "kept_note": "passed all checks",
+  "kept_after_palette_lock": {
+   "dino_mean": 0.9556,
+   "dino_worst": 0.914
+  },
+  "exported_frames": 73
+ },
+ "s5_taste": {
+  "refs": [
+   "eat_spoon"
+  ],
+  "threshold_dino": 0.6755,
+  "calibration": {
+   "bowl": 0.6755,
+   "cry": 0.7666,
+   "grumpy": 0.748,
+   "happy": 0.7529,
+   "o": 0.751,
+   "side_walk": 0.7458,
+   "stir_pot": 0.7434,
+   "wave": 0.768
+  },
+  "ref_blue_share": 0.04256291255365452,
+  "ref_outline_share": 0.15679744141587812,
+  "takes": {
+   "seed11": {
+    "frames": 73,
+    "dino_mean": 0.949,
+    "dino_worst": 0.8344,
+    "worst_frame": 51,
+    "blue_ratio": [
+     0.995,
+     1.338
+    ],
+    "outline_ratio": [
+     0.883,
+     1.003
+    ],
+    "pass": true,
+    "fails": []
+   },
+   "seed22": {
+    "frames": 73,
+    "dino_mean": 0.9261,
+    "dino_worst": 0.8087,
+    "worst_frame": 12,
+    "blue_ratio": [
+     1.0,
+     1.604
+    ],
+    "outline_ratio": [
+     0.933,
+     1.012
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 1.00..1.60"
+    ]
+   },
+   "seed33": {
+    "frames": 73,
+    "dino_mean": 0.9695,
+    "dino_worst": 0.9504,
+    "worst_frame": 42,
+    "blue_ratio": [
+     0.975,
+     1.669
+    ],
+    "outline_ratio": [
+     0.804,
+     0.993
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.98..1.67"
+    ]
+   },
+   "seed44": {
+    "frames": 73,
+    "dino_mean": 0.9766,
+    "dino_worst": 0.9662,
+    "worst_frame": 60,
+    "blue_ratio": [
+     0.948,
+     1.705
+    ],
+    "outline_ratio": [
+     0.841,
+     1.015
+    ],
+    "pass": false,
+    "fails": [
+     "nightcap blue ratio 0.95..1.70"
+    ]
+   }
+  },
+  "kept": "seed11",
+  "kept_note": "passed all checks",
+  "kept_after_palette_lock": {
+   "dino_mean": 0.9495,
+   "dino_worst": 0.834
+  },
+  "exported_frames": 73
+ },
+ "note": "Shots 2 and 3 are drawn by the kit (no AI, no bear), so they have no drift scores."
+}
