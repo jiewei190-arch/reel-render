@@ -1,0 +1,29 @@
+{
+ "duration": 4,
+ "shots": [
+  {
+   "id": "posesA",
+   "start": 0,
+   "end": 1,
+   "line": "A"
+  },
+  {
+   "id": "posesB",
+   "start": 1,
+   "end": 2,
+   "line": "B"
+  },
+  {
+   "id": "posesC",
+   "start": 2,
+   "end": 3,
+   "line": "C"
+  },
+  {
+   "id": "compare",
+   "start": 3,
+   "end": 4,
+   "line": "compare"
+  }
+ ]
+}
