@@ -1,0 +1,274 @@
+{
+ "duration": 24.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.25,
+   "scene": "s01",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.25,
+   "end": 2.6,
+   "scene": "s02",
+   "sfx": [
+    {
+     "word": "rabbits.",
+     "offset": 0.45,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 2.6,
+   "end": 3.8,
+   "scene": "s03",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s04",
+   "start": 3.8,
+   "end": 5.8,
+   "scene": "s04",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 5.8,
+   "end": 7.0,
+   "scene": "s05",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 7.0,
+   "end": 8.85,
+   "scene": "s06",
+   "sfx": [
+    {
+     "word": "thousands",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "thousands",
+     "offset": 0.12,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 8.85,
+   "end": 10.65,
+   "scene": "s07",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:creak",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 10.65,
+   "end": 12.25,
+   "scene": "s08",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -6
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:rumble",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 12.25,
+   "end": 13.45,
+   "scene": "s09",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:gasp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 13.45,
+   "end": 15.1,
+   "scene": "s10",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 15.1,
+   "end": 16.55,
+   "scene": "s11",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 16.55,
+   "end": 18.0,
+   "scene": "s12",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:type",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "iris"
+   }
+  },
+  {
+   "id": "s13",
+   "start": 18.0,
+   "end": 19.75,
+   "scene": "s13",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 19.75,
+   "end": 20.85,
+   "scene": "s14",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s15",
+   "start": 20.85,
+   "end": 22.15,
+   "scene": "s15",
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "toon3d:door",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 22.15,
+   "end": 24.1,
+   "scene": "s16",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.85,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 1.15,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 24.1,
+   "end": 24.5,
+   "scene": "s17",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -8
+    }
+   ]
+  }
+ ]
+}
