@@ -1,7 +1,7 @@
 STATE: ready
 
 # Justin clips Short B: ocean-bottom ("The Bottom of the Ocean Weighs Tons 🌊")
-- **Final video:** `video.mp4`: 1080x1920, 24 fps, **534 frames, 22.25 s**, H.264 + AAC, **-14.1 LUFS, true peak -1.3 dBFS** (mix.py), 6.9M.8M.
+- **Final video:** `video.mp4`: 1080x1920, 24 fps, **534 frames, 22.25 s**, H.264 + AAC, **-14.1 LUFS, true peak -1.3 dBFS** (mix.py), 6.9 MB.
 - `video.sha256`: `9606a8de761a8648910a2f7dd1389c463adc95ea1fd684db788cadf863f84982  video.mp4`
 - **Jail-break checklist:**
   1. TRIPLE HOOK at 0 s: VISUAL = the hero's toon sub already plunging nose-down into black water, headlights on, bubbles, depth counter spinning (146 m at frame 1); VERBAL = "At the bottom of the ocean, the water weighs tons." from 0.15 s; TEXT = top caption "Everest would fit inside with room to spare" (top ~10 %, 0-3.6 s, separate from the 1-3-word captions at 64 %).
