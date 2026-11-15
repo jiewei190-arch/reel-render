@@ -303,17 +303,17 @@
    },
    "sfx": [
     {
-     "at": 0.05,
+     "at": 0.75,
      "name": "toon3d:success",
-     "gain": -10
-    },
-    {
-     "at": 0.1,
-     "name": "toon3d:crowd",
      "gain": -12
     },
     {
-     "at": 0.4,
+     "at": 0.8,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
      "name": "toon3d:pop",
      "gain": -14
     }

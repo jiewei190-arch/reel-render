@@ -133,14 +133,15 @@
    "start": 23.166,
    "parts": [
     {
-     "tts": "Fruita, Colorado still throws him a festival every year.",
+     "tts": "Fru-ta, Colorado still throws him a festival every year.",
      "seed": 11,
-     "heard": "Fruita, Colorado still throws him a festival every year.",
+     "heard": "Fruita Colorado still throws him a festival every year.",
      "wrong_words": 0,
-     "qa": "ok"
+     "qa": "ok",
+     "note": "re-take for QA: F of Fruita was lost in the mix; TTS-only spelling, captions keep 'Fruita'"
     }
    ],
-   "end": 26.208
+   "end": 26.142
   }
  ]
 }

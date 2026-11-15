@@ -5,7 +5,7 @@
 **CAPTION (top, frame 1 → 3.6 s):** "and went on tour"
 
 **Slug:** `mike-headless-chicken` · YouTube Short, 9:16, 1080×1920, 24 fps · **Runtime:** 26.41 s (target ~24 s ±3) · Toon 3D + BEANMEN FX
-**Voice:** Chatterbox "D2" (exaggeration 0.3, cfg 0.3) via `whatif/voice/chatterbox_d2.py --gap 0.2 --lead 0.05 --beat 0.4`; all 7 lines pass Whisper QA (seed 7; seed 11 for "and most of the brainstem.", "and Mike choked." and the festival line, after seed 7 misheard "joked"/"brain's"). Per-line data in `project/input/voiceover.lines.json`. "brainstem" is written as one word so Whisper QA can match it.
+**Voice:** Chatterbox "D2" (exaggeration 0.3, cfg 0.3) via `whatif/voice/chatterbox_d2.py --gap 0.2 --lead 0.05 --beat 0.4`; all 7 lines pass Whisper QA (seed 7; seed 11 for "and most of the brainstem." and "and Mike choked."; the festival line is a seed-11 re-take with the TTS-only spelling "Fru-ta" so the F carries in the mix, after seed 7 misheard "joked"/"brain's"). Per-line data in `project/input/voiceover.lines.json`. "brainstem" is written as one word so Whisper QA can match it.
 
 ## Jail-break checklist
 - [x] Triple hook in the first 2 s: frame 1 = headless Mike strutting confidently across a little stage under a spotlight, crowd gasping (already moving) · VO line 1 word for word (0.00–2.28 s) · top caption from frame 1 for 3.6 s, top ~8–14 % of the frame, separate from the 1–3-word captions at 72 %.
