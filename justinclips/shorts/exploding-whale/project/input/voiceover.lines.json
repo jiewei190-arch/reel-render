@@ -1,0 +1,153 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 25.813,
+ "render_s": 152.8,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1970, Oregon blew up a whale.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen seventy, Oregon blew up a whale.",
+     "seed": 7,
+     "heard": "In 1970, Oregon blew up a whale.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.519
+  },
+  {
+   "n": 2,
+   "text": "An explosives guy said 20 sticks would do it.",
+   "start": 2.719,
+   "parts": [
+    {
+     "tts": "An explosives guy said twenty sticks would do it.",
+     "seed": 7,
+     "heard": "An explosives guy said 20 sticks would do it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.121
+  },
+  {
+   "n": 3,
+   "text": "They used... 20 cases.",
+   "start": 5.321,
+   "parts": [
+    {
+     "tts": "They used...",
+     "seed": 7,
+     "heard": "They used",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "twenty cases.",
+     "seed": 7,
+     "heard": "20 cases.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.82
+  },
+  {
+   "n": 4,
+   "text": "The news said the blast blasted blubber beyond all believable bounds.",
+   "start": 8.02,
+   "parts": [
+    {
+     "tts": "The news said the blast blasted blubber beyond all believable bounds.",
+     "seed": 7,
+     "heard": "The news said the blast blasted blubber beyond all believable bounds.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.344
+  },
+  {
+   "n": 5,
+   "text": "One chunk reportedly flew a quarter mile... and crushed a brand new car.",
+   "start": 12.544,
+   "parts": [
+    {
+     "tts": "One chunk reportedly flew a quarter mile...",
+     "seed": 7,
+     "heard": "One chunk reportedly flew a quarter-mile.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and crushed a brand new car.",
+     "seed": 7,
+     "heard": "and crushed a brand new car.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.186
+  },
+  {
+   "n": 6,
+   "text": "Most of the whale... was still there.",
+   "start": 17.386,
+   "parts": [
+    {
+     "tts": "Most of the whale...",
+     "seed": 7,
+     "heard": "most of the whale.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "was still there.",
+     "seed": 7,
+     "heard": "was still there.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.602
+  },
+  {
+   "n": 7,
+   "text": "Oregon now buries whales. And named a park after this one... Exploding Whale Memorial Park.",
+   "start": 19.802,
+   "parts": [
+    {
+     "tts": "Oregon now buries whales. And named a park after this one...",
+     "seed": 7,
+     "heard": "Oregon now buries whales, and named a park after this one.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "Exploding Whale Memorial Park.",
+     "seed": 7,
+     "heard": "Exploding Whale Memorial Park.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.613
+  }
+ ]
+}

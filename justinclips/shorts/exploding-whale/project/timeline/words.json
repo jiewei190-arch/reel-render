@@ -1,0 +1,335 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "1970,",
+   "start": 0.2,
+   "end": 0.94
+  },
+  {
+   "word": "Oregon",
+   "start": 1.54,
+   "end": 1.56
+  },
+  {
+   "word": "blew",
+   "start": 1.56,
+   "end": 1.82
+  },
+  {
+   "word": "up",
+   "start": 1.82,
+   "end": 2.0
+  },
+  {
+   "word": "a",
+   "start": 2.0,
+   "end": 2.16
+  },
+  {
+   "word": "whale.",
+   "start": 2.16,
+   "end": 2.3
+  },
+  {
+   "word": "An",
+   "start": 2.76,
+   "end": 2.86
+  },
+  {
+   "word": "explosives",
+   "start": 2.86,
+   "end": 3.3
+  },
+  {
+   "word": "guy",
+   "start": 3.3,
+   "end": 3.7
+  },
+  {
+   "word": "said",
+   "start": 3.7,
+   "end": 3.94
+  },
+  {
+   "word": "20",
+   "start": 3.94,
+   "end": 4.24
+  },
+  {
+   "word": "sticks",
+   "start": 4.24,
+   "end": 4.48
+  },
+  {
+   "word": "would",
+   "start": 4.48,
+   "end": 4.68
+  },
+  {
+   "word": "do",
+   "start": 4.68,
+   "end": 4.84
+  },
+  {
+   "word": "it.",
+   "start": 4.84,
+   "end": 5.02
+  },
+  {
+   "word": "They",
+   "start": 5.36,
+   "end": 5.54
+  },
+  {
+   "word": "used...",
+   "start": 5.54,
+   "end": 6.78
+  },
+  {
+   "word": "20",
+   "start": 6.78,
+   "end": 7.06
+  },
+  {
+   "word": "cases.",
+   "start": 7.06,
+   "end": 7.44
+  },
+  {
+   "word": "The",
+   "start": 8.0,
+   "end": 8.16
+  },
+  {
+   "word": "news",
+   "start": 8.16,
+   "end": 8.42
+  },
+  {
+   "word": "said",
+   "start": 8.42,
+   "end": 8.82
+  },
+  {
+   "word": "the",
+   "start": 8.82,
+   "end": 8.98
+  },
+  {
+   "word": "blast",
+   "start": 8.98,
+   "end": 9.34
+  },
+  {
+   "word": "blasted",
+   "start": 9.34,
+   "end": 9.94
+  },
+  {
+   "word": "blubber",
+   "start": 9.94,
+   "end": 10.36
+  },
+  {
+   "word": "beyond",
+   "start": 10.36,
+   "end": 10.72
+  },
+  {
+   "word": "all",
+   "start": 10.72,
+   "end": 11.1
+  },
+  {
+   "word": "believable",
+   "start": 11.1,
+   "end": 11.5
+  },
+  {
+   "word": "bounds.",
+   "start": 11.5,
+   "end": 11.92
+  },
+  {
+   "word": "One",
+   "start": 12.56,
+   "end": 12.74
+  },
+  {
+   "word": "chunk",
+   "start": 12.74,
+   "end": 13.0
+  },
+  {
+   "word": "reportedly",
+   "start": 13.0,
+   "end": 13.46
+  },
+  {
+   "word": "flew",
+   "start": 13.46,
+   "end": 13.74
+  },
+  {
+   "word": "a",
+   "start": 13.74,
+   "end": 13.9
+  },
+  {
+   "word": "quarter",
+   "start": 13.9,
+   "end": 14.04
+  },
+  {
+   "word": "mile...",
+   "start": 14.04,
+   "end": 14.42
+  },
+  {
+   "word": "and",
+   "start": 15.16,
+   "end": 15.54
+  },
+  {
+   "word": "crushed",
+   "start": 15.54,
+   "end": 16.04
+  },
+  {
+   "word": "a",
+   "start": 16.04,
+   "end": 16.22
+  },
+  {
+   "word": "brand",
+   "start": 16.22,
+   "end": 16.4
+  },
+  {
+   "word": "new",
+   "start": 16.4,
+   "end": 16.6
+  },
+  {
+   "word": "car.",
+   "start": 16.6,
+   "end": 16.94
+  },
+  {
+   "word": "Most",
+   "start": 17.48,
+   "end": 17.62
+  },
+  {
+   "word": "of",
+   "start": 17.62,
+   "end": 17.76
+  },
+  {
+   "word": "the",
+   "start": 17.76,
+   "end": 17.86
+  },
+  {
+   "word": "whale...",
+   "start": 17.86,
+   "end": 18.1
+  },
+  {
+   "word": "was",
+   "start": 18.1,
+   "end": 18.88
+  },
+  {
+   "word": "still",
+   "start": 18.88,
+   "end": 19.1
+  },
+  {
+   "word": "there.",
+   "start": 19.1,
+   "end": 19.42
+  },
+  {
+   "word": "Oregon",
+   "start": 19.88,
+   "end": 20.16
+  },
+  {
+   "word": "now",
+   "start": 20.16,
+   "end": 20.42
+  },
+  {
+   "word": "buries",
+   "start": 20.42,
+   "end": 20.72
+  },
+  {
+   "word": "whales.",
+   "start": 20.72,
+   "end": 21.02
+  },
+  {
+   "word": "And",
+   "start": 21.48,
+   "end": 21.86
+  },
+  {
+   "word": "named",
+   "start": 21.86,
+   "end": 22.1
+  },
+  {
+   "word": "a",
+   "start": 22.1,
+   "end": 22.26
+  },
+  {
+   "word": "park",
+   "start": 22.26,
+   "end": 22.46
+  },
+  {
+   "word": "after",
+   "start": 22.46,
+   "end": 22.72
+  },
+  {
+   "word": "this",
+   "start": 22.72,
+   "end": 22.98
+  },
+  {
+   "word": "one...",
+   "start": 22.98,
+   "end": 23.3
+  },
+  {
+   "word": "Exploding",
+   "start": 23.94,
+   "end": 24.38
+  },
+  {
+   "word": "Whale",
+   "start": 24.38,
+   "end": 24.6
+  },
+  {
+   "word": "Memorial",
+   "start": 24.6,
+   "end": 24.94
+  },
+  {
+   "word": "Park.",
+   "start": 24.94,
+   "end": 25.34
+  }
+ ]
+}
