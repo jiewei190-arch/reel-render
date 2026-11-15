@@ -1,0 +1,6 @@
+{
+ "title": "Cozy Bear Ep01 Cheesy Fried Rice",
+ "aspect": "9:16", "resolution": "1080p", "fps": 24, "style": "cozy",
+ "captions": false, "bars": "none", "fadeIn": 0, "fadeOut": 0, "loudness": -14,
+ "cozyCaption": { "lines": ["When the 2AM", "hunger hits..."], "x": 500, "y": 215, "size": 86 }
+}
