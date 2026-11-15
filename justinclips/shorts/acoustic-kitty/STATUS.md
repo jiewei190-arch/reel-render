@@ -1,1 +1,11 @@
-STATE: rendering
+STATE: ready
+
+# Justin clips Short: acoustic-kitty ("The CIA Built a Spy Cat. It Went Exactly How You Think 🐈")
+- **video.mp4**: 1080x1920, 24 fps, 633 frames, 26.375 s (audio 26.36 s), H.264 + AAC, **-14.4 LUFS, true peak -1.3 dBFS** (audio/mix.py). Checksum in `video.sha256`.
+- **Jail-break checks:** frame 1 = the smug grey spy cat (earpiece with a red light) already strolling through a fancy embassy party, guests oblivious. Line 1 "The CIA built a spy cat." starts at 0.15 s. Top caption "it did not take orders" (red pill, top 10%) is on from frame 1 to 3.7 s. EMOTION: LOL. 7 VO lines, 14 shots (1.05-2.75 s each, the memo card 3.65 s). Payoff "Translation... you can't train a cat.": the cat stares into the lens and pushes a glass off the table (the crash is sound only). Straight cut back to frame 1 (no closer). Target ~24 s: 26.4 s (within +3 s).
+- **Tone guard:** the cat is never hurt. The gadgets appear as a cartoon x-ray only, with no surgery. The disputed taxi ending is DROPPED (a former CIA technical-services director says the cat lived a long, happy life). Cost said as "reportedly ... millions" (no $20M).
+- **Fact fix vs the owner kit:** the memo says the program "would not lend **itself**" (not "themselves") "in a practical sense to our highly specialized needs" (Popular Science, History.com). See `sources.md`.
+- **Contact sheet:** `contact_sheet.png` (16 frames, checked: frame 0 shows the top caption plus the cat in motion).
+- **Voice:** Chatterbox D2 (`--gap 0.3 --lead 0.15`). "CIA" is written "C.I.A." in script.md so the TTS says the letters (it had read "CIA" as "Sia"). Whisper heard "CIA" correctly; the tool's QA flags lines 1 and 6 only because "C.I.A." vs "CIA" differ as text. Captions show "CIA".
+- **Project:** `whatif/aitrends-2d-studio/projects/acoustic-kitty`. Re-render from `whatif/aitrends-2d-studio`: `CHROMIUM_PATH=/opt/pw-browsers/chromium node render.mjs --project projects/acoustic-kitty` then `python3 audio/mix.py --project projects/acoustic-kitty`, then mux: `ffmpeg -i build/video_silent.mp4 -i out/The_CIA_Built_a_Spy_Cat.mp4 -map 0:v:0 -map 1:a:0 -c copy -movflags +faststart video.mp4`. Rendered in the cloud in 9m53s.
+- Nothing was posted, uploaded or scheduled.
