@@ -1,0 +1,270 @@
+{
+ "source": "whisper:small+script",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.26
+  },
+  {
+   "word": "turn",
+   "start": 0.26,
+   "end": 0.5
+  },
+  {
+   "word": "green",
+   "start": 0.5,
+   "end": 0.78
+  },
+  {
+   "word": "and",
+   "start": 0.78,
+   "end": 1.0
+  },
+  {
+   "word": "live",
+   "start": 1.0,
+   "end": 1.14
+  },
+  {
+   "word": "on",
+   "start": 1.14,
+   "end": 1.3
+  },
+  {
+   "word": "sunlight.",
+   "start": 1.3,
+   "end": 1.7
+  },
+  {
+   "word": "Bad",
+   "start": 2.22,
+   "end": 2.5
+  },
+  {
+   "word": "news...",
+   "start": 2.5,
+   "end": 2.84
+  },
+  {
+   "word": "you'd",
+   "start": 3.78,
+   "end": 4.04
+  },
+  {
+   "word": "still",
+   "start": 4.04,
+   "end": 4.22
+  },
+  {
+   "word": "starve.",
+   "start": 4.22,
+   "end": 4.48
+  },
+  {
+   "word": "Your",
+   "start": 5.16,
+   "end": 5.22
+  },
+  {
+   "word": "skin",
+   "start": 5.22,
+   "end": 5.44
+  },
+  {
+   "word": "only",
+   "start": 5.44,
+   "end": 5.66
+  },
+  {
+   "word": "makes",
+   "start": 5.66,
+   "end": 5.88
+  },
+  {
+   "word": "about",
+   "start": 5.88,
+   "end": 6.06
+  },
+  {
+   "word": "1",
+   "start": 6.06,
+   "end": 6.28
+  },
+  {
+   "word": "percent",
+   "start": 6.28,
+   "end": 6.48
+  },
+  {
+   "word": "of",
+   "start": 6.48,
+   "end": 6.64
+  },
+  {
+   "word": "the",
+   "start": 6.64,
+   "end": 6.72
+  },
+  {
+   "word": "energy",
+   "start": 6.72,
+   "end": 6.94
+  },
+  {
+   "word": "you",
+   "start": 6.94,
+   "end": 7.16
+  },
+  {
+   "word": "need.",
+   "start": 7.16,
+   "end": 7.42
+  },
+  {
+   "word": "To",
+   "start": 8.32,
+   "end": 8.5
+  },
+  {
+   "word": "fix",
+   "start": 8.5,
+   "end": 8.72
+  },
+  {
+   "word": "that,",
+   "start": 8.72,
+   "end": 9.0
+  },
+  {
+   "word": "you'd",
+   "start": 9.28,
+   "end": 9.4
+  },
+  {
+   "word": "need",
+   "start": 9.4,
+   "end": 9.54
+  },
+  {
+   "word": "skin",
+   "start": 9.54,
+   "end": 9.88
+  },
+  {
+   "word": "about",
+   "start": 9.88,
+   "end": 10.14
+  },
+  {
+   "word": "the",
+   "start": 10.14,
+   "end": 10.28
+  },
+  {
+   "word": "size",
+   "start": 10.28,
+   "end": 10.44
+  },
+  {
+   "word": "of",
+   "start": 10.44,
+   "end": 10.6
+  },
+  {
+   "word": "a",
+   "start": 10.6,
+   "end": 10.64
+  },
+  {
+   "word": "tennis",
+   "start": 10.64,
+   "end": 10.82
+  },
+  {
+   "word": "court,",
+   "start": 10.82,
+   "end": 11.18
+  },
+  {
+   "word": "by",
+   "start": 11.4,
+   "end": 11.56
+  },
+  {
+   "word": "one",
+   "start": 11.56,
+   "end": 11.76
+  },
+  {
+   "word": "estimate.",
+   "start": 11.76,
+   "end": 12.08
+  },
+  {
+   "word": "Or",
+   "start": 13.4,
+   "end": 13.92
+  },
+  {
+   "word": "290",
+   "start": 13.92,
+   "end": 14.44
+  },
+  {
+   "word": "hours",
+   "start": 14.44,
+   "end": 14.86
+  },
+  {
+   "word": "of",
+   "start": 14.86,
+   "end": 15.06
+  },
+  {
+   "word": "sunshine...",
+   "start": 15.06,
+   "end": 15.5
+  },
+  {
+   "word": "every",
+   "start": 16.26,
+   "end": 16.7
+  },
+  {
+   "word": "single",
+   "start": 16.7,
+   "end": 16.96
+  },
+  {
+   "word": "day.",
+   "start": 16.96,
+   "end": 17.3
+  },
+  {
+   "word": "That's",
+   "start": 18.32,
+   "end": 18.7
+  },
+  {
+   "word": "why",
+   "start": 18.7,
+   "end": 18.82
+  },
+  {
+   "word": "plants",
+   "start": 18.82,
+   "end": 19.12
+  },
+  {
+   "word": "don't",
+   "start": 19.12,
+   "end": 19.44
+  },
+  {
+   "word": "walk.",
+   "start": 19.44,
+   "end": 19.64
+  }
+ ]
+}

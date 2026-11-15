@@ -1,0 +1,142 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 26.365,
+ "render_s": 245.8,
+ "qa_fail_lines": [
+  1,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "The C.I.A. built a spy cat.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "The C.I.A. built a spy cat.",
+     "seed": 7,
+     "heard": "the CIA built a spycat.",
+     "wrong_words": 5,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 1.905
+  },
+  {
+   "n": 2,
+   "text": "In the 1960s, they hid a microphone in its ear and an antenna in its fur.",
+   "start": 2.205,
+   "parts": [
+    {
+     "tts": "In the nineteen sixtys, they hid a microphone in its ear and an antenna in its fur.",
+     "seed": 11,
+     "heard": "In the 1960s, they hid a microphone in its ear and an antenna in its fur.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.83
+  },
+  {
+   "n": 3,
+   "text": "Reportedly, it cost millions of dollars.",
+   "start": 7.13,
+   "parts": [
+    {
+     "tts": "Reportedly, it cost millions of dollars.",
+     "seed": 7,
+     "heard": "Reportedly, it cost millions of dollars.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.734
+  },
+  {
+   "n": 4,
+   "text": "First mission: spy on two men in a park.",
+   "start": 10.034,
+   "parts": [
+    {
+     "tts": "First mission: spy on two men in a park.",
+     "seed": 7,
+     "heard": "First mission, spy on two men in a park.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.613
+  },
+  {
+   "n": 5,
+   "text": "The cat had other plans... it kept getting distracted. And hungry.",
+   "start": 12.913,
+   "parts": [
+    {
+     "tts": "The cat had other plans...",
+     "seed": 7,
+     "heard": "The cat had other plans.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "it kept getting distracted. And hungry.",
+     "seed": 7,
+     "heard": "it kept getting distracted, and hungry.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.429
+  },
+  {
+   "n": 6,
+   "text": "The C.I.A.'s memo: it \"would not lend itself\" to their \"highly specialized needs.\"",
+   "start": 17.729,
+   "parts": [
+    {
+     "tts": "The C.I.A.'s memo: it \"would not lend itself\" to their \"highly specialized needs.\"",
+     "seed": 7,
+     "heard": "the CIA's memo, it would not lend itself to their highly specialized needs.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 22.635
+  },
+  {
+   "n": 7,
+   "text": "Translation... you can't train a cat.",
+   "start": 22.935,
+   "parts": [
+    {
+     "tts": "Translation...",
+     "seed": 7,
+     "heard": "Translation",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "you can't train a cat.",
+     "seed": 7,
+     "heard": "You can't train a cat.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.065
+  }
+ ]
+}

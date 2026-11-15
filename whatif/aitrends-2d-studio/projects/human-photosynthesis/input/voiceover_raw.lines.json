@@ -1,0 +1,124 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 18.331,
+ "render_s": 127.5,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "You turn green and live on sunlight.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "You turn green and live on sunlight.",
+     "seed": 7,
+     "heard": "You turn green and live on sunlight.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 1.952
+  },
+  {
+   "n": 2,
+   "text": "Bad news... you'd still starve.",
+   "start": 2.252,
+   "parts": [
+    {
+     "tts": "Bad news...",
+     "seed": 7,
+     "heard": "Bad news.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "you'd still starve.",
+     "seed": 7,
+     "heard": "you'd still starve.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.811
+  },
+  {
+   "n": 3,
+   "text": "Your skin only makes about 1 percent of the energy you need.",
+   "start": 5.111,
+   "parts": [
+    {
+     "tts": "Your skin only makes about one percent of the energy you need.",
+     "seed": 7,
+     "heard": "Your skin only makes about 1% of the energy you need.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.577
+  },
+  {
+   "n": 4,
+   "text": "To fix that, you'd need skin about the size of a tennis court, by one estimate.",
+   "start": 7.877,
+   "parts": [
+    {
+     "tts": "To fix that, you'd need skin about the size of a tennis court, by one estimate.",
+     "seed": 7,
+     "heard": "To fix that, you'd need skin about the size of a tennis court, by one estimate.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.8
+  },
+  {
+   "n": 5,
+   "text": "Or 290 hours of sunshine... every single day.",
+   "start": 12.1,
+   "parts": [
+    {
+     "tts": "Or two hundred ninety hours of sunshine...",
+     "seed": 7,
+     "heard": "or 290 hours of sunshine.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "every single day.",
+     "seed": 7,
+     "heard": "every single day.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.261
+  },
+  {
+   "n": 6,
+   "text": "That's why plants don't walk.",
+   "start": 16.561,
+   "parts": [
+    {
+     "tts": "That's why plants don't walk.",
+     "seed": 7,
+     "heard": "That's why plants don't walk.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.031
+  }
+ ]
+}

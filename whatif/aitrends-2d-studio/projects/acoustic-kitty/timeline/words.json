@@ -1,0 +1,340 @@
+{
+ "source": "whisper:small+script",
+ "words": [
+  {
+   "word": "The",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "CIA",
+   "start": 0.28,
+   "end": 0.58
+  },
+  {
+   "word": "built",
+   "start": 0.58,
+   "end": 0.98
+  },
+  {
+   "word": "a",
+   "start": 0.98,
+   "end": 1.16
+  },
+  {
+   "word": "spy",
+   "start": 1.16,
+   "end": 1.28
+  },
+  {
+   "word": "cat.",
+   "start": 1.28,
+   "end": 1.62
+  },
+  {
+   "word": "In",
+   "start": 2.2,
+   "end": 2.34
+  },
+  {
+   "word": "the",
+   "start": 2.34,
+   "end": 2.42
+  },
+  {
+   "word": "1960s,",
+   "start": 2.42,
+   "end": 3.46
+  },
+  {
+   "word": "they",
+   "start": 3.64,
+   "end": 3.78
+  },
+  {
+   "word": "hid",
+   "start": 3.78,
+   "end": 3.94
+  },
+  {
+   "word": "a",
+   "start": 3.94,
+   "end": 4.02
+  },
+  {
+   "word": "microphone",
+   "start": 4.02,
+   "end": 4.38
+  },
+  {
+   "word": "in",
+   "start": 4.38,
+   "end": 4.62
+  },
+  {
+   "word": "its",
+   "start": 4.62,
+   "end": 4.76
+  },
+  {
+   "word": "ear",
+   "start": 4.76,
+   "end": 5.06
+  },
+  {
+   "word": "and",
+   "start": 5.06,
+   "end": 5.46
+  },
+  {
+   "word": "an",
+   "start": 5.46,
+   "end": 5.6
+  },
+  {
+   "word": "antenna",
+   "start": 5.6,
+   "end": 5.84
+  },
+  {
+   "word": "in",
+   "start": 5.84,
+   "end": 6.18
+  },
+  {
+   "word": "its",
+   "start": 6.18,
+   "end": 6.34
+  },
+  {
+   "word": "fur.",
+   "start": 6.34,
+   "end": 6.56
+  },
+  {
+   "word": "Reportedly,",
+   "start": 7.3,
+   "end": 7.78
+  },
+  {
+   "word": "it",
+   "start": 7.96,
+   "end": 8.04
+  },
+  {
+   "word": "cost",
+   "start": 8.04,
+   "end": 8.28
+  },
+  {
+   "word": "millions",
+   "start": 8.28,
+   "end": 8.68
+  },
+  {
+   "word": "of",
+   "start": 8.68,
+   "end": 8.98
+  },
+  {
+   "word": "dollars.",
+   "start": 8.98,
+   "end": 9.34
+  },
+  {
+   "word": "First",
+   "start": 10.04,
+   "end": 10.22
+  },
+  {
+   "word": "mission:",
+   "start": 10.22,
+   "end": 10.56
+  },
+  {
+   "word": "spy",
+   "start": 11.0,
+   "end": 11.26
+  },
+  {
+   "word": "on",
+   "start": 11.26,
+   "end": 11.5
+  },
+  {
+   "word": "two",
+   "start": 11.5,
+   "end": 11.66
+  },
+  {
+   "word": "men",
+   "start": 11.66,
+   "end": 11.88
+  },
+  {
+   "word": "in",
+   "start": 11.88,
+   "end": 12.04
+  },
+  {
+   "word": "a",
+   "start": 12.04,
+   "end": 12.12
+  },
+  {
+   "word": "park.",
+   "start": 12.12,
+   "end": 12.34
+  },
+  {
+   "word": "The",
+   "start": 12.98,
+   "end": 13.06
+  },
+  {
+   "word": "cat",
+   "start": 13.06,
+   "end": 13.28
+  },
+  {
+   "word": "had",
+   "start": 13.28,
+   "end": 13.42
+  },
+  {
+   "word": "other",
+   "start": 13.42,
+   "end": 13.6
+  },
+  {
+   "word": "plans...",
+   "start": 13.6,
+   "end": 13.96
+  },
+  {
+   "word": "it",
+   "start": 15.0,
+   "end": 15.14
+  },
+  {
+   "word": "kept",
+   "start": 15.14,
+   "end": 15.26
+  },
+  {
+   "word": "getting",
+   "start": 15.26,
+   "end": 15.46
+  },
+  {
+   "word": "distracted.",
+   "start": 15.46,
+   "end": 15.88
+  },
+  {
+   "word": "And",
+   "start": 15.88,
+   "end": 16.7
+  },
+  {
+   "word": "hungry.",
+   "start": 16.7,
+   "end": 17.02
+  },
+  {
+   "word": "The",
+   "start": 17.78,
+   "end": 17.92
+  },
+  {
+   "word": "CIA's",
+   "start": 17.92,
+   "end": 18.58
+  },
+  {
+   "word": "memo:",
+   "start": 18.58,
+   "end": 18.84
+  },
+  {
+   "word": "it",
+   "start": 19.36,
+   "end": 19.52
+  },
+  {
+   "word": "\"would",
+   "start": 19.52,
+   "end": 19.64
+  },
+  {
+   "word": "not",
+   "start": 19.64,
+   "end": 19.8
+  },
+  {
+   "word": "lend",
+   "start": 19.8,
+   "end": 20.02
+  },
+  {
+   "word": "itself\"",
+   "start": 20.02,
+   "end": 20.4
+  },
+  {
+   "word": "to",
+   "start": 20.4,
+   "end": 20.62
+  },
+  {
+   "word": "their",
+   "start": 20.62,
+   "end": 20.82
+  },
+  {
+   "word": "\"highly",
+   "start": 20.82,
+   "end": 21.14
+  },
+  {
+   "word": "specialized",
+   "start": 21.14,
+   "end": 21.56
+  },
+  {
+   "word": "needs.\"",
+   "start": 21.56,
+   "end": 22.28
+  },
+  {
+   "word": "Translation...",
+   "start": 23.08,
+   "end": 23.56
+  },
+  {
+   "word": "you",
+   "start": 24.46,
+   "end": 24.92
+  },
+  {
+   "word": "can't",
+   "start": 24.92,
+   "end": 25.26
+  },
+  {
+   "word": "train",
+   "start": 25.26,
+   "end": 25.46
+  },
+  {
+   "word": "a",
+   "start": 25.46,
+   "end": 25.62
+  },
+  {
+   "word": "cat.",
+   "start": 25.62,
+   "end": 25.8
+  }
+ ]
+}

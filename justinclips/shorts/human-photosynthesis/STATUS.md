@@ -1,0 +1,10 @@
+STATE: ready
+
+# Justin clips Short #29: human-photosynthesis ("What If Humans Could Live on Sunlight? 🌱")
+- **video.mp4**: 1080x1920, 24 fps, 486 frames, 20.25 s (audio 20.23 s), H.264 + AAC, **-14.1 LUFS, true peak -1.4 dBFS** (audio/mix.py). Checksum in `video.sha256`.
+- **Jail-break checks:** frame 1 = the hero mid-transformation, skin flashing green, arms flinging up to the sun, camera already pushing in. Line 1 "You turn green and live on sunlight." starts at 0.15 s. Top caption "you'd still starve" (red pill, top 10%) is fully on from frame 1 to 3.7 s. EMOTION: LOL. 6 VO lines, 11 shots (1.0-2.75 s each). Payoff "That's why plants don't walk." 18.3-20.2 s (the hero planted in a giant pot next to a sunflower), then a straight cut back to frame 1 (no closer, for a clean loop). Target ~22 s: 20.2 s (within ±3 s).
+- **Contact sheet:** `contact_sheet.png` (14 frames, checked: frame 0 shows the top caption plus action).
+- **Voice:** Chatterbox D2 (`whatif/voice/chatterbox_d2.py`, `--gap 0.3 --lead 0.15`), Whisper QA ok on all 6 lines (seed 7). Then 0.5/0.8/0.6 s reaction beats were added after lines 3/4/5 (raw take kept as `input/voiceover_raw.wav`).
+- **Facts:** see `sources.md` (Live Science / Oxford's Lindsay Turnbull: 1% and "a tennis court's worth", plus "plants ... far less active"; Science Friday / Christopher Mason: 290 hours of midday sun per day). Hedges "by one estimate" (VO) and "by another estimate" (card) kept.
+- **Project:** `whatif/aitrends-2d-studio/projects/human-photosynthesis` (Toon 3D kit). Re-render from `whatif/aitrends-2d-studio`: `CHROMIUM_PATH=/opt/pw-browsers/chromium node render.mjs --project projects/human-photosynthesis` then `python3 audio/mix.py --project projects/human-photosynthesis`, then mux: `ffmpeg -i build/video_silent.mp4 -i out/What_If_Humans_Could_Live_on_Sunlight.mp4 -map 0:v:0 -map 1:a:0 -c copy -movflags +faststart video.mp4`. Rendered in the cloud: 8m34s at about 1 fps, 4 workers.
+- Nothing was posted, uploaded or scheduled.
