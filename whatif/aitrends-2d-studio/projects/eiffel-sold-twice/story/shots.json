@@ -1,0 +1,330 @@
+{
+ "duration": 24.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.4,
+   "line": "A con man sold the Eiffel Tower.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "sold",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.4,
+   "end": 3.4,
+   "line": "Twice.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "Twice",
+     "name": "toon3d:stamp",
+     "gain": -4
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s03",
+   "start": 3.4,
+   "end": 5.1,
+   "line": "In 1925, Victor Lustig",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "word": "1925",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ],
+   "in": {
+    "type": "flash"
+   }
+  },
+  {
+   "id": "s04",
+   "start": 5.1,
+   "end": 7.0,
+   "line": "forged government letterhead.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:slide",
+     "gain": -9
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "word": "letterhead",
+     "name": "toon3d:stamp",
+     "gain": -5
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s05",
+   "start": 7.0,
+   "end": 8.5,
+   "line": "He told 6 scrap dealers",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:crowd",
+     "gain": -16,
+     "dur": 1.5
+    },
+    {
+     "word": "6",
+     "name": "toon3d:pop",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "iris"
+   }
+  },
+  {
+   "id": "s06",
+   "start": 8.5,
+   "end": 10.12,
+   "line": "the tower was being torn down.",
+   "sfx": [
+    {
+     "word": "torn",
+     "name": "toon3d:stamp",
+     "gain": -4
+    },
+    {
+     "word": "down",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s07",
+   "start": 10.12,
+   "end": 12.25,
+   "line": "Andre Poisson paid, plus a bribe.",
+   "sfx": [
+    {
+     "word": "paid",
+     "name": "toon3d:coins",
+     "gain": -8
+    },
+    {
+     "word": "bribe",
+     "name": "toon3d:ding",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s08",
+   "start": 12.25,
+   "end": 13.5,
+   "line": "Lustig fled the country.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:horn",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -14,
+     "dur": 1.2
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s09",
+   "start": 13.5,
+   "end": 14.95,
+   "line": "Poisson was too",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:footsteps",
+     "gain": -12,
+     "dur": 0.75
+    },
+    {
+     "at": 0.95,
+     "name": "toon3d:gasp",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s10",
+   "start": 14.95,
+   "end": 16.38,
+   "line": "embarrassed to call the cops.",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "at": 1.15,
+     "name": "toon3d:slide",
+     "gain": -13
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s11",
+   "start": 16.38,
+   "end": 18.5,
+   "line": "So Lustig came back, and reportedly sold it...",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -8
+    },
+    {
+     "word": "sold",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "flash"
+   }
+  },
+  {
+   "id": "s12",
+   "start": 18.5,
+   "end": 20.42,
+   "line": "AGAIN.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -16,
+     "dur": 1.1
+    },
+    {
+     "word": "AGAIN",
+     "name": "toon3d:stamp",
+     "gain": -3
+    },
+    {
+     "word": "AGAIN",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  },
+  {
+   "id": "s13",
+   "start": 20.42,
+   "end": 22.12,
+   "line": "He did end up in Alcatraz.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:metal",
+     "gain": -8
+    },
+    {
+     "word": "Alcatraz",
+     "name": "toon3d:thud",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "iris"
+   }
+  },
+  {
+   "id": "s14",
+   "start": 22.12,
+   "end": 24.5,
+   "line": "Not for the tower. For counterfeiting.",
+   "sfx": [
+    {
+     "word": "Not",
+     "name": "toon3d:fail",
+     "gain": -14
+    },
+    {
+     "word": "counterfeiting",
+     "name": "toon3d:cash",
+     "gain": -7
+    },
+    {
+     "word": "counterfeiting",
+     "name": "toon3d:sparkle",
+     "gain": -11
+    }
+   ],
+   "in": {
+    "type": "cut"
+   }
+  }
+ ]
+}

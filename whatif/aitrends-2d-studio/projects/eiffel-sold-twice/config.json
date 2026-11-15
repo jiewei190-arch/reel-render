@@ -1,0 +1,42 @@
+{
+ "title": "The Con Man Who Sold the Eiffel Tower",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 24.5,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.79,
+  "gold": [
+   "sold",
+   "eiffel",
+   "twice",
+   "1925",
+   "6",
+   "demolition",
+   "bribe",
+   "embarrassed",
+   "again",
+   "alcatraz",
+   "counterfeiting",
+   "letterhead",
+   "torn"
+  ]
+ }
+}

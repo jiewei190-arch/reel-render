@@ -1,0 +1,330 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "con",
+   "start": 0.2,
+   "end": 0.4
+  },
+  {
+   "word": "man",
+   "start": 0.4,
+   "end": 0.74
+  },
+  {
+   "word": "sold",
+   "start": 0.74,
+   "end": 1.14
+  },
+  {
+   "word": "the",
+   "start": 1.14,
+   "end": 1.48
+  },
+  {
+   "word": "Eiffel",
+   "start": 1.48,
+   "end": 1.74
+  },
+  {
+   "word": "Tower.",
+   "start": 1.74,
+   "end": 2.04
+  },
+  {
+   "word": "Twice.",
+   "start": 2.45,
+   "end": 3.02
+  },
+  {
+   "word": "In",
+   "start": 3.4,
+   "end": 3.5
+  },
+  {
+   "word": "1925,",
+   "start": 3.5,
+   "end": 4.32
+  },
+  {
+   "word": "Victor",
+   "start": 4.84,
+   "end": 5.06
+  },
+  {
+   "word": "Lustig",
+   "start": 5.06,
+   "end": 5.42
+  },
+  {
+   "word": "forged",
+   "start": 5.42,
+   "end": 5.72
+  },
+  {
+   "word": "government",
+   "start": 5.72,
+   "end": 6.18
+  },
+  {
+   "word": "letterhead.",
+   "start": 6.18,
+   "end": 6.68
+  },
+  {
+   "word": "He",
+   "start": 7.08,
+   "end": 7.18
+  },
+  {
+   "word": "told",
+   "start": 7.18,
+   "end": 7.4
+  },
+  {
+   "word": "6",
+   "start": 7.4,
+   "end": 7.7
+  },
+  {
+   "word": "scrap",
+   "start": 7.7,
+   "end": 8.0
+  },
+  {
+   "word": "dealers",
+   "start": 8.0,
+   "end": 8.3
+  },
+  {
+   "word": "the",
+   "start": 8.3,
+   "end": 8.54
+  },
+  {
+   "word": "tower",
+   "start": 8.54,
+   "end": 8.76
+  },
+  {
+   "word": "was",
+   "start": 8.76,
+   "end": 8.98
+  },
+  {
+   "word": "being",
+   "start": 8.98,
+   "end": 9.16
+  },
+  {
+   "word": "torn",
+   "start": 9.16,
+   "end": 9.4
+  },
+  {
+   "word": "down.",
+   "start": 9.4,
+   "end": 9.76
+  },
+  {
+   "word": "Andre",
+   "start": 10.12,
+   "end": 10.36
+  },
+  {
+   "word": "Poisson",
+   "start": 10.36,
+   "end": 10.72
+  },
+  {
+   "word": "paid,",
+   "start": 10.72,
+   "end": 10.96
+  },
+  {
+   "word": "plus",
+   "start": 11.22,
+   "end": 11.38
+  },
+  {
+   "word": "a",
+   "start": 11.38,
+   "end": 11.58
+  },
+  {
+   "word": "bribe.",
+   "start": 11.58,
+   "end": 11.76
+  },
+  {
+   "word": "Lustig",
+   "start": 12.36,
+   "end": 12.58
+  },
+  {
+   "word": "fled",
+   "start": 12.58,
+   "end": 12.74
+  },
+  {
+   "word": "the",
+   "start": 12.74,
+   "end": 12.88
+  },
+  {
+   "word": "country.",
+   "start": 12.88,
+   "end": 13.16
+  },
+  {
+   "word": "Poisson",
+   "start": 13.6,
+   "end": 14.0
+  },
+  {
+   "word": "was",
+   "start": 14.0,
+   "end": 14.3
+  },
+  {
+   "word": "too",
+   "start": 14.3,
+   "end": 14.66
+  },
+  {
+   "word": "embarrassed",
+   "start": 14.66,
+   "end": 15.06
+  },
+  {
+   "word": "to",
+   "start": 15.06,
+   "end": 15.34
+  },
+  {
+   "word": "call",
+   "start": 15.34,
+   "end": 15.5
+  },
+  {
+   "word": "the",
+   "start": 15.5,
+   "end": 15.66
+  },
+  {
+   "word": "cops.",
+   "start": 15.66,
+   "end": 15.9
+  },
+  {
+   "word": "So",
+   "start": 16.52,
+   "end": 16.6
+  },
+  {
+   "word": "Lustig",
+   "start": 16.6,
+   "end": 16.94
+  },
+  {
+   "word": "came",
+   "start": 16.94,
+   "end": 17.12
+  },
+  {
+   "word": "back,",
+   "start": 17.12,
+   "end": 17.48
+  },
+  {
+   "word": "and",
+   "start": 17.48,
+   "end": 18.0
+  },
+  {
+   "word": "reportedly",
+   "start": 18.0,
+   "end": 18.4
+  },
+  {
+   "word": "sold",
+   "start": 18.4,
+   "end": 18.7
+  },
+  {
+   "word": "it...",
+   "start": 18.7,
+   "end": 19.0
+  },
+  {
+   "word": "AGAIN.",
+   "start": 19.76,
+   "end": 20.2
+  },
+  {
+   "word": "He",
+   "start": 20.56,
+   "end": 20.64
+  },
+  {
+   "word": "did",
+   "start": 20.64,
+   "end": 20.78
+  },
+  {
+   "word": "end",
+   "start": 20.78,
+   "end": 20.96
+  },
+  {
+   "word": "up",
+   "start": 20.96,
+   "end": 21.1
+  },
+  {
+   "word": "in",
+   "start": 21.1,
+   "end": 21.22
+  },
+  {
+   "word": "Alcatraz.",
+   "start": 21.22,
+   "end": 21.66
+  },
+  {
+   "word": "Not",
+   "start": 22.26,
+   "end": 22.4
+  },
+  {
+   "word": "for",
+   "start": 22.4,
+   "end": 22.56
+  },
+  {
+   "word": "the",
+   "start": 22.56,
+   "end": 22.68
+  },
+  {
+   "word": "tower.",
+   "start": 22.68,
+   "end": 22.92
+  },
+  {
+   "word": "For",
+   "start": 23.28,
+   "end": 23.38
+  },
+  {
+   "word": "counterfeiting.",
+   "start": 23.38,
+   "end": 23.92
+  }
+ ]
+}
