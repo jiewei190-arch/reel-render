@@ -1,0 +1,14 @@
+{
+ "seconds_per_take": {
+  "11": 201.4,
+  "22": 222.2,
+  "33": 186.1,
+  "44": 186.1
+ },
+ "length": 73,
+ "size": 640,
+ "steps": 24,
+ "cfg": 5.0,
+ "shift": 8.0,
+ "prompt": "2D cartoon animation, flat pastel hand-drawn style with thick warm-brown outlines. A small round cream bear cub wearing a blue nightcap gently stirs a sage-green pot with a wooden spoon, slow circular stirring motion, the spoon moves around inside the pot, the bear sways slightly and blinks, happy calm face. Static camera, plain solid bright green background, the character stays the same size and position."
+}
