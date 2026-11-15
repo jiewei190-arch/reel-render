@@ -1,3 +1,3 @@
-STATE: scripting
+STATE: rendering
 
-v2 "jail break" re-cut (emotion WOW, target ~25 s). The script is written, and the Chatterbox D2 voice and the scene edits are in progress. v1 (`../coca-cola-cocaine/`) is unchanged.
+v2: voice (22.4 s, QA ok), timeline and scenes are done. The full 1080x1920 render is running in the cloud.

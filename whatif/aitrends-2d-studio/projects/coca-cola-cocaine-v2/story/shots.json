@@ -1,0 +1,253 @@
+{
+ "duration": 22.41,
+ "shots": [
+  {
+   "id": "c01",
+   "start": 0,
+   "end": 2.3,
+   "line": "Coca-Cola had cocaine in it.",
+   "scene": "fizzing glass + leaf, push-in, top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -16
+    },
+    {
+     "word": "cocaine",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "cocaine",
+     "offset": 0.35,
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "start": 2.3,
+   "end": 5.2,
+   "line": "In 1886, pharmacist John Pemberton brewed it",
+   "scene": "pharmacy, Pemberton stirring",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "1886",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "brewed",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "c03",
+   "start": 5.2,
+   "end": 6.15,
+   "line": "with coca leaves,",
+   "scene": "leaves into the pot",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "leaves",
+     "name": "toon3d:magic",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "start": 6.15,
+   "end": 7.45,
+   "line": "and sold it as medicine.",
+   "scene": "fountain: sparkles, IT'S MEDICINE!",
+   "in": {
+    "type": "whip",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "medicine",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "medicine",
+     "offset": 0.15,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "c08",
+   "start": 7.45,
+   "end": 10.35,
+   "line": "Around 1903, the cocaine came out.",
+   "scene": "INSERT: 1903 calendar, COCAINE REMOVED stamp",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "out.",
+     "name": "toon3d:stamp",
+     "gain": -4
+    },
+    {
+     "word": "out.",
+     "offset": 0.02,
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "start": 10.35,
+   "end": 13.1,
+   "line": "But Coke reportedly still uses the leaf.",
+   "scene": "STILL CONTAINS COCA LEAVES",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:scratch",
+     "gain": -8
+    },
+    {
+     "word": "still",
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "word": "still",
+     "offset": 0.05,
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "leaf",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "c11",
+   "start": 13.1,
+   "end": 14.3,
+   "line": "A New Jersey company",
+   "scene": "INSERT: ONLY ONE COMPANY / NEW JERSEY",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "start": 14.3,
+   "end": 16.85,
+   "line": "strips the cocaine out. Coke keeps the flavor.",
+   "scene": "extraction machine: REMOVED / FLAVOR",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "out.",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "word": "flavor",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "flavor",
+     "offset": 0.1,
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "start": 16.85,
+   "end": 22.41,
+   "line": "Still made with coca. Just... the legal part. Subscribe for more.",
+   "scene": "winking can (payoff)",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "legal",
+     "name": "toon3d:sparkle",
+     "gain": -8
+    },
+    {
+     "word": "legal",
+     "offset": 0.05,
+     "name": "toon3d:click",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}

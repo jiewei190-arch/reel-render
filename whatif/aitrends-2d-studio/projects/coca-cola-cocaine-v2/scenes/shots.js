@@ -12,8 +12,8 @@ import { THREE, at, txt, tag, stamp, bubble, signTex, board, colaGlass, leaf, co
 
 // v2: the ONE top caption (adds story; not the title, not a subtitle). Full size from frame 1, gone after 3.5 s (global time gt).
 function topCap(g, gt) { if (gt > 3.8) return; const a = gt < 3.5 ? 1 : 1 - (gt - 3.5) / 0.3;
-  g.save(); g.globalAlpha = a; g.fillStyle = 'rgba(20,12,10,0.55)'; g.beginPath(); g.roundRect(60, E.H * 0.05, E.W - 120, 160, 40); g.fill(); g.restore();
-  txt(g, 'and it still uses', E.W / 2, E.H * 0.05 + 50, 64, { a, color: '#ffffff' }); txt(g, 'THE LEAF', E.W / 2, E.H * 0.05 + 116, 86, { a, color: '#7ad04a' }); }
+  g.save(); g.globalAlpha = a; g.fillStyle = 'rgba(20,12,10,0.55)'; g.beginPath(); g.roundRect(50, E.H * 0.04, E.W - 100, 250, 48); g.fill(); g.restore();
+  txt(g, 'and it still uses', E.W / 2, E.H * 0.04 + 72, 92, { a, color: '#ffffff' }); txt(g, 'THE LEAF', E.W / 2, E.H * 0.04 + 178, 128, { a, color: '#7ad04a' }); }
 const WARM = { tint: '#ffcf8a', tintAmount: 0.18, rays: false };
 
 // ---------- the hero glass on the fountain counter (frame 1 + the loop closer) ----------
@@ -72,12 +72,12 @@ registerShot('c02', { kind: '3d', init: pharmacy.init,
   draw(s, t, info) { pharmacy.draw(s, t, info, { face: (t) => mixExpr(EXPR.deadpan, EXPR.worried, ease.inOut(prog(t, at(info, 'pharmacist', 1) - 0.1, at(info, 'pharmacist', 1) + 0.3)) * 0.7) });
     camMove(s.stage, t, [[0, { pos: [0.3, 2.6, 7.6], look: [0.4, 2.1, 0.2], fov: 40 }], [info.dur, { pos: [0.1, 2.35, 5.6], look: [0.2, 1.95, 0.4], fov: 38 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, WARM); topCap(g, info.shot.start + t); const m = at(info, 'pharmacist', 1);
-    tag(g, t, 0.05, '1886', 0.12, { size: 130, color: '#f2c230' }); tag(g, t, at(info, 'Pemberton', 2.6), 'JOHN PEMBERTON', 0.205, { size: 66 });
+    tag(g, t, 0.05, '1886', 0.23, { size: 130, color: '#f2c230' }); tag(g, t, at(info, 'Pemberton', 2.6), 'JOHN PEMBERTON', 0.30, { size: 66 });
     reactions(g, t, s, [{ fx: 'sweat', on: 'p', at: m + 0.1 }, { fx: 'question', on: 'p', at: at(info, 'brewed', 3.0), until: info.dur }]); },
 });
 // c03 "with coca leaves, the plant cocaine comes from." — leaves drop into the pot, the label explains
 registerShot('c03', { kind: '3d', init: pharmacy.init,
-  draw(s, t, info) { pharmacy.draw(s, t + 3, info, { leafAt: 3 + at(info, 'leaves', 0.5) - 0.35, face: () => EXPR.smug });
+  draw(s, t, info) { pharmacy.draw(s, t + 3, info, { leafAt: 3 + at(info, 'leaves', 0.5) - 0.8, face: () => EXPR.smug });
     camMove(s.stage, t, [[0, { pos: [1.4, 3.9, 3.4], look: [0.9, 1.3, 0.3], fov: 40 }], [info.dur, { pos: [1.2, 3.6, 2.9], look: [0.9, 1.35, 0.3], fov: 38 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, WARM); const l = at(info, 'leaves', 0.5), pl = l + 0.45;
     tag(g, t, l, 'COCA LEAVES', 0.13, { size: 100, color: '#7ad04a' });

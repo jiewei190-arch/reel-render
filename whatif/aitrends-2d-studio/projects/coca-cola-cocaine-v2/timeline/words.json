@@ -1,0 +1,285 @@
+{
+ "source": "whisper:small.en+script + hand fixes from Whisper word timestamps (Coca-Cola 0.10, \"the\" after the beat 19.60)",
+ "words": [
+  {
+   "word": "Coca-Cola",
+   "start": 0.1,
+   "end": 0.66
+  },
+  {
+   "word": "had",
+   "start": 0.66,
+   "end": 1.16
+  },
+  {
+   "word": "cocaine",
+   "start": 1.16,
+   "end": 1.58
+  },
+  {
+   "word": "in",
+   "start": 1.58,
+   "end": 1.78
+  },
+  {
+   "word": "it.",
+   "start": 1.78,
+   "end": 2.16
+  },
+  {
+   "word": "In",
+   "start": 2.4,
+   "end": 2.5
+  },
+  {
+   "word": "1886,",
+   "start": 2.5,
+   "end": 3.0
+  },
+  {
+   "word": "pharmacist",
+   "start": 3.54,
+   "end": 3.96
+  },
+  {
+   "word": "John",
+   "start": 3.96,
+   "end": 4.34
+  },
+  {
+   "word": "Pemberton",
+   "start": 4.34,
+   "end": 4.8
+  },
+  {
+   "word": "brewed",
+   "start": 4.8,
+   "end": 5.02
+  },
+  {
+   "word": "it",
+   "start": 5.02,
+   "end": 5.18
+  },
+  {
+   "word": "with",
+   "start": 5.18,
+   "end": 5.34
+  },
+  {
+   "word": "coca",
+   "start": 5.34,
+   "end": 5.62
+  },
+  {
+   "word": "leaves,",
+   "start": 5.62,
+   "end": 5.9
+  },
+  {
+   "word": "and",
+   "start": 5.9,
+   "end": 6.18
+  },
+  {
+   "word": "sold",
+   "start": 6.18,
+   "end": 6.36
+  },
+  {
+   "word": "it",
+   "start": 6.36,
+   "end": 6.5
+  },
+  {
+   "word": "as",
+   "start": 6.5,
+   "end": 6.64
+  },
+  {
+   "word": "medicine.",
+   "start": 6.64,
+   "end": 7.02
+  },
+  {
+   "word": "Around",
+   "start": 7.6,
+   "end": 7.84
+  },
+  {
+   "word": "1903,",
+   "start": 7.84,
+   "end": 8.48
+  },
+  {
+   "word": "the",
+   "start": 9.12,
+   "end": 9.16
+  },
+  {
+   "word": "cocaine",
+   "start": 9.16,
+   "end": 9.5
+  },
+  {
+   "word": "came",
+   "start": 9.5,
+   "end": 9.76
+  },
+  {
+   "word": "out.",
+   "start": 9.76,
+   "end": 10.06
+  },
+  {
+   "word": "But",
+   "start": 10.54,
+   "end": 10.76
+  },
+  {
+   "word": "Coke",
+   "start": 10.76,
+   "end": 10.94
+  },
+  {
+   "word": "reportedly",
+   "start": 10.94,
+   "end": 11.46
+  },
+  {
+   "word": "still",
+   "start": 11.46,
+   "end": 11.8
+  },
+  {
+   "word": "uses",
+   "start": 11.8,
+   "end": 12.18
+  },
+  {
+   "word": "the",
+   "start": 12.18,
+   "end": 12.42
+  },
+  {
+   "word": "leaf.",
+   "start": 12.42,
+   "end": 12.64
+  },
+  {
+   "word": "A",
+   "start": 13.24,
+   "end": 13.36
+  },
+  {
+   "word": "New",
+   "start": 13.36,
+   "end": 13.46
+  },
+  {
+   "word": "Jersey",
+   "start": 13.46,
+   "end": 13.7
+  },
+  {
+   "word": "company",
+   "start": 13.7,
+   "end": 14.1
+  },
+  {
+   "word": "strips",
+   "start": 14.1,
+   "end": 14.4
+  },
+  {
+   "word": "the",
+   "start": 14.4,
+   "end": 14.58
+  },
+  {
+   "word": "cocaine",
+   "start": 14.58,
+   "end": 14.88
+  },
+  {
+   "word": "out.",
+   "start": 14.88,
+   "end": 15.2
+  },
+  {
+   "word": "Coke",
+   "start": 15.66,
+   "end": 15.74
+  },
+  {
+   "word": "keeps",
+   "start": 15.74,
+   "end": 15.96
+  },
+  {
+   "word": "the",
+   "start": 15.96,
+   "end": 16.14
+  },
+  {
+   "word": "flavor.",
+   "start": 16.14,
+   "end": 16.4
+  },
+  {
+   "word": "Still",
+   "start": 17.0,
+   "end": 17.2
+  },
+  {
+   "word": "made",
+   "start": 17.2,
+   "end": 17.34
+  },
+  {
+   "word": "with",
+   "start": 17.34,
+   "end": 17.54
+  },
+  {
+   "word": "coca.",
+   "start": 17.54,
+   "end": 17.92
+  },
+  {
+   "word": "Just...",
+   "start": 18.38,
+   "end": 18.7
+  },
+  {
+   "word": "the",
+   "start": 19.6,
+   "end": 19.76
+  },
+  {
+   "word": "legal",
+   "start": 19.76,
+   "end": 19.94
+  },
+  {
+   "word": "part.",
+   "start": 19.94,
+   "end": 20.34
+  },
+  {
+   "word": "Subscribe",
+   "start": 20.92,
+   "end": 21.32
+  },
+  {
+   "word": "for",
+   "start": 21.32,
+   "end": 21.66
+  },
+  {
+   "word": "more.",
+   "start": 21.66,
+   "end": 21.92
+  }
+ ]
+}
