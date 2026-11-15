@@ -1,0 +1,146 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 26.408,
+ "render_s": 236.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This chicken lived 18 months without a head.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "This chicken lived eighteen months without a head.",
+     "seed": 7,
+     "heard": "This chicken lived 18 months without a head.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.499
+  },
+  {
+   "n": 2,
+   "text": "In 1945, a farmer's axe missed the jugular... and most of the brainstem.",
+   "start": 2.699,
+   "parts": [
+    {
+     "tts": "In nineteen forty-five, a farmer's axe missed the jugular...",
+     "seed": 7,
+     "heard": "In 1945, a farmer's axe missed the jugular.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and most of the brainstem.",
+     "seed": 11,
+     "heard": "and most of the brainstem.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.937
+  },
+  {
+   "n": 3,
+   "text": "So Mike just... kept walking.",
+   "start": 8.137,
+   "parts": [
+    {
+     "tts": "So Mike just...",
+     "seed": 7,
+     "heard": "So, Mike, just...",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "kept walking.",
+     "seed": 7,
+     "heard": "Kept walking.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.847
+  },
+  {
+   "n": 4,
+   "text": "He toured as Miracle Mike. 25 cents a look. He even made Life magazine.",
+   "start": 11.047,
+   "parts": [
+    {
+     "tts": "He toured as Miracle Mike. twenty-five cents a look. He even made Life magazine.",
+     "seed": 7,
+     "heard": "He toured as Miracle Mike, 25 cents a look. He even made Life magazine.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.945
+  },
+  {
+   "n": 5,
+   "text": "He ate from an eyedropper.",
+   "start": 16.145,
+   "parts": [
+    {
+     "tts": "He ate from an eyedropper.",
+     "seed": 7,
+     "heard": "He ate from an eyedropper.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.431
+  },
+  {
+   "n": 6,
+   "text": "Then one night, they misplaced the eyedropper... and Mike choked.",
+   "start": 17.631,
+   "parts": [
+    {
+     "tts": "Then one night, they misplaced the eyedropper...",
+     "seed": 7,
+     "heard": "Then, one night, they misplaced the eyedropper.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and Mike choked.",
+     "seed": 11,
+     "heard": "And Mike choked.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.966
+  },
+  {
+   "n": 7,
+   "text": "Fruita, Colorado still throws him a festival every year.",
+   "start": 23.166,
+   "parts": [
+    {
+     "tts": "Fruita, Colorado still throws him a festival every year.",
+     "seed": 11,
+     "heard": "Fruita, Colorado still throws him a festival every year.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.208
+  }
+ ]
+}

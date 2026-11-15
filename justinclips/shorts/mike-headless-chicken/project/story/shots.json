@@ -1,0 +1,344 @@
+{
+ "duration": 26.413,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.55,
+   "line": "This chicken lived 18 months without a head.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:gasp",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:footsteps",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.55,
+   "end": 4.55,
+   "line": "In 1945, a farmer's",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1945",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.55,
+   "end": 6.4,
+   "line": "axe missed the jugular...",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "missed",
+     "name": "toon3d:zap",
+     "gain": -14
+    },
+    {
+     "word": "jugular",
+     "name": "toon3d:ding",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s03b",
+   "start": 6.4,
+   "end": 7.95,
+   "line": "and most of the brainstem.",
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "word": "brainstem",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 7.95,
+   "end": 9.25,
+   "line": "So Mike just...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04b",
+   "start": 9.25,
+   "end": 10.85,
+   "line": "kept walking.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:boing",
+     "gain": -11
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:gasp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.85,
+   "end": 12.55,
+   "line": "He toured as Miracle Mike.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -12
+    },
+    {
+     "word": "Miracle",
+     "name": "toon3d:magic",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 12.55,
+   "end": 14.0,
+   "line": "25 cents a look.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "25",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 14.0,
+   "end": 16.05,
+   "line": "He even made Life magazine.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "at": 0.75,
+     "name": "toon3d:click",
+     "gain": -9
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:click",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.05,
+   "end": 17.65,
+   "line": "He ate from an eyedropper.",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "at": 0.65,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:pop",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.65,
+   "end": 19.15,
+   "line": "Then one night, they misplaced",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -16
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:paper",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09b",
+   "start": 19.15,
+   "end": 20.75,
+   "line": "the eyedropper...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.75,
+   "end": 22.95,
+   "line": "and Mike choked.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "choked",
+     "offset": 0.15,
+     "name": "toon3d:click",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.95,
+   "end": 24.85,
+   "line": "Fruita, Colorado still throws him a festival",
+   "in": {
+    "type": "iris",
+    "dur": 0.45,
+    "mode": "open"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:success",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.85,
+   "end": 26.413,
+   "line": "every year.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "every",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
