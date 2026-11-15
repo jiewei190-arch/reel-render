@@ -40,7 +40,7 @@ registerShot('s01', { kind: '3d',
     if (Math.floor(T * 12) % 3 === 0) { g.fillStyle = 'rgba(220,235,255,.22)'; g.fillRect(0, 0, E.W, E.H); }
     SIX.forEach(([xf, y0], i) => bolt(g, E.W * (0.5 + xf * 1.05), 330 + y0 * 0.6, h.x + (i - 2.5) * 14, h.y, { t: T + i * 0.13, seed: i + 1, w: 0.75, impact: i === 2, branch: i % 2 === 0 }));
     sparks(g, h.x, h.y + 60, T, 170, 2);
-    stamp(g, t - 0.15, 'STRUCK 7 TIMES', E.W / 2, E.H * 0.585, { size: 92, rot: -0.04 });
+    stamp(g, t + 0.3, 'STRUCK 7 TIMES', E.W / 2, E.H * 0.585, { size: 92, rot: -0.04 });
     topCaption(g, t, info);
   },
 });
@@ -67,8 +67,8 @@ registerShot('s03', { kind: '3d',
   init(T) {
     const st = stormStage(T, { bg: ['#4a5a86', '#7d8cb0', '#c8c4b0'], fov: 40, target: [0, 1, -1] });
     const env = meadow(st);
-    const sg = parkSign(); sg.position.set(-1.2, 0, -1.8); sg.rotation.y = 0.15; st.add(sg);
-    const r = ranger(); r.position.set(1.3, 0, -0.4); r.rotation.y = -0.25; st.add(r);
+    const sg = parkSign(); sg.position.set(-0.7, 0, -1.8); sg.rotation.y = 0.15; sg.scale.setScalar(0.72); st.add(sg);
+    const r = ranger(); r.position.set(1.15, 0, -0.4); r.rotation.y = -0.25; st.add(r);
     return { stage: st, env, r };
   },
   draw(s, t, info) {
@@ -80,6 +80,7 @@ registerShot('s03', { kind: '3d',
   overlay(g, t, info, s) {
     const k = ease.out(prog(t, 0.1, 0.8));
     cloud(g, lerp(E.W * 0.95, E.W * 0.72, k), 300, 0.95, t, { look: [-0.9, 0.6], mood: 'side' });
+    topCaption(g, t, info);
   },
 });
 
@@ -87,12 +88,12 @@ registerShot('s03', { kind: '3d',
 registerShot('s04', {
   draw(g, t, info) {
     voidBg(g, '#3a4466', '#151a2c');
-    const x0 = 120, x1 = E.W - 120, y = 1180;
+    const x0 = 120, x1 = E.W - 120, y = 1020;
     g.save(); g.strokeStyle = 'rgba(255,255,255,.4)'; g.lineWidth = 10; g.setLineDash([26, 18]); g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke(); g.restore();
-    insT(g, '1942', x0 + 90, y + 110, 84, { color: '#ffffff', stroke: CARD_INK });
-    insT(g, '1977', x1 - 90, y + 110, 84, { color: '#ffd25a', stroke: CARD_INK });
+    insT(g, '1942', x0 + 90, y + 100, 84, { color: '#ffffff', stroke: CARD_INK });
+    insT(g, '1977', x1 - 90, y + 100, 84, { color: '#ffd25a', stroke: CARD_INK });
     cloud(g, E.W / 2, 330, 1.25, t, { look: [Math.sin(t * 3) * 0.9, 0.8], mood: 'angry' });
-    const T0 = at(info, '1942', 0.3), T1 = at(info, 'him.', info.dur - 0.4) + 0.2; let n = 0;
+    const T0 = at(info, '1942', 0.3) - 0.1, T1 = at(info, '1977.', info.dur - 0.8) + 0.5; let n = 0;
     for (let i = 0; i < 7; i++) {
       const ti = lerp(T0, T1, i / 6); if (t < ti) continue; n = i + 1;
       const x = lerp(x0 + 90, x1 - 90, i / 6), age = t - ti;
@@ -100,7 +101,7 @@ registerShot('s04', {
       g.save(); g.translate(x, y - 10); const p = ease.outBack(clamp(age / 0.25)); g.scale(p, p);
       g.fillStyle = '#ffe45a'; g.strokeStyle = CARD_INK; g.lineWidth = 7; g.beginPath(); const Z = [[-14, -60], [22, -60], [4, -16], [26, -16], [-20, 54], [-6, 4], [-26, 4]]; g.moveTo(...Z[0]); Z.slice(1).forEach(p => g.lineTo(...p)); g.closePath(); g.fill(); g.stroke(); g.restore();
     }
-    g.save(); g.translate(E.W / 2, 860); const pk = n ? 1 + 0.15 * clamp(1 - (t - lerp(T0, T1, (n - 1) / 6)) / 0.2) : 1; g.scale(pk, pk);
+    g.save(); g.translate(E.W / 2, 760); const pk = n ? 1 + 0.15 * clamp(1 - (t - lerp(T0, T1, (n - 1) / 6)) / 0.2) : 1; g.scale(pk, pk);
     insT(g, `STRIKE ${Math.max(1, n)}`, 0, 0, 120, { color: n >= 7 ? '#ff6a4a' : '#ffffff', stroke: CARD_INK }); g.restore();
   },
 });
@@ -239,12 +240,11 @@ registerShot('s10', {
 registerShot('s11', {
   draw(g, t, info) {
     voidBg(g, '#3a2a4a', '#120c1c');
-    const zeros = '0,000,000,000,000,000,000,000,000'; const n = Math.floor(clamp(t / Math.max(0.6, info.dur - 0.7)) * zeros.length);
-    insT(g, 'about', E.W / 2, 560, 70, { color: '#ffffff', stroke: CARD_INK });
-    insT(g, '1 in', E.W / 2, 690, 120, { color: '#ffffff', stroke: CARD_INK });
-    const lines = ['1' + zeros.slice(0, Math.min(n, 11)), zeros.slice(11, Math.max(11, Math.min(n, 23))), zeros.slice(23, Math.max(23, n))];
-    lines.forEach((l, i) => insT(g, l, E.W / 2, 860 + i * 130, 112, { color: '#ffd25a', stroke: CARD_INK, maxW: E.W * 0.92 }));
-    const sk = at(info, 'septillion.', info.dur - 0.6); stamp(g, t - sk, '10 SEPTILLION', E.W / 2, 1290, { size: 84, bg: '#c8382c', rot: -0.05 });
+    const full = '10,000,000,000,000,000,000,000,000'; const n = 2 + Math.floor(clamp(t / Math.max(0.6, info.dur - 0.7)) * (full.length - 2));
+    insT(g, 'about', E.W / 2, 520, 70, { color: '#ffffff', stroke: CARD_INK });
+    insT(g, '1 in', E.W / 2, 650, 120, { color: '#ffffff', stroke: CARD_INK });
+    const cut = [0, 11, 23, full.length]; for (let i = 0; i < 3; i++) { const l = full.slice(cut[i], Math.max(cut[i], Math.min(n, cut[i + 1]))); insT(g, l, E.W / 2, 820 + i * 130, 112, { color: '#ffd25a', stroke: CARD_INK, maxW: E.W * 0.92 }); }
+    const sk = at(info, 'septillion.', info.dur - 0.6); stamp(g, t - sk, '10 SEPTILLION', E.W / 2, 1215, { size: 84, bg: '#c8382c', rot: -0.05 });
   },
 });
 
@@ -281,20 +281,8 @@ registerShot('s13', { kind: '3d',
   overlay(g, t, info, s) {
     const h = headPt(s.stage, s.r, 0.7); puff(g, h.x, h.y, (t % 1.6), 0.8);
     reactions(g, t, s, [{ fx: 'sparkle', on: [0, 3.1, -2.8], at: at(info, 'World', 0.8), scale: 1.2 }, { fx: 'flash', at: at(info, 'Record.', 1.2), dur: 0.15, color: '#fff6c0' }]);
+    // loop tease: the last 0.3 s a bolt cracks down at him -> hard cut to frame 1 (six bolts)
+    const L = info.dur - 0.3; if (t > L) { g.fillStyle = 'rgba(30,36,60,.35)'; g.fillRect(0, 0, E.W, E.H); const hh = headPt(s.stage, s.r, 0.55); bolt(g, hh.x - 200, -40, hh.x, hh.y, { t, seed: 9, w: 0.75, k: clamp((t - L) / 0.2), impact: false }); }
   },
 });
 
-// s14 — "Subscribe for more." Back outside: Roy looks up; the smug cloud slides over; a bolt starts to form... hard cut to frame 1.
-registerShot('s14', { kind: '3d',
-  init: fieldInit(),
-  draw(s, t, info) {
-    s.r.pose(addPose(POSE.attention, { headNod: -0.35, ...idle(t, 2) })); s.r.frizz(0);
-    s.r.face({ ...EXPR.deadpan, lid: 0.35, pupil: [0, 1] }, t);
-    camMove(s.stage, t, [[0, { pos: [0, 2.0, 7.0], look: [0, 1.9, 0], fov: 42 }], [info.dur, { pos: [0, 2.0, 7.2], look: [0, 1.9, 0], fov: 42 }]]);
-  },
-  overlay(g, t, info, s) {
-    const k = ease.out(clamp(t / 0.5)); const h = headPt(s.stage, s.r, 0.55);
-    cloud(g, lerp(-300, E.W / 2, k), 300, 1.1, t, { look: [0, 1], mood: 'smug' });
-    if (t > info.dur - 0.3) bolt(g, E.W / 2, 400, h.x, h.y, { t, seed: 9, w: 0.7, k: clamp((t - info.dur + 0.3) / 0.25), impact: false });
-  },
-});

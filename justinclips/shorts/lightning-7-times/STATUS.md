@@ -1,4 +1,4 @@
-STATE: building
+STATE: rendering
 
 # Struck by Lightning 7 Times — status
 

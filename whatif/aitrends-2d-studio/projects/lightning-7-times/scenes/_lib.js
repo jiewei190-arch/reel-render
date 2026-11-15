@@ -53,7 +53,7 @@ export function meadow(st, o = {}) {
 export function parkSign() {
   const g = new THREE.Group();
   for (const sx of [-1, 1]) g.add(cyl(0.12, 0.13, 2.2, '#5a3a22', sx * 1.4, 1.1, 0, 8));
-  const t = canvasTex(512, 256, (x, w, h) => { x.fillStyle = '#5a3a22'; x.fillRect(0, 0, w, h); x.strokeStyle = '#e8dcb0'; x.lineWidth = 8; x.strokeRect(14, 14, w - 28, h - 28); x.fillStyle = '#efe4c0'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = '900 74px "Nunito", sans-serif'; x.fillText('SHENANDOAH', w / 2, h * 0.4); x.font = '800 40px "Nunito", sans-serif'; x.fillText('NATIONAL PARK', w / 2, h * 0.7); });
+  const t = canvasTex(512, 256, (x, w, h) => { x.fillStyle = '#5a3a22'; x.fillRect(0, 0, w, h); x.strokeStyle = '#e8dcb0'; x.lineWidth = 8; x.strokeRect(14, 14, w - 28, h - 28); x.fillStyle = '#efe4c0'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.font = '900 60px "Nunito", sans-serif'; x.fillText('SHENANDOAH', w / 2, h * 0.4); x.font = '800 40px "Nunito", sans-serif'; x.fillText('NATIONAL PARK', w / 2, h * 0.7); });
   g.add(rbox(3.3, 1.65, 0.16, '#5a3a22', 0, 2.0, 0, 0.04));
   const face = new THREE.Mesh(new THREE.PlaneGeometry(3.15, 1.55), toon('#ffffff', { map: t })); face.position.set(0, 2.0, 0.09); face.userData.noOutline = true; g.add(face);
   g.add(blob(1.6, 0.25)); outline(g, { px: 2.4 }); return g;

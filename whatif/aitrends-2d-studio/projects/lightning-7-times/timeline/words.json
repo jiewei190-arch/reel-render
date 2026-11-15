@@ -1,0 +1,330 @@
+{
+ "source": "whisper:small+script",
+ "words": [
+  {
+   "word": "This",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "man",
+   "start": 0.24,
+   "end": 0.48
+  },
+  {
+   "word": "was",
+   "start": 0.48,
+   "end": 0.64
+  },
+  {
+   "word": "struck",
+   "start": 0.64,
+   "end": 0.9
+  },
+  {
+   "word": "by",
+   "start": 0.9,
+   "end": 1.12
+  },
+  {
+   "word": "lightning",
+   "start": 1.12,
+   "end": 1.42
+  },
+  {
+   "word": "7",
+   "start": 1.42,
+   "end": 1.72
+  },
+  {
+   "word": "times.",
+   "start": 1.72,
+   "end": 2.26
+  },
+  {
+   "word": "Roy",
+   "start": 2.62,
+   "end": 2.78
+  },
+  {
+   "word": "Sullivan.",
+   "start": 2.78,
+   "end": 3.08
+  },
+  {
+   "word": "A",
+   "start": 3.6,
+   "end": 3.68
+  },
+  {
+   "word": "park",
+   "start": 3.68,
+   "end": 3.82
+  },
+  {
+   "word": "ranger",
+   "start": 3.82,
+   "end": 4.16
+  },
+  {
+   "word": "in",
+   "start": 4.16,
+   "end": 4.4
+  },
+  {
+   "word": "Shenandoah.",
+   "start": 4.4,
+   "end": 5.02
+  },
+  {
+   "word": "From",
+   "start": 5.4,
+   "end": 5.52
+  },
+  {
+   "word": "1942",
+   "start": 5.52,
+   "end": 6.14
+  },
+  {
+   "word": "to",
+   "start": 6.14,
+   "end": 6.68
+  },
+  {
+   "word": "1977.",
+   "start": 6.68,
+   "end": 7.54
+  },
+  {
+   "word": "Once,",
+   "start": 8.06,
+   "end": 8.3
+  },
+  {
+   "word": "it",
+   "start": 8.92,
+   "end": 9.04
+  },
+  {
+   "word": "knocked",
+   "start": 9.04,
+   "end": 9.26
+  },
+  {
+   "word": "him",
+   "start": 9.26,
+   "end": 9.4
+  },
+  {
+   "word": "out",
+   "start": 9.4,
+   "end": 9.6
+  },
+  {
+   "word": "while",
+   "start": 9.6,
+   "end": 9.8
+  },
+  {
+   "word": "driving...",
+   "start": 9.8,
+   "end": 10.14
+  },
+  {
+   "word": "and",
+   "start": 10.74,
+   "end": 11.0
+  },
+  {
+   "word": "the",
+   "start": 11.0,
+   "end": 11.1
+  },
+  {
+   "word": "truck",
+   "start": 11.1,
+   "end": 11.34
+  },
+  {
+   "word": "kept",
+   "start": 11.34,
+   "end": 11.56
+  },
+  {
+   "word": "rolling.",
+   "start": 11.56,
+   "end": 11.9
+  },
+  {
+   "word": "Fishing.",
+   "start": 12.42,
+   "end": 12.64
+  },
+  {
+   "word": "His",
+   "start": 13.32,
+   "end": 13.44
+  },
+  {
+   "word": "front",
+   "start": 13.44,
+   "end": 13.66
+  },
+  {
+   "word": "yard.",
+   "start": 13.66,
+   "end": 13.94
+  },
+  {
+   "word": "It",
+   "start": 14.48,
+   "end": 14.64
+  },
+  {
+   "word": "set",
+   "start": 14.64,
+   "end": 14.82
+  },
+  {
+   "word": "his",
+   "start": 14.82,
+   "end": 14.98
+  },
+  {
+   "word": "hair",
+   "start": 14.98,
+   "end": 15.12
+  },
+  {
+   "word": "on",
+   "start": 15.12,
+   "end": 15.26
+  },
+  {
+   "word": "fire.",
+   "start": 15.26,
+   "end": 15.5
+  },
+  {
+   "word": "The",
+   "start": 16.02,
+   "end": 16.1
+  },
+  {
+   "word": "odds?",
+   "start": 16.1,
+   "end": 16.5
+  },
+  {
+   "word": "By",
+   "start": 16.88,
+   "end": 17.08
+  },
+  {
+   "word": "one",
+   "start": 17.08,
+   "end": 17.32
+  },
+  {
+   "word": "estimate,",
+   "start": 17.32,
+   "end": 17.74
+  },
+  {
+   "word": "about",
+   "start": 18.22,
+   "end": 18.4
+  },
+  {
+   "word": "1",
+   "start": 18.4,
+   "end": 18.84
+  },
+  {
+   "word": "in",
+   "start": 18.84,
+   "end": 19.04
+  },
+  {
+   "word": "10",
+   "start": 19.04,
+   "end": 19.28
+  },
+  {
+   "word": "septillion.",
+   "start": 19.28,
+   "end": 19.92
+  },
+  {
+   "word": "He",
+   "start": 20.42,
+   "end": 20.54
+  },
+  {
+   "word": "said",
+   "start": 20.54,
+   "end": 20.86
+  },
+  {
+   "word": "a",
+   "start": 20.86,
+   "end": 21.06
+  },
+  {
+   "word": "storm",
+   "start": 21.06,
+   "end": 21.24
+  },
+  {
+   "word": "cloud",
+   "start": 21.24,
+   "end": 21.5
+  },
+  {
+   "word": "chased",
+   "start": 21.5,
+   "end": 21.74
+  },
+  {
+   "word": "him.",
+   "start": 21.74,
+   "end": 22.02
+  },
+  {
+   "word": "He",
+   "start": 22.44,
+   "end": 22.58
+  },
+  {
+   "word": "still",
+   "start": 22.58,
+   "end": 22.84
+  },
+  {
+   "word": "holds",
+   "start": 22.84,
+   "end": 23.2
+  },
+  {
+   "word": "the",
+   "start": 23.2,
+   "end": 23.4
+  },
+  {
+   "word": "Guinness",
+   "start": 23.4,
+   "end": 23.62
+  },
+  {
+   "word": "World",
+   "start": 23.62,
+   "end": 23.8
+  },
+  {
+   "word": "Record.",
+   "start": 23.8,
+   "end": 24.16
+  }
+ ]
+}
