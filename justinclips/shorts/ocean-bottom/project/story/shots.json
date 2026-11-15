@@ -1,0 +1,251 @@
+{
+ "duration": 22.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.5,
+   "line": "At the bottom of the ocean,",
+   "scene": "s01",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:splash",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.5,
+   "end": 3.453,
+   "line": "the water weighs tons.",
+   "scene": "s02",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:creak",
+     "gain": -8
+    },
+    {
+     "word": "tons",
+     "name": "toon3d:thud",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.453,
+   "end": 4.953,
+   "line": "Challenger Deep is about 11",
+   "scene": "s03",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.953,
+   "end": 6.053,
+   "line": "kilometers down.",
+   "scene": "s04",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.053,
+   "end": 7.753,
+   "line": "The light dies fast.",
+   "scene": "s05",
+   "sfx": [
+    {
+     "word": "fast",
+     "offset": 0.15,
+     "name": "toon3d:click",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 7.753,
+   "end": 9.203,
+   "line": "Down there, over 8 tons",
+   "scene": "s06",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:creak",
+     "gain": -8
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:metal",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 9.203,
+   "end": 11.203,
+   "line": "press on every square inch.",
+   "scene": "s07",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 11.203,
+   "end": 13.753,
+   "line": "That's like stacking cars on your thumbnail.",
+   "scene": "s08",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.43,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.71,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 0.99,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 1.27,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "at": 1.6,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s09",
+   "start": 13.753,
+   "end": 15.653,
+   "line": "Drop Mount Everest in...",
+   "scene": "s09",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:boom",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s10",
+   "start": 15.653,
+   "end": 18.303,
+   "line": "and there's still over a mile of water on top.",
+   "scene": "s10",
+   "sfx": [
+    {
+     "word": "mile",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 18.303,
+   "end": 19.653,
+   "line": "Only a handful",
+   "scene": "s11",
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "toon3d:thud",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 19.653,
+   "end": 21.803,
+   "line": "of people have ever been down there.",
+   "scene": "s12",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:success",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 21.803,
+   "end": 22.25,
+   "line": "",
+   "scene": "s13",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:splash",
+     "gain": -8
+    }
+   ]
+  }
+ ]
+}

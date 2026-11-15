@@ -1,0 +1,14 @@
+QA noisecancel: WARN   (/home/user/reel-render/jobs/noisecancel/noisecancel.mp4, 74.5 s)
+  PASS  static          longest no-change run 3.25 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 3.2 s)
+  PASS  safe zones      UI zones clear
+  PASS  outer 24 px     clear
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.6 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 7.6 dB above the pauses (10 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          74.5 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 9.5 (min 1.0), contrast 36.5 (min 18.0)
+  PASS  9:16 frame      noisecancel.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  WARN  black bars      bar over 60 px in 88% of samples (median widest bar 368 px); a deliberate film-frame border is OK, letterboxing is not

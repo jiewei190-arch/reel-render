@@ -1,0 +1,105 @@
+{
+ "name": "thunder",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 80,
+ "fx_gain": 0.45,
+ "music_gain": 0.62,
+ "breath": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "**Crack!** Then a long, low **rumble** rolls across the sky.",
+   "Crack! Then a long, low rumble rolls across the sky."
+  ],
+  [
+   "**But** why? Why does thunder rumble instead of just banging once?",
+   "But why? Why does thunder rumble instead of just banging once?"
+  ],
+  [
+   "A lightning bolt heats the air to about **50,000 \u00b0F.**",
+   "A lightning bolt heats the air to about fifty thousand degrees Fahrenheit."
+  ],
+  [
+   "That's about **five times hotter** than the surface of the Sun.",
+   "That's about five times hotter than the surface of the Sun."
+  ],
+  [
+   "The air expands so fast it **explodes** outward, then cools and snaps back.",
+   "The air expands so fast it explodes outward, then cools and snaps back."
+  ],
+  [
+   "Here's the twist: a bolt isn't a dot. It's a **long, crooked channel** across the sky.",
+   "Here's the twist: a bolt isn't a dot. It's a long, crooked channel across the sky."
+  ],
+  [
+   "And every piece of that channel makes its **own boom.**",
+   "And every piece of that channel makes its own boom."
+  ],
+  [
+   "Sound is slow. It travels about **one kilometer every three seconds.**",
+   "Sound is slow. It travels about one kilometer every three seconds."
+  ],
+  [
+   "So the boom from the **closest** part of the bolt reaches you first,",
+   "So the boom from the closest part of the bolt reaches you first,"
+  ],
+  [
+   "and the booms from farther parts arrive **seconds later,** one after another.",
+   "and the booms from farther parts arrive seconds later, one after another."
+  ],
+  [
+   "Lots of booms in a row, smeared into one long **rumble.**",
+   "Lots of booms in a row, smeared into one long rumble."
+  ],
+  [
+   "**But** distance changes the sound too.",
+   "But distance changes the sound too."
+  ],
+  [
+   "Up close, it's a **tearing crack.** Far away, the air soaks up the high notes, and only a low **rumble** survives.",
+   "Up close, it's a tearing crack. Far away, the air soaks up the high notes, and only a low rumble survives."
+  ],
+  [
+   "So a rumble is one bolt, heard from **every point** along its length.",
+   "So a rumble is one bolt, heard from every point along its length."
+  ],
+  [
+   "How far away was it? Count from **flash to bang.**",
+   "How far away was it? Count from flash to bang."
+  ],
+  [
+   "Every **five seconds** is about one mile. Every three seconds, about one kilometer.",
+   "Every five seconds is about one mile. Every three seconds, about one kilometer."
+  ],
+  [
+   "And if you can hear thunder, you're close enough to be struck: **head indoors.**",
+   "And if you can hear thunder, you're close enough to be struck: head indoors."
+  ],
+  [
+   "**Counting?**",
+   "Counting?"
+  ],
+  [
+   "Follow for more of how it really works.",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "tail": 0.5
+}

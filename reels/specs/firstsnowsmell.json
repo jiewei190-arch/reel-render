@@ -1,0 +1,84 @@
+{
+ "name": "firstsnowsmell",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Can you really **smell snow** coming? Sort of.",
+   "Can you really smell snow coming? Sort of."
+  ],
+  [
+   "But snow is just **frozen water,** and pure water has **no smell.** So what are you noticing?",
+   "But snow is just frozen water, and pure water has no smell. So what are you noticing?"
+  ],
+  [
+   "Clue one: **cold.** Cold slows odor molecules down, so fewer of them reach your nose.",
+   "Clue one: cold. Cold slows odor molecules down, so fewer of them reach your nose."
+  ],
+  [
+   "Monell scientist Pamela Dalton says in winter, there are simply **fewer smells to smell.**",
+   "Monell scientist Pamela Dalton says in winter, there are simply fewer smells to smell."
+  ],
+  [
+   "Clue two: **damp.** Before snow, the air often gets more **humid.**",
+   "Clue two: damp. Before snow, the air often gets more humid."
+  ],
+  [
+   "In one lab study, noses were more sensitive in **humid** air than in dry air.",
+   "In one lab study, noses were more sensitive in humid air than in dry air."
+  ],
+  [
+   "But a later study found temperature and humidity **barely changed** smell at all. So clue two is **shaky.**",
+   "But a later study found temperature and humidity barely changed smell at all. So clue two is shaky."
+  ],
+  [
+   "Clue three is the strongest: your nose can **feel cold.**",
+   "Clue three is the strongest: your nose can feel cold."
+  ],
+  [
+   "Nerve endings in your nose carry a cold sensor, **TRPM8.** The same one **menthol** switches on.",
+   "Nerve endings in your nose carry a cold sensor, T R P M eight. The same one menthol switches on."
+  ],
+  [
+   "They belong to the **trigeminal nerve.** It feels. It doesn't smell.",
+   "They belong to the trigeminal nerve. It feels. It doesn't smell."
+  ],
+  [
+   "Monell researchers found the fresh, open feeling of breathing comes mostly from your nose lining **cooling down.**",
+   "Monell researchers found the fresh, open feeling of breathing comes mostly from your nose lining cooling down."
+  ],
+  [
+   "So can you smell snow coming? **Partly.** It's mostly your nose **feeling** cold, damp air, with the usual smells **turned down.**",
+   "So can you smell snow coming? Partly. It's mostly your nose feeling cold, damp air, with the usual smells turned down."
+  ],
+  [
+   "And your brain files that crisp feeling under **snow.**",
+   "And your brain files that crisp feeling under snow."
+  ],
+  [
+   "Can you smell it coming? **Yes or no?**",
+   "Can you smell it coming? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.7
+}

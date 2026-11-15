@@ -1,0 +1,86 @@
+{
+ "name": "slipperyice",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  3,
+  4,
+  6,
+  7,
+  9,
+  10,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Your skates don't glide because your **weight melts the ice.**",
+   "Your skates don't glide because your weight melts the ice."
+  ],
+  [
+   "But then **why is ice slippery?** Physicists are **still arguing.**",
+   "But then why is ice slippery? Physicists are still arguing."
+  ],
+  [
+   "Suspect one, from 1886: **pressure melting.**",
+   "Suspect one, from eighteen eighty-six: pressure melting."
+  ],
+  [
+   "A thin blade presses so hard, it lowers the melting point, to about **minus three and a half** degrees.",
+   "A thin blade presses so hard, it lowers the melting point, to about minus three and a half degrees."
+  ],
+  [
+   "But people skate at **minus thirty-five.** And you can slip **standing still.**",
+   "But people skate at minus thirty-five. And you can slip standing still."
+  ],
+  [
+   "Suspect two: **friction.** Sliding heats the ice, and melts a thin film.",
+   "Suspect two: friction. Sliding heats the ice, and melts a thin film."
+  ],
+  [
+   "A sensor on a skate blade got **warmer, the faster it went.**",
+   "A sensor on a skate blade got warmer, the faster it went."
+  ],
+  [
+   "But that needs you **moving.**",
+   "But that needs you moving."
+  ],
+  [
+   "Suspect three: the surface of ice **isn't quite solid.**",
+   "Suspect three: the surface of ice isn't quite solid."
+  ],
+  [
+   "Michael Faraday suggested a thin, **liquid-like layer,** back in the 1850s.",
+   "Michael Faraday suggested a thin, liquid-like layer, back in the eighteen fifties."
+  ],
+  [
+   "In 2018, researchers found loose top molecules **rolling** across the surface, like **tiny spheres.**",
+   "In twenty eighteen, researchers found loose top molecules rolling across the surface, like tiny spheres."
+  ],
+  [
+   "Ice was slipperiest around **minus seven degrees.**",
+   "Ice was slipperiest around minus seven degrees."
+  ],
+  [
+   "And a 2025 simulation suggests rubbing can **scramble** the surface, **without melting it.**",
+   "And a twenty twenty-five simulation suggests rubbing can scramble the surface, without melting it."
+  ],
+  [
+   "So: it's **mostly not pressure.** It's a slippery surface plus friction, and scientists **still debate the mix.**",
+   "So: it's mostly not pressure. It's a slippery surface plus friction, and scientists still debate the mix."
+  ],
+  [
+   "Your bet: suspect **one, two, or three?**",
+   "Your bet: suspect one, two, or three?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

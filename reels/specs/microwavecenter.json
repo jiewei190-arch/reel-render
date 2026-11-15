@@ -1,0 +1,92 @@
+{
+ "name": "microwavecenter",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Your microwave **doesn't** cook food from the **inside out.**",
+   "Your microwave doesn't cook food from the inside out."
+  ],
+  [
+   "But then why is food **cold in the middle** after microwaving?",
+   "But then why is food cold in the middle after microwaving?"
+  ],
+  [
+   "Microwaves only reach about **an inch** into food. That's the outer layer.",
+   "Microwaves only reach about an inch into food. That's the outer layer."
+  ],
+  [
+   "There, they make **water molecules** jiggle, and that motion becomes **heat.**",
+   "There, they make water molecules jiggle, and that motion becomes heat."
+  ],
+  [
+   "Everything deeper has to **wait** for that heat to creep inward, slowly, by **conduction.**",
+   "Everything deeper has to wait for that heat to creep inward, slowly, by conduction."
+  ],
+  [
+   "Here's the twist: **frozen** food is even worse. **Ice** barely absorbs microwaves.",
+   "Here's the twist: frozen food is even worse. Ice barely absorbs microwaves."
+  ],
+  [
+   "So the thawed edges soak up the energy and get **hotter,** while the icy middle hardly warms.",
+   "So the thawed edges soak up the energy and get hotter, while the icy middle hardly warms."
+  ],
+  [
+   "That's how you get a bowl that's **bubbling at the rim** and **icy in the center.**",
+   "That's how you get a bowl that's bubbling at the rim and icy in the center."
+  ],
+  [
+   "And a cold spot isn't just annoying. The **USDA** warns that harmful **bacteria** can survive there.",
+   "And a cold spot isn't just annoying. The USDA warns that harmful bacteria can survive there."
+  ],
+  [
+   "So how do you fix it? **Three tricks.**",
+   "So how do you fix it? Three tricks."
+  ],
+  [
+   "One: **stir or rotate** halfway, to move the cold middle out to the edge.",
+   "One: stir or rotate halfway, to move the cold middle out to the edge."
+  ],
+  [
+   "Two: use **medium power** for big portions, so the heat has time to reach the center.",
+   "Two: use medium power for big portions, so the heat has time to reach the center."
+  ],
+  [
+   "Three: let it **stand.** The USDA says standing time **completes the cooking.**",
+   "Three: let it stand. The USDA says standing time completes the cooking."
+  ],
+  [
+   "So why is the middle cold? Microwaves heat the **outside.** The middle waits for **conduction.**",
+   "So why is the middle cold? Microwaves heat the outside. The middle waits for conduction."
+  ],
+  [
+   "Do you **stir** your leftovers halfway? Yes or no?",
+   "Do you stir your leftovers halfway? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7
+}

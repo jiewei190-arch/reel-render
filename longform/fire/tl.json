@@ -1,0 +1,196 @@
+{
+ "total": 68.587,
+ "scenes": [
+  {
+   "v": "hook_fire",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "The oldest proof of people making fire was found in England.",
+     "start": 0.6,
+     "end": 3.837
+    },
+    {
+     "text": "And it's about four hundred thousand years old.",
+     "start": 4.157,
+     "end": 6.458
+    }
+   ],
+   "end": 6.828
+  },
+  {
+   "v": "hook_q",
+   "start": 6.828,
+   "lines": [
+    {
+     "text": "So how did cavemen make fire?",
+     "start": 7.128,
+     "end": 8.795
+    }
+   ],
+   "end": 9.165
+  },
+  {
+   "v": "meet_moss",
+   "start": 9.165,
+   "lines": [
+    {
+     "text": "Meet Moss. He's rubbing sticks. Nothing.",
+     "start": 9.465,
+     "end": 11.798
+    }
+   ],
+   "end": 12.168
+  },
+  {
+   "v": "wonderwerk",
+   "start": 12.168,
+   "lines": [
+    {
+     "text": "Surprise one: using fire is even older.",
+     "start": 12.468,
+     "end": 15.211
+    },
+    {
+     "text": "In Wonderwerk Cave, South Africa, there's ash and burnt bone from about a million years ago.",
+     "start": 15.531,
+     "end": 20.65
+    }
+   ],
+   "end": 21.02
+  },
+  {
+   "v": "use_vs_make",
+   "start": 21.02,
+   "lines": [
+    {
+     "text": "But using fire isn't making it.",
+     "start": 21.32,
+     "end": 23.094
+    },
+    {
+     "text": "Maybe they grabbed flames from wildfires.",
+     "start": 23.414,
+     "end": 25.8
+    }
+   ],
+   "end": 26.17
+  },
+  {
+   "v": "barnham",
+   "start": 26.17,
+   "lines": [
+    {
+     "text": "Surprise two: at Barnham, people lit fires in one spot, again and again.",
+     "start": 26.47,
+     "end": 30.787
+    },
+    {
+     "text": "It got hotter than seven hundred degrees.",
+     "start": 31.107,
+     "end": 33.211
+    }
+   ],
+   "end": 33.581
+  },
+  {
+   "v": "pyrite",
+   "start": 33.581,
+   "lines": [
+    {
+     "text": "Surprise three: two little pieces of a rock called pyrite.",
+     "start": 33.881,
+     "end": 37.192
+    },
+    {
+     "text": "Strike it with flint, and you get sparks.",
+     "start": 37.512,
+     "end": 39.594
+    }
+   ],
+   "end": 39.964
+  },
+  {
+   "v": "brought",
+   "start": 39.964,
+   "lines": [
+    {
+     "text": "Pyrite isn't found naturally there.",
+     "start": 40.264,
+     "end": 42.195
+    },
+    {
+     "text": "So someone probably brought it, to start fires.",
+     "start": 42.515,
+     "end": 45.04
+    }
+   ],
+   "end": 45.41
+  },
+  {
+   "v": "who",
+   "start": 45.41,
+   "lines": [
+    {
+     "text": "Who? Experts think early Neanderthals.",
+     "start": 45.71,
+     "end": 48.058
+    }
+   ],
+   "end": 48.428
+  },
+  {
+   "v": "handaxes",
+   "start": 48.428,
+   "lines": [
+    {
+     "text": "Surprise four: Neanderthals in France left clues too.",
+     "start": 48.728,
+     "end": 51.787
+    },
+    {
+     "text": "Scratches on their hand axes suggest striking pyrite for sparks.",
+     "start": 52.107,
+     "end": 55.826
+    }
+   ],
+   "end": 56.196
+  },
+  {
+   "v": "sticks",
+   "start": 56.196,
+   "lines": [
+    {
+     "text": "Rubbing sticks? Maybe. But wood rots, so there's no proof that old.",
+     "start": 56.496,
+     "end": 60.332
+    }
+   ],
+   "end": 60.702
+  },
+  {
+   "v": "moss_spark",
+   "start": 60.702,
+   "lines": [
+    {
+     "text": "Moss tried pyrite. A spark! Right onto his hair.",
+     "start": 61.002,
+     "end": 63.862
+    }
+   ],
+   "end": 64.232
+  },
+  {
+   "v": "follow",
+   "start": 64.232,
+   "lines": [
+    {
+     "text": "Follow for more Stone Age Stories.",
+     "start": 64.532,
+     "end": 66.417
+    }
+   ],
+   "end": 68.587
+  }
+ ]
+}

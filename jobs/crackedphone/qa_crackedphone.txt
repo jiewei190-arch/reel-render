@@ -1,0 +1,15 @@
+QA crackedphone: WARN   (/home/user/reel-render/jobs/crackedphone/crackedphone.mp4, 77.0 s)
+  PASS  static          longest no-change run 3.75 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  PASS  safe zones      UI zones clear
+  WARN  outer 24 px     content at the frame edge 0.0-3.0s, 64.8-67.5s, 70.8-74.2s
+  PASS  loudness        -15.7 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.0 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 14.1 dB above the pauses (15 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          77.0 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 10.6 (min 1.0), contrast 40.0 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      crackedphone.mp4 1080x1920 SAR 1:1; crackedphone_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)

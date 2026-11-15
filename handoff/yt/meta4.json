@@ -1,0 +1,342 @@
+[
+ {
+  "id": "lock",
+  "file": "jobs/lock/lock_ep.mp4",
+  "title": "How a Pin Tumbler Lock Really Works 🔐 | Ep. 13",
+  "description": "Your key is a tiny code. Here is how a pin tumbler lock actually reads it 🔑 Five little pins, one shear line, and a key that lines them all up.\n\nSources: Britannica \"Lock\" and \"Linus Yale, Jr.\"; HowStuffWorks \"How Locks Work\"; Wikipedia \"Pin tumbler lock\".\n\nFollow for more of how it really works.\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #lock #engineering #explained #Shorts",
+  "tags": [
+   "#howitworks",
+   "#lock",
+   "#engineering",
+   "#explained",
+   "#Shorts"
+  ],
+  "thumb": "jobs/lock/thumb_lock.jpg",
+  "thumb_text": "PIN LOCK\nSECRET",
+  "date": "2026-11-06",
+  "time": "08:00"
+ },
+ {
+  "id": "match",
+  "file": "jobs/match/match_ep.mp4",
+  "title": "How a Match Really Lights 🔥 | Ep. 14",
+  "description": "Strike a match and fire appears, but much of the chemistry isn't on the match, it's on the box 🔥 The head holds the fuel (sulfur, antimony sulfide) and the oxygen supply (potassium chlorate). The striking strip holds red phosphorus: friction heats a trace of it, it ignites, and that sets off the head. Which everyday thing should we explain next? 👇\n\nSources: University of Washington Chemistry demo, Royal Society of Chemistry, Britannica, Compound Interest, AIChE CCPS.\n\n🔔 Subscribe for a new explainer every day.\n#matches #chemistry #science #howitworks #Shorts",
+  "tags": [
+   "#matches",
+   "#chemistry",
+   "#science",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb": "jobs/match/thumb_match.jpg",
+  "thumb_text": "WHY A MATCH\nLIGHTS",
+  "date": "2026-11-06",
+  "time": "13:00"
+ },
+ {
+  "id": "ship",
+  "file": "jobs/ship/ship_ep.mp4",
+  "title": "How a Giant Steel Ship Floats 🚢 | Ep. 15",
+  "description": "A steel ship weighs thousands of tons, so why doesn't it sink? Because it pushes aside its own weight in water. Clay lump vs clay boat, Archimedes' principle, average density, and the Plimsoll line, in under 90 seconds.\n\nSources: NASA Glenn Research Center (Buoyancy); Britannica (Archimedes' principle, Plimsoll line); OpenStax University Physics; USGS Water Science School; IMO International Convention on Load Lines; Gard.\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #physics #science #ships #Shorts",
+  "tags": [
+   "#howitworks",
+   "#physics",
+   "#science",
+   "#ships",
+   "#Shorts"
+  ],
+  "thumb": "jobs/ship/thumb_ship.jpg",
+  "thumb_text": "STEEL\nFLOATS?",
+  "date": "2026-11-06",
+  "time": "19:00"
+ },
+ {
+  "id": "eclipse",
+  "file": "jobs/eclipse/eclipse_ep.mp4",
+  "title": "How Solar and Lunar Eclipses Really Work 🌑 | Ep. 16",
+  "description": "The Moon can hide the Sun in the middle of the day 🌑 In a solar eclipse the Moon slides between us and the Sun; its shadow has a dark inner umbra (totality) and a fainter outer penumbra. In a lunar eclipse Earth's shadow falls on the Moon, which glows dim red. Why not every month? The Moon's orbit is tilted about 5°. Safety: solar eclipses need real eclipse glasses, not sunglasses.\n\nSources: NASA Science, Scientific American, Earth View Inc. eclipse viewing guide.\n\n🔔 Subscribe for a new explainer every day.\n#eclipse #space #astronomy #howitworks #Shorts",
+  "tags": [
+   "#eclipse",
+   "#space",
+   "#astronomy",
+   "#howitworks",
+   "#Shorts"
+  ],
+  "thumb": "jobs/eclipse/thumb_eclipse.jpg",
+  "thumb_text": "ECLIPSES\nEXPLAINED",
+  "date": "2026-11-07",
+  "time": "08:00"
+ },
+ {
+  "id": "skyblue",
+  "file": "jobs/skyblue/skyblue_ep.mp4",
+  "title": "Why the Sky Is Really Blue 🌤️ | Ep. 17",
+  "description": "Why is the sky blue, a sunset red and a cloud white? It is all light scattering: tiny air molecules scatter short blue waves far more than long red ones, sunset light crosses more air so the blue is scattered out, and big cloud droplets scatter every color about equally. Here is how it really works.\n\nSources: Met Office, UCAR SciEd, Royal Museums Greenwich.\n\n🔔 Subscribe for a new explainer every day.\n#sky #sunset #clouds #science #Shorts",
+  "tags": [
+   "#sky",
+   "#sunset",
+   "#clouds",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/skyblue/thumb_skyblue.jpg",
+  "thumb_text": "WHY IS THE\nSKY BLUE?",
+  "date": "2026-11-07",
+  "time": "13:00"
+ },
+ {
+  "id": "magnet",
+  "file": "jobs/magnet/magnet_ep.mp4",
+  "title": "Cut a Magnet in Half and You Get Two Magnets 🧲 | Ep. 18",
+  "description": "Cut a magnet in half and you never get a \"north piece\". You get two magnets, every time. Inside iron, the electrons act like teeny magnets, and they line up in zones called domains. A nearby magnet swings those domains into line, which is why a nail sticks. Heat iron past about 770 °C and the order falls apart. Fridge magnets hide stripes of alternating poles, so they only grip on one side. So could anything ever have just one pole?\n\nSources: National MagLab \"Magnetic Domains\"; HyperPhysics (Georgia State) \"Ferromagnetism\"; Univ. of Illinois Physics Van; K&J Magnetics \"Halbach Arrays\"; CERN MoEDAL.\n\n🔔 Subscribe for a new explainer every day.\n#magnets #physics #howthingswork #science #Shorts",
+  "tags": [
+   "#magnets",
+   "#physics",
+   "#howthingswork",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/magnet/thumb_magnet.jpg",
+  "thumb_text": null,
+  "date": "2026-11-07",
+  "time": "19:00"
+ },
+ {
+  "id": "barcode",
+  "file": "jobs/barcode/barcode_ep.mp4",
+  "title": "A Barcode Doesn't Hold the Price 🛒 | Ep. 19",
+  "description": "A barcode doesn't hold the price or the name. All it holds is a number, and the store's computer looks up the rest. A scanner reads black bars (they soak up light) and white gaps (they bounce it back) as a signal, decodes seven-slice digits, and checks the last digit with a bit of math. The first item ever scanned was a pack of Juicy Fruit gum, in Troy, Ohio, on June 26, 1974.\n\nSources: GS1 (what a barcode encodes); Wikipedia \"Universal Product Code\" (structure, check digit, first scan, citing the Smithsonian and Wired); Scanbot and Triton (how laser scanners read bars).\n\n🔔 Subscribe for a new explainer every day.\n#barcode #howthingswork #technology #science #Shorts",
+  "tags": [
+   "#barcode",
+   "#howthingswork",
+   "#technology",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/barcode/thumb_barcode.jpg",
+  "thumb_text": "IT'S NOT\nTHE PRICE",
+  "date": "2026-11-08",
+  "time": "08:00"
+ },
+ {
+  "id": "search",
+  "file": "jobs/search/search_ep.mp4",
+  "title": "Google Doesn't Search the Web When You Search 🔎 | Ep. 20",
+  "description": "When you hit search, Google doesn't go out and search the web. It already did that. Crawlers follow links all day, and everything they find goes into an index of hundreds of billions of pages. Google compares it to the index at the back of a book. Your words pull up lists of pages, and the pages that match get ranked by meaning, relevance, quality, usability and context, all in a fraction of a second. What's the strangest thing you've ever searched?\n\nSources: Google \"How Search works\" (organizing information; ranking results); Google blog \"Understanding searches better than ever before\" (2019); Manning et al., Introduction to Information Retrieval.\n\n🔔 Subscribe for a new explainer every day.\n#google #searchengine #howthingswork #tech #Shorts",
+  "tags": [
+   "#google",
+   "#searchengine",
+   "#howthingswork",
+   "#tech",
+   "#Shorts"
+  ],
+  "thumb": "jobs/search/thumb_search.jpg",
+  "thumb_text": null,
+  "date": "2026-11-08",
+  "time": "13:00"
+ },
+ {
+  "id": "faceid",
+  "file": "jobs/faceid/faceid_ep.mp4",
+  "title": "Face ID Doesn't Look at Your Face 📱 | Ep. 21",
+  "description": "Your phone doesn't look at your face. It looks at its shape. Face ID projects thousands of invisible infrared dots, reads where they land to build a depth map, and turns that into numbers that stay on your device. A printed photo has no depth, so it can't fool it.\n\nSources: Apple Support (About Face ID advanced technology); Apple Platform Security guide (Face ID and Touch ID security).\n\n🔔 Subscribe for a new explainer every day.\n#faceid #iphone #technology #howthingswork #Shorts",
+  "tags": [
+   "#faceid",
+   "#iphone",
+   "#technology",
+   "#howthingswork",
+   "#Shorts"
+  ],
+  "thumb": "jobs/faceid/thumb_faceid.jpg",
+  "thumb_text": "NOT A\nPHOTO",
+  "date": "2026-11-08",
+  "time": "19:00"
+ },
+ {
+  "id": "airfryer",
+  "file": "jobs/airfryer/airfryer_ep.mp4",
+  "title": "Your Air Fryer Has Never Fried Anything 🍟 | Ep. 22",
+  "description": "Your air fryer has never fried anything. 🍟 It's a tiny countertop convection oven: a heater, a fan, and air whipping around at up to 200 °C. Fast air strips away the thin \"blanket\" of still air around your food, the outside dries, and the Maillard reaction turns it golden. So: fryer, or very small oven?\n\nSources: Wikipedia \"Air fryer\", \"Convection oven\" (boundary layer), \"Maillard reaction\"; Philips Airfryer launch 2010, inventor Fred van der Weij (via Wikipedia).\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #science #airfryer #kitchenscience #Shorts",
+  "tags": [
+   "#howitworks",
+   "#science",
+   "#airfryer",
+   "#kitchenscience",
+   "#Shorts"
+  ],
+  "thumb": "jobs/airfryer/thumb_airfryer.jpg",
+  "thumb_text": null,
+  "date": "2026-11-09",
+  "time": "08:00"
+ },
+ {
+  "id": "orbit",
+  "file": "jobs/orbit/orbit_ep.mp4",
+  "title": "Orbit Is Falling and Missing the Ground 🛰️ | Ep. 23",
+  "description": "To reach orbit, a rocket doesn't just go up. It goes sideways. The space station moves at about 17,500 miles per hour, fast enough that as it falls toward Earth, the ground curves away beneath it. Orbit isn't escaping gravity: at the station's height, gravity is still about 90 percent as strong. It's falling and missing the ground, which is why astronauts float.\n\nSources: NASA (What Is Microgravity?; Space Station Facts and Figures; Basics of Space Flight, Gravity & Mechanics; Technical Memorandum TM X-52396); NOAA SciJinks.\n\n🔔 Subscribe for a new explainer every day.\n#orbit #space #physics #howthingswork #Shorts",
+  "tags": [
+   "#orbit",
+   "#space",
+   "#physics",
+   "#howthingswork",
+   "#Shorts"
+  ],
+  "thumb": "jobs/orbit/thumb_orbit.jpg",
+  "thumb_text": "ALWAYS\nFALLING",
+  "date": "2026-11-09",
+  "time": "13:00"
+ },
+ {
+  "id": "recommend",
+  "file": "jobs/recommend/recommend_ep.mp4",
+  "title": "Only a Few Dozen Videos Ever Reach Your Screen 📱 | Ep. 24",
+  "description": "Out of millions of videos, only a few dozen ever reach your screen. YouTube's engineers described it as a funnel: pull out a few hundred that viewers like you enjoyed, then score each one. Back in 2011 YouTube learned that a click doesn't mean you watched, so its 2016 system predicted watch time instead, and today surveys, shares, likes and dislikes count too. Instagram says its key Reels guesses are whether you'll watch to the end, like it or reshare it. So what does your feed think you are?\n\nSources: Covington, Adams & Sargin, \"Deep Neural Networks for YouTube Recommendations\" (2016); YouTube Official Blog, \"On YouTube's recommendation system\" (2021); Instagram, \"Instagram Ranking Explained\" (2023).\n\n🔔 Subscribe for a new explainer every day.\n#algorithm #youtube #howthingswork #tech #Shorts",
+  "tags": [
+   "#algorithm",
+   "#youtube",
+   "#howthingswork",
+   "#tech",
+   "#Shorts"
+  ],
+  "thumb": "jobs/recommend/thumb_recommend.jpg",
+  "thumb_text": null,
+  "date": "2026-11-09",
+  "time": "19:00"
+ },
+ {
+  "id": "tap",
+  "file": "jobs/tap/tap_ep.mp4",
+  "title": "How Tap-to-Pay Works With No Battery 💳 | Ep. 25",
+  "description": "A contactless card has no battery. So how does it pay when you tap? The terminal's coil makes a magnetic field that flips about 13.5 million times a second, and it powers the card's chip through a tiny wireless \"transformer\". Every payment uses a one-time code, so a recorded signal can't be replayed.\n\nSources: Wikipedia \"Near-field communication\" and \"Contactless payment\"; Apple Pay security overview; EMVCo.\n\n🔔 Subscribe for a new explainer every day.\n#tapandpay #nfc #howthingswork #technology #Shorts",
+  "tags": [
+   "#tapandpay",
+   "#nfc",
+   "#howthingswork",
+   "#technology",
+   "#Shorts"
+  ],
+  "thumb": "jobs/tap/thumb_tap.jpg",
+  "thumb_text": "NO\nBATTERY",
+  "date": "2026-11-10",
+  "time": "08:00"
+ },
+ {
+  "id": "flush",
+  "file": "jobs/flush/flush_ep.mp4",
+  "title": "Your Toilet Doesn't Push, It Sucks 🚽 | Ep. 26",
+  "description": "Your toilet doesn't push the water down. It sucks it. 🚽 In most North American toilets, the bowl fills the curved trapway so fast that the whole pipe turns into a siphon, and that gurgle at the end is air breaking it. Puller or pusher: which one is yours?\n\nSources: Wikipedia \"Flush toilet\" and \"Low-flush toilet\"; US EPA WaterSense (Energy Policy Act 1992, 1.6 gpf); Explain That Stuff \"How toilets work\"; plumbing guides on bucket flushing (Benjamin Franklin Plumbing, HomeServe); Architizer \"How to Specify: Toilets\".\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #science #plumbing #engineering #Shorts",
+  "tags": [
+   "#howitworks",
+   "#science",
+   "#plumbing",
+   "#engineering",
+   "#Shorts"
+  ],
+  "thumb": "jobs/flush/thumb_flush.jpg",
+  "thumb_text": null,
+  "date": "2026-11-10",
+  "time": "13:00"
+ },
+ {
+  "id": "window",
+  "file": "jobs/window/window_ep.mp4",
+  "title": "The Tiny Hole in Every Plane Window ✈️ | Ep. 27",
+  "description": "That tiny hole at the bottom of a plane window isn't a flaw. Windows have three panes. The hole in the middle one lets cabin air into the gap, so the pressure pushing out lands on the outer pane, with the middle pane as a backup. It also lets moisture out so the window doesn't fog up.\n\nSources: ScienceAlert; Time (quoting Slate's Mark Vanhoenacker and GKN Aerospace's Marlowe Moncur); AirHelp.\n\n🔔 Subscribe for a new explainer every day.\n#airplane #aviation #engineering #howthingswork #Shorts",
+  "tags": [
+   "#airplane",
+   "#aviation",
+   "#engineering",
+   "#howthingswork",
+   "#Shorts"
+  ],
+  "thumb": "jobs/window/thumb_window.jpg",
+  "thumb_text": "THE TINY\nHOLE",
+  "date": "2026-11-10",
+  "time": "19:00"
+ },
+ {
+  "id": "hurricanewc",
+  "file": "jobs/hurricanewc/hurricanewc_ep.mp4",
+  "title": "How a Hurricane Really Forms 🌀 | Ep. 28",
+  "description": "A hurricane is a giant heat engine, and its fuel is warm ocean water. The sea surface needs to be at least about 27 °C (80 °F). Warm, moist air rises, cools and condenses into storm clouds, releasing the heat that powers the storm. Earth's rotation turns the inflow into a spin: counterclockwise north of the equator, clockwise south of it. When sustained winds reach 74 mph it is officially a hurricane, with a calm eye inside an eyewall of the strongest winds. Which part surprised you most?\n\nSources: NOAA \"Hurricanes\"; NOAA JetStream \"Tropical Cyclone Introduction\" and \"Tropical Cyclone Structure\"; NHC Saffir-Simpson Hurricane Wind Scale.\n\n🔔 Subscribe for a new explainer every day.\n#hurricane #weather #howthingswork #science #Shorts",
+  "tags": [
+   "#hurricane",
+   "#weather",
+   "#howthingswork",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/hurricanewc/thumb_hurricanewc.jpg",
+  "thumb_text": "HOW A\nHURRICANE\nFORMS",
+  "date": "2026-11-11",
+  "time": "08:00"
+ },
+ {
+  "id": "submarine",
+  "file": "jobs/submarine/submarine_ep.mp4",
+  "title": "To Dive, a Submarine Lets the Ocean In 🌊 | Ep. 29",
+  "description": "To dive, a submarine lets the ocean in, on purpose. 🌊 So how does it ever come back up? Vents open, air rushes out, seawater floods the ballast tanks and it slips under. Trim tanks make it hover, diving planes steer, and a blast of compressed air pushes the water back out to bring it home. Would you trust a bubble of air to bring you home?\n\nSources: Wikipedia \"Submarine\", \"Ballast tank\", \"Archimedes' principle\", \"Swim bladder\", \"Virginia-class submarine\".\n\n🔔 Subscribe for a new explainer every day.\n#howitworks #science #submarine #physics #Shorts",
+  "tags": [
+   "#howitworks",
+   "#science",
+   "#submarine",
+   "#physics",
+   "#Shorts"
+  ],
+  "thumb": "jobs/submarine/thumb_submarine.jpg",
+  "thumb_text": null,
+  "date": "2026-11-11",
+  "time": "13:00"
+ },
+ {
+  "id": "wifi",
+  "file": "jobs/wifi/wifi_ep.mp4",
+  "title": "How WiFi Gets Through Your Walls 📶 | Ep. 30",
+  "description": "Your WiFi goes through walls. How? It isn't pushing anything solid. It's radio waves, about 12 cm from peak to peak, and a wall is barely in their way. Each wall just takes a small share, and metal, stone and water take the most. The 5 GHz band is faster but reaches less far.\n\nSources: Wikipedia \"Wi-Fi\" and \"Microwave oven\"; basic physics (c = f x wavelength).\n\n🔔 Subscribe for a new explainer every day.\n#wifi #howthingswork #explained #technology #Shorts",
+  "tags": [
+   "#wifi",
+   "#howthingswork",
+   "#explained",
+   "#technology",
+   "#Shorts"
+  ],
+  "thumb": "jobs/wifi/thumb_wifi.jpg",
+  "thumb_text": "THROUGH\nWALLS?",
+  "date": "2026-11-11",
+  "time": "19:00"
+ },
+ {
+  "id": "onion",
+  "file": "jobs/onion/onion_ep.mp4",
+  "title": "Why Onions Really Make You Cry 🧅 | Ep. 31",
+  "description": "Why do onions make you cry? The onion isn't sad, it's defending itself. Cutting rips its cells open, so enzymes meet sulfur chemicals and make a stinging gas, syn-propanethial-S-oxide. The gas drifts into your eyes, your nerves warn your brain, and your tear glands flush it away.\n\nSources: Wikipedia \"Lachrymatory factor\"; Discover Magazine; The Conversation; Imai et al., Nature 2002.\n\n🔔 Subscribe for a new explainer every day.\n#onion #chemistry #howthingswork #science #Shorts",
+  "tags": [
+   "#onion",
+   "#chemistry",
+   "#howthingswork",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/onion/thumb_onion.jpg",
+  "thumb_text": "WHY ONIONS\nMAKE YOU CRY",
+  "date": "2026-11-12",
+  "time": "08:00"
+ },
+ {
+  "id": "sleep",
+  "file": "jobs/sleep/sleep_ep.mp4",
+  "title": "What Your Brain Does All Night 😴 | Ep. 32",
+  "description": "When you sleep, your brain doesn't switch off. It runs through cycles of about 80 to 100 minutes, four to six times a night: deep slow-wave sleep early on, more REM later, when your eyes dart, your brain is about as active as when you're awake, and dreaming usually happens. Sleep helps form long-term memories, and in mice, researchers found the brain clears waste faster while asleep.\n\nSources: NHLBI/NIH (Stages of Sleep; Why Is Sleep Important?); Xie et al., Science 2013 (mouse study); Discover Magazine (why we dream is still debated).\n\n🔔 Subscribe for a new explainer every day.\n#sleep #dreams #brain #science #Shorts",
+  "tags": [
+   "#sleep",
+   "#dreams",
+   "#brain",
+   "#science",
+   "#Shorts"
+  ],
+  "thumb": "jobs/sleep/thumb_sleep.jpg",
+  "thumb_text": "YOUR BRAIN\nAT NIGHT",
+  "date": "2026-11-12",
+  "time": "13:00"
+ }
+]

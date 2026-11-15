@@ -1,0 +1,112 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.5,
+ "sr": 24000,
+ "duration": 26.221,
+ "render_s": 204.2,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "The shortest war in history lasted 38 minutes.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "The shortest war in history lasted thirty-eight minutes.",
+     "seed": 7,
+     "heard": "The shortest war in history lasted 38 minutes.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.418
+  },
+  {
+   "n": 2,
+   "text": "Zanzibar, 1896. A new sultan seized the throne. Britain said: gone by nine in the morning.",
+   "start": 3.718,
+   "parts": [
+    {
+     "tts": "Zanzibar, eighteen ninety-six. A new sultan seized the throne. Britain said: gone by nine in the morning.",
+     "seed": 7,
+     "heard": "Zanzibar, 1896. A new sultan seized the throne. Britain said, gone by nine in the morning.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.561
+  },
+  {
+   "n": 3,
+   "text": "At nine, the warships opened fire. The royal yacht sank almost at once.",
+   "start": 9.861,
+   "parts": [
+    {
+     "tts": "At nine, the warships opened fire. The royal yacht sank almost at once.",
+     "seed": 7,
+     "heard": "At 9, the warships opened fire. The Royal Yacht sank almost at once.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.378
+  },
+  {
+   "n": 4,
+   "text": "At nine thirty-eight, the flag came down. The sultan fled to the German consulate.",
+   "start": 14.678,
+   "parts": [
+    {
+     "tts": "At nine thirty-eight, the flag came down. The sultan fled to the German consulate.",
+     "seed": 7,
+     "heard": "At 9.38, the flag came down. The Sultan fled to the German consulate.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 18.714
+  },
+  {
+   "n": 5,
+   "text": "Around 500 defenders were killed or wounded. Britain had one injured sailor.",
+   "start": 19.014,
+   "parts": [
+    {
+     "tts": "Around five hundred defenders were killed or wounded. Britain had one injured sailor.",
+     "seed": 7,
+     "heard": "Around 500 defenders were killed or wounded. Britain had one injured sailor.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.591
+  },
+  {
+   "n": 6,
+   "text": "Still the shortest war ever recorded.",
+   "start": 23.891,
+   "parts": [
+    {
+     "tts": "Still the shortest war ever recorded.",
+     "seed": 7,
+     "heard": "still the shortest war ever recorded.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.922
+  }
+ ]
+}

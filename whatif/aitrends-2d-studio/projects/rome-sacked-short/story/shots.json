@@ -1,0 +1,243 @@
+{
+ "duration": 38.385,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.085,
+   "line": "August 24th, 410.",
+   "scene": "gate",
+   "set": "gate",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "wind",
+     "gain": -14,
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.085,
+   "end": 5.635,
+   "line": "Nobody has broken into Rome in almost eight hundred years.",
+   "scene": "gate",
+   "set": "gate"
+  },
+  {
+   "id": "s03",
+   "start": 5.635,
+   "end": 7.785,
+   "line": "So this guard is very relaxed.",
+   "scene": "gate",
+   "set": "gate"
+  },
+  {
+   "id": "s04",
+   "start": 7.785,
+   "end": 9.935,
+   "line": "Then the Salarian Gate opens.",
+   "scene": "gate",
+   "set": "gate",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "whoosh",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s05",
+   "start": 9.935,
+   "end": 11.585,
+   "line": "Some say, from the inside.",
+   "scene": "gate",
+   "set": "gate",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s06",
+   "start": 11.585,
+   "end": 12.985,
+   "line": "The Visigoths are in.",
+   "scene": "gate",
+   "set": "gate",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s07",
+   "start": 12.985,
+   "end": 15.835,
+   "line": "For three days, the Eternal City gets looted.",
+   "scene": "street",
+   "set": "street",
+   "in": {
+    "type": "whip"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s08",
+   "start": 15.835,
+   "end": 20.135,
+   "line": "Two years earlier, Rome paid them off with three thousand pounds of pepper.",
+   "scene": "house",
+   "set": "house",
+   "in": {
+    "type": "dipWhite",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s09",
+   "start": 20.135,
+   "end": 22.185,
+   "line": "This time, pepper won't fix it.",
+   "scene": "house",
+   "set": "house",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s10",
+   "start": 22.185,
+   "end": 26.385,
+   "line": "And the emperor? He's not even in Rome. He's in Ravenna.",
+   "scene": "palace",
+   "set": "palace",
+   "in": {
+    "type": "whip"
+   }
+  },
+  {
+   "id": "s11",
+   "start": 26.385,
+   "end": 28.735,
+   "line": "Told that Rome has perished, he panics.",
+   "scene": "palace",
+   "set": "palace",
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "hit",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 28.735,
+   "end": 30.135,
+   "line": "About his chicken.",
+   "scene": "palace",
+   "set": "palace"
+  },
+  {
+   "id": "s13",
+   "start": 30.135,
+   "end": 31.285,
+   "line": "Named Roma.",
+   "scene": "palace",
+   "set": "palace",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.285,
+   "end": 32.935,
+   "line": "Or so the story goes.",
+   "scene": "palace",
+   "set": "palace"
+  },
+  {
+   "id": "s15",
+   "start": 32.935,
+   "end": 38.385,
+   "line": "How did the greatest empire on Earth end up here? Subscribe to find out.",
+   "scene": "gate",
+   "set": "gate",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 11.585,
+   "mood": "tension",
+   "intensity": 0.35
+  },
+  {
+   "start": 11.585,
+   "end": 22.185,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 22.185,
+   "end": 32.935,
+   "mood": "playful",
+   "intensity": 0.35
+  },
+  {
+   "start": 32.935,
+   "end": 38.385,
+   "mood": "tension",
+   "intensity": 0.55
+  }
+ ]
+}

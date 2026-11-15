@@ -1,0 +1,101 @@
+{
+ "name": "coldbreath",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  8,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "Huff on a cold morning, and a little **cloud** comes out of your mouth.",
+   "Huff on a cold morning, and a little cloud comes out of your mouth."
+  ],
+  [
+   "**But** on a warm day? Nothing. So why can you see your breath when it's cold?",
+   "But on a warm day? Nothing. So why can you see your breath when it's cold?"
+  ],
+  [
+   "Here's the secret: your breath is always full of **water.**",
+   "Here's the secret: your breath is always full of water."
+  ],
+  [
+   "Not drops. Invisible **water vapor:** tiny water molecules zooming around.",
+   "Not drops. Invisible water vapor: tiny water molecules zooming around."
+  ],
+  [
+   "Inside you it's warm, so they fly fast and stay **apart.**",
+   "Inside you it's warm, so they fly fast and stay apart."
+  ],
+  [
+   "Warm air can hold lots of vapor. **Cold air** holds much less.",
+   "Warm air can hold lots of vapor. Cold air holds much less."
+  ],
+  [
+   "Air at freezing holds only about **a tenth** as much as air as warm as your body.",
+   "Air at freezing holds only about a tenth as much as air as warm as your body."
+  ],
+  [
+   "So when you breathe out, your warm, wet breath **crashes into the cold.**",
+   "So when you breathe out, your warm, wet breath crashes into the cold."
+  ],
+  [
+   "It cools fast, right past a line called the **dew point.**",
+   "It cools fast, right past a line called the dew point."
+  ],
+  [
+   "Below the dew point, the air **can't hold** all that vapor anymore.",
+   "Below the dew point, the air can't hold all that vapor anymore."
+  ],
+  [
+   "So the molecules slow down and **stick together** into tiny droplets of liquid water.",
+   "So the molecules slow down and stick together into tiny droplets of liquid water."
+  ],
+  [
+   "Lots of tiny droplets together look like a little **white cloud.**",
+   "Lots of tiny droplets together look like a little white cloud."
+  ],
+  [
+   "And here's the wow: real clouds form **the same way,** just way bigger.",
+   "And here's the wow: real clouds form the same way, just way bigger."
+  ],
+  [
+   "**But** why does it vanish a second later?",
+   "But why does it vanish a second later?"
+  ],
+  [
+   "Your breath keeps mixing with more of the **dry air** around it.",
+   "Your breath keeps mixing with more of the dry air around it."
+  ],
+  [
+   "The droplets spread out and **evaporate,** back into invisible vapor.",
+   "The droplets spread out and evaporate, back into invisible vapor."
+  ],
+  [
+   "So you're not really seeing your breath. You're seeing a **cloud you made.**",
+   "So you're not really seeing your breath. You're seeing a cloud you made."
+  ],
+  [
+   "Ever pretended it was dragon smoke? **Yes or no?**",
+   "Ever pretended it was dragon smoke? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

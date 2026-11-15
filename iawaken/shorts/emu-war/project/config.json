@@ -1,0 +1,17 @@
+{
+ "title": "Australia Lost a War to Birds",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "gold": ["1932", "twenty", "thousand", "nine", "hundred", "eighty-six", "one", "zero", "lost"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
