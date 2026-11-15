@@ -115,6 +115,18 @@ period characters; a cast cameo is a nice recurring touch. The channel avatar an
 - **Toon 3D look APPROVED** (style sheet + "The Day Rome Got Sacked" test Short). kits/toon3d on branch iawaken/toon3d is the house style for all new I.Awaken videos.
 - **Short closers:** never "Full story on the channel." A Short that ends on an open question/cliffhanger ends with the spoken and on-screen line **"Subscribe to find out."** A Short that already answered its question ends with **"Subscribe for more."** (No "Follow for more ..." on YouTube.)
 
+## JUSTIN CLIPS: BREAK THE VIEW JAIL (owner, Nov 15; source: Creator Rant "How I FINALLY got out of Shorts Jail", notes in research/shortsjail_notes.md on origin/research/shortsjail)
+Diagnosis: Justin clips sits under 1K = "swipe jail": viewers leave in the first ~3 s, so the first ~100-impression test batch never unlocks more. Every new Justin clips Short MUST pass these, in this order:
+1. TRIPLE HOOK in the first 2 s, all three at once:
+   - VISUAL: frame 1 is the strangest image of the story, already moving (no title card, no slow establishing shot, no character standing still).
+   - VERBAL: line 1 states the claim in <= 8 words, no setup ("A cat was mayor for 20 years.").
+   - TEXT: one top caption that ADDS story, not a subtitle and not the title (e.g. VO "Sharks are older than trees" + caption "they watched trees get invented"). It stays up through the hook (>= 3 s).
+2. ONE EMOTION, chosen before writing: WOW (science/what-if), LOL (absurd history), WTF (scandals), AW (animals). Write it at the top of script.md; cut every line that does not build to it.
+3. NO PADDING, EVER: target 20-35 s; only go longer if every line pays. Cut setup, cut "you see" explanations that don't land, cut the second example. A 15 s Short beats a 40 s one on the same topic.
+4. PAYOFF + LOOP: the last 2 s are the payoff, then "Subscribe for more." stays < 1 s or is dropped if it hurts the loop; the last frame cuts back into frame 1.
+5. FORMAT FROM OUTLIERS: before a new batch, find 5 Shorts in our niche (weird history / science facts) with views >> their channel average and copy their FORMAT (pacing, caption placement, reveal structure), never their content.
+6. POSTING: one Short a day, same time window; never delete and re-upload a Short that stalls (start the next one instead). After 48 h check "Stayed to watch vs swiped away" (Shorts feed): below ~60% stayed = the hook failed; fix the hook on the next one.
+
 ## SHORTS-ONLY FOCUS (owner, Nov 8): how an I.Awaken Short is built to blow up
 Long-form is paused. Every Short must pass this list before it is sent to the owner.
 
