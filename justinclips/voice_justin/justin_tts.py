@@ -15,11 +15,12 @@ Usage:
   ~/.venvs/chatterbox/bin/python justinclips/voice_justin/justin_tts.py script.md out.wav [plain.txt]
       [--exag 0.5] [--cfg 0.4] [--temp 0.8] [--gap 0.3] [--section 0.9] [--lead 0.15] [--beat 0.5]
       [--seeds 7,11,23] [--ref path/to/ref.wav] [--lufs -14] [--tp -1.0] [--mp3] [--no-qa]
-Setup: bash whatif/voice/setup_chatterbox.sh (from origin/voice-test) -> ~/.venvs/chatterbox.
+Setup: bash justinclips/voice_justin/setup_chatterbox.sh (same as the D2 setup on origin/voice-test) -> ~/.venvs/chatterbox.
 
 QA: each line (or each part around a "...") is rendered with up to 3 seeds; the first take whose Whisper small.en
-transcript matches word for word is kept, otherwise the take with the fewest wrong words is kept and flagged
-"QA FAIL". Writes out.lines.json (per-line timing, seed, transcript, QA) next to out.wav.
+transcript matches word for word AND has <= 10% of voiced frames more than 9 semitones above the owner's median
+pitch (pyin; catches squeak/falsetto artefacts Whisper ignores) is kept. Otherwise the take with the fewest problems
+is kept and flagged "QA FAIL". Writes out.lines.json (per-line timing, seed, transcript, QA) next to out.wav.
 """
 import json, os, re, subprocess, sys, time, difflib
 
@@ -106,22 +107,38 @@ def trim(a, thr=0.02, pad_in=0.04, pad_out=0.12):
     if not len(idx): return a
     return a[max(idx[0] - int(SR * pad_in), 0): idx[-1] + int(SR * pad_out)]
 
+import librosa
+def _f0(wav, sr):
+    w = librosa.resample(wav, orig_sr=sr, target_sr=16000) if sr != 16000 else wav
+    f0, _, _ = librosa.pyin(w, fmin=60, fmax=400, sr=16000)
+    return f0[~np.isnan(f0)]
+_rw, _rsr = sf.read(REF, dtype="float32")
+REF_F0 = float(np.median(_f0(_rw if _rw.ndim == 1 else _rw.mean(1), _rsr)))
+def glitch(wav):
+    """Share of voiced frames > 9 semitones above the owner's median pitch (squeaks / falsetto artefacts)."""
+    f0 = _f0(wav, SR)
+    return float((12 * np.log2(f0 / REF_F0) > 9).mean()) if len(f0) > 5 else 0.0
+
 def render(text):
+    """First seed with 0 wrong words and <= 10% squeak frames wins; else the best (fewest problems) take."""
     best = None
     for seed in SEEDS:
         torch.manual_seed(seed)
         wav = tts.generate(text, exaggeration=EXAG, cfg_weight=CFG, temperature=TEMP)
         wav = trim(wav.squeeze(0).numpy().astype(np.float32))
         if not QA:
-            return wav, seed, "", 0
+            return wav, seed, "", 0, 0, 0.0
         sf.write(OUT + ".qa_tmp.wav", wav, SR)
         segs, _ = asr.transcribe(OUT + ".qa_tmp.wav", beam_size=5, language="en")
         heard = " ".join(s.text.strip() for s in segs)
         bad = mismatches(text, heard)
-        print(f"    seed {seed}: {'OK ' if bad == 0 else f'{bad} wrong'} | {heard}", flush=True)
-        if best is None or bad < best[3]:
-            best = (wav, seed, heard, bad)
-        if bad == 0:
+        g = glitch(wav)
+        score = bad + (1 if g > 0.10 else 0)
+        print(f"    seed {seed}: {'OK ' if bad == 0 else f'{bad} wrong'} squeak {g*100:.0f}%"
+              f"{' (REJECT)' if g > 0.10 else ''} | {heard}", flush=True)
+        if best is None or score < best[4]:
+            best = (wav, seed, heard, bad, score, g)
+        if score == 0:
             break
     return best
 
@@ -135,6 +152,20 @@ def master(src, dst):
            f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
     subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", src, "-af", af2,
                     "-ar", "48000", "-ac", "1", dst], check=True)
+    # linear loudnorm can land short of the target when the true-peak ceiling binds: top up with gain + limiter
+    for _ in range(3):
+        i, tp = measure(dst)
+        if abs(i - LUFS) <= 0.3 and tp <= TP + 0.05:
+            break
+        lim = 10 ** ((TP - 0.6) / 20)
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", dst, "-af",
+                        f"volume={LUFS - i:.2f}dB,aresample=192000,alimiter=limit={lim:.4f}:level=false:attack=1:release=50,"
+                        f"aresample=48000", "-ac", "1", dst + ".tmp.wav"], check=True)
+        os.replace(dst + ".tmp.wav", dst)
+def measure(path):
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-af", "ebur128=peak=true:framelog=quiet",
+                        "-f", "null", "-"], capture_output=True, text=True).stderr
+    return (float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1]), float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)[-1]))
 
 # ---------- script ----------
 pieces, spoken, lines = [], [], []
@@ -157,12 +188,13 @@ for raw in open(SCRIPT, encoding="utf-8"):
     print(f"[{len(spoken)}] {text}", flush=True)
     for k, part in enumerate(parts):
         tt = tts_text(part)
-        wav, seed, heard, bad = render(tt)
+        wav, seed, heard, bad, score, g = render(tt)
         if rec["start"] is None:
             rec["start"] = round(now(), 3)
         pieces.append(wav)
         rec["parts"].append({"tts": tt, "seed": seed, "heard": heard, "wrong_words": bad,
-                             "qa": "skipped" if not QA else ("ok" if bad == 0 else "QA FAIL")})
+                             "squeak_frac": round(g, 3) if QA else None,
+                             "qa": "skipped" if not QA else ("ok" if score == 0 else "QA FAIL")})
         if k < len(parts) - 1:
             sil(BEAT)
     rec["end"] = round(now(), 3)

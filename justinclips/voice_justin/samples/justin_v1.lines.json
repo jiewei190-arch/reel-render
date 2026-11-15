@@ -1,0 +1,138 @@
+{
+ "voice": "chatterbox, cloned from the Justin clips owner's voice note (Justin clips only)",
+ "reference": "ref_clean.wav",
+ "exaggeration": 0.35,
+ "cfg_weight": 0.4,
+ "temperature": 0.8,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 0.9,
+ "lead": 0.15,
+ "beat": 0.5,
+ "master": {
+  "lufs": -14.0,
+  "true_peak": -1.0,
+  "sr": 48000
+ },
+ "duration": 25.021,
+ "render_s": 142.3,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Oregon blew up a whale. With dynamite.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Oregon blew up a whale. With dynamite.",
+     "seed": 7,
+     "heard": "Oregon blew up a whale with dynamite",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.124
+  },
+  {
+   "n": 2,
+   "text": "Yo, it's Justin, and this actually happened.",
+   "start": 3.424,
+   "parts": [
+    {
+     "tts": "Yo, it's Justin, and this actually happened.",
+     "seed": 7,
+     "heard": "Yo, it's Justin and this actually happened.",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.367
+  },
+  {
+   "n": 3,
+   "text": "An explosives guy said twenty sticks would do it.",
+   "start": 7.668,
+   "parts": [
+    {
+     "tts": "An explosives guy said twenty sticks would do it.",
+     "seed": 7,
+     "heard": "An explosives guy said 20 sticks would do it.",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.092
+  },
+  {
+   "n": 4,
+   "text": "They used twenty CASES.",
+   "start": 10.392,
+   "parts": [
+    {
+     "tts": "They used twenty cases.",
+     "seed": 7,
+     "heard": "They used 20 cases.",
+     "wrong_words": 0,
+     "squeak_frac": 0.054,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.392
+  },
+  {
+   "n": 5,
+   "text": "One chunk reportedly flew a quarter mile and crushed a brand new car.",
+   "start": 12.692,
+   "parts": [
+    {
+     "tts": "One chunk reportedly flew a quarter mile and crushed a brand new car.",
+     "seed": 7,
+     "heard": "One chunk reportedly flew a quarter mile and crushed a brand new car.",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.732
+  },
+  {
+   "n": 6,
+   "text": "And most of the whale? Still there.",
+   "start": 17.032,
+   "parts": [
+    {
+     "tts": "And most of the whale? Still there.",
+     "seed": 7,
+     "heard": "And most of the whale, still there.",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.034
+  },
+  {
+   "n": 7,
+   "text": "Oregon named a park after it. Exploding Whale Memorial Park.",
+   "start": 19.334,
+   "parts": [
+    {
+     "tts": "Oregon named a park after it. Exploding Whale Memorial Park.",
+     "seed": 7,
+     "heard": "Oregon named a park after it, Exploding Whale Memorial Park.",
+     "wrong_words": 0,
+     "squeak_frac": 0.0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.721
+  }
+ ]
+}
