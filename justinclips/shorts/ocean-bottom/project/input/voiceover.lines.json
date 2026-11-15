@@ -1,0 +1,117 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.5,
+ "sr": 24000,
+ "duration": 21.066,
+ "render_s": 147.3,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "At the bottom of the ocean, the water weighs tons.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "At the bottom of the ocean, the water weighs tons.",
+     "seed": 7,
+     "heard": "At the bottom of the ocean, the water weighs tons.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.785
+  },
+  {
+   "n": 2,
+   "text": "Challenger Deep is about 11 kilometers down. The light dies fast.",
+   "start": 3.085,
+   "parts": [
+    {
+     "tts": "Challenger Deep is about eleven kilometers down. The light dies fast.",
+     "seed": 7,
+     "heard": "Challenger Deep is about 11 kilometers down. The light dies fast.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.359
+  },
+  {
+   "n": 3,
+   "text": "Down there, over 8 tons press on every square inch.",
+   "start": 7.659,
+   "parts": [
+    {
+     "tts": "Down there, over eight tons press on every square inch.",
+     "seed": 7,
+     "heard": "Down there, over 8 tons press on every square inch.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.999
+  },
+  {
+   "n": 4,
+   "text": "That's like stacking cars on your thumbnail.",
+   "start": 11.299,
+   "parts": [
+    {
+     "tts": "That's like stacking cars on your thumbnail.",
+     "seed": 7,
+     "heard": "That's like stacking cars on your thumbnail.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.459
+  },
+  {
+   "n": 5,
+   "text": "Drop Mount Everest in... and there's still over a mile of water on top.",
+   "start": 13.759,
+   "parts": [
+    {
+     "tts": "Drop Mount Everest in...",
+     "seed": 7,
+     "heard": "Drop Mount Everest in.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and there's still over a mile of water on top.",
+     "seed": 7,
+     "heard": "and there's still over a mile of water on top.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.985
+  },
+  {
+   "n": 6,
+   "text": "Only a handful of people have ever been down there.",
+   "start": 18.285,
+   "parts": [
+    {
+     "tts": "Only a handful of people have ever been down there.",
+     "seed": 7,
+     "heard": "Only a handful of people have ever been down there.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.766
+  }
+ ]
+}

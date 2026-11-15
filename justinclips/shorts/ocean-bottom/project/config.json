@@ -1,0 +1,17 @@
+{
+ "title": "What If You Dove to the Bottom of the Ocean",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.64, "gold": ["tons", "11", "kilometers", "8", "thumbnail", "Everest", "mile", "handful"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:mystery", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
