@@ -6,7 +6,7 @@ import { reactions, shakeCam } from '/kits/toon3d/react.js';
 import { dimScene, voidBg } from '/kits/toon3d/insert.js';
 import { sunnyLook, sunnySky } from '/kits/toon3d/sky.js';
 import {
-  at, THREE, toonStage, bearded, peter, barber, patrol, scissors, token3D, drawToken, drawDiamondToken, oldMoscow, barberPole, museum,
+  at, THREE, toonStage, bearded, peter, barber, patrol, scissors, token3D, diamondToken3D, drawToken, drawDiamondToken, oldMoscow, barberPole, museum,
   topCaption, yearStamp, stamp, insT, CARD_INK, PR, ball, cyl, rbox, box, floor, toon, outline,
 } from './_lib.js';
 
@@ -177,18 +177,18 @@ registerShot('s06', { kind: '3d',
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); reactions(g, t, s, [{ fx: 'exclaim', on: 'pt', at: 0.3, until: 1.0, scale: 0.8 }, { fx: 'question', on: 'pt', at: 1.4, until: 2.1, scale: 0.7 }, { fx: 'sparkle', on: 'man', at: 1.2, scale: 0.7 }]); },
 });
 
-// s07 — "One token even says..." The token spins up into a close-up on dark velvet, catching the light.
+// s07 — "One token even says..." The later DIAMOND token ("борода лишняя тягота") spins up into a close-up on dark velvet.
 registerShot('s07', { kind: '3d',
   init(T) {
     const st = toonStage(T, { light: 'warm', fov: 30, shadow: false, bg: ['#4a1e24', '#2a0e14'] });
-    const tk = token3D({ r: 1.0 }); st.add(tk);
+    const tk = diamondToken3D({ r: 1.15 }); st.add(tk);
     return { stage: st, tk };
   },
   draw(s, t, info) {
     const k = ease.out(clamp(t / info.dur));
-    s.tk.rotation.set(0.15 * Math.sin(t * 2), lerp(Math.PI * 4.2, Math.PI * 1.0, k), 0.05);
+    s.tk.rotation.set(0.12 * Math.sin(t * 2), lerp(Math.PI * 4.2, Math.PI * 2.0, k), 0.04);
     s.tk.position.set(0, lerp(-0.4, 0.15, k), 0);
-    camMove(s.stage, t, [[0, { pos: [0, 0.2, 7.0], look: [0, 0.1, 0], fov: 30 }], [info.dur, { pos: [0, 0.2, 5.4], look: [0, 0.1, 0], fov: 30 }]]);
+    camMove(s.stage, t, [[0, { pos: [0, 0.2, 7.0], look: [0, 0.1, 0], fov: 30 }], [info.dur, { pos: [0, 0.2, 6.0], look: [0, 0.1, 0], fov: 30 }]]);
   },
   overlay(g, t, info, s) { reactions(g, t, s, [{ fx: 'sparkle', on: [0, 0.2, 0], at: 0.6, scale: 1.4 }, { fx: 'glow', on: [0, 0.1, 0], at: 0.1, scale: 0.8 }]); },
 });

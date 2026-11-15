@@ -34,7 +34,7 @@ Years are spelled out for the TTS only; captions keep digits ("1698").
 | s04 | 5.90–8.28 | Three bearded men smug → red "BEARD TAX" stamp slams on "taxed" | flash, shake |
 | s05 | 8.28–10.95 | Coins rain into an official's chest; a token flies into the man's hand, he beams | iris, sparkle, stars |
 | s06 | 10.95–13.15 | A patrol halts a bearded man mid-step; he flashes the token | whipBlur, "!", "?" |
-| s07 | 13.15–14.95 | The copper token spins into a close-up | zoom, glow, sparkle |
+| s07 | 13.15–14.95 | The later diamond token ("БОРОДА ЛИШНЯЯ ТЯГОТА") spins into a close-up | zoom, glow, sparkle |
 | s08 | 14.95–15.98 | Card: the later diamond token, "THE BEARD IS / A USELESS / BURDEN" | flash (word captions hidden) |
 | s09 | 15.98–16.95 | Reaction: a hugely bearded man, deadpan → offended, hugs his beard | cut, sweat |
 | s10 | 16.95–17.95 | A grand columned museum front | whipBlur |

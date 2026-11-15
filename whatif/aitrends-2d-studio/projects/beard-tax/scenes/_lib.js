@@ -90,6 +90,16 @@ export function drawDiamondToken(g, x, y, r) {
   g.globalCompositeOperation = 'screen'; const sh = g.createLinearGradient(-r, -r, r, r); sh.addColorStop(0.35, 'rgba(255,255,255,0)'); sh.addColorStop(0.5, 'rgba(255,240,220,.35)'); sh.addColorStop(0.65, 'rgba(255,255,255,0)');
   g.fillStyle = sh; dia(1); g.fill(); g.restore();
 }
+// 3D diamond token (the later rhomboid type): extruded rhombus + the inscription face on +Z
+export function diamondToken3D(o = {}) {
+  const g = new THREE.Group(); const r = o.r || 1.0, th = r * 0.12;
+  const sh = new THREE.Shape(); sh.moveTo(0, r); sh.lineTo(r * 0.78, 0); sh.lineTo(0, -r); sh.lineTo(-r * 0.78, 0); sh.closePath();
+  const geo = new THREE.ExtrudeGeometry(sh, { depth: th, bevelEnabled: true, bevelThickness: th * 0.25, bevelSize: r * 0.03, bevelSegments: 2 }); geo.translate(0, 0, -th / 2);
+  const body = new THREE.Mesh(geo, toon('#a85e30')); body.castShadow = true; g.add(body);
+  const face = canvasTex(256, 330, (x, w, h) => { x.clearRect(0, 0, w, h); drawDiamondToken(x, w / 2, h / 2, h / 2 - 2); });
+  for (const s of [1, -1]) { const f = new THREE.Mesh(new THREE.PlaneGeometry(r * 2 * 256 / 330, r * 2), toon('#ffffff', { map: face, transparent: true, alphaTest: 0.5 })); f.position.z = s * (th / 2 + th * 0.26 + 0.003); if (s < 0) f.rotation.y = Math.PI; f.userData.noOutline = true; g.add(f); }
+  outline(body, { px: 2.6 }); return g;
+}
 // 3D token: a thick coin with the beard face on +Z (front) and the text on -Z
 export function token3D(o = {}) {
   const g = new THREE.Group(); const r = o.r || 0.5, th = r * 0.14;
