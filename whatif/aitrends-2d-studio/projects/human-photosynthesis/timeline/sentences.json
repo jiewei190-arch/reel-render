@@ -1,0 +1,50 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "end": 1.7,
+  "text": "You turn green and live on sunlight."
+ },
+ {
+  "i": 1,
+  "start": 2.22,
+  "end": 2.84,
+  "text": "Bad news..."
+ },
+ {
+  "i": 2,
+  "start": 3.78,
+  "end": 4.48,
+  "text": "you'd still starve."
+ },
+ {
+  "i": 3,
+  "start": 5.16,
+  "end": 7.42,
+  "text": "Your skin only makes about 1 percent of the energy you need."
+ },
+ {
+  "i": 4,
+  "start": 8.32,
+  "end": 12.08,
+  "text": "To fix that, you'd need skin about the size of a tennis court, by one estimate."
+ },
+ {
+  "i": 5,
+  "start": 13.4,
+  "end": 15.5,
+  "text": "Or 290 hours of sunshine..."
+ },
+ {
+  "i": 6,
+  "start": 16.26,
+  "end": 17.3,
+  "text": "every single day."
+ },
+ {
+  "i": 7,
+  "start": 18.32,
+  "end": 19.64,
+  "text": "That's why plants don't walk."
+ }
+]

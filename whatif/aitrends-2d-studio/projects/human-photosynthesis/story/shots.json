@@ -1,0 +1,211 @@
+{
+ "duration": 20.23,
+ "shots": [
+  {
+   "id": "s1",
+   "start": 0,
+   "end": 2.2,
+   "line": "You turn green and live on sunlight.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "start": 2.2,
+   "end": 3.72,
+   "line": "Bad news...",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:chime",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "start": 3.72,
+   "end": 5.1,
+   "line": "you'd still starve.",
+   "sfx": [
+    {
+     "word": "starve",
+     "name": "toon3d:rumble",
+     "gain": -4
+    },
+    {
+     "word": "starve",
+     "offset": 0.05,
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "start": 5.1,
+   "end": 7.3,
+   "line": "Your skin only makes about 1 percent of the energy you need.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s5",
+   "start": 7.3,
+   "end": 8.3,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:rumble",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "start": 8.3,
+   "end": 10.6,
+   "line": "To fix that, you'd need skin about the size of a",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:punch",
+     "gain": -8
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:slide",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s7",
+   "start": 10.6,
+   "end": 12.4,
+   "line": "tennis court, by one estimate.",
+   "sfx": [
+    {
+     "word": "tennis",
+     "name": "toon3d:riser",
+     "gain": -12
+    },
+    {
+     "word": "court",
+     "name": "toon3d:ding",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s7b",
+   "start": 12.4,
+   "end": 13.4,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "start": 13.4,
+   "end": 16.15,
+   "line": "Or 290 hours of sunshine...",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s9",
+   "start": 16.15,
+   "end": 18.3,
+   "line": "every single day.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "day",
+     "name": "toon3d:fail",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 18.3,
+   "end": 20.23,
+   "line": "That's why plants don't walk.",
+   "sfx": [
+    {
+     "word": "walk",
+     "name": "toon3d:thud",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}
