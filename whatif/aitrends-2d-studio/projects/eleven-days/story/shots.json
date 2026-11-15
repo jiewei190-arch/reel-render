@@ -1,0 +1,307 @@
+{
+ "duration": 22.383,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 1.7,
+   "line": "In 1752,",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -6
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:paper",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.7,
+   "end": 3.45,
+   "line": "Britain deleted 11 days.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "11",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.45,
+   "end": 6.3,
+   "line": "Its calendar had drifted out of step with the seasons.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "drifted",
+     "name": "toon3d:slide",
+     "gain": -11
+    },
+    {
+     "at": 2.0,
+     "name": "toon3d:impact",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.3,
+   "end": 8.62,
+   "line": "So Parliament just...",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:suspense",
+     "gain": -14,
+     "dur": 2.3
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.62,
+   "end": 9.62,
+   "line": "skipped them.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "skipped",
+     "name": "toon3d:impact",
+     "gain": -4
+    },
+    {
+     "word": "skipped",
+     "offset": 0.03,
+     "name": "toon3d:knock",
+     "gain": -6
+    },
+    {
+     "word": "skipped",
+     "offset": 0.1,
+     "name": "toon3d:paper",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.62,
+   "end": 11.36,
+   "line": "Wednesday, September second.",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:clock",
+     "gain": -14,
+     "dur": 1.7
+    },
+    {
+     "at": 0.85,
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 11.36,
+   "end": 12.22,
+   "line": "Next day?",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.22,
+   "end": 13.05,
+   "line": "Thursday, September",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 13.05,
+   "end": 14.12,
+   "line": "fourteenth.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.02,
+     "name": "toon3d:gasp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 14.12,
+   "end": 16.2,
+   "line": "The American colonies lost them too.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 16.2,
+   "end": 17.8,
+   "line": "Legend says people rioted",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:crowd",
+     "gain": -8,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 17.8,
+   "end": 19.38,
+   "line": "for their 11 days back.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:crowd",
+     "gain": -9,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 19.38,
+   "end": 20.82,
+   "line": "Historians aren't sure.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 20.82,
+   "end": 22.383,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:creak",
+     "gain": -14
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:paper",
+     "gain": -9
+    }
+   ]
+  }
+ ]
+}

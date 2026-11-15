@@ -1,0 +1,164 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 22.383,
+ "render_s": 639.2,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1752, Britain deleted 11 days.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "In seventeen fifty-two, Britain deleted eleven days.",
+     "seed": 7,
+     "heard": "In 1752, Britain deleted 11 days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.386
+  },
+  {
+   "n": 2,
+   "text": "Its calendar had drifted out of step with the seasons.",
+   "start": 3.636,
+   "parts": [
+    {
+     "tts": "Its calendar had drifted out of step with the seasons.",
+     "seed": 7,
+     "heard": "its calendar had drifted out of step with the seasons.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.294
+  },
+  {
+   "n": 3,
+   "text": "So Parliament just... skipped them.",
+   "start": 6.544,
+   "parts": [
+    {
+     "tts": "So Parliament just...",
+     "seed": 7,
+     "heard": "So, Parliament just\u2014",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "skipped them.",
+     "seed": 7,
+     "heard": "Skipped them.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.391
+  },
+  {
+   "n": 4,
+   "text": "Wednesday, September second.",
+   "start": 9.641,
+   "parts": [
+    {
+     "tts": "Wednesday, September second.",
+     "seed": 7,
+     "heard": "Wednesday, September 2nd.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 11.03
+  },
+  {
+   "n": 5,
+   "text": "Next day? Thursday, September fourteenth.",
+   "start": 11.28,
+   "parts": [
+    {
+     "tts": "Next day? Thursday, September fourteenth.",
+     "seed": 7,
+     "heard": "Next day, Thursday, September 14th.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.871
+  },
+  {
+   "n": 6,
+   "text": "The American colonies lost them too.",
+   "start": 14.121,
+   "parts": [
+    {
+     "tts": "The American colonies lost them too.",
+     "seed": 7,
+     "heard": "The American colonies lost them too.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.99
+  },
+  {
+   "n": 7,
+   "text": "Legend says people rioted for their 11 days back.",
+   "start": 16.24,
+   "parts": [
+    {
+     "tts": "Legend says people rioted for their eleven days back.",
+     "seed": 7,
+     "heard": "Legend says people rioted for their 11 days back.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.116
+  },
+  {
+   "n": 8,
+   "text": "Historians aren't sure.",
+   "start": 19.366,
+   "parts": [
+    {
+     "tts": "Historians aren't sure.",
+     "seed": 11,
+     "heard": "Historians aren't sure.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.577
+  },
+  {
+   "n": 9,
+   "text": "Subscribe for more.",
+   "start": 20.827,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.133
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "title": "Britain Deleted 11 Days",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 22.383,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "1752",
+   "11",
+   "deleted",
+   "skipped",
+   "fourteenth",
+   "second",
+   "legend",
+   "rioted"
+  ]
+ }
+}
