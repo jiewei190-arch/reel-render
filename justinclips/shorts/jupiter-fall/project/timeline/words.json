@@ -1,0 +1,265 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "You",
+   "start": 0.0,
+   "end": 0.42
+  },
+  {
+   "word": "jump",
+   "start": 0.42,
+   "end": 0.76
+  },
+  {
+   "word": "into",
+   "start": 0.76,
+   "end": 1.06
+  },
+  {
+   "word": "Jupiter.",
+   "start": 1.06,
+   "end": 1.46
+  },
+  {
+   "word": "You",
+   "start": 1.96,
+   "end": 2.3
+  },
+  {
+   "word": "never",
+   "start": 2.3,
+   "end": 2.5
+  },
+  {
+   "word": "land.",
+   "start": 2.5,
+   "end": 2.86
+  },
+  {
+   "word": "No",
+   "start": 3.42,
+   "end": 3.68
+  },
+  {
+   "word": "ground.",
+   "start": 3.68,
+   "end": 3.98
+  },
+  {
+   "word": "Just",
+   "start": 4.64,
+   "end": 4.86
+  },
+  {
+   "word": "clouds,",
+   "start": 4.86,
+   "end": 5.3
+  },
+  {
+   "word": "then",
+   "start": 5.74,
+   "end": 5.84
+  },
+  {
+   "word": "thicker",
+   "start": 5.84,
+   "end": 6.2
+  },
+  {
+   "word": "gas,",
+   "start": 6.2,
+   "end": 6.58
+  },
+  {
+   "word": "then",
+   "start": 6.96,
+   "end": 7.08
+  },
+  {
+   "word": "more",
+   "start": 7.08,
+   "end": 7.28
+  },
+  {
+   "word": "gas.",
+   "start": 7.28,
+   "end": 7.56
+  },
+  {
+   "word": "The",
+   "start": 8.22,
+   "end": 8.36
+  },
+  {
+   "word": "pressure",
+   "start": 8.36,
+   "end": 8.58
+  },
+  {
+   "word": "keeps",
+   "start": 8.58,
+   "end": 8.84
+  },
+  {
+   "word": "climbing.",
+   "start": 8.84,
+   "end": 9.3
+  },
+  {
+   "word": "NASA",
+   "start": 10.04,
+   "end": 10.12
+  },
+  {
+   "word": "actually",
+   "start": 10.12,
+   "end": 10.58
+  },
+  {
+   "word": "did",
+   "start": 10.58,
+   "end": 10.82
+  },
+  {
+   "word": "this.",
+   "start": 10.82,
+   "end": 11.12
+  },
+  {
+   "word": "In",
+   "start": 11.46,
+   "end": 11.56
+  },
+  {
+   "word": "1995,",
+   "start": 11.56,
+   "end": 12.22
+  },
+  {
+   "word": "its",
+   "start": 12.64,
+   "end": 12.74
+  },
+  {
+   "word": "Galileo",
+   "start": 12.74,
+   "end": 13.08
+  },
+  {
+   "word": "probe",
+   "start": 13.08,
+   "end": 13.5
+  },
+  {
+   "word": "dropped",
+   "start": 13.5,
+   "end": 13.8
+  },
+  {
+   "word": "in.",
+   "start": 13.8,
+   "end": 14.18
+  },
+  {
+   "word": "It",
+   "start": 14.68,
+   "end": 15.04
+  },
+  {
+   "word": "went",
+   "start": 15.04,
+   "end": 15.18
+  },
+  {
+   "word": "silent",
+   "start": 15.18,
+   "end": 15.56
+  },
+  {
+   "word": "after",
+   "start": 15.56,
+   "end": 15.84
+  },
+  {
+   "word": "about",
+   "start": 15.84,
+   "end": 16.1
+  },
+  {
+   "word": "an",
+   "start": 16.1,
+   "end": 16.28
+  },
+  {
+   "word": "hour...",
+   "start": 16.28,
+   "end": 16.58
+  },
+  {
+   "word": "about",
+   "start": 17.32,
+   "end": 17.52
+  },
+  {
+   "word": "150",
+   "start": 17.52,
+   "end": 18.1
+  },
+  {
+   "word": "kilometers",
+   "start": 18.1,
+   "end": 18.58
+  },
+  {
+   "word": "down.",
+   "start": 18.58,
+   "end": 19.06
+  },
+  {
+   "word": "And",
+   "start": 19.58,
+   "end": 19.84
+  },
+  {
+   "word": "deep",
+   "start": 19.84,
+   "end": 20.1
+  },
+  {
+   "word": "inside,",
+   "start": 20.1,
+   "end": 20.54
+  },
+  {
+   "word": "the",
+   "start": 21.12,
+   "end": 21.2
+  },
+  {
+   "word": "hydrogen",
+   "start": 21.2,
+   "end": 21.54
+  },
+  {
+   "word": "acts",
+   "start": 21.54,
+   "end": 21.94
+  },
+  {
+   "word": "like",
+   "start": 21.94,
+   "end": 22.3
+  },
+  {
+   "word": "liquid",
+   "start": 22.3,
+   "end": 22.6
+  },
+  {
+   "word": "metal.",
+   "start": 22.6,
+   "end": 22.96
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.5,
+ "sr": 24000,
+ "duration": 23.484,
+ "render_s": 160.0,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "You jump into Jupiter. You never land.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "You jump into Jupiter. You never land.",
+     "seed": 7,
+     "heard": "you jump into Jupiter, you never land.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.155
+  },
+  {
+   "n": 2,
+   "text": "No ground. Just clouds, then thicker gas, then more gas.",
+   "start": 3.455,
+   "parts": [
+    {
+     "tts": "No ground. Just clouds, then thicker gas, then more gas.",
+     "seed": 7,
+     "heard": "No ground. Just clouds, then thicker gas, then more gas.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.913
+  },
+  {
+   "n": 3,
+   "text": "The pressure keeps climbing.",
+   "start": 8.213,
+   "parts": [
+    {
+     "tts": "The pressure keeps climbing.",
+     "seed": 7,
+     "heard": "The pressure keeps climbing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.576
+  },
+  {
+   "n": 4,
+   "text": "NASA actually did this. In 1995, its Galileo probe dropped in.",
+   "start": 9.876,
+   "parts": [
+    {
+     "tts": "nasa actually did this. In nineteen ninety-five, its Galileo probe dropped in.",
+     "seed": 7,
+     "heard": "NASA actually did this. In 1995, its Galileo probe dropped in.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.328
+  },
+  {
+   "n": 5,
+   "text": "It went silent after about an hour... about 150 kilometers down.",
+   "start": 14.628,
+   "parts": [
+    {
+     "tts": "It went silent after about an hour...",
+     "seed": 7,
+     "heard": "It went silent after about an hour.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "about one hundred fifty kilometers down.",
+     "seed": 7,
+     "heard": "about 150 kilometers down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.256
+  },
+  {
+   "n": 6,
+   "text": "And deep inside, the hydrogen acts like liquid metal.",
+   "start": 19.556,
+   "parts": [
+    {
+     "tts": "And deep inside, the hydrogen acts like liquid metal.",
+     "seed": 7,
+     "heard": "And deep inside, the hydrogen acts like liquid metal.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.184
+  }
+ ]
+}

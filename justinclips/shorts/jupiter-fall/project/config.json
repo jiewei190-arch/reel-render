@@ -1,0 +1,17 @@
+{
+ "title": "What If You Fell Into Jupiter",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.64, "gold": ["Jupiter", "never", "pressure", "NASA", "1995", "Galileo", "silent", "hour", "150", "liquid", "metal"] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:mystery", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
