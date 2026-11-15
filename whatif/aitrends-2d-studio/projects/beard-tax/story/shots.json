@@ -1,0 +1,272 @@
+{
+ "duration": 21.031,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.3,
+   "line": "Russia once made you pay to keep your beard.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:footsteps",
+     "gain": -14,
+     "dur": 2.2
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:metal",
+     "gain": -10
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:metal",
+     "gain": -11
+    },
+    {
+     "at": 1.55,
+     "name": "toon3d:metal",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.3,
+   "end": 3.62,
+   "line": "In 1698,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1698",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.62,
+   "end": 5.9,
+   "line": "Peter the Great wanted Russia to look modern.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "wanted",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "modern",
+     "name": "toon3d:gasp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.9,
+   "end": 8.28,
+   "line": "So beards got taxed.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "word": "taxed",
+     "name": "toon3d:impact",
+     "gain": -5
+    },
+    {
+     "word": "taxed",
+     "offset": 0.03,
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.28,
+   "end": 10.95,
+   "line": "Pay up, and you got a beard token.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "word": "Pay",
+     "name": "toon3d:coins",
+     "gain": -8
+    },
+    {
+     "word": "token",
+     "name": "toon3d:ding",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.95,
+   "end": 13.15,
+   "line": "Patrols checked faces in the street.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:horn",
+     "gain": -16
+    },
+    {
+     "at": 1.15,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.15,
+   "end": 14.95,
+   "line": "One token even says...",
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:riser",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.95,
+   "end": 15.98,
+   "line": "\"The beard is a useless",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "word": "useless",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 15.98,
+   "end": 16.95,
+   "line": "burden.\"",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "burden",
+     "name": "toon3d:boing",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 16.95,
+   "end": 17.95,
+   "line": "The British Museum",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "Museum",
+     "name": "toon3d:chime",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 17.95,
+   "end": 19.45,
+   "line": "still has the tokens.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:sparkle",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 19.45,
+   "end": 21.031,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "at": 1.25,
+     "name": "toon3d:metal",
+     "gain": -9
+    }
+   ]
+  }
+ ]
+}
