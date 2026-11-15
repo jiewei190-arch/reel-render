@@ -1,0 +1,313 @@
+{
+ "duration": 25.283,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.55,
+   "line": "A cat was mayor",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:magic",
+     "gain": -14
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.55,
+   "end": 3.05,
+   "line": "of an Alaska town for 20 years.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "years",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.05,
+   "end": 5.45,
+   "line": "Talkeetna, 1997.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:wind",
+     "gain": -18,
+     "dur": 2.2
+    },
+    {
+     "word": "1997",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.45,
+   "end": 7.55,
+   "line": "Voters reportedly wrote in Stubbs.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:paper",
+     "gain": -11
+    },
+    {
+     "word": "Stubbs",
+     "name": "toon3d:gasp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.55,
+   "end": 9.05,
+   "line": "It was honorary...",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "word": "honorary",
+     "name": "toon3d:stamp",
+     "gain": -5
+    },
+    {
+     "word": "honorary",
+     "offset": 0.02,
+     "name": "toon3d:impact",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.05,
+   "end": 10.75,
+   "line": "but nobody told Stubbs.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "Stubbs",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 1.35,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.75,
+   "end": 12.95,
+   "line": "His office was the general store.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "store",
+     "name": "toon3d:bell",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.95,
+   "end": 15.5,
+   "line": "He drank catnip water from a wine glass.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "word": "catnip",
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "glass",
+     "name": "toon3d:glass",
+     "gain": -10
+    },
+    {
+     "at": 1.9,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 15.5,
+   "end": 18.0,
+   "line": "30 to 40 tourists a day came to meet him.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:crowd",
+     "gain": -16,
+     "dur": 2.4
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "at": 1.6,
+     "name": "toon3d:click",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 18.0,
+   "end": 21.0,
+   "line": "He survived a dog, a fryer, and a BB gun.",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "word": "dog",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "fryer",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "gun",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "gun",
+     "offset": 0.35,
+     "name": "toon3d:success",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.0,
+   "end": 23.25,
+   "line": "The best politician Alaska ever had...",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "word": "best",
+     "name": "toon3d:glass",
+     "gain": -9
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:crowd",
+     "gain": -16,
+     "dur": 1.6
+    },
+    {
+     "word": "Alaska",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 23.25,
+   "end": 25.283,
+   "line": "Allegedly.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "Allegedly",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "at": 1.75,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}
