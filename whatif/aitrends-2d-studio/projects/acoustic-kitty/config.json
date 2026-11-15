@@ -1,0 +1,17 @@
+{
+ "title": "The CIA Built a Spy Cat",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.66, "gold": ["spy", "cat", "millions", "distracted", "hungry", "train", "cat."] },
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": { "enabled": true, "file": "toon3d:mystery", "gainDb": -18 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}
