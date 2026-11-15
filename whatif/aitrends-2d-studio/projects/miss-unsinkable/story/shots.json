@@ -1,0 +1,327 @@
+{
+ "duration": 27.378,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.3,
+   "line": "This woman survived the Titanic.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -16,
+     "dur": 3
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:water",
+     "gain": -12
+    },
+    {
+     "word": "titanic",
+     "name": "toon3d:rumble",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.3,
+   "end": 4.3,
+   "line": "And both its sister ships.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "sister",
+     "name": "toon3d:pop",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.3,
+   "end": 6.6,
+   "line": "1911: Violet Jessop's ship,",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "violet",
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.6,
+   "end": 8.3,
+   "line": "the Olympic, hit a warship.",
+   "in": {
+    "type": "whip"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "hit",
+     "name": "toon3d:crash",
+     "gain": -9
+    },
+    {
+     "word": "hit",
+     "offset": 0.05,
+     "name": "toon3d:metal",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.3,
+   "end": 10.85,
+   "line": "Her next ship... the Titanic.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "titanic",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "word": "titanic",
+     "offset": 0.2,
+     "name": "toon3d:fail",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.85,
+   "end": 12.45,
+   "line": "1912: an officer",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "at": 0.08,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.45,
+   "end": 15.25,
+   "line": "reportedly handed her a baby in a lifeboat.",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "reportedly",
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "word": "baby",
+     "name": "toon3d:chime",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.25,
+   "end": 17.7,
+   "line": "1916: the Britannic hit a mine",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.08,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "mine",
+     "name": "toon3d:boom",
+     "gain": -8
+    },
+    {
+     "word": "mine",
+     "offset": 0.1,
+     "name": "toon3d:splash",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.7,
+   "end": 19.8,
+   "line": "and sank in 55 minutes.",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -13
+    },
+    {
+     "word": "55",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "55",
+     "offset": 0.05,
+     "name": "toon3d:clock",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.8,
+   "end": 21.55,
+   "line": "The propellers were still turning.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.55,
+   "end": 22.8,
+   "line": "She jumped clear.",
+   "in": {
+    "type": "whip"
+   },
+   "sfx": [
+    {
+     "word": "jumped",
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "word": "jumped",
+     "offset": 0.6,
+     "name": "toon3d:splash",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 22.8,
+   "end": 25.05,
+   "line": "Three ships. Three disasters.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "word": "three",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "three",
+     "nth": 2,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "disasters",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "disasters",
+     "offset": 0.1,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 25.05,
+   "end": 27.378,
+   "line": "They called her Miss Unsinkable.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "word": "unsinkable",
+     "name": "toon3d:success",
+     "gain": -9
+    },
+    {
+     "word": "miss",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
