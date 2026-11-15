@@ -4,8 +4,6 @@ import { PAL, C, shape, oval, dot, rbox, wline, tube, curve, heart, sparkle, at,
 import { E, clamp, lerp, rng, noise, alpha, mix, text, linGrad, radGrad } from '/engine/core.js';
 
 // slanted ceiling line of the wide loft: y at x
-export const ceilY = (x) => 700 - 0.42 * x;
-export const FLOOR_Y = 1240;
 
 export function skyWindow(g, pts, t, o = {}) {
   const { moon = [0.62, 0.4], stars = 9, seed = 3, frame = PAL.woodLt } = o;
@@ -40,7 +38,7 @@ export function stringLights(g, x0, y0, x1, y1, o = {}) {
 }
 // mini fridge with stickers. x,y = top-left, w,h. open 0..1 swings the door (hinge left). Returns {inside:[x,y,w,h], light:[x,y]}
 export function miniFridge(g, x, y, w, h, o = {}) {
-  const { open = 0, t = C.now, items = true, body = '#bfe0cf', seed = 5 } = o;
+  const { open = 0, t = C.now, items = true, body = '#b9cc9c', seed = 5 } = o;
   rbox(g, x, y, w, h, 26, { fill: body, seed });
   const ix = x + 16, iy = y + 22, iw = w - 32, ih = h - 44;
   if (open > 0) {
@@ -107,14 +105,6 @@ export function wallClock(g, x, y, r = 50, o = {}) {
   wline(g, [[x, y], [x + Math.sin(ha) * r * 0.45, y - Math.cos(ha) * r * 0.45]], { w: 6, seed: 162 }); wline(g, [[x, y], [x + Math.sin(ma) * r * 0.68, y - Math.cos(ma) * r * 0.68]], { w: 4, seed: 163 }); dot(g, x, y, 5, PAL.orangeDk);
   oval(g, x - r * 0.7, y - r * 0.85, r * 0.28, r * 0.28, { fill: PAL.orange, seed: 164 }); oval(g, x + r * 0.7, y - r * 0.85, r * 0.28, r * 0.28, { fill: PAL.orange, seed: 165 }); // little bells
 }
-export function futon(g, x, y, w, h, o = {}) {
-  const { color = '#f4e6cf', pillow = '#fff7ea', px = 0.2 } = o;
-  rbox(g, x, y, w, h, 22, { fill: color, seed: 170 }); wline(g, [[x + 16, y + h * 0.55], [x + w - 16, y + h * 0.55]], { w: 3, line: 'rgba(91,58,41,.3)', seed: 171 });
-  rbox(g, x + w * px - 70, y - 26, 140, 70, 30, { fill: pillow, seed: 172 });
-  return { pillow: [x + w * px, y + 6] };
-}
-export function cushion(g, x, y, rx = 170, o = {}) { const { color = '#f7c6a8' } = o; oval(g, x, y, rx, rx * 0.36, { fill: mix(color, '#7a4a30', 0.15), seed: 175 }); oval(g, x, y - 12, rx * 0.86, rx * 0.26, { fill: color, seed: 176 }); }
-export function rug(g, x, y, rx = 420, ry = 130) { oval(g, x, y, rx, ry, { fill: '#cfe0c0', seed: 180 }); oval(g, x, y, rx * 0.8, ry * 0.74, { fill: null, w: 5, line: '#f6efe2', seed: 181 }); oval(g, x, y, rx * 0.55, ry * 0.5, { fill: null, w: 5, line: '#f6efe2', seed: 182 }); }
 // low wooden table in 3/4 view. x = centre, y = top surface centre, w = width. Returns top surface y
 export function lowTable(g, x, y, w = 420, o = {}) {
   const d = o.depth ?? w * 0.32, leg = o.leg ?? w * 0.2;
@@ -134,39 +124,11 @@ export function hotPlate(g, x, y, s = 1, o = {}) {
 // small pan, 3/4 view. contents(g) is drawn clipped inside the pan's ellipse (local coords: centre 0,0, rx 130 ry 40)
 export function panSide(g, x, y, s = 1, contents = null, o = {}) {
   at(g, x, y, s, (g) => {
-    tube(g, [[110, 0], [270, 34]], 26, '#4a3a34', { seed: 196 });
-    shape(g, [[-140, -6], [140, -6], [124, 40], [-124, 40]], { fill: '#5a4840', step: 30, seed: 197 });
-    oval(g, 0, -6, 140, 42, { fill: '#3e302a', seed: 198 });
+    tube(g, [[110, 0], [270, 34]], 26, PAL.potSageDk, { seed: 196 });
+    shape(g, [[-140, -6], [140, -6], [124, 40], [-124, 40]], { fill: PAL.potSage, step: 30, seed: 197 });
+    oval(g, 0, -6, 140, 42, { fill: '#4a4640', seed: 198 });
     if (contents) { g.save(); g.beginPath(); g.ellipse(0, -6, 128, 36, 0, 0, Math.PI * 2); g.clip(); contents(g); g.restore(); }
-    oval(g, 0, -6, 140, 42, { fill: null, w: 5, line: '#8a7268', seed: 199 }); oval(g, 0, -6, 140, 42, { fill: null, seed: 200 });
+    oval(g, 0, -6, 140, 42, { fill: null, w: 5, line: PAL.potSageDk, seed: 199 }); oval(g, 0, -6, 140, 42, { fill: null, seed: 200 });
   });
 }
 
-// the whole loft (wide). o: {fridgeOpen, futons:true, cushion:true, table:[x,y,w], lightsOn:1, clock:true}
-export function loft(g, t, o = {}) {
-  const { fridgeOpen = 0, futons = true, cushionAt = [520, 1430], table = [640, 1290, 300], lightsOn = 1 } = o;
-  g.fillStyle = PAL.wall; g.fillRect(0, 0, E.W, FLOOR_Y + 20);
-  // slanted ceiling
-  shape(g, [[-20, -20], [1100, -20], [1100, ceilY(1100)], [-20, ceilY(-20)]], { fill: PAL.wallDk, step: 60, seed: 210 });
-  for (let i = 1; i < 4; i++) wline(g, [[-10, ceilY(-10) * i / 4], [1090, ceilY(1090) * i / 4]], { w: 3, line: 'rgba(91,58,41,.25)', seed: 211 + i });
-  const wx0 = 150, wx1 = 480, W = [[wx0, ceilY(wx0) - 300], [wx1, ceilY(wx1) - 300], [wx1, ceilY(wx1) - 60], [wx0, ceilY(wx0) - 60]];
-  const win = skyWindow(g, W, t, {});
-  // wainscot + floor
-  rbox(g, -20, FLOOR_Y - 90, 1120, 20, 6, { fill: PAL.cream2, seed: 215 });
-  g.fillStyle = PAL.floor; g.fillRect(0, FLOOR_Y, E.W, E.H - FLOOR_Y); wline(g, [[-10, FLOOR_Y], [1090, FLOOR_Y]], { w: 6, seed: 216 });
-  for (let i = 1; i < 9; i++) { const y = FLOOR_Y + Math.pow(i / 9, 1.5) * (E.H - FLOOR_Y); wline(g, [[-10, y], [1090, y]], { w: 3, line: 'rgba(91,58,41,.22)', seed: 217 + i }); }
-  // wall decor
-  wallClock(g, 650, 820, 52, { h: 2, m: 0 });
-  rbox(g, 390, 760, 150, 120, 10, { fill: PAL.cream, w: 6, seed: 230 }); oval(g, 450, 820, 42, 26, { fill: PAL.apricot, w: 4, seed: 231 }); shape(g, [[488, 820], [516, 800], [516, 840]], { fill: PAL.apricot, w: 4, step: 1e9, seed: 232 }); dot(g, 435, 814, 5, PAL.line); // fish poster
-  const bulbs = stringLights(g, 20, ceilY(20) + 40, 1060, ceilY(1060) + 40, { sag: 90, n: 15, t, on: lightsOn });
-  hangingPlant(g, 900, ceilY(900), 120, 0.8, { t });
-  plant(g, 110, FLOOR_Y + 70, 1.0, { t });
-  const fr = miniFridge(g, 800, 930, 220, 360, { open: fridgeOpen, t });
-  rug(g, 540, 1560, 470, 150);
-  let tb = null; if (table) { lowTable(g, table[0], table[1], table[2]); tb = [table[0], table[1]]; }
-  let fl = null, frr = null; if (futons) { fl = futon(g, 30, 1360, 420, 120, { color: '#f4e6cf' }).pillow; frr = futon(g, 600, 1460, 440, 130, { color: '#f9dccb', px: 0.22 }).pillow; }
-  if (o.cushion !== false) cushion(g, cushionAt[0], cushionAt[1], 150);
-  const lights = [...bulbs.map(([x, y, c]) => ({ x, y, r: 150, k: 0.75 * lightsOn, color: c, glow: 0.12 * lightsOn, gr: 90 })), { x: win.moon[0], y: win.moon[1], r: 260, k: 0.6 }];
-  if (fridgeOpen > 0) lights.push({ x: fr.light[0], y: fr.light[1], r: 520 * fridgeOpen, k: 0.95 * fridgeOpen, color: PAL.fridgeLight, glow: 0.3 * fridgeOpen, gr: 300 });
-  return { bulbs, window: win, fridge: fr, table: tb, futonL: fl, futonR: frr, cushion: cushionAt, lights, floorY: FLOOR_Y };
-}

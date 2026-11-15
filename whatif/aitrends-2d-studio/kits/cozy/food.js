@@ -20,8 +20,8 @@ export function panTop(g, cx, cy, r = 330, o = {}) {
   if (plate) { rbox(g, cx - r * 1.12, cy - r * 1.12, r * 2.24, r * 2.24, 60, { fill: '#f4efe6', seed: 300 }); for (const [dx, dy] of [[1, 1]]) oval(g, cx + dx * r * 0.98, cy + dy * r * 0.98, 26, 26, { fill: PAL.orangeDk, seed: 301 }); dot(g, cx - r * 0.98, cy + r * 0.98, 9, heat > 0.5 ? '#ff6a3a' : '#a89a8a'); }
   oval(g, cx + 10, cy + 16, r * 1.02, r * 1.02, { fill: 'rgba(60,35,20,.22)', line: false });
   const hx = cx + Math.cos(ang) * r * 0.95, hy = cy + Math.sin(ang) * r * 0.95;
-  tube(g, [[hx, hy], [cx + Math.cos(ang) * r * 1.75, cy + Math.sin(ang) * r * 1.75]], 56, '#4a3a34', { seed: 302 });
-  oval(g, cx, cy, r, r, { fill: '#5a4840', seed: 303 }); oval(g, cx, cy, r * 0.9, r * 0.9, { fill: '#3a2e2a', seed: 304, w: 4 });
+  tube(g, [[hx, hy], [cx + Math.cos(ang) * r * 1.75, cy + Math.sin(ang) * r * 1.75]], 56, PAL.potSageDk, { seed: 302 });
+  oval(g, cx, cy, r, r, { fill: PAL.potSage, seed: 303 }); oval(g, cx, cy, r * 0.9, r * 0.9, { fill: '#4a4640', seed: 304, w: 4 });
   g.save(); g.globalAlpha = 0.18; oval(g, cx - r * 0.3, cy - r * 0.35, r * 0.35, r * 0.16, { fill: '#ffffff', line: false, rot: -0.6 }); g.restore();
   return { r: r * 0.9 };
 }
@@ -149,7 +149,7 @@ export function pour(g, x0, y0, x1, y1, w = 14, color = PAL.soy, t = C.now) {
 // ---------------------------------------------------------------- props
 // bowl in 3/4 view. contents: 'rice' | 'empty' | fn(g) drawn clipped to the opening (local: centre 0,0, rx 150 ry 46)
 export function bowl(g, x, y, s = 1, o = {}) {
-  const { contents = 'empty', color = PAL.cream, band = PAL.sage, t = C.now, cheese = 1 } = o;
+  const { contents = 'empty', color = PAL.lilac, band = PAL.lilacDk, t = C.now, cheese = 1 } = o;
   at(g, x, y, s, (g) => {
     shape(g, [[-150, 0], [150, 0], [120, 90], [60, 130], [-60, 130], [-120, 90]], { fill: color, step: 28, seed: 380 });
     wline(g, [[-136, 50], [136, 50]], { w: 10, line: band, seed: 381 }); rbox(g, -56, 124, 112, 22, 8, { fill: mix(color, '#7a4a30', 0.1), seed: 382 });
@@ -189,3 +189,10 @@ export function scallionStalk(g, x, y, len = 520, cut = 0) {
 }
 export function hamSlice(g, x, y, r = 120, o = {}) { oval(g, x, y, r, r * 0.94, { fill: PAL.ham, seed: 440, ...o }); oval(g, x, y, r * 0.85, r * 0.8, { fill: null, w: 4, line: '#fbd0d4', seed: 441 }); for (let i = 0; i < 5; i++) dot(g, x + Math.cos(i * 1.3) * r * 0.5, y + Math.sin(i * 2.1) * r * 0.4, 6, '#fbd0d4'); }
 export function cheeseSlice(g, x, y, s = 160, rot = 0.1) { g.save(); g.translate(x, y); g.rotate(rot); rbox(g, -s / 2, -s / 2, s, s, 10, { fill: PAL.cheese, seed: 445 }); g.save(); g.globalAlpha = 0.4; tube(g, [[-s * 0.3, -s * 0.3], [s * 0.1, -s * 0.36]], 10, '#fff4c2', { line: false }); g.restore(); g.restore(); }
+
+// a stirring utensil held from (px,py) (paw) with the blade at (bx,by) (in the pan): wooden handle + spatula blade
+export function stirTool(g, px, py, bx, by, o = {}) {
+  const { w = 18, blade = 34 } = o; tube(g, [[px, py], [bx, by]], w, PAL.woodDk, { lw: 6 });
+  const a = Math.atan2(by - py, bx - px); g.save(); g.translate(bx, by); g.rotate(a);
+  rbox(g, -6, -blade * 0.55, blade * 1.3, blade * 1.1, 10, { fill: '#f2c48c', w: 6 }); g.restore();
+}

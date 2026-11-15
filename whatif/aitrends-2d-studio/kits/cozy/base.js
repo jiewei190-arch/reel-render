@@ -7,8 +7,8 @@ export { E, clamp, lerp, prog, ease, key, rng, noise, alpha, mix, text, measure,
 
 // ======================================================================= palette
 export const PAL = {
-  line: '#5b3a29',      // warm brown outline
-  lineSoft: '#8a6450',
+  line: '#6b3612',      // owner's warm-brown outline
+  lineSoft: '#8a5a38', violet: '#5f5c96', violetDk: '#3f3d6e', amber: '#ffbe6a', lilac: '#c8b5e6', lilacDk: '#a690cf', potSage: '#a8bf8c', potSageDk: '#86a06c', hatBlue: '#9fbae0',
   cream: '#fbefd9', cream2: '#f4e2c4', paper: '#fdf6ea',
   apricot: '#f6b07a', orange: '#f39a4c', orangeDk: '#d9742e',
   sage: '#a9c49a', sageDk: '#7fa383', sageLt: '#cfe0c0',
@@ -23,7 +23,7 @@ export const PAL = {
   soy: '#6b3a1e', rice: '#fffaf0', riceGold: '#f3cf8e', sesame: '#f7ecd0',
   sweat: '#9fd8f0', heart: '#ff7d94', red: '#ff6a5a',
 };
-export const C = { now: 0, frame: 0, boilFps: 8, boilN: 3, lw: 6, wob: 1.7 };
+export const C = { now: 0, frame: 0, boilFps: 8, boilN: 3, lw: 7, wob: 1.0 };
 // boil index: cycles through 3 drawings at 8 changes / s (classic 3-frame line boil)
 export const boilI = () => Math.floor(C.now * C.boilFps + 1e-6) % C.boilN;
 
@@ -120,14 +120,14 @@ function maskCanvas() { const w = Math.round(E.W * E.PX), h = Math.round(E.H * E
 //   lights: [{x, y, r, k (0..1 how much the hole clears), color (warm glow added on top), glow (0..1)}]
 //   Coordinates are in the CURRENT drawing space (camera included).
 export function night(g, amt = 0.85, lights = [], o = {}) {
-  const { tint = '#2a6270', haze = 0.10 } = o;
+  const { tint = '#6a63a8', haze = 0.08 } = o;
   const c = maskCanvas(), x = c.getContext('2d'), m = g.getTransform();
   x.setTransform(1, 0, 0, 1, 0, 0); x.globalCompositeOperation = 'source-over'; x.clearRect(0, 0, c.width, c.height);
   x.fillStyle = alpha(tint, 1); x.fillRect(0, 0, c.width, c.height);
   x.setTransform(m); x.globalCompositeOperation = 'source-over';
   for (const l of lights) { const k = l.k ?? 0.9; x.fillStyle = radGrad(x, l.x, l.y, 0, l.r, [[0, alpha('#ffffff', k)], [0.45, alpha('#ffffff', k * 0.55)], [1, alpha('#ffffff', 0)]]); x.beginPath(); x.arc(l.x, l.y, l.r, 0, Math.PI * 2); x.fill(); }
   g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = amt; g.globalCompositeOperation = 'multiply'; g.drawImage(c, 0, 0);
-  g.globalCompositeOperation = 'screen'; g.globalAlpha = haze * amt; g.fillStyle = PAL.tealLt; g.fillRect(0, 0, c.width, c.height); g.restore();
+  g.globalCompositeOperation = 'screen'; g.globalAlpha = haze * amt; g.fillStyle = '#8a7fc0'; g.fillRect(0, 0, c.width, c.height); g.restore();
   for (const l of lights) if (l.color) warmGlow(g, l.x, l.y, l.gr || l.r * 0.7, l.color, l.glow ?? 0.35);
 }
 export function warmGlow(g, x, y, r, color = PAL.lamp, k = 0.4) {
@@ -140,7 +140,7 @@ export function cone(g, x, y, len, w0, w1, ang, color = PAL.fridgeLight, k = 0.3
   g.beginPath(); g.moveTo(-w0 / 2, 0); g.lineTo(w0 / 2, 0); g.lineTo(w1 / 2, len); g.lineTo(-w1 / 2, len); g.closePath(); g.fill(); g.restore();
 }
 // paper vignette in warm brown (softer than the black player vignette)
-export function warmVignette(g, k = 0.35, color = '#6b3f26') {
+export function warmVignette(g, k = 0.35, color = '#4a3460') {
   g.save(); g.fillStyle = radGrad(g, E.W / 2, E.H * 0.52, E.W * 0.38, E.H * 0.72, [[0, alpha(color, 0)], [1, alpha(color, k)]]); g.fillRect(0, 0, E.W, E.H); g.restore();
 }
 // fine paper speckle (static per boil frame, so it boils with the lines)
