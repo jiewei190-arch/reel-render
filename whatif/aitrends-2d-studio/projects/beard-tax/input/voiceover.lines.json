@@ -1,0 +1,147 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 21.031,
+ "render_s": 167.7,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Russia once made you pay to keep your beard.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "Russia once made you pay to keep your beard.",
+     "seed": 7,
+     "heard": "Russia once made you pay to keep your beard.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.123
+  },
+  {
+   "n": 2,
+   "text": "In 1698, Peter the Great wanted Russia to look modern.",
+   "start": 2.373,
+   "parts": [
+    {
+     "tts": "In sixteen ninety-eight, Peter the Great wanted Russia to look modern.",
+     "seed": 7,
+     "heard": "In 1698, Peter the Great wanted Russia to look modern.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.753
+  },
+  {
+   "n": 3,
+   "text": "So beards got taxed.",
+   "start": 6.003,
+   "parts": [
+    {
+     "tts": "So beards got taxed.",
+     "seed": 7,
+     "heard": "So, beards got taxed.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.257
+  },
+  {
+   "n": 4,
+   "text": "Pay up, and you got a beard token.",
+   "start": 8.507,
+   "parts": [
+    {
+     "tts": "Pay up, and you got a beard token.",
+     "seed": 7,
+     "heard": "pay up and you got a beard token.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.836
+  },
+  {
+   "n": 5,
+   "text": "Patrols checked faces in the street.",
+   "start": 11.086,
+   "parts": [
+    {
+     "tts": "Patrols checked faces in the street.",
+     "seed": 7,
+     "heard": "patrols checked faces in the street.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.03
+  },
+  {
+   "n": 6,
+   "text": "One token even says... \"The beard is a useless burden.\"",
+   "start": 13.28,
+   "parts": [
+    {
+     "tts": "One token even says...",
+     "seed": 7,
+     "heard": "One token even says...",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "\"The beard is a useless burden.\"",
+     "seed": 7,
+     "heard": "The beard is a useless burden.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.763
+  },
+  {
+   "n": 7,
+   "text": "The British Museum still has the tokens.",
+   "start": 17.013,
+   "parts": [
+    {
+     "tts": "The British Museum still has the tokens.",
+     "seed": 7,
+     "heard": "the British Museum still has the tokens.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.225
+  },
+  {
+   "n": 8,
+   "text": "Subscribe for more.",
+   "start": 19.475,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.781
+  }
+ ]
+}

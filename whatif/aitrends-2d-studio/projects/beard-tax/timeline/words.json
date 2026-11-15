@@ -1,0 +1,290 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Russia",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "once",
+   "start": 0.4,
+   "end": 0.6
+  },
+  {
+   "word": "made",
+   "start": 0.6,
+   "end": 0.84
+  },
+  {
+   "word": "you",
+   "start": 0.84,
+   "end": 0.98
+  },
+  {
+   "word": "pay",
+   "start": 0.98,
+   "end": 1.14
+  },
+  {
+   "word": "to",
+   "start": 1.14,
+   "end": 1.28
+  },
+  {
+   "word": "keep",
+   "start": 1.28,
+   "end": 1.4
+  },
+  {
+   "word": "your",
+   "start": 1.4,
+   "end": 1.62
+  },
+  {
+   "word": "beard.",
+   "start": 1.62,
+   "end": 1.86
+  },
+  {
+   "word": "In",
+   "start": 2.4,
+   "end": 2.5
+  },
+  {
+   "word": "1698,",
+   "start": 2.5,
+   "end": 3.3
+  },
+  {
+   "word": "Peter",
+   "start": 3.7,
+   "end": 3.86
+  },
+  {
+   "word": "the",
+   "start": 3.86,
+   "end": 3.98
+  },
+  {
+   "word": "Great",
+   "start": 3.98,
+   "end": 4.16
+  },
+  {
+   "word": "wanted",
+   "start": 4.16,
+   "end": 4.5
+  },
+  {
+   "word": "Russia",
+   "start": 4.5,
+   "end": 4.8
+  },
+  {
+   "word": "to",
+   "start": 4.8,
+   "end": 4.98
+  },
+  {
+   "word": "look",
+   "start": 4.98,
+   "end": 5.14
+  },
+  {
+   "word": "modern.",
+   "start": 5.14,
+   "end": 5.46
+  },
+  {
+   "word": "So",
+   "start": 6.06,
+   "end": 6.42
+  },
+  {
+   "word": "beards",
+   "start": 6.92,
+   "end": 7.18
+  },
+  {
+   "word": "got",
+   "start": 7.18,
+   "end": 7.48
+  },
+  {
+   "word": "taxed.",
+   "start": 7.48,
+   "end": 8.08
+  },
+  {
+   "word": "Pay",
+   "start": 8.36,
+   "end": 8.68
+  },
+  {
+   "word": "up,",
+   "start": 8.68,
+   "end": 8.9
+  },
+  {
+   "word": "and",
+   "start": 9.32,
+   "end": 9.54
+  },
+  {
+   "word": "you",
+   "start": 9.54,
+   "end": 9.84
+  },
+  {
+   "word": "got",
+   "start": 9.84,
+   "end": 9.98
+  },
+  {
+   "word": "a",
+   "start": 9.98,
+   "end": 10.08
+  },
+  {
+   "word": "beard",
+   "start": 10.08,
+   "end": 10.2
+  },
+  {
+   "word": "token.",
+   "start": 10.2,
+   "end": 10.54
+  },
+  {
+   "word": "Patrols",
+   "start": 11.34,
+   "end": 11.56
+  },
+  {
+   "word": "checked",
+   "start": 11.56,
+   "end": 11.7
+  },
+  {
+   "word": "faces",
+   "start": 11.7,
+   "end": 12.04
+  },
+  {
+   "word": "in",
+   "start": 12.04,
+   "end": 12.36
+  },
+  {
+   "word": "the",
+   "start": 12.36,
+   "end": 12.46
+  },
+  {
+   "word": "street.",
+   "start": 12.46,
+   "end": 12.74
+  },
+  {
+   "word": "One",
+   "start": 13.32,
+   "end": 13.48
+  },
+  {
+   "word": "token",
+   "start": 13.48,
+   "end": 13.76
+  },
+  {
+   "word": "even",
+   "start": 13.76,
+   "end": 13.94
+  },
+  {
+   "word": "says...",
+   "start": 13.94,
+   "end": 14.3
+  },
+  {
+   "word": "\"The",
+   "start": 15.04,
+   "end": 15.24
+  },
+  {
+   "word": "beard",
+   "start": 15.24,
+   "end": 15.46
+  },
+  {
+   "word": "is",
+   "start": 15.46,
+   "end": 15.76
+  },
+  {
+   "word": "a",
+   "start": 15.76,
+   "end": 15.88
+  },
+  {
+   "word": "useless",
+   "start": 15.88,
+   "end": 16.14
+  },
+  {
+   "word": "burden.\"",
+   "start": 16.14,
+   "end": 16.5
+  },
+  {
+   "word": "The",
+   "start": 17.02,
+   "end": 17.18
+  },
+  {
+   "word": "British",
+   "start": 17.18,
+   "end": 17.38
+  },
+  {
+   "word": "Museum",
+   "start": 17.38,
+   "end": 17.76
+  },
+  {
+   "word": "still",
+   "start": 17.76,
+   "end": 18.08
+  },
+  {
+   "word": "has",
+   "start": 18.08,
+   "end": 18.38
+  },
+  {
+   "word": "the",
+   "start": 18.38,
+   "end": 18.56
+  },
+  {
+   "word": "tokens.",
+   "start": 18.56,
+   "end": 18.86
+  },
+  {
+   "word": "Subscribe",
+   "start": 19.6,
+   "end": 19.92
+  },
+  {
+   "word": "for",
+   "start": 19.92,
+   "end": 20.28
+  },
+  {
+   "word": "more.",
+   "start": 20.28,
+   "end": 20.54
+  }
+ ]
+}
