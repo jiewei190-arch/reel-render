@@ -1,0 +1,938 @@
+[
+ {
+  "i": 0,
+  "start": 0.02,
+  "end": 2.48,
+  "text": "You wake up, stretch, and jump off your bed."
+ },
+ {
+  "i": 1,
+  "start": 2.78,
+  "end": 3.54,
+  "text": "You hit the ceiling."
+ },
+ {
+  "i": 2,
+  "start": 3.54,
+  "end": 3.98,
+  "text": "Hard."
+ },
+ {
+  "i": 3,
+  "start": 4.78,
+  "end": 8.84,
+  "text": "Nobody knows why, but the rule is simple: every day, your jump doubles."
+ },
+ {
+  "i": 4,
+  "start": 9.64,
+  "end": 11.66,
+  "text": "Today, you jump like a normal person."
+ },
+ {
+  "i": 5,
+  "start": 12.08,
+  "end": 13.26,
+  "text": "About half a metre."
+ },
+ {
+  "i": 6,
+  "start": 13.26,
+  "end": 14.6,
+  "text": "Tomorrow, one metre."
+ },
+ {
+  "i": 7,
+  "start": 14.6,
+  "end": 15.08,
+  "text": "Then two."
+ },
+ {
+  "i": 8,
+  "start": 15.3,
+  "end": 15.86,
+  "text": "Then four."
+ },
+ {
+  "i": 9,
+  "start": 16.44,
+  "end": 17.94,
+  "text": "That doesn't sound like much."
+ },
+ {
+  "i": 10,
+  "start": 17.94,
+  "end": 19.24,
+  "text": "Until you keep doubling."
+ },
+ {
+  "i": 11,
+  "start": 19.92,
+  "end": 21.32,
+  "text": "Let's see how far you get."
+ },
+ {
+  "i": 12,
+  "start": 21.32,
+  "end": 23.04,
+  "text": "And whether you make it back down."
+ },
+ {
+  "i": 13,
+  "start": 24.72,
+  "end": 25.58,
+  "text": "Day one."
+ },
+ {
+  "i": 14,
+  "start": 25.9,
+  "end": 28.2,
+  "text": "Dev bets you can't touch the basketball rim."
+ },
+ {
+  "i": 15,
+  "start": 28.42,
+  "end": 31.36,
+  "text": "You jump, you miss, and Biscuit doesn't even look up."
+ },
+ {
+  "i": 16,
+  "start": 32.0,
+  "end": 32.36,
+  "text": "Day two."
+ },
+ {
+  "i": 17,
+  "start": 32.58,
+  "end": 33.38,
+  "text": "One metre."
+ },
+ {
+  "i": 18,
+  "start": 33.38,
+  "end": 37.0,
+  "text": "You take one step, rise, and dunk on a regular ten-foot hoop."
+ },
+ {
+  "i": 19,
+  "start": 37.28,
+  "end": 38.7,
+  "text": "The whole court goes silent."
+ },
+ {
+  "i": 20,
+  "start": 39.46,
+  "end": 40.44,
+  "text": "Dev drops his phone."
+ },
+ {
+  "i": 21,
+  "start": 40.66,
+  "end": 41.26,
+  "text": "\"Do that again.\""
+ },
+ {
+  "i": 22,
+  "start": 42.0,
+  "end": 42.54,
+  "text": "Day three."
+ },
+ {
+  "i": 23,
+  "start": 42.76,
+  "end": 43.9,
+  "text": "Two metres."
+ },
+ {
+  "i": 24,
+  "start": 43.9,
+  "end": 46.92,
+  "text": "Dev raises the hoop to twelve feet, as high as it goes."
+ },
+ {
+  "i": 25,
+  "start": 47.18,
+  "end": 48.36,
+  "text": "You dunk it like it's nothing."
+ },
+ {
+  "i": 26,
+  "start": 48.36,
+  "end": 53.88,
+  "text": "Your jump is now higher than the best vertical leap any athlete has ever recorded."
+ },
+ {
+  "i": 27,
+  "start": 54.66,
+  "end": 55.64,
+  "text": "Dev films everything."
+ },
+ {
+  "i": 28,
+  "start": 55.96,
+  "end": 58.02,
+  "text": "By dinner, the clip has a million views."
+ },
+ {
+  "i": 29,
+  "start": 58.5,
+  "end": 60.72,
+  "text": "The comments all say the same thing: fake."
+ },
+ {
+  "i": 30,
+  "start": 61.5,
+  "end": 63.2,
+  "text": "Mina just wants to know one thing."
+ },
+ {
+  "i": 31,
+  "start": 63.54,
+  "end": 65.16,
+  "text": "\"Can you get my kite out of the tree?\""
+ },
+ {
+  "i": 32,
+  "start": 65.78,
+  "end": 66.22,
+  "text": "You can."
+ },
+ {
+  "i": 33,
+  "start": 66.22,
+  "end": 66.62,
+  "text": "Easily."
+ },
+ {
+  "i": 34,
+  "start": 66.62,
+  "end": 67.22,
+  "text": "For now."
+ },
+ {
+  "i": 35,
+  "start": 69.14,
+  "end": 71.04,
+  "text": "Here's the thing nobody tells you."
+ },
+ {
+  "i": 36,
+  "start": 71.26,
+  "end": 73.42,
+  "text": "Every metre you go up, you have to come down."
+ },
+ {
+  "i": 37,
+  "start": 73.42,
+  "end": 74.66,
+  "text": "Day four."
+ },
+ {
+  "i": 38,
+  "start": 74.9,
+  "end": 75.98,
+  "text": "Four metres."
+ },
+ {
+  "i": 39,
+  "start": 75.98,
+  "end": 82.92,
+  "text": "You float over the world record high-jump bar, two point four five metres, from a standing start, and land with a crunch."
+ },
+ {
+  "i": 40,
+  "start": 83.76,
+  "end": 84.34,
+  "text": "Your knees hurt."
+ },
+ {
+  "i": 41,
+  "start": 84.34,
+  "end": 84.9,
+  "text": "That's new."
+ },
+ {
+  "i": 42,
+  "start": 85.68,
+  "end": 86.16,
+  "text": "Day five."
+ },
+ {
+  "i": 43,
+  "start": 86.36,
+  "end": 87.5,
+  "text": "Eight metres."
+ },
+ {
+  "i": 44,
+  "start": 87.5,
+  "end": 93.1,
+  "text": "You clear the pole-vault world record, six point three one, without a pole, and land on your neighbour's roof."
+ },
+ {
+  "i": 45,
+  "start": 93.92,
+  "end": 94.92,
+  "text": "Mina has to bring a ladder."
+ },
+ {
+  "i": 46,
+  "start": 95.74,
+  "end": 98.58,
+  "text": "Biscuit watches from the window, deeply unimpressed."
+ },
+ {
+  "i": 47,
+  "start": 98.94,
+  "end": 101.3,
+  "text": "She's been jumping on roofs her whole life."
+ },
+ {
+  "i": 48,
+  "start": 102.86,
+  "end": 103.8,
+  "text": "Day six."
+ },
+ {
+  "i": 49,
+  "start": 103.8,
+  "end": 105.1,
+  "text": "Sixteen metres."
+ },
+ {
+  "i": 50,
+  "start": 105.1,
+  "end": 106.4,
+  "text": "That's a five-storey building."
+ },
+ {
+  "i": 51,
+  "start": 107.2,
+  "end": 108.26,
+  "text": "Jumping up is fine."
+ },
+ {
+  "i": 52,
+  "start": 108.68,
+  "end": 112.86,
+  "text": "But falling sixteen metres is the same fall, no matter how you got there."
+ },
+ {
+  "i": 53,
+  "start": 113.78,
+  "end": 117.96,
+  "text": "Doctors say that from about four storeys up, roughly half of falls are fatal."
+ },
+ {
+  "i": 54,
+  "start": 118.52,
+  "end": 121.42,
+  "text": "So you stop jumping, and start planning your landings."
+ },
+ {
+  "i": 55,
+  "start": 121.74,
+  "end": 122.48,
+  "text": "A trampoline."
+ },
+ {
+  "i": 56,
+  "start": 122.76,
+  "end": 123.2,
+  "text": "A pool."
+ },
+ {
+  "i": 57,
+  "start": 123.5,
+  "end": 124.86,
+  "text": "A very large haystack."
+ },
+ {
+  "i": 58,
+  "start": 124.86,
+  "end": 126.18,
+  "text": "Day seven."
+ },
+ {
+  "i": 59,
+  "start": 126.18,
+  "end": 127.76,
+  "text": "Thirty-two metres."
+ },
+ {
+  "i": 60,
+  "start": 127.76,
+  "end": 130.96,
+  "text": "To go that high, you leave the ground at ninety kilometres an hour."
+ },
+ {
+  "i": 61,
+  "start": 131.32,
+  "end": 132.98,
+  "text": "The wind rips your hoodie off."
+ },
+ {
+  "i": 62,
+  "start": 133.76,
+  "end": 134.08,
+  "text": "Day eight."
+ },
+ {
+  "i": 63,
+  "start": 134.08,
+  "end": 135.76,
+  "text": "Sixty-four metres."
+ },
+ {
+  "i": 64,
+  "start": 135.76,
+  "end": 137.46,
+  "text": "You could jump over Niagara Falls."
+ },
+ {
+  "i": 65,
+  "start": 137.78,
+  "end": 138.16,
+  "text": "You don't."
+ },
+ {
+  "i": 66,
+  "start": 138.4,
+  "end": 139.64,
+  "text": "Mina has hidden your shoes."
+ },
+ {
+  "i": 67,
+  "start": 140.58,
+  "end": 141.02,
+  "text": "Day nine."
+ },
+ {
+  "i": 68,
+  "start": 141.02,
+  "end": 143.28,
+  "text": "A hundred and twenty-eight metres."
+ },
+ {
+  "i": 69,
+  "start": 143.28,
+  "end": 146.26,
+  "text": "You land in the town pond, and the ducks file a complaint."
+ },
+ {
+  "i": 70,
+  "start": 147.0,
+  "end": 147.623,
+  "text": "Day ten."
+ },
+ {
+  "i": 71,
+  "start": 147.623,
+  "end": 149.94,
+  "text": "Two hundred and fifty-six metres."
+ },
+ {
+  "i": 72,
+  "start": 149.94,
+  "end": 153.1,
+  "text": "The local news calls you \"the boy who won't stay down\"."
+ },
+ {
+  "i": 73,
+  "start": 153.1,
+  "end": 154.505,
+  "text": "Day eleven."
+ },
+ {
+  "i": 74,
+  "start": 154.505,
+  "end": 156.2,
+  "text": "Five hundred metres."
+ },
+ {
+  "i": 75,
+  "start": 156.2,
+  "end": 159.32,
+  "text": "Every jump takes ten seconds up and ten seconds down."
+ },
+ {
+  "i": 76,
+  "start": 159.72,
+  "end": 162.18,
+  "text": "You start timing your jumps with the traffic lights."
+ },
+ {
+  "i": 77,
+  "start": 164.12,
+  "end": 165.04,
+  "text": "Here's a surprise."
+ },
+ {
+  "i": 78,
+  "start": 165.38,
+  "end": 167.78,
+  "text": "The higher you go, the more the air starts to matter."
+ },
+ {
+  "i": 79,
+  "start": 168.6,
+  "end": 173.78,
+  "text": "Falling through air, your body can't go faster than about two hundred kilometres an hour."
+ },
+ {
+  "i": 80,
+  "start": 174.46,
+  "end": 176.62,
+  "text": "Skydivers call it terminal velocity."
+ },
+ {
+  "i": 81,
+  "start": 176.62,
+  "end": 182.52,
+  "text": "So from day ten, every landing hits about the same: like a car crash at highway speed."
+ },
+ {
+  "i": 82,
+  "start": 182.52,
+  "end": 184.36,
+  "text": "Every single time."
+ },
+ {
+  "i": 83,
+  "start": 184.84,
+  "end": 185.52,
+  "text": "Day twelve."
+ },
+ {
+  "i": 84,
+  "start": 185.52,
+  "end": 186.68,
+  "text": "One kilometre."
+ },
+ {
+  "i": 85,
+  "start": 186.68,
+  "end": 192.86,
+  "text": "You sail over the tallest building on Earth, the Burj Khalifa, eight hundred and twenty-eight metres."
+ },
+ {
+  "i": 86,
+  "start": 192.86,
+  "end": 193.98,
+  "text": "The view is incredible."
+ },
+ {
+  "i": 87,
+  "start": 194.36,
+  "end": 195.48,
+  "text": "The landing needs a lake."
+ },
+ {
+  "i": 88,
+  "start": 196.44,
+  "end": 198.42,
+  "text": "Days thirteen and fourteen are a blur."
+ },
+ {
+  "i": 89,
+  "start": 198.82,
+  "end": 199.98,
+  "text": "Two kilometres."
+ },
+ {
+  "i": 90,
+  "start": 199.98,
+  "end": 200.24,
+  "text": "Four."
+ },
+ {
+  "i": 91,
+  "start": 200.54,
+  "end": 203.8,
+  "text": "You jump above the clouds, and they're colder and wetter than they look."
+ },
+ {
+  "i": 92,
+  "start": 204.22,
+  "end": 205.24,
+  "text": "You come down soaked."
+ },
+ {
+  "i": 93,
+  "start": 205.24,
+  "end": 206.86,
+  "text": "Day fifteen."
+ },
+ {
+  "i": 94,
+  "start": 206.86,
+  "end": 208.18,
+  "text": "Eight kilometres."
+ },
+ {
+  "i": 95,
+  "start": 208.18,
+  "end": 210.34,
+  "text": "You almost reach the top of Mount Everest."
+ },
+ {
+  "i": 96,
+  "start": 211.2,
+  "end": 211.2,
+  "text": "Almost."
+ },
+ {
+  "i": 97,
+  "start": 211.2,
+  "end": 214.22,
+  "text": "Eight thousand eight hundred and forty-nine metres."
+ },
+ {
+  "i": 98,
+  "start": 214.22,
+  "end": 214.72,
+  "text": "So close."
+ },
+ {
+  "i": 99,
+  "start": 216.76,
+  "end": 217.68,
+  "text": "Day sixteen."
+ },
+ {
+  "i": 100,
+  "start": 217.68,
+  "end": 219.12,
+  "text": "Sixteen kilometres."
+ },
+ {
+  "i": 101,
+  "start": 219.12,
+  "end": 221.8,
+  "text": "You're higher than Everest, higher than passenger jets."
+ },
+ {
+  "i": 102,
+  "start": 222.54,
+  "end": 224.5,
+  "text": "And there's barely anything left to breathe."
+ },
+ {
+  "i": 103,
+  "start": 224.96,
+  "end": 226.8,
+  "text": "Up here, you'd pass out in seconds."
+ },
+ {
+  "i": 104,
+  "start": 227.64,
+  "end": 229.38,
+  "text": "Mina makes you wear a diving tank."
+ },
+ {
+  "i": 105,
+  "start": 229.9,
+  "end": 232.24,
+  "text": "Dev makes you wear a helmet with his name on it."
+ },
+ {
+  "i": 106,
+  "start": 232.24,
+  "end": 236.18,
+  "text": "On days seventeen and eighteen, you go higher than any balloon."
+ },
+ {
+  "i": 107,
+  "start": 236.68,
+  "end": 240.44,
+  "text": "Higher than the highest skydive ever, forty-one kilometres up."
+ },
+ {
+  "i": 108,
+  "start": 240.82,
+  "end": 243.26,
+  "text": "The sky above you turns from blue to black."
+ },
+ {
+  "i": 109,
+  "start": 244.02,
+  "end": 244.64,
+  "text": "Day nineteen."
+ },
+ {
+  "i": 110,
+  "start": 244.64,
+  "end": 247.14,
+  "text": "A hundred and thirty-one kilometres."
+ },
+ {
+  "i": 111,
+  "start": 247.14,
+  "end": 250.14,
+  "text": "You've passed the edge of space, a hundred kilometres up."
+ },
+ {
+  "i": 112,
+  "start": 250.68,
+  "end": 252.92,
+  "text": "For a few minutes, you're technically an astronaut."
+ },
+ {
+  "i": 113,
+  "start": 253.28,
+  "end": 254.7,
+  "text": "The Earth curves below you."
+ },
+ {
+  "i": 114,
+  "start": 254.78,
+  "end": 255.36,
+  "text": "It's silent."
+ },
+ {
+  "i": 115,
+  "start": 255.36,
+  "end": 256.76,
+  "text": "Then you fall."
+ },
+ {
+  "i": 116,
+  "start": 256.76,
+  "end": 257.54,
+  "text": "All the way."
+ },
+ {
+  "i": 117,
+  "start": 257.82,
+  "end": 263.66,
+  "text": "To leave the ground that fast, you'd be moving faster than a rifle bullet, and air at that speed glows hot."
+ },
+ {
+  "i": 118,
+  "start": 264.46,
+  "end": 266.04,
+  "text": "That night, Mina can't sleep."
+ },
+ {
+  "i": 119,
+  "start": 266.44,
+  "end": 270.18,
+  "text": "She sits on the end of your bed and asks the question nobody else will."
+ },
+ {
+  "i": 120,
+  "start": 270.86,
+  "end": 272.4,
+  "text": "\"What happens when it doesn't stop?\""
+ },
+ {
+  "i": 121,
+  "start": 273.04,
+  "end": 274.2,
+  "text": "You don't have an answer."
+ },
+ {
+  "i": 122,
+  "start": 274.44,
+  "end": 275.82,
+  "text": "You do the maths instead."
+ },
+ {
+  "i": 123,
+  "start": 276.36,
+  "end": 280.52,
+  "text": "And the maths says there's a day when you go up, and gravity can't bring you back."
+ },
+ {
+  "i": 124,
+  "start": 282.0,
+  "end": 283.8,
+  "text": "Day twenty-one."
+ },
+ {
+  "i": 125,
+  "start": 283.8,
+  "end": 285.68,
+  "text": "Over five hundred kilometres."
+ },
+ {
+  "i": 126,
+  "start": 285.68,
+  "end": 287.78,
+  "text": "You pass the International Space Station."
+ },
+ {
+  "i": 127,
+  "start": 288.4,
+  "end": 289.66,
+  "text": "The astronauts wave."
+ },
+ {
+  "i": 128,
+  "start": 290.04,
+  "end": 291.98,
+  "text": "They're not floating because they're high."
+ },
+ {
+  "i": 129,
+  "start": 292.48,
+  "end": 297.78,
+  "text": "They're floating because they're falling sideways, around the Earth, at almost eight kilometres a second."
+ },
+ {
+  "i": 130,
+  "start": 298.38,
+  "end": 299.48,
+  "text": "You're only going up."
+ },
+ {
+  "i": 131,
+  "start": 299.6,
+  "end": 301.12,
+  "text": "So you always come back down."
+ },
+ {
+  "i": 132,
+  "start": 301.12,
+  "end": 303.924,
+  "text": "Days twenty-two, twenty-three, twenty-four."
+ },
+ {
+  "i": 133,
+  "start": 303.924,
+  "end": 305.808,
+  "text": "A thousand kilometres."
+ },
+ {
+  "i": 134,
+  "start": 305.808,
+  "end": 307.064,
+  "text": "Two thousand."
+ },
+ {
+  "i": 135,
+  "start": 307.064,
+  "end": 308.32,
+  "text": "Four thousand."
+ },
+ {
+  "i": 136,
+  "start": 308.32,
+  "end": 310.42,
+  "text": "Every fall takes longer than the last."
+ },
+ {
+  "i": 137,
+  "start": 310.42,
+  "end": 311.9,
+  "text": "You've started bringing snacks."
+ },
+ {
+  "i": 138,
+  "start": 312.72,
+  "end": 315.66,
+  "text": "Until day twenty-five."
+ },
+ {
+  "i": 139,
+  "start": 315.66,
+  "end": 317.3,
+  "text": "Day twenty-five."
+ },
+ {
+  "i": 140,
+  "start": 317.3,
+  "end": 322.86,
+  "text": "To jump this high, you'd have to leave the ground faster than eleven point two kilometres a second."
+ },
+ {
+  "i": 141,
+  "start": 323.38,
+  "end": 324.64,
+  "text": "That's escape velocity."
+ },
+ {
+  "i": 142,
+  "start": 325.2,
+  "end": 327.36,
+  "text": "The speed where gravity never pulls you back."
+ },
+ {
+  "i": 143,
+  "start": 327.36,
+  "end": 329.08,
+  "text": "Mina holds your hand."
+ },
+ {
+  "i": 144,
+  "start": 329.44,
+  "end": 330.0,
+  "text": "\"Don't,\" she says."
+ },
+ {
+  "i": 145,
+  "start": 330.24,
+  "end": 330.46,
+  "text": "\"Please.\""
+ },
+ {
+  "i": 146,
+  "start": 331.44,
+  "end": 333.6,
+  "text": "Dev holds up a sign: \"Bring me a moon rock.\""
+ },
+ {
+  "i": 147,
+  "start": 334.44,
+  "end": 335.58,
+  "text": "Biscuit finally looks up."
+ },
+ {
+  "i": 148,
+  "start": 336.16,
+  "end": 336.98,
+  "text": "You bend your knees."
+ },
+ {
+  "i": 149,
+  "start": 338.96,
+  "end": 341.48,
+  "text": "In real life, nobody's jump doubles."
+ },
+ {
+  "i": 150,
+  "start": 341.94,
+  "end": 345.1,
+  "text": "The best human leap is about a metre and a half, and that's plenty."
+ },
+ {
+  "i": 151,
+  "start": 345.84,
+  "end": 348.7,
+  "text": "But if it did, the scariest part wouldn't be going up."
+ },
+ {
+  "i": 152,
+  "start": 349.04,
+  "end": 351.42,
+  "text": "It would be every single time you came down."
+ },
+ {
+  "i": 153,
+  "start": 352.04,
+  "end": 353.4,
+  "text": "So, what day would you stop?"
+ },
+ {
+  "i": 154,
+  "start": 353.7,
+  "end": 354.58,
+  "text": "Tell us in the comments."
+ },
+ {
+  "i": 155,
+  "start": 355.3,
+  "end": 356.92,
+  "text": "And subscribe for more What Ifs."
+ }
+]

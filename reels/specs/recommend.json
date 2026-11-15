@@ -1,0 +1,85 @@
+{
+ "name": "recommend",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  7,
+  9,
+  10,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Out of **millions** of videos, only a **few dozen** reach your screen.",
+   "Out of millions of videos, only a few dozen reach your screen."
+  ],
+  [
+   "So who picks them? YouTube's engineers described a **funnel.**",
+   "So who picks them? YouTube's engineers described a funnel."
+  ],
+  [
+   "At the top: **millions** of videos. Far too many to judge one by one.",
+   "At the top, millions of videos. Far too many to judge one by one."
+  ],
+  [
+   "First, it pulls out a few **hundred,** using what viewers with habits **like yours** watched.",
+   "First, it pulls out a few hundred, using what viewers with habits like yours watched."
+  ],
+  [
+   "Then a second system **scores** each one, and only the winners reach you.",
+   "Then a second system scores each one, and only the winners reach you."
+  ],
+  [
+   "But scored on what? Back in 2011, YouTube learned a **click** doesn't mean you **watched.**",
+   "But scored on what? Back in twenty eleven, YouTube learned a click doesn't mean you watched."
+  ],
+  [
+   "In their 2016 paper, the score was a **prediction:** how long will you **watch?**",
+   "In their twenty sixteen paper, the score was a prediction. How long will you watch?"
+  ],
+  [
+   "Because ranking by clicks rewarded **clickbait,** videos people didn't finish.",
+   "Because ranking by clicks rewarded clickbait, videos people didn't finish."
+  ],
+  [
+   "Today YouTube also uses **surveys,** asking viewers if a video was **worth their time.**",
+   "Today YouTube also uses surveys, asking viewers if a video was worth their time."
+  ],
+  [
+   "Plus what you **share,** what you **like,** and what you **dislike.**",
+   "Plus what you share, what you like, and what you dislike."
+  ],
+  [
+   "Instagram says its key Reels guesses are: will you **watch to the end,** like it, or **reshare** it?",
+   "Instagram says its key Reels guesses are: will you watch to the end, like it, or reshare it?"
+  ],
+  [
+   "So your feed isn't reading your mind. It's placing a **bet** on your next move.",
+   "So your feed isn't reading your mind. It's placing a bet on your next move."
+  ],
+  [
+   "And what you do right now feeds the **next bet.**",
+   "And what you do right now feeds the next bet."
+  ],
+  [
+   "Want a reset? YouTube lets you **pause** or **delete** your watch history.",
+   "Want a reset? YouTube lets you pause or delete your watch history."
+  ],
+  [
+   "So what does your feed think **you** are?",
+   "So what does your feed think you are?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

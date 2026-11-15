@@ -1,0 +1,81 @@
+{
+ "name": "planelift",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "music_gain": 0.7,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "phrases": [
+  [
+   "The textbook reason **planes fly** is **wrong.**",
+   "The textbook reason planes fly is wrong."
+  ],
+  [
+   "But how do planes **actually stay in the air?** Not because air on top has **farther to go.**",
+   "But how do planes actually stay in the air? Not because air on top has farther to go."
+  ],
+  [
+   "The story goes: air splits at the front, and the top air must **race** to meet the bottom air at the back.",
+   "The story goes: air splits at the front, and the top air must race to meet the bottom air at the back."
+  ],
+  [
+   "NASA calls it one of the most widely circulated, **incorrect** explanations.",
+   "NASA calls it one of the most widely circulated, incorrect explanations."
+  ],
+  [
+   "Smoke tests show the top air doesn't wait for anything. It reaches the back **first.**",
+   "Smoke tests show the top air doesn't wait for anything. It reaches the back first."
+  ],
+  [
+   "And a sail has the **same length** on both sides, yet it still makes lift.",
+   "And a sail has the same length on both sides, yet it still makes lift."
+  ],
+  [
+   "So what really holds up a **jet?**",
+   "So what really holds up a jet?"
+  ],
+  [
+   "The wing is curved and tilted, so it **bends** the air flowing past it, **downward.**",
+   "The wing is curved and tilted, so it bends the air flowing past it, downward."
+  ],
+  [
+   "Push air down, and the air pushes the wing **up.** That's Newton's **third law.**",
+   "Push air down, and the air pushes the wing up. That's Newton's third law."
+  ],
+  [
+   "Bending the airflow also changes the **pressure:** lower above the wing, higher below.",
+   "Bending the airflow also changes the pressure: lower above the wing, higher below."
+  ],
+  [
+   "Here's the catch: these aren't rival theories. Both are **true at the same time,** and neither one alone is the full story.",
+   "Here's the catch: these aren't rival theories. Both are true at the same time, and neither one alone is the full story."
+  ],
+  [
+   "So planes stay up by **turning** a huge amount of air downward, while **low pressure** on top does much of the lifting.",
+   "So planes stay up by turning a huge amount of air downward, while low pressure on top does much of the lifting."
+  ],
+  [
+   "Did you learn the longer-path myth at school? **Yes or no?**",
+   "Did you learn the longer-path myth at school? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

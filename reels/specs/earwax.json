@@ -1,0 +1,100 @@
+{
+ "name": "earwax",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  5,
+  8,
+  10,
+  11,
+  12,
+  14,
+  15,
+  16
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "phrases": [
+  [
+   "What is earwax actually **for?**",
+   "What is earwax actually for?"
+  ],
+  [
+   "But it isn't **dirt.** It's your ear's **built-in cleaner.**",
+   "But it isn't dirt. It's your ear's built-in cleaner."
+  ],
+  [
+   "Glands in your ear canal make a **waxy oil,** called cerumen.",
+   "Glands in your ear canal make a waxy oil, called cerumen."
+  ],
+  [
+   "It **traps dust and germs** before they get deeper in.",
+   "It traps dust and germs before they get deeper in."
+  ],
+  [
+   "It keeps the skin **moist,** and it even fights **bacteria.**",
+   "It keeps the skin moist, and it even fights bacteria."
+  ],
+  [
+   "So how does old wax get out? Your ear has a **conveyor belt.**",
+   "So how does old wax get out? Your ear has a conveyor belt."
+  ],
+  [
+   "The skin of the canal **slowly moves outward,** from the eardrum to the opening.",
+   "The skin of the canal slowly moves outward, from the eardrum to the opening."
+  ],
+  [
+   "It carries old wax along, and **chewing and talking** help it move.",
+   "It carries old wax along, and chewing and talking help it move."
+  ],
+  [
+   "At the opening, it **dries, flakes,** and **falls out.**",
+   "At the opening, it dries, flakes, and falls out."
+  ],
+  [
+   "That's why ear doctors say: **skip the cotton swabs.**",
+   "That's why ear doctors say: skip the cotton swabs."
+  ],
+  [
+   "Swabs mostly **push wax deeper,** and can even hurt the **eardrum.**",
+   "Swabs mostly push wax deeper, and can even hurt the eardrum."
+  ],
+  [
+   "Earwax problems send about **12 million** Americans to a doctor each year.",
+   "Earwax problems send about twelve million Americans to a doctor each year."
+  ],
+  [
+   "Now the weird part. Some people have **wet, sticky** earwax. Others have **dry, flaky** wax.",
+   "Now the weird part. Some people have wet, sticky earwax. Others have dry, flaky wax."
+  ],
+  [
+   "It comes down to **one letter** in one gene, called **ABCC11.**",
+   "It comes down to one letter in one gene, called A B C C eleven."
+  ],
+  [
+   "Two copies of the **A** version give **dry wax.** Any **G** gives **wet.**",
+   "Two copies of the A version give dry wax. Any G gives wet."
+  ],
+  [
+   "Dry wax is most common in **East Asia,** like China and Korea.",
+   "Dry wax is most common in East Asia, like China and Korea."
+  ],
+  [
+   "So earwax isn't dirt. It's a **self-cleaning, self-moving shield.**",
+   "So earwax isn't dirt. It's a self-cleaning, self-moving shield."
+  ],
+  [
+   "Which kind do you have? **Wet or dry?**",
+   "Which kind do you have? Wet or dry?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

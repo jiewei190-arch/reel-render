@@ -1,0 +1,30 @@
+{
+ "name": "staticshock",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [1, 2, 4, 6, 7, 8, 10, 12, 13, 14, 15],
+ "phrases": [
+  ["You reach for the doorknob, and... **zap!**", "You reach for the doorknob, and... zap!"],
+  ["**But** it happens way more in winter. So why do you get more static shocks in winter?", "But it happens way more in winter. So why do you get more static shocks in winter?"],
+  ["First: where does the **zap** come from?", "First. Where does the zap come from?"],
+  ["When your socks rub the carpet, tiny **electrons** hop from one material to the other.", "When your socks rub the carpet, tiny electrons hop from one material to the other."],
+  ["Step by step, your body **piles up** extra charge.", "Step by step, your body piles up extra charge."],
+  ["You can't feel it yet, **but** you can be charged to **thousands of volts.**", "You can't feel it yet, but you can be charged to thousands of volts."],
+  ["It's only a **tiny** amount of charge, so it's just a quick sting.", "It's only a tiny amount of charge, so it's just a quick sting."],
+  ["Reach for metal, and near your fingertip the charge **jumps across the air:** a spark.", "Reach for metal, and near your fingertip, the charge jumps across the air. A spark."],
+  ["So why winter? Here's the twist: it's about **water.**", "So why winter? Here's the twist. It's about water."],
+  ["On humid days, surfaces wear an **invisible film** of water.", "On humid days, surfaces wear an invisible film of water."],
+  ["That film **drains your charge** away before it can build up.", "That film drains your charge away, before it can build up."],
+  ["**But** cold winter air holds very **little water.**", "But cold winter air holds very little water."],
+  ["Heating it indoors doesn't add any, so the air at home gets **really dry.**", "Heating it indoors doesn't add any, so the air at home gets really dry."],
+  ["No water film, so your charge has **nowhere to go...** until the doorknob.", "No water film, so your charge has nowhere to go... until the doorknob."],
+  ["So winter shocks aren't about the cold. They're about **dry air** letting charge pile up.", "So winter shocks aren't about the cold. They're about dry air, letting charge pile up."],
+  ["One trick: touch the metal with a **key** first, so the spark hits the key, not your finger.", "One trick. Touch the metal with a key first, so the spark hits the key, not your finger."],
+  ["Do you get zapped a lot? **Yes or no?**", "Do you get zapped a lot? Yes, or no?"],
+  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ ]
+}

@@ -1,0 +1,104 @@
+{
+ "name": "handwarmer",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  7,
+  9,
+  11,
+  12,
+  13,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "This little pouch gets hot with **no battery** at all.",
+   "This little pouch gets hot with no battery at all."
+  ],
+  [
+   "**But** inside, it's just dark powder. So how do hand warmers get hot?",
+   "But inside, it's just dark powder. So how do hand warmers get hot?"
+  ],
+  [
+   "Here's the recipe, straight from a maker's **safety sheet.**",
+   "Here's the recipe, straight from a maker's safety sheet."
+  ],
+  [
+   "More than **half** of it is iron powder.",
+   "More than half of it is iron powder."
+  ],
+  [
+   "Then water, a pinch of **salt,** activated charcoal, and vermiculite.",
+   "Then water, a pinch of salt, activated charcoal, and vermiculite."
+  ],
+  [
+   "Sealed in plastic, nothing happens. Tear it open, and **air** gets in through the cloth.",
+   "Sealed in plastic, nothing happens. Tear it open, and air gets in, through the cloth."
+  ],
+  [
+   "And the iron starts to **rust.** Really.",
+   "And the iron starts to rust. Really."
+  ],
+  [
+   "Rusting gives off heat. Normally it's so **slow,** you never feel it.",
+   "Rusting gives off heat. Normally, it's so slow, you never feel it."
+  ],
+  [
+   "Here, the iron is a **fine powder,** so a huge surface touches the air.",
+   "Here, the iron is a fine powder, so a huge surface touches the air."
+  ],
+  [
+   "The salt speeds the rusting up **even more.**",
+   "The salt speeds the rusting up even more."
+  ],
+  [
+   "Charcoal spreads the heat out, and vermiculite **holds the water.**",
+   "Charcoal spreads the heat out, and vermiculite holds the water."
+  ],
+  [
+   "That's **fast rust:** warm hands for hours.",
+   "That's fast rust. Warm hands for hours."
+  ],
+  [
+   "And once it starts, you **can't switch it off.**",
+   "And once it starts, you can't switch it off."
+  ],
+  [
+   "**But** the clicky, reusable kind works completely differently.",
+   "But the clicky, reusable kind works completely differently."
+  ],
+  [
+   "It's a liquid holding **more dissolved salt** than it normally could.",
+   "It's a liquid, holding more dissolved salt than it normally could."
+  ],
+  [
+   "Click the little metal piece, and **crystals** race through it, releasing stored heat.",
+   "Click the little metal piece, and crystals race through it, releasing stored heat."
+  ],
+  [
+   "Boil it, and it melts back to liquid, **ready again.**",
+   "Boil it, and it melts back to liquid, ready again."
+  ],
+  [
+   "So a hand warmer is just iron, **rusting on purpose,** really fast.",
+   "So a hand warmer is just iron, rusting on purpose, really fast."
+  ],
+  [
+   "Did you know it was rust? **Yes or no?**",
+   "Did you know it was rust? Yes, or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.7
+}

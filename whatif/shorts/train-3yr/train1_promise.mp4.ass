@@ -1,0 +1,90 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:32.20,Title,,0,0,0,,Train every day for 3 years. Does your hair fall out?
+Dialogue: 0,0:00:00.00,0:00:00.44,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} ROLL OUT
+Dialogue: 0,0:00:00.44,0:00:00.66,Cap,,0,0,0,,YOU {\c&H00E6FF&}ROLL{\c&HFFFFFF&} OUT
+Dialogue: 0,0:00:00.66,0:00:00.84,Cap,,0,0,0,,YOU ROLL {\c&H00E6FF&}OUT{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.84,0:00:00.96,Cap,,0,0,0,,{\c&H00E6FF&}OF{\c&HFFFFFF&} BED AND
+Dialogue: 0,0:00:00.96,0:00:01.16,Cap,,0,0,0,,OF {\c&H00E6FF&}BED{\c&HFFFFFF&} AND
+Dialogue: 0,0:00:01.16,0:00:01.38,Cap,,0,0,0,,OF BED {\c&H00E6FF&}AND{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.38,0:00:01.52,Cap,,0,0,0,,{\c&H00E6FF&}MAKE{\c&HFFFFFF&} A PROMISE.
+Dialogue: 0,0:00:01.52,0:00:01.66,Cap,,0,0,0,,MAKE {\c&H00E6FF&}A{\c&HFFFFFF&} PROMISE.
+Dialogue: 0,0:00:01.66,0:00:02.66,Cap,,0,0,0,,MAKE A {\c&H00E6FF&}PROMISE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.88,0:00:03.16,Cap,,0,0,0,,{\c&H00E6FF&}EVERY{\c&HFFFFFF&} DAY, FOR
+Dialogue: 0,0:00:03.16,0:00:03.52,Cap,,0,0,0,,EVERY {\c&H00E6FF&}DAY,{\c&HFFFFFF&} FOR
+Dialogue: 0,0:00:03.52,0:00:03.72,Cap,,0,0,0,,EVERY DAY, {\c&H00E6FF&}FOR{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.72,0:00:04.02,Cap,,0,0,0,,{\c&H00E6FF&}THREE{\c&HFFFFFF&} YEARS: A
+Dialogue: 0,0:00:04.02,0:00:04.76,Cap,,0,0,0,,THREE {\c&H00E6FF&}YEARS:{\c&HFFFFFF&} A
+Dialogue: 0,0:00:04.76,0:00:04.78,Cap,,0,0,0,,THREE YEARS: {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.78,0:00:05.14,Cap,,0,0,0,,{\c&H00E6FF&}HUNDRED{\c&HFFFFFF&} PUSH-UPS, A
+Dialogue: 0,0:00:05.14,0:00:05.98,Cap,,0,0,0,,HUNDRED {\c&H00E6FF&}PUSH-UPS,{\c&HFFFFFF&} A
+Dialogue: 0,0:00:05.98,0:00:05.98,Cap,,0,0,0,,HUNDRED PUSH-UPS, {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.98,0:00:06.32,Cap,,0,0,0,,{\c&H00E6FF&}HUNDRED{\c&HFFFFFF&} SIT-UPS, A
+Dialogue: 0,0:00:06.32,0:00:07.10,Cap,,0,0,0,,HUNDRED {\c&H00E6FF&}SIT-UPS,{\c&HFFFFFF&} A
+Dialogue: 0,0:00:07.10,0:00:07.12,Cap,,0,0,0,,HUNDRED SIT-UPS, {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.12,0:00:07.46,Cap,,0,0,0,,{\c&H00E6FF&}HUNDRED{\c&HFFFFFF&} SQUATS, AND
+Dialogue: 0,0:00:07.46,0:00:07.92,Cap,,0,0,0,,HUNDRED {\c&H00E6FF&}SQUATS,{\c&HFFFFFF&} AND
+Dialogue: 0,0:00:07.92,0:00:08.18,Cap,,0,0,0,,HUNDRED SQUATS, {\c&H00E6FF&}AND{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.18,0:00:08.32,Cap,,0,0,0,,{\c&H00E6FF&}A{\c&HFFFFFF&} TEN KILOMETRE
+Dialogue: 0,0:00:08.32,0:00:08.52,Cap,,0,0,0,,A {\c&H00E6FF&}TEN{\c&HFFFFFF&} KILOMETRE
+Dialogue: 0,0:00:08.52,0:00:08.94,Cap,,0,0,0,,A TEN {\c&H00E6FF&}KILOMETRE{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.94,0:00:09.90,Cap,,0,0,0,,{\c&H00E6FF&}RUN.{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.08,0:00:10.32,Cap,,0,0,0,,{\c&H00E6FF&}ABOUT{\c&HFFFFFF&} SIX MILES.
+Dialogue: 0,0:00:10.32,0:00:10.56,Cap,,0,0,0,,ABOUT {\c&H00E6FF&}SIX{\c&HFFFFFF&} MILES.
+Dialogue: 0,0:00:10.56,0:00:11.54,Cap,,0,0,0,,ABOUT SIX {\c&H00E6FF&}MILES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.78,0:00:12.02,Cap,,0,0,0,,{\c&H00E6FF&}NO{\c&HFFFFFF&} DAYS OFF.
+Dialogue: 0,0:00:12.02,0:00:12.26,Cap,,0,0,0,,NO {\c&H00E6FF&}DAYS{\c&HFFFFFF&} OFF.
+Dialogue: 0,0:00:12.26,0:00:13.16,Cap,,0,0,0,,NO DAYS {\c&H00E6FF&}OFF.{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.28,0:00:13.52,Cap,,0,0,0,,{\c&H00E6FF&}NO{\c&HFFFFFF&} IDEA WHAT
+Dialogue: 0,0:00:13.52,0:00:13.86,Cap,,0,0,0,,NO {\c&H00E6FF&}IDEA{\c&HFFFFFF&} WHAT
+Dialogue: 0,0:00:13.86,0:00:14.06,Cap,,0,0,0,,NO IDEA {\c&H00E6FF&}WHAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:14.06,0:00:14.22,Cap,,0,0,0,,{\c&H00E6FF&}YOU'RE{\c&HFFFFFF&} GETTING INTO.
+Dialogue: 0,0:00:14.22,0:00:14.44,Cap,,0,0,0,,YOU'RE {\c&H00E6FF&}GETTING{\c&HFFFFFF&} INTO.
+Dialogue: 0,0:00:14.44,0:00:15.40,Cap,,0,0,0,,YOU'RE GETTING {\c&H00E6FF&}INTO.{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.72,0:00:15.80,Cap,,0,0,0,,{\c&H00E6FF&}MINA{\c&HFFFFFF&} LOOKS AT
+Dialogue: 0,0:00:15.80,0:00:16.00,Cap,,0,0,0,,MINA {\c&H00E6FF&}LOOKS{\c&HFFFFFF&} AT
+Dialogue: 0,0:00:16.00,0:00:16.16,Cap,,0,0,0,,MINA LOOKS {\c&H00E6FF&}AT{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.16,0:00:16.28,Cap,,0,0,0,,{\c&H00E6FF&}YOUR{\c&HFFFFFF&} HAIR, THEN
+Dialogue: 0,0:00:16.28,0:00:16.50,Cap,,0,0,0,,YOUR {\c&H00E6FF&}HAIR,{\c&HFFFFFF&} THEN
+Dialogue: 0,0:00:16.50,0:00:16.72,Cap,,0,0,0,,YOUR HAIR, {\c&H00E6FF&}THEN{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.72,0:00:16.88,Cap,,0,0,0,,{\c&H00E6FF&}AT{\c&HFFFFFF&} YOU.
+Dialogue: 0,0:00:16.88,0:00:17.76,Cap,,0,0,0,,AT {\c&H00E6FF&}YOU.{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.80,0:00:18.26,Cap,,0,0,0,,{\c&H00E6FF&}"EVERYONE{\c&HFFFFFF&} SAYS IF
+Dialogue: 0,0:00:18.26,0:00:18.58,Cap,,0,0,0,,"EVERYONE {\c&H00E6FF&}SAYS{\c&HFFFFFF&} IF
+Dialogue: 0,0:00:18.58,0:00:18.76,Cap,,0,0,0,,"EVERYONE SAYS {\c&H00E6FF&}IF{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.76,0:00:18.90,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} TRAIN THAT
+Dialogue: 0,0:00:18.90,0:00:19.12,Cap,,0,0,0,,YOU {\c&H00E6FF&}TRAIN{\c&HFFFFFF&} THAT
+Dialogue: 0,0:00:19.12,0:00:19.34,Cap,,0,0,0,,YOU TRAIN {\c&H00E6FF&}THAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.34,0:00:19.94,Cap,,0,0,0,,{\c&H00E6FF&}HARD,{\c&HFFFFFF&} YOUR HAIR
+Dialogue: 0,0:00:19.94,0:00:20.06,Cap,,0,0,0,,HARD, {\c&H00E6FF&}YOUR{\c&HFFFFFF&} HAIR
+Dialogue: 0,0:00:20.06,0:00:20.28,Cap,,0,0,0,,HARD, YOUR {\c&H00E6FF&}HAIR{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.28,0:00:20.60,Cap,,0,0,0,,{\c&H00E6FF&}FALLS{\c&HFFFFFF&} OUT."
+Dialogue: 0,0:00:20.60,0:00:21.62,Cap,,0,0,0,,FALLS {\c&H00E6FF&}OUT."{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.86,0:00:21.90,Cap,,0,0,0,,{\c&H00E6FF&}DEV{\c&HFFFFFF&} NODS, VERY
+Dialogue: 0,0:00:21.90,0:00:22.22,Cap,,0,0,0,,DEV {\c&H00E6FF&}NODS,{\c&HFFFFFF&} VERY
+Dialogue: 0,0:00:22.22,0:00:22.54,Cap,,0,0,0,,DEV NODS, {\c&H00E6FF&}VERY{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.54,0:00:23.60,Cap,,0,0,0,,{\c&H00E6FF&}SERIOUSLY.{\c&HFFFFFF&}
+Dialogue: 0,0:00:23.84,0:00:24.12,Cap,,0,0,0,,{\c&H00E6FF&}"IT'S{\c&HFFFFFF&} A KNOWN
+Dialogue: 0,0:00:24.12,0:00:24.22,Cap,,0,0,0,,"IT'S {\c&H00E6FF&}A{\c&HFFFFFF&} KNOWN
+Dialogue: 0,0:00:24.22,0:00:24.40,Cap,,0,0,0,,"IT'S A {\c&H00E6FF&}KNOWN{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.40,0:00:24.72,Cap,,0,0,0,,{\c&H00E6FF&}THING."{\c&HFFFFFF&}
+Dialogue: 0,0:00:24.72,0:00:25.68,Cap,,0,0,0,,{\c&H00E6FF&}IS{\c&HFFFFFF&} IT?
+Dialogue: 0,0:00:25.68,0:00:26.56,Cap,,0,0,0,,IS {\c&H00E6FF&}IT?{\c&HFFFFFF&}
+Dialogue: 0,0:00:26.70,0:00:26.94,Cap,,0,0,0,,{\c&H00E6FF&}THREE{\c&HFFFFFF&} YEARS.
+Dialogue: 0,0:00:26.94,0:00:27.90,Cap,,0,0,0,,THREE {\c&H00E6FF&}YEARS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.22,0:00:28.30,Cap,,0,0,0,,{\c&H00E6FF&}ONE{\c&HFFFFFF&} THOUSAND AND
+Dialogue: 0,0:00:28.30,0:00:28.56,Cap,,0,0,0,,ONE {\c&H00E6FF&}THOUSAND{\c&HFFFFFF&} AND
+Dialogue: 0,0:00:28.56,0:00:28.82,Cap,,0,0,0,,ONE THOUSAND {\c&H00E6FF&}AND{\c&HFFFFFF&}
+Dialogue: 0,0:00:28.82,0:00:29.38,Cap,,0,0,0,,{\c&H00E6FF&}NINETY-FIVE{\c&HFFFFFF&} DAYS.
+Dialogue: 0,0:00:29.38,0:00:30.28,Cap,,0,0,0,,NINETY-FIVE {\c&H00E6FF&}DAYS.{\c&HFFFFFF&}
+Dialogue: 0,0:00:30.52,0:00:30.84,Cap,,0,0,0,,{\c&H00E6FF&}LET'S{\c&HFFFFFF&} FIND OUT.
+Dialogue: 0,0:00:30.84,0:00:31.02,Cap,,0,0,0,,LET'S {\c&H00E6FF&}FIND{\c&HFFFFFF&} OUT.
+Dialogue: 0,0:00:31.02,0:00:31.92,Cap,,0,0,0,,LET'S FIND {\c&H00E6FF&}OUT.{\c&HFFFFFF&}

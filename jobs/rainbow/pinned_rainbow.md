@@ -1,0 +1,1 @@
+Bonus: no two people see the same rainbow. Your cone of raindrops moves with your eyes, so the person next to you is looking at different drops (ASU). Have you ever seen a full-circle rainbow? Yes or no? 🌈

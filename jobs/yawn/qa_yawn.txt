@@ -1,0 +1,14 @@
+QA yawn: WARN   (/home/user/reel-render/jobs/yawn/yawn.mp4, 80.0 s)
+  PASS  static          longest no-change run 0.75 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 8.2-12.5s, 24.0-28.0s, 43.5-46.8s, 55.5-58.8s ...
+  WARN  outer 24 px     content at the frame edge 8.2-12.5s, 12.8-15.5s, 23.8-28.0s, 28.2-31.2s ...
+  PASS  loudness        -15.2 LUFS integrated (want -16.0..-14.0)
+  WARN  true peak       -0.4 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 8.4 dB above the pauses (8 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          80.0 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 5.4 (min 1.0), contrast 29.7 (min 18.0)
+  PASS  9:16 frame      yawn.mp4 1080x1920 SAR 1:1; yawn_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)
