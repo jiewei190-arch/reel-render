@@ -57,7 +57,7 @@
    },
    "sfx": [
     {
-     "at": 0,
+     "at": -0.4,
      "name": "toon3d:swoosh",
      "gain": -10
     },
@@ -201,7 +201,8 @@
    },
    "line": "All three survived.",
    "in": {
-    "type": "dip"
+    "type": "flash",
+    "dur": 0.12
    },
    "sfx": [
     {
@@ -309,8 +310,8 @@
    },
    "line": "Historians think that part was probably made up.",
    "in": {
-    "type": "iris",
-    "dur": 0.4
+    "type": "flash",
+    "dur": 0.12
    },
    "sfx": [
     {

@@ -1,6 +1,6 @@
 # UPLOAD: The Defenestration of Prague
 
-**File:** `video.mp4` (1080×1920, 24 fps, ~28 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080×1920, 24 fps, ~23.9 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (≤ 60 chars, 1 emoji)
 3 Men Got Thrown Out of a Castle Window and Survived 🪟

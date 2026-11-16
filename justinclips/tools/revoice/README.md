@@ -20,7 +20,7 @@ Options: `--no-voice` (keep the current voice, e.g. after a scene edit), `--shee
 
 Steps: copy `project/` into `$KIT/projects/<slug>` → `voice.py` → kit `tools/transcribe.py` (word timings, script-aligned)
 → `retime.py` (plan → shots.json; prints every shot length and warns outside 1.0–2.8 s) → `render.mjs` → kit `audio/mix.py`
-(music + SFX, −14 LUFS, TP −1.5; redone two-pass + linear if it lands > 0.3 LU off) → mux (`-c:v copy`, every frame kept) → ebur128 check → `video.mp4`, `video.sha256`,
+(music + SFX, −14 LUFS, TP −1.5; redone two-pass + linear if it lands > 0.1 LU off) → mux (`-c:v copy`, every frame kept) → ebur128 check → `video.mp4`, `video.sha256`,
 `contact_sheet.png`, and the generated files copied back into `project/`. Commit with `git add -f project/input/voiceover.wav` (*.wav is gitignored).
 
 ## Voice engines (`voice.py`)

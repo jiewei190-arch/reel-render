@@ -1,0 +1,112 @@
+{
+ "voice": "#8 from justinclips/voice_lineup (NOTES.md 'How to use the winner')",
+ "command": "tts_any.py project/lines.json take.mp3 --engine dia --seed 11 --wav --prompt-audio prompts/dia_prompt_kokoro_am_puck.wav --prompt-text \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\" --dia-tail \" (laughs)\"",
+ "split": "python justinclips/tools/dia_split.py take.raw.wav justinclips/shorts/defenestration-manure/project/lines.json LINES/ \"{n:02d}.wav\" (quiet-point cuts between lines; '...' beats cut 20 ms after the word + 0.4 s beat), then rebuild.sh defenestration-manure --engine files --dir LINES/",
+ "seeds_tried": {
+  "7": "139 Hz (drifted to the low voice), all words",
+  "11": "178.8 Hz, all words: KEPT",
+  "42": "133 Hz (low voice)",
+  "23": "271 Hz (too high)",
+  "11 + pronounce Prague->Prahg": "135 Hz and 'Prog': rejected"
+ },
+ "take": {
+  "engine": "dia",
+  "settings": {
+   "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+   "guidance_scale": 3.0,
+   "temperature": 1.8,
+   "top_p": 0.9,
+   "top_k": 45
+  },
+  "seeds_tried": [
+   11
+  ],
+  "duration_s": 20.74,
+  "load_s": 5.2,
+  "render_s": 1032.8,
+  "synth_s": 1020.1,
+  "synth_s_per_10s_audio": 491.8,
+  "lufs": -14.1,
+  "true_peak_dbtp": -1.7,
+  "final_transcript": "Three men got thrown out of a castle window. Prague 1618. Angry nobles stormed the castle. They grabbed two royal governors and their secretary and out they went. About 70 feet down, all three survived. Catholics said angels caught them. Later pamphlets said they landed in a pile of manure. Historians think that part was probably made up, but the secretary got a noble title. Baron von Hohenfall. Baron of Highfall.",
+  "final_wrong_words": 2,
+  "parts": [
+   {
+    "text": "Three men got thrown out of a castle window. Prague, 1618. Angry nobles stormed the castle. They grabbed two royal governors and their secretary... and out they went. About 70 feet down. All three survived. Catholics said angels caught them. Later pamphlets said... they landed in a pile of manure. Historians think that part was probably made up. But the secretary got a noble title... Baron von Hohenfall. Baron of High Fall.",
+    "start": 0.15,
+    "end": 20.44,
+    "seed": 11,
+    "heard": "Three men got thrown out of a castle window. Prague 1618, angry nobles stormed the castle. They grabbed two royal governors and their secretary, and out they went. About 70 feet down, all three survived. Catholics said angels caught them. Later pamphlets said they landed in a pile of manure. Historians think that part was probably made up, but the secretary got a noble title. Baron von Hohenfall, Baron of Highfall.",
+    "wrong_words": 2
+   }
+  ]
+ },
+ "split_report": {
+  "heard": "Three men got thrown out of a castle window. Prague, 1618. Angry nobles stormed the castle. They grabbed two royal governors and their secretary, and out they went. About 70 feet down, all three survived. Catholics said angels caught them. Later pamphlets said they landed in a pile of manure. Historians think that part was probably made up, but the secretary got a noble title. Baron von Hohenfall. Baron of Highfall.",
+  "wrong_tokens": 2,
+  "median_pitch_hz": 177.7,
+  "take_s": 20.74,
+  "lines": [
+   {
+    "n": 1,
+    "file": "01.wav",
+    "from": 0.0,
+    "to": 2.17
+   },
+   {
+    "n": 2,
+    "file": "02.wav",
+    "from": 2.17,
+    "to": 5.41
+   },
+   {
+    "n": 3,
+    "file": "03.wav",
+    "from": 5.41,
+    "to": 8.58
+   },
+   {
+    "n": 4,
+    "file": "04.wav",
+    "from": 8.58,
+    "to": 9.92
+   },
+   {
+    "n": 5,
+    "file": "05.wav",
+    "from": 9.92,
+    "to": 10.75
+   },
+   {
+    "n": 6,
+    "file": "06.wav",
+    "from": 10.75,
+    "to": 12.09
+   },
+   {
+    "n": 7,
+    "file": "07.wav",
+    "from": 12.09,
+    "to": 14.62
+   },
+   {
+    "n": 8,
+    "file": "08.wav",
+    "from": 14.62,
+    "to": 16.3
+   },
+   {
+    "n": 9,
+    "file": "09.wav",
+    "from": 16.3,
+    "to": 19.28
+   },
+   {
+    "n": 10,
+    "file": "10.wav",
+    "from": 19.28,
+    "to": 20.74
+   }
+  ]
+ }
+}

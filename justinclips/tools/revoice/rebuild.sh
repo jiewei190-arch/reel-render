@@ -49,10 +49,10 @@ node render.mjs --project "projects/$SLUG" --out "projects/$SLUG/build/video_sil
 node render.mjs --project "projects/$SLUG" --sheet --scale 0.4 >/dev/null
 echo "== 6/7 mix"
 "$VPY" audio/mix.py --project "projects/$SLUG" >/dev/null
-# mix.py masters with single-pass loudnorm; if the result is > 0.3 LU off -14, redo it two-pass + linear (TP -1.5)
+# mix.py masters with single-pass loudnorm; if the result is > 0.1 LU off -14, redo it two-pass + linear (TP -1.5)
 J=$(ffmpeg -hide_banner -nostats -i "$PJ/build/mix.wav" -af loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json -f null - 2>&1 | sed -n '/^{/,/^}/p')
 g() { echo "$J" | python3 -c "import json,sys;print(json.load(sys.stdin)['$1'])"; }
-if python3 -c "import sys; sys.exit(0 if abs(float('$(g input_i)') + 14) > 0.3 else 1)"; then
+if python3 -c "import sys; sys.exit(0 if abs(float('$(g input_i)') + 14) > 0.1 else 1)"; then
   echo "   mix at $(g input_i) LUFS -> two-pass loudnorm"
   ffmpeg -y -v error -i "$PJ/build/mix.wav" -af "loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=$(g input_i):measured_TP=$(g input_tp):measured_LRA=$(g input_lra):measured_thresh=$(g input_thresh):offset=$(g target_offset):linear=true" -ar 48000 "$PJ/build/mix_ln.wav"
   mv "$PJ/build/mix_ln.wav" "$PJ/build/mix.wav"
