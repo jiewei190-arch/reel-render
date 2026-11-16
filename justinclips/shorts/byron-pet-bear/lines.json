@@ -1,6 +1,7 @@
 {
  "note": "The narration, one entry per spoken line. Edit here, then re-run justinclips/tools/shortbuild.py. '...' = a held beat before the punchline. Years/numbers stay digits (the D2 tool spells them for the TTS; captions keep digits).",
  "emotion": "LOL",
+ "pacing": {"gap": 0.35, "lead": 0.05, "beat": 0.4},
  "lines": [
   {"n": 1, "text": "College banned dogs, so he brought a bear."},
   {"n": 2, "text": "This is Lord Byron, the poet, at Cambridge, around 1807."},

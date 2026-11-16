@@ -59,6 +59,8 @@ def sync_out(*subs):
         elif os.path.isfile(s): shutil.copy(s, os.path.join(SRC, sub))
 
 LINES = jload(os.path.join(SHORT, "lines.json"))["lines"]
+_pace = jload(os.path.join(SHORT, "lines.json")).get("pacing", {})   # optional per-Short override: {"gap": .., "lead": .., "beat": ..}
+GAP, LEAD, BEAT = _pace.get("gap", GAP), _pace.get("lead", LEAD), _pace.get("beat", BEAT)
 sync_in()
 inp = os.path.join(PROJ, "input"); os.makedirs(inp, exist_ok=True)
 WAV, META, PLAIN = os.path.join(inp, "voiceover.wav"), os.path.join(inp, "voiceover.lines.json"), os.path.join(inp, "script.txt")
