@@ -1,0 +1,6 @@
+{"overlays": [
+  {"frames": "frames_A", "start": 0.0,  "x": 0,   "y": 1440, "w": 360, "slide": "none"},
+  {"frames": "frames_B", "start": 5.30, "x": 720, "y": 1440, "w": 360, "slide": "right", "slide_dur": 0.14},
+  {"frames": "frames_C", "start": 12.50, "x": 0,  "y": 1440, "w": 360, "slide": "bottom", "slide_dur": 0.14},
+  {"frames": "frames_D", "start": 21.50, "x": 0,  "y": 1440, "w": 360, "slide": "none"}
+]}

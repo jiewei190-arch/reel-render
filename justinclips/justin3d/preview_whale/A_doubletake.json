@@ -1,0 +1,51 @@
+{
+ "duration": 2.0,
+ "fps": 24,
+ "framing": "bust",
+ "seed": 11,
+ "blinks": [
+  0.35
+ ],
+ "keys": [
+  {
+   "t": 0.0,
+   "pose": "look_away",
+   "expr": "neutral",
+   "face": {
+    "look_x": 0.75,
+    "look_y": 0.55,
+    "brow_up_L": 0.3,
+    "brow_up_R": 0.3
+   }
+  },
+  {
+   "t": 0.5,
+   "pose": "idle",
+   "expr": "neutral",
+   "dur": 0.2,
+   "face": {
+    "look_x": 0.0,
+    "look_y": 0.0
+   }
+  },
+  {
+   "t": 0.8,
+   "pose": "look_away",
+   "dur": 0.14,
+   "face": {
+    "look_x": 0.75,
+    "look_y": 0.55,
+    "brow_up_L": 0.5,
+    "brow_up_R": 0.5
+   }
+  },
+  {
+   "t": 1.1,
+   "pose": "double_take",
+   "expr": "shock",
+   "dur": 0.12,
+   "ease": "snap"
+  }
+ ],
+ "pop_out": 1.84
+}
