@@ -1,5 +1,5 @@
 {
- "source": "whisper:small.en+script",
+ "source": "whisper:small.en+script+snap",
  "words": [
   {
    "word": "In",
@@ -13,8 +13,8 @@
   },
   {
    "word": "it",
-   "start": 1.36,
-   "end": 1.38
+   "start": 1.16,
+   "end": 1.35
   },
   {
    "word": "rained",
@@ -88,7 +88,7 @@
   },
   {
    "word": "A",
-   "start": 6.04,
+   "start": 6.17,
    "end": 6.28
   },
   {
@@ -124,11 +124,11 @@
   {
    "word": "land.",
    "start": 8.0,
-   "end": 8.36
+   "end": 8.34
   },
   {
    "word": "Two",
-   "start": 8.94,
+   "start": 8.97,
    "end": 9.12
   },
   {
@@ -149,11 +149,11 @@
   {
    "word": "it...",
    "start": 10.04,
-   "end": 10.48
+   "end": 10.36
   },
   {
    "word": "and",
-   "start": 10.48,
+   "start": 11.14,
    "end": 11.6
   },
   {
@@ -178,7 +178,7 @@
   },
   {
    "word": "Lab",
-   "start": 13.78,
+   "start": 13.82,
    "end": 14.06
   },
   {
@@ -243,17 +243,17 @@
   },
   {
    "word": "Throwing",
-   "start": 19.2,
-   "end": 19.48
+   "start": 19.19,
+   "end": 19.46
   },
   {
    "word": "up",
-   "start": 19.48,
-   "end": 19.66
+   "start": 19.46,
+   "end": 19.68
   },
   {
    "word": "mid-flight.",
-   "start": 19.66,
+   "start": 19.68,
    "end": 20.1
   }
  ]

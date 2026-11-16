@@ -87,7 +87,7 @@
   {
    "id": "s04",
    "start": 4.93,
-   "end": 5.98,
+   "end": 6.11,
    "line": "a farm.",
    "in": {
     "type": "whipBlur",
@@ -114,7 +114,7 @@
   },
   {
    "id": "s05",
-   "start": 5.98,
+   "start": 6.11,
    "end": 7.44,
    "line": "A woman making soap outside",
    "in": {
@@ -136,7 +136,7 @@
   {
    "id": "s06",
    "start": 7.44,
-   "end": 8.88,
+   "end": 8.91,
    "line": "watched it land.",
    "in": {
     "type": "cut"
@@ -157,8 +157,8 @@
   },
   {
    "id": "s07",
-   "start": 8.88,
-   "end": 10.42,
+   "start": 8.91,
+   "end": 11.08,
    "line": "Two men reportedly tasted it...",
    "in": {
     "type": "whipBlur",
@@ -179,8 +179,8 @@
   },
   {
    "id": "s08",
-   "start": 10.42,
-   "end": 13.72,
+   "start": 11.08,
+   "end": 13.76,
    "line": "and guessed mutton. Or venison.",
    "in": {
     "type": "cut"
@@ -206,7 +206,7 @@
   },
   {
    "id": "s09a",
-   "start": 13.72,
+   "start": 13.76,
    "end": 14.72,
    "line": "Lab tests later found",
    "in": {
@@ -276,7 +276,7 @@
   {
    "id": "s11",
    "start": 18.3,
-   "end": 19.14,
+   "end": 19.13,
    "line": "Vultures.",
    "in": {
     "type": "flash",
@@ -297,7 +297,7 @@
   },
   {
    "id": "s12",
-   "start": 19.14,
+   "start": 19.13,
    "end": 20.55,
    "line": "Throwing up mid-flight.",
    "in": {

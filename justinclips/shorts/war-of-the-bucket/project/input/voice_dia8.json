@@ -33,7 +33,7 @@
  "parts": [
   {
    "file": "01.wav",
-   "s": 2.49,
+   "s": 2.2,
    "text": "Legend says two cities went to war over a bucket.",
    "heard": "Legend says two cities went to war over a bucket.",
    "wrong": 0
@@ -95,6 +95,6 @@
    "wrong": 0
   }
  ],
- "lead_trim_s": 3.27,
+ "lead_trim_s": 3.56,
  "synth_s": 802.6
 }

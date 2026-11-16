@@ -1,6 +1,6 @@
 # UPLOAD: War of the Bucket
 
-**File:** `video.mp4` (1080x1920, 24 fps, about 20.8 s, -14 LUFS / TP <= -1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080x1920, 24 fps, about 20.5 s, -14 LUFS / TP <= -1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (<= 60 chars, 1 emoji)
 Two Cities Went to War... and the Trophy Was a Bucket 🪣

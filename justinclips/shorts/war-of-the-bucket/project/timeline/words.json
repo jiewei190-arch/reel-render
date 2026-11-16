@@ -1,285 +1,285 @@
 {
- "source": "whisper:small.en+script",
+ "source": "whisper:small.en+script+snap",
  "words": [
   {
    "word": "Legend",
    "start": 0.0,
-   "end": 0.54
+   "end": 0.24
   },
   {
    "word": "says",
-   "start": 0.54,
-   "end": 0.8
+   "start": 0.24,
+   "end": 0.52
   },
   {
    "word": "two",
-   "start": 0.8,
-   "end": 1.04
+   "start": 0.52,
+   "end": 0.76
   },
   {
    "word": "cities",
-   "start": 1.04,
-   "end": 1.26
+   "start": 0.76,
+   "end": 0.98
   },
   {
    "word": "went",
-   "start": 1.26,
-   "end": 1.46
+   "start": 0.98,
+   "end": 1.18
   },
   {
    "word": "to",
-   "start": 1.46,
-   "end": 1.6
+   "start": 1.18,
+   "end": 1.3
   },
   {
    "word": "war",
-   "start": 1.6,
-   "end": 1.76
+   "start": 1.3,
+   "end": 1.48
   },
   {
    "word": "over",
-   "start": 1.76,
-   "end": 2.02
+   "start": 1.48,
+   "end": 1.72
   },
   {
    "word": "a",
-   "start": 2.02,
-   "end": 2.16
+   "start": 1.72,
+   "end": 1.9
   },
   {
    "word": "bucket.",
-   "start": 2.16,
-   "end": 2.4
+   "start": 1.9,
+   "end": 2.08
   },
   {
    "word": "The",
-   "start": 3.04,
-   "end": 3.08
+   "start": 2.76,
+   "end": 2.78
   },
   {
    "word": "truth",
-   "start": 3.08,
-   "end": 3.36
+   "start": 2.78,
+   "end": 3.06
   },
   {
    "word": "is",
-   "start": 3.36,
-   "end": 3.58
+   "start": 3.06,
+   "end": 3.3
   },
   {
    "word": "pettier.",
-   "start": 3.58,
-   "end": 4.0
+   "start": 3.3,
+   "end": 3.7
   },
   {
    "word": "In",
-   "start": 4.64,
-   "end": 4.68
+   "start": 4.36,
+   "end": 4.4
   },
   {
    "word": "1325,",
-   "start": 4.68,
-   "end": 5.66
+   "start": 4.4,
+   "end": 5.38
   },
   {
    "word": "Bologna",
-   "start": 5.82,
-   "end": 6.12
+   "start": 5.54,
+   "end": 5.82
   },
   {
    "word": "sent",
-   "start": 6.12,
-   "end": 6.3
+   "start": 5.82,
+   "end": 6.0
   },
   {
    "word": "about",
-   "start": 6.3,
-   "end": 6.5
+   "start": 6.0,
+   "end": 6.2
   },
   {
    "word": "32,000",
-   "start": 6.5,
-   "end": 7.64
+   "start": 6.34,
+   "end": 7.38
   },
   {
    "word": "soldiers",
-   "start": 7.64,
-   "end": 7.96
+   "start": 7.38,
+   "end": 7.68
   },
   {
    "word": "after",
-   "start": 7.96,
-   "end": 8.3
+   "start": 7.68,
+   "end": 8.02
   },
   {
    "word": "little",
-   "start": 8.3,
-   "end": 8.52
+   "start": 8.02,
+   "end": 8.24
   },
   {
    "word": "Modena.",
-   "start": 8.52,
-   "end": 8.86
+   "start": 8.24,
+   "end": 8.58
   },
   {
    "word": "Modena",
-   "start": 9.5,
-   "end": 9.74
+   "start": 9.22,
+   "end": 9.46
   },
   {
    "word": "had",
-   "start": 9.74,
-   "end": 9.88
+   "start": 9.46,
+   "end": 9.6
   },
   {
    "word": "about",
-   "start": 9.88,
-   "end": 10.04
+   "start": 9.6,
+   "end": 9.74
   },
   {
    "word": "7,000...",
-   "start": 10.04,
-   "end": 10.62
+   "start": 9.74,
+   "end": 10.34
   },
   {
    "word": "and",
-   "start": 10.62,
-   "end": 11.14
+   "start": 10.34,
+   "end": 10.45
   },
   {
    "word": "won.",
-   "start": 11.14,
-   "end": 12.32
+   "start": 11.01,
+   "end": 11.56
   },
   {
    "word": "Then",
-   "start": 12.32,
-   "end": 12.62
+   "start": 12.18,
+   "end": 12.34
   },
   {
    "word": "they",
-   "start": 12.62,
-   "end": 12.76
+   "start": 12.34,
+   "end": 12.48
   },
   {
    "word": "reportedly",
-   "start": 12.76,
-   "end": 13.12
+   "start": 12.48,
+   "end": 12.82
   },
   {
    "word": "marched",
-   "start": 13.12,
-   "end": 13.42
+   "start": 12.82,
+   "end": 13.12
   },
   {
    "word": "to",
-   "start": 13.42,
-   "end": 13.6
+   "start": 13.12,
+   "end": 13.32
   },
   {
    "word": "Bologna's",
-   "start": 13.6,
-   "end": 13.94
+   "start": 13.32,
+   "end": 13.66
   },
   {
    "word": "gates...",
-   "start": 13.94,
-   "end": 14.14
+   "start": 13.66,
+   "end": 13.82
   },
   {
    "word": "and",
-   "start": 14.14,
-   "end": 15.0
+   "start": 14.6,
+   "end": 14.7
   },
   {
    "word": "took",
-   "start": 15.0,
-   "end": 15.12
+   "start": 14.7,
+   "end": 14.84
   },
   {
    "word": "a",
-   "start": 15.12,
-   "end": 15.28
+   "start": 14.84,
+   "end": 15.0
   },
   {
    "word": "bucket",
-   "start": 15.28,
-   "end": 15.5
+   "start": 15.0,
+   "end": 15.22
   },
   {
    "word": "from",
-   "start": 15.5,
-   "end": 15.74
+   "start": 15.22,
+   "end": 15.44
   },
   {
    "word": "a",
-   "start": 15.74,
-   "end": 15.86
+   "start": 15.44,
+   "end": 15.56
   },
   {
    "word": "well,",
-   "start": 15.86,
-   "end": 16.0
+   "start": 15.56,
+   "end": 15.72
   },
   {
    "word": "as",
-   "start": 16.0,
-   "end": 16.26
+   "start": 15.72,
+   "end": 15.96
   },
   {
    "word": "a",
-   "start": 16.26,
-   "end": 16.36
+   "start": 15.96,
+   "end": 16.06
   },
   {
    "word": "trophy.",
-   "start": 16.36,
-   "end": 16.58
+   "start": 16.06,
+   "end": 16.3
   },
   {
    "word": "Modena",
-   "start": 17.58,
-   "end": 17.78
+   "start": 17.3,
+   "end": 17.48
   },
   {
    "word": "still",
-   "start": 17.78,
-   "end": 18.02
+   "start": 17.48,
+   "end": 17.72
   },
   {
    "word": "has",
-   "start": 18.02,
-   "end": 18.2
+   "start": 17.72,
+   "end": 17.92
   },
   {
    "word": "the",
-   "start": 18.2,
-   "end": 18.3
+   "start": 17.92,
+   "end": 18.0
   },
   {
    "word": "bucket...",
-   "start": 18.3,
-   "end": 18.46
+   "start": 18.0,
+   "end": 18.16
   },
   {
    "word": "about",
-   "start": 18.46,
-   "end": 19.26
+   "start": 18.78,
+   "end": 18.96
   },
   {
    "word": "700",
-   "start": 19.26,
-   "end": 19.64
+   "start": 18.96,
+   "end": 19.36
   },
   {
    "word": "years",
-   "start": 19.64,
-   "end": 20.04
+   "start": 19.36,
+   "end": 19.76
   },
   {
    "word": "later.",
-   "start": 20.04,
-   "end": 20.36
+   "start": 19.76,
+   "end": 20.08
   }
  ]
 }

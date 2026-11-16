@@ -181,9 +181,12 @@ def render(short, seed, reuse=False):
             if not quiet and k0 is not None: runs.append((lo + k0 * hop, lo + q * hop)); k0 = None
         return runs
     # start: drop anything before the first word (Dia can leave prompt spill-over / murmur before the script)
+    # the voice must start at once (hook at frame 1): cut 60 ms before the first frame that reaches 25% of the
+    # speech level, searching from 0.3 s before Whisper's first word (faint murmur/breath before it is dropped)
     s0 = W[m[min(m)]][1]
-    r0 = quiet_runs(max(0, int((s0 - 0.25) * sr)), int((s0 + 0.03) * sr))
-    cuts = [max(0, r0[-1][1] - 2 * hop) if r0 else max(0, int((s0 - 0.08) * sr))]
+    q = max(0, int((s0 - 0.3) * sr)) // hop
+    while q < len(rms) // hop and rms[q * hop] < 0.25 * np.percentile(rms, 90): q += 1
+    cuts = [max(0, q * hop - int(0.06 * sr))]
     for k in range(1, len(P)):
         last = max(i for i, p in enumerate(spart) if p == k - 1); first = min(i for i, p in enumerate(spart) if p == k)
         lw = next((m[i] for i in range(last, -1, -1) if i in m), None); fw = next((m[i] for i in range(first, len(sw)) if i in m), None)

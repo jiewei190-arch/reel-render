@@ -15,7 +15,7 @@
  "true_peak_dbtp": -1.5,
  "median_pitch_hz": 213.4,
  "pitch_ok": true,
- "whisper": "In 1876, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it and guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid -flight.",
+ "whisper": "In eighteen seventy -six, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it, and guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid -flight.",
  "wrong_words": 0,
  "words_after_script_end": [],
  "laughs_left": false,
@@ -29,5 +29,64 @@
   "06a.wav",
   "06b.wav"
  ],
+ "parts": [
+  {
+   "file": "01.wav",
+   "s": 2.73,
+   "text": "In 1876, it rained meat in Kentucky.",
+   "heard": "In eighteen seventy-six, it rained meat in Kentucky.",
+   "wrong": 0
+  },
+  {
+   "file": "02.wav",
+   "s": 2.42,
+   "text": "Chunks fell from a clear blue sky onto a farm.",
+   "heard": "Chunks fell from a clear blue sky onto a farm.",
+   "wrong": 0
+  },
+  {
+   "file": "03.wav",
+   "s": 2.27,
+   "text": "A woman making soap outside watched it land.",
+   "heard": "A woman making soap outside watched it land.",
+   "wrong": 0
+  },
+  {
+   "file": "04a.wav",
+   "s": 1.54,
+   "text": "Two men reportedly tasted it",
+   "heard": "two men reportedly tasted it.",
+   "wrong": 0
+  },
+  {
+   "file": "04b.wav",
+   "s": 2.19,
+   "text": "and guessed mutton. Or venison.",
+   "heard": "and guest mutton, or venison.",
+   "wrong": 1
+  },
+  {
+   "file": "05.wav",
+   "s": 2.46,
+   "text": "Lab tests later found lung, muscle and cartilage.",
+   "heard": "lab tests later found lung, muscle, and cartilage.",
+   "wrong": 0
+  },
+  {
+   "file": "06a.wav",
+   "s": 2.02,
+   "text": "The most popular explanation? Vultures.",
+   "heard": "The most popular explanation? Vultures.",
+   "wrong": 0
+  },
+  {
+   "file": "06b.wav",
+   "s": 1.36,
+   "text": "Throwing up mid-flight.",
+   "heard": "Throwing up mid-flight.",
+   "wrong": 0
+  }
+ ],
+ "lead_trim_s": 0.13,
  "synth_s": 287.8
 }

@@ -72,6 +72,7 @@ def stage_voice(a, proj, L):
 def stage_time(a, proj, L, kit):
     sh([a.whisper_py, os.path.join(kit, "tools", "transcribe.py"), "--project", proj, "--script", os.path.join(proj, "input", "script.txt"),
         "--lang", "en", "--model", "small"], cwd=kit)
+    sh([a.whisper_py, os.path.join(HERE, "revoice", "snap_words.py"), "--project", proj, "--kit", kit])   # word edges out of pauses
     wj = load(os.path.join(proj, "timeline", "words.json")); words = wj.get("words", wj) if isinstance(wj, dict) else wj
     # map words to lines (the script is aligned token for token, in order)
     toks = []

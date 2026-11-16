@@ -1,9 +1,20 @@
 {
+ "whisper_per_sentence": "In 1876, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. and guest mutton or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? vultures. Throwing up mid-flight.",
+ "wrong_words_per_sentence": 1,
+ "diffs_per_sentence": [
+  [
+   "guessed",
+   "guest"
+  ]
+ ],
+ "whisper_vad": "In 1876, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. And guessed mutton, or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation, vultures. Throwing up mid-flight.",
+ "wrong_words_vad": 0,
+ "diffs_vad": [],
  "duration_s": 20.58,
  "frames": 494,
  "lufs": -13.9,
- "true_peak_dbtp": -2.7,
- "whisper": "In 1876 it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. And guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid-flight.",
+ "true_peak_dbtp": -2.6,
+ "whisper": "In 1876, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. And guessed mutton, or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation, vultures. Throwing up mid-flight.",
  "wrong_words": 0,
  "diffs": [],
  "blackdetect": [],

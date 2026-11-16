@@ -72,7 +72,24 @@ subprocess.run(["ffmpeg", "-y", "-v", "error", "-framerate", "1", "-i", os.path.
                 "-frames:v", "1", os.path.join(out, "qa_end.png")], check=True)
 for f in os.listdir(out):
     if re.fullmatch(r"[te]\d+\.png", f): os.remove(os.path.join(out, f))
-rep = {"duration_s": round(dur, 2), "frames": nfr, "lufs": lufs, "true_peak_dbtp": tp, "whisper": heard, "wrong_words": wrong, "diffs": diffs,
+# second pass: VAD-chunked (Whisper decodes phrase by phrase; a whole-clip pass can drift on SFX hits)
+segs2, _ = WhisperModel("small.en", device="cpu", compute_type="int8").transcribe(audio, beam_size=5, language="en", vad_filter=True,
+                                                                                    vad_parameters={"min_silence_duration_ms": 250})
+heard2 = " ".join(s.text.strip() for s in segs2)
+b2 = norm_words(heard2)
+diffs2 = [(" ".join(a[i1:i2]), " ".join(b2[j1:j2])) for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b2, autojunk=False).get_opcodes() if op != "equal"]
+wrong2 = sum(max(len(x.split()), len(y.split())) for x, y in diffs2)
+# third pass: the final mix cut per sentence (timeline/sentences.json, +-0.15 s), one decode per sentence
+sents = json.load(open(os.path.join(short, "project", "timeline", "sentences.json")))
+asr3 = WhisperModel("small.en", device="cpu", compute_type="int8"); parts3 = []
+for st in sents:
+    seg = audio[max(0, int((st["start"] - 0.15) * SR)): int((st["end"] + 0.15) * SR)]
+    sg, _ = asr3.transcribe(seg, beam_size=5, language="en"); parts3.append(" ".join(x.text.strip() for x in sg))
+heard3 = " ".join(parts3); b3 = norm_words(heard3)
+diffs3 = [(" ".join(a[i1:i2]), " ".join(b3[j1:j2])) for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b3, autojunk=False).get_opcodes() if op != "equal"]
+wrong3 = sum(max(len(x.split()), len(y.split())) for x, y in diffs3)
+rep = {"whisper_per_sentence": heard3, "wrong_words_per_sentence": wrong3, "diffs_per_sentence": diffs3,
+       "whisper_vad": heard2, "wrong_words_vad": wrong2, "diffs_vad": diffs2, "duration_s": round(dur, 2), "frames": nfr, "lufs": lufs, "true_peak_dbtp": tp, "whisper": heard, "wrong_words": wrong, "diffs": diffs,
        "blackdetect": blacks, "blank_frames": blank, "min_luma_spread": round(float(spread.min()), 1),
        "pass": {"length_20_30": 20 <= dur <= 30, "lufs": abs(lufs + 14) <= 0.5, "tp": tp <= -1.0, "no_black": not blacks and not blank}}
 json.dump(rep, open(os.path.join(out, "qa.json"), "w"), indent=1)
