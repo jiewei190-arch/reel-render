@@ -1,9 +1,9 @@
-[00:00.00 -> 00:01.88] College banned dogs, so he brought a bear.
-[00:02.36 -> 00:06.46] This is Lord Byron, the poet, at Cambridge, around 1807.
-[00:07.04 -> 00:09.52] His college reportedly had a rule: no dogs.
-[00:09.96 -> 00:11.10] But the rules said nothing...
-[00:11.10 -> 00:12.28] about bears.
-[00:12.98 -> 00:14.78] So he got a tame bear.
-[00:15.26 -> 00:17.62] He wrote to a friend that it was the finest in the world.
-[00:18.08 -> 00:19.40] Asked what the bear was for...
-[00:20.08 -> 00:21.78] he said it should sit for a fellowship.
+[00:00.00 -> 00:02.30] College banned dogs, so he brought a bear.
+[00:02.86 -> 00:06.10] This is Lord Byron, the poet, at Cambridge, around 1807.
+[00:06.86 -> 00:09.06] His college reportedly had a rule: no dogs.
+[00:09.64 -> 00:10.66] But the rules said nothing...
+[00:10.66 -> 00:12.04] about bears.
+[00:12.48 -> 00:13.84] So he got a tame bear.
+[00:14.32 -> 00:16.52] He wrote to a friend that it was the finest in the world.
+[00:17.22 -> 00:18.08] Asked what the bear was for...
+[00:18.24 -> 00:19.84] he said it should sit for a fellowship.

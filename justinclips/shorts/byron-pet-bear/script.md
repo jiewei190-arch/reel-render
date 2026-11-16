@@ -5,7 +5,7 @@
 **CAPTION (top, frame 1 → config.topCaptionUntil, ≥ 3.2 s):** "and the college / couldn't stop him"
 
 **Slug:** `byron-pet-bear` · YouTube Short, 9:16, 1080×1920, 24 fps · Toon 3D + BEANMEN FX · Music `toon3d:upbeat` −19 dB
-**Voice:** Chatterbox "D2" (exaggeration 0.3, cfg 0.3), Whisper QA. The narration lives in `lines.json`; shot timing is derived from the voice (see STATUS.md for the one-command re-voice).
+**Voice:** Dia #8 (Dia-1.6B-0626, Kokoro am_puck voice prompt, seed 7; settings in `voice_dia8.json`), Whisper QA. The narration lives in `lines.json`; shot timing is derived from the voice (see STATUS.md for the one-command re-voice).
 
 ## Jail-break + vidIQ checklist (IAWAKEN_PLAYBOOK.md)
 - [x] Triple hook in the first 2 s: frame 1 = the bear in a gown and mortarboard already strolling through the college quad on a ribbon lead, the porter's jaw dropping · VO line 1 is the claim, ≤ 8 words · top caption adds story ("and the college couldn't stop him"), not the title, up ≥ 3.2 s.

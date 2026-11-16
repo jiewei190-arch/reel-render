@@ -1,27 +1,10 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23,
-  31,
-  42,
-  57,
-  64,
-  77,
-  88,
-  99
- ],
- "gap": 0.2,
- "section": 1.4,
+ "engine": "wavdir:/tmp/claude-0/-home-user-reel-render/6c5b5b3d-218d-54d8-909d-f093b36fbe5c/scratchpad/byron_s7_lines",
+ "gap": 0.35,
  "lead": 0.05,
  "beat": 0.4,
  "sr": 24000,
- "duration": 22.296,
- "render_s": 208.7,
- "qa_fail_lines": [],
+ "duration": 20.386,
  "lines": [
   {
    "n": 1,
@@ -29,119 +12,76 @@
    "start": 0.05,
    "parts": [
     {
-     "tts": "College banned dogs, so he brought a bear.",
-     "seed": 57,
-     "heard": "College banned dogs, so he brought a bear.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "College banned dogs, so he brought a bear."
     }
    ],
-   "end": 2.133
+   "end": 2.42
   },
   {
    "n": 2,
    "text": "This is Lord Byron, the poet, at Cambridge, around 1807.",
-   "start": 2.333,
+   "start": 2.77,
    "parts": [
     {
-     "tts": "This is Lord Byron, the poet, at Cambridge, around eighteen oh-seven.",
-     "seed": 7,
-     "heard": "This is Lord Byron, the poet, at Cambridge around 1807.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "This is Lord Byron, the poet, at Cambridge, around 1807."
     }
    ],
-   "end": 6.798
+   "end": 6.32
   },
   {
    "n": 3,
    "text": "His college reportedly had a rule: no dogs.",
-   "start": 6.998,
+   "start": 6.67,
    "parts": [
     {
-     "tts": "His college reportedly had a rule: no dogs.",
-     "seed": 7,
-     "heard": "His college reportedly had a rule, no dogs.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "His college reportedly had a rule: no dogs."
     }
    ],
-   "end": 9.758
+   "end": 9.24
   },
   {
    "n": 4,
    "text": "But the rules said nothing... about bears.",
-   "start": 9.958,
+   "start": 9.59,
    "parts": [
     {
-     "tts": "But the rules said nothing...",
-     "seed": 7,
-     "heard": "But the rules said nothing.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "about bears.",
-     "seed": 7,
-     "heard": "about bears.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "But the rules said nothing... about bears."
     }
    ],
-   "end": 12.661
+   "end": 12.147
   },
   {
    "n": 5,
    "text": "So he got a tame bear.",
-   "start": 12.861,
+   "start": 12.497,
    "parts": [
     {
-     "tts": "So he got a tame bear.",
-     "seed": 7,
-     "heard": "So he got a tame bear?",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "So he got a tame bear."
     }
    ],
-   "end": 15.06
+   "end": 13.907
   },
   {
    "n": 6,
    "text": "He wrote to a friend that it was the finest in the world.",
-   "start": 15.26,
+   "start": 14.257,
    "parts": [
     {
-     "tts": "He wrote to a friend that it was the finest in the world.",
-     "seed": 7,
-     "heard": "He wrote to a friend that it was the finest in the world.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "He wrote to a friend that it was the finest in the world."
     }
    ],
-   "end": 17.891
+   "end": 16.727
   },
   {
    "n": 7,
    "text": "Asked what the bear was for... he said it should sit for a fellowship.",
-   "start": 18.091,
+   "start": 17.077,
    "parts": [
     {
-     "tts": "Asked what the bear was for...",
-     "seed": 7,
-     "heard": "asked what the bear was for.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "he said it should sit for a fellowship.",
-     "seed": 7,
-     "heard": "He said it should sit for a fellowship.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Asked what the bear was for... he said it should sit for a fellowship."
     }
    ],
-   "end": 22.096
+   "end": 20.036
   }
- ],
- "engine": "chatterbox_d2"
+ ]
 }

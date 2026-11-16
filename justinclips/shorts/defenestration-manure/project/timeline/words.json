@@ -1,0 +1,365 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Three",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "men",
+   "start": 0.3,
+   "end": 0.46
+  },
+  {
+   "word": "got",
+   "start": 0.46,
+   "end": 0.66
+  },
+  {
+   "word": "thrown",
+   "start": 0.66,
+   "end": 0.86
+  },
+  {
+   "word": "out",
+   "start": 0.86,
+   "end": 1.06
+  },
+  {
+   "word": "of",
+   "start": 1.06,
+   "end": 1.12
+  },
+  {
+   "word": "a",
+   "start": 1.12,
+   "end": 1.24
+  },
+  {
+   "word": "castle",
+   "start": 1.24,
+   "end": 1.52
+  },
+  {
+   "word": "window.",
+   "start": 1.52,
+   "end": 1.96
+  },
+  {
+   "word": "Prague,",
+   "start": 2.66,
+   "end": 2.66
+  },
+  {
+   "word": "1618.",
+   "start": 2.66,
+   "end": 3.54
+  },
+  {
+   "word": "Angry",
+   "start": 3.88,
+   "end": 3.98
+  },
+  {
+   "word": "nobles",
+   "start": 3.98,
+   "end": 4.3
+  },
+  {
+   "word": "stormed",
+   "start": 4.3,
+   "end": 4.72
+  },
+  {
+   "word": "the",
+   "start": 4.72,
+   "end": 4.92
+  },
+  {
+   "word": "castle.",
+   "start": 4.92,
+   "end": 5.26
+  },
+  {
+   "word": "They",
+   "start": 5.9,
+   "end": 5.98
+  },
+  {
+   "word": "grabbed",
+   "start": 5.98,
+   "end": 6.2
+  },
+  {
+   "word": "two",
+   "start": 6.2,
+   "end": 6.56
+  },
+  {
+   "word": "royal",
+   "start": 6.56,
+   "end": 6.84
+  },
+  {
+   "word": "governors",
+   "start": 6.84,
+   "end": 7.2
+  },
+  {
+   "word": "and",
+   "start": 7.2,
+   "end": 7.42
+  },
+  {
+   "word": "their",
+   "start": 7.42,
+   "end": 7.54
+  },
+  {
+   "word": "secretary...",
+   "start": 7.54,
+   "end": 7.9
+  },
+  {
+   "word": "and",
+   "start": 8.26,
+   "end": 8.54
+  },
+  {
+   "word": "out",
+   "start": 8.54,
+   "end": 8.68
+  },
+  {
+   "word": "they",
+   "start": 8.68,
+   "end": 8.84
+  },
+  {
+   "word": "went.",
+   "start": 8.84,
+   "end": 9.02
+  },
+  {
+   "word": "About",
+   "start": 9.7,
+   "end": 9.8
+  },
+  {
+   "word": "70",
+   "start": 9.8,
+   "end": 10.16
+  },
+  {
+   "word": "feet",
+   "start": 10.16,
+   "end": 10.38
+  },
+  {
+   "word": "down.",
+   "start": 10.38,
+   "end": 10.7
+  },
+  {
+   "word": "All",
+   "start": 11.02,
+   "end": 11.18
+  },
+  {
+   "word": "three",
+   "start": 11.18,
+   "end": 11.38
+  },
+  {
+   "word": "survived.",
+   "start": 11.38,
+   "end": 11.72
+  },
+  {
+   "word": "Catholics",
+   "start": 12.44,
+   "end": 12.44
+  },
+  {
+   "word": "said",
+   "start": 12.44,
+   "end": 12.66
+  },
+  {
+   "word": "angels",
+   "start": 12.66,
+   "end": 12.98
+  },
+  {
+   "word": "caught",
+   "start": 12.98,
+   "end": 13.26
+  },
+  {
+   "word": "them.",
+   "start": 13.26,
+   "end": 13.5
+  },
+  {
+   "word": "Later",
+   "start": 13.78,
+   "end": 14.0
+  },
+  {
+   "word": "pamphlets",
+   "start": 14.0,
+   "end": 14.44
+  },
+  {
+   "word": "said...",
+   "start": 14.44,
+   "end": 14.62
+  },
+  {
+   "word": "they",
+   "start": 14.62,
+   "end": 15.14
+  },
+  {
+   "word": "landed",
+   "start": 15.14,
+   "end": 15.4
+  },
+  {
+   "word": "in",
+   "start": 15.4,
+   "end": 15.6
+  },
+  {
+   "word": "a",
+   "start": 15.6,
+   "end": 15.7
+  },
+  {
+   "word": "pile",
+   "start": 15.7,
+   "end": 15.9
+  },
+  {
+   "word": "of",
+   "start": 15.9,
+   "end": 16.08
+  },
+  {
+   "word": "manure.",
+   "start": 16.08,
+   "end": 16.32
+  },
+  {
+   "word": "Historians",
+   "start": 17.08,
+   "end": 17.4
+  },
+  {
+   "word": "think",
+   "start": 17.4,
+   "end": 17.62
+  },
+  {
+   "word": "that",
+   "start": 17.62,
+   "end": 17.82
+  },
+  {
+   "word": "part",
+   "start": 17.82,
+   "end": 17.98
+  },
+  {
+   "word": "was",
+   "start": 17.98,
+   "end": 18.12
+  },
+  {
+   "word": "probably",
+   "start": 18.12,
+   "end": 18.36
+  },
+  {
+   "word": "made",
+   "start": 18.36,
+   "end": 18.52
+  },
+  {
+   "word": "up.",
+   "start": 18.52,
+   "end": 18.68
+  },
+  {
+   "word": "But",
+   "start": 18.9,
+   "end": 19.06
+  },
+  {
+   "word": "the",
+   "start": 19.06,
+   "end": 19.2
+  },
+  {
+   "word": "secretary",
+   "start": 19.2,
+   "end": 19.52
+  },
+  {
+   "word": "got",
+   "start": 19.52,
+   "end": 19.8
+  },
+  {
+   "word": "a",
+   "start": 19.8,
+   "end": 19.92
+  },
+  {
+   "word": "noble",
+   "start": 19.92,
+   "end": 20.12
+  },
+  {
+   "word": "title...",
+   "start": 20.12,
+   "end": 20.46
+  },
+  {
+   "word": "Baron",
+   "start": 21.06,
+   "end": 21.2
+  },
+  {
+   "word": "von",
+   "start": 21.2,
+   "end": 21.44
+  },
+  {
+   "word": "Hohenfall.",
+   "start": 21.44,
+   "end": 22.0
+  },
+  {
+   "word": "Baron",
+   "start": 22.42,
+   "end": 22.7
+  },
+  {
+   "word": "of",
+   "start": 22.7,
+   "end": 22.88
+  },
+  {
+   "word": "High",
+   "start": 22.88,
+   "end": 23.08
+  },
+  {
+   "word": "Fall.",
+   "start": 23.08,
+   "end": 23.28
+  }
+ ]
+}

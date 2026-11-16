@@ -1,0 +1,86 @@
+{
+ "voice": "#8 from justinclips/voice_lineup (NOTES.md 'How to use the winner')",
+ "command": "tts_any.py lines.json take.mp3 --engine dia --seed 7 --wav --prompt-audio prompts/dia_prompt_kokoro_am_puck.wav --prompt-text \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\" --dia-tail \" (laughs)\"",
+ "split": "the one-pass take (take.raw.wav) was cut into line_01..07.wav with `DIA_SPLIT_LINES=mid python justinclips/tools/dia_split.py take.raw.wav lines.json LINES/ \"line_{n:02d}.wav\"` (gap midpoint between lines; at a '...' beat, 20 ms after the last word, then a 0.4 s beat; mid mode reproduces these files byte for byte), then shortbuild.py --voice wavdir:LINES/",
+ "take": {
+  "engine": "dia",
+  "settings": {
+   "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+   "guidance_scale": 3.0,
+   "temperature": 1.8,
+   "top_p": 0.9,
+   "top_k": 45
+  },
+  "seeds_tried": [
+   7
+  ],
+  "duration_s": 17.97,
+  "load_s": 62.1,
+  "render_s": 388.1,
+  "synth_s": 369.3,
+  "synth_s_per_10s_audio": 205.5,
+  "lufs": -14.0,
+  "true_peak_dbtp": -1.8,
+  "final_wrong_words": 2,
+  "parts": [
+   {
+    "text": "College banned dogs, so he brought a bear. This is Lord Byron, the poet, at Cambridge, around 1807. His college reportedly had a rule: no dogs. But the rules said nothing... about bears. So he got a tame bear. He wrote to a friend that it was the finest in the world. Asked what the bear was for... he said it should sit for a fellowship.",
+    "start": 0.15,
+    "end": 17.67,
+    "seed": 7,
+    "heard": "College banned dogs, so he brought a bear. This is Lord Byron, the poet, at Cambridge, around 1807. His college reportedly had a rule, no dogs. But the rule said nothing about bears, so he got a tame bear. He wrote to a friend that it was the finest in the world. Asked what the bear was for it, he said it should sit for a fellowship.",
+    "wrong_words": 2
+   }
+  ]
+ },
+ "split_report": {
+  "heard": "College banned dogs, so he brought a bear. This is Lord Byron, the poet, at Cambridge, around 1807. His college reportedly had a rule, no dogs. But the rule said nothing about bears, so he got a tame bear. He wrote to a friend that it was the finest in the world. Asked what the bear was for it, he said it should sit for a fellowship.",
+  "wrong_tokens": 2,
+  "median_pitch_hz": 188.3,
+  "take_s": 17.97,
+  "lines": [
+   {
+    "n": 1,
+    "file": "line_01.wav",
+    "from": 0.0,
+    "to": 2.52
+   },
+   {
+    "n": 2,
+    "file": "line_02.wav",
+    "from": 2.52,
+    "to": 6.11
+   },
+   {
+    "n": 3,
+    "file": "line_03.wav",
+    "from": 6.11,
+    "to": 8.82
+   },
+   {
+    "n": 4,
+    "file": "line_04.wav",
+    "from": 8.82,
+    "to": 11.25
+   },
+   {
+    "n": 5,
+    "file": "line_05.wav",
+    "from": 11.25,
+    "to": 12.66
+   },
+   {
+    "n": 6,
+    "file": "line_06.wav",
+    "from": 12.66,
+    "to": 15.13
+   },
+   {
+    "n": 7,
+    "file": "line_07.wav",
+    "from": 15.13,
+    "to": 17.97
+   }
+  ]
+ }
+}

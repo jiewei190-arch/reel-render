@@ -1,0 +1,49 @@
+{
+ "pacing": {
+  "gap": 0.3,
+  "lead": 0.05,
+  "beat": 0.4
+ },
+ "lines": [
+  {
+   "n": 1,
+   "text": "Three men got thrown out of a castle window."
+  },
+  {
+   "n": 2,
+   "text": "Prague, 1618. Angry nobles stormed the castle."
+  },
+  {
+   "n": 3,
+   "text": "They grabbed two royal governors and their secretary... and out they went."
+  },
+  {
+   "n": 4,
+   "text": "About 70 feet down."
+  },
+  {
+   "n": 5,
+   "text": "All three survived."
+  },
+  {
+   "n": 6,
+   "text": "Catholics said angels caught them."
+  },
+  {
+   "n": 7,
+   "text": "Later pamphlets said... they landed in a pile of manure."
+  },
+  {
+   "n": 8,
+   "text": "Historians think that part was probably made up."
+  },
+  {
+   "n": 9,
+   "text": "But the secretary got a noble title... Baron von Hohenfall."
+  },
+  {
+   "n": 10,
+   "text": "Baron of High Fall."
+  }
+ ]
+}

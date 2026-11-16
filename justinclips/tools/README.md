@@ -24,5 +24,5 @@
     # partial: --stages voice | timing | render | mix (comma list), --workers N, --seeds 7,11,23,... (D2 Whisper-QA retries)
 
 `cmd:` runs the template once per spoken part (`{text}` shell-quoted, `{out}` a .wav). Parts split at `...`, are trimmed and joined
-with the D2 pacing (lead 0.05 s, gap 0.2 s, beat 0.4 s). Master: −14 LUFS integrated, true peak ≤ −1 dBTP (two-pass loudnorm to TP −2,
+with the D2 pacing (lead 0.05 s, gap 0.2 s, beat 0.4 s), or the Short's own `"pacing": {"gap", "lead", "beat"}` in `lines.json`. Master: −14 LUFS integrated, true peak ≤ −1 dBTP (two-pass loudnorm to TP −2,
 because AAC adds ~0.5 dB). Nothing is ever uploaded or posted.

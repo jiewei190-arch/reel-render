@@ -1,0 +1,121 @@
+{
+ "engine": "files",
+ "dir": "/tmp/claude-0/-home-user-reel-render/6c5b5b3d-218d-54d8-909d-f093b36fbe5c/scratchpad/def_s11_lines",
+ "gap": 0.3,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 23.908,
+ "lines": [
+  {
+   "n": 1,
+   "text": "Three men got thrown out of a castle window.",
+   "start": 0.05,
+   "parts": [
+    {
+     "file": "01.wav"
+    }
+   ],
+   "end": 2.073
+  },
+  {
+   "n": 2,
+   "text": "Prague, 1618. Angry nobles stormed the castle.",
+   "start": 2.373,
+   "parts": [
+    {
+     "file": "02.wav"
+    }
+   ],
+   "end": 5.577
+  },
+  {
+   "n": 3,
+   "text": "They grabbed two royal governors and their secretary... and out they went.",
+   "start": 5.877,
+   "parts": [
+    {
+     "file": "03.wav"
+    }
+   ],
+   "end": 9.115
+  },
+  {
+   "n": 4,
+   "text": "About 70 feet down.",
+   "start": 9.415,
+   "parts": [
+    {
+     "file": "04.wav"
+    }
+   ],
+   "end": 10.723
+  },
+  {
+   "n": 5,
+   "text": "All three survived.",
+   "start": 11.023,
+   "parts": [
+    {
+     "file": "05.wav"
+    }
+   ],
+   "end": 11.854
+  },
+  {
+   "n": 6,
+   "text": "Catholics said angels caught them.",
+   "start": 12.154,
+   "parts": [
+    {
+     "file": "06.wav"
+    }
+   ],
+   "end": 13.499
+  },
+  {
+   "n": 7,
+   "text": "Later pamphlets said... they landed in a pile of manure.",
+   "start": 13.799,
+   "parts": [
+    {
+     "file": "07.wav"
+    }
+   ],
+   "end": 16.696
+  },
+  {
+   "n": 8,
+   "text": "Historians think that part was probably made up.",
+   "start": 16.996,
+   "parts": [
+    {
+     "file": "08.wav"
+    }
+   ],
+   "end": 18.677
+  },
+  {
+   "n": 9,
+   "text": "But the secretary got a noble title... Baron von Hohenfall.",
+   "start": 18.977,
+   "parts": [
+    {
+     "file": "09.wav"
+    }
+   ],
+   "end": 22.144
+  },
+  {
+   "n": 10,
+   "text": "Baron of High Fall.",
+   "start": 22.444,
+   "parts": [
+    {
+     "file": "10.wav"
+    }
+   ],
+   "end": 23.608
+  }
+ ]
+}
