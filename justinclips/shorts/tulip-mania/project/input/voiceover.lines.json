@@ -1,0 +1,176 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 29.526,
+ "render_s": 218.8,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A flower once cost more than a house.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "A flower once cost more than a house.",
+     "seed": 7,
+     "heard": "A flower once cost more than a house.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.228
+  },
+  {
+   "n": 2,
+   "text": "Holland, the 1630s. Everyone wanted tulips.",
+   "start": 2.428,
+   "parts": [
+    {
+     "tts": "Holland, the sixteen thirtys. Everyone wanted tulips.",
+     "seed": 7,
+     "heard": "Holland, the 1630s. Everyone wanted tulips.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.013
+  },
+  {
+   "n": 3,
+   "text": "The rarest ones had wild flame stripes... caused by a virus.",
+   "start": 6.213,
+   "parts": [
+    {
+     "tts": "The rarest ones had wild flame stripes...",
+     "seed": 7,
+     "heard": "The rarest ones had wild flame stripes.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "caused by a virus.",
+     "seed": 7,
+     "heard": "caused by a virus.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.364
+  },
+  {
+   "n": 4,
+   "text": "People traded bulbs still in the ground... on paper... in taverns.",
+   "start": 10.564,
+   "parts": [
+    {
+     "tts": "People traded bulbs still in the ground...",
+     "seed": 7,
+     "heard": "People traded bulbs still in the ground.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "on paper...",
+     "seed": 7,
+     "heard": "on paper.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "in taverns.",
+     "seed": 7,
+     "heard": "in taverns.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.247
+  },
+  {
+   "n": 5,
+   "text": "One bulb reportedly sold for 10,000 guilders.",
+   "start": 15.447,
+   "parts": [
+    {
+     "tts": "One bulb reportedly sold for ten thousand guilders.",
+     "seed": 7,
+     "heard": "One bulb reportedly sold for 10,000 guilders.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.245
+  },
+  {
+   "n": 6,
+   "text": "A craftsman made about 300 a year.",
+   "start": 18.445,
+   "parts": [
+    {
+     "tts": "A craftsman made about three hundred a year.",
+     "seed": 7,
+     "heard": "a craftsman made about 300 a year.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.712
+  },
+  {
+   "n": 7,
+   "text": "Then, in February 1637... the market crashed.",
+   "start": 20.912,
+   "parts": [
+    {
+     "tts": "Then, in February sixteen thirty-seven...",
+     "seed": 7,
+     "heard": "Then, in February 1637,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the market crashed.",
+     "seed": 7,
+     "heard": "the market crashed.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.67
+  },
+  {
+   "n": 8,
+   "text": "But a historian who checked the records... couldn't find anyone who went bankrupt.",
+   "start": 24.87,
+   "parts": [
+    {
+     "tts": "But a historian who checked the records...",
+     "seed": 7,
+     "heard": "but a historian who checked the records.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "couldn't find anyone who went bankrupt.",
+     "seed": 7,
+     "heard": "couldn't find anyone who went bankrupt.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.326
+  }
+ ],
+ "engine": "chatterbox_d2"
+}

@@ -1,0 +1,194 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 27.991,
+ "render_s": 894.7,
+ "qa_fail_lines": [
+  10
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Three men got thrown out of a castle window.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Three men got thrown out of a castle window.",
+     "seed": 7,
+     "heard": "Three men got thrown out of a castle window.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.344
+  },
+  {
+   "n": 2,
+   "text": "Prague, 1618. Angry nobles stormed the castle.",
+   "start": 2.544,
+   "parts": [
+    {
+     "tts": "Prague, sixteen eighteen. Angry nobles stormed the castle.",
+     "seed": 7,
+     "heard": "Prague, 1618. Angry nobles stormed the castle.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.524
+  },
+  {
+   "n": 3,
+   "text": "They grabbed two royal governors and their secretary... and out they went.",
+   "start": 6.724,
+   "parts": [
+    {
+     "tts": "They grabbed two royal governors and their secretary...",
+     "seed": 7,
+     "heard": "They grabbed two royal governors and their secretary.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and out they went.",
+     "seed": 7,
+     "heard": "and out they went.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.002
+  },
+  {
+   "n": 4,
+   "text": "About 70 feet down.",
+   "start": 11.202,
+   "parts": [
+    {
+     "tts": "About seventy feet down.",
+     "seed": 7,
+     "heard": "about 70 feet down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.916
+  },
+  {
+   "n": 5,
+   "text": "All three survived.",
+   "start": 13.116,
+   "parts": [
+    {
+     "tts": "All three survived.",
+     "seed": 7,
+     "heard": "All three survived.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.385
+  },
+  {
+   "n": 6,
+   "text": "Catholics said angels caught them.",
+   "start": 14.585,
+   "parts": [
+    {
+     "tts": "Catholics said angels caught them.",
+     "seed": 7,
+     "heard": "Catholics said angels caught them.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.3
+  },
+  {
+   "n": 7,
+   "text": "Later pamphlets said... they landed in a pile of manure.",
+   "start": 16.5,
+   "parts": [
+    {
+     "tts": "Later pamphlets said...",
+     "seed": 11,
+     "heard": "Later pamphlets said",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "they landed in a pile of manure.",
+     "seed": 7,
+     "heard": "They landed in a pile of manure.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.835
+  },
+  {
+   "n": 8,
+   "text": "Historians think that part was probably made up.",
+   "start": 20.035,
+   "parts": [
+    {
+     "tts": "Historians think that part was probably made up.",
+     "seed": 7,
+     "heard": "Historians think that part was probably made up.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.591
+  },
+  {
+   "n": 9,
+   "text": "But the secretary got a noble title... Baron von Hohenfall.",
+   "start": 22.791,
+   "parts": [
+    {
+     "tts": "But the secretary got a noble title...",
+     "seed": 7,
+     "heard": "But the secretary got a noble title.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "Baron von Hohenfall.",
+     "seed": 7,
+     "heard": "Baron von Hohenfall.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.271
+  },
+  {
+   "n": 10,
+   "text": "Baron of High Fall.",
+   "start": 26.471,
+   "parts": [
+    {
+     "tts": "Baron of High Fall.",
+     "seed": 7,
+     "heard": "Barron of High Fall.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 27.791
+  }
+ ],
+ "engine": "chatterbox_d2"
+}

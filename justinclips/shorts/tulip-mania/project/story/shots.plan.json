@@ -1,0 +1,452 @@
+{
+ "tail": 0.25,
+ "minShot": 1.0,
+ "maxShot": 2.8,
+ "shots": [
+  {
+   "id": "s01",
+   "at": {
+    "line": 1
+   },
+   "line": "A flower once cost more than",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:thud",
+     "gain": -3
+    },
+    {
+     "at": 0.02,
+     "name": "toon3d:coins",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "flower",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "at": {
+    "line": 1,
+    "word": "house",
+    "offset": -0.3
+   },
+   "line": "a house.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "house",
+     "name": "toon3d:ding",
+     "gain": -11
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:squeak",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "at": {
+    "line": 2
+   },
+   "line": "Holland, the 1630s.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1630s",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "at": {
+    "line": 2,
+    "word": "everyone"
+   },
+   "line": "Everyone wanted tulips.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:crowd",
+     "gain": -14
+    },
+    {
+     "word": "tulips",
+     "name": "toon3d:magic",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "at": {
+    "line": 3
+   },
+   "line": "The rarest ones had wild flame stripes...",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "q05",
+   "at": {
+    "line": 3,
+    "word": "flame"
+   },
+   "line": "flame stripes...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "at": {
+    "line": 3,
+    "word": "caused"
+   },
+   "line": "caused by a virus.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "word": "virus",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "virus",
+     "offset": 0.1,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "at": {
+    "line": 4
+   },
+   "line": "People traded bulbs still in the ground...",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "ground",
+     "name": "toon3d:drop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "at": {
+    "line": 4,
+    "word": "on"
+   },
+   "line": "on paper...",
+   "captions": false,
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:type",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "at": {
+    "line": 4,
+    "word": "in",
+    "nth": 2
+   },
+   "line": "in taverns.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:laugh",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "at": {
+    "line": 5
+   },
+   "line": "One bulb reportedly sold for",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:suspense",
+     "gain": -16
+    },
+    {
+     "word": "reportedly",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "q10",
+   "at": {
+    "line": 5,
+    "word": "10,000",
+    "offset": -0.25
+   },
+   "line": "10,000 guilders.",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:cash",
+     "gain": -7
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:coins",
+     "gain": -9
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "at": {
+    "line": 6
+   },
+   "line": "A craftsman made about 300 a year.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "300",
+     "name": "toon3d:ding",
+     "gain": -11
+    },
+    {
+     "word": "year",
+     "offset": 0.3,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "year",
+     "offset": 0.35,
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "at": {
+    "line": 7
+   },
+   "line": "Then, in February 1637...",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:clock",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "at": {
+    "line": 7,
+    "word": "the",
+    "nth": 1
+   },
+   "line": "the market crashed.",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crash",
+     "gain": -6
+    },
+    {
+     "word": "crashed",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:gasp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "at": {
+    "line": 8
+   },
+   "line": "But a historian who checked the records...",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "word": "records",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "at": {
+    "line": 8,
+    "word": "couldn't"
+   },
+   "line": "couldn't find anyone who",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:scratch",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "at": {
+    "line": 8,
+    "word": "went"
+   },
+   "line": "went bankrupt.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "bankrupt",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "bankrupt",
+     "offset": 0.3,
+     "name": "toon3d:boing",
+     "gain": -15
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,376 @@
+{
+ "tail": 0.25,
+ "minShot": 1.0,
+ "maxShot": 2.8,
+ "shots": [
+  {
+   "id": "s01",
+   "at": {
+    "line": 1
+   },
+   "line": "London stank so bad,",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:gasp",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "at": {
+    "line": 1,
+    "word": "parliament"
+   },
+   "line": "Parliament had to act.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "at": {
+    "line": 2
+   },
+   "line": "Summer 1858.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1858",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "at": {
+    "line": 2,
+    "word": "a",
+    "nth": 1
+   },
+   "line": "A heatwave hit the Thames.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "word": "heatwave",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "at": {
+    "line": 3
+   },
+   "line": "And the Thames...",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "at": {
+    "line": 3,
+    "word": "was"
+   },
+   "line": "was full of London's sewage.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:splash",
+     "gain": -10
+    },
+    {
+     "word": "sewage",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "sewage",
+     "offset": 0.2,
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "at": {
+    "line": 4
+   },
+   "line": "Parliament sits right on the river.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "river",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "at": {
+    "line": 5
+   },
+   "line": "So they soaked the curtains with chemicals.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:splash",
+     "gain": -10
+    },
+    {
+     "at": 0.85,
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "word": "curtains",
+     "name": "toon3d:magic",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "at": {
+    "line": 5,
+    "word": "chemicals",
+    "offset": 0.25
+   },
+   "line": "(it didn't help much)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "at": {
+    "line": 6,
+    "word": "about"
+   },
+   "line": "They even talked about moving Parliament out of London.",
+   "captions": false,
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "at": {
+    "line": 7
+   },
+   "line": "Instead, they passed a new sewer law",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "q11",
+   "at": {
+    "line": 7,
+    "word": "in"
+   },
+   "line": "in about seven weeks.",
+   "captions": false,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "seven",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "at": {
+    "line": 8
+   },
+   "line": "Engineer Joseph Bazalgette",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:magic",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "at": {
+    "line": 8,
+    "word": "built"
+   },
+   "line": "built 82 miles of giant sewers.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -14
+    },
+    {
+     "word": "82",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:footsteps",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "at": {
+    "line": 9
+   },
+   "line": "London still uses them today.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "today",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "today",
+     "offset": 0.2,
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
