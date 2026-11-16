@@ -109,8 +109,15 @@ def to16k(a, sr):
     return resample_poly(a.astype(np.float32), 16000 // g, int(sr) // g).astype(np.float32)
 
 
+_digits = None
 def words_of(a, sr):
-    segs, _ = asr().transcribe(to16k(a, sr), beam_size=5, language="en", word_timestamps=True)
+    """word timings with digit tokens suppressed, so numbers come out as words ("seven thousand and won") and every
+    spoken word gets its own timing (with digits, Whisper merges "7,000... and won" into "7,001")"""
+    global _digits
+    if _digits is None:
+        tok = asr().hf_tokenizer
+        _digits = [i for t, i in tok.get_vocab().items() if any(ch.isdigit() for ch in t)]
+    segs, _ = asr().transcribe(to16k(a, sr), beam_size=5, language="en", word_timestamps=True, suppress_tokens=[-1] + _digits)
     return [(w.word.strip(), w.start, w.end) for s in segs for w in s.words]
 
 
@@ -166,29 +173,66 @@ def render(short, seed, reuse=False):
     # boundaries between parts
     env = np.abs(a); hop = int(sr * 0.01)
     rms = np.sqrt(np.convolve(a ** 2, np.ones(hop) / hop, mode="same"))
-    cuts = [0]
+    thr = 0.12 * np.percentile(rms, 90)
+    def quiet_runs(lo, hi):
+        fr = rms[lo:hi:hop] < thr; runs, k0 = [], None
+        for q, quiet in enumerate(list(fr) + [False]):
+            if quiet and k0 is None: k0 = q
+            if not quiet and k0 is not None: runs.append((lo + k0 * hop, lo + q * hop)); k0 = None
+        return runs
+    # start: drop anything before the first word (Dia can leave prompt spill-over / murmur before the script)
+    s0 = W[m[min(m)]][1]
+    r0 = quiet_runs(max(0, int((s0 - 0.25) * sr)), int((s0 + 0.03) * sr))
+    cuts = [max(0, r0[-1][1] - 2 * hop) if r0 else max(0, int((s0 - 0.08) * sr))]
     for k in range(1, len(P)):
         last = max(i for i, p in enumerate(spart) if p == k - 1); first = min(i for i, p in enumerate(spart) if p == k)
         lw = next((m[i] for i in range(last, -1, -1) if i in m), None); fw = next((m[i] for i in range(first, len(sw)) if i in m), None)
         if lw is None or fw is None or fw <= lw:
             sys.exit(f"cannot place the cut before part {P[k]}: alignment failed (heard: {heard})")
         e, s = W[lw][2], W[fw][1]
-        lo = int(max(W[lw][1] + 0.6 * (e - W[lw][1]), e - 0.06) * sr); hi = int(min(s + 0.06, s + 0.4 * (W[fw][2] - s)) * sr)
+        # Whisper word edges are +-0.1-0.2 s: search from late in the previous word to 0.22 s after the next word's
+        # start, and cut in the quiet run (>= 20 ms) closest to that start. Not the first quiet run: that can be a
+        # stop closure inside the previous word (the /dZ/ of "cartilage"); not strictly before s either: Whisper can
+        # start "and" before the "s" of "gates" has ended.
+        lo = int(max(W[lw][1] + 0.6 * (e - W[lw][1]), e - 0.06) * sr); hi = int(min(s + 0.22, s + 0.6 * (W[fw][2] - s)) * sr)
         if hi <= lo: lo, hi = int(min(e, s) * sr) - hop, int(max(e, s) * sr) + hop
-        # cut in the LAST quiet run before the next word: an earlier quiet run can be a stop closure inside the
-        # previous word (e.g. the /dZ/ of "cartilage"), whose release would then leak into the next clip
-        thr = 0.12 * np.percentile(rms, 90); fr = rms[lo:hi:hop] < thr
-        runs, k0 = [], None
-        for q, quiet in enumerate(list(fr) + [False]):
-            if quiet and k0 is None: k0 = q
-            if not quiet and k0 is not None: runs.append((k0, q)); k0 = None
-        c = lo + ((runs[-1][0] + runs[-1][1]) // 2) * hop if runs else lo + int(np.argmin(rms[lo:hi]))
+        runs = [r for r in quiet_runs(lo, hi) if r[1] - r[0] >= 2 * hop] or quiet_runs(lo, hi)
+        # a word-final hiss ("gates", "bucks", "Bologna's"...) is quieter than the vowels and comes after a stop
+        # closure: when the previous word ends in one and the next does not start with one, cut after the hiss
+        def fric(w, end):
+            w = re.sub(r"[^a-z]", "", w.lower())
+            return bool(w) and (re.search(r"(s|z|x|ce|se|sh|ch|f|ph|th|ts|ds)$", w) if end else re.match(r"(s|z|sh|ch|f|ph|th[^e]|h|c[eiy])", w))
+        if os.environ.get("DIA8_DEBUG"):
+            print("   cut", k, sw[last], sw[first], round(lo / sr, 3), round(hi / sr, 3), round(e, 2), round(s, 2), [(round(x / sr, 3), round(y / sr, 3)) for x, y in runs], fric(sw[last], True), fric(sw[first], False))
+        if runs and fric(sw[last], True) and not fric(sw[first], False):
+            hi = max(hi, int((s + 0.3) * sr))   # Whisper starts the next word early when the hiss runs into it
+            runs = [r for r in quiet_runs(lo, hi) if r[1] - r[0] >= 2 * hop] or quiet_runs(lo, hi)
+            zc = [(np.abs(np.diff(np.sign(a[i:i + hop]))) > 0).sum() * 100 / sr * 48000 / 100 for i in range(lo, hi, hop)]
+            hiss = [q for q, z in enumerate(zc) if z > 90 and rms[lo + q * hop] > 0.3 * thr]
+            if hiss:
+                q0 = hiss[0]
+                while q0 + 1 < len(zc) and (q0 + 1) in hiss: q0 += 1
+                after = [r for r in runs if r[0] >= lo + q0 * hop]
+                if q0 - hiss[0] >= 3 and after: runs = after[:1]
+        if runs:
+            r = min(runs, key=lambda r: abs((r[0] + r[1]) / 2 - s * sr))
+            c = (r[0] + r[1]) // 2
+        else:
+            c = lo + int(np.argmin(rms[lo:hi]))
         cuts.append(c)
     cuts.append(len(a))
     files = []
     for k, (n, suf, t, _) in enumerate(P):
         f = os.path.join(out, f"{n:02d}{suf}.wav"); sf.write(f, a[cuts[k]:cuts[k + 1]], sr); files.append(os.path.basename(f))
-    # QA
+    # QA: each clip on its own (short clips are harder for Whisper, so this only flags cuts to listen to)
+    part_check = []
+    for k, (n, suf, t, _) in enumerate(P):
+        x = a[cuts[k]:cuts[k + 1]]
+        segs, _ = asr().transcribe(to16k(x, sr), beam_size=5, language="en", suppress_tokens=[-1] + _digits)
+        h = " ".join(sg.text.strip() for sg in segs)
+        bad = sum(max(i2 - i1, j2 - j1) for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=norm_words(t), b=norm_words(h), autojunk=False).get_opcodes() if op != "equal")
+        part_check.append({"file": f"{n:02d}{suf}.wav", "s": round(len(x) / sr, 2), "text": t, "heard": h, "wrong": bad})
+        print(f"   {n:02d}{suf}: {bad} | {h}", flush=True)
     rep = json.load(open(take[:-4] + ".json"))
     pitch = median_pitch(a, sr)
     tail_words = [w for w, s, e in W if s > (W[m[max(m)]][2] if m else 1e9)]
@@ -197,7 +241,7 @@ def render(short, seed, reuse=False):
           "median_pitch_hz": round(pitch, 1), "pitch_ok": 180 <= pitch <= 230,
           "whisper": heard, "wrong_words": wrong, "words_after_script_end": tail_words,
           "laughs_left": bool(re.search(r"laugh|\bha\b|haha", " ".join(tail_words).lower())),
-          "files": files, "synth_s": rep.get("synth_s")}
+          "files": files, "parts": part_check, "lead_trim_s": round(cuts[0] / sr, 2), "synth_s": rep.get("synth_s")}
     json.dump(qa, open(os.path.join(out, "dia8.json"), "w"), indent=1)
     print(json.dumps(qa, indent=1))
     return qa
