@@ -79,8 +79,27 @@
      ]
     },
     {
+     "id": "s03b",
+     "word": "adopted",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:pop",
+       "gain": -12
+      },
+      {
+       "at": 0.3,
+       "name": "toon3d:squeak",
+       "gain": -14
+      }
+     ]
+    },
+    {
      "id": "s04",
-     "word": "cub",
+     "word": "named",
      "in": {
       "type": "iris"
      },
@@ -151,7 +170,8 @@
        "name": "toon3d:laugh",
        "gain": -12
       }
-     ]
+     ],
+     "offset": -0.15
     },
     {
      "id": "s07",
@@ -299,7 +319,7 @@
     },
     {
      "id": "s13",
-     "word": "became",
+     "word": "bear",
      "in": {
       "type": "flash",
       "dur": 0.1
@@ -320,7 +340,8 @@
        "name": "toon3d:sparkle",
        "gain": -9
       }
-     ]
+     ],
+     "offset": -0.3
     }
    ]
   }

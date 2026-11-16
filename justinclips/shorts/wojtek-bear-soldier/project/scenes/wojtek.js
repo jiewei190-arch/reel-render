@@ -27,7 +27,7 @@ function depotInit(T, o = {}) {
 function carry(s, t, x0, sp) { s.w.position.set(x0 + sp * t, 0, 0.6); s.w.rotation.y = sp > 0 ? Math.PI / 2 - 0.4 : 0; s.w.update(t, { walk: sp ? 0.8 : 0, speed: 1.8, rear: 1, armsFwd: -0.35, lid: 0.3, look: [-0.6, 0] }); const p = paws(s.w); s.cr.position.set(p.x, p.y - 0.35, p.z); s.cr.rotation.y = s.w.rotation.y; }
 registerShot('s01', { kind: '3d',
   init: depotInit,
-  draw(s, t, info) { const T0 = t + 0.5; s.env.update(T0); carry(s, T0, -2.2, 0.75); cheer(s.sol, T0);
+  draw(s, t, info) { const T0 = t + 0.5; s.env.update(T0); carry(s, T0, -1.5, 0.6); cheer(s.sol, T0);
     camMove(s.stage, t, [[0, { pos: [0.2, 2.2, 8.5], look: [-0.4, 1.7, 0], fov: 44 }], [info.dur, { pos: [0.8, 2.0, 7.5], look: [0.4, 1.6, 0], fov: 42 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); reactions(g, t, s, [{ fx: 'hearts', on: s.sol[0], at: 0.2 }]); topCaption(g, t, info, TOP, TOP_UNTIL); },
 });
@@ -35,13 +35,13 @@ registerShot('s01', { kind: '3d',
 registerShot('s02', { kind: '3d',
   init: depotInit,
   draw(s, t, info) { s.env.update(t); carry(s, t + 2.6, -2.2, 0.75); cheer(s.sol, t);
-    const p = s.cr.position; camMove(s.stage, t, [[0, { pos: [p.x + 0.6, 1.9, 4.2], look: [p.x, 1.7, 0.6], fov: 38 }], [info.dur, { pos: [p.x + 0.5, 1.9, 3.8], look: [p.x, 1.8, 0.6], fov: 37 }]], (k) => k); },
+    const p = s.cr.position; camMove(s.stage, t, [[0, { pos: [p.x + 0.5, p.y + 0.6, 4.4], look: [p.x, p.y + 0.4, 0.6], fov: 40 }], [info.dur, { pos: [p.x + 0.4, p.y + 0.6, 4.0], look: [p.x, p.y + 0.4, 0.6], fov: 39 }]], (k) => k); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); stamp(g, t - at(info, 'ammo', 0.6), 'AMMO', { y: 470, color: '#5a6a2a', size: 130, w: 460 }); topCaption(g, t, info, TOP, TOP_UNTIL); },
 });
 // ---- s03: "In 1942, Polish soldiers in Iran adopted..." desert camp; soldiers crouch around something small.
 function cubInit(T) {
   const st = toonStage(T, { light: 'sunny', fov: 38, shadowSize: 10, target: [0, 0.5, 0] }); const env = camp(st, { seed: 4 });
-  const cub = bear({ scale: 0.45, seed: 5, color: '#8a5a34' }); cub.position.set(0, 0, 0.6); st.add(cub);
+  const cub = bear({ scale: 0.32, seed: 5, color: '#8a5a34' }); cub.position.set(0, 0, 0.6); st.add(cub);
   const sol = [0, 1, 2].map(i => { const b = soldier({ seed: 20 + i, skin: ['light', 'fair', 'olive'][i] }); const a = -0.9 + i * 0.9; b.position.set(Math.sin(a) * 1.5, 0, 0.6 - Math.cos(a) * 1.3); b.rotation.y = -a * 0.9; st.add(b); return b; });
   return { stage: st, env, cub, sol };
 }
@@ -51,6 +51,14 @@ registerShot('s03', { kind: '3d',
     s.sol.forEach((b, i) => { b.pose(addPose({ ...POSE.stand, lean: 0.45, armR: [1.0, 0.1, 0], elbowR: 0.4 }, idle(t, i))); b.face(EXPR.happy, t); });
     camMove(s.stage, t, [[0, { pos: [0, 3.0, 6.4], look: [0, 0.9, 0], fov: 40 }], [info.dur, { pos: [0, 2.8, 5.6], look: [0, 0.8, 0], fov: 39 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); yearStamp(g, t, 1942, { at: at(info, '1942', 0.2) - 0.05, x: 820, y: 430 }); label(g, t, at(info, 'iran', 1.3) - 0.05, 'IRAN', E.W / 2, 1240, 70, { box: '#2f6a9a' }); },
+});
+// ---- s03b: "...adopted..." a soldier kneels and gently pats the cub, who looks up at him. Hearts.
+registerShot('s03b', { kind: '3d',
+  init: cubInit,
+  draw(s, t, info) { s.env.update(t); s.cub.update(t, { lid: 0.15, look: [0.6, 0.6], headTurn: 0.4, headNod: -0.25 });
+    s.sol.forEach((b, i) => { b.pose(addPose({ ...POSE.stand, lean: 0.55, armR: [1.3 + Math.sin(t * 6) * 0.1, 0.1, 0], elbowR: 0.3 }, idle(t, i))); b.face(EXPR.happy, t); });
+    camMove(s.stage, t, [[0, { pos: [1.2, 1.9, 5.8], look: [0.2, 1.2, 0.2], fov: 38 }], [info.dur, { pos: [1.1, 1.9, 5.4], look: [0.2, 1.2, 0.2], fov: 37 }]]); },
+  overlay(g, t, info, s) { sunnyLook(g, t, RAYS); reactions(g, t, s, [{ fx: 'hearts', on: s.sol[2], at: 0.15 }]); label(g, t, 0.1, 'ADOPTED', E.W / 2, 520, 84, { box: '#c8322a' }); },
 });
 // ---- s04: "...a bear cub named Wojtek." close on the cub; a hand-lettered name tag; hearts.
 registerShot('s04', { kind: '3d',
@@ -110,7 +118,7 @@ registerShot('s08', { kind: '3d',
   draw(s, t, info) { s.env.update(t); const z = 1.5 - t * 1.4;
     s.w.position.set(-1.2, Math.max(0, (-1.6 - z) * 0.29), z); s.w.rotation.y = Math.PI; s.w.update(t, { walk: 1, speed: 2 });
     s.sol.forEach((b, i) => { const zz = z - 1.8 - i * 1.2; b.position.set(-1.2, Math.max(0, (-1.6 - zz) * 0.29), zz); b.rotation.y = Math.PI; b.pose(walk(t + i * 0.3, { speed: 2 })); });
-    camMove(s.stage, t, [[0, { pos: [4.5, 3.0, 8], look: [-0.5, 1.8, -3], fov: 44 }], [info.dur, { pos: [4.0, 3.0, 7], look: [-0.8, 2.0, -4], fov: 43 }]]); },
+    camMove(s.stage, t, [[0, { pos: [3.0, 3.0, 8], look: [-1.2, 1.6, -2], fov: 44 }], [info.dur, { pos: [2.6, 3.0, 7], look: [-1.2, 1.9, -3.5], fov: 43 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); label(g, t, at(info, 'italy', 0.9) - 0.05, 'NEXT STOP: ITALY', E.W / 2, 500, 68, { box: '#2f6a9a' }); },
 });
 // ---- s09: "...the army listed him as a soldier." 2D: a typed roster card; the bear's line gets stamped SOLDIER.
@@ -151,9 +159,9 @@ registerShot('s11', { kind: '3d',
 registerShot('s12', { kind: '3d',
   init(T) { const s = chillInit(T); s.b.visible = false; s.w.visible = false;
     const patch = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 0.04, 28), toon('#f4ecd0')); patch.rotation.x = Math.PI / 2; outline(patch, { px: 2.4 }); s.stage.add(patch); s.patch = patch; return s; },
-  draw(s, t, info) { s.env.update(t); s.sol.position.set(0, 0, 0.6); s.sol.rotation.y = 0; s.sol.pose(addPose({ ...POSE.thinking, armL: [1.5, 0.3, 0], elbowL: 0.6 }, idle(t, 2))); s.sol.face({ ...EXPR.neutral, pupil: [0.5, 0.5] }, t);
-    const h = handPos(s.sol, 'L'); s.patch.position.set(h.x, h.y + 0.25, h.z + 0.1);
-    camMove(s.stage, t, [[0, { pos: [0, 2.0, 4.6], look: [0, 2.0, 0.6], fov: 36 }], [info.dur, { pos: [0, 2.0, 4.2], look: [0, 2.0, 0.6], fov: 35 }]]); },
+  draw(s, t, info) { s.env.update(t); s.sol.position.set(0, 0, 0.6); s.sol.rotation.y = 0; s.sol.pose(addPose({ ...POSE.thinking, armL: [1.1, 0.6, 0], elbowL: 0.5 }, idle(t, 2))); s.sol.face({ ...EXPR.neutral, pupil: [0.5, 0.5] }, t);
+    const h = handPos(s.sol, 'L'); s.patch.position.set(h.x + 0.2, h.y + 0.2, h.z + 0.1);
+    camMove(s.stage, t, [[0, { pos: [0, 2.0, 6.0], look: [0.1, 1.8, 0.6], fov: 36 }], [info.dur, { pos: [0, 2.0, 5.6], look: [0.1, 1.8, 0.6], fov: 35 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); reactions(g, t, s, [{ fx: 'question', on: 'sol', at: 0.4, scale: 0.7 }]); },
 });
 // ---- s13: PAYOFF "...became a bear carrying a shell." the badge: Wojtek on his hind legs hugging a big shell, framed by a
@@ -161,11 +169,11 @@ registerShot('s12', { kind: '3d',
 registerShot('s13', { kind: '3d',
   init(T) {
     const st = toonStage(T, { light: 'warm', fov: 34, shadowSize: 6, target: [0, 1, 0], bg: ['#e8dcb8', '#d8c898'] });
-    const w = bear({ seed: 7, color: '#6a4426' }); st.add(w); const sh = shell(2.2); st.add(sh);
+    const w = bear({ seed: 7, color: '#6a4426' }); st.add(w); const sh = shell(1.6); st.add(sh);
     return { stage: st, w, sh };
   },
-  draw(s, t, info) { s.w.position.set(0, 0, 0); s.w.rotation.y = 0; s.w.update(t, { rear: 1, armsFwd: -0.9, lid: 0.25, look: [0, 0] }); const p = paws(s.w); s.sh.position.set(p.x, p.y - 0.9, p.z + 0.15); s.sh.rotation.z = 0.15;
-    camMove(s.stage, t, [[0, { pos: [0, 1.9, 7.6], look: [0, 1.7, 0], fov: 36 }], [info.dur, { pos: [0, 1.9, 7.0], look: [0, 1.7, 0], fov: 36 }]]); },
+  draw(s, t, info) { s.w.position.set(0, 0, 0); s.w.rotation.y = 0; s.w.update(t, { rear: 1, armsFwd: 0.3, lid: 0.25, look: [0, 0] }); const p = paws(s.w); s.sh.position.set(p.x, p.y - 0.75, p.z + 0.25); s.sh.rotation.z = 0.15;
+    camMove(s.stage, t, [[0, { pos: [0, 1.6, 6.6], look: [0, 1.45, 0], fov: 36 }], [info.dur, { pos: [0, 1.6, 6.1], look: [0, 1.45, 0], fov: 36 }]]); },
   overlay(g, t, info, s) {
     const k = ease.outBack(clamp(t / 0.3)); g.save(); g.translate(E.W / 2, 860); g.scale(k, k);
     g.strokeStyle = '#2a1c15'; g.lineWidth = 34; g.beginPath(); g.arc(0, 0, 470, 0, 7); g.stroke(); g.strokeStyle = '#c8a24a'; g.lineWidth = 16; g.beginPath(); g.arc(0, 0, 470, 0, 7); g.stroke(); g.restore();

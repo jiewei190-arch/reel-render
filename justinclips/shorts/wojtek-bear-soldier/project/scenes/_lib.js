@@ -9,7 +9,7 @@ export function soldier(o = {}) {
   return bean({ name: 'Soldier', outfit: 'uniform', colors: { main: o.main || '#8a7e54', trim: '#c9b878', belt: '#5a5034' }, skin: o.skin || 'light', hair: o.hair || 'bowl', hairColor: o.hairColor || '#5a3418',
     head: o.head || 'cap', headColor: o.cap || '#6a6440', moustache: o.moustache ?? false, seed: o.seed || 5, scale: o.scale || 1 });
 }
-export function bear(o = {}) { return quad({ kind: 'bear', seed: o.seed || 2, scale: o.scale || 1.25, color: o.color || '#7a4f2e' }); }
+export function bear(o = {}) { return quad({ kind: 'bear', seed: o.seed || 2, scale: o.scale || 0.85, color: o.color || '#7a4f2e' }); }
 // wooden ammunition crate with a stencilled shell
 let _ct = null;
 const crateTex = () => canvasTex(256, 192, (x, w, h) => { x.fillStyle = '#7a8048'; x.fillRect(0, 0, w, h); x.strokeStyle = '#4a5028'; x.lineWidth = 10; x.strokeRect(5, 5, w - 10, h - 10);
