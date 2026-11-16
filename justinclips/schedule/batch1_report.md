@@ -81,3 +81,37 @@ Stayed-to-watch % not opened yet (the full channel scan is next). Views and comm
 
 None of the 14 scheduled titles was already public. "Did you know Coca Cola actually had cocaines in it before?" IS public (Nov 14), so coca-cola-cocaine-v2 would repeat that topic. No jellyfish, cat-mayor or Napoleon-rabbits Short is in the public Shorts list.
 
+
+## Batch 3 (3 Shorts, scheduled Nov 15 2026 ~23:30 ET)
+Manifest: `justinclips/schedule/batch3.json` @ 909644b. **The owner approved these 3 directly in Creator's chat** ("Yes, schedule all 3"), on top of MAIN relaying their "they good".
+
+**Channel:** Studio showed **Justin clips** before every upload. No password, 2FA or verification prompt appeared.
+
+**Settings:** same as batches 1-2:
+- title and description exactly as in the manifest, checked by script right after entry;
+- not made for kids;
+- altered/synthetic content: Yes;
+- category: Education;
+- visibility: Schedule only. Nothing was published now and no comments were posted.
+
+Studio again showed "We're still checking your content"; I acknowledged it with "Got it". **Re-check the Notices column before each goes live.**
+
+**Napoleon time fix:** #15 was first saved at Nov 20 **12:00 AM**, because the time field ignored Tab. I corrected it on its edit page to **7:00 PM** and saved. A reload showed Nov 20, 7:00 PM. It was private and scheduled the whole time, never public. For #16 and #17 I pressed Enter after the time, and their confirmations read the right time.
+
+| n | slug | scheduled (ET) | link | pinned comment to add once live |
+|---|---|---|---|---|
+| 15 | napoleon-rabbits-v2 | 2026-11-20 19:00 | https://youtube.com/shorts/MfM4wD5kkVk | Rabbits or emus: who won the funnier war? 🐰 |
+| 16 | immortal-jellyfish-v2 | 2026-11-21 11:00 | https://youtube.com/shorts/cd1TsL_QqPc | Would you want to reset back to a baby every time life got hard? 🔄 Yes or no? |
+| 17 | cat-mayor-v2 | 2026-11-21 15:00 | https://youtube.com/shorts/oEy8gk33VSo | Would you vote for a cat: yes or no? 🐱 |
+
+**File integrity:** all 3 `video.mp4` files matched their `.sha256`. All 3 were over the ~10.4 MB browser upload cap, so each was re-encoded with libx264 two-pass. Same 1080x1920, same frame count, audio copied untouched.
+
+| n | slug | verified original sha256 | uploaded file |
+|---|---|---|---|
+| 15 | napoleon-rabbits-v2 | `cdabb4e5535fcc56...` (16.8 MB) | re-encoded, 9.59 MB, 2975 kbps, 588 frames, sha256 `382830d7d4200287...` |
+| 16 | immortal-jellyfish-v2 | `24bb818fa28297bb...` (17.0 MB) | re-encoded, 9.73 MB, 3295 kbps, 534 frames, sha256 `1f60d98215f3d724...` |
+| 17 | cat-mayor-v2 | `c9271fa063498c44...` (11.9 MB) | re-encoded, 9.56 MB, 2876 kbps, 607 frames, sha256 `918144febcc66139...` |
+
+**Studio list after batch 3:** 17 Shorts "Scheduled" (batches 1-3), Nov 16-21. No other video was touched.
+
+**Still held:** coca-cola-cocaine-v2, not uploaded.
