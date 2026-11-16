@@ -1,0 +1,399 @@
+{
+ "tail": 0.25,
+ "minShot": 1.0,
+ "maxShot": 2.8,
+ "shots": [
+  {
+   "id": "s01",
+   "at": {
+    "line": 1
+   },
+   "line": "Three men got thrown out",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -6
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:paper",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "at": {
+    "line": 1,
+    "word": "of"
+   },
+   "line": "of a castle window.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "window",
+     "name": "toon3d:creak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "at": {
+    "line": 2
+   },
+   "line": "Prague, 1618.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1618",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:bell",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "at": {
+    "line": 2,
+    "word": "angry"
+   },
+   "line": "Angry nobles stormed the castle.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -14
+    },
+    {
+     "word": "stormed",
+     "name": "toon3d:door",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "at": {
+    "line": 3
+   },
+   "line": "They grabbed two royal governors",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "grabbed",
+     "name": "toon3d:gasp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "q05",
+   "at": {
+    "line": 3,
+    "word": "and",
+    "nth": 1
+   },
+   "line": "and their secretary...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "secretary",
+     "name": "toon3d:squeak",
+     "gain": -13
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:heartbeat",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "at": {
+    "line": 3,
+    "word": "and",
+    "nth": 2
+   },
+   "line": "and out they went.",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -6
+    },
+    {
+     "word": "out",
+     "name": "toon3d:boing",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "at": {
+    "line": 4
+   },
+   "line": "About 70 feet down.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "word": "70",
+     "name": "toon3d:ding",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "at": {
+    "line": 5
+   },
+   "line": "All three survived.",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "survived",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "at": {
+    "line": 6
+   },
+   "line": "Catholics said angels caught them.",
+   "in": {
+    "type": "flash",
+    "dur": 0.12
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -9
+    },
+    {
+     "word": "angels",
+     "name": "toon3d:chime",
+     "gain": -9
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "at": {
+    "line": 7
+   },
+   "line": "Later pamphlets said...",
+   "captions": false,
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:type",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "at": {
+    "line": 7,
+    "word": "they"
+   },
+   "line": "they landed in a pile of manure.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "landed",
+     "name": "toon3d:splash",
+     "gain": -6
+    },
+    {
+     "word": "landed",
+     "offset": 0.05,
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "manure",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "manure",
+     "offset": 0.3,
+     "name": "toon3d:buzz",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "at": {
+    "line": 8
+   },
+   "line": "Historians think that part was probably made up.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:scratch",
+     "gain": -14
+    },
+    {
+     "word": "made",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "at": {
+    "line": 9
+   },
+   "line": "But the secretary got a noble title...",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "title",
+     "name": "toon3d:success",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "at": {
+    "line": 9,
+    "word": "baron",
+    "offset": -0.15
+   },
+   "line": "Baron von Hohenfall.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "baron",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "baron",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "at": {
+    "line": 10
+   },
+   "line": "Baron of High Fall.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "high",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "fall",
+     "name": "toon3d:boing",
+     "gain": -15
+    }
+   ]
+  }
+ ]
+}
