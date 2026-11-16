@@ -1,0 +1,163 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 26.776,
+ "render_s": 737.6,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "London stank so bad, Parliament had to act.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "London stank so bad, Parliament had to act.",
+     "seed": 11,
+     "heard": "London stank so bad, Parliament had to act.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.894
+  },
+  {
+   "n": 2,
+   "text": "Summer 1858. A heatwave hit the Thames.",
+   "start": 3.094,
+   "parts": [
+    {
+     "tts": "Summer eighteen fifty-eight. A heatwave hit the Thames.",
+     "seed": 7,
+     "heard": "Summer, 1858. A heatwave hit the Thames.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.552
+  },
+  {
+   "n": 3,
+   "text": "And the Thames... was full of London's sewage.",
+   "start": 6.752,
+   "parts": [
+    {
+     "tts": "And the Thames...",
+     "seed": 11,
+     "heard": "and the Thames.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "was full of London's sewage.",
+     "seed": 11,
+     "heard": "was full of London's sewage.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.024
+  },
+  {
+   "n": 4,
+   "text": "Parliament sits right on the river.",
+   "start": 10.224,
+   "parts": [
+    {
+     "tts": "Parliament sits right on the river.",
+     "seed": 7,
+     "heard": "Parliament sits right on the river.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.133
+  },
+  {
+   "n": 5,
+   "text": "So they soaked the curtains with chemicals.",
+   "start": 12.332,
+   "parts": [
+    {
+     "tts": "So they soaked the curtains with chemicals.",
+     "seed": 7,
+     "heard": "So they soaked the curtains with chemicals.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.6
+  },
+  {
+   "n": 6,
+   "text": "They even talked about moving Parliament out of London.",
+   "start": 14.8,
+   "parts": [
+    {
+     "tts": "They even talked about moving Parliament out of London.",
+     "seed": 7,
+     "heard": "They even talked about moving Parliament out of London.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.191
+  },
+  {
+   "n": 7,
+   "text": "Instead, they passed a new sewer law in about seven weeks.",
+   "start": 17.391,
+   "parts": [
+    {
+     "tts": "Instead, they passed a new sewer law in about seven weeks.",
+     "seed": 7,
+     "heard": "Instead, they passed a new sewer law in about seven weeks.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.378
+  },
+  {
+   "n": 8,
+   "text": "Engineer Joseph Bazalgette built 82 miles of giant sewers.",
+   "start": 20.578,
+   "parts": [
+    {
+     "tts": "Engineer Joseph Bazalgette built eighty-two miles of giant sewers.",
+     "seed": 7,
+     "heard": "Engineer Joseph Bazalgette built 82 miles of giant sewers.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.704
+  },
+  {
+   "n": 9,
+   "text": "London still uses them today.",
+   "start": 24.904,
+   "parts": [
+    {
+     "tts": "London still uses them today.",
+     "seed": 7,
+     "heard": "London still uses them today.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.576
+  }
+ ],
+ "engine": "chatterbox_d2"
+}

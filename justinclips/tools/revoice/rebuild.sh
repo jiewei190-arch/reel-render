@@ -35,6 +35,13 @@ echo "== 3/7 word timings"
 (cd "$KIT" && "$VPY" tools/transcribe.py --project "projects/$SLUG" --script "projects/$SLUG/input/script.txt" --lang en --model small | tail -3)
 echo "== 4/7 shot timing from the voice"
 "$VPY" "$HERE/retime.py" --project "$PJ"
+# generated files (voice, word timings, shots.json, duration) go back into the repo project right away
+copy_back() {
+mkdir -p "$SRC/input" "$SRC/timeline" "$SRC/story"
+  cp "$PJ/input/voiceover.wav" "$PJ/input/voiceover.lines.json" "$PJ/input/script.txt" "$SRC/input/"
+  cp "$PJ/timeline/"* "$SRC/timeline/"; cp "$PJ/story/shots.json" "$SRC/story/"; cp "$PJ/config.json" "$SRC/"
+}
+copy_back
 cd "$KIT"
 if [ $SHEET = 1 ]; then node render.mjs --project "projects/$SLUG" --sheet --scale 0.4 | tail -1; exit 0; fi
 echo "== 5/7 render"
@@ -49,7 +56,5 @@ FR=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_
 echo "frames: $FR  duration: $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$SHORT/video.mp4") s"
 (cd "$SHORT" && sha256sum video.mp4 > video.sha256)
 cp "$PJ/build/sheets/sheet_01.png" "$SHORT/contact_sheet.png" 2>/dev/null || true
-mkdir -p "$SRC/input" "$SRC/timeline" "$SRC/story"
-cp "$PJ/input/voiceover.wav" "$PJ/input/voiceover.lines.json" "$PJ/input/script.txt" "$SRC/input/"
-cp "$PJ/timeline/"* "$SRC/timeline/"; cp "$PJ/story/shots.json" "$SRC/story/"; cp "$PJ/config.json" "$SRC/"
+copy_back
 echo "done: $SHORT/video.mp4 (remember: git add -f project/input/voiceover.wav; *.wav is gitignored)"
