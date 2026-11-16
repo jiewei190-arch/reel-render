@@ -1,0 +1,47 @@
+{
+ "title": "The Rats Who Got a Lawyer",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 27.394,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "topCaption": [
+  "and he took the case",
+  "very seriously"
+ ],
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "rats",
+   "lawyer",
+   "1500s",
+   "barley",
+   "autun",
+   "summoned",
+   "show",
+   "villages",
+   "cats",
+   "indoors",
+   "no",
+   "thrown",
+   "out"
+  ]
+ },
+ "topCaptionUntil": 3.97
+}
