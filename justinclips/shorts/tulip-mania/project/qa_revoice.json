@@ -1,0 +1,36 @@
+{
+ "whisper_per_sentence": "A flower once cost more than a house. Holland, the 1630s. Everyone wanted tulips. The rarest ones had wild flame stripes. caused by a virus. People traded bulbs still in the ground.\" on Patreon. or in taverns. one bulb reportedly sold for 10,000 guilders Craftsman made about $300 a year. Then, in February 1637, The market crashed. but a historian who checked the records couldn't find anyone who went bankrupt.",
+ "wrong_words_per_sentence": 3,
+ "diffs_per_sentence": [
+  [
+   "paper",
+   "patreon or"
+  ],
+  [
+   "a",
+   ""
+  ]
+ ],
+ "whisper_vad": "A flower once cost more than a house. Holland, the 1630s. Everyone wanted tulips. The rarest ones had wild flame stripes caused by a virus. People traded bulbs still in the ground on paper in taverns. One bulb reportedly sold for 10,000 guilders. A craftsman made about 300 a year. Then in February 1637, the market crashed. But a historian who checked the records couldn't find anyone who went bankrupt.",
+ "wrong_words_vad": 0,
+ "diffs_vad": [],
+ "duration_s": 24.88,
+ "frames": 597,
+ "lufs": -14.1,
+ "true_peak_dbtp": -2.5,
+ "whisper": "A flower once cost more than a house. Holland, the 1630s. Everyone wanted tulips. The rarest ones had wild flame stripes caused by a virus. People traded bulbs still in the ground on paper in taverns. One bulb reportedly sold for 10,000 guilders. A craftsman made about 300 a year. Then in February 1637, the market crashed. But a historian who checked the records couldn't find anyone who went bankrupt.",
+ "wrong_words": 0,
+ "diffs": [],
+ "blackdetect": [
+  "black_start:12.6667 black_end:12.7917",
+  "black_start:21.0833 black_end:21.2083"
+ ],
+ "blank_frames": [],
+ "min_luma_spread": 15.1,
+ "pass": {
+  "length_20_30": true,
+  "lufs": true,
+  "tp": true,
+  "no_black": false
+ }
+}

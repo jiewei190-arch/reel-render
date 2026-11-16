@@ -1,0 +1,47 @@
+{
+ "pacing": {
+  "gap": 0.35,
+  "lead": 0.05,
+  "beat": 0.6
+ },
+ "pronounce": {
+  "dia": {
+   "1630s": "sixteen-thirties",
+   "Holland": "Hollund"
+  }
+ },
+ "lines": [
+  {
+   "n": 1,
+   "text": "A flower once cost more than a house."
+  },
+  {
+   "n": 2,
+   "text": "Holland, the 1630s. Everyone wanted tulips."
+  },
+  {
+   "n": 3,
+   "text": "The rarest ones had wild flame stripes... caused by a virus."
+  },
+  {
+   "n": 4,
+   "text": "People traded bulbs still in the ground... on paper... in taverns."
+  },
+  {
+   "n": 5,
+   "text": "One bulb reportedly sold for 10,000 guilders."
+  },
+  {
+   "n": 6,
+   "text": "A craftsman made about 300 a year."
+  },
+  {
+   "n": 7,
+   "text": "Then, in February 1637... the market crashed."
+  },
+  {
+   "n": 8,
+   "text": "But a historian who checked the records... couldn't find anyone who went bankrupt."
+  }
+ ]
+}

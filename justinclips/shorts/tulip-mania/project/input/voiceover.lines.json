@@ -1,0 +1,114 @@
+{
+ "engine": "files",
+ "dir": "/home/user/reel-render/justinclips/shorts/tulip-mania/project/build/dia8",
+ "gap": 0.35,
+ "lead": 0.05,
+ "beat": 0.6,
+ "sr": 24000,
+ "duration": 24.953,
+ "lines": [
+  {
+   "n": 1,
+   "text": "A flower once cost more than a house.",
+   "start": 0.05,
+   "parts": [
+    {
+     "file": "01.wav"
+    }
+   ],
+   "end": 1.764
+  },
+  {
+   "n": 2,
+   "text": "Holland, the 1630s. Everyone wanted tulips.",
+   "start": 2.114,
+   "parts": [
+    {
+     "file": "02.wav"
+    }
+   ],
+   "end": 4.464
+  },
+  {
+   "n": 3,
+   "text": "The rarest ones had wild flame stripes... caused by a virus.",
+   "start": 4.814,
+   "parts": [
+    {
+     "file": "03a.wav"
+    },
+    {
+     "file": "03b.wav"
+    }
+   ],
+   "end": 7.819
+  },
+  {
+   "n": 4,
+   "text": "People traded bulbs still in the ground... on paper... in taverns.",
+   "start": 8.169,
+   "parts": [
+    {
+     "file": "04a.wav"
+    },
+    {
+     "file": "04b.wav"
+    },
+    {
+     "file": "04c.wav"
+    }
+   ],
+   "end": 12.139
+  },
+  {
+   "n": 5,
+   "text": "One bulb reportedly sold for 10,000 guilders.",
+   "start": 12.489,
+   "parts": [
+    {
+     "file": "05.wav"
+    }
+   ],
+   "end": 14.689
+  },
+  {
+   "n": 6,
+   "text": "A craftsman made about 300 a year.",
+   "start": 15.039,
+   "parts": [
+    {
+     "file": "06.wav"
+    }
+   ],
+   "end": 16.593
+  },
+  {
+   "n": 7,
+   "text": "Then, in February 1637... the market crashed.",
+   "start": 16.943,
+   "parts": [
+    {
+     "file": "07a.wav"
+    },
+    {
+     "file": "07b.wav"
+    }
+   ],
+   "end": 20.579
+  },
+  {
+   "n": 8,
+   "text": "But a historian who checked the records... couldn't find anyone who went bankrupt.",
+   "start": 20.929,
+   "parts": [
+    {
+     "file": "08a.wav"
+    },
+    {
+     "file": "08b.wav"
+    }
+   ],
+   "end": 24.603
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "engine": "dia (voice #8)",
+ "model": "nari-labs/Dia-1.6B-0626",
+ "seed": 42,
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "take": "take_seed42.wav",
+ "take_s": 19.49,
+ "lufs": -14.0,
+ "true_peak_dbtp": -1.5,
+ "median_pitch_hz": 209.8,
+ "pitch_ok": true,
+ "whisper": "A flower once cost more than a house. Holland. The sixteen thirties. Everyone wanted tulips. The rarest ones had wild flame stripes caused by a virus. People traded bulbs still in the ground on paper in taverns. One bulb reportedly sold for ten thousand guilders. A craftsman made about three hundred a year. Then, in February sixteen thirty seven, the market crashed. But a historian who checked the records couldn't find anyone who went bankrupt.",
+ "wrong_words": 0,
+ "words_after_script_end": [],
+ "laughs_left": false,
+ "files": [
+  "01.wav",
+  "02.wav",
+  "03a.wav",
+  "03b.wav",
+  "04a.wav",
+  "04b.wav",
+  "04c.wav",
+  "05.wav",
+  "06.wav",
+  "07a.wav",
+  "07b.wav",
+  "08a.wav",
+  "08b.wav"
+ ],
+ "parts": [
+  {
+   "file": "01.wav",
+   "s": 1.73,
+   "text": "A flower once cost more than a house.",
+   "heard": "A flower once cost more than a house.",
+   "wrong": 0
+  },
+  {
+   "file": "02.wav",
+   "s": 2.35,
+   "text": "Holland, the 1630s. Everyone wanted tulips.",
+   "heard": "Holland, the sixteen thirties, everyone wanted tulips.",
+   "wrong": 0
+  },
+  {
+   "file": "03a.wav",
+   "s": 1.66,
+   "text": "The rarest ones had wild flame stripes",
+   "heard": "The rarest ones had wild flame stripes.",
+   "wrong": 0
+  },
+  {
+   "file": "03b.wav",
+   "s": 0.74,
+   "text": "caused by a virus.",
+   "heard": "caused by a virus.",
+   "wrong": 0
+  },
+  {
+   "file": "04a.wav",
+   "s": 1.62,
+   "text": "People traded bulbs still in the ground",
+   "heard": "People traded bulbs still on the ground.\"",
+   "wrong": 1
+  },
+  {
+   "file": "04b.wav",
+   "s": 0.3,
+   "text": "on paper",
+   "heard": "on people.",
+   "wrong": 1
+  },
+  {
+   "file": "04c.wav",
+   "s": 0.84,
+   "text": "in taverns.",
+   "heard": "in taverns.",
+   "wrong": 0
+  },
+  {
+   "file": "05.wav",
+   "s": 2.2,
+   "text": "One bulb reportedly sold for 10,000 guilders.",
+   "heard": "One bulb reportedly sold for ten thousand guilders.",
+   "wrong": 0
+  },
+  {
+   "file": "06.wav",
+   "s": 1.55,
+   "text": "A craftsman made about 300 a year.",
+   "heard": "Craftsman made about three hundred a year.",
+   "wrong": 1
+  },
+  {
+   "file": "07a.wav",
+   "s": 2.04,
+   "text": "Then, in February 1637",
+   "heard": "Then, in February, sixteen-thirty-seven,",
+   "wrong": 0
+  },
+  {
+   "file": "07b.wav",
+   "s": 1.0,
+   "text": "the market crashed.",
+   "heard": "the market crashed.",
+   "wrong": 0
+  },
+  {
+   "file": "08a.wav",
+   "s": 1.44,
+   "text": "But a historian who checked the records",
+   "heard": "but a historian who checked the records",
+   "wrong": 0
+  },
+  {
+   "file": "08b.wav",
+   "s": 1.9,
+   "text": "couldn't find anyone who went bankrupt.",
+   "heard": "couldn't find anyone who went bankrupt.",
+   "wrong": 0
+  }
+ ],
+ "lead_trim_s": 0.11,
+ "synth_s": 335.8
+}

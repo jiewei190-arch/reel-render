@@ -1,0 +1,100 @@
+{
+ "engine": "dia (voice #8)",
+ "model": "nari-labs/Dia-1.6B-0626",
+ "seed": 7,
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "take": "take_seed7.wav",
+ "take_s": 20.67,
+ "lufs": -14.2,
+ "true_peak_dbtp": -1.5,
+ "median_pitch_hz": 194.6,
+ "pitch_ok": true,
+ "whisper": "Legend says two cities went to war over a bucket. The truth is pettier. In thirteen -twenty -five, Bologna sent about thirty -two thousand soldiers after little Modena. Modena had about seven thousand and one. Then they reportedly marched to Bologna's gates and took a bucket from a well as a trophy. Modena still has the bucket about seven hundred years later.",
+ "wrong_words": 0,
+ "words_after_script_end": [],
+ "laughs_left": false,
+ "files": [
+  "01.wav",
+  "02.wav",
+  "03.wav",
+  "04a.wav",
+  "04b.wav",
+  "05a.wav",
+  "05b.wav",
+  "06a.wav",
+  "06b.wav"
+ ],
+ "parts": [
+  {
+   "file": "01.wav",
+   "s": 2.2,
+   "text": "Legend says two cities went to war over a bucket.",
+   "heard": "Legend says two cities went to war over a bucket.",
+   "wrong": 0
+  },
+  {
+   "file": "02.wav",
+   "s": 1.25,
+   "text": "The truth is pettier.",
+   "heard": "The truth is pettier.",
+   "wrong": 0
+  },
+  {
+   "file": "03.wav",
+   "s": 4.71,
+   "text": "In 1325, Bologna sent about 32,000 soldiers after little Modena.",
+   "heard": "In thirteen-twenty-five, Bologna sent about thirty-two thousand soldiers after little Modena.",
+   "wrong": 0
+  },
+  {
+   "file": "04a.wav",
+   "s": 1.36,
+   "text": "Modena had about 7,000",
+   "heard": "Medina had about seven thousand...",
+   "wrong": 1
+  },
+  {
+   "file": "04b.wav",
+   "s": 0.69,
+   "text": "and won.",
+   "heard": "and one.",
+   "wrong": 0
+  },
+  {
+   "file": "05a.wav",
+   "s": 2.02,
+   "text": "Then they reportedly marched to Bologna's gates",
+   "heard": "Then, they reportedly marched to Bologna's gates.",
+   "wrong": 0
+  },
+  {
+   "file": "05b.wav",
+   "s": 1.97,
+   "text": "and took a bucket from a well, as a trophy.",
+   "heard": "and took a bucket from a well as a trophy.",
+   "wrong": 0
+  },
+  {
+   "file": "06a.wav",
+   "s": 1.21,
+   "text": "Modena still has the bucket",
+   "heard": "Modena still has the bucket",
+   "wrong": 0
+  },
+  {
+   "file": "06b.wav",
+   "s": 1.72,
+   "text": "about 700 years later.",
+   "heard": "about seven hundred years later.",
+   "wrong": 0
+  }
+ ],
+ "lead_trim_s": 3.56,
+ "synth_s": 802.6
+}
