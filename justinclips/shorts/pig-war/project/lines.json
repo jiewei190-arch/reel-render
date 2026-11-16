@@ -30,7 +30,7 @@
     },
     {
      "id": "s02",
-     "word": "pig",
+     "word": "over",
      "in": {
       "type": "whipBlur",
       "dir": 1
@@ -77,8 +77,27 @@
      ]
     },
     {
+     "id": "s03b",
+     "word": "both",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:pop",
+       "gain": -10
+      },
+      {
+       "word": "claimed",
+       "name": "toon3d:stamp",
+       "gain": -9
+      }
+     ]
+    },
+    {
      "id": "s04",
-     "word": "pig",
+     "word": "british",
      "in": {
       "type": "whipBlur",
       "dir": -1
@@ -100,12 +119,7 @@
        "gain": -12
       }
      ]
-    }
-   ]
-  },
-  {
-   "text": "He shot it.",
-   "shots": [
+    },
     {
      "id": "s05",
      "in": {
@@ -117,11 +131,17 @@
        "name": "toon3d:suspense",
        "gain": -12
       }
-     ]
-    },
+     ],
+     "word": "garden",
+     "offset": -0.05
+    }
+   ]
+  },
+  {
+   "text": "He shot it.",
+   "shots": [
     {
      "id": "s06",
-     "word": "shot",
      "in": {
       "type": "cut"
      },
@@ -137,7 +157,8 @@
        "name": "toon3d:whoosh",
        "gain": -12
       }
-     ]
+     ],
+     "word": "shot"
     }
    ]
   },
@@ -161,7 +182,9 @@
        "name": "toon3d:coins",
        "gain": -9
       }
-     ]
+     ],
+     "word": "10",
+     "offset": -0.2
     },
     {
      "id": "s08",
@@ -304,8 +327,22 @@
      ]
     },
     {
+     "id": "s13b",
+     "word": "the",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:suspense",
+       "gain": -14
+      }
+     ]
+    },
+    {
      "id": "s14",
-     "word": "only",
+     "word": "was",
      "in": {
       "type": "iris"
      },

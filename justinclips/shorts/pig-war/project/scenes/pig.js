@@ -1,6 +1,7 @@
 // The Pig War (1859): 14 shots, Toon 3D. EMOTION: LOL. Deadpan narrator. The pig is never shown being shot (s06 cuts away).
 // Timing: every shot's start comes from lines.json + the voice's word timings (build_short.py); inside a shot, beats sync to words with at().
-import { registerShot } from '/engine/core.js';
+import { registerShot, getShot } from '/engine/core.js';
+const getShotInit = (id) => getShot(id).init;
 import {
   at, E, THREE, toonStage, camMove, quad, bird, island, cabin, potatoPatch, potato, farmer, rifle, redcoat, bluecoat, official, cannon, flag, warship, tree,
   POSE, EXPR, addPose, mixPose, mixExpr, idle, walk, run, point, shrug, nod, reactions, shakeCam, sunnyLook,
@@ -20,13 +21,13 @@ const stand = (L, t, ex = EXPR.angry) => L.forEach((b, i) => { b.pose(addPose(PO
 function standoffInit(T, o = {}) {
   const st = toonStage(T, { light: 'sunny', fov: 46, shadowSize: 16, target: [0, 1, 0] }); const env = island(st, { seed: 5, seaZ: -12 });
   const ship = warship({ seed: 1 }); ship.position.set(-3, 0, -22); ship.rotation.y = 0.3; st.add(ship);
-  const reds = line(st, redcoat, 3, -3.6, -1.5, 0.0, 0.5, 20); reds.forEach((b, i) => b.position.set(-3.0 - i * 0.6, 0, -1.6 + i * 1.6));
-  const blues = line(st, bluecoat, 3, 3.0, -1.5, 0.0, -0.5, 30); blues.forEach((b, i) => b.position.set(3.0 + i * 0.6, 0, -1.6 + i * 1.6));
+  const reds = line(st, redcoat, 3, -3.6, -1.5, 0.0, 0.5, 20); reds.forEach((b, i) => b.position.set(-1.7 - i * 0.35, 0, -2.4 + i * 1.5));
+  const blues = line(st, bluecoat, 3, 3.0, -1.5, 0.0, -0.5, 30); blues.forEach((b, i) => b.position.set(1.7 + i * 0.35, 0, -2.4 + i * 1.5));
   const pig = quad({ kind: 'pig', seed: 3 }); st.add(pig); const pt = potato(1.1); st.add(pt);
-  const fu = flag('uk', { h: 3.6 }); fu.position.set(-4.6, 0, -4); st.add(fu); const fs = flag('us', { h: 3.6 }); fs.position.set(4.2, 0, -4); st.add(fs);
+  const fu = flag('uk', { h: 3.6 }); fu.position.set(-2.6, 0, -4.5); st.add(fu); const fs = flag('us', { h: 3.6 }); fs.position.set(1.6, 0, -4.5); st.add(fs);
   return { stage: st, env, ship, reds, blues, pig, pt, fu, fs };
 }
-function pigTrot(s, t, x0 = -1.2, sp = 0.7) { s.pig.position.set(x0 + sp * t, 0, 1.4); s.pig.rotation.y = Math.PI / 2 - 0.35; s.pig.update(t, { walk: 1, speed: 3, lid: 0.35, headNod: Math.sin(t * 12) * 0.08 }); const h = new THREE.Vector3(); s.pig.head.getWorldPosition(h); s.pt.position.set(h.x + 0.35, h.y - 0.2, h.z + 0.25); }
+function pigTrot(s, t, x0 = -0.9, sp = 0.5) { s.pig.position.set(x0 + sp * t, 0, 2.2); s.pig.rotation.y = Math.PI / 2 - 0.35; s.pig.update(t, { walk: 1, speed: 3, lid: 0.35, headNod: Math.sin(t * 12) * 0.08 }); const h = new THREE.Vector3(); s.pig.head.getWorldPosition(h); s.pt.position.set(h.x + 0.35, h.y - 0.2, h.z + 0.25); }
 registerShot('s01', { kind: '3d',
   init: standoffInit,
   draw(s, t, info) {
@@ -44,7 +45,7 @@ registerShot('s02', { kind: '3d',
     s.env.update(t); s.ship.update(t); stand(s.reds, t); stand(s.blues, t);
     s.pig.position.set(0, 0, 1.4); s.pig.rotation.y = 0.15; s.pig.update(t, { lid: 0.2, look: [Math.sin(t * 3) * 0.8, 0.3], headNod: -0.15 + Math.sin(t * 14) * 0.04 });
     const h = new THREE.Vector3(); s.pig.head.getWorldPosition(h); s.pt.position.set(h.x + 0.05, h.y - 0.25, h.z + 0.5);
-    camMove(s.stage, t, [[0, { pos: [0, 1.2, 5.2], look: [0, 0.9, 1.4], fov: 40 }], [info.dur, { pos: [0, 1.1, 4.6], look: [0, 0.9, 1.4], fov: 38 }]]);
+    camMove(s.stage, t, [[0, { pos: [0, 1.6, 7.4], look: [0, 1.0, 1.4], fov: 40 }], [info.dur, { pos: [0, 1.5, 6.8], look: [0, 1.0, 1.4], fov: 39 }]]);
   },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); reactions(g, t, s, [{ fx: 'question', on: 'pig', at: 0.25, scale: 0.8 }]); topCaption(g, t, info, TOP, TOP_UNTIL); },
 });
@@ -62,7 +63,13 @@ registerShot('s03', { kind: '3d',
   },
   draw(s, t, info) { s.sky.update(t); s.fu.update(t); s.fs.update(t);
     camMove(s.stage, t, [[0, { pos: [0, 9, 17], look: [0, 0.8, 0], fov: 44 }], [info.dur, { pos: [0, 8, 15], look: [0, 1.0, 0], fov: 42 }]]); },
-  overlay(g, t, info, s) { sunnyLook(g, t, RAYS); yearStamp(g, t, 1859, { at: at(info, '1859', 0.1), x: 820, y: 430 }); label(g, t, at(info, 'claimed', 0.9) - 0.1, 'BOTH CLAIMED IT', E.W / 2, 1220, 66, { box: '#2f4f8a' }); },
+  overlay(g, t, info, s) { sunnyLook(g, t, RAYS); yearStamp(g, t, 1859, { at: at(info, '1859', 0.1), x: 820, y: 430 }); label(g, t, 0.3, 'SAN JUAN ISLAND', E.W / 2, 1220, 66, { box: '#2f6a3a' }); },
+});
+registerShot('s03b', { kind: '3d',
+  init(T) { return getShotInit('s03')(T); },
+  draw(s, t, info) { s.sky.update(t); s.fu.update(t + 2); s.fs.update(t + 2);
+    camMove(s.stage, t, [[0, { pos: [-4.0, 6.5, 6.0], look: [-4.0, 2.0, 0.5], fov: 46 }], [info.dur, { pos: [3.6, 6.5, 6.0], look: [3.6, 2.0, 0.5], fov: 46 }]]); },
+  overlay(g, t, info, s) { sunnyLook(g, t, RAYS); label(g, t, at(info, 'claimed', 0.6) - 0.1, 'BOTH CLAIMED IT', E.W / 2, 1220, 66, { box: '#2f4f8a' }); },
 });
 import { sunnySky } from './_lib.js';
 function C_sky(st) { return sunnySky(st, { clouds: 7, seed: 4 }); }
@@ -93,7 +100,7 @@ registerShot('s05', { kind: '3d',
   init(T) { const s = gardenInit(T); s.rf = rifle(); s.stage.add(s.rf); return s; },
   draw(s, t, info) {
     s.env.update(t); s.f.rotation.y = 0.15; s.f.pose(addPose({ ...POSE.stand, armR: [0.9, 0.3, 0.6], elbowR: 1.4, armL: [0.7, 0.2, 0.6], elbowL: 1.3 }, idle(t, 2))); s.f.face(EXPR.deadpan, t);
-    const h = handPos(s.f, 'R'); s.rf.position.set(h.x + 0.1, h.y + 0.2, h.z + 0.15); s.rf.rotation.set(0, 0, -0.5);
+    const h = handPos(s.f, 'R'); s.rf.position.set(h.x - 0.05, h.y + 0.35, h.z + 0.05); s.rf.rotation.set(0, 0, 0.3);
     camMove(s.stage, t, [[0, { pos: [-2.0, 2.2, 1.6], look: [-2.4, 2.0, -2.6], fov: 34 }], [info.dur, { pos: [-2.0, 2.2, 1.1], look: [-2.4, 2.0, -2.6], fov: 33 }]]);
   },
   overlay(g, t, info, s) { sunnyLook(g, t, SOFT); },
@@ -103,7 +110,7 @@ registerShot('s06', { kind: '3d',
   init(T) {
     const st = toonStage(T, { light: 'sunny', fov: 40, shadowSize: 10, target: [0, 2, 0] }); const env = island(st, { seed: 9, seaZ: -30, pines: 0 });
     const tr = tree(rng(3), { s: 1.6 }); st.add(tr);
-    const birds = [...Array(7)].map((_, i) => { const b = bird({ body: '#3a3a44', head: '#3a3a44', ruff: '#3a3a44', scale: 0.35, seed: i }); st.add(b); return b; });
+    const birds = [...Array(7)].map((_, i) => { const b = bird({ body: '#3a3a44', head: '#3a3a44', ruff: '#3a3a44', scale: 0.6, seed: i }); st.add(b); return b; });
     return { stage: st, env, tr, birds };
   },
   draw(s, t, info) {
@@ -119,8 +126,8 @@ registerShot('s06', { kind: '3d',
 function dealInit(T) {
   const st = toonStage(T, { light: 'sunny', fov: 36, shadowSize: 10, target: [0, 1, 0] }); const env = island(st, { seed: 11, seaZ: -20 });
   const cb = cabin(); cb.position.set(1, 0, -6); st.add(cb);
-  const f = farmer(); f.position.set(-1.0, 0, 0.5); f.rotation.y = 0.8; st.add(f);
-  const o = official(); o.position.set(1.0, 0, 0.5); o.rotation.y = -0.8; st.add(o);
+  const f = farmer(); f.position.set(-0.8, 0, 0.6); f.rotation.y = 0.7; st.add(f);
+  const o = official(); o.position.set(0.8, 0, 0.6); o.rotation.y = -0.7; st.add(o);
   const coin = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.03, 20), toon('#e8c24a', { emissive: new THREE.Color('#a87a1a'), emissiveIntensity: 0.3 })); coin.rotation.x = Math.PI / 2; st.add(coin);
   return { stage: st, env, f, o, coin };
 }
@@ -203,6 +210,13 @@ registerShot('s13', { kind: '3d',
     s.tw.position.set(-3 + t * 2.4, 0.35 + Math.abs(Math.sin(t * 6)) * 0.3, 1.8); s.tw.rotation.z = -t * 6;
     camMove(s.stage, t, [[0, { pos: [0, 2.0, 10], look: [0, 1.6, -1], fov: 46 }], [info.dur, { pos: [0, 2.0, 9.4], look: [0, 1.6, -1], fov: 45 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, SOFT); label(g, t, at(info, 'shot', 0.6), 'SHOTS FIRED: 0', E.W / 2, 500, 80, { box: 'rgba(255,248,236,.94)', color: '#2a1c15' }); },
+});
+// ---- s13b: "The only casualty..." the two lines turn and stare at each other; a tally board slides in: CASUALTIES: ?
+registerShot('s13b', { kind: '3d',
+  init(T) { const s = standoffInit(T); s.pig.visible = false; s.pt.visible = false; return s; },
+  draw(s, t, info) { s.env.update(t); s.ship.update(t); s.fu.update(t); s.fs.update(t); stand(s.reds, t, EXPR.suspicious); stand(s.blues, t, { ...EXPR.suspicious, pupil: [0.5, 0] });
+    camMove(s.stage, t, [[0, { pos: [0, 2.0, 7.4], look: [0, 1.8, -1], fov: 44 }], [info.dur, { pos: [0, 2.0, 6.8], look: [0, 1.8, -1], fov: 43 }]]); },
+  overlay(g, t, info, s) { sunnyLook(g, t, SOFT); label(g, t, 0.05, 'CASUALTIES: ?', E.W / 2, 500, 86, { box: 'rgba(255,248,236,.94)', color: '#2a1c15' }); },
 });
 // ---- s14: PAYOFF "The only casualty... was the pig." the pig as a cheerful cartoon angel floats up over the island, halo
 //      and little wings; sparkles. Hard cut back to s01 (loop).
