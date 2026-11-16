@@ -212,6 +212,25 @@
    "text": "Lab tests later found lung, muscle and cartilage.",
    "shots": [
     {
+     "id": "s09a",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -10
+      },
+      {
+       "at": 0.3,
+       "name": "toon3d:click",
+       "gain": -10
+      }
+     ]
+    },
+    {
      "id": "s09",
      "in": {
       "type": "zoom"
@@ -237,7 +256,9 @@
        "name": "toon3d:pop",
        "gain": -10
       }
-     ]
+     ],
+     "word": "lung",
+     "offset": -0.1
     }
    ]
   },

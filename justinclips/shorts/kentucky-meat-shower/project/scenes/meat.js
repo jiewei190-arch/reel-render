@@ -15,13 +15,13 @@ const TOP_UNTIL = 3.2;
 // ---- s01 (frame 1): meat chunks already raining over the farmyard under a clear sky; chickens of chunks bounce.
 function yardInit(T, o = {}) {
   const st = toonStage(T, { light: 'sunny', fov: 46, shadowSize: 14, target: [0, 1, 0] }); const env = farm(st, { seed: o.seed || 3 });
-  const sh = shower({ area: [12, 10], n: o.n || 44, h: 14, seed: o.seed || 3 }); sh.position.z = -1; st.add(sh);
+  const sh = shower({ area: o.area || [12, 10], n: o.n || 44, h: 14, seed: o.seed || 3, s: o.s || 1 }); sh.position.z = o.z ?? -1; st.add(sh);
   return { stage: st, env, sh };
 }
 registerShot('s01', { kind: '3d',
-  init: yardInit,
+  init(T) { return yardInit(T, { n: 40, s: 1.9, area: [7, 8], z: 1.5 }); },
   draw(s, t, info) { const T0 = t + 1.2; s.env.update(T0); s.sh.update(T0);
-    camMove(s.stage, t, [[0, { pos: [0, 2.0, 11], look: [0, 3.2, -2], fov: 50 }], [info.dur, { pos: [0, 1.8, 9.5], look: [0, 2.8, -2], fov: 48 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0, 1.6, 10], look: [0, 3.0, -2], fov: 50 }], [info.dur, { pos: [0, 1.5, 9.0], look: [0, 2.8, -2], fov: 48 }]]); shakeCam(s.stage, t, [{ fx: 'shake', at: 0, amp: 0.03, dur: 2 }]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); yearStamp(g, t, 1876, { at: at(info, '1876', 0.2) - 0.05, x: 830, y: 460 }); topCaption(g, t, info, TOP, TOP_UNTIL); },
 });
 // ---- s02: "...meat in Kentucky." close on the ground: chunks plop down and bounce, PLOP.
@@ -50,8 +50,8 @@ registerShot('s04', { kind: '3d',
 // ---- s05: "A woman making soap outside..." she stirs a big kettle over a fire in the yard, calm.
 function soapInit(T) {
   const st = toonStage(T, { light: 'sunny', fov: 38, shadowSize: 10, target: [0, 1, 0] }); const env = farm(st, { seed: 11, barnX: 3, barnZ: -8 });
-  const k = kettle(); k.position.set(0.9, 0, 0.5); st.add(k);
-  const w = woman(); w.position.set(-0.6, 0, 0.6); w.rotation.y = 0.6; st.add(w);
+  const k = kettle(); k.position.set(0.85, 0, 0.3); st.add(k);
+  const w = woman(); w.position.set(-0.3, 0, 0.6); w.rotation.y = 0.6; st.add(w);
   const paddle = cyl(0.04, 0.04, 1.5, '#8a5a32', 0, 0, 0, 8); outline(paddle, { px: 2 }); st.add(paddle);
   const c = chunk(4, 1.4); st.add(c);
   return { stage: st, env, k, w, paddle, c };
@@ -61,7 +61,7 @@ registerShot('s05', { kind: '3d',
   init: soapInit,
   draw(s, t, info) { s.env.update(t); s.c.visible = false;
     s.w.pose(addPose({ ...POSE.stand, armR: [1.0 + Math.sin(t * 4) * 0.15, -0.3, 0], elbowR: 0.9, armL: [0.9, -0.2, 0], elbowL: 1.2 }, idle(t, 2))); s.w.face({ ...EXPR.neutral, mouth: 'smile' }, t); stir(s, t);
-    camMove(s.stage, t, [[0, { pos: [0.2, 2.1, 6.8], look: [0.2, 1.4, 0.5], fov: 38 }], [info.dur, { pos: [0.2, 2.0, 6.0], look: [0.2, 1.4, 0.5], fov: 37 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0.3, 2.3, 8.6], look: [0.3, 1.3, 0.5], fov: 38 }], [info.dur, { pos: [0.3, 2.2, 7.8], look: [0.3, 1.3, 0.5], fov: 37 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); label(g, t, at(info, 'soap', 0.8) - 0.05, 'SOAP DAY', E.W / 2, 520, 64, { box: '#6a7ab8' }); },
 });
 // ---- s06: "...watched it land." a chunk drops into frame and lands right by the kettle. She stares, deadpan. Then at us.
@@ -71,14 +71,14 @@ registerShot('s06', { kind: '3d',
     const tl = at(info, 'land', 0.6); const k = clamp((t - tl + 0.4) / 0.4); s.c.position.set(0.0, lerp(6, 0.2, ease.in(k)), 1.6); s.c.rotation.set(k < 1 ? t * 4 : 0, 0.5, k < 1 ? t * 3 : 0);
     const look = k < 1 ? [0.3, lerp(1, -0.6, k)] : [0, -0.6 + clamp((t - tl - 0.5) / 0.3) * 0.6];
     s.w.pose(addPose({ ...POSE.stand, armR: [1.0, -0.3, 0], elbowR: 0.9, headNod: k * 0.25 - clamp((t - tl - 0.5) / 0.3) * 0.25 }, idle(t, 2))); s.w.face({ ...EXPR.deadpan, pupil: look }, t); stir(s, 0);
-    camMove(s.stage, t, [[0, { pos: [-0.2, 2.0, 4.6], look: [-0.3, 1.6, 0.8], fov: 36 }], [info.dur, { pos: [-0.2, 2.0, 4.2], look: [-0.3, 1.7, 0.8], fov: 35 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0.0, 1.9, 5.4], look: [-0.1, 1.4, 0.8], fov: 36 }], [info.dur, { pos: [0.0, 1.9, 5.0], look: [-0.1, 1.5, 0.8], fov: 35 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); const tl = at(info, 'land', 0.6); reactions(g, t, s, [{ fx: 'exclaim', on: 'c', at: tl + 0.02, scale: 0.6 }]); },
 });
 // ---- s07: "Two men reportedly tasted it..." two farmers each holding up a chunk, sniffing it.
 function menInit(T) {
   const st = toonStage(T, { light: 'sunny', fov: 36, shadowSize: 10, target: [0, 1, 0] }); const env = farm(st, { seed: 13 });
-  const a = man({ seed: 23 }); a.position.set(-0.85, 0, 0.6); a.rotation.y = 0.35; st.add(a);
-  const b = man({ seed: 24, main: '#5a7a5a', hair: '#9a9a9a', hat: '#2a2a30', skin: 'tan' }); b.position.set(0.85, 0, 0.6); b.rotation.y = -0.35; st.add(b);
+  const a = man({ seed: 23 }); a.position.set(-0.62, 0, 0.6); a.rotation.y = 0.35; st.add(a);
+  const b = man({ seed: 24, main: '#5a7a5a', hair: '#9a9a9a', hat: '#2a2a30', skin: 'tan' }); b.position.set(0.62, 0, 0.6); b.rotation.y = -0.35; st.add(b);
   const ca = chunk(2, 1.0), cb = chunk(3, 1.0); st.add(ca, cb);
   return { stage: st, env, a, b, ca, cb };
 }
@@ -90,7 +90,7 @@ function hold(s, t, chew) {
 registerShot('s07', { kind: '3d',
   init: menInit,
   draw(s, t, info) { s.env.update(t); hold(s, t, false); s.a.face(EXPR.suspicious, t); s.b.face({ ...EXPR.suspicious, pupil: [-0.4, -0.2] }, t);
-    camMove(s.stage, t, [[0, { pos: [0, 2.1, 6.4], look: [0, 1.8, 0.5], fov: 36 }], [info.dur, { pos: [0, 2.1, 5.7], look: [0, 1.9, 0.5], fov: 35 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0, 2.1, 7.6], look: [0, 1.7, 0.5], fov: 36 }], [info.dur, { pos: [0, 2.1, 7.0], look: [0, 1.8, 0.5], fov: 35 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS); label(g, t, at(info, 'reportedly', 0.5), '(reportedly)', E.W / 2, 1010, 56, {}); reactions(g, t, s, [{ fx: 'sweat', on: 'b', at: 0.6 }]); },
 });
 // ---- s08: "...and guessed mutton. Or venison." they chew, thinking; MUTTON? then VENISON? signs pop over each head.
@@ -98,11 +98,27 @@ registerShot('s08', { kind: '3d',
   init: menInit,
   draw(s, t, info) { s.env.update(t); hold(s, t, true); s.a.face({ ...EXPR.neutral, lid: 0.45, talk: 0.6, pupil: [0.3, 0.6] }, t); s.b.face({ ...EXPR.neutral, lid: 0.45, talk: 0.6, pupil: [-0.3, 0.6] }, t);
     s.a.pose(addPose(POSE.thinking, idle(t, 1))); s.b.pose(addPose({ ...POSE.thinking, armR: [0.9, 0.05, 0.2] }, idle(t, 2)));
-    camMove(s.stage, t, [[0, { pos: [0, 2.1, 5.8], look: [0, 1.9, 0.5], fov: 36 }], [info.dur, { pos: [0, 2.1, 5.3], look: [0, 2.0, 0.5], fov: 35 }]]); },
+    camMove(s.stage, t, [[0, { pos: [0, 2.1, 7.0], look: [0, 1.8, 0.5], fov: 36 }], [info.dur, { pos: [0, 2.1, 6.5], look: [0, 1.9, 0.5], fov: 35 }]]); },
   overlay(g, t, info, s) { sunnyLook(g, t, RAYS);
     label(g, t, at(info, 'mutton', 0.4) - 0.05, 'MUTTON?', 300, 560, 74, { box: '#f4ecd8', color: '#5a3a1a', rot: -0.08 });
     label(g, t, at(info, 'venison', 1.0) - 0.05, 'VENISON?', 780, 520, 74, { box: '#f4ecd8', color: '#5a3a1a', rot: 0.06 }); },
 });
+// ---- s09a: "Lab tests later found..." a scientist in a lab coat peers into a microscope; a cartoon chunk on the slide.
+registerShot('s09a', { kind: '3d',
+  init(T) {
+    const st = toonStage(T, { light: 'warm', fov: 36, shadowSize: 6, target: [0, 1, 0], bg: ['#dfe8ee', '#c8d4dc'] });
+    const desk = PR.table({ w: 2.4, d: 1.2, h: 1.0, color: '#7a5a3a' }); st.add(desk);
+    const mic = microscope(); mic.position.set(0.3, 1.06, 0); st.add(mic);
+    const c = chunk(5, 0.5); c.position.set(0.3, 1.66, 0.12); st.add(c);
+    const sci = C_sci(); sci.position.set(-0.55, 0, 0.45); sci.rotation.y = 0.9; st.add(sci);
+    return { stage: st, sci, c };
+  },
+  draw(s, t, info) { s.sci.pose(addPose({ ...POSE.stand, lean: 0.35, armR: [0.9, -0.1, 0], elbowR: 0.9, headNod: 0.25 }, idle(t, 2))); s.sci.face({ ...EXPR.suspicious, lidL: 0.9 }, t);
+    camMove(s.stage, t, [[0, { pos: [0.5, 2.2, 6.4], look: [-0.1, 1.7, 0], fov: 36 }], [info.dur, { pos: [0.4, 2.2, 5.9], look: [-0.1, 1.7, 0], fov: 35 }]]); },
+  overlay(g, t, info, s) { sunnyLook(g, t, SOFT); label(g, t, 0.1, 'THE LAB', E.W / 2, 500, 70, { box: '#2a5a7a' }); },
+});
+import { bean } from './_lib.js';
+function C_sci() { return bean({ name: 'Scientist', outfit: 'labcoat', colors: { main: '#f4f4f0', lanyard: '#3a8a5a' }, skin: 'fair', hair: 'horseshoe', hairColor: '#9a9a9a', moustache: '#9a9a9a', glasses: true, seed: 61 }); }
 // ---- s09: "Lab tests later found lung, muscle and cartilage." 2D lab card: microscope + a checklist that ticks on each word.
 registerShot('s09', {
   draw(g, t, info) {
