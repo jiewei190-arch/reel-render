@@ -1,35 +1,13 @@
 [
- {
-  "n": 5,
-  "slug": "cat-mayor-v2",
-  "branch": "justinclips/cat-mayor-v2",
-  "video": "justinclips/shorts/cat-mayor-v2/video.mp4",
-  "sha256_file": "justinclips/shorts/cat-mayor-v2/video.sha256",
-  "title": "This Cat Was Mayor of an Alaska Town for 20 Years 🐱",
-  "description": "Stubbs the cat was the honorary mayor of Talkeetna, Alaska, from 1997 until 2017, and tourists came every day just to meet him.\n\nSources: Wikipedia · AP / The Guardian · CNN · NPR · BBC\n\nVoice is synthetic.\n\n#cats #alaska #shorts",
-  "pinned_comment": "Would you vote for a cat: yes or no? 🐱",
-  "timezone": "America/New_York"
- },
- {
-  "n": 7,
-  "slug": "immortal-jellyfish-v2",
-  "branch": "justinclips/immortal-jellyfish",
-  "video": "justinclips/shorts/immortal-jellyfish-v2/video.mp4",
-  "sha256_file": "justinclips/shorts/immortal-jellyfish-v2/video.sha256",
-  "title": "This Jellyfish Can't Die of Old Age 🪼",
-  "description": "Turritopsis dohrnii can reverse its life cycle and become a baby again when it is hurt or starving - making it, in theory, biologically immortal.\n\nSources: Natural History Museum London · The Conversation · Hasegawa et al., DNA Research 2022 · BBC Wildlife. Some scenes are dramatized; in the wild it still gets eaten.\n\nVoice is synthetic.\n\n#jellyfish #science #shorts",
-  "pinned_comment": "Would you want to reset back to a baby every time life got hard? 🔄 Yes or no?",
-  "timezone": "America/New_York"
- },
- {
-  "n": 14,
-  "slug": "coca-cola-cocaine-v2",
-  "branch": "justinclips/coca-cola-cocaine",
-  "video": "justinclips/shorts/coca-cola-cocaine-v2/video.mp4",
-  "sha256_file": "justinclips/shorts/coca-cola-cocaine-v2/video.sha256",
-  "title": "Did Coca-Cola Have Cocaine? Yes - Here's the Full Story 🥤",
-  "description": "Coca-Cola's original 1886 formula contained cocaine from coca leaves. It was removed around 1903 - but Coke reportedly still uses cocaine-free coca leaf extract for flavor today.\n\nSources: Smithsonian Magazine · The Coca-Cola Company (history) · New Georgia Encyclopedia · DEA notice, Federal Register (Stepan Company, Maywood NJ) · The New York Times (1988). Coca-Cola neither confirms nor denies the coca leaf extract.\n\nVoice is synthetic.\n\n#history #cocacola #shorts",
-  "pinned_comment": "Would you have tried the 1886 version: yes or no? 🥤",
-  "timezone": "America/New_York"
- }
+  {
+    "n": 14,
+    "slug": "coca-cola-cocaine-v2",
+    "branch": "justinclips/coca-cola-cocaine",
+    "video": "justinclips/shorts/coca-cola-cocaine-v2/video.mp4",
+    "sha256_file": "justinclips/shorts/coca-cola-cocaine-v2/video.sha256",
+    "title": "Did Coca-Cola Have Cocaine? Yes - Here's the Full Story 🥤",
+    "description": "Coca-Cola's original 1886 formula contained cocaine from coca leaves. It was removed around 1903 - but Coke reportedly still uses cocaine-free coca leaf extract for flavor today.\n\nSources: Smithsonian Magazine · The Coca-Cola Company (history) · New Georgia Encyclopedia · DEA notice, Federal Register (Stepan Company, Maywood NJ) · The New York Times (1988). Coca-Cola neither confirms nor denies the coca leaf extract.\n\nVoice is synthetic.\n\n#history #cocacola #shorts",
+    "pinned_comment": "Would you have tried the 1886 version: yes or no? 🥤",
+    "timezone": "America/New_York"
+  }
 ]
