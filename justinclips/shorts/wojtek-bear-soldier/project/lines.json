@@ -1,0 +1,328 @@
+{
+ "title": "Wojtek the Soldier Bear",
+ "emotion": "AW",
+ "tail": 0.5,
+ "cut_lead": 0.06,
+ "note": "Single source of truth for the narration and the cut. Each shot starts at its line's start or at a word of that line; build_short.py turns this + the voice's word timings into story/shots.json. A line's optional \"tts\" is a pronunciation respelling with the same word count (Wojtek is said 'Voytek'). Tone guard: wholesome, no combat, nobody hurt.",
+ "lines": [
+  {
+   "text": "A bear served in the army and carried ammo.",
+   "shots": [
+    {
+     "id": "s01",
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:footsteps",
+       "gain": -10
+      },
+      {
+       "at": 0.1,
+       "name": "toon3d:crowd",
+       "gain": -14
+      },
+      {
+       "at": 0.3,
+       "name": "toon3d:thud",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s02",
+     "word": "carried",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -10
+      },
+      {
+       "word": "ammo",
+       "name": "toon3d:metal",
+       "gain": -9
+      },
+      {
+       "word": "ammo",
+       "offset": 0.1,
+       "name": "toon3d:stamp",
+       "gain": -10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "In 1942, Polish soldiers in Iran adopted a bear cub named Wojtek.",
+   "tts": "In 1942, Polish soldiers in Iran adopted a bear cub named Voytek.",
+   "shots": [
+    {
+     "id": "s03",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "word": "1942",
+       "name": "toon3d:stamp",
+       "gain": -9
+      },
+      {
+       "at": 0.3,
+       "name": "toon3d:wind",
+       "gain": -18
+      }
+     ]
+    },
+    {
+     "id": "s04",
+     "word": "cub",
+     "in": {
+      "type": "iris"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:pop",
+       "gain": -10
+      },
+      {
+       "word": "wojtek",
+       "name": "toon3d:sparkle",
+       "gain": -9
+      },
+      {
+       "word": "wojtek",
+       "offset": 0.1,
+       "name": "toon3d:chime",
+       "gain": -12
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "He loved beer, wrestling, and long showers.",
+   "shots": [
+    {
+     "id": "s05",
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -10
+      },
+      {
+       "word": "beer",
+       "name": "toon3d:pop",
+       "gain": -8
+      },
+      {
+       "word": "beer",
+       "offset": 0.3,
+       "name": "toon3d:glass",
+       "gain": -16
+      }
+     ]
+    },
+    {
+     "id": "s06",
+     "word": "wrestling",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "word": "wrestling",
+       "name": "toon3d:boing",
+       "gain": -9
+      },
+      {
+       "word": "wrestling",
+       "offset": 0.3,
+       "name": "toon3d:laugh",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s07",
+     "word": "long",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:water",
+       "gain": -9
+      },
+      {
+       "word": "showers",
+       "name": "toon3d:squeak",
+       "gain": -12
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "To ship him to Italy, the army listed him as a soldier.",
+   "shots": [
+    {
+     "id": "s08",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -10
+      },
+      {
+       "at": 0.2,
+       "name": "toon3d:horn",
+       "gain": -10
+      },
+      {
+       "word": "italy",
+       "name": "toon3d:splash",
+       "gain": -16
+      }
+     ]
+    },
+    {
+     "id": "s09",
+     "word": "listed",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:type",
+       "gain": -12
+      },
+      {
+       "word": "soldier",
+       "name": "toon3d:stamp",
+       "gain": -7
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "At Monte Cassino, he reportedly carried crates of artillery shells.",
+   "shots": [
+    {
+     "id": "s10",
+     "in": {
+      "type": "iris"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:wind",
+       "gain": -14
+      },
+      {
+       "word": "cassino",
+       "name": "toon3d:chime",
+       "gain": -14
+      }
+     ]
+    },
+    {
+     "id": "s11",
+     "word": "reportedly",
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -10
+      },
+      {
+       "word": "carried",
+       "name": "toon3d:thud",
+       "gain": -10
+      },
+      {
+       "word": "shells",
+       "name": "toon3d:metal",
+       "gain": -11
+      },
+      {
+       "word": "shells",
+       "offset": 0.3,
+       "name": "toon3d:gasp",
+       "gain": -14
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "His unit's badge... became a bear carrying a shell.",
+   "shots": [
+    {
+     "id": "s12",
+     "in": {
+      "type": "cut"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:paper",
+       "gain": -12
+      },
+      {
+       "at": 0.6,
+       "name": "toon3d:suspense",
+       "gain": -16
+      }
+     ]
+    },
+    {
+     "id": "s13",
+     "word": "became",
+     "in": {
+      "type": "flash",
+      "dur": 0.1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:magic",
+       "gain": -9
+      },
+      {
+       "word": "bear",
+       "name": "toon3d:stamp",
+       "gain": -8
+      },
+      {
+       "word": "shell",
+       "name": "toon3d:sparkle",
+       "gain": -9
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
