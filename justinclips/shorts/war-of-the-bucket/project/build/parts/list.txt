@@ -1,0 +1,4 @@
+file '/tmp/claude-0/-home-user-reel-render/b7016139-6d15-5ce0-9eb0-e1feaea23159/scratchpad/kit/whatif/aitrends-2d-studio/projects/war-of-the-bucket/build/parts/part_000.mp4'
+file '/tmp/claude-0/-home-user-reel-render/b7016139-6d15-5ce0-9eb0-e1feaea23159/scratchpad/kit/whatif/aitrends-2d-studio/projects/war-of-the-bucket/build/parts/part_001.mp4'
+file '/tmp/claude-0/-home-user-reel-render/b7016139-6d15-5ce0-9eb0-e1feaea23159/scratchpad/kit/whatif/aitrends-2d-studio/projects/war-of-the-bucket/build/parts/part_002.mp4'
+file '/tmp/claude-0/-home-user-reel-render/b7016139-6d15-5ce0-9eb0-e1feaea23159/scratchpad/kit/whatif/aitrends-2d-studio/projects/war-of-the-bucket/build/parts/part_003.mp4'
