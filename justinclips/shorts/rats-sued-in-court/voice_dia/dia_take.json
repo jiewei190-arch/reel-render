@@ -1,0 +1,32 @@
+{
+ "engine": "dia",
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "seeds_tried": [
+  3
+ ],
+ "duration_s": 18.99,
+ "load_s": 4.9,
+ "render_s": 819.9,
+ "synth_s": 806.8,
+ "synth_s_per_10s_audio": 424.9,
+ "lufs": -14.1,
+ "true_peak_dbtp": -1.5,
+ "final_transcript": "Rats once got sued, and they got a lawyer, France, the early 1500s. Rats reportedly ate the barley around Auton, so a court summoned the Rats. The Rats did not show up. Their lawyer said that was unfair. His clients lived in lots of villages. Then he said they couldn't come safely because of the town's cats. He wanted the cats kept indoors. The owners said no, so the case was reportedly thrown out.",
+ "final_wrong_words": 1,
+ "parts": [
+  {
+   "text": "Rats once got sued. And they got a lawyer. France, the early 1500s. Rats reportedly ate the barley around Autun. So a court summoned the rats. The rats... did not show up. Their lawyer said that was unfair: his clients lived in lots of villages. Then he said they couldn't come safely... because of the town's cats. He wanted the cats kept indoors. The owners said no. So the case was reportedly thrown out.",
+   "start": 0.15,
+   "end": 18.69,
+   "seed": 3,
+   "heard": "Rats once got sued, and they got a lawyer, France, the early 1500s. Rats reportedly ate the barley around Auton, so a court summoned the rats. The rats did not show up. Their lawyer said that was unfair. His clients lived in lots of villages. Then he said they couldn't come safely because of the town's cats. He wanted the cats kept indoors. The owners said no, so the case was reportedly thrown out.",
+   "wrong_words": 1
+  }
+ ]
+}

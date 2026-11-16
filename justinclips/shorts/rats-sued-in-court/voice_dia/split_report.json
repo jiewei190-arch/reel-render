@@ -1,0 +1,41 @@
+{
+ "heard": "Rats once got sued, and they got a lawyer, France, the early 1500s. Rats reportedly ate the barley around Auton, so a court summoned the Rats. The Rats did not show up. Their lawyer said that was unfair. His clients lived in lots of villages. Then he said they couldn't come safely because of the town's cats. He wanted the cats kept indoors. The owners said no, so the case was reportedly thrown out.",
+ "wrong_words": 1,
+ "median_pitch_hz": 223.5,
+ "duration_s": 18.99,
+ "line_spans": [
+  [
+   0.0,
+   1.94
+  ],
+  [
+   2.26,
+   5.22
+  ],
+  [
+   5.84,
+   7.12
+  ],
+  [
+   7.48,
+   8.96
+  ],
+  [
+   9.08,
+   11.84
+  ],
+  [
+   12.2,
+   14.64
+  ],
+  [
+   14.8,
+   17.02
+  ],
+  [
+   17.12,
+   18.56
+  ]
+ ],
+ "laughs_in_transcript": false
+}
