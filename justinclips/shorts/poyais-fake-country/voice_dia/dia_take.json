@@ -1,0 +1,32 @@
+{
+ "engine": "dia",
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "seeds_tried": [
+  11
+ ],
+ "duration_s": 20.53,
+ "load_s": 4.3,
+ "render_s": 372.9,
+ "synth_s": 359.9,
+ "synth_s_per_10s_audio": 175.3,
+ "lufs": -14.2,
+ "true_peak_dbtp": -1.5,
+ "final_transcript": "A man sold a country that didn't exist. In 1822, Gregor McGregor told London he ruled a land called Poyais. He printed a guidebook, its own money, and sold its government bonds. Investors bought about 200,000 pounds of them, then about 250 settlers sailed there. They found jungle, no towns, no capital, no country. It went very badly. McGregor was later tried for fraud in France and acquitted.",
+ "final_wrong_words": 2,
+ "parts": [
+  {
+   "text": "A man sold a country that didn't exist. In 1822, Gregor MacGregor told London he ruled a land called Poyais. He printed a guidebook, its own money... and sold its government bonds. Investors bought about 200,000 pounds of them. Then about 250 settlers sailed there. They found... jungle. No towns. No capital. No country. It went very badly. MacGregor was later tried for fraud in France... and acquitted.",
+   "start": 0.15,
+   "end": 20.23,
+   "seed": 11,
+   "heard": "A man sold a country that didn't exist. In 1822, Gregor MacGregor told London he ruled a land called Poias. He printed a guidebook, its own money, and sold its government bonds. Investors bought about 200,000 pounds of them, then about 250 settlers sailed there. They found jungle, no towns, no capital, no country. It went very badly. MacGregor was later tried for fraud in France and acquitted.",
+   "wrong_words": 1
+  }
+ ]
+}
