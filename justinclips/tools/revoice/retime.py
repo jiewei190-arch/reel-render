@@ -24,15 +24,23 @@ words = words["words"] if isinstance(words, dict) else words
 L = {r["n"]: r for r in vl["lines"]}
 norm = lambda w: re.sub(r"[^\w']", "", w.lower())
 
+# timeline/words.json has exactly one entry per script token, in script order (transcribe.py aligns the script onto the audio),
+# so a word anchor is resolved by its token index inside its line, never by searching the clock.
+spec = json.load(open(os.path.join(P, "lines.json"), encoding="utf-8"))["lines"]
+tok0, k = {}, 0
+for i, l in enumerate(spec):
+    toks = l["text"].split(); tok0[i + 1] = (k, toks); k += len(toks)
+if k != len(words): sys.exit(f"words.json has {len(words)} tokens but lines.json has {k}: re-run transcribe with input/script.txt")
+
 def anchor(sh):
     at = sh["at"]; r = L[at["line"]]
     if "word" in at:
-        n, after = at.get("nth", 1), r["start"] - 0.15
-        for w in words:
-            if w["start"] >= after and norm(w["word"]) == norm(at["word"]):
+        base, toks = tok0[at["line"]]; n = at.get("nth", 1)
+        for j, tk in enumerate(toks):
+            if norm(tk) == norm(at["word"]):
                 n -= 1
-                if n == 0: return w["start"] + at.get("offset", -0.08)
-        sys.exit(f"{sh['id']}: word {at['word']!r} (nth {at.get('nth', 1)}) not found from line {at['line']}")
+                if n == 0: return words[base + j]["start"] + at.get("offset", -0.08)
+        sys.exit(f"{sh['id']}: word {at['word']!r} (nth {at.get('nth', 1)}) is not in line {at['line']}: {' '.join(toks)}")
     if at.get("end"): t = r["end"]
     elif "frac" in at: t = r["start"] + (r["end"] - r["start"]) * at["frac"]
     else: t = r["start"]
@@ -40,6 +48,9 @@ def anchor(sh):
 
 shots = plan["shots"]
 starts = [0.0] + [round(anchor(s), 3) for s in shots[1:]]
+for i in range(1, len(starts)):   # guard: a new voice must never produce a zero/negative shot
+    if starts[i] < starts[i - 1] + 0.4:
+        print(f"WARNING {shots[i]['id']}: anchor {starts[i]:.2f} too close to the previous cut, pushed to {starts[i - 1] + 0.4:.2f}"); starts[i] = round(starts[i - 1] + 0.4, 3)
 dur = round(max(r["end"] for r in vl["lines"]) + plan.get("tail", 0.25), 3)
 out, bad = [], []
 lo, hi = plan.get("minShot", 1.0), plan.get("maxShot", 2.6)

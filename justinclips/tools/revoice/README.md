@@ -29,3 +29,9 @@ Steps: copy `project/` into `$KIT/projects/<slug>` → `voice.py` → kit `tools
 Adding another engine = write `input/voiceover.wav` + `input/voiceover.lines.json` (per line `n`, `start`, `end`) + `input/script.txt`. Nothing else changes.
 
 `tables.py <short dir>` prints the narration and shot tables for `script.md` from the current timings.
+
+## Tested
+Nov 16: `rebuild.sh tulip-mania`-style swap with `--engine files` on a stand-in voice (the D2 lines slowed 12%, one file per line):
+alignment 99%, all 18 shots re-timed (29.6 s → 33.1 s, every shot 1.27–2.80 s), word-synced stamps/counters landed on their words.
+`retime.py` resolves word anchors by token index within the line (words.json has one entry per script token), so a weaker
+alignment can't drag a cut into the wrong line. Re-running it on the three batch-4 Shorts gives byte-identical shots.json.
