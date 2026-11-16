@@ -179,3 +179,13 @@ When the owner's PC is on, cloud sessions build (script, voice, timing, scenes, 
   expected frame count and duration, and `STATE: render-on-pc`.
 MAIN then asks Creator (one job at a time) with the branch name; Creator renders, checks, and pushes video.mp4 +
 video.sha256 + STATUS.md (`STATE: ready`) to the same branch. Nothing is posted.
+
+## JUSTIN CLIPS: vidIQ "ESCAPE EVERY VIEW JAIL" RULES (owner, Nov 16)
+Source: vidIQ, "How to Escape EVERY YouTube Shorts View Jail", https://www.youtube.com/watch?v=fEeZhVkvywI. Notes are in research/video_fEeZhVkvywI.md on branch research/shortsjail. These rules add to the jail-break rules above.
+1. **One premise:** "weird true history you never heard of". No more mixing in stickman what-ifs, tech or news on this channel.
+2. **Wide way in:** line 1 uses the most relatable framing, one an outsider cares about with no niche knowledge ("Napoleon got attacked by rabbits", not "the 1807 hunt"). Give a mystery, a problem, a decision or a memory to grab onto.
+3. **No slow intro:** never open with "hey guys". Justin's name only comes after the claim, if at all.
+4. **End abruptly on the payoff:** no "follow for more", no "thanks for watching", no subscribe ask, no end card. Cut while the payoff lands, and loop back to frame 1.
+5. **Tight pacing:** no beat lasts a second longer than it needs to. Trim any pause after a joke lands.
+6. **Original, not mass-produced:** researched and sourced facts, our own art, a consistent host. Never post near-duplicates of a topic that's already public.
+7. **Judge by retention, not raw views:** check each Short's stayed-to-watch % and retention graph. A drop at the start means the hook leaks, a drop in the middle means the story sags, and a drop at the end means we signalled the ending.
