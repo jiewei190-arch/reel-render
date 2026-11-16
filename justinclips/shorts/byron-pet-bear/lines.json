@@ -1,0 +1,13 @@
+{
+ "note": "The narration, one entry per spoken line. Edit here, then re-run justinclips/tools/shortbuild.py. '...' = a held beat before the punchline. Years/numbers stay digits (the D2 tool spells them for the TTS; captions keep digits).",
+ "emotion": "LOL",
+ "lines": [
+  {"n": 1, "text": "College banned dogs, so he brought a bear."},
+  {"n": 2, "text": "This is Lord Byron, the poet, at Cambridge, around 1807."},
+  {"n": 3, "text": "His college reportedly had a rule: no dogs."},
+  {"n": 4, "text": "But the rules said nothing... about bears."},
+  {"n": 5, "text": "So he got a tame bear."},
+  {"n": 6, "text": "He wrote to a friend that it was the finest in the world."},
+  {"n": 7, "text": "Asked what the bear was for... he said it should sit for a fellowship."}
+ ]
+}
