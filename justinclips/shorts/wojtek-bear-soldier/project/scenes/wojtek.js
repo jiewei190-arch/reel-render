@@ -178,6 +178,6 @@ registerShot('s13', { kind: '3d',
     const k = ease.outBack(clamp(t / 0.3)); g.save(); g.translate(E.W / 2, 860); g.scale(k, k);
     g.strokeStyle = '#2a1c15'; g.lineWidth = 34; g.beginPath(); g.arc(0, 0, 470, 0, 7); g.stroke(); g.strokeStyle = '#c8a24a'; g.lineWidth = 16; g.beginPath(); g.arc(0, 0, 470, 0, 7); g.stroke(); g.restore();
     reactions(g, t, s, [{ fx: 'sparkle', on: 'w', at: 0.1, scale: 1.1 }]);
-    label(g, t, at(info, 'bear', 0.4), 'THE UNIT BADGE', E.W / 2, 1440, 72, { box: '#c8a24a', color: '#2a1c15' });
+    label(g, t, at(info, 'bear', 0.4), 'THE UNIT BADGE', E.W / 2, 300, 72, { box: '#c8a24a', color: '#2a1c15' });
   },
 });
