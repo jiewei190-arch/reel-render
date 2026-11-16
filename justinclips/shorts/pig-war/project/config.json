@@ -1,0 +1,38 @@
+{
+ "title": "The Pig War",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 21.85,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "pig",
+   "1859",
+   "10",
+   "100",
+   "461",
+   "five",
+   "casualty",
+   "shot",
+   "island"
+  ]
+ }
+}

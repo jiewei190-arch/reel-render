@@ -1,0 +1,47 @@
+{
+ "pacing": {
+  "gap": 0.2,
+  "lead": 0.05,
+  "beat": 0.4,
+  "sil_db": -30,
+  "cut": "nearest"
+ },
+ "lines": [
+  {
+   "n": 1,
+   "text": "London stank so bad, Parliament had to act."
+  },
+  {
+   "n": 2,
+   "text": "Summer 1858. A heatwave hit the Thames."
+  },
+  {
+   "n": 3,
+   "text": "And the Thames... was full of London's sewage."
+  },
+  {
+   "n": 4,
+   "text": "Parliament sits right on the river."
+  },
+  {
+   "n": 5,
+   "text": "So they soaked the curtains with chemicals."
+  },
+  {
+   "n": 6,
+   "text": "They even talked about moving Parliament out of London."
+  },
+  {
+   "n": 7,
+   "text": "Instead, they passed a new sewer law in about seven weeks."
+  },
+  {
+   "n": 8,
+   "text": "Engineer Joseph Bazalgette built 82 miles of giant sewers."
+  },
+  {
+   "n": 9,
+   "text": "London still uses them today."
+  }
+ ]
+}
