@@ -1,12 +1,13 @@
 {
  "pacing": {
-  "gap": 0.2,
+  "gap": 0.35,
   "lead": 0.05,
-  "beat": 0.4
+  "beat": 0.6
  },
  "pronounce": {
   "dia": {
-   "1630s": "sixteen-thirties"
+   "1630s": "sixteen-thirties",
+   "Holland": "Hollund"
   }
  },
  "lines": [

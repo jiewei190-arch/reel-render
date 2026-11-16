@@ -35,3 +35,15 @@ Nov 16: `rebuild.sh tulip-mania`-style swap with `--engine files` on a stand-in 
 alignment 99%, all 18 shots re-timed (29.6 s → 33.1 s, every shot 1.27–2.80 s), word-synced stamps/counters landed on their words.
 `retime.py` resolves word anchors by token index within the line (words.json has one entry per script token), so a weaker
 alignment can't drag a cut into the wrong line. Re-running it on the three batch-4 Shorts gives byte-identical shots.json.
+
+## Voice #8 (Dia) — `dia8.py`, `snap_words.py`, `qa_short.py` (Nov 16, rv2)
+- `dia8.py render <short> --seed N` runs `tts_any.py` (origin/justinclips/voice-lineup) with the exact #8 settings in one Dia pass,
+  checks it with Whisper small.en (numbers suppressed for word timings) and the median pitch (pyin; 180-230 Hz), trims anything
+  before the first word, and splits the take at every line and every "..." into `project/build/dia8/01.wav, 03a.wav, ...`.
+  `--reuse` re-splits an existing take. Respellings for Dia go in `lines.json` `"pronounce": {"dia": {...}}`.
+- `dia8.py join <short> <wav>` re-joins the parts with `lines.json` `"pacing"` (gap / lead / beat, optional `breaks` after a word):
+  the `--voice-cmd` for `build_short.py`. Shorts on `rebuild.sh` use `--engine files --dir project/build/dia8` instead.
+- `snap_words.py` (run by both `build_short.py` and `rebuild.sh` right after word alignment) moves word edges out of pauses so
+  cuts and captions land on the spoken word after a beat.
+- `qa_short.py <short>`: Whisper on the final mix (whole clip, VAD, per sentence), ebur128 loudness, blackdetect + blank-frame
+  scan, a 10-frame caption sheet with the words being spoken, and frame 1 next to the last 3 frames.

@@ -1,6 +1,6 @@
 # UPLOAD: Tulip Mania
 
-**File:** `video.mp4` (1080×1920, 24 fps, ~29.6 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080×1920, 24 fps, ~24.9 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (≤ 60 chars, 1 emoji)
 A Flower Once Cost More Than a House 🌷

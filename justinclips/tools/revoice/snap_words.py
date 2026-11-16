@@ -66,6 +66,9 @@ while i < len(W):
         while j < len(W) and W[j]["end"] - W[j]["start"] < 0.02: j += 1
         lo = onset_after(W[i - 1]["end"]) if i else onset_after(0.0)
         hi = W[j]["start"] - 0.02 if j < len(W) else min(dur, lo + 0.4 * (j - i))
+        for s0, s1 in sil:   # a pause that starts just after the previous word: the unheard words come after it
+            if i and W[i - 1]["end"] - 0.05 <= s1 and s0 <= W[i - 1]["end"] + 0.15 and s1 - 0.03 < hi - 0.05 * (j - i):
+                lo = max(lo, s1 - 0.03)
         q0 = i
         if not hi > lo + 0.05 * (j - i) and i:       # no room: share the previous word's span with them
             q0, lo = i - 1, W[i - 1]["start"]

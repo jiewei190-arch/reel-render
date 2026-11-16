@@ -220,8 +220,9 @@ def render(short, seed, reuse=False):
         if runs:
             r = min(runs, key=lambda r: abs((r[0] + r[1]) / 2 - s * sr))
             c = (r[0] + r[1]) // 2
-        else:
-            c = lo + int(np.argmin(rms[lo:hi]))
+        else:   # no pause at all (words run together): the energy dip closest before the next word's start
+            lo2 = max(lo, int((s - 0.1) * sr))
+            c = lo2 + int(np.argmin(rms[lo2:hi]))
         cuts.append(c)
     cuts.append(len(a))
     files = []

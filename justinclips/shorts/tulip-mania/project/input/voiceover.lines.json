@@ -1,20 +1,11 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23
- ],
- "gap": 0.2,
- "section": 1.4,
+ "engine": "files",
+ "dir": "/home/user/reel-render/justinclips/shorts/tulip-mania/project/build/dia8",
+ "gap": 0.35,
  "lead": 0.05,
- "beat": 0.4,
+ "beat": 0.6,
  "sr": 24000,
- "duration": 29.526,
- "render_s": 218.8,
- "qa_fail_lines": [],
+ "duration": 24.953,
  "lines": [
   {
    "n": 1,
@@ -22,155 +13,102 @@
    "start": 0.05,
    "parts": [
     {
-     "tts": "A flower once cost more than a house.",
-     "seed": 7,
-     "heard": "A flower once cost more than a house.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "01.wav"
     }
    ],
-   "end": 2.228
+   "end": 1.764
   },
   {
    "n": 2,
    "text": "Holland, the 1630s. Everyone wanted tulips.",
-   "start": 2.428,
+   "start": 2.114,
    "parts": [
     {
-     "tts": "Holland, the sixteen thirtys. Everyone wanted tulips.",
-     "seed": 7,
-     "heard": "Holland, the 1630s. Everyone wanted tulips.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "02.wav"
     }
    ],
-   "end": 6.013
+   "end": 4.464
   },
   {
    "n": 3,
    "text": "The rarest ones had wild flame stripes... caused by a virus.",
-   "start": 6.213,
+   "start": 4.814,
    "parts": [
     {
-     "tts": "The rarest ones had wild flame stripes...",
-     "seed": 7,
-     "heard": "The rarest ones had wild flame stripes.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "03a.wav"
     },
     {
-     "tts": "caused by a virus.",
-     "seed": 7,
-     "heard": "caused by a virus.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "03b.wav"
     }
    ],
-   "end": 10.364
+   "end": 7.819
   },
   {
    "n": 4,
    "text": "People traded bulbs still in the ground... on paper... in taverns.",
-   "start": 10.564,
+   "start": 8.169,
    "parts": [
     {
-     "tts": "People traded bulbs still in the ground...",
-     "seed": 7,
-     "heard": "People traded bulbs still in the ground.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "04a.wav"
     },
     {
-     "tts": "on paper...",
-     "seed": 7,
-     "heard": "on paper.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "04b.wav"
     },
     {
-     "tts": "in taverns.",
-     "seed": 7,
-     "heard": "in taverns.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "04c.wav"
     }
    ],
-   "end": 15.247
+   "end": 12.139
   },
   {
    "n": 5,
    "text": "One bulb reportedly sold for 10,000 guilders.",
-   "start": 15.447,
+   "start": 12.489,
    "parts": [
     {
-     "tts": "One bulb reportedly sold for ten thousand guilders.",
-     "seed": 7,
-     "heard": "One bulb reportedly sold for 10,000 guilders.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "05.wav"
     }
    ],
-   "end": 18.245
+   "end": 14.689
   },
   {
    "n": 6,
    "text": "A craftsman made about 300 a year.",
-   "start": 18.445,
+   "start": 15.039,
    "parts": [
     {
-     "tts": "A craftsman made about three hundred a year.",
-     "seed": 7,
-     "heard": "a craftsman made about 300 a year.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "06.wav"
     }
    ],
-   "end": 20.712
+   "end": 16.593
   },
   {
    "n": 7,
    "text": "Then, in February 1637... the market crashed.",
-   "start": 20.912,
+   "start": 16.943,
    "parts": [
     {
-     "tts": "Then, in February sixteen thirty-seven...",
-     "seed": 7,
-     "heard": "Then, in February 1637,",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "07a.wav"
     },
     {
-     "tts": "the market crashed.",
-     "seed": 7,
-     "heard": "the market crashed.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "07b.wav"
     }
    ],
-   "end": 24.67
+   "end": 20.579
   },
   {
    "n": 8,
    "text": "But a historian who checked the records... couldn't find anyone who went bankrupt.",
-   "start": 24.87,
+   "start": 20.929,
    "parts": [
     {
-     "tts": "But a historian who checked the records...",
-     "seed": 7,
-     "heard": "but a historian who checked the records.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "08a.wav"
     },
     {
-     "tts": "couldn't find anyone who went bankrupt.",
-     "seed": 7,
-     "heard": "couldn't find anyone who went bankrupt.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "file": "08b.wav"
     }
    ],
-   "end": 29.326
+   "end": 24.603
   }
- ],
- "engine": "chatterbox_d2"
+ ]
 }
