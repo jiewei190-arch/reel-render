@@ -3,6 +3,10 @@
  "emotion": "LOL",
  "tail": 0.45,
  "cut_lead": 0.06,
+ "pacing": {
+  "gap": 0.3,
+  "beat": 0.5
+ },
  "note": "Single source of truth for the narration and the cut. Each shot starts at its line's start or at a word of that line; build_short.py turns this + the voice's word timings into story/shots.json. Tone guard: the pig is never shown being shot (s06 cuts away to birds).",
  "lines": [
   {

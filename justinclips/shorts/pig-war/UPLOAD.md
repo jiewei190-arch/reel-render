@@ -1,6 +1,6 @@
 # UPLOAD: The Pig War
 
-**File:** `video.mp4` (1080x1920, 24 fps, about 27 s, -14 LUFS / TP <= -1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080x1920, 24 fps, about 21.9 s, -14 LUFS / TP <= -1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (<= 60 chars, 1 emoji)
 America and Britain Almost Went to War Over a Pig 🐖

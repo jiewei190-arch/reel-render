@@ -1,0 +1,40 @@
+{
+ "engine": "dia",
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "seeds_tried": [
+  10
+ ],
+ "duration_s": 19.25,
+ "load_s": 4.7,
+ "render_s": 331.0,
+ "synth_s": 318.3,
+ "synth_s_per_10s_audio": 165.4,
+ "lufs": -14.2,
+ "true_peak_dbtp": -1.5,
+ "final_transcript": "America and Britain almost went to war over a pig. In 1859, on an island both sides claimed, a British company's pig got into an American's garden. He shot it. He offered $10. The British wanted $100. Britain threatened to arrest him, so America sent soldiers. Soon, 461 American troops faced five British warships. Nobody fired a shot. The only casualty was the pig.",
+ "final_wrong_words": 1,
+ "parts": [
+  {
+   "text": "America and Britain almost went to war over a pig. In 1859, on an island both sides claimed, a British company's pig got into an American's garden. He shot it. He offered 10 dollars. The British wanted 100. Britain threatened to arrest him... so America sent soldiers. Soon, 461 American troops faced five British warships. Nobody fired a shot. The only casualty... was the pig.",
+   "start": 0.15,
+   "end": 18.95,
+   "seed": 10,
+   "heard": "America and Britain almost went to war over a pig. In 1859, on an island both sides claimed, a British company's pig got into an American's garden. He shot it, he offered $10. The British wanted 100. Britain threatened to arrest him, so America sent soldiers. Soon, 461 American troops faced five British warships. Nobody fired a shot. The only casualty was the pig.",
+   "wrong_words": 1
+  }
+ ],
+ "seed_used": 10,
+ "median_pitch_hz": 206.4,
+ "whisper_wav": "America and Britain almost went to war over a pig. In 1859, on an island both sides claimed, a British company's pig got into an American's garden. He shot it. He offered $10. The British wanted $100. Britain threatened to arrest him, so America sent soldiers. Soon, 461 American troops faced five British warships. Nobody fired a shot. The only casualty was the pig.",
+ "paced_duration_s": 21.87,
+ "pacing": {
+  "gap": 0.3,
+  "beat": 0.5
+ }
+}

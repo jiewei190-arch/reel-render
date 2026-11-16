@@ -1,11 +1,11 @@
-[00:00.00 -> 00:02.48] America and Britain almost went to war over a pig.
-[00:03.22 -> 00:08.96] In 1859, on an island both sides claimed, a British company's pig got into an American's garden.
-[00:09.44 -> 00:09.98] He shot it.
-[00:10.28 -> 00:11.26] He offered 10 dollars.
-[00:11.90 -> 00:13.78] The British wanted 100.
-[00:13.78 -> 00:15.08] Britain threatened to arrest him...
-[00:15.70 -> 00:17.14] so America sent soldiers.
-[00:17.84 -> 00:21.64] Soon, 461 American troops faced five British warships.
-[00:22.34 -> 00:23.24] Nobody fired a shot.
-[00:23.88 -> 00:24.80] The only casualty...
-[00:24.80 -> 00:26.54] was the pig.
+[00:00.00 -> 00:02.68] America and Britain almost went to war over a pig.
+[00:03.24 -> 00:07.58] In 1859, on an island both sides claimed, a British company's pig got into an American's garden.
+[00:07.98 -> 00:08.50] He shot it.
+[00:08.82 -> 00:09.88] He offered 10 dollars.
+[00:09.88 -> 00:11.08] The British wanted 100.
+[00:11.58 -> 00:12.62] Britain threatened to arrest him...
+[00:13.02 -> 00:14.06] so America sent soldiers.
+[00:14.52 -> 00:17.46] Soon, 461 American troops faced five British warships.
+[00:18.14 -> 00:18.96] Nobody fired a shot.
+[00:19.48 -> 00:20.32] The only casualty...
+[00:20.32 -> 00:21.40] was the pig.
