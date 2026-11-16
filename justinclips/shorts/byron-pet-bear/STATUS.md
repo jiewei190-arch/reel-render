@@ -21,7 +21,7 @@ From the repo root, with a toon3d-fx kit checkout (setup in `justinclips/tools/R
 
 `--voice` = `chatterbox_d2` (default; the old D2 voice), `cmd:<tts command with {text} and {out}>`, or `wavdir:<folder of line_01.wav ...>`.
 Current voice (#8 Dia, seed 7), as rendered: run `tts_any.py` (settings in `voice_dia8.json`) with `--wav`, then
-`python justinclips/tools/dia_split.py take.raw.wav justinclips/shorts/byron-pet-bear/lines.json LINES/ "line_{n:02d}.wav"` (Dia venv), then the command above with `--voice wavdir:LINES/`.
+`DIA_SPLIT_LINES=mid python justinclips/tools/dia_split.py take.raw.wav justinclips/shorts/byron-pet-bear/lines.json LINES/ "line_{n:02d}.wav"` (Dia venv), then the command above with `--voice wavdir:LINES/`.
 It rewrites `project/input/voiceover.*`, `lines.timing.json`, `project/story/shots.json`, `contact_sheet.png`, `video.mp4`, `video.sha256`.
 
 Not posted or uploaded anywhere.

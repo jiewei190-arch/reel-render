@@ -59,20 +59,33 @@ for op, i1, i2, j1, j2 in sm.get_opcodes():
         wrong += max(i2 - i1, j2 - j1)
 def span(pred):
     idx = [j for j, s in enumerate(S) if pred(s) and j in match]
-    return (match[idx[0]][1], match[idx[-1]][2]) if idx else None
+    return (match[idx[0]][1], match[idx[-1]][2], match[idx[0]][2]) if idx else None   # start, end, end of 1st word
 
-# cut points between consecutive units (lines and "..." parts): midpoint of the gap between them
+# Whisper's word STARTS on Dia audio are unreliable (often zero-length words that start late, e.g. "Catholics"),
+# but word ENDS are good. So each cut goes at the quietest 40 ms (audio energy) between the end of the previous
+# unit and 0.15 s before the end of the next unit's first word.
+WIN = int(0.04 * sr)
+rms = np.sqrt(np.convolve(a ** 2, np.ones(WIN) / WIN, mode="same"))
+def quietest(t0, t1):
+    i0, i1 = int(t0 * sr), int(max(t1, t0 + 0.05) * sr)
+    return (i0 + int(np.argmin(rms[i0:i1]))) / sr
+MODE = os.environ.get("DIA_SPLIT_LINES", "quiet")   # "mid" = the first version (gap midpoint), used for byron-pet-bear
 units = sorted({(s[1], s[2]) for s in S})
 spans = {u: span(lambda s, u=u: (s[1], s[2]) == u) for u in units}
 cuts = {}
 for u, v in zip(units, units[1:]):
     e, b = spans[u], spans[v]
     if e is None or b is None: sys.exit(f"cannot locate unit {u} or {v}: Whisper missed it")
-    if u[0] == v[0]:   # a "..." beat inside a line: cut tight, drop any breath/noise Dia put in the gap
-        cuts[(u, v)] = (min(e[1] + 0.02, b[0]), max(b[0] - 0.03, e[1]))
-    else:
+    q = quietest(e[1], b[2] - 0.15)
+    if u[0] == v[0]:   # a "..." beat inside a line: end tight after the word (drops breaths Dia puts in the gap)
+        end_a = min(e[1] + 0.02, b[0] if MODE == "mid" else q)
+        start_b = max(b[0] - 0.03, e[1]) if MODE == "mid" else q
+        cuts[(u, v)] = (end_a, max(start_b, end_a))
+    elif MODE == "mid":
         c = (e[1] + b[0]) / 2 if b[0] > e[1] else b[0] - 0.01
         cuts[(u, v)] = (c, c)
+    else:
+        cuts[(u, v)] = (q, q)
 bounds = {}
 for j, u in enumerate(units):
     st = 0.0 if j == 0 else cuts[(units[j - 1], u)][1]

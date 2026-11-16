@@ -1,7 +1,7 @@
 {
  "voice": "#8 from justinclips/voice_lineup (NOTES.md 'How to use the winner')",
  "command": "tts_any.py lines.json take.mp3 --engine dia --seed 7 --wav --prompt-audio prompts/dia_prompt_kokoro_am_puck.wav --prompt-text \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\" --dia-tail \" (laughs)\"",
- "split": "the one-pass take (take.raw.wav) was cut into line_01..07.wav at Whisper word times (midpoint between lines; at a '...' beat, 20 ms after the last word, then a 0.4 s beat), then shortbuild.py --voice wavdir:<those files>",
+ "split": "the one-pass take (take.raw.wav) was cut into line_01..07.wav with `DIA_SPLIT_LINES=mid python justinclips/tools/dia_split.py take.raw.wav lines.json LINES/ \"line_{n:02d}.wav\"` (gap midpoint between lines; at a '...' beat, 20 ms after the last word, then a 0.4 s beat; mid mode reproduces these files byte for byte), then shortbuild.py --voice wavdir:LINES/",
  "take": {
   "engine": "dia",
   "settings": {
