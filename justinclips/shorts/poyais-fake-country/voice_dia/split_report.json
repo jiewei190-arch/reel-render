@@ -1,0 +1,41 @@
+{
+ "heard": "A man sold a country that didn't exist. In 1822, Gregor McGregor told London he ruled a land called Poyais. He printed a guidebook, its own money, and sold its government bonds. Investors bought about 200,000 pounds of them, then about 250 settlers sailed there. They found jungle, no towns, no capital, no country. It went very badly. McGregor was later tried for fraud in France and acquitted.",
+ "wrong_words": 3,
+ "median_pitch_hz": 223.5,
+ "duration_s": 20.53,
+ "line_spans": [
+  [
+   0.0,
+   1.74
+  ],
+  [
+   2.12,
+   6.02
+  ],
+  [
+   6.3,
+   8.88
+  ],
+  [
+   9.48,
+   11.54
+  ],
+  [
+   11.76,
+   13.8
+  ],
+  [
+   14.04,
+   16.7
+  ],
+  [
+   16.94,
+   17.66
+  ],
+  [
+   18.24,
+   20.1
+  ]
+ ],
+ "laughs_in_transcript": false
+}

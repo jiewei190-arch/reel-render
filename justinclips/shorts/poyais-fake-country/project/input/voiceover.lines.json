@@ -1,25 +1,10 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23,
-  31,
-  42,
-  57,
-  64,
-  77
- ],
+ "engine": "dia #8 (Dia-1.6B-0626, am_puck prompt), seed 11, wavdir:justinclips/shorts/poyais-fake-country/voice_dia",
  "gap": 0.2,
- "section": 1.4,
  "lead": 0.05,
  "beat": 0.4,
  "sr": 24000,
- "duration": 27.44,
- "render_s": 277.6,
- "qa_fail_lines": [],
+ "duration": 21.845,
  "lines": [
   {
    "n": 1,
@@ -27,141 +12,87 @@
    "start": 0.05,
    "parts": [
     {
-     "tts": "A man sold a country that didn't exist.",
-     "seed": 7,
-     "heard": "A man sold a country that didn't exist.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "A man sold a country that didn't exist."
     }
    ],
-   "end": 2.211
+   "end": 1.84
   },
   {
    "n": 2,
    "text": "In 1822, Gregor MacGregor told London he ruled a land called Poyais.",
-   "start": 2.411,
+   "start": 2.04,
    "parts": [
     {
-     "tts": "In eighteen twenty-two, Gregor MacGregor told London he ruled a land called Poyais.",
-     "seed": 7,
-     "heard": "In 1822, Gregor MacGregor told London he ruled a land called Poyais.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "In 1822, Gregor MacGregor told London he ruled a land called Poyais."
     }
    ],
-   "end": 6.819
+   "end": 6.27
   },
   {
    "n": 3,
    "text": "He printed a guidebook, its own money... and sold its government bonds.",
-   "start": 7.019,
+   "start": 6.47,
    "parts": [
     {
-     "tts": "He printed a guidebook, its own money...",
-     "seed": 11,
-     "heard": "He printed a guidebook, its own money.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "and sold its government bonds.",
-     "seed": 11,
-     "heard": "and sold its government bonds.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "He printed a guidebook, its own money... and sold its government bonds."
     }
    ],
-   "end": 11.53
+   "end": 9.49
   },
   {
    "n": 4,
    "text": "Investors bought about 200,000 pounds of them.",
-   "start": 11.73,
+   "start": 9.69,
    "parts": [
     {
-     "tts": "Investors bought about two hundred thousand pounds of them.",
-     "seed": 7,
-     "heard": "investors bought about 200,000 pounds of them.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Investors bought about 200,000 pounds of them."
     }
    ],
-   "end": 14.27
+   "end": 12.16
   },
   {
    "n": 5,
    "text": "Then about 250 settlers sailed there.",
-   "start": 14.47,
+   "start": 12.36,
    "parts": [
     {
-     "tts": "Then about two hundred fifty settlers sailed there.",
-     "seed": 7,
-     "heard": "Then, about 250 settlers sailed there.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Then about 250 settlers sailed there."
     }
    ],
-   "end": 17.108
+   "end": 14.63
   },
   {
    "n": 6,
    "text": "They found... jungle. No towns. No capital. No country.",
-   "start": 17.308,
+   "start": 14.83,
    "parts": [
     {
-     "tts": "They found...",
-     "seed": 7,
-     "heard": "They found",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "jungle. No towns. No capital. No country.",
-     "seed": 7,
-     "heard": "jungle, no towns, no capital, no country.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "They found... jungle. No towns. No capital. No country."
     }
    ],
-   "end": 22.188
+   "end": 17.73
   },
   {
    "n": 7,
    "text": "It went very badly.",
-   "start": 22.388,
+   "start": 17.93,
    "parts": [
     {
-     "tts": "It went very badly.",
-     "seed": 7,
-     "heard": "It went very badly.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "It went very badly."
     }
    ],
-   "end": 23.542
+   "end": 19.06
   },
   {
    "n": 8,
    "text": "MacGregor was later tried for fraud in France... and acquitted.",
-   "start": 23.742,
+   "start": 19.26,
    "parts": [
     {
-     "tts": "MacGregor was later tried for fraud in France...",
-     "seed": 64,
-     "heard": "MacGregor was later tried for fraud in France.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "and acquitted.",
-     "seed": 7,
-     "heard": "and acquitted",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "MacGregor was later tried for fraud in France... and acquitted."
     }
    ],
-   "end": 27.24
+   "end": 21.645
   }
- ],
- "engine": "chatterbox_d2"
+ ]
 }

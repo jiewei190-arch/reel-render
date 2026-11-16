@@ -2,13 +2,42 @@
  "note": "The narration, one entry per spoken line. Edit here, then re-run justinclips/tools/shortbuild.py. '...' = a held beat before the punchline. Years/numbers stay digits (the D2 tool spells them for the TTS; captions keep digits).",
  "emotion": "WTF",
  "lines": [
-  {"n": 1, "text": "A man sold a country that didn't exist."},
-  {"n": 2, "text": "In 1822, Gregor MacGregor told London he ruled a land called Poyais."},
-  {"n": 3, "text": "He printed a guidebook, its own money... and sold its government bonds."},
-  {"n": 4, "text": "Investors bought about 200,000 pounds of them."},
-  {"n": 5, "text": "Then about 250 settlers sailed there."},
-  {"n": 6, "text": "They found... jungle. No towns. No capital. No country."},
-  {"n": 7, "text": "It went very badly."},
-  {"n": 8, "text": "MacGregor was later tried for fraud in France... and acquitted."}
- ]
+  {
+   "n": 1,
+   "text": "A man sold a country that didn't exist."
+  },
+  {
+   "n": 2,
+   "text": "In 1822, Gregor MacGregor told London he ruled a land called Poyais."
+  },
+  {
+   "n": 3,
+   "text": "He printed a guidebook, its own money... and sold its government bonds."
+  },
+  {
+   "n": 4,
+   "text": "Investors bought about 200,000 pounds of them."
+  },
+  {
+   "n": 5,
+   "text": "Then about 250 settlers sailed there."
+  },
+  {
+   "n": 6,
+   "text": "They found... jungle. No towns. No capital. No country."
+  },
+  {
+   "n": 7,
+   "text": "It went very badly."
+  },
+  {
+   "n": 8,
+   "text": "MacGregor was later tried for fraud in France... and acquitted."
+  }
+ ],
+ "pronounce": {
+  "dia": {
+   "Poyais": "Poy-eye-iss"
+  }
+ }
 }

@@ -1,13 +1,13 @@
-[00:00.00 -> 00:01.32] Rats once got sued.
-[00:02.00 -> 00:03.02] And they got a lawyer.
-[00:03.68 -> 00:05.38] France, the early 1500s.
-[00:05.74 -> 00:08.18] Rats reportedly ate the barley around Autun.
-[00:08.18 -> 00:09.68] So a court summoned the rats.
-[00:10.34 -> 00:10.80] The rats...
-[00:10.80 -> 00:12.16] did not show up.
-[00:12.44 -> 00:15.70] Their lawyer said that was unfair: his clients lived in lots of villages.
-[00:16.38 -> 00:18.26] Then he said they couldn't come safely...
-[00:18.80 -> 00:20.18] because of the town's cats.
-[00:20.74 -> 00:22.20] He wanted the cats kept indoors.
-[00:22.82 -> 00:24.08] The owners said no.
-[00:24.08 -> 00:26.74] So the case was reportedly thrown out.
+[00:00.00 -> 00:00.96] Rats once got sued.
+[00:00.96 -> 00:01.90] And they got a lawyer.
+[00:02.20 -> 00:03.72] France, the early 1500s.
+[00:03.88 -> 00:06.14] Rats reportedly ate the barley around Autun.
+[00:06.14 -> 00:07.44] So a court summoned the rats.
+[00:08.02 -> 00:08.48] The rats...
+[00:08.48 -> 00:09.52] did not show up.
+[00:09.78 -> 00:12.58] Their lawyer said that was unfair: his clients lived in lots of villages.
+[00:13.12 -> 00:14.48] Then he said they couldn't come safely...
+[00:14.48 -> 00:15.56] because of the town's cats.
+[00:15.82 -> 00:17.08] He wanted the cats kept indoors.
+[00:17.24 -> 00:18.14] The owners said no.
+[00:18.42 -> 00:19.86] So the case was reportedly thrown out.

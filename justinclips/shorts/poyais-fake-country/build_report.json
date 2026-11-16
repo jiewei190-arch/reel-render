@@ -1,6 +1,6 @@
 {
- "lufs": -14.13,
- "true_peak_dbtp": -1.75,
- "voice": "chatterbox_d2",
- "sha256": "cb9bbd7d1e90ad3b6addb769245447fe24d7231996679ecdfd2c7baa3484bd84"
+ "lufs": -14.24,
+ "true_peak_dbtp": -2.7,
+ "voice": "dia #8 (Dia-1.6B-0626, am_puck prompt), seed 11, wavdir:justinclips/shorts/poyais-fake-country/voice_dia",
+ "sha256": "a5437a0311e0cfa5319f382aca4cf5c389a3ef244b46ff28f296dca30c0caf37"
 }

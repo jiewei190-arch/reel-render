@@ -6,7 +6,7 @@
  "style": "toon",
  "voiceover": "input/voiceover.wav",
  "script": "input/script.txt",
- "duration": 27.394,
+ "duration": 20.581,
  "captions": true,
  "bars": null,
  "fadeIn": 0.0,
@@ -43,5 +43,5 @@
    "out"
   ]
  },
- "topCaptionUntil": 3.97
+ "topCaptionUntil": 3.2
 }

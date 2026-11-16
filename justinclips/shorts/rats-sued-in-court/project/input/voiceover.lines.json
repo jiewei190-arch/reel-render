@@ -1,25 +1,10 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23,
-  31,
-  42,
-  57,
-  64,
-  77
- ],
+ "engine": "dia #8 (Dia-1.6B-0626, am_puck prompt), seed 3, wavdir:justinclips/shorts/rats-sued-in-court/voice_dia",
  "gap": 0.2,
- "section": 1.4,
  "lead": 0.05,
  "beat": 0.4,
  "sr": 24000,
- "duration": 27.144,
- "render_s": 273.2,
- "qa_fail_lines": [],
+ "duration": 20.331,
  "lines": [
   {
    "n": 1,
@@ -27,134 +12,87 @@
    "start": 0.05,
    "parts": [
     {
-     "tts": "Rats once got sued. And they got a lawyer.",
-     "seed": 7,
-     "heard": "rats once got sued, and they got a lawyer.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Rats once got sued. And they got a lawyer."
     }
    ],
-   "end": 3.373
+   "end": 2.023
   },
   {
    "n": 2,
    "text": "France, the early 1500s. Rats reportedly ate the barley around Autun.",
-   "start": 3.573,
+   "start": 2.223,
    "parts": [
     {
-     "tts": "France, the early fifteen hundreds. Rats reportedly ate the barley around Autun.",
-     "seed": 23,
-     "heard": "France, the early 1500s. Rats reportedly ate the barley around Autun.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "France, the early 1500s. Rats reportedly ate the barley around Autun."
     }
    ],
-   "end": 8.0
+   "end": 5.653
   },
   {
    "n": 3,
    "text": "So a court summoned the rats.",
-   "start": 8.2,
+   "start": 5.853,
    "parts": [
     {
-     "tts": "So a court summoned the rats.",
-     "seed": 7,
-     "heard": "So a court summoned the rats.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "So a court summoned the rats."
     }
    ],
-   "end": 10.129
+   "end": 7.623
   },
   {
    "n": 4,
    "text": "The rats... did not show up.",
-   "start": 10.329,
+   "start": 7.823,
    "parts": [
     {
-     "tts": "The rats...",
-     "seed": 7,
-     "heard": "the rats.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "did not show up.",
-     "seed": 7,
-     "heard": "did not show up.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "The rats... did not show up."
     }
    ],
-   "end": 12.191
+   "end": 9.543
   },
   {
    "n": 5,
    "text": "Their lawyer said that was unfair: his clients lived in lots of villages.",
-   "start": 12.391,
+   "start": 9.743,
    "parts": [
     {
-     "tts": "Their lawyer said that was unfair: his clients lived in lots of villages.",
-     "seed": 7,
-     "heard": "Their lawyer said that was unfair, his clients lived in lots of villages.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Their lawyer said that was unfair: his clients lived in lots of villages."
     }
    ],
-   "end": 16.156
+   "end": 12.743
   },
   {
    "n": 6,
    "text": "Then he said they couldn't come safely... because of the town's cats.",
-   "start": 16.356,
+   "start": 12.943,
    "parts": [
     {
-     "tts": "Then he said they couldn't come safely...",
-     "seed": 7,
-     "heard": "Then he said they couldn't come safely.",
-     "wrong_words": 0,
-     "qa": "ok"
-    },
-    {
-     "tts": "because of the town's cats.",
-     "seed": 7,
-     "heard": "because of the town's cats.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "Then he said they couldn't come safely... because of the town's cats."
     }
    ],
-   "end": 20.535
+   "end": 15.643
   },
   {
    "n": 7,
    "text": "He wanted the cats kept indoors. The owners said no.",
-   "start": 20.735,
+   "start": 15.843,
    "parts": [
     {
-     "tts": "He wanted the cats kept indoors. The owners said no.",
-     "seed": 11,
-     "heard": "He wanted the cats kept indoors. The owners said no.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "He wanted the cats kept indoors. The owners said no."
     }
    ],
-   "end": 24.323
+   "end": 18.193
   },
   {
    "n": 8,
    "text": "So the case was reportedly thrown out.",
-   "start": 24.523,
+   "start": 18.393,
    "parts": [
     {
-     "tts": "So the case was reportedly thrown out.",
-     "seed": 7,
-     "heard": "So the case was reportedly thrown out.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "tts": "So the case was reportedly thrown out."
     }
    ],
-   "end": 26.944
+   "end": 20.131
   }
- ],
- "engine": "chatterbox_d2"
+ ]
 }

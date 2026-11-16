@@ -1,6 +1,6 @@
 # UPLOAD: the rats who got a lawyer
 
-**File:** `video.mp4` (1080×1920, 24 fps, ~25 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080×1920, 24 fps, ~21 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (≤ 60 chars, 1 emoji)
 Rats Got Sued in Court. And They Got a Lawyer 🐀

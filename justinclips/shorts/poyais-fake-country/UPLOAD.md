@@ -1,6 +1,6 @@
 # UPLOAD: Poyais, the country that didn't exist
 
-**File:** `video.mp4` (1080×1920, 24 fps, ~26 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
+**File:** `video.mp4` (1080×1920, 24 fps, ~22 s, −14 LUFS / TP ≤ −1) · checksum in `video.sha256` · Channel: Justin clips (YouTube Short). Do not post from this session.
 
 ## Title (≤ 60 chars, 1 emoji)
 A Man Sold a Country That Didn't Exist 🗺️
