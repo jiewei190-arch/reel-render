@@ -4,6 +4,18 @@
  "tail": 0.45,
  "cut_lead": 0.06,
  "note": "Single source of truth for the narration and the cut. Each shot starts at its line's start or at a word of that line; build_short.py turns this + the voice's word timings into story/shots.json. Tone guard: meat = cartoon steak chunks (pink with a cream fat stripe), no blood, no gore.",
+ "pacing": {
+  "gap": 0.5,
+  "lead": 0.05,
+  "beat": 0.65,
+  "breaks": [
+   {
+    "line": 6,
+    "after": "Vultures.",
+    "s": 0.35
+   }
+  ]
+ },
  "lines": [
   {
    "text": "In 1876, it rained meat in Kentucky.",

@@ -4,257 +4,257 @@
   {
    "word": "In",
    "start": 0.0,
-   "end": 0.18
+   "end": 0.2
   },
   {
    "word": "1876,",
-   "start": 0.18,
+   "start": 0.2,
    "end": 1.16
   },
   {
    "word": "it",
-   "start": 1.48,
-   "end": 1.5
+   "start": 1.36,
+   "end": 1.38
   },
   {
    "word": "rained",
-   "start": 1.5,
-   "end": 1.76
+   "start": 1.38,
+   "end": 1.7
   },
   {
    "word": "meat",
-   "start": 1.76,
-   "end": 2.04
+   "start": 1.7,
+   "end": 1.96
   },
   {
    "word": "in",
-   "start": 2.04,
-   "end": 2.28
+   "start": 1.96,
+   "end": 2.14
   },
   {
    "word": "Kentucky.",
-   "start": 2.28,
-   "end": 2.66
+   "start": 2.14,
+   "end": 2.5
   },
   {
    "word": "Chunks",
-   "start": 3.32,
-   "end": 3.44
+   "start": 3.4,
+   "end": 3.58
   },
   {
    "word": "fell",
-   "start": 3.44,
-   "end": 3.66
+   "start": 3.58,
+   "end": 3.78
   },
   {
    "word": "from",
-   "start": 3.66,
-   "end": 3.88
+   "start": 3.78,
+   "end": 4.0
   },
   {
    "word": "a",
-   "start": 3.88,
-   "end": 4.02
+   "start": 4.0,
+   "end": 4.1
   },
   {
    "word": "clear",
-   "start": 4.02,
-   "end": 4.2
+   "start": 4.1,
+   "end": 4.32
   },
   {
    "word": "blue",
-   "start": 4.2,
-   "end": 4.38
+   "start": 4.32,
+   "end": 4.52
   },
   {
    "word": "sky",
-   "start": 4.38,
-   "end": 4.74
+   "start": 4.52,
+   "end": 4.76
   },
   {
    "word": "onto",
-   "start": 4.74,
-   "end": 5.02
+   "start": 4.76,
+   "end": 5.04
   },
   {
    "word": "a",
-   "start": 5.02,
-   "end": 5.22
+   "start": 5.04,
+   "end": 5.24
   },
   {
    "word": "farm.",
-   "start": 5.22,
-   "end": 5.52
+   "start": 5.24,
+   "end": 5.56
   },
   {
    "word": "A",
-   "start": 5.94,
-   "end": 6.06
+   "start": 6.04,
+   "end": 6.28
   },
   {
    "word": "woman",
-   "start": 6.06,
-   "end": 6.22
+   "start": 6.28,
+   "end": 6.42
   },
   {
    "word": "making",
-   "start": 6.22,
-   "end": 6.52
+   "start": 6.42,
+   "end": 6.72
   },
   {
    "word": "soap",
-   "start": 6.52,
-   "end": 6.78
+   "start": 6.72,
+   "end": 7.02
   },
   {
    "word": "outside",
-   "start": 6.78,
-   "end": 7.22
+   "start": 7.02,
+   "end": 7.5
   },
   {
    "word": "watched",
-   "start": 7.22,
-   "end": 7.54
+   "start": 7.5,
+   "end": 7.8
   },
   {
    "word": "it",
-   "start": 7.54,
-   "end": 7.76
+   "start": 7.8,
+   "end": 8.0
   },
   {
    "word": "land.",
-   "start": 7.76,
-   "end": 8.08
+   "start": 8.0,
+   "end": 8.36
   },
   {
    "word": "Two",
-   "start": 8.52,
-   "end": 8.76
+   "start": 8.94,
+   "end": 9.12
   },
   {
    "word": "men",
-   "start": 8.76,
-   "end": 8.98
+   "start": 9.12,
+   "end": 9.28
   },
   {
    "word": "reportedly",
-   "start": 8.98,
-   "end": 9.5
+   "start": 9.28,
+   "end": 9.64
   },
   {
    "word": "tasted",
-   "start": 9.5,
-   "end": 9.92
+   "start": 9.64,
+   "end": 10.04
   },
   {
    "word": "it...",
-   "start": 9.92,
-   "end": 10.44
+   "start": 10.04,
+   "end": 10.48
   },
   {
    "word": "and",
-   "start": 10.76,
-   "end": 11.1
+   "start": 10.48,
+   "end": 11.6
   },
   {
    "word": "guessed",
-   "start": 11.1,
-   "end": 11.36
+   "start": 11.6,
+   "end": 11.86
   },
   {
    "word": "mutton.",
-   "start": 11.36,
-   "end": 11.8
+   "start": 11.86,
+   "end": 12.26
   },
   {
    "word": "Or",
-   "start": 12.22,
-   "end": 12.42
+   "start": 12.26,
+   "end": 12.64
   },
   {
    "word": "venison.",
-   "start": 12.42,
-   "end": 12.82
+   "start": 12.64,
+   "end": 13.12
   },
   {
    "word": "Lab",
-   "start": 12.82,
-   "end": 13.58
-  },
-  {
-   "word": "tests",
-   "start": 13.58,
-   "end": 13.82
-  },
-  {
-   "word": "later",
-   "start": 13.82,
+   "start": 13.78,
    "end": 14.06
   },
   {
-   "word": "found",
+   "word": "tests",
    "start": 14.06,
-   "end": 14.4
+   "end": 14.32
+  },
+  {
+   "word": "later",
+   "start": 14.32,
+   "end": 14.6
+  },
+  {
+   "word": "found",
+   "start": 14.6,
+   "end": 14.88
   },
   {
    "word": "lung,",
-   "start": 14.4,
-   "end": 14.86
+   "start": 14.88,
+   "end": 15.22
   },
   {
    "word": "muscle",
-   "start": 15.12,
-   "end": 15.4
+   "start": 15.32,
+   "end": 15.54
   },
   {
    "word": "and",
-   "start": 15.6,
-   "end": 15.68
+   "start": 15.72,
+   "end": 15.78
   },
   {
    "word": "cartilage.",
-   "start": 15.68,
-   "end": 16.02
+   "start": 15.78,
+   "end": 16.18
   },
   {
    "word": "The",
-   "start": 16.56,
-   "end": 16.66
-  },
-  {
-   "word": "most",
-   "start": 16.66,
+   "start": 16.78,
    "end": 16.88
   },
   {
-   "word": "popular",
+   "word": "most",
    "start": 16.88,
-   "end": 17.36
+   "end": 17.04
+  },
+  {
+   "word": "popular",
+   "start": 17.04,
+   "end": 17.42
   },
   {
    "word": "explanation?",
-   "start": 17.36,
-   "end": 18.12
+   "start": 17.42,
+   "end": 17.96
   },
   {
    "word": "Vultures.",
-   "start": 18.88,
-   "end": 19.28
+   "start": 18.36,
+   "end": 18.68
   },
   {
    "word": "Throwing",
-   "start": 20.04,
-   "end": 20.34
+   "start": 19.2,
+   "end": 19.48
   },
   {
    "word": "up",
-   "start": 20.34,
-   "end": 20.54
+   "start": 19.48,
+   "end": 19.66
   },
   {
    "word": "mid-flight.",
-   "start": 20.54,
-   "end": 21.14
+   "start": 19.66,
+   "end": 20.1
   }
  ]
 }

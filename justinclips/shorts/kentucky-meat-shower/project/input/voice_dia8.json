@@ -1,0 +1,33 @@
+{
+ "engine": "dia (voice #8)",
+ "model": "nari-labs/Dia-1.6B-0626",
+ "seed": 23,
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "take": "take_seed23.wav",
+ "take_s": 17.13,
+ "lufs": -14.1,
+ "true_peak_dbtp": -1.5,
+ "median_pitch_hz": 213.4,
+ "pitch_ok": true,
+ "whisper": "In 1876, it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it and guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid -flight.",
+ "wrong_words": 0,
+ "words_after_script_end": [],
+ "laughs_left": false,
+ "files": [
+  "01.wav",
+  "02.wav",
+  "03.wav",
+  "04a.wav",
+  "04b.wav",
+  "05.wav",
+  "06a.wav",
+  "06b.wav"
+ ],
+ "synth_s": 287.8
+}

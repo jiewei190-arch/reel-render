@@ -1,0 +1,18 @@
+{
+ "duration_s": 20.58,
+ "frames": 494,
+ "lufs": -13.9,
+ "true_peak_dbtp": -2.7,
+ "whisper": "In 1876 it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. And guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid-flight.",
+ "wrong_words": 0,
+ "diffs": [],
+ "blackdetect": [],
+ "blank_frames": [],
+ "min_luma_spread": 20.5,
+ "pass": {
+  "length_20_30": true,
+  "lufs": true,
+  "tp": true,
+  "no_black": true
+ }
+}

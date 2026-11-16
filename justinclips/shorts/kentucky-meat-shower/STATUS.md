@@ -2,13 +2,24 @@ STATE: ready
 
 # Kentucky Meat Shower: status
 
-- `video.mp4`: 1080x1920, 24 fps, 519 frames, 21.63 s, H.264 + AAC. sha256 in `video.sha256`. Rendered fully in the cloud (SwiftShader, 4 workers). QC numbers in `project/qc.json`.
-- Audio: `audio/mix.py` (music `toon3d:upbeat` -19 dB, SFX cues from `lines.json`), then the measured gain pass + true-peak limiter in `build_short.py`: **-14.07 LUFS integrated, true peak -1.27 dBTP**.
-- Voice: Chatterbox D2 (exaggeration 0.3, cfg 0.3), 6 lines. Whisper QA passed on every part except "...and guessed mutton. Or venison.", where Whisper hears "guessed" as "guest" on all 3 seeds (near-homophone; kept seed 7). Script alignment 48/51 words.
-- Jail-break rules: checklist at the top of `script.md`. Frame 1 = big cartoon chunks already falling over the barn + top caption "Kentucky, 1876: / chunks about 2 inches wide". Ends on "Throwing up mid-flight." and the falling chunks cut back to frame 1 (loop). No CTA.
-- Tone guard: cartoon steak chunks only (pink + cream fat stripe), no blood, no gore, no photos.
-- Hedges kept: "reportedly" on the tasting; "the most popular explanation" for the vultures (not "solved"); "(species: unclear)" on the lab card. "Near Rankin", common online, is unsupported and not used. See `sources.md`.
-- Shot timing is generated from `project/lines.json` + the voice's word timings (not hard-coded).
+**Re-voiced with voice #8 (Dia), Nov 16.** Earlier D2 Chatterbox render replaced.
+
+- voice: dia #8 (Dia-1.6B-0626, Apache-2.0; Kokoro am_puck prompt + the #8 prompt text, cfg 3.0, temp 1.8, top-p 0.9, top-k 45, `--dia-tail " (laughs)"` cut off after the last word). **seed: 23.** Seed 7 garbled "Throwing up" (Whisper: "Thrown up") and seed 11 drifted to 247 Hz, so per the rules the next seed was used. One Dia pass over the whole script, median pitch 213 Hz (pyin; the #8 reference reads 199 Hz with the same meter), take 17.1 s, no "(laughs)" left. Report: `project/input/voice_dia8.json`.
+- Whisper (small.en) on the final mix, word for word (0 wrong words): "In 1876 it rained meat in Kentucky. Chunks fell from a clear blue sky onto a farm. A woman making soap outside watched it land. Two men reportedly tasted it. And guessed mutton. Or venison. Lab tests later found lung, muscle, and cartilage. The most popular explanation? Vultures. Throwing up mid-flight."
+- length: **20.58 s** (494 frames, 1080x1920, 24 fps, H.264 + AAC). sha256 in `video.sha256`.
+- LUFS: **-14.03 integrated, true peak -2.7 dBTP** (`project/qc.json`; ebur128 re-check in `project/qa_revoice.json`).
+- QA: captions checked against the voice on a 10-frame sheet (in sync); no black or blank frames (blackdetect + per-frame luma spread, min 20.5); frame 1 = falling chunks + top caption "Kentucky, 1876: / chunks about 2 inches wide"; last frames = vulture "BLEH!" on "mid-flight." and a hard cut back to frame 1 (loop). Script unchanged.
+- Pacing: Dia reads fast (17 s of speech), so `lines.json` got `"pacing": {"gap": 0.5, "lead": 0.05, "beat": 0.65, "breaks": [after "Vultures." 0.35 s]}` to land inside 20-30 s and give the "Vultures." shot room. No words changed.
+- Unchanged from the D2 build: jail-break checklist in `script.md`, tone guard (cartoon steak chunks only), hedges ("reportedly", "the most popular explanation", "(species: unclear)"), `sources.md`. Shot timing is generated from `project/lines.json` + the voice's word timings.
+
+## Re-voice with Dia #8 (what was run)
+Dia venv: Python 3.12 + CPU torch + transformers>=4.56 + librosa + scipy + faster-whisper (`~/.venvs/dia`). `VOICE_LINEUP` = `justinclips/voice_lineup/` from origin/justinclips/voice-lineup.
+
+    V=~/.venvs/dia/bin/python
+    $V justinclips/tools/revoice/dia8.py render justinclips/shorts/kentucky-meat-shower --seed 23     # Dia take, Whisper QA, per-line split
+    $V justinclips/tools/build_short.py justinclips/shorts/kentucky-meat-shower --kit <toon3d-fx>/whatif/aitrends-2d-studio \
+       --voice-cmd "$V justinclips/tools/revoice/dia8.py join {project} {wav}" --whisper-py $V --mix-py $V --chatterbox-py $V
+    $V justinclips/tools/revoice/qa_short.py justinclips/shorts/kentucky-meat-shower                 # Whisper on the mix, loudness, black frames, sheets
 
 ## Swap the voice (one command)
 From the repo root, on a machine with an `origin/iawaken/toon3d-fx` checkout (kit) and `origin/voice-test` (`whatif/voice/`):

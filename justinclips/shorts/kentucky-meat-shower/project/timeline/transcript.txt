@@ -1,10 +1,10 @@
-[00:00.00 -> 00:02.66] In 1876, it rained meat in Kentucky.
-[00:03.32 -> 00:05.52] Chunks fell from a clear blue sky onto a farm.
-[00:05.94 -> 00:08.08] A woman making soap outside watched it land.
-[00:08.52 -> 00:10.44] Two men reportedly tasted it...
-[00:10.76 -> 00:11.80] and guessed mutton.
-[00:12.22 -> 00:12.82] Or venison.
-[00:12.82 -> 00:16.02] Lab tests later found lung, muscle and cartilage.
-[00:16.56 -> 00:18.12] The most popular explanation?
-[00:18.88 -> 00:19.28] Vultures.
-[00:20.04 -> 00:21.14] Throwing up mid-flight.
+[00:00.00 -> 00:02.50] In 1876, it rained meat in Kentucky.
+[00:03.40 -> 00:05.56] Chunks fell from a clear blue sky onto a farm.
+[00:06.04 -> 00:08.36] A woman making soap outside watched it land.
+[00:08.94 -> 00:10.48] Two men reportedly tasted it...
+[00:10.48 -> 00:12.26] and guessed mutton.
+[00:12.26 -> 00:13.12] Or venison.
+[00:13.78 -> 00:16.18] Lab tests later found lung, muscle and cartilage.
+[00:16.78 -> 00:17.96] The most popular explanation?
+[00:18.36 -> 00:18.68] Vultures.
+[00:19.20 -> 00:20.10] Throwing up mid-flight.
