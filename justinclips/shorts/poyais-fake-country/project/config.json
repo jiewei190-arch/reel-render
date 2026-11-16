@@ -1,0 +1,48 @@
+{
+ "title": "The Fake Country of Poyais",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 27.69,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "topCaption": [
+  "and London",
+  "paid him for it"
+ ],
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "country",
+   "exist",
+   "1822",
+   "macgregor",
+   "poyais",
+   "money",
+   "bonds",
+   "200,000",
+   "pounds",
+   "250",
+   "jungle",
+   "country.",
+   "acquitted",
+   "france"
+  ]
+ },
+ "topCaptionUntil": 3.2
+}

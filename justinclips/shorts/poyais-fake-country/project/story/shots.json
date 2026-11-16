@@ -1,0 +1,324 @@
+{
+ "duration": 27.69,
+ "shots": [
+  {
+   "id": "s01",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:cash",
+     "gain": -6
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -16
+    }
+   ],
+   "start": 0.0,
+   "end": 0.98
+  },
+  {
+   "id": "s02",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "exist",
+     "name": "toon3d:scratch",
+     "gain": -8
+    },
+    {
+     "word": "exist",
+     "offset": 0.3,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "start": 0.98,
+   "end": 2.331
+  },
+  {
+   "id": "s03",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1822",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ],
+   "start": 2.331,
+   "end": 4.26
+  },
+  {
+   "id": "s04",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "poyais",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    }
+   ],
+   "start": 4.26,
+   "end": 6.939
+  },
+  {
+   "id": "s05",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "guidebook",
+     "name": "toon3d:paper",
+     "gain": -8
+    }
+   ],
+   "start": 6.939,
+   "end": 8.5
+  },
+  {
+   "id": "s05b",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "money",
+     "name": "toon3d:cash",
+     "gain": -8
+    }
+   ],
+   "start": 8.5,
+   "end": 9.7
+  },
+  {
+   "id": "s06",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "word": "bonds",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:crowd",
+     "gain": -16
+    }
+   ],
+   "start": 9.7,
+   "end": 11.65
+  },
+  {
+   "id": "s07",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:coins",
+     "gain": -8
+    }
+   ],
+   "start": 11.65,
+   "end": 13.3
+  },
+  {
+   "id": "s07b",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "pounds",
+     "name": "toon3d:cash",
+     "gain": -8
+    }
+   ],
+   "start": 13.3,
+   "end": 14.39
+  },
+  {
+   "id": "s08",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:splash",
+     "gain": -16
+    },
+    {
+     "word": "250",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ],
+   "start": 14.39,
+   "end": 16.16
+  },
+  {
+   "id": "s08b",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:splash",
+     "gain": -16
+    }
+   ],
+   "start": 16.16,
+   "end": 17.228
+  },
+  {
+   "id": "s09",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ],
+   "start": 17.228,
+   "end": 19.34
+  },
+  {
+   "id": "s10",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "no",
+     "name": "toon3d:buzz",
+     "gain": -14
+    },
+    {
+     "word": "capital",
+     "name": "toon3d:buzz",
+     "gain": -14
+    }
+   ],
+   "start": 19.34,
+   "end": 21.18
+  },
+  {
+   "id": "s10b",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "country",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "start": 21.18,
+   "end": 22.308
+  },
+  {
+   "id": "s11",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rain",
+     "gain": -14
+    }
+   ],
+   "start": 22.308,
+   "end": 23.662
+  },
+  {
+   "id": "s12",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "word": "fraud",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "start": 23.662,
+   "end": 26.06
+  },
+  {
+   "id": "s13",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "acquitted",
+     "offset": -0.08,
+     "name": "toon3d:knock",
+     "gain": -5
+    },
+    {
+     "word": "acquitted",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "acquitted",
+     "offset": 0.25,
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ],
+   "start": 26.06,
+   "end": 27.69
+  }
+ ]
+}

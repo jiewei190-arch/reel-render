@@ -6,7 +6,7 @@ import { T as insT, INK as CARD_INK } from '/kits/toon3d/insert.js';
 export { insT, CARD_INK };
 
 // seconds from the shot start to the nth spoken `word` at/after the shot (fallback fb if not found)
-export const at = (info, word, fb = 0, nth = 1) => { let after = info.shot.start - 0.1, g = null; for (let i = 0; i < nth; i++) { g = wordTime(word, after); if (g == null) return fb; after = g + 0.05; } return g - info.shot.start; };
+export const at = (info, word, fb = 0, nth = 1) => { let after = info.shot.start - 0.1, g = null; for (let i = 0; i < nth; i++) { g = wordTime(word, after); if (g == null) return fb; after = g + 0.12; } return g - info.shot.start; };
 
 // top caption (adds story, not a subtitle): two lines from config.topCaption, from frame 1 to config.topCaptionUntil
 export function topCaption(g, t, info) {
