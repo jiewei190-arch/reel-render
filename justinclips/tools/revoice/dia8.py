@@ -91,7 +91,7 @@ for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=tok, b=heard, autojunk=False
 HOP = 0.01
 fr = np.lib.stride_tricks.sliding_window_view(np.pad(x, (0, int(0.02 * sr))), int(0.02 * sr))[::int(HOP * sr)]
 rms = np.sqrt((fr ** 2).mean(axis=1) + 1e-12)
-SIL = 10 ** (-40 / 20) * rms.max()   # pause = 40 dB under the loudest frame
+SIL = 10 ** (float(L.get("pacing", {}).get("sil_db", -40)) / 20) * rms.max()   # pause = 40 dB (lines.json pacing.sil_db) under the loudest frame
 bounds = []   # (time of cut, natural silence there, kind, (line, part) before, (line, part) after)
 for k in range(len(tok) - 1):
     if where[k] == where[k + 1]: continue
@@ -106,12 +106,17 @@ for k in range(len(tok) - 1):
     lo = max((words[lw].start + e) / 2, e - 0.03); hi = min(words[fw].end, max(e, s_) + 0.25)
     i0, i1 = int(lo / HOP), max(int(lo / HOP) + 1, int(hi / HOP))
     q = rms[i0:i1] < SIL
-    if q.any():   # the longest quiet run in the window, extended to its full length
+    if q.any():   # a quiet run in the window, extended to its full length
         runs, r0 = [], None
         for j, v in enumerate(list(q) + [False]):
             if v and r0 is None: r0 = j
             if not v and r0 is not None: runs.append((j - r0, r0)); r0 = None
-        n, r0 = max(runs); j0, j1 = i0 + r0, i0 + r0 + n - 1
+        bm = (e + s_) / 2 / HOP - i0   # Whisper's boundary (pacing.cut "nearest": the quiet run nearest to it)
+        if L.get("pacing", {}).get("cut") == "nearest":
+            n, r0 = min(runs, key=lambda r: max(0, r[1] - bm, bm - (r[1] + r[0])) - 0.3 * r[0])
+        else:                           # default: the longest quiet run
+            n, r0 = max(runs)
+        j0, j1 = i0 + r0, i0 + r0 + n - 1
         while j0 > 0 and rms[j0 - 1] < SIL: j0 -= 1
         while j1 < len(rms) - 1 and rms[j1 + 1] < SIL: j1 += 1
         nat = (j1 - j0 + 1) * HOP; cut = (j0 + j1 + 1) / 2 * HOP
@@ -120,7 +125,7 @@ for k in range(len(tok) - 1):
         nat = 0.0; cut = (i0 + int(np.argmin(rms[i0:i1])) + 0.5) * HOP
     bounds.append((cut, nat, kind, where[k], where[k + 1]))
     print(f"   {kind:4} after line {where[k][0] + 1}: '{words[lw].word.strip()}' {e:.2f} | '{words[fw].word.strip()}' {s_:.2f}  cut {cut:.2f}, pause {nat:.2f} s")
-pace = {"gap": 0.0, "beat": 0.0, **L.get("pacing", {})}
+pace = {"gap": 0.0, "beat": 0.0, **{k: v for k, v in L.get("pacing", {}).items() if k in ("gap", "beat")}}  # (pacing may also hold sil_db / cut, see the cut search above)
 if a.gap is not None: pace["gap"] = a.gap
 if a.beat is not None: pace["beat"] = a.beat
 cuts = [0.0] + [b[0] for b in bounds] + [len(x) / sr]

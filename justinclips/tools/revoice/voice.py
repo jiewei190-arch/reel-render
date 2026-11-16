@@ -69,7 +69,8 @@ elif a.engine == "files":
         if not parts: sys.exit(f"files engine: no audio for line {n} ({n:02d}.wav or {n:02d}a.wav ...) in {a.dir}")
         rec = {"n": n, "text": l["text"], "start": round(now(), 3), "parts": []}
         for k, f in enumerate(parts):
-            pieces.append(load(f)); rec["parts"].append({"file": os.path.basename(f)})
+            t0 = now(); pieces.append(load(f))
+            rec["parts"].append({"file": os.path.basename(f), "start": round(t0, 3), "end": round(now(), 3)})
             if k < len(parts) - 1: pieces.append(np.zeros(int(SR * pace["beat"]), np.float32))
         rec["end"] = round(now(), 3); recs.append(rec)
         pieces.append(np.zeros(int(SR * pace["gap"]), np.float32))

@@ -33,6 +33,7 @@ if [ $VOICE = 1 ]; then
 fi
 echo "== 3/7 word timings"
 (cd "$KIT" && "$VPY" tools/transcribe.py --project "projects/$SLUG" --script "projects/$SLUG/input/script.txt" --lang en --model small | tail -3)
+"$VPY" "$HERE/snap_words.py" --project "$PJ"   # word starts Whisper stretched over an inserted pause -> real onset
 echo "== 4/7 shot timing from the voice"
 "$VPY" "$HERE/retime.py" --project "$PJ"
 # generated files (voice, word timings, shots.json, duration) go back into the repo project right away

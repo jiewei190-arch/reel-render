@@ -35,3 +35,24 @@ Nov 16: `rebuild.sh tulip-mania`-style swap with `--engine files` on a stand-in 
 alignment 99%, all 18 shots re-timed (29.6 s → 33.1 s, every shot 1.27–2.80 s), word-synced stamps/counters landed on their words.
 `retime.py` resolves word anchors by token index within the line (words.json has one entry per script token), so a weaker
 alignment can't drag a cut into the wrong line. Re-running it on the three batch-4 Shorts gives byte-identical shots.json.
+
+## Voice #8 (Dia), added for revoice rv1 (Nov 16)
+`dia8.py` voices any Short with the owner's chosen voice #8: `voice_lineup/tts_any.py --engine dia` with the exact lineup
+settings (prompt `prompts/dia_prompt_kokoro_am_puck.wav` + its text, `--dia-tail " (laughs)"`, cfg 3.0, temp 1.8,
+top-p 0.9, top-k 45), one pass over the whole script, Whisper small.en QA, tail cut after the last word.
+- build_short.py Shorts (pig-war, wojtek-bear-soldier): `--voice-cmd "~/.venvs/dia/bin/python justinclips/tools/revoice/dia8.py --project {project} --wav {wav} --seed N"`.
+  Dia's own phrasing is kept; `lines.json` `"pacing": {"gap": .., "beat": ..}` only adds silence where Dia's pause at a
+  line end / "..." is shorter.
+- rebuild.sh Shorts (great-stink): `dia8.py --project <short>/project --seed N --split-dir DIR`, then `rebuild.sh <slug> --engine files --dir DIR`.
+- Cut points are found from Whisper word timings and refined to the real pause (`pacing.sil_db`, default −40 dB under the
+  loudest frame; `pacing.cut: "nearest"` picks the pause nearest Whisper's boundary instead of the longest). Every piece
+  is re-transcribed and printed (very short pieces, e.g. "and the Thames", can mis-transcribe on their own; check the joined result).
+- Respellings for Dia only: `lines.json` `"pronounce": {"dia": {"Wojtek": "Voytek"}}`.
+- `--keep DIR` keeps the take (`dia8_master.wav`, `dia8_report.json` with seed and median pitch); `--reuse DIR` re-paces/re-splits it without Dia.
+- Seeds: Dia's voice drifts a lot per seed (149–391 Hz median seen for the same prompt). The same seed always gives the
+  same take, and the first seconds of a take don't depend on its length, so screening seeds on the first ~4 s (about 70 s
+  of CPU each) and rendering only the ones near the #8 reference (~205 Hz) saves most of the 6–7 min per full take.
+
+`snap_words.py` (run by rebuild.sh after the word timings): Whisper tends to stretch a word back over a pause the voice
+step inserted. It moves such starts to the real onset (digital silence, or the part start voice.py now records in
+`voiceover.lines.json`). Without it, great-stink's "was" (after the "..." beat) started 0.6 s early and so did shot s06.

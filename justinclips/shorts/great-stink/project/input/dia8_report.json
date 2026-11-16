@@ -1,0 +1,53 @@
+{
+ "engine": "dia",
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "seeds_tried": [
+  4
+ ],
+ "duration_s": 20.43,
+ "load_s": 6.8,
+ "render_s": 931.2,
+ "synth_s": 917.6,
+ "synth_s_per_10s_audio": 449.2,
+ "lufs": -14.1,
+ "true_peak_dbtp": -1.5,
+ "final_transcript": "London stank so bad, Parliament had to act. Summer 1858, a heat wave hit the Thames, and the Thames was full of London's sewage. Parliament sits right on the river, so they soaked the curtains with chemicals. They even talked about moving Parliament out of London. Instead, they passed a new sewer law in about seven weeks. Engineer Joseph Bazalgette built 82 miles of giant sewers. London still uses them today!",
+ "final_wrong_words": 2,
+ "parts": [
+  {
+   "text": "London stank so bad, Parliament had to act. Summer 1858. A heatwave hit the Thames. And the Thames... was full of London's sewage. Parliament sits right on the river. So they soaked the curtains with chemicals. They even talked about moving Parliament out of London. Instead, they passed a new sewer law in about seven weeks. Engineer Joseph Bazalgette built 82 miles of giant sewers. London still uses them today.",
+   "start": 0.15,
+   "end": 20.13,
+   "seed": 4,
+   "heard": "London stank so bad, Parliament had to act. Summer 1858, a heat wave hit the Thames, and the Thames was full of London's sewage. Parliament sits right on the river, so they soaked the curtains with chemicals. They even talked about moving Parliament out of London. Instead, they passed a new sewer law in about seven weeks. Engineer Joseph Bazalgette built 82 miles of giant sewers. London still uses them today.",
+   "wrong_words": 2
+  }
+ ],
+ "seed_used": 4,
+ "median_pitch_hz": 216.1,
+ "whisper_wav": "London stank so bad, Parliament had to act. Summer 1858, a heat wave hit the Thames, and the Thames was full of London's sewage. Parliament sits right on the river, so they soaked the curtains with chemicals. They even talked about moving Parliament out of London. Instead, they passed a new sewer law in about seven weeks. Engineer Joseph Bazalgette built 82 miles of giant sewers. London still uses them today!",
+ "pieces_heard": [
+  "London stank so bad, Parliament had to act.",
+  "Summer 1858, a heat wave hit the Thames.",
+  "an attempt to",
+  "was full of London's sewage.",
+  "Parliament sits right on the river.",
+  "so they soaked the curtains with chemicals.",
+  "They even talked about moving Parliament out of London.",
+  "Instead, they passed a new sewer law in about seven weeks.",
+  "Engineer Joseph Bazalgette built 82 miles of giant sewers.",
+  "London still uses them today!"
+ ],
+ "paced_duration_s": 22.43,
+ "pacing": {
+  "gap": 0.2,
+  "beat": 0.4,
+  "lead": 0.05
+ }
+}

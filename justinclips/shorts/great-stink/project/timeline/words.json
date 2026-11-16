@@ -1,0 +1,355 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "London",
+   "start": 0.08,
+   "end": 0.44
+  },
+  {
+   "word": "stank",
+   "start": 0.44,
+   "end": 0.88
+  },
+  {
+   "word": "so",
+   "start": 0.88,
+   "end": 1.1
+  },
+  {
+   "word": "bad,",
+   "start": 1.1,
+   "end": 1.38
+  },
+  {
+   "word": "Parliament",
+   "start": 1.56,
+   "end": 1.72
+  },
+  {
+   "word": "had",
+   "start": 1.72,
+   "end": 2.04
+  },
+  {
+   "word": "to",
+   "start": 2.04,
+   "end": 2.18
+  },
+  {
+   "word": "act.",
+   "start": 2.18,
+   "end": 2.52
+  },
+  {
+   "word": "Summer",
+   "start": 3.22,
+   "end": 3.26
+  },
+  {
+   "word": "1858.",
+   "start": 3.26,
+   "end": 4.06
+  },
+  {
+   "word": "A",
+   "start": 4.34,
+   "end": 4.36
+  },
+  {
+   "word": "heatwave",
+   "start": 4.36,
+   "end": 4.72
+  },
+  {
+   "word": "hit",
+   "start": 4.72,
+   "end": 4.92
+  },
+  {
+   "word": "the",
+   "start": 4.92,
+   "end": 5.1
+  },
+  {
+   "word": "Thames.",
+   "start": 5.1,
+   "end": 5.32
+  },
+  {
+   "word": "And",
+   "start": 5.78,
+   "end": 5.94
+  },
+  {
+   "word": "the",
+   "start": 5.94,
+   "end": 6.06
+  },
+  {
+   "word": "Thames...",
+   "start": 6.06,
+   "end": 6.3
+  },
+  {
+   "word": "was",
+   "start": 6.886,
+   "end": 7.1
+  },
+  {
+   "word": "full",
+   "start": 7.1,
+   "end": 7.38
+  },
+  {
+   "word": "of",
+   "start": 7.38,
+   "end": 7.56
+  },
+  {
+   "word": "London's",
+   "start": 7.56,
+   "end": 7.9
+  },
+  {
+   "word": "sewage.",
+   "start": 7.9,
+   "end": 8.12
+  },
+  {
+   "word": "Parliament",
+   "start": 8.64,
+   "end": 8.78
+  },
+  {
+   "word": "sits",
+   "start": 8.78,
+   "end": 9.04
+  },
+  {
+   "word": "right",
+   "start": 9.04,
+   "end": 9.36
+  },
+  {
+   "word": "on",
+   "start": 9.36,
+   "end": 9.52
+  },
+  {
+   "word": "the",
+   "start": 9.52,
+   "end": 9.62
+  },
+  {
+   "word": "river.",
+   "start": 9.62,
+   "end": 9.78
+  },
+  {
+   "word": "So",
+   "start": 10.34,
+   "end": 10.46
+  },
+  {
+   "word": "they",
+   "start": 10.46,
+   "end": 10.6
+  },
+  {
+   "word": "soaked",
+   "start": 10.6,
+   "end": 10.9
+  },
+  {
+   "word": "the",
+   "start": 10.9,
+   "end": 11.12
+  },
+  {
+   "word": "curtains",
+   "start": 11.12,
+   "end": 11.32
+  },
+  {
+   "word": "with",
+   "start": 11.32,
+   "end": 11.52
+  },
+  {
+   "word": "chemicals.",
+   "start": 11.52,
+   "end": 11.88
+  },
+  {
+   "word": "They",
+   "start": 12.36,
+   "end": 12.46
+  },
+  {
+   "word": "even",
+   "start": 12.46,
+   "end": 12.6
+  },
+  {
+   "word": "talked",
+   "start": 12.6,
+   "end": 12.8
+  },
+  {
+   "word": "about",
+   "start": 12.8,
+   "end": 12.98
+  },
+  {
+   "word": "moving",
+   "start": 12.98,
+   "end": 13.2
+  },
+  {
+   "word": "Parliament",
+   "start": 13.2,
+   "end": 13.5
+  },
+  {
+   "word": "out",
+   "start": 13.5,
+   "end": 13.76
+  },
+  {
+   "word": "of",
+   "start": 13.76,
+   "end": 13.88
+  },
+  {
+   "word": "London.",
+   "start": 13.88,
+   "end": 14.06
+  },
+  {
+   "word": "Instead,",
+   "start": 14.46,
+   "end": 14.8
+  },
+  {
+   "word": "they",
+   "start": 14.98,
+   "end": 15.14
+  },
+  {
+   "word": "passed",
+   "start": 15.14,
+   "end": 15.36
+  },
+  {
+   "word": "a",
+   "start": 15.36,
+   "end": 15.52
+  },
+  {
+   "word": "new",
+   "start": 15.52,
+   "end": 15.7
+  },
+  {
+   "word": "sewer",
+   "start": 15.7,
+   "end": 15.86
+  },
+  {
+   "word": "law",
+   "start": 15.86,
+   "end": 16.1
+  },
+  {
+   "word": "in",
+   "start": 16.1,
+   "end": 16.22
+  },
+  {
+   "word": "about",
+   "start": 16.22,
+   "end": 16.36
+  },
+  {
+   "word": "seven",
+   "start": 16.36,
+   "end": 16.66
+  },
+  {
+   "word": "weeks.",
+   "start": 16.66,
+   "end": 17.0
+  },
+  {
+   "word": "Engineer",
+   "start": 17.54,
+   "end": 17.68
+  },
+  {
+   "word": "Joseph",
+   "start": 17.68,
+   "end": 18.04
+  },
+  {
+   "word": "Bazalgette",
+   "start": 18.04,
+   "end": 18.6
+  },
+  {
+   "word": "built",
+   "start": 18.6,
+   "end": 18.72
+  },
+  {
+   "word": "82",
+   "start": 18.72,
+   "end": 19.22
+  },
+  {
+   "word": "miles",
+   "start": 19.22,
+   "end": 19.46
+  },
+  {
+   "word": "of",
+   "start": 19.46,
+   "end": 19.76
+  },
+  {
+   "word": "giant",
+   "start": 19.76,
+   "end": 19.96
+  },
+  {
+   "word": "sewers.",
+   "start": 19.96,
+   "end": 20.4
+  },
+  {
+   "word": "London",
+   "start": 20.86,
+   "end": 20.98
+  },
+  {
+   "word": "still",
+   "start": 20.98,
+   "end": 21.24
+  },
+  {
+   "word": "uses",
+   "start": 21.24,
+   "end": 21.48
+  },
+  {
+   "word": "them",
+   "start": 21.48,
+   "end": 21.66
+  },
+  {
+   "word": "today.",
+   "start": 21.66,
+   "end": 21.92
+  }
+ ]
+}
