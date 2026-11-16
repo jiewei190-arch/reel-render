@@ -1,5 +1,5 @@
 {
- "duration": 21.64,
+ "duration": 20.48,
  "generated_from": "lines.json + timeline/words.json (build_short.py time)",
  "shots": [
   {
@@ -28,7 +28,7 @@
   {
    "id": "s02",
    "start": 1.46,
-   "end": 2.48,
+   "end": 2.72,
    "line": "carried ammo.",
    "in": {
     "type": "whipBlur",
@@ -55,8 +55,8 @@
   },
   {
    "id": "s03",
-   "start": 2.48,
-   "end": 4.96,
+   "start": 2.72,
+   "end": 5.42,
    "line": "In 1942, Polish soldiers in Iran",
    "in": {
     "type": "cut"
@@ -76,8 +76,8 @@
   },
   {
    "id": "s03b",
-   "start": 4.96,
-   "end": 6.02,
+   "start": 5.42,
+   "end": 6.46,
    "line": "adopted a bear cub",
    "in": {
     "type": "cut"
@@ -97,8 +97,8 @@
   },
   {
    "id": "s04",
-   "start": 6.02,
-   "end": 7.2,
+   "start": 6.46,
+   "end": 7.74,
    "line": "named Wojtek.",
    "in": {
     "type": "iris"
@@ -124,8 +124,8 @@
   },
   {
    "id": "s05",
-   "start": 7.2,
-   "end": 8.27,
+   "start": 7.74,
+   "end": 8.47,
    "line": "He loved beer,",
    "in": {
     "type": "whipBlur",
@@ -152,8 +152,8 @@
   },
   {
    "id": "s06",
-   "start": 8.27,
-   "end": 9.16,
+   "start": 8.47,
+   "end": 9.06,
    "line": "wrestling,",
    "in": {
     "type": "cut"
@@ -174,8 +174,8 @@
   },
   {
    "id": "s07",
-   "start": 9.16,
-   "end": 10.46,
+   "start": 9.06,
+   "end": 10.28,
    "line": "and long showers.",
    "in": {
     "type": "cut"
@@ -195,8 +195,8 @@
   },
   {
    "id": "s08",
-   "start": 10.46,
-   "end": 11.84,
+   "start": 10.28,
+   "end": 11.56,
    "line": "To ship him to Italy, the army",
    "in": {
     "type": "whipBlur",
@@ -222,8 +222,8 @@
   },
   {
    "id": "s09",
-   "start": 11.84,
-   "end": 13.38,
+   "start": 11.56,
+   "end": 13.28,
    "line": "listed him as a soldier.",
    "in": {
     "type": "cut"
@@ -243,8 +243,8 @@
   },
   {
    "id": "s10",
-   "start": 13.38,
-   "end": 14.8,
+   "start": 13.28,
+   "end": 14.18,
    "line": "At Monte Cassino, he",
    "in": {
     "type": "iris"
@@ -264,8 +264,8 @@
   },
   {
    "id": "s11",
-   "start": 14.8,
-   "end": 17.48,
+   "start": 14.18,
+   "end": 16.86,
    "line": "reportedly carried crates of artillery shells.",
    "in": {
     "type": "whipBlur",
@@ -297,8 +297,8 @@
   },
   {
    "id": "s12",
-   "start": 17.48,
-   "end": 19.32,
+   "start": 16.86,
+   "end": 18.5,
    "line": "His unit's badge... became",
    "in": {
     "type": "cut"
@@ -318,8 +318,8 @@
   },
   {
    "id": "s13",
-   "start": 19.32,
-   "end": 21.64,
+   "start": 18.5,
+   "end": 20.48,
    "line": "a bear carrying a shell.",
    "in": {
     "type": "flash",

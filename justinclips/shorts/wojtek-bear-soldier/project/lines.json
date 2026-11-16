@@ -3,6 +3,10 @@
  "emotion": "AW",
  "tail": 0.5,
  "cut_lead": 0.06,
+ "pacing": {
+  "gap": 0.4,
+  "beat": 0.6
+ },
  "note": "Single source of truth for the narration and the cut. Each shot starts at its line's start or at a word of that line; build_short.py turns this + the voice's word timings into story/shots.json. A line's optional \"tts\" is a pronunciation respelling with the same word count (Wojtek is said 'Voytek'). Tone guard: wholesome, no combat, nobody hurt.",
  "lines": [
   {
@@ -345,5 +349,10 @@
     }
    ]
   }
- ]
+ ],
+ "pronounce": {
+  "dia": {
+   "Wojtek": "Voytek"
+  }
+ }
 }
