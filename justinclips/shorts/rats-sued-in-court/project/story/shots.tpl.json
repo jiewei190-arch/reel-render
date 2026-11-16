@@ -1,0 +1,288 @@
+{
+ "tail": 0.45,
+ "topCaptionMin": 3.2,
+ "shots": [
+  {
+   "id": "s01",
+   "from": 0,
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:knock",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "from": {
+    "line": 1,
+    "word": "and",
+    "offset": -0.1
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "lawyer",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "from": {
+    "line": 2
+   },
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1500s",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "from": {
+    "line": 2,
+    "word": "rats",
+    "offset": -0.1
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "ate",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "autun",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "from": {
+    "line": 3
+   },
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:bell",
+     "gain": -10
+    },
+    {
+     "word": "summoned",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "from": {
+    "line": 4
+   },
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "show",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "from": {
+    "line": 5
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "unfair",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "from": {
+    "line": 5,
+    "word": "his",
+    "offset": -0.1
+   },
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "villages",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "from": {
+    "line": 6
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "from": {
+    "line": 6,
+    "word": "because",
+    "offset": -0.15
+   },
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "cats",
+     "name": "toon3d:fail",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "from": {
+    "line": 7
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "indoors",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "from": {
+    "line": 7,
+    "word": "the",
+    "nth": 2,
+    "offset": -0.1
+   },
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "no",
+     "name": "toon3d:buzz",
+     "gain": -10
+    },
+    {
+     "word": "no",
+     "offset": 0.02,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "from": {
+    "line": 8,
+    "word": "case",
+    "offset": -0.12
+   },
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "word": "thrown",
+     "offset": -0.08,
+     "name": "toon3d:knock",
+     "gain": -5
+    },
+    {
+     "word": "thrown",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "out",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

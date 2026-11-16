@@ -1,0 +1,14 @@
+{
+ "note": "The narration, one entry per spoken line. Edit here, then re-run justinclips/tools/shortbuild.py. '...' = a held beat before the punchline. Years/numbers stay digits (the D2 tool spells them for the TTS; captions keep digits).",
+ "emotion": "LOL",
+ "lines": [
+  {"n": 1, "text": "Rats once got sued. And they got a lawyer."},
+  {"n": 2, "text": "France, the early 1500s. Rats reportedly ate the barley around Autun."},
+  {"n": 3, "text": "So a court summoned the rats."},
+  {"n": 4, "text": "The rats... did not show up."},
+  {"n": 5, "text": "Their lawyer said that was unfair: his clients lived in lots of villages."},
+  {"n": 6, "text": "Then he said they couldn't come safely... because of the town's cats."},
+  {"n": 7, "text": "He wanted the cats kept indoors. The owners said no."},
+  {"n": 8, "text": "So the case was reportedly thrown out."}
+ ]
+}

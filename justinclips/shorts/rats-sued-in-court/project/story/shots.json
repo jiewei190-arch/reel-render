@@ -1,0 +1,263 @@
+{
+ "duration": 27.394,
+ "shots": [
+  {
+   "id": "s01",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:knock",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "start": 0.0,
+   "end": 1.9
+  },
+  {
+   "id": "s02",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "lawyer",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ],
+   "start": 1.9,
+   "end": 3.493
+  },
+  {
+   "id": "s03",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "1500s",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ],
+   "start": 3.493,
+   "end": 5.64
+  },
+  {
+   "id": "s04",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "ate",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "autun",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ],
+   "start": 5.64,
+   "end": 8.12
+  },
+  {
+   "id": "s05",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:bell",
+     "gain": -10
+    },
+    {
+     "word": "summoned",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "start": 8.12,
+   "end": 10.249
+  },
+  {
+   "id": "s06",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "show",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "start": 10.249,
+   "end": 12.311
+  },
+  {
+   "id": "s07",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "unfair",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "start": 12.311,
+   "end": 14.14
+  },
+  {
+   "id": "s08",
+   "in": {
+    "type": "zoom"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "villages",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "start": 14.14,
+   "end": 16.276
+  },
+  {
+   "id": "s09",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ],
+   "start": 16.276,
+   "end": 18.65
+  },
+  {
+   "id": "s10",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "cats",
+     "name": "toon3d:fail",
+     "gain": -12
+    }
+   ],
+   "start": 18.65,
+   "end": 20.655
+  },
+  {
+   "id": "s11",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "indoors",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ],
+   "start": 20.655,
+   "end": 22.72
+  },
+  {
+   "id": "s12",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "no",
+     "name": "toon3d:buzz",
+     "gain": -10
+    },
+    {
+     "word": "no",
+     "offset": 0.02,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "start": 22.72,
+   "end": 24.98
+  },
+  {
+   "id": "s13",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "word": "thrown",
+     "offset": -0.08,
+     "name": "toon3d:knock",
+     "gain": -5
+    },
+    {
+     "word": "thrown",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "out",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ],
+   "start": 24.98,
+   "end": 27.394
+  }
+ ]
+}
