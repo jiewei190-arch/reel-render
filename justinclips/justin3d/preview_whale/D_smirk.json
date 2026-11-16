@@ -1,0 +1,31 @@
+{
+ "duration": 4.34,
+ "fps": 24,
+ "framing": "bust",
+ "seed": 14,
+ "blinks": [
+  1.6,
+  3.4
+ ],
+ "pop_in": 0.0,
+ "keys": [
+  {
+   "t": 0.0,
+   "pose": "cross_arms",
+   "expr": "smirk",
+   "face": {
+    "look_x": 0.4
+   }
+  },
+  {
+   "t": 0.55,
+   "pose": "cross_arms",
+   "expr": "smirk",
+   "dur": 0.35,
+   "face": {
+    "look_x": 0.0,
+    "brow_up_L": 0.9
+   }
+  }
+ ]
+}

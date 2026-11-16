@@ -1,0 +1,24 @@
+{
+ "duration": 0.8,
+ "fps": 24,
+ "framing": "bust",
+ "seed": 13,
+ "blinks": [],
+ "pop_in": 0.0,
+ "pop_out": 0.64,
+ "keys": [
+  {
+   "t": 0.0,
+   "pose": "idle",
+   "expr": "cringe",
+   "face": {
+    "grimace": 1.2
+   }
+  },
+  {
+   "t": 0.12,
+   "pose": "idle_b",
+   "dur": 0.3
+  }
+ ]
+}

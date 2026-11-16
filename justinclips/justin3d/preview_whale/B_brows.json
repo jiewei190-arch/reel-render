@@ -1,0 +1,22 @@
+{
+ "duration": 0.8,
+ "fps": 24,
+ "framing": "bust",
+ "seed": 12,
+ "blinks": [],
+ "pop_in": 0.0,
+ "pop_out": 0.64,
+ "keys": [
+  {
+   "t": 0.0,
+   "pose": "idle",
+   "expr": "shock",
+   "face": {
+    "shock": 0.35,
+    "brow_up_L": 1.2,
+    "brow_up_R": 1.2,
+    "eyes_wide": 1.0
+   }
+  }
+ ]
+}
