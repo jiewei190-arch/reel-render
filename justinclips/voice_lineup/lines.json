@@ -1,0 +1,30 @@
+{
+ "title": "bucket-war (voice lineup test script)",
+ "lines": [
+  {
+   "text": "Two cities went to war... over a bucket.",
+   "pause": 0.35
+  },
+  {
+   "text": "In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket.",
+   "pause": 0.3
+  },
+  {
+   "text": "Bologna sent an army to get it back.",
+   "pause": 0.3
+  },
+  {
+   "text": "Modena won.",
+   "pause": 0.35
+  },
+  {
+   "text": "And the bucket? It's still in Modena today.",
+   "pause": 0.0
+  }
+ ],
+ "pronounce": {
+  "kokoro": {
+   "Modena": "Mohdenna"
+  }
+ }
+}

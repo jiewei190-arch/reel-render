@@ -1,0 +1,79 @@
+{
+ "engine": "chatterbox",
+ "settings": {
+  "voice": "built-in default",
+  "exaggeration": 0.6,
+  "cfg_weight": 0.3,
+  "temperature": 0.8
+ },
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "duration_s": 12.96,
+ "load_s": 18.4,
+ "render_s": 135.6,
+ "synth_s": 120.5,
+ "synth_s_per_10s_audio": 93.0,
+ "lufs": -14.1,
+ "true_peak_dbtp": -1.7,
+ "final_transcript": "Two cities went to war. Over a bucket. In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket. Bologna sent an army to get it back. Modena won. And the bucket? It's still in Modena today.",
+ "final_wrong_words": 0,
+ "parts": [
+  {
+   "line": 1,
+   "text": "Two cities went to war...",
+   "start": 0.15,
+   "end": 1.38,
+   "seed": 7,
+   "heard": "Two cities went to war.",
+   "wrong_words": 0
+  },
+  {
+   "line": 1,
+   "text": "over a bucket.",
+   "start": 1.83,
+   "end": 2.67,
+   "seed": 7,
+   "heard": "over a bucket.",
+   "wrong_words": 0
+  },
+  {
+   "line": 2,
+   "text": "In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket.",
+   "start": 3.02,
+   "end": 7.05,
+   "seed": 7,
+   "heard": "In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket.",
+   "wrong_words": 0
+  },
+  {
+   "line": 3,
+   "text": "Bologna sent an army to get it back.",
+   "start": 7.35,
+   "end": 9.1,
+   "seed": 7,
+   "heard": "Bologna sent an army to get it back.",
+   "wrong_words": 0
+  },
+  {
+   "line": 4,
+   "text": "Modena won.",
+   "start": 9.4,
+   "end": 10.18,
+   "seed": 7,
+   "heard": "Modena 1.",
+   "wrong_words": 1
+  },
+  {
+   "line": 5,
+   "text": "And the bucket? It's still in Modena today.",
+   "start": 10.53,
+   "end": 12.66,
+   "seed": 7,
+   "heard": "and the bucket, it's still in Modena today.",
+   "wrong_words": 0
+  }
+ ]
+}
