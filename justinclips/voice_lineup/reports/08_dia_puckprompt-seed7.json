@@ -1,0 +1,32 @@
+{
+ "engine": "dia",
+ "settings": {
+  "voice": "audio prompt dia_prompt_kokoro_am_puck.wav: \"Okay, so you're not gonna believe this one, but it's totally true. I looked it up like three times, because I honestly thought it was a joke.\"",
+  "guidance_scale": 3.0,
+  "temperature": 1.8,
+  "top_p": 0.9,
+  "top_k": 45
+ },
+ "seeds_tried": [
+  7
+ ],
+ "duration_s": 12.73,
+ "load_s": 5.1,
+ "render_s": 245.5,
+ "synth_s": 233.6,
+ "synth_s_per_10s_audio": 183.5,
+ "lufs": -14.2,
+ "true_peak_dbtp": -1.6,
+ "final_transcript": "Two cities went to war over a bucket. In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket. Bologna sent an army to get it back. Modena won! And the bucket? It's still in Modena today!",
+ "final_wrong_words": 0,
+ "parts": [
+  {
+   "text": "Two cities went to war... over a bucket. In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket. Bologna sent an army to get it back. Modena won. And the bucket? It's still in Modena today.",
+   "start": 0.15,
+   "end": 12.43,
+   "seed": 7,
+   "heard": "Two cities went to war over a bucket. In 1325, soldiers from Modena snuck into Bologna and stole a wooden bucket. Bologna sent an army to get it back. Modena won. And the bucket? It's still in Modena today.",
+   "wrong_words": 0
+  }
+ ]
+}
