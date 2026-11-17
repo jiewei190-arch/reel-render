@@ -115,3 +115,51 @@ Studio again showed "We're still checking your content"; I acknowledged it with 
 **Studio list after batch 3:** 17 Shorts "Scheduled" (batches 1-3), Nov 16-21. No other video was touched.
 
 **Still held:** coca-cola-cocaine-v2, not uploaded.
+
+## "Altered or synthetic content" label set to No (Nov 17 2026)
+**What happened:** MAIN asked, as the owner's standing rule (RULES.md @ 27c14cd), for this setting to be "No". The owner confirmed it directly in Creator's chat ("Yes, set all 17 to No").
+
+**How it was changed:**
+- Done on each video's Studio details page, under "AI use: Was AI used to generate or edit your content…".
+- Only that radio was changed, then saved.
+- The title, description (including "Voice is synthetic."), visibility and schedule were not touched.
+- Each video was reloaded afterwards to confirm the change.
+- No setting was locked or auto-applied by YouTube.
+
+**Already "No" before my edit (6):**
+- The 3 Shorts that went public on Nov 16.
+- The 3 batch-3 Shorts.
+
+The batch-3 radio set at upload apparently didn't stick, or someone changed it since.
+
+**Shortest War** needed a second save: the first one didn't register. The second save was confirmed ("Changes saved") and then checked after a reload.
+
+| n | YouTube ID | visibility now | label before | label after |
+|---|---|---|---|---|
+| 1 | aztF-yexSds | Public | No | No (unchanged) |
+| 2 | YuEvsLzpylg | Public | No | No (unchanged) |
+| 3 | S_pWxldoin0 | Public | No | No (unchanged) |
+| 4 | Ag8-k-pwKJo | Scheduled | Yes | **No** |
+| 5 | j6U76GRJelc | Scheduled | Yes | **No** |
+| 6 | piUp1_kPPkU | Scheduled | Yes | **No** |
+| 7 | lFd94caZFT0 | Scheduled | Yes | **No** |
+| 8 | tF2-Hd2k0oQ | Scheduled | Yes | **No** |
+| 9 | tgtaJR7TnLY | Scheduled | Yes | **No** |
+| 10 | qeTWcCWoqhc | Scheduled | Yes | **No** |
+| 11 | bp961xgW6SE | Scheduled | Yes | **No** |
+| 12 | wEjhqXqJpZA | Scheduled | Yes | **No** (needed a second save) |
+| 13 | CcblqECGorc | Scheduled | Yes | **No** |
+| 14 | nfE_g4EJJ8g | Scheduled | Yes | **No** |
+| 15 | MfM4wD5kkVk | Scheduled | No | No (unchanged) |
+| 16 | cd1TsL_QqPc | Scheduled | No | No (unchanged) |
+| 17 | oEy8gk33VSo | Scheduled | No | No (unchanged) |
+
+**Studio list afterwards:** 14 Scheduled (Nov 17–21) plus the 3 now-public Shorts. Their dates are unchanged.
+
+## Batch 4: ON HOLD (not uploaded)
+The owner answered **"Not now"** in Creator's chat, so nothing from batch4.json (@ 27c14cd) was uploaded or scheduled.
+
+The prep is done and kept on the PC only:
+- All 10 checksums match both the manifest `sha256` field and `video.sha256`.
+- All 10 are re-encoded under the 10.4 MB cap (9.56–9.77 MB, same 1080x1920 and frame counts, audio copied).
+- Upload copies are in the Creator worktree `_yt_upload/`.
