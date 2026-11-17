@@ -11,7 +11,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-21 19:00",
     "sha256": "e7eaf299d835f60f1915a7713bc285c4cb3507a648c832c61380e9bdbc93cdb4",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 19,
@@ -25,7 +26,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-22 11:00",
     "sha256": "5bc7d4f478003fd64f26fc6ede953d55452bcc7a6d04256fac91ecba99158bc9",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 20,
@@ -39,7 +41,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-22 15:00",
     "sha256": "c43ea89e3a6520355e94c85937923c51c6b63d4de1d6e043eed238c2ef37ae9f",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 21,
@@ -53,7 +56,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-22 19:00",
     "sha256": "4a94b1c3f52c02627e6b4708608d37ce89eab60fd4da93f0486cd7cc66083e59",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 22,
@@ -67,7 +71,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-23 11:00",
     "sha256": "cb9bbd7d1e90ad3b6addb769245447fe24d7231996679ecdfd2c7baa3484bd84",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 23,
@@ -81,7 +86,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-23 15:00",
     "sha256": "4c8b95d4253b101f23f45ecbfc9732b5079b0b99934d7dc13dc7b58fb39b5ca3",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 24,
@@ -95,7 +101,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-23 19:00",
     "sha256": "f673c3d0657959d455e042974561c5da49e46bc3ed5b5c80832b91ea82719ecb",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 25,
@@ -109,7 +116,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-24 11:00",
     "sha256": "90cceaa995430982cd7685ce79ca0bb484aeece35603bae8eb9cfbb0e047e77e",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 26,
@@ -123,7 +131,8 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-24 15:00",
     "sha256": "27907a3e96cc82d06f3c1ee5c65eb1e4ebd6939af8c2433950b3cf3eb7cbf79f",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   },
   {
     "n": 27,
@@ -137,6 +146,7 @@
     "timezone": "America/New_York",
     "schedule_local": "2026-11-24 19:00",
     "sha256": "9828e65d86a2b22314962a0b8eec2edbbffe613ebdc8175f4dc31061487218b9",
-    "voice": "regular (Chatterbox D2)"
+    "voice": "regular (Chatterbox D2)",
+    "altered_content": "No"
   }
 ]
