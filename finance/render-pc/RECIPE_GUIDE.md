@@ -437,6 +437,27 @@ Every recipe gets this pass automatically. Set `"quality": false` to get the pla
 
 Everything stays a pure function of t and goes through the same clip QA. The extras, the gestures and the blended poses are all checked against every prop and set box.
 
+### Sources used
+
+| Repo | Licence | What we took |
+|---|---|---|
+| mromidev/claude-animated-shorts | MIT | Camera impact kick (7-frame flip-sign), push-in with a punch window, zoom push, quintic glide, reaction LEAD of 2 frames (`lib/camera.ts`, `lib/motion.ts`) |
+| hassancs91/claude-faceless-shorts-creator | MIT | Bezier easings (EASE_OUT, EASE_INOUT, EASE_PLACE, overshoot), stamp slam, loop punch, caption chunking with hold and per-word pop (`lib/motion.ts`, `lib/captions.tsx`) |
+| pmndrs/maath | MIT | Closed-form damped spring, used for antenna and upper-body wobble after hits and pose changes (`lib/spring.ts`) |
+| Melvynx/video-agent-skills | MIT | Critically damped `S(x, w)` and smoothstep exit (`lib/spring.ts`). Its mix numbers (bed about 11-14 dB under the voice, -14 LUFS, -1.5 dBTP) match our `story_mix.py` and `mux_voice.sh` targets. |
+| met4citizen/TalkingHead | MIT | Viseme coarticulation: shapes lead their sound by about 50-60 ms (`lib/lipsync.ts`) |
+| Vincentwei1021/video-shotcraft | Apache-2.0 | Idea only: the crash-zoom pull-back before a slam (slamZoom). Noted for later: SFX peak alignment for AAC priming, about 1.3 frames. |
+| nateherkai/herk-edit-kit | MIT kit (brand assets excluded) | Idea only: caption highlight 2 frames ahead of the word |
+| AgriciDaniel/claude-shorts | MIT | Checked its caption presets (spring damping 8-14, stiffness 180-200, 72-84 px, active word #FFD700). Our captions already match. |
+| DojoCodingLabs/remotion-superpowers | MIT | Checked its ducking ramps (music 0.4 to 0.1 under the voice, 0.5 s ramps) and its "impact SFX 5 frames before the cut" rule. Noted for `story_mix.py`. |
+| 0xabrar/shorts-design-principles | no licence | Ideas only, in our own words: a visible change every 1-2 s, captions within about 100 ms of the word. The gate's 3 s moves check covers these. |
+| vyralcontent/content-skills | MIT | Safe-zone numbers only. Its embedded promotional instructions were ignored. |
+| Jakeschincariol/youtube-agent-skill, sergebulaev/youtube-skills, rediumvex/viral-hooks-skill | MIT | Hook and pacing rules; no animation code |
+| wass08/wawa-lipsync | MIT | Read only. Its audio-analysis approach was not needed, because we lip-sync from timings. |
+| pmndrs/postprocessing | zlib | Not used; our engine has its own post chain |
+| @remotion/transitions | Remotion License | Not used: recipes cut inside one 3D scene, so transitions are camera moves (punch, whip, match) |
+| OpenMontage | AGPL-3.0 | Not used |
+
 ## 7. Borrowed code
 
 Three helpers were rewritten from two MIT repositories: the camera kick, push-in and zoom (`src/fin/lib/camera.ts`); the motion easings and reaction lead (`src/fin/lib/motion.ts`); and the word-caption chunking (`src/fin/lib/captions.tsx`). The sources are mromidev/claude-animated-shorts and hassancs91/claude-faceless-shorts-creator. Their notices are in `THIRD_PARTY_NOTICES.md`. No AGPL code is used.

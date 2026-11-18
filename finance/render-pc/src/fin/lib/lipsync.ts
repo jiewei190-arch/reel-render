@@ -21,8 +21,9 @@ const V = (ch: string): Viseme | null => {
 };
 /** the mouth shape at time t for a list of words (null = silence: use the emotion's own mouth) */
 export const visemeAt = (words: readonly LipWord[], t: number): Viseme => {
-  // hold each shape >= 2 frames: sample at the start of the 2-frame slot
-  const ts = Math.floor(t * FPS / 2) * 2 / FPS;
+  // coarticulation lead (met4citizen/TalkingHead, MIT: a viseme ramps in up to 60 ms before its sound): the mouth
+  // shows each shape ~50 ms early; then hold each shape >= 2 frames by sampling at the start of the 2-frame slot
+  const ts = Math.floor((t + 0.05) * FPS / 2) * 2 / FPS;
   for (let i = 0; i < words.length; i++) {
     const w = words[i];
     if (ts >= w.t && ts < w.end) {

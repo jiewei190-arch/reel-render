@@ -159,3 +159,37 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Animation quality pass: further sources (read as text only; nothing installed or run)
+
+| Item | Author | Licence | Source (commit read) | Used in |
+|---|---|---|---|---|
+| Closed-form damped spring (coefficients) | Isaac Mason | MIT | github.com/pmndrs/maath `src/time/spring-core.ts` (dee0cae) | `src/fin/lib/spring.ts` (springFree, wobbleAt) |
+| Critically damped step S(x, w), smoothstep exit | Melvyn Malherbe | MIT | github.com/Melvynx/video-agent-skills `skills/short-editing/engine/lib/kit.js` (f454292) | `src/fin/lib/spring.ts` |
+| Viseme coarticulation lead (shape ramps in up to 60 ms before its sound) | Mika Suominen | MIT | github.com/met4citizen/TalkingHead `modules/talkinghead.mjs` (1563de1) | `src/fin/lib/lipsync.ts` |
+| Crash-zoom anticipation (a short pull-back before the punch) | Wei Yihao | Apache-2.0 (idea and numbers only; no code copied) | github.com/Vincentwei1021/video-shotcraft (55eb60d) | `src/fin/recipe/compile.tsx` slamZoom |
+| Caption highlight 2 frames before the word | Nate Herk | MIT kit; idea only, no code; the brand assets are not used | github.com/nateherkai/herk-edit-kit (10511e5) | `src/fin/lib/captions.tsx` |
+
+The MIT licence text for each MIT row is identical to the text above. Only the copyright lines differ:
+- Copyright (c) 2026 Isaac Mason (pmndrs/maath)
+- Copyright (c) 2026 Melvyn Malherbe (Melvynx/video-agent-skills)
+- Copyright (c) 2023-2024 Mika Suominen (met4citizen/TalkingHead)
+
+```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+Licence notes from the review:
+- pmndrs/postprocessing is **zlib**, not MIT. None of its code is used; the engine has its own post chain.
+- remotion-dev/remotion and `@remotion/transitions` are under the **Remotion License**. It is free only for individuals, for-profit companies with up to 3 employees, and non-profits; otherwise a company licence is needed. The toolkit does not use `@remotion/transitions`, and the project's existing Remotion dependency already falls under this licence.
+- OpenMontage is AGPL-3.0 and was not read for code.

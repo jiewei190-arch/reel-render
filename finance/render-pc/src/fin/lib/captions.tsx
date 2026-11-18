@@ -36,7 +36,7 @@ export const RecipeCaptions: React.FC<{ chunks: CapChunk[]; t: number; style?: C
   return (
     <div style={{ position: "absolute", left: SAFE.left + 10, right: SAFE.right + 10, top: 1920 * centre - 120, height: 240, display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", columnGap: size * 0.28, transform: `translateY(${(1 - enter) * 14}px)` }}>
       {c.words.map((q, i) => {
-        const on = t >= q.t - 0.03 && t < q.end + 0.05;
+        const on = t >= q.t - 2 / 30 && t < q.end + 0.05; // highlight 2 frames before the word (herk-edit-kit, idea)
         const st = prog(t, q.t - 0.05, q.t + 0.07);
         const txt = q.w.replace(/[.,!?…:]+$/, "");
         return (

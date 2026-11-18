@@ -26,6 +26,7 @@ import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
 import { nodAt, speakingAt, visemeAt } from "../lib/lipsync";
+import { wobbleAt } from "../lib/spring";
 import type { Viseme } from "../../blocky/Blocky";
 import { canvasTexture, geoOf } from "../../blocky/mat";
 import * as THREE from "three";
@@ -343,6 +344,9 @@ export const actorState = (a: ActorR | undefined, t: number): ActorState | null 
       pose = { ...pose, headPitch: pose.headPitch + nodAt(a.words, t), bob: (pose.bob ?? 0) - (speakingAt(a.words, t) ? 0.008 * Math.abs(Math.sin(t * 11)) : 0) };
       mouth = visemeAt(a.words, t);
     }
+    // secondary motion: antennae and upper body ring out after squash hits and pose changes (damped spring)
+    const jolts = [...a.squash, ...a.segs.slice(1).map((s) => s.t0 + LEAD)];
+    pose = { ...pose, antWob: (pose.antWob ?? 0) + wobbleAt(t, jolts, 0.5, 0.28, 0.3), sway: (pose.sway ?? 0) + wobbleAt(t, jolts, 0.05, 0.3, 0.4) };
     // an expression change hides behind a blink (the decal swaps under closed lids)
     blink = blinkVar(t, a.seed, a.segs.slice(1).map((s) => s.t0 + LEAD - 1 / 30));
   }
@@ -432,7 +436,11 @@ const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: nu
   }
   const L = base(tg);
   switch (c.preset) {
-    case "slamZoom": return { lens: { ...L, fovAt: slam(hit, 60, c.fov ?? P.fov, 0.12) } };
+    case "slamZoom": {
+      // crash-zoom anticipation (video-shotcraft, Apache-2.0, idea): pull back ~3 % over the 6 frames before the hit
+      const sl = slam(hit, 60, c.fov ?? P.fov, 0.12);
+      return { lens: { ...L, fovAt: (t: number) => sl(t) + (t < hit && t > hit - 0.2 ? 1.8 * Math.sin(Math.PI * (t - hit + 0.2) / 0.2) : 0) } };
+    }
     case "pushIn": { const s0 = L.subj(a), p0 = L.pos!; return { lens: { ...L, posAt: (t) => lerpV(s0, p0, pushK(t, a, 0.003, 0.006, 35)) } }; }
     case "whip": {
       const p0 = L.pos!, s0 = L.subj;
