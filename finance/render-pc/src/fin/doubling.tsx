@@ -21,7 +21,7 @@ const POD_H = 0.75;
 const P_PN: V3 = [-0.75, 0, 0.35];
 const P_SV: V3 = [1.25, 0, 0.3];
 const P_TL: V3 = [1.0, 0, -1.25];
-const CAL: V3 = [-1.55, 2.2, -3.44];
+const CAL: V3 = [-0.35, 2.55, -3.44];
 const SIGN: V3 = [1.7, 2.65, -3.42];
 const BOARD: V3 = [-1.7, 0, -2.3];
 const ROW: V3 = [0.6, 0, -2.0];
@@ -42,7 +42,7 @@ const blockH = (v: number) => 0.32 * Math.pow(v, 0.62);
 
 const pn = (bust = false) => body(P_PN, S.penny, bust);
 const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
-  S01: fitted([...pn(), [POD[0], POD_H + 1.0, POD[2]], [POD[0] + 0.4, 0, POD[2]]], 14, 0.12, D.S01, { mood: "store", face: 0.52 }),
+  S01: fitted([...pn(), [POD[0], POD_H + 1.0, POD[2]], [POD[0] + 0.4, 0, POD[2]]], 14, 0.1, D.S01, { mood: "store", face: 0.6, m: 0.06 }),
   S02: manual([POD[0], POD_H + 0.3, POD[2]], 8, 1.5, 0.15, { mood: "store" }),
   S03: fitted([...body(P_SV, S.saver), [P_SV[0], 2.35, P_SV[2]]], -18, 0.1, D.S03, { mood: "store" }),
   S04: fitted([...body(P_SV, S.saver), [SIGN[0], SIGN[1] + 0.3, SIGN[2]], [SIGN[0] - 0.8, SIGN[1], SIGN[2]]], -8, 0.08, D.S04, { mood: "store", fov: 56 }),
@@ -59,7 +59,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S15: fitted([[ROW[0] - 1.0, 0, ROW[2]], [ROW[0] + 1.0, 2.45, ROW[2]]], -8, 0.1, D.S15, { mood: "store" }),
   S16: fitted([...pn(), [ROW[0] + 0.75, 2.1, ROW[2]]], 10, 0.1, D.S16, { mood: "ending" }),
   S17: fitted([...pn(), ...body(P_SV, S.saver), [ROW[0] + 0.75, 2.2, ROW[2]]], 2, -0.08, D.S17, { mood: "ending", fov: 58 }),
-  S18: fitted([...pn(), [POD[0], POD_H + 1.0, POD[2]], [POD[0] + 0.4, 0, POD[2]]], 14, 0.12, D.S18, { mood: "store", face: 0.52 }),
+  S18: fitted([...pn(), [POD[0], POD_H + 1.0, POD[2]], [POD[0] + 0.4, 0, POD[2]]], 14, 0.1, D.S18, { mood: "store", face: 0.6, m: 0.06 }),
 };
 export const DOUBLING_SHOTS = buildShots(PLAN, LENS);
 
