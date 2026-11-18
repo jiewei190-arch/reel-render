@@ -2,7 +2,7 @@
 2. Saver puts away two hundred a month from twenty-five to thirty-five, then stops.
 3. Spender saves the same two hundred from thirty-five to sixty-five.
 4. Saver put in twenty-four thousand. Spender, seventy-two thousand.
-5. Assume a steady seven percent a year, just as an example.
+5. Assume a steady seven percent a year, as an example.
 6. At sixty-five, Saver has about two hundred eighty thousand. Spender, about two hundred forty-five.
-7. Real returns aren't steady, and nothing is guaranteed. But time did the heavy lifting.
+7. Real returns vary, nothing is guaranteed, but time did the heavy lifting.
 8. That's how

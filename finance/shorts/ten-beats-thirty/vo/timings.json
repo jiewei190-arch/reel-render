@@ -1,0 +1,453 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 31.259
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Ten years of saving can beat thirty.",
+   "words": [
+    {
+     "w": "Ten",
+     "t": 0.0,
+     "end": 0.38
+    },
+    {
+     "w": "years",
+     "t": 0.38,
+     "end": 0.52
+    },
+    {
+     "w": "of",
+     "t": 0.52,
+     "end": 0.7
+    },
+    {
+     "w": "saving",
+     "t": 0.7,
+     "end": 0.98
+    },
+    {
+     "w": "can",
+     "t": 0.98,
+     "end": 1.22
+    },
+    {
+     "w": "beat",
+     "t": 1.22,
+     "end": 1.38
+    },
+    {
+     "w": "thirty.",
+     "t": 1.38,
+     "end": 1.68
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Saver puts away two hundred a month from twenty-five to thirty-five, then stops.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 2.34,
+     "end": 2.64
+    },
+    {
+     "w": "puts",
+     "t": 2.64,
+     "end": 2.86
+    },
+    {
+     "w": "away",
+     "t": 2.86,
+     "end": 3.14
+    },
+    {
+     "w": "two",
+     "t": 3.14,
+     "end": 3.284
+    },
+    {
+     "w": "hundred",
+     "t": 3.284,
+     "end": 3.62
+    },
+    {
+     "w": "a",
+     "t": 3.62,
+     "end": 3.9
+    },
+    {
+     "w": "month",
+     "t": 3.9,
+     "end": 4.12
+    },
+    {
+     "w": "from",
+     "t": 4.12,
+     "end": 4.36
+    },
+    {
+     "w": "twenty-five",
+     "t": 4.36,
+     "end": 4.88
+    },
+    {
+     "w": "to",
+     "t": 4.88,
+     "end": 5.26
+    },
+    {
+     "w": "thirty-five,",
+     "t": 5.26,
+     "end": 5.74
+    },
+    {
+     "w": "then",
+     "t": 6.12,
+     "end": 6.38
+    },
+    {
+     "w": "stops.",
+     "t": 6.38,
+     "end": 6.68
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender saves the same two hundred from thirty-five to sixty-five.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 7.48,
+     "end": 7.76
+    },
+    {
+     "w": "saves",
+     "t": 7.76,
+     "end": 8.08
+    },
+    {
+     "w": "the",
+     "t": 8.08,
+     "end": 8.28
+    },
+    {
+     "w": "same",
+     "t": 8.28,
+     "end": 8.44
+    },
+    {
+     "w": "two",
+     "t": 8.44,
+     "end": 8.59
+    },
+    {
+     "w": "hundred",
+     "t": 8.59,
+     "end": 8.94
+    },
+    {
+     "w": "from",
+     "t": 8.94,
+     "end": 9.3
+    },
+    {
+     "w": "thirty-five",
+     "t": 9.3,
+     "end": 9.88
+    },
+    {
+     "w": "to",
+     "t": 9.88,
+     "end": 10.06
+    },
+    {
+     "w": "sixty-five.",
+     "t": 10.06,
+     "end": 10.52
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Saver put in twenty-four thousand. Spender, seventy-two thousand.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 11.2,
+     "end": 11.5
+    },
+    {
+     "w": "put",
+     "t": 11.5,
+     "end": 11.7
+    },
+    {
+     "w": "in",
+     "t": 11.7,
+     "end": 11.84
+    },
+    {
+     "w": "twenty-four",
+     "t": 11.84,
+     "end": 12.351
+    },
+    {
+     "w": "thousand.",
+     "t": 12.351,
+     "end": 12.76
+    },
+    {
+     "w": "Spender,",
+     "t": 13.04,
+     "end": 13.38
+    },
+    {
+     "w": "seventy-two",
+     "t": 13.38,
+     "end": 14.002
+    },
+    {
+     "w": "thousand.",
+     "t": 14.002,
+     "end": 14.5
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Assume a steady seven percent a year, just as an example.",
+   "words": [
+    {
+     "w": "Assume",
+     "t": 14.88,
+     "end": 15.3
+    },
+    {
+     "w": "a",
+     "t": 15.3,
+     "end": 15.48
+    },
+    {
+     "w": "steady",
+     "t": 15.48,
+     "end": 15.64
+    },
+    {
+     "w": "seven",
+     "t": 15.64,
+     "end": 15.89
+    },
+    {
+     "w": "percent",
+     "t": 15.89,
+     "end": 16.24
+    },
+    {
+     "w": "a",
+     "t": 16.24,
+     "end": 16.46
+    },
+    {
+     "w": "year,",
+     "t": 16.46,
+     "end": 16.68
+    },
+    {
+     "w": "just",
+     "t": 16.88,
+     "end": 17.08
+    },
+    {
+     "w": "as",
+     "t": 17.08,
+     "end": 17.28
+    },
+    {
+     "w": "an",
+     "t": 17.28,
+     "end": 17.4
+    },
+    {
+     "w": "example.",
+     "t": 17.4,
+     "end": 17.72
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "At sixty-five, Saver has about two hundred eighty thousand. Spender, about two hundred forty-five.",
+   "words": [
+    {
+     "w": "At",
+     "t": 18.38,
+     "end": 18.5
+    },
+    {
+     "w": "sixty-five,",
+     "t": 18.5,
+     "end": 18.92
+    },
+    {
+     "w": "Saver",
+     "t": 19.46,
+     "end": 19.78
+    },
+    {
+     "w": "has",
+     "t": 19.78,
+     "end": 20.08
+    },
+    {
+     "w": "about",
+     "t": 20.08,
+     "end": 20.38
+    },
+    {
+     "w": "two",
+     "t": 20.38,
+     "end": 20.527
+    },
+    {
+     "w": "hundred",
+     "t": 20.527,
+     "end": 20.872
+    },
+    {
+     "w": "eighty",
+     "t": 20.872,
+     "end": 21.167
+    },
+    {
+     "w": "thousand.",
+     "t": 21.167,
+     "end": 21.56
+    },
+    {
+     "w": "Spender,",
+     "t": 22.12,
+     "end": 22.58
+    },
+    {
+     "w": "about",
+     "t": 22.58,
+     "end": 23.1
+    },
+    {
+     "w": "two",
+     "t": 23.1,
+     "end": 23.252
+    },
+    {
+     "w": "hundred",
+     "t": 23.252,
+     "end": 23.605
+    },
+    {
+     "w": "forty-five.",
+     "t": 23.605,
+     "end": 24.06
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Real returns aren't steady, and nothing is guaranteed. But time did the heavy lifting.",
+   "words": [
+    {
+     "w": "Real",
+     "t": 24.74,
+     "end": 24.98
+    },
+    {
+     "w": "returns",
+     "t": 24.98,
+     "end": 25.34
+    },
+    {
+     "w": "aren't",
+     "t": 25.34,
+     "end": 25.66
+    },
+    {
+     "w": "steady,",
+     "t": 25.66,
+     "end": 25.96
+    },
+    {
+     "w": "and",
+     "t": 26.28,
+     "end": 26.56
+    },
+    {
+     "w": "nothing",
+     "t": 26.56,
+     "end": 26.88
+    },
+    {
+     "w": "is",
+     "t": 26.88,
+     "end": 27.08
+    },
+    {
+     "w": "guaranteed.",
+     "t": 27.08,
+     "end": 27.56
+    },
+    {
+     "w": "But",
+     "t": 27.56,
+     "end": 28.52
+    },
+    {
+     "w": "time",
+     "t": 28.52,
+     "end": 28.82
+    },
+    {
+     "w": "did",
+     "t": 28.82,
+     "end": 29.02
+    },
+    {
+     "w": "the",
+     "t": 29.02,
+     "end": 29.14
+    },
+    {
+     "w": "heavy",
+     "t": 29.14,
+     "end": 29.32
+    },
+    {
+     "w": "lifting.",
+     "t": 29.32,
+     "end": 29.68
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "That's how",
+   "words": [
+    {
+     "w": "That's",
+     "t": 30.22,
+     "end": 30.56
+    },
+    {
+     "w": "how",
+     "t": 30.56,
+     "end": 30.7
+    }
+   ]
+  }
+ ]
+}

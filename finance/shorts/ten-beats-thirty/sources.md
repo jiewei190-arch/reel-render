@@ -1,7 +1,7 @@
 # Sources and maths: ten-beats-thirty
 
 **Hypothetical example only; not a prediction or a promise of any return.** The VO says "Assume a steady seven percent
-a year, just as an example" and "Real returns aren't steady, and nothing is guaranteed."
+a year, as an example" and "Real returns vary, nothing is guaranteed."
 
 Assumptions (shown on screen as "EXAMPLE: 7%/YR, STEADY"):
 - $200 deposited at the start of every month.

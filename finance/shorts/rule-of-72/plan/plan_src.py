@@ -26,7 +26,7 @@ SHOTS = [
     ("S17", (9, "wrong", 1), "store", "close on Spender, push-in", "Spender looks at his red stack, then at Saver's jars; sheepish"),
     ("S18", (9, "remember", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Saver lifts the glowing 72 block again"),
 ]
-ACCENT = {(1, "seventy-two"), (2, "divide"), (3, "twelve"), (4, "nine"), (5, "six"), (6, "promise"), (7, "flip"), (8, "three"), (9, "wrong")}
+ACCENT = {(1, "seventy-two"), (3, "twelve"), (4, "nine"), (5, "six"), (6, "promise"), (8, "three"), (9, "wrong")}
 TAGS = [
     (1, "one", "72 ÷ RATE ≈ YEARS TO DOUBLE", "painted on the board from frame 0"),
     (8, "card", "24% APR (EXAMPLE)", "on the red card"),
