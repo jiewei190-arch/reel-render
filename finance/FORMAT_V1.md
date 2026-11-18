@@ -86,3 +86,10 @@ so the problem is something they all share, not the style. Each one also flatlin
 4. **Human voice:** ElevenLabs Tyler and Christopher, from now on. The D2 synthetic first syllable is a likely swipe trigger.
 5. **First 3 s faster than the rest:** 2-3 cuts or big moves in the first 3 s, then v1 pacing.
 6. **Pain-point topics over maths:** lead with a relatable money pain ("why your paycheck vanishes", "your bank charges you for being broke") and let the maths be the twist.
+
+## Retention tactics (from Tim Danilov's 4.1B-view channel breakdown, 2026-11-18)
+- His benchmarks for viral Shorts: about 80 %+ stayed-to-watch, and average view duration OVER 100 % (rewatches). Rewatch matters more than swipe %.
+- Under about 100K views a month, numbers are noisy test-audience data. Don't overreact to single Shorts; look at trends across many.
+- **The visual hook has three parts:** (1) the camera ZOOMS IN at frame 0, straight into the action; (2) the WHOLE SITUATION is readable in ONE frame (who, what, what's at stake); (3) EMOTION is visible in the first second.
+- **Easter eggs:** every Short hides 1-2 details that have nothing to do with the story but make people pause or rewatch. A recurring blocky cat stealing a coin, Spender's TV from episode 1 in the background, a sticky note with a joke. Recurring ones link our Shorts together for returning viewers.
+- **Double payoff:** after the spoken payoff, add a second VISUAL payoff in the final 0.5-1 s that rewards a rewatch. For example, the cat walks off with Saver's coin, or Spender's TV falls over. Something people catch on the loop.
