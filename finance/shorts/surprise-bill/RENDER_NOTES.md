@@ -65,3 +65,21 @@ STATE: rendered
 - **flicker.py:** surprise-bill_v2.mp4: 849 frames, 13 spikes; stride pattern: None
 - **PC fix (v1 → v2):** S14 ("only 63") was an empty light-blue frame. The red car's 2.6 m body overlaps the survey blocks, so the lens was inside the car. The car is now hidden in S14 only, and the shot uses a fitted lens on the 100% / 63% bars and the ten blocks.
 - **EDGES FAIL (2.6 %):** I judge it a false positive. Every caption on the sheet is centred; the flagged pixels are scene whites at the frame edge (the EXAMPLE card, clouds, kerbs).
+
+## PC render (Reel creator, 2026-11-18): video.mp4 = PC v1 from CODE_FINAL 6e48331e
+`video.mp4` sha256 `131d79ed450b6894cbcff7ab97eccf9086becfa9fb23be82001a1ea76362088a`. 1080x1920, 30 fps, 884 frames (29.47 s), SUB=4 motion blur, 30.0 MB. It replaces the old F2 render.
+The scene code is unchanged between 6e48331e and the branch tip (surprise.tsx, kit.tsx and the plan, per `git diff --stat`).
+
+- **Audio:** `story_mix.py` (`tense` bed, 26 SFX) then `mux_voice.sh`, giving **-14.1 LUFS, true peak -1.6 dBFS**.
+- **Critic:** 0 FAIL. SYNC 25/25 cuts exact; STATIC 0 s; EDGES captions 16.7 % from the side. frac_still 0.183.
+- **Whisper (small) on the final mix:** the line order matches script.txt. It mishears "car" as "card", "due" as "do" and "Saver" as "Sabre"; the cloud's per-line Whisper QA on voice.wav passed, so these are ASR slips on the mixed track.
+- **story_qa:** 884 frames x 4 sub-frames, 0 clips.
+- **By eye:**
+  - Scrubbed at 6 fps (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-29s.jpg`) and on the impact frames plus 2 (`scrub_impacts.jpg`: 0/1, 74, 534, 629, 782).
+  - Feet are on the ground. The FINAL TOTAL card stands on its pedestal in front of the Lender with clear depth between them (not in him). No prop is in a head or body.
+- **Pre-post gate, for MAIN** (frame 0 = `frame0.jpg`, first 2 s = `strip_0-2s_6fps.jpg`):
+  - **Frame 0 is a MEDIUM shot.** Spender stands by his smoking car at about 45 % of the frame height. That's not the "close-up >= 50 %" the gate asks for.
+  - Passes: the hook text "A $1,000 BILL FOR 2 YEARS" is readable at frame 0; the stake is on screen at frame 0; the first word lands at about 0.15 s; music and SFX play at frame 0; the frame is mid-action (smoke) and not dark.
+  - If you want frame 0 tighter, it's a one-line lens change on S01 plus a ~3 min re-render on the PC.
+
+Not uploaded. It waits for MAIN QA and a BM GO.
