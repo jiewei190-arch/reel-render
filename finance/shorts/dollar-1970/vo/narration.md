@@ -1,7 +1,9 @@
-1. Spender's dollar just shrank to under twelve cents.
-2. Well, in 1970 money. Prices have climbed almost nine times since then.
-3. That's the government's price index, not a guess.
-4. A one-dollar snack in 1970 costs about eight seventy now.
-5. So where did the rest go? It's hiding in plain sight...
-6. About four percent a year, quietly, for over fifty years.
-7. Nobody notices one year. You only notice the total, like Spender.
+1. Wait. My dollar is worth under twelve cents?!
+2. In 1970 money, yes. Prices have climbed almost nine times since then.
+3. That's the government's consumer price index. Not a guess.
+4. But nobody stole it. So where did it go?
+5. It's hiding in plain sight. Watch...
+6. A one dollar snack in 1970 costs about eight seventy now.
+7. Roughly four percent a year, quietly, for over fifty years.
+8. I never noticed a single year!
+9. Nobody does. You only notice the total. Like:
