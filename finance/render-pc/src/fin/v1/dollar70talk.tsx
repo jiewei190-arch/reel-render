@@ -53,8 +53,8 @@ const billScale = (t: number) => {
 };
 const Bill: React.FC<{ s: number }> = ({ s }) => (
   <group scale={[s, s, s]}>
-    <B s={[0.36, 0.17, 0.012]} p={[0, 0, 0]} c="#3fb86a" rough={0.6} />
-    <Label p={[0, 0, 0.008]} text={["$1"]} w={0.2} h={0.12} bg="#e9f7e2" fg="#1f6a3a" />
+    <B s={[0.5, 0.24, 0.012]} p={[0, 0, 0]} c="#3fb86a" rough={0.6} />
+    <Label p={[0, 0, 0.008]} text={["$1"]} w={0.28} h={0.17} bg="#e9f7e2" fg="#1f6a3a" />
   </group>
 );
 type ActorAt = { name: string; look: typeof SPENDER; pose: Pose; emo: Emotion; seed: number; held?: { side: "L" | "R"; node: React.ReactNode } };
@@ -68,7 +68,8 @@ const actorsAt = (i: number, t: number): ActorAt[] => {
   if (i <= 2 || i === 16) {
     sp = { ...sp, armR: 1.45 + gsp, outR: -0.15, headPitch: 0.12, armL: i === 2 ? 1.1 : 0.4, outL: i === 2 ? 0.3 : 0.1 };
     se = i === 16 ? "curious" : t < 0.95 ? "curious" : "shock";
-    held = { side: "R", node: <group position={[0, 0.06, 0.04]}><Bill s={billScale(t)} /></group> };
+    // S01/S16: the bill held forward, clear of the forearm in the frame-0 lens; S02's macro keeps the original grip
+    held = i === 2 ? undefined : { side: "R", node: <group position={[0, 0.12, 0.14]}><Bill s={billScale(t)} /></group> }; // S02: the bill floats just above his fist (world space, below)
   } else if (i === 7 || i === 8) {
     const spin = i === 8 ? Math.sin((t - T("S08")) * 6) * 0.9 : 0;
     sp = { ...stand(P_SP[0], P_SP[2], yawTo(P_SP, [P_SV[0], 0, 4]) + spin, SC), armL: 0.6 + gsp, armR: 0.6 - gsp, outL: 0.45, outR: 0.45, headYaw: i === 7 ? -0.3 : 0 };
@@ -122,8 +123,8 @@ const fSv = (): V3 => [P_SV[0], FACE - 0.05, P_SV[2]];
 const over = (f: V3, side: number, o: Partial<Shot> = {}) => creep(f, [f[0] + 0.45 * side, FACE + 0.02, f[2] + 1.05], { fov: 48, face: 0.55, blur: 1.6, ...o });
 const handSp = (t: number) => armPoint(actorsAt(1, t)[0].pose, "R", 1, SC);
 const LZ: Record<string, Shot> = {
-  S01: over(fSp(), 0.3, { fov: 50 }),
-  S02: (() => { const h = handSp(1.2); const c: V3 = [h[0], h[1] + 0.12, h[2]]; return { ...creep(c, [c[0] + 0.1, c[1] + 0.05, c[2] + 0.7], { fov: 44, face: 0.5, blur: 2.0 }), fovAt: slam(T("S02") + 0.1, 50, 42, 0.12), shake: shakeAt([T("S02") + 0.1], 0.03) }; })(),
+  S01: (() => { const h = handSp(0.2), f = fSp(); const c: V3 = [0.58 * h[0] + 0.42 * f[0], (h[1] + 0.1 + f[1]) / 2, (h[2] + f[2]) / 2]; return creep(c, [c[0] + 0.15, c[1] + 0.05, c[2] + 1.6], { fov: 52, face: 0.5, blur: 1.4 }); })(), // PC: face AND the shrinking bill in frame 0
+  S02: (() => { const h = handSp(1.2); const c: V3 = [h[0], h[1] + 0.42, h[2] + 0.22]; return { ...creep(c, [c[0] + 0.08, c[1] + 0.03, c[2] + 0.8], { fov: 46, face: 0.5, blur: 2.0 }), fovAt: slam(T("S02") + 0.1, 50, 42, 0.12), shake: shakeAt([T("S02") + 0.1], 0.03) }; })(),
   S03: over(fSv(), -0.6),
   S04: { ...creep([SNACK[0], 1.0, SNACK[2]], [SNACK[0] + 0.3, 1.3, SNACK[2] + 1.9], { fov: 50, face: 0.5 }), fovAt: slam(tNine, 54, 48, 0.12), shake: shakeAt([tNine], 0.04) },
   S05: creep([P_SV[0] + 0.1, 1.15, P_SV[2]], [P_SV[0] - 0.3, 1.45, P_SV[2] + 2.0], { fov: 50, face: 0.5 }),
@@ -137,7 +138,7 @@ const LZ: Record<string, Shot> = {
   S13: creep([0.2, 1.2, -0.6], [0.4, 1.7, 4.0], { fov: 56, face: 0.5 }),
   S14: over(fSp(), 0.5),
   S15: { ...over(fSv(), -0.5), mood: "ending" },
-  S16: over(fSp(), 0.3, { fov: 50 }),
+  S16: (() => { const h = handSp(0.2), f = fSp(); const c: V3 = [0.58 * h[0] + 0.42 * f[0], (h[1] + 0.1 + f[1]) / 2, (h[2] + f[2]) / 2]; return creep(c, [c[0] + 0.15, c[1] + 0.05, c[2] + 1.6], { fov: 52, face: 0.5, blur: 1.4 }); })(),
 };
 export const D1970_SHOTS = shotsOf(PLAN, LZ);
 
@@ -166,7 +167,8 @@ const scene = (t: number, shot: FinShot): React.ReactNode => {
       <Label p={[SNACK[0], SNACK[1] + 0.02, SNACK[2] + 0.075]} text={["SNACK"]} w={0.24} h={0.1} bg="#fff4c8" fg="#c01818" />
       <Label p={TAG} r={[-0.25, 0, 0]} text={[`$${price.toFixed(2)}`]} w={0.42} h={0.17} bg="#fff4c8" fg={price > 1.01 ? "#c01818" : "#16121c"} border={price > 1.01 ? "#c01818" : undefined} />
       <FlipCalendar p={CAL} w={0.75} h={0.68} title="YEAR" value={String(year)} />
-      {i === 2 ? <Stamp p={[handSp(t)[0] - 0.02, handSp(t)[1] + 0.3, handSp(t)[2] + 0.08]} text="UNDER 12¢ (1970 MONEY)" u={clamp((t - W(1, "twelve")) / 0.25)} w={0.7} /> : null}
+      {i === 2 ? <group position={[handSp(t)[0], handSp(t)[1] + 0.36, handSp(t)[2] + 0.22]} rotation={[0, 0.1, 0.06 * Math.sin(t * 7)]}><Bill s={billScale(t)} /></group> : null}
+      {i === 2 ? <Stamp p={[handSp(t)[0] - 0.05, handSp(t)[1] + 0.6, handSp(t)[2] + 0.24]} text="UNDER 12¢ (1970 MONEY)" u={clamp((t - W(1, "twelve")) / 0.25)} w={0.34} /> : null}
       {i === 4 ? <Stamp p={[SNACK[0], 1.55, SNACK[2] + 0.2]} text="ALMOST 9x" u={clamp((t - tNine) / 0.25)} w={0.6} /> : null}
       {i === 6 ? <Stamp p={[P_SV[0] - 0.05, 1.62, P_SV[2] + 0.42]} text="NOT A GUESS" u={clamp((t - tGuess) / 0.25)} w={0.5} color={PAL.cash} /> : null}
       {i === 12 || i === 13 ? <Label p={[P_SP[0] - 0.75, 1.95, P_SP[2] - 0.6]} text={["~4% A YEAR"]} w={0.7} h={0.22} bg={PAL.debt} fg="#fff4c8" /> : null}

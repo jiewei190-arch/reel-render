@@ -5,14 +5,6 @@
 - **Audio plan:** the toon3d `upbeat` bed plus the SFX cues exported from the composition (`tools/story_mix.py`). Not mixed in the cloud.
 - **PC commands:** `finance/V1_RENDER.md`.
 
-## PRE-POST GATE (FORMAT_V1.md, 2026-11-18): `frame0.png`, `strip_0-2s.png`
-- **Close shot, mid-action:** frame 0 is a close shot of Spender, who wasn't in the old wide opener. He looks up in shock as the $453/MO board drops in above him. It lands at 0.28 s, right above his head, with a shake and debris. The loop shot S13 uses the same framing, with him curious.
-- **Hook text at frame 0:** "$926 OR $453 A MONTH?", 5 words on 2 lines, 98 px (was 84), top 230 px, in the top third.
-- **Stake by 0.5 s:** both dollar amounts are in the hook text from frame 0, and the $453/MO board has landed by 0.3 s.
-- **First spoken word by 0.3 s:** 0.0 s ("Would"). SFX at frame 0: whoosh, then a thud on the landing. The music bed starts at 0 s.
-- **Emotion change by 1.5 s:** shock, then joy at 0.75 s.
-- **No dark, empty or wide frame in the first 1 s:** the sky is the starry dome, but Spender and the board fill the frame.
-
 ## Cliffhanger rule
 - **Open loop: 56 %** (15.4 s, "And behind that door, something is eating his money..."). The covered "? ? ?" shed door rattles with orange light under it, over three shots (S08, S19, S21).
 - **Twist: 70 %** (19.44 s of 27.72 s). The door bursts on "8,034", the INTEREST furnace roars and the $8,034 vs $3,347 towers rise. The door stays shut until the burst (`doorOpenAt`).
@@ -64,3 +56,60 @@ STATE: rendered
 - **Eye check:** I checked the shot sheet (`contact_sheet.png`), and every shot reads.
 - **EDGES FAIL (0.4 %):** I judge it a false positive. Every caption on the shot sheet is centred, well inside the 12 % margins. The flagged pixels are scene whites at the frame edge (the white CFPB sign in S18, clouds, the road kerbs).
 - **Sky:** S14–S18 switch to the night/whisper sky at the interest reveal (a story turn), then go back to day for the loop.
+
+## PC render (Reel creator, 2026-11-18): video.mp4 = PC v1 from CODE_FINAL d03a873d
+- `video.mp4` sha256 `a4887fc64e4ae5093b6b81a2fea4a863acdb1eebe12188e76717854dd548e9be`. 1080x1920, 30 fps, 832 frames (27.73 s), SUB=4 motion blur, 23.7 MB. It replaces the old F2 render.
+- Code unchanged from CODE_FINAL d03a873d (samecar.tsx, kit.tsx); rendered `SameCarMoreV1Sub` on the RTX 4060 in 118 s.
+- **Audio:** `tools/story_mix.py SameCarMoreV1` then `tools/mux_voice.sh`: **-14.0 LUFS, true peak -1.3 dBFS** (0.2 dB above the -1.5 target; fine for YouTube's own normalising).
+- **Whisper (small) on the final mix:** every word of script.txt in order.
+- **Critic:** 0 FAIL. One long still run: 0.87 s from frame 82 (the "$926/MO" sign hold); frac_still 0.355.
+
+### Clipping checks (PC)
+- `story_qa`: 0 clips (cloud run on the same code).
+- **By eye:** 6 fps scrub (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-28s.jpg`) and the impact frames (`scrub_impacts.jpg`: 8, 408/413, 583/585, 618). Feet on the floor throughout; no prop inside a head or body; the burst-door debris and the towers stay clear of both actors.
+
+### Pre-post gate (see `frame0.jpg`, `strip_0-2s_6fps.jpg`)
+| check | result |
+|---|---|
+| close-up >= 50 % of the frame, mid-action | **no**: frame 0 is two red cars on the road with the price signs; no face. The cars fill about 40 % of the frame. |
+| hook text readable | yes: "$926 OR $453 A MONTH?", 2 lines, top third. The "EXAMPLE: $30,000 · 7%" tag overlaps the end of line 2. |
+| stake on screen by 0.5 s | yes, from frame 0 |
+| first word by 0.3 s | yes: "Would" at 0.15 s |
+| music and SFX at frame 0 | yes |
+| emotion change by 1.5 s | **no**: no character is on screen until 5.7 s |
+| no dark, empty or wide frame in the first 1 s | **borderline**: a medium-wide road shot. At 1.57 s the camera slams into the $926/MO sign. |
+
+Not uploaded. It waits for MAIN QA and a BM GO.
+
+## PC v3 (Reel creator, 2026-11-18): MAIN's 5 gate fixes. video.mp4 = PC v3, which supersedes the PC v1 section above
+- `video.mp4` sha256 `9ebeda98b708f12121bfc8ceacadab493dc3f80586768e6d74218e6f69d144fe`. 1080x1920, 30 fps, 832 frames (27.73 s), SUB=4 motion blur, 25.0 MB.
+- **Code:** `samecar.tsx` (PC edits). `kit.tsx` HookText gains optional `size` and `\n` line breaks; the defaults are unchanged, so other Shorts are unaffected.
+- **Fix 1, frame 0:**
+  - S01 and S13 (the loop) are now a close-up of Spender beside his red car. He's grinning (sly) and jingling a car-key fob in his raised right hand. The lens is centred between his face and the keys, with the car behind him.
+  - Hook text, 90 px, 2 lines: "$926 A MONTH / OR $453 A MONTH?".
+- **Fix 2:** sly to curious (hmm) on "926", at about 1.1 s. He lowers the keys, raises his other hand and tilts his head.
+- **Fix 3:** the EXAMPLE tag is now small (22 px) in the top-right corner (top 150), off the hook. The core CornerTag is off for this Short.
+- **Fix 4:** S02 (the $453 board) gets a push-in plus a number pop on "453". The old 0.87 s still is gone; the longest still is now 0.03 s. While there, I fixed two other S02 problems:
+  - the board's glow was 0.5 and washed out the white text; it's now 0.22;
+  - the lens is pulled back so the "$" isn't cropped.
+- **Fix 5:** true peak **-1.8 dBFS** at -14.2 LUFS. `tools/mux_voice.sh` gained optional `LIMIT` and `TPMAX` overrides (defaults unchanged); this Short used `LIMIT=0.74 TPMAX=-1.5`.
+- **Critic:** 0 FAIL. SYNC 21 cuts, max offset 0 frames; STATIC 0.03 s; EDGES 17.0 %.
+
+### Clipping checks (v3)
+- `story_qa`: 832 frames x 4 sub-frames, **0 clips**. The S01 actor is included.
+- **By eye:**
+  - 6 fps scrub (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-24s.jpg`, `scrub_6fps_24-28s.jpg`) and the impact frames plus 2 (`scrub_impacts.jpg`).
+  - The key fob hangs in front of his fist, not inside it. Car B sits behind Spender and clear of him. Feet are on the floor throughout.
+
+### Pre-post gate (v3)
+| check | result |
+|---|---|
+| close-up >= 50 % of the frame, mid-action | yes: Spender's face and torso fill the frame, keys mid-jingle, his car behind |
+| hook text readable | yes: "$926 A MONTH / OR $453 A MONTH?", 90 px, 2 lines, top third |
+| stake on screen by 0.5 s | yes, from frame 0 |
+| first word by 0.3 s | yes: "Would" at 0.15 s |
+| music and SFX at frame 0 | yes |
+| emotion change by 1.5 s | yes: sly to curious at about 1.1 s |
+| no dark, empty or wide frame in the first 1 s | yes |
+
+Not uploaded. It waits for MAIN QA and a BM GO.

@@ -10,7 +10,7 @@
  "lead": 0.1,
  "beat": 0.7,
  "sr": 24000,
- "duration": 29.331375,
+ "duration": 29.793,
  "render_s": 127.4,
  "qa_fail_lines": [
   2,
@@ -20,7 +20,7 @@
  "lines": [
   {
    "n": 1,
-   "text": "Spender's car just broke, and this bill will follow him for two years.",
+   "text": "Spender's car just broke down, and this bill will follow him for two years.",
    "start": 0.1,
    "parts": [
     {
@@ -31,12 +31,13 @@
      "qa": "ok"
     }
    ],
-   "end": 3.295
+   "end": 3.757,
+   "pc_revoice": "line 1 re-voiced on the PC GPU (seed 7, exaggeration 0.55, cfg 0.3): Whisper small.en + small both hear 'car'"
   },
   {
    "n": 2,
    "text": "One thousand dollars, due now. No savings.",
-   "start": 3.545,
+   "start": 4.007,
    "parts": [
     {
      "tts": "One thousand dollars, due now. No savings.",
@@ -46,12 +47,12 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 5.905
+   "end": 6.367
   },
   {
    "n": 3,
    "text": "So it goes on a card: twenty-two percent, fifty a month.",
-   "start": 6.155,
+   "start": 6.617,
    "parts": [
     {
      "tts": "So it goes on a card: twenty-two percent, fifty a month.",
@@ -61,12 +62,12 @@
      "qa": "ok"
     }
    ],
-   "end": 9.492
+   "end": 9.954
   },
   {
    "n": 4,
    "text": "Month six. Month twelve. Still paying. And the worst part is still coming...",
-   "start": 9.742,
+   "start": 10.204,
    "parts": [
     {
      "tts": "Month six. Month twelve. Still paying. And the worst part is still coming...",
@@ -76,12 +77,12 @@
      "qa": "ok"
     }
    ],
-   "end": 13.971
+   "end": 14.433
   },
   {
    "n": 5,
    "text": "But Saver had the same bill. He paid it from his emergency fund. Done.",
-   "start": 14.221,
+   "start": 14.683,
    "parts": [
     {
      "tts": "But Saver had the same bill. He paid it from his emergency fund. Done.",
@@ -91,12 +92,12 @@
      "qa": "ok"
     }
    ],
-   "end": 18.089000000000002
+   "end": 18.551
   },
   {
    "n": 6,
    "text": "Spender? Twenty-six months later: paid off, plus 257 dollars of interest.",
-   "start": 18.339000000000002,
+   "start": 18.801,
    "parts": [
     {
      "tts": "Spender? Twenty-six months later: paid off, plus two hundred fifty-seven dollars of interest.",
@@ -106,12 +107,12 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 23.28
+   "end": 23.742
   },
   {
    "n": 7,
    "text": "In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?",
-   "start": 23.53,
+   "start": 23.992,
    "parts": [
     {
      "tts": "In a Fed survey, sixty-three percent of adults could cover a four hundred dollar surprise with cash. Could you?",
@@ -121,7 +122,7 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 29.081
+   "end": 29.543
   }
  ],
  "splice": "seed 5, with line 2 from seed 7 (cut at the line starts, in the gap)"

@@ -1,36 +1,31 @@
-"""Plan source for the finance Short "dollar-1970": shots, accents and tags anchored to WORDS of the voice-over.
-Re-run after every VO change; the times move with the words. Writes src/plan.gen.ts and plan/SHOTS.md.
-
-    python plan/plan_src.py vo/timings.json
+"""Plan source (FORMAT v1, style S5 CHARACTER-TALKS) "dollar-1970": shots anchored to WORDS of the dialogue.
+    python plan/plan_src.py vo/timings.json      -> src/plan.gen.ts + plan/SHOTS.md
+Speakers (vo/speakers.json): SPENDER lines 1, 4, 8; SAVER lines 2, 3, 5, 6, 7, 9. Shot/reverse shot on the speaker.
 """
 TITLE = "dollar-1970"
-CAST_NOTE = "SPENDER (red, bag) hero with a plain dollar bill; TELLER (violet, apron) runs the shop; SAVER (green, glasses) explains the index. Two versions of one blocky corner shop: '1970' (warm orange/brown retro palette, film grain) and 'NOW' (bright), no logos."
-LOOP_NOTE = "S17 (\"That's exactly why\") returns to the S01 lens: Spender holds up the bill, which starts to shrink again; the loop lands on \"Your dollar is worth under twelve cents.\""
-COUNTER = "a big price-tag counter `$1 (1970) = $x.xx NOW` rolling from $1.00 to $8.70, and in the NOW shots `YOUR $1 = xx¢` falling from 100¢ to 11.5¢."
+CAST_NOTE = "SPENDER (red) and SAVER (green, glasses) TALK (no narrator) in a blocky corner SNACK SHOP that flips between 1970 (warm retro light, a 1970 sign) and NOW. Props: Spender's $1 bill that shrinks, a price tag that rolls $1.00 -> $8.70, a CPI booklet, a calendar, a coin drip from Spender's bag. No logos, no brands."
+LOOP_NOTE = "S16 on \"You only notice the total. Like:\": the S01 lens on Spender, his $1 bill shrinking again; the loop lands on \"Wait. My dollar is worth under twelve cents?!\" at frame 0."
+COUNTER = "none (no HUD). Hook text from frame 0: YOUR $1 = UNDER 12 CENTS / (IN 1970 MONEY). Numbers live in the set: the bill (12 CENTS in 1970 money), ALMOST 9x, the price tag $1.00 -> $8.70, ~4% A YEAR, 1970 -> NOW."
 SHOTS = [
-    ("S01", (1, "your", 1), "store", "medium 3/4 on Spender, face ~38% height, push-in", "Conflict in frame 1: in the NOW shop, Spender holds up a plain green bill (no portrait, no seal) that visibly shrinks; counter YOUR $1 = 100¢ dropping"),
-    ("S02", (1, "under", 1), "store", "close on the sliver, push-in", "The bill is a sliver on his palm; counter lands on YOUR $1 = 11.5¢; holo tag UNDER 12¢"),
-    ("S03", (2, "1970", 1), "home", "wide, push-in through a doorway", "A door marked 1970 swings open onto the same shop in warm retro colours, film grain; the counter flips to 1970 PRICES"),
-    ("S04", (2, "prices", 1), "store", "medium wide on the shelves, push-in", "Back in NOW: price Tags on the ShelfUnit flip upward one after another"),
-    ("S05", (2, "times", 1), "store", "low angle, push-in", "A stack of 9 bill-blocks rises beside a single 1970 bill-block while a wall calendar riffles 1970 → 2026; tag ≈ 8.7×"),
-    ("S06", (3, "government's", 1), "store", "medium on Saver, push-in", "Saver (glasses) at a board pointing at a plain chart line climbing steadily; tag CPI-U (BLS)"),
-    ("S07", (3, "not", 1), "store", "close on the chart, push-in", "Saver stamps the chart: NOT A GUESS"),
-    ("S08", (4, "something", 1), "home", "medium in the 1970 shop, push-in", "1970 shop: Teller hands Spender a basket of groceries for ONE bill; counter $1 (1970)"),
-    ("S09", (4, "1970", 1), "home", "close on the price tag, push-in", "Painted price tag $1.00, retro font"),
-    ("S10", (4, "eight", 1), "store", "SAME framing in the NOW shop (match cut), push-in", "Same basket in the NOW shop: the price-tag counter rolls $1.00 → $8.70; Spender's eyes widen"),
-    ("S11", (5, "inflation", 1), "whisper", "medium, push-in", "Whisper mood: a slow drip of tiny coins leaks from a hole in Spender's bag"),
-    ("S12", (5, "once", 1), "whisper", "close on the bag, push-in", "One coin drips at a time, almost unnoticed; counter ticks down 1¢ at a time"),
-    ("S13", (6, "four", 1), "whisper", "medium wide, push-in", "A wall calendar flicks through years; each page drops one coin; tag ~4%/YR (AVG)"),
-    ("S14", (6, "quietly", 1), "whisper", "medium on Spender + the leak, push-in", "Spender whistles, not noticing the growing coin trail behind him"),
-    ("S15", (6, "fifty", 1), "ending", "very wide, push-in", "The bag is now flat; a small mountain of dripped coins behind him; tag 56 YEARS"),
-    ("S16", (7, "nobody", 1), "store", "medium on Spender, push-in", "Spender shrugs at the empty bag; the shelf prices behind him tick up one by one"),
-    ("S17", (7, "that's", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Spender holds up the bill again; it starts to shrink (counter back at 100¢)"),
+    ('S01', (1, 'wait', 1), 'store', 'CLOSE on Spender (speaking)', 'FRAME 0 MID-ACTION: Spender (shock) holds up his $1 bill, already shrinking in his hand; hook text YOUR $1 = UNDER 12 CENTS'),
+    ('S02', (1, 'dollar', 1), 'store', 'MACRO on the bill', 'The bill shrinks to a sliver: UNDER 12 CENTS (IN 1970 MONEY) stamp; Spender gasps'),
+    ('S03', (2, 'in', 1), 'store', 'close on Saver (speaking)', 'Saver, calm, taps a 1970 sign on the wall'),
+    ('S04', (2, 'prices', 1), 'store', 'medium on the shelf', 'A price tag on the shelf climbs; ALMOST 9x slams on'),
+    ('S05', (3, "that's", 1), 'store', 'medium on Saver', 'Saver holds up a blocky booklet: CONSUMER PRICE INDEX (BLS)'),
+    ('S06', (3, 'not', 1), 'store', 'close on the booklet', 'NOT A GUESS stamp'),
+    ('S07', (4, 'but', 1), 'store', 'close on Spender (speaking)', 'Spender pats his empty pockets, suspicious'),
+    ('S08', (4, 'so', 1), 'store', 'two-shot', 'Spender spins around looking for the thief'),
+    ('S09', (5, "it's", 1), 'whisper', 'close on Saver (speaking)', "OPEN LOOP: Saver leans in, sly: the shop lights dim, a soft drip sound"),
+    ('S10', (6, 'a', 1), 'home', '1970 shop, medium on the snack', 'Warm retro light, sign 1970: a snack on the shelf, tag $1.00'),
+    ('S11', (6, 'costs', 1), 'store', 'SAME framing in the NOW shop (match cut)', 'NOW: the tag rolls $1.00 -> $8.70; Spender (behind) shock'),
+    ('S12', (7, 'roughly', 1), 'store', 'medium on Spender', 'Twist: a slow drip of tiny coins leaks from a hole in his bag; tag ~4% A YEAR'),
+    ('S13', (7, 'for', 1), 'store', 'wide', 'The wall calendar flips 1970 -> NOW (56 years), the coin trail behind him'),
+    ('S14', (8, 'i', 1), 'store', 'close on Spender (speaking)', 'Spender: despair, sees the coin trail'),
+    ('S15', (9, 'nobody', 1), 'ending', 'close on Saver (speaking)', 'Saver, kind: nobody does'),
+    ('S16', (9, 'you', 1), 'store', 'SAME lens as S01 (loop match)', 'LOOP: Spender holds up his $1 bill, shrinking again -> frame 0'),
 ]
-ACCENT = {(1, "twelve"), (2, "nine"), (3, "index"), (4, "seventy"), (5, "once"), (6, "four"), (7, "single")}
-TAGS = [
-    (1, "your", "CPI-U, 1970 AVG vs OCT 2026", "small painted card on the counter from frame 0"),
-    (4, "seventy", "$8.70", "flip-tag on the basket"),
-]
+ACCENT = {(1, 'twelve'), (2, 'nine'), (6, 'seventy'), (7, 'four'), (9, 'total')}
+TAGS = []
 
 
 # ---- engine (same in every finance Short; from the blocky-shorts template's plan/plan_src.py, extended) -----------
@@ -43,7 +38,7 @@ from pathlib import Path
 FPS = 30
 LEAD = 2  # captions appear 2 frames before the word
 CHUNK_WORDS = 2  # 1-2 lowercase words per caption chunk
-TAIL = 0.6  # picture keeps running after the last word (the loop cut lands here)
+TAIL = 0.35  # PC: 29.59 s voice + 0.35 s keeps the Short under 30 s
 
 
 def clean(w):
@@ -80,8 +75,8 @@ def main(p):
     for a, b in zip(shots, shots[1:] + [{"t": total}]):
         a["end"] = round(b["t"], 3)
         d = a["end"] - a["t"]
-        if d < 1.0 or d > 2.2:
-            warns.append(f"WARN {a['id']} is {d:.2f} s (aim ~1.4 s)")
+        if d < 0.7 or d > 1.7:
+            warns.append(f"WARN {a['id']} is {d:.2f} s (v1 aim 0.8-1.5 s)")
     caps, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -111,7 +106,8 @@ def main(p):
         f"export const SHOTS = {json.dumps(shots)} as const;\n"
         f"export const CAPTIONS = {json.dumps(captions)} as const;\n"
         f"export const TAGS = {json.dumps(tags)} as const;\n"
-        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n", encoding="utf8")
+        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n"
+        f"export const WORDS = {json.dumps([{'w': w['w'], 'turn': w['turn'], 't': round(w['t'], 3), 'end': round(w['end'], 3)} for w in words])} as const;\n", encoding="utf8")
     # readable shot list
     md = [f"# {TITLE}: shot list (generated by plan/plan_src.py from vo/timings.json; do not edit)", "",
           f"{len(shots)} shots, {total:.2f} s ({round(total * FPS)} frames at {FPS} fps), median cut "

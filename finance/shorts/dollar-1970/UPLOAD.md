@@ -1,5 +1,7 @@
 # UPLOAD: dollar-1970
 
+style: S5
+
 **Title (45 chars):** Your Dollar Is Worth Under 12¢ in 1970 Money
 
 **Description:**

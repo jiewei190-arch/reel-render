@@ -1,0 +1,112 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.45,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.0,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 22.228,
+ "render_s": 229.8,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1970 money, yes. Prices have climbed almost nine times since then.",
+   "start": 0.0,
+   "parts": [
+    {
+     "tts": "In nineteen seventy money, yes. Prices have climbed almost nine times since then.",
+     "seed": 7,
+     "heard": "In 1970 money, yes, prices have climbed almost nine times since then.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.607
+  },
+  {
+   "n": 2,
+   "text": "That's the government's consumer price index. Not a guess.",
+   "start": 4.907,
+   "parts": [
+    {
+     "tts": "That's the government's consumer price index. Not a guess.",
+     "seed": 7,
+     "heard": "That's the government's consumer price index, not a guess.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.263
+  },
+  {
+   "n": 3,
+   "text": "It's hiding in plain sight. Watch...",
+   "start": 8.563,
+   "parts": [
+    {
+     "tts": "It's hiding in plain sight. Watch...",
+     "seed": 7,
+     "heard": "It's hiding in plain sight. Watch.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.146
+  },
+  {
+   "n": 4,
+   "text": "A one dollar snack in 1970 costs about eight seventy now.",
+   "start": 11.446,
+   "parts": [
+    {
+     "tts": "A one dollar snack in nineteen seventy costs about eight seventy now.",
+     "seed": 7,
+     "heard": "A $1 snack in 1970 costs about $8.70 now.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 15.12
+  },
+  {
+   "n": 5,
+   "text": "Roughly four percent a year, quietly, for over fifty years.",
+   "start": 15.42,
+   "parts": [
+    {
+     "tts": "Roughly four percent a year, quietly, for over fifty years.",
+     "seed": 7,
+     "heard": "roughly 4% a year, quietly, for over 50 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.858
+  },
+  {
+   "n": 6,
+   "text": "Nobody does. You only notice the total. Like:",
+   "start": 19.158,
+   "parts": [
+    {
+     "tts": "Nobody does. You only notice the total. Like:",
+     "seed": 7,
+     "heard": "Nobody does, you only notice the total, like",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.928
+  }
+ ]
+}

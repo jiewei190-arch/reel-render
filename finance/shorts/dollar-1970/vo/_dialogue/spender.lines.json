@@ -1,0 +1,65 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.65,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11,
+  7,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.0,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 7.507,
+ "render_s": 48.6,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Wait. My dollar is worth under twelve cents?!",
+   "start": 0.0,
+   "parts": [
+    {
+     "tts": "Wait. My dollar is worth under twelve cents?!",
+     "seed": 11,
+     "heard": "Wait, my dollar is worth under 12 cents?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.617
+  },
+  {
+   "n": 2,
+   "text": "But nobody stole it. So where did it go?",
+   "start": 2.917,
+   "parts": [
+    {
+     "tts": "But nobody stole it. So where did it go?",
+     "seed": 11,
+     "heard": "but nobody stole it, so where did it go?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.973
+  },
+  {
+   "n": 3,
+   "text": "I never noticed a single year!",
+   "start": 5.273,
+   "parts": [
+    {
+     "tts": "I never noticed a single year!",
+     "seed": 11,
+     "heard": "I never noticed a single year.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.207
+  }
+ ]
+}

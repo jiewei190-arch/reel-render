@@ -1,0 +1,2 @@
+{"speakers": {"1": "spender", "2": "saver", "3": "saver", "4": "spender", "5": "saver", "6": "saver", "7": "saver", "8": "spender", "9": "saver"},
+ "voices": {"spender": {"exag": 0.65, "cfg": 0.3, "seeds": "11,7,23"}, "saver": {"exag": 0.45, "cfg": 0.3, "seeds": "7,11,23"}}}

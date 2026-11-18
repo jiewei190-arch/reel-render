@@ -3,368 +3,455 @@
   "audio": "voice.wav",
   "script": "script.txt",
   "model": "small",
-  "duration": 24.459
+  "duration": 29.585
  },
  "turns": [
   {
    "turn": 1,
-   "text": "Your dollar is worth under twelve cents.",
+   "text": "Wait. My dollar is worth under twelve cents?!",
    "words": [
     {
-     "w": "Your",
+     "w": "Wait.",
      "t": 0.0,
-     "end": 0.28
+     "end": 0.4
+    },
+    {
+     "w": "My",
+     "t": 0.78,
+     "end": 1.0
     },
     {
      "w": "dollar",
-     "t": 0.28,
-     "end": 0.58
+     "t": 1.0,
+     "end": 1.28
     },
     {
      "w": "is",
-     "t": 0.58,
-     "end": 0.86
+     "t": 1.28,
+     "end": 1.48
     },
     {
      "w": "worth",
-     "t": 0.86,
-     "end": 1.04
+     "t": 1.48,
+     "end": 1.62
     },
     {
      "w": "under",
-     "t": 1.04,
-     "end": 1.3
+     "t": 1.62,
+     "end": 1.84
     },
     {
      "w": "twelve",
-     "t": 1.3,
-     "end": 1.6
+     "t": 1.84,
+     "end": 2.16
     },
     {
-     "w": "cents.",
-     "t": 1.6,
-     "end": 1.84
+     "w": "cents?!",
+     "t": 2.16,
+     "end": 2.38
     }
    ]
   },
   {
    "turn": 2,
-   "text": "In 1970 money. Prices have climbed almost nine times since then.",
+   "text": "In 1970 money, yes. Prices have climbed almost nine times since then.",
    "words": [
     {
      "w": "In",
-     "t": 2.5,
-     "end": 2.66
+     "t": 3.04,
+     "end": 3.22
     },
     {
      "w": "1970",
-     "t": 2.66,
-     "end": 3.3
+     "t": 3.22,
+     "end": 3.88
     },
     {
-     "w": "money.",
-     "t": 3.3,
-     "end": 3.72
+     "w": "money,",
+     "t": 3.88,
+     "end": 4.26
+    },
+    {
+     "w": "yes.",
+     "t": 4.26,
+     "end": 4.68
     },
     {
      "w": "Prices",
-     "t": 4.56,
-     "end": 4.78
+     "t": 5.12,
+     "end": 5.32
     },
     {
      "w": "have",
-     "t": 4.78,
-     "end": 4.94
-    },
-    {
-     "w": "climbed",
-     "t": 4.94,
-     "end": 5.2
-    },
-    {
-     "w": "almost",
-     "t": 5.2,
+     "t": 5.32,
      "end": 5.52
     },
     {
-     "w": "nine",
+     "w": "climbed",
      "t": 5.52,
-     "end": 5.88
+     "end": 5.76
+    },
+    {
+     "w": "almost",
+     "t": 5.76,
+     "end": 6.16
+    },
+    {
+     "w": "nine",
+     "t": 6.16,
+     "end": 6.46
     },
     {
      "w": "times",
-     "t": 5.88,
-     "end": 6.32
+     "t": 6.46,
+     "end": 6.88
     },
     {
      "w": "since",
-     "t": 6.32,
-     "end": 6.54
+     "t": 6.88,
+     "end": 7.1
     },
     {
      "w": "then.",
-     "t": 6.54,
-     "end": 6.9
+     "t": 7.1,
+     "end": 7.48
     }
    ]
   },
   {
    "turn": 3,
-   "text": "That's the government's consumer price index, not a guess.",
+   "text": "That's the government's consumer price index. Not a guess.",
    "words": [
     {
      "w": "That's",
-     "t": 7.54,
-     "end": 7.78
+     "t": 7.96,
+     "end": 8.3
     },
     {
      "w": "the",
-     "t": 7.78,
-     "end": 7.92
+     "t": 8.3,
+     "end": 8.42
     },
     {
      "w": "government's",
-     "t": 7.92,
-     "end": 8.4
+     "t": 8.42,
+     "end": 8.92
     },
     {
      "w": "consumer",
-     "t": 8.4,
-     "end": 8.72
+     "t": 8.92,
+     "end": 9.22
     },
     {
      "w": "price",
-     "t": 8.72,
-     "end": 9.08
+     "t": 9.22,
+     "end": 9.58
     },
     {
-     "w": "index,",
-     "t": 9.08,
-     "end": 9.4
+     "w": "index.",
+     "t": 9.58,
+     "end": 9.96
     },
     {
-     "w": "not",
-     "t": 9.82,
-     "end": 9.92
+     "w": "Not",
+     "t": 10.44,
+     "end": 10.66
     },
     {
      "w": "a",
-     "t": 9.92,
-     "end": 10.08
+     "t": 10.66,
+     "end": 10.82
     },
     {
      "w": "guess.",
-     "t": 10.08,
-     "end": 10.32
+     "t": 10.82,
+     "end": 11.02
     }
    ]
   },
   {
    "turn": 4,
-   "text": "Something that cost one dollar in 1970 costs about eight seventy now.",
+   "text": "But nobody stole it. So where did it go?",
    "words": [
     {
-     "w": "Something",
-     "t": 10.86,
-     "end": 11.08
+     "w": "But",
+     "t": 11.5,
+     "end": 11.76
     },
     {
-     "w": "that",
-     "t": 11.08,
-     "end": 11.3
+     "w": "nobody",
+     "t": 11.76,
+     "end": 12.04
     },
     {
-     "w": "cost",
-     "t": 11.3,
-     "end": 11.54
+     "w": "stole",
+     "t": 12.04,
+     "end": 12.26
     },
     {
-     "w": "one",
-     "t": 11.54,
-     "end": 11.627
+     "w": "it.",
+     "t": 12.26,
+     "end": 12.46
     },
     {
-     "w": "dollar",
-     "t": 11.627,
-     "end": 11.8
-    },
-    {
-     "w": "in",
-     "t": 11.8,
-     "end": 12.2
-    },
-    {
-     "w": "1970",
-     "t": 12.2,
-     "end": 12.8
-    },
-    {
-     "w": "costs",
+     "w": "So",
      "t": 12.8,
+     "end": 12.96
+    },
+    {
+     "w": "where",
+     "t": 12.96,
+     "end": 13.1
+    },
+    {
+     "w": "did",
+     "t": 13.1,
      "end": 13.18
     },
     {
-     "w": "about",
+     "w": "it",
      "t": 13.18,
-     "end": 13.44
+     "end": 13.3
     },
     {
-     "w": "eight",
-     "t": 13.44,
-     "end": 13.698
-    },
-    {
-     "w": "seventy",
-     "t": 13.698,
-     "end": 14.06
-    },
-    {
-     "w": "now.",
-     "t": 14.06,
-     "end": 14.4
+     "w": "go?",
+     "t": 13.3,
+     "end": 13.46
     }
    ]
   },
   {
    "turn": 5,
-   "text": "Inflation never takes it all at once.",
+   "text": "It's hiding in plain sight. Watch...",
    "words": [
     {
-     "w": "Inflation",
-     "t": 15.02,
-     "end": 15.38
+     "w": "It's",
+     "t": 13.98,
+     "end": 14.22
     },
     {
-     "w": "never",
-     "t": 15.38,
-     "end": 15.66
+     "w": "hiding",
+     "t": 14.22,
+     "end": 14.5
     },
     {
-     "w": "takes",
-     "t": 15.66,
-     "end": 15.94
+     "w": "in",
+     "t": 14.5,
+     "end": 14.8
     },
     {
-     "w": "it",
+     "w": "plain",
+     "t": 14.8,
+     "end": 15.0
+    },
+    {
+     "w": "sight.",
+     "t": 15.0,
+     "end": 15.32
+    },
+    {
+     "w": "Watch...",
      "t": 15.94,
-     "end": 16.06
-    },
-    {
-     "w": "all",
-     "t": 16.06,
      "end": 16.16
-    },
-    {
-     "w": "at",
-     "t": 16.16,
-     "end": 16.26
-    },
-    {
-     "w": "once.",
-     "t": 16.26,
-     "end": 16.52
     }
    ]
   },
   {
    "turn": 6,
-   "text": "Roughly four percent a year, quietly, for over fifty years.",
+   "text": "A one dollar snack in 1970 costs about eight seventy now.",
    "words": [
     {
-     "w": "Roughly",
-     "t": 17.2,
-     "end": 17.56
+     "w": "A",
+     "t": 16.88,
+     "end": 16.98
     },
     {
-     "w": "four",
-     "t": 17.56,
-     "end": 17.727
+     "w": "one",
+     "t": 16.98,
+     "end": 17.1
     },
     {
-     "w": "percent",
-     "t": 17.727,
-     "end": 18.02
+     "w": "dollar",
+     "t": 17.1,
+     "end": 17.34
     },
     {
-     "w": "a",
-     "t": 18.02,
-     "end": 18.22
+     "w": "snack",
+     "t": 17.34,
+     "end": 17.62
     },
     {
-     "w": "year,",
-     "t": 18.22,
-     "end": 18.44
+     "w": "in",
+     "t": 17.62,
+     "end": 17.92
     },
     {
-     "w": "quietly,",
-     "t": 18.76,
-     "end": 19.06
+     "w": "1970",
+     "t": 17.92,
+     "end": 18.56
     },
     {
-     "w": "for",
-     "t": 19.8,
-     "end": 19.98
+     "w": "costs",
+     "t": 18.56,
+     "end": 19.0
     },
     {
-     "w": "over",
-     "t": 19.98,
-     "end": 20.18
+     "w": "about",
+     "t": 19.0,
+     "end": 19.4
     },
     {
-     "w": "fifty",
-     "t": 20.18,
-     "end": 20.5
+     "w": "eight",
+     "t": 19.4,
+     "end": 19.6
     },
     {
-     "w": "years.",
-     "t": 20.5,
-     "end": 20.82
+     "w": "seventy",
+     "t": 19.6,
+     "end": 19.88
+    },
+    {
+     "w": "now.",
+     "t": 19.88,
+     "end": 20.26
     }
    ]
   },
   {
    "turn": 7,
-   "text": "Nobody notices a single year. That's exactly why",
+   "text": "Roughly four percent a year, quietly, for over fifty years.",
    "words": [
     {
-     "w": "Nobody",
-     "t": 21.46,
-     "end": 21.74
+     "w": "Roughly",
+     "t": 20.82,
+     "end": 21.1
     },
     {
-     "w": "notices",
-     "t": 21.74,
-     "end": 22.1
+     "w": "four",
+     "t": 21.1,
+     "end": 21.304
+    },
+    {
+     "w": "percent",
+     "t": 21.304,
+     "end": 21.66
     },
     {
      "w": "a",
-     "t": 22.1,
-     "end": 22.32
+     "t": 21.66,
+     "end": 21.86
+    },
+    {
+     "w": "year,",
+     "t": 21.86,
+     "end": 22.04
+    },
+    {
+     "w": "quietly,",
+     "t": 22.04,
+     "end": 22.5
+    },
+    {
+     "w": "for",
+     "t": 22.5,
+     "end": 23.0
+    },
+    {
+     "w": "over",
+     "t": 23.0,
+     "end": 23.26
+    },
+    {
+     "w": "fifty",
+     "t": 23.26,
+     "end": 23.56
+    },
+    {
+     "w": "years.",
+     "t": 23.56,
+     "end": 23.92
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "I never noticed a single year!",
+   "words": [
+    {
+     "w": "I",
+     "t": 24.52,
+     "end": 24.72
+    },
+    {
+     "w": "never",
+     "t": 24.72,
+     "end": 24.94
+    },
+    {
+     "w": "noticed",
+     "t": 24.94,
+     "end": 25.22
+    },
+    {
+     "w": "a",
+     "t": 25.22,
+     "end": 25.44
     },
     {
      "w": "single",
-     "t": 22.32,
-     "end": 22.48
+     "t": 25.44,
+     "end": 25.78
     },
     {
-     "w": "year.",
-     "t": 22.48,
-     "end": 22.72
+     "w": "year!",
+     "t": 25.78,
+     "end": 26.22
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "Nobody does. You only notice the total. Like:",
+   "words": [
+    {
+     "w": "Nobody",
+     "t": 26.8,
+     "end": 27.12
     },
     {
-     "w": "That's",
-     "t": 23.18,
-     "end": 23.4
+     "w": "does.",
+     "t": 27.12,
+     "end": 27.46
     },
     {
-     "w": "exactly",
-     "t": 23.4,
-     "end": 23.66
+     "w": "You",
+     "t": 27.68,
+     "end": 27.94
     },
     {
-     "w": "why",
-     "t": 23.66,
-     "end": 23.92
+     "w": "only",
+     "t": 27.94,
+     "end": 28.14
+    },
+    {
+     "w": "notice",
+     "t": 28.14,
+     "end": 28.48
+    },
+    {
+     "w": "the",
+     "t": 28.48,
+     "end": 28.6
+    },
+    {
+     "w": "total.",
+     "t": 28.6,
+     "end": 28.84
+    },
+    {
+     "w": "Like:",
+     "t": 29.16,
+     "end": 29.56
     }
    ]
   }
