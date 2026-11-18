@@ -44,6 +44,10 @@ export type FinShot = {
   blur?: number;
   /** motion-blur shutter (fraction of a frame): 0.35 default, 0.2 for fast whole-body moves, 0.125 for big close slides */
   shutter?: number;
+  /** hook style: a moving lens position (overrides off/pos), a fov curve (slam zooms) and a shake amplitude (m) */
+  posAt?: (t: number) => V3;
+  fovAt?: (t: number) => number;
+  shake?: (t: number) => number;
 };
 
 /** times from plan.gen.ts SHOTS + lens specs keyed by shot id */
@@ -62,10 +66,14 @@ export const camOf = (s: FinShot, t: number): Cam => {
   const tau = Math.max(0, t - s.a);
   const subj = s.subj(t);
   const k = 1 - (s.push ?? PUSH) * tau;
-  const pos: V3 = s.pos
-    ? [subj[0] + (s.pos[0] - subj[0]) * k, subj[1] + (s.pos[1] - subj[1]) * k, subj[2] + (s.pos[2] - subj[2]) * k]
-    : [subj[0] + s.off[0] * k, subj[1] + s.off[1] * k, subj[2] + s.off[2] * k];
-  const c = aim(pos, subj, s.fov, s.face);
+  let pos: V3 = s.posAt
+    ? s.posAt(t)
+    : s.pos
+      ? [subj[0] + (s.pos[0] - subj[0]) * k, subj[1] + (s.pos[1] - subj[1]) * k, subj[2] + (s.pos[2] - subj[2]) * k]
+      : [subj[0] + s.off[0] * k, subj[1] + s.off[1] * k, subj[2] + s.off[2] * k];
+  const sh = s.shake ? s.shake(t) : 0;
+  if (sh > 0) pos = [pos[0] + sh * Math.sin(t * 71.3), pos[1] + sh * Math.sin(t * 57.1 + 1.3), pos[2] + 0.5 * sh * Math.sin(t * 63.7 + 2.1)];
+  const c = aim(pos, subj, s.fovAt ? s.fovAt(t) : s.fov, s.face);
   const r = s.roll ?? [0, 0];
   return { ...c, roll: lerp(r[0], r[1], Math.min(1, tau / Math.max(0.01, s.b - s.a))) };
 };
