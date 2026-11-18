@@ -1,0 +1,2 @@
+// generated from shorts/minimum-payment-trap/script.txt
+export default "Spender just bought a TV. He'll be paying for it for nineteen years.\nFive thousand dollars, on a card at twenty-two percent.\nHe pays only the minimum. Easy, right?\nWrong. Most of it is interest, so the money he owes barely moves.\nNineteen years later, he's paid over eight thousand dollars extra.\nPay two hundred a month instead? Done in under three years.\nSo if you only pay the minimum, you end up like Spender.";

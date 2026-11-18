@@ -1,4 +1,21 @@
-# Sources and maths: minimum-payment-trap
+# Sources and maths: minimum-payment-trap (FORMAT v1 story)
+
+The story VO (finance/FORMAT_V1.md) keeps F1's verified example; only the telling changed. Line-by-line:
+
+| VO line | figure | where it comes from |
+|---|---|---|
+| "He'll be paying for it for nineteen years." | 230 months = 19.2 years | the simulation below (minimum = interest + 1 %, $25 floor) |
+| "Five thousand dollars, on a card at twenty-two percent." | $5,000, 22 % APR | stated example; 22 % ≈ the Fed G.19 average (22.36 %) |
+| "He pays only the minimum." / on screen "MINIMUM DUE $142" | first minimum $141.67 | 5,000 × 0.22/12 = $91.67 interest + $50.00 (1 %) |
+| "Most of it is interest, so the money he owes barely moves." / "OWE $4,950" | $91.67 of $141.67 (65 %) is interest; the balance drops $50 | first month of the simulation |
+| "Nineteen years later, he's paid over eight thousand dollars extra." / "+$8,100 EXTRA" | $8,099.71 interest | simulation (rounded to $8,100 on screen, "over eight thousand" in the VO) |
+| "Pay two hundred a month instead? Done in under three years." | 34 months = 2.8 years, $1,749.90 interest | simulation, flat $200 |
+| "So if you only pay the minimum, you end up like Spender." | | hedge: one stated example; your statement's minimum payment warning shows your own payoff time |
+
+Hook text on frame 0: "19 YEARS TO PAY OFF A TV" (the same example). EXAMPLE is shown in the corner from the price
+tag to the payoff.
+
+## F1 details (unchanged)
 
 ## The stated example (shown on screen as "EXAMPLE")
 - Balance **$5,000**, APR **22%** (monthly rate 22% / 12 = 1.8333%), no new purchases, no fees.

@@ -1,142 +1,126 @@
 {
  "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
+ "exaggeration": 0.55,
  "cfg_weight": 0.3,
  "seeds_tried": [
-  7,
-  11,
-  23
+  7
  ],
- "gap": 0.3,
+ "gap": 0.25,
  "section": 1.4,
- "lead": 0.15,
+ "lead": 0.1,
  "beat": 0.7,
  "sr": 24000,
- "duration": 26.891,
- "render_s": 194.3,
+ "duration": 23.244,
+ "render_s": 114.8,
  "qa_fail_lines": [
-  2
+  2,
+  5
  ],
  "lines": [
   {
    "n": 1,
-   "text": "Your minimum payment can take nineteen years.",
-   "start": 0.15,
+   "text": "Spender just bought a TV. He'll be paying for it for nineteen years.",
+   "start": 0.1,
    "parts": [
     {
-     "tts": "Your minimum payment can take nineteen years.",
+     "tts": "Spender just bought a tv. He'll be paying for it for nineteen years.",
      "seed": 7,
-     "heard": "Your minimum payment can take 19 years.",
+     "heard": "Spender just bought a TV. He'll be paying for it for 19 years.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 2.333
+   "end": 3.79
   },
   {
    "n": 2,
-   "text": "Say you owe five thousand dollars at twenty-two percent, near the U.S. average.",
-   "start": 2.633,
+   "text": "Five thousand dollars, on a card at twenty-two percent.",
+   "start": 4.04,
    "parts": [
     {
-     "tts": "Say you owe five thousand dollars at twenty-two percent, near the U.S. average.",
+     "tts": "Five thousand dollars, on a card at twenty-two percent.",
      "seed": 7,
-     "heard": "say you owe $5,000 at 22% near the U.S. average.",
+     "heard": "$5,000 on a card at 22%.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 7.488
+   "end": 6.953
   },
   {
    "n": 3,
-   "text": "You pay only the minimum: interest plus one percent of the balance.",
-   "start": 7.788,
+   "text": "He pays only the minimum. Easy, right?",
+   "start": 7.203,
    "parts": [
     {
-     "tts": "You pay only the minimum: interest plus one percent of the balance.",
+     "tts": "He pays only the minimum. Easy, right?",
      "seed": 7,
-     "heard": "you pay only the minimum interest plus 1% of the balance.",
+     "heard": "He pays only the minimum. Easy, right?",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 11.673
+   "end": 9.37
   },
   {
    "n": 4,
-   "text": "As the balance shrinks, the payment shrinks. So it crawls.",
-   "start": 11.973,
+   "text": "Wrong. Most of it is interest, so the money he owes barely moves.",
+   "start": 9.62,
    "parts": [
     {
-     "tts": "As the balance shrinks, the payment shrinks. So it crawls.",
+     "tts": "Wrong. Most of it is interest, so the money he owes barely moves.",
      "seed": 7,
-     "heard": "As the balance shrinks, the payment shrinks, so it crawls.",
+     "heard": "Wrong. Most of it is interest, so the money he owes barely moves.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 15.425
+   "end": 13.037
   },
   {
    "n": 5,
-   "text": "About nineteen years, and over eight thousand in interest.",
-   "start": 15.725,
+   "text": "Nineteen years later, he's paid over eight thousand dollars extra.",
+   "start": 13.287,
    "parts": [
     {
-     "tts": "About nineteen years, and over eight thousand in interest.",
+     "tts": "Nineteen years later, he's paid over eight thousand dollars extra.",
      "seed": 7,
-     "heard": "about 19 years, and over 8,000 in interest.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "heard": "19 years later, he's paid over $8,000 extra.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
     }
    ],
-   "end": 19.015
+   "end": 16.226
   },
   {
    "n": 6,
-   "text": "Pay a flat two hundred a month instead? Under three years.",
-   "start": 19.315,
+   "text": "Pay two hundred a month instead? Done in under three years.",
+   "start": 16.476,
    "parts": [
     {
-     "tts": "Pay a flat two hundred a month instead? Under three years.",
+     "tts": "Pay two hundred a month instead? Done in under three years.",
      "seed": 7,
-     "heard": "Pay a flat 200 a month instead, under 3 years.",
+     "heard": "Pay 200 a month instead, done in under 3 years.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 22.199
+   "end": 19.314
   },
   {
    "n": 7,
-   "text": "Your statement has a minimum payment warning. Read it.",
-   "start": 22.499,
+   "text": "So if you only pay the minimum, you end up like Spender.",
+   "start": 19.564,
    "parts": [
     {
-     "tts": "Your statement has a minimum payment warning. Read it.",
+     "tts": "So if you only pay the minimum, you end up like Spender.",
      "seed": 7,
-     "heard": "Your statement has a minimum payment warning. Read it.",
+     "heard": "So, if you only pay the minimum, you end up like Spender.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 25.109
-  },
-  {
-   "n": 8,
-   "text": "Because otherwise...",
-   "start": 25.409,
-   "parts": [
-    {
-     "tts": "Because otherwise...",
-     "seed": 7,
-     "heard": "because otherwise",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 26.591
+   "end": 22.994
   }
  ]
 }
