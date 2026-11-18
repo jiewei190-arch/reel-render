@@ -14,6 +14,10 @@ Maths (future value of an annuity due, i = 0.07/12):
   → "about two hundred eighty thousand".
 - Spender at 65: 200 × ((1+i)^360 − 1)/i × (1+i) = **$245,417** → "two hundred forty-five" (thousand, rounded; the line before says "about").
 - Put in: Saver 200 × 120 = **$24,000**; Spender 200 × 360 = **$72,000**.
+- **Convention used everywhere (VO, tags, description): deposits at the START of each month (annuity due).** With
+  deposits at the END of each month (ordinary annuity) every figure is one month's growth smaller (÷ 1.005833):
+  Saver ≈ $280,964, Spender ≈ $243,990. Both conventions keep "about two hundred eighty thousand" for Saver; the VO's
+  "two hundred forty-five" and the tag ≈ $245,400 follow the stated start-of-month convention.
 - Cross-check with yearly compounding ($2,400 at the start of each year): Saver $270,088 vs Spender $242,575; Saver still
   ends ahead, so the point doesn't hang on the compounding detail.
 
