@@ -1,8 +1,9 @@
 # Block Money (YouTube): standing rules (owner, 2026-11-18)
 
 - Channel: **Block Money**, handle @BlockMoneys, channel ID UC9vwlwhchNKGNuLyd5ReXRA (formerly "What-If Sims"). Blocky-avatar finance Shorts.
-- Creator may upload and SCHEDULE Block Money Shorts in YouTube Studio only after MAIN has checked each one, at up to 3 per day.
-  Schedule only, never publish immediately. Same flow as Justin clips.
+- **Autopilot (owner, 2026-11-18): "upload them without my approval… fully ran by u guys".** The owner does NOT review Block Money Shorts before upload.
+  The gate is MAIN: Creator uploads and SCHEDULES a Short only after MAIN sends a written "BM GO" for that exact slug and sha256.
+  Up to 3 per day, at 11:00, 15:00 and 19:00 America/New_York. Schedule only, never publish immediately. MAIN sends the owner the links afterwards.
 - **Before every upload, confirm the channel switcher shows "Block Money".** Never upload finance Shorts to Justin clips, or the reverse.
 - "Altered or synthetic content": always **No**. Never toggle it on.
 - Description must include "Educational only, not financial advice." and "Voice is synthetic." plus sources.
