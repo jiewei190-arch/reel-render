@@ -1,5 +1,7 @@
 # UPLOAD: penny-doubles
 
+**Style:** S2 RICH-VS-POOR
+
 **Title (44 chars):** A Penny vs $1,000,000: Which Would You Take?
 
 **Description:**
