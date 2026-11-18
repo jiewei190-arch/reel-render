@@ -67,7 +67,7 @@ type LensOpts = { fov?: number; face?: number; mood: MoodKey; roll?: [number, nu
 export const fitted = (pts: V3[], yaw: number, up: number, dur: number, o: LensOpts): Omit<FinShot, "id" | "a" | "b"> => {
   const subj = o.subj ?? centre(pts);
   const fov = o.fov ?? 52, face = o.face ?? 0.55;
-  const off = fitOff(pts, subj, dirOf(yaw, up), fov, face, dur, o.push ?? PUSH, o.m ?? 0.05);
+  const off = fitOff(pts, subj, dirOf(yaw, up), fov, face, dur, o.push ?? PUSH, o.m ?? 0.1);
   return { subj: () => subj, off, fov, face, mood: o.mood, roll: o.roll ?? [0, 1.2], blur: o.blur ?? 1.0, push: o.push, shutter: o.shutter, sky: o.sky };
 };
 /** a manual lens on a prop: subj + yaw/dist/up */

@@ -58,7 +58,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S02: manual([CAL[0], CAL[1] - 0.15, CAL[2]], 12, 2.0, 0.05, { mood: "earth", sky: true }),
   S03: fitted([...sp(), [CAR[0] + 0.6, 1.8, CAR[2] + 0.8]], 28, 0.12, D.S03, { mood: "earth", sky: true }),
   S04: manual([P_SP[0] - 0.25, 1.45, P_SP[2] + 0.45], 14, 1.05, 0.0, { mood: "earth", sky: true }),
-  S05: fitted([...body(P_SV, S.saver), [JAR_P[0], 1.4, JAR_P[2]]], -14, 0.14, D.S05, { mood: "earth", sky: true }),
+  S05: fitted([...body(P_SV, S.saver), [JAR_P[0] - 0.35, 1.4, JAR_P[2]], [JAR_P[0] - 0.35, 0, JAR_P[2]], [CAL[0], CAL[1] + 0.55, CAL[2]]], -14, 0.14, D.S05, { mood: "earth", sky: true }),
   S06: manual([JAR_P[0], 1.05, JAR_P[2]], -8, 1.4, 0.2, { mood: "earth", sky: true }),
   S07: fitted([...body(P_SV, S.saver), [CAR2[0] - 0.9, 0, CAR2[2]], [CAR2[0] + 0.8, 1.3, CAR2[2]]], -22, 0.14, D.S07, { mood: "earth", sky: true }),
   S08: fitted(sp(true), 22, 0.05, D.S08, { mood: "earth", sky: true, face: 0.5 }),
