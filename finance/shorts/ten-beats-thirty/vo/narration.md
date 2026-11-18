@@ -3,6 +3,6 @@
 3. Spender saves the same two hundred from thirty-five to sixty-five.
 4. Saver put in twenty-four thousand. Spender, seventy-two thousand.
 5. Assume a steady seven percent a year, as an example.
-6. At sixty-five, Saver has about two hundred eighty thousand. Spender, about two hundred forty-five.
-7. Real returns vary, nothing is guaranteed, but time did the heavy lifting.
+6. At sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.
+7. Returns vary, nothing is guaranteed. But time did the heavy lifting.
 8. That's how
