@@ -14,7 +14,7 @@ import { Card, CT, Dust, FACE, P_SP, Reader, SC, Store, TOP, TV, easeOut, shakeA
 import { actorBoxes, Burst, burstHalf, burstPos, Coin3, creep, DebtBlock, HookText, PayBox, shotsOf, TallJar, timing, WordCaption } from "./kit";
 import type { Box, StoryAudio } from "./kit";
 
-const { T, E, W, lineEnd } = timing(PLAN, WORDS);
+const { T, W, lineEnd } = timing(PLAN, WORDS);
 const idx = (id: string) => parseInt(id.slice(1), 10);
 
 // ------------------------------------------------------------------ layout (metres; lens side = +z)
@@ -24,7 +24,7 @@ const PB: V3 = [-2.05, 0, 0.05]; // pay-bill box
 const P_PAY: V3 = [-1.35, 0, 0.6];
 const IJ: V3 = [-4.0, 0, -2.4]; // the INTEREST jar (back-left corner, out of the block shots' sightlines)
 const OB: V3 = [-1.5, 0, -2.35]; // the OWE block
-const P_PUSH: V3 = [-2.75, 0, -2.3]; // at the block's LEFT side, pushing +x (in view past the pay box; clear of the jar and the block)
+const P_PUSH: V3 = [-3.12, 0, -2.3]; // PC fix: was -2.75: his hands went ~0.25 m into the block (face at x -2.42); now the palms land on it // at the block's LEFT side, pushing +x (in view past the pay box; clear of the jar and the block)
 const P_LOOK: V3 = [-2.7, 0, -1.4]; // S12: watching the chip, right of the block
 const WCAL: V3 = [1.7, 2.55, -3.44];
 const PILE: V3 = [-3.35, 0, 0.35];
@@ -44,7 +44,7 @@ const tTag = T("S05") + 0.12;
 const tStamp = T("S06") + 0.15;
 const tWrong = W(4, "wrong");
 const tChip = T("S12") + 0.25;
-const tYears0 = T("S14"), tYears1 = E("S14") - 0.05;
+const tYears0 = T("S14"), tYears1 = W(5, "later") + 0.18; // PC fix: lands on 19 by the end of "later" (was E(S14) - 0.05: still 13 on "later")
 const tCrash = T("S15") + 0.15;
 const tSv = T("S17") + 0.2;
 const tBurst = T("S18") + 0.1;
@@ -99,9 +99,11 @@ const LENS = {
   S13: creep([OB[0] - 0.8, 0.95, OB[2]], [-4.6, 1.45, -0.2], { fov: 56, face: 0.5, roll: [-2, 2] }),
   S14: creep([WCAL[0], WCAL[1] - 0.2, WCAL[2]], [WCAL[0] - 0.3, 2.1, WCAL[2] + 2.4], { fov: 48, face: 0.5, mood: "whisper" }),
   S15: creep([PILE[0] + 0.4, 0.9, PILE[2] - 0.6], [PILE[0] + 2.6, 1.7, PILE[2] + 3.2], { fov: 56, face: 0.5, mood: "whisper", fovAt: slam(tCrash, 62, 54, 0.1), shake: shakeAt([tCrash, tCrash + 0.35], 0.08) }),
-  S16: { ...creep(spFace(P_SAD), [P_SAD[0] + 0.3, 1.25, P_SAD[2] + 2.1], { face: 0.62, mood: "whisper", roll: [0, 3] }), fovAt: slam(T("S16") + 0.05, 52, 44, 0.14), shake: shakeAt([T("S16") + 0.05], 0.04) },
+  S16: { ...creep(spFace(P_SAD), [P_SAD[0] + 2.6, 1.25, P_SAD[2] + 1.65], { face: 0.6, mood: "whisper", roll: [0, 3] }), // PC fix: lens on his right: the coin pile / +$8,100 EXTRA behind him (was his head over PAY BILL and the OWE block)
+    fovAt: slam(T("S16") + 0.05, 38, 31, 0.14), shake: shakeAt([T("S16") + 0.05], 0.04) },
   S17: creep([(P_SV[0] + SB[0]) / 2, 1.0, (P_SV[2] + SB[2]) / 2], [1.6, 1.5, 3.4], { face: 0.62, mood: "ending", shake: shakeAt([tSv], 0.05) }),
-  S18: creep([SB[0], 0.9, SB[2]], [SB[0] + 1.7, 1.45, SB[2] + 3.3], { fov: 56, face: 0.5, mood: "ending", fovAt: slam(tBurst, 62, 54, 0.1), shake: shakeAt([tBurst], 0.07) }),
+  S18: creep([(P_SV[0] + SB[0]) / 2 + 0.1, 1.0, (P_SV[2] + SB[2]) / 2], [2.0, 1.55, 3.9], { fov: 60, // PC fix: Saver + his block in frame (was the block alone: an empty wall)
+    face: 0.5, mood: "ending", fovAt: slam(tBurst, 62, 54, 0.1), shake: shakeAt([tBurst], 0.07) }),
   S19: creep([P_SV[0] + 0.5, 1.2, P_SV[2] + 0.3], [P_SV[0] + 0.6, 1.4, P_SV[2] + 3.4], { face: 0.45, mood: "ending", shake: shakeAt([tDone], 0.04) }),
   S20: creep([P_SP[0] - 0.2, 1.05, P_SP[2] - 0.2], [P_SP[0] + 0.6, 1.3, P_SP[2] + 2.5], { face: 0.48 }),
   S21: { ...creep(spFace(P_SP), [P_SP[0] - 0.1, 1.28, P_SP[2] + 1.3], { face: 0.64, blur: 1.4 }), fovAt: slam(T("S21") + 0.05, 50, 36, 0.14), shake: shakeAt([T("S21") + 0.05], 0.04) },
@@ -243,15 +245,15 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       <TallJar p={IJ} fill={jarFill} label="INTEREST" glow={jarGlow} />
       {i === 15 && crashU > 0 && crashU < 1 ? Array.from({ length: 24 }, (_, k) => <Coin3 key={k} p={crashPos(k, t)} r={[t * 9 + k, k, t * 7]} s={1.5} />) : null}
       {pile > 0 ? <CoinPile p={PILE} r={pile * 0.9} h={pile * 0.75} coins={90} /> : null}
-      {i >= 15 && i <= 16 ? <Label p={[PILE[0] + 0.6, pile * 0.75 + 0.2, PILE[2] + 0.9]} r={[0, 0.35, 0]} text={["+$8,100", "EXTRA"]} w={0.9} h={0.42} bg={PAL.debt} fg="#fff4c8" glow={0.1} /> : null}
+      {i === 15 ? <Label p={[PILE[0] + 0.6, pile * 0.75 + 0.2, PILE[2] + 0.9]} r={[0, 0.35, 0]} text={["+$8,100", "EXTRA"]} w={0.9} h={0.42} bg={PAL.debt} fg="#fff4c8" glow={0.1} /> : null}
       <DebtBlock p={OB} text={["OWE", owe]} chip={i === 12 ? clamp((t - tChip) / 0.6) : 0} squash={i === 13 ? 0.15 * Math.abs(Math.sin(t * 14)) : 0} glow={i === 12 ? 0.25 : 0} />
       {/* the wall calendar: years race in the dark */}
-      <FlipCalendar p={WCAL} title="YEAR" value={String(year)} prev={i === 14 && year > 1 ? String(year - 1) : undefined} flip={i === 14 ? (t * 9) % 1 : 1} sub={year >= 19 ? "STILL PAYING" : "PAYING THE MINIMUM"} color={year >= 19 ? "#c01818" : undefined} />
+      {i >= 17 && i <= 19 ? <FlipCalendar p={WCAL} title="YEAR" value="3" sub="$200 A MONTH" color={PAL.cash} /> : <FlipCalendar p={WCAL} title="YEAR" value={String(year)} prev={i === 14 && year > 1 ? String(year - 1) : undefined} flip={i === 14 ? (t * 9) % 1 : 1} sub={year >= 19 ? "STILL PAYING" : "PAYING THE MINIMUM"} color={year >= 19 ? "#c01818" : undefined} />}
       {/* Saver's route: $200 a month, block bursts, DONE under 3 years */}
       {svBlock ? <DebtBlock p={SB} size={[1.4, 1.4, 0.9]} text={["OWE", "$5,000"]} squash={ss(tSv - 0.05, tSv + 0.05, t) - ss(tSv + 0.1, tSv + 0.3, t)} /> : null}
-      {i === 17 ? <Label p={[SB[0] + 0.75, 1.55 + 1.2 * (1 - ss(tSv - 0.3, tSv, t)), SB[2] + 0.55]} text={["$200/MO"]} w={0.8} h={0.28} bg={PAL.cash} fg="#fff4c8" glow={0.1} /> : null}
+      {i === 17 || i === 18 ? <Label p={[SB[0] + 0.75, 1.55 + 1.2 * (1 - ss(tSv - 0.3, tSv, t)), SB[2] + 0.55]} text={["$200/MO"]} w={0.8} h={0.28} bg={PAL.cash} fg="#fff4c8" glow={0.1} /> : null}
       <Burst p={SB} u={burstU} n={22} r={2.0} arc={BURST_ARC} />
-      {i === 19 ? <Stamp p={[P_SV[0] + 0.72, 1.35, P_SV[2] + 0.6]} text="DONE: UNDER 3 YEARS" u={clamp((t - tDone + 0.1) / 0.25)} w={0.9} color={PAL.cash} /> : null}
+      {i === 19 ? <Stamp p={[P_SV[0] + 0.8, 0.78, P_SV[2] + 0.9]} text="DONE: UNDER 3 YEARS" u={clamp((t - tDone + 0.1) / 0.25)} w={0.62} color={PAL.cash} r={[0, 0, -0.06]} /> : null}
       {/* cobwebs in the dark years */}
       {dark ? <Label p={[CT[0] - 0.65, TOP + 1.15, CT[2] + 0.1]} r={[0, 0.25, 0.3]} text={["~ ~ ~"]} w={0.4} h={0.14} bg="#e8e4f0" fg="#9a96a8" /> : null}
       {actors}
@@ -269,6 +271,7 @@ export const MINTRAP_QA = (t: number): { actors: Box[]; props: Box[] } => {
   const sp = i >= 7 && i <= 11 ? P_PAY : i === 12 ? P_LOOK : i === 13 ? P_PUSH : i >= 14 && i <= 16 ? P_SAD : P_SP;
   if (!(i === 6 || (i >= 17 && i <= 19))) actors.push(...actorBoxes("Spender", sp));
   if (i >= 17 && i <= 19) actors.push(...actorBoxes("Saver", P_SV));
+  if (i === 13) actors.push({ name: "Spender.hands", c: [P_PUSH[0] + 0.58, 1.0, P_PUSH[2]], h: [0.1, 0.12, 0.26] }); // PC: palms at ~0.68 m forward (arms 1.55 + lean): contact, not inside
   const props: Box[] = [];
   if (i === 3 || i === 4) for (let k = 0; k < 19; k++) { const q = pagePos(k, t); if (q) props.push(box(`page${k}`, q, [0.22, 0.22, 0.22])); }
   if (i === 4) for (let k = 0; k < 10; k++) props.push(box(`rain${k}`, rainPos(k, t), [0.16, 0.16, 0.16]));
@@ -279,11 +282,12 @@ export const MINTRAP_QA = (t: number): { actors: Box[]; props: Box[] } => {
   if (i >= 5 && i <= 21) props.push(box("tag$5000", [CT[0] + 0.55, TAG_Y, CT[2] + 0.12], [0.32, 0.16, 0.08]));
   if (i >= 7 && i <= 9) props.push(box("bill", BILL, [0.32, 0.18, 0.08]));
   if (i === 10) props.push(box("mostlyInterest", [PB[0] - 0.6, 2.05, PB[2] + 0.2], [0.42, 0.19, 0.12]));
-  if (i === 19) props.push(box("doneStamp", [P_SV[0] + 0.72, 1.35, P_SV[2] + 0.6], [0.46, 0.14, 0.05]));
-  if (i === 17) props.push(box("$200", [SB[0] + 0.75, 1.55, SB[2] + 0.55], [0.41, 0.15, 0.05]));
+  if (i === 19) props.push(box("doneStamp", [P_SV[0] + 0.8, 0.78, P_SV[2] + 0.9], [0.31, 0.1, 0.05])); // PC fix: off his raised arm / the burst
+  if (i === 17 || i === 18) props.push(box("$200", [SB[0] + 0.75, 1.55, SB[2] + 0.55], [0.41, 0.15, 0.05]));
   if (i === 1 || i === 2 || i >= 20) props.push(box("TV", [CT[0] - 0.05, TOP + 0.5, CT[2] - 0.05], [0.78, 0.5, 0.2]));
   props.push(box("payBox", [PB[0], 0.75, PB[2]], [0.32, 0.75, 0.24]), box("jar", [IJ[0], 0.8, IJ[2]], [0.46, 0.8, 0.46]), box("oweBlock", [OB[0], 0.9, OB[2]], [0.92, 0.9, 0.52]), box("counter", [CT[0], 0.48, CT[2]], [1.06, 0.48, 0.41]));
-  if (i >= 15 && i <= 16) props.push(box("pile", [PILE[0], 0.5, PILE[2]], [1.15, 0.5, 1.15]), box("extraLabel", [PILE[0] + 0.6, 1.2, PILE[2] + 0.9], [0.46, 0.22, 0.06]));
+  if (i >= 15 && i <= 16) props.push(box("pile", [PILE[0], 0.5, PILE[2]], [1.15, 0.5, 1.15]));
+  if (i === 15) props.push(box("extraLabel", [PILE[0] + 0.6, 1.2, PILE[2] + 0.9], [0.46, 0.22, 0.06])); // PC fix: S16 drops the sign (antenna overlapped it on the slam)
   if (i === 17 || i === 18) props.push(box("saverBlock", [SB[0], 0.7, SB[2]], [0.72, 0.7, 0.47]));
   return { actors, props };
 };
