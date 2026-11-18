@@ -1,0 +1,2 @@
+// generated from shorts/rule-of-72/script.txt
+export default "Seventy-two tells you when your money doubles.\nDivide that by the yearly interest rate.\nSix percent? About twelve years.\nEight percent? About nine.\nTwelve percent? About six.\nIt's a shortcut, not a promise. Real returns go up and down.\nNow flip it.\nA card charging twenty-four percent can double what you owe in about three years.\nSame maths, wrong side. So remember...";
