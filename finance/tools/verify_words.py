@@ -36,6 +36,7 @@ FILLER = {"dollar", "dollars", "and", "cents", "point"}
 
 def norm(s):
     s = s.replace("’", "'")
+    s = re.sub(r"\b((?:[A-Za-z]\.){2,})", lambda m: m.group(1).replace(".", "") + " ", s)  # C.F.P.B. == CFPB
     s = re.sub(r"\$(\d[\d,]*)\.(\d\d)\b", lambda m: num(m.group(1)) + " " + num(m.group(2)), s)  # $8.70 -> eight seventy
     s = s.replace("$", "")
     s = re.sub(r"(\d+)\.(\d+)", lambda m: num(m.group(1)) + " point " + " ".join(ONES[int(c)] for c in m.group(2)), s)
