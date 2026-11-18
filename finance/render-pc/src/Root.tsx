@@ -9,9 +9,10 @@ import { RULE72_SPEC } from "./fin/rule72";
 import { SURPRISE_SPEC } from "./fin/surprise";
 import { MATCH_SPEC } from "./fin/match";
 import { DOUBLING_SPEC } from "./fin/doubling";
+import { COFFEE_SPEC } from "./fin/coffee";
 
 // <Slug> = sharp 30 fps (stills, look-dev); <Slug>Sub = SUB x fps for motion blur (render.sh averages SUB sub-frames).
-const FIN: [string, FinSpec][] = [["PennyDoubles", PENNY_SPEC], ["RuleOf72", RULE72_SPEC], ["SurpriseBill", SURPRISE_SPEC], ["EmployerMatch", MATCH_SPEC], ["PricesDouble", DOUBLING_SPEC]];
+const FIN: [string, FinSpec][] = [["PennyDoubles", PENNY_SPEC], ["RuleOf72", RULE72_SPEC], ["SurpriseBill", SURPRISE_SPEC], ["EmployerMatch", MATCH_SPEC], ["PricesDouble", DOUBLING_SPEC], ["CoffeeCouldBe", COFFEE_SPEC]];
 // props must be JSON (Remotion serialises them): pass the id, look the spec up here
 const SPECS: Record<string, FinSpec> = Object.fromEntries(FIN);
 const Sharp: React.FC<{ id: string }> = ({ id }) => <FinFilm spec={SPECS[id]} />;
