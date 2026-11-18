@@ -1,0 +1,125 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 27.04,
+ "render_s": 346.2,
+ "qa_fail_lines": [
+  1
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "POV: your boss just offered you 1,500 dollars of free money.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "pov: your boss just offered you one thousand five hundred dollars of free money.",
+     "seed": 11,
+     "heard": "Poff, your boss just offered you $1,500 of free money.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 3.401
+  },
+  {
+   "n": 2,
+   "text": "It's a match: save some of your pay, and they add more.",
+   "start": 3.651,
+   "parts": [
+    {
+     "tts": "It's a match: save some of your pay, and they add more.",
+     "seed": 11,
+     "heard": "It's a match, save some of your pay, and they add more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.534
+  },
+  {
+   "n": 3,
+   "text": "Say you earn 50,000. They match half, up to six percent.",
+   "start": 6.784,
+   "parts": [
+    {
+     "tts": "Say you earn fifty thousand. They match half, up to six percent.",
+     "seed": 11,
+     "heard": "Say you earn $50,000. They match half up to 6%.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.216
+  },
+  {
+   "n": 4,
+   "text": "You put in 3,000 a year. Spender, at the next desk, skips it.",
+   "start": 10.466,
+   "parts": [
+    {
+     "tts": "You put in three thousand a year. Spender, at the next desk, skips it.",
+     "seed": 11,
+     "heard": "you put in $3,000 a year. Spender, at the next desk, skips it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.39
+  },
+  {
+   "n": 5,
+   "text": "Then your first statement arrives...",
+   "start": 14.64,
+   "parts": [
+    {
+     "tts": "Then your first statement arrives...",
+     "seed": 11,
+     "heard": "Then, your first statement arrives.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.47
+  },
+  {
+   "n": 6,
+   "text": "1,500 extra, from your employer. Fifty cents on every dollar you saved.",
+   "start": 16.72,
+   "parts": [
+    {
+     "tts": "one thousand five hundred extra, from your employer. Fifty cents on every dollar you saved.",
+     "seed": 11,
+     "heard": "1,500 extra from your employer. 50 cents on every dollar you saved.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.872
+  },
+  {
+   "n": 7,
+   "text": "Plans differ, and some make you wait to keep it. Skip it, and that 1,500 just isn't yours.",
+   "start": 21.122,
+   "parts": [
+    {
+     "tts": "Plans differ, and some make you wait to keep it. Skip it, and that one thousand five hundred just isn't yours.",
+     "seed": 11,
+     "heard": "Plans differ, and some make you wait to keep it, skip it, and that 1,500 just isn't yours.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.79
+  }
+ ]
+}
