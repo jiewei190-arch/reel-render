@@ -34,11 +34,11 @@ const P_LD: V3 = [2.8, 0, -0.05];
 const P_SPB: V3 = [5.2, 0, -0.15]; // Spender at the booth slot (clear of the booth's rotated footprint)
 const SLOT: V3 = [BOOTH[0] + 0.75 * Math.cos(-0.55) + 0.35 * Math.sin(-0.55), 1.05, BOOTH[2] - 0.75 * Math.sin(-0.55) + 0.35 * Math.cos(-0.55)];
 const ENV: V3 = [2.35, 0, 0.35]; // the sealed FINAL TOTAL envelope on a pedestal
-const CAL: V3 = [-0.9, 2.05, -2.6];
+const CAL: V3 = [2.4, 2.05, -3.9]; // back-right, small behind the car
 const P_SV: V3 = [-2.15, 0, 0.75];
 const CAR2: V3 = [-3.45, 0, -1.6];
 const JAR_P: V3 = [-2.9, 0, 0.2];
-const BOARD: V3 = [0.9, 0, -3.25];
+const BOARD: V3 = [-1.7, 0, -4.7]; // far back-left: out of the hook's background
 const rot = (v: V3, a: number): V3 => [v[0] * Math.cos(a) + v[2] * Math.sin(a), v[1], -v[0] * Math.sin(a) + v[2] * Math.cos(a)];
 const BONNET: V3 = [CAR[0] + rot([0, 0, 1.0], CAR_YAW)[0], 1.05, CAR[2] + rot([0, 0, 1.0], CAR_YAW)[2]];
 const SCREEN: V3 = [CAR[0] + rot([0, 0, 0.5], CAR_YAW)[0], 1.0, CAR[2] + rot([0, 0, 0.5], CAR_YAW)[2]];
@@ -53,7 +53,7 @@ const tEnv = W(5, "plus");
 const tPaid = T("S15") + 0.2;
 const tPoint = T("S17") + 0.05;
 /** the month the card route shows */
-const monthAt = (t: number, i: number) => (i <= 6 ? 1 : i === 7 ? 6 : i === 8 || i === 9 ? 12 : i === 10 ? Math.round(12 + 14 * ss(T("S10"), T("S11") - 0.1, t)) : 26);
+const monthAt = (t: number, i: number) => (i <= 6 || i === 18 ? 1 : i === 7 ? 6 : i === 8 || i === 9 ? 12 : i === 10 ? Math.round(12 + 14 * ss(T("S10"), T("S11") - 0.1, t)) : 26);
 
 // ------------------------------------------------------------------ the flying bill (frame 0 already mid-air), stuck on the windscreen after
 const billAt = (t: number): V3 => {
@@ -138,7 +138,7 @@ const LENS = {
   S17: { ...creep(face(P_SV), [P_SV[0] + 0.25, 1.32, P_SV[2] + 1.9], { face: 0.62 }), fovAt: slam(tPoint, 50, 40, 0.14), shake: shakeAt([tPoint], 0.04) },
   S18: hook,
 };
-export const SURPRISE_V1_SHOTS = shotsOf(PLAN, LENS);
+export const SURPRISE_V1_SHOTS = shotsOf(PLAN, Object.fromEntries(Object.entries(LENS).map(([k, l]) => [k, { ...l, sky: true }]))); // outdoor: the sky dome on
 
 // ------------------------------------------------------------------ scene
 const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {

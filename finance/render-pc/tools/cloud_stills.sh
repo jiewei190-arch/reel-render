@@ -25,22 +25,4 @@ for f in "${FR[@]}"; do
   npx --no-install remotion still build "$COMP" "out/stills/$TAG/f$(printf %04d "$f").png" --frame="$f" --scale="$SCALE" --gl=swangle --timeout=400000 --log=error >/dev/null 2>&1 \
     || npx --no-install remotion still build "$COMP" "out/stills/$TAG/f$(printf %04d "$f").png" --frame="$f" --scale="$SCALE" --gl=swangle --timeout=400000 --log=error
 done
-python3 - "$PLAN" "$SHEET" "out/stills/$TAG" <<'PY'
-import json, re, subprocess, sys
-from pathlib import Path
-sh = json.loads(re.search(r"SHOTS = (\[.*?\]) as const", open(sys.argv[1]).read()).group(1))
-ims = sorted(Path(sys.argv[3]).glob("f*.png"))
-font = "public/fonts/Poppins-ExtraBold.ttf"
-labs = []
-for p in ims:
-    f = int(p.stem[1:]); t = f / 30
-    sid = [s["id"] for s in sh if s["t"] <= t + 1e-6][-1]
-    o = p.with_suffix(".lab.png")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(p), "-vf", f"scale=360:-1,drawtext=fontfile={font}:text='{sid}  f{f}  {t:.2f}s':fontsize=22:fontcolor=white:borderw=3:bordercolor=black:x=10:y=10", str(o)], check=True)
-    labs.append(o)
-n = len(labs); cols = min(n, 6)
-args = [a for x in labs for a in ("-i", str(x))]
-lay = "|".join(f"{(k % cols) * 362}_{(k // cols) * 642}" for k in range(n))
-subprocess.run(["ffmpeg", "-v", "error", "-y", *args, "-filter_complex", f"xstack=inputs={n}:layout={lay}:fill=white", sys.argv[2]], check=True)
-print(sys.argv[2], n, "stills")
-PY
+python3 tools/stills_sheet.py "$PLAN" "$SHEET" "out/stills/$TAG"
