@@ -9,9 +9,9 @@ const stub = { name: "stub", setup(b) {
   b.onLoad({ filter: /.*/, namespace: "stub" }, () => ({ contents: "const P=new Proxy(function(){return P},{get:(t,k)=>k==='__esModule'?false:P,apply:()=>P,construct:()=>P}); module.exports=P;", loader: "js" }));
 } };
 const r = await build({ entryPoints: ["tools/story_cues_entry.ts"], bundle: true, write: false, format: "esm", platform: "node", plugins: [stub], jsx: "automatic", logLevel: "error" });
-mkdirSync("build", { recursive: true });
-writeFileSync("build/story_qa.bundle.mjs", r.outputFiles[0].text);
-const m = await import(pathToFileURL("build/story_qa.bundle.mjs").href + "?" + Date.now());
+mkdirSync("out/tmp", { recursive: true }); // not build/: render.sh owns build/
+writeFileSync("out/tmp/story_qa.bundle.mjs", r.outputFiles[0].text);
+const m = await import(pathToFileURL("out/tmp/story_qa.bundle.mjs").href + "?" + Date.now());
 const want = process.argv[2];
 const ov = (a, b) => [0, 1, 2].every((k) => Math.abs(a.c[k] - b.c[k]) < a.h[k] + b.h[k]);
 let bad = 0;

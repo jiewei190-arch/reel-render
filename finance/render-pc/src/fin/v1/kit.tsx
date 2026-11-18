@@ -5,8 +5,8 @@
 import React from "react";
 import * as THREE from "three";
 import { geoOf } from "../../blocky/mat";
-import { clamp, hash, lerp } from "../../blocky/motion";
-import type { V3 } from "../../blocky/motion";
+import { clamp, HAND, hash, lerp, SHOULDER_Y, shoulderXOf } from "../../blocky/motion";
+import type { Pose, V3 } from "../../blocky/motion";
 import type { FinShot } from "../core";
 import { B, easeOut, shot } from "../hooks";
 import type { Shot } from "../hooks";
@@ -215,8 +215,35 @@ export const Debris: React.FC<{ p: V3; t: number; t0: number; n?: number; c?: st
 export type Box = { name: string; c: V3; h: V3 };
 /** head and torso boxes of a standing blocky actor of scale s at p, from blocky/motion SPEC (U = 0.27 m: head 0.28 x 0.30 x
  *  0.27 m centred at FACE = 1.247 s; torso 0.54 x 0.54 x 0.27 m below it), each padded by 2 cm and rotated-safe (x = z half) */
-export const actorBoxes = (name: string, p: V3, s = 1): Box[] => [
+export const actorBoxes = (name: string, p: V3, s = 1, pose?: Pose): Box[] => [
   { name: `${name}.head`, c: [p[0], 1.247 * s, p[2]], h: [0.16 * s, 0.17 * s, 0.16 * s] },
   { name: `${name}.torso`, c: [p[0], 0.81 * s, p[2]], h: [0.29 * s, 0.29 * s, 0.29 * s] },
+  ...(pose ? limbBoxes(name, pose, s) : []),
 ];
+/** world position of a point on an arm: k = 0 at the shoulder pivot, 1 at the hand end. Follows Blocky.tsx: shoulder at
+ *  (±shoulderX(out), SHOULDER_Y) in the torso frame, rotate z by ±out, then x by -raise; the torso pitches about the hip
+ *  (x), the body yaws (y); scaled by s about the hip pivot (pose.x, pose.y, pose.z). */
+export const armPoint = (pose: Pose, side: "L" | "R", k: number, s = 1): V3 => {
+  const sx = side === "L" ? 1 : -1;
+  const r = side === "L" ? pose.armL : pose.armR;
+  const o = sx * (side === "L" ? pose.outL : pose.outR);
+  const H = HAND * k;
+  // hand offset from the shoulder, after Rx(-raise) then Rz(o)
+  let x = H * Math.cos(r) * Math.sin(o), y = -H * Math.cos(r) * Math.cos(o), z = H * Math.sin(r);
+  x += sx * shoulderXOf(side === "L" ? pose.outL : pose.outR);
+  y += SHOULDER_Y + (pose.bob ?? 0) / Math.max(s, 1e-6);
+  // torso pitch about the hip pivot
+  const cp = Math.cos(pose.pitch), sp = Math.sin(pose.pitch);
+  [y, z] = [y * cp - z * sp, y * sp + z * cp];
+  // body yaw
+  const ca = Math.cos(pose.yaw), sa = Math.sin(pose.yaw);
+  const wx = x * ca + z * sa, wz = -x * sa + z * ca;
+  return [pose.x + s * wx, pose.y + s * y, pose.z + s * wz];
+};
+/** hand and forearm boxes for both arms (MAIN: a push or reach must not enter a prop) */
+export const limbBoxes = (name: string, pose: Pose, s = 1): Box[] =>
+  (["L", "R"] as const).flatMap((side) => [
+    { name: `${name}.hand${side}`, c: armPoint(pose, side, 0.92, s), h: [0.09 * s, 0.09 * s, 0.09 * s] as V3 },
+    { name: `${name}.forearm${side}`, c: armPoint(pose, side, 0.6, s), h: [0.08 * s, 0.08 * s, 0.08 * s] as V3 },
+  ]);
 export const overlaps = (a: Box, b: Box) => [0, 1, 2].every((k) => Math.abs(a.c[k] - b.c[k]) < a.h[k] + b.h[k]);

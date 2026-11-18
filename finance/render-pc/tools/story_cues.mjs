@@ -8,9 +8,9 @@ const stub = { name: "stub", setup(b) {
   b.onLoad({ filter: /.*/, namespace: "stub" }, () => ({ contents: "const P=new Proxy(function(){return P},{get:(t,k)=>k==='__esModule'?false:P,apply:()=>P,construct:()=>P}); module.exports=P;", loader: "js" }));
 } };
 const r = await build({ entryPoints: ["tools/story_cues_entry.ts"], bundle: true, write: false, format: "esm", platform: "node", plugins: [stub], jsx: "automatic", logLevel: "error" });
-mkdirSync("build", { recursive: true });
-writeFileSync("build/story_cues.bundle.mjs", r.outputFiles[0].text);
-const m = await import(pathToFileURL("build/story_cues.bundle.mjs").href + "?" + Date.now());
+mkdirSync("out/tmp", { recursive: true }); // not build/: render.sh owns build/
+writeFileSync("out/tmp/story_cues.bundle.mjs", r.outputFiles[0].text);
+const m = await import(pathToFileURL("out/tmp/story_cues.bundle.mjs").href + "?" + Date.now());
 const out = {};
 for (const v of m.V1) out[v.id] = { music: v.audio.music, musicDb: v.audio.musicDb ?? -12, cues: v.audio.cues, duration: v.spec.duration / 30, cuts: v.spec.shots.map((s) => s.a) };
 console.log(JSON.stringify(out));
