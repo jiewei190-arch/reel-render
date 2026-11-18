@@ -1,0 +1,2 @@
+// generated from shorts/minimum-payment-trap/script.txt
+export default "Your minimum payment can take nineteen years.\nSay you owe five thousand dollars at twenty-two percent, near the U.S. average.\nYou pay only the minimum: interest plus one percent of the balance.\nAs the balance shrinks, the payment shrinks. So it crawls.\nAbout nineteen years, and over eight thousand in interest.\nPay a flat two hundred a month instead? Under three years.\nYour statement has a minimum payment warning. Read it.\nBecause otherwise...";

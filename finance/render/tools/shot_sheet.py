@@ -13,8 +13,7 @@ cols = int(sys.argv[3]) if len(sys.argv) > 3 else 7
 offset = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
 if out.exists():
     sys.exit(f"{out} already exists: every sheet is kept, pick a new name")
-import os
-src = Path(os.environ["PLAN"]) if os.environ.get("PLAN") else Path(__file__).resolve().parent.parent / "src" / "plan.gen.ts"  # finance: PLAN=src/shorts/<slug>/plan.gen.ts
+src = Path(__file__).resolve().parent.parent / "src" / "plan.gen.ts"
 if not src.exists():
     sys.exit("src/plan.gen.ts not found: run plan/plan_src.py first (shot_sheet.py / critic.py need a word-anchored plan)")
 shots = json.loads(re.search(r"export const SHOTS = (\[.*?\]) as const;", src.read_text(encoding="utf8"), re.S).group(1))

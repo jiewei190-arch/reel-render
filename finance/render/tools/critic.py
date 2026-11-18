@@ -15,11 +15,9 @@ import numpy as np
 video = sys.argv[1]
 voiced = sys.argv[2] if len(sys.argv) > 2 else None
 root = Path(__file__).resolve().parent.parent
-import os
-PLANF = Path(os.environ["PLAN"]) if os.environ.get("PLAN") else root / "src" / "plan.gen.ts"  # finance: PLAN=src/shorts/<slug>/plan.gen.ts
-if not PLANF.exists():
-    sys.exit(f"{PLANF} not found: run plan/plan_src.py first (shot_sheet.py / critic.py need a word-anchored plan)")
-plan = PLANF.read_text(encoding="utf8")
+if not (root / "src" / "plan.gen.ts").exists():
+    sys.exit("src/plan.gen.ts not found: run plan/plan_src.py first (shot_sheet.py / critic.py need a word-anchored plan)")
+plan = (root / "src" / "plan.gen.ts").read_text(encoding="utf8")
 shots = json.loads(re.search(r"export const SHOTS = (\[.*?\]) as const;", plan, re.S).group(1))
 FPS = 30
 

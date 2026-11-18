@@ -1,94 +1,73 @@
-// The on-screen counter (every shot) and the captions. The counter is a chunky blocky panel high in the frame (top 9-21 %,
-// clear of the caption band at 68 % and of the platform's top bar): a small label line + a big number, in the story's
-// colour (cash green / debt red / coin gold), popping (scale 1.12 -> 1) when its value changes. Captions: Poppins
-// ExtraBold, white with a dark outline and soft shadow, centred at 68 %, 12 % side margins, <= 2 lines, a pop-in on
-// every chunk, script.txt casing, and at most one accent word (yellow) where the plan marks one.
+// The 2D layer over the 3D frame: the big on-screen counter (above the caption band), small corner tags, and the
+// captions (the plan's CAPTIONS chunks re-cased from script.txt, Poppins ExtraBold, pop-in, safe zone).
 import React from "react";
+import { PopCaptions } from "../library/PopCaptions";
 import type { Chunk } from "../engine/core/captions";
 
-export type HudState = { label: string; value: string; color: string; since?: number; sub?: string };
+export type CounterLine = { text: string; color?: string; size?: number };
+export type CounterState = { lines: CounterLine[]; pop?: number; accent?: string } | null;
 
-const back = (u: number) => {
-  if (u >= 1) return 1;
-  if (u <= 0) return 0.6;
-  const x = u - 1;
-  return 0.6 + 0.4 * (1 + 3.4 * x * x * x + 2.4 * x * x);
-};
-
-export const Hud: React.FC<{ state: HudState; t: number; width?: number; height?: number }> = ({ state, t, width = 1080, height = 1920 }) => {
-  const k = width / 1080;
-  const u = state.since === undefined ? 1 : (t - state.since) / 0.22;
-  const s = back(u);
+const W = 1080;
+/** the holo counter: a dark glass panel with a glowing border at ~13-22 % of the height (clear of the YouTube top UI
+ *  and of the captions at 68 %). Lines are centred; the first line is the big number. pop 0..1 = a scale punch. */
+export const Counter: React.FC<{ state: CounterState; top?: number }> = ({ state, top = 245 }) => {
+  if (!state || !state.lines.length) return null;
+  const s = 1 + 0.08 * Math.sin(Math.PI * Math.min(1, Math.max(0, state.pop ?? 0)));
+  const acc = state.accent ?? "#7fefff";
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: height * 0.085, display: "flex", justifyContent: "center" }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top, display: "flex", justifyContent: "center" }}>
       <div
         style={{
           transform: `scale(${s})`,
-          background: "rgba(16,10,30,0.82)",
-          border: `${8 * k}px solid ${state.color}`,
-          borderRadius: 34 * k,
-          padding: `${14 * k}px ${44 * k}px ${18 * k}px`,
-          boxShadow: `0 ${10 * k}px ${0}px rgba(0,0,0,0.35), 0 0 ${40 * k}px ${state.color}66`,
-          textAlign: "center",
-          minWidth: width * 0.5,
-          maxWidth: width * 0.84,
-        }}
-      >
-        <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: 40 * k, color: "#fff4c8", letterSpacing: 2 * k, lineHeight: 1.1 }}>{state.label}</div>
-        <div style={{ fontFamily: "Poppins", fontWeight: 800, fontSize: 104 * k, color: state.color, lineHeight: 1.04, WebkitTextStroke: `${3 * k}px rgba(0,0,0,0.25)`, whiteSpace: "nowrap" }}>{state.value}</div>
-        {state.sub ? <div style={{ fontFamily: "Poppins", fontWeight: 700, fontSize: 34 * k, color: "#ffffffcc", lineHeight: 1.1 }}>{state.sub}</div> : null}
-      </div>
-    </div>
-  );
-};
-
-const POP = 0.17;
-const popScale = (u: number) => {
-  if (u >= 1) return 1;
-  if (u <= 0) return 0.5;
-  const x = u - 1;
-  const kk = 2.4;
-  return 0.5 + 0.5 * (1 + (kk + 1) * x * x * x + kk * x * x);
-};
-const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9'-]/g, "");
-
-export const FinCaptions: React.FC<{ chunks: (Chunk & { accent: string[] })[]; t: number; until: number; width?: number; height?: number }> = ({ chunks, t, until, width = 1080, height = 1920 }) => {
-  const c = chunks.find((x) => t >= x.a && t < x.b);
-  if (!c || t > until) return null;
-  const k = width / 1080;
-  const u = (t - c.a) / POP;
-  const acc = new Set(c.accent.map(norm));
-  let used = false;
-  const words = c.words.join(" ").split(" ");
-  return (
-    <div style={{ position: "absolute", left: width * 0.12, right: width * 0.12, top: height * 0.68 - 130 * k, height: 260 * k, display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div
-        style={{
-          transform: `scale(${popScale(u)})`,
-          opacity: Math.min(1, Math.max(0, u * 3)),
+          padding: "18px 44px 22px",
+          borderRadius: 34,
+          background: "rgba(14,10,30,0.72)",
+          border: `5px solid ${acc}`,
+          boxShadow: `0 0 26px ${acc}aa, inset 0 0 18px ${acc}55, 0 10px 30px rgba(0,0,0,0.45)`,
           textAlign: "center",
           fontFamily: "Poppins",
           fontWeight: 800,
-          fontSize: 100 * k,
-          lineHeight: 1.06,
-          color: "#ffffff",
-          WebkitTextStroke: `${7 * k}px #140c1c`,
-          paintOrder: "stroke fill",
-          textShadow: `0 ${6 * k}px ${18 * k}px rgba(8,4,16,0.6), 0 0 ${4 * k}px rgba(8,4,16,0.5)`,
-          maxWidth: width * 0.76,
+          maxWidth: W * 0.84,
         }}
       >
-        {words.map((w, i) => {
-          const hit = !used && acc.has(norm(w));
-          if (hit) used = true;
-          return (
-            <span key={i} style={{ color: hit ? "#ffd23a" : "#ffffff" }}>
-              {w}
-              {i < words.length - 1 ? " " : ""}
-            </span>
-          );
-        })}
+        {state.lines.map((l, i) => (
+          <div key={i} style={{ fontSize: l.size ?? (i === 0 ? Math.min(88, Math.floor(1400 / Math.max(1, l.text.length))) : 46), lineHeight: 1.08, color: l.color ?? "#ffffff", textShadow: `0 0 14px ${(l.color ?? "#ffffff")}88`, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
+            {l.text}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
+/** a small painted corner tag (honest framing like THOUGHT EXPERIMENT / EXAMPLE) under the counter, right side */
+export const CornerTag: React.FC<{ text: string | null; top?: number }> = ({ text, top = 470 }) =>
+  !text ? null : (
+    <div style={{ position: "absolute", right: 70, top, padding: "8px 18px", borderRadius: 14, background: "rgba(255,244,200,0.94)", color: "#16121c", fontFamily: "Poppins", fontWeight: 800, fontSize: 30, letterSpacing: 1, boxShadow: "0 4px 12px rgba(0,0,0,0.35)" }}>{text}</div>
+  );
+
+const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
+/** CAPTIONS from plan.gen.ts (lowercase chunks with an onset frame) -> PopCaptions chunks in script.txt casing.
+ *  Every caption word is matched in order against the script's words (punctuation-insensitive); the script's spelling
+ *  (capitals, punctuation) is used. */
+export const casedChunks = (caps: readonly { text: string; frame: number }[], script: string, duration: number, fps = 30): Chunk[] => {
+  const sw = script.replace(/\s+/g, " ").trim().split(" ");
+  let k = 0;
+  const out: Chunk[] = caps.map((c) => {
+    const words = c.text.split(/\s+/).map((w) => {
+      const n = norm(w);
+      for (let j = k; j < Math.min(sw.length, k + 4); j++)
+        if (norm(sw[j]) === n) {
+          k = j + 1;
+          return sw[j];
+        }
+      return w;
+    });
+    return { words, a: c.frame / fps, b: 0 };
+  });
+  out.forEach((c, i) => (c.b = i + 1 < out.length ? out[i + 1].a : duration / fps));
+  return out;
+};
+export const Caps: React.FC<{ chunks: Chunk[]; t: number; until: number }> = ({ chunks, t, until }) => <PopCaptions chunks={chunks} t={t} until={until} />;
+
+/** money formatting: $5,368,709.12 / $5.12 / $0.01 */
+export const usd = (v: number, cents = true) => "$" + v.toLocaleString("en-US", { minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: cents ? 2 : 0 });
