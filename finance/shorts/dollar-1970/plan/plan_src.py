@@ -5,27 +5,26 @@ Re-run after every VO change; the times move with the words. Writes src/plan.gen
 """
 TITLE = "dollar-1970"
 CAST_NOTE = "SPENDER (red, bag) hero with a plain dollar bill; TELLER (violet, apron) runs the shop; SAVER (green, glasses) explains the index. Two versions of one blocky corner shop: '1970' (warm orange/brown retro palette, film grain) and 'NOW' (bright), no logos."
-LOOP_NOTE = "S18 (\"That's exactly why\") returns to the S01 lens: Spender holds up the dollar, which shrinks to a coin-sized sliver again; the loop lands on \"Your dollar\"."
+LOOP_NOTE = "S17 (\"That's exactly why\") returns to the S01 lens: Spender holds up the bill, which starts to shrink again; the loop lands on \"Your dollar is worth under twelve cents.\""
 COUNTER = "a big price-tag counter `$1 (1970) = $x.xx NOW` rolling from $1.00 to $8.70, and in the NOW shots `YOUR $1 = xx¢` falling from 100¢ to 11.5¢."
 SHOTS = [
-    ("S01", (1, "your", 1), "store", "medium 3/4 on Spender, face ~38% height, push-in", "In the NOW shop, Spender holds up a plain green bill (no portrait, no seal) that visibly shrinks to a tiny sliver; tag 12¢"),
-    ("S02", (1, "cents", 1), "store", "close on the sliver, push-in", "The sliver of bill on his palm; holo tag UNDER 12¢"),
-    ("S03", (1, "1970", 1), "home", "wide, push-in through a doorway", "A door marked 1970 swings open onto the same shop in warm retro colours, film grain"),
+    ("S01", (1, "your", 1), "store", "medium 3/4 on Spender, face ~38% height, push-in", "Conflict in frame 1: in the NOW shop, Spender holds up a plain green bill (no portrait, no seal) that visibly shrinks; counter YOUR $1 = 100¢ dropping"),
+    ("S02", (1, "under", 1), "store", "close on the sliver, push-in", "The bill is a sliver on his palm; counter lands on YOUR $1 = 11.5¢; holo tag UNDER 12¢"),
+    ("S03", (2, "1970", 1), "home", "wide, push-in through a doorway", "A door marked 1970 swings open onto the same shop in warm retro colours, film grain; the counter flips to 1970 PRICES"),
     ("S04", (2, "prices", 1), "store", "medium wide on the shelves, push-in", "Back in NOW: price Tags on the ShelfUnit flip upward one after another"),
-    ("S05", (2, "nine", 1), "store", "low angle, push-in", "A stack of 9 bill-blocks rises beside a single 1970 bill-block; tag ≈ 8.7×"),
-    ("S06", (2, "then", 1), "store", "close on a wall calendar, push-in", "A wall calendar riffles from 1970 to 2026 in a blur"),
-    ("S07", (3, "government's", 1), "store", "medium on Saver, push-in", "Saver (glasses) at a board pointing at a plain chart line climbing steadily; tag CPI-U (BLS)"),
-    ("S08", (3, "not", 1), "store", "close on Saver, push-in", "Saver taps the chart; caption NOT A GUESS"),
-    ("S09", (4, "something", 1), "home", "medium in the 1970 shop, push-in", "1970 shop: Teller hands Spender a basket of groceries for ONE bill; tag $1.00"),
-    ("S10", (4, "1970", 1), "home", "close on the price tag, push-in", "Painted price tag $1.00, retro font"),
-    ("S11", (4, "about", 1), "store", "SAME framing in the NOW shop (match cut), push-in", "Same basket in the NOW shop: the price tag flips to $8.70; Spender's eyes widen"),
-    ("S12", (5, "inflation", 1), "whisper", "medium, push-in", "Whisper mood: a slow drip of tiny coins leaks from a hole in Spender's bag"),
-    ("S13", (5, "once", 1), "whisper", "close on the bag, push-in", "One coin drips at a time, almost unnoticed"),
-    ("S14", (6, "four", 1), "whisper", "medium wide, push-in", "A wall calendar flicks through years; each page drops one coin; tag ~4%/YR (AVG)"),
-    ("S15", (6, "quietly", 1), "whisper", "close on Spender, push-in", "Spender whistles, not noticing"),
-    ("S16", (6, "fifty", 1), "ending", "very wide, push-in", "The bag is now flat; a small mountain of dripped coins behind him; tag 56 YEARS"),
-    ("S17", (7, "nobody", 1), "store", "medium on Spender, push-in", "Spender shrugs at the empty bag, looks at the camera"),
-    ("S18", (7, "exactly", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Spender holds up the bill again; it starts to shrink"),
+    ("S05", (2, "times", 1), "store", "low angle, push-in", "A stack of 9 bill-blocks rises beside a single 1970 bill-block while a wall calendar riffles 1970 → 2026; tag ≈ 8.7×"),
+    ("S06", (3, "government's", 1), "store", "medium on Saver, push-in", "Saver (glasses) at a board pointing at a plain chart line climbing steadily; tag CPI-U (BLS)"),
+    ("S07", (3, "not", 1), "store", "close on the chart, push-in", "Saver stamps the chart: NOT A GUESS"),
+    ("S08", (4, "something", 1), "home", "medium in the 1970 shop, push-in", "1970 shop: Teller hands Spender a basket of groceries for ONE bill; counter $1 (1970)"),
+    ("S09", (4, "1970", 1), "home", "close on the price tag, push-in", "Painted price tag $1.00, retro font"),
+    ("S10", (4, "eight", 1), "store", "SAME framing in the NOW shop (match cut), push-in", "Same basket in the NOW shop: the price-tag counter rolls $1.00 → $8.70; Spender's eyes widen"),
+    ("S11", (5, "inflation", 1), "whisper", "medium, push-in", "Whisper mood: a slow drip of tiny coins leaks from a hole in Spender's bag"),
+    ("S12", (5, "once", 1), "whisper", "close on the bag, push-in", "One coin drips at a time, almost unnoticed; counter ticks down 1¢ at a time"),
+    ("S13", (6, "four", 1), "whisper", "medium wide, push-in", "A wall calendar flicks through years; each page drops one coin; tag ~4%/YR (AVG)"),
+    ("S14", (6, "quietly", 1), "whisper", "medium on Spender + the leak, push-in", "Spender whistles, not noticing the growing coin trail behind him"),
+    ("S15", (6, "fifty", 1), "ending", "very wide, push-in", "The bag is now flat; a small mountain of dripped coins behind him; tag 56 YEARS"),
+    ("S16", (7, "nobody", 1), "store", "medium on Spender, push-in", "Spender shrugs at the empty bag; the shelf prices behind him tick up one by one"),
+    ("S17", (7, "that's", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Spender holds up the bill again; it starts to shrink (counter back at 100¢)"),
 ]
 ACCENT = {(1, "twelve"), (2, "nine"), (3, "index"), (4, "seventy"), (5, "once"), (6, "four"), (7, "single")}
 TAGS = [
