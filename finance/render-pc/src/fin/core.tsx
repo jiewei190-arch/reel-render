@@ -105,6 +105,9 @@ export type FinSpec = {
   /** caption band centre (fraction of the height) and font size (px at 1080 wide) */
   capCentre?: number;
   capSize?: number;
+  /** S2 split screen (optional): the frame is two 1080x960 views of the same world; the plan's lens is the TOP half,
+   *  split(shot) gives the BOTTOM half's lens for the same shot (same a/b). */
+  split?: (shot: FinShot) => FinShot;
 };
 
 const moodOfShot = (spec: FinSpec, s: FinShot) => {
@@ -141,11 +144,23 @@ export const FinFilm: React.FC<{ spec: FinSpec; sub?: boolean; at?: number }> = 
   const mood = moodOfShot(spec, shot);
   const tOut = n / FPS; // captions and counter key to the output frame (sharp text)
   const focus = shot.subj(t);
+  const shotB = spec.split ? spec.split(shot) : null;
   return (
     <AbsoluteFill style={{ background: spec.bg ?? "#2a1f5a" }}>
-      <View mood={mood} cam={cam} t={t} blur={shot.blur ?? 1.2} focus={focus} sky={shot.sky ?? false}>
-        {spec.scene(t, shot, tau)}
-      </View>
+      {shotB ? (
+        <>
+          <View mood={mood} cam={camOf(shot, t)} t={t} blur={shot.blur ?? 1.2} focus={focus} sky={shot.sky ?? false} width={1080} height={960} style={{ top: 0, bottom: "auto", height: 960 }}>
+            {spec.scene(t, shot, tau)}
+          </View>
+          <View mood={moodOfShot(spec, shotB)} cam={camOf(shotB, t)} t={t} blur={shotB.blur ?? 1.2} focus={shotB.subj(t)} sky={shotB.sky ?? false} width={1080} height={960} style={{ top: 960, bottom: "auto", height: 960 }}>
+            {spec.scene(t, shot, tau)}
+          </View>
+        </>
+      ) : (
+        <View mood={mood} cam={cam} t={t} blur={shot.blur ?? 1.2} focus={focus} sky={shot.sky ?? false}>
+          {spec.scene(t, shot, tau)}
+        </View>
+      )}
       {spec.overlay ? spec.overlay(tOut) : null}
       <Counter state={spec.counter(tOut, shot, tOut - shot.a)} />
       <CornerTag text={spec.tag ? spec.tag(tOut, shot) : null} />
