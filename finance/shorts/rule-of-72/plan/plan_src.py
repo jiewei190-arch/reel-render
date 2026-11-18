@@ -92,6 +92,7 @@ def main(p):
         caps.append(chunk)
     captions = [{
         "text": " ".join(c["w"].lower() for c in ch),
+        "cased": " ".join(c["w"] for c in ch),  # script.txt casing (on-screen captions)
         "accent": [c["w"].lower() for c in ch if (c["turn"], clean(c["w"])) in ACCENT],
         "frame": max(0, round(ch[0]["t"] * FPS) - LEAD),
     } for ch in caps]
