@@ -20,9 +20,9 @@ const CAR7: V3 = [1.0, 0, -1.2];
 const P_SP: V3 = [0.0, 0, 0.75];
 const P_SV: V3 = [-2.15, 0, -0.2];
 const BOOTH: V3 = [4.7, 0, -2.2];
-const P_LD: V3 = [3.95, 0, -1.1];
-const PILE3: V3 = [1.0, 0, -3.6];
-const PILE7: V3 = [3.3, 0, -3.9];
+const P_LD: V3 = [3.55, 0, -1.35];
+const PILE3: V3 = [3.3, 0, 0.3];
+const PILE7: V3 = [5.3, 0, 0.2];
 const SIGN: V3 = [-2.3, 0, -2.8];
 
 const D = Object.fromEntries(PLAN.map((p) => [p.id, p.end - p.t])) as Record<string, number>;
@@ -38,15 +38,15 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S06: manual([P_LD[0] - 0.25, 1.35, P_LD[2] + 0.45], -10, 1.0, 0.0, { mood: "earth", sky: true }),
   S07: fitted([...body(P_SV, S.saver), ...carPts(CAR3)], 18, 0.12, D.S07, { mood: "earth", sky: true }),
   S08: manual([CAR3[0], 1.3, CAR3[2] + 0.9], 8, 1.25, 0.12, { mood: "earth", sky: true }),
-  S09: fitted([[PILE3[0] - 0.8, 0, PILE3[2]], [PILE3[0] + 0.8, 1.4, PILE3[2]]], -28, 0.25, D.S09, { mood: "earth", sky: true }),
+  S09: fitted([[PILE3[0] - 0.8, 0, PILE3[2]], [PILE3[0] + 0.8, 1.4, PILE3[2]]], 8, 0.22, D.S09, { mood: "earth", sky: true }),
   S10: fitted([...carPts(CAR3), [CAR3[0], 0, CAR3[2] - 3.5]], 24, 0.25, D.S10, { mood: "earth", sky: true }),
   S11: fitted([...body([1.95, 0, 0.3], S.spender), ...carPts(CAR7)], -16, 0.12, D.S11, { mood: "earth", sky: true }),
   S12: manual([CAR7[0], 1.3, CAR7[2] + 0.9], -6, 1.25, 0.12, { mood: "earth", sky: true }),
   S13: fitted(body([1.95, 0, 0.3], S.spender, true), -14, 0.05, D.S13, { mood: "earth", sky: true, face: 0.5 }),
-  S14: fitted([[BOOTH[0] - 0.7, 0, BOOTH[2]], [PILE7[0] + 1.3, 0, PILE7[2]], [PILE7[0], 2.6, PILE7[2]]], -12, 0.18, D.S14, { mood: "whisper", sky: true }),
-  S15: manual([PILE7[0], 1.5, PILE7[2]], -6, 3.2, -0.25, { mood: "whisper", sky: true, fov: 56 }),
+  S14: fitted([[BOOTH[0] - 0.7, 0, BOOTH[2]], [PILE7[0] + 1.3, 0, PILE7[2]], [PILE7[0], 2.6, PILE7[2]]], 4, 0.18, D.S14, { mood: "whisper", sky: true }),
+  S15: manual([PILE7[0], 1.5, PILE7[2]], 4, 3.4, -0.25, { mood: "whisper", sky: true, fov: 56 }),
   S16: fitted([[PILE3[0] - 0.9, 0, PILE3[2]], [PILE7[0] + 1.4, 0, PILE7[2]], [PILE7[0], 2.6, PILE7[2]]], 0, 0.15, D.S16, { mood: "store", sky: true }),
-  S17: fitted([[PILE3[0] - 0.7, 0, PILE3[2]], [PILE7[0] + 1.0, 0, PILE7[2]], [(PILE3[0] + PILE7[0]) / 2, 2.5, PILE3[2] + 0.4]], -38, 0.15, D.S17, { mood: "store", sky: true, m: 0.06 }),
+  S17: fitted([[PILE3[0] - 0.7, 0, PILE3[2]], [PILE7[0] + 1.0, 0, PILE7[2]], [(PILE3[0] + PILE7[0]) / 2, 2.5, PILE3[2] + 0.4]], 0, 0.15, D.S17, { mood: "store", sky: true, m: 0.06 }),
   S18: manual([SIGN[0], 1.75, SIGN[2]], 14, 2.1, 0.0, { mood: "store", sky: true }),
   S19: fitted(body([1.95, 0, 0.3], S.spender, true), -20, 0.05, D.S19, { mood: "whisper", sky: true, face: 0.5 }),
   S20: fitted([...carPts(CAR7), [CAR7[0] + 2.5, 0.2, CAR7[2] + 1.8], [CAR7[0] - 2.4, 0.2, CAR7[2] + 1.8]], -6, 0.25, D.S20, { mood: "earth", sky: true }),
