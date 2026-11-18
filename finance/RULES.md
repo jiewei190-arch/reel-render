@@ -9,3 +9,5 @@
 - No investment advice, no stock or crypto picks, no get-rich promises. Every number is sourced.
 - Original blocky characters only. No game names, avatars or logos.
 - Stop on any password, 2FA or account-settings prompt.
+- **Upload fields (owner, 2026-11-18): title and description ONLY.** No tags in the Tags field, and no #hashtags anywhere: not in the title, the description or the pinned comment.
+  Strip any hashtags that appear in UPLOAD.md. Leave every other optional field at its default, and keep "Altered content" = No.
