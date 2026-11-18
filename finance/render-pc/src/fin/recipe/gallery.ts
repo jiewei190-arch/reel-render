@@ -32,12 +32,12 @@ for (const m of MOTIONS) {
   if (m === "stick-to-face") Object.assign(p, { kit: "label", text: ["BILL", "$142"], size: [0.36, 0.26, 0.04], on: "spender", at: "mark", hit: t0 + 0.4 });
   if (m === "rain") Object.assign(p, { kit: "coin", at: "counterTop:0,0,0.2", n: 14, area: [1.6, 0.4] });
   if (m === "count-up") Object.assign(p, { kit: "calendar", text: ["YEAR"], at: "counterTop:-0.1,0.6,0", count: { from: 1, to: 19, dur: 0.6 }, hit: t0 + 0.2 });
-  const actors = m === "stick-to-face" ? [{ id: "spender", pose: "shock" as const, at: "mark", from: t0 + 0.4 }] : [{ id: "spender", pose: "shock" as const, at: "mark", from: t0 + 0.5 }];
+  const actors = m === "stick-to-face" ? [{ id: "spender", pose: "shock" as const, at: "mark", from: t0 + 0.4 }] : [{ id: "spender", pose: "shock" as const, at: "right", from: t0 + 0.5 }];
   add("motion", m, { set: "store", cam: { preset: "medium", target: m === "stick-to-face" ? "spender.face" : "counterTop:0.4,0.3,0.3", dist: m === "stick-to-face" ? 1.6 : 3.2 }, actors, props: [p] }, m === "burst" ? 0.75 : m === "dropSlam" ? 0.42 : 0.7);
 }
 for (const f of FX) {
   const t0 = shots.length;
-  add("fx", f, { set: "store", cam: { preset: "medium", target: "counterTop:0.4,0.2,0.3", dist: 3.0 }, actors: [{ id: "spender", pose: "shock", at: "mark" }], fx: [{ fx: f, at: t0 + 0.5, p: "counterTop:0,0.05,0.3" }] }, f === "flash" ? 0.53 : 0.72);
+  add("fx", f, { set: "store", cam: { preset: "medium", target: "counterTop:0.4,0.2,0.3", dist: 3.0 }, actors: [{ id: "spender", pose: "shock", at: "right" }], fx: [{ fx: f, at: t0 + 0.5, p: "counterTop:0,0.05,0.3" }] }, f === "flash" ? 0.53 : 0.72);
 }
 for (const s of SET_IDS) add("set", s, { set: s, cam: { preset: "wide", target: "spender", dist: 6.5, h: 1.3, fov: 56 }, actors: [{ id: "spender", pose: "idle", at: "mark" }] });
 
