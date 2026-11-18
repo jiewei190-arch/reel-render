@@ -62,14 +62,14 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S06: manual([JAR_P[0], 1.05, JAR_P[2]], -8, 1.4, 0.2, { mood: "earth", sky: true }),
   S07: fitted([...body(P_SV, S.saver), [CAR2[0] - 0.9, 0, CAR2[2]], [CAR2[0] + 0.8, 1.3, CAR2[2]]], -22, 0.14, D.S07, { mood: "earth", sky: true }),
   S08: fitted(sp(true), 22, 0.05, D.S08, { mood: "earth", sky: true, face: 0.5 }),
-  S09: fitted([...body(P_LD, S.lender), [BOOTH[0], 2.1, BOOTH[2]], [BOOTH[0] + 0.9, 0, BOOTH[2]]], -18, 0.12, D.S09, { mood: "earth", sky: true }),
+  S09: fitted([...body(P_LD, S.lender), ...body([BOOTH[0] + 1.35, 0, BOOTH[2] + 0.95], S.spender), [BOOTH[0], 2.1, BOOTH[2]]], -8, 0.12, D.S09, { mood: "earth", sky: true }),
   S10: manual([CAL[0], CAL[1] - 0.15, CAL[2]], -10, 1.9, 0.05, { mood: "earth", sky: true }),
   S11: fitted([[BOOTH[0] - 0.6, 0, BOOTH[2]], [PILE[0] + 1.0, 0, PILE[2]], [PILE[0], 2.2, PILE[2]], [BOOTH[0], 2.1, BOOTH[2]]], -12, 0.18, D.S11, { mood: "earth", sky: true }),
   S12: fitted(sp(true), 30, 0.08, D.S12, { mood: "whisper", sky: true, face: 0.5 }),
   S13: fitted([[BOARD[0] - 1.0, 0.9, BOARD[2]], [BOARD[0] + 1.0, 2.25, BOARD[2]]], 4, 0.05, D.S13, { mood: "store", sky: true }),
   S14: manual([BLOCKS[0] - 0.55, 0.75, BLOCKS[2]], 6, 2.0, 0.12, { mood: "store", sky: true }),
   S15: fitted([[BLOCKS[0] - 1.6, 0, BLOCKS[2]], [BLOCKS[0] + 1.6, 0.9, BLOCKS[2]]], 0, 0.25, D.S15, { mood: "store", sky: true }),
-  S16: fitted([...sp(true), [P_SP[0] - 0.6, 1.7, P_SP[2] + 0.3]], 18, 0.05, D.S16, { mood: "store", sky: true, face: 0.5 }),
+  S16: fitted([...sp(true), [P_SP[0] - 0.95, 1.95, P_SP[2] + 0.3], [P_SP[0] - 0.95, 1.45, P_SP[2] + 0.3]], 24, 0.05, D.S16, { mood: "store", sky: true, face: 0.5 }),
   S17: fitted([...body(P_SV, S.saver, true), [JAR_P[0], 0.8, JAR_P[2]]], -16, 0.08, D.S17, { mood: "ending", sky: true }),
   S18: fitted([...body([-0.6, 0, 0.9], S.saver), ...body([0.35, 0, 0.9], S.spender)], 4, 0.12, D.S18, { mood: "ending", sky: true }),
   S19: fitted([...sp(), [CAR[0] - 0.9, 0, CAR[2]], [CAR[0] + 0.9, 1.4, CAR[2]], [P_SP[0], 2.3, P_SP[2]]], 18, 0.18, D.S19, { mood: "earth", sky: true, fov: 54 }),
@@ -94,8 +94,8 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     if (i === 4) { pose = { ...pose, armR: 1.25, outR: 0.05 }; held = { side: "R", node: <group position={[0, 0.2, 0.05]}><Sheet lines={["REPAIR", "$1,000", "DUE NOW"]} accent={PAL.debt} /></group> }; emo = "shock"; }
     if (i === 8) { pose = { ...pose, armR: 2.2 * ss(0, 0.8, tau) + 0.2, outR: 0.15 }; held = { side: "R", node: <Label p={[0, 0.12, 0.05]} text={["CARD"]} w={0.3} h={0.19} bg={PAL.debt} fg="#fff4c8" /> }; emo = "sly"; }
     if (i === 9 || i === 10 || i === 11) {
-      p = [BOOTH[0] - 0.2, 0, BOOTH[2] + 1.25];
-      pose = { ...stand(p[0], p[2], yawTo(p, [BOOTH[0] + 0.75, 0, BOOTH[2] + 0.35]), S.spender), armR: 1.1, outR: 0.05 };
+      p = [BOOTH[0] + 1.35, 0, BOOTH[2] + 0.95];
+      pose = { ...stand(p[0], p[2], yawTo(p, [BOOTH[0] + 0.75, 0, BOOTH[2] + 0.35]) * 0.5 + yawTo(p, [2.0, 0, 5]) * 0.5, S.spender), armL: 1.1, outL: 0.05 };
       emo = "happy";
     }
     if (i === 12) { pose = { ...pose, armL: 0.05, armR: 0.05, headPitch: 0.25, ant: -1 }; emo = "sad"; }
