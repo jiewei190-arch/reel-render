@@ -1,0 +1,353 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 30.059
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your coffee could be worth 186,000 dollars.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.0,
+     "end": 0.3
+    },
+    {
+     "w": "coffee",
+     "t": 0.3,
+     "end": 0.62
+    },
+    {
+     "w": "could",
+     "t": 0.62,
+     "end": 0.82
+    },
+    {
+     "w": "be",
+     "t": 0.82,
+     "end": 0.94
+    },
+    {
+     "w": "worth",
+     "t": 0.94,
+     "end": 1.26
+    },
+    {
+     "w": "186,000",
+     "t": 1.26,
+     "end": 1.95
+    },
+    {
+     "w": "dollars.",
+     "t": 1.95,
+     "end": 2.755
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Five dollars a day is 1,825 a year.",
+   "words": [
+    {
+     "w": "Five",
+     "t": 2.755,
+     "end": 3.215
+    },
+    {
+     "w": "dollars",
+     "t": 3.215,
+     "end": 4.02
+    },
+    {
+     "w": "a",
+     "t": 4.02,
+     "end": 4.4
+    },
+    {
+     "w": "day",
+     "t": 4.4,
+     "end": 4.62
+    },
+    {
+     "w": "is",
+     "t": 4.62,
+     "end": 5.1
+    },
+    {
+     "w": "1,825",
+     "t": 5.1,
+     "end": 7.18
+    },
+    {
+     "w": "a",
+     "t": 7.18,
+     "end": 7.44
+    },
+    {
+     "w": "year.",
+     "t": 7.44,
+     "end": 7.66
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Invest that monthly instead, for thirty years.",
+   "words": [
+    {
+     "w": "Invest",
+     "t": 8.12,
+     "end": 8.4
+    },
+    {
+     "w": "that",
+     "t": 8.4,
+     "end": 8.64
+    },
+    {
+     "w": "monthly",
+     "t": 8.64,
+     "end": 8.94
+    },
+    {
+     "w": "instead,",
+     "t": 8.94,
+     "end": 9.4
+    },
+    {
+     "w": "for",
+     "t": 9.4,
+     "end": 9.94
+    },
+    {
+     "w": "thirty",
+     "t": 9.94,
+     "end": 10.2
+    },
+    {
+     "w": "years.",
+     "t": 10.2,
+     "end": 10.52
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "You'd put in 54,750.",
+   "words": [
+    {
+     "w": "You'd",
+     "t": 11.2,
+     "end": 11.38
+    },
+    {
+     "w": "put",
+     "t": 11.38,
+     "end": 11.56
+    },
+    {
+     "w": "in",
+     "t": 11.56,
+     "end": 11.8
+    },
+    {
+     "w": "54,750.",
+     "t": 11.8,
+     "end": 13.62
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "At a made-up, steady seven percent: about 186,000.",
+   "words": [
+    {
+     "w": "At",
+     "t": 13.62,
+     "end": 14.6
+    },
+    {
+     "w": "a",
+     "t": 14.6,
+     "end": 14.72
+    },
+    {
+     "w": "made-up,",
+     "t": 14.72,
+     "end": 15.06
+    },
+    {
+     "w": "steady",
+     "t": 15.06,
+     "end": 15.36
+    },
+    {
+     "w": "seven",
+     "t": 15.36,
+     "end": 15.71
+    },
+    {
+     "w": "percent:",
+     "t": 15.71,
+     "end": 16.2
+    },
+    {
+     "w": "about",
+     "t": 16.2,
+     "end": 16.78
+    },
+    {
+     "w": "186,000.",
+     "t": 16.78,
+     "end": 18.84
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Twist: the coffee isn't the villain. Time is.",
+   "words": [
+    {
+     "w": "Twist:",
+     "t": 18.88,
+     "end": 19.04
+    },
+    {
+     "w": "the",
+     "t": 19.76,
+     "end": 19.86
+    },
+    {
+     "w": "coffee",
+     "t": 19.86,
+     "end": 20.16
+    },
+    {
+     "w": "isn't",
+     "t": 20.16,
+     "end": 20.54
+    },
+    {
+     "w": "the",
+     "t": 20.54,
+     "end": 20.72
+    },
+    {
+     "w": "villain.",
+     "t": 20.72,
+     "end": 20.96
+    },
+    {
+     "w": "Time",
+     "t": 21.68,
+     "end": 21.9
+    },
+    {
+     "w": "is.",
+     "t": 21.9,
+     "end": 22.22
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Ten years? Only about 26,000.",
+   "words": [
+    {
+     "w": "Ten",
+     "t": 22.22,
+     "end": 23.1
+    },
+    {
+     "w": "years?",
+     "t": 23.1,
+     "end": 23.4
+    },
+    {
+     "w": "Only",
+     "t": 23.96,
+     "end": 24.28
+    },
+    {
+     "w": "about",
+     "t": 24.28,
+     "end": 24.52
+    },
+    {
+     "w": "26,000.",
+     "t": 24.52,
+     "end": 25.94
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "No guarantees, and the coffee might be worth it. Which is how",
+   "words": [
+    {
+     "w": "No",
+     "t": 26.02,
+     "end": 26.24
+    },
+    {
+     "w": "guarantees,",
+     "t": 26.24,
+     "end": 26.66
+    },
+    {
+     "w": "and",
+     "t": 26.66,
+     "end": 27.06
+    },
+    {
+     "w": "the",
+     "t": 27.06,
+     "end": 27.48
+    },
+    {
+     "w": "coffee",
+     "t": 27.48,
+     "end": 27.76
+    },
+    {
+     "w": "might",
+     "t": 27.76,
+     "end": 27.98
+    },
+    {
+     "w": "be",
+     "t": 27.98,
+     "end": 28.16
+    },
+    {
+     "w": "worth",
+     "t": 28.16,
+     "end": 28.36
+    },
+    {
+     "w": "it.",
+     "t": 28.36,
+     "end": 28.6
+    },
+    {
+     "w": "Which",
+     "t": 29.0,
+     "end": 29.18
+    },
+    {
+     "w": "is",
+     "t": 29.18,
+     "end": 29.34
+    },
+    {
+     "w": "how",
+     "t": 29.34,
+     "end": 29.5
+    }
+   ]
+  }
+ ]
+}

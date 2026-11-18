@@ -1,6 +1,6 @@
 # Sources and maths: coffee-could-be
 
-**Hypothetical example only, not a prediction or a recommendation.** The VO says "At a made-up, steady seven percent" and "No
+**Hypothetical example only, not a prediction or a recommendation.** The VO says "Say a made-up, steady seven percent" and "No
 guarantees, and the coffee might be worth it." No product, fund or account type is named or implied.
 
 Assumptions (shown on screen as EXAMPLE):

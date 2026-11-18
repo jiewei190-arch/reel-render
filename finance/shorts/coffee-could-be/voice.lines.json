@@ -12,12 +12,11 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 33.501,
- "render_s": 276.0,
+ "duration": 30.059,
+ "render_s": 221.1,
  "qa_fail_lines": [
   1,
-  2,
-  4
+  2
  ],
  "lines": [
   {
@@ -37,108 +36,108 @@
   },
   {
    "n": 2,
-   "text": "Five dollars a day is 1,825 dollars a year.",
+   "text": "Five dollars a day is 1,825 a year.",
    "start": 3.703,
    "parts": [
     {
-     "tts": "Five dollars a day is one thousand eight hundred twenty-five dollars a year.",
+     "tts": "Five dollars a day is one thousand eight hundred twenty-five a year.",
      "seed": 7,
      "heard": "$5 a day is $1,825 a year.",
-     "wrong_words": 2,
-     "qa": "QA FAIL"
-    }
-   ],
-   "end": 7.126
-  },
-  {
-   "n": 3,
-   "text": "Now imagine investing that instead, every month, for thirty years.",
-   "start": 7.426,
-   "parts": [
-    {
-     "tts": "Now imagine investing that instead, every month, for thirty years.",
-     "seed": 7,
-     "heard": "Now imagine investing that instead every month for 30 years.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 11.622
-  },
-  {
-   "n": 4,
-   "text": "You'd put in 54,750 dollars.",
-   "start": 11.922,
-   "parts": [
-    {
-     "tts": "You'd put in fifty-four thousand seven hundred fifty dollars.",
-     "seed": 7,
-     "heard": "you'd put in $54,750.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 15.227
+   "end": 7.838
+  },
+  {
+   "n": 3,
+   "text": "Invest that monthly instead, for thirty years.",
+   "start": 8.139,
+   "parts": [
+    {
+     "tts": "Invest that monthly instead, for thirty years.",
+     "seed": 7,
+     "heard": "Invest that monthly instead, for 30 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.868
+  },
+  {
+   "n": 4,
+   "text": "You'd put in 54,750.",
+   "start": 11.168,
+   "parts": [
+    {
+     "tts": "You'd put in fifty-four thousand seven hundred fifty.",
+     "seed": 7,
+     "heard": "you'd put in 54,750.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.172
   },
   {
    "n": 5,
-   "text": "At a steady seven percent, a made-up example, it grows to about 186,000.",
-   "start": 15.527,
+   "text": "At a made-up, steady seven percent: about 186,000.",
+   "start": 14.473,
    "parts": [
     {
-     "tts": "At a steady seven percent, a made-up example, it grows to about one hundred eighty-six thousand.",
+     "tts": "At a made-up, steady seven percent: about one hundred eighty-six thousand.",
      "seed": 7,
-     "heard": "At a steady 7%, a made-up example, it grows to about 186,000.",
+     "heard": "at a made-up steady 7%, about 186,000.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 20.92
+   "end": 18.587
   },
   {
    "n": 6,
-   "text": "Here's the twist: the coffee isn't the villain. Time is.",
-   "start": 21.22,
+   "text": "Twist: the coffee isn't the villain. Time is.",
+   "start": 18.887,
    "parts": [
     {
-     "tts": "Here's the twist: the coffee isn't the villain. Time is.",
+     "tts": "Twist: the coffee isn't the villain. Time is.",
      "seed": 7,
-     "heard": "Here's the twist, the coffee isn't the villain, time is.",
+     "heard": "twist, the coffee isn't the villain. Time is.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 24.938
+   "end": 22.612
   },
   {
    "n": 7,
-   "text": "Same habit for ten years? Only about 26,000.",
-   "start": 25.238,
+   "text": "Ten years? Only about 26,000.",
+   "start": 22.912,
    "parts": [
     {
-     "tts": "Same habit for ten years? Only about twenty-six thousand.",
+     "tts": "Ten years? Only about twenty-six thousand.",
      "seed": 7,
-     "heard": "Same habit for 10 years? Only about 26,000.",
+     "heard": "10 years? Only about 26,000.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 29.064
+   "end": 25.748
   },
   {
    "n": 8,
-   "text": "Returns aren't guaranteed, and the coffee might be worth it. Which is how",
-   "start": 29.364,
+   "text": "No guarantees, and the coffee might be worth it. Which is how",
+   "start": 26.048,
    "parts": [
     {
-     "tts": "Returns aren't guaranteed, and the coffee might be worth it. Which is how",
+     "tts": "No guarantees, and the coffee might be worth it. Which is how",
      "seed": 7,
-     "heard": "Returns aren't guaranteed and the coffee might be worth it, which is how.",
+     "heard": "no guarantees, and the coffee might be worth it. Which is how.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 33.2
+   "end": 29.759
   }
  ]
 }
