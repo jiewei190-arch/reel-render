@@ -60,3 +60,17 @@ YouTube only reports "stayed" after posting, so we enforce it in two places:
    - no dark, empty or wide frame in the first 1 s.
 2) POST-MORTEM: after 48 h, any Short under 70% stayed gets its first 2 s compared with the best performer. The gap becomes a new rule here.
    Any style averaging under 65% over 3+ Shorts is dropped.
+
+## Voice (owner, 2026-11-18): ElevenLabs, Tyler and Christopher alternating
+- Account: ElevenLabs Starter (commercial licence). The API key is a proxy-injected network secret on the Default cloud environment.
+  Send header `xi-api-key: proxy-injected`. The real key lives only in the proxy; never print it, store it or commit it.
+- Voices (library voices, used as offered in the ElevenLabs Voice Library):
+  - **Tyler**: voice_id `rPMkKgdwgIwqv4fXgR6N`
+  - **Christopher**: voice_id `RolvCZ4e0AkAR2dzyTx0`
+- Model `eleven_v4`, default settings unless a line needs more energy.
+- ALTERNATE: every new Short uses the voice the previous one didn't, so the split stays 50/50.
+  Log it in UPLOAD.md (`voice: Tyler|Christopher`) and in finance/STYLE_LOG.csv (voice column). The analyst compares voices as well as styles.
+- S5 CHARACTER-TALKS: Spender = Tyler, Saver = Christopher.
+- Timing: use the `/v1/text-to-speech/{voice_id}/with-timestamps` endpoint for word times (character alignment, converted to word timings), plus a Whisper check on the HOOK LINE ALONE.
+- Budget: Starter = 40k characters a month (about 90-100 Shorts). Don't waste characters: voice once, line by line, and re-voice only the lines that fail. Track characters used in RENDER_NOTES.
+- The old D2 voice stays only on Shorts that are already rendered or scheduled.
