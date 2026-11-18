@@ -19,10 +19,10 @@ const CAR3: V3 = [-1.0, 0, -1.2];
 const CAR7: V3 = [1.0, 0, -1.2];
 const P_SP: V3 = [0.0, 0, 0.75];
 const P_SV: V3 = [-2.15, 0, -0.2];
-const BOOTH: V3 = [3.7, 0, -2.6];
-const P_LD: V3 = [3.0, 0, -1.55];
-const PILE3: V3 = [2.0, 0, -4.2];
-const PILE7: V3 = [4.6, 0, -4.4];
+const BOOTH: V3 = [4.7, 0, -2.2];
+const P_LD: V3 = [3.95, 0, -1.1];
+const PILE3: V3 = [1.0, 0, -3.6];
+const PILE7: V3 = [3.3, 0, -3.9];
 const SIGN: V3 = [-2.3, 0, -2.8];
 
 const D = Object.fromEntries(PLAN.map((p) => [p.id, p.end - p.t])) as Record<string, number>;
@@ -30,11 +30,11 @@ const idx = (id: string) => parseInt(id.slice(1), 10);
 const carPts = (c: V3): V3[] => [[c[0] - 0.8, 0, c[2] + 1.3], [c[0] + 0.8, 1.6, c[2] - 1.3]];
 
 const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
-  S01: fitted([...carPts(CAR3), ...carPts(CAR7), ...body(P_SP, S.spender), [0, 2.4, CAR3[2]]], 0, 0.22, D.S01, { mood: "earth", sky: true, fov: 56 }),
+  S01: fitted([...carPts(CAR3), ...carPts(CAR7), ...body(P_SP, S.spender), [0, 2.2, CAR3[2]]], 0, 0.16, D.S01, { mood: "earth", sky: true, fov: 54, face: 0.58, m: 0.05 }),
   S02: fitted([...carPts(CAR7), [CAR7[0], 2.5, CAR7[2]]], -12, 0.2, D.S02, { mood: "earth", sky: true }),
   S03: fitted(body(P_SP, S.spender, true), 10, 0.05, D.S03, { mood: "earth", sky: true, face: 0.5 }),
   S04: fitted([...body(P_LD, S.lender), [BOOTH[0], 2.1, BOOTH[2]]], -16, 0.1, D.S04, { mood: "earth", sky: true }),
-  S05: manual([BOOTH[0] - 0.1, 1.55, BOOTH[2] + 0.5], -24, 1.4, 0.05, { mood: "earth", sky: true }),
+  S05: fitted([...body(P_LD, S.lender, true), [BOOTH[0] - 0.6, 2.1, BOOTH[2]], [BOOTH[0] + 0.6, 0.9, BOOTH[2]]], -30, 0.08, D.S05, { mood: "earth", sky: true, face: 0.5 }),
   S06: manual([P_LD[0] - 0.25, 1.35, P_LD[2] + 0.45], -10, 1.0, 0.0, { mood: "earth", sky: true }),
   S07: fitted([...body(P_SV, S.saver), ...carPts(CAR3)], 18, 0.12, D.S07, { mood: "earth", sky: true }),
   S08: manual([CAR3[0], 1.3, CAR3[2] + 0.9], 8, 1.25, 0.12, { mood: "earth", sky: true }),
@@ -46,11 +46,11 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S14: fitted([[BOOTH[0] - 0.7, 0, BOOTH[2]], [PILE7[0] + 1.3, 0, PILE7[2]], [PILE7[0], 2.6, PILE7[2]]], -12, 0.18, D.S14, { mood: "whisper", sky: true }),
   S15: manual([PILE7[0], 1.5, PILE7[2]], -6, 3.2, -0.25, { mood: "whisper", sky: true, fov: 56 }),
   S16: fitted([[PILE3[0] - 0.9, 0, PILE3[2]], [PILE7[0] + 1.4, 0, PILE7[2]], [PILE7[0], 2.6, PILE7[2]]], 0, 0.15, D.S16, { mood: "store", sky: true }),
-  S17: manual([(PILE3[0] + PILE7[0]) / 2, 2.0, PILE3[2] + 0.3], 0, 2.2, 0.0, { mood: "store", sky: true }),
+  S17: fitted([[PILE3[0] - 0.7, 0, PILE3[2]], [PILE7[0] + 1.0, 0, PILE7[2]], [(PILE3[0] + PILE7[0]) / 2, 2.5, PILE3[2] + 0.4]], 0, 0.12, D.S17, { mood: "store", sky: true }),
   S18: manual([SIGN[0], 1.75, SIGN[2]], 14, 2.1, 0.0, { mood: "store", sky: true }),
   S19: fitted(body([1.95, 0, 0.3], S.spender, true), -20, 0.05, D.S19, { mood: "whisper", sky: true, face: 0.5 }),
   S20: fitted([...carPts(CAR7), [CAR7[0] + 2.5, 0.2, CAR7[2] + 1.8], [CAR7[0] - 2.4, 0.2, CAR7[2] + 1.8]], -6, 0.25, D.S20, { mood: "earth", sky: true }),
-  S21: fitted([...carPts(CAR3), ...carPts(CAR7), ...body(P_SP, S.spender), [0, 2.4, CAR3[2]]], 0, 0.22, D.S21, { mood: "earth", sky: true, fov: 56 }),
+  S21: fitted([...carPts(CAR3), ...carPts(CAR7), ...body(P_SP, S.spender), [0, 2.2, CAR3[2]]], 0, 0.16, D.S21, { mood: "earth", sky: true, fov: 54, face: 0.58, m: 0.05 }),
 };
 export const SAMECAR_SHOTS = buildShots(PLAN, LENS);
 
@@ -101,7 +101,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       <TollBooth p={BOOTH} yaw={-0.5} display={["7% APR"]} />
       {pile3 > 0 ? <><CoinPile p={PILE3} r={0.6} h={pile3} coins={50} /><Label p={[PILE3[0], pile3 + 0.35, PILE3[2] + 0.4]} text={["$3,347", "3 YEARS"]} w={0.55} h={0.3} bg={PAL.cash} fg="#fff4c8" /></> : null}
       {pile7 > 0 ? <><CoinPile p={PILE7} r={pile7 * 0.75} h={pile7} coins={90} /><Label p={[PILE7[0], pile7 + 0.4, PILE7[2] + 0.5]} text={["$8,034", "7 YEARS"]} w={0.6} h={0.32} bg={PAL.debt} fg="#fff4c8" /></> : null}
-      {i === 17 ? <Label p={[(PILE3[0] + PILE7[0]) / 2, 2.0, PILE3[2] + 0.4]} text={["+$4,686", "(≈ $4,700)"]} w={0.7} h={0.38} bg="#16121c" fg="#ff6a5f" glow={0.5} /> : null}
+      {i === 17 ? <Label p={[(PILE3[0] + PILE7[0]) / 2, 2.15, PILE3[2] + 0.4]} text={["+$4,686", "(≈ $4,700)"]} w={0.7} h={0.38} bg="#16121c" fg="#ff6a5f" glow={0.5} /> : null}
       {/* the CFPB line on a plain sign */}
       <mesh position={[SIGN[0], 0.8, SIGN[2] - 0.05]} castShadow><boxGeometry args={[0.1, 1.6, 0.1]} /><meshStandardMaterial color="#9aa3b0" /></mesh>
       <Label p={[SIGN[0], 1.85, SIGN[2]]} text={["CFPB:", "A LONGER LOAN", "MEANS MORE INTEREST"]} w={1.3} h={0.62} bg="#fff4c8" />
