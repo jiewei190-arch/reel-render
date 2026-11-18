@@ -1,0 +1,145 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 30.855,
+ "render_s": 318.6,
+ "qa_fail_lines": [
+  1,
+  2,
+  5,
+  7
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Same car, 4,700 dollars more.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Same car, four thousand seven hundred dollars more.",
+     "seed": 7,
+     "heard": "Same car, $4,700 more.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 3.389
+  },
+  {
+   "n": 2,
+   "text": "Borrow 30,000 dollars at seven percent, an example rate.",
+   "start": 3.688,
+   "parts": [
+    {
+     "tts": "Borrow thirty thousand dollars at seven percent, an example rate.",
+     "seed": 7,
+     "heard": "Borrow $30,000 at 7%, an example rate.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.042
+  },
+  {
+   "n": 3,
+   "text": "Three years: about 926 a month, and 3,347 in interest.",
+   "start": 7.342,
+   "parts": [
+    {
+     "tts": "Three years: about nine hundred twenty-six a month, and three thousand three hundred forty-seven in interest.",
+     "seed": 11,
+     "heard": "3 years, about 926 a month, and 3,347 in interest.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.97
+  },
+  {
+   "n": 4,
+   "text": "Seven years: just 453 a month. Feels cheaper, right?",
+   "start": 13.27,
+   "parts": [
+    {
+     "tts": "Seven years: just four hundred fifty-three a month. Feels cheaper, right?",
+     "seed": 7,
+     "heard": "Seven years. Just 453 a month. Feels cheaper, right?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.552
+  },
+  {
+   "n": 5,
+   "text": "But the interest is about 8,034 dollars.",
+   "start": 17.852,
+   "parts": [
+    {
+     "tts": "But the interest is about eight thousand thirty-four dollars.",
+     "seed": 7,
+     "heard": "but the interest is about $8034.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 20.686
+  },
+  {
+   "n": 6,
+   "text": "Lower payment, bigger total.",
+   "start": 20.986,
+   "parts": [
+    {
+     "tts": "Lower payment, bigger total.",
+     "seed": 7,
+     "heard": "Lower payment, bigger total.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.777
+  },
+  {
+   "n": 7,
+   "text": "The C.F.P.B. puts it plainly: lower the payment with a longer loan, and you pay more interest.",
+   "start": 23.077,
+   "parts": [
+    {
+     "tts": "The C.F.P.B. puts it plainly: lower the payment with a longer loan, and you pay more interest.",
+     "seed": 7,
+     "heard": "The CFPB puts it plainly, Lower the payment with a longer loan and you pay more interest.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 27.557
+  },
+  {
+   "n": 8,
+   "text": "Stretch it to seven, and you've paid for the",
+   "start": 27.857,
+   "parts": [
+    {
+     "tts": "Stretch it to seven, and you've paid for the",
+     "seed": 7,
+     "heard": "stretch it to seven, and you've paid for the",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.555
+  }
+ ]
+}

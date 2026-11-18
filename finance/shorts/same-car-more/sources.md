@@ -22,7 +22,7 @@ Sources:
   https://www.consumerfinance.gov/ask-cfpb/how-do-i-compare-auto-loan-offers-en-753/
 - CFPB, "Know Before You Owe: auto loans" shopping sheet announcement (archived newsroom page): "Consumers should know
   that if they lower the monthly payment by taking out a longer loan, they are paying more in interest." (the VO:
-  "lower the payment with a longer loan, and you pay more interest").
+  "The C.F.P.B. agrees: a longer loan means more interest").
   https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-unveils-new-know-you-owe-auto-loans-shopping-sheet
 - Context for the example rate: Federal Reserve G.19 publishes auto loan rates (new-car loan rates in the 6–8 % range
   in recent releases). https://www.federalreserve.gov/releases/g19/current/default.htm

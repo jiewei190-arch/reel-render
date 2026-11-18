@@ -4,5 +4,5 @@
 4. Seven years: just 453 a month. Feels cheaper, right?
 5. But the interest is about 8,034 dollars.
 6. Lower payment, bigger total.
-7. The C.F.P.B. puts it plainly: lower the payment with a longer loan, and you pay more interest.
+7. The C.F.P.B. agrees: a longer loan means more interest.
 8. Stretch it to seven, and you've paid for the
