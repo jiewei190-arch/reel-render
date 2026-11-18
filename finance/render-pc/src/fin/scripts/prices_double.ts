@@ -1,0 +1,2 @@
+// generated from shorts/prices-double/script.txt
+export default "Prices double faster than you think.\nTake the Rule of 72 and point it at inflation.\nAt two percent, prices double in about 36 years.\nAt three percent, about 24.\nAt four percent, just 18.\nSince 1970, U.S. prices rose about four percent a year on average.\nThey doubled roughly every eighteen years, three times over.\nSmall yearly numbers, huge long-run change. That's how";
