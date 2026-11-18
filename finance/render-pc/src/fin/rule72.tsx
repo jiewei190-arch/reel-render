@@ -52,7 +52,7 @@ const debtN = (id: string, tau: number) => {
 
 // ------------------------------------------------------------------ lenses
 const L = (o: Partial<FinShot> & Pick<FinShot, "subj" | "fov" | "face" | "mood">): Omit<FinShot, "id" | "a" | "b"> => ({ off: [0, 0, 3], ...o });
-const OPEN_SUBJ: V3 = [-0.1, 1.55, 0.2];
+const OPEN_SUBJ: V3 = [-0.1, 1.38, 0.3];
 const OPEN_POS: V3 = [0.35, 1.2, 3.0];
 const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S01: L({ subj: () => OPEN_SUBJ, pos: OPEN_POS, fov: 58, face: 0.5, mood: "store", roll: [0, 1.2], blur: 0.9 }),
@@ -120,7 +120,7 @@ const DebtStack: React.FC<{ n: number; tag?: string; t: number; glow?: number }>
 );
 const RateCard: React.FC<{ text: string; red?: boolean }> = ({ text, red = false }) => (
   <group rotation={[0, 0, 0]}>
-    <Label p={[0, 0.12, 0]} text={[text]} w={0.3} h={0.2} bg={red ? PAL.debt : "#fffaf0"} fg={red ? "#ffffff" : PAL.ink} border={red ? undefined : "#1f9e4f"} glow={red ? 0.5 : 0} />
+    <Label p={[0, 0.16, 0]} text={[text]} w={0.42} h={0.28} bg={red ? PAL.debt : "#fffaf0"} fg={red ? "#ffffff" : PAL.ink} border={red ? undefined : "#1f9e4f"} glow={red ? 0.5 : 0} />
   </group>
 );
 
@@ -140,8 +140,8 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     let emo: Emotion = "happy";
     if (id === "S01" || id === "S17") {
       const lift = id === "S01" ? 1 : ss(0.1, 0.7, tau);
-      pose = { ...pose, armL: lerp(0.3, 2.95, lift), armR: lerp(0.3, 2.95, lift), outL: 0.12, outR: 0.12, headPitch: -0.12 };
-      block = <BigBlock p={[p[0], lerp(1.1, 1.78, lift) + 0.03 * Math.sin(t * 3), p[2] + 0.05]} size={[0.62, 0.46, 0.36]} color="#f0c040" fg="#16121c" text="72" glow={0.35} r={[0, yawCam, 0]} />;
+      pose = { ...pose, armL: lerp(0.3, 2.75, lift), armR: lerp(0.3, 2.75, lift), outL: 0.12, outR: 0.12, headPitch: -0.12 };
+      block = <BigBlock p={[p[0], lerp(1.1, 1.6, lift) + 0.03 * Math.sin(t * 3), p[2] + 0.05]} size={[0.62, 0.46, 0.36]} color="#f0c040" fg="#16121c" text="72" glow={0.35} r={[0, yawCam, 0]} />;
       emo = "joy";
     } else if (id === "S03") {
       p = [POD[0] - 0.6, 0, POD[2] + 0.35];
@@ -174,9 +174,9 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
   if (i >= idx("S05") && i <= idx("S09")) {
     const p = P_PENNY;
     const flip = id === "S07" || id === "S08" ? ss(0, 0.35, tau) : 1;
-    const pose: Pose = { ...stand(p[0], p[2], yawTo(p, [0.6, 0, 3]), S.penny), armL: 2.2 + 0.15 * Math.sin(t * 6), outL: 0.2, armR: 0.2 };
+    const pose: Pose = { ...stand(p[0], p[2], yawTo(p, [0.6, 0, 3]), S.penny), armR: 1.55 + 0.1 * Math.sin(t * 6), outR: 0.6, armL: 0.2 };
     const card = <group rotation={[0, (1 - flip) * Math.PI, 0]}><RateCard text={`${rate?.rate ?? "6"}%`} /></group>;
-    actors.push(<Act key="penny" look={PENNY} pose={pose} emotion={id === "S08" ? "joy" : "happy"} s={S.penny} t={t} seed={1} held={{ side: "L", node: card }} />);
+    actors.push(<Act key="penny" look={PENNY} pose={pose} emotion={id === "S08" ? "joy" : "happy"} s={S.penny} t={t} seed={1} held={{ side: "R", node: card }} />);
   }
   // ---- Spender: enters with the red card (S12..S16)
   if (i >= idx("S12") && i <= idx("S16")) {
