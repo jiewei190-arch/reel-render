@@ -1,7 +1,7 @@
 # Sources and maths: coffee-could-be
 
-**Hypothetical example only, not a prediction or a recommendation.** The VO says "a made-up example" and "Returns
-aren't guaranteed, and the coffee might be worth it." No product, fund or account type is named or implied.
+**Hypothetical example only, not a prediction or a recommendation.** The VO says "At a made-up, steady seven percent" and "No
+guarantees, and the coffee might be worth it." No product, fund or account type is named or implied.
 
 Assumptions (shown on screen as EXAMPLE):
 - $5 a day × 365 days = **$1,825 a year** → "1,825 dollars a year".
@@ -10,8 +10,8 @@ Assumptions (shown on screen as EXAMPLE):
 
 | horizon | put in | value (FV of an annuity due, i = 0.07/12) | VO |
 |---|---|---|---|
-| 30 years (360 months) | 1,825 × 30 = **$54,750** | 152.08 × ((1+i)^360 − 1)/i × (1+i) = **$186,620** | "put in 54,750", "about 186,000" |
-| 10 years (120 months) | $18,250 | **$26,477** | "Only about 26,000" |
+| 30 years (360 months) | 1,825 × 30 = **$54,750** | 152.08 × ((1+i)^360 − 1)/i × (1+i) = **$186,620** | "You'd put in 54,750", "about 186,000" |
+| 10 years (120 months) | $18,250 | **$26,477** | "Ten years? Only about 26,000." |
 
 ```python
 i = 0.07 / 12; p = 1825 / 12
@@ -24,5 +24,5 @@ https://www.investor.gov/financial-tools-calculators/calculators/compound-intere
 Background: Investor.gov (SEC), "Compound interest",
 https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest
 
-Hedges: "could be worth" (first line), "a made-up example", "returns aren't guaranteed". The point is time, not
+Hedges: "could be worth" (first line), "made-up, steady seven percent", "No guarantees". The point is time, not
 shaming a purchase: "the coffee might be worth it."

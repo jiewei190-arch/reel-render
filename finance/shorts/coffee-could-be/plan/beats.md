@@ -7,6 +7,6 @@
 5. Skip coffee, retire rich. (4, a get-rich promise: rejected)
 
 ## Beats
-- **Loop sentence:** "Returns aren't guaranteed, and the coffee might be worth it. Which is how / your coffee could be worth 186,000 dollars."
-- **Twist (~70%):** "the coffee isn't the villain. Time is." The same habit for 10 years is only about $26,000.
+- **Loop sentence:** "No guarantees, and the coffee might be worth it. Which is how / your coffee could be worth 186,000 dollars."
+- **Twist (~70%):** "Twist: the coffee isn't the villain. Time is." Ten years of it is only about $26,000.
 - **Counter (every shot):** a big counter `PUT IN $x` turning into `EXAMPLE VALUE $x` (green), with `YEAR nn` and an `EXAMPLE 7%/YR` badge.
