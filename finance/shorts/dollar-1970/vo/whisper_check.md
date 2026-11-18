@@ -1,7 +1,7 @@
 # Whisper word check: dollar-1970
 
 - model: faster-whisper small.en (beam 5), audio 25.14 s
-- script words (normalised): 66; heard: 66
+- script words (normalised): 63; heard: 63
 - result: **PASS: every word matches**
 
 ## Heard

@@ -1,5 +1,6 @@
 """Whisper word check for a finance Short: does the voice say every word of script.txt, and nothing else?
-Normalises numbers/currency both ways ("$8.70" == "eight seventy", "$1" == "one dollar", "4%" == "four percent").
+Normalises numbers/currency both ways ("$8.70" == "eight seventy", "$1" == "one dollar", "4%" == "four percent");
+the money fillers dollar(s)/and/cents/point are not compared (Whisper turns them into "$" and ".").
 
     python finance/tools/verify_words.py finance/shorts/<slug>      (needs faster-whisper; uses small.en)
 Writes <slug>/vo/whisper_check.md and exits 1 if any word differs.
@@ -30,10 +31,13 @@ def num(raw):
     return year2w(n) if "," not in raw and len(raw) == 4 and 1100 <= n <= 2099 else n2w(n)
 
 
+FILLER = {"dollar", "dollars", "and", "cents", "point"}
+
+
 def norm(s):
     s = s.replace("’", "'")
     s = re.sub(r"\$(\d[\d,]*)\.(\d\d)\b", lambda m: num(m.group(1)) + " " + num(m.group(2)), s)  # $8.70 -> eight seventy
-    s = re.sub(r"\$(\d[\d,]*)", lambda m: num(m.group(1)) + " dollar", s)
+    s = s.replace("$", "")
     s = re.sub(r"(\d+)\.(\d+)", lambda m: num(m.group(1)) + " point " + " ".join(ONES[int(c)] for c in m.group(2)), s)
     s = s.replace("%", " percent")
     s = re.sub(r"\d{1,3}(?:,\d{3})+|\d+", lambda m: num(m.group(0)), s)
@@ -41,7 +45,9 @@ def norm(s):
     s = re.sub(r"\ba (hundred|thousand|million)\b", r"one \1", s)
     s = re.sub(r"\bu\.?s\.?\b", "us", s)
     w = re.findall(r"[a-z']+", s)
-    return ["dollar" if x == "dollars" else ("maths" if x == "math" else x) for x in w]
+    # Whisper writes money as "$5.12" / "$1.3 million" / "$200": the words "dollar(s)", "and", "cents" and "point"
+    # around a spoken amount become symbols, so they are not compared (every other word is).
+    return ["maths" if x == "math" else x for x in w if x not in FILLER]
 
 
 def main(d):
