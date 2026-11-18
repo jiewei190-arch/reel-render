@@ -3,7 +3,7 @@
   "audio": "voice.wav",
   "script": "script.txt",
   "model": "small",
-  "duration": 30.565
+  "duration": 29.837
  },
  "turns": [
   {
@@ -53,7 +53,7 @@
    "words": [
     {
      "w": "Saver",
-     "t": 2.28,
+     "t": 2.32,
      "end": 2.64
     },
     {
@@ -64,21 +64,21 @@
     {
      "w": "away",
      "t": 2.86,
-     "end": 3.16
+     "end": 3.14
     },
     {
      "w": "two",
-     "t": 3.16,
-     "end": 3.298
+     "t": 3.14,
+     "end": 3.29
     },
     {
      "w": "hundred",
-     "t": 3.298,
-     "end": 3.62
+     "t": 3.29,
+     "end": 3.64
     },
     {
      "w": "a",
-     "t": 3.62,
+     "t": 3.64,
      "end": 3.9
     },
     {
@@ -104,11 +104,11 @@
     {
      "w": "thirty-five,",
      "t": 5.26,
-     "end": 5.76
+     "end": 5.74
     },
     {
      "w": "then",
-     "t": 6.12,
+     "t": 6.14,
      "end": 6.38
     },
     {
@@ -196,12 +196,12 @@
     {
      "w": "twenty-four",
      "t": 11.84,
-     "end": 12.351
+     "end": 12.362
     },
     {
      "w": "thousand.",
-     "t": 12.351,
-     "end": 12.76
+     "t": 12.362,
+     "end": 12.78
     },
     {
      "w": "Spender,",
@@ -210,12 +210,12 @@
     },
     {
      "w": "seventy-two",
-     "t": 13.64,
-     "end": 14.096
+     "t": 13.38,
+     "end": 13.98
     },
     {
      "w": "thousand.",
-     "t": 14.096,
+     "t": 13.98,
      "end": 14.46
     }
    ]
@@ -242,16 +242,16 @@
     {
      "w": "seven",
      "t": 15.7,
-     "end": 15.942
+     "end": 15.933
     },
     {
      "w": "percent",
-     "t": 15.942,
-     "end": 16.28
+     "t": 15.933,
+     "end": 16.26
     },
     {
      "w": "a",
-     "t": 16.28,
+     "t": 16.26,
      "end": 16.48
     },
     {
@@ -278,7 +278,7 @@
   },
   {
    "turn": 6,
-   "text": "At sixty-five, Saver has about two hundred eighty thousand. Spender, about two hundred forty-five.",
+   "text": "At sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.",
    "words": [
     {
      "w": "At",
@@ -308,113 +308,103 @@
     {
      "w": "two",
      "t": 20.24,
-     "end": 20.385
+     "end": 20.387
     },
     {
      "w": "hundred",
-     "t": 20.385,
-     "end": 20.723
+     "t": 20.387,
+     "end": 20.732
     },
     {
      "w": "eighty",
-     "t": 20.723,
-     "end": 21.013
+     "t": 20.732,
+     "end": 21.027
     },
     {
      "w": "thousand.",
-     "t": 21.013,
-     "end": 21.4
+     "t": 21.027,
+     "end": 21.42
     },
     {
      "w": "Spender,",
      "t": 21.98,
-     "end": 22.42
-    },
-    {
-     "w": "about",
-     "t": 22.78,
-     "end": 22.96
+     "end": 22.48
     },
     {
      "w": "two",
-     "t": 22.96,
-     "end": 23.105
+     "t": 22.48,
+     "end": 22.66
     },
     {
      "w": "hundred",
-     "t": 23.105,
-     "end": 23.444
+     "t": 22.66,
+     "end": 23.08
     },
     {
      "w": "forty-five.",
-     "t": 23.444,
-     "end": 23.88
+     "t": 23.08,
+     "end": 23.62
     }
    ]
   },
   {
    "turn": 7,
-   "text": "Real returns vary, nothing is guaranteed, but time did the heavy lifting.",
+   "text": "Returns vary, nothing is guaranteed. But time did the heavy lifting.",
    "words": [
     {
-     "w": "Real",
-     "t": 24.5,
-     "end": 24.88
-    },
-    {
-     "w": "returns",
-     "t": 24.88,
-     "end": 25.22
+     "w": "Returns",
+     "t": 24.24,
+     "end": 24.74
     },
     {
      "w": "vary,",
-     "t": 25.22,
-     "end": 25.58
+     "t": 24.74,
+     "end": 25.02
     },
     {
      "w": "nothing",
-     "t": 26.1,
-     "end": 26.34
+     "t": 25.42,
+     "end": 25.58
     },
     {
      "w": "is",
-     "t": 26.34,
-     "end": 26.56
+     "t": 25.58,
+     "end": 25.8
     },
     {
-     "w": "guaranteed,",
-     "t": 26.56,
-     "end": 27.02
+     "w": "guaranteed.",
+     "t": 25.8,
+     "end": 26.16
     },
     {
-     "w": "but",
-     "t": 27.48,
-     "end": 27.78
+     "w": "But",
+     "t": 26.84,
+     "end": 27.12
     },
     {
      "w": "time",
-     "t": 27.78,
-     "end": 28.1
+     "t": 27.12,
+     "end": 27.4
     },
     {
      "w": "did",
-     "t": 28.1,
-     "end": 28.34
+     "t": 27.4,
+     "end": 27.64
     },
     {
      "w": "the",
-     "t": 28.34,
-     "end": 28.46
+     "t": 27.64,
+     "end": 27.78
     },
     {
      "w": "heavy",
-     "t": 28.46,
-     "end": 28.64
+     "t": 27.78,
+     "end": 27.96
     },
     {
      "w": "lifting.",
-     "t": 28.64,
-     "end": 29.0
+     "t": 27.96,
+     "end": 28.28
     }
    ]
   },
@@ -424,13 +414,13 @@
    "words": [
     {
      "w": "That's",
-     "t": 29.0,
-     "end": 29.9
+     "t": 28.78,
+     "end": 29.12
     },
     {
      "w": "how",
-     "t": 29.9,
-     "end": 30.0
+     "t": 29.12,
+     "end": 29.3
     }
    ]
   }
