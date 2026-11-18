@@ -18,14 +18,14 @@ import SCRIPT from "./scripts/coffee_could_be";
 const S = { spender: 1.0, saver: 1.0, teller: 0.9 };
 const BAR: V3 = [1.4, 0, -1.2];
 const TOP = 0.98;
-const P_SP: V3 = [1.25, 0, 0.0];
+const P_SP: V3 = [0.9, 0, 0.0];
 const P_TL: V3 = [1.6, 0, -1.85];
-const P_SV: V3 = [-1.0, 0, 0.35];
-const COL: V3 = [-1.55, 0, -0.75];
+const P_SV: V3 = [-0.45, 0, 0.45];
+const COL: V3 = [-1.1, 0, -0.75];
 const COL2: V3 = [-0.75, 0, -1.25];
 const CAL: V3 = [-2.6, 2.2, -3.44];
-const CLOCK: V3 = [0.2, 2.5, -3.42];
-const BOARD: V3 = [-0.4, 2.0, -3.44];
+const CLOCK: V3 = [3.3, 2.45, -3.42];
+const BOARD: V3 = [-0.6, 2.05, -3.44];
 const T = Object.fromEntries(PLAN.map((p) => [p.id, p.t])) as Record<string, number>;
 const D = Object.fromEntries(PLAN.map((p) => [p.id, p.end - p.t])) as Record<string, number>;
 const idx = (id: string) => parseInt(id.slice(1), 10);
@@ -45,7 +45,7 @@ const jarValue = (t: number, i: number) => {
 const colH = (v: number) => 0.25 + 1.9 * Math.min(1, v / V30);
 
 const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
-  S01: fitted([...body(P_SP, S.spender), [COL[0], 2.4, COL[2]], [COL[0] - 0.4, 0, COL[2]]], 6, 0.14, D.S01, { mood: "store", fov: 54 }),
+  S01: fitted([...body(P_SP, S.spender), [COL[0], 2.4, COL[2]], [COL[0] - 0.4, 0, COL[2]]], 6, 0.1, D.S01, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
   S02: manual([COL[0], 1.5, COL[2]], 10, 2.6, -0.2, { mood: "store", fov: 54 }),
   S03: fitted([...body(P_SP, S.spender), ...body(P_TL, S.teller, false, TL_LIFT)], -10, 0.12, D.S03, { mood: "store" }),
   S04: manual([BAR[0] - 0.5, TOP + 0.12, BAR[2] + 0.3], 8, 1.2, 0.3, { mood: "store" }),
@@ -53,7 +53,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S06: manual([CAL[0], CAL[1] - 0.15, CAL[2]], 14, 2.0, 0.0, { mood: "store" }),
   S07: fitted([...body(P_SV, S.saver), [COL[0], 1.3, COL[2]]], -12, 0.1, D.S07, { mood: "store" }),
   S08: manual([COL[0], 1.0, COL[2]], -6, 1.6, 0.18, { mood: "store" }),
-  S09: manual([COL[0], 1.0, COL[2] + 0.2], 10, 1.25, 0.1, { mood: "store" }),
+  S09: manual([COL[0], 1.05, COL[2] + 0.2], 10, 2.4, 0.1, { mood: "store" }),
   S10: manual([BOARD[0], BOARD[1] - 0.1, BOARD[2]], 4, 2.2, -0.05, { mood: "store" }),
   S11: manual([COL[0], 1.2, COL[2]], 16, 2.2, 0.05, { mood: "store" }),
   S12: manual([COL[0], 1.5, COL[2]], 8, 2.9, -0.22, { mood: "ending", fov: 56 }),
@@ -64,7 +64,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S17: fitted([[COL[0] - 0.4, 0, COL[2]], [COL[0], 2.4, COL[2]], [COL2[0] + 0.4, 0, COL2[2]]], 8, 0.08, D.S17, { mood: "store" }),
   S18: manual([BOARD[0], BOARD[1] - 0.1, BOARD[2]], -6, 2.0, -0.05, { mood: "whisper" }),
   S19: fitted(body(P_SP, S.spender, true), 14, 0.05, D.S19, { mood: "store", face: 0.5 }),
-  S20: fitted([...body(P_SP, S.spender), [COL[0], 2.4, COL[2]], [COL[0] - 0.4, 0, COL[2]]], 6, 0.14, D.S20, { mood: "store", fov: 54 }),
+  S20: fitted([...body(P_SP, S.spender), [COL[0], 2.4, COL[2]], [COL[0] - 0.4, 0, COL[2]]], 6, 0.1, D.S20, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
 };
 export const COFFEE_SHOTS = buildShots(PLAN, LENS);
 
@@ -90,7 +90,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     const pose: Pose = { ...stand(P_TL[0], P_TL[2], yawTo(P_TL, P_SP), S.teller), armL: i === 3 ? 1.1 : 0.2, armR: 0.2 };
     actors.push(<Act key="tl" look={TELLER} pose={{ ...pose, y: pose.y + TL_LIFT }} emotion="happy" s={S.teller} t={t} seed={3} held={i === 3 ? { side: "L", node: <Cup p={[0, -0.02, 0.05]} s={1.5} /> } : undefined} />);
   }
-  if (loop || (i >= 7 && i <= 12) || (i >= 16 && i <= 17)) {
+  if (loop || (i >= 7 && i <= 12)) {
     let pose: Pose = { ...stand(P_SV[0], P_SV[2], yawTo(P_SV, COL) * 0.5 + yawTo(P_SV, [0, 0, 4]) * 0.5, S.saver), armL: 0.2, armR: 0.2 };
     let held: { side: "L" | "R"; node: React.ReactNode } | undefined;
     if (i === 7) { pose = { ...pose, armL: 1.3 - 0.2 * Math.sin(tau * 7), outL: 0.1 }; held = { side: "L", node: <CoinStack p={[0, -0.02, 0.06]} n={10} s={1.3} /> }; }
