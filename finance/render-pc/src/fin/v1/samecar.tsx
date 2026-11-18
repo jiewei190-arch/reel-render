@@ -108,15 +108,15 @@ const LENS = {
   S16: creep(spFace(P_SP), [P_SP[0] - 0.4, 1.35, P_SP[2] + 1.9], { face: 0.6 }),
   S17: { ...creep(spFace(P_SP), [P_SP[0] - 0.3, 1.32, P_SP[2] + 2.0], { face: 0.62, roll: [0, -3] }), fovAt: slam(tSeven, 52, 42, 0.14), shake: shakeAt([tSeven], 0.05) },
   S18: creep([TW2[0], 1.3, TW2[2]], [TW2[0] - 0.6, 0.6, TW2[2] + 3.0], { fov: 56, face: 0.42, mood: "whisper", shake: shakeAt([tTower], 0.06) }),
-  S19: creep([DOOR[0], 0.45, DOOR[2]], [DOOR[0] - 0.5, 0.7, DOOR[2] + 2.2], { fov: 44, face: 0.5, mood: "whisper", shake: (t: number) => 0.008 + 0.006 * Math.abs(Math.sin(t * 29)) }),
-  S20: creep([P_SP[0] - 0.2, 1.1, P_SP[2] - 0.3], [P_SP[0] + 1.6, 1.35, P_SP[2] + 2.6], { fov: 52, face: 0.5 }),
-  S21: creep([DOOR[0], 1.0, DOOR[2]], [DOOR[0] + 0.5, 1.1, DOOR[2] + 2.0], { fov: 46, face: 0.5, mood: "whisper", push: 0.15, shake: (t: number) => 0.01 + 0.008 * Math.abs(Math.sin(t * 37)) }),
+  S19: creep([DOOR[0], 0.7, DOOR[2]], [DOOR[0] - 0.6, 0.95, DOOR[2] + 3.1], { fov: 46, face: 0.5, mood: "whisper", shake: (t: number) => 0.008 + 0.006 * Math.abs(Math.sin(t * 29)) }),
+  S20: creep([P_SP[0] - 0.2, 1.1, P_SP[2] - 0.3], [P_SP[0] - 1.4, 1.3, P_SP[2] + 2.4], { fov: 52, face: 0.5 }),
+  S21: creep([DOOR[0], 1.25, DOOR[2]], [DOOR[0] + 0.5, 1.3, DOOR[2] + 3.3], { fov: 46, face: 0.5, mood: "whisper", push: 0.15, shake: (t: number) => 0.01 + 0.008 * Math.abs(Math.sin(t * 37)) }),
   S22: creep([TW1[0], 1.0, TW1[2]], [TW1[0] + 0.5, 0.8, TW1[2] + 2.4], { fov: 50, face: 0.45, mood: "whisper" }),
   S08: creep([DOOR[0], 1.2, DOOR[2]], [DOOR[0] + 1.2, 1.3, DOOR[2] + 3.8], { fov: 46, face: 0.5, push: 0.12, mood: "whisper", shake: (t: number) => 0.006 + 0.004 * Math.abs(Math.sin(t * 23)) }),
-  S09: creep([(FUR[0] + TW2[0]) / 2 - 0.6, 1.1, -2.6], [0.0, 2.0, 4.0], { fov: 62, face: 0.5, mood: "whisper", fovAt: slam(tBurst, 66, 58, 0.1), shake: shakeAt([tBurst], 0.08) }),
+  S09: creep([DOOR[0] + 0.2, 1.1, DOOR[2] + 0.2], [DOOR[0] + 1.3, 2.5, DOOR[2] + 5.0], { fov: 60, face: 0.5, mood: "whisper", fovAt: slam(tBurst, 64, 56, 0.1), shake: shakeAt([tBurst], 0.08) }), // high over the furnace into the burst door (the wide lens had the cars in front; a right-side lens had a car in the foreground)
   S10: creep([(TW1[0] + TW2[0]) / 2, 1.3, TW1[2]], [4.0, 0.7, TW1[2] + 3.4], { fov: 56, face: 0.42, mood: "whisper", shake: shakeAt([tTower], 0.06) }),
   S11: creep([P_F[0] - 0.6, 1.0, P_F[2] - 0.4], [P_F[0] + 1.6, 1.5, P_F[2] + 2.3], { fov: 54, face: 0.5, mood: "whisper" }),
-  S12: creep([FUR[0], 1.2, FUR[2] + 0.4], [FUR[0] + 0.6, 1.5, FUR[2] + 2.4], { fov: 48, face: 0.5, mood: "whisper", shake: shakeAt([T("S12") + 0.2], 0.04) }),
+  S12: creep([FUR[0], 2.15, FUR[2] + 0.4], [FUR[0] + 0.6, 1.95, FUR[2] + 3.1], { fov: 52, face: 0.5, mood: "whisper", shake: shakeAt([T("S12") + 0.2], 0.04) }), // aimed high: the EXTRA label sits under the caption band
   S13: hook,
 };
 export const SAMECAR_SHOTS = shotsOf(PLAN, Object.fromEntries(Object.entries(LENS).map(([k, l]) => [k, { ...l, sky: true }]))); // outdoor: the sky dome on
