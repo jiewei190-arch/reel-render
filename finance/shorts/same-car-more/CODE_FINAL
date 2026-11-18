@@ -1,3 +1,3 @@
-STATE: code frozen (cloud stills verified), awaiting the PC render
-d03a873d46252137c57f5fe7bb2bc9f21fd5d8c1
-style: S4. samecar.tsx + v1/kit.tsx (FORMAT v1 would-you-rather, cliffhanger: open loop 56 %, door twist at 70 %, no closing line, loops to 'Would you rather...'): final after stills rounds 2-4, clip QA 0 (tools/story_qa.mjs); render SameCarMoreV1Sub, mix with tools/story_mix.py (finance/V1_RENDER.md). Supersedes the F2 CODE_FINAL 3833989; video.mp4 here is still the old F2 render.
+STATE: code frozen (cloud stills + PRE-POST GATE verified: frame0.png, strip_0-2s.png), awaiting the PC render
+5dacf20847bb5f45e3a5d074c3ea9b9b40596282
+style: S4. samecar.tsx + v1/kit.tsx (FORMAT v1 would-you-rather; frame 0 close on Spender under the dropping $453 board, hook 98 px; open loop 56 %, door twist 70 %, no closing line, loops to 'Would you rather...'): clip QA 0 (tools/story_qa.mjs); render SameCarMoreV1Sub, mix with tools/story_mix.py (finance/V1_RENDER.md). Bumps CODE_FINAL d03a873 (frame-0 rules). video.mp4 here is still the old F2 render.
