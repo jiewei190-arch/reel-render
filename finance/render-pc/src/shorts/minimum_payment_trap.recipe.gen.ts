@@ -933,7 +933,7 @@ export const RECIPE: Recipe = {
       0.03
      ],
      "color": "#1f9e4f",
-     "at": "right:0.8,0.78,0.9",
+     "at": "right:-0.55,0.78,0.95",
      "hit": "done+0.1"
     }
    ]

@@ -153,6 +153,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     const a = starts[i], b = i + 1 < starts.length ? starts[i + 1] : end;
     const id = `S${String(i + 1).padStart(2, "0")}`;
     const actors: ActorR[] = [];
+    const props: PropR[] = []; // filled below; actors may face a prop by id
     const getActors = () => actors;
     for (const as of sp.actors ?? []) {
       if (!recipe.cast[as.id]) throw new Error(`recipe ${id}: actor "${as.id}" is not in cast`);
@@ -165,12 +166,11 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
         if (as.pose === "walk" || as.pose === "run") if (as.to) return yawTo(p0, p1);
         if (faceT === undefined) return yawTo(p, [p[0] * 0.3, 0, 5]); // toward the lens side
         if (typeof faceT === "number") return faceT * D2R;
-        const q = targetFn(faceT, set, actors, [], id)(t);
+        const q = targetFn(faceT, set, actors, props, id)(t);
         return yawTo(p, [q[0], 0, q[2]]);
       };
       actors.push({ id: as.id, look: LOOKS[recipe.cast[as.id]] ?? CH.SPENDER, seed: seedOf(as.id), spec: as, p0, p1, yaw, segs, s: as.scale ?? 1, squash: (as.squash ?? []).map((x) => at(x)) });
     }
-    const props: PropR[] = [];
     const addProp = (ps: PropSpec, pa: number, pb: number, k: string) => {
       const pf = placeFn(ps.at, set, getActors);
       props.push({ key: k, spec: ps, a: pa, b: pb, hit: at(ps.hit, a + 0.12), pos: pf.f, held: pf.held, set: curSet });
