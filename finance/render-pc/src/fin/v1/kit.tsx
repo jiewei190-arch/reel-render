@@ -45,13 +45,13 @@ export const shotsOf = (plan: readonly PlanShot[], lens: Record<string, Shot>): 
 export const creep = (subj: V3, pos: V3, o: Partial<Shot> = {}): Shot => shot({ subj: () => subj, pos, fov: 50, push: 0.07, roll: [0, 1.2], ...o });
 
 // ------------------------------------------------------------------ frame-0 hook text (one line, <= 8 words)
-export const HookText: React.FC<{ text: string; t: number; until: number; top?: number }> = ({ text, t, until, top = 300 }) => {
+export const HookText: React.FC<{ text: string; t: number; until: number; top?: number; size?: number }> = ({ text, t, until, top = 300, size = 84 }) => {
   if (t > until) return null;
   const out = clamp((until - t) / 0.2);
   const pop = t < 0.12 ? 1 : 1; // on screen and readable at frame 0 (no fade-in)
   return (
     <div style={{ position: "absolute", left: 60, right: 60, top, display: "flex", justifyContent: "center", opacity: out }}>
-      <div style={{ transform: `scale(${pop})`, fontFamily: "Poppins", fontWeight: 800, fontSize: 84, lineHeight: 1.05, color: "#ffd23a", textAlign: "center", WebkitTextStroke: "8px #140c1c", paintOrder: "stroke fill", textShadow: "0 6px 18px rgba(8,4,16,0.7)", background: "rgba(20,12,28,0.55)", padding: "10px 26px", borderRadius: 18 }}>
+      <div style={{ transform: `scale(${pop})`, fontFamily: "Poppins", fontWeight: 800, fontSize: size, lineHeight: 1.05, color: "#ffd23a", textAlign: "center", whiteSpace: "pre-line", WebkitTextStroke: "8px #140c1c", paintOrder: "stroke fill", textShadow: "0 6px 18px rgba(8,4,16,0.7)", background: "rgba(20,12,28,0.55)", padding: "10px 26px", borderRadius: 18 }}>
         {text}
       </div>
     </div>

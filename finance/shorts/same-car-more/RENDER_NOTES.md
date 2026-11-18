@@ -80,3 +80,36 @@ STATE: rendered
 | no dark, empty or wide frame in the first 1 s | **borderline**: a medium-wide road shot. At 1.57 s the camera slams into the $926/MO sign. |
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## PC v3 (Reel creator, 2026-11-18): MAIN's 5 gate fixes. video.mp4 = PC v3, which supersedes the PC v1 section above
+- `video.mp4` sha256 `9ebeda98b708f12121bfc8ceacadab493dc3f80586768e6d74218e6f69d144fe`. 1080x1920, 30 fps, 832 frames (27.73 s), SUB=4 motion blur, 25.0 MB.
+- **Code:** `samecar.tsx` (PC edits). `kit.tsx` HookText gains optional `size` and `\n` line breaks; the defaults are unchanged, so other Shorts are unaffected.
+- **Fix 1, frame 0:**
+  - S01 and S13 (the loop) are now a close-up of Spender beside his red car. He's grinning (sly) and jingling a car-key fob in his raised right hand. The lens is centred between his face and the keys, with the car behind him.
+  - Hook text, 90 px, 2 lines: "$926 A MONTH / OR $453 A MONTH?".
+- **Fix 2:** sly to curious (hmm) on "926", at about 1.1 s. He lowers the keys, raises his other hand and tilts his head.
+- **Fix 3:** the EXAMPLE tag is now small (22 px) in the top-right corner (top 150), off the hook. The core CornerTag is off for this Short.
+- **Fix 4:** S02 (the $453 board) gets a push-in plus a number pop on "453". The old 0.87 s still is gone; the longest still is now 0.03 s. While there, I fixed two other S02 problems:
+  - the board's glow was 0.5 and washed out the white text; it's now 0.22;
+  - the lens is pulled back so the "$" isn't cropped.
+- **Fix 5:** true peak **-1.8 dBFS** at -14.2 LUFS. `tools/mux_voice.sh` gained optional `LIMIT` and `TPMAX` overrides (defaults unchanged); this Short used `LIMIT=0.74 TPMAX=-1.5`.
+- **Critic:** 0 FAIL. SYNC 21 cuts, max offset 0 frames; STATIC 0.03 s; EDGES 17.0 %.
+
+### Clipping checks (v3)
+- `story_qa`: 832 frames x 4 sub-frames, **0 clips**. The S01 actor is included.
+- **By eye:**
+  - 6 fps scrub (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-24s.jpg`, `scrub_6fps_24-28s.jpg`) and the impact frames plus 2 (`scrub_impacts.jpg`).
+  - The key fob hangs in front of his fist, not inside it. Car B sits behind Spender and clear of him. Feet are on the floor throughout.
+
+### Pre-post gate (v3)
+| check | result |
+|---|---|
+| close-up >= 50 % of the frame, mid-action | yes: Spender's face and torso fill the frame, keys mid-jingle, his car behind |
+| hook text readable | yes: "$926 A MONTH / OR $453 A MONTH?", 90 px, 2 lines, top third |
+| stake on screen by 0.5 s | yes, from frame 0 |
+| first word by 0.3 s | yes: "Would" at 0.15 s |
+| music and SFX at frame 0 | yes |
+| emotion change by 1.5 s | yes: sly to curious at about 1.1 s |
+| no dark, empty or wide frame in the first 1 s | yes |
+
+Not uploaded. It waits for MAIN QA and a BM GO.

@@ -11,11 +11,12 @@ import type { Emotion, Pose, V3 } from "../../blocky/motion";
 import type { Look } from "../../blocky/Blocky";
 import { DURATION, SHOTS as PLAN, WORDS } from "../../shorts/same_car_more_v1.plan.gen";
 import { Act, stand, yawTo } from "../core";
+import type { Held } from "../../blocky/Blocky";
 import type { FinShot, FinSpec } from "../core";
 import { BigBlock, BillBrick, CoinStack, Ground, Label, PAL, Stamp } from "../props";
 import { FACE, Furnace, SC, easeOut, shakeAt, slam } from "../hooks";
 import { Car } from "../f2kit";
-import { actorBoxes, creep, Debris, HookText, shotsOf, timing, WordCaption } from "./kit";
+import { actorBoxes, armPoint, creep, Debris, HookText, shotsOf, timing, WordCaption } from "./kit";
 import type { Box, StoryAudio } from "./kit";
 
 const { T, W, lineEnd } = timing(PLAN, WORDS);
@@ -42,6 +43,8 @@ const TW2: V3 = [4.55, 0, -3.4];
 const tLand = 0.28; // the $453 board lands (frame 0: mid-drop)
 const tPick = T("S04");
 const tGrab = T("S05") + 0.15;
+const tHmm = W(1, "926") + 0.1; // PC gate fix: smug -> hmm on the price (by ~1.1 s)
+const tPop453 = W(1, "453") + 0.05; // PC: number pop on the $453 board (breaks the S02 still)
 const tSeven = W(4, "seven"); // the stamps land on 'seven' (S17); S07 shows them landing the beat before
 const tBurst = T("S09") + 0.3; // ~70 %: the twist is held to the '8,034' word
 const tTower = T("S18") + 0.05;
@@ -68,9 +71,25 @@ const brickAt = (t: number): V3 | null => {
 };
 
 // ------------------------------------------------------------------ actors (shared by the scene and the clip check)
-type Actor = { name: string; look: Look; pose: Pose; emo: Emotion; s: number; seed: number };
+type Actor = { name: string; look: Look; pose: Pose; emo: Emotion; s: number; seed: number; held?: Held };
+/** a car-key fob on a ring, jingling */
+const Keys: React.FC<{ t: number; jingle: number }> = ({ t, jingle }) => (
+  <group position={[0, 0.02, 0.1]} rotation={[0.5 * jingle * Math.sin(t * 23), 0, 0.6 * jingle * Math.sin(t * 17)]}>
+    <mesh><torusGeometry args={[0.05, 0.01, 8, 20]} /><meshStandardMaterial color="#d8d8e0" metalness={0.8} roughness={0.25} /></mesh>
+    <mesh position={[0, -0.09, 0.0]}><boxGeometry args={[0.07, 0.12, 0.03]} /><meshStandardMaterial color="#16121c" roughness={0.4} /></mesh>
+    <mesh position={[0, -0.075, 0.017]}><boxGeometry args={[0.035, 0.035, 0.005]} /><meshStandardMaterial color="#c01818" emissive="#ff3a3a" emissiveIntensity={0.4} /></mesh>
+    <mesh position={[0.035, -0.06, 0]} rotation={[0, 0, 0.4 * jingle * Math.sin(t * 29)]}><boxGeometry args={[0.02, 0.09, 0.008]} /><meshStandardMaterial color="#e8c860" metalness={0.8} roughness={0.25} /></mesh>
+  </group>
+);
 const actorsAt = (i: number, t: number): Actor[] => {
   const out: Actor[] = [];
+  if (i === 1 || i === 13) {
+    // PC gate fix: frame 0 = Spender close-up beside his shiny car, keys jingling, grinning; hmm on "926"
+    const t0 = i === 13 ? T("S13") : 0;
+    const h = ss(t0 + tHmm - 0.05, t0 + tHmm + 0.15, t);
+    const pose: Pose = { ...stand(P_SP[0], P_SP[2], yawTo(P_SP, LENS1_POS), SC), armR: lerp(1.95, 1.6, h) + 0.08 * Math.sin(t * 21) * (1 - h), outR: 0.18, armL: lerp(0.35, 1.5, h), outL: lerp(0.1, 0.35, h), headYaw: -0.18 * h, bob: -0.015 * Math.abs(Math.sin(t * 9)) };
+    out.push({ name: "Spender", look: SPENDER, pose, emo: h > 0.5 ? "curious" : "sly", s: SC, seed: 2, held: { side: "R", node: <Keys t={t} jingle={1 - h} /> } });
+  }
   if (i >= 5 && i <= 7) {
     let pose: Pose = { ...stand(P_SP[0], P_SP[2], yawTo(P_SP, CAR_B) * 0.3 + yawTo(P_SP, [2.0, 0, 5]) * 0.7, SC), armL: 0.3, armR: 0.3 };
     let emo: Emotion = "joy";
@@ -94,10 +113,12 @@ const actorsAt = (i: number, t: number): Actor[] => {
 // ------------------------------------------------------------------ lenses
 const spFace = (p: V3): V3 => [p[0], FACE - 0.05, p[2]];
 const both: V3 = [(CAR_A[0] + CAR_B[0]) / 2, 1.2, CAR_A[2]];
-const hook = creep(both, [0.1, 1.7, 4.6], { fov: 58, face: 0.5, shake: shakeAt([tLand], 0.05) });
+const LENS1_POS: V3 = [P_SP[0] + 0.55, 1.5, P_SP[2] + 1.45];
+const hookC: V3 = (() => { const f: V3 = [P_SP[0], FACE - 0.08, P_SP[2]]; const h = armPoint(actorsAt(1, 0.2)[0].pose, "R", 1, SC); return [0.55 * f[0] + 0.45 * h[0], 0.55 * f[1] + 0.45 * (h[1] + 0.05), 0.55 * f[2] + 0.45 * h[2]]; })();
+const hook = creep(hookC, [hookC[0] + 0.5, hookC[1] + 0.12, hookC[2] + 1.6], { fov: 52, face: 0.52, blur: 1.2, shake: shakeAt([tLand], 0.03) }); // PC gate fix: close on Spender (face + jingling keys) beside his car, not the wide
 const LENS = {
   S01: hook,
-  S02: creep([CAR_B[0], BOARD_Y, CAR_B[2]], [CAR_B[0] - 0.2, 2.0, CAR_B[2] + 2.4], { fov: 46, face: 0.5 }),
+  S02: creep([CAR_B[0], BOARD_Y, CAR_B[2]], [CAR_B[0] - 0.15, 2.05, CAR_B[2] + 3.1], { fov: 46, face: 0.5, push: 0.2 }), // PC: push-in (was a 0.87 s still)
   S03: creep(both, [0.1, 1.9, 5.2], { fov: 58, face: 0.5 }),
   S04: creep(both, [0.1, 1.6, 4.4], { fov: 56, face: 0.5, push: 0.14 }),
   S05: creep([P_SP[0] - 0.4, 1.05, P_SP[2] - 0.4], [P_SP[0] - 0.6, 1.5, P_SP[2] + 3.0], { fov: 56, face: 0.5, shake: shakeAt([tGrab], 0.03) }),
@@ -146,8 +167,8 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
         return (
           <group key={k}>
             <mesh position={[c[0] + 0.95, BOARD_Y / 2, c[2] - 0.2]} castShadow><boxGeometry args={[0.1, BOARD_Y, 0.1]} /><meshStandardMaterial color="#9aa3b0" /></mesh>
-            <group position={[c[0], boardY(k, t, i), c[2] - 0.2]}>
-              <Label p={[0, 0, 0]} text={[k === "A" ? "$926/MO" : "$453/MO"]} w={1.4} h={0.5} bg={k === "A" ? "#2a6de1" : PAL.debt} fg="#ffffff" glow={k === "B" && i === 2 ? 0.5 : 0.15} />
+            <group position={[c[0], boardY(k, t, i), c[2] - 0.2]} scale={k === "B" && i === 2 ? 1 + 0.16 * Math.exp(-Math.max(0, t - tPop453) * 6) * (t >= tPop453 ? 1 : 0) : 1}>
+              <Label p={[0, 0, 0]} text={[k === "A" ? "$926/MO" : "$453/MO"]} w={1.4} h={0.5} bg={k === "A" ? "#2a6de1" : PAL.debt} fg="#ffffff" glow={k === "B" && i === 2 ? 0.22 : 0.15} />
               {years ? <Stamp p={[0.15, -0.42, 0.02]} text={k === "A" ? "x 3 YEARS" : "x 7 YEARS"} u={i === 7 ? clamp((t - tSeven + 0.1 + (k === "A" ? 0.15 : 0)) / 0.2) : 1} w={0.9} color={k === "A" ? "#2a6de1" : PAL.debt} /> : null}
             </group>
           </group>
@@ -173,7 +194,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       {t2 > 0 ? <BigBlock p={TW2} size={[0.8, Math.max(0.05, 2.4 * t2), 0.6]} color={PAL.debt} text={t2 > 0.3 ? "$8,034" : ""} glow={0.15} /> : null}
       {t1 > 0.5 ? <Label p={[TW1[0], 0.15, TW1[2] + 0.35]} text={["3 YRS"]} w={0.6} h={0.16} bg="#fff4c8" fg={PAL.ink} /> : null}
       {t2 > 0.5 ? <Label p={[TW2[0], 0.15, TW2[2] + 0.35]} text={["7 YRS"]} w={0.6} h={0.16} bg="#fff4c8" fg={PAL.ink} /> : null}
-      {actors.map((a) => <Act key={a.name} look={a.look} pose={a.pose} emotion={a.emo} s={a.s} t={t} seed={a.seed} />)}
+      {actors.map((a) => <Act key={a.name} look={a.look} pose={a.pose} emotion={a.emo} s={a.s} t={t} seed={a.seed} held={a.held} />)}
     </>
   );
 };
@@ -196,10 +217,13 @@ export const SAMECAR_QA = (t: number): { actors: Box[]; props: Box[] } => {
 };
 
 // ------------------------------------------------------------------ overlay, spec, audio
+const HOOK = "$926 A MONTH\nOR $453 A MONTH?";
 const overlay = (t: number) => (
   <>
-    <HookText text="$926 OR $453 A MONTH?" t={t} until={lineEnd(2) + 0.2} />
-    {t >= T("S13") ? <HookText text="$926 OR $453 A MONTH?" t={t} until={99} /> : null}
+    <HookText text={HOOK} t={t} until={lineEnd(2) + 0.2} size={90} top={250} />
+    {t >= T("S13") ? <HookText text={HOOK} t={t} until={99} size={90} top={250} /> : null}
+    {/* PC gate fix: the example tag, small, top-right corner (off the hook) */}
+    <div style={{ position: "absolute", right: 48, top: 150, padding: "5px 12px", borderRadius: 10, background: "rgba(255,244,200,0.92)", color: "#16121c", fontFamily: "Poppins", fontWeight: 800, fontSize: 22, letterSpacing: 1 }}>EXAMPLE: $30,000 · 7%</div>
     <WordCaption words={WORDS} t={t} />
   </>
 );
@@ -213,7 +237,7 @@ export const SAMECAR_SPEC: FinSpec = {
   ending: [],
   scene,
   counter: () => null,
-  tag: () => "EXAMPLE: $30,000 · 7%",
+  tag: () => null, // drawn small in the overlay (top-right)
   bg: "#6aa6f2",
   overlay,
 };
