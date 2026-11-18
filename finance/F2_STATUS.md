@@ -41,7 +41,7 @@ Every number is sourced, with the maths shown, in `sources.md`:
 - **`src/fin/f2kit.tsx`:**
   - numeric lens fitting: a lens is solved so its subjects stay inside the frame, below the counter, until the end of the push-in, with 6–10 % margins;
   - new props: car, smoke, cup, payslip sheet, coffee bar.
-- **Stills:** 2–3 rounds of 6 per Short with `tools/cloud_stills.sh` (`--gl=swangle`). Faults fixed along the way:
+- **Stills:** 2–4 rounds of 6 per Short with `tools/cloud_stills.sh` (`--gl=swangle`). Rounds per Short: surprise-bill 2, prices-double 3, coffee-could-be 3, employer-match 4, same-car-more 4. The final sheet is in each `stills_sheet.png`. Faults fixed along the way:
   - lens inside objects (a booth, a car);
   - characters facing away, and blocked subjects;
   - signs over signs (the calendar behind the CPI board, the clock over the board);
