@@ -207,7 +207,8 @@ export const Tumble: React.FC<{ p: V3; spin: number }> = ({ p, spin }) => {
   const b = Array.from({ length: 7 }, (_, i) => [(r() - 0.5) * 0.18, (r() - 0.5) * 0.18, (r() - 0.5) * 0.18, r() * 3, i] as const);
   return (
     <group position={p} rotation={[0, 0, spin]}>
-      {b.map(([x, y, z, a, i]) => <Bx key={i} s={[0.14, 0.14, 0.14]} p={[x, y, z]} r={[a, a * 2, a]} c={i % 2 ? "#7a8a3a" : "#5a6a2a"} rough={0.8} />)}
+      {b.map(([x, y, z, a, i]) => <Bx key={i} s={[0.15, 0.15, 0.15]} p={[x, y, z]} r={[a, a * 2, a]} c={["#6cc04a", "#4fa83c", "#8ad85a"][i % 3]} rough={0.7} />)}
+      <Bx s={[0.05, 0.05, 0.05]} p={[0.06, 0.13, 0.06]} c="#ffd34a" rough={0.5} />
     </group>
   );
 };

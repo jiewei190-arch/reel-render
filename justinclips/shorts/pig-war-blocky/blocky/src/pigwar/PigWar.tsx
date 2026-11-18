@@ -18,12 +18,12 @@ import type { Word } from "../engine/core/captions";
 import { View } from "../engine/core/View";
 import type { Cam } from "../engine/core/View";
 import { PopCaptions } from "../library/PopCaptions";
-import { alive, base, blinkAt, facePoint, pop } from "../library/characters";
+import { alive, base, blinkAt, facePoint, pop, walk } from "../library/characters";
 import { BLUECOAT, extra, FARMER, OFFICIAL, REDCOAT } from "./cast";
 import { moodOfShot } from "./mood";
 import type { MoodId } from "./mood";
 import { Pig } from "./pig";
-import { Cabin, Cannon, Fence, Flag, FarIslands, Island, Patch, Pine, Rifle, Rock, Tent, Tufts, Tumble, Warship } from "./world";
+import { Cabin, Cannon, Coin, Fence, Flag, FarIslands, Island, Patch, Pine, Rifle, Rock, Rowboat, Tent, Tufts, Tumble, Warship } from "./world";
 import shotsJson from "./data/shots.json";
 import wordsJson from "./data/words.json";
 
@@ -33,7 +33,14 @@ const SHOTS: ShotRow[] = (shotsJson as { shots: ShotRow[] }).shots;
 const DUR: number = (shotsJson as { duration: number }).duration;
 export const PW_FRAMES = Math.ceil(DUR * FPS);
 const WORDS: Word[] = (wordsJson as { words: { word: string; start: number; end: number }[] }).words.map((w) => [w.word, w.start, w.end]);
-const CHUNKS = makeChunks(WORDS, DUR, FPS);
+// captions keep the script's casing (words.json is aligned to script.txt: "America", "Britain"); makeChunks lowercases,
+// so the chunk words are mapped back to the original words by position
+const CHUNKS = (() => {
+  const ch = makeChunks(WORDS, DUR, FPS);
+  let i = 0;
+  return ch.map((c) => ({ ...c, words: c.words.map(() => WORDS[i++][0]) }));
+})();
+const TOP_UNTIL = 3.4;
 const shotAt = (n: number) => {
   let i = 0;
   for (let k = 0; k < SHOTS.length; k++) if (n >= Math.round(SHOTS[k].start * FPS)) i = k;
@@ -78,18 +85,22 @@ const talk = (p: Pose, t: number, side: "L" | "R", k = 1): Pose => {
 // ------------------------------------------------------------------ sets
 /** the standoff corridor: redcoats down the left, bluecoats down the right, facing each other; the bay at the end */
 const CORR_Z = [0.9, 0.15, -0.6, -1.35, -2.1, -2.85];
-const corridorActors = (t: number, eR: Emotion, eB: Emotion, o: { point?: boolean; lean?: number } = {}): A[] => {
+/** skip: front rows left out of this shot; xs: half-width of the corridor. Chosen per shot by a numeric edge check so
+ *  every face is fully in frame or fully out for the whole shot (no half faces at the frame edge). */
+const corridorActors = (t: number, eR: Emotion, eB: Emotion, o: { point?: boolean; lean?: number; skip?: number; xs?: number } = {}): A[] => {
   const out: A[] = [];
+  const sk = o.skip ?? 0, xs = o.xs ?? 0.82;
   CORR_Z.forEach((z, i) => {
+    if (i < sk) return;
     const lookR = i === 0 ? REDCOAT : extra(REDCOAT, i);
     const lookB = i === 0 ? BLUECOAT : extra(BLUECOAT, i + 2);
-    let pr = base(-0.82 - (i % 2) * 0.06, z, Math.PI / 2 - 0.32, 1, { pitch: o.lean ?? 0, armL: 0.02, armR: 0.02, outL: 0.04, outR: 0.04 });
-    let pb = base(0.82 + (i % 2) * 0.06, z, -Math.PI / 2 + 0.32, 1, { pitch: o.lean ?? 0, armL: 0.02, armR: 0.02, outL: 0.04, outR: 0.04 });
-    if (o.point && i === 0) {
+    let pr = base(-xs - (i % 2) * 0.06, z, Math.PI / 2 - 0.32, 1, { pitch: o.lean ?? 0, armL: 0.02, armR: 0.02, outL: 0.04, outR: 0.04 });
+    let pb = base(xs + (i % 2) * 0.06, z, -Math.PI / 2 + 0.32, 1, { pitch: o.lean ?? 0, armL: 0.02, armR: 0.02, outL: 0.04, outR: 0.04 });
+    if (o.point && i === sk) {
       pr = pointArm(pr, "R", 1, -0.15 + 0.06 * Math.sin(t * 7));
       pb = pointArm(pb, "L", 1, -0.15 + 0.06 * Math.sin(t * 7 + 1));
     }
-    if (o.point && i === 1) {
+    if (o.point && i === sk + 1) {
       pr = talk(pr, t + 0.4, "L");
       pb = talk(pb, t, "R");
     }
@@ -174,7 +185,8 @@ const build = (id: string, t: number, sh: ShotRow): Built => {
     const tense = id === "s13" || id === "s13b";
     const golden = id === "s14";
     const T0 = t + 0.4;
-    const actors = corridorActors(T0, tense ? "flat" : "angry", tense ? "flat" : "angry", { point: id === "s01" || id === "s02" });
+    const lay = id === "s02" ? { skip: 4, xs: 0.82 } : id === "s13" ? { skip: 2, xs: 0.62 } : id === "s13b" ? { skip: 2, xs: 0.66 } : { skip: 2, xs: 0.82 };
+    const actors = corridorActors(T0, tense ? "flat" : "angry", tense ? "flat" : "angry", { point: id === "s01" || id === "s02", ...lay });
     let pig: React.ReactNode = null;
     let cam: Cam;
     if (id === "s01") {
@@ -196,8 +208,36 @@ const build = (id: string, t: number, sh: ShotRow): Built => {
     const tw: V3 | undefined = id === "s13" ? [-0.6 + tau * 0.8, 0.09 + Math.abs(Math.sin(tau * 6)) * 0.12, 0.4] : undefined;
     return { mood: golden ? "golden" : tense ? "tense" : "sunny", cam, node: <><Corridor t={t} actors={actors} tumble={tw} />{pig}</> };
   }
+  // ---- s07 / s08: the deal. The farmer offers one coin; the company man flings a hand up for 100; the farmer is shocked.
+  if (id === "s07" || id === "s08") {
+    const actors: A[] = [];
+    let fpose = base(-0.42, 0.25, 0.95, 1);
+    let opose = base(0.42, 0.25, -0.95, 1, { armL: 0.25, armR: 0.25, outL: 0.42, outR: 0.42 });
+    let fe: Emotion = "happy", oe: Emotion = "curious";
+    let held: Held | undefined;
+    if (id === "s07") {
+      const k = clamp(pop((tau - 0.1) / 0.7), -0.2, 1.1);
+      fpose = talk({ ...fpose, armR: lerp(0.05, 1.25, k), outR: 0.08 }, t, "L", clamp((tau - 0.6) / 0.3));
+      held = { side: "R", node: <Coin t={t} /> };
+      fe = "sly";
+    } else {
+      const t100 = onset("100", sh.start, sh.start + 0.6) - sh.start;
+      const k = clamp(pop((tau - t100 + 0.35) / 0.7), -0.2, 1.1);
+      opose = { ...opose, armL: lerp(0.25, 2.75, k), outL: lerp(0.42, 0.12, k), pitch: -0.04 * k };
+      oe = k > 0.5 ? "sly" : "curious";
+      const kf = clamp(pop((tau - t100 - 0.05) / 0.6), -0.2, 1.1);
+      fpose = { ...fpose, armL: lerp(0.05, 0.6, kf), armR: lerp(0.05, 0.6, kf), outL: lerp(0.05, 0.6, kf), outR: lerp(0.05, 0.6, kf), pitch: -0.06 * kf };
+      fe = kf > 0.4 ? "shock" : "curious";
+    }
+    actors.push({ key: "farmer", look: FARMER, pose: fpose, emotion: fe, seed: 13, held });
+    actors.push({ key: "off", look: OFFICIAL, pose: opose, emotion: oe, seed: 41 });
+    actors.push({ key: "s1", look: extra(REDCOAT, 2), pose: base(2.5, -3.6, -0.5, 1), emotion: "flat", seed: 81 });
+    actors.push({ key: "s2", look: extra(REDCOAT, 5), pose: base(3.2, -4.4, -0.5, 1), emotion: "flat", seed: 82 });
+    const cam = id === "s07" ? lens([0, 1.0, 0.25], [0.05, 0.1, 3.9], 46, 0.47, tau, 0.1, [0, 1]) : lens([0.05, 1.05, 0.25], [-0.6, 0.1, 3.6], 46, 0.46, tau, 0.1, [0, -1.2]);
+    return { mood: "sunny", cam, node: <Garden t={t}>{actors.map((a) => <Actor key={a.key} a={a} t={t} />)}</Garden> };
+  }
   // ---- the garden / the deal / the arrest
-  if (id === "s04" || id === "s05" || id === "s06" || id === "s07" || id === "s08" || id === "s09") {
+  if (id === "s04" || id === "s05" || id === "s06" || id === "s09") {
     const tense = id === "s09";
     const actors: A[] = [];
     const fp = base(0, 0, id === "s05" ? 0.28 : 0.85, 1, { armR: id === "s05" ? 0.22 : 0.05, outR: id === "s05" ? 0.16 : 0.12 });
@@ -220,6 +260,60 @@ const build = (id: string, t: number, sh: ShotRow): Built => {
     }
     return { mood: tense ? "tense" : "sunny", cam, node: <Garden t={t}>{actors.map((a) => <Actor key={a.key} a={a} t={t} />)}</Garden> };
   }
+  // ---- s10: the landing. Bluecoats march up from the rowboats; the front man plants the flag on "soldiers".
+  if (id === "s10") {
+    const ts = onset("soldiers", sh.start, sh.start + 1.2) - sh.start;
+    const actors: A[] = [];
+    [-1.5, -2.3, -3.0].forEach((z0, r) => [-0.42, 0.42].forEach((x0, c) => {
+      const i = r * 2 + c;
+      actors.push({ key: `w${i}`, look: extra(BLUECOAT, i + 1), pose: walk(x0 + (r % 2) * 0.08, z0, 0, tau + i * 0.13, i * 0.13, 0.7, 1), emotion: "flat", seed: 90 + i });
+    }));
+    const stopT = Math.max(0.3, ts - 0.15);
+    const hp = tau < stopT ? walk(0.75, -1.1, 0, tau, 0, 0.7, 1) : base(0.75, -1.1 + 0.7 * stopT, 0, 1);
+    const k = clamp(pop((tau - ts + 0.2) / 0.7), -0.2, 1.1);
+    actors.push({ key: "hero", look: { ...BLUECOAT, moustache: "#2a1a12" }, pose: { ...hp, armR: lerp(1.0, 2.55, k), outR: 0.1 }, emotion: k > 0.3 ? "angry" : "flat", seed: 99, held: { side: "R", node: <Flag kind="us" p={[0, 0, 0]} h={1.5} t={t} yaw={-Math.PI / 2} s={0.8} /> } });
+    const cam = lens([0.35, 0.95, -0.9 + 0.35 * tau], [1.35, -0.05, 3.1], 50, 0.5, tau, 0.08, [0, 1.2]);
+    return {
+      mood: "tense", cam, node: (
+        <>
+          <Island t={t} seaZ={-3.4} back={20} />
+          <FarIslands z={-75} />
+          {[[-1.4, -5.2, 0.3], [1.1, -6.4, -0.2], [-0.2, -8.6, 0.1]].map(([x, z, y], i) => <Rowboat key={i} p={[x, -0.5, z]} yaw={y} t={t} seed={i} />)}
+          <Warship p={[7, -0.45, -24]} yaw={Math.PI - 0.3} s={1.0} t={t} seed={5} />
+          {[[-3.2, -1.6, 0], [3.6, -1.2, 1], [-4.2, 1.4, 2], [4.6, 2.2, 3]].map(([x, z, q]) => <Pine key={q} p={[x, 0, z]} s={0.7} seed={q} t={t} />)}
+          <Tufts x={[-4, 4]} z={[-3, 3]} n={180} keep={[[0, -1, 1.2]]} seed={10} />
+          {actors.map((a) => <Actor key={a.key} a={a} t={t} />)}
+        </>
+      ),
+    };
+  }
+  // ---- s12: five warships glide into the bay, seen past two worried bluecoats on the hill
+  if (id === "s12") {
+    const tw = onset("warships", sh.start, sh.start + 0.6) - sh.start;
+    const turn = clamp((tau - tw) / 0.3);
+    const actors: A[] = [
+      { key: "f1", look: extra(BLUECOAT, 1), pose: base(-0.62, 1.2, Math.PI - 0.35, 1, { headYaw: 0.35 * turn }), emotion: "sad", seed: 140 },
+      { key: "f2", look: extra(BLUECOAT, 4), pose: base(0.66, 1.45, Math.PI + 0.4, 1, { headYaw: -0.35 * turn }), emotion: "shock", seed: 141 },
+      { key: "m1", look: extra(BLUECOAT, 2), pose: base(-2.0, -1.4, Math.PI - 0.2, 1), emotion: "sad", seed: 142 },
+      { key: "m2", look: extra(BLUECOAT, 3), pose: base(2.1, -1.8, Math.PI + 0.2, 1), emotion: "sad", seed: 143 },
+    ];
+    const subj: V3 = [0, 1.0, -14];
+    const pos: V3 = [0.15, 1.85, 3.6 - 0.35 * tau];
+    const c = aim(pos, subj, 48, 0.42);
+    return {
+      mood: "tense", cam: { ...c, roll: lerp(0, -1, clamp(tau / 2)) }, node: (
+        <>
+          <Island t={t} seaZ={-4.2} back={20} />
+          <FarIslands z={-80} />
+          {[0, 1, 2, 3, 4].map((i) => <Warship key={i} p={[-4.2 + (i % 2) * 3.4 - i * 0.5 + 0.9 * tau, -0.45, -9.5 - i * 5.2]} yaw={0.15} s={1.0} t={t} seed={i} />)}
+          <Cannon p={[1.5, 0, -0.4]} yaw={Math.PI} s={0.6} />
+          {[[-3.4, -2.6, 0], [3.8, -3.0, 1]].map(([x, z, q]) => <Pine key={q} p={[x, 0, z]} s={0.7} seed={q} t={t} />)}
+          <Tufts x={[-4, 4]} z={[-3.5, 3]} n={160} seed={12} />
+          {actors.map((a) => <Actor key={a.key} a={a} t={t} />)}
+        </>
+      ),
+    };
+  }
   // ---- the landing / the camp / the warships
   const c0 = onset("461", sh.start, sh.start + 0.5) - sh.start;
   const actors = campActors(tau, c0);
@@ -233,8 +327,8 @@ const build = (id: string, t: number, sh: ShotRow): Built => {
 
 // ------------------------------------------------------------------ overlays
 const TopCaption: React.FC<{ t: number }> = ({ t }) => {
-  if (t > 3.4) return null;
-  const op = clamp((3.4 - t) / 0.2);
+  if (t > TOP_UNTIL) return null;
+  const op = clamp((TOP_UNTIL - t) / 0.2);
   const line = (s: string, size: number, y: number) => (
     <div style={{ position: "absolute", left: 108, right: 108, top: y, textAlign: "center", fontFamily: "Poppins", fontWeight: 800, fontSize: size, lineHeight: 1.05, color: "#ffffff", WebkitTextStroke: "7px #140c1c", paintOrder: "stroke fill", textShadow: "0 6px 18px rgba(8,4,16,0.6)", opacity: op }}>{s}</div>
   );
@@ -246,24 +340,41 @@ const TopCaption: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 /** story-fact card (diegetic text sits above the caption band) with a pop-in */
-const Card: React.FC<{ t: number; t0: number; text: string; y?: number; color?: string }> = ({ t, t0, text, y = 520, color = "#c8302a" }) => {
+const Card: React.FC<{ t: number; t0: number; text: string; y?: number; color?: string; size?: number }> = ({ t, t0, text, y = 520, color = "#c8302a", size = 92 }) => {
   if (t < t0) return null;
   const u = (t - t0) / 0.2;
   const s = u >= 1 ? 1 : 0.5 + 0.5 * (1 + 3.4 * (u - 1) ** 3 + 2.4 * (u - 1) ** 2);
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: y - 70, display: "flex", justifyContent: "center" }}>
-      <div style={{ transform: `scale(${s}) rotate(-3deg)`, background: "#fff8ec", border: `10px solid ${color}`, borderRadius: 26, padding: "10px 40px", fontFamily: "Poppins", fontWeight: 800, fontSize: 92, color, boxShadow: "0 10px 30px rgba(0,0,0,.35)" }}>{text}</div>
+      <div style={{ transform: `scale(${s}) rotate(-3deg)`, background: "#fff8ec", border: `10px solid ${color}`, borderRadius: 26, padding: "10px 40px", fontFamily: "Poppins", fontWeight: 800, fontSize: size, color, boxShadow: "0 10px 30px rgba(0,0,0,.35)" }}>{text}</div>
     </div>
   );
 };
 const overlays = (id: string, t: number, sh: ShotRow): React.ReactNode => {
+  if (id === "s07") return <Card t={t} t0={onset("10", sh.start, sh.start + 0.4)} text="$10" color="#2f8a3a" />;
+  if (id === "s08") return <Card t={t} t0={onset("100", sh.start, sh.start + 0.6)} text="$100" />;
+  if (id === "s10") return <Card t={t} t0={onset("soldiers", sh.start, sh.start + 1.2)} text="U.S. ARMY LANDS" color="#2c5cc0" size={76} />;
+  if (id === "s12") {
+    const tw = onset("warships", sh.start, sh.start + 0.6);
+    return (
+      <>
+        <Card t={t} t0={sh.start + 0.05} text="× 5 WARSHIPS" size={84} />
+        <Card t={t} t0={tw + 0.15} text="2,000+ men aboard" y={700} color="#2c3a5a" size={60} />
+      </>
+    );
+  }
   if (id === "s09") return <Card t={t} t0={onset("arrest", sh.start, sh.start + 0.8)} text="ARREST HIM" />;
   if (id === "s13") return <Card t={t} t0={onset("shot", sh.start, sh.start + 0.6)} text="SHOTS FIRED: 0" color="#2c3a5a" />;
   if (id === "s11") {
     const c0 = onset("461", sh.start, sh.start + 0.5);
     if (t < c0) return null;
     const v = Math.round(461 * (1 - Math.pow(1 - clamp((t - c0) / 0.6), 3)));
-    return <Card t={t} t0={c0} text={`${v} TROOPS`} color="#2c5cc0" />;
+    return (
+      <>
+        <Card t={t} t0={c0} text={`${v} TROOPS`} color="#2c5cc0" />
+        <Card t={t} t0={c0 + 0.7} text="+ 14 cannons" y={700} color="#2c3a5a" size={60} />
+      </>
+    );
   }
   return null;
 };
@@ -285,7 +396,7 @@ export const PigWar: React.FC<{ sub?: boolean }> = ({ sub = false }) => {
       </View>
       {overlays(sh.id, tn, sh)}
       <TopCaption t={tn} />
-      <PopCaptions chunks={CHUNKS} t={n === 0 ? Math.max(tn, CHUNKS[0].a + 0.2) : tn} until={DUR} />
+      {tn < TOP_UNTIL ? null : <PopCaptions chunks={CHUNKS} t={tn} until={DUR} />}
     </AbsoluteFill>
   );
 };
