@@ -1,0 +1,423 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 26.891
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your minimum payment can take nineteen years.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.0,
+     "end": 0.26
+    },
+    {
+     "w": "minimum",
+     "t": 0.26,
+     "end": 0.52
+    },
+    {
+     "w": "payment",
+     "t": 0.52,
+     "end": 0.84
+    },
+    {
+     "w": "can",
+     "t": 0.84,
+     "end": 1.12
+    },
+    {
+     "w": "take",
+     "t": 1.12,
+     "end": 1.3
+    },
+    {
+     "w": "nineteen",
+     "t": 1.3,
+     "end": 1.62
+    },
+    {
+     "w": "years.",
+     "t": 1.62,
+     "end": 1.94
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Say you owe five thousand dollars at twenty-two percent, near the U.S. average.",
+   "words": [
+    {
+     "w": "Say",
+     "t": 2.66,
+     "end": 2.94
+    },
+    {
+     "w": "you",
+     "t": 2.94,
+     "end": 3.16
+    },
+    {
+     "w": "owe",
+     "t": 3.16,
+     "end": 3.48
+    },
+    {
+     "w": "five",
+     "t": 3.48,
+     "end": 3.653
+    },
+    {
+     "w": "thousand",
+     "t": 3.653,
+     "end": 3.998
+    },
+    {
+     "w": "dollars",
+     "t": 3.998,
+     "end": 4.3
+    },
+    {
+     "w": "at",
+     "t": 4.3,
+     "end": 4.9
+    },
+    {
+     "w": "twenty-two",
+     "t": 4.9,
+     "end": 5.361
+    },
+    {
+     "w": "percent,",
+     "t": 5.361,
+     "end": 5.72
+    },
+    {
+     "w": "near",
+     "t": 5.72,
+     "end": 6.22
+    },
+    {
+     "w": "the",
+     "t": 6.22,
+     "end": 6.4
+    },
+    {
+     "w": "U.S.",
+     "t": 6.4,
+     "end": 6.74
+    },
+    {
+     "w": "average.",
+     "t": 7.0,
+     "end": 7.04
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "You pay only the minimum: interest plus one percent of the balance.",
+   "words": [
+    {
+     "w": "You",
+     "t": 7.78,
+     "end": 7.9
+    },
+    {
+     "w": "pay",
+     "t": 7.9,
+     "end": 8.06
+    },
+    {
+     "w": "only",
+     "t": 8.06,
+     "end": 8.32
+    },
+    {
+     "w": "the",
+     "t": 8.32,
+     "end": 8.48
+    },
+    {
+     "w": "minimum:",
+     "t": 8.48,
+     "end": 8.8
+    },
+    {
+     "w": "interest",
+     "t": 8.8,
+     "end": 9.42
+    },
+    {
+     "w": "plus",
+     "t": 9.42,
+     "end": 9.96
+    },
+    {
+     "w": "one",
+     "t": 9.96,
+     "end": 10.152
+    },
+    {
+     "w": "percent",
+     "t": 10.152,
+     "end": 10.6
+    },
+    {
+     "w": "of",
+     "t": 10.6,
+     "end": 10.86
+    },
+    {
+     "w": "the",
+     "t": 10.86,
+     "end": 10.96
+    },
+    {
+     "w": "balance.",
+     "t": 10.96,
+     "end": 11.24
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "As the balance shrinks, the payment shrinks. So it crawls.",
+   "words": [
+    {
+     "w": "As",
+     "t": 11.94,
+     "end": 12.16
+    },
+    {
+     "w": "the",
+     "t": 12.16,
+     "end": 12.32
+    },
+    {
+     "w": "balance",
+     "t": 12.32,
+     "end": 12.58
+    },
+    {
+     "w": "shrinks,",
+     "t": 12.58,
+     "end": 13.04
+    },
+    {
+     "w": "the",
+     "t": 13.18,
+     "end": 13.24
+    },
+    {
+     "w": "payment",
+     "t": 13.24,
+     "end": 13.48
+    },
+    {
+     "w": "shrinks.",
+     "t": 13.48,
+     "end": 13.98
+    },
+    {
+     "w": "So",
+     "t": 14.48,
+     "end": 14.54
+    },
+    {
+     "w": "it",
+     "t": 14.54,
+     "end": 14.68
+    },
+    {
+     "w": "crawls.",
+     "t": 14.68,
+     "end": 15.22
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "About nineteen years, and over eight thousand in interest.",
+   "words": [
+    {
+     "w": "About",
+     "t": 15.68,
+     "end": 15.94
+    },
+    {
+     "w": "nineteen",
+     "t": 15.94,
+     "end": 16.36
+    },
+    {
+     "w": "years,",
+     "t": 16.36,
+     "end": 16.68
+    },
+    {
+     "w": "and",
+     "t": 16.68,
+     "end": 17.2
+    },
+    {
+     "w": "over",
+     "t": 17.2,
+     "end": 17.48
+    },
+    {
+     "w": "eight",
+     "t": 17.48,
+     "end": 17.749
+    },
+    {
+     "w": "thousand",
+     "t": 17.749,
+     "end": 18.18
+    },
+    {
+     "w": "in",
+     "t": 18.18,
+     "end": 18.36
+    },
+    {
+     "w": "interest.",
+     "t": 18.36,
+     "end": 18.7
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Pay a flat two hundred a month instead? Under three years.",
+   "words": [
+    {
+     "w": "Pay",
+     "t": 19.2,
+     "end": 19.46
+    },
+    {
+     "w": "a",
+     "t": 19.46,
+     "end": 19.58
+    },
+    {
+     "w": "flat",
+     "t": 19.58,
+     "end": 19.76
+    },
+    {
+     "w": "two",
+     "t": 19.76,
+     "end": 19.832
+    },
+    {
+     "w": "hundred",
+     "t": 19.832,
+     "end": 20.0
+    },
+    {
+     "w": "a",
+     "t": 20.0,
+     "end": 20.26
+    },
+    {
+     "w": "month",
+     "t": 20.26,
+     "end": 20.38
+    },
+    {
+     "w": "instead?",
+     "t": 20.38,
+     "end": 20.82
+    },
+    {
+     "w": "Under",
+     "t": 20.82,
+     "end": 21.26
+    },
+    {
+     "w": "three",
+     "t": 21.26,
+     "end": 21.52
+    },
+    {
+     "w": "years.",
+     "t": 21.52,
+     "end": 21.8
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Your statement has a minimum payment warning. Read it.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 22.48,
+     "end": 22.62
+    },
+    {
+     "w": "statement",
+     "t": 22.62,
+     "end": 22.9
+    },
+    {
+     "w": "has",
+     "t": 22.9,
+     "end": 23.18
+    },
+    {
+     "w": "a",
+     "t": 23.18,
+     "end": 23.3
+    },
+    {
+     "w": "minimum",
+     "t": 23.3,
+     "end": 23.48
+    },
+    {
+     "w": "payment",
+     "t": 23.48,
+     "end": 23.82
+    },
+    {
+     "w": "warning.",
+     "t": 23.82,
+     "end": 24.2
+    },
+    {
+     "w": "Read",
+     "t": 24.58,
+     "end": 24.68
+    },
+    {
+     "w": "it.",
+     "t": 24.68,
+     "end": 24.9
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Because otherwise...",
+   "words": [
+    {
+     "w": "Because",
+     "t": 25.38,
+     "end": 25.68
+    },
+    {
+     "w": "otherwise...",
+     "t": 25.68,
+     "end": 26.08
+    }
+   ]
+  }
+ ]
+}

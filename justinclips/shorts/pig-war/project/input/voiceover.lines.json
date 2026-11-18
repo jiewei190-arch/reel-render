@@ -1,0 +1,141 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 27.041,
+ "render_s": 229.2,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "America and Britain almost went to war over a pig.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "America and Britain almost went to war over a pig.",
+     "seed": 7,
+     "heard": "America and Britain almost went to war over a pig.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.73
+  },
+  {
+   "n": 2,
+   "text": "In 1859, on an island both sides claimed, a British company's pig got into an American's garden.",
+   "start": 2.93,
+   "parts": [
+    {
+     "tts": "In eighteen fifty-nine, on an island both sides claimed, a British company's pig got into an American's garden.",
+     "seed": 7,
+     "heard": "In 1859, on an island both sides claimed, a British company's pig got into an American's garden.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.266
+  },
+  {
+   "n": 3,
+   "text": "He shot it.",
+   "start": 9.466,
+   "parts": [
+    {
+     "tts": "He shot it.",
+     "seed": 7,
+     "heard": "He shot it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.071
+  },
+  {
+   "n": 4,
+   "text": "He offered 10 dollars. The British wanted 100.",
+   "start": 10.271,
+   "parts": [
+    {
+     "tts": "He offered ten dollars. The British wanted one hundred.",
+     "seed": 7,
+     "heard": "he offered $10. The British wanted 100.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 13.562
+  },
+  {
+   "n": 5,
+   "text": "Britain threatened to arrest him... so America sent soldiers.",
+   "start": 13.762,
+   "parts": [
+    {
+     "tts": "Britain threatened to arrest him...",
+     "seed": 7,
+     "heard": "Britain threatened to arrest him.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "so America sent soldiers.",
+     "seed": 7,
+     "heard": "So America sent soldiers.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.494
+  },
+  {
+   "n": 6,
+   "text": "Soon, 461 American troops faced five British warships.",
+   "start": 17.694,
+   "parts": [
+    {
+     "tts": "Soon, four hundred sixty-one American troops faced five British warships.",
+     "seed": 11,
+     "heard": "Soon, 461 American troops faced five British warships.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.07
+  },
+  {
+   "n": 7,
+   "text": "Nobody fired a shot. The only casualty... was the pig.",
+   "start": 22.27,
+   "parts": [
+    {
+     "tts": "Nobody fired a shot. The only casualty...",
+     "seed": 7,
+     "heard": "Nobody fired a shot. The only casualty",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "was the pig.",
+     "seed": 7,
+     "heard": "was the pig.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.841
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "lufs_i": -14.08,
+ "true_peak_dbtp": -1.18,
+ "sha256": "4a94b1c3f52c02627e6b4708608d37ce89eab60fd4da93f0486cd7cc66083e59",
+ "width": 1080,
+ "height": 1920,
+ "r_frame_rate": "24/1",
+ "nb_read_frames": "520",
+ "duration": "21.666667",
+ "size": "13374251"
+}
