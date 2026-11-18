@@ -3,364 +3,342 @@
   "audio": "voice.wav",
   "script": "script.txt",
   "model": "small",
-  "duration": 30.267
+  "duration": 27.665
  },
  "turns": [
   {
    "turn": 1,
-   "text": "Same car, 4,700 dollars more.",
+   "text": "Would you rather pay 926 a month, or just 453?",
    "words": [
     {
-     "w": "Same",
+     "w": "Would",
      "t": 0.0,
-     "end": 0.52
+     "end": 0.26
     },
     {
-     "w": "car,",
-     "t": 0.52,
-     "end": 0.88
+     "w": "you",
+     "t": 0.26,
+     "end": 0.36
     },
     {
-     "w": "4,700",
-     "t": 1.38,
-     "end": 1.787
+     "w": "rather",
+     "t": 0.36,
+     "end": 0.58
     },
     {
-     "w": "dollars",
-     "t": 1.787,
+     "w": "pay",
+     "t": 0.58,
+     "end": 0.86
+    },
+    {
+     "w": "926",
+     "t": 0.86,
+     "end": 1.58
+    },
+    {
+     "w": "a",
+     "t": 1.58,
+     "end": 1.9
+    },
+    {
+     "w": "month,",
+     "t": 1.9,
+     "end": 2.1
+    },
+    {
+     "w": "or",
+     "t": 2.1,
      "end": 2.5
     },
     {
-     "w": "more.",
+     "w": "just",
      "t": 2.5,
-     "end": 3.12
+     "end": 2.68
+    },
+    {
+     "w": "453?",
+     "t": 2.68,
+     "end": 3.58
     }
    ]
   },
   {
    "turn": 2,
-   "text": "Borrow 30,000 dollars at seven percent, an example rate.",
+   "text": "Same 30,000 dollar car. Same seven percent. Pick one...",
    "words": [
     {
-     "w": "Borrow",
-     "t": 3.66,
-     "end": 3.987
+     "w": "Same",
+     "t": 4.08,
+     "end": 4.32
     },
     {
      "w": "30,000",
-     "t": 3.987,
-     "end": 4.259
+     "t": 4.32,
+     "end": 4.62
     },
     {
-     "w": "dollars",
-     "t": 4.259,
-     "end": 4.64
+     "w": "dollar",
+     "t": 4.62,
+     "end": 4.98
     },
     {
-     "w": "at",
-     "t": 4.64,
-     "end": 5.06
+     "w": "car.",
+     "t": 4.98,
+     "end": 5.3
+    },
+    {
+     "w": "Same",
+     "t": 5.72,
+     "end": 5.9
     },
     {
      "w": "seven",
-     "t": 5.06,
-     "end": 5.368
+     "t": 5.9,
+     "end": 6.269
     },
     {
-     "w": "percent,",
-     "t": 5.368,
-     "end": 5.8
+     "w": "percent.",
+     "t": 6.269,
+     "end": 6.785
     },
     {
-     "w": "an",
-     "t": 5.8,
-     "end": 6.12
+     "w": "Pick",
+     "t": 6.785,
+     "end": 7.08
     },
     {
-     "w": "example",
-     "t": 6.12,
-     "end": 6.46
-    },
-    {
-     "w": "rate.",
-     "t": 6.46,
-     "end": 6.74
+     "w": "one...",
+     "t": 7.08,
+     "end": 7.36
     }
    ]
   },
   {
    "turn": 3,
-   "text": "Three years: about 926 a month, and 3,347 in interest.",
+   "text": "Spender picked 453. Half the payment! Easy choice, right?",
    "words": [
     {
-     "w": "Three",
-     "t": 7.34,
-     "end": 7.58
+     "w": "Spender",
+     "t": 7.92,
+     "end": 8.28
     },
     {
-     "w": "years:",
-     "t": 7.58,
-     "end": 7.86
+     "w": "picked",
+     "t": 8.28,
+     "end": 8.5
     },
     {
-     "w": "about",
-     "t": 8.22,
-     "end": 8.46
+     "w": "453.",
+     "t": 8.5,
+     "end": 9.54
     },
     {
-     "w": "926",
-     "t": 8.46,
-     "end": 9.18
+     "w": "Half",
+     "t": 9.86,
+     "end": 10.04
     },
     {
-     "w": "a",
-     "t": 9.18,
-     "end": 9.6
+     "w": "the",
+     "t": 10.04,
+     "end": 10.2
     },
     {
-     "w": "month,",
-     "t": 9.6,
-     "end": 9.92
+     "w": "payment!",
+     "t": 10.2,
+     "end": 10.4
     },
     {
-     "w": "and",
-     "t": 10.26,
-     "end": 10.5
+     "w": "Easy",
+     "t": 10.82,
+     "end": 11.0
     },
     {
-     "w": "3,347",
-     "t": 10.5,
-     "end": 12.02
+     "w": "choice,",
+     "t": 11.0,
+     "end": 11.26
     },
     {
-     "w": "in",
-     "t": 12.02,
-     "end": 12.26
-    },
-    {
-     "w": "interest.",
-     "t": 12.26,
-     "end": 12.6
+     "w": "right?",
+     "t": 11.46,
+     "end": 11.58
     }
    ]
   },
   {
    "turn": 4,
-   "text": "Seven years: just 453 a month. Feels cheaper, right?",
+   "text": "But 453 means seven years, not three. And behind that door, something is eating his money...",
    "words": [
     {
-     "w": "Seven",
-     "t": 13.24,
-     "end": 13.54
-    },
-    {
-     "w": "years:",
-     "t": 13.54,
-     "end": 13.88
-    },
-    {
-     "w": "just",
-     "t": 14.36,
-     "end": 14.7
+     "w": "But",
+     "t": 12.12,
+     "end": 12.34
     },
     {
      "w": "453",
-     "t": 14.7,
-     "end": 15.76
+     "t": 12.34,
+     "end": 13.28
     },
     {
-     "w": "a",
-     "t": 15.76,
-     "end": 15.88
+     "w": "means",
+     "t": 13.28,
+     "end": 13.62
     },
     {
-     "w": "month.",
-     "t": 15.88,
-     "end": 16.2
+     "w": "seven",
+     "t": 13.62,
+     "end": 13.98
     },
     {
-     "w": "Feels",
-     "t": 16.58,
-     "end": 16.8
+     "w": "years,",
+     "t": 13.98,
+     "end": 14.38
     },
     {
-     "w": "cheaper,",
-     "t": 16.8,
-     "end": 17.08
+     "w": "not",
+     "t": 14.58,
+     "end": 14.74
     },
     {
-     "w": "right?",
-     "t": 17.26,
-     "end": 17.34
+     "w": "three.",
+     "t": 14.74,
+     "end": 15.04
+    },
+    {
+     "w": "And",
+     "t": 15.42,
+     "end": 15.7
+    },
+    {
+     "w": "behind",
+     "t": 15.7,
+     "end": 16.02
+    },
+    {
+     "w": "that",
+     "t": 16.02,
+     "end": 16.38
+    },
+    {
+     "w": "door,",
+     "t": 16.38,
+     "end": 16.66
+    },
+    {
+     "w": "something",
+     "t": 16.82,
+     "end": 16.98
+    },
+    {
+     "w": "is",
+     "t": 16.98,
+     "end": 17.22
+    },
+    {
+     "w": "eating",
+     "t": 17.22,
+     "end": 17.38
+    },
+    {
+     "w": "his",
+     "t": 17.38,
+     "end": 17.6
+    },
+    {
+     "w": "money...",
+     "t": 17.6,
+     "end": 17.82
     }
    ]
   },
   {
    "turn": 5,
-   "text": "But the interest is about 8,034 dollars.",
+   "text": "Seven years costs 8,034 in interest. Three years: 3,347.",
    "words": [
     {
-     "w": "But",
-     "t": 17.86,
-     "end": 18.04
+     "w": "Seven",
+     "t": 18.36,
+     "end": 18.58
     },
     {
-     "w": "the",
-     "t": 18.04,
-     "end": 18.18
+     "w": "years",
+     "t": 18.58,
+     "end": 18.78
     },
     {
-     "w": "interest",
-     "t": 18.18,
-     "end": 18.56
-    },
-    {
-     "w": "is",
-     "t": 18.56,
-     "end": 18.72
-    },
-    {
-     "w": "about",
-     "t": 18.72,
-     "end": 18.92
+     "w": "costs",
+     "t": 18.78,
+     "end": 19.14
     },
     {
      "w": "8,034",
-     "t": 18.92,
-     "end": 19.284
+     "t": 19.14,
+     "end": 20.38
     },
     {
-     "w": "dollars.",
-     "t": 19.284,
-     "end": 19.92
+     "w": "in",
+     "t": 20.38,
+     "end": 20.58
+    },
+    {
+     "w": "interest.",
+     "t": 20.58,
+     "end": 20.92
+    },
+    {
+     "w": "Three",
+     "t": 21.42,
+     "end": 21.6
+    },
+    {
+     "w": "years:",
+     "t": 21.6,
+     "end": 21.88
+    },
+    {
+     "w": "3,347.",
+     "t": 22.22,
+     "end": 23.66
     }
    ]
   },
   {
    "turn": 6,
-   "text": "Lower payment, bigger total.",
-   "words": [
-    {
-     "w": "Lower",
-     "t": 20.88,
-     "end": 21.16
-    },
-    {
-     "w": "payment,",
-     "t": 21.16,
-     "end": 21.5
-    },
-    {
-     "w": "bigger",
-     "t": 21.96,
-     "end": 22.1
-    },
-    {
-     "w": "total.",
-     "t": 22.1,
-     "end": 22.46
-    }
-   ]
-  },
-  {
-   "turn": 7,
-   "text": "The C.F.P.B. agrees: a longer loan means more interest.",
+   "text": "The cheap payment burns about 4,700 extra.",
    "words": [
     {
      "w": "The",
-     "t": 23.14,
-     "end": 23.24
+     "t": 24.12,
+     "end": 24.32
     },
     {
-     "w": "C.F.P.B.",
-     "t": 23.24,
-     "end": 23.9
+     "w": "cheap",
+     "t": 24.32,
+     "end": 24.5
     },
     {
-     "w": "agrees:",
-     "t": 23.9,
-     "end": 24.24
+     "w": "payment",
+     "t": 24.5,
+     "end": 24.9
     },
     {
-     "w": "a",
+     "w": "burns",
      "t": 24.9,
-     "end": 25.0
+     "end": 25.22
     },
     {
-     "w": "longer",
-     "t": 25.0,
-     "end": 25.28
+     "w": "about",
+     "t": 25.22,
+     "end": 25.48
     },
     {
-     "w": "loan",
-     "t": 25.28,
-     "end": 25.64
+     "w": "4,700",
+     "t": 25.48,
+     "end": 26.6
     },
     {
-     "w": "means",
-     "t": 25.64,
-     "end": 25.86
-    },
-    {
-     "w": "more",
-     "t": 25.86,
-     "end": 26.14
-    },
-    {
-     "w": "interest.",
-     "t": 26.14,
-     "end": 26.62
-    }
-   ]
-  },
-  {
-   "turn": 8,
-   "text": "Stretch it to seven, and you've paid for the",
-   "words": [
-    {
-     "w": "Stretch",
-     "t": 26.62,
-     "end": 27.52
-    },
-    {
-     "w": "it",
-     "t": 27.52,
-     "end": 27.74
-    },
-    {
-     "w": "to",
-     "t": 27.74,
-     "end": 27.84
-    },
-    {
-     "w": "seven,",
-     "t": 27.84,
-     "end": 28.12
-    },
-    {
-     "w": "and",
-     "t": 28.42,
-     "end": 28.7
-    },
-    {
-     "w": "you've",
-     "t": 28.7,
-     "end": 29.02
-    },
-    {
-     "w": "paid",
-     "t": 29.02,
-     "end": 29.26
-    },
-    {
-     "w": "for",
-     "t": 29.26,
-     "end": 29.5
-    },
-    {
-     "w": "the",
-     "t": 29.5,
-     "end": 29.96
+     "w": "extra.",
+     "t": 26.6,
+     "end": 27.12
     }
    ]
   }

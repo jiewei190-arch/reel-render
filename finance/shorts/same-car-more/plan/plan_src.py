@@ -3,24 +3,33 @@
 """
 TITLE = 'same-car-more'
 CAST_NOTE = 'SPENDER (red, bag) wants a new car; LENDER (navy, hat) is the grinning car seller; the INTEREST furnace from hook B. Set: a sunny blocky car lot (two identical red cars, a price sign, a shed with a covered sign on its door, the furnace behind it). No logos, no brands.'
-LOOP_NOTE = 'S13 on "Knowing that, which one would you pick?": the S01 lens, the boards drop again; loops to frame 0 and "Would you rather pay 926 a month, or just 453?"'
+LOOP_NOTE = 'S13 on "extra": no closing line: the S01 lens, the boards drop again; loops to frame 0 and "Would you rather pay 926 a month, or just 453?"'
 COUNTER = 'none (v1, style S4 WOULD-YOU-RATHER). Hook text from frame 0: $926 OR $453 A MONTH?. In the set: $926/MO and $453/MO boards, x 3 / x 7 YEARS stamps, towers $3,347 vs $8,034, ≈$4,700 EXTRA.'
 SHOTS = [
     ('S01', (1, 'would', 1), 'earth', 'wide on both cars (S4 choice)', 'FRAME 0 MID-ACTION: two identical red cars; the $926/MO board has landed, the $453/MO board is mid-drop (bounce, debris); hook text $926 OR $453 A MONTH?'),
+    ('S14', (1, 'a', 1), 'earth', 'close on the $926 board', 'The $926/MO board'),
     ('S02', (1, 'just', 1), 'earth', 'close on the $453 board', 'The $453/MO board glows'),
     ('S03', (2, 'same', 1), 'earth', 'wider on both cars', 'SAME CAR · SAME 7% banner'),
+    ('S15', (2, 'same', 2), 'earth', 'close on the banner', 'SAME CAR · SAME 7% banner'),
     ('S04', (2, 'pick', 1), 'earth', 'slow push, the 1-s pause', "PICK ONE pulses: the viewer's 1-second guess (clock tick)"),
     ('S05', (3, 'spender', 1), 'earth', 'medium on Spender at car B', 'Spender grabs the $453 car, arms up'),
+    ('S16', (3, '453', 1), 'earth', 'close on Spender', 'Spender hugs his pick: joy'),
     ('S06', (3, 'half', 1), 'earth', 'medium on the seller', 'The seller (Lender) rubs his hands, sly'),
-    ('S07', (4, 'but', 1), 'earth', 'slam on Spender', "x 3 YEARS and x 7 YEARS stamps land on the boards; Spender's shock on 'seven'"),
-    ('S08', (4, 'wait', 1), 'whisper', 'slow push on the shed door', "OPEN LOOP: the covered '? ? ?' shed door rattles, orange glow under it"),
-    ('S09', (5, 'seven', 1), 'whisper', 'wide, the door bursts', 'TWIST: the door blasts open on the INTEREST furnace; towers rise'),
-    ('S10', (5, 'three', 1), 'whisper', 'low on the towers', '$8,034 (7 yrs) slams up past $3,347 (3 yrs)'),
+    ('S20', (3, 'easy', 1), 'earth', 'medium on Spender and his pick', 'Spender pats the $453 car, smug'),
+    ('S07', (4, 'but', 1), 'earth', 'close on both boards', 'x 3 YEARS and x 7 YEARS stamps slam onto the boards'),
+    ('S17', (4, 'seven', 1), 'earth', 'slam on Spender', "Shock on 'seven years'"),
+    ('S08', (4, 'and', 1), 'whisper', 'slow push on the shed door', "OPEN LOOP: the covered '? ? ?' shed door rattles, orange glow under it"),
+    ('S19', (4, 'something', 1), 'whisper', 'close on the door gap', 'OPEN LOOP: orange light pulses under the shaking door'),
+    ('S21', (5, 'seven', 1), 'whisper', 'push on the glowing door', 'OPEN LOOP peak: the door bulges, orange light through every crack'),
+    ('S09', (5, '8,034', 1), 'whisper', 'wide, the door bursts', 'TWIST: the door blasts open on the INTEREST furnace; towers rise'),
+    ('S18', (5, 'interest', 1), 'whisper', 'low on the 7-year tower', 'The $8,034 tower slams up'),
+    ('S10', (5, 'three', 1), 'whisper', 'low on the towers', 'The $3,347 (3 yrs) tower beside it: the gap'),
+    ('S22', (5, '3,347', 1), 'whisper', 'close on the short tower', 'The $3,347 tower: under half the height'),
     ('S11', (6, 'the', 1), 'whisper', 'medium on Spender at the furnace', 'Spender feeds cash bricks into the fire'),
     ('S12', (6, '4,700', 1), 'whisper', 'close on the furnace', '≈$4,700 EXTRA over the flames'),
-    ('S13', (7, 'knowing', 1), 'earth', 'SAME lens as S01 (loop match)', 'Back to the two cars and the question; the boards drop again -> frame 0'),
+    ('S13', (6, 'extra', 1), 'earth', 'SAME lens as S01 (loop match)', 'Back to the two cars and the question; the boards drop again -> frame 0'),
 ]
-ACCENT = {(6, '4,700'), (4, 'seven'), (5, '8,034'), (1, '453'), (7, 'pick'), (2, 'pick'), (3, '453')}
+ACCENT = {(6, '4,700'), (4, 'seven'), (5, '8,034'), (1, '453'), (2, 'pick'), (3, '453')}
 TAGS = []
 
 

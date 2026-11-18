@@ -1,73 +1,71 @@
 # same-car-more
 
-- **Spoken:** 62 words, voice 30.27 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
+- **Spoken:** 60 words, voice 27.66 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
 - **Hook:** line 1, spoken from 0.0 s, no intro.
 - **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.
-- **Loop:** S21 ("…you've paid for the") returns to the S01 lens: the two identical cars side by side, the 7-year one glowing +$4,700; the loop lands on "Same car, 4,700 dollars more."
+- **Loop:** S13 on "extra": no closing line: the S01 lens, the boards drop again; loops to frame 0 and "Would you rather pay 926 a month, or just 453?"
 
-## Hook candidates
+## FORMAT v1 beat sheet
 
-1. **Same car, 4,700 dollars more.** (5 words) ← PICK: the paradox in five words; the last line ("you've paid for the") flows into it.
-2. Your car loan length is a trap. (7, opinion)
-3. Seven-year car loans cost thousands more. (6, no example yet)
-4. Lower payment, bigger bill. (4, vague)
-5. 453 a month can cost you more. (7)
+1. **Want:** Spender wants a new $30,000 car.
+2. **Trouble:** the 3-year payment is $926. The seller grins: "Seven years? Just $453!" Spender signs.
+3. **Twist:** the 7-year loan costs $8,034 in interest, not $3,347. Same car, about $4,700 more, straight into the fire.
 
-## Beats
-- **Loop sentence:** "Stretch it to seven, and you've paid for the / same car, 4,700 dollars more."
-- **Twist (~70%):** "Lower payment, bigger total": 7 years = about $8,034 interest vs $3,347.
-- **Counter (every shot):** two dashboards on a car: `MONTHLY $x` and `INTEREST $x`, flipping between the 3-year (green) and 7-year (red) loans.
+- **Hook text on frame 0 (4 words):** $4,700 FOR NOTHING. This is hook B's furnace idea.
+- **Frame 0 (mid-action):** a flash-forward. Spender's cash brick is mid-air into the roaring INTEREST furnace.
+- **Open loop (~50 %):** "But wait till you see what's behind that door..." The shed door rattles, its sign is covered ("? ? ?") and orange glow leaks out underneath.
+- **Answer withheld until the twist (~65–75 %):** the door bursts open. The furnace roars and the $8,034 vs $3,347 towers rise, matching the VO.
+- **"You":** "But wait till you see…"
+- **Loop:** "Just like this guy." → frame 0, "This guy is about to pay…"
+- **Music and SFX:** the toon3d `upbeat` bed. SFX: fire, scratch, impact, stamp, ding, success, coins, a rumble and knock at the door, crash and boom on the burst, impact on the tower.
 
 ## Voice-over (exact spoken text = script.txt)
 
 | # | time (s) | line |
 |---|---|---|
-| 1 | 0.00–3.12 | Same car, 4,700 dollars more. |
-| 2 | 3.66–6.74 | Borrow 30,000 dollars at seven percent, an example rate. |
-| 3 | 7.34–12.60 | Three years: about 926 a month, and 3,347 in interest. |
-| 4 | 13.24–17.34 | Seven years: just 453 a month. Feels cheaper, right? |
-| 5 | 17.86–19.92 | But the interest is about 8,034 dollars. |
-| 6 | 20.88–22.46 | Lower payment, bigger total. |
-| 7 | 23.14–26.62 | The C.F.P.B. agrees: a longer loan means more interest. |
-| 8 | 26.62–29.96 | Stretch it to seven, and you've paid for the |
+| 1 | 0.00–3.58 | Would you rather pay 926 a month, or just 453? |
+| 2 | 4.08–7.36 | Same 30,000 dollar car. Same seven percent. Pick one... |
+| 3 | 7.92–11.58 | Spender picked 453. Half the payment! Easy choice, right? |
+| 4 | 12.12–17.82 | But 453 means seven years, not three. And behind that door, something is eating his money... |
+| 5 | 18.36–23.66 | Seven years costs 8,034 in interest. Three years: 3,347. |
+| 6 | 24.12–27.12 | The cheap payment burns about 4,700 extra. |
 
-Loop read-through: "…Stretch it to seven, and you've paid for the / Same car, 4,700 dollars more."
+Loop read-through: "…The cheap payment burns about 4,700 extra. / Would you rather pay 926 a month, or just 453?"
 
 ## Shot plan (one cut every ~1.4 s, each on its word)
 
-21 shots, 30.56 s (917 frames at 30 fps), median cut 1.38 s. Cast: SPENDER (red, bag) chooses a loan; LENDER (navy, hat) at the loan booth; SAVER (green, glasses) takes the 3-year loan. Set: the sunny blocky street (outdoor ground + road) with two identical red cars side by side (3-YEAR LOAN, 7-YEAR LOAN), a loan booth, two coin piles (interest); no brands, no badges on the cars.
+22 shots, 27.72 s (832 frames at 30 fps), median cut 1.36 s. Cast: SPENDER (red, bag) wants a new car; LENDER (navy, hat) is the grinning car seller; the INTEREST furnace from hook B. Set: a sunny blocky car lot (two identical red cars, a price sign, a shed with a covered sign on its door, the furnace behind it). No logos, no brands.
 
 Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no real currency art.
 
 | shot | time (s) | dur | anchor word | mood | scene (cast, action, props, on-screen tag) | camera | captions in shot |
 |---|---|---|---|---|---|---|---|
-| S01 | 0.00–1.38 | 1.38 | same | earth | Conflict in frame 1: two identical red cars side by side, tags 3-YEAR LOAN and 7-YEAR LOAN; Spender between them, scratching his head | wide two-car shot, push-in | same car, / 4,700 dollars |
-| S02 | 1.38–2.50 | 1.12 | 4,700 | earth | A big tag pops over the 7-year car: +$4,700 | medium on the 7-year car, push-in |  |
-| S03 | 2.50–3.66 | 1.16 | more | earth | Spender does a double take | medium on Spender, push-in | more. |
-| S04 | 3.66–5.06 | 1.40 | borrow | earth | Lender at the loan booth hands over a block: $30,000 | medium on Lender at the booth, push-in | borrow 30,000 / dollars at |
-| S05 | 5.06–6.12 | 1.06 | seven | earth | Tag 7% APR on the booth | close on a tag, push-in | seven percent, / an example |
-| S06 | 6.12–7.34 | 1.22 | example | earth | A small card: EXAMPLE RATE | close on a card, push-in | rate. / three years: |
-| S07 | 7.34–8.46 | 1.12 | three | earth | Saver by the 3-year car, sign 3 YEARS | medium on the 3-year car + Saver, push-in | about 926 |
-| S08 | 8.46–10.50 | 2.04 | 926 | earth | Dash sign on the 3-year car: $926/MONTH | close on the dashboard sign, push-in | a month, / and 3,347 |
-| S09 | 10.50–12.26 | 1.76 | 3,347 | earth | A small green-tagged coin pile: $3,347 INTEREST | medium on a small pile, push-in | in interest. |
-| S10 | 12.26–13.24 | 0.98 | interest | earth | Saver drives the 3-year car off; small pile behind | wide, push-in | seven years: |
-| S11 | 13.24–14.70 | 1.46 | seven | earth | Spender by the 7-year car, sign 7 YEARS | medium on the 7-year car + Spender, push-in | just 453 |
-| S12 | 14.70–16.58 | 1.88 | 453 | earth | Dash sign on the 7-year car: $453/MONTH | close on the dashboard sign, push-in | a month. / feels cheaper, |
-| S13 | 16.58–17.86 | 1.28 | feels | earth | Spender grins and dusts his hands: cheaper! | medium on Spender, push-in | right? |
-| S14 | 17.86–18.92 | 1.06 | but | whisper | Behind the booth a red pile starts to rise | wide on the booth, push-in | but the / interest is / about 8,034 |
-| S15 | 18.92–20.88 | 1.96 | 8,034 | whisper | The red pile towers: $8,034 INTEREST | low angle on the big pile, push-in | dollars. / lower payment, |
-| S16 | 20.88–21.96 | 1.08 | lower | store | Small $3,347 pile next to the big $8,034 pile | two piles side by side, push-in |  |
-| S17 | 21.96–23.24 | 1.28 | bigger | store | Tag between them: +$4,686 (≈ $4,700) | close on the difference tag, push-in | bigger total. / the c.f.p.b. |
-| S18 | 23.24–25.00 | 1.76 | c.f.p.b | store | A plain sign: CFPB: A LONGER LOAN MEANS MORE INTEREST | medium on a sign, push-in | agrees: / a longer |
-| S19 | 25.00–26.62 | 1.62 | longer | whisper | Spender looks at his 7-year car, drooping | medium on Spender, push-in | loan means / more interest. |
-| S20 | 26.62–28.70 | 2.08 | stretch | earth | A loan timeline bar stretches from 3 to 7 years along the kerb | medium on the 7-year car, push-in | stretch it / to seven, / and you've |
-| S21 | 28.70–30.56 | 1.86 | you've | earth | Back to the start: the two identical cars, the 7-year one glowing +$4,700 | SAME lens + position as S01 (loop match), push-in | paid for / the |
+| S01 | 0.00–1.58 | 1.58 | would | earth | FRAME 0 MID-ACTION: two identical red cars; the $926/MO board has landed, the $453/MO board is mid-drop (bounce, debris); hook text $926 OR $453 A MONTH? | wide on both cars (S4 choice) | would you / rather pay / 926 a |
+| S14 | 1.58–2.50 | 0.92 | a | earth | The $926/MO board | close on the $926 board | month, / or just |
+| S02 | 2.50–4.08 | 1.58 | just | earth | The $453/MO board glows | close on the $453 board | 453? / same 30,000 |
+| S03 | 4.08–5.72 | 1.64 | same | earth | SAME CAR · SAME 7% banner | wider on both cars | dollar car. |
+| S15 | 5.72–6.79 | 1.07 | same | earth | SAME CAR · SAME 7% banner | close on the banner | same seven / percent. |
+| S04 | 6.79–7.92 | 1.13 | pick | earth | PICK ONE pulses: the viewer's 1-second guess (clock tick) | slow push, the 1-s pause | pick one... |
+| S05 | 7.92–8.50 | 0.58 | spender | earth | Spender grabs the $453 car, arms up | medium on Spender at car B | spender picked |
+| S16 | 8.50–9.86 | 1.36 | 453 | earth | Spender hugs his pick: joy | close on Spender | 453. |
+| S06 | 9.86–10.82 | 0.96 | half | earth | The seller (Lender) rubs his hands, sly | medium on the seller | half the / payment! |
+| S20 | 10.82–12.12 | 1.30 | easy | earth | Spender pats the $453 car, smug | medium on Spender and his pick | easy choice, / right? |
+| S07 | 12.12–13.62 | 1.50 | but | earth | x 3 YEARS and x 7 YEARS stamps slam onto the boards | close on both boards | but 453 / means seven |
+| S17 | 13.62–15.42 | 1.80 | seven | earth | Shock on 'seven years' | slam on Spender | years, / not three. |
+| S08 | 15.42–16.82 | 1.40 | and | whisper | OPEN LOOP: the covered '? ? ?' shed door rattles, orange glow under it | slow push on the shed door | and behind / that door, |
+| S19 | 16.82–18.36 | 1.54 | something | whisper | OPEN LOOP: orange light pulses under the shaking door | close on the door gap | something is / eating his / money... |
+| S21 | 18.36–19.14 | 0.78 | seven | whisper | OPEN LOOP peak: the door bulges, orange light through every crack | push on the glowing door | seven years / costs 8,034 |
+| S09 | 19.14–20.58 | 1.44 | 8,034 | whisper | TWIST: the door blasts open on the INTEREST furnace; towers rise | wide, the door bursts | in interest. |
+| S18 | 20.58–21.42 | 0.84 | interest | whisper | The $8,034 tower slams up | low on the 7-year tower |  |
+| S10 | 21.42–22.22 | 0.80 | three | whisper | The $3,347 (3 yrs) tower beside it: the gap | low on the towers | three years: |
+| S22 | 22.22–24.12 | 1.90 | 3,347 | whisper | The $3,347 tower: under half the height | close on the short tower | 3,347. |
+| S11 | 24.12–25.48 | 1.36 | the | whisper | Spender feeds cash bricks into the fire | medium on Spender at the furnace | the cheap / payment burns / about 4,700 |
+| S12 | 25.48–26.60 | 1.12 | 4,700 | whisper | ≈$4,700 EXTRA over the flames | close on the furnace |  |
+| S13 | 26.60–27.72 | 1.12 | extra | earth | Back to the two cars and the question; the boards drop again -> frame 0 | SAME lens as S01 (loop match) | extra. |
 
 ### On-screen counter (every shot)
 
-two dashboards on a car: `MONTHLY $x` and `INTEREST $x`, flipping between the 3-year (green) and 7-year (red) loans.
+none (v1, style S4 WOULD-YOU-RATHER). Hook text from frame 0: $926 OR $453 A MONTH?. In the set: $926/MO and $453/MO boards, x 3 / x 7 YEARS stamps, towers $3,347 vs $8,034, ≈$4,700 EXTRA.
 
 ### On-screen tags
 
-- 0.00 s **EXAMPLE: $30,000 · 7% APR**: small painted card on the kerb from frame 0
-- 18.92 s **$8,034 INTEREST (7 YRS)**: holo tag over the big pile

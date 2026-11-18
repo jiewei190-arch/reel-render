@@ -21,7 +21,7 @@ import type { Box, StoryAudio } from "./kit";
 const { T, W, lineEnd } = timing(PLAN, WORDS);
 const idx = (id: string) => parseInt(id.slice(1), 10);
 /** story beat of a shot id: the shots added after the first plan map onto the beat they extend (S04 = reading the bill) */
-const SEQ: Record<string, number> = { S04: 3.5, S19: 4, S20: 5, S21: 9, S22: 16, S23: 16 };
+const SEQ: Record<string, number> = { S04: 3.5, S19: 4, S20: 5, S21: 9, S24: 9, S25: 10, S26: 14, S22: 16, S23: 16 }; // S24 = the whip back to the sealed envelope
 const seq = (id: string) => SEQ[id] ?? idx(id);
 const END = DURATION / 30;
 
@@ -49,11 +49,11 @@ const tStick = 0.75;
 const tTwo = W(1, "two");
 const tSwipe = T("S05") + 0.3;
 const tCoin = T("S06") + 0.15;
-const tEnv = W(5, "plus");
+const tEnv = W(6, "plus");
 const tPaid = T("S15") + 0.2;
 const tPoint = T("S17") + 0.05;
 /** the month the card route shows */
-const monthAt = (t: number, i: number) => (i <= 6 || i === 18 ? 1 : i === 7 ? 6 : i === 8 || i === 9 ? 12 : i === 10 ? Math.round(12 + 14 * ss(T("S10"), T("S11") - 0.1, t)) : 26);
+const monthAt = (t: number, i: number) => (i <= 6 || i === 18 ? 1 : i === 7 ? 6 : i === 8 || i === 9 || (i >= 13 && i <= 15) ? 12 : i === 10 ? Math.round(12 + 14 * ss(T("S10"), T("S11") - 0.1, t)) : 26);
 
 // ------------------------------------------------------------------ the flying bill (frame 0 already mid-air), stuck on the windscreen after
 const billAt = (t: number): V3 => {
@@ -82,7 +82,7 @@ const actorsAt = (i: number, t: number): Actor[] => {
       if (i === 18) pose = { ...pose, headPitch: 0.1 * Math.sin(t * 9) };
     }
     if (i === 2) { pose = { ...pose, armR: 1.2, outR: 0.4 }; emo = "shock"; }
-    if (i === 3) { const s = ss(tTwo - 0.1, tTwo + 0.1, t); pose = { ...pose, armL: lerp(0.4, 2.3, s), armR: lerp(0.4, 2.3, s), outL: 0.8 * s, outR: 0.8 * s, ant: s }; emo = "shock"; }
+    if (i === 3) { const s = ss(tTwo - 0.1, tTwo + 0.1, t); pose = { ...pose, armL: lerp(0.4, 2.3, s), armR: lerp(0.4, 2.3, s), outL: 0.5 * s, outR: 0.5 * s, ant: s }; emo = "shock"; }
     if (i === 4) { pose = { ...pose, armR: 1.3, outR: -0.05, headPitch: 0.25 }; emo = "sad"; }
     if (i === 5) { emo = "curious"; }
     if (i === 6) { pose = { ...pose, armR: lerp(1.0, 1.35, ss(tCoin - 0.2, tCoin, t)), outR: -0.05 }; emo = "curious"; }
@@ -116,21 +116,24 @@ const hook = creep([(CAR[0] + P_SP[0]) / 2 + 0.1, 0.95, (CAR[2] + P_SP[2]) / 2],
 const LENS = {
   S01: hook,
   S02: creep([SCREEN[0], 1.05, SCREEN[2]], [SCREEN[0] + 0.6, 1.35, SCREEN[2] + 1.6], { fov: 44, face: 0.5 }),
-  S03: { ...creep(face(P_SP), [P_SP[0] + 0.3, 1.32, P_SP[2] + 2.0], { face: 0.62, roll: [0, -3] }), fovAt: slam(tTwo, 50, 40, 0.14), shake: shakeAt([tTwo], 0.05) },
-  S04: creep([(SCREEN[0] + P_SP[0]) / 2, 1.15, (SCREEN[2] + P_SP[2]) / 2], [P_SP[0] + 0.9, 1.55, P_SP[2] + 1.9], { fov: 50, face: 0.5 }),
+  S03: { ...creep(face(P_SP), [P_SP[0] + 0.3, 1.38, P_SP[2] + 2.9], { face: 0.62, roll: [0, -3] }), fovAt: slam(tTwo, 52, 42, 0.14), shake: shakeAt([tTwo], 0.05) },
+  S04: creep([(SCREEN[0] + P_SP[0]) / 2, 1.15, (SCREEN[2] + P_SP[2]) / 2], [P_SP[0] - 0.8, 1.55, P_SP[2] + 2.5], { fov: 50, face: 0.5 }),
   S19: creep([P_SP[0], 1.0, P_SP[2]], [P_SP[0] - 0.6, 1.3, P_SP[2] + 2.4], { face: 0.55 }),
   S20: creep([BOOTH[0], 2.35, BOOTH[2]], [BOOTH[0] + 0.4, 2.05, BOOTH[2] + 2.4], { fov: 46, face: 0.5, shake: shakeAt([T("S20") + 0.05], 0.03) }),
-  S21: creep([ENV[0], 1.1, ENV[2]], [ENV[0] - 0.15, 1.25, ENV[2] + 1.1], { fov: 44, face: 0.5, mood: "whisper", push: 0.1, shake: (t: number) => 0.006 + 0.004 * Math.abs(Math.sin(t * 31)) }),
-  S22: creep([BOARD[0] + 0.6, 1.35, BOARD[2]], [BOARD[0] + 0.9, 1.45, BOARD[2] + 1.7], { fov: 46, face: 0.5 }),
-  S23: creep([BOARD[0], 1.3, BOARD[2]], [BOARD[0] - 0.6, 1.7, BOARD[2] + 3.8], { fov: 54, face: 0.5 }),
+  S21: creep([ENV[0], 1.1, ENV[2]], [ENV[0] - 0.15, 1.25, ENV[2] + 1.45], { fov: 46, face: 0.5, mood: "whisper", push: 0.1, shake: (t: number) => 0.006 + 0.004 * Math.abs(Math.sin(t * 31)) }),
+  S22: creep([BOARD[0] + 0.1, 1.75, BOARD[2]], [BOARD[0] + 0.4, 1.5, BOARD[2] + 2.2], { fov: 48, face: 0.5 }),
+  S23: creep([BOARD[0], 1.7, BOARD[2]], [BOARD[0] - 0.6, 1.6, BOARD[2] + 3.8], { fov: 54, face: 0.5 }),
   S05: creep([(P_LD[0] + P_SPB[0]) / 2, 1.2, -0.6], [3.9, 1.6, 3.6], { fov: 56, face: 0.5, shake: shakeAt([tSwipe + 0.15], 0.02) }),
   S06: creep([SLOT[0], 1.1, SLOT[2]], [SLOT[0] + 0.5, 1.35, SLOT[2] + 1.2], { fov: 44, face: 0.5 }),
   S07: creep([CAL[0], CAL[1] - 0.1, CAL[2]], [CAL[0] + 0.3, 2.0, CAL[2] + 2.1], { fov: 46, face: 0.5 }),
   S08: creep([P_SPB[0], 1.3, P_SPB[2]], [P_SPB[0] - 1.0, 1.6, P_SPB[2] + 3.0], { fov: 54, face: 0.55 }),
   S09: creep([ENV[0], 1.15, ENV[2]], [ENV[0] - 0.4, 1.35, ENV[2] + 1.9], { fov: 46, face: 0.5, mood: "whisper", push: 0.12, shake: (t: number) => 0.004 + 0.003 * Math.abs(Math.sin(t * 29)) }),
+  S24: creep([ENV[0], 1.0, ENV[2]], [ENV[0] + 0.55, 1.4, ENV[2] + 2.3], { fov: 50, face: 0.5, mood: "whisper", shake: (t: number) => 0.005 + 0.004 * Math.abs(Math.sin(t * 31)) }),
   S10: creep([CAL[0], CAL[1] - 0.1, CAL[2]], [CAL[0] - 0.3, 2.0, CAL[2] + 2.1], { fov: 46, face: 0.5, mood: "whisper" }),
   S11: creep([ENV[0], 1.3, ENV[2]], [ENV[0] - 0.9, 1.5, ENV[2] + 2.6], { fov: 50, face: 0.5, mood: "whisper", fovAt: slam(tEnv, 56, 48, 0.1), shake: shakeAt([tEnv], 0.07) }),
   S12: { ...creep(face(P_SPB), [P_SPB[0] - 0.4, 1.3, P_SPB[2] + 2.0], { face: 0.62, mood: "whisper", roll: [0, 3] }), fovAt: slam(T("S12") + 0.05, 50, 42, 0.14), shake: shakeAt([T("S12") + 0.05], 0.04) },
+  S25: creep([ENV[0] + 0.2, 1.45, ENV[2] - 1.2], [ENV[0] + 1.3, 1.55, ENV[2] + 3.1], { fov: 54, face: 0.5, mood: "whisper" }),
+  S26: creep([JAR_P[0], 0.75, JAR_P[2]], [JAR_P[0] - 0.55, 0.85, JAR_P[2] + 1.45], { fov: 44, face: 0.5, mood: "ending" }),
   S13: creep([(P_SV[0] + CAR2[0]) / 2, 1.0, (P_SV[2] + CAR2[2]) / 2], [-1.2, 1.5, 3.6], { fov: 56, face: 0.5, mood: "ending" }),
   S14: creep([JAR_P[0], 1.1, JAR_P[2]], [JAR_P[0] + 0.4, 1.45, JAR_P[2] + 1.6], { fov: 46, face: 0.5, mood: "ending" }),
   S15: creep([P_SV[0] - 0.4, 1.05, P_SV[2] - 0.3], [P_SV[0] + 0.5, 1.45, P_SV[2] + 3.0], { fov: 54, face: 0.55, mood: "ending", shake: shakeAt([tPaid], 0.04) }),
@@ -145,11 +148,11 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
   const i = seq(shot.id);
   void tau;
   const actors = actorsAt(i, t);
-  const smoke = i <= 4 || i === 18 ? 1 : i <= 12 ? 0.4 : 0;
+  const smoke = i === 1 || i === 18 ? 1 : i <= 12 ? 0.3 : 0; // after the bang the smoke thins so the stuck bill reads
   const bang = i === 1 ? clamp((t - tBang + 0.1) / 0.5) : 0;
   const shakeCar = i === 18 ? 0.02 * Math.sin(t * 40) * ss(T("S18"), END, t) : 0;
   const month = monthAt(t, i);
-  const envOpen = i >= 11 ? clamp((t - tEnv) / 0.25) + (i > 11 ? 1 : 0) : 0;
+  const envOpen = i === 11 ? clamp((t - tEnv) / 0.25) : i === 12 || i >= 16 ? 1 : 0; // sealed through Saver's cut-away (S13-S15): the loop stays open
   const coinIn = i === 6 ? clamp((t - tCoin) / 0.4) : 0;
   const bar = shot.id === "S22" ? 0.63 * ss(shot.a + 0.05, shot.a + 0.7, t) : shot.id === "S16" ? 0.15 : 0.63;
   const jarFill = i === 14 ? 1 - 0.5 * ss(T("S14") + 0.1, T("S14") + 0.9, t) : i >= 15 ? 0.5 : 1;

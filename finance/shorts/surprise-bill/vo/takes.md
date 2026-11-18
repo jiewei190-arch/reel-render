@@ -4,7 +4,7 @@ score = pitch range + 0.5 × loudness swing (higher = more animated). Pick = top
 
 | take | length | words/s | pitch range | loudness swing | score | Chatterbox QA wrong words |
 |---|---|---|---|---|---|---|
-| seed11 | 28.97 s | 2.93 | 14.5 st | 17.1 dB | 23.03 | 5 |
-| seed7 | 28.39 s | 2.99 | 14.5 st | 15.7 dB | 22.41 | 4 |
+| seed11 | 29.99 s | 2.87 | 14.8 st | 17.2 dB | 23.34 | 5 |
+| seed7 | 28.48 s | 3.02 | 14.5 st | 16.0 dB | 22.47 | 4 |
 
-**Pick: seed7.** seed11 scores 0.6 higher but fails the Whisper check ("Saver" was heard as "savor"). seed7 passes.
+**Pick: seed11**

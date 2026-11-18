@@ -10,11 +10,10 @@
  "lead": 0.1,
  "beat": 0.7,
  "sr": 24000,
- "duration": 28.973,
- "render_s": 125.4,
+ "duration": 30.204,
+ "render_s": 139.9,
  "qa_fail_lines": [
   2,
-  5,
   6,
   7
  ],
@@ -81,38 +80,38 @@
   },
   {
    "n": 5,
-   "text": "Twenty-six months later: paid off, plus 257 dollars of interest.",
+   "text": "But Saver had the same bill. He paid it from his emergency fund. Done.",
    "start": 14.499,
    "parts": [
     {
-     "tts": "Twenty-six months later: paid off, plus two hundred fifty-seven dollars of interest.",
+     "tts": "But Saver had the same bill. He paid it from his emergency fund. Done.",
      "seed": 11,
-     "heard": "26 months later, paid off, plus $257 of interest.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
+     "heard": "but Saver had the same bill. He paid it from his emergency fund. Done.",
+     "wrong_words": 0,
+     "qa": "ok"
     }
    ],
-   "end": 18.675
+   "end": 18.449
   },
   {
    "n": 6,
-   "text": "Saver had the same bill. He paid it from his emergency fund. Done.",
-   "start": 18.925,
+   "text": "Spender? Twenty-six months later: paid off, plus 257 dollars of interest.",
+   "start": 18.699,
    "parts": [
     {
-     "tts": "Saver had the same bill. He paid it from his emergency fund. Done.",
+     "tts": "Spender? Twenty-six months later: paid off, plus two hundred fifty-seven dollars of interest.",
      "seed": 11,
-     "heard": "Savor had the same bill. He paid it from his emergency fund. Done.",
+     "heard": "Spender, 26 months later, paid off plus $257 of interest.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 22.655
+   "end": 23.887
   },
   {
    "n": 7,
    "text": "In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?",
-   "start": 22.905,
+   "start": 24.137,
    "parts": [
     {
      "tts": "In a Fed survey, sixty-three percent of adults could cover a four hundred dollar surprise with cash. Could you?",
@@ -122,7 +121,7 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 28.723
+   "end": 29.954
   }
  ]
 }

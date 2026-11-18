@@ -18,19 +18,22 @@ SHOTS = [
     ('S08', (4, 'twelve', 1), 'earth', 'wide, rain cloud', 'MONTH 12: a little rain cloud over Spender, still paying'),
     ('S09', (4, 'and', 1), 'whisper', 'slow push on a covered envelope', 'OPEN LOOP: a sealed red envelope FINAL TOTAL trembles on the booth counter'),
     ('S21', (4, 'coming', 1), 'whisper', 'extreme close on the envelope', 'OPEN LOOP: the sealed FINAL TOTAL envelope shakes harder'),
-    ('S10', (5, 'twenty-six', 1), 'whisper', 'close on the calendar racing', 'Calendar races to MONTH 26'),
-    ('S11', (5, 'plus', 1), 'whisper', 'envelope bursts open', 'TWIST: the envelope pops open: +$257 INTEREST (slam)'),
-    ('S12', (5, 'dollars', 1), 'whisper', 'slam on Spender', 'Despair: Spender sinks'),
-    ('S13', (6, 'saver', 1), 'ending', 'medium on Saver at his car', 'Saver, same smoking car, same $1,000 bill'),
-    ('S14', (6, 'he', 1), 'ending', 'close on the EMERGENCY FUND jar', 'He scoops coins from his EMERGENCY FUND jar'),
-    ('S15', (6, 'done', 1), 'ending', 'medium on Saver', 'PAID stamp; his car is fixed, he dusts his hands'),
+    ('S13', (5, 'but', 1), 'earth', 'medium on Saver at his car', 'CUT AWAY (the loop stays open): Saver, same smoking car, same $1,000 bill'),
+    ('S14', (5, 'he', 1), 'earth', 'close on the EMERGENCY FUND jar', 'He scoops coins from his EMERGENCY FUND jar'),
+    ('S26', (5, 'emergency', 1), 'earth', 'low on the jar label', 'EMERGENCY FUND label as the coins pour out'),
+    ('S15', (5, 'done', 1), 'earth', 'medium on Saver', 'PAID stamp; his car is fixed, he dusts his hands'),
+    ('S24', (6, 'spender', 1), 'whisper', 'whip back: Spender beside the trembling envelope', 'BACK TO THE LOOP: the sealed FINAL TOTAL envelope still shakes next to Spender'),
+    ('S10', (6, 'twenty-six', 1), 'whisper', 'close on the calendar racing', 'Calendar races to MONTH 26'),
+    ('S25', (6, 'later', 1), 'whisper', 'medium on Spender under MONTH 26', 'Calendar lands on MONTH 26: paid off... but the envelope still shakes'),
+    ('S11', (6, 'plus', 1), 'whisper', 'envelope bursts open', 'TWIST (~72%): the envelope pops open: +$257 INTEREST (slam)'),
+    ('S12', (6, 'dollars', 1), 'whisper', 'slam on Spender', 'Despair: Spender sinks'),
     ('S16', (7, 'fed', 1), 'earth', 'medium on a chart board', 'Chart board: FED SURVEY: 63% COULD PAY $400 IN CASH; bar rises'),
     ('S22', (7, '63', 1), 'earth', 'close on the bar', 'The 63% bar rises'),
     ('S17', (7, 'cover', 1), 'earth', 'slam toward the lens', 'Saver points at the lens'),
     ('S23', (7, 'with', 1), 'earth', 'wide on the board', 'COULD YOU? pops under the chart'),
     ('S18', (7, 'could', 2), 'earth', 'SAME lens as S01 (loop match)', "LOOP: Spender's car smokes, the bonnet is about to bang -> frame 0"),
 ]
-ACCENT = {(3, 'twenty-two'), (6, 'done'), (7, '63'), (5, '257'), (2, 'thousand'), (1, 'two'), (4, 'worst')}
+ACCENT = {(3, 'twenty-two'), (5, 'done'), (7, '63'), (6, '257'), (2, 'thousand'), (1, 'two'), (4, 'worst')}
 TAGS = []
 
 

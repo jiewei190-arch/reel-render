@@ -6,7 +6,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"; cd "$ROOT"
 COMP="${1:?comp}"; SLUG="${2:?slug}"; TAG="${3:?tag}"; shift 3
-PLAN="src/shorts/${SLUG//-/_}.plan.gen.ts"
+PLAN="src/shorts/${SLUG//-/_}_v1.plan.gen.ts"; [ -f "$PLAN" ] || PLAN="src/shorts/${SLUG//-/_}.plan.gen.ts"
 SCALE="${SCALE:-0.5}"
 SHEET="${SHEET:-$ROOT/../shorts/$SLUG/stills_sheet.png}"
 FR=("$@")

@@ -20,13 +20,16 @@ import type { Box, StoryAudio } from "./kit";
 
 const { T, W, lineEnd } = timing(PLAN, WORDS);
 const idx = (id: string) => parseInt(id.slice(1), 10);
+/** story beat of a shot: the cuts added after the first plan map onto the beat they extend */
+const SEQ: Record<string, number> = { S14: 1.5, S15: 3, S16: 5, S17: 7, S18: 10, S19: 8, S20: 5, S21: 8, S22: 10 }; // S19 = the door tease again, S20 = Spender with his pick
+const seq = (id: string) => SEQ[id] ?? idx(id);
 const END = DURATION / 30;
 
 // ------------------------------------------------------------------ layout (metres; lens side = +z; outdoor lot)
 const CAR_A: V3 = [-1.35, 0, -1.2]; // the 3-year deal
 const CAR_B: V3 = [1.55, 0, -1.2]; // the 7-year deal
 const BOARD_Y = 2.25;
-const P_SP: V3 = [2.95, 0, 0.15]; // Spender beside his pick
+const P_SP: V3 = [3.25, 0, 0.45]; // Spender beside his pick (hands clear of the car)
 const P_LD: V3 = [0.1, 0, 0.35]; // the seller, between the cars
 const SHED: V3 = [-3.9, 0, -4.3];
 const DOOR: V3 = [-3.9, 0, -3.28];
@@ -39,9 +42,10 @@ const TW2: V3 = [4.55, 0, -3.4];
 const tLand = 0.28; // the $453 board lands (frame 0: mid-drop)
 const tPick = T("S04");
 const tGrab = T("S05") + 0.15;
-const tSeven = W(4, "seven");
-const tBurst = T("S09") + 0.08;
-const tTower = T("S10") + 0.05;
+const tSeven = W(4, "seven"); // the stamps land on 'seven' (S17); S07 shows them landing the beat before
+const tBurst = T("S09") + 0.3; // ~70 %: the twist is held to the '8,034' word
+const tTower = T("S18") + 0.05;
+const doorOpenAt = (i: number, t: number) => (i === 9 && t >= tBurst) || (i >= 10 && i <= 12);
 
 // ------------------------------------------------------------------ the boards (frame 0: the $453 board is still dropping)
 const boardY = (k: "A" | "B", t: number, i: number) => {
@@ -98,7 +102,16 @@ const LENS = {
   S04: creep(both, [0.1, 1.6, 4.4], { fov: 56, face: 0.5, push: 0.14 }),
   S05: creep([P_SP[0] - 0.4, 1.05, P_SP[2] - 0.4], [P_SP[0] - 0.6, 1.5, P_SP[2] + 3.0], { fov: 56, face: 0.5, shake: shakeAt([tGrab], 0.03) }),
   S06: creep([P_LD[0], 1.35, P_LD[2]], [P_LD[0] + 0.6, 1.45, P_LD[2] + 2.3], { face: 0.55 }),
-  S07: { ...creep(spFace(P_SP), [P_SP[0] - 0.3, 1.32, P_SP[2] + 2.0], { face: 0.62, roll: [0, -3] }), fovAt: slam(tSeven, 52, 42, 0.14), shake: shakeAt([tSeven], 0.05) },
+  S07: creep(both, [0.1, 2.0, 4.0], { fov: 56, face: 0.45, shake: shakeAt([T("S07") + 0.1], 0.03) }),
+  S14: creep([CAR_A[0], BOARD_Y, CAR_A[2]], [CAR_A[0] + 0.2, 2.0, CAR_A[2] + 2.4], { fov: 46, face: 0.5 }),
+  S15: creep([both[0], 3.1, both[2]], [both[0], 2.7, both[2] + 2.6], { fov: 46, face: 0.5 }),
+  S16: creep(spFace(P_SP), [P_SP[0] - 0.4, 1.35, P_SP[2] + 1.9], { face: 0.6 }),
+  S17: { ...creep(spFace(P_SP), [P_SP[0] - 0.3, 1.32, P_SP[2] + 2.0], { face: 0.62, roll: [0, -3] }), fovAt: slam(tSeven, 52, 42, 0.14), shake: shakeAt([tSeven], 0.05) },
+  S18: creep([TW2[0], 1.3, TW2[2]], [TW2[0] - 0.6, 0.6, TW2[2] + 3.0], { fov: 56, face: 0.42, mood: "whisper", shake: shakeAt([tTower], 0.06) }),
+  S19: creep([DOOR[0], 0.45, DOOR[2]], [DOOR[0] - 0.5, 0.7, DOOR[2] + 2.2], { fov: 44, face: 0.5, mood: "whisper", shake: (t: number) => 0.008 + 0.006 * Math.abs(Math.sin(t * 29)) }),
+  S20: creep([P_SP[0] - 0.2, 1.1, P_SP[2] - 0.3], [P_SP[0] + 1.6, 1.35, P_SP[2] + 2.6], { fov: 52, face: 0.5 }),
+  S21: creep([DOOR[0], 1.0, DOOR[2]], [DOOR[0] + 0.5, 1.1, DOOR[2] + 2.0], { fov: 46, face: 0.5, mood: "whisper", push: 0.15, shake: (t: number) => 0.01 + 0.008 * Math.abs(Math.sin(t * 37)) }),
+  S22: creep([TW1[0], 1.0, TW1[2]], [TW1[0] + 0.5, 0.8, TW1[2] + 2.4], { fov: 50, face: 0.45, mood: "whisper" }),
   S08: creep([DOOR[0], 1.2, DOOR[2]], [DOOR[0] + 1.2, 1.3, DOOR[2] + 3.8], { fov: 46, face: 0.5, push: 0.12, mood: "whisper", shake: (t: number) => 0.006 + 0.004 * Math.abs(Math.sin(t * 23)) }),
   S09: creep([(FUR[0] + TW2[0]) / 2 - 0.6, 1.1, -2.6], [0.0, 2.0, 4.0], { fov: 62, face: 0.5, mood: "whisper", fovAt: slam(tBurst, 66, 58, 0.1), shake: shakeAt([tBurst], 0.08) }),
   S10: creep([(TW1[0] + TW2[0]) / 2, 1.3, TW1[2]], [4.0, 0.7, TW1[2] + 3.4], { fov: 56, face: 0.42, mood: "whisper", shake: shakeAt([tTower], 0.06) }),
@@ -110,14 +123,15 @@ export const SAMECAR_SHOTS = shotsOf(PLAN, Object.fromEntries(Object.entries(LEN
 
 // ------------------------------------------------------------------ scene
 const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
-  const i = idx(shot.id);
+  const i = seq(shot.id);
   void tau;
   const actors = actorsAt(i, t);
-  const fire = i >= 9 && i <= 12;
-  const doorOpen = i >= 9 && i <= 12;
+  const doorOpen = doorOpenAt(i, t); // S09 opens on the shaking closed door, the burst ~0.3 s in
+  const fire = doorOpen;
+
   const burstU = i === 9 ? (t - tBurst) / 0.5 : 2;
   const t1 = i === 9 ? ss(tBurst + 0.2, tBurst + 0.6, t) : i >= 10 && i <= 12 ? 1 : 0;
-  const t2 = i === 9 ? ss(tBurst + 0.2, tBurst + 0.6, t) * 0.45 : i === 10 ? 0.45 + 0.55 * easeOut(clamp((t - tTower) / 0.3)) : i >= 11 && i <= 12 ? 1 : 0;
+  const t2 = i === 9 ? ss(tBurst + 0.2, tBurst + 0.6, t) * 0.45 : i === 10 ? 0.45 + 0.55 * easeOut(clamp((t - tTower) / 0.3)) : i >= 11 && i <= 12 ? 1 : 0; // S18 (beat 10) slams it up; S10 holds it
   const years = i >= 7 && i <= 12;
   const pick = i === 4 ? 0.5 + 0.5 * Math.sin(t * 12) : 0;
   const brick = i === 11 || i === 12 ? brickAt(t) : null;
@@ -145,8 +159,8 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       {/* the shed: covered sign, glowing door (open loop), then the burst onto the furnace (twist) */}
       <BigBlock p={SHED} size={[2.6, 2.6, 2.0]} color="#8a8fa8" text="" />
       {doorOpen ? null : <BigBlock p={[DOOR[0], 0, DOOR[2] + 0.05]} size={[1.0, 2.0, 0.08]} color="#5a4a3a" text="" />}
-      {i === 8 ? <mesh position={[DOOR[0], 0.02, DOOR[2] + 0.35]} rotation={[-Math.PI / 2, 0, 0]}><planeGeometry args={[1.1, 0.5]} /><meshStandardMaterial color="#ff7a1a" emissive="#ff5a00" emissiveIntensity={1.4 + 0.5 * Math.sin(t * 19)} transparent opacity={0.7} /></mesh> : null}
-      {i === 8 ? <pointLight position={[DOOR[0], 0.3, DOOR[2] + 0.4]} color="#ff8a3a" intensity={1.6 + 0.6 * Math.sin(t * 17)} distance={3} decay={2} /> : null}
+      {i === 8 || (i === 9 && t < tBurst) ? <mesh position={[DOOR[0], 0.02, DOOR[2] + 0.35]} rotation={[-Math.PI / 2, 0, 0]}><planeGeometry args={[1.1, 0.5]} /><meshStandardMaterial color="#ff7a1a" emissive="#ff5a00" emissiveIntensity={1.4 + 0.5 * Math.sin(t * 19)} transparent opacity={0.7} /></mesh> : null}
+      {i === 8 || (i === 9 && t < tBurst) ? <pointLight position={[DOOR[0], 0.3, DOOR[2] + 0.4]} color="#ff8a3a" intensity={1.6 + 0.6 * Math.sin(t * 17)} distance={3} decay={2} /> : null}
       <Label p={[DOOR[0], 2.32, DOOR[2] + 0.06]} text={doorOpen ? ["INTEREST"] : ["? ? ?"]} w={1.2} h={0.3} bg={doorOpen ? "#c01818" : "#6a6a78"} fg="#ffffff" />
       {i === 9 ? <Debris p={[DOOR[0], 1.0, DOOR[2] + 0.1]} t={t} t0={tBurst} n={16} c={["#5a4a3a", "#8a6a4a", "#ffd23a"]} y0={0} size={0.12} /> : null}
       {i === 9 && burstU > 0 && burstU < 1 ? <BigBlock p={[DOOR[0] + 1.6 * burstU, Math.max(0.04, 1.4 * burstU - 1.8 * burstU * burstU), DOOR[2] + 1.8 * burstU]} size={[1.0, 2.0, 0.08]} r={[-1.3 * burstU, 0.6 * burstU, 0.4 * burstU]} color="#5a4a3a" text="" /> : null}
@@ -168,11 +182,11 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
 const box = (name: string, c: V3, h: V3, yaw?: number): Box => ({ name, c, h, yaw });
 export const SAMECAR_QA = (t: number): { actors: Box[]; props: Box[] } => {
   const sh = SAMECAR_SHOTS.find((s) => t >= s.a && t < s.b) ?? SAMECAR_SHOTS[SAMECAR_SHOTS.length - 1];
-  const i = idx(sh.id);
+  const i = seq(sh.id);
   const actors = actorsAt(i, t).flatMap((a) => actorBoxes(a.name, [a.pose.x, 0, a.pose.z], a.s, a.pose));
   const props: Box[] = [box("carA", [CAR_A[0], 0.58, CAR_A[2]], [0.76, 0.58, 1.32]), box("carB", [CAR_B[0], 0.58, CAR_B[2]], [0.76, 0.58, 1.32]), box("shed", [SHED[0], 1.3, SHED[2]], [1.3, 1.3, 1.0])];
   for (const c of [CAR_A, CAR_B]) props.push(box("boardPost", [c[0] + 0.95, BOARD_Y / 2, c[2] - 0.2], [0.06, BOARD_Y / 2, 0.06]), box("board", [c[0], boardY("B", t, i), c[2] - 0.2], [0.7, 0.25 + (i >= 7 && i <= 12 ? 0.3 : 0), 0.05]));
-  if (i >= 9 && i <= 12) props.push(box("furnace", [FUR[0], 0.75, FUR[2]], [0.75, 0.75, 0.6]));
+  if (doorOpenAt(i, t)) props.push(box("furnace", [FUR[0], 0.75, FUR[2]], [0.75, 0.75, 0.6]));
   const b = i === 11 || i === 12 ? brickAt(t) : null;
   if (b) props.push(box("brick", b, [0.2, 0.2, 0.2]));
   if (i === 11 || i === 12) props.push(box("coinStack", [P_F[0] + 0.55, 0.15, P_F[2] - 0.55], [0.12, 0.15, 0.12]));

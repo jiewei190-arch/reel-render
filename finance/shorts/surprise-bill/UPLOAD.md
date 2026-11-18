@@ -1,5 +1,7 @@
 # UPLOAD: surprise-bill (FORMAT v1)
 
+style: S1
+
 **Title:** A $1,000 Bill That Lasts 2 Years
 
 **Description:**

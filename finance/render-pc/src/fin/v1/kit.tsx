@@ -36,8 +36,8 @@ export const timing = (plan: readonly PlanShot[], words: readonly Word[]) => {
 /** plan shot times + per-id lenses -> FinShots */
 export const shotsOf = (plan: readonly PlanShot[], lens: Record<string, Shot>): FinShot[] =>
   plan.map((p) => {
-    const l = lens[p.id];
-    if (!l) throw new Error(`no lens for ${p.id}`);
+    // a WIP Short must never break the shared bundle: a shot with no lens falls back to a plain wide lens and warns
+    const l = lens[p.id] ?? (console.warn(`[v1] no lens for ${p.id}: using a default wide lens`), creep([0, 1.1, 0], [0, 1.6, 5], { fov: 56 }));
     return { id: p.id, a: p.t, b: p.end, ...l };
   });
 
