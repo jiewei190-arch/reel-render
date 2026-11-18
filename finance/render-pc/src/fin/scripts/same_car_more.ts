@@ -1,0 +1,2 @@
+// generated from shorts/same-car-more/script.txt
+export default "Same car, 4,700 dollars more.\nBorrow 30,000 dollars at seven percent, an example rate.\nThree years: about 926 a month, and 3,347 in interest.\nSeven years: just 453 a month. Feels cheaper, right?\nBut the interest is about 8,034 dollars.\nLower payment, bigger total.\nThe C.F.P.B. agrees: a longer loan means more interest.\nStretch it to seven, and you've paid for the";

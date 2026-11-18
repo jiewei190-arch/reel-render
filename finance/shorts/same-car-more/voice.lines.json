@@ -12,8 +12,8 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 30.855,
- "render_s": 318.6,
+ "duration": 30.267,
+ "render_s": 776.0,
  "qa_fail_lines": [
   1,
   2,
@@ -113,23 +113,23 @@
   },
   {
    "n": 7,
-   "text": "The C.F.P.B. puts it plainly: lower the payment with a longer loan, and you pay more interest.",
+   "text": "The C.F.P.B. agrees: a longer loan means more interest.",
    "start": 23.077,
    "parts": [
     {
-     "tts": "The C.F.P.B. puts it plainly: lower the payment with a longer loan, and you pay more interest.",
+     "tts": "The C.F.P.B. agrees: a longer loan means more interest.",
      "seed": 7,
-     "heard": "The CFPB puts it plainly, Lower the payment with a longer loan and you pay more interest.",
+     "heard": "The CFPB agrees, a longer loan means more interest.",
      "wrong_words": 4,
      "qa": "QA FAIL"
     }
    ],
-   "end": 27.557
+   "end": 26.968
   },
   {
    "n": 8,
    "text": "Stretch it to seven, and you've paid for the",
-   "start": 27.857,
+   "start": 27.268,
    "parts": [
     {
      "tts": "Stretch it to seven, and you've paid for the",
@@ -139,7 +139,7 @@
      "qa": "ok"
     }
    ],
-   "end": 30.555
+   "end": 29.967
   }
  ]
 }
