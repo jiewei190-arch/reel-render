@@ -73,7 +73,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S13: fitted([...body(P_PAY, S.saver), [SLOT[0] + 0.25, 1.3, SLOT[2]], ...blkSv], 30, 0.1, D.S13, { mood: "ending" }),
   S14: fitted([...blkSv, [CAL[0] + 0.7, CAL[1] + 0.5, CAL[2]]], 12, 0.1, D.S14, { mood: "ending" }),
   S15: fitted([...sv(), [BLK_SV[0] - 0.75, 0, BLK_SV[2]], [BLK_SV[0] + 0.75, 1.0, BLK_SV[2]]], 16, 0.08, D.S15, { mood: "ending" }),
-  S16: fitted([[PILE_A[0] - 0.8, 0, PILE_A[2]], [PILE_B[0] + 0.8, 0, PILE_B[2]], [PILE_A[0], 1.9, PILE_A[2]], [PILE_B[0], 1.5, PILE_B[2]]], 0, 0.22, D.S16, { mood: "ending" }),
+  S16: fitted([[PILE_A[0] - 0.8, 0, PILE_A[2]], [PILE_B[0] + 0.8, 0, PILE_B[2]], [PILE_A[0], 1.9, PILE_A[2]], [PILE_B[0], 1.5, PILE_B[2]]], 0, 0.22, D.S16, { mood: "whisper" }),
   S17: fitted(sp(true), 18, 0.03, D.S17, { mood: "store", face: 0.5 }),
   S18: hook,
 };

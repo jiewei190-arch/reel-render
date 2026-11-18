@@ -8,5 +8,5 @@
 
 ## Beats
 - **Loop sentence:** "A rough guide, not a law of nature. So ask: / Who decided rent should be 30 percent?"
-- **Twist (~70%):** a public housing rent cap (25 % in 1969, 30 % in 1981) became everyone's rule of thumb.
+- **Twist (~75%, line 7, after the $4,000 example):** a public housing rent cap (25 % in 1969, 30 % in 1981) became everyone's rule of thumb.
 - **Counter (every shot):** `RENT CAP 25%` (1969) → `30%` (1981); then `$4,000/MO × 30% = $1,200`.

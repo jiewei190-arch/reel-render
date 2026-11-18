@@ -1,0 +1,8 @@
+Five years of payments. Still owe everything.
+Example: borrow 20,000 dollars at a made-up 8 percent.
+Pay only the interest: about 133 dollars a month.
+After five years, you've paid 8,000 dollars.
+And you still owe all 20,000.
+Twist: the full payment is about 406 a month. More each month, but after five years, you owe zero.
+Total interest: about 4,332.
+A small payment isn't always cheap. Interest-only can mean

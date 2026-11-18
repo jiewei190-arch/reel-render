@@ -8,5 +8,5 @@
 
 ## Beats
 - **Loop sentence:** "Opted in? You can still / swipe 24 dollars, pay 58."
-- **Twist (~70%):** treat the fee as a loan: $34 to borrow $24 for three days is an APR of about 17,000 %.
+- **Twist (~68%):** "Twist: as a loan, that's an A.P.R. of about 17,000 percent." ($34 to borrow $24 for three days, the CFPB's own comparison).
 - **Counter (every shot):** `$24 SWIPE` → `+ $34 FEE` → `= $58`; on the twist `APR ≈17,000%`. VO rounding matches the HUD ("about 17,000" ↔ "≈17,000%").

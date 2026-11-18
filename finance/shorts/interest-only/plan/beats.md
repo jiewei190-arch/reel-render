@@ -8,5 +8,5 @@
 
 ## Beats
 - **Loop sentence:** "A small payment isn't always cheap. Interest-only can mean / five years of payments. Still owe everything."
-- **Twist (~70%):** the full payment (about $406) costs more each month but clears the loan in five years with about $4,332 of interest, vs $8,000 of interest and $20,000 still owed.
+- **Twist (~74%, line 7):** "its total interest is only about 4,332": the full payment (about $406, owe $0 after five years) costs about $4,332 in interest, vs $8,000 of interest-only payments and $20,000 still owed.
 - **Counter (every shot):** two lanes: `INTEREST-ONLY $133/MO · PAID $x · OWE $20,000` vs `FULL $406/MO · OWE $y`. VO rounding matches the HUD ($133, $406, $8,000, $4,332).

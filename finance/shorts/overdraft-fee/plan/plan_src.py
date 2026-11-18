@@ -18,20 +18,20 @@ SHOTS = [
     ('S08', (4, 'and', 1), 'store', 'medium on Spender at the counter, push-in', 'Spender pays back: drops a coin stack on the counter'),
     ('S09', (4, 'half', 1), 'store', 'wide on ten blocks, push-in', 'Ten little blocks: more than half light up green (paid back within 3 days)'),
     ('S10', (4, 'three', 1), 'store', 'close on the flip calendar, push-in', 'Flip calendar DAY 1 → 3'),
-    ('S11', (5, 'twist', 1), 'whisper', 'medium on Lender, push-in', 'Night mood: Lender (hat) steps in with a LOAN sign'),
+    ('S11', (5, 'so', 1), 'whisper', 'medium on Lender, push-in', 'Night mood: Lender (hat) steps in with a LOAN sign'),
     ('S12', (5, 'borrow', 1), 'whisper', 'medium two-shot, push-in', 'Lender hands Spender a small $24 coin stack'),
     ('S13', (5, 'three', 1), 'whisper', 'close on the calendar, push-in', 'The calendar: 3 DAYS'),
     ('S14', (5, 'pay', 1), 'whisper', 'medium two-shot, push-in', 'Spender hands back a bigger $34 stack; Lender grins'),
-    ('S15', (6, "that's", 1), 'whisper', 'low wide on a rising tower, push-in', 'A red APR tower shoots up past the ceiling'),
+    ('S15', (6, 'twist', 1), 'whisper', 'low wide on a rising tower, push-in', 'Twist: a red APR tower shoots up past the ceiling'),
     ('S16', (6, '17,000', 1), 'whisper', 'medium on Spender under the tower, push-in', 'Spender shocked under the big ≈17,000% APR label'),
     ('S17', (7, 'by', 1), 'ending', 'medium on Saver at a switch, push-in', 'Saver beside a big switch board: DEBIT OVERDRAFT: OPT-IN'),
-    ('S18', (7, 'opted', 1), 'ending', 'close on the switch, push-in', 'The switch flips between ON and OFF; label OPT-IN BY LAW'),
+    ('S18', (7, 'choice', 1), 'ending', 'close on the switch, push-in', 'The switch flips between ON and OFF; label OPT-IN BY LAW'),
     ('S19', (7, 'you', 1), 'store', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: Spender swipes again, the $58 receipt pops'),
 ]
-ACCENT = {(7, 'choice'), (1, '58'), (2, '24'), (6, '17,000'), (3, '34')}
+ACCENT = {(6, '17,000'), (1, '58'), (7, 'choice'), (2, '24'), (3, '34')}
 TAGS = [
     (1, 'swipe', 'CFPB 2014 DATA', 'corner'),
-    (5, 'twist', "CFPB'S OWN COMPARISON", 'on the loan view'),
+    (6, 'twist', "CFPB'S OWN COMPARISON", 'on the loan view'),
 ]
 
 

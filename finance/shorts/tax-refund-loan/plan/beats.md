@@ -8,5 +8,5 @@
 
 ## Beats
 - **Loop sentence:** "A refund can still be a fine choice. But every spring, / your tax refund is a free loan."
-- **Twist (~70%):** a refund isn't a bonus: it's your own withheld pay, sent back late.
+- **Twist (~70%, line 6, after the W-4 line):** a refund isn't a bonus: it's your own withheld pay, sent back late.
 - **Counter (every shot):** `AVG REFUND $3,366` → `÷ 12 = $280/MO` → `INTEREST $0`. VO says "3,366" and "About 280" (280.50), HUD shows $3,366 and ≈$280.

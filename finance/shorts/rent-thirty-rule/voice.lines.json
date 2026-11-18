@@ -1,0 +1,142 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 27.046,
+ "render_s": 159.2,
+ "qa_fail_lines": [
+  7
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Who decided rent should be 30 percent?",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Who decided rent should be thirty percent?",
+     "seed": 7,
+     "heard": "who decided rent should be 30%.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.444
+  },
+  {
+   "n": 2,
+   "text": "It started with a 1969 law for public housing.",
+   "start": 2.744,
+   "parts": [
+    {
+     "tts": "It started with a nineteen sixty-nine law for public housing.",
+     "seed": 7,
+     "heard": "It started with a 1969 law for public housing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.676
+  },
+  {
+   "n": 3,
+   "text": "It capped rent at 25 percent of a tenant's income.",
+   "start": 5.976,
+   "parts": [
+    {
+     "tts": "It capped rent at twenty-five percent of a tenant's income.",
+     "seed": 7,
+     "heard": "It capped rent at 25% of a tenant's income.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.16
+  },
+  {
+   "n": 4,
+   "text": "A limit to protect tenants, not a spending target.",
+   "start": 9.46,
+   "parts": [
+    {
+     "tts": "A limit to protect tenants, not a spending target.",
+     "seed": 7,
+     "heard": "A limit to protect tenants, not a spending target.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.085
+  },
+  {
+   "n": 5,
+   "text": "In 1981, Congress raised that cap to 30 percent.",
+   "start": 12.385,
+   "parts": [
+    {
+     "tts": "In nineteen eighty-one, Congress raised that cap to thirty percent.",
+     "seed": 7,
+     "heard": "In 1981, Congress raised that cap to 30%.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.91
+  },
+  {
+   "n": 6,
+   "text": "Twist: a public housing cap became everyone's rule of thumb.",
+   "start": 16.21,
+   "parts": [
+    {
+     "tts": "Twist: a public housing cap became everyone's rule of thumb.",
+     "seed": 7,
+     "heard": "Twist. A public housing cap became everyone's rule of thumb.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.602
+  },
+  {
+   "n": 7,
+   "text": "On 4,000 dollars a month, that's 1,200 for rent.",
+   "start": 19.902,
+   "parts": [
+    {
+     "tts": "On four thousand dollars a month, that's one thousand two hundred for rent.",
+     "seed": 7,
+     "heard": "on $4,000 a month, that's $1,200 for rent.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 23.566
+  },
+  {
+   "n": 8,
+   "text": "A rough guide, not a law of nature. So ask:",
+   "start": 23.866,
+   "parts": [
+    {
+     "tts": "A rough guide, not a law of nature. So ask:",
+     "seed": 7,
+     "heard": "A rough guide, not a law of nature. So ask.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.746
+  }
+ ]
+}

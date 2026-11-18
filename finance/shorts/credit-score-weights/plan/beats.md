@@ -8,5 +8,5 @@
 
 ## Beats
 - **Loop sentence:** "The weights vary by person. But the biggest slice? / One habit makes up 35 percent."
-- **Twist (~70%):** the second-biggest slice (30 %) isn't paying on time: it's how much of your limit you use.
+- **Twist (~65%):** "slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it."
 - **Counter (every shot):** a five-slice pie fills as each weight is said: `ON TIME 35%`, `OWED 30%`, `HISTORY 15%`, `NEW 10%`, `MIX 10%`; total 100%.

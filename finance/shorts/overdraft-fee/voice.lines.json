@@ -12,15 +12,14 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 28.245,
- "render_s": 374.6,
+ "duration": 28.175,
+ "render_s": 328.6,
  "qa_fail_lines": [
   1,
   2,
   3,
   5,
-  6,
-  7
+  6
  ],
  "lines": [
   {
@@ -115,18 +114,18 @@
   },
   {
    "n": 7,
-   "text": "By law, debit overdraft coverage is opt-in. Opted in? You can still",
+   "text": "By law, debit overdraft coverage is your choice. Opted in? You can still",
    "start": 22.807,
    "parts": [
     {
-     "tts": "By law, debit overdraft coverage is opt-in. Opted in? You can still",
+     "tts": "By law, debit overdraft coverage is your choice. Opted in? You can still",
      "seed": 7,
-     "heard": "By law, debit overdraft coverage is opted in. Opted in? You can still.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
+     "heard": "By law, debit overdraft coverage is your choice. Opted-in? You can still!",
+     "wrong_words": 0,
+     "qa": "ok"
     }
    ],
-   "end": 27.945
+   "end": 27.875
   }
  ]
 }

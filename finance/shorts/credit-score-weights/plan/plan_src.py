@@ -13,20 +13,21 @@ SHOTS = [
     ('S03', (2, 'in', 1), 'store', 'medium on a chart board, push-in', 'Chart board: PUBLISHED SCORE BREAKDOWN'),
     ('S04', (2, 'paying', 1), 'store', 'medium on Saver at a calendar, push-in', 'Saver drops a coin into a BILL slot; the calendar shows ON TIME ✓'),
     ('S05', (2, '35', 1), 'store', 'close on the tower base, push-in', '35% ON TIME segment lights'),
-    ('S06', (3, 'how', 1), 'store', 'medium on the tower, push-in', 'The 30% OWED segment stacks on'),
-    ('S07', (3, 'how', 2), 'store', 'medium on the tower, push-in', 'The 15% HISTORY segment stacks on'),
-    ('S08', (4, 'new', 1), 'store', 'medium on the tower, push-in', '10% NEW stacks on'),
-    ('S09', (4, 'mix', 1), 'store', 'wide on the full tower, push-in', '10% MIX tops it: 100%'),
-    ('S10', (5, 'twist', 1), 'whisper', 'medium on Spender with a card, push-in', 'Night mood: Spender holds a plain card'),
-    ('S11', (5, 'second', 1), 'whisper', 'close on the 30% segment, push-in', 'The 30% OWED segment pulses red'),
-    ('S12', (5, 'limit', 1), 'whisper', 'medium on a limit meter, push-in', 'A card-limit meter fills to 90% USED'),
+    ('S18', (3, 'paid', 1), 'store', 'medium on Saver at the bills box, push-in', 'A red LATE stamp hits the due-date calendar; tag STAYS UP TO 7 YEARS'),
+    ('S06', (4, 'how', 1), 'store', 'medium on the tower, push-in', 'The 30% OWED segment stacks on'),
+    ('S07', (4, 'how', 2), 'store', 'medium on the tower, push-in', 'The 15% HISTORY segment stacks on'),
+    ('S08', (5, 'new', 1), 'store', 'medium on the tower, push-in', '10% NEW stacks on'),
+    ('S09', (5, 'mix', 1), 'store', 'wide on the full tower, push-in', '10% MIX tops it: 100%'),
+    ('S10', (6, 'twist', 1), 'whisper', 'medium on Spender with a card, push-in', 'Night mood: Spender holds a plain card'),
+    ('S11', (6, 'two', 1), 'whisper', 'close on the 30% segment, push-in', 'The 30% OWED segment pulses red'),
+    ('S12', (6, 'limit', 1), 'whisper', 'medium on a limit meter, push-in', 'A card-limit meter fills to 90% USED'),
     ('S13', (6, 'even', 1), 'whisper', 'medium on Spender at the calendar, push-in', 'Spender pays on time ✓'),
     ('S14', (6, 'maxed', 1), 'whisper', 'close on the meter, push-in', 'The meter hits 95%, red'),
-    ('S15', (6, 'weigh', 1), 'whisper', 'medium on the tower, push-in', 'A heavy block drops on the 30% segment; it squashes'),
+    ('S15', (6, 'hurt', 1), 'whisper', 'medium on the tower, push-in', 'A heavy block drops on the 30% segment; it squashes'),
     ('S16', (7, 'weights', 1), 'ending', 'wide on three small towers, push-in', 'Three small towers of different mixes: VARIES BY PERSON'),
     ('S17', (7, 'but', 1), 'store', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: the 35% base glows beside Saver'),
 ]
-ACCENT = {(6, '30'), (5, 'limit'), (3, '30'), (1, '35'), (4, '10')}
+ACCENT = {(3, 'seven'), (6, 'limit'), (5, '10'), (4, '30'), (1, '35')}
 TAGS = [
     (2, 'in', 'PUBLISHED WEIGHTS', 'on the board'),
 ]

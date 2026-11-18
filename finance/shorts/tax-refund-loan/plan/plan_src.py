@@ -18,17 +18,17 @@ SHOTS = [
     ('S08', (4, 'about', 1), 'store', 'wide on twelve coin stacks, push-in', 'Twelve coin stacks, one per month, each $280'),
     ('S09', (4, 'held', 1), 'store', 'medium on Teller with the jar, push-in', 'Teller pats the WITHHELD jar (locked)'),
     ('S10', (4, 'zero', 1), 'store', 'close on a 0% label, push-in', 'Big 0% INTEREST label pops'),
-    ('S11', (5, 'twist', 1), 'whisper', 'medium on Saver with the case, push-in', 'Night mood: Saver holds the case; a BONUS sign gets struck through'),
-    ('S12', (5, 'own', 1), 'whisper', 'close on the open case, push-in', 'The case opens: green coins with YOUR PAY tags'),
-    ('S13', (5, 'late', 1), 'whisper', 'medium on a big clock, push-in', 'A big clock spins; SENT BACK LATE'),
-    ('S14', (6, 'your', 1), 'ending', 'medium on Saver with a form, push-in', 'Saver holds a FORM W-4 sheet'),
-    ('S15', (6, 'withholding', 1), 'ending', 'close on the form, push-in', 'The W-4 sheet: WITHHOLDING line glows'),
-    ('S16', (6, 'free', 1), 'ending', 'medium on a board, push-in', 'Board: IRS WITHHOLDING ESTIMATOR (FREE)'),
-    ('S17', (6, 'check', 1), 'ending', 'medium on Saver, push-in', 'Saver stamps CHECK on the form; happy'),
+    ('S14', (5, 'your', 1), 'store', 'medium on Saver with a form, push-in', 'Saver holds a FORM W-4 sheet'),
+    ('S15', (5, 'withholding', 1), 'store', 'close on the form, push-in', 'The W-4 sheet: WITHHOLDING line glows'),
+    ('S16', (5, 'free', 1), 'store', 'medium on a board, push-in', 'Board: IRS WITHHOLDING ESTIMATOR (FREE)'),
+    ('S17', (5, 'check', 1), 'store', 'medium on Saver, push-in', 'Saver stamps CHECK on the form; happy'),
+    ('S11', (6, 'twist', 1), 'whisper', 'medium on Saver with the case, push-in', 'Night mood: Saver holds the case; a BONUS sign gets struck through'),
+    ('S12', (6, 'own', 1), 'whisper', 'close on the open case, push-in', 'The case opens: green coins with YOUR PAY tags'),
+    ('S13', (6, 'late', 1), 'whisper', 'medium on a big clock, push-in', 'A big clock spins; SENT BACK LATE'),
     ('S18', (7, 'a', 1), 'ending', 'medium two-shot, push-in', 'Saver and Spender side by side, Saver shrugs, calm: A FINE CHOICE TOO'),
     ('S19', (7, 'but', 1), 'store', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: the REFUND case slides to Saver again'),
 ]
-ACCENT = {(5, 'bonus'), (4, 'zero'), (2, '3,366'), (7, 'fine'), (1, 'free')}
+ACCENT = {(7, 'fine'), (2, '3,366'), (1, 'free'), (6, 'bonus'), (4, 'zero')}
 TAGS = [
     (2, 'the', 'IRS 2026 SEASON', 'on the board'),
 ]

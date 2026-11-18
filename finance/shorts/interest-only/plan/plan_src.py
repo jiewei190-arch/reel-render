@@ -18,16 +18,16 @@ SHOTS = [
     ('S08', (4, '8,000', 1), 'store', 'medium on the paid pile, push-in', 'Paid pile grows: PAID $8,000'),
     ('S09', (5, 'and', 1), 'store', 'medium on Spender + block, push-in', 'Spender looks up at the unchanged block, shock'),
     ('S10', (5, '20,000', 1), 'store', 'close on the block, push-in', 'OWE $20,000 pulses red'),
-    ('S11', (6, 'twist', 1), 'ending', 'medium on Saver + his block, push-in', "Saver's lane: his own OWE $20,000 block"),
+    ('S11', (6, 'the', 1), 'ending', 'medium on Saver + his block, push-in', "Saver's lane: his own OWE $20,000 block"),
     ('S12', (6, '406', 1), 'ending', 'close on the booth display, push-in', 'Booth display: $406/MO FULL PAYMENT'),
-    ('S13', (6, 'more', 1), 'ending', 'medium on Saver paying, push-in', 'Saver drops a bigger stack; his block shrinks'),
+    ('S13', (6, 'month', 1), 'ending', 'medium on Saver paying, push-in', 'Saver drops a bigger stack; his block shrinks'),
     ('S14', (6, 'after', 1), 'ending', "medium on Saver's block, push-in", "Calendar YEAR 5; Saver's block shrinks to a sliver"),
     ('S15', (6, 'zero', 1), 'ending', 'medium on Saver, push-in', 'The block is gone: OWE $0; Saver cheers'),
-    ('S16', (7, 'total', 1), 'ending', 'wide on two piles, push-in', 'Two interest piles side by side: $8,000 (red) vs $4,332 (green)'),
+    ('S16', (7, 'twist', 1), 'whisper', 'wide on two piles, push-in', 'Twist: two interest piles side by side: $8,000 (red, and still owing) vs $4,332 (green, owing $0)'),
     ('S17', (8, 'small', 1), 'store', 'medium on Spender, push-in', 'Spender holds up one small coin, unsure'),
     ('S18', (8, 'interest-only', 1), 'store', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: Spender beside the untouched block'),
 ]
-ACCENT = {(6, 'zero'), (1, 'everything'), (7, '4,332'), (4, '8,000'), (3, '133')}
+ACCENT = {(6, 'zero'), (1, 'everything'), (4, '8,000'), (3, '133'), (7, '4,332')}
 TAGS = [
     (2, 'example', 'EXAMPLE: $20,000 · 8% · 5 YRS', 'corner'),
 ]

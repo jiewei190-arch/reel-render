@@ -51,8 +51,8 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S12: fitted([[HOUSE[0] - 1.4, 0, HOUSE[2]], [HOUSE[0] + 1.4, 3.3, HOUSE[2]], ...bar], 4, 0.1, D.S12, { mood: "whisper", sky: true }),
   S13: fitted([...body(ROW[0], S.saver), ...body(ROW[1], S.spender), ...body(ROW[2], S.penny), [ROW[1][0], 2.0, ROW[1][2]]], 2, 0.06, D.S13, { mood: "whisper", sky: true }),
   S14: manual([BAR[0], BAR_H + 0.6, BAR[2] + 0.1], 6, 2.2, 0.0, { mood: "whisper", sky: true }),
-  S15: fitted([...body(P_SV2, S.saver), [STACK[0] - 0.4, 0, STACK[2]], [STACK[0] + 0.4, 2.2, STACK[2]]], -14, 0.08, D.S15, { mood: "ending", sky: true }),
-  S16: manual([STACK[0], 1.75, STACK[2]], -8, 2.0, 0.05, { mood: "ending", sky: true }),
+  S15: fitted([...body(P_SV2, S.saver), [STACK[0] - 0.4, 0, STACK[2]], [STACK[0] + 0.4, 2.2, STACK[2]]], -14, 0.08, D.S15, { mood: "earth", sky: true }),
+  S16: manual([STACK[0], 1.75, STACK[2]], -8, 2.0, 0.05, { mood: "earth", sky: true }),
   S17: fitted(body(P_SV, S.saver, true), 16, 0.04, D.S17, { mood: "ending", sky: true, face: 0.5 }),
   S18: hook,
 };

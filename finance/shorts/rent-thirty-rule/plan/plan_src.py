@@ -19,15 +19,15 @@ SHOTS = [
     ('S09', (4, 'not', 1), 'earth', 'close on a target sign, push-in', 'A SPEND THIS target sign gets struck through'),
     ('S10', (5, 'in', 1), 'earth', 'close on the calendar, push-in', 'Calendar flips 1969 → 1981'),
     ('S11', (5, 'raised', 1), 'earth', 'medium on the bar, push-in', 'The cap line slides up 25% → 30%'),
-    ('S12', (6, 'twist', 1), 'whisper', 'wide on the street, push-in', 'Dusk: the 30% line leaps off the public housing block'),
-    ('S13', (6, "everyone's", 1), 'whisper', 'wide on a row of tenants, push-in', 'Saver, Spender and Penny in a row, each with a 30% tag'),
-    ('S14', (6, 'thumb', 1), 'whisper', 'close on a sign, push-in', 'Sign: RULE OF THUMB'),
-    ('S15', (7, 'on', 1), 'ending', 'medium on a $4,000 stack, push-in', 'Saver beside a $4,000 / MONTH coin stack'),
-    ('S16', (7, '1,200', 1), 'ending', 'close on the split, push-in', 'The top 30% of the stack lifts out: $1,200 RENT'),
+    ('S15', (6, 'on', 1), 'earth', 'medium on a $4,000 stack, push-in', 'Saver beside a $4,000 / MONTH coin stack'),
+    ('S16', (6, '1,200', 1), 'earth', 'close on the split, push-in', 'The top 30% of the stack lifts out: $1,200 RENT'),
+    ('S12', (7, 'twist', 1), 'whisper', 'wide on the street, push-in', 'Dusk: the 30% line leaps off the public housing block'),
+    ('S13', (7, "everyone's", 1), 'whisper', 'wide on a row of tenants, push-in', 'Saver, Spender and Penny in a row, each with a 30% tag'),
+    ('S14', (7, 'thumb', 1), 'whisper', 'close on a sign, push-in', 'Sign: RULE OF THUMB'),
     ('S17', (8, 'rough', 1), 'ending', 'medium on Saver, push-in', 'Saver shrugs with a ROUGH GUIDE sign'),
     ('S18', (8, 'so', 1), 'earth', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: the red 30% slice slams onto the income bar'),
 ]
-ACCENT = {(1, '30'), (2, '1969'), (5, '1981'), (7, '1,200'), (3, '25'), (6, 'thumb')}
+ACCENT = {(7, 'thumb'), (2, '1969'), (6, '1,200'), (5, '1981'), (1, '30'), (3, '25')}
 TAGS = [
     (2, 'it', 'NLIHC · HARVARD JCHS', 'corner'),
 ]
