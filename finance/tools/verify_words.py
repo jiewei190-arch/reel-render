@@ -45,7 +45,7 @@ def norm(s):
 
 
 def main(d):
-    d = Path(d)
+    d = Path(d).resolve()
     from faster_whisper import WhisperModel
     m = WhisperModel("small.en", device="cpu", compute_type="int8")
     segs, info = m.transcribe(str(d / "voice.wav"), beam_size=5, language="en")
@@ -54,10 +54,16 @@ def main(d):
     a, b = norm(want), norm(heard)
     diffs = [(op, " ".join(a[i1:i2]), " ".join(b[j1:j2]))
              for op, i1, i2, j1, j2 in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes() if op != "equal"]
+    # Whisper writes spoken "two hundred" as "$200" when money is meant: an extra "dollar" that only comes from a "$"
+    # sign is formatting, not a spoken word. Listed, but not a failure.
+    fmt = [x for x in diffs if x[0] == "insert" and set(x[2].split()) == {"dollar"} and "$" in heard]
+    diffs = [x for x in diffs if x not in fmt]
     ok = not diffs
     out = [f"# Whisper word check: {d.name}", "", f"- model: faster-whisper small.en (beam 5), audio {info.duration:.2f} s",
            f"- script words (normalised): {len(a)}; heard: {len(b)}", f"- result: **{'PASS: every word matches' if ok else 'DIFFERENCES'}**", "",
            "## Heard", "", heard, ""]
+    if fmt:
+        out += ["## Formatting only (not spoken words)", ""] + [f"- Whisper's `$` sign added `{y}` (e.g. \"two hundred\" heard as \"$200\")" for _, _, y in fmt] + [""]
     if diffs:
         out += ["## Differences (script | heard)", ""] + [f"- {op}: `{x}` | `{y}`" for op, x, y in diffs]
     (d / "vo").mkdir(exist_ok=True)

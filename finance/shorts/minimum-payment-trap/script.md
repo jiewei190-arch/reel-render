@@ -1,0 +1,54 @@
+# minimum-payment-trap
+
+- **Spoken:** 77 words, voice 26.71 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
+- **Hook:** line 1, spoken from 0.0 s, no intro.
+- **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.
+- **Loop:** S19 ("Because otherwise...") cuts back to the S01 lens: Spender picks up the red $5,000 block again at the start of the long road; the loop lands on "A five thousand dollar...".
+
+## Voice-over (exact spoken text = script.txt)
+
+| # | time (s) | line |
+|---|---|---|
+| 1 | 0.00–3.10 | A five thousand dollar card balance can take nineteen years to pay off. |
+| 2 | 3.72–6.92 | Say the rate is twenty-two percent, near the recent U.S. average. |
+| 3 | 7.58–11.04 | You pay only the minimum: interest plus one percent of the balance. |
+| 4 | 11.74–15.04 | As the balance shrinks, the payment shrinks. So it crawls. |
+| 5 | 15.52–18.54 | About nineteen years, and over eight thousand in interest. |
+| 6 | 19.00–21.62 | Pay a flat two hundred a month instead? Under three years. |
+| 7 | 22.28–24.72 | Your statement has a minimum payment warning. Read it. |
+| 8 | 25.00–26.46 | Because otherwise... |
+
+Loop read-through: "…Because otherwise... / A five thousand dollar card balance can take nineteen years to pay off."
+
+## Shot plan (one cut every ~1.4 s, each on its word)
+
+19 shots, 27.06 s (812 frames at 30 fps), median cut 1.32 s. Cast: SPENDER (red, bag) hero; LENDER (navy, hat) collects; TELLER (violet, apron) shows the statement; SAVER (green, glasses) in the flat-payment contrast. Set: a long blocky suburb road with a 'PAID OFF' gate far away + a small statement counter, no logos.
+
+Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no real currency art.
+
+| shot | time (s) | dur | anchor word | mood | scene (cast, action, props, on-screen tag) | camera | captions in shot |
+|---|---|---|---|---|---|---|---|
+| S01 | 0.00–1.96 | 1.96 | a | earth | Spender lifts a heavy red block painted $5,000 at the start of a very long road; far away a tiny gate PAID OFF | medium 3/4 on Spender, face ~38% height, push-in | a five / thousand dollar / card balance / can take |
+| S02 | 1.96–3.72 | 1.76 | nineteen | earth | The road stretches to the horizon, the PAID OFF gate a speck; a roadside Sign reads 19 YEARS → | over-shoulder down the road, push-in | nineteen years / to pay / off. |
+| S03 | 3.72–5.01 | 1.29 | say | store | Lender (hat) at a toll booth stamps a red tag onto the $5,000 block | medium on Lender at a booth, push-in | say the / rate is / twenty-two percent, |
+| S04 | 5.01–6.26 | 1.25 | percent | store | Tag 22% APR glows; small text EXAMPLE | close on the tag, push-in | near the / recent u.s. |
+| S05 | 6.26–7.58 | 1.32 | u.s | store | A chart board behind Lender: a flat red line hovering near 22%, tag U.S. AVERAGE ≈ 22% (FED G.19) | medium wide, push-in | average. / you pay |
+| S06 | 7.58–8.60 | 1.02 | you | earth | Spender drops a small coin into Lender's slot, smiling: MINIMUM | medium on Spender, push-in | only the / minimum: |
+| S07 | 8.60–9.78 | 1.18 | interest | earth | The coin splits: most of it glows red INTEREST and vanishes into the booth; a sliver chips the block | close on the slot, push-in | interest plus / one percent |
+| S08 | 9.78–11.74 | 1.96 | one | earth | A thin 1% slice falls off the $5,000 block | macro on the block, push-in | of the / balance. / as the |
+| S09 | 11.74–13.04 | 1.30 | as | earth | Spender walks; the block shrinks a hair; his coin shrinks too | medium tracking, push-in | balance shrinks, / the payment |
+| S10 | 13.04–14.50 | 1.46 | payment | earth | The coin in his hand gets smaller with each step | close on his hand, push-in | shrinks. / so it |
+| S11 | 14.50–15.74 | 1.24 | crawls | whisper | Spender crawls on hands and knees along the endless road, block on his back; a snail passes him | low wide, push-in | crawls. / about nineteen |
+| S12 | 15.74–17.28 | 1.54 | nineteen | whisper | Spender's antennae droop grey; calendar pages blow past | medium, push-in | years, / and over / eight thousand |
+| S13 | 17.28–19.00 | 1.72 | eight | whisper | Behind Lender, a red pile of coins grows taller than the booth; tag $8,099 INTEREST | wide on the booth, push-in | in interest. |
+| S14 | 19.00–20.08 | 1.08 | pay | ending | Contrast lane: Saver drops a bigger coin $200 into the slot each month | medium on Saver, push-in | pay a / flat two / hundred a / month instead? |
+| S15 | 20.08–21.08 | 1.00 | month | ending | Saver's block shrinks fast with each step | tracking, push-in | under three |
+| S16 | 21.08–22.42 | 1.34 | three | ending | Saver walks through the PAID OFF gate under three calendar pages; tag ~3 YEARS | wide, push-in | years. / your statement |
+| S17 | 22.42–23.64 | 1.22 | statement | store | Teller (apron) slides a paper statement across the counter to Spender | medium on Teller at the counter, push-in | has a / minimum payment / warning. |
+| S18 | 23.64–25.00 | 1.36 | warning | store | A boxed panel on the statement lights up: MINIMUM PAYMENT WARNING (plain text, no issuer name) | macro on the statement, push-in | read it. |
+| S19 | 25.00–27.06 | 2.06 | because | earth | Spender, ignoring the paper, lifts the red $5,000 block again at the start of the road | SAME lens + position as S01 (loop match), push-in | because otherwise... |
+
+### On-screen tags
+
+- 0.00 s **EXAMPLE: $5,000 · 22% APR · MIN = INTEREST + 1%**: small painted card at the road start from frame 0
+- 17.28 s **$8,099 INTEREST**: holo tag over Lender's pile

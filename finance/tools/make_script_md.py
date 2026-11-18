@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def main(d):
-    d = Path(d)
+    d = Path(d).resolve()
     lines = (d / "script.txt").read_text(encoding="utf8").splitlines()
     words = sum(len(l.split()) for l in lines)
     tm = json.loads((d / "vo" / "timings.json").read_text(encoding="utf8"))

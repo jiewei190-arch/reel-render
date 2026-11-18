@@ -5,28 +5,27 @@ Re-run after every VO change; the times move with the words. Writes src/plan.gen
 """
 TITLE = "minimum-payment-trap"
 CAST_NOTE = "SPENDER (red, bag) hero; LENDER (navy, hat) collects; TELLER (violet, apron) shows the statement; SAVER (green, glasses) in the flat-payment contrast. Set: a long blocky suburb road with a 'PAID OFF' gate far away + a small statement counter, no logos."
-LOOP_NOTE = "S20 (\"Because otherwise...\") cuts back to the S01 lens: Spender picks up the red $5,000 block again at the start of the long road; the loop lands on \"A five thousand dollar...\"."
+LOOP_NOTE = "S19 (\"Because otherwise...\") cuts back to the S01 lens: Spender picks up the red $5,000 block again at the start of the long road; the loop lands on \"A five thousand dollar...\"."
 SHOTS = [
     ("S01", (1, "a", 1), "earth", "medium 3/4 on Spender, face ~38% height, push-in", "Spender lifts a heavy red block painted $5,000 at the start of a very long road; far away a tiny gate PAID OFF"),
-    ("S02", (1, "balance", 1), "earth", "over-shoulder down the road, push-in", "The road stretches to the horizon; the gate is a speck"),
-    ("S03", (1, "nineteen", 1), "earth", "close on a roadside sign, push-in", "Roadside Sign: 19 YEARS →"),
-    ("S04", (2, "say", 1), "store", "medium on Lender at a booth, push-in", "Lender (hat) at a toll booth stamps a red tag 22% APR onto the block"),
-    ("S05", (2, "twenty-two", 1), "store", "close on the tag, push-in", "Tag 22% APR glows; small text EXAMPLE"),
-    ("S06", (2, "recent", 1), "store", "medium wide, push-in", "A chart board behind Lender: a flat red line hovering near 22%, tag U.S. AVERAGE ≈ 22% (FED G.19)"),
-    ("S07", (3, "you", 1), "earth", "medium on Spender, push-in", "Spender drops a small coin into Lender's slot, smiling: MINIMUM"),
-    ("S08", (3, "interest", 1), "earth", "close on the slot, push-in", "The coin splits: most of it glows red INTEREST and vanishes into the booth; a sliver chips the block"),
-    ("S09", (3, "one", 1), "earth", "macro on the block, push-in", "A thin 1% slice falls off the $5,000 block"),
-    ("S10", (4, "as", 1), "earth", "medium tracking, push-in", "Spender walks; the block shrinks a hair; his coin shrinks too"),
-    ("S11", (4, "payment", 1), "earth", "close on his hand, push-in", "The coin in his hand gets smaller with each step"),
-    ("S12", (4, "crawls", 1), "whisper", "low wide, push-in", "Spender crawls on hands and knees along the endless road, block on his back; a snail passes him"),
-    ("S13", (5, "nineteen", 1), "whisper", "medium, push-in", "Spender's antennae droop grey; calendar pages blow past"),
-    ("S14", (5, "eight", 1), "whisper", "wide on the booth, push-in", "Behind Lender, a red pile of coins grows taller than the booth; tag $8,099 INTEREST"),
-    ("S15", (6, "pay", 1), "ending", "medium on Saver, push-in", "Contrast lane: Saver drops a bigger coin $200 into the slot each month"),
-    ("S16", (6, "month", 1), "ending", "tracking, push-in", "Saver's block shrinks fast with each step"),
-    ("S17", (6, "three", 1), "ending", "wide, push-in", "Saver walks through the PAID OFF gate under three calendar pages; tag ~3 YEARS"),
-    ("S18", (7, "statement", 1), "store", "medium on Teller at the counter, push-in", "Teller (apron) slides a paper statement across the counter to Spender"),
-    ("S19", (7, "warning", 1), "store", "macro on the statement, push-in", "A boxed panel on the statement lights up: MINIMUM PAYMENT WARNING (plain text, no issuer name)"),
-    ("S20", (8, "because", 1), "earth", "SAME lens + position as S01 (loop match), push-in", "Spender, ignoring the paper, lifts the red $5,000 block again at the start of the road"),
+    ("S02", (1, "nineteen", 1), "earth", "over-shoulder down the road, push-in", "The road stretches to the horizon, the PAID OFF gate a speck; a roadside Sign reads 19 YEARS →"),
+    ("S03", (2, "say", 1), "store", "medium on Lender at a booth, push-in", "Lender (hat) at a toll booth stamps a red tag onto the $5,000 block"),
+    ("S04", (2, "percent", 1), "store", "close on the tag, push-in", "Tag 22% APR glows; small text EXAMPLE"),
+    ("S05", (2, "u.s", 1), "store", "medium wide, push-in", "A chart board behind Lender: a flat red line hovering near 22%, tag U.S. AVERAGE ≈ 22% (FED G.19)"),
+    ("S06", (3, "you", 1), "earth", "medium on Spender, push-in", "Spender drops a small coin into Lender's slot, smiling: MINIMUM"),
+    ("S07", (3, "interest", 1), "earth", "close on the slot, push-in", "The coin splits: most of it glows red INTEREST and vanishes into the booth; a sliver chips the block"),
+    ("S08", (3, "one", 1), "earth", "macro on the block, push-in", "A thin 1% slice falls off the $5,000 block"),
+    ("S09", (4, "as", 1), "earth", "medium tracking, push-in", "Spender walks; the block shrinks a hair; his coin shrinks too"),
+    ("S10", (4, "payment", 1), "earth", "close on his hand, push-in", "The coin in his hand gets smaller with each step"),
+    ("S11", (4, "crawls", 1), "whisper", "low wide, push-in", "Spender crawls on hands and knees along the endless road, block on his back; a snail passes him"),
+    ("S12", (5, "nineteen", 1), "whisper", "medium, push-in", "Spender's antennae droop grey; calendar pages blow past"),
+    ("S13", (5, "eight", 1), "whisper", "wide on the booth, push-in", "Behind Lender, a red pile of coins grows taller than the booth; tag $8,099 INTEREST"),
+    ("S14", (6, "pay", 1), "ending", "medium on Saver, push-in", "Contrast lane: Saver drops a bigger coin $200 into the slot each month"),
+    ("S15", (6, "month", 1), "ending", "tracking, push-in", "Saver's block shrinks fast with each step"),
+    ("S16", (6, "three", 1), "ending", "wide, push-in", "Saver walks through the PAID OFF gate under three calendar pages; tag ~3 YEARS"),
+    ("S17", (7, "statement", 1), "store", "medium on Teller at the counter, push-in", "Teller (apron) slides a paper statement across the counter to Spender"),
+    ("S18", (7, "warning", 1), "store", "macro on the statement, push-in", "A boxed panel on the statement lights up: MINIMUM PAYMENT WARNING (plain text, no issuer name)"),
+    ("S19", (8, "because", 1), "earth", "SAME lens + position as S01 (loop match), push-in", "Spender, ignoring the paper, lifts the red $5,000 block again at the start of the road"),
 ]
 ACCENT = {(1, "nineteen"), (2, "twenty-two"), (3, "minimum"), (4, "crawls"), (5, "eight"), (6, "three"), (7, "warning")}
 TAGS = [

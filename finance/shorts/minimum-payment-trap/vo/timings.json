@@ -1,0 +1,443 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 26.706
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A five thousand dollar card balance can take nineteen years to pay off.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "end": 0.24
+    },
+    {
+     "w": "five",
+     "t": 0.24,
+     "end": 0.378
+    },
+    {
+     "w": "thousand",
+     "t": 0.378,
+     "end": 0.653
+    },
+    {
+     "w": "dollar",
+     "t": 0.653,
+     "end": 0.86
+    },
+    {
+     "w": "card",
+     "t": 0.86,
+     "end": 1.22
+    },
+    {
+     "w": "balance",
+     "t": 1.22,
+     "end": 1.58
+    },
+    {
+     "w": "can",
+     "t": 1.58,
+     "end": 1.8
+    },
+    {
+     "w": "take",
+     "t": 1.8,
+     "end": 1.96
+    },
+    {
+     "w": "nineteen",
+     "t": 1.96,
+     "end": 2.24
+    },
+    {
+     "w": "years",
+     "t": 2.24,
+     "end": 2.54
+    },
+    {
+     "w": "to",
+     "t": 2.54,
+     "end": 2.72
+    },
+    {
+     "w": "pay",
+     "t": 2.72,
+     "end": 2.88
+    },
+    {
+     "w": "off.",
+     "t": 2.88,
+     "end": 3.1
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Say the rate is twenty-two percent, near the recent U.S. average.",
+   "words": [
+    {
+     "w": "Say",
+     "t": 3.72,
+     "end": 3.9
+    },
+    {
+     "w": "the",
+     "t": 3.9,
+     "end": 4.16
+    },
+    {
+     "w": "rate",
+     "t": 4.16,
+     "end": 4.34
+    },
+    {
+     "w": "is",
+     "t": 4.34,
+     "end": 4.54
+    },
+    {
+     "w": "twenty-two",
+     "t": 4.54,
+     "end": 5.013
+    },
+    {
+     "w": "percent,",
+     "t": 5.013,
+     "end": 5.38
+    },
+    {
+     "w": "near",
+     "t": 5.38,
+     "end": 5.88
+    },
+    {
+     "w": "the",
+     "t": 5.88,
+     "end": 6.0
+    },
+    {
+     "w": "recent",
+     "t": 6.0,
+     "end": 6.26
+    },
+    {
+     "w": "U.S.",
+     "t": 6.26,
+     "end": 6.5
+    },
+    {
+     "w": "average.",
+     "t": 6.5,
+     "end": 6.92
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "You pay only the minimum: interest plus one percent of the balance.",
+   "words": [
+    {
+     "w": "You",
+     "t": 7.58,
+     "end": 7.72
+    },
+    {
+     "w": "pay",
+     "t": 7.72,
+     "end": 7.88
+    },
+    {
+     "w": "only",
+     "t": 7.88,
+     "end": 8.14
+    },
+    {
+     "w": "the",
+     "t": 8.14,
+     "end": 8.3
+    },
+    {
+     "w": "minimum:",
+     "t": 8.3,
+     "end": 8.6
+    },
+    {
+     "w": "interest",
+     "t": 8.6,
+     "end": 9.24
+    },
+    {
+     "w": "plus",
+     "t": 9.24,
+     "end": 9.78
+    },
+    {
+     "w": "one",
+     "t": 9.78,
+     "end": 9.972
+    },
+    {
+     "w": "percent",
+     "t": 9.972,
+     "end": 10.42
+    },
+    {
+     "w": "of",
+     "t": 10.42,
+     "end": 10.66
+    },
+    {
+     "w": "the",
+     "t": 10.66,
+     "end": 10.78
+    },
+    {
+     "w": "balance.",
+     "t": 10.78,
+     "end": 11.04
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "As the balance shrinks, the payment shrinks. So it crawls.",
+   "words": [
+    {
+     "w": "As",
+     "t": 11.74,
+     "end": 11.98
+    },
+    {
+     "w": "the",
+     "t": 11.98,
+     "end": 12.14
+    },
+    {
+     "w": "balance",
+     "t": 12.14,
+     "end": 12.38
+    },
+    {
+     "w": "shrinks,",
+     "t": 12.38,
+     "end": 12.84
+    },
+    {
+     "w": "the",
+     "t": 12.98,
+     "end": 13.04
+    },
+    {
+     "w": "payment",
+     "t": 13.04,
+     "end": 13.3
+    },
+    {
+     "w": "shrinks.",
+     "t": 13.3,
+     "end": 13.8
+    },
+    {
+     "w": "So",
+     "t": 14.28,
+     "end": 14.36
+    },
+    {
+     "w": "it",
+     "t": 14.36,
+     "end": 14.5
+    },
+    {
+     "w": "crawls.",
+     "t": 14.5,
+     "end": 15.04
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "About nineteen years, and over eight thousand in interest.",
+   "words": [
+    {
+     "w": "About",
+     "t": 15.52,
+     "end": 15.74
+    },
+    {
+     "w": "nineteen",
+     "t": 15.74,
+     "end": 16.16
+    },
+    {
+     "w": "years,",
+     "t": 16.16,
+     "end": 16.48
+    },
+    {
+     "w": "and",
+     "t": 16.48,
+     "end": 17.02
+    },
+    {
+     "w": "over",
+     "t": 17.02,
+     "end": 17.28
+    },
+    {
+     "w": "eight",
+     "t": 17.28,
+     "end": 17.557
+    },
+    {
+     "w": "thousand",
+     "t": 17.557,
+     "end": 18.0
+    },
+    {
+     "w": "in",
+     "t": 18.0,
+     "end": 18.16
+    },
+    {
+     "w": "interest.",
+     "t": 18.16,
+     "end": 18.54
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Pay a flat two hundred a month instead? Under three years.",
+   "words": [
+    {
+     "w": "Pay",
+     "t": 19.0,
+     "end": 19.28
+    },
+    {
+     "w": "a",
+     "t": 19.28,
+     "end": 19.4
+    },
+    {
+     "w": "flat",
+     "t": 19.4,
+     "end": 19.58
+    },
+    {
+     "w": "two",
+     "t": 19.58,
+     "end": 19.646
+    },
+    {
+     "w": "hundred",
+     "t": 19.646,
+     "end": 19.8
+    },
+    {
+     "w": "a",
+     "t": 19.8,
+     "end": 20.08
+    },
+    {
+     "w": "month",
+     "t": 20.08,
+     "end": 20.2
+    },
+    {
+     "w": "instead?",
+     "t": 20.2,
+     "end": 20.62
+    },
+    {
+     "w": "Under",
+     "t": 20.62,
+     "end": 21.08
+    },
+    {
+     "w": "three",
+     "t": 21.08,
+     "end": 21.32
+    },
+    {
+     "w": "years.",
+     "t": 21.32,
+     "end": 21.62
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Your statement has a minimum payment warning. Read it.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 22.28,
+     "end": 22.42
+    },
+    {
+     "w": "statement",
+     "t": 22.42,
+     "end": 22.72
+    },
+    {
+     "w": "has",
+     "t": 22.72,
+     "end": 23.0
+    },
+    {
+     "w": "a",
+     "t": 23.0,
+     "end": 23.12
+    },
+    {
+     "w": "minimum",
+     "t": 23.12,
+     "end": 23.3
+    },
+    {
+     "w": "payment",
+     "t": 23.3,
+     "end": 23.64
+    },
+    {
+     "w": "warning.",
+     "t": 23.64,
+     "end": 24.02
+    },
+    {
+     "w": "Read",
+     "t": 24.02,
+     "end": 24.48
+    },
+    {
+     "w": "it.",
+     "t": 24.48,
+     "end": 24.72
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Because otherwise...",
+   "words": [
+    {
+     "w": "Because",
+     "t": 25.0,
+     "end": 25.5
+    },
+    {
+     "w": "otherwise...",
+     "t": 25.5,
+     "end": 26.46
+    }
+   ]
+  }
+ ]
+}

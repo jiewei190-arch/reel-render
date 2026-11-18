@@ -1,0 +1,142 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 26.706,
+ "render_s": 196.4,
+ "qa_fail_lines": [
+  1
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A five thousand dollar card balance can take nineteen years to pay off.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "A five thousand dollar card balance can take nineteen years to pay off.",
+     "seed": 7,
+     "heard": "A $5,000 card balance can take 19 years to pay off.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 3.329
+  },
+  {
+   "n": 2,
+   "text": "Say the rate is twenty-two percent, near the recent U.S. average.",
+   "start": 3.629,
+   "parts": [
+    {
+     "tts": "Say the rate is twenty-two percent, near the recent U.S. average.",
+     "seed": 7,
+     "heard": "Say the rate is 22% near the recent U.S. average.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.302
+  },
+  {
+   "n": 3,
+   "text": "You pay only the minimum: interest plus one percent of the balance.",
+   "start": 7.602,
+   "parts": [
+    {
+     "tts": "You pay only the minimum: interest plus one percent of the balance.",
+     "seed": 7,
+     "heard": "you pay only the minimum interest plus 1% of the balance.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.488
+  },
+  {
+   "n": 4,
+   "text": "As the balance shrinks, the payment shrinks. So it crawls.",
+   "start": 11.788,
+   "parts": [
+    {
+     "tts": "As the balance shrinks, the payment shrinks. So it crawls.",
+     "seed": 7,
+     "heard": "As the balance shrinks, the payment shrinks, so it crawls.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.24
+  },
+  {
+   "n": 5,
+   "text": "About nineteen years, and over eight thousand in interest.",
+   "start": 15.54,
+   "parts": [
+    {
+     "tts": "About nineteen years, and over eight thousand in interest.",
+     "seed": 7,
+     "heard": "about 19 years, and over 8,000 in interest.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.83
+  },
+  {
+   "n": 6,
+   "text": "Pay a flat two hundred a month instead? Under three years.",
+   "start": 19.13,
+   "parts": [
+    {
+     "tts": "Pay a flat two hundred a month instead? Under three years.",
+     "seed": 7,
+     "heard": "Pay a flat 200 a month instead, under 3 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.014
+  },
+  {
+   "n": 7,
+   "text": "Your statement has a minimum payment warning. Read it.",
+   "start": 22.314,
+   "parts": [
+    {
+     "tts": "Your statement has a minimum payment warning. Read it.",
+     "seed": 7,
+     "heard": "Your statement has a minimum payment warning. Read it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.924
+  },
+  {
+   "n": 8,
+   "text": "Because otherwise...",
+   "start": 25.224,
+   "parts": [
+    {
+     "tts": "Because otherwise...",
+     "seed": 7,
+     "heard": "because otherwise",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.406
+  }
+ ]
+}
