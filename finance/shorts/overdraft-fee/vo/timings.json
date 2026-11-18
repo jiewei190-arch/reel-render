@@ -1,0 +1,372 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 28.245
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Swipe 24 dollars, pay 58.",
+   "words": [
+    {
+     "w": "Swipe",
+     "t": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "24",
+     "t": 0.48,
+     "end": 0.88
+    },
+    {
+     "w": "dollars,",
+     "t": 0.88,
+     "end": 1.18
+    },
+    {
+     "w": "pay",
+     "t": 1.58,
+     "end": 1.92
+    },
+    {
+     "w": "58.",
+     "t": 1.92,
+     "end": 2.46
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "In a C.F.P.B. study, the typical debit overdraft was just 24 dollars.",
+   "words": [
+    {
+     "w": "In",
+     "t": 2.94,
+     "end": 3.22
+    },
+    {
+     "w": "a",
+     "t": 3.22,
+     "end": 3.36
+    },
+    {
+     "w": "C.F.P.B.",
+     "t": 3.36,
+     "end": 4.04
+    },
+    {
+     "w": "study,",
+     "t": 4.04,
+     "end": 4.36
+    },
+    {
+     "w": "the",
+     "t": 4.96,
+     "end": 5.0
+    },
+    {
+     "w": "typical",
+     "t": 5.0,
+     "end": 5.32
+    },
+    {
+     "w": "debit",
+     "t": 5.32,
+     "end": 5.54
+    },
+    {
+     "w": "overdraft",
+     "t": 5.54,
+     "end": 6.14
+    },
+    {
+     "w": "was",
+     "t": 6.14,
+     "end": 6.44
+    },
+    {
+     "w": "just",
+     "t": 6.44,
+     "end": 6.62
+    },
+    {
+     "w": "24",
+     "t": 6.62,
+     "end": 7.1
+    },
+    {
+     "w": "dollars.",
+     "t": 7.1,
+     "end": 7.4
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "The typical fee? 34 dollars.",
+   "words": [
+    {
+     "w": "The",
+     "t": 8.08,
+     "end": 8.28
+    },
+    {
+     "w": "typical",
+     "t": 8.28,
+     "end": 8.6
+    },
+    {
+     "w": "fee?",
+     "t": 8.6,
+     "end": 8.94
+    },
+    {
+     "w": "34",
+     "t": 9.36,
+     "end": 9.8
+    },
+    {
+     "w": "dollars.",
+     "t": 9.8,
+     "end": 10.1
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "And more than half were paid back within three days.",
+   "words": [
+    {
+     "w": "And",
+     "t": 10.8,
+     "end": 11.14
+    },
+    {
+     "w": "more",
+     "t": 11.14,
+     "end": 11.42
+    },
+    {
+     "w": "than",
+     "t": 11.42,
+     "end": 11.58
+    },
+    {
+     "w": "half",
+     "t": 11.58,
+     "end": 11.84
+    },
+    {
+     "w": "were",
+     "t": 11.84,
+     "end": 11.96
+    },
+    {
+     "w": "paid",
+     "t": 11.96,
+     "end": 12.16
+    },
+    {
+     "w": "back",
+     "t": 12.16,
+     "end": 12.38
+    },
+    {
+     "w": "within",
+     "t": 12.38,
+     "end": 12.64
+    },
+    {
+     "w": "three",
+     "t": 12.64,
+     "end": 12.84
+    },
+    {
+     "w": "days.",
+     "t": 12.84,
+     "end": 13.12
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Twist: call it a loan. Borrow 24 dollars for three days, pay 34.",
+   "words": [
+    {
+     "w": "Twist:",
+     "t": 13.76,
+     "end": 13.98
+    },
+    {
+     "w": "call",
+     "t": 14.38,
+     "end": 14.52
+    },
+    {
+     "w": "it",
+     "t": 14.52,
+     "end": 14.66
+    },
+    {
+     "w": "a",
+     "t": 14.66,
+     "end": 14.8
+    },
+    {
+     "w": "loan.",
+     "t": 14.8,
+     "end": 15.02
+    },
+    {
+     "w": "Borrow",
+     "t": 15.56,
+     "end": 15.82
+    },
+    {
+     "w": "24",
+     "t": 15.82,
+     "end": 16.28
+    },
+    {
+     "w": "dollars",
+     "t": 16.28,
+     "end": 16.33
+    },
+    {
+     "w": "for",
+     "t": 16.28,
+     "end": 16.8
+    },
+    {
+     "w": "three",
+     "t": 16.8,
+     "end": 16.98
+    },
+    {
+     "w": "days,",
+     "t": 16.98,
+     "end": 17.26
+    },
+    {
+     "w": "pay",
+     "t": 17.62,
+     "end": 17.76
+    },
+    {
+     "w": "34.",
+     "t": 17.76,
+     "end": 18.16
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "That's an A.P.R. of about 17,000 percent.",
+   "words": [
+    {
+     "w": "That's",
+     "t": 18.84,
+     "end": 19.28
+    },
+    {
+     "w": "an",
+     "t": 19.28,
+     "end": 19.44
+    },
+    {
+     "w": "A.P.R.",
+     "t": 19.44,
+     "end": 20.04
+    },
+    {
+     "w": "of",
+     "t": 20.04,
+     "end": 20.66
+    },
+    {
+     "w": "about",
+     "t": 20.66,
+     "end": 20.98
+    },
+    {
+     "w": "17,000",
+     "t": 20.98,
+     "end": 21.588
+    },
+    {
+     "w": "percent.",
+     "t": 21.588,
+     "end": 22.44
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "By law, debit overdraft coverage is opt-in. Opted in? You can still",
+   "words": [
+    {
+     "w": "By",
+     "t": 22.7,
+     "end": 23.02
+    },
+    {
+     "w": "law,",
+     "t": 23.02,
+     "end": 23.34
+    },
+    {
+     "w": "debit",
+     "t": 23.72,
+     "end": 23.92
+    },
+    {
+     "w": "overdraft",
+     "t": 23.92,
+     "end": 24.42
+    },
+    {
+     "w": "coverage",
+     "t": 24.42,
+     "end": 24.86
+    },
+    {
+     "w": "is",
+     "t": 24.86,
+     "end": 25.1
+    },
+    {
+     "w": "opt-in.",
+     "t": 25.1,
+     "end": 25.56
+    },
+    {
+     "w": "Opted",
+     "t": 26.0,
+     "end": 26.42
+    },
+    {
+     "w": "in?",
+     "t": 26.42,
+     "end": 26.64
+    },
+    {
+     "w": "You",
+     "t": 26.98,
+     "end": 27.06
+    },
+    {
+     "w": "can",
+     "t": 27.06,
+     "end": 27.3
+    },
+    {
+     "w": "still",
+     "t": 27.3,
+     "end": 27.62
+    }
+   ]
+  }
+ ]
+}

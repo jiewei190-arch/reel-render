@@ -1,0 +1,2 @@
+// generated from shorts/credit-score-weights/script.txt
+export default "One habit makes up 35 percent.\nIn a widely used credit score, paying on time counts for 35 percent.\nHow much you owe: 30. How long you've had credit: 15.\nNew credit: 10. The mix of credit: 10.\nTwist: the second biggest slice isn't paying on time. It's how much of your limit you use.\nEven paid on time, a nearly maxed card can weigh on that 30.\nThe weights vary by person. But the biggest slice?";

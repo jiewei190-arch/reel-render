@@ -1,0 +1,2 @@
+// generated from shorts/overdraft-fee/script.txt
+export default "Swipe 24 dollars, pay 58.\nIn a C.F.P.B. study, the typical debit overdraft was just 24 dollars.\nThe typical fee? 34 dollars.\nAnd more than half were paid back within three days.\nTwist: call it a loan. Borrow 24 dollars for three days, pay 34.\nThat's an A.P.R. of about 17,000 percent.\nBy law, debit overdraft coverage is opt-in. Opted in? You can still";
