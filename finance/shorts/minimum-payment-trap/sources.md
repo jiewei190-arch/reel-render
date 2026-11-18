@@ -18,7 +18,7 @@ First month check: interest = 5,000 × 0.018333 = $91.67; minimum = 91.67 + 50.0
 balance. As the balance falls, the minimum falls with it, which is why the payoff crawls.
 
 ## Sources
-- **APR ≈ 22% ("near the recent U.S. average")**: Federal Reserve, Consumer Credit G.19 (release of Nov 6, 2026), "Interest
+- **APR ≈ 22% ("near the U.S. average")**: Federal Reserve, Consumer Credit G.19 (release of Nov 6, 2026), "Interest
   rate on credit card plans, accounts assessed interest": 22.36% in the latest quarter shown; recent quarters 21.5–22.9%.
   https://www.federalreserve.gov/releases/g19/current/default.htm
 - **"It can take years, even decades"** to pay off a balance with minimums: CFPB, *Understanding minimum payments*
@@ -30,7 +30,7 @@ balance. As the balance falls, the minimum falls with it, which is why the payof
   CFPB Ask: the statement box with the 3-year payment: https://www.consumerfinance.gov/ask-cfpb/a-box-on-my-credit-card-bill-says-that-i-will-pay-off-the-balance-in-three-years-if-i-pay-a-certain-amount-what-does-that-mean-do-i-have-to-pay-that-much-if-i-pay-that-much-and-make-new-purchases-will-i-still-owe-nothing-after-three-years-en-36/
 
 ## Hedges
-- "can take" nineteen years: it is one stated example; your own statement's warning box gives your real figure.
+- "Your minimum payment can take nineteen years": "can", because it is one stated example (given in the next line); your own statement's warning box gives your real figure.
 - Not advice on which card or lender to use; no brands on screen.
 
 ## Appendix: the simulation
