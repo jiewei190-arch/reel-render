@@ -1,2 +1,0 @@
-// generated from shorts/dollar-1970/script.txt
-export default "Your dollar is worth under twelve cents.\nIn 1970 money. Prices have climbed almost nine times since then.\nThat's the government's consumer price index, not a guess.\nSomething that cost one dollar in 1970 costs about eight seventy now.\nInflation never takes it all at once.\nRoughly four percent a year, quietly, for over fifty years.\nNobody notices a single year. That's exactly why";

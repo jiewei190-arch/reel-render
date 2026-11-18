@@ -1,2 +1,0 @@
-// generated from shorts/penny-doubles/script.txt
-export default "This penny beats a million dollars.\nDouble it every day for 30 days.\nDay ten? Five dollars and twelve cents.\nDay twenty? About five thousand. Still losing.\nThen the doubling takes over.\nDay twenty-five, over one hundred sixty thousand.\nDay twenty-eight, one point three million.\nDay thirty... five point three million dollars.\nHalf of it shows up on the very last day.\nWhich is why, every single time,";
