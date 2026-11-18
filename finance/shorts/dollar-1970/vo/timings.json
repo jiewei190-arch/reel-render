@@ -1,0 +1,372 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 25.139
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your dollar is worth under twelve cents... in 1970 money.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.0,
+     "end": 0.26
+    },
+    {
+     "w": "dollar",
+     "t": 0.26,
+     "end": 0.58
+    },
+    {
+     "w": "is",
+     "t": 0.58,
+     "end": 0.8
+    },
+    {
+     "w": "worth",
+     "t": 0.8,
+     "end": 1.0
+    },
+    {
+     "w": "under",
+     "t": 1.0,
+     "end": 1.3
+    },
+    {
+     "w": "twelve",
+     "t": 1.3,
+     "end": 1.64
+    },
+    {
+     "w": "cents...",
+     "t": 1.64,
+     "end": 1.98
+    },
+    {
+     "w": "in",
+     "t": 3.06,
+     "end": 3.16
+    },
+    {
+     "w": "1970",
+     "t": 3.16,
+     "end": 3.7
+    },
+    {
+     "w": "money.",
+     "t": 3.7,
+     "end": 4.1
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Prices have climbed almost nine times since then.",
+   "words": [
+    {
+     "w": "Prices",
+     "t": 4.64,
+     "end": 5.0
+    },
+    {
+     "w": "have",
+     "t": 5.0,
+     "end": 5.28
+    },
+    {
+     "w": "climbed",
+     "t": 5.28,
+     "end": 5.6
+    },
+    {
+     "w": "almost",
+     "t": 5.6,
+     "end": 6.04
+    },
+    {
+     "w": "nine",
+     "t": 6.04,
+     "end": 6.42
+    },
+    {
+     "w": "times",
+     "t": 6.42,
+     "end": 6.96
+    },
+    {
+     "w": "since",
+     "t": 6.96,
+     "end": 7.22
+    },
+    {
+     "w": "then.",
+     "t": 7.22,
+     "end": 7.58
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "That's the government's consumer price index, not a guess.",
+   "words": [
+    {
+     "w": "That's",
+     "t": 8.22,
+     "end": 8.46
+    },
+    {
+     "w": "the",
+     "t": 8.46,
+     "end": 8.6
+    },
+    {
+     "w": "government's",
+     "t": 8.6,
+     "end": 9.1
+    },
+    {
+     "w": "consumer",
+     "t": 9.1,
+     "end": 9.4
+    },
+    {
+     "w": "price",
+     "t": 9.4,
+     "end": 9.8
+    },
+    {
+     "w": "index,",
+     "t": 9.8,
+     "end": 10.1
+    },
+    {
+     "w": "not",
+     "t": 10.48,
+     "end": 10.62
+    },
+    {
+     "w": "a",
+     "t": 10.62,
+     "end": 10.76
+    },
+    {
+     "w": "guess.",
+     "t": 10.76,
+     "end": 11.0
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Something that cost one dollar in 1970 costs about eight seventy now.",
+   "words": [
+    {
+     "w": "Something",
+     "t": 11.58,
+     "end": 11.76
+    },
+    {
+     "w": "that",
+     "t": 11.76,
+     "end": 11.98
+    },
+    {
+     "w": "cost",
+     "t": 11.98,
+     "end": 12.22
+    },
+    {
+     "w": "one",
+     "t": 12.22,
+     "end": 12.307
+    },
+    {
+     "w": "dollar",
+     "t": 12.307,
+     "end": 12.48
+    },
+    {
+     "w": "in",
+     "t": 12.48,
+     "end": 12.88
+    },
+    {
+     "w": "1970",
+     "t": 12.88,
+     "end": 13.48
+    },
+    {
+     "w": "costs",
+     "t": 13.48,
+     "end": 13.88
+    },
+    {
+     "w": "about",
+     "t": 13.88,
+     "end": 14.1
+    },
+    {
+     "w": "eight",
+     "t": 14.1,
+     "end": 14.367
+    },
+    {
+     "w": "seventy",
+     "t": 14.367,
+     "end": 14.74
+    },
+    {
+     "w": "now.",
+     "t": 14.74,
+     "end": 15.08
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Inflation never takes it all at once.",
+   "words": [
+    {
+     "w": "Inflation",
+     "t": 15.68,
+     "end": 16.06
+    },
+    {
+     "w": "never",
+     "t": 16.06,
+     "end": 16.34
+    },
+    {
+     "w": "takes",
+     "t": 16.34,
+     "end": 16.62
+    },
+    {
+     "w": "it",
+     "t": 16.62,
+     "end": 16.74
+    },
+    {
+     "w": "all",
+     "t": 16.74,
+     "end": 16.84
+    },
+    {
+     "w": "at",
+     "t": 16.84,
+     "end": 16.94
+    },
+    {
+     "w": "once.",
+     "t": 16.94,
+     "end": 17.22
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Roughly four percent a year, quietly, for over fifty years.",
+   "words": [
+    {
+     "w": "Roughly",
+     "t": 17.86,
+     "end": 18.24
+    },
+    {
+     "w": "four",
+     "t": 18.24,
+     "end": 18.4
+    },
+    {
+     "w": "percent",
+     "t": 18.4,
+     "end": 18.68
+    },
+    {
+     "w": "a",
+     "t": 18.68,
+     "end": 18.9
+    },
+    {
+     "w": "year,",
+     "t": 18.9,
+     "end": 19.12
+    },
+    {
+     "w": "quietly,",
+     "t": 19.42,
+     "end": 19.74
+    },
+    {
+     "w": "for",
+     "t": 20.46,
+     "end": 20.66
+    },
+    {
+     "w": "over",
+     "t": 20.66,
+     "end": 20.86
+    },
+    {
+     "w": "fifty",
+     "t": 20.86,
+     "end": 21.18
+    },
+    {
+     "w": "years.",
+     "t": 21.18,
+     "end": 21.5
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Nobody notices a single year. That's exactly why",
+   "words": [
+    {
+     "w": "Nobody",
+     "t": 22.16,
+     "end": 22.44
+    },
+    {
+     "w": "notices",
+     "t": 22.44,
+     "end": 22.78
+    },
+    {
+     "w": "a",
+     "t": 22.78,
+     "end": 23.0
+    },
+    {
+     "w": "single",
+     "t": 23.0,
+     "end": 23.16
+    },
+    {
+     "w": "year.",
+     "t": 23.16,
+     "end": 23.4
+    },
+    {
+     "w": "That's",
+     "t": 23.8,
+     "end": 24.08
+    },
+    {
+     "w": "exactly",
+     "t": 24.08,
+     "end": 24.38
+    },
+    {
+     "w": "why",
+     "t": 24.38,
+     "end": 24.6
+    }
+   ]
+  }
+ ]
+}
