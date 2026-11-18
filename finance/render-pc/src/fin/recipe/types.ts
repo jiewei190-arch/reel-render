@@ -117,6 +117,8 @@ export type Recipe = {
   /** composition length (s); default the voice's duration */
   duration?: number;
   music?: string;
+  /** the sfx punch at 0.00 s (default "impact"; e.g. "drop", "crash", "paper" for a rip) */
+  sfx0?: string;
   bg?: string;
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;

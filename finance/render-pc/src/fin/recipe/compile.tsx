@@ -239,7 +239,8 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
   const hookUntil = recipe.hook.until !== undefined ? at(recipe.hook.until) : lineEnd(1) + 0.25;
 
   // ---------------------------------------------------------------- audio plan (story_mix.py format)
-  const cues: Cue[] = [{ t: 0, sfx: "whoosh", db: -2 }];
+  // FORMAT_V1 day-1 fix 3: a sound punch at 0.00 s (impact by default; recipe.sfx0 picks another, e.g. "drop")
+  const cues: Cue[] = [{ t: 0, sfx: recipe.sfx0 ?? "impact", db: -1 }];
   for (const s of shots) {
     if (s.spec.cam.preset === "slamZoom") cues.push({ t: at(s.spec.cam.hit, s.a + 0.12) - 0.02, sfx: "impact", db: -1 });
     if (s.spec.cam.preset === "whip") cues.push({ t: s.a, sfx: "whoosh", db: -4 });
@@ -549,10 +550,12 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
-      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < c.hookUntil && false} />) : null}
+      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
       <CornerTag text={tag} />
     </AbsoluteFill>
   );
 };
+/** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */
+export const CAPTIONS_FROM = 1.0;
 const chunkCache = new WeakMap<Compiled, ReturnType<typeof chunkWords>>();
 const CHUNKS = (c: Compiled) => { let k = chunkCache.get(c); if (!k) { k = chunkWords(c.words, 3); chunkCache.set(c, k); } return k; };

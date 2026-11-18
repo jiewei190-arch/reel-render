@@ -2,12 +2,12 @@
 import type { Recipe, Word } from "../fin/recipe/types";
 
 export const ID = "S5SpenderTalksRecipe";
-export const VO_DURATION: number | undefined = 22.695;
+export const VO_DURATION: number | undefined = 22.485;
 export const RECIPE: Recipe = {
  "slug": "s5-spender-talks",
  "style": "S5",
  "hook": {
-  "text": "$432 A YEAR ON APPS I FORGOT",
+  "text": "$432 ON FORGOTTEN APPS",
   "again": "line:6"
  },
  "cast": {
@@ -49,6 +49,16 @@ export const RECIPE: Recipe = {
      "at": "mark:-0.7,1.7,0.3",
      "motion": "fly-in",
      "hit": "twelve"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "twelve"
+    },
+    {
+     "fx": "shake",
+     "at": "month"
     }
    ]
   },
@@ -209,4 +219,4 @@ export const RECIPE: Recipe = {
   }
  ]
 };
-export const WORDS: Word[] = [{"w":"Hi,","turn":1,"t":0,"end":0.21},{"w":"I'm","turn":1,"t":0.21,"end":0.465},{"w":"Spender.","turn":1,"t":0.465,"end":0.9},{"w":"I","turn":1,"t":0.9,"end":1.065},{"w":"pay","turn":1,"t":1.065,"end":1.32},{"w":"twelve","turn":1,"t":1.32,"end":1.71},{"w":"dollars","turn":1,"t":1.71,"end":2.145},{"w":"a","turn":1,"t":2.145,"end":2.31},{"w":"month","turn":1,"t":2.31,"end":2.655},{"w":"for","turn":1,"t":2.655,"end":2.91},{"w":"an","turn":1,"t":2.91,"end":3.12},{"w":"app","turn":1,"t":3.12,"end":3.375},{"w":"I","turn":1,"t":3.375,"end":3.54},{"w":"forgot","turn":1,"t":3.54,"end":3.93},{"w":"about.","turn":1,"t":3.93,"end":4.275},{"w":"And","turn":2,"t":4.625,"end":4.88},{"w":"fifteen","turn":2,"t":4.88,"end":5.315},{"w":"for","turn":2,"t":5.315,"end":5.57},{"w":"a","turn":2,"t":5.57,"end":5.735},{"w":"show","turn":2,"t":5.735,"end":6.035},{"w":"I","turn":2,"t":6.035,"end":6.2},{"w":"watched","turn":2,"t":6.2,"end":6.635},{"w":"once.","turn":2,"t":6.635,"end":6.935},{"w":"And","turn":2,"t":6.935,"end":7.19},{"w":"nine","turn":2,"t":7.19,"end":7.49},{"w":"for","turn":2,"t":7.49,"end":7.745},{"w":"cloud","turn":2,"t":7.745,"end":8.09},{"w":"storage.","turn":2,"t":8.09,"end":8.525},{"w":"That's","turn":3,"t":8.875,"end":9.265},{"w":"nothing,","turn":3,"t":9.265,"end":9.7},{"w":"right?","turn":3,"t":9.7,"end":10.045},{"w":"Just","turn":3,"t":10.045,"end":10.345},{"w":"a","turn":3,"t":10.345,"end":10.51},{"w":"few","turn":3,"t":10.51,"end":10.765},{"w":"dollars.","turn":3,"t":10.765,"end":11.2},{"w":"Then","turn":4,"t":11.55,"end":11.85},{"w":"Saver","turn":4,"t":11.85,"end":12.195},{"w":"made","turn":4,"t":12.195,"end":12.495},{"w":"me","turn":4,"t":12.495,"end":12.705},{"w":"add","turn":4,"t":12.705,"end":12.96},{"w":"them","turn":4,"t":12.96,"end":13.26},{"w":"up","turn":4,"t":13.26,"end":13.47},{"w":"for","turn":4,"t":13.47,"end":13.725},{"w":"a","turn":4,"t":13.725,"end":13.89},{"w":"year.","turn":4,"t":13.89,"end":14.19},{"w":"Four","turn":5,"t":14.54,"end":14.84},{"w":"hundred","turn":5,"t":14.84,"end":15.275},{"w":"thirty","turn":5,"t":15.275,"end":15.665},{"w":"two","turn":5,"t":15.665,"end":15.92},{"w":"dollars.","turn":5,"t":15.92,"end":16.355},{"w":"For","turn":5,"t":16.355,"end":16.61},{"w":"stuff","turn":5,"t":16.61,"end":16.955},{"w":"I","turn":5,"t":16.955,"end":17.12},{"w":"don't","turn":5,"t":17.12,"end":17.465},{"w":"even","turn":5,"t":17.465,"end":17.765},{"w":"use.","turn":5,"t":17.765,"end":18.02},{"w":"So","turn":6,"t":18.37,"end":18.58},{"w":"check","turn":6,"t":18.58,"end":18.925},{"w":"your","turn":6,"t":18.925,"end":19.225},{"w":"subscriptions","turn":6,"t":19.225,"end":19.93},{"w":"today.","turn":6,"t":19.93,"end":20.275},{"w":"I'm","turn":6,"t":20.275,"end":20.53},{"w":"cancelling","turn":6,"t":20.53,"end":21.1},{"w":"three","turn":6,"t":21.1,"end":21.445},{"w":"right","turn":6,"t":21.445,"end":21.79},{"w":"now.","turn":6,"t":21.79,"end":22.045}];
+export const WORDS: Word[] = [{"w":"I","turn":1,"t":0,"end":0.165},{"w":"pay","turn":1,"t":0.165,"end":0.42},{"w":"twelve","turn":1,"t":0.42,"end":0.81},{"w":"dollars","turn":1,"t":0.81,"end":1.245},{"w":"a","turn":1,"t":1.245,"end":1.41},{"w":"month","turn":1,"t":1.41,"end":1.755},{"w":"for","turn":1,"t":1.755,"end":2.01},{"w":"an","turn":1,"t":2.01,"end":2.22},{"w":"app","turn":1,"t":2.22,"end":2.475},{"w":"I","turn":1,"t":2.475,"end":2.64},{"w":"forgot","turn":1,"t":2.64,"end":3.03},{"w":"about.","turn":1,"t":3.03,"end":3.375},{"w":"I'm","turn":1,"t":3.375,"end":3.63},{"w":"Spender.","turn":1,"t":3.63,"end":4.065},{"w":"And","turn":2,"t":4.415,"end":4.67},{"w":"fifteen","turn":2,"t":4.67,"end":5.105},{"w":"for","turn":2,"t":5.105,"end":5.36},{"w":"a","turn":2,"t":5.36,"end":5.525},{"w":"show","turn":2,"t":5.525,"end":5.825},{"w":"I","turn":2,"t":5.825,"end":5.99},{"w":"watched","turn":2,"t":5.99,"end":6.425},{"w":"once.","turn":2,"t":6.425,"end":6.725},{"w":"And","turn":2,"t":6.725,"end":6.98},{"w":"nine","turn":2,"t":6.98,"end":7.28},{"w":"for","turn":2,"t":7.28,"end":7.535},{"w":"cloud","turn":2,"t":7.535,"end":7.88},{"w":"storage.","turn":2,"t":7.88,"end":8.315},{"w":"That's","turn":3,"t":8.665,"end":9.055},{"w":"nothing,","turn":3,"t":9.055,"end":9.49},{"w":"right?","turn":3,"t":9.49,"end":9.835},{"w":"Just","turn":3,"t":9.835,"end":10.135},{"w":"a","turn":3,"t":10.135,"end":10.3},{"w":"few","turn":3,"t":10.3,"end":10.555},{"w":"dollars.","turn":3,"t":10.555,"end":10.99},{"w":"Then","turn":4,"t":11.34,"end":11.64},{"w":"Saver","turn":4,"t":11.64,"end":11.985},{"w":"made","turn":4,"t":11.985,"end":12.285},{"w":"me","turn":4,"t":12.285,"end":12.495},{"w":"add","turn":4,"t":12.495,"end":12.75},{"w":"them","turn":4,"t":12.75,"end":13.05},{"w":"up","turn":4,"t":13.05,"end":13.26},{"w":"for","turn":4,"t":13.26,"end":13.515},{"w":"a","turn":4,"t":13.515,"end":13.68},{"w":"year.","turn":4,"t":13.68,"end":13.98},{"w":"Four","turn":5,"t":14.33,"end":14.63},{"w":"hundred","turn":5,"t":14.63,"end":15.065},{"w":"thirty","turn":5,"t":15.065,"end":15.455},{"w":"two","turn":5,"t":15.455,"end":15.71},{"w":"dollars.","turn":5,"t":15.71,"end":16.145},{"w":"For","turn":5,"t":16.145,"end":16.4},{"w":"stuff","turn":5,"t":16.4,"end":16.745},{"w":"I","turn":5,"t":16.745,"end":16.91},{"w":"don't","turn":5,"t":16.91,"end":17.255},{"w":"even","turn":5,"t":17.255,"end":17.555},{"w":"use.","turn":5,"t":17.555,"end":17.81},{"w":"So","turn":6,"t":18.16,"end":18.37},{"w":"check","turn":6,"t":18.37,"end":18.715},{"w":"your","turn":6,"t":18.715,"end":19.015},{"w":"subscriptions","turn":6,"t":19.015,"end":19.72},{"w":"today.","turn":6,"t":19.72,"end":20.065},{"w":"I'm","turn":6,"t":20.065,"end":20.32},{"w":"cancelling","turn":6,"t":20.32,"end":20.89},{"w":"three","turn":6,"t":20.89,"end":21.235},{"w":"right","turn":6,"t":21.235,"end":21.58},{"w":"now.","turn":6,"t":21.58,"end":21.835}];

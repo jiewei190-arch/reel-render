@@ -69,6 +69,12 @@ export const RECIPE: Recipe = {
      "hit": 0.25,
      "drop": 0.6
     }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "only"
+    }
    ]
   },
   {

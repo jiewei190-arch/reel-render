@@ -209,20 +209,28 @@ Useful ids by story:
 
 It uses the same box maths as `tools/story_qa.mjs`, extended with feet, hands and set pieces.
 
-**Frame-0 gate** (FORMAT_V1 "PRE-POST GATE"):
+**Frame-0 gate** (FORMAT_V1 "PRE-POST GATE", plus the "Day-1 data and fixes" of 2026-11-18):
 - At frame 0, some subject covers at least 50 % of the frame height. This is a real projection through the frame-0 camera, clipped to the frame.
-- The hook text is on screen at frame 0 and has 8 words or fewer.
+- The hook text is on screen at frame 0 and has **5 words or fewer** (day-1 fix 2).
 - A `$` amount or a time is on screen by 0.5 s.
-- The first word is spoken by 0.3 s.
+- The first word is spoken by **0.2 s**.
+- A **sound punch at 0.00 s**: impact, drop, crash, rip and so on. The compiler adds `impact` at 0; `"sfx0"` picks another.
+- **No character names in the first 2 s of speech** (day-1 fix 1). Line 1 is about "you" or a plain person.
+- **No tag before 1.0 s.** Word captions also start at 1.0 s, so frame 0 has ONE text layer (day-1 fix 2).
+- **2-3 cuts or big moves in the first 3 s**: shot changes, slams, drops, bursts or `shake` hits (day-1 fix 5).
 - Music and an SFX play at frame 0.
 - An emotion changes by 1.5 s.
 - No wide or dark shot in the first 1 s.
 - The length is 20-30 s. This one is a warning only.
 
+The reference port `minimum-payment-trap` (live; 59.7 % stayed on day 1) passes the clip QA. It FAILS two day-1 checks: its hook has 7 words, and its line 1 opens with "Spender". These are exactly the shared problems the day-1 data points at. The recipe is kept as a faithful port of the published Short.
+
 **Typical fixes:**
 - `CLIP x spender.handR`: move the prop, or change the pose.
 - `feet float`: a non-grounded pose was used for standing.
 - Frame 0 under 50 %: lower `dist`, or use `closeUp` or `slamZoom`.
+- Hook too long: cut it to 5 words. Fewer than 2 moves in the first 3 s: add a cut, a `dropSlam`, or `"fx": [{"fx": "shake", "at": "<word>"}]`.
+- A name in the first 2 s: open on "you" or the money, and bring the name in later.
 - No stake: put the `$` or the time in the hook text, or drop a label at frame 0.
 - No emotion change: add `then: [{ at: <early word>, pose }]`.
 
@@ -236,7 +244,7 @@ Each example lives in `docs/recipe_examples/<slug>/` with `script.txt`, syntheti
 
 Script (`docs/recipe_examples/s1-split-payments/script.txt`):
 
-> Spender split his sneakers into four easy payments. Then he did it nine more times.
+> Four easy payments for new sneakers. Then Spender did it nine more times.
 > Each one felt tiny. Forty dollars here, sixty there.
 > But wait till you see the first of the month.
 > Ten payments hit on the same day. Five hundred dollars, gone at once.
@@ -251,7 +259,7 @@ Script (`docs/recipe_examples/s1-split-payments/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "forty", "until": "line:5"},
   "shots": [
-    {"at": 0, "set": "store", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.3, "dist": 2.2, "az": -10}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "sneakers", "pose": "celebrate"}]}], "props": [{"id": "shoes", "asset": "cardboard-box", "at": "counterTop:0.4,0,0.1", "motion": "dropSlam", "hit": 0.3, "drop": 0.9}], "fx": [{"fx": "dust", "at": 0.3, "p": "counterTop:0.4,0.02,0.1"}]},
+    {"at": 0, "set": "store", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.3, "dist": 2.2, "az": -10}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "easy", "pose": "celebrate"}]}], "props": [{"id": "shoes", "asset": "cardboard-box", "at": "counterTop:0.4,0,0.1", "motion": "dropSlam", "hit": 0.3, "drop": 0.9}], "fx": [{"fx": "dust", "at": 0.3, "p": "counterTop:0.4,0.02,0.1"}]},
     {"at": "then", "cam": {"preset": "medium", "target": "spender", "dist": 3.0, "az": -25}, "actors": [{"id": "spender", "pose": "celebrate", "at": "mark"}], "props": [{"id": "boxes", "asset": "box", "s": 0.6, "at": "left", "motion": "rain", "n": 9, "area": [1.4, 0.8]}]},
     {"at": "tiny", "cam": {"preset": "closeUp", "target": "price", "dist": 1.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}], "props": [{"id": "price", "kit": "label", "text": "$40", "at": "counterTop:0.2,0.5,0.4", "motion": "fly-in", "hit": "forty"}, {"id": "price2", "kit": "label", "text": "$60", "at": "counterTop:-0.6,0.8,0.4", "motion": "fly-in", "hit": "sixty"}]},
     {"at": "wait", "set": "home", "cam": {"preset": "pushIn", "target": "cal", "dist": 2.2}, "props": [{"id": "cal", "kit": "calendar", "text": ["DAY", "1", "FIRST OF THE MONTH"], "at": "wall"}]},
@@ -282,7 +290,7 @@ Script (`docs/recipe_examples/s2-same-paycheck/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
   "shots": [
-    {"at": 0, "set": "office", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 2.0}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}]},
+    {"at": 0, "set": "office", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 2.0}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}], "fx": [{"fx": "shake", "at": "only"}]},
     {"at": "saver", "cam": {"preset": "pushIn", "target": "jar", "dist": 2.4}, "actors": [{"id": "saver", "pose": "reach", "at": "left", "face": "jar"}], "props": [{"id": "jar", "kit": "jar", "text": ["SAVINGS"], "fill": 0.2, "color": "#1f9e4f", "at": "left:-1.1,0,-0.6"}, {"id": "in", "kit": "coin", "at": "left:-1.1,1.6,-0.6", "motion": "rain", "n": 6, "area": [0.3, 0.2]}]},
     {"at": "spender", "set": "store", "cam": {"preset": "whip", "target": "spender", "dist": 2.8}, "actors": [{"id": "spender", "pose": "swipe-card", "at": "mark", "from": "spends"}], "props": [{"id": "card", "kit": "card", "at": "spender.handR"}]},
     {"at": "nothing", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "nothing", "dist": 1.5}, "actors": [{"id": "spender", "pose": "despair", "at": "mark", "from": "nothing"}]},
@@ -308,11 +316,11 @@ Script (`docs/recipe_examples/s3-pov-first-paycheck/script.txt`):
 {
   "slug": "s3-pov-first-paycheck",
   "style": "S3",
-  "hook": {"text": "POV: $1,800 AND A NEW PHONE", "again": "line:6"},
+  "hook": {"text": "POV: $1,800 PAYCHECK", "again": "line:6"},
   "cast": {"you": "SPENDER", "friend": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "rent", "until": "line:6"},
   "shots": [
-    {"at": 0, "set": "home", "cam": {"preset": "povFirstPerson", "targets": ["you", "pay"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1], "then": [{"at": "first", "pose": "celebrate"}]}], "props": [{"id": "pay", "kit": "label", "text": ["PAYCHECK", "$1,800"], "color": "#1f9e4f", "size": [1.0, 0.62, 0.05], "at": [0.2, 1.5, 0.35], "motion": "fly-in", "hit": 0.08}]},
+    {"at": 0, "set": "home", "cam": {"preset": "povFirstPerson", "targets": ["you", "pay"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1], "then": [{"at": "first", "pose": "celebrate"}]}], "props": [{"id": "pay", "kit": "label", "text": ["PAYCHECK", "$1,800"], "color": "#1f9e4f", "size": [1.0, 0.62, 0.05], "at": [0.2, 1.5, 0.35], "motion": "fly-in", "hit": 0.08}], "fx": [{"fx": "shake", "at": "first"}, {"fx": "shake", "at": "eighteen"}]},
     {"at": "open", "cam": {"preset": "povFirstPerson", "targets": ["you", "phone"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1]}], "props": [{"id": "phone", "asset": "laptop", "at": [0.2, 0.9, 0.1], "glow": 0.3}, {"id": "plinth", "asset": "plinth", "s": 1.1, "at": [0.2, 0, 0.1]}]},
     {"at": "friend", "cam": {"preset": "closeUp", "target": "friend.face", "dist": 1.5}, "actors": [{"id": "friend", "pose": "point", "at": "mark", "emotion": "sly"}]},
     {"at": "hold", "cam": {"preset": "slamZoom", "target": "friend.face", "hit": "hold", "dist": 1.4}, "actors": [{"id": "friend", "pose": "shock", "at": "mark", "from": "hold"}]},
@@ -338,12 +346,12 @@ Script (`docs/recipe_examples/s4-penny-or-million/script.txt`):
 {
   "slug": "s4-penny-or-million",
   "style": "S4",
-  "hook": {"text": "$1 MILLION OR A DOUBLING PENNY?", "until": "end:fast", "again": "end:penny#4"},
+  "hook": {"text": "$1M OR A PENNY?", "until": "end:fast", "again": "end:penny#4"},
   "duration": 21.0,
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "MATH CHECK", "from": "ten", "until": "end:penny#4"},
   "shots": [
-    {"at": 0, "set": "bank", "cam": {"preset": "splitScreen", "targets": ["million", "penny"], "dist": 1.9}, "actors": [{"id": "spender", "pose": "point", "at": "left", "face": "million", "then": [{"at": "right", "pose": "shock"}]}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "million", "kit": "block", "text": ["$1,000,000"], "color": "#1f9e4f", "size": [1.0, 0.8, 0.6], "at": "left:-0.9,0,-0.6", "motion": "dropSlam", "hit": 0.25, "drop": 0.8}, {"id": "penny", "asset": "coin-bronze", "s": 1.4, "at": "right:-1.2,1.0,-0.5", "motion": "fly-in", "hit": 0.3}]},
+    {"at": 0, "set": "bank", "cam": {"preset": "splitScreen", "targets": ["million", "penny"], "dist": 1.9}, "actors": [{"id": "spender", "pose": "point", "at": "left", "face": "million", "then": [{"at": "right", "pose": "shock"}]}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "million", "kit": "block", "text": ["$1,000,000"], "color": "#1f9e4f", "size": [1.0, 0.8, 0.6], "at": "left:-0.9,0,-0.6", "motion": "dropSlam", "hit": 0.25, "drop": 0.8}, {"id": "penny", "asset": "coin-bronze", "s": 1.4, "at": "right:-1.2,1.0,-0.5", "motion": "fly-in", "hit": 0.3}], "fx": [{"fx": "shake", "at": "now"}]},
     {"at": "think", "caption": "COMMENT YOUR PICK", "cam": {"preset": "orbit", "target": "centre:0,1.2,-0.3", "dist": 4.6}, "actors": [{"id": "spender", "pose": "smug", "at": "left"}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "q", "kit": "label", "text": ["?"], "size": [0.6, 0.6, 0.05], "at": "wall"}]},
     {"at": "ten", "cam": {"preset": "medium", "target": "day", "dist": 2.6}, "actors": [{"id": "spender", "pose": "celebrate", "at": "left"}], "props": [{"id": "day", "kit": "label", "text": ["DAY 10"], "size": [1.0, 0.5, 0.05], "at": "counterTop:0,0.5,0.2", "motion": "count-up", "hit": "ten", "count": {"from": 0.01, "to": 5, "prefix": "$", "dur": 0.6}}]},
     {"at": "twenty", "cam": {"preset": "pushIn", "target": "day", "dist": 2.4}, "props": [{"id": "day", "kit": "label", "text": ["DAY 20"], "size": [1.0, 0.5, 0.05], "at": "counterTop:0,0.5,0.2", "motion": "count-up", "hit": "twenty", "count": {"from": 5, "to": 5243, "prefix": "$", "dur": 0.8}}]},
@@ -357,7 +365,7 @@ Script (`docs/recipe_examples/s4-penny-or-million/script.txt`):
 
 Script (`docs/recipe_examples/s5-spender-talks/script.txt`):
 
-> Hi, I'm Spender. I pay twelve dollars a month for an app I forgot about.
+> I pay twelve dollars a month for an app I forgot about. I'm Spender.
 > And fifteen for a show I watched once. And nine for cloud storage.
 > That's nothing, right? Just a few dollars.
 > Then Saver made me add them up for a year.
@@ -368,11 +376,11 @@ Script (`docs/recipe_examples/s5-spender-talks/script.txt`):
 {
   "slug": "s5-spender-talks",
   "style": "S5",
-  "hook": {"text": "$432 A YEAR ON APPS I FORGOT", "again": "line:6"},
+  "hook": {"text": "$432 ON FORGOTTEN APPS", "again": "line:6"},
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "line:4", "until": "line:6"},
   "shots": [
-    {"at": 0, "set": "home", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.6}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "pay", "pose": "shock"}]}], "props": [{"id": "sub1", "kit": "label", "text": "$12/MO", "at": "mark:-0.7,1.7,0.3", "motion": "fly-in", "hit": "twelve"}]},
+    {"at": 0, "set": "home", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.6}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "pay", "pose": "shock"}]}], "props": [{"id": "sub1", "kit": "label", "text": "$12/MO", "at": "mark:-0.7,1.7,0.3", "motion": "fly-in", "hit": "twelve"}], "fx": [{"fx": "shake", "at": "twelve"}, {"fx": "shake", "at": "month"}]},
     {"at": "fifteen", "cam": {"preset": "medium", "target": "spender", "dist": 2.8, "az": 15}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "face": "tv"}], "props": [{"id": "sub2", "kit": "label", "text": "$15/MO", "at": "mark:-0.9,1.9,0.2", "motion": "dropSlam", "hit": "fifteen", "drop": 0.8}, {"id": "sub3", "kit": "label", "text": "$9/MO", "at": "mark:0.9,1.9,0.2", "motion": "dropSlam", "hit": "nine", "drop": 0.8}]},
     {"at": "nothing", "cam": {"preset": "pushIn", "target": "spender.face", "dist": 1.8}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}]},
     {"at": "then", "cam": {"preset": "medium", "target": "saver", "dist": 2.8}, "actors": [{"id": "saver", "pose": "point", "at": "right", "face": "spender"}, {"id": "spender", "pose": "idle", "at": "left", "emotion": "curious"}], "props": [{"id": "receipt", "kit": "label", "text": ["1 YEAR OF", "SUBSCRIPTIONS"], "size": [0.9, 0.4, 0.05], "at": "right:-0.9,1.5,0.3", "motion": "fly-in", "hit": "add"}]},
@@ -397,7 +405,7 @@ Script (`docs/recipe_examples/s6-three-traps/script.txt`):
 {
   "slug": "s6-three-traps",
   "style": "S6",
-  "hook": {"text": "3 MONEY TRAPS. #1 IS THE WORST.", "again": "line:6"},
+  "hook": {"text": "3 TRAPS. #1 IS WORST.", "again": "line:6"},
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
   "shots": [

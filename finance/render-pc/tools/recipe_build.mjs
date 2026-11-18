@@ -137,11 +137,27 @@ const emo0 = new Map(C.actorsAt(0).map((a) => [a.id, a.emotion]));
 let emoAt = null;
 for (let f = 1; f <= 45 && emoAt === null; f++) for (const a of C.actorsAt(f / 30)) if (!emo0.has(a.id) || emo0.get(a.id) !== a.emotion) { emoAt = f / 30; break; }
 const early = C.shots.filter((s) => s.a < 1.0);
+// day-1 fixes (FORMAT_V1 "Day-1 data and fixes", 2026-11-18)
+const castNames = Object.values(recipe.cast).map((k) => String(k).toLowerCase()).concat(["spender", "saver"]); // the characters' names (looks), not cast ids like "you"
+const clean = (w) => w.toLowerCase().replace(/[^a-z0-9']/g, "");
+const namesEarly = words.filter((w) => w.t < 2.0 && castNames.includes(clean(w.w))).map((w) => `${w.w}@${w.t.toFixed(2)}`);
+const tagFrom = recipe.tag ? C.at(recipe.tag.from) : 99;
+const PUNCH = /^(impact|drop|crash|boom|thud|punch|stamp|coins|scratch|paper|rip)/;
+const sfx0 = C.audio.cues.filter((c) => c.t <= 0.02);
+const moves = new Set();
+for (const s of C.shots) {
+  if (s.a > 0 && s.a <= 3.0) moves.add(`cut ${s.a.toFixed(2)}`);
+  for (const [t] of s.kicks) if (t <= 3.0) moves.add(`hit ${t.toFixed(2)}`);
+}
 const gate = [
   ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
-  ["hook text on screen at frame 0, <= 8 words", C.hookUntil > 0 && hookWords <= 8, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
+  ["hook text on screen at frame 0, <= 5 words (day-1 fix 2)", C.hookUntil > 0 && hookWords <= 5, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
   ["the stake ($ or a time) on screen by 0.5 s", stakeAt !== null, stakeAt === null ? "no $/time text by 0.5 s" : `at ${stakeAt.toFixed(2)} s`, true],
-  ["first spoken word by 0.3 s", words[0].t <= 0.3, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
+  ["first spoken word by 0.2 s (day-1 fix 3)", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
+  ["a sound punch at 0.00 s (impact/drop/crash/rip...)", sfx0.some((c) => PUNCH.test(c.sfx)), sfx0.map((c) => c.sfx).join(", ") || "none", true],
+  ["no character names in the first 2 s of speech (day-1 fix 1)", namesEarly.length === 0, namesEarly.join(", ") || "none", true],
+  ["no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2)", tagFrom >= 1.0, recipe.tag ? `tag from ${tagFrom.toFixed(2)} s` : "no tag", true],
+  ["2-3 cuts or big moves in the first 3 s (day-1 fix 5)", moves.size >= 2, [...moves].join(", ") || "none", true],
   ["music + an SFX at frame 0", !!C.audio.music && C.audio.cues.some((c) => c.t <= 0.05), `${C.audio.music}, ${C.audio.cues.filter((c) => c.t <= 0.05).map((c) => c.sfx).join(", ")}`, true],
   ["an emotion change by 1.5 s", emoAt !== null, emoAt === null ? "no actor's emotion changes by 1.5 s" : `at ${emoAt.toFixed(2)} s`, true],
   ["no wide or dark shot in the first 1 s", early.every((s) => s.spec.cam.preset !== "wide" && s.lens.mood !== "whisper"), early.map((s) => `${s.id} ${s.spec.cam.preset}/${s.lens.mood}`).join(", "), true],

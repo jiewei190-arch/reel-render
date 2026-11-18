@@ -7,7 +7,7 @@ export const RECIPE: Recipe = {
  "slug": "s4-penny-or-million",
  "style": "S4",
  "hook": {
-  "text": "$1 MILLION OR A DOUBLING PENNY?",
+  "text": "$1M OR A PENNY?",
   "until": "end:fast",
   "again": "end:penny#4"
  },
@@ -77,6 +77,12 @@ export const RECIPE: Recipe = {
      "at": "right:-1.2,1.0,-0.5",
      "motion": "fly-in",
      "hit": 0.3
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "now"
     }
    ]
   },

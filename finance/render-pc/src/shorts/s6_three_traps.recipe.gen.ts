@@ -7,7 +7,7 @@ export const RECIPE: Recipe = {
  "slug": "s6-three-traps",
  "style": "S6",
  "hook": {
-  "text": "3 MONEY TRAPS. #1 IS THE WORST.",
+  "text": "3 TRAPS. #1 IS WORST.",
   "again": "line:6"
  },
  "cast": {

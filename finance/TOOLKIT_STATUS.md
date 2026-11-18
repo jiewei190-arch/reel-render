@@ -66,3 +66,18 @@ Everything is under `finance/render-pc/`. Nothing touches the per-Short `.tsx` f
 - **No full video render or audio mix here.** CPU stills only. The recipe Shorts render on the PC with the usual `render.sh`, pointed at `src/index.toolkit.ts`.
 - **Root.tsx.** To show recipes in the main studio, add `RECIPES` from `src/fin/recipe/registry.gen.ts` to `src/Root.tsx`. This was left to the owner so the shared file isn't touched.
 - **Possible preset additions:** a "pages fly out" motion (the mintrap S03 calendar), an "object chip" motion, and held props with a proper grip.
+
+## Update: day-1 fixes in the gate (2026-11-18, later)
+`tools/recipe_build.mjs` now enforces the FORMAT_V1 section "Day-1 data and fixes":
+- hook ≤ 5 words;
+- first word by 0.2 s;
+- a sound punch at 0.00 s (the compiler's default cue at 0 is now `impact`; set `recipe.sfx0` for another, e.g. a rip);
+- no character names in the first 2 s of speech;
+- no tag before 1.0 s;
+- 2-3 cuts or big moves in the first 3 s.
+
+`RecipeFilm` now holds word captions until 1.0 s, so frame 0 has one text layer.
+
+The six style examples were updated and pass. The minimum-payment-trap port (the live TV Short, 59.7 % stayed) passes the clip QA but fails two of these checks: the 7-word hook, and "Spender" as its first word. It is kept as a faithful port.
+
+The two new Shorts MAIN asked for (ten-beats-thirty with ElevenLabs Tyler, prices-double with Christopher) are NOT started. They need the owner's OK on the paid ElevenLabs API and on pushing to finance/v1rebuild.

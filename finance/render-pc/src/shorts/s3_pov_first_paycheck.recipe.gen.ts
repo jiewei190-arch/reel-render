@@ -7,7 +7,7 @@ export const RECIPE: Recipe = {
  "slug": "s3-pov-first-paycheck",
  "style": "S3",
  "hook": {
-  "text": "POV: $1,800 AND A NEW PHONE",
+  "text": "POV: $1,800 PAYCHECK",
   "again": "line:6"
  },
  "cast": {
@@ -72,6 +72,16 @@ export const RECIPE: Recipe = {
      ],
      "motion": "fly-in",
      "hit": 0.08
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "first"
+    },
+    {
+     "fx": "shake",
+     "at": "eighteen"
     }
    ]
   },
