@@ -1,0 +1,384 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 25.213
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "One number tells you when your money doubles. Seventy-two.",
+   "words": [
+    {
+     "w": "One",
+     "t": 0.0,
+     "end": 0.38
+    },
+    {
+     "w": "number",
+     "t": 0.38,
+     "end": 0.66
+    },
+    {
+     "w": "tells",
+     "t": 0.66,
+     "end": 0.92
+    },
+    {
+     "w": "you",
+     "t": 0.92,
+     "end": 1.2
+    },
+    {
+     "w": "when",
+     "t": 1.2,
+     "end": 1.44
+    },
+    {
+     "w": "your",
+     "t": 1.44,
+     "end": 1.56
+    },
+    {
+     "w": "money",
+     "t": 1.56,
+     "end": 1.76
+    },
+    {
+     "w": "doubles.",
+     "t": 1.76,
+     "end": 2.18
+    },
+    {
+     "w": "Seventy-two.",
+     "t": 2.54,
+     "end": 3.429
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Divide it by the yearly interest rate.",
+   "words": [
+    {
+     "w": "Divide",
+     "t": 3.429,
+     "end": 3.962
+    },
+    {
+     "w": "it",
+     "t": 3.962,
+     "end": 4.14
+    },
+    {
+     "w": "by",
+     "t": 4.14,
+     "end": 4.58
+    },
+    {
+     "w": "the",
+     "t": 4.58,
+     "end": 4.94
+    },
+    {
+     "w": "yearly",
+     "t": 4.94,
+     "end": 5.26
+    },
+    {
+     "w": "interest",
+     "t": 5.26,
+     "end": 5.64
+    },
+    {
+     "w": "rate.",
+     "t": 5.64,
+     "end": 5.96
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Six percent? About twelve years.",
+   "words": [
+    {
+     "w": "Six",
+     "t": 6.5,
+     "end": 6.68
+    },
+    {
+     "w": "percent?",
+     "t": 6.68,
+     "end": 7.1
+    },
+    {
+     "w": "About",
+     "t": 7.1,
+     "end": 7.78
+    },
+    {
+     "w": "twelve",
+     "t": 7.78,
+     "end": 8.26
+    },
+    {
+     "w": "years.",
+     "t": 8.26,
+     "end": 8.58
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Eight percent? About nine.",
+   "words": [
+    {
+     "w": "Eight",
+     "t": 9.2,
+     "end": 9.475
+    },
+    {
+     "w": "percent?",
+     "t": 9.475,
+     "end": 9.86
+    },
+    {
+     "w": "About",
+     "t": 9.86,
+     "end": 10.26
+    },
+    {
+     "w": "nine.",
+     "t": 10.26,
+     "end": 10.674
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Twelve percent? About six.",
+   "words": [
+    {
+     "w": "Twelve",
+     "t": 10.674,
+     "end": 11.295
+    },
+    {
+     "w": "percent?",
+     "t": 11.295,
+     "end": 12.02
+    },
+    {
+     "w": "About",
+     "t": 12.02,
+     "end": 12.38
+    },
+    {
+     "w": "six.",
+     "t": 12.38,
+     "end": 12.78
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "It's a shortcut, not a promise. Real returns go up and down.",
+   "words": [
+    {
+     "w": "It's",
+     "t": 13.4,
+     "end": 13.6
+    },
+    {
+     "w": "a",
+     "t": 13.6,
+     "end": 13.66
+    },
+    {
+     "w": "shortcut,",
+     "t": 13.66,
+     "end": 13.96
+    },
+    {
+     "w": "not",
+     "t": 14.24,
+     "end": 14.34
+    },
+    {
+     "w": "a",
+     "t": 14.34,
+     "end": 14.44
+    },
+    {
+     "w": "promise.",
+     "t": 14.44,
+     "end": 14.74
+    },
+    {
+     "w": "Real",
+     "t": 15.34,
+     "end": 15.46
+    },
+    {
+     "w": "returns",
+     "t": 15.46,
+     "end": 15.84
+    },
+    {
+     "w": "go",
+     "t": 15.84,
+     "end": 16.04
+    },
+    {
+     "w": "up",
+     "t": 16.04,
+     "end": 16.22
+    },
+    {
+     "w": "and",
+     "t": 16.22,
+     "end": 16.32
+    },
+    {
+     "w": "down.",
+     "t": 16.32,
+     "end": 16.58
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Now flip it.",
+   "words": [
+    {
+     "w": "Now",
+     "t": 17.18,
+     "end": 17.34
+    },
+    {
+     "w": "flip",
+     "t": 17.34,
+     "end": 17.54
+    },
+    {
+     "w": "it.",
+     "t": 17.54,
+     "end": 17.78
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "A card charging twenty-four percent can double what you owe in about three years.",
+   "words": [
+    {
+     "w": "A",
+     "t": 18.2,
+     "end": 18.28
+    },
+    {
+     "w": "card",
+     "t": 18.28,
+     "end": 18.5
+    },
+    {
+     "w": "charging",
+     "t": 18.5,
+     "end": 18.8
+    },
+    {
+     "w": "twenty-four",
+     "t": 18.8,
+     "end": 19.259
+    },
+    {
+     "w": "percent",
+     "t": 19.259,
+     "end": 19.58
+    },
+    {
+     "w": "can",
+     "t": 19.58,
+     "end": 19.84
+    },
+    {
+     "w": "double",
+     "t": 19.84,
+     "end": 20.12
+    },
+    {
+     "w": "what",
+     "t": 20.12,
+     "end": 20.3
+    },
+    {
+     "w": "you",
+     "t": 20.3,
+     "end": 20.44
+    },
+    {
+     "w": "owe",
+     "t": 20.44,
+     "end": 20.6
+    },
+    {
+     "w": "in",
+     "t": 20.6,
+     "end": 20.74
+    },
+    {
+     "w": "about",
+     "t": 20.74,
+     "end": 20.94
+    },
+    {
+     "w": "three",
+     "t": 20.94,
+     "end": 21.26
+    },
+    {
+     "w": "years.",
+     "t": 21.26,
+     "end": 21.56
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "Same maths, wrong side. So remember...",
+   "words": [
+    {
+     "w": "Same",
+     "t": 22.22,
+     "end": 22.5
+    },
+    {
+     "w": "maths,",
+     "t": 22.5,
+     "end": 22.88
+    },
+    {
+     "w": "wrong",
+     "t": 23.16,
+     "end": 23.36
+    },
+    {
+     "w": "side.",
+     "t": 23.36,
+     "end": 23.72
+    },
+    {
+     "w": "So",
+     "t": 24.06,
+     "end": 24.2
+    },
+    {
+     "w": "remember...",
+     "t": 24.2,
+     "end": 24.48
+    }
+   ]
+  }
+ ]
+}

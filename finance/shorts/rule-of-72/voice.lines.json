@@ -1,0 +1,157 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 25.213,
+ "render_s": 224.3,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "One number tells you when your money doubles. Seventy-two.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "One number tells you when your money doubles. Seventy-two.",
+     "seed": 7,
+     "heard": "One number tells you when your money doubles. 72.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.552
+  },
+  {
+   "n": 2,
+   "text": "Divide it by the yearly interest rate.",
+   "start": 3.852,
+   "parts": [
+    {
+     "tts": "Divide it by the yearly interest rate.",
+     "seed": 7,
+     "heard": "divided by the yearly interest rate.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.204
+  },
+  {
+   "n": 3,
+   "text": "Six percent? About twelve years.",
+   "start": 6.504,
+   "parts": [
+    {
+     "tts": "Six percent? About twelve years.",
+     "seed": 7,
+     "heard": "6%, about 12 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.963
+  },
+  {
+   "n": 4,
+   "text": "Eight percent? About nine.",
+   "start": 9.263,
+   "parts": [
+    {
+     "tts": "Eight percent? About nine.",
+     "seed": 7,
+     "heard": "8%, about nine.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.951
+  },
+  {
+   "n": 5,
+   "text": "Twelve percent? About six.",
+   "start": 11.251,
+   "parts": [
+    {
+     "tts": "Twelve percent? About six.",
+     "seed": 7,
+     "heard": "Twelve percent, about six.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.114
+  },
+  {
+   "n": 6,
+   "text": "It's a shortcut, not a promise. Real returns go up and down.",
+   "start": 13.414,
+   "parts": [
+    {
+     "tts": "It's a shortcut, not a promise. Real returns go up and down.",
+     "seed": 7,
+     "heard": "It's a shortcut, not a promise. Real returns go up and down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.878
+  },
+  {
+   "n": 7,
+   "text": "Now flip it.",
+   "start": 17.178,
+   "parts": [
+    {
+     "tts": "Now flip it.",
+     "seed": 7,
+     "heard": "Now flip it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.865
+  },
+  {
+   "n": 8,
+   "text": "A card charging twenty-four percent can double what you owe in about three years.",
+   "start": 18.165,
+   "parts": [
+    {
+     "tts": "A card charging twenty-four percent can double what you owe in about three years.",
+     "seed": 11,
+     "heard": "A card charging 24% can double what you owe in about three years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.945
+  },
+  {
+   "n": 9,
+   "text": "Same maths, wrong side. So remember...",
+   "start": 22.245,
+   "parts": [
+    {
+     "tts": "Same maths, wrong side. So remember...",
+     "seed": 7,
+     "heard": "Same maths, wrong side, so remember",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.913
+  }
+ ]
+}
