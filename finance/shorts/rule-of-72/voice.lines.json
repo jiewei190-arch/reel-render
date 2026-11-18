@@ -12,11 +12,9 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 25.213,
- "render_s": 224.3,
- "qa_fail_lines": [
-  2
- ],
+ "duration": 25.049,
+ "render_s": 175.2,
+ "qa_fail_lines": [],
  "lines": [
   {
    "n": 1,
@@ -35,23 +33,23 @@
   },
   {
    "n": 2,
-   "text": "Divide it by the yearly interest rate.",
+   "text": "Divide that by the yearly interest rate.",
    "start": 3.852,
    "parts": [
     {
-     "tts": "Divide it by the yearly interest rate.",
+     "tts": "Divide that by the yearly interest rate.",
      "seed": 7,
-     "heard": "divided by the yearly interest rate.",
-     "wrong_words": 2,
-     "qa": "QA FAIL"
+     "heard": "divide that by the yearly interest rate.",
+     "wrong_words": 0,
+     "qa": "ok"
     }
    ],
-   "end": 6.204
+   "end": 6.041
   },
   {
    "n": 3,
    "text": "Six percent? About twelve years.",
-   "start": 6.504,
+   "start": 6.341,
    "parts": [
     {
      "tts": "Six percent? About twelve years.",
@@ -61,12 +59,12 @@
      "qa": "ok"
     }
    ],
-   "end": 8.963
+   "end": 8.8
   },
   {
    "n": 4,
    "text": "Eight percent? About nine.",
-   "start": 9.263,
+   "start": 9.1,
    "parts": [
     {
      "tts": "Eight percent? About nine.",
@@ -76,12 +74,12 @@
      "qa": "ok"
     }
    ],
-   "end": 10.951
+   "end": 10.787
   },
   {
    "n": 5,
    "text": "Twelve percent? About six.",
-   "start": 11.251,
+   "start": 11.087,
    "parts": [
     {
      "tts": "Twelve percent? About six.",
@@ -91,12 +89,12 @@
      "qa": "ok"
     }
    ],
-   "end": 13.114
+   "end": 12.95
   },
   {
    "n": 6,
    "text": "It's a shortcut, not a promise. Real returns go up and down.",
-   "start": 13.414,
+   "start": 13.25,
    "parts": [
     {
      "tts": "It's a shortcut, not a promise. Real returns go up and down.",
@@ -106,12 +104,12 @@
      "qa": "ok"
     }
    ],
-   "end": 16.878
+   "end": 16.715
   },
   {
    "n": 7,
    "text": "Now flip it.",
-   "start": 17.178,
+   "start": 17.015,
    "parts": [
     {
      "tts": "Now flip it.",
@@ -121,12 +119,12 @@
      "qa": "ok"
     }
    ],
-   "end": 17.865
+   "end": 17.701
   },
   {
    "n": 8,
    "text": "A card charging twenty-four percent can double what you owe in about three years.",
-   "start": 18.165,
+   "start": 18.001,
    "parts": [
     {
      "tts": "A card charging twenty-four percent can double what you owe in about three years.",
@@ -136,12 +134,12 @@
      "qa": "ok"
     }
    ],
-   "end": 21.945
+   "end": 21.782
   },
   {
    "n": 9,
    "text": "Same maths, wrong side. So remember...",
-   "start": 22.245,
+   "start": 22.082,
    "parts": [
     {
      "tts": "Same maths, wrong side. So remember...",
@@ -151,7 +149,7 @@
      "qa": "ok"
     }
    ],
-   "end": 24.913
+   "end": 24.749
   }
  ]
 }
