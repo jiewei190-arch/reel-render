@@ -24,7 +24,7 @@ const P_LD: V3 = [3.0, 0, -1.55];
 const PILE3: V3 = [2.0, 0, -4.2];
 const PILE7: V3 = [4.6, 0, -4.4];
 const SIGN: V3 = [-2.3, 0, -2.8];
-const T = Object.fromEntries(PLAN.map((p) => [p.id, p.t])) as Record<string, number>;
+
 const D = Object.fromEntries(PLAN.map((p) => [p.id, p.end - p.t])) as Record<string, number>;
 const idx = (id: string) => parseInt(id.slice(1), 10);
 const carPts = (c: V3): V3[] => [[c[0] - 0.8, 0, c[2] + 1.3], [c[0] + 0.8, 1.6, c[2] - 1.3]];
