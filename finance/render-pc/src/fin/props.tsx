@@ -19,13 +19,13 @@ const B: React.FC<{ s: V3; p: V3; c: string; r?: V3; e?: [string, number]; rough
 
 // ------------------------------------------------------------------ coins
 export const COIN = { r: 0.055, h: 0.014 };
-const coinMat = (copper: boolean, glow = 0) => plastic(copper ? "#a8521f" : PAL.coin, { rough: 0.32, emissive: copper ? "#5a2408" : "#c88a10", ei: copper ? 0.15 + 0.4 * glow : 0.25 + glow });
+const coinMat = (copper: boolean, glow = 0, tint?: string) => (tint ? plastic(tint, { rough: 0.32, emissive: tint, ei: 0.12 + 0.6 * glow }) : plastic(copper ? "#a8521f" : PAL.coin, { rough: 0.32, emissive: copper ? "#5a2408" : "#c88a10", ei: copper ? 0.15 + 0.4 * glow : 0.25 + glow }));
 /** one coin lying flat (or standing with rot); a ring + a raised centre so it reads as a coin at any size */
-export const Coin: React.FC<{ p?: V3; r?: V3; s?: number; copper?: boolean; glow?: number }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, copper = false, glow = 0 }) => (
+export const Coin: React.FC<{ p?: V3; r?: V3; s?: number; copper?: boolean; glow?: number; tint?: string }> = ({ p = [0, 0, 0], r = [0, 0, 0], s = 1, copper = false, glow = 0, tint }) => (
   <group position={p} rotation={r} scale={s}>
-    <mesh geometry={geoOf("coinBody", () => new THREE.CylinderGeometry(COIN.r, COIN.r, COIN.h, 28))} material={coinMat(copper, glow)} position={[0, COIN.h / 2, 0]} castShadow receiveShadow />
-    <mesh geometry={geoOf("coinRim", () => new THREE.TorusGeometry(COIN.r * 0.93, COIN.h * 0.32, 6, 28))} material={plastic(copper ? "#c86a30" : "#ffe27a", { rough: 0.3 })} position={[0, COIN.h, 0]} rotation={[Math.PI / 2, 0, 0]} />
-    <mesh geometry={geoOf("coinBoss", () => new THREE.CylinderGeometry(COIN.r * 0.45, COIN.r * 0.5, COIN.h * 0.5, 20))} material={plastic(copper ? "#b85e26" : "#ffd84a", { rough: 0.35 })} position={[0, COIN.h * 1.15, 0]} />
+    <mesh geometry={geoOf("coinBody", () => new THREE.CylinderGeometry(COIN.r, COIN.r, COIN.h, 28))} material={coinMat(copper, glow, tint)} position={[0, COIN.h / 2, 0]} castShadow receiveShadow />
+    <mesh geometry={geoOf("coinRim", () => new THREE.TorusGeometry(COIN.r * 0.93, COIN.h * 0.32, 6, 28))} material={plastic(tint ? tint : copper ? "#c86a30" : "#ffe27a", { rough: 0.3 })} position={[0, COIN.h, 0]} rotation={[Math.PI / 2, 0, 0]} />
+    <mesh geometry={geoOf("coinBoss", () => new THREE.CylinderGeometry(COIN.r * 0.45, COIN.r * 0.5, COIN.h * 0.5, 20))} material={plastic(tint ? tint : copper ? "#b85e26" : "#ffd84a", { rough: 0.35 })} position={[0, COIN.h * 1.15, 0]} />
   </group>
 );
 /** a straight stack of n coins (slightly jittered, seeded) */
@@ -47,12 +47,12 @@ export const CoinStack: React.FC<{ p: V3; n: number; seed?: number; copper?: boo
   );
 };
 /** a mound of coins: a cone of gold under a skin of seeded loose coins. r = base radius, h = height (grows from 0) */
-export const CoinPile: React.FC<{ p: V3; r: number; h: number; seed?: number; coins?: number; glow?: number; splitGlow?: number }> = ({ p, r, h, seed = 3, coins = 90, glow = 0, splitGlow = 0 }) => {
+export const CoinPile: React.FC<{ p: V3; r: number; h: number; seed?: number; coins?: number; glow?: number; splitGlow?: number; tint?: string }> = ({ p, r, h, seed = 3, coins = 90, glow = 0, splitGlow = 0, tint }) => {
   if (h <= 0.002 || r <= 0.002) return null;
   const slope = h / r;
   return (
     <group position={p}>
-      <mesh geometry={geoOf("pileCone", () => new THREE.ConeGeometry(1, 1, 48, 6))} material={plastic(PAL.coin, { rough: 0.35, emissive: "#c88a10", ei: 0.3 + glow })} scale={[r, h, r]} position={[0, h / 2, 0]} castShadow receiveShadow />
+      <mesh geometry={geoOf("pileCone", () => new THREE.ConeGeometry(1, 1, 48, 6))} material={plastic(tint ?? PAL.coin, { rough: 0.35, emissive: tint ?? "#c88a10", ei: tint ? 0.15 + glow : 0.3 + glow })} scale={[r, h, r]} position={[0, h / 2, 0]} castShadow receiveShadow />
       {Array.from({ length: coins }, (_, i) => {
         const a = hash(seed + i * 3.1) * Math.PI * 2;
         const u = Math.sqrt(hash(seed + i * 5.7)) * 0.96;
@@ -60,7 +60,7 @@ export const CoinPile: React.FC<{ p: V3; r: number; h: number; seed?: number; co
         const y = h * (1 - u) + 0.006;
         const tilt = Math.atan(slope);
         const sc = clamp(r / 1.2, 0.6, 3.2) * (0.8 + 0.5 * hash(seed + i));
-        return <Coin key={i} p={[Math.cos(a) * rr, y, Math.sin(a) * rr]} r={[tilt * Math.cos(a + Math.PI / 2) * 0.9, hash(i) * 3, tilt * Math.sin(a) * 0.9]} s={sc} />;
+        return <Coin key={i} p={[Math.cos(a) * rr, y, Math.sin(a) * rr]} r={[tilt * Math.cos(a + Math.PI / 2) * 0.9, hash(i) * 3, tilt * Math.sin(a) * 0.9]} s={sc} tint={tint} />;
       })}
       {splitGlow > 0 ? (
         <>
@@ -390,7 +390,7 @@ export const Hall: React.FC<{ W?: number; back?: number; front?: number; H?: num
   );
 };
 /** an outdoor ground: grass, a straight road along -z from z0 (the long road), lane marks, a sky behind */
-export const Ground: React.FC<{ road?: boolean; roadW?: number; grass?: string; roadColor?: string; len?: number }> = ({ road = false, roadW = 2.4, grass = "#5cc24a", roadColor = "#5a5a6e", len = 160 }) => (
+export const Ground: React.FC<{ road?: boolean; roadW?: number; grass?: string; roadColor?: string; len?: number; kerb?: string }> = ({ road = false, roadW = 2.4, grass = "#5cc24a", roadColor = "#5a5a6e", len = 160, kerb = "#efe6ff" }) => (
   <group>
     <mesh geometry={geoOf("groundGrass", () => new THREE.PlaneGeometry(400, 400))} material={plastic(grass, { rough: 0.9 })} rotation={[-Math.PI / 2, 0, 0]} receiveShadow />
     {road ? (
@@ -400,7 +400,7 @@ export const Ground: React.FC<{ road?: boolean; roadW?: number; grass?: string; 
           <mesh key={i} geometry={geoOf("roadDash", () => new THREE.PlaneGeometry(0.1, 0.8))} material={plastic("#fff4c8", { rough: 0.7 })} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.006, 3 - i * 2]} />
         ))}
         {[-1, 1].map((s) => (
-          <mesh key={s} geometry={geoOf(`kerb${len}`, () => new THREE.BoxGeometry(0.16, 0.08, len))} material={plastic("#efe6ff", { rough: 0.6 })} position={[(s * (roadW + 0.16)) / 2, 0.04, -len / 2 + 4]} receiveShadow castShadow />
+          <mesh key={s} geometry={geoOf(`kerb${len}`, () => new THREE.BoxGeometry(0.16, 0.08, len))} material={plastic(kerb, { rough: 0.6 })} position={[(s * (roadW + 0.16)) / 2, 0.04, -len / 2 + 4]} receiveShadow castShadow />
         ))}
       </>
     ) : null}
