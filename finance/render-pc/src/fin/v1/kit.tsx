@@ -68,7 +68,7 @@ export const TallJar: React.FC<{ p: V3; fill: number; label: string; r?: number;
       <mesh geometry={geoOf(`tj${r}|${h}`, () => new THREE.CylinderGeometry(r, r, h, 40, 1, true))} material={glass} position={[0, h / 2, 0]} renderOrder={3} />
       <mesh position={[0, (h * f) / 2, 0]} castShadow>
         <cylinderGeometry args={[r * 0.95, r * 0.95, h * f, 32]} />
-        <meshStandardMaterial color="#f0c040" roughness={0.35} emissive={glow > 0 ? color : "#c88a10"} emissiveIntensity={0.25 + glow} />
+        <meshStandardMaterial color="#f0c040" roughness={0.35} metalness={0.3} emissive={glow > 0 ? "#ff9a2a" : "#c88a10"} emissiveIntensity={0.2 + 0.4 * glow} />
       </mesh>
       {fill > 1 ? (
         <mesh position={[0, h + 0.12 * (fill - 1) * 4, 0]} castShadow>
@@ -77,7 +77,14 @@ export const TallJar: React.FC<{ p: V3; fill: number; label: string; r?: number;
         </mesh>
       ) : null}
       <B s={[r * 2.2, 0.08, r * 2.2]} p={[0, 0.04, 0]} c="#3a3f58" />
-      <Label p={[0, h * 0.62, r + 0.02]} text={[label]} w={r * 2.1} h={0.3} bg={color} fg="#ffffff" glow={0.4 + glow} />
+      {/* a few coins heaped on top so the fill reads as money, and the label outside the glass */}
+      {Array.from({ length: 7 }, (_, i) => (
+        <mesh key={i} position={[Math.cos(i * 2.4) * r * 0.5 * (i % 2 ? 1 : 0.4), h * f + 0.015 + 0.012 * (i % 3), Math.sin(i * 2.4) * r * 0.5 * (i % 2 ? 1 : 0.4)]} rotation={[0.25 * Math.sin(i), 0, 0.25 * Math.cos(i)]}>
+          <cylinderGeometry args={[0.07, 0.07, 0.02, 18]} />
+          <meshStandardMaterial color="#f0c040" roughness={0.3} metalness={0.4} emissive="#c88a10" emissiveIntensity={0.3} />
+        </mesh>
+      ))}
+      <Label p={[0, h * 0.78, r + 0.09]} text={[label]} w={r * 2.2} h={0.32} bg={color} fg="#ffffff" glow={0.15} />
     </group>
   );
 };
@@ -98,8 +105,10 @@ export const burstPos = (p: V3, u: number, i: number, n: number, r: number, arc:
   const v = r * (0.6 + 0.7 * hash(i + 3));
   const up = 2.6 + 2 * hash(i + 9);
   const tt = Math.min(u, 1.0);
-  const y = Math.max(0.12, 0.6 + up * tt - 4.9 * tt * tt);
-  return [p[0] + Math.cos(a) * v * easeOut(tt), y, p[2] + Math.sin(a) * v * 0.6 * easeOut(tt)];
+  // each cube starts somewhere inside the block's volume (1.4 m wide, 1.4 m tall), not all from one point
+  const x0 = (hash(i + 21) - 0.5) * 1.2, y0 = 0.2 + 1.0 * hash(i + 23), z0 = (hash(i + 25) - 0.5) * 0.7;
+  const y = Math.max(0.12, y0 + up * tt - 4.9 * tt * tt);
+  return [p[0] + x0 + Math.cos(a) * v * easeOut(tt), y, p[2] + z0 + Math.sin(a) * v * 0.6 * easeOut(tt)];
 };
 /** half size of burst cube i incl. its rotated corner (0.87 = half the cube diagonal), so a spinning cube never dips below the floor */
 export const burstHalf = (i: number, size = 0.32) => 0.87 * size * (0.5 + 0.8 * hash(i + 7));
