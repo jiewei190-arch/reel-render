@@ -22,7 +22,7 @@ const JAR: V3 = [0.05, TOP, -0.85];
 const JAR_B: V3 = [1.15, TOP, -0.85];
 const P_SV: V3 = [-0.5, 0, 0.05];
 const P_TL: V3 = [0.35, 0, -1.6];
-const P_SP0: V3 = [2.6, 0, 0.7];
+const P_SP0: V3 = [1.55, 0, 0.75];
 const P_SP: V3 = [1.6, 0, 0.35];
 const BOARD: V3 = [-1.75, 2.1, -3.44];
 const CLOCK: V3 = [-2.9, 2.35, -3.4];
@@ -36,26 +36,26 @@ const TL_LIFT = 0.22; // Teller stands on a hidden step behind the counter
 const sv = (bust = false) => body(P_SV, S.saver, bust);
 const tl = (bust = false) => body(P_TL, S.teller, bust, TL_LIFT);
 const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
-  S01: fitted([...sv(), ...tl(), [JAR[0], TOP + 0.5, JAR[2]], [P_SP0[0], 1.6, P_SP0[2]]], 8, 0.16, D.S01, { mood: "store", fov: 54 }),
-  S02: manual([JAR[0], TOP + 0.25, JAR[2]], 10, 1.25, 0.2, { mood: "store" }),
+  S01: fitted([...sv(), ...tl(), ...body(P_SP0, S.spender), [JAR[0], TOP + 0.5, JAR[2]]], 8, 0.1, D.S01, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
+  S02: manual([JAR[0], TOP + 0.3, JAR[2]], 10, 1.9, 0.18, { mood: "store" }),
   S03: fitted([...tl(true), [JAR[0] + 0.3, TOP, JAR[2] + 0.3]], -14, 0.08, D.S03, { mood: "store", face: 0.5 }),
   S04: manual([P_SV[0] + 0.2, 1.4, P_SV[2] + 0.45], 18, 1.0, 0.0, { mood: "store" }),
-  S05: manual([BOARD[0], BOARD[1] - 0.05, BOARD[2]], 10, 2.2, -0.05, { mood: "store" }),
+  S05: manual([BOARD[0], BOARD[1] - 0.05, BOARD[2]], 10, 3.4, -0.05, { mood: "store" }),
   S06: manual([JAR[0] + 0.45, TOP + 0.12, JAR[2] + 0.15], 6, 0.95, 0.25, { mood: "store" }),
   S07: fitted(tl(true), -10, 0.06, D.S07, { mood: "store", face: 0.5 }),
   S08: fitted([...sv(), [JAR[0], TOP + 0.5, JAR[2]]], 22, 0.12, D.S08, { mood: "store" }),
-  S09: manual([JAR[0], TOP + 0.28, JAR[2]], -12, 1.35, 0.2, { mood: "store" }),
+  S09: manual([JAR[0] + 0.15, TOP + 0.35, JAR[2]], -12, 2.3, 0.18, { mood: "store" }),
   S10: manual([JAR[0] + 0.45, TOP + 0.15, JAR[2] + 0.25], 0, 0.8, 0.12, { mood: "store" }),
-  S11: manual([JAR[0], TOP + 0.3, JAR[2]], 14, 1.45, 0.15, { mood: "store" }),
+  S11: manual([JAR[0], TOP + 0.3, JAR[2]], 14, 2.0, 0.15, { mood: "store" }),
   S12: fitted(body(P_SP, S.spender), -20, 0.1, D.S12, { mood: "whisper" }),
-  S13: manual([JAR_B[0] - 0.2, TOP + 0.15, JAR_B[2]], -8, 1.3, 0.2, { mood: "whisper" }),
+  S13: manual([JAR_B[0] - 0.1, TOP + 0.2, JAR_B[2]], -14, 2.1, 0.3, { mood: "whisper" }),
   S14: fitted([...body(P_SP, S.spender, true), [JAR_B[0], TOP + 0.3, JAR_B[2]]], -24, 0.06, D.S14, { mood: "whisper" }),
   S15: fitted([[JARS3[0] - 0.9, 0, JARS3[2]], [JARS3[0] + 0.9, 1.6, JARS3[2]]], 12, 0.15, D.S15, { mood: "store" }),
   S16: manual([CLOCK[0] + 0.5, CLOCK[1] - 0.3, CLOCK[2]], 16, 2.3, -0.1, { mood: "store" }),
-  S17: fitted([...tl(), [P_TL[0] + 0.35, 2.15, P_TL[2]]], -8, 0.08, D.S17, { mood: "store" }),
-  S18: manual([P_TL[0] + 0.25, 1.75, P_TL[2] + 0.3], -6, 1.25, 0.0, { mood: "store" }),
+  S17: fitted([...tl(), [P_TL[0] + 0.35, 2.3, P_TL[2]]], -32, 0.3, D.S17, { mood: "store" }),
+  S18: manual([P_TL[0] + 0.25, 1.85, P_TL[2] + 0.3], -30, 1.6, 0.3, { mood: "store" }),
   S19: manual([CAL[0], CAL[1] - 0.15, CAL[2]], -12, 2.0, 0.0, { mood: "store" }),
-  S20: fitted([...sv(), ...tl(), [JAR[0], TOP + 0.5, JAR[2]], [P_SP0[0], 1.6, P_SP0[2]]], 8, 0.16, D.S20, { mood: "store", fov: 54 }),
+  S20: fitted([...sv(), ...tl(), ...body(P_SP0, S.spender), [JAR[0], TOP + 0.5, JAR[2]]], 8, 0.1, D.S20, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
 };
 export const MATCH_SHOTS = buildShots(PLAN, LENS);
 
