@@ -1,5 +1,5 @@
-1. Your dollar is worth under twelve cents... in 1970 money.
-2. Prices have climbed almost nine times since then.
+1. Your dollar is worth under twelve cents.
+2. In 1970 money. Prices have climbed almost nine times since then.
 3. That's the government's consumer price index, not a guess.
 4. Something that cost one dollar in 1970 costs about eight seventy now.
 5. Inflation never takes it all at once.

@@ -16,12 +16,14 @@ def main(d):
     cast = next(l for l in shots if "Cast:" in l)
     loop = shots[shots.index("## Loop") + 2]
     tags = shots[shots.index("## Painted / holo tags") + 2: shots.index("## Loop") - 1]
+    counter = shots[shots.index("## On-screen counter (every shot, above the caption band)") + 2]
     turn_t = [f"{t['words'][0]['t']:.2f}–{t['words'][-1]['end']:.2f}" for t in tm["turns"]]
     out = [f"# {d.name}", "",
            f"- **Spoken:** {words} words, voice {dur:.2f} s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).",
            f"- **Hook:** line 1, spoken from 0.0 s, no intro.",
            f"- **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.",
            f"- **Loop:** {loop}", "",
+           ] + ((d / "plan" / "beats.md").read_text(encoding="utf8").splitlines() + [""] if (d / "plan" / "beats.md").exists() else []) + [
            "## Voice-over (exact spoken text = script.txt)", "",
            "| # | time (s) | line |", "|---|---|---|"]
     out += [f"| {i+1} | {turn_t[i]} | {l} |" for i, l in enumerate(lines)]
@@ -29,7 +31,7 @@ def main(d):
             "## Shot plan (one cut every ~1.4 s, each on its word)", "", cast, "",
             "Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, "
             "one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no "
-            "real currency art.", ""] + table + ["", "### On-screen tags", ""] + tags
+            "real currency art.", ""] + table + ["", "### On-screen counter (every shot)", "", counter, "", "### On-screen tags", ""] + tags
     (d / "script.md").write_text("\n".join(out) + "\n", encoding="utf8")
     print(d.name, words, "words", f"{dur:.2f} s")
 

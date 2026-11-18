@@ -1,5 +1,5 @@
-1. A five thousand dollar card balance can take nineteen years to pay off.
-2. Say the rate is twenty-two percent, near the recent U.S. average.
+1. Your minimum payment can take nineteen years.
+2. Say you owe five thousand dollars at twenty-two percent, near the U.S. average.
 3. You pay only the minimum: interest plus one percent of the balance.
 4. As the balance shrinks, the payment shrinks. So it crawls.
 5. About nineteen years, and over eight thousand in interest.
