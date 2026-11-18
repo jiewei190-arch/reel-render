@@ -5,14 +5,14 @@ Re-run after every VO change; the times move with the words. Writes src/plan.gen
 """
 TITLE = "minimum-payment-trap"
 CAST_NOTE = "SPENDER (red, bag) hero; LENDER (navy, hat) collects; TELLER (violet, apron) shows the statement; SAVER (green, glasses) in the flat-payment contrast. Set: a long blocky suburb road with a 'PAID OFF' gate far away + a small statement counter, no logos."
-LOOP_NOTE = "S19 (\"Because otherwise...\") cuts back to the S01 lens: Spender picks up the red $5,000 block again at the start of the long road; the loop lands on \"A five thousand dollar...\"."
+LOOP_NOTE = "S19 (\"Because otherwise...\") cuts back to the S01 lens: Spender picks up the red $5,000 block again at the start of the long road, counters reset; the loop lands on \"Your minimum payment can take nineteen years.\""
 COUNTER = "two counters on a toll-booth display, above the caption band: `BALANCE $5,000 ↓` and `INTEREST PAID $0 ↑` (to $8,099 on the minimum route), plus a `YEAR nn` clock; the flat-$200 lane gets its own green counter."
 SHOTS = [
-    ("S01", (1, "a", 1), "earth", "medium 3/4 on Spender, face ~38% height, push-in", "Spender lifts a heavy red block painted $5,000 at the start of a very long road; far away a tiny gate PAID OFF"),
+    ("S01", (1, "your", 1), "earth", "medium 3/4 on Spender, face ~38% height, push-in", "Conflict in frame 1: Spender lifts a heavy red block painted $5,000 at the start of a very long road; far away a tiny gate PAID OFF; counters BALANCE $5,000 · INTEREST PAID $0 · YEAR 0"),
     ("S02", (1, "nineteen", 1), "earth", "over-shoulder down the road, push-in", "The road stretches to the horizon, the PAID OFF gate a speck; a roadside Sign reads 19 YEARS →"),
     ("S03", (2, "say", 1), "store", "medium on Lender at a booth, push-in", "Lender (hat) at a toll booth stamps a red tag onto the $5,000 block"),
-    ("S04", (2, "percent", 1), "store", "close on the tag, push-in", "Tag 22% APR glows; small text EXAMPLE"),
-    ("S05", (2, "u.s", 1), "store", "medium wide, push-in", "A chart board behind Lender: a flat red line hovering near 22%, tag U.S. AVERAGE ≈ 22% (FED G.19)"),
+    ("S04", (2, "at", 1), "store", "close on the tag, push-in", "Tag 22% APR glows; small text EXAMPLE"),
+    ("S05", (2, "near", 1), "store", "medium wide, push-in", "A chart board behind Lender: a flat red line hovering near 22%, tag U.S. AVERAGE ≈ 22% (FED G.19)"),
     ("S06", (3, "you", 1), "earth", "medium on Spender, push-in", "Spender drops a small coin into Lender's slot, smiling: MINIMUM"),
     ("S07", (3, "interest", 1), "earth", "close on the slot, push-in", "The coin splits: most of it glows red INTEREST and vanishes into the booth; a sliver chips the block"),
     ("S08", (3, "one", 1), "earth", "macro on the block, push-in", "A thin 1% slice falls off the $5,000 block"),
@@ -30,7 +30,7 @@ SHOTS = [
 ]
 ACCENT = {(1, "nineteen"), (2, "twenty-two"), (3, "minimum"), (4, "crawls"), (5, "eight"), (6, "three"), (7, "warning")}
 TAGS = [
-    (1, "a", "EXAMPLE: $5,000 · 22% APR · MIN = INTEREST + 1%", "small painted card at the road start from frame 0"),
+    (1, "your", "EXAMPLE: $5,000 · 22% APR · MIN = INTEREST + 1%", "small painted card at the road start from frame 0"),
     (5, "eight", "$8,099 INTEREST", "holo tag over Lender's pile"),
 ]
 

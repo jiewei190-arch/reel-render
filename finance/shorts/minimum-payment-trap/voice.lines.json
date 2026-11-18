@@ -12,46 +12,46 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 26.706,
- "render_s": 196.4,
+ "duration": 26.891,
+ "render_s": 194.3,
  "qa_fail_lines": [
-  1
+  2
  ],
  "lines": [
   {
    "n": 1,
-   "text": "A five thousand dollar card balance can take nineteen years to pay off.",
+   "text": "Your minimum payment can take nineteen years.",
    "start": 0.15,
    "parts": [
     {
-     "tts": "A five thousand dollar card balance can take nineteen years to pay off.",
+     "tts": "Your minimum payment can take nineteen years.",
      "seed": 7,
-     "heard": "A $5,000 card balance can take 19 years to pay off.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
-    }
-   ],
-   "end": 3.329
-  },
-  {
-   "n": 2,
-   "text": "Say the rate is twenty-two percent, near the recent U.S. average.",
-   "start": 3.629,
-   "parts": [
-    {
-     "tts": "Say the rate is twenty-two percent, near the recent U.S. average.",
-     "seed": 7,
-     "heard": "Say the rate is 22% near the recent U.S. average.",
+     "heard": "Your minimum payment can take 19 years.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 7.302
+   "end": 2.333
+  },
+  {
+   "n": 2,
+   "text": "Say you owe five thousand dollars at twenty-two percent, near the U.S. average.",
+   "start": 2.633,
+   "parts": [
+    {
+     "tts": "Say you owe five thousand dollars at twenty-two percent, near the U.S. average.",
+     "seed": 7,
+     "heard": "say you owe $5,000 at 22% near the U.S. average.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.488
   },
   {
    "n": 3,
    "text": "You pay only the minimum: interest plus one percent of the balance.",
-   "start": 7.602,
+   "start": 7.788,
    "parts": [
     {
      "tts": "You pay only the minimum: interest plus one percent of the balance.",
@@ -61,12 +61,12 @@
      "qa": "ok"
     }
    ],
-   "end": 11.488
+   "end": 11.673
   },
   {
    "n": 4,
    "text": "As the balance shrinks, the payment shrinks. So it crawls.",
-   "start": 11.788,
+   "start": 11.973,
    "parts": [
     {
      "tts": "As the balance shrinks, the payment shrinks. So it crawls.",
@@ -76,12 +76,12 @@
      "qa": "ok"
     }
    ],
-   "end": 15.24
+   "end": 15.425
   },
   {
    "n": 5,
    "text": "About nineteen years, and over eight thousand in interest.",
-   "start": 15.54,
+   "start": 15.725,
    "parts": [
     {
      "tts": "About nineteen years, and over eight thousand in interest.",
@@ -91,12 +91,12 @@
      "qa": "ok"
     }
    ],
-   "end": 18.83
+   "end": 19.015
   },
   {
    "n": 6,
    "text": "Pay a flat two hundred a month instead? Under three years.",
-   "start": 19.13,
+   "start": 19.315,
    "parts": [
     {
      "tts": "Pay a flat two hundred a month instead? Under three years.",
@@ -106,12 +106,12 @@
      "qa": "ok"
     }
    ],
-   "end": 22.014
+   "end": 22.199
   },
   {
    "n": 7,
    "text": "Your statement has a minimum payment warning. Read it.",
-   "start": 22.314,
+   "start": 22.499,
    "parts": [
     {
      "tts": "Your statement has a minimum payment warning. Read it.",
@@ -121,12 +121,12 @@
      "qa": "ok"
     }
    ],
-   "end": 24.924
+   "end": 25.109
   },
   {
    "n": 8,
    "text": "Because otherwise...",
-   "start": 25.224,
+   "start": 25.409,
    "parts": [
     {
      "tts": "Because otherwise...",
@@ -136,7 +136,7 @@
      "qa": "ok"
     }
    ],
-   "end": 26.406
+   "end": 26.591
   }
  ]
 }
