@@ -1,0 +1,98 @@
+{
+ "name": "faceid",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  3,
+  5,
+  7,
+  9,
+  10,
+  12,
+  14,
+  15,
+  16,
+  17
+ ],
+ "phrases": [
+  [
+   "Your phone doesn't look at your **face.** It looks at its **shape.**",
+   "Your phone doesn't look at your face. It looks at its shape."
+  ],
+  [
+   "Here's what happens when you **glance** at it.",
+   "Here's what happens when you glance at it."
+  ],
+  [
+   "First, a projector shoots **thousands of invisible dots** of infrared light at your face.",
+   "First, a projector shoots thousands of invisible dots of infrared light at your face."
+  ],
+  [
+   "A camera **reads** where the dots land.",
+   "A camera reads where the dots land."
+  ],
+  [
+   "Your nose is closer than your cheeks, so the dots **shift.** That builds a **depth map.**",
+   "Your nose is closer than your cheeks, so the dots shift. That builds a depth map."
+  ],
+  [
+   "It also snaps a flat **infrared picture.**",
+   "It also snaps a flat infrared picture."
+  ],
+  [
+   "A protected chip, the **Secure Enclave,** turns both into **numbers.**",
+   "A protected chip, the Secure Enclave, turns both into numbers."
+  ],
+  [
+   "Not a photo of you. **Math** about you.",
+   "Not a photo of you. Math about you."
+  ],
+  [
+   "Next glance, it makes **new numbers** and compares them to the **saved ones.**",
+   "Next glance, it makes new numbers and compares them to the saved ones."
+  ],
+  [
+   "Close enough? **Unlocked.**",
+   "Close enough? Unlocked."
+  ],
+  [
+   "That face data stays **on your device.** It doesn't leave.",
+   "That face data stays on your device. It doesn't leave."
+  ],
+  [
+   "A printed photo can't fool it, because a photo has **no depth.**",
+   "A printed photo can't fool it, because a photo has no depth."
+  ],
+  [
+   "It's even **attention aware:** your eyes must be open and looking at the screen.",
+   "It's even attention aware: your eyes must be open and looking at the screen."
+  ],
+  [
+   "Grow a beard? It **adapts** to small changes over time.",
+   "Grow a beard? It adapts to small changes over time."
+  ],
+  [
+   "But a **big change,** like shaving a full beard, makes it ask for your **passcode** first.",
+   "But a big change, like shaving a full beard, makes it ask for your passcode first."
+  ],
+  [
+   "The chance a random stranger unlocks it is **less than one in a million.**",
+   "The chance a random stranger unlocks it is less than one in a million."
+  ],
+  [
+   "That chance is higher for **twins, siblings,** and kids under thirteen.",
+   "That chance is higher for twins, siblings, and kids under thirteen."
+  ],
+  [
+   "So your phone never really knows your face. It knows the **shape** of it.",
+   "So your phone never really knows your face. It knows the shape of it."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

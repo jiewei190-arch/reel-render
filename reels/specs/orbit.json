@@ -1,0 +1,94 @@
+{
+ "name": "orbit",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  2,
+  4,
+  5,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "phrases": [
+  [
+   "To reach orbit, a rocket doesn't just go **up.** It goes **sideways.**",
+   "To reach orbit, a rocket doesn't just go up. It goes sideways."
+  ],
+  [
+   "Height alone gets you nowhere. Stop the engines, and you **fall back down.**",
+   "Height alone gets you nowhere. Stop the engines, and you fall back down."
+  ],
+  [
+   "What keeps you up is **speed.**",
+   "What keeps you up is speed."
+  ],
+  [
+   "The space station moves at about **17,500 miles per hour.**",
+   "The space station moves at about seventeen thousand five hundred miles per hour."
+  ],
+  [
+   "That's **five miles** every second.",
+   "That's five miles every second."
+  ],
+  [
+   "Picture a **cannon** on a very tall mountain.",
+   "Picture a cannon on a very tall mountain."
+  ],
+  [
+   "Fire a ball slowly, and it **drops** right away.",
+   "Fire a ball slowly, and it drops right away."
+  ],
+  [
+   "Fire it faster, and it lands **farther** off.",
+   "Fire it faster, and it lands farther off."
+  ],
+  [
+   "Fire it fast enough, and the ground **curves away** as fast as the ball falls.",
+   "Fire it fast enough, and the ground curves away as fast as the ball falls."
+  ],
+  [
+   "The ball keeps falling, and **never lands.** That's an **orbit.**",
+   "The ball keeps falling, and never lands. That's an orbit."
+  ],
+  [
+   "Orbit isn't escaping gravity. Up at the station, gravity is still about **90 percent** as strong.",
+   "Orbit isn't escaping gravity. Up at the station, gravity is still about ninety percent as strong."
+  ],
+  [
+   "The station is **falling,** all the time. So is everyone inside.",
+   "The station is falling, all the time. So is everyone inside."
+  ],
+  [
+   "That's why astronauts **float.** They're in **free fall,** together.",
+   "That's why astronauts float. They're in free fall, together."
+  ],
+  [
+   "It circles the planet about **every 90 minutes.**",
+   "It circles the planet about every ninety minutes."
+  ],
+  [
+   "Thin air still drags on it a little, so low orbits need occasional **boosts.**",
+   "Thin air still drags on it a little, so low orbits need occasional boosts."
+  ],
+  [
+   "So a rocket's real job isn't height. It's building **sideways speed.**",
+   "So a rocket's real job isn't height. It's building sideways speed."
+  ],
+  [
+   "Orbit is just **falling,** and **missing** the ground.",
+   "Orbit is just falling, and missing the ground."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

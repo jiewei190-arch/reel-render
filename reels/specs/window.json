@@ -1,0 +1,86 @@
+{
+ "name": "window",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  3,
+  4,
+  6,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Look at your plane window. See that **tiny hole** at the bottom?",
+   "Look at your plane window. See that tiny hole at the bottom?"
+  ],
+  [
+   "It's not a mistake. It's part of a **safety design.**",
+   "It's not a mistake. It's part of a safety design."
+  ],
+  [
+   "A plane window isn't one sheet. It's **three panes** of acrylic.",
+   "A plane window isn't one sheet. It's three panes of acrylic."
+  ],
+  [
+   "The inner one is a **scratch pane,** the one you can touch.",
+   "The inner one is a scratch pane, the one you can touch."
+  ],
+  [
+   "At cruising height, outside air pressure is **less than a quarter** of what it is on the ground.",
+   "At cruising height, outside air pressure is less than a quarter of what it is on the ground."
+  ],
+  [
+   "But the cabin is **pressurized,** so the air inside pushes **outward** on every window.",
+   "But the cabin is pressurized, so the air inside pushes outward on every window."
+  ],
+  [
+   "Something has to hold that push back. That's the **outer pane's** job.",
+   "Something has to hold that push back. That's the outer pane's job."
+  ],
+  [
+   "The tiny hole sits in the **middle pane,** and lets cabin air into the **gap.**",
+   "The tiny hole sits in the middle pane, and lets cabin air into the gap."
+  ],
+  [
+   "So the pressure is the **same** on both sides of the middle pane.",
+   "So the pressure is the same on both sides of the middle pane."
+  ],
+  [
+   "That means the cabin's push lands almost entirely on the **outer pane.**",
+   "That means the cabin's push lands almost entirely on the outer pane."
+  ],
+  [
+   "And if the outer pane were ever damaged, the middle pane is still there as a **backup.**",
+   "And if the outer pane were ever damaged, the middle pane is still there as a backup."
+  ],
+  [
+   "The hole also lets **moisture** out of the gap.",
+   "The hole also lets moisture out of the gap."
+  ],
+  [
+   "That helps stop the window **fogging up,** which comes from warm cabin air meeting a cold outer pane.",
+   "That helps stop the window fogging up, which comes from warm cabin air meeting a cold outer pane."
+  ],
+  [
+   "It's called a **breather hole,** or a **bleed hole.**",
+   "It's called a breather hole, or a bleed hole."
+  ],
+  [
+   "So next flight, look for it. A tiny hole, doing a **big job.**",
+   "So next flight, look for it. A tiny hole, doing a big job."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
