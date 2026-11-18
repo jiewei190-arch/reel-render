@@ -1,0 +1,33 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 4.14,
+ "render_s": 19.0,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Spender just bought a TV. He'll be paying for it for nineteen years.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Spender just bought a tv. He'll be paying for it for nineteen years.",
+     "seed": 7,
+     "heard": "Spender just bought a TV. He'll be paying for it for 19 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.84
+  }
+ ]
+}
