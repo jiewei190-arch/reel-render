@@ -1,5 +1,9 @@
 # UPLOAD: rule-of-72
 
+**Style:** S6 COUNTDOWN
+
+**Title option for S6 (PC suggestion, for MAIN to pick):** 3 Things That Double. #1 Is the Scary One (41 chars)
+
 **Title (48 chars):** The One Number That Tells You When Money Doubles
 
 **Description:**
