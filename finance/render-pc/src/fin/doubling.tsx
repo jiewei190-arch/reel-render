@@ -46,11 +46,11 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S02: manual([POD[0], POD_H + 0.3, POD[2]], 8, 1.5, 0.15, { mood: "store" }),
   S03: fitted([...body(P_SV, S.saver), [P_SV[0], 2.35, P_SV[2]]], -18, 0.1, D.S03, { mood: "store" }),
   S04: fitted([...body(P_SV, S.saver), [SIGN[0], SIGN[1] + 0.3, SIGN[2]], [SIGN[0] - 0.8, SIGN[1], SIGN[2]]], -8, 0.08, D.S04, { mood: "store", fov: 56 }),
-  S05: fitted(pn(true), 22, 0.05, D.S05, { mood: "store", face: 0.5 }),
+  S05: fitted([...pn(true), [P_PN[0] - 0.55, 0.75, P_PN[2]]], 22, 0.05, D.S05, { mood: "store", face: 0.5 }),
   S06: manual([CAL[0], CAL[1] - 0.15, CAL[2]], 14, 2.1, 0.0, { mood: "store" }),
-  S07: fitted(pn(true), 10, 0.05, D.S07, { mood: "store", face: 0.5 }),
+  S07: fitted([...pn(true), [P_PN[0] - 0.55, 0.75, P_PN[2]]], 10, 0.05, D.S07, { mood: "store", face: 0.5 }),
   S08: manual([CAL[0], CAL[1] - 0.15, CAL[2]], -8, 1.8, 0.0, { mood: "store" }),
-  S09: fitted(pn(true), 28, 0.04, D.S09, { mood: "store", face: 0.5 }),
+  S09: fitted([...pn(true), [P_PN[0] - 0.55, 0.75, P_PN[2]]], 28, 0.04, D.S09, { mood: "store", face: 0.5 }),
   S10: manual([CAL[0], CAL[1] - 0.15, CAL[2]], 6, 1.6, 0.0, { mood: "store" }),
   S11: fitted([...body(P_TL, S.teller), [POD[0], POD_H + 0.5, POD[2]], [CAL[0], CAL[1] + 0.5, CAL[2]]], 8, 0.12, D.S11, { mood: "home", fov: 56 }),
   S12: fitted([[BOARD[0] - 1.0, 0.9, BOARD[2]], [BOARD[0] + 1.0, 2.2, BOARD[2]]], 12, 0.05, D.S12, { mood: "store" }),
@@ -74,9 +74,9 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     let pose: Pose = { ...stand(P_PN[0], P_PN[2], yawTo(P_PN, POD) * 0.5 + yawTo(P_PN, [0, 0, 4]) * 0.5, S.penny), armL: 0.2, armR: 0.2, headPitch: -0.2 };
     let emo: Emotion = "curious";
     let held: { side: "L" | "R"; node: React.ReactNode } | undefined;
-    if (r) { pose = { ...pose, armR: 1.55, outR: 0.5, headPitch: 0 }; held = { side: "R", node: <Label p={[0, 0.12, 0.05]} text={[`${r}%`]} w={0.3} h={0.2} bg={PAL.debt} fg="#fff4c8" /> }; emo = r === 4 ? "shock" : "curious"; }
+    if (r) { pose = { ...pose, armR: 1.3, outR: 0.75, headPitch: 0 }; held = { side: "R", node: <Label p={[0, 0.12, 0.05]} text={[`${r}%`]} w={0.3} h={0.2} bg={PAL.debt} fg="#fff4c8" /> }; emo = r === 4 ? "shock" : "curious"; }
     if (i === 16 || i === 17) { pose = { ...pose, armR: 1.55, outR: 0.5 }; held = { side: "R", node: <Label p={[0, 0.1, 0.05]} text={["4%"]} w={0.18} h={0.12} bg={PAL.debt} fg="#fff4c8" /> }; emo = "shock"; }
-    actors.push(<Act key="pn" look={PENNY} pose={pose} emotion={emo} s={S.penny} t={t} seed={1} held={held} />);
+    if (!(i >= 11 && i <= 15)) actors.push(<Act key="pn" look={PENNY} pose={pose} emotion={emo} s={S.penny} t={t} seed={1} held={held} />);
   }
   // Saver with the 72 block (S03, S04), watching in the ending
   if ((i >= 3 && i <= 4) || i === 17) {
