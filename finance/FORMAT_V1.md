@@ -30,3 +30,20 @@ Reference renders: finance/hooks/A and finance/hooks/B (v1). NOT A2/B2.
 - The payoff must actually deliver what the tease promised. No bait. The research shows a mismatched payoff causes swipe-aways and dislikes.
 - Ending: the last line still loops into frame 0. No "part 2" and no "follow for more" unless MAIN approves a true two-part story.
 - Two-part stories are allowed occasionally, at most 1 in 10. Part 1 ends at the peak of the trouble, and Part 2 must be ready to post the same day.
+
+## Daily style test (owner, 2026-11-18)
+Each day's 4 slots carry 4 DIFFERENT styles. Rotate which style gets which time slot every day, so time-of-day doesn't bias the result.
+All styles keep the base rules: blocky cast, sourced facts, frame-0 action, hook text, captions safe area, music+SFX, open loop, loop ending, no clipping.
+
+| tag | style | what's different |
+|---|---|---|
+| S1 STORY | Spender story + slams (the v1 TV Short) | narrator tells Spender's mini-drama |
+| S2 RICH-VS-POOR | split screen Saver vs Spender, same situation side by side | constant comparison, two counters racing |
+| S3 POV-YOU | "POV: you…": first-person camera, the viewer is the character | second person throughout, character reacts to "you" |
+| S4 WOULD-YOU-RATHER | a choice at frame 0 ("$1M now or a penny doubled?"), with a 1-s pause to guess, then the reveal | interactive guess, comment bait from the question itself |
+| S5 CHARACTER-TALKS | Spender or Saver speaks the lines themselves (no narrator) | character dialogue, still synthetic voice |
+| S6 COUNTDOWN | "3 money traps…" ranked, #1 is the shock | list structure, open loop on #1 |
+
+Every Short logs `style: Sx` in UPLOAD.md and in finance/STYLE_LOG.csv (slug, style, publish time ET, slot, url).
+After 72 h per Short, the analyst compares styles on viewed-vs-swiped %, average % viewed, engaged views and subs gained.
+After about 2 weeks, drop the worst 2 styles and add 2 new challengers. Keep the winners.
