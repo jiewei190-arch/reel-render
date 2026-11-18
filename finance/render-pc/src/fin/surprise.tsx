@@ -67,7 +67,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S11: fitted([[BOOTH[0] - 0.6, 0, BOOTH[2]], [PILE[0] + 1.0, 0, PILE[2]], [PILE[0], 2.2, PILE[2]], [BOOTH[0], 2.1, BOOTH[2]]], -12, 0.18, D.S11, { mood: "earth", sky: true }),
   S12: fitted(sp(true), 30, 0.08, D.S12, { mood: "whisper", sky: true, face: 0.5 }),
   S13: fitted([[BOARD[0] - 1.0, 0.9, BOARD[2]], [BOARD[0] + 1.0, 2.25, BOARD[2]]], 4, 0.05, D.S13, { mood: "store", sky: true }),
-  S14: manual([BLOCKS[0] - 0.55, 0.75, BLOCKS[2]], 6, 2.0, 0.12, { mood: "store", sky: true }),
+  S14: fitted([[BLOCKS[0] - 1.2, 0, BLOCKS[2]], [BLOCKS[0] + 0.1, 1.1, BLOCKS[2]], [BLOCKS[0] - 1.4, 0, BLOCKS[2] + 0.9]], 6, 0.2, D.S14, { mood: "store", sky: true }), // PC fix: the manual lens rendered an empty frame
   S15: fitted([[BLOCKS[0] - 1.6, 0, BLOCKS[2]], [BLOCKS[0] + 1.6, 0.9, BLOCKS[2]]], 0, 0.25, D.S15, { mood: "store", sky: true }),
   S16: fitted([...sp(true), [P_SP[0] - 0.95, 1.95, P_SP[2] + 0.3], [P_SP[0] - 0.95, 1.45, P_SP[2] + 0.3], [BOARD[0] + 1.0, 2.0, BOARD[2]]], 24, 0.05, D.S16, { mood: "store", sky: true, face: 0.5 }),
   S17: fitted([...body(P_SV, S.saver, true), [JAR_P[0], 0.8, JAR_P[2]]], -16, 0.08, D.S17, { mood: "ending", sky: true }),
@@ -130,7 +130,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     <>
       <Ground road roadW={3.2} />
       {/* the broken car and the bill over Spender */}
-      <Car p={CAR} yaw={0.55} color={PAL.debt} smoke={smoke} t={t} />
+      {i === 14 ? null : <Car p={CAR} yaw={0.55} color={PAL.debt} smoke={smoke} t={t} />}{/* PC fix: the car overlaps the survey blocks, so it is hidden in S14 (the close-up on the 63 % bar) */}
       {loop || i === 3 ? <Label p={[P_SP[0], 2.15 + 0.06 * Math.sin(t * 3), P_SP[2]]} r={[0, -0.25, 0]} text={["$1,000", "SURPRISE BILL"]} w={0.9} h={0.42} bg={PAL.debt} fg="#fff4c8" glow={0.4} /> : null}
       <Label p={[0.9, 0.3, 0.9]} r={[-0.5, 0.1, 0]} text={["EXAMPLE: $1,000 · 22% APR · $50/MO"]} w={1.1} h={0.15} />
       {/* Saver's emergency fund */}

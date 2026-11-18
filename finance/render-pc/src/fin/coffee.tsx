@@ -48,7 +48,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S01: fitted([...body(P_SP, S.spender), [COL[0], 2.4, COL[2]], [COL[0] - 0.4, 0, COL[2]]], 6, 0.1, D.S01, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
   S02: manual([COL[0], 1.5, COL[2]], 10, 2.6, -0.2, { mood: "store", fov: 54 }),
   S03: fitted([...body(P_SP, S.spender), ...body(P_TL, S.teller, false, TL_LIFT)], -10, 0.12, D.S03, { mood: "store" }),
-  S04: manual([BAR[0] - 0.5, TOP + 0.12, BAR[2] + 0.3], 8, 1.2, 0.3, { mood: "store" }),
+  S04: manual([BAR[0] - 0.5, TOP + 0.12, BAR[2] + 0.3], -25, 1.2, 0.3, { mood: "store" }), // PC fix: lens was beside Spender's shoulder (yaw 8 -> -25)
   S05: fitted([[BAR[0] - 1.3, TOP, BAR[2]], [BAR[0] + 1.3, TOP + 0.6, BAR[2]], ...body(P_SP, S.spender)], 4, 0.18, D.S05, { mood: "store" }),
   S06: manual([CAL[0], CAL[1] - 0.15, CAL[2]], 14, 2.0, 0.0, { mood: "store" }),
   S07: fitted([...body(P_SV, S.saver), [COL[0], 1.3, COL[2]]], -12, 0.1, D.S07, { mood: "store" }),
