@@ -1,0 +1,368 @@
+{
+ "duration": 26.99,
+ "generated_from": "lines.json + timeline/words.json (build_short.py time)",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.8,
+   "line": "America and Britain almost went to war",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:horn",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:rumble",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.8,
+   "end": 3.16,
+   "line": "over a pig.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "pig",
+     "name": "toon3d:squeak",
+     "gain": -8
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.16,
+   "end": 4.94,
+   "line": "In 1859, on an island",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "1859",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:wind",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s03b",
+   "start": 4.94,
+   "end": 6.54,
+   "line": "both sides claimed, a",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "claimed",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.54,
+   "end": 8.61,
+   "line": "British company's pig got into an American's",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "word": "garden",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.61,
+   "end": 9.54,
+   "line": "garden. He",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.54,
+   "end": 10.44,
+   "line": "shot it. He offered",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "shot",
+     "name": "toon3d:gunshot",
+     "gain": -12
+    },
+    {
+     "word": "shot",
+     "offset": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.44,
+   "end": 12.04,
+   "line": "10 dollars. The",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "10",
+     "name": "toon3d:coins",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.04,
+   "end": 13.72,
+   "line": "British wanted 100.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "100",
+     "name": "toon3d:cash",
+     "gain": -8
+    },
+    {
+     "word": "100",
+     "offset": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 13.72,
+   "end": 15.64,
+   "line": "Britain threatened to arrest him...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "arrest",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 15.64,
+   "end": 17.78,
+   "line": "so America sent soldiers.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:footsteps",
+     "gain": -9
+    },
+    {
+     "word": "soldiers",
+     "name": "toon3d:horn",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 17.78,
+   "end": 20.44,
+   "line": "Soon, 461 American troops faced",
+   "in": {
+    "type": "flash",
+    "dur": 0.1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "461",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:metal",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.44,
+   "end": 22.28,
+   "line": "five British warships.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "warships",
+     "name": "toon3d:horn",
+     "gain": -9
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:splash",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.28,
+   "end": 23.82,
+   "line": "Nobody fired a shot.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:clock",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s13b",
+   "start": 23.82,
+   "end": 24.74,
+   "line": "The only casualty...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.74,
+   "end": 26.99,
+   "line": "was the pig.",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "pig",
+     "name": "toon3d:chime",
+     "gain": -8
+    },
+    {
+     "word": "pig",
+     "offset": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}
