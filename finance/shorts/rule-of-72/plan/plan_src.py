@@ -5,31 +5,30 @@ Re-run after every VO change; the times move with the words. Writes src/plan.gen
 """
 TITLE = "rule-of-72"
 CAST_NOTE = "SAVER (green, glasses) hero; PENNY (copper kid, backpack) helper; SPENDER (red, bag) + LENDER (navy, hat) in the flip. Set: a bright blocky maths workshop (Podium, Jars, NeonSign 'RATE %', a big chalk-green board), no logos."
-LOOP_NOTE = "S18 (\"So remember...\") returns to the S01 lens: Saver lifts the glowing 72 block again; the loop cut lands on \"One number\"."
+LOOP_NOTE = "S17 (\"So remember...\") returns to the S01 lens: Saver lifts the glowing 72 block again; the loop lands on \"Seventy-two tells you when your money doubles.\""
 COUNTER = "a big flip-counter `72 ÷ RATE = YEARS` (e.g. `72 ÷ 6 = 12`), its numbers flipping on each rate; red in the debt half."
 SHOTS = [
-    ("S01", (1, "one", 1), "store", "medium 3/4 on Saver, face ~38% height, push-in", "Conflict in frame 1: Saver hoists a giant glowing 72 block; behind him a green coin Jar (left) and Spender's red debt stack (right) under one 72 sign"),
+    ("S01", (1, "seventy-two", 1), "store", "medium 3/4 on Saver, face ~38% height, push-in", "Conflict in frame 1: Saver hoists a giant glowing 72 block; behind him a green coin Jar (left) and Spender's red debt stack (right) under one 72 sign"),
     ("S02", (1, "when", 1), "store", "close on a Jar of coins, push-in", "A coin Jar on the podium; a second identical jar pops in beside it (pop()), holo tag ×2"),
-    ("S03", (1, "seventy-two", 1), "store", "low angle, push-in", "Saver slams the 72 block onto the podium; dust puff, jars bounce"),
-    ("S04", (2, "divide", 1), "store", "medium, push-in", "Saver chops the 72 block with a flat hand; it splits cleanly in two"),
-    ("S05", (2, "yearly", 1), "store", "tilt up, push-in", "NeonSign RATE % flickers on above the board"),
-    ("S06", (3, "six", 1), "store", "medium two-shot Saver + Penny, push-in", "Penny holds up a card 6%; the board writes 72 ÷ 6 = 12"),
-    ("S07", (3, "twelve", 1), "store", "close on jars, push-in", "One jar becomes two; tag 12 YRS"),
-    ("S08", (4, "eight", 1), "store", "medium on Penny, push-in", "Penny flips the card to 8%; jars double faster; tag 9 YRS"),
-    ("S09", (5, "twelve", 1), "store", "medium on Penny, push-in", "Penny flips the card to 12%, grinning"),
-    ("S10", (5, "about", 1), "store", "medium wide, push-in", "Jars pop in quicker still; tag 6 YRS"),
-    ("S11", (6, "shortcut", 1), "store", "close on Saver, push-in", "Saver taps a paper Tag on the board: ≈ ESTIMATE"),
-    ("S12", (6, "real", 1), "store", "medium wide, push-in", "A wobbly line of green blocks rises and dips across the floor; Saver balances on it, arms out"),
-    ("S13", (7, "now", 1), "whisper", "medium, slow push", "Lights dim to the whisper mood; Spender steps in, a red card glowing in his hand"),
-    ("S14", (8, "card", 1), "whisper", "macro on the card, push-in", "Plain red Card prop reading 24% APR (no brand, no chip art)"),
-    ("S15", (8, "double", 1), "whisper", "medium on Lender, push-in", "Lender (navy, hat) stacks red debt blocks beside Spender; the stack pops to twice its height"),
-    ("S16", (8, "three", 1), "whisper", "low angle on Spender, push-in", "The red stack towers over Spender; tag 3 YRS; he hugs his bag"),
-    ("S17", (9, "same", 1), "store", "symmetrical wide two-shot, push-in", "Split frame: Saver with green jars left, Spender with red blocks right, same 72 sign over both; Spender looks over, sheepish"),
-    ("S18", (9, "so", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Saver lifts the glowing 72 block again, green jar and red debt stack behind him (same as S01)"),
+    ("S03", (2, "divide", 1), "store", "medium, push-in", "Saver slams the 72 block onto the podium and chops the 72 block with a flat hand; it splits cleanly in two"),
+    ("S04", (2, "yearly", 1), "store", "tilt up, push-in", "NeonSign RATE % flickers on above the board"),
+    ("S05", (3, "six", 1), "store", "medium two-shot Saver + Penny, push-in", "Penny holds up a card 6%; the board writes 72 ÷ 6 = 12"),
+    ("S06", (3, "twelve", 1), "store", "close on jars, push-in", "One jar becomes two; tag 12 YRS"),
+    ("S07", (4, "eight", 1), "store", "medium on Penny, push-in", "Penny flips the card to 8%; jars double faster; tag 9 YRS"),
+    ("S08", (5, "twelve", 1), "store", "medium on Penny, push-in", "Penny flips the card to 12%, grinning"),
+    ("S09", (5, "about", 1), "store", "medium wide, push-in", "Jars pop in quicker still; tag 6 YRS"),
+    ("S10", (6, "shortcut", 1), "store", "close on Saver, push-in", "Saver taps a paper Tag on the board: ≈ ESTIMATE"),
+    ("S11", (6, "real", 1), "store", "medium wide, push-in", "A wobbly line of green blocks rises and dips across the floor; Saver balances on it, arms out"),
+    ("S12", (7, "now", 1), "whisper", "medium, slow push", "Lights dim to the whisper mood; Spender steps in, a red card glowing in his hand"),
+    ("S13", (8, "card", 1), "whisper", "macro on the card, push-in", "Plain red Card prop reading 24% APR (no brand, no chip art)"),
+    ("S14", (8, "double", 1), "whisper", "medium on Lender, push-in", "Lender (navy, hat) stacks red debt blocks beside Spender; the stack pops to twice its height"),
+    ("S15", (8, "three", 1), "whisper", "low angle on Spender, push-in", "The red stack towers over Spender; tag 3 YRS; he hugs his bag"),
+    ("S16", (9, "maths", 1), "store", "symmetrical wide two-shot, push-in", "Split frame: Saver with green jars left, Spender with red blocks right, same 72 sign over both; Spender looks over, sheepish"),
+    ("S17", (9, "so", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Saver lifts the glowing 72 block again, green jar and red debt stack behind him (same as S01)"),
 ]
 ACCENT = {(1, "seventy-two"), (3, "twelve"), (4, "nine"), (5, "six"), (6, "promise"), (8, "three"), (9, "wrong")}
 TAGS = [
-    (1, "one", "72 ÷ RATE ≈ YEARS TO DOUBLE", "painted on the board from frame 0"),
+    (1, "seventy-two", "72 ÷ RATE ≈ YEARS TO DOUBLE", "painted on the board from frame 0"),
     (8, "card", "24% APR (EXAMPLE)", "on the red card"),
 ]
 

@@ -1,4 +1,4 @@
-One number tells you when your money doubles. Seventy-two.
+Seventy-two tells you when your money doubles.
 Divide that by the yearly interest rate.
 Six percent? About twelve years.
 Eight percent? About nine.
