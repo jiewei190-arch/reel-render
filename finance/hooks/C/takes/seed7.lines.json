@@ -1,0 +1,33 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 3.018,
+ "render_s": 13.6,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Never pay the minimum. Watch what happens.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Never pay the minimum. Watch what happens.",
+     "seed": 7,
+     "heard": "Never pay the minimum. Watch what happens.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.718
+  }
+ ]
+}

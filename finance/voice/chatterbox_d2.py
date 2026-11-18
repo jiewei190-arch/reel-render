@@ -3,7 +3,7 @@ voice (no cloning), exaggeration 0.3, cfg 0.3. Drop-in for fenrir.py: same input
 
 Spoken text = numbered lines only; '## ' headers (sections, rule cards) add a section break.
 Usage: python chatterbox_d2.py script.md out.wav [plain.txt] [--gap 0.55] [--comma 0.25] [--section 1.4] [--lead 0.3]
-                               [--beat 0.7] [--seeds 7,11,23] [--no-qa]
+                               [--beat 0.7] [--seeds 7,11,23] [--no-qa] [--exag 0.3] [--cfg 0.3]
 Shorts use shortened gaps, e.g. --gap 0.3 --comma 0.15 --lead 0.15 (defaults = the locked long-form pacing).
 Run with the Chatterbox venv (see setup_chatterbox.sh):  ~/.venvs/chatterbox/bin/python chatterbox_d2.py ...
 
@@ -30,7 +30,7 @@ GAP, COMMA, SECTION, LEAD = opt("--gap", 0.55), opt("--comma", 0.25), opt("--sec
 BEAT = opt("--beat", 0.7)
 SEEDS = [int(s) for s in opt("--seeds", "7,11,23", str).split(",")]
 QA = not flag("--no-qa")
-EXAG, CFG = 0.3, 0.3
+EXAG, CFG = opt("--exag", 0.3), opt("--cfg", 0.3)
 if len(args) < 2:
     sys.exit(__doc__)
 SCRIPT, OUT = args[0], args[1]
