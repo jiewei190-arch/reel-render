@@ -1,4 +1,19 @@
-# Sources and maths: same-car-more
+# Sources and maths: same-car-more (FORMAT v1 story)
+
+| VO line | figure | where it comes from |
+|---|---|---|
+| "This guy is about to pay 4,700 dollars... for nothing." / hook text "$4,700 FOR NOTHING" | $8,033.55 − $3,347.26 = $4,686.29 | the stated example below; "4,700" is rounded (VO later says "About 4,700") |
+| "a 30,000 dollar car, at seven percent" | $30,000, 7 % APR | stated example (EXAMPLE tag); an illustrative rate |
+| "Three years? 926 a month." | $926.31 | P·i/(1−(1+i)^−36), i = 0.07/12 |
+| "Seven years? Just 453!" | $452.78 | same formula, 84 months |
+| "Half the payment." | 452.78 / 926.31 = 0.49 | |
+| "Seven years costs 8,034 in interest, not 3,347." | $8,033.55 vs $3,347.26 | total paid − $30,000 |
+| "Stretch a loan, and the total grows." | | CFPB: a longer term lowers the monthly payment but raises the total interest |
+
+The open loop ("wait till you see what's behind that door...") pays off in the next shot: the door bursts open on the
+INTEREST furnace and the two interest towers, the exact numbers the VO then says.
+
+## Earlier details (unchanged)
 
 Stated example (on screen as EXAMPLE): borrow **$30,000** at **7 % APR** (an illustrative rate), fixed monthly payments,
 no fees, no down payment, no trade-in. Payment = P·i / (1 − (1+i)^−n), i = 0.07/12.

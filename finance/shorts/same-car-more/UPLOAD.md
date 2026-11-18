@@ -1,14 +1,12 @@
-# UPLOAD: same-car-more
+# UPLOAD: same-car-more (FORMAT v1)
 
-**Title (33 chars):** Same Car, $4,700 More. Here's How
+**Title:** Same Car, $4,700 More
 
 **Description:**
-Example: $30,000 at 7% APR. 3 years: about $926/month and $3,347 interest. 7 years: about $453/month but about $8,034 interest. A lower payment can mean a bigger total.
+Example: a $30,000 car at a made-up 7% APR. A 3-year loan is about $926 a month and $3,347 in interest. A 7-year loan is just $453 a month, but about $8,034 in interest. Same car, about $4,700 more. A longer loan lowers the payment and raises the total.
 
 Sources:
 - CFPB, How do I compare auto loan offers?: https://www.consumerfinance.gov/ask-cfpb/how-do-i-compare-auto-loan-offers-en-753/
-- CFPB, Know Before You Owe: auto loans: https://www.consumerfinance.gov/about-us/newsroom/consumer-financial-protection-bureau-unveils-new-know-you-owe-auto-loans-shopping-sheet
-- Federal Reserve G.19 (auto loan rates): https://www.federalreserve.gov/releases/g19/current/default.htm
 
 Educational only, not financial advice.
 Voice is synthetic.

@@ -1,12 +1,13 @@
-## Hook candidates
+## FORMAT v1 beat sheet
 
-1. **A surprise bill can last two years.** (7 words) ← PICK: a strange claim with a number; the last line ("Because otherwise,") flows into it.
-2. One thousand dollars can cost 1,257. (6)
-3. Your emergency is a 26-month loan. (6, overstates)
-4. Only 63 percent could pay this. (6, spoils the twist)
-5. A broken car, 257 dollars extra. (6)
+1. **Want:** Spender just wants his car fixed.
+2. **Trouble:** the bill is $1,000, due now, and he has no savings. It goes on a card at 22 %, $50 a month, and he's still paying in months 6 and 12.
+3. **Twist:** 26 months, plus $257 of interest. Saver had the same bill and paid it from his emergency fund. Done.
 
-## Beats
-- **Loop sentence:** "A small cushion changes the maths. Because otherwise, / a surprise bill can last two years."
-- **Twist (~70%):** the Fed's survey: only 63 % of adults would cover a $400 surprise with cash or its equivalent.
-- **Counter (every shot):** `$1,000 BILL` with `MONTHS nn` and `INTEREST $x` (red on the card route, green and 0 on the emergency-fund route).
+- **Hook text on frame 0 (6 words):** A $1,000 BILL FOR 2 YEARS
+- **Frame 0 (mid-action):** the bonnet bangs open in smoke. The $1,000 bill is mid-air and Spender flinches.
+- **Open loop (~45–55 %):** "And the worst part is still coming..." over a sealed red FINAL TOTAL envelope, trembling.
+- **Answer withheld until the twist (~65 %):** "plus 257 dollars of interest". The envelope bursts open to +$257 INTEREST.
+- **"You":** the last line, "Could you?"
+- **Loop:** "Could you?" → frame 0 (the car is smoking and about to bang).
+- **Music and SFX:** the toon3d `tense` bed. SFX: a boom and crash on the bang, paper, beep, coins, rain and thunder, a heartbeat and suspense under the envelope, an impact on the burst, fail, stamp and success.

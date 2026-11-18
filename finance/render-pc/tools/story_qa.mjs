@@ -13,7 +13,14 @@ mkdirSync("out/tmp", { recursive: true }); // not build/: render.sh owns build/
 writeFileSync("out/tmp/story_qa.bundle.mjs", r.outputFiles[0].text);
 const m = await import(pathToFileURL("out/tmp/story_qa.bundle.mjs").href + "?" + Date.now());
 const want = process.argv[2];
-const ov = (a, b) => [0, 1, 2].every((k) => Math.abs(a.c[k] - b.c[k]) < a.h[k] + b.h[k]);
+// prop p (optionally oriented by p.yaw) vs actor box a: the actor centre goes into the prop's frame; the actor's
+// horizontal half size is taken as max(hx, hz) on both axes, so the test stays conservative for any rotation
+const ov = (p, a) => {
+  if (!p.yaw) return [0, 1, 2].every((k) => Math.abs(p.c[k] - a.c[k]) < p.h[k] + a.h[k]);
+  const dx = a.c[0] - p.c[0], dz = a.c[2] - p.c[2], c = Math.cos(p.yaw), s = Math.sin(p.yaw);
+  const lx = dx * c - dz * s, lz = dx * s + dz * c, r = Math.max(a.h[0], a.h[2]);
+  return Math.abs(lx) < p.h[0] + r && Math.abs(a.c[1] - p.c[1]) < p.h[1] + a.h[1] && Math.abs(lz) < p.h[2] + r;
+};
 let bad = 0;
 for (const v of m.V1) {
   if (want && v.id !== want) continue;

@@ -1,40 +1,31 @@
-"""Plan source for the finance Short "same-car-more": shots, accents and tags anchored to WORDS of the voice-over.
-Re-run after every VO change; the times move with the words. Writes src/plan.gen.ts and plan/SHOTS.md.
-
-    python plan/plan_src.py vo/timings.json
+"""Plan source (FORMAT v1 story Short) "same-car-more": shots anchored to WORDS of the voice-over.
+    python plan/plan_src.py vo/timings.json      -> src/plan.gen.ts + plan/SHOTS.md
 """
-TITLE = "same-car-more"
-CAST_NOTE = "SPENDER (red, bag) chooses a loan; LENDER (navy, hat) at the loan booth; SAVER (green, glasses) takes the 3-year loan. Set: the sunny blocky street (outdoor ground + road) with two identical red cars side by side (3-YEAR LOAN, 7-YEAR LOAN), a loan booth, two coin piles (interest); no brands, no badges on the cars."
-LOOP_NOTE = "S21 (\"…you've paid for the\") returns to the S01 lens: the two identical cars side by side, the 7-year one glowing +$4,700; the loop lands on \"Same car, 4,700 dollars more.\""
-COUNTER = "two dashboards on a car: `MONTHLY $x` and `INTEREST $x`, flipping between the 3-year (green) and 7-year (red) loans."
+TITLE = 'same-car-more'
+CAST_NOTE = 'SPENDER (red, bag) wants a new car; LENDER (navy, hat) is the grinning car seller; the INTEREST furnace from hook B. Set: a sunny blocky car lot (two identical red cars, a price sign, a shed with a covered sign on its door, the furnace behind it). No logos, no brands.'
+LOOP_NOTE = 'S17 on "Just like this guy": Spender at the furnace with a cash brick mid-swing, the S01 lens; loops to frame 0 (the brick mid-air) and "This guy is about to pay...".'
+COUNTER = 'none (v1). Hook text from frame 0: $4,700 FOR NOTHING. Numbers in the set: $30,000 sign, 7% EXAMPLE tag, 3 YRS $926/MO and 7 YRS $453/MO sheets, interest towers $3,347 vs $8,034, ≈$4,700 EXTRA.'
 SHOTS = [
-    ("S01", (1, "same", 1), "earth", "wide two-car shot, push-in", "Conflict in frame 1: two identical red cars side by side, tags 3-YEAR LOAN and 7-YEAR LOAN; Spender between them, scratching his head"),
-    ("S02", (1, "4,700", 1), "earth", "medium on the 7-year car, push-in", "A big tag pops over the 7-year car: +$4,700"),
-    ("S03", (1, "more", 1), "earth", "medium on Spender, push-in", "Spender does a double take"),
-    ("S04", (2, "borrow", 1), "earth", "medium on Lender at the booth, push-in", "Lender at the loan booth hands over a block: $30,000"),
-    ("S05", (2, "seven", 1), "earth", "close on a tag, push-in", "Tag 7% APR on the booth"),
-    ("S06", (2, "example", 1), "earth", "close on a card, push-in", "A small card: EXAMPLE RATE"),
-    ("S07", (3, "three", 1), "earth", "medium on the 3-year car + Saver, push-in", "Saver by the 3-year car, sign 3 YEARS"),
-    ("S08", (3, "926", 1), "earth", "close on the dashboard sign, push-in", "Dash sign on the 3-year car: $926/MONTH"),
-    ("S09", (3, "3,347", 1), "earth", "medium on a small pile, push-in", "A small green-tagged coin pile: $3,347 INTEREST"),
-    ("S10", (3, "interest", 1), "earth", "wide, push-in", "Saver drives the 3-year car off; small pile behind"),
-    ("S11", (4, "seven", 1), "earth", "medium on the 7-year car + Spender, push-in", "Spender by the 7-year car, sign 7 YEARS"),
-    ("S12", (4, "453", 1), "earth", "close on the dashboard sign, push-in", "Dash sign on the 7-year car: $453/MONTH"),
-    ("S13", (4, "feels", 1), "earth", "medium on Spender, push-in", "Spender grins and dusts his hands: cheaper!"),
-    ("S14", (5, "but", 1), "whisper", "wide on the booth, push-in", "Behind the booth a red pile starts to rise"),
-    ("S15", (5, "8,034", 1), "whisper", "low angle on the big pile, push-in", "The red pile towers: $8,034 INTEREST"),
-    ("S16", (6, "lower", 1), "store", "two piles side by side, push-in", "Small $3,347 pile next to the big $8,034 pile"),
-    ("S17", (6, "bigger", 1), "store", "close on the difference tag, push-in", "Tag between them: +$4,686 (≈ $4,700)"),
-    ("S18", (7, "c.f.p.b", 1), "store", "medium on a sign, push-in", "A plain sign: CFPB: A LONGER LOAN MEANS MORE INTEREST"),
-    ("S19", (7, "longer", 1), "whisper", "medium on Spender, push-in", "Spender looks at his 7-year car, drooping"),
-    ("S20", (8, "stretch", 1), "earth", "medium on the 7-year car, push-in", "A loan timeline bar stretches from 3 to 7 years along the kerb"),
-    ("S21", (8, "you've", 1), "earth", "SAME lens + position as S01 (loop match), push-in", "Back to the start: the two identical cars, the 7-year one glowing +$4,700"),
+    ('S01', (1, 'this', 1), 'earth', 'side-track on the furnace, brick mid-air', 'FRAME 0 MID-ACTION (flash-forward): Spender tosses a cash brick into the roaring INTEREST furnace behind the shed; hook text $4,700 FOR NOTHING'),
+    ('S02', (1, 'for', 1), 'earth', "slam on Spender's face", 'He freezes, realises: shock, squash'),
+    ('S03', (2, 'spender', 1), 'earth', 'wide on the car lot', 'Story start: a shiny red car, $30,000 sign; Spender walks up, love eyes'),
+    ('S04', (2, 'seven', 1), 'earth', 'close on the windshield', 'A 7% EXAMPLE tag slaps onto the windshield'),
+    ('S05', (3, 'three', 1), 'earth', 'medium on the seller', 'Lender (the seller, hat) holds up a sheet: 3 YEARS $926/MO'),
+    ('S06', (3, 'ouch', 1), 'earth', 'slam on Spender', 'Spender recoils, shock'),
+    ('S07', (4, 'then', 1), 'earth', 'medium on the seller', 'The seller grins and flips the sheet: 7 YEARS $453/MO!'),
+    ('S08', (4, 'just', 1), 'earth', 'medium on Spender', 'Spender: joy, arms up'),
+    ('S09', (5, 'half', 1), 'earth', 'two payment stacks', 'Two coin stacks: $926 vs $453 (the small one glows)'),
+    ('S10', (5, 'easy', 1), 'earth', 'medium two-shot', 'Spender stamps SIGNED on the 7-year sheet; the seller rubs his hands'),
+    ('S11', (5, 'but', 1), 'earth', 'slow push on the shed door', 'OPEN LOOP: the shed door with a covered sign rattles; orange glow leaks under it'),
+    ('S12', (6, 'seven', 1), 'whisper', 'wide, the door bursts open', 'TWIST: the door blasts open: the INTEREST furnace roars; two towers rise: $3,347 (3 yrs) vs $8,034 (7 yrs)'),
+    ('S13', (6, 'not', 1), 'whisper', 'low on the towers', 'The $8,034 tower slams up past the $3,347 one'),
+    ('S14', (7, 'same', 1), 'whisper', 'wide on two identical cars', 'Same car twice: 3 YRS and 7 YRS tags'),
+    ('S15', (7, 'about', 1), 'whisper', 'medium on Spender at the furnace', 'Spender feeds cash bricks into the fire: ≈$4,700 EXTRA'),
+    ('S16', (8, 'stretch', 1), 'ending', 'close on a calendar', 'A calendar stretches 3 -> 7 YEARS; a coin pile grows beside it'),
+    ('S17', (8, 'just', 1), 'earth', 'SAME lens as S01 (loop match)', 'LOOP: Spender at the furnace, brick mid-swing -> frame 0'),
 ]
-ACCENT = {(1, "4,700"), (2, "example"), (3, "3,347"), (4, "453"), (5, "8,034"), (6, "bigger"), (7, "more"), (8, "seven")}
-TAGS = [
-    (1, "same", "EXAMPLE: $30,000 · 7% APR", "small painted card on the kerb from frame 0"),
-    (5, "8,034", "$8,034 INTEREST (7 YRS)", "holo tag over the big pile"),
-]
+ACCENT = {(5, 'door'), (2, 'seven'), (7, '4,700'), (6, '8,034'), (4, '453'), (3, '926'), (1, 'nothing')}
+TAGS = []
 
 
 # ---- engine (same in every finance Short; from the blocky-shorts template's plan/plan_src.py, extended) -----------
@@ -84,8 +75,8 @@ def main(p):
     for a, b in zip(shots, shots[1:] + [{"t": total}]):
         a["end"] = round(b["t"], 3)
         d = a["end"] - a["t"]
-        if d < 1.0 or d > 2.2:
-            warns.append(f"WARN {a['id']} is {d:.2f} s (aim ~1.4 s)")
+        if d < 0.7 or d > 1.7:
+            warns.append(f"WARN {a['id']} is {d:.2f} s (v1 aim 0.8-1.5 s)")
     caps, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -115,7 +106,8 @@ def main(p):
         f"export const SHOTS = {json.dumps(shots)} as const;\n"
         f"export const CAPTIONS = {json.dumps(captions)} as const;\n"
         f"export const TAGS = {json.dumps(tags)} as const;\n"
-        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n", encoding="utf8")
+        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n"
+        f"export const WORDS = {json.dumps([{'w': w['w'], 'turn': w['turn'], 't': round(w['t'], 3), 'end': round(w['end'], 3)} for w in words])} as const;\n", encoding="utf8")
     # readable shot list
     md = [f"# {TITLE}: shot list (generated by plan/plan_src.py from vo/timings.json; do not edit)", "",
           f"{len(shots)} shots, {total:.2f} s ({round(total * FPS)} frames at {FPS} fps), median cut "

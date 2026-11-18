@@ -1,7 +1,7 @@
-1. A surprise bill can last two years.
-2. Say the car breaks: 1,000 dollars, due now.
-3. With an emergency fund, it costs 1,000 dollars. Done.
-4. On a card at twenty-two percent, paying fifty a month?
-5. Twenty-six months, and about 257 dollars of interest.
-6. And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.
-7. A small cushion changes the maths. Because otherwise,
+1. Spender's car just broke, and this bill will follow him for two years.
+2. One thousand dollars, due now. No savings.
+3. So it goes on a card: twenty-two percent, fifty a month.
+4. Month six. Month twelve. Still paying. And the worst part is still coming...
+5. Twenty-six months later: paid off, plus 257 dollars of interest.
+6. Saver had the same bill. He paid it from his emergency fund. Done.
+7. In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?

@@ -212,7 +212,7 @@ export const Debris: React.FC<{ p: V3; t: number; t0: number; n?: number; c?: st
 
 // ------------------------------------------------------------------ QA: prop vs character boxes (tools/story_qa.mjs)
 /** an axis-aligned box: centre + half sizes */
-export type Box = { name: string; c: V3; h: V3 };
+export type Box = { name: string; c: V3; h: V3; yaw?: number }; // yaw: an oriented prop box (rad about y); actor boxes are axis-aligned
 /** head and torso boxes of a standing blocky actor of scale s at p, from blocky/motion SPEC (U = 0.27 m: head 0.28 x 0.30 x
  *  0.27 m centred at FACE = 1.247 s; torso 0.54 x 0.54 x 0.27 m below it), each padded by 2 cm and rotated-safe (x = z half) */
 export const actorBoxes = (name: string, p: V3, s = 1, pose?: Pose): Box[] => [
