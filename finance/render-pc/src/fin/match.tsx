@@ -19,7 +19,7 @@ const S = { saver: 1.0, spender: 1.0, teller: 0.9 };
 const DESK: V3 = [0.5, 0, -0.95]; // library counter: 2.0 wide, top 0.98, front face z = DESK.z + 0.35
 const TOP = 0.98;
 const JAR: V3 = [0.05, TOP, -0.85];
-const JAR_B: V3 = [1.15, TOP, -0.85];
+const JAR_B: V3 = [0.62, TOP, -0.8];
 const P_SV: V3 = [-0.5, 0, 0.05];
 const P_TL: V3 = [0.35, 0, -1.6];
 const P_SP0: V3 = [1.55, 0, 0.75];
