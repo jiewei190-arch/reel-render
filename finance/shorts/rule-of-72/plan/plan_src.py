@@ -1,36 +1,30 @@
-"""Plan source for the finance Short "rule-of-72": shots, accents and tags anchored to WORDS of the voice-over.
-Re-run after every VO change; the times move with the words. Writes src/plan.gen.ts and plan/SHOTS.md.
-
-    python plan/plan_src.py vo/timings.json
+"""Plan source (FORMAT v1, style S6 COUNTDOWN) "rule-of-72": shots anchored to WORDS of the voice-over.
+    python plan/plan_src.py vo/timings.json      -> src/plan.gen.ts + plan/SHOTS.md
 """
 TITLE = "rule-of-72"
-CAST_NOTE = "SAVER (green, glasses) hero; PENNY (copper kid, backpack) helper; SPENDER (red, bag) + LENDER (navy, hat) in the flip. Set: a bright blocky maths workshop (Podium, Jars, NeonSign 'RATE %', a big chalk-green board), no logos."
-LOOP_NOTE = "S17 (\"So remember...\") returns to the S01 lens: Saver lifts the glowing 72 block again; the loop lands on \"Seventy-two tells you when your money doubles.\""
-COUNTER = "a big flip-counter `72 ÷ RATE = YEARS` (e.g. `72 ÷ 6 = 12`), its numbers flipping on each rate; red in the debt half."
+CAST_NOTE = "A blocky GAME-SHOW stage: three podiums #3 #2 #1 (#1 behind a red curtain), a big board (72 / RATE = YEARS TO DOUBLE). SAVER (green, glasses) with a SAVINGS jar at #3 and #2; SPENDER (red) with his card, revealed at #1 next to an OWE block that doubles. No logos, no brands."
+LOOP_NOTE = "S16 on \"That's why you should know these\": the S01 lens on Spender with his card again; the loop lands on \"Three things that double.\" at frame 0."
+COUNTER = "none (no HUD). Hook text from frame 0: 3 THINGS THAT DOUBLE / #1 IS THE SCARY ONE. Numbers live in the set: the board (72 / 6 = 12, 72 / 8 = 9, 72 / 24 = 3), podium rate tags 6% 8% 24%, x2 stamps."
 SHOTS = [
-    ("S01", (1, "seventy-two", 1), "store", "medium 3/4 on Saver, face ~38% height, push-in", "Conflict in frame 1: Saver hoists a giant glowing 72 block; behind him a green coin Jar (left) and Spender's red debt stack (right) under one 72 sign"),
-    ("S02", (1, "when", 1), "store", "close on a Jar of coins, push-in", "A coin Jar on the podium; a second identical jar pops in beside it (pop()), holo tag ×2"),
-    ("S03", (2, "divide", 1), "store", "medium, push-in", "Saver slams the 72 block onto the podium and chops the 72 block with a flat hand; it splits cleanly in two"),
-    ("S04", (2, "yearly", 1), "store", "tilt up, push-in", "NeonSign RATE % flickers on above the board"),
-    ("S05", (3, "six", 1), "store", "medium two-shot Saver + Penny, push-in", "Penny holds up a card 6%; the board writes 72 ÷ 6 = 12"),
-    ("S06", (3, "twelve", 1), "store", "close on jars, push-in", "One jar becomes two; tag 12 YRS"),
-    ("S07", (4, "eight", 1), "store", "medium on Penny, push-in", "Penny flips the card to 8%; jars double faster; tag 9 YRS"),
-    ("S08", (5, "twelve", 1), "store", "medium on Penny, push-in", "Penny flips the card to 12%, grinning"),
-    ("S09", (5, "about", 1), "store", "medium wide, push-in", "Jars pop in quicker still; tag 6 YRS"),
-    ("S10", (6, "shortcut", 1), "store", "close on Saver, push-in", "Saver taps a paper Tag on the board: ≈ ESTIMATE"),
-    ("S11", (6, "real", 1), "store", "medium wide, push-in", "A wobbly line of green blocks rises and dips across the floor; Saver balances on it, arms out"),
-    ("S12", (7, "now", 1), "whisper", "medium, slow push", "Lights dim to the whisper mood; Spender steps in, a red card glowing in his hand"),
-    ("S13", (8, "card", 1), "whisper", "macro on the card, push-in", "Plain red Card prop reading 24% APR (no brand, no chip art)"),
-    ("S14", (8, "double", 1), "whisper", "medium on Lender, push-in", "Lender (navy, hat) stacks red debt blocks beside Spender; the stack pops to twice its height"),
-    ("S15", (8, "three", 1), "whisper", "low angle on Spender, push-in", "The red stack towers over Spender; tag 3 YRS; he hugs his bag"),
-    ("S16", (9, "maths", 1), "store", "symmetrical wide two-shot, push-in", "Split frame: Saver with green jars left, Spender with red blocks right, same 72 sign over both; Spender looks over, sheepish"),
-    ("S17", (9, "so", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Saver lifts the glowing 72 block again, green jar and red debt stack behind him (same as S01)"),
+    ('S01', (1, 'three', 1), 'store', 'CLOSE on Spender, card in hand', 'FRAME 0 MID-ACTION: Spender (sly) twirls his card, a big #3 countdown card whips past the lens; hook text 3 THINGS THAT DOUBLE / #1 IS THE SCARY ONE'),
+    ('S02', (1, 'number', 1), 'store', 'slam close', 'The #1 sign behind him flashes red: Spender SHOCK (squash)'),
+    ('S03', (2, 'the', 1), 'store', 'wide stage', 'The game-show stage: podiums #3 #2 #1, #1 behind a red curtain'),
+    ('S04', (2, 'divide', 1), 'store', 'close on the board, slam', 'The board SLAMS: 72 / RATE = YEARS TO DOUBLE'),
+    ('S05', (3, 'number', 1), 'store', 'medium on podium #3', '#3 lights up: Saver with a SAVINGS jar, tag 6%'),
+    ('S06', (3, 'about', 1), 'store', 'medium, push', 'Board: 72 / 6 = ABOUT 12 YEARS; the jar fills to x2'),
+    ('S07', (4, 'number', 1), 'store', 'medium on podium #2', '#2 lights up: Saver at 8%'),
+    ('S08', (4, 'about', 1), 'store', 'medium, push', 'Board: 72 / 8 = ABOUT 9 YEARS; Saver relaxed'),
+    ('S09', (5, 'and', 1), 'whisper', 'push on the curtain', 'OPEN LOOP: the stage dims, a spotlight on the #1 curtain, it trembles; suspense'),
+    ('S10', (5, 'wait', 1), 'whisper', 'close on the curtain', 'The curtain bulges: someone is behind it'),
+    ('S11', (6, "spender's", 1), 'store', 'SLAM wide on #1', 'The curtain DROPS: Spender with his card at #1, tag 24% slams; shock'),
+    ('S12', (6, 'if', 1), 'store', 'close on the board', 'Board: 72 / 24 = ABOUT 3 YEARS'),
+    ('S13', (6, 'what', 1), 'store', 'medium, slam', 'His OWE block DOUBLES (x2 stamp, squash), shoving Spender back'),
+    ('S14', (7, 'same', 1), 'ending', 'wide on both', 'Same maths, wrong side: Saver\'s jar x2 (green) vs Spender\'s OWE x2 (red)'),
+    ('S15', (7, "it's", 1), 'ending', 'close on the board', 'SHORTCUT, NOT A PROMISE stamped on the board'),
+    ('S16', (7, "that's", 1), 'store', 'SAME lens as S01 (loop match)', 'LOOP: Spender twirls his card again -> frame 0'),
 ]
-ACCENT = {(1, "seventy-two"), (3, "twelve"), (4, "nine"), (5, "six"), (6, "promise"), (8, "three"), (9, "wrong")}
-TAGS = [
-    (1, "seventy-two", "72 ÷ RATE ≈ YEARS TO DOUBLE", "painted on the board from frame 0"),
-    (8, "card", "24% APR (EXAMPLE)", "on the red card"),
-]
+ACCENT = {(1, 'scary'), (3, 'twelve'), (4, 'nine'), (6, 'three'), (7, 'you')}
+TAGS = []
 
 
 # ---- engine (same in every finance Short; from the blocky-shorts template's plan/plan_src.py, extended) -----------
@@ -80,8 +74,8 @@ def main(p):
     for a, b in zip(shots, shots[1:] + [{"t": total}]):
         a["end"] = round(b["t"], 3)
         d = a["end"] - a["t"]
-        if d < 1.0 or d > 2.2:
-            warns.append(f"WARN {a['id']} is {d:.2f} s (aim ~1.4 s)")
+        if d < 0.7 or d > 1.7:
+            warns.append(f"WARN {a['id']} is {d:.2f} s (v1 aim 0.8-1.5 s)")
     caps, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -111,7 +105,8 @@ def main(p):
         f"export const SHOTS = {json.dumps(shots)} as const;\n"
         f"export const CAPTIONS = {json.dumps(captions)} as const;\n"
         f"export const TAGS = {json.dumps(tags)} as const;\n"
-        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n", encoding="utf8")
+        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n"
+        f"export const WORDS = {json.dumps([{'w': w['w'], 'turn': w['turn'], 't': round(w['t'], 3), 'end': round(w['end'], 3)} for w in words])} as const;\n", encoding="utf8")
     # readable shot list
     md = [f"# {TITLE}: shot list (generated by plan/plan_src.py from vo/timings.json; do not edit)", "",
           f"{len(shots)} shots, {total:.2f} s ({round(total * FPS)} frames at {FPS} fps), median cut "

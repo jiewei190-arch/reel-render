@@ -1,7 +1,7 @@
-1. Spender's card debt could double. In about three years.
-2. There's a trick you can use: divide 72 by the yearly rate.
-3. Saver's savings at six percent? About twelve years to double.
-4. At eight percent? About nine. Nice and slow.
-5. But flip the trick around, and look at Spender's card...
-6. Twenty-four percent. 72 divided by 24: about three years.
-7. Same maths, wrong side. It's a shortcut, not a promise. And that's why
+1. Three things that double. Number one is the scary one.
+2. The trick: divide 72 by the yearly rate.
+3. Number three: Saver's savings at six percent. About twelve years.
+4. Number two: at eight percent? About nine. Nice and slow.
+5. And number one... wait till you see who's holding it.
+6. Spender's card at twenty-four percent. If nothing's paid, what he owes can double in about three years.
+7. Same maths, wrong side. It's a shortcut, not a promise. That's why you should know these
