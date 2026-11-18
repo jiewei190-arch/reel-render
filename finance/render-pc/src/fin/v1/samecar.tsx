@@ -31,6 +31,7 @@ const CAR_B: V3 = [1.55, 0, -1.2]; // the 7-year deal
 const BOARD_Y = 2.25;
 const P_SP: V3 = [3.25, 0, 0.45]; // Spender beside his pick (hands clear of the car)
 const P_LD: V3 = [0.1, 0, 0.35]; // the seller, between the cars
+const P_HK: V3 = [CAR_B[0] - 0.1, 0, 0.55]; // frame 0 / loop: Spender under the $453 board
 const SHED: V3 = [-3.9, 0, -4.3];
 const DOOR: V3 = [-3.9, 0, -3.28];
 const FUR: V3 = [-3.9, 0, -2.3];
@@ -79,6 +80,20 @@ const actorsAt = (i: number, t: number): Actor[] => {
     if (i === 7) { const s = ss(tSeven - 0.05, tSeven + 0.15, t); pose = { ...pose, armL: lerp(0.3, 2.0, s), armR: lerp(0.3, 2.0, s), outL: 0.7 * s, outR: 0.7 * s, ant: s }; emo = s > 0.3 ? "shock" : "joy"; }
     out.push({ name: "Spender", look: SPENDER, pose, emo, s: SC, seed: 2 });
   }
+  if (i === 1 || i === 13) {
+    // frame-0 rules (2026-11-18): Spender close, under the $453 board as it slams down; shock -> joy by 0.75 s. The loop
+    // shot (S13) repeats the framing with him curious, so the cut to frame 0 is the shock again.
+    const t0 = i === 13 ? T("S13") : 0;
+    const hit = ss(t0 + tLand - 0.05, t0 + tLand + 0.1, t);
+    let pose: Pose = { ...stand(P_HK[0], P_HK[2], yawTo(P_HK, [P_HK[0] - 0.3, 0, 5]), SC), armL: 0.3, armR: 0.3, headPitch: -0.32 };
+    let emo: Emotion = "curious";
+    if (i === 1) {
+      const calm = ss(0.6, 0.85, t);
+      pose = { ...pose, armL: lerp(lerp(1.0, 2.2, hit), 0.9, calm), armR: lerp(lerp(1.0, 2.2, hit), 0.9, calm), outL: 0.5 * (1 - calm) + 0.15, outR: 0.5 * (1 - calm) + 0.15, ant: 1 - calm, headPitch: lerp(-0.32, -0.12, calm) };
+      emo = t < 0.75 ? "shock" : "joy";
+    }
+    out.push({ name: "Spender", look: SPENDER, pose, emo, s: SC, seed: 2 });
+  }
   if (i === 11 || i === 12) {
     const ph = ((((t + 0.3) % PERIOD) + PERIOD) % PERIOD) / PERIOD;
     const pose: Pose = { ...stand(P_F[0], P_F[2], yawTo(P_F, FUR) * 0.6 + 0.3, SC), armR: lerp(0.6, 2.0, Math.sin(Math.PI * ph)), outR: 0.3, armL: 0.8, outL: 0.2 };
@@ -94,7 +109,7 @@ const actorsAt = (i: number, t: number): Actor[] => {
 // ------------------------------------------------------------------ lenses
 const spFace = (p: V3): V3 => [p[0], FACE - 0.05, p[2]];
 const both: V3 = [(CAR_A[0] + CAR_B[0]) / 2, 1.2, CAR_A[2]];
-const hook = creep(both, [0.1, 1.7, 4.6], { fov: 58, face: 0.5, shake: shakeAt([tLand], 0.05) });
+const hook = creep([P_HK[0], FACE - 0.02, P_HK[2]], [P_HK[0] - 0.2, FACE - 0.17, P_HK[2] + 1.5], { fov: 54, face: 0.68, push: 0.04, shake: shakeAt([tLand], 0.06) }); // close: his face + the $453 board landing above
 const LENS = {
   S01: hook,
   S02: creep([CAR_B[0], BOARD_Y, CAR_B[2]], [CAR_B[0] - 0.2, 2.0, CAR_B[2] + 2.4], { fov: 46, face: 0.5 }),
@@ -198,8 +213,8 @@ export const SAMECAR_QA = (t: number): { actors: Box[]; props: Box[] } => {
 // ------------------------------------------------------------------ overlay, spec, audio
 const overlay = (t: number) => (
   <>
-    <HookText text="$926 OR $453 A MONTH?" t={t} until={lineEnd(2) + 0.2} />
-    {t >= T("S13") ? <HookText text="$926 OR $453 A MONTH?" t={t} until={99} /> : null}
+    <HookText text="$926 OR $453 A MONTH?" size={98} top={230} t={t} until={lineEnd(2) + 0.2} />
+    {t >= T("S13") ? <HookText text="$926 OR $453 A MONTH?" size={98} top={230} t={t} until={99} /> : null}
     <WordCaption words={WORDS} t={t} />
   </>
 );

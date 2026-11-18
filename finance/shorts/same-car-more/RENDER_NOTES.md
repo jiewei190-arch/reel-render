@@ -5,6 +5,14 @@
 - **Audio plan:** the toon3d `upbeat` bed plus the SFX cues exported from the composition (`tools/story_mix.py`). Not mixed in the cloud.
 - **PC commands:** `finance/V1_RENDER.md`.
 
+## PRE-POST GATE (FORMAT_V1.md, 2026-11-18): `frame0.png`, `strip_0-2s.png`
+- **Close shot, mid-action:** frame 0 is a close shot of Spender, who wasn't in the old wide opener. He looks up in shock as the $453/MO board drops in above him. It lands at 0.28 s, right above his head, with a shake and debris. The loop shot S13 uses the same framing, with him curious.
+- **Hook text at frame 0:** "$926 OR $453 A MONTH?", 5 words on 2 lines, 98 px (was 84), top 230 px, in the top third.
+- **Stake by 0.5 s:** both dollar amounts are in the hook text from frame 0, and the $453/MO board has landed by 0.3 s.
+- **First spoken word by 0.3 s:** 0.0 s ("Would"). SFX at frame 0: whoosh, then a thud on the landing. The music bed starts at 0 s.
+- **Emotion change by 1.5 s:** shock, then joy at 0.75 s.
+- **No dark, empty or wide frame in the first 1 s:** the sky is the starry dome, but Spender and the board fill the frame.
+
 ## Cliffhanger rule
 - **Open loop: 56 %** (15.4 s, "And behind that door, something is eating his money..."). The covered "? ? ?" shed door rattles with orange light under it, over three shots (S08, S19, S21).
 - **Twist: 70 %** (19.44 s of 27.72 s). The door bursts on "8,034", the INTEREST furnace roars and the $8,034 vs $3,347 towers rise. The door stays shut until the burst (`doorOpenAt`).
