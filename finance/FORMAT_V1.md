@@ -47,3 +47,16 @@ All styles keep the base rules: blocky cast, sourced facts, frame-0 action, hook
 Every Short logs `style: Sx` in UPLOAD.md and in finance/STYLE_LOG.csv (slug, style, publish time ET, slot, url).
 After 72 h per Short, the analyst compares styles on viewed-vs-swiped %, average % viewed, engaged views and subs gained.
 After about 2 weeks, drop the worst 2 styles and add 2 new challengers. Keep the winners.
+
+## Target: >= 70% "stayed to watch" (owner, 2026-11-18)
+Baseline: minimum-payment-trap = 57.8% stayed / 42.2% swiped.
+YouTube only reports "stayed" after posting, so we enforce it in two places:
+1) PRE-POST GATE (MAIN rejects any Short that fails one of these):
+   - frame 0 is a close shot with face or key object >= 50% of the frame, already mid-action;
+   - hook text readable at frame 0 (<= 8 words, ~90-100 px, top third);
+   - the stake (a $ amount or a time) on screen by 0.5 s;
+   - first spoken word by 0.3 s; SFX and music at frame 0;
+   - an emotion change by 1.5 s;
+   - no dark, empty or wide frame in the first 1 s.
+2) POST-MORTEM: after 48 h, any Short under 70% stayed gets its first 2 s compared with the best performer. The gap becomes a new rule here.
+   Any style averaging under 65% over 3+ Shorts is dropped.
