@@ -3,395 +3,406 @@
   "audio": "voice.wav",
   "script": "script.txt",
   "model": "small",
-  "duration": 27.991
+  "duration": 28.574
  },
  "turns": [
   {
    "turn": 1,
-   "text": "One penny, doubled every day for 30 days, beats a million dollars.",
+   "text": "This penny beats a million dollars.",
    "words": [
     {
-     "w": "One",
+     "w": "This",
      "t": 0.0,
-     "end": 0.34
+     "end": 0.42
     },
     {
-     "w": "penny,",
-     "t": 0.34,
-     "end": 0.64
-    },
-    {
-     "w": "doubled",
-     "t": 0.64,
-     "end": 1.28
-    },
-    {
-     "w": "every",
-     "t": 1.28,
-     "end": 1.6
-    },
-    {
-     "w": "day",
-     "t": 1.6,
-     "end": 1.86
-    },
-    {
-     "w": "for",
-     "t": 1.86,
-     "end": 2.06
-    },
-    {
-     "w": "30",
-     "t": 2.06,
-     "end": 2.34
-    },
-    {
-     "w": "days,",
-     "t": 2.34,
-     "end": 2.68
+     "w": "penny",
+     "t": 0.42,
+     "end": 0.74
     },
     {
      "w": "beats",
-     "t": 2.68,
-     "end": 3.22
+     "t": 0.74,
+     "end": 1.1
     },
     {
      "w": "a",
-     "t": 3.22,
-     "end": 3.36
+     "t": 1.1,
+     "end": 1.3
     },
     {
      "w": "million",
-     "t": 3.36,
-     "end": 3.56
+     "t": 1.3,
+     "end": 1.52
     },
     {
      "w": "dollars.",
-     "t": 3.56,
-     "end": 4.18
+     "t": 1.52,
+     "end": 2.16
     }
    ]
   },
   {
    "turn": 2,
-   "text": "Day ten? Five dollars and twelve cents.",
+   "text": "Double it every day for 30 days.",
    "words": [
     {
-     "w": "Day",
-     "t": 4.74,
-     "end": 4.88
+     "w": "Double",
+     "t": 2.56,
+     "end": 3.0
     },
     {
-     "w": "ten?",
-     "t": 4.88,
-     "end": 5.075
+     "w": "it",
+     "t": 3.0,
+     "end": 3.16
     },
     {
-     "w": "Five",
-     "t": 5.075,
-     "end": 5.335
+     "w": "every",
+     "t": 3.16,
+     "end": 3.32
     },
     {
-     "w": "dollars",
-     "t": 5.335,
-     "end": 5.79
+     "w": "day",
+     "t": 3.32,
+     "end": 3.54
     },
     {
-     "w": "and",
-     "t": 5.79,
-     "end": 5.985
+     "w": "for",
+     "t": 3.54,
+     "end": 3.84
     },
     {
-     "w": "twelve",
-     "t": 5.985,
-     "end": 6.375
+     "w": "30",
+     "t": 3.84,
+     "end": 4.36
     },
     {
-     "w": "cents.",
-     "t": 6.375,
-     "end": 6.7
+     "w": "days.",
+     "t": 4.36,
+     "end": 4.66
     }
    ]
   },
   {
    "turn": 3,
-   "text": "Day twenty? About five thousand. Still losing.",
+   "text": "Day ten? Five dollars and twelve cents.",
    "words": [
     {
      "w": "Day",
-     "t": 7.36,
-     "end": 7.94
+     "t": 5.24,
+     "end": 5.46
     },
     {
-     "w": "twenty?",
-     "t": 7.94,
-     "end": 8.22
+     "w": "ten?",
+     "t": 5.46,
+     "end": 5.659
     },
     {
-     "w": "About",
-     "t": 8.74,
-     "end": 8.9
+     "w": "Five",
+     "t": 5.659,
+     "end": 5.925
     },
     {
-     "w": "five",
-     "t": 8.9,
-     "end": 9.093
+     "w": "dollars",
+     "t": 5.925,
+     "end": 6.39
     },
     {
-     "w": "thousand.",
-     "t": 9.093,
-     "end": 9.48
+     "w": "and",
+     "t": 6.39,
+     "end": 6.589
     },
     {
-     "w": "Still",
-     "t": 9.88,
-     "end": 10.08
+     "w": "twelve",
+     "t": 6.589,
+     "end": 6.988
     },
     {
-     "w": "losing.",
-     "t": 10.08,
-     "end": 10.36
+     "w": "cents.",
+     "t": 6.988,
+     "end": 7.32
     }
    ]
   },
   {
    "turn": 4,
-   "text": "Then the doubling takes over.",
+   "text": "Day twenty? About five thousand. Still losing.",
    "words": [
     {
-     "w": "Then",
-     "t": 11.04,
-     "end": 11.3
+     "w": "Day",
+     "t": 8.04,
+     "end": 8.5
     },
     {
-     "w": "the",
-     "t": 11.3,
-     "end": 11.56
+     "w": "twenty?",
+     "t": 8.5,
+     "end": 8.78
     },
     {
-     "w": "doubling",
-     "t": 11.56,
-     "end": 11.88
+     "w": "About",
+     "t": 9.32,
+     "end": 9.48
     },
     {
-     "w": "takes",
-     "t": 11.88,
-     "end": 12.18
+     "w": "five",
+     "t": 9.48,
+     "end": 9.693
     },
     {
-     "w": "over.",
-     "t": 12.18,
-     "end": 12.42
+     "w": "thousand.",
+     "t": 9.693,
+     "end": 10.12
+    },
+    {
+     "w": "Still",
+     "t": 10.46,
+     "end": 10.66
+    },
+    {
+     "w": "losing.",
+     "t": 10.66,
+     "end": 10.94
     }
    ]
   },
   {
    "turn": 5,
-   "text": "Day twenty-five, over one hundred sixty thousand.",
+   "text": "Then the doubling takes over.",
    "words": [
     {
-     "w": "Day",
-     "t": 13.16,
-     "end": 13.26
+     "w": "Then",
+     "t": 11.58,
+     "end": 11.88
     },
     {
-     "w": "twenty-five,",
-     "t": 13.26,
-     "end": 13.7
+     "w": "the",
+     "t": 11.88,
+     "end": 12.16
     },
     {
-     "w": "over",
-     "t": 14.06,
-     "end": 14.24
+     "w": "doubling",
+     "t": 12.16,
+     "end": 12.48
     },
     {
-     "w": "one",
-     "t": 14.24,
-     "end": 14.472
+     "w": "takes",
+     "t": 12.48,
+     "end": 12.74
     },
     {
-     "w": "hundred",
-     "t": 14.472,
-     "end": 15.014
-    },
-    {
-     "w": "sixty",
-     "t": 15.014,
-     "end": 15.401
-    },
-    {
-     "w": "thousand.",
-     "t": 15.401,
-     "end": 16.02
+     "w": "over.",
+     "t": 12.74,
+     "end": 13.0
     }
    ]
   },
   {
    "turn": 6,
-   "text": "Day twenty-eight, one point three million.",
+   "text": "Day twenty-five, over one hundred sixty thousand.",
    "words": [
     {
      "w": "Day",
-     "t": 16.02,
-     "end": 16.3
+     "t": 13.6,
+     "end": 13.86
     },
     {
-     "w": "twenty-eight,",
-     "t": 16.3,
-     "end": 17.033
+     "w": "twenty-five,",
+     "t": 13.86,
+     "end": 14.26
+    },
+    {
+     "w": "over",
+     "t": 14.64,
+     "end": 14.82
     },
     {
      "w": "one",
-     "t": 17.033,
-     "end": 17.233
+     "t": 14.82,
+     "end": 15.023
     },
     {
-     "w": "point",
-     "t": 17.233,
-     "end": 17.567
+     "w": "hundred",
+     "t": 15.023,
+     "end": 15.498
     },
     {
-     "w": "three",
-     "t": 17.567,
-     "end": 17.9
+     "w": "sixty",
+     "t": 15.498,
+     "end": 15.837
     },
     {
-     "w": "million.",
-     "t": 17.9,
-     "end": 18.2
+     "w": "thousand.",
+     "t": 15.837,
+     "end": 16.38
     }
    ]
   },
   {
    "turn": 7,
-   "text": "Day thirty... five point three million dollars.",
+   "text": "Day twenty-eight, one point three million.",
    "words": [
     {
      "w": "Day",
-     "t": 18.8,
-     "end": 19.1
+     "t": 16.62,
+     "end": 16.88
     },
     {
-     "w": "thirty...",
-     "t": 19.1,
-     "end": 19.856
+     "w": "twenty-eight,",
+     "t": 16.88,
+     "end": 17.613
     },
     {
-     "w": "five",
-     "t": 19.856,
-     "end": 20.36
+     "w": "one",
+     "t": 17.613,
+     "end": 17.813
     },
     {
      "w": "point",
-     "t": 20.36,
-     "end": 20.99
+     "t": 17.813,
+     "end": 18.147
     },
     {
      "w": "three",
-     "t": 20.99,
-     "end": 21.62
+     "t": 18.147,
+     "end": 18.48
     },
     {
-     "w": "million",
-     "t": 21.62,
-     "end": 21.98
-    },
-    {
-     "w": "dollars.",
-     "t": 21.98,
-     "end": 22.28
+     "w": "million.",
+     "t": 18.48,
+     "end": 18.78
     }
    ]
   },
   {
    "turn": 8,
-   "text": "Half of it shows up on the very last day.",
+   "text": "Day thirty... five point three million dollars.",
    "words": [
     {
-     "w": "Half",
-     "t": 23.14,
-     "end": 23.38
+     "w": "Day",
+     "t": 19.4,
+     "end": 19.68
     },
     {
-     "w": "of",
-     "t": 23.38,
-     "end": 23.5
+     "w": "thirty...",
+     "t": 19.68,
+     "end": 20.436
     },
     {
-     "w": "it",
-     "t": 23.5,
-     "end": 23.62
+     "w": "five",
+     "t": 20.436,
+     "end": 20.94
     },
     {
-     "w": "shows",
-     "t": 23.62,
-     "end": 23.82
+     "w": "point",
+     "t": 20.94,
+     "end": 21.57
     },
     {
-     "w": "up",
-     "t": 23.82,
-     "end": 24.08
+     "w": "three",
+     "t": 21.57,
+     "end": 22.2
     },
     {
-     "w": "on",
-     "t": 24.08,
-     "end": 24.2
+     "w": "million",
+     "t": 22.2,
+     "end": 22.56
     },
     {
-     "w": "the",
-     "t": 24.2,
-     "end": 24.28
-    },
-    {
-     "w": "very",
-     "t": 24.28,
-     "end": 24.46
-    },
-    {
-     "w": "last",
-     "t": 24.46,
-     "end": 24.76
-    },
-    {
-     "w": "day.",
-     "t": 24.76,
-     "end": 25.08
+     "w": "dollars.",
+     "t": 22.56,
+     "end": 22.86
     }
    ]
   },
   {
    "turn": 9,
+   "text": "Half of it shows up on the very last day.",
+   "words": [
+    {
+     "w": "Half",
+     "t": 23.58,
+     "end": 23.96
+    },
+    {
+     "w": "of",
+     "t": 23.96,
+     "end": 24.08
+    },
+    {
+     "w": "it",
+     "t": 24.08,
+     "end": 24.22
+    },
+    {
+     "w": "shows",
+     "t": 24.22,
+     "end": 24.4
+    },
+    {
+     "w": "up",
+     "t": 24.4,
+     "end": 24.66
+    },
+    {
+     "w": "on",
+     "t": 24.66,
+     "end": 24.78
+    },
+    {
+     "w": "the",
+     "t": 24.78,
+     "end": 24.86
+    },
+    {
+     "w": "very",
+     "t": 24.86,
+     "end": 25.04
+    },
+    {
+     "w": "last",
+     "t": 25.04,
+     "end": 25.34
+    },
+    {
+     "w": "day.",
+     "t": 25.34,
+     "end": 25.66
+    }
+   ]
+  },
+  {
+   "turn": 10,
    "text": "Which is why, every single time,",
    "words": [
     {
      "w": "Which",
-     "t": 25.44,
-     "end": 25.86
+     "t": 26.1,
+     "end": 26.44
     },
     {
      "w": "is",
-     "t": 25.86,
-     "end": 26.0
+     "t": 26.44,
+     "end": 26.58
     },
     {
      "w": "why,",
-     "t": 26.0,
-     "end": 26.3
+     "t": 26.58,
+     "end": 26.86
     },
     {
      "w": "every",
-     "t": 26.3,
-     "end": 26.76
+     "t": 26.86,
+     "end": 27.34
     },
     {
      "w": "single",
-     "t": 26.76,
-     "end": 27.02
+     "t": 27.34,
+     "end": 27.6
     },
     {
      "w": "time,",
-     "t": 27.02,
-     "end": 27.4
+     "t": 27.6,
+     "end": 27.98
     }
    ]
   }

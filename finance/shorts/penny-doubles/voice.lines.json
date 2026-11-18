@@ -12,32 +12,47 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 27.991,
- "render_s": 242.1,
+ "duration": 28.574,
+ "render_s": 232.9,
  "qa_fail_lines": [
-  2,
-  7
+  3,
+  8
  ],
  "lines": [
   {
    "n": 1,
-   "text": "One penny, doubled every day for 30 days, beats a million dollars.",
+   "text": "This penny beats a million dollars.",
    "start": 0.15,
    "parts": [
     {
-     "tts": "One penny, doubled every day for thirty days, beats a million dollars.",
+     "tts": "This penny beats a million dollars.",
      "seed": 7,
-     "heard": "One penny, doubled every day for 30 days, beats a million dollars.",
+     "heard": "This penny beats a million dollars.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 4.362
+   "end": 2.424
   },
   {
    "n": 2,
+   "text": "Double it every day for 30 days.",
+   "start": 2.724,
+   "parts": [
+    {
+     "tts": "Double it every day for thirty days.",
+     "seed": 7,
+     "heard": "Double it every day for 30 days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.945
+  },
+  {
+   "n": 3,
    "text": "Day ten? Five dollars and twelve cents.",
-   "start": 4.662,
+   "start": 5.245,
    "parts": [
     {
      "tts": "Day ten? Five dollars and twelve cents.",
@@ -47,12 +62,12 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 7.432
+   "end": 8.015
   },
   {
-   "n": 3,
+   "n": 4,
    "text": "Day twenty? About five thousand. Still losing.",
-   "start": 7.732,
+   "start": 8.315,
    "parts": [
     {
      "tts": "Day twenty? About five thousand. Still losing.",
@@ -62,12 +77,12 @@
      "qa": "ok"
     }
    ],
-   "end": 10.688
+   "end": 11.271
   },
   {
-   "n": 4,
+   "n": 5,
    "text": "Then the doubling takes over.",
-   "start": 10.988,
+   "start": 11.571,
    "parts": [
     {
      "tts": "Then the doubling takes over.",
@@ -77,12 +92,12 @@
      "qa": "ok"
     }
    ],
-   "end": 12.758
+   "end": 13.341
   },
   {
-   "n": 5,
+   "n": 6,
    "text": "Day twenty-five, over one hundred sixty thousand.",
-   "start": 13.058,
+   "start": 13.641,
    "parts": [
     {
      "tts": "Day twenty-five, over one hundred sixty thousand.",
@@ -92,12 +107,12 @@
      "qa": "ok"
     }
    ],
-   "end": 15.785
+   "end": 16.368
   },
   {
-   "n": 6,
+   "n": 7,
    "text": "Day twenty-eight, one point three million.",
-   "start": 16.085,
+   "start": 16.668,
    "parts": [
     {
      "tts": "Day twenty-eight, one point three million.",
@@ -107,12 +122,12 @@
      "qa": "ok"
     }
    ],
-   "end": 18.543
+   "end": 19.126
   },
   {
-   "n": 7,
+   "n": 8,
    "text": "Day thirty... five point three million dollars.",
-   "start": 18.843,
+   "start": 19.426,
    "parts": [
     {
      "tts": "Day thirty...",
@@ -129,12 +144,12 @@
      "qa": "QA FAIL"
     }
    ],
-   "end": 22.887
+   "end": 23.47
   },
   {
-   "n": 8,
+   "n": 9,
    "text": "Half of it shows up on the very last day.",
-   "start": 23.187,
+   "start": 23.77,
    "parts": [
     {
      "tts": "Half of it shows up on the very last day.",
@@ -144,12 +159,12 @@
      "qa": "ok"
     }
    ],
-   "end": 25.354
+   "end": 25.937
   },
   {
-   "n": 9,
+   "n": 10,
    "text": "Which is why, every single time,",
-   "start": 25.654,
+   "start": 26.237,
    "parts": [
     {
      "tts": "Which is why, every single time,",
@@ -159,7 +174,7 @@
      "qa": "ok"
     }
    ],
-   "end": 27.691
+   "end": 28.274
   }
  ]
 }
