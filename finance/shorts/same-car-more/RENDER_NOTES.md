@@ -56,3 +56,27 @@ STATE: rendered
 - **Eye check:** I checked the shot sheet (`contact_sheet.png`), and every shot reads.
 - **EDGES FAIL (0.4 %):** I judge it a false positive. Every caption on the shot sheet is centred, well inside the 12 % margins. The flagged pixels are scene whites at the frame edge (the white CFPB sign in S18, clouds, the road kerbs).
 - **Sky:** S14–S18 switch to the night/whisper sky at the interest reveal (a story turn), then go back to day for the loop.
+
+## PC render (Reel creator, 2026-11-18): video.mp4 = PC v1 from CODE_FINAL d03a873d
+- `video.mp4` sha256 `a4887fc64e4ae5093b6b81a2fea4a863acdb1eebe12188e76717854dd548e9be`. 1080x1920, 30 fps, 832 frames (27.73 s), SUB=4 motion blur, 23.7 MB. It replaces the old F2 render.
+- Code unchanged from CODE_FINAL d03a873d (samecar.tsx, kit.tsx); rendered `SameCarMoreV1Sub` on the RTX 4060 in 118 s.
+- **Audio:** `tools/story_mix.py SameCarMoreV1` then `tools/mux_voice.sh`: **-14.0 LUFS, true peak -1.3 dBFS** (0.2 dB above the -1.5 target; fine for YouTube's own normalising).
+- **Whisper (small) on the final mix:** every word of script.txt in order.
+- **Critic:** 0 FAIL. One long still run: 0.87 s from frame 82 (the "$926/MO" sign hold); frac_still 0.355.
+
+### Clipping checks (PC)
+- `story_qa`: 0 clips (cloud run on the same code).
+- **By eye:** 6 fps scrub (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-28s.jpg`) and the impact frames (`scrub_impacts.jpg`: 8, 408/413, 583/585, 618). Feet on the floor throughout; no prop inside a head or body; the burst-door debris and the towers stay clear of both actors.
+
+### Pre-post gate (see `frame0.jpg`, `strip_0-2s_6fps.jpg`)
+| check | result |
+|---|---|
+| close-up >= 50 % of the frame, mid-action | **no**: frame 0 is two red cars on the road with the price signs; no face. The cars fill about 40 % of the frame. |
+| hook text readable | yes: "$926 OR $453 A MONTH?", 2 lines, top third. The "EXAMPLE: $30,000 · 7%" tag overlaps the end of line 2. |
+| stake on screen by 0.5 s | yes, from frame 0 |
+| first word by 0.3 s | yes: "Would" at 0.15 s |
+| music and SFX at frame 0 | yes |
+| emotion change by 1.5 s | **no**: no character is on screen until 5.7 s |
+| no dark, empty or wide frame in the first 1 s | **borderline**: a medium-wide road shot. At 1.57 s the camera slams into the $926/MO sign. |
+
+Not uploaded. It waits for MAIN QA and a BM GO.

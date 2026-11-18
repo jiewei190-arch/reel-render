@@ -1,4 +1,4 @@
-1. Spender's car just broke, and this bill will follow him for two years.
+1. Spender's car just broke down, and this bill will follow him for two years.
 2. One thousand dollars, due now. No savings.
 3. So it goes on a card: twenty-two percent, fifty a month.
 4. Month six. Month twelve. Still paying. And the worst part is still coming...

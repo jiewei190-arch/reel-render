@@ -83,3 +83,34 @@ The scene code is unchanged between 6e48331e and the branch tip (surprise.tsx, k
   - If you want frame 0 tighter, it's a one-line lens change on S01 plus a ~3 min re-render on the PC.
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## PC v2 (Reel creator, 2026-11-18): MAIN's frame-0 and hook-audio fix. video.mp4 = PC v2
+- `video.mp4` sha256 `1cabd5fbfa359d03c09677276f084e499c2133a4db4ad3e0b5f487f7ce3dfa02`. 1080x1920, 30 fps, 898 frames (29.93 s), SUB=4 motion blur, 30.6 MB. It replaces PC v1 (131d79ed).
+- **Line 1 re-voiced** (D2, exaggeration 0.55, cfg 0.3, seed 7): "Spender's car just broke down, and this bill will follow him for two years." It was spliced into voice.wav (every later line +0.462 s), then re-timed: `vo/timings.json`, `src/plan.gen.ts` (DURATION 898), and `render-pc/src/shorts/surprise_bill_v1.plan.gen.ts`.
+- **Whisper on "car":**
+  - The first 4.5 s of the final mix, on its own: both `small` and `small.en` hear **"Spender's car just broke down"**. That's what a viewer has heard at that point.
+  - The whole 30 s file: both models still write "card". Whisper decodes the 30 s window at once, and line 3's "it goes on a card" biases it. The line-1 audio alone transcribes as "car" every time.
+  - On screen, the hook text says CAR from frame 0, and the caption shows "SPENDER'S CAR JUST" on that word.
+- **Frame 0 / S18 lens (`surprise.tsx`):** a close `creep` lens on Spender's face, fov 52, face 0.52. Spender turns to face the camera (yaw), with hands out and a head turn. S18 (the loop shot) uses the same lens, so the loop still matches.
+- **Hook text:** "$1,000 CAR BILL = 2 YEARS OF PAYMENTS" (both places).
+- **Audio:** story_mix (music `tense`, 26 SFX) then mux_voice: **-14.2 LUFS, true peak -1.5 dBFS**.
+- **Critic:** 0 FAIL. SYNC 25 cuts, max offset 0 frames; STATIC 0 s; EDGES 15.9 %. frac_still 0.168.
+
+### Clipping checks (v2)
+- `story_qa`: 898 frames x 4 sub-frames, **0 clips**.
+- **By eye:**
+  - 6 fps scrub (`scrub_6fps_0-12s.jpg`, `scrub_6fps_12-24s.jpg`, `scrub_6fps_24-30s.jpg`) and the impact frames plus 2 (`scrub_impacts.jpg`: 0/1, 80, 644, 795).
+  - Feet on the floor throughout. Spender's raised fist in S01 is beside his head, not in it. The bill, the jar, the FINAL TOTAL card and the boards sit clear of every head and body.
+
+### Pre-post gate (v2; see `frame0.jpg`, `strip_0-2s_6fps.jpg`)
+| check | result |
+|---|---|
+| close-up >= 50 % of the frame, mid-action | yes: Spender's face and torso fill the frame, panicked, his fist mid-raise |
+| hook text readable | yes: "$1,000 CAR BILL = 2 YEARS OF PAYMENTS", 2 lines, top third |
+| stake on screen by 0.5 s | yes, from frame 0 |
+| first word by 0.3 s | yes: "Spender's" at 0.15 s |
+| music and SFX at frame 0 | yes |
+| emotion change by 1.5 s | yes: shock to worried on "broke down" (about 1.0 s) |
+| no dark, empty or wide frame in the first 1 s | yes |
+
+Not uploaded. It waits for MAIN QA and a BM GO.

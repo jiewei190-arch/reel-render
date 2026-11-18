@@ -77,7 +77,7 @@ const actorsAt = (i: number, t: number): Actor[] => {
     let held: Actor["held"];
     if (i === 1 || i === 18) {
       const fl = i === 1 ? ss(0, 0.2, t) : 0;
-      pose = { ...pose, armL: lerp(0.5, 2.6, fl), armR: lerp(0.5, 2.6, fl), outL: 0.35 * fl, outR: 0.35 * fl, pitch: -0.14 * fl, headYaw: -0.25 * fl }; // flinch: hands up beside the head, away from the car
+      pose = { ...pose, yaw: yawTo(P_SP, [P_SP[0] + 0.2, 0, P_SP[2] + 5]), armL: lerp(0.5, 2.6, fl), armR: lerp(0.5, 2.6, fl), outL: 0.55 * fl, outR: 0.55 * fl, pitch: -0.14 * fl, headYaw: 0.3 * fl }; // flinch, facing the lens (PC gate fix): hands up beside the head, the smoking car behind his shoulder
       emo = i === 1 ? "shock" : "curious";
       if (i === 18) pose = { ...pose, headPitch: 0.1 * Math.sin(t * 9) };
     }
@@ -112,7 +112,9 @@ const actorsAt = (i: number, t: number): Actor[] => {
 
 // ------------------------------------------------------------------ lenses
 const face = (p: V3): V3 => [p[0], FACE - 0.05, p[2]];
-const hook = creep([(CAR[0] + P_SP[0]) / 2 + 0.1, 0.95, (CAR[2] + P_SP[2]) / 2], [2.4, 1.0, 4.3], { fov: 56, face: 0.5, shake: shakeAt([tBang], 0.07) });
+// PC (MAIN's gate fix): frame 0 is a CLOSE-UP of Spender's panicked face (>= 50 % of the frame) with the smoking bonnet
+// beside/behind him (the lens sits front-right of him, looking back toward the car); S18 (the loop) uses the same lens.
+const hook = creep([P_SP[0] - 0.15, FACE - 0.08, P_SP[2]], [P_SP[0] + 0.2, FACE + 0.05, P_SP[2] + 1.35], { fov: 52, face: 0.52, blur: 1.0, shake: shakeAt([tBang], 0.07) });
 const LENS = {
   S01: hook,
   S02: creep([SCREEN[0], 1.05, SCREEN[2]], [SCREEN[0] + 0.6, 1.35, SCREEN[2] + 1.6], { fov: 44, face: 0.5 }),
@@ -240,8 +242,8 @@ export const SURPRISE_V1_QA = (t: number): { actors: Box[]; props: Box[] } => {
 
 const overlay = (t: number) => (
   <>
-    <HookText text="A $1,000 BILL FOR 2 YEARS" t={t} until={lineEnd(1) + 0.25} />
-    {t >= T("S18") ? <HookText text="A $1,000 BILL FOR 2 YEARS" t={t} until={99} /> : null}
+    <HookText text="$1,000 CAR BILL = 2 YEARS OF PAYMENTS" t={t} until={lineEnd(1) + 0.25} />
+    {t >= T("S18") ? <HookText text="$1,000 CAR BILL = 2 YEARS OF PAYMENTS" t={t} until={99} /> : null}
     <WordCaption words={WORDS} t={t} />
   </>
 );
