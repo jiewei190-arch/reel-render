@@ -3,5 +3,5 @@
 3. The typical fee? 34 dollars.
 4. And more than half were paid back within three days.
 5. So: borrow 24 dollars for three days, pay 34.
-6. Twist: as a loan, that's an A.P.R. of about 17,000 percent.
+6. Twist: that's like a loan at an A.P.R. of about 17,000 percent.
 7. By law, debit overdraft coverage is your choice. Opted in? You can still

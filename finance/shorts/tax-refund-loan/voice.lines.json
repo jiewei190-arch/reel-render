@@ -13,11 +13,11 @@
  "beat": 0.7,
  "sr": 24000,
  "duration": 27.082,
- "render_s": 357.8,
+ "render_s": 339.1,
  "qa_fail_lines": [
   2,
   4,
-  6
+  5
  ],
  "lines": [
   {
@@ -82,23 +82,8 @@
   },
   {
    "n": 5,
-   "text": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
-   "start": 13.242,
-   "parts": [
-    {
-     "tts": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
-     "seed": 11,
-     "heard": "Twist. A refund isn't a bonus. It's your own money, sent back late.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 17.485
-  },
-  {
-   "n": 6,
    "text": "Your W-4 form sets the withholding, and the I.R.S. has a free estimator to check it.",
-   "start": 17.785,
+   "start": 13.242,
    "parts": [
     {
      "tts": "Your W-four form sets the withholding, and the I.R.S. has a free estimator to check it.",
@@ -106,6 +91,21 @@
      "heard": "Your W4 form sets the withholding, and the IRS has a free estimator to check it.",
      "wrong_words": 5,
      "qa": "QA FAIL"
+    }
+   ],
+   "end": 18.063
+  },
+  {
+   "n": 6,
+   "text": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
+   "start": 18.363,
+   "parts": [
+    {
+     "tts": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
+     "seed": 11,
+     "heard": "Twist. A refund isn't a bonus. It's your own money, sent back late.",
+     "wrong_words": 0,
+     "qa": "ok"
     }
    ],
    "end": 22.606

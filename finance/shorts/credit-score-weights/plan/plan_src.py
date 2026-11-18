@@ -14,6 +14,7 @@ SHOTS = [
     ('S04', (2, 'paying', 1), 'store', 'medium on Saver at a calendar, push-in', 'Saver drops a coin into a BILL slot; the calendar shows ON TIME ✓'),
     ('S05', (2, '35', 1), 'store', 'close on the tower base, push-in', '35% ON TIME segment lights'),
     ('S18', (3, 'paid', 1), 'store', 'medium on Saver at the bills box, push-in', 'A red LATE stamp hits the due-date calendar; tag STAYS UP TO 7 YEARS'),
+    ('S19', (3, 'stay', 1), 'store', 'close on the calendar, push-in', 'The calendar: LATE, STAYS UP TO 7 YEARS'),
     ('S06', (4, 'how', 1), 'store', 'medium on the tower, push-in', 'The 30% OWED segment stacks on'),
     ('S07', (4, 'how', 2), 'store', 'medium on the tower, push-in', 'The 15% HISTORY segment stacks on'),
     ('S08', (5, 'new', 1), 'store', 'medium on the tower, push-in', '10% NEW stacks on'),

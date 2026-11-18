@@ -9,9 +9,9 @@ LOOP_NOTE = 'S18 ("So ask:") returns to the S01 lens: the 30% slice slams onto S
 COUNTER = '`RENT CAP 25%` (1969) → `30%` (1981) → `$4,000/MO × 30% = $1,200`; hook `30% = RENT?`.'
 SHOTS = [
     ('S01', (1, 'who', 1), 'earth', 'medium 3/4 on Saver and his income bar, push-in', "Conflict in frame 1: a big red 30% slice slams onto Saver's income bar; a ? sign pops over him"),
-    ('S02', (1, 'rent', 1), 'earth', 'close on the slice, push-in', 'The red slice: RENT 30%? WHO SAID?'),
+    ('S02', (1, 'should', 1), 'earth', 'close on the slice, push-in', 'The red slice: RENT 30%? WHO SAID?'),
     ('S03', (2, 'it', 1), 'earth', 'close on the flip calendar, push-in', 'Flip calendar: YEAR 1969'),
-    ('S04', (2, 'law', 1), 'earth', 'medium on Teller, push-in', 'Teller stamps LAW on a sheet'),
+    ('S04', (2, 'a', 1), 'earth', 'medium on Teller, push-in', 'Teller stamps LAW on a sheet'),
     ('S05', (2, 'public', 1), 'earth', 'wide on the housing block, push-in', 'A blocky apartment block: PUBLIC HOUSING'),
     ('S06', (3, 'capped', 1), 'earth', 'medium on the income bar, push-in', 'The income bar with a cap line at 25%'),
     ('S07', (3, "tenant's", 1), 'earth', 'medium on Saver at the bar, push-in', 'Saver (tenant) points at the 25% MAX line'),
@@ -20,9 +20,9 @@ SHOTS = [
     ('S10', (5, 'in', 1), 'earth', 'close on the calendar, push-in', 'Calendar flips 1969 → 1981'),
     ('S11', (5, 'raised', 1), 'earth', 'medium on the bar, push-in', 'The cap line slides up 25% → 30%'),
     ('S15', (6, 'on', 1), 'earth', 'medium on a $4,000 stack, push-in', 'Saver beside a $4,000 / MONTH coin stack'),
-    ('S16', (6, '1,200', 1), 'earth', 'close on the split, push-in', 'The top 30% of the stack lifts out: $1,200 RENT'),
+    ('S16', (6, 'means', 1), 'earth', 'close on the split, push-in', 'The top 30% of the stack lifts out: $1,200 RENT'),
     ('S12', (7, 'twist', 1), 'whisper', 'wide on the street, push-in', 'Dusk: the 30% line leaps off the public housing block'),
-    ('S13', (7, "everyone's", 1), 'whisper', 'wide on a row of tenants, push-in', 'Saver, Spender and Penny in a row, each with a 30% tag'),
+    ('S13', (7, 'became', 1), 'whisper', 'wide on a row of tenants, push-in', 'Saver, Spender and Penny in a row, each with a 30% tag'),
     ('S14', (7, 'thumb', 1), 'whisper', 'close on a sign, push-in', 'Sign: RULE OF THUMB'),
     ('S17', (8, 'rough', 1), 'ending', 'medium on Saver, push-in', 'Saver shrugs with a ROUGH GUIDE sign'),
     ('S18', (8, 'so', 1), 'earth', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: the red 30% slice slams onto the income bar'),

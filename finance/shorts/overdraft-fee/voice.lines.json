@@ -12,8 +12,8 @@
  "lead": 0.15,
  "beat": 0.7,
  "sr": 24000,
- "duration": 28.175,
- "render_s": 328.6,
+ "duration": 28.071,
+ "render_s": 352.5,
  "qa_fail_lines": [
   1,
   2,
@@ -84,38 +84,38 @@
   },
   {
    "n": 5,
-   "text": "Twist: call it a loan. Borrow 24 dollars for three days, pay 34.",
+   "text": "So: borrow 24 dollars for three days, pay 34.",
    "start": 13.791,
    "parts": [
     {
-     "tts": "Twist: call it a loan. Borrow twenty-four dollars for three days, pay thirty-four.",
+     "tts": "So: borrow twenty-four dollars for three days, pay thirty-four.",
      "seed": 7,
-     "heard": "Twist, call it a loan. Borrow $24 for three days. Pay $34.",
+     "heard": "So, borrow $24 for three days, pay $34.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 18.562
+   "end": 17.318
   },
   {
    "n": 6,
-   "text": "That's an A.P.R. of about 17,000 percent.",
-   "start": 18.862,
+   "text": "Twist: as a loan, that's an A.P.R. of about 17,000 percent.",
+   "start": 17.618,
    "parts": [
     {
-     "tts": "That's an A.P.R. of about seventeen thousand percent.",
+     "tts": "Twist: as a loan, that's an A.P.R. of about seventeen thousand percent.",
      "seed": 7,
-     "heard": "That's an APR of about 17,000%.",
-     "wrong_words": 3,
+     "heard": "Twist as, alone, that's an APR of about 17,000%.",
+     "wrong_words": 5,
      "qa": "QA FAIL"
     }
    ],
-   "end": 22.507
+   "end": 22.403
   },
   {
    "n": 7,
    "text": "By law, debit overdraft coverage is your choice. Opted in? You can still",
-   "start": 22.807,
+   "start": 22.703,
    "parts": [
     {
      "tts": "By law, debit overdraft coverage is your choice. Opted in? You can still",
@@ -125,7 +125,7 @@
      "qa": "ok"
     }
    ],
-   "end": 27.875
+   "end": 27.771
   }
  ]
 }

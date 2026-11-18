@@ -67,13 +67,14 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S14: manual([METER[0], 1.7, METER[2]], -14, 1.7, 0.05, { mood: "whisper" }),
   S15: fitted(tower(3.4), 6, 0.1, D.S15, { mood: "whisper" }),
   S18: fitted([...body(P_PAY, S.saver), [BOX[0] - 0.4, 0, BOX[2]], [CAL[0], CAL[1] + 0.5, CAL[2]]], 22, 0.08, D.S18, { mood: "store" }),
+  S19: manual([CAL[0], CAL[1] - 0.1, CAL[2]], 10, 2.0, 0.0, { mood: "store" }),
   S16: fitted([[MINI[0][0] - 0.4, 0, MINI[0][2]], [MINI[2][0] + 0.4, 1.9, MINI[2][2]]], -10, 0.15, D.S16, { mood: "ending" }),
   S17: hook,
 };
 export const SCORE_SHOTS = buildShots(PLAN, LENS);
 
 // ------------------------------------------------------------------ scene
-const shownAt = (i: number) => (i === 1 || i === 2 || i === 17 ? 5 : i <= 3 ? 0 : i <= 5 || i === 18 ? 1 : i === 6 ? 2 : i === 7 ? 3 : i === 8 ? 4 : 5);
+const shownAt = (i: number) => (i === 1 || i === 2 || i === 17 ? 5 : i <= 3 ? 0 : i <= 5 || i >= 18 ? 1 : i === 6 ? 2 : i === 7 ? 3 : i === 8 ? 4 : 5);
 const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
   const i = idx(shot.id);
   const loop = i === 1 || i === 17;
@@ -127,7 +128,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       {i === 15 ? <BigBlock p={[TOWER[0], y + 2.0 * drop, TOWER[2]]} size={[0.9, 0.4, 0.8]} color="#3a3f58" text="LIMIT 95%" /> : null}
       {/* the bills box + the on-time calendar */}
       <BigBlock p={BOX} size={[0.7, 1.0, 0.5]} color="#3a3f58" text="BILLS" />
-      <FlipCalendar p={CAL} title="DUE DATE" value={i === 18 ? "LATE" : "✓"} sub={i === 18 ? "STAYS UP TO 7 YEARS" : "PAID ON TIME"} color={i === 18 ? PAL.debt : PAL.cash} />
+      <FlipCalendar p={CAL} title="DUE DATE" value={i >= 18 ? "LATE" : "✓"} sub={i >= 18 ? "STAYS UP TO 7 YEARS" : "PAID ON TIME"} color={i >= 18 ? PAL.debt : PAL.cash} />
       {/* the board */}
       <ChartBoard p={BOARD} title="PUBLISHED SCORE BREAKDOWN" values={[]} w={2.0} h={1.3} board="#2a1a3a" />
       <Label p={[BOARD[0], 1.5, BOARD[2] + 0.05]} text={["35 · 30 · 15 · 10 · 10", "A WIDELY USED SCORE"]} w={1.75} h={0.55} bg="#2a1a3a" fg="#ffd23a" />
@@ -161,7 +162,7 @@ const counter = (t: number, shot: FinShot): CounterState => {
   const i = idx(shot.id);
   void t;
   if (i >= 10 && i <= 15) return { lines: [{ text: "OWED 30%", color: RED }, { text: i >= 12 ? `LIMIT USED ${i === 12 ? 90 : i === 13 ? 90 : 95}%` : "HOW MUCH OF YOUR LIMIT", color: "#ffffff", size: 40 }], accent: "#ff8a7a" };
-  if (i === 18) return { lines: [{ text: "PAID LATE?", color: RED }, { text: "CAN STAY UP TO 7 YEARS", color: "#ffffff", size: 42 }], accent: "#ff8a7a" };
+  if (i >= 18) return { lines: [{ text: "PAID LATE?", color: RED }, { text: "CAN STAY UP TO 7 YEARS", color: "#ffffff", size: 42 }], accent: "#ff8a7a" };
   if (i === 16) return { lines: [{ text: "WEIGHTS VARY", color: GOLD }, { text: "BY PERSON AND BY SCORE", color: "#ffffff", size: 40 }], accent: "#ffe27a" };
   const n = shownAt(i);
   const sum = SEG.slice(0, n).reduce((a, s) => a + s.v, 0);

@@ -9,9 +9,9 @@ LOOP_NOTE = 'S18 ("Interest-only can mean") returns to the S01 lens: Spender bes
 COUNTER = '`INTEREST-ONLY $133/MO · PAID $x · OWE $20,000` vs `FULL $406/MO · OWE $y`; end `INTEREST $8,000 vs $4,332` (VO rounding = HUD).'
 SHOTS = [
     ('S01', (1, 'five', 1), 'store', 'medium 3/4 on Spender + the debt block, push-in', "Conflict in frame 1: Spender beside a huge red OWE $20,000 block that hasn't shrunk; calendar YEAR 5; a pile of paid coins behind him"),
-    ('S02', (1, 'still', 1), 'store', 'close on the block, push-in', 'The block label: STILL OWE $20,000'),
+    ('S02', (1, 'owe', 1), 'store', 'close on the block, push-in', 'The block label: STILL OWE $20,000'),
     ('S03', (2, 'example', 1), 'store', 'medium two-shot at the booth, push-in', 'Lender hands Spender a $20,000 case'),
-    ('S04', (2, 'made-up', 1), 'store', 'close on a rate card, push-in', 'Rate card: 8% (MADE-UP EXAMPLE)'),
+    ('S04', (2, 'at', 1), 'store', 'close on a rate card, push-in', 'Rate card: 8% (MADE-UP EXAMPLE)'),
     ('S05', (3, 'pay', 1), 'store', 'medium on Spender at the booth, push-in', 'Spender drops a small stack into the booth slot'),
     ('S06', (3, '133', 1), 'store', 'close on the booth display, push-in', 'Booth display: $133/MO INTEREST ONLY'),
     ('S07', (4, 'after', 1), 'store', 'close on the flip calendar, push-in', 'Calendar races YEAR 1 → 5'),
@@ -19,11 +19,12 @@ SHOTS = [
     ('S09', (5, 'and', 1), 'store', 'medium on Spender + block, push-in', 'Spender looks up at the unchanged block, shock'),
     ('S10', (5, '20,000', 1), 'store', 'close on the block, push-in', 'OWE $20,000 pulses red'),
     ('S11', (6, 'the', 1), 'ending', 'medium on Saver + his block, push-in', "Saver's lane: his own OWE $20,000 block"),
-    ('S12', (6, '406', 1), 'ending', 'close on the booth display, push-in', 'Booth display: $406/MO FULL PAYMENT'),
+    ('S12', (6, 'about', 1), 'ending', 'close on the booth display, push-in', 'Booth display: $406/MO FULL PAYMENT'),
     ('S13', (6, 'month', 1), 'ending', 'medium on Saver paying, push-in', 'Saver drops a bigger stack; his block shrinks'),
-    ('S14', (6, 'after', 1), 'ending', "medium on Saver's block, push-in", "Calendar YEAR 5; Saver's block shrinks to a sliver"),
+    ('S14', (6, 'years', 1), 'ending', "medium on Saver's block, push-in", "Calendar YEAR 5; Saver's block shrinks to a sliver"),
     ('S15', (6, 'zero', 1), 'ending', 'medium on Saver, push-in', 'The block is gone: OWE $0; Saver cheers'),
     ('S16', (7, 'twist', 1), 'whisper', 'wide on two piles, push-in', 'Twist: two interest piles side by side: $8,000 (red, and still owing) vs $4,332 (green, owing $0)'),
+    ('S19', (7, '4,332', 1), 'whisper', 'close on the green pile, push-in', 'Close on the green pile: $4,332 · OWE $0'),
     ('S17', (8, 'small', 1), 'store', 'medium on Spender, push-in', 'Spender holds up one small coin, unsure'),
     ('S18', (8, 'interest-only', 1), 'store', 'SAME lens + position as S01 (loop match), push-in', 'Back to the start: Spender beside the untouched block'),
 ]
