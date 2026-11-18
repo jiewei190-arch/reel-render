@@ -1,70 +1,73 @@
 # surprise-bill
 
-- **Spoken:** 71 words, voice 28.55 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
+- **Spoken:** 85 words, voice 28.39 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
 - **Hook:** line 1, spoken from 0.0 s, no intro.
 - **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.
-- **Loop:** S19 ("Because otherwise,") returns to the S01 lens: the car smokes again and the red $1,000 bill pops up over Spender; the loop lands on "A surprise bill can last two years."
+- **Loop:** S18 on "Could you?": the car smokes and the bill flies at Spender again, the S01 lens; loops to frame 0 and "Spender's car just broke...".
 
-## Hook candidates
+## FORMAT v1 beat sheet
 
-1. **A surprise bill can last two years.** (7 words) ← PICK: a strange claim with a number; the last line ("Because otherwise,") flows into it.
-2. One thousand dollars can cost 1,257. (6)
-3. Your emergency is a 26-month loan. (6, overstates)
-4. Only 63 percent could pay this. (6, spoils the twist)
-5. A broken car, 257 dollars extra. (6)
+1. **Want:** Spender just wants his car fixed.
+2. **Trouble:** the bill is $1,000, due now, and he has no savings. It goes on a card at 22 %, $50 a month, and he's still paying in months 6 and 12.
+3. **Twist:** 26 months, plus $257 of interest. Saver had the same bill and paid it from his emergency fund. Done.
 
-## Beats
-- **Loop sentence:** "A small cushion changes the maths. Because otherwise, / a surprise bill can last two years."
-- **Twist (~70%):** the Fed's survey: only 63 % of adults would cover a $400 surprise with cash or its equivalent.
-- **Counter (every shot):** `$1,000 BILL` with `MONTHS nn` and `INTEREST $x` (red on the card route, green and 0 on the emergency-fund route).
+- **Hook text on frame 0 (6 words):** A $1,000 BILL FOR 2 YEARS
+- **Frame 0 (mid-action):** the bonnet bangs open in smoke. The $1,000 bill is mid-air and Spender flinches.
+- **Open loop (~45–55 %):** "And the worst part is still coming..." over a sealed red FINAL TOTAL envelope, trembling.
+- **Answer withheld until the twist (~65 %):** "plus 257 dollars of interest". The envelope bursts open to +$257 INTEREST.
+- **"You":** the last line, "Could you?"
+- **Loop:** "Could you?" → frame 0 (the car is smoking and about to bang).
+- **Music and SFX:** the toon3d `tense` bed. SFX: a boom and crash on the bang, paper, beep, coins, rain and thunder, a heartbeat and suspense under the envelope, an impact on the burst, fail, stamp and success.
 
 ## Voice-over (exact spoken text = script.txt)
 
 | # | time (s) | line |
 |---|---|---|
-| 1 | 0.00–2.06 | A surprise bill can last two years. |
-| 2 | 2.78–5.42 | Say the car breaks: 1,000 dollars, due now. |
-| 3 | 6.02–9.68 | With an emergency fund, it costs 1,000 dollars. Done. |
-| 4 | 10.32–13.24 | On a card at twenty-two percent, paying fifty a month? |
-| 5 | 13.72–17.40 | Twenty-six months, and about 257 dollars of interest. |
-| 6 | 18.00–23.86 | And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings. |
-| 7 | 24.70–27.70 | A small cushion changes the maths. Because otherwise, |
+| 1 | 0.00–3.32 | Spender's car just broke, and this bill will follow him for two years. |
+| 2 | 3.94–5.88 | One thousand dollars, due now. No savings. |
+| 3 | 6.44–9.38 | So it goes on a card: twenty-two percent, fifty a month. |
+| 4 | 9.82–13.88 | Month six. Month twelve. Still paying. And the worst part is still coming... |
+| 5 | 14.46–18.62 | Twenty-six months later: paid off, plus 257 dollars of interest. |
+| 6 | 19.30–22.28 | Saver had the same bill. He paid it from his emergency fund. Done. |
+| 7 | 22.78–27.94 | In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you? |
 
-Loop read-through: "…A small cushion changes the maths. Because otherwise, / A surprise bill can last two years."
+Loop read-through: "…In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you? / Spender's car just broke, and this bill will follow him for two years."
 
 ## Shot plan (one cut every ~1.4 s, each on its word)
 
-19 shots, 28.30 s (849 frames at 30 fps), median cut 1.42 s. Cast: SPENDER (red, bag) with the broken car and the card route; SAVER (green, glasses) with the EMERGENCY FUND jar; LENDER (navy, hat) at the card booth. Set: a sunny blocky street (outdoor ground + road), a toll-booth style card counter, a chart board for the Fed survey; no logos.
+23 shots, 28.54 s (856 frames at 30 fps), median cut 1.18 s. Cast: SPENDER (red, bag) and his smoking car; SAVER (green, glasses) with an EMERGENCY FUND jar; a card booth with LENDER (navy, hat). Set: a sunny blocky roadside garage. No logos, no brands.
 
 Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no real currency art.
 
 | shot | time (s) | dur | anchor word | mood | scene (cast, action, props, on-screen tag) | camera | captions in shot |
 |---|---|---|---|---|---|---|---|
-| S01 | 0.00–1.46 | 1.46 | a | earth | Conflict in frame 1: Spender beside his blocky car, smoke pouring from the bonnet, a red $1,000 bill card popping up over him; counter $1,000 BILL | medium 3/4 on Spender + car, push-in | a surprise / bill can / last two |
-| S02 | 1.46–2.78 | 1.32 | two | earth | A flip calendar by the kerb riffles to 26 MONTHS | close on a flip calendar, push-in | years. / say the |
-| S03 | 2.78–4.66 | 1.88 | say | earth | The car coughs a big smoke puff; Spender jumps (shock) | medium on Spender, push-in | car breaks: / 1,000 dollars, |
-| S04 | 4.66–6.02 | 1.36 | due | earth | A repair bill sheet slides into frame: $1,000 DUE NOW | close on the bill, push-in | due now. |
-| S05 | 6.02–7.68 | 1.66 | with | earth | Saver by his EMERGENCY FUND jar (full of coins) on a little stand | medium on Saver, push-in | with an / emergency fund, / it costs |
-| S06 | 7.68–9.44 | 1.76 | costs | earth | Saver scoops $1,000 of coins out; the jar drops a level; counter green: PAID $1,000, INTEREST $0 | close on the jar, push-in | 1,000 dollars. / done. |
-| S07 | 9.44–10.58 | 1.14 | done | earth | Saver dusts his hands; his car beside him is fixed, no smoke; joy | medium two-shot, push-in | on a / card at |
-| S08 | 10.58–11.94 | 1.36 | card | earth | Spender pulls out a red card (plain, no brand) and holds it up | medium on Spender, push-in | twenty-two percent, / paying fifty |
-| S09 | 11.94–13.72 | 1.78 | paying | earth | Lender (hat) at a booth; Spender drops a small $50 coin into the slot | medium on Lender at the booth, push-in | a month? |
-| S10 | 13.72–15.14 | 1.42 | twenty-six | earth | The flip calendar races month 1 to 26; counter MONTH n ticks | close on the calendar, push-in | twenty-six months, / and about |
-| S11 | 15.14–16.96 | 1.82 | about | earth | Behind the booth a red interest pile grows; tag $257 INTEREST | wide on the booth, push-in | 257 dollars / of interest. |
-| S12 | 16.96–18.00 | 1.04 | interest | whisper | Spender droops, antennae down, hugging the empty card | medium on Spender, push-in |  |
-| S13 | 18.00–19.78 | 1.78 | and | store | A chart board rolls in: FED SURVEY 2025, $400 SURPRISE | medium on a chart board, push-in | and in / the fed's / own survey, / only 63 |
-| S14 | 19.78–20.90 | 1.12 | only | store | One bar rises to 63% (green), the rest of the bar stays empty | close on the bar, push-in | percent of |
-| S15 | 20.90–22.18 | 1.28 | adults | store | Ten little blocks in a row: six and a bit glow green (cash or savings), the rest stay grey; label 63% | wide on a row of ten blocks, push-in | adults would / cover a / 400 dollar / surprise with |
-| S16 | 22.18–23.58 | 1.40 | surprise | store | A $400 SURPRISE card pops; Spender peeks at it | close on a $400 bill card, push-in | cash or / savings. |
-| S17 | 23.58–24.84 | 1.26 | savings | ending | Saver taps his EMERGENCY FUND jar; it glows | medium on Saver's jar, push-in | a small |
-| S18 | 24.84–26.88 | 2.04 | small | ending | Saver hands Spender a small jar with a few coins: CUSHION; Spender smiles | medium two-shot, push-in | cushion changes / the maths. / because otherwise, |
-| S19 | 26.88–28.30 | 1.42 | because | earth | Back to the start: the car smokes again, the $1,000 bill pops over Spender | SAME lens + position as S01 (loop match), push-in |  |
+| S01 | 0.00–1.66 | 1.66 | spender's | earth | FRAME 0 MID-ACTION: the car bonnet BANGS open in smoke, a $1,000 bill flies at Spender's face-side (stops outside his head box), he flinches; hook text A $1,000 BILL FOR 2 YEARS | low 3/4 on the car, mid-explosion | spender's car / just broke, / and this |
+| S02 | 1.66–2.84 | 1.18 | this | earth | The bill sticks to the car door: $1,000 DUE NOW | close on the bill | bill will / follow him / for two |
+| S03 | 2.84–3.94 | 1.10 | two | earth | Shock: two years?! | slam on Spender | years. / one thousand |
+| S04 | 3.94–5.50 | 1.56 | one | earth | Spender stares at the stuck bill: $1,000 DUE NOW | medium on Spender, empty wallet | dollars, / due now. |
+| S19 | 5.50–6.44 | 0.94 | no | earth | He turns out an empty bag: NO SAVINGS | medium on Spender, empty bag | no savings. / so it |
+| S05 | 6.44–7.40 | 0.96 | so | earth | The card booth: Lender swipes; 22% sign flips up | medium at the card booth | goes on / a card: |
+| S20 | 7.40–8.54 | 1.14 | twenty-two | earth | The CARD 22% APR sign slams down over the booth | close on the 22% sign | twenty-two percent, / fifty a |
+| S06 | 8.54–9.82 | 1.28 | fifty | earth | Spender drops a $50 coin in the slot | close on the slot | month. |
+| S07 | 9.82–10.90 | 1.08 | month | earth | Calendar flips MONTH 6 | close on the calendar | month six. / month twelve. |
+| S08 | 10.90–12.08 | 1.18 | twelve | earth | MONTH 12: a little rain cloud over Spender, still paying | wide, rain cloud | still paying. / and the |
+| S09 | 12.08–13.60 | 1.52 | and | whisper | OPEN LOOP: a sealed red envelope FINAL TOTAL trembles on the booth counter | slow push on a covered envelope | worst part / is still |
+| S21 | 13.60–14.46 | 0.86 | coming | whisper | OPEN LOOP: the sealed FINAL TOTAL envelope shakes harder | extreme close on the envelope | coming... |
+| S10 | 14.46–16.26 | 1.80 | twenty-six | whisper | Calendar races to MONTH 26 | close on the calendar racing | twenty-six months / later: / paid off, |
+| S11 | 16.26–18.02 | 1.76 | plus | whisper | TWIST: the envelope pops open: +$257 INTEREST (slam) | envelope bursts open | plus 257 |
+| S12 | 18.02–19.30 | 1.28 | dollars | whisper | Despair: Spender sinks | slam on Spender | dollars of / interest. |
+| S13 | 19.30–20.46 | 1.16 | saver | ending | Saver, same smoking car, same $1,000 bill | medium on Saver at his car | saver had / the same / bill. |
+| S14 | 20.46–22.14 | 1.68 | he | ending | He scoops coins from his EMERGENCY FUND jar | close on the EMERGENCY FUND jar | he paid / it from / his emergency / fund. / done. |
+| S15 | 22.14–23.02 | 0.88 | done | ending | PAID stamp; his car is fixed, he dusts his hands | medium on Saver | in a |
+| S16 | 23.02–23.86 | 0.84 | fed | earth | Chart board: FED SURVEY: 63% COULD PAY $400 IN CASH; bar rises | medium on a chart board | fed survey, |
+| S22 | 23.86–25.04 | 1.18 | 63 | earth | The 63% bar rises | close on the bar | 63 percent / of adults / could cover |
+| S17 | 25.04–26.42 | 1.38 | cover | earth | Saver points at the lens | slam toward the lens | a 400 / dollar surprise |
+| S23 | 26.42–27.44 | 1.02 | with | earth | COULD YOU? pops under the chart | wide on the board | with cash. / could you? |
+| S18 | 27.44–28.54 | 1.10 | could | earth | LOOP: Spender's car smokes, the bonnet is about to bang -> frame 0 | SAME lens as S01 (loop match) |  |
 
 ### On-screen counter (every shot)
 
-`$1,000 BILL` with `MONTHS nn` and `INTEREST $x` (red on the card route, green and 0 on the emergency-fund route).
+none (v1). Hook text from frame 0: A $1,000 BILL FOR 2 YEARS. Numbers in the set: $1,000 DUE NOW bill, 22% card, $50/MO, month calendar 6/12/26, $257 INTEREST, 63% chart.
 
 ### On-screen tags
 
-- 0.00 s **EXAMPLE: $1,000 · 22% APR · $50/MO**: small painted card on the kerb from frame 0
-- 19.78 s **63% (FED SHED 2025)**: on the chart board

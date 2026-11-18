@@ -20,6 +20,9 @@ import type { Box, StoryAudio } from "./kit";
 
 const { T, W, lineEnd } = timing(PLAN, WORDS);
 const idx = (id: string) => parseInt(id.slice(1), 10);
+/** story beat of a shot id: the shots added after the first plan map onto the beat they extend (S04 = reading the bill) */
+const SEQ: Record<string, number> = { S04: 3.5, S19: 4, S20: 5, S21: 9, S22: 16, S23: 16 };
+const seq = (id: string) => SEQ[id] ?? idx(id);
 const END = DURATION / 30;
 
 // ------------------------------------------------------------------ layout (metres; lens side = +z; a sunny roadside)
@@ -114,7 +117,12 @@ const LENS = {
   S01: hook,
   S02: creep([SCREEN[0], 1.05, SCREEN[2]], [SCREEN[0] + 0.6, 1.35, SCREEN[2] + 1.6], { fov: 44, face: 0.5 }),
   S03: { ...creep(face(P_SP), [P_SP[0] + 0.3, 1.32, P_SP[2] + 2.0], { face: 0.62, roll: [0, -3] }), fovAt: slam(tTwo, 50, 40, 0.14), shake: shakeAt([tTwo], 0.05) },
-  S04: creep([P_SP[0], 1.0, P_SP[2]], [P_SP[0] - 0.6, 1.3, P_SP[2] + 2.4], { face: 0.55 }),
+  S04: creep([(SCREEN[0] + P_SP[0]) / 2, 1.15, (SCREEN[2] + P_SP[2]) / 2], [P_SP[0] + 0.9, 1.55, P_SP[2] + 1.9], { fov: 50, face: 0.5 }),
+  S19: creep([P_SP[0], 1.0, P_SP[2]], [P_SP[0] - 0.6, 1.3, P_SP[2] + 2.4], { face: 0.55 }),
+  S20: creep([BOOTH[0], 2.35, BOOTH[2]], [BOOTH[0] + 0.4, 2.05, BOOTH[2] + 2.4], { fov: 46, face: 0.5, shake: shakeAt([T("S20") + 0.05], 0.03) }),
+  S21: creep([ENV[0], 1.1, ENV[2]], [ENV[0] - 0.15, 1.25, ENV[2] + 1.1], { fov: 44, face: 0.5, mood: "whisper", push: 0.1, shake: (t: number) => 0.006 + 0.004 * Math.abs(Math.sin(t * 31)) }),
+  S22: creep([BOARD[0] + 0.6, 1.35, BOARD[2]], [BOARD[0] + 0.9, 1.45, BOARD[2] + 1.7], { fov: 46, face: 0.5 }),
+  S23: creep([BOARD[0], 1.3, BOARD[2]], [BOARD[0] - 0.6, 1.7, BOARD[2] + 3.8], { fov: 54, face: 0.5 }),
   S05: creep([(P_LD[0] + P_SPB[0]) / 2, 1.2, -0.6], [3.9, 1.6, 3.6], { fov: 56, face: 0.5, shake: shakeAt([tSwipe + 0.15], 0.02) }),
   S06: creep([SLOT[0], 1.1, SLOT[2]], [SLOT[0] + 0.5, 1.35, SLOT[2] + 1.2], { fov: 44, face: 0.5 }),
   S07: creep([CAL[0], CAL[1] - 0.1, CAL[2]], [CAL[0] + 0.3, 2.0, CAL[2] + 2.1], { fov: 46, face: 0.5 }),
@@ -134,7 +142,7 @@ export const SURPRISE_V1_SHOTS = shotsOf(PLAN, LENS);
 
 // ------------------------------------------------------------------ scene
 const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
-  const i = idx(shot.id);
+  const i = seq(shot.id);
   void tau;
   const actors = actorsAt(i, t);
   const smoke = i <= 4 || i === 18 ? 1 : i <= 12 ? 0.4 : 0;
@@ -143,7 +151,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
   const month = monthAt(t, i);
   const envOpen = i >= 11 ? clamp((t - tEnv) / 0.25) + (i > 11 ? 1 : 0) : 0;
   const coinIn = i === 6 ? clamp((t - tCoin) / 0.4) : 0;
-  const bar = i === 16 ? 0.63 * ss(T("S16") + 0.1, T("S16") + 0.9, t) : 0.63;
+  const bar = shot.id === "S22" ? 0.63 * ss(shot.a + 0.05, shot.a + 0.7, t) : shot.id === "S16" ? 0.15 : 0.63;
   const jarFill = i === 14 ? 1 - 0.5 * ss(T("S14") + 0.1, T("S14") + 0.9, t) : i >= 15 ? 0.5 : 1;
   const billP = billAt(i === 1 ? t : 9);
   return (
@@ -200,6 +208,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       <ChartBoard p={BOARD} title="FED SURVEY 2025: A $400 SURPRISE" values={[]} w={2.0} h={1.3} />
       <Label p={[BOARD[0] - 0.45, 1.55, BOARD[2] + 0.06]} text={["63% COULD", "PAY IN CASH"]} w={0.95} h={0.5} bg="#16301e" fg="#7ee8a0" />
       <BigBlock p={[BOARD[0] + 0.6, 0.95, BOARD[2] + 0.08]} size={[0.4, Math.max(0.02, 1.0 * bar), 0.06]} color={PAL.cash} text={bar > 0.3 ? "63%" : ""} />
+      {shot.id === "S23" ? <Label p={[BOARD[0], 0.55, BOARD[2] + 0.3]} text={["COULD YOU?"]} w={1.4} h={0.32} bg="#ffd23a" fg={PAL.ink} /> : null}
       {actors.map((a) => <Act key={a.name} look={a.look} pose={a.pose} emotion={a.emo} s={a.s} t={t} seed={a.seed} held={a.held} />)}
     </>
   );
@@ -211,7 +220,7 @@ const box = (name: string, c: V3, h: V3): Box => ({ name, c, h });
 const carBoxes = (name: string, p: V3, yaw: number): Box[] => [{ name, c: [p[0], 0.58, p[2]], h: [0.76, 0.58, 1.32], yaw }];
 export const SURPRISE_V1_QA = (t: number): { actors: Box[]; props: Box[] } => {
   const sh = SURPRISE_V1_SHOTS.find((s) => t >= s.a && t < s.b) ?? SURPRISE_V1_SHOTS[SURPRISE_V1_SHOTS.length - 1];
-  const i = idx(sh.id);
+  const i = seq(sh.id);
   const actors = actorsAt(i, t).flatMap((a) => actorBoxes(a.name, [a.pose.x, 0, a.pose.z], a.s, a.pose));
   const props: Box[] = [
     ...carBoxes("car", CAR, CAR_YAW), ...carBoxes("car2", CAR2, -0.4),
@@ -243,7 +252,7 @@ export const SURPRISE_V1_SPEC: FinSpec = {
   ending: [],
   scene,
   counter: () => null,
-  tag: (t, s) => (idx(s.id) >= 5 && idx(s.id) <= 15 ? "EXAMPLE" : idx(s.id) === 16 ? "FED SHED 2025" : null),
+  tag: (t, s) => (seq(s.id) >= 5 && seq(s.id) <= 15 ? "EXAMPLE" : seq(s.id) === 16 || s.id === "S17" ? "FED SHED 2025" : null),
   bg: "#6aa6f2",
   overlay,
 };

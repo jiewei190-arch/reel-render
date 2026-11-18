@@ -1,8 +1,7 @@
-1. Ten years of saving can beat thirty.
-2. Saver puts away two hundred a month from twenty-five to thirty-five, then stops.
-3. Spender saves the same two hundred from thirty-five to sixty-five.
-4. Saver put in twenty-four thousand. Spender, seventy-two thousand.
-5. Assume a steady seven percent a year, as an example.
-6. At sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.
-7. Returns vary, nothing is guaranteed. But time did the heavy lifting.
-8. That's how
+1. Saver saved for ten years. Spender, for thirty. Saver wins.
+2. Saver puts in 200 a month from 25 to 35, then stops.
+3. Spender waits, then saves the same 200 from 35 to 65.
+4. Spender puts in 72,000. Saver, just 24,000.
+5. So Spender wins, right? Wait till you see age sixty-five...
+6. At a made-up, steady seven percent: Saver, about 280,000. Spender, 245,000.
+7. Starting early did the heavy lifting. Nothing's guaranteed, but you've seen who wins:

@@ -1,130 +1,128 @@
 {
  "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
+ "exaggeration": 0.55,
  "cfg_weight": 0.3,
  "seeds_tried": [
-  7,
-  11,
-  23
+  7
  ],
- "gap": 0.3,
+ "gap": 0.25,
  "section": 1.4,
- "lead": 0.15,
+ "lead": 0.1,
  "beat": 0.7,
  "sr": 24000,
- "duration": 28.548,
- "render_s": 316.6,
+ "duration": 28.389,
+ "render_s": 136.5,
  "qa_fail_lines": [
   2,
-  3,
   5,
-  6
+  6,
+  7
  ],
  "lines": [
   {
    "n": 1,
-   "text": "A surprise bill can last two years.",
-   "start": 0.15,
+   "text": "Spender's car just broke, and this bill will follow him for two years.",
+   "start": 0.1,
    "parts": [
     {
-     "tts": "A surprise bill can last two years.",
-     "seed": 11,
-     "heard": "A surprise bill can last two years.",
+     "tts": "Spender's car just broke, and this bill will follow him for two years.",
+     "seed": 7,
+     "heard": "Spender's car just broke, and this bill will follow him for two years.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 2.45
+   "end": 3.633
   },
   {
    "n": 2,
-   "text": "Say the car breaks: 1,000 dollars, due now.",
-   "start": 2.75,
+   "text": "One thousand dollars, due now. No savings.",
+   "start": 3.883,
    "parts": [
     {
-     "tts": "Say the car breaks: one thousand dollars, due now.",
-     "seed": 11,
-     "heard": "Say the car breaks, $1,000 due now.",
+     "tts": "One thousand dollars, due now. No savings.",
+     "seed": 7,
+     "heard": "$1,000 due now, no savings.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 5.75
+   "end": 6.243
   },
   {
    "n": 3,
-   "text": "With an emergency fund, it costs 1,000 dollars. Done.",
-   "start": 6.05,
+   "text": "So it goes on a card: twenty-two percent, fifty a month.",
+   "start": 6.493,
    "parts": [
     {
-     "tts": "With an emergency fund, it costs one thousand dollars. Done.",
+     "tts": "So it goes on a card: twenty-two percent, fifty a month.",
      "seed": 7,
-     "heard": "With an emergency fund, it costs $1,000. Done.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
+     "heard": "So it goes on a card, 22% 50 a month.",
+     "wrong_words": 0,
+     "qa": "ok"
     }
    ],
-   "end": 10.011
+   "end": 9.582
   },
   {
    "n": 4,
-   "text": "On a card at twenty-two percent, paying fifty a month?",
-   "start": 10.311,
+   "text": "Month six. Month twelve. Still paying. And the worst part is still coming...",
+   "start": 9.832,
    "parts": [
     {
-     "tts": "On a card at twenty-two percent, paying fifty a month?",
+     "tts": "Month six. Month twelve. Still paying. And the worst part is still coming...",
      "seed": 7,
-     "heard": "on a card at 22%, paying 50 a month.",
+     "heard": "month 6, month 12, still paying, and the worst part is still coming.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 13.458
+   "end": 14.188
   },
   {
    "n": 5,
-   "text": "Twenty-six months, and about 257 dollars of interest.",
-   "start": 13.758,
+   "text": "Twenty-six months later: paid off, plus 257 dollars of interest.",
+   "start": 14.438,
    "parts": [
     {
-     "tts": "Twenty-six months, and about two hundred fifty-seven dollars of interest.",
+     "tts": "Twenty-six months later: paid off, plus two hundred fifty-seven dollars of interest.",
      "seed": 7,
-     "heard": "26 months, and about $257 of interest.",
+     "heard": "26 months later, paid off, plus $257 of interest.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 17.724
+   "end": 19.02
   },
   {
    "n": 6,
-   "text": "And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.",
-   "start": 18.023,
+   "text": "Saver had the same bill. He paid it from his emergency fund. Done.",
+   "start": 19.27,
    "parts": [
     {
-     "tts": "And in the Fed's own survey, only sixty-three percent of adults would cover a four hundred dollar surprise with cash or savings.",
+     "tts": "Saver had the same bill. He paid it from his emergency fund. Done.",
      "seed": 7,
-     "heard": "And in the Fed's own survey, only 63% of adults would cover a $400 surprise with cash or savings.",
+     "heard": "Savor had the same bill. He paid it from his emergency fund. Done.",
      "wrong_words": 1,
      "qa": "QA FAIL"
     }
    ],
-   "end": 24.396
+   "end": 22.542
   },
   {
    "n": 7,
-   "text": "A small cushion changes the maths. Because otherwise,",
-   "start": 24.696,
+   "text": "In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?",
+   "start": 22.792,
    "parts": [
     {
-     "tts": "A small cushion changes the maths. Because otherwise,",
+     "tts": "In a Fed survey, sixty-three percent of adults could cover a four hundred dollar surprise with cash. Could you?",
      "seed": 7,
-     "heard": "A small cushion changes the maths, because otherwise...",
-     "wrong_words": 0,
-     "qa": "ok"
+     "heard": "In a Fed survey, 63% of adults could cover a $400 surprise with cash. Could you?",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
     }
    ],
-   "end": 28.248
+   "end": 28.139
   }
  ]
 }

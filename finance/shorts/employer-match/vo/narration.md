@@ -1,8 +1,7 @@
-1. Some jobs pay you to save.
-2. It's called an employer match.
-3. Say you earn 50,000, and your employer matches half of what you put in, up to six percent.
-4. You save 3,000 a year. They add 1,500.
-5. That's fifty cents on every dollar, before any growth.
-6. Skip it, and that 1,500 just isn't yours.
-7. Plans differ, some make you wait to keep it, and the I.R.S. caps your part at 24,500 for 2026.
-8. And yes, it's true:
+1. Spender just threw away 1,500 dollars of free money.
+2. His job has a match: save some pay, and they add more.
+3. Say he earns 50,000. They match half, up to six percent.
+4. Saver puts in 3,000 a year. Spender skips it. Too much hassle.
+5. Then Saver opens his first statement...
+6. 1,500 extra, from the employer. Fifty cents on every dollar.
+7. Plans differ, and some make you wait to keep it. Skip it, and you end up like Spender.

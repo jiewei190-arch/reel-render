@@ -3,403 +3,473 @@
   "audio": "voice.wav",
   "script": "script.txt",
   "model": "small",
-  "duration": 28.548
+  "duration": 28.389
  },
  "turns": [
   {
    "turn": 1,
-   "text": "A surprise bill can last two years.",
+   "text": "Spender's car just broke, and this bill will follow him for two years.",
    "words": [
     {
-     "w": "A",
+     "w": "Spender's",
      "t": 0.0,
-     "end": 0.26
+     "end": 0.56
     },
     {
-     "w": "surprise",
-     "t": 0.26,
-     "end": 0.58
+     "w": "car",
+     "t": 0.56,
+     "end": 0.74
+    },
+    {
+     "w": "just",
+     "t": 0.74,
+     "end": 1.02
+    },
+    {
+     "w": "broke,",
+     "t": 1.02,
+     "end": 1.3
+    },
+    {
+     "w": "and",
+     "t": 1.3,
+     "end": 1.66
+    },
+    {
+     "w": "this",
+     "t": 1.66,
+     "end": 1.86
     },
     {
      "w": "bill",
-     "t": 0.58,
-     "end": 0.96
+     "t": 1.86,
+     "end": 2.06
     },
     {
-     "w": "can",
-     "t": 0.96,
-     "end": 1.18
+     "w": "will",
+     "t": 2.06,
+     "end": 2.2
     },
     {
-     "w": "last",
-     "t": 1.18,
-     "end": 1.46
+     "w": "follow",
+     "t": 2.2,
+     "end": 2.48
+    },
+    {
+     "w": "him",
+     "t": 2.48,
+     "end": 2.68
+    },
+    {
+     "w": "for",
+     "t": 2.68,
+     "end": 2.84
     },
     {
      "w": "two",
-     "t": 1.46,
-     "end": 1.7
+     "t": 2.84,
+     "end": 3.02
     },
     {
      "w": "years.",
-     "t": 1.7,
-     "end": 2.06
+     "t": 3.02,
+     "end": 3.32
     }
    ]
   },
   {
    "turn": 2,
-   "text": "Say the car breaks: 1,000 dollars, due now.",
+   "text": "One thousand dollars, due now. No savings.",
    "words": [
     {
-     "w": "Say",
-     "t": 2.78,
-     "end": 2.94
+     "w": "One",
+     "t": 3.94,
+     "end": 4.077
     },
     {
-     "w": "the",
-     "t": 2.94,
-     "end": 3.08
-    },
-    {
-     "w": "car",
-     "t": 3.08,
-     "end": 3.3
-    },
-    {
-     "w": "breaks:",
-     "t": 3.3,
-     "end": 3.64
-    },
-    {
-     "w": "1,000",
-     "t": 3.64,
-     "end": 4.011
+     "w": "thousand",
+     "t": 4.077,
+     "end": 4.443
     },
     {
      "w": "dollars,",
-     "t": 4.011,
-     "end": 4.66
+     "t": 4.443,
+     "end": 4.763
     },
     {
      "w": "due",
-     "t": 4.66,
-     "end": 5.12
+     "t": 4.763,
+     "end": 4.9
     },
     {
      "w": "now.",
-     "t": 5.12,
-     "end": 5.42
+     "t": 4.9,
+     "end": 5.14
+    },
+    {
+     "w": "No",
+     "t": 5.5,
+     "end": 5.6
+    },
+    {
+     "w": "savings.",
+     "t": 5.6,
+     "end": 5.88
     }
    ]
   },
   {
    "turn": 3,
-   "text": "With an emergency fund, it costs 1,000 dollars. Done.",
+   "text": "So it goes on a card: twenty-two percent, fifty a month.",
    "words": [
     {
-     "w": "With",
-     "t": 6.02,
-     "end": 6.32
-    },
-    {
-     "w": "an",
-     "t": 6.32,
-     "end": 6.62
-    },
-    {
-     "w": "emergency",
-     "t": 6.62,
-     "end": 7.0
-    },
-    {
-     "w": "fund,",
-     "t": 7.0,
-     "end": 7.46
+     "w": "So",
+     "t": 6.44,
+     "end": 6.64
     },
     {
      "w": "it",
-     "t": 7.46,
-     "end": 7.68
+     "t": 6.64,
+     "end": 6.76
     },
     {
-     "w": "costs",
-     "t": 7.68,
-     "end": 8.0
+     "w": "goes",
+     "t": 6.76,
+     "end": 6.92
     },
     {
-     "w": "1,000",
-     "t": 8.0,
-     "end": 8.276
+     "w": "on",
+     "t": 6.92,
+     "end": 7.1
     },
     {
-     "w": "dollars.",
-     "t": 8.276,
-     "end": 8.76
+     "w": "a",
+     "t": 7.1,
+     "end": 7.18
     },
     {
-     "w": "Done.",
-     "t": 9.44,
-     "end": 9.68
+     "w": "card:",
+     "t": 7.18,
+     "end": 7.4
+    },
+    {
+     "w": "twenty-two",
+     "t": 7.4,
+     "end": 8.043
+    },
+    {
+     "w": "percent,",
+     "t": 8.043,
+     "end": 8.543
+    },
+    {
+     "w": "fifty",
+     "t": 8.543,
+     "end": 8.9
+    },
+    {
+     "w": "a",
+     "t": 8.9,
+     "end": 9.16
+    },
+    {
+     "w": "month.",
+     "t": 9.16,
+     "end": 9.38
     }
    ]
   },
   {
    "turn": 4,
-   "text": "On a card at twenty-two percent, paying fifty a month?",
+   "text": "Month six. Month twelve. Still paying. And the worst part is still coming...",
    "words": [
     {
-     "w": "On",
-     "t": 10.32,
-     "end": 10.46
+     "w": "Month",
+     "t": 9.82,
+     "end": 10.04
     },
     {
-     "w": "a",
-     "t": 10.46,
-     "end": 10.58
+     "w": "six.",
+     "t": 10.04,
+     "end": 10.36
     },
     {
-     "w": "card",
-     "t": 10.58,
+     "w": "Month",
+     "t": 10.74,
      "end": 10.9
     },
     {
-     "w": "at",
+     "w": "twelve.",
      "t": 10.9,
-     "end": 11.14
+     "end": 11.26
     },
     {
-     "w": "twenty-two",
-     "t": 11.14,
-     "end": 11.59
+     "w": "Still",
+     "t": 11.62,
+     "end": 11.78
     },
     {
-     "w": "percent,",
-     "t": 11.59,
-     "end": 11.94
+     "w": "paying.",
+     "t": 11.78,
+     "end": 12.08
     },
     {
-     "w": "paying",
-     "t": 11.94,
-     "end": 12.48
+     "w": "And",
+     "t": 12.08,
+     "end": 12.64
     },
     {
-     "w": "fifty",
-     "t": 12.48,
-     "end": 12.84
+     "w": "the",
+     "t": 12.64,
+     "end": 12.76
     },
     {
-     "w": "a",
-     "t": 12.84,
-     "end": 12.98
+     "w": "worst",
+     "t": 12.76,
+     "end": 12.94
     },
     {
-     "w": "month?",
-     "t": 12.98,
-     "end": 13.24
+     "w": "part",
+     "t": 12.94,
+     "end": 13.2
+    },
+    {
+     "w": "is",
+     "t": 13.2,
+     "end": 13.4
+    },
+    {
+     "w": "still",
+     "t": 13.4,
+     "end": 13.6
+    },
+    {
+     "w": "coming...",
+     "t": 13.6,
+     "end": 13.88
     }
    ]
   },
   {
    "turn": 5,
-   "text": "Twenty-six months, and about 257 dollars of interest.",
+   "text": "Twenty-six months later: paid off, plus 257 dollars of interest.",
    "words": [
     {
      "w": "Twenty-six",
-     "t": 13.72,
-     "end": 14.14
+     "t": 14.46,
+     "end": 14.8
     },
     {
-     "w": "months,",
-     "t": 14.14,
-     "end": 14.64
+     "w": "months",
+     "t": 14.8,
+     "end": 15.1
     },
     {
-     "w": "and",
-     "t": 14.98,
-     "end": 15.14
+     "w": "later:",
+     "t": 15.1,
+     "end": 15.42
     },
     {
-     "w": "about",
-     "t": 15.14,
-     "end": 15.34
+     "w": "paid",
+     "t": 15.78,
+     "end": 15.9
+    },
+    {
+     "w": "off,",
+     "t": 15.9,
+     "end": 16.26
+    },
+    {
+     "w": "plus",
+     "t": 16.26,
+     "end": 16.7
     },
     {
      "w": "257",
-     "t": 15.34,
-     "end": 16.56
+     "t": 16.7,
+     "end": 18.02
     },
     {
      "w": "dollars",
-     "t": 16.56,
-     "end": 16.61
+     "t": 18.02,
+     "end": 18.07
     },
     {
      "w": "of",
-     "t": 16.56,
-     "end": 16.96
+     "t": 18.02,
+     "end": 18.36
     },
     {
      "w": "interest.",
-     "t": 16.96,
-     "end": 17.4
+     "t": 18.36,
+     "end": 18.62
     }
    ]
   },
   {
    "turn": 6,
-   "text": "And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.",
+   "text": "Saver had the same bill. He paid it from his emergency fund. Done.",
    "words": [
     {
-     "w": "And",
-     "t": 18.0,
-     "end": 18.26
+     "w": "Saver",
+     "t": 19.3,
+     "end": 19.52
     },
     {
-     "w": "in",
-     "t": 18.26,
-     "end": 18.46
+     "w": "had",
+     "t": 19.52,
+     "end": 19.66
     },
     {
      "w": "the",
-     "t": 18.46,
-     "end": 18.54
+     "t": 19.66,
+     "end": 19.8
     },
     {
-     "w": "Fed's",
-     "t": 18.54,
-     "end": 18.84
+     "w": "same",
+     "t": 19.8,
+     "end": 19.98
     },
     {
-     "w": "own",
-     "t": 18.84,
-     "end": 18.94
+     "w": "bill.",
+     "t": 19.98,
+     "end": 20.22
     },
     {
-     "w": "survey,",
-     "t": 18.94,
-     "end": 19.38
+     "w": "He",
+     "t": 20.46,
+     "end": 20.54
     },
     {
-     "w": "only",
-     "t": 19.78,
-     "end": 19.94
-    },
-    {
-     "w": "63",
-     "t": 19.94,
-     "end": 20.4
-    },
-    {
-     "w": "percent",
-     "t": 20.4,
+     "w": "paid",
+     "t": 20.54,
      "end": 20.7
     },
     {
-     "w": "of",
+     "w": "it",
      "t": 20.7,
+     "end": 20.78
+    },
+    {
+     "w": "from",
+     "t": 20.78,
      "end": 20.9
     },
     {
-     "w": "adults",
+     "w": "his",
      "t": 20.9,
-     "end": 21.22
+     "end": 21.02
     },
     {
-     "w": "would",
-     "t": 21.22,
-     "end": 21.38
+     "w": "emergency",
+     "t": 21.02,
+     "end": 21.34
     },
     {
-     "w": "cover",
-     "t": 21.38,
-     "end": 21.62
+     "w": "fund.",
+     "t": 21.34,
+     "end": 21.68
     },
     {
-     "w": "a",
-     "t": 21.62,
-     "end": 21.82
-    },
-    {
-     "w": "400",
-     "t": 21.82,
-     "end": 22.18
-    },
-    {
-     "w": "dollar",
-     "t": 22.18,
-     "end": 22.23
-    },
-    {
-     "w": "surprise",
-     "t": 22.18,
-     "end": 22.74
-    },
-    {
-     "w": "with",
-     "t": 22.74,
-     "end": 23.1
-    },
-    {
-     "w": "cash",
-     "t": 23.1,
-     "end": 23.38
-    },
-    {
-     "w": "or",
-     "t": 23.38,
-     "end": 23.58
-    },
-    {
-     "w": "savings.",
-     "t": 23.58,
-     "end": 23.86
+     "w": "Done.",
+     "t": 22.14,
+     "end": 22.28
     }
    ]
   },
   {
    "turn": 7,
-   "text": "A small cushion changes the maths. Because otherwise,",
+   "text": "In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?",
    "words": [
     {
-     "w": "A",
-     "t": 24.7,
-     "end": 24.84
+     "w": "In",
+     "t": 22.78,
+     "end": 22.9
     },
     {
-     "w": "small",
-     "t": 24.84,
-     "end": 25.08
+     "w": "a",
+     "t": 22.9,
+     "end": 23.02
     },
     {
-     "w": "cushion",
-     "t": 25.08,
-     "end": 25.42
+     "w": "Fed",
+     "t": 23.02,
+     "end": 23.12
     },
     {
-     "w": "changes",
-     "t": 25.42,
-     "end": 25.82
+     "w": "survey,",
+     "t": 23.12,
+     "end": 23.46
     },
     {
-     "w": "the",
-     "t": 25.82,
-     "end": 26.04
+     "w": "63",
+     "t": 23.86,
+     "end": 24.08
     },
     {
-     "w": "maths.",
-     "t": 26.04,
-     "end": 26.46
+     "w": "percent",
+     "t": 24.08,
+     "end": 24.48
     },
     {
-     "w": "Because",
-     "t": 26.88,
-     "end": 27.26
+     "w": "of",
+     "t": 24.48,
+     "end": 24.6
     },
     {
-     "w": "otherwise,",
-     "t": 27.26,
-     "end": 27.7
+     "w": "adults",
+     "t": 24.6,
+     "end": 24.86
+    },
+    {
+     "w": "could",
+     "t": 24.86,
+     "end": 25.04
+    },
+    {
+     "w": "cover",
+     "t": 25.04,
+     "end": 25.32
+    },
+    {
+     "w": "a",
+     "t": 25.32,
+     "end": 25.5
+    },
+    {
+     "w": "400",
+     "t": 25.5,
+     "end": 25.88
+    },
+    {
+     "w": "dollar",
+     "t": 25.88,
+     "end": 25.93
+    },
+    {
+     "w": "surprise",
+     "t": 25.88,
+     "end": 26.42
+    },
+    {
+     "w": "with",
+     "t": 26.42,
+     "end": 26.74
+    },
+    {
+     "w": "cash.",
+     "t": 26.74,
+     "end": 27.06
+    },
+    {
+     "w": "Could",
+     "t": 27.44,
+     "end": 27.74
+    },
+    {
+     "w": "you?",
+     "t": 27.74,
+     "end": 27.94
     }
    ]
   }
