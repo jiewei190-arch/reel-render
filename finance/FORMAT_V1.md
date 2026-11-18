@@ -74,3 +74,15 @@ YouTube only reports "stayed" after posting, so we enforce it in two places:
 - Timing: use the `/v1/text-to-speech/{voice_id}/with-timestamps` endpoint for word times (character alignment, converted to word timings), plus a Whisper check on the HOOK LINE ALONE.
 - Budget: Starter = 40k characters a month (about 90-100 Shorts). Don't waste characters: voice once, line by line, and re-voice only the lines that fail. Track characters used in RENDER_NOTES.
 - The old D2 voice stays only on Shorts that are already rendered or scheduled.
+
+## Day-1 data (2026-11-18) and fixes
+TV 59.7 % stayed (633 engaged views) · Penny 55.0 % (493) · 3 Things 55.2 % (470). Three different styles land within 5 points of each other,
+so the problem is something they all share, not the style. Each one also flatlined after its first test pushes. The fixes:
+1. **No character names in the first line.** New viewers don't know who "Spender" or "Saver" is. Line 1 is about YOU or a plain person
+   ("This TV will cost you 19 years."). The names come in after 2 s.
+2. **A clean first frame:** ONE bold hook line of 5 words or fewer. No second caption layer, no EXAMPLE tag and no HUD for the first 1.0 s.
+   Legal or example tags appear from 1.0 s on.
+3. **A sound punch at 0.00 s** (impact, coin drop or record scratch) with the first word by 0.2 s. No music-only intro.
+4. **Human voice:** ElevenLabs Tyler and Christopher, from now on. The D2 synthetic first syllable is a likely swipe trigger.
+5. **First 3 s faster than the rest:** 2-3 cuts or big moves in the first 3 s, then v1 pacing.
+6. **Pain-point topics over maths:** lead with a relatable money pain ("why your paycheck vanishes", "your bank charges you for being broke") and let the maths be the twist.
