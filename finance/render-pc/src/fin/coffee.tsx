@@ -22,7 +22,7 @@ const P_SP: V3 = [0.9, 0, 0.0];
 const P_TL: V3 = [1.6, 0, -1.85];
 const P_SV: V3 = [-0.45, 0, 0.45];
 const COL: V3 = [-1.1, 0, -0.75];
-const COL2: V3 = [-0.75, 0, -1.25];
+const COL2: V3 = [-0.1, 0, -0.55];
 const CAL: V3 = [-2.6, 2.2, -3.44];
 const CLOCK: V3 = [3.3, 2.45, -3.42];
 const BOARD: V3 = [-0.6, 2.05, -3.44];
@@ -90,7 +90,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     const pose: Pose = { ...stand(P_TL[0], P_TL[2], yawTo(P_TL, P_SP), S.teller), armL: i === 3 ? 1.1 : 0.2, armR: 0.2 };
     actors.push(<Act key="tl" look={TELLER} pose={{ ...pose, y: pose.y + TL_LIFT }} emotion="happy" s={S.teller} t={t} seed={3} held={i === 3 ? { side: "L", node: <Cup p={[0, -0.02, 0.05]} s={1.5} /> } : undefined} />);
   }
-  if (loop || (i >= 7 && i <= 12)) {
+  if (loop || i === 7 || i === 12) {
     let pose: Pose = { ...stand(P_SV[0], P_SV[2], yawTo(P_SV, COL) * 0.5 + yawTo(P_SV, [0, 0, 4]) * 0.5, S.saver), armL: 0.2, armR: 0.2 };
     let held: { side: "L" | "R"; node: React.ReactNode } | undefined;
     if (i === 7) { pose = { ...pose, armL: 1.3 - 0.2 * Math.sin(tau * 7), outL: 0.1 }; held = { side: "L", node: <CoinStack p={[0, -0.02, 0.06]} n={10} s={1.3} /> }; }
