@@ -1,0 +1,87 @@
+{
+ "name": "touch",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  2,
+  4,
+  6,
+  8,
+  10,
+  12,
+  14
+ ],
+ "phrases": [
+  [
+   "Your phone screen doesn't feel your touch. It senses your **electricity.**",
+   "Your phone screen doesn't feel your touch. It senses your electricity."
+  ],
+  [
+   "Under the glass is a **grid** of tiny, invisible wires.",
+   "Under the glass is a grid of tiny, invisible wires."
+  ],
+  [
+   "They're a see-through coating called **indium tin oxide.**",
+   "They're a see-through coating called indium tin oxide."
+  ],
+  [
+   "Some run in rows, some in columns, crossing like **a net.**",
+   "Some run in rows, some in columns, crossing like a net."
+  ],
+  [
+   "Every crossing is a tiny **capacitor:** a spot that holds a little electric charge.",
+   "Every crossing is a tiny capacitor: a spot that holds a little electric charge."
+  ],
+  [
+   "The phone sends pulses along the rows, and **listens on the columns.**",
+   "The phone sends pulses along the rows, and listens on the columns."
+  ],
+  [
+   "With nothing nearby, every crossing reads about the **same normal value.**",
+   "With nothing nearby, every crossing reads about the same normal value."
+  ],
+  [
+   "Now your finger arrives. Your body **conducts electricity,** so it disturbs the electric field.",
+   "Now your finger arrives. Your body conducts electricity, so it disturbs the electric field."
+  ],
+  [
+   "The crossings under your fingertip read **lower** than the rest.",
+   "The crossings under your fingertip read lower than the rest."
+  ],
+  [
+   "The phone scans the whole grid, finds the dip, and works out its **center.** That's your touch.",
+   "The phone scans the whole grid, finds the dip, and works out its center. That's your touch."
+  ],
+  [
+   "Every crossing is read **separately,** so several fingers can be tracked at once.",
+   "Every crossing is read separately, so several fingers can be tracked at once."
+  ],
+  [
+   "It can even notice a finger **hovering** just above the glass.",
+   "It can even notice a finger hovering just above the glass."
+  ],
+  [
+   "That's why many gloves fail. Thick glove material is an **insulator,** so your finger's field never gets through.",
+   "That's why many gloves fail. Thick glove material is an insulator, so your finger's field never gets through."
+  ],
+  [
+   "A stylus works only if its tip is **conductive,** so it connects to your hand.",
+   "A stylus works only if its tip is conductive, so it connects to your hand."
+  ],
+  [
+   "So your screen isn't feeling you. It's noticing **what you do to its electric field.**",
+   "So your screen isn't feeling you. It's noticing what you do to its electric field."
+  ],
+  [
+   "Send this to someone who **taps with gloves on.**",
+   "Send this to someone who taps with gloves on."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

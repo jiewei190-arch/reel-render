@@ -13,7 +13,7 @@ srv = socketserver.TCPServer(("127.0.0.1", port), functools.partial(Q, directory
 threading.Thread(target=srv.serve_forever, daemon=True).start()
 
 with sync_playwright() as p:
-    b = p.chromium.launch(args=["--use-gl=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
+    b = p.chromium.launch(executable_path=os.environ.get("CHROME", "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome"), args=["--use-gl=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
     pg = b.new_page(viewport={"width": 540, "height": 960}, device_scale_factor=2)
     pg.on("console", lambda m: print("console:", m.text[:300]) if m.type in ("error", "warning") and "GPU stall" not in m.text else None)
     pg.on("pageerror", lambda e: print("PAGEERROR:", e))

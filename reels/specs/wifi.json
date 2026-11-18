@@ -1,0 +1,92 @@
+{
+ "name": "wifi",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  5,
+  7,
+  9,
+  11,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Your WiFi goes through **walls.** How?",
+   "Your WiFi goes through walls. How?"
+  ],
+  [
+   "Your router isn't pushing **anything solid** through.",
+   "Your router isn't pushing anything solid through."
+  ],
+  [
+   "WiFi is **radio waves,** a kind of invisible light.",
+   "WiFi is radio waves, a kind of invisible light."
+  ],
+  [
+   "The router turns your data into **tiny electric wiggles.**",
+   "The router turns your data into tiny electric wiggles."
+  ],
+  [
+   "An antenna sends them out as waves, at the **speed of light.**",
+   "An antenna sends them out as waves, at the speed of light."
+  ],
+  [
+   "Each wave is only about **twelve centimeters** from peak to peak.",
+   "Each wave is only about twelve centimeters from peak to peak."
+  ],
+  [
+   "A wall isn't a shield. Wood, plaster and glass **let waves pass.**",
+   "A wall isn't a shield. Wood, plaster and glass let waves pass."
+  ],
+  [
+   "They just **soak up a little** of the energy, and water inside them soaks up the most.",
+   "They just soak up a little of the energy, and water inside them soaks up the most."
+  ],
+  [
+   "Your microwave oven uses almost the **same frequency:** two point four five gigahertz.",
+   "Your microwave oven uses almost the same frequency: two point four five gigahertz."
+  ],
+  [
+   "But an oven pumps out **six hundred to twelve hundred watts.** In Europe, WiFi is capped at **a tenth of a watt.**",
+   "But an oven pumps out six hundred to twelve hundred watts. In Europe, WiFi is capped at a tenth of a watt."
+  ],
+  [
+   "So the wave gets through, just **a bit weaker** after every wall.",
+   "So the wave gets through, just a bit weaker after every wall."
+  ],
+  [
+   "That's why the far room feels **slow.**",
+   "That's why the far room feels slow."
+  ],
+  [
+   "Nothing is broken. Each wall just takes **its small share.**",
+   "Nothing is broken. Each wall just takes its small share."
+  ],
+  [
+   "The faster **five gigahertz** band has shorter waves, about six centimeters. Building materials absorb it more, so it reaches less far.",
+   "The faster five gigahertz band has shorter waves, about six centimeters. Building materials absorb it more, so it reaches less far."
+  ],
+  [
+   "Metal, stone and water are the real **troublemakers.**",
+   "Metal, stone and water are the real troublemakers."
+  ],
+  [
+   "To a WiFi wave, most walls are **almost invisible.**",
+   "To a WiFi wave, most walls are almost invisible."
+  ],
+  [
+   "Send this to someone who **blames the router.**",
+   "Send this to someone who blames the router."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}
