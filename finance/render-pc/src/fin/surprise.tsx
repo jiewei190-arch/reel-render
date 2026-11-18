@@ -69,7 +69,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S13: fitted([[BOARD[0] - 1.0, 0.9, BOARD[2]], [BOARD[0] + 1.0, 2.25, BOARD[2]]], 4, 0.05, D.S13, { mood: "store", sky: true }),
   S14: manual([BLOCKS[0] - 0.55, 0.75, BLOCKS[2]], 6, 2.0, 0.12, { mood: "store", sky: true }),
   S15: fitted([[BLOCKS[0] - 1.6, 0, BLOCKS[2]], [BLOCKS[0] + 1.6, 0.9, BLOCKS[2]]], 0, 0.25, D.S15, { mood: "store", sky: true }),
-  S16: fitted([...sp(true), [P_SP[0] - 0.95, 1.95, P_SP[2] + 0.3], [P_SP[0] - 0.95, 1.45, P_SP[2] + 0.3]], 24, 0.05, D.S16, { mood: "store", sky: true, face: 0.5 }),
+  S16: fitted([...sp(true), [P_SP[0] - 0.95, 1.95, P_SP[2] + 0.3], [P_SP[0] - 0.95, 1.45, P_SP[2] + 0.3], [BOARD[0] + 1.0, 2.0, BOARD[2]]], 24, 0.05, D.S16, { mood: "store", sky: true, face: 0.5 }),
   S17: fitted([...body(P_SV, S.saver, true), [JAR_P[0], 0.8, JAR_P[2]]], -16, 0.08, D.S17, { mood: "ending", sky: true }),
   S18: fitted([...body([-0.6, 0, 0.9], S.saver), ...body([0.35, 0, 0.9], S.spender)], 4, 0.12, D.S18, { mood: "ending", sky: true }),
   S19: fitted([...sp(), [CAR[0] - 0.9, 0, CAR[2]], [CAR[0] + 0.9, 1.4, CAR[2]], [P_SP[0], 2.3, P_SP[2]]], 18, 0.18, D.S19, { mood: "earth", sky: true, fov: 54 }),
