@@ -14,7 +14,7 @@ Final: **v6** (`video.mp4` = v6 + voice). 1080x1920, 30 fps, 800 frames, 26.67 s
 | v6 | kerb darker; final | 113 s |
 
 ## Audio
-Two-pass loudnorm (I=-14, TP=-1.1, linear), AAC 256k/48k, no music: **-14.5 LUFS integrated, true peak -1.0 dBFS** (ebur128 on the final mp4).
+Gain + true-peak limiter (mux_voice.sh), AAC 256k/48k, no music: **-14.2 LUFS integrated, true peak -1.6 dBFS** (re-muxed with MAIN's tools/mux_voice.sh; the first push was -14.5 / -1.0) (ebur128 on the final mp4).
 
 ## Critic (tools/critic.py on v6)
 SYNC 18/18 cuts exact (0 frames off). STATIC longest still run 0.03 s. SOUND voice only.
