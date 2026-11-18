@@ -14,7 +14,8 @@ import { SAMECAR_SPEC } from "./fin/samecar";
 
 // <Slug> = sharp 30 fps (stills, look-dev); <Slug>Sub = SUB x fps for motion blur (render.sh averages SUB sub-frames).
 import { HOOK_A, HOOK_B, HOOK_C } from "./fin/hooks";
-const FIN: [string, FinSpec][] = [["HookA", HOOK_A], ["HookB", HOOK_B], ["HookC", HOOK_C], ["PennyDoubles", PENNY_SPEC], ["RuleOf72", RULE72_SPEC], ["SurpriseBill", SURPRISE_SPEC], ["EmployerMatch", MATCH_SPEC], ["PricesDouble", DOUBLING_SPEC], ["CoffeeCouldBe", COFFEE_SPEC], ["SameCarMore", SAMECAR_SPEC]];
+import { HOOK_A2, HOOK_B2 } from "./fin/hooks2";
+const FIN: [string, FinSpec][] = [["HookA2", HOOK_A2], ["HookB2", HOOK_B2], ["HookA", HOOK_A], ["HookB", HOOK_B], ["HookC", HOOK_C], ["PennyDoubles", PENNY_SPEC], ["RuleOf72", RULE72_SPEC], ["SurpriseBill", SURPRISE_SPEC], ["EmployerMatch", MATCH_SPEC], ["PricesDouble", DOUBLING_SPEC], ["CoffeeCouldBe", COFFEE_SPEC], ["SameCarMore", SAMECAR_SPEC]];
 // props must be JSON (Remotion serialises them): pass the id, look the spec up here
 const SPECS: Record<string, FinSpec> = Object.fromEntries(FIN);
 const Sharp: React.FC<{ id: string }> = ({ id }) => <FinFilm spec={SPECS[id]} />;

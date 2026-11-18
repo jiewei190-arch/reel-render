@@ -13,26 +13,26 @@ import { BillBrick, Bill, FlipCalendar, Hall, Label } from "./props";
 import { HOOKS } from "../shorts/hooks.timings.gen";
 import type { Chunk } from "../engine/core/captions";
 
-type HookId = "A" | "B" | "C";
-const W = (h: HookId) => HOOKS[h];
+export type HookId = "A" | "B" | "C";
+export const W = (h: HookId) => HOOKS[h];
 /** time of the first word matching w (lower-case, punctuation-free), at or after `from` */
-const at = (h: HookId, w: string, from = 0): number => {
+export const at = (h: HookId, w: string, from = 0): number => {
   const x = W(h).words.find((q) => q.w.toLowerCase().replace(/[^a-z0-9]/g, "") === w && q.a >= from - 1e-6);
   if (!x) throw new Error(`hook ${h}: no word "${w}"`);
   return x.a;
 };
-const durOf = (h: HookId) => W(h).duration;
+export const durOf = (h: HookId) => W(h).duration;
 
 // ------------------------------------------------------------------ shared set: a bright blocky store
-const CT: V3 = [0, 0, -0.6]; // shop counter (top ~0.95 m)
-const TOP = 0.98;
-const P_SP: V3 = [1.0, 0, 0.45];
-const SC = 1.0;
-const FACE = 1.247 * SC;
-const B: React.FC<{ s: V3; p: V3; c: string; r?: V3; e?: [string, number]; rough?: number }> = ({ s, p, c, r = [0, 0, 0], e, rough = 0.45 }) => (
+export const CT: V3 = [0, 0, -0.6]; // shop counter (top ~0.95 m)
+export const TOP = 0.98;
+export const P_SP: V3 = [1.0, 0, 0.45];
+export const SC = 1.0;
+export const FACE = 1.247 * SC;
+export const B: React.FC<{ s: V3; p: V3; c: string; r?: V3; e?: [string, number]; rough?: number }> = ({ s, p, c, r = [0, 0, 0], e, rough = 0.45 }) => (
   <mesh geometry={rbox(s[0], s[1], s[2], Math.min(s[0], s[1], s[2]) * 0.14)} material={plastic(c, { rough, emissive: e?.[0], ei: e?.[1] })} position={p} rotation={r} castShadow receiveShadow />
 );
-const Store: React.FC<{ sign: string }> = ({ sign }) => (
+export const Store: React.FC<{ sign: string }> = ({ sign }) => (
   <>
     <Hall W={11} back={-3.5} front={7} wall="#6a5ae8" stripe="#ffd23a" floorA="#fbefe0" floorB="#e6d4ff">
       <Label p={[0, 2.75, -3.42]} text={[sign]} w={2.6} h={0.5} bg="#16121c" fg="#ffd23a" glow={0.9} />
@@ -41,7 +41,7 @@ const Store: React.FC<{ sign: string }> = ({ sign }) => (
   </>
 );
 /** a dust puff: cubes flying out from p, u = 0..1 */
-const Dust: React.FC<{ p: V3; u: number; n?: number; r?: number; c?: string }> = ({ p, u, n = 14, r = 0.9, c = "#f2e6d0" }) => {
+export const Dust: React.FC<{ p: V3; u: number; n?: number; r?: number; c?: string }> = ({ p, u, n = 14, r = 0.9, c = "#f2e6d0" }) => {
   if (u <= 0 || u >= 1) return null;
   return (
     <group position={p}>
@@ -54,33 +54,33 @@ const Dust: React.FC<{ p: V3; u: number; n?: number; r?: number; c?: string }> =
     </group>
   );
 };
-const Card: React.FC<{ p: V3; r?: V3; s?: number }> = ({ p, r = [0, 0, 0], s = 1 }) => (
+export const Card: React.FC<{ p: V3; r?: V3; s?: number }> = ({ p, r = [0, 0, 0], s = 1 }) => (
   <group position={p} rotation={r} scale={s}>
     <B s={[0.17, 0.11, 0.008]} p={[0, 0, 0]} c="#2a6de1" rough={0.25} />
     <B s={[0.03, 0.022, 0.004]} p={[-0.045, 0.01, 0.006]} c="#ffd23a" rough={0.2} />
     <B s={[0.13, 0.012, 0.003]} p={[0, -0.03, 0.006]} c="#cfe0ff" />
   </group>
 );
-const TV: React.FC<{ p: V3; r?: V3; s?: number; on?: number }> = ({ p, r = [0, 0, 0], s = 1, on = 1 }) => (
+export const TV: React.FC<{ p: V3; r?: V3; s?: number; on?: number; screen?: string[]; screenBg?: string }> = ({ p, r = [0, 0, 0], s = 1, on = 1, screen = ["BIG TV"], screenBg = "#ffd23a" }) => (
   <group position={p} rotation={r} scale={s}>
     <B s={[1.5, 0.92, 0.16]} p={[0, 0.56, 0]} c="#16121c" rough={0.3} />
     <B s={[1.38, 0.8, 0.02]} p={[0, 0.56, 0.085]} c="#3a7dff" e={["#5fa0ff", 0.9 * on]} rough={0.15} />
-    <Label p={[0, 0.56, 0.1]} text={["BIG TV"]} w={0.8} h={0.22} bg="#ffd23a" fg="#16121c" />
+    <Label p={[0, 0.56, 0.1]} text={screen} w={0.8} h={0.22 * screen.length} bg={screenBg} fg={screenBg === "#ffd23a" ? "#16121c" : "#ffffff"} />
     <B s={[0.5, 0.06, 0.3]} p={[0, 0.03, 0]} c="#2a2440" />
     <B s={[0.12, 0.08, 0.06]} p={[0, 0.1, 0]} c="#2a2440" />
   </group>
 );
-const Reader: React.FC<{ p: V3; lit: number }> = ({ p, lit }) => (
+export const Reader: React.FC<{ p: V3; lit: number }> = ({ p, lit }) => (
   <group position={p}>
     <B s={[0.16, 0.1, 0.24]} p={[0, 0.05, 0]} c="#2a2440" />
     <B s={[0.12, 0.05, 0.02]} p={[0, 0.12, -0.08]} c={lit > 0.5 ? "#5ff08a" : "#16121c"} e={lit > 0.5 ? ["#5ff08a", 1.2] : undefined} />
   </group>
 );
 /** a hungry furnace labelled INTEREST (hook B) */
-const Furnace: React.FC<{ p: V3; t: number; heat: number }> = ({ p, t, heat }) => (
+export const Furnace: React.FC<{ p: V3; t: number; heat: number; base?: number }> = ({ p, t, heat, base = 1.4 }) => (
   <group position={p}>
     <B s={[1.5, 1.5, 1.2]} p={[0, 0.75, 0]} c="#3a3f58" rough={0.5} />
-    <B s={[0.8, 0.55, 0.05]} p={[0, 0.7, 0.6]} c="#ff7a1a" e={["#ff5a00", 1.4 + 0.5 * heat + 0.25 * Math.sin(t * 23)]} rough={0.2} />
+    <B s={[0.8, 0.55, 0.05]} p={[0, 0.7, 0.6]} c="#ff7a1a" e={["#ff5a00", base + 0.5 * heat + 0.25 * Math.sin(t * 23)]} rough={0.2} />
     <B s={[0.36, 1.4, 0.36]} p={[0.4, 2.1, -0.2]} c="#2a2f48" />
     <Label p={[0, 1.27, 0.62]} text={["INTEREST"]} w={1.25} h={0.3} bg="#c01818" fg="#ffffff" glow={0.6} />
     <pointLight position={[0, 0.8, 1.1]} color="#ff8a3a" intensity={2.2 + heat} distance={5} decay={2} />
@@ -89,22 +89,22 @@ const Furnace: React.FC<{ p: V3; t: number; heat: number }> = ({ p, t, heat }) =
 
 // ------------------------------------------------------------------ lens helpers
 const SUB_SP = (dy = FACE - 0.05): V3 => [P_SP[0], dy, P_SP[2]];
-const lin = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
-const easeOut = (u: number) => 1 - Math.pow(1 - clamp(u), 3);
+export const lin = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
+export const easeOut = (u: number) => 1 - Math.pow(1 - clamp(u), 3);
 /** a slam: the fov drops from f0 to f1 over d s from a, then creeps on */
-const slam = (a: number, f0: number, f1: number, d = 0.16) => (t: number) => lerp(f0, f1, easeOut((t - a) / d)) - 1.5 * clamp((t - a - d) / 2);
-const shakeAt = (hits: number[], amp = 0.05, decay = 0.35) => (t: number) => hits.reduce((s, h) => s + (t >= h ? amp * Math.exp(-(t - h) / (decay / 3)) : 0), 0) + 0.004;
+export const slam = (a: number, f0: number, f1: number, d = 0.16) => (t: number) => lerp(f0, f1, easeOut((t - a) / d)) - 1.5 * clamp((t - a - d) / 2);
+export const shakeAt = (hits: number[], amp = 0.05, decay = 0.35) => (t: number) => hits.reduce((s, h) => s + (t >= h ? amp * Math.exp(-(t - h) / (decay / 3)) : 0), 0) + 0.004;
 /** a slam lens: from -> to in d s from t0, then keeps creeping toward the subject with a slow orbit (never static) */
-const slamPos = (from: V3, to: V3, subj: V3, t0: number, d = 0.2, creep = 0.1) => (t: number): V3 => {
+export const slamPos = (from: V3, to: V3, subj: V3, t0: number, d = 0.2, creep = 0.1) => (t: number): V3 => {
   const p = lin(from, to, easeOut((t - t0) / d));
   const e = Math.max(0, t - t0 - d);
   const k = 1 - creep * e;
   const o = 0.08 * Math.sin(e * 1.3);
   return [subj[0] + (p[0] - subj[0]) * k + o, subj[1] + (p[1] - subj[1]) * k + 0.03 * Math.sin(e * 2.1), subj[2] + (p[2] - subj[2]) * k];
 };
-type Shot = Omit<FinShot, "id" | "a" | "b">;
-const shot = (o: Partial<Shot> & Pick<Shot, "subj">): Shot => ({ off: [0, 0, 3], fov: 50, face: 0.5, mood: "store", blur: 0.8, shutter: 0.5, push: 0.06, roll: [0, 0], ...o });
-const mk = (cuts: [string, number, Shot][], end: number): FinShot[] => cuts.map(([id, a, s], i) => ({ id, a, b: i + 1 < cuts.length ? cuts[i + 1][1] : end, ...s }));
+export type Shot = Omit<FinShot, "id" | "a" | "b">;
+export const shot = (o: Partial<Shot> & Pick<Shot, "subj">): Shot => ({ off: [0, 0, 3], fov: 50, face: 0.5, mood: "store", blur: 0.8, shutter: 0.5, push: 0.06, roll: [0, 0], ...o });
+export const mk = (cuts: [string, number, Shot][], end: number): FinShot[] => cuts.map(([id, a, s], i) => ({ id, a, b: i + 1 < cuts.length ? cuts[i + 1][1] : end, ...s }));
 
 // ------------------------------------------------------------------ captions: 2-4 words per chunk, cut at punctuation
 const chunksOf = (h: HookId): Chunk[] => {

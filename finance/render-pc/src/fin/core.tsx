@@ -100,6 +100,11 @@ export type FinSpec = {
   counter: (t: number, shot: FinShot, tau: number) => CounterState;
   tag?: (t: number, shot: FinShot) => string | null;
   bg?: string;
+  /** 2D layer over the frame (impact flashes), keyed to the output time */
+  overlay?: (t: number) => React.ReactNode;
+  /** caption band centre (fraction of the height) and font size (px at 1080 wide) */
+  capCentre?: number;
+  capSize?: number;
 };
 
 const moodOfShot = (spec: FinSpec, s: FinShot) => {
@@ -141,9 +146,10 @@ export const FinFilm: React.FC<{ spec: FinSpec; sub?: boolean; at?: number }> = 
       <View mood={mood} cam={cam} t={t} blur={shot.blur ?? 1.2} focus={focus} sky={shot.sky ?? false}>
         {spec.scene(t, shot, tau)}
       </View>
+      {spec.overlay ? spec.overlay(tOut) : null}
       <Counter state={spec.counter(tOut, shot, tOut - shot.a)} />
       <CornerTag text={spec.tag ? spec.tag(tOut, shot) : null} />
-      <Caps chunks={spec.chunks} t={tOut} until={spec.until} />
+      <Caps chunks={spec.chunks} t={tOut} until={spec.until} centre={spec.capCentre} size={spec.capSize} />
     </AbsoluteFill>
   );
 };

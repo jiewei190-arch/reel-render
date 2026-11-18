@@ -67,7 +67,7 @@ export const casedChunks = (caps: readonly { text: string; frame: number }[], sc
   out.forEach((c, i) => (c.b = i + 1 < out.length ? out[i + 1].a : duration / fps));
   return out;
 };
-export const Caps: React.FC<{ chunks: Chunk[]; t: number; until: number }> = ({ chunks, t, until }) => <PopCaptions chunks={chunks} t={t} until={until} />;
+export const Caps: React.FC<{ chunks: Chunk[]; t: number; until: number; centre?: number; size?: number }> = ({ chunks, t, until, centre, size }) => <PopCaptions chunks={chunks} t={t} until={until} centre={centre} size={size} />;
 
 /** money formatting: $5,368,709.12 / $5.12 / $0.01 */
 export const usd = (v: number, cents = true) => "$" + v.toLocaleString("en-US", { minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: cents ? 2 : 0 });
