@@ -81,3 +81,26 @@ Everything is under `finance/render-pc/`. Nothing touches the per-Short `.tsx` f
 The six style examples were updated and pass. The minimum-payment-trap port (the live TV Short, 59.7 % stayed) passes the clip QA but fails two of these checks: the 7-word hook, and "Spender" as its first word. It is kept as a faithful port.
 
 The two new Shorts MAIN asked for (ten-beats-thirty with ElevenLabs Tyler, prices-double with Christopher) are NOT started. They need the owner's OK on the paid ElevenLabs API and on pushing to finance/v1rebuild.
+
+## Update: animation quality pass (2026-11-18, late)
+It is on by default for every recipe; set `"quality": false` for the plain look. `<Id>Plain` renders the same recipe without it. Full details are in RECIPE_GUIDE.md, section 6.
+
+What it adds:
+- **Lip-sync:** 6 mouth shapes on the face decal, driven by the word timings (or by ElevenLabs per-character times when `vo/timings.json` has them). Shapes lead their sound by about 50 ms and hold at least 2 frames, with nods on stressed words.
+- **Always alive:** blinks every 2-5 s on each actor's own rhythm, weight shifts, and a look-at (the lens while talking, the subject otherwise).
+- **Acting:** pose blends with anticipation and overshoot, expression swaps hidden behind a blink, and spring wobble on antennae and upper body after hits.
+- **Gestures:** point, count, palmsUp, facepalm, clutchHead, shrug.
+- **Sets and polish:** passers-by (included in the clip QA), posters on every set, money sparkles, dust motes, soft contact shadows, and 1.5× depth of field on close shots.
+- **Transitions:** punch-in, whip or match on each cut, and a crash-zoom pull-back before slams.
+
+Sources: maath (spring), TalkingHead (coarticulation), Melvynx (S-curve), video-shotcraft and herk-edit-kit (ideas). The "Sources used" table is in RECIPE_GUIDE and the notices are in THIRD_PARTY_NOTICES. postprocessing is zlib and `@remotion/transitions` is under the Remotion License; neither is used.
+
+Demo, in `finance/shorts/minimum-payment-trap/`:
+- `quality_pass_compare_10s.mp4`: before and after, side by side, 2-12 s, with the voice.
+- `quality_pass_stills.jpg`: top row before, bottom row after.
+
+Cost: a CPU render (`--gl=swangle`, 540×960, sharp, no sub-frames) takes about 8 min per 10 s of video. QA: the mintrap port and all six examples have 0 clips with the pass on.
+
+Not done:
+- Merging into finance/v1rebuild (needs the owner's OK).
+- ten-beats-thirty and prices-double (need the owner's OK on ElevenLabs and on the target branch).
