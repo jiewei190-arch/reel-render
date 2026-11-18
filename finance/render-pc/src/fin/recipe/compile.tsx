@@ -23,6 +23,12 @@ import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
 import { RecipeCaptions, chunkWords } from "../lib/captions";
 import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
+import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
+import type { GestureId } from "../lib/alive";
+import { nodAt, speakingAt, visemeAt } from "../lib/lipsync";
+import type { Viseme } from "../../blocky/Blocky";
+import { canvasTexture, geoOf } from "../../blocky/mat";
+import * as THREE from "three";
 import { armPoint, Burst, burstHalf, burstPos, Coin3, DebtBlock, Debris, HookText, limbBoxes, PayBox, sqAt, Squash, TallJar } from "../v1/kit";
 import type { Box, Cue, StoryAudio } from "../v1/kit";
 import { hipFor, POSES, soleLow } from "./poses";
@@ -38,8 +44,9 @@ const FACE_Y = 1.247; // head centre at scale 1 (blocky/motion SPEC)
 const HIP0 = (s: number) => stand(0, 0, 0, s).y; // standing hip height
 
 // ------------------------------------------------------------------ resolved pieces
-type ActorR = { id: string; look: Look; seed: number; spec: ActorSpec; p0: V3; p1: V3; yaw: (p: V3, t: number) => number; segs: { t0: number; pose: ActorSpec["pose"]; emotion?: Emotion }[]; s: number; squash: number[] };
-export type ActorState = { id: string; pose: Pose; emotion: Emotion; s: number; head: V3; torso: V3; grounded: boolean; look: Look; seed: number; squash: number };
+type ActorR = { id: string; look: Look; seed: number; spec: ActorSpec; p0: V3; p1: V3; yaw: (p: V3, t: number) => number; segs: { t0: number; pose: ActorSpec["pose"]; emotion?: Emotion }[]; s: number; squash: number[];
+  /** quality pass */ q: boolean; talk: boolean; words: readonly Word[]; gestures: { t0: number; g: GestureId }[]; lookT: ((t: number) => V3) | null; camPos: V3 | null; extra?: boolean };
+export type ActorState = { id: string; pose: Pose; emotion: Emotion; s: number; head: V3; torso: V3; grounded: boolean; look: Look; seed: number; squash: number; blink: boolean; mouth: Viseme; extra?: boolean };
 type PropR = { key: string; spec: PropSpec; a: number; b: number; hit: number; pos: (t: number) => V3; held: boolean; set: SetId };
 type FxR = { fx: string; at: number; p: (t: number) => V3; gain: number };
 export type ShotR = { id: string; a: number; b: number; set: SetId; spec: ShotSpec; lens: FinShot; lens2?: FinShot; pov?: string; kicks: [number, number][]; actors: ActorR[]; props: PropR[]; fx: FxR[] };
@@ -59,6 +66,7 @@ export type Compiled = {
   words: readonly Word[];
   at: (a: At | undefined, d?: number) => number;
   hookUntil: number;
+  quality: boolean;
 };
 
 const isV3 = (x: unknown): x is V3 => Array.isArray(x) && x.length === 3;
@@ -111,6 +119,8 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
   const duration = Math.round(durS * FPS);
   const end = duration / FPS;
   const castIds = Object.keys(recipe.cast);
+  const Q = recipe.quality !== false;
+  const talkMode = recipe.talk ?? (recipe.style === "S3" || recipe.style === "S5" ? "auto" : "none");
   const seedOf = (id: string) => 2 + 2 * castIds.indexOf(id);
   // shot times
   const starts = recipe.shots.map((s) => at(s.at));
@@ -169,7 +179,10 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
         const q = targetFn(faceT, set, actors, props, id)(t);
         return yawTo(p, [q[0], 0, q[2]]);
       };
-      actors.push({ id: as.id, look: LOOKS[recipe.cast[as.id]] ?? CH.SPENDER, seed: seedOf(as.id), spec: as, p0, p1, yaw, segs, s: as.scale ?? 1, squash: (as.squash ?? []).map((x) => at(x)) });
+      const camT = typeof sp.cam.target === "string" ? sp.cam.target.split(".")[0] : "";
+      const talk = Q && (sp.talk !== undefined ? sp.talk === as.id : talkMode === "auto" && camT === as.id);
+      actors.push({ id: as.id, look: LOOKS[recipe.cast[as.id]] ?? CH.SPENDER, seed: seedOf(as.id), spec: as, p0, p1, yaw, segs, s: as.scale ?? 1, squash: (as.squash ?? []).map((x) => at(x)),
+        q: Q, talk, words, gestures: (as.gestures ?? []).map((g) => ({ t0: at(g.at) - LEAD, g: g.g })), lookT: null, camPos: null });
     }
     const addProp = (ps: PropSpec, pa: number, pb: number, k: string) => {
       const pf = placeFn(ps.at, set, getActors);
@@ -189,7 +202,34 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     if (sp.cam.preset === "slamZoom") kicks.push([hit, 1.2]);
     fx.filter((f) => f.fx === "shake").forEach((f) => kicks.push([f.at, 1.4 * f.gain]));
     props.filter((p) => p.spec.motion === "dropSlam" || p.spec.motion === "burst").forEach((p) => kicks.push([p.hit, 0.8]));
-    const { lens, lens2, pov } = lensOf(sp.cam, set, actors, props, a, b, hit, id, sp.mood ?? set.mood);
+    const prev = shots[shots.length - 1];
+    let { lens, lens2, pov } = lensOf(sp.cam.az === undefined && sp.in === "match" && prev ? { ...sp.cam, az: prev.spec.cam.az ?? 0 } : sp.cam, set, actors, props, a, b, hit, id, sp.mood ?? set.mood);
+    if (Q) {
+      // deeper depth of field on close shots
+      if (sp.cam.blur === undefined && (sp.cam.preset === "closeUp" || sp.cam.preset === "slamZoom" || sp.cam.preset === "pushIn")) lens = { ...lens, blur: (lens.blur ?? 1.2) * 1.5 };
+      // transitions: punch-in (default), whip, match, cut
+      const tin = i === 0 ? "cut" : sp.in ?? (sp.cam.preset === "whip" || sp.cam.preset === "slamZoom" || sp.cam.preset === "splitScreen" || sp.cam.preset === "povFirstPerson" ? "cut" : "punch");
+      if (tin === "punch") {
+        const f0 = lens.fovAt ?? (() => lens.fov);
+        lens = { ...lens, fovAt: (t: number) => f0(t) + 7 * (1 - easeOut((t - a) / 0.14)) };
+        kicks.push([a, 0.5]);
+      }
+      if (tin === "whip") {
+        const p0 = lens.posAt ? lens.posAt(a) : lens.pos!, s0 = lens.subj;
+        lens = { ...lens, posAt: lens.posAt ?? (() => p0), subj: (t: number) => { const q = s0(t); const pp = lens.posAt ? lens.posAt(t) : p0; return add(pp, rotY([q[0] - pp[0], q[1] - pp[1], q[2] - pp[2]], 32 * D2R * whipK(t, a))); }, shutter: 0.2 };
+      }
+      // eyes and head: the camera while talking ("you"), else the shot's target (the money, the other character)
+      const camPos = lens.pos ?? (lens.posAt ? lens.posAt(a) : null);
+      for (const ac of actors) {
+        ac.camPos = camPos;
+        const la = ac.spec.lookAt;
+        if (la === "none") continue;
+        if (la === "camera" || (la === undefined && ac.talk)) { ac.lookT = () => camPos ?? [0, 1.2, 5]; continue; }
+        const tg = la ?? sp.cam.target;
+        if (tg === undefined || (typeof tg === "string" && tg.split(".")[0] === ac.id)) continue;
+        try { ac.lookT = targetFn(tg, set, actors, props, id); } catch { ac.lookT = null; }
+      }
+    }
     shots.push({ id, a, b, set: curSet, spec: sp, lens, lens2, pov, kicks, actors, props, fx });
   });
 
@@ -213,7 +253,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
   };
   const qa = (t: number) => {
     const s = shotAt(t);
-    const st = s.actors.map((a) => actorState(a, t)!).filter((x) => x && x.id !== s.pov);
+    const st = [...s.actors.map((a) => actorState(a, t)!).filter((x) => x && x.id !== s.pov), ...(Q && recipe.extras !== false && s.spec.extras !== false ? extrasAt(s.set, t) : [])];
     const actors: Box[] = [];
     const feet: { name: string; low: number; grounded: boolean }[] = [];
     for (const a of st) {
@@ -263,29 +303,80 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
 
   const assets = new Set<string>();
   for (const s of shots) { SETS[s.set].assets.forEach((x) => assets.add(x)); s.props.forEach((p) => p.spec.asset && assets.add(p.spec.asset)); }
-  return { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil };
+  return { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil, quality: Q };
 };
 
 // ------------------------------------------------------------------ actors
 export const actorState = (a: ActorR | undefined, t: number): ActorState | null => {
   if (!a) return null;
-  let seg = a.segs[0];
-  for (const s of a.segs) if (t >= s.t0) seg = s;
-  const walking = seg.pose === "walk" || seg.pose === "run";
-  const shotA = a.segs[0].t0;
-  const u = walking ? clamp((t - shotA) / Math.max(0.2, (Math.hypot(a.p1[0] - a.p0[0], a.p1[2] - a.p0[2]) || 1) / (seg.pose === "run" ? 3.2 : 1.3))) : 0;
-  const p = walking ? lerpV(a.p0, a.p1, u) : a.p0;
-  const yaw = a.yaw(p, t);
-  const b = { ...stand(p[0], p[2], yaw, a.s), armL: 0.3, armR: 0.3 };
-  const out = POSES[seg.pose](b, { t, t0: seg.t0 + LEAD, u, s: a.s, seed: a.seed });
+  let si = 0;
+  a.segs.forEach((s, k) => { if (t >= s.t0) si = k; });
+  const raw = (k: number, tt: number) => {
+    const seg = a.segs[k];
+    const walking = seg.pose === "walk" || seg.pose === "run";
+    const shotA = a.segs[0].t0;
+    const u = walking ? clamp((tt - shotA) / Math.max(0.2, (Math.hypot(a.p1[0] - a.p0[0], a.p1[2] - a.p0[2]) || 1) / (seg.pose === "run" ? 3.2 : 1.3))) : 0;
+    const p = walking ? lerpV(a.p0, a.p1, u) : a.p0;
+    const yaw = a.yaw(p, tt);
+    const b = { ...stand(p[0], p[2], yaw, a.s), armL: 0.3, armR: 0.3 };
+    return { out: POSES[seg.pose](b, { t: tt, t0: seg.t0 + LEAD, u, s: a.s, seed: a.seed }), walking, yaw };
+  };
+  const seg = a.segs[si];
+  const r = raw(si, t);
+  const out = r.out;
+  let pose = out.pose;
+  let blink = blinkAt(t, a.seed), mouth: Viseme = "rest";
+  if (a.q) {
+    // blended acting: from the previous pose into the new one with anticipation + overshoot (no snaps)
+    if (si > 0 && t - seg.t0 < 0.38) pose = mixPose(raw(si - 1, t).out.pose, pose, anticip((t - seg.t0) / 0.38));
+    pose = gestureAt(pose, a.gestures, t);
+    if (!r.walking && out.grounded) {
+      const w = weightShift(t, a.seed);
+      pose = { ...pose, x: pose.x + w.dx * Math.cos(r.yaw), z: pose.z - w.dx * Math.sin(r.yaw), sway: (pose.sway ?? 0) + w.sway, twist: (pose.twist ?? 0) + w.twist };
+    }
+    if (a.lookT) {
+      const hd: V3 = [pose.x, FACE_Y * a.s, pose.z];
+      const l = lookAtFn(pose, hd, a.lookT(t), 0.75);
+      pose = { ...pose, headYaw: pose.headYaw * 0.4 + l.headYaw, headPitch: pose.headPitch + l.headPitch };
+    }
+    if (a.talk) {
+      pose = { ...pose, headPitch: pose.headPitch + nodAt(a.words, t), bob: (pose.bob ?? 0) - (speakingAt(a.words, t) ? 0.008 * Math.abs(Math.sin(t * 11)) : 0) };
+      mouth = visemeAt(a.words, t);
+    }
+    // an expression change hides behind a blink (the decal swaps under closed lids)
+    blink = blinkVar(t, a.seed, a.segs.slice(1).map((s) => s.t0 + LEAD - 1 / 30));
+  }
   // re-ground every standing pose: a torso pitch swings the legs too (they hang from the pitched root), so the hip
   // height always comes from the actual leg angles; the lowest sole corner then sits on the floor (no sinking)
-  const pose = out.grounded ? { ...out.pose, y: hipFor(out.pose.legL, out.pose.legR, a.s, out.pose.pitch) } : out.pose;
+  if (out.grounded) pose = { ...pose, y: hipFor(pose.legL, pose.legR, a.s, pose.pitch) };
   // head/torso centres: offsets above the hip, tilted by the torso pitch, plus the bob
+  const yaw = pose.yaw;
   const hip = pose.y, dh = FACE_Y * a.s - HIP0(a.s), dt = 0.81 * a.s - HIP0(a.s);
   const fw: V3 = [Math.sin(yaw), 0, Math.cos(yaw)];
   const at = (d: number): V3 => [pose.x + fw[0] * d * Math.sin(pose.pitch), hip + d * Math.cos(pose.pitch) + (pose.bob ?? 0), pose.z + fw[2] * d * Math.sin(pose.pitch)];
-  return { id: a.id, pose, emotion: seg.emotion ?? out.emotion, s: a.s, head: at(dh), torso: at(dt), grounded: out.grounded, look: a.look, seed: a.seed, squash: sqAt(t, a.squash) };
+  return { id: a.id, pose, emotion: seg.emotion ?? out.emotion, s: a.s, head: at(dh), torso: at(dt), grounded: out.grounded, look: a.look, seed: a.seed, squash: sqAt(t, a.squash), blink, mouth, extra: a.extra };
+};
+
+// ------------------------------------------------------------------ quality pass: background passers-by
+/** ping-pong walkers along the set's extras path (each at its own speed and phase), from the Blocky crowd looks */
+export const extrasAt = (setId: SetId, t: number): ActorState[] => {
+  const path = SETS[setId].extrasPath;
+  if (!path) return [];
+  const [a0, a1] = path.line;
+  const L = Math.hypot(a1[0] - a0[0], a1[2] - a0[2]);
+  return Array.from({ length: path.n }, (_, k) => {
+    const v = 0.75 + 0.35 * hash(k + 3), ph = hash(k + 11) * 2 * L;
+    const d = (t * v + ph) % (2 * L);
+    const fwd = d < L;
+    const u = (fwd ? d : 2 * L - d) / L;
+    const p = add(lerpV(a0, a1, u), [0, 0, 0.7 * k]); // each walker on its own lane (toward the lens): they never meet
+    const yaw = Math.atan2((a1[0] - a0[0]) * (fwd ? 1 : -1), (a1[2] - a0[2]) * (fwd ? 1 : -1));
+    const s = 0.95 + 0.1 * hash(k + 7);
+    const o = POSES.walk({ ...stand(p[0], p[2], yaw, s), armL: 0.3, armR: 0.3 }, { t: t + k, t0: 0, u, s, seed: 40 + k });
+    const pose = o.pose;
+    const dh = FACE_Y * s - HIP0(s), dt = 0.81 * s - HIP0(s);
+    return { id: `extra${k}`, pose, emotion: (k % 2 ? "happy" : "curious") as Emotion, s, head: [pose.x, pose.y + dh, pose.z] as V3, torso: [pose.x, pose.y + dt, pose.z] as V3, grounded: true, look: CH.CROWD[(k * 3 + 1) % CH.CROWD.length], seed: 40 + k, squash: 0, blink: blinkVar(t, 40 + k), mouth: "rest" as Viseme, extra: true };
+  });
 };
 
 // ------------------------------------------------------------------ targets and lenses
@@ -476,7 +567,7 @@ const FxView: React.FC<{ f: FxR; t: number }> = ({ f, t }) => {
 };
 const ActorView: React.FC<{ st: ActorState; t: number }> = ({ st, t }) => {
   const a = alive({ key: st.id, look: st.look, pose: st.pose, emotion: st.emotion, s: st.s, blinkSeed: st.seed }, t);
-  const body = <Blocky pose={a.pose} look={st.look} emotion={st.emotion} blink={blinkAt(t, st.seed)} scale={st.s} />;
+  const body = <Blocky pose={a.pose} look={st.look} emotion={st.emotion} blink={st.blink} scale={st.s} mouth={st.mouth} />;
   return st.squash ? <Squash p={[st.pose.x, 0, st.pose.z]} k={st.squash}>{body}</Squash> : body;
 };
 /** first-person hands: two forearm blocks low in frame, in the viewer's shirt colour */
@@ -495,6 +586,51 @@ const PovHands: React.FC<{ cam: Cam; st: ActorState; t: number }> = ({ cam, st, 
           <B s={[0.11, 0.11, 0.1]} p={[0, 0, 0.2]} c={st.look.skin} />
         </group>
       ))}
+    </>
+  );
+};
+
+// ------------------------------------------------------------------ quality pass: set life (posters, sparkles, dust, contact shadows)
+const blobTex = () => canvasTexture("recipeBlob", 128, 128, (g, W) => {
+  const gr = g.createRadialGradient(W / 2, W / 2, 0, W / 2, W / 2, W / 2);
+  gr.addColorStop(0, "rgba(20,10,40,0.55)");
+  gr.addColorStop(0.6, "rgba(20,10,40,0.22)");
+  gr.addColorStop(1, "rgba(20,10,40,0)");
+  g.fillStyle = gr;
+  g.fillRect(0, 0, W, W);
+});
+const blobMat = () => new THREE.MeshBasicMaterial({ map: blobTex(), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+let BLOB: THREE.MeshBasicMaterial | null = null;
+const sparkMat = new Map<string, THREE.MeshBasicMaterial>();
+const spark = (c: string) => { let m = sparkMat.get(c); if (!m) { m = new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.9, depthWrite: false }); sparkMat.set(c, m); } return m; };
+const MONEY_KITS = new Set(["coin", "coinPile", "jar", "bill"]);
+const SetLife: React.FC<{ c: Compiled; shot: ShotR; t: number; actors: ActorState[] }> = ({ c, shot, t, actors }) => {
+  const set = SETS[shot.set];
+  BLOB = BLOB ?? blobMat();
+  const all = [...actors.filter((a) => a.id !== shot.pov), ...(c.recipe.extras !== false && shot.spec.extras !== false ? extrasAt(shot.set, t) : [])];
+  return (
+    <>
+      {/* soft contact shadows under every character (darker when the feet are on the floor) */}
+      {all.map((a) => (
+        <mesh key={`b${a.id}`} geometry={geoOf("recipeBlobPlane", () => new THREE.PlaneGeometry(1, 1))} material={BLOB!} rotation={[-Math.PI / 2, 0, 0]} position={[a.pose.x, 0.006, a.pose.z]} scale={[0.75 * a.s, 0.6 * a.s, 1]} />
+      ))}
+      {/* posters on the walls: no empty walls */}
+      {(set.posters ?? []).map((p, i) => <Label key={`p${i}`} p={p.p} r={[0, p.yaw ?? 0, p.tilt ?? 0]} text={p.text} w={p.w ?? 0.9} h={p.h ?? 0.55} bg={p.bg} fg={p.fg ?? "#ffffff"} glow={0.15} />)}
+      {/* sparkles twinkling on money props */}
+      {shot.props.filter((p) => t >= p.a && t < p.b && (MONEY_KITS.has(p.spec.kit ?? "") || (p.spec.asset ?? "").startsWith("coin") || p.spec.asset === "jewel" || p.spec.asset === "chest")).map((p) => {
+        const q = p.pos(t), bx = propBox(p.spec);
+        return Array.from({ length: 6 }, (_, k) => {
+          const ph = (t * (1.3 + hash(k + 2)) + hash(k)) % 1;
+          const s = 0.045 * Math.sin(Math.PI * ph);
+          if (s <= 0.004) return null;
+          return <mesh key={`s${p.key}${k}`} geometry={geoOf("sparkOcta", () => new THREE.OctahedronGeometry(1, 0))} material={spark(k % 2 ? "#fff6c0" : "#ffffff")} position={[q[0] + bx.h[0] * 1.1 * (hash(k + 5) - 0.5) * 2, q[1] + bx.c + bx.h[1] * (hash(k + 9) * 2 - 0.6), q[2] + bx.h[2] + 0.05]} scale={[s, s * 1.6, s]} rotation={[0, t * 3 + k, 0]} />;
+        });
+      })}
+      {/* dust motes drifting in the light (indoor sets) */}
+      {!set.sky ? Array.from({ length: 26 }, (_, k) => {
+        const x = -3.5 + 7 * hash(k + 31), z = -2.5 + 4.5 * hash(k + 37), y = 0.4 + ((hash(k + 41) * 2.4 + t * 0.06 * (0.5 + hash(k))) % 2.4);
+        return <mesh key={`d${k}`} geometry={geoOf("dustMote", () => new THREE.SphereGeometry(1, 6, 4))} material={spark("#fffaf0")} position={[x + 0.1 * Math.sin(t * 0.7 + k), y, z]} scale={0.008 + 0.006 * hash(k + 3)} />;
+      }) : null}
     </>
   );
 };
@@ -522,6 +658,8 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
     <>
       {set.render(t)}
       {actors.filter((a) => a.id !== shot.pov).map((a) => <ActorView key={a.id} st={a} t={t} />)}
+      {c.quality && c.recipe.extras !== false && shot.spec.extras !== false ? extrasAt(shot.set, t).map((a) => <ActorView key={a.id} st={a} t={t} />) : null}
+      {c.quality ? <SetLife c={c} shot={shot} t={t} actors={actors} /> : null}
       {shot.props.map((p) => <PropView key={p.key} pr={p} t={t} s={shot} />)}
       {shot.fx.map((f, i) => <FxView key={i} f={f} t={t} />)}
       {pov ? <PovHands cam={cam} st={pov} t={t} /> : null}

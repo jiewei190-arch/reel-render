@@ -15,6 +15,10 @@ export type SetDef = {
   blockers: Box[];
   assets: string[];
   mood: "store" | "home" | "earth";
+  /** quality pass: background passers-by walking between two floor points */
+  extrasPath?: { line: [V3, V3]; n: number };
+  /** quality pass: posters on the walls (our own words, no brands) */
+  posters?: { p: V3; text: string[]; bg: string; fg?: string; w?: number; h?: number; yaw?: number; tilt?: number }[];
   sky: boolean;
   bg: string;
 };
@@ -93,6 +97,12 @@ export const SETS: Record<SetId, SetDef> = {
     ),
     anchors: { counter: COUNTER, counterTop: [CT[0], TOP, CT[2]], mark: [1.0, 0, 0.45], left: [-1.4, 0, 0.6], right: [2.75, 0, 0.35], back: [-1.5, 0, -2.35], backLeft: [-4.0, 0, -2.4], backRight: [3.45, 0, -1.45], wall: [1.7, 2.55, -3.44], centre: [0, 0, 0.5] },
     blockers: [CTR_BOX, ...blockAll(STORE_DRESS)],
+    extrasPath: { line: [[-0.1, 0, -3.2], [1.3, 0, -3.2]], n: 1 },
+    posters: [
+      { p: [-2.7, 2.35, -3.46], text: ["BIG", "SALE"], bg: "#d62a2a", w: 0.8, h: 0.7, tilt: 0.04 },
+      { p: [-5.46, 2.2, 1.0], text: ["NEW", "TVs"], bg: "#2a6de1", yaw: Math.PI / 2, w: 0.9, h: 0.6 },
+      { p: [5.46, 2.3, -1.6], text: ["0% TODAY*"], bg: "#ffd23a", fg: "#16121c", yaw: -Math.PI / 2, w: 1.0, h: 0.45 },
+    ],
     assets: STORE_DRESS.map((a) => a.id),
     mood: "store",
     sky: false,
@@ -108,6 +118,7 @@ export const SETS: Record<SetId, SetDef> = {
     ),
     anchors: { sofa: [-1.6, 0, -2.6], tv: [2.2, 0.58, -3.05], table: [-1.6, 0.38, -1.4], mark: [0.6, 0, 0.3], left: [-1.6, 0, 0.4], right: [2.4, 0, 0.3], back: [0, 0, -2.0], wall: [0, 2.3, -3.44], centre: [0, 0, 0.5] },
     blockers: blockAll(HOME_DRESS.filter((a) => a.id !== "rug")),
+    posters: [{ p: [0.4, 2.2, -3.46], text: ["HOME"], bg: "#2fd0bd", w: 0.8, h: 0.5, tilt: -0.03 }, { p: [-5.46, 2.0, -0.5], text: ["BILLS", "DUE"], bg: "#fff4c8", fg: "#d62a2a", yaw: Math.PI / 2, w: 0.7, h: 0.6 }],
     assets: HOME_DRESS.map((a) => a.id),
     mood: "home",
     sky: false,
@@ -125,6 +136,7 @@ export const SETS: Record<SetId, SetDef> = {
     ),
     anchors: { kerb: [0, 0.12, -2.2], mark: [0.6, 0, 0.3], left: [-1.6, 0, 0.4], right: [2.4, 0, 0.3], road: [0, 0, 4.2], shop: [-1.2, 0, -6.5], centre: [0, 0, 0.5] },
     blockers: blockAll(STREET_DRESS),
+    extrasPath: { line: [[-4.6, 0, -1.4], [5.2, 0, -1.4]], n: 2 }, // walkers k are offset 0.7 m apart in depth
     assets: STREET_DRESS.map((a) => a.id),
     mood: "earth",
     sky: true,
@@ -144,6 +156,8 @@ export const SETS: Record<SetId, SetDef> = {
     ),
     anchors: { counter: [0, 0, -0.9], counterTop: [0, 1.04, -0.9], vault: [-3.6, 0, -2.6], mark: [1.0, 0, 0.45], left: [-1.4, 0, 0.6], right: [2.75, 0, 0.35], teller: [0.6, 0, -1.6], back: [0, 0, -2.4], wall: [0, 2.4, -3.44], centre: [0, 0, 0.5] },
     blockers: [box("set.bankCounter", [0, 0.52, -0.9], [1.35, 0.52, 0.45]), ...blockAll(BANK_DRESS)],
+    extrasPath: { line: [[-2.2, 0, -2.85], [2.2, 0, -2.85]], n: 1 },
+    posters: [{ p: [-2.4, 2.3, -3.46], text: ["SAVE", "MORE"], bg: "#1f9e4f", w: 0.8, h: 0.6 }, { p: [2.4, 2.3, -3.46], text: ["LOANS"], bg: "#16121c", fg: "#ffd23a", w: 0.8, h: 0.45 }],
     assets: BANK_DRESS.map((a) => a.id),
     mood: "store",
     sky: false,
@@ -158,6 +172,7 @@ export const SETS: Record<SetId, SetDef> = {
     ),
     anchors: { deskL: [-2.4, 0.78, -2.4], deskR: [2.4, 0.78, -2.4], mark: [0.4, 0, 0.3], left: [-1.6, 0, 0.4], right: [2.4, 0, 0.3], back: [0, 0, -2.0], wall: [0, 2.3, -3.44], centre: [0, 0, 0.5] },
     blockers: blockAll(OFFICE_DRESS),
+    posters: [{ p: [-1.2, 2.3, -3.46], text: ["Q3", "GOALS"], bg: "#ffffff", fg: "#2a6de1", w: 0.8, h: 0.6 }, { p: [1.3, 2.3, -3.46], text: ["PAYDAY", "FRIDAY"], bg: "#ffd23a", fg: "#16121c", w: 0.9, h: 0.55 }],
     assets: OFFICE_DRESS.map((a) => a.id),
     mood: "home",
     sky: false,

@@ -17,7 +17,7 @@ Composition: `S1SplitPaymentsRecipe` (+ `S1SplitPaymentsRecipeSub`) in `src/inde
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | impact |
 | no character names in the first 2 s of speech (day-1 fix 1) | PASS | none |
 | no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2) | PASS | tag from 5.72 s |
-| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.30, cut 2.07 |
+| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.30, cut 2.07, hit 2.07 |
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 0.23 s |
 | no wide or dark shot in the first 1 s | PASS | S01 slamZoom/store |

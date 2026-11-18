@@ -419,6 +419,24 @@ Script (`docs/recipe_examples/s6-three-traps/script.txt`):
 }
 ```
 
-## 6. Borrowed code
+## 6. Animation quality pass (on by default)
+
+Every recipe gets this pass automatically. Set `"quality": false` to get the plain v1 look. `<Id>Plain` renders the same recipe without the pass, for side-by-sides with `tools/recipe_compare.sh`.
+
+| Area | What it does | Recipe control |
+|---|---|---|
+| **Lip-sync** | The speaking actor's mouth follows the voice. There are 6 mouth shapes on the face decal (rest, A, E, O, U/W, M/B/P), held at least 2 frames, with soft-open short gaps (`src/fin/lib/lipsync.ts`). Shapes come from each word's letters spread over its span; per-character times from ElevenLabs `/with-timestamps` are used when `vo/timings.json` has `chars`. Stressed words (numbers, `$`, long words, CAPS) get a head nod; speech adds a small talk-bob. | `recipe.talk`: `"auto"` makes the actor the camera is on lip-sync the voice. `"none"` means a narrator voice, and the characters react silently. The default is auto for S3/S5 and none otherwise. `shot.talk: "<id>"` or `"none"` overrides it per shot. |
+| **Always alive** | Blinks every 2-5 s on each actor's own rhythm, idle breathing, slow weight shifts, and a head/eye look-at. While talking, actors look at the lens (the "you"); otherwise they look at the shot's target (the money, the other character). Nobody is ever frozen. | `actor.lookAt`: a target, `"camera"` or `"none"` |
+| **Acting** | Pose changes blend from the previous pose with anticipation, overshoot and settle over 0.38 s (`src/fin/lib/alive.ts`). An expression change hides behind a 4-frame blink, so the face never visibly snaps. | `actor.then` (as before) |
+| **Gestures** | `point`, `count`, `palmsUp`, `facepalm`, `clutchHead`, `shrug`. Each blends in 2 frames before its word, holds, then blends out. | `actor.gestures: [{ "at": "<word>", "g": "palmsUp" }]` |
+| **Richer sets** | Background passers-by from the Blocky crowd (store, street, bank) walk their own lanes. They are included in the clip QA. Every set also gets posters on the walls. | `recipe.extras: false`, or `shot.extras: false` when a shot's props fill the background |
+| **Depth of field** | 1.5× deeper blur on close-up, slamZoom and pushIn shots | `cam.blur` overrides it |
+| **Polish** | Soft contact shadows under every character, sparkles on money props (coins, coin piles, jars, bills, chests), and dust motes drifting in indoor light. Rim light comes from the existing mood rig. | (automatic) |
+| **Transitions** | Each cut comes in with a punch-in: fov +7° snapping to the lens over 0.14 s, plus a small kick. `"whip"` swings in 32° with a 0.2 motion-blur shutter. `"match"` keeps the previous shot's camera angle. `"cut"` is plain. slamZoom, whip, split screen and POV shots come in as cuts, because they move already. | `shot.in` |
+| **Motion blur** | Render `<Id>RecipeSub`: 4 sub-frames per frame, averaged by `render.sh`. This is the default for finals. | (render flag) |
+
+Everything stays a pure function of t and goes through the same clip QA. The extras, the gestures and the blended poses are all checked against every prop and set box.
+
+## 7. Borrowed code
 
 Three helpers were rewritten from two MIT repositories: the camera kick, push-in and zoom (`src/fin/lib/camera.ts`); the motion easings and reaction lead (`src/fin/lib/motion.ts`); and the word-caption chunking (`src/fin/lib/captions.tsx`). The sources are mromidev/claude-animated-shorts and hassancs91/claude-faceless-shorts-creator. Their notices are in `THIRD_PARTY_NOTICES.md`. No AGPL code is used.

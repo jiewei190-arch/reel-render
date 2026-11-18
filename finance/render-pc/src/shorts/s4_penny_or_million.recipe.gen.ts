@@ -271,7 +271,8 @@ export const RECIPE: Recipe = {
      "at": "five#3"
     },
     "shake"
-   ]
+   ],
+   "extras": false
   }
  ]
 };

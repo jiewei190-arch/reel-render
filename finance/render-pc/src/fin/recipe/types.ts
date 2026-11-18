@@ -57,6 +57,10 @@ export type ActorSpec = {
   scale?: number;
   /** squash/stretch hits (times) */
   squash?: At[];
+  /** quality pass: gestures on key words (point, count, palmsUp, facepalm, clutchHead, shrug) */
+  gestures?: { at: At; g: "point" | "count" | "palmsUp" | "facepalm" | "clutchHead" | "shrug" }[];
+  /** quality pass: where the eyes/head track ("camera" = the viewer); default the camera while talking, else the shot's target */
+  lookAt?: Target | "camera" | "none";
 };
 
 export type KitId = "tv" | "card" | "reader" | "debtBlock" | "label" | "jar" | "coinPile" | "calendar" | "stamp" | "payBox" | "coin" | "bill" | "block" | "counter";
@@ -103,6 +107,13 @@ export type ShotSpec = {
   fx?: FxSpec[];
   /** "auto" (default) = word captions; "off" hides them for this shot; a string = a fixed caption */
   caption?: "auto" | "off" | string;
+  /** quality pass: who lip-syncs the voice in this shot (an actor id) or "none"; default from recipe.talk */
+  talk?: string;
+  /** quality pass: false hides the background passers-by in this shot (when the shot's own props fill the background) */
+  extras?: boolean;
+  /** quality pass: how this shot comes in: "punch" (default: a punch-in zoom + small shake), "whip", "match" (keeps the
+   *  previous shot's camera angle), or "cut" (plain) */
+  in?: "punch" | "whip" | "match" | "cut";
   /** extra sfx cues for tools/story_mix.py */
   sfx?: { at: At; sfx: string; db?: number }[];
   /** optional note for humans (ignored) */
@@ -120,6 +131,14 @@ export type Recipe = {
   /** the sfx punch at 0.00 s (default "impact"; e.g. "drop", "crash", "paper" for a rip) */
   sfx0?: string;
   bg?: string;
+  /** the animation quality pass (lip-sync, alive idles, look-at, blended acting, transitions, extras, particles,
+   *  contact shadows, deeper DOF). Default true; false renders the plain v1 look (for side-by-sides). */
+  quality?: boolean;
+  /** quality pass: "auto" = the actor the camera is on lip-syncs the voice (narrator-as-character); "none" = nobody
+   *  (a narrator voice; characters react silently); per shot `talk` overrides. Default "auto" for S3/S5, else "none". */
+  talk?: "auto" | "none";
+  /** quality pass: background passers-by from the Blocky crowd (default true where the set has a path) */
+  extras?: boolean;
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";

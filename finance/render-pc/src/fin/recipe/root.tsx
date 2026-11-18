@@ -25,6 +25,9 @@ export const compiledOf = (id: string) => {
 };
 const galleryC = () => { let c = cache.get("__gallery"); if (!c) { c = compileRecipe(GALLERY_RECIPE, [], GALLERY_RECIPE.duration); cache.set("__gallery", c); } return c; };
 const PresetGallery: React.FC = () => <RecipeFilm c={galleryC()} />;
+const plainOf = (id: string) => { const k = `${id}:plain`; let c = cache.get(k); if (!c) { const r = RECIPES.find((x) => x.id === id)!; c = compileRecipe({ ...r.recipe, quality: false }, r.words, r.vo); cache.set(k, c); } return c; };
+/** the same recipe without the animation quality pass (side-by-side comparisons) */
+const Plain: React.FC<{ id: string }> = ({ id }) => <RecipeFilm c={plainOf(id)} />;
 const Sharp: React.FC<{ id: string }> = ({ id }) => <RecipeFilm c={compiledOf(id)} />;
 const Blur: React.FC<{ id: string }> = ({ id }) => <RecipeFilm c={compiledOf(id)} sub />;
 const Mintrap: React.FC = () => <FinFilm spec={MINTRAP_SPEC} />;
@@ -39,6 +42,7 @@ export const ToolkitRoot: React.FC = () => (
       return (
         <React.Fragment key={r.id}>
           <Composition id={r.id} component={Sharp} durationInFrames={c.duration} fps={30} width={1080} height={1920} defaultProps={{ id: r.id }} />
+          <Composition id={`${r.id}Plain`} component={Plain} durationInFrames={c.duration} fps={30} width={1080} height={1920} defaultProps={{ id: r.id }} />
           <Composition id={`${r.id}Sub`} component={Blur} durationInFrames={c.duration * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ id: r.id }} />
         </React.Fragment>
       );

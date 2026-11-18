@@ -10,7 +10,7 @@ Composition: `S3PovFirstPaycheckRecipe` (+ `S3PovFirstPaycheckRecipeSub`) in `sr
 
 | check | result | detail |
 |---|---|---|
-| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | pay 57 % |
+| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | pay 59 % |
 | hook text on screen at frame 0, <= 5 words (day-1 fix 2) | PASS | "POV: $1,800 PAYCHECK" (3 words, until 3.83 s) |
 | the stake ($ or a time) on screen by 0.5 s | PASS | at 0.00 s |
 | first spoken word by 0.2 s (day-1 fix 3) | PASS | POV: at 0.00 s |
@@ -23,4 +23,4 @@ Composition: `S3PovFirstPaycheckRecipe` (+ `S3PovFirstPaycheckRecipeSub`) in `sr
 | no wide or dark shot in the first 1 s | PASS | S01 povFirstPerson/home |
 | length 20-30 s | PASS | 22.17 s |
 
-Frame-0 coverage by subject: pay 57 %.
+Frame-0 coverage by subject: pay 59 %.
