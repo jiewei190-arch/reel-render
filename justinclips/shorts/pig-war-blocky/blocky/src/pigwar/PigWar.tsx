@@ -185,7 +185,7 @@ const build = (id: string, t: number, sh: ShotRow): Built => {
     const tense = id === "s13" || id === "s13b";
     const golden = id === "s14";
     const T0 = t + 0.4;
-    const lay = id === "s02" ? { skip: 4, xs: 0.82 } : id === "s13" ? { skip: 2, xs: 0.62 } : id === "s13b" ? { skip: 2, xs: 0.66 } : { skip: 2, xs: 0.82 };
+    const lay = id === "s02" ? { skip: 6, xs: 0.82 } : id === "s13" ? { skip: 2, xs: 0.62 } : id === "s13b" ? { skip: 2, xs: 0.66 } : { skip: 2, xs: 0.82 };
     const actors = corridorActors(T0, tense ? "flat" : "angry", tense ? "flat" : "angry", { point: id === "s01" || id === "s02", ...lay });
     let pig: React.ReactNode = null;
     let cam: Cam;
