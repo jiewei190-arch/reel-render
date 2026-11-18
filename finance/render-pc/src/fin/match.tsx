@@ -52,7 +52,7 @@ const LENS: Record<string, Omit<FinShot, "id" | "a" | "b">> = {
   S14: fitted([...body(P_SP, S.spender, true), [JAR_B[0], TOP + 0.3, JAR_B[2]]], -24, 0.06, D.S14, { mood: "whisper" }),
   S15: fitted([[JARS3[0] - 0.9, 0, JARS3[2]], [JARS3[0] + 0.9, 1.6, JARS3[2]]], 12, 0.15, D.S15, { mood: "store" }),
   S16: manual([CLOCK[0] + 0.5, CLOCK[1] - 0.3, CLOCK[2]], 16, 2.3, -0.1, { mood: "store" }),
-  S17: fitted([...tl(), [P_TL[0] + 0.35, 2.3, P_TL[2]]], -32, 0.3, D.S17, { mood: "store" }),
+  S17: fitted([...tl(), [P_TL[0] + 0.35, 2.3, P_TL[2]]], -40, 0.55, D.S17, { mood: "store" }),
   S18: manual([P_TL[0] + 0.25, 1.85, P_TL[2] + 0.3], -30, 1.6, 0.3, { mood: "store" }),
   S19: manual([CAL[0], CAL[1] - 0.15, CAL[2]], -12, 2.0, 0.0, { mood: "store" }),
   S20: fitted([...sv(), ...tl(), ...body(P_SP0, S.spender), [JAR[0], TOP + 0.5, JAR[2]]], 8, 0.1, D.S20, { mood: "store", fov: 52, face: 0.6, m: 0.06 }),
@@ -76,7 +76,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
     if (loop || i === 8) { pose = { ...pose, armR: 1.35 - 0.25 * ss(0.3, 0.9, tau), outR: -0.05 }; held = tau < 0.6 ? { side: "R", node: <CoinStack p={[0, -0.02, 0.06]} n={i === 8 ? 14 : 8} s={1.3} /> } : undefined; }
     if (i === 4) { pose = { ...pose, armR: 1.25 }; held = { side: "R", node: <group position={[0, 0.22, 0.05]}><Sheet lines={["PAYSLIP", "$50,000/YR", "EXAMPLE"]} /></group> }; emo = "curious"; }
     if (i === 11) emo = "joy";
-    if (i <= 11 || i >= 15) actors.push(<Act key="sv" look={SAVER} pose={pose} emotion={emo} s={S.saver} t={t} seed={4} held={held} />);
+    if (i <= 11 || i === 15 || i === 20) actors.push(<Act key="sv" look={SAVER} pose={pose} emotion={emo} s={S.saver} t={t} seed={4} held={held} />);
   }
   // Teller, the employer (behind the counter on a hidden step)
   {
@@ -121,7 +121,7 @@ const scene = (t: number, shot: FinShot, tau: number): React.ReactNode => {
       <Label p={[JAR[0], TOP - 0.2, DESK[2] + 0.36]} text={["RETIREMENT", "PLAN"]} w={0.5} h={0.24} bg={PAL.cash} fg="#fff4c8" />
       <group position={JAR_B} scale={1.1}><Jar label={false} /></group>
       <Label p={[JAR_B[0], TOP - 0.2, DESK[2] + 0.36]} text={["SPENDER"]} w={0.42} h={0.14} bg={PAL.debt} fg="#fff4c8" />
-      <Label p={[DESK[0] + 0.55, TOP + 0.12, DESK[2] + 0.2]} r={[-0.5, 0, 0]} text={["EMPLOYER", "MATCH"]} w={0.42} h={0.22} bg="#16121c" fg="#ffd23a" glow={0.4} />
+      <Label p={[DESK[0] - 0.55, TOP + 0.12, DESK[2] + 0.25]} r={[-0.5, 0, 0]} text={["EMPLOYER", "MATCH"]} w={0.42} h={0.22} bg="#16121c" fg="#ffd23a" glow={0.4} />
       {/* the match: half-size bundle beside the full one (S06), the $3,000 / $1,500 stacks (S08-S11), sliding away (S13) */}
       {i === 6 ? (
         <>
