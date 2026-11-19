@@ -374,11 +374,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#1f9e4f",
      "size": [
-      0.5,
-      0.3,
+      0.66,
+      0.38,
       0.05
      ],
-     "at": "left:-0.5,1.35,0.5"
+     "at": "left:-0.46,1.42,0.5"
     },
     {
      "id": "b7",
@@ -389,11 +389,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.52,
-      0.26,
+      0.66,
+      0.38,
       0.05
      ],
-     "at": "right:0.5,1.22,0.5",
+     "at": "right:0.46,1.2,0.5",
      "motion": "dropSlam",
      "hit": "2:five",
      "drop": 0.5
@@ -498,11 +498,11 @@ export const RECIPE: Recipe = {
      "text": "PAID OFF",
      "color": "#1f9e4f",
      "size": [
-      0.7,
+      0.66,
       0.22,
       0.03
      ],
-     "at": "left:0.03,1.62,0.3",
+     "at": "left:0.14,1.62,0.3",
      "hit": "3:last"
     },
     {
@@ -548,7 +548,7 @@ export const RECIPE: Recipe = {
      "then": [
       {
        "at": "3:eighteen",
-       "pose": "despair",
+       "pose": "idle",
        "emotion": "sad"
       }
      ]
@@ -883,7 +883,7 @@ export const RECIPE: Recipe = {
      "then": [
       {
        "at": "6:thousand",
-       "pose": "despair",
+       "pose": "idle",
        "emotion": "sad"
       }
      ]
