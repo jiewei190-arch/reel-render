@@ -9,6 +9,7 @@ import * as R5 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
 import * as R6 from "../../shorts/s4_penny_or_million.recipe.gen";
 import * as R7 from "../../shorts/s5_spender_talks.recipe.gen";
 import * as R8 from "../../shorts/s6_three_traps.recipe.gen";
+import * as R9 from "../../shorts/ten_beats_thirty.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -20,4 +21,5 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R6.ID, recipe: R6.RECIPE, words: R6.WORDS, vo: R6.VO_DURATION },
   { id: R7.ID, recipe: R7.RECIPE, words: R7.WORDS, vo: R7.VO_DURATION },
   { id: R8.ID, recipe: R8.RECIPE, words: R8.WORDS, vo: R8.VO_DURATION },
+  { id: R9.ID, recipe: R9.RECIPE, words: R9.WORDS, vo: R9.VO_DURATION },
 ];
