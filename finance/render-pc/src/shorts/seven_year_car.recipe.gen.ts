@@ -110,9 +110,9 @@ export const RECIPE: Recipe = {
    "note": "the interest block slams down beside him (cut at 1.0 s, hook rule)",
    "cam": {
     "preset": "slamZoom",
-    "target": "mark:-0.55,0.75,0",
+    "target": "mark:-0.42,0.8,0",
     "hit": "1:twelve",
-    "dist": 3.4,
+    "dist": 4.4,
     "az": 10
    },
    "actors": [
