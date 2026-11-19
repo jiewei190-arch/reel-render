@@ -114,6 +114,27 @@ const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 
         g.stroke();
         continue;
       }
+      if (emotion === "angry" && !blink) {
+        // glaring: the oval cut by a slanted lid (inner end low), a pin-point catch-light
+        g.save();
+        g.beginPath();
+        g.moveTo(cx - 0.2 * S, cy + 0.3 * S);
+        g.lineTo(cx - 0.2 * S, cy - 0.02 * S + s * 0.06 * S);
+        g.lineTo(cx + 0.2 * S, cy - 0.02 * S - s * 0.06 * S);
+        g.lineTo(cx + 0.2 * S, cy + 0.3 * S);
+        g.closePath();
+        g.clip();
+        g.beginPath();
+        g.ellipse(cx, cy + 0.01 * S, 0.1 * es * S, 0.12 * es * S, 0, 0, Math.PI * 2);
+        g.fill();
+        g.fillStyle = "#ffffff";
+        g.beginPath();
+        g.arc(cx + 0.03 * S, cy + 0.04 * S, 0.02 * es * S, 0, Math.PI * 2);
+        g.fill();
+        g.fillStyle = ink;
+        g.restore();
+        continue;
+      }
       if (blink) {
         g.lineWidth = 0.045 * S;
         g.beginPath();
@@ -142,11 +163,11 @@ const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 
       }
     }
     // one angled brow stroke each
-    g.lineWidth = 0.05 * S;
+    g.lineWidth = (emotion === "angry" ? 0.075 : 0.05) * S;
     for (const s of [-1, 1]) {
-      const by = (es - 1) * 0.14 + (emotion === "shock" ? 0.31 : emotion === "joy" || emotion === "love" ? 0.29 : emotion === "curious" ? (s < 0 ? 0.33 : 0.25) : emotion === "sly" ? 0.22 : 0.26);
+      const by = (es - 1) * 0.14 + (emotion === "angry" ? 0.2 : emotion === "shock" ? 0.31 : emotion === "joy" || emotion === "love" ? 0.29 : emotion === "curious" ? (s < 0 ? 0.33 : 0.25) : emotion === "sly" ? 0.22 : 0.26);
       // angle: + = inner end up (sad/worried), - = inner end down
-      const tilt = emotion === "sad" ? 0.42 : emotion === "shock" ? 0.12 : emotion === "joy" || emotion === "love" ? -0.05 : emotion === "sly" ? -0.4 : emotion === "curious" ? (s < 0 ? 0.2 : -0.15) : -0.08;
+      const tilt = emotion === "angry" ? -0.75 : emotion === "sad" ? 0.42 : emotion === "shock" ? 0.12 : emotion === "joy" || emotion === "love" ? -0.05 : emotion === "sly" ? -0.4 : emotion === "curious" ? (s < 0 ? 0.2 : -0.15) : -0.08;
       const cx = s * 0.22, len = 0.085;
       g.beginPath();
       const dy = tilt * 0.12; // inner end up by dy, outer end down by dy
@@ -190,6 +211,34 @@ const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 
         g.ellipse(X(0), Y(my - 0.03), rw * S, rh * S, 0, 0, Math.PI * 2);
         g.stroke();
       }
+    } else if (emotion === "angry") {
+      // gritted teeth: a wide white bar with an ink rim and tooth lines, plus a red anger mark on the forehead
+      const rw = 0.17, rh = 0.075, yc = my - 0.03;
+      g.fillStyle = "#ffffff";
+      g.strokeStyle = ink;
+      g.lineWidth = 0.03 * S;
+      g.beginPath();
+      g.roundRect(X(-rw), Y(yc + rh / 2), 2 * rw * S, rh * S, 0.025 * S);
+      g.fill();
+      g.stroke();
+      g.lineWidth = 0.018 * S;
+      g.beginPath();
+      g.moveTo(X(-rw), Y(yc));
+      g.lineTo(X(rw), Y(yc));
+      for (const k of [-2, -1, 0, 1, 2]) {
+        g.moveTo(X(k * 0.06), Y(yc + rh / 2));
+        g.lineTo(X(k * 0.06), Y(yc - rh / 2));
+      }
+      g.stroke();
+      g.strokeStyle = "#e0182e";
+      g.lineWidth = 0.03 * S;
+      const vx = 0.3, vy = 0.36, r = 0.045;
+      g.beginPath();
+      for (const [a, b] of [[1, 1], [-1, 1], [1, -1], [-1, -1]] as const) {
+        g.moveTo(X(vx + a * r * 0.35), Y(vy + b * r * 1.2));
+        g.quadraticCurveTo(X(vx + a * r * 0.35), Y(vy + b * r * 0.35), X(vx + a * r * 1.2), Y(vy + b * r * 0.35));
+      }
+      g.stroke();
     } else if (emotion === "happy") {
       g.lineWidth = 0.045 * S;
       g.beginPath();

@@ -186,7 +186,7 @@ const fallAt = (t: number) => {
 export const SIT = { yaw: 1.0, y: (SPEC.shoe.d * U) / 2 };
 
 // ------------------------------------------------------------------ kid A
-export type Emotion = "happy" | "shock" | "sad" | "joy" | "sly" | "love" | "curious";
+export type Emotion = "happy" | "shock" | "sad" | "joy" | "sly" | "love" | "curious" | "angry";
 export const poseA = (t: number): Pose => {
   if (t < T.catch) {
     const w = walkAt(t);
