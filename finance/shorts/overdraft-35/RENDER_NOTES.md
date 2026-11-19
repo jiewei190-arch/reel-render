@@ -2,7 +2,7 @@ STATE: rendered (FORMAT v1 recipe, PC build on the 9e679a1e engine)
 
 # overdraft-35: render notes (PC, style S2 RICH-VS-POOR, voice Tyler)
 
-`video.mp4` sha256 `0feae3c63108dcfa17c9001441879727d4231ee4f8af71afd6d678f1c330684c`. 1080x1920, 30 fps, 885 frames (29.50 s), SUB=4 motion blur with the quality pass, 27.2 MB.
+`video.mp4` sha256 `bf19b044610ef888633ee5dbb87c36c9d6ce24e709291d72fe5b36c55df2cc2c`. 1080x1920, 30 fps, 885 frames (29.50 s), SUB=4 motion blur with the quality pass, 27.2 MB.
 
 ## Build
 - **Voice:** ElevenLabs Tyler, voiced in the cloud (finance/next, 15e6fd4). 428 characters, 29.5 s.
@@ -35,3 +35,10 @@ STATE: rendered (FORMAT v1 recipe, PC build on the 9e679a1e engine)
 - **By eye:** 6 fps scrub (`scrub_6fps_*.jpg`) and the impact frames plus 2. A face or a readable board is in every shot, and every loop ending matches frame 0.
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## v1c (MAIN review): the punchline word's level
+- `tools/endword_check.py` measured the final word "forty" at -29.8 dB RMS against its line's -22.8 dB (7.0 dB under; MAIN's limit is 6).
+- Fix, on the VOICE stem only: +8 dB on "forty" (28.98-29.50 s) with a 40 ms ramp in (`endword_check.py shorts/overdraft-35 --fix 8`). The word is now -21.8 dB, level with the line.
+  - The original ElevenLabs take is kept as `voice.orig.wav`.
+- Remixed with the same end-cleared cues, then mux_voice: -14.2 LUFS, true peak -2.5. No dropouts.
+- Whisper small.en and small on the full mix: "...Spender's cost $40." Video frames unchanged (same v1 render).
