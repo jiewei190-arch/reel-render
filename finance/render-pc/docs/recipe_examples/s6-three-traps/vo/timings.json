@@ -1,0 +1,394 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 24.165
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Three money traps you fall for every month. Number one is the worst.",
+   "words": [
+    {
+     "w": "Three",
+     "t": 0.0,
+     "end": 0.345
+    },
+    {
+     "w": "money",
+     "t": 0.345,
+     "end": 0.69
+    },
+    {
+     "w": "traps",
+     "t": 0.69,
+     "end": 1.035
+    },
+    {
+     "w": "you",
+     "t": 1.035,
+     "end": 1.29
+    },
+    {
+     "w": "fall",
+     "t": 1.29,
+     "end": 1.59
+    },
+    {
+     "w": "for",
+     "t": 1.59,
+     "end": 1.845
+    },
+    {
+     "w": "every",
+     "t": 1.845,
+     "end": 2.19
+    },
+    {
+     "w": "month.",
+     "t": 2.19,
+     "end": 2.535
+    },
+    {
+     "w": "Number",
+     "t": 2.535,
+     "end": 2.925
+    },
+    {
+     "w": "one",
+     "t": 2.925,
+     "end": 3.18
+    },
+    {
+     "w": "is",
+     "t": 3.18,
+     "end": 3.39
+    },
+    {
+     "w": "the",
+     "t": 3.39,
+     "end": 3.645
+    },
+    {
+     "w": "worst.",
+     "t": 3.645,
+     "end": 3.99
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Number three: the free trial that turns into a bill.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 4.34,
+     "end": 4.73
+    },
+    {
+     "w": "three:",
+     "t": 4.73,
+     "end": 5.12
+    },
+    {
+     "w": "the",
+     "t": 5.12,
+     "end": 5.375
+    },
+    {
+     "w": "free",
+     "t": 5.375,
+     "end": 5.675
+    },
+    {
+     "w": "trial",
+     "t": 5.675,
+     "end": 6.02
+    },
+    {
+     "w": "that",
+     "t": 6.02,
+     "end": 6.32
+    },
+    {
+     "w": "turns",
+     "t": 6.32,
+     "end": 6.665
+    },
+    {
+     "w": "into",
+     "t": 6.665,
+     "end": 6.965
+    },
+    {
+     "w": "a",
+     "t": 6.965,
+     "end": 7.13
+    },
+    {
+     "w": "bill.",
+     "t": 7.13,
+     "end": 7.43
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Number two: the store card with a ten percent discount and thirty percent interest.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 7.78,
+     "end": 8.17
+    },
+    {
+     "w": "two:",
+     "t": 8.17,
+     "end": 8.47
+    },
+    {
+     "w": "the",
+     "t": 8.47,
+     "end": 8.725
+    },
+    {
+     "w": "store",
+     "t": 8.725,
+     "end": 9.07
+    },
+    {
+     "w": "card",
+     "t": 9.07,
+     "end": 9.37
+    },
+    {
+     "w": "with",
+     "t": 9.37,
+     "end": 9.67
+    },
+    {
+     "w": "a",
+     "t": 9.67,
+     "end": 9.835
+    },
+    {
+     "w": "ten",
+     "t": 9.835,
+     "end": 10.09
+    },
+    {
+     "w": "percent",
+     "t": 10.09,
+     "end": 10.525
+    },
+    {
+     "w": "discount",
+     "t": 10.525,
+     "end": 11.005
+    },
+    {
+     "w": "and",
+     "t": 11.005,
+     "end": 11.26
+    },
+    {
+     "w": "thirty",
+     "t": 11.26,
+     "end": 11.65
+    },
+    {
+     "w": "percent",
+     "t": 11.65,
+     "end": 12.085
+    },
+    {
+     "w": "interest.",
+     "t": 12.085,
+     "end": 12.565
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "And number one? It looks like help.",
+   "words": [
+    {
+     "w": "And",
+     "t": 12.915,
+     "end": 13.17
+    },
+    {
+     "w": "number",
+     "t": 13.17,
+     "end": 13.56
+    },
+    {
+     "w": "one?",
+     "t": 13.56,
+     "end": 13.815
+    },
+    {
+     "w": "It",
+     "t": 13.815,
+     "end": 14.025
+    },
+    {
+     "w": "looks",
+     "t": 14.025,
+     "end": 14.37
+    },
+    {
+     "w": "like",
+     "t": 14.37,
+     "end": 14.67
+    },
+    {
+     "w": "help.",
+     "t": 14.67,
+     "end": 14.97
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "The minimum payment. Pay only that, and a small bill can follow you for years.",
+   "words": [
+    {
+     "w": "The",
+     "t": 15.32,
+     "end": 15.575
+    },
+    {
+     "w": "minimum",
+     "t": 15.575,
+     "end": 16.01
+    },
+    {
+     "w": "payment.",
+     "t": 16.01,
+     "end": 16.445
+    },
+    {
+     "w": "Pay",
+     "t": 16.445,
+     "end": 16.7
+    },
+    {
+     "w": "only",
+     "t": 16.7,
+     "end": 17.0
+    },
+    {
+     "w": "that,",
+     "t": 17.0,
+     "end": 17.3
+    },
+    {
+     "w": "and",
+     "t": 17.3,
+     "end": 17.555
+    },
+    {
+     "w": "a",
+     "t": 17.555,
+     "end": 17.72
+    },
+    {
+     "w": "small",
+     "t": 17.72,
+     "end": 18.065
+    },
+    {
+     "w": "bill",
+     "t": 18.065,
+     "end": 18.365
+    },
+    {
+     "w": "can",
+     "t": 18.365,
+     "end": 18.62
+    },
+    {
+     "w": "follow",
+     "t": 18.62,
+     "end": 19.01
+    },
+    {
+     "w": "you",
+     "t": 19.01,
+     "end": 19.265
+    },
+    {
+     "w": "for",
+     "t": 19.265,
+     "end": 19.52
+    },
+    {
+     "w": "years.",
+     "t": 19.52,
+     "end": 19.865
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Pay more than the minimum, and you skip all three traps.",
+   "words": [
+    {
+     "w": "Pay",
+     "t": 20.215,
+     "end": 20.47
+    },
+    {
+     "w": "more",
+     "t": 20.47,
+     "end": 20.77
+    },
+    {
+     "w": "than",
+     "t": 20.77,
+     "end": 21.07
+    },
+    {
+     "w": "the",
+     "t": 21.07,
+     "end": 21.325
+    },
+    {
+     "w": "minimum,",
+     "t": 21.325,
+     "end": 21.76
+    },
+    {
+     "w": "and",
+     "t": 21.76,
+     "end": 22.015
+    },
+    {
+     "w": "you",
+     "t": 22.015,
+     "end": 22.27
+    },
+    {
+     "w": "skip",
+     "t": 22.27,
+     "end": 22.57
+    },
+    {
+     "w": "all",
+     "t": 22.57,
+     "end": 22.825
+    },
+    {
+     "w": "three",
+     "t": 22.825,
+     "end": 23.17
+    },
+    {
+     "w": "traps.",
+     "t": 23.17,
+     "end": 23.515
+    }
+   ]
+  }
+ ]
+}

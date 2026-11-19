@@ -39,8 +39,10 @@ const DECAL_OFF = 0.0045; // m, decal planes stand this far off their surface
 // ------------------------------------------------------------------ face decal
 const FW = SPEC.head.w - 2 * SPEC.head.r; // flat front of the head (U)
 const FH = SPEC.head.h - 2 * SPEC.head.r;
-const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 1) =>
-  canvasTexture(`face|${emotion}|${blink ? 1 : 0}|${cheeks}|${es}`, 512, Math.round((512 * FH) / FW), (g, W, H) => {
+/** lip-sync mouth shapes (src/fin/lib/lipsync.ts): undefined/"rest" = the emotion's own mouth */
+export type Viseme = "rest" | "A" | "E" | "O" | "U" | "M";
+const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 1, mouth: Viseme = "rest") =>
+  canvasTexture(`face|${emotion}|${blink ? 1 : 0}|${cheeks}|${es}|${mouth}`, 512, Math.round((512 * FH) / FW), (g, W, H) => {
     // face coordinates in U, origin = head centre, y up
     const X = (x: number) => (x / FW + 0.5) * W;
     const Y = (y: number) => (0.5 - y / FH) * H;
@@ -154,7 +156,41 @@ const faceTex = (emotion: Emotion, blink: boolean, cheeks: Look["cheeks"], es = 
     }
     // mouth
     const my = -0.2;
-    if (emotion === "happy") {
+    if (mouth !== "rest") {
+      // a talking mouth: open shapes are a dark red cavity with an ink rim (+ a tongue on A), M/B/P is a pressed line
+      const shape: Record<Exclude<Viseme, "rest">, [number, number]> = { A: [0.15, 0.13], E: [0.17, 0.07], O: [0.1, 0.12], U: [0.065, 0.075], M: [0.13, 0] };
+      const [rw, rh] = shape[mouth];
+      g.strokeStyle = ink;
+      if (rh === 0) {
+        g.lineWidth = 0.05 * S;
+        g.beginPath();
+        g.moveTo(X(-rw), Y(my - 0.02));
+        g.lineTo(X(rw), Y(my - 0.02));
+        g.stroke();
+      } else {
+        g.save();
+        g.beginPath();
+        g.ellipse(X(0), Y(my - 0.03), rw * S, rh * S, 0, 0, Math.PI * 2);
+        g.fillStyle = "#b8162f";
+        g.fill();
+        g.clip();
+        if (mouth === "A" || mouth === "E") {
+          g.fillStyle = "#ff8aa0";
+          g.beginPath();
+          g.ellipse(X(0), Y(my - 0.03 - rh * 0.85), rw * 0.7 * S, rh * 0.5 * S, 0, 0, Math.PI * 2);
+          g.fill();
+        }
+        if (mouth === "E" || mouth === "A") {
+          g.fillStyle = "#ffffff";
+          g.fillRect(X(-rw * 0.8), Y(my - 0.03 + rh), rw * 1.6 * S, rh * 0.32 * S);
+        }
+        g.restore();
+        g.lineWidth = 0.03 * S;
+        g.beginPath();
+        g.ellipse(X(0), Y(my - 0.03), rw * S, rh * S, 0, 0, Math.PI * 2);
+        g.stroke();
+      }
+    } else if (emotion === "happy") {
       g.lineWidth = 0.045 * S;
       g.beginPath();
       g.arc(X(0), Y(my + 0.1), 0.15 * S, Math.PI * 0.22, Math.PI * 0.78);
@@ -358,11 +394,12 @@ export const Cone: React.FC<{ scoops: number; colors: string[]; pop?: [number, n
 };
 
 // ------------------------------------------------------------------ the character
-export const Blocky: React.FC<{ pose: Pose; look: Look; emotion: Emotion; blink?: boolean; cone?: ConeProps; held?: Held; chest?: React.ReactNode; scale?: number }> = ({
+export const Blocky: React.FC<{ pose: Pose; look: Look; emotion: Emotion; blink?: boolean; cone?: ConeProps; held?: Held; chest?: React.ReactNode; scale?: number; mouth?: Viseme }> = ({
   pose: p,
   look,
   emotion,
   blink = false,
+  mouth = "rest",
   cone,
   held,
   chest,
@@ -375,7 +412,7 @@ export const Blocky: React.FC<{ pose: Pose; look: Look; emotion: Emotion; blink?
   const pants = plastic(look.pants, { rough: 0.6 });
   const shoes = plastic(look.shoes, { rough: 0.45 });
   const sole = plastic(look.sole, { rough: 0.5 });
-  const face = plastic("#ffffff", { decal: true, rough: 0.45, map: faceTex(emotion, blink, look.cheeks, look.eyeScale ?? 1) });
+  const face = plastic("#ffffff", { decal: true, rough: 0.45, map: faceTex(emotion, blink, look.cheeks, look.eyeScale ?? 1, mouth) });
   const print = plastic("#ffffff", { decal: true, rough: 0.55, map: printTex(look.print, look.accent) });
   const arm = (side: "L" | "R") => {
     const sx = side === "L" ? 1 : -1;

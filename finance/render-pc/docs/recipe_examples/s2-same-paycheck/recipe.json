@@ -1,0 +1,16 @@
+{
+  "slug": "s2-same-paycheck",
+  "style": "S2",
+  "hook": {"text": "SAME $2,000. ONE IS BROKE.", "again": "which"},
+  "cast": {"spender": "SPENDER", "saver": "SAVER"},
+  "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
+  "shots": [
+    {"at": 0, "set": "office", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 2.0}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}], "fx": [{"fx": "shake", "at": "only"}]},
+    {"at": "saver", "cam": {"preset": "pushIn", "target": "jar", "dist": 2.4}, "actors": [{"id": "saver", "pose": "reach", "at": "left", "face": "jar"}], "props": [{"id": "jar", "kit": "jar", "text": ["SAVINGS"], "fill": 0.2, "color": "#1f9e4f", "at": "left:-1.1,0,-0.6"}, {"id": "in", "kit": "coin", "at": "left:-1.1,1.6,-0.6", "motion": "rain", "n": 6, "area": [0.3, 0.2]}]},
+    {"at": "spender", "set": "store", "cam": {"preset": "whip", "target": "spender", "dist": 2.8}, "actors": [{"id": "spender", "pose": "swipe-card", "at": "mark", "from": "spends"}], "props": [{"id": "card", "kit": "card", "at": "spender.handR"}]},
+    {"at": "nothing", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "nothing", "dist": 1.5}, "actors": [{"id": "spender", "pose": "despair", "at": "mark", "from": "nothing"}]},
+    {"at": "line:4", "set": "office", "cam": {"preset": "wide", "target": "centre:0,1,0", "dist": 5.5}, "props": [{"id": "cover", "kit": "label", "text": ["1 YEAR", "LATER"], "size": [1.2, 0.6, 0.05], "at": "wall"}]},
+    {"at": "after", "cam": {"preset": "splitScreen", "targets": ["sJar", "spender"], "dist": 2.2}, "actors": [{"id": "saver", "pose": "celebrate", "at": "left"}, {"id": "spender", "pose": "despair", "at": "right"}], "props": [{"id": "sJar", "kit": "label", "text": ["SAVED"], "color": "#1f9e4f", "at": "left:0,1.9,0.3", "motion": "count-up", "hit": "twenty", "count": {"from": 0, "to": 2400, "prefix": "$"}}, {"id": "pJar", "kit": "label", "text": ["SAVED", "$0"], "at": "right:0,1.9,0.3"}]},
+    {"at": "which", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "which", "dist": 1.4}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "from": "which"}]}
+  ]
+}

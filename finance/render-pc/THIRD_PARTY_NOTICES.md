@@ -97,3 +97,99 @@ companies with up to 3 employees, non-profits and evaluation; any larger company
 before using it (https://www.remotion.dev/docs/license/pricing).
 The other npm packages keep their own licenses (mostly MIT, ISC, BSD, Apache-2.0); see `node_modules/<package>/LICENSE`
 after installing.
+
+---
+
+## Block Money toolkit (finance/toolkit): adapted MIT code and CC0 assets
+
+The two repositories below were read as text only. Nothing from them was installed or run. The helpers listed were rewritten in our own code, using their constants and structure. Their licences require these notices.
+
+| Item | Author | Licence | Source (commit read) | Used in |
+|---|---|---|---|---|
+| Impact kick (flip-sign shake over 7 f), push-in factor with punch window, zoom push, quintic glide | Mr omi | MIT | github.com/mromidev/claude-animated-shorts, `templates/bridge/story.ts` (e3b817b6afc6cd413466d43f11ba31209e034bbf) | `src/fin/lib/camera.ts` |
+| Reaction lead (LEAD = 2 f), wind-up/strike timing | Mr omi | MIT | same repo, `templates/bridge/cast.ts`, `references/reports/motion.md` | `src/fin/lib/motion.ts` |
+| Easing curves (EASE_OUT, EASE_INOUT, EASE_PLACE, overshoot), stamp slam 1.7 to 1 over 9 f, loop punch 1.06 | Hasan Aboul Hasan | MIT | github.com/hassancs91/claude-faceless-shorts-creator, `remotion/src/lib/shorts.tsx`, `collage.tsx` (773054bebbe460de0f31dcfda5315970b1c8b4f2) | `src/fin/lib/motion.ts` |
+| Caption chunking with hold (next start or end + 0.6 s), per-word pop 0.92 to 1, active-word highlight | Hasan Aboul Hasan | MIT | same repo, `remotion/src/lib/shorts.tsx` (`chunkLines`, `Captions`) | `src/fin/lib/captions.tsx` |
+| CC0 3D props (Kenney kits, Quaternius packs) | Kenney, Quaternius | CC0 1.0 (no notice required; credited as a courtesy) | see `public/assets/cc0/LICENSES.md` | `public/assets/cc0/` |
+
+No AGPL code is used (OpenMontage was not read for code). No reference frames, characters or style bibles from either repository are included.
+
+### claude-animated-shorts
+
+```
+MIT License
+
+Copyright (c) 2026 Mr omi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+### claude-faceless-shorts-creator
+
+```
+MIT License
+
+Copyright (c) 2026 Hasan Aboul Hasan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Animation quality pass: further sources (read as text only; nothing installed or run)
+
+| Item | Author | Licence | Source (commit read) | Used in |
+|---|---|---|---|---|
+| Closed-form damped spring (coefficients) | Isaac Mason | MIT | github.com/pmndrs/maath `src/time/spring-core.ts` (dee0cae) | `src/fin/lib/spring.ts` (springFree, wobbleAt) |
+| Critically damped step S(x, w), smoothstep exit | Melvyn Malherbe | MIT | github.com/Melvynx/video-agent-skills `skills/short-editing/engine/lib/kit.js` (f454292) | `src/fin/lib/spring.ts` |
+| Viseme coarticulation lead (shape ramps in up to 60 ms before its sound) | Mika Suominen | MIT | github.com/met4citizen/TalkingHead `modules/talkinghead.mjs` (1563de1) | `src/fin/lib/lipsync.ts` |
+| Crash-zoom anticipation (a short pull-back before the punch) | Wei Yihao | Apache-2.0 (idea and numbers only; no code copied) | github.com/Vincentwei1021/video-shotcraft (55eb60d) | `src/fin/recipe/compile.tsx` slamZoom |
+| Caption highlight 2 frames before the word | Nate Herk | MIT kit; idea only, no code; the brand assets are not used | github.com/nateherkai/herk-edit-kit (10511e5) | `src/fin/lib/captions.tsx` |
+
+The MIT licence text for each MIT row is identical to the text above. Only the copyright lines differ:
+- Copyright (c) 2026 Isaac Mason (pmndrs/maath)
+- Copyright (c) 2026 Melvyn Malherbe (Melvynx/video-agent-skills)
+- Copyright (c) 2023-2024 Mika Suominen (met4citizen/TalkingHead)
+
+```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+Licence notes from the review:
+- pmndrs/postprocessing is **zlib**, not MIT. None of its code is used; the engine has its own post chain.
+- remotion-dev/remotion and `@remotion/transitions` are under the **Remotion License**. It is free only for individuals, for-profit companies with up to 3 employees, and non-profits; otherwise a company licence is needed. The toolkit does not use `@remotion/transitions`, and the project's existing Remotion dependency already falls under this licence.
+- OpenMontage is AGPL-3.0 and was not read for code.
