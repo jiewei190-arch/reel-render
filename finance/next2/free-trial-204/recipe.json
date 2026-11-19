@@ -1,0 +1,821 @@
+{
+ "slug": "free-trial-204",
+ "style": "S2",
+ "hook": {
+  "text": "FREE TRIAL. $200 BILL?",
+  "again": "7:and"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE",
+  "from": 1,
+  "until": "7:and"
+ },
+ "eggs": [
+  "cat",
+  {
+   "egg": "sticky",
+   "text": "CANCEL BY... ?"
+  }
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "props": [
+  {
+   "id": "sp0",
+   "kit": "label",
+   "text": [
+    "SPENDER PAID",
+    "$0"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "from": "5:month",
+   "until": "5:two"
+  },
+  {
+   "id": "spA",
+   "kit": "label",
+   "text": [
+    "SPENDER PAID"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "motion": "count-up",
+   "hit": "5:two",
+   "count": {
+    "from": 0,
+    "to": 17,
+    "prefix": "$",
+    "dur": 0.3
+   },
+   "from": "5:two",
+   "until": "5:six"
+  },
+  {
+   "id": "spB",
+   "kit": "label",
+   "text": [
+    "SPENDER PAID"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "motion": "count-up",
+   "hit": "5:six",
+   "count": {
+    "from": 17,
+    "to": 102,
+    "prefix": "$",
+    "dur": 0.5
+   },
+   "from": "5:six",
+   "until": "5:twelve"
+  },
+  {
+   "id": "spC",
+   "kit": "label",
+   "text": [
+    "SPENDER PAID"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "motion": "count-up",
+   "hit": "5:twelve",
+   "count": {
+    "from": 102,
+    "to": 204,
+    "prefix": "$",
+    "dur": 0.6
+   },
+   "from": "5:twelve"
+  },
+  {
+   "id": "sv0",
+   "kit": "label",
+   "text": [
+    "SAVER PAID",
+    "$0"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "right:0.62,1.62,0.3",
+   "from": "5:month"
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "home",
+   "note": "frame 0: Spender grinning, FREE TRIAL $0 tag slams beside the face",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "idle",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "t0",
+     "kit": "label",
+     "text": [
+      "FREE TRIAL",
+      "$0"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.36,
+      0.22,
+      0.04
+     ],
+     "at": "mark:0.17,1.38,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "shake",
+     "at": 0.1
+    }
+   ]
+  },
+  {
+   "at": "1:two",
+   "note": "the $200 stamp",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "bill",
+    "hit": "1:two",
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "mark",
+     "from": "1:two",
+     "squash": [
+      "1:two"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "bill",
+     "kit": "label",
+     "text": [
+      "$200"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.8,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0.1,1.5,0.6",
+     "motion": "dropSlam",
+     "hit": "1:two",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:two"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:two",
+     "sfx": "stamp",
+     "db": -4
+    }
+   ]
+  },
+  {
+   "at": "2:same",
+   "in": "cut",
+   "note": "race starts: same 7-day trial, split",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "left",
+     "emotion": "joy"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "d7a",
+     "kit": "label",
+     "text": [
+      "7 DAYS FREE"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.2,
+      0.04
+     ],
+     "at": "left:0.8,1.4,0.4",
+     "motion": "fly-in",
+     "hit": "2:seven"
+    },
+    {
+     "id": "d7b",
+     "kit": "label",
+     "text": [
+      "7 DAYS FREE"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.2,
+      0.04
+     ],
+     "at": "right:-0.8,1.4,0.4",
+     "motion": "fly-in",
+     "hit": "2:day"
+    }
+   ]
+  },
+  {
+   "at": "2:saver",
+   "note": "Saver sets a reminder",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.55,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "point",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "rem",
+     "kit": "label",
+     "text": [
+      "REMINDER",
+      "DAY 6"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.36,
+      0.05
+     ],
+     "at": "mark:-0.5,1.2,0.55",
+     "motion": "dropSlam",
+     "hit": "2:reminder",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:reminder",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "note": "Spender: I'll remember",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "mem",
+     "kit": "label",
+     "text": [
+      "I'LL",
+      "REMEMBER"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.6,
+      0.36,
+      0.05
+     ],
+     "at": "mark:0.5,1.2,0.55",
+     "motion": "fly-in",
+     "hit": "2:remember"
+    }
+   ]
+  },
+  {
+   "at": "3:day",
+   "note": "calendar ticks to day 8",
+   "cam": {
+    "preset": "pushIn",
+    "target": "wall:0,0.2,0",
+    "dist": 3.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark:1.2,0,0",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "cal",
+     "kit": "calendar",
+     "text": [
+      "TRIAL",
+      "8",
+      "FREE PART OVER"
+     ],
+     "color": "#d62a2a",
+     "at": "wall:0,0.45,0",
+     "motion": "count-up",
+     "hit": "3:eight",
+     "count": {
+      "from": 1,
+      "to": 8,
+      "dur": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:eight",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:seventeen",
+   "note": "-$17 hits the card",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "chg",
+    "hit": "3:seventeen",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "card",
+     "kit": "card",
+     "at": "spender.handR"
+    },
+    {
+     "id": "chg",
+     "kit": "label",
+     "text": [
+      "-$17"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.3,
+      0.05
+     ],
+     "at": "mark:0.5,1.35,0.55",
+     "motion": "dropSlam",
+     "hit": "3:seventeen",
+     "drop": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:seventeen"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:seventeen",
+     "sfx": "buzz",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "3:he",
+   "note": "he never notices: happy dance in front of the TV",
+   "cam": {
+    "preset": "medium",
+    "target": "spender.face",
+    "dist": 2.8,
+    "az": 15
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "celebrate",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "tvs",
+     "asset": "tv",
+     "at": "mark:-1.6,0,-1.6"
+    }
+   ]
+  },
+  {
+   "at": "4:and",
+   "mood": "whisper",
+   "note": "OPEN LOOP: covered envelopes pile up, MONTH ? calendar trembles",
+   "cam": {
+    "preset": "pushIn",
+    "target": "mark:0,1.3,0.4",
+    "dist": 2.6
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "c1",
+     "kit": "label",
+     "text": [
+      "$??"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.6,1.5,0.4",
+     "motion": "fly-in",
+     "hit": "4:stop"
+    },
+    {
+     "id": "c2",
+     "kit": "label",
+     "text": [
+      "$??"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0.6,1.5,0.4",
+     "motion": "fly-in",
+     "hit": "4:one"
+    },
+    {
+     "id": "cal2",
+     "kit": "calendar",
+     "text": [
+      "MONTH",
+      "?",
+      ""
+     ],
+     "color": "#3a3f58",
+     "at": "wall"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:charge"
+    }
+   ]
+  },
+  {
+   "at": "5:month",
+   "in": "cut",
+   "note": "race counters: month two, six, twelve",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.0
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "left",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "5:twelve",
+       "pose": "shock"
+      }
+     ]
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "5:two"
+    },
+    {
+     "fx": "shake",
+     "at": "5:six"
+    },
+    {
+     "fx": "shake",
+     "at": "5:twelve"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:two",
+     "sfx": "coins",
+     "db": -8
+    },
+    {
+     "at": "5:six",
+     "sfx": "coins",
+     "db": -6
+    },
+    {
+     "at": "5:twelve",
+     "sfx": "cash",
+     "db": -4
+    }
+   ]
+  },
+  {
+   "at": "5:in",
+   "note": "TWIST: $204 slams down, flash",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "big",
+    "hit": "5:hundred",
+    "dist": 2.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "mark",
+     "from": "5:hundred",
+     "squash": [
+      "5:hundred"
+     ],
+     "then": [
+      {
+       "at": "5:dollars",
+       "pose": "despair"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "big",
+     "kit": "label",
+     "text": [
+      "1 YEAR",
+      "$204"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.9,
+      0.5,
+      0.05
+     ],
+     "at": "mark:0,1.7,0.5",
+     "motion": "dropSlam",
+     "hit": "5:hundred",
+     "drop": 0.8
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "5:hundred"
+    },
+    {
+     "fx": "shake",
+     "at": "5:hundred"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:hundred",
+     "sfx": "stamp",
+     "db": -3
+    }
+   ]
+  },
+  {
+   "at": "6:almost",
+   "set": "street",
+   "note": "almost half forgot a trial (survey)",
+   "cam": {
+    "preset": "medium",
+    "target": "spender",
+    "dist": 3.0,
+    "az": -15
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "mark",
+     "emotion": "sad",
+     "gestures": [
+      {
+       "at": "6:forgot",
+       "g": "facepalm"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "half",
+     "kit": "label",
+     "text": [
+      "ABOUT 1 IN 2",
+      "FORGOT A TRIAL"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.9,1.9,0.3",
+     "motion": "fly-in",
+     "hit": "6:half"
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "7:saver",
+   "set": "home",
+   "mood": "ending",
+   "note": "Saver paid zero",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.0
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "left",
+     "emotion": "sad"
+    },
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "right",
+     "emotion": "joy"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:zero",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:and",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up, FREE TRIAL tag again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "t1",
+     "kit": "label",
+     "text": [
+      "FREE TRIAL",
+      "$0"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.36,
+      0.22,
+      0.04
+     ],
+     "at": "mark:0.17,1.38,0.72",
+     "motion": "dropSlam",
+     "hit": "7:free",
+     "drop": 0.25
+    }
+   ]
+  }
+ ]
+}
