@@ -6,51 +6,51 @@
  "gap": 0.15,
  "lead": 0.1,
  "speed": 1.15,
- "tempo": 1.1919,
+ "tempo": 1.1946,
  "sr": 24000,
  "duration": 29.5,
- "characters": 453,
+ "characters": 454,
  "lines": [
   {
    "line": 1,
    "text": "Your four hundred dollar loan costs sixty dollars every two weeks.",
    "start": 0.084,
-   "end": 3.843
+   "end": 3.7
   },
   {
    "line": 2,
    "text": "Same car repair, same four hundred. Spender grabs a payday loan. Saver pays from savings.",
-   "start": 3.969,
-   "end": 9.942
+   "start": 3.826,
+   "end": 9.987
   },
   {
    "line": 3,
-   "text": "Payday comes. Spender can't pay it all, so pays only the sixty dollar fee.",
-   "start": 10.068,
-   "end": 14.565
+   "text": "Payday comes. Spender can't repay it, so he pays only the sixty dollar fee.",
+   "start": 10.112,
+   "end": 14.599
   },
   {
    "line": 4,
    "text": "Again. And again. But that's not the worst part...",
-   "start": 14.691,
-   "end": 18.182
+   "start": 14.725,
+   "end": 18.14
   },
   {
    "line": 5,
    "text": "In this example, after about five months, Spender has paid six hundred dollars in fees,",
-   "start": 18.307,
-   "end": 23.409
+   "start": 18.266,
+   "end": 23.423
   },
   {
    "line": 6,
    "text": "and still owes the whole four hundred.",
-   "start": 23.535,
-   "end": 25.682
+   "start": 23.548,
+   "end": 25.691
   },
   {
    "line": 7,
    "text": "Saver paid once. Spender is still paying, because",
-   "start": 25.808,
+   "start": 25.817,
    "end": 29.5
   }
  ]
