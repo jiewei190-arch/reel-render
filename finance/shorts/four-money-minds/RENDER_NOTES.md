@@ -1,6 +1,24 @@
 # four-money-minds (S8 STACKED-LANES): render notes (cloud CPU)
 
-## v1 (2026-11-19)
+
+## v2 (2026-11-19, MAIN's fixes) — CURRENT
+- sha256 0b387864461838dc025ca000288e7085af27d4fd3c40eb9f8bd8385fac3b7ca9; 840 frames, 28.00 s video and audio, -14.2 LUFS, TP -1.5 dBFS.
+  Rendered on CPU without SUB (as before), in 7 chunks; chunks 3-5 were re-rendered after the Debt Killer framing fix.
+- Wide shots:
+  - The lane pitch is 2.08 m (was 2.6) and the haters stand closer, so characters are about 1.6x bigger on screen.
+  - At 0-1 s and the 11.75 s year flip, the 4 lanes fill y 200-1650.
+  - The 1.0 s push frames lanes 0-2 at y 200-1380.
+  - The scoreboard wide keeps the lanes at y 205-1370, so the bottom-centre captions never sit on the Debt Killer while the crown lands (about 1.3x bigger than v1 there).
+- Scoreboard:
+  - The score chips are about 1.3x bigger.
+  - The haters lose and run off to the right at 21.15 s (they are back for the loop), so the big chips never cover them.
+- Focus shots: the lane band is centred between the title band and the caption band. The last lane (Debt Killer) sits low, with the Investor's payoff above it, so there is no dead floor.
+- The 1 YEAR LATER calendar flips DAY 1 -> DAY 365 at 12.1-12.3 s and holds DAY 365.
+- Captions use the recipe Shorts' RecipeCaptions style: bold caps, outline, the spoken word in red, 1-2 words, centre y about 1411, from 1.0 s.
+- The audio mix is unchanged from v1.
+- QA: I looked at frame0.jpg and all three 6 fps scrubs. I found no overlaps or cropped HUD, and the counters stay inside their lanes. Lane props stay under the 1.9 m lane ceiling (hammer windup capped, shard and crown heights clamped).
+
+## v1 (2026-11-19, superseded)
 - sha256 d0108a2b721cf38788a485d3c8d442857aa06f6012dc39357abe9095ec1fa05d; 840 frames, 28.00 s video and audio, 1080x1920 30 fps h264.
   Audio: -14.2 LUFS integrated, TP -1.5 dBFS (AAC 256k 48 kHz).
 - Rendered on the cloud machine's CPU (SwiftShader) because the PC renderer was offline. There is no motion blur: SUB=4 would have taken about 4.5 h at ~4.6 s/frame.
