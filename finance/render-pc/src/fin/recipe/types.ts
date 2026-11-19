@@ -13,7 +13,7 @@ export type At = number | string;
 export type Place = [number, number] | V3 | string;
 
 export type PoseId = "idle" | "smug" | "shock" | "despair" | "push" | "reach" | "swipe-card" | "kneel" | "collapse" | "point" | "celebrate" | "walk" | "run";
-export type CamId = "slamZoom" | "whip" | "pushIn" | "orbit" | "closeUp" | "medium" | "wide" | "splitScreen" | "povFirstPerson";
+export type CamId = "hookZoom" | "slamZoom" | "whip" | "pushIn" | "orbit" | "closeUp" | "medium" | "wide" | "splitScreen" | "povFirstPerson";
 export type MotionId = "dropSlam" | "fly-in" | "stick-to-face" | "rain" | "burst" | "count-up";
 export type FxId = "shake" | "flash" | "dust" | "debris";
 export type SetId = "store" | "home" | "street" | "bank" | "office";
@@ -139,6 +139,10 @@ export type Recipe = {
   talk?: "auto" | "none";
   /** quality pass: background passers-by from the Blocky crowd (default true where the set has a path) */
   extras?: boolean;
+  /** easter eggs in the background of every shot (1-2): "cat" | "tv19" | "sticky" | "mug", or { egg, at, to, yaw, text } */
+  eggs?: (import("./eggs").EggSpec)[];
+  /** the double payoff: a visual gag in the last 0.5-1 s after the spoken payoff ({ gag: "catCoin" | "tvFall" | "stickyFall", from?: s }) */
+  finalGag?: import("./eggs").FinalGag;
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";

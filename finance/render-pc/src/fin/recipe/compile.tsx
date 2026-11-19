@@ -34,6 +34,7 @@ import { armPoint, Burst, burstHalf, burstPos, Coin3, DebtBlock, Debris, HookTex
 import type { Box, Cue, StoryAudio } from "../v1/kit";
 import { hipFor, POSES, soleLow } from "./poses";
 import { SETS } from "./sets";
+import { eggBoxes, EggsView, gagU, placeEggs } from "./eggs";
 import type { SetDef } from "./sets";
 import { makeAt } from "./timing";
 import type { ActorSpec, At, CamSpec, Emotion, FxSpec, Place, PropSpec, Recipe, SetId, ShotSpec, Target, Word } from "./types";
@@ -201,6 +202,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     const hit = at(sp.cam.hit, a + 0.12);
     const kicks: [number, number][] = [];
     if (sp.cam.preset === "slamZoom") kicks.push([hit, 1.2]);
+    if (sp.cam.preset === "hookZoom") kicks.push([a + 0.38, 0.7]);
     fx.filter((f) => f.fx === "shake").forEach((f) => kicks.push([f.at, 1.4 * f.gain]));
     props.filter((p) => p.spec.motion === "dropSlam" || p.spec.motion === "burst").forEach((p) => kicks.push([p.hit, 0.8]));
     const prev = shots[shots.length - 1];
@@ -263,7 +265,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
       actors.push(...limbBoxes(a.id, a.pose, a.s));
       feet.push({ name: a.id, low: soleLow(a.pose, a.s), grounded: a.grounded });
     }
-    const props: Box[] = [...SETS[s.set].blockers];
+    const props: Box[] = [...SETS[s.set].blockers, ...(Q ? eggBoxes(placeEggs(s.set, recipe.eggs), t, recipe.finalGag, gagU(recipe.finalGag, end, t)) : [])];
     for (const p of s.props) {
       if (t < p.a || t >= p.b || p.held) continue;
       props.push(...propBoxes(p, t, s));
@@ -299,6 +301,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     for (const f of s.fx) if (f.fx === "debris") cues.push({ t: f.at, sfx: "crash", db: -8 });
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
+  if (Q && recipe.finalGag) cues.push({ t: recipe.finalGag.from ?? end - 0.8, sfx: recipe.finalGag.gag === "tvFall" ? "crash" : recipe.finalGag.gag === "catCoin" ? "coins" : "paper", db: -6 });
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio: StoryAudio = { music: recipe.music ?? "upbeat", cues: cues.filter((c) => c.t >= 0 && c.t < end).sort((x, y) => x.t - y.t) };
 
@@ -406,6 +409,8 @@ const targetFn = (tg: Target, set: SetDef, actors: ActorR[], props: PropR[], sho
 };
 /** the camera presets: every one keeps moving (push, orbit or slam creep), per FORMAT v1 */
 export const CAM_PRESETS = {
+  /** frame-0 hook: a fast push straight into the action over the first 0.4 s (from 1.3x the distance, so frame 0 is still a close-up), then a creep */
+  hookZoom: { dist: 1.7, h: 0.12, fov: 46, face: 0.48, push: 0.05, blur: 1.6, roll: [-2, 0.5] as [number, number] },
   closeUp: { dist: 1.3, h: 0.08, fov: 42, face: 0.45, push: 0.07, blur: 1.8, roll: [0, 1.5] as [number, number] },
   medium: { dist: 2.6, h: 0.3, fov: 48, face: 0.5, push: 0.06, blur: 1.2, roll: [0, 1.2] as [number, number] },
   wide: { dist: 5.4, h: 1.0, fov: 54, face: 0.5, push: 0.04, blur: 0.6, roll: [0, 0.8] as [number, number] },
@@ -440,6 +445,11 @@ const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: nu
       // crash-zoom anticipation (video-shotcraft, Apache-2.0, idea): pull back ~3 % over the 6 frames before the hit
       const sl = slam(hit, 60, c.fov ?? P.fov, 0.12);
       return { lens: { ...L, fovAt: (t: number) => sl(t) + (t < hit && t > hit - 0.2 ? 1.8 * Math.sin(Math.PI * (t - hit + 0.2) / 0.2) : 0) } };
+    }
+    case "hookZoom": {
+      const s0 = L.subj(a), p0 = L.pos!;
+      const far = add(s0, [(p0[0] - s0[0]) * 1.3, (p0[1] - s0[1]) * 1.15, (p0[2] - s0[2]) * 1.3]); // frame 0 is already close (gate: >= 50 %), then punches in
+      return { lens: { ...L, posAt: (t) => { const u = easeOut((t - a) / 0.4); const q = lerpV(far, p0, u); const k = 1 - (P.push) * Math.max(0, t - a - 0.4); const sj = L.subj(t); return [sj[0] + (q[0] - sj[0]) * k, sj[1] + (q[1] - sj[1]) * k, sj[2] + (q[2] - sj[2]) * k]; } } };
     }
     case "pushIn": { const s0 = L.subj(a), p0 = L.pos!; return { lens: { ...L, posAt: (t) => lerpV(s0, p0, pushK(t, a, 0.003, 0.006, 35)) } }; }
     case "whip": {
@@ -669,6 +679,7 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       {c.quality && c.recipe.extras !== false && shot.spec.extras !== false ? extrasAt(shot.set, t).map((a) => <ActorView key={a.id} st={a} t={t} />) : null}
       {c.quality ? <SetLife c={c} shot={shot} t={t} actors={actors} /> : null}
       {shot.props.map((p) => <PropView key={p.key} pr={p} t={t} s={shot} />)}
+      {c.quality ? <EggsView eggs={placeEggs(shot.set, c.recipe.eggs)} t={t} gag={c.recipe.finalGag} gu={gagU(c.recipe.finalGag, c.duration / FPS, t)} /> : null}
       {shot.fx.map((f, i) => <FxView key={i} f={f} t={t} />)}
       {pov ? <PovHands cam={cam} st={pov} t={t} /> : null}
     </>

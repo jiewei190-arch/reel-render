@@ -4,7 +4,7 @@ import { POSE_IDS } from "./poses";
 import { SET_IDS } from "./sets";
 import type { CamId, MotionId, PropSpec, Recipe, ShotSpec } from "./types";
 
-const CAMS: CamId[] = ["slamZoom", "whip", "pushIn", "orbit", "closeUp", "medium", "wide", "splitScreen", "povFirstPerson"];
+const CAMS: CamId[] = ["hookZoom", "slamZoom", "whip", "pushIn", "orbit", "closeUp", "medium", "wide", "splitScreen", "povFirstPerson"];
 const MOTIONS: MotionId[] = ["dropSlam", "fly-in", "stick-to-face", "rain", "burst", "count-up"];
 const FX = ["shake", "flash", "dust", "debris"] as const;
 export type GalleryItem = { group: string; name: string; frame: number };
@@ -39,6 +39,9 @@ for (const f of FX) {
   const t0 = shots.length;
   add("fx", f, { set: "store", cam: { preset: "medium", target: "counterTop:0.4,0.2,0.3", dist: 3.0 }, actors: [{ id: "spender", pose: "shock", at: "right" }], fx: [{ fx: f, at: t0 + 0.5, p: "counterTop:0,0.05,0.3" }] }, f === "flash" ? 0.53 : 0.72);
 }
+// easter eggs (recipe.eggs; default spots per set): a close look at each in the store
+const EGG_LOOK: [string, [number, number, number], number][] = [["cat", [4.6, 1.62, -2.85], 1.3], ["tv19", [-4.85, 1.7, -1.2], 1.4], ["sticky", [4.23, 1.35, 0.6], 0.9], ["mug", [2.15, 1.16, -2.85], 0.8]];
+for (const [name, p, d] of EGG_LOOK) add("egg", name, { set: "store", cam: { preset: "closeUp", target: p, dist: d, az: name === "tv19" ? 70 : name === "sticky" ? -70 : 0, fov: 40 } }, 0.6);
 for (const s of SET_IDS) add("set", s, { set: s, cam: { preset: "wide", target: "spender", dist: 6.5, h: 1.3, fov: 56 }, actors: [{ id: "spender", pose: "idle", at: "mark" }] });
 
-export const GALLERY_RECIPE: Recipe = { slug: "preset-gallery", style: "S1", hook: { text: "", until: -1 }, duration: shots.length, cast: { spender: "SPENDER", saver: "SAVER" }, captions: "off", shots };
+export const GALLERY_RECIPE: Recipe = { slug: "preset-gallery", style: "S1", hook: { text: "", until: -1 }, duration: shots.length, cast: { spender: "SPENDER", saver: "SAVER" }, captions: "off", shots, eggs: ["cat", "tv19", "sticky", "mug"] };

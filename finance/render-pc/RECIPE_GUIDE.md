@@ -437,6 +437,17 @@ Every recipe gets this pass automatically. Set `"quality": false` to get the pla
 
 Everything stays a pure function of t and goes through the same clip QA. The extras, the gestures and the blended poses are all checked against every prop and set box.
 
+### Retention tactics (FORMAT_V1 "Retention tactics")
+
+| Feature | Recipe | Notes |
+|---|---|---|
+| **Frame-0 zoom-in** | `"cam": { "preset": "hookZoom", "target": "spender" }` on shot 1 | A fast push from 1.3× the distance into a close-up over the first 0.4 s, with a landing kick, then a creep. Frame 0 is already close, so it still passes the ≥ 50 % gate. |
+| **Whole situation in one frame** | (gate) | The gate checks "who + what" at frame 0: a character covering at least 15 % of the frame and a story prop in view. The hook text and the stake by 0.5 s cover "what's at stake". |
+| **Easter eggs** | `"eggs": ["cat", "sticky"]`, or `{ "egg": "cat", "at": [x,y,z], "to": [x,y,z] }` | `cat`: our tiny blocky cat walks a path, grabs a coin at the far end and walks back with it. `tv19`: Spender's episode-1 TV showing "YEAR 19". `sticky`: a sticky note with a one-line joke (`text`). `mug`: a "BLOCK MONEY" mug. Each set has default spots (`src/fin/recipe/eggs.tsx` EGG_SPOTS); use 1-2 per Short. Eggs are in the clip QA. |
+| **Double payoff** | `"finalGag": { "gag": "catCoin" }`, `"tvFall"` or `"stickyFall"` (`from`: start time, default end − 0.8 s) | A visual gag after the spoken payoff, for the rewatch. `catCoin` needs a `cat` egg; `tvFall` needs `tv19`; `stickyFall` needs `sticky`. It gets an SFX cue too. |
+
+Eggs and the final gag are part of the quality pass, so `<Id>Plain` renders without them.
+
 ### Sources used
 
 | Repo | Licence | What we took |

@@ -24,10 +24,10 @@ export const RECIPE: Recipe = {
    "at": 0,
    "set": "store",
    "cam": {
-    "preset": "slamZoom",
+    "preset": "hookZoom",
     "target": "spender",
     "hit": 0.3,
-    "dist": 2.2,
+    "dist": 2,
     "az": -10
    },
    "actors": [
@@ -258,6 +258,15 @@ export const RECIPE: Recipe = {
     }
    ]
   }
- ]
+ ],
+ "eggs": [
+  "mug",
+  {
+   "egg": "cat"
+  }
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ }
 };
 export const WORDS: Word[] = [{"w":"Four","turn":1,"t":0,"end":0.3},{"w":"easy","turn":1,"t":0.3,"end":0.6},{"w":"payments","turn":1,"t":0.6,"end":1.08},{"w":"for","turn":1,"t":1.08,"end":1.335},{"w":"new","turn":1,"t":1.335,"end":1.59},{"w":"sneakers.","turn":1,"t":1.59,"end":2.07},{"w":"Then","turn":1,"t":2.07,"end":2.37},{"w":"Spender","turn":1,"t":2.37,"end":2.805},{"w":"did","turn":1,"t":2.805,"end":3.06},{"w":"it","turn":1,"t":3.06,"end":3.27},{"w":"nine","turn":1,"t":3.27,"end":3.57},{"w":"more","turn":1,"t":3.57,"end":3.87},{"w":"times.","turn":1,"t":3.87,"end":4.215},{"w":"Each","turn":2,"t":4.565,"end":4.865},{"w":"one","turn":2,"t":4.865,"end":5.12},{"w":"felt","turn":2,"t":5.12,"end":5.42},{"w":"tiny.","turn":2,"t":5.42,"end":5.72},{"w":"Forty","turn":2,"t":5.72,"end":6.065},{"w":"dollars","turn":2,"t":6.065,"end":6.5},{"w":"here,","turn":2,"t":6.5,"end":6.8},{"w":"sixty","turn":2,"t":6.8,"end":7.145},{"w":"there.","turn":2,"t":7.145,"end":7.49},{"w":"But","turn":3,"t":7.84,"end":8.095},{"w":"wait","turn":3,"t":8.095,"end":8.395},{"w":"till","turn":3,"t":8.395,"end":8.695},{"w":"you","turn":3,"t":8.695,"end":8.95},{"w":"see","turn":3,"t":8.95,"end":9.205},{"w":"the","turn":3,"t":9.205,"end":9.46},{"w":"first","turn":3,"t":9.46,"end":9.805},{"w":"of","turn":3,"t":9.805,"end":10.015},{"w":"the","turn":3,"t":10.015,"end":10.27},{"w":"month.","turn":3,"t":10.27,"end":10.615},{"w":"Ten","turn":4,"t":10.965,"end":11.22},{"w":"payments","turn":4,"t":11.22,"end":11.7},{"w":"hit","turn":4,"t":11.7,"end":11.955},{"w":"on","turn":4,"t":11.955,"end":12.165},{"w":"the","turn":4,"t":12.165,"end":12.42},{"w":"same","turn":4,"t":12.42,"end":12.72},{"w":"day.","turn":4,"t":12.72,"end":12.975},{"w":"Five","turn":4,"t":12.975,"end":13.275},{"w":"hundred","turn":4,"t":13.275,"end":13.71},{"w":"dollars,","turn":4,"t":13.71,"end":14.145},{"w":"gone","turn":4,"t":14.145,"end":14.445},{"w":"at","turn":4,"t":14.445,"end":14.655},{"w":"once.","turn":4,"t":14.655,"end":14.955},{"w":"Saver","turn":5,"t":15.305,"end":15.65},{"w":"has","turn":5,"t":15.65,"end":15.905},{"w":"one","turn":5,"t":15.905,"end":16.16},{"w":"rule:","turn":5,"t":16.16,"end":16.505},{"w":"if","turn":5,"t":16.505,"end":16.715},{"w":"you","turn":5,"t":16.715,"end":16.97},{"w":"can't","turn":5,"t":16.97,"end":17.315},{"w":"pay","turn":5,"t":17.315,"end":17.57},{"w":"it","turn":5,"t":17.57,"end":17.78},{"w":"today,","turn":5,"t":17.78,"end":18.125},{"w":"you","turn":5,"t":18.125,"end":18.38},{"w":"can't","turn":5,"t":18.38,"end":18.725},{"w":"afford","turn":5,"t":18.725,"end":19.115},{"w":"it.","turn":5,"t":19.115,"end":19.325},{"w":"So","turn":6,"t":19.675,"end":19.885},{"w":"before","turn":6,"t":19.885,"end":20.275},{"w":"you","turn":6,"t":20.275,"end":20.53},{"w":"split","turn":6,"t":20.53,"end":20.875},{"w":"it,","turn":6,"t":20.875,"end":21.085},{"w":"add","turn":6,"t":21.085,"end":21.34},{"w":"up","turn":6,"t":21.34,"end":21.55},{"w":"every","turn":6,"t":21.55,"end":21.895},{"w":"split","turn":6,"t":21.895,"end":22.24},{"w":"you","turn":6,"t":22.24,"end":22.495},{"w":"already","turn":6,"t":22.495,"end":22.93},{"w":"have.","turn":6,"t":22.93,"end":23.23}];

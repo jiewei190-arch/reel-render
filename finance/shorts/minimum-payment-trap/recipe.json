@@ -43,5 +43,7 @@
     {"at": "7:you", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "7:you+0.05", "dist": 1.3, "fov": 40}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "from": "7:you", "gestures": [{"at": "7:you", "g": "point"}]}]},
     {"at": "7:you#2", "note": "LOOP: the frame-0 lens, the next TV is coming down", "cam": {"preset": "medium", "target": "counterTop:0.45,0.55,0.45", "az": 14, "dist": 3.0, "h": -0.45, "fov": 60, "face": 0.52}, "actors": [{"id": "spender", "pose": "celebrate", "at": "mark"}], "props": [{"id": "tvDrop", "kit": "tv", "at": "counterTop:-0.05,0,-0.05", "yaw": 14, "motion": "dropSlam", "hit": 23.5, "drop": 1.0}]}
   ],
-  "talk": "auto"
+  "talk": "auto",
+  "eggs": [{"egg": "cat", "at": [-0.9, 0, 0.45], "to": [0.35, 0, 0.45]}, "sticky"],
+  "finalGag": {"gag": "catCoin"}
 }

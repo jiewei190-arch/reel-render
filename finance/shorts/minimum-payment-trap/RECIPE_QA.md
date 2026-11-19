@@ -12,6 +12,7 @@ Composition: `MinimumPaymentTrapRecipe` (+ `MinimumPaymentTrapRecipeSub`) in `sr
 |---|---|---|
 | frame 0 is close: a subject covers >= 50 % of the frame height | PASS | spender 52 % |
 | hook text on screen at frame 0, <= 5 words (day-1 fix 2) | **FAIL** | "19 YEARS TO PAY OFF A TV" (7 words, until 3.69 s) |
+| who + what readable at frame 0 (a character >= 15 % and a prop in view) | PASS | who: spender; what: owe, tvDrop, cal |
 | the stake ($ or a time) on screen by 0.5 s | PASS | at 0.00 s |
 | first spoken word by 0.2 s (day-1 fix 3) | PASS | Spender at 0.00 s |
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | impact |

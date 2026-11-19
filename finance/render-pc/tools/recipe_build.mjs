@@ -149,9 +149,13 @@ for (const s of C.shots) {
   if (s.a > 0 && s.a <= 3.0) moves.add(`cut ${s.a.toFixed(2)}`);
   for (const [t] of s.kicks) if (t <= 3.0) moves.add(`hit ${t.toFixed(2)}`);
 }
+// who + what at frame 0 (retention tactics: the whole situation readable in ONE frame): a character and a prop in view
+const whoAt0 = covs.filter((c) => C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && c.k >= 0.15);
+const whatAt0 = covs.filter((c) => !C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && !c.name.startsWith("egg.") && c.k >= 0.04);
 const gate = [
   ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
   ["hook text on screen at frame 0, <= 5 words (day-1 fix 2)", C.hookUntil > 0 && hookWords <= 5, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
+  ["who + what readable at frame 0 (a character >= 15 % and a prop in view)", whoAt0.length > 0 && whatAt0.length > 0, `who: ${whoAt0.map((c) => c.name).join(", ") || "none"}; what: ${whatAt0.slice(0, 3).map((c) => c.name).join(", ") || "none"}`, true],
   ["the stake ($ or a time) on screen by 0.5 s", stakeAt !== null, stakeAt === null ? "no $/time text by 0.5 s" : `at ${stakeAt.toFixed(2)} s`, true],
   ["first spoken word by 0.2 s (day-1 fix 3)", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
   ["a sound punch at 0.00 s (impact/drop/crash/rip...)", sfx0.some((c) => PUNCH.test(c.sfx)), sfx0.map((c) => c.sfx).join(", ") || "none", true],
