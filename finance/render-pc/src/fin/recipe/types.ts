@@ -37,6 +37,8 @@ export type CamSpec = {
   roll?: [number, number];
   /** where the target sits, fraction from the top of the frame (default per preset) */
   face?: number;
+  /** splitScreen only: where the bottom view's target sits (recipe_build bakes it for caption-safe framing) */
+  face2?: number;
   /** depth-of-field blur px */
   blur?: number;
 };

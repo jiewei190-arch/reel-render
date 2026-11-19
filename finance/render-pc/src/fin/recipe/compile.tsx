@@ -306,7 +306,8 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
 
   const assets = new Set<string>();
   for (const s of shots) { SETS[s.set].assets.forEach((x) => assets.add(x)); s.props.forEach((p) => p.spec.asset && assets.add(p.spec.asset)); }
-  return { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil, quality: Q };
+  const out: Compiled = { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil, quality: Q };
+  return out;
 };
 
 // ------------------------------------------------------------------ actors
@@ -436,7 +437,9 @@ const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: nu
   const tg = c.target ?? "centre";
   if (c.preset === "splitScreen") {
     const [t1, t2] = c.targets ?? [tg, tg];
-    return { lens: base(t1), lens2: base(t2) };
+    const l2 = base(t2);
+    if (typeof c.face2 === "number") l2.face = c.face2; // caption-safe framing for the bottom view (baked by recipe_build)
+    return { lens: base(t1), lens2: l2 };
   }
   const L = base(tg);
   switch (c.preset) {
@@ -711,15 +714,18 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
     </AbsoluteFill>
   );
 };
-/** OWNER 2026-11-19: word captions sit BOTTOM CENTRE. The chunk's centre is at CAP_Y px (a one-line baseline at about
- *  72 % of the frame) and never lower than CAP_MAX_Y (nothing below y 1500: YouTube's bottom UI). Per shot (evaluated at
- *  the shot's midpoint, so it never jitters), every visible face is projected into the view that holds the caption band;
- *  if a face's eyes-to-mouth box overlaps the band, the caption moves above that face (or below it while still above
- *  CAP_MAX_Y). Returns the centre as a fraction of 1920 for RecipeCaptions. */
+/** OWNER 2026-11-19 (rule v2): word captions are FIXED in the bottom band. The chunk's centre is at CAP_Y px (a one-line
+ *  baseline at about 72 % of the frame), never lower than CAP_MAX_Y (nothing below y 1500: YouTube's bottom UI).
+ *  The SHOT keeps that band clear: faces go in the upper or middle part of the frame, with chest, body, props or floor
+ *  in the band. Only when a face's eyes-to-mouth box still lands in the band (any of 5 samples across the shot) does
+ *  the caption move, by the smallest amount that clears it: down first (up to CAP_MAX_Y), else up to just over the
+ *  face. Text boards do not move the caption; recipe_build warns about them instead. Evaluated once per shot, so the
+ *  caption only moves at cuts. tools/recipe_build.mjs gates: centre >= 65 % of the height on >= 90 % of caption time. */
 export const CAP_Y = 1344;
 export const CAP_MAX_Y = 1400;
 const CAP_HALF = 105; // half the band a 1-2 line chunk needs
-const capCache = new WeakMap<Compiled, Map<string, number>>();
+export type CapPlan = { y: number; faces: { top: number; bot: number }[]; boards: string[] };
+const capCache = new WeakMap<Compiled, Map<string, CapPlan>>();
 const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: number; k: number } | null => {
   const sub = (a: V3, b: V3): V3 => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
   const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -731,13 +737,13 @@ const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: numbe
   const k = (h / 2) / Math.tan((cam.fov * Math.PI) / 360); // px per unit at distance 1
   return { x: 540 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z };
 };
-export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number }): number => {
+export const capPlan = (c: Compiled, shot: { id: string; a: number; b: number }): CapPlan => {
   let m = capCache.get(c); if (!m) { m = new Map(); capCache.set(c, m); }
-  const hit = m.get(shot.id); if (hit !== undefined) return hit;
+  const hit = m.get(shot.id); if (hit) return hit;
   type Ob = { top: number; bot: number };
   const faces: Ob[] = [];
-  const boards: Ob[] = [];
-  // sample the whole shot (late slams and pushes count too); the caption still moves only at cuts
+  const boards = new Set<string>();
+  const inBand = (o: Ob, y: number) => !(o.bot < y - CAP_HALF || o.top > y + CAP_HALF);
   for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
     const tm = shot.a + (shot.b - shot.a) * u;
     const cams = c.camAt(tm);
@@ -745,7 +751,6 @@ export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number 
     const cam = split ? cams.second! : cams.main;
     const h = split ? 960 : 1920, top = split ? 960 : 0;
     const vis = (o: Ob) => o.bot > top && o.top < top + h;
-    // faces: the eyes-to-mouth box of every visible actor
     for (const a of c.actorsAt(tm)) {
       const q = project(cam, [a.head[0], a.head[1] - 0.05 * a.s, a.head[2]], h, top);
       if (!q || q.x < 120 || q.x > 960) continue;
@@ -753,26 +758,53 @@ export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number 
       const o = { top: q.y - half, bot: q.y + half };
       if (vis(o)) faces.push(o);
     }
-    // text props (labels, banners, boxes with numbers): keep their text readable; faces win when both cannot be cleared
     const texty = new Set(c.shotAt(tm).props.filter((p) => p.spec.kit === "label" || (p.spec as { text?: unknown }).text).map((p) => p.key));
     for (const b of c.qa(tm).props) {
       if (!texty.has(b.name)) continue;
       const qt = project(cam, [b.c[0], b.c[1] + b.h[1], b.c[2]], h, top), qb = project(cam, [b.c[0], b.c[1] - b.h[1], b.c[2]], h, top);
       if (!qt || !qb) continue;
-      const reach = b.h[0] * qt.k; // only boards overlapping the caption columns (170-910 px) matter
-      const cx = (qt.x + qb.x) / 2;
+      const reach = b.h[0] * qt.k, cx = (qt.x + qb.x) / 2;
       const o = { top: Math.min(qt.y, qb.y), bot: Math.max(qt.y, qb.y) };
-      if (cx + reach > 170 && cx - reach < 910 && vis(o)) boards.push(o);
+      if (cx + reach > 170 && cx - reach < 910 && vis(o) && inBand(o, CAP_Y)) boards.add(b.name);
     }
   }
-  const free = (y: number, obs: Ob[]) => obs.every((o) => o.bot < y - CAP_HALF || o.top > y + CAP_HALF);
-  const pick = (obs: Ob[]): number | null => {
-    const cand = [CAP_Y, ...obs.flatMap((o) => [o.top - CAP_HALF - 10, o.bot + CAP_HALF + 10])].filter((y) => y >= 560 && y <= CAP_MAX_Y && free(y, obs));
-    return cand.length ? cand.reduce((b, y) => (Math.abs(y - CAP_Y) < Math.abs(b - CAP_Y) ? y : b)) : null;
-  };
-  const y = pick([...faces, ...boards]) ?? pick(faces) ?? CAP_Y;
-  const out = Math.min(y, CAP_MAX_Y) / 1920;
+  const free = (y: number) => faces.every((o) => !inBand(o, y));
+  let y = CAP_Y;
+  if (!free(CAP_Y)) {
+    const cand = [...faces.map((o) => o.bot + CAP_HALF + 10), ...faces.map((o) => o.top - CAP_HALF - 10)].filter((v) => v >= 560 && v <= CAP_MAX_Y && free(v));
+    if (cand.length) y = cand.reduce((b, v) => (Math.abs(v - CAP_Y) < Math.abs(b - CAP_Y) ? v : b));
+  }
+  const out: CapPlan = { y: Math.min(y, CAP_MAX_Y), faces: faces.filter((o) => inBand(o, CAP_Y)), boards: [...boards] };
   m.set(shot.id, out);
+  return out;
+};
+export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number }): number => capPlan(c, shot).y / 1920;
+/** OWNER rule v2: caption-safe framing. After compiling, any shot whose eyes-to-mouth box lands in the caption band gets
+ *  its framing lifted (the lens's `face` fraction, i.e. where the target sits from the top) just enough to clear it, so
+ *  the shot shows chest/body/floor in the band instead. Split screens lift the bottom view only. Limits keep heads in
+ *  frame (full >= 0.26, split view >= 0.2); whatever is left over falls back to the smallest caption nudge in capPlan.
+ *  A recipe can opt a shot out with cam.face set explicitly. */
+export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2"; v: number }[] => {
+  const out: { i: number; key: "face" | "face2"; v: number }[] = [];
+  c.shots.forEach((shot, i) => {
+    if (shot.b <= 1.0 || shot.pov) return;
+    const split = !!shot.lens2;
+    const L = split ? shot.lens2! : shot.lens;
+    const cs = shot.spec.cam as { face?: unknown; face2?: unknown };
+    if (typeof (split ? cs.face2 : cs.face) === "number") return;
+    const f0 = L.face;
+    const h = split ? 960 : 1920, min = split ? 0.2 : 0.26;
+    for (let it = 0; it < 4; it++) {
+      capCache.delete(c);
+      const p = capPlan(c, shot);
+      if (!p.faces.length) break;
+      const need = Math.max(...p.faces.map((o) => o.bot)) - (CAP_Y - CAP_HALF - 10);
+      if (need <= 0 || (L.face ?? 0.5) <= min + 1e-3) break;
+      L.face = Math.max(min, (L.face ?? 0.5) - (need + 8) / h);
+    }
+    if (L.face !== f0) out.push({ i, key: split ? "face2" : "face", v: Math.round(L.face * 1000) / 1000 });
+  });
+  capCache.delete(c);
   return out;
 };
 /** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */

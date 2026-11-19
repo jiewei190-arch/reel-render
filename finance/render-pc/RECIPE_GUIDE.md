@@ -223,12 +223,19 @@ It uses the same box maths as `tools/story_qa.mjs`, extended with feet, hands an
 - No wide or dark shot in the first 1 s.
 - The length is 20-30 s. This one is a warning only.
 
-**Word captions: bottom centre (owner change, 2026-11-19; engine default, nothing to set in a recipe):**
-- The word-by-word chunk is centred horizontally, with equal 170 px margins, so it stays clear of the right-hand button rail. Its centre is at y 1344, which puts a one-line baseline at about 72 % of the frame. Nothing goes below y 1500, where YouTube's bottom UI sits.
-- The small full-sentence top line (`captionsTop`) is **removed**. The field is still in `types.ts` so old recipes type-check, but the engine ignores it. Don't use it.
-- The hook text box in the first second is not a subtitle. It stays where it was.
-- **Face and board nudge** (`capCentre` in `compile.tsx`). The engine samples each shot at 5 times, so late slams and push-ins count. At each sample it projects every visible face (eyes to mouth) and every prop that carries text (labels, banners, number boxes) through that shot's camera. In a split, it uses the bottom view. It picks one y per shot, so the caption only moves at cuts and never jitters. The caption moves to the nearest y between 560 and 1400 that clears them all. If no y clears everything, faces win over boards.
-  - When a shot has a board low in frame and another just above it, the nudge may find no gap. Lower the camera target, or raise the boards.
+**Word captions: FIXED in the bottom band (owner rule v2, 2026-11-19; engine default, nothing to set in a recipe):**
+- The word-by-word chunk is centred horizontally, with equal 170 px margins, so it stays clear of the right-hand button rail. Its centre is fixed at y 1344, which puts a one-line baseline at about 72 % of the frame. Nothing goes below y 1500, where YouTube's bottom UI sits.
+- The small full-sentence top line (`captionsTop`) is **removed**. The field is still in `types.ts` so old recipes type-check, but the engine ignores it. The hook text box stays where it was.
+- **Compose the SHOTS so the band (y about 1240-1450) is clear of faces.** Faces go in the upper or middle part of the frame, with chest, body, props or floor in the band. On loop and frame-0 close-ups, the caption sits under the chin.
+- **Caption-safe framing (automatic, at build time).** `recipe_build` projects every face (eyes to mouth) at 5 samples per shot. If a face lands in the band, it lifts that shot's framing just enough to clear it:
+  - full frame: `cam.face`, min 0.26;
+  - split screen, bottom view only: `cam.face2`, min 0.2.
+  - The values are baked into `src/shorts/<slug>.recipe.gen.ts`, listed in its header comment, so the browser render reads them. They are not re-solved at render time, because that overflows the stack in Chromium.
+  - Setting `cam.face` (or `face2`) in the recipe opts a shot out.
+- **Split screens:** after the lift, the bottom view's head sits just under the seam, and the antennae can be cut. Prefer a bigger `dist` on those shots so the face is smaller.
+- **Nudge (last resort only).** If a face still lands in the band, the caption moves by the smallest amount that clears it: down first (to a centre of 1400 at most), else up. Text boards never move the caption.
+- **Gate (hard):** the caption centre is >= 65 % of the height on >= 90 % of caption time. The report lists any nudged shots.
+- **Warn:** a text board in the caption band. Raise the board or lower the camera target so the board's text reads.
 - The critic's EDGES band (55-80 %) now contains the captions, so its EDGES warnings are real again. Keep the white text at least 6 % from the frame edges.
 
 The reference port `minimum-payment-trap` (live; 59.7 % stayed on day 1) passes the clip QA. It FAILS two day-1 checks: its hook has 7 words, and its line 1 opens with "Spender". These are exactly the shared problems the day-1 data points at. The recipe is kept as a faithful port of the published Short.
