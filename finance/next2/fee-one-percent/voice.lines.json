@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1647,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 448,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your one percent fee sounds tiny. Over forty years, it isn't.",
+   "start": 0.086,
+   "end": 4.276
+  },
+  {
+   "line": 2,
+   "text": "Spender and Saver each invest five hundred dollars a month.",
+   "start": 4.404,
+   "end": 7.77
+  },
+  {
+   "line": 3,
+   "text": "Same investments. Saver pays a tenth of a percent. Spender pays one.",
+   "start": 7.899,
+   "end": 12.501
+  },
+  {
+   "line": 4,
+   "text": "Year ten, barely a gap. But wait till year forty...",
+   "start": 12.629,
+   "end": 16.338
+  },
+  {
+   "line": 5,
+   "text": "Saver has about one point two eight million. Spender, just under one million.",
+   "start": 16.467,
+   "end": 21.412
+  },
+  {
+   "line": 6,
+   "text": "That fee ate about two hundred eighty thousand dollars. More than Spender ever put in.",
+   "start": 21.541,
+   "end": 26.486
+  },
+  {
+   "line": 7,
+   "text": "In this example, all from a number this small:",
+   "start": 26.615,
+   "end": 29.5
+  }
+ ]
+}
