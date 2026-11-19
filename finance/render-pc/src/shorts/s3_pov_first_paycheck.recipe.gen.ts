@@ -86,6 +86,58 @@ export const RECIPE: Recipe = {
    ]
   },
   {
+   "at": "your",
+   "cam": {
+    "preset": "povFirstPerson",
+    "targets": [
+     "you",
+     "pay"
+    ]
+   },
+   "actors": [
+    {
+     "id": "you",
+     "pose": "reach",
+     "at": [
+      0.2,
+      1
+     ],
+     "face": [
+      0,
+      0,
+      -1
+     ],
+     "then": [
+      {
+       "at": "first",
+       "pose": "celebrate"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "pay",
+     "kit": "label",
+     "text": [
+      "PAYCHECK",
+      "$1,800"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      1,
+      0.62,
+      0.05
+     ],
+     "at": [
+      0.2,
+      1.5,
+      0.35
+     ]
+    }
+   ]
+  },
+  {
    "at": "open",
    "cam": {
     "preset": "povFirstPerson",

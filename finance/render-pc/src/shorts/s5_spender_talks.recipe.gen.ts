@@ -63,6 +63,35 @@ export const RECIPE: Recipe = {
    ]
   },
   {
+   "at": "a",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "then": [
+      {
+       "at": "pay",
+       "pose": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "sub1",
+     "kit": "label",
+     "text": "$12/MO",
+     "at": "mark:-0.7,1.7,0.3"
+    }
+   ]
+  },
+  {
    "at": "fifteen",
    "cam": {
     "preset": "medium",

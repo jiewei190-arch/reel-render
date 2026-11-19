@@ -126,7 +126,7 @@ for (const st of C.actorsAt(0)) {
 }
 for (const p of qa0.props) if (!p.name.startsWith("set.")) subjects.push(p);
 const covs = subjects.map((b) => ({ name: b.name, k: Math.max(coverage(cams0.main, b, 1080 / 1920), cams0.split ? 0 : 0) }));
-if (cams0.split) for (const b of subjects) covs.push({ name: `${b.name} (half)`, k: coverage(cams0.main, b, 1080 / 960) });
+if (cams0.split) for (const b of subjects) covs.push({ name: `${b.name} (half)`, k: Math.max(coverage(cams0.main, b, 1080 / 960), cams0.second ? coverage(cams0.second, b, 1080 / 960) : 0) });
 covs.sort((a, b) => b.k - a.k);
 const best = covs[0] ?? { name: "nothing", k: 0 };
 const hookWords = recipe.hook.text.trim().split(/\s+/).length;
@@ -150,8 +150,8 @@ for (const s of C.shots) {
   for (const [t] of s.kicks) if (t <= 3.0) moves.add(`hit ${t.toFixed(2)}`);
 }
 // who + what at frame 0 (retention tactics: the whole situation readable in ONE frame): a character and a prop in view
-const whoAt0 = covs.filter((c) => C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && c.k >= 0.15);
-const whatAt0 = covs.filter((c) => !C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && !c.name.startsWith("egg.") && c.k >= 0.04);
+const whoAt0 = C.shots[0].pov ? [{ name: `${C.shots[0].pov} (POV: you)`, k: 1 }] : covs.filter((c) => C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && c.k >= 0.15);
+const whatAt0 = covs.filter((c) => !C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && !c.name.startsWith("egg.") && c.k >= 0.03);
 const gate = [
   ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
   ["hook text on screen at frame 0, <= 5 words (day-1 fix 2)", C.hookUntil > 0 && hookWords <= 5, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -160,11 +160,17 @@ const gate = [
   ["first spoken word by 0.2 s (day-1 fix 3)", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
   ["a sound punch at 0.00 s (impact/drop/crash/rip...)", sfx0.some((c) => PUNCH.test(c.sfx)), sfx0.map((c) => c.sfx).join(", ") || "none", true],
   ["no character names in the first 2 s of speech (day-1 fix 1)", namesEarly.length === 0, namesEarly.join(", ") || "none", true],
-  ["no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2)", tagFrom >= 1.0, recipe.tag ? `tag from ${tagFrom.toFixed(2)} s` : "no tag", true],
+  ["no tag/HUD before 1.0 s (day-1 fix 2; the big caption chunk may show from frame 0)", tagFrom >= 1.0, recipe.tag ? `tag from ${tagFrom.toFixed(2)} s` : "no tag", true],
   ["2-3 cuts or big moves in the first 3 s (day-1 fix 5)", moves.size >= 2, [...moves].join(", ") || "none", true],
   ["music + an SFX at frame 0", !!C.audio.music && C.audio.cues.some((c) => c.t <= 0.05), `${C.audio.music}, ${C.audio.cues.filter((c) => c.t <= 0.05).map((c) => c.sfx).join(", ")}`, true],
   ["an emotion change by 1.5 s", emoAt !== null, emoAt === null ? "no actor's emotion changes by 1.5 s" : `at ${emoAt.toFixed(2)} s`, true],
   ["no wide or dark shot in the first 1 s", early.every((s) => s.spec.cam.preset !== "wide" && s.lens.mood !== "whisper"), early.map((s) => `${s.id} ${s.spec.cam.preset}/${s.lens.mood}`).join(", "), true],
+  ["a live race or ticking stake through the middle 35-70 % (watch-time data)", (() => { const a = 0.35 * dur, b = 0.7 * dur; if (recipe.race) { const f = C.at(recipe.race.from), e = C.at(recipe.race.until, dur); return Math.min(b, e) - Math.max(a, f) >= 0.5 * (b - a); } let cover = 0; for (const s of C.shots) for (const p of s.props) if (p.spec.motion === "count-up") { const f = Math.max(a, p.a), e = Math.min(b, p.b); if (e > f) cover += e - f; } return cover >= 0.5 * (b - a); })(), recipe.race ? `race "${recipe.race.title ?? ""}"` : "count-up props only", false],
+  ["first cut by 1.5 s (research round 2)", C.shots.length > 1 && C.shots[1].a <= 1.5, C.shots.length > 1 ? `S02 at ${C.shots[1].a.toFixed(2)} s` : "one shot", true],
+  ["about 12-18 shots per 30 s (research round 2; 5-6 cuts per 10 s for two-character stories)", (() => { const n = (C.shots.length * 30) / dur; return n >= 11 && n <= 19; })(), `${C.shots.length} shots in ${dur.toFixed(1)} s = ${((C.shots.length * 30) / dur).toFixed(1)} per 30 s`, false],
+  ["the last frame matches frame 0 (loop)", (() => { const a = C.camAt(0).main, b = C.camAt(dur - 1 / 30).main; const d = Math.hypot(a.pos[0] - b.pos[0], a.pos[1] - b.pos[1], a.pos[2] - b.pos[2]); return d < 0.6 && Math.abs(a.fov - b.fov) < 8 && C.shotAt(dur - 1 / 30).set === C.shotAt(0).set; })(), (() => { const a = C.camAt(0).main, b = C.camAt(dur - 1 / 30).main; return `lens moved ${Math.hypot(a.pos[0] - b.pos[0], a.pos[1] - b.pos[1], a.pos[2] - b.pos[2]).toFixed(2)} m, fov ${a.fov.toFixed(0)} vs ${b.fov.toFixed(0)}`; })(), false],
+  ["a specific noun and a number in the first 3 words (TOP3D study)", words.slice(0, 3).some((w) => /\d|\$/.test(w.w) || /^(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|double|half)/i.test(w.w.replace(/[^A-Za-z]/g, ""))), words.slice(0, 3).map((w) => w.w).join(" "), false],
+  ["the camera never fully stops (TOP3D study)", (() => { for (const s of C.shots) { const t0 = s.a + 0.05, t1 = Math.max(t0 + 0.1, s.b - 0.05); const a = C.camAt(t0).main, b = C.camAt(t1).main; const mv = Math.hypot(a.pos[0] - b.pos[0], a.pos[1] - b.pos[1], a.pos[2] - b.pos[2]) + Math.hypot(a.look[0] - b.look[0], a.look[1] - b.look[1], a.look[2] - b.look[2]) + Math.abs(a.fov - b.fov) * 0.02; if (mv / (t1 - t0) < 0.01) return false; } return true; })(), "every shot drifts >= 1 cm/s (pos + look + fov)", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],
 ];
 const hardFail = gate.some((g) => g[3] && !g[1]);

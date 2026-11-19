@@ -28,10 +28,10 @@ export const RECIPE: Recipe = {
    "cam": {
     "preset": "splitScreen",
     "targets": [
-     "million",
-     "penny"
+     "spender",
+     "saver"
     ],
-    "dist": 1.9
+    "dist": 2.6
    },
    "actors": [
     {
@@ -65,7 +65,7 @@ export const RECIPE: Recipe = {
       0.8,
       0.6
      ],
-     "at": "left:-0.9,0,-0.6",
+     "at": "left:0.9,0,-0.5",
      "motion": "dropSlam",
      "hit": 0.25,
      "drop": 0.8
@@ -83,6 +83,58 @@ export const RECIPE: Recipe = {
     {
      "fx": "shake",
      "at": "now"
+    }
+   ]
+  },
+  {
+   "at": "right",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 1.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "point",
+     "at": "left",
+     "face": "million",
+     "then": [
+      {
+       "at": "right",
+       "pose": "shock"
+      }
+     ]
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "million",
+     "kit": "block",
+     "text": [
+      "$1,000,000"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      1,
+      0.8,
+      0.6
+     ],
+     "at": "left:0.9,0,-0.5"
+    },
+    {
+     "id": "penny",
+     "asset": "coin-bronze",
+     "s": 1.4,
+     "at": "right:-1.2,1.0,-0.5"
     }
    ]
   },

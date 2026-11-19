@@ -21,8 +21,9 @@ import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill } from "../props";
 import { Asset, assetSize, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
-import { RecipeCaptions, chunkWords } from "../lib/captions";
-import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
+import { RecipeCaptions, TwoLayerCaptions, chunkWords } from "../lib/captions";
+import { RaceOverlay } from "../lib/race";
+import { EASE_INOUT, EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
 import { nodAt, speakingAt, visemeAt } from "../lib/lipsync";
@@ -409,6 +410,9 @@ const targetFn = (tg: Target, set: SetDef, actors: ActorR[], props: PropR[], sho
 };
 /** the camera presets: every one keeps moving (push, orbit or slam creep), per FORMAT v1 */
 export const CAM_PRESETS = {
+  /** frame-0 hook, the other way round: an EXTREME close-up on the face/subject (fills the frame: the emotion) that pulls
+   *  back to a wide by ~1.5 s (the setup, the number); then a slow drift */
+  hookReveal: { dist: 3.6, h: 0.5, fov: 50, face: 0.5, push: 0.03, blur: 1.4, roll: [0, 1] as [number, number] },
   /** frame-0 hook: a fast push straight into the action over the first 0.4 s (from 1.3x the distance, so frame 0 is still a close-up), then a creep */
   hookZoom: { dist: 1.7, h: 0.12, fov: 46, face: 0.48, push: 0.05, blur: 1.6, roll: [-2, 0.5] as [number, number] },
   closeUp: { dist: 1.3, h: 0.08, fov: 42, face: 0.45, push: 0.07, blur: 1.8, roll: [0, 1.5] as [number, number] },
@@ -446,6 +450,11 @@ const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: nu
       const sl = slam(hit, 60, c.fov ?? P.fov, 0.12);
       return { lens: { ...L, fovAt: (t: number) => sl(t) + (t < hit && t > hit - 0.2 ? 1.8 * Math.sin(Math.PI * (t - hit + 0.2) / 0.2) : 0) } };
     }
+    case "hookReveal": {
+      const s0 = L.subj(a), p0 = L.pos!;
+      const near = add(s0, [(p0[0] - s0[0]) * 0.22, (p0[1] - s0[1]) * 0.12, (p0[2] - s0[2]) * 0.22]);
+      return { lens: { ...L, posAt: (t) => { const u = EASE_INOUT(prog(t, a + 0.35, a + 1.5)); const q = lerpV(near, p0, u); const dr = 0.05 * Math.max(0, t - a - 1.5); return [q[0] + dr * 0.3, q[1] + 0.02 * Math.sin(t * 0.8), q[2] - dr]; } } };
+    }
     case "hookZoom": {
       const s0 = L.subj(a), p0 = L.pos!;
       const far = add(s0, [(p0[0] - s0[0]) * 1.3, (p0[1] - s0[1]) * 1.15, (p0[2] - s0[2]) * 1.3]); // frame 0 is already close (gate: >= 50 %), then punches in
@@ -467,7 +476,7 @@ const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: nu
       const look = c.targets ? targetFn(c.targets[1], set, actors, props, shotId) : targetFn(tg, set, actors, props, shotId);
       return {
         pov: who.id,
-        lens: { ...L, subj: look, posAt: (t) => { const st = actorState(who, t)!; const y = st.pose.yaw; return [st.head[0] + Math.sin(y) * 0.12, st.head[1] + 0.04 + 0.01 * Math.sin(t * 5.5), st.head[2] + Math.cos(y) * 0.12]; }, push: 0 },
+        lens: { ...L, subj: look, posAt: (t) => { const st = actorState(who, t)!; const y = st.pose.yaw; const cr = 0.12 + 0.035 * Math.max(0, t - a); const sw = 0.025 * Math.sin(t * 0.9); return [st.head[0] + Math.sin(y) * cr + Math.cos(y) * sw, st.head[1] + 0.04 + 0.01 * Math.sin(t * 5.5), st.head[2] + Math.cos(y) * cr - Math.sin(y) * sw]; }, push: 0 }, // a slow forward creep + sway: the camera never fully stops
       };
     }
     default: return { lens: L };
@@ -707,7 +716,10 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
-      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
+      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} />
+        : c.quality ? <TwoLayerCaptions chunks={CHUNKS(c)} words={c.words} t={tOut} hookUntil={again !== null && tOut >= again ? 99 : c.hookUntil} style={c.recipe.captionColors} hideChunk={!!c.recipe.finalGag && tOut >= (c.recipe.finalGag.from ?? c.duration / FPS - 0.8) && tOut > Math.max(...c.words.map((w) => w.end))} />
+        : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
+      {c.recipe.race ? <RaceOverlay r={{ ...c.recipe.race, from: c.at(c.recipe.race.from), resolve: c.at(c.recipe.race.resolve), until: c.at(c.recipe.race.until, c.duration / FPS) }} t={tOut} /> : null}
       <CornerTag text={tag} />
     </AbsoluteFill>
   );

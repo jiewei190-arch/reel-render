@@ -221,6 +221,10 @@ It uses the same box maths as `tools/story_qa.mjs`, extended with feet, hands an
 - Music and an SFX play at frame 0.
 - An emotion changes by 1.5 s.
 - No wide or dark shot in the first 1 s.
+- **First cut by 1.5 s** (research round 2).
+- **About 12-14 shots per 30 s** and **the last frame matches frame 0**. Both are warnings: the lens and fov must come back within 0.6 m and 8° in the same set.
+- A live race or ticking stake through 35-70 % of the Short. This one is a warning.
+- Warnings from the TOP3D study: a specific noun and a number in the first 3 words, and a camera that never fully stops (every shot drifts at least 1 cm/s). The cut-density band is 12-18 shots per 30 s.
 - The length is 20-30 s. This one is a warning only.
 
 The reference port `minimum-payment-trap` (live; 59.7 % stayed on day 1) passes the clip QA. It FAILS two day-1 checks: its hook has 7 words, and its line 1 opens with "Spender". These are exactly the shared problems the day-1 data points at. The recipe is kept as a faithful port of the published Short.
@@ -259,7 +263,8 @@ Script (`docs/recipe_examples/s1-split-payments/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "forty", "until": "line:5"},
   "shots": [
-    {"at": 0, "set": "store", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.3, "dist": 2.2, "az": -10}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "easy", "pose": "celebrate"}]}], "props": [{"id": "shoes", "asset": "cardboard-box", "at": "counterTop:0.4,0,0.1", "motion": "dropSlam", "hit": 0.3, "drop": 0.9}], "fx": [{"fx": "dust", "at": 0.3, "p": "counterTop:0.4,0.02,0.1"}]},
+    {"at": 0, "set": "store", "cam": {"preset": "hookZoom", "target": "spender", "hit": 0.3, "dist": 2.0, "az": -10}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "easy", "pose": "celebrate"}]}], "props": [{"id": "shoes", "asset": "cardboard-box", "at": "counterTop:0.4,0,0.1", "motion": "dropSlam", "hit": 0.3, "drop": 0.9}], "fx": [{"fx": "dust", "at": 0.3, "p": "counterTop:0.4,0.02,0.1"}]},
+    {"at": "for", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "easy", "pose": "celebrate"}]}], "props": [{"id": "shoes", "asset": "cardboard-box", "at": "counterTop:0.4,0,0.1"}]},
     {"at": "then", "cam": {"preset": "medium", "target": "spender", "dist": 3.0, "az": -25}, "actors": [{"id": "spender", "pose": "celebrate", "at": "mark"}], "props": [{"id": "boxes", "asset": "box", "s": 0.6, "at": "left", "motion": "rain", "n": 9, "area": [1.4, 0.8]}]},
     {"at": "tiny", "cam": {"preset": "closeUp", "target": "price", "dist": 1.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}], "props": [{"id": "price", "kit": "label", "text": "$40", "at": "counterTop:0.2,0.5,0.4", "motion": "fly-in", "hit": "forty"}, {"id": "price2", "kit": "label", "text": "$60", "at": "counterTop:-0.6,0.8,0.4", "motion": "fly-in", "hit": "sixty"}]},
     {"at": "wait", "set": "home", "cam": {"preset": "pushIn", "target": "cal", "dist": 2.2}, "props": [{"id": "cal", "kit": "calendar", "text": ["DAY", "1", "FIRST OF THE MONTH"], "at": "wall"}]},
@@ -267,7 +272,9 @@ Script (`docs/recipe_examples/s1-split-payments/script.txt`):
     {"at": "gone", "mood": "whisper", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.6}, "actors": [{"id": "spender", "pose": "collapse", "at": "mark", "from": "gone"}], "fx": ["shake"]},
     {"at": "saver", "mood": "ending", "cam": {"preset": "medium", "target": "saver", "dist": 2.8}, "actors": [{"id": "saver", "pose": "point", "at": "mark", "then": [{"at": "afford", "pose": "smug"}]}], "props": [{"id": "rule", "kit": "stamp", "text": "PAY IT TODAY?", "at": "mark:-0.9,1.4,0.4", "hit": "rule"}]},
     {"at": "6:before", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "6:before", "dist": 1.4}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "from": "6:before"}]}
-  ]
+  ],
+  "eggs": ["mug", {"egg": "cat"}],
+  "finalGag": {"gag": "catCoin"}
 }
 ```
 
@@ -290,14 +297,16 @@ Script (`docs/recipe_examples/s2-same-paycheck/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
   "shots": [
-    {"at": 0, "set": "office", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 2.0}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.75,0.35", "motion": "dropSlam", "hit": 0.25, "drop": 0.6}], "fx": [{"fx": "shake", "at": "only"}]},
+    {"at": 0, "set": "office", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 2.0}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.0,0.6", "motion": "dropSlam", "hit": 0.12, "drop": 0.3, "size": [0.7, 0.32, 0.05]}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.0,0.6", "motion": "dropSlam", "hit": 0.12, "drop": 0.3, "size": [0.7, 0.32, 0.05]}], "fx": [{"fx": "shake", "at": "only"}]},
+    {"at": "thousand", "cam": {"preset": "splitScreen", "targets": ["saver", "spender"], "dist": 1.6}, "actors": [{"id": "saver", "pose": "smug", "at": "left"}, {"id": "spender", "pose": "celebrate", "at": "right", "then": [{"at": "thousand", "pose": "shock"}]}], "props": [{"id": "payS", "kit": "label", "text": "$2,000", "color": "#1f9e4f", "at": "left:0,1.0,0.6", "size": [0.7, 0.32, 0.05]}, {"id": "payP", "kit": "label", "text": "$2,000", "at": "right:0,1.0,0.6", "size": [0.7, 0.32, 0.05]}]},
     {"at": "saver", "cam": {"preset": "pushIn", "target": "jar", "dist": 2.4}, "actors": [{"id": "saver", "pose": "reach", "at": "left", "face": "jar"}], "props": [{"id": "jar", "kit": "jar", "text": ["SAVINGS"], "fill": 0.2, "color": "#1f9e4f", "at": "left:-1.1,0,-0.6"}, {"id": "in", "kit": "coin", "at": "left:-1.1,1.6,-0.6", "motion": "rain", "n": 6, "area": [0.3, 0.2]}]},
     {"at": "spender", "set": "store", "cam": {"preset": "whip", "target": "spender", "dist": 2.8}, "actors": [{"id": "spender", "pose": "swipe-card", "at": "mark", "from": "spends"}], "props": [{"id": "card", "kit": "card", "at": "spender.handR"}]},
     {"at": "nothing", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "nothing", "dist": 1.5}, "actors": [{"id": "spender", "pose": "despair", "at": "mark", "from": "nothing"}]},
     {"at": "line:4", "set": "office", "cam": {"preset": "wide", "target": "centre:0,1,0", "dist": 5.5}, "props": [{"id": "cover", "kit": "label", "text": ["1 YEAR", "LATER"], "size": [1.2, 0.6, 0.05], "at": "wall"}]},
     {"at": "after", "cam": {"preset": "splitScreen", "targets": ["sJar", "spender"], "dist": 2.2}, "actors": [{"id": "saver", "pose": "celebrate", "at": "left"}, {"id": "spender", "pose": "despair", "at": "right"}], "props": [{"id": "sJar", "kit": "label", "text": ["SAVED"], "color": "#1f9e4f", "at": "left:0,1.9,0.3", "motion": "count-up", "hit": "twenty", "count": {"from": 0, "to": 2400, "prefix": "$"}}, {"id": "pJar", "kit": "label", "text": ["SAVED", "$0"], "at": "right:0,1.9,0.3"}]},
     {"at": "which", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "which", "dist": 1.4}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "from": "which"}]}
-  ]
+  ],
+  "race": {"title": "SAVED SO FAR", "from": "line:2", "resolve": "twenty", "lanes": [{"label": "SAVER", "color": "#1f9e4f", "from": 0, "to": 2400, "prefix": "$"}, {"label": "SPENDER", "color": "#d62a2a", "from": 0, "to": 0, "prefix": "$"}]}
 }
 ```
 
@@ -321,6 +330,7 @@ Script (`docs/recipe_examples/s3-pov-first-paycheck/script.txt`):
   "tag": {"text": "EXAMPLE", "from": "rent", "until": "line:6"},
   "shots": [
     {"at": 0, "set": "home", "cam": {"preset": "povFirstPerson", "targets": ["you", "pay"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1], "then": [{"at": "first", "pose": "celebrate"}]}], "props": [{"id": "pay", "kit": "label", "text": ["PAYCHECK", "$1,800"], "color": "#1f9e4f", "size": [1.0, 0.62, 0.05], "at": [0.2, 1.5, 0.35], "motion": "fly-in", "hit": 0.08}], "fx": [{"fx": "shake", "at": "first"}, {"fx": "shake", "at": "eighteen"}]},
+    {"at": "your", "cam": {"preset": "povFirstPerson", "targets": ["you", "pay"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1], "then": [{"at": "first", "pose": "celebrate"}]}], "props": [{"id": "pay", "kit": "label", "text": ["PAYCHECK", "$1,800"], "color": "#1f9e4f", "size": [1.0, 0.62, 0.05], "at": [0.2, 1.5, 0.35]}]},
     {"at": "open", "cam": {"preset": "povFirstPerson", "targets": ["you", "phone"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1]}], "props": [{"id": "phone", "asset": "laptop", "at": [0.2, 0.9, 0.1], "glow": 0.3}, {"id": "plinth", "asset": "plinth", "s": 1.1, "at": [0.2, 0, 0.1]}]},
     {"at": "friend", "cam": {"preset": "closeUp", "target": "friend.face", "dist": 1.5}, "actors": [{"id": "friend", "pose": "point", "at": "mark", "emotion": "sly"}]},
     {"at": "hold", "cam": {"preset": "slamZoom", "target": "friend.face", "hit": "hold", "dist": 1.4}, "actors": [{"id": "friend", "pose": "shock", "at": "mark", "from": "hold"}]},
@@ -351,12 +361,13 @@ Script (`docs/recipe_examples/s4-penny-or-million/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "MATH CHECK", "from": "ten", "until": "end:penny#4"},
   "shots": [
-    {"at": 0, "set": "bank", "cam": {"preset": "splitScreen", "targets": ["million", "penny"], "dist": 1.9}, "actors": [{"id": "spender", "pose": "point", "at": "left", "face": "million", "then": [{"at": "right", "pose": "shock"}]}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "million", "kit": "block", "text": ["$1,000,000"], "color": "#1f9e4f", "size": [1.0, 0.8, 0.6], "at": "left:-0.9,0,-0.6", "motion": "dropSlam", "hit": 0.25, "drop": 0.8}, {"id": "penny", "asset": "coin-bronze", "s": 1.4, "at": "right:-1.2,1.0,-0.5", "motion": "fly-in", "hit": 0.3}], "fx": [{"fx": "shake", "at": "now"}]},
+    {"at": 0, "set": "bank", "cam": {"preset": "splitScreen", "targets": ["spender", "saver"], "dist": 2.6}, "actors": [{"id": "spender", "pose": "point", "at": "left", "face": "million", "then": [{"at": "right", "pose": "shock"}]}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "million", "kit": "block", "text": ["$1,000,000"], "color": "#1f9e4f", "size": [1.0, 0.8, 0.6], "at": "left:0.9,0,-0.5", "motion": "dropSlam", "hit": 0.25, "drop": 0.8}, {"id": "penny", "asset": "coin-bronze", "s": 1.4, "at": "right:-1.2,1.0,-0.5", "motion": "fly-in", "hit": 0.3}], "fx": [{"fx": "shake", "at": "now"}]},
+    {"at": "right", "cam": {"preset": "splitScreen", "targets": ["spender", "saver"], "dist": 1.6}, "actors": [{"id": "spender", "pose": "point", "at": "left", "face": "million", "then": [{"at": "right", "pose": "shock"}]}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "million", "kit": "block", "text": ["$1,000,000"], "color": "#1f9e4f", "size": [1.0, 0.8, 0.6], "at": "left:0.9,0,-0.5"}, {"id": "penny", "asset": "coin-bronze", "s": 1.4, "at": "right:-1.2,1.0,-0.5"}]},
     {"at": "think", "caption": "COMMENT YOUR PICK", "cam": {"preset": "orbit", "target": "centre:0,1.2,-0.3", "dist": 4.6}, "actors": [{"id": "spender", "pose": "smug", "at": "left"}, {"id": "saver", "pose": "smug", "at": "right"}], "props": [{"id": "q", "kit": "label", "text": ["?"], "size": [0.6, 0.6, 0.05], "at": "wall"}]},
     {"at": "ten", "cam": {"preset": "medium", "target": "day", "dist": 2.6}, "actors": [{"id": "spender", "pose": "celebrate", "at": "left"}], "props": [{"id": "day", "kit": "label", "text": ["DAY 10"], "size": [1.0, 0.5, 0.05], "at": "counterTop:0,0.5,0.2", "motion": "count-up", "hit": "ten", "count": {"from": 0.01, "to": 5, "prefix": "$", "dur": 0.6}}]},
     {"at": "twenty", "cam": {"preset": "pushIn", "target": "day", "dist": 2.4}, "props": [{"id": "day", "kit": "label", "text": ["DAY 20"], "size": [1.0, 0.5, 0.05], "at": "counterTop:0,0.5,0.2", "motion": "count-up", "hit": "twenty", "count": {"from": 5, "to": 5243, "prefix": "$", "dur": 0.8}}]},
     {"at": "but", "mood": "whisper", "cam": {"preset": "closeUp", "target": "saver.face", "dist": 1.4}, "actors": [{"id": "saver", "pose": "smug", "at": "right"}]},
-    {"at": "thirty#2", "mood": "ending", "cam": {"preset": "slamZoom", "target": "pile", "hit": "thirty#2+0.2", "dist": 3.4}, "actors": [{"id": "spender", "pose": "collapse", "at": "left", "from": "five#3"}, {"id": "saver", "pose": "celebrate", "at": "right"}], "props": [{"id": "pile", "kit": "coinPile", "size": [1.2, 0.9, 1.2], "at": "back:0,0,0.4", "motion": "dropSlam", "hit": "thirty#2+0.2"}, {"id": "total", "kit": "label", "text": ["DAY 30"], "color": "#1f9e4f", "size": [1.4, 0.5, 0.05], "at": "back:0,1.6,0.9", "motion": "count-up", "hit": "five#3", "count": {"from": 10737, "to": 5368709, "prefix": "$", "dur": 0.9}}], "fx": [{"fx": "flash", "at": "five#3"}, "shake"]}
+    {"at": "thirty#2", "mood": "ending", "cam": {"preset": "slamZoom", "target": "pile", "hit": "thirty#2+0.2", "dist": 3.4}, "actors": [{"id": "spender", "pose": "collapse", "at": "left", "from": "five#3"}, {"id": "saver", "pose": "celebrate", "at": "right"}], "props": [{"id": "pile", "kit": "coinPile", "size": [1.2, 0.9, 1.2], "at": "back:0,0,0.4", "motion": "dropSlam", "hit": "thirty#2+0.2"}, {"id": "total", "kit": "label", "text": ["DAY 30"], "color": "#1f9e4f", "size": [1.4, 0.5, 0.05], "at": "back:0,1.6,0.9", "motion": "count-up", "hit": "five#3", "count": {"from": 10737, "to": 5368709, "prefix": "$", "dur": 0.9}}], "fx": [{"fx": "flash", "at": "five#3"}, "shake"], "extras": false}
   ]
 }
 ```
@@ -381,12 +392,15 @@ Script (`docs/recipe_examples/s5-spender-talks/script.txt`):
   "tag": {"text": "EXAMPLE", "from": "line:4", "until": "line:6"},
   "shots": [
     {"at": 0, "set": "home", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.6}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "pay", "pose": "shock"}]}], "props": [{"id": "sub1", "kit": "label", "text": "$12/MO", "at": "mark:-0.7,1.7,0.3", "motion": "fly-in", "hit": "twelve"}], "fx": [{"fx": "shake", "at": "twelve"}, {"fx": "shake", "at": "month"}]},
+    {"at": "a", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark", "then": [{"at": "pay", "pose": "shock"}]}], "props": [{"id": "sub1", "kit": "label", "text": "$12/MO", "at": "mark:-0.7,1.7,0.3"}]},
     {"at": "fifteen", "cam": {"preset": "medium", "target": "spender", "dist": 2.8, "az": 15}, "actors": [{"id": "spender", "pose": "point", "at": "mark", "face": "tv"}], "props": [{"id": "sub2", "kit": "label", "text": "$15/MO", "at": "mark:-0.9,1.9,0.2", "motion": "dropSlam", "hit": "fifteen", "drop": 0.8}, {"id": "sub3", "kit": "label", "text": "$9/MO", "at": "mark:0.9,1.9,0.2", "motion": "dropSlam", "hit": "nine", "drop": 0.8}]},
     {"at": "nothing", "cam": {"preset": "pushIn", "target": "spender.face", "dist": 1.8}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}]},
     {"at": "then", "cam": {"preset": "medium", "target": "saver", "dist": 2.8}, "actors": [{"id": "saver", "pose": "point", "at": "right", "face": "spender"}, {"id": "spender", "pose": "idle", "at": "left", "emotion": "curious"}], "props": [{"id": "receipt", "kit": "label", "text": ["1 YEAR OF", "SUBSCRIPTIONS"], "size": [0.9, 0.4, 0.05], "at": "right:-0.9,1.5,0.3", "motion": "fly-in", "hit": "add"}]},
     {"at": "line:5", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "line:5", "dist": 1.4}, "actors": [{"id": "spender", "pose": "shock", "at": "left", "from": "line:5", "squash": ["line:5"]}], "props": [{"id": "bills", "kit": "bill", "at": "left:0,0,0.8", "motion": "rain", "n": 12, "area": [1.4, 0.3]}], "fx": ["flash"]},
     {"at": "line:6", "mood": "ending", "cam": {"preset": "orbit", "target": "spender", "dist": 2.6}, "actors": [{"id": "spender", "pose": "celebrate", "at": "mark", "from": "cancelling"}], "props": [{"id": "cancel", "kit": "stamp", "text": "CANCELLED x3", "color": "#1f9e4f", "at": "mark:-0.9,1.3,0.4", "hit": "cancelling"}]}
-  ]
+  ],
+  "eggs": ["tv19", "sticky"],
+  "finalGag": {"gag": "tvFall"}
 }
 ```
 
@@ -409,13 +423,15 @@ Script (`docs/recipe_examples/s6-three-traps/script.txt`):
   "cast": {"spender": "SPENDER", "saver": "SAVER"},
   "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
   "shots": [
-    {"at": 0, "set": "street", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.25, "dist": 2.4}, "actors": [{"id": "spender", "pose": "shock", "at": "mark", "from": 0.2}], "props": [{"id": "three", "kit": "block", "text": ["3"], "color": "#d62a2a", "size": [0.7, 0.7, 0.5], "at": "left", "motion": "dropSlam", "hit": 0.25, "drop": 1.0}, {"id": "every", "kit": "label", "text": ["$$ EVERY", "30 DAYS"], "size": [0.9, 0.4, 0.05], "at": "left:0,1.5,0.2", "motion": "dropSlam", "hit": 0.2, "drop": 0.6}], "fx": [{"fx": "dust", "at": 0.25, "p": "left"}]},
+    {"at": 0, "set": "street", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.25, "dist": 2.4}, "actors": [{"id": "spender", "pose": "shock", "at": "mark", "from": 0.2}], "props": [{"id": "three", "kit": "block", "text": ["3"], "color": "#d62a2a", "size": [0.7, 0.7, 0.5], "at": "mark:-1.0,0,-0.4", "motion": "dropSlam", "hit": 0.15, "drop": 0.5}, {"id": "every", "kit": "label", "text": ["$$ EVERY", "30 DAYS"], "size": [0.9, 0.4, 0.05], "at": "mark:1.0,1.5,-0.2", "motion": "dropSlam", "hit": 0.15, "drop": 0.5}], "fx": [{"fx": "dust", "at": 0.25, "p": "left"}], "extras": false},
+    {"at": "you", "cam": {"preset": "closeUp", "target": "spender.face", "dist": 1.4}, "actors": [{"id": "spender", "pose": "shock", "at": "mark", "from": 0.2}], "props": [{"id": "three", "kit": "block", "text": ["3"], "color": "#d62a2a", "size": [0.7, 0.7, 0.5], "at": "mark:-1.0,0,-0.4"}, {"id": "every", "kit": "label", "text": ["$$ EVERY", "30 DAYS"], "size": [0.9, 0.4, 0.05], "at": "mark:1.0,1.5,-0.2"}], "extras": false},
     {"at": "line:2", "set": "home", "cam": {"preset": "whip", "target": "trial", "dist": 2.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}], "props": [{"id": "trial", "kit": "label", "text": ["#3", "FREE TRIAL"], "size": [1.0, 0.5, 0.05], "at": "wall", "motion": "fly-in", "hit": "free"}, {"id": "bill", "kit": "label", "text": ["BILL", "$14.99"], "at": "spender.face", "motion": "stick-to-face", "on": "spender", "hit": "bill", "size": [0.36, 0.26, 0.04]}]},
     {"at": "line:3", "set": "store", "cam": {"preset": "medium", "target": "card", "dist": 2.6}, "actors": [{"id": "spender", "pose": "swipe-card", "at": "mark", "from": "store"}], "props": [{"id": "card", "kit": "label", "text": ["#2 STORE CARD", "-10% / +30%"], "size": [1.2, 0.5, 0.05], "at": "counterTop:0,0.6,0", "motion": "dropSlam", "hit": "store", "drop": 0.8}]},
     {"at": "line:4", "mood": "whisper", "cam": {"preset": "pushIn", "target": "cover", "dist": 2.4}, "props": [{"id": "cover", "kit": "block", "text": ["#1", "?"], "color": "#3a3f58", "size": [1.0, 1.0, 0.6], "at": "counterTop:0,0,0"}]},
     {"at": "line:5", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "line:5", "dist": 1.5}, "actors": [{"id": "spender", "pose": "despair", "at": "mark", "from": "years"}], "props": [{"id": "one", "kit": "debtBlock", "text": ["#1", "MINIMUM"], "size": [1.1, 1.1, 0.7], "at": "counterTop:-0.3,0,0", "motion": "burst", "hit": "years"}], "fx": ["shake"]},
     {"at": "line:6", "mood": "ending", "cam": {"preset": "medium", "target": "saver", "dist": 2.8}, "actors": [{"id": "saver", "pose": "celebrate", "at": "right"}, {"id": "spender", "pose": "idle", "at": "left", "emotion": "curious"}], "props": [{"id": "skip", "kit": "stamp", "text": "PAY MORE THAN THE MINIMUM", "color": "#1f9e4f", "size": [0.9, 0.2, 0.03], "at": "right:0,1.95,0.3", "hit": "skip"}]}
-  ]
+  ],
+  "race": {"title": "COST PER YEAR", "from": "line:2", "resolve": "line:5", "lanes": [{"label": "#3", "color": "#ffd23a", "from": 0, "to": 180, "prefix": "$"}, {"label": "#2", "color": "#ff7a1a", "from": 0, "to": 300, "prefix": "$"}, {"label": "#1", "color": "#d62a2a", "from": 0, "to": 900, "prefix": "$", "curve": "late"}]}
 }
 ```
 
@@ -444,6 +460,9 @@ Everything stays a pure function of t and goes through the same clip QA. The ext
 | **Frame-0 zoom-in** | `"cam": { "preset": "hookZoom", "target": "spender" }` on shot 1 | A fast push from 1.3× the distance into a close-up over the first 0.4 s, with a landing kick, then a creep. Frame 0 is already close, so it still passes the ≥ 50 % gate. |
 | **Whole situation in one frame** | (gate) | The gate checks "who + what" at frame 0: a character covering at least 15 % of the frame and a story prop in view. The hook text and the stake by 0.5 s cover "what's at stake". |
 | **Easter eggs** | `"eggs": ["cat", "sticky"]`, or `{ "egg": "cat", "at": [x,y,z], "to": [x,y,z] }` | `cat`: our tiny blocky cat walks a path, grabs a coin at the far end and walks back with it. `tv19`: Spender's episode-1 TV showing "YEAR 19". `sticky`: a sticky note with a one-line joke (`text`). `mug`: a "BLOCK MONEY" mug. Each set has default spots (`src/fin/recipe/eggs.tsx` EGG_SPOTS); use 1-2 per Short. Eggs are in the clip QA. |
+| **Live race / ticking stake** | `"race": { "title": "SAVED SO FAR", "from": "line:2", "resolve": "twenty", "lanes": [{ "label": "SAVER", "color": "#1f9e4f", "from": 0, "to": 2400, "prefix": "$" }, …] }` | Watch-time data on day 1: the S2 race held 85 % of the Short, the S6 countdown 41 %. Bars race from `from` to the twist (`resolve`), and the leader is outlined. `"curve": "late"` grows slowly and then overtakes, like compound growth. The leader gets a WIN badge at the twist. The bars sit above the bottom safe zone, clear of the captions. The gate warns if nothing ticks (a race or `count-up`) through 35-70 % of the Short. |
+| **Two-layer captions** | (default with the quality pass) `"captionColors": { "loss": "#ff3b30", "gain": "#3ee07a", "neutral": "#ffd23a" }` | From the TOP3D frame study. A small full-sentence line near the top (about 9 % down, on a dark box; it waits until the hook text is gone). Below it, a BIG 1-3 word chunk in the lower third: baseline about 76 % down, about 150 px (cap height about 5.5 % of the frame), allowed from frame 0. Each chunk has ONE accent word: a number or `$` first (yellow), then a loss word (red) or a gain word (green), else the longest word. |
+| **Extreme close-up, then reveal** | `"cam": { "preset": "hookReveal", "target": "spender" }` | Opens with the face filling the frame (the emotion), then pulls back to a wide shot by 1.5 s (the setup and the number), then drifts. It is the alternative to `hookZoom`. |
 | **Double payoff** | `"finalGag": { "gag": "catCoin" }`, `"tvFall"` or `"stickyFall"` (`from`: start time, default end − 0.8 s) | A visual gag after the spoken payoff, for the rewatch. `catCoin` needs a `cat` egg; `tvFall` needs `tv19`; `stickyFall` needs `sticky`. It gets an SFX cue too. |
 
 Eggs and the final gag are part of the quality pass, so `<Id>Plain` renders without them.

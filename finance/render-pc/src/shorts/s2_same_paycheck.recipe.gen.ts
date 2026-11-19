@@ -55,25 +55,89 @@ export const RECIPE: Recipe = {
      "kit": "label",
      "text": "$2,000",
      "color": "#1f9e4f",
-     "at": "left:0,1.75,0.35",
+     "at": "left:0,1.0,0.6",
      "motion": "dropSlam",
-     "hit": 0.25,
-     "drop": 0.6
+     "hit": 0.12,
+     "drop": 0.3,
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
     },
     {
      "id": "payP",
      "kit": "label",
      "text": "$2,000",
-     "at": "right:0,1.75,0.35",
+     "at": "right:0,1.0,0.6",
      "motion": "dropSlam",
-     "hit": 0.25,
-     "drop": 0.6
+     "hit": 0.12,
+     "drop": 0.3,
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
     }
    ],
    "fx": [
     {
      "fx": "shake",
      "at": "only"
+    }
+   ]
+  },
+  {
+   "at": "thousand",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 1.6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "celebrate",
+     "at": "right",
+     "then": [
+      {
+       "at": "thousand",
+       "pose": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "payS",
+     "kit": "label",
+     "text": "$2,000",
+     "color": "#1f9e4f",
+     "at": "left:0,1.0,0.6",
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
+    },
+    {
+     "id": "payP",
+     "kit": "label",
+     "text": "$2,000",
+     "at": "right:0,1.0,0.6",
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
     }
    ]
   },
@@ -249,6 +313,27 @@ export const RECIPE: Recipe = {
     }
    ]
   }
- ]
+ ],
+ "race": {
+  "title": "SAVED SO FAR",
+  "from": "line:2",
+  "resolve": "twenty",
+  "lanes": [
+   {
+    "label": "SAVER",
+    "color": "#1f9e4f",
+    "from": 0,
+    "to": 2400,
+    "prefix": "$"
+   },
+   {
+    "label": "SPENDER",
+    "color": "#d62a2a",
+    "from": 0,
+    "to": 0,
+    "prefix": "$"
+   }
+  ]
+ }
 };
 export const WORDS: Word[] = [{"w":"Same","turn":1,"t":0,"end":0.3},{"w":"paycheck.","turn":1,"t":0.3,"end":0.78},{"w":"Two","turn":1,"t":0.78,"end":1.035},{"w":"thousand","turn":1,"t":1.035,"end":1.515},{"w":"dollars.","turn":1,"t":1.515,"end":1.95},{"w":"Only","turn":1,"t":1.95,"end":2.25},{"w":"one","turn":1,"t":2.25,"end":2.505},{"w":"of","turn":1,"t":2.505,"end":2.715},{"w":"them","turn":1,"t":2.715,"end":3.015},{"w":"is","turn":1,"t":3.015,"end":3.225},{"w":"broke","turn":1,"t":3.225,"end":3.57},{"w":"by","turn":1,"t":3.57,"end":3.78},{"w":"Friday.","turn":1,"t":3.78,"end":4.17},{"w":"Saver","turn":2,"t":4.52,"end":4.865},{"w":"moves","turn":2,"t":4.865,"end":5.21},{"w":"two","turn":2,"t":5.21,"end":5.465},{"w":"hundred","turn":2,"t":5.465,"end":5.9},{"w":"to","turn":2,"t":5.9,"end":6.11},{"w":"savings","turn":2,"t":6.11,"end":6.545},{"w":"the","turn":2,"t":6.545,"end":6.8},{"w":"day","turn":2,"t":6.8,"end":7.055},{"w":"it","turn":2,"t":7.055,"end":7.265},{"w":"lands.","turn":2,"t":7.265,"end":7.61},{"w":"Spender","turn":3,"t":7.96,"end":8.395},{"w":"spends","turn":3,"t":8.395,"end":8.785},{"w":"first","turn":3,"t":8.785,"end":9.13},{"w":"and","turn":3,"t":9.13,"end":9.385},{"w":"saves","turn":3,"t":9.385,"end":9.73},{"w":"whatever","turn":3,"t":9.73,"end":10.21},{"w":"is","turn":3,"t":10.21,"end":10.42},{"w":"left.","turn":3,"t":10.42,"end":10.72},{"w":"Nothing","turn":3,"t":10.72,"end":11.155},{"w":"is","turn":3,"t":11.155,"end":11.365},{"w":"left.","turn":3,"t":11.365,"end":11.665},{"w":"But","turn":4,"t":12.015,"end":12.27},{"w":"the","turn":4,"t":12.27,"end":12.525},{"w":"real","turn":4,"t":12.525,"end":12.825},{"w":"gap","turn":4,"t":12.825,"end":13.08},{"w":"shows","turn":4,"t":13.08,"end":13.425},{"w":"up","turn":4,"t":13.425,"end":13.635},{"w":"later.","turn":4,"t":13.635,"end":13.98},{"w":"After","turn":5,"t":14.33,"end":14.675},{"w":"one","turn":5,"t":14.675,"end":14.93},{"w":"year,","turn":5,"t":14.93,"end":15.23},{"w":"Saver","turn":5,"t":15.23,"end":15.575},{"w":"has","turn":5,"t":15.575,"end":15.83},{"w":"twenty","turn":5,"t":15.83,"end":16.22},{"w":"four","turn":5,"t":16.22,"end":16.52},{"w":"hundred","turn":5,"t":16.52,"end":16.955},{"w":"dollars","turn":5,"t":16.955,"end":17.39},{"w":"put","turn":5,"t":17.39,"end":17.645},{"w":"away.","turn":5,"t":17.645,"end":17.945},{"w":"Spender","turn":6,"t":18.295,"end":18.73},{"w":"has","turn":6,"t":18.73,"end":18.985},{"w":"a","turn":6,"t":18.985,"end":19.15},{"w":"closet","turn":6,"t":19.15,"end":19.54},{"w":"full","turn":6,"t":19.54,"end":19.84},{"w":"of","turn":6,"t":19.84,"end":20.05},{"w":"stuff","turn":6,"t":20.05,"end":20.395},{"w":"and","turn":6,"t":20.395,"end":20.65},{"w":"zero","turn":6,"t":20.65,"end":20.95},{"w":"dollars.","turn":6,"t":20.95,"end":21.385},{"w":"Which","turn":6,"t":21.385,"end":21.73},{"w":"one","turn":6,"t":21.73,"end":21.985},{"w":"are","turn":6,"t":21.985,"end":22.24},{"w":"you?","turn":6,"t":22.24,"end":22.495}];
