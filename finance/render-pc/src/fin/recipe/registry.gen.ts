@@ -3,13 +3,14 @@ import type { Recipe, Word } from "./types";
 import * as R0 from "../../shorts/coffee_could_be.recipe.gen";
 import * as R1 from "../../shorts/employer_match.recipe.gen";
 import * as R2 from "../../shorts/minimum_payment_trap.recipe.gen";
-import * as R3 from "../../shorts/s1_split_payments.recipe.gen";
-import * as R4 from "../../shorts/s2_same_paycheck.recipe.gen";
-import * as R5 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
-import * as R6 from "../../shorts/s4_penny_or_million.recipe.gen";
-import * as R7 from "../../shorts/s5_spender_talks.recipe.gen";
-import * as R8 from "../../shorts/s6_three_traps.recipe.gen";
-import * as R9 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R3 from "../../shorts/prices_double.recipe.gen";
+import * as R4 from "../../shorts/s1_split_payments.recipe.gen";
+import * as R5 from "../../shorts/s2_same_paycheck.recipe.gen";
+import * as R6 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
+import * as R7 from "../../shorts/s4_penny_or_million.recipe.gen";
+import * as R8 from "../../shorts/s5_spender_talks.recipe.gen";
+import * as R9 from "../../shorts/s6_three_traps.recipe.gen";
+import * as R10 from "../../shorts/ten_beats_thirty.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -22,4 +23,5 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R7.ID, recipe: R7.RECIPE, words: R7.WORDS, vo: R7.VO_DURATION },
   { id: R8.ID, recipe: R8.RECIPE, words: R8.WORDS, vo: R8.VO_DURATION },
   { id: R9.ID, recipe: R9.RECIPE, words: R9.WORDS, vo: R9.VO_DURATION },
+  { id: R10.ID, recipe: R10.RECIPE, words: R10.WORDS, vo: R10.VO_DURATION },
 ];
