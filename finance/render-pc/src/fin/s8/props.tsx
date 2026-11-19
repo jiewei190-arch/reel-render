@@ -108,19 +108,20 @@ export const SavingsJar: React.FC<{ p: V3; fill: number; gleam?: number }> = ({ 
 
 // ------------------------------------------------------------------ investor's fund box + chart
 /** a sturdy crate labelled INDEX FUND (origin = base centre). lid 0..1 opens the lid backward. */
-export const FundBox: React.FC<{ p: V3; lid?: number; glow?: number }> = ({ p, lid = 0, glow = 0 }) => (
+/** a lidded box with a label (default: the blue INDEX FUND box); `cols` = [body, base, lid, glow] */
+export const FundBox: React.FC<{ p: V3; lid?: number; glow?: number; label?: string[]; cols?: [string, string, string, string] }> = ({ p, lid = 0, glow = 0, label = ["INDEX", "FUND"], cols = ["#1f5fc0", "#16306a", "#2a76e0", "#3a8fff"] }) => (
   <group position={p}>
-    <Bx s={[0.64, 0.44, 0.42]} p={[0, 0.22, 0]} c="#1f5fc0" rough={0.5} e={["#3a8fff", 0.15 + glow]} />
-    <Bx s={[0.66, 0.05, 0.44]} p={[0, 0.03, 0]} c="#16306a" rough={0.5} />
-    <TextFace p={[0, 0.235, 0.214]} w={0.56} h={0.2} lines={["INDEX", "FUND"]} fg="#ffffff" px={70} />
+    <Bx s={[0.64, 0.44, 0.42]} p={[0, 0.22, 0]} c={cols[0]} rough={0.5} e={[cols[3], 0.15 + glow]} />
+    <Bx s={[0.66, 0.05, 0.44]} p={[0, 0.03, 0]} c={cols[1]} rough={0.5} />
+    <TextFace p={[0, 0.235, 0.214]} w={0.56} h={0.2} lines={label} fg="#ffffff" px={70} />
     <group position={[0, 0.44, -0.21]} rotation={[-lid * 1.9, 0, 0]}>
-      <Bx s={[0.68, 0.06, 0.44]} p={[0, 0.03, 0.22]} c="#2a76e0" rough={0.45} />
+      <Bx s={[0.68, 0.06, 0.44]} p={[0, 0.03, 0.22]} c={cols[2]} rough={0.45} />
     </group>
   </group>
 );
 /** a board on legs with a block line chart: values (any units) between lo and hi, `draw` = how many points are shown
  *  (fractional = the last segment grows). Points below `redBelow` turn red. */
-export const LineChart: React.FC<{ p: V3; values: number[]; lo: number; hi: number; draw: number; redBelow: number; flash?: number; w?: number; h?: number }> = ({ p, values, lo, hi, draw, redBelow, flash = 0, w = 1.1, h = 0.78 }) => {
+export const LineChart: React.FC<{ p: V3; values: number[]; lo: number; hi: number; draw: number; redBelow: number; flash?: number; w?: number; h?: number; redDrops?: boolean }> = ({ p, values, lo, hi, draw, redBelow, flash = 0, w = 1.1, h = 0.78, redDrops = false }) => {
   const n = values.length;
   const x0 = -w * 0.42, x1 = w * 0.42;
   const y0 = 0.14, y1 = h - 0.12;
@@ -133,7 +134,7 @@ export const LineChart: React.FC<{ p: V3; values: number[]; lo: number; hi: numb
     const [bx0, by0] = pt(i + 1);
     const bx = ax + (bx0 - ax) * u, by = ay + (by0 - ay) * u;
     const len = Math.hypot(bx - ax, by - ay);
-    const red = values[i + 1] < redBelow || values[i] < redBelow;
+    const red = redDrops ? values[i + 1] < values[i] : values[i + 1] < redBelow || values[i] < redBelow;
     const col = red ? "#ff3b3b" : "#3fe08a";
     segs.push(<Bx key={i} s={[Math.max(0.01, len), 0.035, 0.03]} p={[(ax + bx) / 2, (ay + by) / 2, 0.035]} r={[0, 0, Math.atan2(by - ay, bx - ax)]} c={col} e={[col, 1.6]} shadow={false} round={0.3} />);
   }
@@ -145,7 +146,7 @@ export const LineChart: React.FC<{ p: V3; values: number[]; lo: number; hi: numb
     const u = shown - k;
     return [ax + (bx - ax) * u, ay + (by - ay) * u];
   })();
-  const lastRed = values[Math.min(n - 1, Math.ceil(shown))] < redBelow;
+  const lastRed = redDrops ? k < n - 1 && values[k + 1] < values[k] : values[Math.min(n - 1, Math.ceil(shown))] < redBelow;
   return (
     <group position={p}>
       {[-1, 1].map((s) => (
@@ -301,7 +302,7 @@ export const Hater: React.FC<{ pose: HaterPose; sign: string; back?: string; col
           <Bx s={[0.03, 0.42, 0.03]} p={[0, 0.16, 0]} c="#7a5a3a" />
           <group position={[0, 0.46, 0]}>
             <Bx s={[0.66, 0.3, 0.03]} c="#fffaf0" rough={0.7} />
-            <TextFace p={[0, 0, 0.017]} w={0.62} h={0.26} lines={[sign]} fg="#d62a2a" px={sign.length > 9 ? 84 : 100} />
+            <TextFace p={[0, 0, 0.017]} w={0.62} h={0.26} lines={sign.split("\n")} fg="#d62a2a" px={sign.includes("\n") ? 72 : sign.length > 9 ? 84 : 100} />
             {back ? <TextFace p={[0, 0, -0.017]} r={[0, Math.PI, 0]} w={0.62} h={0.26} lines={[back]} fg="#178a45" px={100} /> : null}
           </group>
         </group>
