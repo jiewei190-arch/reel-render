@@ -110,9 +110,9 @@ export const RECIPE: Recipe = {
    "note": "the interest block slams down beside him (cut at 1.0 s, hook rule)",
    "cam": {
     "preset": "slamZoom",
-    "target": "intr",
+    "target": "mark:-0.55,0.75,0",
     "hit": "1:twelve",
-    "dist": 2.6,
+    "dist": 3.4,
     "az": 10
    },
    "actors": [
@@ -142,11 +142,11 @@ export const RECIPE: Recipe = {
       "$12K"
      ],
      "size": [
-      0.9,
-      0.8,
+      0.75,
+      0.7,
       0.5
      ],
-     "at": "mark:-1.35,0,-0.5",
+     "at": "mark:-0.98,0,-0.3",
      "motion": "dropSlam",
      "hit": "1:twelve",
      "drop": 1.2
@@ -160,7 +160,7 @@ export const RECIPE: Recipe = {
     {
      "fx": "dust",
      "at": "1:twelve",
-     "p": "mark:-1.35,0.02,-0.5"
+     "p": "mark:-0.98,0.02,-0.3"
     }
    ],
    "sfx": [
@@ -269,11 +269,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#1f9e4f",
      "size": [
-      0.55,
-      0.32,
-      0.05
+      0.27,
+      0.14,
+      0.04
      ],
-     "at": "left:-0.5,1.25,0.55",
+     "at": "left:0.03,1.485,0.36",
      "motion": "dropSlam",
      "hit": "2:four",
      "drop": 0.4
@@ -313,11 +313,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.5,
-      0.22,
-      0.05
+      0.27,
+      0.14,
+      0.04
      ],
-     "at": "right:0.5,1.25,0.55",
+     "at": "right:-0.02,1.485,0.36",
      "motion": "dropSlam",
      "hit": "2:seven",
      "drop": 0.4
@@ -502,7 +502,7 @@ export const RECIPE: Recipe = {
       0.22,
       0.03
      ],
-     "at": "left:0.06,1.05,0.65",
+     "at": "left:0.03,1.62,0.3",
      "hit": "3:last"
     },
     {
@@ -563,11 +563,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.66,
-      0.32,
-      0.05
+      0.27,
+      0.14,
+      0.04
      ],
-     "at": "right:0.55,1.25,0.55",
+     "at": "right:-0.02,1.42,0.38",
      "motion": "count-up",
      "hit": "3:owes",
      "count": {
@@ -842,11 +842,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#1f9e4f",
      "size": [
-      0.66,
-      0.32,
-      0.05
+      0.27,
+      0.14,
+      0.04
      ],
-     "at": "left:-0.55,1.25,0.55",
+     "at": "left:0.02,1.485,0.36",
      "motion": "count-up",
      "hit": "6:about",
      "count": {
@@ -898,11 +898,11 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.66,
-      0.32,
-      0.05
+      0.27,
+      0.14,
+      0.04
      ],
-     "at": "right:0.55,1.25,0.55",
+     "at": "right:-0.02,1.42,0.38",
      "motion": "count-up",
      "hit": "6:pays",
      "count": {
@@ -940,7 +940,7 @@ export const RECIPE: Recipe = {
     {
      "id": "spender",
      "pose": "shock",
-     "at": "centre:0.75,0,0.2",
+     "at": "centre:0.55,0,0.3",
      "emotion": "shock",
      "then": [
       {

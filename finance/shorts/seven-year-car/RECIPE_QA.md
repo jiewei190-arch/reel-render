@@ -26,7 +26,7 @@ Composition: `SevenYearCarRecipe` (+ `SevenYearCarRecipeSub`) in `src/index.tool
 | frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s) | PASS | first cut at 1.00 s |
 | loop board lands on the last word (not before) | PASS | last word starts 29.10 s; tag1 at 29.12 s |
 | every landed text prop fully inside its view (1.5 % margin) | PASS | all inside |
-| no text board in the caption band (recompose: raise the board or lower the target) | warn | S08@11.4s:paid, S17@25.8s:blkS+blkP, S18@28.3s:tag1 |
+| no text board in the caption band (recompose: raise the board or lower the target) | warn | S02@1.0s:intr, S17@25.8s:blkS+blkP, S18@28.3s:tag1 |
 | length 20-30 s | PASS | 29.50 s |
 
 Frame-0 coverage by subject: spender 65 %, tag0 12 %, egg.cat0 0 %, egg.sticky1 0 %.
