@@ -1,0 +1,367 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "POV: everything you buy just doubled.",
+   "words": [
+    {
+     "w": "POV:",
+     "t": 0.092,
+     "end": 1.163
+    },
+    {
+     "w": "everything",
+     "t": 1.421,
+     "end": 1.791
+    },
+    {
+     "w": "you",
+     "t": 1.865,
+     "end": 1.938
+    },
+    {
+     "w": "buy",
+     "t": 2.086,
+     "end": 2.234
+    },
+    {
+     "w": "just",
+     "t": 2.455,
+     "end": 2.751
+    },
+    {
+     "w": "doubled.",
+     "t": 2.824,
+     "end": 3.489
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Groceries. Rent. Coffee. All of it, times two.",
+   "words": [
+    {
+     "w": "Groceries.",
+     "t": 3.554,
+     "end": 4.403
+    },
+    {
+     "w": "Rent.",
+     "t": 4.587,
+     "end": 5.141
+    },
+    {
+     "w": "Coffee.",
+     "t": 5.326,
+     "end": 5.99
+    },
+    {
+     "w": "All",
+     "t": 6.212,
+     "end": 6.36
+    },
+    {
+     "w": "of",
+     "t": 6.397,
+     "end": 6.434
+    },
+    {
+     "w": "it,",
+     "t": 6.507,
+     "end": 6.803
+    },
+    {
+     "w": "times",
+     "t": 6.95,
+     "end": 7.246
+    },
+    {
+     "w": "two.",
+     "t": 7.32,
+     "end": 7.837
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Here's the trick: divide seventy-two by the inflation rate.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 7.901,
+     "end": 8.196
+    },
+    {
+     "w": "the",
+     "t": 8.233,
+     "end": 8.27
+    },
+    {
+     "w": "trick:",
+     "t": 8.344,
+     "end": 9.083
+    },
+    {
+     "w": "divide",
+     "t": 9.156,
+     "end": 9.526
+    },
+    {
+     "w": "seventy-two",
+     "t": 9.599,
+     "end": 10.264
+    },
+    {
+     "w": "by",
+     "t": 10.412,
+     "end": 10.486
+    },
+    {
+     "w": "the",
+     "t": 10.559,
+     "end": 10.633
+    },
+    {
+     "w": "inflation",
+     "t": 10.707,
+     "end": 11.15
+    },
+    {
+     "w": "rate.",
+     "t": 11.224,
+     "end": 11.667
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "At about four percent a year, prices double in about eighteen years.",
+   "words": [
+    {
+     "w": "At",
+     "t": 11.732,
+     "end": 11.879
+    },
+    {
+     "w": "about",
+     "t": 11.99,
+     "end": 12.101
+    },
+    {
+     "w": "four",
+     "t": 12.249,
+     "end": 12.396
+    },
+    {
+     "w": "percent",
+     "t": 12.47,
+     "end": 12.765
+    },
+    {
+     "w": "a",
+     "t": 12.839,
+     "end": 12.913
+    },
+    {
+     "w": "year,",
+     "t": 12.987,
+     "end": 13.504
+    },
+    {
+     "w": "prices",
+     "t": 13.578,
+     "end": 13.947
+    },
+    {
+     "w": "double",
+     "t": 14.095,
+     "end": 14.39
+    },
+    {
+     "w": "in",
+     "t": 14.464,
+     "end": 14.538
+    },
+    {
+     "w": "about",
+     "t": 14.685,
+     "end": 14.833
+    },
+    {
+     "w": "eighteen",
+     "t": 14.907,
+     "end": 15.35
+    },
+    {
+     "w": "years.",
+     "t": 15.424,
+     "end": 16.015
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "And it's already happened three times...",
+   "words": [
+    {
+     "w": "And",
+     "t": 16.079,
+     "end": 16.227
+    },
+    {
+     "w": "it's",
+     "t": 16.264,
+     "end": 16.448
+    },
+    {
+     "w": "already",
+     "t": 16.633,
+     "end": 16.818
+    },
+    {
+     "w": "happened",
+     "t": 16.891,
+     "end": 17.334
+    },
+    {
+     "w": "three",
+     "t": 17.482,
+     "end": 17.63
+    },
+    {
+     "w": "times...",
+     "t": 17.704,
+     "end": 18.516
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Since 1970, U.S. prices climbed almost nine times over. About three doublings.",
+   "words": [
+    {
+     "w": "Since",
+     "t": 18.581,
+     "end": 18.802
+    },
+    {
+     "w": "1970,",
+     "t": 18.876,
+     "end": 19.984
+    },
+    {
+     "w": "U.S.",
+     "t": 20.057,
+     "end": 20.279
+    },
+    {
+     "w": "prices",
+     "t": 20.353,
+     "end": 20.722
+    },
+    {
+     "w": "climbed",
+     "t": 20.796,
+     "end": 21.091
+    },
+    {
+     "w": "almost",
+     "t": 21.165,
+     "end": 21.534
+    },
+    {
+     "w": "nine",
+     "t": 21.682,
+     "end": 21.903
+    },
+    {
+     "w": "times",
+     "t": 22.051,
+     "end": 22.42
+    },
+    {
+     "w": "over.",
+     "t": 22.494,
+     "end": 22.974
+    },
+    {
+     "w": "About",
+     "t": 23.159,
+     "end": 23.454
+    },
+    {
+     "w": "three",
+     "t": 23.602,
+     "end": 23.823
+    },
+    {
+     "w": "doublings.",
+     "t": 23.971,
+     "end": 24.783
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Small yearly numbers, huge change. So one day, it's just",
+   "words": [
+    {
+     "w": "Small",
+     "t": 24.848,
+     "end": 25.217
+    },
+    {
+     "w": "yearly",
+     "t": 25.365,
+     "end": 25.586
+    },
+    {
+     "w": "numbers,",
+     "t": 25.66,
+     "end": 26.399
+    },
+    {
+     "w": "huge",
+     "t": 26.472,
+     "end": 26.842
+    },
+    {
+     "w": "change.",
+     "t": 26.916,
+     "end": 27.802
+    },
+    {
+     "w": "So",
+     "t": 27.875,
+     "end": 27.949
+    },
+    {
+     "w": "one",
+     "t": 28.023,
+     "end": 28.171
+    },
+    {
+     "w": "day,",
+     "t": 28.245,
+     "end": 28.688
+    },
+    {
+     "w": "it's",
+     "t": 28.762,
+     "end": 28.909
+    },
+    {
+     "w": "just",
+     "t": 28.983,
+     "end": 29.574
+    }
+   ]
+  }
+ ]
+}

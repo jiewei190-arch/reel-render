@@ -1,0 +1,2 @@
+// generated from shorts/surprise-bill/script.txt
+export default "A surprise bill can last two years.\nSay the car breaks: 1,000 dollars, due now.\nWith an emergency fund, it costs 1,000 dollars. Done.\nOn a card at twenty-two percent, paying fifty a month?\nTwenty-six months, and about 257 dollars of interest.\nAnd in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.\nA small cushion changes the maths. Because otherwise,";

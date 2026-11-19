@@ -1,0 +1,51 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0729,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 428,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your bank can charge you thirty-five dollars for a five dollar coffee.",
+   "start": 0.093,
+   "end": 4.12
+  },
+  {
+   "line": 2,
+   "text": "Same coffee, same bank. Spender's balance is zero. Saver keeps a hundred dollar cushion.",
+   "start": 4.26,
+   "end": 10.374
+  },
+  {
+   "line": 3,
+   "text": "Spender's card goes through anyway. Overdraft: a thirty-five dollar fee.",
+   "start": 10.514,
+   "end": 15.51
+  },
+  {
+   "line": 4,
+   "text": "But the fee isn't even the worst part...",
+   "start": 15.649,
+   "end": 17.961
+  },
+  {
+   "line": 5,
+   "text": "It hits every time. Three coffees before payday: a hundred and five dollars in fees, at many big banks.",
+   "start": 18.101,
+   "end": 25.408
+  },
+  {
+   "line": 6,
+   "text": "Saver's coffee cost five dollars. Spender's cost forty.",
+   "start": 25.548,
+   "end": 29.5
+  }
+ ]
+}

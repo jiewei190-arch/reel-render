@@ -1,0 +1,110 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 27.665,
+ "render_s": 362.7,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Would you rather pay 926 a month, or just 453?",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "Would you rather pay nine hundred twenty-six a month, or just four hundred fifty-three?",
+     "seed": 11,
+     "heard": "Would you rather pay $926 a month or just $453?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.765
+  },
+  {
+   "n": 2,
+   "text": "Same 30,000 dollar car. Same seven percent. Pick one...",
+   "start": 4.015,
+   "parts": [
+    {
+     "tts": "Same thirty thousand dollar car. Same seven percent. Pick one...",
+     "seed": 11,
+     "heard": "Same $30,000 car, same 7%, pick one.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.637
+  },
+  {
+   "n": 3,
+   "text": "Spender picked 453. Half the payment! Easy choice, right?",
+   "start": 7.887,
+   "parts": [
+    {
+     "tts": "Spender picked four hundred fifty-three. Half the payment! Easy choice, right?",
+     "seed": 11,
+     "heard": "Spender picked 453. Half the payment. Easy choice, right?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.882
+  },
+  {
+   "n": 4,
+   "text": "But 453 means seven years, not three. And behind that door, something is eating his money...",
+   "start": 12.132,
+   "parts": [
+    {
+     "tts": "But four hundred fifty-three means seven years, not three. And behind that door, something is eating his money...",
+     "seed": 11,
+     "heard": "But 453 means seven years, not three. And behind that door, something is eating his money.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.084
+  },
+  {
+   "n": 5,
+   "text": "Seven years costs 8,034 in interest. Three years: 3,347.",
+   "start": 18.334,
+   "parts": [
+    {
+     "tts": "Seven years costs eight thousand thirty-four in interest. Three years: three thousand three hundred forty-seven.",
+     "seed": 11,
+     "heard": "Seven years costs 8,034 in interest. Three years, 3,347.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.934
+  },
+  {
+   "n": 6,
+   "text": "The cheap payment burns about 4,700 extra.",
+   "start": 24.184,
+   "parts": [
+    {
+     "tts": "The cheap payment burns about four thousand seven hundred extra.",
+     "seed": 11,
+     "heard": "The cheap payment burns about $4,700 extra.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.415
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1946,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 499,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your low car payment costs twelve thousand dollars in interest.",
+   "start": 0.084,
+   "end": 3.432
+  },
+  {
+   "line": 2,
+   "text": "Same thirty-five thousand dollar car. Saver picks four years. Spender picks seven, so it's only five sixty-three a month.",
+   "start": 3.558,
+   "end": 10.188
+  },
+  {
+   "line": 3,
+   "text": "Year four. Saver makes his last payment. Spender still owes almost eighteen thousand.",
+   "start": 10.313,
+   "end": 15.671
+  },
+  {
+   "line": 4,
+   "text": "Are you freaking kidding me?",
+   "start": 15.796,
+   "end": 17.471
+  },
+  {
+   "line": 5,
+   "text": "But wait till you see the interest...",
+   "start": 17.596,
+   "end": 19.471
+  },
+  {
+   "line": 6,
+   "text": "In this example, at nine percent, Saver pays about sixty-eight hundred. Spender pays over twelve thousand.",
+   "start": 19.597,
+   "end": 25.691
+  },
+  {
+   "line": 7,
+   "text": "Almost double, for the same car. And it all started with...",
+   "start": 25.817,
+   "end": 29.5
+  }
+ ],
+ "bleep": {
+  "start": 16.24,
+  "end": 16.78,
+  "hz": 1000,
+  "word": "freaking",
+  "line": 4
+ }
+}

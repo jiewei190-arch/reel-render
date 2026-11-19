@@ -1,0 +1,330 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "America",
+   "start": 0.0,
+   "end": 0.44
+  },
+  {
+   "word": "and",
+   "start": 0.44,
+   "end": 0.68
+  },
+  {
+   "word": "Britain",
+   "start": 0.68,
+   "end": 0.94
+  },
+  {
+   "word": "almost",
+   "start": 0.94,
+   "end": 1.3
+  },
+  {
+   "word": "went",
+   "start": 1.3,
+   "end": 1.52
+  },
+  {
+   "word": "to",
+   "start": 1.52,
+   "end": 1.66
+  },
+  {
+   "word": "war",
+   "start": 1.66,
+   "end": 1.86
+  },
+  {
+   "word": "over",
+   "start": 1.86,
+   "end": 2.12
+  },
+  {
+   "word": "a",
+   "start": 2.12,
+   "end": 2.32
+  },
+  {
+   "word": "pig.",
+   "start": 2.32,
+   "end": 2.48
+  },
+  {
+   "word": "In",
+   "start": 3.22,
+   "end": 3.3
+  },
+  {
+   "word": "1859,",
+   "start": 3.3,
+   "end": 4.1
+  },
+  {
+   "word": "on",
+   "start": 4.4,
+   "end": 4.6
+  },
+  {
+   "word": "an",
+   "start": 4.6,
+   "end": 4.7
+  },
+  {
+   "word": "island",
+   "start": 4.7,
+   "end": 5.0
+  },
+  {
+   "word": "both",
+   "start": 5.0,
+   "end": 5.28
+  },
+  {
+   "word": "sides",
+   "start": 5.28,
+   "end": 5.58
+  },
+  {
+   "word": "claimed,",
+   "start": 5.58,
+   "end": 6.0
+  },
+  {
+   "word": "a",
+   "start": 6.44,
+   "end": 6.6
+  },
+  {
+   "word": "British",
+   "start": 6.6,
+   "end": 6.84
+  },
+  {
+   "word": "company's",
+   "start": 6.84,
+   "end": 7.4
+  },
+  {
+   "word": "pig",
+   "start": 7.4,
+   "end": 7.64
+  },
+  {
+   "word": "got",
+   "start": 7.64,
+   "end": 7.94
+  },
+  {
+   "word": "into",
+   "start": 7.94,
+   "end": 8.12
+  },
+  {
+   "word": "an",
+   "start": 8.12,
+   "end": 8.26
+  },
+  {
+   "word": "American's",
+   "start": 8.26,
+   "end": 8.72
+  },
+  {
+   "word": "garden.",
+   "start": 8.72,
+   "end": 8.96
+  },
+  {
+   "word": "He",
+   "start": 9.44,
+   "end": 9.6
+  },
+  {
+   "word": "shot",
+   "start": 9.6,
+   "end": 9.78
+  },
+  {
+   "word": "it.",
+   "start": 9.78,
+   "end": 9.98
+  },
+  {
+   "word": "He",
+   "start": 10.28,
+   "end": 10.4
+  },
+  {
+   "word": "offered",
+   "start": 10.4,
+   "end": 10.7
+  },
+  {
+   "word": "10",
+   "start": 10.7,
+   "end": 10.96
+  },
+  {
+   "word": "dollars.",
+   "start": 10.96,
+   "end": 11.26
+  },
+  {
+   "word": "The",
+   "start": 11.9,
+   "end": 12.1
+  },
+  {
+   "word": "British",
+   "start": 12.1,
+   "end": 12.3
+  },
+  {
+   "word": "wanted",
+   "start": 12.3,
+   "end": 12.72
+  },
+  {
+   "word": "100.",
+   "start": 12.72,
+   "end": 13.78
+  },
+  {
+   "word": "Britain",
+   "start": 13.78,
+   "end": 14.08
+  },
+  {
+   "word": "threatened",
+   "start": 14.08,
+   "end": 14.36
+  },
+  {
+   "word": "to",
+   "start": 14.36,
+   "end": 14.58
+  },
+  {
+   "word": "arrest",
+   "start": 14.58,
+   "end": 14.78
+  },
+  {
+   "word": "him...",
+   "start": 14.78,
+   "end": 15.08
+  },
+  {
+   "word": "so",
+   "start": 15.7,
+   "end": 16.02
+  },
+  {
+   "word": "America",
+   "start": 16.02,
+   "end": 16.48
+  },
+  {
+   "word": "sent",
+   "start": 16.48,
+   "end": 16.74
+  },
+  {
+   "word": "soldiers.",
+   "start": 16.74,
+   "end": 17.14
+  },
+  {
+   "word": "Soon,",
+   "start": 17.84,
+   "end": 18.12
+  },
+  {
+   "word": "461",
+   "start": 18.38,
+   "end": 19.34
+  },
+  {
+   "word": "American",
+   "start": 19.34,
+   "end": 19.8
+  },
+  {
+   "word": "troops",
+   "start": 19.8,
+   "end": 20.14
+  },
+  {
+   "word": "faced",
+   "start": 20.14,
+   "end": 20.5
+  },
+  {
+   "word": "five",
+   "start": 20.5,
+   "end": 20.86
+  },
+  {
+   "word": "British",
+   "start": 20.86,
+   "end": 21.18
+  },
+  {
+   "word": "warships.",
+   "start": 21.18,
+   "end": 21.64
+  },
+  {
+   "word": "Nobody",
+   "start": 22.34,
+   "end": 22.54
+  },
+  {
+   "word": "fired",
+   "start": 22.54,
+   "end": 22.86
+  },
+  {
+   "word": "a",
+   "start": 22.86,
+   "end": 23.02
+  },
+  {
+   "word": "shot.",
+   "start": 23.02,
+   "end": 23.24
+  },
+  {
+   "word": "The",
+   "start": 23.88,
+   "end": 24.0
+  },
+  {
+   "word": "only",
+   "start": 24.0,
+   "end": 24.2
+  },
+  {
+   "word": "casualty...",
+   "start": 24.2,
+   "end": 24.8
+  },
+  {
+   "word": "was",
+   "start": 24.8,
+   "end": 25.8
+  },
+  {
+   "word": "the",
+   "start": 25.8,
+   "end": 26.16
+  },
+  {
+   "word": "pig.",
+   "start": 26.16,
+   "end": 26.54
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 3.148
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Never pay the minimum. Watch what happens.",
+   "words": [
+    {
+     "w": "Never",
+     "t": 0.0,
+     "end": 0.5
+    },
+    {
+     "w": "pay",
+     "t": 0.5,
+     "end": 0.74
+    },
+    {
+     "w": "the",
+     "t": 0.74,
+     "end": 0.86
+    },
+    {
+     "w": "minimum.",
+     "t": 0.86,
+     "end": 1.2
+    },
+    {
+     "w": "Watch",
+     "t": 1.48,
+     "end": 1.86
+    },
+    {
+     "w": "what",
+     "t": 1.86,
+     "end": 2.08
+    },
+    {
+     "w": "happens.",
+     "t": 2.08,
+     "end": 2.42
+    }
+   ]
+  }
+ ]
+}

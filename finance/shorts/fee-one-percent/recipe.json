@@ -1,0 +1,786 @@
+{
+ "slug": "fee-one-percent",
+ "style": "S2",
+ "hook": {
+  "text": "1% FEE, 40 YEARS",
+  "again": "7:all"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · 7%/YR BEFORE FEES",
+  "from": 1,
+  "until": "7:all"
+ },
+ "eggs": [
+  "cat",
+  {
+   "egg": "sticky",
+   "text": "FEES NEVER SLEEP"
+  }
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "office",
+   "note": "frame 0: Spender grinning at a tiny red 1% FEE tag that slams in under the chin",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": "fee",
+       "pose": "idle",
+       "emotion": "curious"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "tag0",
+     "kit": "label",
+     "text": [
+      "1% FEE"
+     ],
+     "color": "#d62a2a",
+     "at": "mark:0.3,1.3,0.45",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "shake",
+     "at": 0.1
+    }
+   ]
+  },
+  {
+   "at": 1.0,
+   "note": "the 1% looks tiny: Spender shrugs it off (PC: cut at 1.0 s per MAIN hook rule; was tiny)",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "spender.face",
+    "hit": "tiny",
+    "dist": 1.6,
+    "az": 14
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "tiny",
+     "kit": "label",
+     "text": [
+      "1%"
+     ],
+     "color": "#d62a2a",
+     "at": "mark:0.45,1.25,0.55",
+     "size": [
+      0.24,
+      0.14,
+      0.04
+     ],
+     "motion": "fly-in",
+     "hit": "tiny"
+    }
+   ]
+  },
+  {
+   "at": "over",
+   "note": "40-year calendar flips",
+   "cam": {
+    "preset": "whip",
+    "target": "wall:0,-0.5,0",
+    "dist": 2.4
+   },
+   "props": [
+    {
+     "id": "cal",
+     "kit": "calendar",
+     "text": [
+      "YEARS",
+      "40",
+      "OF FEES"
+     ],
+     "color": "#d62a2a",
+     "at": "wall",
+     "motion": "count-up",
+     "hit": "forty",
+     "count": {
+      "from": 1,
+      "to": 40,
+      "dur": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "at": "it",
+   "note": "it isn't tiny: shock",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "spender.face",
+    "hit": "isn't",
+    "dist": 1.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "mark",
+     "from": "isn't",
+     "squash": [
+      "isn't"
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "isn't"
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "in": "cut",
+   "note": "race starts: same $500 a month",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "mS",
+     "kit": "label",
+     "text": [
+      "$500/MO"
+     ],
+     "color": "#d62a2a",
+     "at": "left:0,1.95,0.35",
+     "size": [
+      0.6,
+      0.26,
+      0.05
+     ],
+     "motion": "dropSlam",
+     "hit": "five",
+     "drop": 0.6
+    },
+    {
+     "id": "mV",
+     "kit": "label",
+     "text": [
+      "$500/MO"
+     ],
+     "color": "#1f9e4f",
+     "at": "right:0,1.95,0.35",
+     "size": [
+      0.6,
+      0.26,
+      0.05
+     ],
+     "motion": "dropSlam",
+     "hit": "five",
+     "drop": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "at": "five",
+     "sfx": "coins",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:same",
+   "note": "same investments: one fund block between them",
+   "cam": {
+    "preset": "pushIn",
+    "target": "fund",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "point",
+     "at": "left",
+     "face": "fund"
+    },
+    {
+     "id": "saver",
+     "pose": "point",
+     "at": "right",
+     "face": "fund"
+    }
+   ],
+   "props": [
+    {
+     "id": "fund",
+     "kit": "block",
+     "text": [
+      "SAME",
+      "INVESTMENTS"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.9,
+      0.7,
+      0.5
+     ],
+     "at": "centre:0,0,-0.6",
+     "motion": "dropSlam",
+     "hit": "investments",
+     "drop": 0.8
+    }
+   ]
+  },
+  {
+   "at": "3:saver",
+   "note": "Saver: 0.1% fee",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.55,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "f01",
+     "kit": "label",
+     "text": [
+      "0.1% FEE"
+     ],
+     "color": "#1f9e4f",
+     "at": "mark:-0.5,1.2,0.55",
+     "size": [
+      0.6,
+      0.24,
+      0.05
+     ],
+     "motion": "dropSlam",
+     "hit": "tenth",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "tenth",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:spender",
+   "note": "Spender: 1% fee",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "f1",
+     "kit": "label",
+     "text": [
+      "1% FEE"
+     ],
+     "color": "#d62a2a",
+     "at": "mark:0.5,1.2,0.55",
+     "size": [
+      0.6,
+      0.24,
+      0.05
+     ],
+     "motion": "dropSlam",
+     "hit": "3:one",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:one",
+     "sfx": "stamp",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "4:year",
+   "in": "cut",
+   "note": "year 10: barely a gap ($86,068 vs $81,940)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "y10S",
+     "kit": "label",
+     "text": [
+      "YEAR 10"
+     ],
+     "color": "#d62a2a",
+     "at": "left:0,1.95,0.35",
+     "size": [
+      0.62,
+      0.3,
+      0.05
+     ],
+     "motion": "count-up",
+     "hit": "ten",
+     "count": {
+      "from": 0,
+      "to": 81940,
+      "prefix": "$",
+      "dur": 0.8
+     }
+    },
+    {
+     "id": "y10V",
+     "kit": "label",
+     "text": [
+      "YEAR 10"
+     ],
+     "color": "#1f9e4f",
+     "at": "right:0,1.95,0.35",
+     "size": [
+      0.62,
+      0.3,
+      0.05
+     ],
+     "motion": "count-up",
+     "hit": "ten",
+     "count": {
+      "from": 0,
+      "to": 86068,
+      "prefix": "$",
+      "dur": 0.8
+     }
+    }
+   ]
+  },
+  {
+   "at": "4:but",
+   "mood": "whisper",
+   "note": "OPEN LOOP: two covered YEAR 40 boards tremble (PC: boards apart and camera widened; v1 overlapped them)",
+   "cam": {
+    "preset": "pushIn",
+    "target": "centre:0,1.3,0",
+    "dist": 3.8
+   },
+   "props": [
+    {
+     "id": "c1",
+     "kit": "label",
+     "text": [
+      "YEAR 40",
+      "$???"
+     ],
+     "color": "#3a3f58",
+     "at": "centre:-0.55,1.3,0",
+     "size": [
+      0.56,
+      0.44,
+      0.05
+     ]
+    },
+    {
+     "id": "c2",
+     "kit": "label",
+     "text": [
+      "YEAR 40",
+      "$???"
+     ],
+     "color": "#3a3f58",
+     "at": "centre:0.55,1.3,0",
+     "size": [
+      0.56,
+      0.44,
+      0.05
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "wait"
+    },
+    {
+     "fx": "shake",
+     "at": "4:forty"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:but",
+     "sfx": "suspense",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:saver",
+   "note": "Saver's counter runs to about $1.28M",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.7,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "mark",
+     "from": "million"
+    }
+   ],
+   "props": [
+    {
+     "id": "v40",
+     "kit": "label",
+     "text": [
+      "SAVER"
+     ],
+     "color": "#1f9e4f",
+     "at": "mark:-0.55,1.25,0.55",
+     "size": [
+      0.7,
+      0.3,
+      0.05
+     ],
+     "motion": "count-up",
+     "hit": "5:about",
+     "count": {
+      "from": 86068,
+      "to": 1276125,
+      "prefix": "$",
+      "dur": 1.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "million",
+     "sfx": "cash",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "5:spender",
+   "note": "Spender: just under $1M",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": -10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "under",
+       "pose": "despair"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "s40",
+     "kit": "label",
+     "text": [
+      "SPENDER"
+     ],
+     "color": "#d62a2a",
+     "at": "mark:0.55,1.25,0.55",
+     "size": [
+      0.7,
+      0.3,
+      0.05
+     ],
+     "motion": "count-up",
+     "hit": "just",
+     "count": {
+      "from": 81940,
+      "to": 995745,
+      "prefix": "$",
+      "dur": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "at": "6:that",
+   "note": "TWIST: the fee's bill slams in, about $280K",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "centre:0.6,0.1,-0.4",
+    "hit": "6:two",
+    "dist": 3.0
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "left",
+     "from": "6:two",
+     "squash": [
+      "6:two"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "ate",
+     "kit": "debtBlock",
+     "text": [
+      "FEES"
+     ],
+     "size": [
+      1.1,
+      1.0,
+      0.6
+     ],
+     "at": "centre:0.6,0,-0.4",
+     "motion": "count-up",
+     "hit": "6:two",
+     "count": {
+      "from": 0,
+      "to": 280380,
+      "prefix": "$",
+      "dur": 1.2
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:two"
+    },
+    {
+     "fx": "shake",
+     "at": "6:two"
+    },
+    {
+     "fx": "dust",
+     "at": "6:two",
+     "p": "centre:0.6,0.02,-0.4"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "thousand",
+     "sfx": "cash",
+     "db": -4
+    }
+   ]
+  },
+  {
+   "at": "6:more",
+   "note": "more than Spender put in: $240,000 block vs $280,380 block",
+   "cam": {
+    "preset": "medium",
+    "target": "centre:0.6,0.35,-0.6",
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "collapse",
+     "at": "left",
+     "from": "put"
+    }
+   ],
+   "props": [
+    {
+     "id": "inB",
+     "kit": "block",
+     "text": [
+      "PUT IN",
+      "$240,000"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.8,
+      0.8,
+      0.5
+     ],
+     "at": "centre:0.2,0,-0.6"
+    },
+    {
+     "id": "feeB",
+     "kit": "debtBlock",
+     "text": [
+      "FEES",
+      "$280,380"
+     ],
+     "size": [
+      0.9,
+      1.0,
+      0.5
+     ],
+     "at": "centre:1.2,0,-0.6",
+     "motion": "dropSlam",
+     "hit": "ever"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "ever"
+    }
+   ]
+  },
+  {
+   "at": "7:in",
+   "mood": "ending",
+   "note": "in this example",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.6,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious"
+    }
+   ]
+  },
+  {
+   "at": "7:all",
+   "mood": "ending",
+   "note": "LOOP: back to frame 0, the tiny 1% FEE tag slams in again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "tag0",
+     "kit": "label",
+     "text": [
+      "1% FEE"
+     ],
+     "color": "#d62a2a",
+     "at": "mark:0.3,1.3,0.45",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "motion": "dropSlam",
+     "hit": "small",
+     "drop": 0.25
+    }
+   ]
+  }
+ ]
+}

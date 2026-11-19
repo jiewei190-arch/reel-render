@@ -1,0 +1,402 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Saving more money can still make you lose.",
+   "words": [
+    {
+     "w": "Saving",
+     "t": 0.087,
+     "end": 0.436
+    },
+    {
+     "w": "more",
+     "t": 0.506,
+     "end": 0.646
+    },
+    {
+     "w": "money",
+     "t": 0.716,
+     "end": 1.065
+    },
+    {
+     "w": "can",
+     "t": 1.17,
+     "end": 1.274
+    },
+    {
+     "w": "still",
+     "t": 1.414,
+     "end": 1.623
+    },
+    {
+     "w": "make",
+     "t": 1.693,
+     "end": 1.833
+    },
+    {
+     "w": "you",
+     "t": 1.903,
+     "end": 1.972
+    },
+    {
+     "w": "lose.",
+     "t": 2.042,
+     "end": 2.741
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Spender saved seventy-two thousand. Saver saved just twenty-four.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 2.802,
+     "end": 3.221
+    },
+    {
+     "w": "saved",
+     "t": 3.29,
+     "end": 3.57
+    },
+    {
+     "w": "seventy-two",
+     "t": 3.709,
+     "end": 4.268
+    },
+    {
+     "w": "thousand.",
+     "t": 4.408,
+     "end": 5.315
+    },
+    {
+     "w": "Saver",
+     "t": 5.385,
+     "end": 5.734
+    },
+    {
+     "w": "saved",
+     "t": 5.804,
+     "end": 6.083
+    },
+    {
+     "w": "just",
+     "t": 6.293,
+     "end": 6.502
+    },
+    {
+     "w": "twenty-four.",
+     "t": 6.572,
+     "end": 7.41
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Saver put in two hundred a month from twenty-five to thirty-five, then stopped.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 7.471,
+     "end": 7.75
+    },
+    {
+     "w": "put",
+     "t": 7.82,
+     "end": 7.96
+    },
+    {
+     "w": "in",
+     "t": 8.064,
+     "end": 8.169
+    },
+    {
+     "w": "two",
+     "t": 8.239,
+     "end": 8.309
+    },
+    {
+     "w": "hundred",
+     "t": 8.449,
+     "end": 8.658
+    },
+    {
+     "w": "a",
+     "t": 8.693,
+     "end": 8.728
+    },
+    {
+     "w": "month",
+     "t": 8.798,
+     "end": 9.077
+    },
+    {
+     "w": "from",
+     "t": 9.182,
+     "end": 9.286
+    },
+    {
+     "w": "twenty-five",
+     "t": 9.426,
+     "end": 9.845
+    },
+    {
+     "w": "to",
+     "t": 9.95,
+     "end": 10.054
+    },
+    {
+     "w": "thirty-five,",
+     "t": 10.148,
+     "end": 10.962
+    },
+    {
+     "w": "then",
+     "t": 11.067,
+     "end": 11.172
+    },
+    {
+     "w": "stopped.",
+     "t": 11.346,
+     "end": 11.73
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Spender started at thirty-five and kept going to sixty-five.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 11.791,
+     "end": 12.21
+    },
+    {
+     "w": "started",
+     "t": 12.28,
+     "end": 12.559
+    },
+    {
+     "w": "at",
+     "t": 12.629,
+     "end": 12.769
+    },
+    {
+     "w": "thirty-five",
+     "t": 12.839,
+     "end": 13.467
+    },
+    {
+     "w": "and",
+     "t": 13.607,
+     "end": 13.816
+    },
+    {
+     "w": "kept",
+     "t": 13.886,
+     "end": 14.026
+    },
+    {
+     "w": "going",
+     "t": 14.095,
+     "end": 14.305
+    },
+    {
+     "w": "to",
+     "t": 14.41,
+     "end": 14.514
+    },
+    {
+     "w": "sixty-five.",
+     "t": 14.619,
+     "end": 15.422
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Same seven percent a year, as an example. Wait till you see sixty-five...",
+   "words": [
+    {
+     "w": "Same",
+     "t": 15.483,
+     "end": 15.832
+    },
+    {
+     "w": "seven",
+     "t": 15.902,
+     "end": 16.112
+    },
+    {
+     "w": "percent",
+     "t": 16.181,
+     "end": 16.461
+    },
+    {
+     "w": "a",
+     "t": 16.496,
+     "end": 16.53
+    },
+    {
+     "w": "year,",
+     "t": 16.6,
+     "end": 17.019
+    },
+    {
+     "w": "as",
+     "t": 17.089,
+     "end": 17.159
+    },
+    {
+     "w": "an",
+     "t": 17.194,
+     "end": 17.229
+    },
+    {
+     "w": "example.",
+     "t": 17.299,
+     "end": 17.717
+    },
+    {
+     "w": "Wait",
+     "t": 18.206,
+     "end": 18.416
+    },
+    {
+     "w": "till",
+     "t": 18.451,
+     "end": 18.555
+    },
+    {
+     "w": "you",
+     "t": 18.625,
+     "end": 18.695
+    },
+    {
+     "w": "see",
+     "t": 18.765,
+     "end": 18.974
+    },
+    {
+     "w": "sixty-five...",
+     "t": 19.044,
+     "end": 20.091
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Saver: about two hundred eighty-two thousand. Spender: about two hundred forty-five.",
+   "words": [
+    {
+     "w": "Saver:",
+     "t": 20.222,
+     "end": 20.99
+    },
+    {
+     "w": "about",
+     "t": 21.13,
+     "end": 21.27
+    },
+    {
+     "w": "two",
+     "t": 21.409,
+     "end": 21.479
+    },
+    {
+     "w": "hundred",
+     "t": 21.549,
+     "end": 21.758
+    },
+    {
+     "w": "eighty-two",
+     "t": 21.898,
+     "end": 22.247
+    },
+    {
+     "w": "thousand.",
+     "t": 22.387,
+     "end": 23.225
+    },
+    {
+     "w": "Spender:",
+     "t": 23.295,
+     "end": 24.063
+    },
+    {
+     "w": "about",
+     "t": 24.202,
+     "end": 24.342
+    },
+    {
+     "w": "two",
+     "t": 24.412,
+     "end": 24.482
+    },
+    {
+     "w": "hundred",
+     "t": 24.551,
+     "end": 24.691
+    },
+    {
+     "w": "forty-five.",
+     "t": 24.831,
+     "end": 25.668
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Time beat money. Nothing's guaranteed, but that's how",
+   "words": [
+    {
+     "w": "Time",
+     "t": 25.73,
+     "end": 26.149
+    },
+    {
+     "w": "beat",
+     "t": 26.288,
+     "end": 26.498
+    },
+    {
+     "w": "money.",
+     "t": 26.637,
+     "end": 27.161
+    },
+    {
+     "w": "Nothing's",
+     "t": 27.405,
+     "end": 27.685
+    },
+    {
+     "w": "guaranteed,",
+     "t": 27.754,
+     "end": 28.522
+    },
+    {
+     "w": "but",
+     "t": 28.592,
+     "end": 28.802
+    },
+    {
+     "w": "that's",
+     "t": 28.872,
+     "end": 29.081
+    },
+    {
+     "w": "how",
+     "t": 29.221,
+     "end": 29.57
+    }
+   ]
+  }
+ ]
+}

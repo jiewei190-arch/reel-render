@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1268,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 475,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your twelve hundred dollar couch says no interest for a year.",
+   "start": 0.089,
+   "end": 3.284
+  },
+  {
+   "line": 2,
+   "text": "Same couch, same store card. Saver pays a hundred a month. Spender pays ninety-five.",
+   "start": 3.417,
+   "end": 8.742
+  },
+  {
+   "line": 3,
+   "text": "Twelve months later, Saver is done. Spender is just sixty dollars short. Close enough?",
+   "start": 8.875,
+   "end": 14.271
+  },
+  {
+   "line": 4,
+   "text": "But the fine print said, if paid in full...",
+   "start": 14.404,
+   "end": 17.031
+  },
+  {
+   "line": 5,
+   "text": "That interest was hiding, growing from day one, at about thirty percent.",
+   "start": 17.164,
+   "end": 21.495
+  },
+  {
+   "line": 6,
+   "text": "Spender's sixty dollar gap just cost about two hundred dollars in interest.",
+   "start": 21.628,
+   "end": 25.817
+  },
+  {
+   "line": 7,
+   "text": "Saver paid nothing extra. Spender trusted the sticker:",
+   "start": 25.95,
+   "end": 29.5
+  }
+ ]
+}

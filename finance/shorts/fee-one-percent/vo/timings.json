@@ -1,0 +1,452 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your one percent fee sounds tiny. Over forty years, it isn't.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.086,
+     "end": 0.292
+    },
+    {
+     "w": "one",
+     "t": 0.361,
+     "end": 0.498
+    },
+    {
+     "w": "percent",
+     "t": 0.567,
+     "end": 0.841
+    },
+    {
+     "w": "fee",
+     "t": 0.91,
+     "end": 1.116
+    },
+    {
+     "w": "sounds",
+     "t": 1.185,
+     "end": 1.46
+    },
+    {
+     "w": "tiny.",
+     "t": 1.528,
+     "end": 2.078
+    },
+    {
+     "w": "Over",
+     "t": 2.421,
+     "end": 2.627
+    },
+    {
+     "w": "forty",
+     "t": 2.696,
+     "end": 2.971
+    },
+    {
+     "w": "years,",
+     "t": 3.039,
+     "end": 3.589
+    },
+    {
+     "w": "it",
+     "t": 3.657,
+     "end": 3.726
+    },
+    {
+     "w": "isn't.",
+     "t": 3.795,
+     "end": 4.344
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Spender and Saver each invest five hundred dollars a month.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 4.404,
+     "end": 4.885
+    },
+    {
+     "w": "and",
+     "t": 4.954,
+     "end": 5.023
+    },
+    {
+     "w": "Saver",
+     "t": 5.16,
+     "end": 5.503
+    },
+    {
+     "w": "each",
+     "t": 5.641,
+     "end": 5.847
+    },
+    {
+     "w": "invest",
+     "t": 5.915,
+     "end": 6.259
+    },
+    {
+     "w": "five",
+     "t": 6.396,
+     "end": 6.602
+    },
+    {
+     "w": "hundred",
+     "t": 6.671,
+     "end": 6.808
+    },
+    {
+     "w": "dollars",
+     "t": 6.877,
+     "end": 7.152
+    },
+    {
+     "w": "a",
+     "t": 7.22,
+     "end": 7.289
+    },
+    {
+     "w": "month.",
+     "t": 7.358,
+     "end": 7.839
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Same investments. Saver pays a tenth of a percent. Spender pays one.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 7.899,
+     "end": 8.173
+    },
+    {
+     "w": "investments.",
+     "t": 8.242,
+     "end": 9.101
+    },
+    {
+     "w": "Saver",
+     "t": 9.341,
+     "end": 9.547
+    },
+    {
+     "w": "pays",
+     "t": 9.616,
+     "end": 9.891
+    },
+    {
+     "w": "a",
+     "t": 9.959,
+     "end": 10.028
+    },
+    {
+     "w": "tenth",
+     "t": 10.097,
+     "end": 10.303
+    },
+    {
+     "w": "of",
+     "t": 10.371,
+     "end": 10.406
+    },
+    {
+     "w": "a",
+     "t": 10.44,
+     "end": 10.474
+    },
+    {
+     "w": "percent.",
+     "t": 10.509,
+     "end": 11.127
+    },
+    {
+     "w": "Spender",
+     "t": 11.333,
+     "end": 11.676
+    },
+    {
+     "w": "pays",
+     "t": 11.814,
+     "end": 12.02
+    },
+    {
+     "w": "one.",
+     "t": 12.088,
+     "end": 12.569
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Year ten, barely a gap. But wait till year forty...",
+   "words": [
+    {
+     "w": "Year",
+     "t": 12.629,
+     "end": 12.835
+    },
+    {
+     "w": "ten,",
+     "t": 12.904,
+     "end": 13.522
+    },
+    {
+     "w": "barely",
+     "t": 13.66,
+     "end": 14.003
+    },
+    {
+     "w": "a",
+     "t": 14.037,
+     "end": 14.072
+    },
+    {
+     "w": "gap.",
+     "t": 14.14,
+     "end": 14.484
+    },
+    {
+     "w": "But",
+     "t": 14.827,
+     "end": 14.965
+    },
+    {
+     "w": "wait",
+     "t": 15.033,
+     "end": 15.171
+    },
+    {
+     "w": "till",
+     "t": 15.205,
+     "end": 15.308
+    },
+    {
+     "w": "year",
+     "t": 15.377,
+     "end": 15.583
+    },
+    {
+     "w": "forty...",
+     "t": 15.72,
+     "end": 16.407
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Saver has about one point two eight million. Spender, just under one million.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 16.467,
+     "end": 16.879
+    },
+    {
+     "w": "has",
+     "t": 16.982,
+     "end": 17.085
+    },
+    {
+     "w": "about",
+     "t": 17.223,
+     "end": 17.36
+    },
+    {
+     "w": "one",
+     "t": 17.429,
+     "end": 17.566
+    },
+    {
+     "w": "point",
+     "t": 17.703,
+     "end": 17.978
+    },
+    {
+     "w": "two",
+     "t": 18.047,
+     "end": 18.116
+    },
+    {
+     "w": "eight",
+     "t": 18.253,
+     "end": 18.39
+    },
+    {
+     "w": "million.",
+     "t": 18.528,
+     "end": 19.283
+    },
+    {
+     "w": "Spender,",
+     "t": 19.352,
+     "end": 20.039
+    },
+    {
+     "w": "just",
+     "t": 20.107,
+     "end": 20.313
+    },
+    {
+     "w": "under",
+     "t": 20.382,
+     "end": 20.588
+    },
+    {
+     "w": "one",
+     "t": 20.726,
+     "end": 20.794
+    },
+    {
+     "w": "million.",
+     "t": 20.863,
+     "end": 21.481
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "That fee ate about two hundred eighty thousand dollars. More than Spender ever put in.",
+   "words": [
+    {
+     "w": "That",
+     "t": 21.541,
+     "end": 21.747
+    },
+    {
+     "w": "fee",
+     "t": 21.885,
+     "end": 22.091
+    },
+    {
+     "w": "ate",
+     "t": 22.159,
+     "end": 22.297
+    },
+    {
+     "w": "about",
+     "t": 22.434,
+     "end": 22.571
+    },
+    {
+     "w": "two",
+     "t": 22.64,
+     "end": 22.778
+    },
+    {
+     "w": "hundred",
+     "t": 22.846,
+     "end": 23.052
+    },
+    {
+     "w": "eighty",
+     "t": 23.258,
+     "end": 23.499
+    },
+    {
+     "w": "thousand",
+     "t": 23.602,
+     "end": 23.945
+    },
+    {
+     "w": "dollars.",
+     "t": 24.014,
+     "end": 24.701
+    },
+    {
+     "w": "More",
+     "t": 24.907,
+     "end": 25.044
+    },
+    {
+     "w": "than",
+     "t": 25.113,
+     "end": 25.181
+    },
+    {
+     "w": "Spender",
+     "t": 25.25,
+     "end": 25.662
+    },
+    {
+     "w": "ever",
+     "t": 25.731,
+     "end": 25.937
+    },
+    {
+     "w": "put",
+     "t": 26.006,
+     "end": 26.143
+    },
+    {
+     "w": "in.",
+     "t": 26.212,
+     "end": 26.555
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "In this example, all from a number this small:",
+   "words": [
+    {
+     "w": "In",
+     "t": 26.615,
+     "end": 26.753
+    },
+    {
+     "w": "this",
+     "t": 26.821,
+     "end": 26.89
+    },
+    {
+     "w": "example,",
+     "t": 26.959,
+     "end": 27.714
+    },
+    {
+     "w": "all",
+     "t": 27.817,
+     "end": 27.92
+    },
+    {
+     "w": "from",
+     "t": 27.989,
+     "end": 28.058
+    },
+    {
+     "w": "a",
+     "t": 28.126,
+     "end": 28.161
+    },
+    {
+     "w": "number",
+     "t": 28.195,
+     "end": 28.47
+    },
+    {
+     "w": "this",
+     "t": 28.607,
+     "end": 28.813
+    },
+    {
+     "w": "small:",
+     "t": 28.882,
+     "end": 29.5
+    }
+   ]
+  }
+ ]
+}

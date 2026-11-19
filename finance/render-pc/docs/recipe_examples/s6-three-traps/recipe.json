@@ -1,0 +1,15 @@
+{
+  "slug": "s6-three-traps",
+  "style": "S6",
+  "hook": {"text": "3 TRAPS. #1 IS WORST.", "again": "line:6"},
+  "cast": {"spender": "SPENDER", "saver": "SAVER"},
+  "tag": {"text": "EXAMPLE", "from": "line:2", "until": "line:6"},
+  "shots": [
+    {"at": 0, "set": "street", "cam": {"preset": "slamZoom", "target": "spender", "hit": 0.25, "dist": 2.4}, "actors": [{"id": "spender", "pose": "shock", "at": "mark", "from": 0.2}], "props": [{"id": "three", "kit": "block", "text": ["3"], "color": "#d62a2a", "size": [0.7, 0.7, 0.5], "at": "left", "motion": "dropSlam", "hit": 0.25, "drop": 1.0}, {"id": "every", "kit": "label", "text": ["$$ EVERY", "30 DAYS"], "size": [0.9, 0.4, 0.05], "at": "left:0,1.5,0.2", "motion": "dropSlam", "hit": 0.2, "drop": 0.6}], "fx": [{"fx": "dust", "at": 0.25, "p": "left"}]},
+    {"at": "line:2", "set": "home", "cam": {"preset": "whip", "target": "trial", "dist": 2.4}, "actors": [{"id": "spender", "pose": "smug", "at": "mark"}], "props": [{"id": "trial", "kit": "label", "text": ["#3", "FREE TRIAL"], "size": [1.0, 0.5, 0.05], "at": "wall", "motion": "fly-in", "hit": "free"}, {"id": "bill", "kit": "label", "text": ["BILL", "$14.99"], "at": "spender.face", "motion": "stick-to-face", "on": "spender", "hit": "bill", "size": [0.36, 0.26, 0.04]}]},
+    {"at": "line:3", "set": "store", "cam": {"preset": "medium", "target": "card", "dist": 2.6}, "actors": [{"id": "spender", "pose": "swipe-card", "at": "mark", "from": "store"}], "props": [{"id": "card", "kit": "label", "text": ["#2 STORE CARD", "-10% / +30%"], "size": [1.2, 0.5, 0.05], "at": "counterTop:0,0.6,0", "motion": "dropSlam", "hit": "store", "drop": 0.8}]},
+    {"at": "line:4", "mood": "whisper", "cam": {"preset": "pushIn", "target": "cover", "dist": 2.4}, "props": [{"id": "cover", "kit": "block", "text": ["#1", "?"], "color": "#3a3f58", "size": [1.0, 1.0, 0.6], "at": "counterTop:0,0,0"}]},
+    {"at": "line:5", "cam": {"preset": "slamZoom", "target": "spender.face", "hit": "line:5", "dist": 1.5}, "actors": [{"id": "spender", "pose": "despair", "at": "mark", "from": "years"}], "props": [{"id": "one", "kit": "debtBlock", "text": ["#1", "MINIMUM"], "size": [1.1, 1.1, 0.7], "at": "counterTop:-0.3,0,0", "motion": "burst", "hit": "years"}], "fx": ["shake"]},
+    {"at": "line:6", "mood": "ending", "cam": {"preset": "medium", "target": "saver", "dist": 2.8}, "actors": [{"id": "saver", "pose": "celebrate", "at": "right"}, {"id": "spender", "pose": "idle", "at": "left", "emotion": "curious"}], "props": [{"id": "skip", "kit": "stamp", "text": "PAY MORE THAN THE MINIMUM", "color": "#1f9e4f", "size": [0.9, 0.2, 0.03], "at": "right:0,1.95,0.3", "hit": "skip"}]}
+  ]
+}

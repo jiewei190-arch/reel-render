@@ -1,0 +1,324 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 20.1
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A million dollars right now, or one penny doubled every day for thirty days?",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "end": 0.165
+    },
+    {
+     "w": "million",
+     "t": 0.165,
+     "end": 0.6
+    },
+    {
+     "w": "dollars",
+     "t": 0.6,
+     "end": 1.035
+    },
+    {
+     "w": "right",
+     "t": 1.035,
+     "end": 1.38
+    },
+    {
+     "w": "now,",
+     "t": 1.38,
+     "end": 1.635
+    },
+    {
+     "w": "or",
+     "t": 1.635,
+     "end": 1.845
+    },
+    {
+     "w": "one",
+     "t": 1.845,
+     "end": 2.1
+    },
+    {
+     "w": "penny",
+     "t": 2.1,
+     "end": 2.445
+    },
+    {
+     "w": "doubled",
+     "t": 2.445,
+     "end": 2.88
+    },
+    {
+     "w": "every",
+     "t": 2.88,
+     "end": 3.225
+    },
+    {
+     "w": "day",
+     "t": 3.225,
+     "end": 3.48
+    },
+    {
+     "w": "for",
+     "t": 3.48,
+     "end": 3.735
+    },
+    {
+     "w": "thirty",
+     "t": 3.735,
+     "end": 4.125
+    },
+    {
+     "w": "days?",
+     "t": 4.125,
+     "end": 4.425
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Think fast.",
+   "words": [
+    {
+     "w": "Think",
+     "t": 4.775,
+     "end": 5.12
+    },
+    {
+     "w": "fast.",
+     "t": 5.12,
+     "end": 5.42
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Day ten, the penny is only five dollars. The million looks smart.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 5.77,
+     "end": 6.025
+    },
+    {
+     "w": "ten,",
+     "t": 6.025,
+     "end": 6.28
+    },
+    {
+     "w": "the",
+     "t": 6.28,
+     "end": 6.535
+    },
+    {
+     "w": "penny",
+     "t": 6.535,
+     "end": 6.88
+    },
+    {
+     "w": "is",
+     "t": 6.88,
+     "end": 7.09
+    },
+    {
+     "w": "only",
+     "t": 7.09,
+     "end": 7.39
+    },
+    {
+     "w": "five",
+     "t": 7.39,
+     "end": 7.69
+    },
+    {
+     "w": "dollars.",
+     "t": 7.69,
+     "end": 8.125
+    },
+    {
+     "w": "The",
+     "t": 8.125,
+     "end": 8.38
+    },
+    {
+     "w": "million",
+     "t": 8.38,
+     "end": 8.815
+    },
+    {
+     "w": "looks",
+     "t": 8.815,
+     "end": 9.16
+    },
+    {
+     "w": "smart.",
+     "t": 9.16,
+     "end": 9.505
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Day twenty, about five thousand. Still losing.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 9.855,
+     "end": 10.11
+    },
+    {
+     "w": "twenty,",
+     "t": 10.11,
+     "end": 10.5
+    },
+    {
+     "w": "about",
+     "t": 10.5,
+     "end": 10.845
+    },
+    {
+     "w": "five",
+     "t": 10.845,
+     "end": 11.145
+    },
+    {
+     "w": "thousand.",
+     "t": 11.145,
+     "end": 11.625
+    },
+    {
+     "w": "Still",
+     "t": 11.625,
+     "end": 11.97
+    },
+    {
+     "w": "losing.",
+     "t": 11.97,
+     "end": 12.36
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "But doubling gets wild at the end.",
+   "words": [
+    {
+     "w": "But",
+     "t": 12.71,
+     "end": 12.965
+    },
+    {
+     "w": "doubling",
+     "t": 12.965,
+     "end": 13.445
+    },
+    {
+     "w": "gets",
+     "t": 13.445,
+     "end": 13.745
+    },
+    {
+     "w": "wild",
+     "t": 13.745,
+     "end": 14.045
+    },
+    {
+     "w": "at",
+     "t": 14.045,
+     "end": 14.255
+    },
+    {
+     "w": "the",
+     "t": 14.255,
+     "end": 14.51
+    },
+    {
+     "w": "end.",
+     "t": 14.51,
+     "end": 14.765
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Day thirty, the penny is over five million dollars. Did you pick the penny?",
+   "words": [
+    {
+     "w": "Day",
+     "t": 15.115,
+     "end": 15.37
+    },
+    {
+     "w": "thirty,",
+     "t": 15.37,
+     "end": 15.76
+    },
+    {
+     "w": "the",
+     "t": 15.76,
+     "end": 16.015
+    },
+    {
+     "w": "penny",
+     "t": 16.015,
+     "end": 16.36
+    },
+    {
+     "w": "is",
+     "t": 16.36,
+     "end": 16.57
+    },
+    {
+     "w": "over",
+     "t": 16.57,
+     "end": 16.87
+    },
+    {
+     "w": "five",
+     "t": 16.87,
+     "end": 17.17
+    },
+    {
+     "w": "million",
+     "t": 17.17,
+     "end": 17.605
+    },
+    {
+     "w": "dollars.",
+     "t": 17.605,
+     "end": 18.04
+    },
+    {
+     "w": "Did",
+     "t": 18.04,
+     "end": 18.295
+    },
+    {
+     "w": "you",
+     "t": 18.295,
+     "end": 18.55
+    },
+    {
+     "w": "pick",
+     "t": 18.55,
+     "end": 18.85
+    },
+    {
+     "w": "the",
+     "t": 18.85,
+     "end": 19.105
+    },
+    {
+     "w": "penny?",
+     "t": 19.105,
+     "end": 19.45
+    }
+   ]
+  }
+ ]
+}

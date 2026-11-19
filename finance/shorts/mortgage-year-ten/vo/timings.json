@@ -1,0 +1,447 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "You borrow four hundred thousand dollars for a house.",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.084,
+     "end": 0.219
+    },
+    {
+     "w": "borrow",
+     "t": 0.387,
+     "end": 0.555
+    },
+    {
+     "w": "four",
+     "t": 0.69,
+     "end": 0.824
+    },
+    {
+     "w": "hundred",
+     "t": 0.891,
+     "end": 1.093
+    },
+    {
+     "w": "thousand",
+     "t": 1.228,
+     "end": 1.497
+    },
+    {
+     "w": "dollars",
+     "t": 1.631,
+     "end": 1.968
+    },
+    {
+     "w": "for",
+     "t": 2.035,
+     "end": 2.17
+    },
+    {
+     "w": "a",
+     "t": 2.203,
+     "end": 2.237
+    },
+    {
+     "w": "house.",
+     "t": 2.304,
+     "end": 2.91
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same house. Spender takes thirty years at about seven percent. Saver takes fifteen.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 2.969,
+     "end": 3.204
+    },
+    {
+     "w": "house.",
+     "t": 3.238,
+     "end": 3.641
+    },
+    {
+     "w": "Spender",
+     "t": 4.045,
+     "end": 4.381
+    },
+    {
+     "w": "takes",
+     "t": 4.449,
+     "end": 4.65
+    },
+    {
+     "w": "thirty",
+     "t": 4.785,
+     "end": 4.987
+    },
+    {
+     "w": "years",
+     "t": 5.121,
+     "end": 5.39
+    },
+    {
+     "w": "at",
+     "t": 5.458,
+     "end": 5.525
+    },
+    {
+     "w": "about",
+     "t": 5.659,
+     "end": 5.794
+    },
+    {
+     "w": "seven",
+     "t": 5.929,
+     "end": 6.063
+    },
+    {
+     "w": "percent.",
+     "t": 6.198,
+     "end": 6.938
+    },
+    {
+     "w": "Saver",
+     "t": 7.005,
+     "end": 7.274
+    },
+    {
+     "w": "takes",
+     "t": 7.409,
+     "end": 7.61
+    },
+    {
+     "w": "fifteen.",
+     "t": 7.678,
+     "end": 8.35
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender's first payment: about twenty-seven hundred dollars. Only three hundred twenty pays off the house.",
+   "words": [
+    {
+     "w": "Spender's",
+     "t": 8.409,
+     "end": 8.88
+    },
+    {
+     "w": "first",
+     "t": 8.948,
+     "end": 9.149
+    },
+    {
+     "w": "payment:",
+     "t": 9.217,
+     "end": 9.889
+    },
+    {
+     "w": "about",
+     "t": 10.024,
+     "end": 10.158
+    },
+    {
+     "w": "twenty-seven",
+     "t": 10.226,
+     "end": 10.697
+    },
+    {
+     "w": "hundred",
+     "t": 10.764,
+     "end": 10.899
+    },
+    {
+     "w": "dollars.",
+     "t": 10.966,
+     "end": 11.773
+    },
+    {
+     "w": "Only",
+     "t": 11.908,
+     "end": 12.042
+    },
+    {
+     "w": "three",
+     "t": 12.109,
+     "end": 12.244
+    },
+    {
+     "w": "hundred",
+     "t": 12.311,
+     "end": 12.446
+    },
+    {
+     "w": "twenty",
+     "t": 12.648,
+     "end": 12.849
+    },
+    {
+     "w": "pays",
+     "t": 12.984,
+     "end": 13.186
+    },
+    {
+     "w": "off",
+     "t": 13.253,
+     "end": 13.32
+    },
+    {
+     "w": "the",
+     "t": 13.388,
+     "end": 13.421
+    },
+    {
+     "w": "house.",
+     "t": 13.455,
+     "end": 14.06
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But wait till you see year ten...",
+   "words": [
+    {
+     "w": "But",
+     "t": 14.119,
+     "end": 14.321
+    },
+    {
+     "w": "wait",
+     "t": 14.422,
+     "end": 14.523
+    },
+    {
+     "w": "till",
+     "t": 14.557,
+     "end": 14.657
+    },
+    {
+     "w": "you",
+     "t": 14.725,
+     "end": 14.859
+    },
+    {
+     "w": "see",
+     "t": 14.927,
+     "end": 14.994
+    },
+    {
+     "w": "year",
+     "t": 15.061,
+     "end": 15.263
+    },
+    {
+     "w": "ten...",
+     "t": 15.398,
+     "end": 16.003
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Ten years in, Spender has paid three hundred twenty-three thousand... and still owes three hundred forty-four thousand.",
+   "words": [
+    {
+     "w": "Ten",
+     "t": 16.062,
+     "end": 16.264
+    },
+    {
+     "w": "years",
+     "t": 16.331,
+     "end": 16.533
+    },
+    {
+     "w": "in,",
+     "t": 16.6,
+     "end": 17.071
+    },
+    {
+     "w": "Spender",
+     "t": 17.138,
+     "end": 17.407
+    },
+    {
+     "w": "has",
+     "t": 17.475,
+     "end": 17.609
+    },
+    {
+     "w": "paid",
+     "t": 17.676,
+     "end": 17.946
+    },
+    {
+     "w": "three",
+     "t": 18.013,
+     "end": 18.147
+    },
+    {
+     "w": "hundred",
+     "t": 18.215,
+     "end": 18.416
+    },
+    {
+     "w": "twenty-three",
+     "t": 18.551,
+     "end": 18.955
+    },
+    {
+     "w": "thousand...",
+     "t": 19.156,
+     "end": 20.031
+    },
+    {
+     "w": "and",
+     "t": 20.065,
+     "end": 20.098
+    },
+    {
+     "w": "still",
+     "t": 20.166,
+     "end": 20.435
+    },
+    {
+     "w": "owes",
+     "t": 20.502,
+     "end": 20.838
+    },
+    {
+     "w": "three",
+     "t": 20.906,
+     "end": 20.973
+    },
+    {
+     "w": "hundred",
+     "t": 21.04,
+     "end": 21.242
+    },
+    {
+     "w": "forty-four",
+     "t": 21.377,
+     "end": 21.78
+    },
+    {
+     "w": "thousand.",
+     "t": 21.915,
+     "end": 22.52
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Saver paid more monthly, and owes under half.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 22.579,
+     "end": 22.915
+    },
+    {
+     "w": "paid",
+     "t": 22.983,
+     "end": 23.185
+    },
+    {
+     "w": "more",
+     "t": 23.252,
+     "end": 23.454
+    },
+    {
+     "w": "monthly,",
+     "t": 23.521,
+     "end": 24.059
+    },
+    {
+     "w": "and",
+     "t": 24.16,
+     "end": 24.261
+    },
+    {
+     "w": "owes",
+     "t": 24.328,
+     "end": 24.597
+    },
+    {
+     "w": "under",
+     "t": 24.665,
+     "end": 24.866
+    },
+    {
+     "w": "half.",
+     "t": 24.934,
+     "end": 25.539
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "In this example, Spender's house costs almost a million dollars.",
+   "words": [
+    {
+     "w": "In",
+     "t": 25.598,
+     "end": 25.733
+    },
+    {
+     "w": "this",
+     "t": 25.8,
+     "end": 25.867
+    },
+    {
+     "w": "example,",
+     "t": 25.934,
+     "end": 26.607
+    },
+    {
+     "w": "Spender's",
+     "t": 26.674,
+     "end": 27.011
+    },
+    {
+     "w": "house",
+     "t": 27.078,
+     "end": 27.347
+    },
+    {
+     "w": "costs",
+     "t": 27.414,
+     "end": 27.818
+    },
+    {
+     "w": "almost",
+     "t": 27.986,
+     "end": 28.155
+    },
+    {
+     "w": "a",
+     "t": 28.222,
+     "end": 28.289
+    },
+    {
+     "w": "million",
+     "t": 28.424,
+     "end": 28.76
+    },
+    {
+     "w": "dollars.",
+     "t": 28.827,
+     "end": 29.567
+    }
+   ]
+  }
+ ]
+}

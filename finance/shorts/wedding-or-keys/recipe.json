@@ -1,0 +1,655 @@
+{
+ "slug": "wedding-or-keys",
+ "style": "S2",
+ "hook": {
+  "text": "$34,000 IN ONE NIGHT",
+  "again": "7:gone"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · AVERAGE US WEDDING",
+  "from": 1,
+  "until": "7:gone"
+ },
+ "eggs": [
+  "cat",
+  {
+   "egg": "sticky",
+   "text": "PLUS-ONE = +$292"
+  }
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "home",
+   "note": "frame 0: party face, confetti already falling, the $34,200 cash block slams in",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 1.0,
+       "pose": "celebrate",
+       "emotion": "happy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash0",
+     "kit": "label",
+     "text": [
+      "$34,200"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    },
+    {
+     "id": "conf0",
+     "kit": "block",
+     "text": [
+      ""
+     ],
+     "color": "#ffd23a",
+     "size": [
+      0.05,
+      0.05,
+      0.01
+     ],
+     "at": "mark:0,2.6,0.2",
+     "motion": "rain",
+     "n": 14,
+     "area": [
+      2.2,
+      1.2
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.1
+    },
+    {
+     "fx": "shake",
+     "at": "1:thousand"
+    }
+   ]
+  },
+  {
+   "at": 1.0,
+   "in": "cut",
+   "note": "the clock: 7 PM, the night starts (PC: cut at 1.0 s per MAIN hook rule; was 1:night)",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "clk",
+    "hit": "1:night",
+    "dist": 2.2
+   },
+   "props": [
+    {
+     "id": "clk",
+     "kit": "stamp",
+     "text": "7:00 PM",
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0,1.6,0.3",
+     "hit": "1:night"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:night"
+    }
+   ]
+  },
+  {
+   "at": "2:that's",
+   "note": "the average wedding",
+   "cam": {
+    "preset": "medium",
+    "target": "spender",
+    "dist": 2.8,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "celebrate",
+     "at": "mark"
+    }
+   ],
+   "props": [
+    {
+     "id": "cake",
+     "asset": "cake",
+     "s": 1.4,
+     "at": "mark:-0.9,0,0.4"
+    },
+    {
+     "id": "avg",
+     "kit": "label",
+     "text": [
+      "WEDDING",
+      "$34,200"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.46,
+      0.3,
+      0.05
+     ],
+     "at": "mark:0.36,1.62,0.4",
+     "motion": "fly-in",
+     "hit": "2:average"
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "in": "cut",
+   "note": "race starts: the same $34,200 each",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "celebrate",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "lSp",
+     "kit": "label",
+     "text": [
+      "LEFT",
+      "$34,200"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:-0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "2:books",
+     "drop": 0.4
+    },
+    {
+     "id": "lSv",
+     "kit": "label",
+     "text": [
+      "KEPT",
+      "$34,200"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "2:keeps",
+     "drop": 0.4
+    },
+    {
+     "id": "pile0",
+     "kit": "coinPile",
+     "size": [
+      0.35,
+      0.5,
+      0.35
+     ],
+     "at": "right:-0.8,0,-0.6"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:books",
+     "sfx": "stamp",
+     "db": -8
+    },
+    {
+     "at": "2:keeps",
+     "sfx": "coins",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:every",
+   "note": "MECHANISM: each guest knocks $292 off the stack",
+   "cam": {
+    "preset": "pushIn",
+    "target": "spender",
+    "dist": 3.2,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "3:ninety",
+       "pose": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "g292",
+     "kit": "label",
+     "text": [
+      "-$292",
+      "PER GUEST"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.5,
+      0.32,
+      0.05
+     ],
+     "at": "mark:0.52,1.6,0.4",
+     "motion": "dropSlam",
+     "hit": "3:two",
+     "drop": 0.5
+    },
+    {
+     "id": "bills",
+     "kit": "bill",
+     "at": "mark:-1.3,1.8,0",
+     "motion": "rain",
+     "n": 8,
+     "area": [
+      0.8,
+      0.6
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:two"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:two",
+     "sfx": "cash",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "4:over",
+   "note": "the meter: $ per minute",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "4:minute",
+       "pose": "idle",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "pm",
+     "kit": "label",
+     "text": [
+      "EVERY MINUTE"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.45,
+      0.26,
+      0.05
+     ],
+     "at": "mark:0.4,1.62,0.55",
+     "motion": "count-up",
+     "hit": "4:hundred",
+     "count": {
+      "from": 0,
+      "to": 114,
+      "prefix": "-$",
+      "dur": 0.9
+     }
+    }
+   ]
+  },
+  {
+   "at": "5:but",
+   "mood": "whisper",
+   "note": "OPEN LOOP: Saver's covered sign beside the pile",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cov",
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "pile1",
+     "kit": "coinPile",
+     "size": [
+      0.35,
+      0.5,
+      0.35
+     ],
+     "at": "mark:-0.9,0,0.3"
+    },
+    {
+     "id": "cov",
+     "kit": "label",
+     "text": [
+      "???"
+     ],
+     "color": "#222533",
+     "size": [
+      0.6,
+      0.45,
+      0.05
+     ],
+     "at": "mark:0.75,1.6,0.4",
+     "motion": "fly-in",
+     "hit": "5:hides"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "5:bigger"
+    }
+   ]
+  },
+  {
+   "at": "6:first-time",
+   "set": "street",
+   "in": "cut",
+   "note": "the reveal starts: a typical home, 9 % down",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "home",
+    "hit": "6:first-time",
+    "dist": 3.4
+   },
+   "props": [
+    {
+     "id": "home",
+     "asset": "house-a",
+     "s": 0.22,
+     "at": "centre:0,0,0.5",
+     "motion": "dropSlam",
+     "hit": "6:first-time",
+     "drop": 1.2
+    },
+    {
+     "id": "nine",
+     "kit": "label",
+     "text": [
+      "9% DOWN"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.8,
+      0.3,
+      0.05
+     ],
+     "at": "centre:0,1.75,1.4",
+     "motion": "fly-in",
+     "hit": "6:nine"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "6:first-time",
+     "p": "centre:0,0.02,0.5"
+    }
+   ]
+  },
+  {
+   "at": "6:that's",
+   "note": "TWIST: DOWN PAYMENT ~$37K stamps (MAIN: matches the VO)",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "dp",
+    "hit": "6:thirty-seven",
+    "dist": 2.6
+   },
+   "props": [
+    {
+     "id": "home",
+     "asset": "house-a",
+     "s": 0.22,
+     "at": "centre:0,0,0.5"
+    },
+    {
+     "id": "dp",
+     "kit": "stamp",
+     "text": "DOWN PAYMENT ~$37K",
+     "size": [
+      1.3,
+      0.4,
+      0.05
+     ],
+     "at": "centre:0,1.75,1.4",
+     "hit": "6:thirty-seven"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:thirty-seven"
+    },
+    {
+     "fx": "shake",
+     "at": "6:thirty-seven"
+    }
+   ]
+  },
+  {
+   "at": "7:in",
+   "set": "home",
+   "mood": "ending",
+   "note": "the race result: Saver 91 % there; Spender LEFT $0 at midnight",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": "7:ninety",
+       "pose": "celebrate"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "z",
+     "kit": "label",
+     "text": [
+      "LEFT",
+      "$0"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:-0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "7:in",
+     "drop": 0.4
+    },
+    {
+     "id": "p91",
+     "kit": "label",
+     "text": [
+      "DOWN PAYMENT"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:0.62,1.62,0.3",
+     "motion": "count-up",
+     "hit": "7:ninety",
+     "count": {
+      "from": 0,
+      "to": 91,
+      "suffix": "%",
+      "dur": 0.8
+     }
+    },
+    {
+     "id": "mid",
+     "kit": "label",
+     "text": [
+      "12:00 AM"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.18,
+      0.04
+     ],
+     "at": "left:0.62,1.25,0.3",
+     "motion": "fly-in",
+     "hit": "7:down"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:payment",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:gone",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up, the $34,200 block slams again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "cash9",
+     "kit": "label",
+     "text": [
+      "$34,200"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 28.92,
+     "drop": 0.25
+    }
+   ]
+  }
+ ]
+}

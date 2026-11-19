@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1892,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 503,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You borrow four hundred thousand dollars for a house.",
+   "start": 0.084,
+   "end": 2.842
+  },
+  {
+   "line": 2,
+   "text": "Same house. Spender takes thirty years at about seven percent. Saver takes fifteen.",
+   "start": 2.969,
+   "end": 8.283
+  },
+  {
+   "line": 3,
+   "text": "Spender's first payment: about twenty-seven hundred dollars. Only three hundred twenty pays off the house.",
+   "start": 8.409,
+   "end": 13.993
+  },
+  {
+   "line": 4,
+   "text": "But wait till you see year ten...",
+   "start": 14.119,
+   "end": 15.936
+  },
+  {
+   "line": 5,
+   "text": "Ten years in, Spender has paid three hundred twenty-three thousand... and still owes three hundred forty-four thousand.",
+   "start": 16.062,
+   "end": 22.453
+  },
+  {
+   "line": 6,
+   "text": "Saver paid more monthly, and owes under half.",
+   "start": 22.579,
+   "end": 25.472
+  },
+  {
+   "line": 7,
+   "text": "In this example, Spender's house costs almost a million dollars.",
+   "start": 25.598,
+   "end": 29.5
+  }
+ ]
+}

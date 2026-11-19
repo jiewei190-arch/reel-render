@@ -1,0 +1,391 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.25
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "You paid almost five dollars to get your own twenty.",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.1,
+     "end": 0.26
+    },
+    {
+     "w": "paid",
+     "t": 0.34,
+     "end": 0.5
+    },
+    {
+     "w": "almost",
+     "t": 0.58,
+     "end": 0.9
+    },
+    {
+     "w": "five",
+     "t": 1.14,
+     "end": 1.38
+    },
+    {
+     "w": "dollars",
+     "t": 1.54,
+     "end": 2.02
+    },
+    {
+     "w": "to",
+     "t": 2.06,
+     "end": 2.1
+    },
+    {
+     "w": "get",
+     "t": 2.18,
+     "end": 2.26
+    },
+    {
+     "w": "your",
+     "t": 2.34,
+     "end": 2.5
+    },
+    {
+     "w": "own",
+     "t": 2.58,
+     "end": 2.74
+    },
+    {
+     "w": "twenty.",
+     "t": 2.9,
+     "end": 3.62
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same twenty dollars. Saver walks one block to the bank's own machine.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 3.69,
+     "end": 4.09
+    },
+    {
+     "w": "twenty",
+     "t": 4.17,
+     "end": 4.41
+    },
+    {
+     "w": "dollars.",
+     "t": 4.49,
+     "end": 5.05
+    },
+    {
+     "w": "Saver",
+     "t": 5.61,
+     "end": 5.93
+    },
+    {
+     "w": "walks",
+     "t": 6.01,
+     "end": 6.41
+    },
+    {
+     "w": "one",
+     "t": 6.49,
+     "end": 6.57
+    },
+    {
+     "w": "block",
+     "t": 6.65,
+     "end": 6.97
+    },
+    {
+     "w": "to",
+     "t": 7.05,
+     "end": 7.13
+    },
+    {
+     "w": "the",
+     "t": 7.17,
+     "end": 7.21
+    },
+    {
+     "w": "bank's",
+     "t": 7.29,
+     "end": 7.69
+    },
+    {
+     "w": "own",
+     "t": 7.77,
+     "end": 7.85
+    },
+    {
+     "w": "machine.",
+     "t": 7.93,
+     "end": 8.65
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender taps the corner ATM. Four dollars eighty-six, on average, in fees.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 8.72,
+     "end": 9.12
+    },
+    {
+     "w": "taps",
+     "t": 9.2,
+     "end": 9.52
+    },
+    {
+     "w": "the",
+     "t": 9.56,
+     "end": 9.6
+    },
+    {
+     "w": "corner",
+     "t": 9.68,
+     "end": 10.0
+    },
+    {
+     "w": "ATM.",
+     "t": 10.16,
+     "end": 11.08
+    },
+    {
+     "w": "Four",
+     "t": 11.36,
+     "end": 11.52
+    },
+    {
+     "w": "dollars",
+     "t": 11.6,
+     "end": 12.0
+    },
+    {
+     "w": "eighty-six,",
+     "t": 12.08,
+     "end": 12.96
+    },
+    {
+     "w": "on",
+     "t": 13.04,
+     "end": 13.12
+    },
+    {
+     "w": "average,",
+     "t": 13.2,
+     "end": 13.84
+    },
+    {
+     "w": "in",
+     "t": 13.88,
+     "end": 13.92
+    },
+    {
+     "w": "fees.",
+     "t": 14.08,
+     "end": 14.72
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "That's about a quarter of the cash. But wait till you count a whole year...",
+   "words": [
+    {
+     "w": "That's",
+     "t": 14.79,
+     "end": 14.99
+    },
+    {
+     "w": "about",
+     "t": 15.03,
+     "end": 15.27
+    },
+    {
+     "w": "a",
+     "t": 15.39,
+     "end": 15.51
+    },
+    {
+     "w": "quarter",
+     "t": 15.71,
+     "end": 15.91
+    },
+    {
+     "w": "of",
+     "t": 15.99,
+     "end": 16.07
+    },
+    {
+     "w": "the",
+     "t": 16.11,
+     "end": 16.15
+    },
+    {
+     "w": "cash.",
+     "t": 16.23,
+     "end": 16.95
+    },
+    {
+     "w": "But",
+     "t": 17.19,
+     "end": 17.27
+    },
+    {
+     "w": "wait",
+     "t": 17.35,
+     "end": 17.51
+    },
+    {
+     "w": "till",
+     "t": 17.55,
+     "end": 17.67
+    },
+    {
+     "w": "you",
+     "t": 17.75,
+     "end": 17.83
+    },
+    {
+     "w": "count",
+     "t": 17.95,
+     "end": 18.07
+    },
+    {
+     "w": "a",
+     "t": 18.15,
+     "end": 18.23
+    },
+    {
+     "w": "whole",
+     "t": 18.31,
+     "end": 18.55
+    },
+    {
+     "w": "year...",
+     "t": 18.79,
+     "end": 19.43
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Twice a week, in this example. That's over five hundred dollars a year.",
+   "words": [
+    {
+     "w": "Twice",
+     "t": 19.5,
+     "end": 19.82
+    },
+    {
+     "w": "a",
+     "t": 19.86,
+     "end": 19.9
+    },
+    {
+     "w": "week,",
+     "t": 19.98,
+     "end": 20.46
+    },
+    {
+     "w": "in",
+     "t": 20.5,
+     "end": 20.54
+    },
+    {
+     "w": "this",
+     "t": 20.62,
+     "end": 20.7
+    },
+    {
+     "w": "example.",
+     "t": 20.78,
+     "end": 21.34
+    },
+    {
+     "w": "That's",
+     "t": 21.74,
+     "end": 21.94
+    },
+    {
+     "w": "over",
+     "t": 21.98,
+     "end": 22.22
+    },
+    {
+     "w": "five",
+     "t": 22.38,
+     "end": 22.62
+    },
+    {
+     "w": "hundred",
+     "t": 22.7,
+     "end": 22.94
+    },
+    {
+     "w": "dollars",
+     "t": 23.02,
+     "end": 23.34
+    },
+    {
+     "w": "a",
+     "t": 23.38,
+     "end": 23.42
+    },
+    {
+     "w": "year.",
+     "t": 23.58,
+     "end": 24.22
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Saver paid nothing. And Spender's next twenty?",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 24.29,
+     "end": 24.69
+    },
+    {
+     "w": "paid",
+     "t": 24.77,
+     "end": 25.01
+    },
+    {
+     "w": "nothing.",
+     "t": 25.25,
+     "end": 25.97
+    },
+    {
+     "w": "And",
+     "t": 26.21,
+     "end": 26.45
+    },
+    {
+     "w": "Spender's",
+     "t": 26.53,
+     "end": 26.93
+    },
+    {
+     "w": "next",
+     "t": 27.01,
+     "end": 27.25
+    },
+    {
+     "w": "twenty?",
+     "t": 27.33,
+     "end": 27.97
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,369 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 22.17
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "POV: you just got your first paycheck. Eighteen hundred dollars.",
+   "words": [
+    {
+     "w": "POV:",
+     "t": 0.0,
+     "end": 0.3
+    },
+    {
+     "w": "you",
+     "t": 0.3,
+     "end": 0.555
+    },
+    {
+     "w": "just",
+     "t": 0.555,
+     "end": 0.855
+    },
+    {
+     "w": "got",
+     "t": 0.855,
+     "end": 1.11
+    },
+    {
+     "w": "your",
+     "t": 1.11,
+     "end": 1.41
+    },
+    {
+     "w": "first",
+     "t": 1.41,
+     "end": 1.755
+    },
+    {
+     "w": "paycheck.",
+     "t": 1.755,
+     "end": 2.235
+    },
+    {
+     "w": "Eighteen",
+     "t": 2.235,
+     "end": 2.715
+    },
+    {
+     "w": "hundred",
+     "t": 2.715,
+     "end": 3.15
+    },
+    {
+     "w": "dollars.",
+     "t": 3.15,
+     "end": 3.585
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "You open the app and the new phone is right there.",
+   "words": [
+    {
+     "w": "You",
+     "t": 3.935,
+     "end": 4.19
+    },
+    {
+     "w": "open",
+     "t": 4.19,
+     "end": 4.49
+    },
+    {
+     "w": "the",
+     "t": 4.49,
+     "end": 4.745
+    },
+    {
+     "w": "app",
+     "t": 4.745,
+     "end": 5.0
+    },
+    {
+     "w": "and",
+     "t": 5.0,
+     "end": 5.255
+    },
+    {
+     "w": "the",
+     "t": 5.255,
+     "end": 5.51
+    },
+    {
+     "w": "new",
+     "t": 5.51,
+     "end": 5.765
+    },
+    {
+     "w": "phone",
+     "t": 5.765,
+     "end": 6.11
+    },
+    {
+     "w": "is",
+     "t": 6.11,
+     "end": 6.32
+    },
+    {
+     "w": "right",
+     "t": 6.32,
+     "end": 6.665
+    },
+    {
+     "w": "there.",
+     "t": 6.665,
+     "end": 7.01
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Your friend says you deserve it. But hold on.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 7.36,
+     "end": 7.66
+    },
+    {
+     "w": "friend",
+     "t": 7.66,
+     "end": 8.05
+    },
+    {
+     "w": "says",
+     "t": 8.05,
+     "end": 8.35
+    },
+    {
+     "w": "you",
+     "t": 8.35,
+     "end": 8.605
+    },
+    {
+     "w": "deserve",
+     "t": 8.605,
+     "end": 9.04
+    },
+    {
+     "w": "it.",
+     "t": 9.04,
+     "end": 9.25
+    },
+    {
+     "w": "But",
+     "t": 9.25,
+     "end": 9.505
+    },
+    {
+     "w": "hold",
+     "t": 9.505,
+     "end": 9.805
+    },
+    {
+     "w": "on.",
+     "t": 9.805,
+     "end": 10.015
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Rent is due in nine days. Rent is twelve hundred dollars.",
+   "words": [
+    {
+     "w": "Rent",
+     "t": 10.365,
+     "end": 10.665
+    },
+    {
+     "w": "is",
+     "t": 10.665,
+     "end": 10.875
+    },
+    {
+     "w": "due",
+     "t": 10.875,
+     "end": 11.13
+    },
+    {
+     "w": "in",
+     "t": 11.13,
+     "end": 11.34
+    },
+    {
+     "w": "nine",
+     "t": 11.34,
+     "end": 11.64
+    },
+    {
+     "w": "days.",
+     "t": 11.64,
+     "end": 11.94
+    },
+    {
+     "w": "Rent",
+     "t": 11.94,
+     "end": 12.24
+    },
+    {
+     "w": "is",
+     "t": 12.24,
+     "end": 12.45
+    },
+    {
+     "w": "twelve",
+     "t": 12.45,
+     "end": 12.84
+    },
+    {
+     "w": "hundred",
+     "t": 12.84,
+     "end": 13.275
+    },
+    {
+     "w": "dollars.",
+     "t": 13.275,
+     "end": 13.71
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "You put three hundred aside first, then you look at the phone again.",
+   "words": [
+    {
+     "w": "You",
+     "t": 14.06,
+     "end": 14.315
+    },
+    {
+     "w": "put",
+     "t": 14.315,
+     "end": 14.57
+    },
+    {
+     "w": "three",
+     "t": 14.57,
+     "end": 14.915
+    },
+    {
+     "w": "hundred",
+     "t": 14.915,
+     "end": 15.35
+    },
+    {
+     "w": "aside",
+     "t": 15.35,
+     "end": 15.695
+    },
+    {
+     "w": "first,",
+     "t": 15.695,
+     "end": 16.04
+    },
+    {
+     "w": "then",
+     "t": 16.04,
+     "end": 16.34
+    },
+    {
+     "w": "you",
+     "t": 16.34,
+     "end": 16.595
+    },
+    {
+     "w": "look",
+     "t": 16.595,
+     "end": 16.895
+    },
+    {
+     "w": "at",
+     "t": 16.895,
+     "end": 17.105
+    },
+    {
+     "w": "the",
+     "t": 17.105,
+     "end": 17.36
+    },
+    {
+     "w": "phone",
+     "t": 17.36,
+     "end": 17.705
+    },
+    {
+     "w": "again.",
+     "t": 17.705,
+     "end": 18.05
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "It still looks good. But now you can still pay rent.",
+   "words": [
+    {
+     "w": "It",
+     "t": 18.4,
+     "end": 18.61
+    },
+    {
+     "w": "still",
+     "t": 18.61,
+     "end": 18.955
+    },
+    {
+     "w": "looks",
+     "t": 18.955,
+     "end": 19.3
+    },
+    {
+     "w": "good.",
+     "t": 19.3,
+     "end": 19.6
+    },
+    {
+     "w": "But",
+     "t": 19.6,
+     "end": 19.855
+    },
+    {
+     "w": "now",
+     "t": 19.855,
+     "end": 20.11
+    },
+    {
+     "w": "you",
+     "t": 20.11,
+     "end": 20.365
+    },
+    {
+     "w": "can",
+     "t": 20.365,
+     "end": 20.62
+    },
+    {
+     "w": "still",
+     "t": 20.62,
+     "end": 20.965
+    },
+    {
+     "w": "pay",
+     "t": 20.965,
+     "end": 21.22
+    },
+    {
+     "w": "rent.",
+     "t": 21.22,
+     "end": 21.52
+    }
+   ]
+  }
+ ]
+}

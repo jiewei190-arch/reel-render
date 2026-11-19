@@ -1,0 +1,452 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "You quit your job with ten thousand dollars in your 401(k).",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.087,
+     "end": 0.226
+    },
+    {
+     "w": "quit",
+     "t": 0.295,
+     "end": 0.365
+    },
+    {
+     "w": "your",
+     "t": 0.434,
+     "end": 0.504
+    },
+    {
+     "w": "job",
+     "t": 0.573,
+     "end": 0.851
+    },
+    {
+     "w": "with",
+     "t": 0.956,
+     "end": 1.06
+    },
+    {
+     "w": "ten",
+     "t": 1.129,
+     "end": 1.268
+    },
+    {
+     "w": "thousand",
+     "t": 1.407,
+     "end": 1.685
+    },
+    {
+     "w": "dollars",
+     "t": 1.755,
+     "end": 2.102
+    },
+    {
+     "w": "in",
+     "t": 2.137,
+     "end": 2.172
+    },
+    {
+     "w": "your",
+     "t": 2.241,
+     "end": 2.311
+    },
+    {
+     "w": "401(k).",
+     "t": 2.38,
+     "end": 3.353
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Spender and Saver both quit at thirty, same balance.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 3.414,
+     "end": 3.831
+    },
+    {
+     "w": "and",
+     "t": 3.9,
+     "end": 3.97
+    },
+    {
+     "w": "Saver",
+     "t": 4.109,
+     "end": 4.456
+    },
+    {
+     "w": "both",
+     "t": 4.526,
+     "end": 4.734
+    },
+    {
+     "w": "quit",
+     "t": 4.873,
+     "end": 5.012
+    },
+    {
+     "w": "at",
+     "t": 5.082,
+     "end": 5.221
+    },
+    {
+     "w": "thirty,",
+     "t": 5.29,
+     "end": 5.916
+    },
+    {
+     "w": "same",
+     "t": 6.02,
+     "end": 6.124
+    },
+    {
+     "w": "balance.",
+     "t": 6.194,
+     "end": 6.819
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender cashes out. A ten percent penalty, plus income tax.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 6.88,
+     "end": 7.227
+    },
+    {
+     "w": "cashes",
+     "t": 7.366,
+     "end": 7.714
+    },
+    {
+     "w": "out.",
+     "t": 7.783,
+     "end": 8.061
+    },
+    {
+     "w": "A",
+     "t": 8.409,
+     "end": 8.478
+    },
+    {
+     "w": "ten",
+     "t": 8.548,
+     "end": 8.617
+    },
+    {
+     "w": "percent",
+     "t": 8.687,
+     "end": 8.965
+    },
+    {
+     "w": "penalty,",
+     "t": 9.034,
+     "end": 9.66
+    },
+    {
+     "w": "plus",
+     "t": 9.833,
+     "end": 10.007
+    },
+    {
+     "w": "income",
+     "t": 10.077,
+     "end": 10.355
+    },
+    {
+     "w": "tax.",
+     "t": 10.424,
+     "end": 11.049
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "About seventy-eight hundred dollars lands. Spender feels rich.",
+   "words": [
+    {
+     "w": "About",
+     "t": 11.11,
+     "end": 11.388
+    },
+    {
+     "w": "seventy-eight",
+     "t": 11.527,
+     "end": 11.944
+    },
+    {
+     "w": "hundred",
+     "t": 12.083,
+     "end": 12.361
+    },
+    {
+     "w": "dollars",
+     "t": 12.5,
+     "end": 12.848
+    },
+    {
+     "w": "lands.",
+     "t": 12.917,
+     "end": 13.543
+    },
+    {
+     "w": "Spender",
+     "t": 13.751,
+     "end": 14.098
+    },
+    {
+     "w": "feels",
+     "t": 14.237,
+     "end": 14.515
+    },
+    {
+     "w": "rich.",
+     "t": 14.654,
+     "end": 15.28
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Saver rolls it over and never touches it. But here's the part nobody shows you...",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 15.341,
+     "end": 15.688
+    },
+    {
+     "w": "rolls",
+     "t": 15.758,
+     "end": 15.966
+    },
+    {
+     "w": "it",
+     "t": 16.036,
+     "end": 16.105
+    },
+    {
+     "w": "over",
+     "t": 16.175,
+     "end": 16.453
+    },
+    {
+     "w": "and",
+     "t": 16.522,
+     "end": 16.731
+    },
+    {
+     "w": "never",
+     "t": 16.8,
+     "end": 17.009
+    },
+    {
+     "w": "touches",
+     "t": 17.078,
+     "end": 17.356
+    },
+    {
+     "w": "it.",
+     "t": 17.426,
+     "end": 17.773
+    },
+    {
+     "w": "But",
+     "t": 17.981,
+     "end": 18.12
+    },
+    {
+     "w": "here's",
+     "t": 18.259,
+     "end": 18.468
+    },
+    {
+     "w": "the",
+     "t": 18.537,
+     "end": 18.607
+    },
+    {
+     "w": "part",
+     "t": 18.711,
+     "end": 18.815
+    },
+    {
+     "w": "nobody",
+     "t": 18.954,
+     "end": 19.302
+    },
+    {
+     "w": "shows",
+     "t": 19.371,
+     "end": 19.649
+    },
+    {
+     "w": "you...",
+     "t": 19.719,
+     "end": 20.066
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Thirty-five years later, at about seven percent a year, Saver's ten thousand is over a hundred thousand.",
+   "words": [
+    {
+     "w": "Thirty-five",
+     "t": 20.127,
+     "end": 20.614
+    },
+    {
+     "w": "years",
+     "t": 20.683,
+     "end": 20.822
+    },
+    {
+     "w": "later,",
+     "t": 20.961,
+     "end": 21.447
+    },
+    {
+     "w": "at",
+     "t": 21.482,
+     "end": 21.517
+    },
+    {
+     "w": "about",
+     "t": 21.586,
+     "end": 21.795
+    },
+    {
+     "w": "seven",
+     "t": 21.934,
+     "end": 22.073
+    },
+    {
+     "w": "percent",
+     "t": 22.212,
+     "end": 22.42
+    },
+    {
+     "w": "a",
+     "t": 22.49,
+     "end": 22.525
+    },
+    {
+     "w": "year,",
+     "t": 22.559,
+     "end": 23.115
+    },
+    {
+     "w": "Saver's",
+     "t": 23.185,
+     "end": 23.532
+    },
+    {
+     "w": "ten",
+     "t": 23.602,
+     "end": 23.671
+    },
+    {
+     "w": "thousand",
+     "t": 23.81,
+     "end": 24.158
+    },
+    {
+     "w": "is",
+     "t": 24.227,
+     "end": 24.436
+    },
+    {
+     "w": "over",
+     "t": 24.505,
+     "end": 24.714
+    },
+    {
+     "w": "a",
+     "t": 24.783,
+     "end": 24.922
+    },
+    {
+     "w": "hundred",
+     "t": 24.992,
+     "end": 25.27
+    },
+    {
+     "w": "thousand.",
+     "t": 25.409,
+     "end": 25.965
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Spender traded that for seventy-eight hundred, all on the day...",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 26.025,
+     "end": 26.442
+    },
+    {
+     "w": "traded",
+     "t": 26.512,
+     "end": 26.79
+    },
+    {
+     "w": "that",
+     "t": 26.894,
+     "end": 26.998
+    },
+    {
+     "w": "for",
+     "t": 27.102,
+     "end": 27.207
+    },
+    {
+     "w": "seventy-eight",
+     "t": 27.276,
+     "end": 27.763
+    },
+    {
+     "w": "hundred,",
+     "t": 27.832,
+     "end": 28.527
+    },
+    {
+     "w": "all",
+     "t": 28.631,
+     "end": 28.736
+    },
+    {
+     "w": "on",
+     "t": 28.805,
+     "end": 28.875
+    },
+    {
+     "w": "the",
+     "t": 28.944,
+     "end": 29.014
+    },
+    {
+     "w": "day...",
+     "t": 29.083,
+     "end": 29.569
+    }
+   ]
+  }
+ ]
+}
