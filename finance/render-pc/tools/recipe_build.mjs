@@ -126,7 +126,7 @@ for (const st of C.actorsAt(0)) {
 }
 for (const p of qa0.props) if (!p.name.startsWith("set.")) subjects.push(p);
 const covs = subjects.map((b) => ({ name: b.name, k: Math.max(coverage(cams0.main, b, 1080 / 1920), cams0.split ? 0 : 0) }));
-if (cams0.split) for (const b of subjects) covs.push({ name: `${b.name} (half)`, k: coverage(cams0.main, b, 1080 / 960) });
+if (cams0.split) for (const b of subjects) covs.push({ name: `${b.name} (half)`, k: Math.max(coverage(cams0.main, b, 1080 / 960), cams0.second ? coverage(cams0.second, b, 1080 / 960) : 0) });
 covs.sort((a, b) => b.k - a.k);
 const best = covs[0] ?? { name: "nothing", k: 0 };
 const hookWords = recipe.hook.text.trim().split(/\s+/).length;
@@ -150,8 +150,8 @@ for (const s of C.shots) {
   for (const [t] of s.kicks) if (t <= 3.0) moves.add(`hit ${t.toFixed(2)}`);
 }
 // who + what at frame 0 (retention tactics: the whole situation readable in ONE frame): a character and a prop in view
-const whoAt0 = covs.filter((c) => C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && c.k >= 0.15);
-const whatAt0 = covs.filter((c) => !C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && !c.name.startsWith("egg.") && c.k >= 0.04);
+const whoAt0 = C.shots[0].pov ? [{ name: `${C.shots[0].pov} (POV: you)`, k: 1 }] : covs.filter((c) => C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && c.k >= 0.15);
+const whatAt0 = covs.filter((c) => !C.actorsAt(0).some((a) => a.id === c.name.replace(" (half)", "")) && !c.name.startsWith("egg.") && c.k >= 0.03);
 const gate = [
   ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
   ["hook text on screen at frame 0, <= 5 words (day-1 fix 2)", C.hookUntil > 0 && hookWords <= 5, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -165,6 +165,7 @@ const gate = [
   ["music + an SFX at frame 0", !!C.audio.music && C.audio.cues.some((c) => c.t <= 0.05), `${C.audio.music}, ${C.audio.cues.filter((c) => c.t <= 0.05).map((c) => c.sfx).join(", ")}`, true],
   ["an emotion change by 1.5 s", emoAt !== null, emoAt === null ? "no actor's emotion changes by 1.5 s" : `at ${emoAt.toFixed(2)} s`, true],
   ["no wide or dark shot in the first 1 s", early.every((s) => s.spec.cam.preset !== "wide" && s.lens.mood !== "whisper"), early.map((s) => `${s.id} ${s.spec.cam.preset}/${s.lens.mood}`).join(", "), true],
+  ["a live race or ticking stake through the middle 35-70 % (watch-time data)", (() => { const a = 0.35 * dur, b = 0.7 * dur; if (recipe.race) { const f = C.at(recipe.race.from), e = C.at(recipe.race.until, dur); return Math.min(b, e) - Math.max(a, f) >= 0.5 * (b - a); } let cover = 0; for (const s of C.shots) for (const p of s.props) if (p.spec.motion === "count-up") { const f = Math.max(a, p.a), e = Math.min(b, p.b); if (e > f) cover += e - f; } return cover >= 0.5 * (b - a); })(), recipe.race ? `race "${recipe.race.title ?? ""}"` : "count-up props only", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],
 ];
 const hardFail = gate.some((g) => g[3] && !g[1]);

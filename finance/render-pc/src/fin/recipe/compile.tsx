@@ -22,6 +22,7 @@ import { Asset, assetSize, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
 import { RecipeCaptions, chunkWords } from "../lib/captions";
+import { RaceOverlay } from "../lib/race";
 import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
@@ -708,6 +709,7 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
       {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
+      {c.recipe.race ? <RaceOverlay r={{ ...c.recipe.race, from: c.at(c.recipe.race.from), resolve: c.at(c.recipe.race.resolve), until: c.at(c.recipe.race.until, c.duration / FPS) }} t={tOut} /> : null}
       <CornerTag text={tag} />
     </AbsoluteFill>
   );

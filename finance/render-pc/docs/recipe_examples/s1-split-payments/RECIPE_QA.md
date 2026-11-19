@@ -22,6 +22,7 @@ Composition: `S1SplitPaymentsRecipe` (+ `S1SplitPaymentsRecipeSub`) in `src/inde
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 0.23 s |
 | no wide or dark shot in the first 1 s | PASS | S01 hookZoom/store |
+| a live race or ticking stake through the middle 35-70 % (watch-time data) | warn | count-up props only |
 | length 20-30 s | PASS | 23.87 s |
 
 Frame-0 coverage by subject: spender 72 %, shoes 17 %, egg.mug0 2 %, egg.cat1 0 %.

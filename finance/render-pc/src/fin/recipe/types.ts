@@ -143,6 +143,9 @@ export type Recipe = {
   eggs?: (import("./eggs").EggSpec)[];
   /** the double payoff: a visual gag in the last 0.5-1 s after the spoken payoff ({ gag: "catCoin" | "tvFall" | "stickyFall", from?: s }) */
   finalGag?: import("./eggs").FinalGag;
+  /** a live RACE / ticking stake through the middle (watch-time data: races hold): lanes count from `from` to the
+   *  twist (`resolve`), the leader can flip on the way (curve "late" = compound growth that overtakes late) */
+  race?: { title?: string; from: At; resolve: At; until?: At; lanes: { label: string; color: string; from: number; to: number; prefix?: string; suffix?: string; curve?: "linear" | "late" }[] };
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";

@@ -28,10 +28,10 @@ export const RECIPE: Recipe = {
    "cam": {
     "preset": "splitScreen",
     "targets": [
-     "million",
-     "penny"
+     "spender",
+     "saver"
     ],
-    "dist": 1.9
+    "dist": 2.6
    },
    "actors": [
     {
@@ -65,7 +65,7 @@ export const RECIPE: Recipe = {
       0.8,
       0.6
      ],
-     "at": "left:-0.9,0,-0.6",
+     "at": "left:0.9,0,-0.5",
      "motion": "dropSlam",
      "hit": 0.25,
      "drop": 0.8

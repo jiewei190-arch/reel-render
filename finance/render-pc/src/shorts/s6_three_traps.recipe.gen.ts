@@ -50,10 +50,10 @@ export const RECIPE: Recipe = {
       0.7,
       0.5
      ],
-     "at": "left",
+     "at": "mark:-1.0,0,-0.4",
      "motion": "dropSlam",
-     "hit": 0.25,
-     "drop": 1
+     "hit": 0.15,
+     "drop": 0.5
     },
     {
      "id": "every",
@@ -67,10 +67,10 @@ export const RECIPE: Recipe = {
       0.4,
       0.05
      ],
-     "at": "left:0,1.5,0.2",
+     "at": "mark:1.0,1.5,-0.2",
      "motion": "dropSlam",
-     "hit": 0.2,
-     "drop": 0.6
+     "hit": 0.15,
+     "drop": 0.5
     }
    ],
    "fx": [
@@ -79,7 +79,8 @@ export const RECIPE: Recipe = {
      "at": 0.25,
      "p": "left"
     }
-   ]
+   ],
+   "extras": false
   },
   {
    "at": "line:2",
@@ -269,6 +270,35 @@ export const RECIPE: Recipe = {
     }
    ]
   }
- ]
+ ],
+ "race": {
+  "title": "COST PER YEAR",
+  "from": "line:2",
+  "resolve": "line:5",
+  "lanes": [
+   {
+    "label": "#3",
+    "color": "#ffd23a",
+    "from": 0,
+    "to": 180,
+    "prefix": "$"
+   },
+   {
+    "label": "#2",
+    "color": "#ff7a1a",
+    "from": 0,
+    "to": 300,
+    "prefix": "$"
+   },
+   {
+    "label": "#1",
+    "color": "#d62a2a",
+    "from": 0,
+    "to": 900,
+    "prefix": "$",
+    "curve": "late"
+   }
+  ]
+ }
 };
 export const WORDS: Word[] = [{"w":"Three","turn":1,"t":0,"end":0.345},{"w":"money","turn":1,"t":0.345,"end":0.69},{"w":"traps","turn":1,"t":0.69,"end":1.035},{"w":"you","turn":1,"t":1.035,"end":1.29},{"w":"fall","turn":1,"t":1.29,"end":1.59},{"w":"for","turn":1,"t":1.59,"end":1.845},{"w":"every","turn":1,"t":1.845,"end":2.19},{"w":"month.","turn":1,"t":2.19,"end":2.535},{"w":"Number","turn":1,"t":2.535,"end":2.925},{"w":"one","turn":1,"t":2.925,"end":3.18},{"w":"is","turn":1,"t":3.18,"end":3.39},{"w":"the","turn":1,"t":3.39,"end":3.645},{"w":"worst.","turn":1,"t":3.645,"end":3.99},{"w":"Number","turn":2,"t":4.34,"end":4.73},{"w":"three:","turn":2,"t":4.73,"end":5.12},{"w":"the","turn":2,"t":5.12,"end":5.375},{"w":"free","turn":2,"t":5.375,"end":5.675},{"w":"trial","turn":2,"t":5.675,"end":6.02},{"w":"that","turn":2,"t":6.02,"end":6.32},{"w":"turns","turn":2,"t":6.32,"end":6.665},{"w":"into","turn":2,"t":6.665,"end":6.965},{"w":"a","turn":2,"t":6.965,"end":7.13},{"w":"bill.","turn":2,"t":7.13,"end":7.43},{"w":"Number","turn":3,"t":7.78,"end":8.17},{"w":"two:","turn":3,"t":8.17,"end":8.47},{"w":"the","turn":3,"t":8.47,"end":8.725},{"w":"store","turn":3,"t":8.725,"end":9.07},{"w":"card","turn":3,"t":9.07,"end":9.37},{"w":"with","turn":3,"t":9.37,"end":9.67},{"w":"a","turn":3,"t":9.67,"end":9.835},{"w":"ten","turn":3,"t":9.835,"end":10.09},{"w":"percent","turn":3,"t":10.09,"end":10.525},{"w":"discount","turn":3,"t":10.525,"end":11.005},{"w":"and","turn":3,"t":11.005,"end":11.26},{"w":"thirty","turn":3,"t":11.26,"end":11.65},{"w":"percent","turn":3,"t":11.65,"end":12.085},{"w":"interest.","turn":3,"t":12.085,"end":12.565},{"w":"And","turn":4,"t":12.915,"end":13.17},{"w":"number","turn":4,"t":13.17,"end":13.56},{"w":"one?","turn":4,"t":13.56,"end":13.815},{"w":"It","turn":4,"t":13.815,"end":14.025},{"w":"looks","turn":4,"t":14.025,"end":14.37},{"w":"like","turn":4,"t":14.37,"end":14.67},{"w":"help.","turn":4,"t":14.67,"end":14.97},{"w":"The","turn":5,"t":15.32,"end":15.575},{"w":"minimum","turn":5,"t":15.575,"end":16.01},{"w":"payment.","turn":5,"t":16.01,"end":16.445},{"w":"Pay","turn":5,"t":16.445,"end":16.7},{"w":"only","turn":5,"t":16.7,"end":17},{"w":"that,","turn":5,"t":17,"end":17.3},{"w":"and","turn":5,"t":17.3,"end":17.555},{"w":"a","turn":5,"t":17.555,"end":17.72},{"w":"small","turn":5,"t":17.72,"end":18.065},{"w":"bill","turn":5,"t":18.065,"end":18.365},{"w":"can","turn":5,"t":18.365,"end":18.62},{"w":"follow","turn":5,"t":18.62,"end":19.01},{"w":"you","turn":5,"t":19.01,"end":19.265},{"w":"for","turn":5,"t":19.265,"end":19.52},{"w":"years.","turn":5,"t":19.52,"end":19.865},{"w":"Pay","turn":6,"t":20.215,"end":20.47},{"w":"more","turn":6,"t":20.47,"end":20.77},{"w":"than","turn":6,"t":20.77,"end":21.07},{"w":"the","turn":6,"t":21.07,"end":21.325},{"w":"minimum,","turn":6,"t":21.325,"end":21.76},{"w":"and","turn":6,"t":21.76,"end":22.015},{"w":"you","turn":6,"t":22.015,"end":22.27},{"w":"skip","turn":6,"t":22.27,"end":22.57},{"w":"all","turn":6,"t":22.57,"end":22.825},{"w":"three","turn":6,"t":22.825,"end":23.17},{"w":"traps.","turn":6,"t":23.17,"end":23.515}];
