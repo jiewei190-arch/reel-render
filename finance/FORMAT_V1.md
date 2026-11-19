@@ -14,7 +14,7 @@ Reference renders: finance/hooks/A and finance/hooks/B (v1). NOT A2/B2.
 - Frame 0 is already mid-action, with the character visible and readable. No empty or dark opener.
 - Hook text on screen from frame 0: one line, 8 words or fewer.
 - The stakes are clear by about 1.5 s. Use simple words ("money you owe"). Use "you" at least once.
-- Captions 1-3 words, bold with an outline. Keep them clear of the bottom 420 px, the right-hand button rail and faces.
+- Captions 1-3 words, bold with an outline, **bottom centre** (owner, 2026-11-19): centred horizontally, max width about 80 %, one-line baseline at about 72-75 % of the height (y 1380-1440), nothing below y 1500 (YouTube UI). Clear of the right-hand button rail. The engine nudges them off faces and text boards per shot. The small full-sentence top line (captionsTop) is removed everywhere. The hook text box stays where it is.
 - Length 20-30 s, ending on the payoff that loops to frame 0. No CTA.
 - Every Short has a DIFFERENT story, set and opening action. No template sameness.
 
