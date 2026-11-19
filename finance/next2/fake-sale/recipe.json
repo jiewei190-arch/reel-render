@@ -1,0 +1,706 @@
+{
+ "slug": "fake-sale",
+ "style": "S2",
+ "hook": {
+  "text": "IT WAS NEVER $100",
+  "again": "7:it"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · CHECKBOOK 2025 STUDY",
+  "from": 1,
+  "until": "7:it"
+ },
+ "eggs": [
+  "cat",
+  "sticky"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "store",
+   "note": "frame 0: Spender beaming at a SALE tag that slams in beside his head",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "idle",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "sale0",
+     "kit": "label",
+     "text": [
+      "SALE $60"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:0.0,1.08,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "shake",
+     "at": 0.1
+    }
+   ],
+   "sfx": [
+    {
+     "at": 0.1,
+     "sfx": "cash",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "1:probably",
+   "in": "cut",
+   "note": "the WAS $100 tag gets stamped NEVER",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "was0",
+    "hit": "1:never",
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "1:never",
+       "pose": "shock",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "was0",
+     "kit": "label",
+     "text": [
+      "WAS $100"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.8,
+      0.3,
+      0.05
+     ],
+     "at": "mark:0.6,1.75,0.55"
+    },
+    {
+     "id": "nev",
+     "kit": "stamp",
+     "text": "NEVER",
+     "at": "mark:0.6,1.75,0.6",
+     "hit": "1:never"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:never"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:never",
+     "sfx": "stamp",
+     "db": -4
+    }
+   ]
+  },
+  {
+   "at": "2:same",
+   "in": "cut",
+   "note": "race: same jacket, same store, split",
+   "extras": false,
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "svP",
+     "kit": "label",
+     "text": [
+      "SAVER PAID",
+      "$0"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:0.62,1.62,0.3"
+    },
+    {
+     "id": "spP",
+     "kit": "label",
+     "text": [
+      "SPENDER PAID",
+      "$0"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:-0.62,1.62,0.3"
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "note": "was one hundred, now sixty",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "2:now",
+       "pose": "celebrate",
+       "emotion": "joy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "was1",
+     "kit": "label",
+     "text": [
+      "WAS $100"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.6,
+      0.24,
+      0.04
+     ],
+     "at": "mark:-0.5,1.65,0.55",
+     "motion": "fly-in",
+     "hit": "2:hundred"
+    },
+    {
+     "id": "now1",
+     "kit": "label",
+     "text": [
+      "NOW $60!"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.5,1.65,0.55",
+     "motion": "dropSlam",
+     "hit": "2:sixty",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "2:sixty"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:sixty",
+     "sfx": "ding",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "2:and",
+   "in": "whip",
+   "note": "grabs it: card swipe at the counter",
+   "cam": {
+    "preset": "medium",
+    "target": "spender",
+    "dist": 2.6,
+    "az": -15
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "swipe-card",
+     "at": "mark",
+     "from": "2:grabs",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "card",
+     "kit": "card",
+     "at": "spender.handR"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:grabs",
+     "sfx": "cash",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:saver",
+   "in": "cut",
+   "note": "Saver checks back every week: the calendar flips, the price stays",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.7,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "3:never",
+       "pose": "smug",
+       "emotion": "sly"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "wk",
+     "kit": "label",
+     "text": [
+      "WEEK"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.3,
+      0.05
+     ],
+     "at": "mark:-0.5,1.65,0.55",
+     "motion": "count-up",
+     "hit": "3:every",
+     "count": {
+      "from": 1,
+      "to": 6,
+      "dur": 1.4
+     }
+    },
+    {
+     "id": "st60",
+     "kit": "label",
+     "text": [
+      "STILL $60"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.5,1.65,0.55",
+     "motion": "dropSlam",
+     "hit": "3:never",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:never",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "4:but",
+   "mood": "whisper",
+   "note": "OPEN LOOP: a row of covered sale tags trembles",
+   "cam": {
+    "preset": "pushIn",
+    "target": "mark:0,1.75,0.4",
+    "dist": 2.8
+   },
+   "extras": false,
+   "actors": [],
+   "props": [
+    {
+     "id": "rack",
+     "asset": "clothing-rack",
+     "at": "mark:0,0,0"
+    },
+    {
+     "id": "c1",
+     "kit": "label",
+     "text": [
+      "SALE?",
+      "$??"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.6,1.85,0.5"
+    },
+    {
+     "id": "c2",
+     "kit": "label",
+     "text": [
+      "SALE?",
+      "$??"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0.6,1.85,0.5"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:sneaky"
+    },
+    {
+     "fx": "shake",
+     "at": "4:part"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:but",
+     "sfx": "suspense",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:consumer",
+   "in": "cut",
+   "note": "25 chains, 6 months of weekly checks",
+   "cam": {
+    "preset": "medium",
+    "target": "mark:0,1.6,0",
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "point",
+     "at": "mark",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "ch25",
+     "kit": "block",
+     "text": [
+      "25",
+      "CHAINS"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.7,
+      0.7,
+      0.4
+     ],
+     "at": "mark:-1.3,0,0.2",
+     "motion": "dropSlam",
+     "hit": "5:twenty-five"
+    },
+    {
+     "id": "m6",
+     "kit": "calendar",
+     "text": [
+      "TRACKED",
+      "6",
+      "MONTHS"
+     ],
+     "at": "mark:1.3,1.7,0.0",
+     "motion": "fly-in",
+     "hit": "5:six"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "5:twenty-five",
+     "p": "mark:-1.3,0.02,0.2"
+    }
+   ]
+  },
+  {
+   "at": "6:at",
+   "note": "TWIST: on sale about 76% of the time",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "pct",
+    "hit": "6:seventy-six",
+    "dist": 2.8
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "6:seventy-six",
+       "pose": "shock",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "n19",
+     "kit": "label",
+     "text": [
+      "19 CHAINS"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.7,
+      0.24,
+      0.04
+     ],
+     "at": "mark:-0.55,2.25,0.5",
+     "motion": "fly-in",
+     "hit": "6:nineteen"
+    },
+    {
+     "id": "pct",
+     "kit": "label",
+     "text": [
+      "ON SALE"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      1.0,
+      0.45,
+      0.05
+     ],
+     "at": "mark:0.3,1.85,0.55",
+     "motion": "count-up",
+     "hit": "6:about",
+     "count": {
+      "from": 0,
+      "to": 76,
+      "suffix": "% OF THE TIME",
+      "dur": 0.8
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:seventy-six"
+    },
+    {
+     "fx": "shake",
+     "at": "6:seventy-six"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:seventy-six",
+     "sfx": "stamp",
+     "db": -3
+    }
+   ]
+  },
+  {
+   "at": "7:the",
+   "in": "cut",
+   "mood": "ending",
+   "note": "same jacket: the $60 was just the price",
+   "extras": false,
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "emotion": "sly"
+    },
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "svE",
+     "kit": "label",
+     "text": [
+      "SAVER PAID",
+      "$60"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:0.62,1.62,0.3"
+    },
+    {
+     "id": "spE",
+     "kit": "label",
+     "text": [
+      "SPENDER PAID",
+      "$60"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:-0.62,1.62,0.3"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:sale",
+     "sfx": "thud",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "7:it",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up, the SALE tag again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "sale0",
+     "kit": "label",
+     "text": [
+      "SALE $60"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:0.0,1.08,0.72",
+     "motion": "dropSlam",
+     "hit": "7:it+0.1",
+     "drop": 0.25
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "7:price"
+    }
+   ]
+  }
+ ]
+}

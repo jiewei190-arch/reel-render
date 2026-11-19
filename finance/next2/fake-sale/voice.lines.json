@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1268,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 455,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your hundred dollar deal was probably never a hundred dollars.",
+   "start": 0.089,
+   "end": 3.639
+  },
+  {
+   "line": 2,
+   "text": "In this example: same jacket, same store. Spender sees \"was one hundred, now sixty!\" and grabs it.",
+   "start": 3.772,
+   "end": 10.872
+  },
+  {
+   "line": 3,
+   "text": "Saver checks back every week. The price never moves.",
+   "start": 11.005,
+   "end": 14.555
+  },
+  {
+   "line": 4,
+   "text": "But that's not even the sneaky part...",
+   "start": 14.688,
+   "end": 16.463
+  },
+  {
+   "line": 5,
+   "text": "Consumer watchdogs tracked twenty-five big chains for six months.",
+   "start": 16.596,
+   "end": 20.643
+  },
+  {
+   "line": 6,
+   "text": "At nineteen of them, items were \"on sale\" about seventy-six percent of the time.",
+   "start": 20.776,
+   "end": 25.604
+  },
+  {
+   "line": 7,
+   "text": "The sixty dollar price wasn't a sale. It was just the price.",
+   "start": 25.737,
+   "end": 29.5
+  }
+ ]
+}

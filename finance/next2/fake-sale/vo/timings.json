@@ -1,0 +1,442 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your hundred dollar deal was probably never a hundred dollars.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.089,
+     "end": 0.302
+    },
+    {
+     "w": "hundred",
+     "t": 0.337,
+     "end": 0.586
+    },
+    {
+     "w": "dollar",
+     "t": 0.657,
+     "end": 0.87
+    },
+    {
+     "w": "deal",
+     "t": 1.012,
+     "end": 1.296
+    },
+    {
+     "w": "was",
+     "t": 1.367,
+     "end": 1.58
+    },
+    {
+     "w": "probably",
+     "t": 1.651,
+     "end": 2.077
+    },
+    {
+     "w": "never",
+     "t": 2.29,
+     "end": 2.574
+    },
+    {
+     "w": "a",
+     "t": 2.609,
+     "end": 2.645
+    },
+    {
+     "w": "hundred",
+     "t": 2.716,
+     "end": 2.929
+    },
+    {
+     "w": "dollars.",
+     "t": 3.0,
+     "end": 3.71
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "In this example: same jacket, same store. Spender sees \"was one hundred, now sixty!\" and grabs it.",
+   "words": [
+    {
+     "w": "In",
+     "t": 3.772,
+     "end": 3.914
+    },
+    {
+     "w": "this",
+     "t": 3.985,
+     "end": 4.056
+    },
+    {
+     "w": "example:",
+     "t": 4.127,
+     "end": 4.624
+    },
+    {
+     "w": "same",
+     "t": 5.05,
+     "end": 5.263
+    },
+    {
+     "w": "jacket,",
+     "t": 5.334,
+     "end": 5.902
+    },
+    {
+     "w": "same",
+     "t": 5.973,
+     "end": 6.115
+    },
+    {
+     "w": "store.",
+     "t": 6.186,
+     "end": 6.612
+    },
+    {
+     "w": "Spender",
+     "t": 7.038,
+     "end": 7.393
+    },
+    {
+     "w": "sees",
+     "t": 7.464,
+     "end": 7.748
+    },
+    {
+     "w": "\"was",
+     "t": 7.961,
+     "end": 8.174
+    },
+    {
+     "w": "one",
+     "t": 8.245,
+     "end": 8.316
+    },
+    {
+     "w": "hundred,",
+     "t": 8.458,
+     "end": 8.955
+    },
+    {
+     "w": "now",
+     "t": 9.026,
+     "end": 9.239
+    },
+    {
+     "w": "sixty!\"",
+     "t": 9.381,
+     "end": 10.02
+    },
+    {
+     "w": "and",
+     "t": 10.055,
+     "end": 10.091
+    },
+    {
+     "w": "grabs",
+     "t": 10.233,
+     "end": 10.517
+    },
+    {
+     "w": "it.",
+     "t": 10.588,
+     "end": 10.943
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Saver checks back every week. The price never moves.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 11.005,
+     "end": 11.36
+    },
+    {
+     "w": "checks",
+     "t": 11.431,
+     "end": 11.644
+    },
+    {
+     "w": "back",
+     "t": 11.715,
+     "end": 11.928
+    },
+    {
+     "w": "every",
+     "t": 12.07,
+     "end": 12.354
+    },
+    {
+     "w": "week.",
+     "t": 12.425,
+     "end": 12.993
+    },
+    {
+     "w": "The",
+     "t": 13.064,
+     "end": 13.135
+    },
+    {
+     "w": "price",
+     "t": 13.206,
+     "end": 13.49
+    },
+    {
+     "w": "never",
+     "t": 13.703,
+     "end": 13.916
+    },
+    {
+     "w": "moves.",
+     "t": 13.987,
+     "end": 14.626
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But that's not even the sneaky part...",
+   "words": [
+    {
+     "w": "But",
+     "t": 14.688,
+     "end": 14.83
+    },
+    {
+     "w": "that's",
+     "t": 14.901,
+     "end": 15.043
+    },
+    {
+     "w": "not",
+     "t": 15.114,
+     "end": 15.185
+    },
+    {
+     "w": "even",
+     "t": 15.256,
+     "end": 15.398
+    },
+    {
+     "w": "the",
+     "t": 15.469,
+     "end": 15.54
+    },
+    {
+     "w": "sneaky",
+     "t": 15.575,
+     "end": 15.895
+    },
+    {
+     "w": "part...",
+     "t": 15.966,
+     "end": 16.534
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Consumer watchdogs tracked twenty-five big chains for six months.",
+   "words": [
+    {
+     "w": "Consumer",
+     "t": 16.596,
+     "end": 17.022
+    },
+    {
+     "w": "watchdogs",
+     "t": 17.093,
+     "end": 17.661
+    },
+    {
+     "w": "tracked",
+     "t": 17.732,
+     "end": 18.016
+    },
+    {
+     "w": "twenty-five",
+     "t": 18.087,
+     "end": 18.726
+    },
+    {
+     "w": "big",
+     "t": 18.868,
+     "end": 19.01
+    },
+    {
+     "w": "chains",
+     "t": 19.152,
+     "end": 19.507
+    },
+    {
+     "w": "for",
+     "t": 19.613,
+     "end": 19.72
+    },
+    {
+     "w": "six",
+     "t": 19.791,
+     "end": 20.004
+    },
+    {
+     "w": "months.",
+     "t": 20.146,
+     "end": 20.714
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "At nineteen of them, items were \"on sale\" about seventy-six percent of the time.",
+   "words": [
+    {
+     "w": "At",
+     "t": 20.776,
+     "end": 20.918
+    },
+    {
+     "w": "nineteen",
+     "t": 21.06,
+     "end": 21.415
+    },
+    {
+     "w": "of",
+     "t": 21.486,
+     "end": 21.557
+    },
+    {
+     "w": "them,",
+     "t": 21.664,
+     "end": 21.983
+    },
+    {
+     "w": "items",
+     "t": 22.054,
+     "end": 22.338
+    },
+    {
+     "w": "were",
+     "t": 22.409,
+     "end": 22.693
+    },
+    {
+     "w": "\"on",
+     "t": 22.728,
+     "end": 22.906
+    },
+    {
+     "w": "sale\"",
+     "t": 23.048,
+     "end": 23.474
+    },
+    {
+     "w": "about",
+     "t": 23.545,
+     "end": 23.829
+    },
+    {
+     "w": "seventy-six",
+     "t": 23.971,
+     "end": 24.539
+    },
+    {
+     "w": "percent",
+     "t": 24.61,
+     "end": 24.894
+    },
+    {
+     "w": "of",
+     "t": 24.929,
+     "end": 24.965
+    },
+    {
+     "w": "the",
+     "t": 25.036,
+     "end": 25.071
+    },
+    {
+     "w": "time.",
+     "t": 25.107,
+     "end": 25.675
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The sixty dollar price wasn't a sale. It was just the price.",
+   "words": [
+    {
+     "w": "The",
+     "t": 25.737,
+     "end": 25.879
+    },
+    {
+     "w": "sixty",
+     "t": 25.95,
+     "end": 26.163
+    },
+    {
+     "w": "dollar",
+     "t": 26.234,
+     "end": 26.376
+    },
+    {
+     "w": "price",
+     "t": 26.518,
+     "end": 26.873
+    },
+    {
+     "w": "wasn't",
+     "t": 27.015,
+     "end": 27.228
+    },
+    {
+     "w": "a",
+     "t": 27.299,
+     "end": 27.37
+    },
+    {
+     "w": "sale.",
+     "t": 27.441,
+     "end": 27.974
+    },
+    {
+     "w": "It",
+     "t": 28.151,
+     "end": 28.222
+    },
+    {
+     "w": "was",
+     "t": 28.329,
+     "end": 28.435
+    },
+    {
+     "w": "just",
+     "t": 28.577,
+     "end": 28.719
+    },
+    {
+     "w": "the",
+     "t": 28.755,
+     "end": 28.79
+    },
+    {
+     "w": "price.",
+     "t": 28.861,
+     "end": 29.571
+    }
+   ]
+  }
+ ]
+}
