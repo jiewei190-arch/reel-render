@@ -1,0 +1,823 @@
+{
+ "slug": "start-25-vs-35",
+ "style": "S2",
+ "hook": {
+  "text": "10 YEARS LATE: $280K LESS",
+  "again": "6:forty-five"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "saver": "SAVER",
+  "spender": "SPENDER"
+ },
+ "tag": {
+  "text": "EXAMPLE · MADE-UP 7%",
+  "from": 1,
+  "until": "6:five"
+ },
+ "eggs": [
+  "cat",
+  "mug"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "props": [
+  {
+   "id": "svA",
+   "kit": "label",
+   "text": [
+    "SAVER",
+    "AGE 25"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "left:0,1.8,0.2",
+   "from": 1,
+   "until": "line:4"
+  },
+  {
+   "id": "spA",
+   "kit": "label",
+   "text": [
+    "SPENDER",
+    "AGE 35"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "right:0,1.8,0.2",
+   "from": 1,
+   "until": "line:4"
+  },
+  {
+   "id": "svCov",
+   "kit": "label",
+   "text": [
+    "SAVER AT 65",
+    "$ ? ? ?"
+   ],
+   "color": "#3a3f58",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "left:0,1.8,0.2",
+   "from": "line:4",
+   "until": "5:ninety-six"
+  },
+  {
+   "id": "spCov",
+   "kit": "label",
+   "text": [
+    "SPENDER AT 65",
+    "$ ? ? ?"
+   ],
+   "color": "#3a3f58",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "right:0,1.8,0.2",
+   "from": "line:4",
+   "until": "5:seventy-two"
+  },
+  {
+   "id": "svPut",
+   "kit": "label",
+   "text": [
+    "SAVER PUT IN"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "left:0,1.8,0.2",
+   "motion": "count-up",
+   "hit": "5:ninety-six",
+   "count": {
+    "from": 0,
+    "to": 96000,
+    "prefix": "$",
+    "dur": 0.9
+   },
+   "from": "5:ninety-six",
+   "until": "6:five"
+  },
+  {
+   "id": "spPut",
+   "kit": "label",
+   "text": [
+    "SPENDER PUT IN"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "right:0,1.8,0.2",
+   "motion": "count-up",
+   "hit": "5:seventy-two",
+   "count": {
+    "from": 0,
+    "to": 72000,
+    "prefix": "$",
+    "dur": 0.8
+   },
+   "from": "5:seventy-two",
+   "until": "6:two"
+  },
+  {
+   "id": "svAns",
+   "kit": "label",
+   "text": [
+    "SAVER AT 65"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "left:0,1.8,0.2",
+   "motion": "count-up",
+   "hit": "6:five",
+   "count": {
+    "from": 0,
+    "to": 528000,
+    "prefix": "≈$",
+    "dur": 1.4
+   },
+   "from": "6:five"
+  },
+  {
+   "id": "spAns",
+   "kit": "label",
+   "text": [
+    "SPENDER AT 65"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    1,
+    0.45,
+    0.05
+   ],
+   "at": "right:0,1.8,0.2",
+   "motion": "count-up",
+   "hit": "6:two",
+   "count": {
+    "from": 0,
+    "to": 245000,
+    "prefix": "≈$",
+    "dur": 0.9
+   },
+   "from": "6:two"
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "home",
+   "note": "frame 0: close on Saver's face, a tall AGE 25 block with a birthday cake slams down beside him",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "saver.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious",
+     "then": [
+      {
+       "at": 0.8,
+       "pose": "smug",
+       "emotion": "joy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "age0",
+     "kit": "label",
+     "text": [
+      "AGE 25",
+      "$200/MO"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.44,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.0,1.0,0.72",
+     "motion": "dropSlam",
+     "hit": 0.08,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "dust",
+     "at": 0.06,
+     "p": "mark:0,0.02,0.6"
+    }
+   ]
+  },
+  {
+   "at": 1,
+   "in": "cut",
+   "note": "split from 1.0 s: the two starting ages, counters appear",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "jarS",
+     "kit": "jar",
+     "text": [
+      "SAVER"
+     ],
+     "fill": 0.3,
+     "color": "#1f9e4f",
+     "at": "left:1.3,0,-0.6"
+    },
+    {
+     "id": "jarP",
+     "kit": "jar",
+     "text": [
+      "SPENDER"
+     ],
+     "fill": 0.05,
+     "color": "#d62a2a",
+     "at": "right:-1.3,0,-0.6"
+    }
+   ]
+  },
+  {
+   "at": "two",
+   "note": "the cost lands on Spender's face",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "spender.face",
+    "hit": "two",
+    "dist": 1.6,
+    "az": -10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "sad",
+     "from": "two"
+    }
+   ],
+   "fx": [
+    "shake"
+   ]
+  },
+  {
+   "at": "2:saver",
+   "note": "Saver: $200 a month into the jar (top = jar, bottom = Saver)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "jarS",
+     "saver"
+    ],
+    "dist": 2.3
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "jarS",
+     "kit": "jar",
+     "text": [
+      "SAVER"
+     ],
+     "fill": 0.3,
+     "color": "#1f9e4f",
+     "at": "left:1.3,0,-0.6"
+    },
+    {
+     "id": "flow",
+     "kit": "coin",
+     "at": "left:1.3,1.6,-0.6",
+     "motion": "rain",
+     "n": 7,
+     "area": [
+      0.25,
+      0.2
+     ]
+    },
+    {
+     "id": "dep",
+     "kit": "label",
+     "text": [
+      "$200",
+      "A MONTH"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.8,
+      0.35,
+      0.05
+     ],
+     "at": "left:1.3,1.35,0.1",
+     "motion": "fly-in",
+     "hit": "2:two"
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "note": "Spender waits: the calendar flips 25 to 35",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cal",
+    "dist": 2.6
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "cal",
+     "kit": "calendar",
+     "text": [
+      "SPENDER WAITS",
+      "25",
+      "YEARS OLD"
+     ],
+     "at": "wall",
+     "motion": "count-up",
+     "hit": "2:waits",
+     "count": {
+      "from": 25,
+      "to": 35,
+      "dur": 1.4
+     }
+    }
+   ]
+  },
+  {
+   "at": "3:at",
+   "note": "the made-up rate (top = rate board, bottom = Saver)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "rate",
+     "saver"
+    ],
+    "dist": 2.3
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "rate",
+     "kit": "label",
+     "text": [
+      "MADE-UP",
+      "7% A YEAR"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      1,
+      0.45,
+      0.05
+     ],
+     "at": "centre:0,1.3,0.9",
+     "motion": "fly-in",
+     "hit": "3:seven"
+    }
+   ]
+  },
+  {
+   "at": "3:they",
+   "note": "both calendars run to 65 (top = Saver's, bottom = Spender's)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "calA",
+     "calB"
+    ],
+    "dist": 2.4
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "calA",
+     "kit": "calendar",
+     "text": [
+      "SAVER",
+      "25",
+      "AGE"
+     ],
+     "at": [
+      -1.2,
+      1.5,
+      -1.2
+     ],
+     "motion": "count-up",
+     "hit": "3:they",
+     "count": {
+      "from": 25,
+      "to": 65,
+      "dur": 1.7
+     }
+    },
+    {
+     "id": "calB",
+     "kit": "calendar",
+     "text": [
+      "SPENDER",
+      "35",
+      "AGE"
+     ],
+     "at": [
+      1.2,
+      1.5,
+      -1.2
+     ],
+     "motion": "count-up",
+     "hit": "3:they",
+     "count": {
+      "from": 35,
+      "to": 65,
+      "dur": 1.7
+     }
+    }
+   ]
+  },
+  {
+   "at": "4:spender",
+   "note": "Spender shrugs: only ten years",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.5,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "joy",
+     "gestures": [
+      {
+       "at": "4:only",
+       "g": "shrug"
+      }
+     ],
+     "then": [
+      {
+       "at": "4:ten",
+       "pose": "smug",
+       "emotion": "sly"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "4:so",
+   "mood": "whisper",
+   "note": "OPEN LOOP: both 65 boards covered, trembling",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cover",
+    "dist": 2.6
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "cover",
+     "kit": "block",
+     "text": [
+      "AT 65",
+      "?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      1,
+      1,
+      0.6
+     ],
+     "at": "back:0,0,0.6"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:so"
+    },
+    {
+     "fx": "shake",
+     "at": "4:bad"
+    },
+    {
+     "fx": "shake",
+     "at": "4:be"
+    }
+   ]
+  },
+  {
+   "at": "5:saver",
+   "note": "Saver put in $96K (top = pile, bottom = Saver)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "pileS",
+     "saver"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "pileS",
+     "kit": "coinPile",
+     "size": [
+      0.55,
+      0.9,
+      0.55
+     ],
+     "at": "left:1.3,0,0.3",
+     "motion": "dropSlam",
+     "hit": "5:ninety-six"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "5:ninety-six",
+     "p": "left:1.3,0.02,0.3"
+    }
+   ]
+  },
+  {
+   "at": "5:spender",
+   "note": "Spender put in $72K, a smaller pile",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "pileP"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "pileP",
+     "kit": "coinPile",
+     "size": [
+      0.45,
+      0.6,
+      0.45
+     ],
+     "at": "right:-1.3,0,0.3",
+     "motion": "dropSlam",
+     "hit": "5:seventy-two"
+    }
+   ]
+  },
+  {
+   "at": "6:at",
+   "mood": "whisper",
+   "note": "second tease: the 65 cover again",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cover2",
+    "dist": 2.8
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "cover2",
+     "kit": "block",
+     "text": [
+      "AGE 65",
+      "$ ? ? ?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      1,
+      1,
+      0.6
+     ],
+     "at": "back:0,0,0.6"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "6:sixty-five"
+    }
+   ]
+  },
+  {
+   "at": "6:five",
+   "mood": "ending",
+   "note": "TWIST: Saver's pile towers, flash",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "saver",
+    "hit": "6:five",
+    "dist": 3,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy",
+     "from": "6:five"
+    }
+   ],
+   "props": [
+    {
+     "id": "bigPile",
+     "kit": "coinPile",
+     "size": [
+      0.45,
+      1.1,
+      0.45
+     ],
+     "at": "left:1.45,0,0.2",
+     "motion": "dropSlam",
+     "hit": "6:five"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:five"
+    },
+    "shake",
+    {
+     "fx": "dust",
+     "at": "6:five",
+     "p": "left:1.45,0.02,0.2"
+    }
+   ]
+  },
+  {
+   "at": "6:spender",
+   "note": "Spender about $245K, far less",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "smallPile",
+     "kit": "coinPile",
+     "size": [
+      0.35,
+      0.4,
+      0.35
+     ],
+     "at": "right:-1.3,0,0.3"
+    }
+   ]
+  },
+  {
+   "at": "6:forty-five",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up, AGE 25 block and cake",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "saver.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "age0",
+     "kit": "label",
+     "text": [
+      "AGE 25",
+      "$200/MO"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.44,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.0,1.0,0.72"
+    }
+   ]
+  }
+ ],
+ "captionsTop": true
+}
