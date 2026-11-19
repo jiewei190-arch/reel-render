@@ -1,390 +1,442 @@
 {
  "source": {
-  "audio": "voice.wav",
-  "script": "script.txt",
-  "model": "small",
-  "duration": 28.102
+  "synthetic": true,
+  "duration": 28.744
  },
  "turns": [
   {
    "turn": 1,
-   "text": "Same five dollars a day. Spender buys a coffee. Saver saves it.",
+   "text": "Your five dollar coffee is costing you a hundred eighty-six thousand. In this made-up example.",
    "words": [
     {
-     "w": "Same",
+     "w": "Your",
      "t": 0.0,
-     "end": 0.3
+     "end": 0.29
     },
     {
      "w": "five",
-     "t": 0.3,
-     "end": 0.424
+     "t": 0.29,
+     "end": 0.579
     },
     {
-     "w": "dollars",
-     "t": 0.424,
-     "end": 0.64
+     "w": "dollar",
+     "t": 0.579,
+     "end": 0.956
+    },
+    {
+     "w": "coffee",
+     "t": 0.956,
+     "end": 1.332
+    },
+    {
+     "w": "is",
+     "t": 1.332,
+     "end": 1.535
+    },
+    {
+     "w": "costing",
+     "t": 1.535,
+     "end": 1.955
+    },
+    {
+     "w": "you",
+     "t": 1.955,
+     "end": 2.201
     },
     {
      "w": "a",
-     "t": 0.64,
-     "end": 0.84
+     "t": 2.201,
+     "end": 2.361
     },
     {
-     "w": "day.",
-     "t": 0.84,
-     "end": 1.02
+     "w": "hundred",
+     "t": 2.361,
+     "end": 2.781
     },
     {
-     "w": "Spender",
-     "t": 1.36,
-     "end": 1.54
+     "w": "eighty-six",
+     "t": 2.781,
+     "end": 3.331
     },
     {
-     "w": "buys",
-     "t": 1.54,
-     "end": 1.74
+     "w": "thousand.",
+     "t": 3.331,
+     "end": 3.794
     },
     {
-     "w": "a",
-     "t": 1.74,
-     "end": 1.86
+     "w": "In",
+     "t": 3.794,
+     "end": 3.997
     },
     {
-     "w": "coffee.",
-     "t": 1.86,
-     "end": 2.1
+     "w": "this",
+     "t": 3.997,
+     "end": 4.287
     },
     {
-     "w": "Saver",
-     "t": 2.58,
-     "end": 2.76
+     "w": "made-up",
+     "t": 4.287,
+     "end": 4.707
     },
     {
-     "w": "saves",
-     "t": 2.76,
-     "end": 3.06
-    },
-    {
-     "w": "it.",
-     "t": 3.06,
-     "end": 3.28
+     "w": "example.",
+     "t": 4.707,
+     "end": 5.127
     }
    ]
   },
   {
    "turn": 2,
-   "text": "Saver invests his at a made-up, steady seven percent.",
+   "text": "Same five dollars a day. Spender drinks his. Saver invests his at a steady seven percent.",
    "words": [
     {
-     "w": "Saver",
-     "t": 3.72,
-     "end": 4.04
+     "w": "Same",
+     "t": 5.477,
+     "end": 5.767
     },
     {
-     "w": "invests",
-     "t": 4.04,
-     "end": 4.58
+     "w": "five",
+     "t": 5.767,
+     "end": 6.056
     },
     {
-     "w": "his",
-     "t": 4.58,
-     "end": 4.66
-    },
-    {
-     "w": "at",
-     "t": 4.66,
-     "end": 4.9
+     "w": "dollars",
+     "t": 6.056,
+     "end": 6.476
     },
     {
      "w": "a",
-     "t": 4.9,
-     "end": 4.98
+     "t": 6.476,
+     "end": 6.636
     },
     {
-     "w": "made-up,",
-     "t": 4.98,
-     "end": 5.32
+     "w": "day.",
+     "t": 6.636,
+     "end": 6.882
+    },
+    {
+     "w": "Spender",
+     "t": 6.882,
+     "end": 7.302
+    },
+    {
+     "w": "drinks",
+     "t": 7.302,
+     "end": 7.678
+    },
+    {
+     "w": "his.",
+     "t": 7.678,
+     "end": 7.924
+    },
+    {
+     "w": "Saver",
+     "t": 7.924,
+     "end": 8.258
+    },
+    {
+     "w": "invests",
+     "t": 8.258,
+     "end": 8.678
+    },
+    {
+     "w": "his",
+     "t": 8.678,
+     "end": 8.924
+    },
+    {
+     "w": "at",
+     "t": 8.924,
+     "end": 9.127
+    },
+    {
+     "w": "a",
+     "t": 9.127,
+     "end": 9.286
     },
     {
      "w": "steady",
-     "t": 5.5,
-     "end": 5.68
+     "t": 9.286,
+     "end": 9.662
     },
     {
      "w": "seven",
-     "t": 5.68,
-     "end": 5.963
+     "t": 9.662,
+     "end": 9.996
     },
     {
      "w": "percent.",
-     "t": 5.963,
-     "end": 6.36
+     "t": 9.996,
+     "end": 10.416
     }
    ]
   },
   {
    "turn": 3,
-   "text": "One year: Spender has 365 cups. Saver has saved 1,825 dollars.",
+   "text": "Ten years in, Spender has thousands of empty cups. Saver has about twenty-six and a half thousand.",
    "words": [
     {
-     "w": "One",
-     "t": 6.36,
-     "end": 7.12
+     "w": "Ten",
+     "t": 10.766,
+     "end": 11.012
     },
     {
-     "w": "year:",
-     "t": 7.12,
-     "end": 7.32
+     "w": "years",
+     "t": 11.012,
+     "end": 11.345
+    },
+    {
+     "w": "in,",
+     "t": 11.345,
+     "end": 11.548
     },
     {
      "w": "Spender",
-     "t": 7.52,
-     "end": 7.68
+     "t": 11.548,
+     "end": 11.968
     },
     {
      "w": "has",
-     "t": 7.68,
-     "end": 7.9
+     "t": 11.968,
+     "end": 12.214
     },
     {
-     "w": "365",
-     "t": 7.9,
-     "end": 8.66
+     "w": "thousands",
+     "t": 12.214,
+     "end": 12.721
+    },
+    {
+     "w": "of",
+     "t": 12.721,
+     "end": 12.923
+    },
+    {
+     "w": "empty",
+     "t": 12.923,
+     "end": 13.257
     },
     {
      "w": "cups.",
-     "t": 8.66,
-     "end": 9.2
+     "t": 13.257,
+     "end": 13.546
     },
     {
      "w": "Saver",
-     "t": 9.6,
-     "end": 9.78
+     "t": 13.546,
+     "end": 13.879
     },
     {
      "w": "has",
-     "t": 9.78,
-     "end": 9.94
+     "t": 13.879,
+     "end": 14.126
     },
     {
-     "w": "saved",
-     "t": 9.94,
-     "end": 10.18
+     "w": "about",
+     "t": 14.126,
+     "end": 14.459
     },
     {
-     "w": "1,825",
-     "t": 10.18,
-     "end": 10.733
+     "w": "twenty-six",
+     "t": 14.459,
+     "end": 15.009
     },
     {
-     "w": "dollars.",
-     "t": 10.733,
-     "end": 11.7
+     "w": "and",
+     "t": 15.009,
+     "end": 15.255
+    },
+    {
+     "w": "a",
+     "t": 15.255,
+     "end": 15.414
+    },
+    {
+     "w": "half",
+     "t": 15.414,
+     "end": 15.704
+    },
+    {
+     "w": "thousand.",
+     "t": 15.704,
+     "end": 16.168
     }
    ]
   },
   {
    "turn": 4,
-   "text": "But wait till you see year thirty...",
+   "text": "But the coffee isn't the real villain...",
    "words": [
     {
      "w": "But",
-     "t": 12.48,
-     "end": 12.9
+     "t": 16.518,
+     "end": 16.764
     },
     {
-     "w": "wait",
-     "t": 12.9,
-     "end": 13.08
+     "w": "the",
+     "t": 16.764,
+     "end": 17.01
     },
     {
-     "w": "till",
-     "t": 13.08,
-     "end": 13.26
+     "w": "coffee",
+     "t": 17.01,
+     "end": 17.387
     },
     {
-     "w": "you",
-     "t": 13.26,
-     "end": 13.4
+     "w": "isn't",
+     "t": 17.387,
+     "end": 17.72
     },
     {
-     "w": "see",
-     "t": 13.4,
-     "end": 13.56
+     "w": "the",
+     "t": 17.72,
+     "end": 17.966
     },
     {
-     "w": "year",
-     "t": 13.56,
-     "end": 13.76
+     "w": "real",
+     "t": 17.966,
+     "end": 18.256
     },
     {
-     "w": "thirty...",
-     "t": 13.76,
-     "end": 14.04
+     "w": "villain...",
+     "t": 18.256,
+     "end": 18.676
     }
    ]
   },
   {
    "turn": 5,
-   "text": "Ten years: Saver has about 26,000. Spender shrugs. That's it?",
+   "text": "Time is. At thirty years, Saver's jar hits about a hundred eighty-six thousand six hundred.",
    "words": [
     {
-     "w": "Ten",
-     "t": 14.6,
-     "end": 14.86
+     "w": "Time",
+     "t": 19.026,
+     "end": 19.315
     },
     {
-     "w": "years:",
-     "t": 14.86,
-     "end": 15.1
+     "w": "is.",
+     "t": 19.315,
+     "end": 19.518
     },
     {
-     "w": "Saver",
-     "t": 15.28,
-     "end": 15.48
+     "w": "At",
+     "t": 19.518,
+     "end": 19.721
     },
     {
-     "w": "has",
-     "t": 15.48,
-     "end": 15.68
+     "w": "thirty",
+     "t": 19.721,
+     "end": 20.097
+    },
+    {
+     "w": "years,",
+     "t": 20.097,
+     "end": 20.43
+    },
+    {
+     "w": "Saver's",
+     "t": 20.43,
+     "end": 20.85
+    },
+    {
+     "w": "jar",
+     "t": 20.85,
+     "end": 21.097
+    },
+    {
+     "w": "hits",
+     "t": 21.097,
+     "end": 21.386
     },
     {
      "w": "about",
-     "t": 15.68,
-     "end": 15.88
+     "t": 21.386,
+     "end": 21.719
     },
     {
-     "w": "26,000.",
-     "t": 15.88,
-     "end": 17.16
+     "w": "a",
+     "t": 21.719,
+     "end": 21.879
     },
     {
-     "w": "Spender",
-     "t": 17.16,
-     "end": 17.54
+     "w": "hundred",
+     "t": 21.879,
+     "end": 22.299
     },
     {
-     "w": "shrugs.",
-     "t": 17.54,
-     "end": 17.92
+     "w": "eighty-six",
+     "t": 22.299,
+     "end": 22.849
     },
     {
-     "w": "That's",
-     "t": 18.42,
-     "end": 18.72
+     "w": "thousand",
+     "t": 22.849,
+     "end": 23.312
     },
     {
-     "w": "it?",
-     "t": 18.72,
-     "end": 18.84
+     "w": "six",
+     "t": 23.312,
+     "end": 23.559
+    },
+    {
+     "w": "hundred.",
+     "t": 23.559,
+     "end": 23.979
     }
    ]
   },
   {
    "turn": 6,
-   "text": "Thirty years: about 186,000.",
+   "text": "Spender spent fifty-four thousand seven hundred fifty dollars. On cups.",
    "words": [
     {
-     "w": "Thirty",
-     "t": 19.26,
-     "end": 19.5
+     "w": "Spender",
+     "t": 24.329,
+     "end": 24.749
     },
     {
-     "w": "years:",
-     "t": 19.5,
-     "end": 19.82
+     "w": "spent",
+     "t": 24.749,
+     "end": 25.082
     },
     {
-     "w": "about",
-     "t": 20.1,
-     "end": 20.3
+     "w": "fifty-four",
+     "t": 25.082,
+     "end": 25.632
     },
     {
-     "w": "186,000.",
-     "t": 20.3,
-     "end": 21.74
-    }
-   ]
-  },
-  {
-   "turn": 7,
-   "text": "He only put in 54,750. Time did the rest. So what's your five dollars doing?",
-   "words": [
-    {
-     "w": "He",
-     "t": 22.14,
-     "end": 22.28
+     "w": "thousand",
+     "t": 25.632,
+     "end": 26.096
     },
     {
-     "w": "only",
-     "t": 22.28,
-     "end": 22.52
+     "w": "seven",
+     "t": 26.096,
+     "end": 26.429
     },
     {
-     "w": "put",
-     "t": 22.52,
-     "end": 22.72
+     "w": "hundred",
+     "t": 26.429,
+     "end": 26.849
     },
     {
-     "w": "in",
-     "t": 22.72,
-     "end": 22.86
+     "w": "fifty",
+     "t": 26.849,
+     "end": 27.182
     },
     {
-     "w": "54,750.",
-     "t": 22.86,
-     "end": 24.06
+     "w": "dollars.",
+     "t": 27.182,
+     "end": 27.602
     },
     {
-     "w": "Time",
-     "t": 24.96,
-     "end": 25.22
+     "w": "On",
+     "t": 27.602,
+     "end": 27.804
     },
     {
-     "w": "did",
-     "t": 25.22,
-     "end": 25.36
-    },
-    {
-     "w": "the",
-     "t": 25.36,
-     "end": 25.48
-    },
-    {
-     "w": "rest.",
-     "t": 25.48,
-     "end": 25.74
-    },
-    {
-     "w": "So",
-     "t": 26.14,
-     "end": 26.36
-    },
-    {
-     "w": "what's",
-     "t": 26.58,
-     "end": 26.78
-    },
-    {
-     "w": "your",
-     "t": 26.78,
-     "end": 26.86
-    },
-    {
-     "w": "five",
-     "t": 26.86,
-     "end": 26.955
-    },
-    {
-     "w": "dollars",
-     "t": 26.955,
-     "end": 27.12
-    },
-    {
-     "w": "doing?",
-     "t": 27.12,
-     "end": 27.54
+     "w": "cups.",
+     "t": 27.804,
+     "end": 28.094
     }
    ]
   }

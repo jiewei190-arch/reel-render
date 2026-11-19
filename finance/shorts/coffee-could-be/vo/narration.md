@@ -1,7 +1,6 @@
-1. Same five dollars a day. Spender buys a coffee. Saver saves it.
-2. Saver invests his at a made-up, steady seven percent.
-3. One year: Spender has 365 cups. Saver has saved 1,825 dollars.
-4. But wait till you see year thirty...
-5. Ten years: Saver has about 26,000. Spender shrugs. That's it?
-6. Thirty years: about 186,000.
-7. He only put in 54,750. Time did the rest. So what's your five dollars doing?
+1. Your five dollar coffee is costing you a hundred eighty-six thousand. In this made-up example.
+2. Same five dollars a day. Spender drinks his. Saver invests his at a steady seven percent.
+3. Ten years in, Spender has thousands of empty cups. Saver has about twenty-six and a half thousand.
+4. But the coffee isn't the real villain...
+5. Time is. At thirty years, Saver's jar hits about a hundred eighty-six thousand six hundred.
+6. Spender spent fifty-four thousand seven hundred fifty dollars. On cups.
