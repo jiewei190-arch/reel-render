@@ -1,0 +1,442 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "You could spend thirty-four thousand dollars in one night.",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.094,
+     "end": 0.244
+    },
+    {
+     "w": "could",
+     "t": 0.319,
+     "end": 0.394
+    },
+    {
+     "w": "spend",
+     "t": 0.469,
+     "end": 0.768
+    },
+    {
+     "w": "thirty-four",
+     "t": 0.843,
+     "end": 1.368
+    },
+    {
+     "w": "thousand",
+     "t": 1.518,
+     "end": 1.893
+    },
+    {
+     "w": "dollars",
+     "t": 1.968,
+     "end": 2.418
+    },
+    {
+     "w": "in",
+     "t": 2.493,
+     "end": 2.643
+    },
+    {
+     "w": "one",
+     "t": 2.718,
+     "end": 2.868
+    },
+    {
+     "w": "night.",
+     "t": 2.943,
+     "end": 3.617
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "That's about the average wedding right now. Spender books it. Saver keeps the money.",
+   "words": [
+    {
+     "w": "That's",
+     "t": 3.683,
+     "end": 3.945
+    },
+    {
+     "w": "about",
+     "t": 3.983,
+     "end": 4.208
+    },
+    {
+     "w": "the",
+     "t": 4.283,
+     "end": 4.358
+    },
+    {
+     "w": "average",
+     "t": 4.432,
+     "end": 4.732
+    },
+    {
+     "w": "wedding",
+     "t": 4.807,
+     "end": 5.032
+    },
+    {
+     "w": "right",
+     "t": 5.145,
+     "end": 5.257
+    },
+    {
+     "w": "now.",
+     "t": 5.37,
+     "end": 5.932
+    },
+    {
+     "w": "Spender",
+     "t": 6.007,
+     "end": 6.382
+    },
+    {
+     "w": "books",
+     "t": 6.532,
+     "end": 6.757
+    },
+    {
+     "w": "it.",
+     "t": 6.831,
+     "end": 7.356
+    },
+    {
+     "w": "Saver",
+     "t": 7.394,
+     "end": 7.731
+    },
+    {
+     "w": "keeps",
+     "t": 7.881,
+     "end": 8.106
+    },
+    {
+     "w": "the",
+     "t": 8.143,
+     "end": 8.181
+    },
+    {
+     "w": "money.",
+     "t": 8.256,
+     "end": 8.781
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Every guest costs Spender about two hundred ninety dollars.",
+   "words": [
+    {
+     "w": "Every",
+     "t": 8.846,
+     "end": 9.146
+    },
+    {
+     "w": "guest",
+     "t": 9.334,
+     "end": 9.521
+    },
+    {
+     "w": "costs",
+     "t": 9.596,
+     "end": 9.896
+    },
+    {
+     "w": "Spender",
+     "t": 9.971,
+     "end": 10.346
+    },
+    {
+     "w": "about",
+     "t": 10.533,
+     "end": 10.72
+    },
+    {
+     "w": "two",
+     "t": 10.795,
+     "end": 10.87
+    },
+    {
+     "w": "hundred",
+     "t": 10.945,
+     "end": 11.17
+    },
+    {
+     "w": "ninety",
+     "t": 11.32,
+     "end": 11.545
+    },
+    {
+     "w": "dollars.",
+     "t": 11.62,
+     "end": 12.37
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Over a five-hour party, that's about a hundred fourteen dollars a minute.",
+   "words": [
+    {
+     "w": "Over",
+     "t": 12.435,
+     "end": 12.66
+    },
+    {
+     "w": "a",
+     "t": 12.735,
+     "end": 12.81
+    },
+    {
+     "w": "five-hour",
+     "t": 12.885,
+     "end": 13.41
+    },
+    {
+     "w": "party,",
+     "t": 13.485,
+     "end": 14.16
+    },
+    {
+     "w": "that's",
+     "t": 14.235,
+     "end": 14.347
+    },
+    {
+     "w": "about",
+     "t": 14.385,
+     "end": 14.609
+    },
+    {
+     "w": "a",
+     "t": 14.684,
+     "end": 14.759
+    },
+    {
+     "w": "hundred",
+     "t": 14.834,
+     "end": 15.059
+    },
+    {
+     "w": "fourteen",
+     "t": 15.209,
+     "end": 15.584
+    },
+    {
+     "w": "dollars",
+     "t": 15.734,
+     "end": 16.034
+    },
+    {
+     "w": "a",
+     "t": 16.109,
+     "end": 16.184
+    },
+    {
+     "w": "minute.",
+     "t": 16.334,
+     "end": 16.933
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "But Saver's pile hides a bigger number...",
+   "words": [
+    {
+     "w": "But",
+     "t": 16.999,
+     "end": 17.149
+    },
+    {
+     "w": "Saver's",
+     "t": 17.224,
+     "end": 17.674
+    },
+    {
+     "w": "pile",
+     "t": 17.861,
+     "end": 18.049
+    },
+    {
+     "w": "hides",
+     "t": 18.124,
+     "end": 18.348
+    },
+    {
+     "w": "a",
+     "t": 18.423,
+     "end": 18.498
+    },
+    {
+     "w": "bigger",
+     "t": 18.573,
+     "end": 18.798
+    },
+    {
+     "w": "number...",
+     "t": 18.873,
+     "end": 19.473
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "First-time buyers put down about nine percent. On a typical home, that's thirty-seven thousand.",
+   "words": [
+    {
+     "w": "First-time",
+     "t": 19.539,
+     "end": 19.988
+    },
+    {
+     "w": "buyers",
+     "t": 20.063,
+     "end": 20.363
+    },
+    {
+     "w": "put",
+     "t": 20.438,
+     "end": 20.513
+    },
+    {
+     "w": "down",
+     "t": 20.588,
+     "end": 20.738
+    },
+    {
+     "w": "about",
+     "t": 20.813,
+     "end": 21.038
+    },
+    {
+     "w": "nine",
+     "t": 21.188,
+     "end": 21.338
+    },
+    {
+     "w": "percent.",
+     "t": 21.413,
+     "end": 21.938
+    },
+    {
+     "w": "On",
+     "t": 22.237,
+     "end": 22.312
+    },
+    {
+     "w": "a",
+     "t": 22.387,
+     "end": 22.425
+    },
+    {
+     "w": "typical",
+     "t": 22.462,
+     "end": 22.762
+    },
+    {
+     "w": "home,",
+     "t": 22.837,
+     "end": 23.362
+    },
+    {
+     "w": "that's",
+     "t": 23.437,
+     "end": 23.662
+    },
+    {
+     "w": "thirty-seven",
+     "t": 23.737,
+     "end": 24.187
+    },
+    {
+     "w": "thousand.",
+     "t": 24.337,
+     "end": 25.011
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "In this example, that's ninety percent of a down payment, gone by midnight.",
+   "words": [
+    {
+     "w": "In",
+     "t": 25.077,
+     "end": 25.227
+    },
+    {
+     "w": "this",
+     "t": 25.302,
+     "end": 25.377
+    },
+    {
+     "w": "example,",
+     "t": 25.602,
+     "end": 26.051
+    },
+    {
+     "w": "that's",
+     "t": 26.126,
+     "end": 26.426
+    },
+    {
+     "w": "ninety",
+     "t": 26.501,
+     "end": 26.726
+    },
+    {
+     "w": "percent",
+     "t": 26.801,
+     "end": 27.101
+    },
+    {
+     "w": "of",
+     "t": 27.139,
+     "end": 27.176
+    },
+    {
+     "w": "a",
+     "t": 27.213,
+     "end": 27.251
+    },
+    {
+     "w": "down",
+     "t": 27.326,
+     "end": 27.551
+    },
+    {
+     "w": "payment,",
+     "t": 27.738,
+     "end": 28.226
+    },
+    {
+     "w": "gone",
+     "t": 28.301,
+     "end": 28.6
+    },
+    {
+     "w": "by",
+     "t": 28.675,
+     "end": 28.825
+    },
+    {
+     "w": "midnight.",
+     "t": 28.9,
+     "end": 29.575
+    }
+   ]
+  }
+ ]
+}
