@@ -641,11 +641,11 @@
      ],
      "color": "#0c0a10",
      "size": [
-      0.32,
-      0.1,
+      0.26,
+      0.08,
       0.03
      ],
-     "at": "spender.face:0,-0.13,0.42"
+     "at": "spender.face:0,-0.07,0.26"
     }
    ],
    "fx": [
@@ -681,7 +681,7 @@
    "actors": [
     {
      "id": "spender",
-     "pose": "shock",
+     "pose": "smug",
      "at": "right",
      "emotion": "angry",
      "squash": [
