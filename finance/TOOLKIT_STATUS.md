@@ -104,3 +104,19 @@ Cost: a CPU render (`--gl=swangle`, 540×960, sharp, no sub-frames) takes about 
 Not done:
 - Merging into finance/v1rebuild (needs the owner's OK).
 - ten-beats-thirty and prices-double (need the owner's OK on ElevenLabs and on the target branch).
+
+## Update: retention tactics, race, two-layer captions, research round 2 (2026-11-19, early)
+- **Retention tactics:**
+  - `hookZoom` (frame-0 push-in) and `hookReveal` (extreme close-up, wide by 1.5 s) camera presets.
+  - Easter eggs (`recipe.eggs`): our own blocky cat that steals a coin, Spender's YEAR-19 TV, sticky-note jokes, a BLOCK MONEY mug, each with default spots per set.
+  - The double-payoff `finalGag`: the cat steals the coin, the TV falls over, or the sticky note flutters down. The big caption chunk clears for it.
+- **Live race overlay (`recipe.race`):** bars race to the twist, the leader is outlined, and there's a WIN badge. The gate warns if nothing ticks through 35-70 % of the Short.
+- **Two-layer captions** (the TOP3D frame study): a small sentence line near the top, plus a big 1-3 word chunk in the lower third with one accent word (numbers yellow, losses red, gains green). The chunk is allowed from frame 0.
+- **New gate checks:**
+  - who + what readable at frame 0 (counts split screens and POV) and first cut by 1.5 s: hard fails;
+  - shot density 12-18 per 30 s, a noun and a number in the first 3 words, a camera that never stops, a loop-seam lens match: warnings.
+- **Results:** all six style examples pass the hard checks with 0 clips. The mintrap port (the live TV Short) fails only the two day-1 checks, as before.
+- **Demo,** in `finance/shorts/minimum-payment-trap/`:
+  - `quality_pass_compare_10s.mp4`: 2-12 s, before and after, with the voice.
+  - `quality_pass_compare_end.mp4`: the last 3.3 s, with the cat's final gag and the loop.
+  - Render time on CPU, 540×960, sharp: 544 s for 400 frames.

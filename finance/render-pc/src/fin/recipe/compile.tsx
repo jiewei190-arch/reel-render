@@ -717,7 +717,7 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
       {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} />
-        : c.quality ? <TwoLayerCaptions chunks={CHUNKS(c)} words={c.words} t={tOut} hookUntil={c.hookUntil} style={c.recipe.captionColors} />
+        : c.quality ? <TwoLayerCaptions chunks={CHUNKS(c)} words={c.words} t={tOut} hookUntil={again !== null && tOut >= again ? 99 : c.hookUntil} style={c.recipe.captionColors} hideChunk={!!c.recipe.finalGag && tOut >= (c.recipe.finalGag.from ?? c.duration / FPS - 0.8) && tOut > Math.max(...c.words.map((w) => w.end))} />
         : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
       {c.recipe.race ? <RaceOverlay r={{ ...c.recipe.race, from: c.at(c.recipe.race.from), resolve: c.at(c.recipe.race.resolve), until: c.at(c.recipe.race.until, c.duration / FPS) }} t={tOut} /> : null}
       <CornerTag text={tag} />
