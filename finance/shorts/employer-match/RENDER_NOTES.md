@@ -1,3 +1,5 @@
+> **REJECTED by MAIN (2026-11-19):** this cloud build (D2 voice, pre-9e679a1e frame-0/caption rules, SUB=1 cloud render) is superseded. A rebuild with ElevenLabs on the 9e679a1e engine is in progress; no CODE_FINAL until it's frozen.
+
 # employer-match (FORMAT v1, style S3 POV-YOU): cloud render notes
 
 - **Final:** `video.mp4`, rendered in the cloud on CPU (the owner's PC is off), 2026-11-19.
