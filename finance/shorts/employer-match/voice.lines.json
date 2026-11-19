@@ -1,127 +1,57 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.55,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7
- ],
- "gap": 0.25,
- "section": 1.4,
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
  "lead": 0.1,
- "beat": 0.7,
+ "speed": 1.15,
+ "tempo": 1.1132,
  "sr": 24000,
- "duration": 23.75733333333333,
- "render_s": 141.0,
- "qa_fail_lines": [
-  1,
-  6
- ],
+ "duration": 29.5,
+ "characters": 447,
  "lines": [
   {
-   "n": 1,
-   "text": "Your boss just offered you 1,500 dollars of free money.",
-   "start": 0.1,
-   "parts": [
-    {
-     "tts": "Your boss just offered you one thousand five hundred dollars of free money.",
-     "seed": 7,
-     "heard": "Your boss just offered you $1,500 of free money.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
-    }
-   ],
-   "end": 2.939
+   "line": 1,
+   "text": "Your job might be paying you money you never take.",
+   "start": 0.09,
+   "end": 2.964
   },
   {
-   "n": 2,
-   "text": "It's a match: save some of your pay, and they add more.",
-   "start": 3.189,
-   "parts": [
-    {
-     "tts": "It's a match: save some of your pay, and they add more.",
-     "seed": 7,
-     "heard": "It's a match, save some of your pay, and they add more.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 6.191
+   "line": 2,
+   "text": "Fifteen hundred free dollars a year. Would you take it? Think fast.",
+   "start": 3.099,
+   "end": 7.483
   },
   {
-   "n": 3,
-   "text": "Say you earn 50,000. They match half, up to six percent.",
-   "start": 6.441,
-   "parts": [
-    {
-     "tts": "Say you earn fifty thousand. They match half, up to six percent.",
-     "seed": 7,
-     "heard": "Say you earn 50,000. They match half up to 6%.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 9.770000000000001
+   "line": 3,
+   "text": "It's a match: save six percent of fifty thousand, and your boss adds half.",
+   "start": 7.618,
+   "end": 12.001
   },
   {
-   "n": 4,
-   "text": "You put in 3,000 a year. Spender, at the next desk, skips it.",
-   "start": 10.020000000000001,
-   "parts": [
-    {
-     "tts": "You put in three thousand a year. Spender, at the next desk, skips it.",
-     "seed": 7,
-     "heard": "you put in 3,000 a year. Spender, at the next desk, skips it.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 13.492
+   "line": 4,
+   "text": "Saver puts in three thousand. Spender, at the next desk, skips it.",
+   "start": 12.136,
+   "end": 16.376
   },
   {
-   "n": 5,
-   "text": "Then the first statements arrive...",
-   "start": 13.742,
-   "parts": [
-    {
-     "tts": "Then the first statements arrive...",
-     "seed": 7,
-     "heard": "Then the first statements arrive.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 15.304
+   "line": 5,
+   "text": "Spender said no... without even knowing it.",
+   "start": 16.511,
+   "end": 19.241
   },
   {
-   "n": 6,
-   "text": "Yours: 3,000, plus 1,500 from your boss. Spender's: zero.",
-   "start": 15.554000000000002,
-   "parts": [
-    {
-     "tts": "Yours: three thousand, plus one thousand five hundred from your boss. Spender's: zero.",
-     "seed": 7,
-     "heard": "Yours, $3,000 plus $1,500 from your boss. Spenders, $0.",
-     "wrong_words": 1,
-     "qa": "QA FAIL"
-    }
-   ],
-   "end": 20.766000000000002
+   "line": 6,
+   "text": "Then the statements arrive. Saver: three thousand, plus fifteen hundred free. Spender: zero.",
+   "start": 19.376,
+   "end": 26.06
   },
   {
-   "n": 7,
-   "text": "Plans differ, and some make you wait to keep it.",
-   "start": 21.016000000000002,
-   "parts": [
-    {
-     "tts": "Plans differ, and some make you wait to keep it.",
-     "seed": 7,
-     "heard": "Plans differ, and some make you wait to keep it.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 23.507
+   "line": 7,
+   "text": "Skip saving, and that fifteen hundred just isn't yours.",
+   "start": 26.194,
+   "end": 29.5
   }
- ],
- "splice": "line 1 re-voiced (seed 7) without the spoken \"POV\" (Whisper heard it as \"Puff\" under the music); lines 2-7 seed 7"
+ ]
 }
