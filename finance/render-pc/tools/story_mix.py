@@ -13,7 +13,9 @@ import sys
 
 comp, voice, adir, out = sys.argv[1:5]
 here = os.path.dirname(os.path.abspath(__file__))
-info = json.loads(subprocess.check_output(["node", os.path.join(here, "story_cues.mjs")], cwd=os.path.dirname(here)))[comp]
+# STORY_CUES=<file>: a cue plan written by tools/recipe_build.mjs (out/tmp/<slug>.cues.json) instead of src/fin/v1
+_cues = os.environ.get("STORY_CUES")
+info = (json.load(open(_cues)) if _cues else json.loads(subprocess.check_output(["node", os.path.join(here, "story_cues.mjs")], cwd=os.path.dirname(here))))[comp]
 dur = info["duration"]
 music = os.path.join(adir, "music", info["music"] + ".wav")
 ins = ["-i", voice, "-stream_loop", "-1", "-i", music]
