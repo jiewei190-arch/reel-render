@@ -390,11 +390,11 @@
   {
    "at": "4:but",
    "mood": "whisper",
-   "note": "OPEN LOOP: a row of covered sale tags trembles",
+   "note": "OPEN LOOP: a row of covered sale tags trembles (PC: boards pulled in and camera widened so both tags read whole)",
    "cam": {
     "preset": "pushIn",
     "target": "mark:0,1.75,0.4",
-    "dist": 2.8
+    "dist": 3.5
    },
    "extras": false,
    "actors": [],
@@ -413,11 +413,11 @@
      ],
      "color": "#3a3f58",
      "size": [
-      0.5,
-      0.4,
+      0.42,
+      0.36,
       0.05
      ],
-     "at": "mark:-0.6,1.85,0.5"
+     "at": "mark:-0.34,1.9,0.55"
     },
     {
      "id": "c2",
@@ -428,11 +428,11 @@
      ],
      "color": "#3a3f58",
      "size": [
-      0.5,
-      0.4,
+      0.42,
+      0.36,
       0.05
      ],
-     "at": "mark:0.6,1.85,0.5"
+     "at": "mark:0.34,1.9,0.55"
     }
    ],
    "fx": [
