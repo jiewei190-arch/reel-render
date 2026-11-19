@@ -1,0 +1,421 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "You and your coworker get the same four hundred dollar a month raise.",
+   "words": [
+    {
+     "w": "You",
+     "t": 0.098,
+     "end": 0.255
+    },
+    {
+     "w": "and",
+     "t": 0.334,
+     "end": 0.412
+    },
+    {
+     "w": "your",
+     "t": 0.452,
+     "end": 0.491
+    },
+    {
+     "w": "coworker",
+     "t": 0.569,
+     "end": 1.119
+    },
+    {
+     "w": "get",
+     "t": 1.198,
+     "end": 1.276
+    },
+    {
+     "w": "the",
+     "t": 1.355,
+     "end": 1.512
+    },
+    {
+     "w": "same",
+     "t": 1.59,
+     "end": 1.826
+    },
+    {
+     "w": "four",
+     "t": 1.983,
+     "end": 2.14
+    },
+    {
+     "w": "hundred",
+     "t": 2.219,
+     "end": 2.454
+    },
+    {
+     "w": "dollar",
+     "t": 2.533,
+     "end": 2.768
+    },
+    {
+     "w": "a",
+     "t": 2.847,
+     "end": 2.925
+    },
+    {
+     "w": "month",
+     "t": 3.004,
+     "end": 3.161
+    },
+    {
+     "w": "raise.",
+     "t": 3.24,
+     "end": 3.946
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Spender spends all of it on a bigger car payment. Saver spends half, and invests two hundred a month.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 4.015,
+     "end": 4.486
+    },
+    {
+     "w": "spends",
+     "t": 4.565,
+     "end": 4.8
+    },
+    {
+     "w": "all",
+     "t": 5.036,
+     "end": 5.115
+    },
+    {
+     "w": "of",
+     "t": 5.193,
+     "end": 5.272
+    },
+    {
+     "w": "it",
+     "t": 5.35,
+     "end": 5.429
+    },
+    {
+     "w": "on",
+     "t": 5.507,
+     "end": 5.586
+    },
+    {
+     "w": "a",
+     "t": 5.664,
+     "end": 5.743
+    },
+    {
+     "w": "bigger",
+     "t": 5.821,
+     "end": 6.057
+    },
+    {
+     "w": "car",
+     "t": 6.136,
+     "end": 6.293
+    },
+    {
+     "w": "payment.",
+     "t": 6.371,
+     "end": 6.842
+    },
+    {
+     "w": "Saver",
+     "t": 7.314,
+     "end": 7.628
+    },
+    {
+     "w": "spends",
+     "t": 7.706,
+     "end": 7.942
+    },
+    {
+     "w": "half,",
+     "t": 8.099,
+     "end": 8.57
+    },
+    {
+     "w": "and",
+     "t": 8.609,
+     "end": 8.649
+    },
+    {
+     "w": "invests",
+     "t": 8.727,
+     "end": 9.277
+    },
+    {
+     "w": "two",
+     "t": 9.356,
+     "end": 9.434
+    },
+    {
+     "w": "hundred",
+     "t": 9.513,
+     "end": 9.748
+    },
+    {
+     "w": "a",
+     "t": 9.827,
+     "end": 9.866
+    },
+    {
+     "w": "month.",
+     "t": 9.905,
+     "end": 10.455
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "At a made-up, steady seven percent, after ten years Saver has about thirty-five thousand.",
+   "words": [
+    {
+     "w": "At",
+     "t": 10.524,
+     "end": 10.681
+    },
+    {
+     "w": "a",
+     "t": 10.72,
+     "end": 10.759
+    },
+    {
+     "w": "made-up,",
+     "t": 10.838,
+     "end": 11.388
+    },
+    {
+     "w": "steady",
+     "t": 11.623,
+     "end": 11.859
+    },
+    {
+     "w": "seven",
+     "t": 11.937,
+     "end": 12.173
+    },
+    {
+     "w": "percent,",
+     "t": 12.252,
+     "end": 13.037
+    },
+    {
+     "w": "after",
+     "t": 13.194,
+     "end": 13.351
+    },
+    {
+     "w": "ten",
+     "t": 13.43,
+     "end": 13.587
+    },
+    {
+     "w": "years",
+     "t": 13.665,
+     "end": 13.979
+    },
+    {
+     "w": "Saver",
+     "t": 14.215,
+     "end": 14.529
+    },
+    {
+     "w": "has",
+     "t": 14.608,
+     "end": 14.686
+    },
+    {
+     "w": "about",
+     "t": 14.765,
+     "end": 15.079
+    },
+    {
+     "w": "thirty-five",
+     "t": 15.157,
+     "end": 15.629
+    },
+    {
+     "w": "thousand.",
+     "t": 15.786,
+     "end": 16.493
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Nice, but not life-changing... yet.",
+   "words": [
+    {
+     "w": "Nice,",
+     "t": 16.561,
+     "end": 17.347
+    },
+    {
+     "w": "but",
+     "t": 17.425,
+     "end": 17.661
+    },
+    {
+     "w": "not",
+     "t": 17.739,
+     "end": 17.896
+    },
+    {
+     "w": "life-changing...",
+     "t": 17.975,
+     "end": 19.153
+    },
+    {
+     "w": "yet.",
+     "t": 19.31,
+     "end": 19.86
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "After twenty years: about a hundred and five thousand. And he still enjoyed half the raise.",
+   "words": [
+    {
+     "w": "After",
+     "t": 20.007,
+     "end": 20.321
+    },
+    {
+     "w": "twenty",
+     "t": 20.4,
+     "end": 20.635
+    },
+    {
+     "w": "years:",
+     "t": 20.792,
+     "end": 21.656
+    },
+    {
+     "w": "about",
+     "t": 21.735,
+     "end": 21.97
+    },
+    {
+     "w": "a",
+     "t": 22.049,
+     "end": 22.127
+    },
+    {
+     "w": "hundred",
+     "t": 22.206,
+     "end": 22.442
+    },
+    {
+     "w": "and",
+     "t": 22.559,
+     "end": 22.677
+    },
+    {
+     "w": "five",
+     "t": 22.795,
+     "end": 22.913
+    },
+    {
+     "w": "thousand.",
+     "t": 23.07,
+     "end": 23.934
+    },
+    {
+     "w": "And",
+     "t": 24.012,
+     "end": 24.091
+    },
+    {
+     "w": "he",
+     "t": 24.169,
+     "end": 24.248
+    },
+    {
+     "w": "still",
+     "t": 24.326,
+     "end": 24.562
+    },
+    {
+     "w": "enjoyed",
+     "t": 24.641,
+     "end": 25.033
+    },
+    {
+     "w": "half",
+     "t": 25.151,
+     "end": 25.269
+    },
+    {
+     "w": "the",
+     "t": 25.308,
+     "end": 25.347
+    },
+    {
+     "w": "raise.",
+     "t": 25.426,
+     "end": 26.211
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Same raise. Spender still has a car payment.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 26.28,
+     "end": 26.594
+    },
+    {
+     "w": "raise.",
+     "t": 26.83,
+     "end": 27.301
+    },
+    {
+     "w": "Spender",
+     "t": 27.537,
+     "end": 27.929
+    },
+    {
+     "w": "still",
+     "t": 28.008,
+     "end": 28.322
+    },
+    {
+     "w": "has",
+     "t": 28.4,
+     "end": 28.558
+    },
+    {
+     "w": "a",
+     "t": 28.61,
+     "end": 28.663
+    },
+    {
+     "w": "car",
+     "t": 28.715,
+     "end": 28.872
+    },
+    {
+     "w": "payment.",
+     "t": 28.95,
+     "end": 29.579
+    }
+   ]
+  }
+ ]
+}

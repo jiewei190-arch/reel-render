@@ -1,0 +1,51 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0186,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 429,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You and your coworker get the same four hundred dollar a month raise.",
+   "start": 0.098,
+   "end": 3.868
+  },
+  {
+   "line": 2,
+   "text": "Spender spends all of it on a bigger car payment. Saver spends half, and invests two hundred a month.",
+   "start": 4.015,
+   "end": 10.377
+  },
+  {
+   "line": 3,
+   "text": "At a made-up, steady seven percent, after ten years Saver has about thirty-five thousand.",
+   "start": 10.524,
+   "end": 16.414
+  },
+  {
+   "line": 4,
+   "text": "Nice, but not life-changing... yet.",
+   "start": 16.561,
+   "end": 19.86
+  },
+  {
+   "line": 5,
+   "text": "After twenty years: about a hundred and five thousand. And he still enjoyed half the raise.",
+   "start": 20.007,
+   "end": 26.133
+  },
+  {
+   "line": 6,
+   "text": "Same raise. Spender still has a car payment.",
+   "start": 26.28,
+   "end": 29.5
+  }
+ ]
+}
