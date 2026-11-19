@@ -1,0 +1,127 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 24.459,
+ "render_s": 180.6,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Your dollar is worth under twelve cents.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Your dollar is worth under twelve cents.",
+     "seed": 7,
+     "heard": "Your dollar is worth under 12 cents.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.219
+  },
+  {
+   "n": 2,
+   "text": "In 1970 money. Prices have climbed almost nine times since then.",
+   "start": 2.519,
+   "parts": [
+    {
+     "tts": "In nineteen seventy money. Prices have climbed almost nine times since then.",
+     "seed": 7,
+     "heard": "in 1970 money. Prices have climbed almost nine times since then.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.185
+  },
+  {
+   "n": 3,
+   "text": "That's the government's consumer price index, not a guess.",
+   "start": 7.485,
+   "parts": [
+    {
+     "tts": "That's the government's consumer price index, not a guess.",
+     "seed": 7,
+     "heard": "That's the government's consumer price index, not a guess.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.57
+  },
+  {
+   "n": 4,
+   "text": "Something that cost one dollar in 1970 costs about eight seventy now.",
+   "start": 10.87,
+   "parts": [
+    {
+     "tts": "Something that cost one dollar in nineteen seventy costs about eight seventy now.",
+     "seed": 11,
+     "heard": "Something that cost $1 in 1970 costs about $8.70 now.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 14.656
+  },
+  {
+   "n": 5,
+   "text": "Inflation never takes it all at once.",
+   "start": 14.956,
+   "parts": [
+    {
+     "tts": "Inflation never takes it all at once.",
+     "seed": 7,
+     "heard": "Inflation never takes it all at once.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.89
+  },
+  {
+   "n": 6,
+   "text": "Roughly four percent a year, quietly, for over fifty years.",
+   "start": 17.191,
+   "parts": [
+    {
+     "tts": "Roughly four percent a year, quietly, for over fifty years.",
+     "seed": 7,
+     "heard": "roughly 4% a year, quietly, for over 50 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.168
+  },
+  {
+   "n": 7,
+   "text": "Nobody notices a single year. That's exactly why",
+   "start": 21.468,
+   "parts": [
+    {
+     "tts": "Nobody notices a single year. That's exactly why",
+     "seed": 7,
+     "heard": "nobody notices a single year. That's exactly why.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.159
+  }
+ ]
+}

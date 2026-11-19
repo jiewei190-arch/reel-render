@@ -1,0 +1,407 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 28.548
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A surprise bill can last two years.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "end": 0.26
+    },
+    {
+     "w": "surprise",
+     "t": 0.26,
+     "end": 0.58
+    },
+    {
+     "w": "bill",
+     "t": 0.58,
+     "end": 0.96
+    },
+    {
+     "w": "can",
+     "t": 0.96,
+     "end": 1.18
+    },
+    {
+     "w": "last",
+     "t": 1.18,
+     "end": 1.46
+    },
+    {
+     "w": "two",
+     "t": 1.46,
+     "end": 1.7
+    },
+    {
+     "w": "years.",
+     "t": 1.7,
+     "end": 2.06
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Say the car breaks: 1,000 dollars, due now.",
+   "words": [
+    {
+     "w": "Say",
+     "t": 2.78,
+     "end": 2.94
+    },
+    {
+     "w": "the",
+     "t": 2.94,
+     "end": 3.08
+    },
+    {
+     "w": "car",
+     "t": 3.08,
+     "end": 3.3
+    },
+    {
+     "w": "breaks:",
+     "t": 3.3,
+     "end": 3.64
+    },
+    {
+     "w": "1,000",
+     "t": 3.64,
+     "end": 4.011
+    },
+    {
+     "w": "dollars,",
+     "t": 4.011,
+     "end": 4.66
+    },
+    {
+     "w": "due",
+     "t": 4.66,
+     "end": 5.12
+    },
+    {
+     "w": "now.",
+     "t": 5.12,
+     "end": 5.42
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "With an emergency fund, it costs 1,000 dollars. Done.",
+   "words": [
+    {
+     "w": "With",
+     "t": 6.02,
+     "end": 6.32
+    },
+    {
+     "w": "an",
+     "t": 6.32,
+     "end": 6.62
+    },
+    {
+     "w": "emergency",
+     "t": 6.62,
+     "end": 7.0
+    },
+    {
+     "w": "fund,",
+     "t": 7.0,
+     "end": 7.46
+    },
+    {
+     "w": "it",
+     "t": 7.46,
+     "end": 7.68
+    },
+    {
+     "w": "costs",
+     "t": 7.68,
+     "end": 8.0
+    },
+    {
+     "w": "1,000",
+     "t": 8.0,
+     "end": 8.276
+    },
+    {
+     "w": "dollars.",
+     "t": 8.276,
+     "end": 8.76
+    },
+    {
+     "w": "Done.",
+     "t": 9.44,
+     "end": 9.68
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "On a card at twenty-two percent, paying fifty a month?",
+   "words": [
+    {
+     "w": "On",
+     "t": 10.32,
+     "end": 10.46
+    },
+    {
+     "w": "a",
+     "t": 10.46,
+     "end": 10.58
+    },
+    {
+     "w": "card",
+     "t": 10.58,
+     "end": 10.9
+    },
+    {
+     "w": "at",
+     "t": 10.9,
+     "end": 11.14
+    },
+    {
+     "w": "twenty-two",
+     "t": 11.14,
+     "end": 11.59
+    },
+    {
+     "w": "percent,",
+     "t": 11.59,
+     "end": 11.94
+    },
+    {
+     "w": "paying",
+     "t": 11.94,
+     "end": 12.48
+    },
+    {
+     "w": "fifty",
+     "t": 12.48,
+     "end": 12.84
+    },
+    {
+     "w": "a",
+     "t": 12.84,
+     "end": 12.98
+    },
+    {
+     "w": "month?",
+     "t": 12.98,
+     "end": 13.24
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Twenty-six months, and about 257 dollars of interest.",
+   "words": [
+    {
+     "w": "Twenty-six",
+     "t": 13.72,
+     "end": 14.14
+    },
+    {
+     "w": "months,",
+     "t": 14.14,
+     "end": 14.64
+    },
+    {
+     "w": "and",
+     "t": 14.98,
+     "end": 15.14
+    },
+    {
+     "w": "about",
+     "t": 15.14,
+     "end": 15.34
+    },
+    {
+     "w": "257",
+     "t": 15.34,
+     "end": 16.56
+    },
+    {
+     "w": "dollars",
+     "t": 16.56,
+     "end": 16.61
+    },
+    {
+     "w": "of",
+     "t": 16.56,
+     "end": 16.96
+    },
+    {
+     "w": "interest.",
+     "t": 16.96,
+     "end": 17.4
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.",
+   "words": [
+    {
+     "w": "And",
+     "t": 18.0,
+     "end": 18.26
+    },
+    {
+     "w": "in",
+     "t": 18.26,
+     "end": 18.46
+    },
+    {
+     "w": "the",
+     "t": 18.46,
+     "end": 18.54
+    },
+    {
+     "w": "Fed's",
+     "t": 18.54,
+     "end": 18.84
+    },
+    {
+     "w": "own",
+     "t": 18.84,
+     "end": 18.94
+    },
+    {
+     "w": "survey,",
+     "t": 18.94,
+     "end": 19.38
+    },
+    {
+     "w": "only",
+     "t": 19.78,
+     "end": 19.94
+    },
+    {
+     "w": "63",
+     "t": 19.94,
+     "end": 20.4
+    },
+    {
+     "w": "percent",
+     "t": 20.4,
+     "end": 20.7
+    },
+    {
+     "w": "of",
+     "t": 20.7,
+     "end": 20.9
+    },
+    {
+     "w": "adults",
+     "t": 20.9,
+     "end": 21.22
+    },
+    {
+     "w": "would",
+     "t": 21.22,
+     "end": 21.38
+    },
+    {
+     "w": "cover",
+     "t": 21.38,
+     "end": 21.62
+    },
+    {
+     "w": "a",
+     "t": 21.62,
+     "end": 21.82
+    },
+    {
+     "w": "400",
+     "t": 21.82,
+     "end": 22.18
+    },
+    {
+     "w": "dollar",
+     "t": 22.18,
+     "end": 22.23
+    },
+    {
+     "w": "surprise",
+     "t": 22.18,
+     "end": 22.74
+    },
+    {
+     "w": "with",
+     "t": 22.74,
+     "end": 23.1
+    },
+    {
+     "w": "cash",
+     "t": 23.1,
+     "end": 23.38
+    },
+    {
+     "w": "or",
+     "t": 23.38,
+     "end": 23.58
+    },
+    {
+     "w": "savings.",
+     "t": 23.58,
+     "end": 23.86
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "A small cushion changes the maths. Because otherwise,",
+   "words": [
+    {
+     "w": "A",
+     "t": 24.7,
+     "end": 24.84
+    },
+    {
+     "w": "small",
+     "t": 24.84,
+     "end": 25.08
+    },
+    {
+     "w": "cushion",
+     "t": 25.08,
+     "end": 25.42
+    },
+    {
+     "w": "changes",
+     "t": 25.42,
+     "end": 25.82
+    },
+    {
+     "w": "the",
+     "t": 25.82,
+     "end": 26.04
+    },
+    {
+     "w": "maths.",
+     "t": 26.04,
+     "end": 26.46
+    },
+    {
+     "w": "Because",
+     "t": 26.88,
+     "end": 27.26
+    },
+    {
+     "w": "otherwise,",
+     "t": 27.26,
+     "end": 27.7
+    }
+   ]
+  }
+ ]
+}

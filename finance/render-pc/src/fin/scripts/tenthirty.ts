@@ -1,0 +1,2 @@
+// generated from shorts/ten-beats-thirty/script.txt
+export default "Ten years of saving can beat thirty.\nSaver puts away two hundred a month from twenty-five to thirty-five, then stops.\nSpender saves the same two hundred from thirty-five to sixty-five.\nSaver put in twenty-four thousand. Spender, seventy-two thousand.\nAssume a steady seven percent a year, as an example.\nAt sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.\nReturns vary, nothing is guaranteed. But time did the heavy lifting.\nThat's how";

@@ -1,0 +1,378 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 25.632
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Prices double faster than you think.",
+   "words": [
+    {
+     "w": "Prices",
+     "t": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "double",
+     "t": 0.48,
+     "end": 0.76
+    },
+    {
+     "w": "faster",
+     "t": 0.76,
+     "end": 1.14
+    },
+    {
+     "w": "than",
+     "t": 1.14,
+     "end": 1.34
+    },
+    {
+     "w": "you",
+     "t": 1.34,
+     "end": 1.46
+    },
+    {
+     "w": "think.",
+     "t": 1.46,
+     "end": 1.68
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Take the Rule of 72 and point it at inflation.",
+   "words": [
+    {
+     "w": "Take",
+     "t": 2.24,
+     "end": 2.44
+    },
+    {
+     "w": "the",
+     "t": 2.44,
+     "end": 2.6
+    },
+    {
+     "w": "Rule",
+     "t": 2.6,
+     "end": 2.82
+    },
+    {
+     "w": "of",
+     "t": 2.82,
+     "end": 2.94
+    },
+    {
+     "w": "72",
+     "t": 2.94,
+     "end": 3.34
+    },
+    {
+     "w": "and",
+     "t": 3.34,
+     "end": 3.74
+    },
+    {
+     "w": "point",
+     "t": 3.74,
+     "end": 3.98
+    },
+    {
+     "w": "it",
+     "t": 3.98,
+     "end": 4.14
+    },
+    {
+     "w": "at",
+     "t": 4.14,
+     "end": 4.26
+    },
+    {
+     "w": "inflation.",
+     "t": 4.26,
+     "end": 4.66
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "At two percent, prices double in about 36 years.",
+   "words": [
+    {
+     "w": "At",
+     "t": 5.36,
+     "end": 5.5
+    },
+    {
+     "w": "two",
+     "t": 5.5,
+     "end": 5.668
+    },
+    {
+     "w": "percent,",
+     "t": 5.668,
+     "end": 6.06
+    },
+    {
+     "w": "prices",
+     "t": 6.06,
+     "end": 6.62
+    },
+    {
+     "w": "double",
+     "t": 6.62,
+     "end": 6.98
+    },
+    {
+     "w": "in",
+     "t": 6.98,
+     "end": 7.16
+    },
+    {
+     "w": "about",
+     "t": 7.16,
+     "end": 7.36
+    },
+    {
+     "w": "36",
+     "t": 7.36,
+     "end": 7.82
+    },
+    {
+     "w": "years.",
+     "t": 7.82,
+     "end": 8.22
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "At three percent, about 24.",
+   "words": [
+    {
+     "w": "At",
+     "t": 8.84,
+     "end": 9.08
+    },
+    {
+     "w": "three",
+     "t": 9.08,
+     "end": 9.397
+    },
+    {
+     "w": "percent,",
+     "t": 9.397,
+     "end": 9.84
+    },
+    {
+     "w": "about",
+     "t": 9.84,
+     "end": 10.16
+    },
+    {
+     "w": "24.",
+     "t": 10.16,
+     "end": 11.24
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "At four percent, just 18.",
+   "words": [
+    {
+     "w": "At",
+     "t": 11.24,
+     "end": 11.5
+    },
+    {
+     "w": "four",
+     "t": 11.5,
+     "end": 11.755
+    },
+    {
+     "w": "percent,",
+     "t": 11.755,
+     "end": 12.2
+    },
+    {
+     "w": "just",
+     "t": 12.2,
+     "end": 12.5
+    },
+    {
+     "w": "18.",
+     "t": 12.5,
+     "end": 13.48
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Since 1970, U.S. prices rose about four percent a year on average.",
+   "words": [
+    {
+     "w": "Since",
+     "t": 13.48,
+     "end": 13.8
+    },
+    {
+     "w": "1970,",
+     "t": 13.8,
+     "end": 14.4
+    },
+    {
+     "w": "U.S.",
+     "t": 14.96,
+     "end": 15.14
+    },
+    {
+     "w": "prices",
+     "t": 15.14,
+     "end": 15.54
+    },
+    {
+     "w": "rose",
+     "t": 15.54,
+     "end": 15.8
+    },
+    {
+     "w": "about",
+     "t": 15.8,
+     "end": 16.04
+    },
+    {
+     "w": "four",
+     "t": 16.04,
+     "end": 16.229
+    },
+    {
+     "w": "percent",
+     "t": 16.229,
+     "end": 16.56
+    },
+    {
+     "w": "a",
+     "t": 16.56,
+     "end": 16.76
+    },
+    {
+     "w": "year",
+     "t": 16.76,
+     "end": 16.92
+    },
+    {
+     "w": "on",
+     "t": 16.92,
+     "end": 17.08
+    },
+    {
+     "w": "average.",
+     "t": 17.08,
+     "end": 17.42
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "They doubled roughly every eighteen years, three times over.",
+   "words": [
+    {
+     "w": "They",
+     "t": 18.16,
+     "end": 18.28
+    },
+    {
+     "w": "doubled",
+     "t": 18.28,
+     "end": 18.5
+    },
+    {
+     "w": "roughly",
+     "t": 18.5,
+     "end": 18.9
+    },
+    {
+     "w": "every",
+     "t": 18.9,
+     "end": 19.16
+    },
+    {
+     "w": "eighteen",
+     "t": 19.16,
+     "end": 19.54
+    },
+    {
+     "w": "years,",
+     "t": 19.54,
+     "end": 19.92
+    },
+    {
+     "w": "three",
+     "t": 20.34,
+     "end": 20.54
+    },
+    {
+     "w": "times",
+     "t": 20.54,
+     "end": 20.8
+    },
+    {
+     "w": "over.",
+     "t": 20.8,
+     "end": 21.06
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Small yearly numbers, huge long-run change. That's how",
+   "words": [
+    {
+     "w": "Small",
+     "t": 21.7,
+     "end": 21.92
+    },
+    {
+     "w": "yearly",
+     "t": 21.92,
+     "end": 22.18
+    },
+    {
+     "w": "numbers,",
+     "t": 22.18,
+     "end": 22.62
+    },
+    {
+     "w": "huge",
+     "t": 23.14,
+     "end": 23.48
+    },
+    {
+     "w": "long-run",
+     "t": 23.48,
+     "end": 23.96
+    },
+    {
+     "w": "change.",
+     "t": 23.96,
+     "end": 24.46
+    },
+    {
+     "w": "That's",
+     "t": 24.74,
+     "end": 24.98
+    },
+    {
+     "w": "how",
+     "t": 24.98,
+     "end": 25.14
+    }
+   ]
+  }
+ ]
+}

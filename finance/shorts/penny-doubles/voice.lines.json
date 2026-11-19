@@ -1,0 +1,180 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 28.574,
+ "render_s": 232.9,
+ "qa_fail_lines": [
+  3,
+  8
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This penny beats a million dollars.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "This penny beats a million dollars.",
+     "seed": 7,
+     "heard": "This penny beats a million dollars.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.424
+  },
+  {
+   "n": 2,
+   "text": "Double it every day for 30 days.",
+   "start": 2.724,
+   "parts": [
+    {
+     "tts": "Double it every day for thirty days.",
+     "seed": 7,
+     "heard": "Double it every day for 30 days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.945
+  },
+  {
+   "n": 3,
+   "text": "Day ten? Five dollars and twelve cents.",
+   "start": 5.245,
+   "parts": [
+    {
+     "tts": "Day ten? Five dollars and twelve cents.",
+     "seed": 7,
+     "heard": "Day 10, $5.12.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 8.015
+  },
+  {
+   "n": 4,
+   "text": "Day twenty? About five thousand. Still losing.",
+   "start": 8.315,
+   "parts": [
+    {
+     "tts": "Day twenty? About five thousand. Still losing.",
+     "seed": 7,
+     "heard": "Day 20, about 5,000, still losing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.271
+  },
+  {
+   "n": 5,
+   "text": "Then the doubling takes over.",
+   "start": 11.571,
+   "parts": [
+    {
+     "tts": "Then the doubling takes over.",
+     "seed": 7,
+     "heard": "then the doubling takes over.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.341
+  },
+  {
+   "n": 6,
+   "text": "Day twenty-five, over one hundred sixty thousand.",
+   "start": 13.641,
+   "parts": [
+    {
+     "tts": "Day twenty-five, over one hundred sixty thousand.",
+     "seed": 7,
+     "heard": "Day 25, over 160,000.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.368
+  },
+  {
+   "n": 7,
+   "text": "Day twenty-eight, one point three million.",
+   "start": 16.668,
+   "parts": [
+    {
+     "tts": "Day twenty-eight, one point three million.",
+     "seed": 7,
+     "heard": "Day 28, 1.3 million.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.126
+  },
+  {
+   "n": 8,
+   "text": "Day thirty... five point three million dollars.",
+   "start": 19.426,
+   "parts": [
+    {
+     "tts": "Day thirty...",
+     "seed": 7,
+     "heard": "Day 30.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "five point three million dollars.",
+     "seed": 7,
+     "heard": "$5.3 million.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 23.47
+  },
+  {
+   "n": 9,
+   "text": "Half of it shows up on the very last day.",
+   "start": 23.77,
+   "parts": [
+    {
+     "tts": "Half of it shows up on the very last day.",
+     "seed": 7,
+     "heard": "half of it shows up on the very last day.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.937
+  },
+  {
+   "n": 10,
+   "text": "Which is why, every single time,",
+   "start": 26.237,
+   "parts": [
+    {
+     "tts": "Which is why, every single time,",
+     "seed": 7,
+     "heard": "which is why every single time",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.274
+  }
+ ]
+}

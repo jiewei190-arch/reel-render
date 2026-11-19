@@ -1,0 +1,20 @@
+id=uoS1qzRWdbM|t0=boy in red shirt w/ red circle drawn on face|t05=same, circle persists|t1=cut: second boy appears, name label DAD|t2=cut: two boys with $50 floating labels, name labels|t3=cut: Taco Bell storefront, name label CHRISTIAN
+id=nOiaaf60W0U|t0=extreme close-up bearded face, text 'this man ADOPTED'|t05=cut to wide shot of man with many kids, text|t1=same wide, '16 KIDS' text|t2=cut: orange-tinted close-up, caption|t3=cut: closer orange face 'ALIVE'
+id=7FpRlcWlc6o|t0=hallway POV, text 'When your crush waves at you'|t05=noob runs in from side|t1=noob mid-trip|t2=noob tumbling|t3=noob rolling on floor
+id=VTJLSVSIfkQ|t0=wide bright town, stilts, text 'In this town'|t05=same, text same|t1=text 'Nobody has'|t2=cut? text 'in a hundred years'|t3=text 'Everyone's on stilts' close
+id=47J1l3p1Abc|t0=heavy horizontal motion blur|t05=blocky girl, star-captioned text|t1=cut: boy in black, text 'everyone is born with ...'|t2=same boy|t3=cut back to girl
+id=9ehYg8EPQY8|t0=hooded blocky at picnic table, text 'How awful life started: 1 Year Old'|t05=same|t1=character in blue tub|t2=cut: red-haired girl, text 3 Years Old|t3=same
+id=8WEm8GKMT4w|t0=blurred horizontal smear|t05=playground scene, blocky boy sits|t1=boy sits, text small|t2=cut: cyan ghost/hologram boy|t3=cyan ghost on green
+id=0coSArNSisg|t0=blocky street group, text 'in this world'|t05=same, text 'in this world'|t1=cut: big purple-striped character, text 'everyone lies...'|t2=cut: characters near fountain, caption|t3=cut: gnome + cyan-hair avatar, caption
+id=KNIInsbNRw0|t0=static lawn, pets, no text|t05=tiny 'in' text, no cut|t1=text 'this'|t2=pets small, text 'pets'|t3=text 'superpower'
+id=3fc4YF1EXfk|t0=pig behind bars, no text|t05=same|t1=caption IN 1457,|t2=cut: judge in courtroom, caption BROKE|t3=cut: wide courtroom, caption TO
+id=DkSsP8xwf6E|t0=clock tower town, cars floating, no text|t05=same, caption IN THIS TOWN (yellow)|t1=blur fade, cut closer on flying cars|t2=cars near houses, caption IN THE AIR|t3=cars, caption ROADS
+id=k5fxXh510K4|t0=gorilla+girl by egg, orange bg, no text|t05=same, small red button|t1=same, girl walks|t2=gorilla lunges|t3=cut: new colourful scene with gorilla
+id=y5d2UDLP1BA|t0=white/blank flash|t05=letterboxed game banner THE GAME HAS ONE RULE|t1=same banner static|t2=same banner static|t3=cut to dark street with orange avatar
+id=JbLXNXuCLiE|t0=dark corridor flashlight, no text|t05=same|t1=same|t2=same|t3=same (no change at all in 3 s)
+id=rWbZwFnI7dQ|t0=two small monkeys + coin on white|t05=same|t1=same|t2=cut: bigger monkey, closer|t3=monkey with cash stack, another enters
+id=FgQoqStpYs8|t0=man in hot tub, text 'Would you rather have $1,000,000 today,'|t05=same|t1=same|t2=text 'or a $0.01 that doubles'|t3=text 'every day for 30 days?'
+id=bS6uGx_GeyM|t0=woman at till, caption '80% of people'|t05=wide: old man in distance, caption|t1=close back-of-woman, caption|t2=old man waves, caption|t3=old man holds cash, caption
+id=hFjoohWCEvQ|t0=talking head, 'I RECOMMEND EVERYBODY'|t05=same|t1=same|t2=text 'HAVE AT LEAST 2 CREDIT CARDS' + card graphic|t3=tighter crop, text 'THE FIRST CREDIT CARD'
+id=Jl_As1ShPHg|t0=coin tower on desk|t05=hand with coin above tower|t1=empty tube + coin tower|t2=tube refilling|t3=hand drops coin
+id=uoS1qzRWdbM_dup|t0=

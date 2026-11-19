@@ -1,0 +1,130 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 28.548,
+ "render_s": 316.6,
+ "qa_fail_lines": [
+  2,
+  3,
+  5,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A surprise bill can last two years.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "A surprise bill can last two years.",
+     "seed": 11,
+     "heard": "A surprise bill can last two years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.45
+  },
+  {
+   "n": 2,
+   "text": "Say the car breaks: 1,000 dollars, due now.",
+   "start": 2.75,
+   "parts": [
+    {
+     "tts": "Say the car breaks: one thousand dollars, due now.",
+     "seed": 11,
+     "heard": "Say the car breaks, $1,000 due now.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 5.75
+  },
+  {
+   "n": 3,
+   "text": "With an emergency fund, it costs 1,000 dollars. Done.",
+   "start": 6.05,
+   "parts": [
+    {
+     "tts": "With an emergency fund, it costs one thousand dollars. Done.",
+     "seed": 7,
+     "heard": "With an emergency fund, it costs $1,000. Done.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 10.011
+  },
+  {
+   "n": 4,
+   "text": "On a card at twenty-two percent, paying fifty a month?",
+   "start": 10.311,
+   "parts": [
+    {
+     "tts": "On a card at twenty-two percent, paying fifty a month?",
+     "seed": 7,
+     "heard": "on a card at 22%, paying 50 a month.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.458
+  },
+  {
+   "n": 5,
+   "text": "Twenty-six months, and about 257 dollars of interest.",
+   "start": 13.758,
+   "parts": [
+    {
+     "tts": "Twenty-six months, and about two hundred fifty-seven dollars of interest.",
+     "seed": 7,
+     "heard": "26 months, and about $257 of interest.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 17.724
+  },
+  {
+   "n": 6,
+   "text": "And in the Fed's own survey, only 63 percent of adults would cover a 400 dollar surprise with cash or savings.",
+   "start": 18.023,
+   "parts": [
+    {
+     "tts": "And in the Fed's own survey, only sixty-three percent of adults would cover a four hundred dollar surprise with cash or savings.",
+     "seed": 7,
+     "heard": "And in the Fed's own survey, only 63% of adults would cover a $400 surprise with cash or savings.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 24.396
+  },
+  {
+   "n": 7,
+   "text": "A small cushion changes the maths. Because otherwise,",
+   "start": 24.696,
+   "parts": [
+    {
+     "tts": "A small cushion changes the maths. Because otherwise,",
+     "seed": 7,
+     "heard": "A small cushion changes the maths, because otherwise...",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.248
+  }
+ ]
+}
