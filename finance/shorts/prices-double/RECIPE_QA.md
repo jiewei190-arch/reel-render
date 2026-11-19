@@ -10,9 +10,9 @@ Composition: `PricesDoubleRecipe` (+ `PricesDoubleRecipeSub`) in `src/index.tool
 
 | check | result | detail |
 |---|---|---|
-| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | clerk 89 % |
+| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | clerk 71 % |
 | hook text on screen at frame 0, <= 5 words (day-1 fix 2) | PASS | "EVERYTHING COSTS 2X" (3 words, until 3.49 s) |
-| who + what readable at frame 0 (a character >= 15 % and a prop in view) | PASS | who: clerk; what: r3, r2, r1 |
+| who + what readable at frame 0 (a character >= 15 % and a prop in view) | PASS | who: clerk; what: r2, r1, r3 |
 | the stake ($ or a time) on screen by 0.5 s | PASS | at 0.00 s |
 | first spoken word by 0.2 s (day-1 fix 3) | PASS | POV: at 0.09 s |
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | paper |
@@ -24,4 +24,4 @@ Composition: `PricesDoubleRecipe` (+ `PricesDoubleRecipeSub`) in `src/index.tool
 | no wide or dark shot in the first 1 s | PASS | S01 povFirstPerson/home |
 | length 20-30 s | PASS | 29.50 s |
 
-Frame-0 coverage by subject: clerk 89 %, r3 20 %, r2 12 %, r1 10 %, egg.cat0 0 %.
+Frame-0 coverage by subject: clerk 71 %, r2 23 %, r1 22 %, r3 7 %, egg.cat0 0 %.

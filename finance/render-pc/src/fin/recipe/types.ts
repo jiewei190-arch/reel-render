@@ -91,7 +91,7 @@ export type PropSpec = {
   on?: string;
   n?: number;
   area?: [number, number];
-  count?: { from: number; to: number; dur?: number; prefix?: string; suffix?: string };
+  count?: { from: number; to: number; dur?: number; prefix?: string; suffix?: string; decimals?: number };
 };
 
 export type FxSpec = FxId | { fx: FxId; at?: At; p?: Place; gain?: number };

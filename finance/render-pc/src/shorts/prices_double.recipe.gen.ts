@@ -159,7 +159,8 @@ export const RECIPE: Recipe = {
     "from": 8,
     "to": 8.7,
     "prefix": "$",
-    "dur": 0.9
+    "dur": 0.9,
+    "decimals": 2
    },
    "from": "6:nine"
   }
@@ -168,12 +169,12 @@ export const RECIPE: Recipe = {
   {
    "at": 0,
    "set": "home",
-   "note": "frame 0: first-person hands hold a receipt that RIPS LONGER, segment by segment",
+   "note": "frame 0: first-person hands hold a receipt that RIPS LONGER, segment by segment (PC v3: receipt drops low in front of the clerk's hands; face and hook area clear)",
    "cam": {
     "preset": "povFirstPerson",
     "targets": [
      "you",
-     "clerk"
+     "clerk.face"
     ]
    },
    "actors": [
@@ -216,18 +217,18 @@ export const RECIPE: Recipe = {
       "BREAD $3"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      1.32,
-      0.05
+      0.98,
+      0.2
      ],
      "motion": "dropSlam",
      "hit": 0.05,
-     "drop": 0.4
+     "drop": 0.12
     },
     {
      "id": "r2",
@@ -237,18 +238,18 @@ export const RECIPE: Recipe = {
       "RENT $1,200"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      1.13,
-      0.05
+      0.8,
+      0.2
      ],
      "motion": "dropSlam",
      "hit": 0.3,
-     "drop": 0.4
+     "drop": 0.12
     },
     {
      "id": "r3",
@@ -258,18 +259,18 @@ export const RECIPE: Recipe = {
       "TOTAL $1,218"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      0.94,
-      0.05
+      0.62,
+      0.2
      ],
      "motion": "dropSlam",
      "hit": 0.55,
-     "drop": 0.4
+     "drop": 0.12
     }
    ],
    "fx": [
@@ -551,17 +552,29 @@ export const RECIPE: Recipe = {
   },
   {
    "at": "4:at",
-   "note": "4 percent: 72 / 4 = 18 years (PC: tightened after the v1 scrub; it read as an empty room)",
+   "note": "4 percent: 72 / 4 = 18 years (PC v3: the friend reacts beside the 72 / 4 = 18 board, close)",
    "cam": {
-    "preset": "pushIn",
-    "target": "four",
+    "preset": "splitScreen",
+    "targets": [
+     "four",
+     "friend"
+    ],
     "dist": 2.4
    },
    "actors": [
     {
      "id": "friend",
-     "pose": "smug",
-     "at": "right"
+     "pose": "idle",
+     "at": "back:1.6,0,1.4",
+     "face": 0,
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "4:prices",
+       "pose": "smug",
+       "emotion": "curious"
+      }
+     ]
     }
    ],
    "props": [
@@ -579,10 +592,12 @@ export const RECIPE: Recipe = {
       0.05
      ],
      "at": "back:0,1.5,0.9",
-     "motion": "fly-in",
-     "hit": "four"
+     "motion": "dropSlam",
+     "hit": "4:at+0.1",
+     "drop": 0.3
     }
-   ]
+   ],
+   "in": "cut"
   },
   {
    "at": "double",
@@ -782,18 +797,29 @@ export const RECIPE: Recipe = {
   },
   {
    "at": "6:about",
-   "note": "about three doublings: $1 $2 $4 $8 (PC: tightened after the v1 scrub; it read as an empty room)",
+   "note": "about three doublings: $1 $2 $4 $8 (PC v3: the friend reacts as the tags stack up; $8.70 not $8/$9)",
    "cam": {
-    "preset": "pushIn",
-    "target": "back:0,1.35,0.9",
-    "dist": 3.6,
-    "az": 0
+    "preset": "splitScreen",
+    "targets": [
+     "d2",
+     "friend"
+    ],
+    "dist": 1.9
    },
    "actors": [
     {
      "id": "friend",
-     "pose": "point",
-     "at": "right"
+     "pose": "idle",
+     "at": "back:-1.6,0,1.4",
+     "face": 0,
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "6:doublings",
+       "pose": "smug",
+       "emotion": "curious"
+      }
+     ]
     }
    ],
    "props": [
@@ -808,9 +834,10 @@ export const RECIPE: Recipe = {
       0.4,
       0.05
      ],
-     "at": "back:-1.5,0.8,0.9",
-     "motion": "fly-in",
-     "hit": "6:about"
+     "at": "back:-0.35,0.75,0.9",
+     "motion": "dropSlam",
+     "hit": "6:about",
+     "drop": 0.3
     },
     {
      "id": "d2",
@@ -823,9 +850,10 @@ export const RECIPE: Recipe = {
       0.4,
       0.05
      ],
-     "at": "back:-0.5,1.1,0.9",
-     "motion": "fly-in",
-     "hit": "6:three"
+     "at": "back:0.15,1.1,0.9",
+     "motion": "dropSlam",
+     "hit": "6:three",
+     "drop": 0.3
     },
     {
      "id": "d3",
@@ -838,26 +866,29 @@ export const RECIPE: Recipe = {
       0.4,
       0.05
      ],
-     "at": "back:0.5,1.5,0.9",
-     "motion": "fly-in",
-     "hit": "6:doublings"
+     "at": "back:0.65,1.45,0.9",
+     "motion": "dropSlam",
+     "hit": "6:doublings",
+     "drop": 0.3
     },
     {
      "id": "d4",
      "kit": "label",
      "text": [
-      "$8"
+      "$8.70"
      ],
      "size": [
-      0.5,
+      0.65,
       0.4,
       0.05
      ],
-     "at": "back:1.5,1.9,0.9",
-     "motion": "fly-in",
-     "hit": "6:doublings+0.4"
+     "at": "back:1.2,1.8,0.9",
+     "motion": "dropSlam",
+     "hit": "6:doublings+0.4",
+     "drop": 0.3
     }
-   ]
+   ],
+   "in": "cut"
   },
   {
    "at": "7:small",
@@ -918,12 +949,12 @@ export const RECIPE: Recipe = {
   {
    "at": "7:so",
    "mood": "ending",
-   "note": "LOOP: back to the frame-0 POV; the receipt rips longer again",
+   "note": "LOOP: back to the frame-0 POV; the receipt rips longer again (PC v3: receipt drops low in front of the clerk's hands; face and hook area clear)",
    "cam": {
     "preset": "povFirstPerson",
     "targets": [
      "you",
-     "clerk"
+     "clerk.face"
     ]
    },
    "actors": [
@@ -959,14 +990,14 @@ export const RECIPE: Recipe = {
       "BREAD $3"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      1.32,
-      0.05
+      0.98,
+      0.2
      ]
     },
     {
@@ -977,14 +1008,14 @@ export const RECIPE: Recipe = {
       "RENT $1,200"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      1.13,
-      0.05
+      0.8,
+      0.2
      ]
     },
     {
@@ -995,14 +1026,14 @@ export const RECIPE: Recipe = {
       "TOTAL $1,218"
      ],
      "size": [
-      0.32,
-      0.18,
+      0.3,
+      0.17,
       0.02
      ],
      "at": [
       0.2,
-      0.94,
-      0.05
+      0.62,
+      0.2
      ]
     }
    ]

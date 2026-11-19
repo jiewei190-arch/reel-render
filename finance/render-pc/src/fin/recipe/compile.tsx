@@ -74,7 +74,7 @@ const isV3 = (x: unknown): x is V3 => Array.isArray(x) && x.length === 3;
 const add = (a: V3, b: V3): V3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const lerpV = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
 const rotY = (v: V3, a: number): V3 => [v[0] * Math.cos(a) + v[2] * Math.sin(a), v[1], -v[0] * Math.sin(a) + v[2] * Math.cos(a)];
-const fmt = (n: number) => Math.round(n).toLocaleString("en-US");
+const fmt = (n: number, decimals = 0) => n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
 /** kit prop half sizes and centre height (local, at scale 1) for QA and framing */
 const kitBox = (p: PropSpec): { c: number; h: V3 } => {
@@ -106,7 +106,7 @@ const textOf = (p: PropSpec, t: number, hit: number): string[] => {
   if (p.motion === "count-up" && p.count) {
     const c = p.count;
     const v = lerp(c.from, c.to, EASE_OUT(prog(t, hit, hit + (c.dur ?? 1.2))));
-    const line = `${c.prefix ?? ""}${fmt(v)}${c.suffix ?? ""}`;
+    const line = `${c.prefix ?? ""}${fmt(v, c.decimals ?? 0)}${c.suffix ?? ""}`;
     const rest = Array.isArray(p.text) ? p.text : p.text ? [p.text] : [];
     return rest.length ? [rest[0], line] : [line];
   }

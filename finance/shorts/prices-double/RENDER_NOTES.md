@@ -2,7 +2,7 @@ STATE: rendered (FORMAT v1 recipe, PC build on the 9e679a1e engine)
 
 # prices-double: render notes (PC, style S3 POV-YOU, voice Christopher)
 
-`video.mp4` sha256 `a8e9b47522078dc5faae20dcd1ac9fb5a3691d09cece3e9f18aee6511d7a7d24`. 1080x1920, 30 fps, 885 frames (29.50 s), SUB=4 motion blur with the quality pass, 22.1 MB.
+`video.mp4` sha256 `0d75e5ae9e17e9fd9cf7dcf904ef1e9fff3ce57d9b7f6e0f5b4be47292f45248` (v3; v2 a8e9b475 was NOT GO). 1080x1920, 30 fps, 885 frames (29.50 s), SUB=4 motion blur with the quality pass, 22.0 MB.
 This supersedes the old cloud render (contact_sheet.png and stills_sheet.png were removed).
 
 ## Build
@@ -73,3 +73,25 @@ Retention tactics:
     - "about three doublings" (23-25 s): the $2/$4/$9 tags sit over open floor.
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## v3 (MAIN's NOT-GO on v2): changes
+1. **Frame 0:**
+   - The POV now aims at the clerk's FACE, so his face sits clear, below the hook band. It's fully readable.
+   - The receipt segments drop LOW (y 0.98, 0.80 and 0.62, in front of his hands), and the drop is shortened to 0.12 m so they never cross his face.
+   - The hook sits over the clean wall.
+   - The loop shot matches.
+2. **11.7-14 s, 4%/YR:** now a split screen. Top: the 4%/YR / 72 ÷ 4 = 18 board, close (it drops in). Bottom: the friend's face, shocked, then curious. No empty room.
+3. **23-25 s, doublings:** also a split. Top: the $1 / $2 / $4 tags dropping in. Bottom: the friend reacting.
+4. **Accuracy:**
+   - The recipe count-up formatter rounded to whole numbers, which made "PRICE NOW $8.7" show as "$9".
+   - Added an optional `count.decimals` (engine: types.ts, compile.tsx; the default of 0 is unchanged), so PRICE NOW lands on **$8.70**.
+   - The last doubling tag reads **$8.70** (was "$8").
+
+v3 QA:
+- render 157 s wall;
+- -14.1 LUFS, true peak -2.5;
+- critic 0 FAIL (SYNC max 1 frame, STATIC 0 s, EDGES 20.0 %);
+- clip QA 0;
+- gate 13/13 (frame 0: the clerk, 71 %);
+- no dropouts or clipping.
+The voice and SFX cues are the same as in v2, which Whisper checked.
