@@ -706,31 +706,74 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
-      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
-      {c.recipe.captionsTop && !capOff && tOut >= CAPTIONS_FROM ? <TopLine c={c} t={tOut} /> : null}
+      {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} style={{ centre: capCentre(c, shot) }} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} style={{ centre: capCentre(c, shot) }} />) : null}
       {tag ? <div style={{ position: "absolute", right: 48, top: 440, padding: "4px 12px", borderRadius: 10, background: "rgba(255,244,200,0.92)", color: "#16121c", fontFamily: "Poppins", fontWeight: 800, fontSize: 22, letterSpacing: 1 }}>{tag}</div> : null}
     </AbsoluteFill>
   );
 };
-/** research round 2 (two-layer captions): the whole current voice line, small, near the top (cap height ~2.5 % of the frame) */
-const TopLine: React.FC<{ c: Compiled; t: number }> = ({ c, t }) => {
-  const cur = [...c.words].reverse().find((w) => w.t <= t);
-  if (!cur) return null;
-  // only the current sentence of the line (a long line would wrap into the hook)
-  const all = c.words.filter((w) => w.turn === cur.turn);
-  const ends = (w: { w: string }) => /[.?!…]$/.test(w.w);
-  let a = all.indexOf(cur); while (a > 0 && !ends(all[a - 1])) a--;
-  let b = all.indexOf(cur); while (b < all.length - 1 && !ends(all[b])) b++;
-  const line = all.slice(a, b + 1);
-  const last = line[line.length - 1];
-  if (t > last.end + 0.6) return null;
-  return (
-    <div style={{ position: "absolute", left: 90, right: 90, top: 150, display: "flex", justifyContent: "center" }}>
-      <div style={{ fontFamily: "Poppins", fontWeight: 700, fontSize: 34, lineHeight: 1.15, color: "#ffffff", textAlign: "center", WebkitTextStroke: "5px #140c1c", paintOrder: "stroke fill", textShadow: "0 3px 10px rgba(8,4,16,0.6)" }}>
-        {line.map((w) => w.w).join(" ")}
-      </div>
-    </div>
-  );
+/** OWNER 2026-11-19: word captions sit BOTTOM CENTRE. The chunk's centre is at CAP_Y px (a one-line baseline at about
+ *  72 % of the frame) and never lower than CAP_MAX_Y (nothing below y 1500: YouTube's bottom UI). Per shot (evaluated at
+ *  the shot's midpoint, so it never jitters), every visible face is projected into the view that holds the caption band;
+ *  if a face's eyes-to-mouth box overlaps the band, the caption moves above that face (or below it while still above
+ *  CAP_MAX_Y). Returns the centre as a fraction of 1920 for RecipeCaptions. */
+export const CAP_Y = 1344;
+export const CAP_MAX_Y = 1400;
+const CAP_HALF = 105; // half the band a 1-2 line chunk needs
+const capCache = new WeakMap<Compiled, Map<string, number>>();
+const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: number; k: number } | null => {
+  const sub = (a: V3, b: V3): V3 => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+  const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const nrm = (a: V3): V3 => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
+  const cross = (a: V3, b: V3): V3 => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const f = nrm(sub(cam.look, cam.pos)); const r = nrm(cross(f, [0, 1, 0])); const u = cross(r, f);
+  const d = sub(p, cam.pos); const z = dot(d, f);
+  if (z <= 0.05) return null;
+  const k = (h / 2) / Math.tan((cam.fov * Math.PI) / 360); // px per unit at distance 1
+  return { x: 540 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z };
+};
+export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number }): number => {
+  let m = capCache.get(c); if (!m) { m = new Map(); capCache.set(c, m); }
+  const hit = m.get(shot.id); if (hit !== undefined) return hit;
+  type Ob = { top: number; bot: number };
+  const faces: Ob[] = [];
+  const boards: Ob[] = [];
+  // sample the whole shot (late slams and pushes count too); the caption still moves only at cuts
+  for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
+    const tm = shot.a + (shot.b - shot.a) * u;
+    const cams = c.camAt(tm);
+    const split = cams.split && cams.second;
+    const cam = split ? cams.second! : cams.main;
+    const h = split ? 960 : 1920, top = split ? 960 : 0;
+    const vis = (o: Ob) => o.bot > top && o.top < top + h;
+    // faces: the eyes-to-mouth box of every visible actor
+    for (const a of c.actorsAt(tm)) {
+      const q = project(cam, [a.head[0], a.head[1] - 0.05 * a.s, a.head[2]], h, top);
+      if (!q || q.x < 120 || q.x > 960) continue;
+      const half = 0.17 * a.s * q.k;
+      const o = { top: q.y - half, bot: q.y + half };
+      if (vis(o)) faces.push(o);
+    }
+    // text props (labels, banners, boxes with numbers): keep their text readable; faces win when both cannot be cleared
+    const texty = new Set(c.shotAt(tm).props.filter((p) => p.spec.kit === "label" || (p.spec as { text?: unknown }).text).map((p) => p.key));
+    for (const b of c.qa(tm).props) {
+      if (!texty.has(b.name)) continue;
+      const qt = project(cam, [b.c[0], b.c[1] + b.h[1], b.c[2]], h, top), qb = project(cam, [b.c[0], b.c[1] - b.h[1], b.c[2]], h, top);
+      if (!qt || !qb) continue;
+      const reach = b.h[0] * qt.k; // only boards overlapping the caption columns (170-910 px) matter
+      const cx = (qt.x + qb.x) / 2;
+      const o = { top: Math.min(qt.y, qb.y), bot: Math.max(qt.y, qb.y) };
+      if (cx + reach > 170 && cx - reach < 910 && vis(o)) boards.push(o);
+    }
+  }
+  const free = (y: number, obs: Ob[]) => obs.every((o) => o.bot < y - CAP_HALF || o.top > y + CAP_HALF);
+  const pick = (obs: Ob[]): number | null => {
+    const cand = [CAP_Y, ...obs.flatMap((o) => [o.top - CAP_HALF - 10, o.bot + CAP_HALF + 10])].filter((y) => y >= 560 && y <= CAP_MAX_Y && free(y, obs));
+    return cand.length ? cand.reduce((b, y) => (Math.abs(y - CAP_Y) < Math.abs(b - CAP_Y) ? y : b)) : null;
+  };
+  const y = pick([...faces, ...boards]) ?? pick(faces) ?? CAP_Y;
+  const out = Math.min(y, CAP_MAX_Y) / 1920;
+  m.set(shot.id, out);
+  return out;
 };
 /** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */
 export const CAPTIONS_FROM = 1.0;

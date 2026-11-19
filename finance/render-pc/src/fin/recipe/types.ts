@@ -146,7 +146,7 @@ export type Recipe = {
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";
-  /** research round 2: a second, small caption layer near the top showing the whole current line (from CAPTIONS_FROM); off by default */
+  /** REMOVED 2026-11-19 (owner: captions bottom centre only). Kept so old recipes still type-check; ignored by the engine. */
   captionsTop?: boolean;
   /** props that stay across shots: shown from `from` to `until` (At); same fields as a shot prop */
   /** multi-shot props: `from`/`until` are times here (At), not a fly-in origin */

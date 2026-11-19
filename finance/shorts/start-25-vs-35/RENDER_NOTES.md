@@ -35,3 +35,9 @@ STATE: rendered (FORMAT v1 recipe, PC build on the 9e679a1e engine)
 - **By eye:** 6 fps scrub (`scrub_6fps_*.jpg`) and the impact frames plus 2. A face or a readable board is in every shot, and every loop ending matches frame 0.
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## 2026-11-19 re-render v3: bottom-centre captions (owner change via MAIN)
+- sha256 5a97171218aeb08ab1978a0203a06a61f5b42395406a6a5e2d23042721303c0b; 885 frames, 29.50 s video and audio, I about -14 LUFS, TP <= -2.1 dBFS.
+- Word captions are now bottom centre (engine default): chunk centre at y 1344, never below 1400, symmetric 170 px margins. The small top line (captionsTop) is removed. The engine nudges the caption per shot off faces (eyes to mouth) and text props, sampled at 5 times per shot. End word "thousand." +14 dB (the +10 asked for still left a 7.2 dB gap; +14 gives 3.4 dB, under the 6 dB limit). voice.orig.wav keeps the original.
+- QA: critic SYNC/STATIC pass. Whisper small.en full file matches the script, last word heard. silencedetect: no gaps over 0.6 s. astats flat factor 0. 6 fps scrub checked by eye: no caption covers eyes or a mouth, and text boards stay readable. I can't hear audio, only measure it.
+- Known: on the loop ending (frame-0 close-up again with the hook text), the caption sits between the hook box and the head (on the forehead or antennae), because the face and chest board fill the band. Eyes and mouth stay clear.

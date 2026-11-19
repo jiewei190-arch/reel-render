@@ -42,3 +42,10 @@ Not uploaded. It waits for MAIN QA and a BM GO.
   - The original ElevenLabs take is kept as `voice.orig.wav`.
 - Remixed with the same end-cleared cues, then mux_voice: -14.2 LUFS, true peak -2.5. No dropouts.
 - Whisper small.en and small on the full mix: "...Spender's cost $40." Video frames unchanged (same v1 render).
+
+## 2026-11-19 re-render v4: bottom-centre captions (owner change via MAIN)
+- sha256 3ab468e2be45122208aa741794da1a834d7ace1c89172a5223311fbba1e909fc; 885 frames, 29.50 s video and audio, I about -14 LUFS, TP <= -2.1 dBFS.
+- Word captions are now bottom centre (engine default): chunk centre at y 1344, never below 1400, symmetric 170 px margins. The small top line (captionsTop) is removed. The engine nudges the caption per shot off faces (eyes to mouth) and text props, sampled at 5 times per shot. Voice: unchanged fixed stem ("forty" +8 dB, gap -1.0 dB). End SFX after 28.8 s still dropped. The three $35 FEE tags were raised (2.0/1.62/1.24) so the caption fits under the stack.
+- QA: critic SYNC/STATIC pass. Whisper small.en full file matches the script, last word heard. silencedetect: no gaps over 0.6 s. astats flat factor 0. 6 fps scrub checked by eye: no caption covers eyes or a mouth, and text boards stay readable. I can't hear audio, only measure it.
+- Known: on the loop ending (frame-0 close-up again with the hook text), the caption sits between the hook box and the head (on the forehead or antennae), because the face and chest board fill the band. Eyes and mouth stay clear.
+- critic EDGES FAIL is a false positive: scenery whites (snow sparkle / car windshield) in the 55-80 % band, not caption text (the caption is 13-16 % from the edges).

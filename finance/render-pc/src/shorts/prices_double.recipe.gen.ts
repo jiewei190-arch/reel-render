@@ -23,7 +23,6 @@ export const RECIPE: Recipe = {
   "from": 1,
   "until": "7:so"
  },
- "captionsTop": true,
  "eggs": [
   "cat"
  ],

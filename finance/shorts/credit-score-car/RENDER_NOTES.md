@@ -35,3 +35,10 @@ STATE: rendered (FORMAT v1 recipe, PC build on the 9e679a1e engine)
 - **By eye:** 6 fps scrub (`scrub_6fps_*.jpg`) and the impact frames plus 2. A face or a readable board is in every shot, and every loop ending matches frame 0.
 
 Not uploaded. It waits for MAIN QA and a BM GO.
+
+## 2026-11-19 re-render v3: bottom-centre captions (owner change via MAIN)
+- sha256 2bd7c89c8a088a83dc3930b025464c03e4bb3427ac361d03c0818bf1759a2114; 885 frames, 29.50 s video and audio, I about -14 LUFS, TP <= -2.1 dBFS.
+- Word captions are now bottom centre (engine default): chunk centre at y 1344, never below 1400, symmetric 170 px margins. The small top line (captionsTop) is removed. The engine nudges the caption per shot off faces (eyes to mouth) and text props, sampled at 5 times per shot. End SFX after 28.8 s still dropped. Open-loop shot: camera target lowered to 1.3 and dist 2.7->3.4, so the TOTAL boards are whole and sit above the caption.
+- QA: critic SYNC/STATIC pass. Whisper small.en full file matches the script, last word heard. silencedetect: no gaps over 0.6 s. astats flat factor 0. 6 fps scrub checked by eye: no caption covers eyes or a mouth, and text boards stay readable. I can't hear audio, only measure it.
+- Known: on the loop ending (frame-0 close-up again with the hook text), the caption sits between the hook box and the head (on the forehead or antennae), because the face and chest board fill the band. Eyes and mouth stay clear.
+- critic EDGES FAIL is a false positive: scenery whites (snow sparkle / car windshield) in the 55-80 % band, not caption text (the caption is 13-16 % from the edges).

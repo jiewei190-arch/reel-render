@@ -814,7 +814,7 @@ export const RECIPE: Recipe = {
   },
   {
    "at": "5:three",
-   "note": "TWIST: three $35 tags stamp in a row, flash",
+   "note": "TWIST: three $35 tags stamp in a row, flash (PC 2026-11-19: stack raised so the bottom-centre caption fits under it)",
    "cam": {
     "preset": "slamZoom",
     "target": "mark:0,1.4,0.6",
@@ -835,7 +835,7 @@ export const RECIPE: Recipe = {
       0.3,
       0.05
      ],
-     "at": "mark:0,1.9,0.6",
+     "at": "mark:0,2.0,0.6",
      "motion": "dropSlam",
      "hit": "5:three",
      "drop": 0.5
@@ -852,7 +852,7 @@ export const RECIPE: Recipe = {
       0.3,
       0.05
      ],
-     "at": "mark:0,1.45,0.6",
+     "at": "mark:0,1.62,0.6",
      "motion": "dropSlam",
      "hit": "5:before",
      "drop": 0.5
@@ -869,7 +869,7 @@ export const RECIPE: Recipe = {
       0.3,
       0.05
      ],
-     "at": "mark:0,1.0,0.6",
+     "at": "mark:0,1.24,0.6",
      "motion": "dropSlam",
      "hit": "5:payday",
      "drop": 0.5

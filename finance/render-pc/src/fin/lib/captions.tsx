@@ -28,13 +28,13 @@ export const chunkWords = (words: readonly CapWord[], maxWords = 3): CapChunk[] 
 export type CaptionStyle = { size?: number; hot?: string; centre?: number; upper?: boolean };
 /** the caption band: the chunk on screen at t, the spoken word in `hot`; each word pops 0.92 -> 1 over 0.12 s */
 export const RecipeCaptions: React.FC<{ chunks: CapChunk[]; t: number; style?: CaptionStyle; hide?: (t: number) => boolean }> = ({ chunks, t, style = {}, hide }) => {
-  const { size = 84, hot = "#ff3b30", centre = 0.31, upper = true } = style;
+  const { size = 84, hot = "#ff3b30", centre = 0.7, upper = true } = style; // OWNER 2026-11-19: bottom centre (see compile.tsx capCentre)
   if (hide && hide(t)) return null;
   const c = chunks.find((k) => t >= k.start - 0.05 && t < k.hold);
   if (!c) return null;
   const enter = EASE_OUT(prog(t, c.start - 0.05, c.start + 0.1));
   return (
-    <div style={{ position: "absolute", left: SAFE.left + 10, right: SAFE.right + 10, top: 1920 * centre - 120, height: 240, display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", columnGap: size * 0.28, transform: `translateY(${(1 - enter) * 14}px)` }}>
+    <div style={{ position: "absolute", left: SAFE.right + 10, right: SAFE.right + 10, top: 1920 * centre - 120, height: 240, display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", columnGap: size * 0.28, transform: `translateY(${(1 - enter) * 14}px)` }}>
       {c.words.map((q, i) => {
         const on = t >= q.t - 2 / 30 && t < q.end + 0.05; // highlight 2 frames before the word (herk-edit-kit, idea)
         const st = prog(t, q.t - 0.05, q.t + 0.07);

@@ -223,6 +223,14 @@ It uses the same box maths as `tools/story_qa.mjs`, extended with feet, hands an
 - No wide or dark shot in the first 1 s.
 - The length is 20-30 s. This one is a warning only.
 
+**Word captions: bottom centre (owner change, 2026-11-19; engine default, nothing to set in a recipe):**
+- The word-by-word chunk is centred horizontally, with equal 170 px margins, so it stays clear of the right-hand button rail. Its centre is at y 1344, which puts a one-line baseline at about 72 % of the frame. Nothing goes below y 1500, where YouTube's bottom UI sits.
+- The small full-sentence top line (`captionsTop`) is **removed**. The field is still in `types.ts` so old recipes type-check, but the engine ignores it. Don't use it.
+- The hook text box in the first second is not a subtitle. It stays where it was.
+- **Face and board nudge** (`capCentre` in `compile.tsx`). The engine samples each shot at 5 times, so late slams and push-ins count. At each sample it projects every visible face (eyes to mouth) and every prop that carries text (labels, banners, number boxes) through that shot's camera. In a split, it uses the bottom view. It picks one y per shot, so the caption only moves at cuts and never jitters. The caption moves to the nearest y between 560 and 1400 that clears them all. If no y clears everything, faces win over boards.
+  - When a shot has a board low in frame and another just above it, the nudge may find no gap. Lower the camera target, or raise the boards.
+- The critic's EDGES band (55-80 %) now contains the captions, so its EDGES warnings are real again. Keep the white text at least 6 % from the frame edges.
+
 The reference port `minimum-payment-trap` (live; 59.7 % stayed on day 1) passes the clip QA. It FAILS two day-1 checks: its hook has 7 words, and its line 1 opens with "Spender". These are exactly the shared problems the day-1 data points at. The recipe is kept as a faithful port of the published Short.
 
 **Typical fixes:**
