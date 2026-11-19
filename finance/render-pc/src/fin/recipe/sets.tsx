@@ -108,6 +108,27 @@ export const SETS: Record<SetId, SetDef> = {
     sky: false,
     bg: "#6a5ae8",
   },
+  /** the store shell dressed as a clothing shop (same layout, anchors and blockers as "store"; only the sign and posters change) */
+  clothes: {
+    render: () => (
+      <>
+        <Store sign="CLOTHING" />
+        {placeAll(STORE_DRESS)}
+      </>
+    ),
+    anchors: { counter: COUNTER, counterTop: [CT[0], TOP, CT[2]], mark: [1.0, 0, 0.45], left: [-1.4, 0, 0.6], right: [2.75, 0, 0.35], back: [-1.5, 0, -2.35], backLeft: [-4.0, 0, -2.4], backRight: [3.45, 0, -1.45], wall: [1.7, 2.55, -3.44], centre: [0, 0, 0.5] },
+    blockers: [CTR_BOX, ...blockAll(STORE_DRESS)],
+    extrasPath: { line: [[-0.1, 0, -3.2], [1.3, 0, -3.2]], n: 1 },
+    posters: [
+      { p: [-2.7, 2.35, -3.46], text: ["BIG", "SALE"], bg: "#d62a2a", w: 0.8, h: 0.7, tilt: 0.04 },
+      { p: [-5.46, 2.2, 1.0], text: ["NEW", "COATS"], bg: "#2a6de1", yaw: Math.PI / 2, w: 0.9, h: 0.6 },
+      { p: [5.46, 2.3, -1.6], text: ["JEANS", "& TEES"], bg: "#ffd23a", fg: "#16121c", yaw: -Math.PI / 2, w: 1.0, h: 0.45 },
+    ],
+    assets: STORE_DRESS.map((a) => a.id),
+    mood: "store",
+    sky: false,
+    bg: "#6a5ae8",
+  },
   home: {
     render: () => (
       <>

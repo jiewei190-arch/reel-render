@@ -26,7 +26,7 @@
  "shots": [
   {
    "at": 0,
-   "set": "store",
+   "set": "clothes",
    "note": "frame 0: Spender beaming at a SALE tag that slams in beside his head",
    "cam": {
     "preset": "hookZoom",

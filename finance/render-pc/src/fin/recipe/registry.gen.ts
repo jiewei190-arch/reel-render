@@ -2,19 +2,21 @@
 import type { Recipe, Word } from "./types";
 import * as R0 from "../../shorts/coffee_could_be.recipe.gen";
 import * as R1 from "../../shorts/credit_score_car.recipe.gen";
-import * as R2 from "../../shorts/employer_match.recipe.gen";
-import * as R3 from "../../shorts/minimum_payment_trap.recipe.gen";
-import * as R4 from "../../shorts/overdraft_35.recipe.gen";
-import * as R5 from "../../shorts/prices_double.recipe.gen";
-import * as R6 from "../../shorts/s1_split_payments.recipe.gen";
-import * as R7 from "../../shorts/s2_same_paycheck.recipe.gen";
-import * as R8 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
-import * as R9 from "../../shorts/s4_penny_or_million.recipe.gen";
-import * as R10 from "../../shorts/s5_spender_talks.recipe.gen";
-import * as R11 from "../../shorts/s6_three_traps.recipe.gen";
-import * as R12 from "../../shorts/same_raise.recipe.gen";
-import * as R13 from "../../shorts/start_25_vs_35.recipe.gen";
-import * as R14 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R2 from "../../shorts/delivery_markup.recipe.gen";
+import * as R3 from "../../shorts/employer_match.recipe.gen";
+import * as R4 from "../../shorts/fake_sale.recipe.gen";
+import * as R5 from "../../shorts/minimum_payment_trap.recipe.gen";
+import * as R6 from "../../shorts/overdraft_35.recipe.gen";
+import * as R7 from "../../shorts/prices_double.recipe.gen";
+import * as R8 from "../../shorts/s1_split_payments.recipe.gen";
+import * as R9 from "../../shorts/s2_same_paycheck.recipe.gen";
+import * as R10 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
+import * as R11 from "../../shorts/s4_penny_or_million.recipe.gen";
+import * as R12 from "../../shorts/s5_spender_talks.recipe.gen";
+import * as R13 from "../../shorts/s6_three_traps.recipe.gen";
+import * as R14 from "../../shorts/same_raise.recipe.gen";
+import * as R15 from "../../shorts/start_25_vs_35.recipe.gen";
+import * as R16 from "../../shorts/ten_beats_thirty.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -32,4 +34,6 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R12.ID, recipe: R12.RECIPE, words: R12.WORDS, vo: R12.VO_DURATION },
   { id: R13.ID, recipe: R13.RECIPE, words: R13.WORDS, vo: R13.VO_DURATION },
   { id: R14.ID, recipe: R14.RECIPE, words: R14.WORDS, vo: R14.VO_DURATION },
+  { id: R15.ID, recipe: R15.RECIPE, words: R15.WORDS, vo: R15.VO_DURATION },
+  { id: R16.ID, recipe: R16.RECIPE, words: R16.WORDS, vo: R16.VO_DURATION },
 ];

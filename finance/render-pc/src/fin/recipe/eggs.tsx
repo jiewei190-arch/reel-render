@@ -24,6 +24,7 @@ export type FinalGag = { gag: GagId; at?: V3; from?: number };
 /** default background spots per set: cat = a walk [from, to] on some surface; the others a point (+ yaw, deg) */
 export const EGG_SPOTS: Record<SetId, { cat: [V3, V3]; tv19: [V3, number]; sticky: [V3, number]; mug: [V3, number] }> = {
   store: { cat: [[4.15, 1.52, -2.85], [5.05, 1.52, -2.85]], tv19: [[-4.85, 1.52, -1.2], 90], sticky: [[4.23, 1.35, 0.6], -90], mug: [[2.15, 1.1, -2.85], 10] },
+  clothes: { cat: [[4.15, 1.52, -2.85], [5.05, 1.52, -2.85]], tv19: [[-4.85, 1.52, -1.2], 90], sticky: [[4.23, 1.35, 0.6], -90], mug: [[2.15, 1.1, -2.85], 10] },
   home: { cat: [[-2.3, 0.94, -2.85], [-0.9, 0.94, -2.85]], tv19: [[4.6, 1.9, -1.4], -90], sticky: [[-4.38, 1.4, -1.0], 90], mug: [[-1.35, 0.38, -1.3], 20] },
   street: { cat: [[-2.6, 0.12, -2.35], [-1.0, 0.12, -2.35]], tv19: [[5.2, 0.12, -3.6], -20], sticky: [[-3.05, 1.5, -2.55], 0], mug: [[-0.3, 0.12, -2.4], 15] },
   bank: { cat: [[0.6, 1.04, -0.95], [1.2, 1.04, -0.95]], tv19: [[4.2, 0, -1.9], -30], sticky: [[0.9, 1.5, -1.07], 0], mug: [[-0.9, 1.04, -0.85], 10] },

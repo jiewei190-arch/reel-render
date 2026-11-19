@@ -16,7 +16,7 @@ export type PoseId = "idle" | "smug" | "shock" | "despair" | "push" | "reach" | 
 export type CamId = "hookZoom" | "slamZoom" | "whip" | "pushIn" | "orbit" | "closeUp" | "medium" | "wide" | "splitScreen" | "povFirstPerson";
 export type MotionId = "dropSlam" | "fly-in" | "stick-to-face" | "rain" | "burst" | "count-up";
 export type FxId = "shake" | "flash" | "dust" | "debris";
-export type SetId = "store" | "home" | "street" | "bank" | "office";
+export type SetId = "store" | "clothes" | "home" | "street" | "bank" | "office";
 export type Emotion = "happy" | "shock" | "sad" | "joy" | "sly" | "love" | "curious";
 
 /** what the camera looks at: "spender.face", "spender" (body), "saver.hands", a prop id ("tv"), an anchor or a point */
