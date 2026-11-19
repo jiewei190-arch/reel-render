@@ -190,8 +190,8 @@
    ]
   },
   {
-   "at": "1:two",
-   "note": "the $200 stamp",
+   "at": 1.0,
+   "note": "the $200 stamp (PC: cut at 1.0 s per MAIN hook rule; was 1:two)",
    "cam": {
     "preset": "slamZoom",
     "target": "bill",
@@ -812,7 +812,7 @@
      ],
      "at": "mark:0.17,1.38,0.72",
      "motion": "dropSlam",
-     "hit": "7:free",
+     "hit": 29.01,
      "drop": 0.25
     }
    ]

@@ -188,6 +188,14 @@ for (const s of C.shots) {
   if (p.boards.length) capBoards.push(`${s.id}@${s.a.toFixed(1)}s:${p.boards.join("+")}`);
 }
 const capShare = capT ? capLow / capT : 1;
+// hook-board timing (MAIN rule 2026-11-19, (a)+(b)): the frame-0 board shot cuts away by about 1.0 s, so the captions own
+// the band from then on; on the loop shot the board slams in only after the last spoken word
+const firstCut = C.shots.length > 1 ? C.shots[1].a : dur;
+const lastShot = C.shots[C.shots.length - 1];
+// (most voices run to the 29.5 s fit cap, so "after the last word" means: the board lands on the last word, not before)
+const lastWordEnd = words[words.length - 1].t;
+const loopBoards = lastShot.props.filter((p) => (p.spec.kit === "label" || p.spec.text) && p.a >= lastShot.a - 0.01);
+const loopEarly = loopBoards.filter((p) => (p.spec.motion ? p.hit : p.a) < lastWordEnd - 0.05);
 const gate = [
   ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
   ["hook text on screen at frame 0, <= 5 words (day-1 fix 2)", C.hookUntil > 0 && hookWords <= 5, `"${recipe.hook.text}" (${hookWords} words, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -202,6 +210,8 @@ const gate = [
   ["an emotion change by 1.5 s", emoAt !== null, emoAt === null ? "no actor's emotion changes by 1.5 s" : `at ${emoAt.toFixed(2)} s`, true],
   ["no wide or dark shot in the first 1 s", early.every((s) => s.spec.cam.preset !== "wide" && s.lens.mood !== "whisper"), early.map((s) => `${s.id} ${s.spec.cam.preset}/${s.lens.mood}`).join(", "), true],
   ["caption centre >= 65 % of the height on >= 90 % of caption time (faces framed above the bottom band)", capShare >= 0.9, `${(capShare * 100).toFixed(0)} %; nudged: ${capMoved.join(", ") || "none"}`, true],
+  ["frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s)", firstCut <= 1.25, `first cut at ${firstCut.toFixed(2)} s`, true],
+  ["loop board lands on the last word (not before)", loopEarly.length === 0, loopBoards.length ? `last word starts ${lastWordEnd.toFixed(2)} s; ${loopBoards.map((p) => `${p.key} at ${(p.spec.motion ? p.hit : p.a).toFixed(2)} s`).join(", ")}` : "no board on the loop shot", true],
   ["no text board in the caption band (recompose: raise the board or lower the target)", capBoards.length === 0, capBoards.join(", ") || "none", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],
 ];

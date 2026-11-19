@@ -109,9 +109,9 @@ export const RECIPE: Recipe = {
    ]
   },
   {
-   "at": "1:night",
+   "at": 1,
    "in": "cut",
-   "note": "the clock: 7 PM, the night starts",
+   "note": "the clock: 7 PM, the night starts (PC: cut at 1.0 s per MAIN hook rule; was 1:night)",
    "cam": {
     "preset": "slamZoom",
     "target": "clk",
@@ -485,7 +485,7 @@ export const RECIPE: Recipe = {
   },
   {
    "at": "6:that's",
-   "note": "TWIST: DOWN PAYMENT $37,500 stamps",
+   "note": "TWIST: DOWN PAYMENT ~$37K stamps (MAIN: matches the VO)",
    "cam": {
     "preset": "slamZoom",
     "target": "dp",
@@ -502,7 +502,7 @@ export const RECIPE: Recipe = {
     {
      "id": "dp",
      "kit": "stamp",
-     "text": "DOWN PAYMENT $37,500",
+     "text": "DOWN PAYMENT ~$37K",
      "size": [
       1.3,
       0.4,
@@ -655,7 +655,7 @@ export const RECIPE: Recipe = {
      ],
      "at": "mark:0.0,1.02,0.72",
      "motion": "dropSlam",
-     "hit": "7:gone+0.15",
+     "hit": 28.92,
      "drop": 0.25
     }
    ]

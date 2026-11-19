@@ -12,7 +12,7 @@
   "saver": "SAVER"
  },
  "tag": {
-  "text": "EXAMPLE \u00b7 TYPICAL $15 PER $100",
+  "text": "EXAMPLE · TYPICAL $15 PER $100",
   "from": 1,
   "until": "7:spender"
  },
@@ -87,7 +87,7 @@
    ]
   },
   {
-   "at": "1:costs",
+   "at": 1.0,
    "in": "cut",
    "cam": {
     "preset": "closeUp",
@@ -141,7 +141,8 @@
      "sfx": "stamp",
      "db": -5
     }
-   ]
+   ],
+   "note": " (PC: cut at 1.0 s per MAIN hook rule; was 1:costs)"
   },
   {
    "at": "1:every",
@@ -783,7 +784,7 @@
      ],
      "at": "mark:0.0,1.02,0.72",
      "motion": "dropSlam",
-     "hit": "7:spender+0.1",
+     "hit": 29.12,
      "drop": 0.25
     }
    ]

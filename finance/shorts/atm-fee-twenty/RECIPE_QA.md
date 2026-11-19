@@ -18,11 +18,13 @@ Composition: `AtmFeeTwentyRecipe` (+ `AtmFeeTwentyRecipeSub`) in `src/index.tool
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | impact |
 | no character names in the first 2 s of speech (day-1 fix 1) | PASS | none |
 | no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2) | PASS | tag from 1.00 s |
-| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.38, hit 0.06, hit 0.10, cut 2.58, hit 2.90 |
+| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.38, hit 0.06, hit 0.10, cut 1.00, hit 2.90 |
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 0.63 s |
 | no wide or dark shot in the first 1 s | PASS | S01 hookZoom/earth |
 | caption centre >= 65 % of the height on >= 90 % of caption time (faces framed above the bottom band) | PASS | 100 %; nudged: S10@21.7s->71% |
+| frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s) | PASS | first cut at 1.00 s |
+| loop board lands on the last word (not before) | PASS | last word starts 27.33 s; f1 at 27.35 s |
 | no text board in the caption band (recompose: raise the board or lower the target) | PASS | none |
 | length 20-30 s | PASS | 29.27 s |
 

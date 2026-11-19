@@ -18,11 +18,13 @@ Composition: `FreeTrial204Recipe` (+ `FreeTrial204RecipeSub`) in `src/index.tool
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | impact |
 | no character names in the first 2 s of speech (day-1 fix 1) | PASS | none |
 | no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2) | PASS | tag from 1.00 s |
-| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.38, hit 0.06, hit 0.10, cut 1.70, hit 1.70 |
+| 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.38, hit 0.06, hit 0.10, cut 1.00, hit 1.70 |
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 0.63 s |
 | no wide or dark shot in the first 1 s | PASS | S01 hookZoom/home |
 | caption centre >= 65 % of the height on >= 90 % of caption time (faces framed above the bottom band) | PASS | 100 %; nudged: none |
+| frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s) | PASS | first cut at 1.00 s |
+| loop board lands on the last word (not before) | PASS | last word starts 28.99 s; t1 at 29.01 s |
 | no text board in the caption band (recompose: raise the board or lower the target) | PASS | none |
 | length 20-30 s | PASS | 29.50 s |
 
