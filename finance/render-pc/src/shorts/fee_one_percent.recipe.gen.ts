@@ -89,8 +89,8 @@ export const RECIPE: Recipe = {
    ]
   },
   {
-   "at": "tiny",
-   "note": "the 1% looks tiny: Spender shrugs it off",
+   "at": 1,
+   "note": "the 1% looks tiny: Spender shrugs it off (PC: cut at 1.0 s per MAIN hook rule; was tiny)",
    "cam": {
     "preset": "slamZoom",
     "target": "spender.face",
@@ -458,11 +458,11 @@ export const RECIPE: Recipe = {
   {
    "at": "4:but",
    "mood": "whisper",
-   "note": "OPEN LOOP: two covered YEAR 40 boards tremble",
+   "note": "OPEN LOOP: two covered YEAR 40 boards tremble (PC: boards apart and camera widened; v1 overlapped them)",
    "cam": {
     "preset": "pushIn",
     "target": "centre:0,1.3,0",
-    "dist": 2.8
+    "dist": 3.8
    },
    "props": [
     {
@@ -473,10 +473,10 @@ export const RECIPE: Recipe = {
       "$???"
      ],
      "color": "#3a3f58",
-     "at": "centre:-0.5,1.3,0",
+     "at": "centre:-0.55,1.3,0",
      "size": [
-      0.7,
-      0.5,
+      0.56,
+      0.44,
       0.05
      ]
     },
@@ -488,10 +488,10 @@ export const RECIPE: Recipe = {
       "$???"
      ],
      "color": "#3a3f58",
-     "at": "centre:0.5,1.3,0",
+     "at": "centre:0.55,1.3,0",
      "size": [
-      0.7,
-      0.5,
+      0.56,
+      0.44,
       0.05
      ]
     }

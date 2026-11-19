@@ -188,6 +188,34 @@ for (const s of C.shots) {
   if (p.boards.length) capBoards.push(`${s.id}@${s.a.toFixed(1)}s:${p.boards.join("+")}`);
 }
 const capShare = capT ? capLow / capT : 1;
+// frame-edge check (MAIN 2026-11-19): every text prop, once landed (0.3 s after its hit), sits fully inside its view
+// with a 1.5 % margin (16 px); sampled every 0.1 s. Approximate (front-face corners, yaw ignored), so it warns, not fails. Split screens: the view the prop is seen in (top or bottom).
+const EDGE = 16, edgeHits = new Map();
+for (let t = 0; t < dur; t += 0.1) {
+  const sh = C.shotAt(t); const cams = C.camAt(t);
+  const texty = new Map(sh.props.filter((p) => (p.spec.kit === "label" || p.spec.text) && t >= p.a && t < p.b && t >= (p.spec.motion ? p.hit : p.a) + 0.3).map((p) => [p.key, p]));
+  if (!texty.size) continue;
+  const views = cams.split && cams.second ? [[cams.main, 960, 0], [cams.second, 960, 960]] : [[cams.main, 1920, 0]];
+  for (const b of C.qa(t).props) {
+    if (!texty.has(b.name)) continue;
+    let worst = null, seen = false;
+    for (const [cam, h, top] of views) {
+      const xs = [], ys = [];
+      for (const dx of [-1, 1]) for (const dy of [-1, 1]) {
+        const q = m.project(cam, [b.c[0] + dx * b.h[0], b.c[1] + dy * b.h[1], b.c[2]], h, top);
+        if (q) { xs.push(q.x); ys.push(q.y); }
+      }
+      if (xs.length < 4) continue;
+      const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+      if (x1 < 0 || x0 > 1080 || y1 < top || y0 > top + h) continue; // not in this view at all
+      seen = true;
+      const bad = x0 < EDGE || x1 > 1080 - EDGE || y0 < top + EDGE || y1 > top + h - EDGE;
+      if (!bad) { worst = null; break; }
+      worst = `${b.name} x ${x0.toFixed(0)}-${x1.toFixed(0)} y ${y0.toFixed(0)}-${y1.toFixed(0)}`;
+    }
+    if (seen && worst && !edgeHits.has(b.name)) edgeHits.set(b.name, `${worst} at ${t.toFixed(1)} s`);
+  }
+}
 // hook-board timing (MAIN rule 2026-11-19, (a)+(b)): the frame-0 board shot cuts away by about 1.0 s, so the captions own
 // the band from then on; on the loop shot the board slams in only after the last spoken word
 const firstCut = C.shots.length > 1 ? C.shots[1].a : dur;
@@ -212,6 +240,7 @@ const gate = [
   ["caption centre >= 65 % of the height on >= 90 % of caption time (faces framed above the bottom band)", capShare >= 0.9, `${(capShare * 100).toFixed(0)} %; nudged: ${capMoved.join(", ") || "none"}`, true],
   ["frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s)", firstCut <= 1.25, `first cut at ${firstCut.toFixed(2)} s`, true],
   ["loop board lands on the last word (not before)", loopEarly.length === 0, loopBoards.length ? `last word starts ${lastWordEnd.toFixed(2)} s; ${loopBoards.map((p) => `${p.key} at ${(p.spec.motion ? p.hit : p.a).toFixed(2)} s`).join(", ")}` : "no board on the loop shot", true],
+  ["every landed text prop fully inside its view (1.5 % margin)", edgeHits.size === 0, [...edgeHits.values()].slice(0, 8).join("; ") || "all inside", false],
   ["no text board in the caption band (recompose: raise the board or lower the target)", capBoards.length === 0, capBoards.join(", ") || "none", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],
 ];

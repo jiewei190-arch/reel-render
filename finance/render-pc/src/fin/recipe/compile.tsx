@@ -727,7 +727,7 @@ export const CAP_MAX_Y = 1400;
 const CAP_HALF = 105; // half the band a 1-2 line chunk needs
 export type CapPlan = { y: number; faces: { top: number; bot: number }[]; boards: string[] };
 const capCache = new WeakMap<Compiled, Map<string, CapPlan>>();
-const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: number; k: number } | null => {
+export const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: number; k: number } | null => {
   const sub = (a: V3, b: V3): V3 => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
   const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const nrm = (a: V3): V3 => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
