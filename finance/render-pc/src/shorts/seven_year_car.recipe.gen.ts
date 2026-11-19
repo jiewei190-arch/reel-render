@@ -930,28 +930,13 @@ export const RECIPE: Recipe = {
   },
   {
    "at": "7:almost",
-   "note": "TWIST: the two interest blocks side by side, ALMOST 2x stamp",
+   "note": "TWIST: the two interest blocks side by side, ALMOST 2x board slams on 'double'",
    "cam": {
     "preset": "slamZoom",
-    "target": "centre:0,0.65,-0.6",
+    "target": "centre:0,0.4,-0.6",
     "hit": "7:double",
-    "dist": 5.6
+    "dist": 4.2
    },
-   "actors": [
-    {
-     "id": "spender",
-     "pose": "idle",
-     "at": "centre:0.62,0,0.3",
-     "emotion": "shock",
-     "then": [
-      {
-       "at": "7:same",
-       "pose": "despair",
-       "emotion": "sad"
-      }
-     ]
-    }
-   ],
    "props": [
     {
      "id": "blkS",
@@ -966,7 +951,7 @@ export const RECIPE: Recipe = {
       0.55,
       0.45
      ],
-     "at": "centre:-0.7,0,-0.9"
+     "at": "centre:-0.45,0,-0.9"
     },
     {
      "id": "blkP",
@@ -980,23 +965,27 @@ export const RECIPE: Recipe = {
       1.05,
       0.45
      ],
-     "at": "centre:-0.05,0,-0.9",
+     "at": "centre:0.35,0,-0.9",
      "motion": "dropSlam",
      "hit": "7:almost+0.1",
      "drop": 1
     },
     {
      "id": "x2",
-     "kit": "stamp",
-     "text": "ALMOST 2x",
+     "kit": "label",
+     "text": [
+      "ALMOST 2x"
+     ],
      "color": "#d62a2a",
      "size": [
       0.85,
       0.26,
-      0.03
+      0.05
      ],
-     "at": "centre:-0.15,1.5,0.5",
-     "hit": "7:double"
+     "at": "centre:-0.05,1.32,-0.4",
+     "motion": "dropSlam",
+     "hit": "7:double",
+     "drop": 0.6
     }
    ],
    "fx": [
@@ -1011,7 +1000,7 @@ export const RECIPE: Recipe = {
     {
      "fx": "dust",
      "at": "7:almost+0.1",
-     "p": "centre:-0.05,0.02,-0.9"
+     "p": "centre:0.35,0.02,-0.9"
     }
    ],
    "sfx": [
