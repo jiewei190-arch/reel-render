@@ -12,6 +12,7 @@ import type { Compiled } from "./compile";
 import { GALLERY_RECIPE } from "./gallery";
 import { RECIPES } from "./registry.gen";
 import { FourMindsFilm, S8_FRAMES } from "../s8/fourminds";
+import { S8B_FRAMES, ThousandFourWaysFilm } from "../s8/thousand";
 
 const cache = new Map<string, Compiled>();
 export const compiledOf = (id: string) => {
@@ -40,6 +41,9 @@ export const ToolkitRoot: React.FC = () => (
     {/* S8 four-money-minds: the stacked-lanes Short (hand-built, not a recipe: 4 simultaneous lanes) */}
     <Composition id="FourMoneyMinds" component={FourMindsFilm} durationInFrames={S8_FRAMES} fps={30} width={1080} height={1920} defaultProps={{ sub: false }} />
     <Composition id="FourMoneyMindsSub" component={FourMindsFilm} durationInFrames={S8_FRAMES * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ sub: true }} />
+    {/* S8b thousand-four-ways: the same stacked-lanes engine, new story ($1,000 in 4 places, 2016-2026) */}
+    <Composition id="ThousandFourWays" component={ThousandFourWaysFilm} durationInFrames={S8B_FRAMES} fps={30} width={1080} height={1920} defaultProps={{ sub: false }} />
+    <Composition id="ThousandFourWaysSub" component={ThousandFourWaysFilm} durationInFrames={S8B_FRAMES * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ sub: true }} />
     <Composition id="PresetGallery" component={PresetGallery} durationInFrames={Math.round((GALLERY_RECIPE.duration ?? 1) * 30)} fps={30} width={1080} height={1920} />
     {RECIPES.map((r) => {
       const c = compiledOf(r.id);

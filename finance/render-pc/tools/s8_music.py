@@ -1,4 +1,7 @@
-"""s8_music.py <out.wav> [seconds]
+"""s8_music.py <out.wav> [seconds] [variant]
+
+variant "b" (S8b thousand-four-ways): 98 BPM, a 4-chord loop Dm / Bb / F / C, seed 2016, same drum kit and mix.
+Without a variant the output is the original S8 beat, unchanged:
 
 An ORIGINAL beat for S8 four-money-minds, synthesized from scratch with numpy (no samples, no downloaded music):
 104 BPM, A minor / F major (a 2-chord pad, one chord per bar), kick on every beat, a closed hat on the offbeats, a soft
@@ -11,17 +14,22 @@ import wave
 import numpy as np
 
 SR = 48000
-BPM = 104.0
+VARIANT = sys.argv[3] if len(sys.argv) > 3 else ""
+BPM = 98.0 if VARIANT == "b" else 104.0
 BEAT = 60.0 / BPM
 out = sys.argv[1]
 DUR = float(sys.argv[2]) if len(sys.argv) > 2 else 28.0
 N = int(DUR * SR)
 t = np.arange(N) / SR
-rng = np.random.default_rng(1234)
+rng = np.random.default_rng(2016 if VARIANT == "b" else 1234)
 
 mtof = lambda m: 440.0 * 2 ** ((m - 69) / 12.0)
 CHORDS = [[57, 60, 64], [53, 57, 60]]  # A minor (A3 C4 E4), F major (F3 A3 C4)
 ROOTS = [45, 41]  # A2, F2
+if VARIANT == "b":
+    CHORDS = [[50, 53, 57], [46, 50, 53], [53, 57, 60], [48, 52, 55]]  # Dm, Bb, F, C
+    ROOTS = [38, 34, 41, 36]
+NCH = len(CHORDS)
 
 
 def lp_fast(x, fc):
@@ -57,7 +65,7 @@ for b in range(int(DUR / bar) + 1):
     tt = t[i0:i1] - a0
     env = np.minimum(1, tt / 0.25) * np.exp(-np.maximum(0, tt - bar) / 0.12)
     s = np.zeros(i1 - i0)
-    for m in CHORDS[b % 2]:
+    for m in CHORDS[b % NCH]:
         for det in (-0.08, 0.0, 0.08):
             f = mtof(m + det)
             s += 2.0 * ((tt * f + rng.random()) % 1.0) - 1.0
@@ -100,7 +108,7 @@ for k in range(nb):
         envc = np.exp(-tc * 22) * (1 + 0.6 * (np.sin(2 * np.pi * 90 * tc) > 0))
         clap[i0 : i0 + Lc] += n * envc
     # bass: two eighth notes per beat on the bar's chord root
-    root = ROOTS[int(a0 // bar) % 2]
+    root = ROOTS[int(a0 // bar) % NCH]
     for e in range(2):
         b0 = int((a0 + e * BEAT / 2) * SR)
         if b0 >= N:
@@ -132,4 +140,4 @@ with wave.open(out, "wb") as w:
     w.setsampwidth(2)
     w.setframerate(SR)
     w.writeframes((st * 32767).astype("<i2").tobytes())
-print(f"music: {DUR:.2f} s, {BPM:.0f} BPM, Am/F pad, kick/hat/clap/bass -> {out}")
+print(f"music: {DUR:.2f} s, {BPM:.0f} BPM, {'Dm/Bb/F/C' if VARIANT == 'b' else 'Am/F'} pad, kick/hat/clap/bass -> {out}")

@@ -37,11 +37,11 @@ export const INVESTOR: Look = { skin: "#5ab4ff", hair: "#3a98f0", hairStyle: "an
 export const DEBT_KILLER: Look = { skin: "#ff9a3a", hair: "#f08020", hairStyle: "antenna1", shirt: "#e8701a", pants: FIN_PANTS, shoes: "#f4f4f2", sole: "#ffd23a", accent: "#fff0a0", print: "star", cheeks: "none", eyeScale: 1.1, belt: "#7a3a0a", cuffs: "#ffd23a", acc: { headband: ["#ffffff", "#d62a2a"] } };
 
 // ------------------------------------------------------------------ world layout
-const P = 2.08; // lane pitch (m)
-const SLAB = 0.18;
-const laneY = (i: number) => (3 - i) * P; // floor height of lane i (0 = top)
-const LANE_TOP = P - SLAB; // inside height above the floor
-const FRONT = 0.9; // floor front edge z
+export const P = 2.08; // lane pitch (m)
+export const SLAB = 0.18;
+export const laneY = (i: number) => (3 - i) * P; // floor height of lane i (0 = top)
+export const LANE_TOP = P - SLAB; // inside height above the floor
+export const FRONT = 0.9; // floor front edge z
 type LaneDef = { name: string; color: string; look: Look; x: number; signs: string[]; haters: [number, number][] };
 const HATERS3: [number, number][] = [[0.95, -0.3], [1.4, 0.08], [1.85, -0.45]];
 export const LANES: LaneDef[] = [
@@ -60,16 +60,16 @@ const BOARD_X = 0.05;
 const SEAT_X = -0.75;
 
 // ------------------------------------------------------------------ easing
-const ease = (u: number) => {
+export const ease = (u: number) => {
   const x = clamp(u);
   return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 };
-const easeOut = (u: number) => 1 - Math.pow(1 - clamp(u), 3);
-const seg = (t: number, a: number, b: number) => clamp((t - a) / (b - a));
-const bump = (t: number, a: number, d: number) => (t < a || t > a + d ? 0 : Math.sin((Math.PI * (t - a)) / d));
-const decay = (t: number, a: number, k = 6) => (t < a ? 0 : Math.exp(-(t - a) * k));
-const lerpV = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
-const lerpPose = (a: Pose, b: Pose, u: number): Pose => {
+export const easeOut = (u: number) => 1 - Math.pow(1 - clamp(u), 3);
+export const seg = (t: number, a: number, b: number) => clamp((t - a) / (b - a));
+export const bump = (t: number, a: number, d: number) => (t < a || t > a + d ? 0 : Math.sin((Math.PI * (t - a)) / d));
+export const decay = (t: number, a: number, k = 6) => (t < a ? 0 : Math.exp(-(t - a) * k));
+export const lerpV = (a: V3, b: V3, u: number): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u), lerp(a[2], b[2], u)];
+export const lerpPose = (a: Pose, b: Pose, u: number): Pose => {
   const o = { ...a } as unknown as Record<string, number>;
   for (const k of Object.keys(b) as (keyof Pose)[]) {
     const av = (a[k] ?? 0) as number, bv = (b[k] ?? 0) as number;
@@ -78,7 +78,7 @@ const lerpPose = (a: Pose, b: Pose, u: number): Pose => {
   return o as unknown as Pose;
 };
 /** a ballistic arc from a to b over [t0, t1] with an apex `h` above the straight line */
-const arc = (a: V3, b: V3, t: number, t0: number, t1: number, h: number): V3 => {
+export const arc = (a: V3, b: V3, t: number, t0: number, t1: number, h: number): V3 => {
   const u = clamp((t - t0) / (t1 - t0));
   const p = lerpV(a, b, u);
   return [p[0], p[1] + 4 * h * u * (1 - u), p[2]];
@@ -88,16 +88,17 @@ const RESET = (t: number) => ease(seg(t, 27.3, 27.65));
 const keep = (t: number) => 1 - RESET(t);
 
 // ------------------------------------------------------------------ camera (the elevator)
-const FOV = 18;
-const TAN = Math.tan(((FOV / 2) * Math.PI) / 180);
-type CS = { cx: number; cy: number; hf: number };
+export const FOV = 18;
+export const TAN = Math.tan(((FOV / 2) * Math.PI) / 180);
+export type CS = { cx: number; cy: number; hf: number };
+export type CamMove = { at: number; dur: number; to: Partial<CS> };
 // wide: the 4 lanes fill y 200-1650; push: lanes 0-2 fill y 200-1380; scoreboard: lanes fill y 205-1370 (captions below)
 const W0: CS = { cx: 0.75, cy: 3.78, hf: 11.03 };
 const W1: CS = { cx: 0.75, cy: 4.12, hf: 10.16 };
 const W2: CS = { cx: 0.55, cy: 2.75, hf: 13.7 };
 // focus: the lane band centred at y 810 (between the title band and the caption band)
 const F = (i: number, cx = -0.45, hf = 5.3): CS => ({ cx, cy: laneY(i) + 0.44, hf });
-const MOVES: { at: number; dur: number; to: Partial<CS> }[] = [
+const MOVES: CamMove[] = [
   { at: 1.0, dur: 0.4, to: W1 },
   { at: 2.0, dur: 0.45, to: F(0) },
   { at: 4.1, dur: 0.45, to: { cx: 0.55 } },
@@ -115,35 +116,39 @@ const MOVES: { at: number; dur: number; to: Partial<CS> }[] = [
   { at: 21.1, dur: 0.4, to: W2 },
 ];
 const SHAKES: [number, number][] = [[0, 1.0], [16.3, 0.45], [17.1, 0.7], [18.0, 1.5], [19.3, 0.9], [24.85, 0.35]];
-const camState = (t: number): CS => {
-  let s: CS = W0;
-  let last = 0;
-  for (const m of MOVES) {
-    if (t < m.at) break;
-    const to = { ...s, ...m.to };
-    const u = ease((t - m.at) / m.dur);
-    s = { cx: lerp(s.cx, to.cx, u), cy: lerp(s.cy, to.cy, u), hf: lerp(s.hf, to.hf, u) };
-    last = m.at + m.dur;
-  }
-  // a gentle continuous push between moves (never a dead frame), capped
-  const drift = 1 - Math.min(0.04, 0.008 * Math.max(0, t - last));
-  return { ...s, hf: s.hf * drift };
+/** the elevator camera for a list of moves (each eases from the previous state), shakes [t0, amplitude] and a start state */
+export const makeCamAt = (moves: CamMove[], shakes: [number, number][], start: CS) => {
+  const camState = (t: number): CS => {
+    let s: CS = start;
+    let last = 0;
+    for (const m of moves) {
+      if (t < m.at) break;
+      const to = { ...s, ...m.to };
+      const u = ease((t - m.at) / m.dur);
+      s = { cx: lerp(s.cx, to.cx, u), cy: lerp(s.cy, to.cy, u), hf: lerp(s.hf, to.hf, u) };
+      last = m.at + m.dur;
+    }
+    // a gentle continuous push between moves (never a dead frame), capped
+    const drift = 1 - Math.min(0.04, 0.008 * Math.max(0, t - last));
+    return { ...s, hf: s.hf * drift };
+  };
+  return (t: number): Cam => {
+    const s = camState(t);
+    const d = s.hf / 2 / TAN;
+    let sx = 0, sy = 0;
+    for (const [t0, a] of shakes) {
+      if (t < t0 || t > t0 + 0.6) continue;
+      const k = a * Math.exp(-(t - t0) * 8) * s.hf * 0.006;
+      sx += k * Math.sin((t - t0) * 83 + t0);
+      sy += k * Math.sin((t - t0) * 67 + 1.7 * t0);
+    }
+    const tilt = 0.05;
+    return { pos: [s.cx + sx, s.cy + d * tilt + sy, d], look: [s.cx + sx, s.cy + sy, 0], fov: FOV, roll: 0 };
+  };
 };
-export const camAt = (t: number): Cam => {
-  const s = camState(t);
-  const d = s.hf / 2 / TAN;
-  let sx = 0, sy = 0;
-  for (const [t0, a] of SHAKES) {
-    if (t < t0 || t > t0 + 0.6) continue;
-    const k = a * Math.exp(-(t - t0) * 8) * s.hf * 0.006;
-    sx += k * Math.sin((t - t0) * 83 + t0);
-    sy += k * Math.sin((t - t0) * 67 + 1.7 * t0);
-  }
-  const tilt = 0.05;
-  return { pos: [s.cx + sx, s.cy + d * tilt + sy, d], look: [s.cx + sx, s.cy + sy, 0], fov: FOV, roll: 0 };
-};
+export const camAt = makeCamAt(MOVES, SHAKES, W0);
 const projCam = new THREE.PerspectiveCamera(FOV, 1080 / 1920, 0.02, 600);
-const project = (cam: Cam, p: V3): [number, number] => {
+export const project = (cam: Cam, p: V3): [number, number] => {
   projCam.fov = cam.fov;
   projCam.position.set(...cam.pos);
   projCam.up.set(0, 1, 0);
@@ -155,7 +160,7 @@ const project = (cam: Cam, p: V3): [number, number] => {
 };
 
 // ------------------------------------------------------------------ the mood: dark stage, neon floors
-const NEON: MoodPreset = (() => {
+export const NEON: MoodPreset = (() => {
   const m = mk({
     note: "s8 neon lanes: dark stage, warm key from the front, cool rim",
     hemi: ["#6870c8", "#0a0612", 0.62], key: ["#fff1e0", 3.3, [0.38, 0.52, 1.0]], rim: ["#9fb0ff", 1.8, [-0.6, 0.5, -0.8]],
@@ -325,7 +330,7 @@ const haterPose = (i: number, h: number, t: number): HaterPose => {
 
 // ---------------- the characters
 type Who = { pose: Pose; emotion: Emotion; held?: Held; extra?: React.ReactNode };
-const cashHeld = (s: number): Held => ({ side: "R", node: <BillBrick p={[0, -0.02, 0]} s={1.5 * s} r={[0, 0, 0]} />, tilt: [0, 0] });
+export const cashHeld = (s: number): Held => ({ side: "R", node: <BillBrick p={[0, -0.02, 0]} s={1.5 * s} r={[0, 0, 0]} />, tilt: [0, 0] });
 const towardCam = (t: number) => ease(seg(t, LOOK_T, LOOK_T + 0.35)) * keep(t);
 const standPose = (i: number, t: number, o: Partial<Pose> = {}): Pose => {
   const L = LANES[i];
@@ -597,8 +602,8 @@ const World: React.FC<{ t: number }> = ({ t }) => (
 );
 
 // ------------------------------------------------------------------ 2D layer
-const FONT = "Poppins";
-const usd = (v: number) => "$" + Math.round(v).toLocaleString("en-US");
+export const FONT = "Poppins";
+export const usd = (v: number) => "$" + Math.round(v).toLocaleString("en-US");
 type CounterView = { main: string; color: string; sub?: string; subColor?: string; pop: number; small?: string };
 const counterOf = (i: number, t: number): CounterView => {
   if (i === 0) {
@@ -628,7 +633,7 @@ const SCORES = [
   { v: "+$70*", c: "#5fb4ff" },
   { v: "+$220", c: "#ffd23a" },
 ];
-const STROKE = (px: number, c = "#0a0712") => ({ WebkitTextStroke: `${px}px ${c}`, paintOrder: "stroke fill" as const });
+export const STROKE = (px: number, c = "#0a0712") => ({ WebkitTextStroke: `${px}px ${c}`, paintOrder: "stroke fill" as const });
 
 const LaneHud: React.FC<{ i: number; t: number; cam: Cam }> = ({ i, t, cam }) => {
   if (t < 1.0) return null;

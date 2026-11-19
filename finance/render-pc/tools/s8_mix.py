@@ -1,4 +1,4 @@
-"""s8_mix.py <voice.wav> <music.wav> <sfx_dir> <out_premix.wav>
+"""s8_mix.py <voice.wav> <music.wav> <sfx_dir> <out_premix.wav> [cue args for s8_cues.mjs ...]
 
 Premix for S8 four-money-minds: the final VO (untouched, only resampled), the ORIGINAL synthesized beat
 (tools/s8_music.py) and the SFX cues from src/fin/s8/fourminds.tsx (S8_CUES, read through tools/s8_cues.mjs).
@@ -7,6 +7,8 @@ Levels before the final loudness pass (tools/mux_voice.sh-style, -14 LUFS integr
   - the beat at -24 LUFS under the VO, ducked a further 5 dB while the VO speaks (0-3.75 s, 21.4-27.35 s),
     and lifted to -20 LUFS in the no-VO middle (music + SFX carry 3.6-21.5 s);
   - SFX at their cue gains (dB) minus 6 dB.
+Extra args go to tools/s8_cues.mjs (module, cues/duration/VO-segment export names); when it returns "vo", those
+segments replace the default VO_SEGS (S8b thousand-four-ways uses this).
 sfx_dir holds <name>.wav (the toon3d library: procedurally generated, no third-party audio).
 """
 import json
@@ -21,7 +23,7 @@ import numpy as np
 voice, music, sdir, out = sys.argv[1:5]
 here = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
-info = json.loads(subprocess.check_output(["node", os.path.join(here, "s8_cues.mjs")], cwd=os.path.dirname(here)))
+info = json.loads(subprocess.check_output(["node", os.path.join(here, "s8_cues.mjs"), *sys.argv[5:]], cwd=os.path.dirname(here)))
 DUR = float(info["duration"])
 N = int(round(DUR * SR))
 
@@ -62,7 +64,7 @@ mus = fit(load(music))
 mus *= db(-24.0 - lufs(mus))
 # music envelope: -24 under the VO with a further 5 dB duck while speaking, +4 dB in the no-VO middle
 t = np.arange(N) / SR
-VO_SEGS = [(0.0, 3.75), (21.4, 27.35)]
+VO_SEGS = [tuple(x) for x in info.get("vo", [(0.0, 3.75), (21.4, 27.35)])]
 speak = np.zeros(N)
 for a, b in VO_SEGS:
     speak = np.maximum(speak, np.clip(np.minimum((t - a + 0.12) / 0.12, (b + 0.25 - t) / 0.25), 0, 1))
