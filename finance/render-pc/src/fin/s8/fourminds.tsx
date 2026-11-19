@@ -17,8 +17,8 @@ import { mk, MOODS } from "../../engine/core/moods";
 import type { MoodPreset } from "../../engine/core/moods";
 import { View } from "../../engine/core/View";
 import type { Cam } from "../../engine/core/View";
-import { PopCaptions } from "../../library/PopCaptions";
-import type { Chunk } from "../../engine/core/captions";
+import { chunkWords, RecipeCaptions } from "../lib/captions";
+import type { CapChunk, CapWord } from "../lib/captions";
 import { base, facePoint, heldWorld, pop, SAVER, sit, SPENDER } from "../../library/characters";
 import { Act } from "../core";
 import { BillBrick, Coin } from "../props";
@@ -37,25 +37,25 @@ export const INVESTOR: Look = { skin: "#5ab4ff", hair: "#3a98f0", hairStyle: "an
 export const DEBT_KILLER: Look = { skin: "#ff9a3a", hair: "#f08020", hairStyle: "antenna1", shirt: "#e8701a", pants: FIN_PANTS, shoes: "#f4f4f2", sole: "#ffd23a", accent: "#fff0a0", print: "star", cheeks: "none", eyeScale: 1.1, belt: "#7a3a0a", cuffs: "#ffd23a", acc: { headband: ["#ffffff", "#d62a2a"] } };
 
 // ------------------------------------------------------------------ world layout
-const P = 2.6; // lane pitch (m)
-const SLAB = 0.3;
+const P = 2.08; // lane pitch (m)
+const SLAB = 0.18;
 const laneY = (i: number) => (3 - i) * P; // floor height of lane i (0 = top)
 const LANE_TOP = P - SLAB; // inside height above the floor
 const FRONT = 0.9; // floor front edge z
 type LaneDef = { name: string; color: string; look: Look; x: number; signs: string[]; haters: [number, number][] };
-const HATERS3: [number, number][] = [[1.35, -0.3], [1.85, 0.08], [2.35, -0.45]];
+const HATERS3: [number, number][] = [[0.95, -0.3], [1.4, 0.08], [1.85, -0.45]];
 export const LANES: LaneDef[] = [
   { name: "SPENDER", color: "#ff3b3b", look: SPENDER, x: -1.5, signs: ["JUST BUY IT", "YOLO", "TREAT YOURSELF"], haters: HATERS3 },
   { name: "SAVER", color: "#2fe07a", look: SAVER, x: -1.5, signs: ["BORING", "YOU'LL MISS OUT", "CASH IS TRASH"], haters: HATERS3 },
   { name: "INVESTOR", color: "#3a9bff", look: INVESTOR, x: -1.5, signs: ["IT'LL CRASH", "SELL NOW!", "YOLO"], haters: HATERS3 },
-  { name: "DEBT KILLER", color: "#ff8a1f", look: DEBT_KILLER, x: -1.15, signs: ["JUST BUY IT", "BORING", "YOLO", "MIN PAYMENT"], haters: [[1.35, -0.3], [1.85, 0.08], [2.35, -0.45], [2.05, -0.95]] },
+  { name: "DEBT KILLER", color: "#ff8a1f", look: DEBT_KILLER, x: -1.15, signs: ["JUST BUY IT", "BORING", "YOLO", "MIN PAYMENT"], haters: [[0.95, -0.3], [1.4, 0.08], [1.85, -0.45], [1.6, -0.95]] },
 ];
 const YAW0 = 0.55;
 const ENV_X = (i: number) => LANES[i].x + (i === 3 ? 0.62 : 0.55);
 const ENV_Z = 0.45;
 const JAR_X = -0.55;
 const BOX_X = -0.6;
-const CHART_X = 0.35;
+const CHART_X = 0.15;
 const BOARD_X = 0.05;
 const SEAT_X = -0.75;
 
@@ -91,25 +91,28 @@ const keep = (t: number) => 1 - RESET(t);
 const FOV = 18;
 const TAN = Math.tan(((FOV / 2) * Math.PI) / 180);
 type CS = { cx: number; cy: number; hf: number };
-const W0: CS = { cx: 1.1, cy: 3.57, hf: 17.52 };
-const W1: CS = { cx: 1.0, cy: 3.3, hf: 16.1 };
-const F = (i: number, cx = -0.6, hf = 5.0): CS => ({ cx, cy: laneY(i) + 0.95, hf });
+// wide: the 4 lanes fill y 200-1650; push: lanes 0-2 fill y 200-1380; scoreboard: lanes fill y 205-1370 (captions below)
+const W0: CS = { cx: 0.75, cy: 3.78, hf: 11.03 };
+const W1: CS = { cx: 0.75, cy: 4.12, hf: 10.16 };
+const W2: CS = { cx: 0.55, cy: 2.75, hf: 13.7 };
+// focus: the lane band centred at y 810 (between the title band and the caption band)
+const F = (i: number, cx = -0.45, hf = 5.3): CS => ({ cx, cy: laneY(i) + 0.44, hf });
 const MOVES: { at: number; dur: number; to: Partial<CS> }[] = [
   { at: 1.0, dur: 0.4, to: W1 },
   { at: 2.0, dur: 0.45, to: F(0) },
-  { at: 4.1, dur: 0.45, to: { cx: 0.75 } },
-  { at: 4.95, dur: 0.4, to: { cx: -0.6 } },
+  { at: 4.1, dur: 0.45, to: { cx: 0.55 } },
+  { at: 4.95, dur: 0.4, to: { cx: -0.45 } },
   { at: 6.0, dur: 0.45, to: F(1) },
-  { at: 7.85, dur: 0.45, to: { cx: 0.7 } },
-  { at: 8.75, dur: 0.4, to: { cx: -0.6 } },
-  { at: 10.0, dur: 0.45, to: F(2, -0.55) },
+  { at: 7.85, dur: 0.45, to: { cx: 0.55 } },
+  { at: 8.75, dur: 0.4, to: { cx: -0.45 } },
+  { at: 10.0, dur: 0.45, to: F(2, -0.45) },
   { at: 11.75, dur: 0.4, to: W0 },
-  { at: 13.2, dur: 0.42, to: F(2, -0.35) },
-  { at: 15.2, dur: 0.42, to: F(3, -0.45) },
-  { at: 18.0, dur: 0.35, to: { cx: 0.25, hf: 6.3 } },
-  { at: 19.05, dur: 0.35, to: { cx: 1.15 } },
+  { at: 13.2, dur: 0.42, to: F(2, -0.3) },
+  { at: 15.2, dur: 0.42, to: F(3, -0.35) },
+  { at: 18.0, dur: 0.35, to: { cx: 0.2, hf: 6.0 } },
+  { at: 19.05, dur: 0.35, to: { cx: 0.7 } },
   { at: 20.15, dur: 0.4, to: { cx: -0.25, hf: 5.6 } },
-  { at: 21.1, dur: 0.4, to: W0 },
+  { at: 21.1, dur: 0.4, to: W2 },
 ];
 const SHAKES: [number, number][] = [[0, 1.0], [16.3, 0.45], [17.1, 0.7], [18.0, 1.5], [19.3, 0.9], [24.85, 0.35]];
 const camState = (t: number): CS => {
@@ -234,7 +237,7 @@ const envDrop = (t: number) => {
   // falls 27.62 -> 28.0 (lands on the loop point = frame 0); squash right after the landing at 0
   if (t > 27.62) {
     const u = seg(t, 27.62, 28.0);
-    return { y: 2.0 * (1 - u * u), sq: 0, s: 1 };
+    return { y: 1.55 * (1 - u * u), sq: 0, s: 1 };
   }
   const sq = Math.exp(-t * 9) * Math.cos(t * 30);
   const gone = ease(seg(t, 1.45, 1.75));
@@ -313,7 +316,11 @@ const haterPose = (i: number, h: number, t: number): HaterPose => {
       signLift = 0.1 * keep(t);
     }
   }
-  return { x, z: z0, yaw: -0.6, lean, hop, throwArm, signLift, signWob: signWob0 * (i === 3 && t > PULSE ? 0.3 : 1), flip };
+  // the scoreboard: the haters lose and run off to the right (back for the loop at 27.3 s)
+  const flee = ease(seg(t, 21.15 + 0.08 * h, 21.7 + 0.08 * h)) * keep(t);
+  x += 4.6 * flee;
+  hop += 0.08 * Math.abs(Math.sin(t * 14)) * (flee > 0 && flee < 1 ? 1 : 0);
+  return { x, z: z0, yaw: lerp(-0.6, -1.4, flee), lean, hop, throwArm, signLift, signWob: signWob0 * (i === 3 && t > PULSE ? 0.3 : 1), flip };
 };
 
 // ---------------- the characters
@@ -373,9 +380,9 @@ const SpenderBuys: React.FC<{ t: number }> = ({ t }) => {
     <>
       {items.map((it, n) => {
         if (t < it.at) return null;
-        const from: V3 = [3.2, 1.6, 0.3];
+        const from: V3 = [2.6, 1.1, 0.3];
         const T1 = it.at + 0.45;
-        const p = t < T1 ? arc(from, it.to, t, it.at, T1, 0.6) : it.to;
+        const p = t < T1 ? arc(from, it.to, t, it.at, T1, 0.3) : it.to;
         const spin = t < T1 ? (T1 - t) * 9 : 0;
         const land = decay(t, T1, 10) * Math.sin((t - T1) * 28) * (t > T1 ? 1 : 0);
         const s = (t < it.at + 0.12 ? 0.4 + 0.6 * seg(t, it.at, it.at + 0.12) : 1) * k;
@@ -459,7 +466,7 @@ const dkArm = (t: number) => {
   // idle: taps the hammer every 1.5 s (2-15.6 s)
   if (t > 2 && t < 15.6) r += 0.55 * Math.max(0, Math.sin(((t - 2) * Math.PI) / 0.75)) ** 3 * (Math.floor((t - 2) / 0.75) % 2 === 0 ? 1 : 0);
   SWINGS.forEach(([w, h], k) => {
-    const up = k === 2 ? 3.0 : 2.7;
+    const up = k === 2 ? 2.45 : 2.35; // overhead, kept under the 1.9 m ceiling
     if (t >= w && t < h - 0.12) r = lerp(DK_REST, up, ease(seg(t, w, h - 0.14)));
     else if (t >= h - 0.12 && t < h) r = lerp(up, 1.0, ease(seg(t, h - 0.12, h)));
     else if (t >= h && t < h + 0.3) r = 1.0;
@@ -468,7 +475,7 @@ const dkArm = (t: number) => {
   });
   // celebrate (19.8-21.0): hammer overhead
   const cel = bump(t, 19.8, 1.25);
-  if (cel > 0) r = lerp(r, 2.9, ease(cel * 2.2));
+  if (cel > 0) r = lerp(r, 2.4, ease(cel * 2.2));
   return { r, pitch, cel };
 };
 const debtKiller = (t: number): Who => {
@@ -500,7 +507,7 @@ const crownPos = (t: number): { p: V3; s: number } | null => {
   const f = facePoint(who.pose, 1);
   const top: V3 = [f[0], f[1] + 0.155, f[2]];
   const u = seg(t, CROWN_T, CROWN_LAND);
-  const y = top[1] - 0.02 + 1.4 * (1 - u * u) + (t > CROWN_LAND ? 0.05 * decay(t, CROWN_LAND, 9) * Math.abs(Math.sin((t - CROWN_LAND) * 22)) : 0);
+  const y = top[1] - 0.02 + 0.45 * (1 - u * u) + (t > CROWN_LAND ? 0.05 * decay(t, CROWN_LAND, 9) * Math.abs(Math.sin((t - CROWN_LAND) * 22)) : 0);
   const s = 1 - ease(seg(t, 27.3, 27.5));
   return s > 0.01 ? { p: [top[0], y, top[2]], s } : null;
 };
@@ -522,7 +529,7 @@ const DebtStuff: React.FC<{ t: number }> = ({ t }) => {
       const v: V3 = [0.9 + 1.5 * hash(n * 1.7), 1.3 + 1.7 * hash(n * 2.9 + 1), 0.5 + 0.9 * hash(n * 4.1 + 2)];
       const flyAt = (tt: number): V3 => {
         const tau = Math.min(tt, GOLD_T0) - SMASH;
-        return [home[0] + v[0] * tau * 0.8, Math.max(0.08, home[1] + v[1] * tau - 3.2 * tau * tau), home[2] + v[2] * tau * 0.7];
+        return [home[0] + v[0] * tau * 0.8, Math.min(1.62, Math.max(0.08, home[1] + v[1] * tau - 3.2 * tau * tau)), home[2] + v[2] * tau * 0.7];
       };
       const slot = brickSlot(n);
       const dst: V3 = [wallX + slot[0], slot[1], slot[2]];
@@ -568,7 +575,7 @@ const LaneStuff: React.FC<{ i: number; t: number }> = ({ i, t }) => {
       {i === 2 ? (
         <>
           <FundBox p={[BOX_X, 0, 0]} lid={bump(t, 10.4, 0.75)} glow={0.6 * decay(t, 11.0, 3) + 0.4 * decay(t, CHART_T1, 2)} />
-          <LineChart p={[CHART_X, 0, 0]} values={CHART} lo={820} hi={1110} draw={chartDraw(t) * keep(t)} redBelow={1000} flash={bump(t, DIP_T - 0.15, 0.7)} />
+          <LineChart p={[CHART_X, 0, 0]} w={0.82} h={0.62} values={CHART} lo={820} hi={1110} draw={chartDraw(t) * keep(t)} redBelow={1000} flash={bump(t, DIP_T - 0.15, 0.7)} />
         </>
       ) : null}
       {i === 3 ? <DebtStuff t={t} /> : null}
@@ -633,7 +640,7 @@ const LaneHud: React.FC<{ i: number; t: number; cam: Cam }> = ({ i, t, cam }) =>
   const M = 16;
   // the visible part of the lane, kept clear of the title band (top) and the YouTube UI (bottom)
   const vTop = Math.max(yTop, 236) + M;
-  const vBot = Math.min(yBot, 1372) - M; // above the caption band + YouTube UI
+  const vBot = Math.min(yBot, capOn(t) ? 1372 : 1600) - M; // above the caption band while captions show
   const fadeIn = ease(seg(t, 1.0, 1.25)) * (1 - ease(seg(t, 27.62, 27.85)));
   const labelPx = clamp(lanePx * 0.105, 28, 52);
   const out: React.ReactNode[] = [];
@@ -649,7 +656,7 @@ const LaneHud: React.FC<{ i: number; t: number; cam: Cam }> = ({ i, t, cam }) =>
   const sc = ease(seg(t, SCORE_T + i * 0.28, SCORE_T + i * 0.28 + 0.2));
   if (sc > 0 && t < 27.45) {
     const S = SCORES[i];
-    const fs = clamp(lanePx * 0.28, 60, 112);
+    const fs = clamp(lanePx * 0.36, 70, 130);
     const boxH = fs * 1.3;
     if (fits(boxH)) {
       const top = clamp((yTop + yBot) / 2 - boxH / 2 + lanePx * 0.04, vTop, vBot - boxH);
@@ -702,7 +709,7 @@ const YearFlip: React.FC<{ t: number }> = ({ t }) => {
   const inU = easeOut(seg(t, 11.95, 12.3));
   const outU = ease(seg(t, 12.9, 13.25));
   const x = 1080 * (1 - inU) - 1180 * outU;
-  const flip = ease(seg(t, 12.35, 12.7));
+  const flip = ease(seg(t, 12.08, 12.3));
   const W = 560, H = 430;
   return (
     <div style={{ position: "absolute", left: (1080 - W) / 2 + x, top: 760, width: W, height: H, borderRadius: 34, background: "#fffaf0", boxShadow: "0 18px 60px rgba(0,0,0,0.6), 0 0 40px rgba(255,255,255,0.25)", overflow: "hidden", transform: `rotate(${-4 + 8 * outU}deg)` }}>
@@ -742,19 +749,18 @@ const Title: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-// captions: VO words (finance/shorts/four-money-minds/vo/timings.json), 1-3 words, bottom centre, VO only, from 1.0 s
-const CHUNKS: Chunk[] = [
-  { words: ["Four", "money", "minds."], a: 1.0, b: 1.84 },
-  { words: ["Same", "thousand"], a: 1.84, b: 2.56 },
-  { words: ["dollar", "bonus."], a: 2.56, b: 3.7 },
-  { words: ["One", "year", "later."], a: 21.48, b: 23.2 },
-  { words: ["In", "this", "example,"], a: 23.24, b: 24.44 },
-  { words: ["the", "boring"], a: 24.44, b: 25.08 },
-  { words: ["one", "won."], a: 25.08, b: 26.15 },
-  { words: ["Which", "one"], a: 26.2, b: 26.6 },
-  { words: ["are", "you?"], a: 26.6, b: 27.3 },
-];
-export const CAPTION_CENTRE = 0.748;
+// captions: the recipe Shorts' style (RecipeCaptions: bold caps, outline, the spoken word in red), VO words from
+// finance/shorts/four-money-minds/vo/timings.json, 1-3 words, bottom centre, VO only, from 1.0 s (clean first second)
+const VO_WORDS: CapWord[] = [
+  ["Four", 0.1, 0.42], ["money", 0.58, 0.82], ["minds.", 0.9, 1.62], ["Same", 1.86, 2.1], ["thousand", 2.26, 2.5], ["dollar", 2.58, 2.82], ["bonus.", 2.9, 3.62],
+  ["One", 21.5, 21.74], ["year", 21.9, 22.06], ["later.", 22.14, 22.62], ["In", 23.26, 23.34], ["this", 23.42, 23.5], ["example,", 23.58, 24.38],
+  ["the", 24.46, 24.54], ["boring", 24.62, 25.02], ["one", 25.1, 25.26], ["won.", 25.34, 25.74], ["Which", 26.22, 26.38], ["one", 26.46, 26.54], ["are", 26.62, 26.7], ["you?", 26.82, 27.26],
+].map(([w, t, end]) => ({ w: w as string, t: t as number, end: end as number }));
+const CAPS: CapChunk[] = chunkWords(VO_WORDS, 2);
+CAPS.forEach((c) => (c.hold = Math.min(c.hold, 27.3)));
+const CAP_FROM = 1.0;
+const capOn = (t: number) => t >= CAP_FROM && CAPS.some((c) => t >= c.start - 0.05 && t < c.hold);
+export const CAPTION_CENTRE = 0.735;
 
 // ------------------------------------------------------------------ the film
 export const FourMindsFilm: React.FC<{ sub?: boolean }> = ({ sub = false }) => {
@@ -776,7 +782,7 @@ export const FourMindsFilm: React.FC<{ sub?: boolean }> = ({ sub = false }) => {
       <WinnerBanner t={tOut} cam={camOut} />
       <YearFlip t={tOut} />
       <Title t={tOut} />
-      <PopCaptions chunks={CHUNKS} t={tOut} until={27.3} centre={CAPTION_CENTRE} size={74} />
+      <RecipeCaptions chunks={CAPS} t={tOut} hide={(x) => x < CAP_FROM} style={{ centre: CAPTION_CENTRE, size: 84 }} />
     </AbsoluteFill>
   );
 };
