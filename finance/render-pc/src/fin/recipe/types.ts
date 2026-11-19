@@ -13,7 +13,7 @@ export type At = number | string;
 export type Place = [number, number] | V3 | string;
 
 export type PoseId = "idle" | "smug" | "shock" | "despair" | "push" | "reach" | "swipe-card" | "kneel" | "collapse" | "point" | "celebrate" | "walk" | "run";
-export type CamId = "hookZoom" | "slamZoom" | "whip" | "pushIn" | "orbit" | "closeUp" | "medium" | "wide" | "splitScreen" | "povFirstPerson";
+export type CamId = "hookZoom" | "hookReveal" | "slamZoom" | "whip" | "pushIn" | "orbit" | "closeUp" | "medium" | "wide" | "splitScreen" | "povFirstPerson";
 export type MotionId = "dropSlam" | "fly-in" | "stick-to-face" | "rain" | "burst" | "count-up";
 export type FxId = "shake" | "flash" | "dust" | "debris";
 export type SetId = "store" | "home" | "street" | "bank" | "office";
@@ -146,6 +146,8 @@ export type Recipe = {
   /** a live RACE / ticking stake through the middle (watch-time data: races hold): lanes count from `from` to the
    *  twist (`resolve`), the leader can flip on the way (curve "late" = compound growth that overtakes late) */
   race?: { title?: string; from: At; resolve: At; until?: At; lanes: { label: string; color: string; from: number; to: number; prefix?: string; suffix?: string; curve?: "linear" | "late" }[] };
+  /** two-layer captions: accent colours (loss words red, gain words green, numbers yellow by default) */
+  captionColors?: { loss?: string; gain?: string; neutral?: string };
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";

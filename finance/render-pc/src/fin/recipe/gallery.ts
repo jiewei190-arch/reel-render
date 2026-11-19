@@ -4,7 +4,7 @@ import { POSE_IDS } from "./poses";
 import { SET_IDS } from "./sets";
 import type { CamId, MotionId, PropSpec, Recipe, ShotSpec } from "./types";
 
-const CAMS: CamId[] = ["hookZoom", "slamZoom", "whip", "pushIn", "orbit", "closeUp", "medium", "wide", "splitScreen", "povFirstPerson"];
+const CAMS: CamId[] = ["hookReveal", "hookZoom", "slamZoom", "whip", "pushIn", "orbit", "closeUp", "medium", "wide", "splitScreen", "povFirstPerson"];
 const MOTIONS: MotionId[] = ["dropSlam", "fly-in", "stick-to-face", "rain", "burst", "count-up"];
 const FX = ["shake", "flash", "dust", "debris"] as const;
 export type GalleryItem = { group: string; name: string; frame: number };

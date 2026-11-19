@@ -1,7 +1,6 @@
 // The RACE / ticking-stake overlay (finance/FORMAT_V1.md day-1 watch-time data: the S2 split-screen race held 85 % of
 // the Short; list-like middles sag). Two bars race (or one counter ticks) from `from` to the twist, and the leader can
-// FLIP at `flip`: the viewer keeps watching to see who wins. Sits above the bottom 420 px safe zone, clear of the
-// captions band. Pure function of t.
+// FLIP at `flip`: the viewer keeps watching to see who wins. Sits between the top and lower-third caption layers. Pure function of t.
 import React from "react";
 import { EASE_INOUT, prog } from "./motion";
 
@@ -18,7 +17,7 @@ export const RaceOverlay: React.FC<{ r: RaceSpec; t: number }> = ({ r, t }) => {
   const done = t >= r.resolve;
   const appear = prog(t, r.from, r.from + 0.2);
   return (
-    <div style={{ position: "absolute", left: 70, right: 180, top: 1300, opacity: appear, fontFamily: "Poppins", fontWeight: 800 }}>
+    <div style={{ position: "absolute", left: 70, right: 180, top: 1010, opacity: appear, fontFamily: "Poppins", fontWeight: 800 }}>
       {r.title ? <div style={{ color: "#fff", fontSize: 38, WebkitTextStroke: "5px #140c1c", paintOrder: "stroke fill", marginBottom: 8 }}>{r.title}</div> : null}
       {r.lanes.map((l, i) => (
         <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>

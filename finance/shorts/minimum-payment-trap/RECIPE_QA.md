@@ -17,15 +17,17 @@ Composition: `MinimumPaymentTrapRecipe` (+ `MinimumPaymentTrapRecipeSub`) in `sr
 | first spoken word by 0.2 s (day-1 fix 3) | PASS | Spender at 0.00 s |
 | a sound punch at 0.00 s (impact/drop/crash/rip...) | PASS | impact |
 | no character names in the first 2 s of speech (day-1 fix 1) | **FAIL** | Spender@0.00 |
-| no tag/HUD before 1.0 s; word captions start at 1.0 s (day-1 fix 2) | PASS | tag from 4.10 s |
+| no tag/HUD before 1.0 s (day-1 fix 2; the big caption chunk may show from frame 0) | PASS | tag from 4.10 s |
 | 2-3 cuts or big moves in the first 3 s (day-1 fix 5) | PASS | hit 0.32, cut 1.06, hit 1.06, cut 1.80, hit 1.85, cut 2.72, hit 2.72 |
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 1.07 s |
 | no wide or dark shot in the first 1 s | PASS | S01 slamZoom/store |
 | a live race or ticking stake through the middle 35-70 % (watch-time data) | warn | count-up props only |
 | first cut by 1.5 s (research round 2) | PASS | S02 at 1.06 s |
-| about 12-14 shots per 30 s (research round 2) | warn | 22 shots in 23.3 s = 28.3 per 30 s |
+| about 12-18 shots per 30 s (research round 2; 5-6 cuts per 10 s for two-character stories) | warn | 22 shots in 23.3 s = 28.3 per 30 s |
 | the last frame matches frame 0 (loop) | PASS | lens moved 0.26 m, fov 60 vs 60 |
+| a specific noun and a number in the first 3 words (TOP3D study) | warn | Spender just bought |
+| the camera never fully stops (TOP3D study) | PASS | every shot drifts >= 1 cm/s (pos + look + fov) |
 | length 20-30 s | PASS | 23.30 s |
 
 Frame-0 coverage by subject: spender 52 %, owe 33 %, tvDrop 28 %, cal 20 %, wallCal 20 %.
