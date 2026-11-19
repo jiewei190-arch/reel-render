@@ -5,18 +5,24 @@ import * as R1 from "../../shorts/credit_score_car.recipe.gen";
 import * as R2 from "../../shorts/delivery_markup.recipe.gen";
 import * as R3 from "../../shorts/employer_match.recipe.gen";
 import * as R4 from "../../shorts/fake_sale.recipe.gen";
-import * as R5 from "../../shorts/minimum_payment_trap.recipe.gen";
-import * as R6 from "../../shorts/overdraft_35.recipe.gen";
-import * as R7 from "../../shorts/prices_double.recipe.gen";
-import * as R8 from "../../shorts/s1_split_payments.recipe.gen";
-import * as R9 from "../../shorts/s2_same_paycheck.recipe.gen";
-import * as R10 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
-import * as R11 from "../../shorts/s4_penny_or_million.recipe.gen";
-import * as R12 from "../../shorts/s5_spender_talks.recipe.gen";
-import * as R13 from "../../shorts/s6_three_traps.recipe.gen";
-import * as R14 from "../../shorts/same_raise.recipe.gen";
-import * as R15 from "../../shorts/start_25_vs_35.recipe.gen";
-import * as R16 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R5 from "../../shorts/fee_one_percent.recipe.gen";
+import * as R6 from "../../shorts/minimum_payment_trap.recipe.gen";
+import * as R7 from "../../shorts/mortgage_year_ten.recipe.gen";
+import * as R8 from "../../shorts/overdraft_35.recipe.gen";
+import * as R9 from "../../shorts/payday_rollover.recipe.gen";
+import * as R10 from "../../shorts/prices_double.recipe.gen";
+import * as R11 from "../../shorts/quit_cash_out.recipe.gen";
+import * as R12 from "../../shorts/s1_split_payments.recipe.gen";
+import * as R13 from "../../shorts/s2_same_paycheck.recipe.gen";
+import * as R14 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
+import * as R15 from "../../shorts/s4_penny_or_million.recipe.gen";
+import * as R16 from "../../shorts/s5_spender_talks.recipe.gen";
+import * as R17 from "../../shorts/s6_three_traps.recipe.gen";
+import * as R18 from "../../shorts/same_raise.recipe.gen";
+import * as R19 from "../../shorts/start_25_vs_35.recipe.gen";
+import * as R20 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R21 from "../../shorts/wedding_or_keys.recipe.gen";
+import * as R22 from "../../shorts/zero_percent_couch.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -36,4 +42,10 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R14.ID, recipe: R14.RECIPE, words: R14.WORDS, vo: R14.VO_DURATION },
   { id: R15.ID, recipe: R15.RECIPE, words: R15.WORDS, vo: R15.VO_DURATION },
   { id: R16.ID, recipe: R16.RECIPE, words: R16.WORDS, vo: R16.VO_DURATION },
+  { id: R17.ID, recipe: R17.RECIPE, words: R17.WORDS, vo: R17.VO_DURATION },
+  { id: R18.ID, recipe: R18.RECIPE, words: R18.WORDS, vo: R18.VO_DURATION },
+  { id: R19.ID, recipe: R19.RECIPE, words: R19.WORDS, vo: R19.VO_DURATION },
+  { id: R20.ID, recipe: R20.RECIPE, words: R20.WORDS, vo: R20.VO_DURATION },
+  { id: R21.ID, recipe: R21.RECIPE, words: R21.WORDS, vo: R21.VO_DURATION },
+  { id: R22.ID, recipe: R22.RECIPE, words: R22.WORDS, vo: R22.VO_DURATION },
 ];
