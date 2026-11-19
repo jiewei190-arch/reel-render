@@ -633,7 +633,7 @@ const LaneHud: React.FC<{ i: number; t: number; cam: Cam }> = ({ i, t, cam }) =>
   const M = 16;
   // the visible part of the lane, kept clear of the title band (top) and the YouTube UI (bottom)
   const vTop = Math.max(yTop, 236) + M;
-  const vBot = Math.min(yBot, 1620) - M;
+  const vBot = Math.min(yBot, 1372) - M; // above the caption band + YouTube UI
   const fadeIn = ease(seg(t, 1.0, 1.25)) * (1 - ease(seg(t, 27.62, 27.85)));
   const labelPx = clamp(lanePx * 0.105, 28, 52);
   const out: React.ReactNode[] = [];
