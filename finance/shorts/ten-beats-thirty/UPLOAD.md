@@ -1,5 +1,7 @@
 # UPLOAD: ten-beats-thirty
 
+style: S1
+voice: Tyler
 **Title (34 chars):** How 10 Years of Saving Can Beat 30
 
 **Description:**

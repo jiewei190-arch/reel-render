@@ -1,5 +1,7 @@
 # UPLOAD: prices-double
 
+style: S3
+voice: Christopher
 **Title (35 chars):** Prices Double Faster Than You Think
 
 **Description:**

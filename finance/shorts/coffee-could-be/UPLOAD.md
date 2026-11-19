@@ -1,6 +1,7 @@
 # UPLOAD: coffee-could-be (FORMAT v1)
 
 style: S2
+voice: Tyler
 
 **Title (32 chars):** $5 Coffee or $186,000? Same Cash
 

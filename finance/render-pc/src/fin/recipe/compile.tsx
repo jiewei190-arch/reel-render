@@ -16,7 +16,6 @@ import { moodFor, setMoodShots } from "../../library/mood";
 import { stand, yawTo } from "../core";
 import type { FinShot } from "../core";
 import { B, Card, Dust, Reader, TV, easeOut, slam } from "../hooks";
-import { CornerTag } from "../hud";
 import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill } from "../props";
 import { Asset, assetSize, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
@@ -191,7 +190,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
       props.push({ key: k, spec: ps, a: pa, b: pb, hit: at(ps.hit, a + 0.12), pos: pf.f, held: pf.held, set: curSet });
     };
     (sp.props ?? []).forEach((ps, k) => addProp(ps, a, b, ps.id ?? ps.asset ?? ps.kit ?? `p${k}`));
-    globalProps.filter((g) => g.a < b && g.b > a).forEach((g) => addProp(g.p, g.a, g.b, g.p.id ?? g.p.asset ?? g.p.kit ?? `g${g.i}`));
+    globalProps.filter((g) => g.a < b && g.b > a).forEach((g) => addProp({ ...g.p, from: undefined } as PropSpec, g.a, g.b, g.p.id ?? g.p.asset ?? g.p.kit ?? `g${g.i}`));
     const fx: FxR[] = (sp.fx ?? []).map((f: FxSpec) => {
       const o = typeof f === "string" ? { fx: f } : f;
       const tf = at(o.at, at(sp.cam.hit, a + 0.12));
@@ -708,8 +707,29 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
       <HookText text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {again !== null && tOut >= again ? <HookText text={c.recipe.hook.text} t={tOut} until={99} /> : null}
       {!capOff ? (fixedCap ? <RecipeCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} /> : <RecipeCaptions chunks={CHUNKS(c)} t={tOut} hide={(x) => x < CAPTIONS_FROM} />) : null}
-      <CornerTag text={tag} />
+      {c.recipe.captionsTop && !capOff && tOut >= CAPTIONS_FROM ? <TopLine c={c} t={tOut} /> : null}
+      {tag ? <div style={{ position: "absolute", right: 48, top: 440, padding: "4px 12px", borderRadius: 10, background: "rgba(255,244,200,0.92)", color: "#16121c", fontFamily: "Poppins", fontWeight: 800, fontSize: 22, letterSpacing: 1 }}>{tag}</div> : null}
     </AbsoluteFill>
+  );
+};
+/** research round 2 (two-layer captions): the whole current voice line, small, near the top (cap height ~2.5 % of the frame) */
+const TopLine: React.FC<{ c: Compiled; t: number }> = ({ c, t }) => {
+  const cur = [...c.words].reverse().find((w) => w.t <= t);
+  if (!cur) return null;
+  // only the current sentence of the line (a long line would wrap into the hook)
+  const all = c.words.filter((w) => w.turn === cur.turn);
+  const ends = (w: { w: string }) => /[.?!…]$/.test(w.w);
+  let a = all.indexOf(cur); while (a > 0 && !ends(all[a - 1])) a--;
+  let b = all.indexOf(cur); while (b < all.length - 1 && !ends(all[b])) b++;
+  const line = all.slice(a, b + 1);
+  const last = line[line.length - 1];
+  if (t > last.end + 0.6) return null;
+  return (
+    <div style={{ position: "absolute", left: 90, right: 90, top: 150, display: "flex", justifyContent: "center" }}>
+      <div style={{ fontFamily: "Poppins", fontWeight: 700, fontSize: 34, lineHeight: 1.15, color: "#ffffff", textAlign: "center", WebkitTextStroke: "5px #140c1c", paintOrder: "stroke fill", textShadow: "0 3px 10px rgba(8,4,16,0.6)" }}>
+        {line.map((w) => w.w).join(" ")}
+      </div>
+    </div>
   );
 };
 /** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */

@@ -38,7 +38,7 @@ cd "$ROOT"
 [ -d node_modules ] || { echo "node_modules not found: run npm ci first" >&2; exit 2; }
 t0=$(date +%s)
 npx --no-install tsc --noEmit
-npx --no-install remotion bundle src/index.ts --out-dir=build >/dev/null
+npx --no-install remotion bundle "${ENTRY:-src/index.ts}" --out-dir=build >/dev/null
 SUBV="out/${NAME}${N}_sub.mp4"
 RANGE=()
 NOUT=""

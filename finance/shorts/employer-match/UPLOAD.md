@@ -1,6 +1,7 @@
 # UPLOAD: employer-match (FORMAT v1)
 
-style: S3
+style: S4
+voice: Christopher
 
 **Title (33 chars):** POV: Your Boss Offers You $1,500
 

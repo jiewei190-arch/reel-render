@@ -146,8 +146,11 @@ export type Recipe = {
   /** cast: id -> look ("SPENDER" | "SAVER" | "SELLER" | "DAD" | "KID") */
   cast: Record<string, string>;
   captions?: "auto" | "off";
+  /** research round 2: a second, small caption layer near the top showing the whole current line (from CAPTIONS_FROM); off by default */
+  captionsTop?: boolean;
   /** props that stay across shots: shown from `from` to `until` (At); same fields as a shot prop */
-  props?: (PropSpec & { from?: At; until?: At })[];
+  /** multi-shot props: `from`/`until` are times here (At), not a fly-in origin */
+  props?: (Omit<PropSpec, "from"> & { from?: At; until?: At })[];
   shots: ShotSpec[];
   /** corner tag text (e.g. "EXAMPLE") from/until */
   tag?: { text: string; from: At; until: At };
