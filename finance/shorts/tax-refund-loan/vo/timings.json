@@ -1,0 +1,427 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 27.082
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your tax refund is a free loan.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.0,
+     "end": 0.26
+    },
+    {
+     "w": "tax",
+     "t": 0.26,
+     "end": 0.5
+    },
+    {
+     "w": "refund",
+     "t": 0.5,
+     "end": 0.76
+    },
+    {
+     "w": "is",
+     "t": 0.76,
+     "end": 1.08
+    },
+    {
+     "w": "a",
+     "t": 1.08,
+     "end": 1.2
+    },
+    {
+     "w": "free",
+     "t": 1.2,
+     "end": 1.3
+    },
+    {
+     "w": "loan.",
+     "t": 1.3,
+     "end": 1.58
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "The I.R.S. says this year's average refund is 3,366 dollars.",
+   "words": [
+    {
+     "w": "The",
+     "t": 2.22,
+     "end": 2.34
+    },
+    {
+     "w": "I.R.S.",
+     "t": 2.34,
+     "end": 2.74
+    },
+    {
+     "w": "says",
+     "t": 2.74,
+     "end": 3.08
+    },
+    {
+     "w": "this",
+     "t": 3.08,
+     "end": 3.32
+    },
+    {
+     "w": "year's",
+     "t": 3.32,
+     "end": 3.6
+    },
+    {
+     "w": "average",
+     "t": 3.6,
+     "end": 3.84
+    },
+    {
+     "w": "refund",
+     "t": 3.84,
+     "end": 4.2
+    },
+    {
+     "w": "is",
+     "t": 4.2,
+     "end": 4.54
+    },
+    {
+     "w": "3,366",
+     "t": 4.54,
+     "end": 5.144
+    },
+    {
+     "w": "dollars.",
+     "t": 5.144,
+     "end": 6.2
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "That money came out of your paychecks, all year.",
+   "words": [
+    {
+     "w": "That",
+     "t": 7.08,
+     "end": 7.34
+    },
+    {
+     "w": "money",
+     "t": 7.34,
+     "end": 7.52
+    },
+    {
+     "w": "came",
+     "t": 7.52,
+     "end": 7.7
+    },
+    {
+     "w": "out",
+     "t": 7.7,
+     "end": 7.86
+    },
+    {
+     "w": "of",
+     "t": 7.86,
+     "end": 7.92
+    },
+    {
+     "w": "your",
+     "t": 7.92,
+     "end": 7.98
+    },
+    {
+     "w": "paychecks,",
+     "t": 7.98,
+     "end": 8.5
+    },
+    {
+     "w": "all",
+     "t": 8.5,
+     "end": 8.9
+    },
+    {
+     "w": "year.",
+     "t": 8.9,
+     "end": 9.14
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "About 280 dollars a month, held at zero interest.",
+   "words": [
+    {
+     "w": "About",
+     "t": 9.7,
+     "end": 9.9
+    },
+    {
+     "w": "280",
+     "t": 9.9,
+     "end": 10.58
+    },
+    {
+     "w": "dollars",
+     "t": 10.58,
+     "end": 10.63
+    },
+    {
+     "w": "a",
+     "t": 10.58,
+     "end": 11.02
+    },
+    {
+     "w": "month,",
+     "t": 11.02,
+     "end": 11.34
+    },
+    {
+     "w": "held",
+     "t": 11.34,
+     "end": 11.76
+    },
+    {
+     "w": "at",
+     "t": 11.76,
+     "end": 11.96
+    },
+    {
+     "w": "zero",
+     "t": 11.96,
+     "end": 12.16
+    },
+    {
+     "w": "interest.",
+     "t": 12.16,
+     "end": 12.64
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Your W-4 form sets the withholding, and the I.R.S. has a free estimator to check it.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 13.28,
+     "end": 13.36
+    },
+    {
+     "w": "W-4",
+     "t": 13.36,
+     "end": 13.8
+    },
+    {
+     "w": "form",
+     "t": 13.8,
+     "end": 14.18
+    },
+    {
+     "w": "sets",
+     "t": 14.18,
+     "end": 14.4
+    },
+    {
+     "w": "the",
+     "t": 14.4,
+     "end": 14.6
+    },
+    {
+     "w": "withholding,",
+     "t": 14.6,
+     "end": 15.16
+    },
+    {
+     "w": "and",
+     "t": 15.54,
+     "end": 15.66
+    },
+    {
+     "w": "the",
+     "t": 15.66,
+     "end": 15.76
+    },
+    {
+     "w": "I.R.S.",
+     "t": 15.76,
+     "end": 16.18
+    },
+    {
+     "w": "has",
+     "t": 16.18,
+     "end": 16.6
+    },
+    {
+     "w": "a",
+     "t": 16.6,
+     "end": 16.76
+    },
+    {
+     "w": "free",
+     "t": 16.76,
+     "end": 16.86
+    },
+    {
+     "w": "estimator",
+     "t": 16.86,
+     "end": 17.38
+    },
+    {
+     "w": "to",
+     "t": 17.38,
+     "end": 17.52
+    },
+    {
+     "w": "check",
+     "t": 17.52,
+     "end": 17.76
+    },
+    {
+     "w": "it.",
+     "t": 17.76,
+     "end": 17.94
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
+   "words": [
+    {
+     "w": "Twist:",
+     "t": 18.36,
+     "end": 18.54
+    },
+    {
+     "w": "a",
+     "t": 19.1,
+     "end": 19.22
+    },
+    {
+     "w": "refund",
+     "t": 19.22,
+     "end": 19.42
+    },
+    {
+     "w": "isn't",
+     "t": 19.42,
+     "end": 19.94
+    },
+    {
+     "w": "a",
+     "t": 19.94,
+     "end": 20.0
+    },
+    {
+     "w": "bonus.",
+     "t": 20.0,
+     "end": 20.26
+    },
+    {
+     "w": "It's",
+     "t": 20.8,
+     "end": 20.98
+    },
+    {
+     "w": "your",
+     "t": 20.98,
+     "end": 21.06
+    },
+    {
+     "w": "own",
+     "t": 21.06,
+     "end": 21.16
+    },
+    {
+     "w": "money,",
+     "t": 21.16,
+     "end": 21.44
+    },
+    {
+     "w": "sent",
+     "t": 21.62,
+     "end": 21.84
+    },
+    {
+     "w": "back",
+     "t": 21.84,
+     "end": 22.02
+    },
+    {
+     "w": "late.",
+     "t": 22.02,
+     "end": 22.28
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "A refund can still be a fine choice. But every spring,",
+   "words": [
+    {
+     "w": "A",
+     "t": 22.88,
+     "end": 23.02
+    },
+    {
+     "w": "refund",
+     "t": 23.02,
+     "end": 23.28
+    },
+    {
+     "w": "can",
+     "t": 23.28,
+     "end": 23.68
+    },
+    {
+     "w": "still",
+     "t": 23.68,
+     "end": 24.0
+    },
+    {
+     "w": "be",
+     "t": 24.0,
+     "end": 24.2
+    },
+    {
+     "w": "a",
+     "t": 24.2,
+     "end": 24.34
+    },
+    {
+     "w": "fine",
+     "t": 24.34,
+     "end": 24.5
+    },
+    {
+     "w": "choice.",
+     "t": 24.5,
+     "end": 24.84
+    },
+    {
+     "w": "But",
+     "t": 25.52,
+     "end": 25.8
+    },
+    {
+     "w": "every",
+     "t": 25.8,
+     "end": 26.06
+    },
+    {
+     "w": "spring,",
+     "t": 26.06,
+     "end": 26.34
+    }
+   ]
+  }
+ ]
+}

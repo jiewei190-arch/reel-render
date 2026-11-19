@@ -1,0 +1,2 @@
+// generated from shorts/tax-refund-loan/script.txt
+export default "Your tax refund is a free loan.\nThe I.R.S. says this year's average refund is 3,366 dollars.\nThat money came out of your paychecks, all year.\nAbout 280 dollars a month, held at zero interest.\nYour W-4 form sets the withholding, and the I.R.S. has a free estimator to check it.\nTwist: a refund isn't a bonus. It's your own money, sent back late.\nA refund can still be a fine choice. But every spring,";

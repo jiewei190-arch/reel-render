@@ -1,0 +1,2 @@
+// generated from shorts/interest-only/script.txt
+export default "Five years of payments. Still owe everything.\nExample: borrow 20,000 dollars at a made-up 8 percent.\nPay only the interest: about 133 dollars a month.\nAfter five years, you've paid 8,000 dollars.\nAnd you still owe all 20,000.\nThe full payment? About 406 a month. After five years, you owe zero.\nTwist: its total interest is only about 4,332.\nA small payment isn't always cheap. Interest-only can mean";

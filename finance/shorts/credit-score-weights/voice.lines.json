@@ -1,0 +1,125 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 27.148,
+ "render_s": 156.5,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "One habit makes up 35 percent.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "One habit makes up thirty-five percent.",
+     "seed": 7,
+     "heard": "One habit makes up 35 percent.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.296
+  },
+  {
+   "n": 2,
+   "text": "In a widely used credit score, paying on time counts for 35 percent.",
+   "start": 2.595,
+   "parts": [
+    {
+     "tts": "In a widely used credit score, paying on time counts for thirty-five percent.",
+     "seed": 7,
+     "heard": "In a widely used credit score, paying on time counts for 35%.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.555
+  },
+  {
+   "n": 3,
+   "text": "Paid late? That can stay on your report for seven years.",
+   "start": 6.855,
+   "parts": [
+    {
+     "tts": "Paid late? That can stay on your report for seven years.",
+     "seed": 7,
+     "heard": "Paid late? That can stay on your report for seven years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.196
+  },
+  {
+   "n": 4,
+   "text": "How much you owe: 30. How long you've had credit: 15.",
+   "start": 10.496,
+   "parts": [
+    {
+     "tts": "How much you owe: thirty. How long you've had credit: fifteen.",
+     "seed": 7,
+     "heard": "How much you owe, 30. How long you've had credit, 15.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.579
+  },
+  {
+   "n": 5,
+   "text": "New credit: 10. The mix of credit: 10.",
+   "start": 13.879,
+   "parts": [
+    {
+     "tts": "New credit: ten. The mix of credit: ten.",
+     "seed": 7,
+     "heard": "New credit, 10, the mix of credit, 10.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.904
+  },
+  {
+   "n": 6,
+   "text": "Twist: slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it.",
+   "start": 17.204,
+   "parts": [
+    {
+     "tts": "Twist: slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it.",
+     "seed": 7,
+     "heard": "Twist, slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.22
+  },
+  {
+   "n": 7,
+   "text": "The weights vary by person. But the biggest slice?",
+   "start": 23.52,
+   "parts": [
+    {
+     "tts": "The weights vary by person. But the biggest slice?",
+     "seed": 7,
+     "heard": "The weights vary by person, but the biggest slice?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.848
+  }
+ ]
+}

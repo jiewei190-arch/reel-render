@@ -1,0 +1,41 @@
+{
+ "title": "Wojtek the Soldier Bear",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 21.64,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:warm",
+  "gainDb": -18
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "bear",
+   "ammo",
+   "1942",
+   "wojtek",
+   "beer",
+   "wrestling",
+   "showers",
+   "soldier",
+   "shells",
+   "badge",
+   "shell",
+   "cassino"
+  ]
+ }
+}

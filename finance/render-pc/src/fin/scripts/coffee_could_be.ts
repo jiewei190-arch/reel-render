@@ -1,0 +1,2 @@
+// generated from shorts/coffee-could-be/script.txt
+export default "Your coffee could be worth 186,000 dollars.\nFive dollars a day is 1,825 a year.\nInvest that monthly instead, for thirty years.\nYou'd put in 54,750.\nSay a made-up, steady seven percent: about 186,000.\nTwist: the coffee isn't the villain. Time is.\nTen years? Only about 26,000.\nNo guarantees, and the coffee might be worth it. Which is how";

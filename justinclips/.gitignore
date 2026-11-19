@@ -1,0 +1,4 @@
+shorts/*/project/build/
+shorts/*/project/out/
+shorts/*/.cs/
+__pycache__/

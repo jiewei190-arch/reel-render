@@ -1,0 +1,68 @@
+# credit-score-weights
+
+- **Spoken:** 79 words, voice 27.15 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
+- **Hook:** line 1, spoken from 0.0 s, no intro.
+- **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.
+- **Loop:** S17 ("But the biggest slice?") returns to the S01 lens: the 35% base of the score tower glows again beside Saver; the loop lands on "One habit makes up 35 percent."
+
+## Hook candidates
+
+1. **One habit makes up 35 percent.** (6 words) ← PICK: a number with a mystery; the last line ("But the biggest slice?") runs into it.
+2. Your score is a five-slice pie. (6)
+3. Paying on time is 35 percent. (6, no mystery)
+4. You can pay on time and still lose points. (9, too long)
+5. The 30 percent nobody watches. (5)
+
+## Beats
+- **Loop sentence:** "The weights vary by person. But the biggest slice? / One habit makes up 35 percent."
+- **Twist (~65%):** "slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it."
+- **Counter (every shot):** a five-slice pie fills as each weight is said: `ON TIME 35%`, `OWED 30%`, `HISTORY 15%`, `NEW 10%`, `MIX 10%`; total 100%.
+
+## Voice-over (exact spoken text = script.txt)
+
+| # | time (s) | line |
+|---|---|---|
+| 1 | 0.00–2.15 | One habit makes up 35 percent. |
+| 2 | 2.10–6.14 | In a widely used credit score, paying on time counts for 35 percent. |
+| 3 | 6.66–9.80 | Paid late? That can stay on your report for seven years. |
+| 4 | 10.54–13.18 | How much you owe: 30. How long you've had credit: 15. |
+| 5 | 13.86–16.64 | New credit: 10. The mix of credit: 10. |
+| 6 | 17.20–23.08 | Twist: slice two is how much of your limit you use. Even paid on time, a maxed card can hurt it. |
+| 7 | 23.54–26.46 | The weights vary by person. But the biggest slice? |
+
+Loop read-through: "…The weights vary by person. But the biggest slice? / One habit makes up 35 percent."
+
+## Shot plan (one cut every ~1.4 s, each on its word)
+
+18 shots, 27.06 s (812 frames at 30 fps), median cut 1.42 s. Cast: SAVER (green, glasses) paying on time at a calendar; SPENDER (red, bag) with a nearly maxed card; PENNY beside the score tower. Set: a bright blocky hall with a five-segment SCORE TOWER (35/30/15/10/10), a chart board, a card-limit meter; plain cards, no logos or brand names.
+
+Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no real currency art.
+
+| shot | time (s) | dur | anchor word | mood | scene (cast, action, props, on-screen tag) | camera | captions in shot |
+|---|---|---|---|---|---|---|---|
+| S01 | 0.00–1.12 | 1.12 | one | store | Conflict in frame 1: a tall five-segment score tower; the big 35% base glows gold beside Saver, a ? over it | medium 3/4 on Saver and the tower, push-in | one habit / makes up |
+| S02 | 1.12–2.10 | 0.98 | 35 | store | The base segment: 35% | close on the 35% segment, push-in | 35 percent. |
+| S03 | 2.10–4.26 | 2.16 | in | store | Chart board: PUBLISHED SCORE BREAKDOWN | medium on a chart board, push-in | in a / widely used / credit score, |
+| S04 | 4.26–5.38 | 1.12 | paying | store | Saver drops a coin into a BILL slot; the calendar shows ON TIME ✓ | medium on Saver at a calendar, push-in | paying on / time counts / for 35 |
+| S05 | 5.38–6.66 | 1.28 | 35 | store | 35% ON TIME segment lights | close on the tower base, push-in | percent. |
+| S18 | 6.66–10.54 | 3.88 | paid | store | A red LATE stamp hits the due-date calendar; tag STAYS UP TO 7 YEARS | medium on Saver at the bills box, push-in | paid late? / that can / stay on / your report / for seven / years. / how much |
+| S06 | 10.54–12.00 | 1.46 | how | store | The 30% OWED segment stacks on | medium on the tower, push-in | you owe: / 30. |
+| S07 | 12.00–13.86 | 1.86 | how | store | The 15% HISTORY segment stacks on | medium on the tower, push-in | how long / you've had / credit: / 15. |
+| S08 | 13.86–15.48 | 1.62 | new | store | 10% NEW stacks on | medium on the tower, push-in | new credit: / 10. / the mix |
+| S09 | 15.48–17.20 | 1.72 | mix | store | 10% MIX tops it: 100% | wide on the full tower, push-in | of credit: / 10. |
+| S10 | 17.20–18.22 | 1.02 | twist | whisper | Night mood: Spender holds a plain card | medium on Spender with a card, push-in | twist: / slice two |
+| S11 | 18.22–19.34 | 1.12 | two | whisper | The 30% OWED segment pulses red | close on the 30% segment, push-in | is how / much of / your limit |
+| S12 | 19.34–20.58 | 1.24 | limit | whisper | A card-limit meter fills to 90% USED | medium on a limit meter, push-in | you use. / even paid |
+| S13 | 20.58–22.00 | 1.42 | even | whisper | Spender pays on time ✓ | medium on Spender at the calendar, push-in | on time, / a maxed |
+| S14 | 22.00–22.72 | 0.72 | maxed | whisper | The meter hits 95%, red | close on the meter, push-in | card can |
+| S15 | 22.72–23.66 | 0.94 | hurt | whisper | A heavy block drops on the 30% segment; it squashes | medium on the tower, push-in | hurt it. / the weights |
+| S16 | 23.66–25.42 | 1.76 | weights | ending | Three small towers of different mixes: VARIES BY PERSON | wide on three small towers, push-in | vary by / person. |
+| S17 | 25.42–27.06 | 1.64 | but | store | Back to the start: the 35% base glows beside Saver | SAME lens + position as S01 (loop match), push-in | but the / biggest slice? |
+
+### On-screen counter (every shot)
+
+the tower fills as each weight is said: `ON TIME 35%`, `+ OWED 30%`, `+ HISTORY 15%`, `+ NEW 10%`, `+ MIX 10%` = `100%`; twist `LIMIT USED 90%`.
+
+### On-screen tags
+
+- 2.10 s **PUBLISHED WEIGHTS**: on the board

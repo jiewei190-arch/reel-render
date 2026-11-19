@@ -1,0 +1,129 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 27.082,
+ "render_s": 339.1,
+ "qa_fail_lines": [
+  2,
+  4,
+  5
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Your tax refund is a free loan.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Your tax refund is a free loan.",
+     "seed": 7,
+     "heard": "Your tax refund is a free loan.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 1.868
+  },
+  {
+   "n": 2,
+   "text": "The I.R.S. says this year's average refund is 3,366 dollars.",
+   "start": 2.168,
+   "parts": [
+    {
+     "tts": "The I.R.S. says this year's average refund is three thousand three hundred sixty-six dollars.",
+     "seed": 7,
+     "heard": "The IRS says this year's average refund is $3,366.",
+     "wrong_words": 4,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.848
+  },
+  {
+   "n": 3,
+   "text": "That money came out of your paychecks, all year.",
+   "start": 7.148,
+   "parts": [
+    {
+     "tts": "That money came out of your paychecks, all year.",
+     "seed": 7,
+     "heard": "that money came out of your paychecks all year.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.404
+  },
+  {
+   "n": 4,
+   "text": "About 280 dollars a month, held at zero interest.",
+   "start": 9.704,
+   "parts": [
+    {
+     "tts": "About two hundred eighty dollars a month, held at zero interest.",
+     "seed": 7,
+     "heard": "About $280 a month, held at zero interest.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 12.942
+  },
+  {
+   "n": 5,
+   "text": "Your W-4 form sets the withholding, and the I.R.S. has a free estimator to check it.",
+   "start": 13.242,
+   "parts": [
+    {
+     "tts": "Your W-four form sets the withholding, and the I.R.S. has a free estimator to check it.",
+     "seed": 7,
+     "heard": "Your W4 form sets the withholding, and the IRS has a free estimator to check it.",
+     "wrong_words": 5,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 18.063
+  },
+  {
+   "n": 6,
+   "text": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
+   "start": 18.363,
+   "parts": [
+    {
+     "tts": "Twist: a refund isn't a bonus. It's your own money, sent back late.",
+     "seed": 11,
+     "heard": "Twist. A refund isn't a bonus. It's your own money, sent back late.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.606
+  },
+  {
+   "n": 7,
+   "text": "A refund can still be a fine choice. But every spring,",
+   "start": 22.906,
+   "parts": [
+    {
+     "tts": "A refund can still be a fine choice. But every spring,",
+     "seed": 11,
+     "heard": "a refund can still be a fine choice, but every spring",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.782
+  }
+ ]
+}

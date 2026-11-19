@@ -1,0 +1,144 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 30.084,
+ "render_s": 296.9,
+ "qa_fail_lines": [
+  2,
+  3,
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Five years of payments. Still owe everything.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Five years of payments. Still owe everything.",
+     "seed": 7,
+     "heard": "Five years of payments, still owe everything.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.602
+  },
+  {
+   "n": 2,
+   "text": "Example: borrow 20,000 dollars at a made-up 8 percent.",
+   "start": 2.902,
+   "parts": [
+    {
+     "tts": "Example: borrow twenty thousand dollars at a made-up eight percent.",
+     "seed": 7,
+     "heard": "Example. Borrow $20,000 at a made-up 8%.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.865
+  },
+  {
+   "n": 3,
+   "text": "Pay only the interest: about 133 dollars a month.",
+   "start": 7.165,
+   "parts": [
+    {
+     "tts": "Pay only the interest: about one hundred thirty-three dollars a month.",
+     "seed": 7,
+     "heard": "Pay only the interest, about $133 a month.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 10.506
+  },
+  {
+   "n": 4,
+   "text": "After five years, you've paid 8,000 dollars.",
+   "start": 10.806,
+   "parts": [
+    {
+     "tts": "After five years, you've paid eight thousand dollars.",
+     "seed": 7,
+     "heard": "After five years, you've paid $8,000.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 13.154
+  },
+  {
+   "n": 5,
+   "text": "And you still owe all 20,000.",
+   "start": 13.454,
+   "parts": [
+    {
+     "tts": "And you still owe all twenty thousand.",
+     "seed": 7,
+     "heard": "and you still owe all $20,000.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.253
+  },
+  {
+   "n": 6,
+   "text": "The full payment? About 406 a month. After five years, you owe zero.",
+   "start": 16.553,
+   "parts": [
+    {
+     "tts": "The full payment? About four hundred six a month. After five years, you owe zero.",
+     "seed": 7,
+     "heard": "The full payment? About $406 a month. After five years, you owe zero.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.826
+  },
+  {
+   "n": 7,
+   "text": "Twist: its total interest is only about 4,332.",
+   "start": 22.126,
+   "parts": [
+    {
+     "tts": "Twist: its total interest is only about four thousand three hundred thirty-two.",
+     "seed": 7,
+     "heard": "twist, its total interest is only about $4,332.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.248
+  },
+  {
+   "n": 8,
+   "text": "A small payment isn't always cheap. Interest-only can mean",
+   "start": 26.548,
+   "parts": [
+    {
+     "tts": "A small payment isn't always cheap. Interest-only can mean",
+     "seed": 7,
+     "heard": "A small payment isn't always cheap. Interest only can mean...",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.784
+  }
+ ]
+}

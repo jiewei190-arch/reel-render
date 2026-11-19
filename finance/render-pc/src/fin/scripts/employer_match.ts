@@ -1,0 +1,2 @@
+// generated from shorts/employer-match/script.txt
+export default "Some jobs pay you to save.\nIt's called an employer match.\nSay you earn 50,000, and your employer matches half of what you put in, up to six percent.\nYou save 3,000 a year. They add 1,500.\nThat's fifty cents on every dollar, before any growth.\nSkip it, and that 1,500 just isn't yours.\nPlans differ, some make you wait to keep it, and the I.R.S. caps your part at 24,500 for 2026.\nAnd yes, it's true:";

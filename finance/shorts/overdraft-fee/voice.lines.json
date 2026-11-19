@@ -1,0 +1,131 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 28.071,
+ "render_s": 352.5,
+ "qa_fail_lines": [
+  1,
+  2,
+  3,
+  5,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Swipe 24 dollars, pay 58.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Swipe twenty-four dollars, pay fifty-eight.",
+     "seed": 7,
+     "heard": "Swipe $24, pay $58.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 2.755
+  },
+  {
+   "n": 2,
+   "text": "In a C.F.P.B. study, the typical debit overdraft was just 24 dollars.",
+   "start": 3.055,
+   "parts": [
+    {
+     "tts": "In a C.F.P.B. study, the typical debit overdraft was just twenty-four dollars.",
+     "seed": 7,
+     "heard": "In a CFPB study, the typical debit overdraft was just $24.",
+     "wrong_words": 5,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.866
+  },
+  {
+   "n": 3,
+   "text": "The typical fee? 34 dollars.",
+   "start": 8.166,
+   "parts": [
+    {
+     "tts": "The typical fee? thirty-four dollars.",
+     "seed": 7,
+     "heard": "The typical fee, $34.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 10.559
+  },
+  {
+   "n": 4,
+   "text": "And more than half were paid back within three days.",
+   "start": 10.859,
+   "parts": [
+    {
+     "tts": "And more than half were paid back within three days.",
+     "seed": 7,
+     "heard": "and more than half were paid back within three days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.491
+  },
+  {
+   "n": 5,
+   "text": "So: borrow 24 dollars for three days, pay 34.",
+   "start": 13.791,
+   "parts": [
+    {
+     "tts": "So: borrow twenty-four dollars for three days, pay thirty-four.",
+     "seed": 7,
+     "heard": "So, borrow $24 for three days, pay $34.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 17.318
+  },
+  {
+   "n": 6,
+   "text": "Twist: as a loan, that's an A.P.R. of about 17,000 percent.",
+   "start": 17.618,
+   "parts": [
+    {
+     "tts": "Twist: as a loan, that's an A.P.R. of about seventeen thousand percent.",
+     "seed": 7,
+     "heard": "Twist as, alone, that's an APR of about 17,000%.",
+     "wrong_words": 5,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 22.403
+  },
+  {
+   "n": 7,
+   "text": "By law, debit overdraft coverage is your choice. Opted in? You can still",
+   "start": 22.703,
+   "parts": [
+    {
+     "tts": "By law, debit overdraft coverage is your choice. Opted in? You can still",
+     "seed": 7,
+     "heard": "By law, debit overdraft coverage is your choice. Opted-in? You can still!",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.771
+  }
+ ]
+}

@@ -1,0 +1,398 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 30.084
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Five years of payments. Still owe everything.",
+   "words": [
+    {
+     "w": "Five",
+     "t": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "years",
+     "t": 0.34,
+     "end": 0.54
+    },
+    {
+     "w": "of",
+     "t": 0.54,
+     "end": 0.72
+    },
+    {
+     "w": "payments.",
+     "t": 0.72,
+     "end": 0.94
+    },
+    {
+     "w": "Still",
+     "t": 0.94,
+     "end": 1.68
+    },
+    {
+     "w": "owe",
+     "t": 1.68,
+     "end": 1.86
+    },
+    {
+     "w": "everything.",
+     "t": 1.86,
+     "end": 2.24
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Example: borrow 20,000 dollars at a made-up 8 percent.",
+   "words": [
+    {
+     "w": "Example:",
+     "t": 2.9,
+     "end": 3.5
+    },
+    {
+     "w": "borrow",
+     "t": 3.72,
+     "end": 4.04
+    },
+    {
+     "w": "20,000",
+     "t": 4.04,
+     "end": 4.407
+    },
+    {
+     "w": "dollars",
+     "t": 4.407,
+     "end": 4.92
+    },
+    {
+     "w": "at",
+     "t": 4.92,
+     "end": 5.5
+    },
+    {
+     "w": "a",
+     "t": 5.5,
+     "end": 5.58
+    },
+    {
+     "w": "made-up",
+     "t": 5.58,
+     "end": 5.92
+    },
+    {
+     "w": "8",
+     "t": 5.92,
+     "end": 6.84
+    },
+    {
+     "w": "percent.",
+     "t": 6.84,
+     "end": 6.89
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Pay only the interest: about 133 dollars a month.",
+   "words": [
+    {
+     "w": "Pay",
+     "t": 6.84,
+     "end": 7.3
+    },
+    {
+     "w": "only",
+     "t": 7.3,
+     "end": 7.54
+    },
+    {
+     "w": "the",
+     "t": 7.54,
+     "end": 7.7
+    },
+    {
+     "w": "interest:",
+     "t": 7.7,
+     "end": 8.22
+    },
+    {
+     "w": "about",
+     "t": 8.22,
+     "end": 8.72
+    },
+    {
+     "w": "133",
+     "t": 8.72,
+     "end": 9.64
+    },
+    {
+     "w": "dollars",
+     "t": 9.64,
+     "end": 9.69
+    },
+    {
+     "w": "a",
+     "t": 9.64,
+     "end": 10.06
+    },
+    {
+     "w": "month.",
+     "t": 10.06,
+     "end": 10.3
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "After five years, you've paid 8,000 dollars.",
+   "words": [
+    {
+     "w": "After",
+     "t": 10.78,
+     "end": 11.04
+    },
+    {
+     "w": "five",
+     "t": 11.04,
+     "end": 11.28
+    },
+    {
+     "w": "years,",
+     "t": 11.28,
+     "end": 11.62
+    },
+    {
+     "w": "you've",
+     "t": 11.78,
+     "end": 11.88
+    },
+    {
+     "w": "paid",
+     "t": 11.88,
+     "end": 12.04
+    },
+    {
+     "w": "8,000",
+     "t": 12.04,
+     "end": 12.2
+    },
+    {
+     "w": "dollars.",
+     "t": 12.2,
+     "end": 12.48
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "And you still owe all 20,000.",
+   "words": [
+    {
+     "w": "And",
+     "t": 13.36,
+     "end": 13.8
+    },
+    {
+     "w": "you",
+     "t": 13.8,
+     "end": 14.16
+    },
+    {
+     "w": "still",
+     "t": 14.16,
+     "end": 14.7
+    },
+    {
+     "w": "owe",
+     "t": 14.7,
+     "end": 15.04
+    },
+    {
+     "w": "all",
+     "t": 15.04,
+     "end": 15.3
+    },
+    {
+     "w": "20,000.",
+     "t": 15.3,
+     "end": 16.12
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The full payment? About 406 a month. After five years, you owe zero.",
+   "words": [
+    {
+     "w": "The",
+     "t": 16.56,
+     "end": 16.7
+    },
+    {
+     "w": "full",
+     "t": 16.7,
+     "end": 16.88
+    },
+    {
+     "w": "payment?",
+     "t": 16.88,
+     "end": 17.2
+    },
+    {
+     "w": "About",
+     "t": 17.78,
+     "end": 18.08
+    },
+    {
+     "w": "406",
+     "t": 18.08,
+     "end": 18.92
+    },
+    {
+     "w": "a",
+     "t": 18.92,
+     "end": 19.06
+    },
+    {
+     "w": "month.",
+     "t": 19.06,
+     "end": 19.3
+    },
+    {
+     "w": "After",
+     "t": 19.7,
+     "end": 20.0
+    },
+    {
+     "w": "five",
+     "t": 20.0,
+     "end": 20.28
+    },
+    {
+     "w": "years,",
+     "t": 20.28,
+     "end": 20.62
+    },
+    {
+     "w": "you",
+     "t": 20.88,
+     "end": 21.02
+    },
+    {
+     "w": "owe",
+     "t": 21.02,
+     "end": 21.18
+    },
+    {
+     "w": "zero.",
+     "t": 21.18,
+     "end": 21.46
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Twist: its total interest is only about 4,332.",
+   "words": [
+    {
+     "w": "Twist:",
+     "t": 22.1,
+     "end": 22.32
+    },
+    {
+     "w": "its",
+     "t": 22.76,
+     "end": 22.9
+    },
+    {
+     "w": "total",
+     "t": 22.9,
+     "end": 23.14
+    },
+    {
+     "w": "interest",
+     "t": 23.14,
+     "end": 23.54
+    },
+    {
+     "w": "is",
+     "t": 23.54,
+     "end": 23.72
+    },
+    {
+     "w": "only",
+     "t": 23.72,
+     "end": 23.92
+    },
+    {
+     "w": "about",
+     "t": 23.92,
+     "end": 24.18
+    },
+    {
+     "w": "4,332.",
+     "t": 24.18,
+     "end": 25.98
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "A small payment isn't always cheap. Interest-only can mean",
+   "words": [
+    {
+     "w": "A",
+     "t": 26.5,
+     "end": 26.66
+    },
+    {
+     "w": "small",
+     "t": 26.66,
+     "end": 26.86
+    },
+    {
+     "w": "payment",
+     "t": 26.86,
+     "end": 27.2
+    },
+    {
+     "w": "isn't",
+     "t": 27.2,
+     "end": 27.56
+    },
+    {
+     "w": "always",
+     "t": 27.56,
+     "end": 27.78
+    },
+    {
+     "w": "cheap.",
+     "t": 27.78,
+     "end": 28.14
+    },
+    {
+     "w": "Interest-only",
+     "t": 28.52,
+     "end": 29.06
+    },
+    {
+     "w": "can",
+     "t": 29.06,
+     "end": 29.28
+    },
+    {
+     "w": "mean",
+     "t": 29.28,
+     "end": 29.86
+    }
+   ]
+  }
+ ]
+}
