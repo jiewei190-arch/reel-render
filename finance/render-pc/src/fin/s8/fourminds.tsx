@@ -108,7 +108,7 @@ const MOVES: { at: number; dur: number; to: Partial<CS> }[] = [
   { at: 10.0, dur: 0.45, to: F(2, -0.45) },
   { at: 11.75, dur: 0.4, to: W0 },
   { at: 13.2, dur: 0.42, to: F(2, -0.3) },
-  { at: 15.2, dur: 0.42, to: F(3, -0.35) },
+  { at: 15.2, dur: 0.42, to: { ...F(3, -0.35, 5.0), cy: laneY(3) + 1.49 } }, // the last lane sits low: no dead floor under it
   { at: 18.0, dur: 0.35, to: { cx: 0.2, hf: 6.0 } },
   { at: 19.05, dur: 0.35, to: { cx: 0.7 } },
   { at: 20.15, dur: 0.4, to: { cx: -0.25, hf: 5.6 } },
