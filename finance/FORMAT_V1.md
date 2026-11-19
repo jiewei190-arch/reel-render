@@ -93,3 +93,12 @@ so the problem is something they all share, not the style. Each one also flatlin
 - **The visual hook has three parts:** (1) the camera ZOOMS IN at frame 0, straight into the action; (2) the WHOLE SITUATION is readable in ONE frame (who, what, what's at stake); (3) EMOTION is visible in the first second.
 - **Easter eggs:** every Short hides 1-2 details that have nothing to do with the story but make people pause or rewatch. A recurring blocky cat stealing a coin, Spender's TV from episode 1 in the background, a sticky note with a joke. Recurring ones link our Shorts together for returning viewers.
 - **Double payoff:** after the spoken payoff, add a second VISUAL payoff in the final 0.5-1 s that rewards a rewatch. For example, the cat walks off with Saver's coin, or Spender's TV falls over. Something people catch on the loop.
+
+## Research round 2 (viral 3D Shorts, 2026-11-19): finance/research/viral3d_web_research.md
+- Frame 0 shows something STRANGE ALREADY HAPPENING (no title-card feel). First cut by 1.3-1.5 s.
+- Pacing of top 3D channels: a new shot about every 2-2.5 s, about 12-14 shots in 30 s, narration at about 160 wpm (80-100 words in 30 s), no pause over about 1 s.
+- Show the money MECHANISM visually: x-ray views, machines, coins flowing. Make the abstract physical.
+- Render polish is NOT the bottleneck. Priorities, in order: frame 0 and its motion, cut rhythm and camera energy, a readable mechanism visual, word-by-word captions, exaggerated poses, weighty timing, a looping last frame and eggs, lighting, sound, set detail, lip-sync LAST.
+- A proven finance format: a two-person comparison race ("lawyer vs electrician" savings got 7.8M). That matches our S2, which also had our best hold (85 %). Weight it heavier.
+- Copy what works and change one thing: when a Short beats the channel average, make 3-5 follow-ups with the same hook shape and closing beat on new topics.
+- End on the punchline and cut. The last frame matches frame 0 for a seamless loop.
