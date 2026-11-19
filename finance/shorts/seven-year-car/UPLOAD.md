@@ -2,7 +2,7 @@
 
 style: S7 bleep gag
 voice: Christopher
-**Title (37 chars):** Your Low Car Payment Costs $12,000 More
+**Title (44 chars):** Your Low Car Payment Costs $12,000 in Interest
 
 **Description:**
 Example: the same $35,000 car at 9% APR. A 4-year loan is about $871/month and about $6,807 in total interest. A 7-year loan is only about $563/month, but about $12,302 in interest, almost double, and after 4 years you'd still owe about $17,708. Your rate and price will differ.
