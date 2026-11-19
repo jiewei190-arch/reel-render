@@ -27,7 +27,7 @@ export type Look = {
   belt?: string;
   cuffs?: string;
   /** accessories (colours): a hat with a band, a shoulder bag, an apron, tiny round glasses, a rocket backpack */
-  acc?: { hat?: [string, string]; bag?: string; apron?: string; glasses?: string; backpack?: [string, string] };
+  acc?: { hat?: [string, string]; bag?: string; apron?: string; glasses?: string; backpack?: [string, string]; cap?: [string, string]; headband?: [string, string] };
 };
 /** something held in one hand (kept upright in the world, like the cone) or hugged against the chest */
 export type Held = { side: "L" | "R"; node: React.ReactNode; tilt?: [number, number] };
@@ -325,10 +325,11 @@ const Antennae: React.FC<{ look: Look; ant: number; wob?: number; lift?: number 
   );
 };
 const HAT_CROWN = 0.5 * U; // the dad's hat crown height (antennae come out on top)
+const CAP_CROWN = 0.3 * U; // a baseball cap's crown (antennae come out on top)
 const lerpN = (a: number, b: number, u: number) => a + (b - a) * Math.min(1, Math.max(0, u));
 
 const Hair: React.FC<{ look: Look; ant?: number; wob?: number }> = ({ look, ant = 0, wob = 0 }) => {
-  if (look.hairStyle === "antennae" || look.hairStyle === "antenna1") return <Antennae look={look} ant={ant} wob={wob} lift={look.acc?.hat ? HAT_CROWN : 0} />;
+  if (look.hairStyle === "antennae" || look.hairStyle === "antenna1") return <Antennae look={look} ant={ant} wob={wob} lift={look.acc?.hat ? HAT_CROWN : look.acc?.cap ? CAP_CROWN : 0} />;
   const H = SPEC.head;
   const m = plastic(look.hair, { rough: 0.62 });
   const shaggy = look.hairStyle === "shaggy";
@@ -513,6 +514,22 @@ const HeadAcc: React.FC<{ look: Look }> = ({ look }) => {
           <mesh geometry={rbox((H.w + 0.42) * U, 0.07 * U, (H.d + 0.42) * U, 0.03 * U)} material={plastic(a.hat[0], { rough: 0.55 })} position={[0, 0.02 * U, 0]} castShadow receiveShadow />
           <mesh geometry={rbox((H.w - 0.02) * U, HAT_CROWN, (H.d - 0.02) * U, 0.1 * U)} material={plastic(a.hat[0], { rough: 0.55 })} position={[0, HAT_CROWN / 2 + 0.04 * U, 0]} castShadow receiveShadow />
           <mesh geometry={rbox((H.w + 0.02) * U, 0.13 * U, (H.d + 0.02) * U, 0.04 * U)} material={plastic(a.hat[1], { rough: 0.4 })} position={[0, 0.12 * U, 0]} castShadow />
+        </group>
+      ) : null}
+      {a.cap ? (
+        <group position={[0, (H.h / 2) * U, 0]}>
+          <mesh geometry={rbox((H.w + 0.06) * U, CAP_CROWN + 0.16 * U, (H.d + 0.06) * U, 0.12 * U)} material={plastic(a.cap[0], { rough: 0.55 })} position={[0, (CAP_CROWN + 0.16 * U) / 2 - 0.16 * U, 0]} castShadow receiveShadow />
+          <mesh geometry={rbox((H.w - 0.1) * U, 0.06 * U, 0.6 * U, 0.025 * U)} material={plastic(a.cap[1], { rough: 0.5 })} position={[0, -0.1 * U, (H.d / 2 + 0.26) * U]} rotation={[0.12, 0, 0]} castShadow receiveShadow />
+          <mesh geometry={rbox(0.16 * U, 0.08 * U, 0.16 * U, 0.03 * U)} material={plastic(a.cap[1], { rough: 0.4 })} position={[0, CAP_CROWN + 0.02 * U, 0]} castShadow />
+        </group>
+      ) : null}
+      {a.headband ? (
+        <group position={[0, 0.43 * U, 0]}>
+          <mesh geometry={rbox((H.w + 0.05) * U, 0.17 * U, (H.d + 0.05) * U, 0.05 * U)} material={plastic(a.headband[0], { rough: 0.5 })} castShadow />
+          <mesh geometry={rbox((H.w + 0.07) * U, 0.05 * U, (H.d + 0.07) * U, 0.02 * U)} material={plastic(a.headband[1], { rough: 0.45 })} />
+          {[-1, 1].map((s) => (
+            <mesh key={s} geometry={rbox(0.12 * U, 0.4 * U, 0.05 * U, 0.02 * U)} material={plastic(a.headband![0], { rough: 0.5 })} position={[s * 0.12 * U, -0.18 * U, -(H.d / 2 + 0.06) * U]} rotation={[0.25, 0, s * 0.45]} castShadow />
+          ))}
         </group>
       ) : null}
       {a.glasses ? (

@@ -11,6 +11,7 @@ import { compileRecipe, RecipeFilm } from "./compile";
 import type { Compiled } from "./compile";
 import { GALLERY_RECIPE } from "./gallery";
 import { RECIPES } from "./registry.gen";
+import { FourMindsFilm, S8_FRAMES } from "../s8/fourminds";
 
 const cache = new Map<string, Compiled>();
 export const compiledOf = (id: string) => {
@@ -36,6 +37,9 @@ export const ToolkitRoot: React.FC = () => (
   <>
     <Composition id="MinimumPaymentTrapV1" component={Mintrap} durationInFrames={MINTRAP_SPEC.duration} fps={30} width={1080} height={1920} />
     <Composition id="AssetGallery" component={AssetGallery} durationInFrames={GALLERY_FRAMES} fps={30} width={1080} height={1080} defaultProps={{}} />
+    {/* S8 four-money-minds: the stacked-lanes Short (hand-built, not a recipe: 4 simultaneous lanes) */}
+    <Composition id="FourMoneyMinds" component={FourMindsFilm} durationInFrames={S8_FRAMES} fps={30} width={1080} height={1920} defaultProps={{ sub: false }} />
+    <Composition id="FourMoneyMindsSub" component={FourMindsFilm} durationInFrames={S8_FRAMES * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ sub: true }} />
     <Composition id="PresetGallery" component={PresetGallery} durationInFrames={Math.round((GALLERY_RECIPE.duration ?? 1) * 30)} fps={30} width={1080} height={1920} />
     {RECIPES.map((r) => {
       const c = compiledOf(r.id);
