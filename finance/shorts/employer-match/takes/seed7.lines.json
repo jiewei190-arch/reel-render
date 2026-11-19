@@ -10,10 +10,11 @@
  "lead": 0.1,
  "beat": 0.7,
  "sr": 24000,
- "duration": 27.322,
- "render_s": 322.2,
+ "duration": 24.399,
+ "render_s": 141.0,
  "qa_fail_lines": [
-  1
+  1,
+  6
  ],
  "lines": [
   {
@@ -54,7 +55,7 @@
     {
      "tts": "Say you earn fifty thousand. They match half, up to six percent.",
      "seed": 7,
-     "heard": "Say you earn 50,000, they match half up to 6%.",
+     "heard": "Say you earn 50,000. They match half up to 6%.",
      "wrong_words": 0,
      "qa": "ok"
     }
@@ -78,48 +79,48 @@
   },
   {
    "n": 5,
-   "text": "Then your first statement arrives...",
+   "text": "Then the first statements arrive...",
    "start": 14.384,
    "parts": [
     {
-     "tts": "Then your first statement arrives...",
+     "tts": "Then the first statements arrive...",
      "seed": 7,
-     "heard": "Then, your first statement arrives.",
+     "heard": "Then the first statements arrive.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 16.567
+   "end": 15.946
   },
   {
    "n": 6,
-   "text": "1,500 extra, from your employer. Fifty cents on every dollar you saved.",
-   "start": 16.817,
+   "text": "Yours: 3,000, plus 1,500 from your boss. Spender's: zero.",
+   "start": 16.196,
    "parts": [
     {
-     "tts": "one thousand five hundred extra, from your employer. Fifty cents on every dollar you saved.",
+     "tts": "Yours: three thousand, plus one thousand five hundred from your boss. Spender's: zero.",
      "seed": 7,
-     "heard": "1,500 extra from your employer. 50 cents on every dollar you saved.",
-     "wrong_words": 0,
-     "qa": "ok"
+     "heard": "Yours, $3,000 plus $1,500 from your boss. Spenders, $0.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
     }
    ],
-   "end": 21.334
+   "end": 21.408
   },
   {
    "n": 7,
-   "text": "Plans differ, and some make you wait to keep it. Skip it, and that 1,500 just isn't yours.",
-   "start": 21.584,
+   "text": "Plans differ, and some make you wait to keep it.",
+   "start": 21.658,
    "parts": [
     {
-     "tts": "Plans differ, and some make you wait to keep it. Skip it, and that one thousand five hundred just isn't yours.",
+     "tts": "Plans differ, and some make you wait to keep it.",
      "seed": 7,
-     "heard": "Plans differ and some make you wait to keep it, skip it and that 1,500 just isn't yours.",
+     "heard": "Plans differ, and some make you wait to keep it.",
      "wrong_words": 0,
      "qa": "ok"
     }
    ],
-   "end": 27.072
+   "end": 24.149
   }
  ]
 }

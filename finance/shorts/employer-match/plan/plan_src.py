@@ -1,40 +1,35 @@
-"""Plan source for the finance Short "employer-match": shots, accents and tags anchored to WORDS of the voice-over.
-Re-run after every VO change; the times move with the words. Writes src/plan.gen.ts and plan/SHOTS.md.
-
-    python plan/plan_src.py vo/timings.json
+"""Plan source (FORMAT v1, style S3 POV-YOU) "employer-match": shots anchored to WORDS of the voice-over.
+    python plan/plan_src.py vo/timings.json      -> src/plan.gen.ts + plan/SHOTS.md
 """
-TITLE = "employer-match"
-CAST_NOTE = "SAVER (green, glasses) saves; TELLER (violet, apron) plays the employer at the payroll counter; SPENDER (red, bag) skips it. Set: the bright hall as a payroll office (counter, a RETIREMENT PLAN jar on a pedestal, a board, a big clock); no logos, no plan provider names."
-LOOP_NOTE = "S20 (\"And yes, it's true:\") returns to the S01 lens: Teller holds out the match bundle again as Saver drops his; the loop lands on \"Some jobs pay you to save.\""
-COUNTER = "`YOU $3,000 + MATCH $1,500`, filling as the example plays; small `2026 LIMIT $24,500` badge."
+TITLE = 'employer-match'
+CAST_NOTE = 'THE BOSS (TELLER, purple) across your desk, talking to the lens: you are the camera. SPENDER (red, bag) at the next desk. Set: a bright blocky office, two desks. No logos, no brands.'
+LOOP_NOTE = 'S16 on "keep it": the boss leans back into the S01 close-up with the card; loops to frame 0 and "POV: your boss just offered you...".'
+COUNTER = 'none (v1, style S3 POV-YOU). Hook text from frame 0: POV: YOUR BOSS OFFERS YOU $1,500. In the set: +$1,500/YR card, $50,000/YR pay label, MATCH 50% UP TO 6% board, YOU $3,000 jar, two STATEMENT envelopes, $3,000 + $1,500 vs $0.'
 SHOTS = [
-    ("S01", (1, "some", 1), "store", "medium wide two-shot, push-in", "Conflict in frame 1: at the payroll counter Saver drops a coin bundle into a RETIREMENT PLAN jar while Teller (employer) adds a second bundle; Spender walks past ignoring it; counter YOU $0 + MATCH $0"),
-    ("S02", (1, "save", 1), "store", "close on the jar, push-in", "Both bundles land in the jar; it glows; label RETIREMENT PLAN"),
-    ("S03", (2, "employer", 1), "store", "medium on Teller, push-in", "Teller (employer) points at a sign on the counter: EMPLOYER MATCH"),
-    ("S04", (3, "say", 1), "store", "close on a payslip, push-in", "Saver holds up a payslip: $50,000 / YEAR (EXAMPLE)"),
-    ("S05", (3, "and", 1), "store", "medium on the board, push-in", "A board: MATCH 50% UP TO 6% OF PAY"),
-    ("S06", (3, "half", 1), "store", "close on the counter, push-in", "One coin bundle, then a half-height bundle pops beside it (½)"),
-    ("S07", (3, "up", 1), "store", "medium on Teller, push-in", "Teller raises a 6% card like a cap"),
-    ("S08", (4, "save", 1), "store", "medium on Saver, push-in", "Saver drops a $3,000 stack into the jar"),
-    ("S09", (4, "they", 1), "store", "close on the jar, push-in", "Teller adds a $1,500 stack; the jar pops; counter YOU $3,000 + MATCH $1,500"),
-    ("S10", (5, "that's", 1), "store", "macro on two coins, push-in", "A big coin labelled $1 and a half coin labelled 50¢ side by side"),
-    ("S11", (5, "before", 1), "store", "medium on the jar, push-in", "The jar hums green (no growth shown, just the match)"),
-    ("S12", (6, "skip", 1), "whisper", "medium on Spender, push-in", "Spender strolls past the counter, hands in the air: skip"),
-    ("S13", (6, "that", 1), "whisper", "close on the counter, push-in", "Teller's $1,500 stack slides back off the counter, away from Spender's empty jar"),
-    ("S14", (6, "isn't", 1), "whisper", "medium on Spender, push-in", "Spender shrugs at his empty jar"),
-    ("S15", (7, "plans", 1), "store", "wide on three jars, push-in", "Three jars with different labels: 50% UP TO 6% / 100% UP TO 3% / NO MATCH; tag PLANS DIFFER"),
-    ("S16", (7, "wait", 1), "store", "medium on the big clock, push-in", "A big clock over the jar: VESTING: SOME PLANS MAKE YOU WAIT"),
-    ("S17", (7, "i.r.s", 1), "store", "medium on Teller with a sign, push-in", "Teller holds a sign: I.R.S. LIMIT"),
-    ("S18", (7, "24,500", 1), "store", "close on the sign, push-in", "The sign flips to $24,500 YOUR PART · 2026"),
-    ("S19", (7, "2026", 1), "store", "close on a flip calendar, push-in", "A flip calendar shows 2026"),
-    ("S20", (8, "yes", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Back to the start: Teller holds out the match bundle as Saver drops his"),
+    ('S01', (1, 'your', 1), 'earth', 'CLOSE on the boss, lens = you', "FRAME 0 MID-ACTION: the boss leans in, grinning, pushing a +$1,500/YR card at the lens; winks by 1 s; hook text POV: YOUR BOSS OFFERS YOU $1,500"),
+    ('S02', (1, '1,500', 1), 'earth', 'close on the card', 'The +$1,500/YR card fills the lens'),
+    ('S17', (1, 'free', 1), 'earth', 'close on the boss', "The boss's grin: FREE MONEY"),
+    ('S03', (2, "it's", 1), 'earth', 'down on your desk', 'MATCH: two coin stacks, YOU and BOSS'),
+    ('S18', (2, 'save', 1), 'earth', 'close on your stack', 'Your coins stack up: YOU'),
+    ('S04', (2, 'they', 1), 'earth', 'close on the stacks', 'The boss drops coins on your stack'),
+    ('S05', (3, 'say', 1), 'earth', 'on the pay label', 'EXAMPLE: $50,000/YR pay label'),
+    ('S06', (3, 'they', 1), 'earth', 'on the board', 'MATCH 50% UP TO 6% board, the boss points'),
+    ('S07', (4, 'you', 1), 'earth', 'close on your jar', 'YOU $3,000 jar fills'),
+    ('S19', (4, '3,000', 1), 'earth', 'on the jar label', 'YOU: $3,000 label pops'),
+    ('S08', (4, 'spender', 1), 'earth', 'whip right to the next desk', 'Spender tosses the form in the bin, smug'),
+    ('S20', (4, 'skips', 1), 'earth', 'close on Spender', 'Spender: nope, smug'),
+    ('S09', (5, 'then', 1), 'whisper', 'down on both desks', 'OPEN LOOP: two sealed STATEMENT envelopes thud down, trembling'),
+    ('S10', (5, 'statements', 1), 'whisper', 'close on the envelopes', 'OPEN LOOP: the envelopes shake'),
+    ('S11', (6, 'yours', 1), 'earth', 'close on your envelope', 'TWIST: it bursts: $3,000'),
+    ('S12', (6, 'plus', 1), 'earth', 'slam on the +$1,500', '+$1,500 FROM YOUR BOSS slams beside it'),
+    ('S21', (6, 'from', 1), 'earth', 'on both labels', '$3,000 + $1,500 FROM BOSS side by side'),
+    ('S13', (6, "spender's", 1), 'earth', 'whip to Spender', "Spender's envelope pops: $0. Shock"),
+    ('S14', (7, 'plans', 1), 'earth', 'medium on the boss', 'PLANS DIFFER label, the boss wags a finger'),
+    ('S15', (7, 'some', 1), 'earth', 'close on the label', 'SOME MAKE YOU WAIT TO KEEP IT (VESTING)'),
+    ('S16', (7, 'keep', 1), 'earth', 'SAME lens as S01 (loop match)', 'LOOP: the boss leans in with the card again -> frame 0'),
 ]
-ACCENT = {(1, "save"), (3, "half"), (4, "1,500"), (6, "isn't"), (7, "24,500")}
-TAGS = [
-    (1, "some", "EXAMPLE: $50,000 · 50% MATCH UP TO 6%", "small painted card on the counter from frame 0"),
-    (7, "24,500", "$24,500 · 2026 EMPLOYEE LIMIT (IRS)", "on Teller's sign"),
-]
-
+ACCENT = {(1, '1,500'), (2, 'match'), (3, 'half'), (4, 'skips'), (5, 'statements'), (6, '1,500'), (6, 'zero')}
+TAGS = []
 
 # ---- engine (same in every finance Short; from the blocky-shorts template's plan/plan_src.py, extended) -----------
 # Changes from the template: a shot carries a full scene line (cast, action, props, on-screen tag, camera); cuts aim at
@@ -83,8 +78,8 @@ def main(p):
     for a, b in zip(shots, shots[1:] + [{"t": total}]):
         a["end"] = round(b["t"], 3)
         d = a["end"] - a["t"]
-        if d < 1.0 or d > 2.2:
-            warns.append(f"WARN {a['id']} is {d:.2f} s (aim ~1.4 s)")
+        if d < 0.7 or d > 1.7:
+            warns.append(f"WARN {a['id']} is {d:.2f} s (v1 aim 0.8-1.5 s)")
     caps, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -114,7 +109,8 @@ def main(p):
         f"export const SHOTS = {json.dumps(shots)} as const;\n"
         f"export const CAPTIONS = {json.dumps(captions)} as const;\n"
         f"export const TAGS = {json.dumps(tags)} as const;\n"
-        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n", encoding="utf8")
+        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n"
+        f"export const WORDS = {json.dumps([{'w': w['w'], 'turn': w['turn'], 't': round(w['t'], 3), 'end': round(w['end'], 3)} for w in words])} as const;\n", encoding="utf8")
     # readable shot list
     md = [f"# {TITLE}: shot list (generated by plan/plan_src.py from vo/timings.json; do not edit)", "",
           f"{len(shots)} shots, {total:.2f} s ({round(total * FPS)} frames at {FPS} fps), median cut "

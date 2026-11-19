@@ -1,12 +1,12 @@
-## Hook candidates
+## FORMAT v1 beat sheet (style S3 POV-YOU)
 
-1. **Some jobs pay you to save.** (6 words) ← PICK: a surprising "you" claim; the last line ("And yes, it's true:") flows into it.
-2. Free money is hiding in your paycheck. (7, "free money" overclaims; vesting)
-3. Fifty cents on every dollar you save. (7, a number but no context)
-4. You might be skipping 1,500 dollars. (6)
-5. Your boss might double half your savings. (7, confusing)
+1. **Want:** you are offered free money: a match. You put in $3,000 a year.
+2. **Trouble:** Spender, at the next desk, skips it.
+3. **Twist:** the statements arrive. Yours: $3,000 plus $1,500 from your boss. Spender's: $0.
 
-## Beats
-- **Loop sentence:** "And yes, it's true: / Some jobs pay you to save."
-- **Twist (~70%):** "Skip it, and that 1,500 just isn't yours."
-- **Counter (every shot):** `YOU $3,000 + MATCH $1,500`, filling as the example plays; small `2026 LIMIT $24,500` badge.
+- **Hook text on frame 0 (6 words, 2 lines, 92 px):** POV: YOUR BOSS OFFERS YOU $1,500
+- **Frame 0 (mid-action):** the boss leans in close, grinning. The lens is you. Joy turns sly by 0.62 s. The stake ($1,500) is in the hook text.
+- **Open loop (58 %, 13.8 s):** "Then the first statements arrive..." Two sealed STATEMENT envelopes thud down and tremble.
+- **Twist (71 %, 17.0 s of 23.9 s):** "plus 1,500 from your boss". The +$1,500 slams in beside your $3,000; Spender's opens to $0. It's exactly what the envelopes teased.
+- **"You":** throughout (POV).
+- **Loop:** "...some make you wait to keep it." → the boss leans into the frame-0 close-up again.

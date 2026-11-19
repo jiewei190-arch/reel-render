@@ -1,0 +1,35 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 3.189,
+ "render_s": 214.5,
+ "qa_fail_lines": [
+  1
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Your boss just offered you 1,500 dollars of free money.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "Your boss just offered you one thousand five hundred dollars of free money.",
+     "seed": 7,
+     "heard": "Your boss just offered you $1,500 of free money.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 2.939
+  }
+ ]
+}
