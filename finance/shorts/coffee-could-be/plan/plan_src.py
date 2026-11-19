@@ -1,40 +1,37 @@
-"""Plan source for the finance Short "coffee-could-be": shots, accents and tags anchored to WORDS of the voice-over.
-Re-run after every VO change; the times move with the words. Writes src/plan.gen.ts and plan/SHOTS.md.
-
-    python plan/plan_src.py vo/timings.json
+"""Plan source (FORMAT v1, style S2 RICH-VS-POOR, split screen) "coffee-could-be": shots anchored to WORDS of the VO.
+    python plan/plan_src.py vo/timings.json      -> src/plan.gen.ts + plan/SHOTS.md
+Each shot is a PAIR: the TOP half (Spender's red cafe) and the BOTTOM half (Saver's green vault), the same moment.
 """
-TITLE = "coffee-could-be"
-CAST_NOTE = "SPENDER (red, bag) buys the daily coffee; SAVER (green, glasses) drops the same money into a jar instead; TELLER (violet, apron) runs the coffee bar. Set: the bright hall as a coffee bar + a savings corner (pedestal, a jar that becomes a tall column, a flip calendar, a big clock); no brands on cups."
-LOOP_NOTE = "S20 (\"Which is how\") returns to the S01 lens: Spender lifts his cup while the ghost $186,000 column glows behind; the loop lands on \"Your coffee could be worth 186,000 dollars.\""
-COUNTER = "a big counter `PUT IN $x` turning into `EXAMPLE VALUE $x` (green), with `YEAR nn` and an `EXAMPLE 7%/YR` badge."
+TITLE = 'coffee-could-be'
+CAST_NOTE = 'SPLIT: TOP = SPENDER (red, bag) at a blocky coffee counter, a tower of cups; BOTTOM = SAVER (green, glasses) with a coin jar, a coin pile and a scoreboard. Two counters race at the seam: SPENT vs SAVER. No logos, no brands.'
+LOOP_NOTE = 'S18 on "doing" (So what\'s your five dollars doing?": both halves back on the S01 close-ups; loops to frame 0 and "Same five dollars a day."'
+COUNTER = 'two racing counters at the seam: SPENDER SPENT ($1,825 a year) vs SAVER ($1,825/yr invested at a made-up 7 %: $1,885 / $26,323 / $185,537). Hook text from frame 0: $5 A DAY: COFFEE OR $186,000?'
 SHOTS = [
-    ("S01", (1, "your", 1), "store", "medium two-shot, push-in", "Conflict in frame 1: Spender at the coffee bar lifts a plain cup; behind him a ghost glass column labelled $186,000? glows over Saver's jar; counter $5 A DAY"),
-    ("S02", (1, "186,000", 1), "store", "low angle on the ghost column, push-in", "The ghost column towers: $186,000 (EXAMPLE)"),
-    ("S03", (2, "five", 1), "store", "medium on the coffee bar, push-in", "Teller hands Spender a cup; a $5 coin goes on the counter"),
-    ("S04", (2, "a", 1), "store", "close on the counter, push-in", "One $5 stack per day pops on the counter: day 1, 2, 3..."),
-    ("S05", (2, "1,825", 1), "store", "medium wide, push-in", "The stacks fill the bar: tag $1,825 A YEAR"),
-    ("S06", (2, "year", 1), "store", "close on the calendar, push-in", "A flip calendar riffles 365 days"),
-    ("S07", (3, "monthly", 1), "store", "medium on Saver, push-in", "Saver drops a $152 bundle into his jar instead (EXAMPLE)"),
-    ("S08", (3, "thirty", 1), "store", "close on the jar, push-in", "The jar fills month by month; calendar 30 YEARS"),
-    ("S09", (4, "54,750", 1), "store", "close on a tag, push-in", "Tag PUT IN $54,750 on the jar"),
-    ("S10", (5, "say", 1), "store", "medium on a board, push-in", "A board: EXAMPLE 7%/YR, STEADY (MADE UP)"),
-    ("S11", (5, "seven", 1), "store", "medium on the jar, push-in", "The jar starts to grow by itself (growth on growth), green glow"),
-    ("S12", (5, "186,000", 1), "ending", "low angle on the column, push-in", "The jar is now a tall glass column: ≈ $186,600"),
-    ("S13", (6, "twist", 1), "whisper", "medium on Spender, push-in", "Spender looks at his cup, worried"),
-    ("S14", (6, "coffee", 1), "whisper", "close on the cup, push-in", "The cup on the counter, a small tag NOT THE VILLAIN"),
-    ("S15", (6, "time", 1), "ending", "medium on a big clock, push-in", "A big clock spins; tag TIME IS"),
-    ("S16", (7, "years", 1), "store", "medium on a short column, push-in", "A second, short column: 10 YEARS ≈ $26,500"),
-    ("S17", (7, "26,000", 1), "store", "two columns side by side, push-in", "Short column (10 yrs) next to the tall one (30 yrs)"),
-    ("S18", (8, "no", 1), "whisper", "medium on the board, push-in", "Stamp on the board: NO GUARANTEES"),
-    ("S19", (8, "coffee", 1), "store", "medium on Spender, push-in", "Spender sips, smiling: maybe it's worth it"),
-    ("S20", (8, "which", 1), "store", "SAME lens + position as S01 (loop match), push-in", "Back to the start: Spender lifts the cup, the ghost $186,000 column glows behind"),
+    ('S01', (1, 'same', 1), 'earth', 'SPLIT close-ups', "FRAME 0 MID-ACTION: TOP Spender mid-sip, cup at his face, joy; BOTTOM Saver mid-drop of a $5 coin into his jar; hook text $5 A DAY: COFFEE OR $186,000?"),
+    ('S02', (1, 'spender', 1), 'earth', 'split mediums', 'TOP Spender grabs a cup from the machine; BOTTOM Saver drops $5 in the jar'),
+    ('S19', (1, 'saver', 1), 'earth', 'BOTTOM close on the jar', 'BOTTOM the $5 coin clinks into the jar; TOP Spender sips'),
+    ('S03', (2, 'saver', 1), 'earth', 'split', 'BOTTOM the jar glows: 7% A YEAR (EXAMPLE); TOP Spender sips, happy'),
+    ('S20', (2, 'seven', 1), 'earth', 'BOTTOM close on the 7% tag', 'BOTTOM the 7% A YEAR (EXAMPLE) tag pops on the jar; TOP Spender orders another'),
+    ('S04', (3, 'one', 1), 'earth', 'split wides', 'YEAR 1: TOP a tower of cups (365 CUPS); BOTTOM board $1,825'),
+    ('S21', (3, '365', 1), 'earth', 'TOP close on the cup tower', 'TOP 365 CUPS tower wobbles; BOTTOM the board ticks up'),
+    ('S05', (3, 'saver', 1), 'earth', 'split, close on the boards', 'TOP 365 CUPS label; BOTTOM SAVED $1,825'),
+    ('S22', (3, '1,825', 1), 'earth', 'BOTTOM slam on $1,825', 'BOTTOM SAVED $1,825 slams; TOP Spender sips'),
+    ('S06', (4, 'but', 1), 'whisper', 'split, slow push', 'OPEN LOOP: BOTTOM a covered YEAR 30 board trembles under a cloth; TOP Spender peers at it'),
+    ('S15', (4, 'see', 1), 'whisper', 'BOTTOM close on the cloth', 'OPEN LOOP: the cloth over YEAR 30 bulges, light leaks; TOP Spender leans in'),
+    ('S07', (5, 'ten', 1), 'earth', 'split', 'YEAR 10: BOTTOM board $26,000, the pile grows; TOP more cups'),
+    ('S16', (5, 'saver', 1), 'earth', 'BOTTOM close on the board', 'BOTTOM $26,000 on the board; TOP Spender squints'),
+    ('S08', (5, 'spender', 1), 'earth', 'split, TOP on Spender', 'TOP Spender shrugs, smug; BOTTOM Saver calm'),
+    ('S14', (5, "that's", 1), 'earth', 'TOP close on Spender', "TOP THAT'S IT? Spender laughs; BOTTOM the cloth twitches"),
+    ('S09', (6, 'thirty', 1), 'earth', 'split, BOTTOM wide', 'TWIST: the cloth flies off: YEAR 30; the pile erupts; TOP Spender shock'),
+    ('S10', (6, '186,000', 1), 'earth', 'slam on the board', 'BOTTOM $186,000 slams; TOP Spender drops his cup'),
+    ('S11', (7, 'he', 1), 'ending', 'split', 'BOTTOM PUT IN $54,750 beside $186,000; TOP Spender: SPENT $54,750'),
+    ('S17', (7, '54,750', 1), 'ending', 'BOTTOM close on the labels', 'BOTTOM PUT IN $54,750 vs WORTH $186,000; TOP SPENT $54,750'),
+    ('S12', (7, 'time', 1), 'ending', 'split', 'BOTTOM a clock spins: TIME DID THE REST; TOP Spender sad among cups'),
+    ('S13', (7, 'so', 1), 'earth', 'split, both to the lens', "BOTTOM Saver points at the lens (you); TOP Spender holds up his cup"),
+    ('S18', (7, 'doing', 1), 'earth', 'SAME lenses as S01 (loop match)', 'LOOP: TOP Spender lifts a fresh cup, BOTTOM Saver lifts a coin -> frame 0'),
 ]
-ACCENT = {(1, "186,000"), (2, "1,825"), (4, "54,750"), (5, "made-up"), (6, "time"), (7, "26,000"), (8, "guarantees")}
-TAGS = [
-    (1, "your", "EXAMPLE: $5/DAY · 7%/YR STEADY · NOT A PREDICTION", "small painted card on the bar from frame 0"),
-    (5, "186,000", "≈ $186,600 AFTER 30 YEARS (EXAMPLE)", "on the column"),
-]
-
+ACCENT = {(1, 'five'), (2, 'seven'), (3, '1,825'), (4, 'thirty'), (5, '26,000'), (6, '186,000'), (7, 'time')}
+TAGS = []
 
 # ---- engine (same in every finance Short; from the blocky-shorts template's plan/plan_src.py, extended) -----------
 # Changes from the template: a shot carries a full scene line (cast, action, props, on-screen tag, camera); cuts aim at
@@ -83,8 +80,8 @@ def main(p):
     for a, b in zip(shots, shots[1:] + [{"t": total}]):
         a["end"] = round(b["t"], 3)
         d = a["end"] - a["t"]
-        if d < 1.0 or d > 2.2:
-            warns.append(f"WARN {a['id']} is {d:.2f} s (aim ~1.4 s)")
+        if d < 0.7 or d > 1.7:
+            warns.append(f"WARN {a['id']} is {d:.2f} s (v1 aim 0.8-1.5 s)")
     caps, chunk = [], []
     for w in words:
         chunk.append(w)
@@ -114,7 +111,8 @@ def main(p):
         f"export const SHOTS = {json.dumps(shots)} as const;\n"
         f"export const CAPTIONS = {json.dumps(captions)} as const;\n"
         f"export const TAGS = {json.dumps(tags)} as const;\n"
-        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n", encoding="utf8")
+        f"export const COUNTER = {json.dumps(COUNTER)} as const;\n"
+        f"export const WORDS = {json.dumps([{'w': w['w'], 'turn': w['turn'], 't': round(w['t'], 3), 'end': round(w['end'], 3)} for w in words])} as const;\n", encoding="utf8")
     # readable shot list
     md = [f"# {TITLE}: shot list (generated by plan/plan_src.py from vo/timings.json; do not edit)", "",
           f"{len(shots)} shots, {total:.2f} s ({round(total * FPS)} frames at {FPS} fps), median cut "

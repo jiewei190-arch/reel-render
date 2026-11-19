@@ -1,9 +1,9 @@
 # coffee-could-be
 
-- **Spoken:** 59 words, voice 30.50 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
+- **Spoken:** 68 words, voice 28.10 s (D2 Chatterbox, exaggeration 0.3, cfg 0.3).
 - **Hook:** line 1, spoken from 0.0 s, no intro.
 - **Ending:** stops mid-thought, no call to action; the last line runs straight into line 1 when the Short loops.
-- **Loop:** S20 ("Which is how") returns to the S01 lens: Spender lifts his cup while the ghost $186,000 column glows behind; the loop lands on "Your coffee could be worth 186,000 dollars."
+- **Loop:** S18 on "doing" (So what's your five dollars doing?": both halves back on the S01 close-ups; loops to frame 0 and "Same five dollars a day."
 
 ## Hook candidates (first line: a shocking number or a direct "you" claim, under 8 words)
 
@@ -22,51 +22,50 @@
 
 | # | time (s) | line |
 |---|---|---|
-| 1 | 0.00–2.75 | Your coffee could be worth 186,000 dollars. |
-| 2 | 2.75–7.68 | Five dollars a day is 1,825 a year. |
-| 3 | 8.10–10.52 | Invest that monthly instead, for thirty years. |
-| 4 | 11.20–13.62 | You'd put in 54,750. |
-| 5 | 14.26–19.28 | Say a made-up, steady seven percent: about 186,000. |
-| 6 | 19.32–22.74 | Twist: the coffee isn't the villain. Time is. |
-| 7 | 22.74–26.04 | Ten years? Only about 26,000. |
-| 8 | 26.46–29.96 | No guarantees, and the coffee might be worth it. Which is how |
+| 1 | 0.00–3.28 | Same five dollars a day. Spender buys a coffee. Saver saves it. |
+| 2 | 3.72–6.36 | Saver invests his at a made-up, steady seven percent. |
+| 3 | 6.36–11.70 | One year: Spender has 365 cups. Saver has saved 1,825 dollars. |
+| 4 | 12.48–14.04 | But wait till you see year thirty... |
+| 5 | 14.60–18.84 | Ten years: Saver has about 26,000. Spender shrugs. That's it? |
+| 6 | 19.26–21.74 | Thirty years: about 186,000. |
+| 7 | 22.14–27.54 | He only put in 54,750. Time did the rest. So what's your five dollars doing? |
 
-Loop read-through: "…No guarantees, and the coffee might be worth it. Which is how / Your coffee could be worth 186,000 dollars."
+Loop read-through: "…He only put in 54,750. Time did the rest. So what's your five dollars doing? / Same five dollars a day. Spender buys a coffee. Saver saves it."
 
 ## Shot plan (one cut every ~1.4 s, each on its word)
 
-20 shots, 30.56 s (917 frames at 30 fps), median cut 1.49 s. Cast: SPENDER (red, bag) buys the daily coffee; SAVER (green, glasses) drops the same money into a jar instead; TELLER (violet, apron) runs the coffee bar. Set: the bright hall as a coffee bar + a savings corner (pedestal, a jar that becomes a tall column, a flip calendar, a big clock); no brands on cups.
+22 shots, 28.14 s (844 frames at 30 fps), median cut 1.20 s. Cast: SPLIT: TOP = SPENDER (red, bag) at a blocky coffee counter, a tower of cups; BOTTOM = SAVER (green, glasses) with a coin jar, a coin pile and a scoreboard. Two counters race at the seam: SPENT vs SAVER. No logos, no brands.
 
 Every shot: the camera never rests (constant push-in), captions in the safe zone (1–2 lowercase words, one yellow accent per sentence), original blocky cast only, no logos or brands, plain bills/cards with no real currency art.
 
 | shot | time (s) | dur | anchor word | mood | scene (cast, action, props, on-screen tag) | camera | captions in shot |
 |---|---|---|---|---|---|---|---|
-| S01 | 0.00–1.26 | 1.26 | your | store | Conflict in frame 1: Spender at the coffee bar lifts a plain cup; behind him a ghost glass column labelled $186,000? glows over Saver's jar; counter $5 A DAY | medium two-shot, push-in | your coffee / could be / worth 186,000 |
-| S02 | 1.26–2.75 | 1.49 | 186,000 | store | The ghost column towers: $186,000 (EXAMPLE) | low angle on the ghost column, push-in | dollars. |
-| S03 | 2.75–4.02 | 1.26 | five | store | Teller hands Spender a cup; a $5 coin goes on the counter | medium on the coffee bar, push-in | five dollars |
-| S04 | 4.02–5.10 | 1.08 | a | store | One $5 stack per day pops on the counter: day 1, 2, 3... | close on the counter, push-in | a day / is 1,825 |
-| S05 | 5.10–7.44 | 2.34 | 1,825 | store | The stacks fill the bar: tag $1,825 A YEAR | medium wide, push-in | a year. |
-| S06 | 7.44–8.64 | 1.20 | year | store | A flip calendar riffles 365 days | close on the calendar, push-in | invest that / monthly instead, |
-| S07 | 8.64–9.94 | 1.30 | monthly | store | Saver drops a $152 bundle into his jar instead (EXAMPLE) | medium on Saver, push-in | for thirty |
-| S08 | 9.94–11.80 | 1.86 | thirty | store | The jar fills month by month; calendar 30 YEARS | close on the jar, push-in | years. / you'd put / in 54,750. |
-| S09 | 11.80–14.26 | 2.46 | 54,750 | store | Tag PUT IN $54,750 on the jar | close on a tag, push-in |  |
-| S10 | 14.26–15.80 | 1.54 | say | store | A board: EXAMPLE 7%/YR, STEADY (MADE UP) | medium on a board, push-in | say a / made-up, / steady seven |
-| S11 | 15.80–17.22 | 1.42 | seven | store | The jar starts to grow by itself (growth on growth), green glow | medium on the jar, push-in | percent: / about 186,000. |
-| S12 | 17.22–19.32 | 2.10 | 186,000 | ending | The jar is now a tall glass column: ≈ $186,600 | low angle on the column, push-in |  |
-| S13 | 19.32–20.30 | 0.98 | twist | whisper | Spender looks at his cup, worried | medium on Spender, push-in | twist: / the coffee |
-| S14 | 20.30–22.04 | 1.74 | coffee | whisper | The cup on the counter, a small tag NOT THE VILLAIN | close on the cup, push-in | isn't the / villain. / time is. |
-| S15 | 22.04–23.54 | 1.50 | time | ending | A big clock spins; tag TIME IS | medium on a big clock, push-in | ten years? |
-| S16 | 23.54–24.96 | 1.42 | years | store | A second, short column: 10 YEARS ≈ $26,500 | medium on a short column, push-in | only about |
-| S17 | 24.96–26.46 | 1.50 | 26,000 | store | Short column (10 yrs) next to the tall one (30 yrs) | two columns side by side, push-in | 26,000. |
-| S18 | 26.46–27.92 | 1.46 | no | whisper | Stamp on the board: NO GUARANTEES | medium on the board, push-in | no guarantees, / and the |
-| S19 | 27.92–29.44 | 1.52 | coffee | store | Spender sips, smiling: maybe it's worth it | medium on Spender, push-in | coffee might / be worth / it. / which is |
-| S20 | 29.44–30.56 | 1.12 | which | store | Back to the start: Spender lifts the cup, the ghost $186,000 column glows behind | SAME lens + position as S01 (loop match), push-in | how |
+| S01 | 0.00–1.36 | 1.36 | same | earth | FRAME 0 MID-ACTION: TOP Spender mid-sip, cup at his face, joy; BOTTOM Saver mid-drop of a $5 coin into his jar; hook text $5 A DAY: COFFEE OR $186,000? | SPLIT close-ups | same five / dollars a / day. |
+| S02 | 1.36–2.58 | 1.22 | spender | earth | TOP Spender grabs a cup from the machine; BOTTOM Saver drops $5 in the jar | split mediums | spender buys / a coffee. / saver saves |
+| S19 | 2.58–3.72 | 1.14 | saver | earth | BOTTOM the $5 coin clinks into the jar; TOP Spender sips | BOTTOM close on the jar | it. |
+| S03 | 3.72–5.68 | 1.96 | saver | earth | BOTTOM the jar glows: 7% A YEAR (EXAMPLE); TOP Spender sips, happy | split | saver invests / his at / a made-up, / steady seven |
+| S20 | 5.68–6.36 | 0.68 | seven | earth | BOTTOM the 7% A YEAR (EXAMPLE) tag pops on the jar; TOP Spender orders another | BOTTOM close on the 7% tag | percent. |
+| S04 | 6.36–7.90 | 1.54 | one | earth | YEAR 1: TOP a tower of cups (365 CUPS); BOTTOM board $1,825 | split wides | one year: / spender has |
+| S21 | 7.90–9.60 | 1.70 | 365 | earth | TOP 365 CUPS tower wobbles; BOTTOM the board ticks up | TOP close on the cup tower | 365 cups. |
+| S05 | 9.60–10.18 | 0.58 | saver | earth | TOP 365 CUPS label; BOTTOM SAVED $1,825 | split, close on the boards | saver has / saved 1,825 |
+| S22 | 10.18–12.48 | 2.30 | 1,825 | earth | BOTTOM SAVED $1,825 slams; TOP Spender sips | BOTTOM slam on $1,825 | dollars. / but wait |
+| S06 | 12.48–13.40 | 0.92 | but | whisper | OPEN LOOP: BOTTOM a covered YEAR 30 board trembles under a cloth; TOP Spender peers at it | split, slow push | till you |
+| S15 | 13.40–14.60 | 1.20 | see | whisper | OPEN LOOP: the cloth over YEAR 30 bulges, light leaks; TOP Spender leans in | BOTTOM close on the cloth | see year / thirty... |
+| S07 | 14.60–15.28 | 0.68 | ten | earth | YEAR 10: BOTTOM board $26,000, the pile grows; TOP more cups | split | ten years: / saver has |
+| S16 | 15.28–17.16 | 1.88 | saver | earth | BOTTOM $26,000 on the board; TOP Spender squints | BOTTOM close on the board | about 26,000. |
+| S08 | 17.16–18.42 | 1.26 | spender | earth | TOP Spender shrugs, smug; BOTTOM Saver calm | split, TOP on Spender | spender shrugs. |
+| S14 | 18.42–19.26 | 0.84 | that's | earth | TOP THAT'S IT? Spender laughs; BOTTOM the cloth twitches | TOP close on Spender | that's it? |
+| S09 | 19.26–20.30 | 1.04 | thirty | earth | TWIST: the cloth flies off: YEAR 30; the pile erupts; TOP Spender shock | split, BOTTOM wide | thirty years: / about 186,000. |
+| S10 | 20.30–22.14 | 1.84 | 186,000 | earth | BOTTOM $186,000 slams; TOP Spender drops his cup | slam on the board | he only |
+| S11 | 22.14–22.86 | 0.72 | he | ending | BOTTOM PUT IN $54,750 beside $186,000; TOP Spender: SPENT $54,750 | split | put in |
+| S17 | 22.86–24.96 | 2.10 | 54,750 | ending | BOTTOM PUT IN $54,750 vs WORTH $186,000; TOP SPENT $54,750 | BOTTOM close on the labels | 54,750. |
+| S12 | 24.96–26.14 | 1.18 | time | ending | BOTTOM a clock spins: TIME DID THE REST; TOP Spender sad among cups | split | time did / the rest. / so what's |
+| S13 | 26.14–27.12 | 0.98 | so | earth | BOTTOM Saver points at the lens (you); TOP Spender holds up his cup | split, both to the lens | your five / dollars doing? |
+| S18 | 27.12–28.14 | 1.02 | doing | earth | LOOP: TOP Spender lifts a fresh cup, BOTTOM Saver lifts a coin -> frame 0 | SAME lenses as S01 (loop match) |  |
 
 ### On-screen counter (every shot)
 
-a big counter `PUT IN $x` turning into `EXAMPLE VALUE $x` (green), with `YEAR nn` and an `EXAMPLE 7%/YR` badge.
+two racing counters at the seam: SPENDER SPENT ($1,825 a year) vs SAVER ($1,825/yr invested at a made-up 7 %: $1,885 / $26,323 / $185,537). Hook text from frame 0: $5 A DAY: COFFEE OR $186,000?
 
 ### On-screen tags
 
-- 0.00 s **EXAMPLE: $5/DAY · 7%/YR STEADY · NOT A PREDICTION**: small painted card on the bar from frame 0
-- 17.22 s **≈ $186,600 AFTER 30 YEARS (EXAMPLE)**: on the column

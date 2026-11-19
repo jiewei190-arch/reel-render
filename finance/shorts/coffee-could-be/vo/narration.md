@@ -1,7 +1,7 @@
-1. Spender's daily coffee could cost him 186,000 dollars.
-2. Five dollars a day: 1,825 a year.
-3. Saver puts that same money away instead, every month.
-4. Thirty years in, he's added 54,750. Then something strange happens...
-5. At a made-up, steady seven percent, it's about 186,000.
-6. Twist: the coffee isn't the villain. Time is. Ten years? Only about 26,000.
-7. Enjoy your coffee. Just know what it could cost you, like Spender.
+1. Same five dollars a day. Spender buys a coffee. Saver saves it.
+2. Saver invests his at a made-up, steady seven percent.
+3. One year: Spender has 365 cups. Saver has saved 1,825 dollars.
+4. But wait till you see year thirty...
+5. Ten years: Saver has about 26,000. Spender shrugs. That's it?
+6. Thirty years: about 186,000.
+7. He only put in 54,750. Time did the rest. So what's your five dollars doing?

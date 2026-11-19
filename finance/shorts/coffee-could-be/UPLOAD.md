@@ -1,9 +1,11 @@
-# UPLOAD: coffee-could-be
+# UPLOAD: coffee-could-be (FORMAT v1)
 
-**Title (36 chars):** Your Coffee Could Be Worth $186,000?
+style: S2
+
+**Title (32 chars):** $5 Coffee or $186,000? Same Cash
 
 **Description:**
-$5 a day is $1,825 a year. Invested monthly at a steady 7% (a made-up example, not a prediction), 30 years of it grows to about $186,000; 10 years, about $26,000. The point isn't the coffee: it's time.
+$5 a day is $1,825 a year. Invested monthly at a steady 7% (a made-up example, not a prediction), 30 years of it grows to about $186,000; 10 years, about $26,000. Spender spends the same $54,750 on coffee. The point isn't the coffee: it's time.
 
 Sources:
 - Maths in full: $152.08 at the start of each month, 7%/12 a month (FV of an annuity due)

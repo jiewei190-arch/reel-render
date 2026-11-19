@@ -1,12 +1,13 @@
-## Hook candidates (first line: a shocking number or a direct "you" claim, under 8 words)
+## FORMAT v1 beat sheet (style S2 RICH-VS-POOR, split screen)
 
-1. **Your coffee could be worth 186,000 dollars.** (7 words) ← PICK: a "you" claim with a shocking number; "could" keeps it honest, and the last line flows into it.
-2. Five dollars a day is 1,825 a year. (8, true but flat)
-3. That latte costs more than you think. (7, no number)
-4. Thirty years of coffee: 186,000 dollars. (6, loses the "you")
-5. Skip coffee, retire rich. (4, a get-rich promise: rejected)
+1. **Want:** the same $5 a day. Spender (top) buys coffee; Saver (bottom) saves it at a made-up, steady 7 %.
+2. **Trouble:** one year is 365 cups vs $1,825. Ten years is about $26,000, and Spender shrugs: "That's it?"
+3. **Twist:** thirty years: about $186,000. He only put in $54,750; time did the rest.
 
-## Beats
-- **Loop sentence:** "No guarantees, and the coffee might be worth it. Which is how / your coffee could be worth 186,000 dollars."
-- **Twist (~70%):** "Twist: the coffee isn't the villain. Time is." Ten years of it is only about $26,000.
-- **Counter (every shot):** a big counter `PUT IN $x` turning into `EXAMPLE VALUE $x` (green), with `YEAR nn` and an `EXAMPLE 7%/YR` badge.
+- **Hook text on frame 0 (4 words, 2 lines, 92 px):** $5 COFFEE OR $186,000?
+- **Frame 0 (mid-action):** split close-ups. Spender is mid-sip (joy, then love-hearts by 0.7 s); Saver's $5 coin drops into his jar (happy, then joy).
+- **Open loop (44 %, 12.5 s):** "But wait till you see year thirty..." A YEAR 30 board under a purple cloth trembles.
+- **Twist (72 %, 20.3 s of 28.1 s):** the cloth flies off, the coin pile erupts, and the board slams ≈ $186,000.
+- **Two counters racing:** SPENDER SPENT vs SAVER boards count up with the years.
+- **"You":** "So what's your five dollars doing?"
+- **Loop:** that line → frame 0, "Same five dollars a day."

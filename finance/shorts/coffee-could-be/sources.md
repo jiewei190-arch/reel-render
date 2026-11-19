@@ -1,7 +1,6 @@
 # Sources and maths: coffee-could-be
 
-**Hypothetical example only, not a prediction or a recommendation.** The VO says "Say a made-up, steady seven percent" and "No
-guarantees, and the coffee might be worth it." No product, fund or account type is named or implied.
+**Hypothetical example only, not a prediction or a recommendation.** The v1 VO says "Saver invests his at a made-up, steady seven percent" (the EXAMPLE · MADE-UP 7% tag is on screen). No product, fund or account type is named or implied.
 
 Assumptions (shown on screen as EXAMPLE):
 - $5 a day × 365 days = **$1,825 a year** → "1,825 dollars a year".
@@ -10,8 +9,8 @@ Assumptions (shown on screen as EXAMPLE):
 
 | horizon | put in | value (FV of an annuity due, i = 0.07/12) | VO |
 |---|---|---|---|
-| 30 years (360 months) | 1,825 × 30 = **$54,750** | 152.08 × ((1+i)^360 − 1)/i × (1+i) = **$186,620** | "You'd put in 54,750", "about 186,000" |
-| 10 years (120 months) | $18,250 | **$26,477** | "Ten years? Only about 26,000." |
+| 30 years (360 months) | 1,825 × 30 = **$54,750** | 152.08 × ((1+i)^360 − 1)/i × (1+i) = **$186,620** | "He only put in 54,750", "about 186,000" |
+| 10 years (120 months) | $18,250 | **$26,477** | "Ten years: Saver has about 26,000." |
 
 ```python
 i = 0.07 / 12; p = 1825 / 12
