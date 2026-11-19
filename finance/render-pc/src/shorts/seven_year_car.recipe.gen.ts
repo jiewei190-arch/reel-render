@@ -58,7 +58,8 @@ export const RECIPE: Recipe = {
     "preset": "hookZoom",
     "target": "spender.face",
     "dist": 1.95,
-    "az": -6
+    "az": -6,
+    "face": 0.33
    },
    "actors": [
     {
@@ -84,8 +85,8 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.46,
-      0.17,
+      0.44,
+      0.15,
       0.04
      ],
      "at": "mark:-0.04,1.02,0.72",
@@ -932,15 +933,15 @@ export const RECIPE: Recipe = {
    "note": "TWIST: the two interest blocks side by side, ALMOST 2x stamp",
    "cam": {
     "preset": "slamZoom",
-    "target": "centre:0,0.6,-0.6",
+    "target": "centre:0,0.65,-0.6",
     "hit": "7:double",
-    "dist": 4.6
+    "dist": 5.6
    },
    "actors": [
     {
      "id": "spender",
-     "pose": "shock",
-     "at": "centre:0.55,0,0.3",
+     "pose": "idle",
+     "at": "centre:0.62,0,0.3",
      "emotion": "shock",
      "then": [
       {
@@ -965,7 +966,7 @@ export const RECIPE: Recipe = {
       0.55,
       0.45
      ],
-     "at": "centre:-0.64,0,-0.9"
+     "at": "centre:-0.7,0,-0.9"
     },
     {
      "id": "blkP",
@@ -979,7 +980,7 @@ export const RECIPE: Recipe = {
       1.05,
       0.45
      ],
-     "at": "centre:0.05,0,-0.9",
+     "at": "centre:-0.05,0,-0.9",
      "motion": "dropSlam",
      "hit": "7:almost+0.1",
      "drop": 1
@@ -990,11 +991,11 @@ export const RECIPE: Recipe = {
      "text": "ALMOST 2x",
      "color": "#d62a2a",
      "size": [
-      0.9,
+      0.85,
       0.26,
       0.03
      ],
-     "at": "centre:-0.35,1.5,-0.3",
+     "at": "centre:-0.15,1.5,0.5",
      "hit": "7:double"
     }
    ],
@@ -1010,7 +1011,7 @@ export const RECIPE: Recipe = {
     {
      "fx": "dust",
      "at": "7:almost+0.1",
-     "p": "centre:0.05,0.02,-0.9"
+     "p": "centre:-0.05,0.02,-0.9"
     }
    ],
    "sfx": [
@@ -1029,7 +1030,8 @@ export const RECIPE: Recipe = {
     "preset": "hookZoom",
     "target": "spender.face",
     "dist": 1.95,
-    "az": -6
+    "az": -6,
+    "face": 0.33
    },
    "actors": [
     {
@@ -1048,8 +1050,8 @@ export const RECIPE: Recipe = {
      ],
      "color": "#d62a2a",
      "size": [
-      0.46,
-      0.17,
+      0.44,
+      0.15,
       0.04
      ],
      "at": "mark:-0.04,1.02,0.72",

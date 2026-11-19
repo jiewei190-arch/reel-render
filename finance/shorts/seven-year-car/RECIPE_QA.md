@@ -10,7 +10,7 @@ Composition: `SevenYearCarRecipe` (+ `SevenYearCarRecipeSub`) in `src/index.tool
 
 | check | result | detail |
 |---|---|---|
-| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | spender 65 % |
+| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | spender 71 % |
 | hook text on screen at frame 0, <= 5 words (day-1 fix 2) | PASS | "$12K FOR A LOW PAYMENT?" (5 words, until 3.75 s) |
 | who + what readable at frame 0 (a character >= 15 % and a prop in view) | PASS | who: spender; what: tag0 |
 | the stake ($ or a time) on screen by 0.5 s | PASS | at 0.00 s |
@@ -26,7 +26,7 @@ Composition: `SevenYearCarRecipe` (+ `SevenYearCarRecipeSub`) in `src/index.tool
 | frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s) | PASS | first cut at 1.00 s |
 | loop board lands on the last word (not before) | PASS | last word starts 29.10 s; tag1 at 29.12 s |
 | every landed text prop fully inside its view (1.5 % margin) | PASS | all inside |
-| no text board in the caption band (recompose: raise the board or lower the target) | warn | S02@1.0s:intr, S17@25.8s:blkS+blkP, S18@28.3s:tag1 |
+| no text board in the caption band (recompose: raise the board or lower the target) | warn | S02@1.0s:intr |
 | length 20-30 s | PASS | 29.50 s |
 
-Frame-0 coverage by subject: spender 65 %, tag0 12 %, egg.cat0 0 %, egg.sticky1 0 %.
+Frame-0 coverage by subject: spender 71 %, tag0 11 %, egg.cat0 0 %, egg.sticky1 0 %.
