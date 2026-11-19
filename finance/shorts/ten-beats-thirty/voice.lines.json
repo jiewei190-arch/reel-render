@@ -1,140 +1,57 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23
- ],
- "gap": 0.3,
- "section": 1.4,
- "lead": 0.15,
- "beat": 0.7,
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1458,
  "sr": 24000,
- "duration": 29.837,
- "render_s": 222.9,
- "qa_fail_lines": [],
+ "duration": 29.5,
+ "characters": 456,
  "lines": [
   {
-   "n": 1,
-   "text": "Ten years of saving can beat thirty.",
-   "start": 0.15,
-   "parts": [
-    {
-     "tts": "Ten years of saving can beat thirty.",
-     "seed": 7,
-     "heard": "10 years of saving can beat 30.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 1.991
+   "line": 1,
+   "text": "Saving more money can still make you lose.",
+   "start": 0.087,
+   "end": 2.671
   },
   {
-   "n": 2,
-   "text": "Saver puts away two hundred a month from twenty-five to thirty-five, then stops.",
-   "start": 2.291,
-   "parts": [
-    {
-     "tts": "Saver puts away two hundred a month from twenty-five to thirty-five, then stops.",
-     "seed": 11,
-     "heard": "Saver puts away $200 a month from $25 to $35, then stops.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 7.126
+   "line": 2,
+   "text": "Spender saved seventy-two thousand. Saver saved just twenty-four.",
+   "start": 2.802,
+   "end": 7.34
   },
   {
-   "n": 3,
-   "text": "Spender saves the same two hundred from thirty-five to sixty-five.",
-   "start": 7.426,
-   "parts": [
-    {
-     "tts": "Spender saves the same two hundred from thirty-five to sixty-five.",
-     "seed": 7,
-     "heard": "Spender saves the same 200 from 35 to 65.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 10.939
+   "line": 3,
+   "text": "Saver put in two hundred a month from twenty-five to thirty-five, then stopped.",
+   "start": 7.471,
+   "end": 11.66
   },
   {
-   "n": 4,
-   "text": "Saver put in twenty-four thousand. Spender, seventy-two thousand.",
-   "start": 11.239,
-   "parts": [
-    {
-     "tts": "Saver put in twenty-four thousand. Spender, seventy-two thousand.",
-     "seed": 11,
-     "heard": "Saver put in $24,000. Spender, $72,000.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 14.634
+   "line": 4,
+   "text": "Spender started at thirty-five and kept going to sixty-five.",
+   "start": 11.791,
+   "end": 15.352
   },
   {
-   "n": 5,
-   "text": "Assume a steady seven percent a year, as an example.",
-   "start": 14.934,
-   "parts": [
-    {
-     "tts": "Assume a steady seven percent a year, as an example.",
-     "seed": 11,
-     "heard": "Assume a steady 7% a year as an example.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 17.898
+   "line": 5,
+   "text": "Same seven percent a year, as an example. Wait till you see sixty-five...",
+   "start": 15.483,
+   "end": 20.091
   },
   {
-   "n": 6,
-   "text": "At sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.",
-   "start": 18.198,
-   "parts": [
-    {
-     "tts": "At sixty-five, Saver has about two hundred eighty thousand. Spender, two hundred forty-five.",
-     "seed": 7,
-     "heard": "At 65, Saver has about 280,000. Spender, 245.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 23.998
+   "line": 6,
+   "text": "Saver: about two hundred eighty-two thousand. Spender: about two hundred forty-five.",
+   "start": 20.222,
+   "end": 25.599
   },
   {
-   "n": 7,
-   "text": "Returns vary, nothing is guaranteed. But time did the heavy lifting.",
-   "start": 24.298,
-   "parts": [
-    {
-     "tts": "Returns vary, nothing is guaranteed. But time did the heavy lifting.",
-     "seed": 7,
-     "heard": "Returns vary, nothing is guaranteed, but time did the heavy lifting.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 28.609
-  },
-  {
-   "n": 8,
-   "text": "That's how",
-   "start": 28.909,
-   "parts": [
-    {
-     "tts": "That's how",
-     "seed": 7,
-     "heard": "That's how.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 29.537
+   "line": 7,
+   "text": "Time beat money. Nothing's guaranteed, but that's how",
+   "start": 25.73,
+   "end": 29.5
   }
  ]
 }

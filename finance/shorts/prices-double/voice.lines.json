@@ -1,140 +1,57 @@
 {
- "voice": "chatterbox default (built-in, no cloning)",
- "exaggeration": 0.3,
- "cfg_weight": 0.3,
- "seeds_tried": [
-  7,
-  11,
-  23
- ],
- "gap": 0.3,
- "section": 1.4,
- "lead": 0.15,
- "beat": 0.7,
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0834,
  "sr": 24000,
- "duration": 25.632,
- "render_s": 141.1,
- "qa_fail_lines": [],
+ "duration": 29.5,
+ "characters": 384,
  "lines": [
   {
-   "n": 1,
-   "text": "Prices double faster than you think.",
-   "start": 0.15,
-   "parts": [
-    {
-     "tts": "Prices double faster than you think.",
-     "seed": 7,
-     "heard": "prices double faster than you think.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 1.948
+   "line": 1,
+   "text": "POV: everything you buy just doubled.",
+   "start": 0.092,
+   "end": 3.415
   },
   {
-   "n": 2,
-   "text": "Take the Rule of 72 and point it at inflation.",
-   "start": 2.248,
-   "parts": [
-    {
-     "tts": "Take the Rule of seventy-two and point it at inflation.",
-     "seed": 7,
-     "heard": "Take the rule of 72 and point it at inflation.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 5.028
+   "line": 2,
+   "text": "Groceries. Rent. Coffee. All of it, times two.",
+   "start": 3.554,
+   "end": 7.763
   },
   {
-   "n": 3,
-   "text": "At two percent, prices double in about 36 years.",
-   "start": 5.328,
-   "parts": [
-    {
-     "tts": "At two percent, prices double in about thirty-six years.",
-     "seed": 7,
-     "heard": "At 2%, prices double in about 36 years.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 8.601
+   "line": 3,
+   "text": "Here's the trick: divide seventy-two by the inflation rate.",
+   "start": 7.901,
+   "end": 11.593
   },
   {
-   "n": 4,
-   "text": "At three percent, about 24.",
-   "start": 8.901,
-   "parts": [
-    {
-     "tts": "At three percent, about twenty-four.",
-     "seed": 7,
-     "heard": "at 3%, about 24.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 11.023
+   "line": 4,
+   "text": "At about four percent a year, prices double in about eighteen years.",
+   "start": 11.732,
+   "end": 15.941
   },
   {
-   "n": 5,
-   "text": "At four percent, just 18.",
-   "start": 11.323,
-   "parts": [
-    {
-     "tts": "At four percent, just eighteen.",
-     "seed": 7,
-     "heard": "at 4%, just 18.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 13.279
+   "line": 5,
+   "text": "And it's already happened three times...",
+   "start": 16.079,
+   "end": 18.442
   },
   {
-   "n": 6,
-   "text": "Since 1970, U.S. prices rose about four percent a year on average.",
-   "start": 13.579,
-   "parts": [
-    {
-     "tts": "Since nineteen seventy, U.S. prices rose about four percent a year on average.",
-     "seed": 7,
-     "heard": "Since 1970, U.S. prices rose about 4% a year on average.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 17.809
+   "line": 6,
+   "text": "Since 1970, U.S. prices climbed almost nine times over. About three doublings.",
+   "start": 18.581,
+   "end": 24.709
   },
   {
-   "n": 7,
-   "text": "They doubled roughly every eighteen years, three times over.",
-   "start": 18.109,
-   "parts": [
-    {
-     "tts": "They doubled roughly every eighteen years, three times over.",
-     "seed": 7,
-     "heard": "They doubled roughly every 18 years, three times over.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 21.351
-  },
-  {
-   "n": 8,
-   "text": "Small yearly numbers, huge long-run change. That's how",
-   "start": 21.651,
-   "parts": [
-    {
-     "tts": "Small yearly numbers, huge long-run change. That's how",
-     "seed": 7,
-     "heard": "Small yearly numbers, huge long-run change, that's how.",
-     "wrong_words": 0,
-     "qa": "ok"
-    }
-   ],
-   "end": 25.332
+   "line": 7,
+   "text": "Small yearly numbers, huge change. So one day, it's just",
+   "start": 24.848,
+   "end": 29.5
   }
  ]
 }
