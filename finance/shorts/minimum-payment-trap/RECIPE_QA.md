@@ -22,6 +22,10 @@ Composition: `MinimumPaymentTrapRecipe` (+ `MinimumPaymentTrapRecipeSub`) in `sr
 | music + an SFX at frame 0 | PASS | upbeat, impact |
 | an emotion change by 1.5 s | PASS | at 1.07 s |
 | no wide or dark shot in the first 1 s | PASS | S01 slamZoom/store |
+| a live race or ticking stake through the middle 35-70 % (watch-time data) | warn | count-up props only |
+| first cut by 1.5 s (research round 2) | PASS | S02 at 1.06 s |
+| about 12-14 shots per 30 s (research round 2) | warn | 22 shots in 23.3 s = 28.3 per 30 s |
+| the last frame matches frame 0 (loop) | PASS | lens moved 0.26 m, fov 60 vs 60 |
 | length 20-30 s | PASS | 23.30 s |
 
 Frame-0 coverage by subject: spender 52 %, owe 33 %, tvDrop 28 %, cal 20 %, wallCal 20 %.
