@@ -87,6 +87,58 @@ export const RECIPE: Recipe = {
    ]
   },
   {
+   "at": "right",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 1.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "point",
+     "at": "left",
+     "face": "million",
+     "then": [
+      {
+       "at": "right",
+       "pose": "shock"
+      }
+     ]
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "million",
+     "kit": "block",
+     "text": [
+      "$1,000,000"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      1,
+      0.8,
+      0.6
+     ],
+     "at": "left:0.9,0,-0.5"
+    },
+    {
+     "id": "penny",
+     "asset": "coin-bronze",
+     "s": 1.4,
+     "at": "right:-1.2,1.0,-0.5"
+    }
+   ]
+  },
+  {
    "at": "think",
    "caption": "COMMENT YOUR PICK",
    "cam": {

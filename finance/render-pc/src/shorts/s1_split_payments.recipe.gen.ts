@@ -62,6 +62,34 @@ export const RECIPE: Recipe = {
    ]
   },
   {
+   "at": "for",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "then": [
+      {
+       "at": "easy",
+       "pose": "celebrate"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "shoes",
+     "asset": "cardboard-box",
+     "at": "counterTop:0.4,0,0.1"
+    }
+   ]
+  },
+  {
    "at": "then",
    "cam": {
     "preset": "medium",

@@ -83,6 +83,53 @@ export const RECIPE: Recipe = {
    "extras": false
   },
   {
+   "at": "you",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.4
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "mark",
+     "from": 0.2
+    }
+   ],
+   "props": [
+    {
+     "id": "three",
+     "kit": "block",
+     "text": [
+      "3"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.7,
+      0.7,
+      0.5
+     ],
+     "at": "mark:-1.0,0,-0.4"
+    },
+    {
+     "id": "every",
+     "kit": "label",
+     "text": [
+      "$$ EVERY",
+      "30 DAYS"
+     ],
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:1.0,1.5,-0.2"
+    }
+   ],
+   "extras": false
+  },
+  {
    "at": "line:2",
    "set": "home",
    "cam": {

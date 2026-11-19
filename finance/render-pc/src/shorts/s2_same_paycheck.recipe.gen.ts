@@ -88,6 +88,60 @@ export const RECIPE: Recipe = {
    ]
   },
   {
+   "at": "thousand",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 1.6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "celebrate",
+     "at": "right",
+     "then": [
+      {
+       "at": "thousand",
+       "pose": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "payS",
+     "kit": "label",
+     "text": "$2,000",
+     "color": "#1f9e4f",
+     "at": "left:0,1.0,0.6",
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
+    },
+    {
+     "id": "payP",
+     "kit": "label",
+     "text": "$2,000",
+     "at": "right:0,1.0,0.6",
+     "size": [
+      0.7,
+      0.32,
+      0.05
+     ]
+    }
+   ]
+  },
+  {
    "at": "saver",
    "cam": {
     "preset": "pushIn",
