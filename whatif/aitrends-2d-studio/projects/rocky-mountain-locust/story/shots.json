@@ -1,0 +1,444 @@
+{
+ "duration": 44.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.78,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -14,
+     "dur": 2.5
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "trillion",
+     "name": "toon3d:impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.78,
+   "end": 4.42,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "vanished",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s03",
+   "start": 4.42,
+   "end": 8.06,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:buzz",
+     "gain": -16,
+     "dur": 2.5
+    },
+    {
+     "word": "swept",
+     "name": "toon3d:whoosh",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s04",
+   "start": 8.06,
+   "end": 12.28,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s05",
+   "start": 12.28,
+   "end": 13.44,
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:drop",
+     "gain": -9
+    },
+    {
+     "word": "california",
+     "name": "toon3d:stamp",
+     "gain": -6,
+     "offset": 0.25
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s06",
+   "start": 13.44,
+   "end": 15.34,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:buzz",
+     "gain": -15,
+     "dur": 2.5
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "trillion",
+     "name": "toon3d:impact",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s07",
+   "start": 15.34,
+   "end": 18.12,
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "greatest",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s08",
+   "start": 18.12,
+   "end": 20.34,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:scratch",
+     "gain": -14,
+     "dur": 2
+    },
+    {
+     "word": "crops",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "wood",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "leather",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s09",
+   "start": 20.34,
+   "end": 22.34,
+   "sfx": [
+    {
+     "word": "clothes",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s10",
+   "start": 22.34,
+   "end": 24.02,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:clock",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:riser",
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s11",
+   "start": 24.02,
+   "end": 24.88,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -12,
+     "dur": 2.5
+    },
+    {
+     "word": "gone",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.88,
+   "end": 27.38,
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "1904",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s13",
+   "start": 27.38,
+   "end": 29.64,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "wiped",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s14",
+   "start": 29.64,
+   "end": 31.32,
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "farmers",
+     "name": "toon3d:stamp",
+     "gain": -5
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s15",
+   "start": 31.32,
+   "end": 34.28,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:water",
+     "gain": -16,
+     "dur": 2.5
+    },
+    {
+     "word": "streams",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s16",
+   "start": 34.28,
+   "end": 37.54,
+   "sfx": [
+    {
+     "word": "plowed",
+     "name": "toon3d:scratch",
+     "gain": -10
+    },
+    {
+     "word": "irrigated",
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "word": "cattle",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s17",
+   "start": 37.54,
+   "end": 40.0,
+   "sfx": [
+    {
+     "word": "probably",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "word": "destroyed",
+     "name": "toon3d:crash",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s18",
+   "start": 40.0,
+   "end": 41.82,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -14,
+     "dur": 2.5
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s19",
+   "start": 41.82,
+   "end": 44.25,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "word": "glacier",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "montana",
+     "name": "toon3d:magic",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  }
+ ]
+}

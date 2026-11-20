@@ -1,0 +1,222 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 43.617,
+ "render_s": 395.5,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "The biggest swarm ever recorded was twelve trillion bugs. Then it vanished.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "The biggest swarm ever recorded was twelve trillion bugs. Then it vanished.",
+     "seed": 7,
+     "heard": "The biggest swarm ever recorded was 12 trillion bugs. Then, it vanished.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.015
+  },
+  {
+   "n": 2,
+   "text": "1875. Rocky Mountain locusts swept across the American West.",
+   "start": 4.155,
+   "parts": [
+    {
+     "tts": "eighteen seventy-five. Rocky Mountain locusts swept across the American West.",
+     "seed": 7,
+     "heard": "1875, Rocky Mountain locusts swept across the American West.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.985
+  },
+  {
+   "n": 3,
+   "text": "One swarm was estimated at about 198,000 square miles. Bigger than California.",
+   "start": 8.125,
+   "parts": [
+    {
+     "tts": "One swarm was estimated at about one hundred ninety-eight thousand square miles. Bigger than California.",
+     "seed": 7,
+     "heard": "One swarm was estimated at about 198,000 square miles\u2014bigger than California.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.343
+  },
+  {
+   "n": 4,
+   "text": "Around twelve and a half trillion insects. Guinness calls it the greatest concentration of animals ever recorded.",
+   "start": 13.483,
+   "parts": [
+    {
+     "tts": "Around twelve and a half trillion insects. Guinness calls it the greatest concentration of animals ever recorded.",
+     "seed": 7,
+     "heard": "around 12.5 trillion insects. Guinness calls it the greatest concentration of animals ever recorded.",
+     "wrong_words": 3,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 18.041
+  },
+  {
+   "n": 5,
+   "text": "They ate crops, wood, leather... even the clothes off people's backs.",
+   "start": 18.181,
+   "parts": [
+    {
+     "tts": "They ate crops, wood, leather...",
+     "seed": 7,
+     "heard": "They ate crops, wood, leather.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "even the clothes off people's backs.",
+     "seed": 7,
+     "heard": "even the clothes off people's backs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.062
+  },
+  {
+   "n": 6,
+   "text": "But less than thirty years later... they were gone.",
+   "start": 22.452,
+   "parts": [
+    {
+     "tts": "But less than thirty years later...",
+     "seed": 7,
+     "heard": "but less than 30 years later.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "they were gone.",
+     "seed": 7,
+     "heard": "They were gone.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.819
+  },
+  {
+   "n": 7,
+   "text": "The last one ever collected was found in 1904.",
+   "start": 24.959,
+   "parts": [
+    {
+     "tts": "The last one ever collected was found in nineteen oh-four.",
+     "seed": 7,
+     "heard": "The last one ever collected was found in 1904.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.321
+  },
+  {
+   "n": 8,
+   "text": "So what wiped out trillions of locusts?",
+   "start": 27.561,
+   "parts": [
+    {
+     "tts": "So what wiped out trillions of locusts?",
+     "seed": 7,
+     "heard": "So, what wiped out trillions of locusts?",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.743
+  },
+  {
+   "n": 9,
+   "text": "One theory: farmers. Their breeding grounds were near streams and rivers in the Rockies.",
+   "start": 29.883,
+   "parts": [
+    {
+     "tts": "One theory: farmers. Their breeding grounds were near streams and rivers in the Rockies.",
+     "seed": 7,
+     "heard": "One theory, farmers. Their breeding grounds were near streams and rivers in the Rockies.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 34.052,
+   "note": "re-voiced separately (reworded: \"bred\" was heard as \"spread\"); appended to the raw take"
+  },
+  {
+   "n": 10,
+   "text": "Settlers plowed, irrigated and ran cattle on that exact land... and probably destroyed the eggs.",
+   "start": 34.192,
+   "parts": [
+    {
+     "tts": "Settlers plowed, irrigated and ran cattle on that exact land...",
+     "seed": 7,
+     "heard": "Settlers plowed, irrigated and ran cattle on that exact land,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and probably destroyed the eggs.",
+     "seed": 7,
+     "heard": "and probably destroyed the eggs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 39.788
+  },
+  {
+   "n": 11,
+   "text": "Today, their remains are still found... frozen inside a glacier in Montana.",
+   "start": 40.078,
+   "parts": [
+    {
+     "tts": "Today, their remains are still found...",
+     "seed": 7,
+     "heard": "Today, their remains are still found.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "frozen inside a glacier in Montana.",
+     "seed": 7,
+     "heard": "frozen inside a glacier in Montana.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.517
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.12,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}
