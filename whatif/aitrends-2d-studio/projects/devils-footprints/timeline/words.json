@@ -1,0 +1,615 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.16
+  },
+  {
+   "word": "1855,",
+   "start": 0.16,
+   "end": 0.88
+  },
+  {
+   "word": "something",
+   "start": 1.12,
+   "end": 1.24
+  },
+  {
+   "word": "reportedly",
+   "start": 1.24,
+   "end": 1.7
+  },
+  {
+   "word": "walked",
+   "start": 1.7,
+   "end": 1.98
+  },
+  {
+   "word": "over",
+   "start": 1.98,
+   "end": 2.2
+  },
+  {
+   "word": "houses",
+   "start": 2.2,
+   "end": 2.48
+  },
+  {
+   "word": "and",
+   "start": 2.48,
+   "end": 2.8
+  },
+  {
+   "word": "left",
+   "start": 2.8,
+   "end": 2.94
+  },
+  {
+   "word": "only",
+   "start": 2.94,
+   "end": 3.24
+  },
+  {
+   "word": "hoofprints.",
+   "start": 3.24,
+   "end": 4.22
+  },
+  {
+   "word": "Devon,",
+   "start": 4.22,
+   "end": 4.32
+  },
+  {
+   "word": "England.",
+   "start": 4.64,
+   "end": 4.94
+  },
+  {
+   "word": "One",
+   "start": 5.56,
+   "end": 5.56
+  },
+  {
+   "word": "February",
+   "start": 5.56,
+   "end": 5.88
+  },
+  {
+   "word": "night,",
+   "start": 5.88,
+   "end": 6.36
+  },
+  {
+   "word": "after",
+   "start": 6.54,
+   "end": 6.74
+  },
+  {
+   "word": "heavy",
+   "start": 6.74,
+   "end": 6.96
+  },
+  {
+   "word": "snow.",
+   "start": 6.96,
+   "end": 7.28
+  },
+  {
+   "word": "By",
+   "start": 7.68,
+   "end": 7.76
+  },
+  {
+   "word": "morning,",
+   "start": 7.76,
+   "end": 8.12
+  },
+  {
+   "word": "hoof-like",
+   "start": 8.12,
+   "end": 8.68
+  },
+  {
+   "word": "prints",
+   "start": 8.68,
+   "end": 8.96
+  },
+  {
+   "word": "ran",
+   "start": 8.96,
+   "end": 9.18
+  },
+  {
+   "word": "through",
+   "start": 9.18,
+   "end": 9.32
+  },
+  {
+   "word": "the",
+   "start": 9.32,
+   "end": 9.44
+  },
+  {
+   "word": "snow,",
+   "start": 9.44,
+   "end": 9.7
+  },
+  {
+   "word": "mostly",
+   "start": 10.1,
+   "end": 10.22
+  },
+  {
+   "word": "in",
+   "start": 10.22,
+   "end": 10.48
+  },
+  {
+   "word": "single",
+   "start": 10.48,
+   "end": 10.72
+  },
+  {
+   "word": "file.",
+   "start": 10.72,
+   "end": 11.04
+  },
+  {
+   "word": "Each",
+   "start": 11.4,
+   "end": 11.52
+  },
+  {
+   "word": "about",
+   "start": 11.52,
+   "end": 11.76
+  },
+  {
+   "word": "4",
+   "start": 11.76,
+   "end": 11.98
+  },
+  {
+   "word": "inches",
+   "start": 11.98,
+   "end": 12.16
+  },
+  {
+   "word": "long.",
+   "start": 12.16,
+   "end": 12.48
+  },
+  {
+   "word": "Reported",
+   "start": 12.8,
+   "end": 13.04
+  },
+  {
+   "word": "in",
+   "start": 13.04,
+   "end": 13.26
+  },
+  {
+   "word": "more",
+   "start": 13.26,
+   "end": 13.4
+  },
+  {
+   "word": "than",
+   "start": 13.4,
+   "end": 13.56
+  },
+  {
+   "word": "30",
+   "start": 13.56,
+   "end": 13.74
+  },
+  {
+   "word": "places.",
+   "start": 13.74,
+   "end": 14.14
+  },
+  {
+   "word": "But",
+   "start": 14.8,
+   "end": 15.08
+  },
+  {
+   "word": "here's",
+   "start": 15.08,
+   "end": 15.58
+  },
+  {
+   "word": "the",
+   "start": 15.58,
+   "end": 15.68
+  },
+  {
+   "word": "part...",
+   "start": 15.68,
+   "end": 15.88
+  },
+  {
+   "word": "the",
+   "start": 16.16,
+   "end": 16.26
+  },
+  {
+   "word": "trail",
+   "start": 16.26,
+   "end": 16.46
+  },
+  {
+   "word": "went",
+   "start": 16.46,
+   "end": 16.62
+  },
+  {
+   "word": "straight",
+   "start": 16.62,
+   "end": 16.9
+  },
+  {
+   "word": "over",
+   "start": 16.9,
+   "end": 17.16
+  },
+  {
+   "word": "houses,",
+   "start": 17.16,
+   "end": 17.46
+  },
+  {
+   "word": "walls",
+   "start": 17.78,
+   "end": 17.9
+  },
+  {
+   "word": "and",
+   "start": 18.18,
+   "end": 18.24
+  },
+  {
+   "word": "haystacks.",
+   "start": 18.24,
+   "end": 18.66
+  },
+  {
+   "word": "Over",
+   "start": 19.1,
+   "end": 19.26
+  },
+  {
+   "word": "rivers.",
+   "start": 19.26,
+   "end": 19.54
+  },
+  {
+   "word": "Across",
+   "start": 20.16,
+   "end": 20.22
+  },
+  {
+   "word": "snowy",
+   "start": 20.22,
+   "end": 20.56
+  },
+  {
+   "word": "rooftops.",
+   "start": 20.56,
+   "end": 21.1
+  },
+  {
+   "word": "Even",
+   "start": 21.44,
+   "end": 21.62
+  },
+  {
+   "word": "in",
+   "start": 21.62,
+   "end": 21.86
+  },
+  {
+   "word": "and",
+   "start": 21.86,
+   "end": 21.96
+  },
+  {
+   "word": "out",
+   "start": 21.96,
+   "end": 22.12
+  },
+  {
+   "word": "of",
+   "start": 22.12,
+   "end": 22.24
+  },
+  {
+   "word": "drainpipes.",
+   "start": 22.24,
+   "end": 22.72
+  },
+  {
+   "word": "In",
+   "start": 23.08,
+   "end": 23.2
+  },
+  {
+   "word": "total:",
+   "start": 23.2,
+   "end": 23.52
+  },
+  {
+   "word": "an",
+   "start": 23.76,
+   "end": 23.88
+  },
+  {
+   "word": "estimated",
+   "start": 23.88,
+   "end": 24.24
+  },
+  {
+   "word": "40",
+   "start": 24.24,
+   "end": 24.68
+  },
+  {
+   "word": "to",
+   "start": 24.68,
+   "end": 24.86
+  },
+  {
+   "word": "100",
+   "start": 24.86,
+   "end": 25.22
+  },
+  {
+   "word": "miles",
+   "start": 25.22,
+   "end": 25.46
+  },
+  {
+   "word": "of",
+   "start": 25.46,
+   "end": 25.72
+  },
+  {
+   "word": "tracks.",
+   "start": 25.72,
+   "end": 25.96
+  },
+  {
+   "word": "Some",
+   "start": 26.5,
+   "end": 26.7
+  },
+  {
+   "word": "people",
+   "start": 26.7,
+   "end": 26.94
+  },
+  {
+   "word": "said",
+   "start": 26.94,
+   "end": 27.28
+  },
+  {
+   "word": "they",
+   "start": 27.28,
+   "end": 27.76
+  },
+  {
+   "word": "were",
+   "start": 27.76,
+   "end": 27.92
+  },
+  {
+   "word": "the",
+   "start": 27.92,
+   "end": 28.04
+  },
+  {
+   "word": "tracks",
+   "start": 28.04,
+   "end": 28.26
+  },
+  {
+   "word": "of",
+   "start": 28.26,
+   "end": 28.46
+  },
+  {
+   "word": "Satan",
+   "start": 28.46,
+   "end": 28.62
+  },
+  {
+   "word": "himself.",
+   "start": 28.62,
+   "end": 29.02
+  },
+  {
+   "word": "Others",
+   "start": 29.02,
+   "end": 29.6
+  },
+  {
+   "word": "blamed",
+   "start": 29.6,
+   "end": 29.92
+  },
+  {
+   "word": "badgers,",
+   "start": 29.92,
+   "end": 30.42
+  },
+  {
+   "word": "wood",
+   "start": 30.6,
+   "end": 30.68
+  },
+  {
+   "word": "mice,",
+   "start": 30.68,
+   "end": 30.94
+  },
+  {
+   "word": "escaped",
+   "start": 31.28,
+   "end": 31.48
+  },
+  {
+   "word": "kangaroos...",
+   "start": 31.48,
+   "end": 32.16
+  },
+  {
+   "word": "even",
+   "start": 32.54,
+   "end": 32.7
+  },
+  {
+   "word": "a",
+   "start": 32.7,
+   "end": 32.86
+  },
+  {
+   "word": "runaway",
+   "start": 32.86,
+   "end": 33.14
+  },
+  {
+   "word": "balloon.",
+   "start": 33.14,
+   "end": 33.5
+  },
+  {
+   "word": "But",
+   "start": 34.12,
+   "end": 34.22
+  },
+  {
+   "word": "none",
+   "start": 34.22,
+   "end": 34.36
+  },
+  {
+   "word": "of",
+   "start": 34.36,
+   "end": 34.48
+  },
+  {
+   "word": "it",
+   "start": 34.48,
+   "end": 34.56
+  },
+  {
+   "word": "has",
+   "start": 34.56,
+   "end": 34.68
+  },
+  {
+   "word": "ever",
+   "start": 34.68,
+   "end": 34.86
+  },
+  {
+   "word": "been",
+   "start": 34.86,
+   "end": 35.0
+  },
+  {
+   "word": "confirmed.",
+   "start": 35.0,
+   "end": 35.46
+  },
+  {
+   "word": "And",
+   "start": 35.94,
+   "end": 36.1
+  },
+  {
+   "word": "some",
+   "start": 36.1,
+   "end": 36.34
+  },
+  {
+   "word": "reports",
+   "start": 36.34,
+   "end": 36.66
+  },
+  {
+   "word": "have",
+   "start": 36.66,
+   "end": 36.84
+  },
+  {
+   "word": "been",
+   "start": 36.84,
+   "end": 36.94
+  },
+  {
+   "word": "questioned.",
+   "start": 36.94,
+   "end": 37.34
+  },
+  {
+   "word": "Over",
+   "start": 38.04,
+   "end": 38.22
+  },
+  {
+   "word": "170",
+   "start": 38.22,
+   "end": 38.86
+  },
+  {
+   "word": "years",
+   "start": 38.86,
+   "end": 39.32
+  },
+  {
+   "word": "later,",
+   "start": 39.32,
+   "end": 39.74
+  },
+  {
+   "word": "nobody",
+   "start": 40.16,
+   "end": 40.34
+  },
+  {
+   "word": "knows",
+   "start": 40.34,
+   "end": 40.66
+  },
+  {
+   "word": "what",
+   "start": 40.66,
+   "end": 40.92
+  },
+  {
+   "word": "made",
+   "start": 40.92,
+   "end": 41.1
+  },
+  {
+   "word": "the",
+   "start": 41.1,
+   "end": 41.24
+  },
+  {
+   "word": "Devil's",
+   "start": 41.24,
+   "end": 41.58
+  },
+  {
+   "word": "Footprints.",
+   "start": 41.58,
+   "end": 41.92
+  }
+ ]
+}

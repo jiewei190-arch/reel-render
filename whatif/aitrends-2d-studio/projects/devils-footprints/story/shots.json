@@ -1,0 +1,506 @@
+{
+ "duration": 42.75,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 4.05,
+   "line": "In 1855, something reportedly walked over houses and left only hoofprints.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16,
+     "dur": 3.5
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "word": "hoofprints.",
+     "name": "toon3d:thud",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 4.05,
+   "end": 5.45,
+   "line": "Devon, England.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -18,
+     "dur": 1.4
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.45,
+   "end": 7.55,
+   "line": "One February night, after heavy snow.",
+   "in": {
+    "type": "dip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "February",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14,
+     "dur": 2.1
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 7.55,
+   "end": 11.25,
+   "line": "By morning, hoof-like prints ran through the snow, mostly in single file.",
+   "in": {
+    "type": "dipWhite",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:door",
+     "gain": -12
+    },
+    {
+     "word": "prints",
+     "name": "toon3d:gasp",
+     "gain": -10
+    },
+    {
+     "word": "single",
+     "name": "toon3d:footsteps",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 11.25,
+   "end": 12.65,
+   "line": "Each about 4 inches long.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "4",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 12.65,
+   "end": 14.65,
+   "line": "Reported in more than 30 places.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "word": "30",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 14.65,
+   "end": 16.05,
+   "line": "But here's the part...",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.05,
+   "end": 18.95,
+   "line": "the trail went straight over houses, walls and haystacks.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "houses,",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "walls",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "haystacks.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.95,
+   "end": 20.0,
+   "line": "Over rivers.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:water",
+     "gain": -18,
+     "dur": 0.8
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.0,
+   "end": 21.3,
+   "line": "Across snowy rooftops.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "snowy",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.3,
+   "end": 22.95,
+   "line": "Even in and out of drainpipes.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:metal",
+     "gain": -16
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "drainpipes.",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 22.95,
+   "end": 26.35,
+   "line": "In total: an estimated 40 to 100 miles of tracks.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:scratch",
+     "gain": -16
+    },
+    {
+     "word": "40",
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "word": "miles",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 26.35,
+   "end": 28.9,
+   "line": "Some people said they were the tracks of Satan himself.",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16,
+     "dur": 2.5
+    },
+    {
+     "word": "Satan",
+     "name": "toon3d:thunder",
+     "gain": -8
+    },
+    {
+     "word": "Satan",
+     "name": "toon3d:gasp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 28.9,
+   "end": 33.95,
+   "line": "Others blamed badgers, wood mice, escaped kangaroos... even a runaway balloon.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "badgers,",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "mice,",
+     "name": "toon3d:squeak",
+     "gain": -10
+    },
+    {
+     "word": "kangaroos...",
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "runaway",
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "balloon.",
+     "name": "toon3d:thud",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 33.95,
+   "end": 35.8,
+   "line": "But none of it has ever been confirmed.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "confirmed.",
+     "name": "toon3d:fail",
+     "gain": -10
+    },
+    {
+     "word": "confirmed.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 35.8,
+   "end": 37.85,
+   "line": "And some reports have been questioned.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "questioned.",
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "word": "questioned.",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 37.85,
+   "end": 42.75,
+   "line": "Over 170 years later, nobody knows what made the Devil's Footprints.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14,
+     "dur": 4.5
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "nobody",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "Footprints.",
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "at": 4.3,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

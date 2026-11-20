@@ -1,0 +1,53 @@
+{
+ "title": "The Devil's Footprints",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.75,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "1855,",
+   "hoofprints.",
+   "devon,",
+   "4",
+   "30",
+   "houses,",
+   "walls",
+   "haystacks.",
+   "rivers.",
+   "rooftops.",
+   "drainpipes.",
+   "40",
+   "100",
+   "miles",
+   "satan",
+   "badgers,",
+   "mice,",
+   "kangaroos...",
+   "balloon.",
+   "confirmed.",
+   "questioned.",
+   "170",
+   "devil's",
+   "footprints."
+  ]
+ }
+}
