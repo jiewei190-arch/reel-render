@@ -1,0 +1,185 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.246,
+ "render_s": 266.0,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1962, laughing shut down 14 schools.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen sixty-two, laughing shut down fourteen schools.",
+     "seed": 7,
+     "heard": "in 1962, laughing shut down 14 schools.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.507
+  },
+  {
+   "n": 2,
+   "text": "January thirtieth. A girls' boarding school in Kah-shasha, in what is now Tanzania.",
+   "start": 3.647,
+   "parts": [
+    {
+     "tts": "January thirtieth. A girls' boarding school in Kah-shasha, in what is now Tanzania.",
+     "seed": 7,
+     "heard": "January 30th, a girls' boarding school in Ka Shasha, in what is now Tanzania.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 8.287
+  },
+  {
+   "n": 3,
+   "text": "Three students started laughing... and couldn't stop.",
+   "start": 8.527,
+   "parts": [
+    {
+     "tts": "Three students started laughing...",
+     "seed": 7,
+     "heard": "Three students started laughing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and couldn't stop.",
+     "seed": 7,
+     "heard": "and couldn't stop.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.299
+  },
+  {
+   "n": 4,
+   "text": "It spread to 95 of the school's 159 students. Some attacks lasted hours. Some lasted days.",
+   "start": 12.439,
+   "parts": [
+    {
+     "tts": "It spread to ninety-five of the school's one hundred fifty-nine students. Some attacks lasted hours. Some lasted days.",
+     "seed": 7,
+     "heard": "It spread to 95 of the school's 159 students. Some attacks lasted hours, some lasted days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.435
+  },
+  {
+   "n": 5,
+   "text": "In March, the school had to close.",
+   "start": 18.575,
+   "parts": [
+    {
+     "tts": "In March, the school had to close.",
+     "seed": 7,
+     "heard": "In March, the school had to close.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.273
+  },
+  {
+   "n": 6,
+   "text": "But it didn't stop there...",
+   "start": 20.563,
+   "parts": [
+    {
+     "tts": "But it didn't stop there...",
+     "seed": 7,
+     "heard": "But it didn't stop there.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.729
+  },
+  {
+   "n": 7,
+   "text": "It spread to a village where several of the girls lived. 217 people were affected.",
+   "start": 21.869,
+   "parts": [
+    {
+     "tts": "It spread to a village where several of the girls lived. two hundred seventeen people were affected.",
+     "seed": 7,
+     "heard": "It spread to a village where several of the girls lived. 217 people were affected.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.561
+  },
+  {
+   "n": 8,
+   "text": "Then more villages. More schools. About 1,000 people in total. 14 schools shut down.",
+   "start": 26.701,
+   "parts": [
+    {
+     "tts": "Then more villages. More schools. About one thousand people in total. fourteen schools shut down.",
+     "seed": 7,
+     "heard": "Then, more villages, more schools, about 1,000 people in total, 14 schools shut down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.485
+  },
+  {
+   "n": 9,
+   "text": "It wasn't funny. The laughing came with crying, fainting and pain. Doctors called it mass hysteria.",
+   "start": 32.825,
+   "parts": [
+    {
+     "tts": "It wasn't funny. The laughing came with crying, fainting and pain. Doctors called it mass hysteria.",
+     "seed": 7,
+     "heard": "It wasn't funny. The laughing came with crying, fainting, and pain. Doctors called it mass hysteria.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.491
+  },
+  {
+   "n": 10,
+   "text": "It took about 18 months to finally fade away.",
+   "start": 38.731,
+   "parts": [
+    {
+     "tts": "It took about eighteen months to finally fade away.",
+     "seed": 7,
+     "heard": "It took about 18 months to finally fade away.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.147
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}

@@ -1,0 +1,550 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "1962,",
+   "start": 0.2,
+   "end": 0.8
+  },
+  {
+   "word": "laughing",
+   "start": 1.68,
+   "end": 1.84
+  },
+  {
+   "word": "shut",
+   "start": 1.84,
+   "end": 2.1
+  },
+  {
+   "word": "down",
+   "start": 2.1,
+   "end": 2.38
+  },
+  {
+   "word": "14",
+   "start": 2.38,
+   "end": 2.76
+  },
+  {
+   "word": "schools.",
+   "start": 2.76,
+   "end": 3.3
+  },
+  {
+   "word": "January",
+   "start": 3.8,
+   "end": 3.98
+  },
+  {
+   "word": "thirtieth.",
+   "start": 3.98,
+   "end": 4.94
+  },
+  {
+   "word": "A",
+   "start": 4.94,
+   "end": 4.98
+  },
+  {
+   "word": "girls'",
+   "start": 4.98,
+   "end": 5.2
+  },
+  {
+   "word": "boarding",
+   "start": 5.28,
+   "end": 5.46
+  },
+  {
+   "word": "school",
+   "start": 5.46,
+   "end": 5.78
+  },
+  {
+   "word": "in",
+   "start": 5.78,
+   "end": 5.98
+  },
+  {
+   "word": "Kashasha,",
+   "start": 5.98,
+   "end": 6.98
+  },
+  {
+   "word": "in",
+   "start": 6.98,
+   "end": 7.1
+  },
+  {
+   "word": "what",
+   "start": 7.1,
+   "end": 7.2
+  },
+  {
+   "word": "is",
+   "start": 7.2,
+   "end": 7.32
+  },
+  {
+   "word": "now",
+   "start": 7.32,
+   "end": 7.5
+  },
+  {
+   "word": "Tanzania.",
+   "start": 7.5,
+   "end": 7.9
+  },
+  {
+   "word": "Three",
+   "start": 8.46,
+   "end": 8.76
+  },
+  {
+   "word": "students",
+   "start": 8.76,
+   "end": 9.16
+  },
+  {
+   "word": "started",
+   "start": 9.16,
+   "end": 9.56
+  },
+  {
+   "word": "laughing...",
+   "start": 9.56,
+   "end": 10.0
+  },
+  {
+   "word": "and",
+   "start": 10.52,
+   "end": 11.06
+  },
+  {
+   "word": "couldn't",
+   "start": 11.06,
+   "end": 11.78
+  },
+  {
+   "word": "stop.",
+   "start": 11.78,
+   "end": 12.14
+  },
+  {
+   "word": "It",
+   "start": 12.44,
+   "end": 12.56
+  },
+  {
+   "word": "spread",
+   "start": 12.56,
+   "end": 12.78
+  },
+  {
+   "word": "to",
+   "start": 12.78,
+   "end": 12.94
+  },
+  {
+   "word": "95",
+   "start": 12.94,
+   "end": 13.32
+  },
+  {
+   "word": "of",
+   "start": 13.32,
+   "end": 13.62
+  },
+  {
+   "word": "the",
+   "start": 13.62,
+   "end": 13.74
+  },
+  {
+   "word": "school's",
+   "start": 13.74,
+   "end": 14.06
+  },
+  {
+   "word": "159",
+   "start": 14.06,
+   "end": 14.58
+  },
+  {
+   "word": "students.",
+   "start": 14.58,
+   "end": 15.36
+  },
+  {
+   "word": "Some",
+   "start": 15.76,
+   "end": 15.9
+  },
+  {
+   "word": "attacks",
+   "start": 15.9,
+   "end": 16.24
+  },
+  {
+   "word": "lasted",
+   "start": 16.24,
+   "end": 16.56
+  },
+  {
+   "word": "hours.",
+   "start": 16.56,
+   "end": 17.04
+  },
+  {
+   "word": "Some",
+   "start": 17.4,
+   "end": 17.54
+  },
+  {
+   "word": "lasted",
+   "start": 17.54,
+   "end": 17.92
+  },
+  {
+   "word": "days.",
+   "start": 17.92,
+   "end": 18.22
+  },
+  {
+   "word": "In",
+   "start": 18.6,
+   "end": 18.74
+  },
+  {
+   "word": "March,",
+   "start": 18.74,
+   "end": 18.98
+  },
+  {
+   "word": "the",
+   "start": 19.24,
+   "end": 19.3
+  },
+  {
+   "word": "school",
+   "start": 19.3,
+   "end": 19.46
+  },
+  {
+   "word": "had",
+   "start": 19.46,
+   "end": 19.62
+  },
+  {
+   "word": "to",
+   "start": 19.62,
+   "end": 19.72
+  },
+  {
+   "word": "close.",
+   "start": 19.72,
+   "end": 20.08
+  },
+  {
+   "word": "But",
+   "start": 20.5,
+   "end": 20.74
+  },
+  {
+   "word": "it",
+   "start": 20.74,
+   "end": 20.84
+  },
+  {
+   "word": "didn't",
+   "start": 20.84,
+   "end": 21.04
+  },
+  {
+   "word": "stop",
+   "start": 21.04,
+   "end": 21.24
+  },
+  {
+   "word": "there...",
+   "start": 21.24,
+   "end": 21.54
+  },
+  {
+   "word": "It",
+   "start": 21.88,
+   "end": 22.0
+  },
+  {
+   "word": "spread",
+   "start": 22.0,
+   "end": 22.24
+  },
+  {
+   "word": "to",
+   "start": 22.24,
+   "end": 22.42
+  },
+  {
+   "word": "a",
+   "start": 22.42,
+   "end": 22.54
+  },
+  {
+   "word": "village",
+   "start": 22.54,
+   "end": 22.74
+  },
+  {
+   "word": "where",
+   "start": 22.74,
+   "end": 23.04
+  },
+  {
+   "word": "several",
+   "start": 23.04,
+   "end": 23.28
+  },
+  {
+   "word": "of",
+   "start": 23.28,
+   "end": 23.48
+  },
+  {
+   "word": "the",
+   "start": 23.48,
+   "end": 23.58
+  },
+  {
+   "word": "girls",
+   "start": 23.58,
+   "end": 23.76
+  },
+  {
+   "word": "lived.",
+   "start": 23.76,
+   "end": 24.12
+  },
+  {
+   "word": "217",
+   "start": 24.56,
+   "end": 25.08
+  },
+  {
+   "word": "people",
+   "start": 25.08,
+   "end": 25.7
+  },
+  {
+   "word": "were",
+   "start": 25.7,
+   "end": 25.94
+  },
+  {
+   "word": "affected.",
+   "start": 25.94,
+   "end": 26.32
+  },
+  {
+   "word": "Then",
+   "start": 26.72,
+   "end": 27.04
+  },
+  {
+   "word": "more",
+   "start": 27.2,
+   "end": 27.38
+  },
+  {
+   "word": "villages.",
+   "start": 27.38,
+   "end": 27.76
+  },
+  {
+   "word": "More",
+   "start": 28.36,
+   "end": 28.5
+  },
+  {
+   "word": "schools.",
+   "start": 28.5,
+   "end": 28.86
+  },
+  {
+   "word": "About",
+   "start": 28.86,
+   "end": 29.44
+  },
+  {
+   "word": "1,000",
+   "start": 29.44,
+   "end": 29.98
+  },
+  {
+   "word": "people",
+   "start": 29.98,
+   "end": 30.16
+  },
+  {
+   "word": "in",
+   "start": 30.16,
+   "end": 30.36
+  },
+  {
+   "word": "total.",
+   "start": 30.36,
+   "end": 30.66
+  },
+  {
+   "word": "14",
+   "start": 31.26,
+   "end": 31.26
+  },
+  {
+   "word": "schools",
+   "start": 31.26,
+   "end": 31.7
+  },
+  {
+   "word": "shut",
+   "start": 31.7,
+   "end": 31.92
+  },
+  {
+   "word": "down.",
+   "start": 31.92,
+   "end": 32.3
+  },
+  {
+   "word": "It",
+   "start": 32.84,
+   "end": 32.96
+  },
+  {
+   "word": "wasn't",
+   "start": 32.96,
+   "end": 33.32
+  },
+  {
+   "word": "funny.",
+   "start": 33.32,
+   "end": 33.58
+  },
+  {
+   "word": "The",
+   "start": 34.04,
+   "end": 34.12
+  },
+  {
+   "word": "laughing",
+   "start": 34.12,
+   "end": 34.38
+  },
+  {
+   "word": "came",
+   "start": 34.38,
+   "end": 34.68
+  },
+  {
+   "word": "with",
+   "start": 34.68,
+   "end": 34.88
+  },
+  {
+   "word": "crying,",
+   "start": 34.88,
+   "end": 35.26
+  },
+  {
+   "word": "fainting",
+   "start": 35.48,
+   "end": 35.78
+  },
+  {
+   "word": "and",
+   "start": 35.98,
+   "end": 36.0
+  },
+  {
+   "word": "pain.",
+   "start": 36.0,
+   "end": 36.32
+  },
+  {
+   "word": "Doctors",
+   "start": 37.06,
+   "end": 37.06
+  },
+  {
+   "word": "called",
+   "start": 37.06,
+   "end": 37.32
+  },
+  {
+   "word": "it",
+   "start": 37.32,
+   "end": 37.48
+  },
+  {
+   "word": "mass",
+   "start": 37.48,
+   "end": 37.68
+  },
+  {
+   "word": "hysteria.",
+   "start": 37.68,
+   "end": 38.14
+  },
+  {
+   "word": "It",
+   "start": 38.76,
+   "end": 38.88
+  },
+  {
+   "word": "took",
+   "start": 38.88,
+   "end": 38.98
+  },
+  {
+   "word": "about",
+   "start": 38.98,
+   "end": 39.22
+  },
+  {
+   "word": "18",
+   "start": 39.22,
+   "end": 39.62
+  },
+  {
+   "word": "months",
+   "start": 39.62,
+   "end": 39.9
+  },
+  {
+   "word": "to",
+   "start": 39.9,
+   "end": 40.14
+  },
+  {
+   "word": "finally",
+   "start": 40.14,
+   "end": 40.42
+  },
+  {
+   "word": "fade",
+   "start": 40.42,
+   "end": 40.66
+  },
+  {
+   "word": "away.",
+   "start": 40.66,
+   "end": 40.92
+  }
+ ]
+}

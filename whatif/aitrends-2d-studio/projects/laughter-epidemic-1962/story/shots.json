@@ -1,0 +1,467 @@
+{
+ "duration": 41.6,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.7,
+   "line": "In 1962, laughing shut down 14 schools.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:drop",
+     "gain": -10
+    },
+    {
+     "at": 0.75,
+     "name": "toon3d:click",
+     "gain": -12
+    },
+    {
+     "word": "schools.",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.7,
+   "end": 5.88,
+   "line": "January thirtieth. A girls' boarding school in",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.88,
+   "end": 8.36,
+   "line": "Kashasha, in what is now Tanzania.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "Kashasha,",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "Tanzania.",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 8.36,
+   "end": 10.42,
+   "line": "Three students started laughing...",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "Three",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "laughing...",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.42,
+   "end": 12.34,
+   "line": "and couldn't stop.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:heartbeat",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 12.34,
+   "end": 15.66,
+   "line": "It spread to 95 of the school's 159 students.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:crowd",
+     "gain": -18
+    },
+    {
+     "word": "95",
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "word": "159",
+     "name": "toon3d:tick",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 15.66,
+   "end": 18.5,
+   "line": "Some attacks lasted hours. Some lasted days.",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:clock",
+     "gain": -14
+    },
+    {
+     "word": "hours.",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "days.",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 18.5,
+   "end": 20.4,
+   "line": "In March, the school had to close.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "word": "March,",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "close.",
+     "name": "toon3d:door",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 20.4,
+   "end": 21.78,
+   "line": "But it didn't stop there...",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "stop",
+     "name": "toon3d:suspense",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 21.78,
+   "end": 24.46,
+   "line": "It spread to a village where several of the girls lived.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "village",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 24.46,
+   "end": 26.62,
+   "line": "217 people were affected.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 26.62,
+   "end": 28.76,
+   "line": "Then more villages. More schools.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "word": "villages.",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "schools.",
+     "name": "toon3d:pop",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 28.76,
+   "end": 32.74,
+   "line": "About 1,000 people in total. 14 schools shut down.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "word": "1,000",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "1,000",
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "14",
+     "name": "toon3d:impact",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 32.74,
+   "end": 33.94,
+   "line": "It wasn't funny.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:heartbeat",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 33.94,
+   "end": 36.96,
+   "line": "The laughing came with crying, fainting and pain.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "crying,",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "fainting",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "pain.",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 36.96,
+   "end": 38.66,
+   "line": "Doctors called it mass hysteria.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "mass",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 38.66,
+   "end": 39.82,
+   "line": "It took about 18 months",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:clock",
+     "gain": -14
+    },
+    {
+     "word": "18",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 39.82,
+   "end": 41.6,
+   "line": "to finally fade away.",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "fade",
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ]
+  }
+ ]
+}
