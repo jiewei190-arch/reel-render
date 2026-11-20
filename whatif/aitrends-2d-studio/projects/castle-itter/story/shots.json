@@ -1,0 +1,398 @@
+{
+ "duration": 41.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.0,
+   "line": "Five days after Hitler died,",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:gunshot",
+     "gain": -16
+    },
+    {
+     "at": 0.42,
+     "name": "toon3d:gunshot",
+     "gain": -18
+    },
+    {
+     "at": 0.84,
+     "name": "toon3d:gunshot",
+     "gain": -18
+    },
+    {
+     "at": 1.26,
+     "name": "toon3d:gunshot",
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.0,
+   "end": 4.62,
+   "line": "Americans and Germans fought on the same side.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "Americans",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "Germans",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "same",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.62,
+   "end": 8.3,
+   "line": "May fifth, 1945. Itter Castle, Austria.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "Itter",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 8.3,
+   "end": 12.4,
+   "line": "Inside: famous French prisoners, including two former prime ministers.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:door",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "ministers.",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "ministers.",
+     "offset": 0.25,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 12.4,
+   "end": 15.45,
+   "line": "Outside: Waffen-SS troops, coming to attack.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "word": "attack.",
+     "name": "toon3d:suspense",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 15.45,
+   "end": 18.95,
+   "line": "Defending the castle? A small group of American tank soldiers...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "small",
+     "name": "toon3d:engine",
+     "gain": -12
+    },
+    {
+     "word": "tank",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 18.95,
+   "end": 21.7,
+   "line": "German army soldiers who had joined the resistance...",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "joined",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 21.7,
+   "end": 24.85,
+   "line": "and the French prisoners themselves, picking up rifles.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "French",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "picking",
+     "name": "toon3d:metal",
+     "gain": -10
+    },
+    {
+     "word": "picking",
+     "offset": 0.3,
+     "name": "toon3d:ding",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 24.85,
+   "end": 27.2,
+   "line": "But here's the part that sounds made up...",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:gunshot",
+     "gain": -17
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:gunshot",
+     "gain": -18
+    },
+    {
+     "at": 1.4,
+     "name": "toon3d:gunshot",
+     "gain": -18
+    },
+    {
+     "at": 1.9,
+     "name": "toon3d:gunshot",
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 27.2,
+   "end": 29.45,
+   "line": "The German commander, Major Sepp Gangl,",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "Major",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 29.45,
+   "end": 31.5,
+   "line": "was killed by a sniper while trying to get",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 31.5,
+   "end": 34.0,
+   "line": "a former French prime minister out of the line of fire.",
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 34.0,
+   "end": 36.35,
+   "line": "The castle held until help arrived.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "word": "held",
+     "name": "toon3d:success",
+     "gain": -11
+    },
+    {
+     "word": "arrived.",
+     "name": "toon3d:crowd",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 36.35,
+   "end": 38.7,
+   "line": "It's one of only two known times in the war",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "two",
+     "name": "toon3d:impact",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 38.7,
+   "end": 41.25,
+   "line": "that Americans and Germans fought side by side.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "side",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 2.3,
+     "name": "toon3d:gunshot",
+     "gain": -18
+    }
+   ]
+  }
+ ]
+}

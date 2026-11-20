@@ -1,0 +1,595 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Five",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "word": "days",
+   "start": 0.28,
+   "end": 0.54
+  },
+  {
+   "word": "after",
+   "start": 0.54,
+   "end": 0.94
+  },
+  {
+   "word": "Hitler",
+   "start": 0.94,
+   "end": 1.16
+  },
+  {
+   "word": "died,",
+   "start": 1.16,
+   "end": 1.54
+  },
+  {
+   "word": "Americans",
+   "start": 2.0,
+   "end": 2.34
+  },
+  {
+   "word": "and",
+   "start": 2.34,
+   "end": 2.64
+  },
+  {
+   "word": "Germans",
+   "start": 2.64,
+   "end": 2.94
+  },
+  {
+   "word": "fought",
+   "start": 2.94,
+   "end": 3.44
+  },
+  {
+   "word": "on",
+   "start": 3.44,
+   "end": 3.74
+  },
+  {
+   "word": "the",
+   "start": 3.74,
+   "end": 3.84
+  },
+  {
+   "word": "same",
+   "start": 3.84,
+   "end": 4.02
+  },
+  {
+   "word": "side.",
+   "start": 4.02,
+   "end": 4.44
+  },
+  {
+   "word": "May",
+   "start": 4.8,
+   "end": 4.88
+  },
+  {
+   "word": "fifth,",
+   "start": 4.88,
+   "end": 5.52
+  },
+  {
+   "word": "1945.",
+   "start": 5.52,
+   "end": 6.22
+  },
+  {
+   "word": "Itter",
+   "start": 6.76,
+   "end": 6.94
+  },
+  {
+   "word": "Castle,",
+   "start": 6.94,
+   "end": 7.18
+  },
+  {
+   "word": "Austria.",
+   "start": 7.82,
+   "end": 7.82
+  },
+  {
+   "word": "Inside:",
+   "start": 8.44,
+   "end": 8.66
+  },
+  {
+   "word": "famous",
+   "start": 9.36,
+   "end": 9.36
+  },
+  {
+   "word": "French",
+   "start": 9.36,
+   "end": 9.62
+  },
+  {
+   "word": "prisoners,",
+   "start": 9.62,
+   "end": 10.06
+  },
+  {
+   "word": "including",
+   "start": 10.56,
+   "end": 10.62
+  },
+  {
+   "word": "two",
+   "start": 10.62,
+   "end": 10.94
+  },
+  {
+   "word": "former",
+   "start": 10.94,
+   "end": 11.3
+  },
+  {
+   "word": "prime",
+   "start": 11.3,
+   "end": 11.52
+  },
+  {
+   "word": "ministers.",
+   "start": 11.52,
+   "end": 11.9
+  },
+  {
+   "word": "Outside:",
+   "start": 12.48,
+   "end": 12.86
+  },
+  {
+   "word": "Waffen-SS",
+   "start": 12.86,
+   "end": 13.86
+  },
+  {
+   "word": "troops,",
+   "start": 13.86,
+   "end": 14.24
+  },
+  {
+   "word": "coming",
+   "start": 14.24,
+   "end": 14.68
+  },
+  {
+   "word": "to",
+   "start": 14.68,
+   "end": 14.9
+  },
+  {
+   "word": "attack.",
+   "start": 14.9,
+   "end": 15.22
+  },
+  {
+   "word": "Defending",
+   "start": 15.52,
+   "end": 15.86
+  },
+  {
+   "word": "the",
+   "start": 15.86,
+   "end": 16.04
+  },
+  {
+   "word": "castle?",
+   "start": 16.04,
+   "end": 16.36
+  },
+  {
+   "word": "A",
+   "start": 16.74,
+   "end": 16.86
+  },
+  {
+   "word": "small",
+   "start": 16.86,
+   "end": 17.08
+  },
+  {
+   "word": "group",
+   "start": 17.08,
+   "end": 17.28
+  },
+  {
+   "word": "of",
+   "start": 17.28,
+   "end": 17.46
+  },
+  {
+   "word": "American",
+   "start": 17.46,
+   "end": 17.84
+  },
+  {
+   "word": "tank",
+   "start": 17.84,
+   "end": 18.1
+  },
+  {
+   "word": "soldiers...",
+   "start": 18.1,
+   "end": 18.54
+  },
+  {
+   "word": "German",
+   "start": 19.12,
+   "end": 19.3
+  },
+  {
+   "word": "army",
+   "start": 19.3,
+   "end": 19.6
+  },
+  {
+   "word": "soldiers",
+   "start": 19.6,
+   "end": 19.96
+  },
+  {
+   "word": "who",
+   "start": 19.96,
+   "end": 20.22
+  },
+  {
+   "word": "had",
+   "start": 20.22,
+   "end": 20.36
+  },
+  {
+   "word": "joined",
+   "start": 20.36,
+   "end": 20.62
+  },
+  {
+   "word": "the",
+   "start": 20.62,
+   "end": 20.8
+  },
+  {
+   "word": "resistance...",
+   "start": 20.8,
+   "end": 21.16
+  },
+  {
+   "word": "and",
+   "start": 21.78,
+   "end": 21.88
+  },
+  {
+   "word": "the",
+   "start": 21.88,
+   "end": 22.0
+  },
+  {
+   "word": "French",
+   "start": 22.0,
+   "end": 22.24
+  },
+  {
+   "word": "prisoners",
+   "start": 22.24,
+   "end": 22.62
+  },
+  {
+   "word": "themselves,",
+   "start": 22.62,
+   "end": 23.14
+  },
+  {
+   "word": "picking",
+   "start": 23.14,
+   "end": 23.66
+  },
+  {
+   "word": "up",
+   "start": 23.66,
+   "end": 23.9
+  },
+  {
+   "word": "rifles.",
+   "start": 23.9,
+   "end": 24.3
+  },
+  {
+   "word": "But",
+   "start": 25.02,
+   "end": 25.12
+  },
+  {
+   "word": "here's",
+   "start": 25.12,
+   "end": 25.5
+  },
+  {
+   "word": "the",
+   "start": 25.5,
+   "end": 25.64
+  },
+  {
+   "word": "part",
+   "start": 25.64,
+   "end": 25.86
+  },
+  {
+   "word": "that",
+   "start": 25.86,
+   "end": 26.1
+  },
+  {
+   "word": "sounds",
+   "start": 26.1,
+   "end": 26.32
+  },
+  {
+   "word": "made",
+   "start": 26.32,
+   "end": 26.6
+  },
+  {
+   "word": "up...",
+   "start": 26.6,
+   "end": 26.88
+  },
+  {
+   "word": "The",
+   "start": 26.88,
+   "end": 27.44
+  },
+  {
+   "word": "German",
+   "start": 27.44,
+   "end": 27.64
+  },
+  {
+   "word": "commander,",
+   "start": 27.64,
+   "end": 28.16
+  },
+  {
+   "word": "Major",
+   "start": 28.48,
+   "end": 28.64
+  },
+  {
+   "word": "Sepp",
+   "start": 28.64,
+   "end": 28.96
+  },
+  {
+   "word": "Gangl,",
+   "start": 28.96,
+   "end": 29.4
+  },
+  {
+   "word": "was",
+   "start": 29.52,
+   "end": 29.72
+  },
+  {
+   "word": "killed",
+   "start": 29.72,
+   "end": 29.94
+  },
+  {
+   "word": "by",
+   "start": 29.94,
+   "end": 30.16
+  },
+  {
+   "word": "a",
+   "start": 30.16,
+   "end": 30.28
+  },
+  {
+   "word": "sniper",
+   "start": 30.28,
+   "end": 30.52
+  },
+  {
+   "word": "while",
+   "start": 30.52,
+   "end": 30.92
+  },
+  {
+   "word": "trying",
+   "start": 30.92,
+   "end": 31.2
+  },
+  {
+   "word": "to",
+   "start": 31.2,
+   "end": 31.32
+  },
+  {
+   "word": "get",
+   "start": 31.32,
+   "end": 31.42
+  },
+  {
+   "word": "a",
+   "start": 31.42,
+   "end": 31.56
+  },
+  {
+   "word": "former",
+   "start": 31.56,
+   "end": 31.78
+  },
+  {
+   "word": "French",
+   "start": 31.78,
+   "end": 32.1
+  },
+  {
+   "word": "prime",
+   "start": 32.1,
+   "end": 32.32
+  },
+  {
+   "word": "minister",
+   "start": 32.32,
+   "end": 32.66
+  },
+  {
+   "word": "out",
+   "start": 32.66,
+   "end": 32.94
+  },
+  {
+   "word": "of",
+   "start": 32.94,
+   "end": 33.08
+  },
+  {
+   "word": "the",
+   "start": 33.08,
+   "end": 33.16
+  },
+  {
+   "word": "line",
+   "start": 33.16,
+   "end": 33.32
+  },
+  {
+   "word": "of",
+   "start": 33.32,
+   "end": 33.44
+  },
+  {
+   "word": "fire.",
+   "start": 33.44,
+   "end": 33.72
+  },
+  {
+   "word": "The",
+   "start": 34.14,
+   "end": 34.24
+  },
+  {
+   "word": "castle",
+   "start": 34.24,
+   "end": 34.52
+  },
+  {
+   "word": "held",
+   "start": 34.52,
+   "end": 34.82
+  },
+  {
+   "word": "until",
+   "start": 34.82,
+   "end": 35.18
+  },
+  {
+   "word": "help",
+   "start": 35.18,
+   "end": 35.44
+  },
+  {
+   "word": "arrived.",
+   "start": 35.44,
+   "end": 35.94
+  },
+  {
+   "word": "It's",
+   "start": 36.46,
+   "end": 36.64
+  },
+  {
+   "word": "one",
+   "start": 36.64,
+   "end": 36.82
+  },
+  {
+   "word": "of",
+   "start": 36.82,
+   "end": 36.94
+  },
+  {
+   "word": "only",
+   "start": 36.94,
+   "end": 37.12
+  },
+  {
+   "word": "two",
+   "start": 37.12,
+   "end": 37.42
+  },
+  {
+   "word": "known",
+   "start": 37.42,
+   "end": 37.68
+  },
+  {
+   "word": "times",
+   "start": 37.68,
+   "end": 38.02
+  },
+  {
+   "word": "in",
+   "start": 38.02,
+   "end": 38.2
+  },
+  {
+   "word": "the",
+   "start": 38.2,
+   "end": 38.28
+  },
+  {
+   "word": "war",
+   "start": 38.28,
+   "end": 38.52
+  },
+  {
+   "word": "that",
+   "start": 38.52,
+   "end": 38.82
+  },
+  {
+   "word": "Americans",
+   "start": 38.82,
+   "end": 39.14
+  },
+  {
+   "word": "and",
+   "start": 39.14,
+   "end": 39.46
+  },
+  {
+   "word": "Germans",
+   "start": 39.46,
+   "end": 39.78
+  },
+  {
+   "word": "fought",
+   "start": 39.78,
+   "end": 40.3
+  },
+  {
+   "word": "side",
+   "start": 40.3,
+   "end": 40.54
+  },
+  {
+   "word": "by",
+   "start": 40.54,
+   "end": 40.7
+  },
+  {
+   "word": "side.",
+   "start": 40.7,
+   "end": 40.98
+  }
+ ]
+}

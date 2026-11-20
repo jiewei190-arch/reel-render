@@ -22,3 +22,18 @@
 ## Tone / accuracy guard
 - Real deaths: Gangl's death said plainly; no gore, no jokes about it. No Nazi symbols on screen (SS shown as dark generic uniforms).
 - Keep the attribution "historians often call it" for the "only battle" claim.
+
+## Source check (builder, Nov 20) — voiced text differs from the narration above in 4 places
+Checked against Wikipedia "Battle of Castle Itter" and "Josef Gangl" (read Nov 20) and sources.md:
+- **Line 2** "May 5th" written "May fifth" for the TTS only (caption/stamp say MAY 5, 1945). No content change.
+- **Line 6** "German army soldiers who had turned against the SS" → "who had **joined the resistance**". Source: Gangl's
+  Wehrmacht soldiers had "defied an order to retreat and instead thrown in with the local resistance" (Austrian resistance).
+- **Line 9** "killed by a sniper while pulling a former French prime minister to safety" → "killed by a sniper while
+  **trying to get a former French prime minister out of the line of fire**". Source (Josef Gangl article): "fatally hit by a
+  sniper while trying to get former French Prime Minister Paul Reynaud out of the line of fire".
+- **Line 11** "Historians often call it the only battle of the war where Americans and Germans fought side by side" →
+  "It's **one of only two known times** in the war that Americans and Germans fought side by side." The current Wikipedia
+  article says the battle "is one of two known times during the war in which Americans and Germans fought side by side,
+  the other being Operation Cowboy" (also the Josef Gangl article, citing BBC News 2015). The "only battle" claim is not
+  supported by the source any more, so the attribution line was replaced with the sourced fact.
+Voiced text: `tts_script.md`.

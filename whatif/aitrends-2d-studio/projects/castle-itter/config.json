@@ -1,0 +1,47 @@
+{
+ "title": "Castle Itter",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.25,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:tense",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.7,
+  "gold": [
+   "same",
+   "side.",
+   "1945.",
+   "Itter",
+   "prime",
+   "ministers.",
+   "Waffen-SS",
+   "tank",
+   "resistance...",
+   "rifles.",
+   "made",
+   "up...",
+   "Gangl,",
+   "sniper",
+   "held",
+   "two",
+   "side",
+   "by"
+  ]
+ }
+}

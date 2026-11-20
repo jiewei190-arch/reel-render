@@ -1,0 +1,189 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 44.907,
+ "render_s": 361.0,
+ "qa_fail_lines": [
+  2,
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Five days after Hitler died, Americans and Germans fought on the same side.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Five days after Hitler died, Americans and Germans fought on the same side.",
+     "seed": 7,
+     "heard": "Five days after Hitler died, Americans and Germans fought on the same side.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.869
+  },
+  {
+   "n": 2,
+   "text": "May fifth, 1945. Itter Castle, Austria.",
+   "start": 5.169,
+   "parts": [
+    {
+     "tts": "May fifth, nineteen forty-five. Itter Castle, Austria.",
+     "seed": 11,
+     "heard": "May 5th, 1945, Itter Castle, Austria",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 8.723
+  },
+  {
+   "n": 3,
+   "text": "Inside: famous French prisoners, including two former prime ministers.",
+   "start": 9.023,
+   "parts": [
+    {
+     "tts": "Inside: famous French prisoners, including two former prime ministers.",
+     "seed": 7,
+     "heard": "Inside, famous French prisoners, including two former prime ministers.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.26
+  },
+  {
+   "n": 4,
+   "text": "Outside: Waffen-SS troops, coming to attack.",
+   "start": 13.56,
+   "parts": [
+    {
+     "tts": "Outside: Waffen S.S. troops, coming to attack.",
+     "seed": 7,
+     "heard": "outside Waffen-SS troops coming to attack.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 16.647,
+   "retake": "l4.wav"
+  },
+  {
+   "n": 5,
+   "text": "Defending the castle? A small group of American tank soldiers...",
+   "start": 16.947,
+   "parts": [
+    {
+     "tts": "Defending the castle? A small group of American tank soldiers...",
+     "seed": 7,
+     "heard": "defending the castle, a small group of American tank soldiers,",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.926
+  },
+  {
+   "n": 6,
+   "text": "German army soldiers who had joined the resistance...",
+   "start": 21.226,
+   "parts": [
+    {
+     "tts": "German army soldiers who had joined the resistance...",
+     "seed": 7,
+     "heard": "German army soldiers who had joined the resistance.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.997
+  },
+  {
+   "n": 7,
+   "text": "and the French prisoners themselves, picking up rifles.",
+   "start": 24.297,
+   "parts": [
+    {
+     "tts": "and the French prisoners themselves, picking up rifles.",
+     "seed": 7,
+     "heard": "and the French prisoners themselves picking up rifles.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.343
+  },
+  {
+   "n": 8,
+   "text": "But here's the part that sounds made up...",
+   "start": 27.643,
+   "parts": [
+    {
+     "tts": "But here's the part that sounds made up...",
+     "seed": 7,
+     "heard": "But here's the part that sounds made up.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.715
+  },
+  {
+   "n": 9,
+   "text": "The German commander, Major Sepp Gangl, was killed by a sniper while trying to get a former French prime minister out of the line of fire.",
+   "start": 30.015,
+   "parts": [
+    {
+     "tts": "The German commander, Major Sepp Gangl, was killed by a sniper while trying to get a former French prime minister out of the line of fire.",
+     "seed": 7,
+     "heard": "The German commander, Major Sepp Gangl, was killed by a sniper while trying to get a former French prime minister out of the line of fire.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.897
+  },
+  {
+   "n": 10,
+   "text": "The castle held until help arrived.",
+   "start": 37.197,
+   "parts": [
+    {
+     "tts": "The castle held until help arrived.",
+     "seed": 7,
+     "heard": "The castle held until help arrived.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 39.418
+  },
+  {
+   "n": 11,
+   "text": "It's one of only two known times in the war that Americans and Germans fought side by side.",
+   "start": 39.718,
+   "parts": [
+    {
+     "tts": "It's one of only two known times in the war that Americans and Germans fought side by side.",
+     "seed": 7,
+     "heard": "It's one of only two known times in the war that Americans and Germans fought side by side.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 44.607
+  }
+ ]
+}
