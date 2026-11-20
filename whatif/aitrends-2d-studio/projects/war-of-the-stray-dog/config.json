@@ -1,0 +1,43 @@
+{
+ "title": "The War of the Stray Dog",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.5,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "dog",
+   "dog.",
+   "dog's",
+   "war.",
+   "1925,",
+   "48",
+   "2",
+   "francs.",
+   "45,000",
+   "pounds.",
+   "Petrich.",
+   "ceasefire",
+   "Stray",
+   "Dog."
+  ]
+ }
+}

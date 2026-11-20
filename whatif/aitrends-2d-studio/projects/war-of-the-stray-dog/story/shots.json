@@ -1,0 +1,519 @@
+{
+ "duration": 42.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.55,
+   "line": "In 1925, a soldier chasing his dog",
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "gain": -10,
+     "at": 0
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "at": 0.2
+    },
+    {
+     "name": "toon3d:ding",
+     "gain": -12,
+     "at": 0.9
+    },
+    {
+     "name": "toon3d:ding",
+     "gain": -13,
+     "at": 1.1
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.55,
+   "end": 4.2,
+   "line": "accidentally started a war.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "gain": -10,
+     "at": 0
+    },
+    {
+     "name": "toon3d:footsteps",
+     "gain": -14,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:boing",
+     "gain": -10,
+     "word": "war."
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.2,
+   "end": 6.15,
+   "line": "At least, that's the classic account.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:boing",
+     "gain": -14,
+     "at": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.15,
+   "end": 8.95,
+   "line": "A Greek soldier's dog ran across the Bulgarian border,",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:whoosh",
+     "gain": -10,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "word": "border,"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.95,
+   "end": 10.2,
+   "line": "and he chased after it.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "gain": -11,
+     "at": 0
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "at": 0.15
+    },
+    {
+     "name": "toon3d:footsteps",
+     "gain": -14,
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.2,
+   "end": 11.85,
+   "line": "A Bulgarian sentry saw him...",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "at": 0.05
+    },
+    {
+     "name": "toon3d:ding",
+     "gain": -11,
+     "at": 0.45
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 11.85,
+   "end": 13.05,
+   "line": "and shot him.",
+   "sfx": [
+    {
+     "name": "toon3d:thud",
+     "gain": -14,
+     "word": "shot"
+    },
+    {
+     "name": "toon3d:thud",
+     "gain": -14,
+     "word": "shot"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 13.05,
+   "end": 14.65,
+   "line": "The Greek version is different:",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "name": "toon3d:swoosh",
+     "gain": -9,
+     "at": 0
+    },
+    {
+     "name": "toon3d:impact",
+     "gain": -14,
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.65,
+   "end": 17.95,
+   "line": "Bulgarian troops crossed over and attacked a Greek outpost.",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "name": "toon3d:suspense",
+     "gain": -18,
+     "at": 0
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "at": 0.05
+    },
+    {
+     "name": "toon3d:footsteps",
+     "gain": -16,
+     "at": 0.3
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "word": "attacked"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 17.95,
+   "end": 19.25,
+   "line": "But here's where it gets wild.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "at": 0.05
+    },
+    {
+     "name": "toon3d:punch",
+     "gain": -9,
+     "word": "wild."
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 19.25,
+   "end": 21.2,
+   "line": "Greece gave Bulgaria 48 hours:",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:impact",
+     "gain": -12,
+     "at": 0
+    },
+    {
+     "name": "toon3d:clock",
+     "gain": -14,
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 21.2,
+   "end": 24.65,
+   "line": "apologize, punish those responsible, and pay 2 million francs.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:pop",
+     "gain": -12,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:pop",
+     "gain": -12,
+     "word": "punish"
+    },
+    {
+     "name": "toon3d:pop",
+     "gain": -12,
+     "word": "pay"
+    },
+    {
+     "name": "toon3d:cash",
+     "gain": -10,
+     "word": "francs."
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 24.65,
+   "end": 26.75,
+   "line": "Then Greek troops marched into Bulgaria,",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "name": "toon3d:footsteps",
+     "gain": -11,
+     "at": 0,
+     "dur": 2.0
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "word": "marched"
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 26.75,
+   "end": 28.45,
+   "line": "toward the town of Petrich.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:footsteps",
+     "gain": -13,
+     "at": 0,
+     "dur": 1.7
+    },
+    {
+     "name": "toon3d:wind",
+     "gain": -20,
+     "at": 0,
+     "dur": 1.7
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 28.45,
+   "end": 30.75,
+   "line": "Bulgaria appealed to the League of Nations...",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:type",
+     "gain": -12,
+     "at": 0
+    },
+    {
+     "name": "toon3d:paper",
+     "gain": -12,
+     "at": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 30.75,
+   "end": 32.05,
+   "line": "which ordered a ceasefire",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "name": "toon3d:knock",
+     "gain": -6,
+     "word": "ceasefire"
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "word": "ceasefire"
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 32.05,
+   "end": 33.2,
+   "line": "hours before the attack.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "at": 0.0
+    },
+    {
+     "name": "toon3d:boing",
+     "gain": -13,
+     "at": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 33.2,
+   "end": 34.7,
+   "line": "Greece had to pull out",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "name": "toon3d:footsteps",
+     "gain": -14,
+     "at": 0,
+     "dur": 1.5
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:fail",
+     "gain": -16,
+     "at": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 34.7,
+   "end": 36.55,
+   "line": "and pay Bulgaria 45,000 pounds.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "name": "toon3d:impact",
+     "gain": -12,
+     "at": 0
+    },
+    {
+     "name": "toon3d:coins",
+     "gain": -10,
+     "at": 0.1
+    },
+    {
+     "name": "toon3d:cash",
+     "gain": -11,
+     "at": 0.6
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 36.55,
+   "end": 39.25,
+   "line": "Ten days. Dozens of lives lost...",
+   "in": {
+    "type": "fade",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "name": "toon3d:wind",
+     "gain": -20,
+     "at": 0,
+     "dur": 2.6
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 39.25,
+   "end": 42.5,
+   "line": "and history calls it the War of the Stray Dog.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "name": "toon3d:chime",
+     "gain": -12,
+     "at": 0
+    },
+    {
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "word": "War"
+    },
+    {
+     "name": "toon3d:success",
+     "gain": -12,
+     "word": "Stray"
+    },
+    {
+     "name": "toon3d:whoosh",
+     "gain": -12,
+     "at": 2.45
+    }
+   ]
+  }
+ ]
+}

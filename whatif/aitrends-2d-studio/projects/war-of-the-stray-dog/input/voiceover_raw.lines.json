@@ -1,0 +1,191 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 48.225,
+ "render_s": 327.2,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1925, a soldier chasing his dog accidentally started a war.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "In nineteen twenty-five, a soldier chasing his dog accidentally started a war.",
+     "seed": 7,
+     "heard": "In 1925, a soldier chasing his dog accidentally started a war.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.569
+  },
+  {
+   "n": 2,
+   "text": "At least, that's the classic account.",
+   "start": 4.869,
+   "parts": [
+    {
+     "tts": "At least, that's the classic account.",
+     "seed": 7,
+     "heard": "At least, that's the classic account.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.814
+  },
+  {
+   "n": 3,
+   "text": "A Greek soldier's dog ran across the Bulgarian border, and he chased after it.",
+   "start": 7.114,
+   "parts": [
+    {
+     "tts": "A Greek soldier's dog ran across the Bulgarian border, and he chased after it.",
+     "seed": 7,
+     "heard": "A Greek soldier's dog ran across the Bulgarian border, and he chased after it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.353
+  },
+  {
+   "n": 4,
+   "text": "A Bulgarian sentry saw him... and shot him.",
+   "start": 11.653,
+   "parts": [
+    {
+     "tts": "A Bulgarian sentry saw him...",
+     "seed": 7,
+     "heard": "A Bulgarian sentry saw him.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and shot him.",
+     "seed": 7,
+     "heard": "and shot him.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.144
+  },
+  {
+   "n": 5,
+   "text": "The Greek version is different: Bulgarian troops crossed over and attacked a Greek outpost.",
+   "start": 15.444,
+   "parts": [
+    {
+     "tts": "The Greek version is different: Bulgarian troops crossed over and attacked a Greek outpost.",
+     "seed": 7,
+     "heard": "The Greek version is different. Bulgarian troops crossed over and attacked a Greek outpost.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.575
+  },
+  {
+   "n": 6,
+   "text": "But here's where it gets wild. Greece gave Bulgaria 48 hours: apologize, punish those responsible, and pay 2 million francs.",
+   "start": 20.875,
+   "parts": [
+    {
+     "tts": "But here's where it gets wild. Greece gave Bulgaria forty-eight hours: apologize, punish those responsible, and pay two million francs.",
+     "seed": 7,
+     "heard": "But here's where it gets wild. Greece gave Bulgaria 48 hours, apologize, punish those responsible, and pay two million francs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.917
+  },
+  {
+   "n": 7,
+   "text": "Then Greek troops marched into Bulgaria, toward the town of Petrich.",
+   "start": 28.217,
+   "parts": [
+    {
+     "tts": "Then Greek troops marched into Bulgaria, toward the town of Petrich.",
+     "seed": 23,
+     "heard": "Then, Greek troops marched into Bulgaria toward the town of Petrich.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.16
+  },
+  {
+   "n": 8,
+   "text": "Bulgaria appealed to the League of Nations... which ordered a ceasefire hours before the attack.",
+   "start": 32.46,
+   "parts": [
+    {
+     "tts": "Bulgaria appealed to the League of Nations...",
+     "seed": 7,
+     "heard": "Bulgaria appealed to the League of Nations.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "which ordered a ceasefire hours before the attack.",
+     "seed": 7,
+     "heard": "which ordered a ceasefire hours before the attack.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.994
+  },
+  {
+   "n": 9,
+   "text": "Greece had to pull out and pay Bulgaria 45,000 pounds.",
+   "start": 38.294,
+   "parts": [
+    {
+     "tts": "Greece had to pull out and pay Bulgaria forty-five thousand pounds.",
+     "seed": 11,
+     "heard": "Greece had to pull out and pay Bulgaria 45,000 pounds.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.585
+  },
+  {
+   "n": 10,
+   "text": "Ten days. Dozens of lives lost... and history calls it the War of the Stray Dog.",
+   "start": 41.885,
+   "parts": [
+    {
+     "tts": "Ten days. Dozens of lives lost...",
+     "seed": 7,
+     "heard": "10 days. Dozens of lives lost.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and history calls it the War of the Stray Dog.",
+     "seed": 7,
+     "heard": "and history calls it the War of the Stray Dog.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 47.925
+  }
+ ]
+}
