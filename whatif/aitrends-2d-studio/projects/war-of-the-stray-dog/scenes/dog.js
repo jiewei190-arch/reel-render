@@ -53,9 +53,9 @@ registerShot('s02', { kind: '3d',
     s.env.update(t); glare(s, t, 1);
     s.d.position.set(lerp(0.6, 2.6, t / info.dur), 0, DOG_Z); s.d.rotation.y = Math.PI / 2;
     s.d.update(t, { run: 1, wag: 1, earsUp: 0.2, tongue: 1, lid: 0.1 });
-    s.sd.position.set(lerp(-3.2, 0.4, t / info.dur), 0, DOG_Z + 0.6); s.sd.rotation.y = Math.PI / 2 - 0.2;
+    s.sd.position.set(lerp(-3.4, -0.4, t / info.dur), 0, DOG_Z - 0.9); s.sd.rotation.y = Math.PI / 2 - 0.2;
     s.sd.pose(addPose(run(t), { armL: [1.4, 0.5, 0], armR: [1.4, 0.5, 0] })); s.sd.face(EXPR.panic, t);
-    camMove(s.stage, t, [[0, { pos: [0.4, 1.5, 4.6], look: [0, 1.2, 0], fov: 40 }], [info.dur, { pos: [0.9, 1.5, 4.2], look: [0.8, 1.2, 0], fov: 38 }]]);
+    camMove(s.stage, t, [[0, { pos: [0.2, 1.9, 7.4], look: [0, 1.2, 0.6], fov: 42 }], [info.dur, { pos: [0.6, 1.9, 6.8], look: [0.6, 1.2, 0.6], fov: 40 }]]);
   },
   overlay(g, t, info, s) {
     sunnyLook(g, t, RAYS);
@@ -77,7 +77,7 @@ registerShot('s03', { kind: '3d',
   overlay(g, t, info, s) {
     sunnyLook(g, t, soft);
     stamp(g, t, 'THE CLASSIC ACCOUNT*', { at: 0.1, x: 540, y: 300, size: 66, color: '#ffffff', fill: '#2e4a6a', rot: -0.05 });
-    plainText(g, t, '*there is another version', { at: at(info, 'account.', 1.0) - 0.1, y: 1240, size: 46 });
+    plainText(g, t, '*there is another version', { at: at(info, 'account.', 1.0) - 0.1, y: 1560, size: 58 });
   },
 });
 
@@ -153,7 +153,7 @@ registerShot('s08', { kind: '3d',
 registerShot('s09', { kind: '3d',
   init(T) { const st = toonStage(T, { light: 'dusk', fov: 40, shadowSize: 12, target: [-1, 1, -3] }); const env = borderPass(st, { seed: 8, noSky: true, grass: '#5e7448' });
     const hut = watchBox(); hut.position.set(-3.6, 0, -3.5); hut.rotation.y = 0.5; st.add(hut);
-    const sg = signpost('GREEK OUTPOST', { bg: '#e8eef6', fg: '#1f4f86', w: 1.6 }); sg.position.set(-0.75, 0, -3.4); sg.rotation.y = 0.2; st.add(sg);
+    const sg = signpost('GREEK OUTPOST', { bg: '#e8eef6', fg: '#1f4f86', w: 1.6 }); sg.position.set(-0.75, 0, -1.8); sg.rotation.y = 0.2; st.add(sg);
     const sil = []; for (let i = 0; i < 4; i++) { const b = bulgar({ seed: 90 + i, over: { silhouette: true } }); st.add(b); sil.push(b); }
     return { stage: st, env, sil }; },
   draw(s, t, info) {

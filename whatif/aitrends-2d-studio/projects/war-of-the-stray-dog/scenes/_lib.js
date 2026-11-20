@@ -96,7 +96,7 @@ export function general(o = {}) { return bean({ name: 'General', outfit: 'unifor
 export function diplomat(o = {}) { return bean({ name: 'Diplomat', outfit: 'uniform', head: 'none', skin: o.skin || 'light', hair: o.hair || 'horseshoe', hairColor: o.hairColor || '#8a8580', colors: { main: o.color || '#2e3442', legs: '#262a34' }, seed: o.seed || 31 }); }
 
 // ---------------------------------------------------------------- SETS
-function signTex(text, bg, fg) { return canvasTex(512, 160, (x, W, H) => { x.fillStyle = bg; x.fillRect(0, 0, W, H); x.strokeStyle = fg; x.lineWidth = 10; x.strokeRect(10, 10, W - 20, H - 20); x.fillStyle = fg; x.font = '900 86px "Fredoka", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(text, W / 2, H / 2 + 4); }); }
+function signTex(text, bg, fg) { return canvasTex(512, 160, (x, W, H) => { x.fillStyle = bg; x.fillRect(0, 0, W, H); x.strokeStyle = fg; x.lineWidth = 10; x.strokeRect(10, 10, W - 20, H - 20); x.fillStyle = fg; let fs = 86; x.font = `900 ${fs}px "Fredoka", sans-serif`; const mw = x.measureText(text).width; if (mw > W - 60) { fs = fs * (W - 60) / mw; x.font = `900 ${fs}px "Fredoka", sans-serif`; } x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(text, W / 2, H / 2 + 4); }); }
 export function signpost(text, o = {}) { const g = new THREE.Group(); const h = o.h || 2.2, w = o.w || 1.9;
   g.add(cyl(0.07, 0.08, h, '#6a4a2e', 0, h / 2, 0, 8));
   const board = rbox(w, w * 0.32, 0.08, o.bg || '#e8dcc0', o.arrow ? w * 0.35 : 0, h - 0.2, 0.06, 0.03); g.add(board);
