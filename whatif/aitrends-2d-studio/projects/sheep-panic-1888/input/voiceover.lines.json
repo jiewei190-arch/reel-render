@@ -1,0 +1,185 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 40.855,
+ "render_s": 249.8,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "One night in 1888, tens of thousands of sheep lost their minds.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "One night in eighteen eighty-eight, tens of thousands of sheep lost their minds.",
+     "seed": 7,
+     "heard": "One night in 1888, tens of thousands of sheep lost their minds.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.234
+  },
+  {
+   "n": 2,
+   "text": "November third. Oxfordshire, England. Around eight at night.",
+   "start": 4.434,
+   "parts": [
+    {
+     "tts": "November third. Oxfordshire, England. Around eight at night.",
+     "seed": 7,
+     "heard": "November 3rd, Oxfordshire, England, around 8 at night.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.772
+  },
+  {
+   "n": 3,
+   "text": "Across about two hundred square miles, flocks panicked at the same moment.",
+   "start": 7.973,
+   "parts": [
+    {
+     "tts": "Across about two hundred square miles, flocks panicked at the same moment.",
+     "seed": 7,
+     "heard": "Across about 200 square miles, flocks panicked at the same moment.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.601
+  },
+  {
+   "n": 4,
+   "text": "They broke out of their fields and scattered for miles in the dark.",
+   "start": 11.801,
+   "parts": [
+    {
+     "tts": "They broke out of their fields and scattered for miles in the dark.",
+     "seed": 7,
+     "heard": "They broke out of their fields and scattered for miles in the dark.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.684
+  },
+  {
+   "n": 5,
+   "text": "But here's the strange part...",
+   "start": 15.134,
+   "parts": [
+    {
+     "tts": "But here's the strange part...",
+     "seed": 7,
+     "heard": "But here's the strange part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.879
+  },
+  {
+   "n": 6,
+   "text": "The next morning, sheep were found crowded into corners of fields, some panting with terror under hedges.",
+   "start": 17.079,
+   "parts": [
+    {
+     "tts": "The next morning, sheep were found crowded into corners of fields, some panting with terror under hedges.",
+     "seed": 7,
+     "heard": "The next morning, sheep were found crowded into corners of fields, some panting with terror under hedges.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.452
+  },
+  {
+   "n": 7,
+   "text": "The Times wrote that a thousand men could not have frightened and released all these sheep.",
+   "start": 22.652,
+   "parts": [
+    {
+     "tts": "The Times wrote that a thousand men could not have frightened and released all these sheep.",
+     "seed": 7,
+     "heard": "The Times wrote that a thousand men could not have frightened and released all these sheep.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.612
+  },
+  {
+   "n": 8,
+   "text": "And a year later... it happened again. In Berkshire.",
+   "start": 27.112,
+   "parts": [
+    {
+     "tts": "And a year later...",
+     "seed": 7,
+     "heard": "and a year later.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "it happened again. In Berkshire.",
+     "seed": 7,
+     "heard": "It happened again, in Berkshire.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.575
+  },
+  {
+   "n": 9,
+   "text": "The best explanation ever published? An intensely dark night, with occasional flashes of lightning. And sheep are notoriously timid.",
+   "start": 30.775,
+   "parts": [
+    {
+     "tts": "The best explanation ever published? An intensely dark night, with occasional flashes of lightning. And sheep are notoriously timid.",
+     "seed": 7,
+     "heard": "the best explanation ever published, an intensely dark night with occasional flashes of lightning, and sheep are notoriously timid.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.262
+  },
+  {
+   "n": 10,
+   "text": "To this day, nobody knows what really set them off.",
+   "start": 37.762,
+   "parts": [
+    {
+     "tts": "To this day, nobody knows what really set them off.",
+     "seed": 7,
+     "heard": "To this day, nobody knows what really set them off.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.755
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.2,
+  "max_internal_silence": 0.3
+ }
+}
