@@ -1,0 +1,447 @@
+{
+ "duration": 41.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.2,
+   "line": "In 2004, Paris police stumbled onto",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:click",
+     "gain": -9
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.2,
+   "end": 4.0,
+   "line": "a secret movie theater underground.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "toon3d:gasp",
+     "gain": -10
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:ding",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.0,
+   "end": 5.9,
+   "line": "Deep in the catacombs, beneath the Trocad\u00e9ro.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:scratch",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.9,
+   "end": 7.9,
+   "line": "The catacombs hold",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -20,
+     "dur": 2
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.9,
+   "end": 10.0,
+   "line": "the remains of more than six million people.",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "word": "six",
+     "name": "toon3d:riser",
+     "gain": -15
+    },
+    {
+     "word": "people.",
+     "name": "toon3d:thud",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.0,
+   "end": 12.0,
+   "line": "And down there, they found a giant cinema screen,",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "giant",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06b",
+   "start": 12.0,
+   "end": 13.95,
+   "line": "seats for an audience,",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "seats",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.95,
+   "end": 15.45,
+   "line": "and projection equipment.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -18,
+     "dur": 1.3
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.45,
+   "end": 18.7,
+   "line": "Film reels of recent thrillers and film noir classics.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "thrillers",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "noir",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "noir",
+     "offset": 0.25,
+     "name": "toon3d:metal",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.7,
+   "end": 20.6,
+   "line": "But here's the part that gets weirder...",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.6,
+   "end": 22.05,
+   "line": "A fully stocked bar.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:glass",
+     "gain": -10
+    },
+    {
+     "word": "bar.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.05,
+   "end": 24.75,
+   "line": "And a complete restaurant, with tables and chairs.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.12,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "tables",
+     "name": "toon3d:ding",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.75,
+   "end": 27.85,
+   "line": "Electricity and a phone line had been brought in from an unknown location.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:buzz",
+     "gain": -18
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "unknown",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.85,
+   "end": 31.5,
+   "line": "The security system? A recording of barking dogs.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "recording",
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "word": "barking",
+     "offset": -0.25,
+     "name": "sfx/woof.wav",
+     "gain": -6
+    },
+    {
+     "word": "barking",
+     "offset": 0.45,
+     "name": "sfx/woof.wav",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.5,
+   "end": 34.25,
+   "line": "A secretive group called the U.X. took responsibility.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -13
+    },
+    {
+     "word": "U.X.",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "responsibility.",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 34.25,
+   "end": 37.45,
+   "line": "When police came back to investigate, it had all been dismantled.",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -14
+    },
+    {
+     "word": "dismantled.",
+     "name": "toon3d:fail",
+     "gain": -10
+    },
+    {
+     "word": "dismantled.",
+     "offset": 0.15,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 37.45,
+   "end": 41.5,
+   "line": "Left behind, a note... \"Do not search.\"",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "word": "note...",
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "search.\"",
+     "offset": -0.4,
+     "name": "toon3d:impact",
+     "gain": -9
+    }
+   ]
+  }
+ ]
+}

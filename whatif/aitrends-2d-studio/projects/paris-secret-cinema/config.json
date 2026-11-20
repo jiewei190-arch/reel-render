@@ -1,0 +1,43 @@
+{
+ "title": "The Secret Cinema Under Paris",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.5,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "2004",
+   "2004,",
+   "cinema",
+   "six",
+   "million",
+   "bar",
+   "bar.",
+   "restaurant",
+   "restaurant,",
+   "dogs",
+   "dogs.",
+   "ux",
+   "note",
+   "search"
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 43.922,
+ "render_s": 323.0,
+ "qa_fail_lines": [
+  2,
+  10
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 2004, Paris police stumbled onto a secret movie theater underground.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "In two thousand four, Paris police stumbled onto a secret movie theater underground.",
+     "seed": 7,
+     "heard": "In 2004, Paris police stumbled onto a secret movie theater underground.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.106
+  },
+  {
+   "n": 2,
+   "text": "Deep in the catacombs, beneath the Trocad\u00e9ro.",
+   "start": 4.356,
+   "parts": [
+    {
+     "tts": "Deep in the catacombs, beneath the Trocad\u00e9ro.",
+     "seed": 7,
+     "heard": "deep in the catacombs beneath the Trocadero.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.244
+  },
+  {
+   "n": 3,
+   "text": "The catacombs hold the remains of more than six million people.",
+   "start": 7.494,
+   "parts": [
+    {
+     "tts": "The catacombs hold the remains of more than six million people.",
+     "seed": 7,
+     "heard": "The catacombs hold the remains of more than 6 million people.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.706
+  },
+  {
+   "n": 4,
+   "text": "And down there, they found a giant cinema screen, seats for an audience, and projection equipment.",
+   "start": 10.956,
+   "parts": [
+    {
+     "tts": "And down there, they found a giant cinema screen, seats for an audience, and projection equipment.",
+     "seed": 7,
+     "heard": "And down there, they found a giant cinema screen, seats for an audience, and projection equipment.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.505
+  },
+  {
+   "n": 5,
+   "text": "Film reels of recent thrillers and film noir classics.",
+   "start": 16.755,
+   "parts": [
+    {
+     "tts": "Film reels of recent thrillers and film noir classics.",
+     "seed": 7,
+     "heard": "film reels of recent thrillers and film noir classics.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.776
+  },
+  {
+   "n": 6,
+   "text": "But here's the part that gets weirder...",
+   "start": 20.026,
+   "parts": [
+    {
+     "tts": "But here's the part that gets weirder...",
+     "seed": 7,
+     "heard": "But here's the part that gets weirder.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.863
+  },
+  {
+   "n": 7,
+   "text": "A fully stocked bar. And a complete restaurant, with tables and chairs.",
+   "start": 22.113,
+   "parts": [
+    {
+     "tts": "A fully stocked bar. And a complete restaurant, with tables and chairs.",
+     "seed": 7,
+     "heard": "a fully stocked bar, and a complete restaurant with tables and chairs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.519
+  },
+  {
+   "n": 8,
+   "text": "Electricity and a phone line had been brought in from an unknown location.",
+   "start": 26.769,
+   "parts": [
+    {
+     "tts": "Electricity and a phone line had been brought in from an unknown location.",
+     "seed": 7,
+     "heard": "Electricity and a phone line had been brought in from an unknown location.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.377
+  },
+  {
+   "n": 9,
+   "text": "The security system? A recording of barking dogs.",
+   "start": 30.627,
+   "parts": [
+    {
+     "tts": "The security system? A recording of barking dogs.",
+     "seed": 7,
+     "heard": "the security system, a recording of barking dogs.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 34.139
+  },
+  {
+   "n": 10,
+   "text": "A secretive group called the U.X. took responsibility.",
+   "start": 34.389,
+   "parts": [
+    {
+     "tts": "A secretive group called the U.X. took responsibility.",
+     "seed": 7,
+     "heard": "A secretive group called the UX took responsibility.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 37.018
+  },
+  {
+   "n": 11,
+   "text": "When police came back to investigate, it had all been dismantled. Left behind, a note... \"Do not search.\"",
+   "start": 37.268,
+   "parts": [
+    {
+     "tts": "When police came back to investigate, it had all been dismantled. Left behind, a note...",
+     "seed": 7,
+     "heard": "When police came back to investigate, it had all been dismantled. Left behind, a note.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "\"Do not search.\"",
+     "seed": 7,
+     "heard": "Do not search.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.672
+  }
+ ]
+}
