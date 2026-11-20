@@ -1,0 +1,176 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.138,
+ "render_s": 213.8,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Britain built a 2,500-mile barrier across India. Then forgot it.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Britain built a two thousand five hundred-mile barrier across India. Then forgot it.",
+     "seed": 7,
+     "heard": "Britain built a 2,500-mile barrier across India, then forgot it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.221
+  },
+  {
+   "n": 2,
+   "text": "British-ruled India, the 1800s. The goal? Taxing salt.",
+   "start": 4.361,
+   "parts": [
+    {
+     "tts": "British-ruled India, the eighteen hundreds. The goal? Taxing salt.",
+     "seed": 7,
+     "heard": "British ruled India, the 1800s. The goal, taxing salt.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.541
+  },
+  {
+   "n": 3,
+   "text": "To stop salt smugglers, they built a customs line about 2,500 miles long.",
+   "start": 8.681,
+   "parts": [
+    {
+     "tts": "To stop salt smugglers, they built a customs line about two thousand five hundred miles long.",
+     "seed": 7,
+     "heard": "To stop salt smugglers, they built a customs line about 2,500 miles long.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.186
+  },
+  {
+   "n": 4,
+   "text": "Hundreds of miles of it was a living hedge of thorny bushes, up to 12 feet high.",
+   "start": 13.326,
+   "parts": [
+    {
+     "tts": "Hundreds of miles of it was a living hedge of thorny bushes, up to twelve feet high.",
+     "seed": 7,
+     "heard": "Hundreds of miles of it was a living hedge of thorny bushes, up to 12 feet high.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.324
+  },
+  {
+   "n": 5,
+   "text": "People compared it to the Great Wall of China.",
+   "start": 17.464,
+   "parts": [
+    {
+     "tts": "People compared it to the Great Wall of China.",
+     "seed": 7,
+     "heard": "People compared it to the Great Wall of China.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.632
+  },
+  {
+   "n": 6,
+   "text": "At its peak, in 1872, more than 14,000 men guarded it.",
+   "start": 19.772,
+   "parts": [
+    {
+     "tts": "At its peak, in eighteen seventy-two, more than fourteen thousand men guarded it.",
+     "seed": 7,
+     "heard": "At its peak, in 1872, more than 14,000 men guarded it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.093
+  },
+  {
+   "n": 7,
+   "text": "But here's the twist...",
+   "start": 24.483,
+   "parts": [
+    {
+     "tts": "But here's the twist...",
+     "seed": 7,
+     "heard": "But here's the twist.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.946
+  },
+  {
+   "n": 8,
+   "text": "In 1879, it was abandoned. And it was forgotten so completely, standard histories skipped it.",
+   "start": 26.186,
+   "parts": [
+    {
+     "tts": "In eighteen seventy-nine, it was abandoned. And it was forgotten so completely, standard histories skipped it.",
+     "seed": 11,
+     "heard": "In 1879, it was abandoned, and it was forgotten so completely, standard histories skipped it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.559
+  },
+  {
+   "n": 9,
+   "text": "In the 1990s, a London library conservator made three trips to India just to find it.",
+   "start": 32.699,
+   "parts": [
+    {
+     "tts": "In the nineteen ninetys, a London library conservator made three trips to India just to find it.",
+     "seed": 7,
+     "heard": "In the 1990s, a London library conservator made three trips to India just to find it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.019
+  },
+  {
+   "n": 10,
+   "text": "What he found: one small raised embankment. It may be all that's left.",
+   "start": 37.359,
+   "parts": [
+    {
+     "tts": "What he found: one small raised embankment. It may be all that's left.",
+     "seed": 7,
+     "heard": "what he found, one small raised embankment. It may be all that's left.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.038
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.04,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}

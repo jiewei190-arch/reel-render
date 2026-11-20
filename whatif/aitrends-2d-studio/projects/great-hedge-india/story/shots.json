@@ -1,0 +1,427 @@
+{
+ "duration": 41.6,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 4.24,
+   "line": "Britain built a 2,500-mile barrier across India. Then forgot it.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "barrier.",
+     "name": "toon3d:thud",
+     "gain": -12
+    },
+    {
+     "word": "forgot",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 4.24,
+   "end": 6.95,
+   "line": "British-ruled India, the 1800s.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "1800s.",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 6.95,
+   "end": 8.68,
+   "line": "The goal? Taxing salt.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "word": "goal?",
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "Taxing",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 8.68,
+   "end": 10.35,
+   "line": "To stop salt smugglers, they",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:thud",
+     "gain": -9
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.35,
+   "end": 13.5,
+   "line": "built a customs line about 2,500 miles long.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "word": "2,500",
+     "name": "toon3d:impact",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 13.5,
+   "end": 16.1,
+   "line": "Hundreds of miles of it was a living hedge of thorny bushes,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:rumble",
+     "gain": -14
+    },
+    {
+     "word": "living",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 16.1,
+   "end": 17.45,
+   "line": "up to 12 feet high.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "word": "12",
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "word": "high.",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 17.45,
+   "end": 19.7,
+   "line": "People compared it to the Great Wall of China.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "Great",
+     "name": "toon3d:impact",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 19.7,
+   "end": 24.3,
+   "line": "At its peak, in 1872, more than 14,000 men guarded it.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    },
+    {
+     "word": "1872,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "14,000",
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "word": "14,000",
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 24.3,
+   "end": 26.2,
+   "line": "But here's the twist...",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 26.2,
+   "end": 28.85,
+   "line": "In 1879, it was abandoned.",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "abandoned.",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 28.85,
+   "end": 32.6,
+   "line": "And it was forgotten so completely, standard histories skipped it.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "word": "forgotten",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "standard",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "skipped",
+     "name": "toon3d:scratch",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 32.6,
+   "end": 34.98,
+   "line": "In the 1990s, a London library conservator",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "London",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 34.98,
+   "end": 37.2,
+   "line": "made three trips to India just to find it.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "three",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "trips",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "India",
+     "name": "toon3d:pop",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 37.2,
+   "end": 39.6,
+   "line": "What he found: one small raised embankment.",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "embankment.",
+     "name": "toon3d:chime",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 39.6,
+   "end": 41.6,
+   "line": "It may be all that's left.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "all",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 1.6,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

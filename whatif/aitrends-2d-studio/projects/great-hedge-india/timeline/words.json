@@ -1,0 +1,585 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Britain",
+   "start": 0.0,
+   "end": 0.32
+  },
+  {
+   "word": "built",
+   "start": 0.32,
+   "end": 0.58
+  },
+  {
+   "word": "a",
+   "start": 0.58,
+   "end": 0.76
+  },
+  {
+   "word": "2,500-mile",
+   "start": 0.76,
+   "end": 1.76
+  },
+  {
+   "word": "barrier",
+   "start": 1.76,
+   "end": 2.18
+  },
+  {
+   "word": "across",
+   "start": 2.18,
+   "end": 2.58
+  },
+  {
+   "word": "India.",
+   "start": 2.58,
+   "end": 3.0
+  },
+  {
+   "word": "Then",
+   "start": 3.28,
+   "end": 3.54
+  },
+  {
+   "word": "forgot",
+   "start": 3.54,
+   "end": 3.98
+  },
+  {
+   "word": "it.",
+   "start": 3.98,
+   "end": 4.24
+  },
+  {
+   "word": "British-ruled",
+   "start": 4.24,
+   "end": 4.98
+  },
+  {
+   "word": "India,",
+   "start": 4.98,
+   "end": 5.4
+  },
+  {
+   "word": "the",
+   "start": 5.4,
+   "end": 5.68
+  },
+  {
+   "word": "1800s.",
+   "start": 5.68,
+   "end": 6.76
+  },
+  {
+   "word": "The",
+   "start": 7.0,
+   "end": 7.0
+  },
+  {
+   "word": "goal?",
+   "start": 7.0,
+   "end": 7.24
+  },
+  {
+   "word": "Taxing",
+   "start": 7.76,
+   "end": 8.02
+  },
+  {
+   "word": "salt.",
+   "start": 8.02,
+   "end": 8.38
+  },
+  {
+   "word": "To",
+   "start": 8.72,
+   "end": 8.8
+  },
+  {
+   "word": "stop",
+   "start": 8.8,
+   "end": 9.08
+  },
+  {
+   "word": "salt",
+   "start": 9.08,
+   "end": 9.32
+  },
+  {
+   "word": "smugglers,",
+   "start": 9.32,
+   "end": 9.74
+  },
+  {
+   "word": "they",
+   "start": 9.98,
+   "end": 10.04
+  },
+  {
+   "word": "built",
+   "start": 10.04,
+   "end": 10.22
+  },
+  {
+   "word": "a",
+   "start": 10.22,
+   "end": 10.38
+  },
+  {
+   "word": "customs",
+   "start": 10.38,
+   "end": 10.68
+  },
+  {
+   "word": "line",
+   "start": 10.68,
+   "end": 11.04
+  },
+  {
+   "word": "about",
+   "start": 11.04,
+   "end": 11.34
+  },
+  {
+   "word": "2,500",
+   "start": 11.34,
+   "end": 12.18
+  },
+  {
+   "word": "miles",
+   "start": 12.18,
+   "end": 12.68
+  },
+  {
+   "word": "long.",
+   "start": 12.68,
+   "end": 13.06
+  },
+  {
+   "word": "Hundreds",
+   "start": 13.58,
+   "end": 13.58
+  },
+  {
+   "word": "of",
+   "start": 13.58,
+   "end": 13.72
+  },
+  {
+   "word": "miles",
+   "start": 13.72,
+   "end": 13.94
+  },
+  {
+   "word": "of",
+   "start": 13.94,
+   "end": 14.16
+  },
+  {
+   "word": "it",
+   "start": 14.16,
+   "end": 14.28
+  },
+  {
+   "word": "was",
+   "start": 14.28,
+   "end": 14.44
+  },
+  {
+   "word": "a",
+   "start": 14.44,
+   "end": 14.56
+  },
+  {
+   "word": "living",
+   "start": 14.56,
+   "end": 14.72
+  },
+  {
+   "word": "hedge",
+   "start": 14.72,
+   "end": 15.04
+  },
+  {
+   "word": "of",
+   "start": 15.04,
+   "end": 15.24
+  },
+  {
+   "word": "thorny",
+   "start": 15.24,
+   "end": 15.56
+  },
+  {
+   "word": "bushes,",
+   "start": 15.56,
+   "end": 15.84
+  },
+  {
+   "word": "up",
+   "start": 16.16,
+   "end": 16.28
+  },
+  {
+   "word": "to",
+   "start": 16.28,
+   "end": 16.44
+  },
+  {
+   "word": "12",
+   "start": 16.44,
+   "end": 16.66
+  },
+  {
+   "word": "feet",
+   "start": 16.66,
+   "end": 16.82
+  },
+  {
+   "word": "high.",
+   "start": 16.82,
+   "end": 17.16
+  },
+  {
+   "word": "People",
+   "start": 17.5,
+   "end": 17.7
+  },
+  {
+   "word": "compared",
+   "start": 17.7,
+   "end": 18.12
+  },
+  {
+   "word": "it",
+   "start": 18.12,
+   "end": 18.28
+  },
+  {
+   "word": "to",
+   "start": 18.28,
+   "end": 18.42
+  },
+  {
+   "word": "the",
+   "start": 18.42,
+   "end": 18.54
+  },
+  {
+   "word": "Great",
+   "start": 18.54,
+   "end": 18.72
+  },
+  {
+   "word": "Wall",
+   "start": 18.72,
+   "end": 18.92
+  },
+  {
+   "word": "of",
+   "start": 18.92,
+   "end": 19.08
+  },
+  {
+   "word": "China.",
+   "start": 19.08,
+   "end": 19.38
+  },
+  {
+   "word": "At",
+   "start": 19.8,
+   "end": 19.94
+  },
+  {
+   "word": "its",
+   "start": 19.94,
+   "end": 20.1
+  },
+  {
+   "word": "peak,",
+   "start": 20.1,
+   "end": 20.36
+  },
+  {
+   "word": "in",
+   "start": 20.68,
+   "end": 20.74
+  },
+  {
+   "word": "1872,",
+   "start": 20.74,
+   "end": 21.72
+  },
+  {
+   "word": "more",
+   "start": 22.02,
+   "end": 22.1
+  },
+  {
+   "word": "than",
+   "start": 22.1,
+   "end": 22.26
+  },
+  {
+   "word": "14,000",
+   "start": 22.26,
+   "end": 23.12
+  },
+  {
+   "word": "men",
+   "start": 23.12,
+   "end": 23.38
+  },
+  {
+   "word": "guarded",
+   "start": 23.38,
+   "end": 23.72
+  },
+  {
+   "word": "it.",
+   "start": 23.72,
+   "end": 24.06
+  },
+  {
+   "word": "But",
+   "start": 24.5,
+   "end": 24.82
+  },
+  {
+   "word": "here's",
+   "start": 24.82,
+   "end": 25.32
+  },
+  {
+   "word": "the",
+   "start": 25.32,
+   "end": 25.44
+  },
+  {
+   "word": "twist...",
+   "start": 25.44,
+   "end": 25.7
+  },
+  {
+   "word": "In",
+   "start": 26.19,
+   "end": 26.32
+  },
+  {
+   "word": "1879,",
+   "start": 26.32,
+   "end": 27.38
+  },
+  {
+   "word": "it",
+   "start": 27.86,
+   "end": 27.86
+  },
+  {
+   "word": "was",
+   "start": 27.86,
+   "end": 28.0
+  },
+  {
+   "word": "abandoned.",
+   "start": 28.0,
+   "end": 28.36
+  },
+  {
+   "word": "And",
+   "start": 28.92,
+   "end": 29.02
+  },
+  {
+   "word": "it",
+   "start": 29.02,
+   "end": 29.12
+  },
+  {
+   "word": "was",
+   "start": 29.12,
+   "end": 29.22
+  },
+  {
+   "word": "forgotten",
+   "start": 29.22,
+   "end": 29.58
+  },
+  {
+   "word": "so",
+   "start": 29.58,
+   "end": 29.92
+  },
+  {
+   "word": "completely,",
+   "start": 29.92,
+   "end": 30.44
+  },
+  {
+   "word": "standard",
+   "start": 30.96,
+   "end": 31.18
+  },
+  {
+   "word": "histories",
+   "start": 31.18,
+   "end": 31.68
+  },
+  {
+   "word": "skipped",
+   "start": 31.68,
+   "end": 32.12
+  },
+  {
+   "word": "it.",
+   "start": 32.12,
+   "end": 32.48
+  },
+  {
+   "word": "In",
+   "start": 32.7,
+   "end": 32.82
+  },
+  {
+   "word": "the",
+   "start": 32.82,
+   "end": 32.92
+  },
+  {
+   "word": "1990s,",
+   "start": 32.92,
+   "end": 33.72
+  },
+  {
+   "word": "a",
+   "start": 33.88,
+   "end": 33.92
+  },
+  {
+   "word": "London",
+   "start": 33.92,
+   "end": 34.14
+  },
+  {
+   "word": "library",
+   "start": 34.14,
+   "end": 34.56
+  },
+  {
+   "word": "conservator",
+   "start": 34.56,
+   "end": 35.06
+  },
+  {
+   "word": "made",
+   "start": 35.06,
+   "end": 35.28
+  },
+  {
+   "word": "three",
+   "start": 35.28,
+   "end": 35.52
+  },
+  {
+   "word": "trips",
+   "start": 35.52,
+   "end": 35.76
+  },
+  {
+   "word": "to",
+   "start": 35.76,
+   "end": 35.96
+  },
+  {
+   "word": "India",
+   "start": 35.96,
+   "end": 36.2
+  },
+  {
+   "word": "just",
+   "start": 36.2,
+   "end": 36.42
+  },
+  {
+   "word": "to",
+   "start": 36.42,
+   "end": 36.6
+  },
+  {
+   "word": "find",
+   "start": 36.6,
+   "end": 36.78
+  },
+  {
+   "word": "it.",
+   "start": 36.78,
+   "end": 37.0
+  },
+  {
+   "word": "What",
+   "start": 37.34,
+   "end": 37.46
+  },
+  {
+   "word": "he",
+   "start": 37.46,
+   "end": 37.58
+  },
+  {
+   "word": "found:",
+   "start": 37.58,
+   "end": 37.9
+  },
+  {
+   "word": "one",
+   "start": 38.22,
+   "end": 38.36
+  },
+  {
+   "word": "small",
+   "start": 38.36,
+   "end": 38.66
+  },
+  {
+   "word": "raised",
+   "start": 38.66,
+   "end": 38.9
+  },
+  {
+   "word": "embankment.",
+   "start": 38.9,
+   "end": 39.5
+  },
+  {
+   "word": "It",
+   "start": 39.78,
+   "end": 39.9
+  },
+  {
+   "word": "may",
+   "start": 39.9,
+   "end": 40.06
+  },
+  {
+   "word": "be",
+   "start": 40.06,
+   "end": 40.2
+  },
+  {
+   "word": "all",
+   "start": 40.2,
+   "end": 40.38
+  },
+  {
+   "word": "that's",
+   "start": 40.38,
+   "end": 40.62
+  },
+  {
+   "word": "left.",
+   "start": 40.62,
+   "end": 40.82
+  }
+ ]
+}
