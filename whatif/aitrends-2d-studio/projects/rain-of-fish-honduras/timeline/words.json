@@ -1,0 +1,685 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Residents",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "of",
+   "start": 0.38,
+   "end": 0.66
+  },
+  {
+   "word": "this",
+   "start": 0.66,
+   "end": 0.82
+  },
+  {
+   "word": "Honduran",
+   "start": 0.82,
+   "end": 1.22
+  },
+  {
+   "word": "town",
+   "start": 1.22,
+   "end": 1.54
+  },
+  {
+   "word": "say",
+   "start": 1.54,
+   "end": 1.88
+  },
+  {
+   "word": "it",
+   "start": 1.88,
+   "end": 2.06
+  },
+  {
+   "word": "rains",
+   "start": 2.06,
+   "end": 2.34
+  },
+  {
+   "word": "fish.",
+   "start": 2.34,
+   "end": 2.72
+  },
+  {
+   "word": "Every",
+   "start": 3.12,
+   "end": 3.34
+  },
+  {
+   "word": "year.",
+   "start": 3.34,
+   "end": 3.7
+  },
+  {
+   "word": "It's",
+   "start": 4.02,
+   "end": 4.2
+  },
+  {
+   "word": "Yoro.",
+   "start": 4.2,
+   "end": 4.4
+  },
+  {
+   "word": "Locals",
+   "start": 4.88,
+   "end": 5.1
+  },
+  {
+   "word": "call",
+   "start": 5.1,
+   "end": 5.34
+  },
+  {
+   "word": "it",
+   "start": 5.34,
+   "end": 5.48
+  },
+  {
+   "word": "the",
+   "start": 5.48,
+   "end": 5.58
+  },
+  {
+   "word": "Lluvia",
+   "start": 5.58,
+   "end": 5.88
+  },
+  {
+   "word": "de",
+   "start": 5.88,
+   "end": 6.06
+  },
+  {
+   "word": "Peces,",
+   "start": 6.06,
+   "end": 6.44
+  },
+  {
+   "word": "the",
+   "start": 6.76,
+   "end": 6.8
+  },
+  {
+   "word": "rain",
+   "start": 6.8,
+   "end": 6.94
+  },
+  {
+   "word": "of",
+   "start": 6.94,
+   "end": 7.06
+  },
+  {
+   "word": "fish.",
+   "start": 7.06,
+   "end": 7.32
+  },
+  {
+   "word": "In",
+   "start": 7.78,
+   "end": 7.9
+  },
+  {
+   "word": "the",
+   "start": 7.9,
+   "end": 8.02
+  },
+  {
+   "word": "mid-year",
+   "start": 8.02,
+   "end": 8.4
+  },
+  {
+   "word": "rainy",
+   "start": 8.4,
+   "end": 8.66
+  },
+  {
+   "word": "season,",
+   "start": 8.66,
+   "end": 9.08
+  },
+  {
+   "word": "a",
+   "start": 9.3,
+   "end": 9.38
+  },
+  {
+   "word": "big",
+   "start": 9.38,
+   "end": 9.52
+  },
+  {
+   "word": "storm",
+   "start": 9.52,
+   "end": 9.84
+  },
+  {
+   "word": "rolls",
+   "start": 9.84,
+   "end": 10.12
+  },
+  {
+   "word": "in...",
+   "start": 10.12,
+   "end": 10.44
+  },
+  {
+   "word": "and",
+   "start": 10.68,
+   "end": 10.94
+  },
+  {
+   "word": "when",
+   "start": 10.94,
+   "end": 11.18
+  },
+  {
+   "word": "it",
+   "start": 11.18,
+   "end": 11.32
+  },
+  {
+   "word": "clears,",
+   "start": 11.32,
+   "end": 11.58
+  },
+  {
+   "word": "there",
+   "start": 11.94,
+   "end": 12.06
+  },
+  {
+   "word": "are",
+   "start": 12.06,
+   "end": 12.22
+  },
+  {
+   "word": "fish",
+   "start": 12.22,
+   "end": 12.42
+  },
+  {
+   "word": "lying",
+   "start": 12.42,
+   "end": 12.68
+  },
+  {
+   "word": "on",
+   "start": 12.68,
+   "end": 12.86
+  },
+  {
+   "word": "the",
+   "start": 12.86,
+   "end": 12.94
+  },
+  {
+   "word": "ground.",
+   "start": 12.94,
+   "end": 13.22
+  },
+  {
+   "word": "Residents",
+   "start": 13.9,
+   "end": 13.9
+  },
+  {
+   "word": "say",
+   "start": 13.9,
+   "end": 14.22
+  },
+  {
+   "word": "it's",
+   "start": 14.22,
+   "end": 14.4
+  },
+  {
+   "word": "happened",
+   "start": 14.4,
+   "end": 14.62
+  },
+  {
+   "word": "for",
+   "start": 14.62,
+   "end": 14.82
+  },
+  {
+   "word": "over",
+   "start": 14.82,
+   "end": 15.0
+  },
+  {
+   "word": "a",
+   "start": 15.0,
+   "end": 15.12
+  },
+  {
+   "word": "hundred",
+   "start": 15.12,
+   "end": 15.38
+  },
+  {
+   "word": "years.",
+   "start": 15.38,
+   "end": 15.72
+  },
+  {
+   "word": "Since",
+   "start": 16.16,
+   "end": 16.34
+  },
+  {
+   "word": "1998,",
+   "start": 16.34,
+   "end": 16.94
+  },
+  {
+   "word": "there's",
+   "start": 17.42,
+   "end": 17.62
+  },
+  {
+   "word": "even",
+   "start": 17.62,
+   "end": 17.82
+  },
+  {
+   "word": "a",
+   "start": 17.82,
+   "end": 17.92
+  },
+  {
+   "word": "yearly",
+   "start": 17.92,
+   "end": 18.18
+  },
+  {
+   "word": "festival",
+   "start": 18.18,
+   "end": 18.46
+  },
+  {
+   "word": "for",
+   "start": 18.46,
+   "end": 18.86
+  },
+  {
+   "word": "it,",
+   "start": 18.86,
+   "end": 19.06
+  },
+  {
+   "word": "with",
+   "start": 19.18,
+   "end": 19.34
+  },
+  {
+   "word": "a",
+   "start": 19.34,
+   "end": 19.46
+  },
+  {
+   "word": "parade.",
+   "start": 19.46,
+   "end": 19.72
+  },
+  {
+   "word": "But",
+   "start": 20.42,
+   "end": 20.58
+  },
+  {
+   "word": "here's",
+   "start": 20.58,
+   "end": 20.86
+  },
+  {
+   "word": "the",
+   "start": 20.86,
+   "end": 21.0
+  },
+  {
+   "word": "strange",
+   "start": 21.0,
+   "end": 21.24
+  },
+  {
+   "word": "part.",
+   "start": 21.24,
+   "end": 21.62
+  },
+  {
+   "word": "The",
+   "start": 21.98,
+   "end": 22.12
+  },
+  {
+   "word": "fish",
+   "start": 22.12,
+   "end": 22.26
+  },
+  {
+   "word": "don't",
+   "start": 22.26,
+   "end": 22.48
+  },
+  {
+   "word": "appear",
+   "start": 22.48,
+   "end": 22.66
+  },
+  {
+   "word": "to",
+   "start": 22.66,
+   "end": 22.82
+  },
+  {
+   "word": "fall",
+   "start": 22.82,
+   "end": 22.98
+  },
+  {
+   "word": "from",
+   "start": 22.98,
+   "end": 23.16
+  },
+  {
+   "word": "the",
+   "start": 23.16,
+   "end": 23.28
+  },
+  {
+   "word": "sky.",
+   "start": 23.28,
+   "end": 23.54
+  },
+  {
+   "word": "One",
+   "start": 23.9,
+   "end": 24.06
+  },
+  {
+   "word": "theory",
+   "start": 24.06,
+   "end": 24.34
+  },
+  {
+   "word": "is",
+   "start": 24.34,
+   "end": 24.62
+  },
+  {
+   "word": "waterspouts.",
+   "start": 24.62,
+   "end": 25.26
+  },
+  {
+   "word": "But",
+   "start": 25.64,
+   "end": 25.8
+  },
+  {
+   "word": "the",
+   "start": 25.8,
+   "end": 25.9
+  },
+  {
+   "word": "nearest",
+   "start": 25.9,
+   "end": 26.16
+  },
+  {
+   "word": "ocean",
+   "start": 26.16,
+   "end": 26.5
+  },
+  {
+   "word": "is",
+   "start": 26.5,
+   "end": 26.7
+  },
+  {
+   "word": "about",
+   "start": 26.7,
+   "end": 26.9
+  },
+  {
+   "word": "45",
+   "start": 26.9,
+   "end": 27.32
+  },
+  {
+   "word": "miles",
+   "start": 27.32,
+   "end": 27.6
+  },
+  {
+   "word": "away.",
+   "start": 27.6,
+   "end": 28.0
+  },
+  {
+   "word": "Another:",
+   "start": 28.0,
+   "end": 28.56
+  },
+  {
+   "word": "fish",
+   "start": 29.04,
+   "end": 29.16
+  },
+  {
+   "word": "from",
+   "start": 29.16,
+   "end": 29.34
+  },
+  {
+   "word": "a",
+   "start": 29.34,
+   "end": 29.46
+  },
+  {
+   "word": "nearby",
+   "start": 29.46,
+   "end": 29.64
+  },
+  {
+   "word": "river",
+   "start": 29.64,
+   "end": 29.94
+  },
+  {
+   "word": "live",
+   "start": 29.94,
+   "end": 30.16
+  },
+  {
+   "word": "underground,",
+   "start": 30.16,
+   "end": 30.62
+  },
+  {
+   "word": "and",
+   "start": 31.08,
+   "end": 31.22
+  },
+  {
+   "word": "heavy",
+   "start": 31.22,
+   "end": 31.42
+  },
+  {
+   "word": "rains",
+   "start": 31.42,
+   "end": 31.74
+  },
+  {
+   "word": "wash",
+   "start": 31.74,
+   "end": 31.98
+  },
+  {
+   "word": "them",
+   "start": 31.98,
+   "end": 32.18
+  },
+  {
+   "word": "up.",
+   "start": 32.18,
+   "end": 32.4
+  },
+  {
+   "word": "And",
+   "start": 32.7,
+   "end": 32.98
+  },
+  {
+   "word": "a",
+   "start": 32.98,
+   "end": 33.1
+  },
+  {
+   "word": "local",
+   "start": 33.1,
+   "end": 33.3
+  },
+  {
+   "word": "legend",
+   "start": 33.3,
+   "end": 33.68
+  },
+  {
+   "word": "says",
+   "start": 33.68,
+   "end": 34.04
+  },
+  {
+   "word": "a",
+   "start": 34.04,
+   "end": 34.32
+  },
+  {
+   "word": "priest",
+   "start": 34.32,
+   "end": 34.68
+  },
+  {
+   "word": "prayed",
+   "start": 34.68,
+   "end": 35.1
+  },
+  {
+   "word": "to",
+   "start": 35.1,
+   "end": 35.38
+  },
+  {
+   "word": "feed",
+   "start": 35.38,
+   "end": 35.6
+  },
+  {
+   "word": "the",
+   "start": 35.6,
+   "end": 35.76
+  },
+  {
+   "word": "poor...",
+   "start": 35.76,
+   "end": 36.02
+  },
+  {
+   "word": "and",
+   "start": 36.44,
+   "end": 36.6
+  },
+  {
+   "word": "fish",
+   "start": 36.6,
+   "end": 36.84
+  },
+  {
+   "word": "fell.",
+   "start": 36.84,
+   "end": 37.12
+  },
+  {
+   "word": "Nobody",
+   "start": 37.72,
+   "end": 37.92
+  },
+  {
+   "word": "has",
+   "start": 37.92,
+   "end": 38.18
+  },
+  {
+   "word": "confirmed",
+   "start": 38.18,
+   "end": 38.54
+  },
+  {
+   "word": "how",
+   "start": 38.54,
+   "end": 38.8
+  },
+  {
+   "word": "they",
+   "start": 38.8,
+   "end": 38.94
+  },
+  {
+   "word": "get",
+   "start": 38.94,
+   "end": 39.12
+  },
+  {
+   "word": "there.",
+   "start": 39.12,
+   "end": 39.42
+  },
+  {
+   "word": "So",
+   "start": 39.76,
+   "end": 39.94
+  },
+  {
+   "word": "Yoro",
+   "start": 39.94,
+   "end": 40.16
+  },
+  {
+   "word": "waits",
+   "start": 40.16,
+   "end": 40.5
+  },
+  {
+   "word": "for",
+   "start": 40.5,
+   "end": 40.72
+  },
+  {
+   "word": "the",
+   "start": 40.72,
+   "end": 40.84
+  },
+  {
+   "word": "next",
+   "start": 40.84,
+   "end": 41.0
+  },
+  {
+   "word": "storm.",
+   "start": 41.0,
+   "end": 41.34
+  }
+ ]
+}

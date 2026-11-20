@@ -1,0 +1,200 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 42.064,
+ "render_s": 380.6,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Residents of this Honduran town say it rains fish. Every year.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Residents of this Honduran town say it rains fish. Every year.",
+     "seed": 7,
+     "heard": "Residents of this Honduran town say it rains fish every year.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.834
+  },
+  {
+   "n": 2,
+   "text": "It's Yoro. Locals call it the Yuvia de Pesses, the rain of fish.",
+   "start": 3.994,
+   "parts": [
+    {
+     "tts": "It's Yoro. Locals call it the Yuvia de Pesses, the rain of fish.",
+     "seed": 7,
+     "heard": "It's Joro. Locals call it the uvia de peses, the rain of fish.",
+     "wrong_words": 3,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 7.479
+  },
+  {
+   "n": 3,
+   "text": "In the mid-year rainy season, a big storm rolls in...",
+   "start": 7.789,
+   "parts": [
+    {
+     "tts": "In the mid-year rainy season, a big storm rolls in...",
+     "seed": 7,
+     "heard": "in the mid-year rainy season a big storm rolls in.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.546
+  },
+  {
+   "n": 4,
+   "text": "and when it clears, there are fish lying on the ground.",
+   "start": 10.706,
+   "parts": [
+    {
+     "tts": "and when it clears, there are fish lying on the ground.",
+     "seed": 7,
+     "heard": "and when it clears, there are fish lying on the ground.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.413
+  },
+  {
+   "n": 5,
+   "text": "Residents say it's happened for over a hundred years.",
+   "start": 13.573,
+   "parts": [
+    {
+     "tts": "Residents say it's happened for over a hundred years.",
+     "seed": 7,
+     "heard": "Residents say it's happened for over a hundred years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.968
+  },
+  {
+   "n": 6,
+   "text": "Since 1998, there's even a yearly festival for it, with a parade.",
+   "start": 16.128,
+   "parts": [
+    {
+     "tts": "Since nineteen ninety-eight, there's even a yearly festival for it, with a parade.",
+     "seed": 7,
+     "heard": "Since 1998, there's even a yearly festival for it, with a parade.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.957
+  },
+  {
+   "n": 7,
+   "text": "But here's the strange part. The fish don't appear to fall from the sky.",
+   "start": 20.417,
+   "parts": [
+    {
+     "tts": "But here's the strange part. The fish don't appear to fall from the sky.",
+     "seed": 7,
+     "heard": "But here's the strange part. The fish don't appear to fall from the sky.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.722
+  },
+  {
+   "n": 8,
+   "text": "One theory is waterspouts. But the nearest ocean is about 45 miles away.",
+   "start": 23.882,
+   "parts": [
+    {
+     "tts": "One theory is waterspouts. But the nearest ocean is about forty-five miles away.",
+     "seed": 11,
+     "heard": "One theory is waterspouts, but the nearest ocean is about 45 miles away.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.184
+  },
+  {
+   "n": 9,
+   "text": "Another: fish from a nearby river live underground, and heavy rains wash them up.",
+   "start": 28.344,
+   "parts": [
+    {
+     "tts": "Another: fish from a nearby river live underground, and heavy rains wash them up.",
+     "seed": 7,
+     "heard": "Another, fish from a nearby river live underground, and heavy rains wash them up.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.485
+  },
+  {
+   "n": 10,
+   "text": "And a local legend says a priest prayed to feed the poor... and fish fell.",
+   "start": 32.645,
+   "parts": [
+    {
+     "tts": "And a local legend says a priest prayed to feed the poor...",
+     "seed": 7,
+     "heard": "and a local legend says a priest prayed to feed the poor.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and fish fell.",
+     "seed": 7,
+     "heard": "and fish fell.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.298
+  },
+  {
+   "n": 11,
+   "text": "Nobody has confirmed how they get there. So Yoro waits for the next storm.",
+   "start": 37.658,
+   "parts": [
+    {
+     "tts": "Nobody has confirmed how they get there. So Yoro waits for the next storm.",
+     "seed": 7,
+     "heard": "Nobody has confirmed how they get there, so Yoro waits for the next storm.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.564
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.03,
+  "gap": 0.16,
+  "max_internal_silence": 0.3
+ }
+}

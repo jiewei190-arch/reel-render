@@ -1,0 +1,350 @@
+{
+ "duration": 42.064,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.89,
+   "line": "Residents of this Honduran town say it rains fish. Every year.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:rain",
+     "gain": -14
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:ding",
+     "gain": -14
+    },
+    {
+     "word": "fish.",
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "word": "Every",
+     "name": "toon3d:impact",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.89,
+   "end": 7.69,
+   "line": "It's Yoro. Locals call it the Lluvia de Peces, the rain of fish.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "Locals",
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "rain",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 7.69,
+   "end": 10.61,
+   "line": "In the mid-year rainy season, a big storm rolls in...",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "word": "rainy",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "storm",
+     "name": "toon3d:thunder",
+     "gain": -7
+    },
+    {
+     "word": "storm",
+     "offset": 0.3,
+     "name": "toon3d:rain",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 10.61,
+   "end": 13.47,
+   "line": "and when it clears, there are fish lying on the ground.",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "fish",
+     "name": "toon3d:splash",
+     "gain": -11
+    },
+    {
+     "word": "ground.",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 13.47,
+   "end": 16.03,
+   "line": "Residents say it's happened for over a hundred years.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "over",
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "years.",
+     "name": "toon3d:ding",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 16.03,
+   "end": 20.32,
+   "line": "Since 1998, there's even a yearly festival for it, with a parade.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:crowd",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "festival",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "parade.",
+     "name": "toon3d:horn",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 20.32,
+   "end": 23.78,
+   "line": "But here's the strange part. The fish don't appear to fall from the sky.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:rain",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "word": "appear",
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "fall",
+     "name": "toon3d:whoosh",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 23.78,
+   "end": 28.24,
+   "line": "One theory is waterspouts. But the nearest ocean is about 45 miles away.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "waterspouts.",
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "word": "miles",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 28.24,
+   "end": 32.55,
+   "line": "Another: fish from a nearby river live underground, and heavy rains wash them up.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "underground,",
+     "name": "toon3d:water",
+     "gain": -12
+    },
+    {
+     "word": "wash",
+     "name": "toon3d:splash",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 32.55,
+   "end": 37.56,
+   "line": "And a local legend says a priest prayed to feed the poor... and fish fell.",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:magic",
+     "gain": -13
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "prayed",
+     "name": "toon3d:rumble",
+     "gain": -13
+    },
+    {
+     "word": "fell.",
+     "name": "toon3d:sparkle",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 37.56,
+   "end": 39.68,
+   "line": "Nobody has confirmed how they get there.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "confirmed",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 39.68,
+   "end": 42.064,
+   "line": "So Yoro waits for the next storm.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -13
+    },
+    {
+     "word": "storm.",
+     "name": "toon3d:thunder",
+     "gain": -8
+    },
+    {
+     "word": "storm.",
+     "offset": 0.2,
+     "name": "toon3d:rain",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "title": "The Rain of Fish",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.064,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.74,
+  "gold": [
+   "fish",
+   "fish.",
+   "yoro.",
+   "peces,",
+   "storm",
+   "ground.",
+   "hundred",
+   "1998,",
+   "festival",
+   "sky.",
+   "waterspouts.",
+   "45",
+   "underground",
+   "legend",
+   "confirmed",
+   "storm."
+  ]
+ }
+}
