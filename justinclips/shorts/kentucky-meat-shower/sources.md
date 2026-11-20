@@ -1,0 +1,3 @@
+# Sources — kentucky-meat-shower
+Wikipedia, "Kentucky meat shower" (read Nov 20 2026): March 3, 1876, 11 a.m.-noon, several minutes, near Olympia Springs, Bath County KY; Mrs. Crouch making soap on her porch; "snowing meat"; grocer Joe Jordan: smell "like that of a dead body"; covered by Scientific American and The New York Times; two men who tasted it judged it possibly lamb or deer; samples identified as lung tissue (2), muscle (3), cartilage (2); theories include Nostoc and vulture ejecta (vomit); "the exact cause ... remains a subject of speculation and mystery"; Charles Fort noted there had been no rain.
+https://en.wikipedia.org/wiki/Kentucky_meat_shower
