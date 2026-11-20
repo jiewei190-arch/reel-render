@@ -1,0 +1,28 @@
+{
+ "title": "The 1908 New York to Paris Race",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.0,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": ["1908,", "world", "Paris.", "railway", "tracks,", "Alaska", "Japan.", "mud.", "Germans", "first.", "30-day", "penalty,", "train.", "won,", "169", "16,700", "three", "26", "largest", "history."]
+ }
+}

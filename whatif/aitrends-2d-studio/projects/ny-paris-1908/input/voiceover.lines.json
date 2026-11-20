@@ -1,0 +1,190 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 41.502,
+ "render_s": 253.0,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1908, six cars raced around the world to Paris.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen oh-eight, six cars raced around the world to Paris.",
+     "seed": 7,
+     "heard": "In 1908, six cars raced around the world to Paris.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.195
+  },
+  {
+   "n": 2,
+   "text": "They left Times Square in February, with almost no roads ahead.",
+   "start": 3.335,
+   "parts": [
+    {
+     "tts": "They left Times Square in February, with almost no roads ahead.",
+     "seed": 7,
+     "heard": "They left Times Square in February with almost no roads ahead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.552
+  },
+  {
+   "n": 3,
+   "text": "When the roads ran out, they drove on railway tracks, tie to tie, for hundreds of miles.",
+   "start": 6.692,
+   "parts": [
+    {
+     "tts": "When the roads ran out, they drove on railway tracks, tie to tie, for hundreds of miles.",
+     "seed": 7,
+     "heard": "When the roads ran out, they drove on railway tracks, tie to tie, for hundreds of miles.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.321
+  },
+  {
+   "n": 4,
+   "text": "Alaska was so impossible, the race was rerouted by steamer to Japan.",
+   "start": 11.461,
+   "parts": [
+    {
+     "tts": "Alaska was so impossible, the race was rerouted by steamer to Japan.",
+     "seed": 7,
+     "heard": "Alaska was so impossible, the race was rerouted by Steamer to Japan.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.478
+  },
+  {
+   "n": 5,
+   "text": "Then Siberia's spring thaw turned the plains into mud.",
+   "start": 15.618,
+   "parts": [
+    {
+     "tts": "Then Siberia's spring thaw turned the plains into mud.",
+     "seed": 7,
+     "heard": "Then Siberia's spring thaw turned the plains into mud.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.791
+  },
+  {
+   "n": 6,
+   "text": "But here's the part... the Germans reached Paris first.",
+   "start": 19.131,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the Germans reached Paris first.",
+     "seed": 7,
+     "heard": "The Germans reached Paris first.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.336
+  },
+  {
+   "n": 7,
+   "text": "They got a thirty day penalty, for skipping Japan and shipping their car part of the way by train.",
+   "start": 22.476,
+   "parts": [
+    {
+     "tts": "They got a thirty day penalty, for skipping Japan and shipping their car part of the way by train.",
+     "seed": 7,
+     "heard": "They got a 30-day penalty for skipping Japan and shipping their car part of the way by train.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.867
+  },
+  {
+   "n": 8,
+   "text": "So the American Thomas Flyer won, after 169 days and about 16,700 kilometers.",
+   "start": 27.007,
+   "parts": [
+    {
+     "tts": "So the American Thomas Flyer won, after one hundred sixty-nine days and about sixteen thousand seven hundred kilometers.",
+     "seed": 7,
+     "heard": "So, the American Thomas Flyer won after 169 days and about 16,700 kilometers.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.877
+  },
+  {
+   "n": 9,
+   "text": "Only three of the six cars ever finished.",
+   "start": 34.017,
+   "parts": [
+    {
+     "tts": "Only three of the six cars ever finished.",
+     "seed": 7,
+     "heard": "only three of the six cars ever finished.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.313
+  },
+  {
+   "n": 10,
+   "text": "The winning margin? Twenty-six days... still called the largest in motorsport history.",
+   "start": 36.653,
+   "parts": [
+    {
+     "tts": "The winning margin? Twenty-six days...",
+     "seed": 7,
+     "heard": "The winning margin? 26 days.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "still called the largest in motorsport history.",
+     "seed": 7,
+     "heard": "still called the largest in motorsport history.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.402
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}

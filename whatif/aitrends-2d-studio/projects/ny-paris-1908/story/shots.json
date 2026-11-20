@@ -1,0 +1,443 @@
+{
+ "duration": 42.0,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.25,
+   "line": "In 1908, six cars raced around the world to Paris.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:splash",
+     "gain": -14
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "world",
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.25,
+   "end": 5.15,
+   "line": "They left Times Square in February,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "word": "February,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.15,
+   "end": 6.6,
+   "line": "with almost no roads ahead.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -16
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "word": "roads",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.6,
+   "end": 11.35,
+   "line": "When the roads ran out, they drove on railway tracks, tie to tie, for hundreds of miles.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "railway",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "tie",
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "tie",
+     "nth": 2,
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "hundreds",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:rumble",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 11.35,
+   "end": 13.15,
+   "line": "Alaska was so impossible,",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "impossible,",
+     "name": "toon3d:fail",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 13.15,
+   "end": 15.5,
+   "line": "the race was rerouted by steamer to Japan.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "steamer",
+     "name": "toon3d:horn",
+     "gain": -12
+    },
+    {
+     "word": "Japan.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 15.5,
+   "end": 19.0,
+   "line": "Then Siberia's spring thaw turned the plains into mud.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:engine",
+     "gain": -15
+    },
+    {
+     "word": "Siberia's",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "mud.",
+     "name": "toon3d:splash",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 19.0,
+   "end": 22.35,
+   "line": "But here's the part... the Germans reached Paris first.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:suspense",
+     "gain": -12
+    },
+    {
+     "word": "Germans",
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "word": "first.",
+     "name": "toon3d:crowd",
+     "gain": -11
+    },
+    {
+     "word": "first.",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 22.35,
+   "end": 24.0,
+   "line": "They got a 30-day penalty,",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "penalty,",
+     "offset": -0.15,
+     "name": "toon3d:stamp",
+     "gain": -5
+    },
+    {
+     "word": "penalty,",
+     "name": "toon3d:fail",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 24.0,
+   "end": 26.85,
+   "line": "for skipping Japan and shipping their car part of the way by train.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:horn",
+     "gain": -13
+    },
+    {
+     "word": "skipping",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "train.",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 26.85,
+   "end": 29.3,
+   "line": "So the American Thomas Flyer won,",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "word": "won,",
+     "name": "toon3d:success",
+     "gain": -9
+    },
+    {
+     "word": "won,",
+     "name": "toon3d:crowd",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 29.3,
+   "end": 33.9,
+   "line": "after 169 days and about 16,700 kilometers.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "169",
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "about",
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "kilometers.",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 33.9,
+   "end": 36.5,
+   "line": "Only three of the six cars ever finished.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "three",
+     "offset": 0.1,
+     "name": "toon3d:fail",
+     "gain": -12
+    },
+    {
+     "word": "finished.",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "finished.",
+     "offset": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 36.5,
+   "end": 39.05,
+   "line": "The winning margin? 26 days...",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "word": "26",
+     "name": "toon3d:impact",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 39.05,
+   "end": 42.0,
+   "line": "still called the largest in motorsport history.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:splash",
+     "gain": -14
+    },
+    {
+     "word": "largest",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "motorsport",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "history.",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}
