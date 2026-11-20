@@ -1,0 +1,479 @@
+{
+ "duration": 41.4,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 4.42,
+   "line": "One night in 1888, tens of thousands of sheep lost their minds.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:rumble",
+     "gain": -10,
+     "dur": 4
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -14,
+     "dur": 4
+    },
+    {
+     "word": "1888,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "tens",
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "word": "minds.",
+     "name": "toon3d:crash",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 4.42,
+   "end": 6.85,
+   "line": "November third. Oxfordshire, England.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:wind",
+     "gain": -22,
+     "dur": 2.4
+    },
+    {
+     "word": "Oxfordshire,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 6.85,
+   "end": 8.15,
+   "line": "Around eight at night.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:clock",
+     "gain": -10
+    },
+    {
+     "at": 0.95,
+     "name": "toon3d:zap",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 8.15,
+   "end": 10.02,
+   "line": "Across about two hundred square miles,",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "two",
+     "name": "toon3d:magic",
+     "gain": -14
+    },
+    {
+     "word": "square",
+     "name": "toon3d:impact",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.02,
+   "end": 11.76,
+   "line": "flocks panicked at the same moment.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "word": "panicked",
+     "name": "toon3d:gasp",
+     "gain": -12
+    },
+    {
+     "word": "panicked",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "word": "same",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.76,
+   "end": 13.1,
+   "line": "They broke out of their fields and",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:crash",
+     "gain": -9
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -12,
+     "dur": 1.4
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.1,
+   "end": 15.0,
+   "line": "scattered for miles in the dark.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "miles",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:wind",
+     "gain": -18,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.0,
+   "end": 16.95,
+   "line": "But here's the strange part...",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:suspense",
+     "gain": -12,
+     "dur": 2
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:creak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 16.95,
+   "end": 20.36,
+   "line": "The next morning, sheep were found crowded into corners of fields,",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:bell",
+     "gain": -14
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.36,
+   "end": 22.5,
+   "line": "some panting with terror under hedges.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:heartbeat",
+     "gain": -10,
+     "dur": 2
+    },
+    {
+     "word": "terror",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 22.5,
+   "end": 24.22,
+   "line": "The Times wrote that a thousand men",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "thousand",
+     "name": "toon3d:scratch",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.22,
+   "end": 27.0,
+   "line": "could not have frightened and released all these sheep.",
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "not",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "released",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.0,
+   "end": 28.6,
+   "line": "And a year later...",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:riser",
+     "gain": -16,
+     "dur": 1.5
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 28.6,
+   "end": 30.7,
+   "line": "it happened again. In Berkshire.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:rumble",
+     "gain": -11,
+     "dur": 2
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:footsteps",
+     "gain": -13,
+     "dur": 2
+    },
+    {
+     "word": "again.",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 30.7,
+   "end": 32.6,
+   "line": "The best explanation ever published?",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "word": "explanation",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 32.6,
+   "end": 35.45,
+   "line": "An intensely dark night, with occasional flashes of lightning.",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -16,
+     "dur": 2.8
+    },
+    {
+     "word": "intensely",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "flashes",
+     "name": "toon3d:thunder",
+     "gain": -7
+    },
+    {
+     "word": "lightning.",
+     "name": "toon3d:thunder",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 35.45,
+   "end": 37.6,
+   "line": "And sheep are notoriously timid.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:heartbeat",
+     "gain": -11,
+     "dur": 2
+    },
+    {
+     "word": "notoriously",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 37.6,
+   "end": 41.4,
+   "line": "To this day, nobody knows what really set them off.",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:suspense",
+     "gain": -13,
+     "dur": 3
+    },
+    {
+     "word": "nobody",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 3.2,
+     "name": "toon3d:rumble",
+     "gain": -11,
+     "dur": 0.6
+    }
+   ]
+  }
+ ]
+}
