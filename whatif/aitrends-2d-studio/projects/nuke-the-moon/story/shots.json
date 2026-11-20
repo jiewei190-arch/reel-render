@@ -1,0 +1,466 @@
+{
+ "duration": 42.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.62,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:boom",
+     "gain": -14
+    },
+    {
+     "word": "nuke",
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "Moon.",
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.62,
+   "end": 6.9,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "top-secret",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "word": "A119.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s03",
+   "start": 6.9,
+   "end": 10.36,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "word": "early",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "Space",
+     "name": "toon3d:stamp",
+     "gain": -7
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  },
+  {
+   "id": "s04",
+   "start": 10.36,
+   "end": 13.96,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "force,",
+     "name": "toon3d:punch",
+     "gain": -6
+    },
+    {
+     "word": "show",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "boost",
+     "name": "toon3d:crowd",
+     "gain": -16
+    },
+    {
+     "word": "morale",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s05",
+   "start": 13.96,
+   "end": 16.62,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:engine",
+     "gain": -12,
+     "dur": 2.5
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "small",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   }
+  },
+  {
+   "id": "s06",
+   "start": 16.62,
+   "end": 18.55,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -12
+    },
+    {
+     "word": "impact.",
+     "name": "toon3d:boom",
+     "gain": -8
+    },
+    {
+     "word": "impact.",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s07",
+   "start": 18.55,
+   "end": 20.2,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "visible",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s08",
+   "start": 20.2,
+   "end": 22.05,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -20,
+     "dur": 1.8
+    },
+    {
+     "word": "naked",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  },
+  {
+   "id": "s09",
+   "start": 22.05,
+   "end": 25.6,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "But",
+     "name": "toon3d:scratch",
+     "gain": -10
+    },
+    {
+     "word": "Carl",
+     "name": "toon3d:ding",
+     "gain": -8
+    },
+    {
+     "word": "Carl",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s10",
+   "start": 25.6,
+   "end": 28.6,
+   "line": "",
+   "sfx": [
+    {
+     "word": "working",
+     "name": "toon3d:scratch",
+     "gain": -16
+    },
+    {
+     "word": "dust",
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "dust",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s11",
+   "start": 28.6,
+   "end": 30.45,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:creak",
+     "gain": -12
+    },
+    {
+     "word": "heavy,",
+     "name": "toon3d:thud",
+     "gain": -6
+    },
+    {
+     "word": "heavy,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s12",
+   "start": 30.45,
+   "end": 33.05,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "kiloton",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s13",
+   "start": 33.05,
+   "end": 36.05,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "January",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "canceled",
+     "name": "toon3d:stamp",
+     "gain": -4
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s14",
+   "start": 36.05,
+   "end": 37.9,
+   "line": "",
+   "sfx": [
+    {
+     "word": "outweighed",
+     "name": "toon3d:thud",
+     "gain": -7
+    },
+    {
+     "word": "benefits.",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s15",
+   "start": 37.9,
+   "end": 40.15,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:buzz",
+     "gain": -14,
+     "dur": 1.4
+    },
+    {
+     "word": "destroyed",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s16",
+   "start": 40.15,
+   "end": 42.5,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "un-nuked.",
+     "name": "toon3d:success",
+     "gain": -12
+    },
+    {
+     "at": 1.95,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  }
+ ]
+}

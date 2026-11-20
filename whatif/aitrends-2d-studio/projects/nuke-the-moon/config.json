@@ -1,0 +1,47 @@
+{
+ "title": "Nuke the Moon",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.5,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:tense",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "1958",
+   "nuke",
+   "moon",
+   "a119",
+   "soviet",
+   "force",
+   "warhead",
+   "flash",
+   "naked",
+   "carl",
+   "sagan",
+   "dust",
+   "17",
+   "kiloton",
+   "1959",
+   "canceled",
+   "1987",
+   "unnuked"
+  ]
+ }
+}

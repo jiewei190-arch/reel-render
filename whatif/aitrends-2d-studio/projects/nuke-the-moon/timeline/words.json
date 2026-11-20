@@ -1,0 +1,650 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "1958,",
+   "start": 0.22,
+   "end": 0.78
+  },
+  {
+   "word": "the",
+   "start": 1.34,
+   "end": 1.36
+  },
+  {
+   "word": "U.S.",
+   "start": 1.36,
+   "end": 1.86
+  },
+  {
+   "word": "Air",
+   "start": 1.86,
+   "end": 1.9
+  },
+  {
+   "word": "Force",
+   "start": 1.9,
+   "end": 2.18
+  },
+  {
+   "word": "planned",
+   "start": 2.18,
+   "end": 2.52
+  },
+  {
+   "word": "to",
+   "start": 2.52,
+   "end": 2.82
+  },
+  {
+   "word": "nuke",
+   "start": 2.82,
+   "end": 2.96
+  },
+  {
+   "word": "the",
+   "start": 2.96,
+   "end": 3.14
+  },
+  {
+   "word": "Moon.",
+   "start": 3.14,
+   "end": 3.36
+  },
+  {
+   "word": "A",
+   "start": 3.72,
+   "end": 3.84
+  },
+  {
+   "word": "top-secret",
+   "start": 3.84,
+   "end": 4.32
+  },
+  {
+   "word": "study,",
+   "start": 4.32,
+   "end": 4.78
+  },
+  {
+   "word": "called",
+   "start": 4.78,
+   "end": 5.2
+  },
+  {
+   "word": "Project",
+   "start": 5.2,
+   "end": 5.62
+  },
+  {
+   "word": "A119.",
+   "start": 5.62,
+   "end": 6.98
+  },
+  {
+   "word": "The",
+   "start": 6.98,
+   "end": 7.16
+  },
+  {
+   "word": "Soviet",
+   "start": 7.16,
+   "end": 7.46
+  },
+  {
+   "word": "Union",
+   "start": 7.46,
+   "end": 7.82
+  },
+  {
+   "word": "had",
+   "start": 7.82,
+   "end": 8.16
+  },
+  {
+   "word": "taken",
+   "start": 8.16,
+   "end": 8.4
+  },
+  {
+   "word": "an",
+   "start": 8.4,
+   "end": 8.66
+  },
+  {
+   "word": "early",
+   "start": 8.66,
+   "end": 8.94
+  },
+  {
+   "word": "lead",
+   "start": 8.94,
+   "end": 9.2
+  },
+  {
+   "word": "in",
+   "start": 9.2,
+   "end": 9.42
+  },
+  {
+   "word": "the",
+   "start": 9.42,
+   "end": 9.5
+  },
+  {
+   "word": "Space",
+   "start": 9.5,
+   "end": 9.72
+  },
+  {
+   "word": "Race.",
+   "start": 9.72,
+   "end": 10.1
+  },
+  {
+   "word": "So",
+   "start": 10.44,
+   "end": 10.72
+  },
+  {
+   "word": "the",
+   "start": 10.72,
+   "end": 10.92
+  },
+  {
+   "word": "idea",
+   "start": 10.92,
+   "end": 11.16
+  },
+  {
+   "word": "was",
+   "start": 11.16,
+   "end": 11.38
+  },
+  {
+   "word": "a",
+   "start": 11.38,
+   "end": 11.54
+  },
+  {
+   "word": "show",
+   "start": 11.54,
+   "end": 11.66
+  },
+  {
+   "word": "of",
+   "start": 11.66,
+   "end": 11.82
+  },
+  {
+   "word": "force,",
+   "start": 11.82,
+   "end": 12.14
+  },
+  {
+   "word": "to",
+   "start": 12.14,
+   "end": 12.66
+  },
+  {
+   "word": "boost",
+   "start": 12.66,
+   "end": 12.9
+  },
+  {
+   "word": "morale",
+   "start": 12.9,
+   "end": 13.18
+  },
+  {
+   "word": "back",
+   "start": 13.18,
+   "end": 13.44
+  },
+  {
+   "word": "home.",
+   "start": 13.44,
+   "end": 13.84
+  },
+  {
+   "word": "Fire",
+   "start": 14.04,
+   "end": 14.32
+  },
+  {
+   "word": "a",
+   "start": 14.32,
+   "end": 14.54
+  },
+  {
+   "word": "small",
+   "start": 14.54,
+   "end": 14.82
+  },
+  {
+   "word": "nuclear",
+   "start": 14.82,
+   "end": 15.18
+  },
+  {
+   "word": "warhead",
+   "start": 15.18,
+   "end": 15.66
+  },
+  {
+   "word": "at",
+   "start": 15.66,
+   "end": 15.88
+  },
+  {
+   "word": "the",
+   "start": 15.88,
+   "end": 16.0
+  },
+  {
+   "word": "Moon...",
+   "start": 16.0,
+   "end": 16.2
+  },
+  {
+   "word": "and",
+   "start": 16.72,
+   "end": 17.52
+  },
+  {
+   "word": "set",
+   "start": 17.52,
+   "end": 17.64
+  },
+  {
+   "word": "it",
+   "start": 17.64,
+   "end": 17.76
+  },
+  {
+   "word": "off",
+   "start": 17.76,
+   "end": 17.88
+  },
+  {
+   "word": "on",
+   "start": 17.88,
+   "end": 18.04
+  },
+  {
+   "word": "impact.",
+   "start": 18.04,
+   "end": 18.36
+  },
+  {
+   "word": "The",
+   "start": 18.64,
+   "end": 18.74
+  },
+  {
+   "word": "flash",
+   "start": 18.74,
+   "end": 19.0
+  },
+  {
+   "word": "would",
+   "start": 19.0,
+   "end": 19.22
+  },
+  {
+   "word": "have",
+   "start": 19.22,
+   "end": 19.32
+  },
+  {
+   "word": "been",
+   "start": 19.32,
+   "end": 19.44
+  },
+  {
+   "word": "faintly",
+   "start": 19.44,
+   "end": 19.68
+  },
+  {
+   "word": "visible",
+   "start": 19.68,
+   "end": 19.98
+  },
+  {
+   "word": "from",
+   "start": 19.98,
+   "end": 20.28
+  },
+  {
+   "word": "Earth,",
+   "start": 20.28,
+   "end": 20.48
+  },
+  {
+   "word": "with",
+   "start": 20.8,
+   "end": 20.92
+  },
+  {
+   "word": "the",
+   "start": 20.92,
+   "end": 21.06
+  },
+  {
+   "word": "naked",
+   "start": 21.06,
+   "end": 21.22
+  },
+  {
+   "word": "eye.",
+   "start": 21.22,
+   "end": 21.52
+  },
+  {
+   "word": "But",
+   "start": 22.14,
+   "end": 22.44
+  },
+  {
+   "word": "here's",
+   "start": 22.68,
+   "end": 22.98
+  },
+  {
+   "word": "the",
+   "start": 22.98,
+   "end": 23.1
+  },
+  {
+   "word": "wild",
+   "start": 23.1,
+   "end": 23.38
+  },
+  {
+   "word": "part...",
+   "start": 23.38,
+   "end": 23.72
+  },
+  {
+   "word": "a",
+   "start": 24.04,
+   "end": 24.14
+  },
+  {
+   "word": "young",
+   "start": 24.14,
+   "end": 24.34
+  },
+  {
+   "word": "Carl",
+   "start": 24.34,
+   "end": 24.62
+  },
+  {
+   "word": "Sagan",
+   "start": 24.62,
+   "end": 24.88
+  },
+  {
+   "word": "was",
+   "start": 24.88,
+   "end": 25.14
+  },
+  {
+   "word": "on",
+   "start": 25.14,
+   "end": 25.28
+  },
+  {
+   "word": "the",
+   "start": 25.28,
+   "end": 25.4
+  },
+  {
+   "word": "team.",
+   "start": 25.4,
+   "end": 25.66
+  },
+  {
+   "word": "His",
+   "start": 25.66,
+   "end": 26.08
+  },
+  {
+   "word": "job:",
+   "start": 26.08,
+   "end": 26.4
+  },
+  {
+   "word": "working",
+   "start": 26.64,
+   "end": 26.86
+  },
+  {
+   "word": "out",
+   "start": 26.86,
+   "end": 27.08
+  },
+  {
+   "word": "how",
+   "start": 27.08,
+   "end": 27.24
+  },
+  {
+   "word": "the",
+   "start": 27.24,
+   "end": 27.38
+  },
+  {
+   "word": "dust",
+   "start": 27.38,
+   "end": 27.56
+  },
+  {
+   "word": "cloud",
+   "start": 27.56,
+   "end": 27.78
+  },
+  {
+   "word": "would",
+   "start": 27.78,
+   "end": 27.96
+  },
+  {
+   "word": "spread.",
+   "start": 27.96,
+   "end": 28.28
+  },
+  {
+   "word": "A",
+   "start": 28.7,
+   "end": 28.7
+  },
+  {
+   "word": "hydrogen",
+   "start": 28.7,
+   "end": 28.98
+  },
+  {
+   "word": "bomb",
+   "start": 28.98,
+   "end": 29.32
+  },
+  {
+   "word": "was",
+   "start": 29.32,
+   "end": 29.52
+  },
+  {
+   "word": "too",
+   "start": 29.52,
+   "end": 29.78
+  },
+  {
+   "word": "heavy,",
+   "start": 29.78,
+   "end": 30.16
+  },
+  {
+   "word": "so",
+   "start": 30.5,
+   "end": 30.62
+  },
+  {
+   "word": "they",
+   "start": 30.62,
+   "end": 30.74
+  },
+  {
+   "word": "picked",
+   "start": 30.74,
+   "end": 30.94
+  },
+  {
+   "word": "a",
+   "start": 30.94,
+   "end": 31.12
+  },
+  {
+   "word": "1.7",
+   "start": 31.12,
+   "end": 31.98
+  },
+  {
+   "word": "kiloton",
+   "start": 31.98,
+   "end": 32.4
+  },
+  {
+   "word": "warhead.",
+   "start": 32.4,
+   "end": 32.9
+  },
+  {
+   "word": "In",
+   "start": 33.12,
+   "end": 33.26
+  },
+  {
+   "word": "January",
+   "start": 33.26,
+   "end": 33.58
+  },
+  {
+   "word": "1959,",
+   "start": 33.58,
+   "end": 34.38
+  },
+  {
+   "word": "the",
+   "start": 34.9,
+   "end": 34.92
+  },
+  {
+   "word": "Air",
+   "start": 34.92,
+   "end": 35.06
+  },
+  {
+   "word": "Force",
+   "start": 35.06,
+   "end": 35.28
+  },
+  {
+   "word": "canceled",
+   "start": 35.28,
+   "end": 35.62
+  },
+  {
+   "word": "it.",
+   "start": 35.62,
+   "end": 35.88
+  },
+  {
+   "word": "The",
+   "start": 36.12,
+   "end": 36.22
+  },
+  {
+   "word": "risks",
+   "start": 36.22,
+   "end": 36.44
+  },
+  {
+   "word": "outweighed",
+   "start": 36.44,
+   "end": 36.9
+  },
+  {
+   "word": "the",
+   "start": 36.9,
+   "end": 37.0
+  },
+  {
+   "word": "benefits.",
+   "start": 37.0,
+   "end": 37.34
+  },
+  {
+   "word": "The",
+   "start": 37.98,
+   "end": 38.1
+  },
+  {
+   "word": "reports",
+   "start": 38.1,
+   "end": 38.36
+  },
+  {
+   "word": "were",
+   "start": 38.36,
+   "end": 38.54
+  },
+  {
+   "word": "destroyed",
+   "start": 38.54,
+   "end": 38.86
+  },
+  {
+   "word": "in",
+   "start": 38.86,
+   "end": 39.06
+  },
+  {
+   "word": "1987...",
+   "start": 39.06,
+   "end": 39.6
+  },
+  {
+   "word": "and",
+   "start": 40.26,
+   "end": 40.32
+  },
+  {
+   "word": "the",
+   "start": 40.32,
+   "end": 40.4
+  },
+  {
+   "word": "Moon",
+   "start": 40.4,
+   "end": 40.6
+  },
+  {
+   "word": "remains",
+   "start": 40.6,
+   "end": 41.22
+  },
+  {
+   "word": "un-nuked.",
+   "start": 41.22,
+   "end": 41.92
+  }
+ ]
+}

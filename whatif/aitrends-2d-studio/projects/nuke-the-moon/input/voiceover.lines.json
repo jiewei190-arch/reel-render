@@ -1,0 +1,214 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 42.269,
+ "render_s": 309.8,
+ "qa_fail_lines": [
+  2
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1958, the U.S. Air Force planned to nuke the Moon.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen fifty-eight, the U.S. Air Force planned to nuke the Moon.",
+     "seed": 7,
+     "heard": "In 1958, the U.S. Air Force planned to nuke the moon.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.552
+  },
+  {
+   "n": 2,
+   "text": "A top-secret study, called Project A one-nineteen.",
+   "start": 3.692,
+   "parts": [
+    {
+     "tts": "A top-secret study, called Project A one-nineteen.",
+     "seed": 7,
+     "heard": "a top-secret study called Project A-119.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.837
+  },
+  {
+   "n": 3,
+   "text": "The Soviet Union had taken an early lead in the Space Race.",
+   "start": 6.977,
+   "parts": [
+    {
+     "tts": "The Soviet Union had taken an early lead in the Space Race.",
+     "seed": 7,
+     "heard": "The Soviet Union had taken an early lead in the space race.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.292
+  },
+  {
+   "n": 4,
+   "text": "So the idea was a show of force, to boost morale back home.",
+   "start": 10.432,
+   "parts": [
+    {
+     "tts": "So the idea was a show of force, to boost morale back home.",
+     "seed": 7,
+     "heard": "So the idea was a show of force to boost morale back home.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.938
+  },
+  {
+   "n": 5,
+   "text": "Fire a small nuclear warhead at the Moon... and set it off on impact.",
+   "start": 14.078,
+   "parts": [
+    {
+     "tts": "Fire a small nuclear warhead at the Moon...",
+     "seed": 7,
+     "heard": "Fire a small nuclear warhead at the moon.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and set it off on impact.",
+     "seed": 7,
+     "heard": "and set it off on impact.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.477
+  },
+  {
+   "n": 6,
+   "text": "The flash would have been faintly visible from Earth, with the naked eye.",
+   "start": 18.617,
+   "parts": [
+    {
+     "tts": "The flash would have been faintly visible from Earth, with the naked eye.",
+     "seed": 7,
+     "heard": "The flash would have been faintly visible from Earth, with the naked eye.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.711
+  },
+  {
+   "n": 7,
+   "text": "But here's the wild part... a young Carl Sagan was on the team.",
+   "start": 22.101,
+   "parts": [
+    {
+     "tts": "But here's the wild part...",
+     "seed": 7,
+     "heard": "But here's the wild part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "a young Carl Sagan was on the team.",
+     "seed": 11,
+     "heard": "A young Carl Sagan was on the team.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.828
+  },
+  {
+   "n": 8,
+   "text": "His job: working out how the dust cloud would spread.",
+   "start": 25.968,
+   "parts": [
+    {
+     "tts": "His job: working out how the dust cloud would spread.",
+     "seed": 7,
+     "heard": "his job, working out how the dust cloud would spread.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.438
+  },
+  {
+   "n": 9,
+   "text": "A hydrogen bomb was too heavy, so they picked a 1.7 kiloton warhead.",
+   "start": 28.578,
+   "parts": [
+    {
+     "tts": "A hydrogen bomb was too heavy, so they picked a one point seven kiloton warhead.",
+     "seed": 7,
+     "heard": "A hydrogen bomb was too heavy, so they picked a 1.7 kiloton warhead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.992
+  },
+  {
+   "n": 10,
+   "text": "In January 1959, the Air Force canceled it. The risks outweighed the benefits.",
+   "start": 33.132,
+   "parts": [
+    {
+     "tts": "In January nineteen fifty-nine, the Air Force canceled it. The risks outweighed the benefits.",
+     "seed": 7,
+     "heard": "In January 1959, the Air Force canceled it. The risks outweighed the benefits.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.617
+  },
+  {
+   "n": 11,
+   "text": "The reports were destroyed in 1987... and the Moon remains un-nuked.",
+   "start": 37.957,
+   "parts": [
+    {
+     "tts": "The reports were destroyed in nineteen eighty-seven...",
+     "seed": 7,
+     "heard": "The reports were destroyed in 1987.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and the Moon remains un-nuked.",
+     "seed": 7,
+     "heard": "and the moon remains un-nuked.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.169
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}
