@@ -298,7 +298,6 @@ registerShot('s14', { kind: '3d',
   overlay(g, t, info, s) {
     vignette(g, 0.35);
     stamp(g, t, 'SUSPECTS', { at: 0.0, x: 540, y: 300, size: 80, color: '#ffffff', fill: '#2a3a6a', rot: -0.05 });
-    reactions(g, t, s, [{ fx: 'question', on: s.sus[2], at: at(info, 'kangaroos...', 1.9) + 0.2, until: at(info, 'balloon.', 3.4) - 0.4, scale: 0.8 }]);
   },
 });
 

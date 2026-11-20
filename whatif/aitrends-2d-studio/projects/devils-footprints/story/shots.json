@@ -314,8 +314,8 @@
    "end": 26.35,
    "line": "In total: an estimated 40 to 100 miles of tracks.",
    "in": {
-    "type": "iris",
-    "dur": 0.4
+    "type": "whipBlur",
+    "dir": 1
    },
    "sfx": [
     {
