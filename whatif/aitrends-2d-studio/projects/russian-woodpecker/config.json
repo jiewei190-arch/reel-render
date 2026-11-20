@@ -1,0 +1,49 @@
+{
+ "title": "The Russian Woodpecker",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 43.1,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "13",
+   "tapping",
+   "worldwide.",
+   "1976.",
+   "10",
+   "aviation.",
+   "russian",
+   "woodpecker.",
+   "never",
+   "claimed",
+   "chernobyl.",
+   "radar,",
+   "megawatts.",
+   "thousands",
+   "blankers,",
+   "1989,",
+   "stopped.",
+   "still",
+   "standing,",
+   "abandoned,"
+  ]
+ }
+}

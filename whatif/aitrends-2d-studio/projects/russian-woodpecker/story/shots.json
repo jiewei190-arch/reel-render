@@ -1,0 +1,371 @@
+{
+ "duration": 43.1,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.5,
+   "line": "For 13 years, a mystery tapping hijacked radios worldwide.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sfx/taps_4.wav",
+     "gain": -9
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -20,
+     "dur": 3.5
+    },
+    {
+     "word": "worldwide.",
+     "name": "toon3d:thud",
+     "gain": -12,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 3.5,
+   "end": 8.38,
+   "line": "July 1976. Shortwave radios suddenly started doing... this.",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "Shortwave",
+     "name": "toon3d:whoosh",
+     "gain": -14,
+     "offset": -0.1
+    },
+    {
+     "word": "this.",
+     "name": "sfx/taps_1.5.wav",
+     "gain": -7,
+     "offset": -0.95
+    },
+    {
+     "word": "this.",
+     "name": "sfx/taps_0.8.wav",
+     "gain": -9,
+     "offset": 0.55
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s03",
+   "start": 8.38,
+   "end": 11.77,
+   "line": "10 sharp taps a second. Over and over and over.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sfx/taps_2.5.wav",
+     "gain": -14
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "word": "Over",
+     "name": "sfx/taps_1.5.wav",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s04",
+   "start": 11.77,
+   "end": 16.07,
+   "line": "It hopped across frequencies, drowning out broadcasts, ham radio, even aviation.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "broadcasts,",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "ham",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "even",
+     "name": "sfx/taps_1.5.wav",
+     "gain": -11
+    },
+    {
+     "word": "aviation.",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s05",
+   "start": 16.07,
+   "end": 18.47,
+   "line": "Listeners nicknamed it the Russian Woodpecker.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sfx/taps_2.5.wav",
+     "gain": -12
+    },
+    {
+     "word": "Russian",
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "offset": -0.1
+    },
+    {
+     "word": "Woodpecker.",
+     "name": "toon3d:stamp",
+     "gain": -7,
+     "offset": -0.05
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.15
+   }
+  },
+  {
+   "id": "s06",
+   "start": 18.47,
+   "end": 21.69,
+   "line": "But here's the part... the Soviet Union never claimed it.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:suspense",
+     "gain": -16
+    },
+    {
+     "word": "never",
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "word": "claimed",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  },
+  {
+   "id": "s07",
+   "start": 21.69,
+   "end": 25.44,
+   "line": "Radio hobbyists and NATO triangulated it to a spot near Chernobyl.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "triangulated",
+     "name": "toon3d:scratch",
+     "gain": -14
+    },
+    {
+     "word": "Chernobyl.",
+     "name": "toon3d:impact",
+     "gain": -11,
+     "offset": -0.1
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s08",
+   "start": 25.44,
+   "end": 30.23,
+   "line": "It was a giant Soviet radar, watching for missiles over the horizon, at over 10 megawatts.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -18,
+     "dur": 2
+    },
+    {
+     "word": "giant",
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "offset": -0.1
+    },
+    {
+     "word": "watching",
+     "name": "toon3d:swoosh",
+     "gain": -11,
+     "offset": -0.1
+    },
+    {
+     "word": "at",
+     "after": 2.5,
+     "name": "toon3d:zap",
+     "gain": -10,
+     "offset": -0.1
+    },
+    {
+     "word": "at",
+     "after": 2.5,
+     "name": "sfx/taps_1.5.wav",
+     "gain": -10
+    },
+    {
+     "word": "megawatts.",
+     "name": "toon3d:impact",
+     "gain": -9,
+     "offset": -0.1
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s09",
+   "start": 30.23,
+   "end": 35.88,
+   "line": "Thousands of complaints poured in. Some radios even came with Woodpecker Blankers, just to block it.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -9
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:thud",
+     "gain": -9
+    },
+    {
+     "at": 1.15,
+     "name": "toon3d:thud",
+     "gain": -9
+    },
+    {
+     "word": "Some",
+     "name": "sfx/taps_1.5.wav",
+     "gain": -15,
+     "offset": -0.1
+    },
+    {
+     "word": "Blankers,",
+     "name": "toon3d:click",
+     "gain": -9,
+     "offset": 0.42
+    },
+    {
+     "word": "Blankers,",
+     "name": "toon3d:pop",
+     "gain": -10,
+     "offset": 0.5
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s10",
+   "start": 35.88,
+   "end": 38.81,
+   "line": "In 1989, the tapping finally stopped.",
+   "sfx": [
+    {
+     "word": "1989,",
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "offset": -0.1
+    },
+    {
+     "at": 0.0,
+     "name": "sfx/taps_1.5.wav",
+     "gain": -14
+    },
+    {
+     "word": "stopped.",
+     "name": "toon3d:click",
+     "gain": -8,
+     "offset": -0.2
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   }
+  },
+  {
+   "id": "s11",
+   "start": 38.81,
+   "end": 43.1,
+   "line": "But the giant antenna is still standing, abandoned, in the woods near Chernobyl.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -16,
+     "dur": 4.3
+    },
+    {
+     "word": "still",
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "offset": -0.1
+    },
+    {
+     "word": "abandoned,",
+     "name": "toon3d:stamp",
+     "gain": -8,
+     "offset": -0.05
+    },
+    {
+     "at": 4.0,
+     "name": "toon3d:whoosh",
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  }
+ ]
+}

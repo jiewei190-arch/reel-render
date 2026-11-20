@@ -1,0 +1,205 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 42.497,
+ "render_s": 256.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "For 13 years, a mystery tapping hijacked radios worldwide.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "For thirteen years, a mystery tapping hijacked radios worldwide.",
+     "seed": 7,
+     "heard": "for 13 years, a mystery tapping hijacked radios worldwide.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.433
+  },
+  {
+   "n": 2,
+   "text": "July 1976. Shortwave radios suddenly started doing... this.",
+   "start": 3.573,
+   "parts": [
+    {
+     "tts": "July nineteen seventy-six. Shortwave radios suddenly started doing...",
+     "seed": 7,
+     "heard": "July 1976. Shortwave radios suddenly started doing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "this.",
+     "seed": 7,
+     "heard": "this.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.31
+  },
+  {
+   "n": 3,
+   "text": "10 sharp taps a second. Over and over and over.",
+   "start": 8.45,
+   "parts": [
+    {
+     "tts": "ten sharp taps a second. Over and over and over.",
+     "seed": 7,
+     "heard": "10 sharp taps a second, over and over and over.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.703
+  },
+  {
+   "n": 4,
+   "text": "It hopped across frequencies, drowning out broadcasts, ham radio, even aviation.",
+   "start": 11.843,
+   "parts": [
+    {
+     "tts": "It hopped across frequencies, drowning out broadcasts, ham radio, even aviation.",
+     "seed": 7,
+     "heard": "It hopped across frequencies, drowning out broadcasts, ham radio, even aviation.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.004
+  },
+  {
+   "n": 5,
+   "text": "Listeners nicknamed it the Russian Woodpecker.",
+   "start": 16.144,
+   "parts": [
+    {
+     "tts": "Listeners nicknamed it the Russian Woodpecker.",
+     "seed": 7,
+     "heard": "Listeners nicknamed it the Russian Woodpecker.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.254
+  },
+  {
+   "n": 6,
+   "text": "But here's the part... the Soviet Union never claimed it.",
+   "start": 18.544,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the Soviet Union never claimed it.",
+     "seed": 7,
+     "heard": "The Soviet Union never claimed it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.616
+  },
+  {
+   "n": 7,
+   "text": "Radio hobbyists and NATO triangulated it to a spot near Chernobyl.",
+   "start": 21.756,
+   "parts": [
+    {
+     "tts": "Radio hobbyists and nato triangulated it to a spot near Chernobyl.",
+     "seed": 7,
+     "heard": "Radio hobbyists and NATO triangulated it to a spot near Chernobyl.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.37
+  },
+  {
+   "n": 8,
+   "text": "It was a giant Soviet radar, watching for missiles over the horizon, at over 10 megawatts.",
+   "start": 25.51,
+   "parts": [
+    {
+     "tts": "It was a giant Soviet radar, watching for missiles over the horizon, at over ten megawatts.",
+     "seed": 7,
+     "heard": "It was a giant Soviet radar watching for missiles over the horizon at over 10 megawatts.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.165
+  },
+  {
+   "n": 9,
+   "text": "Thousands of complaints poured in. Some radios even came with Woodpecker Blankers, just to block it.",
+   "start": 30.305,
+   "parts": [
+    {
+     "tts": "Thousands of complaints poured in. Some radios even came with Woodpecker Blankers, just to block it.",
+     "seed": 7,
+     "heard": "Thousands of complaints poured in. Some radios even came with woodpecker-blankers, just to block it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 35.809
+  },
+  {
+   "n": 10,
+   "text": "In 1989, the tapping finally stopped.",
+   "start": 35.949,
+   "parts": [
+    {
+     "tts": "In nineteen eighty-nine, the tapping finally stopped.",
+     "seed": 7,
+     "heard": "In 1989, the tapping finally stopped.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.539
+  },
+  {
+   "n": 11,
+   "text": "But the giant antenna is still standing, abandoned, in the woods near Chernobyl.",
+   "start": 38.879,
+   "parts": [
+    {
+     "tts": "But the giant antenna is still standing, abandoned, in the woods near Chernobyl.",
+     "seed": 7,
+     "heard": "but the giant antenna is still standing, abandoned, in the woods near Chernobyl.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.397
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.08,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}
