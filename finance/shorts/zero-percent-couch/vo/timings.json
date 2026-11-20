@@ -1,0 +1,452 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your twelve hundred dollar couch says no interest for a year.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.089,
+     "end": 0.231
+    },
+    {
+     "w": "twelve",
+     "t": 0.302,
+     "end": 0.444
+    },
+    {
+     "w": "hundred",
+     "t": 0.515,
+     "end": 0.657
+    },
+    {
+     "w": "dollar",
+     "t": 0.799,
+     "end": 0.941
+    },
+    {
+     "w": "couch",
+     "t": 1.083,
+     "end": 1.438
+    },
+    {
+     "w": "says",
+     "t": 1.509,
+     "end": 1.722
+    },
+    {
+     "w": "no",
+     "t": 1.864,
+     "end": 2.006
+    },
+    {
+     "w": "interest",
+     "t": 2.077,
+     "end": 2.432
+    },
+    {
+     "w": "for",
+     "t": 2.503,
+     "end": 2.574
+    },
+    {
+     "w": "a",
+     "t": 2.645,
+     "end": 2.716
+    },
+    {
+     "w": "year.",
+     "t": 2.787,
+     "end": 3.355
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same couch, same store card. Saver pays a hundred a month. Spender pays ninety-five.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 3.417,
+     "end": 3.63
+    },
+    {
+     "w": "couch,",
+     "t": 3.701,
+     "end": 4.269
+    },
+    {
+     "w": "same",
+     "t": 4.34,
+     "end": 4.482
+    },
+    {
+     "w": "store",
+     "t": 4.553,
+     "end": 4.766
+    },
+    {
+     "w": "card.",
+     "t": 4.837,
+     "end": 5.476
+    },
+    {
+     "w": "Saver",
+     "t": 5.511,
+     "end": 5.76
+    },
+    {
+     "w": "pays",
+     "t": 5.831,
+     "end": 6.044
+    },
+    {
+     "w": "a",
+     "t": 6.115,
+     "end": 6.186
+    },
+    {
+     "w": "hundred",
+     "t": 6.257,
+     "end": 6.47
+    },
+    {
+     "w": "a",
+     "t": 6.541,
+     "end": 6.576
+    },
+    {
+     "w": "month.",
+     "t": 6.612,
+     "end": 7.18
+    },
+    {
+     "w": "Spender",
+     "t": 7.251,
+     "end": 7.535
+    },
+    {
+     "w": "pays",
+     "t": 7.677,
+     "end": 7.89
+    },
+    {
+     "w": "ninety-five.",
+     "t": 7.961,
+     "end": 8.813
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Twelve months later, Saver is done. Spender is just sixty dollars short. Close enough?",
+   "words": [
+    {
+     "w": "Twelve",
+     "t": 8.875,
+     "end": 9.088
+    },
+    {
+     "w": "months",
+     "t": 9.159,
+     "end": 9.372
+    },
+    {
+     "w": "later,",
+     "t": 9.443,
+     "end": 9.94
+    },
+    {
+     "w": "Saver",
+     "t": 10.011,
+     "end": 10.295
+    },
+    {
+     "w": "is",
+     "t": 10.366,
+     "end": 10.579
+    },
+    {
+     "w": "done.",
+     "t": 10.721,
+     "end": 11.076
+    },
+    {
+     "w": "Spender",
+     "t": 11.289,
+     "end": 11.644
+    },
+    {
+     "w": "is",
+     "t": 11.715,
+     "end": 11.786
+    },
+    {
+     "w": "just",
+     "t": 11.857,
+     "end": 12.07
+    },
+    {
+     "w": "sixty",
+     "t": 12.141,
+     "end": 12.425
+    },
+    {
+     "w": "dollars",
+     "t": 12.496,
+     "end": 12.78
+    },
+    {
+     "w": "short.",
+     "t": 12.851,
+     "end": 13.312
+    },
+    {
+     "w": "Close",
+     "t": 13.49,
+     "end": 13.703
+    },
+    {
+     "w": "enough?",
+     "t": 13.774,
+     "end": 14.342
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But the fine print said, if paid in full...",
+   "words": [
+    {
+     "w": "But",
+     "t": 14.404,
+     "end": 14.546
+    },
+    {
+     "w": "the",
+     "t": 14.617,
+     "end": 14.688
+    },
+    {
+     "w": "fine",
+     "t": 14.83,
+     "end": 14.972
+    },
+    {
+     "w": "print",
+     "t": 15.114,
+     "end": 15.256
+    },
+    {
+     "w": "said,",
+     "t": 15.398,
+     "end": 15.824
+    },
+    {
+     "w": "if",
+     "t": 15.93,
+     "end": 16.037
+    },
+    {
+     "w": "paid",
+     "t": 16.108,
+     "end": 16.321
+    },
+    {
+     "w": "in",
+     "t": 16.392,
+     "end": 16.534
+    },
+    {
+     "w": "full...",
+     "t": 16.605,
+     "end": 17.102
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "That interest was hiding, growing from day one, at about thirty percent.",
+   "words": [
+    {
+     "w": "That",
+     "t": 17.164,
+     "end": 17.377
+    },
+    {
+     "w": "interest",
+     "t": 17.448,
+     "end": 17.803
+    },
+    {
+     "w": "was",
+     "t": 17.909,
+     "end": 18.016
+    },
+    {
+     "w": "hiding,",
+     "t": 18.051,
+     "end": 18.726
+    },
+    {
+     "w": "growing",
+     "t": 18.797,
+     "end": 19.081
+    },
+    {
+     "w": "from",
+     "t": 19.152,
+     "end": 19.294
+    },
+    {
+     "w": "day",
+     "t": 19.365,
+     "end": 19.507
+    },
+    {
+     "w": "one,",
+     "t": 19.649,
+     "end": 20.146
+    },
+    {
+     "w": "at",
+     "t": 20.181,
+     "end": 20.217
+    },
+    {
+     "w": "about",
+     "t": 20.288,
+     "end": 20.501
+    },
+    {
+     "w": "thirty",
+     "t": 20.643,
+     "end": 20.785
+    },
+    {
+     "w": "percent.",
+     "t": 20.856,
+     "end": 21.566
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Spender's sixty dollar gap just cost about two hundred dollars in interest.",
+   "words": [
+    {
+     "w": "Spender's",
+     "t": 21.628,
+     "end": 22.125
+    },
+    {
+     "w": "sixty",
+     "t": 22.196,
+     "end": 22.48
+    },
+    {
+     "w": "dollar",
+     "t": 22.551,
+     "end": 22.693
+    },
+    {
+     "w": "gap",
+     "t": 22.835,
+     "end": 23.119
+    },
+    {
+     "w": "just",
+     "t": 23.261,
+     "end": 23.403
+    },
+    {
+     "w": "cost",
+     "t": 23.474,
+     "end": 23.687
+    },
+    {
+     "w": "about",
+     "t": 23.864,
+     "end": 24.042
+    },
+    {
+     "w": "two",
+     "t": 24.113,
+     "end": 24.184
+    },
+    {
+     "w": "hundred",
+     "t": 24.326,
+     "end": 24.539
+    },
+    {
+     "w": "dollars",
+     "t": 24.681,
+     "end": 25.036
+    },
+    {
+     "w": "in",
+     "t": 25.107,
+     "end": 25.178
+    },
+    {
+     "w": "interest.",
+     "t": 25.249,
+     "end": 25.888
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Saver paid nothing extra. Spender trusted the sticker:",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 25.95,
+     "end": 26.305
+    },
+    {
+     "w": "paid",
+     "t": 26.376,
+     "end": 26.589
+    },
+    {
+     "w": "nothing",
+     "t": 26.731,
+     "end": 27.015
+    },
+    {
+     "w": "extra.",
+     "t": 27.086,
+     "end": 27.654
+    },
+    {
+     "w": "Spender",
+     "t": 27.867,
+     "end": 28.293
+    },
+    {
+     "w": "trusted",
+     "t": 28.435,
+     "end": 28.79
+    },
+    {
+     "w": "the",
+     "t": 28.826,
+     "end": 28.861
+    },
+    {
+     "w": "sticker:",
+     "t": 28.932,
+     "end": 29.571
+    }
+   ]
+  }
+ ]
+}

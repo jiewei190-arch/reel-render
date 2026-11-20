@@ -1,0 +1,431 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Starting ten years late could cost you about two hundred eighty thousand dollars.",
+   "words": [
+    {
+     "w": "Starting",
+     "t": 0.082,
+     "end": 0.478
+    },
+    {
+     "w": "ten",
+     "t": 0.544,
+     "end": 0.741
+    },
+    {
+     "w": "years",
+     "t": 0.807,
+     "end": 1.005
+    },
+    {
+     "w": "late",
+     "t": 1.071,
+     "end": 1.335
+    },
+    {
+     "w": "could",
+     "t": 1.466,
+     "end": 1.598
+    },
+    {
+     "w": "cost",
+     "t": 1.73,
+     "end": 1.862
+    },
+    {
+     "w": "you",
+     "t": 1.928,
+     "end": 1.961
+    },
+    {
+     "w": "about",
+     "t": 1.994,
+     "end": 2.323
+    },
+    {
+     "w": "two",
+     "t": 2.389,
+     "end": 2.521
+    },
+    {
+     "w": "hundred",
+     "t": 2.587,
+     "end": 2.784
+    },
+    {
+     "w": "eighty",
+     "t": 2.982,
+     "end": 3.279
+    },
+    {
+     "w": "thousand",
+     "t": 3.378,
+     "end": 3.773
+    },
+    {
+     "w": "dollars.",
+     "t": 3.839,
+     "end": 4.564
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Saver starts at twenty-five: two hundred dollars a month. Spender waits until thirty-five, then saves the same.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 4.621,
+     "end": 4.951
+    },
+    {
+     "w": "starts",
+     "t": 5.017,
+     "end": 5.281
+    },
+    {
+     "w": "at",
+     "t": 5.346,
+     "end": 5.412
+    },
+    {
+     "w": "twenty-five:",
+     "t": 5.478,
+     "end": 6.401
+    },
+    {
+     "w": "two",
+     "t": 6.467,
+     "end": 6.533
+    },
+    {
+     "w": "hundred",
+     "t": 6.599,
+     "end": 6.796
+    },
+    {
+     "w": "dollars",
+     "t": 6.862,
+     "end": 7.06
+    },
+    {
+     "w": "a",
+     "t": 7.126,
+     "end": 7.159
+    },
+    {
+     "w": "month.",
+     "t": 7.192,
+     "end": 7.752
+    },
+    {
+     "w": "Spender",
+     "t": 7.983,
+     "end": 8.312
+    },
+    {
+     "w": "waits",
+     "t": 8.378,
+     "end": 8.576
+    },
+    {
+     "w": "until",
+     "t": 8.707,
+     "end": 8.839
+    },
+    {
+     "w": "thirty-five,",
+     "t": 8.971,
+     "end": 9.762
+    },
+    {
+     "w": "then",
+     "t": 9.861,
+     "end": 9.96
+    },
+    {
+     "w": "saves",
+     "t": 10.026,
+     "end": 10.223
+    },
+    {
+     "w": "the",
+     "t": 10.289,
+     "end": 10.355
+    },
+    {
+     "w": "same.",
+     "t": 10.421,
+     "end": 10.882
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "At a made-up, steady seven percent, they both stop at sixty-five.",
+   "words": [
+    {
+     "w": "At",
+     "t": 10.94,
+     "end": 11.072
+    },
+    {
+     "w": "a",
+     "t": 11.105,
+     "end": 11.138
+    },
+    {
+     "w": "made-up,",
+     "t": 11.204,
+     "end": 11.665
+    },
+    {
+     "w": "steady",
+     "t": 11.83,
+     "end": 11.994
+    },
+    {
+     "w": "seven",
+     "t": 12.126,
+     "end": 12.324
+    },
+    {
+     "w": "percent,",
+     "t": 12.39,
+     "end": 12.983
+    },
+    {
+     "w": "they",
+     "t": 13.049,
+     "end": 13.181
+    },
+    {
+     "w": "both",
+     "t": 13.247,
+     "end": 13.444
+    },
+    {
+     "w": "stop",
+     "t": 13.576,
+     "end": 13.708
+    },
+    {
+     "w": "at",
+     "t": 13.774,
+     "end": 13.906
+    },
+    {
+     "w": "sixty-five.",
+     "t": 13.972,
+     "end": 14.828
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Spender only missed ten years of deposits... so how bad can it be?",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 14.886,
+     "end": 15.281
+    },
+    {
+     "w": "only",
+     "t": 15.347,
+     "end": 15.479
+    },
+    {
+     "w": "missed",
+     "t": 15.545,
+     "end": 15.809
+    },
+    {
+     "w": "ten",
+     "t": 15.94,
+     "end": 16.072
+    },
+    {
+     "w": "years",
+     "t": 16.138,
+     "end": 16.336
+    },
+    {
+     "w": "of",
+     "t": 16.369,
+     "end": 16.402
+    },
+    {
+     "w": "deposits...",
+     "t": 16.468,
+     "end": 17.456
+    },
+    {
+     "w": "so",
+     "t": 17.588,
+     "end": 17.72
+    },
+    {
+     "w": "how",
+     "t": 17.917,
+     "end": 18.115
+    },
+    {
+     "w": "bad",
+     "t": 18.214,
+     "end": 18.313
+    },
+    {
+     "w": "can",
+     "t": 18.379,
+     "end": 18.445
+    },
+    {
+     "w": "it",
+     "t": 18.511,
+     "end": 18.577
+    },
+    {
+     "w": "be?",
+     "t": 18.675,
+     "end": 19.038
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Saver put in ninety-six thousand. Spender, seventy-two thousand.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 19.096,
+     "end": 19.425
+    },
+    {
+     "w": "put",
+     "t": 19.491,
+     "end": 19.623
+    },
+    {
+     "w": "in",
+     "t": 19.689,
+     "end": 19.755
+    },
+    {
+     "w": "ninety-six",
+     "t": 19.886,
+     "end": 20.348
+    },
+    {
+     "w": "thousand.",
+     "t": 20.479,
+     "end": 21.204
+    },
+    {
+     "w": "Spender,",
+     "t": 21.27,
+     "end": 21.929
+    },
+    {
+     "w": "seventy-two",
+     "t": 21.995,
+     "end": 22.457
+    },
+    {
+     "w": "thousand.",
+     "t": 22.588,
+     "end": 23.182
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "At sixty-five, Saver has about five hundred twenty-eight thousand. Spender, about two hundred forty-five thousand.",
+   "words": [
+    {
+     "w": "At",
+     "t": 23.239,
+     "end": 23.371
+    },
+    {
+     "w": "sixty-five,",
+     "t": 23.437,
+     "end": 24.228
+    },
+    {
+     "w": "Saver",
+     "t": 24.36,
+     "end": 24.623
+    },
+    {
+     "w": "has",
+     "t": 24.689,
+     "end": 24.755
+    },
+    {
+     "w": "about",
+     "t": 24.821,
+     "end": 25.084
+    },
+    {
+     "w": "five",
+     "t": 25.15,
+     "end": 25.282
+    },
+    {
+     "w": "hundred",
+     "t": 25.348,
+     "end": 25.48
+    },
+    {
+     "w": "twenty-eight",
+     "t": 25.678,
+     "end": 26.007
+    },
+    {
+     "w": "thousand.",
+     "t": 26.139,
+     "end": 26.93
+    },
+    {
+     "w": "Spender,",
+     "t": 26.996,
+     "end": 27.589
+    },
+    {
+     "w": "about",
+     "t": 27.754,
+     "end": 27.918
+    },
+    {
+     "w": "two",
+     "t": 27.984,
+     "end": 28.05
+    },
+    {
+     "w": "hundred",
+     "t": 28.116,
+     "end": 28.314
+    },
+    {
+     "w": "forty-five",
+     "t": 28.446,
+     "end": 28.907
+    },
+    {
+     "w": "thousand.",
+     "t": 29.039,
+     "end": 29.566
+    }
+   ]
+  }
+ ]
+}

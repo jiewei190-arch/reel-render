@@ -1,0 +1,58 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 27.97,
+ "characters": 445,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You paid almost five dollars to get your own twenty.",
+   "start": 0.1,
+   "end": 3.54
+  },
+  {
+   "line": 2,
+   "text": "Same twenty dollars. Saver walks one block to the bank's own machine.",
+   "start": 3.69,
+   "end": 8.57
+  },
+  {
+   "line": 3,
+   "text": "Spender taps the corner ATM. Four dollars eighty-six, on average, in fees.",
+   "start": 8.72,
+   "end": 14.64
+  },
+  {
+   "line": 4,
+   "text": "That's about a quarter of the cash. But wait till you count a whole year...",
+   "start": 14.79,
+   "end": 19.35
+  },
+  {
+   "line": 5,
+   "text": "Twice a week, in this example. That's over five hundred dollars a year.",
+   "start": 19.5,
+   "end": 24.14
+  },
+  {
+   "line": 6,
+   "text": "Saver paid nothing. And Spender's next twenty?",
+   "start": 24.29,
+   "end": 27.97
+  }
+ ],
+ "revoiced": [
+  {
+   "line": 6,
+   "chars": 46,
+   "why": "soft last word"
+  }
+ ]
+}

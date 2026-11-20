@@ -1,0 +1,195 @@
+# Third-party notices
+
+Paths below are relative to the skill folder (in a copied project, `template/` is the project root).
+
+This skill's own files are under the MIT license in `LICENSE`. The items below are third-party code or assets included
+in `template/`, each under its own license. Their notices must be kept in copies and derived works.
+
+| Item | Author | License | Used in |
+|---|---|---|---|
+| Hash without Sine | David Hoskins | MIT | `template/src/engine/post/shaders.ts` (2 copies), `template/src/engine/mat/materials.ts`, `template/src/engine/mat/sky.tsx` |
+| three.js shader chunks (modified copies of `gradientmap_pars_fragment`, `map_fragment`, `emissivemap_fragment` in the source, plus runtime string patches) | three.js authors | MIT | `template/src/engine/mat/materials.ts`, `template/src/engine/core/liquid.tsx`, `template/src/engine/core/shadows.ts` |
+| Mulberry32 (JavaScript form as published by bryc) | Tommy Ettinger | CC0 1.0 (credited as a courtesy) | `template/src/engine/mat/paint.ts` (also called from `template/src/blocky/Flowers.tsx`) |
+| FNV-1a string hash | Glenn Fowler, Landon Curt Noll, Kiem-Phong Vo | Public domain (credited as a courtesy) | `template/src/engine/mat/paint.ts` |
+| Poppins (fonts) | Indian Type Foundry | SIL Open Font License 1.1; see `template/public/fonts/OFL-Poppins.txt`. Not covered by the MIT license. | `template/public/fonts/` |
+
+`core/shadows.ts` replaces three.js's interleaved gradient noise with 0.0 at runtime; no noise code is included.
+
+Techniques that are implemented from a published description, with no code copied:
+- the 13-tap downsample and the tent upsample in the bloom chain (J. Jimenez, 2014 presentation);
+- the soft-knee bloom threshold (as in K. Takahashi's Kino Bloom; the code is original);
+- the background-spread clamp in the depth-of-field gather (an idea from D. Gustafsson, "Bokeh depth of field in a
+  single pass", 2018; the code is original).
+
+---
+
+## Hash without Sine
+
+```
+Copyright (c) 2014 David Hoskins.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+## three.js
+
+```
+The MIT License
+
+Copyright © 2010-2026 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+## Mulberry32
+
+Mulberry32 is by Tommy Ettinger and is dedicated to the public domain under CC0 1.0
+(https://creativecommons.org/publicdomain/zero/1.0/). No notice is required; it is credited here as a courtesy.
+
+## FNV-1a
+
+The FNV hash by Glenn Fowler, Landon Curt Noll and Kiem-Phong Vo is in the public domain. No notice is required; it
+is credited here as a courtesy.
+
+## Poppins
+
+Poppins is copyright The Poppins Project Authors (Indian Type Foundry) and is licensed under the SIL Open Font
+License, Version 1.1. The full license is in `template/public/fonts/OFL-Poppins.txt`. It is not covered by this
+skill's MIT license.
+
+## Not included: installed by `npm ci`
+
+Remotion is not open source and is not covered by this skill's MIT license: `npm ci` installs
+it under the Remotion License (https://www.remotion.dev/docs/license). It is free for individuals, for-profit
+companies with up to 3 employees, non-profits and evaluation; any larger company needs a Remotion Company License
+before using it (https://www.remotion.dev/docs/license/pricing).
+The other npm packages keep their own licenses (mostly MIT, ISC, BSD, Apache-2.0); see `node_modules/<package>/LICENSE`
+after installing.
+
+---
+
+## Block Money toolkit (finance/toolkit): adapted MIT code and CC0 assets
+
+The two repositories below were read as text only. Nothing from them was installed or run. The helpers listed were rewritten in our own code, using their constants and structure. Their licences require these notices.
+
+| Item | Author | Licence | Source (commit read) | Used in |
+|---|---|---|---|---|
+| Impact kick (flip-sign shake over 7 f), push-in factor with punch window, zoom push, quintic glide | Mr omi | MIT | github.com/mromidev/claude-animated-shorts, `templates/bridge/story.ts` (e3b817b6afc6cd413466d43f11ba31209e034bbf) | `src/fin/lib/camera.ts` |
+| Reaction lead (LEAD = 2 f), wind-up/strike timing | Mr omi | MIT | same repo, `templates/bridge/cast.ts`, `references/reports/motion.md` | `src/fin/lib/motion.ts` |
+| Easing curves (EASE_OUT, EASE_INOUT, EASE_PLACE, overshoot), stamp slam 1.7 to 1 over 9 f, loop punch 1.06 | Hasan Aboul Hasan | MIT | github.com/hassancs91/claude-faceless-shorts-creator, `remotion/src/lib/shorts.tsx`, `collage.tsx` (773054bebbe460de0f31dcfda5315970b1c8b4f2) | `src/fin/lib/motion.ts` |
+| Caption chunking with hold (next start or end + 0.6 s), per-word pop 0.92 to 1, active-word highlight | Hasan Aboul Hasan | MIT | same repo, `remotion/src/lib/shorts.tsx` (`chunkLines`, `Captions`) | `src/fin/lib/captions.tsx` |
+| CC0 3D props (Kenney kits, Quaternius packs) | Kenney, Quaternius | CC0 1.0 (no notice required; credited as a courtesy) | see `public/assets/cc0/LICENSES.md` | `public/assets/cc0/` |
+
+No AGPL code is used (OpenMontage was not read for code). No reference frames, characters or style bibles from either repository are included.
+
+### claude-animated-shorts
+
+```
+MIT License
+
+Copyright (c) 2026 Mr omi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+### claude-faceless-shorts-creator
+
+```
+MIT License
+
+Copyright (c) 2026 Hasan Aboul Hasan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Animation quality pass: further sources (read as text only; nothing installed or run)
+
+| Item | Author | Licence | Source (commit read) | Used in |
+|---|---|---|---|---|
+| Closed-form damped spring (coefficients) | Isaac Mason | MIT | github.com/pmndrs/maath `src/time/spring-core.ts` (dee0cae) | `src/fin/lib/spring.ts` (springFree, wobbleAt) |
+| Critically damped step S(x, w), smoothstep exit | Melvyn Malherbe | MIT | github.com/Melvynx/video-agent-skills `skills/short-editing/engine/lib/kit.js` (f454292) | `src/fin/lib/spring.ts` |
+| Viseme coarticulation lead (shape ramps in up to 60 ms before its sound) | Mika Suominen | MIT | github.com/met4citizen/TalkingHead `modules/talkinghead.mjs` (1563de1) | `src/fin/lib/lipsync.ts` |
+| Crash-zoom anticipation (a short pull-back before the punch) | Wei Yihao | Apache-2.0 (idea and numbers only; no code copied) | github.com/Vincentwei1021/video-shotcraft (55eb60d) | `src/fin/recipe/compile.tsx` slamZoom |
+| Caption highlight 2 frames before the word | Nate Herk | MIT kit; idea only, no code; the brand assets are not used | github.com/nateherkai/herk-edit-kit (10511e5) | `src/fin/lib/captions.tsx` |
+
+The MIT licence text for each MIT row is identical to the text above. Only the copyright lines differ:
+- Copyright (c) 2026 Isaac Mason (pmndrs/maath)
+- Copyright (c) 2026 Melvyn Malherbe (Melvynx/video-agent-skills)
+- Copyright (c) 2023-2024 Mika Suominen (met4citizen/TalkingHead)
+
+```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+Licence notes from the review:
+- pmndrs/postprocessing is **zlib**, not MIT. None of its code is used; the engine has its own post chain.
+- remotion-dev/remotion and `@remotion/transitions` are under the **Remotion License**. It is free only for individuals, for-profit companies with up to 3 employees, and non-profits; otherwise a company licence is needed. The toolkit does not use `@remotion/transitions`, and the project's existing Remotion dependency already falls under this licence.
+- OpenMontage is AGPL-3.0 and was not read for code.

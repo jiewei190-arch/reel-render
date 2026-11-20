@@ -1,0 +1,898 @@
+{
+ "slug": "credit-score-car",
+ "style": "S2",
+ "hook": {
+  "text": "SAME CAR. $6,500 MORE?",
+  "again": "6:same"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · MADE-UP LOAN",
+  "from": 1,
+  "until": "6:same"
+ },
+ "eggs": [
+  "cat",
+  "tv19"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "props": [
+  {
+   "id": "carSv",
+   "asset": "car-sedan",
+   "at": "left:0,0,-2.6",
+   "from": 1
+  },
+  {
+   "id": "carSp",
+   "asset": "car-sedan",
+   "at": "right:0,0,-2.6",
+   "from": 1
+  },
+  {
+   "id": "sv0",
+   "kit": "label",
+   "text": [
+    "INTEREST",
+    "$0"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "from": "6:after",
+   "until": "6:about"
+  },
+  {
+   "id": "svI",
+   "kit": "label",
+   "text": [
+    "INTEREST"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "left:-0.62,1.62,0.3",
+   "motion": "count-up",
+   "hit": "6:about",
+   "count": {
+    "from": 0,
+    "to": 4925,
+    "prefix": "≈$",
+    "dur": 1
+   },
+   "from": "6:about"
+  },
+  {
+   "id": "sp0",
+   "kit": "label",
+   "text": [
+    "INTEREST",
+    "$0"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "right:0.62,1.62,0.3",
+   "from": "6:after",
+   "until": "6:about"
+  },
+  {
+   "id": "spI",
+   "kit": "label",
+   "text": [
+    "INTEREST"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.55,
+    0.3,
+    0.05
+   ],
+   "at": "right:0.62,1.62,0.3",
+   "motion": "count-up",
+   "hit": "6:about",
+   "count": {
+    "from": 0,
+    "to": 11436,
+    "prefix": "≈$",
+    "dur": 1.8
+   },
+   "from": "6:about"
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "street",
+   "note": "frame 0: Spender's face, the car key in his fist, red 13.5% slams in beside his head",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "idle",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "r0",
+     "kit": "label",
+     "text": [
+      "13.5%"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "shake",
+     "at": 0.1
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": 1,
+   "in": "cut",
+   "note": "split: same car, two buyers (Saver top, Spender bottom)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "emotion": "joy"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "props": [],
+   "extras": false
+  },
+  {
+   "at": "1:same#2",
+   "note": "five years: 60 months board",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "term",
+    "hit": "1:same#2",
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "term",
+     "kit": "label",
+     "text": [
+      "$30,000",
+      "60 MONTHS"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      1,
+      0.5,
+      0.05
+     ],
+     "at": "mark:0,1.4,0.6",
+     "motion": "dropSlam",
+     "hit": "1:same#2",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:same#2"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:same#2",
+     "sfx": "stamp",
+     "db": -5
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "1:and",
+   "in": "whip",
+   "note": "one buyer pays more",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "1:more",
+       "pose": "idle",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "extras": false,
+   "props": []
+  },
+  {
+   "at": "1:six",
+   "note": "about six and a half thousand more",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "plus",
+    "hit": "1:six",
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "plus",
+     "kit": "label",
+     "text": [
+      "+$6,500"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0.1,1.45,0.6",
+     "motion": "dropSlam",
+     "hit": "1:six",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:six"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:six",
+     "sfx": "stamp",
+     "db": -4
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "2:the",
+   "note": "credit scores: prime vs subprime",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "prime",
+     "kit": "label",
+     "text": [
+      "PRIME",
+      "661-780"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.8,
+      0.4,
+      0.05
+     ],
+     "at": "left:0,1.8,0.2",
+     "motion": "dropSlam",
+     "hit": "2:their",
+     "drop": 0.5
+    },
+    {
+     "id": "sub",
+     "kit": "label",
+     "text": [
+      "SUBPRIME",
+      "501-600"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.8,
+      0.4,
+      0.05
+     ],
+     "at": "right:0,1.8,0.2",
+     "motion": "dropSlam",
+     "hit": "2:scores",
+     "drop": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "2:scores"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:their",
+     "sfx": "stamp",
+     "db": -6
+    },
+    {
+     "at": "2:scores",
+     "sfx": "stamp",
+     "db": -6
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "3:saver's",
+   "note": "prime: about 6 percent",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.55,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "r6",
+     "kit": "label",
+     "text": [
+      "6%"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.46,
+      0.2,
+      0.04
+     ],
+     "at": "mark:-0.4,1.3,0.55",
+     "motion": "dropSlam",
+     "hit": "3:six",
+     "drop": 0.3
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:six",
+     "sfx": "ding",
+     "db": -8
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "3:spender's",
+   "note": "subprime: about 13.5 percent",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "3:thirteen",
+       "pose": "idle",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "r135",
+     "kit": "label",
+     "text": [
+      "13.5%"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:0.4,1.3,0.55",
+     "motion": "dropSlam",
+     "hit": "3:thirteen",
+     "drop": 0.3
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:thirteen"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:thirteen",
+     "sfx": "thud",
+     "db": -6
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "4:both",
+   "mood": "whisper",
+   "note": "OPEN LOOP: two covered TOTAL boards, the month counter ticks (PC 2026-11-19: target lowered so the boards sit above the bottom-centre caption)",
+   "cam": {
+    "preset": "pushIn",
+    "target": "mark:0,1.3,0.6",
+    "dist": 3.4
+   },
+   "actors": [],
+   "props": [
+    {
+     "id": "cvS",
+     "kit": "label",
+     "text": [
+      "SAVER",
+      "TOTAL ?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.55,
+      0.5,
+      0.05
+     ],
+     "at": "mark:-0.35,1.3,0.6"
+    },
+    {
+     "id": "cvP",
+     "kit": "label",
+     "text": [
+      "SPENDER",
+      "TOTAL ?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.55,
+      0.5,
+      0.05
+     ],
+     "at": "mark:0.35,1.3,0.6"
+    },
+    {
+     "id": "mo",
+     "kit": "label",
+     "text": [
+      "MONTH"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0,1.85,0.6",
+     "motion": "count-up",
+     "hit": "4:both",
+     "count": {
+      "from": 0,
+      "to": 60,
+      "suffix": "/60",
+      "dur": 3.6
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:watch"
+    },
+    {
+     "fx": "shake",
+     "at": "4:totals"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:both",
+     "sfx": "suspense",
+     "db": -8
+    },
+    {
+     "at": "4:both",
+     "sfx": "clock",
+     "db": -10
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "5:five",
+   "note": "monthly payments: $582",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "pm1",
+     "kit": "label",
+     "text": [
+      "$582/MO"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.8,
+      0.34,
+      0.05
+     ],
+     "at": "left:0,1.8,0.2",
+     "motion": "dropSlam",
+     "hit": "5:eighty-two",
+     "drop": 0.5
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:eighty-two",
+     "sfx": "ding",
+     "db": -8
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "5:six",
+   "note": "...versus $691",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "pm2",
+     "kit": "label",
+     "text": [
+      "$691/MO"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.7,
+      0.28,
+      0.05
+     ],
+     "at": "mark:0.5,1.25,0.55",
+     "motion": "dropSlam",
+     "hit": "5:ninety-one",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "5:ninety-one"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:ninety-one",
+     "sfx": "thud",
+     "db": -6
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "6:after",
+   "note": "after five years: interest counters appear at $0",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.5
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "extras": false,
+   "props": []
+  },
+  {
+   "at": "6:about",
+   "note": "TWIST: counters run, Spender's interest pile is twice as tall",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 2.7
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "left"
+    },
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "shock"
+    }
+   ],
+   "props": [
+    {
+     "id": "pS",
+     "kit": "coinPile",
+     "size": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "at": "left:-1.3,0,-0.9",
+     "motion": "dropSlam",
+     "hit": "6:about+0.2"
+    },
+    {
+     "id": "pP",
+     "kit": "coinPile",
+     "size": [
+      0.5,
+      1,
+      0.5
+     ],
+     "at": "right:-1.3,0,-0.9",
+     "motion": "dropSlam",
+     "hit": "6:about+0.2"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:about"
+    },
+    {
+     "fx": "shake",
+     "at": "6:about"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:about",
+     "sfx": "riser",
+     "db": -8
+    },
+    {
+     "at": "6:about+0.2",
+     "sfx": "boom",
+     "db": -6
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "6:versus",
+   "note": "versus eleven and a half thousand",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.55,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "plus2",
+     "kit": "label",
+     "text": [
+      "+$6,500"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.7,
+      0.28,
+      0.05
+     ],
+     "at": "mark:0.5,1.25,0.55",
+     "motion": "dropSlam",
+     "hit": "6:eleven",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "6:eleven"
+    }
+   ],
+   "extras": false
+  },
+  {
+   "at": "6:same",
+   "mood": "ending",
+   "note": "LOOP: back to frame 0, key in his fist, 13.5% again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "r0",
+     "kit": "label",
+     "text": [
+      "13.5%"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": "6:same+0.1",
+     "drop": 0.25
+    }
+   ],
+   "extras": false
+  }
+ ]
+}

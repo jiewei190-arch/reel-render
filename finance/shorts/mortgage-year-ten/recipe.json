@@ -1,0 +1,695 @@
+{
+ "slug": "mortgage-year-ten",
+ "style": "S2",
+ "hook": {
+  "text": "$400K HOUSE. REAL PRICE?",
+  "again": "7:million"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE \u00b7 PRINCIPAL + INTEREST",
+  "from": 1,
+  "until": "7:million"
+ },
+ "eggs": [
+  "cat",
+  "sticky"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "bank",
+   "note": "frame 0: a buyer grins with the house key, the $400,000 LOAN block slams in beside the head",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 1.0,
+       "pose": "idle",
+       "emotion": "curious"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "key0",
+     "asset": "key",
+     "s": 0.5,
+     "at": "spender.handR"
+    },
+    {
+     "id": "loan0",
+     "kit": "label",
+     "text": [
+      "$400,000",
+      "LOAN"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.44,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.1
+    },
+    {
+     "fx": "shake",
+     "at": "1:thousand"
+    }
+   ]
+  },
+  {
+   "at": "1:house",
+   "set": "street",
+   "in": "cut",
+   "note": "the house itself, slammed down",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "home",
+    "hit": "1:house",
+    "dist": 3.4
+   },
+   "props": [
+    {
+     "id": "home",
+     "asset": "house-a",
+     "s": 0.22,
+     "at": "centre:0,0,0.5",
+     "motion": "dropSlam",
+     "hit": "1:house",
+     "drop": 1.2
+    },
+    {
+     "id": "tag1",
+     "kit": "label",
+     "text": [
+      "$400,000"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.8,
+      0.3,
+      0.05
+     ],
+     "at": "centre:0,1.75,1.4"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "1:house",
+     "p": "centre:0,0.02,0.5"
+    }
+   ]
+  },
+  {
+   "at": "2:same",
+   "set": "bank",
+   "in": "cut",
+   "note": "race starts: same house, two loans",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "2:saver",
+       "pose": "point"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "y30",
+     "kit": "label",
+     "text": [
+      "30 YEARS",
+      "7.11%"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:-0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "2:thirty",
+     "drop": 0.4
+    },
+    {
+     "id": "y15",
+     "kit": "label",
+     "text": [
+      "15 YEARS",
+      "6.45%"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "2:fifteen",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:thirty",
+     "sfx": "stamp",
+     "db": -8
+    },
+    {
+     "at": "2:fifteen",
+     "sfx": "stamp",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:spender's",
+   "note": "first payment",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.6,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": "3:only",
+       "pose": "idle",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "pay1",
+     "kit": "label",
+     "text": [
+      "PAYMENT",
+      "$2,690"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "mark:0.5,1.25,0.55",
+     "motion": "fly-in",
+     "hit": "3:twenty-seven"
+    }
+   ]
+  },
+  {
+   "at": "3:only",
+   "note": "MECHANISM x-ray: $2,370 interest block vs a $320 sliver for the house",
+   "cam": {
+    "preset": "pushIn",
+    "target": "mark:0,0.5,0.4",
+    "dist": 2.9,
+    "face": 0.32
+   },
+   "props": [
+    {
+     "id": "int1",
+     "kit": "debtBlock",
+     "text": [
+      "INTEREST",
+      "$2,370"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.9,
+      1.1,
+      0.5
+     ],
+     "at": "mark:-0.5,0,0.4",
+     "motion": "dropSlam",
+     "hit": "3:only",
+     "drop": 1.0
+    },
+    {
+     "id": "prn1",
+     "kit": "block",
+     "text": [
+      "HOUSE",
+      "$320"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.5,
+      0.18,
+      0.4
+     ],
+     "at": "mark:0.55,0,0.4",
+     "motion": "dropSlam",
+     "hit": "3:twenty",
+     "drop": 0.8
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:only"
+    },
+    {
+     "fx": "dust",
+     "at": "3:only",
+     "p": "mark:-0.5,0.02,0.4"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:twenty",
+     "sfx": "ding",
+     "db": -10
+    }
+   ]
+  },
+  {
+   "at": "4:but",
+   "mood": "whisper",
+   "note": "OPEN LOOP: the years flip by, YEAR 10 stays covered",
+   "cam": {
+    "preset": "pushIn",
+    "target": "mark:0,1.45,0.45",
+    "dist": 2.4
+   },
+   "props": [
+    {
+     "id": "yr",
+     "kit": "label",
+     "text": [
+      "MORTGAGE"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.7,
+      0.38,
+      0.05
+     ],
+     "at": "mark:0,1.9,0.4",
+     "motion": "count-up",
+     "hit": "4:wait",
+     "count": {
+      "from": 1,
+      "to": 9,
+      "prefix": "YEAR ",
+      "dur": 1.1
+     }
+    },
+    {
+     "id": "cov10",
+     "kit": "label",
+     "text": [
+      "YEAR 10",
+      "???"
+     ],
+     "color": "#222533",
+     "size": [
+      0.55,
+      0.36,
+      0.05
+     ],
+     "at": "mark:0,1.22,0.4",
+     "motion": "fly-in",
+     "hit": "4:ten"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:ten"
+    }
+   ]
+  },
+  {
+   "at": "5:ten",
+   "note": "TWIST part 1: YEAR 10 reveal",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "yr10",
+    "hit": "5:ten",
+    "dist": 2.4
+   },
+   "props": [
+    {
+     "id": "yr10",
+     "kit": "stamp",
+     "text": "YEAR 10",
+     "size": [
+      0.9,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0,1.5,0.4",
+     "hit": "5:ten"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "5:ten"
+    },
+    {
+     "fx": "shake",
+     "at": "5:ten"
+    }
+   ]
+  },
+  {
+   "at": "5:spender",
+   "note": "TWIST part 2: PAID counts up to $323K, then STILL OWES $344K slams on top",
+   "cam": {
+    "preset": "medium",
+    "target": "spender",
+    "dist": 3.4,
+    "az": -10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "5:owes",
+       "pose": "shock"
+      },
+      {
+       "at": "5:forty-four",
+       "pose": "despair",
+       "emotion": "sad"
+      }
+     ],
+     "squash": [
+      "5:owes"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "paid",
+     "kit": "label",
+     "text": [
+      "PAID"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.3,
+      0.05
+     ],
+     "at": "mark:-0.56,1.6,0.5",
+     "motion": "count-up",
+     "hit": "5:paid",
+     "count": {
+      "from": 0,
+      "to": 323,
+      "prefix": "$",
+      "suffix": "K",
+      "dur": 1.3
+     }
+    },
+    {
+     "id": "owes",
+     "kit": "label",
+     "text": [
+      "STILL OWES",
+      "$344K"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.52,
+      0.34,
+      0.05
+     ],
+     "at": "mark:0.56,1.6,0.5",
+     "motion": "dropSlam",
+     "hit": "5:owes",
+     "drop": 0.8
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "5:owes"
+    },
+    {
+     "fx": "dust",
+     "at": "5:owes",
+     "p": "mark:0,0.02,0.2"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:owes",
+     "sfx": "gasp",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "6:saver",
+   "note": "the race: owes $344K vs owes $178K",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "left"
+    },
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": "6:half",
+       "pose": "celebrate"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "oSp",
+     "kit": "label",
+     "text": [
+      "OWES",
+      "$344K"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "left:-0.62,1.62,0.3"
+    },
+    {
+     "id": "oSv",
+     "kit": "label",
+     "text": [
+      "OWES",
+      "$178K"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "right:0.62,1.62,0.3",
+     "motion": "dropSlam",
+     "hit": "6:under",
+     "drop": 0.4
+    },
+    {
+     "id": "more",
+     "kit": "label",
+     "text": [
+      "+$783/MO"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.5,
+      0.18,
+      0.04
+     ],
+     "at": "right:-0.62,1.25,0.3",
+     "motion": "fly-in",
+     "hit": "6:more"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:under",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:spender's",
+   "set": "street",
+   "mood": "ending",
+   "note": "PAYOFF: the house price tag counts up to $969K",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "home2",
+    "hit": "7:spender's",
+    "dist": 3.6
+   },
+   "props": [
+    {
+     "id": "home2",
+     "asset": "house-a",
+     "s": 0.22,
+     "at": "centre:0,0,0.5"
+    },
+    {
+     "id": "tag2",
+     "kit": "label",
+     "text": [
+      "TOTAL"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.9,
+      0.36,
+      0.05
+     ],
+     "at": "centre:0,1.8,1.4",
+     "motion": "count-up",
+     "hit": "7:costs",
+     "count": {
+      "from": 400,
+      "to": 969,
+      "prefix": "$",
+      "suffix": "K",
+      "dur": 1.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "7:million"
+    }
+   ]
+  },
+  {
+   "at": "7:million",
+   "set": "bank",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up, LOAN block slams again",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "key0",
+     "asset": "key",
+     "s": 0.5,
+     "at": "spender.handR"
+    },
+    {
+     "id": "loan9",
+     "kit": "label",
+     "text": [
+      "$400,000",
+      "LOAN"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.44,
+      0.24,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": "7:million+0.15",
+     "drop": 0.25
+    }
+   ]
+  }
+ ]
+}

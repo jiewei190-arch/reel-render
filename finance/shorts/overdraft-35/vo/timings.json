@@ -1,0 +1,401 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your bank can charge you thirty-five dollars for a five dollar coffee.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.093,
+     "end": 0.317
+    },
+    {
+     "w": "bank",
+     "t": 0.466,
+     "end": 0.615
+    },
+    {
+     "w": "can",
+     "t": 0.69,
+     "end": 0.839
+    },
+    {
+     "w": "charge",
+     "t": 0.988,
+     "end": 1.137
+    },
+    {
+     "w": "you",
+     "t": 1.249,
+     "end": 1.361
+    },
+    {
+     "w": "thirty-five",
+     "t": 1.435,
+     "end": 1.883
+    },
+    {
+     "w": "dollars",
+     "t": 2.032,
+     "end": 2.479
+    },
+    {
+     "w": "for",
+     "t": 2.554,
+     "end": 2.628
+    },
+    {
+     "w": "a",
+     "t": 2.74,
+     "end": 2.852
+    },
+    {
+     "w": "five",
+     "t": 2.927,
+     "end": 3.076
+    },
+    {
+     "w": "dollar",
+     "t": 3.15,
+     "end": 3.374
+    },
+    {
+     "w": "coffee.",
+     "t": 3.449,
+     "end": 4.194
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same coffee, same bank. Spender's balance is zero. Saver keeps a hundred dollar cushion.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 4.26,
+     "end": 4.558
+    },
+    {
+     "w": "coffee,",
+     "t": 4.632,
+     "end": 5.303
+    },
+    {
+     "w": "same",
+     "t": 5.378,
+     "end": 5.527
+    },
+    {
+     "w": "bank.",
+     "t": 5.602,
+     "end": 6.198
+    },
+    {
+     "w": "Spender's",
+     "t": 6.422,
+     "end": 6.795
+    },
+    {
+     "w": "balance",
+     "t": 6.869,
+     "end": 7.242
+    },
+    {
+     "w": "is",
+     "t": 7.317,
+     "end": 7.391
+    },
+    {
+     "w": "zero.",
+     "t": 7.466,
+     "end": 8.286
+    },
+    {
+     "w": "Saver",
+     "t": 8.361,
+     "end": 8.733
+    },
+    {
+     "w": "keeps",
+     "t": 8.808,
+     "end": 9.032
+    },
+    {
+     "w": "a",
+     "t": 9.106,
+     "end": 9.181
+    },
+    {
+     "w": "hundred",
+     "t": 9.255,
+     "end": 9.479
+    },
+    {
+     "w": "dollar",
+     "t": 9.554,
+     "end": 9.777
+    },
+    {
+     "w": "cushion.",
+     "t": 9.852,
+     "end": 10.448
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender's card goes through anyway. Overdraft: a thirty-five dollar fee.",
+   "words": [
+    {
+     "w": "Spender's",
+     "t": 10.514,
+     "end": 10.961
+    },
+    {
+     "w": "card",
+     "t": 11.036,
+     "end": 11.259
+    },
+    {
+     "w": "goes",
+     "t": 11.334,
+     "end": 11.483
+    },
+    {
+     "w": "through",
+     "t": 11.558,
+     "end": 11.781
+    },
+    {
+     "w": "anyway.",
+     "t": 11.93,
+     "end": 12.303
+    },
+    {
+     "w": "Overdraft:",
+     "t": 12.825,
+     "end": 13.869
+    },
+    {
+     "w": "a",
+     "t": 13.944,
+     "end": 14.018
+    },
+    {
+     "w": "thirty-five",
+     "t": 14.093,
+     "end": 14.54
+    },
+    {
+     "w": "dollar",
+     "t": 14.689,
+     "end": 14.913
+    },
+    {
+     "w": "fee.",
+     "t": 15.062,
+     "end": 15.584
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But the fee isn't even the worst part...",
+   "words": [
+    {
+     "w": "But",
+     "t": 15.649,
+     "end": 15.799
+    },
+    {
+     "w": "the",
+     "t": 15.873,
+     "end": 15.948
+    },
+    {
+     "w": "fee",
+     "t": 16.022,
+     "end": 16.321
+    },
+    {
+     "w": "isn't",
+     "t": 16.395,
+     "end": 16.619
+    },
+    {
+     "w": "even",
+     "t": 16.731,
+     "end": 16.842
+    },
+    {
+     "w": "the",
+     "t": 16.917,
+     "end": 16.992
+    },
+    {
+     "w": "worst",
+     "t": 17.066,
+     "end": 17.29
+    },
+    {
+     "w": "part...",
+     "t": 17.364,
+     "end": 18.036
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "It hits every time. Three coffees before payday: a hundred and five dollars in fees, at many big banks.",
+   "words": [
+    {
+     "w": "It",
+     "t": 18.101,
+     "end": 18.25
+    },
+    {
+     "w": "hits",
+     "t": 18.324,
+     "end": 18.623
+    },
+    {
+     "w": "every",
+     "t": 18.772,
+     "end": 18.996
+    },
+    {
+     "w": "time.",
+     "t": 19.07,
+     "end": 19.741
+    },
+    {
+     "w": "Three",
+     "t": 20.039,
+     "end": 20.189
+    },
+    {
+     "w": "coffees",
+     "t": 20.263,
+     "end": 20.636
+    },
+    {
+     "w": "before",
+     "t": 20.711,
+     "end": 21.009
+    },
+    {
+     "w": "payday:",
+     "t": 21.083,
+     "end": 21.904
+    },
+    {
+     "w": "a",
+     "t": 21.978,
+     "end": 22.053
+    },
+    {
+     "w": "hundred",
+     "t": 22.127,
+     "end": 22.351
+    },
+    {
+     "w": "and",
+     "t": 22.463,
+     "end": 22.575
+    },
+    {
+     "w": "five",
+     "t": 22.687,
+     "end": 22.798
+    },
+    {
+     "w": "dollars",
+     "t": 22.948,
+     "end": 23.246
+    },
+    {
+     "w": "in",
+     "t": 23.283,
+     "end": 23.32
+    },
+    {
+     "w": "fees,",
+     "t": 23.47,
+     "end": 24.141
+    },
+    {
+     "w": "at",
+     "t": 24.215,
+     "end": 24.29
+    },
+    {
+     "w": "many",
+     "t": 24.364,
+     "end": 24.513
+    },
+    {
+     "w": "big",
+     "t": 24.588,
+     "end": 24.737
+    },
+    {
+     "w": "banks.",
+     "t": 24.812,
+     "end": 25.408
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Saver's coffee cost five dollars. Spender's cost forty.",
+   "words": [
+    {
+     "w": "Saver's",
+     "t": 25.548,
+     "end": 25.995
+    },
+    {
+     "w": "coffee",
+     "t": 26.182,
+     "end": 26.368
+    },
+    {
+     "w": "cost",
+     "t": 26.443,
+     "end": 26.741
+    },
+    {
+     "w": "five",
+     "t": 26.89,
+     "end": 27.114
+    },
+    {
+     "w": "dollars.",
+     "t": 27.188,
+     "end": 27.822
+    },
+    {
+     "w": "Spender's",
+     "t": 28.009,
+     "end": 28.531
+    },
+    {
+     "w": "cost",
+     "t": 28.605,
+     "end": 28.829
+    },
+    {
+     "w": "forty.",
+     "t": 28.978,
+     "end": 29.575
+    }
+   ]
+  }
+ ]
+}

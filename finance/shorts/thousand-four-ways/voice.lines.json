@@ -1,0 +1,28 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.1,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 28.3,
+ "characters": 176,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A thousand dollars, ten years ago. Four different places.",
+   "start": 0.1,
+   "end": 4.18
+  },
+  {
+   "line": 2,
+   "text": "Ten years later, the mattress money buys less than it used to. Past results aren't a promise. Which one would you pick?",
+   "start": 20.5,
+   "end": 27.78
+  }
+ ],
+ "note": "line 2 placed at 20.5 s; 4.2-20.5 s no VO"
+}

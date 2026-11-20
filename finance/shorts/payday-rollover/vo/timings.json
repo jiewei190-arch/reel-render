@@ -1,0 +1,447 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your four hundred dollar loan costs sixty dollars every two weeks.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.084,
+     "end": 0.285
+    },
+    {
+     "w": "four",
+     "t": 0.352,
+     "end": 0.419
+    },
+    {
+     "w": "hundred",
+     "t": 0.486,
+     "end": 0.619
+    },
+    {
+     "w": "dollar",
+     "t": 0.753,
+     "end": 0.954
+    },
+    {
+     "w": "loan",
+     "t": 1.021,
+     "end": 1.356
+    },
+    {
+     "w": "costs",
+     "t": 1.423,
+     "end": 1.892
+    },
+    {
+     "w": "sixty",
+     "t": 1.992,
+     "end": 2.16
+    },
+    {
+     "w": "dollars",
+     "t": 2.227,
+     "end": 2.629
+    },
+    {
+     "w": "every",
+     "t": 2.696,
+     "end": 2.963
+    },
+    {
+     "w": "two",
+     "t": 3.03,
+     "end": 3.097
+    },
+    {
+     "w": "weeks.",
+     "t": 3.164,
+     "end": 3.767
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same car repair, same four hundred. Spender grabs a payday loan. Saver pays from savings.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 3.826,
+     "end": 4.094
+    },
+    {
+     "w": "car",
+     "t": 4.16,
+     "end": 4.294
+    },
+    {
+     "w": "repair,",
+     "t": 4.361,
+     "end": 5.031
+    },
+    {
+     "w": "same",
+     "t": 5.098,
+     "end": 5.299
+    },
+    {
+     "w": "four",
+     "t": 5.366,
+     "end": 5.5
+    },
+    {
+     "w": "hundred.",
+     "t": 5.567,
+     "end": 6.303
+    },
+    {
+     "w": "Spender",
+     "t": 6.37,
+     "end": 6.705
+    },
+    {
+     "w": "grabs",
+     "t": 6.772,
+     "end": 7.04
+    },
+    {
+     "w": "a",
+     "t": 7.107,
+     "end": 7.174
+    },
+    {
+     "w": "payday",
+     "t": 7.241,
+     "end": 7.576
+    },
+    {
+     "w": "loan.",
+     "t": 7.643,
+     "end": 8.246
+    },
+    {
+     "w": "Saver",
+     "t": 8.313,
+     "end": 8.647
+    },
+    {
+     "w": "pays",
+     "t": 8.848,
+     "end": 9.049
+    },
+    {
+     "w": "from",
+     "t": 9.116,
+     "end": 9.25
+    },
+    {
+     "w": "savings.",
+     "t": 9.317,
+     "end": 10.054
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Payday comes. Spender can't repay it, so he pays only the sixty dollar fee.",
+   "words": [
+    {
+     "w": "Payday",
+     "t": 10.112,
+     "end": 10.447
+    },
+    {
+     "w": "comes.",
+     "t": 10.648,
+     "end": 11.016
+    },
+    {
+     "w": "Spender",
+     "t": 11.184,
+     "end": 11.519
+    },
+    {
+     "w": "can't",
+     "t": 11.586,
+     "end": 11.787
+    },
+    {
+     "w": "repay",
+     "t": 11.887,
+     "end": 12.121
+    },
+    {
+     "w": "it,",
+     "t": 12.222,
+     "end": 12.389
+    },
+    {
+     "w": "so",
+     "t": 12.456,
+     "end": 12.657
+    },
+    {
+     "w": "he",
+     "t": 12.724,
+     "end": 12.858
+    },
+    {
+     "w": "pays",
+     "t": 12.925,
+     "end": 13.193
+    },
+    {
+     "w": "only",
+     "t": 13.26,
+     "end": 13.461
+    },
+    {
+     "w": "the",
+     "t": 13.528,
+     "end": 13.595
+    },
+    {
+     "w": "sixty",
+     "t": 13.662,
+     "end": 13.863
+    },
+    {
+     "w": "dollar",
+     "t": 13.93,
+     "end": 14.131
+    },
+    {
+     "w": "fee.",
+     "t": 14.264,
+     "end": 14.666
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Again. And again. But that's not the worst part...",
+   "words": [
+    {
+     "w": "Again.",
+     "t": 14.725,
+     "end": 15.127
+    },
+    {
+     "w": "And",
+     "t": 15.529,
+     "end": 15.729
+    },
+    {
+     "w": "again.",
+     "t": 15.796,
+     "end": 16.667
+    },
+    {
+     "w": "But",
+     "t": 16.734,
+     "end": 16.801
+    },
+    {
+     "w": "that's",
+     "t": 16.868,
+     "end": 17.002
+    },
+    {
+     "w": "not",
+     "t": 17.069,
+     "end": 17.136
+    },
+    {
+     "w": "the",
+     "t": 17.203,
+     "end": 17.337
+    },
+    {
+     "w": "worst",
+     "t": 17.404,
+     "end": 17.605
+    },
+    {
+     "w": "part...",
+     "t": 17.672,
+     "end": 18.207
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "In this example, after about five months, Spender has paid six hundred dollars in fees,",
+   "words": [
+    {
+     "w": "In",
+     "t": 18.266,
+     "end": 18.4
+    },
+    {
+     "w": "this",
+     "t": 18.467,
+     "end": 18.534
+    },
+    {
+     "w": "example,",
+     "t": 18.601,
+     "end": 19.27
+    },
+    {
+     "w": "after",
+     "t": 19.404,
+     "end": 19.538
+    },
+    {
+     "w": "about",
+     "t": 19.672,
+     "end": 19.806
+    },
+    {
+     "w": "five",
+     "t": 19.94,
+     "end": 20.141
+    },
+    {
+     "w": "months,",
+     "t": 20.275,
+     "end": 20.744
+    },
+    {
+     "w": "Spender",
+     "t": 20.811,
+     "end": 21.079
+    },
+    {
+     "w": "has",
+     "t": 21.146,
+     "end": 21.28
+    },
+    {
+     "w": "paid",
+     "t": 21.346,
+     "end": 21.614
+    },
+    {
+     "w": "six",
+     "t": 21.748,
+     "end": 21.882
+    },
+    {
+     "w": "hundred",
+     "t": 22.016,
+     "end": 22.284
+    },
+    {
+     "w": "dollars",
+     "t": 22.418,
+     "end": 22.686
+    },
+    {
+     "w": "in",
+     "t": 22.753,
+     "end": 22.82
+    },
+    {
+     "w": "fees,",
+     "t": 22.887,
+     "end": 23.49
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "and still owes the whole four hundred.",
+   "words": [
+    {
+     "w": "and",
+     "t": 23.548,
+     "end": 23.682
+    },
+    {
+     "w": "still",
+     "t": 23.749,
+     "end": 24.017
+    },
+    {
+     "w": "owes",
+     "t": 24.084,
+     "end": 24.352
+    },
+    {
+     "w": "the",
+     "t": 24.385,
+     "end": 24.419
+    },
+    {
+     "w": "whole",
+     "t": 24.62,
+     "end": 24.821
+    },
+    {
+     "w": "four",
+     "t": 24.954,
+     "end": 25.088
+    },
+    {
+     "w": "hundred.",
+     "t": 25.155,
+     "end": 25.758
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Saver paid once. Spender is still paying, because",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 25.817,
+     "end": 26.152
+    },
+    {
+     "w": "paid",
+     "t": 26.219,
+     "end": 26.419
+    },
+    {
+     "w": "once.",
+     "t": 26.553,
+     "end": 27.156
+    },
+    {
+     "w": "Spender",
+     "t": 27.357,
+     "end": 27.759
+    },
+    {
+     "w": "is",
+     "t": 27.826,
+     "end": 27.96
+    },
+    {
+     "w": "still",
+     "t": 28.027,
+     "end": 28.228
+    },
+    {
+     "w": "paying,",
+     "t": 28.362,
+     "end": 28.83
+    },
+    {
+     "w": "because",
+     "t": 29.098,
+     "end": 29.567
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "A": [
+  {
+   "take": "seed11",
+   "dur": 4.07,
+   "wps": 3.2,
+   "pitch_st": 17.5,
+   "swing_db": 17.0,
+   "score": 26.01,
+   "wrong": 0,
+   "heard": "Spender just bought a TV. He'll be paying for it for 19 years."
+  },
+  {
+   "take": "seed7",
+   "dur": 4.14,
+   "wps": 3.14,
+   "pitch_st": 11.5,
+   "swing_db": 15.3,
+   "score": 19.14,
+   "wrong": 0,
+   "heard": "Spender just bought a TV. He'll be paying for it for 19 years."
+  }
+ ],
+ "B": [
+  {
+   "take": "seed11",
+   "dur": 5.14,
+   "wps": 2.14,
+   "pitch_st": 11.8,
+   "swing_db": 17.5,
+   "score": 20.51,
+   "wrong": 1,
+   "heard": "This guy is about to pay $8,000. / for nothing."
+  },
+  {
+   "take": "seed7",
+   "dur": 4.31,
+   "wps": 2.55,
+   "pitch_st": 11.6,
+   "swing_db": 17.2,
+   "score": 20.21,
+   "wrong": 1,
+   "heard": "This guy is about to pay $8,000. / for nothing."
+  }
+ ],
+ "C": [
+  {
+   "take": "seed11",
+   "dur": 3.15,
+   "wps": 2.22,
+   "pitch_st": 17.1,
+   "swing_db": 21.0,
+   "score": 27.6,
+   "wrong": 0,
+   "heard": "Never pay the minimum. Watch what happens."
+  },
+  {
+   "take": "seed7",
+   "dur": 3.02,
+   "wps": 2.32,
+   "pitch_st": 15.3,
+   "swing_db": 17.1,
+   "score": 23.89,
+   "wrong": 0,
+   "heard": "Never pay the minimum. Watch what happens."
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1512,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 481,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You quit your job with ten thousand dollars in your 401(k).",
+   "start": 0.087,
+   "end": 3.284
+  },
+  {
+   "line": 2,
+   "text": "Spender and Saver both quit at thirty, same balance.",
+   "start": 3.414,
+   "end": 6.75
+  },
+  {
+   "line": 3,
+   "text": "Spender cashes out. A ten percent penalty, plus income tax.",
+   "start": 6.88,
+   "end": 10.98
+  },
+  {
+   "line": 4,
+   "text": "About seventy-eight hundred dollars lands. Spender feels rich.",
+   "start": 11.11,
+   "end": 15.21
+  },
+  {
+   "line": 5,
+   "text": "Saver rolls it over and never touches it. But here's the part nobody shows you...",
+   "start": 15.341,
+   "end": 19.997
+  },
+  {
+   "line": 6,
+   "text": "Thirty-five years later, at about seven percent a year, Saver's ten thousand is over a hundred thousand.",
+   "start": 20.127,
+   "end": 25.895
+  },
+  {
+   "line": 7,
+   "text": "Spender traded that for seventy-eight hundred, all on the day...",
+   "start": 26.025,
+   "end": 29.5
+  }
+ ]
+}

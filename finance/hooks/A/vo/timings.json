@@ -1,0 +1,81 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 4.066
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Spender just bought a TV. He'll be paying for it for nineteen years.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 0.0,
+     "end": 0.52
+    },
+    {
+     "w": "just",
+     "t": 0.52,
+     "end": 0.8
+    },
+    {
+     "w": "bought",
+     "t": 0.8,
+     "end": 1.04
+    },
+    {
+     "w": "a",
+     "t": 1.04,
+     "end": 1.14
+    },
+    {
+     "w": "TV.",
+     "t": 1.14,
+     "end": 1.38
+    },
+    {
+     "w": "He'll",
+     "t": 1.78,
+     "end": 1.94
+    },
+    {
+     "w": "be",
+     "t": 1.94,
+     "end": 2.0
+    },
+    {
+     "w": "paying",
+     "t": 2.0,
+     "end": 2.22
+    },
+    {
+     "w": "for",
+     "t": 2.22,
+     "end": 2.46
+    },
+    {
+     "w": "it",
+     "t": 2.46,
+     "end": 2.58
+    },
+    {
+     "w": "for",
+     "t": 2.58,
+     "end": 2.7
+    },
+    {
+     "w": "nineteen",
+     "t": 2.7,
+     "end": 3.04
+    },
+    {
+     "w": "years.",
+     "t": 3.04,
+     "end": 3.38
+    }
+   ]
+  }
+ ]
+}

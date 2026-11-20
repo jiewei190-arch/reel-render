@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0969,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 426,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your free trial just cost you two hundred dollars.",
+   "start": 0.091,
+   "end": 3.081
+  },
+  {
+   "line": 2,
+   "text": "Same seven day trial. Saver sets a reminder. Spender says he'll remember.",
+   "start": 3.218,
+   "end": 8.104
+  },
+  {
+   "line": 3,
+   "text": "Day eight. Seventeen dollars hits Spender's card. He never even notices.",
+   "start": 8.241,
+   "end": 12.981
+  },
+  {
+   "line": 4,
+   "text": "And it doesn't stop at one charge...",
+   "start": 13.118,
+   "end": 15.087
+  },
+  {
+   "line": 5,
+   "text": "Month two. Month six. Month twelve. In this example, about two hundred and four dollars.",
+   "start": 15.224,
+   "end": 21.788
+  },
+  {
+   "line": 6,
+   "text": "Almost half of people in one survey forgot a trial at least once.",
+   "start": 21.924,
+   "end": 26.227
+  },
+  {
+   "line": 7,
+   "text": "Saver paid zero. And Spender's free trial?",
+   "start": 26.364,
+   "end": 29.5
+  }
+ ]
+}

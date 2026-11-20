@@ -1,0 +1,457 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your low car payment costs twelve thousand dollars in interest.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.084,
+     "end": 0.218
+    },
+    {
+     "w": "low",
+     "t": 0.285,
+     "end": 0.419
+    },
+    {
+     "w": "car",
+     "t": 0.486,
+     "end": 0.619
+    },
+    {
+     "w": "payment",
+     "t": 0.686,
+     "end": 0.954
+    },
+    {
+     "w": "costs",
+     "t": 1.021,
+     "end": 1.423
+    },
+    {
+     "w": "twelve",
+     "t": 1.524,
+     "end": 1.691
+    },
+    {
+     "w": "thousand",
+     "t": 1.892,
+     "end": 2.227
+    },
+    {
+     "w": "dollars",
+     "t": 2.294,
+     "end": 2.629
+    },
+    {
+     "w": "in",
+     "t": 2.696,
+     "end": 2.762
+    },
+    {
+     "w": "interest.",
+     "t": 2.829,
+     "end": 3.499
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same thirty-five thousand dollar car. Saver picks four years. Spender picks seven, so it's only five sixty-three a month.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 3.558,
+     "end": 3.826
+    },
+    {
+     "w": "thirty-five",
+     "t": 3.96,
+     "end": 4.294
+    },
+    {
+     "w": "thousand",
+     "t": 4.428,
+     "end": 4.629
+    },
+    {
+     "w": "dollar",
+     "t": 4.696,
+     "end": 4.897
+    },
+    {
+     "w": "car.",
+     "t": 4.964,
+     "end": 5.466
+    },
+    {
+     "w": "Saver",
+     "t": 5.701,
+     "end": 5.902
+    },
+    {
+     "w": "picks",
+     "t": 5.969,
+     "end": 6.17
+    },
+    {
+     "w": "four",
+     "t": 6.303,
+     "end": 6.437
+    },
+    {
+     "w": "years.",
+     "t": 6.504,
+     "end": 7.007
+    },
+    {
+     "w": "Spender",
+     "t": 7.174,
+     "end": 7.442
+    },
+    {
+     "w": "picks",
+     "t": 7.509,
+     "end": 7.71
+    },
+    {
+     "w": "seven,",
+     "t": 7.777,
+     "end": 8.313
+    },
+    {
+     "w": "so",
+     "t": 8.413,
+     "end": 8.513
+    },
+    {
+     "w": "it's",
+     "t": 8.58,
+     "end": 8.681
+    },
+    {
+     "w": "only",
+     "t": 8.714,
+     "end": 8.848
+    },
+    {
+     "w": "five",
+     "t": 8.982,
+     "end": 9.116
+    },
+    {
+     "w": "sixty-three",
+     "t": 9.25,
+     "end": 9.585
+    },
+    {
+     "w": "a",
+     "t": 9.652,
+     "end": 9.719
+    },
+    {
+     "w": "month.",
+     "t": 9.786,
+     "end": 10.255
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Year four. Saver makes his last payment. Spender still owes almost eighteen thousand.",
+   "words": [
+    {
+     "w": "Year",
+     "t": 10.313,
+     "end": 10.514
+    },
+    {
+     "w": "four.",
+     "t": 10.648,
+     "end": 11.15
+    },
+    {
+     "w": "Saver",
+     "t": 11.385,
+     "end": 11.653
+    },
+    {
+     "w": "makes",
+     "t": 11.72,
+     "end": 11.854
+    },
+    {
+     "w": "his",
+     "t": 11.921,
+     "end": 12.054
+    },
+    {
+     "w": "last",
+     "t": 12.121,
+     "end": 12.389
+    },
+    {
+     "w": "payment.",
+     "t": 12.456,
+     "end": 12.858
+    },
+    {
+     "w": "Spender",
+     "t": 13.26,
+     "end": 13.595
+    },
+    {
+     "w": "still",
+     "t": 13.695,
+     "end": 13.796
+    },
+    {
+     "w": "owes",
+     "t": 13.863,
+     "end": 14.064
+    },
+    {
+     "w": "almost",
+     "t": 14.131,
+     "end": 14.398
+    },
+    {
+     "w": "eighteen",
+     "t": 14.532,
+     "end": 14.867
+    },
+    {
+     "w": "thousand.",
+     "t": 15.068,
+     "end": 15.738
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Are you freaking kidding me?",
+   "words": [
+    {
+     "w": "Are",
+     "t": 15.796,
+     "end": 15.997
+    },
+    {
+     "w": "you",
+     "t": 16.064,
+     "end": 16.131
+    },
+    {
+     "w": "freaking",
+     "t": 16.332,
+     "end": 16.734
+    },
+    {
+     "w": "kidding",
+     "t": 16.801,
+     "end": 17.069
+    },
+    {
+     "w": "me?",
+     "t": 17.136,
+     "end": 17.538
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "But wait till you see the interest...",
+   "words": [
+    {
+     "w": "But",
+     "t": 17.596,
+     "end": 17.73
+    },
+    {
+     "w": "wait",
+     "t": 17.864,
+     "end": 17.998
+    },
+    {
+     "w": "till",
+     "t": 18.065,
+     "end": 18.199
+    },
+    {
+     "w": "you",
+     "t": 18.266,
+     "end": 18.333
+    },
+    {
+     "w": "see",
+     "t": 18.4,
+     "end": 18.467
+    },
+    {
+     "w": "the",
+     "t": 18.534,
+     "end": 18.668
+    },
+    {
+     "w": "interest...",
+     "t": 18.735,
+     "end": 19.538
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "In this example, at nine percent, Saver pays about sixty-eight hundred. Spender pays over twelve thousand.",
+   "words": [
+    {
+     "w": "In",
+     "t": 19.597,
+     "end": 19.731
+    },
+    {
+     "w": "this",
+     "t": 19.798,
+     "end": 19.865
+    },
+    {
+     "w": "example,",
+     "t": 19.932,
+     "end": 20.534
+    },
+    {
+     "w": "at",
+     "t": 20.601,
+     "end": 20.668
+    },
+    {
+     "w": "nine",
+     "t": 20.802,
+     "end": 20.936
+    },
+    {
+     "w": "percent,",
+     "t": 21.003,
+     "end": 21.606
+    },
+    {
+     "w": "Saver",
+     "t": 21.673,
+     "end": 21.874
+    },
+    {
+     "w": "pays",
+     "t": 21.941,
+     "end": 22.142
+    },
+    {
+     "w": "about",
+     "t": 22.276,
+     "end": 22.41
+    },
+    {
+     "w": "sixty-eight",
+     "t": 22.477,
+     "end": 22.878
+    },
+    {
+     "w": "hundred.",
+     "t": 23.012,
+     "end": 23.682
+    },
+    {
+     "w": "Spender",
+     "t": 23.749,
+     "end": 24.084
+    },
+    {
+     "w": "pays",
+     "t": 24.151,
+     "end": 24.419
+    },
+    {
+     "w": "over",
+     "t": 24.486,
+     "end": 24.687
+    },
+    {
+     "w": "twelve",
+     "t": 24.754,
+     "end": 24.954
+    },
+    {
+     "w": "thousand.",
+     "t": 25.155,
+     "end": 25.758
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Almost double, for the same car. And it all started with...",
+   "words": [
+    {
+     "w": "Almost",
+     "t": 25.817,
+     "end": 26.219
+    },
+    {
+     "w": "double,",
+     "t": 26.285,
+     "end": 26.888
+    },
+    {
+     "w": "for",
+     "t": 26.955,
+     "end": 27.022
+    },
+    {
+     "w": "the",
+     "t": 27.089,
+     "end": 27.156
+    },
+    {
+     "w": "same",
+     "t": 27.223,
+     "end": 27.424
+    },
+    {
+     "w": "car.",
+     "t": 27.558,
+     "end": 28.228
+    },
+    {
+     "w": "And",
+     "t": 28.261,
+     "end": 28.295
+    },
+    {
+     "w": "it",
+     "t": 28.362,
+     "end": 28.428
+    },
+    {
+     "w": "all",
+     "t": 28.495,
+     "end": 28.629
+    },
+    {
+     "w": "started",
+     "t": 28.696,
+     "end": 29.031
+    },
+    {
+     "w": "with...",
+     "t": 29.098,
+     "end": 29.567
+    }
+   ]
+  }
+ ]
+}

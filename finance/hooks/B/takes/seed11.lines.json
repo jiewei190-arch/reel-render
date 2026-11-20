@@ -1,0 +1,42 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 5.144,
+ "render_s": 27.8,
+ "qa_fail_lines": [
+  1
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This guy is about to pay eight thousand dollars... for nothing.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "This guy is about to pay eight thousand dollars...",
+     "seed": 11,
+     "heard": "This guy is about to pay $8,000.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    },
+    {
+     "tts": "for nothing.",
+     "seed": 11,
+     "heard": "for nothing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.844
+  }
+ ]
+}

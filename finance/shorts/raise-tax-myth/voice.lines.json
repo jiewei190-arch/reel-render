@@ -1,0 +1,69 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.073,
+ "sr": 24000,
+ "duration": 54.0,
+ "characters": 835,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You turned down a ten thousand dollar raise because of taxes?",
+   "start": 0.093,
+   "end": 3.672
+  },
+  {
+   "line": 2,
+   "text": "Spender did. He heard a raise bumps you into a higher tax bracket, so you take home less.",
+   "start": 3.812,
+   "end": 9.478
+  },
+  {
+   "line": 3,
+   "text": "Saver took it. Same job, same city.",
+   "start": 9.618,
+   "end": 12.526
+  },
+  {
+   "line": 4,
+   "text": "In this example, with 2025 federal brackets for a single filer, Spender stays at one hundred thousand taxable.",
+   "start": 12.666,
+   "end": 19.749
+  },
+  {
+   "line": 5,
+   "text": "Saver goes to one hundred ten. But only the dollars above one hundred three thousand get taxed at twenty-four percent. Everything below stays exactly the same.",
+   "start": 19.889,
+   "end": 29.582
+  },
+  {
+   "line": 6,
+   "text": "But here's the part people get wrong...",
+   "start": 29.721,
+   "end": 31.809
+  },
+  {
+   "line": 7,
+   "text": "On the extra ten thousand, Saver pays about twenty-three hundred in federal tax, and about seven sixty-five in payroll tax.",
+   "start": 31.949,
+   "end": 39.554
+  },
+  {
+   "line": 8,
+   "text": "A higher bracket never shrinks the money you already had. Saver keeps about sixty-nine hundred more.",
+   "start": 39.694,
+   "end": 45.509
+  },
+  {
+   "line": 9,
+   "text": "Spender kept zero. Over five years, that's about thirty-four thousand dollars he said no to. All because of one word...",
+   "start": 45.649,
+   "end": 54.0
+  }
+ ]
+}

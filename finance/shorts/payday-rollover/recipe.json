@@ -1,0 +1,793 @@
+{
+ "slug": "payday-rollover",
+ "style": "S2",
+ "hook": {
+  "text": "$400 LOAN, NEVER GONE",
+  "again": "7:spender"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · TYPICAL $15 PER $100",
+  "from": 1,
+  "until": "7:spender"
+ },
+ "eggs": [
+  "sticky",
+  "mug"
+ ],
+ "finalGag": {
+  "gag": "stickyFall"
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "store",
+   "note": "frame 0: worried face + $400 LOAN slip slams in",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "idle",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "loan0",
+     "kit": "label",
+     "text": [
+      "$400 LOAN"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.5,
+      0.18,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 0.1,
+     "drop": 0.07
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.06
+    },
+    {
+     "fx": "shake",
+     "at": 0.1
+    }
+   ],
+   "sfx": [
+    {
+     "at": 0.1,
+     "sfx": "cash",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": 1.0,
+   "in": "cut",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "1:every",
+       "pose": "idle",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "fee0",
+     "kit": "label",
+     "text": [
+      "$60 FEE"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.5,
+      0.2,
+      0.04
+     ],
+     "at": "mark:-0.4,1.3,0.55",
+     "motion": "dropSlam",
+     "hit": "1:sixty",
+     "drop": 0.25
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:sixty"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:sixty",
+     "sfx": "stamp",
+     "db": -5
+    }
+   ],
+   "note": " (PC: cut at 1.0 s per MAIN hook rule; was 1:costs)"
+  },
+  {
+   "at": "1:every",
+   "note": "every two weeks: calendar slams",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "cal",
+    "hit": "1:two",
+    "dist": 2.4,
+    "face": 0.22
+   },
+   "props": [
+    {
+     "id": "cal",
+     "kit": "calendar",
+     "text": [
+      "EVERY",
+      "2",
+      "WEEKS"
+     ],
+     "color": "#d62a2a",
+     "at": "wall"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:two"
+    }
+   ]
+  },
+  {
+   "at": "2:same",
+   "in": "cut",
+   "note": "race: same $400 car repair, split",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "spender",
+     "saver"
+    ],
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "left",
+     "emotion": "curious"
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "rpS",
+     "kit": "label",
+     "text": [
+      "CAR REPAIR",
+      "$400"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "left:0,2.05,0.35",
+     "motion": "dropSlam",
+     "hit": "2:repair",
+     "drop": 0.4
+    },
+    {
+     "id": "rpV",
+     "kit": "label",
+     "text": [
+      "CAR REPAIR",
+      "$400"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "right:0,2.05,0.35",
+     "motion": "dropSlam",
+     "hit": "2:repair",
+     "drop": 0.4
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.6,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "reach",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "pdl",
+     "kit": "label",
+     "text": [
+      "PAYDAY",
+      "LOAN"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.55,
+      0.34,
+      0.05
+     ],
+     "at": "mark:0.5,1.25,0.55",
+     "motion": "fly-in",
+     "hit": "2:payday"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:payday",
+     "sfx": "cash",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "2:saver",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.6,
+    "az": 12
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "sav",
+     "kit": "label",
+     "text": [
+      "SAVINGS",
+      "-$400"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.36,
+      0.05
+     ],
+     "at": "mark:-0.5,1.2,0.55",
+     "motion": "dropSlam",
+     "hit": "2:savings",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:savings",
+     "sfx": "coins",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:payday",
+   "note": "payday: you owe $460",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cal2",
+    "dist": 2.2,
+    "face": 0.22
+   },
+   "props": [
+    {
+     "id": "cal2",
+     "kit": "calendar",
+     "text": [
+      "PAYDAY",
+      "14",
+      "OWE $460"
+     ],
+     "color": "#d62a2a",
+     "at": "wall"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:comes",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:spender",
+   "in": "cut",
+   "cam": {
+    "preset": "medium",
+    "target": "spender",
+    "dist": 2.6,
+    "az": -15
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "mark",
+     "emotion": "sad",
+     "then": [
+      {
+       "at": "3:sixty",
+       "pose": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "fee1",
+     "kit": "label",
+     "text": [
+      "$60 FEE"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.26,
+      0.05
+     ],
+     "at": "mark:0.75,1.5,0.45",
+     "motion": "dropSlam",
+     "hit": "3:sixty",
+     "drop": 0.5
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:sixty"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:sixty",
+     "sfx": "stamp",
+     "db": -4
+    }
+   ]
+  },
+  {
+   "at": "4:again",
+   "note": "ROLLED OVER, rolled over",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "mark:0,1.6,0.6",
+    "hit": "4:again",
+    "dist": 2.6
+   },
+   "props": [
+    {
+     "id": "st1",
+     "kit": "stamp",
+     "text": "ROLLED OVER",
+     "at": "mark:0,1.95,0.6",
+     "hit": "4:again"
+    },
+    {
+     "id": "st2",
+     "kit": "stamp",
+     "text": "ROLLED OVER",
+     "at": "mark:0,1.6,0.6",
+     "hit": "again#2"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:again"
+    },
+    {
+     "fx": "shake",
+     "at": "again#2"
+    }
+   ]
+  },
+  {
+   "at": "4:but",
+   "mood": "whisper",
+   "note": "OPEN LOOP: a covered total trembles, the calendar keeps flipping",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cov",
+    "dist": 2.4
+   },
+   "props": [
+    {
+     "id": "cov",
+     "kit": "label",
+     "text": [
+      "TOTAL PAID",
+      "$???"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.7,
+      0.4,
+      0.05
+     ],
+     "at": "mark:0,1.6,0.6"
+    },
+    {
+     "id": "cal3",
+     "kit": "calendar",
+     "text": [
+      "DAYS IN DEBT",
+      "14",
+      ""
+     ],
+     "color": "#d62a2a",
+     "at": "wall",
+     "motion": "count-up",
+     "hit": "4:but",
+     "count": {
+      "from": 14,
+      "to": 150,
+      "dur": 1.4
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:worst"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:but",
+     "sfx": "suspense",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:in",
+   "in": "cut",
+   "note": "the race: fees counter climbs vs Saver's one payment",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "feesP",
+     "paidV"
+    ],
+    "dist": 2.3,
+    "face": 0.4,
+    "face2": 0.12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "left",
+     "emotion": "sad"
+    },
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "feesP",
+     "kit": "label",
+     "text": [
+      "FEES PAID"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "left:0,2.05,0.35",
+     "motion": "count-up",
+     "hit": "5:after",
+     "count": {
+      "from": 0,
+      "to": 540,
+      "prefix": "$",
+      "dur": 1.6
+     }
+    },
+    {
+     "id": "paidV",
+     "kit": "label",
+     "text": [
+      "PAID ONCE",
+      "$400"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "right:0,2.05,0.35"
+    }
+   ]
+  },
+  {
+   "at": "5:six",
+   "note": "TWIST: $600 IN FEES",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "big",
+    "hit": "5:six",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "shock",
+     "at": "mark",
+     "from": "5:six",
+     "squash": [
+      "5:six"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "big",
+     "kit": "label",
+     "text": [
+      "$600",
+      "IN FEES"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.8,
+      0.45,
+      0.05
+     ],
+     "at": "mark:0,2.1,0.7",
+     "motion": "dropSlam",
+     "hit": "5:six",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "5:six"
+    },
+    {
+     "fx": "shake",
+     "at": "5:six"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:six",
+     "sfx": "stamp",
+     "db": -3
+    }
+   ]
+  },
+  {
+   "at": "6:and",
+   "note": "...and still owes all $400",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.6,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "mark",
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "owe",
+     "kit": "label",
+     "text": [
+      "STILL OWES",
+      "$400"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.36,
+      0.05
+     ],
+     "at": "mark:0.5,1.2,0.55",
+     "motion": "dropSlam",
+     "hit": "6:four",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "6:four"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:four",
+     "sfx": "thud",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "7:saver",
+   "mood": "ending",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "tot",
+     "totV"
+    ],
+    "dist": 2.3,
+    "face": 0.4,
+    "face2": 0.12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "despair",
+     "at": "left",
+     "emotion": "sad"
+    },
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "right",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "tot",
+     "kit": "label",
+     "text": [
+      "TOTAL",
+      "$1,000"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "left:0,2.05,0.35",
+     "motion": "dropSlam",
+     "hit": "7:once",
+     "drop": 0.4
+    },
+    {
+     "id": "totV",
+     "kit": "label",
+     "text": [
+      "TOTAL",
+      "$400"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.34,
+      0.05
+     ],
+     "at": "right:0,2.05,0.35"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:once",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:spender",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 close-up",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "loan0",
+     "kit": "label",
+     "text": [
+      "$400 LOAN"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.5,
+      0.18,
+      0.04
+     ],
+     "at": "mark:0.0,1.02,0.72",
+     "motion": "dropSlam",
+     "hit": 29.12,
+     "drop": 0.25
+    }
+   ]
+  }
+ ]
+}

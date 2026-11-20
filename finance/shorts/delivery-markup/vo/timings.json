@@ -1,0 +1,406 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Your twelve dollar lunch costs about twenty-one delivered.",
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.097,
+     "end": 0.253
+    },
+    {
+     "w": "twelve",
+     "t": 0.33,
+     "end": 0.486
+    },
+    {
+     "w": "dollar",
+     "t": 0.563,
+     "end": 0.797
+    },
+    {
+     "w": "lunch",
+     "t": 0.952,
+     "end": 1.263
+    },
+    {
+     "w": "costs",
+     "t": 1.34,
+     "end": 1.729
+    },
+    {
+     "w": "about",
+     "t": 1.884,
+     "end": 2.04
+    },
+    {
+     "w": "twenty-one",
+     "t": 2.118,
+     "end": 2.739
+    },
+    {
+     "w": "delivered.",
+     "t": 2.817,
+     "end": 3.594
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "In this example: same meal, same place. Saver walks over and pays twelve.",
+   "words": [
+    {
+     "w": "In",
+     "t": 3.662,
+     "end": 3.817
+    },
+    {
+     "w": "this",
+     "t": 3.895,
+     "end": 3.973
+    },
+    {
+     "w": "example:",
+     "t": 4.051,
+     "end": 4.789
+    },
+    {
+     "w": "same",
+     "t": 5.061,
+     "end": 5.294
+    },
+    {
+     "w": "meal,",
+     "t": 5.372,
+     "end": 5.916
+    },
+    {
+     "w": "same",
+     "t": 6.032,
+     "end": 6.149
+    },
+    {
+     "w": "place.",
+     "t": 6.226,
+     "end": 6.848
+    },
+    {
+     "w": "Saver",
+     "t": 7.081,
+     "end": 7.392
+    },
+    {
+     "w": "walks",
+     "t": 7.47,
+     "end": 7.703
+    },
+    {
+     "w": "over",
+     "t": 7.781,
+     "end": 8.014
+    },
+    {
+     "w": "and",
+     "t": 8.091,
+     "end": 8.247
+    },
+    {
+     "w": "pays",
+     "t": 8.324,
+     "end": 8.48
+    },
+    {
+     "w": "twelve.",
+     "t": 8.558,
+     "end": 9.257
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender taps the app: delivery fee, service fee, tip, higher menu price.",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 9.325,
+     "end": 9.714
+    },
+    {
+     "w": "taps",
+     "t": 9.791,
+     "end": 10.102
+    },
+    {
+     "w": "the",
+     "t": 10.141,
+     "end": 10.18
+    },
+    {
+     "w": "app:",
+     "t": 10.257,
+     "end": 10.957
+    },
+    {
+     "w": "delivery",
+     "t": 11.035,
+     "end": 11.423
+    },
+    {
+     "w": "fee,",
+     "t": 11.501,
+     "end": 12.045
+    },
+    {
+     "w": "service",
+     "t": 12.239,
+     "end": 12.433
+    },
+    {
+     "w": "fee,",
+     "t": 12.511,
+     "end": 13.055
+    },
+    {
+     "w": "tip,",
+     "t": 13.21,
+     "end": 13.754
+    },
+    {
+     "w": "higher",
+     "t": 13.832,
+     "end": 14.065
+    },
+    {
+     "w": "menu",
+     "t": 14.143,
+     "end": 14.376
+    },
+    {
+     "w": "price.",
+     "t": 14.454,
+     "end": 15.153
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "About nine dollars extra, every order. But wait till you see a whole year...",
+   "words": [
+    {
+     "w": "About",
+     "t": 15.221,
+     "end": 15.532
+    },
+    {
+     "w": "nine",
+     "t": 15.61,
+     "end": 15.765
+    },
+    {
+     "w": "dollars",
+     "t": 15.843,
+     "end": 16.154
+    },
+    {
+     "w": "extra,",
+     "t": 16.309,
+     "end": 17.008
+    },
+    {
+     "w": "every",
+     "t": 17.164,
+     "end": 17.319
+    },
+    {
+     "w": "order.",
+     "t": 17.397,
+     "end": 17.941
+    },
+    {
+     "w": "But",
+     "t": 18.174,
+     "end": 18.252
+    },
+    {
+     "w": "wait",
+     "t": 18.329,
+     "end": 18.485
+    },
+    {
+     "w": "till",
+     "t": 18.524,
+     "end": 18.64
+    },
+    {
+     "w": "you",
+     "t": 18.718,
+     "end": 18.796
+    },
+    {
+     "w": "see",
+     "t": 18.873,
+     "end": 18.951
+    },
+    {
+     "w": "a",
+     "t": 19.068,
+     "end": 19.184
+    },
+    {
+     "w": "whole",
+     "t": 19.34,
+     "end": 19.495
+    },
+    {
+     "w": "year...",
+     "t": 19.65,
+     "end": 20.35
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Two orders a week, that's nearly a thousand dollars a year, just to skip the walk.",
+   "words": [
+    {
+     "w": "Two",
+     "t": 20.418,
+     "end": 20.651
+    },
+    {
+     "w": "orders",
+     "t": 20.729,
+     "end": 21.04
+    },
+    {
+     "w": "a",
+     "t": 21.078,
+     "end": 21.117
+    },
+    {
+     "w": "week,",
+     "t": 21.195,
+     "end": 21.894
+    },
+    {
+     "w": "that's",
+     "t": 21.972,
+     "end": 22.127
+    },
+    {
+     "w": "nearly",
+     "t": 22.166,
+     "end": 22.438
+    },
+    {
+     "w": "a",
+     "t": 22.516,
+     "end": 22.594
+    },
+    {
+     "w": "thousand",
+     "t": 22.671,
+     "end": 22.982
+    },
+    {
+     "w": "dollars",
+     "t": 23.06,
+     "end": 23.371
+    },
+    {
+     "w": "a",
+     "t": 23.448,
+     "end": 23.526
+    },
+    {
+     "w": "year,",
+     "t": 23.604,
+     "end": 24.226
+    },
+    {
+     "w": "just",
+     "t": 24.303,
+     "end": 24.459
+    },
+    {
+     "w": "to",
+     "t": 24.536,
+     "end": 24.614
+    },
+    {
+     "w": "skip",
+     "t": 24.692,
+     "end": 24.925
+    },
+    {
+     "w": "the",
+     "t": 24.964,
+     "end": 25.003
+    },
+    {
+     "w": "walk.",
+     "t": 25.08,
+     "end": 25.702
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Saver ate the exact same lunch. For twelve dollars.",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 25.77,
+     "end": 26.159
+    },
+    {
+     "w": "ate",
+     "t": 26.236,
+     "end": 26.392
+    },
+    {
+     "w": "the",
+     "t": 26.469,
+     "end": 26.547
+    },
+    {
+     "w": "exact",
+     "t": 26.819,
+     "end": 27.091
+    },
+    {
+     "w": "same",
+     "t": 27.169,
+     "end": 27.402
+    },
+    {
+     "w": "lunch.",
+     "t": 27.48,
+     "end": 27.868
+    },
+    {
+     "w": "For",
+     "t": 28.179,
+     "end": 28.257
+    },
+    {
+     "w": "twelve",
+     "t": 28.334,
+     "end": 28.645
+    },
+    {
+     "w": "dollars.",
+     "t": 28.801,
+     "end": 29.578
+    }
+   ]
+  }
+ ]
+}
