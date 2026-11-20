@@ -172,12 +172,8 @@
     {
      "word": "class...",
      "name": "toon3d:pop",
-     "gain": -10
-    },
-    {
-     "word": "living",
-     "name": "toon3d:pop",
-     "gain": -11
+     "gain": -15,
+     "offset": -0.1
     },
     {
      "word": "dead.",

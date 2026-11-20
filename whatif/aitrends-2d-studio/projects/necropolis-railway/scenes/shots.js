@@ -46,7 +46,7 @@ registerShot('s01', { kind: '3d',
 registerShot('s02', { kind: '3d',
   init(T) {
     const st = toonStage(T, { light: 'warm', fov: 42, shadowSize: 12, target: [0, 1.5, 2] });
-    const set = platformSet(st, { sign: 'NECROPOLIS', signX: -4 });
+    const set = platformSet(st, { sign: 'NECROPOLIS', signX: -4, cols: false });
     const w = coffinWagon({ cls: [1, 3, 3, 3], n: 3 }); w.position.set(-1.2, 0, 0); st.add(w);
     const cf = coffin({ cls: 1 }); st.add(cf);
     const p1 = bean0('#4a3a2a', 31), p2 = bean0('#4a3a2a', 33, 'tan'); [p1, p2].forEach(p => st.add(p));
@@ -160,7 +160,7 @@ registerShot('s06', { kind: '3d',
     dimScene(g, 6, 0.4);
     const r = at(info, 'religion', 1.3) - 0.1, c = at(info, 'class...', 2.2) - 0.1, l = at(info, 'living', 3.2) - 0.1, d = at(info, 'dead.', 3.8) - 0.12;
     const zoom = 1 + 0.04 * prog(t, 0, info.dur); g.save(); g.translate(540, 900); g.scale(zoom, zoom); g.translate(-540, -900);
-    g.translate(540, E.H * 0.40); g.scale(0.88, 0.88); g.translate(-540, -E.H * 0.40); carriagePlan(g, t, { relT: r, clsT: c, livT: l, deadT: d, y: E.H * 0.40 }); g.restore();
+    g.translate(540, E.H * 0.40); g.scale(0.88, 0.88); g.translate(-540, -E.H * 0.40); carriagePlan(g, t, { relT: 0.15, clsT: Math.min(r, 0.7), livT: l, deadT: d, y: E.H * 0.40 }); g.restore();
   },
 });
 

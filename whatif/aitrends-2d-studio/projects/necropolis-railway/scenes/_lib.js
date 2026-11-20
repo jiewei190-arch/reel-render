@@ -145,7 +145,7 @@ export function platformSet(st, o = {}) {
   const brick = canvasTex(256, 256, (x, W, H) => { x.fillStyle = '#9a5a42'; x.fillRect(0, 0, W, H); x.strokeStyle = '#7a4434'; x.lineWidth = 4; for (let r = 0; r < 8; r++) { x.beginPath(); x.moveTo(0, r * 32); x.lineTo(W, r * 32); x.stroke(); for (let c = 0; c < 5; c++) { const bx = c * 64 + (r % 2) * 32; x.beginPath(); x.moveTo(bx, r * 32); x.lineTo(bx, r * 32 + 32); x.stroke(); } } }, { repeat: [14, 4] });
   const wall = new THREE.Mesh(new THREE.PlaneGeometry(60, 12), toon('#ffffff', { map: brick })); wall.position.set(0, 6, -4); wall.receiveShadow = true; g.add(wall);
   for (let i = -4; i <= 4; i++) { const ar = new THREE.Mesh(new THREE.CircleGeometry(1.6, 20, 0, Math.PI), toon('#3a2a2a')); ar.position.set(i * 5, 3.2, -3.96); g.add(ar); g.add(plane(3.2, 3.2, '#3a2a2a', i * 5, 1.6, -3.96)); }
-  for (let i = -4; i <= 4; i++) { const col = cyl(0.12, 0.14, 5.2, '#2f4a3a', i * 4.5 + (o.colX ?? 2.25), 3.6, 6.4, 10); g.add(col); }
+  if (o.cols !== false) for (let i = -4; i <= 4; i++) { const col = cyl(0.12, 0.14, 5.2, '#2f4a3a', i * 4.5 + (o.colX ?? 2.25), 3.6, 6.4, 10); g.add(col); }
   const canopy = rbox(60, 0.25, 6.4, '#4a5a4a', 0, 6.3, 4.4, 0.05); g.add(canopy); const val = rbox(60, 0.5, 0.1, '#e8dcc0', 0, 5.95, 1.25, 0.04); g.add(val);
   const sign = label(o.sign || 'NECROPOLIS', 4.4, 0.8, { bg: '#1f3a6a', ink: '#ffffff', border: false }); sign.position.set(o.signX ?? -2.5, 5.0, 1.32); g.add(sign);
   outline(g, { px: 2 });
