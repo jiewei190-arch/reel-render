@@ -14,3 +14,6 @@ Voice is synthetic.
 
 ## Cover
 **t ≈ 3.0 s** (s01, before the punch-in): the snowy cottage at night with the single-file prints running up over its roof, top caption "1855 / it walked over the roof".
+
+## Cover
+**t ≈ 3.0 s** (s01, before the punch-in): the snowy cottage at night with the single-file prints running up over its roof, top caption "1855 / it walked over the roof".
