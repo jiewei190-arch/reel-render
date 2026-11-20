@@ -1,0 +1,208 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 42.268,
+ "render_s": 577.2,
+ "qa_fail_lines": [
+  2,
+  3,
+  5
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Britain planned to fight U-boats with an aircraft carrier made of ice.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Britain planned to fight U-boats with an aircraft carrier made of ice.",
+     "seed": 7,
+     "heard": "Britain planned to fight U-boats with an aircraft carrier made of ice.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.919
+  },
+  {
+   "n": 2,
+   "text": "World War Two. U-boats were hunting convoys where planes couldn't reach.",
+   "start": 3.059,
+   "parts": [
+    {
+     "tts": "World War Two. U-boats were hunting convoys where planes couldn't reach.",
+     "seed": 7,
+     "heard": "World War II, U-boats were hunting convoys where planes couldn't reach.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.455
+  },
+  {
+   "n": 3,
+   "text": "Inventor Geoffrey Pyke's fix: a floating airfield, made of ice.",
+   "start": 6.595,
+   "parts": [
+    {
+     "tts": "Inventor Geoffrey Pyke's fix: a floating airfield, made of ice.",
+     "seed": 7,
+     "heard": "Inventor Jeffrey Pike's fix, a floating airfield made of ice.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 9.782
+  },
+  {
+   "n": 4,
+   "text": "Not plain ice. Pykrete: wood pulp mixed with water, then frozen.",
+   "start": 9.922,
+   "parts": [
+    {
+     "tts": "Not plain ice. Pie-kreet: wood pulp mixed with water, then frozen.",
+     "seed": 11,
+     "heard": "not plain ice. Piecrete, wood pulp mixed with water, then frozen.",
+     "qa": "ok (respelled for the TTS)"
+    }
+   ],
+   "end": 13.649
+  },
+  {
+   "n": 5,
+   "text": "Code name: Habakkuk. 600 metres long. It would have been the biggest ship ever.",
+   "start": 13.789,
+   "parts": [
+    {
+     "tts": "Code name: Habakkuk. six hundred metres long. It would have been the biggest ship ever.",
+     "seed": 7,
+     "heard": "codename, Habakkuk. 600 meters long, it would have been the biggest ship ever.",
+     "wrong_words": 3,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 18.287
+  },
+  {
+   "n": 6,
+   "text": "But here's the part... at a 1943 conference, Mountbatten reportedly fired his pistol at a block of it.",
+   "start": 18.677,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "at a nineteen forty-three conference, Mountbatten reportedly fired his pistol at a block of it.",
+     "seed": 7,
+     "heard": "At a 1943 conference, Mountbatten reportedly fired his pistol at a block of it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.278
+  },
+  {
+   "n": 7,
+   "text": "The bullet bounced off... and ricocheted around the room.",
+   "start": 24.418,
+   "parts": [
+    {
+     "tts": "The bullet bounced off...",
+     "seed": 7,
+     "heard": "The bullet bounced off.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and ricocheted around the room.",
+     "seed": 42,
+     "heard": "and ricocheted around the room.",
+     "qa": "ok"
+    }
+   ],
+   "end": 26.808
+  },
+  {
+   "n": 8,
+   "text": "A prototype was built on Patricia Lake, Canada, chilled by a one-horsepower motor.",
+   "start": 26.948,
+   "parts": [
+    {
+     "tts": "A prototype was built on Patricia Lake, Canada, chilled by a one-horsepower motor.",
+     "seed": 7,
+     "heard": "A prototype was built on Patricia Lake, Canada, chilled by a one-horsepower motor.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.357
+  },
+  {
+   "n": 9,
+   "text": "But costs ballooned, and longer-range planes closed the gap.",
+   "start": 31.497,
+   "parts": [
+    {
+     "tts": "But costs ballooned, and longer-range planes closed the gap.",
+     "seed": 11,
+     "heard": "but costs ballooned and longer-range planes closed the gap.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 34.877
+  },
+  {
+   "n": 10,
+   "text": "By the end of 1943, the ice ship was shelved.",
+   "start": 35.017,
+   "parts": [
+    {
+     "tts": "By the end of nineteen forty-three, the ice ship was shelved.",
+     "seed": 7,
+     "heard": "By the end of 1943, the ice ship was shelved.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.064
+  },
+  {
+   "n": 11,
+   "text": "The real ship was never built. The prototype took three summers to melt.",
+   "start": 38.404,
+   "parts": [
+    {
+     "tts": "The real ship was never built. The prototype took three summers to melt.",
+     "seed": 7,
+     "heard": "The real ship was never built. The prototype took three summers to melt.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.168
+  }
+ ],
+ "note": "lines 4 and 7b re-rendered (Pykrete respelled \"Pie-kreet\" for the TTS; ricocheted seed 42) and spliced in",
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.08,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}

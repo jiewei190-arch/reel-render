@@ -1,0 +1,318 @@
+{
+ "duration": 42.62,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.94,
+   "line": "Britain planned to fight U-boats with an aircraft carrier made of ice.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:engine",
+     "gain": -14,
+     "dur": 2.0
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -13
+    },
+    {
+     "word": "ice.",
+     "name": "toon3d:glass",
+     "gain": -14
+    },
+    {
+     "at": 2.1,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.94,
+   "end": 6.47,
+   "line": "World War Two. U-boats were hunting convoys where planes couldn't reach.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "U-boats",
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "word": "planes",
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "reach.",
+     "name": "toon3d:buzz",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 6.47,
+   "end": 9.8,
+   "line": "Inventor Geoffrey Pyke's fix: a floating airfield, made of ice.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "fix:",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "floating",
+     "name": "toon3d:pop",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 9.8,
+   "end": 13.67,
+   "line": "Not plain ice. Pykrete: wood pulp mixed with water, then frozen.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:fail",
+     "gain": -13
+    },
+    {
+     "word": "Pykrete:",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "wood",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "frozen.",
+     "name": "toon3d:glass",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 13.67,
+   "end": 18.56,
+   "line": "Code name: Habakkuk. 600 metres long. It would have been the biggest ship ever.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "600",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "biggest",
+     "name": "toon3d:horn",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 18.56,
+   "end": 24.3,
+   "line": "But here's the part... at a 1943 conference, Mountbatten reportedly fired his pistol at a block of it.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "word": "here's",
+     "name": "toon3d:suspense",
+     "gain": -16
+    },
+    {
+     "word": "1943",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "reportedly",
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "word": "block",
+     "name": "toon3d:gunshot",
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 24.3,
+   "end": 26.83,
+   "line": "The bullet bounced off... and ricocheted around the room.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:zap",
+     "gain": -12
+    },
+    {
+     "word": "ricocheted",
+     "name": "toon3d:zap",
+     "gain": -12
+    },
+    {
+     "word": "around",
+     "name": "toon3d:zap",
+     "gain": -13
+    },
+    {
+     "word": "room.",
+     "name": "toon3d:crash",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 26.83,
+   "end": 31.38,
+   "line": "A prototype was built on Patricia Lake, Canada, chilled by a one-horsepower motor.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -20,
+     "dur": 2
+    },
+    {
+     "word": "Patricia",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "one-horsepower",
+     "name": "toon3d:engine",
+     "gain": -16,
+     "dur": 1.5
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 31.38,
+   "end": 34.9,
+   "line": "But costs ballooned, and longer-range planes closed the gap.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "word": "ballooned,",
+     "name": "toon3d:cash",
+     "gain": -11
+    },
+    {
+     "word": "longer-range",
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "closed",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 34.9,
+   "end": 38.28,
+   "line": "By the end of 1943, the ice ship was shelved.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -11
+    },
+    {
+     "word": "shelved.",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 38.28,
+   "end": 42.62,
+   "line": "The real ship was never built. The prototype took three summers to melt.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "word": "never",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "prototype",
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "word": "melt.",
+     "name": "toon3d:water",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}

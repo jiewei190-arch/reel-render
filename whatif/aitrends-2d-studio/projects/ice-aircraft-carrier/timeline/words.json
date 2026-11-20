@@ -1,0 +1,655 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Britain",
+   "start": 0.0,
+   "end": 0.24
+  },
+  {
+   "word": "planned",
+   "start": 0.24,
+   "end": 0.48
+  },
+  {
+   "word": "to",
+   "start": 0.48,
+   "end": 0.64
+  },
+  {
+   "word": "fight",
+   "start": 0.64,
+   "end": 0.82
+  },
+  {
+   "word": "U-boats",
+   "start": 0.82,
+   "end": 1.14
+  },
+  {
+   "word": "with",
+   "start": 1.14,
+   "end": 1.34
+  },
+  {
+   "word": "an",
+   "start": 1.34,
+   "end": 1.46
+  },
+  {
+   "word": "aircraft",
+   "start": 1.46,
+   "end": 1.76
+  },
+  {
+   "word": "carrier",
+   "start": 1.76,
+   "end": 2.12
+  },
+  {
+   "word": "made",
+   "start": 2.12,
+   "end": 2.3
+  },
+  {
+   "word": "of",
+   "start": 2.3,
+   "end": 2.46
+  },
+  {
+   "word": "ice.",
+   "start": 2.46,
+   "end": 2.66
+  },
+  {
+   "word": "World",
+   "start": 3.14,
+   "end": 3.26
+  },
+  {
+   "word": "War",
+   "start": 3.26,
+   "end": 3.42
+  },
+  {
+   "word": "Two.",
+   "start": 3.42,
+   "end": 3.9
+  },
+  {
+   "word": "U-boats",
+   "start": 3.9,
+   "end": 4.38
+  },
+  {
+   "word": "were",
+   "start": 4.38,
+   "end": 4.54
+  },
+  {
+   "word": "hunting",
+   "start": 4.54,
+   "end": 4.76
+  },
+  {
+   "word": "convoys",
+   "start": 4.76,
+   "end": 5.24
+  },
+  {
+   "word": "where",
+   "start": 5.24,
+   "end": 5.44
+  },
+  {
+   "word": "planes",
+   "start": 5.44,
+   "end": 5.66
+  },
+  {
+   "word": "couldn't",
+   "start": 5.66,
+   "end": 5.98
+  },
+  {
+   "word": "reach.",
+   "start": 5.98,
+   "end": 6.32
+  },
+  {
+   "word": "Inventor",
+   "start": 6.64,
+   "end": 6.98
+  },
+  {
+   "word": "Geoffrey",
+   "start": 6.98,
+   "end": 7.29
+  },
+  {
+   "word": "Pyke's",
+   "start": 7.29,
+   "end": 7.6
+  },
+  {
+   "word": "fix:",
+   "start": 7.6,
+   "end": 7.74
+  },
+  {
+   "word": "a",
+   "start": 8.12,
+   "end": 8.2
+  },
+  {
+   "word": "floating",
+   "start": 8.2,
+   "end": 8.38
+  },
+  {
+   "word": "airfield,",
+   "start": 8.38,
+   "end": 8.88
+  },
+  {
+   "word": "made",
+   "start": 8.88,
+   "end": 9.18
+  },
+  {
+   "word": "of",
+   "start": 9.18,
+   "end": 9.34
+  },
+  {
+   "word": "ice.",
+   "start": 9.34,
+   "end": 9.58
+  },
+  {
+   "word": "Not",
+   "start": 9.98,
+   "end": 10.1
+  },
+  {
+   "word": "plain",
+   "start": 10.1,
+   "end": 10.34
+  },
+  {
+   "word": "ice.",
+   "start": 10.34,
+   "end": 10.62
+  },
+  {
+   "word": "Pykrete:",
+   "start": 11.1,
+   "end": 11.48
+  },
+  {
+   "word": "wood",
+   "start": 11.72,
+   "end": 11.9
+  },
+  {
+   "word": "pulp",
+   "start": 11.9,
+   "end": 12.08
+  },
+  {
+   "word": "mixed",
+   "start": 12.08,
+   "end": 12.3
+  },
+  {
+   "word": "with",
+   "start": 12.3,
+   "end": 12.5
+  },
+  {
+   "word": "water,",
+   "start": 12.5,
+   "end": 12.78
+  },
+  {
+   "word": "then",
+   "start": 12.96,
+   "end": 13.08
+  },
+  {
+   "word": "frozen.",
+   "start": 13.08,
+   "end": 13.38
+  },
+  {
+   "word": "Code",
+   "start": 13.38,
+   "end": 14.03
+  },
+  {
+   "word": "name:",
+   "start": 14.03,
+   "end": 14.68
+  },
+  {
+   "word": "Habakkuk.",
+   "start": 14.68,
+   "end": 15.08
+  },
+  {
+   "word": "600",
+   "start": 15.46,
+   "end": 15.8
+  },
+  {
+   "word": "metres",
+   "start": 15.8,
+   "end": 16.02
+  },
+  {
+   "word": "long.",
+   "start": 16.02,
+   "end": 16.44
+  },
+  {
+   "word": "It",
+   "start": 16.76,
+   "end": 16.84
+  },
+  {
+   "word": "would",
+   "start": 16.84,
+   "end": 16.96
+  },
+  {
+   "word": "have",
+   "start": 16.96,
+   "end": 17.06
+  },
+  {
+   "word": "been",
+   "start": 17.06,
+   "end": 17.2
+  },
+  {
+   "word": "the",
+   "start": 17.2,
+   "end": 17.34
+  },
+  {
+   "word": "biggest",
+   "start": 17.34,
+   "end": 17.56
+  },
+  {
+   "word": "ship",
+   "start": 17.56,
+   "end": 17.78
+  },
+  {
+   "word": "ever.",
+   "start": 17.78,
+   "end": 18.1
+  },
+  {
+   "word": "But",
+   "start": 18.78,
+   "end": 19.0
+  },
+  {
+   "word": "here's",
+   "start": 19.0,
+   "end": 19.5
+  },
+  {
+   "word": "the",
+   "start": 19.5,
+   "end": 19.6
+  },
+  {
+   "word": "part...",
+   "start": 19.6,
+   "end": 19.82
+  },
+  {
+   "word": "at",
+   "start": 20.06,
+   "end": 20.16
+  },
+  {
+   "word": "a",
+   "start": 20.16,
+   "end": 20.28
+  },
+  {
+   "word": "1943",
+   "start": 20.28,
+   "end": 20.8
+  },
+  {
+   "word": "conference,",
+   "start": 20.8,
+   "end": 21.46
+  },
+  {
+   "word": "Mountbatten",
+   "start": 21.92,
+   "end": 22.24
+  },
+  {
+   "word": "reportedly",
+   "start": 22.24,
+   "end": 22.66
+  },
+  {
+   "word": "fired",
+   "start": 22.66,
+   "end": 23.0
+  },
+  {
+   "word": "his",
+   "start": 23.0,
+   "end": 23.18
+  },
+  {
+   "word": "pistol",
+   "start": 23.18,
+   "end": 23.46
+  },
+  {
+   "word": "at",
+   "start": 23.46,
+   "end": 23.62
+  },
+  {
+   "word": "a",
+   "start": 23.62,
+   "end": 23.7
+  },
+  {
+   "word": "block",
+   "start": 23.7,
+   "end": 23.86
+  },
+  {
+   "word": "of",
+   "start": 23.86,
+   "end": 24.0
+  },
+  {
+   "word": "it.",
+   "start": 24.0,
+   "end": 24.18
+  },
+  {
+   "word": "The",
+   "start": 24.4,
+   "end": 24.5
+  },
+  {
+   "word": "bullet",
+   "start": 24.5,
+   "end": 24.68
+  },
+  {
+   "word": "bounced",
+   "start": 24.68,
+   "end": 24.9
+  },
+  {
+   "word": "off...",
+   "start": 24.9,
+   "end": 25.24
+  },
+  {
+   "word": "and",
+   "start": 25.24,
+   "end": 25.7
+  },
+  {
+   "word": "ricocheted",
+   "start": 25.7,
+   "end": 26.08
+  },
+  {
+   "word": "around",
+   "start": 26.08,
+   "end": 26.26
+  },
+  {
+   "word": "the",
+   "start": 26.26,
+   "end": 26.4
+  },
+  {
+   "word": "room.",
+   "start": 26.4,
+   "end": 26.62
+  },
+  {
+   "word": "A",
+   "start": 26.62,
+   "end": 27.04
+  },
+  {
+   "word": "prototype",
+   "start": 27.04,
+   "end": 27.46
+  },
+  {
+   "word": "was",
+   "start": 27.46,
+   "end": 27.72
+  },
+  {
+   "word": "built",
+   "start": 27.72,
+   "end": 27.92
+  },
+  {
+   "word": "on",
+   "start": 27.92,
+   "end": 28.22
+  },
+  {
+   "word": "Patricia",
+   "start": 28.22,
+   "end": 28.54
+  },
+  {
+   "word": "Lake,",
+   "start": 28.54,
+   "end": 28.84
+  },
+  {
+   "word": "Canada,",
+   "start": 28.94,
+   "end": 29.22
+  },
+  {
+   "word": "chilled",
+   "start": 29.58,
+   "end": 29.84
+  },
+  {
+   "word": "by",
+   "start": 29.84,
+   "end": 30.1
+  },
+  {
+   "word": "a",
+   "start": 30.1,
+   "end": 30.2
+  },
+  {
+   "word": "one-horsepower",
+   "start": 30.2,
+   "end": 30.86
+  },
+  {
+   "word": "motor.",
+   "start": 30.86,
+   "end": 31.2
+  },
+  {
+   "word": "But",
+   "start": 31.56,
+   "end": 31.74
+  },
+  {
+   "word": "costs",
+   "start": 31.74,
+   "end": 32.06
+  },
+  {
+   "word": "ballooned,",
+   "start": 32.06,
+   "end": 32.7
+  },
+  {
+   "word": "and",
+   "start": 32.96,
+   "end": 33.16
+  },
+  {
+   "word": "longer-range",
+   "start": 33.16,
+   "end": 33.84
+  },
+  {
+   "word": "planes",
+   "start": 33.84,
+   "end": 34.14
+  },
+  {
+   "word": "closed",
+   "start": 34.14,
+   "end": 34.4
+  },
+  {
+   "word": "the",
+   "start": 34.4,
+   "end": 34.6
+  },
+  {
+   "word": "gap.",
+   "start": 34.6,
+   "end": 34.82
+  },
+  {
+   "word": "By",
+   "start": 35.08,
+   "end": 35.2
+  },
+  {
+   "word": "the",
+   "start": 35.2,
+   "end": 35.34
+  },
+  {
+   "word": "end",
+   "start": 35.34,
+   "end": 35.52
+  },
+  {
+   "word": "of",
+   "start": 35.52,
+   "end": 35.64
+  },
+  {
+   "word": "1943,",
+   "start": 35.64,
+   "end": 36.4
+  },
+  {
+   "word": "the",
+   "start": 36.96,
+   "end": 37.0
+  },
+  {
+   "word": "ice",
+   "start": 37.0,
+   "end": 37.18
+  },
+  {
+   "word": "ship",
+   "start": 37.18,
+   "end": 37.36
+  },
+  {
+   "word": "was",
+   "start": 37.36,
+   "end": 37.54
+  },
+  {
+   "word": "shelved.",
+   "start": 37.54,
+   "end": 38.0
+  },
+  {
+   "word": "The",
+   "start": 38.4,
+   "end": 38.56
+  },
+  {
+   "word": "real",
+   "start": 38.56,
+   "end": 38.74
+  },
+  {
+   "word": "ship",
+   "start": 38.74,
+   "end": 39.02
+  },
+  {
+   "word": "was",
+   "start": 39.02,
+   "end": 39.24
+  },
+  {
+   "word": "never",
+   "start": 39.24,
+   "end": 39.46
+  },
+  {
+   "word": "built.",
+   "start": 39.46,
+   "end": 39.72
+  },
+  {
+   "word": "The",
+   "start": 40.14,
+   "end": 40.26
+  },
+  {
+   "word": "prototype",
+   "start": 40.26,
+   "end": 40.66
+  },
+  {
+   "word": "took",
+   "start": 40.66,
+   "end": 40.92
+  },
+  {
+   "word": "three",
+   "start": 40.92,
+   "end": 41.18
+  },
+  {
+   "word": "summers",
+   "start": 41.18,
+   "end": 41.46
+  },
+  {
+   "word": "to",
+   "start": 41.46,
+   "end": 41.7
+  },
+  {
+   "word": "melt.",
+   "start": 41.7,
+   "end": 41.9
+  }
+ ]
+}

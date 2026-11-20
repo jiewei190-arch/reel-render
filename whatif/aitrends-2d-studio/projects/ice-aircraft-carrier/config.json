@@ -1,0 +1,47 @@
+{
+ "title": "The Ice Aircraft Carrier",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.62,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "ice.",
+   "U-boats",
+   "Pyke's",
+   "Pykrete:",
+   "Habakkuk.",
+   "600",
+   "biggest",
+   "1943",
+   "Mountbatten",
+   "pistol",
+   "ricocheted",
+   "Patricia",
+   "one-horsepower",
+   "ballooned,",
+   "shelved.",
+   "never",
+   "three",
+   "melt."
+  ]
+ }
+}
