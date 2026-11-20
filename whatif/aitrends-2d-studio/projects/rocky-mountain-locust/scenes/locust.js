@@ -52,7 +52,7 @@ registerShot('s02', { kind: '3d',
     specks(g, t + 2, clamp(0.9 - t / 0.4), { n: 3000, y1: 1100, seed: 11, dir: 3, hole: [560, 900, 330, 600] });
     topCaption(g, t + 1.0, [[['bigger', '#ffd25a'], ['than', '#ffffff']], [['CALIFORNIA', '#ff4a3a']]], { y: 300, size: 104, until: Math.max(0.01, 3.55 - info.shot.start) + 1.0, lead: 0.4 });
     reactions(g, t, s, [{ fx: 'question', on: 'f', at: 0.75, until: info.dur, scale: 0.9 }]);
-    stamp(g, t, 'GONE?', { at: at(info, 'vanished', 0.5) + 0.1, x: 540, y: 1420, size: 90, color: '#ffffff', fill: '#2a1c15', rot: -0.07 });
+    stamp(g, t, 'GONE?', { at: at(info, 'vanished', 0.5) + 0.1, x: 540, y: 1200, size: 90, color: '#ffffff', fill: '#2a1c15', rot: -0.07 });
   },
 });
 // ---- s03 "1875. Rocky Mountain locusts swept across the American West." Wide: a black swarm cloud rolls across the prairie.
