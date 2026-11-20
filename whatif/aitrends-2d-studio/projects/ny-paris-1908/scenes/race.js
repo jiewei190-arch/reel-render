@@ -323,8 +323,8 @@ registerShot('s12', { kind: '3d',
     sunnyLook(g, t, SOFT);
     const k0 = at(info, 'about', info.dur * 0.5) - 0.15;
     dimScene(g, 7, 0.45);
-    if (t < k0) drawInsert(g, { type: 'counter', title: 'NEW YORK → PARIS', value: 169, from: 0, suffix: ' DAYS', lines: ['FEB 12 → JULY 30, 1908'], color: '#ffcf4a' }, t);
-    else drawInsert(g, { type: 'counter', title: 'ABOUT', value: 16700, from: 0, suffix: ' KM', lines: ['DRIVEN TO WIN'], color: '#7fd06a' }, t - k0);
+    if (t < k0) drawInsert(g, { type: 'bigtext', kicker: 'NEW YORK → PARIS', title: '169 DAYS', lines: ['FEB 12 → JULY 30, 1908'], color: '#ffcf4a' }, t);
+    else drawInsert(g, { type: 'bigtext', kicker: 'ABOUT', title: '16,700 KM', size: 150, lines: ['DRIVEN TO WIN'], color: '#7fd06a' }, t - k0);
   },
 });
 
@@ -350,7 +350,7 @@ registerShot('s14', { kind: '3d',
     sunnyLook(g, t, RAYS);
     const c0 = at(info, '26', 0.9) - 0.15;
     if (t < c0) stamp(g, t, 'WINNING MARGIN?', { at: 0.05, x: 540, y: 760, size: 80, color: '#ffffff', fill: '#2a3a5a', rot: -0.04 });
-    else { dimScene(g, 6, 0.4); drawInsert(g, { type: 'counter', title: 'WINNING MARGIN', value: 26, from: 0, suffix: ' DAYS', color: '#ffcf4a' }, t - c0); }
+    else { dimScene(g, 6, 0.4); drawInsert(g, { type: 'bigtext', kicker: 'WINNING MARGIN', title: '26 DAYS', color: '#ffcf4a' }, t - c0); }
   },
 });
 
