@@ -14,18 +14,19 @@ import * as R10 from "../../shorts/overdraft_35.recipe.gen";
 import * as R11 from "../../shorts/payday_rollover.recipe.gen";
 import * as R12 from "../../shorts/prices_double.recipe.gen";
 import * as R13 from "../../shorts/quit_cash_out.recipe.gen";
-import * as R14 from "../../shorts/s1_split_payments.recipe.gen";
-import * as R15 from "../../shorts/s2_same_paycheck.recipe.gen";
-import * as R16 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
-import * as R17 from "../../shorts/s4_penny_or_million.recipe.gen";
-import * as R18 from "../../shorts/s5_spender_talks.recipe.gen";
-import * as R19 from "../../shorts/s6_three_traps.recipe.gen";
-import * as R20 from "../../shorts/same_raise.recipe.gen";
-import * as R21 from "../../shorts/seven_year_car.recipe.gen";
-import * as R22 from "../../shorts/start_25_vs_35.recipe.gen";
-import * as R23 from "../../shorts/ten_beats_thirty.recipe.gen";
-import * as R24 from "../../shorts/wedding_or_keys.recipe.gen";
-import * as R25 from "../../shorts/zero_percent_couch.recipe.gen";
+import * as R14 from "../../shorts/raise_tax_myth.recipe.gen";
+import * as R15 from "../../shorts/s1_split_payments.recipe.gen";
+import * as R16 from "../../shorts/s2_same_paycheck.recipe.gen";
+import * as R17 from "../../shorts/s3_pov_first_paycheck.recipe.gen";
+import * as R18 from "../../shorts/s4_penny_or_million.recipe.gen";
+import * as R19 from "../../shorts/s5_spender_talks.recipe.gen";
+import * as R20 from "../../shorts/s6_three_traps.recipe.gen";
+import * as R21 from "../../shorts/same_raise.recipe.gen";
+import * as R22 from "../../shorts/seven_year_car.recipe.gen";
+import * as R23 from "../../shorts/start_25_vs_35.recipe.gen";
+import * as R24 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R25 from "../../shorts/wedding_or_keys.recipe.gen";
+import * as R26 from "../../shorts/zero_percent_couch.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -54,4 +55,5 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R23.ID, recipe: R23.RECIPE, words: R23.WORDS, vo: R23.VO_DURATION },
   { id: R24.ID, recipe: R24.RECIPE, words: R24.WORDS, vo: R24.VO_DURATION },
   { id: R25.ID, recipe: R25.RECIPE, words: R25.WORDS, vo: R25.VO_DURATION },
+  { id: R26.ID, recipe: R26.RECIPE, words: R26.WORDS, vo: R26.VO_DURATION },
 ];

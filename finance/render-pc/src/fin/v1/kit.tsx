@@ -52,7 +52,8 @@ export const HookText: React.FC<{ text: string; t: number; until: number; top?: 
   return (
     <div style={{ position: "absolute", left: 60, right: 60, top, display: "flex", justifyContent: "center", opacity: out }}>
       <div style={{ transform: `scale(${pop})`, fontFamily: "Poppins", fontWeight: 800, fontSize: size, lineHeight: 1.05, color: "#ffd23a", textAlign: "center", whiteSpace: "pre-line", WebkitTextStroke: "8px #140c1c", paintOrder: "stroke fill", textShadow: "0 6px 18px rgba(8,4,16,0.7)", background: "rgba(20,12,28,0.55)", padding: "10px 26px", borderRadius: 18 }}>
-        {text}
+        {/* *word* renders that word red (additive: hook texts without '*' are unchanged) */}
+        {text.split(/(\*[^*]+\*)/).map((seg, i) => (seg.startsWith("*") && seg.endsWith("*") && seg.length > 2 ? <span key={i} style={{ color: "#ff3b3b" }}>{seg.slice(1, -1)}</span> : seg))}
       </div>
     </div>
   );
