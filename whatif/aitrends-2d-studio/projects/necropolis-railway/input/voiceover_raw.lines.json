@@ -1,0 +1,193 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 43.385,
+ "render_s": 246.1,
+ "qa_fail_lines": [
+  8
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "London ran a train line just for dead people.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "London ran a train line just for dead people.",
+     "seed": 7,
+     "heard": "London ran a train line just for dead people.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.359
+  },
+  {
+   "n": 2,
+   "text": "From 1854, it carried coffins and mourners 23 miles out to Brookwood Cemetery.",
+   "start": 2.659,
+   "parts": [
+    {
+     "tts": "From eighteen fifty-four, it carried coffins and mourners twenty-three miles out to Brookwood Cemetery.",
+     "seed": 7,
+     "heard": "From 1854, it carried coffins and mourners 23 miles out to Brookwood Cemetery.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.999
+  },
+  {
+   "n": 3,
+   "text": "London's graveyards were so full, every new grave cut into an old one.",
+   "start": 8.299,
+   "parts": [
+    {
+     "tts": "London's graveyards were so full, every new grave cut into an old one.",
+     "seed": 7,
+     "heard": "London's graveyards were so full, every new grave cut into an old one.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.358
+  },
+  {
+   "n": 4,
+   "text": "So the dead got train tickets. One way, of course.",
+   "start": 12.658,
+   "parts": [
+    {
+     "tts": "So the dead got train tickets. One way, of course.",
+     "seed": 7,
+     "heard": "So the dead got train tickets. One way, of course.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.601
+  },
+  {
+   "n": 5,
+   "text": "And the carriages were split by religion and by class... for the living AND the dead.",
+   "start": 15.901,
+   "parts": [
+    {
+     "tts": "And the carriages were split by religion and by class...",
+     "seed": 7,
+     "heard": "and the carriages were split by religion and by class.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "for the living and the dead.",
+     "seed": 7,
+     "heard": "for the living and the dead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.689
+  },
+  {
+   "n": 6,
+   "text": "No corpse had to share a compartment with the wrong crowd.",
+   "start": 20.989,
+   "parts": [
+    {
+     "tts": "No corpse had to share a compartment with the wrong crowd.",
+     "seed": 7,
+     "heard": "No corpse had to share a compartment with the wrong crowd.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.533
+  },
+  {
+   "n": 7,
+   "text": "But here's the part... golfers dressed up as mourners to ride it to a golf course.",
+   "start": 23.833,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "golfers dressed up as mourners to ride it to a golf course.",
+     "seed": 7,
+     "heard": "golfers dressed up as mourners to ride it to a golf course.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.739
+  },
+  {
+   "n": 8,
+   "text": "And in 1867, the driver got so drunk at the cemetery bar, the fireman had to drive the train home.",
+   "start": 29.039,
+   "parts": [
+    {
+     "tts": "And in eighteen sixty-seven, the driver got so drunk at the cemetery bar, the fireman had to drive the train home.",
+     "seed": 7,
+     "heard": "And in 1867, the driver got so drunk at the cemetery bar, the firemen had to drive the train home.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 34.923
+  },
+  {
+   "n": 9,
+   "text": "It ran for 87 years... until a 1941 air raid wrecked its London station.",
+   "start": 35.223,
+   "parts": [
+    {
+     "tts": "It ran for eighty-seven years...",
+     "seed": 7,
+     "heard": "It ran for 87 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "until a nineteen forty-one air raid wrecked its London station.",
+     "seed": 7,
+     "heard": "until a 1941 air raid wrecked its London station.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.815
+  },
+  {
+   "n": 10,
+   "text": "The corpse train never ran again.",
+   "start": 41.115,
+   "parts": [
+    {
+     "tts": "The corpse train never ran again.",
+     "seed": 7,
+     "heard": "the corpse train never ran again.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.085
+  }
+ ]
+}

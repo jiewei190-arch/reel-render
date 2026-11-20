@@ -1,0 +1,45 @@
+{
+ "title": "London's Corpse Train",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.25,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "dead",
+   "coffins",
+   "1854,",
+   "23",
+   "full,",
+   "One",
+   "way,",
+   "religion",
+   "class...",
+   "dead.",
+   "golfers",
+   "1867,",
+   "drunk",
+   "87",
+   "1941",
+   "never"
+  ]
+ }
+}

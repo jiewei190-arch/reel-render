@@ -1,0 +1,442 @@
+{
+ "duration": 41.25,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.4,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -14
+    },
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "dead",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:bell",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.4,
+   "end": 5.4,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "coffins",
+     "name": "toon3d:thud",
+     "gain": -11
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s03",
+   "start": 5.4,
+   "end": 7.85,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "23",
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:engine",
+     "gain": -17
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  },
+  {
+   "id": "s04",
+   "start": 7.85,
+   "end": 12.05,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "full,",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "every",
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "cut",
+     "name": "toon3d:knock",
+     "gain": -6
+    },
+    {
+     "word": "cut",
+     "name": "toon3d:impact",
+     "gain": -10,
+     "offset": 0.2
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   }
+  },
+  {
+   "id": "s05",
+   "start": 12.05,
+   "end": 15.25,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "tickets.",
+     "name": "toon3d:paper",
+     "gain": -8
+    },
+    {
+     "word": "One",
+     "name": "toon3d:stamp",
+     "gain": -5
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s06",
+   "start": 15.25,
+   "end": 19.55,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "religion",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "class...",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "living",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "dead.",
+     "name": "toon3d:thud",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   }
+  },
+  {
+   "id": "s07",
+   "start": 19.55,
+   "end": 22.55,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "compartment",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "wrong",
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s08",
+   "start": 22.55,
+   "end": 26.05,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "word": "golfers",
+     "name": "toon3d:boing",
+     "gain": -8
+    },
+    {
+     "word": "golfers",
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "offset": 0.05
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s09",
+   "start": 26.05,
+   "end": 27.55,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "toon3d:swoosh",
+     "gain": -8
+    },
+    {
+     "at": 0.38,
+     "name": "toon3d:pop",
+     "gain": -6
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   }
+  },
+  {
+   "id": "s10",
+   "start": 27.55,
+   "end": 30.95,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:glass",
+     "gain": -14
+    },
+    {
+     "word": "drunk",
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "drunk",
+     "name": "toon3d:magic",
+     "gain": -15,
+     "offset": 0.1
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   }
+  },
+  {
+   "id": "s11",
+   "start": 30.95,
+   "end": 33.15,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -12
+    },
+    {
+     "word": "fireman",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:creak",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   }
+  },
+  {
+   "id": "s12",
+   "start": 33.15,
+   "end": 35.3,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:engine",
+     "gain": -13
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "years...",
+     "name": "toon3d:ding",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   }
+  },
+  {
+   "id": "s13",
+   "start": 35.3,
+   "end": 38.55,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:rumble",
+     "gain": -12
+    },
+    {
+     "word": "1941",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "raid",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "wrecked",
+     "name": "toon3d:boom",
+     "gain": -6
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:fire",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s14",
+   "start": 38.55,
+   "end": 41.25,
+   "line": "",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -15
+    },
+    {
+     "word": "never",
+     "name": "toon3d:stamp",
+     "gain": -6
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:chime",
+     "gain": -16
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.35
+   }
+  }
+ ]
+}

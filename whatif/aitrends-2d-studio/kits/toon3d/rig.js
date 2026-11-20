@@ -200,7 +200,7 @@ const OUTFIT = {
   tee:     { main: '#3f8a7a', legs: '#c2a878', feet: '#3a2a22', sleeve: true },
 };
 export const OUTFITS = Object.keys(OUTFIT);
-export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood', 'beanie', 'ballcap', 'slouch'];
+export const HEADS = ['none', 'helmet', 'laurel', 'cap', 'cone', 'hood', 'beanie', 'ballcap', 'slouch', 'tophat'];
 export const HAIRS = ['bald', 'bowl', 'curly', 'swoop', 'spiky', 'bun', 'horseshoe', 'long', 'bob', 'pigtails', 'messy'];
 
 // pill-shaped body profile (slightly fuller at the hips), uv.y = height 0..1 so outfit bands line up
@@ -363,6 +363,11 @@ export function bean(o = {}) {
     const brimR = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.55, R * 1.55, R * 0.05, 32, 1, false, Math.PI, Math.PI), hm); brimR.position.set(0, R * 0.6, 0); brimR.rotation.x = -0.08; brimR.castShadow = true; head.add(brimR);
     const brimL = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.75, R * 0.75, R * 0.05, 32, 1, false, 0, Math.PI), hm); brimL.scale.set(1, 1, 1.9); brimL.position.set(R * 0.9, R * 0.95, 0); brimL.rotation.z = 1.45; brimL.castShadow = true; head.add(brimL);
     const badge = new THREE.Mesh(sph(), m('#d8b04a')); badge.scale.set(R * 0.05, R * 0.12, R * 0.12); badge.position.set(R * 0.97, R * 0.95, 0); head.add(badge);
+  }
+  if (hg === 'tophat') {   // Victorian top hat (necropolis-railway): tall black crown, flat brim, ribbon band
+    const hm = m(hc || '#1e1c22'); const crown = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.66, R * 0.62, R * 1.05, 28), hm); crown.position.set(0, R * 1.3, -R * 0.06); crown.rotation.x = -0.1; crown.castShadow = true; head.add(crown);
+    const band = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.64, R * 0.635, R * 0.2, 28), m(o.bandColor || '#4a4450')); band.position.set(0, R * 0.92, -R * 0.02); band.rotation.x = -0.1; head.add(band);
+    const brim = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.05, R * 1.05, R * 0.06, 32), hm); brim.scale.z = 0.92; brim.position.set(0, R * 0.8, 0); brim.rotation.x = -0.1; brim.castShadow = true; head.add(brim);
   }
   if (o.moustache) { const mm = m(o.moustache === true ? shadeHex(hairC, -0.1) : o.moustache); for (const sx of [1, -1]) { const ms = new THREE.Mesh(sph(), mm); ms.scale.set(R * 0.2, R * 0.08, R * 0.08); const n = surf(sx * 0.13, -0.2); ms.position.copy(n).multiplyScalar(R * 1.0); ms.rotation.z = sx * -0.25; ms.castShadow = true; head.add(ms); } }
   if (o.glasses) { const gm = m(o.glassesColor || '#2a2228'); for (const sx of [1, -1]) { const ring = new THREE.Mesh(new THREE.TorusGeometry(R * 0.33, R * 0.035, 8, 28), gm); const n = surf(sx * 0.36, 0.08); ring.position.copy(n).multiplyScalar(R * 1.07); ring.quaternion.setFromUnitVectors(Zv, n); ring.userData.noOutline = true; head.add(ring); } const br = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.03, R * 0.03, R * 0.14, 6), gm); br.rotation.z = Math.PI / 2; br.position.set(0, R * 0.16, R * 1.02); head.add(br); }

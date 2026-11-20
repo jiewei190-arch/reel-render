@@ -1,0 +1,645 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "London",
+   "start": 0.0,
+   "end": 0.38
+  },
+  {
+   "word": "ran",
+   "start": 0.38,
+   "end": 0.54
+  },
+  {
+   "word": "a",
+   "start": 0.54,
+   "end": 0.7
+  },
+  {
+   "word": "train",
+   "start": 0.7,
+   "end": 0.88
+  },
+  {
+   "word": "line",
+   "start": 0.88,
+   "end": 1.14
+  },
+  {
+   "word": "just",
+   "start": 1.14,
+   "end": 1.34
+  },
+  {
+   "word": "for",
+   "start": 1.34,
+   "end": 1.56
+  },
+  {
+   "word": "dead",
+   "start": 1.56,
+   "end": 1.68
+  },
+  {
+   "word": "people.",
+   "start": 1.68,
+   "end": 2.02
+  },
+  {
+   "word": "From",
+   "start": 2.44,
+   "end": 2.56
+  },
+  {
+   "word": "1854,",
+   "start": 2.56,
+   "end": 3.5
+  },
+  {
+   "word": "it",
+   "start": 3.98,
+   "end": 3.98
+  },
+  {
+   "word": "carried",
+   "start": 3.98,
+   "end": 4.24
+  },
+  {
+   "word": "coffins",
+   "start": 4.24,
+   "end": 4.8
+  },
+  {
+   "word": "and",
+   "start": 4.8,
+   "end": 5.04
+  },
+  {
+   "word": "mourners",
+   "start": 5.04,
+   "end": 5.46
+  },
+  {
+   "word": "23",
+   "start": 5.46,
+   "end": 6.06
+  },
+  {
+   "word": "miles",
+   "start": 6.06,
+   "end": 6.3
+  },
+  {
+   "word": "out",
+   "start": 6.3,
+   "end": 6.56
+  },
+  {
+   "word": "to",
+   "start": 6.56,
+   "end": 6.76
+  },
+  {
+   "word": "Brookwood",
+   "start": 6.76,
+   "end": 7.02
+  },
+  {
+   "word": "Cemetery.",
+   "start": 7.02,
+   "end": 7.4
+  },
+  {
+   "word": "London's",
+   "start": 7.98,
+   "end": 8.38
+  },
+  {
+   "word": "graveyards",
+   "start": 8.38,
+   "end": 8.84
+  },
+  {
+   "word": "were",
+   "start": 8.84,
+   "end": 9.02
+  },
+  {
+   "word": "so",
+   "start": 9.02,
+   "end": 9.18
+  },
+  {
+   "word": "full,",
+   "start": 9.18,
+   "end": 9.56
+  },
+  {
+   "word": "every",
+   "start": 9.86,
+   "end": 10.06
+  },
+  {
+   "word": "new",
+   "start": 10.06,
+   "end": 10.26
+  },
+  {
+   "word": "grave",
+   "start": 10.26,
+   "end": 10.58
+  },
+  {
+   "word": "cut",
+   "start": 10.58,
+   "end": 10.84
+  },
+  {
+   "word": "into",
+   "start": 10.84,
+   "end": 11.16
+  },
+  {
+   "word": "an",
+   "start": 11.16,
+   "end": 11.28
+  },
+  {
+   "word": "old",
+   "start": 11.28,
+   "end": 11.5
+  },
+  {
+   "word": "one.",
+   "start": 11.5,
+   "end": 11.78
+  },
+  {
+   "word": "So",
+   "start": 12.18,
+   "end": 12.52
+  },
+  {
+   "word": "the",
+   "start": 12.52,
+   "end": 12.78
+  },
+  {
+   "word": "dead",
+   "start": 12.78,
+   "end": 12.94
+  },
+  {
+   "word": "got",
+   "start": 12.94,
+   "end": 13.12
+  },
+  {
+   "word": "train",
+   "start": 13.12,
+   "end": 13.34
+  },
+  {
+   "word": "tickets.",
+   "start": 13.34,
+   "end": 13.72
+  },
+  {
+   "word": "One",
+   "start": 13.96,
+   "end": 14.24
+  },
+  {
+   "word": "way,",
+   "start": 14.24,
+   "end": 14.4
+  },
+  {
+   "word": "of",
+   "start": 14.4,
+   "end": 14.52
+  },
+  {
+   "word": "course.",
+   "start": 14.52,
+   "end": 14.8
+  },
+  {
+   "word": "And",
+   "start": 15.34,
+   "end": 15.46
+  },
+  {
+   "word": "the",
+   "start": 15.46,
+   "end": 15.58
+  },
+  {
+   "word": "carriages",
+   "start": 15.58,
+   "end": 15.94
+  },
+  {
+   "word": "were",
+   "start": 15.94,
+   "end": 16.14
+  },
+  {
+   "word": "split",
+   "start": 16.14,
+   "end": 16.4
+  },
+  {
+   "word": "by",
+   "start": 16.4,
+   "end": 16.6
+  },
+  {
+   "word": "religion",
+   "start": 16.6,
+   "end": 16.9
+  },
+  {
+   "word": "and",
+   "start": 16.9,
+   "end": 17.3
+  },
+  {
+   "word": "by",
+   "start": 17.3,
+   "end": 17.48
+  },
+  {
+   "word": "class...",
+   "start": 17.48,
+   "end": 17.82
+  },
+  {
+   "word": "for",
+   "start": 18.28,
+   "end": 18.4
+  },
+  {
+   "word": "the",
+   "start": 18.4,
+   "end": 18.52
+  },
+  {
+   "word": "living",
+   "start": 18.52,
+   "end": 18.68
+  },
+  {
+   "word": "AND",
+   "start": 18.68,
+   "end": 18.92
+  },
+  {
+   "word": "the",
+   "start": 18.92,
+   "end": 19.04
+  },
+  {
+   "word": "dead.",
+   "start": 19.04,
+   "end": 19.26
+  },
+  {
+   "word": "No",
+   "start": 19.68,
+   "end": 19.88
+  },
+  {
+   "word": "corpse",
+   "start": 19.88,
+   "end": 20.16
+  },
+  {
+   "word": "had",
+   "start": 20.16,
+   "end": 20.34
+  },
+  {
+   "word": "to",
+   "start": 20.34,
+   "end": 20.46
+  },
+  {
+   "word": "share",
+   "start": 20.46,
+   "end": 20.6
+  },
+  {
+   "word": "a",
+   "start": 20.6,
+   "end": 20.72
+  },
+  {
+   "word": "compartment",
+   "start": 20.72,
+   "end": 21.06
+  },
+  {
+   "word": "with",
+   "start": 21.06,
+   "end": 21.38
+  },
+  {
+   "word": "the",
+   "start": 21.38,
+   "end": 21.54
+  },
+  {
+   "word": "wrong",
+   "start": 21.54,
+   "end": 21.72
+  },
+  {
+   "word": "crowd.",
+   "start": 21.72,
+   "end": 21.98
+  },
+  {
+   "word": "But",
+   "start": 22.7,
+   "end": 23.02
+  },
+  {
+   "word": "here's",
+   "start": 23.02,
+   "end": 23.56
+  },
+  {
+   "word": "the",
+   "start": 23.56,
+   "end": 23.66
+  },
+  {
+   "word": "part...",
+   "start": 23.66,
+   "end": 23.88
+  },
+  {
+   "word": "golfers",
+   "start": 24.32,
+   "end": 24.54
+  },
+  {
+   "word": "dressed",
+   "start": 24.54,
+   "end": 24.8
+  },
+  {
+   "word": "up",
+   "start": 24.8,
+   "end": 24.98
+  },
+  {
+   "word": "as",
+   "start": 24.98,
+   "end": 25.2
+  },
+  {
+   "word": "mourners",
+   "start": 25.2,
+   "end": 25.54
+  },
+  {
+   "word": "to",
+   "start": 25.54,
+   "end": 25.72
+  },
+  {
+   "word": "ride",
+   "start": 25.72,
+   "end": 25.88
+  },
+  {
+   "word": "it",
+   "start": 25.88,
+   "end": 25.98
+  },
+  {
+   "word": "to",
+   "start": 25.98,
+   "end": 26.1
+  },
+  {
+   "word": "a",
+   "start": 26.1,
+   "end": 26.24
+  },
+  {
+   "word": "golf",
+   "start": 26.24,
+   "end": 26.38
+  },
+  {
+   "word": "course.",
+   "start": 26.38,
+   "end": 26.78
+  },
+  {
+   "word": "And",
+   "start": 27.3,
+   "end": 27.56
+  },
+  {
+   "word": "in",
+   "start": 27.56,
+   "end": 27.7
+  },
+  {
+   "word": "1867,",
+   "start": 27.7,
+   "end": 28.62
+  },
+  {
+   "word": "the",
+   "start": 29.02,
+   "end": 29.04
+  },
+  {
+   "word": "driver",
+   "start": 29.04,
+   "end": 29.24
+  },
+  {
+   "word": "got",
+   "start": 29.24,
+   "end": 29.46
+  },
+  {
+   "word": "so",
+   "start": 29.46,
+   "end": 29.7
+  },
+  {
+   "word": "drunk",
+   "start": 29.7,
+   "end": 29.9
+  },
+  {
+   "word": "at",
+   "start": 29.9,
+   "end": 30.04
+  },
+  {
+   "word": "the",
+   "start": 30.04,
+   "end": 30.12
+  },
+  {
+   "word": "cemetery",
+   "start": 30.12,
+   "end": 30.48
+  },
+  {
+   "word": "bar,",
+   "start": 30.48,
+   "end": 30.88
+  },
+  {
+   "word": "the",
+   "start": 31.2,
+   "end": 31.3
+  },
+  {
+   "word": "fireman",
+   "start": 31.3,
+   "end": 31.66
+  },
+  {
+   "word": "had",
+   "start": 31.66,
+   "end": 31.82
+  },
+  {
+   "word": "to",
+   "start": 31.82,
+   "end": 31.96
+  },
+  {
+   "word": "drive",
+   "start": 31.96,
+   "end": 32.1
+  },
+  {
+   "word": "the",
+   "start": 32.1,
+   "end": 32.26
+  },
+  {
+   "word": "train",
+   "start": 32.26,
+   "end": 32.44
+  },
+  {
+   "word": "home.",
+   "start": 32.44,
+   "end": 32.74
+  },
+  {
+   "word": "It",
+   "start": 33.28,
+   "end": 33.4
+  },
+  {
+   "word": "ran",
+   "start": 33.4,
+   "end": 33.6
+  },
+  {
+   "word": "for",
+   "start": 33.6,
+   "end": 33.8
+  },
+  {
+   "word": "87",
+   "start": 33.8,
+   "end": 34.28
+  },
+  {
+   "word": "years...",
+   "start": 34.28,
+   "end": 34.6
+  },
+  {
+   "word": "until",
+   "start": 34.86,
+   "end": 35.36
+  },
+  {
+   "word": "a",
+   "start": 35.36,
+   "end": 35.5
+  },
+  {
+   "word": "1941",
+   "start": 35.5,
+   "end": 36.04
+  },
+  {
+   "word": "air",
+   "start": 36.04,
+   "end": 36.5
+  },
+  {
+   "word": "raid",
+   "start": 36.5,
+   "end": 36.76
+  },
+  {
+   "word": "wrecked",
+   "start": 36.76,
+   "end": 37.02
+  },
+  {
+   "word": "its",
+   "start": 37.02,
+   "end": 37.22
+  },
+  {
+   "word": "London",
+   "start": 37.22,
+   "end": 37.46
+  },
+  {
+   "word": "station.",
+   "start": 37.46,
+   "end": 37.86
+  },
+  {
+   "word": "The",
+   "start": 38.68,
+   "end": 38.96
+  },
+  {
+   "word": "corpse",
+   "start": 38.96,
+   "end": 39.16
+  },
+  {
+   "word": "train",
+   "start": 39.16,
+   "end": 39.52
+  },
+  {
+   "word": "never",
+   "start": 39.52,
+   "end": 39.96
+  },
+  {
+   "word": "ran",
+   "start": 39.96,
+   "end": 40.2
+  },
+  {
+   "word": "again.",
+   "start": 40.2,
+   "end": 40.48
+  }
+ ]
+}
