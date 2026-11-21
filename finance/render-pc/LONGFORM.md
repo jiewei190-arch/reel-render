@@ -31,7 +31,8 @@ npx remotion still src/index.toolkit.ts <Pascal>Recipe out.jpg --frame=900 --sca
 # 4. render: the plain 30 fps composition (never a Sub one, see section 5)
 npx remotion bundle src/index.toolkit.ts --out-dir=build
 npx remotion render build <Pascal>Recipe out/longform/<slug>_v1.mp4 --gl=angle --concurrency=8 --codec=h264 --crf=18 --pixel-format=yuv420p
-#    cloud proof render: add --scale=0.5 --gl=swangle --concurrency=4
+#    cloud proof render: add --scale=0.5 --gl=swangle --concurrency=4 --timeout=600000
+#    (on swangle each tab's first frame spends ~75 s compiling shaders; the default timeout is too short)
 # 5. contact sheet (one tile every 3 s)
 ffmpeg -i out/longform/<slug>_v1.mp4 -vf "fps=1/3,scale=320:-1,tile=6x5:padding=4:color=white" -frames:v 1 out/longform/<slug>_v1_sheet.jpg
 # 6. audio: the same mix as a Short; chapter cards add a whoosh + impact cue each
@@ -141,6 +142,9 @@ Measured on a synthetic 8.7-minute recipe (the demo repeated six times: 204 shot
   next shot (`useAssetWindow` in `src/fin/lib/assets.tsx`, `windowAssets` in the compiled recipe), holding the frame
   with `delayRender` until they are in. Once more than 48 models are held, the ones outside the window are released
   and their GPU buffers disposed. Shorts keep the old up-front preload.
+- **The WebGL canvas stays mounted across shots.** Creating it compiles every shader, which costs about 75 s per
+  render tab on the cloud's software GL. The scene appears once its models are in, and a `Redraw` hook redraws the
+  canvas before the frame is released, because Remotion's ThreeCanvas only redraws on frame changes.
 
 ## 5. No motion blur for long-form (owner decision)
 
@@ -190,6 +194,8 @@ See `finance/longform/shop-too-fast/RENDER_NOTES.md` for the timings, the contac
   70 characters), which the 7-word limit normally prevents.
 - `clip_short.mjs` keeps the source's camera choices. Its portrait fit only moves text boards and pulls cameras back;
   a shot built around two actors far apart may still need a hand edit for 9:16.
+- Switching between a split screen and a single view re-creates the canvas (two canvases versus one), which costs
+  the shader compile again on a software GL. Use split screens sparingly in long-form.
 - The asset window loads the current and the next shot. A shot shorter than a model's load time may hold a render
   frame briefly (`delayRender`); it never shows a missing model.
 - Rendering 10 minutes on the cloud CPU (swangle) takes hours; render finals on the PC's GPU (`--gl=angle`).
