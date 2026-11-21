@@ -42,18 +42,18 @@ const flatSky = (top: string, mid: string, bottom: string): SkyArgs => ({
 const moody = (o: { fog: string; density: number; hemi?: [string, string, number]; key?: number; keyDir?: [number, number, number]; exposure?: number; rim?: number; sat?: number; vig?: number }): MoodPreset => {
   const m = mk({
     note: "law3d moody courtroom",
-    hemi: o.hemi ?? ["#4a5f8f", "#1a1420", 0.55],
-    key: ["#ffd29a", o.key ?? 3.4, o.keyDir ?? [0.25, 0.9, 0.55]],
+    hemi: o.hemi ?? ["#3a5088", "#120e18", 0.32],
+    key: ["#ffd29a", (o.key ?? 3.4) * 0.5, o.keyDir ?? [0.25, 0.9, 0.55]],
     rim: ["#7fa6ff", o.rim ?? 2.0, [-0.55, 0.45, -0.8]],
-    fill: ["#6a7fb8", 0.28, [-0.8, 0.3, 0.45]],
+    fill: ["#5a70b8", 0.14, [-0.8, 0.3, 0.45]],
     prac: ["#ffc070", 0, "#ffe0a8"],
     fog: [o.fog, o.density],
     sky: flatSky("#0b1426", "#14213a", "#1a2c4a"),
     toon: { shadowTint: [0.82, 0.86, 1.16], hiTint: [1.1, 1.02, 0.88], rimColor: "#a8c0ff" },
-    grade: { exposure: o.exposure ?? 0.98, contrast: 1.16, saturation: o.sat ?? 1.06, shadowTint: "#1c2c5a", highlightTint: "#ffe2b0", gain: "#fff6ea" },
+    grade: { exposure: (o.exposure ?? 0.98) * 0.92, contrast: 1.22, saturation: o.sat ?? 1.12, shadowTint: "#1c2c5a", highlightTint: "#ffe2b0", gain: "#fff6ea" },
     bloomTint: "#ffd8a0",
     ink: "#07090f",
-    camFill: ["#c8d4ff", 0.22],
+    camFill: ["#b8c8ff", 0.12],
     cast: { rim: ["#8fb0ff", 1.6], fill: ["#ffd9b0", 0.35] },
   });
   return {
@@ -61,7 +61,7 @@ const moody = (o: { fog: string; density: number; hemi?: [string, string, number
     post: {
       ...m.post,
       outline: { ...m.post.outline, widthPx: 2.0, strength: 0.6, farOpacity: 0.3 },
-      bloom: { ...m.post.bloom, threshold: 0.95, strength: 0.55, radiusPx: 44 },
+      bloom: { ...m.post.bloom, threshold: 1.0, strength: 0.45, radiusPx: 44 },
       grade: { ...m.post.grade, lift: "#05070d", splitAmount: 0.12, sharpen: 0.35 },
       vignette: { amount: o.vig ?? 0.42, softness: 0.75, color: "#02040a" },
     },
@@ -70,8 +70,8 @@ const moody = (o: { fog: string; density: number; hemi?: [string, string, number
 
 export const LAW_MOODS: Record<string, MoodPreset> = {
   courtroom: moody({ fog: "#0d1628", density: 0.028 }),
-  evidence: moody({ fog: "#070b14", density: 0.035, key: 4.2, keyDir: [0.05, 1, 0.2], hemi: ["#3a4a70", "#0a0a10", 0.4], rim: 1.6 }),
-  casefile: moody({ fog: "#120e0c", density: 0.02, key: 3.2, keyDir: [-0.45, 0.85, 0.3], hemi: ["#5a5a7a", "#1a1410", 0.6], exposure: 1.02 }),
-  headlines: moody({ fog: "#0e1422", density: 0.02, key: 3.0, keyDir: [0.35, 0.7, 0.75], hemi: ["#56658f", "#181420", 0.65], exposure: 1.02 }),
-  steps: moody({ fog: "#1a2a48", density: 0.012, key: 2.4, keyDir: [-0.5, 0.55, 0.65], hemi: ["#5a74b0", "#1e1a28", 0.75], rim: 2.4, exposure: 1.04 }),
+  evidence: moody({ fog: "#070b14", density: 0.035, key: 4.2, keyDir: [0.05, 1, 0.2], hemi: ["#2a3a68", "#0a0a10", 0.25], rim: 1.6 }),
+  casefile: moody({ fog: "#120e0c", density: 0.02, key: 3.2, keyDir: [-0.45, 0.85, 0.3], hemi: ["#3a4470", "#1a1410", 0.35], exposure: 1.02 }),
+  headlines: moody({ fog: "#0e1422", density: 0.02, key: 3.0, keyDir: [0.35, 0.7, 0.75], hemi: ["#3a4a80", "#181420", 0.38], exposure: 1.02 }),
+  steps: moody({ fog: "#14223e", density: 0.014, keyDir: [-0.5, 0.55, 0.65], hemi: ["#3a5498", "#141020", 0.4], key: 1.2, rim: 2.6, exposure: 1.0 }),
 };

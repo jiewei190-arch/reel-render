@@ -166,7 +166,7 @@ const evidence: LawSet = {
   render: (t) => (
     <>
       <mesh geometry={geoOf("lsBgDome", () => new THREE.SphereGeometry(80, 16, 10))} material={(() => { const m = bmat("#04060c"); m.side = THREE.BackSide; return m; })()} />
-      <mesh geometry={PLANE()} material={plastic("#1a1c22", { rough: 0.9 })} rotation={[-Math.PI / 2, 0, 0]} scale={[30, 30, 1]} receiveShadow />
+      <mesh geometry={PLANE()} material={plastic("#141c2e", { rough: 0.9 })} rotation={[-Math.PI / 2, 0, 0]} scale={[30, 30, 1]} receiveShadow />
       {/* the table: dark wood top on four legs, a felt pad */}
       <Blk a={[-1.15, 0.85, -0.55]} b={[1.15, 0.9, 0.55]} m={wood(LP.wood)} />
       <mesh geometry={PLANE()} material={plastic("#1c2a3c", { rough: 1 })} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.902, 0]} scale={[2.0, 0.9, 1]} receiveShadow />
@@ -290,9 +290,9 @@ const steps: LawSet = {
       <mesh geometry={geoOf("lsNightDome", () => new THREE.SphereGeometry(300, 16, 12))} material={nightMat()} />
       {STARS.map((s, k) => <mesh key={k} geometry={geoOf("lsStar", () => new THREE.IcosahedronGeometry(1, 0))} material={bmat("#dfe8ff", Math.round((0.5 + 0.5 * Math.abs(Math.sin(t * (0.5 + s.s) + k))) * 10) / 10)} position={[200 * Math.cos(s.e) * Math.sin(s.a), 200 * Math.sin(s.e), -200 * Math.cos(s.e) * Math.cos(s.a) * 0.6 - 60]} scale={s.s} />)}
       {/* the plaza */}
-      <mesh geometry={PLANE()} material={plastic("#3a3a40", { rough: 0.9 })} rotation={[-Math.PI / 2, 0, 0]} scale={[80, 60, 1]} position={[0, 0, 10]} receiveShadow />
+      <mesh geometry={PLANE()} material={plastic("#2a2e3a", { rough: 0.9 })} rotation={[-Math.PI / 2, 0, 0]} scale={[80, 60, 1]} position={[0, 0, 10]} receiveShadow />
       {/* steps */}
-      {Array.from({ length: STEP_N }, (_, k) => <Blk key={k} a={[-6, 0, -1]} b={[6, (k + 1) * STEP_RISE, STEP_Z0 - k * STEP_RUN]} m={plastic(k % 2 ? LP.stone : "#c2bbad", { rough: 0.85, flat: true })} />)}
+      {Array.from({ length: STEP_N }, (_, k) => <Blk key={k} a={[-6, 0, -1]} b={[6, (k + 1) * STEP_RISE, STEP_Z0 - k * STEP_RUN]} m={plastic(k % 2 ? "#8e8a84" : "#9a958c", { rough: 0.85, flat: true })} />)}
       {/* the building: columns, an architrave, a plain pediment with a gold line, glowing doors */}
       <Blk a={[-6.2, STEP_N * STEP_RISE, -6]} b={[6.2, 8.5, -1]} m={plastic("#8a8478", { rough: 0.9 })} />
       {Array.from({ length: 6 }, (_, k) => {
@@ -314,7 +314,7 @@ const steps: LawSet = {
           <Blk a={[x - 0.03, STEP_N * STEP_RISE, -0.99]} b={[x + 0.03, STEP_N * STEP_RISE + 2.7, -0.96]} m={wood(LP.woodDark)} cast={false} />
         </group>
       ))}
-      <pointLight position={[0, STEP_N * STEP_RISE + 1.4, 0]} color="#ffc070" intensity={6} distance={9} decay={1.6} />
+      <pointLight position={[0, STEP_N * STEP_RISE + 1.4, 0]} color="#ffc070" intensity={4} distance={9} decay={1.6} />
       {/* lamp posts */}
       {[-5, 5].map((x) => (
         <group key={x} position={[x, 0, 7.2]}>

@@ -32,7 +32,7 @@ export const LAYOUTS: Record<"portrait" | "landscape", LawLayout> = {
     safeTop: 250, safeTopHook: 560, safeBottom: 1195, safeX0: 50, safeX1: 1030,
     caseCard: { x: 540, y: 760, w: 860, h: 400 },
     verdict: { x: 540, y: 820, fs: 170, maxW: 980 },
-    board: { w: 520, h: 260, left: 60, right: 60, top: 40, fsValue: 112, fsTitle: 40 },
+    board: { w: 640, h: 270, left: 60, right: 60, top: 40, fsValue: 112, fsTitle: 40 },
     exhibitFs: 58,
     face: { hook: 0.46, close: 0.44, medium: 0.45, wide: 0.5 },
   },

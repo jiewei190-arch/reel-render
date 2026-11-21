@@ -24,7 +24,7 @@ export const KIT_BOX: Record<LawKit, { c: V3; h: V3 }> = {
   paper: { c: [0, 0.005, 0], h: [0.21, 0.005, 0.28] },
   folder: { c: [0, 0.01, 0], h: [0.25, 0.01, 0.32] },
   photo: { c: [0, 0.003, 0], h: [0.12, 0.003, 0.14] },
-  pants: { c: [0, 0.03, 0], h: [0.27, 0.03, 0.55] },
+  pants: { c: [0, 0.6, 0], h: [0.28, 0.62, 0.08] },
   sign: { c: [0, 0.4, 0], h: [0.62, 0.4, 0.03] },
   money: { c: [0, 0.05, 0], h: [0.16, 0.05, 0.08] },
   newspaper: { c: [0, 0.38, 0], h: [0.3, 0.38, 0.01] },
@@ -143,20 +143,27 @@ export const KitMesh: React.FC<{ sp: KitSpec; t: number; strike: number }> = ({ 
       );
     case "photo": return <mesh geometry={geoOf("lawPhotoM", () => new THREE.BoxGeometry(0.24, 0.004, 0.28))} material={mt(photoTex(sp.photo ?? "pants"), 0.4)} position={[0, 0.002, 0]} castShadow />;
     case "pants": {
-      const c = sp.color ?? "#4a4e58";
+      // trousers on a coat hanger, cuffs at the origin (they hang or float as an exhibit), front toward +z
+      const c = sp.color ?? "#3c414c";
       const m = plastic(c, { rough: 0.85, flat: true });
-      // lying flat: waistband at -z, legs toward +z, slightly creased
+      const dk = plastic("#1d2028", { rough: 0.8 });
       return (
         <group>
-          <mesh geometry={geoOf("lawPWaist", () => new THREE.BoxGeometry(0.44, 0.05, 0.08))} material={plastic(c, { rough: 0.7 })} position={[0, 0.025, -0.5]} castShadow />
-          <mesh geometry={geoOf("lawPSeat", () => new THREE.BoxGeometry(0.44, 0.045, 0.3))} material={m} position={[0, 0.022, -0.32]} castShadow />
+          <mesh geometry={geoOf("lawPWaist", () => new THREE.BoxGeometry(0.46, 0.07, 0.13))} material={plastic(c, { rough: 0.7 })} position={[0, 1.0, 0]} castShadow />
+          <mesh geometry={geoOf("lawPSeat", () => { const g = new THREE.CylinderGeometry(0.33, 0.31, 0.2, 4); g.rotateY(Math.PI / 4); g.scale(1, 1, 0.42); return g; })} material={m} position={[0, 0.87, 0]} castShadow />
           {[-1, 1].map((k) => (
-            <group key={k} position={[k * 0.12, 0, -0.17]} rotation={[0, -k * 0.07, 0]}>
-              <mesh geometry={geoOf("lawPLeg", () => { const g = new THREE.CylinderGeometry(0.1, 0.085, 0.84, 4, 3); g.rotateY(Math.PI / 4); g.rotateX(Math.PI / 2); g.scale(1, 0.32, 1); return g; })} material={m} position={[0, 0.02, 0.42]} castShadow />
-              <mesh geometry={geoOf("lawPCuff", () => new THREE.BoxGeometry(0.17, 0.05, 0.05))} material={plastic(c, { rough: 0.7 })} position={[0, 0.025, 0.84]} />
+            <group key={k} position={[k * 0.115, 0.8, 0]} rotation={[0, 0, k * 0.04]}>
+              <mesh geometry={geoOf("lawPLeg", () => { const g = new THREE.CylinderGeometry(0.15, 0.115, 0.76, 4, 2); g.rotateY(Math.PI / 4); g.scale(1, 1, 0.62); g.translate(0, -0.38, 0); return g; })} material={m} castShadow />
+              <mesh geometry={geoOf("lawPCrease", () => new THREE.BoxGeometry(0.01, 0.7, 0.01))} material={dk} position={[0, -0.38, 0.072]} />
+              <mesh geometry={geoOf("lawPCuff", () => { const g = new THREE.CylinderGeometry(0.122, 0.122, 0.06, 4); g.rotateY(Math.PI / 4); g.scale(1, 1, 0.64); return g; })} material={plastic(c, { rough: 0.7 })} position={[0, -0.76, 0]} />
             </group>
           ))}
-          <mesh geometry={geoOf("lawPBelt", () => new THREE.BoxGeometry(0.03, 0.055, 0.04))} material={plastic(LP.gold, { rough: 0.3 })} position={[0, 0.03, -0.5]} />
+          {[-0.16, -0.05, 0.05, 0.16].map((x) => <mesh key={x} geometry={geoOf("lawPLoop", () => new THREE.BoxGeometry(0.018, 0.07, 0.01))} material={dk} position={[x, 1.0, 0.068]} />)}
+          <mesh geometry={geoOf("lawPButton", () => new THREE.CylinderGeometry(0.014, 0.014, 0.01, 8))} material={plastic(LP.gold, { rough: 0.3 })} position={[0, 1.0, 0.07]} rotation={[Math.PI / 2, 0, 0]} />
+          {/* the hanger: a bar, two arms and a hook */}
+          <mesh geometry={geoOf("lawHBar", () => new THREE.CylinderGeometry(0.008, 0.008, 0.5, 6))} material={plastic(LP.woodLight, { rough: 0.4 })} position={[0, 1.04, 0]} rotation={[0, 0, Math.PI / 2]} />
+          {[-1, 1].map((k) => <mesh key={k} geometry={geoOf("lawHArm", () => new THREE.CylinderGeometry(0.01, 0.01, 0.3, 6))} material={plastic(LP.woodLight, { rough: 0.4 })} position={[k * 0.12, 1.11, 0]} rotation={[0, 0, k * 1.02]} />)}
+          <mesh geometry={geoOf("lawHHook", () => new THREE.TorusGeometry(0.04, 0.006, 4, 12, Math.PI * 1.4))} material={plastic("#c8c8d0", { rough: 0.2 })} position={[0, 1.22, 0]} />
         </group>
       );
     }

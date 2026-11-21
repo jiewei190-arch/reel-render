@@ -54,7 +54,7 @@ export const SpotBeam: React.FC<{ from: V3; to: V3; t: number; color?: string; i
       {light ? (
         <>
           <primitive object={target} />
-          <spotLight position={from} target={target} color={color} intensity={intensity * fl} angle={angle * 1.15} penumbra={0.55} decay={1.3} distance={L * 2.2} />
+          <spotLight position={from} target={target} color={color} intensity={intensity * 0.4 * fl} angle={angle * 1.15} penumbra={0.55} decay={1.3} distance={L * 2.2} />
         </>
       ) : null}
       <group position={from} quaternion={q}>
