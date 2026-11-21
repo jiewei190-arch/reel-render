@@ -16,13 +16,13 @@ for (let r = 0; r < 5; r++) for (let c = 0; c < 6; c++) {
   const edge = n % 5 === 0;
   blocks.push(P(`b${r}${c}`, { k: "box", s: [B, B, B * 0.9] }, [x, y, 1.0], edge ? "#123047" : CP.steel, {
     role: "shell", rough: 0.4, emissive: edge ? CP.cyan : CP.cyanDeep, ei: edge ? 0.55 : 0.12,
-    ex: [x * 1.6 + (c % 2 ? 0.3 : -0.3), (y - 1.2) * 0.9 + 0.4, 2.2 + 0.5 * ((r * 7 + c * 3) % 4)],
+    ex: [x * 1.6 + (c % 2 ? 0.3 : -0.3), Math.max(0.15, (y - 1.2) * 0.9 + 0.4), 2.2 + 0.5 * ((r * 7 + c * 3) % 4)],
   }));
 }
 // side and top walls (one slab of blocks each)
 for (let r = 0; r < 5; r++) for (const sx of [-1, 1]) for (let d = 0; d < 3; d++) {
   blocks.push(P(`s${sx > 0 ? "R" : "L"}${r}${d}`, { k: "box", s: [B * 0.9, B, B] }, [sx * 1.56, 0.27 + r * B * 1.04, 0.45 - d * B * 1.04], CP.steel, {
-    role: "shell", rough: 0.45, emissive: CP.cyanDeep, ei: (r + d) % 3 === 0 ? 0.4 : 0.08, ex: [sx * (1.6 + 0.3 * d), 0.3 * (r - 2), 0.4],
+    role: "shell", rough: 0.45, emissive: CP.cyanDeep, ei: (r + d) % 3 === 0 ? 0.4 : 0.08, ex: [sx * (1.6 + 0.3 * d), Math.max(0.1, 0.3 * (r - 1)), 0.4],
   }));
 }
 for (let c = 0; c < 6; c++) for (let d = 0; d < 3; d++) {

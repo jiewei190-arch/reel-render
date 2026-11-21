@@ -1,0 +1,644 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 40.78
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "One man got Google and Facebook to wire him over $100 million.",
+   "words": [
+    {
+     "w": "One",
+     "t": 0.0,
+     "end": 0.255
+    },
+    {
+     "w": "man",
+     "t": 0.255,
+     "end": 0.51
+    },
+    {
+     "w": "got",
+     "t": 0.51,
+     "end": 0.765
+    },
+    {
+     "w": "Google",
+     "t": 0.765,
+     "end": 1.155
+    },
+    {
+     "w": "and",
+     "t": 1.155,
+     "end": 1.41
+    },
+    {
+     "w": "Facebook",
+     "t": 1.41,
+     "end": 1.89
+    },
+    {
+     "w": "to",
+     "t": 1.89,
+     "end": 2.1
+    },
+    {
+     "w": "wire",
+     "t": 2.1,
+     "end": 2.4
+    },
+    {
+     "w": "him",
+     "t": 2.4,
+     "end": 2.655
+    },
+    {
+     "w": "over",
+     "t": 2.655,
+     "end": 2.955
+    },
+    {
+     "w": "$100",
+     "t": 2.955,
+     "end": 3.255
+    },
+    {
+     "w": "million.",
+     "t": 3.255,
+     "end": 3.69
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "He didn't hack them. He sent emails.",
+   "words": [
+    {
+     "w": "He",
+     "t": 4.04,
+     "end": 4.25
+    },
+    {
+     "w": "didn't",
+     "t": 4.25,
+     "end": 4.64
+    },
+    {
+     "w": "hack",
+     "t": 4.64,
+     "end": 4.94
+    },
+    {
+     "w": "them.",
+     "t": 4.94,
+     "end": 5.24
+    },
+    {
+     "w": "He",
+     "t": 5.24,
+     "end": 5.45
+    },
+    {
+     "w": "sent",
+     "t": 5.45,
+     "end": 5.75
+    },
+    {
+     "w": "emails.",
+     "t": 5.75,
+     "end": 6.14
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Both giants did business with a real hardware maker in Taiwan.",
+   "words": [
+    {
+     "w": "Both",
+     "t": 6.49,
+     "end": 6.79
+    },
+    {
+     "w": "giants",
+     "t": 6.79,
+     "end": 7.18
+    },
+    {
+     "w": "did",
+     "t": 7.18,
+     "end": 7.435
+    },
+    {
+     "w": "business",
+     "t": 7.435,
+     "end": 7.915
+    },
+    {
+     "w": "with",
+     "t": 7.915,
+     "end": 8.215
+    },
+    {
+     "w": "a",
+     "t": 8.215,
+     "end": 8.38
+    },
+    {
+     "w": "real",
+     "t": 8.38,
+     "end": 8.68
+    },
+    {
+     "w": "hardware",
+     "t": 8.68,
+     "end": 9.16
+    },
+    {
+     "w": "maker",
+     "t": 9.16,
+     "end": 9.505
+    },
+    {
+     "w": "in",
+     "t": 9.505,
+     "end": 9.715
+    },
+    {
+     "w": "Taiwan.",
+     "t": 9.715,
+     "end": 10.105
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "So he set up a company in Latvia with the exact same name.",
+   "words": [
+    {
+     "w": "So",
+     "t": 10.455,
+     "end": 10.665
+    },
+    {
+     "w": "he",
+     "t": 10.665,
+     "end": 10.875
+    },
+    {
+     "w": "set",
+     "t": 10.875,
+     "end": 11.13
+    },
+    {
+     "w": "up",
+     "t": 11.13,
+     "end": 11.34
+    },
+    {
+     "w": "a",
+     "t": 11.34,
+     "end": 11.505
+    },
+    {
+     "w": "company",
+     "t": 11.505,
+     "end": 11.94
+    },
+    {
+     "w": "in",
+     "t": 11.94,
+     "end": 12.15
+    },
+    {
+     "w": "Latvia",
+     "t": 12.15,
+     "end": 12.54
+    },
+    {
+     "w": "with",
+     "t": 12.54,
+     "end": 12.84
+    },
+    {
+     "w": "the",
+     "t": 12.84,
+     "end": 13.095
+    },
+    {
+     "w": "exact",
+     "t": 13.095,
+     "end": 13.44
+    },
+    {
+     "w": "same",
+     "t": 13.44,
+     "end": 13.74
+    },
+    {
+     "w": "name.",
+     "t": 13.74,
+     "end": 14.04
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Then came fake emails, fake invoices, even fake corporate stamps.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 14.39,
+     "end": 14.69
+    },
+    {
+     "w": "came",
+     "t": 14.69,
+     "end": 14.99
+    },
+    {
+     "w": "fake",
+     "t": 14.99,
+     "end": 15.29
+    },
+    {
+     "w": "emails,",
+     "t": 15.29,
+     "end": 15.68
+    },
+    {
+     "w": "fake",
+     "t": 15.68,
+     "end": 15.98
+    },
+    {
+     "w": "invoices,",
+     "t": 15.98,
+     "end": 16.46
+    },
+    {
+     "w": "even",
+     "t": 16.46,
+     "end": 16.76
+    },
+    {
+     "w": "fake",
+     "t": 16.76,
+     "end": 17.06
+    },
+    {
+     "w": "corporate",
+     "t": 17.06,
+     "end": 17.585
+    },
+    {
+     "w": "stamps.",
+     "t": 17.585,
+     "end": 17.975
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "From 2013 to 2015, they paid. Over $120 million in total.",
+   "words": [
+    {
+     "w": "From",
+     "t": 18.325,
+     "end": 18.625
+    },
+    {
+     "w": "2013",
+     "t": 18.625,
+     "end": 18.925
+    },
+    {
+     "w": "to",
+     "t": 18.925,
+     "end": 19.135
+    },
+    {
+     "w": "2015,",
+     "t": 19.135,
+     "end": 19.435
+    },
+    {
+     "w": "they",
+     "t": 19.435,
+     "end": 19.735
+    },
+    {
+     "w": "paid.",
+     "t": 19.735,
+     "end": 20.035
+    },
+    {
+     "w": "Over",
+     "t": 20.035,
+     "end": 20.335
+    },
+    {
+     "w": "$120",
+     "t": 20.335,
+     "end": 20.635
+    },
+    {
+     "w": "million",
+     "t": 20.635,
+     "end": 21.07
+    },
+    {
+     "w": "in",
+     "t": 21.07,
+     "end": 21.28
+    },
+    {
+     "w": "total.",
+     "t": 21.28,
+     "end": 21.625
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The money scattered fast: Cyprus, Slovakia, Hungary, Hong Kong.",
+   "words": [
+    {
+     "w": "The",
+     "t": 21.975,
+     "end": 22.23
+    },
+    {
+     "w": "money",
+     "t": 22.23,
+     "end": 22.575
+    },
+    {
+     "w": "scattered",
+     "t": 22.575,
+     "end": 23.1
+    },
+    {
+     "w": "fast:",
+     "t": 23.1,
+     "end": 23.445
+    },
+    {
+     "w": "Cyprus,",
+     "t": 23.445,
+     "end": 23.835
+    },
+    {
+     "w": "Slovakia,",
+     "t": 23.835,
+     "end": 24.315
+    },
+    {
+     "w": "Hungary,",
+     "t": 24.315,
+     "end": 24.75
+    },
+    {
+     "w": "Hong",
+     "t": 24.75,
+     "end": 25.05
+    },
+    {
+     "w": "Kong.",
+     "t": 25.05,
+     "end": 25.35
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "But wires leave a trail. In 2017, Lithuanian authorities arrested him.",
+   "words": [
+    {
+     "w": "But",
+     "t": 25.7,
+     "end": 25.955
+    },
+    {
+     "w": "wires",
+     "t": 25.955,
+     "end": 26.3
+    },
+    {
+     "w": "leave",
+     "t": 26.3,
+     "end": 26.645
+    },
+    {
+     "w": "a",
+     "t": 26.645,
+     "end": 26.81
+    },
+    {
+     "w": "trail.",
+     "t": 26.81,
+     "end": 27.155
+    },
+    {
+     "w": "In",
+     "t": 27.155,
+     "end": 27.365
+    },
+    {
+     "w": "2017,",
+     "t": 27.365,
+     "end": 27.665
+    },
+    {
+     "w": "Lithuanian",
+     "t": 27.665,
+     "end": 28.235
+    },
+    {
+     "w": "authorities",
+     "t": 28.235,
+     "end": 28.85
+    },
+    {
+     "w": "arrested",
+     "t": 28.85,
+     "end": 29.33
+    },
+    {
+     "w": "him.",
+     "t": 29.33,
+     "end": 29.585
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "Extradited to New York. Five years in prison.",
+   "words": [
+    {
+     "w": "Extradited",
+     "t": 29.935,
+     "end": 30.505
+    },
+    {
+     "w": "to",
+     "t": 30.505,
+     "end": 30.715
+    },
+    {
+     "w": "New",
+     "t": 30.715,
+     "end": 30.97
+    },
+    {
+     "w": "York.",
+     "t": 30.97,
+     "end": 31.27
+    },
+    {
+     "w": "Five",
+     "t": 31.27,
+     "end": 31.57
+    },
+    {
+     "w": "years",
+     "t": 31.57,
+     "end": 31.915
+    },
+    {
+     "w": "in",
+     "t": 31.915,
+     "end": 32.125
+    },
+    {
+     "w": "prison.",
+     "t": 32.125,
+     "end": 32.515
+    }
+   ]
+  },
+  {
+   "turn": 10,
+   "text": "Spot it: a supplier suddenly sends new bank details. Call them on a number you already trust.",
+   "words": [
+    {
+     "w": "Spot",
+     "t": 32.865,
+     "end": 33.165
+    },
+    {
+     "w": "it:",
+     "t": 33.165,
+     "end": 33.42
+    },
+    {
+     "w": "a",
+     "t": 33.42,
+     "end": 33.585
+    },
+    {
+     "w": "supplier",
+     "t": 33.585,
+     "end": 34.065
+    },
+    {
+     "w": "suddenly",
+     "t": 34.065,
+     "end": 34.545
+    },
+    {
+     "w": "sends",
+     "t": 34.545,
+     "end": 34.89
+    },
+    {
+     "w": "new",
+     "t": 34.89,
+     "end": 35.145
+    },
+    {
+     "w": "bank",
+     "t": 35.145,
+     "end": 35.445
+    },
+    {
+     "w": "details.",
+     "t": 35.445,
+     "end": 35.88
+    },
+    {
+     "w": "Call",
+     "t": 35.88,
+     "end": 36.18
+    },
+    {
+     "w": "them",
+     "t": 36.18,
+     "end": 36.48
+    },
+    {
+     "w": "on",
+     "t": 36.48,
+     "end": 36.69
+    },
+    {
+     "w": "a",
+     "t": 36.69,
+     "end": 36.855
+    },
+    {
+     "w": "number",
+     "t": 36.855,
+     "end": 37.245
+    },
+    {
+     "w": "you",
+     "t": 37.245,
+     "end": 37.5
+    },
+    {
+     "w": "already",
+     "t": 37.5,
+     "end": 37.935
+    },
+    {
+     "w": "trust.",
+     "t": 37.935,
+     "end": 38.28
+    }
+   ]
+  },
+  {
+   "turn": 11,
+   "text": "Because one email is how",
+   "words": [
+    {
+     "w": "Because",
+     "t": 38.63,
+     "end": 39.065
+    },
+    {
+     "w": "one",
+     "t": 39.065,
+     "end": 39.32
+    },
+    {
+     "w": "email",
+     "t": 39.32,
+     "end": 39.665
+    },
+    {
+     "w": "is",
+     "t": 39.665,
+     "end": 39.875
+    },
+    {
+     "w": "how",
+     "t": 39.875,
+     "end": 40.13
+    }
+   ]
+  }
+ ]
+}

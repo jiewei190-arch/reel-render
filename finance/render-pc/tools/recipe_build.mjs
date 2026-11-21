@@ -31,6 +31,8 @@ if (recipe.slug !== slug) { console.error(`recipe.slug "${recipe.slug}" != folde
 // the tech3d kit ("kit": "tech3d", finance/render-pc/KIT_TECH3D.md) has its own compiler, registry and entry
 // (src/index.tech.ts): hand it over before anything is written. Recipes without "kit" (Block Money) are untouched.
 if (recipe.kit === "tech3d") { const { main } = await import("./tech_build.mjs"); process.exit(await main(args)); }
+// the cyber3d kit ("kit": "cyber3d", KIT_CYBER3D.md: Scams & Hacks) likewise: src/index.cyber.ts, its own registry
+if (recipe.kit === "cyber3d") { const { main } = await import("./cyber_build.mjs"); process.exit(await main(args)); }
 
 // ---------------------------------------------------------------- 1) codegen
 const wf = (f, txt) => { if (!check) writeFileSync(f, txt); };
