@@ -24,24 +24,89 @@ def strip_tags(text: str) -> str:
     return re.sub(r"\s+", " ", TAG.sub("", text)).strip()
 
 
-def _tts(text: str, voice_id: str, speed: float) -> tuple[bytes, dict]:
+# Voice settings per mood. Lower stability = more expressive and more responsive to emotion tags; higher = steady,
+# clean narration. Plain explanation lines stay steady so the emotional beats stand out.
+MOOD_SETTINGS = {
+    "neutral": (0.55, 0.20), "curious": (0.45, 0.30), "hopeful": (0.45, 0.30),
+    "serious": (0.50, 0.25), "sad": (0.40, 0.30), "worried": (0.40, 0.30), "tense": (0.40, 0.35),
+    "surprised": (0.35, 0.45), "sarcastic": (0.35, 0.45), "funny": (0.30, 0.50),
+    "triumphant": (0.35, 0.50), "hype": (0.30, 0.55),
+}
+
+
+def settings_for(mood: str | None) -> tuple[float, float]:
+    if os.environ.get("REELBOT_VOICE_STABILITY"):  # manual override for every line
+        return float(os.environ["REELBOT_VOICE_STABILITY"]), float(os.environ.get("REELBOT_VOICE_STYLE", "0.35"))
+    return MOOD_SETTINGS.get(mood or "neutral", (0.45, 0.30))
+
+
+def _tts(text: str, voice_id: str, speed: float, mood: str | None = None) -> tuple[bytes, dict]:
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not key:
         CFG.require_keys("ELEVENLABS_API_KEY")
-    r = requests.post(
-        f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps",
-        params={"output_format": "pcm_24000"},
-        headers={"xi-api-key": key, "Content-Type": "application/json"},
-        json={"text": text, "model_id": CFG.eleven_model,
-              "voice_settings": {"speed": speed, "stability": float(os.environ.get("REELBOT_VOICE_STABILITY", "0.4")),
-                                 "similarity_boost": 0.8, "style": float(os.environ.get("REELBOT_VOICE_STYLE", "0.35"))}},
-        timeout=180,
-    )
+    stability, style = settings_for(mood)
+
+    def call(stab: float):
+        return requests.post(
+            f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps",
+            params={"output_format": "pcm_24000"},
+            headers={"xi-api-key": key, "Content-Type": "application/json"},
+            json={"text": text, "model_id": CFG.eleven_model,
+                  "voice_settings": {"speed": speed, "stability": stab, "similarity_boost": 0.8, "style": style}},
+            timeout=180)
+
+    r = call(stability)
+    if r.status_code == 400 and "stability" in r.text.lower():  # some models only take 0 / 0.5 / 1
+        r = call(0.5)
     if r.status_code != 200:
         raise RuntimeError(f"ElevenLabs error {r.status_code}: {r.text[:300]}")
     d = r.json()
     COST.eleven_chars += len(text)
     return base64.b64decode(d["audio_base64"]), (d.get("normalized_alignment") or d["alignment"])
+
+
+LISTEN = os.environ.get("REELBOT_VOICE_CHECK", "1") != "0"
+MAX_RETAKES = int(os.environ.get("REELBOT_VOICE_RETAKES", "4"))  # per Short, caps extra ElevenLabs spend
+LISTEN_SCHEMA = {
+    "type": "object", "additionalProperties": False, "required": ["ok", "score", "heard_emotion", "problem"],
+    "properties": {"ok": {"type": "boolean"}, "score": {"type": "number", "description": "1-10"},
+                   "heard_emotion": {"type": "string"}, "problem": {"type": "string"}},
+}
+
+
+def _wav_bytes(pcm: bytes) -> bytes:
+    import io
+    b = io.BytesIO()
+    with wave.open(b, "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(SR)
+        w.writeframes(pcm)
+    return b.getvalue()
+
+
+def _listen(pcm: bytes, line: str, mood: str | None) -> dict:
+    """Gemini listens to one take: right emotion for the moment, every word clear, sounds natural."""
+    from google.genai import types
+    from . import gemini
+    prompt = (
+        "You are a voice director checking one narrator take for a YouTube Short.\n"
+        f"The line: \"{line}\"\nIntended mood: {mood or 'neutral'}\n"
+        "Pass it (ok=true) only if ALL are true: (1) the emotion you hear fits the intended mood and what the words mean "
+        "(an upbeat, laughing or playful sound on a sad/serious line is a fail; a flat read on a big reveal is a fail); "
+        "(2) every word is clear and correct, including numbers, nothing mispronounced, skipped or added, no audio tag "
+        "spoken out loud; (3) it sounds like a natural human narrator: no robotic glitches, odd pauses, weird pitch or "
+        "over-acting. Score 1-10 for how good it sounds. In 'problem' say exactly what is wrong (empty if ok).")
+    try:
+        resp = gemini.client().models.generate_content(
+            model=CFG.gemini_model,
+            contents=[types.Part.from_bytes(data=_wav_bytes(pcm), mime_type="audio/wav"), prompt],
+            config=types.GenerateContentConfig(response_mime_type="application/json", response_json_schema=LISTEN_SCHEMA))
+        COST.gemini_calls += 1
+        return json.loads(resp.text)
+    except Exception as e:  # the listener is a safety net; never let it block voicing
+        print(f"    listener unavailable: {e}")
+        return {"ok": True, "score": 0, "heard_emotion": "", "problem": f"not checked: {e}"}
 
 
 def _words(al: dict, text: str, offset: float) -> list[dict]:
@@ -79,17 +144,33 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
     lines = [l.strip() for l in (folder / "script.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
     spoken = lines
     sj = folder / "script.json"
+    moods: list = []
     if sj.exists():  # emotion-tagged versions of the same lines, if the writer made them and they match
-        vl = json.loads(sj.read_text(encoding="utf-8")).get("voice_lines") or []
+        sdata = json.loads(sj.read_text(encoding="utf-8"))
+        moods = [m.get("mood") for m in (sdata.get("moods") or [])]
+        vl = sdata.get("voice_lines") or []
         if len(vl) == len(lines) and all(strip_tags(v) == l for v, l in zip(vl, lines)):
             spoken = vl
         elif vl:
             print("  voice: emotion tags don't match the script lines; using plain lines")
+    moods = moods if len(moods) == len(lines) else [None] * len(lines)
     pcm_all = bytearray(b"\0\0" * int(SR * lead))
-    t, turns, meta = lead, [], []
-    for i, (line, say) in enumerate(zip(lines, spoken), 1):
-        print(f"  elevenlabs: line {i}/{len(lines)}" + (f"  {say[:60]}" if say != line else ""))
-        pcm, al = _tts(say, voice_id, speed)
+    t, turns, meta, checks = lead, [], [], []
+    retakes_left = MAX_RETAKES
+    for i, (line, say, mood) in enumerate(zip(lines, spoken, moods), 1):
+        print(f"  elevenlabs: line {i}/{len(lines)} [{mood or '-'}]" + (f"  {say[:60]}" if say != line else ""))
+        pcm, al = _tts(say, voice_id, speed, mood)
+        if LISTEN:  # an AI listener checks the take; a bad take is re-recorded (best take wins)
+            best = (_listen(pcm, line, mood), pcm, al)
+            while not best[0]["ok"] and retakes_left > 0:
+                retakes_left -= 1
+                print(f"    retake: {best[0]['problem']}")
+                p2, a2 = _tts(say, voice_id, speed, mood)
+                v2 = _listen(p2, line, mood)
+                if v2["score"] > best[0]["score"]:
+                    best = (v2, p2, a2)
+            verdict, pcm, al = best
+            checks.append({"line": i, "mood": mood, **verdict})
         dur = len(pcm) / 2 / SR
         turns.append({"turn": i, "text": line, "words": _words(al, say, t)})
         meta.append({"line": i, "text": line, "start": round(t, 3), "end": round(t + dur, 3)})
@@ -147,5 +228,10 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
         {"provider": "elevenlabs", "voice": voice, "voice_id": voice_id, "model": CFG.eleven_model, "gap": gap,
          "lead": lead, "speed": speed, "tempo": round(tempo, 4), "sr": SR, "duration": round(t, 3),
          "characters": sum(len(l) for l in lines), "lines": meta}, indent=1), encoding="utf-8")
+    if checks:
+        (folder / "vo" / "voice_check.json").write_text(json.dumps(checks, indent=1), encoding="utf-8")
+        bad = [c for c in checks if not c["ok"]]
+        if bad:
+            print(f"  voice: {len(bad)} line(s) still not ideal after retakes: " + ", ".join(str(c['line']) for c in bad))
     print(f"  voice: {voice}, {t:.1f} s (tempo x{tempo:.3f})")
     return t

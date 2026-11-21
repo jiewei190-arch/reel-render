@@ -59,9 +59,18 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 
 ## Voice emotion and sound design
 
-- `voice_lines` in script.json are the script lines plus ElevenLabs audio tags. The voice stage speaks those; captions
-  and timings use the clean lines. If the tagged lines ever don't match the script word for word, it falls back to the
-  plain lines. Tune with `REELBOT_VOICE_STABILITY` (lower = more expressive, default 0.4) and `REELBOT_VOICE_STYLE`.
+- **Voice director** (`tone.py`): before voicing, Claude labels every line's mood and sets its audio tags. Most lines
+  get none (a plain, confident read); only the 3-5 real emotional beats (hook, twist, big number, loss, payoff) get one
+  tag. Sad/serious lines never get excited, laughing or playful tags. Neutral lines are forced plain, max 1 tag per line,
+  and the words can never change.
+- **Per-mood voice settings**: steady settings on plain lines, more expressive ones on emotional beats, so the big
+  moments stand out (`MOOD_SETTINGS` in `voice.py`). `REELBOT_VOICE_STABILITY`/`REELBOT_VOICE_STYLE` override all lines.
+- **Listen-back**: Gemini listens to every take: right emotion for the moment, every word and number clear, natural
+  sounding (no glitches, odd pauses, over-acting, or a tag read out loud). A failed take is re-recorded and the best
+  take wins, up to `REELBOT_VOICE_RETAKES` (default 4) retakes per Short. Results in `vo/voice_check.json`.
+  Off: `REELBOT_VOICE_CHECK=0`.
+- Captions and timings always use the clean lines; if tagged lines ever don't match the script word for word, the
+  plain lines are used.
 - Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
   lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
 
