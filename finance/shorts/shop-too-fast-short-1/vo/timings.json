@@ -1,0 +1,371 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 22.45,
+  "clippedFrom": "shop-too-fast",
+  "clipFrom": 44.435,
+  "clipTo": 66.085
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "The new shops were on quiet streets. Each one sold half as much as the first.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.1,
+     "end": 0.355
+    },
+    {
+     "w": "new",
+     "t": 0.355,
+     "end": 0.61
+    },
+    {
+     "w": "shops",
+     "t": 0.61,
+     "end": 0.955
+    },
+    {
+     "w": "were",
+     "t": 0.955,
+     "end": 1.255
+    },
+    {
+     "w": "on",
+     "t": 1.255,
+     "end": 1.465
+    },
+    {
+     "w": "quiet",
+     "t": 1.465,
+     "end": 1.81
+    },
+    {
+     "w": "streets.",
+     "t": 1.81,
+     "end": 2.245
+    },
+    {
+     "w": "Each",
+     "t": 2.245,
+     "end": 2.545
+    },
+    {
+     "w": "one",
+     "t": 2.545,
+     "end": 2.8
+    },
+    {
+     "w": "sold",
+     "t": 2.8,
+     "end": 3.1
+    },
+    {
+     "w": "half",
+     "t": 3.1,
+     "end": 3.4
+    },
+    {
+     "w": "as",
+     "t": 3.4,
+     "end": 3.61
+    },
+    {
+     "w": "much",
+     "t": 3.61,
+     "end": 3.91
+    },
+    {
+     "w": "as",
+     "t": 3.91,
+     "end": 4.12
+    },
+    {
+     "w": "the",
+     "t": 4.12,
+     "end": 4.375
+    },
+    {
+     "w": "first.",
+     "t": 4.375,
+     "end": 4.72
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Rent kept coming. Wages kept coming. The loan payment kept coming.",
+   "words": [
+    {
+     "w": "Rent",
+     "t": 5.07,
+     "end": 5.37
+    },
+    {
+     "w": "kept",
+     "t": 5.37,
+     "end": 5.67
+    },
+    {
+     "w": "coming.",
+     "t": 5.67,
+     "end": 6.06
+    },
+    {
+     "w": "Wages",
+     "t": 6.06,
+     "end": 6.405
+    },
+    {
+     "w": "kept",
+     "t": 6.405,
+     "end": 6.705
+    },
+    {
+     "w": "coming.",
+     "t": 6.705,
+     "end": 7.095
+    },
+    {
+     "w": "The",
+     "t": 7.095,
+     "end": 7.35
+    },
+    {
+     "w": "loan",
+     "t": 7.35,
+     "end": 7.65
+    },
+    {
+     "w": "payment",
+     "t": 7.65,
+     "end": 8.085
+    },
+    {
+     "w": "kept",
+     "t": 8.085,
+     "end": 8.385
+    },
+    {
+     "w": "coming.",
+     "t": 8.385,
+     "end": 8.775
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "The first shop's forty thousand dollars now paid for the other three.",
+   "words": [
+    {
+     "w": "The",
+     "t": 9.125,
+     "end": 9.38
+    },
+    {
+     "w": "first",
+     "t": 9.38,
+     "end": 9.725
+    },
+    {
+     "w": "shop's",
+     "t": 9.725,
+     "end": 10.115
+    },
+    {
+     "w": "forty",
+     "t": 10.115,
+     "end": 10.46
+    },
+    {
+     "w": "thousand",
+     "t": 10.46,
+     "end": 10.94
+    },
+    {
+     "w": "dollars",
+     "t": 10.94,
+     "end": 11.375
+    },
+    {
+     "w": "now",
+     "t": 11.375,
+     "end": 11.63
+    },
+    {
+     "w": "paid",
+     "t": 11.63,
+     "end": 11.93
+    },
+    {
+     "w": "for",
+     "t": 11.93,
+     "end": 12.185
+    },
+    {
+     "w": "the",
+     "t": 12.185,
+     "end": 12.44
+    },
+    {
+     "w": "other",
+     "t": 12.44,
+     "end": 12.785
+    },
+    {
+     "w": "three.",
+     "t": 12.785,
+     "end": 13.13
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "By month ten, the cash ran out. Sam put the payroll on a credit card at twenty four percent.",
+   "words": [
+    {
+     "w": "By",
+     "t": 13.48,
+     "end": 13.69
+    },
+    {
+     "w": "month",
+     "t": 13.69,
+     "end": 14.035
+    },
+    {
+     "w": "ten,",
+     "t": 14.035,
+     "end": 14.29
+    },
+    {
+     "w": "the",
+     "t": 14.29,
+     "end": 14.545
+    },
+    {
+     "w": "cash",
+     "t": 14.545,
+     "end": 14.845
+    },
+    {
+     "w": "ran",
+     "t": 14.845,
+     "end": 15.1
+    },
+    {
+     "w": "out.",
+     "t": 15.1,
+     "end": 15.355
+    },
+    {
+     "w": "Sam",
+     "t": 15.355,
+     "end": 15.61
+    },
+    {
+     "w": "put",
+     "t": 15.61,
+     "end": 15.865
+    },
+    {
+     "w": "the",
+     "t": 15.865,
+     "end": 16.12
+    },
+    {
+     "w": "payroll",
+     "t": 16.12,
+     "end": 16.555
+    },
+    {
+     "w": "on",
+     "t": 16.555,
+     "end": 16.765
+    },
+    {
+     "w": "a",
+     "t": 16.765,
+     "end": 16.93
+    },
+    {
+     "w": "credit",
+     "t": 16.93,
+     "end": 17.32
+    },
+    {
+     "w": "card",
+     "t": 17.32,
+     "end": 17.62
+    },
+    {
+     "w": "at",
+     "t": 17.62,
+     "end": 17.83
+    },
+    {
+     "w": "twenty",
+     "t": 17.83,
+     "end": 18.22
+    },
+    {
+     "w": "four",
+     "t": 18.22,
+     "end": 18.52
+    },
+    {
+     "w": "percent.",
+     "t": 18.52,
+     "end": 18.955
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Then a supplier asked to be paid upfront.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 19.305,
+     "end": 19.605
+    },
+    {
+     "w": "a",
+     "t": 19.605,
+     "end": 19.77
+    },
+    {
+     "w": "supplier",
+     "t": 19.77,
+     "end": 20.25
+    },
+    {
+     "w": "asked",
+     "t": 20.25,
+     "end": 20.595
+    },
+    {
+     "w": "to",
+     "t": 20.595,
+     "end": 20.805
+    },
+    {
+     "w": "be",
+     "t": 20.805,
+     "end": 21.015
+    },
+    {
+     "w": "paid",
+     "t": 21.015,
+     "end": 21.315
+    },
+    {
+     "w": "upfront.",
+     "t": 21.315,
+     "end": 21.75
+    }
+   ]
+  }
+ ]
+}

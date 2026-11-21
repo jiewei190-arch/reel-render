@@ -23,10 +23,12 @@ import * as R19 from "../../shorts/s5_spender_talks.recipe.gen";
 import * as R20 from "../../shorts/s6_three_traps.recipe.gen";
 import * as R21 from "../../shorts/same_raise.recipe.gen";
 import * as R22 from "../../shorts/seven_year_car.recipe.gen";
-import * as R23 from "../../shorts/start_25_vs_35.recipe.gen";
-import * as R24 from "../../shorts/ten_beats_thirty.recipe.gen";
-import * as R25 from "../../shorts/wedding_or_keys.recipe.gen";
-import * as R26 from "../../shorts/zero_percent_couch.recipe.gen";
+import * as R23 from "../../shorts/shop_too_fast.recipe.gen";
+import * as R24 from "../../shorts/shop_too_fast_short_1.recipe.gen";
+import * as R25 from "../../shorts/start_25_vs_35.recipe.gen";
+import * as R26 from "../../shorts/ten_beats_thirty.recipe.gen";
+import * as R27 from "../../shorts/wedding_or_keys.recipe.gen";
+import * as R28 from "../../shorts/zero_percent_couch.recipe.gen";
 
 export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [
   { id: R0.ID, recipe: R0.RECIPE, words: R0.WORDS, vo: R0.VO_DURATION },
@@ -56,4 +58,6 @@ export const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }
   { id: R24.ID, recipe: R24.RECIPE, words: R24.WORDS, vo: R24.VO_DURATION },
   { id: R25.ID, recipe: R25.RECIPE, words: R25.WORDS, vo: R25.VO_DURATION },
   { id: R26.ID, recipe: R26.RECIPE, words: R26.WORDS, vo: R26.VO_DURATION },
+  { id: R27.ID, recipe: R27.RECIPE, words: R27.WORDS, vo: R27.VO_DURATION },
+  { id: R28.ID, recipe: R28.RECIPE, words: R28.WORDS, vo: R28.VO_DURATION },
 ];

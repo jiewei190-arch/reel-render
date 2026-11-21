@@ -1,5 +1,8 @@
 // recipe_build.mjs: a shot recipe -> a Remotion composition, then the clip QA and the frame-0 gate.
-//   node tools/recipe_build.mjs <slug> [--no-qa] [--check] [--shorts <dir>]   (--check: compile + QA only, writes nothing)
+//   node tools/recipe_build.mjs <slug> [--no-qa] [--check] [--shorts <dir>] [--qa-sample N]   (--check: compile + QA only, writes nothing)
+// LONG-FORM ("format": "landscape", LONGFORM.md): the clip QA checks every Nth output frame (--qa-sample N, default 1;
+// no sub-frames, since long-form renders without motion blur), the long-form gate (tools/longform_gate.mjs) replaces the
+// Shorts gate, and <shorts>/<slug>/chapters.txt gets the YouTube timestamps. Shorts always get the full QA below.
 // Reads   <shorts>/<slug>/recipe.json and <shorts>/<slug>/vo/timings.json   (default shorts dir: ../shorts = finance/shorts)
 // Writes  src/shorts/<slug_>.recipe.gen.ts      the recipe + word timings as a TS module
 //         src/fin/recipe/registry.gen.ts        every *.recipe.gen.ts (ToolkitRoot registers <Pascal>Recipe + <Pascal>RecipeSub)
@@ -15,13 +18,19 @@ import { build } from "esbuild";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { chaptersTxt, longformGate } from "./longform_gate.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
-const slug = args.find((a) => !a.startsWith("--"));
+const T0 = Date.now();
+const qsi = args.indexOf("--qa-sample");
+const qaSample = qsi >= 0 ? parseInt(args[qsi + 1], 10) : 1;
+if (!(qaSample >= 1)) { console.error("--qa-sample N: N must be a whole number >= 1"); process.exit(2); }
+const slug = args.find((a, i) => !a.startsWith("--") && args[i - 1] !== "--shorts" && args[i - 1] !== "--qa-sample");
 if (!slug || !/^[a-z0-9-]+$/.test(slug)) { console.error("usage: node tools/recipe_build.mjs <slug> [--no-qa] [--shorts <dir>]"); process.exit(2); }
 const si = args.indexOf("--shorts");
-const SHORTS = si >= 0 ? resolve(args[si + 1]) : resolve(ROOT, "../shorts");
+// default: finance/shorts/<slug>; a long-form recipe can live in finance/longform/<slug> (used when shorts/<slug> is absent)
+const SHORTS = si >= 0 ? resolve(args[si + 1]) : !existsSync(resolve(ROOT, "../shorts", slug)) && existsSync(resolve(ROOT, "../longform", slug)) ? resolve(ROOT, "../longform") : resolve(ROOT, "../shorts");
 const noQa = args.includes("--no-qa");
 const check = args.includes("--check"); // compile + QA + gate only: no codegen, no registry change, no report file
 const dir = join(SHORTS, slug);
@@ -48,7 +57,7 @@ wf(join(ROOT, "src/fin/recipe/registry.gen.ts"),
   gens.map((f, i) => `import * as R${i} from "../../shorts/${f.replace(/\.ts$/, "")}";`).join("\n") +
   `\n\nexport const RECIPES: { id: string; recipe: Recipe; words: Word[]; vo?: number }[] = [\n` +
   gens.map((_, i) => `  { id: R${i}.ID, recipe: R${i}.RECIPE, words: R${i}.WORDS, vo: R${i}.VO_DURATION },`).join("\n") + `\n];\n`);
-if (!check) console.log(`wrote src/shorts/${us}.recipe.gen.ts and the registry (${gens.length} recipe(s)); composition ${pascal} (+Sub) in src/index.toolkit.ts`);
+if (!check) console.log(`wrote src/shorts/${us}.recipe.gen.ts and the registry (${gens.length} recipe(s)); composition ${pascal} ${recipe.format === "landscape" ? "(1920x1080, no Sub)" : "(+Sub)"} in src/index.toolkit.ts`);
 
 // ---------------------------------------------------------------- 2) compile in node
 const stub = { name: "stub", setup(b) {
@@ -89,6 +98,9 @@ export const VO_DURATION: number | undefined = ${vo === undefined ? "undefined" 
 const dur = C.duration / 30;
 writeFileSync(join(ROOT, `out/tmp/${slug}.cues.json`), JSON.stringify({ [pascal]: { music: C.audio.music, musicDb: -12, cues: C.audio.cues, duration: dur, cuts: C.shots.map((s) => s.a) } }));
 console.log(`compiled ${C.shots.length} shots, ${dur.toFixed(2)} s (${C.duration} frames), ${C.assets.length} CC0 assets, ${C.audio.cues.length} sfx cues`);
+const LS = C.landscape;
+if (LS) console.log(`landscape long-form: ${C.W}x${C.H}, ${C.chapters.length} chapters, ${C.words.length} words; no Sub composition (no motion blur); compiled in ${((Date.now() - T0) / 1000).toFixed(1)} s`);
+else if (qsi >= 0) console.log("--qa-sample is for long-form only: a Short always gets the full QA (every frame x 4 sub-frames)");
 if (noQa) process.exit(0);
 
 // ---------------------------------------------------------------- 3) clip QA
@@ -100,9 +112,12 @@ const ov = (p, a) => {
 };
 const hits = new Map();
 const note = (k, t) => { if (!hits.has(k)) hits.set(k, t); };
-const n = C.duration * 4;
-for (let f = 0; f < n; f++) {
-  const t = f / 120;
+// Shorts: every output frame x 4 sub-frames. Long-form: every Nth output frame (no sub-frames: no motion blur)
+const SUBS = LS ? 1 : 4, STEP = LS ? qaSample : 1;
+const n = C.duration * SUBS;
+const T1 = Date.now();
+for (let f = 0; f < n; f += STEP) {
+  const t = f / (30 * SUBS);
   const { actors, props, feet } = C.qa(t);
   const sid = C.shotAt(t).id;
   for (const p of props) {
@@ -119,6 +134,34 @@ for (let f = 0; f < n; f++) {
   }
 }
 const qaLines = [...hits].map(([k, t]) => `CLIP ${k} first at ${t.toFixed(3)} s (frame ${Math.floor(t * 30)})`);
+if (LS) {
+  // ---------------------------------------------------------------- 4L) long-form gate + chapters.txt
+  const qaS = (Date.now() - T1) / 1000;
+  const T2 = Date.now();
+  const { gate, pacing } = longformGate({ C, m, recipe, words, dur });
+  const gateS = (Date.now() - T2) / 1000;
+  const hardFail = gate.some((g) => g[3] && !g[1]);
+  const chTxt = chaptersTxt(C.chapters);
+  wf(join(dir, "chapters.txt"), chTxt);
+  const sampled = Math.ceil(C.duration / qaSample);
+  const rep = [
+    `# ${slug}: long-form recipe QA (tools/recipe_build.mjs + tools/longform_gate.mjs)`, "",
+    `Composition: \`${pascal}\` (1920x1080, 30 fps, no Sub composition: long-form renders without motion blur) in \`src/index.toolkit.ts\`. ${C.shots.length} shots, ${dur.toFixed(2)} s (${(dur / 60).toFixed(2)} min), ${C.words.length} words, ${C.chapters.length} chapters.`, "",
+    `## Clip QA: ${sampled} of ${C.duration} frames (every ${qaSample === 1 ? "frame" : `${qaSample}th frame`}), ${hits.size} clip(s), ${qaS.toFixed(1)} s`, "",
+    ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop/set box enters a head, torso, hand or forearm; no prop below the floor; feet on the floor."]), "",
+    `## Long-form gate (${gateS.toFixed(1)} s)`, "", "| check | result | detail |", "|---|---|---|",
+    ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
+    `Pacing: ${pacing.events} visual-change marks, longest gap ${pacing.maxGap.toFixed(2)} s, mean shot ${pacing.meanShot.toFixed(2)} s, ${pacing.beats} beat marks.`, "",
+    "## chapters.txt", "", "```", chTxt.trimEnd(), "```", "",
+  ];
+  wf(join(dir, "RECIPE_QA.md"), rep.join("\n"));
+  console.log(`clip QA: ${hits.size} clip(s) over ${sampled} sampled frames (every ${qaSample}) in ${qaS.toFixed(1)} s`);
+  for (const l of qaLines.slice(0, 40)) console.log("  " + l);
+  for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
+  console.log(`chapters:\n${chTxt.trimEnd()}`);
+  console.log(`report: ${join(dir, "RECIPE_QA.md")}${check ? " (not written: --check)" : ` + ${join(dir, "chapters.txt")}`}; total ${((Date.now() - T0) / 1000).toFixed(1)} s`);
+  process.exit(hits.size || hardFail ? 1 : 0);
+}
 
 // ---------------------------------------------------------------- 4) frame-0 gate
 const sub3 = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];

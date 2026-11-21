@@ -1,0 +1,30 @@
+{
+  "slug": "shop-too-fast-short-1",
+  "style": "S1",
+  "hook": {
+    "text": "4 SHOPS. HALF THE SALES.",
+    "until": 2.5
+  },
+  "music": "upbeat",
+  "cast": {
+    "sam": "SPENDER",
+    "banker": "SELLER",
+    "saver": "SAVER"
+  },
+  "tag": {
+    "text": "STORY: ILLUSTRATIVE NUMBERS",
+    "from": 1,
+    "until": 22.45
+  },
+  "shots": [
+    {"at":0,"set":"street","note":"fresh hook card (tools/clip_short.mjs): \"4 SHOPS. HALF THE SALES.\"","cam":{"preset":"hookZoom","target":"sam","dist":2.1},"actors":[{"id":"sam","pose":"smug","at":"mark","then":[{"at":0.45,"pose":"shock"}],"squash":[0.45]}],"props":[{"id":"stake","kit":"label","text":["CASH: $0"],"color":"#d62a2a","size":[0.62,0.26,0.05],"at":"mark:0,0.62,0.4"}],"fx":[{"fx":"shake","at":0.45}]},
+    {"at":1,"set":"street","cam":{"preset":"wide","target":"centre:0,1,0","dist":7.14},"actors":[{"id":"sam","pose":"idle","at":"mark","emotion":"sad"}],"extras":false,"props":[{"id":"quiet","kit":"label","text":["QUIET STREET"],"color":"#3a3f58","size":[1.3,0.4,0.05],"at":[-1.1,2.1,0],"motion":"fly-in","hit":"1:quiet"}]},
+    {"at":"1:each","cam":{"preset":"slamZoom","target":"half","hit":"1:half","dist":2.8},"actors":[{"id":"sam","pose":"despair","at":"mark","from":"1:half"}],"props":[{"id":"half","kit":"label","text":["SALES","-50%"],"color":"#d62a2a","size":[0.9,0.56,0.05],"at":"mark:-1.3,1.7,0.2","motion":"dropSlam","hit":"1:half","drop":1}],"extras":false,"set":"street"},
+    {"at":"line:2","set":"store","cam":{"preset":"medium","target":"centre:0,1.6,0","dist":8},"actors":[{"id":"sam","pose":"despair","at":"mark"}],"props":[{"id":"rent","kit":"label","text":["RENT"],"color":"#d62a2a","size":[0.8,0.36,0.05],"at":[-0.55,2,0.6],"motion":"dropSlam","hit":"2:rent","drop":1},{"id":"wages","kit":"label","text":["WAGES"],"color":"#d62a2a","size":[0.8,0.36,0.05],"at":"centre:0.2,2.5,-0.4","motion":"dropSlam","hit":"2:wages","drop":1},{"id":"loanp","kit":"label","text":["LOAN"],"color":"#d62a2a","size":[0.8,0.36,0.05],"at":[0.93,2,0.35],"motion":"dropSlam","hit":"2:loan","drop":1}]},
+    {"at":"line:3","set":"office","cam":{"preset":"pushIn","target":"jar1","dist":3.4},"actors":[{"id":"sam","pose":"push","at":"mark","face":"jar1"}],"props":[{"id":"jar1","kit":"jar","text":["SHOP 1"],"fill":0.9,"color":"#1f9e4f","at":"left:-0.2,0,-0.5"},{"id":"drain","kit":"coin","at":"left:-0.2,1.7,-0.5","motion":"rain","n":5,"area":[0.3,0.2]}]},
+    {"at":"3:paid","cam":{"preset":"orbit","target":"centre:0,1.2,0","dist":6.38},"actors":[{"id":"sam","pose":"despair","at":"mark"}],"props":[{"id":"others","kit":"label","text":["PAYS FOR","SHOPS 2-4"],"color":"#d62a2a","size":[1.1,0.56,0.05],"at":[-0.9,1.9,0.1],"motion":"fly-in","hit":"3:other"}],"set":"office"},
+    {"at":"line:4","set":"home","cam":{"preset":"slamZoom","target":"cash","hit":"4:ran","dist":3},"actors":[{"id":"sam","pose":"shock","at":"mark","from":"4:ran","squash":["4:ran"]}],"props":[{"id":"cash","kit":"debtBlock","text":["CASH","$0"],"size":[1,1,0.6],"at":"left:0,0,-0.4","motion":"dropSlam","hit":"4:ran","drop":1}],"fx":[{"fx":"dust","at":"4:ran","p":"left:0,0.02,-0.4"}]},
+    {"at":"4:sam","cam":{"preset":"medium","target":"sam","dist":5.8,"az":15},"actors":[{"id":"sam","pose":"swipe-card","at":"mark","from":"4:payroll"}],"props":[{"id":"card","kit":"card","at":"sam.handR"},{"id":"apr","kit":"label","text":["24% APR"],"color":"#d62a2a","size":[0.9,0.4,0.05],"at":[-0.05,1.8,0.4],"motion":"dropSlam","hit":"4:twenty","drop":0.9}],"set":"home"},
+    {"at":19.305,"set":"store","cam":{"preset":"medium","target":"banker","dist":3},"actors":[{"id":"banker","pose":"point","at":"right","face":-55},{"id":"sam","pose":"despair","at":"left"}],"props":[{"id":"upfront","kit":"stamp","text":"PAY FIRST","color":"#d62a2a","size":[0.8,0.22,0.03],"at":"right:-0.9,1.5,0.3","hit":65.65,"motion":"dropSlam","drop":0.8}]}
+  ]
+}

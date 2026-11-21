@@ -62,7 +62,7 @@ export const LowerThirdCaptions: React.FC<{ chunks: CapChunk[]; t: number; centr
     <>
       <div style={{ position: "absolute", left: 0, right: 0, top: 1080 * centre - 150, height: 1080 - (1080 * centre - 150), background: "linear-gradient(to bottom, rgba(10,6,16,0) 0%, rgba(10,6,16,0.42) 55%, rgba(10,6,16,0.55) 100%)", opacity: enter }} />
       <div style={{ position: "absolute", left: 240, right: 240, top: 1080 * centre - lh, height: lh * 2, display: "flex", alignItems: "center", justifyContent: "center", transform: `translateY(${(1 - enter) * 10}px)` }}>
-        <div style={{ textAlign: "center", maxHeight: lh * 2, overflow: "hidden", lineHeight: `${lh}px` }}>
+        <div style={{ textAlign: "center", maxHeight: lh * 2, overflow: "hidden", lineHeight: `${lh}px`, textWrap: "balance" } as React.CSSProperties}>
           {c.words.map((q, i) => {
             const on = t >= q.t - 2 / 30 && t < q.end + 0.05;
             const txt = q.w.replace(/[.,!?…:]+$/, "");
