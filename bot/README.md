@@ -78,8 +78,11 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 
 `--on lambda` (or `REELBOT_RENDER_ON=lambda`) renders the same composition on Remotion Lambda, split across many
 cloud machines at once, so several videos render in parallel instead of one after another on the PC. One-time setup:
-`aws/SETUP.md`, then `python -m reelbot lambda setup`. The output matches the PC render (same motion blur), so mixing,
-QA and the AI editors are unchanged. Each render logs its time and AWS cost next to the video (`*_lambda.txt`).
+`aws/SETUP.md`, then `python -m reelbot lambda setup`. The output matches the PC render, so mixing,
+QA and the AI editors are unchanged.
+
+Motion blur is **off by default** everywhere (about 4x faster renders, barely visible difference).
+`REELBOT_MOTION_BLUR=1` turns it back on (PC: render.sh's 4x sub-frame blur). Each render logs its time and AWS cost next to the video (`*_lambda.txt`).
 
 ## The AI editors
 

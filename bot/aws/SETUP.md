@@ -51,4 +51,4 @@ python -m reelbot render <slug> --on lambda
 - The bot prints how long the render took and roughly what it cost. Compare that video with the PC version before
   switching anything over.
 - To make Lambda the default, add `REELBOT_RENDER_ON=lambda` to `bot\.env`.
-- `REELBOT_LAMBDA_BLUR=0` skips motion blur. That's about 4x cheaper, but motion looks a little less smooth.
+- Renders have no motion blur by default (about 4x cheaper). `REELBOT_MOTION_BLUR=1` turns it on.

@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 from . import lambda_render, sound
@@ -62,6 +63,38 @@ def _whisper_check(video: Path, lines: list[str]) -> str:
     return f"heard {len(norm(heard))} words; {len(missing)} script words not heard" + (f": {missing[:15]}" if missing else "")
 
 
+def motion_blur() -> bool:
+    """Off by default (owner's call, Nov 2026): 4x faster renders and the difference is barely visible."""
+    return os.environ.get("REELBOT_MOTION_BLUR", "0") == "1"
+
+
+def _gpu_lock() -> list[str]:
+    """Wrap renders in the engine's gpu_lock.py when it exists, so two renders never fight over the GPU."""
+    for d in (os.environ.get("BLOCKY_SCRIPTS"), CFG.render_root / "scripts", CFG.render_root.parent / "scripts"):
+        if d and (Path(d) / "gpu_lock.py").exists():
+            return [CFG.python, "-I", str(Path(d) / "gpu_lock.py"), "--"]
+    return []
+
+
+def _render_plain(comp: str, muted: Path) -> None:
+    """No-blur render: the 30 fps composition straight through Remotion on the GPU, then a clean h264 encode."""
+    npx = shutil.which("npx") or "npx"
+    print(f"  render: {comp} on the GPU, no motion blur")
+    t0 = time.time()
+    _run([npx, "--no-install", "tsc", "--noEmit"])
+    _run([npx, "--no-install", "remotion", "bundle", "src/index.toolkit.ts", "--out-dir=build"])
+    raw = muted.with_name(muted.stem + "_raw.mp4")
+    muted.parent.mkdir(parents=True, exist_ok=True)
+    _run(_gpu_lock() + [npx, "--no-install", "remotion", "render", "build", comp, str(raw), "--gl=angle",
+                        "--timeout=240000", f"--concurrency={os.environ.get('CONC', '8')}", "--codec=h264", "--crf=12",
+                        "--pixel-format=yuv420p", "--muted", "--log=error"])
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-r", "30", "-c:v", "libx264", "-crf", "16",
+                    "-preset", "slow", "-pix_fmt", "yuv420p", "-an", "-map_metadata", "-1", "-movflags", "+faststart",
+                    str(muted)], check=True)
+    raw.unlink(missing_ok=True)
+    print(f"  render: done in {time.time() - t0:.0f} s")
+
+
 def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) -> Path:
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug = data["slug"]
@@ -74,12 +107,15 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     n = _next_version(name)
     muted = CFG.render_root / "out" / "renders" / f"{name}{n}.mp4"
     on = on or os.environ.get("REELBOT_RENDER_ON", "pc")
+    blur = motion_blur()
     if on == "lambda":
         muted.parent.mkdir(parents=True, exist_ok=True)
-        lambda_render.render(comp, muted, blur=os.environ.get("REELBOT_LAMBDA_BLUR", "1") != "0")
-    else:
-        print(f"  render: {comp}Sub on the GPU (version {n}); this takes a few minutes")
+        lambda_render.render(comp, muted, blur=blur)
+    elif blur:
+        print(f"  render: {comp}Sub on the GPU with motion blur (version {n}); 4x slower")
         _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": "src/index.toolkit.ts"})
+    else:
+        _render_plain(comp, muted)
 
     tmp = CFG.render_root / "out" / "tmp"
     tmp.mkdir(parents=True, exist_ok=True)

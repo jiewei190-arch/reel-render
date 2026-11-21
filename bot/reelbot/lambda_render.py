@@ -7,8 +7,8 @@ Keys (in bot/.env, pasted by the owner, never committed):
   python -m reelbot lambda quotas       # how many machines AWS lets us run at once
   python -m reelbot render <slug> --on lambda
 
-The output is the same muted video render.sh makes (motion-blurred sub-frames averaged down to 30 fps), so the
-mix, loudness, QA and the AI editors work unchanged.
+The output is the same muted 30 fps video the PC makes (no motion blur by default; REELBOT_MOTION_BLUR=1 turns it
+on), so the mix, loudness, QA and the AI editors work unchanged.
 """
 from __future__ import annotations
 
@@ -113,7 +113,7 @@ def _cost(out: str) -> float:
     return float(m[-1]) if m else 0.0
 
 
-def render(comp: str, muted_out: Path, *, blur: bool = True) -> Path:
+def render(comp: str, muted_out: Path, *, blur: bool = False) -> Path:
     """Render <comp>Sub (motion blur) or <comp> (no blur, ~4x cheaper) on Lambda into muted_out (30 fps, no audio)."""
     _ensure_package()
     subprocess.run([_npx(), "--no-install", "tsc", "--noEmit"], cwd=CFG.render_root, check=True)
