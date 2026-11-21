@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-from . import claude, gemini
+from . import claude, gemini, hooks, learn
 from .config import BOT_DIR, CFG
 
 SCRIPT_SCHEMA = {
@@ -73,15 +73,20 @@ def _slugify(s: str) -> str:
     return "-".join(s.split("-")[:5]) or "short"
 
 
-def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str = "") -> dict:
+def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str = "", n_hooks: int = 6) -> dict:
     brief = "Channel: Block Money, finance Shorts with two blocky characters, Spender and Saver. US audience."
     print("  gemini: researching the topic (Google Search grounded)...")
     research, research_sources = gemini.research(topic, brief)
 
+    best, ranked = (hooks.pick(topic, research, n_hooks) if n_hooks > 0 else (None, []))
+    data = learn.current()
     user = (
         f"Topic: {topic}\n"
         + (f"Style to use: {style}\n" if style else "")
         + (f"Owner's notes: {notes}\n" if notes else "")
+        + (f"\nOPENING (chosen by blind scoring, use it exactly): line 1 = \"{best['line1']}\"; "
+           f"hook_text = \"{best['hook_text']}\"; frame 0 shows: {best['frame0']}\n" if best else "")
+        + (f"\nOur channel's own retention data (write like the top rows, never like the bottom rows):\n{data}\n" if data else "")
         + "\nResearch notes from a grounded web search (verify against these; prefer their figures):\n"
         + research
         + "\n\nResearch sources:\n" + "\n".join(f"- {s['title']}: {s['url']}" for s in research_sources)
@@ -114,7 +119,8 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
             system_prompt(seconds),
             "Here is your previous script as JSON:\n" + json.dumps({k: v for k, v in data.items() if k != "factcheck"}, indent=1)
             + "\n\nAn independent fact-check found these problems. Fix every one (correct the number, hedge it as an "
-              "example, or remove the claim), keep the hook and structure if you can, and return the full script again:\n"
+              "example, or remove the claim). Keep line 1 and the hook_text unless a problem is in them, keep the "
+              "structure, and return the full script again:\n"
             + "\n".join(f"- {p}" for p in judge["problems"])
             + "\n\nFact-check report for reference:\n" + verdicts,
             SCRIPT_SCHEMA), "factcheck": data["factcheck"]}
@@ -123,6 +129,7 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
         data["factcheck_unresolved"] = True
     data["topic"] = topic
     data["target_seconds"] = seconds
+    data["hook_candidates"] = ranked
     return data
 
 

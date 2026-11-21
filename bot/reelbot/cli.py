@@ -7,6 +7,7 @@ Nothing is ever uploaded. Finished videos land in REELBOT_OUTPUT_DIR/<slug>/ wit
   python -m reelbot make "..." --auto                                 # no stop, straight through
   python -m reelbot batch topics.txt                                  # one topic per line, --auto each
   python -m reelbot ideas --n 10                                      # fresh topic ideas (Gemini + Claude)
+  python -m reelbot learn                                             # rank our Shorts by retention -> work/learnings.md
   python -m reelbot script|voice|recipe|render <slug>                 # redo one stage
 """
 from __future__ import annotations
@@ -17,7 +18,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import claude, gemini, recipe, render, script, voice
+from . import claude, gemini, learn, recipe, render, script, voice
 from .config import CFG
 from .cost import COST
 
@@ -45,7 +46,9 @@ def _pick_voice(arg: str) -> str:
 
 
 def stage_script(topic: str, a) -> Path:
-    data = script.write(topic, seconds=a.seconds, style=a.style, notes=a.notes or "")
+    if a.learn:
+        learn.build()
+    data = script.write(topic, seconds=a.seconds, style=a.style, notes=a.notes or "", n_hooks=a.hooks)
     folder = _folder(data["slug"])
     script.save(data, folder)
     _mark(folder, "script", topic=topic)
@@ -91,7 +94,7 @@ def cmd_ideas(a) -> None:
     res = claude.ask_json(
         "You pick Block Money Short topics: Spender vs Saver stories with one clear money gap, a 'you' hook with a "
         "dollar figure in the first sentence, no advice or picks. Prefer topics small finance channels have not done to death.",
-        f"From this research, choose the {a.n} best topics.\n\n{text}",
+        f"From this research, choose the {a.n} best topics.\n\n{text}\n\nOur own retention data:\n{learn.current()}",
         {"type": "object", "additionalProperties": False, "required": ["topics"],
          "properties": {"topics": {"type": "array", "items": {"type": "object", "additionalProperties": False,
                                                               "required": ["topic", "hook", "why"],
@@ -111,11 +114,14 @@ def main(argv: list[str] | None = None) -> None:
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
         p.add_argument("--redo", action="store_true", help="redo stages even if already done")
+        p.add_argument("--hooks", type=int, default=6, help="hook candidates to write and score (0 = off)")
+        p.add_argument("--no-learn", dest="learn", action="store_false", help="don't refresh learnings from Studio data first")
 
     p = sub.add_parser("make"); p.add_argument("topic"); p.add_argument("--auto", action="store_true"); common(p)
     p = sub.add_parser("continue"); p.add_argument("slug"); common(p)
     p = sub.add_parser("batch"); p.add_argument("file"); common(p)
     p = sub.add_parser("ideas"); p.add_argument("--n", type=int, default=10)
+    p = sub.add_parser("learn"); p.add_argument("--channel", default="block_money")
     for name in ("script", "voice", "recipe", "render"):
         p = sub.add_parser(name); p.add_argument("slug"); common(p)
     a = ap.parse_args(argv)
@@ -139,6 +145,9 @@ def main(argv: list[str] | None = None) -> None:
                     print(f"  FAILED: {e}  (moving on)")
         elif a.cmd == "ideas":
             cmd_ideas(a)
+        elif a.cmd == "learn":
+            text = learn.build(a.channel)
+            print(text or f"No metrics found under {learn._analytics_dir()} (set REELBOT_ANALYTICS_DIR).")
         elif a.cmd == "script":
             data = json.loads((_folder(a.slug) / "script.json").read_text(encoding="utf-8"))
             stage_script(data["topic"], a)
