@@ -19,6 +19,16 @@ The finished video is built from your script by an animation engine, voiced by a
 - The **last line leads straight back into line 1** so the Short loops (end on a half sentence that the hook completes: "...all because of one word").
 - Target **{seconds} seconds** spoken (about {words} words at a lively narrator pace), 8-11 lines.
 
+## Emotional delivery (voice_lines)
+`voice_lines` = the exact same lines, word for word, plus ElevenLabs audio tags in square brackets that tell the
+narrator HOW to say them. The narrator should sound like a hyped friend telling a story, not a newsreader.
+- Tags: [excited] [shocked] [curious] [whispers] [sarcastic] [laughs] [chuckles] [sighs] [gasps] [dramatic] [serious]
+  [mischievously] [disappointed] [relieved] [short pause]. Put a tag at the start of a line or right before the phrase
+  it colours. 1-2 tags per line, at most; vary them across the script so the energy rises and falls.
+- Use the emotion that fits the beat: [shocked] on the big number, [whispers] on the secret/twist setup,
+  [sarcastic] on Spender's bad logic, [excited] on the payoff, [sighs] on the loss.
+- Never put a tag inside a number or split a word. Removing the tags must give back the line exactly.
+
 ## Hook text
 `hook_text` is the on-screen text at frame 0: **at most 5 words**, ALL CAPS, the stake + the twist (e.g. "TURNED DOWN $10K / FOR TAXES?"). Digits and $ are fine on screen. Mark one emotional word with *asterisks* to colour it red (e.g. "FOR *TAXES*?").
 

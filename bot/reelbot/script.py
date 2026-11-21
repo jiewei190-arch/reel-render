@@ -11,7 +11,7 @@ from .config import BOT_DIR, CFG
 SCRIPT_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["slug", "title", "style", "hook_text", "tag_text", "lines", "claims", "description", "sources"],
+    "required": ["slug", "title", "style", "hook_text", "tag_text", "lines", "voice_lines", "claims", "description", "sources"],
     "properties": {
         "slug": {"type": "string", "description": "lowercase-kebab-case, 2-5 words, unique to this topic"},
         "title": {"type": "string", "description": "YouTube title, <= 60 characters, no hashtags"},
@@ -19,6 +19,8 @@ SCRIPT_SCHEMA = {
         "hook_text": {"type": "string"},
         "tag_text": {"type": "string"},
         "lines": {"type": "array", "items": {"type": "string"}},
+        "voice_lines": {"type": "array", "items": {"type": "string"},
+                        "description": "the SAME lines, word for word, with ElevenLabs audio tags for emotion added"},
         "claims": {
             "type": "array",
             "items": {

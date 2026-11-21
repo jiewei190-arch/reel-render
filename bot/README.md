@@ -6,10 +6,13 @@ topic ──► Gemini (Google-Search-grounded research)
       ──► HOOK FACTORY: Claude writes 6 openings, Claude + Gemini score them blind against our data, best one wins
       ──► Claude Opus 5.5 writes the script around the winning opening (hook, Spender vs Saver, claims + sources)
       ──► Gemini fact-checks every claim ──► Claude fixes anything that failed (up to 2 rounds)
-      ──► ElevenLabs voices it line by line, with word timings (Tyler / Christopher)
+      ──► ElevenLabs voices it line by line with EMOTION (audio tags like [shocked] [whispers] [sarcastic] [excited]
+            written per line by Claude; tags are performed, not spoken), with word timings (Tyler / Christopher)
       ──► Claude writes the shot recipe ──► the engine's own checker (clip QA + frame-0 gate)
             └─ errors go back to Claude until it passes (up to 5 attempts)
-      ──► GPU render on the PC (render.sh, motion blur) ──► music + SFX mix ──► -14 LUFS
+      ──► GPU render on the PC (render.sh, motion blur)
+      ──► SOUND DESIGN: Claude plans 8-14 custom sound effects on key words/moments, ElevenLabs generates each one
+            (cached, so a repeat sound is free) ──► music + stock + custom SFX mix ──► -14 LUFS
       ──► AI EDITORS: Gemini watches the whole video, Claude checks 30+ stills ──► timestamped problems + fixes
             └─ any blocker/major issue or a weak hook: Claude fixes the shots, engine re-checks, GPU re-renders (2 rounds)
       ──► QA (loudness, Whisper) ──► Videos\BlockMoney\<slug>\video.mp4 + UPLOAD.md + sources.md + EDIT_REPORT.md
@@ -54,6 +57,14 @@ Run from this `bot` folder:
 Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--style S1..S6`, `--notes "..."`, `--redo`,
 `--edit-rounds 2` (AI editor fix-and-re-render rounds; -1 = skip the review), `--hooks 6` (how many openings to write and score; 0 = off), `--no-learn` (skip refreshing learnings first).
 
+## Voice emotion and sound design
+
+- `voice_lines` in script.json are the script lines plus ElevenLabs audio tags. The voice stage speaks those; captions
+  and timings use the clean lines. If the tagged lines ever don't match the script word for word, it falls back to the
+  plain lines. Tune with `REELBOT_VOICE_STABILITY` (lower = more expressive, default 0.4) and `REELBOT_VOICE_STYLE`.
+- Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
+  lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
+
 ## The AI editors
 
 After every render, before anyone sees the video:
@@ -85,7 +96,7 @@ Each Short's working folder (`work/shorts/<slug>/`) keeps everything: `script.js
 - Claude: $0 extra on the subscription backend (counts toward plan limits; the run prints the API-equivalent).
   On the API backend about $1.50-$3 per Short, mostly the recipe and editor steps.
 - Gemini: 2-4 grounded calls.
-- ElevenLabs: about 600-900 characters at 45 s.
+- ElevenLabs: about 600-900 characters at 45 s, plus up to 12 new sound effects (repeats come from the cache).
 - AI editors: 1 Gemini video review + 1 Claude stills review per round (about $0.10-$0.40).
 - GPU render: free (your PC), about 5-10 minutes per render (a fix round adds one re-render).
 

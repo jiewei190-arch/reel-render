@@ -12,6 +12,7 @@ class Cost:
     gemini_calls: int = 0
     eleven_chars: int = 0
     cli_calls: int = 0
+    sfx_generated: int = 0
     cli_estimate_usd: float = 0.0
 
     # Claude Opus 5.5 list prices; Gemini and ElevenLabs are plan-dependent, shown as counts.
@@ -31,7 +32,7 @@ class Cost:
         sub = (f"Claude via subscription: {self.cli_calls} call(s) (API-equivalent ~${self.cli_estimate_usd:.2f}, "
                f"not billed; counts toward plan limits), ") if self.cli_calls else ""
         return (sub + f"Claude API ~${self.claude_usd():.2f} ({self.claude_in:,} in / {self.claude_out:,} out tokens), "
-                f"Gemini {self.gemini_calls} call(s), ElevenLabs {self.eleven_chars:,} characters")
+                f"Gemini {self.gemini_calls} call(s), ElevenLabs {self.eleven_chars:,} characters + {self.sfx_generated} sound effect(s)")
 
 
 COST = Cost()

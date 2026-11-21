@@ -4,6 +4,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import subprocess
 import wave
 from pathlib import Path
@@ -16,6 +17,13 @@ from .cost import COST
 SR = 24000
 
 
+TAG = re.compile(r"\[[^\]]*\]")
+
+
+def strip_tags(text: str) -> str:
+    return re.sub(r"\s+", " ", TAG.sub("", text)).strip()
+
+
 def _tts(text: str, voice_id: str, speed: float) -> tuple[bytes, dict]:
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not key:
@@ -24,7 +32,9 @@ def _tts(text: str, voice_id: str, speed: float) -> tuple[bytes, dict]:
         f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps",
         params={"output_format": "pcm_24000"},
         headers={"xi-api-key": key, "Content-Type": "application/json"},
-        json={"text": text, "model_id": CFG.eleven_model, "voice_settings": {"speed": speed}},
+        json={"text": text, "model_id": CFG.eleven_model,
+              "voice_settings": {"speed": speed, "stability": float(os.environ.get("REELBOT_VOICE_STABILITY", "0.4")),
+                                 "similarity_boost": 0.8, "style": float(os.environ.get("REELBOT_VOICE_STYLE", "0.35"))}},
         timeout=180,
     )
     if r.status_code != 200:
@@ -35,8 +45,16 @@ def _tts(text: str, voice_id: str, speed: float) -> tuple[bytes, dict]:
 
 
 def _words(al: dict, text: str, offset: float) -> list[dict]:
-    out, cur, t0, t1 = [], "", None, None
+    """Word timings from the character alignment, skipping [audio tags] (they are performed, not spoken)."""
+    text = strip_tags(text)
+    out, cur, t0, t1, in_tag = [], "", None, None, False
     for c, s, e in zip(al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]):
+        if c == "[":
+            in_tag = True
+        if in_tag:
+            if c == "]":
+                in_tag = False
+            continue
         if c.isspace():
             if cur:
                 out.append((cur, t0, t1))
@@ -59,13 +77,21 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
     """Writes voice.wav, vo/timings.json, voice.lines.json. Returns the duration in seconds."""
     voice_id = CFG.voices[voice]
     lines = [l.strip() for l in (folder / "script.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
+    spoken = lines
+    sj = folder / "script.json"
+    if sj.exists():  # emotion-tagged versions of the same lines, if the writer made them and they match
+        vl = json.loads(sj.read_text(encoding="utf-8")).get("voice_lines") or []
+        if len(vl) == len(lines) and all(strip_tags(v) == l for v, l in zip(vl, lines)):
+            spoken = vl
+        elif vl:
+            print("  voice: emotion tags don't match the script lines; using plain lines")
     pcm_all = bytearray(b"\0\0" * int(SR * lead))
     t, turns, meta = lead, [], []
-    for i, line in enumerate(lines, 1):
-        print(f"  elevenlabs: line {i}/{len(lines)}")
-        pcm, al = _tts(line, voice_id, speed)
+    for i, (line, say) in enumerate(zip(lines, spoken), 1):
+        print(f"  elevenlabs: line {i}/{len(lines)}" + (f"  {say[:60]}" if say != line else ""))
+        pcm, al = _tts(say, voice_id, speed)
         dur = len(pcm) / 2 / SR
-        turns.append({"turn": i, "text": line, "words": _words(al, line, t)})
+        turns.append({"turn": i, "text": line, "words": _words(al, say, t)})
         meta.append({"line": i, "text": line, "start": round(t, 3), "end": round(t + dur, 3)})
         pcm_all += pcm
         t += dur

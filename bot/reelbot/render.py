@@ -8,6 +8,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from . import sound
 from .config import CFG
 
 
@@ -77,6 +78,11 @@ def render(folder: Path, *, out_dir: Path | None = None) -> Path:
 
     tmp = CFG.render_root / "out" / "tmp"
     tmp.mkdir(parents=True, exist_ok=True)
+    if os.environ.get("REELBOT_SOUND_DESIGN", "1") != "0":
+        try:
+            sound.design(folder, tmp / f"{slug}.cues.json", comp)
+        except Exception as e:  # never lose a render over sound design
+            print(f"  sound design skipped: {e}")
     premix = tmp / f"{slug}_premix.wav"
     print("  audio: voice + music + sfx mix")
     _run([CFG.python, "tools/story_mix.py", comp, str(folder / "voice.wav"), str(CFG.audio_dir), str(premix)],
