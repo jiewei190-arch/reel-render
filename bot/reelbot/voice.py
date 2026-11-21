@@ -121,6 +121,25 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
             m["end"] = round(m["end"] / tempo, 3)
         t /= tempo
 
+    # Emotion tags can add a beat of silence before the first word; the frame-0 gate wants speech by 0.2 s.
+    first = turns[0]["words"][0]["t"] if turns and turns[0]["words"] else lead
+    cut = round(first - lead, 3)
+    if cut > 0.03:
+        tmp = folder / "vo" / "_untrimmed.wav"
+        out.replace(tmp)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp), "-af", f"atrim=start={cut},asetpts=PTS-STARTPTS",
+                        "-ar", str(SR), "-ac", "1", "-c:a", "pcm_s16le", str(out)], check=True)
+        tmp.unlink()
+        for tu in turns:
+            for w_ in tu["words"]:
+                w_["t"] = round(w_["t"] - cut, 3)
+                w_["end"] = round(w_["end"] - cut, 3)
+        for m in meta:
+            m["start"] = round(max(0.0, m["start"] - cut), 3)
+            m["end"] = round(m["end"] - cut, 3)
+        t -= cut
+        print(f"  voice: trimmed {cut:.2f} s of lead-in silence (first word now at {lead:.2f} s)")
+
     (folder / "vo" / "timings.json").write_text(json.dumps(
         {"source": {"audio": "voice.wav", "script": "script.txt", "model": f"elevenlabs:{CFG.eleven_model}",
                     "duration": round(t, 3)}, "turns": turns}, indent=1), encoding="utf-8")
