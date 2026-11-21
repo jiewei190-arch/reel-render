@@ -447,7 +447,7 @@ export const RECIPE: TechRecipe = {
    "cam": {
     "preset": "medium",
     "target": "jet",
-    "az": 72,
+    "az": -72,
     "dist": 9.5,
     "h": 0.7
    },
