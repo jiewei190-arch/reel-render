@@ -175,7 +175,7 @@ export const Devices: React.FC<{ devices: DeviceBox[]; t: number; L: Layout }> =
               <div style={{ fontSize: 38 * k, color: CP.red, letterSpacing: 4 }}>{d.label}</div>
               <div style={{ fontSize: 118 * k, letterSpacing: -2, color: CP.white, textShadow: glow(CP.red, 22), lineHeight: 1.05 }}>{d.value}</div>
               <div style={{ marginTop: 10 * k, height: 18 * k, borderRadius: 9 * k, background: "#1a0a10", overflow: "hidden" }}>
-                <div style={{ height: "100%", width: `${100 * d.frac}%`, background: `linear-gradient(90deg, ${CP.redDeep}, ${CP.red})` }} />
+                <div style={{ height: "100%", width: `${100 * (1 - d.frac)}%`, background: `linear-gradient(90deg, ${CP.redDeep}, ${CP.red})` }} />
               </div>
             </Card>
           );

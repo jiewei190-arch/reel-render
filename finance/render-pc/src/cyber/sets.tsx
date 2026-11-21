@@ -153,7 +153,7 @@ const vault: CyberSet = {
         <mesh geometry={geoOf("csStageRing2", () => new THREE.TorusGeometry(3.1, 0.015, 6, 72))} material={neon(CP.magenta, 0.7)} rotation={[Math.PI / 2, 0, -t * 0.1]} position={[0, 0.03, 0.3]} />
         {/* floating data columns in the dark */}
         {Array.from({ length: 16 }, (_, k) => {
-          const a = (k / 16) * Math.PI * 2 + 0.2, r = 6 + 3 * hash(k);
+          const a = (k / 16) * Math.PI * 2 + 0.2, r = 12 + 4 * hash(k);
           const hgt = 1 + 4 * hash(k + 3);
           return <mesh key={k} geometry={BOX()} material={neon(k % 3 ? CP.cyanDeep : CP.magentaDeep, 0.5)} position={[Math.cos(a) * r, hgt / 2 + 0.3 * Math.sin(t * 0.6 + k), Math.sin(a) * r - 2]} scale={[0.12, hgt, 0.12]} />;
         })}

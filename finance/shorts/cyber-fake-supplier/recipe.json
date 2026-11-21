@@ -5,13 +5,13 @@
   "hook": { "text": "THE *$100M* EMAIL", "again": "11:one" },
   "music": "upbeat",
   "caseFile": [{ "at": "arrested", "until": "Five-0.1", "name": "E. Rimasauskas", "year": "2013-2015", "amount": "$120M+", "status": "CAUGHT" }],
-  "money": [{ "at": "2013", "until": "line:7", "label": "WIRED OUT", "from": 0, "to": 120000000, "dur": 2.0 }],
+  "money": [{ "at": "6:2013", "until": "line:7", "label": "WIRED OUT", "from": 0, "to": 120000000, "dur": 2.0 }],
   "countdown": [{ "at": "invoices,", "until": "lineEnd:5+0.2", "label": "PAY WITHIN", "from": 86400, "rate": 2400 }],
-  "alerts": [{ "at": "Over", "text": "ALERT" }],
+  "alerts": [{ "at": "6:Over", "text": "ALERT" }],
   "checklist": { "at": "Spot", "until": "lineEnd:10+0.3", "items": ["NEW BANK DETAILS", "CHECK THE SENDER", "CALL A KNOWN NUMBER"], "ticks": ["bank", "Call-0.2", "number"] },
   "shots": [
     { "at": 0, "set": "room", "note": "hook: the hooded figure typing, monitors glowing",
-      "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.7, "h": 0.05, "az": 140, "face": 0.46 },
+      "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.6, "h": 0.1, "az": -105, "face": 0.46 },
       "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "type" }] },
     { "at": "Google", "set": "netmap", "cam": { "preset": "pushIn", "target": "svalley:0,0.3,0", "dist": 3.2, "h": 1.9, "az": 20 },
       "actions": [{ "do": "label", "on": "svalley:-0.15,0.5,0", "text": "GOOGLE", "at": "Google", "side": "left" },
@@ -47,7 +47,7 @@
       "boards": [{ "title": "SENTENCE", "at": "Five", "value": "5 YRS", "pos": "top", "tone": "red" }] },
     { "at": "Spot", "set": "inbox", "cam": { "preset": "drift", "target": "ph", "dist": 3.2, "h": 0.05, "az": 8, "sweep": 0.6 },
       "props": [{ "id": "ph", "kit": "email", "at": "phish", "text": "New bank details", "phish": true, "hit": "Spot" }] },
-    { "at": "Because", "set": "room", "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.7, "h": 0.05, "az": 140, "face": 0.46 },
+    { "at": "Because", "set": "room", "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.6, "h": 0.1, "az": -105, "face": 0.46 },
       "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "type", "then": [{ "at": "how", "pose": "turn" }] }] }
   ]
 }

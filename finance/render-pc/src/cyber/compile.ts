@@ -121,7 +121,12 @@ const ALERT_DUR = 1.1, ALERT_PEAK = 0.32;
 export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDuration?: number): CyberCompiled => {
   if (recipe.kit !== "cyber3d") throw new Error(`recipe ${recipe.slug}: kit must be "cyber3d"`);
   const L = layoutOf(recipe);
-  const { at, lineEnd } = makeAt(words);
+  const { at: at0, lineEnd } = makeAt(words);
+  // a bare number is SECONDS ("2013" = 2013 s): a spoken year must be anchored as a word with its line ("6:2013")
+  const at = (a: At | undefined, d = 0): number => {
+    if (typeof a === "string" && /^\d{3,}$/.test(a.trim())) throw new Error(`recipe: At "${a}" reads as ${a} seconds; to anchor the spoken word use "<line>:${a}" (e.g. "6:${a}")`);
+    return at0(a, d);
+  };
   const durS = recipe.duration ?? voDuration ?? Math.max(...words.map((w) => w.end)) + 0.8;
   const duration = Math.round(durS * FPS);
   const end = duration / FPS;

@@ -25,7 +25,7 @@ export const RECIPE: CyberRecipe = {
  ],
  "money": [
   {
-   "at": "2013",
+   "at": "6:2013",
    "until": "line:7",
    "label": "WIRED OUT",
    "from": 0,
@@ -44,7 +44,7 @@ export const RECIPE: CyberRecipe = {
  ],
  "alerts": [
   {
-   "at": "Over",
+   "at": "6:Over",
    "text": "ALERT"
   }
  ],
@@ -70,9 +70,9 @@ export const RECIPE: CyberRecipe = {
    "cam": {
     "preset": "hookZoom",
     "target": "hk.head",
-    "dist": 1.7,
-    "h": 0.05,
-    "az": 140,
+    "dist": 1.6,
+    "h": 0.1,
+    "az": -105,
     "face": 0.46
    },
    "props": [
@@ -452,9 +452,9 @@ export const RECIPE: CyberRecipe = {
    "cam": {
     "preset": "hookZoom",
     "target": "hk.head",
-    "dist": 1.7,
-    "h": 0.05,
-    "az": 140,
+    "dist": 1.6,
+    "h": 0.1,
+    "az": -105,
     "face": 0.46
    },
    "props": [
