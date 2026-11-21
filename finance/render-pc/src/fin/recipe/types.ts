@@ -120,10 +120,22 @@ export type ShotSpec = {
   sfx?: { at: At; sfx: string; db?: number }[];
   /** optional note for humans (ignored) */
   note?: string;
+  /** landscape pacing: marks the start of a new story beat (recipe_build checks a beat every 20-40 s; chapters,
+   *  set changes and beat shots count) */
+  beat?: boolean;
 };
+
+/** LONG-FORM (format "landscape"): a chapter starts on a word of the voice-over; a 2-3 s title card plays there and
+ *  recipe_build writes chapters.txt (YouTube timestamps). The first chapter should start at the first word (00:00). */
+export type ChapterSpec = { title: string; word: At };
 
 export type Recipe = {
   slug: string;
+  /** "portrait" (default): a 1080x1920 Short. "landscape": a 1920x1080 long-form video (LONGFORM.md): lower-third
+   *  captions, chapter cards, windowed asset loading, sampled QA, and no motion-blur (Sub) composition. */
+  format?: "portrait" | "landscape";
+  /** landscape only: the chapters (title cards + chapters.txt) */
+  chapters?: ChapterSpec[];
   style: "S1" | "S2" | "S3" | "S4" | "S5" | "S6";
   /** hook text: on screen from frame 0, <= 8 words; until = when it goes (default end of line 1 + 0.25 s) */
   hook: { text: string; until?: At; again?: At };

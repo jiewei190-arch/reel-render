@@ -61,16 +61,19 @@ export type ViewProps = {
   sky?: boolean;
   width?: number;
   height?: number;
+  /** post-chain px scale (outline, bloom, DOF are authored at 1080 wide); default width / 1080. Landscape (1920x1080)
+   *  views pass 1: their short side is 1080, so the ink and glow keep the same weight as on a Short. */
+  postScale?: number;
   children?: React.ReactNode;
   style?: React.CSSProperties;
 };
 
-export const View: React.FC<ViewProps> = ({ mood: m, cam, t, focus, blur = 1.4, exposure = 0, sky = true, width = 1080, height = 1920, children, style }) => {
+export const View: React.FC<ViewProps> = ({ mood: m, cam, t, focus, blur = 1.4, exposure = 0, sky = true, width = 1080, height = 1920, postScale, children, style }) => {
   const mood = typeof m === "string" ? moodOf(m) : m;
   const L = shotLight(mood, cam);
   const fd = Math.max(0.2, new THREE.Vector3(...cam.pos).distanceTo(new THREE.Vector3(...(focus ?? cam.look))));
   const P = mood.post;
-  const k = width / 1080; // post px values are authored at 1080 wide
+  const k = postScale ?? width / 1080; // post px values are authored at 1080 wide
   const post = {
     ...P,
     outline: { ...P.outline, widthPx: P.outline.widthPx * k },

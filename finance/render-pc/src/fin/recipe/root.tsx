@@ -1,5 +1,5 @@
 // The toolkit's compositions (src/index.toolkit.ts): every built recipe as <Pascal>Recipe (sharp, 30 fps) and
-// <Pascal>RecipeSub (4 sub-frames for render.sh's motion blur), the CC0 asset gallery, and the hand-written
+// <Pascal>RecipeSub (4 sub-frames for render.sh's motion blur; portrait Shorts only, never for landscape long-form), the CC0 asset gallery, and the hand-written
 // minimum-payment-trap reference (for side-by-side comparisons).
 import React from "react";
 import { Composition } from "remotion";
@@ -41,9 +41,10 @@ export const ToolkitRoot: React.FC = () => (
       const c = compiledOf(r.id);
       return (
         <React.Fragment key={r.id}>
-          <Composition id={r.id} component={Sharp} durationInFrames={c.duration} fps={30} width={1080} height={1920} defaultProps={{ id: r.id }} />
-          <Composition id={`${r.id}Plain`} component={Plain} durationInFrames={c.duration} fps={30} width={1080} height={1920} defaultProps={{ id: r.id }} />
-          <Composition id={`${r.id}Sub`} component={Blur} durationInFrames={c.duration * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ id: r.id }} />
+          <Composition id={r.id} component={Sharp} durationInFrames={c.duration} fps={30} width={c.W} height={c.H} defaultProps={{ id: r.id }} />
+          <Composition id={`${r.id}Plain`} component={Plain} durationInFrames={c.duration} fps={30} width={c.W} height={c.H} defaultProps={{ id: r.id }} />
+          {/* OWNER: long-form (landscape) renders the plain 30 fps composition only: no motion-blur Sub composition */}
+          {c.landscape ? null : <Composition id={`${r.id}Sub`} component={Blur} durationInFrames={c.duration * SUB} fps={30 * SUB} width={1080} height={1920} defaultProps={{ id: r.id }} />}
         </React.Fragment>
       );
     })}

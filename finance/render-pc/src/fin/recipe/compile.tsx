@@ -17,10 +17,10 @@ import { stand, yawTo } from "../core";
 import type { FinShot } from "../core";
 import { B, Card, Dust, Reader, TV, easeOut, slam } from "../hooks";
 import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill } from "../props";
-import { Asset, assetSize, usePreload } from "../lib/assets";
+import { Asset, assetSize, useAssetWindow, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
-import { RecipeCaptions, chunkWords } from "../lib/captions";
+import { LowerThirdCaptions, RecipeCaptions, chunkWords } from "../lib/captions";
 import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
@@ -68,6 +68,14 @@ export type Compiled = {
   at: (a: At | undefined, d?: number) => number;
   hookUntil: number;
   quality: boolean;
+  /** frame size: 1080x1920 (portrait Short) or 1920x1080 (landscape long-form) */
+  W: number;
+  H: number;
+  landscape: boolean;
+  /** landscape: chapters resolved to seconds (t = the chapter word; card = when its title card plays) */
+  chapters: { n: number; title: string; t: number; card: number }[];
+  /** landscape: the CC0 assets each shot's window needs (that shot + the next), by shot index */
+  windowAssets: string[][];
 };
 
 const isV3 = (x: unknown): x is V3 => Array.isArray(x) && x.length === 3;
@@ -123,6 +131,9 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
   const Q = recipe.quality !== false;
   const talkMode = recipe.talk ?? (recipe.style === "S3" || recipe.style === "S5" ? "auto" : "none");
   const seedOf = (id: string) => 2 + 2 * castIds.indexOf(id);
+  const LS = recipe.format === "landscape";
+  if (recipe.format !== undefined && recipe.format !== "portrait" && !LS) throw new Error(`recipe: format "${recipe.format}" (use "portrait" or "landscape")`);
+  if (recipe.chapters && !LS) throw new Error("recipe: chapters need \"format\": \"landscape\"");
   // shot times
   const starts = recipe.shots.map((s) => at(s.at));
   starts.forEach((a, i) => { if (i && a <= starts[i - 1]) throw new Error(`recipe: shot ${i + 1} starts at ${a.toFixed(2)} s, not after shot ${i} (${starts[i - 1].toFixed(2)} s)`); });
@@ -205,7 +216,7 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     fx.filter((f) => f.fx === "shake").forEach((f) => kicks.push([f.at, 1.4 * f.gain]));
     props.filter((p) => p.spec.motion === "dropSlam" || p.spec.motion === "burst").forEach((p) => kicks.push([p.hit, 0.8]));
     const prev = shots[shots.length - 1];
-    let { lens, lens2, pov } = lensOf(sp.cam.az === undefined && sp.in === "match" && prev ? { ...sp.cam, az: prev.spec.cam.az ?? 0 } : sp.cam, set, actors, props, a, b, hit, id, sp.mood ?? set.mood);
+    let { lens, lens2, pov } = lensOf(sp.cam.az === undefined && sp.in === "match" && prev ? { ...sp.cam, az: prev.spec.cam.az ?? 0 } : sp.cam, set, actors, props, a, b, hit, id, sp.mood ?? set.mood, LS);
     if (Q) {
       // deeper depth of field on close shots
       if (sp.cam.blur === undefined && (sp.cam.preset === "closeUp" || sp.cam.preset === "slamZoom" || sp.cam.preset === "pushIn")) lens = { ...lens, blur: (lens.blur ?? 1.2) * 1.5 };
@@ -236,7 +247,8 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
   });
 
   // ---------------------------------------------------------------- per-time helpers
-  const shotAt = (t: number) => { let s = shots[0]; for (const x of shots) if (t >= x.a - 1e-9) s = x; return s; };
+  // binary search (long-form has hundreds of shots): the last shot with t >= its start (shots[0] before that)
+  const shotAt = (t: number) => { let lo = 0, hi = shots.length - 1; while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (t >= shots[mid].a - 1e-9) lo = mid; else hi = mid - 1; } return shots[lo]; };
   const actorsAt = (t: number) => shotAt(t).actors.map((a) => actorState(a, t)!).filter(Boolean);
   const camOf = (L: FinShot, t: number): Cam => {
     const tau = Math.max(0, t - L.a);
@@ -279,6 +291,9 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     return out;
   };
   const hookUntil = recipe.hook.until !== undefined ? at(recipe.hook.until) : lineEnd(1) + 0.25;
+  // long-form chapters: the title card plays on the chapter word (the first one after the hook text has gone)
+  const chapters = (recipe.chapters ?? []).map((ch, i) => { const t = at(ch.word); return { n: i + 1, title: ch.title, t, card: Math.max(t, t < hookUntil ? hookUntil + 0.1 : t) }; });
+  chapters.forEach((ch, i) => { if (i && ch.t <= chapters[i - 1].t) throw new Error(`recipe: chapter ${i + 1} "${ch.title}" starts at ${ch.t.toFixed(2)} s, not after chapter ${i}`); });
 
   // ---------------------------------------------------------------- audio plan (story_mix.py format)
   // FORMAT_V1 day-1 fix 3: a sound punch at 0.00 s (impact by default; recipe.sfx0 picks another, e.g. "drop")
@@ -300,13 +315,17 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
     for (const f of s.fx) if (f.fx === "debris") cues.push({ t: f.at, sfx: "crash", db: -8 });
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
+  for (const ch of chapters) cues.push({ t: ch.card - 0.25, sfx: "whoosh", db: -6 }, { t: ch.card + 0.05, sfx: "impact", db: -6 });
   if (Q && recipe.finalGag) cues.push({ t: recipe.finalGag.from ?? end - 0.8, sfx: recipe.finalGag.gag === "tvFall" ? "crash" : recipe.finalGag.gag === "catCoin" ? "coins" : "paper", db: -6 });
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio: StoryAudio = { music: recipe.music ?? "upbeat", cues: cues.filter((c) => c.t >= 0 && c.t < end).sort((x, y) => x.t - y.t) };
 
   const assets = new Set<string>();
   for (const s of shots) { SETS[s.set].assets.forEach((x) => assets.add(x)); s.props.forEach((p) => p.spec.asset && assets.add(p.spec.asset)); }
-  const out: Compiled = { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil, quality: Q };
+  const shotAssets = shots.map((s) => [...SETS[s.set].assets, ...s.props.filter((p) => p.spec.asset).map((p) => p.spec.asset!)]);
+  const windowAssets = shots.map((_, i) => [...new Set([...shotAssets[i], ...(shotAssets[i + 1] ?? [])])].sort());
+  const out: Compiled = { recipe, slug: recipe.slug, duration, shots, assets: [...assets], audio, shotAt, actorsAt, camAt, qa, textsAt, words, at, hookUntil, quality: Q,
+    W: LS ? 1920 : 1080, H: LS ? 1080 : 1920, landscape: LS, chapters, windowAssets };
   return out;
 };
 
@@ -421,8 +440,15 @@ export const CAM_PRESETS = {
   splitScreen: { dist: 2.3, h: 0.25, fov: 34, face: 0.5, push: 0.05, blur: 1.0, roll: [0, 0] as [number, number] },
   povFirstPerson: { dist: 0, h: 0, fov: 64, face: 0.5, push: 0, blur: 0.8, roll: [0, 0] as [number, number] },
 };
-const lensOf = (c: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: number, b: number, hit: number, shotId: string, moodKey: string): { lens: FinShot; lens2?: FinShot; pov?: string } => {
-  const P = CAM_PRESETS[c.preset];
+/** LONG-FORM (16:9) lens adjustments per preset: [fov x, dist x]. The vertical fov is what three.js keeps, so a 16:9
+ *  frame at the portrait fov shows the same height and 3.2x the width: close shots stay as framed (a face reads on a TV),
+ *  wider presets narrow their fov a little so the set's walls and floor edges stay out of frame. */
+export const LANDSCAPE_LENS: Record<string, [number, number]> = { hookZoom: [1, 1], closeUp: [1, 1], slamZoom: [0.95, 1], pushIn: [0.95, 1], medium: [0.9, 1], whip: [0.9, 1], orbit: [0.9, 1], wide: [0.8, 0.95], splitScreen: [1.15, 1], povFirstPerson: [0.85, 1] };
+const lensOf = (c0: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: number, b: number, hit: number, shotId: string, moodKey: string, LS = false): { lens: FinShot; lens2?: FinShot; pov?: string } => {
+  const P0 = CAM_PRESETS[c0.preset];
+  const lk = LS && P0 ? LANDSCAPE_LENS[c0.preset] ?? [1, 1] : null;
+  const P = lk ? { ...P0, fov: P0.fov * lk[0], dist: P0.dist * lk[1] } : P0;
+  const c: CamSpec = lk && c0.fov !== undefined ? { ...c0, fov: c0.fov * lk[0] } : c0;
   if (!P) throw new Error(`recipe ${shotId}: no camera preset "${c.preset}"`);
   const mood = (moodKey === "earth" || moodKey === "home" || moodKey === "whisper" || moodKey === "ending" ? moodKey : "store") as FinShot["mood"];
   const base = (tg: Target): FinShot => {
@@ -659,6 +685,10 @@ let moodsFor = "";
 export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = false }) => {
   const g = useCurrentFrame();
   useFonts();
+  if (c.landscape) return <LandscapeFilm c={c} g={g} />;
+  return <PortraitFilm c={c} g={g} sub={sub} />;
+};
+const PortraitFilm: React.FC<{ c: Compiled; g: number; sub: boolean }> = ({ c, g, sub }) => {
   const ready = usePreload(c.assets);
   if (moodsFor !== c.slug) {
     setMoodShots(c.shots.filter((s) => s.lens.mood === "whisper").map((s) => `${c.slug}:${s.id}`), c.shots.filter((s) => s.lens.mood === "ending").map((s) => `${c.slug}:${s.id}`));
@@ -715,6 +745,134 @@ export const RecipeFilm: React.FC<{ c: Compiled; sub?: boolean }> = ({ c, sub = 
     </AbsoluteFill>
   );
 };
+// ------------------------------------------------------------------ LONG-FORM: the 1920x1080 film (LONGFORM.md)
+/** a chapter title sting: 2.6 s, a bar slides in from the left with "CHAPTER n" and the title, holds, slides out */
+export const CHAPTER_CARD_S = 2.6;
+const ChapterCard: React.FC<{ n: number; title: string; u: number }> = ({ n, title, u }) => {
+  if (u < 0 || u > CHAPTER_CARD_S) return null;
+  const inK = EASE_OUT(clamp(u / 0.35)), outK = EASE_OUT(clamp((u - (CHAPTER_CARD_S - 0.35)) / 0.35));
+  const x = -1100 * (1 - inK) - 1300 * outK;
+  const dim = 0.32 * inK * (1 - outK);
+  return (
+    <>
+      <AbsoluteFill style={{ background: `rgba(10,6,16,${dim})` }} />
+      <div style={{ position: "absolute", left: 0, top: 330, transform: `translateX(${x}px)`, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+        <div style={{ marginLeft: 120, padding: "6px 18px", background: "#ffd23a", color: "#140c1c", fontFamily: "Poppins", fontWeight: 800, fontSize: 34, letterSpacing: 4, borderRadius: 8 }}>{`CHAPTER ${n}`}</div>
+        <div style={{ marginTop: 14, padding: "18px 60px 22px 120px", background: "rgba(20,12,28,0.88)", borderRight: "14px solid #ff3b30", color: "#ffffff", fontFamily: "Poppins", fontWeight: 800, fontSize: 96, lineHeight: 1.05, maxWidth: 1500, textTransform: "uppercase" }}>{title}</div>
+      </div>
+    </>
+  );
+};
+/** LONG-FORM lower-third caption centre (px at 1080 tall) and half its 2-line band */
+export const CAP_Y_L = 905;
+const CAP_HALF_L = 72;
+const LandscapeFilm: React.FC<{ c: Compiled; g: number }> = ({ c, g }) => {
+  const t0 = g / FPS;
+  const shot = c.shotAt(t0);
+  const si = c.shots.indexOf(shot);
+  // windowed loading: only this shot's and the next shot's models (never every asset of a 10-minute video at once)
+  const ready = useAssetWindow(c.windowAssets[si] ?? []);
+  if (moodsFor !== c.slug) {
+    setMoodShots(c.shots.filter((s) => s.lens.mood === "whisper").map((s) => `${c.slug}:${s.id}`), c.shots.filter((s) => s.lens.mood === "ending").map((s) => `${c.slug}:${s.id}`));
+    moodsFor = c.slug;
+  }
+  const t = Math.min(Math.max(t0, shot.a), shot.b - 1e-4);
+  const cams = c.camAt(t);
+  const set = SETS[shot.set];
+  const actors = c.actorsAt(t);
+  const pov = shot.pov ? actors.find((a) => a.id === shot.pov) : undefined;
+  const scene = (cam: Cam) => (
+    <>
+      {set.render(t)}
+      {actors.filter((a) => a.id !== shot.pov).map((a) => <ActorView key={a.id} st={a} t={t} />)}
+      {c.quality && c.recipe.extras !== false && shot.spec.extras !== false ? extrasAt(shot.set, t).map((a) => <ActorView key={a.id} st={a} t={t} />) : null}
+      {c.quality ? <SetLife c={c} shot={shot} t={t} actors={actors} /> : null}
+      {shot.props.map((p) => <PropView key={p.key} pr={p} t={t} s={shot} />)}
+      {c.quality ? <EggsView eggs={placeEggs(shot.set, c.recipe.eggs)} t={t} gag={c.recipe.finalGag} gu={gagU(c.recipe.finalGag, c.duration / FPS, t)} /> : null}
+      {shot.fx.map((f, i) => <FxView key={i} f={f} t={t} />)}
+      {pov ? <PovHands cam={cam} st={pov} t={t} /> : null}
+    </>
+  );
+  const moodOf = (L: FinShot, cam: Cam, k: string) => moodFor(L.mood === "earth" ? "earth" : L.mood === "home" ? "home" : "store2", `${c.slug}:${shot.id}${k}`, { pos: cam.pos, look: cam.look, fov: cam.fov, roll: cam.roll ?? 0 });
+  const view = (L: FinShot, cam: Cam, w: number, left: number, k: string) => (
+    <View key={k} mood={moodOf(L, cam, k)} cam={{ pos: cam.pos, look: cam.look, fov: cam.fov, roll: cam.roll ?? 0 }} t={t} blur={L.blur ?? 1.2} focus={L.subj(t)} sky={L.sky ?? false} width={w} height={1080} postScale={1} style={{ left, width: w, height: 1080 }}>
+      {scene(cam)}
+    </View>
+  );
+  const flash = shot.fx.filter((f) => f.fx === "flash").reduce((o, f) => Math.max(o, t0 >= f.at ? 0.65 * (1 - (t0 - f.at) / 0.12) : 0), 0);
+  const capOff = shot.spec.caption === "off" || c.recipe.captions === "off";
+  const fixedCap = shot.spec.caption && shot.spec.caption !== "auto" && shot.spec.caption !== "off" ? shot.spec.caption : null;
+  const tag = c.recipe.tag && t0 >= c.at(c.recipe.tag.from) && t0 < c.at(c.recipe.tag.until) ? c.recipe.tag.text : null;
+  const again = c.recipe.hook.again !== undefined ? c.at(c.recipe.hook.again) : null;
+  const ch = c.chapters.find((x) => t0 >= x.card && t0 < x.card + CHAPTER_CARD_S);
+  const capY = capPlanL(c, shot).y / 1080;
+  return (
+    <AbsoluteFill style={{ background: c.recipe.bg ?? set.bg }}>
+      {ready ? (cams.split && cams.second && shot.lens2 ? (
+        <>
+          {/* split screen side by side in 16:9: left = targets[0], right = targets[1] */}
+          {view(shot.lens, cams.main, 960, 0, "a")}
+          {view(shot.lens2, cams.second, 960, 960, "b")}
+          <div style={{ position: "absolute", top: 0, bottom: 0, left: 952, width: 16, background: "#16121c" }} />
+        </>
+      ) : view(shot.lens, cams.main, 1920, 0, "")) : null}
+      {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
+      <HookText text={c.recipe.hook.text} t={t0} until={c.hookUntil} top={70} size={80} />
+      {again !== null && t0 >= again ? <HookText text={c.recipe.hook.text} t={t0} until={99} top={70} size={80} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={t0 - ch.card} /> : null}
+      {!capOff ? (fixedCap ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={t0} centre={capY} /> : <LowerThirdCaptions chunks={CHUNKS_L(c)} t={t0} centre={capY} hide={(x) => x < CAPTIONS_FROM} />) : null}
+      {tag ? <div style={{ position: "absolute", right: 48, top: 40, padding: "6px 16px", borderRadius: 10, background: "rgba(255,244,200,0.92)", color: "#16121c", fontFamily: "Poppins", fontWeight: 800, fontSize: 28, letterSpacing: 1 }}>{tag}</div> : null}
+    </AbsoluteFill>
+  );
+};
+const chunkCacheL = new WeakMap<Compiled, ReturnType<typeof chunkWords>>();
+/** long-form captions: phrases of up to 7 words (2 lines max in the 1440 px column) */
+const CHUNKS_L = (c: Compiled) => { let k = chunkCacheL.get(c); if (!k) { k = chunkWords(c.words, 7); chunkCacheL.set(c, k); } return k; };
+const capCacheL = new WeakMap<Compiled, Map<string, CapPlan>>();
+/** the long-form caption plan: like capPlan, for a 1920x1080 frame (a side-by-side split checks both views) */
+export const capPlanL = (c: Compiled, shot: { id: string; a: number; b: number }): CapPlan => {
+  let m = capCacheL.get(c); if (!m) { m = new Map(); capCacheL.set(c, m); }
+  const hit = m.get(shot.id); if (hit) return hit;
+  type Ob = { top: number; bot: number };
+  const faces: Ob[] = [];
+  const boards = new Set<string>();
+  const inBand = (o: Ob, y: number) => !(o.bot < y - CAP_HALF_L || o.top > y + CAP_HALF_L);
+  for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
+    const tm = shot.a + (shot.b - shot.a) * u;
+    const cams = c.camAt(tm);
+    const views: [Cam, number, number][] = cams.split && cams.second ? [[cams.main, 960, 0], [cams.second, 960, 960]] : [[cams.main, 1920, 0]];
+    const texty = new Set(c.shotAt(tm).props.filter((p) => p.spec.kit === "label" || (p.spec as { text?: unknown }).text).map((p) => p.key));
+    const pboxes = c.qa(tm).props;
+    for (const [cam, w, left] of views) {
+      for (const a of c.actorsAt(tm)) {
+        const q = project(cam, [a.head[0], a.head[1] - 0.05 * a.s, a.head[2]], 1080, 0, w, left);
+        if (!q || q.x < left + 240 || q.x > left + w - 240) continue;
+        const half = 0.17 * a.s * q.k;
+        const o = { top: q.y - half, bot: q.y + half };
+        if (o.bot > 0 && o.top < 1080) faces.push(o);
+      }
+      for (const b of pboxes) {
+        if (!texty.has(b.name)) continue;
+        const qt = project(cam, [b.c[0], b.c[1] + b.h[1], b.c[2]], 1080, 0, w, left), qb = project(cam, [b.c[0], b.c[1] - b.h[1], b.c[2]], 1080, 0, w, left);
+        if (!qt || !qb) continue;
+        const reach = b.h[0] * qt.k, cx = (qt.x + qb.x) / 2;
+        const o = { top: Math.min(qt.y, qb.y), bot: Math.max(qt.y, qb.y) };
+        if (cx + reach > 240 && cx - reach < 1680 && o.bot > 0 && o.top < 1080 && inBand(o, CAP_Y_L)) boards.add(b.name);
+      }
+    }
+  }
+  const free = (y: number) => faces.every((o) => !inBand(o, y));
+  let y = CAP_Y_L;
+  if (!free(CAP_Y_L)) {
+    // a lower third only moves down a little (to 940) or up to just over the face; never into the top third
+    const cand = [...faces.map((o) => o.bot + CAP_HALF_L + 8), ...faces.map((o) => o.top - CAP_HALF_L - 8)].filter((v) => v >= 400 && v <= 940 && free(v));
+    if (cand.length) y = cand.reduce((b, v) => (Math.abs(v - CAP_Y_L) < Math.abs(b - CAP_Y_L) ? v : b));
+  }
+  const out: CapPlan = { y, faces: faces.filter((o) => inBand(o, CAP_Y_L)), boards: [...boards] };
+  m.set(shot.id, out);
+  return out;
+};
+
 /** OWNER 2026-11-19 (rule v2): word captions are FIXED in the bottom band. The chunk's centre is at CAP_Y px (a one-line
  *  baseline at about 72 % of the frame), never lower than CAP_MAX_Y (nothing below y 1500: YouTube's bottom UI).
  *  The SHOT keeps that band clear: faces go in the upper or middle part of the frame, with chest, body, props or floor
@@ -727,7 +885,7 @@ export const CAP_MAX_Y = 1400;
 const CAP_HALF = 105; // half the band a 1-2 line chunk needs
 export type CapPlan = { y: number; faces: { top: number; bot: number }[]; boards: string[] };
 const capCache = new WeakMap<Compiled, Map<string, CapPlan>>();
-export const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y: number; k: number } | null => {
+export const project = (cam: Cam, p: V3, h: number, top: number, w = 1080, left = 0): { x: number; y: number; k: number } | null => {
   const sub = (a: V3, b: V3): V3 => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
   const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const nrm = (a: V3): V3 => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
@@ -736,7 +894,7 @@ export const project = (cam: Cam, p: V3, h: number, top: number): { x: number; y
   const d = sub(p, cam.pos); const z = dot(d, f);
   if (z <= 0.05) return null;
   const k = (h / 2) / Math.tan((cam.fov * Math.PI) / 360); // px per unit at distance 1
-  return { x: 540 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z };
+  return { x: left + w / 2 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z };
 };
 export const capPlan = (c: Compiled, shot: { id: string; a: number; b: number }): CapPlan => {
   let m = capCache.get(c); if (!m) { m = new Map(); capCache.set(c, m); }
@@ -787,6 +945,27 @@ export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number 
  *  A recipe can opt a shot out with cam.face set explicitly. */
 export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2"; v: number }[] => {
   const out: { i: number; key: "face" | "face2"; v: number }[] = [];
+  if (c.landscape) {
+    // long-form: lift a shot whose face lands in the lower-third band (a side-by-side split lifts both views)
+    c.shots.forEach((shot, i) => {
+      if (shot.pov) return;
+      const cs = shot.spec.cam as { face?: unknown; face2?: unknown };
+      const lenses: [FinShot, "face" | "face2"][] = shot.lens2 ? [[shot.lens, "face"], [shot.lens2, "face2"]] : [[shot.lens, "face"]];
+      const f0 = lenses.map(([L]) => L.face);
+      for (let it = 0; it < 4; it++) {
+        capCacheL.delete(c);
+        const p = capPlanL(c, shot);
+        if (!p.faces.length) break;
+        const need = Math.max(...p.faces.map((o) => o.bot)) - (CAP_Y_L - CAP_HALF_L - 10);
+        let moved = false;
+        for (const [L, key] of lenses) if (typeof cs[key] !== "number" && (L.face ?? 0.5) > 0.26 + 1e-3) { L.face = Math.max(0.26, (L.face ?? 0.5) - (need + 8) / 1080); moved = true; }
+        if (need <= 0 || !moved) break;
+      }
+      lenses.forEach(([L, key], k) => { if (L.face !== f0[k]) out.push({ i, key, v: Math.round(L.face * 1000) / 1000 }); });
+    });
+    capCacheL.delete(c);
+    return out;
+  }
   c.shots.forEach((shot, i) => {
     if (shot.b <= 1.0 || shot.pov) return;
     const split = !!shot.lens2;

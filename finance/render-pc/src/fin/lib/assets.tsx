@@ -86,6 +86,45 @@ export const usePreload = (ids: AssetId[]) => {
   }, [h]); // eslint-disable-line react-hooks/exhaustive-deps
   return ready;
 };
+/** LONG-FORM: load only the assets a window of shots needs (the current shot and the next), instead of every asset of
+ *  a 10-minute video up front. Unlike usePreload, readiness is re-checked on every render, so a new shot's models
+ *  hold the frame (delayRender) until they are in, and the canvas mounts with them. Models that left the window are
+ *  released once more than `keep` are held (their GPU buffers disposed), so memory stays flat over hundreds of shots. */
+export const useAssetWindow = (ids: AssetId[], keep = 48) => {
+  const urls = [...new Set(ids)].sort().map((id) => staticFile(assetOf(id).file));
+  const key = urls.join(",");
+  const missing = urls.filter((u) => !loaded.has(u));
+  const [, bump] = React.useState(0);
+  const h = React.useMemo(() => (missing.length ? delayRender(`cc0 window ${key}`, { timeoutInMilliseconds: 120000 }) : null), [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  React.useEffect(() => {
+    release(new Set(urls), keep);
+    if (h === null) return;
+    Promise.all(urls.map(load))
+      .then(() => { bump((x) => x + 1); continueRender(h); })
+      .catch((e) => { console.error(e); bump((x) => x + 1); continueRender(h); });
+  }, [h, key]); // eslint-disable-line react-hooks/exhaustive-deps
+  return urls.every((u) => loaded.has(u));
+};
+/** drop the oldest loaded models that are not in `inUse` until at most `keep` remain (dispose geometry/materials/maps) */
+const release = (inUse: Set<string>, keep: number) => {
+  if (loaded.size <= keep) return;
+  for (const [u, g] of [...loaded]) {
+    if (loaded.size <= keep) break;
+    if (inUse.has(u)) continue;
+    loaded.delete(u);
+    cache.delete(u);
+    g.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (!m.isMesh) return;
+      m.geometry?.dispose();
+      for (const x of Array.isArray(m.material) ? m.material : [m.material]) {
+        const sm = x as THREE.MeshStandardMaterial;
+        sm.map?.dispose();
+        sm.dispose();
+      }
+    });
+  }
+};
 const useModel = (url: string) => {
   const [, bump] = React.useState(0);
   const g = loaded.get(url) ?? null;
