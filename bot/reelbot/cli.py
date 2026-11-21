@@ -7,6 +7,8 @@ Nothing is ever uploaded. Finished videos land in REELBOT_OUTPUT_DIR/<slug>/ wit
   python -m reelbot make "..." --auto                                 # no stop, straight through
   python -m reelbot batch topics.txt                                  # one topic per line, --auto each
   python -m reelbot ideas --n 10                                      # fresh topic ideas (Gemini + Claude)
+  python -m reelbot bend "<a winning video or format>" --channel law  # adapt a proven format into ranked, checked topics
+  python -m reelbot make "..." --channel biz --long                  # any channel: blockmoney, law, biz, cyber; --long = 16:9 ~10 min
   python -m reelbot learn                                             # rank our Shorts by retention -> work/learnings.md
   python -m reelbot script|voice|recipe|render <slug>                 # redo one stage
   python -m reelbot review <slug>                                     # AI editors review (and fix) the finished video
@@ -21,7 +23,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice
+from . import bend, channels, claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice
 from .config import CFG
 from .cost import COST
 
@@ -44,8 +46,9 @@ def _mark(folder: Path, stage: str, **extra) -> None:
 def _pick_voice(arg: str) -> str:
     if arg != "auto":
         return arg
+    vs = channels.active().voices
     n = sum(1 for p in CFG.shorts_dir.glob("*/voice.lines.json")) if CFG.shorts_dir.exists() else 0
-    return "Tyler" if n % 2 == 0 else "Christopher"
+    return vs[n % len(vs)]
 
 
 def stage_script(topic: str, a) -> Path:
@@ -64,13 +67,16 @@ def stage_script(topic: str, a) -> Path:
 
 
 def stage_voice(folder: Path, a) -> None:
+    channels.use(channels.of_folder(folder))
     tone.apply(folder)  # emotion must fit each line's mood before anything is voiced
     v = _pick_voice(a.voice)
-    dur = voice.record(folder, v, fit=a.seconds + 6)
+    target = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("target_seconds") or a.seconds
+    dur = voice.record(folder, v, fit=target * 1.12 + 2)
     _mark(folder, "voice", voice=v, seconds=round(dur, 2))
 
 
 def stage_recipe(folder: Path, a) -> None:
+    channels.use(channels.of_folder(folder))
     recipe.build(folder)
     _mark(folder, "recipe")
 
@@ -98,6 +104,7 @@ def stage_edit(folder: Path, final: Path, a) -> dict:
 
 
 def stage_render(folder: Path, a) -> None:
+    channels.use(channels.of_folder(folder))
     final = render.render(folder, on=a.on)
     _mark(folder, "render", video=str(final))
     if a.edit_rounds >= 0:
@@ -116,12 +123,15 @@ def run_rest(folder: Path, a) -> None:
 
 def cmd_ideas(a) -> None:
     text, sources = gemini.grounded(
-        "List 25 money/personal-finance topics that are trending or newly surprising for US viewers this month "
-        "(new fees, rate changes, viral money myths, tax-season traps, scams). For each: one line on why it is timely, "
-        "with the key number and its source. No stock or crypto picks.")
+        ("List 25 money/personal-finance topics that are trending or newly surprising for US viewers this month "
+         "(new fees, rate changes, viral money myths, tax-season traps, scams). For each: one line on why it is timely, "
+         "with the key number and its source. No stock or crypto picks.") if channels.active().id == "blockmoney" else
+        (f"For this YouTube channel: {channels.active().brief}\nList 25 specific, TRUE, well-documented stories that "
+         "would make gripping videos now: some timely (in the news this month), some evergreen classics. For each: the "
+         "story in one line, why it grabs people, the key number or detail, and a source."))
     res = claude.ask_json(
-        "You pick Block Money Short topics: Spender vs Saver stories with one clear money gap, a 'you' hook with a "
-        "dollar figure in the first sentence, no advice or picks. Prefer topics small finance channels have not done to death.",
+        f"You pick video topics for this channel: {channels.active().brief} Hook rules: {channels.active().hook_rules} "
+        "No advice of any kind. Prefer specific, true, documentable stories that small channels have not done to death.",
         f"From this research, choose the {a.n} best topics.\n\n{text}\n\nOur own retention data:\n{learn.current()}",
         {"type": "object", "additionalProperties": False, "required": ["topics"],
          "properties": {"topics": {"type": "array", "items": {"type": "object", "additionalProperties": False,
@@ -137,7 +147,9 @@ def main(argv: list[str] | None = None) -> None:
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     def common(p):
-        p.add_argument("--voice", default="auto", choices=["auto", "Tyler", "Christopher"])
+        p.add_argument("--channel", choices=list(channels.CHANNELS), help="which channel (default REELBOT_CHANNEL or blockmoney)")
+        p.add_argument("--voice", default="auto", choices=["auto", *CFG.voices])
+        p.add_argument("--long", action="store_true", help="long-form video: 16:9, chapters, ~10 min (sets --seconds 600)")
         p.add_argument("--seconds", type=int, default=45, help="target length (default 45)")
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
@@ -151,11 +163,17 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("continue"); p.add_argument("slug"); common(p)
     p = sub.add_parser("batch"); p.add_argument("file"); common(p)
     p = sub.add_parser("ideas"); p.add_argument("--n", type=int, default=10)
-    p = sub.add_parser("learn"); p.add_argument("--channel", default="block_money")
+    p.add_argument("--channel", choices=list(channels.CHANNELS))
+    p = sub.add_parser("bend"); p.add_argument("reference"); p.add_argument("--n", type=int, default=10)
+    p.add_argument("--channel", choices=list(channels.CHANNELS))
+    p = sub.add_parser("learn"); p.add_argument("--channel", choices=list(channels.CHANNELS))
     p = sub.add_parser("lambda"); p.add_argument("action", choices=["setup", "quotas"]); p.add_argument("--increase", action="store_true")
     for name in ("script", "voice", "recipe", "render", "review"):
         p = sub.add_parser(name); p.add_argument("slug"); common(p)
     a = ap.parse_args(argv)
+    channels.use(channels.get(getattr(a, "channel", None)))
+    if getattr(a, "long", False) and a.seconds == 45:
+        a.seconds = 600
 
     try:
         if a.cmd == "make":
@@ -181,10 +199,12 @@ def main(argv: list[str] | None = None) -> None:
                 lambda_render.quotas_increase()
             else:
                 lambda_render.quotas()
+        elif a.cmd == "bend":
+            bend.run(a.reference, a.n)
         elif a.cmd == "ideas":
             cmd_ideas(a)
         elif a.cmd == "learn":
-            text = learn.build(a.channel)
+            text = learn.build()
             print(text or f"No metrics found under {learn._analytics_dir()} (set REELBOT_ANALYTICS_DIR).")
         elif a.cmd == "script":
             data = json.loads((_folder(a.slug) / "script.json").read_text(encoding="utf-8"))
@@ -196,7 +216,8 @@ def main(argv: list[str] | None = None) -> None:
         elif a.cmd == "render":
             stage_render(_folder(a.slug), a)
         elif a.cmd == "review":
-            v = CFG.output_dir / a.slug / "video.mp4"
+            ch = channels.use(channels.of_folder(_folder(a.slug)))
+            v = channels.output_dir(ch) / a.slug / "video.mp4"
             stage_edit(_folder(a.slug), v, a)
     except claude.ClaudeError as e:
         sys.exit(f"Claude: {e}")

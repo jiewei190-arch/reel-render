@@ -12,6 +12,7 @@ import json
 import os
 from pathlib import Path
 
+from . import channels
 from .config import BOT_DIR, CFG
 
 LEARNINGS = BOT_DIR / "work" / "learnings.md"
@@ -65,7 +66,12 @@ def _opening(slug: str) -> tuple[str, str]:
     return "", ""
 
 
-def build(channel: str = "block_money") -> str:
+def _file(channel: str) -> Path:
+    return LEARNINGS if channel == "block_money" else LEARNINGS.with_name(f"learnings_{channel}.md")
+
+
+def build(channel: str | None = None) -> str:
+    channel = channel or channels.active().analytics
     rows = [r for r in _latest_rows(channel).values()
             if (_num(r.get("views")) or 0) >= MIN_VIEWS and _num(r.get("stayed_to_watch_pct")) is not None]
     if not rows:
@@ -87,10 +93,12 @@ def build(channel: str = "block_money") -> str:
     lines += ["", f"Top third averages {avg(top):.1f}% stayed; bottom third {avg(bottom):.1f}%. "
               "Goal: 70%+ stayed (that is when YouTube keeps pushing a Short past ~1K views)."]
     text = "\n".join(lines) + "\n"
-    LEARNINGS.parent.mkdir(parents=True, exist_ok=True)
-    LEARNINGS.write_text(text, encoding="utf-8")
+    f = _file(channel)
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(text, encoding="utf-8")
     return text
 
 
 def current() -> str:
-    return LEARNINGS.read_text(encoding="utf-8") if LEARNINGS.exists() else ""
+    f = _file(channels.active().analytics)
+    return f.read_text(encoding="utf-8") if f.exists() else ""

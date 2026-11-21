@@ -10,7 +10,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from . import claude
+from . import channels, claude
 from .config import CFG
 
 RECIPE_SCHEMA = {
@@ -31,10 +31,28 @@ def _read(p: Path, limit: int | None = None) -> str:
     return t[:limit] if limit else t
 
 
-def _examples(style: str) -> str:
+def _kit_examples(kit: str) -> list[Path]:
+    """Recipes in the shorts folders that use this kit (the kit builder's demo is always one)."""
+    found = []
+    for base in (CFG.shorts_dir, CFG.render_root.parent / "shorts", CFG.repo_root / "finance" / "shorts"):
+        if not base.exists():
+            continue
+        for d in sorted(base.iterdir()):
+            r = d / "recipe.json"
+            if r.exists() and f'"kit": "{kit}"' in r.read_text(encoding="utf-8", errors="replace").replace('"kit":"', '"kit": "'):
+                found.append(d)
+    return found
+
+
+def _examples(style: str, kit: str | None = None) -> str:
     """Real recipes that pass the gate: the style example + the most recent long Shorts, if present."""
     root = CFG.render_root
     picks: list[Path] = []
+    if kit:
+        picks = _kit_examples(kit)[-3:]
+        out = [f"### Example: {d.name}\nscript.txt:\n{_read(d / 'script.txt')}\nrecipe.json:\n{_read(d / 'recipe.json')}"
+               for d in picks]
+        return "\n\n".join(out) or f"(no {kit} example recipes found; follow the kit guide exactly)"
     ex = root / "docs" / "recipe_examples"
     if ex.exists():
         picks += sorted(p for p in ex.iterdir() if p.name.lower().startswith(style.lower() + "-"))
@@ -59,28 +77,38 @@ def _check(slug: str) -> tuple[bool, str]:
 def _context(folder: Path) -> tuple[dict, str, str]:
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug, style = data["slug"], data["style"]
+    ch = channels.get(data.get("channel"))
     timings = (folder / "vo" / "timings.json").read_text(encoding="utf-8")
-    guide = _read(CFG.render_root / "RECIPE_GUIDE.md") or _read(CFG.repo_root / "finance" / "render-pc" / "RECIPE_GUIDE.md")
+    gname = f"KIT_{ch.kit.upper()}.md" if ch.kit else "RECIPE_GUIDE.md"
+    guide = _read(CFG.render_root / gname) or _read(CFG.repo_root / "finance" / "render-pc" / gname)
     if not guide:
-        raise SystemExit(f"RECIPE_GUIDE.md not found under {CFG.render_root}. Set REELBOT_RENDER_ROOT to the PC's blocky-render folder.")
+        raise SystemExit(f"{gname} not found under {CFG.render_root}. Set REELBOT_RENDER_ROOT to the PC's blocky-render "
+                         f"folder{' and install the ' + ch.kit + ' kit' if ch.kit else ''}.")
+    long_note = ""
+    if data.get("format") == "landscape":
+        long_note = ("\n\nTHIS IS A LONG-FORM LANDSCAPE VIDEO: set \"format\": \"landscape\" and \"chapters\" from the script's "
+                     "chapters (title + the word that opens it), and follow LONGFORM.md: a visual change every 3-6 s, "
+                     "a new beat every 20-40 s.\n\n=== LONGFORM.md ===\n" + _read(CFG.render_root / "LONGFORM.md"))
     system = (
-        "You are the shot designer for Block Money Shorts. You write recipe.json files for the Remotion recipe engine "
+        f"You are the shot designer for {ch.name}. You write recipe.json files for the Remotion recipe engine "
         "described in the guide below. Follow the schema exactly: every time anchor must be a word that exists in the "
-        "timings, every pose/camera/motion/fx/set/prop must be one the guide lists. Use only the SPENDER and SAVER cast. "
+        f"timings, every pose/camera/motion/fx/set/prop must be one the guide lists. {ch.cast_rule} "
+        + (f'Set "kit": "{ch.kit}" in the recipe. ' if ch.kit else "") + 
         "Respect the frame-0 gate (close subject, hook text at frame 0, stake on screen by 0.5 s, first cut by ~1.0 s, "
         "no wide shot in the first second), keep captions bottom-centre and props clear of faces, cut every 1.5-3 s, "
         "put the big number on screen when it is said, and end with a loop board that lands on the last spoken word.\n\n"
-        "=== RECIPE_GUIDE.md ===\n" + guide
+        f"=== {gname} ===\n" + guide + long_note
     )
     base = (
         f"slug: {slug}\nstyle: {style}\nhook_text (frame 0, keep it): {data['hook_text']}\n"
         f"tag_text: {data['tag_text']}\n\nscript.txt:\n" + "\n".join(data["lines"])
-        + f"\n\nvo/timings.json (word anchors come from here):\n{timings}\n\n=== Working examples ===\n{_examples(style)}"
+        + f"\n\nvo/timings.json (word anchors come from here):\n{timings}\n\n=== Working examples ===\n{_examples(style, ch.kit)}"
     )
     return data, system, base
 
 
 def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: str) -> None:
+    ch = channels.of_folder(folder)
     for attempt in range(1, CFG.recipe_attempts + 1):
         print(f"  claude: writing recipe.json ({tag}, attempt {attempt})...")
         res = claude.ask_json(system, base + feedback, RECIPE_SCHEMA)
@@ -90,6 +118,8 @@ def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: s
             feedback = f"\n\nYour last recipe_json was not valid JSON ({e}). Return valid JSON."
             continue
         recipe["slug"] = slug
+        if ch.kit:
+            recipe["kit"] = ch.kit
         (folder / "recipe.json").write_text(json.dumps(recipe, indent=1, ensure_ascii=False), encoding="utf-8")
         ok, log = _check(slug)
         (folder / f"recipe_check_{tag}_{attempt}.log").write_text(log, encoding="utf-8")

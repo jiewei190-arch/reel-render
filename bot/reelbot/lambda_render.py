@@ -98,10 +98,10 @@ def quotas_increase() -> None:
     _run(["quotas", "increase"], show=True)
 
 
-def _deploy_site() -> str:
+def _deploy_site(entry: str = "src/index.toolkit.ts") -> str:
     """Upload the current bundle (with this Short's generated recipe) and return its serve URL."""
     print("  lambda: uploading the project bundle...")
-    out = _run(["sites", "create", "src/index.toolkit.ts", f"--site-name={SITE}", "--enable-folder-expiry"])
+    out = _run(["sites", "create", entry, f"--site-name={SITE}", "--enable-folder-expiry"])
     urls = re.findall(r"https://\S+?/sites/\S+?/index\.html", out) or re.findall(r"https://\S+", out)
     if not urls:
         raise SystemExit(f"could not find the serve URL in:\n{out[-2000:]}")
@@ -113,11 +113,11 @@ def _cost(out: str) -> float:
     return float(m[-1]) if m else 0.0
 
 
-def render(comp: str, muted_out: Path, *, blur: bool = False) -> Path:
+def render(comp: str, muted_out: Path, *, blur: bool = False, entry: str = "src/index.toolkit.ts") -> Path:
     """Render <comp>Sub (motion blur) or <comp> (no blur, ~4x cheaper) on Lambda into muted_out (30 fps, no audio)."""
     _ensure_package()
     subprocess.run([_npx(), "--no-install", "tsc", "--noEmit"], cwd=CFG.render_root, check=True)
-    url = _deploy_site()
+    url = _deploy_site(entry)
     target = comp + ("Sub" if blur else "")
     raw = muted_out.with_name(muted_out.stem + ("_sub" if blur else "_raw") + ".mp4")
     args = ["render", url, target, str(raw), "--muted", "--codec=h264", "--crf=10", "--pixel-format=yuv420p",

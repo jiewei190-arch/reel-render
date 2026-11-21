@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-from . import claude, gemini, hooks, learn
+from . import channels, claude, gemini, hooks, learn
 from .config import BOT_DIR, CFG
 
 SCRIPT_SCHEMA = {
@@ -34,6 +34,10 @@ SCRIPT_SCHEMA = {
             },
         },
         "description": {"type": "string", "description": "YouTube description: 2-3 sentence summary + sources; NO hashtags"},
+        "chapters": {"type": "array", "description": "long-form only (else empty): chapter title + the first words of its opening line",
+                     "items": {"type": "object", "additionalProperties": False, "required": ["title", "starts_with"],
+                               "properties": {"title": {"type": "string"}, "starts_with": {"type": "string"}}}},
+        "thumbnail": {"type": "string", "description": "long-form only (else empty): the thumbnail image + <= 4 words"},
         "sources": {
             "type": "array",
             "items": {
@@ -62,12 +66,39 @@ def _doc(rel: str) -> str:
     return p.read_text(encoding="utf-8") if p.exists() else "(not available on this machine)"
 
 
+LONG = 120  # seconds; above this a script is a long-form video (landscape, chapters, mid-roll friendly)
+
+
+def _length_rules(seconds: int) -> str:
+    words = int(seconds * 2.45)
+    if seconds <= LONG:
+        return (f"- Target **{seconds} seconds** spoken (about {words} words), 8-12 lines.\n"
+                "- The **last line leads straight back into line 1** so the Short loops.")
+    return (f"- This is a LONG-FORM video: target **{seconds // 60} minutes** spoken (about {words} words), one line per "
+            "sentence or two.\n"
+            "- Structure: cold open (the most shocking moment, 20-40 s) -> the promise of what they'll learn -> 4-7 "
+            "chapters, each with its own mini-cliffhanger -> the payoff -> a one-line takeaway. Fill `chapters` with a "
+            "short title and the first words of the line that opens it.\n"
+            "- Re-hook every 60-90 seconds (a new question, a reveal, 'but here's what nobody knew').\n"
+            "- Give a `thumbnail` idea: one striking image + at most 4 words, that pays off something in the first minute.\n"
+            "- Title promise must be delivered in the video; no clickbait the story doesn't back up.")
+
+
 def system_prompt(seconds: int) -> str:
-    tmpl = (BOT_DIR / "prompts" / "blockmoney_script.md").read_text(encoding="utf-8")
+    ch = channels.active()
+    tmpl = (BOT_DIR / "prompts" / ch.prompt).read_text(encoding="utf-8")
     words = int(seconds * 2.45)
     return (tmpl.replace("{seconds}", str(seconds)).replace("{words}", str(words))
             .replace("{format_doc}", _doc("finance/FORMAT_V1.md"))
-            .replace("{rules_doc}", _doc("finance/RULES.md")))
+            .replace("{rules_doc}", _doc("finance/RULES.md"))
+            .replace("{channel_name}", ch.name).replace("{channel_doc}", channels.doc(ch))
+            .replace("{hook_rules}", ch.hook_rules).replace("{length_rules}", _length_rules(seconds)))
+
+
+def _schema() -> dict:
+    s = json.loads(json.dumps(SCRIPT_SCHEMA))
+    s["properties"]["style"]["enum"] = list(channels.active().styles)
+    return s
 
 
 def _slugify(s: str) -> str:
@@ -76,7 +107,7 @@ def _slugify(s: str) -> str:
 
 
 def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str = "", n_hooks: int = 6) -> dict:
-    brief = "Channel: Block Money, finance Shorts with two blocky characters, Spender and Saver. US audience."
+    brief = "Channel: " + channels.active().brief
     print("  gemini: researching the topic (Google Search grounded)...")
     research, research_sources = gemini.research(topic, brief)
 
@@ -95,7 +126,7 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
         + "\n\nWrite the script. Put only real URLs from the research sources in `sources`."
     )
     print("  claude: writing the script...")
-    data = claude.ask_json(system_prompt(seconds), user, SCRIPT_SCHEMA)
+    data = claude.ask_json(system_prompt(seconds), user, _schema())
     data["slug"] = _slugify(data.get("slug") or topic)
 
     for rnd in range(CFG.factcheck_rounds):
@@ -125,12 +156,14 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
               "structure, and return the full script again:\n"
             + "\n".join(f"- {p}" for p in judge["problems"])
             + "\n\nFact-check report for reference:\n" + verdicts,
-            SCRIPT_SCHEMA), "factcheck": data["factcheck"]}
+            _schema()), "factcheck": data["factcheck"]}
         data["slug"] = _slugify(data["slug"])
     else:
         data["factcheck_unresolved"] = True
     data["topic"] = topic
+    data["channel"] = channels.active().id
     data["target_seconds"] = seconds
+    data["format"] = "landscape" if seconds > LONG else "portrait"
     data["hook_candidates"] = ranked
     return data
 
@@ -147,9 +180,13 @@ def save(data: dict, folder: Path) -> None:
         f"## Last fact-check ({'PASS' if last.get('all_pass') else 'NOT CLEARED'})\n{last.get('report', '')}\n",
         encoding="utf-8")
     desc = data["description"].rstrip()
-    for line in ("Educational only, not financial advice.", "Voice is synthetic."):
+    ch = channels.get(data.get("channel"))
+    if data.get("chapters"):
+        desc += "\n\nChapters: see chapters.txt after the render (YouTube needs real timestamps)."
+    for i, line in enumerate(ch.disclaimers):
         if line not in desc:
-            desc += "\n\n" + line if line.startswith("Educational") else "\n" + line
+            desc += ("\n\n" if i == 0 else "\n") + line
+    thumb = f"\n**Thumbnail idea:** {data['thumbnail']}\n" if data.get("thumbnail") else ""
     (folder / "UPLOAD.md").write_text(
-        f"# UPLOAD: {data['slug']}\n\nstyle: {data['style']}\n**Title:** {data['title']}\n\n**Description:**\n{desc}\n\n"
+        f"# UPLOAD: {data['slug']}\n\nchannel: {ch.name}\nstyle: {data['style']}\n**Title:** {data['title']}\n{thumb}\n**Description:**\n{desc}\n\n"
         "No tags or hashtags. Made for kids: No. Altered/AI: No.\n", encoding="utf-8")

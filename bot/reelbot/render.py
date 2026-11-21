@@ -9,7 +9,7 @@ import subprocess
 import time
 from pathlib import Path
 
-from . import lambda_render, sound
+from . import channels, lambda_render, sound
 from .config import CFG
 
 
@@ -76,13 +76,13 @@ def _gpu_lock() -> list[str]:
     return []
 
 
-def _render_plain(comp: str, muted: Path) -> None:
+def _render_plain(comp: str, muted: Path, entry: str = "src/index.toolkit.ts") -> None:
     """No-blur render: the 30 fps composition straight through Remotion on the GPU, then a clean h264 encode."""
     npx = shutil.which("npx") or "npx"
     print(f"  render: {comp} on the GPU, no motion blur")
     t0 = time.time()
     _run([npx, "--no-install", "tsc", "--noEmit"])
-    _run([npx, "--no-install", "remotion", "bundle", "src/index.toolkit.ts", "--out-dir=build"])
+    _run([npx, "--no-install", "remotion", "bundle", entry, "--out-dir=build"])
     raw = muted.with_name(muted.stem + "_raw.mp4")
     muted.parent.mkdir(parents=True, exist_ok=True)
     _run(_gpu_lock() + [npx, "--no-install", "remotion", "render", "build", comp, str(raw), "--gl=angle",
@@ -98,6 +98,7 @@ def _render_plain(comp: str, muted: Path) -> None:
 def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) -> Path:
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug = data["slug"]
+    ch = channels.get(data.get("channel"))
     comp = _pascal(slug)
     name = slug.replace("-", "_") + "_v"
 
@@ -110,12 +111,12 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     blur = motion_blur()
     if on == "lambda":
         muted.parent.mkdir(parents=True, exist_ok=True)
-        lambda_render.render(comp, muted, blur=blur)
+        lambda_render.render(comp, muted, blur=blur, entry=ch.entry)
     elif blur:
         print(f"  render: {comp}Sub on the GPU with motion blur (version {n}); 4x slower")
-        _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": "src/index.toolkit.ts"})
+        _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": ch.entry})
     else:
-        _render_plain(comp, muted)
+        _render_plain(comp, muted, ch.entry)
 
     tmp = CFG.render_root / "out" / "tmp"
     tmp.mkdir(parents=True, exist_ok=True)
@@ -134,7 +135,7 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     print("  audio: loudness to -14 LUFS")
     _run([CFG.bash, "tools/mux_voice.sh", str(muted), str(premix), str(voiced)], env={"TPMAX": "-1.5"})
 
-    dest = (out_dir or CFG.output_dir) / slug
+    dest = (out_dir or channels.output_dir(ch)) / slug
     dest.mkdir(parents=True, exist_ok=True)
     final = dest / "video.mp4"
     shutil.copy2(voiced, final)

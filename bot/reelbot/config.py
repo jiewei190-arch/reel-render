@@ -43,6 +43,10 @@ class Config:
     voices: dict = field(default_factory=lambda: {
         "Tyler": "rPMkKgdwgIwqv4fXgR6N",
         "Christopher": "RolvCZ4e0AkAR2dzyTx0",
+        # new channels (library voices: the owner adds each to My Voices in ElevenLabs first)
+        "Steven": "VMCgCMbBs53ElBxVD4VB",    # Business
+        "Todd": "g14YnDYCsy3k7XLlcKlO",      # Scams & Hacks
+        "Nichalia": "XfNU2rGpBa01ckF309OY",  # Law
     })
 
     # Paths on the PC

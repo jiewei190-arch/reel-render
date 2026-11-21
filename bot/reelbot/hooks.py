@@ -11,7 +11,7 @@ import os
 
 from google.genai import types
 
-from . import claude, gemini, learn
+from . import channels, claude, gemini, learn
 from .config import CFG
 
 CANDIDATES_SCHEMA = {
@@ -45,9 +45,9 @@ JUDGE_BRIEF = (
 
 def _candidates_prompt(topic: str, research: str, n: int, data: str) -> str:
     return (f"Topic: {topic}\n\nResearch:\n{research[:6000]}\n\nOur channel's numbers:\n{data or '(no data yet)'}\n\n"
-            f"Write {n} DIFFERENT openings for a Spender vs Saver Short on this topic. Each must use a different angle "
-            "(number shock, myth bust, 'you' accusation, POV, loss, comparison, question...). Every number must be "
-            "supported by the research or labelled as an example later in the script.")
+            f"Write {n} DIFFERENT openings for a video on this topic for this channel: {channels.active().brief} "
+            "Each must use a different angle (number shock, myth bust, 'you' accusation, POV, loss, the absurd claim, "
+            "question...). Every fact must be supported by the research.")
 
 
 def _listing(cands: list[dict]) -> str:
@@ -72,8 +72,8 @@ def pick(topic: str, research: str, n: int = 6) -> tuple[dict, list[dict]]:
     data = learn.current()
     print(f"  claude: writing {n} hook candidates...")
     cands = claude.ask_json(
-        "You write the first second of viral YouTube Shorts for Block Money (Spender vs Saver money stories). "
-        "No financial advice or picks. Hooks: <= 12 spoken words, a dollar figure or myth up front, 'you' framing.",
+        f"You write the first second of viral YouTube videos for this channel: {channels.active().brief} "
+        f"Hook rules: {channels.active().hook_rules} No advice of any kind; everything true.",
         _candidates_prompt(topic, research, n, data), CANDIDATES_SCHEMA)["hooks"][:n]
 
     print("  claude + gemini: scoring hooks blind...")

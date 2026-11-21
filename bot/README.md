@@ -74,6 +74,27 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 - Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
   lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
 
+## Channels
+
+One bot, five channels. `--channel` picks the profile (stored in each video's script.json, so later stages follow it):
+
+| id | channel | voice | render kit | notes |
+|---|---|---|---|---|
+| `blockmoney` | Block Money (Spender vs Saver) | Tyler / Christopher | original engine | default |
+| `law` | Law: weird true court cases | Nichalia | `law3d` | stories only, never legal advice |
+| `biz` | Business: costly mistakes & collapses | Steven | `biz3d` | no logos, no investment advice |
+| `cyber` | Scams & Hacks: true cyber heists | Todd | `cyber3d` | story level only, ends with "how to spot it" |
+
+Profiles live in `reelbot/channels.py`; each story channel's writing rules are in `prompts/channels/<id>.md`, used by
+`prompts/story_script.md`. Learnings are kept per channel (`work/learnings_<channel>.md`). Videos land in
+`<videos dir>/<Channel folder>/<slug>/`.
+
+- `--long` makes a long-form video (about 10 minutes, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
+  Needs the engine's landscape mode (`LONGFORM.md` in the render folder).
+- `bend "<a winning video or format>" --channel law` studies a format that works, adapts it into original story ideas
+  for the channel, checks demand and competition with cited sources, ranks them (STRONG / PROMISING / UNVALIDATED /
+  SKIP), and adds the good ones to `work/topics_<channel>.txt` for `batch ... --channel <id>`.
+
 ## Cloud rendering (AWS Lambda)
 
 `--on lambda` (or `REELBOT_RENDER_ON=lambda`) renders the same composition on Remotion Lambda, split across many
