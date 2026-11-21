@@ -2,6 +2,7 @@
 // audio cue plan, the clip-QA boxes and the frame-0 gate data). RecipeFilm renders it (one View, or two for the S2
 // split screen). Everything is a pure function of t, like the hand-written v1 Shorts (src/fin/v1/*.tsx).
 import React from "react";
+import { useThree } from "@react-three/fiber";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { Blocky } from "../../blocky/Blocky";
 import type { Look } from "../../blocky/Blocky";
@@ -766,12 +767,20 @@ const ChapterCard: React.FC<{ n: number; title: string; u: number }> = ({ n, tit
 /** LONG-FORM lower-third caption centre (px at 1080 tall) and half its 2-line band */
 export const CAP_Y_L = 905;
 const CAP_HALF_L = 72;
+/** redraws the canvas once the window's models are in (Remotion's ThreeCanvas only redraws on frame changes), then
+ *  releases the frame hold */
+const Redraw: React.FC<{ tick: number; ready: boolean; done: () => void }> = ({ tick, ready, done }) => {
+  const { advance } = useThree();
+  React.useLayoutEffect(() => { if (ready) { advance(performance.now()); done(); } }, [tick, ready, advance, done]);
+  return null;
+};
 const LandscapeFilm: React.FC<{ c: Compiled; g: number }> = ({ c, g }) => {
   const t0 = g / FPS;
   const shot = c.shotAt(t0);
   const si = c.shots.indexOf(shot);
   // windowed loading: only this shot's and the next shot's models (never every asset of a 10-minute video at once)
-  const ready = useAssetWindow(c.windowAssets[si] ?? []);
+  const win = useAssetWindow(c.windowAssets[si] ?? []);
+  const ready = win.ready;
   if (moodsFor !== c.slug) {
     setMoodShots(c.shots.filter((s) => s.lens.mood === "whisper").map((s) => `${c.slug}:${s.id}`), c.shots.filter((s) => s.lens.mood === "ending").map((s) => `${c.slug}:${s.id}`));
     moodsFor = c.slug;
@@ -796,7 +805,8 @@ const LandscapeFilm: React.FC<{ c: Compiled; g: number }> = ({ c, g }) => {
   const moodOf = (L: FinShot, cam: Cam, k: string) => moodFor(L.mood === "earth" ? "earth" : L.mood === "home" ? "home" : "store2", `${c.slug}:${shot.id}${k}`, { pos: cam.pos, look: cam.look, fov: cam.fov, roll: cam.roll ?? 0 });
   const view = (L: FinShot, cam: Cam, w: number, left: number, k: string) => (
     <View key={k} mood={moodOf(L, cam, k)} cam={{ pos: cam.pos, look: cam.look, fov: cam.fov, roll: cam.roll ?? 0 }} t={t} blur={L.blur ?? 1.2} focus={L.subj(t)} sky={L.sky ?? false} width={w} height={1080} postScale={1} style={{ left, width: w, height: 1080 }}>
-      {scene(cam)}
+      {ready ? scene(cam) : null}
+      <Redraw tick={win.tick} ready={ready} done={win.done} />
     </View>
   );
   const flash = shot.fx.filter((f) => f.fx === "flash").reduce((o, f) => Math.max(o, t0 >= f.at ? 0.65 * (1 - (t0 - f.at) / 0.12) : 0), 0);
@@ -808,14 +818,15 @@ const LandscapeFilm: React.FC<{ c: Compiled; g: number }> = ({ c, g }) => {
   const capY = capPlanL(c, shot).y / 1080;
   return (
     <AbsoluteFill style={{ background: c.recipe.bg ?? set.bg }}>
-      {ready ? (cams.split && cams.second && shot.lens2 ? (
+      {/* the canvas stays mounted across shots (no WebGL re-creation); the scene appears once its models are in */}
+      {cams.split && cams.second && shot.lens2 ? (
         <>
           {/* split screen side by side in 16:9: left = targets[0], right = targets[1] */}
           {view(shot.lens, cams.main, 960, 0, "a")}
           {view(shot.lens2, cams.second, 960, 960, "b")}
           <div style={{ position: "absolute", top: 0, bottom: 0, left: 952, width: 16, background: "#16121c" }} />
         </>
-      ) : view(shot.lens, cams.main, 1920, 0, "")) : null}
+      ) : view(shot.lens, cams.main, 1920, 0, "")}
       {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
       <HookText text={c.recipe.hook.text} t={t0} until={c.hookUntil} top={70} size={80} />
       {again !== null && t0 >= again ? <HookText text={c.recipe.hook.text} t={t0} until={99} top={70} size={80} /> : null}

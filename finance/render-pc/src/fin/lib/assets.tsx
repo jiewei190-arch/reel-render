@@ -87,23 +87,26 @@ export const usePreload = (ids: AssetId[]) => {
   return ready;
 };
 /** LONG-FORM: load only the assets a window of shots needs (the current shot and the next), instead of every asset of
- *  a 10-minute video up front. Unlike usePreload, readiness is re-checked on every render, so a new shot's models
- *  hold the frame (delayRender) until they are in, and the canvas mounts with them. Models that left the window are
- *  released once more than `keep` are held (their GPU buffers disposed), so memory stays flat over hundreds of shots. */
+ *  a 10-minute video up front. The frame is held (delayRender) until they are in; the caller keeps its canvas MOUNTED
+ *  (re-creating a WebGL canvas costs over a minute of shader compiles on a software GL), renders the scene only once
+ *  `ready`, and calls `done()` after the canvas has redrawn with the models (the canvas only redraws on frame changes
+ *  by itself). Models that left the window are released once more than `keep` are held (GPU buffers disposed). */
+const failed = new Set<string>();
+const doneHandles = new Set<number>();
 export const useAssetWindow = (ids: AssetId[], keep = 48) => {
   const urls = [...new Set(ids)].sort().map((id) => staticFile(assetOf(id).file));
   const key = urls.join(",");
-  const missing = urls.filter((u) => !loaded.has(u));
-  const [, bump] = React.useState(0);
-  const h = React.useMemo(() => (missing.length ? delayRender(`cc0 window ${key}`, { timeoutInMilliseconds: 120000 }) : null), [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const isIn = (u: string) => loaded.has(u) || failed.has(u);
+  const [tick, bump] = React.useState(0);
+  const h = React.useMemo(() => (urls.some((u) => !isIn(u)) ? delayRender(`cc0 window ${key}`, { timeoutInMilliseconds: 120000 }) : null), [key]); // eslint-disable-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     release(new Set(urls), keep);
     if (h === null) return;
-    Promise.all(urls.map(load))
-      .then(() => { bump((x) => x + 1); continueRender(h); })
-      .catch((e) => { console.error(e); bump((x) => x + 1); continueRender(h); });
+    Promise.all(urls.map((u) => load(u).catch((e) => { console.error(e); failed.add(u); })))
+      .then(() => bump((x) => x + 1));
   }, [h, key]); // eslint-disable-line react-hooks/exhaustive-deps
-  return urls.every((u) => loaded.has(u));
+  const done = React.useCallback(() => { if (h !== null && !doneHandles.has(h)) { doneHandles.add(h); continueRender(h); } }, [h]);
+  return { ready: urls.every(isIn), tick, done };
 };
 /** drop the oldest loaded models that are not in `inUse` until at most `keep` remain (dispose geometry/materials/maps) */
 const release = (inUse: Set<string>, keep: number) => {
