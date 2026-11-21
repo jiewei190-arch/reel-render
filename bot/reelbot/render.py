@@ -8,7 +8,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from . import sound
+from . import lambda_render, sound
 from .config import CFG
 
 
@@ -62,7 +62,7 @@ def _whisper_check(video: Path, lines: list[str]) -> str:
     return f"heard {len(norm(heard))} words; {len(missing)} script words not heard" + (f": {missing[:15]}" if missing else "")
 
 
-def render(folder: Path, *, out_dir: Path | None = None) -> Path:
+def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) -> Path:
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug = data["slug"]
     comp = _pascal(slug)
@@ -72,9 +72,14 @@ def render(folder: Path, *, out_dir: Path | None = None) -> Path:
     _run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
 
     n = _next_version(name)
-    print(f"  render: {comp}Sub on the GPU (version {n}); this takes a few minutes")
-    _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": "src/index.toolkit.ts"})
     muted = CFG.render_root / "out" / "renders" / f"{name}{n}.mp4"
+    on = on or os.environ.get("REELBOT_RENDER_ON", "pc")
+    if on == "lambda":
+        muted.parent.mkdir(parents=True, exist_ok=True)
+        lambda_render.render(comp, muted, blur=os.environ.get("REELBOT_LAMBDA_BLUR", "1") != "0")
+    else:
+        print(f"  render: {comp}Sub on the GPU (version {n}); this takes a few minutes")
+        _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": "src/index.toolkit.ts"})
 
     tmp = CFG.render_root / "out" / "tmp"
     tmp.mkdir(parents=True, exist_ok=True)

@@ -10,6 +10,8 @@ Nothing is ever uploaded. Finished videos land in REELBOT_OUTPUT_DIR/<slug>/ wit
   python -m reelbot learn                                             # rank our Shorts by retention -> work/learnings.md
   python -m reelbot script|voice|recipe|render <slug>                 # redo one stage
   python -m reelbot review <slug>                                     # AI editors review (and fix) the finished video
+  python -m reelbot lambda setup                                      # once: AWS Lambda rendering (bot/aws/SETUP.md)
+  python -m reelbot render <slug> --on lambda                         # render in the cloud instead of the PC
 """
 from __future__ import annotations
 
@@ -19,7 +21,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import claude, editor, gemini, learn, recipe, render, script, tone, voice
+from . import claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice
 from .config import CFG
 from .cost import COST
 
@@ -90,13 +92,13 @@ def stage_edit(folder: Path, final: Path, a) -> dict:
             break
         fixes = [i for i in r["issues"] if i["severity"] != "minor"] or r["issues"]
         recipe.revise(folder, fixes, rnd)
-        final = render.render(folder)
+        final = render.render(folder, on=a.on)
     _mark(folder, "edit", passed=r.get("passed"), hook=r.get("hook"), predicted=r.get("predicted_stayed_pct"))
     return r
 
 
 def stage_render(folder: Path, a) -> None:
-    final = render.render(folder)
+    final = render.render(folder, on=a.on)
     _mark(folder, "render", video=str(final))
     if a.edit_rounds >= 0:
         stage_edit(folder, final, a)
@@ -143,12 +145,14 @@ def main(argv: list[str] | None = None) -> None:
         p.add_argument("--edit-rounds", type=int, default=2, help="AI editor fix-and-rerender rounds after render (-1 = skip review)")
         p.add_argument("--hooks", type=int, default=6, help="hook candidates to write and score (0 = off)")
         p.add_argument("--no-learn", dest="learn", action="store_false", help="don't refresh learnings from Studio data first")
+        p.add_argument("--on", choices=["pc", "lambda"], help="where to render (default REELBOT_RENDER_ON or pc)")
 
     p = sub.add_parser("make"); p.add_argument("topic"); p.add_argument("--auto", action="store_true"); common(p)
     p = sub.add_parser("continue"); p.add_argument("slug"); common(p)
     p = sub.add_parser("batch"); p.add_argument("file"); common(p)
     p = sub.add_parser("ideas"); p.add_argument("--n", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("--channel", default="block_money")
+    p = sub.add_parser("lambda"); p.add_argument("action", choices=["setup", "quotas"]); p.add_argument("--increase", action="store_true")
     for name in ("script", "voice", "recipe", "render", "review"):
         p = sub.add_parser(name); p.add_argument("slug"); common(p)
     a = ap.parse_args(argv)
@@ -170,6 +174,13 @@ def main(argv: list[str] | None = None) -> None:
                     run_rest(stage_script(t, a), a)
                 except SystemExit as e:
                     print(f"  FAILED: {e}  (moving on)")
+        elif a.cmd == "lambda":
+            if a.action == "setup":
+                lambda_render.setup()
+            elif a.increase:
+                lambda_render.quotas_increase()
+            else:
+                lambda_render.quotas()
         elif a.cmd == "ideas":
             cmd_ideas(a)
         elif a.cmd == "learn":

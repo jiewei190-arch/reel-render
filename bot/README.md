@@ -74,6 +74,13 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 - Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
   lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
 
+## Cloud rendering (AWS Lambda)
+
+`--on lambda` (or `REELBOT_RENDER_ON=lambda`) renders the same composition on Remotion Lambda, split across many
+cloud machines at once, so several videos render in parallel instead of one after another on the PC. One-time setup:
+`aws/SETUP.md`, then `python -m reelbot lambda setup`. The output matches the PC render (same motion blur), so mixing,
+QA and the AI editors are unchanged. Each render logs its time and AWS cost next to the video (`*_lambda.txt`).
+
 ## The AI editors
 
 After every render, before anyone sees the video:
