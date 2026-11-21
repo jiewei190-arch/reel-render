@@ -115,9 +115,9 @@ const boardroom: BizSet = {
     centre: [0, 0, 0], head: [0, 0, -3.75], tableTop: [0, 0.78, 0], tableEnd: [0, 0.78, 2.8], foot: [0, 0, 3.7], window: [0, 1.9, -5.9],
     seatL1: [-1.15, 0, -2.2], seatL2: [-1.15, 0, -0.8], seatL3: [-1.15, 0, 0.6], seatL4: [-1.15, 0, 2.0],
     seatR1: [1.15, 0, -2.2], seatR2: [1.15, 0, -0.8], seatR3: [1.15, 0, 0.6], seatR4: [1.15, 0, 2.0],
-    standL: [-2.4, 0, -1.2], standR: [2.4, 0, -1.2], door: [0, 0, 4.6], high: [0, 3.2, 2.5],
+    standL: [-2.4, 0, -1.2], standR: [2.4, 0, -1.2], door: [0, 0, 4.85], high: [0, 3.2, 2.5],
   },
-  blockers: [{ name: "table", c: [0, 0.755, -0.2], h: [0.85, 0.035, 3.0] }, { name: "windowWall", c: [0, 2, -6.05], h: [6, 2, 0.1] }],
+  blockers: [{ name: "table", c: [0, 0.755, -0.2], h: [0.85, 0.035, 3.0] }, { name: "windowWall", c: [0, 2, -6.05], h: [6, 2, 0.1] }, { name: "backWall", c: [0, 2, 5.4], h: [6, 2, 0.1] }],
   render: (t) => {
     const floor = woodTex("bzFloor", "#5a3a24", "#4d3220", 10);
     floor.wrapS = floor.wrapT = THREE.RepeatWrapping; floor.repeat.set(4, 6);
@@ -134,7 +134,12 @@ const boardroom: BizSet = {
         <mesh geometry={PLANE()} material={bmat("#9cc9f0", 0.08)} position={[0, 1.95, -6.02]} scale={[10.2, 3.8, 1]} />
         {/* side walls (wood panels), ceiling with downlights */}
         {[-5.5, 5.5].map((x) => <mesh key={x} geometry={BOX()} material={plastic("#4a2f1f", { rough: 0.5 })} position={[x, 1.95, -0.5]} scale={[0.15, 3.9, 11]} receiveShadow />)}
-        <mesh geometry={BOX()} material={plastic("#1d1a20", { rough: 0.9 })} position={[0, 3.95, -0.5]} scale={[11, 0.1, 11]} />
+        <mesh geometry={BOX()} material={plastic("#1d1a20", { rough: 0.9 })} position={[0, 3.95, -0.5]} scale={[11, 0.1, 12]} />
+        {/* the back wall with the double door (cameras inside the room see wood, not void) */}
+        <mesh geometry={BOX()} material={plastic("#4a2f1f", { rough: 0.5 })} position={[0, 1.95, 5.45]} scale={[11, 3.9, 0.15]} receiveShadow />
+        {[-0.5, 0.5].map((x) => <mesh key={`d${x}`} geometry={BOX()} material={plastic("#2a1a10", { rough: 0.35 })} position={[x, 1.15, 5.36]} scale={[0.95, 2.3, 0.06]} />)}
+        {[-0.18, 0.18].map((x) => <mesh key={`h${x}`} geometry={BOX()} material={plastic("#c9a45a", { rough: 0.25 })} position={[x, 1.1, 5.31]} scale={[0.04, 0.4, 0.04]} />)}
+        {[-3.2, 3.2].map((x) => <mesh key={`a${x}`} geometry={PLANE()} material={glow("#ffe2b0", 0.6)} position={[x, 2.4, 5.36]} rotation={[0, Math.PI, 0]} scale={[1.6, 1.1, 1]} />)}
         {[-2.5, -0.5, 1.5].map((z) => [-0.9, 0.9].map((x) => <mesh key={`${x}${z}`} geometry={geoOf("bzDown", () => new THREE.CircleGeometry(0.16, 20))} material={bmat("#fff1d6", 1)} position={[x, 3.89, z]} rotation={[Math.PI / 2, 0, 0]} />))}
         {/* the table: a dark polished top on two pedestals; folders, glasses and a speakerphone on it */}
         <mesh geometry={rbox(1.7, 0.07, 6.0, 0.03)} material={plastic("#2a1a10", { rough: 0.18 })} position={[0, 0.755, -0.2]} castShadow receiveShadow />
@@ -285,7 +290,7 @@ const Rack: React.FC<{ x: number; seed: number }> = ({ x, seed }) => (
 );
 const warehouse: BizSet = {
   id: "warehouse", bg: "#2a2d36", mood: "warehouse",
-  anchors: { centre: [0, 0, 0], aisle: [0, 0, 2.5], conveyor: [0, 0.82, 0], rackL: [-2.6, 0, 0], rackR: [2.6, 0, 0], back: [0, 0, -6.5], dock: [0, 0, 4], high: [0, 4, 3] },
+  anchors: { centre: [0, 0, 0], aisle: [0, 0, 4.9], conveyor: [0, 0.82, 0], rackL: [-2.6, 0, 0], rackR: [2.6, 0, 0], back: [0, 0, -6.5], dock: [0, 0, 4], high: [0, 4, 3] },
   blockers: [{ name: "conveyor", c: [0, 0.42, -1], h: [0.42, 0.42, 4.6] }, { name: "rackL", c: [-2.6, 1.6, -1.5], h: [0.55, 1.6, 4.1] }, { name: "rackR", c: [2.6, 1.6, -1.5], h: [0.55, 1.6, 4.1] }],
   render: (t) => (
     <>

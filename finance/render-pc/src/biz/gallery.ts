@@ -14,7 +14,7 @@ const add = (name: string, len: number, sh: Omit<BizShot, "at">, still = 0.75) =
   t += len;
 };
 for (const p of EXEC_POSES as ExecPose[]) {
-  add(`exec-pose-${p}`, 1.4, { set: "boardroom", cam: { preset: "medium", target: "ceo", dist: 3.6, h: 0.1, az: 20 }, actors: [{ id: "ceo", pose: p, at: "foot" }] }, p === "slam" ? 0.3 : 0.7);
+  add(`exec-pose-${p}`, 1.4, { set: "boardroom", cam: { preset: "medium", target: "ceo", dist: 3.6, h: 0.1, az: 20 }, actors: [{ id: "ceo", pose: p, at: "standL" }] }, p === "slam" ? 0.3 : 0.7);
 }
 add("exec-seated-boardroom", 2.0, { set: "boardroom", cam: { preset: "orbit", target: "tableTop", dist: 6.5, h: 2.4, az: 30, sweep: 30 }, actors: [
   { id: "ceo", pose: "fold", at: "head", seated: true }, { id: "a", pose: "talk", at: "seatL1", seated: true }, { id: "b", pose: "laugh", at: "seatR1", seated: true }, { id: "c", pose: "idle", at: "seatR2", seated: true },
