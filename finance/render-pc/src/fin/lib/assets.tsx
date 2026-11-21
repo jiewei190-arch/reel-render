@@ -98,7 +98,7 @@ export const useAssetWindow = (ids: AssetId[], keep = 48) => {
   const key = urls.join(",");
   const isIn = (u: string) => loaded.has(u) || failed.has(u);
   const [tick, bump] = React.useState(0);
-  const h = React.useMemo(() => (urls.some((u) => !isIn(u)) ? delayRender(`cc0 window ${key}`, { timeoutInMilliseconds: 120000 }) : null), [key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const h = React.useMemo(() => (urls.some((u) => !isIn(u)) ? delayRender(`cc0 window ${key}`) : null), [key]); // eslint-disable-line react-hooks/exhaustive-deps
   React.useEffect(() => {
     release(new Set(urls), keep);
     if (h === null) return;
