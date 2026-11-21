@@ -81,6 +81,7 @@ One bot, five channels. `--channel` picks the profile (stored in each video's sc
 | id | channel | voice | render kit | notes |
 |---|---|---|---|---|
 | `blockmoney` | Block Money (Spender vs Saver) | Tyler / Christopher | original engine | default |
+| `justin` | Justin clips: weird true history | Liam (Shorts) / Russ (long) | its own Toon 3D engine | bot does script + voice; render in the Justin engine |
 | `law` | Law: weird true court cases | Nichalia | `law3d` | stories only, never legal advice |
 | `biz` | Business: costly mistakes & collapses | Steven | `biz3d` | no logos, no investment advice |
 | `cyber` | Scams & Hacks: true cyber heists | Todd | `cyber3d` | story level only, ends with "how to spot it" |

@@ -46,7 +46,10 @@ def _mark(folder: Path, stage: str, **extra) -> None:
 def _pick_voice(arg: str) -> str:
     if arg != "auto":
         return arg
-    vs = channels.active().voices
+    ch = channels.active()
+    vs = ch.voices
+    if getattr(_pick_voice, "long", False) and ch.long_voices:
+        vs = ch.long_voices
     n = sum(1 for p in CFG.shorts_dir.glob("*/voice.lines.json")) if CFG.shorts_dir.exists() else 0
     return vs[n % len(vs)]
 
@@ -69,6 +72,7 @@ def stage_script(topic: str, a) -> Path:
 def stage_voice(folder: Path, a) -> None:
     channels.use(channels.of_folder(folder))
     tone.apply(folder)  # emotion must fit each line's mood before anything is voiced
+    _pick_voice.long = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("format") == "landscape"
     v = _pick_voice(a.voice)
     target = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("target_seconds") or a.seconds
     dur = voice.record(folder, v, fit=target * 1.12 + 2)
@@ -76,7 +80,10 @@ def stage_voice(folder: Path, a) -> None:
 
 
 def stage_recipe(folder: Path, a) -> None:
-    channels.use(channels.of_folder(folder))
+    ch = channels.use(channels.of_folder(folder))
+    if not ch.renders:
+        raise SystemExit(f"{ch.name}: script + voice are done in {folder}. This channel renders in its own engine "
+                         f"({ch.entry}); hand it voice.wav + vo/timings.json + script.txt.")
     recipe.build(folder)
     _mark(folder, "recipe")
 

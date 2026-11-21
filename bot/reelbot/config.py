@@ -47,6 +47,8 @@ class Config:
         "Steven": "VMCgCMbBs53ElBxVD4VB",    # Business
         "Todd": "g14YnDYCsy3k7XLlcKlO",      # Scams & Hacks
         "Nichalia": "XfNU2rGpBa01ckF309OY",  # Law
+        "Liam": "VCgLBmBjldJmfphyB8sZ",      # Justin clips Shorts
+        "Russ": "t0eCaS57KWbQQc1wRkah",      # Justin clips long videos
     })
 
     # Paths on the PC

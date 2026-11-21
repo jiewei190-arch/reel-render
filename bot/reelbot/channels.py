@@ -19,7 +19,8 @@ class Channel:
     brief: str                      # one paragraph: what the channel is and who it's for (research + hooks)
     prompt: str                     # system prompt template in prompts/
     doc: str = ""                   # channel rules in prompts/channels/<id>.md (story channels)
-    voices: tuple = ()              # voice names in CFG.voices, rotated
+    voices: tuple = ()              # voice names in CFG.voices, rotated (Shorts)
+    long_voices: tuple = ()         # voices for long-form videos (default: same as voices)
     kit: str | None = None          # render kit id ("law3d", ...); None = Block Money's original engine
     entry: str = "src/index.toolkit.ts"   # Remotion entry that registers the kit's compositions
     styles: tuple = ("story",)
@@ -28,6 +29,7 @@ class Channel:
     folder: str = ""                # output folder name under the videos dir
     hook_rules: str = ""            # what a winning first line looks like on this channel
     cast_rule: str = ""             # who may appear on screen
+    renders: bool = True            # False = this channel's videos are rendered by another engine (bot stops after voice)
 
 
 CHANNELS: dict[str, Channel] = {c.id: c for c in (
@@ -40,6 +42,16 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         analytics="block_money", folder="BlockMoney",
         hook_rules="12 words or fewer, talks to 'you', a dollar figure or a money myth in the first sentence.",
         cast_rule="Use only the SPENDER and SAVER cast."),
+    Channel(
+        id="justin", name="Justin clips: weird true history",
+        brief=("Justin clips: weird TRUE history told as fast, gripping stories (strange events, odd people, bizarre "
+               "facts with real sources), animated in a Toon 3D style. US audience 16-40."),
+        prompt="story_script.md", doc="justin.md", voices=("Liam",), long_voices=("Russ",), kit="toon3d",
+        entry="(justin engine: whatif/aitrends-2d-studio)", renders=False,
+        disclaimers=("Voice is synthetic.",), analytics="justin", folder="JustinClips",
+        hook_rules=("12 words or fewer; the strangest true fact of the story in sentence one, said so the viewer "
+                    "can't believe it and has to hear the rest."),
+        cast_rule="Generic stylized characters only; no real person's likeness beyond public-domain historical depiction."),
     Channel(
         id="law", name="Law: weird true court cases",
         brief=("A channel of weird TRUE court cases and lawsuits told as gripping stories: the claim nobody believes, "
