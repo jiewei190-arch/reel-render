@@ -14,6 +14,7 @@ from pathlib import Path
 from . import claude
 
 TAG = re.compile(r"\[[^\]]*\]")
+MAX_TAGS_PER_LINE = 1
 
 SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["lines"],
@@ -39,7 +40,11 @@ DIRECTOR = (
     "- [excited] / [shocked] / [gasps] are for reveals, big numbers and wins, and only when the news is good or "
     "neutral for the viewer; a shocking LOSS gets [shocked] or [serious], not [excited].\n"
     "- When unsure, use a neutral, confident read (no tag) rather than the wrong emotion.\n"
-    "- 0-2 tags per line. Keep every word exactly; only add, move or remove tags."
+    "- MOST LINES GET NO TAG. Explanations, numbers being worked out and setup are 'neutral' with no tag. Only the "
+    "3-5 real emotional beats of the whole script (hook, twist, big number, loss, payoff) get a tag, at most 1 per "
+    "line. A tag must be called for by what the words mean; never add one for variety. Remove any draft tag that "
+    "isn't.\n"
+    "- Keep every word exactly; only add, move or remove tags."
 )
 
 
@@ -58,7 +63,16 @@ def direct(lines: list[str], draft: list[str] | None, topic: str) -> tuple[list[
     out = []
     for i, line in enumerate(lines):
         v = res[i]["voice_line"] if i < len(res) else line
-        out.append(v if strip(v) == line else line)  # never let the director change the words
+        if strip(v) != line:  # never let the director change the words
+            v = line
+        if i < len(res) and res[i]["mood"] == "neutral":
+            v = line  # a neutral line is read plainly: no stray emotion
+        tags = TAG.findall(v)
+        if len(tags) > MAX_TAGS_PER_LINE:  # keep only the first tag
+            first = v.find(tags[0]) + len(tags[0])
+            v = v[:first] + TAG.sub("", v[first:])
+            v = re.sub(r"\s+", " ", v).strip()
+        out.append(v)
     return out, res[: len(lines)]
 
 

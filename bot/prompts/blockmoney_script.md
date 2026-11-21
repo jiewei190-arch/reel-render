@@ -21,10 +21,13 @@ The finished video is built from your script by an animation engine, voiced by a
 
 ## Emotional delivery (voice_lines)
 `voice_lines` = the exact same lines, word for word, plus ElevenLabs audio tags in square brackets that tell the
-narrator HOW to say them. The narrator should sound like a hyped friend telling a story, not a newsreader.
+narrator HOW to say them. The default read is a confident friend telling a story: most lines need NO tag.
 - Tags: [excited] [shocked] [curious] [whispers] [sarcastic] [laughs] [chuckles] [sighs] [gasps] [dramatic] [serious]
   [mischievously] [disappointed] [relieved] [short pause]. Put a tag at the start of a line or right before the phrase
-  it colours. 1-2 tags per line, at most; vary them across the script so the energy rises and falls.
+  it colours.
+- **Only tag the 3-5 real emotional beats of the script** (the hook, the twist, the big number, the loss, the payoff).
+  Explanations, math and setup lines get no tag. Never add a tag just for variety: every tag must be something the
+  words themselves call for. At most 1 tag per line.
 - Use the emotion that fits the beat: [shocked] on the big number, [whispers] on the secret/twist setup,
   [sarcastic] on Spender's bad logic, [excited] on the payoff, [sighs] on the loss.
 - Never put a tag inside a number or split a word. Removing the tags must give back the line exactly.
