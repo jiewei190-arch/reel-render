@@ -24,8 +24,9 @@ class ClaudeError(RuntimeError):
     pass
 
 
-def ask_json(system: str, user: str, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
-    """Ask Claude for a JSON object that matches `schema` (JSON Schema, additionalProperties false)."""
+def ask_json(system: str, user: str | list, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
+    """Ask Claude for a JSON object that matches `schema` (JSON Schema, additionalProperties false).
+    `user` is a string, or a list of content blocks (text + images) for a vision request."""
     for attempt in range(3):
         try:
             with client().beta.messages.stream(

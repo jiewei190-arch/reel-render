@@ -10,7 +10,9 @@ topic ──► Gemini (Google-Search-grounded research)
       ──► Claude writes the shot recipe ──► the engine's own checker (clip QA + frame-0 gate)
             └─ errors go back to Claude until it passes (up to 5 attempts)
       ──► GPU render on the PC (render.sh, motion blur) ──► music + SFX mix ──► -14 LUFS
-      ──► QA (loudness, Whisper) ──► Videos\BlockMoney\<slug>\video.mp4 + UPLOAD.md + sources.md
+      ──► AI EDITORS: Gemini watches the whole video, Claude checks 30+ stills ──► timestamped problems + fixes
+            └─ any blocker/major issue or a weak hook: Claude fixes the shots, engine re-checks, GPU re-renders (2 rounds)
+      ──► QA (loudness, Whisper) ──► Videos\BlockMoney\<slug>\video.mp4 + UPLOAD.md + sources.md + EDIT_REPORT.md
 ```
 
 **Nothing is ever uploaded.** The bot stops at a finished, checked video plus its title/description file.
@@ -43,9 +45,21 @@ Run from this `bot` folder:
 | `python -m reelbot make "..." --auto` | the whole thing, no stop |
 | `python -m reelbot batch topics.txt` | one topic per line, each run straight through; a failure skips to the next |
 | `python -m reelbot voice <slug>` / `recipe <slug>` / `render <slug>` | redo one stage |
+| `python -m reelbot review <slug>` | run the AI editors on the finished video (and fix + re-render if needed) |
 
 Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--style S1..S6`, `--notes "..."`, `--redo`,
-`--hooks 6` (how many openings to write and score; 0 = off), `--no-learn` (skip refreshing learnings first).
+`--edit-rounds 2` (AI editor fix-and-re-render rounds; -1 = skip the review), `--hooks 6` (how many openings to write and score; 0 = off), `--no-learn` (skip refreshing learnings first).
+
+## The AI editors
+
+After every render, before anyone sees the video:
+- **Gemini watches the whole Short** (motion, sound, captions) like a stranger scrolling, scores the hook, pacing,
+  readability, payoff and loop, predicts stayed-to-watch %, and lists every problem with timestamps and a fix.
+- **Claude checks stills** every 0.5 s through the first 3 s and every 2 s after: text over faces, unreadable or
+  cut-off boards, clipping, dead frames, a weak first frame.
+- It passes only with no blocker/major issue, hook >= 7.5 and overall >= 7. Otherwise Claude edits the shot recipe at
+  exactly those timestamps (keeping what works), the engine's checker validates it, and the GPU re-renders. Up to 2
+  rounds; the full history is in `EDIT_REPORT.md` next to the video.
 
 ## How it gets better over time
 
@@ -67,7 +81,8 @@ Each Short's working folder (`work/shorts/<slug>/`) keeps everything: `script.js
 - Claude Opus 5.5: about $0.50-$2, mostly the recipe step (long guide + examples). Printed at the end of every run.
 - Gemini: 2-4 grounded calls.
 - ElevenLabs: about 600-900 characters at 45 s.
-- GPU render: free (your PC), about 5-10 minutes.
+- AI editors: 1 Gemini video review + 1 Claude stills review per round (about $0.10-$0.40).
+- GPU render: free (your PC), about 5-10 minutes per render (a fix round adds one re-render).
 
 ## Guard rails built in
 

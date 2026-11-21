@@ -56,7 +56,7 @@ def _check(slug: str) -> tuple[bool, str]:
     return r.returncode == 0, out[-6000:]
 
 
-def build(folder: Path) -> None:
+def _context(folder: Path) -> tuple[dict, str, str]:
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug, style = data["slug"], data["style"]
     timings = (folder / "vo" / "timings.json").read_text(encoding="utf-8")
@@ -77,9 +77,12 @@ def build(folder: Path) -> None:
         f"tag_text: {data['tag_text']}\n\nscript.txt:\n" + "\n".join(data["lines"])
         + f"\n\nvo/timings.json (word anchors come from here):\n{timings}\n\n=== Working examples ===\n{_examples(style)}"
     )
-    feedback = ""
+    return data, system, base
+
+
+def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: str) -> None:
     for attempt in range(1, CFG.recipe_attempts + 1):
-        print(f"  claude: writing recipe.json (attempt {attempt})...")
+        print(f"  claude: writing recipe.json ({tag}, attempt {attempt})...")
         res = claude.ask_json(system, base + feedback, RECIPE_SCHEMA)
         try:
             recipe = json.loads(res["recipe_json"])
@@ -89,7 +92,7 @@ def build(folder: Path) -> None:
         recipe["slug"] = slug
         (folder / "recipe.json").write_text(json.dumps(recipe, indent=1, ensure_ascii=False), encoding="utf-8")
         ok, log = _check(slug)
-        (folder / f"recipe_check_{attempt}.log").write_text(log, encoding="utf-8")
+        (folder / f"recipe_check_{tag}_{attempt}.log").write_text(log, encoding="utf-8")
         if ok:
             print("  recipe: check passed (clip QA + frame-0 gate)")
             return
@@ -98,3 +101,22 @@ def build(folder: Path) -> None:
                     + "\n\n=== recipe_build --check output (fix every CLIP and FAIL) ===\n" + log)
     raise SystemExit(f"recipe.json still fails the check after {CFG.recipe_attempts} attempts; "
                      f"see {folder}/recipe_check_*.log. Fix by hand or rerun `reelbot recipe {slug}`.")
+
+
+def build(folder: Path) -> None:
+    data, system, base = _context(folder)
+    _loop(folder, data["slug"], system, base, "", "new")
+
+
+def revise(folder: Path, issues: list[dict], rnd: int) -> None:
+    """Rewrite the recipe to fix the editors' timestamped issues, keeping everything that works."""
+    data, system, base = _context(folder)
+    current = (folder / "recipe.json").read_text(encoding="utf-8")
+    (folder / f"recipe_before_edit{rnd}.json").write_text(current, encoding="utf-8")
+    notes = "\n".join(f"- {i['t_start']:.1f}-{i['t_end']:.1f}s [{i['severity']}/{i['category']}] {i['problem']} -> FIX: {i['fix']}"
+                      for i in issues)
+    feedback = ("\n\n=== The current recipe.json (rendered and reviewed) ===\n" + current
+                + "\n\n=== Editors' notes on the rendered video (fix every blocker and major; minors if cheap) ===\n"
+                + notes + "\n\nChange only what the notes need; keep the shots that work. The voice and timings are fixed: "
+                  "fix pacing with cuts, camera moves, boards and sound, not by changing the words.")
+    _loop(folder, data["slug"], system, base, feedback, f"edit{rnd}")

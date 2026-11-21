@@ -9,6 +9,7 @@ Nothing is ever uploaded. Finished videos land in REELBOT_OUTPUT_DIR/<slug>/ wit
   python -m reelbot ideas --n 10                                      # fresh topic ideas (Gemini + Claude)
   python -m reelbot learn                                             # rank our Shorts by retention -> work/learnings.md
   python -m reelbot script|voice|recipe|render <slug>                 # redo one stage
+  python -m reelbot review <slug>                                     # AI editors review (and fix) the finished video
 """
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import claude, gemini, learn, recipe, render, script, voice
+from . import claude, editor, gemini, learn, recipe, render, script, voice
 from .config import CFG
 from .cost import COST
 
@@ -71,10 +72,34 @@ def stage_recipe(folder: Path, a) -> None:
     _mark(folder, "recipe")
 
 
+def stage_edit(folder: Path, final: Path, a) -> dict:
+    """Review the render; while editors find serious problems, fix the recipe and re-render (up to --edit-rounds)."""
+    lines = json.loads((folder / "script.json").read_text(encoding="utf-8"))["lines"]
+    r = {}
+    for rnd in range(1, a.edit_rounds + 2):
+        r = editor.review(final, lines)
+        editor.report(final.parent, rnd, r)
+        print(f"  editor round {rnd}: hook {r['hook']}, overall {r['scores']['overall']}, "
+              f"predicted stayed {r['predicted_stayed_pct']}%, {len(r['serious'])} serious issue(s)")
+        if r["passed"]:
+            print("  editor: PASS")
+            break
+        if rnd > a.edit_rounds:
+            print("  editor: still has issues after the last round; see EDIT_REPORT.md before posting")
+            break
+        fixes = [i for i in r["issues"] if i["severity"] != "minor"] or r["issues"]
+        recipe.revise(folder, fixes, rnd)
+        final = render.render(folder)
+    _mark(folder, "edit", passed=r.get("passed"), hook=r.get("hook"), predicted=r.get("predicted_stayed_pct"))
+    return r
+
+
 def stage_render(folder: Path, a) -> None:
     final = render.render(folder)
     _mark(folder, "render", video=str(final))
-    print(f"\nDONE: {final}")
+    if a.edit_rounds >= 0:
+        stage_edit(folder, final, a)
+    print(f"\nDONE: {final}  (edit notes: {final.parent / 'EDIT_REPORT.md'})")
 
 
 def run_rest(folder: Path, a) -> None:
@@ -114,6 +139,7 @@ def main(argv: list[str] | None = None) -> None:
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
         p.add_argument("--redo", action="store_true", help="redo stages even if already done")
+        p.add_argument("--edit-rounds", type=int, default=2, help="AI editor fix-and-rerender rounds after render (-1 = skip review)")
         p.add_argument("--hooks", type=int, default=6, help="hook candidates to write and score (0 = off)")
         p.add_argument("--no-learn", dest="learn", action="store_false", help="don't refresh learnings from Studio data first")
 
@@ -122,7 +148,7 @@ def main(argv: list[str] | None = None) -> None:
     p = sub.add_parser("batch"); p.add_argument("file"); common(p)
     p = sub.add_parser("ideas"); p.add_argument("--n", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("--channel", default="block_money")
-    for name in ("script", "voice", "recipe", "render"):
+    for name in ("script", "voice", "recipe", "render", "review"):
         p = sub.add_parser(name); p.add_argument("slug"); common(p)
     a = ap.parse_args(argv)
 
@@ -157,6 +183,9 @@ def main(argv: list[str] | None = None) -> None:
             stage_recipe(_folder(a.slug), a)
         elif a.cmd == "render":
             stage_render(_folder(a.slug), a)
+        elif a.cmd == "review":
+            v = CFG.output_dir / a.slug / "video.mp4"
+            stage_edit(_folder(a.slug), v, a)
     except claude.ClaudeError as e:
         sys.exit(f"Claude: {e}")
     finally:
