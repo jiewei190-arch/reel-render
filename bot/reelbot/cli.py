@@ -19,7 +19,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import claude, editor, gemini, learn, recipe, render, script, voice
+from . import claude, editor, gemini, learn, recipe, render, script, tone, voice
 from .config import CFG
 from .cost import COST
 
@@ -62,6 +62,7 @@ def stage_script(topic: str, a) -> Path:
 
 
 def stage_voice(folder: Path, a) -> None:
+    tone.apply(folder)  # emotion must fit each line's mood before anything is voiced
     v = _pick_voice(a.voice)
     dur = voice.record(folder, v, fit=a.seconds + 6)
     _mark(folder, "voice", voice=v, seconds=round(dur, 2))

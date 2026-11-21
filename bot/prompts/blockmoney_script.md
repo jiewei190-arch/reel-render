@@ -28,6 +28,9 @@ narrator HOW to say them. The narrator should sound like a hyped friend telling 
 - Use the emotion that fits the beat: [shocked] on the big number, [whispers] on the secret/twist setup,
   [sarcastic] on Spender's bad logic, [excited] on the payoff, [sighs] on the loss.
 - Never put a tag inside a number or split a word. Removing the tags must give back the line exactly.
+- **Match the mood, always.** A loss, a mistake that costs someone real money, a warning or anything sad gets
+  [serious], [sighs], [disappointed] or no tag, never [excited] or [laughs]. Happy/hype tags only on good news.
+  A separate voice director re-checks every line before voicing.
 
 ## Hook text
 `hook_text` is the on-screen text at frame 0: **at most 5 words**, ALL CAPS, the stake + the twist (e.g. "TURNED DOWN $10K / FOR TAXES?"). Digits and $ are fine on screen. Mark one emotional word with *asterisks* to colour it red (e.g. "FOR *TAXES*?").

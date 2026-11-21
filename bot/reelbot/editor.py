@@ -32,7 +32,7 @@ ISSUE = {
     "properties": {
         "t_start": {"type": "number"}, "t_end": {"type": "number"},
         "severity": {"type": "string", "enum": ["blocker", "major", "minor"]},
-        "category": {"type": "string", "enum": ["hook", "pacing", "dead_air", "readability", "framing", "audio",
+        "category": {"type": "string", "enum": ["hook", "pacing", "dead_air", "readability", "framing", "audio", "tone",
                                                 "accuracy", "payoff", "loop", "other"]},
         "problem": {"type": "string"}, "fix": {"type": "string"},
     },
@@ -61,7 +61,10 @@ EDITOR_BRIEF = (
     "(does the reveal land and feel worth it?), loop (does the end flow back into the start?), overall. Predict the "
     "stayed-to-watch %. Then list every problem with exact timestamps in seconds, a severity (blocker = would make "
     "people swipe or is wrong; major = clearly hurts retention; minor = polish) and a concrete fix in terms of shots, "
-    "camera, boards/text, timing or sound. Be specific; do not praise."
+    "camera, boards/text, timing or sound. Be specific; do not praise. "
+    "Listen for TONE: if the narrator's emotion or a sound effect doesn't fit what is being said (an upbeat or joking "
+    "delivery, or a comedic sound, on a sad/serious moment; flat delivery on the big payoff), that is a 'tone' issue, "
+    "severity major or blocker."
 )
 
 

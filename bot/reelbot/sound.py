@@ -41,7 +41,11 @@ DESIGNER = (
     "the payoff and the loop. Be concrete and varied (e.g. 'cartoon cash register cha-ching with coins spilling', "
     "'record scratch', 'sad trombone wah-wah', 'paper stamp thunk', 'crowd gasp', 'tense heartbeat thump', "
     "'sparkly magic chime', 'rubber squeak'). Keep them short and never under the hook's first words unless it is a "
-    "punchy impact. The engine already plays basic impacts/whooshes on cuts; add character on top, don't duplicate."
+    "punchy impact. The engine already plays basic impacts/whooshes on cuts; add character on top, don't duplicate.\n"
+    "MATCH THE MOOD of each moment (the line moods are given). Sad or serious beats (a death, an injury, a real loss, "
+    "a scam victim, a disaster, a warning) get subtle, respectful sounds (low drone, soft heartbeat, a single "
+    "piano note, wind) or none at all: NEVER comedic sounds (trombones, boings, squeaks, laughs, cartoon slips) there. "
+    "Comedic sounds only on genuinely light moments; triumphant sounds only on good news."
 )
 
 
@@ -84,7 +88,8 @@ def design(folder: Path, cues_file: Path, comp: str) -> int:
     info = cues_all[comp]
     print("  claude: planning sound design...")
     plan = claude.ask_json(DESIGNER,
-                           "Script lines:\n" + "\n".join(data["lines"])
+                           "Script lines with their moods:\n" + "\n".join(
+                               f"[{m.get('mood', '?')}] {l}" for l, m in zip(data["lines"], data.get("moods") or [{}] * len(data["lines"])))
                            + "\n\nWord timings:\n" + json.dumps(timings)[:20000]
                            + "\n\nShot recipe (what is on screen when):\n" + recipe[:20000]
                            + "\n\nStock cues the engine already plays:\n" + json.dumps(info["cues"]),
