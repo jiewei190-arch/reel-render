@@ -64,7 +64,7 @@ export const LawFilm: React.FC<{ c: LawCompiled }> = ({ c }) => {
   return (
     <AbsoluteFill style={{ background: set.bg }}>
       <View mood={LAW_MOODS[set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={L.W} height={L.H}>
-        {set.render(t)}
+        {set.render(t, { jury: shot.spec.jury })}
         {figs.map((st) => <Figure key={st.id} st={st} t={t} />)}
         {shot.props.map((p) => (t < p.a || t >= p.b ? null : <PropView key={p.key} pr={p} t={t} />))}
         {shot.fx.filter((f) => f.fx === "papers").map((f, i) => <Papers key={i} f={f} t={t} />)}

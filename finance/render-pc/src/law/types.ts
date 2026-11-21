@@ -98,6 +98,8 @@ export type LawShot = {
   actions?: LawAction[];
   fx?: LawFx[];
   caption?: "auto" | "off" | string;
+  /** courtroom: show the jury silhouettes (default true; false for a bench trial) */
+  jury?: boolean;
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
   note?: string;

@@ -25,7 +25,7 @@ export type LawSet = {
   anchors: Record<string, V3>;
   /** static QA boxes (no figure or flying prop may enter them) */
   blockers: { name: string; c: V3; h: V3 }[];
-  render: (t: number) => React.ReactNode;
+  render: (t: number, o?: { jury?: boolean }) => React.ReactNode;
 };
 
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
@@ -80,7 +80,7 @@ const courtroom: LawSet = {
     blocker("set.galleryRail", [-5, 0, 2.15], [-0.7, 0.95, 2.3]),
     blocker("set.galleryRailR", [0.7, 0, 2.15], [5, 0.95, 2.3]),
   ],
-  render: (t) => (
+  render: (t, o) => (
     <>
       <mesh geometry={geoOf("lsBgDome", () => new THREE.SphereGeometry(80, 16, 10))} material={(() => { const m = bmat("#070c18"); m.side = THREE.BackSide; return m; })()} />
       <mesh geometry={PLANE()} material={floorMat()} rotation={[-Math.PI / 2, 0, 0]} scale={[14, 16, 1]} position={[0, 0, 0]} receiveShadow />
@@ -144,8 +144,8 @@ const courtroom: LawSet = {
       <Blk a={[-4.6, 0, -3.3]} b={[-3.25, 0.3, 0.3]} m={wood(LP.woodDark)} />
       <Blk a={[-4.6, 0.3, -3.3]} b={[-4.0, 0.6, 0.3]} m={wood(LP.woodDark)} />
       <Blk a={[-3.25, 0, -3.3]} b={[-3.1, 1.0, 0.3]} m={wood(LP.wood)} />
-      {[-2.6, -1.5, -0.4].map((z, k) => <Sil key={`j${k}`} id={`j${k}`} at={[-3.65, 0.3, z]} yaw={Math.PI / 2} t={t} seed={11 + k} hair={k === 1 ? "long" : "short"} />)}
-      {[-2.9, -1.8, -0.7, 0.2].map((z, k) => <Sil key={`k${k}`} id={`k${k}`} at={[-4.3, 0.6, z]} yaw={Math.PI / 2} t={t} seed={21 + k} hair={k % 2 ? "bun" : "short"} build={k === 2 ? "broad" : undefined} />)}
+      {o?.jury !== false && [-2.6, -1.5, -0.4].map((z, k) => <Sil key={`j${k}`} id={`j${k}`} at={[-3.65, 0.3, z]} yaw={Math.PI / 2} t={t} seed={11 + k} hair={k === 1 ? "long" : "short"} />)}
+      {o?.jury !== false && [-2.9, -1.8, -0.7, 0.2].map((z, k) => <Sil key={`k${k}`} id={`k${k}`} at={[-4.3, 0.6, z]} yaw={Math.PI / 2} t={t} seed={21 + k} hair={k % 2 ? "bun" : "short"} build={k === 2 ? "broad" : undefined} />)}
       {/* gallery: a low rail with a gate, benches, a few silhouettes */}
       {[-1, 1].map((k) => <Blk key={k} a={[k > 0 ? 0.7 : -5, 0.85, 2.15]} b={[k > 0 ? 5 : -0.7, 0.95, 2.3]} m={wood(LP.woodLight)} />)}
       {Array.from({ length: 12 }, (_, k) => { const x = (k < 6 ? -4.7 : 0.9) + (k % 6) * 0.75; return <Blk key={`b${k}`} a={[x, 0, 2.2]} b={[x + 0.06, 0.85, 2.26]} m={wood(LP.wood)} />; })}

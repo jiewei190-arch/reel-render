@@ -65,6 +65,7 @@ export type FigState = {
   /** body-local unit directions: shoulder -> elbow, elbow -> hand */
   armL: [V3, V3]; armR: [V3, V3];
   face: FigFace; blink: boolean; mouth: Viseme; gavel: boolean; floorY: number; breathe: number;
+  /** walking: leg swing angle (rad) */ stride: number;
 };
 const armDir = (e: number, az: number, side: 1 | -1): V3 => [side * Math.sin(e) * Math.cos(az), -Math.cos(e), Math.sin(e) * Math.sin(az)];
 const armDirs = (a: Arm, side: 1 | -1): [V3, V3] => {
@@ -174,11 +175,15 @@ export const figState = (tr: FigTrack, t: number): FigState => {
     armR = [mix(armR[0]), mix(armR[1])];
   }
   const breathe = Math.sin(t * 1.9 + tr.seed);
+  // walking: the legs swing while the place moves (speed from a short look-ahead)
+  const q = tr.at(t + 0.05);
+  const speed = Math.hypot(q[0] - p[0], q[2] - p[2]) / 0.05;
+  const stride = tr.sit ? 0 : 0.45 * clamp(speed / 0.6) * Math.sin(t * 9);
   return {
     id: tr.id, spec: tr.spec, s, sit: tr.sit,
     x: p[0] + fw[0] * raw.dz * s, y: p[1] + raw.dy * s, z: p[2] + fw[2] * raw.dz * s, yaw,
     lean: raw.lean + 0.012 * breathe, twist: raw.twist, roll: raw.roll, headP: raw.headP, headY: raw.headY,
-    armL, armR, face, blink: blinkAt(t, tr.seed, swaps), mouth: tr.talk?.(t) ?? "rest", gavel: tr.gavel, floorY: p[1], breathe,
+    armL, armR, face, blink: blinkAt(t, tr.seed, swaps), mouth: tr.talk?.(t) ?? "rest", gavel: tr.gavel, floorY: p[1], breathe, stride,
   };
 };
 
@@ -329,9 +334,9 @@ export const Figure: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
       </group>
     ))
     : [-1, 1].map((k) => (
-      <group key={k}>
-        <mesh geometry={geoOf("figLeg", () => new THREE.BoxGeometry(0.155, HIP_STAND - 0.08, 0.17))} material={sm(pants)} position={[k * 0.105, 0.08 + (HIP_STAND - 0.08) / 2, 0]} castShadow />
-        <mesh geometry={geoOf("figShoe", () => new THREE.BoxGeometry(0.13, 0.08, 0.26))} material={sm("#14110f")} position={[k * 0.105, 0.04, 0.04]} castShadow />
+      <group key={k} position={[k * 0.105, HIP_STAND, 0]} rotation={[k * st.stride, 0, 0]}>
+        <mesh geometry={geoOf("figLeg", () => new THREE.BoxGeometry(0.155, HIP_STAND - 0.08, 0.17))} material={sm(pants)} position={[0, 0.08 + (HIP_STAND - 0.08) / 2 - HIP_STAND, 0]} castShadow />
+        <mesh geometry={geoOf("figShoe", () => new THREE.BoxGeometry(0.13, 0.08, 0.26))} material={sm("#14110f")} position={[0, 0.04 - HIP_STAND, 0.04]} castShadow />
       </group>
     ));
   return (
