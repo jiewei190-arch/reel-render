@@ -28,6 +28,9 @@ const dir = join(SHORTS, slug);
 const recipe = JSON.parse(readFileSync(join(dir, "recipe.json"), "utf8"));
 const timings = JSON.parse(readFileSync(join(dir, "vo/timings.json"), "utf8"));
 if (recipe.slug !== slug) { console.error(`recipe.slug "${recipe.slug}" != folder "${slug}"`); process.exit(2); }
+// the tech3d kit ("kit": "tech3d", finance/render-pc/KIT_TECH3D.md) has its own compiler, registry and entry
+// (src/index.tech.ts): hand it over before anything is written. Recipes without "kit" (Block Money) are untouched.
+if (recipe.kit === "tech3d") { const { main } = await import("./tech_build.mjs"); process.exit(await main(args)); }
 
 // ---------------------------------------------------------------- 1) codegen
 const wf = (f, txt) => { if (!check) writeFileSync(f, txt); };
