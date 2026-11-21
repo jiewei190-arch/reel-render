@@ -26,9 +26,13 @@ Posting stays with the owner / Creator and the channel rules.
    pip install -r requirements.txt
    pip install faster-whisper        # optional, for the Whisper QA step
    ```
-3. Copy `.env.example` to `.env` and paste your three keys **into that file yourself**:
-   `ANTHROPIC_API_KEY` (console.anthropic.com), `GEMINI_API_KEY` (aistudio.google.com), `ELEVENLABS_API_KEY`.
-   `.env` is git-ignored. Never paste keys into a chat.
+3. Copy `.env.example` to `.env` and paste your keys **into that file yourself**: `GEMINI_API_KEY`
+   (aistudio.google.com) and `ELEVENLABS_API_KEY`. `.env` is git-ignored. Never paste keys into a chat.
+   **Claude needs no key:** by default reelbot runs the Claude Code CLI that is already logged in on this PC, so Claude
+   work counts against your Claude subscription's plan limits instead of API billing (any `ANTHROPIC_API_KEY` is removed
+   from the CLI's environment so it can't switch to API billing by accident). Heavy batches can hit the plan limit,
+   which also slows other Claude sessions on the same account; reelbot waits and retries. To use the paid API instead,
+   set `REELBOT_CLAUDE_BACKEND=api` and `ANTHROPIC_API_KEY`. Personal use on your own PC only.
 4. Point it at the renderer if it is not in the default place:
    `REELBOT_RENDER_ROOT=C:\Users\jiewe\blocky-render`, and `REELBOT_AUDIO_DIR` at the folder with `music\` and `sfx\`.
 
@@ -78,7 +82,8 @@ Each Short's working folder (`work/shorts/<slug>/`) keeps everything: `script.js
 
 ## Cost (rough, per Short)
 
-- Claude Opus 5.5: about $0.50-$2, mostly the recipe step (long guide + examples). Printed at the end of every run.
+- Claude: $0 extra on the subscription backend (counts toward plan limits; the run prints the API-equivalent).
+  On the API backend about $1.50-$3 per Short, mostly the recipe and editor steps.
 - Gemini: 2-4 grounded calls.
 - ElevenLabs: about 600-900 characters at 45 s.
 - AI editors: 1 Gemini video review + 1 Claude stills review per round (about $0.10-$0.40).
