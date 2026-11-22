@@ -42,7 +42,8 @@
    "youtube.googleapis.com",
    "youtubeanalytics.googleapis.com"
   ],
-  "min_free_disk_gb": 2
+  "min_free_disk_gb": 2,
+  "http_user_agent": "MonsterYouTubeAutomator/0.1 (personal research bot; owner: set a contact URL or email here per Wikimedia's User-Agent policy)"
  },
  "formats": {
   "short": {

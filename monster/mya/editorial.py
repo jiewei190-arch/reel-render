@@ -131,6 +131,8 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
         if line:
             scenes.append(line)
             prev = line["narration"]
+        elif pos == "hook" and k + 1 < len(ordered):
+            ordered.insert(k + 1, ordered[k + 1])  # no unchecked hook: the next fact becomes the opening instead
     script = {"scenes": scenes}
     if len(scenes) >= 3:
         meta = llm.ask(

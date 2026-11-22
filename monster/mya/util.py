@@ -16,7 +16,6 @@ import requests
 
 from .config import cfg, home
 
-UA = "MonsterYouTubeAutomator/0.1 (local research tool)"
 
 
 def now_utc() -> str:
@@ -84,8 +83,17 @@ def http(method: str, url: str, *, job_dir: Path | None = None, release: bool = 
     if not ok:
         raise EgressBlocked(f"network egress to {host} is not allowed (not on the allowlist)")
     kw.setdefault("timeout", 30)
-    kw.setdefault("headers", {}).setdefault("User-Agent", UA)
-    return requests.request(method, url, **kw)
+    kw.setdefault("headers", {}).setdefault("User-Agent", cfg().runtime.get("http_user_agent", "MonsterYouTubeAutomator/0.1"))
+    for attempt in range(4):
+        r = requests.request(method, url, **kw)
+        if r.status_code not in (429, 503) or release:
+            return r
+        # polite backoff: honor Retry-After (bounded), never hammer a free API
+        wait = min(60.0, float(r.headers.get("Retry-After", "0") or 0) or 5.0 * 2 ** attempt)
+        with open(log, "a", encoding="utf-8") as f:
+            f.write(f"{now_utc()}\tBACKOFF\t{r.status_code}\t{host}\twaiting {wait:.0f}s\n")
+        time.sleep(wait)
+    return r
 
 
 # ---------------------------------------------------------------- processes

@@ -103,13 +103,21 @@ def build_claims(topic: str, profile, sources: list[dict], lessons: str = "") ->
         sid, sent = pool[i]
         claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": p["role"], "status": "verified",
                        "source_ids": [sid], "passage": sent, "note": "verbatim source sentence"})
-    if not any(c["role"] in ("outcome", "aftermath") for c in claims):
-        # every story needs a sourced ending, or a writer will invent one
-        end = llm.ask("Pick the ONE sentence that states how this story ended: the verdict, ruling, result or final outcome.",
+    if True:
+        # every story needs a sourced ending, or a writer will invent one: always ask for it explicitly
+        for c in claims:
+            if c["role"] in ("outcome", "aftermath"):
+                c["role"] = "twist"  # the picker's guess is demoted; the dedicated pick below is the ending
+        end = llm.ask("Pick the ONE sentence that states how this story finally ended: the verdict, ruling, final result or "
+                      "consequence. Not the start of a trial or a lawsuit being filed.",
                       f"Topic: {topic}\n{listing}", {"type": "object", "additionalProperties": False, "required": ["sentence"],
                       "properties": {"sentence": {"type": "integer", "minimum": 0, "maximum": len(pool) - 1}}},
                       temperature=0.0, max_tokens=20)["sentence"]
-        if end not in seen:
+        if end in seen:
+            for c in claims:
+                if c["passage"] == pool[end][1]:
+                    c["role"] = "outcome"
+        else:
             sid, sent = pool[end]
             claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": "outcome", "status": "verified",
                            "source_ids": [sid], "passage": sent, "note": "verbatim source sentence (outcome)"})
