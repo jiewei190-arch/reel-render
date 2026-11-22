@@ -271,7 +271,9 @@ names the shot, the time, the card / prop / person and what to move where.
   person while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) is in
   frame. In a close shot, the head is centred (middle 60 % of the width). The head never touches an edge (11 px). Any
   other person's head is fully in or fully out. The first 0.35 s of a whip-in is skipped.
-- **R3 FAIL, cards and boards inside the frame** with a 3 % margin (32 px), once landed (0.3 s after the hit).
+- **R3 FAIL, cards and boards inside the frame** with a 3 % margin (32 px), once landed (0.3 s after the hit). A
+  board's title and value must also **fit the board**: a line wider than the card is cut off by its edge ("200,000" at
+  108 px is ~450 px in a 420 px board; "April 1985" ~540 px). Shorten it ("200K", "APR 1985") or use `"size": "giant"`.
 - **R4 FAIL, text reads.** Every text colour is at least 4.5:1 against its fill (WCAG). Coloured text and fills under white text use the text-safe tones `TEXT_TONE` in src/biz/hud.tsx: green `#15803D` 5.0:1, red `#C62828` 5.6:1, gold `#8A6212` 5.5:1 (the bright tones were 2.3, 3.9 and 1.9:1; they stay for bars, borders, lines and the chart). A featured line is at least
   42 px font size (the median while on screen). Long-form uses the same 42 px at 1080 tall; its cards are checked for
   placement and colour only.
