@@ -93,7 +93,7 @@ def build_claims(topic: str, profile, sources: list[dict], lessons: str = "") ->
         "most surprising fact (hook), key numbers, the twist and the outcome. Return sentence numbers only.",
         f"Channel: {profile.working_name}: {profile.niche}.\nTopic: {topic}\n{lessons}\n"
         f"Numbered sentences from the sources:\n{listing}\n\nPick 6-12 sentence numbers about {topic}.",
-        CLAIMS_SCHEMA, temperature=0.1)
+        CLAIMS_SCHEMA, temperature=0.1, max_tokens=500)
     claims, seen = [], set()
     for p in res["picks"]:
         i = p["sentence"]

@@ -47,13 +47,12 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
         f"Channel: {profile.working_name}. {lessons}\nLines:\n{listing}",
         {"type": "object", "additionalProperties": False, "required": ["types"],
          "properties": {"types": {"type": "array", "minItems": len(script["scenes"]), "maxItems": len(script["scenes"]),
-                                  "items": {"enum": types}}}}, temperature=0.3)["types"]
+                                  "items": {"enum": types}}}}, temperature=0.3, max_tokens=30 + 12 * len(script["scenes"]))["types"]
     scenes, findings = [], []
     for i, (s, t) in enumerate(zip(script["scenes"], choice)):
         cited = [by_id[c] for c in s["claim_ids"] if c in by_id]
         facts = "\n".join(f"- {c['statement']}" for c in cited) or "- (no claim: use words from the line only)"
         allowed = set().union(*(numbers(c["passage"]) | numbers(c["statement"]) for c in cited)) if cited else set()
-        allowed |= numbers(s["narration"]) & allowed if allowed else set()
         params, why = None, ""
         for attempt in range(3):
             try:
@@ -63,7 +62,7 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
                     "(54000000 not '54 million'; put $ in prefix).",
                     f"Narration: \"{s['narration']}\"\nWhat the viewer should see: {s['visual_intent']}\nFacts:\n{facts}"
                     + (f"\nLast attempt was rejected: {why}" if why else ""),
-                    schema_for(t), temperature=0.3)
+                    schema_for(t), temperature=0.3, max_tokens=350)
                 jsonschema.validate(cand, schema_for(t))
                 stray = sorted(n for n in _onscreen_numbers(cand) if n not in allowed and n not in ("0", "1", "2", "3", "4"))
                 if stray:

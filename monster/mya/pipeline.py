@@ -111,7 +111,8 @@ def _claim(c, job_id: str, stage: str, ih: str) -> str:
         r = c.execute("SELECT * FROM stage_runs WHERE job_id=? AND stage=?", (job_id, stage)).fetchone()
         if r and r["status"] in ("done", "stale") and r["input_hash"] == ih and _outputs_valid(d, json.loads(r["outputs"] or "[]")):
             return "reuse"
-        if r and r["status"] == "running" and r["lease_owner"] != db.WORKER_ID and (r["lease_expires"] or 0) > time.time():
+        if (r and r["status"] == "running" and r["lease_owner"] != db.WORKER_ID and (r["lease_expires"] or 0) > time.time()
+                and db.owner_alive(r["lease_owner"])):
             return "busy"
         if r and r["status"] == "running":
             db.event(c, job_id, "lease", f"reclaimed expired lease on {stage} from {r['lease_owner']}")

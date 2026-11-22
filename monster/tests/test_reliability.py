@@ -174,6 +174,19 @@ def test_expired_lease_is_reclaimed_live_lease_is_respected(home, monkeypatch):
     assert pipeline.run_job(jid, log=lambda *a: None) == "ready_for_release"
 
 
+def test_lease_of_dead_local_worker_is_reclaimed_immediately(home, monkeypatch):
+    import socket
+    from mya import db, pipeline, scheduler
+    calls = []
+    _fake_stages(monkeypatch, calls)
+    jid = scheduler.fill_slots("2026-12-03")[0]
+    c = db.connect()
+    dead = f"{socket.gethostname()}:999999:abc123"  # no such pid
+    c.execute("INSERT INTO stage_runs (job_id, stage, status, lease_owner, lease_expires) VALUES (?,?,?,?,?)",
+              (jid, "research", "running", dead, time.time() + 600))
+    assert pipeline.run_job(jid, log=lambda *a: None) == "ready_for_release"
+
+
 # ---------------------------------------------------------------- strict local / no paid fallback (3, 4)
 def test_config_refuses_paid_or_remote(tmp_path):
     from mya.config import Config, ConfigError

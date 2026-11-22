@@ -109,3 +109,24 @@ def release(c, name: str, owner: str = WORKER_ID) -> None:
 
 def jdump(o) -> str:
     return json.dumps(o, ensure_ascii=False, default=str)
+
+
+def owner_alive(owner: str | None) -> bool:
+    """A lease held by a process on THIS machine that no longer exists is dead and can be reclaimed at once.
+    Leases from other machines (or unknown formats) are trusted until they expire."""
+    try:
+        host, pid, _ = (owner or "").split(":")
+        pid = int(pid)
+    except ValueError:
+        return True
+    if host != socket.gethostname():
+        return True
+    try:
+        import psutil
+        return psutil.pid_exists(pid)
+    except ImportError:
+        try:
+            os.kill(pid, 0)
+            return True
+        except OSError:
+            return False

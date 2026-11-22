@@ -51,13 +51,14 @@ def _check_local(endpoint: str, model: str) -> None:
         raise LLMError(f"strict local mode: '{model}' is a cloud model tag; choose a locally installed model")
 
 
-def _ollama(system: str, user: str, schema: dict, temperature: float) -> dict:
+def _ollama(system: str, user: str, schema: dict, temperature: float, max_tokens: int) -> dict:
     rt = cfg().runtime
     endpoint = os.environ.get("MYA_OLLAMA", rt["ollama_endpoint"])
     model = ollama_model()
     _check_local(endpoint, model)
     body = {"model": model, "stream": False, "format": schema, "keep_alive": "2m",
-            "options": {"temperature": temperature, "num_ctx": rt.get("ollama_context_tokens_initial", 8192)},
+            "options": {"temperature": temperature, "num_ctx": rt.get("ollama_context_tokens_initial", 8192),
+                        "num_predict": max_tokens, "repeat_penalty": 1.1},
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
     try:
         r = requests.post(endpoint.rstrip("/") + "/api/chat", json=body, timeout=900)
@@ -106,13 +107,14 @@ def _claude_cli(system: str, user: str, schema: dict) -> dict:
         raise LLMError(f"Claude Code returned no structured output: {out[-400:]}") from e
 
 
-def ask(system: str, user: str, schema: dict, *, temperature: float = 0.4, attempts: int | None = None) -> dict:
+def ask(system: str, user: str, schema: dict, *, temperature: float = 0.4, attempts: int | None = None,
+        max_tokens: int = 800) -> dict:
     attempts = attempts or cfg().runtime.get("max_regenerations_per_stage", 2) + 1
     last = None
     for i in range(attempts):
         try:
             if backend() == "ollama_local":
-                out = _ollama(system, user, schema, temperature)
+                out = _ollama(system, user, schema, temperature, max_tokens)
             elif backend() == "claude_cli":
                 out = _claude_cli(system, user, schema)
             else:

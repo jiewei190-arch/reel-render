@@ -3,13 +3,13 @@ draft is usable: length band, no number on screen or in narration that the cited
 """
 from __future__ import annotations
 
+import json
 import re
 
 from . import llm, speech
 from .config import cfg
 from .research import numbers
 
-WPS = {"a": 2.55, "b": 2.45}  # measured Kokoro words/second at speed 1.0 is ~2.2; profiles speak at ~1.05-1.12x
 
 
 def target_words(profile, fmt: str) -> tuple[int, int, int]:
@@ -92,9 +92,11 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
     problems: list[str] = []
     script = {}
     for _ in range(tries):
+        sch = json.loads(json.dumps(SCRIPT_SCHEMA))
+        sch["properties"]["scenes"]["minItems"], sch["properties"]["scenes"]["maxItems"] = (6, 11) if fmt == "short" else (16, 34)
         script = llm.ask(system, f"Topic: {topic}\n" + user + (
             "\n\nYour last draft had these problems; fix every one:\n- " + "\n- ".join(problems) if problems else ""),
-            SCRIPT_SCHEMA, temperature=0.5)
+            sch, temperature=0.5, max_tokens=1400 if fmt == "short" else 5000)
         problems = check(script, claims, profile, fmt)
         if not problems:
             break

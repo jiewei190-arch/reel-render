@@ -101,7 +101,7 @@ def editorial(job: dict, script: dict, board: list[dict], claims: list[dict], pr
         "logical?), payoff (does the end answer the opening?), visual_relevance (does each visual clarify its line?). "
         "List concrete problems; do not praise.",
         f"Channel promise: {profile.promise}\nTitle: {script['title']}\nPromise: {script['promise']}\nScenes:\n{rows}",
-        EDITORIAL_SCHEMA, temperature=0.1)
+        EDITORIAL_SCHEMA, temperature=0.1, max_tokens=700)
     used = {c for s in script["scenes"] for c in s["claim_ids"]}
     unsupported = [c["id"] for c in claims if c["id"] in used and c["status"] != "verified"]
     if unsupported:
