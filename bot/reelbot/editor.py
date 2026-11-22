@@ -17,7 +17,10 @@ import tempfile
 import time
 from pathlib import Path
 
-from google.genai import types
+try:
+    from google.genai import types
+except ImportError:
+    types = None
 
 from . import claude, gemini, learn
 from .config import CFG
@@ -126,8 +129,23 @@ def claude_review(video: Path) -> dict:
     return claude.ask_json("You are a meticulous Shorts editor reviewing stills.", content, VISUAL_SCHEMA, effort="medium")
 
 
+def claude_full_review(video: Path, script_lines: list[str]) -> dict:
+    """Without Gemini: Claude scores the Short from dense stills + the script (it can't hear the audio)."""
+    dur = _duration(video)
+    times = [0.0, 0.33, 0.66, 1.0, 1.5, 2.0, 3.0] + [float(t) for t in range(4, int(dur), 2)]
+    frames = _frames(video, times)
+    print(f"  editor (claude): reviewing {len(frames)} stills + script...")
+    content: list = [{"type": "text", "text": EDITOR_BRIEF + " You see stills sampled from the video (times given) and "
+                      "its script; judge motion and pacing from how much changes between stills. You cannot hear the "
+                      "audio, so do not score sound.\n\nScript:\n" + "\n".join(script_lines)}]
+    for t, b64 in frames:
+        content.append({"type": "text", "text": f"t = {t:.2f} s"})
+        content.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": b64}})
+    return claude.ask_json("You are a ruthless Shorts editor.", content, REVIEW_SCHEMA, effort="medium")
+
+
 def review(video: Path, script_lines: list[str]) -> dict:
-    g = gemini_review(video, script_lines)
+    g = gemini_review(video, script_lines) if gemini.enabled() else claude_full_review(video, script_lines)
     c = claude_review(video)
     issues = sorted(g["issues"] + c["issues"], key=lambda i: (i["t_start"], i["severity"]))
     hook = min(g["scores"]["hook"], c["first_frame_score"] + 1)  # the still can't show motion; give it a point

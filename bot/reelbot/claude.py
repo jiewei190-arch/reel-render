@@ -74,7 +74,25 @@ def _parse_result(stdout: str) -> dict:
     return json.loads(m.group(0))
 
 
-def _ask_cli(system: str, user: str | list, schema: dict) -> dict:
+WEB_SCHEMA = {
+    "type": "object", "additionalProperties": False, "required": ["text", "sources"],
+    "properties": {"text": {"type": "string"},
+                   "sources": {"type": "array", "items": {"type": "object", "additionalProperties": False,
+                               "required": ["title", "url"], "properties": {"title": {"type": "string"}, "url": {"type": "string"}}}}},
+}
+
+
+def ask_web(prompt: str) -> tuple[str, list[dict]]:
+    """Research with Claude Code's own web search (the subscription CLI). Returns (text, [{title, url}]).
+    Used instead of Gemini grounding, so research costs nothing beyond the Claude plan."""
+    res = _ask_cli("You are a careful researcher. Use WebSearch and WebFetch to find current, reliable sources. "
+                   "Prefer primary and official sources. Never invent a source or a number; say 'not found' instead. "
+                   "Put the findings in `text` and every URL you actually used in `sources`.",
+                   prompt, WEB_SCHEMA, tools=["WebSearch", "WebFetch"])
+    return res["text"], res["sources"]
+
+
+def _ask_cli(system: str, user: str | list, schema: dict, tools: list[str] | None = None) -> dict:
     with tempfile.TemporaryDirectory(prefix="reelbot_") as tmp:
         tmpd = Path(tmp)
         (tmpd / "system.md").write_text(system, encoding="utf-8")
@@ -93,7 +111,7 @@ def _ask_cli(system: str, user: str | list, schema: dict) -> dict:
             extra = ["--allowedTools", "Read", "--add-dir", str(tmpd), "--max-turns", str(n + 10)]
         else:
             prompt_body = user
-            extra = ["--max-turns", "6"]
+            extra = ["--allowedTools", *tools, "--max-turns", "25"] if tools else ["--max-turns", "6"]
         cmd = [_claude_bin(), "-p", "Do the task described in the input below. Answer only with the requested JSON.",
                "--output-format", "json", "--json-schema", json.dumps(schema, separators=(",", ":")),
                "--model", CFG.claude_model, "--system-prompt-file", str(tmpd / "system.md"), *extra]

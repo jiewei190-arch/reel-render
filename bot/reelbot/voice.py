@@ -9,6 +9,7 @@ import subprocess
 import wave
 from pathlib import Path
 
+import numpy as np
 import requests
 
 from .config import CFG
@@ -86,9 +87,12 @@ def _wav_bytes(pcm: bytes) -> bytes:
 
 
 def _listen(pcm: bytes, line: str, mood: str | None) -> dict:
-    """Gemini listens to one take: right emotion for the moment, every word clear, sounds natural."""
-    from google.genai import types
+    """Listens to one take. With Gemini: emotion + clarity + naturalness. Without (default, free): a local
+    faster-whisper check that every word was actually said (emotion is not judged)."""
     from . import gemini
+    if not gemini.enabled():
+        return _listen_local(pcm, line)
+    from google.genai import types
     prompt = (
         "You are a voice director checking one narrator take for a YouTube Short.\n"
         f"The line: \"{line}\"\nIntended mood: {mood or 'neutral'}\n"
@@ -107,6 +111,29 @@ def _listen(pcm: bytes, line: str, mood: str | None) -> dict:
     except Exception as e:  # the listener is a safety net; never let it block voicing
         print(f"    listener unavailable: {e}")
         return {"ok": True, "score": 0, "heard_emotion": "", "problem": f"not checked: {e}"}
+
+
+_whisper = None
+
+
+def _listen_local(pcm: bytes, line: str) -> dict:
+    global _whisper
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        return {"ok": True, "score": 0, "heard_emotion": "", "problem": "not checked (pip install faster-whisper)"}
+    if _whisper is None:
+        _whisper = WhisperModel("small.en", device="auto", compute_type="auto")
+    a = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
+    idx = np.linspace(0, len(a) - 1, int(len(a) * 16000 / SR))
+    a16 = np.interp(idx, np.arange(len(a)), a).astype(np.float32)
+    segs, _ = _whisper.transcribe(a16, language="en")
+    norm = lambda s: [w for w in re.sub(r"[^a-z0-9' ]", " ", s.lower()).split() if w]
+    heard, want = set(norm(" ".join(x.text for x in segs))), [w for w in norm(line) if not w.isdigit()]
+    miss = [w for w in want if w not in heard]
+    recall = 1 - len(miss) / max(1, len(want))
+    return {"ok": recall >= 0.85, "score": round(recall * 10, 1), "heard_emotion": "(not judged locally)",
+            "problem": f"words not heard clearly: {miss[:8]}" if miss and recall < 0.85 else ""}
 
 
 def _words(al: dict, text: str, offset: float) -> list[dict]:

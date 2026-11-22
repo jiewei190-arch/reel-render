@@ -80,7 +80,7 @@ def pick(topic: str, research: str, n: int = 6) -> tuple[dict, list[dict]]:
     c_scores = {s["index"]: float(s["score"]) for s in claude.ask_json(
         JUDGE_BRIEF, f"Channel data:\n{data or '(none yet)'}\n\nCandidates:\n{_listing(cands)}",
         SCORES_SCHEMA, effort="medium")["scores"]}
-    g_scores = _gemini_scores(cands, data) if os.environ.get("GEMINI_API_KEY") else {}
+    g_scores = _gemini_scores(cands, data) if gemini.enabled() else {}
 
     for i, c in enumerate(cands):
         both = [s for s in (c_scores.get(i), g_scores.get(i)) if s is not None]

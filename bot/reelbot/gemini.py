@@ -3,16 +3,24 @@ from __future__ import annotations
 
 import os
 
-from google import genai
-from google.genai import types
+try:
+    from google import genai
+    from google.genai import types
+except ImportError:  # optional dependency
+    genai = types = None
 
 from .config import CFG
 from .cost import COST
 
-_client: genai.Client | None = None
+_client = None
 
 
-def client() -> genai.Client:
+def enabled() -> bool:
+    """Gemini is optional and OFF by default (owner decision, Nov 2026: free only). Turn on with REELBOT_USE_GEMINI=1."""
+    return os.environ.get("REELBOT_USE_GEMINI") == "1" and bool(os.environ.get("GEMINI_API_KEY"))
+
+
+def client():
     global _client
     if _client is None:
         CFG.require_keys("GEMINI_API_KEY")
@@ -21,7 +29,11 @@ def client() -> genai.Client:
 
 
 def grounded(prompt: str) -> tuple[str, list[dict]]:
-    """Run one Google-Search-grounded Gemini call. Returns (text, [{title, url}])."""
+    """Grounded research. Returns (text, [{title, url}]). Uses Claude's web search unless Gemini is enabled."""
+    if not enabled():
+        from . import claude
+        print("  claude (web search): researching...")
+        return claude.ask_web(prompt)
     resp = client().models.generate_content(
         model=CFG.gemini_model,
         contents=prompt,

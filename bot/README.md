@@ -74,6 +74,17 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 - Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
   lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
 
+## Free mode (default): no Gemini
+
+Gemini is off unless `REELBOT_USE_GEMINI=1`:
+- **Research and fact-checking** run through the Claude Code CLI's own WebSearch/WebFetch (subscription, no API bill).
+- **The voice listen-back** is a local faster-whisper check that every word was clearly said. Emotion isn't judged
+  without Gemini; the tone director still sets it.
+- **The AI editor** is Claude reviewing dense stills plus the script. It can't hear the audio.
+- **Hook scoring** is Claude only.
+
+ElevenLabs is still used for Block Money and Justin clips voices (the owner's choice).
+
 ## Channels
 
 One bot, five channels. `--channel` picks the profile (stored in each video's script.json, so later stages follow it):
