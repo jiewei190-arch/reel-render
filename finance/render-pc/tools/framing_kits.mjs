@@ -3,7 +3,7 @@
 // Heads include what sticks out (BOLT's antenna and ears, the figures' hair, the hooded figure's hood); 2D cards are the
 // kits' DOM labels / boards / story devices with their real font sizes and colours; 3D text props are law3d's signs,
 // papers and boxes and cyber3d's email tiles. Facts (sizes, colours) are from the kits' hud / objects / cast files.
-import { capRatio, kitFraming } from "./framing_qa.mjs";
+import { captionLines, capRatio, kitFraming } from "./framing_qa.mjs";
 
 const CAP = () => capRatio();
 const tgId = (tg) => (typeof tg === "string" ? tg.split(".")[0].split(":")[0] : "");
@@ -17,7 +17,31 @@ const subjectsOf = (spec, ids) => {
 };
 const rect = (key, label, x, y, w, h, lines, bg, landed, fix) => ({ key, label, x0: x - w / 2, x1: x + w / 2, y0: y - h / 2, y1: y + h / 2, lines, bg, landed, fix });
 const ln = (text, fs, fg, fitW, fix) => ({ text: String(text ?? ""), capPx: fs * CAP(), fg, ...(fitW ? { fitW, fix } : {}) });
-const view = (cam, W, H) => [{ cam, left: 0, top: 0, w: W, h: H, name: "frame" }];
+const view = (cam, W, H, face) => [{ cam, left: 0, top: 0, w: W, h: H, name: "frame", face }];
+
+// ------------------------------------------------------------------ R6: the word caption on screen at t (null if none)
+// The kits draw the same caption as their film.tsx: Shorts: <Kit>Captions (chunks of up to 3 words, from 1.0 s, a fixed
+// band per layout); long-form: LowerThirdCaptions (phrases of up to LF.CAP_WORDS words, the shot's lower-third centre).
+// A shot's fixed "caption" text is on for the whole shot; "off" (shot or recipe) hides it.
+const chunkCache = new WeakMap();
+const kitCaption = (C, m, s, t, o) => {
+  if (s.spec.caption === "off" || C.recipe?.captions === "off") return null;
+  const fixed = s.spec.caption && s.spec.caption !== "auto" ? s.spec.caption : null;
+  let words = null;
+  if (fixed) { if (t >= s.a - 0.05 && t < s.b) words = String(fixed).split(/\s+/); }
+  else if (t >= o.from) {
+    const n = o.mode === "lower" ? (m.LF?.CAP_WORDS ?? 7) : 3;
+    let ck = chunkCache.get(C); if (!ck) { ck = new Map(); chunkCache.set(C, ck); }
+    if (!ck.has(n)) ck.set(n, m.capChunkWords(C.words, n));
+    const c = ck.get(n).find((k) => t >= k.start - 0.05 && t < k.hold);
+    if (c) words = c.words.map((w) => w.w);
+  }
+  if (!words) return null;
+  const lines = captionLines(words, o);
+  return lines.length ? { text: lines.map((l) => l.text).join(" / "), lines } : null;
+};
+/** the lower-third caption settings (LF: column 240 px from each side, 1.12 line height, 6 px stroke) */
+const lowerCap = (m, centre, fs, from) => ({ mode: "lower", W: 1920, side: m.LF?.CAP_SIDE ?? 240, fs, centre, from, stroke: 3 });
 
 // ------------------------------------------------------------------ BOLT (tech3d, cyber3d): the shell is the head
 // shell r 0.3 (screen bezel 1.05 r), ears to x +-0.315, antenna tip top +0.484 above the body centre, jet to -0.5
@@ -25,7 +49,7 @@ const boltActor = (m, st) => {
   const s = st.s;
   const f = m.boltFace(st);
   return {
-    id: st.id, named: true, extra: "antenna and ears",
+    id: st.id, named: true, extra: "antenna and ears", neckDrop: 0.2, yaw: st.yaw, // R6: no neck, only the bezel's chin
     head: { c: [st.x, st.y + 0.085 * s, st.z], h: [0.33 * s, 0.4 * s, 0.33 * s] },
     // the head parts: the round shell as a sphere, the ears as small boxes and the antenna (stalk + tip, leaning toward +x by
     // about 0.18 rad), so the empty corners of a bounding cube do not count
@@ -37,9 +61,10 @@ const boltActor = (m, st) => {
 };
 
 // ------------------------------------------------------------------ tech3d
-export const techScene = (C, m, recipe) => {
+export const techScene = (C, m, recipe, LSq = false) => {
   const L = C.layout ?? { W: 1080, H: 1920 };
-  const W = L.W, H = L.H, LS = !!C.landscape;
+  const W = L.W, H = L.H, LS = !!C.landscape || LSq;
+  const capO = (s) => (LS ? lowerCap(m, C.capY ? C.capY(s) : m.LF?.CAP_Y ?? 905, 60, 1.0) : { mode: "short", W, side: 170, fs: 82, centre: m.CAP_CENTRE ?? 1344, from: 1.0, stroke: 7 });
   const k = LS ? 1 : 1; // the DOM sizes below are the portrait layout's (landscape cards are not re-checked here)
   const navy = "#14213D", white = "#ffffff", blueDeep = "#1C5BBF", sym = "#B5521A";
   const sample = (t) => {
@@ -55,7 +80,7 @@ export const techScene = (C, m, recipe) => {
       if (p.def) { const b = m.objBox(p.def, C.placeOf(p, t)); props.push({ key: p.key, box: { c: b.c, h: b.h } }); }
       else for (const b of C.qa(t).props) if (b.name === p.key) props.push({ key: p.key, box: { c: b.c, h: b.h } });
     }
-    return { shot: s.id, views: view(cam, W, H), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards: [], props, cards };
+    return { shot: s.id, views: view(cam, W, H, s.lens?.face), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards: [], props, cards, caption: kitCaption(C, m, s, t, capO(s)) };
   };
   const boardsAll = [
     { key: "callout label", label: "label cards", kind: "card", lines: [{ text: "label", fg: navy }], bg: white },
@@ -71,8 +96,9 @@ const LAW_HAIR = { short: 0.175, side: 0.2, long: 0.18, bun: 0.245, curly: 0.235
 const LAW_ROLE_HAIR = { judge: "short", plaintiff: "short", defendant: "short", lawyer: "side", witness: "short", bailiff: "short", juror: "short" };
 // 3D text: [cap height (m, scale 1), flat?, text colour, fill] (TEXT3D in law_build.mjs + objects.tsx textures)
 const LAW_TEXT3D = { sign: [0.1, false, "#B8322A", "#F7F1E2"], newspaper: [0.046, false, "#1A1410", "#EDE6D6"], nameplate: [0.032, false, "#2a1c08", "#E8B44A"], box: [0.035, false, "#1A1410", "#F3EAD7"], paper: [0.026, true, "#1A1410", "#F3EAD7"], folder: [0.032, true, "#1A1410", "#F3EAD7"] };
-export const lawScene = (C, m, recipe) => {
-  const L = C.layout, W = L.W, H = L.H;
+export const lawScene = (C, m, recipe, LSq = false) => {
+  const L = C.layout, W = L.W, H = L.H, LS = !!C.landscape || LSq;
+  const capO = (s) => (LS ? lowerCap(m, s.capY ?? m.LF?.CAP_Y ?? 905, L.capFs, 1.0) : { mode: "short", W, side: L.capSide, fs: L.capFs, centre: L.capCentre, from: 1.0, stroke: 7 });
   const ink = "#1A1410", cream = "#FFF4DE", gold = "#E8B44A", card = "#0B1426", paper = "#F3EAD7";
   const fsOf = (d) => {
     if (d.kind === "exhibit") return [[d.label, 34, card], [d.text, L.exhibitFs ?? 58, cream]];
@@ -87,7 +113,7 @@ export const lawScene = (C, m, recipe) => {
       const bx = m.figBoxes(st), hd = bx.find((b) => b.name.endsWith(".head"));
       const style = st.spec.hairStyle ?? LAW_ROLE_HAIR[st.spec.role] ?? "short";
       const top = (LAW_HAIR[style] ?? 0.2) * st.s, bot = 0.15 * st.s, half = (style === "curly" ? 0.175 : 0.16) * st.s;
-      return { id: st.id, named: true, extra: "hair", head: { c: [hd.c[0], hd.c[1] + (top - bot) / 2, hd.c[2]], h: [half, (top + bot) / 2, half] }, face: { c: hd.c, h: hd.h }, parts: bx.filter((b) => !b.name.endsWith(".head")).map((b) => ({ c: b.c, h: b.h })) };
+      return { id: st.id, named: true, extra: "hair", yaw: st.yaw, head: { c: [hd.c[0], hd.c[1] + (top - bot) / 2, hd.c[2]], h: [half, (top + bot) / 2, half] }, face: { c: hd.c, h: hd.h }, parts: bx.filter((b) => !b.name.endsWith(".head")).map((b) => ({ c: b.c, h: b.h })) };
     });
     const cards = C.devicesAt(t).map((d) => {
       const lines = fsOf(d).map(([tx, fs, fg]) => ln(tx, fs, fg));
@@ -110,7 +136,7 @@ export const lawScene = (C, m, recipe) => {
         plane: flat ? { c, w: 2 * box.h[0], h: 2 * box.h[2], yaw: pl.yaw, flat: true } : { c, w: 2 * box.h[0], h: 2 * box.h[1], yaw: pl.yaw },
         lines: [{ text: String(p.text).split("\n")[0], capM: tx[0] * pl.s, fg: tx[2] }], scaleField: "\"s\"" });
     }
-    return { shot: s.id, views: view(cam, W, H), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards, props, cards };
+    return { shot: s.id, views: view(cam, W, H, s.lens?.face), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards, props, cards, caption: kitCaption(C, m, s, t, capO(s)) };
   };
   const boardsAll = [
     ["exhibit tag label", card, gold], ["exhibit tag text", cream, card], ["verdict", gold, card], ["verdict sub", cream, card], ["case card", ink, paper], ["case card tab", card, "#C9A15C"], ["counter title", card, gold], ["counter value", cream, card],
@@ -120,8 +146,9 @@ export const lawScene = (C, m, recipe) => {
 };
 
 // ------------------------------------------------------------------ biz3d
-export const bizScene = (C, m, recipe) => {
-  const L = C.L ?? C.layout ?? m.layoutOf?.(recipe) ?? m.LAYOUTS.portrait, W = L.W ?? 1080, H = L.H ?? 1920;
+export const bizScene = (C, m, recipe, LSq = false) => {
+  const L = C.L ?? C.layout ?? m.layoutOf?.(recipe) ?? m.LAYOUTS.portrait, W = L.W ?? 1080, H = L.H ?? 1920, LS = L.id === "landscape" || LSq;
+  const capO = (s) => (LS ? lowerCap(m, C.capY ? C.capY(s) : m.LF?.CAP_Y ?? 905, L.cap.fs, L.cap.from) : { mode: "short", W, side: L.cap.side, fs: L.cap.fs, centre: L.cap.centre, from: L.cap.from, stroke: 7 });
   const ink = "#0E1726", white = "#ffffff", slate = "#34445E";
   const TT = { green: "#15803D", red: "#C62828", gold: "#8A6212" };
   const tt = (tone) => TT[tone] ?? "#13233F";
@@ -144,7 +171,8 @@ export const bizScene = (C, m, recipe) => {
       // execHead().c is the drawn head centre (fixed 2026-11-22); the hair cap reaches +0.17 s
       const c = hd.c;
       const by = st.seated ? 0.95 : 0.9, bh = st.seated ? 0.62 : 0.9;
-      return { id: st.id, named: true, extra: "hair", head: { c: [c[0], c[1] + 0.016 * sc, c[2]], h: [0.145 * sc, 0.155 * sc, 0.145 * sc] }, face: { c, h: [0.125 * sc, 0.1375 * sc, 0.125 * sc] }, parts: [{ c: [st.x, st.y + by * sc, st.z], h: [0.3 * sc, bh * sc, 0.2 * sc] }] };
+      // R6: the executive's neck is long (head bottom ~0.69 m over the hip, shoulders 0.52 + collar): 0.5 x the face height
+      return { id: st.id, named: true, extra: "hair", yaw: st.yaw, neckDrop: 0.5, faceTarget: `${st.id}.head`, head: { c: [c[0], c[1] + 0.016 * sc, c[2]], h: [0.145 * sc, 0.155 * sc, 0.145 * sc] }, face: { c, h: [0.125 * sc, 0.1375 * sc, 0.125 * sc] }, parts: [{ c: [st.x, st.y + by * sc, st.z], h: [0.3 * sc, bh * sc, 0.2 * sc] }] };
     });
     const cards = [];
     for (const l of C.labelsAt(t)) cards.push(rect(`label ${l.text}`, l.text, l.x, l.y, l.w, l.h, [ln(l.text, 52, ink)], white, l.u >= 0.99, "callout labels are placed by the engine: point the label at something away from the executive's head, or frame the head on the other side"));
@@ -157,7 +185,7 @@ export const bizScene = (C, m, recipe) => {
       const h = d.kind === "worth" ? d.h + 46 : d.h;
       cards.push(rect(`${d.kind} ${d.key ?? ""}`.trim(), d.spec?.text ?? d.spec?.title ?? d.spec?.name ?? d.kind, d.x, d.y + (h - d.h) / 2, d.w, h, lines, null, d.u >= 0.99, "devices sit at fixed layout spots: frame the executive away from that spot (cam.face / cam.az), or move the device (pos / y)"));
     }
-    return { shot: s.id, views: view(cam, W, H), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards: [], props: [], cards };
+    return { shot: s.id, views: view(cam, W, H, s.lens?.face), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards: [], props: [], cards, caption: kitCaption(C, m, s, t, capO(s)) };
   };
   const pairs = [["label", ink, white], ["company name", ink, white], ["tagline", slate, white], ["worth label", slate, white], ["worth pill", ink, "#F5B324"], ["board value", ink, white], ["counter value", white, "#0A0E1A"], ["board title (ink)", white, slate]];
   for (const [tone, c] of Object.entries(TT)) pairs.push([`${tone} text on white (year, worth, stamp)`, c, white], [`white on ${tone} (tag, board / counter title, decision)`, white, c]);
@@ -166,8 +194,9 @@ export const bizScene = (C, m, recipe) => {
 };
 
 // ------------------------------------------------------------------ cyber3d
-export const cyberScene = (C, m, recipe) => {
-  const L = C.L, W = L.W ?? 1080, H = L.H ?? 1920;
+export const cyberScene = (C, m, recipe, LSq = false) => {
+  const L = C.L, W = L.W ?? 1080, H = L.H ?? 1920, LS = L.id === "landscape" || LSq;
+  const capO = (s) => (LS ? lowerCap(m, (s.capY ?? (m.LF?.CAP_Y ?? 905) / 1080) * 1080, L.cap.fs, L.cap.from) : { mode: "short", W, side: L.cap.side, fs: L.cap.fs, centre: L.cap.centre, from: L.cap.from, box: 240 * (L.k ?? 1), stroke: 7 * (L.k ?? 1) });
   const wht = "#EAF6FF", glass = "#060A14", dim = "#6F86A8", red = "#FF2A3D", cyan = "#19E6FF";
   const TONE = { cyan, magenta: "#FF2BD6", red };
   const devLines = (d) => {
@@ -205,7 +234,7 @@ export const cyberScene = (C, m, recipe) => {
         lines: [{ text: String(p.spec.text ?? "").slice(0, 22), capM: (30 / 176) * 0.36 * sc * CAP(), fg: phish ? "#ffd0d6" : "#9fd8ec" }], bg: phish ? "#2a060c" : "#0b1424",
         landed: t >= (p.spec.motion ? p.hit : p.a) + 0.3, edge: true, featured: true, scaleField: "\"s\"" });
     }
-    return { shot: s.id, views: view(cam, W, H), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards, props: [], cards };
+    return { shot: s.id, views: view(cam, W, H, s.lens?.face), actors, subjects: subjectsOf(s.spec, actors.map((a) => a.id)), boards, props: [], cards, caption: kitCaption(C, m, s, t, capO(s)) };
   };
   const pairs = [["label", wht, glass], ["board value", wht, glass], ["case row label", dim, glass], ["money label", red, glass], ["alert", red, "#280006"], ["email", "#9fd8ec", "#0b1424"], ["phish email", "#ffd0d6", "#2a060c"]];
   for (const [tone, c] of Object.entries(TONE)) pairs.push([`board title on ${tone}`, "#000000", c], [`board symbol ${tone}`, c, glass]);
@@ -218,7 +247,7 @@ const SCENES = { tech3d: techScene, law3d: lawScene, biz3d: bizScene, cyber3d: c
  *  R1-R4 (R5 is the Shorts frame-0 rule); the 2D card sizes there come from the landscape layout, so only their
  *  placement and colours are checked, not their font size. */
 export const runFraming = (kit, C, m, recipe, landscape = false, step = 1, frame0Alt = null) => {
-  const sc0 = SCENES[kit](C, m, recipe);
+  const sc0 = SCENES[kit](C, m, recipe, landscape);
   if (frame0Alt) sc0.frame0 = { ...sc0.frame0, alt: frame0Alt };
   // a whip-in swings the frame across the set on purpose: its first 0.35 s is motion, not framing
   const whip = (t) => { const s = C.shotAt(t); return (s.spec.in === "whip" || s.spec.cam?.preset === "whip") && t < s.a + 0.35; };

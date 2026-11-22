@@ -129,3 +129,4 @@ export const clipAdapter = {
   compile: (recipe: LawRecipe, words: readonly Word[], vo?: number) => compileLawK(recipe, words, vo),
   retimeShot, retimeRecipe, hookText, hookShot,
 };
+export { chunkWords as capChunkWords } from "../src/fin/lib/captions";

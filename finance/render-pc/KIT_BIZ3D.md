@@ -280,6 +280,7 @@ names the shot, the time, the card / prop / person and what to move where.
 - **R5 FAIL (Shorts), frame 0 is a close-up of a face.** The hook is at the kit's full size, and the subject's face is
   at least 16 % of the frame height (307 px). In this kit the face part is **replaced by the frame-0 opener** below when
   it passes (the cast is faceless); the hook-size part always applies.
+- **R6 FAIL, no caption on a face or neck.** While a word caption is on screen, its real line boxes (the chunk's words in the bottom band; long-form: the lower third) must not overlap a character's head, face or neck / collar. Here the executives have a long neck, so the neck / collar box hangs 0.5 x the head height under the head. A close shot aimed at the chest (`"ceo"`) with a high `face` (0.7+) puts the neck on the band: aim at `"ceo.head"` with `face` about 0.35-0.40 instead. Characters under 15 % of the frame height and grazes under 3 frames / 20 x 20 px are ignored. The message gives `cam.face a -> b`, `cam.dist xN` or a sideways move for the actor.
 - Typical fixes: aim the camera at the person, move them toward the centre, pull back (`cam.dist`); put a card's target
   (`on`) or `pos` on the side away from the face; raise `cam.dist` on close shots so the hair stays in frame.
 

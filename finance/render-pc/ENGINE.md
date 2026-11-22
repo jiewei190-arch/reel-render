@@ -114,7 +114,7 @@ These timings come from synthetic 8.6-9.5 min recipes, each kit's landscape demo
 `tools/framing_qa.mjs` is the shared core. Each engine gives it a scene sampler: Block Money's `framingAt` in
 `src/fin/recipe/compile.tsx`, and the four kits' samplers in `tools/framing_kits.mjs`. The core projects heads, bodies,
 boards, cards and props through the shot camera (vertical fov plus roll, as View.tsx sets the camera up) into output
-pixels on every output frame (long-form: every `--qa-sample` frame). It adds five rules to the build. The plain-words
+pixels on every output frame (long-form: every `--qa-sample` frame). It adds six rules to the build. The plain-words
 version for writers is RECIPE_GUIDE.md §4.1 and each KIT guide's "Framing rules".
 
 | rule | result | check |
@@ -124,6 +124,7 @@ version for writers is RECIPE_GUIDE.md §4.1 and each KIT guide's "Framing rules
 | R3 | FAIL | Every landed board or card is inside the frame with a 3 % margin. |
 | R4 | FAIL | Every text line is >= 4.5:1 against its fill (WCAG); a featured main line is >= 42 px font size. |
 | R5 | FAIL | Shorts, frame 0: the hook is at full size and the subject's face is >= 16 % of the frame height. |
+| R6 | FAIL | While a word caption is on screen, its line boxes do not overlap any character's head, face or neck / collar box (characters >= 15 % of the frame height). Shorts and long-form. |
 
 A violation must last 3 output frames (0.1 s) to count. A board flying through a face, or a whip pan, is motion.
 
@@ -152,6 +153,42 @@ A violation must last 3 output frames (0.1 s) to count. A board flying through a
 - **R5: the existing 50 % gate let a weak frame 0 pass.** It counts any subject, so a body or a prop covering 50 % passed
   even when the face was small. R5 measures the subject's face, on screen. The 16 % threshold sits between a mid-shot
   (the `medium` preset is about 15 %) and the default `hookZoom` frame 0 on a face (about 18 %).
+
+**R6, the caption over a face or neck (2026-11-22).** An AI editor flagged burned-in captions on a chin, neck or chest
+on 4 of 8 recent Shorts ("A JOKE" on a neck, "SAYING" on a chin). The existing caption plan and the caption-safe lift only
+look at the eyes-to-mouth box, so a caption on the chin or neck passed.
+- **The caption geometry is the real one.** Every sampler returns the caption on screen at t, the chunk the film shows
+  (3-word chunks from 1.0 s; long-form 7-word phrases; a shot's fixed `caption`; `"off"` hides it), at the band its
+  component uses: Block Money `capPlan(...).y` (84 px, 170 px sides), tech3d 1344 / 82 px / 170, law3d `capCentre` 1350 /
+  84 / 150, biz3d `cap.centre` 1344 / 82 / 170, cyber3d `cap.centre` 1344 / 80 / 150; long-form the lower third at the
+  shot's `capY` (60 px, 240 px sides). `captionLines` (framing_qa.mjs) lays the words out like the CSS: Poppins 800
+  widths, flex-wrap in the box (lines share the 240 px box), or the long-form 2-line balanced wrap, plus the stroke. A
+  3-word caption is a 400-700 px box, not the whole band.
+- **The protected zone** is the R1/R2 head box (hair, antennae) + the face box + a neck / collar box hanging under the
+  face box (`RULES.neckDrop` x the face-box height, as wide as the face; per actor `neckDrop`):
+  - **0.3** default (law3d figures, cyber3d figures). 0.5 reached the shirt front on law3d close shots
+    (`law-demo-54-million-pants` S13, S17, S19, checked on stills), and a caption on the chest is allowed by the owner's
+    rule v2;
+  - **0.5** biz3d executives: their neck is long (the head bottom ~0.69 m over the hip, shoulders at 0.52);
+  - **0.2** BOLT (tech3d, cyber3d): no neck, only the bezel's chin;
+  - **0.05** Block Money: the block head sits straight on the torso. With 0.3, `overdraft-35` fired on 10 shots whose
+    captions were all on the chest (stills); with 0.05 it fires on none.
+- **Not noisy:** characters whose whole body is under 15 % of the frame height are skipped; the overlap must be > 6 px on
+  both axes and >= 400 px² (20 x 20) of the exact silhouette; it must last 3 frames (like R1).
+- **Advice from the worst frame**, ranked by how much lift it needs (a push-in that gets worse later gets a big enough
+  move). The options, in the recipe's units:
+  1. put the subject higher in frame: `cam.face a -> b`, only if the head box keeps the 11 px R2 margin at **every**
+     frame of the shot (a push-in raises the head after the R6 frame) and the face fraction stays >= 0.05;
+  2. pull the camera back: `cam.dist xN`, sized about the camera target (it stays at the face fraction), only up to x2.5;
+  3. when lifting alone runs out of head room: lift what fits and pull back, or (the target is under the caption, e.g. a
+     biz3d chest target) aim at the face (`"<id>.face"`, biz3d `"<id>.head"`) at `cam.face 0.40` with `cam.dist xN`;
+  4. move the actor sideways out of the caption's width, only if the head stays in frame and centred enough for R2.
+- **Not changed:** the caption-safe lift (Block Money portrait, the kits' long-form lift) still clears the eyes-to-mouth
+  box only. Making it also clear the neck would re-frame already-rendered Shorts, so it is left as a follow-up; R6 now
+  reports what the lift leaves.
+- **Regression:** on all 35 recipes in finance/shorts and finance/longform, every R1-R5 line and every exit code is
+  identical to engine/all (R6 adds lines only; no recipe that passed before fails now). Report:
+  docs/CAPTION_SAFE_REPORT.md.
 
 **Engine colour fixes** (the writer cannot set these, so they had to pass in code):
 - the calendar title / sub grey: `#736c84`, 4.8:1 (was 2.9:1);

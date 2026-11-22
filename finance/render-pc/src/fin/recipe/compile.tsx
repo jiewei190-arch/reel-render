@@ -21,7 +21,7 @@ import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill, CAL_GREY } from "../pr
 import { Asset, assetSize, useAssetWindow, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
-import { LowerThirdCaptions, RecipeCaptions, chunkWords } from "../lib/captions";
+import { LowerThirdCaptions, RecipeCaptions, SAFE, chunkWords } from "../lib/captions";
 import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
@@ -679,7 +679,8 @@ export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
     const parts = qa.actors.filter((b) => b.name.startsWith(`${st.id}.`)).map((b) => ({ c: b.c, h: b.h }));
     const torso = st.torso, low = st.grounded ? 0 : Math.max(0, st.pose.y - 0.6 * st.s);
     parts.push({ c: [st.pose.x, (low + torso[1]) / 2, st.pose.z], h: [0.2 * st.s, Math.max(0.05, (torso[1] - low) / 2), 0.16 * st.s] });
-    return { id: st.id, head: headBox(st), headParts: headParts(st), face: { c: st.head, h: [0.16 * st.s, 0.17 * st.s, 0.16 * st.s] as V3 }, parts, named: true, yaw: st.pose.yaw };
+    // neckDrop (framing R6): the block head sits straight on the torso (no neck), so only a 0.05 x head-height seam counts
+    return { id: st.id, head: headBox(st), headParts: headParts(st), face: { c: st.head, h: [0.16 * st.s, 0.17 * st.s, 0.16 * st.s] as V3 }, parts, named: true, yaw: st.pose.yaw, neckDrop: 0.05 };
   });
   // the subject of each view: the camera's target actor; else the shot's `subject`; else its only actor (if on screen)
   const ids = states.map((x) => x.id);
@@ -723,7 +724,20 @@ export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
       fgField: tp.fgField, fix: tp.fix,
     });
   }
-  return { shot: s.id, views, actors, subjects, boards, props: others };
+  // framing rule R6 (tools/framing_qa.mjs): the word caption on screen now, as RecipeCaptions / LowerThirdCaptions draw it
+  // (recipe_build lays out its line boxes with framing_qa.mjs captionLines)
+  views.forEach((v, i) => { (v as { face?: number }).face = (i === 1 && s.lens2 ? s.lens2 : s.lens).face; });
+  let captionSpec: { words: string[]; mode: "short" | "lower"; W: number; side: number; fs: number; centre: number; stroke: number } | null = null;
+  if (!(s.spec.caption === "off" || c.recipe.captions === "off")) {
+    const fixed = s.spec.caption && s.spec.caption !== "auto" ? String(s.spec.caption) : null;
+    let words: string[] | null = null;
+    if (fixed) words = t >= s.a - 0.05 && t < s.b ? fixed.split(/\s+/) : null;
+    else if (t >= CAPTIONS_FROM) { const ch = (c.landscape ? CHUNKS_L(c) : CHUNKS(c)).find((k) => t >= k.start - 0.05 && t < k.hold); words = ch ? ch.words.map((w) => w.w) : null; }
+    if (words) captionSpec = c.landscape
+      ? { words, mode: "lower", W: 1920, side: 240, fs: 60, centre: capPlanL(c, s).y, stroke: 3 }
+      : { words, mode: "short", W: 1080, side: SAFE.right + 10, fs: 84, centre: capPlan(c, s).y, stroke: 3.5 };
+  }
+  return { shot: s.id, views, actors, subjects, boards, props: others, captionSpec };
 };
 /** every board of the recipe once (for the contrast rule), with the shots it appears in */
 export const framingBoards = (c: Compiled, M: FrMeasure) => {

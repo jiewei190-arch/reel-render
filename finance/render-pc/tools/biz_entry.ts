@@ -118,3 +118,5 @@ export const clipAdapter = {
   hookShot,
   r3,
 };
+export { chunkWords as capChunkWords } from "../src/fin/lib/captions";
+export { LF } from "../src/longform/kit";
