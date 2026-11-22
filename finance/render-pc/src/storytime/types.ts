@@ -52,7 +52,7 @@ export type PoseEv = { at?: At } & Partial<Record<CastId, Pose>>;
 export type LookEv = { at?: At } & Partial<Record<CastId, "front" | CastId | "cam">>;
 
 export type Fx =
-  | { fx: "shake"; at?: At; gain?: number; dur?: number }
+  | { fx: "shake"; at?: At; gain?: number; dur?: number; sustain?: boolean }
   | { fx: "punch"; at?: At; gain?: number }
   | { fx: "flash"; at?: At }
   | { fx: "shatter"; at?: At };

@@ -27,9 +27,10 @@ const frames = rest[0] === "all" ? Array.from({ length: Math.floor(last / 30) + 
   : rest.map((x) => (x === "mid" ? Math.floor(last / 2) : x === "end" ? last : x.endsWith("s") ? Math.round(parseFloat(x) * 30) : parseInt(x, 10)));
 for (const f0 of frames) {
   const f = Math.min(last, f0);
-  const out = join(outDir, `${prefix || comp}_f${String(f).padStart(4, "0")}.jpg`);
+  const png = process.env.PNG === "1";
+  const out = join(outDir, png ? `${prefix || comp}.png` : `${prefix || comp}_f${String(f).padStart(4, "0")}.jpg`);
   const T = Date.now();
-  await renderStill({ composition, serveUrl, output: out, frame: f, scale, imageFormat: "jpeg", jpegQuality: 88, puppeteerInstance: browser, chromiumOptions: { gl }, timeoutInMilliseconds: 240000 });
+  await renderStill({ composition, serveUrl, output: out, frame: f, scale, ...(process.env.PNG === "1" ? { imageFormat: "png" } : { imageFormat: "jpeg", jpegQuality: 88 }), puppeteerInstance: browser, chromiumOptions: { gl }, timeoutInMilliseconds: 240000 });
   console.log(`${out} (frame ${f}, ${((Date.now() - T) / 1000).toFixed(1)} s)`);
 }
 await browser.close({ silent: true });

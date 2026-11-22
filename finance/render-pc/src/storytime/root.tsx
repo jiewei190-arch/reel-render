@@ -5,6 +5,7 @@ import { Composition } from "remotion";
 import { compileStory } from "./compile";
 import type { Compiled } from "./compile";
 import { StoryFilm } from "./film";
+import { BrandBanner, BrandPfp } from "./branding";
 import { GALLERY } from "./gallery";
 import { STORY_RECIPES } from "./registry.gen";
 
@@ -30,5 +31,8 @@ export const StoryRoot: React.FC = () => (
       const c = storyCompiled(id);
       return <Composition key={id} id={id} component={Film} durationInFrames={c.duration} fps={30} width={c.layout.W} height={c.layout.H} defaultProps={{ id }} />;
     })}
+    <Composition id="StoryPfp" component={BrandPfp} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ text: false }} />
+    <Composition id="StoryPfpText" component={BrandPfp} durationInFrames={1} fps={30} width={1080} height={1080} defaultProps={{ text: true }} />
+    <Composition id="StoryBanner" component={BrandBanner} durationInFrames={1} fps={30} width={2560} height={1440} />
   </>
 );
