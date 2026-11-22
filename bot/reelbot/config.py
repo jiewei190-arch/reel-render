@@ -12,6 +12,17 @@ from pathlib import Path
 BOT_DIR = Path(__file__).resolve().parent.parent
 
 
+def eleven_key(channel_id: str | None = None) -> str | None:
+    """ElevenLabs key for a channel: ELEVENLABS_API_KEY_<CHANNEL> (e.g. _LAW, _BIZ, _JUSTIN, _BLOCKMONEY) when the owner
+    has given that channel its own paid account, else ELEVENLABS_API_KEY. One fixed account per channel, never a
+    rotation: accounts are never switched to get around a limit."""
+    if channel_id:
+        k = os.environ.get(f"ELEVENLABS_API_KEY_{channel_id.upper()}")
+        if k:
+            return k
+    return os.environ.get("ELEVENLABS_API_KEY")
+
+
 def _load_dotenv() -> None:
     env = BOT_DIR / ".env"
     if not env.exists():

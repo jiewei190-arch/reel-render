@@ -65,7 +65,9 @@ def _time_of(word: str, timings: dict) -> float | None:
 def _generate(desc: str, dur: float, out: Path) -> None:
     if os.environ.get("REELBOT_ELEVENLABS_OFF") == "1" or os.environ.get("REELBOT_SFX_REPLAN") == "0":
         raise RuntimeError("ElevenLabs is switched off for this run (REELBOT_ELEVENLABS_OFF/REELBOT_SFX_REPLAN=0); cue skipped")
-    key = os.environ.get("ELEVENLABS_API_KEY")
+    from . import channels
+    from .config import eleven_key
+    key = eleven_key(channels.active().id)
     if not key:
         CFG.require_keys("ELEVENLABS_API_KEY")
     r = requests.post("https://api.elevenlabs.io/v1/sound-generation",
