@@ -48,6 +48,9 @@ class Config:
         "Todd": "g14YnDYCsy3k7XLlcKlO",      # Scams & Hacks
         "Nichalia": "XfNU2rGpBa01ckF309OY",  # Law
         "Liam": "VCgLBmBjldJmfphyB8sZ",      # Justin clips Shorts
+        # free local voices (Kokoro-82M on the PC through monster's venv; no account, nothing leaves the PC)
+        "Onyx (local)": "kokoro:am_onyx",       # Scams & Hacks while ElevenLabs is avoided for scam stories
+        "Michael (local)": "kokoro:am_michael",
         "Russ": "t0eCaS57KWbQQc1wRkah",      # Justin clips long videos
     })
 

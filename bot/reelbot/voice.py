@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import requests
 
-from .config import CFG
+from .config import BOT_DIR, CFG
 from .cost import COST
 
 SR = 24000
@@ -41,7 +41,62 @@ def settings_for(mood: str | None) -> tuple[float, float]:
     return MOOD_SETTINGS.get(mood or "neutral", (0.45, 0.30))
 
 
+LOCAL_SCRIPT = r"""
+import json, sys
+from pathlib import Path
+from mya import voice
+text, v, speed, out = sys.argv[1], sys.argv[2], float(sys.argv[3]), Path(sys.argv[4])
+print("RESULT " + json.dumps(voice.synth(text, v, speed, out)))
+"""
+
+
+def _local_python() -> str:
+    env = os.environ.get("REELBOT_KOKORO_PYTHON")
+    if env:
+        return env
+    mon = BOT_DIR.parent / "monster" / ".venv"
+    for p in (mon / "Scripts" / "python.exe", mon / "bin" / "python"):
+        if p.exists():
+            return str(p)
+    raise RuntimeError("local voice: monster's venv not found; run monster/setup_windows.ps1 or set REELBOT_KOKORO_PYTHON")
+
+
+def _tts_local(text: str, voice: str, speed: float) -> tuple[bytes, dict]:
+    """Kokoro-82M through monster's venv (free, on the PC). Returns 24 kHz PCM and an ElevenLabs-style character
+    alignment built from Kokoro's word timings, so the rest of the pipeline is unchanged. Audio tags are dropped."""
+    import subprocess
+    import tempfile
+    import wave
+    plain = strip_tags(text)
+    with tempfile.TemporaryDirectory(prefix="reelbot_kokoro_") as tmp:
+        out = Path(tmp) / "line.wav"
+        r = subprocess.run([_local_python(), "-c", LOCAL_SCRIPT, plain, voice, str(speed), str(out)],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace",
+                           cwd=str(BOT_DIR.parent / "monster"), timeout=600)
+        line = next((l for l in r.stdout.splitlines() if l.startswith("RESULT ")), None)
+        if r.returncode != 0 or not line:
+            raise RuntimeError(f"local voice failed: {(r.stderr or r.stdout)[-400:]}")
+        meta = json.loads(line[7:])
+        with wave.open(str(out)) as w:
+            pcm = w.readframes(w.getnframes())
+    chars, st, en = [], [], []
+    toks = [t for t in meta["tokens"] if t.get("start") is not None and t["text"].strip()]
+    for k, t in enumerate(toks):
+        w0, w1 = t["start"], t["end"] if t.get("end") is not None else t["start"] + 0.2
+        n = len(t["text"])
+        for j, ch in enumerate(t["text"]):
+            chars.append(ch)
+            st.append(w0 + (w1 - w0) * j / n)
+            en.append(w0 + (w1 - w0) * (j + 1) / n)
+        nxt = toks[k + 1]["start"] if k + 1 < len(toks) else w1
+        if k + 1 < len(toks) and not (toks[k + 1]["text"][0] in ".,!?;:'"):
+            chars.append(" "); st.append(w1); en.append(nxt)
+    return pcm, {"characters": chars, "character_start_times_seconds": st, "character_end_times_seconds": en}
+
+
 def _tts(text: str, voice_id: str, speed: float, mood: str | None = None) -> tuple[bytes, dict]:
+    if voice_id.startswith("kokoro:"):
+        return _tts_local(text, voice_id.split(":", 1)[1], speed)
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not key:
         CFG.require_keys("ELEVENLABS_API_KEY")
@@ -193,7 +248,8 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
         if LISTEN:  # an AI listener checks the take; a bad take is re-recorded (best take wins)
             best = (_listen(pcm, line, mood), pcm, al)
             line_retakes = 0
-            while not best[0]["ok"] and retakes_left > 0 and line_retakes < RETAKES_PER_LINE:
+            while (not best[0]["ok"] and retakes_left > 0 and line_retakes < RETAKES_PER_LINE
+                   and not voice_id.startswith("kokoro:")):  # the local voice is deterministic: a retake is identical
                 retakes_left -= 1
                 line_retakes += 1
                 print(f"    retake: {best[0]['problem']}")
@@ -257,7 +313,7 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
         {"source": {"audio": "voice.wav", "script": "script.txt", "model": f"elevenlabs:{CFG.eleven_model}",
                     "duration": round(t, 3)}, "turns": turns}, indent=1), encoding="utf-8")
     (folder / "voice.lines.json").write_text(json.dumps(
-        {"provider": "elevenlabs", "voice": voice, "voice_id": voice_id, "model": CFG.eleven_model, "gap": gap,
+        {"provider": "kokoro-local" if voice_id.startswith("kokoro:") else "elevenlabs", "voice": voice, "voice_id": voice_id, "model": CFG.eleven_model, "gap": gap,
          "lead": lead, "speed": speed, "tempo": round(tempo, 4), "sr": SR, "duration": round(t, 3),
          "characters": sum(len(l) for l in lines), "lines": meta}, indent=1), encoding="utf-8")
     if checks:

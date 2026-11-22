@@ -80,12 +80,12 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         id="cyber", name="Scam Files TV (true scams and hacks)",
         brief=("A channel of TRUE scams, hacks and data breaches told like heist stories, ending with how to spot it. "
                "US adults 18-45. Educational: story-level, never operational how-to."),
-        prompt="story_script.md", doc="cyber.md", voices=("Todd",), kit="cyber3d", entry="src/index.cyber.ts",
+        prompt="story_script.md", doc="cyber.md", voices=("Onyx (local)",), kit="cyber3d", entry="src/index.cyber.ts",
         about=('Scam Files TV tells the true stories behind famous scams, frauds and cyber crimes: how they fooled people, who fell for them and how they got caught. Every story is researched and sourced. Story level only, never a how-to. Subscribe and stay one step ahead of the scammers.'),
         disclaimers=("Educational only. Based on public court records and news reports listed below. "
                      "Nothing here is instructions for committing a crime.", "Voice is synthetic."),
         analytics="cyber", folder="ScamFilesTV",
-        hook_rules="12 words or fewer; the amount stolen or the shocking trick in sentence one, aimed at 'you' if it can be.",
+        hook_rules="12 words or fewer; the amount stolen or the shocking trick in sentence one, as narration or a question to 'you' (never the scammer's own words).",
         cast_rule="Use only the kit's generic figures; no real logos, agency seals or real faces."),
 )}
 
