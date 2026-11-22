@@ -33,6 +33,61 @@ def schema_for(t: str) -> dict:
     return {"$defs": DEFS, **DEFS[t]}
 
 
+def _loose(o):
+    """Same schema with string length caps removed: constrained decoding would cut text mid-word at the cap.
+    The real caps are enforced afterwards, and an over-long answer is rejected and retried instead."""
+    if isinstance(o, dict):
+        return {k: _loose(v) for k, v in o.items() if k != "maxLength"}
+    if isinstance(o, list):
+        return [_loose(v) for v in o]
+    return o
+
+
+def _clean(o):
+    if isinstance(o, dict):
+        return {k: _clean(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_clean(v) for v in o]
+    if isinstance(o, str):
+        return re.sub(r"\s+", " ", re.sub(r"[*_`#]+", "", o)).strip()  # no markdown on screen
+    return o
+
+
+MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
+VERDICT_WORDS = {"guilty": "GUILTY", "acquitted": "ACQUITTED", "favor": "VERDICT", "dismissed": "DISMISSED",
+                 "settled": "SETTLED", "sued": "SUED", "bankrupt": "BANKRUPT", "bankruptcy": "BANKRUPT",
+                 "closed": "CLOSED", "arrested": "ARRESTED", "convicted": "CONVICTED", "sentenced": "SENTENCED",
+                 "settlement": "SETTLED", "scam": "SCAM", "hacked": "HACKED", "stolen": "STOLEN", "refused": "REFUSED", "lost": "LOST"}
+
+
+def fallback(narration: str, types: list[str]) -> tuple[str, dict] | None:
+    """Build a visual from the line's own facts, without the model. None = nothing concrete to show."""
+    low = narration.lower()
+    money = re.search(r"\$([\d,.]+)\s*(million|billion|thousand)?", narration)
+    if money and "counter" in types:
+        v = float(money.group(1).replace(",", ""))
+        mult = {"million": 1e6, "billion": 1e9, "thousand": 1e3}.get((money.group(2) or "").lower(), 1)
+        val, suffix = (v, {"million": "M", "billion": "B", "thousand": "K"}[money.group(2).lower()]) if money.group(2) else (v, "")
+        words = [w for w in re.findall(r"[A-Za-z']+", narration) if len(w) > 3][:4]
+        return "counter", {"label": " ".join(words)[:60] or "Amount", "value": val, "prefix": "$", "suffix": suffix,
+                           "decimals": 1 if val != int(val) else 0}
+    date = re.search(rf"(?:({MONTHS})\s+\d{{1,2}},\s*)?(1[0-9]{{3}}|20[0-9]{{2}})", narration)
+    for w, stamp in VERDICT_WORDS.items():
+        if re.search(rf"\b{w}\b", low) and "stamp" in types:
+            sub = (date.group(0) if date else "")
+            return "stamp", ({"text": stamp, "sub": sub} if sub else {"text": stamp})
+    if date and "document" in types:
+        kw = [w for w in re.findall(r"[A-Za-z'-]+", narration) if len(w) > 3 and w.lower() not in STOP
+              and not re.fullmatch(MONTHS, w)][:6]
+        return "document", {"kind": "Record", "title": date.group(0), "lines": [" ".join(kw[:3]), " ".join(kw[3:6])][: 2 if kw[3:] else 1]}
+    num = re.search(r"\b(\d[\d,]*)\b", narration)
+    if num and "counter" in types:
+        n = float(num.group(1).replace(",", ""))
+        words = [w for w in re.findall(r"[A-Za-z']+", narration[num.end():]) if len(w) > 2][:3]
+        return "counter", {"label": " ".join(words)[:60] or "Number", "value": n}
+    return None
+
+
 def _onscreen_numbers(params) -> set[str]:
     return numbers(json.dumps(params))
 
@@ -95,7 +150,8 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
                     "(54000000 not '54 million'; put $ in prefix).",
                     f"Narration: \"{s['narration']}\"\nWhat the viewer should see: {s['visual_intent']}\nFacts:\n{facts}"
                     + (f"\nLast attempt was rejected: {why}" if why else ""),
-                    schema_for(t), temperature=0.3, max_tokens=350)
+                    _loose(schema_for(t)), temperature=0.3, max_tokens=350)
+                cand = _clean(cand)
                 jsonschema.validate(cand, schema_for(t))
                 stray = sorted(n for n in _onscreen_numbers(cand) if n not in allowed and n not in ("0", "1", "2", "3", "4"))
                 if stray:
@@ -110,8 +166,15 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
             except Exception as e:  # noqa: BLE001
                 why = str(e)[:200]
         if params is None:
-            t, params = "title", {"headline": s["narration"][:88]}
-            findings.append({"severity": "major", "stage": "storyboard", "scene": s["id"],
-                             "finding": f"no valid visual could be planned ({why}); used a plain text card"})
+            fb = fallback(s["narration"], types)
+            if fb:
+                t, params = fb
+                findings.append({"severity": "minor", "stage": "storyboard", "scene": s["id"],
+                                 "finding": f"model visual rejected ({why[:120]}); built a {t} from the line's own facts"})
+            else:
+                kw = [w for w in re.findall(r"[A-Za-z']+", s["narration"]) if len(w) > 3 and w.lower() not in STOP][:4]
+                t, params = "title", {"headline": " ".join(kw)[:60] or "..."}
+                findings.append({"severity": "major", "stage": "storyboard", "scene": s["id"],
+                                 "finding": f"no valid visual could be planned ({why[:120]}); used a keyword card"})
         scenes.append({"id": s["id"], "type": t, "params": params, "claim_ids": s["claim_ids"]})
     return scenes, findings
