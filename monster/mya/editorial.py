@@ -44,8 +44,8 @@ def _brief(profile, fmt: str, claims: list[dict], lessons: str) -> tuple[str, st
         f"You write narration for '{profile.working_name}', a faceless YouTube channel. Niche: {profile.niche}. "
         f"Audience: {profile.audience}. Promise: {profile.promise}. Tone: {profile.tone}. "
         f"Never: {'; '.join(profile.avoid)}.\n"
-        "Rules: use ONLY facts from the numbered claims, and cite their ids in each scene's claim_ids. Do not invent "
-        "numbers, dates, names or quotes. Scene 1 is the hook: the most surprising fact in one short sentence, no "
+        "Rules: every scene must restate ONLY what its cited claims say, and cite their ids in claim_ids. Do not invent "
+        "numbers, dates, names, quotes or outcomes; if the claims don't say who won or what happened, don't say it. Scene 1 is the hook: the most surprising fact in one short sentence, no "
         "greeting, no 'today we'. Each scene is 1-2 short sentences a narrator can say naturally. End with a clear payoff."
     )
     shape = ("a Short: 6-10 scenes" if fmt == "short" else
@@ -63,10 +63,11 @@ def _brief(profile, fmt: str, claims: list[dict], lessons: str) -> tuple[str, st
 def check(script: dict, claims: list[dict], profile, fmt: str) -> list[str]:
     """Problems that make a draft unusable. Empty list = passes."""
     problems = []
-    lo, _, hi = target_words(profile, fmt)
-    words = sum(speech.word_count(s["narration"]) for s in script["scenes"])
-    if words < lo * 0.9 or words > hi * 1.1:
-        problems.append(f"length: {words} spoken words, needs {lo}-{hi}")
+    if fmt != "_line":
+        lo, _, hi = target_words(profile, fmt)
+        words = sum(speech.word_count(s["narration"]) for s in script["scenes"])
+        if words < lo * 0.75 or words > hi * 1.1:
+            problems.append(f"length: {words} spoken words, needs {lo}-{hi}")
     by_id = {c["id"]: c for c in claims}
     for i, s in enumerate(script["scenes"], 1):
         cited = [by_id[c] for c in s["claim_ids"] if c in by_id]
@@ -78,28 +79,127 @@ def check(script: dict, claims: list[dict], profile, fmt: str) -> list[str]:
         stray = sorted(n for n in nums if n not in allowed)
         if stray:
             problems.append(f"scene {i} says numbers no cited claim supports: {stray} ('{s['narration'][:60]}')")
-    first = script["scenes"][0]["narration"].lower()
+    first = script["scenes"][0]["narration"].lower() if script["scenes"] else ""
     if re.match(r"^(hi|hey|hello|welcome|today|in this video)", first):
         problems.append("scene 1 is a greeting, not a hook")
     return problems
 
 
+ROLE_ORDER = {"hook": 0, "context": 1, "number": 2, "twist": 3, "outcome": 4, "aftermath": 5}
+LINE_SCHEMA = {
+    "type": "object", "additionalProperties": False, "required": ["narration", "visual_intent"],
+    "properties": {"narration": {"type": "string", "minLength": 8, "maxLength": 200},
+                   "visual_intent": {"type": "string", "maxLength": 160}},
+}
+META_SCHEMA = {
+    "type": "object", "additionalProperties": False,
+    "required": ["title", "audience_question", "promise", "originality_note", "description"],
+    "properties": {k: {"type": "string", "minLength": 5, "maxLength": 300} for k in
+                   ("title", "audience_question", "promise", "originality_note", "description")},
+}
+
+
+def _line(profile, claim: dict, position: str, prev: str, lessons: str, fix: str = "") -> dict:
+    return llm.ask(
+        f"You write one line of narration for '{profile.working_name}' ({profile.niche}). Tone: {profile.tone}. "
+        "Restate ONLY what the SOURCE sentence says, in plain spoken English, at most 24 words. Keep its names, "
+        "numbers and dates exactly. Never add who won, what happened next, or anything else not in the sentence."
+        + (" This is the HOOK: open with the most surprising part, no greeting." if position == "hook" else ""),
+        f"SOURCE: {claim['passage']}\nPrevious line: {prev or '(none, this is the first line)'}\n{lessons}"
+        + (f"\nYour last version was rejected: {fix}" if fix else ""),
+        LINE_SCHEMA, temperature=0.3, max_tokens=160)
+
+
 def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", feedback: str = "") -> tuple[dict, list[str]]:
-    system, user = _brief(profile, fmt, claims, lessons)
-    if feedback:
-        user += f"\n\nFix these problems from the last draft:\n{feedback}"
-    tries = cfg().runtime.get("max_regenerations_per_stage", 2) + 1
-    problems: list[str] = []
-    script = {}
-    for _ in range(tries):
-        sch = json.loads(json.dumps(SCRIPT_SCHEMA))
-        sch["properties"]["scenes"]["minItems"], sch["properties"]["scenes"]["maxItems"] = (6, 11) if fmt == "short" else (16, 34)
-        script = llm.ask(system, f"Topic: {topic}\n" + user + (
-            "\n\nYour last draft had these problems; fix every one:\n- " + "\n- ".join(problems) if problems else ""),
-            sch, temperature=0.5, max_tokens=1400 if fmt == "short" else 5000)
-        problems = check(script, claims, profile, fmt)
-        if not problems:
-            break
+    """One scene per source sentence (hook first, outcome last). A narrow task per call keeps small local models
+    from drifting; every line is then fact-checked against its own sentence and rewritten (bounded) if it fails."""
+    ordered = sorted([c for c in claims if c["status"] == "verified"], key=lambda c: (ROLE_ORDER.get(c.get("role"), 2), c["id"]))
+    if fmt == "short":
+        ordered = ordered[:11]
+    scenes, prev = [], ""
+    for k, cl in enumerate(ordered):
+        pos = "hook" if k == 0 else "end" if k == len(ordered) - 1 else "middle"
+        line, fix = None, ""
+        for _ in range(cfg().runtime.get("max_regenerations_per_stage", 2) + 1):
+            cand = _line(profile, cl, pos, prev, lessons, fix)
+            sc = {"narration": cand["narration"].strip(), "claim_ids": [cl["id"]], "visual_intent": cand["visual_intent"]}
+            probs = check({"scenes": [sc]}, claims, profile, "_line") + support_check({"scenes": [sc]}, claims)
+            if not probs:
+                line = sc
+                break
+            fix = "; ".join(probs)
+        if line:
+            scenes.append(line)
+            prev = line["narration"]
+    script = {"scenes": scenes}
+    if len(scenes) >= 3:
+        meta = llm.ask(
+            f"Write the YouTube metadata for this '{profile.working_name}' video. Title: under 60 characters, specific, "
+            "no clickbait the script doesn't deliver, no hashtags. Description: 2 sentences.",
+            "Script:\n" + "\n".join(s["narration"] for s in scenes), META_SCHEMA, temperature=0.4, max_tokens=400)
+        script.update(meta)
+    script = tighten(script, profile, fmt)
+    problems = check(script, claims, profile, fmt) if len(scenes) >= 3 else ["fewer than 3 lines passed the fact check"]
     for i, s in enumerate(script["scenes"], 1):
         s["id"] = f"sc{i:02d}"
     return script, problems
+
+def tighten(script: dict, profile, fmt: str) -> dict:
+    """Small models are poor at hitting a word count but good at choosing. If a draft is long, the model picks which
+    scenes to keep (hook and payoff always stay); nothing is rewritten or cut mid-sentence."""
+    lo, mid, hi = target_words(profile, fmt)
+    sc = script["scenes"]
+    words = [speech.word_count(s["narration"]) for s in sc]
+    if sum(words) <= hi:
+        return script
+    listing = "\n".join(f"[{i}] ({w} words) {s['narration']}" for i, (s, w) in enumerate(zip(sc, words)))
+    res = llm.ask(
+        "You are an editor cutting a video script to length. Keep the hook (first scene), the payoff (last scene) and "
+        "the scenes the story needs to make sense. Drop repetition and side details.",
+        f"Total must be at most {hi} words (aim for {mid}). Scenes:\n{listing}\n\nReturn the indices to KEEP, in order.",
+        {"type": "object", "additionalProperties": False, "required": ["keep"],
+         "properties": {"keep": {"type": "array", "minItems": 3, "maxItems": len(sc),
+                                 "items": {"type": "integer", "minimum": 0, "maximum": len(sc) - 1}}}},
+        temperature=0.1, max_tokens=120)
+    keep = sorted(set(res["keep"]) | {0, len(sc) - 1})
+    # if still long, drop the lowest-information middle scenes deterministically (longest first) until it fits
+    while sum(words[i] for i in keep) > hi and len(keep) > 3:
+        mids = [i for i in keep if i not in (0, len(sc) - 1)]
+        keep.remove(max(mids, key=lambda i: words[i]))
+    return {**script, "scenes": [sc[i] for i in keep], "tightened": True}
+
+
+SUPPORT_SCHEMA = {
+    "type": "object", "additionalProperties": False, "required": ["verdict", "evidence"],
+    "properties": {"verdict": {"enum": ["supported", "contradicted", "not_in_sources"]},
+                   "evidence": {"type": "string", "description": "the exact words from the sources that support the line"}},
+}
+
+
+def _norm(t: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9$%. ]", " ", t.lower())).strip()
+
+
+def support_check(script: dict, claims: list[dict]) -> list[str]:
+    """Each line must be backed by its cited passages. The judge must quote the supporting words, and the quote must
+    really appear in those passages; a line is also rejected when the judge says it contradicts them."""
+    by_id = {c["id"]: c for c in claims}
+    problems = []
+    for i, s in enumerate(script["scenes"], 1):
+        cited = [by_id[c]["passage"] for c in s["claim_ids"] if c in by_id]
+        if not cited:
+            if re.search(r"\d", s["narration"]):
+                problems.append(f"scene {i} states facts but cites no claim")
+            continue
+        src = "\n".join(f"- {p}" for p in cited)
+        res = llm.ask(
+            "You are a strict fact-checker. Decide if the LINE is fully supported by the SOURCES. 'contradicted' if any "
+            "part conflicts with them (wrong winner, wrong amount, wrong outcome, wrong date). 'not_in_sources' if it "
+            "adds facts the sources don't state. Quote the exact supporting words from the sources.",
+            f"SOURCES:\n{src}\n\nLINE: {s['narration']}", SUPPORT_SCHEMA, temperature=0.0, max_tokens=200)
+        quote = _norm(res["evidence"])
+        if res["verdict"] != "supported":
+            problems.append(f"scene {i} is {res['verdict'].replace('_', ' ')}: '{s['narration'][:90]}'")
+        elif len(quote) < 12 or quote not in _norm(" ".join(cited)):
+            problems.append(f"scene {i}: the support quote is not in its cited sources ('{s['narration'][:70]}')")
+    return problems
