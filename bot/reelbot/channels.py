@@ -25,6 +25,7 @@ class Channel:
     entry: str = "src/index.toolkit.ts"   # Remotion entry that registers the kit's compositions
     styles: tuple = ("story",)
     disclaimers: tuple = ("Voice is synthetic.",)
+    about: str = ""                 # channel pitch at the end of every description (same text as Studio's upload default)
     analytics: str = ""             # folder name under analytics/raw/<date>/
     folder: str = ""                # output folder name under the videos dir
     hook_rules: str = ""            # what a winning first line looks like on this channel
@@ -57,6 +58,7 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         brief=("A channel of weird TRUE court cases and lawsuits told as gripping stories: the claim nobody believes, "
                "the twist, the verdict. US adults 18-45. Stories only, never legal advice."),
         prompt="story_script.md", doc="law.md", voices=("Nichalia",), kit="law3d", entry="src/index.law.ts",
+        about=('Court Of Weird tells the strangest true court cases: real lawsuits, bizarre trials and the people behind them. Every story is researched and sourced from court records and news reports. Stories only, never legal advice. Subscribe for the weirdest cases on record.'),
         disclaimers=("This is a true story told for entertainment and education, not legal advice. "
                      "Details come from court records and news reports listed below.", "Voice is synthetic."),
         analytics="law", folder="CourtOfWeird",
@@ -68,6 +70,7 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         brief=("A channel of TRUE business stories: the one decision that cost a company a fortune or killed it, and "
                "the lesson. US adults 18-45 interested in money and business."),
         prompt="story_script.md", doc="biz.md", voices=("Steven",), kit="biz3d", entry="src/index.biz.ts",
+        about=('Billion Dollar Blunders breaks down the biggest business mistakes in history: deals companies turned down, products that flopped and empires that collapsed, told with the real numbers and sources. For education and entertainment, not financial advice. Subscribe for a new blunder every week.'),
         disclaimers=("Educational only, not financial or investment advice. Figures come from the sources below.",
                      "Voice is synthetic."),
         analytics="biz", folder="BillionDollarBlunders",
@@ -78,6 +81,7 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         brief=("A channel of TRUE scams, hacks and data breaches told like heist stories, ending with how to spot it. "
                "US adults 18-45. Educational: story-level, never operational how-to."),
         prompt="story_script.md", doc="cyber.md", voices=("Todd",), kit="cyber3d", entry="src/index.cyber.ts",
+        about=('Scam Files TV tells the true stories behind famous scams, frauds and cyber crimes: how they fooled people, who fell for them and how they got caught. Every story is researched and sourced. Story level only, never a how-to. Subscribe and stay one step ahead of the scammers.'),
         disclaimers=("Educational only. Based on public court records and news reports listed below. "
                      "Nothing here is instructions for committing a crime.", "Voice is synthetic."),
         analytics="cyber", folder="ScamFilesTV",

@@ -214,7 +214,9 @@ def save(data: dict, folder: Path) -> None:
     for i, line in enumerate(ch.disclaimers):
         if line not in desc:
             desc += ("\n\n" if i == 0 else "\n") + line
+    if ch.about and ch.about not in desc:
+        desc += "\n\n" + ch.about
     thumb = f"\n**Thumbnail idea:** {data['thumbnail']}\n" if data.get("thumbnail") else ""
     (folder / "UPLOAD.md").write_text(
         f"# UPLOAD: {data['slug']}\n\nchannel: {ch.name}\nstyle: {data['style']}\n**Title:** {data['title']}\n{thumb}\n**Description:**\n{desc}\n\n"
-        "No tags or hashtags. Made for kids: No. Altered/AI: No.\n", encoding="utf-8")
+        "No tags or hashtags. Made for kids: No. Altered/AI: No. In Studio, REPLACE the pre-filled default description with the full text above (it already ends with the channel pitch).\n", encoding="utf-8")
