@@ -72,7 +72,7 @@ class Config:
     node: str = os.environ.get("REELBOT_NODE", "node")
 
     # Limits
-    recipe_attempts: int = int(os.environ.get("REELBOT_RECIPE_ATTEMPTS", "5"))
+    recipe_attempts: int = int(os.environ.get("REELBOT_RECIPE_ATTEMPTS", "7"))
     factcheck_rounds: int = int(os.environ.get("REELBOT_FACTCHECK_ROUNDS", "2"))
 
     def require_keys(self, *names: str) -> None:
