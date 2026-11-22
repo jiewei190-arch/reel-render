@@ -113,14 +113,20 @@ export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number; L: Layout }> 
 );
 
 const TONE = { cyan: CP.cyan, magenta: CP.magenta, red: CP.red } as const;
+/** a board's title / value font sizes: the giant stake board uses its own (the value shrinks to fit the width) */
+export const boardFonts = (L: Layout, b: { giant?: boolean; value: string }) => {
+  if (!b.giant) return { title: 38 * L.k, value: 112 * L.k };
+  const g = L.board.giant;
+  return { title: g.titleFs, value: Math.min(g.valueFs, Math.floor((g.w - 70) / Math.max(1, b.value.length * 0.64))) };
+};
 export const Boards: React.FC<{ boards: BoardBox[]; t: number; L: Layout }> = ({ boards, t, L }) => (
   <>
     {boards.map((b, i) => {
       const c = TONE[b.tone];
       return b.u > 0.001 ? (
         <div key={i} style={{ position: "absolute", left: b.x - b.w / 2, top: b.y - b.h / 2, width: b.w, height: b.h, transform: `scale(${OVERSHOOT(b.u)})`, opacity: clamp(b.u * 3), background: GLASS, borderRadius: 16 * L.k, overflow: "hidden", boxShadow: `0 0 0 3px ${c}99, 0 0 34px ${c}44`, display: "flex", flexDirection: "column" }}>
-          <div style={{ background: c, color: "#000", fontFamily: FONT, fontWeight: 800, fontSize: 38 * L.k, padding: `${8 * L.k}px 0`, textAlign: "center", letterSpacing: 2 }}>{b.title}</div>
-          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: 112 * L.k, color: CP.white, letterSpacing: -2, textShadow: glow(c, 20) }}>
+          <div style={{ background: c, color: "#000", fontFamily: FONT, fontWeight: 800, fontSize: boardFonts(L, b).title, padding: `${8 * L.k}px 0`, textAlign: "center", letterSpacing: 2 }}>{b.title}</div>
+          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: boardFonts(L, b).value, color: CP.white, letterSpacing: -2, textShadow: glow(c, 20), whiteSpace: "nowrap" }}>
             {b.value.split(/(\d[\d,.]*)/).map((seg, j) => (/^\d/.test(seg) ? <span key={j}>{seg}</span> : <span key={j} style={{ color: c }}>{seg}</span>))}
           </div>
           <div style={{ height: 8 * L.k, background: c, width: `${30 + 70 * (0.5 + 0.5 * Math.sin(t * 1.6 + i))}%` }} />

@@ -15,6 +15,7 @@ import { CutawayObject } from "../tech/cutaway";
 import type { CyberCompiled, FxR, PropR } from "./compile";
 import { FPS } from "./compile";
 import { Figure, figureRig } from "./figure";
+import { CyberHero } from "./hero";
 import { AlertWash, Boards, CyberCaptions, CyberHook, Devices, GlitchBars, LabelLayer, cyberChunks } from "./hud";
 import { CP, CYBER_MOODS } from "./palette";
 import { chapterAt, ChapterCard, chunkWords, LF, LowerThirdCaptions } from "../longform/kit";
@@ -90,6 +91,8 @@ const KitView: React.FC<{ pr: PropR; c: CyberCompiled; t: number }> = ({ pr, c, 
           {[0, 1, 2].map((k) => { const u = (t * 0.8 + k / 3) % 1; return <mesh key={k} geometry={geoOf("cfSig", () => new THREE.TorusGeometry(1, 0.04, 6, 32))} material={neon(sp.color ?? CP.cyan, 0.85 * (1 - u))} scale={0.2 + 1.2 * u} />; })}
         </group>
       );
+    case "phone": case "laptop": case "envelope": case "card": case "usb": case "server": case "atm": case "padlock": case "coin": case "doc":
+      return <group position={pl.p} rotation={[0, pl.yaw, 0]} scale={pl.s}><CyberHero kind={sp.kit} color={sp.color} label={sp.label} lines={sp.lines} t={t} seed={7 + pr.key.length * 13 + pr.key.charCodeAt(0)} /></group>;
     case "block": {
       const z = sp.size ?? [0.5, 0.5, 0.5];
       return <mesh geometry={geoOf(`cfBlk${z.join(",")}`, () => new THREE.BoxGeometry(...z))} material={plastic(CP.steel, { flat: true, emissive: sp.color ?? CP.cyan, ei: 0.35 })} position={[pl.p[0], pl.p[1] + (z[1] * pl.s) / 2, pl.p[2]]} rotation={[0, pl.yaw, 0]} scale={pl.s} castShadow />;

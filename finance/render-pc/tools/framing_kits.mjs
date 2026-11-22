@@ -186,7 +186,7 @@ export const cyberScene = (C, m, recipe) => {
     }
     const cards = [];
     for (const l of C.labelsAt(t)) cards.push(rect(`label ${l.text}`, l.text, l.x, l.y, l.w, l.h, [ln(l.text, 50, wht)], glass, l.u >= 0.99, "callout labels are placed by the engine: point the label at a part away from the head, or frame the head on the other side"));
-    for (const b of C.boardsAt(t)) cards.push(rect(`board ${b.title}`, `${b.title} ${b.value}`, b.x, b.y, b.w, b.h, [ln(b.title, 38, "#000000"), ln(b.value, 112, wht)], null, b.u >= 0.99, `move the board (pos) to the side away from the head`));
+    for (const b of C.boardsAt(t)) { const fs = m.boardFonts ? m.boardFonts(L, b) : { title: 38, value: 112 }; cards.push(rect(`board ${b.title}`, `${b.title} ${b.value}`, b.x, b.y, b.w, b.h, [ln(b.title, fs.title, "#000000"), ln(b.value, fs.value, wht)], null, b.u >= 0.99, `move the board (pos) to the side away from the head`)); }
     for (const d of C.devicesAt(t)) cards.push(rect(d.kind, d.title ?? d.label ?? d.text ?? d.kind, d.x, d.y, d.w, d.h, devLines(d).map(([tx, fs, fg]) => ln(tx, fs, fg)), glass, d.u >= 0.99, "story cards sit at fixed layout spots: frame the head away from that spot (cam.face / cam.az)"));
     const boards = [];
     for (const p of s.props) {

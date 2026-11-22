@@ -5,6 +5,7 @@ import type { At, Place } from "../fin/recipe/types";
 import type { ChapterSpec } from "../longform/kit";
 import type { BoltFace, BoltPose } from "../tech/bolt";
 import type { FigurePose } from "./figure";
+import type { CyberHeroKind } from "./hero";
 import type { CyberSetId } from "./sets";
 
 export type { At, Place };
@@ -58,7 +59,9 @@ export type CyberKit =
   /** a plain neon box */
   | "block"
   /** expanding pulse rings */
-  | "signal";
+  | "signal"
+  /** the HERO PROPS (src/cyber/hero.tsx): phone, laptop, envelope, card, usb, server, atm, padlock, coin, doc */
+  | CyberHeroKind;
 export type CyberMotion = "turntable" | "bob" | "popIn" | "dropIn" | "path" | "slideOut";
 export type CyberProp = {
   id: string;
@@ -71,6 +74,12 @@ export type CyberProp = {
   pitch?: number;
   roll?: number;
   s?: number;
+  /** the same as `s` (hero props use "scale"); 1 = hero scale */
+  scale?: number;
+  /** hero props: the short generic text on the prop (<= 14 characters, <= 2 words, never a real brand); doc: the headline */
+  label?: string;
+  /** phone / laptop / atm / doc: the body lines (real text, up to 7) */
+  lines?: string[];
   color?: string;
   size?: V3;
   motion?: CyberMotion;
@@ -102,6 +111,8 @@ export type CyberBoard = {
   value?: string;
   pos?: "left" | "right" | "top";
   tone?: "cyan" | "magenta" | "red";
+  /** "giant": the stake board, centred and most of the frame wide (a frame-0 opener: "at": 0 shows it fully on) */
+  size?: "giant";
 };
 
 /** story devices (DOM overlay, laid out from src/cyber/layout.ts) */

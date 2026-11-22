@@ -18,7 +18,7 @@ export type Layout = {
   safe: { top: number; topHook: number; bottom: number; x0: number; x1: number };
   label: { fs: number };
   /** number boards (left / right / top) */
-  board: { w: number; h: number; margin: number };
+  board: { w: number; h: number; margin: number; giant: { w: number; h: number; titleFs: number; valueFs: number } };
   /** story devices */
   caseFile: Rect;
   money: Rect;
@@ -33,7 +33,7 @@ const portrait: Layout = {
   cap: { centre: 1344, side: 150, fs: 80, band: 105, from: 1.0 },
   safe: { top: 250, topHook: 560, bottom: 1190, x0: 50, x1: 1030 },
   label: { fs: 50 },
-  board: { w: 420, h: 250, margin: 60 },
+  board: { w: 420, h: 250, margin: 60, giant: { w: 920, h: 430, titleFs: 56, valueFs: 210 } },
   caseFile: { x: 540, y: 820, w: 900, h: 560 },
   money: { x: 540, y: 1010, w: 860, h: 260 },
   checklist: { x: 540, y: 760, w: 920, h: 820 },
@@ -50,7 +50,7 @@ const landscape: Layout = {
   cap: { centre: 905, side: 240, fs: 60, band: 72, from: 0 },
   safe: { top: 90, topHook: 320, bottom: 800, x0: 60, x1: 1860 },
   label: { fs: 50 },
-  board: { w: 420, h: 250, margin: 90 },
+  board: { w: 420, h: 250, margin: 90, giant: { w: 1100, h: 400, titleFs: 52, valueFs: 190 } },
   caseFile: { x: 1370, y: 470, w: 900, h: 560 },
   money: { x: 1370, y: 560, w: 860, h: 260 },
   checklist: { x: 1350, y: 470, w: 920, h: 620 },

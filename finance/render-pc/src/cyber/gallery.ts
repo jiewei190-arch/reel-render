@@ -2,6 +2,7 @@
 // phishing email, the evidence string, BOLT re-lit, every story device), compiled by the same compiler as a real
 // recipe. GALLERY_STILLS lists the frame to grab for each piece (node tools/cyber_stills.mjs gallery).
 import { FIGURE_POSES } from "./figure";
+import { CYBER_HERO_BOX, CYBER_HERO_KINDS } from "./hero";
 import type { FigurePose } from "./figure";
 import type { CaseFile, Checklist, Countdown, MoneyCounter, Alert, CyberRecipe, CyberShot } from "./types";
 
@@ -35,5 +36,14 @@ dev("device-countdown", 1.8, (t0) => countdown.push({ at: t0, until: t0 + 1.6, l
 dev("device-alert", 1.6, (t0) => alerts.push({ at: t0, text: "ALERT" }));
 dev("device-checklist", 3.2, (t0) => { checklist = { at: t0, until: t0 + 3.0, items: ["NEW BANK DETAILS", "URGENT DEADLINE", "CALL A KNOWN NUMBER"] }; });
 add("glitch-transition", 1.2, { set: "servers", in: "glitch", cam: { preset: "medium", target: "mid:0,1.3,0", dist: 4, h: 0.2 } }, 0.05);
+
+// the HERO PROPS (src/cyber/hero.tsx): one close-up each in front of the inbox wall, default accent and label, sized to
+// about 0.7 m tall and lifted to 1.2 m (as the clip adapter frames them)
+for (const k of CYBER_HERO_KINDS) {
+  const bx = CYBER_HERO_BOX[k], sc = Math.round(Math.min(1.4, 0.7 / (2 * bx.h[1]), 0.62 / (2 * bx.h[0])) * 100) / 100;
+  const extra = k === "doc" ? { label: "Wire transfer", lines: ["To: Account 0047-2291", "Amount: $81,000,000", "Purpose: urgent payment", "Approved: treasury desk", "Ref: 2016-02-04"] } : {};
+  add(`hero-${k}`, 1.2, { set: "inbox", cam: { preset: "closeUp", target: "hp", dist: k === "laptop" ? 1.7 : 1.5, h: k === "laptop" ? 0.35 : 0.08, az: 6, face: 0.5 }, props: [{ id: "hp", kit: k, at: `front:0,${Math.round((1.2 - bx.c[1] * sc) * 100) / 100},0`, scale: sc, spin: 5, ...extra }] }, 0.6);
+}
+add("board-giant", 1.4, { set: "room", cam: { preset: "hookZoom", target: "hk.head", dist: 2.6, h: 0.1, az: 255, face: 0.82 }, props: [hacker("type")], boards: [{ title: "STOLEN", value: "$81M", size: "giant", at: t, tone: "red" }] }, 0.5);
 
 export const GALLERY_RECIPE: CyberRecipe = { kit: "cyber3d", slug: "cyber-gallery", hook: { text: "CYBER *GALLERY*", until: -1 }, cast: { bolt: "BOLT" }, shots, duration: t, captions: "off", talk: "none", caseFile, money, countdown, alerts, checklist };

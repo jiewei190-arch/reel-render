@@ -65,23 +65,25 @@ export const RECIPE: CyberRecipe = {
  "shots": [
   {
    "at": 0,
-   "set": "room",
-   "note": "hook: the hooded figure typing, monitors glowing",
+   "set": "inbox",
+   "note": "hook: a hero prop close-up, the fake invoice email glowing red in front of the inbox wall",
    "cam": {
     "preset": "hookZoom",
-    "target": "hk.head",
-    "dist": 1.6,
-    "h": 0.1,
-    "az": -105,
-    "face": 0.46
+    "target": "inv",
+    "dist": 1.3,
+    "h": 0.08,
+    "az": 0,
+    "face": 0.5
    },
    "props": [
     {
-     "id": "hk",
-     "kit": "figure",
-     "at": "seat",
-     "yaw": 180,
-     "pose": "type"
+     "id": "inv",
+     "kit": "envelope",
+     "label": "INVOICE",
+     "color": "#FF2A3D",
+     "at": "front:0,1.0,0",
+     "scale": 0.85,
+     "spin": 6
     }
    ]
   },
@@ -187,7 +189,8 @@ export const RECIPE: CyberRecipe = {
     {
      "id": "ml",
      "kit": "email",
-     "at": "phish",
+     "at": "phish:-0.92,0.01,0.12",
+     "s": 1.4,
      "text": "Invoice 4470"
     }
    ]
@@ -268,7 +271,7 @@ export const RECIPE: CyberRecipe = {
    "cam": {
     "preset": "pushIn",
     "target": "ph",
-    "dist": 2.3,
+    "dist": 4.6,
     "h": 0.05,
     "az": -12
    },
@@ -448,28 +451,25 @@ export const RECIPE: CyberRecipe = {
   },
   {
    "at": "Because",
-   "set": "room",
+   "set": "inbox",
+   "note": "loop: back on the invoice email of frame 0",
    "cam": {
     "preset": "hookZoom",
-    "target": "hk.head",
-    "dist": 1.6,
-    "h": 0.1,
-    "az": -105,
-    "face": 0.46
+    "target": "inv",
+    "dist": 1.3,
+    "h": 0.08,
+    "az": 0,
+    "face": 0.5
    },
    "props": [
     {
-     "id": "hk",
-     "kit": "figure",
-     "at": "seat",
-     "yaw": 180,
-     "pose": "type",
-     "then": [
-      {
-       "at": "how",
-       "pose": "turn"
-      }
-     ]
+     "id": "inv",
+     "kit": "envelope",
+     "label": "INVOICE",
+     "color": "#FF2A3D",
+     "at": "front:0,1.0,0",
+     "scale": 0.85,
+     "spin": 6
     }
    ]
   }

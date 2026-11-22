@@ -186,7 +186,8 @@ export const RECIPE: CyberRecipe = {
     {
      "id": "ml",
      "kit": "email",
-     "at": "phish",
+     "at": "phish:-0.92,0.01,0.12",
+     "s": 1.4,
      "text": "Invoice 4470"
     }
    ]

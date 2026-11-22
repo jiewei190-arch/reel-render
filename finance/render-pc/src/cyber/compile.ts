@@ -13,6 +13,9 @@ import type { Word } from "../fin/recipe/types";
 import { BOLT_R, boltBoxes, boltFace, boltState, HOVER } from "../tech/bolt";
 import type { BoltFace, BoltPose, BoltState, BoltTrack } from "../tech/bolt";
 import { cutBoxes, NO_CUT, objBox, partWorld } from "../tech/cutaway";
+import { heroLabelError } from "../library/hero";
+import { CYBER_HERO_BOX, CYBER_HERO_KINDS } from "./hero";
+import type { CyberHeroKind } from "./hero";
 import type { CutState, ObjDef, Placement } from "../tech/cutaway";
 import { figureBoxes, figureRig, figWorld } from "./figure";
 import type { FigurePose, FigureRig, FigureTrack } from "./figure";
@@ -49,7 +52,7 @@ export type CyberShotR = { id: string; a: number; b: number; set: CyberSetId; sp
   capY?: number; lift?: number };
 export type Cue = { t: number; sfx: string; db?: number };
 export type LabelBox = { key: string; text: string; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number; tone: "cyan" | "red" };
-export type BoardBox = { title: string; value: string; x: number; y: number; w: number; h: number; u: number; tone: "cyan" | "magenta" | "red" };
+export type BoardBox = { title: string; value: string; x: number; y: number; w: number; h: number; u: number; tone: "cyan" | "magenta" | "red"; giant?: boolean; t0?: number };
 /** a story device on screen at t: u = its in/out envelope (0..1) */
 export type DeviceBox =
   | { kind: "case"; u: number; tau: number; x: number; y: number; w: number; h: number; name: string; year: string; amount: string; title: string; status: string }
@@ -127,6 +130,13 @@ const GLITCH_DUR = 0.22, GLITCH_PEAK = 0.55;
 const ALERT_DUR = 1.1, ALERT_PEAK = 0.32;
 
 // ------------------------------------------------------------------ the compiler
+export const isCyberHero = (k: string): k is CyberHeroKind => (CYBER_HERO_KINDS as string[]).includes(k);
+/** a hero prop's box in the world, with its yaw (screen-space checks: tools/framing_qa.mjs corners()) */
+export const heroBoxC = (kind: CyberHeroKind, pl: Placement): { c: V3; h: V3; yaw: number } => {
+  const b = CYBER_HERO_BOX[kind], s = pl.s, cy = Math.cos(pl.yaw), sy = Math.sin(pl.yaw);
+  const lx = b.c[0] * s, lz = b.c[2] * s;
+  return { c: [pl.p[0] + lx * cy + lz * sy, pl.p[1] + b.c[1] * s, pl.p[2] - lx * sy + lz * cy], h: [b.h[0] * s, b.h[1] * s, b.h[2] * s], yaw: pl.yaw };
+};
 export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDuration?: number): CyberCompiled => {
   if (recipe.kit !== "cyber3d") throw new Error(`recipe ${recipe.slug}: kit must be "cyber3d"`);
   const L = layoutOf(recipe);
@@ -188,6 +198,11 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     const addProp = (spec: CyberProp, pa: number, pb: number) => {
       const def = defOf(spec, id);
       if (!spec.obj && !spec.kit) throw new Error(`recipe ${id}: prop "${spec.id}" needs "obj" or "kit"`);
+      const KITS = ["figure", "route", "email", "string", "block", "signal", ...CYBER_HERO_KINDS];
+      if (spec.kit && !KITS.includes(spec.kit)) throw new Error(`recipe ${id}: prop "${spec.id}": no kit "${spec.kit}" (has: ${KITS.join(", ")})`);
+      const lerr = heroLabelError(spec.label, spec.kit ?? "prop");
+      if (lerr) throw new Error(`recipe ${id}: prop "${spec.id}": ${lerr}`);
+      if (spec.lines && (spec.lines.length > 7 || spec.lines.some((l) => typeof l !== "string" || l.length > 40))) throw new Error(`recipe ${id}: prop "${spec.id}": "lines" takes up to 7 strings of <= 40 characters`);
       if (spec.kit === "route") {
         for (const c of [spec.from ?? "", ...(spec.to ?? [])]) if (!CITIES[c]) throw new Error(`recipe ${id}: route "${spec.id}": no city "${c}" (has: ${Object.keys(CITIES).join(", ")})`);
         if (!spec.to?.length) throw new Error(`recipe ${id}: route "${spec.id}" needs "to": [cities]`);
@@ -195,10 +210,12 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
       const base = spec.kit === "route" ? geo(...CITIES[spec.from!]) : placeV(spec.at, set, id);
       const hit = at(spec.hit, a + 0.12);
       const keys = (spec.path ?? []).map(([kt, kp]) => ({ t: at(kt), p: placeV(kp, set, id) }));
-      const s0 = spec.s ?? 1;
+      const s0 = spec.scale ?? spec.s ?? 1;
       const place = (t: number): Placement => {
         let p = base, yaw = (spec.yaw ?? 0) * D2R, s = s0;
         const pitch = (spec.pitch ?? 0) * D2R, roll = (spec.roll ?? 0) * D2R;
+        // a hero prop with "spin" and no motion turns slowly on the spot from its first frame in the shot
+        if (!spec.motion && spec.spin !== undefined && spec.kit && isCyberHero(spec.kit)) yaw += spec.spin * D2R * (t - pa);
         switch (spec.motion) {
           case "turntable": yaw += (spec.spin ?? 12) * D2R * t; break;
           case "bob": p = add(p, [0, 0.05 * Math.sin(t * 2.0), 0]); yaw += 0.06 * Math.sin(t * 0.9); break;
@@ -245,6 +262,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
         if (part && pr.def) { const def = pr.def; return (t) => partWorld(def, pr.place(t), cutOf(pr.key, t), part); }
         if (pr.def) { const def = pr.def; return (t) => objBox(def, pr.place(t)).c; }
         if (pr.spec.kit === "email") return (t) => add(pr.place(t).p, [0, 0, 0.02]);
+        if (pr.spec.kit && isCyberHero(pr.spec.kit)) { const k = pr.spec.kit; return (t) => heroBoxC(k, pr.place(t)).c; }
         return (t) => pr.place(t).p;
       }
       const [an, off] = tg.split(":");
@@ -447,6 +465,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
       const pl = p.place(t);
       if (p.def) props.push(...cutBoxes(p.key, p.def, pl, cutOf(p.key, t)));
       else if (p.fig) props.push(...figureBoxes(p.key, pl.p, pl.yaw, pl.s, figureRig(p.fig, t)));
+      else if (p.spec.kit && isCyberHero(p.spec.kit)) { const hb = heroBoxC(p.spec.kit, pl), cy = Math.abs(Math.cos(hb.yaw)), sy = Math.abs(Math.sin(hb.yaw)); props.push({ name: p.key, c: hb.c, h: [cy * hb.h[0] + sy * hb.h[2], hb.h[1], sy * hb.h[0] + cy * hb.h[2]] }); }
       else if (p.spec.kit === "block") { const z = p.spec.size ?? [0.5, 0.5, 0.5]; props.push({ name: p.key, c: [pl.p[0], pl.p[1] + (z[1] * pl.s) / 2, pl.p[2]], h: [(z[0] * pl.s) / 2, (z[1] * pl.s) / 2, (z[2] * pl.s) / 2] }); }
     }
     return { bolts, props };
@@ -489,6 +508,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   // ---------------------------------------------------- boards (layout from L.board)
   function boardRect(bd: BoardR, t: number) {
     const top = safeTop(t);
+    if (bd.spec.size === "giant") { const g = L.board.giant; return { x: L.W / 2, y: top + 40 * L.k + g.h / 2, w: g.w, h: g.h }; }
     const { w, h, margin } = L.board, pos = bd.spec.pos ?? "right";
     return { x: pos === "left" ? margin + w / 2 : pos === "top" ? L.W / 2 : L.W - margin - w / 2, y: pos === "top" ? top + h / 2 : top + 40 * L.k + h / 2, w, h };
   }
@@ -499,13 +519,15 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
       const c = bd.spec.count;
       let value = bd.spec.value ?? "";
       if (c) { const v = lerp(c.from, c.to, EASE_OUT(prog(t, bd.t0, bd.t0 + (c.dur ?? 1.0)))); value = `${c.prefix ?? ""}${v.toLocaleString("en-US", { minimumFractionDigits: c.decimals ?? 0, maximumFractionDigits: c.decimals ?? 0 })}${c.suffix ?? ""}`; }
-      out.push({ title: bd.spec.title.toUpperCase(), value, ...boardRect(bd, t), u: clamp((t - bd.t0 + LEAD) / 0.25) * clamp((bd.t1 - t) / 0.15), tone: bd.spec.tone ?? "cyan" });
+      // a board that starts at frame 0 is fully on at frame 0 (no fade-in ghost at 0.00 s: the frame-0 gate checks it)
+      out.push({ title: bd.spec.title.toUpperCase(), value, ...boardRect(bd, t), u: (bd.t0 <= 1e-6 ? 1 : clamp((t - bd.t0 + LEAD) / 0.25)) * clamp((bd.t1 - t) / 0.15), tone: bd.spec.tone ?? "cyan", giant: bd.spec.size === "giant", t0: bd.t0 });
     }
     return out;
   };
 
   // ---------------------------------------------------- story devices
-  const env = (t: number, t0: number, t1: number, fin = 0.28, fout = 0.2) => clamp((t - t0 + LEAD) / fin) * clamp((t1 - t) / fout);
+  // a card that starts at frame 0 is fully on at frame 0 (no fade-in ghost)
+  const env = (t: number, t0: number, t1: number, fin = 0.28, fout = 0.2) => (t0 <= 1e-6 ? 1 : clamp((t - t0 + LEAD) / fin)) * clamp((t1 - t) / fout);
   const fmtNum = (v: number, d = 0) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
   const caseR = (recipe.caseFile ?? []).map((c) => ({ c, t0: at(c.at), t1: at(c.until, at(c.at) + 2.5) }));
   const moneyR = (recipe.money ?? []).map((m) => ({ m, t0: at(m.at), t1: at(m.until, at(m.at) + 2.5) }));

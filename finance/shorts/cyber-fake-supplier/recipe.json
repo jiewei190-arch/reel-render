@@ -10,9 +10,9 @@
   "alerts": [{ "at": "6:Over", "text": "ALERT" }],
   "checklist": { "at": "Spot", "until": "lineEnd:10+0.3", "items": ["NEW BANK DETAILS", "CHECK THE SENDER", "CALL A KNOWN NUMBER"], "ticks": ["bank", "Call-0.2", "number"] },
   "shots": [
-    { "at": 0, "set": "room", "note": "hook: the hooded figure typing, monitors glowing",
-      "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.6, "h": 0.1, "az": -105, "face": 0.46 },
-      "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "type" }] },
+    { "at": 0, "set": "inbox", "note": "hook: a hero prop close-up, the fake invoice email glowing red in front of the inbox wall",
+      "cam": { "preset": "hookZoom", "target": "inv", "dist": 1.3, "h": 0.08, "az": 0, "face": 0.5 },
+      "props": [{ "id": "inv", "kit": "envelope", "label": "INVOICE", "color": "#FF2A3D", "at": "front:0,1.0,0", "scale": 0.85, "spin": 6 }] },
     { "at": "Google", "set": "netmap", "cam": { "preset": "pushIn", "target": "svalley:0,0.3,0", "dist": 3.2, "h": 1.9, "az": 20 },
       "actions": [{ "do": "label", "on": "svalley:-0.15,0.5,0", "text": "GOOGLE", "at": "Google", "side": "left" },
                   { "do": "label", "on": "svalley:0.15,0.5,0", "text": "FACEBOOK", "at": "Facebook", "side": "right" }] },
@@ -22,7 +22,7 @@
     { "at": "2:He", "set": "room", "cam": { "preset": "drift", "target": "hk.head", "dist": 2.5, "h": 0.15, "az": 115, "face": 0.45 },
       "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "lean", "then": [{ "at": "sent", "pose": "type" }] }] },
     { "at": "sent", "set": "inbox", "cam": { "preset": "drift", "target": "wall", "dist": 4.8, "h": 0.1, "az": 6 },
-      "props": [{ "id": "ml", "kit": "email", "at": "phish", "text": "Invoice 4470" }] },
+      "props": [{ "id": "ml", "kit": "email", "at": "phish:-0.92,0.01,0.12", "s": 1.4, "text": "Invoice 4470" }] },
     { "at": "Both", "set": "netmap", "cam": { "preset": "crane", "target": "taiwan", "dist": 4.6, "h": 2.4, "az": -15 },
       "props": [{ "id": "pay", "kit": "route", "at": "taiwan", "from": "svalley", "to": ["taiwan"], "color": "#19E6FF", "hit": "business" }],
       "actions": [{ "do": "label", "on": "taiwan:0,0.5,0", "text": "REAL SUPPLIER", "at": "hardware" }] },
@@ -30,7 +30,7 @@
       "props": [{ "id": "sig", "kit": "signal", "at": "latvia:0,0.05,0", "color": "#FF2A3D", "s": 0.5 }],
       "actions": [{ "do": "label", "on": "latvia:0,0.5,0", "text": "LATVIA", "at": "Latvia", "tone": "red", "until": "exact" },
                   { "do": "label", "on": "latvia:0,0.5,0", "text": "SAME NAME", "at": "same", "tone": "red" }] },
-    { "at": "Then", "set": "inbox", "cam": { "preset": "pushIn", "target": "ph", "dist": 2.3, "h": 0.05, "az": -12 },
+    { "at": "Then", "set": "inbox", "cam": { "preset": "pushIn", "target": "ph", "dist": 4.6, "h": 0.05, "az": -12 },
       "props": [{ "id": "ph", "kit": "email", "at": "phish", "text": "New bank details", "phish": true, "motion": "slideOut", "hit": "5:fake" }],
       "actions": [{ "do": "label", "on": "ph", "text": "FAKE INVOICE", "at": "invoices,", "tone": "red", "side": "left", "until": "corporate" },
                   { "do": "label", "on": "ph", "text": "FAKE STAMPS", "at": "stamps.", "tone": "red", "side": "right" }] },
@@ -47,7 +47,8 @@
       "boards": [{ "title": "SENTENCE", "at": "Five", "value": "5 YRS", "pos": "top", "tone": "red" }] },
     { "at": "Spot", "set": "inbox", "cam": { "preset": "drift", "target": "ph", "dist": 3.2, "h": 0.05, "az": 8, "sweep": 0.6 },
       "props": [{ "id": "ph", "kit": "email", "at": "phish", "text": "New bank details", "phish": true, "hit": "Spot" }] },
-    { "at": "Because", "set": "room", "cam": { "preset": "hookZoom", "target": "hk.head", "dist": 1.6, "h": 0.1, "az": -105, "face": 0.46 },
-      "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "type", "then": [{ "at": "how", "pose": "turn" }] }] }
+    { "at": "Because", "set": "inbox", "note": "loop: back on the invoice email of frame 0",
+      "cam": { "preset": "hookZoom", "target": "inv", "dist": 1.3, "h": 0.08, "az": 0, "face": 0.5 },
+      "props": [{ "id": "inv", "kit": "envelope", "label": "INVOICE", "color": "#FF2A3D", "at": "front:0,1.0,0", "scale": 0.85, "spin": 6 }] }
   ]
 }

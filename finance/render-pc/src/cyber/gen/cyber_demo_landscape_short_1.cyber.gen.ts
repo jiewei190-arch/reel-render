@@ -41,14 +41,14 @@ export const RECIPE: CyberRecipe = {
   {
    "at": 0,
    "set": "room",
-   "note": "clip hook (clip_short): the hooded figure close, the stake on screen, a pose change at 0.45 s",
+   "note": "clip hook (clip_short): the stake on a giant board over the hooded figure, a pose change at 0.45 s",
    "cam": {
     "preset": "hookZoom",
     "target": "hk.head",
-    "dist": 1.6,
+    "dist": 2.6,
     "h": 0.1,
     "az": 255,
-    "face": 0.62
+    "face": 0.82
    },
    "props": [
     {
@@ -69,8 +69,8 @@ export const RECIPE: CyberRecipe = {
     {
      "title": "AT STAKE",
      "at": 0,
-     "value": "$100",
-     "pos": "top",
+     "value": "$100M",
+     "size": "giant",
      "tone": "red"
     }
    ],
@@ -183,7 +183,8 @@ export const RECIPE: CyberRecipe = {
     {
      "id": "ml",
      "kit": "email",
-     "at": "phish",
+     "at": "phish:-0.92,0.01,0.12",
+     "s": 1.4,
      "text": "Invoice 4470"
     }
    ]
@@ -264,7 +265,7 @@ export const RECIPE: CyberRecipe = {
    "cam": {
     "preset": "pushIn",
     "target": "ph",
-    "dist": 2.3,
+    "dist": 4.6,
     "h": 0.05,
     "az": -12
    },

@@ -6,10 +6,13 @@
 //   retimeRecipe  the story devices (case file, money, countdown, alerts, checklist) and the global props that fall in
 //                 the segment, re-timed; the rest are dropped
 //   hookText      <= 5 words, <= 2 lines that fit the portrait hook card, exactly one *neon* word (the $ / number word)
-//   hookShot      a fresh frame-0 shot that passes the kit's portrait gate: a hookZoom on the hooded figure (or BOLT),
-//                 a pose (face) change at 0.45 s with a shake, the stake on a top board from frame 0, cut at hookEnd
+//   hookShot      a fresh frame-0 shot that passes the kit's portrait gate and the frame-0 opener rules: the source's
+//                 hero prop close-up, else the stake on a giant board over the hooded figure (or BOLT), else a document
+//                 with the hook; a pose (face) change / shake at 0.45 s; cut at hookEnd
 import type { At } from "../fin/recipe/types";
-import { compileCyber } from "./compile";
+import { compileCyber, CYBER_CAMS, isCyberHero } from "./compile";
+import { CYBER_HERO_BOX } from "./hero";
+import type { CyberHeroKind } from "./hero";
 import { hookBox } from "./hud";
 import { LAYOUTS } from "./layout";
 import type { Alert, BoltSpec, CaseFile, Checklist, Countdown, CyberProp, CyberRecipe, CyberShot, MoneyCounter } from "./types";
@@ -27,7 +30,10 @@ const rtProp = (p: CyberProp & { from?: unknown; until?: unknown }, remap: Remap
   if (global) { rt(p as Obj, "from", remap); rt(p as Obj, "until", remap); }
 };
 
+/** the shots re-timed for the clip being made (retimeRecipe re-frames them when the source is landscape) */
+let pending: CyberShot[] = [];
 export const retimeShot = (s: CyberShot, remap: Remap) => {
+  pending.push(s);
   rt(s as Obj, "at", remap);
   rt(s.cam as Obj, "hit", remap);
   for (const a of s.actors ?? []) { rt(a as Obj, "from", remap); for (const x of a.then ?? []) rt(x as Obj, "at", remap); }
@@ -52,6 +58,15 @@ export const retimeRecipe = (r: CyberRecipe, remap: Remap, seg: Seg) => {
     rt(checklist as Obj, "at", remap); rt(checklist as Obj, "until", remap);
     if (checklist.ticks) checklist.ticks = checklist.ticks.map((x) => remap(x) as At);
   }
+  // a landscape source frames an email tile to fill a 16:9 frame; 9:16 shows about a third of that width, so a shot
+  // aimed at an email tile pulls back (x2) in the clip (framing QA R3: the tile inside the frame)
+  if (r.format === "landscape" || r.frame === "landscape") {
+    for (const sh of pending) {
+      const tg = typeof sh.cam.target === "string" ? sh.cam.target.split(".")[0] : "";
+      if ((sh.props ?? []).some((p) => p.id === tg && p.kit === "email")) sh.cam.dist = Math.round((sh.cam.dist ?? CYBER_CAMS[sh.cam.preset].dist) * 2 * 100) / 100;
+    }
+  }
+  pending = [];
   const props = (r.props ?? []).filter((p) => (p.from === undefined ? true : seg.at(p.from) < seg.tB) && (p.until === undefined ? true : seg.at(p.until) > seg.tA))
     .map((p) => { const q = JSON.parse(JSON.stringify(p)) as CyberProp & { from?: At; until?: At }; rtProp(q, remap, true); return q; });
   return {
@@ -71,26 +86,45 @@ export const hookText = (text: string) => {
   return w.map((x, i) => (i === k ? `*${x}*` : x)).join(" ");
 };
 
-/** the fresh frame-0 shot: close on the hooded figure (or BOLT), the stake on a top board, a pose change + shake at 0.45 s */
-export const hookShot = ({ first, src, stake, set, hookEnd }: { recipe: CyberRecipe; first: CyberShot; src: CyberShot; hookText: string; stake: string | null; set?: string; hookEnd: number }): CyberShot => {
+/** the fresh frame-0 shot (it passes the kit's portrait gate and the opener rules of tools/frame0_hero.mjs): the story's
+ *  HERO PROP close-up in front of the inbox wall when the source has one (its first hero prop), else the stake on a
+ *  GIANT board over the hooded figure (or BOLT) at frame 0, else a document carrying the hook; a pose / face change
+ *  and a shake at 0.45 s; it cuts away at hookEnd */
+export const hookShot = ({ recipe, first, src, hookText: ht, stake, set, hookEnd }: { recipe: CyberRecipe; first: CyberShot; src: CyberShot; hookText: string; stake: string | null; set?: string; hookEnd: number }): CyberShot => {
   // the first source shot now starts at hookEnd: a camera hit before it would be lost
   if (typeof first.cam.hit === "number" && first.cam.hit < hookEnd) first.cam.hit = Math.round((hookEnd + 0.12) * 1000) / 1000;
-  const parts = stake ? stake.split(":").map((x) => x.trim()) : [];
-  const boards = stake ? [{ title: parts.length > 1 && parts[0] ? parts[0] : "AT STAKE", at: 0, value: parts.length > 1 ? parts.slice(1).join(":") : stake, pos: "top" as const, tone: "red" as const }] : undefined;
+  const heroOf = (ps?: CyberProp[]) => (ps ?? []).find((p) => !!p.kit && isCyberHero(p.kit));
+  const srcHero = heroOf(src.props) ?? recipe.shots.map((x) => heroOf(x.props)).find(Boolean) ?? heroOf(recipe.props);
+  const plain = ht.replace(/\*/g, "");
+  // the money in the hook's accent word is the stake ("THE *$100M* EMAIL"), else the stake word of line 1
+  const acc = ht.match(/\*([^*]+)\*/)?.[1] ?? "";
+  const stk = /[$€£]\d/.test(acc) ? acc : stake;
+  const parts = stk ? stk.split(":").map((x) => x.trim()) : [];
+  const giant = stk ? [{ title: parts.length > 1 && parts[0] ? parts[0] : "AT STAKE", at: 0, value: (parts.length > 1 ? parts.slice(1).join(":") : stk).toUpperCase(), size: "giant" as const, tone: "red" as const }] : undefined;
+  const hero: CyberProp | null = srcHero && srcHero.kit ? { id: "hero0", kit: srcHero.kit, label: srcHero.label, lines: srcHero.lines, color: srcHero.color, at: "front", scale: 1, spin: 6 }
+    : !stk ? { id: "hero0", kit: "doc", label: plain.slice(0, 40), at: "front" } : null;
+  if (hero) {
+    // sized and lifted so the prop's middle sits at 1.2 m and its height fills about half of the frame
+    const k = hero.kit as CyberHeroKind, bx = CYBER_HERO_BOX[k], sc = Math.round(Math.min(1.4, 0.7 / (2 * bx.h[1]), 0.62 / (2 * bx.h[0])) * 100) / 100;
+    hero.scale = sc;
+    hero.at = `front:0,${Math.round((1.2 - bx.c[1] * sc) * 100) / 100},0`;
+    return { at: 0, set: "inbox", note: `clip hook (clip_short): the ${k} close-up (a hero prop), a shake at 0.45 s`,
+      cam: { preset: "hookZoom", target: "hero0", dist: 1.5, h: 0.08, az: 0, face: 0.5 }, props: [hero], fx: [{ fx: "shake", at: 0.45 }] };
+  }
   const bolt = (src.actors ?? [])[0] as BoltSpec | undefined;
   if (bolt && !(src.props ?? []).some((p) => p.kit === "figure")) {
-    return { at: 0, set: (set ?? src.set) as CyberShot["set"], note: "clip hook (clip_short): BOLT close, the stake on screen, a face change at 0.45 s",
-      cam: { preset: "hookZoom", target: `${bolt.id}.face`, face: 0.6 },
+    return { at: 0, set: (set ?? src.set) as CyberShot["set"], note: "clip hook (clip_short): the stake on a giant board over BOLT, a face change at 0.45 s",
+      cam: { preset: "hookZoom", target: `${bolt.id}.face`, dist: 2.6, face: 0.82 },
       actors: [{ id: bolt.id, pose: "shock", at: bolt.at, face: "worried", then: [{ at: 0.45, face: "shocked" }] }],
-      boards, fx: [{ fx: "shake", at: 0.45 }] };
+      boards: giant, fx: [{ fx: "shake", at: 0.45 }] };
   }
   const fig = (src.props ?? []).find((p) => p.kit === "figure");
   const yaw = fig ? fig.yaw ?? 0 : 180;
   return {
-    at: 0, set: (fig ? set ?? src.set : "room") as CyberShot["set"], note: "clip hook (clip_short): the hooded figure close, the stake on screen, a pose change at 0.45 s",
-    cam: { preset: "hookZoom", target: "hk.head", dist: 1.6, h: 0.1, az: yaw + 75, face: 0.62 },
+    at: 0, set: (fig ? set ?? src.set : "room") as CyberShot["set"], note: "clip hook (clip_short): the stake on a giant board over the hooded figure, a pose change at 0.45 s",
+    cam: { preset: "hookZoom", target: "hk.head", dist: 2.6, h: 0.1, az: yaw + 75, face: 0.82 },
     props: [{ id: "hk", kit: "figure", at: fig ? fig.at : "seat", yaw, pose: "type", then: [{ at: 0.45, pose: "lean" }] }],
-    boards, fx: [{ fx: "shake", at: 0.45 }],
+    boards: giant, fx: [{ fx: "shake", at: 0.45 }],
   };
 };
 
