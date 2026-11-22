@@ -31,34 +31,68 @@ class ClaudeError(RuntimeError):
     pass
 
 
+_client = None
+_client_slot = None
 EXHAUSTED_FLAG = Path(__file__).resolve().parent.parent / "work" / "api_exhausted.json"
 
 
+def api_keys() -> list[tuple[int, str]]:
+    """[(slot, key)] from ANTHROPIC_API_KEY (slot 1), ANTHROPIC_API_KEY_2, _3, ... Keys are never printed."""
+    out = []
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        out.append((1, os.environ["ANTHROPIC_API_KEY"]))
+    for n in range(2, 21):
+        k = os.environ.get(f"ANTHROPIC_API_KEY_{n}")
+        if k:
+            out.append((n, k))
+    return out
+
+
 def backend() -> str:
-    """cli = subscription only; api = API key only; auto (default with a key) = API credits first, then the
-    subscription once the key's credit or spend cap runs out."""
+    """cli = subscription only; api = API keys only; auto (default with a key) = API keys first (one after another),
+    then the subscription once every key's credit or spend cap has run out."""
     b = os.environ.get("REELBOT_CLAUDE_BACKEND", "").strip().lower()
     if b in ("cli", "api", "auto"):
         return b
-    return "auto" if os.environ.get("ANTHROPIC_API_KEY") else "cli"
+    return "auto" if api_keys() else "cli"
+
+
+def _exhausted_slots() -> dict:
+    if not EXHAUSTED_FLAG.exists():
+        return {}
+    try:
+        data = json.loads(EXHAUSTED_FLAG.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return {}
+    ttl = float(os.environ.get("REELBOT_API_RETRY_HOURS", "12")) * 3600
+    return {int(k): v for k, v in data.get("keys", {}).items() if time.time() - v["epoch"] < ttl}
+
+
+def _live_keys() -> list[tuple[int, str]]:
+    dead = _exhausted_slots()
+    return [(slot, k) for slot, k in api_keys() if slot not in dead]
 
 
 def _api_exhausted_recently() -> bool:
-    if not EXHAUSTED_FLAG.exists():
-        return False
-    try:
-        since = json.loads(EXHAUSTED_FLAG.read_text(encoding="utf-8"))["epoch"]
-    except Exception:  # noqa: BLE001
-        return False
-    return time.time() - since < float(os.environ.get("REELBOT_API_RETRY_HOURS", "12")) * 3600
+    return not _live_keys()
 
 
-def _mark_exhausted(reason: str) -> None:
+def _mark_exhausted(reason: str, slot: int = 1) -> None:
+    data = {"keys": {}}
+    if EXHAUSTED_FLAG.exists():
+        try:
+            data = json.loads(EXHAUSTED_FLAG.read_text(encoding="utf-8"))
+            data.setdefault("keys", {})
+        except Exception:  # noqa: BLE001
+            data = {"keys": {}}
+    data["keys"][str(slot)] = {"epoch": time.time(), "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                               "reason": reason[:300]}
     EXHAUSTED_FLAG.parent.mkdir(parents=True, exist_ok=True)
-    EXHAUSTED_FLAG.write_text(json.dumps({"epoch": time.time(), "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                                          "reason": reason[:300]}), encoding="utf-8")
-    print(f"  claude: API credit is used up ({reason[:120]}). Switching to your Claude plan (subscription); "
-          f"the API is tried again after {os.environ.get('REELBOT_API_RETRY_HOURS', '12')} h.")
+    EXHAUSTED_FLAG.write_text(json.dumps(data, indent=1), encoding="utf-8")
+    left = len(_live_keys())
+    nxt = f"switching to API key slot {_live_keys()[0][0]}" if left else "switching to your Claude plan (subscription)"
+    print(f"  claude: API key slot {slot} is out of credit; {nxt}. It is tried again after "
+          f"{os.environ.get('REELBOT_API_RETRY_HOURS', '12')} h.")
 
 
 class APIExhausted(ClaudeError):
@@ -81,21 +115,35 @@ def _is_exhausted(e) -> bool:
 
 
 def _use_api() -> bool:
-    b = backend()
-    return b == "api" or (b == "auto" and not _api_exhausted_recently())
+    return backend() in ("api", "auto") and bool(_live_keys())
+
+
+def _with_keys(fn):
+    """Run fn on each live API key in turn; a key that runs out is marked and the same call moves to the next.
+    Returns (True, result) or (False, None) when every key is exhausted."""
+    global _client, _client_slot
+    while True:
+        live = _live_keys()
+        if not live or backend() == "cli":
+            return False, None
+        slot, key = live[0]
+        if _client_slot != slot:
+            import anthropic
+            _client, _client_slot = anthropic.Anthropic(api_key=key, max_retries=4), slot
+            COST.api_slot = slot
+        try:
+            return True, fn()
+        except APIExhausted as e:
+            _mark_exhausted(str(e), slot)
+            if backend() == "api" and not _live_keys():
+                raise
 
 
 def ask_json(system: str, user: str | list, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
     """Ask Claude for a JSON object that matches `schema` (JSON Schema, additionalProperties false).
     `user` is a string, or a list of content blocks (text + base64 images) for a vision request."""
-    if _use_api():
-        try:
-            return _ask_api(system, user, schema, effort=effort, max_tokens=max_tokens)
-        except APIExhausted as e:
-            if backend() == "api":
-                raise
-            _mark_exhausted(str(e))
-    return _ask_cli(system, user, schema)
+    ok, res = _with_keys(lambda: _ask_api(system, user, schema, effort=effort, max_tokens=max_tokens))
+    return res if ok else _ask_cli(system, user, schema)
 
 
 # ---------------------------------------------------------------- subscription (Claude Code CLI)
@@ -143,13 +191,9 @@ WEB_SYSTEM = ("You are a careful researcher. Use web search and web fetch to fin
 def ask_web(prompt: str) -> tuple[str, list[dict]]:
     """Web research. Returns (text, [{title, url}]). API credits first (server-side web search) when a key is set,
     then the subscription CLI's own WebSearch/WebFetch. Used instead of Gemini grounding."""
-    if _use_api():
-        try:
-            return _web_api(prompt)
-        except APIExhausted as e:
-            if backend() == "api":
-                raise
-            _mark_exhausted(str(e))
+    ok, res = _with_keys(lambda: _web_api(prompt))
+    if ok:
+        return res
     res = _ask_cli("You are a careful researcher. Use WebSearch and WebFetch to find current, reliable sources. "
                    "Prefer primary and official sources. Never invent a source or a number; say 'not found' instead. "
                    "Put the findings in `text` and every URL you actually used in `sources`.",
@@ -180,7 +224,10 @@ def _ask_cli(system: str, user: str | list, schema: dict, tools: list[str] | Non
         cmd = [_claude_bin(), "-p", "Do the task described in the input below. Answer only with the requested JSON.",
                "--output-format", "json", "--json-schema", json.dumps(schema, separators=(",", ":")),
                "--model", CFG.claude_model, "--system-prompt-file", str(tmpd / "system.md"), *extra]
-        env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN")}
+        # the subscription login only: drop every API key and anything that could redirect the CLI to API billing
+        # (keys, base URL, and CLAUDE_CODE_* vars inherited when reelbot itself runs inside a Claude Code session)
+        env = {k: v for k, v in os.environ.items()
+               if not (k.startswith("ANTHROPIC_") or k.startswith("CLAUDE_CODE_") or k in ("CLAUDECODE",))}
         for attempt in range(3):
             r = subprocess.run(cmd, input=prompt_body, capture_output=True, text=True, encoding="utf-8",
                                errors="replace", env=env, cwd=tmp, timeout=1800)
@@ -197,15 +244,16 @@ def _ask_cli(system: str, user: str | list, schema: dict, tools: list[str] | Non
 
 # ---------------------------------------------------------------- API
 
-_client = None
-
-
 def client():
-    global _client
+    global _client, _client_slot
     if _client is None:
         import anthropic
-        CFG.require_keys("ANTHROPIC_API_KEY")
-        _client = anthropic.Anthropic(max_retries=4)
+        live = _live_keys() or api_keys()
+        if not live:
+            CFG.require_keys("ANTHROPIC_API_KEY")
+        _client_slot, key = live[0]
+        _client = anthropic.Anthropic(api_key=key, max_retries=4)
+        COST.api_slot = _client_slot
     return _client
 
 

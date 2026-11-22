@@ -81,7 +81,12 @@ With `ANTHROPIC_API_KEY` in `bot/.env`, the default backend is `auto`:
 - When the key returns "out of credit" (402 `billing_error`, or a monthly spend-cap 429), that same call is redone
   through the Claude Code login on this PC (your subscription), and the bot says so once.
 - It stays on the plan for `REELBOT_API_RETRY_HOURS` (default 12), then tries the API again, in case it was topped up.
-- The marker is `work/api_exhausted.json`; delete it to retry the API right away.
+- Several keys: `ANTHROPIC_API_KEY`, `ANTHROPIC_API_KEY_2`, `_3`, ... are used in order. When one runs out, the
+  same call moves to the next key; the plan is used only after every key is out. The cost line shows the key slot
+  number (never the key).
+- The marker is `work/api_exhausted.json` (one entry per key slot); delete it to retry right away.
+- The plan fallback runs the Claude CLI with every `ANTHROPIC_*` and `CLAUDE_CODE_*` variable removed, so it can't be
+  redirected to API billing, even when reelbot runs inside a Claude Code session.
 
 `REELBOT_CLAUDE_BACKEND=cli` forces plan only, and `api` forces key only (no fallback).
 
