@@ -128,6 +128,9 @@ export const main = async (argv) => {
   const orange = hookText.match(/\*[^*]+\*/g) ?? [];
   const line1 = words.filter((w) => w.turn === 1).map((w) => w.w).join(" ");
   const stake = /\$\s?\d/;
+  // Line 1 comes from the voice timings, where TTS pipelines spell numbers out ("nine hundred fifty-one million
+  // dollars"), so the spoken check accepts a $ figure OR a spelled-out amount of dollars.
+  const spokenStake = /\$\s?\d|\b\d[\d,.]*\s*(?:k|m|bn|b|million|billion|thousand|hundred)?\s*dollars?\b|\b(?:hundred|thousand|million|billion|trillion)\b[^.?!]*?\bdollars?\b/i;
   let stakeAt = null;
   for (let f = 0; f <= 15 && stakeAt === null; f++) if (C.textsAt(f / 30).some((s) => stake.test(s))) stakeAt = f / 30;
   const hasBolt = C.shots.some((s) => s.bolts.length);
@@ -191,7 +194,7 @@ export const main = async (argv) => {
   const gate = [
     ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *neon* word", C.hookUntil > 0 && hookWords <= 5 && HB.lines.length <= 2 && HB.textW <= L.hook.maxW && orange.length === 1, `"${hookText}" (${hookWords} words, ${HB.lines.length} line(s), widest ~${HB.textW.toFixed(0)} px of ${L.hook.maxW}, neon: ${orange.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
-    ["the dollar stake: line 1 says it, and a $ figure is on screen by 0.5 s", stake.test(line1) && stakeAt !== null, `line 1 "${line1}"; on screen ${stakeAt === null ? "not by 0.5 s" : `at ${stakeAt.toFixed(2)} s`}`, true],
+    ["the dollar stake: line 1 says it, and a $ figure is on screen by 0.5 s", spokenStake.test(line1) && stakeAt !== null, `line 1 "${line1}"; on screen ${stakeAt === null ? "not by 0.5 s" : `at ${stakeAt.toFixed(2)} s`}`, true],
     ["who at frame 0 (the figure or BOLT >= 15 % of the height)", whoAt0.length > 0, whoAt0.map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ") || "none", true],
     ["first spoken word by 0.2 s", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
     ["a sound punch at 0.00 s", sfx0.some((c) => PUNCH.test(c.sfx)), sfx0.map((c) => c.sfx).join(", ") || "none", true],
