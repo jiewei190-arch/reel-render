@@ -1,6 +1,6 @@
 # KIT_STORYTIME: animated school storytime Shorts
 
-**What this is.** A recipe kit for a first-person comedy story ("my homie...") told by one narrator ("me") about a friend ("homie"). The look is simple, chunky, flat-shaded low-poly 3D (Roblox-adjacent), bright and saturated, in a few small school sets. The faces carry the acting: big eyes and THICK eyebrows on a 2D face decal, drawn fresh every frame. The edit is fast. There is a cut or a camera change every 1-3 s, mostly face close-ups, punch-ins on the punchlines, 2-shots for action and almost no wides. Captions show 1-3 words at a time in white bold sans with a black outline. Each chunk has ONE yellow accent word. Shout lines are ALL CAPS. The captions sit around the lower chest and never on a face (framing rule R6). The output is 1080x1920 at a plain 30 fps with no motion blur.
+**What this is.** A recipe kit for a first-person comedy story ("my homie...") told by one narrator ("me") about a friend ("homie"). The look is **CLAYMATION** (the owner's call, so the account stands apart from the reference): plasticine kids and a tabletop miniature school, all procedural, with no external assets. The faces carry the acting: big eyes and THICK eyebrows, built as separate clay pieces stuck on a big pebble head. The edit is fast. There is a cut or a camera change every 1-3 s, mostly face close-ups, punch-ins on the punchlines, 2-shots for action and almost no wides. Captions show 1-3 words at a time in white bold sans with a black outline. Each chunk has ONE yellow accent word. Shout lines are ALL CAPS. The captions sit around the lower chest and never on a face (framing rule R6). The output is 1080x1920 at a plain 30 fps with no motion blur.
 
 ```
 finance/shorts/<slug>/recipe.json ("kit": "storytime") + vo/timings.json + vo/amp.json
@@ -12,6 +12,25 @@ src/storytime/gen/<slug_>.story.gen.ts → <Pascal>Recipe in src/index.storytime
 
 Other kits are untouched. The only shared change is one line in the `recipe_build.mjs` kit dispatch.
 
+## 0. The claymation look (src/storytime/clay.ts, cast.tsx, sets.tsx, film.tsx)
+
+- **Plasticine material** (`clayMat`):
+  - a MeshPhysical surface: matte (roughness 0.62) with a slight wax sheen (sheen 0.35, a whisper of clearcoat);
+  - colours pulled 10 % toward their own grey, like modelling clay;
+  - a bump map generated in code: fingerprint whorls, soft thumb presses, tiny pits and specks.
+- **Hand-made shapes:**
+  - `lumpBox` / `lumpBall` / `lumpCone` / `lumpCapsule` are generously rounded, then pushed along their normals by deterministic 3D value noise. There are no hard bevels, and the proportions are slightly uneven.
+  - Big pebble heads, ball hands and fat sausage brows.
+- **Faces: replacement animation.**
+  - Eye discs, pupils, lids cut to the eye's outline, sausage brows, and a pressed-in mouth with a teeth strip and a tongue. Every piece is bent onto the head's curved front.
+  - Expressions SNAP from one to the next, with no morph.
+  - The mouth is one of 6 sculpted openings: the voice loudness is quantised to steps of 0.2.
+- **Stop motion:** characters, props, set animation and the glass chunks move **on twos**. A new pose comes every 2 output frames, so the motion runs at 15 fps inside the 30 fps output. The camera stays smooth, which reads better on a phone. There is no motion blur.
+- **Sets:** clay props (desks, chairs, tables, trays, clocks), painted-cardboard walls and lockers, felt floors, and posters and the chalkboard printed on paper.
+- **Light:** a tabletop studio, with a warm soft key (#ffe2b8), a cool bounce, low contrast, a very light ink line (strength 0.22) and a gentle warm vignette (0.3).
+- **The shatter:** translucent, waxy sugar-glass/clay chunks burst into the room on twos. The crack overlay is unchanged.
+- **Captions are unchanged:** white bold with a black outline and one yellow accent word.
+
 ## 1. Workflow
 
 1. **Voice and timings.**
@@ -21,7 +40,8 @@ Other kits are untouched. The only shared change is one line in the `recipe_buil
 3. **Write `recipe.json`** (section 2), then check it with `node tools/recipe_build.mjs <slug> --check`.
 4. **Build:** `node tools/recipe_build.mjs <slug>`.
 5. **Stills:** `node tools/storytime_stills.mjs <Pascal>Recipe 0.3s 12s mid end --scale 0.5`. To review the cast's expressions and the sets, run `node tools/storytime_stills.mjs StoryGallery all`.
-6. **Render:** `npx remotion render src/index.storytime.ts <Pascal>Recipe out/storytime/<slug>.mp4 --gl=swangle`. Use `--gl=angle` on a GPU. The voice is already in the composition.
+6. **Branding:** `PNG=1 node tools/storytime_stills.mjs StoryPfp 0 --scale 1 --out docs/storytime/branding --prefix pfp` writes the profile picture. Use `StoryPfpText` for the one with the name and `StoryBanner` for the YouTube banner (src/storytime/branding.tsx).
+7. **Render:** `npx remotion render src/index.storytime.ts <Pascal>Recipe out/storytime/<slug>.mp4 --gl=swangle`. Use `--gl=angle` on a GPU. The voice is already in the composition.
 
 ## 2. Recipe schema (src/storytime/types.ts)
 
@@ -60,7 +80,7 @@ Other kits are untouched. The only shared change is one line in the `recipe_buil
   - `accent` lists the words to prefer as the yellow word.
 - **Expressions:** `neutral`, `annoyed`, `furious`, `shocked`, `deadpan`, `smug`, `laughing`, `sideeye`, plus `yell` (an excited shout) and `scream` (a full-on scream).
   - Each expression is a vector of numbers: brows (height, angle, asymmetry), lids, lower lids, eye and pupil size, gaze, mouth width, curve, opening, teeth, smirk, happy-arc eyes and blush.
-  - A change blends over 0.14 s. Blinks are automatic, and `sideeye` looks toward the other lead.
+  - A change snaps at once (replacement animation). Blinks are automatic, and `sideeye` looks toward the other lead.
 - **Poses:** `idle` (it becomes `talk` while the character speaks), `talk`, `yell`, `phone` (a held phone with an original stick-figure video), `laugh`, `point`, `lean`.
 - **Look:** `front`, or the other lead's id. The head turns up to 1.15 rad and the body follows by 45 %.
 - **Camera presets (`cam.preset`):**
@@ -90,7 +110,7 @@ Other kits are untouched. The only shared change is one line in the `recipe_buil
 
 ## 3. Cast, sets, captions
 
-- **Cast** (src/storytime/cast.tsx): block torso, box arms, short legs and a big rounded head (0.48 x 0.46 x 0.42 m), with a 512 px face decal for the leads. Background classmates are generic and low detail: dot eyes, a 256 px face and a few colours.
+- **Cast** (src/storytime/cast.tsx): a lumpy clay torso, arms with ball hands, short legs and a big pebble head (0.48 x 0.46 x 0.42 m, corner radius 0.14) with clay face pieces. Background classmates are generic: bigger plain pupils, thinner brows, a few colours, scaled 0.92.
 - **Sets** (src/storytime/sets.tsx, marks in layout.ts):
 
   | set | what's in it |
