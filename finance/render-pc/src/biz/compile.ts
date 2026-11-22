@@ -1,13 +1,17 @@
 // The biz3d recipe compiler: BizRecipe + voice words -> shots with lenses, executive tracks, world state (stores lit or
 // dark, cracks, drains, the chart draw, papers), label / tag / device layouts, the freeze-frame clock, the audio cue
 // plan and the QA/gate data. A pure function of t, separate from the Block Money and tech3d compilers.
-// All screen numbers come from layout.ts (portrait today, landscape wired through).
+// All screen numbers come from layout.ts. "format": "landscape" (1920x1080 long-form, LONGFORM.md) adds the shared 16:9
+// lens rule, caption-safe framing for the lower third, chapters (+ their cues) and a per-shot lower-third caption centre;
+// every portrait path is unchanged.
 import type { V3 } from "../blocky/motion";
 import { aim } from "../engine/core/rig";
 import { kickAt, kicked, pushK, whipK } from "../fin/lib/camera";
 import type { Cam } from "../fin/lib/camera";
 import { EASE_INOUT, EASE_OUT, EASE_PLACE, LEAD, prog } from "../fin/lib/motion";
 import { makeAt } from "../fin/recipe/timing";
+import { chapterCues, landscapeLens, LF, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
+import type { ChapterR, FaceBand } from "../longform/kit";
 import type { Word } from "../fin/recipe/types";
 import { chartGeo } from "./chart";
 import type { ChartGeo } from "./chart";
@@ -67,9 +71,17 @@ export type BizCompiled = {
   textsAt: (t: number) => string[];
   project: (cam: Cam, p: V3) => { x: number; y: number; k: number; z: number } | null;
   audio: { music: string; cues: Cue[] };
+  /** "format": "landscape" (1920x1080 long-form) */
+  landscape: boolean;
+  /** landscape: chapters resolved to seconds ([] in portrait) */
+  chapters: ChapterR[];
+  /** landscape: the lower-third caption centre of a shot, px at 1080 tall (LF.CAP_Y unless a face sits in the band) */
+  capY: (shot: BizShotR) => number;
+  /** landscape: caption-safe framing, the shots whose subject was lifted (lens face fraction from -> to) */
+  lifted: { id: string; from: number; to: number }[];
 };
 
-/** camera presets, authored for portrait (layout.ts scales fov / distance for other formats); every one keeps moving */
+/** camera presets, authored for portrait (landscape applies landscapeLens per preset); every one keeps moving */
 export const BIZ_CAMS = {
   hookZoom: { dist: 2.2, h: 0.1, fov: 40, face: 0.45, push: 0.05, blur: 1.6, roll: [-2, 0.5] as [number, number] },
   closeUp: { dist: 1.6, h: 0.05, fov: 38, face: 0.44, push: 0.06, blur: 1.8, roll: [0, 1.2] as [number, number] },
@@ -122,6 +134,8 @@ export const money = (v: number, prefix = "$") => {
 export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration?: number): BizCompiled => {
   if (recipe.kit !== "biz3d") throw new Error(`recipe ${recipe.slug}: kit must be "biz3d"`);
   const L = layoutOf(recipe.format);
+  const LS = L.id === "landscape";
+  if (recipe.chapters && !LS) throw new Error(`recipe ${recipe.slug}: "chapters" need "format": "landscape"`);
   const project = projectIn(L);
   const { at, lineEnd } = makeAt(words);
   const durS = recipe.duration ?? voDuration ?? Math.max(...words.map((w) => w.end)) + 0.8;
@@ -238,16 +252,18 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     execs.forEach((tr) => states.set(tr.id, (t) => execState(tr, t)));
     const subj = targetFn(camTarget);
     const s0 = subj(a);
-    const az = (c.az ?? 0) * D2R, dist = (c.dist ?? P.dist) * L.distK, h = c.h ?? P.h;
+    // landscape: the shared 16:9 lens rule (keep the vertical fov; wider presets narrow it, `wide`-class come in a little)
+    const [fk, dk] = LS ? landscapeLens(c.preset) : [1, 1];
+    const az = (c.az ?? 0) * D2R, dist = LS ? c.dist ?? P.dist * dk : c.dist ?? P.dist, h = c.h ?? P.h;
     const off: V3 = [Math.sin(az) * dist, h, Math.cos(az) * dist];
     lensPos0 = add(s0, off);
     const hit = at(c.hit, a + 0.12);
-    const fov0 = (c.fov ?? P.fov) * L.fovK;
+    const fov0 = LS ? (c.fov ?? P.fov) * fk : c.fov ?? P.fov;
     let lens: Lens = { a, b, subj, off, fov: () => fov0, face: c.face ?? P.face, push: P.push, roll: c.roll ?? P.roll, blur: c.blur ?? P.blur };
     const span = (t: number) => clamp((t - a) / Math.max(0.3, b - a));
     switch (c.preset) {
       case "slamZoom": {
-        const wide = 60 * L.fovK;
+        const wide = LS ? 60 * fk : 60;
         lens.fov = (t) => (t < hit - 0.2 ? wide : t < hit ? wide + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(wide, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2));
         break;
       }
@@ -292,7 +308,7 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     const kicks: [number, number][] = [];
     if (c.preset === "slamZoom") kicks.push([hit, 1.2]);
     if (c.preset === "hookZoom") kicks.push([a + 0.38, 0.7]);
-    if (tin === "punch") { const f0 = lens.fov; lens = { ...lens, fov: (t) => f0(t) + 7 * L.fovK * (1 - easeOut3((t - a) / 0.14)) }; kicks.push([a, 0.5]); }
+    if (tin === "punch") { const f0 = lens.fov; lens = { ...lens, fov: (t) => f0(t) + (LS ? 7 * fk : 7) * (1 - easeOut3((t - a) / 0.14)) }; kicks.push([a, 0.5]); }
     if (tin === "whip") {
       const s1 = lens.subj, p1 = lens.posAt ?? ((t: number) => add(s1(t), off));
       lens = { ...lens, posAt: p1, subj: (t) => { const q = s1(t), pp = p1(t); return add(pp, rotY(sub(q, pp), 32 * D2R * whipK(t, a))); } };
@@ -386,7 +402,12 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
   };
 
   // ---------------------------------------------------- per-time helpers
-  const shotAt = (t: number) => { let s = shots[0]; for (const x of shots) if (t >= x.a - 1e-9) s = x; return s; };
+  // binary search (long-form has hundreds of shots): the last shot with a - 1e-9 <= t, else the first
+  const shotAt = (t: number) => {
+    let lo = 0, hi = shots.length - 1, k = 0;
+    while (lo <= hi) { const mid = (lo + hi) >> 1; if (t >= shots[mid].a - 1e-9) { k = mid; lo = mid + 1; } else hi = mid - 1; }
+    return shots[k];
+  };
   const camOf = (Ls: Lens, t: number): Cam => {
     const tau = Math.max(0, t - Ls.a);
     const subj = Ls.subj(t);
@@ -551,10 +572,51 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     for (const e of s.execs) for (const g of e.segs.slice(1)) if (g.pose === "slam") cues.push({ t: g.t0 + 0.31, sfx: "punch", db: -3 });
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
+  // ---------------------------------------------------- landscape: chapters (a whoosh + impact per card)
+  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
+  if (LS) cues.push(...chapterCues(chapters));
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "upbeat", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, chart, at, hookUntil, hookAgain, shotAt, sceneT, freezeAt, camAt, execsAt, placeOf, propState, world, labelsAt, tagsAt, devicesAt, qa, textsAt, project, audio };
+  // ---------------------------------------------------- landscape: caption-safe framing + the lower-third plan
+  // A face in the caption column (240 px side margins) that lands in the lower-third band lifts the shot's subject
+  // (its lens `face` fraction) just enough to clear it, unless the recipe sets cam.face; whatever is left over moves
+  // the caption (lowerThirdY). Computed at compile time (nothing is baked into the gen file, as in portrait).
+  const facesOf = (s: BizShotR): FaceBand[] => {
+    const out: FaceBand[] = [];
+    for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
+      const tm = s.a + (s.b - s.a) * u, cam = camAt(tm);
+      for (const st of s.execs.map((e) => execState(e, sceneT(tm)))) {
+        const f = execHead(st), q = project(cam, f.c);
+        if (!q || q.x < LF.CAP_SIDE || q.x > L.W - LF.CAP_SIDE) continue;
+        const half = f.r * q.k;
+        if (q.y + half > 0 && q.y - half < L.H) out.push({ top: q.y - half, bot: q.y + half });
+      }
+    }
+    return out;
+  };
+  const lifted: { id: string; from: number; to: number }[] = [];
+  const capPlan = new Map<string, number>();
+  if (LS) {
+    for (const s of shots) {
+      if (typeof s.spec.cam.face === "number") continue;
+      const f0 = s.lens.face;
+      for (let it = 0; it < 4; it++) {
+        const need = liftNeeded(facesOf(s));
+        if (need <= 0 || s.lens.face <= 0.26 + 1e-3) break;
+        s.lens.face = Math.max(0.26, s.lens.face - need);
+      }
+      if (s.lens.face !== f0) lifted.push({ id: s.id, from: f0, to: Math.round(s.lens.face * 1000) / 1000 });
+    }
+  }
+  const capY = (s: BizShotR) => {
+    if (!LS) return L.cap.centre;
+    let y = capPlan.get(s.id);
+    if (y === undefined) { y = lowerThirdY(facesOf(s)); capPlan.set(s.id, y); }
+    return y;
+  };
+
+  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, chart, at, hookUntil, hookAgain, shotAt, sceneT, freezeAt, camAt, execsAt, placeOf, propState, world, labelsAt, tagsAt, devicesAt, qa, textsAt, project, audio, landscape: LS, chapters, capY, lifted };
 };
 
 // ------------------------------------------------------------------ executive tracks

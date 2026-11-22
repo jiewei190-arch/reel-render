@@ -1,0 +1,490 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 31.705,
+  "cutFrom": "biz-demo-blockbuster-passed",
+  "clippedFrom": "biz-demo-landscape",
+  "clipFrom": 3.905,
+  "clipTo": 34.81
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "It was 2000. Netflix mailed DVDs, and it was losing money.",
+   "words": [
+    {
+     "w": "It",
+     "t": 0.1,
+     "end": 0.31
+    },
+    {
+     "w": "was",
+     "t": 0.31,
+     "end": 0.565
+    },
+    {
+     "w": "2000.",
+     "t": 0.565,
+     "end": 0.865
+    },
+    {
+     "w": "Netflix",
+     "t": 0.865,
+     "end": 1.3
+    },
+    {
+     "w": "mailed",
+     "t": 1.3,
+     "end": 1.69
+    },
+    {
+     "w": "DVDs,",
+     "t": 1.69,
+     "end": 1.99
+    },
+    {
+     "w": "and",
+     "t": 1.99,
+     "end": 2.245
+    },
+    {
+     "w": "it",
+     "t": 2.245,
+     "end": 2.455
+    },
+    {
+     "w": "was",
+     "t": 2.455,
+     "end": 2.71
+    },
+    {
+     "w": "losing",
+     "t": 2.71,
+     "end": 3.1
+    },
+    {
+     "w": "money.",
+     "t": 3.1,
+     "end": 3.445
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Its founders flew to Dallas and offered to sell.",
+   "words": [
+    {
+     "w": "Its",
+     "t": 3.795,
+     "end": 4.05
+    },
+    {
+     "w": "founders",
+     "t": 4.05,
+     "end": 4.53
+    },
+    {
+     "w": "flew",
+     "t": 4.53,
+     "end": 4.83
+    },
+    {
+     "w": "to",
+     "t": 4.83,
+     "end": 5.04
+    },
+    {
+     "w": "Dallas",
+     "t": 5.04,
+     "end": 5.43
+    },
+    {
+     "w": "and",
+     "t": 5.43,
+     "end": 5.685
+    },
+    {
+     "w": "offered",
+     "t": 5.685,
+     "end": 6.12
+    },
+    {
+     "w": "to",
+     "t": 6.12,
+     "end": 6.33
+    },
+    {
+     "w": "sell.",
+     "t": 6.33,
+     "end": 6.63
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "By one founder's account, Blockbuster's boss struggled not to laugh.",
+   "words": [
+    {
+     "w": "By",
+     "t": 6.98,
+     "end": 7.19
+    },
+    {
+     "w": "one",
+     "t": 7.19,
+     "end": 7.445
+    },
+    {
+     "w": "founder's",
+     "t": 7.445,
+     "end": 7.97
+    },
+    {
+     "w": "account,",
+     "t": 7.97,
+     "end": 8.405
+    },
+    {
+     "w": "Blockbuster's",
+     "t": 8.405,
+     "end": 9.11
+    },
+    {
+     "w": "boss",
+     "t": 9.11,
+     "end": 9.41
+    },
+    {
+     "w": "struggled",
+     "t": 9.41,
+     "end": 9.935
+    },
+    {
+     "w": "not",
+     "t": 9.935,
+     "end": 10.19
+    },
+    {
+     "w": "to",
+     "t": 10.19,
+     "end": 10.4
+    },
+    {
+     "w": "laugh.",
+     "t": 10.4,
+     "end": 10.745
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The answer was no. Blockbuster ruled the video store.",
+   "words": [
+    {
+     "w": "The",
+     "t": 11.095,
+     "end": 11.35
+    },
+    {
+     "w": "answer",
+     "t": 11.35,
+     "end": 11.74
+    },
+    {
+     "w": "was",
+     "t": 11.74,
+     "end": 11.995
+    },
+    {
+     "w": "no.",
+     "t": 11.995,
+     "end": 12.205
+    },
+    {
+     "w": "Blockbuster",
+     "t": 12.205,
+     "end": 12.82
+    },
+    {
+     "w": "ruled",
+     "t": 12.82,
+     "end": 13.165
+    },
+    {
+     "w": "the",
+     "t": 13.165,
+     "end": 13.42
+    },
+    {
+     "w": "video",
+     "t": 13.42,
+     "end": 13.765
+    },
+    {
+     "w": "store.",
+     "t": 13.765,
+     "end": 14.11
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "By 2004 it had about nine thousand stores, and late fees poured in.",
+   "words": [
+    {
+     "w": "By",
+     "t": 14.46,
+     "end": 14.67
+    },
+    {
+     "w": "2004",
+     "t": 14.67,
+     "end": 14.97
+    },
+    {
+     "w": "it",
+     "t": 14.97,
+     "end": 15.18
+    },
+    {
+     "w": "had",
+     "t": 15.18,
+     "end": 15.435
+    },
+    {
+     "w": "about",
+     "t": 15.435,
+     "end": 15.78
+    },
+    {
+     "w": "nine",
+     "t": 15.78,
+     "end": 16.08
+    },
+    {
+     "w": "thousand",
+     "t": 16.08,
+     "end": 16.56
+    },
+    {
+     "w": "stores,",
+     "t": 16.56,
+     "end": 16.95
+    },
+    {
+     "w": "and",
+     "t": 16.95,
+     "end": 17.205
+    },
+    {
+     "w": "late",
+     "t": 17.205,
+     "end": 17.505
+    },
+    {
+     "w": "fees",
+     "t": 17.505,
+     "end": 17.805
+    },
+    {
+     "w": "poured",
+     "t": 17.805,
+     "end": 18.195
+    },
+    {
+     "w": "in.",
+     "t": 18.195,
+     "end": 18.405
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Then Netflix went streaming, and the stores went dark, one by one.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 18.755,
+     "end": 19.055
+    },
+    {
+     "w": "Netflix",
+     "t": 19.055,
+     "end": 19.49
+    },
+    {
+     "w": "went",
+     "t": 19.49,
+     "end": 19.79
+    },
+    {
+     "w": "streaming,",
+     "t": 19.79,
+     "end": 20.315
+    },
+    {
+     "w": "and",
+     "t": 20.315,
+     "end": 20.57
+    },
+    {
+     "w": "the",
+     "t": 20.57,
+     "end": 20.825
+    },
+    {
+     "w": "stores",
+     "t": 20.825,
+     "end": 21.215
+    },
+    {
+     "w": "went",
+     "t": 21.215,
+     "end": 21.515
+    },
+    {
+     "w": "dark,",
+     "t": 21.515,
+     "end": 21.815
+    },
+    {
+     "w": "one",
+     "t": 21.815,
+     "end": 22.07
+    },
+    {
+     "w": "by",
+     "t": 22.07,
+     "end": 22.28
+    },
+    {
+     "w": "one.",
+     "t": 22.28,
+     "end": 22.535
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "In 2010, Blockbuster filed for bankruptcy, with over a billion dollars in debt.",
+   "words": [
+    {
+     "w": "In",
+     "t": 22.885,
+     "end": 23.095
+    },
+    {
+     "w": "2010,",
+     "t": 23.095,
+     "end": 23.395
+    },
+    {
+     "w": "Blockbuster",
+     "t": 23.395,
+     "end": 24.01
+    },
+    {
+     "w": "filed",
+     "t": 24.01,
+     "end": 24.355
+    },
+    {
+     "w": "for",
+     "t": 24.355,
+     "end": 24.61
+    },
+    {
+     "w": "bankruptcy,",
+     "t": 24.61,
+     "end": 25.18
+    },
+    {
+     "w": "with",
+     "t": 25.18,
+     "end": 25.48
+    },
+    {
+     "w": "over",
+     "t": 25.48,
+     "end": 25.78
+    },
+    {
+     "w": "a",
+     "t": 25.78,
+     "end": 25.945
+    },
+    {
+     "w": "billion",
+     "t": 25.945,
+     "end": 26.38
+    },
+    {
+     "w": "dollars",
+     "t": 26.38,
+     "end": 26.815
+    },
+    {
+     "w": "in",
+     "t": 26.815,
+     "end": 27.025
+    },
+    {
+     "w": "debt.",
+     "t": 27.025,
+     "end": 27.325
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Netflix today? Worth over two hundred fifty billion dollars.",
+   "words": [
+    {
+     "w": "Netflix",
+     "t": 27.675,
+     "end": 28.11
+    },
+    {
+     "w": "today?",
+     "t": 28.11,
+     "end": 28.455
+    },
+    {
+     "w": "Worth",
+     "t": 28.455,
+     "end": 28.8
+    },
+    {
+     "w": "over",
+     "t": 28.8,
+     "end": 29.1
+    },
+    {
+     "w": "two",
+     "t": 29.1,
+     "end": 29.355
+    },
+    {
+     "w": "hundred",
+     "t": 29.355,
+     "end": 29.79
+    },
+    {
+     "w": "fifty",
+     "t": 29.79,
+     "end": 30.135
+    },
+    {
+     "w": "billion",
+     "t": 30.135,
+     "end": 30.57
+    },
+    {
+     "w": "dollars.",
+     "t": 30.57,
+     "end": 31.005
+    }
+   ]
+  }
+ ]
+}

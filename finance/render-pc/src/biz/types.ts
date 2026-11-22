@@ -105,6 +105,8 @@ export type BizShot = {
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
   note?: string;
+  /** long-form pacing: this shot starts a new story beat (set changes and chapters count by themselves) */
+  beat?: boolean;
 };
 
 export type BizChart = {
@@ -132,6 +134,8 @@ export type BizRecipe = {
   chart?: BizChart;
   props?: (BizProp & { from?: At; until?: At; sets?: BizSetId[] })[];
   shots: BizShot[];
+  /** landscape only: YouTube chapters, each starting on a word (LONGFORM.md); a title card plays at each */
+  chapters?: { title: string; word: At }[];
   captions?: "auto" | "off";
   talk?: "auto" | "none";
 };

@@ -340,6 +340,20 @@ const paperTex = (key: string, mast: string, head: string, hero: boolean) => can
   g.fillStyle = "#5a554c";
   for (let r = 0; r < 26; r++) for (let c = 0; c < 2; c++) { const x = c === 0 ? W * 0.56 : 14 * k, y = c === 0 ? y0 + r * 9 * k : y0 + H * 0.3 + 10 * k + r * 9 * k; if (y < H - 12 * k) g.fillRect(x, y, (c === 0 ? W * 0.4 : W - 28 * k) * (0.7 + 0.3 * hash(r + c * 40)), 3 * k); }
 });
+/** the hero paper's texture is keyed by its headline text, so a long-form video with many headline shots would hold one
+ *  GPU texture per headline: keep the last HERO_KEEP in use and dispose older ones (three re-uploads one if it returns) */
+const HERO_KEEP = 6;
+const heroUsed: THREE.Texture[] = [];
+const heroTex = (headline?: string) => {
+  const tex = paperTex(`bzHero|${headline ?? ""}`, "THE DAILY LEDGER", (headline ?? "BREAKING NEWS").toUpperCase(), true);
+  const i = heroUsed.indexOf(tex);
+  if (i !== heroUsed.length - 1) {
+    if (i >= 0) heroUsed.splice(i, 1);
+    heroUsed.push(tex);
+    while (heroUsed.length > HERO_KEEP) heroUsed.shift()!.dispose();
+  }
+  return tex;
+};
 const PAPERS = Array.from({ length: 18 }, (_, k) => {
   const col = k % 6, row = Math.floor(k / 6);
   return { x: -4.1 + col * 1.64 + 0.15 * (hash(k) - 0.5), y: 0.95 + row * 1.5 + 0.12 * hash(k + 3), r: 0.12 * (hash(k + 5) - 0.5), mast: MASTHEADS[k % MASTHEADS.length], head: HEADS[k % HEADS.length], k };
@@ -374,7 +388,7 @@ const headlines: BizSet = {
         })}
         {hero.vis ? (
           <group position={hero.p} rotation={[0.02 * Math.sin(t * 1.7), 0, hero.r]} scale={hero.s}>
-            <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 0.8, map: paperTex(`bzHero|${w.headline ?? ""}`, "THE DAILY LEDGER", (w.headline ?? "BREAKING NEWS").toUpperCase(), true), side: THREE.DoubleSide })} scale={[1.75, 2.3, 1]} castShadow />
+            <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 0.8, map: heroTex(w.headline), side: THREE.DoubleSide })} scale={[1.75, 2.3, 1]} castShadow />
             <mesh geometry={geoOf("bzPin", () => new THREE.SphereGeometry(0.035, 8, 6))} material={plastic(BP.red, { rough: 0.3 })} position={[0, 1.08, 0.03]} />
           </group>
         ) : null}

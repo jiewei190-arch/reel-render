@@ -45,16 +45,16 @@ src/biz/gen/<slug_>.biz.gen.ts  →  <Pascal>Recipe in src/index.biz.ts (size fr
 
 ## 2. Formats and layout (src/biz/layout.ts)
 
-**Every screen-space number of the kit is in `src/biz/layout.ts`**: frame size, hook, caption band, safe area, label, board, company card, decision, counter and worth slots, chart tags, plus the camera's `fovK` and `distK`. Nothing else in the kit hard-codes 1080 or 1920.
+**Every screen-space number of the kit is in `src/biz/layout.ts`**: frame size, hook, caption band, safe area, label, board, company card, decision, counter and worth slots, chart tags. Nothing else in the kit hard-codes 1080 or 1920.
 
 | `format` in recipe.json | layout | size | gate length |
 |---|---|---|---|
 | `"short"` (default), `"portrait"` | portrait | 1080 x 1920 | 30-55 s |
 | `"long"` | portrait | 1080 x 1920 | 5-8 min |
-| `"landscape"` | landscape | 1920 x 1080 | 5-8 min |
+| `"landscape"` | landscape | 1920 x 1080 | 8-12 min (the shared long-form gate, section 14) |
 
 - **Portrait** is built and tested today.
-- **Landscape** is wired through end to end: the composition size, the View, the projection, the HUD and the gate all read the layout. It uses the same `"format": "landscape"` key that the engine/longform branch is adding. Its numbers are a first pass; tune them in `LAYOUTS.landscape` when the first landscape recipe is reviewed. Camera presets are authored for portrait, and landscape scales the vertical fov by `fovK` (0.62) so subjects keep their size.
+- **Landscape** is long-form (LONGFORM.md): see section 14.
 
 ## 3. Palette and look (src/biz/palette.ts)
 
@@ -279,3 +279,72 @@ All cameras keep moving, including through a freeze-frame. The gate FAILs a Shor
 | `src/biz/gallery.ts` | the gallery shots and `GALLERY_STILLS` |
 | `tools/biz_build.mjs`, `tools/biz_entry.ts` | build, QA and gate |
 | `tools/biz_stills.mjs` | batch stills (`gallery`, or a composition's frames) |
+| `finance/longform/biz-demo-landscape/` | the landscape test recipe (35.5 s, 3 chapters); its Short: `finance/shorts/biz-demo-landscape-short-1/` |
+
+## 14. Long-form (landscape)
+
+`"format": "landscape"` makes a 1920x1080, 30 fps long-form video with the same rules as the Block Money engine
+(LONGFORM.md) and the shared pieces of `src/longform/kit.tsx` / `tools/kit_long.mjs`. Recipes live in
+`finance/longform/<slug>/` (recipe.json, script.txt, vo/timings.json); the builder finds them there.
+
+**Fields**
+
+| field | what it does |
+|---|---|
+| `"format": "landscape"` | the landscape layout (`LAYOUTS.landscape`), composition `<Pascal>Recipe` 1920x1080 in `src/index.biz.ts` |
+| `"chapters": [{ "title", "word" }]` | YouTube chapters (landscape only; a compile error in portrait). Each plays the shared 2.6 s chapter card (gold tab, red edge) at its word, or after the hook text for chapter 1, plus a whoosh + impact cue. `chapters.txt` is written next to the recipe. |
+| `"beat": true` on a shot | marks a new story beat for the pacing gate (chapters and set changes count by themselves) |
+| `hook` | top-centre from frame 0 (top 70, 80 px), the kit's white card with the accent word; the Shorts 5-word limit does not apply |
+| `cam.face` | as in portrait; setting it opts the shot out of caption-safe framing |
+
+**What adapts (automatic)**
+
+- Lens: the shared 16:9 rule. The vertical fov is kept and each preset gets `landscapeLens(preset)` = [fov x, dist x]
+  (hookZoom / closeUp 1.0, slamZoom / pushIn 0.95, medium / whip / orbit / dolly 0.9, crane 0.85 + dist 0.95, wide 0.8 +
+  dist 0.95, chartFly 0.9 by default). The dist factor applies to the preset distance only, as in the engine.
+- Captions: the shared lower third (`LowerThirdCaptions`, 7-word phrases, 2 lines in the 1440 px column), the spoken word
+  in the kit's gold (as on the Shorts). Caption-safe framing: a shot whose face (in the caption column) lands in the
+  band 833-977 px is lifted (its lens `face`, down to 0.26) at compile time; what is left moves the caption centre
+  (`lowerThirdY`, per shot). Nothing is baked into the gen file (the kit never bakes, in portrait either).
+- Cards: every card, label and chart tag is laid out from `LAYOUTS.landscape`: inside x 80-1840, below y 60 (300 while
+  the hook shows) and above y 817 (the caption band). THE DECISION sits high (y 262), so put a stamp under it with
+  `"y"` (px of the 1080-tall frame, e.g. 548) and frame the face low (the demo uses `cam.face` 0.68 there).
+- Rendering: `BizFilmL` (src/biz/film.tsx): one View, no per-shot key, so the WebGL canvas stays mounted across shots;
+  `postScale={1}` so the outline / bloom / DOF keep their Shorts weight. The kit is procedural (no GLB, no fetched
+  texture): geometry and materials are cached by fixed names; the hero headline paper (one texture per headline text)
+  keeps the last 6 and disposes older ones.
+
+**Commands**
+
+```bash
+node tools/recipe_build.mjs biz-demo-landscape --check                # compile + clip QA + the long-form gate
+node tools/recipe_build.mjs biz-demo-landscape --check --qa-sample 5  # QA every 5th frame (drafts of a 10-min video)
+node tools/recipe_build.mjs biz-demo-landscape                        # gen file, registry, cues, RECIPE_QA.md, chapters.txt
+npx remotion still src/index.biz.ts BizDemoLandscapeRecipe out.jpg --frame=130 --scale=0.5 --gl=swangle --timeout=600000
+npx remotion render src/index.biz.ts BizDemoLandscapeRecipe out/longform/biz-demo-landscape.mp4 --gl=angle --codec=h264 --crf=18
+# a portrait Short from it (the biz3d clip adapter in tools/biz_entry.ts), then the full Shorts gate
+node tools/clip_short.mjs biz-demo-landscape --from-word "2:It" --to-word "9:dollars" --out biz-demo-landscape-short-1
+node tools/recipe_build.mjs biz-demo-landscape-short-1
+```
+
+The long-form gate (`kitLongGate`) gets: every shot (+ `beat`), the visual-change events of this kit (camera hits and
+kicks, dropIn / popIn props, pose changes, label and device pop-ins, actions such as crack / dark / drain / slam / draw,
+fx), the chapters, the words, the audio, the hook, the lower-third share and the cards' font size / frame edge / band
+notes. Shorts keep the kit's full frame-0 gate and every-frame x 4 QA; `--qa-sample` is ignored for them, with a note.
+
+**The clip adapter** (`clipAdapter` in tools/biz_entry.ts) re-times every time field of a biz3d shot (shot `at`,
+`cam.hit`, actor `from` / `then[].at`, prop `hit`, action `at` / `until` / `collapse`, device `at` / `until`, fx `at`,
+sfx `at`; places stay), keeps the global props that overlap the segment, and makes a fresh frame-0 shot: a hookZoom on
+the segment's first executive seated at the boardroom head (arms folded, a shrug + shake at 0.45 s), the hook text
+(<= 5 words, the `$`/number word in the accent, cut to fit the portrait card) and, if the hook has no number, the stake
+as a label. From a landscape source it drops explicit `cam.face` values and re-places stamps for 9:16.
+
+**Limits**
+
+- The sets were built for 9:16. A 16:9 frame shows 3.2x the width at the same height: wide shots of the boardroom and
+  warehouse show more of the walls and racks (fine on the sets today), but very wide `dist` values on small sets can
+  reach their edges. Check stills.
+- The lower third only moves (or lifts the subject) for executives' heads; kit props are never treated as faces.
+- The hook card, chapter card and lower-third looks are fixed (the kit's hook card, the shared chapter card).
+- The test recipe uses the synthetic timings of the portrait demo (35.5 s); the pacing warnings about length and open
+  loops are expected for it.

@@ -1,0 +1,78 @@
+{
+  "kit": "biz3d",
+  "music": "upbeat",
+  "cast": {
+    "ceo": {
+      "suit": "#2E3440",
+      "tie": "#EF3B36",
+      "skin": "#E2B48E",
+      "hair": "#5B4636",
+      "hairStyle": "short"
+    },
+    "f1": {
+      "suit": "#2F5A3A",
+      "tie": "#22C55E",
+      "skin": "#D9A47E",
+      "hair": "#2B1D14"
+    },
+    "f2": {
+      "suit": "#1F5F63",
+      "tie": "#4ADE80",
+      "skin": "#C98F68",
+      "hair": "#141414",
+      "hairStyle": "bald"
+    },
+    "bm1": "navy",
+    "bm2": "burgundy"
+  },
+  "chart": {
+    "pts": [
+      0.2,
+      1.6,
+      3.6,
+      6,
+      7.7,
+      9.1,
+      7.9,
+      6,
+      3.3
+    ],
+    "tags": [
+      {
+        "i": 0,
+        "text": "1985"
+      },
+      {
+        "i": 4,
+        "text": "2000"
+      },
+      {
+        "i": 5,
+        "text": "2004"
+      },
+      {
+        "i": 8,
+        "text": "2010"
+      }
+    ]
+  },
+  "slug": "biz-demo-landscape-short-1",
+  "hook": {
+    "text": "THE *$50* MILLION OFFER",
+    "until": 2.5
+  },
+  "shots": [
+    {"at":0,"set":"boardroom","note":"fresh hook card (tools/clip_short.mjs, biz3d adapter): \"THE $50 MILLION OFFER\", cuts away at 1.0 s","cam":{"preset":"hookZoom","target":"ceo","dist":2.3,"h":0.35,"face":0.74},"actors":[{"id":"ceo","pose":"fold","at":"head","seated":true,"then":[{"at":0.45,"pose":"shrug"}]}],"fx":[{"fx":"shake","at":0.45,"gain":0.8}]},
+    {"at":1,"set":"warehouse","note":"2000: mailing discs, losing money","cam":{"preset":"dolly","target":"conveyor","dist":5.2,"h":1,"az":8,"sweep":1.6},"devices":[{"do":"board","title":"the year","value":"2000","at":"1:2000","until":"1:losing","pos":"top"},{"do":"counter","title":"Netflix losses, 2000","from":0,"to":-57000000,"at":"1:losing","dur":0.8,"tone":"red"}]},
+    {"at":"2:its","set":"boardroom","note":"the founders walk in to Dallas HQ","cam":{"preset":"orbit","target":"f1","dist":3.6,"h":0.5,"az":205,"sweep":36},"actors":[{"id":"f1","pose":"walk","at":"door:-0.45,0,0","to":"foot:-0.45,0,0","then":[{"at":"2:offered","pose":"talk"}]},{"id":"f2","pose":"walk","at":"door:0.45,0,0","to":"foot:0.45,0,0","then":[{"at":"2:offered","pose":"point"}]},{"id":"ceo","pose":"idle","at":"head","seated":true},{"id":"bm1","pose":"idle","at":"seatL1","seated":true},{"id":"bm2","pose":"idle","at":"seatR1","seated":true}],"actions":[{"do":"label","on":"f1.head","text":"the founders","at":"2:founders","until":"2:sell","tone":"green"}]},
+    {"at":"3:by","set":"boardroom","note":"the boss tries not to laugh","cam":{"preset":"closeUp","target":"ceo","dist":2.7,"h":0.3,"az":-15},"actors":[{"id":"ceo","pose":"idle","at":"head","seated":true,"then":[{"at":"3:struggled","pose":"laugh"}]},{"id":"bm1","pose":"idle","at":"seatL1","seated":true},{"id":"bm2","pose":"talk","at":"seatR1","seated":true}]},
+    {"at":"4:the","in":"whip","set":"boardroom","note":"THE DECISION freeze; the fist comes down on no","cam":{"preset":"pushIn","target":"ceo","dist":2.6,"h":0.6,"az":10},"actors":[{"id":"ceo","pose":"fold","at":"head","seated":true,"then":[{"at":"4:answer","pose":"slam"}]},{"id":"bm1","pose":"idle","at":"seatL1","seated":true},{"id":"bm2","pose":"idle","at":"seatR1","seated":true}],"devices":[{"do":"decision","at":"4:answer+0.25","until":"4:blockbuster","sub":"sell for $50M?"},{"do":"stamp","text":"NO","at":"4:no","until":"4:blockbuster","y":1080}]},
+    {"at":"4:blockbuster","set":"city","note":"the king of the video store: every store lit","cam":{"preset":"crane","target":"stores:0,0.9,0","dist":9.5,"h":1.4},"devices":[{"do":"company","name":"Blockbuster","year":1985,"icon":"film","tone":"red","at":"4:blockbuster+0.1","pos":"low"}]},
+    {"at":"5:by","set":"chart","note":"THE SIGNATURE: ride the chart up to the 2004 peak","cam":{"preset":"chartFly","from":0,"to":5.2,"dist":7.5,"h":2.4,"az":40},"devices":[{"do":"board","title":"stores","value":"~9,000","at":"5:nine","pos":"left","tone":"green"}]},
+    {"at":"6:then","set":"chart","note":"streaming arrives: the line crashes, the lens dives with it","cam":{"preset":"chartFly","from":5,"to":8,"dist":7.5,"h":2.4,"az":40}},
+    {"at":"6:stores","in":"cut","set":"city","note":"the stores go dark, one by one","cam":{"preset":"pushIn","target":"stores:0,0.9,0","dist":10,"h":2.2,"az":-8},"actions":[{"do":"dark","on":"stores","at":"6:dark","stagger":0.12,"order":"left"}]},
+    {"at":"7:in","set":"city","note":"the crack runs down the tower, then it splits","cam":{"preset":"slamZoom","target":"hq:0,4.2,0","dist":16,"h":1.5,"hit":"7:in+0.12"},"props":[{"id":"hq","kit":"tower","at":"hq","size":[2.6,8.5,2.4]}],"actions":[{"do":"dark","on":"stores","at":22.895,"stagger":0},{"do":"crack","on":"hq","at":"7:filed","dur":0.6,"collapse":"7:bankruptcy"}],"fx":[{"fx":"debris","at":"7:bankruptcy+0.1","p":"hq:0,4,1.4","gain":1.4},{"fx":"shake","at":"7:bankruptcy"}]},
+    {"at":"7:with","set":"headlines","headline":"Blockbuster files for bankruptcy","cam":{"preset":"pushIn","target":"hero:0,-0.35,0","dist":4.6,"h":0.1},"actions":[{"do":"slam","on":"papers","at":"7:bankruptcy+0.15","stagger":0.02}],"devices":[{"do":"counter","title":"debt","from":0,"to":1460000000,"at":"7:billion","dur":0.7,"tone":"red"}]},
+    {"at":"8:netflix","set":"chart","note":"what the $50M is worth today","cam":{"preset":"orbit","target":"chart","dist":30,"h":3.5,"az":10,"sweep":30},"devices":[{"do":"worth","at":"8:netflix+0.1","a":{"label":"the asking price","value":50000000},"b":{"label":"Netflix today","value":250000000000,"text":"$250B+"}}]}
+  ]
+}
