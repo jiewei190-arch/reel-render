@@ -76,10 +76,13 @@ def _length_rules(seconds: int) -> str:
                 "- The **last line leads straight back into line 1** so the Short loops.")
     return (f"- This is a LONG-FORM video: target **{seconds // 60} minutes** spoken (about {words} words), one line per "
             "sentence or two.\n"
-            "- Structure: cold open (the most shocking moment, 20-40 s) -> the promise of what they'll learn -> 4-7 "
+            "- Structure: cold open (the most shocking moment, 20-40 s) -> ONE sentence of promise (under 10 s; never a "
+            "table of contents: no 'you'll see... you'll learn... you'll find out...' lists) -> 4-7 "
             "chapters, each with its own mini-cliffhanger -> the payoff -> a one-line takeaway. Fill `chapters` with a "
             "short title and the first words of the line that opens it.\n"
             "- Re-hook every 60-90 seconds (a new question, a reveal, 'but here's what nobody knew').\n"
+            "- The answer the cold open teases must not wait until the last minute: pay it off by about the 2/3 mark "
+            "and give it room (several lines), then the consequences.\n"
             "- Give a `thumbnail` idea: one striking image + at most 4 words, that pays off something in the first minute.\n"
             "- Title promise must be delivered in the video; no clickbait the story doesn't back up.")
 
