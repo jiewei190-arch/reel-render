@@ -90,6 +90,7 @@ The reference port is `finance/shorts/minimum-payment-trap/recipe.json`. It has 
 - `az` is the azimuth in degrees; 0 = straight from +z.
 - `dist` and `h` override the preset's distance and height.
 - `face` is where the target sits in the frame (0 = top).
+- A shot's `"subject": "<actor id>"` names the actor the shot is about when the camera aims at a prop or an anchor. The framing rule R2 (section 4.1) keeps that actor in frame.
 
 **Props.** A prop is either a CC0 `asset` from the catalogue (section 3.6) or one of our `kit` pieces:
 
@@ -98,10 +99,10 @@ The reference port is `finance/shorts/minimum-payment-trap/recipe.json`. It has 
 | `tv` | `text` = the screen |
 | `card`, `reader`, `coin`, `bill` | (none) |
 | `debtBlock`, `block` | `text`, `size`, `color` |
-| `label` | `text`, `size`, `color` |
+| `label` | `text`, `size`, `color` (the fill), `fg` (the text colour, default cream `#fff4c8`; use `#16121c` on light fills) |
 | `jar` | `fill` 0 to 1.2, `text`, `color` |
 | `coinPile` | `size` = [r, h] |
-| `calendar` | `text` = [title, value, sub] |
+| `calendar` | `text` = [title, value, sub]. It always renders 1.3 x 1.1 m; `size` only changes its QA box. |
 | `stamp` | `text`, `size` |
 | `payBox` | `text` |
 | `counter` | (none) |
@@ -240,7 +241,34 @@ It uses the same box maths as `tools/story_qa.mjs`, extended with feet, hands an
 
 The reference port `minimum-payment-trap` (live; 59.7 % stayed on day 1) passes the clip QA. It FAILS two day-1 checks: its hook has 7 words, and its line 1 opens with "Spender". These are exactly the shared problems the day-1 data points at. The recipe is kept as a faithful port of the published Short.
 
+### 4.1 Framing rules (screen space; tools/framing_qa.mjs, every output frame)
+
+The build projects every head, body, board and prop through the shot camera into the 1080x1920 frame on **every
+output frame**, and checks what the viewer will actually see. These rules exist because the first AI-written Short
+rendered with all five defects and three re-renders did not fix them. Fix them in the recipe **before** any render:
+run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line says 0 clips and 0 fails. Each message
+names the shot, the time, the board or actor, and what to move where (in metres, as an offset to add to `at`).
+
+| rule | result | what it means | how to fix |
+|---|---|---|---|
+| **R1** no board or prop on a head | CLIP | On screen, a board, sign, label or small prop overlaps an actor's **head box, which includes the antennae, hair and hat**. Text boards count at any depth: in front of the head they hide it, behind it the antennae vanish into the board. Small props count when they are within 0.6 m of the head. | Move the board up (above the antennae tips), or beside the actor (the message gives both moves), or move the actor. Never float a board just above a character's head. |
+| **R2** the subject stays in frame | FAIL | The shot's subject is the camera's target actor, else the shot's `"subject"`, else its only actor while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) must be inside the frame. In a close shot (the body is wider than the frame), the head must be centred (its centre in the middle 60 % of the width). The head box must not touch any edge (11 px). Any other actor's head is fully in or fully out, never sliced by an edge. | Aim the camera at the actor (`cam.target "spender"`), move the actor toward the screen centre (the message gives the offset), or pull back (`cam.dist`). Do not park the only character at the frame edge while boards float over an empty floor. |
+| **R3** boards inside the frame | FAIL | Every landed board (from 0.3 s after its hit) stays fully inside the frame with a 3 % margin (32 px). Multi-shot background boards count when their text is big enough to read. Falling `rain` copies are exempt. | Move the board inward, make it shorter (a long one-line board like "OWE $4,950" is wide), or pull the camera back. |
+| **R4** board text reads | FAIL | (a) Every text line has a **WCAG contrast ratio of at least 4.5:1** against its fill. (b) A board listed in the shot (or the camera target) has a main line of **at least 42 px cap height**, taken as the median while it is on screen. | (a) Use a dark, saturated fill with the cream text: red `#c01818` (5.6:1), green `#197e3f` (4.6:1), purple `#7a4ad8`, ink `#16121c`. The default red `#d62a2a` only just passes (4.50:1). For light fills (yellow `#ffd23a`, orange `#ff9a3a`, light green `#1f9e4f`), set `"fg": "#16121c"` on the label. A `debtBlock` or `block` prints its `color` on a cream plate, so that colour must be dark. (b) Make the board bigger (the message gives the `size`), move the camera closer, or shorten the line, because long lines shrink to fit. |
+| **R5** frame 0 is a close-up of a face | FAIL | At frame 0, the hook is at its full size (84 px) and the subject's face (the head without the antennae) is at least **16 % of the frame height (307 px)**. The face must be on screen. A mid-shot (the `medium` preset at 2.6 m gives about 15 %) fails. The default `hookZoom` on `"<actor>.face"` gives about 18 %. | Open on `"cam": {"preset": "hookZoom", "target": "spender.face", "dist": 1.7}` or a `slamZoom` on the face, with the stake board beside the head, not on it. |
+
+Known limits: the boxes are conservative (a yawed box's corners), so a board that only grazes the antennae tips can
+flag. Boards render unlit at their declared colours (since 2026-11-22), so the contrast the rule computes is the
+contrast on screen; a board far out of focus is still soft. **Split screens:** the engine keeps the bottom view's head
+(antennae included) below the seam and its face above the caption band, pulling that view back if needed, so its
+character is smaller. Put boards for the bottom view **beside** the head, never above it, or they cross the seam.
+Rule tuning and the reasons for it are in ENGINE.md "Framing QA".
+
 **Typical fixes:**
+- `CLIP S08 board bill ... is on spender's head`: add the offset the message gives to the board's `at` (usually up 0.2-0.4 m, or 0.3-0.6 m to one side), or move Spender.
+- `FAIL S04 subject spender ... only 72 % of its body is inside the frame`: aim the camera at Spender or move Spender toward the centre.
+- `FAIL ... board owe 'OWE / $4,950' crosses the left frame edge`: move it inward by the offset given, or pull back.
+- `FAIL ... text #fff4c8 on fill #1f9e4f is 3.14:1`: use `"color": "#197e3f"`, or `"fg": "#16121c"`.
 - `CLIP x spender.handR`: move the prop, or change the pose.
 - `feet float`: a non-grounded pose was used for standing.
 - Frame 0 under 50 %: lower `dist`, or use `closeUp` or `slamZoom`.

@@ -55,6 +55,8 @@ const paperTex = (title: string) => canvasTexture(`lawPaper|${title}`, 384, 512,
   lines(g, 40, 132, W - 40, 15, 22, "rgba(26,20,16,0.55)");
   g.strokeStyle = "rgba(26,20,16,0.6)"; g.lineWidth = 3; g.beginPath(); g.moveTo(W - 170, H - 56); g.bezierCurveTo(W - 140, H - 86, W - 110, H - 30, W - 60, H - 60); g.stroke();
 });
+/** the folder's CASE FILE stamp: 9.3:1 on the manila (framing QA R4; was LP.red, 3.0:1) */
+const FOLDER_STAMP = "#85241e";
 const folderTex = (label: string) => canvasTexture(`lawFolder|${label}`, 512, 640, (g, W, H) => {
   g.fillStyle = "#D8B46E"; g.fillRect(0, 0, W, H);
   g.fillStyle = "rgba(120,80,30,0.12)"; for (let k = 0; k < 40; k++) g.fillRect(0, k * 16, W, 2);
@@ -62,7 +64,7 @@ const folderTex = (label: string) => canvasTexture(`lawFolder|${label}`, 512, 64
   g.strokeStyle = LP.ink; g.lineWidth = 3; g.strokeRect(60, 70, W - 120, 120);
   g.fillStyle = LP.ink; g.font = `800 46px ${FONT}`; g.textAlign = "center"; g.textBaseline = "middle";
   wrap(g, label.toUpperCase(), W / 2, 130, W - 150, 50);
-  g.fillStyle = LP.red; g.font = `800 64px ${FONT}`; g.save(); g.translate(W / 2, H * 0.68); g.rotate(-0.18); g.strokeStyle = LP.red; g.lineWidth = 8; g.strokeRect(-170, -50, 340, 100); g.fillText("CASE FILE", 0, 4); g.restore();
+  g.fillStyle = FOLDER_STAMP; g.font = `800 64px ${FONT}`; g.save(); g.translate(W / 2, H * 0.68); g.rotate(-0.18); g.strokeStyle = FOLDER_STAMP; g.lineWidth = 8; g.strokeRect(-170, -50, 340, 100); g.fillText("CASE FILE", 0, 4); g.restore();
 });
 const photoTex = (kind: string) => canvasTexture(`lawPhoto|${kind}`, 256, 300, (g, W, H) => {
   g.fillStyle = "#f6f3ec"; g.fillRect(0, 0, W, H);

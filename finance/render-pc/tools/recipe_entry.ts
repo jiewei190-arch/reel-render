@@ -1,5 +1,5 @@
 // bundled by tools/recipe_build.mjs (esbuild, remotion/@react-three stubbed) to compile and QA recipes in node
-export { compileRecipe, capPlan, CAP_Y, captionSafeFraming, project, capPlanL, CAP_Y_L } from "../src/fin/recipe/compile";
+export { compileRecipe, capPlan, CAP_Y, captionSafeFraming, project, capPlanL, CAP_Y_L, framingAt, framingBoards } from "../src/fin/recipe/compile";
 export { makeAt, wordsOfTimings } from "../src/fin/recipe/timing";
 export { POSE_IDS } from "../src/fin/recipe/poses";
 export { SET_IDS } from "../src/fin/recipe/sets";

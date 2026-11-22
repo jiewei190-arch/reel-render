@@ -104,6 +104,8 @@ export type BizShot = {
   caption?: "auto" | "off" | string;
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
+  /** framing QA (KIT guide "Framing rules"): the person this shot is about when the camera aims at an object */
+  subject?: string;
   note?: string;
   /** long-form pacing: this shot starts a new story beat (set changes and chapters count by themselves) */
   beat?: boolean;

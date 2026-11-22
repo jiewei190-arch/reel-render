@@ -222,6 +222,9 @@ void main() {
   vec3 col = scene0.rgb;
   // liquid marker (alpha 0.4; MSAA edges against alpha 1 resolve in between; the clear color has alpha 0)
   uLiq = clamp((1.0 - scene0.a) / 0.6, 0.0, 1.0) * step(0.2, scene0.a);
+  // board-text marker (alpha 0.1, blocky/mat.ts signMat): the pixel keeps its declared colour (no grade, no bloom), so
+  // boards render at the contrast the framing QA computes; MSAA edges against alpha 1 resolve in between and blend
+  float uBoard = 1.0 - clamp(abs(scene0.a - 0.1) / 0.08, 0.0, 1.0);
   if (uSharpen > 0.0) {
     // local contrast ("clarity"): luminance unsharp mask, radius ~2.5 px
     vec3 b = vec3(0.0);
@@ -238,8 +241,9 @@ void main() {
     float k = clamp(1.0 + uSharpen * (l0 - lb) / max(lb + 0.05, 1e-3), 0.6, 1.6);
     col *= k;
   }
-  if (uBloom > 0.0) col += texture2D(tBloom, vUv).rgb * uBloom * uBloomTint;
-  col = grade(col);
+  vec3 raw = col;
+  if (uBloom > 0.0) col += texture2D(tBloom, vUv).rgb * uBloom * uBloomTint * (1.0 - uBoard);
+  col = mix(grade(col), clamp(toSRGB(raw), 0.0, 1.0), uBoard);
   if (uOutline > 0.5) {
     float ink = 0.0;
     // hand-inked variation: slow noise along the frame modulates width and density

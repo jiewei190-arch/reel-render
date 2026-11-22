@@ -15,6 +15,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
+import { runFraming } from "./framing_kits.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -173,6 +174,9 @@ export const main = async (argv) => {
   const loopy = C.hookAgain !== null && JSON.stringify(lastShot.spec.cam.target) === JSON.stringify(firstShot.spec.cam.target);
   const fmt = recipe.format ?? "short";
   const lenOk = fmt === "long" ? dur >= 300 && dur <= 480 : dur >= 30 && dur <= 55;
+  // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
+  // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
+  const KF = runFraming("tech3d", C, m, recipe);
   const gate = [
     ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *orange* word", C.hookUntil > 0 && hookWords <= 5 && hookLines.length <= 2 && hookW <= 980 && orange.length === 1, `"${hookText}" (${hookWords} words, ${hookLines.length} line(s), widest ~${hookW.toFixed(0)} px, orange: ${orange.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -195,12 +199,14 @@ export const main = async (argv) => {
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
     [fmt === "long" ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
+  gate.push(...KF.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: tech3d recipe QA (tools/tech_build.mjs)`, "",
     `Composition: \`${pascal}\` (+ \`${pascal}Sub\`) in \`src/index.tech.ts\`. Kit tech3d, format ${fmt}. ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no part, kit prop or set piece enters BOLT's shell or mitts; BOLT stays above the ground; grounded objects stay above the floor."]), "",
+    ...KF.fr.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -243,8 +249,10 @@ const longForm = ({ m, C, recipe, words, slug, dir, pascal, check, wf, hits, qaL
     caps: { share: capT ? capOk / capT : 1, moved: [...moved] }, boards: { small: [...small], edge: [...edge], band: [...band] },
   });
   const gateS = (Date.now() - Tg) / 1000;
+  const KFL = runFraming("tech3d", C, m, recipe, true, qaSample);
+  gate.push(...KFL.rows);
   const chTxt = chaptersTxt(C.chapters);
-  const rep = kitLongReport({ slug, kit: "tech3d", tool: "tech_build.mjs", entry: "src/index.tech.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
+  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "tech3d", tool: "tech_build.mjs", entry: "src/index.tech.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
     extra: [`Layout: hook top-centre at ${C.layout.HOOK_TOP} px (${C.layout.HOOK_FS} px type), cards between y ${C.layout.SAFE_TOP}-${C.layout.SAFE_BOTTOM} (below ${C.layout.SAFE_TOP_HOOK} while the hook shows), lower-third captions centred at 905 px unless BOLT's face sits in the band.`, ""] });
   wf(join(dir, "RECIPE_QA.md"), rep.join("\n"));
   wf(join(dir, "chapters.txt"), chTxt);

@@ -220,6 +220,25 @@ The tech3d presets carry over (`hookZoom`, `closeUp`, `medium`, `wide`, `slamZoo
 
 ## 11. The build checks (tools/cyber_build.mjs → RECIPE_QA.md)
 
+**Framing rules (screen space, every output frame; tools/framing_qa.mjs + tools/framing_kits.mjs; same rules as RECIPE_GUIDE.md §4.1).**
+Run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line shows 0 clips and 0 fails. Every message
+names the shot, the time, the card / prop / person and what to move where.
+- **R1 CLIP, nothing on a head.** No card, board, label, story device, 3D text prop or small prop may overlap a head on
+  screen. The head includes BOLT's shell, ears and antenna, and the hooded figure's hood (+0.19 m). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
+  objects (half-size > 0.75 m) are skipped.
+- **R2 FAIL, the subject in frame.** The subject is the camera's target person, else the shot's `"subject"`, else its only
+  person while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) is in
+  frame. In a close shot, the head is centred (middle 60 % of the width). The head never touches an edge (11 px). Any
+  other person's head is fully in or fully out. The first 0.35 s of a whip-in is skipped.
+- **R3 FAIL, cards and boards inside the frame** with a 3 % margin (32 px), once landed (0.3 s after the hit).
+- **R4 FAIL, text reads.** Every text colour is at least 4.5:1 against its fill (WCAG). Email tiles (3D) are checked too: keep the subject short, because the tile text is small; scale the tile (`s`) or move the camera in. A featured line is at least
+  42 px font size (the median while on screen). Long-form uses the same 42 px at 1080 tall; its cards are checked for
+  placement and colour only.
+- **R5 FAIL (Shorts), frame 0 is a close-up of a face.** The hook is at the kit's full size, and the subject's face is
+  at least 16 % of the frame height (307 px). A frame-0 shot on a prop with the person small fails.
+- Typical fixes: aim the camera at the person, move them toward the centre, pull back (`cam.dist`); put a card's target
+  (`on`) or `pos` on the side away from the face; raise `cam.dist` on close shots so the hood or antenna stays in frame.
+
 **Clip QA** runs on every frame x 4 sub-frames. It checks:
 - vault parts, the figure, kit blocks and set blockers against BOLT;
 - BOLT below the ground;

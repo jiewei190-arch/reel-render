@@ -103,6 +103,8 @@ export type LawShot = {
   jury?: boolean;
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
+  /** framing QA (KIT guide "Framing rules"): the person this shot is about when the camera aims at an object */
+  subject?: string;
   note?: string;
   /** long-form: marks a new story beat for the pacing gate (chapters and set changes count by themselves) */
   beat?: boolean;
