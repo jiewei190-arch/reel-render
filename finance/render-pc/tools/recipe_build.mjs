@@ -35,6 +35,9 @@ const SHORTS = si >= 0 ? resolve(args[si + 1]) : !existsSync(resolve(ROOT, "../s
 const noQa = args.includes("--no-qa");
 const check = args.includes("--check"); // compile + QA + gate only: no codegen, no registry change, no report file
 const dir = join(SHORTS, slug);
+// DOC KIT (KIT_DOC.md): a documentary long-form is a folder with doc.json + chapters/NN.json (no recipe.json); it goes to
+// tools/doc_build.mjs, which validates every chapter and the whole video
+if (!existsSync(join(dir, "recipe.json")) && existsSync(join(dir, "doc.json"))) { const { main } = await import("./doc_build.mjs"); process.exit(await main(args)); }
 const recipe = JSON.parse(readFileSync(join(dir, "recipe.json"), "utf8"));
 const timings = JSON.parse(readFileSync(join(dir, "vo/timings.json"), "utf8"));
 if (recipe.slug !== slug) { console.error(`recipe.slug "${recipe.slug}" != folder "${slug}"`); process.exit(2); }

@@ -33,8 +33,10 @@ const ovA = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) *
  * @param o.recipe, o.words
  * @param o.landscape  long-form (chapter cards; caption band from LF)
  * @param o.step       sample every Nth output frame (long-form --qa-sample)
+ * @param o.within     optional (t) => bool: only these times are on screen (the doc kit shows a kit's shots in windows)
+ * @param o.shotsIn    optional Set of the kit's shot ids that are on screen (counters, text-fit)
  */
-export const polishQA = ({ kit, C, m, recipe, words, landscape = false, step = 1 }) => {
+export const polishQA = ({ kit, C, m, recipe, words, landscape = false, step = 1, within = null, shotsIn = null }) => {
   const T0 = Date.now();
   const L = C.layout ?? C.L, W = L.W, H = L.H;
   const fps = 30, frames = C.duration;
@@ -42,6 +44,7 @@ export const polishQA = ({ kit, C, m, recipe, words, landscape = false, step = 1
 
   // ---------------------------------------------------------------- P1 counters
   for (const c of C.counters ?? []) {
+    if (shotsIn && !shotsIn.has(c.shot)) continue;
     // the anchor word, found again here (independent of the engine's own plan) unless the recipe gave "land"
     const given = c.plan.anchor?.given ? c.plan.anchor : null;
     const anchor = given ?? (m.spokenAnchor ? m.spokenAnchor(words, c.target, c.t0 - (m.ANCHOR_LOOKBACK ?? 1.5), c.until, c.decimals) : c.plan.anchor);
@@ -64,7 +67,7 @@ export const polishQA = ({ kit, C, m, recipe, words, landscape = false, step = 1
   }
 
   // ---------------------------------------------------------------- P2 text-fit
-  for (const d of C.fits ?? []) for (const l of d.lines) {
+  for (const d of C.fits ?? []) for (const l of shotsIn && !shotsIn.has(d.shot) ? [] : d.lines) {
     if (l.fit.ok) continue;
     const f = l.fit;
     p2.push(`FAIL ${d.shot} ${d.kind}: ${l.what} ${q(f.text)} needs ${Math.ceil(f.needW)} px at the ${f.minFs} px minimum but has ${Math.floor(f.maxW)} px (it would shrink to ${f.fs.toFixed(0)} px): shorten it to ${f.maxChars} characters${l.alt ? ` or ${l.alt}` : ""}`);
@@ -91,6 +94,7 @@ export const polishQA = ({ kit, C, m, recipe, words, landscape = false, step = 1
   if (sc0 && C.occludersAt) {
     for (let f = 0; f < frames; f += step) {
       const t = f / fps;
+      if (within && !within(t)) continue;
       const sc = sc0.sample(t);
       if (!sc) continue;
       const v = sc.views[0];
