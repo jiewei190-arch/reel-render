@@ -279,3 +279,12 @@ All cameras keep moving, including through a freeze-frame. The gate FAILs a Shor
 | `src/biz/gallery.ts` | the gallery shots and `GALLERY_STILLS` |
 | `tools/biz_build.mjs`, `tools/biz_entry.ts` | build, QA and gate |
 | `tools/biz_stills.mjs` | batch stills (`gallery`, or a composition's frames) |
+
+## Channel branding (Billion Dollar Blunders)
+
+`src/biz/brand.tsx` builds the channel art from kit pieces (procedural, no logos, no real people):
+`BizBrandPfp` (800x800: a gold coin split by a crashing red chart arrow, subject inside the inner ~70% for the
+circle crop) and `BizBrandBanner` (2560x1440: the city set at dusk with a giant green-then-red chart over the
+skyline; title, tagline and schedule inside the centred 1546x423 safe area). `bash tools/biz_brand.sh` renders
+both at full size (swangle, no motion blur, ~25 s) into `branding/billion-dollar-blunders/` and writes
+`preview_phone.png` (safe area at 1080 wide) and `preview_circle.png` (pfp at 240 and 98 px on light and dark).
