@@ -32,9 +32,10 @@ DIRECTOR = (
     "You are the voice director. For EACH line, judge its mood from what it actually says, in the context of the whole "
     "story, then choose ElevenLabs audio tags that fit that mood. Hard rules:\n"
     "- Sad or serious content (someone dies, gets hurt, loses money they needed, is scammed, a disaster, a warning, "
-    "a legal or medical consequence) gets [serious], [sad], [sighs], [disappointed], [softly] or no tag. NEVER "
+    "a legal or medical consequence) gets [serious], [sad], [sighs], [disappointed] or no tag. NEVER "
     "[excited], [laughs], [chuckles], [mischievously] or anything playful there.\n"
-    "- Tense setups and secrets get [whispers], [serious], [dramatic], [short pause].\n"
+    "- Tense setups and secrets get [serious], [dramatic] or [short pause].\n"
+    "- NEVER use [whispers], [whispering], [softly] or any hushed/whispered delivery (owner rule).\n"
     "- Comedy is only for genuinely light moments (a silly mistake with no real victim, an absurd fact): "
     "[sarcastic], [chuckles], [mischievously].\n"
     "- [excited] / [shocked] / [gasps] are for reveals, big numbers and wins, and only when the news is good or "
@@ -46,6 +47,14 @@ DIRECTOR = (
     "isn't.\n"
     "- Keep every word exactly; only add, move or remove tags."
 )
+
+
+NO_WHISPER = re.compile(r"\[(?:whisper\w*|softly|hushed|quietly|under (?:his|her|their) breath)\]\s*", re.I)
+
+
+def unwhisper(text: str) -> str:
+    """Owner rule: no whispered voice, ever. Drop any whisper-like tag the model still writes."""
+    return re.sub(r"\s{2,}", " ", NO_WHISPER.sub("", text)).strip()
 
 
 def strip(text: str) -> str:
@@ -72,7 +81,7 @@ def direct(lines: list[str], draft: list[str] | None, topic: str) -> tuple[list[
             first = v.find(tags[0]) + len(tags[0])
             v = v[:first] + TAG.sub("", v[first:])
             v = re.sub(r"\s+", " ", v).strip()
-        out.append(v)
+        out.append(unwhisper(v))
     return out, res[: len(lines)]
 
 

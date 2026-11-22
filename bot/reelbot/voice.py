@@ -176,7 +176,8 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
     if sj.exists():  # emotion-tagged versions of the same lines, if the writer made them and they match
         sdata = json.loads(sj.read_text(encoding="utf-8"))
         moods = [m.get("mood") for m in (sdata.get("moods") or [])]
-        vl = sdata.get("voice_lines") or []
+        from .tone import unwhisper
+        vl = [unwhisper(x) for x in (sdata.get("voice_lines") or [])]
         if len(vl) == len(lines) and all(strip_tags(v) == l for v, l in zip(vl, lines)):
             spoken = vl
         elif vl:
