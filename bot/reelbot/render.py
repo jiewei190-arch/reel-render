@@ -10,7 +10,7 @@ import subprocess
 import time
 from pathlib import Path
 
-from . import channels, lambda_render, sound
+from . import channels, lambda_render, sound, locks
 from .config import CFG
 
 
@@ -78,6 +78,9 @@ def _whisper_check(video: Path, lines: list[str]) -> str:
     return f"heard {len(norm(heard))} words; {len(missing)} script words not heard" + (f": {missing[:15]}" if missing else "")
 
 
+ENGINE_LOCK = CFG.render_root / "out" / "reelbot_engine.lock"
+
+
 def motion_blur() -> bool:
     """Off by default (owner's call, Nov 2026): 4x faster renders and the difference is barely visible."""
     return os.environ.get("REELBOT_MOTION_BLUR", "0") == "1"
@@ -96,17 +99,20 @@ def _render_plain(comp: str, muted: Path, entry: str = "src/index.toolkit.ts") -
     npx = shutil.which("npx") or "npx"
     print(f"  render: {comp} on the GPU, no motion blur")
     t0 = time.time()
-    _run([npx, "--no-install", "tsc", "--noEmit"])
-    _run([npx, "--no-install", "remotion", "bundle", entry, "--out-dir=build"])
+    bdir = f"build-{comp}"  # one bundle per composition: parallel runs never overwrite each other's bundle
+    with locks.held(ENGINE_LOCK, f"bundle {comp}"):
+        _run([npx, "--no-install", "tsc", "--noEmit"])
+        _run([npx, "--no-install", "remotion", "bundle", entry, f"--out-dir={bdir}"])
     raw = muted.with_name(muted.stem + "_raw.mp4")
     muted.parent.mkdir(parents=True, exist_ok=True)
-    _run(_gpu_lock() + [npx, "--no-install", "remotion", "render", "build", comp, str(raw), "--gl=angle",
+    _run(_gpu_lock() + [npx, "--no-install", "remotion", "render", bdir, comp, str(raw), "--gl=angle",
                         "--timeout=240000", f"--concurrency={os.environ.get('CONC', '8')}", "--codec=h264", "--crf=12",
                         "--pixel-format=yuv420p", "--muted", "--log=error"])
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-r", "30", "-c:v", "libx264", "-crf", "16",
                     "-preset", "slow", "-pix_fmt", "yuv420p", "-an", "-map_metadata", "-1", "-movflags", "+faststart",
                     str(muted)], check=True)
     raw.unlink(missing_ok=True)
+    shutil.rmtree(CFG.render_root / bdir, ignore_errors=True)
     print(f"  render: done in {time.time() - t0:.0f} s")
 
 
@@ -118,7 +124,8 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     name = slug.replace("-", "_") + "_v"
 
     print("  build: recipe -> composition + QA")
-    _run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
+    with locks.held(ENGINE_LOCK, f"build {slug}"):
+        _run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
 
     n = _next_version(name)
     muted = CFG.render_root / "out" / "renders" / f"{name}{n}.mp4"

@@ -10,7 +10,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from . import channels, claude
+from . import channels, claude, locks
 from .config import CFG
 
 RECIPE_SCHEMA = {
@@ -69,7 +69,9 @@ def _examples(style: str, kit: str | None = None) -> str:
 
 def _check(slug: str) -> tuple[bool, str]:
     cmd = [CFG.node, "tools/recipe_build.mjs", slug, "--check", "--shorts", str(CFG.shorts_dir)]
-    r = subprocess.run(cmd, cwd=CFG.render_root, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    from .render import ENGINE_LOCK
+    with locks.held(ENGINE_LOCK, f"check {slug}"):  # another channel's build may be writing generated files
+        r = subprocess.run(cmd, cwd=CFG.render_root, capture_output=True, text=True, encoding="utf-8", errors="replace")
     out = (r.stdout + "\n" + r.stderr).strip()
     return r.returncode == 0, out[-6000:]
 
