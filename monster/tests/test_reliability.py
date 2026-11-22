@@ -354,3 +354,11 @@ def test_lessons_are_retrieved_for_relevant_jobs(home):
     got = lessons.relevant("law", "draft", "Pearson v. Chung case")
     assert len(got) == 1 and got[0]["status"] == "verified"
     assert "versus" in lessons.prompt_block("law", "draft", "case")
+
+
+def test_sentence_split_keeps_abbreviations_and_lines_are_unique():
+    from mya import research
+    t = ("Pearson v. Chung, also known as the pants case, was decided in Washington, D.C. by Judge Bartnoff in 2007. "
+         "The judge ruled in favor of the dry cleaners and awarded them their court costs in full.")
+    got = research.sentences(t)
+    assert got[0].startswith("Pearson v. Chung, also known") and len(got) == 2

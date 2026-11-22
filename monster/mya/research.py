@@ -57,10 +57,23 @@ def fetch_sources(topic: str, job_dir: Path, n: int = 2) -> list[dict]:
     return out
 
 
+ABBREV = re.compile(r"(?:\b(?:v|vs|Mr|Mrs|Ms|Dr|St|Jr|Sr|Inc|Co|Corp|Ltd|No|Gen|Gov|Sen|Rep|Mt|Ft|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)|\b(?:[A-Z]\.){1,3}[A-Z])\.$")
+
+
 def sentences(text: str) -> list[str]:
+    """Split into sentences without breaking at abbreviations ("Pearson v. Chung", "D.C.", "Inc.")."""
     text = re.sub(r"\n+==+[^=]+==+\n+", "\n", text)
-    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'(])", text.replace("\n", " "))
-    return [p.strip() for p in parts if 40 <= len(p.strip()) <= 400]
+    raw = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'(])", text.replace("\n", " "))
+    out, cur = [], ""
+    for part in raw:
+        cur = f"{cur} {part}".strip() if cur else part
+        if ABBREV.search(cur):
+            continue  # the "sentence end" was an abbreviation: keep joining
+        out.append(cur)
+        cur = ""
+    if cur:
+        out.append(cur)
+    return [p.strip() for p in out if 40 <= len(p.strip()) <= 400]
 
 
 OUTCOME = re.compile(r"\b(ruled|rules|ruling|verdict|in favor of|in favour of|dismiss\w*|judgment|acquitt\w*|convict\w*|"

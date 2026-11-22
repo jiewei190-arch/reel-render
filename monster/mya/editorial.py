@@ -118,7 +118,8 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
         ordered = ordered[:11]
     scenes, prev = [], ""
     for k, cl in enumerate(ordered):
-        pos = "hook" if k == 0 else "end" if k == len(ordered) - 1 else "middle"
+        # the first line that passes becomes the hook, even if an earlier candidate failed its check
+        pos = "hook" if not scenes else "end" if k == len(ordered) - 1 else "middle"
         line, fix = None, ""
         for _ in range(cfg().runtime.get("max_regenerations_per_stage", 2) + 1):
             cand = _line(profile, cl, pos, prev, lessons, fix)
@@ -131,8 +132,6 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
         if line:
             scenes.append(line)
             prev = line["narration"]
-        elif pos == "hook" and k + 1 < len(ordered):
-            ordered.insert(k + 1, ordered[k + 1])  # no unchecked hook: the next fact becomes the opening instead
     script = {"scenes": scenes}
     if len(scenes) >= 3:
         meta = llm.ask(
