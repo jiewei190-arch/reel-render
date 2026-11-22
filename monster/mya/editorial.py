@@ -66,8 +66,11 @@ def check(script: dict, claims: list[dict], profile, fmt: str) -> list[str]:
     if fmt != "_line":
         lo, _, hi = target_words(profile, fmt)
         words = sum(speech.word_count(s["narration"]) for s in script["scenes"])
-        if words < lo * 0.75 or words > hi * 1.1:
-            problems.append(f"length: {words} spoken words, needs {lo}-{hi}")
+        # floor = enough words for the format's minimum duration (+15%); the measured narration enforces the real range
+        f = cfg().formats[fmt]
+        floor = int(f["min_seconds"] * 2.25 * float(profile.raw.get("speed", 1.0)) * 1.15)
+        if words < floor or words > hi * 1.1:
+            problems.append(f"length: {words} spoken words, needs {floor}-{int(hi * 1.1)}")
     by_id = {c["id"]: c for c in claims}
     for i, s in enumerate(script["scenes"], 1):
         cited = [by_id[c] for c in s["claim_ids"] if c in by_id]
