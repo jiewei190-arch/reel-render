@@ -369,3 +369,10 @@ def test_onscreen_text_must_come_from_narration_or_sources():
     narr = "The Chungs refused to pay Pearson 1,000 dollars for the gray pants."
     assert sb.invented_words({"title": "Compensation", "nodes": ["Man Holding Receipt", "Gray Pants"]}, narr)
     assert not sb.invented_words({"title": "Chungs refused", "nodes": ["Pearson's demand", "Gray pants"]}, narr + " demand")
+
+
+def test_rule_based_support_rejects_invented_outcomes_and_allows_paraphrase():
+    from mya import editorial
+    src = ["On June 25, 2007, the trial ended with Judge Judith Bartnoff ruling in favor of the dry cleaners."]
+    assert len(editorial.novel_words("Pearson won and the jury awarded him millions.", src)) > 2
+    assert len(editorial.novel_words("In June 2007 the judge ruled in favor of the dry cleaners.", src)) <= 2

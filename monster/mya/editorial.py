@@ -184,9 +184,34 @@ def _norm(t: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9$%. ]", " ", t.lower())).strip()
 
 
-def support_check(script: dict, claims: list[dict]) -> list[str]:
-    """Each line must be backed by its cited passages. The judge must quote the supporting words, and the quote must
-    really appear in those passages; a line is also rejected when the judge says it contradicts them."""
+FUNC = set("""a an the of to in on at for and or but is was were be been being by with as it its this that these those from
+his her their they he she him them we you your our than then so not no had has have do did does into over after before about
+also later initially which who whom what when where while there here very one can could would will said says""".split())
+
+
+def _stem(w: str) -> str:
+    for suf in ("ings", "ing", "ied", "ies", "ed", "es", "s", "ly"):
+        if w.endswith(suf) and len(w) - len(suf) >= 3:
+            return w[: -len(suf)]
+    return w
+
+
+def novel_words(line: str, passages: list[str]) -> list[str]:
+    """Content words in the line that don't appear (by stem) in its cited passages."""
+    src = {_stem(w) for w in re.findall(r"[a-z]+", " ".join(passages).lower())}
+    out = []
+    for w in re.findall(r"[a-z]+", line.lower()):
+        if w in FUNC or len(w) < 3:
+            continue
+        if _stem(w) not in src and w not in src:
+            out.append(w)
+    return out
+
+
+def support_check(script: dict, claims: list[dict], judge: bool = True) -> list[str]:
+    """Rule first: a line may only use words from its cited source sentences (at most 2 new content words) and the
+    same numbers (checked in check()). Then a model may veto a clear contradiction; its 'not in sources' opinion is
+    ignored because small local models flag true paraphrases."""
     by_id = {c["id"]: c for c in claims}
     problems = []
     for i, s in enumerate(script["scenes"], 1):
@@ -195,15 +220,16 @@ def support_check(script: dict, claims: list[dict]) -> list[str]:
             if re.search(r"\d", s["narration"]):
                 problems.append(f"scene {i} states facts but cites no claim")
             continue
-        src = "\n".join(f"- {p}" for p in cited)
-        res = llm.ask(
-            "You are a strict fact-checker. Decide if the LINE is fully supported by the SOURCES. 'contradicted' if any "
-            "part conflicts with them (wrong winner, wrong amount, wrong outcome, wrong date). 'not_in_sources' if it "
-            "adds facts the sources don't state. Quote the exact supporting words from the sources.",
-            f"SOURCES:\n{src}\n\nLINE: {s['narration']}", SUPPORT_SCHEMA, temperature=0.0, max_tokens=200)
-        quote = _norm(res["evidence"])
-        if res["verdict"] != "supported":
-            problems.append(f"scene {i} is {res['verdict'].replace('_', ' ')}: '{s['narration'][:90]}'")
-        elif len(quote) < 12 or quote not in _norm(" ".join(cited)):
-            problems.append(f"scene {i}: the support quote is not in its cited sources ('{s['narration'][:70]}')")
+        new = novel_words(s["narration"], cited)
+        if len(new) > 2:
+            problems.append(f"scene {i} adds words its source doesn't support {sorted(set(new))[:6]}: '{s['narration'][:80]}'")
+            continue
+        if judge:
+            src = "\n".join(f"- {p}" for p in cited)
+            res = llm.ask(
+                "You are a strict fact-checker. Answer 'contradicted' only if the LINE conflicts with the SOURCES (wrong "
+                "winner, wrong amount, wrong outcome, wrong date); otherwise 'supported'. Quote the supporting words.",
+                f"SOURCES:\n{src}\n\nLINE: {s['narration']}", SUPPORT_SCHEMA, temperature=0.0, max_tokens=200)
+            if res["verdict"] == "contradicted":
+                problems.append(f"scene {i} contradicts its source: '{s['narration'][:90]}'")
     return problems
