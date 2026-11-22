@@ -31,7 +31,7 @@ DEPS = {
 STATE_OF = {"research": "researching", "claims": "researching", "draft": "writing", "script": "writing",
             "assets": "building_visuals", "storyboard": "building_visuals", "voice": "voicing", "align": "aligning",
             "preview": "building_visuals", "master": "rendering", "qc": "rendering"}
-CODE_VERSION = "4"  # bump to invalidate every cached stage
+CODE_VERSION = "5"  # bump to invalidate every cached stage
 
 
 class StageFailed(RuntimeError):
