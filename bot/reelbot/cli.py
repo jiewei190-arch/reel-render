@@ -112,12 +112,19 @@ def stage_recipe(folder: Path, a) -> None:
 
 
 def stage_edit(folder: Path, final: Path, a) -> dict:
-    """Review the render; while editors find serious problems, fix the recipe and re-render (up to --edit-rounds)."""
+    """Review the render; while editors find serious problems, fix the recipe and re-render (up to --edit-rounds).
+    A revise round can make things worse, so every round's video is kept and the BEST-scoring one (hook, then overall)
+    ends up as the final video, with its recipe restored."""
+    import shutil
     lines = json.loads((folder / "script.json").read_text(encoding="utf-8"))["lines"]
-    r = {}
+    r, rounds = {}, []
     for rnd in range(1, a.edit_rounds + 2):
         r = editor.review(final, lines)
         editor.report(final.parent, rnd, r)
+        keep = final.with_name(f"{final.stem}.round{rnd}{final.suffix}")
+        shutil.copy2(final, keep)
+        shutil.copy2(folder / "recipe.json", folder / f"recipe_round{rnd}.json")
+        rounds.append((rnd, r, keep))
         print(f"  editor round {rnd}: hook {r['hook']}, overall {r['scores']['overall']}, "
               f"predicted stayed {r['predicted_stayed_pct']}%, {len(r['serious'])} serious issue(s)")
         if r["passed"]:
@@ -129,7 +136,19 @@ def stage_edit(folder: Path, final: Path, a) -> dict:
         fixes = [i for i in r["issues"] if i["severity"] != "minor"] or r["issues"]
         recipe.revise(folder, fixes, rnd)
         final = render.render(folder, on=a.on)
-    _mark(folder, "edit", passed=r.get("passed"), hook=r.get("hook"), predicted=r.get("predicted_stayed_pct"))
+    best = max(rounds, key=lambda x: (x[1].get("passed", False), x[1]["hook"], x[1]["scores"]["overall"], -len(x[1]["serious"])))
+    if best[0] != rounds[-1][0]:
+        print(f"  editor: round {best[0]} scored better (hook {best[1]['hook']}, overall {best[1]['scores']['overall']}) "
+              f"than the last round; keeping round {best[0]}'s video and recipe")
+        shutil.copy2(best[2], final)
+        shutil.copy2(folder / f"recipe_round{best[0]}.json", folder / "recipe.json")
+        r = best[1]
+        with open(final.parent / "EDIT_REPORT.md", "a", encoding="utf-8") as fh:
+            fh.write(f"\n## Final video = round {best[0]} (best score)\n")
+    for _, _, p in rounds:
+        p.unlink(missing_ok=True)
+    _mark(folder, "edit", passed=r.get("passed"), hook=r.get("hook"), predicted=r.get("predicted_stayed_pct"),
+          best_round=best[0])
     return r
 
 
