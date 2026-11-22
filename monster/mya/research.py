@@ -63,6 +63,10 @@ def sentences(text: str) -> list[str]:
     return [p.strip() for p in parts if 40 <= len(p.strip()) <= 400]
 
 
+OUTCOME = re.compile(r"\b(ruled|rules|ruling|verdict|in favor of|in favour of|dismiss\w*|judgment|acquitt\w*|convict\w*|"
+                     r"sentenced|found (?:him|her|them|it) |awarded|settled|settlement|overturned|upheld|appeal\w* (?:was|were) |"
+                     r"bankrupt\w*|liquidat\w*|shut down|closed|ceased|collapsed|sold to|acquired|was arrested|pleaded|"
+                     r"died|killed|ended|lost|won)\b", re.I)
 NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
 
@@ -108,10 +112,15 @@ def build_claims(topic: str, profile, sources: list[dict], lessons: str = "") ->
         for c in claims:
             if c["role"] in ("outcome", "aftermath"):
                 c["role"] = "twist"  # the picker's guess is demoted; the dedicated pick below is the ending
-        end = llm.ask("Pick the ONE sentence that states how this story finally ended: the verdict, ruling, final result or "
-                      "consequence. Not the start of a trial or a lawsuit being filed.",
-                      f"Topic: {topic}\n{listing}", {"type": "object", "additionalProperties": False, "required": ["sentence"],
-                      "properties": {"sentence": {"type": "integer", "minimum": 0, "maximum": len(pool) - 1}}},
+        # narrow the choice for small models: only sentences that read like an ending, from the main source first
+        cands = [i for i, (sid, sent) in enumerate(pool) if OUTCOME.search(sent)]
+        cands = sorted(cands, key=lambda i: (pool[i][0] != "S1", i))[:25] or list(range(len(pool)))
+        short = "\n".join(f"[{i}] {pool[i][1]}" for i in cands)
+        end = llm.ask("Pick the ONE sentence that states how the MAIN story finally ended: the court's verdict or ruling, "
+                      "the final result, or what happened to the main people or company. Not a side story, not the start "
+                      "of a trial, not a lawsuit being filed.",
+                      f"Topic: {topic}\n{short}", {"type": "object", "additionalProperties": False, "required": ["sentence"],
+                      "properties": {"sentence": {"enum": cands}}},
                       temperature=0.0, max_tokens=20)["sentence"]
         if end in seen:
             for c in claims:
