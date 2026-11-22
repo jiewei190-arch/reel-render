@@ -129,7 +129,9 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
     data = claude.ask_json(system_prompt(seconds), user, _schema())
     data["slug"] = _slugify(data.get("slug") or topic)
 
-    for rnd in range(CFG.factcheck_rounds):
+    cleared = False
+    # N revision rounds, then one final check of the last revision (so a fix made in the last round can clear).
+    for rnd in range(CFG.factcheck_rounds + 1):
         claims = [c["claim"] for c in data["claims"]]
         print(f"  {gemini.label()}: fact-checking {len(claims)} claims (round {rnd + 1})...")
         verdicts, vsources = gemini.verify(claims)
@@ -149,6 +151,12 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
                                                  "all_pass": judge["all_pass"], "problems": judge["problems"]})
         if judge["all_pass"]:
             print("  fact-check: all claims pass")
+            cleared = True
+            break
+        if rnd == CFG.factcheck_rounds:  # final check of the last revision: report, don't rewrite again
+            print(f"  fact-check: {len(judge['problems'])} problem(s) remain after the final check:")
+            for p in judge["problems"]:
+                print("    -", p)
             break
         print(f"  fact-check: {len(judge['problems'])} problem(s), revising:")
         for p in judge["problems"]:
@@ -163,7 +171,7 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
             + "\n\nFact-check report for reference:\n" + verdicts,
             _schema()), "factcheck": data["factcheck"]}
         data["slug"] = _slugify(data["slug"])
-    else:
+    if not cleared:
         data["factcheck_unresolved"] = True
     data["topic"] = topic
     data["channel"] = channels.active().id
