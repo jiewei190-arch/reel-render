@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import time
@@ -49,6 +50,16 @@ def _loudness(p: Path) -> str:
     return " ".join(lines[-2:])
 
 
+def _num_words(tok: str) -> str:
+    try:
+        from num2words import num2words
+        v = tok.lstrip("$").replace(",", "")
+        words = num2words(float(v) if "." in v else int(v)).replace("-", " ").replace(",", "").replace(" and ", " ")
+        return f" {words}{' dollars' if tok.startswith('$') else ''} "
+    except Exception:  # noqa: BLE001
+        return f" {tok} "
+
+
 def _whisper_check(video: Path, lines: list[str]) -> str:
     try:
         from faster_whisper import WhisperModel  # optional: pip install faster-whisper
@@ -58,7 +69,10 @@ def _whisper_check(video: Path, lines: list[str]) -> str:
                          compute_type=os.environ.get("REELBOT_WHISPER_COMPUTE", "int8"))  # "auto" picked CUDA without cuBLAS 12 on the PC
     segs, _ = model.transcribe(str(video))
     heard = " ".join(s.text.strip() for s in segs).lower()
-    norm = lambda s: "".join(c for c in s.lower() if c.isalnum() or c == " ").split()
+    def norm(s: str) -> list[str]:
+        # the recognizer writes numbers as digits ("5,000"); the script says them in words: compare in words
+        s = re.sub(r"\$?\d[\d,]*(?:\.\d+)?", lambda m: _num_words(m.group(0)), s.lower())
+        return "".join(c for c in s if c.isalnum() or c == " ").split()
     want, got = norm(" ".join(lines)), set(norm(heard))
     missing = [w for w in want if not w.isdigit() and w not in got]
     return f"heard {len(norm(heard))} words; {len(missing)} script words not heard" + (f": {missing[:15]}" if missing else "")

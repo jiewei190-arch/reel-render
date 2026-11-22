@@ -86,6 +86,13 @@ def design(folder: Path, cues_file: Path, comp: str) -> int:
     recipe = (folder / "recipe.json").read_text(encoding="utf-8") if (folder / "recipe.json").exists() else ""
     cues_all = json.loads(cues_file.read_text(encoding="utf-8"))
     info = cues_all[comp]
+    saved = folder / "sound_design.json"
+    if saved.exists() and os.environ.get("REELBOT_SFX_REPLAN") != "1":
+        # The words and their timings don't change between editor rounds, so the sound plan doesn't either:
+        # reuse it (no Claude call) and the already-generated files (no ElevenLabs spend).
+        plan = json.loads(saved.read_text(encoding="utf-8"))
+        print(f"  sound: reusing the sound plan ({len(plan)} cues; set REELBOT_SFX_REPLAN=1 to redo it)")
+        return _apply(plan, timings, info, cues_all, cues_file, folder, comp)
     print("  claude: planning sound design...")
     plan = claude.ask_json(DESIGNER,
                            "Script lines with their moods:\n" + "\n".join(
@@ -94,6 +101,10 @@ def design(folder: Path, cues_file: Path, comp: str) -> int:
                            + "\n\nShot recipe (what is on screen when):\n" + recipe[:20000]
                            + "\n\nStock cues the engine already plays:\n" + json.dumps(info["cues"]),
                            PLAN_SCHEMA, effort="medium")["cues"]
+    return _apply(plan, timings, info, cues_all, cues_file, folder, comp)
+
+
+def _apply(plan: list, timings: dict, info: dict, cues_all: dict, cues_file: Path, folder: Path, comp: str) -> int:
     sfx_dir = CFG.audio_dir / "sfx"
     sfx_dir.mkdir(parents=True, exist_ok=True)
     added, fresh = 0, 0

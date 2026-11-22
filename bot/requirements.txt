@@ -3,3 +3,4 @@ google-genai>=3.6
 requests>=2.31
 # optional, for the Whisper QA step (uses the GPU if CUDA is set up):
 # faster-whisper>=1.2
+num2words>=0.5.13
