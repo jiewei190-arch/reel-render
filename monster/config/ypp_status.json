@@ -3,43 +3,43 @@
  "channels": {
   "block_money": {
    "name": "Block Money",
-   "as_of": null,
+   "as_of": "2026-11-16 (Studio Earn page, read Nov 22)",
    "in_ypp": false,
-   "subs": null,
-   "watch_hours_12mo": null,
-   "shorts_views_90d": null
+   "subs": 5,
+   "watch_hours_12mo": 0,
+   "shorts_views_90d": 0
   },
   "justin_clips": {
    "name": "Justin clips",
-   "as_of": null,
+   "as_of": "2026-11-16 (Studio Earn page, read Nov 22)",
    "in_ypp": false,
-   "subs": null,
-   "watch_hours_12mo": null,
-   "shorts_views_90d": null
+   "subs": 51,
+   "watch_hours_12mo": 6,
+   "shorts_views_90d": 16000
   },
   "law": {
    "name": "Court Of Weird",
-   "as_of": null,
+   "as_of": "2026-11-16 (Studio Earn page, read Nov 22)",
    "in_ypp": false,
-   "subs": null,
-   "watch_hours_12mo": null,
-   "shorts_views_90d": null
+   "subs": 0,
+   "watch_hours_12mo": 0,
+   "shorts_views_90d": 0
   },
   "biz": {
    "name": "BillionDollarBlunders",
-   "as_of": null,
+   "as_of": "2026-11-16 (Studio Earn page, read Nov 22)",
    "in_ypp": false,
-   "subs": null,
-   "watch_hours_12mo": null,
-   "shorts_views_90d": null
+   "subs": 0,
+   "watch_hours_12mo": 0,
+   "shorts_views_90d": 0
   },
   "cyber": {
    "name": "ScamFilesTV",
-   "as_of": null,
+   "as_of": "2026-11-16 (Studio Earn page, read Nov 22)",
    "in_ypp": false,
-   "subs": null,
-   "watch_hours_12mo": null,
-   "shorts_views_90d": null
+   "subs": 19,
+   "watch_hours_12mo": 0,
+   "shorts_views_90d": 10
   }
  }
 }
