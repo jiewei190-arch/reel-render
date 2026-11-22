@@ -362,3 +362,10 @@ def test_sentence_split_keeps_abbreviations_and_lines_are_unique():
          "The judge ruled in favor of the dry cleaners and awarded them their court costs in full.")
     got = research.sentences(t)
     assert got[0].startswith("Pearson v. Chung, also known") and len(got) == 2
+
+
+def test_onscreen_text_must_come_from_narration_or_sources():
+    from mya import storyboard as sb
+    narr = "The Chungs refused to pay Pearson 1,000 dollars for the gray pants."
+    assert sb.invented_words({"title": "Compensation", "nodes": ["Man Holding Receipt", "Gray Pants"]}, narr)
+    assert not sb.invented_words({"title": "Chungs refused", "nodes": ["Pearson's demand", "Gray pants"]}, narr + " demand")

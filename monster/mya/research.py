@@ -84,7 +84,12 @@ NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 
 
 def numbers(s: str) -> set[str]:
-    return {n.replace(",", "").rstrip(".") for n in NUM.findall(s)}
+    """Numbers as values ("05" == "5", "1,000" == "1000"), so a date written 2005-05-03 matches 'May 3, 2005'."""
+    out = set()
+    for n in NUM.findall(s):
+        n = n.replace(",", "").rstrip(".")
+        out.add(n.lstrip("0") or "0" if "." not in n else n)
+    return out
 
 
 CLAIMS_SCHEMA = {

@@ -8,6 +8,7 @@ silently accepted.
 from __future__ import annotations
 
 import json
+import re
 
 import jsonschema
 
@@ -36,6 +37,37 @@ def _onscreen_numbers(params) -> set[str]:
     return numbers(json.dumps(params))
 
 
+STOP = set("the a an of to in on at for and or but is was were be by with as it its this that from his her their they he she "
+           "we you your our than then so not no".split())
+SKIP_KEYS = {"file", "credit", "tone", "color", "mood", "prefix", "suffix", "kind", "decimals", "highlight", "value", "from"}
+
+
+def _texts(obj, key=""):
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k not in SKIP_KEYS:
+                yield from _texts(v, k)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _texts(v, key)
+    elif isinstance(obj, str):
+        yield obj
+
+
+def invented_words(params, allowed_text: str) -> list[str]:
+    """On-screen words must come from the narration or its cited sources (a few generic labels are allowed)."""
+    allowed = set(re.findall(r"[a-z0-9']+", allowed_text.lower())) | {"verdict", "case", "file", "record", "court", "timeline",
+              "total", "before", "after", "then", "now", "vs", "versus", "what", "happened", "how", "why", "who", "step", "result"}
+    bad = []
+    for t in _texts(params):
+        for w in re.findall(r"[a-z']+", t.lower()):
+            w = w[:-2] if w.endswith("'s") else w
+            w2 = w.rstrip("s")
+            if w not in STOP and len(w) > 2 and w not in allowed and w2 not in allowed and w + "s" not in allowed:
+                bad.append(w)
+    return bad
+
+
 def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "") -> tuple[list[dict], list[dict]]:
     types = [t for t in profile.scene_types if t in DEFS]
     by_id = {c["id"]: c for c in claims}
@@ -58,7 +90,8 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
             try:
                 cand = llm.ask(
                     f"Fill the params for a '{t}' scene ({GUIDE[t]}). Short, readable text: labels of 1-4 words, "
-                    "headlines under 8 words. Use ONLY numbers that appear in the facts. Values are plain numbers "
+                    "headlines under 8 words, using words from the narration or facts. Text is what the viewer READS, "
+                    "never a description of a picture. Use ONLY numbers that appear in the facts. Values are plain numbers "
                     "(54000000 not '54 million'; put $ in prefix).",
                     f"Narration: \"{s['narration']}\"\nWhat the viewer should see: {s['visual_intent']}\nFacts:\n{facts}"
                     + (f"\nLast attempt was rejected: {why}" if why else ""),
@@ -67,6 +100,10 @@ def plan(script: dict, claims: list[dict], profile, fmt: str, lessons: str = "")
                 stray = sorted(n for n in _onscreen_numbers(cand) if n not in allowed and n not in ("0", "1", "2", "3", "4"))
                 if stray:
                     why = f"numbers {stray} are not in the facts"
+                    continue
+                made_up = invented_words(cand, s["narration"] + " " + " ".join(c["passage"] for c in cited))
+                if len(made_up) > 1:
+                    why = f"on-screen words {sorted(set(made_up))[:6]} are not in the narration or sources; use their words"
                     continue
                 params = cand
                 break

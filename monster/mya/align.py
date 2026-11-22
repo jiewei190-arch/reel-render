@@ -112,9 +112,18 @@ def verify_asr(wav: str, expected_words: list[str]) -> dict:
     except ImportError:
         return {"checked": False, "reason": "faster-whisper not installed"}
     try:
+        import numpy as np
+        import soundfile as sf
+        a, sr = sf.read(wav, dtype="float32")
+        if a.ndim > 1:
+            a = a.mean(axis=1)
+        if sr != 16000:  # resample in numpy (avoids the av/ffmpeg binding mismatch when passing a path)
+            idx = np.linspace(0, len(a) - 1, int(len(a) * 16000 / sr))
+            a = np.interp(idx, np.arange(len(a)), a).astype(np.float32)
         m = WhisperModel("tiny.en", device="cpu", compute_type="int8")
-        segs, _ = m.transcribe(wav, language="en")
-        heard = {bare(x) for s in segs for x in s.text.split()}
+        segs, _ = m.transcribe(a, language="en")
+        from .speech import spoken_text
+        heard = {bare(x) for s in segs for x in spoken_text(s.text).split()}  # "2005" -> "two thousand five"
     except Exception as e:  # noqa: BLE001
         return {"checked": False, "reason": str(e)[:200]}
     exp = [bare(w) for w in expected_words if bare(w) and not bare(w).isdigit()]

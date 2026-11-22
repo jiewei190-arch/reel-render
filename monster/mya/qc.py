@@ -62,9 +62,13 @@ def technical(video: Path, fmt_kind: str, words: list[dict], planned_holds: floa
     checks["black_segments"], checks["long_silences"] = len(blacks), len(silences)
     for s, e in blacks:
         findings.append({"severity": "major", "check": "black", "finding": f"black frames {float(s):.2f}-{float(e):.2f}s"})
+    from .render import TAIL
     for s, e in silences:
-        if float(s) < dur - 1.0:  # the planned tail at the end is allowed
-            findings.append({"severity": "major", "check": "silence", "finding": f"silence {float(s):.2f}-{float(e):.2f}s"})
+        s, e = float(s), float(e)
+        if e >= dur - 0.1 and (e - s) <= TAIL + 1.3:
+            checks["planned_end_hold"] = f"{s:.2f}-{e:.2f}s (storyboard tail {TAIL}s after the last word's decay)"
+            continue  # the planned ending hold is represented in the timeline, not dead air
+        findings.append({"severity": "major", "check": "silence", "finding": f"silence {s:.2f}-{e:.2f}s"})
     lo = run(["ffmpeg", "-hide_banner", "-i", video, "-af", "ebur128=peak=true", "-f", "null", "-"])
     m_i = re.findall(r"I:\s+(-?[\d.]+) LUFS", lo)
     m_p = re.findall(r"Peak:\s+(-?[\d.]+) dBFS", lo)

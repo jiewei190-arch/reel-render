@@ -38,7 +38,7 @@ const Box: React.FC<{ L: Layout; children: React.ReactNode; center?: boolean }> 
   <div style={{
     position: "absolute", left: L.left, right: L.w - L.right, top: L.top, height: L.bottom - L.top,
     display: "flex", flexDirection: "column", justifyContent: center ? "center" : "flex-start", alignItems: "center",
-    gap: 34 * L.u,
+    gap: 34 * L.u, overflow: "hidden",  // graphics never spill into the caption band
   }}>{children}</div>
 );
 

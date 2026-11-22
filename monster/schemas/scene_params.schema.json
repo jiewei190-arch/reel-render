@@ -242,7 +242,7 @@
     "items": {
      "type": "array",
      "minItems": 2,
-     "maxItems": 4,
+     "maxItems": 3,
      "items": {
       "$ref": "#/$defs/text"
      }
@@ -262,7 +262,7 @@
     "nodes": {
      "type": "array",
      "minItems": 2,
-     "maxItems": 4,
+     "maxItems": 3,
      "items": {
       "$ref": "#/$defs/short"
      }
