@@ -2,7 +2,7 @@
 
 Composition: `CyberDemoLandscapeRecipe` in `src/index.cyber.ts` (1920x1080, 30 fps, plain composition: no motion blur). Kit cyber3d, format landscape. 13 shots, 33.20 s (0.55 min), 92 words, 3 chapters.
 
-## Clip QA: 996 of 996 frames (every frame), 0 clip(s), 0.1 s
+## Clip QA: 996 of 996 frames (every frame), 0 clip(s), 0.0 s
 
 - none: no prop or set piece enters a figure, no two people overlap, nobody sinks below the floor.
 

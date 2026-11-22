@@ -5,8 +5,8 @@
 //   clipAdapter.retimeShot(shot, remap, srcRecipe)    rewrite every time (`At`) field of a shot in place; places stay
 //   clipAdapter.retimeRecipe(recipe, remap, seg)      -> the clip's extra top-level fields (global props etc.)
 //   clipAdapter.hookText(text)                        -> the kit's hook text (<= 5 words, kit markup such as *gold*)
-//   clipAdapter.hookShot({ recipe, first, who, hookText, stake, set, hookEnd })  -> a fresh shot at 0 (the frame-0 card)
-//   clipAdapter.loopFix?(lastShot, lastRef)           -> names of cards/boards re-timed to land on the last word
+//   clipAdapter.hookShot({ recipe, first, src, hookText, stake, set, hookEnd })  -> a fresh shot at 0 (the frame-0 card)
+//   clipAdapter.loopFix?(lastShot, lastRef, lastT)    -> names of cards/boards re-timed to land on the last word
 // clip_short.mjs has already cut and re-timed the words (shared with the Block Money path); this file builds the
 // shots, writes the recipe and checks that it compiles. Then: node tools/recipe_build.mjs <out> (the kit's Shorts gate).
 import { build } from "esbuild";
