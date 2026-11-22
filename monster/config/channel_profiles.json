@@ -46,7 +46,8 @@
   "http_user_agent": "MonsterYouTubeAutomator/0.1 (personal research bot; owner: set a contact URL or email here per Wikimedia's User-Agent policy)",
   "run_handoffs": false,
   "reelbot_python": null,
-  "handoff_timeout_hours": 4
+  "handoff_timeout_hours": 4,
+  "upload_note": "Studio authuser slots in the owner's Chrome shift (Nov 22: 0 ScamFilesTV, 1 Block Money, 2 Justin clips, 3 Court Of Weird, 4 BillionDollarBlunders). Browser uploads must verify the channel name/ID on the page, never trust a slot number. API uploads verify the authorized channel's real ID against channel_id."
  },
  "formats": {
   "short": {
@@ -120,7 +121,7 @@
    ],
    "pilot": "Simple interest versus compound interest",
    "default_format": "short",
-   "channel_id": null,
+   "channel_id": "UC9vwlwhchNKGNuLyd5ReXRA",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -206,7 +207,7 @@
    ],
    "pilot": "The Boston Molasses Disaster",
    "default_format": "short",
-   "channel_id": null,
+   "channel_id": "UCGrP6kWa753YodKHZ5bCJnw",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -293,7 +294,7 @@
    ],
    "pilot": "Pearson v. Chung",
    "default_format": "short",
-   "channel_id": null,
+   "channel_id": "UCir_oBtYEpBO3pLv1riPCeA",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -388,7 +389,7 @@
    ],
    "pilot": "Blockbuster LLC",
    "default_format": "short",
-   "channel_id": null,
+   "channel_id": "UCaLzfoL-LX1PMDx93Xlr03Q",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -480,7 +481,7 @@
    ],
    "pilot": "Business email compromise",
    "default_format": "short",
-   "channel_id": null,
+   "channel_id": "UCsGTYs_RLdxx7CRc1gtLwJg",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
