@@ -160,10 +160,15 @@ def _context(folder: Path) -> tuple[dict, str, str]:
 
 def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: str) -> None:
     ch = channels.of_folder(folder)
+    data_format = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("format")
     history: list[list[str]] = []
     for attempt in range(1, CFG.recipe_attempts + 1):
         print(f"  claude: writing recipe.json ({tag}, attempt {attempt})...")
-        res = claude.ask_json(system, base + feedback, RECIPE_SCHEMA)
+        long_form = data_format == "landscape"
+        # a 9-12 min landscape recipe plus thinking doesn't fit in 64K output tokens: use the model's 128K and medium
+        # effort (more of the budget goes to the recipe itself)
+        res = claude.ask_json(system, base + feedback, RECIPE_SCHEMA,
+                              **({"max_tokens": 128000, "effort": "medium"} if long_form else {}))
         try:
             recipe = json.loads(res["recipe_json"])
         except json.JSONDecodeError as e:
