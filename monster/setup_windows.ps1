@@ -11,6 +11,8 @@ if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { Need "Gyan.FFmpeg
 if (-not (Get-Command ollama -ErrorAction SilentlyContinue)) { Need "Ollama.Ollama" }
 if (-not (Get-Command espeak-ng -ErrorAction SilentlyContinue)) { Need "eSpeak-NG.eSpeak-NG" }   # Kokoro fallback phonemizer for rare words
 
+# pick up PATH changes from the installs above in THIS shell (winget doesn't refresh it)
+$env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
 py -3.12 -m venv .venv
 .\.venv\Scripts\python -m pip install --upgrade pip
 .\.venv\Scripts\pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu

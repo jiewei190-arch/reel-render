@@ -123,7 +123,7 @@ def build_claims(topic: str, profile, sources: list[dict], lessons: str = "") ->
             continue
         seen.add(i)
         sid, sent = pool[i]
-        claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": p["role"], "status": "verified",
+        claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": p["role"], "status": "verified", "pos": i,
                        "source_ids": [sid], "passage": sent, "note": "verbatim source sentence"})
     if True:
         # every story needs a sourced ending, or a writer will invent one: always ask for it explicitly
@@ -146,7 +146,7 @@ def build_claims(topic: str, profile, sources: list[dict], lessons: str = "") ->
                     c["role"] = "outcome"
         else:
             sid, sent = pool[end]
-            claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": "outcome", "status": "verified",
+            claims.append({"id": f"C{len(claims) + 1}", "statement": sent, "role": "outcome", "status": "verified", "pos": end,
                            "source_ids": [sid], "passage": sent, "note": "verbatim source sentence (outcome)"})
     if len(claims) < 3:
         raise ResearchError("fewer than 3 usable source sentences were selected")

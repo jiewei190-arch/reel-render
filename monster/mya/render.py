@@ -119,14 +119,17 @@ def narration(voice: dict, tl: list[dict], total: float, scene_dir: Path, out: P
 
 
 def master(visuals: Path, audio: Path, total: float, out: Path, ass_file: Path | None, fonts: Path) -> None:
-    vf = []
+    chain = []
     if ass_file:
         a = ass_file.resolve().as_posix().replace(":", "\\:")
         fd = fonts.resolve().as_posix().replace(":", "\\:")
-        vf = ["-vf", f"ass='{a}':fontsdir='{fd}'"]
+        chain.append(f"ass='{a}':fontsdir='{fd}'")
+    chain.append("scale=in_range=auto:out_range=tv,format=yuv420p")  # limited-range yuv420p on every FFmpeg (9 picks yuvj otherwise)
+    vf = ["-vf", ",".join(chain)]
     tmp = out.with_name(out.stem + ".tmp.mp4")
     run(["ffmpeg", "-v", "error", "-y", "-i", visuals, "-i", audio, *vf, "-map", "0:v:0", "-map", "1:a:0",
-         "-t", f"{total:.3f}", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p", "-r", "30",
+         "-t", f"{total:.3f}", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-pix_fmt", "yuv420p",
+         "-color_range", "tv", "-r", "30",
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", tmp], timeout=7200)
     promote(tmp, out)
 
@@ -156,5 +159,5 @@ def contact_sheet(video: Path, tl: list[dict], fps: int, out: Path, width: int) 
     rows = -(-len(times) // cols)
     run(["ffmpeg", "-v", "error", "-y", "-i", video, "-vf",
          f"select='{sel}',scale={360 if width < 1500 else 480}:-1,tile={cols}x{rows}:padding=6:color=white",
-         "-frames:v", "1", "-vsync", "vfr", out])
+         "-frames:v", "1", "-fps_mode", "vfr", out])  # -vsync was removed in FFmpeg 9
     return times

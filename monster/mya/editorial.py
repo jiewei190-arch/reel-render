@@ -116,7 +116,11 @@ def _line(profile, claim: dict, position: str, prev: str, lessons: str, fix: str
 def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", feedback: str = "") -> tuple[dict, list[str]]:
     """One scene per source sentence (hook first, outcome last). A narrow task per call keeps small local models
     from drifting; every line is then fact-checked against its own sentence and rewritten (bounded) if it fails."""
-    ordered = sorted([c for c in claims if c["status"] == "verified"], key=lambda c: (ROLE_ORDER.get(c.get("role"), 2), c["id"]))
+    # story order: the hook first, then the source's own chronology, the ending last
+    def rank(c):
+        r = c.get("role")
+        return (0 if r == "hook" else 2 if r in ("outcome", "aftermath") else 1, c.get("pos", 0), c["id"])
+    ordered = sorted([c for c in claims if c["status"] == "verified"], key=rank)
     if fmt == "short":
         ordered = ordered[:11]
     scenes, prev = [], ""
@@ -141,6 +145,8 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
             f"Write the YouTube metadata for this '{profile.working_name}' video. Title: under 60 characters, specific, "
             "no clickbait the script doesn't deliver, no hashtags. Description: 2 sentences.",
             "Script:\n" + "\n".join(s["narration"] for s in scenes), META_SCHEMA, temperature=0.4, max_tokens=400)
+        for k, v in meta.items():  # small models sometimes slip into another script (e.g. CJK); keep metadata Latin
+            meta[k] = re.sub(r"[^\x00-\u024F\u2010-\u2027\u20AC]", "", v).strip()
         script.update(meta)
     script = tighten(script, profile, fmt)
     problems = check(script, claims, profile, fmt) if len(scenes) >= 3 else ["fewer than 3 lines passed the fact check"]

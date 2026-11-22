@@ -25,6 +25,9 @@ type P = { p: Record<string, any>; theme: Theme; L: Layout; dur: number };
 const clamp = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
 const fit = (text: string, base: number, maxChars: number) =>
   Math.round(base * Math.min(1, Math.max(0.5, maxChars / Math.max(1, (text || "").length))));
+// one-line text sized to the available width (bold sans: ~0.62 em per character), never clipped
+const fitLine = (text: string, base: number, width: number) =>
+  Math.round(Math.min(base, width / (0.66 * Math.max(1, (text || "").length))));
 const fmt = (v: number, decimals = 0) =>
   v.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
@@ -97,7 +100,7 @@ const Counter: React.FC<P> = ({ p, theme, L, dur }) => {
   return (
     <Box L={L}>
       <Heading text={p.label} L={L} theme={theme} size={58} />
-      <div style={{ fontSize: fit(text, (L.portrait ? 230 : 200) * L.u, 7), fontWeight: 700, color: tone,
+      <div style={{ fontSize: fitLine(text, (L.portrait ? 230 : 200) * L.u, (L.right - L.left) * 0.95), fontWeight: 700, color: tone, whiteSpace: "nowrap",
         transform: `scale(${1 + 0.08 * pop * Math.max(0, 1 - (f - end) / 20)})`, fontVariantNumeric: "tabular-nums" }}>{text}</div>
       {p.note ? <div style={{ fontSize: 44 * L.u, color: theme.muted, textAlign: "center", opacity: pop }}>{p.note}</div> : null}
     </Box>
@@ -282,7 +285,8 @@ const Stamp: React.FC<P> = ({ p, theme, L }) => {
     <Box L={L}>
       <AbsoluteFill style={{ background: tone, opacity: flash }} />
       <div style={{ border: `${12 * L.u}px solid ${tone}`, color: tone, borderRadius: 24 * L.u, padding: `${20 * L.u}px ${50 * L.u}px`,
-        fontSize: fit(p.text, 150 * L.u, 9), fontWeight: 700, letterSpacing: 6 * L.u,
+        fontSize: fitLine(String(p.text), 150 * L.u, (L.right - L.left) * 0.78), fontWeight: 700, letterSpacing: 6 * L.u,
+        whiteSpace: "nowrap",
         transform: `rotate(-6deg) scale(${2.2 - 1.2 * a})`, opacity: Math.min(1, a * 1.5) }}>{String(p.text).toUpperCase()}</div>
       {p.sub ? <div style={{ fontSize: fit(p.sub, 52 * L.u, 28), fontWeight: 700, textAlign: "center", opacity: a }}>{p.sub}</div> : null}
     </Box>
