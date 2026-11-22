@@ -466,3 +466,28 @@ def test_handoff_runs_reelbot_only_when_enabled(home, monkeypatch, tmp_path):
     assert called and called[0][2:7] == ["reelbot", "make", "Compound interest", "--channel", "blockmoney"]
     rec = read_json(scheduler.pipeline.job_dir(jid) / "handoff.json")
     assert rec["video"].endswith("video.mp4") and "key slot 1" in rec["cost"]
+
+
+def test_ypp_tracker_and_cohorts(tmp_path, monkeypatch):
+    import json as _j
+    from datetime import date
+    from mya import stats, ypp
+    st = tmp_path / "ypp.json"
+    st.write_text(_j.dumps({"channels": {"justin_clips": {"name": "Justin clips", "as_of": "2026-11-22", "in_ypp": False,
+                  "subs": 1200, "watch_hours_12mo": 100, "shorts_views_90d": 10_500_000},
+                  "law": {"name": "Court Of Weird", "subs": 20, "watch_hours_12mo": 0, "shorts_views_90d": None}}}))
+    monkeypatch.setattr(ypp, "STATUS", st)
+    r = ypp.report(date(2026, 11, 22))
+    assert "71 day(s)" in r and "ELIGIBLE NOW" in r and "unknown" in r and "980 to go" in r
+    raw = tmp_path / "raw"
+    for i, (pub, stay) in enumerate([("2026-11-17", 40), ("2026-11-17", 50), ("2026-11-18", 73)]):
+        d = raw / "2026-11-19" / "justin"
+        d.mkdir(parents=True, exist_ok=True)
+        f = d / "metrics.csv"
+        if not f.exists():
+            f.write_text("video_id,slug,title,length_s,published,views,stayed_to_watch_pct,avg_pct_viewed\n")
+        with f.open("a") as fh:
+            fh.write(f"v{i},s{i},t{i},23,{pub},{1000 + i},{stay},80\n")
+    monkeypatch.setenv("MYA_ANALYTICS_DIR", str(raw))
+    out = stats.cohorts("justin_clips")
+    assert "short at 48h (3 video(s)" in out and "median 50" in out and "s2 (73)" in out

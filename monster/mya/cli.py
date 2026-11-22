@@ -9,6 +9,8 @@
   python -m mya review [--port 8765]                     # local dashboard
   python -m mya release --job ID                         # upload, only with an enabled policy + authorized channel
   python -m mya stats --channel block_money              # real performance only
+  python -m mya stats --channel justin_clips --cohorts   # each video vs the channel median at 48h / 7d / 28d
+  python -m mya ypp                                      # days left + gaps before the YPP bar doubles (Feb 1 2027)
   python -m mya lessons add|list ...
 """
 from __future__ import annotations
@@ -38,6 +40,8 @@ def main(argv=None) -> int:
     p = sub.add_parser("review"); p.add_argument("--port", type=int, default=8765)
     p = sub.add_parser("release"); p.add_argument("--job", required=True)
     p = sub.add_parser("stats"); p.add_argument("--channel", required=True)
+    p.add_argument("--cohorts", action="store_true", help="48h / 7d / 28d same-age comparison")
+    p = sub.add_parser("ypp", help="days left and gaps to the Partner Program bar before it doubles on Feb 1 2027")
     p = sub.add_parser("status")
     p = sub.add_parser("lessons"); p.add_argument("action", choices=["list", "add"]); p.add_argument("--channel")
     p.add_argument("--stage"); p.add_argument("--symptom"); p.add_argument("--cause"); p.add_argument("--fix")
@@ -99,7 +103,11 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "stats":
         from . import stats
-        print(stats.report(a.channel))
+        print(stats.cohorts(a.channel) if a.cohorts else stats.report(a.channel))
+        return 0
+    if a.cmd == "ypp":
+        from . import ypp
+        print(ypp.report())
         return 0
     if a.cmd == "status":
         c = db.connect()

@@ -1,0 +1,45 @@
+{
+ "note": "Copy from each channel's Studio Earn tab. null = unknown. Shorts-feed watch hours don't count toward watch_hours_12mo.",
+ "channels": {
+  "block_money": {
+   "name": "Block Money",
+   "as_of": null,
+   "in_ypp": false,
+   "subs": null,
+   "watch_hours_12mo": null,
+   "shorts_views_90d": null
+  },
+  "justin_clips": {
+   "name": "Justin clips",
+   "as_of": null,
+   "in_ypp": false,
+   "subs": null,
+   "watch_hours_12mo": null,
+   "shorts_views_90d": null
+  },
+  "law": {
+   "name": "Court Of Weird",
+   "as_of": null,
+   "in_ypp": false,
+   "subs": null,
+   "watch_hours_12mo": null,
+   "shorts_views_90d": null
+  },
+  "biz": {
+   "name": "BillionDollarBlunders",
+   "as_of": null,
+   "in_ypp": false,
+   "subs": null,
+   "watch_hours_12mo": null,
+   "shorts_views_90d": null
+  },
+  "cyber": {
+   "name": "ScamFilesTV",
+   "as_of": null,
+   "in_ypp": false,
+   "subs": null,
+   "watch_hours_12mo": null,
+   "shorts_views_90d": null
+  }
+ }
+}
