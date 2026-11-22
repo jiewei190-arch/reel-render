@@ -204,7 +204,7 @@ edges, a soft highlight), lit by the set.
 
 | kit | default | what it is | still |
 |---|---|---|---|
-| `can` | `#D7262E` "COLA" | a soda can: wrap-around label with straight bands, silver lid and tab, condensation beads | [hero-can](docs/hero_props/biz/hero-can.jpg) |
+| `can` | `#D7262E` "COLA" | a soda can: wrap-around label with straight bands, silver lid and tab, condensation beads. Optional small line under the label = `lines[0]` (e.g. "NEW TASTE"); none by default, so the can never states a flavour the story contradicts | [hero-can](docs/hero_props/biz/hero-can.jpg) |
 | `cup` | white "CLASSIC" | a paper cup with a printed sleeve, a lid and a straw | [hero-cup](docs/hero_props/biz/hero-cup.jpg) |
 | `box` | `#F2B830` "CEREAL" | a cereal / product box: FAMILY SIZE band, the label badge, a NEW burst | [hero-box](docs/hero_props/biz/hero-box.jpg) |
 | `bottle` | `#2F7D4A` "SODA" | a glass bottle (lathe profile) with a label band and a gold cap | [hero-bottle](docs/hero_props/biz/hero-bottle.jpg) |

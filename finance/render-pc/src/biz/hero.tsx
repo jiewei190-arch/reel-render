@@ -57,8 +57,8 @@ const CYL = (rt: number, rb: number, h: number, seg = 40, open = false) => geoOf
 const SPH = () => geoOf("bhSph", () => new THREE.SphereGeometry(1, 28, 18));
 
 /** a label panel: product colour, the label big and centred, a band and a small generic line ("NEW", "ORIGINAL") */
-const panelTex = (kind: string, color: string, label: string, W: number, H: number, style: "can" | "box" | "case" | "bag" | "sleeve" | "plate" | "card" | "side") =>
-  canvasTexture(`bhPanel|${kind}|${color}|${label}|${W}x${H}|${style}`, W, H, (g) => {
+const panelTex = (kind: string, color: string, label: string, W: number, H: number, style: "can" | "box" | "case" | "bag" | "sleeve" | "plate" | "card" | "side", sub = "") =>
+  canvasTexture(`bhPanel|${kind}|${color}|${label}|${sub}|${W}x${H}|${style}`, W, H, (g) => {
     const ink = inkOn(color);
     g.fillStyle = color; g.fillRect(0, 0, W, H);
     g.textAlign = "center"; g.textBaseline = "middle";
@@ -74,7 +74,9 @@ const panelTex = (kind: string, color: string, label: string, W: number, H: numb
         g.fillStyle = ink === "#FFFFFF" ? "#FFFFFF" : "#14161C";
         fitText(g, label.toUpperCase(), Math.round(H * 0.26), W * 0.3);
         g.save(); g.translate(W / 2, H * 0.42); g.fillText(label.toUpperCase(), 0, 0); g.restore();
-        g.font = `bold ${Math.round(H * 0.06)}px ${HERO_FONT}`; g.fillText("ORIGINAL TASTE", W / 2, H * 0.66);
+        g.font = `bold ${Math.round(H * 0.06)}px ${HERO_FONT}`; // the small line is the recipe's `lines[0]` (e.g. "NEW TASTE"); none by default, so a can never claims a
+        // flavour the story contradicts (a NEW cola can printed "ORIGINAL TASTE" was an accuracy blocker)
+        if (sub) { fitText(g, sub.toUpperCase(), Math.round(H * 0.06), W * 0.3); g.fillText(sub.toUpperCase(), W / 2, H * 0.66); }
         break;
       }
       case "sleeve": {
@@ -151,7 +153,7 @@ export const BizHero: React.FC<{ kind: BizHeroKind; color?: string; label?: stri
   const silver = hmat("#D5D9E0", { rough: 0.22, metal: 0.35 });
   switch (kind) {
     case "can": {
-      const tex = panelTex(kind, col, lab, 1024, 424, "can");
+      const tex = panelTex(kind, col, lab, 1024, 424, "can", lines?.[0] ?? "");
       return (
         <group>
           {/* the body (texture seam at the back: the label centre faces +z), the rounded shoulders, lid and pull tab */}
