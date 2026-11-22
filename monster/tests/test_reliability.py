@@ -131,7 +131,7 @@ def test_resume_reuses_completed_stages_and_rebuilds_invalidated(home, monkeypat
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-11-28")[0]
+    jid = scheduler.fill_slots("2026-11-28")[2]
     assert pipeline.run_job(jid, log=lambda *a: None) == "ready_for_release"
     first = [s for j, s in calls]
     calls.clear()
@@ -154,7 +154,9 @@ def test_failed_asset_fetch_is_isolated(home, monkeypatch):
     res = scheduler.daily("2026-11-29", log=lambda *a: None)
     states = res["results"]
     assert states[jobs[2]] == "blocked"
-    assert all(states[j] == "ready_for_release" for j in jobs if j != jobs[2])
+    ext = {j for j in jobs if j.split("-")[1].startswith(("block_money", "justin_clips"))}
+    assert all(states[j] == "external_production" for j in ext)  # 3D + ElevenLabs channels are handed off, not produced here
+    assert all(states[j] == "ready_for_release" for j in jobs if j != jobs[2] and j not in ext)
     c = db.connect()
     row = c.execute("SELECT * FROM stage_runs WHERE job_id=? AND stage='assets'", (jobs[2],)).fetchone()
     assert row["status"] == "failed" and "asset fetch failed" in row["error"]
@@ -165,7 +167,7 @@ def test_expired_lease_is_reclaimed_live_lease_is_respected(home, monkeypatch):
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-11-30")[0]
+    jid = scheduler.fill_slots("2026-11-30")[2]
     c = db.connect()
     c.execute("INSERT INTO stage_runs (job_id, stage, status, lease_owner, lease_expires) VALUES (?,?,?,?,?)",
               (jid, "research", "running", "other:1", time.time() + 600))
@@ -179,7 +181,7 @@ def test_lease_of_dead_local_worker_is_reclaimed_immediately(home, monkeypatch):
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-12-03")[0]
+    jid = scheduler.fill_slots("2026-12-03")[2]
     c = db.connect()
     dead = f"{socket.gethostname()}:999999:abc123"  # no such pid
     c.execute("INSERT INTO stage_runs (job_id, stage, status, lease_owner, lease_expires) VALUES (?,?,?,?,?)",

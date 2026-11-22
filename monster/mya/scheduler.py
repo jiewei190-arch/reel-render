@@ -105,6 +105,11 @@ def daily(local_date: str | None = None, produce: bool = True, until: str = "qc"
                     results[jid] = st
                     continue
                 log(f"\n== {jid}")
+                ch = c.execute("SELECT channel_key, topic FROM jobs WHERE job_id=?", (jid,)).fetchone()
+                prod = cfg().profile(ch["channel_key"]).raw.get("producer", {"kind": "local"})
+                if prod.get("kind") == "external":
+                    results[jid] = handoff(c, jid, ch["topic"], prod, log)
+                    continue
                 try:
                     results[jid] = pipeline.run_job(jid, until=until, log=log)
                 except Exception as e:  # noqa: BLE001  (one channel's failure never stops the others)
@@ -117,3 +122,15 @@ def daily(local_date: str | None = None, produce: bool = True, until: str = "qc"
         return {"date": local_date, "jobs": jobs, "results": results, "seconds": secs, "peak_rss_mb": round(peak, 1)}
     finally:
         db.release(c, "scheduler")
+
+
+def handoff(c, job_id: str, topic: str, prod: dict, log=print) -> str:
+    """Channels with their own engine (Block Money, Justin clips: 3D + ElevenLabs) are scheduled and tracked here but
+    produced by their own pipeline. The automator never voices or renders them, so no paid call is made from here."""
+    from .util import write_json_atomic
+    cmd = prod["command"].replace("{topic}", topic.replace('"', "'"))
+    write_json_atomic(pipeline.job_dir(job_id) / "handoff.json",
+                      {"producer": prod["name"], "command": cmd, "workdir": prod.get("workdir"), "utc": now_utc()})
+    db.set_state(c, job_id, "external_production", f"produced by {prod['name']}: {cmd}")
+    log(f"  handed off to {prod['name']}")
+    return "external_production"

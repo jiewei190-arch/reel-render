@@ -1,6 +1,6 @@
 {
  "schema_version": "1.1",
- "note": "Our five channels (Nov 2026). The build pack's sample profiles are kept in channel_profiles.pack_defaults.json. Every field is editable; bump profile_version when a change should invalidate cached work for that channel.",
+ "note": "Our five channels (Nov 2026). The build pack's sample profiles are kept in channel_profiles.pack_defaults.json. Every field is editable; bump profile_version when a change should invalidate cached work for that channel. Block Money and Justin clips keep their own 3D engines and ElevenLabs voices (owner decision, Nov 22 2026): the automator schedules and tracks their slots and hands production off to reelbot; it never voices or renders them itself.",
  "production_target": {
   "channels": 5,
   "uploads_per_channel_per_day": 1,
@@ -126,7 +126,13 @@
     "require_editorial_pass": true
    },
    "pronunciations": {},
-   "reference_images": false
+   "reference_images": false,
+   "producer": {
+    "kind": "external",
+    "name": "reelbot (Block Money 3D engine + ElevenLabs voices)",
+    "command": "python -m reelbot make \"{topic}\" --channel blockmoney --auto",
+    "workdir": "bot"
+   }
   },
   {
    "key": "justin_clips",
@@ -192,7 +198,13 @@
     "require_editorial_pass": true
    },
    "pronunciations": {},
-   "reference_images": true
+   "reference_images": true,
+   "producer": {
+    "kind": "external",
+    "name": "Justin clips Toon 3D engine + ElevenLabs voices (Liam Shorts / Russ long)",
+    "command": "python -m reelbot make \"{topic}\" --channel justin --auto  (script + ElevenLabs voice; render in the Justin engine)",
+    "workdir": "bot"
+   }
   },
   {
    "key": "law",
@@ -261,7 +273,11 @@
    "pronunciations": {
     "v.": "versus"
    },
-   "reference_images": true
+   "reference_images": true,
+   "producer": {
+    "kind": "local",
+    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+   }
   },
   {
    "key": "biz",
@@ -329,7 +345,11 @@
     "require_editorial_pass": true
    },
    "pronunciations": {},
-   "reference_images": true
+   "reference_images": true,
+   "producer": {
+    "kind": "local",
+    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+   }
   },
   {
    "key": "cyber",
@@ -395,7 +415,11 @@
     "require_editorial_pass": true
    },
    "pronunciations": {},
-   "reference_images": false
+   "reference_images": false,
+   "producer": {
+    "kind": "local",
+    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+   }
   }
  ]
 }

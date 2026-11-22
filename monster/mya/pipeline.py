@@ -349,6 +349,9 @@ def run_job(job_id: str, until: str = "qc", log=print) -> str:
     """Run (or resume) a job's stages up to `until`. Returns the final state. Exceptions stay inside this job."""
     c = db.connect()
     job = dict(db.job(c, job_id))
+    prod = cfg().profile(job["channel_key"]).raw.get("producer", {"kind": "local"})
+    if prod.get("kind") == "external":
+        raise SystemExit(f"{job['channel_key']} is produced by {prod['name']}, not by the local pipeline")
     d = job_dir(job_id)
     max_rev = cfg().runtime.get("max_regenerations_per_stage", 2)
     revisions = 0
