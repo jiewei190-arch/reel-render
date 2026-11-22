@@ -77,7 +77,8 @@ def fallback(narration: str, types: list[str]) -> tuple[str, dict] | None:
             sub = (date.group(0) if date else "")
             return "stamp", ({"text": stamp, "sub": sub} if sub else {"text": stamp})
     if date and "document" in types:
-        kw = [w for w in re.findall(r"[A-Za-z'-]+", narration) if len(w) > 3 and w.lower() not in STOP
+        kw = [w.strip("-,.") for w in re.findall(r"[A-Za-z0-9'-]+", narration) if len(w) > 3 and w.lower() not in STOP
+              and w != date.group(2)
               and not re.fullmatch(MONTHS, w)][:6]
         return "document", {"kind": "Record", "title": date.group(0), "lines": [" ".join(kw[:3]), " ".join(kw[3:6])][: 2 if kw[3:] else 1]}
     num = re.search(r"\b(\d[\d,]*)\b", narration)
@@ -111,11 +112,12 @@ def _texts(obj, key=""):
 
 def invented_words(params, allowed_text: str) -> list[str]:
     """On-screen words must come from the narration or its cited sources (a few generic labels are allowed)."""
-    allowed = set(re.findall(r"[a-z0-9']+", allowed_text.lower())) | {"verdict", "case", "file", "record", "court", "timeline",
+    toks = re.findall(r"[a-z0-9']+", allowed_text.lower().replace("\u2019", "'"))
+    allowed = set(toks) | {t[:-2] for t in toks if t.endswith("'s")} | {v.lower() for v in VERDICT_WORDS.values()} | {"verdict", "case", "file", "record", "court", "timeline",
               "total", "before", "after", "then", "now", "vs", "versus", "what", "happened", "how", "why", "who", "step", "result"}
     bad = []
     for t in _texts(params):
-        for w in re.findall(r"[a-z']+", t.lower()):
+        for w in re.findall(r"[a-z']+", t.lower().replace("\u2019", "'")):
             w = w[:-2] if w.endswith("'s") else w
             w2 = w.rstrip("s")
             if w not in STOP and len(w) > 2 and w not in allowed and w2 not in allowed and w + "s" not in allowed:
