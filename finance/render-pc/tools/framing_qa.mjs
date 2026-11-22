@@ -1,13 +1,15 @@
 // framing_qa.mjs: the screen-space framing QA shared by every engine (Block Money and the four kits).
 // Each builder hands it a scene sampler: sample(t) -> what the shot camera sees at t (views, actors, the shot's subject,
 // text boards, other props, 2D cards). Everything is projected through the shot camera (incl. its roll) into output
-// pixels, every output frame (30 fps; long-form: every Nth frame). Five rules (RECIPE_GUIDE.md "Framing rules"):
+// pixels, every output frame (30 fps; long-form: every Nth frame). Six rules (RECIPE_GUIDE.md "Framing rules"):
 //   R1 CLIP  a board, sign or prop over an actor's head box (head + antennae / hair / hat), on screen
 //   R2 FAIL  the shot's subject cut by the frame: < 85 % of its body box (horizontally) inside, or its head box touching
 //            an edge; any named actor whose head is cut by an edge
 //   R3 FAIL  a landed board / text box past the frame edge (margin 3 % of the frame width)
 //   R4 FAIL  board text contrast below 4.5:1 (WCAG), or a featured board's main line under 42 px (cap height, 1080 wide)
 //   R5 FAIL  frame 0: the hook text smaller than the engine's hook size, or the subject's face smaller than a close shot
+//   R6 FAIL  the burned-in word caption (bottom-centre band, the real line boxes of the chunk on screen) over a
+//            character's face, head or neck / collar (actors >= 15 % of the frame height; lasting >= 3 frames)
 // Messages say what to move where, in the recipe's own units (metres, shot ids, prop ids).
 import { readFileSync } from "fs";
 import { dirname, join, resolve } from "path";
@@ -31,6 +33,50 @@ export const RULES = {
   //                          for a 59 px font and fail every kit's 50-54 px callout label; 42 px em also equals the
   //                          existing long-form rule (cap >= 30 px at 1080 tall)
   closeFace: 0.16, //       R5: frame-0 subject head height >= 16 % of the frame height (307 px at 1920)
+  capActor: 0.15, //        R6: actors whose body is shorter than this share of the frame height are background (ignored)
+  neckDrop: 0.3, //         R6: the neck / collar box hangs this share of the face-box height below the face box (0.5
+  //                          reached the shirt front on law3d close shots: chest in the band is the owner's rule v2)
+  capPad: 6, //             R6: px the caption line box and the face/neck silhouette must overlap on both axes
+  capArea: 400, //          R6: px² of overlap (20 x 20 px at 1080 wide) for R6 to fire (a stroke grazing the chin is fine)
+  capMargin: 12, //         R6: px of air the advice leaves between the neck box and the caption band
+};
+
+// ------------------------------------------------------------------ R6: the word-caption line boxes
+/** caption words as the kits' caption components print them: trailing punctuation and quotes off, upper case */
+export const capWord = (w) => String(w ?? "").replace(/[.,!?…:;"]+$/, "").replace(/^"/, "").toUpperCase();
+/**
+ * The on-screen line boxes (output px) of a caption chunk, laid out like the components do (Poppins 800, uppercase):
+ *  mode "short": RecipeCaptions / TechCaptions / LawCaptions / BizCaptions / CyberCaptions: a flex-wrap row centred in a
+ *                box `side`..W-`side` wide and `box` px tall centred on `centre`; word gap 0.28 em, line height 1.05 em;
+ *                wrapped lines share the box height equally (align-content: stretch)
+ *  mode "lower": LowerThirdCaptions (long-form): at most 2 balanced lines in the 240..W-240 column, line height 1.12 em,
+ *                centred on `centre`; word gap 0.26 em
+ * `stroke` px of text stroke stick out of the glyphs on every side (half the CSS stroke width: paint-order stroke fill).
+ */
+export const captionLines = (words, o) => {
+  const fs = o.fs, W = o.W, ws = words.map(capWord).filter(Boolean);
+  if (!ws.length) return [];
+  const lower = o.mode === "lower";
+  const gap = fs * (lower ? 0.26 : 0.28), maxW = W - 2 * o.side, lh = fs * (lower ? 1.12 : 1.05), st = o.stroke ?? 7;
+  const wid = ws.map((w) => textEm(w) * fs);
+  const lineW = (a, b) => wid.slice(a, b).reduce((x, y) => x + y, 0) + gap * Math.max(0, b - a - 1);
+  let lines = [];
+  if (lower) {
+    if (lineW(0, ws.length) <= maxW || ws.length === 1) lines = [[0, ws.length]];
+    else {
+      let best = 1;
+      for (let k = 1; k < ws.length; k++) if (Math.max(lineW(0, k), lineW(k, ws.length)) < Math.max(lineW(0, best), lineW(best, ws.length))) best = k;
+      lines = [[0, best], [best, ws.length]];
+    }
+  } else {
+    let a = 0;
+    for (let i = 1; i <= ws.length; i++) if (i === ws.length || lineW(a, i + 1) > maxW) { lines.push([a, i]); a = i; }
+  }
+  const n = lines.length, box = o.box ?? 240;
+  return lines.map(([a, b], i) => {
+    const w = Math.min(maxW, lineW(a, b)), cy = lower ? o.centre + (n === 1 ? 0 : (i - 0.5) * lh) : o.centre - box / 2 + ((i + 0.5) * box) / n;
+    return { x0: W / 2 - w / 2 - st, x1: W / 2 + w / 2 + st, y0: cy - lh / 2 - st, y1: cy + lh / 2 + st, text: ws.slice(a, b).join(" ") };
+  });
 };
 
 // ------------------------------------------------------------------ colour
@@ -225,19 +271,22 @@ const worldMove = (v, dxPx, dyPx, k) => {
 };
 
 /**
- * Run the five rules.
+ * Run the six rules.
  * @param o.times     output times to sample (s)
  * @param o.sample    (t) => scene (see below)
  * @param o.W, o.H    output frame size
  * @param o.landscape long-form (R5 skipped; the text rule scales RULES.textPx by H / 1080)
  * @param o.frame0    { hookPx, hookMinPx, hookLabel } for R5 (the face part comes from sample(0))
+ * R6 reads scene.caption = { text, lines: captionLines(...) } (null while no caption is on screen), each view's lens
+ * `face` fraction (views[i].face, for the advice) and per actor optional `face`, `neckDrop`, `yaw`, `faceTarget` (the
+ * kit's camera target for that face, default "<id>.face"; biz3d "<id>.head").
  * scene: { shot, shotLabel?, views: [{cam, left, top, w, h, name?}], actors: [{id, head:{c,h}, parts:[{c,h}], named}],
  *          subjects: [{id, view, why}], boards: [{key, label, box:{c,h,yaw}, plane?:{c,w,h,yaw,flat}, lines:[{text, capM, fg}],
  *          bg, featured, landed, edge, ownerFg?, fix?}], props: [{key, box}], cards: [{key, label, x0,x1,y0,y1, lines:[{text,capPx,fg}], bg, landed}] }
  */
 export const framingQA = (o) => {
   const W = o.W, H = o.H, LS = !!o.landscape;
-  const out = { r1: new Map(), r2: new Map(), r3: new Map(), r4c: new Map(), r4h: new Map(), r5: [] };
+  const out = { r1: new Map(), r2: new Map(), r3: new Map(), r4c: new Map(), r4h: new Map(), r5: [], r6: new Map() };
   const run = new Map(); // key -> consecutive frames
   const seen = new Set();
   const capMin = RULES.textPx * capRatio() * (LS ? H / 1080 : W / 1080); // in cap-height px
@@ -257,6 +306,84 @@ export const framingQA = (o) => {
     store.set(id, mk());
     if (!worst.has(store)) worst.set(store, new Map());
     worst.get(store).set(id, sev);
+  };
+  // R6: the zones a caption may not cover: the head (incl. hair / antennae), the face and the neck / upper chest (a box
+  // hanging RULES.neckDrop x the face-box height below the face box, as wide as the face; a.neckDrop overrides it)
+  const zonesOf = (a) => {
+    const f = a.face ?? a.head, d = (a.neckDrop ?? RULES.neckDrop) * 2 * f.h[1];
+    const neck = { c: [f.c[0], f.c[1] - f.h[1] - d / 2, f.c[2]], h: [f.h[0], d / 2, f.h[2]], yaw: f.yaw ?? a.yaw ?? 0 };
+    return [...(a.headParts ?? [a.head]).map((b) => ["head", b]), ["face", f], ["neck", neck]];
+  };
+  const hullOf = (v, b) => {
+    if (b.r === undefined) return boxHull(v, b);
+    const q2 = proj(v, b.c); if (!q2) return null;
+    const R = b.r * q2.k; return Array.from({ length: 16 }, (_, i) => [q2.x + R * Math.cos((i * Math.PI) / 8), q2.y + R * Math.sin((i * Math.PI) / 8)]);
+  };
+  const hullRect = (P) => ({ x0: Math.min(...P.map((p) => p[0])), x1: Math.max(...P.map((p) => p[0])), y0: Math.min(...P.map((p) => p[1])), y1: Math.max(...P.map((p) => p[1])) });
+  const roomMin = new Map();
+  const r6 = (sc, v, vi, vname, VR, acts, ts) => {
+    const cap = sc.caption;
+    // the caption lines clipped to this view (a split screen: the caption sits over the bottom view)
+    const lines = cap.lines.map((l) => ({ ...l, x0: Math.max(l.x0, VR.x0), x1: Math.min(l.x1, VR.x1), y0: Math.max(l.y0, VR.y0), y1: Math.min(l.y1, VR.y1) })).filter((l) => l.x1 - l.x0 > 1 && l.y1 - l.y0 > 1);
+    for (const { a, head, body } of acts) {
+      if (!a.named || !head || !body) continue;
+      const key = `r6|${sc.shot}|${a.id}${vname}`;
+      // tiny background figures do not count (their whole body under 15 % of the frame height)
+      if (!lines.length || body.y1 - body.y0 < RULES.capActor * H) { persist(key, true, out.r6, () => ""); continue; }
+      let best = null;
+      const zs = zonesOf(a).map(([part, b]) => { const P = hullOf(v, b); return P ? { part, P, r: hullRect(P) } : null; }).filter(Boolean);
+      for (const l of lines) {
+        const poly = [[l.x0, l.y0], [l.x1, l.y0], [l.x1, l.y1], [l.x0, l.y1]].reverse();
+        for (const z of zs) {
+          if (ox(l, z.r) <= RULES.capPad || oy(l, z.r) <= RULES.capPad) continue;
+          const A = hullOverlap(poly, z.P);
+          if (A >= RULES.capArea * (W / 1080) ** 2 && (!best || A > best.A || (A === best.A && z.part === "face"))) best = { A, z, l };
+        }
+      }
+      persist(key, !best, out.r6, () => (roomShot) => {
+        // the whole protected zone (head + face + neck) on screen, and the band the caption takes in this frame
+        const zr = zs.reduce((u, z) => ({ x0: Math.min(u.x0, z.r.x0), x1: Math.max(u.x1, z.r.x1), y0: Math.min(u.y0, z.r.y0), y1: Math.max(u.y1, z.r.y1) }), { x0: Infinity, x1: -Infinity, y0: Infinity, y1: -Infinity });
+        const bandTop = Math.min(...lines.map((l) => l.y0)), capX0 = Math.min(...lines.map((l) => l.x0)), capX1 = Math.max(...lines.map((l) => l.x1));
+        const faceR = zs.find((z) => z.part === "face")?.r ?? head;
+        const part = best.z.part === "neck" && (a.neckDrop ?? RULES.neckDrop) < 0.25 ? "chin" : best.z.part === "neck" ? (best.l.y0 < faceR.y1 + 0.12 * (faceR.y1 - faceR.y0) ? "chin / neck" : "neck / collar") : best.z.part;
+        const fixes = [];
+        // 1) higher in frame: lift everything by `lift` px (the lens face fraction is where the target sits from the top)
+        const lift = zr.y1 - (bandTop - RULES.capMargin);
+        const room = Math.min(zr.y0 - (VR.y0 + RULES.headEdge * W) - 4, roomShot ?? Infinity); // R2: the head box must stay clear of the top edge, all shot long
+        const vf = v.face;
+        const okF = (x) => vf === undefined || vf - x / v.h >= 0.05; // a lens face fraction stays >= 0.05
+        if (lift <= room && okF(lift)) fixes.push(`put ${a.id} higher in frame: lift it ${lift.toFixed(0)} px (${vf !== undefined ? `cam.face ${vf.toFixed(2)} -> ${(vf - lift / v.h).toFixed(2)}` : `cam.face -${(lift / v.h).toFixed(2)}`}, or aim cam.target lower on the body; its head keeps >= ${(room - lift).toFixed(0)} px below the top all shot)`);
+        // 2) pull back: on-screen sizes scale about the camera target (it stays at the face fraction); the zone's bottom
+        //    must come up to the band top
+        const yt = vf !== undefined ? v.top + vf * v.h : (faceR.y0 + faceR.y1) / 2;
+        const room2 = bandTop - RULES.capMargin - yt;
+        const Nb = room2 > 20 && zr.y1 > yt ? Math.max(1.05, ((zr.y1 - yt) / room2) * 1.04) : Infinity;
+        if (Nb <= 2.5) fixes.push(`pull the camera back (cam.dist x${Nb.toFixed(2)})`);
+        if (lift > room || !okF(lift)) {
+          // lifting alone would push the head into the top edge: lift what the head room allows, then pull back about the
+          // lifted target; if the target is still under the caption, the camera has to aim higher (at the face)
+          const L = Math.max(0, Math.min(room, vf === undefined ? room : (vf - 0.05) * v.h)), yt2 = yt - L, r3 = bandTop - RULES.capMargin - yt2;
+          const lifted = vf !== undefined ? `cam.face ${vf.toFixed(2)} -> ${(vf - L / v.h).toFixed(2)}` : `cam.face -${(L / v.h).toFixed(2)}`;
+          const N3 = r3 > 20 ? Math.max(1.05, ((zr.y1 - L - yt2) / r3) * 1.04) : Infinity;
+          if (N3 <= 2.5) fixes.push(`lift it ${L.toFixed(0)} px (${lifted}) and pull the camera back (cam.dist x${N3.toFixed(2)})`);
+          else {
+            // re-aimed at the face centre placed at 0.40 of the view height: the neck bottom hangs (zone bottom - face
+            // centre) px under it at today's size, and must end above the band
+            const fc = (faceR.y0 + faceR.y1) / 2, yf = v.top + 0.4 * v.h, N = Math.max(1, ((zr.y1 - fc) / Math.max(20, bandTop - RULES.capMargin - yf)) * 1.04);
+            if (N > 2.5) fixes.push(`${a.id}'s head sits in the caption band (y ${zr.y0.toFixed(0)}-${zr.y1.toFixed(0)}): aim this shot at ${a.id} (cam.target "${a.faceTarget ?? `${a.id}.face`}" with cam.face 0.40), or move ${a.id} out of the shot or behind the subject`);
+            else fixes.push(`aim the camera at the face (cam.target "${a.faceTarget ?? `${a.id}.face`}" with cam.face 0.40${N > 1.01 ? `, cam.dist x${N.toFixed(2)}` : ""}): ${yt > bandTop ? `the camera target sits ${(yt - bandTop).toFixed(0)} px below the caption top, so` : "the head has only"} ${yt > bandTop ? `lifting it ${L.toFixed(0)} px or pulling back alone cannot clear the neck` : `${L.toFixed(0)} px to rise and pulling back alone would take more than cam.dist x2.5`}`);
+          }
+        }
+        // 3) move the actor sideways, out of the caption's width (captions are centred, 1-3 words)
+        const dxR = capX1 - zr.x0 + 8, dxL = -(zr.x1 - capX0 + 8);
+        const dx = Math.abs(dxR) < Math.abs(dxL) ? dxR : dxL;
+        const k = head.k || 1, mv = worldMove(v, dx, 0, k);
+        // only when the head stays in frame and, on a close shot, near the middle (R2)
+        const hc = (head.x0 + head.x1) / 2 + dx, hw = VR.x1 - VR.x0;
+        if (head.x0 + dx >= VR.x0 + RULES.headEdge * W && head.x1 + dx <= VR.x1 - RULES.headEdge * W && Math.abs(hc - (VR.x0 + VR.x1) / 2) <= 0.3 * hw) fixes.push(`move ${a.id} ${mv.m.toFixed(2)} m to screen-${dx > 0 ? "right" : "left"} (add ${mv.s} to its at) so the caption (x ${capX0.toFixed(0)}-${capX1.toFixed(0)}) clears it`);
+        return `FAIL ${sc.shot}${vname} caption ${q(cap.text ?? best.l.text)} covers ${a.id}'s ${part} (worst at ${ts}: caption line ${q(best.l.text)} x ${best.l.x0.toFixed(0)}-${best.l.x1.toFixed(0)}, y ${best.l.y0.toFixed(0)}-${best.l.y1.toFixed(0)}; ${a.id} head-to-neck box y ${zr.y0.toFixed(0)}-${zr.y1.toFixed(0)}, ${best.A.toFixed(0)} px² covered). Fix: ${fixes.join(", or ")}`;
+      }, best ? Math.max(...zs.map((z) => z.r.y1)) - Math.min(...lines.map((l) => l.y0)) + best.A * 1e-6 : 0); // worst frame = the most lift needed
+    }
   };
   const T0 = Date.now();
   let frames = 0;
@@ -354,6 +481,11 @@ export const framingQA = (o) => {
           }, Math.max(0, VR.x0 + hm - head.x0, head.x1 - (VR.x1 - hm)));
         }
       }
+      // ---- R6: the word caption over a face, head or neck (the caption's real line boxes, while a chunk is on screen)
+      // the head room over the WHOLE shot (a push-in raises the head after the R6 frame): R6's "lift" advice never
+      // pushes the head box into the top edge (R2) at any frame of the shot
+      for (const { a, head } of acts) if (head) { const rk = `${sc.shot}|${a.id}${vname}`, rm = head.y0 - (VR.y0 + RULES.headEdge * W) - 4; if (!(roomMin.get(rk) <= rm)) roomMin.set(rk, rm); }
+      if (sc.caption?.lines?.length) r6(sc, v, vi, vname, VR, acts, ts);
       // ---- R3 + R4 height: boards
       for (const b of sc.boards) {
         const pl = b.plane;
@@ -464,12 +596,14 @@ export const framingQA = (o) => {
     else if (best.hpx < best.need) out.r5.push(`FAIL frame 0 subject ${best.id}'s face is ${best.hpx.toFixed(0)} px tall (${((best.hpx / H) * 100).toFixed(0)} % of the frame; a close shot needs ${best.need.toFixed(0)} px): aim the frame-0 camera at "${best.id}.face" and move it in (cam.dist x${Math.max(0.3, best.hpx / best.need).toFixed(2)}), e.g. hookZoom with dist 1.7`);
     out.face0 = best;
   }
+  // R6 messages are finished once the whole run is seen (the lift is capped by the shot's smallest head room)
+  for (const [id, fn] of out.r6) if (typeof fn === "function") out.r6.set(id, fn(roomMin.get(id.replace(/^r6\|/, ""))));
   out.ms = Date.now() - T0;
   out.frames = frames;
   out.capMin = capMin;
-  const lines = [...out.r1.values(), ...out.r2.values(), ...out.r3.values(), ...out.r4c.values(), ...out.r4h.values(), ...out.r5];
+  const lines = [...out.r1.values(), ...out.r2.values(), ...out.r3.values(), ...out.r4c.values(), ...out.r4h.values(), ...out.r5, ...out.r6.values()];
   out.clips = [...out.r1.values()];
-  out.fails = [...out.r2.values(), ...out.r3.values(), ...out.r4c.values(), ...out.r4h.values(), ...out.r5];
+  out.fails = [...out.r2.values(), ...out.r3.values(), ...out.r4c.values(), ...out.r4h.values(), ...out.r5, ...out.r6.values()];
   out.lines = lines;
   return out;
 };
@@ -477,8 +611,8 @@ export const framingQA = (o) => {
 /** markdown section + console lines for a builder's report */
 export const framingReport = (fq, opts = {}) => {
   const head = `## Framing QA (screen space, ${fq.frames} frames, ${(fq.ms / 1000).toFixed(2)} s): ${fq.clips.length} clip(s), ${fq.fails.length} fail(s)`;
-  const body = fq.lines.length ? fq.lines.map((l) => `- ${l}`) : ["- none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close."];
-  const summary = [`R1 head clips ${fq.r1.size}`, `R2 subject/edge ${fq.r2.size}`, `R3 board past edge ${fq.r3.size}`, `R4 contrast ${fq.r4c.size}`, `R4 text size ${fq.r4h.size}`, `R5 frame 0 ${fq.r5.length}`].join(", ");
+  const body = fq.lines.length ? fq.lines.map((l) => `- ${l}`) : ["- none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close, captions off faces and necks."];
+  const summary = [`R1 head clips ${fq.r1.size}`, `R2 subject/edge ${fq.r2.size}`, `R3 board past edge ${fq.r3.size}`, `R4 contrast ${fq.r4c.size}`, `R4 text size ${fq.r4h.size}`, `R5 frame 0 ${fq.r5.length}`, `R6 caption on face/neck ${fq.r6.size}`].join(", ");
   return { md: [head, "", `Rules: RECIPE_GUIDE.md "Framing rules". ${summary}.${fq.face0 ? ` Frame-0 face: ${fq.face0.id} ${fq.face0.hpx.toFixed(0)} px.` : ""}`, "", ...body, ""], summary, console: fq.lines, ...opts };
 };
 
@@ -497,5 +631,6 @@ export const kitFraming = ({ C, W = 1080, H = 1920, landscape = false, times, sa
     [`framing R4: text >= 4.5:1 on its fill; featured main lines >= ${RULES.textPx} px (font size)`, fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
   ];
   if (!landscape) rows.push(["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(RULES.closeFace * H).toFixed(0)})${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.alt0 ? `face rule replaced by the opener: ${fq.alt0}${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.r5.join("; ") || "ok", true]);
+  rows.push(["framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height)", fq.r6.size === 0, fq.r6.size ? `${fq.r6.size} (see Framing QA)` : "clear", true]);
   return { fq, fr, rows, failed: fq.lines.length > 0, console: `framing QA: ${fq.clips.length} clip(s), ${fq.fails.length} fail(s) over ${fq.frames} frames in ${(fq.ms / 1000).toFixed(2)} s (${fr.summary})` };
 };

@@ -10,3 +10,4 @@ export { CYBER_SET_IDS } from "../src/cyber/sets";
 export { figureBoxes } from "../src/cyber/figure";
 export { chunkWords, LF } from "../src/longform/kit";
 export { clipAdapter } from "../src/cyber/clip";
+export { chunkWords as capChunkWords } from "../src/fin/lib/captions";

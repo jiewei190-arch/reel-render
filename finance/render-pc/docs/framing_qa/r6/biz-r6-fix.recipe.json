@@ -1,0 +1,624 @@
+{
+  "kit": "biz3d",
+  "slug": "biz-r6-fix",
+  "format": "short",
+  "hook": {
+    "text": "THE *$50M* NO",
+    "again": "10:back"
+  },
+  "music": "upbeat",
+  "cast": {
+    "ceo": {
+      "suit": "#2E3440",
+      "tie": "#EF3B36",
+      "skin": "#E2B48E",
+      "hair": "#5B4636",
+      "hairStyle": "short"
+    },
+    "f1": {
+      "suit": "#2F5A3A",
+      "tie": "#22C55E",
+      "skin": "#D9A47E",
+      "hair": "#2B1D14"
+    },
+    "f2": {
+      "suit": "#1F5F63",
+      "tie": "#4ADE80",
+      "skin": "#C98F68",
+      "hair": "#141414",
+      "hairStyle": "bald"
+    },
+    "bm1": "navy",
+    "bm2": "burgundy"
+  },
+  "chart": {
+    "pts": [
+      0.2,
+      1.6,
+      3.6,
+      6.0,
+      7.7,
+      9.1,
+      7.9,
+      6.0,
+      3.3
+    ],
+    "tags": [
+      {
+        "i": 0,
+        "text": "1985"
+      },
+      {
+        "i": 4,
+        "text": "2000"
+      },
+      {
+        "i": 5,
+        "text": "2004"
+      },
+      {
+        "i": 8,
+        "text": "2010"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "at": 0,
+      "set": "boardroom",
+      "note": "frame 0: a hero prop close-up, the video rental case on the table; the boss behind it, arms folded",
+      "cam": {
+        "preset": "hookZoom",
+        "target": "rc",
+        "dist": 1.45,
+        "h": 0.12,
+        "face": 0.52
+      },
+      "props": [
+        {
+          "id": "rc",
+          "kit": "case",
+          "label": "RENTAL",
+          "color": "#7A1F2B",
+          "at": "tableTop:0,0,-2.35",
+          "scale": 0.8,
+          "spin": 8
+        }
+      ],
+      "actors": [
+        {
+          "id": "ceo",
+          "pose": "fold",
+          "at": "head",
+          "seated": true,
+          "then": [
+            {
+              "at": "could",
+              "pose": "shrug"
+            }
+          ]
+        },
+        {
+          "id": "bm1",
+          "pose": "idle",
+          "at": "seatL1",
+          "seated": true
+        },
+        {
+          "id": "bm2",
+          "pose": "idle",
+          "at": "seatR1",
+          "seated": true
+        }
+      ]
+    },
+    {
+      "at": "have",
+      "set": "warehouse",
+      "note": "the DVD-by-mail startup",
+      "cam": {
+        "preset": "slamZoom",
+        "target": "dv",
+        "dist": 2.9,
+        "h": 0.6,
+        "az": 20,
+        "face": 0.66
+      },
+      "props": [
+        {
+          "id": "dv",
+          "kit": "disc",
+          "at": "aisle:0,0,0",
+          "motion": "bob"
+        },
+        {
+          "id": "en",
+          "kit": "envelope",
+          "at": "aisle:0.55,0,0.35",
+          "yaw": 25
+        },
+        {
+          "id": "en2",
+          "kit": "envelope",
+          "at": "aisle:-0.6,0,0.25",
+          "yaw": -15
+        },
+        {
+          "id": "bx",
+          "kit": "boxes",
+          "at": "aisle:0,0,-1.3",
+          "size": [
+            3,
+            1,
+            2
+          ]
+        }
+      ],
+      "devices": [
+        {
+          "do": "company",
+          "name": "Netflix",
+          "year": 1997,
+          "icon": "mail",
+          "tone": "green",
+          "at": "1:Netflix+0.1",
+          "until": "fifty",
+          "pos": "top"
+        }
+      ]
+    },
+    {
+      "at": "fifty",
+      "set": "boardroom",
+      "note": "the asking price lands on the table",
+      "cam": {
+        "preset": "pushIn",
+        "target": "cash",
+        "dist": 2.6,
+        "h": 0.9,
+        "az": 25,
+        "face": 0.55
+      },
+      "props": [
+        {
+          "id": "cash",
+          "kit": "cash",
+          "at": "tableTop:0,0,1.2",
+          "motion": "dropIn",
+          "hit": "fifty+0.25"
+        }
+      ],
+      "devices": [
+        {
+          "do": "counter",
+          "title": "the asking price",
+          "from": 0,
+          "to": 50000000,
+          "at": "fifty",
+          "dur": 0.9
+        }
+      ]
+    },
+    {
+      "at": "2:It",
+      "set": "warehouse",
+      "note": "2000: mailing discs, losing money",
+      "cam": {
+        "preset": "dolly",
+        "target": "conveyor",
+        "dist": 5.2,
+        "h": 1.0,
+        "az": 8,
+        "sweep": 1.6
+      },
+      "devices": [
+        {
+          "do": "board",
+          "title": "the year",
+          "value": "2000",
+          "at": "2:2000",
+          "until": "losing",
+          "pos": "top"
+        },
+        {
+          "do": "counter",
+          "title": "Netflix losses, 2000",
+          "from": 0,
+          "to": -57000000,
+          "at": "losing",
+          "dur": 0.8,
+          "tone": "red"
+        }
+      ]
+    },
+    {
+      "at": "3:Its",
+      "set": "boardroom",
+      "note": "the founders walk in to Dallas HQ",
+      "cam": {
+        "preset": "orbit",
+        "target": "f1",
+        "dist": 3.6,
+        "h": 0.5,
+        "az": 205,
+        "sweep": 36,
+        "face": 0.52
+      },
+      "actors": [
+        {
+          "id": "f1",
+          "pose": "walk",
+          "at": "door:-0.45,0,0",
+          "to": "foot:-0.45,0,0",
+          "then": [
+            {
+              "at": "offered",
+              "pose": "talk"
+            }
+          ]
+        },
+        {
+          "id": "f2",
+          "pose": "walk",
+          "at": "door:0.12,0,0.05",
+          "to": "foot:0.12,0,0.05",
+          "then": [
+            {
+              "at": "offered",
+              "pose": "point"
+            }
+          ]
+        },
+        {
+          "id": "ceo",
+          "pose": "idle",
+          "at": "head",
+          "seated": true
+        },
+        {
+          "id": "bm1",
+          "pose": "idle",
+          "at": "seatL1",
+          "seated": true
+        },
+        {
+          "id": "bm2",
+          "pose": "idle",
+          "at": "seatR1",
+          "seated": true
+        }
+      ],
+      "actions": [
+        {
+          "do": "label",
+          "on": "f1.head",
+          "text": "the founders",
+          "at": "founders",
+          "until": "sell",
+          "tone": "green"
+        }
+      ]
+    },
+    {
+      "at": "4:By",
+      "set": "boardroom",
+      "note": "the boss tries not to laugh",
+      "cam": {
+        "preset": "closeUp",
+        "target": "ceo.head",
+        "dist": 1.95,
+        "h": 0.3,
+        "az": -15,
+        "face": 0.35
+      },
+      "actors": [
+        {
+          "id": "ceo",
+          "pose": "idle",
+          "at": "head",
+          "seated": true,
+          "then": [
+            {
+              "at": "struggled",
+              "pose": "laugh"
+            }
+          ]
+        },
+        {
+          "id": "bm1",
+          "pose": "idle",
+          "at": "seatL1",
+          "seated": true
+        },
+        {
+          "id": "bm2",
+          "pose": "talk",
+          "at": "seatR1",
+          "seated": true
+        }
+      ]
+    },
+    {
+      "at": "5:The",
+      "in": "whip",
+      "set": "boardroom",
+      "note": "THE DECISION freeze; the fist comes down on no",
+      "cam": {
+        "preset": "pushIn",
+        "target": "ceo",
+        "dist": 3.0,
+        "h": 0.6,
+        "az": 10,
+        "face": 0.4
+      },
+      "actors": [
+        {
+          "id": "ceo",
+          "pose": "fold",
+          "at": "head",
+          "seated": true,
+          "then": [
+            {
+              "at": "answer",
+              "pose": "slam"
+            }
+          ]
+        },
+        {
+          "id": "bm1",
+          "pose": "idle",
+          "at": "seatL1",
+          "seated": true
+        },
+        {
+          "id": "bm2",
+          "pose": "idle",
+          "at": "seatR1",
+          "seated": true
+        }
+      ],
+      "devices": [
+        {
+          "do": "decision",
+          "at": "answer+0.25",
+          "until": "5:Blockbuster",
+          "sub": "sell for $50M?"
+        },
+        {
+          "do": "stamp",
+          "text": "NO",
+          "at": "no",
+          "until": "5:Blockbuster",
+          "y": 1080
+        }
+      ]
+    },
+    {
+      "at": "5:Blockbuster",
+      "set": "city",
+      "note": "the king of the video store: every store lit",
+      "cam": {
+        "preset": "crane",
+        "target": "stores:0,0.9,0",
+        "dist": 9.5,
+        "h": 1.4
+      },
+      "devices": [
+        {
+          "do": "company",
+          "name": "Blockbuster",
+          "year": 1985,
+          "icon": "film",
+          "tone": "red",
+          "at": "5:Blockbuster+0.1",
+          "pos": "low"
+        }
+      ]
+    },
+    {
+      "at": "6:By",
+      "set": "chart",
+      "note": "THE SIGNATURE: ride the chart up to the 2004 peak",
+      "cam": {
+        "preset": "chartFly",
+        "from": 0,
+        "to": 5.2,
+        "dist": 7.5,
+        "h": 2.4,
+        "az": 40
+      },
+      "devices": [
+        {
+          "do": "board",
+          "title": "stores",
+          "value": "~9,000",
+          "at": "nine",
+          "pos": "left",
+          "tone": "green"
+        }
+      ]
+    },
+    {
+      "at": "7:Then",
+      "set": "chart",
+      "note": "streaming arrives: the line crashes, the lens dives with it",
+      "cam": {
+        "preset": "chartFly",
+        "from": 5.0,
+        "to": 8,
+        "dist": 7.5,
+        "h": 2.4,
+        "az": 40
+      }
+    },
+    {
+      "at": "7:stores",
+      "in": "cut",
+      "set": "city",
+      "note": "the stores go dark, one by one",
+      "cam": {
+        "preset": "pushIn",
+        "target": "stores:0,0.9,0",
+        "dist": 10,
+        "h": 2.2,
+        "az": -8
+      },
+      "actions": [
+        {
+          "do": "dark",
+          "on": "stores",
+          "at": "dark",
+          "stagger": 0.12,
+          "order": "left"
+        }
+      ]
+    },
+    {
+      "at": "8:In",
+      "set": "city",
+      "note": "the crack runs down the tower, then it splits",
+      "cam": {
+        "preset": "slamZoom",
+        "target": "hq:0,4.2,0",
+        "dist": 16,
+        "h": 1.5,
+        "hit": "8:In+0.12"
+      },
+      "props": [
+        {
+          "id": "hq",
+          "kit": "tower",
+          "at": "hq",
+          "size": [
+            2.6,
+            8.5,
+            2.4
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "do": "dark",
+          "on": "stores",
+          "at": 26.7,
+          "stagger": 0
+        },
+        {
+          "do": "crack",
+          "on": "hq",
+          "at": "filed",
+          "dur": 0.6,
+          "collapse": "bankruptcy"
+        }
+      ],
+      "fx": [
+        {
+          "fx": "debris",
+          "at": "bankruptcy+0.1",
+          "p": "hq:0,4,1.4",
+          "gain": 1.4
+        },
+        {
+          "fx": "shake",
+          "at": "bankruptcy"
+        }
+      ]
+    },
+    {
+      "at": "8:with",
+      "set": "headlines",
+      "headline": "Blockbuster files for bankruptcy",
+      "cam": {
+        "preset": "pushIn",
+        "target": "hero:0,-0.35,0",
+        "dist": 4.6,
+        "h": 0.1
+      },
+      "actions": [
+        {
+          "do": "slam",
+          "on": "papers",
+          "at": "bankruptcy+0.15",
+          "stagger": 0.02
+        }
+      ],
+      "devices": [
+        {
+          "do": "counter",
+          "title": "debt",
+          "from": 0,
+          "to": 1460000000,
+          "at": "billion",
+          "dur": 0.7,
+          "tone": "red"
+        }
+      ]
+    },
+    {
+      "at": "9:Netflix",
+      "set": "chart",
+      "note": "what the $50M is worth today",
+      "cam": {
+        "preset": "orbit",
+        "target": "chart",
+        "dist": 30,
+        "h": 3.5,
+        "az": 10,
+        "sweep": 30
+      },
+      "devices": [
+        {
+          "do": "worth",
+          "at": "9:Netflix+0.1",
+          "a": {
+            "label": "the asking price",
+            "value": 50000000
+          },
+          "b": {
+            "label": "Netflix today",
+            "value": 250000000000,
+            "text": "$250B+"
+          }
+        }
+      ]
+    },
+    {
+      "at": "10:All",
+      "set": "boardroom",
+      "note": "loop: back to the boss at the head of the table",
+      "cam": {
+        "preset": "hookZoom",
+        "target": "ceo",
+        "dist": 2.7,
+        "h": 0.4,
+        "face": 0.7
+      },
+      "actors": [
+        {
+          "id": "ceo",
+          "pose": "laugh",
+          "at": "head",
+          "seated": true,
+          "then": [
+            {
+              "at": "back",
+              "pose": "fold"
+            }
+          ]
+        },
+        {
+          "id": "bm1",
+          "pose": "idle",
+          "at": "seatL1",
+          "seated": true
+        },
+        {
+          "id": "bm2",
+          "pose": "idle",
+          "at": "seatR1",
+          "seated": true
+        }
+      ]
+    }
+  ]
+}

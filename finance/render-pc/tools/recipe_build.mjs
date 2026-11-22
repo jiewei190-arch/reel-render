@@ -19,7 +19,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, longformGate } from "./longform_gate.mjs";
-import { capRatio, framingQA, framingReport, textEm } from "./framing_qa.mjs";
+import { capRatio, captionLines, framingQA, framingReport, textEm } from "./framing_qa.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -173,7 +173,9 @@ const qaLines = [...hits].map(([k, t]) => `CLIP ${k} first at ${t.toFixed(3)} s 
 const FM = { em: textEm, cap: capRatio() };
 const fTimes = [];
 for (let f = 0; f < C.duration; f += STEP) fTimes.push(f / 30);
-const fq = framingQA({ times: fTimes, sample: (t) => m.framingAt(C, t, FM), W: C.W, H: C.H, landscape: LS, boardsAll: m.framingBoards(C, FM),
+// R6: the caption line boxes (framing_qa.mjs captionLines) from the composition's own caption plan
+const fSample = (t) => { const x = m.framingAt(C, t, FM); if (x?.captionSpec) { const lines = captionLines(x.captionSpec.words, x.captionSpec); x.caption = lines.length ? { text: lines.map((l) => l.text).join(" / "), lines } : null; } return x; };
+const fq = framingQA({ times: fTimes, sample: fSample, W: C.W, H: C.H, landscape: LS, boardsAll: m.framingBoards(C, FM),
   frame0: { hookPx: 84, hookMinPx: 84, hookLabel: "Block Money HookText" } });
 const fr = framingReport(fq);
 for (const l of fq.clips) qaLines.push(l);

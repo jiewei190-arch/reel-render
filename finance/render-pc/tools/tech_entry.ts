@@ -6,3 +6,5 @@ export { objBox } from "../src/tech/cutaway";
 export { hookLines, CAP_CENTRE, HOOK_TOP, HOOK_FS } from "../src/tech/hud";
 export { OBJECT_IDS } from "../src/tech/objects";
 export { TECH_SET_IDS } from "../src/tech/sets";
+export { chunkWords as capChunkWords } from "../src/fin/lib/captions";
+export { LF } from "../src/longform/kit";
