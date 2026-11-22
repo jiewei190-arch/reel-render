@@ -18,6 +18,7 @@ import { basename, dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
 import { runFraming } from "./framing_kits.mjs";
+import { polishQA } from "./polish_qa.mjs";
 import { frame0Opener } from "./frame0_hero.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -240,6 +241,9 @@ export const main = async (argv) => {
     [fmt === "long" ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
   gate.push(...KF.rows);
+  // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face
+  const PQ = polishQA({ kit: "cyber3d", C, m, recipe, words });
+  gate.push(...PQ.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: cyber3d recipe QA (tools/cyber_build.mjs)`, "",
@@ -247,6 +251,7 @@ export const main = async (argv) => {
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no part, figure, kit prop or set piece enters BOLT's shell or mitts; BOLT stays above the ground; grounded objects stay above the floor."]), "",
     ...KF.fr.md,
+    ...PQ.md,
     ...OP.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${String(d).replace(/\|/g, "/")} |`), "",
@@ -375,9 +380,11 @@ const longForm = ({ m, C, recipe, words, slug, dir, pascal, check, noQa, qaSampl
   const gateS = (performance.now() - Tg) / 1000;
   const KFL = runFraming("cyber3d", C, m, recipe, true, qaSample);
   gate.push(...KFL.rows);
+  const PQ = polishQA({ kit: "cyber3d", C, m, recipe, words, landscape: true, step: qaSample });
+  gate.push(...PQ.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const chTxt = chaptersTxt(C.chapters);
-  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "cyber3d", tool: "cyber_build.mjs", entry: "src/index.cyber.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
+  const rep = kitLongReport({ framingMd: [...KFL.fr.md, ...PQ.md], slug, kit: "cyber3d", tool: "cyber_build.mjs", entry: "src/index.cyber.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
     extra: [`Caption-safe framing (lens face lifted, not baked): ${lifted.join(", ") || "none"}. Lower third moved: ${moved.join(", ") || "none"}.`, ""] });
   if (!check) {
     writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n"));

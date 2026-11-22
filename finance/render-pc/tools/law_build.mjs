@@ -17,6 +17,7 @@ import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
 import { runFraming } from "./framing_kits.mjs";
+import { polishQA } from "./polish_qa.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -193,6 +194,9 @@ export const main = async (argv) => {
     [fmt === "short" ? "length 30-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
   ];
   gate.push(...KF.rows);
+  // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face
+  const PQ = polishQA({ kit: "law3d", C, m, recipe, words });
+  gate.push(...PQ.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: law3d recipe QA (tools/law_build.mjs)`, "",
@@ -200,6 +204,7 @@ export const main = async (argv) => {
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop or set piece enters a figure's body or head, no two people overlap, nobody sinks below the floor."]), "",
     ...KF.fr.md,
+    ...PQ.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -321,9 +326,11 @@ const longForm = async ({ m, C, recipe, words, dur, slug, pascal, dir, check, qa
   const gateS = (Date.now() - Tg) / 1000;
   const KFL = runFraming("law3d", C, m, recipe, true, qaSample);
   gate.push(...KFL.rows);
+  const PQ = polishQA({ kit: "law3d", C, m, recipe, words, landscape: true, step: qaSample });
+  gate.push(...PQ.rows);
   const chTxt = chaptersTxt(C.chapters);
   const hardFail = gate.some((g) => g[3] && !g[1]);
-  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "law3d", tool: "law_build.mjs", entry: "src/index.law.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
+  const rep = kitLongReport({ framingMd: [...KFL.fr.md, ...PQ.md], slug, kit: "law3d", tool: "law_build.mjs", entry: "src/index.law.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
     extra: [`Cards overlapping each other or the hook: ${overlaps.size ? [...overlaps].join(", ") : "none"}.`, "", `Caption-safe framing (lower third): ${lifted.length ? `lifted ${lifted.join(", ")}` : "no shot needed a lift"}; caption moved in ${moved.length ? moved.join(", ") : "no shot"}.`, ""] });
   if (!check) {
     writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n"));

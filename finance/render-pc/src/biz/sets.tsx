@@ -33,6 +33,8 @@ export type BizSet = {
   mood: BizSetId;
   anchors: Record<string, V3>;
   blockers: { name: string; c: V3; h: V3 }[];
+  /** set pieces that can hide a face on screen besides the blockers (chair backs): tools/polish_qa.mjs rule P4 */
+  occluders?: { name: string; c: V3; h: V3; yaw?: number }[];
   render: (t: number, w: WorldCtx) => React.ReactNode;
 };
 
@@ -118,6 +120,8 @@ const boardroom: BizSet = {
     standL: [-2.4, 0, -1.2], standR: [2.4, 0, -1.2], door: [0, 0, 4.85], high: [0, 3.2, 2.5],
   },
   blockers: [{ name: "table", c: [0, 0.755, -0.2], h: [0.85, 0.035, 3.0] }, { name: "windowWall", c: [0, 2, -6.05], h: [6, 2, 0.1] }, { name: "backWall", c: [0, 2, 5.4], h: [6, 2, 0.1] }],
+  // the chair backs (Chair below: a 0.55 wide back, 0.62 tall, 1.0 for the CEO chair, 0.26 behind the seat centre)
+  occluders: CHAIRS.map((c, k) => { const hh = c.head ? 0.5 : 0.31, y = c.head ? 0.98 : 0.8; return { name: `set.chair${k}${c.head ? "CEO" : ""}`, c: [c.p[0] - 0.26 * Math.sin(c.yaw), y, c.p[2] - 0.26 * Math.cos(c.yaw)] as V3, h: [0.275, hh, 0.05] as V3, yaw: c.yaw }; }),
   render: (t) => {
     const floor = woodTex("bzFloor", "#5a3a24", "#4d3220", 10);
     floor.wrapS = floor.wrapT = THREE.RepeatWrapping; floor.repeat.set(4, 6);

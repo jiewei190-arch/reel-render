@@ -114,7 +114,7 @@ export const LawFilmLandscape: React.FC<{ c: LawCompiled }> = ({ c }) => {
       <Devices L={L} ds={ds} t={t} />
       <LawHook L={L} text={c.recipe.hook.text} t={t0} until={c.hookUntil} />
       {c.hookAgain !== null ? <LawHook L={L} text={c.recipe.hook.text} t={t0} t0={c.hookAgain} until={99} /> : null}
-      {ch ? <ChapterCard n={ch.n} title={ch.title} u={t0 - ch.card} accent={LP.gold} edge={LP.goldDeep} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={t0 - ch.card} accent={LP.gold} edge={LP.goldDeep} safe top={ch.top} fs={ch.fs} /> : null}
       {!capOff ? (fixedCap
         ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={t0} centre={capY} size={L.capFs} hot={LP.gold} />
         : <LowerThirdCaptions chunks={chunks} t={t0} centre={capY} size={L.capFs} hot={LP.gold} hide={(x) => x < 1.0} />) : null}

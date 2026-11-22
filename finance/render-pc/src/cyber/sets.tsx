@@ -20,6 +20,8 @@ export type CyberSet = {
   mood: CyberMoodId;
   anchors: Record<string, V3>;
   blockers: { name: string; c: V3; h: V3 }[];
+  /** set pieces that can hide a face on screen besides the blockers (monitors, the rack): tools/polish_qa.mjs rule P4 */
+  occluders?: { name: string; c: V3; h: V3; yaw?: number }[];
   render: (t: number) => React.ReactNode;
 };
 
@@ -99,6 +101,11 @@ const room: CyberSet = {
   id: "room", bg: CP.bg, mood: "room",
   anchors: { centre: [0, 0, 0], seat: [0, 0, 0.15], desk: [0, 0.76, -0.62], screens: [0, 1.2, -0.95], keyboard: [0, 0.79, -0.42], left: [-1.6, 0, 0.4], right: [1.6, 0, 0.4], door: [2.4, 0, 1.2], high: [0, 2.2, 0.6] },
   blockers: [{ name: "set.desk", c: [0, 0.38, -0.7], h: [1.1, 0.38, 0.4] }],
+  // the three monitors (0.66 x 0.42, yawed) and the corner rack, as drawn below
+  occluders: [
+    ...([[-0.68, 0.42], [0, 0], [0.68, -0.42]] as const).map(([x, yaw], k) => ({ name: `set.monitor${k + 1}`, c: [x, 1.13, -0.92 + Math.abs(x) * 0.25] as V3, h: [0.33, 0.21, 0.02] as V3, yaw })),
+    { name: "set.rack", c: [2.0, 1.0, -1.6], h: [0.3, 1.0, 0.3] },
+  ],
   render: (t) => (
     <>
       {bgDome("#030409")}

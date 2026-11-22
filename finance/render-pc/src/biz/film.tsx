@@ -119,7 +119,7 @@ const BizFilmL: React.FC<{ c: BizCompiled }> = ({ c }) => {
       <Devices L={L} devices={c.devicesAt(tOut)} t={tOut} />
       <BizHook L={L} text={c.recipe.hook.text} t={tOut} until={c.hookUntil} tone={c.recipe.hook.tone} />
       {c.hookAgain !== null ? <BizHook L={L} text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} tone={c.recipe.hook.tone} /> : null}
-      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={BP.gold} edge={BP.red} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={BP.gold} edge={BP.red} safe top={ch.top} fs={ch.fs} /> : null}
       {!capOff ? (fixedCap
         ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} centre={capC} size={L.cap.fs} hot={BP.gold} />
         : <LowerThirdCaptions chunks={CHUNKS_L(c)} t={tOut} centre={capC} size={L.cap.fs} hot={BP.gold} hide={(x) => x < L.cap.from} />) : null}

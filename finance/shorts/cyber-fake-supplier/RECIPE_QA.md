@@ -6,11 +6,19 @@ Composition: `CyberFakeSupplierRecipe` in `src/index.cyber.ts` (plain 30 fps). K
 
 - none: no part, figure, kit prop or set piece enters BOLT's shell or mitts; BOLT stays above the ground; grounded objects stay above the floor.
 
-## Framing QA (screen space, 1223 frames, 0.04 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 1223 frames, 0.03 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0.
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close.
+
+## Polish QA (tools/polish_qa.mjs, 0.03 s): 1 fail(s)
+
+P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 1. Rules: LONGFORM.md "Polish rules".
+
+- FAIL S04 set piece set.monitor3 covers 58 % of hk's face (camera target) on screen (worst at 5.40 s, for more than 5 frames): raise the camera 0.44 m (cam.h +0.44) to look over it, or move hk 0.50 m sideways clear of it, or swing the camera around (cam.az +-20) so set.monitor3 is not between the lens and the face
+
+- warn S03 board 'WIRED OVER' (target $100M): no anchor word: the voice never says $100M between 1.5 and 4.0 s, so it lands by 3.54 s (0.5 s before it leaves); say the number there or set "land" to the word that means it
 
 ## Frame-0 opener (tools/frame0_hero.mjs): 0 fail(s)
 
@@ -54,5 +62,8 @@ Hero props in S01: inv (envelope) 40 %. Number cards at 0.00 s: none.
 | framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
 | framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | face rule replaced by the opener: hero prop inv (envelope) 40 % of the height |
+| polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point) | PASS | 2 counter(s) land and hold; 1 without an anchor word (warn) |
+| polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped | PASS | 25 line(s) fit |
+| polish P4: no set piece (chair, table, rack) over a featured face (>= 30 % for > 5 frames) | **FAIL** | 1 (see Polish QA) |
 
 Frame-0 coverage by subject: none.

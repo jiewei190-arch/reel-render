@@ -3,6 +3,7 @@ export { compileLaw, project, LAW_CAMS } from "../src/law/compile";
 export { figFace, figBoxes, FIG_POSES, FIG_FACES, ROLES } from "../src/law/cast";
 export { hookLines, hookBox } from "../src/law/hud";
 export { LF } from "../src/longform/kit";
+export { spokenAnchor, ANCHOR_LOOKBACK } from "../src/longform/polish";
 export { layoutOf, LAYOUTS } from "../src/law/layout";
 export { KIT_IDS, KIT_BOX } from "../src/law/objects";
 export { LAW_SET_IDS } from "../src/law/sets";
@@ -36,6 +37,8 @@ const retimeShot = (s: LawShot, remap: Remap) => {
       const o = { ...ac, at: remap(ac.at) as At } as LawAction & { until?: At; zeroAt?: At };
       if (o.until !== undefined) o.until = remap(o.until);
       if (o.zeroAt !== undefined) o.zeroAt = remap(o.zeroAt);
+      const ol = o as { land?: At };
+      if (ol.land !== undefined) ol.land = remap(ol.land);
       return o as LawAction;
     }).filter((o) => {
       // both ends before the segment collapse to 0 s: a device that ended before the clip starts is dropped

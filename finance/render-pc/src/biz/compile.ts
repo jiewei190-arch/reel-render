@@ -12,6 +12,8 @@ import { EASE_INOUT, EASE_OUT, EASE_PLACE, LEAD, prog } from "../fin/lib/motion"
 import { makeAt } from "../fin/recipe/timing";
 import { chapterCues, landscapeLens, LF, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
 import type { ChapterR, FaceBand } from "../longform/kit";
+import { ANCHOR_LOOKBACK, MIN_SUB_PX, MIN_TEXT_PX, countPlan, countU, fitFs, placeChapters, spokenAnchor, textPx, widestDigits } from "../longform/polish";
+import type { CountPlan, Fit } from "../longform/polish";
 import type { Word } from "../fin/recipe/types";
 import { chartGeo } from "./chart";
 import type { ChartGeo } from "./chart";
@@ -45,14 +47,22 @@ export type Box = { name: string; c: V3; h: V3 };
 export type Lens = { a: number; b: number; subj: (t: number) => V3; off: V3; fov: (t: number) => number; face: number; push: number; roll: [number, number]; blur: number; posAt?: (t: number) => V3; rollAt?: (t: number) => number };
 export type PropR = { key: string; spec: BizProp; a: number; b: number; hit: number; place: (t: number) => Placement; show: (t: number) => number; seed: number };
 export type LabelR = { key: string; text: string; t0: number; t1: number; side: "left" | "right" | "auto"; tone: Tone; target: (t: number) => V3 };
-export type DeviceR = { key: string; spec: BizDevice; t0: number; t1: number };
+export type DeviceR = { key: string; spec: BizDevice; t0: number; t1: number;
+  /** counting devices (counter, board.count, worth): the count window (polish.ts countPlan) and the final text */
+  plan?: CountPlan; final?: string; target?: number };
+/** a device's measured text (text-fit rule, tools/polish_qa.mjs P2) */
+export type DeviceFit = { key: string; shot: string; kind: string; lines: { what: string; fit: Fit; alt?: string }[] };
+export type CounterQ = { key: string; shot: string; kind: string; title: string; target: number; decimals: number; final: string; t0: number; until: number; plan: CountPlan };
+export type CardQ = { label: string; x0: number; x1: number; y0: number; y1: number; landed: boolean };
 export type FxR = { fx: "shake" | "flash" | "debris"; at: number; p: (t: number) => V3; gain: number };
 export type BizShotR = { id: string; a: number; b: number; set: BizSetId; spec: BizShot; lens: Lens; kicks: [number, number][]; execs: ExecTrack[]; props: PropR[]; labels: LabelR[]; devices: DeviceR[]; fx: FxR[]; paper: (i: number, t: number) => number };
 export type Cue = { t: number; sfx: string; db?: number };
-export type LabelBox = { key: string; text: string; tone: Tone; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number };
+export type LabelBox = { key: string; text: string; tone: Tone; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number; fs?: number };
 export type TagBox = { key: string; text: string; x: number; y: number; w: number; h: number; u: number; tone: Tone };
 /** a device on screen: kind, its rect, the in/out envelope u, the local time since it popped, and its computed text */
-export type DeviceBox = Rect & { key: string; kind: BizDevice["do"]; spec: BizDevice; u: number; tau: number; value?: string; frac?: number; tone: Tone };
+export type DeviceBox = Rect & { key: string; kind: BizDevice["do"]; spec: BizDevice; u: number; tau: number; value?: string; frac?: number; tone: Tone;
+  /** measured font sizes (px) by line role (title / value / name / text / sub / label / worth) */
+  fs?: Record<string, number> };
 
 export type BizCompiled = {
   recipe: BizRecipe; slug: string; layout: BizLayout; duration: number; shots: BizShotR[]; words: readonly Word[]; chart?: ChartGeo;
@@ -81,6 +91,13 @@ export type BizCompiled = {
   capY: (shot: BizShotR) => number;
   /** landscape: caption-safe framing, the shots whose subject was lifted (lens face fraction from -> to) */
   lifted: { id: string; from: number; to: number }[];
+  /** polish QA hooks (tools/polish_qa.mjs) */
+  fits: DeviceFit[];
+  counters: CounterQ[];
+  counterAt: (key: string, t: number) => { value: string; u: number; zero: number } | null;
+  cardRectsAt: (t: number) => CardQ[];
+  occludersAt: (t: number) => { name: string; c: V3; h: V3; yaw?: number }[];
+  speakingAt: (t: number) => string[];
 };
 
 /** camera presets, authored for portrait (landscape applies landscapeLens per preset); every one keeps moving */
@@ -113,7 +130,34 @@ export const projectIn = (L: BizLayout) => (cam: Cam, p: V3): { x: number; y: nu
   const k = L.H / 2 / Math.tan((cam.fov * Math.PI) / 360);
   return { x: L.W / 2 + (dot(d, r) / z) * k, y: L.H / 2 - (dot(d, u) / z) * k, k: k / z, z };
 };
-export const labelSize = (L: BizLayout, text: string) => ({ w: Math.round(text.length * 0.66 * L.label.fs + 64), h: Math.round(L.label.fs * 1.15 + 34) });
+/** a callout label's size, measured (polish.ts): the text shrinks to fit the safe width, never below 42 px */
+export const labelFit = (L: BizLayout, text: string) => fitFs(text, L.label.fs, L.safe.x1 - L.safe.x0 - 64, 0, MIN_TEXT_PX);
+export const labelSize = (L: BizLayout, text: string) => { const f = labelFit(L, text); return { w: Math.round(f.w + 64), h: Math.round(L.label.fs * 1.15 + 34), fs: f.fs }; };
+/** every device's text measured against its box (the HUD renders these sizes; --check fails a line under the minimum) */
+export const deviceFits = (L: BizLayout, sp: BizDevice, r: Rect, widest?: string) => {
+  const lines: { role: string; what: string; fit: Fit; alt?: string }[] = [];
+  const add = (role: string, what: string, f: Fit, alt?: string) => lines.push({ role, what, fit: f, alt });
+  const W = L.W - 2 * L.safe.x0;
+  switch (sp.do) {
+    case "company": { const tile = r.h - 60; add("name", "company name", fitFs(sp.name.toUpperCase(), L.company.nameFs, r.w - 68 - 30 - tile - 8, -1, MIN_TEXT_PX), "a shorter name"); if (sp.tagline) add("tagline", "company tagline", fitFs(sp.tagline.toUpperCase(), L.company.yearFs * 0.8, r.w - 68 - 30 - tile - 8, 0, MIN_SUB_PX)); break; }
+    case "decision": add("text", "decision", fitFs((sp.text ?? "THE DECISION").toUpperCase(), L.decision.fs, W - 84, -2, MIN_TEXT_PX), "one or two short words"); if (sp.sub) add("sub", "decision sub line", fitFs(sp.sub.toUpperCase(), L.decision.subFs, W - 56, 0, MIN_TEXT_PX)); break;
+    case "counter": add("title", "counter title", fitFs(sp.title.toUpperCase(), L.counter.titleFs, r.w - 28, 2, MIN_SUB_PX)); add("value", "counter value", fitFs(widestDigits(widest ?? ""), L.counter.fs, r.w - 74 - 0.25 * L.counter.fs, -3, MIN_TEXT_PX)); break;
+    case "worth": {
+      add("label", "worth title", fitFs("WHAT IT'S WORTH TODAY", L.worth.labelFs * 1.1, r.w - 80, 2, MIN_SUB_PX));
+      const room = Math.min(...[sp.a.label, sp.b.label].map((l) => r.w - 80 - textPx(l.toUpperCase(), L.worth.labelFs, 1) - 24));
+      add("worth", "worth value", fitFs(widestDigits(widest ?? ""), L.worth.fs, room, -2, MIN_TEXT_PX), "shorter row labels");
+      break;
+    }
+    case "board": {
+      const g = sp.size === "giant" ? L.board.giant : null;
+      add("title", "board title", fitFs(sp.title.toUpperCase(), g ? g.titleFs : L.board.titleFs, r.w - 20, 1, MIN_SUB_PX), g ? undefined : `"size": "giant"`);
+      add("value", "board value", fitFs(widestDigits(widest ?? sp.value ?? ""), g ? g.valueFs : L.board.valueFs, r.w - 40, -2, MIN_TEXT_PX), g ? undefined : `"size": "giant" (${L.board.giant.w} px wide)`);
+      break;
+    }
+    case "stamp": add("text", "stamp", fitFs(sp.text.toUpperCase(), L.decision.fs * 0.85, W - 108, 4, MIN_TEXT_PX), "one short word"); break;
+  }
+  return lines;
+};
 const rectsHit = (a: Rect, b: Rect, m = 14) => Math.abs(a.x - b.x) * 2 < a.w + b.w + 2 * m && Math.abs(a.y - b.y) * 2 < a.h + b.h + 2 * m;
 export const resolveLook = (l: string | ExecLook, id: string): ExecLook => {
   if (typeof l !== "string") return l;
@@ -122,6 +166,8 @@ export const resolveLook = (l: string | ExecLook, id: string): ExecLook => {
   return { ...s };
 };
 /** the compact money format the devices use: $50M, $1.46B, $250B */
+/** a counting board's text for a value */
+export const boardCount = (cc: { decimals?: number; prefix?: string; suffix?: string }, v: number) => `${cc.prefix ?? ""}${v.toLocaleString("en-US", { minimumFractionDigits: cc.decimals ?? 0, maximumFractionDigits: cc.decimals ?? 0 })}${cc.suffix ?? ""}`;
 export const money = (v: number, prefix = "$") => {
   const a = Math.abs(v), s = v < 0 ? "-" : "";
   const f = (x: number, u: string) => `${s}${prefix}${x >= 100 ? Math.round(x) : x >= 10 ? (Math.round(x * 10) / 10).toString() : (Math.round(x * 100) / 100).toString()}${u}`;
@@ -373,7 +419,17 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       const t0 = at(d.at);
       const dflt = d.do === "decision" ? t0 + 1.6 : d.do === "stamp" ? t0 + 1.4 : b;
       if (d.do === "board" && d.title.trim().split(/\s+/).length > 3) throw new Error(`recipe ${id}: board title "${d.title}" has more than 3 words`);
-      return { key: `${id}.dev${k}`, spec: d, t0, t1: Math.min(at(d.until, dflt), end) };
+      const dr: DeviceR = { key: `${id}.dev${k}`, spec: d, t0, t1: Math.min(at(d.until, dflt), end) };
+      // counting devices: lands on the target by the anchor word's end, holds COUNT_HOLD before it leaves (polish.ts)
+      const until = Math.min(dr.t1, b);
+      const anchorOf = (land: At | undefined, target: number, decimals: number, rel: number) => {
+        if (land !== undefined) { const tl = at(land); const w = words.find((q) => Math.abs(q.t - tl) < 0.02); return { w: w?.w ?? String(land), t: tl, end: w ? w.end : tl, given: true }; }
+        return spokenAnchor(words, target, t0 - ANCHOR_LOOKBACK, until, decimals, rel);
+      };
+      if (d.do === "counter") { dr.target = d.to; dr.final = money(d.to); dr.plan = countPlan({ start: t0 + 0.15, dur: d.dur ?? 1.6, until, anchor: anchorOf(d.land, d.to, 0, 0.05) }); }
+      if (d.do === "board" && d.count) { const cc = d.count; dr.target = cc.to; dr.final = boardCount(cc, cc.to); dr.plan = countPlan({ start: t0, dur: cc.dur ?? 1.0, until, anchor: anchorOf(cc.land, cc.to, cc.decimals ?? 0, 1e-6) }); }
+      if (d.do === "worth") { dr.target = d.b.value; dr.final = d.b.text ?? money(d.b.value); dr.plan = countPlan({ start: t0 + 0.5, dur: 1.1, until, anchor: anchorOf(d.land, d.b.value, 0, 0.05) }); }
+      return dr;
     });
     for (const d of devices) { if (d.spec.do === "decision" || d.spec.do === "stamp") kicks.push([d.t0, 1.1]); }
     const fx: FxR[] = (sp.fx ?? []).map((f) => { const o = typeof f === "string" ? { fx: f } : f; return { fx: o.fx, at: at(o.at, hit), p: targetFn(o.p ?? camTarget), gain: o.gain ?? 1 }; });
@@ -459,7 +515,7 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       case "decision": { const h = L.decision.fs * 1.15 + (sp.sub ? L.decision.subFs * 1.5 : 0) + 60; return { x: L.W / 2, y: L.decision.y, w: L.W - 2 * L.safe.x0, h }; }
       case "counter": return { x: L.W / 2, y: Math.max(L.counter.y, top + L.counter.h / 2 + 10), w: L.counter.w, h: L.counter.h };
       case "worth": return { x: L.W / 2, y: Math.max(L.worth.y, top + L.worth.h / 2 + 10), w: L.worth.w, h: L.worth.h };
-      case "stamp": { const fs = L.decision.fs * 0.85; const w = sp.text.length * fs * 0.72 + 120; return { x: L.W / 2, y: sp.y ?? L.H * 0.4, w, h: fs * 1.25 + 40 }; }
+      case "stamp": { const fs = L.decision.fs * 0.85; const f = fitFs(sp.text.toUpperCase(), fs, L.W - 2 * L.safe.x0 - 108, 4, MIN_TEXT_PX); const w = f.w + 120; return { x: L.W / 2, y: sp.y ?? L.H * 0.4, w, h: fs * 1.25 + 40 }; }
       case "board": {
         if (sp.size === "giant") { const g = L.board.giant; return { x: L.W / 2, y: top + 40 + g.h / 2, w: g.w, h: g.h }; }
         const { w, h, margin } = L.board; const pos = sp.pos ?? "right"; return { x: pos === "left" ? margin + w / 2 : pos === "top" ? L.W / 2 : L.W - margin - w / 2, y: top + 40 + h / 2, w, h };
@@ -475,17 +531,47 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       const r = deviceRect(d, t), sp = d.spec, tau = t - d.t0;
       let value: string | undefined, frac: number | undefined, tone: Tone = "ink";
       switch (sp.do) {
-        case "counter": { const k = EASE_INOUT(prog(t, d.t0 + 0.15, d.t0 + 0.15 + (sp.dur ?? 1.6))); const v = lerp(sp.from, sp.to, k); value = money(v); frac = Math.abs(sp.from) > 0 ? v / Math.max(Math.abs(sp.from), Math.abs(sp.to)) : k; tone = sp.tone ?? (sp.to < sp.from ? "red" : "green"); break; }
-        case "board": { const cc = sp.count; value = sp.value ?? ""; if (cc) { const v = lerp(cc.from, cc.to, EASE_OUT(prog(t, d.t0, d.t0 + (cc.dur ?? 1.0)))); value = `${cc.prefix ?? ""}${v.toLocaleString("en-US", { minimumFractionDigits: cc.decimals ?? 0, maximumFractionDigits: cc.decimals ?? 0 })}${cc.suffix ?? ""}`; } tone = sp.tone ?? "ink"; break; }
-        case "worth": { frac = EASE_INOUT(prog(t, d.t0 + 0.5, d.t0 + 1.6)); value = `${Math.round(sp.b.value / Math.max(1, sp.a.value)).toLocaleString("en-US")}×`; tone = "green"; break; }
+        case "counter": { const k = countU(t, d.plan!, EASE_INOUT); const v = k >= 1 ? sp.to : lerp(sp.from, sp.to, k); value = k >= 1 ? d.final! : money(v); frac = Math.abs(sp.from) > 0 ? v / Math.max(Math.abs(sp.from), Math.abs(sp.to)) : k; tone = sp.tone ?? (sp.to < sp.from ? "red" : "green"); break; }
+        case "board": { const cc = sp.count; value = sp.value ?? ""; if (cc) { const k = countU(t, d.plan!, EASE_OUT); value = k >= 1 ? d.final! : boardCount(cc, lerp(cc.from, cc.to, k)); } tone = sp.tone ?? "ink"; break; }
+        case "worth": { frac = countU(t, d.plan!, EASE_INOUT); value = `${Math.round(sp.b.value / Math.max(1, sp.a.value)).toLocaleString("en-US")}×`; tone = "green"; break; }
         case "company": tone = sp.tone ?? "ink"; break;
         case "stamp": tone = sp.tone ?? "red"; break;
         case "decision": tone = "red"; break;
       }
-      out.push({ ...r, key: d.key, kind: sp.do, spec: sp, u, tau, value, frac, tone });
+      out.push({ ...r, key: d.key, kind: sp.do, spec: sp, u, tau, value, frac, tone, fs: fitOf(d, r).fs });
     }
     return out;
   };
+  // ---------------------------------------------------- text-fit (measured once per device; polish.ts)
+  const fitCache = new Map<string, { fs: Record<string, number>; lines: DeviceFit["lines"] }>();
+  const widestOf = (d: DeviceR) => {
+    const sp = d.spec;
+    const c = sp.do === "counter" ? [money(sp.from), money(sp.to), money((sp.from + sp.to) / 2)] : sp.do === "board" ? (sp.count ? [boardCount(sp.count, sp.count.from), boardCount(sp.count, sp.count.to)] : [sp.value ?? ""]) : sp.do === "worth" ? [sp.a.text ?? money(sp.a.value), money(sp.b.value), d.final ?? ""] : [""];
+    return c.reduce((a, x) => (textPx(widestDigits(x), 100) > textPx(widestDigits(a), 100) ? x : a));
+  };
+  const fitOf = (d: DeviceR, r: Rect) => {
+    const got = fitCache.get(d.key);
+    if (got) return got;
+    const ls = deviceFits(L, d.spec, r, widestOf(d));
+    const v = { fs: Object.fromEntries(ls.map((l) => [l.role, l.fit.fs])), lines: ls.map(({ what, fit, alt }) => ({ what, fit, alt })) };
+    fitCache.set(d.key, v);
+    return v;
+  };
+
+  // ---------------------------------------------------- landscape: chapter cards in their own region (polish.ts): the first
+  // top clear of the fixed devices on screen during the card; callout labels then avoid the card
+  const chapters: ChapterR[] = LS ? placeChapters(resolveChapters(recipe.chapters, at, hookUntil), (c0, c1) => {
+    const out: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    for (const s of shots) {
+      if (s.b <= c0 || s.a >= c1) continue;
+      for (const d of s.devices) {
+        if (d.t0 - LEAD >= Math.min(c1, s.b) || Math.min(d.t1, s.b) <= c0) continue;
+        const r = deviceRect(d, Math.max(d.t0, c0));
+        out.push({ x0: r.x - r.w / 2, x1: r.x + r.w / 2, y0: r.y - r.h / 2, y1: r.y + r.h / 2 + (d.spec.do === "worth" ? 46 : 0) });
+      }
+    }
+    return out;
+  }, LF.CHAPTER_CARD_S) : [];
 
   // ---------------------------------------------------- labels (placed once at pop-in) and chart tags
   const labelPlan = new Map<string, { dx: number; dy: number }>();
@@ -500,6 +586,8 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     const heads = execsAt(t).map((st) => { const f = execHead(st); const p = project(cam, f.c); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 100, h: 2 * f.r * p.k + 100 } : null; }).filter(Boolean) as Rect[];
     const others: Rect[] = s.labels.filter((o) => o.key !== Lb.key && o.t0 <= Lb.t0 && o.t1 > Lb.t0).map((o) => { const d = placeLabel(o, s); const qo = project(cam, o.target(t)); const so = labelSize(L, o.text); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as Rect[];
     for (const d of s.devices) if (d.t1 > Lb.t0 && d.t0 < Lb.t1) others.push(deviceRect(d, t));
+    // the chapter cards' own region (polish.ts placeChapters)
+    for (const ch of chapters) if (ch.box && ch.card < Lb.t1 && ch.card + LF.CHAPTER_CARD_S > Lb.t0 - LEAD) others.push({ x: (ch.box.x0 + ch.box.x1) / 2, y: (ch.box.y0 + ch.box.y1) / 2, w: ch.box.x1 - ch.box.x0, h: ch.box.y1 - ch.box.y0 });
     const ax = q?.x ?? L.W / 2, ay = q?.y ?? L.H * 0.47;
     const prefer = Lb.side === "left" ? -1 : Lb.side === "right" ? 1 : ax > L.W / 2 ? -1 : 1;
     const cands: { dx: number; dy: number }[] = [];
@@ -540,7 +628,7 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       if (tg.i > draw + 1e-6) continue;
       const q = project(cam, add(chart.pts[tg.i], [0, 1.0, 0]));
       if (!q || q.z < 1.2) continue;
-      const w = tg.text.length * 0.62 * L.tag.fs + 44, h = L.tag.fs * 1.2 + 18;
+      const w = textPx(tg.text, L.tag.fs) + 44, h = L.tag.fs * 1.2 + 18;
       if (q.x < L.safe.x0 + w / 2 || q.x > L.safe.x1 - w / 2 || q.y < topAt(t) + h / 2 || q.y > L.safe.bottom - h / 2) continue;
       const rising = tg.i === 0 || chart.rising(tg.i - 1);
       out.push({ key: `tag${tg.i}`, text: tg.text, x: q.x, y: q.y, w, h, u: clamp((draw - tg.i) / 0.25), tone: rising ? "green" : "red" });
@@ -577,7 +665,7 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       if (k === "stamp") cues.push({ t: d.t0, sfx: "stamp", db: -2 });
       if (k === "company") cues.push({ t: d.t0, sfx: "pop", db: -8 });
       if (k === "counter") cues.push({ t: d.t0 + 0.1, sfx: (d.spec as { to: number; from: number }).to < (d.spec as { from: number }).from ? "fail" : "cash", db: -6 }, { t: d.t0 + 0.15, sfx: "tick", db: -10 });
-      if (k === "worth") cues.push({ t: d.t0 + 0.5, sfx: "riser", db: -8 }, { t: d.t0 + 1.6, sfx: "cash", db: -4 });
+      if (k === "worth") cues.push({ t: d.t0 + 0.5, sfx: "riser", db: -8 }, { t: d.plan ? d.plan.end : d.t0 + 1.6, sfx: "cash", db: -4 });
       if (k === "board") cues.push({ t: d.t0, sfx: "ding", db: -10 });
     }
     for (const p of s.props) if (p.a === s.a && p.spec.motion === "dropIn") cues.push({ t: p.hit - 0.02, sfx: "impact", db: 0 }, { t: p.hit, sfx: "thud", db: -2 });
@@ -586,7 +674,6 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
   // ---------------------------------------------------- landscape: chapters (a whoosh + impact per card)
-  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
   if (LS) cues.push(...chapterCues(chapters));
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "upbeat", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
@@ -629,7 +716,30 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     return y;
   };
 
-  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, chart, at, hookUntil, hookAgain, shotAt, sceneT, freezeAt, camAt, execsAt, placeOf, propState, world, labelsAt, tagsAt, devicesAt, qa, textsAt, project, audio, landscape: LS, chapters, capY, lifted };
+  // ---------------------------------------------------- polish QA hooks (tools/polish_qa.mjs)
+  const fits: DeviceFit[] = shots.flatMap((s) => s.devices.map((d) => ({ key: d.key, shot: s.id, kind: d.spec.do, lines: fitOf(d, deviceRect(d, d.t0)).lines })));
+  for (const s of shots) for (const Lb of s.labels) { const f = labelFit(L, Lb.text); fits.push({ key: Lb.key, shot: s.id, kind: "label", lines: [{ what: "label", fit: f, alt: "a shorter label (3 words max)" }] }); }
+  const counters: CounterQ[] = shots.flatMap((s) => s.devices.filter((d) => d.plan).map((d) => ({ key: d.key, shot: s.id, kind: d.spec.do, title: d.spec.do === "worth" ? d.spec.b.label : (d.spec as { title: string }).title, target: d.target!, decimals: d.spec.do === "board" ? d.spec.count?.decimals ?? 0 : 0, final: d.final!, t0: d.t0, until: d.plan!.until, plan: d.plan! })));
+  const counterAt = (key: string, t: number) => {
+    const d = devicesAt(t).find((x) => x.key === key);
+    if (!d) return null;
+    // worth: the counting text is the big row ($ grows with frac)
+    if (d.kind === "worth") { const sp = d.spec as Extract<BizDevice, { do: "worth" }>; const f = d.frac ?? 0; return { value: f >= 0.999 ? sp.b.text ?? money(sp.b.value) : money(sp.b.value * Math.max(0.0001, f)), u: d.u, zero: 0 }; }
+    return { value: d.value ?? "", u: d.u, zero: 0 };
+  };
+  const cardRectsAt = (t: number): CardQ[] => {
+    const out: CardQ[] = devicesAt(t).filter((d) => d.u > 0.05 && d.kind !== "decision").map((d) => ({ label: `${d.kind} "${(d.spec as { title?: string; name?: string; text?: string }).title ?? (d.spec as { name?: string }).name ?? (d.spec as { text?: string }).text ?? d.value ?? ""}"`, x0: d.x - d.w / 2, x1: d.x + d.w / 2, y0: d.y - d.h / 2, y1: d.y + d.h / 2 + (d.kind === "worth" ? 46 : 0), landed: d.u >= 0.99 }));
+    for (const d of devicesAt(t)) if (d.kind === "decision" && d.u > 0.05) out.push({ label: "decision", x0: d.x - d.w / 2, x1: d.x + d.w / 2, y0: d.y - d.h / 2, y1: d.y + d.h / 2, landed: d.u >= 0.99 });
+    for (const l of labelsAt(t)) if (l.u > 0.05) out.push({ label: `label "${l.text}"`, x0: l.x - l.w / 2, x1: l.x + l.w / 2, y0: l.y - l.h / 2, y1: l.y + l.h / 2, landed: l.u >= 0.99 });
+    for (const g of tagsAt(t)) if (g.u > 0.05) out.push({ label: `tag "${g.text}"`, x0: g.x - g.w / 2, x1: g.x + g.w / 2, y0: g.y - g.h / 2, y1: g.y + g.h / 2, landed: g.u >= 0.99 });
+    if (t <= hookUntil || (hookAgain !== null && t >= hookAgain)) { const lines = recipe.hook.text.includes("\n") ? 2 : 1; const w = Math.max(...recipe.hook.text.split("\n").map((x) => textPx(x.replace(/\*/g, ""), L.hook.fs, -1))) + 80; const h = lines * L.hook.fs * 1.04 + 38; out.push({ label: "hook", x0: L.W / 2 - w / 2, x1: L.W / 2 + w / 2, y0: L.hook.top, y1: L.hook.top + h, landed: true }); }
+    return out;
+  };
+  // walls are one-sided planes (an orbit may look through them from outside): they are not occluders
+  const occludersAt = (t: number) => { const st = BIZ_SETS[shotAt(t).set]; return [...st.blockers.filter((b) => !/wall/i.test(b.name)), ...(st.occluders ?? [])]; };
+  const speakingAt = (t: number) => (words.some((w) => t >= w.t && t < w.end) ? shotAt(t).execs.filter((e) => e.talk).map((e) => e.id) : []);
+
+  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, chart, at, hookUntil, hookAgain, shotAt, sceneT, freezeAt, camAt, execsAt, placeOf, propState, world, labelsAt, tagsAt, devicesAt, qa, textsAt, project, audio, landscape: LS, chapters, capY, lifted, fits, counters, counterAt, cardRectsAt, occludersAt, speakingAt };
 };
 
 // ------------------------------------------------------------------ executive tracks

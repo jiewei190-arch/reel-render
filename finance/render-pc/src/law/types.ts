@@ -86,7 +86,10 @@ export type LawAction =
   /** the case-file card: case name, year, place */
   | { do: "caseCard"; at: At; until?: At; title: string; year?: string; place?: string; note?: string }
   /** a number board: a dollar counter that counts up; `zeroAt` drains it to 0 (the verdict) */
-  | { do: "counter"; at: At; until?: At; title: string; from?: number; to?: number; dur?: number; prefix?: string; suffix?: string; decimals?: number; value?: string; pos?: "left" | "right" | "top" | "center"; zeroAt?: At; compact?: boolean };
+  | { do: "counter"; at: At; until?: At; title: string; from?: number; to?: number; dur?: number; prefix?: string; suffix?: string; decimals?: number; value?: string; pos?: "left" | "right" | "top" | "center"; zeroAt?: At; compact?: boolean;
+      /** the anchor word (the voice saying the number): the count lands on `to` by its END and holds. Default: found in the
+       *  voice-over (the words around the counter that say `to`: "fifteen", "$12,000", "54 million"); LONGFORM.md "Counters" */
+      land?: At };
 
 export type LawFx = "shake" | "flash" | "papers" | { fx: "shake" | "flash" | "papers"; at?: At; p?: LawTarget; gain?: number };
 

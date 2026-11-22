@@ -107,7 +107,7 @@ export type CyberBoard = {
   title: string;
   at: At;
   until?: At;
-  count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string };
+  count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string; /** the anchor word (the voice saying the number): the count lands by its END (default: found in the voice-over) */ land?: At };
   value?: string;
   pos?: "left" | "right" | "top";
   tone?: "cyan" | "magenta" | "red";
@@ -117,7 +117,7 @@ export type CyberBoard = {
 
 /** story devices (DOM overlay, laid out from src/cyber/layout.ts) */
 export type CaseFile = { at: At; until?: At; name: string; year: string; amount: string; title?: string; status?: string };
-export type MoneyCounter = { at: At; until?: At; label?: string; from: number; to: number; dur?: number; prefix?: string; suffix?: string; decimals?: number };
+export type MoneyCounter = { at: At; until?: At; label?: string; from: number; to: number; dur?: number; prefix?: string; suffix?: string; decimals?: number; /** the anchor word (the voice saying the number): the count lands by its END (default: found in the voice-over) */ land?: At };
 export type Checklist = { at: At; until?: At; title?: string; items: string[]; /** when each item ticks (default: every 0.6 s) */ ticks?: At[] };
 export type Countdown = { at: At; until?: At; label?: string; from: number; /** seconds per real second (default 1; 3600 = an hour a second) */ rate?: number };
 export type Alert = { at: At; text?: string; dur?: number };

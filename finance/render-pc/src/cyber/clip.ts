@@ -39,7 +39,7 @@ export const retimeShot = (s: CyberShot, remap: Remap) => {
   for (const a of s.actors ?? []) { rt(a as Obj, "from", remap); for (const x of a.then ?? []) rt(x as Obj, "at", remap); }
   for (const p of s.props ?? []) rtProp(p, remap);
   for (const ac of s.actions ?? []) { rt(ac as Obj, "at", remap); rt(ac as Obj, "until", remap); }
-  for (const b of s.boards ?? []) { rt(b as Obj, "at", remap); rt(b as Obj, "until", remap); }
+  for (const b of s.boards ?? []) { rt(b as Obj, "at", remap); rt(b as Obj, "until", remap); if (b.count) rt(b.count as Obj, "land", remap); }
   if (s.fx) s.fx = s.fx.map((f) => (typeof f === "string" ? f : f.at !== undefined ? { ...f, at: remap(f.at) as At } : f));
   for (const x of s.sfx ?? []) rt(x as Obj, "at", remap);
   return s;
@@ -49,7 +49,7 @@ export const retimeShot = (s: CyberShot, remap: Remap) => {
 export const retimeRecipe = (r: CyberRecipe, remap: Remap, seg: Seg) => {
   const inSeg = (a: At) => { const t = seg.at(a); return t >= seg.tA - 1e-6 && t < seg.tB; };
   const dev = <T extends { at: At; until?: At }>(xs: T[] | undefined) => {
-    const out = (xs ?? []).filter((x) => inSeg(x.at)).map((x) => { const y = JSON.parse(JSON.stringify(x)) as T; rt(y as Obj, "at", remap); rt(y as Obj, "until", remap); return y; });
+    const out = (xs ?? []).filter((x) => inSeg(x.at)).map((x) => { const y = JSON.parse(JSON.stringify(x)) as T; rt(y as Obj, "at", remap); rt(y as Obj, "until", remap); rt(y as Obj, "land", remap); return y; });
     return out.length ? out : undefined;
   };
   let checklist: Checklist | undefined;

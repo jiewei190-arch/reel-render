@@ -13,6 +13,7 @@ import type { DeviceBox, LabelBox, TagBox } from "./compile";
 import { money } from "./compile";
 import type { BizLayout } from "./layout";
 import { BP } from "./palette";
+import { MIN_SUB_PX, MIN_TEXT_PX, fitFs } from "../longform/polish";
 import type { BizDevice, CompanyIcon, Tone } from "./types";
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -95,7 +96,7 @@ export const LabelLayer: React.FC<{ L: BizLayout; labels: LabelBox[]; t: number 
     </svg>
     {labels.map((l) => (l.u > 0.001 ? (
       <div key={l.key} style={{ position: "absolute", left: l.x - l.w / 2, top: l.y - l.h / 2, width: l.w, height: l.h, transform: `scale(${OVERSHOOT(l.u)})`, opacity: clamp(l.u * 3), background: "#ffffff", borderRadius: 20, boxShadow: SHADOW, borderLeft: `14px solid ${l.tone === "ink" ? BP.gold : toneColor(l.tone)}`, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.label.fs, color: BP.ink, whiteSpace: "nowrap" }}>{l.text}</span>
+        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: l.fs ?? L.label.fs, color: BP.ink, whiteSpace: "nowrap" }}>{l.text}</span>
       </div>
     ) : null))}
   </>
@@ -135,14 +136,14 @@ const Company: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t 
   const sp = d.spec as Extract<BizDevice, { do: "company" }>;
   const col = d.tone === "ink" ? BP.slate : toneColor(d.tone);
   const tile = d.h - 60;
-  const nameFs = Math.min(L.company.nameFs, (d.w - tile - 110) / Math.max(1, sp.name.length * 0.68));
+  const nameFs = d.fs?.name ?? Math.min(L.company.nameFs, (d.w - tile - 110) / Math.max(1, sp.name.length * 0.68));
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${0.6 * Math.sin(t * 2)}deg)`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 30, boxShadow: SHADOW, display: "flex", alignItems: "center", gap: 30, padding: "0 34px", boxSizing: "border-box", overflow: "hidden" }}>
       <div style={{ width: tile, height: tile, borderRadius: 26, background: col, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><Icon k={sp.icon ?? "store"} size={tile * 0.8} t={t} /></div>
       <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
         <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: nameFs, color: BP.ink, lineHeight: 1, letterSpacing: -1, whiteSpace: "nowrap" }}>{sp.name.toUpperCase()}</div>
         {sp.year !== undefined ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.company.yearFs, color: d.tone === "ink" ? col : toneText(d.tone), marginTop: 10, letterSpacing: 2 }}>FOUNDED {sp.year}</div> : null}
-        {sp.tagline ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.company.yearFs * 0.8, color: BP.slate, marginTop: 4 }}>{sp.tagline.toUpperCase()}</div> : null}
+        {sp.tagline ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.tagline ?? L.company.yearFs * 0.8, color: BP.slate, marginTop: 4, whiteSpace: "nowrap" }}>{sp.tagline.toUpperCase()}</div> : null}
       </div>
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 12, width: `${100 * EASE_OUT(clamp(d.tau / 0.6))}%`, background: col }} />
     </div>
@@ -163,8 +164,8 @@ const Decision: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t
         <g transform={`translate(${m + 10}, ${bar + m + 100})`} opacity={0.5 + 0.5 * Math.abs(Math.sin(t * 4))}><rect width={16} height={52} fill="#fff" /><rect x={28} width={16} height={52} fill="#fff" /></g>
       </svg>
       <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", transform: `scale(${slam}) rotate(${-2 + 0.5 * Math.sin(t * 3)}deg)`, opacity: clamp(d.u * 3) }}>
-        <div style={{ background: TEXT_TONE.red, padding: "10px 42px 18px", borderRadius: 18, boxShadow: SHADOW, fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs, color: "#ffffff", lineHeight: 1, letterSpacing: -2, whiteSpace: "nowrap" }}>{(sp.text ?? "THE DECISION").toUpperCase()}</div>
-        {sp.sub ? <div style={{ marginTop: 22, background: "#ffffff", padding: "8px 28px", borderRadius: 14, fontFamily: FONT, fontWeight: 800, fontSize: L.decision.subFs, color: BP.ink, whiteSpace: "nowrap", opacity: clamp((d.tau - 0.2) / 0.15) }}>{sp.sub.toUpperCase()}</div> : null}
+        <div style={{ background: TEXT_TONE.red, padding: "10px 42px 18px", borderRadius: 18, boxShadow: SHADOW, fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.text ?? L.decision.fs, color: "#ffffff", lineHeight: 1, letterSpacing: -2, whiteSpace: "nowrap" }}>{(sp.text ?? "THE DECISION").toUpperCase()}</div>
+        {sp.sub ? <div style={{ marginTop: 22, background: "#ffffff", padding: "8px 28px", borderRadius: 14, fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.sub ?? L.decision.subFs, color: BP.ink, whiteSpace: "nowrap", opacity: clamp((d.tau - 0.2) / 0.15) }}>{sp.sub.toUpperCase()}</div> : null}
       </div>
     </>
   );
@@ -176,10 +177,10 @@ const Counter: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t 
   const shake = down ? 3 * Math.sin(t * 50) * clamp(1 - Math.abs((d.frac ?? 0) - 0.5) * 2) : 0;
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) translateX(${shake}px)`, opacity: clamp(d.u * 3), background: "rgba(10,14,26,0.94)", borderRadius: 30, boxShadow: SHADOW, overflow: "hidden", display: "flex", flexDirection: "column", border: `4px solid ${col}` }}>
-      <div style={{ background: toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.counter.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 2 }}>{sp.title.toUpperCase()}</div>
+      <div style={{ background: toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.title ?? L.counter.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 2, whiteSpace: "nowrap" }}>{sp.title.toUpperCase()}</div>
       <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 18 }}>
         <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.counter.fs * 0.5, color: col }}>{down ? "▼" : "▲"}</span>
-        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.counter.fs, color: "#ffffff", letterSpacing: -3, fontVariantNumeric: "tabular-nums" }}>{d.value}</span>
+        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.value ?? L.counter.fs, color: "#ffffff", letterSpacing: -3, fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>{d.value}</span>
       </div>
       <div style={{ height: 22, margin: "0 30px 26px", background: "rgba(255,255,255,0.12)", borderRadius: 11, overflow: "hidden" }}><div style={{ height: "100%", width: `${100 * clamp(d.frac ?? 0)}%`, background: col, borderRadius: 11 }} /></div>
     </div>
@@ -190,11 +191,12 @@ const Worth: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
   const f = d.frac ?? 0, W = d.w - 80;
   const aw = Math.max(14, W * (sp.a.value / sp.b.value)); // the small one is a sliver: that is the point
   const bv = sp.b.value * Math.max(0.0001, f);
+  const vfs = d.fs?.worth ?? L.worth.fs;
   const row = (label: string, text: string, w: number, col: string, k: number) => (
     <div style={{ marginTop: k ? 34 : 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.labelFs, color: BP.slate, letterSpacing: 1 }}>{label.toUpperCase()}</span>
-        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.fs, color: col === BP.red ? TEXT_TONE.red : col === BP.green ? TEXT_TONE.green : col, letterSpacing: -2, fontVariantNumeric: "tabular-nums" }}>{text}</span>
+        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.labelFs, color: BP.slate, letterSpacing: 1, whiteSpace: "nowrap" }}>{label.toUpperCase()}</span>
+        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: vfs, whiteSpace: "nowrap", color: col === BP.red ? TEXT_TONE.red : col === BP.green ? TEXT_TONE.green : col, letterSpacing: -2, fontVariantNumeric: "tabular-nums" }}>{text}</span>
       </div>
       <div style={{ height: 54, background: "#eef0f4", borderRadius: 14, marginTop: 8, overflow: "hidden" }}><div style={{ height: "100%", width: w, background: col, borderRadius: 14 }} /></div>
     </div>
@@ -202,7 +204,7 @@ const Worth: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
   const pop = clamp((f - 0.95) / 0.05);
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)})`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 32, boxShadow: SHADOW, padding: "34px 40px", boxSizing: "border-box" }}>
-      <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.labelFs * 1.1, color: BP.ink, letterSpacing: 2, marginBottom: 22 }}>WHAT IT'S WORTH TODAY</div>
+      <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.label ?? L.worth.labelFs * 1.1, color: BP.ink, letterSpacing: 2, marginBottom: 22, whiteSpace: "nowrap" }}>WHAT IT'S WORTH TODAY</div>
       {row(sp.a.label, sp.a.text ?? money(sp.a.value), aw, BP.red, 0)}
       {row(sp.b.label, f >= 0.999 && sp.b.text ? sp.b.text : money(bv), Math.max(aw, W * f), BP.green, 1)}
       {sp.multiple !== false && pop > 0 ? (
@@ -211,19 +213,20 @@ const Worth: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
     </div>
   );
 };
-/** the board's title and value font sizes: the giant stake board uses its own (the value shrinks to fit the width) */
-export const boardFonts = (L: BizLayout, sp: { size?: "giant" }, value: string) => {
-  if (sp.size !== "giant") return { title: L.board.titleFs, value: L.board.valueFs };
-  const g = L.board.giant;
-  return { title: g.titleFs, value: Math.min(g.valueFs, Math.floor((g.w - 70) / Math.max(1, value.length * 0.64))) };
+/** the board's title and value font sizes, measured (src/longform/polish.ts): both shrink to fit the board's width (the
+ *  compiler passes the sizes for the widest value a counting board shows as d.fs, so the size never jumps mid-count) */
+export const boardFonts = (L: BizLayout, sp: { size?: "giant"; title?: string }, value: string) => {
+  const g = sp.size === "giant" ? L.board.giant : null;
+  const w = g ? g.w : L.board.w;
+  return { title: fitFs(String(sp.title ?? "").toUpperCase(), g ? g.titleFs : L.board.titleFs, w - 20, 1, MIN_SUB_PX).fs, value: fitFs(value, g ? g.valueFs : L.board.valueFs, w - 40, -2, MIN_TEXT_PX).fs };
 };
 const Board: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t }) => {
   const sp = d.spec as Extract<BizDevice, { do: "board" }>;
   const col = d.tone === "ink" ? BP.slate : toneColor(d.tone);
-  const fs = boardFonts(L, sp, d.value ?? "");
+  const fs = d.fs?.value !== undefined ? { title: d.fs.title, value: d.fs.value } : boardFonts(L, sp, d.value ?? "");
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${(sp.size === "giant" ? 0.4 : 0.8) * Math.sin(t * 2.4)}deg)`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 28, overflow: "hidden", boxShadow: SHADOW, display: "flex", flexDirection: "column" }}>
-      <div style={{ background: d.tone === "ink" ? col : toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: fs.title, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{sp.title.toUpperCase()}</div>
+      <div style={{ background: d.tone === "ink" ? col : toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: fs.title, padding: "10px 0", textAlign: "center", letterSpacing: 1, whiteSpace: "nowrap" }}>{sp.title.toUpperCase()}</div>
       <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: fs.value, color: BP.ink, letterSpacing: -2, whiteSpace: "nowrap" }}>{d.value}</div>
     </div>
   );
@@ -234,7 +237,7 @@ const Stamp: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d }) =>
   const k = 2.0 - 1.0 * EASE_OUT(clamp(d.tau / 0.16));
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${k}) rotate(-9deg)`, opacity: clamp(d.u * 3) * (d.tau < 0 ? 0 : 1) }}>
-      <div style={{ border: `14px solid ${col}`, borderRadius: 24, padding: "4px 40px 10px", fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs * 0.85, color: toneText(d.tone), letterSpacing: 4, background: "rgba(255,255,255,0.88)", boxShadow: SHADOW, whiteSpace: "nowrap" }}>{sp.text.toUpperCase()}</div>
+      <div style={{ border: `14px solid ${col}`, borderRadius: 24, padding: "4px 40px 10px", fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.text ?? L.decision.fs * 0.85, color: toneText(d.tone), letterSpacing: 4, background: "rgba(255,255,255,0.88)", boxShadow: SHADOW, whiteSpace: "nowrap" }}>{sp.text.toUpperCase()}</div>
     </div>
   );
 };
