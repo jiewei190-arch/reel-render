@@ -326,6 +326,19 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
         break;
       }
     }
+    // flyThrough swings 18 deg as it closes in, which put the camera inside a rack row of the servers corridor (x 1.08
+    // vs racks at 1.05-1.95: half the frame went dark in both formats). Keep it out of the set's blocker boxes.
+    if (c.preset === "flyThrough" && lens.posAt && set.blockers.length) {
+      const p0 = lens.posAt, M = 0.4;
+      lens.posAt = (t) => {
+        const p: V3 = [...p0(t)];
+        for (const b of set.blockers) {
+          const dx = b.h[0] + M - Math.abs(p[0] - b.c[0]), dy = b.h[1] + M - Math.abs(p[1] - b.c[1]), dz = b.h[2] + M - Math.abs(p[2] - b.c[2]);
+          if (dx > 0 && dy > 0 && dz > 0) { if (dx <= dz) p[0] += Math.sign(p[0] - b.c[0] || 1) * dx; else p[2] += Math.sign(p[2] - b.c[2] || 1) * dz; }
+        }
+        return p;
+      };
+    }
     // transitions: glitch (default), punch, whip, cut
     const tin: CyberShotR["tin"] = i === 0 ? "cut" : sp.in ?? (c.preset === "slamZoom" || c.preset === "whip" ? "cut" : "glitch");
     const kicks: [number, number][] = [];
