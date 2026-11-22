@@ -176,12 +176,14 @@ export const CashCase: React.FC<{ p?: V3; r?: V3; label: string; glow?: number; 
 
 // ------------------------------------------------------------------ calendar, receipt, stamp
 /** wall calendar: a board with a top bar and a big page. When `flip` runs 0 -> 1 the previous page lifts and falls away. */
+/** the calendar title / sub-line grey: 4.8:1 on the #fffaf0 page (framing QA contrast rule; was #9a90b0, 2.9:1) */
+export const CAL_GREY = "#736c84";
 export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; title?: string; value: string; prev?: string; flip?: number; sub?: string; color?: string }> = ({ p, r = [0, 0, 0], w = 1.3, h = 1.1, title = "DAY", value, prev, flip = 1, sub, color = "#e0412b" }) => {
   const page = (v: string) =>
     canvasTexture(`calp|${title}|${v}|${sub ?? ""}`, 512, Math.round((512 * (h - 0.22)) / w), (g, W, H) => {
       g.fillStyle = "#fffaf0";
       g.fillRect(0, 0, W, H);
-      g.fillStyle = "#9a90b0";
+      g.fillStyle = CAL_GREY;
       g.textAlign = "center";
       g.textBaseline = "middle";
       g.font = `800 ${H * 0.13}px Poppins`;
@@ -196,7 +198,7 @@ export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; tit
       }
       g.fillText(v, W / 2, H * 0.55);
       if (sub) {
-        g.fillStyle = "#9a90b0";
+        g.fillStyle = CAL_GREY;
         g.font = `800 ${H * 0.1}px Poppins`;
         g.fillText(sub, W / 2, H * 0.88);
       }

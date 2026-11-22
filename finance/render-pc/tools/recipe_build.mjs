@@ -19,6 +19,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, longformGate } from "./longform_gate.mjs";
+import { capRatio, framingQA, framingReport, textEm } from "./framing_qa.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -145,6 +146,19 @@ for (let f = 0; f < n; f += STEP) {
   }
 }
 const qaLines = [...hits].map(([k, t]) => `CLIP ${k} first at ${t.toFixed(3)} s (frame ${Math.floor(t * 30)})`);
+// ---------------------------------------------------------------- 3b) framing QA (screen space, tools/framing_qa.mjs)
+// every output frame (Shorts) or every Nth (long-form): boards/props on heads (CLIP), the subject cut by the frame,
+// boards past the edge, board text contrast + size, frame 0 close (RECIPE_GUIDE.md "Framing rules")
+const FM = { em: textEm, cap: capRatio() };
+const fTimes = [];
+for (let f = 0; f < C.duration; f += STEP) fTimes.push(f / 30);
+const fq = framingQA({ times: fTimes, sample: (t) => m.framingAt(C, t, FM), W: C.W, H: C.H, landscape: LS, boardsAll: m.framingBoards(C, FM),
+  frame0: { hookPx: 84, hookMinPx: 84, hookLabel: "Block Money HookText" } });
+const fr = framingReport(fq);
+for (const l of fq.clips) qaLines.push(l);
+console.log(`framing QA: ${fq.clips.length} clip(s), ${fq.fails.length} fail(s) over ${fq.frames} frames in ${(fq.ms / 1000).toFixed(2)} s (${fr.summary})`);
+for (const l of fq.fails.slice(0, 40)) console.log("  " + l);
+const framingFail = fq.fails.length > 0;
 if (LS) {
   // ---------------------------------------------------------------- 4L) long-form gate + chapters.txt
   const qaS = (Date.now() - T1) / 1000;
@@ -160,6 +174,7 @@ if (LS) {
     `Composition: \`${pascal}\` (1920x1080, 30 fps, no Sub composition: long-form renders without motion blur) in \`src/index.toolkit.ts\`. ${C.shots.length} shots, ${dur.toFixed(2)} s (${(dur / 60).toFixed(2)} min), ${C.words.length} words, ${C.chapters.length} chapters.`, "",
     `## Clip QA: ${sampled} of ${C.duration} frames (every ${qaSample === 1 ? "frame" : `${qaSample}th frame`}), ${hits.size} clip(s), ${qaS.toFixed(1)} s`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop/set box enters a head, torso, hand or forearm; no prop below the floor; feet on the floor."]), "",
+    ...fr.md,
     `## Long-form gate (${gateS.toFixed(1)} s)`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Pacing: ${pacing.events} visual-change marks, longest gap ${pacing.maxGap.toFixed(2)} s, mean shot ${pacing.meanShot.toFixed(2)} s, ${pacing.beats} beat marks.`, "",
@@ -171,7 +186,7 @@ if (LS) {
   for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
   console.log(`chapters:\n${chTxt.trimEnd()}`);
   console.log(`report: ${join(dir, "RECIPE_QA.md")}${check ? " (not written: --check)" : ` + ${join(dir, "chapters.txt")}`}; total ${((Date.now() - T0) / 1000).toFixed(1)} s`);
-  process.exit(hits.size || hardFail ? 1 : 0);
+  process.exit(hits.size || fq.clips.length || hardFail || framingFail ? 1 : 0);
 }
 
 // ---------------------------------------------------------------- 4) frame-0 gate
@@ -294,7 +309,10 @@ const gate = [
   ["caption centre >= 65 % of the height on >= 90 % of caption time (faces framed above the bottom band)", capShare >= 0.9, `${(capShare * 100).toFixed(0)} %; nudged: ${capMoved.join(", ") || "none"}`, true],
   ["frame-0 board shot cuts away by ~1.0 s (first cut <= 1.25 s)", firstCut <= 1.25, `first cut at ${firstCut.toFixed(2)} s`, true],
   ["loop board lands on the last word (not before)", loopEarly.length === 0, loopBoards.length ? `last word starts ${lastWordEnd.toFixed(2)} s; ${loopBoards.map((p) => `${p.key} at ${(p.spec.motion ? p.hit : p.a).toFixed(2)} s`).join(", ")}` : "no board on the loop shot", true],
-  ["every landed text prop fully inside its view (1.5 % margin)", edgeHits.size === 0, [...edgeHits.values()].slice(0, 8).join("; ") || "all inside", false],
+  ["framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge", fq.r2.size === 0, fq.r2.size ? `${fq.r2.size} (see Framing QA)` : "all in frame", true],
+  ["framing R3: every landed board inside the frame (3 % margin)", fq.r3.size === 0, fq.r3.size ? `${fq.r3.size} (see Framing QA)` : "all inside", true],
+  ["framing R4: board text >= 4.5:1 on its fill; featured main lines >= 42 px", fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
+  ["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(0.16 * 1920).toFixed(0)})` : "no subject face", true],
   ["no text board in the caption band (recompose: raise the board or lower the target)", capBoards.length === 0, capBoards.join(", ") || "none", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],
 ];
@@ -302,15 +320,16 @@ const hardFail = gate.some((g) => g[3] && !g[1]);
 const rep = [
   `# ${slug}: recipe QA (tools/recipe_build.mjs)`, "",
   `Composition: \`${pascal}\` (+ \`${pascal}Sub\`) in \`src/index.toolkit.ts\`. Style ${recipe.style}. ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
-  `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
+  `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s) + ${fq.clips.length} framing clip(s)`, "",
   ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop/set box enters a head, torso, hand or forearm; no prop below the floor; feet on the floor."]), "",
+  ...fr.md,
   `## Frame-0 gate`, "", "| check | result | detail |", "|---|---|---|",
   ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
   `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
 ];
 wf(join(dir, "RECIPE_QA.md"), rep.join("\n"));
-console.log(`clip QA: ${hits.size} clip(s)`);
+console.log(`clip QA: ${hits.size} clip(s) + ${fq.clips.length} framing clip(s)`);
 for (const l of qaLines.slice(0, 40)) console.log("  " + l);
 for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
-console.log(`report: ${join(dir, "RECIPE_QA.md")}`);
-process.exit(hits.size || hardFail ? 1 : 0);
+console.log(`report: ${join(dir, "RECIPE_QA.md")}${check ? " (not written: --check)" : ""}; total ${((Date.now() - T0) / 1000).toFixed(1)} s`);
+process.exit(hits.size || fq.clips.length || hardFail ? 1 : 0);

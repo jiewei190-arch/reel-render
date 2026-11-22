@@ -78,6 +78,9 @@ export type PropSpec = {
   s?: number;
   text?: string[] | string;
   color?: string;
+  /** label only: the text colour (default #fff4c8 cream). Light fills (yellow, cream, pale green) need dark text such as
+   *  #16121c to pass the 4.5:1 contrast rule. */
+  fg?: string;
   /** kit extras: jar fill 0..1.2, calendar value, block size [w,h,d], coin-pile radius */
   fill?: number;
   value?: string;
@@ -120,6 +123,10 @@ export type ShotSpec = {
   sfx?: { at: At; sfx: string; db?: number }[];
   /** optional note for humans (ignored) */
   note?: string;
+  /** framing QA (RECIPE_GUIDE.md "Framing rules"): the actor this shot is ABOUT when the camera aims at a prop or an
+   *  anchor (default: the camera's target actor, else the shot's only actor when their head is on screen). That actor
+   *  must be >= 85 % in frame (horizontally) with the head clear of every edge. */
+  subject?: string;
   /** landscape pacing: marks the start of a new story beat (recipe_build checks a beat every 20-40 s; chapters,
    *  set changes and beat shots count) */
   beat?: boolean;
