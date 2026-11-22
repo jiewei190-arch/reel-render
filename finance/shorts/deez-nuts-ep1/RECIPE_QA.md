@@ -8,7 +8,7 @@ Composition `DeezNutsEp1Recipe` in `src/index.storytime.ts` (1080x1920, 30 fps, 
 
 ## Framing QA (screen space, 2342 frames, 0.10 s): 0 clip(s), 0 fail(s)
 
-Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 706 px.
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 719 px.
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close, captions off faces and necks.
 
@@ -31,7 +31,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | captions text-fit: every chunk on one line at >= 72 px | PASS | smallest 87.1 px |
 | no shakes, punch zooms or flashes (low-poly: hard cuts only) | PASS | none |
 | mouths never move (no lip-sync) | PASS | 0 kid-frame(s) with a voice-driven mouth |
-| face decals never seen edge-on (55-62 deg; culled past 62 deg) | PASS | 0 edge-on lead-frame(s); 313 lead-frame(s) with the face culled |
+| face decals never seen edge-on (55-62 deg; culled past 62 deg) | PASS | 0 edge-on lead-frame(s); 267 lead-frame(s) with the face culled |
 | captions: one chunk at a time (no overlap in time) | PASS | 52 chunks, none overlap |
 | captions: one baseline after the cold open | PASS | y 1267 px |
 | the cafeteria windows end up cracked (shatter marks the break) | PASS | yes |
@@ -42,14 +42,14 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | PASS | all in frame |
 | framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
-| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 706 px (needs 307) |
+| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 719 px (needs 307) |
 | framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | PASS | clear |
 
 ## Shots
 
 | shot | start | len | set | camera | note |
 |---|---|---|---|---|---|
-| S01 | 0.00 | 2.72 | hallway | closeup_homie | cold open: homie yells DEEZ NUTS |
+| S01 | 0.00 | 2.72 | hallway | closeup_homie | cold open: homie yells DEEZ NUTS, fists pumping on each word |
 | S02 | 2.72 | 2.60 | hallway | closeup_homie | second DEEZ NUTS, tighter |
 | S03 | 5.32 | 1.34 | classroom | closeup_me | me at my desk: Bruh |
 | S04 | 6.66 | 2.58 | classroom | two_shot | my homie was watching a video in class |
@@ -59,7 +59,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | S08 | 17.64 | 4.12 | classroom | pov_phone | POV: his phone, VINES 2015 COMPILATION |
 | S09 | 21.76 | 1.48 | classroom | closeup_me | I said... |
 | S10 | 23.24 | 3.08 | classroom | closeup_me | who the fuck is Deez (tighter, annoyed) |
-| S11 | 26.32 | 2.02 | classroom | closeup_homie | DEEZ NUTS IN YOUR MOUTH: tight hard cut |
+| S11 | 26.32 | 2.02 | classroom | closeup_homie | DEEZ NUTS IN YOUR MOUTH: tight hard cut, he points at me |
 | S12 | 28.34 | 3.08 | classroom | closeup_me | LOUD AS FUCK BRO |
 | S13 | 31.42 | 3.96 | classroom | wide_class | the entire class turns, dying |
 | S14 | 35.38 | 2.88 | classroom | closeup_me | and I'm like |

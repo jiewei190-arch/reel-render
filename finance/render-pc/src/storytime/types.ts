@@ -13,8 +13,8 @@ export type Expr =
   | "yell" | "scream";
 export const EXPRS: Expr[] = ["neutral", "annoyed", "furious", "shocked", "deadpan", "smug", "laughing", "sideeye", "yell", "scream"];
 
-export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean";
-export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean"];
+export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean" | "pump" | "shrug" | "slam";
+export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean", "pump", "shrug", "slam"];
 
 export type SetId = "classroom" | "hallway" | "cafeteria";
 export const SET_IDS: SetId[] = ["classroom", "hallway", "cafeteria"];

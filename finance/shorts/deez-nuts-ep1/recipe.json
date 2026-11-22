@@ -210,10 +210,10 @@
    ],
    "pose": [
     {
-     "homie": "yell"
+     "homie": "pump"
     }
    ],
-   "note": "cold open: homie yells DEEZ NUTS"
+   "note": "cold open: homie yells DEEZ NUTS, fists pumping on each word"
   },
   {
    "at": "1:deez#2",
@@ -340,6 +340,11 @@
      "me": "furious"
     }
    ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
    "note": "who the fuck is Deez (tighter, annoyed)"
   },
   {
@@ -356,10 +361,11 @@
    ],
    "pose": [
     {
-     "homie": "yell"
+     "homie": "point",
+     "me": "idle"
     }
    ],
-   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut"
+   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut, he points at me"
   },
   {
    "at": "7",
@@ -399,6 +405,11 @@
      "me": "shocked"
     }
    ],
+   "pose": [
+    {
+     "homie": "laugh"
+    }
+   ],
    "note": "the entire class turns, dying"
   },
   {
@@ -410,6 +421,11 @@
    "face": [
     {
      "me": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
     }
    ],
    "note": "and I'm like"
@@ -529,6 +545,11 @@
      "me": "annoyed"
     }
    ],
+   "pose": [
+    {
+     "homie": "lean"
+    }
+   ],
    "note": "Deez nuts #3 tighter"
   },
   {
@@ -553,6 +574,12 @@
    "face": [
     {
      "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "slam",
+     "homie": "idle"
     }
    ],
    "note": "NON FUCKING STOP"
@@ -581,6 +608,11 @@
     {
      "me": "furious",
      "homie": "shocked"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle"
     }
    ],
    "note": "I yelled so loud"

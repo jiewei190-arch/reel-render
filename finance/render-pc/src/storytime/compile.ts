@@ -164,13 +164,21 @@ export const kidBoxes = (st: FigState) => {
   return { head, face, torso, legs };
 };
 
-const POSE_ARMS: Record<Pose, (t: number, seed: number, amp: number) => { L: [number, number]; R: [number, number]; lean: number; bob: number }> = {
+type PoseOut = { L: [number, number]; R: [number, number]; lean: number; bob: number; E?: [number, number]; ownBeat?: boolean };
+/** b = the speaker's word-beat envelope (0..1, a hit on each spoken word, stronger on emphasised words) */
+const POSE_ARMS: Record<Pose, (t: number, seed: number, amp: number, b: number) => PoseOut> = {
+  // fists pumping out at head height on every shouted word (the cold open)
+  pump: (t, sd, a, b) => ({ L: [1.2 + 0.55 * b, -0.12], R: [1.2 + 0.55 * b, -0.12], E: [1.9 - 0.3 * b, 1.9 - 0.3 * b], lean: 0.1 + 0.08 * b, bob: 0.03 * b, ownBeat: true }),
+  // both forearms out, palms up: "who the fuck is Deez?"
+  shrug: (t, sd, a, b) => ({ L: [0.42, 0.5 + 0.1 * b], R: [0.42, 0.5 + 0.1 * b], E: [1.45, 1.45], lean: -0.04, bob: 0.02 + 0.012 * b, ownBeat: true }),
+  // both fists come down on the table on every word, up between words
+  slam: (t, sd, a, b) => ({ L: [1.35 - 0.4 * b, 0.12], R: [1.35 - 0.4 * b, 0.12], E: [1.5 - 0.95 * b, 1.5 - 0.95 * b], lean: 0.06 + 0.12 * b, bob: -0.01 * b, ownBeat: true }),
   idle: (t, sd) => ({ L: [0.08 + 0.01 * Math.sin(t * 0.9 + sd), 0.1], R: [0.08 + 0.01 * Math.sin(t * 0.9 + sd + 1), 0.1], lean: 0.008 * Math.sin(t * 0.6 + sd), bob: 0 }),
   talk: (t, sd, a) => ({ L: [0.45 + 0.35 * Math.sin(t * 4.1 + sd) * (0.4 + a), 0.25 + 0.1 * Math.sin(t * 2.7)], R: [0.6 + 0.4 * Math.sin(t * 3.6 + sd + 2) * (0.4 + a), 0.2], lean: 0.05 + 0.04 * a, bob: 0.012 * a }),
   yell: (t) => ({ L: [0.75, 0.9 + 0.03 * Math.sin(t * 2)], R: [0.75, 0.9 + 0.03 * Math.sin(t * 2 + 1)], lean: 0.16, bob: 0 }),
   phone: (t, sd) => ({ L: [1.45 + 0.02 * Math.sin(t * 1.7), -0.3], R: [1.45 + 0.02 * Math.sin(t * 1.7 + 1), -0.3], lean: 0.1, bob: 0.003 * Math.sin(t * 2 + sd) }),
   laugh: (t, sd) => ({ L: [0.55, -0.42], R: [0.55, -0.42], lean: -0.12 + 0.04 * Math.sin(t * 6 + sd), bob: 0.012 * Math.abs(Math.sin(t * 6 + sd)) }),
-  point: (t, sd) => ({ L: [0.1, 0.12], R: [1.5 + 0.03 * Math.sin(t * 3), 0.05], lean: 0.08, bob: 0.004 * Math.sin(t * 2 + sd) }),
+  point: (t, sd, a, b) => ({ L: [0.1, 0.12], R: [1.72 + 0.03 * Math.sin(t * 3) - 0.1 * b, -0.08], E: [0.12, 0.02], lean: 0.08 + 0.06 * b, bob: 0.004 * Math.sin(t * 2 + sd), ownBeat: true }),
   lean: (t, sd) => ({ L: [1.2, -0.15], R: [1.2, -0.15], lean: 0.3 + 0.02 * Math.sin(t * 1.1 + sd), bob: 0 }),
 };
 
@@ -239,6 +247,28 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   void amp; // the voice loudness is kept in the recipe build but no longer drives the mouths
   // LOW-POLY: no lip-sync, mouths never move ("talking" = the camera on the speaker + the caption)
   const mouthOf = (_id: CastId, _t: number) => 0;
+  // ---- body beats: every word the kid speaks lands a small hit (a nod, a lean, an arm chop on alternate sides);
+  // emphasised words (shout lines, ALL-CAPS words, the line's accent words) hit full, the rest about half
+  const beats: Record<CastId, { t: number; k: number; side: number }[]> = { me: [], homie: [] };
+  for (const [k, L] of Object.entries(recipe.lines)) {
+    const acc = new Set((L.accent ?? []).map(normW));
+    words.filter((w) => w.turn === Number(k)).forEach((w, i) => {
+      const caps = /[A-Z]{2,}/.test(w.w) && w.w === w.w.toUpperCase();
+      beats[L.speaker].push({ t: w.t, k: L.shout || caps ? 1 : acc.has(normW(w.w)) ? 0.8 : 0.5, side: i % 2 ? 1 : -1 });
+    });
+  }
+  for (const id of LEADS) beats[id].sort((a, b) => a.t - b.t);
+  const beatAt = (id: CastId, t: number) => {
+    let v = 0, side = 1;
+    for (const b of beats[id]) {
+      const dt = t - b.t;
+      if (dt < 0) break;
+      if (dt > 0.7) continue;
+      const e = b.k * Math.exp(-dt / 0.17) * clamp(dt / 0.05);
+      if (e > v) { v = e; side = b.side; }
+    }
+    return { v: t < endAt ? v : 0, side };
+  };
 
   // ---- one kid at t
   const blinkAt = (t: number, seed: number) => {
@@ -268,8 +298,9 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     // pose
     const pv = valueAt(poseEv[id], t, "idle" as Pose);
     const pose = pv.v;
-    const P = POSE_ARMS[pose](t, seed, mo);
-    const Pp = POSE_ARMS[pv.prev](t, seed, mo);
+    const bt = beatAt(id, t);
+    const P = POSE_ARMS[pose](t, seed, mo, bt.v);
+    const Pp = POSE_ARMS[pv.prev](t, seed, mo, bt.v);
     const u = ease((t - pv.t0) / 0.22);
     // shout lean: a scream pushes the head forward
     const exprLean = fv.v === "scream" || fv.v === "yell" ? 0.06 : fv.v === "shocked" ? -0.05 : 0;
@@ -283,13 +314,20 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
       while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI;
       return clamp(d, -1.15, 1.15);
     };
+    // the beat on idle / talk / yell / lean poses: one forearm chops forward on alternate words; poses that move
+    // with the beat themselves (pump, shrug, slam, point) take it whole; the phone pose keeps its hands still
+    const chop = P.ownBeat || pose === "phone" || pose === "laugh" ? 0 : bt.v;
+    const armBeat = (sd: number) => (bt.side === sd ? 0.32 * chop : 0.06 * chop);
+    const elbowBeat = (sd: number) => (bt.side === sd ? 0.55 * chop : 0);
+    const nod = bt.v * (pose === "phone" ? 0.3 : 1);
     const lu = ease((t - lv.t0) / 0.35);
     const turn = lerp(yawTo(lv.prev), yawTo(lv.v), lu);
     const bodyTurn = turn * 0.45;
     return {
-      id, lead: true, spec, x: m.x, z: m.z, yaw: m.yaw + bodyTurn, headYaw: turn - bodyTurn + 0.012 * Math.sin(t * 0.5 + seed), headPitch: 0.006 * Math.sin(t * 0.6 + seed) + (pose === "phone" ? 0.22 : 0),
-      sit: m.sit, s, lean: lerp(Pp.lean, P.lean, u) + exprLean, bob: lerp(Pp.bob, P.bob, u), tilt: 0.01 * Math.sin(t * 0.4 + seed) + (fv.v === "sideeye" ? 0.06 * side : 0) + (fv.v === "smug" ? -0.07 : 0),
-      armL: [lerp(Pp.L[0], P.L[0], u), lerp(Pp.L[1], P.L[1], u)], armR: [lerp(Pp.R[0], P.R[0], u), lerp(Pp.R[1], P.R[1], u)],
+      id, lead: true, spec, x: m.x, z: m.z, yaw: m.yaw + bodyTurn, headYaw: turn - bodyTurn + 0.012 * Math.sin(t * 0.5 + seed), headPitch: 0.006 * Math.sin(t * 0.6 + seed) + (pose === "phone" ? 0.22 : 0) + 0.12 * nod,
+      sit: m.sit, s, lean: lerp(Pp.lean, P.lean, u) + exprLean + 0.03 * nod, bob: lerp(Pp.bob, P.bob, u) + (m.sit ? 0 : 0.006 * nod), tilt: 0.01 * Math.sin(t * 0.4 + seed) + 0.05 * nod * bt.side + (fv.v === "sideeye" ? 0.06 * side : 0) + (fv.v === "smug" ? -0.07 : 0),
+      armL: [lerp(Pp.L[0], P.L[0], u) + armBeat(1), lerp(Pp.L[1], P.L[1], u)], armR: [lerp(Pp.R[0], P.R[0], u) + armBeat(-1), lerp(Pp.R[1], P.R[1], u)],
+      elbow: [lerp(Pp.E?.[0] ?? 0.12, P.E?.[0] ?? 0.12, u) + elbowBeat(1), lerp(Pp.E?.[1] ?? 0.12, P.E?.[1] ?? 0.12, u) + elbowBeat(-1)],
       pose, expr: fv.v, face, mouth: mo, talking, seed,
     };
   };
@@ -304,7 +342,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const f0 = laughing ? FACES.laughing : FACES.neutral;
     let face = { ...f0, open: 0, teeth: 0 }; // LOW-POLY: static mouth bars
     if (!laughing && blinkAt(t, e.seed + 11)) face = { ...face, lid: 1 };
-    const P = POSE_ARMS[laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0);
+    const P = POSE_ARMS[laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0, 0);
     // turn round toward the leads (in the classroom, the back row) with the body; the head does the rest
     const yaw = e.yaw + turnAmt * (Math.PI - 0.25 * Math.sign(e.x || 1) * (1 - Math.abs(e.x) / 3));
     return { id: e.id, lead: false, spec: e.spec, x: e.x, z: e.z, yaw, headYaw: 0.05 * Math.sin(t * 0.6 + e.seed), headPitch: 0, sit: e.sit, s: (e.s ?? 1) * (e.spec.height ?? 1) * 0.92,

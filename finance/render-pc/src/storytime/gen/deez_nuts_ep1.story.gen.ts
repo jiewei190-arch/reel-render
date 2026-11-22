@@ -215,10 +215,10 @@ export const RECIPE: Recipe = {
    ],
    "pose": [
     {
-     "homie": "yell"
+     "homie": "pump"
     }
    ],
-   "note": "cold open: homie yells DEEZ NUTS"
+   "note": "cold open: homie yells DEEZ NUTS, fists pumping on each word"
   },
   {
    "at": "1:deez#2",
@@ -345,6 +345,11 @@ export const RECIPE: Recipe = {
      "me": "furious"
     }
    ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
    "note": "who the fuck is Deez (tighter, annoyed)"
   },
   {
@@ -361,10 +366,11 @@ export const RECIPE: Recipe = {
    ],
    "pose": [
     {
-     "homie": "yell"
+     "homie": "point",
+     "me": "idle"
     }
    ],
-   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut"
+   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut, he points at me"
   },
   {
    "at": "7",
@@ -404,6 +410,11 @@ export const RECIPE: Recipe = {
      "me": "shocked"
     }
    ],
+   "pose": [
+    {
+     "homie": "laugh"
+    }
+   ],
    "note": "the entire class turns, dying"
   },
   {
@@ -415,6 +426,11 @@ export const RECIPE: Recipe = {
    "face": [
     {
      "me": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
     }
    ],
    "note": "and I'm like"
@@ -534,6 +550,11 @@ export const RECIPE: Recipe = {
      "me": "annoyed"
     }
    ],
+   "pose": [
+    {
+     "homie": "lean"
+    }
+   ],
    "note": "Deez nuts #3 tighter"
   },
   {
@@ -558,6 +579,12 @@ export const RECIPE: Recipe = {
    "face": [
     {
      "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "slam",
+     "homie": "idle"
     }
    ],
    "note": "NON FUCKING STOP"
@@ -586,6 +613,11 @@ export const RECIPE: Recipe = {
     {
      "me": "furious",
      "homie": "shocked"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle"
     }
    ],
    "note": "I yelled so loud"
