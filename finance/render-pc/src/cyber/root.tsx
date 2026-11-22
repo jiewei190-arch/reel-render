@@ -5,6 +5,7 @@ import React from "react";
 import { Composition } from "remotion";
 import { compileCyber } from "./compile";
 import type { CyberCompiled } from "./compile";
+import { BrandRoot } from "./branding";
 import { CyberFilm } from "./film";
 import { GALLERY_RECIPE } from "./gallery";
 import { CYBER_RECIPES } from "./registry.gen";
@@ -31,5 +32,6 @@ export const CyberRoot: React.FC = () => (
       const c = cyberCompiled(id);
       return <Composition key={id} id={id} component={Film} durationInFrames={c.duration} fps={30} width={c.L.W} height={c.L.H} defaultProps={{ id }} />;
     })}
+    <BrandRoot />
   </>
 );

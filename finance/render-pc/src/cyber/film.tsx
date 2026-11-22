@@ -21,7 +21,7 @@ import { CITIES, CYBER_SETS, emailTex, geo, neon, pinTop, StringLine } from "./s
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
-const ClipOn: React.FC = () => { const { gl } = useThree(); gl.localClippingEnabled = true; return null; };
+export const ClipOn: React.FC = () => { const { gl } = useThree(); gl.localClippingEnabled = true; return null; };
 const OCTA = () => geoOf("cfOcta", () => new THREE.OctahedronGeometry(1, 0));
 const PLANE = () => geoOf("cfPlane", () => new THREE.PlaneGeometry(1, 1));
 
@@ -33,7 +33,7 @@ export const arcAt = (a: V3, b: V3, u: number): V3 => {
   return [w0 * a[0] + w1 * m[0] + w2 * b[0], w0 * a[1] + w1 * m[1] + w2 * b[1] + 0.06, w0 * a[2] + w1 * m[2] + w2 * b[2]];
 };
 
-const KitView: React.FC<{ pr: PropR; c: CyberCompiled; t: number }> = ({ pr, c, t }) => {
+export const KitView: React.FC<{ pr: PropR; c: CyberCompiled; t: number }> = ({ pr, c, t }) => {
   const pl = c.placeOf(pr, t);
   const sp = pr.spec;
   if (pr.show(t) <= 0) return null;
@@ -95,7 +95,7 @@ const KitView: React.FC<{ pr: PropR; c: CyberCompiled; t: number }> = ({ pr, c, 
     default: return null;
   }
 };
-const Sparks: React.FC<{ f: FxR; t: number }> = ({ f, t }) => {
+export const Sparks: React.FC<{ f: FxR; t: number }> = ({ f, t }) => {
   const u = (t - f.at) / 0.8;
   if (u < 0 || u > 1) return null;
   const p = f.p(f.at);
