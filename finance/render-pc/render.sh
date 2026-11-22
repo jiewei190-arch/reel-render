@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
-# Render one version of a Short with motion blur, then QA it. Never overwrites an earlier version.
+# Render one version of a Short, then QA it. Never overwrites an earlier version.
+# OWNER DECISION (README "No motion blur"): renders use the PLAIN 30 fps composition (<Pascal>Recipe, or a kit's
+# composition with ENTRY=src/index.<kit>.ts). The old motion-blur path (a ...Sub composition at 4 x 30 fps averaged by
+# ffmpeg tmix) still works when COMP ends in "Sub", but it is not used.
 #
 # usage: bash render.sh <N> [COMP] [FRAMES]
 #   N       version number -> out/renders/v<N>.mp4, v<N>_contact_sheet.jpg, v<N>_qa.txt
-#   COMP    the sub-frame composition (default BlockyTestSub; it must run at SUB x 30 fps, SUB = 4)
+#   COMP    the composition (default BlockyTestSub, legacy). A plain composition (no "Sub" suffix) is rendered at 30 fps
+#           as it is; a "...Sub" one runs at SUB x 30 fps (SUB = 4) and is averaged down to 30 fps
 #   FRAMES  optional output-frame range "a-b" (e.g. 0-89 for the first 3 s); default = the whole composition
 #
 # Steps: typecheck -> bundle -> render the sub-frame composition through the GPU lock -> ffmpeg tmix (average every 4
@@ -23,7 +27,7 @@ pick_python || exit 2
 SCR="${BLOCKY_SCRIPTS:-}"
 for c in "$ROOT/scripts" "$ROOT/../scripts"; do [ -z "$SCR" ] && [ -f "$c/gpu_lock.py" ] && SCR="$(cd "$c" && pwd)"; done
 [ -n "$SCR" ] || { echo "gpu_lock.py not found: copy the skill's scripts/ folder next to this file or set BLOCKY_SCRIPTS" >&2; exit 2; }
-SUB=4
+if [[ $COMP == *Sub ]]; then SUB=4; else SUB=1; fi   # plain composition: no sub-frames, no tmix
 NAME="${NAME:-v}"   # version name prefix: v1, v2 ... for tests; NAME=short_v for the full Short (short_v1 ...)
 CONC="${CONC:-8}"
 [[ $N =~ ^[0-9]+$ ]] || { echo "N must be a number" >&2; exit 2; }
@@ -52,7 +56,8 @@ fi
 t1=$(date +%s)
 FRAMEARG=()
 [ -n "$NOUT" ] && FRAMEARG=(-frames:v "$NOUT")
-ffmpeg -v error -y -i "$SUBV" -vf "tmix=frames=$SUB:weights='1 1 1 1',select='eq(mod(n\,$SUB)\,$((SUB - 1)))',setpts=N/30/TB" -r 30 \
+if [ "$SUB" = 1 ]; then VF="setpts=N/30/TB"; else VF="tmix=frames=$SUB:weights='1 1 1 1',select='eq(mod(n\,$SUB)\,$((SUB - 1)))',setpts=N/30/TB"; fi
+ffmpeg -v error -y -i "$SUBV" -vf "$VF" -r 30 \
   "${FRAMEARG[@]}" -c:v libx264 -crf 16 -preset slow -pix_fmt yuv420p -an -map_metadata -1 -movflags +faststart "$OUT"
 FR=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$OUT" | tr -d ',\r')   # strip the comma and Windows' carriage return (ffprobe prints 369,\r)
 NT=$(( (FR + 14) / 15 ))                      # 2 fps tiles
