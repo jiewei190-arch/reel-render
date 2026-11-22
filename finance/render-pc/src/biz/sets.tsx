@@ -323,6 +323,7 @@ const warehouse: BizSet = {
 // ------------------------------------------------------------------ headline wall
 const MASTHEADS = ["THE DAILY LEDGER", "THE MARKET WIRE", "THE MORNING BELL", "THE DAILY LEDGER", "THE COUNTING HOUSE"];
 const HEADS = ["SHARES SLIDE", "STORES CLOSE", "DEBT MOUNTS", "SALES SLUMP", "LAYOFFS LOOM", "RIVAL SOARS", "STOCK PLUNGES", "CEO OUT", "PROFIT WARNING", "MARKET SHOCK"];
+const COPY = ["Shares fell sharply in early", "trading as investors weighed", "the latest figures from the", "company, which reported a", "steep drop in quarterly sales.", "Analysts said the outlook", "remains uncertain after the", "board rejected the offer.", "Stores across the region", "will close by the end of", "the year, the firm said.", "Debt payments due next month", "add to the pressure on cash.", "A spokesman declined to", "comment on the talks."];
 const paperTex = (key: string, mast: string, head: string, hero: boolean) => canvasTexture(key, hero ? 640 : 320, hero ? 840 : 420, (g, W, H) => {
   g.fillStyle = "#f3eee2"; g.fillRect(0, 0, W, H);
   const k = W / 320;
@@ -337,8 +338,17 @@ const paperTex = (key: string, mast: string, head: string, hero: boolean) => can
   lines.slice(0, 4).forEach((ln, i) => g.fillText(ln, W / 2, (58 + i * 44) * k));
   const y0 = (58 + Math.min(4, lines.length) * 44 + 10) * k;
   g.fillStyle = "#b9b2a3"; g.fillRect(14 * k, y0, W * 0.52, H * 0.3);
-  g.fillStyle = "#5a554c";
-  for (let r = 0; r < 26; r++) for (let c = 0; c < 2; c++) { const x = c === 0 ? W * 0.56 : 14 * k, y = c === 0 ? y0 + r * 9 * k : y0 + H * 0.3 + 10 * k + r * 9 * k; if (y < H - 12 * k) g.fillRect(x, y, (c === 0 ? W * 0.4 : W - 28 * k) * (0.7 + 0.3 * hash(r + c * 40)), 3 * k); }
+  // the body copy is real (generic) text, never grey bars: blank paper is not allowed (KIT_BIZ3D.md "Hero props")
+  g.fillStyle = "#3a362f"; g.textAlign = "left"; g.textBaseline = "top";
+  g.font = `${8 * k}px 'DejaVu Sans', Arial, sans-serif`;
+  let n = 0;
+  for (let r = 0; r < 26; r++) for (let c = 0; c < 2; c++) {
+    const x = c === 0 ? W * 0.56 : 14 * k, y = c === 0 ? y0 + r * 10 * k : y0 + H * 0.3 + 10 * k + r * 10 * k, w = c === 0 ? W * 0.4 : W - 28 * k;
+    if (y >= H - 14 * k) continue;
+    let ln = COPY[(n++ + mast.length + head.length) % COPY.length];
+    while (ln.length > 4 && g.measureText(ln).width > w) ln = ln.slice(0, -1);
+    g.fillText(ln.trimEnd(), x, y);
+  }
 });
 /** the hero paper's texture is keyed by its headline text, so a long-form video with many headline shots would hold one
  *  GPU texture per headline: keep the last HERO_KEEP in use and dispose older ones (three re-uploads one if it returns) */

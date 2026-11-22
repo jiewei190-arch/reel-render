@@ -3,6 +3,7 @@
 // GALLERY_STILLS lists the frame to grab for each piece (node tools/biz_stills.mjs gallery renders them all).
 import type { ExecPose } from "./exec";
 import { EXEC_POSES } from "./exec";
+import { BIZ_HERO_KINDS } from "./hero";
 import type { BizRecipe, BizShot } from "./types";
 
 const shots: BizShot[] = [];
@@ -34,6 +35,15 @@ add("device-counter", 2.2, { set: "warehouse", cam: { preset: "orbit", target: "
 add("device-worth", 2.4, { set: "chart", cam: { preset: "orbit", target: "peak", dist: 14, h: 2 }, devices: [{ do: "worth", at: t + 0.1, a: { label: "The price", value: 5e7 }, b: { label: "Worth today", value: 2.5e11, text: "$250B+" } }] }, 0.85);
 add("device-stamp-board", 1.8, { set: "headlines", headline: "Shares Plunge", cam: { preset: "medium", target: "hero", dist: 4.2 }, devices: [{ do: "stamp", text: "BANKRUPT", at: t + 0.2 }, { do: "board", title: "STORES", count: { from: 9000, to: 300 }, at: t + 0.1, pos: "left", tone: "red" }] });
 add("props", 2.0, { set: "warehouse", cam: { preset: "orbit", target: "aisle:0,0.4,0", dist: 3.6, h: 0.9 }, props: [{ id: "bx", kit: "boxes", at: "aisle:-1.1,0,0", size: [2, 2, 2] }, { id: "dv", kit: "disc", at: "aisle:0,0,0.3", motion: "bob" }, { id: "en", kit: "envelope", at: "aisle:0.9,0,0.4", yaw: 20 }, { id: "c2", kit: "cash", at: "aisle:0.6,0,-0.6" }] });
+
+// the HERO PROPS (src/biz/hero.tsx): one close-up each, in their default colour and label, turning slowly
+for (const k of BIZ_HERO_KINDS) {
+  const wide = k === "laptop" || k === "shoe" || k === "camera" || k === "card" || k === "burger";
+  add(`hero-${k}`, 1.2, { set: "warehouse", cam: { preset: "closeUp", target: "hp", dist: wide ? 2.2 : 1.6, h: k === "laptop" || k === "burger" || k === "shoe" ? 0.5 : 0.12, az: k === "shoe" ? 20 : 8, face: 0.5 }, props: [{ id: "hp", kit: k, at: "aisle", spin: 6, ...(k === "letter" ? { label: "Offer declined", lines: ["Dear Founders,", "Thank you for your visit.", "We are not interested", "in a purchase at $50M.", "Regards, the Board"] } : {}) }] }, 0.6);
+}
+add("hero-labels", 2.0, { set: "boardroom", cam: { preset: "medium", target: "tableTop:0,0.25,1.2", dist: 2.8, h: 0.4, az: 0, face: 0.5 }, props: [
+  { id: "c1", kit: "can", label: "NEW", color: "#C8102E", at: "tableTop:-0.55,0,1.2", scale: 0.6 }, { id: "c2", kit: "can", label: "CLASSIC", color: "#7A1A1A", at: "tableTop:0,0,1.2", scale: 0.6 }, { id: "c3", kit: "cup", label: "", at: "tableTop:0.55,0,1.2", scale: 0.6 },
+] }, 0.6);
 
 export const GALLERY_RECIPE: BizRecipe = {
   kit: "biz3d", slug: "biz-gallery", hook: { text: "THE *GALLERY*", until: -1 }, duration: t, captions: "off",

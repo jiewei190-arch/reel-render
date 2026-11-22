@@ -20,6 +20,8 @@ import type { ExecLook, ExecPose, ExecState, ExecTrack } from "./exec";
 import { layoutOf } from "./layout";
 import type { BizLayout, Rect } from "./layout";
 import { SUITS } from "./palette";
+import { heroLabelError } from "../library/hero";
+import { BIZ_HERO_KINDS } from "./hero";
 import { propBox, propCentre } from "./props";
 import type { Placement, PropState } from "./props";
 import { BIZ_SETS, PAPER_N, STORE_N, storeX } from "./sets";
@@ -193,12 +195,19 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
     // ---- props
     const props: PropR[] = [];
     const addProp = (spec: BizProp, pa: number, pb: number) => {
-      if (!spec.kit) throw new Error(`recipe ${id}: prop "${spec.id}" needs "kit" (tower, boxes, cash, disc, envelope, block)`);
+      const KITS = ["tower", "boxes", "cash", "disc", "envelope", "block", ...BIZ_HERO_KINDS];
+      if (!spec.kit || !KITS.includes(spec.kit)) throw new Error(`recipe ${id}: prop "${spec.id}" needs "kit": one of ${KITS.join(", ")}${spec.kit ? ` (got "${spec.kit}")` : ""}`);
+      const lerr = heroLabelError(spec.label, spec.kit);
+      if (lerr) throw new Error(`recipe ${id}: prop "${spec.id}": ${lerr}`);
+      if (spec.lines && (spec.lines.length > 7 || spec.lines.some((l) => typeof l !== "string" || l.length > 40))) throw new Error(`recipe ${id}: prop "${spec.id}": "lines" takes up to 7 strings of <= 40 characters`);
       const base = placeV(spec.at, set, id);
       const hit = at(spec.hit, a + 0.12);
-      const s0 = spec.s ?? 1;
+      const s0 = spec.scale ?? spec.s ?? 1;
       const place = (t: number): Placement => {
         let p = base, yaw = (spec.yaw ?? 0) * D2R, s = s0;
+        // a prop with "spin" and no motion turns slowly on the spot (the product showcase), from its first frame in
+        // the shot, so its front (the label) faces "yaw" when the shot starts
+        if (!spec.motion && spec.spin !== undefined) yaw += spec.spin * D2R * (t - pa);
         switch (spec.motion) {
           case "turntable": yaw += (spec.spin ?? 12) * D2R * t; break;
           case "bob": p = add(p, [0, 0.05 * Math.sin(t * 2.2), 0]); yaw += 0.08 * Math.sin(t * 0.9); break;
@@ -451,14 +460,18 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       case "counter": return { x: L.W / 2, y: Math.max(L.counter.y, top + L.counter.h / 2 + 10), w: L.counter.w, h: L.counter.h };
       case "worth": return { x: L.W / 2, y: Math.max(L.worth.y, top + L.worth.h / 2 + 10), w: L.worth.w, h: L.worth.h };
       case "stamp": { const fs = L.decision.fs * 0.85; const w = sp.text.length * fs * 0.72 + 120; return { x: L.W / 2, y: sp.y ?? L.H * 0.4, w, h: fs * 1.25 + 40 }; }
-      case "board": { const { w, h, margin } = L.board; const pos = sp.pos ?? "right"; return { x: pos === "left" ? margin + w / 2 : pos === "top" ? L.W / 2 : L.W - margin - w / 2, y: top + 40 + h / 2, w, h }; }
+      case "board": {
+        if (sp.size === "giant") { const g = L.board.giant; return { x: L.W / 2, y: top + 40 + g.h / 2, w: g.w, h: g.h }; }
+        const { w, h, margin } = L.board; const pos = sp.pos ?? "right"; return { x: pos === "left" ? margin + w / 2 : pos === "top" ? L.W / 2 : L.W - margin - w / 2, y: top + 40 + h / 2, w, h };
+      }
     }
   };
   const devicesAt = (t: number): DeviceBox[] => {
     const s = shotAt(t), out: DeviceBox[] = [];
     for (const d of s.devices) {
       if (t < d.t0 - LEAD || t >= d.t1) continue;
-      const u = clamp((t - d.t0 + LEAD) / 0.22) * clamp((d.t1 - t) / 0.15);
+      // a card that starts at frame 0 is fully on at frame 0 (no fade-in ghost at 0.00 s: the frame-0 gate checks it)
+      const u = (d.t0 <= 1e-6 ? 1 : clamp((t - d.t0 + LEAD) / 0.22)) * clamp((d.t1 - t) / 0.15);
       const r = deviceRect(d, t), sp = d.spec, tau = t - d.t0;
       let value: string | undefined, frac: number | undefined, tone: Tone = "ink";
       switch (sp.do) {

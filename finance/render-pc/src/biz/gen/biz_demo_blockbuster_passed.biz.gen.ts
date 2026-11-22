@@ -72,14 +72,25 @@ export const RECIPE: BizRecipe = {
   {
    "at": 0,
    "set": "boardroom",
-   "note": "frame 0: the Blockbuster boss at the head of the table, arms folded",
+   "note": "frame 0: a hero prop close-up, the video rental case on the table; the boss behind it, arms folded",
    "cam": {
     "preset": "hookZoom",
-    "target": "ceo",
-    "dist": 2.3,
-    "h": 0.35,
-    "face": 0.66
+    "target": "rc",
+    "dist": 1.45,
+    "h": 0.12,
+    "face": 0.52
    },
+   "props": [
+    {
+     "id": "rc",
+     "kit": "case",
+     "label": "RENTAL",
+     "color": "#7A1F2B",
+     "at": "tableTop:0,0,-2.35",
+     "scale": 0.8,
+     "spin": 8
+    }
+   ],
    "actors": [
     {
      "id": "ceo",
@@ -255,8 +266,8 @@ export const RECIPE: BizRecipe = {
     {
      "id": "f2",
      "pose": "walk",
-     "at": "door:0.45,0,0",
-     "to": "foot:0.45,0,0",
+     "at": "door:0.12,0,0.05",
+     "to": "foot:0.12,0,0.05",
      "then": [
       {
        "at": "offered",
@@ -341,7 +352,7 @@ export const RECIPE: BizRecipe = {
    "cam": {
     "preset": "pushIn",
     "target": "ceo",
-    "dist": 2.6,
+    "dist": 3,
     "h": 0.6,
     "az": 10,
     "face": 0.4

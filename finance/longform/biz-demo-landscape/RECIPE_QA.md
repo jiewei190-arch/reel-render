@@ -24,8 +24,19 @@ Composition: `BizDemoLandscapeRecipe` in `src/index.biz.ts` (1920x1080, 30 fps, 
 | every landed text board / card fully inside the frame (1.5 % margin) | PASS | all inside |
 | no text board or card in the lower-third caption band | PASS | none |
 | length 8-12 min | warn | 0.59 min |
+| framing R1: no board, card or prop over a head (head box incl. antenna/hair/hat) | **FAIL** | 1 clip(s) (see Framing QA) |
+| framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | **FAIL** | 1 (see Framing QA) |
+| framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
+| framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
 
 Pacing: 41 visual-change marks, longest gap 3.92 s, mean shot 2.54 s, 11 beat marks.
+
+## Framing QA (screen space, 1054 frames, 0.04 s): 1 clip(s), 1 fail(s)
+
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 1, R2 subject/edge 1, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0.
+
+- CLIP S07 card decision S07.dev0 'decision' covers ceo's head on screen (head box incl. hair) at 15.63 s (card x 80-1840, y 108-416; head x 811-1057, y 338-577): devices sit at fixed layout spots: frame the executive away from that spot (cam.face / cam.az), or move the device (pos / y)
+- FAIL S06 subject ceo (camera target) is cut by the frame (worst at 14.87 s): its head box (incl. antennae/hair) touches the top edge; head centre x 939 of 1920. Fix: lower the framing (cam.face +0.08), or pull the camera back (cam.dist +0.3)
 
 ## biz3d landscape notes
 

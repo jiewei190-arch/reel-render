@@ -18,7 +18,7 @@ export type BizLayout = {
   cap: { centre: number; band: number; side: number; fs: number; from: number };
   /** cards, boards and devices stay inside this box; top moves down below the hook while it shows */
   safe: { top: number; topHook: number; bottom: number; x0: number; x1: number };
-  board: { w: number; h: number; margin: number; titleFs: number; valueFs: number };
+  board: { w: number; h: number; margin: number; titleFs: number; valueFs: number; giant: { w: number; h: number; titleFs: number; valueFs: number } };
   label: { fs: number };
   company: { w: number; h: number; nameFs: number; yearFs: number };
   decision: { y: number; fs: number; subFs: number; bar: number };
@@ -33,7 +33,7 @@ export const LAYOUTS: Record<BizFormatId, BizLayout> = {
     hook: { top: 236, fs: 98, maxW: 980, side: 50 },
     cap: { centre: 1344, band: 105, side: 170, fs: 82, from: 1.0 },
     safe: { top: 250, topHook: 560, bottom: 1190, x0: 50, x1: 1030 },
-    board: { w: 420, h: 250, margin: 60, titleFs: 38, valueFs: 108 },
+    board: { w: 420, h: 250, margin: 60, titleFs: 38, valueFs: 108, giant: { w: 920, h: 430, titleFs: 56, valueFs: 220 } },
     label: { fs: 52 },
     company: { w: 760, h: 300, nameFs: 92, yearFs: 44 },
     decision: { y: 760, fs: 150, subFs: 64, bar: 150 },
@@ -47,7 +47,7 @@ export const LAYOUTS: Record<BizFormatId, BizLayout> = {
     hook: { top: LF.HOOK_TOP, fs: LF.HOOK_SIZE, maxW: 1600, side: 160 },
     cap: { centre: LF.CAP_Y, band: LF.CAP_HALF, side: LF.CAP_SIDE, fs: 60, from: 1.0 },
     safe: { top: 60, topHook: 300, bottom: LF.CAP_Y - LF.CAP_HALF - 16, x0: 80, x1: 1840 },
-    board: { w: 440, h: 230, margin: 110, titleFs: 36, valueFs: 96 },
+    board: { w: 440, h: 230, margin: 110, titleFs: 36, valueFs: 96, giant: { w: 1100, h: 400, titleFs: 52, valueFs: 190 } },
     label: { fs: 46 },
     company: { w: 780, h: 260, nameFs: 84, yearFs: 42 },
     decision: { y: 262, fs: 140, subFs: 58, bar: 100 },

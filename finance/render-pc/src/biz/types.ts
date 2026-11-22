@@ -4,6 +4,7 @@
 import type { V3 } from "../blocky/motion";
 import type { At, Place } from "../fin/recipe/types";
 import type { ExecLook, ExecPose } from "./exec";
+import type { BizHeroKind } from "./hero";
 import type { BizSetId } from "./sets";
 
 export type { At, Place };
@@ -48,7 +49,7 @@ export type ExecSpec = {
   talk?: boolean;
 };
 
-export type BizKit = "tower" | "boxes" | "cash" | "disc" | "envelope" | "block";
+export type BizKit = "tower" | "boxes" | "cash" | "disc" | "envelope" | "block" | BizHeroKind;
 export type BizMotion = "turntable" | "bob" | "popIn" | "dropIn";
 export type BizProp = {
   id: string;
@@ -56,12 +57,20 @@ export type BizProp = {
   at: Place;
   yaw?: number;
   s?: number;
+  /** the same as `s` (hero props use "scale"); 1 = hero scale, 0.35 = about life size */
+  scale?: number;
   color?: string;
   /** block: the size; tower: [width, height, depth]; boxes: [columns, rows, layers] */
   size?: V3;
   motion?: BizMotion;
   hit?: At;
+  /** degrees per second about the vertical axis (turntable speed; on a hero prop with no motion it turns slowly) */
   spin?: number;
+  /** hero props: the short generic text printed on the product (<= 14 characters, <= 2 words, never a real brand);
+   *  envelope: the addressee line; letter: the headline */
+  label?: string;
+  /** letter / envelope: the body lines (real text, up to 7; a generic letter when left out) */
+  lines?: string[];
 };
 
 export type BizAction =
@@ -83,7 +92,9 @@ export type BizDevice =
   /** what it's worth today: two bars, the small one first, then the big one grows and the multiple pops */
   | { do: "worth"; at: At; until?: At; a: { label: string; value: number; text?: string }; b: { label: string; value: number; text?: string }; multiple?: boolean }
   /** a number board (like tech3d's) */
-  | { do: "board"; title: string; at: At; until?: At; value?: string; count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string }; pos?: "left" | "right" | "top"; tone?: Tone }
+  | { do: "board"; title: string; at: At; until?: At; value?: string; count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string }; pos?: "left" | "right" | "top"; tone?: Tone;
+      /** "giant": the stake board, centred and most of the frame wide (a frame-0 opener: "at": 0 shows it fully on) */
+      size?: "giant" }
   /** a rubber stamp (BANKRUPT, SOLD, NO) */
   | { do: "stamp"; text: string; at: At; until?: At; tone?: Tone; y?: number };
 export type CompanyIcon = "film" | "mail" | "store" | "tower" | "rocket" | "cart" | "chip" | "phone" | "camera" | "bank";

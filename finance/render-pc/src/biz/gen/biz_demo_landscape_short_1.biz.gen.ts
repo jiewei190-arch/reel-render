@@ -71,13 +71,13 @@ export const RECIPE: BizRecipe = {
   {
    "at": 0,
    "set": "boardroom",
-   "note": "fresh hook card (tools/clip_short.mjs, biz3d adapter): \"THE $50 MILLION OFFER\", cuts away at 1.0 s",
+   "note": "fresh hook card (tools/clip_short.mjs, biz3d adapter): \"THE $50 MILLION OFFER\", opens on the giant stake board, cuts away at 1.0 s",
    "cam": {
     "preset": "hookZoom",
     "target": "ceo",
-    "dist": 2.3,
+    "dist": 3.4,
     "h": 0.35,
-    "face": 0.74
+    "face": 0.84
    },
    "actors": [
     {
@@ -98,6 +98,17 @@ export const RECIPE: BizRecipe = {
      "fx": "shake",
      "at": 0.45,
      "gain": 0.8
+    }
+   ],
+   "devices": [
+    {
+     "do": "board",
+     "size": "giant",
+     "title": "the stake",
+     "value": "$50M",
+     "at": 0,
+     "until": 1,
+     "tone": "red"
     }
    ]
   },
@@ -161,8 +172,8 @@ export const RECIPE: BizRecipe = {
     {
      "id": "f2",
      "pose": "walk",
-     "at": "door:0.45,0,0",
-     "to": "foot:0.45,0,0",
+     "at": "door:0.12,0,0.05",
+     "to": "foot:0.12,0,0.05",
      "then": [
       {
        "at": "2:offered",
@@ -246,9 +257,10 @@ export const RECIPE: BizRecipe = {
    "cam": {
     "preset": "pushIn",
     "target": "ceo",
-    "dist": 2.6,
+    "dist": 2.99,
     "h": 0.6,
-    "az": 10
+    "az": 10,
+    "face": 0.4
    },
    "actors": [
     {

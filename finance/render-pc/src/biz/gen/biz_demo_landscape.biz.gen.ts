@@ -264,8 +264,8 @@ export const RECIPE: BizRecipe = {
     {
      "id": "f2",
      "pose": "walk",
-     "at": "door:0.45,0,0",
-     "to": "foot:0.45,0,0",
+     "at": "door:0.12,0,0.05",
+     "to": "foot:0.12,0,0.05",
      "then": [
       {
        "at": "offered",

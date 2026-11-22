@@ -17,6 +17,7 @@ import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
 import { runFraming } from "./framing_kits.mjs";
+import { frame0Opener } from "./frame0_hero.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -170,9 +171,24 @@ export const main = async (argv) => {
   const hasExec0 = C.execsAt(0).length > 0;
   // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
   // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
-  const KF = runFraming("biz3d", C, m, recipe);
+  // the frame-0 opener (tools/frame0_hero.mjs): a hero prop close-up or a giant stake board; never a faceless back
+  const shot0 = C.shotAt(0);
+  const tg0 = typeof shot0.spec.cam.target === "string" ? shot0.spec.cam.target.split(".")[0].split(":")[0] : "";
+  const OP = frame0Opener({
+    W: L.W, H: L.H, cam: cam0, shot: shot0.id, target: tg0, kit: "biz3d", heroKinds: m.BIZ_HERO_KINDS,
+    heroes: shot0.props.filter((p) => m.isHero(p.spec.kit) && 0 >= p.a && 0 < p.b && p.show(0) >= 0.5).map((p) => ({ id: p.key, kind: p.spec.kit, box: m.heroBox(p.spec.kit, C.placeOf(p, 0)) })),
+    figures: C.execsAt(0).map((st) => ({ id: st.id, what: "executive", p: [st.x, st.y, st.z], yaw: st.yaw, box: { c: [st.x, st.y + (st.seated ? 0.95 : 0.9) * st.s, st.z], h: [0.3 * st.s, (st.seated ? 0.62 : 0.9) * st.s, 0.2 * st.s] } })),
+    cards: [
+      ...C.devicesAt(0).filter((d) => d.u > 0 && ["board", "counter", "worth", "stamp"].includes(d.kind)).map((d) => ({ name: d.spec.title ?? d.spec.text ?? d.kind, text: d.kind === "stamp" ? d.spec.text : d.kind === "worth" ? `${d.spec.a?.text ?? ""} ${d.value ?? ""}` : d.value ?? "", w: d.w, h: d.h, x: d.x, y: d.y, u: d.u, t0: d.tau !== undefined ? -d.tau : 0 })),
+      ...C.labelsAt(0).filter((l) => l.u > 0 || l.line > 0).map((l) => ({ name: l.text, text: l.text, w: l.w, h: l.h, x: l.x, y: l.y, u: l.u, t0: 0 })),
+    ],
+    example: `{ "id": "can", "kit": "can", "label": "COLA", "color": "#D7262E", "at": "tableTop:0,0,1.2", "spin": 12 }`,
+    giantExample: `"devices": [{ "do": "board", "size": "giant", "title": "the price", "value": "$50M", "at": 0, "tone": "red" }]`,
+  });
+  const KF = runFraming("biz3d", C, m, recipe, false, 1, OP.ok ? { ok: true, why: OP.why } : null);
   const gate = [
-    ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
+    ["frame 0 is close: a subject covers >= 50 % of the frame height (or the hero-prop / giant-board opener below)", best.k >= 0.5 || OP.ok, `${best.name} ${(best.k * 100).toFixed(0)} %${OP.ok ? `; opener: ${OP.why}` : ""}`, true],
+    ...OP.rows,
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *accent* word", C.hookUntil > 0 && hookWords <= 5 && hookLines.length <= 2 && hookW <= L.hook.maxW && accent.length === 1, `"${hookText}" (${hookWords} words, ${hookLines.length} line(s), widest ~${hookW.toFixed(0)} px of ${L.hook.maxW}, accent: ${accent.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
     ["the dollar stake / a number on screen by 0.5 s", stakeAt !== null, stakeAt === null ? "none by 0.5 s" : `at ${stakeAt.toFixed(2)} s`, true],
     ["first spoken word by 0.2 s", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
@@ -202,6 +218,7 @@ export const main = async (argv) => {
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no executive's body or head enters a set blocker, a kit prop or another executive; nobody below the floor."]), "",
     ...KF.fr.md,
+    ...OP.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -209,6 +226,7 @@ export const main = async (argv) => {
   wf(join(dir, "RECIPE_QA.md"), rep.join("\n"));
   console.log(`clip QA: ${hits.size} clip(s)`);
   for (const l of qaLines.slice(0, 40)) console.log("  " + l);
+  for (const l of OP.lines) console.log("  " + l);
   for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
   if (!check) console.log(`report: ${join(dir, "RECIPE_QA.md")}`);
   return hits.size || hardFail ? 1 : 0;

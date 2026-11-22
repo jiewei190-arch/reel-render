@@ -211,13 +211,20 @@ const Worth: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
     </div>
   );
 };
+/** the board's title and value font sizes: the giant stake board uses its own (the value shrinks to fit the width) */
+export const boardFonts = (L: BizLayout, sp: { size?: "giant" }, value: string) => {
+  if (sp.size !== "giant") return { title: L.board.titleFs, value: L.board.valueFs };
+  const g = L.board.giant;
+  return { title: g.titleFs, value: Math.min(g.valueFs, Math.floor((g.w - 70) / Math.max(1, value.length * 0.64))) };
+};
 const Board: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t }) => {
   const sp = d.spec as Extract<BizDevice, { do: "board" }>;
   const col = d.tone === "ink" ? BP.slate : toneColor(d.tone);
+  const fs = boardFonts(L, sp, d.value ?? "");
   return (
-    <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${0.8 * Math.sin(t * 2.4)}deg)`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 28, overflow: "hidden", boxShadow: SHADOW, display: "flex", flexDirection: "column" }}>
-      <div style={{ background: d.tone === "ink" ? col : toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.board.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{sp.title.toUpperCase()}</div>
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: L.board.valueFs, color: BP.ink, letterSpacing: -2, whiteSpace: "nowrap" }}>{d.value}</div>
+    <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${(sp.size === "giant" ? 0.4 : 0.8) * Math.sin(t * 2.4)}deg)`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 28, overflow: "hidden", boxShadow: SHADOW, display: "flex", flexDirection: "column" }}>
+      <div style={{ background: d.tone === "ink" ? col : toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: fs.title, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{sp.title.toUpperCase()}</div>
+      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: fs.value, color: BP.ink, letterSpacing: -2, whiteSpace: "nowrap" }}>{d.value}</div>
     </div>
   );
 };

@@ -436,7 +436,10 @@ export const framingQA = (o) => {
   if (!LS && o.frame0) {
     const f0 = o.frame0;
     if (f0.hookPx !== undefined && f0.hookPx < f0.hookMinPx) out.r5.push(`FAIL frame 0 hook text is ${f0.hookPx.toFixed(0)} px (needs the ${f0.hookMinPx} px hook size${f0.hookLabel ? `, ${f0.hookLabel}` : ""}): shorten the hook so it fits at full size`);
-    const sc = o.sample0 ? o.sample0() : o.sample(0);
+    // f0.alt (biz3d / cyber3d only, opt-in): the frame-0 subject is a HERO PROP close-up or a giant stake board, so the
+    // face part does not apply (their casts are faceless). Kits that do not pass `alt` are checked exactly as before.
+    const sc = f0.alt?.ok ? null : o.sample0 ? o.sample0() : o.sample(0);
+    if (f0.alt?.ok) out.alt0 = f0.alt.why;
     const need = RULES.closeFace * H;
     let best = null;
     if (sc) for (const s of sc.subjects) {
@@ -449,7 +452,8 @@ export const framingQA = (o) => {
       const hpx = Math.max(0, Math.min(r.y1, v.top + v.h) - Math.max(r.y0, v.top)) * (fx >= 0.6 ? 1 : 0);
       if (!best || hpx > best.hpx) best = { id: a.id, hpx, why: s.why, need: need * (v.h / H), view: v };
     }
-    if (!best) out.r5.push(`FAIL frame 0 has no subject face: the frame-0 shot must aim at a character (cam.target "<actor>.face") in a close shot (head >= ${(RULES.closeFace * 100).toFixed(0)} % of the frame height, ${need.toFixed(0)} px)`);
+    if (!best && f0.alt?.ok) { /* the hero-prop / stake-board opener stands in for the face (checked by the kit gate) */ }
+    else if (!best) out.r5.push(`FAIL frame 0 has no subject face: the frame-0 shot must aim at a character (cam.target "<actor>.face") in a close shot (head >= ${(RULES.closeFace * 100).toFixed(0)} % of the frame height, ${need.toFixed(0)} px)`);
     else if (best.hpx < best.need) out.r5.push(`FAIL frame 0 subject ${best.id}'s face is ${best.hpx.toFixed(0)} px tall (${((best.hpx / H) * 100).toFixed(0)} % of the frame; a close shot needs ${best.need.toFixed(0)} px): aim the frame-0 camera at "${best.id}.face" and move it in (cam.dist x${Math.max(0.3, best.hpx / best.need).toFixed(2)}), e.g. hookZoom with dist 1.7`);
     out.face0 = best;
   }
@@ -485,6 +489,6 @@ export const kitFraming = ({ C, W = 1080, H = 1920, landscape = false, times, sa
     ["framing R3: every landed board / card inside the frame (3 % margin)", fq.r3.size === 0, fq.r3.size ? `${fq.r3.size} (see Framing QA)` : "all inside", true],
     [`framing R4: text >= 4.5:1 on its fill; featured main lines >= ${RULES.textPx} px (font size)`, fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
   ];
-  if (!landscape) rows.push(["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(RULES.closeFace * H).toFixed(0)})${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.r5.join("; ") || "ok", true]);
+  if (!landscape) rows.push(["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(RULES.closeFace * H).toFixed(0)})${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.alt0 ? `face rule replaced by the opener: ${fq.alt0}${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.r5.join("; ") || "ok", true]);
   return { fq, fr, rows, failed: fq.lines.length > 0, console: `framing QA: ${fq.clips.length} clip(s), ${fq.fails.length} fail(s) over ${fq.frames} frames in ${(fq.ms / 1000).toFixed(2)} s (${fr.summary})` };
 };

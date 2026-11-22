@@ -132,7 +132,7 @@ export const bizScene = (C, m, recipe) => {
       case "decision": return [[sp.text ?? "THE DECISION", 150, white, TT.red], ...(sp.sub ? [[sp.sub, 64, ink, white]] : [])];
       case "counter": return [[sp.title, 44, white, tt(d.tone)], [d.value, 150, white, "#0A0E1A"]];
       case "worth": return [["WHAT IT'S WORTH TODAY", 44, ink, white], [sp.a?.label, 40, slate, white], [d.value ?? "", 96, TT.red, white]];
-      case "board": return [[sp.title, 38, white, d.tone === "ink" ? slate : tt(d.tone)], [d.value ?? sp.value, 108, ink, white]];
+      case "board": { const fs = m.boardFonts ? m.boardFonts(L, sp, d.value ?? sp.value ?? "") : { title: 38, value: 108 }; return [[sp.title, fs.title, white, d.tone === "ink" ? slate : tt(d.tone)], [d.value ?? sp.value, fs.value, ink, white]]; }
       case "stamp": return [[sp.text, 127.5, tt(d.tone ?? "red"), white]];
       default: return [[sp.text ?? d.kind, 44, ink, white]];
     }
@@ -210,8 +210,9 @@ const SCENES = { tech3d: techScene, law3d: lawScene, biz3d: bizScene, cyber3d: c
 /** run the framing rules for a kit recipe: every output frame (Shorts) or every `step`-th (long-form). Long-form keeps
  *  R1-R4 (R5 is the Shorts frame-0 rule); the 2D card sizes there come from the landscape layout, so only their
  *  placement and colours are checked, not their font size. */
-export const runFraming = (kit, C, m, recipe, landscape = false, step = 1) => {
+export const runFraming = (kit, C, m, recipe, landscape = false, step = 1, frame0Alt = null) => {
   const sc0 = SCENES[kit](C, m, recipe);
+  if (frame0Alt) sc0.frame0 = { ...sc0.frame0, alt: frame0Alt };
   // a whip-in swings the frame across the set on purpose: its first 0.35 s is motion, not framing
   const whip = (t) => { const s = C.shotAt(t); return (s.spec.in === "whip" || s.spec.cam?.preset === "whip") && t < s.a + 0.35; };
   const sc = { ...sc0, sample: (t) => (whip(t) ? null : sc0.sample(t)) };
