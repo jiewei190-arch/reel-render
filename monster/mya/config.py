@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import json
 import os
 from dataclasses import dataclass
@@ -64,9 +65,15 @@ class Config:
         if len(keys) != len(set(keys)):
             raise ConfigError("config: channel keys must be unique")
         for p in self.profiles.values():
-            for f in ("key", "voice", "theme", "scene_types", "short_seconds", "long_seconds", "publish_time_local"):
+            for f in ("key", "voice", "theme", "scene_types", "short_seconds", "long_seconds", "schedule"):
                 if f not in p.raw:
                     raise ConfigError(f"config: channel {p.raw.get('key')} is missing '{f}'")
+            days = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}
+            for sl in p.raw["schedule"].get("slots", []):
+                if sl.get("format") not in ("short", "long") or not re.fullmatch(r"\d{2}:\d{2}", sl.get("time", "")):
+                    raise ConfigError(f"config: {p.key} has an invalid schedule slot {sl}")
+                if set(sl.get("weekdays", [])) - days:
+                    raise ConfigError(f"config: {p.key} slot weekdays must be among {sorted(days)}")
             for fmt in ("short", "long"):
                 lo, hi = self.formats[fmt]["min_seconds"], self.formats[fmt]["max_seconds"]
                 t = p.raw[f"{fmt}_seconds"]

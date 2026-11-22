@@ -53,7 +53,7 @@
   },
   "topic": {
    "type": "string",
-   "minLength": 10
+   "minLength": 3
   },
   "editorial_status": {
    "enum": [

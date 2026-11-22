@@ -34,7 +34,7 @@ def page(job_id: str) -> str:
     parts = [f"<!doctype html><meta charset=utf-8><title>{esc(j['topic'])}</title><style>{CSS}</style><main>",
              f"<h1>{esc(p.working_name)}: {esc(script.get('title') or j['topic'])}</h1>",
              f"<p><span class=pill>{esc(j['format_kind'])}</span><span class=pill>publish {esc(j['local_publish_date'])} "
-             f"{esc(p.publish_time_local)} {esc(cfg().runtime['timezone'])}</span><span class=pill>state: {esc(j['state'])}</span>"
+             f"{esc((j.get('publish_at_utc') or ''))} UTC</span><span class=pill>state: {esc(j['state'])}</span>"
              + (f"<span class='pill bad'>{esc(j['error'])}</span>" if j.get("error") else "") + "</p>"]
     if video:
         parts.append(f"<video controls src='{video}'></video>")

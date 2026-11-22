@@ -1,11 +1,11 @@
 {
  "schema_version": "1.1",
- "note": "Our five channels (Nov 2026). The build pack's sample profiles are kept in channel_profiles.pack_defaults.json. Every field is editable; bump profile_version when a change should invalidate cached work for that channel. Block Money and Justin clips keep their own 3D engines and ElevenLabs voices (owner decision, Nov 22 2026): the automator schedules and tracks their slots and hands production off to reelbot; it never voices or renders them itself.",
+ "note": "Our five channels (Nov 2026). Every channel is produced by reelbot (Claude writing, the 3D engines, ElevenLabs voices); the automator schedules, tracks, checks and (when enabled) releases. The Monster local 2D pipeline (Ollama + Kokoro) remains available per channel by setting producer.kind to 'local'. The build pack's sample profiles are in channel_profiles.pack_defaults.json.",
  "production_target": {
-  "channels": 5,
-  "uploads_per_channel_per_day": 1,
-  "total_daily_uploads": 5,
-  "formats_are_alternatives_not_additive": true
+  "note": "Owner's schedule (Nov 22 2026). Each channel's `schedule.slots` defines its daily uploads; a slot with `weekdays` only runs on those days. The daily total is checked against the sum of the slots.",
+  "block_money": "2 Shorts/day",
+  "justin_clips": "2 Shorts/day",
+  "law/biz/cyber": "1 Short/day + 2 long videos/week (Tue, Fri)"
  },
  "runtime": {
   "timezone": "America/New_York",
@@ -117,9 +117,7 @@
    ],
    "pilot": "Simple interest versus compound interest",
    "default_format": "short",
-   "daily_upload_target": 1,
    "channel_id": null,
-   "publish_time_local": "12:00",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -133,6 +131,18 @@
     "name": "reelbot (Block Money 3D engine + ElevenLabs voices)",
     "command": "python -m reelbot make \"{topic}\" --channel blockmoney --auto",
     "workdir": "bot"
+   },
+   "schedule": {
+    "slots": [
+     {
+      "time": "12:00",
+      "format": "short"
+     },
+     {
+      "time": "19:00",
+      "format": "short"
+     }
+    ]
    }
   },
   {
@@ -189,9 +199,7 @@
    ],
    "pilot": "The Boston Molasses Disaster",
    "default_format": "short",
-   "daily_upload_target": 1,
    "channel_id": null,
-   "publish_time_local": "19:00",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -205,6 +213,18 @@
     "name": "Justin clips Toon 3D engine + ElevenLabs voices (Liam Shorts / Russ long)",
     "command": "python -m reelbot make \"{topic}\" --channel justin --auto  (script + ElevenLabs voice; render in the Justin engine)",
     "workdir": "bot"
+   },
+   "schedule": {
+    "slots": [
+     {
+      "time": "12:00",
+      "format": "short"
+     },
+     {
+      "time": "19:00",
+      "format": "short"
+     }
+    ]
    }
   },
   {
@@ -262,9 +282,7 @@
    ],
    "pilot": "Pearson v. Chung",
    "default_format": "short",
-   "daily_upload_target": 1,
    "channel_id": null,
-   "publish_time_local": "18:00",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -276,8 +294,27 @@
    },
    "reference_images": true,
    "producer": {
-    "kind": "local",
-    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+    "kind": "external",
+    "name": "reelbot (law 3D kit + ElevenLabs voice)",
+    "command": "python -m reelbot make \"{topic}\" --channel law --auto{long_flag}",
+    "workdir": "bot",
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+   },
+   "schedule": {
+    "slots": [
+     {
+      "time": "17:00",
+      "format": "short"
+     },
+     {
+      "time": "15:00",
+      "format": "long",
+      "weekdays": [
+       "Tue",
+       "Fri"
+      ]
+     }
+    ]
    }
   },
   {
@@ -336,9 +373,7 @@
    ],
    "pilot": "Blockbuster LLC",
    "default_format": "short",
-   "daily_upload_target": 1,
    "channel_id": null,
-   "publish_time_local": "17:00",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -348,8 +383,27 @@
    "pronunciations": {},
    "reference_images": true,
    "producer": {
-    "kind": "local",
-    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+    "kind": "external",
+    "name": "reelbot (biz 3D kit + ElevenLabs voice)",
+    "command": "python -m reelbot make \"{topic}\" --channel biz --auto{long_flag}",
+    "workdir": "bot",
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+   },
+   "schedule": {
+    "slots": [
+     {
+      "time": "17:00",
+      "format": "short"
+     },
+     {
+      "time": "15:00",
+      "format": "long",
+      "weekdays": [
+       "Tue",
+       "Fri"
+      ]
+     }
+    ]
    }
   },
   {
@@ -406,9 +460,7 @@
    ],
    "pilot": "Business email compromise",
    "default_format": "short",
-   "daily_upload_target": 1,
    "channel_id": null,
-   "publish_time_local": "20:00",
    "made_for_kids": false,
    "release_policy": {
     "enabled": false,
@@ -418,8 +470,27 @@
    "pronunciations": {},
    "reference_images": false,
    "producer": {
-    "kind": "local",
-    "name": "Monster local pipeline (Kokoro + Remotion 2D)"
+    "kind": "external",
+    "name": "reelbot (cyber 3D kit + ElevenLabs voice)",
+    "command": "python -m reelbot make \"{topic}\" --channel cyber --auto{long_flag}",
+    "workdir": "bot",
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+   },
+   "schedule": {
+    "slots": [
+     {
+      "time": "17:00",
+      "format": "short"
+     },
+     {
+      "time": "15:00",
+      "format": "long",
+      "weekdays": [
+       "Tue",
+       "Fri"
+      ]
+     }
+    ]
    }
   }
  ]

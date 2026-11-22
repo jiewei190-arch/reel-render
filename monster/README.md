@@ -66,6 +66,21 @@ Before uploading, the adapter verifies that the authorized channel's real id mat
 have accepted the file sets `upload_unknown`; the next attempt reconciles with the resumable session instead of
 uploading again.
 
+## Schedule (owner, Nov 22 2026)
+| channel | Shorts | long videos (8-12 min) |
+|---|---|---|
+| Block Money | 2/day at 12:00 and 19:00 ET | none |
+| Justin clips | 2/day at 12:00 and 19:00 ET | none |
+| Law, Business, Scams & Hacks | 1/day at 17:00 ET | 2/week: Tue and Fri at 15:00 ET |
+
+That's 7 uploads a day, 10 on Tuesdays and Fridays. Each channel's `schedule.slots` in `config/channel_profiles.json`
+defines this. A slot with `weekdays` runs only on those days. `daily` creates exactly one job per slot (the key is
+channel + date + slot number), and `--format law=long` or `--format law#0=long` switches a slot's format without
+adding an upload. Every channel is produced by reelbot (3D engines, ElevenLabs voices). The automator hands each job
+off with the exact command (with `--long` for long slots), then tracks and checks it. Topic backlog:
+`config/backlog.json`; it needs about 7-10 topics a day across channels, so refill it with
+`python -m reelbot bend/ideas --channel X` or the owner's own lists.
+
 ## Channels
 `config/channel_profiles.json`: Block Money, Justin clips, Law, Business, Scams & Hacks. Each has its own audience,
 promise, voice, theme, scene family, disclaimers and publish time. The build pack's sample profiles are in

@@ -1,5 +1,5 @@
-"""Daily scheduler: fill each channel's one slot for a local date exactly once, then produce the jobs with failure
-isolation. A single scheduler lock prevents overlapping runs; the slots table's primary key (channel, local date)
+"""Daily scheduler: fill each channel's scheduled slots for a local date exactly once, then produce the jobs with failure
+isolation. A single scheduler lock prevents overlapping runs; the slots table's primary key (channel, local date, slot number)
 makes duplicate slots impossible even if two schedulers start at the same instant.
 """
 from __future__ import annotations
@@ -32,42 +32,55 @@ def next_topic(c, channel_key: str) -> str:
     raise RuntimeError(f"backlog for {channel_key} is empty: add topics to config/backlog.json")
 
 
+WEEKDAY = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+
+def slots_for(profile, local_date: str) -> list[tuple[int, dict]]:
+    """The channel's schedule slots that apply on this date: [(slot_no, slot)]."""
+    wd = WEEKDAY[date.fromisoformat(local_date).weekday()]
+    return [(i, s) for i, s in enumerate(profile.raw["schedule"]["slots"]) if not s.get("weekdays") or wd in s["weekdays"]]
+
+
+def expected_total(local_date: str) -> int:
+    return sum(len(slots_for(p, local_date)) for p in cfg().profiles.values())
+
+
 def fill_slots(local_date: str, fmt_overrides: dict | None = None) -> list[str]:
-    """Create (or reuse) one job per channel for the date. Returns job ids. Safe to call any number of times."""
+    """Create (or reuse) one job per scheduled slot for the date. Returns job ids. Safe to call any number of times,
+    from any number of processes: (channel, date, slot_no) is the primary key. fmt_overrides: {"law": "long"} or
+    {"law#1": "short"} switches a slot's format without adding an upload."""
     c = db.connect()
     ids = []
     for key, p in cfg().profiles.items():
-        fmt = (fmt_overrides or {}).get(key, p.raw.get("default_format", "short"))
-        with db.tx(c):
-            row = c.execute("SELECT * FROM slots WHERE channel_key=? AND local_publish_date=?", (key, local_date)).fetchone()
-            if row:
-                if row["format_kind"] != fmt:
-                    # switching format replaces the slot's job instead of adding a sixth output for the day
-                    old = row["job_id"]
-                    st = c.execute("SELECT state FROM jobs WHERE job_id=?", (old,)).fetchone()["state"]
-                    if st in ("uploading", "upload_unknown", "scheduled", "published"):
-                        raise RuntimeError(f"{key} {local_date}: already {st}; can't switch format")
-                    topic = c.execute("SELECT topic FROM jobs WHERE job_id=?", (old,)).fetchone()["topic"]
-                    db.set_state(c, old, "cancelled", f"format switched to {fmt}")
-                    new = pipeline.create_job(c, key, local_date, fmt, topic)
-                    c.execute("UPDATE slots SET format_kind=?, job_id=? WHERE channel_key=? AND local_publish_date=?",
-                              (fmt, new, key, local_date))
-                    ids.append(new)
-                else:
-                    ids.append(row["job_id"])
-                continue
-            topic = next_topic(c, key)
-            jid = pipeline.create_job(c, key, local_date, fmt, topic)
-            try:
-                c.execute("INSERT INTO slots (channel_key, local_publish_date, format_kind, job_id, created_utc) VALUES (?,?,?,?,?)",
-                          (key, local_date, fmt, jid, now_utc()))
-            except sqlite3.IntegrityError:
-                raise  # cannot happen inside BEGIN IMMEDIATE; kept explicit
-            ids.append(jid)
+        for slot_no, sl in slots_for(p, local_date):
+            fmt = (fmt_overrides or {}).get(f"{key}#{slot_no}") or ((fmt_overrides or {}).get(key) if slot_no == 0 else None) or sl["format"]
+            with db.tx(c):
+                row = c.execute("SELECT * FROM slots WHERE channel_key=? AND local_publish_date=? AND slot_no=?",
+                                (key, local_date, slot_no)).fetchone()
+                if row:
+                    if row["format_kind"] != fmt:
+                        old = row["job_id"]
+                        st = c.execute("SELECT state FROM jobs WHERE job_id=?", (old,)).fetchone()["state"]
+                        if st in ("uploading", "upload_unknown", "scheduled", "published"):
+                            raise RuntimeError(f"{key} {local_date} slot {slot_no}: already {st}; can't switch format")
+                        topic = c.execute("SELECT topic FROM jobs WHERE job_id=?", (old,)).fetchone()["topic"]
+                        db.set_state(c, old, "cancelled", f"format switched to {fmt}")
+                        new = pipeline.create_job(c, key, local_date, fmt, topic, sl["time"])
+                        c.execute("UPDATE slots SET format_kind=?, job_id=? WHERE channel_key=? AND local_publish_date=? AND slot_no=?",
+                                  (fmt, new, key, local_date, slot_no))
+                        ids.append(new)
+                    else:
+                        ids.append(row["job_id"])
+                    continue
+                topic = next_topic(c, key)
+                jid = pipeline.create_job(c, key, local_date, fmt, topic, sl["time"])
+                c.execute("INSERT INTO slots (channel_key, local_publish_date, slot_no, format_kind, job_id, publish_time_local, "
+                          "created_utc) VALUES (?,?,?,?,?,?,?)", (key, local_date, slot_no, fmt, jid, sl["time"], now_utc()))
+                ids.append(jid)
     n = c.execute("SELECT COUNT(*) FROM slots WHERE local_publish_date=?", (local_date,)).fetchone()[0]
-    limit = cfg().data["production_target"]["total_daily_uploads"]
+    limit = expected_total(local_date)
     if n > limit:
-        raise RuntimeError(f"{n} slots for {local_date} exceeds the daily total of {limit}")
+        raise RuntimeError(f"{n} slots for {local_date} exceeds the schedule's {limit} uploads that day")
     return ids
 
 
@@ -128,7 +141,8 @@ def handoff(c, job_id: str, topic: str, prod: dict, log=print) -> str:
     """Channels with their own engine (Block Money, Justin clips: 3D + ElevenLabs) are scheduled and tracked here but
     produced by their own pipeline. The automator never voices or renders them, so no paid call is made from here."""
     from .util import write_json_atomic
-    cmd = prod["command"].replace("{topic}", topic.replace('"', "'"))
+    fmt = c.execute("SELECT format_kind FROM jobs WHERE job_id=?", (job_id,)).fetchone()[0]
+    cmd = prod["command"].replace("{topic}", topic.replace('"', "'")).replace("{long_flag}", " --long" if fmt == "long" else "")
     write_json_atomic(pipeline.job_dir(job_id) / "handoff.json",
                       {"producer": prod["name"], "command": cmd, "workdir": prod.get("workdir"), "utc": now_utc()})
     db.set_state(c, job_id, "external_production", f"produced by {prod['name']}: {cmd}")

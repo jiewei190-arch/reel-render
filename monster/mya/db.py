@@ -19,10 +19,11 @@ CREATE TABLE IF NOT EXISTS jobs (
   topic TEXT NOT NULL, state TEXT NOT NULL, fiction INTEGER DEFAULT 0, publish_at_utc TEXT, error TEXT,
   created_utc TEXT NOT NULL, updated_utc TEXT NOT NULL, remote_video_id TEXT
 );
--- One output per channel per local day; the format is a column, so switching Short <-> long never adds a sixth job.
+-- One row per scheduled upload: (channel, local day, slot number) from the channel's schedule. The format is a column,
+-- so switching a slot between Short and long replaces its job instead of adding an extra upload that day.
 CREATE TABLE IF NOT EXISTS slots (
-  channel_key TEXT NOT NULL, local_publish_date TEXT NOT NULL, format_kind TEXT NOT NULL, job_id TEXT NOT NULL,
-  created_utc TEXT NOT NULL, PRIMARY KEY (channel_key, local_publish_date)
+  channel_key TEXT NOT NULL, local_publish_date TEXT NOT NULL, slot_no INTEGER NOT NULL DEFAULT 0, format_kind TEXT NOT NULL,
+  job_id TEXT NOT NULL, publish_time_local TEXT, created_utc TEXT NOT NULL, PRIMARY KEY (channel_key, local_publish_date, slot_no)
 );
 CREATE TABLE IF NOT EXISTS stage_runs (
   job_id TEXT NOT NULL, stage TEXT NOT NULL, status TEXT NOT NULL, input_hash TEXT, outputs TEXT, attempts INTEGER DEFAULT 0,
@@ -61,7 +62,13 @@ def connect() -> sqlite3.Connection:
     c.row_factory = sqlite3.Row
     c.execute("PRAGMA journal_mode=WAL")
     c.execute("PRAGMA busy_timeout=30000")
+    cols = [r[1] for r in c.execute("PRAGMA table_info(slots)")]
+    if cols and "slot_no" not in cols:  # upgrade a one-slot-per-day database in place
+        c.executescript("ALTER TABLE slots RENAME TO slots_v1;")
     c.executescript(SCHEMA)
+    if cols and "slot_no" not in cols:
+        c.executescript("INSERT INTO slots (channel_key, local_publish_date, slot_no, format_kind, job_id, created_utc) "
+                        "SELECT channel_key, local_publish_date, 0, format_kind, job_id, created_utc FROM slots_v1; DROP TABLE slots_v1;")
     return c
 
 

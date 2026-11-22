@@ -59,14 +59,18 @@ def publish_at_utc(local_date: str, hhmm: str, tz: str) -> str:
     return local.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def create_job(c, channel_key: str, local_date: str, fmt: str, topic: str) -> str:
+def default_time(p, fmt: str) -> str:
+    return next((s["time"] for s in p.raw["schedule"]["slots"] if s["format"] == fmt), p.raw["schedule"]["slots"][0]["time"])
+
+
+def create_job(c, channel_key: str, local_date: str, fmt: str, topic: str, time_local: str | None = None) -> str:
     p = cfg().profile(channel_key)
     tz = cfg().runtime["timezone"]
     job_id = f"{local_date.replace('-', '')}-{channel_key}-{uuid.uuid4().hex[:6]}"
     c.execute("INSERT INTO jobs (job_id, channel_key, local_publish_date, format_kind, topic, state, fiction, publish_at_utc, "
               "created_utc, updated_utc) VALUES (?,?,?,?,?,?,?,?,?,?)",
               (job_id, channel_key, local_date, fmt, topic, "queued", int(p.raw.get("kind") == "fiction"),
-               publish_at_utc(local_date, p.publish_time_local, tz), now_utc(), now_utc()))
+               publish_at_utc(local_date, time_local or default_time(p, fmt), tz), now_utc(), now_utc()))
     db.event(c, job_id, "created", f"{channel_key} {fmt} '{topic}' for {local_date}")
     contract = {
         "schema_version": "1.1", "job_id": job_id, "channel_key": channel_key, "local_publish_date": local_date,

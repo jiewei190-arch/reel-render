@@ -13,6 +13,19 @@ from pathlib import Path
 import pytest
 
 
+
+
+def _local(*keys):
+    """Let these channels use the Monster local pipeline in a test (production hands them to reelbot)."""
+    from mya.config import cfg
+    for k in keys:
+        cfg().profiles[k].raw["producer"] = {"kind": "local"}
+
+
+def _job(c, jobs, channel):
+    return next(j for j in jobs if c.execute("SELECT channel_key FROM jobs WHERE job_id=?", (j,)).fetchone()[0] == channel)
+
+
 # ---------------------------------------------------------------- duration boundaries (acceptance 6)
 @pytest.mark.parametrize("secs,fmt,ok", [(19, "short", False), (20, "short", True), (60, "short", True), (61, "short", False),
                                         (179, "long", False), (180, "long", True), (480, "long", True), (481, "long", False),
@@ -63,11 +76,28 @@ def test_simultaneous_daily_starts_do_not_duplicate(home):
     [p.start() for p in ps]
     [p.join(60) for p in ps]
     results = [q.get(timeout=5) for _ in ps]
-    from mya import db
+    from mya import db, scheduler
     c = db.connect()
-    assert c.execute("SELECT COUNT(*) FROM slots WHERE local_publish_date='2026-11-25'").fetchone()[0] == 5
-    assert c.execute("SELECT COUNT(*) FROM jobs WHERE local_publish_date='2026-11-25'").fetchone()[0] == 5
-    assert all(isinstance(r, list) and sorted(r) == sorted(results[0]) for r in results)  # every run sees the same 5 jobs
+    n = scheduler.expected_total("2026-11-25")  # a Wednesday: 2+2 Shorts + 3x1 Short = 7
+    assert n == 7
+    assert c.execute("SELECT COUNT(*) FROM slots WHERE local_publish_date='2026-11-25'").fetchone()[0] == n
+    assert c.execute("SELECT COUNT(*) FROM jobs WHERE local_publish_date='2026-11-25'").fetchone()[0] == n
+    assert all(isinstance(r, list) and sorted(r) == sorted(results[0]) for r in results)  # every run sees the same jobs
+
+
+def test_schedule_long_days_and_two_short_channels(home):
+    from mya import db, scheduler
+    assert scheduler.expected_total("2026-11-27") == 10  # Friday: +1 long video for each of law, biz, cyber
+    jobs = scheduler.fill_slots("2026-11-27")
+    c = db.connect()
+    fmts = {}
+    for j in jobs:
+        ck, fk = c.execute("SELECT channel_key, format_kind FROM jobs WHERE job_id=?", (j,)).fetchone()
+        fmts.setdefault(ck, []).append(fk)
+    assert sorted(fmts["block_money"]) == ["short", "short"] and sorted(fmts["justin_clips"]) == ["short", "short"]
+    assert all(sorted(fmts[k]) == ["long", "short"] for k in ("law", "biz", "cyber"))
+    times = {r[0] for r in c.execute("SELECT publish_at_utc FROM jobs WHERE channel_key='block_money'")}
+    assert times == {"2026-11-27T17:00:00Z", "2026-11-28T00:00:00Z"}  # 12:00 and 19:00 EST
 
 
 def test_switching_format_never_adds_a_sixth(home):
@@ -75,11 +105,11 @@ def test_switching_format_never_adds_a_sixth(home):
     first = scheduler.fill_slots("2026-11-26")
     second = scheduler.fill_slots("2026-11-26", {"law": "long"})
     c = db.connect()
-    assert c.execute("SELECT COUNT(*) FROM slots WHERE local_publish_date='2026-11-26'").fetchone()[0] == 5
+    assert c.execute("SELECT COUNT(*) FROM slots WHERE local_publish_date='2026-11-26'").fetchone()[0] == 7
     live = c.execute("SELECT COUNT(*) FROM jobs WHERE local_publish_date='2026-11-26' AND state!='cancelled'").fetchone()[0]
-    assert live == 5
+    assert live == 7
     assert c.execute("SELECT format_kind FROM slots WHERE channel_key='law' AND local_publish_date='2026-11-26'").fetchone()[0] == "long"
-    assert len(set(first) & set(second)) == 4
+    assert len(set(first) & set(second)) == 6
 
 
 def test_scheduler_lock_blocks_overlap(home):
@@ -131,7 +161,8 @@ def test_resume_reuses_completed_stages_and_rebuilds_invalidated(home, monkeypat
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-11-28")[2]
+    _local("law")
+    jid = _job(db.connect(), scheduler.fill_slots("2026-11-28"), "law")
     assert pipeline.run_job(jid, log=lambda *a: None) == "ready_for_release"
     first = [s for j, s in calls]
     calls.clear()
@@ -148,26 +179,29 @@ def test_resume_reuses_completed_stages_and_rebuilds_invalidated(home, monkeypat
 
 def test_failed_asset_fetch_is_isolated(home, monkeypatch):
     from mya import db, scheduler
+    _local("law", "biz")
     jobs = scheduler.fill_slots("2026-11-29")
+    c = db.connect()
+    bad = _job(c, jobs, "law")
     calls = []
-    _fake_stages(monkeypatch, calls, fail_job=jobs[2])
+    _fake_stages(monkeypatch, calls, fail_job=bad)
     res = scheduler.daily("2026-11-29", log=lambda *a: None)
     states = res["results"]
-    assert states[jobs[2]] == "blocked"
-    ext = {j for j in jobs if j.split("-")[1].startswith(("block_money", "justin_clips"))}
-    assert all(states[j] == "external_production" for j in ext)  # 3D + ElevenLabs channels are handed off, not produced here
-    assert all(states[j] == "ready_for_release" for j in jobs if j != jobs[2] and j not in ext)
-    c = db.connect()
-    row = c.execute("SELECT * FROM stage_runs WHERE job_id=? AND stage='assets'", (jobs[2],)).fetchone()
+    assert states[bad] == "blocked"
+    local = {j for j in jobs if c.execute("SELECT channel_key FROM jobs WHERE job_id=?", (j,)).fetchone()[0] in ("law", "biz")}
+    assert all(states[j] == "external_production" for j in jobs if j not in local)  # reelbot channels are handed off
+    assert all(states[j] == "ready_for_release" for j in local if j != bad)
+    row = c.execute("SELECT * FROM stage_runs WHERE job_id=? AND stage='assets'", (bad,)).fetchone()
     assert row["status"] == "failed" and "asset fetch failed" in row["error"]
-    assert "asset fetch failed" in c.execute("SELECT error FROM jobs WHERE job_id=?", (jobs[2],)).fetchone()[0]
+    assert "asset fetch failed" in c.execute("SELECT error FROM jobs WHERE job_id=?", (bad,)).fetchone()[0]
 
 
 def test_expired_lease_is_reclaimed_live_lease_is_respected(home, monkeypatch):
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-11-30")[2]
+    _local("law")
+    jid = _job(db.connect(), scheduler.fill_slots("2026-11-30"), "law")
     c = db.connect()
     c.execute("INSERT INTO stage_runs (job_id, stage, status, lease_owner, lease_expires) VALUES (?,?,?,?,?)",
               (jid, "research", "running", "other:1", time.time() + 600))
@@ -181,7 +215,8 @@ def test_lease_of_dead_local_worker_is_reclaimed_immediately(home, monkeypatch):
     from mya import db, pipeline, scheduler
     calls = []
     _fake_stages(monkeypatch, calls)
-    jid = scheduler.fill_slots("2026-12-03")[2]
+    _local("law")
+    jid = _job(db.connect(), scheduler.fill_slots("2026-12-03"), "law")
     c = db.connect()
     dead = f"{socket.gethostname()}:999999:abc123"  # no such pid
     c.execute("INSERT INTO stage_runs (job_id, stage, status, lease_owner, lease_expires) VALUES (?,?,?,?,?)",
@@ -383,3 +418,28 @@ def test_dropping_a_qualifier_is_caught():
     src = ["Liebeck sought to settle with McDonald's for $20,000 to cover her medical expenses."]
     assert editorial.dropped_qualifiers("Liebeck settled with McDonald's for $20,000 to cover her medical expenses.", src)
     assert not editorial.dropped_qualifiers("Liebeck asked McDonald's for $20,000 to cover her medical bills.", src)
+
+
+def test_handoff_passes_long_flag(home):
+    from mya import db, scheduler
+    from mya.util import read_json
+    jobs = scheduler.fill_slots("2026-12-04")  # a Friday: law has a long slot
+    c = db.connect()
+    long_job = next(j for j in jobs if c.execute("SELECT channel_key, format_kind FROM jobs WHERE job_id=?", (j,)).fetchone()[:] == ("law", "long"))
+    scheduler.handoff(c, long_job, "Pearson v. Chung", scheduler.cfg().profile("law").raw["producer"], log=lambda *a: None)
+    cmd = read_json(scheduler.pipeline.job_dir(long_job) / "handoff.json")["command"]
+    assert "--channel law" in cmd and cmd.endswith("--long")
+
+
+def test_old_one_slot_database_is_upgraded(home):
+    import sqlite3
+    from mya import db
+    p = db.path()
+    p.parent.mkdir(parents=True, exist_ok=True)
+    old = sqlite3.connect(p)
+    old.execute("CREATE TABLE slots (channel_key TEXT NOT NULL, local_publish_date TEXT NOT NULL, format_kind TEXT NOT NULL, "
+                "job_id TEXT NOT NULL, created_utc TEXT NOT NULL, PRIMARY KEY (channel_key, local_publish_date))")
+    old.execute("INSERT INTO slots VALUES ('law','2026-11-20','short','j1','t')")
+    old.commit(); old.close()
+    c = db.connect()
+    assert c.execute("SELECT slot_no, job_id FROM slots").fetchall()[0][:] == (0, "j1")
