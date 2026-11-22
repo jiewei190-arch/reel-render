@@ -57,6 +57,10 @@ VISUAL_SCHEMA = {
     "properties": {"issues": {"type": "array", "items": ISSUE}, "first_frame_score": {"type": "number"}},
 }
 
+ACCURACY = (" ACCURACY: compare every number, name and claim shown on screen with the script. A board that contradicts "
+            "the narration (a different amount, 'AWARDED' when the voice says he got nothing), a counter caught "
+            "mid-count or stopping at the wrong value, or text cut off so it reads as something else, is a blocker.")
+
 EDITOR_BRIEF = (
     "You are a ruthless YouTube Shorts editor whose only goal is viewer retention. Watch this Short exactly as a "
     "stranger scrolling at speed would. Score 1-10: hook (frame 0 to 1 s: would they stop?), pacing (anything slow, "
@@ -67,8 +71,31 @@ EDITOR_BRIEF = (
     "camera, boards/text, timing or sound. Be specific; do not praise. "
     "Listen for TONE: if the narrator's emotion or a sound effect doesn't fit what is being said (an upbeat or joking "
     "delivery, or a comedic sound, on a sad/serious moment; flat delivery on the big payoff), that is a 'tone' issue, "
-    "severity major or blocker."
+    "severity major or blocker." + ACCURACY
 )
+
+
+LONG_BRIEF = (
+    "You are a YouTube editor for LONG-FORM videos (8-12 min, 16:9, chapters). The length is intended: never suggest "
+    "cutting it into a Short. Your goal is average view duration. Score 1-10: hook (the first 30 s: a cold open that "
+    "shows the most shocking moment and a clear promise of what the viewer will get), pacing (a visual change every "
+    "3-6 s, a re-hook every 60-90 s, no dead stretches), readability (every on-screen number/word readable on a phone "
+    "in time, nothing clipped), payoff (the promise is delivered and the ending lands), loop (= structure: chapters "
+    "clear, each with its own mini-cliffhanger), overall. Predict the % of viewers still watching at the 30-second "
+    "mark. Then list every problem with exact timestamps, a severity (blocker = wrong or would make people leave; "
+    "major = clearly hurts watch time; minor = polish) and a concrete fix in shots, camera, boards/text, timing or "
+    "sound. Be specific; do not praise." + ACCURACY
+)
+
+
+def _is_long(video: Path) -> bool:
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+                        "-of", "csv=p=0", str(video)], capture_output=True, text=True)
+    try:
+        w, h = (int(x) for x in r.stdout.strip().split(",")[:2])
+        return w > h or _duration(video) > 120
+    except ValueError:
+        return _duration(video) > 120
 
 
 def _frames(video: Path, times: list[float]) -> list[tuple[float, str]]:
@@ -100,7 +127,7 @@ def gemini_review(video: Path, script_lines: list[str]) -> dict:
         time.sleep(3)
         f = gemini.client().files.get(name=f.name)
     data = learn.current()
-    prompt = (EDITOR_BRIEF + "\n\nThe script (for accuracy):\n" + "\n".join(script_lines)
+    prompt = ((LONG_BRIEF if _is_long(video) else EDITOR_BRIEF) + "\n\nThe script (for accuracy):\n" + "\n".join(script_lines)
               + (f"\n\nWhat has held viewers on this channel so far:\n{data}" if data else ""))
     resp = gemini.client().models.generate_content(
         model=CFG.gemini_model, contents=[f, prompt],
@@ -114,12 +141,16 @@ def gemini_review(video: Path, script_lines: list[str]) -> dict:
 
 
 def claude_review(video: Path) -> dict:
-    dur = _duration(video)
-    times = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0] + [t for t in range(5, int(dur), 2)] + [max(0.0, dur - 0.3)]
+    dur, long = _duration(video), _is_long(video)
+    if long:  # ~90 stills across the whole video (an image cap per request), denser in the first 30 s
+        times = [0.0, 1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 16.0, 20.0, 25.0, 30.0] + [float(t) for t in range(36, int(dur), max(6, int(dur / 80)))]
+    else:
+        times = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0] + [t for t in range(5, int(dur), 2)] + [max(0.0, dur - 0.3)]
     frames = _frames(video, times)
     print(f"  editor (claude): checking {len(frames)} stills...")
     content: list = [{"type": "text", "text":
-        "Stills from a 1080x1920 YouTube Short, labelled with their time. Find visual problems that cost retention: "
+        ("Stills from a 1920x1080 long-form YouTube video (the length is intended)" if long else
+         "Stills from a 1080x1920 YouTube Short") + ", labelled with their time. Find visual problems that cost retention: "
         "a weak or unclear first frame, text or boards covering faces, captions overlapping boards, text too small or "
         "cut off at the edge, characters clipping into props or the floor, empty/dark frames, the same shot held too "
         "long. Give exact times, severity and a concrete fix. Score the first frame 1-10 as a scroll-stopper."}]
@@ -131,17 +162,21 @@ def claude_review(video: Path) -> dict:
 
 def claude_full_review(video: Path, script_lines: list[str]) -> dict:
     """Without Gemini: Claude scores the Short from dense stills + the script (it can't hear the audio)."""
-    dur = _duration(video)
-    times = [0.0, 0.33, 0.66, 1.0, 1.5, 2.0, 3.0] + [float(t) for t in range(4, int(dur), 2)]
+    dur, long = _duration(video), _is_long(video)
+    if long:
+        times = [0.0, 1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 16.0, 20.0, 25.0, 30.0] + [float(t) for t in range(36, int(dur), max(6, int(dur / 80)))]
+    else:
+        times = [0.0, 0.33, 0.66, 1.0, 1.5, 2.0, 3.0] + [float(t) for t in range(4, int(dur), 2)]
     frames = _frames(video, times)
-    print(f"  editor (claude): reviewing {len(frames)} stills + script...")
-    content: list = [{"type": "text", "text": EDITOR_BRIEF + " You see stills sampled from the video (times given) and "
+    print(f"  editor (claude): reviewing {len(frames)} stills + script ({'long-form' if long else 'Short'} mode)...")
+    content: list = [{"type": "text", "text": (LONG_BRIEF if long else EDITOR_BRIEF) + " You see stills sampled from the video (times given) and "
                       "its script; judge motion and pacing from how much changes between stills. You cannot hear the "
                       "audio, so do not score sound.\n\nScript:\n" + "\n".join(script_lines)}]
     for t, b64 in frames:
         content.append({"type": "text", "text": f"t = {t:.2f} s"})
         content.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": b64}})
-    return claude.ask_json("You are a ruthless Shorts editor.", content, REVIEW_SCHEMA, effort="medium")
+    return claude.ask_json("You are a ruthless long-form YouTube editor." if long else "You are a ruthless Shorts editor.",
+                           content, REVIEW_SCHEMA, effort="medium")
 
 
 def review(video: Path, script_lines: list[str]) -> dict:
