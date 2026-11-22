@@ -37,6 +37,7 @@ import { SETS } from "./sets";
 import { eggBoxes, EggsView, gagU, placeEggs } from "./eggs";
 import type { SetDef } from "./sets";
 import { makeAt } from "./timing";
+import { ChapterCard } from "../../longform/kit";
 import type { ActorSpec, At, CamSpec, Emotion, FxSpec, Place, PropSpec, Recipe, SetId, ShotSpec, Target, Word } from "./types";
 
 export const FPS = 30;
@@ -749,21 +750,7 @@ const PortraitFilm: React.FC<{ c: Compiled; g: number; sub: boolean }> = ({ c, g
 // ------------------------------------------------------------------ LONG-FORM: the 1920x1080 film (LONGFORM.md)
 /** a chapter title sting: 2.6 s, a bar slides in from the left with "CHAPTER n" and the title, holds, slides out */
 export const CHAPTER_CARD_S = 2.6;
-const ChapterCard: React.FC<{ n: number; title: string; u: number }> = ({ n, title, u }) => {
-  if (u < 0 || u > CHAPTER_CARD_S) return null;
-  const inK = EASE_OUT(clamp(u / 0.35)), outK = EASE_OUT(clamp((u - (CHAPTER_CARD_S - 0.35)) / 0.35));
-  const x = -1100 * (1 - inK) - 1300 * outK;
-  const dim = 0.32 * inK * (1 - outK);
-  return (
-    <>
-      <AbsoluteFill style={{ background: `rgba(10,6,16,${dim})` }} />
-      <div style={{ position: "absolute", left: 0, top: 330, transform: `translateX(${x}px)`, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-        <div style={{ marginLeft: 120, padding: "6px 18px", background: "#ffd23a", color: "#140c1c", fontFamily: "Poppins", fontWeight: 800, fontSize: 34, letterSpacing: 4, borderRadius: 8 }}>{`CHAPTER ${n}`}</div>
-        <div style={{ marginTop: 14, padding: "18px 60px 22px 120px", background: "rgba(20,12,28,0.88)", borderRight: "14px solid #ff3b30", color: "#ffffff", fontFamily: "Poppins", fontWeight: 800, fontSize: 96, lineHeight: 1.05, maxWidth: 1500, textTransform: "uppercase" }}>{title}</div>
-      </div>
-    </>
-  );
-};
+// ChapterCard lives in src/longform/kit.tsx (shared with the kits; the same look)
 /** LONG-FORM lower-third caption centre (px at 1080 tall) and half its 2-line band */
 export const CAP_Y_L = 905;
 const CAP_HALF_L = 72;

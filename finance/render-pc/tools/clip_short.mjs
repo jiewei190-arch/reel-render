@@ -103,7 +103,7 @@ const remap = (a, keepNeg = false) => {
 
 // ---------------------------------------------------------------- shots that overlap the segment
 const starts = recipe.shots.map((s) => A0.at(s.at));
-let set = recipe.shots[0].set ?? "store";
+let set = recipe.shots[0].set ?? (recipe.kit === undefined ? "store" : undefined);
 const sets = recipe.shots.map((s) => (set = s.set ?? set));
 const segEnd = tB + 0.7;
 let keep = recipe.shots.map((s, i) => ({ s, i, a: starts[i], b: i + 1 < starts.length ? starts[i + 1] : end0 })).filter((x) => x.b > tA && x.a < tB - 0.05); // a shot starting after the last word would be a flash
@@ -112,6 +112,12 @@ const HOOK_END = 1.0; // the frame-0 board shot cuts away by ~1.0 s (Shorts gate
 const early = keep.filter((x) => x.a - off <= HOOK_END + 0.3);
 keep = [early[early.length - 1], ...keep.filter((x) => x.a - off > HOOK_END + 0.3)];
 const dropped = early.length - 1;
+// KIT recipes ("kit": "law3d" | "biz3d" | "cyber3d" | "tech3d"): the kit knows its own time fields, hook card and gate,
+// so the shots are re-timed and the fresh hook shot is made by the kit's clip adapter (tools/clip_short_kit.mjs)
+if (recipe.kit !== undefined) {
+  const { clipKit } = await import("./clip_short_kit.mjs");
+  process.exit(await clipKit({ ROOT, args, opt, slug, out, srcDir, dstDir, recipe, fromW, toW, tA, tB, off, dur, turns, turnMap, newTimings, W0, W1, A0, A1, keep, sets, dropped, remap, end0, HOOK_END, LEAD_IN, clean }));
+}
 const shots = keep.map((x, k) => {
   const s = JSON.parse(JSON.stringify(x.s));
   s.at = k === 0 ? HOOK_END : remap(s.at);
