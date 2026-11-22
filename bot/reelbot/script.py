@@ -133,6 +133,11 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
         claims = [c["claim"] for c in data["claims"]]
         print(f"  {gemini.label()}: fact-checking {len(claims)} claims (round {rnd + 1})...")
         verdicts, vsources = gemini.verify(claims)
+        if not vsources:  # a fact-check without live sources can't clear anything
+            data.setdefault("factcheck", []).append({"round": rnd + 1, "report": verdicts, "sources": [],
+                                                     "all_pass": False, "problems": ["fact-check had no live sources"]})
+            print("  fact-check: NO live sources were checked; not clearing this script")
+            continue
         judge = claude.ask_json(
             "You decide whether a fact-check report clears a script. A claim passes only if its verdict is CORRECT, "
             "or NEEDS-HEDGE and the script already says it as an example/assumption. List each problem precisely.",

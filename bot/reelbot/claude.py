@@ -99,6 +99,11 @@ class APIExhausted(ClaudeError):
     pass
 
 
+class WebUnavailable(ClaudeError):
+    """The API's server-side web search returned no usable results (often: web search is disabled for the
+    organization in the Claude Console). Research must not continue without live sources."""
+
+
 def _is_exhausted(e) -> bool:
     """Out of API credit or over the monthly spend cap (not an ordinary, temporary rate limit)."""
     import anthropic
@@ -191,7 +196,11 @@ WEB_SYSTEM = ("You are a careful researcher. Use web search and web fetch to fin
 def ask_web(prompt: str) -> tuple[str, list[dict]]:
     """Web research. Returns (text, [{title, url}]). API credits first (server-side web search) when a key is set,
     then the subscription CLI's own WebSearch/WebFetch. Used instead of Gemini grounding."""
-    ok, res = _with_keys(lambda: _web_api(prompt))
+    try:
+        ok, res = _with_keys(lambda: _web_api(prompt))
+    except WebUnavailable as e:
+        print(f"  claude: {e} Using the Claude plan's web search for this step instead.")
+        ok, res = False, None
     if ok:
         return res
     res = _ask_cli("You are a careful researcher. Use WebSearch and WebFetch to find current, reliable sources. "
@@ -262,7 +271,7 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
     citations these tools return), so the text and the result URLs are collected from the content blocks."""
     import anthropic
     messages = [{"role": "user", "content": prompt}]
-    texts, sources, seen = [], [], set()
+    texts, sources, seen, errors, searches = [], [], set(), [], 0
     for _ in range(6):  # pause_turn: send the paused turn back so the server continues it
         try:
             with client().beta.messages.stream(
@@ -278,9 +287,14 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
                 raise APIExhausted(str(e)) from e
             raise
         COST.add_claude(msg.usage)
+        stu = getattr(msg.usage, "server_tool_use", None)
+        searches += int(getattr(stu, "web_search_requests", 0) or 0) if stu else 0
         for b in msg.content:
             if b.type == "text":
                 texts.append(b.text)
+            elif b.type in ("web_search_tool_result", "web_fetch_tool_result") and not isinstance(b.content, list) \
+                    and getattr(b.content, "error_code", None):
+                errors.append(str(b.content.error_code))  # server-tool errors come back as a result object, not a raise
             elif b.type == "web_search_tool_result" and isinstance(b.content, list):  # an error result is an object
                 for r in b.content:
                     url = getattr(r, "url", None)
@@ -292,6 +306,10 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
         if msg.stop_reason != "pause_turn":
             break
         messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": msg.content}]
+    COST.web_searches += searches
+    if not sources:
+        raise WebUnavailable(f"API web search returned no sources ({searches} search request(s); errors: "
+                             f"{sorted(set(errors)) or 'none'}). Is web search enabled for this organization in the Claude Console?")
     return "\n".join(texts).strip(), sources
 
 
