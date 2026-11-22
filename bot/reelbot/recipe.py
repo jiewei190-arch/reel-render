@@ -7,6 +7,7 @@ frame-0 gate. Every error is fed back to Claude until the check passes (or the a
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -67,13 +68,52 @@ def _examples(style: str, kit: str | None = None) -> str:
     return "\n\n".join(out) or "(no example recipes found on this machine)"
 
 
+def _git_state() -> tuple[set[str], set[str]]:
+    """(modified tracked files, untracked files) under src/, relative to the engine's git root."""
+    r = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all", "--", "src"], cwd=CFG.render_root,
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
+    mod, new = set(), set()
+    for line in r.stdout.splitlines():
+        (new if line.startswith("??") else mod).add(line[3:].strip().strip('"'))
+    return mod, new
+
+
+def _typecheck(slug: str) -> tuple[bool, str]:
+    """Build for real and run the same `tsc --noEmit` the render runs. --check doesn't validate every enum/type in
+    the generated code (e.g. a board pos "low"), and one bad generated file breaks EVERY kit's render, so on failure
+    every file this build touched is rolled back and the errors go back to the writer."""
+    npx = shutil.which("npx") or "npx"
+    before_mod, before_new = _git_state()
+    b = subprocess.run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)], cwd=CFG.render_root,
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
+    t = subprocess.run([npx, "--no-install", "tsc", "--noEmit"], cwd=CFG.render_root, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace") if b.returncode == 0 else b
+    if b.returncode == 0 and t.returncode == 0:
+        return True, ""
+    mod, new = _git_state()
+    root = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=CFG.render_root, capture_output=True,
+                          text=True).stdout.strip()
+    for f in sorted(mod - before_mod):
+        subprocess.run(["git", "checkout", "--", f], cwd=root or CFG.render_root, capture_output=True)
+    for f in sorted(new - before_new):
+        (Path(root or CFG.render_root) / f).unlink(missing_ok=True)
+    out = (t.stdout + "\n" + t.stderr).strip()
+    errs = [l for l in out.splitlines() if "error" in l.lower()]
+    detail = "\n".join(f"FAIL {l}" for l in errs[:40]) if errs else out[-3000:]
+    return False, ("TYPE CHECK FAILED after a successful --check: the generated code has invalid values. Use only the "
+                   "allowed values the kit's guide lists for each field (each error names the allowed set):\n" + detail)
+
+
 def _check(slug: str) -> tuple[bool, str]:
     cmd = [CFG.node, "tools/recipe_build.mjs", slug, "--check", "--shorts", str(CFG.shorts_dir)]
     from .render import ENGINE_LOCK
     with locks.held(ENGINE_LOCK, f"check {slug}"):  # another channel's build may be writing generated files
         r = subprocess.run(cmd, cwd=CFG.render_root, capture_output=True, text=True, encoding="utf-8", errors="replace")
-    out = (r.stdout + "\n" + r.stderr).strip()
-    return r.returncode == 0, out[-6000:]
+        out = (r.stdout + "\n" + r.stderr).strip()
+        if r.returncode != 0:
+            return False, out[-6000:]
+        ok, terr = _typecheck(slug)
+    return ok, (out[-3000:] + ("\n\n" + terr if terr else ""))
 
 
 def _context(folder: Path) -> tuple[dict, str, str]:

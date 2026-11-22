@@ -143,6 +143,10 @@ def stage_render(folder: Path, a) -> None:
 
 
 def run_rest(folder: Path, a) -> None:
+    sd = json.loads((folder / "script.json").read_text(encoding="utf-8"))
+    if sd.get("factcheck_unresolved") and not getattr(a, "force", False):
+        raise SystemExit(f"fact-check did not clear for {folder.name}: not voicing it (no credits spent). Read "
+                         f"sources.md; fix the script and run `continue {folder.name} --force` to go on anyway.")
     st = _state(folder)
     if a.redo or "voice" not in st:
         stage_voice(folder, a)
@@ -184,6 +188,7 @@ def main(argv: list[str] | None = None) -> None:
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
         p.add_argument("--redo", action="store_true", help="redo stages even if already done")
+        p.add_argument("--force", action="store_true", help="continue even though the fact-check did not clear")
         p.add_argument("--edit-rounds", type=int, default=int(os.environ.get("REELBOT_EDIT_ROUNDS", "1")), help="AI editor fix-and-rerender rounds after render (-1 = skip review)")
         p.add_argument("--hooks", type=int, default=6, help="hook candidates to write and score (0 = off)")
         p.add_argument("--no-learn", dest="learn", action="store_false", help="don't refresh learnings from Studio data first")
