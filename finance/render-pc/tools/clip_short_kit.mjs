@@ -2,7 +2,7 @@
 // "tech3d") is clipped with the kit's own clip adapter (`clipAdapter`, exported by tools/<kit>_entry.ts), because each
 // kit has its own time fields, cards, hook rules and frame-0 gate:
 //   clipAdapter.compile(recipe, words, vo)            the kit compiler (validates the clip)
-//   clipAdapter.retimeShot(shot, remap)               rewrite every time (`At`) field of a shot in place; places stay
+//   clipAdapter.retimeShot(shot, remap, srcRecipe)    rewrite every time (`At`) field of a shot in place; places stay
 //   clipAdapter.retimeRecipe(recipe, remap, seg)      -> the clip's extra top-level fields (global props etc.)
 //   clipAdapter.hookText(text)                        -> the kit's hook text (<= 5 words, kit markup such as *gold*)
 //   clipAdapter.hookShot({ recipe, first, who, hookText, stake, set, hookEnd })  -> a fresh shot at 0 (the frame-0 card)
@@ -36,7 +36,7 @@ export const clipKit = async (ctx) => {
   // ---------------------------------------------------------------- shots that overlap the segment, re-timed
   const shots = keep.map((x, k) => {
     const s = JSON.parse(JSON.stringify(x.s));
-    K.retimeShot(s, remap);
+    K.retimeShot(s, remap, recipe); // the source recipe too (a kit may need its format to re-place px fields)
     s.at = k === 0 ? HOOK_END : s.at;
     if (sets[x.i] !== undefined) s.set = sets[x.i];
     delete s.beat;
