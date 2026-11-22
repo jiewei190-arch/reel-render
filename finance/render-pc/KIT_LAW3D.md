@@ -260,7 +260,7 @@ All cameras keep moving. The gate FAILs a Short that has even one frame with a s
 Run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line shows 0 clips and 0 fails. Every message
 names the shot, the time, the card / prop / person and what to move where.
 - **R1 CLIP, nothing on a head.** No card, board, label, story device, 3D text prop or small prop may overlap a head on
-  screen. The head includes the hair (short +0.175 m, side +0.2, bun +0.245, curly +0.235 above the head centre). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
+  screen. The head (which now follows the head pitch and yaw, e.g. a slump) includes the hair (short +0.175 m, side +0.2, bun +0.245, curly +0.235 above the head centre). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
   objects (half-size > 0.75 m) are skipped.
 - **R2 FAIL, the subject in frame.** The subject is the camera's target person, else the shot's `"subject"`, else its only
   person while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) is in

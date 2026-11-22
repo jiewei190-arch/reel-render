@@ -574,7 +574,7 @@ const propBoxes = (pr: PropR, t: number, s: ShotR): Box[] => {
 export const LABEL_FG = "#fff4c8";
 type FrBox = { c: V3; h: V3; yaw?: number };
 type FrLine = { text: string; capM: number; fg: string };
-export type FrBoard = { key: string; label: string; kind: string; box: FrBox; plane: { c: V3; w: number; h: number; yaw: number }; lines: FrLine[]; bg: string | null; featured: boolean; landed: boolean; edge: boolean; size?: number[]; fgField?: string; fix?: (l: FrLine, cr: number) => string };
+export type FrBoard = { key: string; label: string; kind: string; box: FrBox; plane: { c: V3; w: number; h: number; yaw: number }; lines: FrLine[]; bg: string | null; featured: boolean; target?: boolean; landed: boolean; edge: boolean; size?: number[]; fgField?: string; fix?: (l: FrLine, cr: number) => string };
 export type FrMeasure = { em: (s: string) => number; cap: number };
 /** the canvas text rule of textTex (src/library/props.tsx): first line H*0.5 (one line) or H*0.34, the rest 0.8 of that,
  *  each shrunk to fit 86 % of the texture width. Returns each line's cap height in metres for a decal plane `ph` tall. */
@@ -719,7 +719,7 @@ export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
       key: p.key, label: tp.lines.map((l) => l.text).join(" / "), kind: ps.kit ?? "prop", box,
       plane: { c: [m.p[0] + ro[0], m.p[1] + ro[1], m.p[2] + ro[2]], w: tp.w * sc * m.sc[0], h: tp.h * sc * m.sc[1], yaw },
       lines: tp.lines.map((l) => ({ ...l, capM: l.capM * sc * m.sc[1] })), bg: tp.bg,
-      featured: !!p.local || tgKey === p.key, landed, edge: true, size: ps.kit === "label" || ps.kit === "debtBlock" || ps.kit === "block" ? (ps.size ?? (ps.kit === "label" ? [0.8, 0.3, 0.05] : ps.kit === "block" ? [1.2, 1.2, 0.8] : [1.8, 1.8, 1.0])) : undefined,
+      featured: !!p.local || tgKey === p.key, target: tgKey === p.key, landed, edge: true, size: ps.kit === "label" || ps.kit === "debtBlock" || ps.kit === "block" ? (ps.size ?? (ps.kit === "label" ? [0.8, 0.3, 0.05] : ps.kit === "block" ? [1.2, 1.2, 0.8] : [1.8, 1.8, 1.0])) : undefined,
       fgField: tp.fgField, fix: tp.fix,
     });
   }

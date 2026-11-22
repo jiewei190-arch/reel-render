@@ -161,29 +161,77 @@ A violation must last 3 output frames (0.1 s) to count. A board flying through a
 
 These change how those elements render, not any compile output.
 
-**Regression:** with this branch, every recipe's generated `.gen.ts`, registry and cue plan is byte-identical to
-engine/all (rebuilt and compared). Three committed Block Money gen files were already stale before this branch
-(`employer-match`, `minimum-payment-trap`, `ten-beats-thirty`: their caption-safe framing was not baked); a rebuild on
-engine/all regenerates the same bytes.
+**Engine follow-ups (2026-11-22)**, so that the framing findings left are the writer's to fix:
+- **Board text renders at its declared colours.** Measured on stills: the `SALES -50%` board 2.18:1 → 4.50:1, `7 YRS`
+  2.96 → 4.41:1. Before/after: docs/framing_qa/board_contrast_before_after.jpg.
+  - **The cause:** labels, the block plates, the TV / jar / pay-box labels and the calendar page were lit
+    `MeshStandardMaterial` decals, so three things washed them out:
+    - the key and hemisphere lights tinted and darkened them;
+    - the grade's exposure and highlight shoulder compressed the cream text;
+    - the mood lift raised the dark fills (bloom too).
+  - **The fix:** `signMat` (src/blocky/mat.ts) is an unlit, alpha-tested decal that writes scene alpha 0.1. The grade
+    pass (src/engine/post/shaders.ts, `uBoard`) outputs those pixels as `toSRGB(colour)` with no grade and no bloom, the
+    same mechanism as the existing liquid marker.
+  - **What it does not change:** DOF, vignette and grain still apply, so a board far out of focus is still soft.
+  - **A set that looks different:** the store's ELECTRONICS sign (declared yellow on `#16121c`, glow 0.9) used to render
+    yellow-on-yellow; it now shows as declared.
+- **Caption-safe lift keeps the head in frame.** `captionSafeFraming` checks the subject's head box (all 4 top
+  corners, every 0.1 s). If the lift would push the head within 18 px of the top edge or the split seam, it gives the
+  lift back, but never past the recipe's own framing.
+  - **When the face is still in the caption band:** it returns a pull-back (`dist`, or `dist2` for the split's bottom
+    view, a new CamSpec field). It is sized from how far the head-to-face span overshoots the room above the band.
+    recipe_build recompiles, re-solves (up to 4 passes, at most 2.5x) and bakes it like `face` / `face2`.
+  - **Result:** 59 views in 21 Block Money Shorts got a baked pull-back (dist 1.6-5.8 m). R2 hits caused by the lift went
+    from 77+ to 0, and the caption gate stays at 100 %.
+  - **The cost:** the pulled-back views are wider, so their character is smaller (see
+    docs/framing_qa/split_reframe_before_after.jpg). They also show more of the set: boards floating above the
+    bottom-view head now cross the seam (51 R3), and some bottom-view boards drop under 42 px (11 R4 size). The writer
+    fixes both by putting the board beside the head, or making it bigger.
+  - **These 21 `.gen.ts` files changed** (the new `dist`/`dist2`/`face2`); cue plans did not.
+- **law3d:** `figHead` / `figFace` follow the head group's pitch and yaw (cast.tsx `headLocal`), as FigureView draws it.
+- **biz3d:** `execHead` is the drawn head centre: the neck pivot + 0.13 turned by the head pitch, in the lean frame. It
+  was 0.13 m too high. Camera targets `"<id>.head"` and the kit's face / band checks use it.
+- **tech3d / cyber3d:** the callout-label placer keeps labels off BOLT's whole head (shell, ears, antenna), not just
+  the screen face.
+- **Better advice.** A finding's advice now comes from its **worst** frame, so a push-in or a slam that gets worse
+  later gets a big enough move. A board the camera aims at gets "shrink it / pull back", never "move it", because moving
+  it moves the camera too. The console lists every finding (no 40-line cap).
 
-**Speed:** the framing pass adds 0.04-0.18 s per Short (685-1,620 frames). A whole `--check` stays at 0.4-0.6 s.
+**Engine- vs recipe-caused** (docs/FRAMING_QA_REPORT.md):
+- **Engine-caused, 0.** These are findings the writer cannot fix:
+  - an auto-placed card over a head;
+  - a lifted view touching the top edge;
+  - an engine text colour under 4.5:1.
+- **Recipe-caused.** Everything else; each message says what to change.
+- **Writer loop, proven on one Short:** `shop-too-fast-short-1` cleared `--check` (exit 0) in 2 passes and 8 field
+  edits, each taken from a message (docs/framing_qa/writer_loop_shop_too_fast_short_1.jpg).
+
+**Regression:** these files still match engine/all byte for byte (rebuilt and compared):
+- the cue plans, the registries and the kits' gen files;
+- the Block Money `.gen.ts` files, except the 21 with a baked pull-back (above).
+
+Three committed Block Money gen files were already stale before this branch (`employer-match`, `minimum-payment-trap`,
+`ten-beats-thirty`: their caption-safe framing was not baked).
+
+**Speed:** the framing pass adds 0.04-0.18 s per Short (685-1,620 frames). A whole `--check` stays at 0.4-0.7 s,
+including the pull-back recompiles.
 
 **Fixture:** `tools/qa_fixtures/framing-defects` reproduces the five reported defects. Run
-`node tools/recipe_build.mjs framing-defects --check --shorts tools/qa_fixtures` and check that it flags R1-R5. The
-results on every existing recipe are in docs/FRAMING_QA_REPORT.md.
+`node tools/recipe_build.mjs framing-defects --check --shorts tools/qa_fixtures` and check that it flags R1-R5.
 
 **Known limits:**
-- **Declared colours only.** The rules read the colours the recipe and engine declare. On store-lit sets, rendered
-  boards lose about 40 % of their contrast (a 4.50:1 default-red label measured 2.2-3.0:1 in stills). Aim for about
-  6:1; a render-side fix (unlit or tone-map-free board decals) is a follow-up.
 - **Box approximations.** Characters' heads are boxes (BOLT is a sphere). Projected box corners are conservative by a few
-  px. The law3d head ignores head pitch, as `figHead` does.
-- **Splits and DOM cards.**
-  - Split-screen views are checked per view. A split's bottom view, lifted by caption-safe framing, often has the
-    antennae touching the seam; this is the most common R2 hit (77 of 132 top-edge hits).
-  - DOM cards are axis-aligned rects (the verdict and stamp rotations are ignored).
-- **Not checked:** set-dressing text (wall posters, store signs, headline walls, evidence pins) and hooks / captions
-  (they have their own gates).
+  px.
+- **Board look.** Boards render unlit: they no longer take scene shadows, and their `glow` no longer brightens them.
+  - DOF still softens out-of-focus boards.
+  - The kits' 3D text props (law3d signs and papers, cyber3d emails) still use lit materials, and their colours pass on
+    paper. They can adopt `signMat` the same way.
+- **Split screens.** The bottom view's character is smaller after a pull-back. If the owner prefers a bigger bottom
+  character, the alternative is letting the caption move for split shots (an owner rule).
+- **DOM cards** are axis-aligned rects (the verdict and stamp rotations are ignored).
+- **Not checked:**
+  - set-dressing text (wall posters, store signs, headline walls, evidence pins);
+  - hooks and captions (they have their own gates).
 
 ## Regression rule
 

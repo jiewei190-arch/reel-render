@@ -258,9 +258,11 @@ names the shot, the time, the board or actor, and what to move where (in metres,
 | **R5** frame 0 is a close-up of a face | FAIL | At frame 0, the hook is at its full size (84 px) and the subject's face (the head without the antennae) is at least **16 % of the frame height (307 px)**. The face must be on screen. A mid-shot (the `medium` preset at 2.6 m gives about 15 %) fails. The default `hookZoom` on `"<actor>.face"` gives about 18 %. | Open on `"cam": {"preset": "hookZoom", "target": "spender.face", "dist": 1.7}` or a `slamZoom` on the face, with the stake board beside the head, not on it. |
 
 Known limits: the boxes are conservative (a yawed box's corners), so a board that only grazes the antennae tips can
-flag. The rules read the colours the recipe declares, but the rendered board is darker and greyer than that: on
-store-lit sets, a 4.5:1 board measured 2.2-3.0:1 in the stills. Prefer about 6:1 or more (for example `#c01818` with
-cream, or ink text on yellow). Rule tuning and the reasons for it are in ENGINE.md "Framing QA".
+flag. Boards render unlit at their declared colours (since 2026-11-22), so the contrast the rule computes is the
+contrast on screen; a board far out of focus is still soft. **Split screens:** the engine keeps the bottom view's head
+(antennae included) below the seam and its face above the caption band, pulling that view back if needed, so its
+character is smaller. Put boards for the bottom view **beside** the head, never above it, or they cross the seam.
+Rule tuning and the reasons for it are in ENGINE.md "Framing QA".
 
 **Typical fixes:**
 - `CLIP S08 board bill ... is on spender's head`: add the offset the message gives to the board's `at` (usually up 0.2-0.4 m, or 0.3-0.6 m to one side), or move Spender.

@@ -243,12 +243,20 @@ export const framingQA = (o) => {
   const capMin = RULES.textPx * capRatio() * (LS ? H / 1080 : W / 1080); // in cap-height px
   const edgeM = RULES.edgeMargin * W;
   const textH = new Map(); // shot|board -> {best, t, cap, label, k, lines}
-  const persist = (key, ok, store, mk) => {
+  // a finding is reported once it lasts RULES.persist frames; its advice comes from its WORST frame (largest `sev`), so
+  // a push-in or a slam that makes it worse later gets a move big enough for the whole shot
+  const worst = new Map();
+  const persist = (key, ok, store, mk, sev = 0) => {
     seen.add(key);
     if (ok) { run.set(key, 0); return; }
     const n = (run.get(key) ?? 0) + 1; run.set(key, n);
     const id = key.replace(/@.*$/, "");
-    if (n >= RULES.persist && !store.has(id)) store.set(id, mk());
+    if (n < RULES.persist) return;
+    const w = worst.get(store)?.get(id);
+    if (store.has(id) && w !== undefined && sev <= w) return;
+    store.set(id, mk());
+    if (!worst.has(store)) worst.set(store, new Map());
+    worst.get(store).set(id, sev);
   };
   const T0 = Date.now();
   let frames = 0;
@@ -273,8 +281,8 @@ export const framingQA = (o) => {
         for (const it of items) {
           const key = `r1|${sc.shot}|${it.b.key}|${a.id}${vname}`;
           const r = onScreen ? boxRect(v, it.b.box) : null;
-          let bad = false;
-          if (r && ox(r, head) > RULES.headPad && oy(r, head) > RULES.headPad && inter(r, VR) > 0 && headOverlap(v, boxHull(v, it.b.box), a) >= RULES.headArea * (W / 1080) ** 2) {
+          let bad = false, ovA = 0;
+          if (r && ox(r, head) > RULES.headPad && oy(r, head) > RULES.headPad && inter(r, VR) > 0 && (ovA = headOverlap(v, boxHull(v, it.b.box), a)) >= RULES.headArea * (W / 1080) ** 2) {
             // text boards count at any depth (they hide the head or the head hides them: S07 of minimum-payment-trap, the
             // antennae over the OWE block 3 m behind); other props only when their box is within propDepth of the head box
             // big non-text props (cars, sofas, counters: a box half-size > 0.75 m) are staging, like the set: the 3D clip QA
@@ -289,8 +297,9 @@ export const framingQA = (o) => {
             const mv = opts.map(([w, dx, dy]) => ({ w, ...worldMove(v, dx, dy, r.k) })).sort((x, y) => x.m - y.m).slice(0, 2);
             const say = (o) => (o.w === "up" || o.w === "down" ? `${o.w} ${o.m.toFixed(2)} m` : `${o.m.toFixed(2)} m to screen-${o.w.replace(" of", "")} of ${a.id}`) + ` (add ${o.s} to its at)`;
             const where = r.z0 > head.z1 ? "behind" : r.z1 < head.z0 ? "in front of" : "at";
-            return `CLIP ${sc.shot}${vname} ${it.text ? "board" : "prop"} ${label} is on ${a.id}'s head on screen (${where} the head; head box incl. antennae/hair) at ${ts}: move it ${say(mv[0])} or ${say(mv[1])}, or move ${a.id} clear of it`;
-          });
+            const tgt = it.b.target ? ` The camera aims at this board, so moving the board moves the camera too: move ${a.id} instead, or aim the camera at ${a.id} and keep the board beside the head.` : "";
+            return `CLIP ${sc.shot}${vname} ${it.text ? "board" : "prop"} ${label} is on ${a.id}'s head on screen (${where} the head; head box incl. antennae/hair; worst at ${ts}): move it ${say(mv[0])} or ${say(mv[1])}, or move ${a.id} clear of it.${tgt}`;
+          }, ovA);
         }
       }
       // ---- R1 for 2D cards (kits' DOM labels, boards, devices): a card over a head on screen
@@ -332,8 +341,8 @@ export const framingQA = (o) => {
             if (touch && edgeName === "top") fixes.push(`lower the framing (cam.face +0.08)`);
             if (touch && edgeName === "bottom") fixes.push(`raise the framing (cam.face -0.08)`);
             fixes.push(`pull the camera back (cam.dist +${Math.max(0.3, close ? 0.4 : (1 - inX) * 2.5 + 0.3).toFixed(1)})`);
-            return `FAIL ${sc.shot}${vname} subject ${a.id} (${subj.why}) is cut by the frame at ${ts}: ${why}; head centre x ${cx.toFixed(0)} of ${W}. Fix: ${fixes.join(", or ")}`;
-          });
+            return `FAIL ${sc.shot}${vname} subject ${a.id} (${subj.why}) is cut by the frame (worst at ${ts}): ${why}; head centre x ${cx.toFixed(0)} of ${W}. Fix: ${fixes.join(", or ")}`;
+          }, (close ? off : 1 - inX) * 1000 + Math.max(0, VR.x0 + hm - head.x0, head.x1 - (VR.x1 - hm), VR.y0 + hm - head.y0, head.y1 - (VR.y1 - hm)));
         } else {
           // not the subject: a head may be fully in or fully out, never sliced by an edge
           const cut = hIn > 0.1 && hIn < 0.9;
@@ -341,8 +350,8 @@ export const framingQA = (o) => {
             const side = head.x0 < VR.x0 ? "left" : head.x1 > VR.x1 ? "right" : head.y0 < VR.y0 ? "top" : "bottom";
             const push = side === "left" ? VR.x0 + hm - head.x0 : side === "right" ? -(head.x1 - VR.x1 + hm) : 0;
             const mv = worldMove(v, push || 0, 0, head.k);
-            return `FAIL ${sc.shot}${vname} ${a.id}'s head is sliced by the ${side} frame edge at ${ts} (${(hIn * 100).toFixed(0)} % of it in frame): move ${a.id} ${side === "left" || side === "right" ? `${mv.m.toFixed(2)} m into frame (add ${mv.s} to its at)` : "so the whole head is in frame"} or fully out of frame, or re-aim the camera`;
-          });
+            return `FAIL ${sc.shot}${vname} ${a.id}'s head is sliced by the ${side} frame edge (worst at ${ts}, ${(hIn * 100).toFixed(0)} % of it in frame): move ${a.id} ${side === "left" || side === "right" ? `${mv.m.toFixed(2)} m into frame (add ${mv.s} to its at)` : "so the whole head is in frame"} or fully out of frame, or re-aim the camera`;
+          }, Math.max(0, VR.x0 + hm - head.x0, head.x1 - (VR.x1 - hm)));
         }
       }
       // ---- R3 + R4 height: boards
@@ -357,15 +366,20 @@ export const framingQA = (o) => {
         if (!prominent && !b.lines?.length) prominent = true;
         if (b.landed && b.edge && prominent) {
           const inside = r.x0 >= VR.x0 + edgeM && r.x1 <= VR.x1 - edgeM && r.y0 >= VR.y0 + edgeM && r.y1 <= VR.y1 - edgeM;
+          const sev3 = Math.max(0, VR.x0 + edgeM - r.x0, r.x1 - (VR.x1 - edgeM), VR.y0 + edgeM - r.y0, r.y1 - (VR.y1 - edgeM));
           persist(`r3|${sc.shot}|${b.key}${vname}`, inside, out.r3, () => {
             const dx = r.x0 < VR.x0 + edgeM ? VR.x0 + edgeM - r.x0 + 12 : r.x1 > VR.x1 - edgeM ? -(r.x1 - (VR.x1 - edgeM) + 12) : 0;
             const dy = r.y0 < VR.y0 + edgeM ? VR.y0 + edgeM - r.y0 + 12 : r.y1 > VR.y1 - edgeM ? -(r.y1 - (VR.y1 - edgeM) + 12) : 0;
             const sides = [r.x0 < VR.x0 + edgeM && "left", r.x1 > VR.x1 - edgeM && "right", r.y0 < VR.y0 + edgeM && "top", r.y1 > VR.y1 - edgeM && "bottom"].filter(Boolean);
             const wide = r.x1 - r.x0 > VR.x1 - VR.x0 - 2 * edgeM || r.y1 - r.y0 > VR.y1 - VR.y0 - 2 * edgeM;
             const mv = worldMove(v, dx, dy, r.k);
-            const fix = wide ? `the board is wider/taller than the frame here: shrink its size (x${(((VR.x1 - VR.x0 - 2 * edgeM) / Math.max(1, r.x1 - r.x0)) * 0.95).toFixed(2)}) or pull the camera back` : `move it ${mv.m.toFixed(2)} m into frame (add ${mv.s} to its at), or pull the camera back (cam.dist +0.5)`;
-            return `FAIL ${sc.shot}${vname} board ${b.key} ${q(b.label)} crosses the ${sides.join("+")} frame edge (x ${r.x0.toFixed(0)}-${r.x1.toFixed(0)}, y ${r.y0.toFixed(0)}-${r.y1.toFixed(0)}; keep ${edgeM.toFixed(0)} px clear) at ${ts}: ${fix}`;
-          });
+            // the board's size vs the room inside the margins (per axis): how much to shrink it, or pull the camera back
+            const fitK = Math.min((VR.x1 - VR.x0 - 2 * edgeM) / Math.max(1, r.x1 - r.x0), (VR.y1 - VR.y0 - 2 * edgeM) / Math.max(1, r.y1 - r.y0));
+            const fix = b.target
+              ? `the camera aims at this board, so moving it moves the camera too: ${fitK < 1 ? `shrink it (size x${(fitK * 0.92).toFixed(2)}) or pull the camera back (cam.dist x${(1 / (fitK * 0.92)).toFixed(2)})` : `pull the camera back (cam.dist x1.15) or aim the camera at the board's centre (cam.target "${b.key}" with no offset)`}`
+              : wide ? `the board is wider/taller than the frame here: shrink its size (x${(fitK * 0.92).toFixed(2)}) or pull the camera back (cam.dist x${(1 / (fitK * 0.92)).toFixed(2)})` : `move it ${mv.m.toFixed(2)} m into frame (add ${mv.s} to its at), or pull the camera back (cam.dist +0.5)`;
+            return `FAIL ${sc.shot}${vname} board ${b.key} ${q(b.label)} crosses the ${sides.join("+")} frame edge (x ${r.x0.toFixed(0)}-${r.x1.toFixed(0)}, y ${r.y0.toFixed(0)}-${r.y1.toFixed(0)}; keep ${edgeM.toFixed(0)} px clear; worst at ${ts}): ${fix}`;
+          }, sev3);
         }
         if (b.featured && b.landed && b.lines?.length && pl && r.x0 >= VR.x0 - 1 && r.x1 <= VR.x1 + 1) {
           const main = b.lines.reduce((a, l) => (l.capM > a.capM ? l : a), b.lines[0]);
@@ -416,7 +430,7 @@ export const framingQA = (o) => {
     else if (b.scaleField) fixes.push(`scale it up x${(k * 1.05).toFixed(2)} (${b.scaleField})`);
     fixes.push(`move the camera ${k > 1.6 ? "much " : ""}closer (cam.dist x${(1 / (k * 1.05)).toFixed(2)})`);
     if (String(h.main.text).length > 8) fixes.push(`or shorten the line ${q(h.main.text)} (long lines shrink to fit)`);
-    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${(h.px / capRatio()).toFixed(0)} px (font size; cap ${h.px.toFixed(0)} px; median while on screen, e.g. at ${h.t.toFixed(2)} s; needs ${RULES.textPx} px to read on a phone): ${fixes.join(", ")}`);
+    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${(h.px / capRatio()).toFixed(1)} px (font size; cap ${h.px.toFixed(0)} px; median while on screen, e.g. at ${h.t.toFixed(2)} s; needs ${RULES.textPx} px to read on a phone): ${fixes.join(", ")}`);
   }
   // ---- R5 frame 0
   if (!LS && o.frame0) {

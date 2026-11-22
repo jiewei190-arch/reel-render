@@ -215,7 +215,7 @@ All cameras keep moving, including through a freeze-frame. The gate FAILs a Shor
 Run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line shows 0 clips and 0 fails. Every message
 names the shot, the time, the card / prop / person and what to move where.
 - **R1 CLIP, nothing on a head.** No card, board, label, story device, 3D text prop or small prop may overlap a head on
-  screen. The head includes the hair cap (the QA uses the drawn head, 0.13 m below `execHead().c`). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
+  screen. The head includes the hair cap (`execHead().c` is the drawn head centre since 2026-11-22; it was 0.13 m high). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
   objects (half-size > 0.75 m) are skipped.
 - **R2 FAIL, the subject in frame.** The subject is the camera's target person, else the shot's `"subject"`, else its only
   person while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) is in
