@@ -97,6 +97,8 @@ def _tts_local(text: str, voice: str, speed: float) -> tuple[bytes, dict]:
 def _tts(text: str, voice_id: str, speed: float, mood: str | None = None) -> tuple[bytes, dict]:
     if voice_id.startswith("kokoro:"):
         return _tts_local(text, voice_id.split(":", 1)[1], speed)
+    if os.environ.get("REELBOT_ELEVENLABS_OFF") == "1":
+        raise SystemExit("ElevenLabs is switched off for this run (REELBOT_ELEVENLABS_OFF=1): nothing was voiced")
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not key:
         CFG.require_keys("ELEVENLABS_API_KEY")

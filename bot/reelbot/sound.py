@@ -63,6 +63,8 @@ def _time_of(word: str, timings: dict) -> float | None:
 
 
 def _generate(desc: str, dur: float, out: Path) -> None:
+    if os.environ.get("REELBOT_ELEVENLABS_OFF") == "1" or os.environ.get("REELBOT_SFX_REPLAN") == "0":
+        raise RuntimeError("ElevenLabs is switched off for this run (REELBOT_ELEVENLABS_OFF/REELBOT_SFX_REPLAN=0); cue skipped")
     key = os.environ.get("ELEVENLABS_API_KEY")
     if not key:
         CFG.require_keys("ELEVENLABS_API_KEY")
