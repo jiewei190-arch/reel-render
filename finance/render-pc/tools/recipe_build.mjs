@@ -37,12 +37,17 @@ const dir = join(SHORTS, slug);
 const recipe = JSON.parse(readFileSync(join(dir, "recipe.json"), "utf8"));
 const timings = JSON.parse(readFileSync(join(dir, "vo/timings.json"), "utf8"));
 if (recipe.slug !== slug) { console.error(`recipe.slug "${recipe.slug}" != folder "${slug}"`); process.exit(2); }
-// the tech3d kit ("kit": "tech3d", finance/render-pc/KIT_TECH3D.md) has its own compiler, registry and entry
-// (src/index.tech.ts): hand it over before anything is written. Recipes without "kit" (Block Money) are untouched.
-if (recipe.kit === "tech3d") { const { main } = await import("./tech_build.mjs"); process.exit(await main(args)); }
-// the law3d kit ("kit": "law3d", finance/render-pc/KIT_LAW3D.md) likewise: its own compiler, registry and entry
-// (src/index.law.ts).
-if (recipe.kit === "law3d") { const { main } = await import("./law_build.mjs"); process.exit(await main(args)); }
+// KIT DISPATCH (ENGINE.md): a recipe with "kit" is handed to that kit's own compiler/registry/entry before anything is
+// written here. Recipes without "kit" (Block Money) are untouched and run the original engine below.
+//   tech3d  KIT_TECH3D.md  tools/tech_build.mjs   src/index.tech.ts
+//   law3d   KIT_LAW3D.md   tools/law_build.mjs    src/index.law.ts
+//   biz3d   KIT_BIZ3D.md   tools/biz_build.mjs    src/index.biz.ts
+//   cyber3d KIT_CYBER3D.md tools/cyber_build.mjs  src/index.cyber.ts  (Scams & Hacks)
+const KITS = { tech3d: "./tech_build.mjs", law3d: "./law_build.mjs", biz3d: "./biz_build.mjs" };
+if (recipe.kit !== undefined) {
+  if (!KITS[recipe.kit]) { console.error(`unknown kit "${recipe.kit}" (known: ${Object.keys(KITS).join(", ")}; no "kit" = Block Money)`); process.exit(2); }
+  const { main } = await import(KITS[recipe.kit]); process.exit(await main(args));
+}
 
 // ---------------------------------------------------------------- 1) codegen
 const wf = (f, txt) => { if (!check) writeFileSync(f, txt); };
