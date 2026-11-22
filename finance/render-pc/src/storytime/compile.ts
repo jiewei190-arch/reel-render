@@ -2,7 +2,7 @@
 // camera, every kid's pose / face / mouth, the caption chunk, the fx. Runs in node for the QA (tools/storytime_build.mjs)
 // and in the browser for the render (src/storytime/film.tsx); nothing here imports three or remotion.
 import { fitFs } from "../longform/polish";
-import { FACES, mixFace } from "./face";
+import { FACES } from "./face";
 import type { FaceP } from "./face";
 import { FPS, H, HEAD_UP, K, SETS, W, add, cross, dot, fwd, hipY, leftOf, mul, norm, project, sub } from "./layout";
 import type { CamS, Extra, Mark, SetLayout, V3 } from "./layout";
@@ -247,10 +247,12 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const seed = id === "me" ? 3 : 7;
     // face (blend 0.14 s)
     const fv = valueAt(faceEv[id], t, "neutral" as Expr);
-    let face = mixFace(FACES[fv.prev], FACES[fv.v], ease((t - fv.t0) / 0.14));
+    // replacement animation: the face SNAPS to its expression (no morph); the mouth is one of 6 sculpted openings
+    let face = { ...FACES[fv.v] };
     const talking = !!speakerAt(t) && speakerAt(t)!.speaker === id && t < endAt;
     const mo = mouthOf(id, t);
-    face = { ...face, open: clamp(face.open + mo * (1 - face.open * 0.45) * 0.95), mouthW: face.mouthW - mo * 0.03 * (1 - face.open) };
+    const open = Math.round(clamp(face.open + mo * (1 - face.open * 0.45) * 0.95) * 5) / 5;
+    face = { ...face, open, mouthW: Math.round((face.mouthW - (open - face.open) * 0.03) * 100) / 100 };
     if (face.arc < 0.5 && blinkAt(t, seed)) face = { ...face, lid: 1 };
     // side-eye looks toward the other lead
     const other = SETS[setId].marks[id === "me" ? "homie" : "me"];
@@ -294,7 +296,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const turnAmt = lerp(turned(cv.prev), turned(cv.v), tu);
     const laughing = cv.v === "laugh" && t >= cv.t0 + stag;
     const f0 = laughing ? FACES.laughing : FACES.neutral;
-    let face = mixFace(FACES.neutral, f0, ease((t - cv.t0 - stag) / 0.15));
+    let face = { ...f0 };
     if (!laughing && blinkAt(t, e.seed + 11)) face = { ...face, lid: 1 };
     const P = POSE_ARMS[laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0);
     // turn round toward the leads (in the classroom, the back row) with the body; the head does the rest
@@ -302,8 +304,11 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     return { id: e.id, lead: false, spec: e.spec, x: e.x, z: e.z, yaw, headYaw: 0.05 * Math.sin(t * 0.6 + e.seed), headPitch: 0, sit: e.sit, s: (e.s ?? 1) * (e.spec.height ?? 1) * 0.92,
       lean: P.lean, bob: P.bob, tilt: laughing ? 0.08 * Math.sin(t * 7 + e.seed) : 0, armL: P.L, armR: P.R, pose: laughing ? "laugh" : "idle", expr: laughing ? "laughing" : "neutral", face, mouth: 0, talking: false, seed: e.seed };
   };
-  const figsAt = (t: number, shot?: ShotR): FigState[] => {
-    const s = shot ?? shotAt(t);
+  /** STOP MOTION: characters and props move on twos (a new pose every 2 output frames = 15 fps inside 30 fps) */
+  const onTwos = (t: number) => Math.floor(t * 15 + 1e-6) / 15;
+  const figsAt = (t0: number, shot?: ShotR): FigState[] => {
+    const s = shot ?? shotAt(t0);
+    const t = Math.max(s.a, onTwos(t0));
     const S = SETS[s.set];
     return [...LEADS.map((id) => leadAt(id, t, s.set)), ...S.extras.filter((e) => !s.hide.has(e.id)).map((e) => extraAt(e, t, s.set))];
   };
@@ -457,7 +462,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
 
   return {
     recipe, words, amp, layout: { W, H }, duration, total, endAt, shots, shotAt, camAt, camBase, figsAt, leadAt, extraAt, capAt, chunks, fxAt, speakerAt, spans,
-    brokenFrom, named, mouthOf,
+    brokenFrom, named, mouthOf, onTwos,
   };
 };
 

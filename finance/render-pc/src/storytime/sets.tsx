@@ -4,33 +4,30 @@
 //   cafeteria  long tables with benches and trays, a serving counter, a wall of BIG windows (they shatter)
 import React from "react";
 import * as THREE from "three";
-import { canvasTexture, geoOf, plastic, rbox } from "../blocky/mat";
+import { canvasTexture, geoOf, plastic } from "../blocky/mat";
+import { cardMat, clayMat, feltMat, lumpBox, printMat } from "./clay";
 import { SETS, deskOf } from "./layout";
 import type { V3 } from "./layout";
 import type { SetId } from "./types";
 
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
-const flat = (c: string, r = 0.8) => plastic(c, { flat: true, rough: r });
+// CLAYMATION miniatures: clay props, painted cardboard walls and lockers, felt floors, printed paper posters
+const flat = (c: string, _r = 0.8) => clayMat(c, { bump: 0.7 });
+const rbox = (w: number, h: number, d: number, _r: number) => lumpBox(w, h, d);
 const BOX = () => geoOf("stBox", () => new THREE.BoxGeometry(1, 1, 1));
 const PLANE = () => geoOf("stPlane", () => new THREE.PlaneGeometry(1, 1));
 const basic = new Map<string, THREE.MeshBasicMaterial>();
 const bmat = (c: string, map?: THREE.Texture) => { const k = `${c}|${map?.uuid ?? ""}`; let m = basic.get(k); if (!m) { m = new THREE.MeshBasicMaterial({ color: c, map: map ?? null, toneMapped: false, fog: false }); basic.set(k, m); } return m; };
 /** a box from its min corner to its max corner */
-const Blk: React.FC<{ a: V3; b: V3; m: THREE.Material; cast?: boolean }> = ({ a, b, m, cast = true }) => (
-  <mesh geometry={BOX()} material={m} position={[(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2]} scale={[b[0] - a[0], b[1] - a[1], b[2] - a[2]]} castShadow={cast} receiveShadow />
-);
-const tiled = (tex: THREE.Texture, rx: number, ry: number) => { tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.repeat.set(rx, ry); tex.needsUpdate = true; return tex; };
-const texMat = (tex: THREE.Texture, r = 0.75) => plastic("#ffffff", { rough: r, map: tex });
+const Blk: React.FC<{ a: V3; b: V3; m: THREE.Material; cast?: boolean }> = ({ a, b, m, cast = true }) => {
+  const w = b[0] - a[0], h = b[1] - a[1], d = b[2] - a[2], c: V3 = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2];
+  // small pieces are hand-made clay blocks; walls and big panels stay flat boards (cardboard)
+  if (Math.max(w, h, d) < 1.7) return <mesh geometry={lumpBox(w, h, d, Math.min(w, h, d) * 0.35)} material={m} position={c} castShadow={cast} receiveShadow />;
+  return <mesh geometry={BOX()} material={m} position={c} scale={[w, h, d]} castShadow={cast} receiveShadow />;
+};
+const texMat = (tex: THREE.Texture, _r = 0.75) => printMat(tex);
 
 // ------------------------------------------------------------------ textures
-const woodFloor = () => canvasTexture("stWoodFloor", 256, 256, (g, W, H) => {
-  g.fillStyle = "#e3b77c"; g.fillRect(0, 0, W, H);
-  for (let k = 0; k < 8; k++) { g.fillStyle = `rgba(150,90,40,${0.06 + 0.1 * hash(k)})`; g.fillRect(0, k * 32, W, 32); g.fillStyle = "rgba(120,70,30,0.35)"; g.fillRect(0, k * 32, W, 2); g.fillRect(hash(k + 4) * W, k * 32, 2, 32); }
-});
-const tiles = (key: string, a: string, b: string) => canvasTexture(key, 128, 128, (g, W, H) => {
-  for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) { g.fillStyle = (i + j) % 2 ? a : b; g.fillRect(i * 64, j * 64, 64, 64); }
-  g.strokeStyle = "rgba(0,0,0,0.08)"; g.lineWidth = 2; g.strokeRect(0, 0, W, H); g.beginPath(); g.moveTo(64, 0); g.lineTo(64, H); g.moveTo(0, 64); g.lineTo(W, 64); g.stroke();
-});
 const chalkboard = () => canvasTexture("stBoard", 1024, 400, (g, W, H) => {
   g.fillStyle = "#2f6b4f"; g.fillRect(0, 0, W, H);
   g.fillStyle = "rgba(255,255,255,0.05)"; for (let k = 0; k < 30; k++) g.fillRect(hash(k) * W, hash(k + 9) * H, 120, 30);
@@ -104,8 +101,8 @@ const CeilingLight: React.FC<{ p: V3 }> = ({ p }) => (
 // ------------------------------------------------------------------ classroom
 const Classroom: React.FC<{ t: number }> = ({ t }) => {
   const S = SETS.classroom;
-  const floor = texMat(tiled(woodFloor(), 8, 8), 0.7);
-  const wall = flat("#a8d8ea", 0.9), wall2 = flat("#f7e3af", 0.9), base = flat("#5c6b8a");
+  const floor = feltMat("#d99a5b", 10);
+  const wall = cardMat("#a8d8ea"), wall2 = cardMat("#f7e3af"), base = flat("#5c6b8a");
   const kids = [S.marks.me, S.marks.homie, ...S.extras];
   const posters = [
     poster("stP1", "#ff8c42", "#ffffff", "READ!", (g) => { g.fillRect(70, 70, 50, 120); g.fillRect(136, 70, 50, 120); }),
@@ -121,7 +118,7 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
       <Blk a={[-4.3, 0, -5]} b={[-4.2, 3.4, 3.9]} m={wall2} cast={false} />
       <Blk a={[4.2, 0, -5]} b={[4.3, 3.4, 3.9]} m={wall2} cast={false} />
       <Blk a={[-4.5, 0, 3.75]} b={[4.5, 0.18, 3.8]} m={base} cast={false} />
-      <Blk a={[-4.5, 3.4, -5]} b={[4.5, 3.45, 3.9]} m={flat("#fbfbf6")} cast={false} />
+      <Blk a={[-4.5, 3.4, -5]} b={[4.5, 3.45, 3.9]} m={cardMat("#fbfbf6")} cast={false} />
       {[-3.2, 0, 3.2].map((z) => [-1.6, 1.6].map((x) => <CeilingLight key={`${x}${z}`} p={[x, 3.38, z]} />))}
       {/* the chalkboard + tray, the teacher's desk */}
       <Blk a={[-2.0, 0.85, -4.92]} b={[2.0, 2.45, -4.86]} m={flat("#b07a45")} />
@@ -155,16 +152,16 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
 
 // ------------------------------------------------------------------ hallway
 const Hallway: React.FC<{ t: number }> = () => {
-  const floor = texMat(tiled(tiles("stHallTiles", "#e9e4d8", "#c9d6e3"), 3, 22), 0.5);
-  const lockL = texMat(tiled(lockerTex("stLockA", "#3a86ff"), 1, 1), 0.5), lockR = texMat(tiled(lockerTex("stLockB", "#ff9f1c"), 1, 1), 0.5);
-  const wall = flat("#f1f3d0", 0.9);
+  const floor = feltMat("#c9d3dc", 12);
+  const lockL = printMat(lockerTex("stLockA", "#3a86ff")), lockR = printMat(lockerTex("stLockB", "#ff9f1c"));
+  const wall = cardMat("#f1f3d0");
   const n = 40, z0 = -15;
   return (
     <group>
       <mesh geometry={PLANE()} material={floor} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -5]} scale={[3.6, 22, 1]} receiveShadow />
       <Blk a={[-1.9, 0, z0]} b={[-1.8, 3.1, 6]} m={wall} cast={false} />
       <Blk a={[1.8, 0, z0]} b={[1.9, 3.1, 6]} m={wall} cast={false} />
-      <Blk a={[-1.9, 3.1, z0]} b={[1.9, 3.15, 6]} m={flat("#fbfbf6")} cast={false} />
+      <Blk a={[-1.9, 3.1, z0]} b={[1.9, 3.15, 6]} m={cardMat("#fbfbf6")} cast={false} />
       {Array.from({ length: 8 }, (_, k) => <CeilingLight key={k} p={[0, 3.08, 4 - k * 2.4]} />)}
       {/* lockers: a row on each wall (a bulletin board breaks the left row) */}
       {Array.from({ length: n }, (_, k) => {
@@ -212,8 +209,8 @@ const Table: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z }) =
 
 const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }) => {
   const S = SETS.cafeteria, Wd = S.windows!;
-  const floor = texMat(tiled(tiles("stCafTiles", "#f2e8cf", "#d8e2dc"), 8, 7), 0.5);
-  const wall = flat("#ffd6a5", 0.9), wallB = flat("#cde7b0", 0.9), frame = flat("#ffffff", 0.5);
+  const floor = feltMat("#e3d6b8", 12);
+  const wall = cardMat("#ffd6a5"), wallB = cardMat("#cde7b0"), frame = flat("#ffffff", 0.5);
   const glass = React.useMemo(() => new THREE.MeshStandardMaterial({ color: "#d4f1ff", transparent: true, opacity: 0.28, roughness: 0.05, metalness: 0, depthWrite: false }), []);
   const isBroken = broken !== null && t >= broken;
   return (
@@ -228,7 +225,7 @@ const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }
       {/* side walls */}
       <Blk a={[-6.6, 0, -4.4]} b={[-6.5, 3.8, 5.3]} m={wallB} cast={false} />
       <Blk a={[6.5, 0, -4.4]} b={[6.6, 3.8, 5.3]} m={wallB} cast={false} />
-      <Blk a={[-6.6, 3.8, -4.4]} b={[6.6, 3.85, 5.3]} m={flat("#fbfbf6")} cast={false} />
+      <Blk a={[-6.6, 3.8, -4.4]} b={[6.6, 3.85, 5.3]} m={cardMat("#fbfbf6")} cast={false} />
       {[-3.5, 0, 3.5].map((x) => [-2.2, 1.0, 3.6].map((z) => <CeilingLight key={`${x}${z}`} p={[x, 3.78, z]} />))}
       {/* the window wall: a low wall, BIG windows (2 x 2 panes each), the sky + trees outside */}
       <Blk a={[-6.6, 0, Wd.z - 0.15]} b={[6.6, Wd.y0, Wd.z]} m={wall} cast={false} />

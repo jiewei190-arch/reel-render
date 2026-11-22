@@ -6,7 +6,7 @@ Composition `DeezNutsEp1Recipe` in `src/index.storytime.ts` (1080x1920, 30 fps, 
 
 - none: the two leads never intersect each other or a set blocker.
 
-## Framing QA (screen space, 2342 frames, 0.15 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 2342 frames, 0.11 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 502 px.
 
