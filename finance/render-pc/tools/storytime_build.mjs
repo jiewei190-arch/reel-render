@@ -76,7 +76,7 @@ export const main = async (argv) => {
     const s = C.shotAt(t);
     const leads = C.figsAt(t, s).filter((x) => x.lead).map((x) => ({ id: x.id, b: m.kidBoxes(x) }));
     const [A, B] = leads;
-    for (const pa of ["head", "torso"]) for (const pb of ["head", "torso"]) if (ov(A.b[pa], B.b[pb]) && !clips.has(`${s.id} me.${pa} x homie.${pb}`)) clips.set(`${s.id} me.${pa} x homie.${pb}`, t);
+    if (A && B) for (const pa of ["head", "torso"]) for (const pb of ["head", "torso"]) if (ov(A.b[pa], B.b[pb]) && !clips.has(`${s.id} me.${pa} x homie.${pb}`)) clips.set(`${s.id} me.${pa} x homie.${pb}`, t);
     for (const L of leads) for (const bl of m.SETS[s.set].blockers) for (const p of ["head", "torso"]) if (ov(L.b[p], bl) && !clips.has(`${s.id} ${L.id}.${p} x ${bl.name}`)) clips.set(`${s.id} ${L.id}.${p} x ${bl.name}`, t);
   }
   const clipLines = [...clips].map(([k, t]) => `CLIP ${k} first at ${t.toFixed(2)} s`);
@@ -128,6 +128,25 @@ export const main = async (argv) => {
     const sp = C.speakerAt(t);
     for (const id of ["me", "homie"]) { const mo = C.mouthOf(id, t); if (mo > 0.01 && (!sp || sp.speaker !== id)) wrongMouth++; if (mo > 0.05) talkFrames++; }
   }
+  // face decals: flat clay pieces seen edge-on (a lead's head on screen, face turned 55-62 deg from the lens; past
+  // FACE_CULL the renderer hides them) -- and the frames where they were culled
+  const EDGE = (55 * Math.PI) / 180;
+  let edgeOn = 0, culled = 0; const edgeShots = new Set();
+  for (let f = 0; f < C.duration; f++) {
+    const t = f / 30; if (t >= C.endAt) break;
+    const s = C.shotAt(t), cam = C.camAt(t);
+    for (const st of C.figsAt(t, s)) {
+      if (!st.lead) continue;
+      const q = m.project(cam, m.headCenter(st));
+      if (!q || q.x < -100 || q.x > 1180 || q.y < -100 || q.y > 2020) continue;
+      const a = m.faceAngle(st, cam.pos);
+      if (a > m.FACE_CULL) culled++; else if (a > EDGE) { edgeOn++; edgeShots.add(s.id); }
+    }
+  }
+  // captions: one chunk on screen at a time, one baseline
+  const cs = [...C.chunks].sort((a, b) => a.start - b.start);
+  const capOverlap = cs.filter((c, i) => i > 0 && cs[i - 1].hold > c.start - 0.04 + 1e-6).map((c) => c.text);
+  const capYs = new Set(C.shots.map((s) => Math.round(s.capY)));
   const lastOn = Math.floor(C.endAt * 30 - 1e-6);
   const f0 = shots[0].cam.preset;
   const firstCut = shots[1]?.a ?? dur;
@@ -149,6 +168,9 @@ export const main = async (argv) => {
     [`captions text-fit: every chunk on one line at >= ${m.CAP.minFs} px`, fitBad.length === 0, fitBad.map((c) => `"${c.text}" ${c.fs} px`).join(", ") || `smallest ${minFs.toFixed(1)} px`, true],
     ["shouts get a punch-in and a shake", shoutShots.every((x) => x.punch && x.shake), shoutShots.map((x) => `line ${x.ln}: ${x.punch ? "punch" : "NO punch"}/${x.shake ? "shake" : "NO shake"}`).join(", "), false],
     ["mouths: only the speaking character's mouth moves", wrongMouth === 0, `${wrongMouth} wrong frame(s); ${talkFrames} talking kid-frames`, true],
+    ["face decals never seen edge-on (55-62 deg; culled past 62 deg)", edgeOn === 0, `${edgeOn} edge-on lead-frame(s)${edgeShots.size ? " in " + [...edgeShots].join(", ") : ""}; ${culled} lead-frame(s) with the face culled`, false],
+    ["captions: one chunk at a time (no overlap in time)", capOverlap.length === 0, capOverlap.join(" | ") || `${cs.length} chunks, none overlap`, true],
+    ["captions: one baseline for the whole film", capYs.size === 1, `y ${[...capYs].join(", ")} px`, true],
     ["the cafeteria windows shatter", shatter, shatter ? "yes" : "no shatter fx in a cafeteria shot", false],
     ["hard cut to black (no fade) at the end", Number.isFinite(C.endAt) && C.endAt < dur, Number.isFinite(C.endAt) ? `last picture frame ${lastOn}, black from frame ${lastOn + 1} (${C.endAt.toFixed(2)} s) to ${C.duration - 1}` : "recipe.end not set", true],
     ["1080x1920, plain 30 fps, no motion blur", true, "one composition, no Sub", true],

@@ -55,11 +55,31 @@ Episode 1 has 13 lines and 53 shots (15 punch-ins, 25 close-ups, 4 OTS, 3 two-sh
 
 ## Episode render
 
-RENDER_SECTION
+**Render on the PC (GPU)** from `finance/render-pc`:
+
+```
+node tools/recipe_build.mjs deez-nuts-ep1          # codegen + QA (writes src/storytime/gen + RECIPE_QA.md); add --check to only validate
+npx remotion render src/index.storytime.ts DeezNutsEp1Recipe out/storytime/deez-nuts-ep1.mp4 --gl=angle --crf=20
+```
+
+- Composition `DeezNutsEp1Recipe` (1080x1920, 30 fps, 2366 frames, 78.87 s, black from 78.06 s).
+- Audio is `public/storytime/deez-nuts-ep1.mp3`, played via `staticFile("storytime/deez-nuts-ep1.mp3")`. It is a copy of `previews/deez_nuts_voiceover_v6.mp3`; the timings came from `previews/deez_nuts_v6_timings.json` and are now in `finance/shorts/deez-nuts-ep1/vo/`.
+- The PC's first GPU render (c249dd0) took **78 s**. A CPU (swangle) render in the cloud container ran at about 5.7 s per frame (about 3.7 h for the film), so it was stopped in favour of the PC render.
+
+**QA fixes after the PC's first render**:
+
+- **A. Edge-on face pieces** (OTS at 11-12 s): the flat clay face pieces of a kid turned more than 62° from the lens are now hidden (`FACE_CULL` / `faceAngle` in compile.ts, used by the renderer and by QA). A new gate row counts lead faces seen edge-on (55-62°). It is a warning, not a hard failure; currently 1 frame in S21, and 159 lead-frames are culled.
+- **B. Cafeteria lighting**: the cafeteria key now comes from the same side as the classroom's, so the cast's colours match across sets. The brown-hair kid's skin and the mustard hoodie no longer wash out.
+- **C. Double captions**: a chunk's linger now ends where the next chunk starts, so only one chunk is ever on screen. There is a gate row for this.
+- **D. Caption baseline and the foreground blob**:
+  - All captions now share ONE baseline (the lowest any shot needs, y 1536 px). A gate row checks it.
+  - In a close-up or punch-in, the other lead is cheated out of the shot when he stands between the lens and the subject. This removes the out-of-focus shoulder/arm blob at the lower right of the cafeteria shots. OTS shots keep their foreground shoulder.
+
+The QA run now shows 0 clips and 0 framing fails over 2,342 frames. All hard gate rows PASS.
 
 ## Stills
 
-STILLS_SECTION
+The contact sheet and key stills come from the PC's MP4 (one still every 2 s; `ffmpeg -i out/storytime/deez-nuts-ep1.mp4 -vf "fps=1/2,scale=270:-1,tile=8x5" docs/storytime/contact_sheet.jpg`). They are not made in this container: the cloud CPU render was stopped.
 
 ## Branding ("My Homie Wildin")
 
@@ -70,4 +90,6 @@ STILLS_SECTION
 
 ## What's left
 
-LEFT_SECTION
+- The final GPU render of the latest commit on the PC, plus the contact sheet and stills from that MP4.
+- The face cull is a hard hide. A sculpted profile face (pieces that wrap around the head) would look better for long profile shots.
+- `me`'s colours are set per character. If the PC still shows a skin shift in other sets, compare the average skin colour per set in a still, as the main QA did.

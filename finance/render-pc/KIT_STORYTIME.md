@@ -149,7 +149,14 @@ Other kits are untouched. The only shared change is one line in the `recipe_buil
   - only the speaker's mouth moves;
   - the windows shatter (warn);
   - a hard cut to black;
-  - 30 fps with no Sub composition.
+  - 30 fps with no Sub composition;
+  - captions: one chunk at a time (a chunk's linger ends where the next starts);
+  - captions: ONE baseline for the whole film (the lowest any shot needs);
+  - face decals never seen edge-on (warn): a lead whose face is turned 55-62° from the lens is counted. Past `FACE_CULL` (62°) the renderer hides the flat clay face pieces, the same `faceAngle()` in compile.ts.
+- **Cheats (compile.ts):**
+  - classmates that would block the subject are hidden for the shot;
+  - in a close-up or punch-in, the other lead is hidden when he is between the lens and the subject (no out-of-focus shoulder or arm blob at the frame edge; OTS shots keep theirs).
+- **Lighting:** every set's key light comes from the same side (the classroom's), so the cast's colours read the same in every set.
 
 ## 5. Rules
 

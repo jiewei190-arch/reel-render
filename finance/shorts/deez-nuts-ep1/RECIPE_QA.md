@@ -6,7 +6,7 @@ Composition `DeezNutsEp1Recipe` in `src/index.storytime.ts` (1080x1920, 30 fps, 
 
 - none: the two leads never intersect each other or a set blocker.
 
-## Framing QA (screen space, 2342 frames, 0.16 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 2342 frames, 0.14 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 502 px.
 
@@ -29,6 +29,9 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | captions text-fit: every chunk on one line at >= 64 px | PASS | smallest 77.7 px |
 | shouts get a punch-in and a shake | PASS | line 1: punch/shake, line 5: punch/shake, line 6: punch/shake, line 10: punch/shake, line 11: punch/shake |
 | mouths: only the speaking character's mouth moves | PASS | 0 wrong frame(s); 1569 talking kid-frames |
+| face decals never seen edge-on (55-62 deg; culled past 62 deg) | warn | 1 edge-on lead-frame(s) in S21; 159 lead-frame(s) with the face culled |
+| captions: one chunk at a time (no overlap in time) | PASS | 56 chunks, none overlap |
+| captions: one baseline for the whole film | PASS | y 1536 px |
 | the cafeteria windows shatter | PASS | yes |
 | hard cut to black (no fade) at the end | PASS | last picture frame 2341, black from frame 2342 (78.06 s) to 2365 |
 | 1080x1920, plain 30 fps, no motion blur | PASS | one composition, no Sub |

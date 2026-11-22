@@ -8,6 +8,7 @@ import * as THREE from "three";
 import { geoOf } from "../blocky/mat";
 import { clayMat, lumpBall, lumpBox, lumpCapsule, lumpCone, lumpLimb, seamRing } from "./clay";
 import type { FigState } from "./compile";
+import { FACE_CULL, faceAngle } from "./compile";
 import type { FaceP } from "./face";
 import { K, hipY } from "./layout";
 
@@ -217,7 +218,8 @@ export const Phone: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-export const Kid: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
+export const Kid: React.FC<{ st: FigState; t: number; cam?: readonly number[] }> = ({ st, t, cam }) => {
+  const faceOn = !cam || faceAngle(st, cam) <= FACE_CULL;
   const sp = st.spec, s = st.s;
   const hip = hipY(st.sit);
   const skin = clayMat(sp.skin), top = clayMat(sp.top), trim = clayMat(sp.trim), pants = clayMat(sp.pants), shoes = clayMat(sp.shoes);
@@ -279,7 +281,7 @@ export const Kid: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
           <mesh geometry={seamRing(0.085, 0.009)} material={crease(sp.top)} position={[0, K.torsoH - 0.005, 0]} scale={[1.05, 1, 0.95]} />
           <group position={[0, K.torsoH + K.neck + K.headH / 2, 0]} rotation={[st.headPitch, st.headYaw, st.tilt]}>
             <mesh geometry={lumpBox(K.headW, K.headH, K.headD, HR, 0.008)} material={skin} />
-            <Face f={st.face} skin={sp.skin} brow={sp.brow} eye={sp.eye} freckles={sp.freckles} simple={!st.lead} />
+            {faceOn ? <Face f={st.face} skin={sp.skin} brow={sp.brow} eye={sp.eye} freckles={sp.freckles} simple={!st.lead} /> : null}
             <mesh geometry={lumpBall(0.045, 0.8, 1.3, 1)} material={skin} position={[K.headW / 2 + 0.008, -0.03, 0]} />
             <mesh geometry={lumpBall(0.045, 0.8, 1.3, 1)} material={skin} position={[-K.headW / 2 - 0.008, -0.03, 0]} />
             <Hair st={st} />

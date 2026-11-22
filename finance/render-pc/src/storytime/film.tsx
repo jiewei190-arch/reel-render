@@ -30,7 +30,7 @@ const school = (fog: string, keyDir: [number, number, number]): MoodPreset => {
 const MOODS: Record<SetId, MoodPreset> = {
   classroom: school("#cfe6f2", [0.75, 0.75, 0.3]),
   hallway: school("#eef0d8", [0.25, 0.9, 0.45]),
-  cafeteria: school("#ffe6c8", [0.15, 0.7, -0.8]),
+  cafeteria: school("#ffe6c8", [0.75, 0.75, 0.3]),
 };
 
 export const StoryFilm: React.FC<{ c: Compiled }> = ({ c }) => {
@@ -50,7 +50,7 @@ export const StoryFilm: React.FC<{ c: Compiled }> = ({ c }) => {
       {c.recipe.audio ? <Audio src={staticFile(c.recipe.audio)} /> : null}
       <View mood={MOODS[shot.set]} cam={cam} t={t} blur={0} sky={false} width={c.layout.W} height={c.layout.H}>
         <StorySet id={shot.set} t={c.onTwos(t)} broken={broken} />
-        {figs.map((st) => <Kid key={st.id} st={st} t={c.onTwos(t)} />)}
+        {figs.map((st) => <Kid key={st.id} st={st} t={c.onTwos(t)} cam={cam.pos} />)}
         {shot.set === "cafeteria" && fx.shatter !== null ? <Shards u={fx.shatter} /> : null}
       </View>
       {fx.flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: fx.flash }} /> : null}

@@ -13,6 +13,14 @@ export { FPS };
 /** the closest a close-up / punch-in camera may get (m from the face): the head (with hair) stays whole in frame (R2) */
 export const CLOSE_MIN = 2.6, PUNCH_MIN = 2.45;
 /** the caption pop: 0.82 -> 1.06 -> 1 over 4 frames (shouts full, other chunks half as much) */
+/** the angle (radians) between a kid's face direction and the direction to the lens; face pieces are flat clay decals,
+ *  so they are hidden past FACE_CULL (seen edge-on they would stand off the side of the head) */
+export const FACE_CULL = (62 * Math.PI) / 180;
+export const faceAngle = (st: { x: number; z: number; yaw: number; headYaw: number }, cam: readonly number[]) => {
+  const fwd = st.yaw + st.headYaw, toCam = Math.atan2(cam[0] - st.x, cam[2] - st.z);
+  let d = toCam - fwd; d = Math.atan2(Math.sin(d), Math.cos(d));
+  return Math.abs(d);
+};
 export const capPop = (t: number, start: number, shout: boolean) => {
   const k = Math.min(1, Math.max(0, (t - start + 0.04) / (4 / 30)));
   const pop = k < 0.6 ? 0.82 + (1.06 - 0.82) * (k / 0.6) : 1.06 - 0.06 * ((k - 0.6) / 0.4);
@@ -312,7 +320,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const s = shot ?? shotAt(t0);
     const t = Math.max(s.a, onTwos(t0));
     const S = SETS[s.set];
-    return [...LEADS.map((id) => leadAt(id, t, s.set)), ...S.extras.filter((e) => !s.hide.has(e.id)).map((e) => extraAt(e, t, s.set))];
+    return [...LEADS.filter((id) => !s.hide.has(id)).map((id) => leadAt(id, t, s.set)), ...S.extras.filter((e) => !s.hide.has(e.id)).map((e) => extraAt(e, t, s.set))];
   };
 
   // ---- cameras
@@ -352,7 +360,10 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         const clear = (az: number) => {
           const y = faceDir(st) + az * (Math.PI / 180), P: V3 = [F[0] + Math.sin(y) * d, F[1], F[2] + Math.cos(y) * d];
           const v = sub(P, F), L = Math.hypot(...v), k = clamp(dot(sub(O, F), v) / (L * L));
-          return k > 0.02 && Math.hypot(...sub(O, add(F, mul(v, k)))) < 0.62 ? false : true;
+          if (k > 0.02 && Math.hypot(...sub(O, add(F, mul(v, k)))) < 0.62) return false;
+          // ... nor its shoulders / torso (an out-of-focus blob at the frame's lower edge)
+          const T: V3 = [O[0], O[1] - 0.42, O[2]], kt = clamp(dot(sub(T, F), v) / (L * L));
+          return !(kt > 0.02 && Math.hypot(...sub(T, add(F, mul(v, kt)))) < 0.6);
         };
         let az0 = c.az ?? 0;
         if (!clear(az0)) { for (let k = 5; k <= 70; k += 5) { if (clear(az0 + k * (az0 >= 0 ? 1 : -1))) { az0 += k * (az0 >= 0 ? 1 : -1); break; } if (clear(az0 - k * (az0 >= 0 ? 1 : -1))) { az0 -= k * (az0 >= 0 ? 1 : -1); break; } } }
@@ -424,10 +435,24 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         if (near || (q && q.z < dS - 0.35 && q.x > -250 && q.x < W + 250 && q.y > -300 && q.y < H + 300)) s.hide.add(e.id);
       }
     }
+    // a face close-up / punch-in: the other lead between the lens and the subject (an out-of-focus shoulder or arm
+    // blob at the frame edge) is cheated out too; OTS shots keep their foreground shoulder on purpose
+    if (/closeup|punch_in/.test(s.cam.preset)) {
+      const oid: CastId = s.on === "me" ? "homie" : "me";
+      for (const tt of [s.a + 1e-3, tm, s.b - 1e-3]) {
+        const c2 = camIn(s, tt), o = leadAt(oid, tt, s.set), d2 = Math.hypot(...sub(headCenter(leadAt(s.on, tt, s.set)), c2.pos));
+        for (const p of [headCenter(o), [o.x, 0.75, o.z] as V3, [o.x, 1.0, o.z] as V3]) {
+          const q = project(c2, p);
+          if (q && q.z < d2 - 0.3 && q.x > -800 && q.x < W + 800 && q.y > -300 && q.y < H + 400) s.hide.add(oid); // its arms reach ~0.5 m in
+        }
+      }
+    }
   }
 
   // ---- captions: chunks, and each shot's caption centre (below every named face + neck on screen)
   const chunks = recipe.captions === "off" ? [] : buildChunks(words, recipe.lines);
+  // one chunk on screen at a time: a chunk's linger ends where the next one comes in (capAt shows from start - 0.04)
+  { const cs = [...chunks].sort((a, b) => a.start - b.start); for (let i = 0; i + 1 < cs.length; i++) cs[i].hold = Math.min(cs[i].hold, cs[i + 1].start - 0.04); }
   const named = (s: ShotR): CastId[] => (s.cam.preset === "two_shot" ? ["me", "homie"] : s.cam.preset === "wide_class" || s.cam.preset === "crowd" || s.cam.preset === "insert" ? [] : s.cam.preset === "windows" ? ["homie"] : [s.on]);
   const neckBottom = (cam: CamS, st: FigState) => {
     const b = kidBoxes(st).face;
@@ -445,6 +470,9 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const maxFs = CAP.fsShout * CAP.lineH;
     s.capY = Math.min(CAP.maxY * H, Math.max(CAP.centre * H, need + 22 + maxFs / 2 + CAP.stroke));
   }
+  // ONE caption baseline for the whole film: the lowest any shot needs (lower only ever clears more of a face/neck)
+  const capBase = Math.max(CAP.centre * H, ...shots.map((s) => s.capY));
+  for (const s of shots) s.capY = capBase;
   const capAt = (t: number) => {
     if (t >= endAt) return null;
     const c = chunks.find((k) => t >= k.start - 0.04 && t < k.hold);
