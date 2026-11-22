@@ -211,6 +211,25 @@ All cameras keep moving, including through a freeze-frame. The gate FAILs a Shor
 
 ## 10. Text, and the build checks (tools/biz_build.mjs → RECIPE_QA.md)
 
+**Framing rules (screen space, every output frame; tools/framing_qa.mjs + tools/framing_kits.mjs; same rules as RECIPE_GUIDE.md §4.1).**
+Run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line shows 0 clips and 0 fails. Every message
+names the shot, the time, the card / prop / person and what to move where.
+- **R1 CLIP, nothing on a head.** No card, board, label, story device, 3D text prop or small prop may overlap a head on
+  screen. The head includes the hair cap (the QA uses the drawn head, 0.13 m below `execHead().c`). Text counts at any depth; a small prop counts within 0.6 m of the head. Big staging
+  objects (half-size > 0.75 m) are skipped.
+- **R2 FAIL, the subject in frame.** The subject is the camera's target person, else the shot's `"subject"`, else its only
+  person while their head is on screen. In a medium or wide shot, 85 % of the subject's body (left to right) is in
+  frame. In a close shot, the head is centred (middle 60 % of the width). The head never touches an edge (11 px). Any
+  other person's head is fully in or fully out. The first 0.35 s of a whip-in is skipped.
+- **R3 FAIL, cards and boards inside the frame** with a 3 % margin (32 px), once landed (0.3 s after the hit).
+- **R4 FAIL, text reads.** Every text colour is at least 4.5:1 against its fill (WCAG). Coloured text and fills under white text use the text-safe tones `TEXT_TONE` in src/biz/hud.tsx: green `#15803D` 5.0:1, red `#C62828` 5.6:1, gold `#8A6212` 5.5:1 (the bright tones were 2.3, 3.9 and 1.9:1; they stay for bars, borders, lines and the chart). A featured line is at least
+  42 px font size (the median while on screen). Long-form uses the same 42 px at 1080 tall; its cards are checked for
+  placement and colour only.
+- **R5 FAIL (Shorts), frame 0 is a close-up of a face.** The hook is at the kit's full size, and the subject's face is
+  at least 16 % of the frame height (307 px). A frame-0 shot on a prop with the person small fails.
+- Typical fixes: aim the camera at the person, move them toward the centre, pull back (`cam.dist`); put a card's target
+  (`on`) or `pos` on the side away from the face; raise `cam.dist` on close shots so the hair stays in frame.
+
 **Hook** (`hook.text`): at the top on a white card with a red underline, from frame 0; **≤ 5 words, ≤ 2 lines, exactly one `*word*`** in the accent (red; `"tone": "green"` for a win story). **Put the dollar stake in it** ("THE *$50M* NO"). `until` defaults to the end of line 1 + 0.25 s; `again` brings it back for the loop ending.
 
 **Captions:** the fixed caption band from the layout (portrait: centre y 1344, 170 px side margins), 1-3 words per chunk, white with a thick ink stroke (readable on the dark and light sets), the spoken word in gold. They start at 1.0 s. `"caption": "off"` or a fixed string per shot overrides them.

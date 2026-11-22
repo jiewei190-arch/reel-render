@@ -109,6 +109,82 @@ These timings come from synthetic 8.6-9.5 min recipes, each kit's landscape demo
   evicted GPU objects, so a 10-minute render does not grow memory.
 - **WebGL canvas:** it stays mounted across shots in every film, so shaders are compiled once per render tab.
 
+## Framing QA (screen space, all engines)
+
+`tools/framing_qa.mjs` is the shared core. Each engine gives it a scene sampler: Block Money's `framingAt` in
+`src/fin/recipe/compile.tsx`, and the four kits' samplers in `tools/framing_kits.mjs`. The core projects heads, bodies,
+boards, cards and props through the shot camera (vertical fov plus roll, as View.tsx sets the camera up) into output
+pixels on every output frame (long-form: every `--qa-sample` frame). It adds five rules to the build. The plain-words
+version for writers is RECIPE_GUIDE.md §4.1 and each KIT guide's "Framing rules".
+
+| rule | result | check |
+|---|---|---|
+| R1 | CLIP | No board, card or prop is over a head on screen. The head includes antennae, hair, hat or hood, split into the head proper plus each antenna / ear / hair part. |
+| R2 | FAIL | The shot's subject is >= 85 % in frame (left to right), with the head 11 px clear of every edge; in a close shot, the head is centred. No other head is sliced by an edge. |
+| R3 | FAIL | Every landed board or card is inside the frame with a 3 % margin. |
+| R4 | FAIL | Every text line is >= 4.5:1 against its fill (WCAG); a featured main line is >= 42 px font size. |
+| R5 | FAIL | Shorts, frame 0: the hook is at full size and the subject's face is >= 16 % of the frame height. |
+
+A violation must last 3 output frames (0.1 s) to count. A board flying through a face, or a whip pan, is motion.
+
+**Tuning, with the reasons** (none of it was done to make an existing recipe pass):
+- **R1: big props.** A non-text prop counts when its box half-size is <= 0.75 m and it is within 0.6 m of the head (3D
+  gap). Cars, sofas and counters behind a character are staging, and the 3D clip QA already keeps them out of bodies.
+- **R1: text boards count at any depth.** Stills of `minimum-payment-trap` S07 showed Spender's antennae over the OWE
+  block 3 m behind him. That is defect 1 as the owner described it.
+- **R1: exact outlines.** R1 overlaps the exact screen outline of each box (the convex hull of its 8 projected corners),
+  needs 144 px² (12 x 12) of overlap, and models BOLT's shell as a sphere. A bounding cube's empty corners gave false
+  hits beside BOLT (tech-demo S10, checked on a still).
+- **R2: close shots.** In a close shot the arms reach past the frame on purpose, so "85 % of the body" is replaced by
+  "head centred and clear of the edges".
+- **R2: the only actor.** "The shot's only actor" is the subject only while their head is >= 50 % on screen. An insert
+  shot of a hand stays legal.
+- **R2: whip-ins.** The first 0.35 s of a whip-in is skipped, because it swings across the set on purpose.
+- **R3: background boards.** Multi-shot background boards count only when their main line would read on screen (>= half
+  the R4 size). Out-of-focus clutter at the edge is set dressing; a readable cut-off word is a defect. `rain` copies are
+  exempt.
+- **R4: text size is the font size (em).** "42 px" means the font size, measured as cap height (0.709 em in Poppins 800,
+  so 29.8 px). Reading it as 42 px of cap height would ask for a 59 px font and fail every kit's 50-54 px callout label.
+  It also equals the existing long-form rule (cap >= 30 px).
+- **R4: which boards count, and which size.** Only boards listed in the shot, or the camera target, are "featured" for
+  the size rule. The size used is the median while landed and fully in frame, so a push-in that reaches the size only
+  at the end does not pass.
+- **R5: the existing 50 % gate let a weak frame 0 pass.** It counts any subject, so a body or a prop covering 50 % passed
+  even when the face was small. R5 measures the subject's face, on screen. The 16 % threshold sits between a mid-shot
+  (the `medium` preset is about 15 %) and the default `hookZoom` frame 0 on a face (about 18 %).
+
+**Engine colour fixes** (the writer cannot set these, so they had to pass in code):
+- the calendar title / sub grey: `#736c84`, 4.8:1 (was 2.9:1);
+- tech3d board titles on blueDeep, and their symbols `#B5521A`;
+- biz3d `TEXT_TONE` shades for coloured text and for fills under white text;
+- the law3d folder stamp.
+
+These change how those elements render, not any compile output.
+
+**Regression:** with this branch, every recipe's generated `.gen.ts`, registry and cue plan is byte-identical to
+engine/all (rebuilt and compared). Three committed Block Money gen files were already stale before this branch
+(`employer-match`, `minimum-payment-trap`, `ten-beats-thirty`: their caption-safe framing was not baked); a rebuild on
+engine/all regenerates the same bytes.
+
+**Speed:** the framing pass adds 0.04-0.18 s per Short (685-1,620 frames). A whole `--check` stays at 0.4-0.6 s.
+
+**Fixture:** `tools/qa_fixtures/framing-defects` reproduces the five reported defects. Run
+`node tools/recipe_build.mjs framing-defects --check --shorts tools/qa_fixtures` and check that it flags R1-R5. The
+results on every existing recipe are in docs/FRAMING_QA_REPORT.md.
+
+**Known limits:**
+- **Declared colours only.** The rules read the colours the recipe and engine declare. On store-lit sets, rendered
+  boards lose about 40 % of their contrast (a 4.50:1 default-red label measured 2.2-3.0:1 in stills). Aim for about
+  6:1; a render-side fix (unlit or tone-map-free board decals) is a follow-up.
+- **Box approximations.** Characters' heads are boxes (BOLT is a sphere). Projected box corners are conservative by a few
+  px. The law3d head ignores head pitch, as `figHead` does.
+- **Splits and DOM cards.**
+  - Split-screen views are checked per view. A split's bottom view, lifted by caption-safe framing, often has the
+    antennae touching the seam; this is the most common R2 hit (77 of 132 top-edge hits).
+  - DOM cards are axis-aligned rects (the verdict and stamp rotations are ignored).
+- **Not checked:** set-dressing text (wall posters, store signs, headline walls, evidence pins) and hooks / captions
+  (they have their own gates).
+
 ## Regression rule
 
 Without `"format": "landscape"`, every recipe compiles exactly as before. This was checked for engine/all by rebuilding

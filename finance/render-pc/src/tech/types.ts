@@ -115,6 +115,8 @@ export type TechShot = {
   sfx?: { at: At; sfx: string; db?: number }[];
   /** long-form: marks a new story beat for the pacing gate (chapters and set changes count by themselves) */
   beat?: boolean;
+  /** framing QA (KIT guide "Framing rules"): the person this shot is about when the camera aims at an object */
+  subject?: string;
   note?: string;
 };
 
