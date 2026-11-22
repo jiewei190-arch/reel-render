@@ -151,6 +151,7 @@ def _context(folder: Path) -> tuple[dict, str, str]:
 
 def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: str) -> None:
     ch = channels.of_folder(folder)
+    history: list[list[str]] = []
     for attempt in range(1, CFG.recipe_attempts + 1):
         print(f"  claude: writing recipe.json ({tag}, attempt {attempt})...")
         res = claude.ask_json(system, base + feedback, RECIPE_SCHEMA)
@@ -169,8 +170,15 @@ def _loop(folder: Path, slug: str, system: str, base: str, feedback: str, tag: s
             print("  recipe: check passed (clip QA + frame-0 gate)")
             return
         print("  recipe: check failed, sending the errors back to Claude")
+        fails = [l.strip() for l in log.splitlines() if l.strip().startswith(("FAIL", "CLIP"))]
+        history.append(fails)
+        earlier = "".join(f"\nattempt {k}: " + " | ".join(h[:12]) for k, h in enumerate(history[:-1], 1) if h)
         feedback = ("\n\n=== Your previous recipe.json ===\n" + json.dumps(recipe, indent=1)
-                    + "\n\n=== recipe_build --check output (fix every CLIP and FAIL) ===\n" + log)
+                    + "\n\n=== recipe_build --check output (fix every CLIP and FAIL) ===\n" + log
+                    + ("\n\n=== Failures in EARLIER attempts (don't swing back into them) ===" + earlier if earlier else "")
+                    + "\n\nIf one board or prop fails 'crosses the frame edge' when big and 'text too small' when "
+                      "smaller, stop rescaling it: shorten or drop its text (another board can carry the word), split "
+                      "it into two boards, or pull the camera back. Never undo a fix that cleared an earlier failure.")
     raise SystemExit(f"recipe.json still fails the check after {CFG.recipe_attempts} attempts; "
                      f"see {folder}/recipe_check_*.log. Fix by hand or rerun `reelbot recipe {slug}`.")
 
