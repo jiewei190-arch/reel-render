@@ -238,7 +238,11 @@ including the pull-back recompiles.
 Without `"format": "landscape"`, every recipe compiles exactly as before. This was checked for engine/all by rebuilding
 every recipe before and after: the 22 Block Money Shorts, `shop-too-fast`, and the four kit demos. The generated
 `.gen.ts` files, the cue plans and the QA reports hash the same, and the exit codes match. The kit registries only
-gained the new test recipes. The kit demos' first 3 s were also rendered before and after and compared.
+gained the new test recipes. The kit demos' first 3 s were also rendered before and after and compared, and every
+kit's landscape test was rendered at 0.5 scale (`finance/longform/kit-tests/`).
+
+One deliberate render change: the cyber3d `flyThrough` camera now stays 0.4 m clear of the set's blockers. Before, it
+ended inside a rack row of the servers corridor in both formats.
 
 ## Known limits
 
@@ -258,9 +262,13 @@ gained the new test recipes. The kit demos' first 3 s were also rendered before 
 - **Caption-safe lift:**
   - It follows faces only: executives in biz3d, BOLT in tech3d, figures in law3d, BOLT and the figure in cyber3d.
   - Text props in the band only warn.
-- **Unrendered fixes:** a few card positions fixed in the landscape tests were checked by geometry only before the
-  final renders: biz THE DECISION, cyber ALERT, the law case card. The kit-tests contact sheets are the visual check.
-- **Render time:** rendering on the cloud CPU (swangle) is slow, about 1-2 s per frame at 0.5 scale. Render finals on
-  the PC's GPU (`--gl=angle`).
+- **Landscape test renders:**
+  - The biz THE DECISION, cyber ALERT and law case card fixes are confirmed in the renders
+    (`finance/longform/kit-tests/REGRESSION.md`).
+  - Small leftover: the biz3d `NO` stamp overlaps the decision card's "sell for $50M?" sub-line.
+- **Render time:** rendering on the cloud CPU (swangle) took 3.6-4.4 s per frame at 0.5 scale with other work running,
+  so a 33 s test took about an hour. Render finals on the PC's GPU (`--gl=angle`).
+- **Framing QA vs the demos:** after the engine/qa-framing merge, every demo and test recipe exits 1 on `--check`, on
+  writer-fixable framing findings only (`docs/FRAMING_QA_REPORT.md`). Fix those in the recipes before rendering finals.
 - **Block Money:** the `<Pascal>RecipeSub` compositions are still registered (unchanged generated files), but they are
   not used.
