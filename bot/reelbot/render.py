@@ -54,7 +54,8 @@ def _whisper_check(video: Path, lines: list[str]) -> str:
         from faster_whisper import WhisperModel  # optional: pip install faster-whisper
     except ImportError:
         return "skipped (pip install faster-whisper to enable)"
-    model = WhisperModel("small.en", device="auto", compute_type="auto")
+    model = WhisperModel("small.en", device=os.environ.get("REELBOT_WHISPER_DEVICE", "cpu"),
+                         compute_type=os.environ.get("REELBOT_WHISPER_COMPUTE", "int8"))  # "auto" picked CUDA without cuBLAS 12 on the PC
     segs, _ = model.transcribe(str(video))
     heard = " ".join(s.text.strip() for s in segs).lower()
     norm = lambda s: "".join(c for c in s.lower() if c.isalnum() or c == " ").split()

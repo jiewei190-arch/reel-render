@@ -123,7 +123,8 @@ def _listen_local(pcm: bytes, line: str) -> dict:
     except ImportError:
         return {"ok": True, "score": 0, "heard_emotion": "", "problem": "not checked (pip install faster-whisper)"}
     if _whisper is None:
-        _whisper = WhisperModel("small.en", device="auto", compute_type="auto")
+        _whisper = WhisperModel("small.en", device=os.environ.get("REELBOT_WHISPER_DEVICE", "cpu"),
+                         compute_type=os.environ.get("REELBOT_WHISPER_COMPUTE", "int8"))  # "auto" picked CUDA without cuBLAS 12 on the PC
     a = np.frombuffer(pcm, dtype=np.int16).astype(np.float32) / 32768.0
     idx = np.linspace(0, len(a) - 1, int(len(a) * 16000 / SR))
     a16 = np.interp(idx, np.arange(len(a)), a).astype(np.float32)
