@@ -1,5 +1,6 @@
 // storytime kit (KIT_STORYTIME.md): the recipe schema. A first-person comedy story ("my homie...") told by one narrator,
-// two original kid characters with big expressive faces, three school sets, a cut every 1-3 s, 1-3 word captions.
+// two original low-poly kid characters (decal faces: octagon eyes, bar brows; no lip-sync), three school sets, held poses
+// with a slow camera push per shot, hard cuts (~2.9 s average), POV inserts, 1-4 word captions.
 
 /** a time anchor: seconds, or a spoken word: "L:word" (first "word" of line L), "L:word#k" (its k-th occurrence in the
  *  line, 1-based), "L" (line L's first word), "L:end" (line L's last word end); any of them + "+0.2" / "-0.1" seconds */
@@ -23,11 +24,13 @@ export type CamPreset =
   | "punch_in" //   a tight face close-up that slams in over 0.15 s (on)
   | "two_shot" //   both kids
   | "ots" //        over the shoulder of the other kid onto "on"
-  | "insert" //     the phone screen
+  | "insert" //     the phone screen over the holder's shoulder
+  | "pov_phone" //  first person (the narrator's eyes): the homie's phone held up to the lens, the narrator's hand in frame
+  | "pov_tray" //   first person: looking down at the narrator's lunch tray, his hands on its edges
   | "wide_class" // the set's wide (use sparingly)
   | "crowd" //      the background classmates (reactions)
   | "windows"; //   the cafeteria's window wall (the shatter)
-export const CAM_PRESETS: CamPreset[] = ["closeup_me", "closeup_homie", "closeup", "punch_in", "two_shot", "ots", "insert", "wide_class", "crowd", "windows"];
+export const CAM_PRESETS: CamPreset[] = ["closeup_me", "closeup_homie", "closeup", "punch_in", "two_shot", "ots", "insert", "pov_phone", "pov_tray", "wide_class", "crowd", "windows"];
 
 export type Cam = {
   preset: CamPreset;
@@ -91,9 +94,16 @@ export type CastSpec = {
   name: string;
   skin: string;
   hair: string;
-  hairStyle: "flattop" | "spiky" | "curls" | "buzz" | "puff" | "bob";
+  hairStyle: "flattop" | "spiky" | "curls" | "twists" | "buzz" | "puff" | "bob";
   top: string;
-  topStyle: "hoodie" | "tee" | "jacket";
+  /** bomber: an open jacket (top) over a tee (inner), ribbed collar / cuffs / waistband (trim) */
+  topStyle: "hoodie" | "tee" | "jacket" | "bomber";
+  /** the tee under a bomber / jacket */
+  inner?: string;
+  /** a small chain necklace (colour) */
+  chain?: string;
+  /** cargo pants: pockets on the thighs */
+  cargo?: boolean;
   trim: string;
   pants: string;
   shoes: string;

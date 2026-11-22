@@ -1,19 +1,26 @@
-// storytime sets: small, bright, readable school sets with few props. Procedural only: no logos, no real brands.
-//   classroom  back row (the leads) + two rows of classmates facing a green chalkboard; wall clock, posters, windows
+// storytime sets, LOW-POLY: simple but furnished school sets, flat matte colours (saturated mids on cream / beige walls, a
+// grey ceiling), warm low sun through the windows laid on the walls as long soft stripes. No logos, no real brands.
+//   classroom  back row (the leads) + two rows of classmates facing a whiteboard (readable generic text); clock, corkboard,
+//              bookshelf, posters, windows
 //   hallway    two walls of lockers, tiled floor, ceiling lights, a bulletin board, double doors at the end
 //   cafeteria  long tables with benches and trays, a serving counter, a wall of BIG windows (they shatter)
 import React from "react";
 import * as THREE from "three";
-import { canvasTexture, geoOf, plastic } from "../blocky/mat";
-import { cardMat, clayMat, feltMat, lumpBox, printMat } from "./clay";
+import { canvasTexture, geoOf } from "../blocky/mat";
+import { polyBox, polyIco, polyMat, printMat, sunMat } from "./poly";
 import { SETS, deskOf } from "./layout";
 import type { V3 } from "./layout";
 import type { SetId } from "./types";
 
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
-// CLAYMATION miniatures: clay props, painted cardboard walls and lockers, felt floors, printed paper posters
-const flat = (c: string, _r = 0.8) => clayMat(c, { bump: 0.7 });
-const rbox = (w: number, h: number, d: number, _r: number) => lumpBox(w, h, d);
+const flat = (c: string, _r = 0.8) => polyMat(c);
+const rbox = (w: number, h: number, d: number, r: number) => polyBox(w, h, d, r);
+const plastic = (c: string, o: { emissive?: string; ei?: number; transparent?: boolean; opacity?: number } = {}) =>
+  o.transparent ? glassMat(c, o.opacity ?? 0.3) : polyMat(c, { emissive: o.emissive, ei: o.ei });
+const glassMats = new Map<string, THREE.Material>();
+const glassMat = (c: string, op: number) => { const k = `${c}|${op}`; let m = glassMats.get(k); if (!m) { m = new THREE.MeshStandardMaterial({ color: c, transparent: true, opacity: op, roughness: 0.1, metalness: 0, depthWrite: false }); glassMats.set(k, m); } return m; };
+/** the room palette: cream / beige walls, grey ceiling, warm floors */
+const WALL = "#eadbbd", WALL2 = "#e3cfa8", CEIL = "#a9abae";
 const BOX = () => geoOf("stBox", () => new THREE.BoxGeometry(1, 1, 1));
 const PLANE = () => geoOf("stPlane", () => new THREE.PlaneGeometry(1, 1));
 const basic = new Map<string, THREE.MeshBasicMaterial>();
@@ -21,21 +28,64 @@ const bmat = (c: string, map?: THREE.Texture) => { const k = `${c}|${map?.uuid ?
 /** a box from its min corner to its max corner */
 const Blk: React.FC<{ a: V3; b: V3; m: THREE.Material; cast?: boolean }> = ({ a, b, m, cast = true }) => {
   const w = b[0] - a[0], h = b[1] - a[1], d = b[2] - a[2], c: V3 = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2];
-  // small pieces are hand-made clay blocks; walls and big panels stay flat boards (cardboard)
-  if (Math.max(w, h, d) < 1.7) return <mesh geometry={lumpBox(w, h, d, Math.min(w, h, d) * 0.35)} material={m} position={c} castShadow={cast} receiveShadow />;
   return <mesh geometry={BOX()} material={m} position={c} scale={[w, h, d]} castShadow={cast} receiveShadow />;
 };
 const texMat = (tex: THREE.Texture, _r = 0.75) => printMat(tex);
+/** a sunlight patch: a quad from 4 world corners (the window light laid on a wall / floor), additive warm */
+const Patch: React.FC<{ P: V3[]; k?: number }> = ({ P, k = 0.42 }) => {
+  const key = `stPatch${P.map((p) => p.map((v) => v.toFixed(2)).join(",")).join("|")}`;
+  const g = geoOf(key, () => { const b = new THREE.BufferGeometry(); b.setAttribute("position", new THREE.Float32BufferAttribute([...P[0], ...P[1], ...P[2], ...P[0], ...P[2], ...P[3]], 3)); b.computeVertexNormals(); return b; });
+  return <mesh geometry={g} material={sunMat(k)} renderOrder={2} />;
+};
+/** window panes (rectangles on a window plane) pushed along the sun direction d until they hit a plane (axis = value) */
+const sunStripes = (panes: [V3, V3, V3, V3][], d: V3, axis: 0 | 1 | 2, value: number, lim: { y0?: number; y1?: number; a0?: number; a1?: number; along?: 0 | 2 } = {}) => panes.map((Q) => Q.map((p) => {
+  const tt = (value - p[axis]) / d[axis];
+  const o: V3 = [p[0] + d[0] * tt, p[1] + d[1] * tt, p[2] + d[2] * tt];
+  o[axis] = value + (axis === 1 ? 0.004 : -0.004 * Math.sign(d[axis]));
+  if (lim.y0 !== undefined) o[1] = Math.max(lim.y0, Math.min(lim.y1 ?? 99, o[1]));
+  if (lim.along !== undefined && lim.a0 !== undefined) o[lim.along] = Math.max(lim.a0, Math.min(lim.a1 ?? 99, o[lim.along]));
+  return o;
+}) as V3[]);
 
 // ------------------------------------------------------------------ textures
-const chalkboard = () => canvasTexture("stBoard", 1024, 400, (g, W, H) => {
-  g.fillStyle = "#2f6b4f"; g.fillRect(0, 0, W, H);
-  g.fillStyle = "rgba(255,255,255,0.05)"; for (let k = 0; k < 30; k++) g.fillRect(hash(k) * W, hash(k + 9) * H, 120, 30);
-  g.fillStyle = "rgba(245,245,235,0.92)"; g.font = "700 64px Poppins, sans-serif"; g.fillText("POP QUIZ FRIDAY", 60, 100);
-  g.font = "700 54px Poppins, sans-serif"; g.fillText("2x + 3 = 11", 60, 200); g.fillText("x = ?", 60, 285);
-  g.strokeStyle = "rgba(245,245,235,0.85)"; g.lineWidth = 6;
-  g.beginPath(); g.arc(800, 200, 70, 0, Math.PI * 2); g.stroke(); g.beginPath(); g.moveTo(730, 200); g.lineTo(870, 200); g.moveTo(800, 130); g.lineTo(800, 270); g.stroke();
-  g.font = "700 40px Poppins, sans-serif"; g.fillText("no phones in class!", 560, 360);
+const chalkboard = () => canvasTexture("stWhiteboard", 1024, 400, (g, W, H) => {
+  g.fillStyle = "#f7f8f6"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(0,0,0,0.04)"; for (let k = 0; k < 6; k++) g.fillRect(hash(k) * W, hash(k + 9) * H, 220, 26);
+  g.fillStyle = "#1f4fbf"; g.font = "700 66px Poppins, sans-serif"; g.fillText("TODAY: Fractions", 50, 92);
+  g.fillStyle = "#222"; g.font = "700 58px Poppins, sans-serif"; g.fillText("1/2 + 1/4 = ?", 50, 190);
+  g.fillStyle = "#c62828"; g.font = "700 50px Poppins, sans-serif"; g.fillText("Quiz Friday!", 50, 290);
+  g.fillStyle = "#2e7d32"; g.font = "700 44px Poppins, sans-serif"; g.fillText("HW: p. 42  #1-10", 560, 290);
+  g.strokeStyle = "#1f4fbf"; g.lineWidth = 7; g.beginPath(); g.arc(800, 165, 75, 0, Math.PI * 2); g.stroke(); g.beginPath(); g.moveTo(800, 165); g.lineTo(800, 90); g.moveTo(800, 165); g.lineTo(865, 200); g.stroke();
+  g.fillStyle = "#555"; g.font = "700 36px Poppins, sans-serif"; g.fillText("no phones in class", 560, 370);
+});
+/** a cracked pane: a spider web of white crack lines on clear (unlit, transparent) */
+const crackTex = () => canvasTexture("stCrack", 512, 512, (g, W, H) => {
+  g.clearRect(0, 0, W, H); g.strokeStyle = "rgba(255,255,255,0.95)"; g.lineCap = "round";
+  const cx = W * 0.46, cy = H * 0.52;
+  const rays = 13;
+  const ends: [number, number][][] = [];
+  for (let k = 0; k < rays; k++) {
+    const a = (k / rays) * Math.PI * 2 + hash(k) * 0.4; const pts: [number, number][] = [[cx, cy]];
+    let x = cx, y = cy;
+    for (let j = 1; j <= 6; j++) { const r = j * W * 0.11; x = cx + Math.cos(a + (hash(k * 7 + j) - 0.5) * 0.25) * r; y = cy + Math.sin(a + (hash(k * 7 + j) - 0.5) * 0.25) * r; pts.push([x, y]); }
+    ends.push(pts);
+    g.lineWidth = 4; g.beginPath(); pts.forEach(([px, py], i) => (i ? g.lineTo(px, py) : g.moveTo(px, py))); g.stroke();
+  }
+  g.lineWidth = 2.5;
+  for (let j = 1; j <= 5; j++) { g.beginPath(); for (let k = 0; k <= rays; k++) { const [px, py] = ends[k % rays][j]; if (k) g.lineTo(px, py); else g.moveTo(px, py); } g.stroke(); }
+  g.fillStyle = "rgba(255,255,255,0.35)"; g.beginPath(); g.arc(cx, cy, 26, 0, Math.PI * 2); g.fill();
+});
+let crackM: THREE.Material | null = null;
+const crackMat = () => (crackM ??= new THREE.MeshBasicMaterial({ map: crackTex(), transparent: true, depthWrite: false, toneMapped: false, fog: false }));
+const corkTex = () => canvasTexture("stCork", 512, 340, (g, W, H) => {
+  g.fillStyle = "#c69a63"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(90,60,30,0.18)"; for (let k = 0; k < 400; k++) g.fillRect(hash(k) * W, hash(k + 3) * H, 3, 3);
+  const notes: [number, number, number, number, string, string][] = [[24, 24, 150, 120, "#fff59d", "Field trip\nMay 12"], [196, 40, 130, 150, "#ffffff", "Lunch\nmenu"], [348, 20, 140, 110, "#90caf9", "Book\nclub"], [40, 170, 170, 140, "#ffab91", "Science\nfair!"], [240, 210, 120, 110, "#a5d6a7", "Team\nA B C"], [380, 150, 110, 160, "#ffffff", "Rules\n1 2 3"]];
+  for (const [x, y, w, h, c, txt] of notes) {
+    g.fillStyle = c; g.fillRect(x, y, w, h); g.fillStyle = "#333"; g.font = "700 26px Poppins, sans-serif";
+    txt.split("\n").forEach((l, i) => g.fillText(l, x + 12, y + 38 + i * 32));
+    g.fillStyle = "#e53935"; g.beginPath(); g.arc(x + w / 2, y + 8, 7, 0, Math.PI * 2); g.fill();
+  }
 });
 const poster = (key: string, bg: string, fg: string, word: string, icon: (g: CanvasRenderingContext2D) => void) => canvasTexture(key, 256, 340, (g, W, H) => {
   g.fillStyle = bg; g.fillRect(0, 0, W, H); g.fillStyle = "rgba(255,255,255,0.18)"; g.fillRect(12, 12, W - 24, H - 24);
@@ -98,11 +148,33 @@ const CeilingLight: React.FC<{ p: V3 }> = ({ p }) => (
   <mesh geometry={BOX()} material={plastic("#ffffff", { emissive: "#fffbe8", ei: 1.4 })} position={p} scale={[1.1, 0.05, 0.4]} />
 );
 
+/** the sun's travel direction per set (from the windows into the room): low and warm */
+export const SUN_CLASS: V3 = (() => { const v: V3 = [-0.6, -0.12, 1]; const l = Math.hypot(...v); return [v[0] / l, v[1] / l, v[2] / l]; })();
+export const SUN_CAF: V3 = (() => { const v: V3 = [0.22, -0.1, 1]; const l = Math.hypot(...v); return [v[0] / l, v[1] / l, v[2] / l]; })();
+const Bookshelf: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z }) => {
+  const wood = flat("#9c6b3f"), h = 1.6, d = 0.34, zc = z - d / 2;
+  const books: React.ReactNode[] = [];
+  const C = ["#e63946", "#457b9d", "#f4a261", "#2a9d8f", "#8338ec", "#ffbe0b", "#3a86ff", "#fb5607"];
+  for (let r = 0; r < 3; r++) {
+    let x = x0 + 0.06, k = 0;
+    while (x < x1 - 0.12) { const w = 0.05 + 0.04 * hash(r * 31 + k), hh = 0.28 + 0.12 * hash(r * 17 + k * 3); books.push(<Blk key={`${r}-${k}`} a={[x, 0.08 + r * 0.52, zc - 0.12]} b={[x + w, 0.08 + r * 0.52 + hh, zc + 0.12]} m={flat(C[(r * 5 + k) % C.length])} />); x += w + 0.008; k++; }
+  }
+  return (
+    <group>
+      <Blk a={[x0, 0, z - 0.04]} b={[x1, h, z]} m={wood} />
+      <Blk a={[x0, 0, z - d]} b={[x0 + 0.04, h, z]} m={wood} />
+      <Blk a={[x1 - 0.04, 0, z - d]} b={[x1, h, z]} m={wood} />
+      {[0, 0.52, 1.04, 1.56].map((y, i) => <Blk key={i} a={[x0, y, z - d]} b={[x1, y + 0.04, z]} m={wood} />)}
+      {books}
+    </group>
+  );
+};
+
 // ------------------------------------------------------------------ classroom
 const Classroom: React.FC<{ t: number }> = ({ t }) => {
   const S = SETS.classroom;
-  const floor = feltMat("#d99a5b", 10);
-  const wall = cardMat("#a8d8ea"), wall2 = cardMat("#f7e3af"), base = flat("#5c6b8a");
+  const floor = flat("#c98f5a");
+  const wall = flat(WALL), wall2 = flat(WALL2), base = flat("#7a5c46");
   const kids = [S.marks.me, S.marks.homie, ...S.extras];
   const posters = [
     poster("stP1", "#ff8c42", "#ffffff", "READ!", (g) => { g.fillRect(70, 70, 50, 120); g.fillRect(136, 70, 50, 120); }),
@@ -118,7 +190,7 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
       <Blk a={[-4.3, 0, -5]} b={[-4.2, 3.4, 3.9]} m={wall2} cast={false} />
       <Blk a={[4.2, 0, -5]} b={[4.3, 3.4, 3.9]} m={wall2} cast={false} />
       <Blk a={[-4.5, 0, 3.75]} b={[4.5, 0.18, 3.8]} m={base} cast={false} />
-      <Blk a={[-4.5, 3.4, -5]} b={[4.5, 3.45, 3.9]} m={cardMat("#fbfbf6")} cast={false} />
+      <Blk a={[-4.5, 3.4, -5]} b={[4.5, 3.45, 3.9]} m={flat(CEIL)} cast={false} />
       {[-3.2, 0, 3.2].map((z) => [-1.6, 1.6].map((x) => <CeilingLight key={`${x}${z}`} p={[x, 3.38, z]} />))}
       {/* the chalkboard + tray, the teacher's desk */}
       <Blk a={[-2.0, 0.85, -4.92]} b={[2.0, 2.45, -4.86]} m={flat("#b07a45")} />
@@ -126,12 +198,16 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
       <Blk a={[-2.0, 0.82, -4.86]} b={[2.0, 0.86, -4.74]} m={flat("#b07a45")} />
       <Blk a={[1.4, 0, -4.2]} b={[3.0, 0.78, -3.5]} m={flat("#c98d4b")} />
       <Clock p={[-2.9, 2.55, -4.85]} t={t} r={0.3} />
-      {/* back wall (seen behind the leads' close-ups): a clock, posters, cubbies */}
-      <Clock p={[1.55, 2.15, 3.74]} t={t} yaw={Math.PI} r={0.27} />
-      {posters.map((tex, i) => <mesh key={i} geometry={PLANE()} material={texMat(tex, 0.9)} position={[-2.4 + i * 1.05 - (i > 0 ? 0 : 0), 1.85, 3.74]} rotation={[0, Math.PI, 0]} scale={[0.66, 0.88, 1]} />)}
-      {[-2.9, -1.9].map((x, i) => <mesh key={i} geometry={PLANE()} material={texMat(posters[(i + 1) % 3], 0.9)} position={[x + 5.9, 1.75, 3.74]} rotation={[0, Math.PI, 0]} scale={[0.6, 0.8, 1]} />)}
+      {/* back wall (seen behind the leads' close-ups): posters, the corkboard, a clock, the bookshelf, cubbies */}
+      {posters.slice(0, 2).map((tex, i) => <mesh key={i} geometry={PLANE()} material={texMat(tex, 0.9)} position={[-3.35 + i * 0.95, 1.85, 3.74]} rotation={[0, Math.PI, 0]} scale={[0.66, 0.88, 1]} />)}
+      <Blk a={[-1.75, 1.15, 3.72]} b={[-0.25, 2.25, 3.8]} m={flat("#8a5a32")} />
+      <mesh geometry={PLANE()} material={texMat(corkTex())} position={[-1.0, 1.7, 3.715]} rotation={[0, Math.PI, 0]} scale={[1.38, 0.98, 1]} />
+      <Clock p={[0.85, 2.35, 3.74]} t={t} yaw={Math.PI} r={0.27} />
+      <Bookshelf x0={2.0} x1={3.7} z={3.78} />
       <Blk a={[-4.2, 0, 3.3]} b={[-2.9, 1.0, 3.75]} m={flat("#f4a259")} />
       {[0, 1, 2].map((k) => <Blk key={k} a={[-4.1 + k * 0.42, 0.12, 3.29]} b={[-3.75 + k * 0.42, 0.88, 3.3]} m={flat(["#ef476f", "#118ab2", "#06d6a0"][k])} cast={false} />)}
+      {/* low warm sun from the windows (+x, front) laid on the back wall as long slanted stripes */}
+      {sunStripes([-2.8, -0.6, 1.6].flatMap((z) => [[z - 0.81, z - 0.03], [z + 0.03, z + 0.81]].map(([a, b]) => [[4.12, 1.02, a], [4.12, 1.02, b], [4.12, 2.48, b], [4.12, 2.48, a]] as [V3, V3, V3, V3])), SUN_CLASS, 2, 3.79, { y0: 0.19, y1: 3.38, along: 0, a0: -4.2, a1: 4.2 }).map((P, i) => <Patch key={i} P={P} />)}
       {/* windows on the right wall (sunny) */}
       {[-2.8, -0.6, 1.6].map((z, i) => (
         <group key={i}>
@@ -152,16 +228,16 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
 
 // ------------------------------------------------------------------ hallway
 const Hallway: React.FC<{ t: number }> = () => {
-  const floor = feltMat("#c9d3dc", 12);
+  const floor = flat("#b9c2c9");
   const lockL = printMat(lockerTex("stLockA", "#3a86ff")), lockR = printMat(lockerTex("stLockB", "#ff9f1c"));
-  const wall = cardMat("#f1f3d0");
+  const wall = flat(WALL);
   const n = 40, z0 = -15;
   return (
     <group>
       <mesh geometry={PLANE()} material={floor} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -5]} scale={[3.6, 22, 1]} receiveShadow />
       <Blk a={[-1.9, 0, z0]} b={[-1.8, 3.1, 6]} m={wall} cast={false} />
       <Blk a={[1.8, 0, z0]} b={[1.9, 3.1, 6]} m={wall} cast={false} />
-      <Blk a={[-1.9, 3.1, z0]} b={[1.9, 3.15, 6]} m={cardMat("#fbfbf6")} cast={false} />
+      <Blk a={[-1.9, 3.1, z0]} b={[1.9, 3.15, 6]} m={flat(CEIL)} cast={false} />
       {Array.from({ length: 8 }, (_, k) => <CeilingLight key={k} p={[0, 3.08, 4 - k * 2.4]} />)}
       {/* lockers: a row on each wall (a bulletin board breaks the left row) */}
       {Array.from({ length: n }, (_, k) => {
@@ -209,8 +285,8 @@ const Table: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z }) =
 
 const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }) => {
   const S = SETS.cafeteria, Wd = S.windows!;
-  const floor = feltMat("#e3d6b8", 12);
-  const wall = cardMat("#ffd6a5"), wallB = cardMat("#cde7b0"), frame = flat("#ffffff", 0.5);
+  const floor = flat("#d8c9a8");
+  const wall = flat(WALL), wallB = flat(WALL2), frame = flat("#ffffff", 0.5);
   const glass = React.useMemo(() => new THREE.MeshStandardMaterial({ color: "#d4f1ff", transparent: true, opacity: 0.28, roughness: 0.05, metalness: 0, depthWrite: false }), []);
   const isBroken = broken !== null && t >= broken;
   return (
@@ -222,10 +298,12 @@ const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }
       <Blk a={[-3.5, 1.0, 4.25]} b={[3.5, 1.06, 5.2]} m={flat("#e9ecef", 0.3)} />
       <Blk a={[-3.5, 1.06, 4.3]} b={[3.5, 1.5, 4.34]} m={plastic("#e8f6ff", { transparent: true, opacity: 0.3 })} cast={false} />
       <mesh geometry={PLANE()} material={texMat(poster("stMenu", "#264653", "#ffd166", "LUNCH", (g) => { g.font = "700 34px Poppins, sans-serif"; g.textAlign = "center"; for (let k = 0; k < 4; k++) g.fillText(["PIZZA", "TACOS", "SALAD", "MILK"][k], 128, 70 + k * 46); }), 0.9)} position={[0, 2.5, 5.18]} rotation={[0, Math.PI, 0]} scale={[1.6, 1.4, 1]} />
+      {/* low sun through the big windows (behind the homie) laid on the back wall as long stripes */}
+      {sunStripes(Wd.xs.flatMap((x) => [[x - Wd.w / 2 + 0.06, x - 0.04], [x + 0.04, x + Wd.w / 2 - 0.06]].flatMap(([a, b]) => [[Wd.y0 + 0.06, (Wd.y0 + Wd.y1) / 2 - 0.04], [(Wd.y0 + Wd.y1) / 2 + 0.04, Wd.y1 - 0.06]].map(([y0, y1]) => [[a, y0, Wd.z], [b, y0, Wd.z], [b, y1, Wd.z], [a, y1, Wd.z]] as [V3, V3, V3, V3]))), SUN_CAF, 2, 5.19, { y0: 1.08, y1: 3.78, along: 0, a0: -6.5, a1: 6.5 }).map((P, i) => <Patch key={i} P={P} k={0.36} />)}
       {/* side walls */}
       <Blk a={[-6.6, 0, -4.4]} b={[-6.5, 3.8, 5.3]} m={wallB} cast={false} />
       <Blk a={[6.5, 0, -4.4]} b={[6.6, 3.8, 5.3]} m={wallB} cast={false} />
-      <Blk a={[-6.6, 3.8, -4.4]} b={[6.6, 3.85, 5.3]} m={cardMat("#fbfbf6")} cast={false} />
+      <Blk a={[-6.6, 3.8, -4.4]} b={[6.6, 3.85, 5.3]} m={flat(CEIL)} cast={false} />
       {[-3.5, 0, 3.5].map((x) => [-2.2, 1.0, 3.6].map((z) => <CeilingLight key={`${x}${z}`} p={[x, 3.78, z]} />))}
       {/* the window wall: a low wall, BIG windows (2 x 2 panes each), the sky + trees outside */}
       <Blk a={[-6.6, 0, Wd.z - 0.15]} b={[6.6, Wd.y0, Wd.z]} m={wall} cast={false} />
@@ -250,8 +328,10 @@ const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }
               return <mesh key={q} geometry={geoOf(`stJag${q}`, () => { const w = 0.7, h = 0.66; const a = new THREE.Shape(); a.moveTo(-w, -h); a.lineTo(-w + 0.32, -h); a.lineTo(-w + 0.1, -h + 0.42); a.lineTo(-w, -h + 0.28); a.lineTo(-w, -h); const b = new THREE.Shape(); b.moveTo(w, h); b.lineTo(w - 0.4, h); b.lineTo(w - 0.12, h - 0.3); b.lineTo(w, h - 0.5); b.lineTo(w, h); return new THREE.ShapeGeometry([a, b]); })} material={glass} position={[cx, cy, Wd.z - 0.04]} rotation={[0, 0, q * Math.PI / 2]} />;
             })
           )}
+          {isBroken ? <mesh geometry={PLANE()} material={crackMat()} position={[x, (Wd.y0 + Wd.y1) / 2, Wd.z - 0.03]} scale={[Wd.w - 0.08, Wd.y1 - Wd.y0 - 0.08, 1]} rotation={[0, 0, i * 1.7]} renderOrder={3} /> : null}
         </group>
       ))}
+      {isBroken ? Array.from({ length: 70 }, (_, k) => <mesh key={`sh${k}`} geometry={polyIco(0.05 + 0.06 * hash(k + 3), 1.2, 0.18, 0.9)} material={glassMat("#cfeeff", 0.7)} position={[Wd.xs[k % 3] + (hash(k) - 0.5) * 3.2, 0.012, Wd.z + 0.25 + hash(k + 9) * 2.4]} rotation={[0, hash(k + 5) * 6, 0]} />) : null}
       {/* tables: ours, two side tables, one back table */}
       <Table x0={-1.8} x1={1.8} z={0} />
       <Table x0={-4.5} x1={-2.0} z={0} />

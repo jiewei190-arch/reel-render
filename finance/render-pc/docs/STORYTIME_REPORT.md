@@ -93,3 +93,83 @@ The contact sheet and key stills come from the PC's MP4 (one still every 2 s; `f
 - The final GPU render of the latest commit on the PC, plus the contact sheet and stills from that MP4.
 - The face cull is a hard hide. A sculpted profile face (pieces that wrap around the head) would look better for long profile shots.
 - `me`'s colours are set per character. If the PC still shows a skin shift in other sets, compare the average skin colour per set in a still, as the main QA did.
+
+---
+
+## HAND-OFF: low-poly restyle (in progress, stopped mid-way)
+
+The owner rejected the claymation look, and MAIN sent a new low-poly spec. Work stopped part-way when the restyle was handed to the PC (GPU) session. Everything is on `engine/storytime`. `tsc --noEmit` passes for `src/storytime`.
+
+**Nothing below has been rendered or visually checked yet.** The recipe and compiler are still the claymation-era ones, and the low-poly code below has never been rendered.
+
+### Done (code written, typechecks, NOT rendered or visually checked)
+
+- **`src/storytime/poly.ts`** (new) holds the low-poly toolkit. Everything is flat-shaded, matte and one colour per part.
+  - Geometry: `polyBox` (single-chamfer box), `polyBall`, `polyIco`, `polyLimb` (6-sided prism hanging from 0 to -len), `polyCone`, `polyTorus`.
+  - Materials:
+    - `polyMat(c)`: MeshStandard with flatShading;
+    - `decalMat(c)`: face decals, with polygon offset;
+    - `printMat(tex)`: whiteboard, posters, lockers;
+    - `sunMat(k)`: additive warm window-light patches.
+- **`src/storytime/face.ts`** (rewritten): `FaceP` vector + `FACES` presets.
+  - Expressions now differ only in brows (`browY`/`browA`/`browAsym`), lids (`lid`/`lower`) and `eyeS`.
+  - The `open`/`teeth` fields are ignored by the renderer.
+  - `drawFace` (canvas) is removed.
+- **`src/storytime/cast.tsx`** (rewritten as low-poly):
+  - `Kid`:
+    - boxy torso, 6-sided limbs with an elbow, `Mitten` hands, chamfered `polyBox` head (`HB` chamfer);
+    - outfit variants by `topStyle`: `bomber` (open jacket + `inner` tee, ribbed collar/cuffs/waist in `trim`, zip pull), `tee` (white stripe band) and `hoodie`;
+    - `chain` (gold torus) and `cargo` (thigh pockets).
+  - `Face`:
+    - decals on the head's flat front (`ZF`): solid black octagon eyes clipped by the lids (`octagon`, `clipY`), thick bar brows (`bar`), an extruded wedge nose (`NOSE`) and a static thin mouth bar;
+    - hidden past `FACE_CULL` (62°) via `faceAngle()` in compile.ts.
+  - `Hair`: `twists` (new; for me: rows of 5-sided cones on a cap) and `curls` (faceted icosahedron mop for homie); also `flattop`, `spiky`, `puff`, `bob` and the default buzz for extras.
+  - `Phone`: generic video-app screen drawn on a canvas (`drawScreen`): "VINES 2015 COMPILATION", "Clips", an orange play glyph, no real logos.
+- **`src/storytime/types.ts`**:
+  - `CamPreset` adds `pov_phone` and `pov_tray`; they are in the schema but **not implemented in compile.ts**.
+  - `CastSpec` adds `hairStyle: "twists"`, `topStyle: "bomber"`, `inner`, `chain` and `cargo`.
+- **`src/storytime/sets.tsx`** (partly converted):
+  - all materials are `polyMat`/`printMat`; walls cream/beige (`WALL`, `WALL2`); ceiling grey (`CEIL`);
+  - classroom whiteboard with readable generic text (`chalkboard()` now draws a whiteboard), a corkboard (`corkTex`), a `Bookshelf` and a clock on the back wall;
+  - window sun stripes on the back walls (`sunStripes()` + `Patch`, directions `SUN_CLASS` and `SUN_CAF`);
+  - after the break, the cafeteria windows show cracked panes (`crackTex`/`crackMat`) and static glass shards on the floor.
+- **`public/fonts/BarlowCondensed-Bold.woff2`** is added (OFL; Fontsource 5.1.0) for the condensed captions. It is **not wired up yet**.
+
+### NOT done (the rest of the spec)
+
+1. **compile.ts**:
+   - Mouths: make `mouthOf` return 0 and drop the auto `talk` pose. There is no lip-sync; "talking" is the camera on the speaker.
+   - Animation: remove `onTwos` (make it identity) and calm `POSE_ARMS.idle`.
+   - Camera: remove the shake/punch in `camAt` and the flash in `fxAt`, and remove the punch-in slam intro in `camBase`.
+   - POV presets: implement `pov_phone` (camera at me's eye looking toward the homie; a camera-space rig with the phone held by the homie's mitten plus me's hand) and `pov_tray` (camera above me's cafeteria tray, looking down; me's green-sleeve mittens on the tray edges). Hide `me` in POV shots.
+   - DOF: blur on close-ups and POV only, focus on the subject. The View in film.tsx takes `blur`/`focus`.
+2. **Captions** (compile.ts `CAP`, `buildChunks`; hud.tsx `StoryCaption`):
+   - Barlow Condensed Bold, ~96 px (5 % of the height), white, NO outline, a faint drop shadow, centre at 0.62 H.
+   - 1-4 words per chunk; accent colour `#FFB020`; shouts ALL CAPS; no pop.
+   - `fitFs` uses Poppins widths, so scale by ~0.74 for the condensed face (also in `tools/storytime_build.mjs` `capLines`).
+   - Load the font with a FontFace + `delayRender` in hud.tsx.
+3. **film.tsx**:
+   - Mood: no outline (`post.outline.strength 0`), low contrast, warm low key from the windows (classroom ≈ -`SUN_CLASS`, cafeteria ≈ -`SUN_CAF`), ambient fill.
+   - Pass `blur`/`focus` per preset.
+   - Remove `Shards`/`CrackOverlay` (fx.tsx) and render the POV rigs.
+4. **Delete the claymation files**: `src/storytime/clay.ts` (still used by `fx.tsx` and `branding.tsx` only) and `fx.tsx`.
+5. **Episode recipe** `finance/shorts/deez-nuts-ep1/recipe.json`:
+   - Rewrite the shot plan from MAIN's spec: ~2.9 s average (0.7-6.5 s), hard cuts, the narrator visible in ~60 % of shots, POV inserts, the 4× "Deez nuts" tightening close-ups, a slow push through "SHUT THE FUCK UUUP", a hard cut to the broken windows, the smug homie, then black.
+   - New cast:
+     - me: `hairStyle "twists"` (#141414), `topStyle "bomber"` top `#2f5d3a`, inner `#f4f4f0`, trim `#24452c`, khaki pants `#c8b48a`, white shoes;
+     - homie: curls `#c4541c`, purple tee `#7b4fd6` with a white stripe, `cargo: true` olive pants `#6b7a3a`, `chain: "#d4a62a"`, red shoes `#d62828`.
+   - Remove the shake/flash/punch fx.
+6. **QA gates** (`tools/storytime_build.mjs`):
+   - shot length becomes 0.7-6.5 s with a ~2.9 s average;
+   - "mouths never move";
+   - narrator visible in ~60 % of shots;
+   - captions 1-4 words;
+   - drop the shout punch/shake row.
+7. **Branding** (`branding.tsx`): redo the pfp (tight homie, smug, one brow up) and the banner in low-poly. It still imports clay-era faces and props.
+8. **KIT_STORYTIME.md**: replace section 0 (claymation) with the low-poly spec.
+
+### How to run
+
+`node tools/recipe_build.mjs deez-nuts-ep1`, then `npx remotion render src/index.storytime.ts DeezNutsEp1Recipe out/storytime/deez-nuts-ep1.mp4 --gl=angle --crf=20`.
+
+For stills: `node tools/storytime_stills.mjs DeezNutsEp1Recipe 11s 27s --scale 0.5`.
