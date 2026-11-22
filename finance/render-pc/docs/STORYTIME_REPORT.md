@@ -173,3 +173,38 @@ The owner rejected the claymation look, and MAIN sent a new low-poly spec. Work 
 `node tools/recipe_build.mjs deez-nuts-ep1`, then `npx remotion render src/index.storytime.ts DeezNutsEp1Recipe out/storytime/deez-nuts-ep1.mp4 --gl=angle --crf=20`.
 
 For stills: `node tools/storytime_stills.mjs DeezNutsEp1Recipe 11s 27s --scale 0.5`.
+
+---
+
+## PC session (GPU): low-poly look finished for ep1
+
+The PC session finished the hand-off list above, rendering and checking each step on the GPU. The full episode render took 64 s.
+
+- **compile.ts**
+  - Mouths: `mouthOf` is always 0, and faces are forced to `open: 0`. There is no auto `talk` pose.
+  - Motion: smooth (no stop-motion stepping), with calm held idles.
+  - Camera: no shake, punch or flash, and no punch-in slam. Each shot keeps a slow push, which the new `cam.push` option sets (default 0.06).
+  - POV: `pov_phone` (my eyes, the homie's phone held up) and `pov_tray` (looking down over my tray at the homie). In both, `me` is hidden and the rig lives in camera space (film.tsx `CamRig`/`PovRig`).
+  - The `windows` shot hides both leads.
+- **Captions** (CAP, hud.tsx):
+  - Barlow Condensed Bold, loaded with FontFace + delayRender.
+  - 96 px, white, no outline, a soft shadow, accent `#FFB020`, 1-4 words, no pop.
+  - The fit width is divided by `CAP.CW` 0.74.
+  - The one baseline lands at about 0.74 H, because it must clear the close-up necks (R6).
+- **film.tsx**:
+  - Warm window key light from the SUN directions, low contrast, no outline, a light vignette.
+  - DOF on close-ups and POV only. No shards or crack overlay.
+- **cast.tsx**: twists are rounded coil nubs, and the brows travel further.
+- **Gates** (storytime_build.mjs):
+  - shots 0.7-6.5 s with a ~2.9 s average;
+  - mouths never move;
+  - the narrator is visible in 45-75 % of shots;
+  - captions 1-4 words;
+  - no shake, punch or flash fx.
+- **Recipe**: 29 shots, average 2.69 s, narrator visible in 17/29 shots. The new cast is me (twists, green bomber, khakis) and homie (curls, purple tee, cargos, chain, red sneakers).
+- **QA**: 0 clips and 0 framing fails over 2342 frames. All hard gates PASS.
+- **Branding**: pfp, pfp_text and banner are redone in low-poly (smug one-brow homie, solid colour backdrops). The banner's poses are still rough.
+- **Still to do**:
+  - The heads are chamfered boxes, while the reference heads are rounder faceted shapes. A rounder head needs the face decals re-placed.
+  - `clay.ts` and `fx.tsx` are no longer rendered but are still in the tree.
+  - KIT_STORYTIME.md section 0 still describes clay.

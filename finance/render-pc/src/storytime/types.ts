@@ -46,6 +46,8 @@ export type Cam = {
   face?: number;
   /** roll in degrees (a dutch angle) */
   roll?: number;
+  /** how far the camera pushes in over the shot (share of the distance, default 0.06) */
+  push?: number;
 };
 
 /** a face / pose / look change: { "at": anchor, "me": "annoyed", "homie": "smug" } */

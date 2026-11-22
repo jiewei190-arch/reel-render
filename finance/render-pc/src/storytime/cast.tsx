@@ -71,7 +71,7 @@ const Face: React.FC<{ f: FaceP; skin: string; brow: string }> = ({ f, skin, bro
     if (P.length >= 3) parts.push(<mesh key={`e${side}`} geometry={decalGeo(`stEye${side}|${q(f.px)}|${q(lid)}|${q(f.lower)}|${q(f.eyeS)}`, P)} material={decalMat(INK)} />);
     // ---- the brow: a thick bar; angry = inner end down, worried = inner end up; one brow can go way up (asym)
     const mine = side === 1 ? f.browAsym : -f.browAsym;
-    const up = f.browY * 0.032 + Math.max(0, mine) * 0.05 - Math.max(0, -mine) * 0.012;
+    const up = f.browY * 0.048 + Math.max(0, mine) * 0.055 - Math.max(0, -mine) * 0.012;
     const by = cy + ry + 0.035 + up;
     const xi = side * 0.035, xo = side * 0.155, tilt = f.browA * 0.028;
     parts.push(<mesh key={`b${side}`} geometry={decalGeo(`stBrow${side}|${q(by, 0.005)}|${q(tilt, 0.005)}`, bar(xi, by - tilt, xo, by + tilt * 0.5, 0.03), 0.008)} material={decalMat(brow)} />);
@@ -114,7 +114,7 @@ const Hair: React.FC<{ st: FigState }> = ({ st }) => {
       return (
         <group>
           {cap(0.1, 0.3)}
-          {tw.map((x, k) => <mesh key={k} geometry={polyCone(0.034, 0.11, 5)} material={m} position={x.p} rotation={x.r} scale={x.s} />)}
+          {tw.map((x, k) => <mesh key={k} geometry={polyIco(0.042, 1, 1.3, 1)} material={m} position={x.p} rotation={x.r} scale={x.s} />)}
         </group>
       );
     }

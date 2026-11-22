@@ -110,22 +110,31 @@ export const main = async (argv) => {
   // ---------------------------------------------------------------- 5) storytime rules
   const shots = C.shots;
   const lens = shots.map((s) => ({ id: s.id, d: s.b - s.a, hold: !!s.spec.hold, p: s.cam.preset }));
-  const long = lens.filter((x) => x.d > 3.0 + 1e-6 && !x.hold);
-  const shortSh = lens.filter((x) => x.d < 0.4);
+  const long = lens.filter((x) => x.d > 6.5 + 1e-6 && !x.hold);
+  const shortSh = lens.filter((x) => x.d < 0.7);
   const avg = lens.reduce((a, x) => a + x.d, 0) / lens.length;
   const wideT = lens.filter((x) => x.p === "wide_class").reduce((a, x) => a + x.d, 0);
   const faceT = lens.filter((x) => /closeup|punch_in|ots/.test(x.p)).reduce((a, x) => a + x.d, 0);
   const cutT = Math.min(dur, C.endAt);
-  const chunkBad = C.chunks.filter((c) => c.words.length < 1 || c.words.length > 3);
+  const chunkBad = C.chunks.filter((c) => c.words.length < 1 || c.words.length > m.CAP.maxWords);
   const accBad = C.chunks.filter((c) => c.words.filter((w) => w.accent).length !== 1);
   const fitBad = C.chunks.filter((c) => !c.fitOk);
   const shoutBad = C.chunks.filter((c) => c.shout && c.text !== c.text.toUpperCase());
   const minFs = Math.min(...C.chunks.map((c) => c.fs));
   // mouths: only the speaker's mouth moves with the voice
   let wrongMouth = 0, talkFrames = 0;
+  let anyMouth = 0, meShots = 0;
+  for (const s of shots) {
+    if (/^pov_/.test(s.cam.preset)) { meShots++; continue; } // the narrator's own hands are in frame
+    const tm = (s.a + s.b) / 2, cam = C.camAt(tm);
+    const me = C.figsAt(tm, s).find((x) => x.id === "me");
+    const q = me ? m.project(cam, m.headCenter(me)) : null;
+    if (q && q.x > 0 && q.x < 1080 && q.y > 0 && q.y < 1920) meShots++;
+  }
   for (let f = 0; f < C.duration; f++) {
     const t = f / 30; if (t >= C.endAt) break;
     const sp = C.speakerAt(t);
+    for (const st of C.figsAt(t)) if (st.mouth > 0 || st.face.open > 0) anyMouth++;
     for (const id of ["me", "homie"]) { const mo = C.mouthOf(id, t); if (mo > 0.01 && (!sp || sp.speaker !== id)) wrongMouth++; if (mo > 0.05) talkFrames++; }
   }
   // face decals: flat clay pieces seen edge-on (a lead's head on screen, face turned 55-62 deg from the lens; past
@@ -157,21 +166,23 @@ export const main = async (argv) => {
   const gate = [
     ["first spoken word by 0.2 s", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
     ["frame 0 is a face close-up (closeup / punch_in)", /closeup|punch_in/.test(f0), f0, true],
-    ["first cut by 1.25 s", firstCut <= 1.25, `${firstCut.toFixed(2)} s`, true],
-    ["a cut every 1-3 s: no shot over 3.0 s unless hold: true", long.length === 0, long.length ? long.map((x) => `${x.id} ${x.d.toFixed(2)} s`).join(", ") : `longest ${Math.max(...lens.filter((x) => !x.hold).map((x) => x.d)).toFixed(2)} s; average ${avg.toFixed(2)} s over ${lens.length} shots`, true],
-    ["no flash cuts under 0.4 s", shortSh.length === 0, shortSh.map((x) => `${x.id} ${x.d.toFixed(2)} s`).join(", ") || "none", false],
+    ["first cut by 3.6 s", firstCut <= 3.6, `${firstCut.toFixed(2)} s`, false],
+    ["shot length 0.7-6.5 s (average ~2.9 s): no shot over 6.5 s unless hold: true", long.length === 0, long.length ? long.map((x) => `${x.id} ${x.d.toFixed(2)} s`).join(", ") : `longest ${Math.max(...lens.filter((x) => !x.hold).map((x) => x.d)).toFixed(2)} s; average ${avg.toFixed(2)} s over ${lens.length} shots`, true],
+    [`average shot 2.2-3.6 s (${avg.toFixed(2)} s)`, avg >= 2.2 && avg <= 3.6, `${lens.length} shots`, false],
+    ["no flash cuts under 0.7 s", shortSh.length === 0, shortSh.map((x) => `${x.id} ${x.d.toFixed(2)} s`).join(", ") || "none", false],
     ["almost no wides: wide_class <= 10 % of the runtime", wideT <= 0.1 * cutT, `${(100 * wideT / cutT).toFixed(1)} %`, true],
-    ["face shots (close-up, punch-in, OTS) >= 60 % of the runtime", faceT >= 0.6 * cutT, `${(100 * faceT / cutT).toFixed(1)} %`, false],
-    ["captions: 1-3 words per chunk", chunkBad.length === 0, chunkBad.map((c) => c.text).join(" | ") || `${C.chunks.length} chunks`, true],
+    ["the narrator (me) is visible in ~60 % of shots (45-75 %; POV inserts count)", meShots >= 0.45 * shots.length && meShots <= 0.75 * shots.length, `${meShots}/${shots.length} shots (${(100 * meShots / shots.length).toFixed(0)} %)`, false],
+    ["face shots (close-up, punch-in, OTS) >= 50 % of the runtime", faceT >= 0.5 * cutT, `${(100 * faceT / cutT).toFixed(1)} %`, false],
+    ["captions: 1-4 words per chunk", chunkBad.length === 0, chunkBad.map((c) => c.text).join(" | ") || `${C.chunks.length} chunks`, true],
     ["captions: exactly one yellow accent word per chunk", accBad.length === 0, accBad.map((c) => c.text).join(" | ") || "all", true],
     ["captions: shout lines ALL CAPS", shoutBad.length === 0, shoutBad.map((c) => c.text).join(" | ") || `lines ${shout.join(", ")}`, true],
     [`captions text-fit: every chunk on one line at >= ${m.CAP.minFs} px`, fitBad.length === 0, fitBad.map((c) => `"${c.text}" ${c.fs} px`).join(", ") || `smallest ${minFs.toFixed(1)} px`, true],
-    ["shouts get a punch-in and a shake", shoutShots.every((x) => x.punch && x.shake), shoutShots.map((x) => `line ${x.ln}: ${x.punch ? "punch" : "NO punch"}/${x.shake ? "shake" : "NO shake"}`).join(", "), false],
-    ["mouths: only the speaking character's mouth moves", wrongMouth === 0, `${wrongMouth} wrong frame(s); ${talkFrames} talking kid-frames`, true],
+    ["no shakes, punch zooms or flashes (low-poly: hard cuts only)", !shots.some((s) => s.fx.some((x) => ["shake", "punch", "flash"].includes(x.fx))), shots.filter((s) => s.fx.some((x) => ["shake", "punch", "flash"].includes(x.fx))).map((s) => s.id).join(", ") || "none", true],
+    ["mouths never move (no lip-sync)", anyMouth === 0 && talkFrames === 0, `${anyMouth} kid-frame(s) with an open mouth`, true],
     ["face decals never seen edge-on (55-62 deg; culled past 62 deg)", edgeOn === 0, `${edgeOn} edge-on lead-frame(s)${edgeShots.size ? " in " + [...edgeShots].join(", ") : ""}; ${culled} lead-frame(s) with the face culled`, false],
     ["captions: one chunk at a time (no overlap in time)", capOverlap.length === 0, capOverlap.join(" | ") || `${cs.length} chunks, none overlap`, true],
     ["captions: one baseline for the whole film", capYs.size === 1, `y ${[...capYs].join(", ")} px`, true],
-    ["the cafeteria windows shatter", shatter, shatter ? "yes" : "no shatter fx in a cafeteria shot", false],
+    ["the cafeteria windows end up cracked (shatter marks the break)", shatter, shatter ? "yes" : "no shatter fx in a cafeteria shot", false],
     ["hard cut to black (no fade) at the end", Number.isFinite(C.endAt) && C.endAt < dur, Number.isFinite(C.endAt) ? `last picture frame ${lastOn}, black from frame ${lastOn + 1} (${C.endAt.toFixed(2)} s) to ${C.duration - 1}` : "recipe.end not set", true],
     ["1080x1920, plain 30 fps, no motion blur", true, "one composition, no Sub", true],
     ["length 30-90 s", dur >= 30 && dur <= 90, `${dur.toFixed(2)} s`, false],

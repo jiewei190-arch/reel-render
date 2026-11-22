@@ -11,7 +11,7 @@ import { CAM_PRESETS, EXPRS, POSES, SET_IDS } from "./types";
 
 export { FPS };
 /** the closest a close-up / punch-in camera may get (m from the face): the head (with hair) stays whole in frame (R2) */
-export const CLOSE_MIN = 2.6, PUNCH_MIN = 2.45;
+export const CLOSE_MIN = 2.6, PUNCH_MIN = 2.45; // 9:16: the head (with hair) keeps ~60 % of the frame width
 /** the caption pop: 0.82 -> 1.06 -> 1 over 4 frames (shouts full, other chunks half as much) */
 /** the angle (radians) between a kid's face direction and the direction to the lens; face pieces are flat clay decals,
  *  so they are hidden past FACE_CULL (seen edge-on they would stand off the side of the head) */
@@ -21,7 +21,8 @@ export const faceAngle = (st: { x: number; z: number; yaw: number; headYaw: numb
   let d = toCam - fwd; d = Math.atan2(Math.sin(d), Math.cos(d));
   return Math.abs(d);
 };
-export const capPop = (t: number, start: number, shout: boolean) => {
+export const capPop = (_t: number, _start: number, _shout: boolean) => 1; // LOW-POLY: captions cut in, no pop
+export const capPopClay = (t: number, start: number, shout: boolean) => {
   const k = Math.min(1, Math.max(0, (t - start + 0.04) / (4 / 30)));
   const pop = k < 0.6 ? 0.82 + (1.06 - 0.82) * (k / 0.6) : 1.06 - 0.06 * ((k - 0.6) / 0.4);
   return shout ? pop : 1 + (pop - 1) * 0.5;
@@ -29,7 +30,6 @@ export const capPop = (t: number, start: number, shout: boolean) => {
 const LEADS: CastId[] = ["me", "homie"];
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const ease = (u: number) => { const x = clamp(u); return x * x * (3 - 2 * x); };
-const easeOut = (u: number) => 1 - Math.pow(1 - clamp(u), 3);
 const lerp = (a: number, b: number, u: number) => a + (b - a) * u;
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
 
@@ -59,7 +59,9 @@ export const resolveAt = (at: At | undefined, words: readonly Word[], dflt: numb
 export type CapWordR = { text: string; t: number; end: number; accent: boolean };
 export type Chunk = { words: CapWordR[]; start: number; end: number; hold: number; line: number; shout: boolean; fs: number; fitOk: boolean; text: string };
 const STOP = new Set("a an the to in on at of is it i i'm im my me and so he she was you your do this that would like then but or as with be are".split(" "));
-export const CAP = { fitFloor: 74, fs: 92, fsShout: 108, minFs: 64, side: 74, centre: 0.665, accent: "#FFD83A", stroke: 10, lineH: 1.08, maxY: 0.8 } as const;
+/** LOW-POLY captions: Barlow Condensed Bold, white, no outline (a faint shadow), ~5 % of the height, centred at 0.62 H.
+ *  fitFs measures Poppins widths; the condensed face is ~0.74 as wide, so the fit width is divided by CW. */
+export const CAP = { fitFloor: 80, fs: 96, fsShout: 100, minFs: 72, side: 90, centre: 0.62, accent: "#FFB020", stroke: 0, lineH: 1.1, maxY: 0.74, CW: 0.74, maxWords: 4 } as const;
 
 /** align the script's spellings to the timed words: "FUUUCK" shows for the timed "fuck", "old-ASS" for "old" "-ass" */
 const displayWords = (lw: readonly Word[], line: Line | undefined) => {
@@ -96,16 +98,16 @@ export const buildChunks = (words: readonly Word[], lines: Record<string, Line>)
       cur.forEach((x, i) => { if (score(x) > score(cur[ai])) ai = i; });
       const ws = cur.map((x, i) => ({ text: shout ? x.text.toUpperCase() : x.text, t: x.t, end: x.end, accent: i === ai }));
       const text = ws.map((x) => x.text).join(" ");
-      const f = fitFs(text, shout ? CAP.fsShout : CAP.fs, W - 2 * CAP.side, 0, CAP.minFs);
+      const f = fitFs(text, shout ? CAP.fsShout : CAP.fs, (W - 2 * CAP.side) / CAP.CW, 0, CAP.minFs);
       out.push({ words: ws, start: ws[0].t, end: ws[ws.length - 1].end, hold: 0, line: ln, shout, fs: f.fs, fitOk: f.ok, text });
       cur = [];
     };
-    const fits = (ws: typeof dw) => fitFs(ws.map((q) => (shout ? q.text.toUpperCase() : q.text)).join(" "), shout ? CAP.fsShout : CAP.fs, W - 2 * CAP.side, 0, CAP.minFs).fs >= CAP.fitFloor;
+    const fits = (ws: typeof dw) => fitFs(ws.map((q) => (shout ? q.text.toUpperCase() : q.text)).join(" "), shout ? CAP.fsShout : CAP.fs, (W - 2 * CAP.side) / CAP.CW, 0, CAP.minFs).fs >= CAP.fitFloor;
     dw.forEach((x, i) => {
       if (cur.length && !fits([...cur, x])) flush();
       cur.push(x);
       const nx = dw[i + 1];
-      if (cur.length >= 3 || /[.,!?…—]$/.test(x.raw.replace(/\.\.\.$/, ".")) || !nx || nx.t - x.end > 0.45) flush();
+      if (cur.length >= CAP.maxWords || /[.,!?…—]$/.test(x.raw.replace(/\.\.\.$/, ".")) || !nx || nx.t - x.end > 0.45) flush();
     });
   }
   out.sort((a, b) => a.start - b.start);
@@ -163,11 +165,11 @@ export const kidBoxes = (st: FigState) => {
 };
 
 const POSE_ARMS: Record<Pose, (t: number, seed: number, amp: number) => { L: [number, number]; R: [number, number]; lean: number; bob: number }> = {
-  idle: (t, sd) => ({ L: [0.08 + 0.03 * Math.sin(t * 1.3 + sd), 0.1], R: [0.08 + 0.03 * Math.sin(t * 1.3 + sd + 1), 0.1], lean: 0.02 * Math.sin(t * 0.8 + sd), bob: 0.004 * Math.sin(t * 2.2 + sd) }),
+  idle: (t, sd) => ({ L: [0.08 + 0.01 * Math.sin(t * 0.9 + sd), 0.1], R: [0.08 + 0.01 * Math.sin(t * 0.9 + sd + 1), 0.1], lean: 0.008 * Math.sin(t * 0.6 + sd), bob: 0 }),
   talk: (t, sd, a) => ({ L: [0.45 + 0.35 * Math.sin(t * 4.1 + sd) * (0.4 + a), 0.25 + 0.1 * Math.sin(t * 2.7)], R: [0.6 + 0.4 * Math.sin(t * 3.6 + sd + 2) * (0.4 + a), 0.2], lean: 0.05 + 0.04 * a, bob: 0.012 * a }),
-  yell: (t, sd, a) => ({ L: [0.7 + 0.25 * a, 0.85 + 0.15 * Math.sin(t * 9)], R: [0.7 + 0.25 * a, 0.85 + 0.15 * Math.sin(t * 9 + 1)], lean: 0.14 + 0.08 * a, bob: 0.02 * a }),
+  yell: (t) => ({ L: [0.75, 0.9 + 0.03 * Math.sin(t * 2)], R: [0.75, 0.9 + 0.03 * Math.sin(t * 2 + 1)], lean: 0.16, bob: 0 }),
   phone: (t, sd) => ({ L: [1.45 + 0.02 * Math.sin(t * 1.7), -0.3], R: [1.45 + 0.02 * Math.sin(t * 1.7 + 1), -0.3], lean: 0.1, bob: 0.003 * Math.sin(t * 2 + sd) }),
-  laugh: (t, sd) => ({ L: [0.55, -0.42 + 0.05 * Math.sin(t * 16 + sd)], R: [0.55, -0.42 + 0.05 * Math.sin(t * 16 + sd + 1)], lean: -0.12 + 0.06 * Math.sin(t * 8 + sd), bob: 0.03 * Math.abs(Math.sin(t * 8 + sd)) }),
+  laugh: (t, sd) => ({ L: [0.55, -0.42], R: [0.55, -0.42], lean: -0.12 + 0.04 * Math.sin(t * 6 + sd), bob: 0.012 * Math.abs(Math.sin(t * 6 + sd)) }),
   point: (t, sd) => ({ L: [0.1, 0.12], R: [1.5 + 0.03 * Math.sin(t * 3), 0.05], lean: 0.08, bob: 0.004 * Math.sin(t * 2 + sd) }),
   lean: (t, sd) => ({ L: [1.2, -0.15], R: [1.2, -0.15], lean: 0.3 + 0.02 * Math.sin(t * 1.1 + sd), bob: 0 }),
 };
@@ -234,14 +236,9 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   classEv.sort(byT);
 
   // ---- the mouth: voice loudness while this kid's line plays (attack fast, release a little slower)
-  const ampAt = (f: number) => (f >= 0 && f < amp.length ? amp[f] : 0);
-  const mouthOf = (id: CastId, t: number) => {
-    const sp = speakerAt(t);
-    if (!sp || sp.speaker !== id || t >= endAt) return 0;
-    const f = Math.floor(t * FPS + 1e-6);
-    const a = Math.max(ampAt(f), 0.6 * ampAt(f - 1), 0.3 * ampAt(f - 2));
-    return clamp((a - 0.05) / 0.55) ** 0.75;
-  };
+  void amp; // the voice loudness is kept in the recipe build but no longer drives the mouths
+  // LOW-POLY: no lip-sync, mouths never move ("talking" = the camera on the speaker + the caption)
+  const mouthOf = (_id: CastId, _t: number) => 0;
 
   // ---- one kid at t
   const blinkAt = (t: number, seed: number) => {
@@ -261,8 +258,8 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     let face = { ...FACES[fv.v] };
     const talking = !!speakerAt(t) && speakerAt(t)!.speaker === id && t < endAt;
     const mo = mouthOf(id, t);
-    const open = Math.round(clamp(face.open + mo * (1 - face.open * 0.45) * 0.95) * 5) / 5;
-    face = { ...face, open, mouthW: Math.round((face.mouthW - (open - face.open) * 0.03) * 100) / 100 };
+    face = { ...face, open: 0, teeth: 0 }; // LOW-POLY: the mouth is a static bar (mo is always 0)
+    void mo;
     if (face.arc < 0.5 && blinkAt(t, seed)) face = { ...face, lid: 1 };
     // side-eye looks toward the other lead
     const other = SETS[setId].marks[id === "me" ? "homie" : "me"];
@@ -270,10 +267,9 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     face = { ...face, px: face.px * side, browAsym: face.browAsym * (fv.v === "sideeye" ? side : 1) };
     // pose
     const pv = valueAt(poseEv[id], t, "idle" as Pose);
-    let pose = pv.v;
-    if (pose === "idle" && talking) pose = "talk";
+    const pose = pv.v;
     const P = POSE_ARMS[pose](t, seed, mo);
-    const Pp = POSE_ARMS[pv.prev === "idle" && talking ? "talk" : pv.prev](t, seed, mo);
+    const Pp = POSE_ARMS[pv.prev](t, seed, mo);
     const u = ease((t - pv.t0) / 0.22);
     // shout lean: a scream pushes the head forward
     const exprLean = fv.v === "scream" || fv.v === "yell" ? 0.06 : fv.v === "shocked" ? -0.05 : 0;
@@ -291,8 +287,8 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const turn = lerp(yawTo(lv.prev), yawTo(lv.v), lu);
     const bodyTurn = turn * 0.45;
     return {
-      id, lead: true, spec, x: m.x, z: m.z, yaw: m.yaw + bodyTurn, headYaw: turn - bodyTurn + 0.04 * Math.sin(t * 0.9 + seed), headPitch: 0.02 * Math.sin(t * 1.1 + seed) + (pose === "phone" ? 0.22 : 0),
-      sit: m.sit, s, lean: lerp(Pp.lean, P.lean, u) + exprLean, bob: lerp(Pp.bob, P.bob, u), tilt: 0.03 * Math.sin(t * 0.7 + seed) + (fv.v === "sideeye" ? 0.06 * side : 0) + (fv.v === "smug" ? -0.07 : 0),
+      id, lead: true, spec, x: m.x, z: m.z, yaw: m.yaw + bodyTurn, headYaw: turn - bodyTurn + 0.012 * Math.sin(t * 0.5 + seed), headPitch: 0.006 * Math.sin(t * 0.6 + seed) + (pose === "phone" ? 0.22 : 0),
+      sit: m.sit, s, lean: lerp(Pp.lean, P.lean, u) + exprLean, bob: lerp(Pp.bob, P.bob, u), tilt: 0.01 * Math.sin(t * 0.4 + seed) + (fv.v === "sideeye" ? 0.06 * side : 0) + (fv.v === "smug" ? -0.07 : 0),
       armL: [lerp(Pp.L[0], P.L[0], u), lerp(Pp.L[1], P.L[1], u)], armR: [lerp(Pp.R[0], P.R[0], u), lerp(Pp.R[1], P.R[1], u)],
       pose, expr: fv.v, face, mouth: mo, talking, seed,
     };
@@ -306,7 +302,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const turnAmt = lerp(turned(cv.prev), turned(cv.v), tu);
     const laughing = cv.v === "laugh" && t >= cv.t0 + stag;
     const f0 = laughing ? FACES.laughing : FACES.neutral;
-    let face = { ...f0 };
+    let face = { ...f0, open: 0, teeth: 0 }; // LOW-POLY: static mouth bars
     if (!laughing && blinkAt(t, e.seed + 11)) face = { ...face, lid: 1 };
     const P = POSE_ARMS[laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0);
     // turn round toward the leads (in the classroom, the back row) with the body; the head does the rest
@@ -315,7 +311,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
       lean: P.lean, bob: P.bob, tilt: laughing ? 0.08 * Math.sin(t * 7 + e.seed) : 0, armL: P.L, armR: P.R, pose: laughing ? "laugh" : "idle", expr: laughing ? "laughing" : "neutral", face, mouth: 0, talking: false, seed: e.seed };
   };
   /** STOP MOTION: characters and props move on twos (a new pose every 2 output frames = 15 fps inside 30 fps) */
-  const onTwos = (t: number) => Math.floor(t * 15 + 1e-6) / 15;
+  const onTwos = (t: number) => t; // LOW-POLY: smooth (the clay look moved on twos)
   const figsAt = (t0: number, shot?: ShotR): FigState[] => {
     const s = shot ?? shotAt(t0);
     const t = Math.max(s.a, onTwos(t0));
@@ -347,13 +343,13 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
       const off = (0.5 - faceFrac) * 2 * d * Math.tan((fov * Math.PI) / 360);
       return { pos, look: [target[0], target[1] - off, target[2]], fov, roll: c.roll ?? 0 };
     };
-    const drift = 0.06 * u; // every shot keeps pushing in a little: no frame is static
+    const drift = (c.push ?? 0.06) * u; // every shot keeps pushing in a little: no frame is static
     switch (c.preset) {
       case "closeup": case "closeup_me": case "closeup_homie": case "punch_in": {
         const st = byId(s.on), F = headCenter(st);
         const punch = c.preset === "punch_in";
         // a punch-in slams from 1.5x out to its distance in 0.16 s; never closer than PUNCH_MIN (the head stays whole)
-        const intro = punch ? 1 + 0.5 * (1 - easeOut((t - s.a) / 0.16)) : 1;
+        const intro = 1; // LOW-POLY: hard cuts only, no slam-in
         const d = Math.max(punch ? PUNCH_MIN : CLOSE_MIN, (punch ? 2.5 : 3.05) * (c.dist ?? 1)) * intro * (1 - drift * (punch ? 0.5 : 1));
         // the other lead must not stand between the lens and this face: swing the angle away until clear
         const O = headCenter(byId(s.on === "me" ? "homie" : "me"));
@@ -390,6 +386,22 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         const pos = add(add(A, mul(dBA, 1.25 * (c.dist ?? 1) * (1 - drift * 0.5))), add(mul(perp, 0.85 * sd), [0, 0.1 + (c.h ?? 0), 0]));
         return aim(pos, B, 32);
       }
+      case "pov_phone": {
+        // FIRST PERSON: my eyes (me is hidden) looking at the homie's phone held up in front of me; the homie behind it
+        const E = headCenter(byId("me")), Hh = headCenter(byId("homie"));
+        const tgt: V3 = [lerp(E[0], Hh[0], 0.55), Hh[1] - 0.16, lerp(E[2], Hh[2], 0.55) - 0.25];
+        const pos: V3 = add(E, [0, 0.03, 0]);
+        const dir = norm(sub(tgt, pos));
+        return { pos: add(pos, mul(dir, 0.04 * u)), look: tgt, fov: 40, roll: c.roll ?? 3 };
+      }
+      case "pov_tray": {
+        // FIRST PERSON: my eyes looking down at my lunch tray (my hands on its edges), the homie across the table
+        const me = byId("me"), E = headCenter(me), f = fwd(me.yaw);
+        const pos: V3 = add(E, add(mul(f, 0.04), [0, 0.1, 0]));
+        const Hh = headCenter(byId("homie"));
+        const look: V3 = [lerp(E[0], Hh[0], 0.8), Hh[1] - 0.3 + 0.03 * u, lerp(E[2], Hh[2], 0.8)];
+        return { pos, look, fov: 50, roll: c.roll ?? -2 };
+      }
       case "insert": {
         const st = byId("homie"), F = headCenter(st), f = fwd(st.yaw), l = leftOf(st.yaw);
         const ph = add(add(F, mul(f, 0.44)), [0, -0.36, 0]);
@@ -411,7 +423,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   const camAt = (t: number): CamS => {
     const s = shotAt(t);
     const c = camIn(s, Math.min(Math.max(t, s.a), s.b));
-    const g = shakeAt(s, t), pk = punchAt(s, t);
+    const g = 0 * shakeAt(s, t), pk = 0 * punchAt(s, t); // LOW-POLY: no shakes, no punch zooms
     if (g <= 0 && pk <= 0) return c;
     const f = norm(sub(c.look, c.pos)), r = norm(cross(f, [0, 1, 0])), u = cross(r, f);
     const n1 = Math.sin(t * 71.3) + 0.6 * Math.sin(t * 113.7 + 1.3), n2 = Math.sin(t * 83.9 + 2.1) + 0.6 * Math.sin(t * 131.1 + 0.4), n3 = Math.sin(t * 59.7 + 4.2);
@@ -421,6 +433,15 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     return { pos: add(c.pos, off), look: add(c.look, mul(off, 0.35)), fov: c.fov * (1 - 0.12 * pk), roll: (c.roll ?? 0) + 2.2 * g * n3 };
   };
 
+  for (const s of shots) if (/^pov_/.test(s.cam.preset)) s.hide.add("me"); // the camera IS my eyes
+  for (const s of shots) if (s.cam.preset === "windows") { s.hide.add("me"); s.hide.add("homie"); } // the cracked windows alone
+  /** POV rig for the film: what is held in front of the lens, and on which side the homie sits */
+  const povOf = (s: ShotR) => {
+    if (!/^pov_/.test(s.cam.preset)) return null;
+    const me = leadAt("me", s.a, s.set), ho = leadAt("homie", s.a, s.set);
+    const right = norm(cross(fwd(me.yaw), [0, 1, 0]));
+    return { kind: s.cam.preset as "pov_phone" | "pov_tray", homieSide: Math.sign(dot(sub(headCenter(ho), headCenter(me)), right)) || 1, me: me.spec, homie: ho.spec };
+  };
   // ---- extras that would block the subject are cheated out of the shot (a film-set cheat)
   for (const s of shots) {
     if (s.cam.preset === "wide_class" || s.cam.preset === "crowd") continue;
@@ -453,7 +474,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   const chunks = recipe.captions === "off" ? [] : buildChunks(words, recipe.lines);
   // one chunk on screen at a time: a chunk's linger ends where the next one comes in (capAt shows from start - 0.04)
   { const cs = [...chunks].sort((a, b) => a.start - b.start); for (let i = 0; i + 1 < cs.length; i++) cs[i].hold = Math.min(cs[i].hold, cs[i + 1].start - 0.04); }
-  const named = (s: ShotR): CastId[] => (s.cam.preset === "two_shot" ? ["me", "homie"] : s.cam.preset === "wide_class" || s.cam.preset === "crowd" || s.cam.preset === "insert" ? [] : s.cam.preset === "windows" ? ["homie"] : [s.on]);
+  const named = (s: ShotR): CastId[] => (s.cam.preset === "two_shot" ? ["me", "homie"] : s.cam.preset === "wide_class" || s.cam.preset === "crowd" || s.cam.preset === "insert" || /^pov_/.test(s.cam.preset) ? [] : s.cam.preset === "windows" ? [] : [s.on]);
   const neckBottom = (cam: CamS, st: FigState) => {
     const b = kidBoxes(st).face;
     const drop = 0.3 * 2 * b.h[1];
@@ -483,7 +504,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   // ---- fx state at t
   const fxAt = (t: number) => {
     const s = shotAt(t);
-    const flash = s.fx.filter((f) => f.fx === "flash" || f.fx === "shatter").reduce((o, f) => Math.max(o, t >= f.at ? clamp(1 - (t - f.at) / 0.12) * (f.fx === "shatter" ? 0.7 : 0.85) : 0), 0);
+    const flash = 0 * s.fx.filter((f) => f.fx === "flash" || f.fx === "shatter").reduce((o, f) => Math.max(o, t >= f.at ? clamp(1 - (t - f.at) / 0.12) * (f.fx === "shatter" ? 0.7 : 0.85) : 0), 0);
     const sh = s.fx.find((f) => f.fx === "shatter");
     return { flash, shatter: sh ? t - sh.at : null, shatterAt: sh?.at ?? null, black: t >= endAt, shake: shakeAt(s, t) };
   };
@@ -492,7 +513,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
 
   return {
     recipe, words, amp, layout: { W, H }, duration, total, endAt, shots, shotAt, camAt, camBase, figsAt, leadAt, extraAt, capAt, chunks, fxAt, speakerAt, spans,
-    brokenFrom, named, mouthOf, onTwos,
+    brokenFrom, named, mouthOf, onTwos, povOf,
   };
 };
 

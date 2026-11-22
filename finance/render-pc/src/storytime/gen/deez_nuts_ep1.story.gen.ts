@@ -12,16 +12,17 @@ export const RECIPE: Recipe = {
  "cast": {
   "me": {
    "name": "me (narrator)",
-   "skin": "#9a6240",
-   "hair": "#1b1410",
-   "hairStyle": "flattop",
-   "top": "#f2b632",
-   "topStyle": "hoodie",
-   "trim": "#ffffff",
-   "pants": "#2f3a56",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
    "shoes": "#f5f5f5",
-   "brow": "#1b1410",
-   "eye": "#3b2416"
+   "brow": "#141414",
+   "eye": "#141414"
   },
   "homie": {
    "name": "homie",
@@ -32,10 +33,11 @@ export const RECIPE: Recipe = {
    "topStyle": "tee",
    "trim": "#ffffff",
    "pants": "#6b7a3a",
-   "shoes": "#22223b",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
    "brow": "#8a3b14",
-   "eye": "#2e6f3e",
-   "freckles": true
+   "eye": "#141414"
   }
  },
  "lines": {
@@ -197,10 +199,10 @@ export const RECIPE: Recipe = {
  "shots": [
   {
    "at": 0,
-   "set": "hallway",
    "cam": {
     "preset": "closeup_homie"
    },
+   "set": "hallway",
    "face": [
     {
      "homie": "yell",
@@ -212,67 +214,24 @@ export const RECIPE: Recipe = {
      "homie": "yell"
     }
    ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.7,
-     "dur": 0.55
-    }
-   ],
-   "note": "cold open: homie yells DEEZ"
-  },
-  {
-   "at": "1:nuts",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie"
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.9,
-     "dur": 0.7
-    }
-   ]
+   "note": "cold open: homie yells DEEZ NUTS"
   },
   {
    "at": "1:deez#2",
    "cam": {
     "preset": "closeup_homie",
-    "az": -22
+    "az": -18,
+    "dist": 0.86
    },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.6
-    }
-   ]
+   "note": "second DEEZ NUTS, tighter"
   },
   {
-   "at": "1:nuts#2",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 8,
-    "dist": 0.9
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 1.1,
-     "dur": 0.6
-    },
-    {
-     "fx": "punch"
-    }
-   ]
-  },
-  {
-   "at": 4.25,
+   "at": "2",
    "cam": {
     "preset": "closeup_me",
-    "az": -20
+    "az": 12
    },
+   "set": "classroom",
    "face": [
     {
      "me": "deadpan"
@@ -280,196 +239,85 @@ export const RECIPE: Recipe = {
    ],
    "pose": [
     {
-     "homie": "idle"
+     "homie": "phone",
+     "me": "idle"
     }
    ],
-   "note": "me, deadpan: BRUH"
+   "note": "me at my desk: Bruh"
   },
   {
-   "at": "2:my",
-   "set": "classroom",
+   "at": "2:homie",
    "cam": {
     "preset": "two_shot"
    },
-   "face": [
-    {
-     "homie": "neutral"
-    }
-   ],
-   "pose": [
-    {
-     "homie": "phone"
-    }
-   ],
-   "note": "in class: homie on his phone"
-  },
-  {
-   "at": "2:youtube",
-   "cam": {
-    "preset": "insert"
-   },
-   "note": "the phone"
-  },
-  {
-   "at": "2:class",
-   "cam": {
-    "preset": "wide_class"
-   }
+   "note": "my homie was watching a video in class"
   },
   {
    "at": "2:and",
    "cam": {
     "preset": "closeup_homie",
-    "az": -14
+    "az": -10
    },
    "look": [
     {
-     "at": "2:turns",
      "homie": "me"
     }
    ],
    "face": [
     {
-     "at": "2:turns",
-     "homie": "sideeye"
-    },
-    {
-     "at": "2:like",
      "homie": "smug"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
     }
    ],
    "note": "he turns to me"
   },
   {
-   "at": "3:bro",
+   "at": "3",
    "cam": {
     "preset": "ots",
     "on": "homie",
-    "az": 1,
-    "dist": 1.25
+    "az": 1
    },
-   "pose": [
-    {
-     "at": "3:bro",
-     "homie": "idle"
-    }
-   ]
+   "note": "Bro. Do you know who Deez is?"
   },
   {
-   "at": "3:do",
-   "cam": {
-    "preset": "closeup_homie",
-    "az": 12
-   },
-   "fx": [
-    {
-     "fx": "punch",
-     "at": "3:deez",
-     "gain": 0.6
-    }
-   ]
-  },
-  {
-   "at": "4:and",
+   "at": "4",
    "cam": {
     "preset": "closeup_me",
-    "az": 0
-   },
-   "look": [
-    {
-     "me": "homie"
-    }
-   ],
-   "face": [
-    {
-     "me": "sideeye"
-    }
-   ]
-  },
-  {
-   "at": "4:motherfucker",
-   "cam": {
-    "preset": "two_shot",
     "az": -8
-   },
-   "face": [
-    {
-     "me": "annoyed",
-     "homie": "laughing"
-    }
-   ],
-   "pose": [
-    {
-     "homie": "phone"
-    }
-   ],
-   "look": [
-    {
-     "homie": "front"
-    }
-   ]
-  },
-  {
-   "at": "4:old",
-   "cam": {
-    "preset": "insert",
-    "roll": 4
-   }
-  },
-  {
-   "at": "4:deez",
-   "cam": {
-    "preset": "closeup_homie",
-    "az": -12
-   },
-   "face": [
-    {
-     "homie": "laughing"
-    }
-   ]
-  },
-  {
-   "at": "4:i",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -12
    },
    "face": [
     {
      "me": "annoyed"
     }
    ],
-   "look": [
-    {
-     "me": "homie"
-    }
-   ]
+   "note": "And me, not knowing this mf"
   },
   {
-   "at": "5:who",
+   "at": "4:was",
    "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -6
+    "preset": "pov_phone"
    },
-   "fx": [
+   "pose": [
     {
-     "fx": "shake",
-     "at": "5:fuck",
-     "gain": 0.5
+     "homie": "phone"
     }
-   ]
+   ],
+   "note": "POV: his phone, VINES 2015 COMPILATION"
   },
   {
-   "at": "5:is",
+   "at": "4:I",
    "cam": {
-    "preset": "ots",
-    "on": "me",
-    "az": -1
+    "preset": "closeup_me",
+    "az": 10
    },
-   "look": [
+   "face": [
     {
-     "homie": "me"
+     "me": "annoyed"
     }
    ],
    "pose": [
@@ -477,86 +325,57 @@ export const RECIPE: Recipe = {
      "homie": "idle"
     }
    ],
-   "face": [
-    {
-     "homie": "smug"
-    }
-   ]
+   "note": "I said..."
   },
   {
-   "at": "6:deez",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": -10
-   },
-   "pose": [
-    {
-     "homie": "yell"
-    }
-   ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.8,
-     "dur": 0.9
-    }
-   ],
-   "note": "DEEZ NUTS IN YOUR MOUTH"
-  },
-  {
-   "at": "6:mouth",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 12,
-    "dist": 0.75
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 1.25,
-     "dur": 0.6
-    },
-    {
-     "fx": "punch"
-    }
-   ]
-  },
-  {
-   "at": "7:loud",
+   "at": "5",
    "cam": {
     "preset": "closeup_me",
-    "az": 8
+    "az": 4,
+    "dist": 0.84
    },
-   "look": [
-    {
-     "me": "front"
-    }
-   ],
    "face": [
     {
      "me": "furious"
     }
    ],
+   "note": "who the fuck is Deez (tighter, annoyed)"
+  },
+  {
+   "at": "6",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -6,
+    "dist": 0.8
+   },
+   "face": [
+    {
+     "homie": "yell"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "yell"
+    }
+   ],
+   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut"
+  },
+  {
+   "at": "7",
+   "cam": {
+    "preset": "closeup_me"
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
    "pose": [
     {
      "homie": "idle"
     }
-   ]
-  },
-  {
-   "at": "7:bro",
-   "cam": {
-    "preset": "ots",
-    "on": "homie",
-    "az": 1
-   },
-   "face": [
-    {
-     "homie": "smug"
-    }
-   ]
+   ],
+   "note": "LOUD AS FUCK BRO"
   },
   {
    "at": "7:the",
@@ -567,464 +386,228 @@ export const RECIPE: Recipe = {
     {
      "at": "7:turned",
      "do": "turn"
+    },
+    {
+     "at": "7:dying",
+     "do": "laugh"
     }
    ],
    "face": [
     {
-     "me": "shocked",
-     "homie": "smug"
+     "homie": "laughing",
+     "me": "shocked"
     }
    ],
-   "note": "the whole class turns around"
-  },
-  {
-   "at": "7:started",
-   "cam": {
-    "preset": "crowd"
-   },
-   "class": [
-    {
-     "at": "7:started",
-     "do": "laugh"
-    }
-   ],
-   "note": "... and laughs"
+   "note": "the entire class turns, dying"
   },
   {
    "at": "7:and#2",
    "cam": {
     "preset": "closeup_me",
-    "az": -8
-   },
-   "face": [
-    {
-     "me": "furious"
-    }
-   ]
-  },
-  {
-   "at": "7:this",
-   "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": 6
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.45,
-     "dur": 0.6
-    }
-   ]
-  },
-  {
-   "at": "7:bruh",
-   "cam": {
-    "preset": "closeup_me",
-    "az": 0,
-    "h": 0
+    "az": -12
    },
    "face": [
     {
      "me": "deadpan"
     }
    ],
-   "note": "deadpan stare"
+   "note": "and I'm like"
   },
   {
-   "at": "8:then",
-   "set": "cafeteria",
+   "at": "7:stupid",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.84
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "note": "stupid as fuck, bruh (tighter)"
+  },
+  {
+   "at": "8",
    "cam": {
     "preset": "two_shot"
    },
-   "class": [
-    {
-     "do": "front"
-    }
-   ],
-   "look": [
-    {
-     "me": "front",
-     "homie": "front"
-    }
-   ],
+   "set": "cafeteria",
    "face": [
     {
      "me": "annoyed",
      "homie": "smug"
     }
    ],
-   "pose": [
+   "class": [
     {
-     "homie": "idle",
-     "me": "idle"
+     "at": 40.9,
+     "do": "front"
     }
    ],
-   "note": "lunch"
+   "note": "then at lunch"
   },
   {
-   "at": "8:this",
+   "at": "8:bitch",
    "cam": {
     "preset": "closeup_homie",
-    "az": 30
-   }
-  },
-  {
-   "at": "8:would",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -30
-   }
-  },
-  {
-   "at": "8:stop",
-   "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -24
+    "az": 14
    },
-   "face": [
-    {
-     "me": "furious"
-    }
-   ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.4
-    }
-   ]
-  },
-  {
-   "at": "8:every",
-   "cam": {
-    "preset": "closeup_homie",
-    "az": 28
-   }
-  },
-  {
-   "at": "8:damn",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -30
-   }
-  },
-  {
-   "at": "8:chance",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 26
-   }
-  },
-  {
-   "at": "9:yo",
-   "cam": {
-    "preset": "ots",
-    "on": "homie",
-    "az": 1
-   }
-  },
-  {
-   "at": "9:deez",
-   "cam": {
-    "preset": "closeup_homie",
-    "az": 30
-   }
-  },
-  {
-   "at": "9:nuts+0.6",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -30
-   },
-   "face": [
-    {
-     "me": "sideeye"
-    }
-   ]
-  },
-  {
-   "at": "9:deez#2",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 25
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.25
-    }
-   ]
-  },
-  {
-   "at": "9:nuts#2+0.5",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -26
-   },
-   "face": [
-    {
-     "me": "annoyed"
-    }
-   ]
-  },
-  {
-   "at": "9:deez#3",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 20,
-    "dist": 0.86
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.5,
-     "dur": 0.7
-    }
-   ]
-  },
-  {
-   "at": "9:nuts#3+0.5",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -32
-   },
-   "face": [
-    {
-     "me": "furious"
-    }
-   ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.2
-    }
-   ]
-  },
-  {
-   "at": "9:deez#4",
-   "cam": {
-    "preset": "punch_in",
-    "on": "homie",
-    "az": 22,
-    "dist": 0.72
-   },
-   "face": [
-    {
-     "homie": "yell"
-    }
-   ],
-   "pose": [
-    {
-     "homie": "yell"
-    }
-   ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 1,
-     "dur": 1
-    },
-    {
-     "fx": "punch"
-    }
-   ]
-  },
-  {
-   "at": "10:non",
-   "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -25
-   },
-   "pose": [
-    {
-     "me": "yell",
-     "homie": "idle"
-    }
-   ],
    "face": [
     {
      "homie": "smug"
     }
    ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.9,
-     "dur": 0.6
-    }
-   ]
+   "note": "this bitch-ass mf"
   },
   {
-   "at": "10:fucking",
+   "at": "8:would",
    "cam": {
     "preset": "closeup_me",
-    "az": -36,
-    "dist": 0.85
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 0.8,
-     "dur": 0.8
-    }
-   ]
-  },
-  {
-   "at": "10:stop",
-   "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -18,
-    "dist": 0.72
-   },
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 1.1,
-     "dur": 0.5
-    },
-    {
-     "fx": "punch"
-    }
-   ]
-  },
-  {
-   "at": "10:stop+0.45",
-   "cam": {
-    "preset": "closeup_homie",
-    "az": 30
+    "az": -10
    },
    "face": [
     {
-     "homie": "shocked"
+     "me": "annoyed"
     }
-   ]
+   ],
+   "note": "would NOT STOP"
   },
   {
-   "at": "11:bro",
+   "at": "8:every",
+   "cam": {
+    "preset": "pov_tray"
+   },
+   "note": "POV: my tray, the homie across the table"
+  },
+  {
+   "at": "9",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -8
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "Yo bro"
+  },
+  {
+   "at": "9:deez#1",
+   "cam": {
+    "preset": "closeup_me"
+   },
+   "face": [
+    {
+     "me": "deadpan"
+    }
+   ],
+   "note": "Deez nuts #1 (me reacts)"
+  },
+  {
+   "at": "9:deez#2",
+   "cam": {
+    "preset": "closeup_homie",
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "homie": "sideeye"
+    }
+   ],
+   "note": "Deez nuts #2 tighter"
+  },
+  {
+   "at": "9:deez#3",
    "cam": {
     "preset": "closeup_me",
-    "az": -30
+    "dist": 0.86
    },
-   "fx": [
+   "face": [
     {
-     "fx": "shake",
-     "gain": 0.8,
-     "dur": 0.7
+     "me": "annoyed"
     }
-   ]
+   ],
+   "note": "Deez nuts #3 tighter"
   },
   {
-   "at": "11:shut",
+   "at": "9:deez#4",
    "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -20,
-    "dist": 0.82
+    "preset": "closeup_homie",
+    "dist": 0.78
    },
-   "fx": [
+   "face": [
     {
-     "fx": "shake",
-     "gain": 0.6,
-     "dur": 2,
-     "sustain": true
+     "homie": "smug"
     }
-   ]
+   ],
+   "note": "DEEZ NUTS #4 tightest"
   },
   {
-   "at": "11:up-0.12",
-   "hold": true,
+   "at": "10",
    "cam": {
-    "preset": "punch_in",
-    "on": "me",
-    "az": -12,
-    "dist": 0.62
+    "preset": "closeup_me",
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "note": "NON FUCKING STOP"
+  },
+  {
+   "at": "11",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 1.15,
+    "push": 0.3
    },
    "face": [
     {
      "me": "scream"
     }
    ],
-   "fx": [
-    {
-     "fx": "shake",
-     "gain": 1.35,
-     "dur": 2,
-     "sustain": true
-    },
-    {
-     "fx": "punch"
-    }
-   ],
-   "note": "the held UUUP: a screaming close-up, sustained shake"
+   "hold": true,
+   "note": "SHUT THE FUCK UP: one held close-up, slow push"
   },
   {
-   "at": "12:i",
+   "at": "12",
    "cam": {
-    "preset": "closeup_homie",
-    "az": 30
+    "preset": "two_shot"
    },
    "face": [
     {
-     "me": "deadpan",
+     "me": "furious",
      "homie": "shocked"
     }
    ],
-   "pose": [
-    {
-     "me": "idle"
-    }
-   ]
+   "note": "I yelled so loud"
   },
   {
-   "at": "12:loud",
+   "at": "12:broke",
    "cam": {
     "preset": "windows"
    },
    "fx": [
     {
-     "fx": "shatter",
-     "at": "12:broke"
-    },
-    {
-     "fx": "shake",
-     "at": "12:broke",
-     "gain": 1.2,
-     "dur": 1
+     "fx": "shatter"
     }
    ],
-   "note": "the windows shatter"
+   "note": "hard cut: the cracked windows"
   },
   {
-   "at": "12:windows",
-   "cam": {
-    "preset": "closeup_me",
-    "az": -28
-   },
-   "face": [
-    {
-     "me": "deadpan"
-    }
-   ]
-  },
-  {
-   "at": "13:deez",
+   "at": "13-0.1",
    "cam": {
     "preset": "closeup_homie",
-    "az": 18,
-    "dist": 0.92
+    "dist": 0.82
    },
    "face": [
     {
      "homie": "smug"
     }
    ],
-   "note": "smug homie: Deez nu-"
+   "note": "smug half-lid: Deez nu-"
   }
  ],
  "end": {

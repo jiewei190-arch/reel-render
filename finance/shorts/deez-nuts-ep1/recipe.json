@@ -5,78 +5,607 @@
  "format": "short",
  "audio": "storytime/deez-nuts-ep1.mp3",
  "cast": {
-  "me": { "name": "me (narrator)", "skin": "#9a6240", "hair": "#1b1410", "hairStyle": "flattop", "top": "#f2b632", "topStyle": "hoodie", "trim": "#ffffff", "pants": "#2f3a56", "shoes": "#f5f5f5", "brow": "#1b1410", "eye": "#3b2416" },
-  "homie": { "name": "homie", "skin": "#f4cfa6", "hair": "#c4541c", "hairStyle": "curls", "top": "#7b4fd6", "topStyle": "tee", "trim": "#ffffff", "pants": "#6b7a3a", "shoes": "#22223b", "brow": "#8a3b14", "eye": "#2e6f3e", "freckles": true }
+  "me": {
+   "name": "me (narrator)",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
+   "shoes": "#f5f5f5",
+   "brow": "#141414",
+   "eye": "#141414"
+  },
+  "homie": {
+   "name": "homie",
+   "skin": "#f4cfa6",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
+   "top": "#7b4fd6",
+   "topStyle": "tee",
+   "trim": "#ffffff",
+   "pants": "#6b7a3a",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
+   "brow": "#8a3b14",
+   "eye": "#141414"
+  }
  },
  "lines": {
-  "1": { "speaker": "homie", "text": "DEEZ NUTS! DEEZ NUTS!", "shout": true, "faces": { "homie": "yell" } },
-  "2": { "speaker": "me", "text": "BRUH. My homie was watching YouTube in class the other day, and he turns to me like...", "faces": { "me": "deadpan" }, "accent": ["bruh", "homie", "youtube", "class", "turns"] },
-  "3": { "speaker": "homie", "text": "Bro. Do you know who Deez is?", "faces": { "homie": "smug" }, "accent": ["bro", "deez"] },
-  "4": { "speaker": "me", "text": "And me, not knowing this MOTHERFUUUCKER was watching old-ASS Vine videos about Deez Nuts... I said...", "faces": { "me": "sideeye" }, "accent": ["knowing", "vine", "deez", "said"] },
-  "5": { "speaker": "me", "text": "WHO THE FUUUCK IS DEEZ?!", "shout": true, "faces": { "me": "annoyed" }, "accent": ["fuck", "deez"] },
-  "6": { "speaker": "homie", "text": "DEEZ NUTS IN YOUR MOUTH!", "shout": true, "faces": { "homie": "yell" }, "accent": ["nuts", "mouth"] },
-  "7": { "speaker": "me", "text": "LOUD AS FUUUCK, BRO! The ENTIRE class turned around and started DYING! And I'm like, THIS SHIT IS STUPID AS FUUUCK, BRUH!", "faces": { "me": "furious" }, "accent": ["fuck", "bro", "entire", "turned", "dying", "like", "shit", "fuck", "bruh"] },
-  "8": { "speaker": "me", "text": "Then at lunch?! This BITCH-ASS MOTHERFUUUCKER would NOT! STOP! EVERY! DAMN! CHANCE!", "faces": { "me": "annoyed", "homie": "smug" }, "accent": ["lunch", "motherfucker", "not"] },
-  "9": { "speaker": "homie", "text": "Yo bro. Deez nuts. Deez nuts. Deez nuts! DEEZ NUTS!", "faces": { "homie": "smug" }, "accent": ["bro", "nuts"] },
-  "10": { "speaker": "me", "text": "NON! FUUUCKING! STOP!", "shout": true, "faces": { "me": "furious" } },
-  "11": { "speaker": "me", "text": "BRO, SHUT THE FUUUCK UUUP!", "shout": true, "faces": { "me": "furious" }, "accent": ["bro", "shut", "fuck", "up"] },
-  "12": { "speaker": "me", "text": "I yelled so FUUUCKING LOUD it broke the lunchroom windows!", "faces": { "homie": "shocked" }, "accent": ["yelled", "loud", "broke", "windows"] },
-  "13": { "speaker": "homie", "text": "Deez nu—", "faces": { "homie": "smug" } }
+  "1": {
+   "speaker": "homie",
+   "text": "DEEZ NUTS! DEEZ NUTS!",
+   "shout": true,
+   "faces": {
+    "homie": "yell"
+   }
+  },
+  "2": {
+   "speaker": "me",
+   "text": "BRUH. My homie was watching YouTube in class the other day, and he turns to me like...",
+   "faces": {
+    "me": "deadpan"
+   },
+   "accent": [
+    "bruh",
+    "homie",
+    "youtube",
+    "class",
+    "turns"
+   ]
+  },
+  "3": {
+   "speaker": "homie",
+   "text": "Bro. Do you know who Deez is?",
+   "faces": {
+    "homie": "smug"
+   },
+   "accent": [
+    "bro",
+    "deez"
+   ]
+  },
+  "4": {
+   "speaker": "me",
+   "text": "And me, not knowing this MOTHERFUUUCKER was watching old-ASS Vine videos about Deez Nuts... I said...",
+   "faces": {
+    "me": "sideeye"
+   },
+   "accent": [
+    "knowing",
+    "vine",
+    "deez",
+    "said"
+   ]
+  },
+  "5": {
+   "speaker": "me",
+   "text": "WHO THE FUUUCK IS DEEZ?!",
+   "shout": true,
+   "faces": {
+    "me": "annoyed"
+   },
+   "accent": [
+    "fuck",
+    "deez"
+   ]
+  },
+  "6": {
+   "speaker": "homie",
+   "text": "DEEZ NUTS IN YOUR MOUTH!",
+   "shout": true,
+   "faces": {
+    "homie": "yell"
+   },
+   "accent": [
+    "nuts",
+    "mouth"
+   ]
+  },
+  "7": {
+   "speaker": "me",
+   "text": "LOUD AS FUUUCK, BRO! The ENTIRE class turned around and started DYING! And I'm like, THIS SHIT IS STUPID AS FUUUCK, BRUH!",
+   "faces": {
+    "me": "furious"
+   },
+   "accent": [
+    "fuck",
+    "bro",
+    "entire",
+    "turned",
+    "dying",
+    "like",
+    "shit",
+    "fuck",
+    "bruh"
+   ]
+  },
+  "8": {
+   "speaker": "me",
+   "text": "Then at lunch?! This BITCH-ASS MOTHERFUUUCKER would NOT! STOP! EVERY! DAMN! CHANCE!",
+   "faces": {
+    "me": "annoyed",
+    "homie": "smug"
+   },
+   "accent": [
+    "lunch",
+    "motherfucker",
+    "not"
+   ]
+  },
+  "9": {
+   "speaker": "homie",
+   "text": "Yo bro. Deez nuts. Deez nuts. Deez nuts! DEEZ NUTS!",
+   "faces": {
+    "homie": "smug"
+   },
+   "accent": [
+    "bro",
+    "nuts"
+   ]
+  },
+  "10": {
+   "speaker": "me",
+   "text": "NON! FUUUCKING! STOP!",
+   "shout": true,
+   "faces": {
+    "me": "furious"
+   }
+  },
+  "11": {
+   "speaker": "me",
+   "text": "BRO, SHUT THE FUUUCK UUUP!",
+   "shout": true,
+   "faces": {
+    "me": "furious"
+   },
+   "accent": [
+    "bro",
+    "shut",
+    "fuck",
+    "up"
+   ]
+  },
+  "12": {
+   "speaker": "me",
+   "text": "I yelled so FUUUCKING LOUD it broke the lunchroom windows!",
+   "faces": {
+    "homie": "shocked"
+   },
+   "accent": [
+    "yelled",
+    "loud",
+    "broke",
+    "windows"
+   ]
+  },
+  "13": {
+   "speaker": "homie",
+   "text": "Deez nu—",
+   "faces": {
+    "homie": "smug"
+   }
+  }
  },
  "shots": [
-  { "at": 0, "set": "hallway", "cam": { "preset": "closeup_homie" }, "face": [{ "homie": "yell", "me": "deadpan" }], "pose": [{ "homie": "yell" }], "fx": [{ "fx": "shake", "gain": 0.7, "dur": 0.55 }], "note": "cold open: homie yells DEEZ" },
-  { "at": "1:nuts", "cam": { "preset": "punch_in", "on": "homie" }, "fx": [{ "fx": "shake", "gain": 0.9, "dur": 0.7 }] },
-  { "at": "1:deez#2", "cam": { "preset": "closeup_homie", "az": -22 }, "fx": [{ "fx": "shake", "gain": 0.6 }] },
-  { "at": "1:nuts#2", "cam": { "preset": "punch_in", "on": "homie", "az": 8, "dist": 0.9 }, "fx": [{ "fx": "shake", "gain": 1.1, "dur": 0.6 }, { "fx": "punch" }] },
-  { "at": 4.25, "cam": { "preset": "closeup_me", "az": -20 }, "face": [{ "me": "deadpan" }], "pose": [{ "homie": "idle" }], "note": "me, deadpan: BRUH" },
-  { "at": "2:my", "set": "classroom", "cam": { "preset": "two_shot" }, "face": [{ "homie": "neutral" }], "pose": [{ "homie": "phone" }], "note": "in class: homie on his phone" },
-  { "at": "2:youtube", "cam": { "preset": "insert" }, "note": "the phone" },
-  { "at": "2:class", "cam": { "preset": "wide_class" } },
-  { "at": "2:and", "cam": { "preset": "closeup_homie", "az": -14 }, "look": [{ "at": "2:turns", "homie": "me" }], "face": [{ "at": "2:turns", "homie": "sideeye" }, { "at": "2:like", "homie": "smug" }], "note": "he turns to me" },
-  { "at": "3:bro", "cam": { "preset": "ots", "on": "homie", "az": 1, "dist": 1.25 }, "pose": [{ "at": "3:bro", "homie": "idle" }] },
-  { "at": "3:do", "cam": { "preset": "closeup_homie", "az": 12 }, "fx": [{ "fx": "punch", "at": "3:deez", "gain": 0.6 }] },
-  { "at": "4:and", "cam": { "preset": "closeup_me", "az": 0 }, "look": [{ "me": "homie" }], "face": [{ "me": "sideeye" }] },
-  { "at": "4:motherfucker", "cam": { "preset": "two_shot", "az": -8 }, "face": [{ "me": "annoyed", "homie": "laughing" }], "pose": [{ "homie": "phone" }], "look": [{ "homie": "front" }] },
-  { "at": "4:old", "cam": { "preset": "insert", "roll": 4 } },
-  { "at": "4:deez", "cam": { "preset": "closeup_homie", "az": -12 }, "face": [{ "homie": "laughing" }] },
-  { "at": "4:i", "cam": { "preset": "closeup_me", "az": -12 }, "face": [{ "me": "annoyed" }], "look": [{ "me": "homie" }] },
-  { "at": "5:who", "cam": { "preset": "punch_in", "on": "me", "az": -6 }, "fx": [{ "fx": "shake", "at": "5:fuck", "gain": 0.5 }] },
-  { "at": "5:is", "cam": { "preset": "ots", "on": "me", "az": -1 }, "look": [{ "homie": "me" }], "pose": [{ "homie": "idle" }], "face": [{ "homie": "smug" }] },
-  { "at": "6:deez", "cam": { "preset": "punch_in", "on": "homie", "az": -10 }, "pose": [{ "homie": "yell" }], "fx": [{ "fx": "shake", "gain": 0.8, "dur": 0.9 }], "note": "DEEZ NUTS IN YOUR MOUTH" },
-  { "at": "6:mouth", "cam": { "preset": "punch_in", "on": "homie", "az": 12, "dist": 0.75 }, "fx": [{ "fx": "shake", "gain": 1.25, "dur": 0.6 }, { "fx": "punch" }] },
-  { "at": "7:loud", "cam": { "preset": "closeup_me", "az": 8 }, "look": [{ "me": "front" }], "face": [{ "me": "furious" }], "pose": [{ "homie": "idle" }] },
-  { "at": "7:bro", "cam": { "preset": "ots", "on": "homie", "az": 1 }, "face": [{ "homie": "smug" }] },
-  { "at": "7:the", "cam": { "preset": "wide_class" }, "class": [{ "at": "7:turned", "do": "turn" }], "face": [{ "me": "shocked", "homie": "smug" }], "note": "the whole class turns around" },
-  { "at": "7:started", "cam": { "preset": "crowd" }, "class": [{ "at": "7:started", "do": "laugh" }], "note": "... and laughs" },
-  { "at": "7:and#2", "cam": { "preset": "closeup_me", "az": -8 }, "face": [{ "me": "furious" }] },
-  { "at": "7:this", "cam": { "preset": "punch_in", "on": "me", "az": 6 }, "fx": [{ "fx": "shake", "gain": 0.45, "dur": 0.6 }] },
-  { "at": "7:bruh", "cam": { "preset": "closeup_me", "az": 0, "h": 0 }, "face": [{ "me": "deadpan" }], "note": "deadpan stare" },
-  { "at": "8:then", "set": "cafeteria", "cam": { "preset": "two_shot" }, "class": [{ "do": "front" }], "look": [{ "me": "front", "homie": "front" }], "face": [{ "me": "annoyed", "homie": "smug" }], "pose": [{ "homie": "idle", "me": "idle" }], "note": "lunch" },
-  { "at": "8:this", "cam": { "preset": "closeup_homie", "az": 30 } },
-  { "at": "8:would", "cam": { "preset": "closeup_me", "az": -30 } },
-  { "at": "8:stop", "cam": { "preset": "punch_in", "on": "me", "az": -24 }, "face": [{ "me": "furious" }], "fx": [{ "fx": "shake", "gain": 0.4 }] },
-  { "at": "8:every", "cam": { "preset": "closeup_homie", "az": 28 } },
-  { "at": "8:damn", "cam": { "preset": "closeup_me", "az": -30 } },
-  { "at": "8:chance", "cam": { "preset": "punch_in", "on": "homie", "az": 26 } },
-  { "at": "9:yo", "cam": { "preset": "ots", "on": "homie", "az": 1 } },
-  { "at": "9:deez", "cam": { "preset": "closeup_homie", "az": 30 } },
-  { "at": "9:nuts+0.6", "cam": { "preset": "closeup_me", "az": -30 }, "face": [{ "me": "sideeye" }] },
-  { "at": "9:deez#2", "cam": { "preset": "punch_in", "on": "homie", "az": 25 }, "fx": [{ "fx": "shake", "gain": 0.25 }] },
-  { "at": "9:nuts#2+0.5", "cam": { "preset": "closeup_me", "az": -26 }, "face": [{ "me": "annoyed" }] },
-  { "at": "9:deez#3", "cam": { "preset": "punch_in", "on": "homie", "az": 20, "dist": 0.86 }, "fx": [{ "fx": "shake", "gain": 0.5, "dur": 0.7 }] },
-  { "at": "9:nuts#3+0.5", "cam": { "preset": "closeup_me", "az": -32 }, "face": [{ "me": "furious" }], "fx": [{ "fx": "shake", "gain": 0.2 }] },
-  { "at": "9:deez#4", "cam": { "preset": "punch_in", "on": "homie", "az": 22, "dist": 0.72 }, "face": [{ "homie": "yell" }], "pose": [{ "homie": "yell" }], "fx": [{ "fx": "shake", "gain": 1.0, "dur": 1.0 }, { "fx": "punch" }] },
-  { "at": "10:non", "cam": { "preset": "punch_in", "on": "me", "az": -25 }, "pose": [{ "me": "yell", "homie": "idle" }], "face": [{ "homie": "smug" }], "fx": [{ "fx": "shake", "gain": 0.9, "dur": 0.6 }] },
-  { "at": "10:fucking", "cam": { "preset": "closeup_me", "az": -36, "dist": 0.85 }, "fx": [{ "fx": "shake", "gain": 0.8, "dur": 0.8 }] },
-  { "at": "10:stop", "cam": { "preset": "punch_in", "on": "me", "az": -18, "dist": 0.72 }, "fx": [{ "fx": "shake", "gain": 1.1, "dur": 0.5 }, { "fx": "punch" }] },
-  { "at": "10:stop+0.45", "cam": { "preset": "closeup_homie", "az": 30 }, "face": [{ "homie": "shocked" }] },
-  { "at": "11:bro", "cam": { "preset": "closeup_me", "az": -30 }, "fx": [{ "fx": "shake", "gain": 0.8, "dur": 0.7 }] },
-  { "at": "11:shut", "cam": { "preset": "punch_in", "on": "me", "az": -20, "dist": 0.82 }, "fx": [{ "fx": "shake", "gain": 0.6, "dur": 2.0, "sustain": true }] },
-  { "at": "11:up-0.12", "hold": true, "cam": { "preset": "punch_in", "on": "me", "az": -12, "dist": 0.62 }, "face": [{ "me": "scream" }], "fx": [{ "fx": "shake", "gain": 1.35, "dur": 2.0, "sustain": true }, { "fx": "punch" }], "note": "the held UUUP: a screaming close-up, sustained shake" },
-  { "at": "12:i", "cam": { "preset": "closeup_homie", "az": 30 }, "face": [{ "me": "deadpan", "homie": "shocked" }], "pose": [{ "me": "idle" }] },
-  { "at": "12:loud", "cam": { "preset": "windows" }, "fx": [{ "fx": "shatter", "at": "12:broke" }, { "fx": "shake", "at": "12:broke", "gain": 1.2, "dur": 1.0 }], "note": "the windows shatter" },
-  { "at": "12:windows", "cam": { "preset": "closeup_me", "az": -28 }, "face": [{ "me": "deadpan" }] },
-  { "at": "13:deez", "cam": { "preset": "closeup_homie", "az": 18, "dist": 0.92 }, "face": [{ "homie": "smug" }], "note": "smug homie: Deez nu-" }
+  {
+   "at": 0,
+   "cam": {
+    "preset": "closeup_homie"
+   },
+   "set": "hallway",
+   "face": [
+    {
+     "homie": "yell",
+     "me": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "yell"
+    }
+   ],
+   "note": "cold open: homie yells DEEZ NUTS"
+  },
+  {
+   "at": "1:deez#2",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -18,
+    "dist": 0.86
+   },
+   "note": "second DEEZ NUTS, tighter"
+  },
+  {
+   "at": "2",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 12
+   },
+   "set": "classroom",
+   "face": [
+    {
+     "me": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone",
+     "me": "idle"
+    }
+   ],
+   "note": "me at my desk: Bruh"
+  },
+  {
+   "at": "2:homie",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "note": "my homie was watching a video in class"
+  },
+  {
+   "at": "2:and",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -10
+   },
+   "look": [
+    {
+     "homie": "me"
+    }
+   ],
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
+    }
+   ],
+   "note": "he turns to me"
+  },
+  {
+   "at": "3",
+   "cam": {
+    "preset": "ots",
+    "on": "homie",
+    "az": 1
+   },
+   "note": "Bro. Do you know who Deez is?"
+  },
+  {
+   "at": "4",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -8
+   },
+   "face": [
+    {
+     "me": "annoyed"
+    }
+   ],
+   "note": "And me, not knowing this mf"
+  },
+  {
+   "at": "4:was",
+   "cam": {
+    "preset": "pov_phone"
+   },
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "POV: his phone, VINES 2015 COMPILATION"
+  },
+  {
+   "at": "4:I",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 10
+   },
+   "face": [
+    {
+     "me": "annoyed"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
+    }
+   ],
+   "note": "I said..."
+  },
+  {
+   "at": "5",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 4,
+    "dist": 0.84
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "note": "who the fuck is Deez (tighter, annoyed)"
+  },
+  {
+   "at": "6",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -6,
+    "dist": 0.8
+   },
+   "face": [
+    {
+     "homie": "yell"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "yell"
+    }
+   ],
+   "note": "DEEZ NUTS IN YOUR MOUTH: tight hard cut"
+  },
+  {
+   "at": "7",
+   "cam": {
+    "preset": "closeup_me"
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
+    }
+   ],
+   "note": "LOUD AS FUCK BRO"
+  },
+  {
+   "at": "7:the",
+   "cam": {
+    "preset": "wide_class"
+   },
+   "class": [
+    {
+     "at": "7:turned",
+     "do": "turn"
+    },
+    {
+     "at": "7:dying",
+     "do": "laugh"
+    }
+   ],
+   "face": [
+    {
+     "homie": "laughing",
+     "me": "shocked"
+    }
+   ],
+   "note": "the entire class turns, dying"
+  },
+  {
+   "at": "7:and#2",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -12
+   },
+   "face": [
+    {
+     "me": "deadpan"
+    }
+   ],
+   "note": "and I'm like"
+  },
+  {
+   "at": "7:stupid",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.84
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "note": "stupid as fuck, bruh (tighter)"
+  },
+  {
+   "at": "8",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "set": "cafeteria",
+   "face": [
+    {
+     "me": "annoyed",
+     "homie": "smug"
+    }
+   ],
+   "class": [
+    {
+     "at": 40.9,
+     "do": "front"
+    }
+   ],
+   "note": "then at lunch"
+  },
+  {
+   "at": "8:bitch",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 14
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "this bitch-ass mf"
+  },
+  {
+   "at": "8:would",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -10
+   },
+   "face": [
+    {
+     "me": "annoyed"
+    }
+   ],
+   "note": "would NOT STOP"
+  },
+  {
+   "at": "8:every",
+   "cam": {
+    "preset": "pov_tray"
+   },
+   "note": "POV: my tray, the homie across the table"
+  },
+  {
+   "at": "9",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -8
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "Yo bro"
+  },
+  {
+   "at": "9:deez#1",
+   "cam": {
+    "preset": "closeup_me"
+   },
+   "face": [
+    {
+     "me": "deadpan"
+    }
+   ],
+   "note": "Deez nuts #1 (me reacts)"
+  },
+  {
+   "at": "9:deez#2",
+   "cam": {
+    "preset": "closeup_homie",
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "homie": "sideeye"
+    }
+   ],
+   "note": "Deez nuts #2 tighter"
+  },
+  {
+   "at": "9:deez#3",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.86
+   },
+   "face": [
+    {
+     "me": "annoyed"
+    }
+   ],
+   "note": "Deez nuts #3 tighter"
+  },
+  {
+   "at": "9:deez#4",
+   "cam": {
+    "preset": "closeup_homie",
+    "dist": 0.78
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "DEEZ NUTS #4 tightest"
+  },
+  {
+   "at": "10",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "note": "NON FUCKING STOP"
+  },
+  {
+   "at": "11",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 1.15,
+    "push": 0.3
+   },
+   "face": [
+    {
+     "me": "scream"
+    }
+   ],
+   "hold": true,
+   "note": "SHUT THE FUCK UP: one held close-up, slow push"
+  },
+  {
+   "at": "12",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "face": [
+    {
+     "me": "furious",
+     "homie": "shocked"
+    }
+   ],
+   "note": "I yelled so loud"
+  },
+  {
+   "at": "12:broke",
+   "cam": {
+    "preset": "windows"
+   },
+   "fx": [
+    {
+     "fx": "shatter"
+    }
+   ],
+   "note": "hard cut: the cracked windows"
+  },
+  {
+   "at": "13-0.1",
+   "cam": {
+    "preset": "closeup_homie",
+    "dist": 0.82
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "smug half-lid: Deez nu-"
+  }
  ],
- "end": { "at": "13:end" }
+ "end": {
+  "at": "13:end"
+ }
 }
