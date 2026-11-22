@@ -22,7 +22,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 2, R2 subject/edge 2, R3 b
 - FAIL S12 board plate 'THE COURT' crosses the left frame edge (x -841-0, y 1171-1396; keep 32 px clear; worst at 22.77 s): move it 0.49 m into frame (add +0.48,-0.00,-0.08 to its at), or pull the camera back (cam.dist +0.5)
 - FAIL S02 board hanger 'CLAIM TICKET': main line 'CLAIM TICKET' is 21.2 px (font size; cap 15 px; median while on screen, e.g. at 1.33 s; needs 42 px to read on a phone): scale it up x2.08 ("s"), move the camera much closer (cam.dist x0.48), or shorten the line 'CLAIM TICKET' (long lines shrink to fit)
 
-## Polish QA (tools/polish_qa.mjs, 0.03 s): 0 fail(s)
+## Polish QA (tools/polish_qa.mjs, 0.04 s): 0 fail(s)
 
 P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFORM.md "Polish rules".
 

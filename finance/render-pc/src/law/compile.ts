@@ -519,7 +519,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     if (ac.do === "counter") {
       const widest = [ac.value, counterText(ac, ac.from ?? 0), d.final].filter(Boolean).reduce((a, x) => (textPx(widestDigits(x!), 100) > textPx(widestDigits(a!), 100) ? x : a))!;
       const f = counterFit(L, r.w, ac.title, widest, d.zeroAt !== undefined);
-      add("title", "counter title", f.title, `use "pos": "center"`); add("value", "counter value", f.value, `"compact": true ($54M) or "pos": "center"`);
+      add("title", "counter title", f.title, "move the detail into the voice-over"); add("value", "counter value", f.value, `use "compact": true ($54M)`);
     } else if (ac.do === "exhibit") {
       const f = exhibitFit(L, ac.label ?? "EXHIBIT A", ac.text);
       add("label", "exhibit label", f.label); add("text", "exhibit text", f.text, "split it into two tags");

@@ -12,7 +12,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close.
 
-## Polish QA (tools/polish_qa.mjs, 0.03 s): 1 fail(s)
+## Polish QA (tools/polish_qa.mjs, 0.04 s): 1 fail(s)
 
 P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 1. Rules: LONGFORM.md "Polish rules".
 

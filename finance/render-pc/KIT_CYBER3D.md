@@ -219,6 +219,15 @@ giant-board opener: [cyber-demo-landscape-short-1](docs/hero_props/frame0/cyber-
 
 Labels are placed around the visible cards. All cards sit above the caption band, and the gate checks this.
 
+**Counters land on the word (polish rule P1, LONGFORM.md 7a).** The money counter and a board's `count` end their count
+no later than the **anchor word**, the voice saying the number, found in the voice-over or set with `"land": "<word>"`.
+The final value holds for at least 0.5 s before the card leaves or the shot cuts. The countdown is a clock: it keeps
+ticking by design and is not a counter. **Text is measured (P2):** board titles and values, callout labels, the CASE
+FILE rows and title, the money label and value, the checklist title and items, the countdown and the ALERT text use
+the real Poppins widths and shrink to fit on one line (the old 112 px board value overflowed a 420 px board at
+`$12,000`). Counting values are fitted at their widest. Below 42 px (titles 32 px) the build fails with how many
+characters fit, or "use `"size": "giant"`".
+
 ## 9. Cameras and transitions (CYBER_CAMS in src/cyber/compile.ts)
 
 The tech3d presets carry over (`hookZoom`, `closeUp`, `medium`, `wide`, `slamZoom`, `pushIn`, `whip`, `orbit`, `flyThrough`, `explodeOrbit`; fields as in KIT_TECH3D.md §8), plus two new ones:
@@ -373,6 +382,14 @@ lists every hero prop's frame-0 share and every number card's width and opacity.
 | reused | `src/tech/bolt.tsx` (BOLT), `src/tech/cutaway.tsx` (the parts system), `tools/tech_review_sheet.py` (contact sheet), the engine's View and post chain |
 
 ## 14. Long-form (landscape)
+
+**Chapter cards and the polish rules.** cyber3d's chapter card (cyan tab, magenta edge) is the `safe` card: it fades in
+instead of sliding in from off screen, the title is one line (fitted down to 56 px), and it takes the first top
+(330 / 130 / 560 px) that no board or story card uses during its 2.6 s. Callout labels avoid it. Polish rules P1-P4
+(tools/polish_qa.mjs) run on every cyber3d recipe. P4 knows the room's three monitors and the corner rack
+(`occluders` in src/cyber/sets.tsx), the desk and the server racks. In `cyber-fake-supplier` S04 (and the two demos
+cut from the same script), the middle-right monitor's back hides the hooded figure's face (58 %, see
+`docs/polish/`). P4 fails it and says `raise the camera 0.44 m (cam.h +0.44)`, which clears it.
 
 A cyber3d recipe renders as a 1920x1080 long-form video with the same framing and caption rules as every other channel
 (LONGFORM.md, shared pieces in `src/longform/kit.tsx` and `tools/kit_long.mjs`). The demo is

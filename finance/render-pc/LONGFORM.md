@@ -184,12 +184,70 @@ and passes the full Shorts gate (0 clips).
 
 See `finance/longform/shop-too-fast/RENDER_NOTES.md` for the timings, the contact sheets and what to look at.
 
+## 7a. Polish rules: counters, text-fit, chapter cards, occlusion (law3d, biz3d, cyber3d)
+
+The first real long video (law3d, 561.7 s) showed four engine-level defects: counters caught mid-count ("YEARS 13" while
+the voice says fifteen, "$63,999,542", "$1,170" for $12,000), stat boards clipping their own text, chapter cards sliding
+in clipped ("PAIR OF", "HE DRY") and piling up on boards, and set chairs hiding faces. The engine now prevents the
+first three and the build checks all four, in Shorts and long-form alike. The code is `src/longform/polish.ts` (shared
+by the three kits' compilers and HUDs, so the gate measures what renders) and `tools/polish_qa.mjs` (rules P1-P4, kept
+apart from `tools/framing_qa.mjs` R1-R6). Block Money and tech3d do not use them; their output is unchanged.
+
+**P1 Counters land on the word and hold.** Every counting element (law3d `counter`, biz3d `counter`, `board.count`
+and `worth`, cyber3d `boards[].count` and `money`) counts in a window that ends:
+
+- no later than the end of its **anchor word**: the voice saying the number. The compiler finds it in the words around
+  the counter (from 1.5 s before it pops to when it leaves): `fifteen`, `$12,000`, `twelve thousand`, `54 million`,
+  `1,152`, `$10.50`, and `57 million` for a `-$57M` loss. A compact display (`$1.46B`) matches within 5 %. Or set it
+  yourself with `"land": "<word>"` (any `At`) on the counter (on `count` for a board);
+- and at least `COUNT_HOLD` = 0.5 s before the counter leaves (its `until`, its shot's cut, or a law3d `zeroAt` drain).
+
+A window shorter than 0.25 s snaps: the target shows from the first frame. At and after the window's end, the counter
+shows its exact final text (the same formatting as the label: `$12,000`, `15`, `$64M`). The landing sound (`ding` /
+`cash`) moves with it. **The gate fails** a counter that shows anything but its target at the end of its anchor word,
+any on-screen frame past its hold point (the anchor's end, or 0.5 s before it leaves) that still shows another value,
+and a final value held for less than 0.5 s. A counter whose number is never said gets a warning: say it, or set
+`land`. (The cyber3d countdown clock is a timer, not a counter: it keeps ticking by design.)
+
+**P2 Text fits its box.** Every board title and value, label, tag, exhibit, case card, verdict, decision, stamp, worth
+row and story card line is measured with the real Poppins ExtraBold advance widths (`polish.ts` `GLYPH`, read from
+`public/fonts/Poppins-ExtraBold.ttf`; letter-spacing included) and set on ONE line (`white-space: nowrap`): it shrinks
+to fit the box. A counting value is fitted once at its widest (every digit as a `4`), so its size never jumps while
+counting and `$63,999,542` can never split or clip. Labels and exhibit tags grow to their measured text. The floor is
+**42 px** for main lines (framing rule R4) and 32 px for titles and tabs. A line that would need less **fails
+--check** with how many characters fit and what else to use, e.g. `counter title 'PER VIOLATION, PER DAY, FOREVER AND
+EVER' needs 800 px at the 32 px minimum but has 492 px (it would shrink to 18 px): shorten it to 24 characters or move
+the detail into the voice-over`.
+
+**P3 Chapter cards.** The kits' chapter card (`ChapterCard` with `safe`) never leaves the frame: it fades in with a 60
+px glide instead of sliding in from off screen, so no frame shows a clipped title. The title is one line, fitted down
+to 56 px (`polish.ts` `chapterBox`). The card takes its own screen region: the compiler tries tops of 330, 130 and 560
+px and keeps the first that no fixed board or card overlaps during its 2.6 s. Movable cards (law3d exhibit tags, biz3d
+and cyber3d callout labels) are then placed around it. **The gate fails** a card that is not fully on screen at rest
+(above the caption band), needs a title under 56 px, or has any board, label, card or the hook over it. The fix is to
+move that board (`pos`), end it before the chapter word (`until`), or move the chapter word.
+
+**P4 Occlusion.** Each set lists its face-hiding pieces (`occluders`: law3d chair backs, biz3d boardroom chairs, cyber3d
+monitors and rack) on top of its blockers (walls excepted: they are one-sided). A piece **in front of** a featured
+character's face (the camera target, the shot's subject, or whoever is speaking) that covers >= 30 % of the face for
+more than 5 frames fails. The message names the shot, piece and character, and how to fix it: `raise the camera 0.44 m
+(cam.h +0.44) to look over it, or move hk 0.50 m sideways clear of it, or swing the camera around (cam.az +-20)`. The
+height is the exact line of sight over the piece; it is left out when it would be more than 2.5 m.
+
+Proof: `tools/qa_fixtures/polish-defects` (law3d, landscape, synthetic words) reproduces each defect. Before/after
+stills are in `docs/polish/`. To render it: `node tools/recipe_build.mjs polish-defects --shorts tools/qa_fixtures`
+(registers `PolishDefectsRecipe` in the law entry; delete `src/law/gen/polish_defects.law.gen.ts` and rebuild a law
+recipe to take it out again), then `node tools/law_stills.mjs PolishDefectsRecipe 142 221 297 363 519`.
+
 ## 8. Known limits
 
 - The demo's timings are synthetic (make_timings.py). Lip-sync and pacing need the real voice timings.
 - Long-form uses the five existing sets and the Block Money cast. Court rooms, server rooms or other sets for the new
   channels still need to be built (CC0 or our own).
-- The chapter card, lower third and hook styles are one fixed look; per-channel themes are not parameters yet.
+- The chapter card, lower third and hook styles are one fixed look; per-channel themes are not parameters yet (the kits
+  pass their accent colours and use the card's `safe` mode, section 7a).
+- The polish rules (section 7a) cover law3d, biz3d and cyber3d. Block Money and tech3d keep their own counters and the
+  sliding chapter card.
 - Captions are phrases from the word timings. A 2-line chunk clips if a single phrase is extremely long (over about
   70 characters), which the 7-word limit normally prevents.
 - `clip_short.mjs` keeps the source's camera choices. Its portrait fit only moves text boards and pulls cameras back;

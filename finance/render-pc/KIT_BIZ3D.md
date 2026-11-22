@@ -154,6 +154,15 @@ A device that starts at `0` is fully on at frame 0 (no fade-in ghost); every oth
 
 Devices sit in fixed layout slots (layout.ts) below the hook while it shows and above the caption band. The gate fails any device card over a head, over another card or into the caption band (THE DECISION is exempt from the head check: it is meant to cover the frame).
 
+**Counting devices land on the word (polish rule P1, LONGFORM.md 7a).** `counter`, a board's `count` and `worth` (its big
+row) end their count no later than the **anchor word**, the voice saying the number. It is found in the voice-over:
+`50 million` matches `$50M`, and a compact value matches within 5 %. Or set it with `"land": "<word>"` on the device
+(on `count` for a board). The final value holds for at least 0.5 s before the device leaves or the shot cuts, and the
+landing `cash` / `ding` moves with it. **Text is measured (P2):** the company name and tagline, THE DECISION and its
+sub, the counter title and value, the worth rows, board titles and values (normal and giant), stamps, callout labels
+and chart tags use the real Poppins widths and shrink to fit on one line. Counting values are fitted at their widest.
+Below 42 px (titles 32 px) the build fails with how many characters fit, or "use `"size": "giant"`".
+
 ## 8. Kit props and actions
 
 | `kit` | what it is |
@@ -368,6 +377,13 @@ prop's frame-0 share and every number card's width and opacity.
 | `finance/longform/biz-demo-landscape/` | the landscape test recipe (35.5 s, 3 chapters); its Short: `finance/shorts/biz-demo-landscape-short-1/` |
 
 ## 14. Long-form (landscape)
+
+**Chapter cards and the polish rules.** biz3d's chapter card (gold tab, red edge) is the `safe` card: it fades in
+instead of sliding in from off screen, the title is one line (fitted down to 56 px), and it takes the first top
+(330 / 130 / 560 px) that no device uses during its 2.6 s. Callout labels avoid it. Polish rules P1-P4
+(tools/polish_qa.mjs, LONGFORM.md 7a) run on every biz3d recipe. P4 knows the boardroom's nine chair backs (`occluders`
+in src/biz/sets.tsx), the table, the warehouse racks and conveyor, and the store blocks. Walls are skipped: they are
+one-sided, so an orbit may look through them.
 
 `"format": "landscape"` makes a 1920x1080, 30 fps long-form video with the same rules as the Block Money engine
 (LONGFORM.md) and the shared pieces of `src/longform/kit.tsx` / `tools/kit_long.mjs`. Recipes live in

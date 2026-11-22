@@ -233,6 +233,25 @@ including the pull-back recompiles.
   - set-dressing text (wall posters, store signs, headline walls, evidence pins);
   - hooks and captions (they have their own gates).
 
+## Polish QA (law3d, biz3d, cyber3d; Shorts and long-form)
+
+`tools/polish_qa.mjs` adds four rules to the three kits' builds, next to the framing rules. The engine side is
+`src/longform/polish.ts`, a pure module the kit compilers and HUDs share, so the gate measures the sizes and values the
+render shows. LONGFORM.md section 7a is the full rule text.
+
+| rule | result | check (and what the engine does so it passes) |
+|---|---|---|
+| P1 | FAIL | A counter shows exactly its target at the end of its anchor word (the voice saying the number, found automatically or set with `"land"`) and holds it from its hold point until it leaves, for >= 0.5 s. The engine ends every count window at the anchor word's end and 0.5 s before the cut. |
+| P2 | FAIL | Every board, label and card line fits its box on one line at >= 42 px (titles >= 32 px). The engine measures each line with the Poppins 800 widths and shrinks it to fit; counting values are fitted at their widest, so they never jump or split. |
+| P3 | FAIL | Long-form chapter cards are fully on screen at rest, one line at >= 56 px, and in their own region. The engine fades the card in (no off-screen slide), picks a free top (330 / 130 / 560 px), and places labels and exhibit tags around it. |
+| P4 | FAIL | No set piece (chair, bench, table, rack, monitor) in front of a featured face covers >= 30 % of it for more than 5 frames. Check only; the message gives the camera height, a sideways move or an orbit that clears it. |
+
+Each kit compile exposes the hooks: `C.counters`, `C.counterAt(key, t)`, `C.fits`, `C.chapters` (with `box`, `top`, `fs`),
+`C.cardRectsAt(t)`, `C.occludersAt(t)`, `C.speakingAt(t)`. The actors and faces come from the kit's framing sampler
+(`tools/framing_kits.mjs`). Block Money and tech3d do not call `polish.ts`, and `ChapterCard` without `safe` renders exactly as
+before, so their output is unchanged. Their `--check` findings are identical before and after (35 recipes). The
+fixture `tools/qa_fixtures/polish-defects` and `docs/polish/*_before_after.jpg` show each defect and its fix.
+
 ## Regression rule
 
 Without `"format": "landscape"`, every recipe compiles exactly as before. This was checked for engine/all by rebuilding

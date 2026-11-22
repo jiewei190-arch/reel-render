@@ -6,7 +6,7 @@ Composition: `LawDemo54MillionPantsRecipe` in `src/index.law.ts` (1080x1920, 30 
 
 - none: no prop or set piece enters a figure's body or head, no two people overlap, nobody sinks below the floor.
 
-## Framing QA (screen space, 1249 frames, 0.06 s): 2 clip(s), 12 fail(s)
+## Framing QA (screen space, 1249 frames, 0.05 s): 2 clip(s), 12 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 2, R2 subject/edge 4, R3 board past edge 7, R4 contrast 0, R4 text size 1, R5 frame 0 0. Frame-0 face: pearson 352 px.
 

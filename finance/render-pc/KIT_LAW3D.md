@@ -196,6 +196,20 @@ Every set keeps moving: dust in the beams, flickering practicals, breathing silh
 
 **One device at a time per spot.** End a counter with `until` before the next one appears in the same `pos`. The gate FAILs cards that overlap each other or the hook.
 
+**Counters land on the word (polish rule P1, LONGFORM.md 7a).** A `counter` counts from its `at` for `dur` s, but always
+lands on `to` by the end of its **anchor word**, the voice saying the number. The anchor is found in the voice-over
+(`fifteen`, `$12,000`, `twelve thousand`, `54 million`, `1,152`), or you set it with `"land": "<word>"`. The final
+value then holds for at least 0.5 s before the shot cuts or `zeroAt` drains it. A count that would last under 0.25 s
+shows the target at once. So "YEARS 13" while the voice says fifteen, `$63,999,542` for $64M, and a counter cut
+mid-count cannot happen. A counter whose number is never said gets a warning in the report.
+
+**Text is measured (P2).** The counter title and value, the exhibit label and text, the case card's title / year · place
+/ note, and the verdict and its sub line are measured with the real Poppins widths and shrink to fit their box on ONE
+line (no wrap: a title such as `PER VIOLATION, PER DAY` stays one line). The counter value is fitted at its widest while
+counting, so it never changes size or splits. Exhibit tags are as wide as their measured text. Below 42 px (titles 32
+px) the build fails, e.g. in landscape: `counter title 'PER VIOLATION, PER DAY, FOREVER AND EVER' needs 800 px at the
+32 px minimum but has 492 px (it would shrink to 18 px): shorten it to 24 characters or move the detail into the voice-over`.
+
 ## 7. Cameras (LAW_CAMS in src/law/compile.ts)
 
 All cameras keep moving. The gate FAILs a Short that has even one frame with a still camera.
@@ -255,6 +269,18 @@ All cameras keep moving. The gate FAILs a Short that has even one frame with a s
 **Hook-safe.** The hook card covers about y 230-490 (2 lines). Frame faces at 0.44-0.46 of the height (the presets do this).
 
 ## 9. The build checks (tools/law_build.mjs → RECIPE_QA.md)
+
+**Polish rules (tools/polish_qa.mjs, every Short and long-form recipe; LONGFORM.md 7a).** The "polish QA" line must show 0
+fails:
+- **P1 FAIL, counters land and hold:** a counter shows its exact target at the end of its anchor word, and no frame after
+  its hold point (the anchor's end, or 0.5 s before it leaves) shows another value.
+- **P2 FAIL, text fits:** every device line fits its box at >= 42 px (titles >= 32 px). The message says how many
+  characters fit, or which size or `pos` to use.
+- **P3 FAIL (long-form), chapter cards:** see section 12.
+- **P4 FAIL, set pieces off faces:** the courtroom's chair backs (the judge's high-back chair, the witness chair, two per
+  counsel table: `occluders` in src/law/sets.tsx), the bench, tables and rails must not cover >= 30 % of the camera
+  target's, the subject's or the speaker's face for more than 5 frames. A seated person shot from the gallery side
+  sits behind their chair back: the fix is to shoot from the bench side, raise the camera, or move them off the chair.
 
 **Framing rules (screen space, every output frame; tools/framing_qa.mjs + tools/framing_kits.mjs; same rules as RECIPE_GUIDE.md §4.1).**
 Run `node tools/recipe_build.mjs <slug> --check` until the "framing QA" line shows 0 clips and 0 fails. Every message
@@ -352,6 +378,12 @@ Hands are not checked, because they rest on tables and benches.
 | `tools/law_stills.mjs` | batch stills (`gallery`, or a composition's frames) |
 
 ## 12. Long-form (landscape)
+
+**Chapter cards (polish rule P3).** law3d's chapter card (gold tab, gold edge) uses the `safe` card: it fades in with a
+short glide instead of sliding in from off screen (no "PAIR OF" / "HE DRY" frames). The title stays on one line, fitted
+down to 56 px. It sits at the first top (330, 130 or 560 px) that no counter, case card or verdict uses during its
+2.6 s, and exhibit tags are placed around it. The gate fails a card that is clipped at rest, too long for 56 px, or
+under any card.
 
 `"format": "landscape"` makes a 1920x1080 long-form video with the same framing and caption rules as every other channel
 (LONGFORM.md, shared pieces in `src/longform/kit.tsx` and `tools/kit_long.mjs`). Shorts (`"short"`, `"long"` or no
