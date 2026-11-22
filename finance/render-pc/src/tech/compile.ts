@@ -16,6 +16,9 @@ import type { CutState, ObjDef, Placement } from "./cutaway";
 import { OBJECTS } from "./objects";
 import { TECH_SETS } from "./sets";
 import type { TechSet, TechSetId } from "./sets";
+import { chapterCues, landscapeLens, LF, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
+import type { ChapterR, FaceBand } from "../longform/kit";
+import { hookLines } from "./hud";
 import type { At, BoltSpec, Place, TechBoard, TechCam, TechProp, TechRecipe, TechShot, TechTarget } from "./types";
 
 export const FPS = 30;
@@ -54,6 +57,16 @@ export type TechCompiled = {
   qa: (t: number) => { bolts: Box[]; props: Box[] };
   textsAt: (t: number) => string[];
   audio: { music: string; cues: Cue[] };
+  /** "format": "landscape" (1920x1080 long-form, LONGFORM.md); portrait otherwise */
+  landscape: boolean;
+  /** the screen layout (portrait = the Shorts numbers, landscape = the long-form ones) */
+  layout: TechLayout;
+  /** landscape: chapters resolved to seconds (empty in portrait) */
+  chapters: ChapterR[];
+  /** landscape: the lower-third caption centre for a shot (px at 1080 tall) */
+  capY: (s: TechShotR) => number;
+  /** visual changes besides cuts (hits, kicks, cutaway moves, prop motions, BOLT pose/face changes, labels, boards, fx) */
+  events: () => [number, string][];
 };
 
 /** camera presets (all keep moving: a push, an orbit, a slam creep, a fly-through) */
@@ -71,7 +84,7 @@ export const TECH_CAMS = {
 };
 
 // ------------------------------------------------------------------ projection (1080 x 1920)
-export const project = (cam: Cam, p: V3, h = 1920, top = 0): { x: number; y: number; k: number; z: number } | null => {
+export const project = (cam: Cam, p: V3, h = 1920, top = 0, w = 1080): { x: number; y: number; k: number; z: number } | null => {
   const dot = (a: V3, b: V3) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
   const nrm = (a: V3): V3 => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; };
   const cross = (a: V3, b: V3): V3 => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
@@ -83,19 +96,32 @@ export const project = (cam: Cam, p: V3, h = 1920, top = 0): { x: number; y: num
   const d = sub(p, cam.pos), z = dot(d, f);
   if (z <= 0.05) return null;
   const k = h / 2 / Math.tan((cam.fov * Math.PI) / 360);
-  return { x: 540 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z, z };
+  return { x: w / 2 + (dot(d, r) / z) * k, y: top + h / 2 - (dot(d, u) / z) * k, k: k / z, z };
 };
 /** card size of a label at phone size (Poppins 800, uppercase) */
 export const LABEL_FS = 54;
 export const labelSize = (text: string) => ({ w: Math.round(text.length * 0.66 * LABEL_FS + 64), h: Math.round(LABEL_FS * 1.15 + 34) });
 /** safe area for cards: below the hook (when shown), above the caption band, inside the frame and the right rail */
 export const SAFE_TOP = 250, SAFE_TOP_HOOK = 560, SAFE_BOTTOM = 1190, SAFE_X0 = 50, SAFE_X1 = 1030;
+/** the per-format screen layout: portrait = the numbers above (unchanged), landscape = the long-form numbers (LF):
+ *  hook top-centre at 70, cards above the lower-third band (centre 905 +- 72), 60 px side margins */
+export type TechLayout = { W: number; H: number; CX: number; AY0: number; SAFE_TOP: number; SAFE_TOP_HOOK: number; SAFE_BOTTOM: number; SAFE_X0: number; SAFE_X1: number; BOARD_W: number; BOARD_H: number; BOARD_M: number; HOOK_TOP: number; HOOK_FS: number };
+export const PORTRAIT_LAYOUT: TechLayout = { W: 1080, H: 1920, CX: 540, AY0: 900, SAFE_TOP, SAFE_TOP_HOOK, SAFE_BOTTOM, SAFE_X0, SAFE_X1, BOARD_W: 400, BOARD_H: 250, BOARD_M: 60, HOOK_TOP: 236, HOOK_FS: 100 };
+/** landscape: SAFE_TOP_HOOK is set per recipe from the hook's line count (below the hook card) */
+export const landscapeLayout = (hookN: number): TechLayout => ({
+  W: LF.W, H: LF.H, CX: LF.W / 2, AY0: 500, SAFE_TOP: 60, SAFE_TOP_HOOK: Math.round(LF.HOOK_TOP + hookN * LF.HOOK_SIZE * 1.04 + 52 + 30),
+  SAFE_BOTTOM: LF.CAP_Y - LF.CAP_HALF - 14, SAFE_X0: 60, SAFE_X1: LF.W - 60, BOARD_W: 400, BOARD_H: 250, BOARD_M: 80, HOOK_TOP: LF.HOOK_TOP, HOOK_FS: LF.HOOK_SIZE,
+});
 const rectsHit = (a: { x: number; y: number; w: number; h: number }, b: { x: number; y: number; w: number; h: number }, m = 14) =>
   Math.abs(a.x - b.x) * 2 < a.w + b.w + 2 * m && Math.abs(a.y - b.y) * 2 < a.h + b.h + 2 * m;
 
 // ------------------------------------------------------------------ the compiler
 export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDuration?: number): TechCompiled => {
   if (recipe.kit !== "tech3d") throw new Error(`recipe ${recipe.slug}: kit must be "tech3d"`);
+  const LS = recipe.format === "landscape";
+  if (recipe.format !== undefined && recipe.format !== "short" && recipe.format !== "long" && !LS) throw new Error(`recipe: format "${recipe.format}" (use "short", "long" or "landscape")`);
+  if (recipe.chapters && !LS) throw new Error('recipe: chapters need "format": "landscape"');
+  const LY: TechLayout = LS ? landscapeLayout(hookLines(recipe.hook.text, true).length) : PORTRAIT_LAYOUT;
   const { at, lineEnd } = makeAt(words);
   const durS = recipe.duration ?? voDuration ?? Math.max(...words.map((w) => w.end)) + 0.8;
   const duration = Math.round(durS * FPS);
@@ -213,9 +239,14 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     };
 
     // lens
-    const c = sp.cam;
-    const P = TECH_CAMS[c.preset];
-    if (!P) throw new Error(`recipe ${id}: no camera preset "${c.preset}" (has: ${Object.keys(TECH_CAMS).join(", ")})`);
+    const c0 = sp.cam;
+    const P0 = TECH_CAMS[c0.preset];
+    if (!P0) throw new Error(`recipe ${id}: no camera preset "${c0.preset}" (has: ${Object.keys(TECH_CAMS).join(", ")})`);
+    // landscape: keep the vertical fov, narrow the wider presets (LANDSCAPE_LENS [fov x, dist x])
+    const lk = LS ? landscapeLens(c0.preset) : null;
+    const P = lk ? { ...P0, fov: P0.fov * lk[0], dist: P0.dist * lk[1] } : P0;
+    const c: TechCam = lk && c0.fov !== undefined ? { ...c0, fov: c0.fov * lk[0] } : c0;
+    const SLAM0 = lk ? 60 * lk[0] : 60;
     const camTarget = c.target ?? "centre";
     // BOLT positions must exist before the lens can aim at them: build the tracks with a provisional yaw first
     let lensPos0: V3 = [0, 1.5, 6];
@@ -234,7 +265,7 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     const fov0 = c.fov ?? P.fov;
     switch (c.preset) {
       case "slamZoom": {
-        lens.fov = (t) => (t < hit - 0.2 ? 60 : t < hit ? 60 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(60, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2));
+        lens.fov = (t) => (t < hit - 0.2 ? SLAM0 : t < hit ? SLAM0 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(SLAM0, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2));
         break;
       }
       case "hookZoom": {
@@ -356,7 +387,14 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
   }
 
   // ---------------------------------------------------- per-time helpers
-  const shotAt = (t: number) => { let s = shots[0]; for (const x of shots) if (t >= x.a - 1e-9) s = x; return s; };
+  /** the last shot with a <= t (+1e-9), else the first: a binary search (shot starts are strictly increasing), the same
+   *  answer as the old linear scan, flat with the shot count (long-form has hundreds of shots) */
+  const shotAt = (t: number) => {
+    let lo = 0, hi = shots.length - 1;
+    if (!(t >= shots[0].a - 1e-9)) return shots[0];
+    while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (t >= shots[mid].a - 1e-9) lo = mid; else hi = mid - 1; }
+    return shots[lo];
+  };
   const camOf = (L: Lens, t: number): Cam => {
     const tau = Math.max(0, t - L.a);
     const subj = L.subj(t);
@@ -368,6 +406,40 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
   const camAt = (t: number) => { const s = shotAt(t); return kicked(camOf(s.lens, t), kickAt(t, s.kicks)); };
   const boltsAt = (t: number) => shotAt(t).bolts.map((b) => boltState(b, t));
   const placeOf = (p: PropR, t: number) => p.place(t);
+  // projection in this format's frame
+  const prj = (cam: Cam, p: V3) => project(cam, p, LY.H, 0, LY.W);
+  // ---------------------------------------------------- long-form: chapters, caption-safe framing, the lower third
+  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
+  /** BOLT's screen faces in the caption column (x 240-1680) at 5 samples across a shot, as bands (px at 1080 tall) */
+  const facesOf = (s: TechShotR): FaceBand[] => {
+    const out: FaceBand[] = [];
+    for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
+      const tm = s.a + (s.b - s.a) * u;
+      const cam = kicked(camOf(s.lens, tm), kickAt(tm, s.kicks));
+      for (const tr of s.bolts) {
+        const f = boltFace(boltState(tr, tm));
+        const q = prj(cam, f.c);
+        if (!q || q.x < LF.CAP_SIDE || q.x > LF.W - LF.CAP_SIDE) continue;
+        const r = f.r * q.k;
+        if (q.y + r > 0 && q.y - r < LF.H) out.push({ top: q.y - r, bot: q.y + r });
+      }
+    }
+    return out;
+  };
+  if (LS) {
+    // caption-safe framing (LONGFORM.md): lift a shot's subject (its face fraction) when BOLT's face lands in the
+    // lower-third band, unless the recipe sets cam.face; computed here at compile time (nothing is baked)
+    for (const s of shots) {
+      if (typeof s.spec.cam.face === "number" || !s.bolts.length) continue;
+      for (let it = 0; it < 4; it++) {
+        const need = liftNeeded(facesOf(s));
+        if (need <= 0 || s.lens.face <= 0.26 + 1e-3) break;
+        s.lens.face = Math.max(0.26, s.lens.face - need);
+      }
+    }
+  }
+  const capPlan = new Map<string, number>();
+  const capY = (s: TechShotR) => { let y = capPlan.get(s.id); if (y === undefined) { y = LS ? lowerThirdY(facesOf(s)) : LF.CAP_Y; capPlan.set(s.id, y); } return y; };
   const qa = (t: number) => {
     const s = shotAt(t);
     const bolts: Box[] = [];
@@ -389,18 +461,18 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     if (got) return got;
     const t = Math.min(L.t1 - 0.01, L.t0 + 0.05);
     const cam = camAt(t);
-    const q = project(cam, L.target(t));
+    const q = prj(cam, L.target(t));
     const sz = labelSize(L.text);
-    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? SAFE_TOP_HOOK : SAFE_TOP;
-    const faces = boltsAt(t).map((st) => { const f = boltFace(st); const p = project(cam, f.c); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 120, h: 2 * f.r * p.k + 120 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
+    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? LY.SAFE_TOP_HOOK : LY.SAFE_TOP;
+    const faces = boltsAt(t).map((st) => { const f = boltFace(st); const p = prj(cam, f.c); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 120, h: 2 * f.r * p.k + 120 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     // earlier labels of this shot that are still up when this one pops
-    const others = s.labels.filter((o) => o.key !== L.key && o.t0 <= L.t0 && o.t1 > L.t0).map((o) => { const d = placeLabel(o, s); const qo = project(camAt(t), o.target(t)); const so = labelSize(o.text); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
+    const others = s.labels.filter((o) => o.key !== L.key && o.t0 <= L.t0 && o.t1 > L.t0).map((o) => { const d = placeLabel(o, s); const qo = prj(camAt(t), o.target(t)); const so = labelSize(o.text); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     for (const bd of s.boards) if (bd.t1 > L.t0 && bd.t0 < L.t1) { const bb = boardRect(bd, t); others.push(bb); }
-    const ax = q?.x ?? 540, ay = q?.y ?? 900;
-    const prefer = L.side === "left" ? -1 : L.side === "right" ? 1 : ax > 540 ? -1 : 1;
+    const ax = q?.x ?? LY.CX, ay = q?.y ?? LY.AY0;
+    const prefer = L.side === "left" ? -1 : L.side === "right" ? 1 : ax > LY.CX ? -1 : 1;
     const cands: { dx: number; dy: number }[] = [];
     for (const dy of [-200, -120, -280, 120, 200, -360, 280, 0]) for (const sd of [prefer, -prefer]) cands.push({ dx: sd * (sz.w / 2 + 90), dy });
-    const clampC = (c: { x: number; y: number }) => ({ x: clamp(c.x, SAFE_X0 + sz.w / 2, SAFE_X1 - sz.w / 2), y: clamp(c.y, top + sz.h / 2, SAFE_BOTTOM - sz.h / 2) });
+    const clampC = (c: { x: number; y: number }) => ({ x: clamp(c.x, LY.SAFE_X0 + sz.w / 2, LY.SAFE_X1 - sz.w / 2), y: clamp(c.y, top + sz.h / 2, LY.SAFE_BOTTOM - sz.h / 2) });
     let best = cands[0], bestScore = Infinity;
     cands.forEach((cd, k) => {
       const c = clampC({ x: ax + cd.dx, y: ay + cd.dy });
@@ -418,14 +490,14 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     const s = shotAt(t);
     const cam = camAt(t);
     const out: LabelBox[] = [];
-    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? SAFE_TOP_HOOK : SAFE_TOP;
+    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? LY.SAFE_TOP_HOOK : LY.SAFE_TOP;
     for (const L of s.labels) {
       if (t < L.t0 - LEAD || t >= L.t1) continue;
-      const q = project(cam, L.target(t));
+      const q = prj(cam, L.target(t));
       if (!q) continue;
       const d = placeLabel(L, s);
       const sz = labelSize(L.text);
-      const x = clamp(q.x + d.dx, SAFE_X0 + sz.w / 2, SAFE_X1 - sz.w / 2), y = clamp(q.y + d.dy, top + sz.h / 2, SAFE_BOTTOM - sz.h / 2);
+      const x = clamp(q.x + d.dx, LY.SAFE_X0 + sz.w / 2, LY.SAFE_X1 - sz.w / 2), y = clamp(q.y + d.dy, top + sz.h / 2, LY.SAFE_BOTTOM - sz.h / 2);
       const line = EASE_OUT(prog(t, L.t0 - LEAD, L.t0 + 0.16));
       const u = clamp((t - L.t0 - 0.06) / 0.28) * clamp((L.t1 - t) / 0.15);
       out.push({ key: L.key, text: L.text, ax: q.x, ay: q.y, x, y, ...sz, u, line: line * clamp((L.t1 - t) / 0.15) });
@@ -433,14 +505,14 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     return out;
   };
   function boardRect(bd: BoardR, t: number) {
-    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? SAFE_TOP_HOOK : SAFE_TOP;
-    const w = 400, h = 250, pos = bd.spec.pos ?? "right";
-    return { x: pos === "left" ? 60 + w / 2 : pos === "top" ? 540 : 1080 - 60 - w / 2, y: pos === "top" ? top + h / 2 : top + 40 + h / 2, w, h };
+    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? LY.SAFE_TOP_HOOK : LY.SAFE_TOP;
+    const w = LY.BOARD_W, h = LY.BOARD_H, M = LY.BOARD_M, pos = bd.spec.pos ?? "right";
+    return { x: pos === "left" ? M + w / 2 : pos === "top" ? LY.CX : LY.W - M - w / 2, y: pos === "top" ? top + h / 2 : top + 40 + h / 2, w, h };
   }
   const boardsAt = (t: number): BoardBox[] => {
     const s = shotAt(t);
     const out: BoardBox[] = [];
-    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? SAFE_TOP_HOOK : SAFE_TOP;
+    const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? LY.SAFE_TOP_HOOK : LY.SAFE_TOP;
     for (const bd of s.boards) {
       if (t < bd.t0 - LEAD || t >= bd.t1) continue;
       const c = bd.spec.count;
@@ -480,9 +552,29 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
+  if (LS) cues.push(...chapterCues(chapters));
   const audio = { music: recipe.music ?? "upbeat", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, cutOf, placeOf, labelsAt, boardsAt, qa, textsAt, audio };
+  // ---------------------------------------------------- visual-change events (the long-form pacing gate)
+  const events = (): [number, string][] => {
+    const ev: [number, string][] = [];
+    for (const s of shots) {
+      for (const [t] of s.kicks) ev.push([t, `${s.id} hit`]);
+      for (const L of s.labels) ev.push([L.t0, `${s.id} label ${L.text}`]);
+      for (const bd of s.boards) ev.push([bd.t0, `${s.id} board ${bd.spec.title}`]);
+      for (const f of s.fx) ev.push([f.at, `${s.id} ${f.fx}`]);
+      for (const ac of s.spec.actions ?? []) if (ac.do !== "label") ev.push([at(ac.at), `${s.id} ${ac.do} ${ac.on}`]);
+      for (const p of s.props) {
+        if (p.spec.motion === "popIn" || p.spec.motion === "dropIn") ev.push([p.hit, `${s.id} ${p.key} ${p.spec.motion}`]);
+        if (p.spec.motion === "path") for (const [kt] of p.spec.path ?? []) ev.push([at(kt), `${s.id} ${p.key} path key`]);
+      }
+      for (const b of s.bolts) { b.segs.slice(1).forEach((g) => ev.push([g.t0, `${s.id} ${b.id} pose ${g.pose}`])); b.faces.forEach((g) => ev.push([g.t0, `${s.id} ${b.id} face ${g.face}`])); }
+      if (s.spec.cam.preset === "explodeOrbit" || s.spec.cam.preset === "flyThrough") ev.push([s.a + (s.b - s.a) / 2, `${s.id} ${s.spec.cam.preset} move`]);
+    }
+    return ev.filter(([t]) => t >= 0 && t <= end).sort((x, y) => x[0] - y[0]);
+  };
+
+  return { recipe, slug: recipe.slug, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, cutOf, placeOf, labelsAt, boardsAt, qa, textsAt, audio, landscape: LS, layout: LY, chapters, capY, events };
 };
 
 // ------------------------------------------------------------------ BOLT tracks

@@ -113,14 +113,19 @@ export type TechShot = {
   caption?: "auto" | "off" | string;
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
+  /** long-form: marks a new story beat for the pacing gate (chapters and set changes count by themselves) */
+  beat?: boolean;
   note?: string;
 };
 
 export type TechRecipe = {
   kit: "tech3d";
   slug: string;
-  /** "short" (30-55 s, the default) or "long" (5-8 min); only the gate's length check differs */
-  format?: "short" | "long";
+  /** "short" (30-55 s, the default) or "long" (5-8 min portrait); only the gate's length check differs.
+   *  "landscape": 1920x1080 long-form (LONGFORM.md; the long-form gate, lower-third captions, chapter cards) */
+  format?: "short" | "long" | "landscape";
+  /** landscape only: YouTube chapters, each starting on a word of the voice-over (title card + whoosh/impact) */
+  chapters?: { title: string; word: At }[];
   /** hook: top of the frame, <= 2 lines, <= 5 words, *one word* in orange */
   hook: { text: string; until?: At; again?: At };
   duration?: number;

@@ -5,7 +5,7 @@ import { Composition } from "remotion";
 import { SUB } from "../engine/core/frame";
 import { compileTech } from "./compile";
 import type { TechCompiled } from "./compile";
-import { TechFilm } from "./film";
+import { TechFilm, TechFilmL } from "./film";
 import { GALLERY_RECIPE } from "./gallery";
 import { TECH_RECIPES } from "./registry.gen";
 
@@ -23,7 +23,7 @@ export const techCompiled = (id: string) => {
   }
   return c;
 };
-const Sharp: React.FC<{ id: string }> = ({ id }) => <TechFilm c={techCompiled(id)} />;
+const Sharp: React.FC<{ id: string }> = ({ id }) => { const c = techCompiled(id); return c.landscape ? <TechFilmL c={c} /> : <TechFilm c={c} />; };
 const Blur: React.FC<{ id: string }> = ({ id }) => <TechFilm c={techCompiled(id)} sub />;
 
 export const TechRoot: React.FC = () => (
@@ -31,6 +31,8 @@ export const TechRoot: React.FC = () => (
     <Composition id="TechGallery" component={Sharp} durationInFrames={techCompiled("TechGallery").duration} fps={30} width={1080} height={1920} defaultProps={{ id: "TechGallery" }} />
     {TECH_RECIPES.map((r) => {
       const c = techCompiled(r.id);
+      // long-form ("format": "landscape"): 1920x1080, the plain 30 fps composition only (no Sub: LONGFORM.md section 5)
+      if (c.landscape) return <Composition key={r.id} id={r.id} component={Sharp} durationInFrames={c.duration} fps={30} width={1920} height={1080} defaultProps={{ id: r.id }} />;
       return (
         <React.Fragment key={r.id}>
           <Composition id={r.id} component={Sharp} durationInFrames={c.duration} fps={30} width={1080} height={1920} defaultProps={{ id: r.id }} />

@@ -162,8 +162,17 @@ export const boltBoxes = (st: BoltState) => [
 
 // ------------------------------------------------------------------ the screen face
 const FACE_W = 512, FACE_H = 384;
-const faceTex = (face: BoltFace, blink: boolean, mouth: Viseme, ph: number) =>
-  canvasTexture(`bolt|${face}|${blink ? 1 : 0}|${mouth}|${ph}`, FACE_W, FACE_H, (g, W, H) => {
+/** face textures, held here by key: the key space is bounded (6 faces x blink x 6 visemes x 4 phases = 288), so a long
+ *  video never re-draws (and re-uploads) faces after the shared canvas-texture cache (120 entries) is cleared */
+const faceTexs = new Map<string, THREE.Texture>();
+const faceTex = (face: BoltFace, blink: boolean, mouth: Viseme, ph: number) => {
+  const key = `bolt|${face}|${blink ? 1 : 0}|${mouth}|${ph}`;
+  let tx = faceTexs.get(key);
+  if (!tx) { tx = drawFace(key, face, blink, mouth, ph); faceTexs.set(key, tx); }
+  return tx;
+};
+const drawFace = (key: string, face: BoltFace, blink: boolean, mouth: Viseme, ph: number) =>
+  canvasTexture(key, FACE_W, FACE_H, (g, W, H) => {
     // screen: navy with a soft blue vignette and faint scanlines
     const bg = g.createRadialGradient(W / 2, H * 0.45, 20, W / 2, H / 2, W * 0.62);
     bg.addColorStop(0, "#1b3360");
@@ -242,7 +251,7 @@ const faceTex = (face: BoltFace, blink: boolean, mouth: Viseme, ph: number) =>
 const screenMats = new Map<string, THREE.MeshBasicMaterial>();
 const screenMat = (tex: THREE.Texture) => {
   let m = screenMats.get(tex.uuid);
-  if (!m) { if (screenMats.size > 200) screenMats.clear(); m = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }); m.color.setRGB(1.25, 1.25, 1.25); screenMats.set(tex.uuid, m); }
+  if (!m) { if (screenMats.size > 400) screenMats.clear(); m = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }); m.color.setRGB(1.25, 1.25, 1.25); screenMats.set(tex.uuid, m); }
   return m;
 };
 const glowMats = new Map<string, THREE.MeshBasicMaterial>();

@@ -14,27 +14,29 @@ import { TP } from "./palette";
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const FONT = "Poppins";
 
-/** split a hook into at most 2 balanced lines (an explicit "\n" wins) */
-export const hookLines = (text: string): string[] => {
+/** split a hook into at most 2 balanced lines (an explicit "\n" wins). `wide` (landscape, 80 px type in a 1920 px
+ *  frame): one line whenever it fits in about 1700 px */
+export const hookLines = (text: string, wide = false): string[] => {
   if (text.includes("\n")) return text.split("\n").slice(0, 2);
   const w = text.trim().split(/\s+/);
+  if (wide && text.replace(/\*/g, "").trim().length * 0.63 * 80 + 80 <= 1700) return [w.join(" ")];
   if (w.length <= 2 || text.replace(/\*/g, "").length <= 12) return [w.join(" ")];
   let best = 1, bd = Infinity;
   for (let k = 1; k < w.length; k++) { const d = Math.abs(w.slice(0, k).join(" ").length - w.slice(k).join(" ").length); if (d < bd) { bd = d; best = k; } }
   return [w.slice(0, best).join(" "), w.slice(best).join(" ")];
 };
 export const HOOK_TOP = 236, HOOK_FS = 100;
-export const TechHook: React.FC<{ text: string; t: number; t0?: number; until: number }> = ({ text, t, t0 = 0, until }) => {
+export const TechHook: React.FC<{ text: string; t: number; t0?: number; until: number; top?: number; size?: number; wide?: boolean }> = ({ text, t, t0 = 0, until, top = HOOK_TOP, size = HOOK_FS, wide = false }) => {
   if (t > until || t < t0) return null;
   const out = clamp((until - t) / 0.18);
   const tin = t0 > 0 ? EASE_OUT(prog(t, t0, t0 + 0.2)) : 1; // frame 0: fully on (no fade-in); a repeat pops in
-  const lines = hookLines(text);
+  const lines = hookLines(text, wide);
   const breathe = 1 + 0.012 * Math.sin(t * 3.2);
   return (
-    <div style={{ position: "absolute", left: 50, right: 50, top: HOOK_TOP, display: "flex", justifyContent: "center", opacity: out }}>
+    <div style={{ position: "absolute", left: 50, right: 50, top, display: "flex", justifyContent: "center", opacity: out }}>
       <div style={{ transform: `scale(${(0.85 + 0.15 * tin) * breathe})`, background: "rgba(255,255,255,0.96)", borderRadius: 34, padding: "18px 40px 24px", boxShadow: "0 14px 40px rgba(20,33,61,0.22)", borderBottom: `10px solid ${TP.blue}` }}>
         {lines.map((ln, i) => (
-          <div key={i} style={{ fontFamily: FONT, fontWeight: 800, fontSize: HOOK_FS, lineHeight: 1.04, color: TP.navy, textAlign: "center", whiteSpace: "nowrap", letterSpacing: -1 }}>
+          <div key={i} style={{ fontFamily: FONT, fontWeight: 800, fontSize: size, lineHeight: 1.04, color: TP.navy, textAlign: "center", whiteSpace: "nowrap", letterSpacing: -1 }}>
             {ln.split(/(\*[^*]+\*)/).map((seg, j) =>
               seg.startsWith("*") && seg.endsWith("*") && seg.length > 2 ? (
                 <span key={j} style={{ color: TP.orange, display: "inline-block", transform: `translateY(${-4 * Math.abs(Math.sin(t * 4))}px) rotate(${-2 + 2 * Math.sin(t * 3)}deg)` }}>{seg.slice(1, -1)}</span>
@@ -73,9 +75,9 @@ export const TechCaptions: React.FC<{ chunks: CapChunk[]; t: number; from?: numb
 export const techChunks = (words: readonly { w: string; t: number; end: number; turn?: number }[]) => chunkWords(words, 3);
 
 /** callout lines (SVG) + label cards: the line draws from the part to the card, then the card pops in */
-export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number }> = ({ labels, t }) => (
+export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number; w?: number; h?: number }> = ({ labels, t, w = 1080, h = 1920 }) => (
   <>
-    <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
+    <svg width={w} height={h} style={{ position: "absolute", left: 0, top: 0 }}>
       {labels.map((l) => {
         // the line ends at the card edge nearest the anchor
         const ex = clamp(l.ax, l.x - l.w / 2, l.x + l.w / 2), ey = clamp(l.ay, l.y - l.h / 2, l.y + l.h / 2);

@@ -332,7 +332,71 @@ The lens follows a moving target (a flying plane).
 }
 ```
 
-## 12. Files
+## 12. Long-form (landscape)
+
+The kit also renders **landscape long-form** (1920x1080, 30 fps) by the shared rules in `LONGFORM.md` (the same chapter
+card, lower-third captions, 16:9 lens rule and long-form gate as the Block Money engine and the other kits). Portrait
+Shorts (`"format"` absent, `"short"` or `"long"`) are unchanged: same compiler output, same generated files, same gate.
+
+**Fields**
+
+| field | what it does |
+|---|---|
+| `"format": "landscape"` | 1920x1080 composition `<Pascal>Recipe` in `src/index.tech.ts` (plain 30 fps only, no `Sub`). The folder may be `finance/longform/<slug>/`. |
+| `"chapters": [{ "title", "word" }]` | YouTube chapters (landscape only; a portrait recipe with chapters fails to compile). Each plays the shared 2.6 s `ChapterCard` (orange tab, blue edge) on its word, or just after the hook text for a chapter on the first word, with a whoosh + impact cue. |
+| `"beat": true` on a shot | a new story beat for the pacing gate (chapters and set changes count by themselves). |
+| `hook` | top-centre at y 70, 80 px type, one line when it fits (the Shorts 5-word / 2-line limits do not apply). |
+
+**What adapts (automatic)**
+
+- Layout (`landscapeLayout` in `src/tech/compile.ts`; portrait keeps `PORTRAIT_LAYOUT`, today's numbers): label cards and
+  boards stay between y 60 (below the hook card while it shows) and y 819, i.e. above the lower-third band (centre 905 +-
+  72), and 60 px from the sides; boards sit 80 px in from the side (`left` / `right`) or top-centre (`top`).
+- Camera: three.js keeps the vertical fov; each preset gets `landscapeLens(preset)` (fov x, dist x; `flyThrough` and
+  `explodeOrbit` 0.9, `wide` 0.8 and 0.95 dist). An explicit `cam.fov` is scaled too; a `slamZoom` starts from 60 x fov.
+- Caption-safe framing: when BOLT's screen face (in the 1440 px caption column) lands in the lower-third band in any of 5
+  samples of a shot, the shot's face fraction is lifted (`liftNeeded`, down to 0.26) at compile time, unless the recipe
+  sets `cam.face`. Nothing is baked into the generated file. Whatever is left moves that shot's caption (`lowerThirdY`).
+- Captions: `LowerThirdCaptions` phrases of up to 7 words, the spoken word in the kit's orange (as on the Shorts), from 1.0 s.
+- Rendering: one 1920x1080 `View` with `postScale={1}`, never re-keyed, so the WebGL canvas stays mounted across shots.
+  The kit is procedural (no GLB or texture fetches); its caches are keyed by values (colours, sizes, face states), not by
+  shot or text, and BOLT's face textures are held in their own bounded map (288 states), so nothing grows with length.
+
+**Commands**
+
+```bash
+node tools/recipe_build.mjs <slug> --check [--qa-sample 5]   # finance/longform/<slug> is found automatically
+node tools/recipe_build.mjs <slug>                           # gen file, registry, RECIPE_QA.md, chapters.txt, cues
+npx remotion still src/index.tech.ts <Pascal>Recipe out.jpg --frame=N --scale=0.5 --gl=swangle --timeout=600000
+node tools/clip_short.mjs <slug> --from-word X --to-word Y --out <slug>-short-N [--hook "TEXT"] [--stake "TITLE: VALUE"]
+node tools/recipe_build.mjs <slug>-short-N                   # the full Shorts QA + the tech3d frame-0 gate
+```
+
+The long-form check: clip QA on every `--qa-sample`th output frame (Shorts ignore `--qa-sample` and keep every frame x 4),
+then `kitLongGate` with the kit's visual-change events (cuts, camera hits and kicks, cutaway explode / slice / highlight,
+explodeOrbit / flyThrough moves, popIn / dropIn / path keys, BOLT pose and face changes, labels, boards, fx), the
+chapters, the caption share (lower-third centre >= 75 % of the height) and the label / board boxes at 1920x1080. Exit 1 on
+a clip or a hard-gate fail. The demo is `finance/longform/tech-demo-landscape/` (32 s, 3 chapters; its Short is
+`finance/shorts/tech-demo-landscape-short-1/`).
+
+**The clip adapter (`src/tech/clip.ts`)** re-times every time field of a shot (`at`, `cam.hit`, actor `from` /
+`then[].at`, prop `hit` / `path` keys, action `at` / `until`, board `at` / `until`, fx `at`, sfx `at`; actor and prop
+`at` / `to` are places and stay), and the recipe props' `from` / `until` / `path`. Its hook text keeps <= 5 words in 2
+lines of <= 14 characters with one *orange* word and adds a `?` when there is no question word or number. Its frame-0
+shot is a `hookZoom` on BOLT (from the source shot, else the nearest shot of the same set with BOLT): shrug + curious,
+then shock + shocked with a shake and an impact at 0.45 s, the segment's cutaway object (about 1.5 m, turning) behind
+BOLT to one side, and the stake board (`--stake "TITLE: VALUE"`, top-centre; BOLT is framed lower then). It cuts at 1.0 s.
+
+**Limits**
+
+- The chapter card is the shared fixed look (top 330 px, left): for 2.6 s it can cover BOLT in a centred shot.
+- Only BOLT's face drives caption-safe framing; a cutaway object or a label in the band only warns (labels are kept
+  above it by the layout).
+- There is no tag / button-rail HUD in this kit, so none in landscape either.
+- The clip adapter's hook object is placed by geometry (behind BOLT, to the side of the lens): an unusual set or BOLT
+  place can still need a hand edit of the hook shot. The loop rule (hook again on the last shot) is not re-created.
+
+## 13. Files
 
 | file | role |
 |---|---|
@@ -347,5 +411,6 @@ The lens follows a moving target (a flying plane).
 | `src/tech/film.tsx` | the renderer |
 | `src/tech/root.tsx`, `src/index.tech.ts` | compositions: `TechGallery` and every recipe |
 | `src/tech/gallery.ts` | the gallery shots and `GALLERY_STILLS` |
-| `tools/tech_build.mjs`, `tools/tech_entry.ts` | build, QA and gate |
+| `src/tech/clip.ts` | the clip adapter for `tools/clip_short.mjs` (`clipAdapter`, re-exported by `tools/tech_entry.ts`) |
+| `tools/tech_build.mjs`, `tools/tech_entry.ts` | build, QA and gate (Shorts gate; long-form gate via `tools/kit_long.mjs`) |
 | `tools/tech_stills.mjs` | batch stills (`gallery`, or a composition's frames) |

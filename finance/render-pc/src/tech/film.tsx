@@ -14,6 +14,7 @@ import type { PropR, TechCompiled, FxR } from "./compile";
 import { FPS } from "./compile";
 import { Boards, LabelLayer, TechCaptions, TechHook, techChunks } from "./hud";
 import { FOG_BG, TECH_MOODS, TP } from "./palette";
+import { ChapterCard, chapterAt, chunkWords, LF, LowerThirdCaptions } from "../longform/kit";
 import { TECH_SETS } from "./sets";
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -132,6 +133,54 @@ export const TechFilm: React.FC<{ c: TechCompiled; sub?: boolean }> = ({ c, sub 
       <TechHook text={c.recipe.hook.text} t={tOut} until={c.hookUntil} />
       {c.hookAgain !== null ? <TechHook text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} /> : null}
       {!capOff ? (fixedCap ? <TechCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} from={0} /> : <TechCaptions chunks={chunks} t={tOut} />) : null}
+    </AbsoluteFill>
+  );
+};
+
+/** LONG-FORM film ("format": "landscape", 1920x1080, LONGFORM.md): the same scene through one 1920x1080 View
+ *  (postScale 1: the post chain keeps its Shorts weight), the hook top-centre, labels and boards in the landscape layout
+ *  (above the lower-third band), the chapter title card, and lower-third captions (phrases of up to 7 words, the spoken
+ *  word in the kit's orange, as on the kit's Shorts) whose centre moves only when BOLT's face sits in the band. No
+ *  sub-frames (long-form renders the plain 30 fps composition). The View element never changes key, so the WebGL canvas
+ *  stays mounted across every shot. */
+export const TechFilmL: React.FC<{ c: TechCompiled }> = ({ c }) => {
+  const n = useCurrentFrame();
+  useFonts();
+  const tOut = n / FPS;
+  const shot = c.shotAt(tOut);
+  const t = Math.min(Math.max(tOut, shot.a), shot.b - 1e-4);
+  const cam = c.camAt(t);
+  const set = TECH_SETS[shot.set];
+  const bolts = c.boltsAt(t);
+  const flash = shot.fx.filter((f) => f.fx === "flash").reduce((o, f) => Math.max(o, tOut >= f.at ? 0.6 * (1 - (tOut - f.at) / 0.14) : 0), 0);
+  const capOff = shot.spec.caption === "off" || c.recipe.captions === "off";
+  const fixedCap = shot.spec.caption && shot.spec.caption !== "auto" && shot.spec.caption !== "off" ? shot.spec.caption : null;
+  const chunks = React.useMemo(() => chunkWords(c.words, LF.CAP_WORDS), [c]);
+  const labels = c.labelsAt(tOut);
+  const boards = c.boardsAt(tOut);
+  const ch = chapterAt(c.chapters, tOut);
+  const capY = c.capY(shot) / LF.H;
+  const L = c.layout;
+  return (
+    <AbsoluteFill style={{ background: shot.spec.mood === "fog" ? FOG_BG : set.bg }}>
+      <View mood={TECH_MOODS[shot.spec.mood === "fog" && set.id === "sky" ? "skyFog" : set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={LF.W} height={LF.H} postScale={1}>
+        <ClipOn />
+        {set.render(t, { fog: shot.spec.mood === "fog" })}
+        {bolts.map((st) => <Bolt key={st.id} st={st} t={t} shadow={shot.set !== "sky" || st.y - st.floorY < 3} />)}
+        {shot.props.map((p) => {
+          if (t < p.a || t >= p.b) return null;
+          if (p.def) { const pl = c.placeOf(p, t); return p.show(t) > 0 ? <CutawayObject key={p.key} k={p.key} def={p.def} pl={pl} st={c.cutOf(p.key, t)} t={t} /> : null; }
+          return <KitView key={p.key} pr={p} c={c} t={t} />;
+        })}
+        {shot.fx.filter((f) => f.fx === "sparks").map((f, i) => <Sparks key={i} f={f} t={t} />)}
+      </View>
+      {flash > 0 ? <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} /> : null}
+      <LabelLayer labels={labels} t={tOut} w={LF.W} h={LF.H} />
+      <Boards boards={boards} t={tOut} />
+      <TechHook text={c.recipe.hook.text} t={tOut} until={c.hookUntil} top={L.HOOK_TOP} size={L.HOOK_FS} wide />
+      {c.hookAgain !== null ? <TechHook text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} top={L.HOOK_TOP} size={L.HOOK_FS} wide /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={TP.orange} edge={TP.blue} /> : null}
+      {!capOff ? (fixedCap ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} centre={capY} hot={TP.orange} /> : <LowerThirdCaptions chunks={chunks} t={tOut} centre={capY} hot={TP.orange} hide={(x) => x < 1.0} />) : null}
     </AbsoluteFill>
   );
 };
