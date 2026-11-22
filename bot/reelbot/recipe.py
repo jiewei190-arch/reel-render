@@ -156,7 +156,8 @@ def _context(folder: Path) -> tuple[dict, str, str]:
         "a crime label or suspect photo; use a neutral 'SOURCE'/'REPORT' card for them.\n\n"
         "VARIETY AND MEANING: never reuse the same shot for opposite beats (a money stack for both '$31 billion' and "
         "'31 cents'); show the change (the stack shrinking, the chart crashing). At most ONE board on screen at frame 0. "
-        "Body language matches the line (no raised-arms celebration on a loss or a bitter 'survived'). Keep every "
+        "The big beats (the twist, the verdict, the reveal, the refusal, the arrest) show the PEOPLE involved acting it "
+        "out, never an empty table, mat or corkboard. Body language matches the line (no raised-arms celebration on a loss or a bitter 'survived'). Keep every "
         "character's face and neck out of the caption band at the bottom: in close shots put the subject higher or "
         "pull back.\n\n"
         f"=== {gname} ===\n" + guide + long_note
