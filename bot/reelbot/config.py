@@ -36,7 +36,7 @@ class Config:
     # Models
     claude_model: str = os.environ.get("REELBOT_CLAUDE_MODEL", "claude-opus-5-5")
     claude_effort: str = os.environ.get("REELBOT_CLAUDE_EFFORT", "high")
-    gemini_model: str = os.environ.get("REELBOT_GEMINI_MODEL", "gemini-2.5-pro")
+    gemini_model: str = os.environ.get("REELBOT_GEMINI_MODEL", "gemini-3.8-flash")  # 2.5-pro is closed to new keys
 
     # ElevenLabs
     eleven_model: str = os.environ.get("REELBOT_ELEVEN_MODEL", "eleven_v4")
