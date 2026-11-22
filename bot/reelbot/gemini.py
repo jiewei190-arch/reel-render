@@ -20,6 +20,11 @@ def enabled() -> bool:
     return os.environ.get("REELBOT_USE_GEMINI") == "1" and bool(os.environ.get("GEMINI_API_KEY"))
 
 
+def label() -> str:
+    """Who is actually doing grounded research right now, for log lines."""
+    return "gemini" if enabled() else "claude (web search)"
+
+
 def client():
     global _client
     if _client is None:
@@ -32,7 +37,6 @@ def grounded(prompt: str) -> tuple[str, list[dict]]:
     """Grounded research. Returns (text, [{title, url}]). Uses Claude's web search unless Gemini is enabled."""
     if not enabled():
         from . import claude
-        print("  claude (web search): researching...")
         return claude.ask_web(prompt)
     resp = client().models.generate_content(
         model=CFG.gemini_model,

@@ -76,7 +76,7 @@ def pick(topic: str, research: str, n: int = 6) -> tuple[dict, list[dict]]:
         f"Hook rules: {channels.active().hook_rules} No advice of any kind; everything true.",
         _candidates_prompt(topic, research, n, data), CANDIDATES_SCHEMA)["hooks"][:n]
 
-    print("  claude + gemini: scoring hooks blind...")
+    print("  claude + gemini: scoring hooks blind..." if gemini.enabled() else "  claude: scoring hooks...")
     c_scores = {s["index"]: float(s["score"]) for s in claude.ask_json(
         JUDGE_BRIEF, f"Channel data:\n{data or '(none yet)'}\n\nCandidates:\n{_listing(cands)}",
         SCORES_SCHEMA, effort="medium")["scores"]}

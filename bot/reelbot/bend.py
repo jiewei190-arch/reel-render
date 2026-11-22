@@ -50,7 +50,7 @@ RANK_SCHEMA = {
 
 def run(reference: str, n: int = 10) -> str:
     ch = channels.active()
-    print(f"  gemini: studying the reference for {ch.name}...")
+    print(f"  {gemini.label()}: studying the reference for {ch.name}...")
     study, s1 = gemini.grounded(
         f"Study this YouTube reference: {reference}\n\nFind the actual video(s)/channel if you can. Report: the audience, "
         "what makes people click (title and thumbnail pattern), what keeps them watching (structure, curiosity, pacing), "
@@ -63,7 +63,7 @@ def run(reference: str, n: int = 10) -> str:
         "Every idea must be a specific, real, documentable story.",
         f"Our channel: {ch.brief}\n\nResearch on the reference:\n{study}\n\nPropose {n} adaptations for our channel.",
         IDEAS_SCHEMA, effort="medium")
-    print(f"  gemini: checking demand and competition for {len(ideas['ideas'])} ideas...")
+    print(f"  {gemini.label()}: checking demand and competition for {len(ideas['ideas'])} ideas...")
     check, s2 = gemini.grounded(
         "For each topic below, search YouTube-related results and the web. Report: existing videos on the same story "
         "(title, channel, approximate views, upload year), whether recent uploads still get views, and whether people "

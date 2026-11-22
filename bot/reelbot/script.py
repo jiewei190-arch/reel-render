@@ -108,7 +108,7 @@ def _slugify(s: str) -> str:
 
 def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str = "", n_hooks: int = 6) -> dict:
     brief = "Channel: " + channels.active().brief
-    print("  gemini: researching the topic (Google Search grounded)...")
+    print(f"  {gemini.label()}: researching the topic...")
     research, research_sources = gemini.research(topic, brief)
 
     best, ranked = (hooks.pick(topic, research, n_hooks) if n_hooks > 0 else (None, []))
@@ -131,7 +131,7 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
 
     for rnd in range(CFG.factcheck_rounds):
         claims = [c["claim"] for c in data["claims"]]
-        print(f"  gemini: fact-checking {len(claims)} claims (round {rnd + 1})...")
+        print(f"  {gemini.label()}: fact-checking {len(claims)} claims (round {rnd + 1})...")
         verdicts, vsources = gemini.verify(claims)
         judge = claude.ask_json(
             "You decide whether a fact-check report clears a script. A claim passes only if its verdict is CORRECT, "
