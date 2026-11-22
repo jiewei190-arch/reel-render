@@ -39,6 +39,9 @@ export type CamSpec = {
   face?: number;
   /** splitScreen only: where the bottom view's target sits (recipe_build bakes it for caption-safe framing) */
   face2?: number;
+  /** splitScreen only: the bottom view's distance (default `dist`). recipe_build bakes it when caption-safe framing
+   *  must pull the bottom view back so the head (antennae included) stays below the seam */
+  dist2?: number;
   /** depth-of-field blur px */
   blur?: number;
 };

@@ -104,8 +104,12 @@ export const execState = (tr: ExecTrack, t: number): ExecState => {
 const rotY = (v: V3, a: number): V3 => [v[0] * Math.cos(a) + v[2] * Math.sin(a), v[1], -v[0] * Math.sin(a) + v[2] * Math.cos(a)];
 /** the head centre in world space (camera target "<id>.head", the caption-band gate) */
 export const execHead = (st: ExecState): { c: V3; r: number } => {
-  const up = HEAD_UP + 0.13;
-  const loc: V3 = [0, HIP_Y + st.j.dy + up * Math.cos(st.j.lean), up * Math.sin(st.j.lean)];
+  // as ExecView draws it: the neck pivot at HEAD_UP - 0.13 above the hip (in the lean frame), the head sphere 0.13 above
+  // the pivot turned by the head pitch. (Before 2026-11-22 this used HEAD_UP + 0.13 along the lean: 0.13 m too high,
+  // about the top of the skull, and it ignored the head pitch.)
+  const n = HEAD_UP - 0.13, hy = n + 0.13 * Math.cos(st.j.hp), hz = 0.13 * Math.sin(st.j.hp);
+  const cl = Math.cos(st.j.lean), sl = Math.sin(st.j.lean);
+  const loc: V3 = [0, HIP_Y + st.j.dy + hy * cl - hz * sl, hy * sl + hz * cl];
   const w = rotY([loc[0] * st.s, loc[1] * st.s, loc[2] * st.s], st.yaw);
   return { c: [st.x + w[0], st.y + w[1], st.z + w[2]], r: HEAD_R * 1.15 * st.s };
 };

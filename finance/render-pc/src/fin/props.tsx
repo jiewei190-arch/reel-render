@@ -6,7 +6,7 @@
 //   Stamp (a slammed rubber-stamp mark), Hall (the bright blocky interior set), Ground (the outdoor floor + horizon).
 import React from "react";
 import * as THREE from "three";
-import { canvasTexture, geoOf, plastic, rbox } from "../blocky/mat";
+import { canvasTexture, geoOf, plastic, rbox, signMat } from "../blocky/mat";
 import type { V3 } from "../blocky/motion";
 import { clamp, hash, lerp } from "../blocky/motion";
 import { textTex } from "../library/props";
@@ -125,7 +125,7 @@ export const Label: React.FC<{ p: V3; text: string[]; w: number; h: number; r?: 
     <mesh geometry={rbox(w, h, 0.012, Math.min(w, h) * 0.08)} material={plastic(bg, { rough: 0.6 })} castShadow />
     <mesh
       geometry={geoOf(`lbl${w}|${h}`, () => new THREE.PlaneGeometry(w * 0.97, h * 0.95))}
-      material={plastic("#ffffff", { decal: true, rough: 0.6, map: textTex(`L|${text.join("/")}|${bg}|${fg}|${border ?? ""}|${strike ?? -1}`, text, { w: 1024, h: Math.max(64, Math.round((1024 * h) / w)), bg, fg, border, strike }), emissive: glow ? fg : undefined, ei: glow })}
+      material={signMat(textTex(`L|${text.join("/")}|${bg}|${fg}|${border ?? ""}|${strike ?? -1}`, text, { w: 1024, h: Math.max(64, Math.round((1024 * h) / w)), bg, fg, border, strike }))}
       position={[0, 0, 0.0075]}
     />
   </group>
@@ -213,7 +213,7 @@ export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; tit
       {[-1, 1].map((s) => (
         <mesh key={s} geometry={geoOf("calRing", () => new THREE.TorusGeometry(0.035, 0.012, 6, 14))} material={plastic("#d8d8e8", { rough: 0.3 })} position={[s * w * 0.28, h / 2 - 0.2, 0.05]} />
       ))}
-      <mesh geometry={geoOf(`calPage${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph))} material={plastic("#ffffff", { rough: 0.8, map: page(value) })} position={[0, -0.11, 0.032]} receiveShadow />
+      <mesh geometry={geoOf(`calPage${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph))} material={signMat(page(value))} position={[0, -0.11, 0.032]} />
       {prev !== undefined && u < 1 ? (
         <group position={[0, ph / 2 - 0.11, 0.04]} rotation={[-ang, 0, 0]}>
           <mesh geometry={geoOf(`calPageT${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph).translate(0, -ph / 2, 0))} material={plastic("#ffffff", { rough: 0.8, map: page(prev), side: THREE.DoubleSide })} castShadow />

@@ -453,19 +453,19 @@ const lensOf = (c0: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: n
   const c: CamSpec = lk && c0.fov !== undefined ? { ...c0, fov: c0.fov * lk[0] } : c0;
   if (!P) throw new Error(`recipe ${shotId}: no camera preset "${c.preset}"`);
   const mood = (moodKey === "earth" || moodKey === "home" || moodKey === "whisper" || moodKey === "ending" ? moodKey : "store") as FinShot["mood"];
-  const base = (tg: Target): FinShot => {
+  const base = (tg: Target, distOverride?: number): FinShot => {
     const subj = targetFn(tg, set, actors, props, shotId);
     const ac = actors.find((x) => typeof tg === "string" && tg.split(".")[0] === x.id);
     const s0 = subj(a);
     const az = (c.az ?? (ac ? (ac.yaw(ac.p0, a) / D2R) * 0.45 : 0)) * D2R;
-    const dist = c.dist ?? P.dist, h = c.h ?? P.h;
+    const dist = distOverride ?? c.dist ?? P.dist, h = c.h ?? P.h;
     const pos: V3 = add(s0, [Math.sin(az) * dist, h, Math.cos(az) * dist]);
     return { id: shotId, a, b, subj, off: [0, 0, 3], pos, fov: c.fov ?? P.fov, face: c.face ?? P.face, push: P.push, roll: c.roll ?? P.roll, mood, blur: c.blur ?? P.blur, shutter: 0.35, sky: set.sky };
   };
   const tg = c.target ?? "centre";
   if (c.preset === "splitScreen") {
     const [t1, t2] = c.targets ?? [tg, tg];
-    const l2 = base(t2);
+    const l2 = base(t2, typeof c.dist2 === "number" ? c.dist2 : undefined);
     if (typeof c.face2 === "number") l2.face = c.face2; // caption-safe framing for the bottom view (baked by recipe_build)
     return { lens: base(t1), lens2: l2 };
   }
@@ -1114,8 +1114,8 @@ export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number 
  *  the shot shows chest/body/floor in the band instead. Split screens lift the bottom view only. Limits keep heads in
  *  frame (full >= 0.26, split view >= 0.2); whatever is left over falls back to the smallest caption nudge in capPlan.
  *  A recipe can opt a shot out with cam.face set explicitly. */
-export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2"; v: number }[] => {
-  const out: { i: number; key: "face" | "face2"; v: number }[] = [];
+export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2" | "dist" | "dist2"; v: number }[] => {
+  const out: { i: number; key: "face" | "face2" | "dist" | "dist2"; v: number }[] = [];
   if (c.landscape) {
     // long-form: lift a shot whose face lands in the lower-third band (a side-by-side split lifts both views)
     c.shots.forEach((shot, i) => {
@@ -1153,10 +1153,59 @@ export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "fac
       if (need <= 0 || (L.face ?? 0.5) <= min + 1e-3) break;
       L.face = Math.max(min, (L.face ?? 0.5) - (need + 8) / h);
     }
+    if (L.face !== f0) {
+      // head room (framing QA rule R2): the lift may never push the subject's head box (antennae, hair, hat) into the
+      // top edge or the split seam. Give back as much of the lift as the head needs (never past the original framing);
+      // if the face then still sits in the caption band, ask recipe_build to pull this view back (dist / dist2)
+      const room = headRoom(c, shot, split);
+      if (room !== null && room < HEAD_ROOM) {
+        L.face = Math.min(f0, (L.face ?? 0.5) + (HEAD_ROOM - room) / h + 0.002);
+        capCache.delete(c);
+        const p = capPlan(c, shot);
+        const still = p.faces.length && Math.max(...p.faces.map((o) => o.bot)) - (CAP_Y - CAP_HALF - 10) > 0;
+        if (still) {
+          // the head (top of the head box) to the face bottom must fit between HEAD_ROOM and the band's top edge:
+          // the view's distance scales with how much too tall that span is (on-screen size ~ 1 / distance)
+          const P0 = CAM_PRESETS[shot.spec.cam.preset as keyof typeof CAM_PRESETS];
+          const cs2 = shot.spec.cam as { dist?: number; dist2?: number };
+          const d0 = split ? cs2.dist2 ?? cs2.dist ?? P0.dist : cs2.dist ?? P0.dist;
+          const top = split ? 960 : 0, bandTop = CAP_Y - CAP_HALF - 10 - top;
+          const r2 = headRoom(c, shot, split) ?? HEAD_ROOM;
+          const span = Math.max(...p.faces.map((o) => o.bot)) - top - r2;
+          const k = Math.max(1.08, (span / Math.max(40, bandTop - HEAD_ROOM)) * 1.06);
+          out.push({ i, key: split ? "dist2" : "dist", v: Math.round(d0 * k * 100) / 100 });
+        }
+      }
+    }
     if (L.face !== f0) out.push({ i, key: split ? "face2" : "face", v: Math.round(L.face * 1000) / 1000 });
   });
   capCache.delete(c);
   return out;
+};
+/** px the lift must leave between the top of the view and the subject's head box (11 px edge rule + 7 px air) */
+const HEAD_ROOM = 18;
+/** the smallest gap (px, sampled every 0.1 s) between the top of the view and the head box top of the view's target actor;
+ *  null when the view does not aim at an actor */
+const headRoom = (c: Compiled, shot: ShotR, split: boolean): number | null => {
+  const tg = split ? (shot.spec.cam.targets?.[1] ?? shot.spec.cam.target) : shot.spec.cam.target;
+  const id = typeof tg === "string" ? tg.split(".")[0] : "";
+  let best: number | null = null;
+  // every 0.1 s (a slam zoom or a squash between sparse samples would still push the antennae out)
+  const n = Math.max(5, Math.ceil((shot.b - shot.a) / 0.1));
+  for (let k = 0; k < n; k++) {
+    const tm = shot.a + ((shot.b - shot.a) * (k + 0.5)) / n;
+    const st = c.actorsAt(tm).find((a) => a.id === id);
+    if (!st) continue;
+    const cams = c.camAt(tm);
+    const cam = split && cams.second ? cams.second : cams.main;
+    const hb = headBox(st);
+    // the 4 top corners of the head box (a near corner projects higher than the top centre), as the QA measures it
+    for (const dx of [-1, 1]) for (const dz of [-1, 1]) {
+      const q = project(cam, [hb.c[0] + dx * hb.h[0], hb.c[1] + hb.h[1], hb.c[2] + dz * hb.h[2]], split ? 960 : 1920, 0);
+      if (q) best = best === null ? q.y : Math.min(best, q.y);
+    }
+  }
+  return best;
 };
 /** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */
 export const CAPTIONS_FROM = 1.0;

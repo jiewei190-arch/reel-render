@@ -141,8 +141,8 @@ export const bizScene = (C, m, recipe) => {
     const s = C.shotAt(t), cam = C.camAt(t);
     const actors = C.execsAt(t).map((st) => {
       const hd = m.execHead(st), sc = st.s;
-      // execHead().c sits 0.13 s above the drawn head centre (exec.tsx): use the drawn head, hair cap to +0.17 s
-      const c = [hd.c[0], hd.c[1] - 0.13 * sc, hd.c[2]];
+      // execHead().c is the drawn head centre (fixed 2026-11-22); the hair cap reaches +0.17 s
+      const c = hd.c;
       const by = st.seated ? 0.95 : 0.9, bh = st.seated ? 0.62 : 0.9;
       return { id: st.id, named: true, extra: "hair", head: { c: [c[0], c[1] + 0.016 * sc, c[2]], h: [0.145 * sc, 0.155 * sc, 0.145 * sc] }, face: { c, h: [0.125 * sc, 0.1375 * sc, 0.125 * sc] }, parts: [{ c: [st.x, st.y + by * sc, st.z], h: [0.3 * sc, bh * sc, 0.2 * sc] }] };
     });
@@ -220,6 +220,6 @@ export const runFraming = (kit, C, m, recipe, landscape = false, step = 1) => {
   const sample = landscape ? (t) => { const x = sc.sample(t); if (x) for (const c of x.cards) c.lines = []; return x; } : sc.sample;
   const KF = kitFraming({ C, W: sc.W, H: sc.H, landscape, times, sample, frame0: sc.frame0, boardsAll: sc.boardsAll });
   console.log(KF.console);
-  for (const l of KF.fq.lines.slice(0, 40)) console.log("  " + l);
+  for (const l of KF.fq.lines) console.log("  " + l);
   return KF;
 };

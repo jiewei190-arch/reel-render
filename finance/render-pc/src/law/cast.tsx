@@ -197,8 +197,12 @@ const upperWorld = (st: FigState, v: V3): V3 => {
   return [st.x + a[0], st.y + hipY(st) + a[1], st.z + a[2]];
 };
 /** the face centre (world) and its radius: text must stay off it */
-export const figFace = (st: FigState): { c: V3; r: number } => ({ c: upperWorld(st, [0, HEAD_Y, 0.11]), r: 0.15 * st.s });
-export const figHead = (st: FigState): V3 => upperWorld(st, [0, HEAD_Y, 0]);
+/** a point in the head group's space -> upper-body space: the head group turns by [headP, headY] (Euler XYZ) about the
+ *  hip, as FigureView draws it, so a nod or a slump moves the head (slump: ~0.29 m forward). Before 2026-11-22 the face
+ *  and head points ignored this and could sit up to 0.29 m off the drawn head. */
+const headLocal = (st: FigState, v: V3): V3 => rotXv(rotYv(v, st.headY), st.headP);
+export const figFace = (st: FigState): { c: V3; r: number } => ({ c: upperWorld(st, headLocal(st, [0, HEAD_Y, 0.11])), r: 0.15 * st.s });
+export const figHead = (st: FigState): V3 => upperWorld(st, headLocal(st, [0, HEAD_Y, 0]));
 export const figHand = (st: FigState, side: "L" | "R"): V3 => {
   const sx = side === "R" ? 1 : -1, [d1, d2] = side === "R" ? st.armR : st.armL;
   return upperWorld(st, [sx * SH[0] + d1[0] * UPPER + d2[0] * FORE, SH[1] + d1[1] * UPPER + d2[1] * FORE, d1[2] * UPPER + d2[2] * FORE]);

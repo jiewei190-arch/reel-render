@@ -48,6 +48,30 @@ export const plastic = (color: string, o: PlasticOpts = {}) => {
   return m;
 };
 
+/** BOARD TEXT ("sign") material: an unlit, opaque decal (alpha-tested corners) that marks its pixels with scene alpha 0.1.
+ *  The post grade (engine/post/shaders.ts, uBoard) passes marked pixels through as their declared sRGB colour: no
+ *  scene lighting, exposure, highlight shoulder, mood lift, saturation, split tone or bloom. A board then renders at
+ *  the contrast the framing QA computes from its declared colours (tools/framing_qa.mjs rule R4). Before this, a lit
+ *  decal under the store mood measured 2.2-3.0:1 for a declared 4.5:1 board. */
+const signs = new Map<string, THREE.MeshBasicMaterial>();
+export const signMat = (map: THREE.Texture) => {
+  const key = map.uuid;
+  let m = lruGet(signs, key);
+  if (!m) {
+    lruMake(signs, 200, false);
+    m = new THREE.MeshBasicMaterial({ map, alphaTest: 0.5, transparent: false, toneMapped: false, fog: false });
+    m.polygonOffset = true;
+    m.polygonOffsetFactor = -2;
+    m.polygonOffsetUnits = -2;
+    m.onBeforeCompile = (sh) => {
+      sh.fragmentShader = sh.fragmentShader.replace("#include <dithering_fragment>", "#include <dithering_fragment>\n  gl_FragColor.a = 0.1;");
+    };
+    m.customProgramCacheKey = () => "board-sign";
+    signs.set(key, m);
+  }
+  return m;
+};
+
 const geos = new Map<string, THREE.BufferGeometry>();
 export const geoOf = (key: string, make: () => THREE.BufferGeometry) => {
   let g = lruGet(geos, key);
