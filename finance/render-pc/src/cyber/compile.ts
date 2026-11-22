@@ -534,7 +534,8 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     const q = project(cam, Lb.target(t), L);
     const sz = labelSize(Lb.text, L);
     const top = safeTop(t);
-    const faces = boltsAt(t).map((st) => { const f = boltFace(st); const p = project(cam, f.c, L); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 120, h: 2 * f.r * p.k + 120 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
+    // keep labels off BOLT's whole head (shell, ears and antenna: framing QA rule R1), not only its screen face
+    const faces = boltsAt(t).map((st) => { const p = project(cam, [st.x, st.y + 0.085 * st.s, st.z], L); return p ? { x: p.x, y: p.y, w: 0.66 * st.s * p.k + 60, h: 0.8 * st.s * p.k + 60 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     const others = s.labels.filter((o) => o.key !== Lb.key && o.t0 <= Lb.t0 && o.t1 > Lb.t0).map((o) => { const d = placeLabel(o, s); const qo = project(camAt(t), o.target(t), L); const so = labelSize(o.text, L); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     for (const bd of s.boards) if (bd.t1 > Lb.t0 && bd.t0 < Lb.t1) others.push(boardRect(bd, t));
     others.push(...deviceRects(t));

@@ -464,7 +464,8 @@ export const compileTech = (recipe: TechRecipe, words: readonly Word[], voDurati
     const q = prj(cam, L.target(t));
     const sz = labelSize(L.text);
     const top = t <= hookUntil + 0.2 || (hookAgain !== null && t >= hookAgain) ? LY.SAFE_TOP_HOOK : LY.SAFE_TOP;
-    const faces = boltsAt(t).map((st) => { const f = boltFace(st); const p = prj(cam, f.c); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 120, h: 2 * f.r * p.k + 120 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
+    // keep labels off BOLT's whole head (shell, ears and antenna: framing QA rule R1), not only its screen face
+    const faces = boltsAt(t).map((st) => { const p = prj(cam, [st.x, st.y + 0.085 * st.s, st.z]); return p ? { x: p.x, y: p.y, w: 0.66 * st.s * p.k + 60, h: 0.8 * st.s * p.k + 60 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     // earlier labels of this shot that are still up when this one pops
     const others = s.labels.filter((o) => o.key !== L.key && o.t0 <= L.t0 && o.t1 > L.t0).map((o) => { const d = placeLabel(o, s); const qo = prj(camAt(t), o.target(t)); const so = labelSize(o.text); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     for (const bd of s.boards) if (bd.t1 > L.t0 && bd.t0 < L.t1) { const bb = boardRect(bd, t); others.push(bb); }

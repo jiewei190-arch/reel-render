@@ -16,6 +16,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
+import { runFraming } from "./framing_kits.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -166,6 +167,9 @@ export const main = async (argv) => {
   const loopy = C.hookAgain !== null && JSON.stringify(lastShot.spec.cam.target) === JSON.stringify(firstShot.spec.cam.target);
   const fmt = recipe.format ?? "short";
   const lenOk = fmt === "short" ? dur >= 30 && dur <= 55 : dur >= 300 && dur <= 480;
+  // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
+  // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
+  const KF = runFraming("law3d", C, m, recipe);
   const gate = [
     ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *gold* word", C.hookUntil > 0 && hookWords <= 5 && hb.lines.length <= 2 && hb.textW <= L.hookMaxW && gold.length === 1, `"${hookText}" (${hookWords} words, ${hb.lines.length} line(s), widest ~${hb.textW.toFixed(0)} px, gold: ${gold.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -188,12 +192,14 @@ export const main = async (argv) => {
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
     [fmt === "short" ? "length 30-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
   ];
+  gate.push(...KF.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: law3d recipe QA (tools/law_build.mjs)`, "",
     `Composition: \`${pascal}\` in \`src/index.law.ts\` (${L.W}x${L.H}, 30 fps, no motion blur). Kit law3d, format ${fmt}. ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop or set piece enters a figure's body or head, no two people overlap, nobody sinks below the floor."]), "",
+    ...KF.fr.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -313,9 +319,11 @@ const longForm = async ({ m, C, recipe, words, dur, slug, pascal, dir, check, qa
     caps: { share: capT ? capLow / capT : 1, moved }, boards: { small: [...small.values()], edge: [...edge.values()], band: [...band.values()] },
   });
   const gateS = (Date.now() - Tg) / 1000;
+  const KFL = runFraming("law3d", C, m, recipe, true, qaSample);
+  gate.push(...KFL.rows);
   const chTxt = chaptersTxt(C.chapters);
   const hardFail = gate.some((g) => g[3] && !g[1]);
-  const rep = kitLongReport({ slug, kit: "law3d", tool: "law_build.mjs", entry: "src/index.law.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
+  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "law3d", tool: "law_build.mjs", entry: "src/index.law.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
     extra: [`Cards overlapping each other or the hook: ${overlaps.size ? [...overlaps].join(", ") : "none"}.`, "", `Caption-safe framing (lower third): ${lifted.length ? `lifted ${lifted.join(", ")}` : "no shot needed a lift"}; caption moved in ${moved.length ? moved.join(", ") : "no shot"}.`, ""] });
   if (!check) {
     writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n"));

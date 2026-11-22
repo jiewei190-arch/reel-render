@@ -6,7 +6,7 @@
 //   Stamp (a slammed rubber-stamp mark), Hall (the bright blocky interior set), Ground (the outdoor floor + horizon).
 import React from "react";
 import * as THREE from "three";
-import { canvasTexture, geoOf, plastic, rbox } from "../blocky/mat";
+import { canvasTexture, geoOf, plastic, rbox, signMat } from "../blocky/mat";
 import type { V3 } from "../blocky/motion";
 import { clamp, hash, lerp } from "../blocky/motion";
 import { textTex } from "../library/props";
@@ -125,7 +125,7 @@ export const Label: React.FC<{ p: V3; text: string[]; w: number; h: number; r?: 
     <mesh geometry={rbox(w, h, 0.012, Math.min(w, h) * 0.08)} material={plastic(bg, { rough: 0.6 })} castShadow />
     <mesh
       geometry={geoOf(`lbl${w}|${h}`, () => new THREE.PlaneGeometry(w * 0.97, h * 0.95))}
-      material={plastic("#ffffff", { decal: true, rough: 0.6, map: textTex(`L|${text.join("/")}|${bg}|${fg}|${border ?? ""}|${strike ?? -1}`, text, { w: 1024, h: Math.max(64, Math.round((1024 * h) / w)), bg, fg, border, strike }), emissive: glow ? fg : undefined, ei: glow })}
+      material={signMat(textTex(`L|${text.join("/")}|${bg}|${fg}|${border ?? ""}|${strike ?? -1}`, text, { w: 1024, h: Math.max(64, Math.round((1024 * h) / w)), bg, fg, border, strike }))}
       position={[0, 0, 0.0075]}
     />
   </group>
@@ -176,12 +176,14 @@ export const CashCase: React.FC<{ p?: V3; r?: V3; label: string; glow?: number; 
 
 // ------------------------------------------------------------------ calendar, receipt, stamp
 /** wall calendar: a board with a top bar and a big page. When `flip` runs 0 -> 1 the previous page lifts and falls away. */
+/** the calendar title / sub-line grey: 4.8:1 on the #fffaf0 page (framing QA contrast rule; was #9a90b0, 2.9:1) */
+export const CAL_GREY = "#736c84";
 export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; title?: string; value: string; prev?: string; flip?: number; sub?: string; color?: string }> = ({ p, r = [0, 0, 0], w = 1.3, h = 1.1, title = "DAY", value, prev, flip = 1, sub, color = "#e0412b" }) => {
   const page = (v: string) =>
     canvasTexture(`calp|${title}|${v}|${sub ?? ""}`, 512, Math.round((512 * (h - 0.22)) / w), (g, W, H) => {
       g.fillStyle = "#fffaf0";
       g.fillRect(0, 0, W, H);
-      g.fillStyle = "#9a90b0";
+      g.fillStyle = CAL_GREY;
       g.textAlign = "center";
       g.textBaseline = "middle";
       g.font = `800 ${H * 0.13}px Poppins`;
@@ -196,7 +198,7 @@ export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; tit
       }
       g.fillText(v, W / 2, H * 0.55);
       if (sub) {
-        g.fillStyle = "#9a90b0";
+        g.fillStyle = CAL_GREY;
         g.font = `800 ${H * 0.1}px Poppins`;
         g.fillText(sub, W / 2, H * 0.88);
       }
@@ -211,7 +213,7 @@ export const FlipCalendar: React.FC<{ p: V3; r?: V3; w?: number; h?: number; tit
       {[-1, 1].map((s) => (
         <mesh key={s} geometry={geoOf("calRing", () => new THREE.TorusGeometry(0.035, 0.012, 6, 14))} material={plastic("#d8d8e8", { rough: 0.3 })} position={[s * w * 0.28, h / 2 - 0.2, 0.05]} />
       ))}
-      <mesh geometry={geoOf(`calPage${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph))} material={plastic("#ffffff", { rough: 0.8, map: page(value) })} position={[0, -0.11, 0.032]} receiveShadow />
+      <mesh geometry={geoOf(`calPage${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph))} material={signMat(page(value))} position={[0, -0.11, 0.032]} />
       {prev !== undefined && u < 1 ? (
         <group position={[0, ph / 2 - 0.11, 0.04]} rotation={[-ang, 0, 0]}>
           <mesh geometry={geoOf(`calPageT${w}|${ph}`, () => new THREE.PlaneGeometry(w * 0.94, ph).translate(0, -ph / 2, 0))} material={plastic("#ffffff", { rough: 0.8, map: page(prev), side: THREE.DoubleSide })} castShadow />

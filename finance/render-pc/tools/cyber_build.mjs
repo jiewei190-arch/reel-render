@@ -17,6 +17,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { basename, dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
+import { runFraming } from "./framing_kits.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -184,6 +185,9 @@ export const main = async (argv) => {
   const ckLate = ck ? C.at(ck.at) >= dur * 0.6 : false;
   const fmt = recipe.format ?? "short";
   const lenOk = fmt === "long" ? dur >= 300 && dur <= 480 : dur >= 30 && dur <= 55;
+  // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
+  // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
+  const KF = runFraming("cyber3d", C, m, recipe);
   const gate = [
     ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *neon* word", C.hookUntil > 0 && hookWords <= 5 && HB.lines.length <= 2 && HB.textW <= L.hook.maxW && orange.length === 1, `"${hookText}" (${hookWords} words, ${HB.lines.length} line(s), widest ~${HB.textW.toFixed(0)} px of ${L.hook.maxW}, neon: ${orange.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -210,12 +214,14 @@ export const main = async (argv) => {
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
     [fmt === "long" ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
+  gate.push(...KF.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: cyber3d recipe QA (tools/cyber_build.mjs)`, "",
     `Composition: \`${pascal}\` in \`src/index.cyber.ts\` (plain 30 fps). Kit cyber3d, format ${fmt}, frame ${L.id} ${L.W}x${L.H}. ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no part, figure, kit prop or set piece enters BOLT's shell or mitts; BOLT stays above the ground; grounded objects stay above the floor."]), "",
+    ...KF.fr.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${String(d).replace(/\|/g, "/")} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ") || "none"}.`, "",
@@ -340,9 +346,11 @@ const longForm = ({ m, C, recipe, words, slug, dir, pascal, check, noQa, qaSampl
     ["the camera moves on every frame", staticN === 0, qaSample > 1 ? "not checked (--qa-sample)" : staticN ? `${staticN} still frame(s)` : "moves on every frame", false],
   );
   const gateS = (performance.now() - Tg) / 1000;
+  const KFL = runFraming("cyber3d", C, m, recipe, true, qaSample);
+  gate.push(...KFL.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const chTxt = chaptersTxt(C.chapters);
-  const rep = kitLongReport({ slug, kit: "cyber3d", tool: "cyber_build.mjs", entry: "src/index.cyber.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
+  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "cyber3d", tool: "cyber_build.mjs", entry: "src/index.cyber.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt,
     extra: [`Caption-safe framing (lens face lifted, not baked): ${lifted.join(", ") || "none"}. Lower third moved: ${moved.join(", ") || "none"}.`, ""] });
   if (!check) {
     writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n"));

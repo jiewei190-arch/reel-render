@@ -16,6 +16,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
+import { runFraming } from "./framing_kits.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -167,6 +168,9 @@ export const main = async (argv) => {
   const flys = C.shots.filter((s) => s.spec.cam.preset === "chartFly");
   const devKinds = new Set(C.shots.flatMap((s) => s.devices.map((d) => d.spec.do)));
   const hasExec0 = C.execsAt(0).length > 0;
+  // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
+  // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
+  const KF = runFraming("biz3d", C, m, recipe);
   const gate = [
     ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *accent* word", C.hookUntil > 0 && hookWords <= 5 && hookLines.length <= 2 && hookW <= L.hook.maxW && accent.length === 1, `"${hookText}" (${hookWords} words, ${hookLines.length} line(s), widest ~${hookW.toFixed(0)} px of ${L.hook.maxW}, accent: ${accent.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
@@ -190,12 +194,14 @@ export const main = async (argv) => {
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
     [long ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
+  gate.push(...KF.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: biz3d recipe QA (tools/biz_build.mjs)`, "",
     `Composition: \`${pascal}\` in \`src/index.biz.ts\` (${L.id} ${L.W}x${L.H}, 30 fps, no motion blur). ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no executive's body or head enters a set blocker, a kit prop or another executive; nobody below the floor."]), "",
+    ...KF.fr.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -284,13 +290,15 @@ const longGate = ({ m, C, L, recipe, words, slug, dir, pascal, dur, check, qaSam
   const hookText = recipe.hook.text.replace(/\*/g, "");
   const { gate, pacing } = kitLongGate({ shots, events, chapters: C.chapters, words, dur, audio: C.audio, hookUntil: C.hookUntil, hookText, caps, boards: { small: [...textBox.small.values()], edge: [...textBox.edge.values()], band: [...textBox.band.values()] } });
   const gateS = (Date.now() - tg) / 1000;
+  const KFL = runFraming("biz3d", C, m, recipe, true, qaSample);
+  gate.push(...KFL.rows);
   const chTxt = chaptersTxt(C.chapters);
   const extra = [
     `## biz3d landscape notes`, "",
     `- Lens: the shared 16:9 rule (landscapeLens per preset; vertical fov kept). Caption-safe framing lifted ${C.lifted.length} shot(s)${C.lifted.length ? `: ${C.lifted.map((x) => `${x.id} face ${x.from.toFixed(3)} -> ${x.to.toFixed(3)}`).join(", ")}` : ""}.`,
     `- Lower-third caption centre moved on: ${caps.moved.join(", ") || "none"} (default ${L.cap.centre} px).`, "",
   ];
-  const rep = kitLongReport({ slug, kit: "biz3d", tool: "biz_build.mjs", entry: "src/index.biz.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra });
+  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "biz3d", tool: "biz_build.mjs", entry: "src/index.biz.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra });
   if (!check) { writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n")); writeFileSync(join(dir, "chapters.txt"), chTxt); }
   console.log(`clip QA: ${hits.size} clip(s) over ${Math.ceil(C.duration / qaSample)} frames (every ${qaSample === 1 ? "frame" : `${qaSample}th frame`}), ${qaS.toFixed(2)} s`);
   for (const l of qaLines.slice(0, 40)) console.log("  " + l);
