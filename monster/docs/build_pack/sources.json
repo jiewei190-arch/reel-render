@@ -1,0 +1,242 @@
+[
+  {
+    "id": "S01",
+    "title": "User-supplied niche-bending TikTok",
+    "url": "https://www.tiktok.com/t/ZPNjUCjwy/",
+    "review_method": "Earlier full captions and sampled video frames",
+    "finding": "Useful niche research; production omitted; income not independently verified.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S02",
+    "title": "SmartBloom AI: Automated video pipeline",
+    "url": "https://www.youtube.com/watch?v=iXCMo4BO6co",
+    "review_method": "Full on-page transcript and description read; playback stalled",
+    "finding": "FFmpeg batch stitching is feasible; copying creators' hook clips is not the production model recommended here.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S03",
+    "title": "Pouya Eti: Claude Code and Remotion",
+    "url": "https://www.youtube.com/watch?v=kXmY6yQa5q4",
+    "review_method": "Full on-page transcript and description read; playback stalled",
+    "finding": "Code-generated motion graphics and iterative visual fixes; not a demonstrated five-channel production service.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S04",
+    "title": "Kreelux: Roblox Shorts with Claude and Blender",
+    "url": "https://www.youtube.com/watch?v=Aghs7MBdv6M",
+    "review_method": "Full on-page transcript and description read; playback stalled",
+    "finding": "Storyboard, word timings, reusable rigs, preview and shot repair; tutorial uses ElevenLabs and a two-minute example.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S05",
+    "title": "snskr28/yt-autopilot",
+    "url": "https://github.com/snskr28/yt-autopilot",
+    "review_method": "README and selected source files inspected",
+    "finding": "Windows orchestration, local Kokoro, saved stages; one-channel assumptions, plan limits and outdated API notes need changes.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S06",
+    "title": "Saggyishere/video-pipeline",
+    "url": "https://github.com/Saggyishere/video-pipeline",
+    "review_method": "README inspected; application not executed",
+    "finding": "Windows pipeline; local Kokoro explicit selection; normal narrator defaults to ElevenLabs; estimated captions and no live browsing.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S07",
+    "title": "Automated Video Generator",
+    "url": "https://github.com/itsPremkumar/Automated-Video-Generator",
+    "review_method": "README, package.json, .env.example and MCP setup inspected; application not executed",
+    "finding": "Useful modular CLI/MCP; remove network voice fallbacks, optional cloud providers and third-party publishing service.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S08",
+    "title": "Automated Video Generator public demo",
+    "url": "https://raw.githubusercontent.com/itsPremkumar/Automated-Video-Generator/main/assets/demo/demo.gif",
+    "review_method": "Downloaded eight-second public GIF; six frames inspected",
+    "finding": "The inspected demo has large unused portrait-frame regions, small captions and generic text. It is not proof of premium output.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S09",
+    "title": "Melvynx/video-agent-skills",
+    "url": "https://github.com/Melvynx/video-agent-skills",
+    "review_method": "README inspected; skills not installed",
+    "finding": "Editing and reusable studio ideas; several research/publishing/dubbing/image features require optional services.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S10",
+    "title": "psabbagh/watch-skill",
+    "url": "https://github.com/psabbagh/watch-skill",
+    "review_method": "README and MIT license inspected; skill not installed or tested",
+    "finding": "Candidate reference-analysis component using captions/local transcription and scene frames; still consumes agent inference.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S11",
+    "title": "MadeByAdi/watch-with-claude",
+    "url": "https://github.com/MadeByAdi/watch-with-claude",
+    "review_method": "README inspected; skill not installed",
+    "finding": "Local whisper.cpp fork still documents paid API fallbacks when keys are set; prevent fallback in a zero-spend design.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S12",
+    "title": "Claude Code: programmatic execution",
+    "url": "https://code.claude.com/docs/en/headless",
+    "review_method": "Official documentation read",
+    "finding": "CLI -p and JSON schema output; handle errors and missing structured output. Bare mode does not use subscription login.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S13",
+    "title": "Claude Code: legal and authentication",
+    "url": "https://code.claude.com/docs/en/legal-and-compliance",
+    "review_method": "Official documentation read",
+    "finding": "Native individual use and usage limits differ from a third-party service; do not treat subscription access as unlimited API capacity.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S14",
+    "title": "Kokoro-82M model card",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "review_method": "Official model card read",
+    "finding": "82-million-parameter open-weight TTS; Apache-licensed weights; useful local narration candidate.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S15",
+    "title": "Kokoro voices",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md",
+    "review_method": "Official voice inventory read",
+    "finding": "Selected voice IDs exist; audition locally before finalizing channel voices.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S16",
+    "title": "WhisperX",
+    "url": "https://github.com/m-bain/whisperX",
+    "review_method": "Maintainer README and alignment limitations read",
+    "finding": "Forced alignment improves word timings; numbers and out-of-dictionary terms still need handling; model licenses are separate.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S17",
+    "title": "Remotion license FAQ",
+    "url": "https://www.remotion.dev/docs/license/faq",
+    "review_method": "Official FAQ read",
+    "finding": "Individuals and qualifying teams of up to three can use its Free License, including automation; recheck eligibility if organization grows.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S18",
+    "title": "Ollama structured outputs",
+    "url": "https://docs.ollama.com/capabilities/structured-outputs",
+    "review_method": "Official documentation read",
+    "finding": "Local API supports JSON schemas; validate returned content independently.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S19",
+    "title": "Ollama integration with Claude Code",
+    "url": "https://docs.ollama.com/integrations/claude-code",
+    "review_method": "Official documentation read",
+    "finding": "Claude Code can be an interface for Ollama models; that does not make a local model the Claude model. Full agent context is costly.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S20",
+    "title": "Ollama local FAQ",
+    "url": "https://docs.ollama.com/faq",
+    "review_method": "Official documentation read",
+    "finding": "Local-only mode disables cloud features; use bounded context and inspect actual CPU/GPU placement.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S21",
+    "title": "YouTube channel monetization policies",
+    "url": "https://support.google.com/youtube/answer/1311392?hl=en",
+    "review_method": "Official policy read",
+    "finding": "Original substance and meaningful variety; restrictions on generic mass production and AI personas giving sensitive-topic advice.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S22",
+    "title": "YouTube GenAI disclosure",
+    "url": "https://support.google.com/youtube/answer/14328491?hl=en",
+    "review_method": "Official policy read",
+    "finding": "Assess realistic synthetic content; scripting help alone is not the same as realistic synthetic footage.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S23",
+    "title": "YouTube videos.insert",
+    "url": "https://developers.google.com/youtube/data/reference/rest/v3/videos/insert",
+    "review_method": "Official API documentation read",
+    "finding": "OAuth upload; explicit privacy, audience and synthetic-media settings; do not rely on legacy private-only restriction.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S24",
+    "title": "YouTube quota calculator",
+    "url": "https://developers.google.com/youtube/data/determine_quota_cost?hl=en",
+    "review_method": "Official API documentation read",
+    "finding": "Current default buckets: 100 searches/day, 100 video uploads/day and 10,000 units/day for other endpoints; actual project quotas must be checked.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S25",
+    "title": "YouTube API revision history",
+    "url": "https://developers.google.com/youtube/data/revision_history?hl=en",
+    "review_method": "Official changelog read",
+    "finding": "November 2, 2026 removes the unverified-project private-only rule; current examples must not inherit older assumptions.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S26",
+    "title": "YouTube mid-roll eligibility",
+    "url": "https://support.google.com/youtube/answer/6175006?hl=en",
+    "review_method": "Official help read",
+    "finding": "Mid-roll eligibility starts at eight minutes on monetized videos; an eligible slot does not guarantee an ad.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S27",
+    "title": "Pexels license",
+    "url": "https://www.pexels.com/license/",
+    "review_method": "Official license read",
+    "finding": "Free imagery with restrictions; preserve item provenance and avoid implying endorsement.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S28",
+    "title": "NASA media usage",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "review_method": "Official usage guidelines read",
+    "finding": "Check credits and third-party material; acknowledge NASA and avoid implied endorsement.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S29",
+    "title": "FLUX.2 klein 4B model card",
+    "url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B",
+    "review_method": "Official model card read",
+    "finding": "Apache-2.0; advertised standard setup starts around 13 GB VRAM. Low-memory quantization needs its own benchmark.",
+    "reviewed_on": "2026-11-21"
+  },
+  {
+    "id": "S30",
+    "title": "FFmpeg filters",
+    "url": "https://ffmpeg.org/ffmpeg-filters.html",
+    "review_method": "Official documentation and installed loudnorm help checked",
+    "finding": "Encoding, mixing and loudness processing are suitable local components.",
+    "reviewed_on": "2026-11-21"
+  }
+]

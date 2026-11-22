@@ -1,0 +1,420 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Validated params for each scene type in renderer/src/scenes.tsx",
+ "$defs": {
+  "text": {
+   "type": "string",
+   "minLength": 1,
+   "maxLength": 90
+  },
+  "short": {
+   "type": "string",
+   "minLength": 1,
+   "maxLength": 40
+  },
+  "num": {
+   "type": "number"
+  },
+  "tone": {
+   "enum": [
+    "good",
+    "bad",
+    "accent"
+   ]
+  },
+  "title": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "headline"
+   ],
+   "properties": {
+    "kicker": {
+     "$ref": "#/$defs/short"
+    },
+    "headline": {
+     "$ref": "#/$defs/text"
+    },
+    "sub": {
+     "$ref": "#/$defs/text"
+    }
+   }
+  },
+  "question": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "text"
+   ],
+   "properties": {
+    "text": {
+     "$ref": "#/$defs/text"
+    }
+   }
+  },
+  "counter": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "label",
+    "value"
+   ],
+   "properties": {
+    "label": {
+     "$ref": "#/$defs/text"
+    },
+    "value": {
+     "$ref": "#/$defs/num"
+    },
+    "from": {
+     "$ref": "#/$defs/num"
+    },
+    "prefix": {
+     "type": "string",
+     "maxLength": 3
+    },
+    "suffix": {
+     "type": "string",
+     "maxLength": 12
+    },
+    "decimals": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 2
+    },
+    "tone": {
+     "$ref": "#/$defs/tone"
+    },
+    "note": {
+     "$ref": "#/$defs/text"
+    }
+   }
+  },
+  "side": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "label",
+    "value"
+   ],
+   "properties": {
+    "label": {
+     "$ref": "#/$defs/short"
+    },
+    "value": {
+     "$ref": "#/$defs/num"
+    },
+    "color": {
+     "enum": [
+      "good",
+      "bad",
+      "neutral"
+     ]
+    }
+   }
+  },
+  "comparison": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "title",
+    "left",
+    "right"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "left": {
+     "$ref": "#/$defs/side"
+    },
+    "right": {
+     "$ref": "#/$defs/side"
+    },
+    "prefix": {
+     "type": "string",
+     "maxLength": 3
+    },
+    "suffix": {
+     "type": "string",
+     "maxLength": 12
+    },
+    "decimals": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 2
+    }
+   }
+  },
+  "bars": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "title",
+    "bars"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "prefix": {
+     "type": "string",
+     "maxLength": 3
+    },
+    "suffix": {
+     "type": "string",
+     "maxLength": 12
+    },
+    "decimals": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 2
+    },
+    "bars": {
+     "type": "array",
+     "minItems": 2,
+     "maxItems": 6,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "label",
+       "value"
+      ],
+      "properties": {
+       "label": {
+        "$ref": "#/$defs/short"
+       },
+       "value": {
+        "$ref": "#/$defs/num"
+       },
+       "highlight": {
+        "type": "boolean"
+       }
+      }
+     }
+    }
+   }
+  },
+  "timeline": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "events"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "events": {
+     "type": "array",
+     "minItems": 2,
+     "maxItems": 5,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "when",
+       "label"
+      ],
+      "properties": {
+       "when": {
+        "$ref": "#/$defs/short"
+       },
+       "label": {
+        "$ref": "#/$defs/text"
+       }
+      }
+     }
+    }
+   }
+  },
+  "steps": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "items"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "items": {
+     "type": "array",
+     "minItems": 2,
+     "maxItems": 4,
+     "items": {
+      "$ref": "#/$defs/text"
+     }
+    }
+   }
+  },
+  "flow": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "nodes"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "nodes": {
+     "type": "array",
+     "minItems": 2,
+     "maxItems": 4,
+     "items": {
+      "$ref": "#/$defs/short"
+     }
+    }
+   }
+  },
+  "document": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "kind",
+    "title",
+    "lines"
+   ],
+   "properties": {
+    "kind": {
+     "$ref": "#/$defs/short"
+    },
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "lines": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 4,
+     "items": {
+      "$ref": "#/$defs/text"
+     }
+    },
+    "highlight": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 3
+    },
+    "source": {
+     "$ref": "#/$defs/text"
+    }
+   }
+  },
+  "stamp": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "text"
+   ],
+   "properties": {
+    "text": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 14
+    },
+    "sub": {
+     "$ref": "#/$defs/text"
+    },
+    "tone": {
+     "$ref": "#/$defs/tone"
+    }
+   }
+  },
+  "code": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "lines"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "lines": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 8,
+     "items": {
+      "type": "string",
+      "maxLength": 60
+     }
+    }
+   }
+  },
+  "character": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "name",
+    "color",
+    "mood"
+   ],
+   "properties": {
+    "name": {
+     "$ref": "#/$defs/short"
+    },
+    "color": {
+     "enum": [
+      "red",
+      "green"
+     ]
+    },
+    "mood": {
+     "enum": [
+      "happy",
+      "sad",
+      "shocked",
+      "neutral"
+     ]
+    },
+    "value": {
+     "type": "string",
+     "maxLength": 12
+    }
+   }
+  },
+  "duel": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "left",
+    "right"
+   ],
+   "properties": {
+    "title": {
+     "$ref": "#/$defs/text"
+    },
+    "left": {
+     "$ref": "#/$defs/character"
+    },
+    "right": {
+     "$ref": "#/$defs/character"
+    }
+   }
+  },
+  "photo": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "file",
+    "credit"
+   ],
+   "properties": {
+    "file": {
+     "type": "string",
+     "pattern": "^assets/[a-f0-9]{16}\\.(jpg|png)$"
+    },
+    "credit": {
+     "type": "string",
+     "minLength": 3,
+     "maxLength": 160
+    },
+    "caption": {
+     "$ref": "#/$defs/text"
+    }
+   }
+  }
+ }
+}

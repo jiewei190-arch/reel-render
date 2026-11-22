@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "job_id": "fixture_tool_lab_2026-11-22_short",
+  "channel_key": "tool_lab",
+  "local_publish_date": "2026-11-22",
+  "timezone": "America/New_York",
+  "format_kind": "short",
+  "target_duration_seconds": 45,
+  "topic": "A planned job queue that resumes after a failed render",
+  "editorial_status": "research_needed",
+  "fixture_only": true,
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "The proposed application should save successful stages and resume unfinished work after a crash.",
+      "status": "design_target",
+      "source_ids": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_01",
+      "narration": "Imagine finishing an edit, losing power, and having to start over. Our proposed workflow should save each finished step, so a retry continues from the missing piece.",
+      "visual_intent": "Original animated queue diagram: completed stages remain green while the unfinished render resumes.",
+      "visual_family": "animated_diagram",
+      "claim_ids": [
+        "C1"
+      ]
+    }
+  ],
+  "budget": {
+    "allow_paid_generators": false,
+    "allow_cloud_inference": false,
+    "allow_remote_voice": false
+  }
+}

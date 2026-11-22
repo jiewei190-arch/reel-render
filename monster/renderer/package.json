@@ -1,0 +1,20 @@
+{
+  "name": "mya-renderer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monster YouTube Automator: original 2D motion component library rendered from validated scene descriptions",
+  "scripts": {
+    "render": "remotion render",
+    "still": "remotion still"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "remotion": "4.0.540",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}

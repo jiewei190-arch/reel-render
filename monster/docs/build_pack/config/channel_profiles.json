@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0",
+  "status": "proposed_build_configuration_not_a_running_app",
+  "production_target": {
+    "channels": 5,
+    "uploads_per_channel_per_day": 1,
+    "total_daily_uploads": 5,
+    "formats_are_alternatives_not_additive": true
+  },
+  "runtime": {
+    "timezone": "America/New_York",
+    "primary_llm_backend": "ollama_local",
+    "claude_role": "builder_and_optional_supervisor",
+    "allow_paid_generators": false,
+    "allow_cloud_inference": false,
+    "cloud_fallback": false,
+    "allow_remote_voice": false,
+    "tts_backend": "kokoro_local",
+    "max_gpu_workers": 1,
+    "max_cpu_render_workers_initial": 1,
+    "max_regenerations_per_stage": 2,
+    "upload_enabled": false,
+    "default_privacy": "private",
+    "require_publish_authorization": true,
+    "ollama_endpoint": "http://127.0.0.1:11434",
+    "ollama_model": null,
+    "ollama_context_tokens_initial": 8192,
+    "ollama_no_cloud": true
+  },
+  "formats": {
+    "short": {
+      "min_seconds": 20,
+      "max_seconds": 60,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "long": {
+      "min_seconds": 180,
+      "max_seconds": 480,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30
+    }
+  },
+  "channels": [
+    {
+      "key": "tool_lab",
+      "working_name": "Tool Lab",
+      "niche": "Practical software and AI workflows",
+      "audience": "Students, creators and small-business operators",
+      "promise": "Show one reproducible workflow and its result.",
+      "voice": "af_heart",
+      "language_code": "a",
+      "accent_color": "#36B8E9",
+      "background_color": "#101A2B",
+      "visual_family": "screen_demo",
+      "secondary_visual_family": "animated_diagram",
+      "tone": "Clear, specific and practical",
+      "short_seconds": 45,
+      "long_seconds": 240,
+      "pillars": [
+        "Local tool walkthroughs",
+        "Before-and-after workflows",
+        "Automation failure fixes"
+      ],
+      "avoid": [
+        "Unsupported product claims",
+        "Invented UI or screenshots",
+        "Income promises"
+      ],
+      "pilot": "Why a failed automation should resume instead of restarting",
+      "default_format": "short",
+      "daily_upload_target": 1,
+      "channel_id": null,
+      "publish_time_local": "18:00",
+      "timezone": "America/New_York",
+      "voice_status": "candidate_to_audition",
+      "long_mode_supported": true
+    },
+    {
+      "key": "business_mechanics",
+      "working_name": "Business Mechanics",
+      "niche": "Business models and everyday economics",
+      "audience": "Adults curious about how products and businesses work",
+      "promise": "Explain a business mechanism with a sourced example.",
+      "voice": "am_michael",
+      "language_code": "a",
+      "accent_color": "#F4B544",
+      "background_color": "#132A27",
+      "visual_family": "animated_diagram",
+      "secondary_visual_family": "licensed_editorial_media",
+      "tone": "Conversational, analytical and concrete",
+      "short_seconds": 50,
+      "long_seconds": 360,
+      "pillars": [
+        "Pricing mechanics",
+        "Subscriptions and incentives",
+        "Company operations"
+      ],
+      "avoid": [
+        "Investment recommendations",
+        "AI financial-expert personas",
+        "Unverified company revenue"
+      ],
+      "pilot": "Why an unlimited plan still needs usage limits",
+      "default_format": "short",
+      "daily_upload_target": 1,
+      "channel_id": null,
+      "publish_time_local": "18:00",
+      "timezone": "America/New_York",
+      "voice_status": "candidate_to_audition",
+      "long_mode_supported": true
+    },
+    {
+      "key": "orbit_explained",
+      "working_name": "Orbit Explained",
+      "niche": "Space and grounded science thought experiments",
+      "audience": "General-interest science viewers",
+      "promise": "Answer one question with a clear mechanism and sourced evidence.",
+      "voice": "bf_emma",
+      "language_code": "b",
+      "accent_color": "#A69BFF",
+      "background_color": "#101326",
+      "visual_family": "licensed_science_media",
+      "secondary_visual_family": "animated_diagram",
+      "tone": "Curious, precise and understandable",
+      "short_seconds": 45,
+      "long_seconds": 300,
+      "pillars": [
+        "Space mechanisms",
+        "Scale and distance",
+        "Explicitly labeled what-if scenarios"
+      ],
+      "avoid": [
+        "Fabricated discoveries",
+        "Misleading simulated footage",
+        "Unsupported exact numbers"
+      ],
+      "pilot": "Why a spacecraft can keep moving after its engines turn off",
+      "default_format": "short",
+      "daily_upload_target": 1,
+      "channel_id": null,
+      "publish_time_local": "18:00",
+      "timezone": "America/New_York",
+      "voice_status": "candidate_to_audition",
+      "long_mode_supported": true
+    },
+    {
+      "key": "history_inventions",
+      "working_name": "History of Inventions",
+      "niche": "History told through inventions and constraints",
+      "audience": "Viewers interested in the origins of everyday technology",
+      "promise": "Explain what problem an invention solved and what changed.",
+      "voice": "bm_george",
+      "language_code": "b",
+      "accent_color": "#E68B57",
+      "background_color": "#24201C",
+      "visual_family": "licensed_archive_and_map",
+      "secondary_visual_family": "animated_diagram",
+      "tone": "Narrative, measured and evidence-led",
+      "short_seconds": 55,
+      "long_seconds": 330,
+      "pillars": [
+        "Invention origins",
+        "Competing designs",
+        "Historical constraints"
+      ],
+      "avoid": [
+        "Invented historical quotes",
+        "Unlabeled reconstruction",
+        "Unverified archival rights"
+      ],
+      "pilot": "The problem an early elevator safety mechanism had to solve",
+      "default_format": "short",
+      "daily_upload_target": 1,
+      "channel_id": null,
+      "publish_time_local": "18:00",
+      "timezone": "America/New_York",
+      "voice_status": "candidate_to_audition",
+      "long_mode_supported": true
+    },
+    {
+      "key": "original_block_stories",
+      "working_name": "Blockworld Stories",
+      "niche": "Original low-poly character stories",
+      "audience": "Story viewers; actual intended age audience must be classified",
+      "promise": "A distinct character solves a visual problem with a satisfying payoff.",
+      "voice": "af_bella",
+      "language_code": "a",
+      "accent_color": "#FF788A",
+      "background_color": "#18283E",
+      "visual_family": "original_blender_scene",
+      "secondary_visual_family": "original_2d_animation",
+      "tone": "Playful, visual and concise",
+      "short_seconds": 40,
+      "long_seconds": 210,
+      "pillars": [
+        "Unexpected useful abilities",
+        "Small character-driven mysteries",
+        "Inventive problem-solving"
+      ],
+      "avoid": [
+        "Copied plots or characters",
+        "Unlicensed catalog assets",
+        "Assuming every animation is or is not made for kids"
+      ],
+      "pilot": "A tiny repair robot saves a floating town with its weakest tool",
+      "default_format": "short",
+      "daily_upload_target": 1,
+      "channel_id": null,
+      "publish_time_local": "18:00",
+      "timezone": "America/New_York",
+      "voice_status": "candidate_to_audition",
+      "long_mode_supported": true
+    }
+  ]
+}

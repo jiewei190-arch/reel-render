@@ -1,0 +1,52 @@
+{
+  "pack_version": "1.0",
+  "created_on": "2026-11-21",
+  "kind": "research_and_build_brief",
+  "files": [
+    {
+      "path": "ACCEPTANCE_CRITERIA.md",
+      "bytes": 4071,
+      "sha256": "9b4150dcc072097bb5725602d729253a6b3a37d9559bcd45962ce91b7bb10922"
+    },
+    {
+      "path": "CLAUDE_BUILD_PROMPT.md",
+      "bytes": 10615,
+      "sha256": "a113b48655af492ebecb8c8cdb4f95556851a48bed5e5fef4f97936c03840567"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2824,
+      "sha256": "b55f7caa431b286e37a025bdb09fb23c38938578e09e0ef8b033ea0c16f48ecf"
+    },
+    {
+      "path": "RESEARCH_REPORT.md",
+      "bytes": 15801,
+      "sha256": "fb574719b5a7d93c47bde948330dbfdaea781d4bbb8fe833d2eda02f0e41cef8"
+    },
+    {
+      "path": "TECHNICAL_SPEC.md",
+      "bytes": 14596,
+      "sha256": "5cbf326b8e6ecc7b6ac17fab0545f1333b79c5281b37af81200d748947837e3b"
+    },
+    {
+      "path": "config/channel_profiles.json",
+      "bytes": 7375,
+      "sha256": "b83909b338520fdc5f89dbdea7a11bdf95009c50149683abc7dd19e5fe4b2043"
+    },
+    {
+      "path": "examples/job.fixture.json",
+      "bytes": 1174,
+      "sha256": "5ba444edb4d07fda0b812ba2bd7e5a4b62cfffcff4e27c41ad8b786d4b2d3515"
+    },
+    {
+      "path": "schemas/job.schema.json",
+      "bytes": 3963,
+      "sha256": "3dfb195e623dce27b5a0f9239edd2c69c43820f17020125a2aaa13c80c9bb68b"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 10742,
+      "sha256": "b66ac79830d3341fb9d4cf6de3fb2fb5c602749cddc420438de12bcb2b9a0561"
+    }
+  ]
+}

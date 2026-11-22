@@ -1,0 +1,197 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Monster YouTube Automator job contract (adapted from the build pack: channel keys come from config)",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema_version",
+  "job_id",
+  "channel_key",
+  "local_publish_date",
+  "timezone",
+  "format_kind",
+  "target_duration_seconds",
+  "topic",
+  "editorial_status",
+  "fixture_only",
+  "claims",
+  "scenes",
+  "budget"
+ ],
+ "properties": {
+  "schema_version": {
+   "enum": [
+    "1.0",
+    "1.1"
+   ]
+  },
+  "job_id": {
+   "type": "string",
+   "minLength": 8
+  },
+  "channel_key": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9_]{2,40}$"
+  },
+  "local_publish_date": {
+   "type": "string",
+   "format": "date"
+  },
+  "timezone": {
+   "const": "America/New_York"
+  },
+  "format_kind": {
+   "enum": [
+    "short",
+    "long"
+   ]
+  },
+  "target_duration_seconds": {
+   "type": "integer",
+   "minimum": 20,
+   "maximum": 480
+  },
+  "topic": {
+   "type": "string",
+   "minLength": 10
+  },
+  "editorial_status": {
+   "enum": [
+    "approved_for_production",
+    "failed_review",
+    "research_needed",
+    "research_ready",
+    "script_review"
+   ]
+  },
+  "fixture_only": {
+   "type": "boolean"
+  },
+  "claims": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "statement",
+     "status",
+     "source_ids"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "statement": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "verified",
+       "uncertain",
+       "hypothetical",
+       "design_target"
+      ]
+     },
+     "source_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "scenes": {
+   "type": "array",
+   "minItems": 0,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "narration",
+     "visual_intent",
+     "visual_family",
+     "claim_ids"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "narration": {
+      "type": "string"
+     },
+     "visual_intent": {
+      "type": "string"
+     },
+     "visual_family": {
+      "type": "string"
+     },
+     "claim_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "budget": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "allow_paid_generators",
+    "allow_cloud_inference",
+    "allow_remote_voice"
+   ],
+   "properties": {
+    "allow_paid_generators": {
+     "const": false
+    },
+    "allow_cloud_inference": {
+     "const": false
+    },
+    "allow_remote_voice": {
+     "const": false
+    }
+   }
+  }
+ },
+ "allOf": [
+  {
+   "if": {
+    "properties": {
+     "format_kind": {
+      "const": "short"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "target_duration_seconds": {
+      "minimum": 20,
+      "maximum": 60
+     }
+    }
+   }
+  },
+  {
+   "if": {
+    "properties": {
+     "format_kind": {
+      "const": "long"
+     }
+    }
+   },
+   "then": {
+    "properties": {
+     "target_duration_seconds": {
+      "minimum": 180,
+      "maximum": 480
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+data/
+renderer/node_modules/
+renderer/build/
+config/auth/
+__pycache__/
+*.pyc
+.pytest_cache/

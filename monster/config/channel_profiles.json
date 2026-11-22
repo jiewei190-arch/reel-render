@@ -1,0 +1,401 @@
+{
+ "schema_version": "1.1",
+ "note": "Our five channels (Nov 2026). The build pack's sample profiles are kept in channel_profiles.pack_defaults.json. Every field is editable; bump profile_version when a change should invalidate cached work for that channel.",
+ "production_target": {
+  "channels": 5,
+  "uploads_per_channel_per_day": 1,
+  "total_daily_uploads": 5,
+  "formats_are_alternatives_not_additive": true
+ },
+ "runtime": {
+  "timezone": "America/New_York",
+  "primary_llm_backend": "ollama_local",
+  "claude_role": "builder_and_optional_supervisor",
+  "allow_paid_generators": false,
+  "allow_cloud_inference": false,
+  "cloud_fallback": false,
+  "allow_remote_voice": false,
+  "tts_backend": "kokoro_local",
+  "max_gpu_workers": 1,
+  "max_cpu_render_workers_initial": 1,
+  "max_regenerations_per_stage": 2,
+  "stage_retry_limit": 3,
+  "lease_seconds": 900,
+  "catchup_days": 1,
+  "upload_enabled": false,
+  "default_privacy": "private",
+  "require_publish_authorization": true,
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "ollama_model": null,
+  "ollama_context_tokens_initial": 8192,
+  "ollama_no_cloud": true,
+  "egress_allowlist": [
+   "en.wikipedia.org",
+   "commons.wikimedia.org",
+   "upload.wikimedia.org",
+   "127.0.0.1",
+   "localhost"
+  ],
+  "release_hosts": [
+   "www.googleapis.com",
+   "oauth2.googleapis.com",
+   "youtube.googleapis.com",
+   "youtubeanalytics.googleapis.com"
+  ],
+  "min_free_disk_gb": 2
+ },
+ "formats": {
+  "short": {
+   "min_seconds": 20,
+   "max_seconds": 60,
+   "width": 1080,
+   "height": 1920,
+   "fps": 30
+  },
+  "long": {
+   "min_seconds": 180,
+   "max_seconds": 480,
+   "width": 1920,
+   "height": 1080,
+   "fps": 30
+  }
+ },
+ "channels": [
+  {
+   "key": "block_money",
+   "working_name": "Block Money",
+   "profile_version": 1,
+   "kind": "nonfiction",
+   "niche": "Everyday money mechanics told as Spender vs Saver comparisons",
+   "audience": "US adults 18-35 learning how interest, fees and taxes actually work",
+   "promise": "Show one money mechanism with a real, sourced number and a clear gap between two choices.",
+   "voice": "am_puck",
+   "voice_candidates": [
+    "am_puck",
+    "am_michael",
+    "am_eric"
+   ],
+   "language_code": "a",
+   "speed": 1.12,
+   "theme": {
+    "bg": "#14161C",
+    "accent": "#F4B544",
+    "text": "#FFFFFF",
+    "muted": "#A9B4C2",
+    "good": "#3DDC97",
+    "bad": "#FF5A5F"
+   },
+   "visual_family": "animated_diagram",
+   "scene_types": [
+    "duel",
+    "comparison",
+    "counter",
+    "bars",
+    "flow",
+    "steps",
+    "question",
+    "title",
+    "stamp"
+   ],
+   "tone": "Friendly, punchy, never shaming",
+   "short_seconds": 45,
+   "long_seconds": 240,
+   "pillars": [
+    "Interest and loans",
+    "Fees and fine print",
+    "Taxes and paychecks"
+   ],
+   "avoid": [
+    "Financial advice or picks",
+    "Invented statistics",
+    "Income promises"
+   ],
+   "disclaimers": [
+    "Educational only, not financial advice.",
+    "Voice is synthetic."
+   ],
+   "pilot": "Simple interest versus compound interest",
+   "default_format": "short",
+   "daily_upload_target": 1,
+   "channel_id": null,
+   "publish_time_local": "12:00",
+   "made_for_kids": false,
+   "release_policy": {
+    "enabled": false,
+    "privacy": "private",
+    "require_editorial_pass": true
+   },
+   "pronunciations": {},
+   "reference_images": false
+  },
+  {
+   "key": "justin_clips",
+   "working_name": "Justin clips",
+   "profile_version": 1,
+   "kind": "nonfiction",
+   "niche": "Weird true history",
+   "audience": "US viewers 16-40 who love strange-but-true stories",
+   "promise": "One astonishing true event, how it happened, and the twist nobody expects.",
+   "voice": "am_michael",
+   "voice_candidates": [
+    "am_michael",
+    "am_fenrir",
+    "am_onyx"
+   ],
+   "language_code": "a",
+   "speed": 1.08,
+   "theme": {
+    "bg": "#1D1712",
+    "accent": "#E68B57",
+    "text": "#FFF8F0",
+    "muted": "#C9B8A6",
+    "good": "#7BD389",
+    "bad": "#E5484D"
+   },
+   "visual_family": "timeline_and_document",
+   "scene_types": [
+    "question",
+    "title",
+    "timeline",
+    "document",
+    "counter",
+    "flow",
+    "stamp",
+    "steps",
+    "photo"
+   ],
+   "tone": "Curious, vivid, respectful of real tragedies",
+   "short_seconds": 45,
+   "long_seconds": 300,
+   "pillars": [
+    "Bizarre events",
+    "Odd inventions",
+    "Myths everyone believes"
+   ],
+   "avoid": [
+    "Invented quotes",
+    "Unlabeled reconstruction",
+    "Jokes about victims"
+   ],
+   "disclaimers": [
+    "Voice is synthetic."
+   ],
+   "pilot": "The Boston Molasses Disaster",
+   "default_format": "short",
+   "daily_upload_target": 1,
+   "channel_id": null,
+   "publish_time_local": "19:00",
+   "made_for_kids": false,
+   "release_policy": {
+    "enabled": false,
+    "privacy": "private",
+    "require_editorial_pass": true
+   },
+   "pronunciations": {},
+   "reference_images": true
+  },
+  {
+   "key": "law",
+   "working_name": "Law: weird true court cases",
+   "profile_version": 1,
+   "kind": "nonfiction",
+   "niche": "Weird true court cases told as stories",
+   "audience": "US adults 18-45",
+   "promise": "The claim nobody believes, the twist, and the verdict, from the record.",
+   "voice": "bm_george",
+   "voice_candidates": [
+    "bm_george",
+    "bm_lewis",
+    "am_onyx"
+   ],
+   "language_code": "b",
+   "speed": 1.05,
+   "theme": {
+    "bg": "#0F1626",
+    "accent": "#D9B45A",
+    "text": "#F5F1E6",
+    "muted": "#9AA6BC",
+    "good": "#7BD389",
+    "bad": "#E5484D"
+   },
+   "visual_family": "court_record",
+   "scene_types": [
+    "document",
+    "stamp",
+    "timeline",
+    "counter",
+    "flow",
+    "question",
+    "title",
+    "steps",
+    "photo"
+   ],
+   "tone": "Measured, dramatic, fair to both sides",
+   "short_seconds": 50,
+   "long_seconds": 330,
+   "pillars": [
+    "Absurd lawsuits",
+    "Bizarre trials",
+    "Cases that changed everyday rules"
+   ],
+   "avoid": [
+    "Legal advice",
+    "Mocking private people",
+    "Treating allegations as proven"
+   ],
+   "disclaimers": [
+    "A true story for entertainment and education, not legal advice.",
+    "Voice is synthetic."
+   ],
+   "pilot": "Pearson v. Chung",
+   "default_format": "short",
+   "daily_upload_target": 1,
+   "channel_id": null,
+   "publish_time_local": "18:00",
+   "made_for_kids": false,
+   "release_policy": {
+    "enabled": false,
+    "privacy": "private",
+    "require_editorial_pass": true
+   },
+   "pronunciations": {
+    "v.": "versus"
+   },
+   "reference_images": true
+  },
+  {
+   "key": "biz",
+   "working_name": "Business: costly mistakes",
+   "profile_version": 1,
+   "kind": "nonfiction",
+   "niche": "True stories of business decisions that cost a fortune",
+   "audience": "US adults 18-45 interested in money and companies",
+   "promise": "The one decision, why it looked smart, and what it cost.",
+   "voice": "am_adam",
+   "voice_candidates": [
+    "am_adam",
+    "am_eric",
+    "am_michael"
+   ],
+   "language_code": "a",
+   "speed": 1.08,
+   "theme": {
+    "bg": "#0F1F1C",
+    "accent": "#3DDC97",
+    "text": "#FFFFFF",
+    "muted": "#A6C2B8",
+    "good": "#3DDC97",
+    "bad": "#FF5A5F"
+   },
+   "visual_family": "chart_and_timeline",
+   "scene_types": [
+    "bars",
+    "comparison",
+    "timeline",
+    "counter",
+    "flow",
+    "document",
+    "stamp",
+    "title",
+    "question",
+    "photo"
+   ],
+   "tone": "Analytical, concrete, fair to the people involved",
+   "short_seconds": 50,
+   "long_seconds": 360,
+   "pillars": [
+    "Deals turned down",
+    "Products killed too early",
+    "Expansion that sank a company"
+   ],
+   "avoid": [
+    "Investment advice",
+    "Unverified revenue figures",
+    "Real logos"
+   ],
+   "disclaimers": [
+    "Educational only, not financial or investment advice.",
+    "Voice is synthetic."
+   ],
+   "pilot": "Blockbuster LLC",
+   "default_format": "short",
+   "daily_upload_target": 1,
+   "channel_id": null,
+   "publish_time_local": "17:00",
+   "made_for_kids": false,
+   "release_policy": {
+    "enabled": false,
+    "privacy": "private",
+    "require_editorial_pass": true
+   },
+   "pronunciations": {},
+   "reference_images": true
+  },
+  {
+   "key": "cyber",
+   "working_name": "Scams & Hacks",
+   "profile_version": 1,
+   "kind": "nonfiction",
+   "niche": "True scams, hacks and data breaches told like heists",
+   "audience": "US adults 18-45",
+   "promise": "How the trick worked at story level, how it was caught, and how to spot it.",
+   "voice": "am_onyx",
+   "voice_candidates": [
+    "am_onyx",
+    "am_fenrir",
+    "bm_daniel"
+   ],
+   "language_code": "a",
+   "speed": 1.08,
+   "theme": {
+    "bg": "#0A0E14",
+    "accent": "#28D7F2",
+    "text": "#E8F6FF",
+    "muted": "#8AA3B8",
+    "good": "#3DDC97",
+    "bad": "#FF3B5C"
+   },
+   "visual_family": "evidence_board",
+   "scene_types": [
+    "document",
+    "steps",
+    "counter",
+    "flow",
+    "stamp",
+    "timeline",
+    "question",
+    "title"
+   ],
+   "tone": "Tense, clear, protective of victims",
+   "short_seconds": 50,
+   "long_seconds": 330,
+   "pillars": [
+    "Business email scams",
+    "Famous breaches",
+    "Scams aimed at regular people"
+   ],
+   "avoid": [
+    "Operational how-to detail",
+    "Mocking victims",
+    "Treating allegations as proven"
+   ],
+   "disclaimers": [
+    "Educational only. Based on public reports listed below; not instructions for any crime.",
+    "Voice is synthetic."
+   ],
+   "pilot": "Business email compromise",
+   "default_format": "short",
+   "daily_upload_target": 1,
+   "channel_id": null,
+   "publish_time_local": "20:00",
+   "made_for_kids": false,
+   "release_policy": {
+    "enabled": false,
+    "privacy": "private",
+    "require_editorial_pass": true
+   },
+   "pronunciations": {},
+   "reference_images": false
+  }
+ ]
+}
