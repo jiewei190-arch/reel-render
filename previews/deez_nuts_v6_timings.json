@@ -1,0 +1,913 @@
+{
+ "audio": "previews/deez_nuts_voiceover_v6.mp3",
+ "duration": 78.8,
+ "lines": [
+  {
+   "n": 1,
+   "speaker": "homie",
+   "text": "DEEZ NUTS! DEEZ NUTS!"
+  },
+  {
+   "n": 2,
+   "speaker": "me",
+   "text": "BRUH. My homie was watching YouTube in class the other day, and he turns to me like..."
+  },
+  {
+   "n": 3,
+   "speaker": "homie",
+   "text": "Bro. Do you know who Deez is?"
+  },
+  {
+   "n": 4,
+   "speaker": "me",
+   "text": "And me, not knowing this MOTHERFUUUCKER was watching old-ASS Vine videos about Deez Nuts... I said..."
+  },
+  {
+   "n": 5,
+   "speaker": "me",
+   "text": "WHO THE FUUUCK IS DEEZ?!"
+  },
+  {
+   "n": 6,
+   "speaker": "homie",
+   "text": "DEEZ NUTS IN YOUR MOUTH!"
+  },
+  {
+   "n": 7,
+   "speaker": "me",
+   "text": "LOUD AS FUUUCK, BRO! The ENTIRE class turned around and started DYING! And I'm like, THIS SHIT IS STUPID AS FUUUCK, BRUH!"
+  },
+  {
+   "n": 8,
+   "speaker": "me",
+   "text": "Then at lunch?! This BITCH-ASS MOTHERFUUUCKER would NOT! STOP! EVERY! DAMN! CHANCE!"
+  },
+  {
+   "n": 9,
+   "speaker": "homie",
+   "text": "Yo bro. Deez nuts. Deez nuts. Deez nuts! DEEZ NUTS!"
+  },
+  {
+   "n": 10,
+   "speaker": "me",
+   "text": "NON! FUUUCKING! STOP!"
+  },
+  {
+   "n": 11,
+   "speaker": "me",
+   "text": "BRO, SHUT THE FUUUCK UUUP!"
+  },
+  {
+   "n": 12,
+   "speaker": "me",
+   "text": "I yelled so FUUUCKING LOUD it broke the lunchroom windows!"
+  },
+  {
+   "n": 13,
+   "speaker": "homie",
+   "text": "Deez nu\u2014"
+  }
+ ],
+ "words": [
+  {
+   "w": "DEEZ",
+   "t": 0.0,
+   "end": 0.68,
+   "line": 1,
+   "speaker": "homie"
+  },
+  {
+   "w": "NUTS!",
+   "t": 0.68,
+   "end": 1.76,
+   "line": 1,
+   "speaker": "homie"
+  },
+  {
+   "w": "DEEZ",
+   "t": 2.72,
+   "end": 3.26,
+   "line": 1,
+   "speaker": "homie"
+  },
+  {
+   "w": "NUTS!",
+   "t": 3.26,
+   "end": 4.1,
+   "line": 1,
+   "speaker": "homie"
+  },
+  {
+   "w": "Bruh,",
+   "t": 5.32,
+   "end": 6.04,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "my",
+   "t": 6.06,
+   "end": 6.66,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "homie",
+   "t": 6.66,
+   "end": 6.96,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "was",
+   "t": 6.96,
+   "end": 7.12,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "watching",
+   "t": 7.12,
+   "end": 7.42,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "youtube",
+   "t": 7.42,
+   "end": 7.7,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "in",
+   "t": 7.7,
+   "end": 7.9,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "class",
+   "t": 7.9,
+   "end": 8.18,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 8.18,
+   "end": 8.34,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "other",
+   "t": 8.34,
+   "end": 8.46,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "day,",
+   "t": 8.46,
+   "end": 8.76,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "and",
+   "t": 9.24,
+   "end": 9.36,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "he",
+   "t": 9.36,
+   "end": 9.46,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "turns",
+   "t": 9.46,
+   "end": 9.72,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "to",
+   "t": 9.72,
+   "end": 9.94,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "me",
+   "t": 9.94,
+   "end": 10.04,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "like",
+   "t": 10.04,
+   "end": 10.6,
+   "line": 2,
+   "speaker": "me"
+  },
+  {
+   "w": "Bro",
+   "t": 11.26,
+   "end": 11.62,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "Do",
+   "t": 12.7,
+   "end": 13.06,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "you",
+   "t": 13.06,
+   "end": 13.14,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "know",
+   "t": 13.14,
+   "end": 13.3,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "who",
+   "t": 13.3,
+   "end": 13.52,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "Deez",
+   "t": 13.52,
+   "end": 13.88,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "is?",
+   "t": 13.88,
+   "end": 14.12,
+   "line": 3,
+   "speaker": "homie"
+  },
+  {
+   "w": "And",
+   "t": 14.86,
+   "end": 14.96,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "me,",
+   "t": 14.96,
+   "end": 15.26,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "not",
+   "t": 15.76,
+   "end": 16.02,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "knowing",
+   "t": 16.02,
+   "end": 16.3,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "this",
+   "t": 16.3,
+   "end": 16.54,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "motherfucker",
+   "t": 16.54,
+   "end": 17.64,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "was",
+   "t": 17.64,
+   "end": 18.3,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "watching",
+   "t": 18.3,
+   "end": 18.68,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "old",
+   "t": 18.68,
+   "end": 19.08,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "-ass",
+   "t": 19.08,
+   "end": 19.34,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "vine",
+   "t": 19.34,
+   "end": 19.66,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "videos",
+   "t": 19.66,
+   "end": 20.06,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "about",
+   "t": 20.06,
+   "end": 20.36,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "Deez",
+   "t": 20.36,
+   "end": 20.74,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "Nuts.",
+   "t": 20.74,
+   "end": 21.26,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "I",
+   "t": 21.76,
+   "end": 22.08,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "said",
+   "t": 22.08,
+   "end": 22.5,
+   "line": 4,
+   "speaker": "me"
+  },
+  {
+   "w": "Who",
+   "t": 23.24,
+   "end": 23.6,
+   "line": 5,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 23.6,
+   "end": 23.8,
+   "line": 5,
+   "speaker": "me"
+  },
+  {
+   "w": "fuck",
+   "t": 23.8,
+   "end": 24.3,
+   "line": 5,
+   "speaker": "me"
+  },
+  {
+   "w": "is",
+   "t": 24.3,
+   "end": 24.84,
+   "line": 5,
+   "speaker": "me"
+  },
+  {
+   "w": "Deez?",
+   "t": 24.84,
+   "end": 25.54,
+   "line": 5,
+   "speaker": "me"
+  },
+  {
+   "w": "Deez",
+   "t": 26.32,
+   "end": 26.94,
+   "line": 6,
+   "speaker": "homie"
+  },
+  {
+   "w": "NUTS",
+   "t": 26.94,
+   "end": 27.44,
+   "line": 6,
+   "speaker": "homie"
+  },
+  {
+   "w": "IN",
+   "t": 27.44,
+   "end": 27.58,
+   "line": 6,
+   "speaker": "homie"
+  },
+  {
+   "w": "YOUR",
+   "t": 27.58,
+   "end": 27.72,
+   "line": 6,
+   "speaker": "homie"
+  },
+  {
+   "w": "MOUTH",
+   "t": 27.72,
+   "end": 28.34,
+   "line": 6,
+   "speaker": "homie"
+  },
+  {
+   "w": "LOUD",
+   "t": 28.34,
+   "end": 29.46,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "AS",
+   "t": 29.46,
+   "end": 29.74,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "FUCK",
+   "t": 29.74,
+   "end": 30.28,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "BRO",
+   "t": 30.28,
+   "end": 30.84,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "The",
+   "t": 31.42,
+   "end": 31.98,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "entire",
+   "t": 31.98,
+   "end": 32.48,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "class",
+   "t": 32.48,
+   "end": 32.9,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "turned",
+   "t": 32.9,
+   "end": 33.22,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "around",
+   "t": 33.22,
+   "end": 33.64,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "and",
+   "t": 33.64,
+   "end": 34.22,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "started",
+   "t": 34.22,
+   "end": 34.64,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "dying",
+   "t": 34.64,
+   "end": 35.38,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "and",
+   "t": 35.38,
+   "end": 36.44,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "I'm",
+   "t": 36.44,
+   "end": 36.72,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "like",
+   "t": 36.72,
+   "end": 37.1,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "this",
+   "t": 37.1,
+   "end": 37.78,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "shit",
+   "t": 37.78,
+   "end": 38.08,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "is",
+   "t": 38.08,
+   "end": 38.26,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "stupid",
+   "t": 38.26,
+   "end": 38.74,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "as",
+   "t": 38.74,
+   "end": 39.04,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "fuck,",
+   "t": 39.04,
+   "end": 39.58,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "bruh",
+   "t": 39.8,
+   "end": 40.35,
+   "line": 7,
+   "speaker": "me"
+  },
+  {
+   "w": "Then",
+   "t": 40.9,
+   "end": 41.22,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "at",
+   "t": 41.22,
+   "end": 41.42,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "lunch",
+   "t": 41.42,
+   "end": 41.88,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "this",
+   "t": 41.88,
+   "end": 42.68,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "bitch",
+   "t": 42.68,
+   "end": 43.16,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "-ass",
+   "t": 43.16,
+   "end": 43.5,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "motherfucker",
+   "t": 43.5,
+   "end": 44.52,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "would",
+   "t": 44.52,
+   "end": 45.34,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "not",
+   "t": 45.34,
+   "end": 45.9,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "stop",
+   "t": 46.46,
+   "end": 47.1,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "every",
+   "t": 47.86,
+   "end": 48.44,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "damn",
+   "t": 48.44,
+   "end": 49.48,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "chance",
+   "t": 49.48,
+   "end": 50.64,
+   "line": 8,
+   "speaker": "me"
+  },
+  {
+   "w": "Yo,",
+   "t": 50.64,
+   "end": 51.56,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "bro",
+   "t": 51.56,
+   "end": 52.24,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Deez",
+   "t": 52.78,
+   "end": 53.5,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Nuts",
+   "t": 53.5,
+   "end": 54.06,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Deez",
+   "t": 55.62,
+   "end": 56.72,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Nuts",
+   "t": 56.72,
+   "end": 57.26,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Deez",
+   "t": 58.34,
+   "end": 59.2,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Nuts",
+   "t": 59.2,
+   "end": 59.76,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "Deez",
+   "t": 60.86,
+   "end": 61.74,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "NUTS!",
+   "t": 61.74,
+   "end": 62.82,
+   "line": 9,
+   "speaker": "homie"
+  },
+  {
+   "w": "NON!",
+   "t": 63.5,
+   "end": 63.66,
+   "line": 10,
+   "speaker": "me"
+  },
+  {
+   "w": "FUCKING!",
+   "t": 64.24,
+   "end": 64.96,
+   "line": 10,
+   "speaker": "me"
+  },
+  {
+   "w": "STOP!",
+   "t": 65.46,
+   "end": 65.8,
+   "line": 10,
+   "speaker": "me"
+  },
+  {
+   "w": "BRO!",
+   "t": 67.02,
+   "end": 67.34,
+   "line": 11,
+   "speaker": "me"
+  },
+  {
+   "w": "SHUT.",
+   "t": 68.12,
+   "end": 68.2,
+   "line": 11,
+   "speaker": "me"
+  },
+  {
+   "w": "THE.",
+   "t": 68.6,
+   "end": 68.62,
+   "line": 11,
+   "speaker": "me"
+  },
+  {
+   "w": "FUCK.",
+   "t": 68.98,
+   "end": 69.06,
+   "line": 11,
+   "speaker": "me"
+  },
+  {
+   "w": "UP!",
+   "t": 70.42,
+   "end": 70.92,
+   "line": 11,
+   "speaker": "me"
+  },
+  {
+   "w": "I",
+   "t": 72.38,
+   "end": 72.66,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "yelled",
+   "t": 72.66,
+   "end": 72.94,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "so",
+   "t": 72.94,
+   "end": 73.42,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "fucking",
+   "t": 73.42,
+   "end": 73.92,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "loud",
+   "t": 73.92,
+   "end": 74.3,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "it",
+   "t": 74.3,
+   "end": 74.9,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "broke",
+   "t": 74.9,
+   "end": 75.16,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 75.16,
+   "end": 75.38,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "lunchroom",
+   "t": 75.38,
+   "end": 75.8,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "windows",
+   "t": 75.8,
+   "end": 76.4,
+   "line": 12,
+   "speaker": "me"
+  },
+  {
+   "w": "Deez",
+   "t": 76.98,
+   "end": 77.7,
+   "line": 13,
+   "speaker": "homie"
+  },
+  {
+   "w": "NUT",
+   "t": 77.7,
+   "end": 78.06,
+   "line": 13,
+   "speaker": "homie"
+  }
+ ]
+}
