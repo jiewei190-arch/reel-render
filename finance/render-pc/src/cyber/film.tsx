@@ -207,7 +207,7 @@ const CyberFilmL: React.FC<{ c: CyberCompiled }> = ({ c }) => {
       <Devices devices={c.devicesAt(tOut)} t={tOut} L={L} />
       <CyberHook text={c.recipe.hook.text} t={tOut} until={c.hookUntil} L={L} g={g} />
       {c.hookAgain !== null ? <CyberHook text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} L={L} g={g} /> : null}
-      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={CP.cyan} edge={CP.magenta} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={CP.cyan} edge={CP.magenta} safe top={ch.top} fs={ch.fs} /> : null}
       {!capOff ? (fixedCap ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} centre={capY} size={L.cap.fs} hot={CP.cyan} />
         : <LowerThirdCaptions chunks={chunksL(c)} t={tOut} centre={capY} size={L.cap.fs} hot={CP.cyan} hide={(x) => x < L.cap.from} />) : null}
     </AbsoluteFill>

@@ -88,11 +88,17 @@ export type BizDevice =
   /** THE DECISION: the world freezes (the camera keeps creeping), the frame desaturates, a stamp slams in */
   | { do: "decision"; at: At; until?: At; text?: string; sub?: string; freeze?: boolean }
   /** a money counter: counts from -> to over dur (draining is red, rising is green) */
-  | { do: "counter"; title: string; from: number; to: number; at: At; dur?: number; until?: At; tone?: Tone }
+  | { do: "counter"; title: string; from: number; to: number; at: At; dur?: number; until?: At; tone?: Tone;
+    /** the anchor word (the voice saying the number): the count lands by its END (default: found in the voice-over) */
+    land?: At }
   /** what it's worth today: two bars, the small one first, then the big one grows and the multiple pops */
-  | { do: "worth"; at: At; until?: At; a: { label: string; value: number; text?: string }; b: { label: string; value: number; text?: string }; multiple?: boolean }
+  | { do: "worth"; at: At; until?: At; a: { label: string; value: number; text?: string }; b: { label: string; value: number; text?: string }; multiple?: boolean;
+    /** the anchor word (the voice saying the number): the count lands by its END (default: found in the voice-over) */
+    land?: At }
   /** a number board (like tech3d's) */
-  | { do: "board"; title: string; at: At; until?: At; value?: string; count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string }; pos?: "left" | "right" | "top"; tone?: Tone;
+  | { do: "board"; title: string; at: At; until?: At; value?: string; count?: { from: number; to: number; dur?: number; decimals?: number; prefix?: string; suffix?: string;
+    /** the anchor word (the voice saying the number): the count lands by its END (default: found in the voice-over) */
+    land?: At }; pos?: "left" | "right" | "top"; tone?: Tone;
       /** "giant": the stake board, centred and most of the frame wide (a frame-0 opener: "at": 0 shows it fully on) */
       size?: "giant" }
   /** a rubber stamp (BANKRUPT, SOLD, NO) */

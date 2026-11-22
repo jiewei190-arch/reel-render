@@ -31,7 +31,7 @@ const retimeShot = (s: BizShot, remap: Remap) => {
   for (const a of s.actors ?? []) { T(a as unknown as Obj, "from"); for (const q of a.then ?? []) T(q as unknown as Obj, "at"); }
   for (const p of s.props ?? []) T(p as unknown as Obj, "hit"); // a prop's `at` is a place
   for (const ac of s.actions ?? []) { const o = ac as unknown as Obj; T(o, "at"); T(o, "until"); T(o, "collapse"); }
-  for (const d of s.devices ?? []) { const o = d as unknown as Obj; T(o, "at"); T(o, "until"); }
+  for (const d of s.devices ?? []) { const o = d as unknown as Obj; T(o, "at"); T(o, "until"); T(o, "land"); if (o.count) T(o.count as Obj, "land"); }
   if (s.fx) s.fx = s.fx.map((f) => (typeof f === "string" ? f : f.at !== undefined ? { ...f, at: remap(f.at) as At } : f));
   for (const q of s.sfx ?? []) T(q as unknown as Obj, "at");
   return s;
@@ -119,4 +119,5 @@ export const clipAdapter = {
   r3,
 };
 export { chunkWords as capChunkWords } from "../src/fin/lib/captions";
+export { spokenAnchor, ANCHOR_LOOKBACK } from "../src/longform/polish";
 export { LF } from "../src/longform/kit";

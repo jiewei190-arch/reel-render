@@ -84,8 +84,8 @@ const goldDigits = (v: string) => v.split(/([^\d,.]+)/).map((seg, j) => (/^[\d,.
 
 const Exhibit: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, L, t }) => (
   <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${-2 + 0.6 * Math.sin(t * 2.1)}deg)`, opacity: clamp(d.u * 3), background: CARD_BG, borderRadius: 18, boxShadow: SHADOW, border: `4px solid ${LP.gold}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: L.exhibitLabelFs ?? 34, letterSpacing: 4, padding: "2px 22px", borderRadius: 8, marginTop: -6, marginBottom: 6 }}>{d.label}</div>
-    <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.exhibitFs, color: LP.cream, whiteSpace: "nowrap", lineHeight: 1.1 }}>{d.text}</div>
+    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.label ?? L.exhibitLabelFs ?? 34, letterSpacing: 4, padding: "2px 22px", borderRadius: 8, marginTop: -6, marginBottom: 6, whiteSpace: "nowrap" }}>{d.label}</div>
+    <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.text ?? L.exhibitFs, color: LP.cream, whiteSpace: "nowrap", lineHeight: 1.1 }}>{d.text}</div>
   </div>
 );
 const Verdict: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, L, t }) => {
@@ -95,9 +95,9 @@ const Verdict: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, L, t 
   return (
     <div style={{ position: "absolute", left: d.x - L.verdict.maxW / 2, width: L.verdict.maxW, top: d.y - d.h / 2, height: d.h, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: clamp(d.u * 4) * clamp((d.age + 0.07) / 0.05) }}>
       <div style={{ transform: `translate(${shake}px, 0) scale(${slam}) rotate(-7deg)`, border: `12px solid ${LP.gold}`, borderRadius: 20, padding: "0 40px", background: "rgba(11,20,38,0.72)", boxShadow: `0 0 60px rgba(232,180,74,0.35), ${SHADOW}` }}>
-        <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.verdict.fs, lineHeight: 1.12, color: LP.gold, letterSpacing: 6, whiteSpace: "nowrap", textShadow: "0 6px 0 rgba(0,0,0,0.35)" }}>{d.text}</div>
+        <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.text ?? L.verdict.fs, lineHeight: 1.12, color: LP.gold, letterSpacing: 6, whiteSpace: "nowrap", textShadow: "0 6px 0 rgba(0,0,0,0.35)" }}>{d.text}</div>
       </div>
-      {d.sub ? <div style={{ marginTop: 34, fontFamily: FONT, fontWeight: 800, fontSize: 64, color: LP.cream, WebkitTextStroke: `12px ${LP.bg}`, paintOrder: "stroke fill", opacity: clamp((d.age - 0.25) / 0.2), transform: `translateY(${(1 - EASE_OUT(clamp((d.age - 0.25) / 0.25))) * 20}px)`, whiteSpace: "nowrap" }}>{goldDigits(d.sub)}</div> : null}
+      {d.sub ? <div style={{ marginTop: 34, fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.sub ?? 64, color: LP.cream, WebkitTextStroke: `12px ${LP.bg}`, paintOrder: "stroke fill", opacity: clamp((d.age - 0.25) / 0.2), transform: `translateY(${(1 - EASE_OUT(clamp((d.age - 0.25) / 0.25))) * 20}px)`, whiteSpace: "nowrap" }}>{goldDigits(d.sub)}</div> : null}
     </div>
   );
 };
@@ -109,10 +109,10 @@ const CaseCard: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, t })
       <div style={{ position: "absolute", left: 36, top: -46, width: 290, height: 60, background: "#C9A15C", borderRadius: "14px 14px 0 0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: 30, color: LP.bg, letterSpacing: 3 }}>CASE FILE</div>
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,#D9B46C,#C59A52)", borderRadius: 18, boxShadow: SHADOW, padding: 26, boxSizing: "border-box" }}>
         <div style={{ height: "100%", background: LP.paper, borderRadius: 8, border: `3px solid ${LP.ink}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxSizing: "border-box", padding: "0 20px" }}>
-          <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: Math.min(92, (d.w - 120) / Math.max(6, (d.title ?? "").length * 0.62)), color: LP.ink, whiteSpace: "nowrap", letterSpacing: -1 }}>{d.title}</div>
+          <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.title ?? Math.min(92, (d.w - 120) / Math.max(6, (d.title ?? "").length * 0.62)), color: LP.ink, whiteSpace: "nowrap", letterSpacing: -1 }}>{d.title}</div>
           <div style={{ height: 6, width: "70%", background: LP.goldDeep, margin: "12px 0 14px", borderRadius: 3 }} />
-          <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: 52, color: LP.ink, opacity: 0.85, whiteSpace: "nowrap" }}>{[d.year, d.place].filter(Boolean).join("  ·  ")}</div>
-          {d.note ? <div style={{ marginTop: 10, fontFamily: FONT, fontWeight: 700, fontSize: 36, color: LP.ink, opacity: 0.7 }}>{d.note}</div> : null}
+          <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.meta ?? 52, color: LP.ink, opacity: 0.85, whiteSpace: "nowrap" }}>{[d.year, d.place].filter(Boolean).join("  ·  ")}</div>
+          {d.note ? <div style={{ marginTop: 10, fontFamily: FONT, fontWeight: 700, fontSize: d.fs?.note ?? 36, color: LP.ink, opacity: 0.7, whiteSpace: "nowrap" }}>{d.note}</div> : null}
         </div>
       </div>
     </div>
@@ -120,8 +120,8 @@ const CaseCard: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, t })
 };
 const Counter: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, L, t }) => (
   <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${0.7 * Math.sin(t * 2.4)}deg)`, opacity: clamp(d.u * 3), background: CARD_BG, borderRadius: 24, overflow: "hidden", boxShadow: SHADOW, border: `3px solid rgba(232,180,74,0.6)`, display: "flex", flexDirection: "column" }}>
-    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: L.board.fsTitle, padding: "8px 0", textAlign: "center", letterSpacing: 2 }}>{d.title}</div>
-    <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: Math.min(L.board.fsValue, (d.w - 40) / Math.max(3, (d.value ?? "").length * 0.6)), color: LP.cream, letterSpacing: -2, whiteSpace: "nowrap", transform: `scale(${1 + 0.15 * Math.sin(Math.PI * clamp(d.zero ?? 0))})` }}>{goldDigits(d.value ?? "")}</div>
+    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.title ?? L.board.fsTitle, padding: "8px 0", textAlign: "center", letterSpacing: 2, whiteSpace: "nowrap" }}>{d.title}</div>
+    <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: d.fs?.value ?? Math.min(L.board.fsValue, (d.w - 40) / Math.max(3, (d.value ?? "").length * 0.6)), color: LP.cream, letterSpacing: -2, whiteSpace: "nowrap", transform: `scale(${1 + 0.15 * Math.sin(Math.PI * clamp(d.zero ?? 0))})` }}>{goldDigits(d.value ?? "")}</div>
   </div>
 );
 

@@ -11,3 +11,4 @@ export { figureBoxes } from "../src/cyber/figure";
 export { chunkWords, LF } from "../src/longform/kit";
 export { clipAdapter } from "../src/cyber/clip";
 export { chunkWords as capChunkWords } from "../src/fin/lib/captions";
+export { spokenAnchor, ANCHOR_LOOKBACK } from "../src/longform/polish";

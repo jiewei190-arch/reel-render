@@ -1,0 +1,235 @@
+{
+ "kit": "law3d",
+ "slug": "polish-defects",
+ "format": "landscape",
+ "hook": {
+  "text": "*$64 MILLION* FOR PANTS"
+ },
+ "chapters": [
+  {
+   "title": "A Judge Sues Over One Pair Of Pants",
+   "word": "A"
+  },
+  {
+   "title": "The Dry Cleaner's Last Stand",
+   "word": "5:The"
+  }
+ ],
+ "music": "suspense",
+ "cast": {
+  "pearson": {
+   "role": "plaintiff",
+   "skin": "#8a5a3c",
+   "hairStyle": "short",
+   "hair": "#3a3634",
+   "suit": "#2e3d5e",
+   "pants": "#26324c",
+   "tie": "#7a1f24",
+   "build": "broad"
+  },
+  "mom": {
+   "role": "defendant",
+   "skin": "#e2b48c",
+   "hairStyle": "bun",
+   "hair": "#16120f",
+   "suit": "#5a5650",
+   "shirt": "#efe9de",
+   "tie": "#5a5650",
+   "apron": "#2b4f7a",
+   "build": "slim",
+   "height": 0.93
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "long",
+   "hair": "#8a7a6e",
+   "glasses": true
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "pearson.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8
+   },
+   "actors": [
+    {
+     "id": "pearson",
+     "pose": "point",
+     "face": "smug",
+     "at": "plaintiff",
+     "pointAt": "pants",
+     "then": [
+      {
+       "at": "sued",
+       "face": "angry"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "pants",
+     "kit": "pants",
+     "at": "plaintiff:0.3,1.12,0.3",
+     "s": 0.5,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ],
+   "note": "hook"
+  },
+  {
+   "at": "dry",
+   "set": "courtroom",
+   "cam": {
+    "preset": "medium",
+    "target": "judge.face",
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "talk",
+     "at": "bench",
+     "face": "stern"
+    }
+   ],
+   "note": "the judge"
+  },
+  {
+   "at": "2:He",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.55,
+    "h": 1.6
+   },
+   "actions": [
+    {
+     "do": "counter",
+     "at": "2:He",
+     "title": "YEARS",
+     "from": 0,
+     "to": 15,
+     "dur": 2.0,
+     "pos": "right"
+    }
+   ],
+   "note": "DEFECT 1: a 2 s count in a 1.4 s shot: the old engine cut it at YEARS 13 while the voice says fifteen"
+  },
+  {
+   "at": "3:then",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.5,
+    "h": 1.7,
+    "az": -10
+   },
+   "actions": [
+    {
+     "do": "counter",
+     "at": "3:then",
+     "title": "THE OFFER",
+     "prefix": "$",
+     "from": 0,
+     "to": 12000,
+     "dur": 1.4,
+     "pos": "right"
+    }
+   ],
+   "note": "DEFECT 2: the count ends after 'twelve thousand' (the old engine showed ~$1,170 on 'twelve')"
+  },
+  {
+   "at": "4:The",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.55,
+    "h": 1.6,
+    "az": 8
+   },
+   "actions": [
+    {
+     "do": "counter",
+     "at": "4:The",
+     "title": "PER VIOLATION, PER DAY",
+     "prefix": "$",
+     "from": 0,
+     "to": 64000000,
+     "dur": 1.6,
+     "pos": "right"
+    }
+   ],
+   "note": "DEFECT 3: a long title wrapped and clipped by the board, a 10-digit value caught mid-count on '$64,000,000'"
+  },
+  {
+   "at": "5:The",
+   "set": "courtroom",
+   "cam": {
+    "preset": "medium",
+    "target": "pearson.face",
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "pearson",
+     "pose": "talk",
+     "at": "plaintiff",
+     "face": "angry"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "5:The",
+     "title": "DAYS IN COURT",
+     "from": 0,
+     "to": 1152,
+     "dur": 1.0,
+     "pos": "left"
+    },
+    {
+     "do": "exhibit",
+     "at": "after",
+     "text": "KNOWS THE COMPLAINT PROCESS",
+     "label": "EXHIBIT B",
+     "on": "pearson.face"
+    }
+   ],
+   "note": "DEFECT 4: the chapter card under a counter board; a long exhibit tag"
+  },
+  {
+   "at": "6:The",
+   "set": "courtroom",
+   "cam": {
+    "preset": "medium",
+    "target": "mom.face",
+    "dist": 2.6,
+    "h": -0.1,
+    "az": 0
+   },
+   "actors": [
+    {
+     "id": "mom",
+     "pose": "idle",
+     "at": "defendant:-0.38,0,0",
+     "sit": true,
+     "face": "worried"
+    }
+   ],
+   "note": "DEFECT 5: the camera behind the counsel chairs: a chair back covers the seated defendant's face"
+  }
+ ]
+}

@@ -12,7 +12,8 @@ import React from "react";
 import { chunkWords } from "../fin/lib/captions";
 import type { CapChunk } from "../fin/lib/captions";
 import { EASE_OUT, OVERSHOOT, prog } from "../fin/lib/motion";
-import type { BoardBox, DeviceBox, LabelBox } from "./compile";
+import type { BoardBox, DeviceBox, DeviceFs, LabelBox } from "./compile";
+import { boardFit } from "./compile";
 import type { Layout } from "./layout";
 import { CP } from "./palette";
 
@@ -105,7 +106,7 @@ export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number; L: Layout }> 
       const c = l.tone === "red" ? CP.red : CP.cyan;
       return l.u > 0.001 ? (
         <div key={l.key} style={{ position: "absolute", left: l.x - l.w / 2, top: l.y - l.h / 2, width: l.w, height: l.h, transform: `scale(${OVERSHOOT(l.u)})`, opacity: clamp(l.u * 3), background: GLASS, borderRadius: 12 * L.k, boxShadow: `0 0 0 2px ${c}AA, 0 0 26px ${c}55`, borderLeft: `${12 * L.k}px solid ${c}`, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-          <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.label.fs, color: CP.white, whiteSpace: "nowrap" }}>{l.text}</span>
+          <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: l.fs ?? L.label.fs, color: CP.white, whiteSpace: "nowrap" }}>{l.text}</span>
         </div>
       ) : null;
     })}
@@ -113,11 +114,12 @@ export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number; L: Layout }> 
 );
 
 const TONE = { cyan: CP.cyan, magenta: CP.magenta, red: CP.red } as const;
-/** a board's title / value font sizes: the giant stake board uses its own (the value shrinks to fit the width) */
-export const boardFonts = (L: Layout, b: { giant?: boolean; value: string }) => {
-  if (!b.giant) return { title: 38 * L.k, value: 112 * L.k };
-  const g = L.board.giant;
-  return { title: g.titleFs, value: Math.min(g.valueFs, Math.floor((g.w - 70) / Math.max(1, b.value.length * 0.64))) };
+/** a board's title / value font sizes, measured (src/longform/polish.ts): the compiler's sizes (fitted for the widest value
+ *  a counting board shows, so the size never jumps mid-count), else fitted to this value */
+export const boardFonts = (L: Layout, b: { giant?: boolean; value: string; title?: string; fs?: { title: number; value: number } }) => {
+  if (b.fs) return b.fs;
+  const f = boardFit(L, b.title ?? "", b.value, !!b.giant);
+  return { title: f.title.fs, value: f.value.fs };
 };
 export const Boards: React.FC<{ boards: BoardBox[]; t: number; L: Layout }> = ({ boards, t, L }) => (
   <>
@@ -125,7 +127,7 @@ export const Boards: React.FC<{ boards: BoardBox[]; t: number; L: Layout }> = ({
       const c = TONE[b.tone];
       return b.u > 0.001 ? (
         <div key={i} style={{ position: "absolute", left: b.x - b.w / 2, top: b.y - b.h / 2, width: b.w, height: b.h, transform: `scale(${OVERSHOOT(b.u)})`, opacity: clamp(b.u * 3), background: GLASS, borderRadius: 16 * L.k, overflow: "hidden", boxShadow: `0 0 0 3px ${c}99, 0 0 34px ${c}44`, display: "flex", flexDirection: "column" }}>
-          <div style={{ background: c, color: "#000", fontFamily: FONT, fontWeight: 800, fontSize: boardFonts(L, b).title, padding: `${8 * L.k}px 0`, textAlign: "center", letterSpacing: 2 }}>{b.title}</div>
+          <div style={{ background: c, color: "#000", fontFamily: FONT, fontWeight: 800, fontSize: boardFonts(L, b).title, padding: `${8 * L.k}px 0`, textAlign: "center", letterSpacing: 2, whiteSpace: "nowrap" }}>{b.title}</div>
           <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: boardFonts(L, b).value, color: CP.white, letterSpacing: -2, textShadow: glow(c, 20), whiteSpace: "nowrap" }}>
             {b.value.split(/(\d[\d,.]*)/).map((seg, j) => (/^\d/.test(seg) ? <span key={j}>{seg}</span> : <span key={j} style={{ color: c }}>{seg}</span>))}
           </div>
@@ -146,24 +148,24 @@ const Card: React.FC<{ d: { x: number; y: number; w: number; h: number; u: numbe
   </div>
 );
 
-export const Devices: React.FC<{ devices: DeviceBox[]; t: number; L: Layout }> = ({ devices, t, L }) => (
+export const Devices: React.FC<{ devices: (DeviceBox & DeviceFs)[]; t: number; L: Layout }> = ({ devices, t, L }) => (
   <>
     {devices.map((d, i) => {
       if (d.u <= 0.001) return null;
-      const k = L.k;
+      const k = L.k, F = d.fs ?? {};
       switch (d.kind) {
         case "case": {
           const stamp = clamp((d.tau - 1.0) / 0.18);
           const row = (lab: string, val: string, n: number, color: string = CP.white) => (
             <div style={{ display: "flex", alignItems: "baseline", gap: 24 * k, marginTop: 18 * k }}>
               <span style={{ fontSize: 34 * k, color: CP.dim, width: 230 * k, letterSpacing: 2 }}>{lab}</span>
-              <span style={{ fontSize: 64 * k, color, letterSpacing: -1, textShadow: color === CP.red ? glow(CP.red, 18) : "none", whiteSpace: "nowrap" }}>{typed(val, d.tau, 0.15 + n * 0.22, 0.32)}</span>
+              <span style={{ fontSize: F.row ?? 64 * k, color, letterSpacing: -1, textShadow: color === CP.red ? glow(CP.red, 18) : "none", whiteSpace: "nowrap" }}>{typed(val, d.tau, 0.15 + n * 0.22, 0.32)}</span>
             </div>
           );
           return (
             <Card key={i} d={d} L={L} edge={CP.cyan} tilt={-1 + 0.4 * Math.sin(t * 1.2)}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `4px solid ${CP.cyan}66`, paddingBottom: 12 * k }}>
-                <span style={{ fontSize: 58 * k, letterSpacing: 6, color: CP.cyan, textShadow: glow(CP.cyan, 16) }}>{d.title}</span>
+                <span style={{ fontSize: F.title ?? 58 * k, letterSpacing: 6, color: CP.cyan, textShadow: glow(CP.cyan, 16), whiteSpace: "nowrap" }}>{d.title}</span>
                 <span style={{ fontSize: 30 * k, color: CP.dim }}>#{(Math.abs(d.name.length * 7919) % 9000) + 1000}</span>
               </div>
               {row("NAME", d.name, 0)}
@@ -178,8 +180,8 @@ export const Devices: React.FC<{ devices: DeviceBox[]; t: number; L: Layout }> =
         case "money":
           return (
             <Card key={i} d={d} L={L} edge={CP.red}>
-              <div style={{ fontSize: 38 * k, color: CP.red, letterSpacing: 4 }}>{d.label}</div>
-              <div style={{ fontSize: 118 * k, letterSpacing: -2, color: CP.white, textShadow: glow(CP.red, 22), lineHeight: 1.05 }}>{d.value}</div>
+              <div style={{ fontSize: F.label ?? 38 * k, color: CP.red, letterSpacing: 4, whiteSpace: "nowrap" }}>{d.label}</div>
+              <div style={{ fontSize: F.value ?? 118 * k, letterSpacing: -2, color: CP.white, textShadow: glow(CP.red, 22), lineHeight: 1.05, whiteSpace: "nowrap" }}>{d.value}</div>
               <div style={{ marginTop: 10 * k, height: 18 * k, borderRadius: 9 * k, background: "#1a0a10", overflow: "hidden" }}>
                 <div style={{ height: "100%", width: `${100 * (1 - d.frac)}%`, background: `linear-gradient(90deg, ${CP.redDeep}, ${CP.red})` }} />
               </div>
@@ -188,20 +190,20 @@ export const Devices: React.FC<{ devices: DeviceBox[]; t: number; L: Layout }> =
         case "count":
           return (
             <Card key={i} d={d} L={L} edge={CP.red}>
-              <div style={{ textAlign: "center", fontSize: 34 * k, color: CP.dim, letterSpacing: 4, marginTop: -8 * k }}>{d.label}</div>
-              <div style={{ textAlign: "center", fontSize: 96 * k, color: CP.red, letterSpacing: 4, textShadow: glow(CP.red, 20), fontVariantNumeric: "tabular-nums", lineHeight: 1.1 }}>{d.value}</div>
+              <div style={{ textAlign: "center", fontSize: F.label ?? 34 * k, color: CP.dim, letterSpacing: 4, marginTop: -8 * k, whiteSpace: "nowrap" }}>{d.label}</div>
+              <div style={{ textAlign: "center", whiteSpace: "nowrap", fontSize: F.value ?? 96 * k, color: CP.red, letterSpacing: 4, textShadow: glow(CP.red, 20), fontVariantNumeric: "tabular-nums", lineHeight: 1.1 }}>{d.value}</div>
             </Card>
           );
         case "check":
           return (
             <Card key={i} d={d} L={L} edge={CP.cyan}>
-              <div style={{ fontSize: 66 * k, color: CP.cyan, letterSpacing: 2, textShadow: glow(CP.cyan, 18), borderBottom: `4px solid ${CP.magenta}`, paddingBottom: 14 * k, marginBottom: 14 * k }}>{d.title}</div>
+              <div style={{ fontSize: F.title ?? 66 * k, whiteSpace: "nowrap", color: CP.cyan, letterSpacing: 2, textShadow: glow(CP.cyan, 18), borderBottom: `4px solid ${CP.magenta}`, paddingBottom: 14 * k, marginBottom: 14 * k }}>{d.title}</div>
               {d.items.map((it, j) => (
                 <div key={j} style={{ display: "flex", alignItems: "center", gap: 26 * k, marginTop: 26 * k, opacity: 0.35 + 0.65 * clamp(it.on * 2), transform: `translateX(${(1 - EASE_OUT(it.on)) * 30}px)` }}>
                   <div style={{ flex: "0 0 auto", width: 70 * k, height: 70 * k, borderRadius: 12 * k, border: `5px solid ${it.on > 0.5 ? CP.cyan : CP.dim}`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: it.on > 0.5 ? glow(CP.cyan, 16) : "none" }}>
                     <svg width={50 * k} height={50 * k} viewBox="0 0 50 50"><path d="M8 26 L20 38 L42 12" fill="none" stroke={CP.cyan} strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={60} strokeDashoffset={60 * (1 - clamp(it.on))} /></svg>
                   </div>
-                  <span style={{ fontSize: 54 * k, lineHeight: 1.1 }}>{it.text}</span>
+                  <span style={{ fontSize: F.item ?? 54 * k, lineHeight: 1.1, whiteSpace: "nowrap" }}>{it.text}</span>
                 </div>
               ))}
             </Card>
@@ -210,7 +212,7 @@ export const Devices: React.FC<{ devices: DeviceBox[]; t: number; L: Layout }> =
           return (
             <div key={i} style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, opacity: d.u, transform: `scale(${0.9 + 0.1 * EASE_OUT(clamp(d.tau / 0.2))})`, background: "rgba(40,0,6,0.9)", border: `5px solid ${CP.red}`, borderRadius: 14 * k, display: "flex", alignItems: "center", justifyContent: "center", gap: 26 * k, boxShadow: glow(CP.red, 30) }}>
               <svg width={92 * k} height={82 * k} viewBox="0 0 92 82"><path d="M46 4 L88 78 L4 78 Z" fill="none" stroke={CP.red} strokeWidth={8} strokeLinejoin="round" /><rect x={42} y={28} width={8} height={28} fill={CP.red} /><rect x={42} y={62} width={8} height={8} fill={CP.red} /></svg>
-              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: 84 * k, color: CP.red, letterSpacing: 10, textShadow: glow(CP.red, 18) }}>{d.text}</span>
+              <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: F.text ?? 84 * k, color: CP.red, letterSpacing: 10, textShadow: glow(CP.red, 18), whiteSpace: "nowrap" }}>{d.text}</span>
             </div>
           );
       }

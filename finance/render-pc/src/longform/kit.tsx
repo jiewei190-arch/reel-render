@@ -29,7 +29,9 @@ export const LF = {
 /** a chapter starts on a word of the voice-over (recipe "chapters": [{ "title", "word" }]) */
 export type ChapterSpec = { title: string; word: At };
 /** a resolved chapter: t = the chapter word, card = when its title card plays (after the hook text has gone) */
-export type ChapterR = { n: number; title: string; t: number; card: number };
+export type ChapterR = { n: number; title: string; t: number; card: number;
+  /** kits (law3d / biz3d / cyber3d, src/longform/polish.ts placeChapters): the card's top, its measured box and title size */
+  top?: number; box?: { x0: number; x1: number; y0: number; y1: number }; fs?: number; fitOk?: boolean };
 
 /** chapters -> seconds; throws on chapters out of order (the same rule as the Block Money compiler) */
 export const resolveChapters = (specs: readonly ChapterSpec[] | undefined, at: (a: At | undefined, d?: number) => number, hookUntil: number): ChapterR[] => {
@@ -76,18 +78,22 @@ export const liftNeeded = (faces: readonly FaceBand[]) => {
 };
 
 /** a chapter title sting: 2.6 s, a bar slides in from the left with "CHAPTER n" and the title, holds, slides out.
- *  `accent` / `edge` default to the Block Money look (yellow tab, red edge). */
-export const ChapterCard: React.FC<{ n: number; title: string; u: number; accent?: string; edge?: string }> = ({ n, title, u, accent = "#ffd23a", edge = "#ff3b30" }) => {
+ *  `accent` / `edge` default to the Block Money look (yellow tab, red edge).
+ *  `safe` (the law3d / biz3d / cyber3d kits, LONGFORM.md "Chapter cards"): the card never leaves the frame: it fades in
+ *  with a short 60 px glide instead of sliding in from off screen (no clipped "PAIR OF" frames), the title is ONE line
+ *  at the measured size `fs` (polish.ts chapterBox) and it sits at `top` (its own region, clear of boards and labels).
+ *  Without `safe` the output is exactly as before (Block Money, tech3d). */
+export const ChapterCard: React.FC<{ n: number; title: string; u: number; accent?: string; edge?: string; safe?: boolean; top?: number; fs?: number }> = ({ n, title, u, accent = "#ffd23a", edge = "#ff3b30", safe, top, fs }) => {
   if (u < 0 || u > LF.CHAPTER_CARD_S) return null;
   const inK = EASE_OUT(clamp(u / 0.35)), outK = EASE_OUT(clamp((u - (LF.CHAPTER_CARD_S - 0.35)) / 0.35));
-  const x = -1100 * (1 - inK) - 1300 * outK;
+  const x = safe ? -60 * (1 - inK) - 60 * outK : -1100 * (1 - inK) - 1300 * outK;
   const dim = 0.32 * inK * (1 - outK);
   return (
     <>
       <AbsoluteFill style={{ background: `rgba(10,6,16,${dim})` }} />
-      <div style={{ position: "absolute", left: 0, top: 330, transform: `translateX(${x}px)`, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-        <div style={{ marginLeft: 120, padding: "6px 18px", background: accent, color: "#140c1c", fontFamily: "Poppins", fontWeight: 800, fontSize: 34, letterSpacing: 4, borderRadius: 8 }}>{`CHAPTER ${n}`}</div>
-        <div style={{ marginTop: 14, padding: "18px 60px 22px 120px", background: "rgba(20,12,28,0.88)", borderRight: `14px solid ${edge}`, color: "#ffffff", fontFamily: "Poppins", fontWeight: 800, fontSize: 96, lineHeight: 1.05, maxWidth: 1500, textTransform: "uppercase" }}>{title}</div>
+      <div style={{ position: "absolute", left: 0, top: safe ? top ?? 330 : 330, transform: `translateX(${x}px)`, opacity: safe ? inK * (1 - outK) : 1, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+        <div style={{ marginLeft: 120, padding: "6px 18px", background: accent, color: "#140c1c", fontFamily: "Poppins", fontWeight: 800, fontSize: 34, letterSpacing: 4, borderRadius: 8, ...(safe ? { whiteSpace: "nowrap" as const } : {}) }}>{`CHAPTER ${n}`}</div>
+        <div style={{ marginTop: 14, padding: "18px 60px 22px 120px", background: "rgba(20,12,28,0.88)", borderRight: `14px solid ${edge}`, color: "#ffffff", fontFamily: "Poppins", fontWeight: 800, fontSize: safe ? fs ?? 96 : 96, lineHeight: 1.05, maxWidth: 1500, textTransform: "uppercase", ...(safe ? { whiteSpace: "nowrap" as const } : {}) }}>{title}</div>
       </div>
     </>
   );

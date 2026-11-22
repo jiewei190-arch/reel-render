@@ -25,6 +25,9 @@ export type LawSet = {
   anchors: Record<string, V3>;
   /** static QA boxes (no figure or flying prop may enter them) */
   blockers: { name: string; c: V3; h: V3 }[];
+  /** set pieces that can hide a face on screen (chairs, the bench, tables, rails): tools/polish_qa.mjs occlusion rule P4.
+   *  The blockers count too; these are the extra visual-only pieces (chair backs). Boxes are centre + half size. */
+  occluders?: { name: string; c: V3; h: V3 }[];
   render: (t: number, o?: { jury?: boolean }) => React.ReactNode;
 };
 
@@ -79,6 +82,12 @@ const courtroom: LawSet = {
     blocker("set.juryRail", [-3.25, 0, -3.3], [-3.1, 1.0, 0.3]),
     blocker("set.galleryRail", [-5, 0, 2.15], [-0.7, 0.95, 2.3]),
     blocker("set.galleryRailR", [0.7, 0, 2.15], [5, 0.95, 2.3]),
+  ],
+  // the chair backs drawn below (rbox sizes): the judge's high-back chair, the witness chair, two per counsel table
+  occluders: [
+    { name: "set.judgeChair", c: [0, 1.7, -5.25], h: [0.4, 0.75, 0.08] },
+    { name: "set.witnessChair", c: [2.9, 1.1, -3.5], h: [0.275, 0.45, 0.06] },
+    ...[-1.7, 1.7].flatMap((x) => [-0.4, 0.4].map((dx) => ({ name: `set.chair${x < 0 ? "P" : "D"}${dx < 0 ? "L" : "R"}`, c: [x + dx, 0.95, 1.55] as V3, h: [0.23, 0.45, 0.04] as V3 }))),
   ],
   render: (t, o) => (
     <>

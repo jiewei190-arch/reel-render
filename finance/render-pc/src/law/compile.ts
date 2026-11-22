@@ -11,11 +11,14 @@ import { visemeAt } from "../fin/lib/lipsync";
 import { makeAt } from "../fin/recipe/timing";
 import type { Word } from "../fin/recipe/types";
 import { LF, chapterCues, landscapeLens, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
+import { ANCHOR_LOOKBACK, MIN_SUB_PX, MIN_TEXT_PX, countPlan, countU, fitFs, placeChapters, spokenAnchor, textPx, widestDigits } from "../longform/polish";
+import type { CountPlan, Fit } from "../longform/polish";
 import type { ChapterR, FaceBand } from "../longform/kit";
 import { figBoxes, figFace, figHead, figState } from "./cast";
 import type { CastSpec, FigFace, FigPose, FigState, FigTrack } from "./cast";
 import { layoutOf } from "./layout";
 import type { LawLayout } from "./layout";
+import { hookBox } from "./hud";
 import { KIT_BOX } from "./objects";
 import { LAW_SETS } from "./sets";
 import type { LawSet, LawSetId } from "./sets";
@@ -39,7 +42,11 @@ export type Lens = { a: number; b: number; subj: (t: number) => V3; off: V3; fov
 export type Placement = { p: V3; yaw: number; pitch: number; roll: number; s: number };
 export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number };
 export type FxR = { fx: "shake" | "flash" | "papers"; at: number; p: (t: number) => V3; gain: number };
-export type DeviceR = { key: string; act: LawAction; t0: number; t1: number; target?: (t: number) => V3; zeroAt?: number };
+export type DeviceR = { key: string; act: LawAction; t0: number; t1: number; target?: (t: number) => V3; zeroAt?: number;
+  /** counters: the count window (lands on `to` by the anchor word's end, holds COUNT_HOLD before the cut / drain) */
+  plan?: CountPlan; final?: string };
+/** a device's measured text: font size per line and whether it fits its box at the minimum size (tools/polish_qa.mjs) */
+export type DeviceFit = { key: string; shot: string; kind: string; lines: { what: string; fit: Fit; alt?: string }[] };
 export type LawShotR = { id: string; a: number; b: number; set: LawSetId; spec: LawShot; lens: Lens; kicks: [number, number][]; figs: FigTrack[]; props: PropR[]; devices: DeviceR[]; fx: FxR[];
   /** landscape only: the lower-third caption centre (px at 1080 tall) and how far caption-safe framing lifted the shot */
   capY?: number; lift?: number };
@@ -49,6 +56,10 @@ export type DeviceBox = {
   key: string; kind: LawAction["do"]; x: number; y: number; w: number; h: number; u: number; age: number;
   label?: string; text?: string; sub?: string; title?: string; year?: string; place?: string; note?: string; value?: string; zero?: number;
   ax?: number; ay?: number; line?: number;
+  /** measured font sizes (px) of the device's lines, by role (title / value / label / text / sub / meta / note) */
+  fs?: Record<string, number>;
+  /** counters: the final value text and whether the count has landed */
+  final?: string; landed?: boolean;
 };
 
 export type LawCompiled = {
@@ -67,7 +78,20 @@ export type LawCompiled = {
   chapters: ChapterR[];
   /** landscape: the face boxes (px) in the caption column of a shot, sampled across it */
   faceBands: (s: LawShotR) => FaceBand[];
+  /** every device's measured text (text-fit rule) */
+  fits: DeviceFit[];
+  /** polish QA hooks (tools/polish_qa.mjs): the counters, a counter's shown value, every 2D card on screen, the set's
+   *  face-hiding pieces, who is speaking */
+  counters: CounterQ[];
+  counterAt: (key: string, t: number) => { value: string; u: number; zero: number } | null;
+  cardRectsAt: (t: number) => CardQ[];
+  occludersAt: (t: number) => { name: string; c: V3; h: V3; yaw?: number }[];
+  speakingAt: (t: number) => string[];
 };
+/** a counter for the polish QA: target, final text, the count window */
+export type CounterQ = { key: string; shot: string; kind: string; title: string; target: number; decimals: number; final: string; t0: number; until: number; plan: CountPlan };
+/** a 2D card on screen (px) */
+export type CardQ = { label: string; x0: number; x1: number; y0: number; y1: number; landed: boolean };
 
 /** camera presets (all keep moving: a push, an orbit, a dolly, a crane, a slam creep); `face` is a layout key */
 export const LAW_CAMS = {
@@ -100,7 +124,26 @@ export const project = (cam: Cam, p: V3, L: LawLayout): { x: number; y: number; 
   return { x: L.W / 2 + (dot(d, r) / z) * k, y: L.H / 2 - (dot(d, u) / z) * k, k: k / z, z };
 };
 /** device card sizes (Poppins 800, uppercase), per layout */
-export const exhibitSize = (L: LawLayout, label: string, text: string) => ({ w: Math.round(Math.max(text.length * 0.64 * L.exhibitFs, label.length * 0.62 * (L.exhibitLabelFs ?? 36)) + 80), h: Math.round(L.exhibitFs * 1.15 + 36 + 52) });
+/** measured (src/longform/polish.ts): the tag text shrinks to fit the safe width (never below 42 px: the gate fails it) */
+export const exhibitFit = (L: LawLayout, label: string, text: string) => {
+  const room = L.safeX1 - L.safeX0 - 80;
+  return { text: fitFs(text.toUpperCase(), L.exhibitFs, room, 0, MIN_TEXT_PX), label: fitFs(label.toUpperCase(), L.exhibitLabelFs ?? 34, room - 44, 4, MIN_SUB_PX) };
+};
+export const exhibitSize = (L: LawLayout, label: string, text: string) => {
+  const f = exhibitFit(L, label, text);
+  return { w: Math.round(Math.max(f.text.w, f.label.w + 44) + 80), h: Math.round(L.exhibitFs * 1.15 + 36 + 52) };
+};
+/** the counter's text: title and value font sizes fitted to the board (the value at its widest while counting) */
+export const counterFit = (L: LawLayout, w: number, title: string, widest: string, drain: boolean) => ({
+  title: fitFs(title.toUpperCase(), L.board.fsTitle, w - 28, 2, MIN_SUB_PX),
+  // the drain pulse scales the value 1.15x: leave room for it
+  value: fitFs(widestDigits(widest), L.board.fsValue, (w - 40) / (drain ? 1.15 : 1), -2, MIN_TEXT_PX),
+});
+/** the counter's displayed text for a value */
+export const counterText = (ac: Extract<LawAction, { do: "counter" }>, n: number) => {
+  const s = ac.compact && Math.abs(n) >= 1e6 ? `${(n / 1e6).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 1 })}M` : n.toLocaleString("en-US", { minimumFractionDigits: ac.decimals ?? 0, maximumFractionDigits: ac.decimals ?? 0 });
+  return `${ac.prefix ?? ""}${s}${ac.suffix ?? ""}`;
+};
 export const boardSize = (L: LawLayout) => ({ w: L.board.w, h: L.board.h });
 const rectsHit = (a: { x: number; y: number; w: number; h: number }, b: { x: number; y: number; w: number; h: number }, m = 14) =>
   Math.abs(a.x - b.x) * 2 < a.w + b.w + 2 * m && Math.abs(a.y - b.y) * 2 < a.h + b.h + 2 * m;
@@ -290,7 +333,17 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       if (t1 <= t0) throw new Error(`recipe ${id}: ${ac.do} at ${t0.toFixed(2)} s ends before it starts (${t1.toFixed(2)} s)`);
       if (ac.do === "exhibit" && ac.text.trim().split(/\s+/).length > 4) throw new Error(`recipe ${id}: exhibit text "${ac.text}" has more than 4 words`);
       if (ac.do === "verdict") { kicks.push([t0, 1.6]); if (ac.text.trim().split(/\s+/).length > 2) throw new Error(`recipe ${id}: verdict "${ac.text}" must be 1-2 words`); }
-      devices.push({ key: `${id}.${ac.do}.${devices.length}`, act: ac, t0, t1, target: ac.do === "exhibit" && ac.on ? targetFn(ac.on) : undefined, zeroAt: ac.do === "counter" && ac.zeroAt !== undefined ? at(ac.zeroAt) : undefined });
+      const dr: DeviceR = { key: `${id}.${ac.do}.${devices.length}`, act: ac, t0, t1, target: ac.do === "exhibit" && ac.on ? targetFn(ac.on) : undefined, zeroAt: ac.do === "counter" && ac.zeroAt !== undefined ? at(ac.zeroAt) : undefined };
+      if (ac.do === "counter") {
+        // the count window: lands on `to` by the anchor word's end and holds before the cut / the drain (polish.ts)
+        const until = Math.min(t1, b, dr.zeroAt ?? Infinity);
+        let anchor: CountPlan["anchor"];
+        if (ac.land !== undefined) { const tl = at(ac.land); const w = words.find((q) => Math.abs(q.t - tl) < 0.02); anchor = { w: w?.w ?? String(ac.land), t: tl, end: w ? w.end : tl, given: true }; }
+        else if (ac.value === undefined) anchor = spokenAnchor(words, ac.to ?? 0, t0 - ANCHOR_LOOKBACK, until, ac.decimals ?? 0);
+        dr.plan = ac.value !== undefined ? countPlan({ start: t0, dur: 0, until }) : countPlan({ start: t0, dur: ac.dur ?? 1.2, until, anchor });
+        dr.final = ac.value ?? counterText(ac, ac.to ?? 0);
+      }
+      devices.push(dr);
     }
     const fx: FxR[] = (sp.fx ?? []).map((f) => {
       const o = typeof f === "string" ? { fx: f } : f;
@@ -366,10 +419,12 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     s.lift = f0 - s.lens.face;
     s.capY = lowerThirdY(faceBands(s));
   }
-  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
 
   // ---------------------------------------------------- devices: layout once per device (at its pop-in), then animate
   const plan = new Map<string, { x: number; y: number; w: number; h: number }>();
+  // chapters are placed after the fixed devices (below); exhibit tags are laid out lazily, after that
+  let chaptersPlacedV: ChapterR[] = [];
+  const chaptersPlaced = () => chaptersPlacedV;
   const facesRects = (cam: Cam, t: number) => figsAt(t).filter((st) => st.spec.role !== "juror").map((st) => { const f = figFace(st); const p = project(cam, f.c, L); return p ? { x: p.x, y: p.y, w: 2 * f.r * p.k + 90, h: 2 * f.r * p.k + 90 } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
   const rectOf = (d: DeviceR, s: LawShotR): { x: number; y: number; w: number; h: number } => {
     const got = plan.get(d.key);
@@ -378,7 +433,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     const top = hookOn(t) ? L.safeTopHook : L.safeTop;
     const ac = d.act;
     let r: { x: number; y: number; w: number; h: number };
-    if (ac.do === "verdict") { const w = Math.min(L.verdict.maxW, ac.text.length * 0.7 * L.verdict.fs + 120); r = { x: L.verdict.x, y: L.verdict.y, w, h: L.verdict.fs * 1.2 + (ac.sub ? 90 : 0) }; }
+    if (ac.do === "verdict") { const f = fitFs(ac.text.toUpperCase(), L.verdict.fs, L.verdict.maxW - 104 - 40, 6, MIN_TEXT_PX); const w = Math.min(L.verdict.maxW, f.w + 104 + 40); r = { x: L.verdict.x, y: L.verdict.y, w, h: L.verdict.fs * 1.2 + (ac.sub ? 90 : 0) }; }
     else if (ac.do === "caseCard") r = { ...L.caseCard };
     else if (ac.do === "counter") {
       const { w, h } = boardSize(L), pos = ac.pos ?? "right";
@@ -388,6 +443,8 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       const sz = exhibitSize(L, label, ac.text);
       const cam = camAt(t);
       const others = s.devices.filter((o) => o.key !== d.key && o.t0 <= d.t0 && o.t1 > d.t0).map((o) => rectOf(o, s));
+      // the chapter cards on screen while the tag is (their own region; polish.ts placeChapters)
+      for (const ch of chaptersPlaced()) if (ch.box && ch.card < d.t1 && ch.card + LF.CHAPTER_CARD_S > d.t0 - LEAD) others.push({ x: (ch.box.x0 + ch.box.x1) / 2, y: (ch.box.y0 + ch.box.y1) / 2, w: ch.box.x1 - ch.box.x0, h: ch.box.y1 - ch.box.y0 });
       const faces = facesRects(cam, t);
       const q = d.target ? project(cam, d.target(t), L) : null;
       const ax = q?.x ?? L.W / 2, ay = q?.y ?? top + sz.h / 2 + 30;
@@ -409,6 +466,17 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     plan.set(d.key, r);
     return r;
   };
+  // long-form chapter cards get their own screen region (polish.ts placeChapters): the first top clear of the fixed devices
+  // (counters, case card, verdict) on screen during the card; exhibit tags then avoid the card (exhibitAvoid)
+  const chapters = LS ? placeChapters(resolveChapters(recipe.chapters, at, hookUntil), (c0, c1) => {
+    const out: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    for (const s of shots) {
+      if (s.b <= c0 || s.a >= c1) continue;
+      for (const d of s.devices) if (d.act.do !== "exhibit" && d.t0 - LEAD < Math.min(c1, s.b) && Math.min(d.t1, s.b) > c0) { const r = rectOf(d, s); const tab = d.act.do === "caseCard" ? 46 : 0; out.push({ x0: r.x - r.w / 2, x1: r.x + r.w / 2, y0: r.y - r.h / 2 - tab, y1: r.y + r.h / 2 }); }
+    }
+    return out;
+  }, LF.CHAPTER_CARD_S) : [];
+  chaptersPlacedV = chapters;
   const devicesAt = (t: number): DeviceBox[] => {
     const s = shotAt(t);
     const cam = camAt(t);
@@ -428,20 +496,64 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       if (ac.do === "counter") {
         box.title = ac.title.toUpperCase();
         let v = ac.to ?? 0;
-        if (ac.value === undefined) v = lerp(ac.from ?? 0, ac.to ?? 0, EASE_OUT(prog(t, d.t0, d.t0 + (ac.dur ?? 1.2))));
+        if (ac.value === undefined) v = lerp(ac.from ?? 0, ac.to ?? 0, countU(t, d.plan!, EASE_OUT));
         let zero = 0;
         if (d.zeroAt !== undefined && t >= d.zeroAt - LEAD) { zero = clamp((t - d.zeroAt) / 0.5); v = lerp(v, 0, EASE_OUT(zero)); }
         box.zero = zero;
-        const fmt = (n: number) => {
-          if (ac.compact && Math.abs(n) >= 1e6) return `${(n / 1e6).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 1 })}M`;
-          return n.toLocaleString("en-US", { minimumFractionDigits: ac.decimals ?? 0, maximumFractionDigits: ac.decimals ?? 0 });
-        };
-        box.value = ac.value !== undefined && zero === 0 ? ac.value : `${ac.prefix ?? ""}${fmt(v)}${ac.suffix ?? ""}`;
+        box.value = ac.value !== undefined && zero === 0 ? ac.value : zero === 0 && t >= d.plan!.end ? d.final! : counterText(ac, v);
+        box.final = d.final; box.landed = zero === 0 && t >= d.plan!.end;
       }
+      box.fs = fitOf(d, r).fs;
       out.push(box);
     }
     return out;
   };
+  // ---------------------------------------------------- text-fit: every device line measured once (polish.ts fitFs)
+  const fitCache = new Map<string, { fs: Record<string, number>; lines: DeviceFit["lines"] }>();
+  const fitOf = (d: DeviceR, r: { w: number }) => {
+    const got = fitCache.get(d.key);
+    if (got) return got;
+    const ac = d.act, lines: DeviceFit["lines"] = [];
+    const fs: Record<string, number> = {};
+    const add = (role: string, what: string, f: Fit, alt?: string) => { fs[role] = f.fs; lines.push({ what, fit: f, alt }); };
+    if (ac.do === "counter") {
+      const widest = [ac.value, counterText(ac, ac.from ?? 0), d.final].filter(Boolean).reduce((a, x) => (textPx(widestDigits(x!), 100) > textPx(widestDigits(a!), 100) ? x : a))!;
+      const f = counterFit(L, r.w, ac.title, widest, d.zeroAt !== undefined);
+      add("title", "counter title", f.title, "move the detail into the voice-over"); add("value", "counter value", f.value, `use "compact": true ($54M)`);
+    } else if (ac.do === "exhibit") {
+      const f = exhibitFit(L, ac.label ?? "EXHIBIT A", ac.text);
+      add("label", "exhibit label", f.label); add("text", "exhibit text", f.text, "split it into two tags");
+    } else if (ac.do === "caseCard") {
+      const room = r.w - 98;
+      add("title", "case card title", fitFs(ac.title.toUpperCase(), 92, room, -1, MIN_TEXT_PX), "a short case name (\"PEARSON v. CHUNG\")");
+      add("meta", "case card year / place", fitFs([ac.year, ac.place?.toUpperCase()].filter(Boolean).join("  ·  "), 52, room, 0, MIN_SUB_PX));
+      if (ac.note) add("note", "case card note", fitFs(ac.note.toUpperCase(), 36, room, 0, MIN_SUB_PX));
+    } else if (ac.do === "verdict") {
+      add("text", "verdict", fitFs(ac.text.toUpperCase(), L.verdict.fs, L.verdict.maxW - 144, 6, MIN_TEXT_PX), "one word");
+      if (ac.sub) add("sub", "verdict sub line", fitFs(ac.sub.toUpperCase(), 64, L.verdict.maxW, 0, MIN_TEXT_PX));
+    }
+    const v = { fs, lines };
+    fitCache.set(d.key, v);
+    return v;
+  };
+  const fits: DeviceFit[] = [];
+  for (const s of shots) for (const d of s.devices) if (d.act.do !== "gavel") fits.push({ key: d.key, shot: s.id, kind: d.act.do, lines: fitOf(d, rectOf(d, s)).lines });
+  // ---------------------------------------------------- polish QA hooks
+  const counters: CounterQ[] = shots.flatMap((s) => s.devices.filter((d) => d.act.do === "counter" && d.act.value === undefined).map((d) => {
+    const ac = d.act as Extract<LawAction, { do: "counter" }>;
+    return { key: d.key, shot: s.id, kind: "counter", title: ac.title, target: ac.to ?? 0, decimals: ac.decimals ?? 0, final: d.final!, t0: d.t0, until: d.plan!.until, plan: d.plan! };
+  }));
+  const counterAt = (key: string, t: number) => { const d = devicesAt(t).find((x) => x.key === key); return d ? { value: d.value ?? "", u: d.u, zero: d.zero ?? 0 } : null; };
+  const cardRectsAt = (t: number): CardQ[] => {
+    const out: CardQ[] = devicesAt(t).filter((d) => d.u > 0.05).map((d) => {
+      const tab = d.kind === "caseCard" ? 46 : 0, w = d.kind === "verdict" ? Math.min(d.w, L.verdict.maxW) : d.w;
+      return { label: `${d.kind} "${d.text ?? d.title ?? d.value ?? ""}"`, x0: d.x - w / 2, x1: d.x + w / 2, y0: d.y - d.h / 2 - tab, y1: d.y + d.h / 2, landed: d.u >= 0.99 };
+    });
+    if (t <= hookUntil || (hookAgain !== null && t >= hookAgain)) { const hb = hookBox(L, recipe.hook.text); out.push({ label: "hook", x0: hb.x - hb.w / 2, x1: hb.x + hb.w / 2, y0: hb.y - hb.h / 2, y1: hb.y + hb.h / 2, landed: true }); }
+    return out;
+  };
+  const occludersAt = (t: number) => { const st = LAW_SETS[shotAt(t).set]; return [...st.blockers, ...(st.occluders ?? [])]; };
+  const speakingAt = (t: number) => { const s = shotAt(t); if (!words.some((w) => t >= w.t && t < w.end)) return []; return s.figs.filter((f) => f.talk).map((f) => f.id); };
   const textsAt = (t: number) => {
     const out: string[] = [];
     if (t <= hookUntil) out.push(recipe.hook.text.replace(/\*/g, ""));
@@ -460,7 +572,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       if (ac.do === "verdict") cues.push({ t: t0 - 0.02, sfx: "impact", db: 0 }, { t: t0, sfx: "boom", db: -4 });
       if (ac.do === "exhibit") cues.push({ t: t0 - 0.08, sfx: "whoosh", db: -7 }, { t: t0, sfx: "ding", db: -9 });
       if (ac.do === "caseCard") cues.push({ t: t0 - 0.1, sfx: "whoosh", db: -6 }, { t: t0 + 0.05, sfx: "thud", db: -8 });
-      if (ac.do === "counter") { cues.push({ t: t0, sfx: "ding", db: -10 }); if (ac.value === undefined) cues.push({ t: t0 + (ac.dur ?? 1.2), sfx: "ding", db: -7 }); if (ac.zeroAt !== undefined) cues.push({ t: at(ac.zeroAt), sfx: "whoosh", db: -5 }); }
+      if (ac.do === "counter") { cues.push({ t: t0, sfx: "ding", db: -10 }); if (ac.value === undefined) { const dv = s.devices.find((x) => x.act === ac); cues.push({ t: dv?.plan ? dv.plan.end : t0 + (ac.dur ?? 1.2), sfx: "ding", db: -7 }); } if (ac.zeroAt !== undefined) cues.push({ t: at(ac.zeroAt), sfx: "whoosh", db: -5 }); }
     }
     for (const p of s.props) if (p.a === s.a && p.spec.motion === "flyIn") cues.push({ t: p.hit - 0.35, sfx: "whoosh", db: -8 });
     for (const p of s.props) if (p.a === s.a && p.spec.motion === "dropIn") cues.push({ t: p.hit - 0.02, sfx: "impact", db: -2 }, { t: p.hit, sfx: "thud", db: -3 });
@@ -472,7 +584,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "suspense", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, figsAt, devicesAt, qa, textsAt, audio, landscape: LS, chapters, faceBands };
+  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, figsAt, devicesAt, qa, textsAt, audio, landscape: LS, chapters, faceBands, fits, counters, counterAt, cardRectsAt, occludersAt, speakingAt };
 };
 
 // ------------------------------------------------------------------ figure tracks

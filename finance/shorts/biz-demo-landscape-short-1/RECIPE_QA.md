@@ -6,11 +6,20 @@ Composition: `BizDemoLandscapeShort1Recipe` in `src/index.biz.ts` (portrait 1080
 
 - none: no executive's body or head enters a set blocker, a kit prop or another executive; nobody below the floor.
 
-## Framing QA (screen space, 940 frames, 0.05 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 940 frames, 0.04 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0.
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close.
+
+## Polish QA (tools/polish_qa.mjs, 0.04 s): 0 fail(s)
+
+P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFORM.md "Polish rules".
+
+- none: every counter lands on its target by its anchor word and holds, every line fits its box, chapter cards sit clear, no set piece hides a featured face.
+
+- warn S02 counter 'Netflix losses, 2000' (target -$57M): no anchor word: the voice never says -$57M between 1.2 and 3.8 s, so it lands by 3.29 s (0.5 s before it leaves); say the number there or set "land" to the word that means it
+- warn S11 counter 'debt' (target $1.46B): no anchor word: the voice never says $1.46B between 24.4 and 27.7 s, so it lands by 27.18 s (0.5 s before it leaves); say the number there or set "land" to the word that means it
 
 ## Frame-0 opener (tools/frame0_hero.mjs): 0 fail(s)
 
@@ -51,5 +60,8 @@ Hero props in S01: none. Number cards at 0.00 s: "the stake" 85 % wide, 100 % op
 | framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
 | framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | face rule replaced by the opener: giant stake board "the stake" 85 % of the width |
+| polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point) | PASS | 3 counter(s) land and hold; 2 without an anchor word (warn) |
+| polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped | PASS | 17 line(s) fit |
+| polish P4: no set piece (chair, table, rack) over a featured face (>= 30 % for > 5 frames) | PASS | faces clear |
 
 Frame-0 coverage by subject: ceo 38 %, backWall 0 %.

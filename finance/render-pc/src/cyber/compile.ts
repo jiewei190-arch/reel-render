@@ -21,6 +21,8 @@ import { figureBoxes, figureRig, figWorld } from "./figure";
 import type { FigurePose, FigureRig, FigureTrack } from "./figure";
 import { chapterCues, landscapeLens, LF, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
 import type { ChapterR, FaceBand } from "../longform/kit";
+import { ANCHOR_LOOKBACK, MIN_SUB_PX, MIN_TEXT_PX, countPlan, countU, fitFs, placeChapters, spokenAnchor, textPx, widestDigits } from "../longform/polish";
+import type { CountPlan, Fit } from "../longform/polish";
 import { layoutOf } from "./layout";
 import type { Layout } from "./layout";
 import { CYBER_OBJECTS } from "./objects";
@@ -45,21 +47,30 @@ export type Box = { name: string; c: V3; h: V3 };
 export type Lens = { a: number; b: number; subj: (t: number) => V3; off: V3; fov: (t: number) => number; face: number; push: number; roll: [number, number]; blur: number; posAt?: (t: number) => V3 };
 export type PropR = { key: string; spec: CyberProp; a: number; b: number; hit: number; def?: ObjDef; place: (t: number) => Placement; show: (t: number) => number; fig?: FigureTrack };
 export type LabelR = { key: string; text: string; t0: number; t1: number; side: "left" | "right" | "auto"; target: (t: number) => V3; shot: string; tone: "cyan" | "red" };
-export type BoardR = { spec: CyberBoard; t0: number; t1: number };
+export type BoardR = { spec: CyberBoard; t0: number; t1: number; key: string; shot: string;
+  /** a counting board: the count window (polish.ts countPlan) and its final text */
+  plan?: CountPlan; final?: string };
+export type DeviceFit = { key: string; shot: string; kind: string; lines: { what: string; fit: Fit; alt?: string }[] };
+export type CounterQ = { key: string; shot: string; kind: string; title: string; target: number; decimals: number; final: string; t0: number; until: number; plan: CountPlan };
+export type CardQ = { label: string; x0: number; x1: number; y0: number; y1: number; landed: boolean };
 export type FxR = { fx: "shake" | "sparks"; at: number; p: (t: number) => V3; gain: number };
 export type CyberShotR = { id: string; a: number; b: number; set: CyberSetId; spec: CyberShot; lens: Lens; kicks: [number, number][]; bolts: BoltTrack[]; props: PropR[]; labels: LabelR[]; boards: BoardR[]; fx: FxR[]; tin: "glitch" | "punch" | "cut" | "whip";
   /** landscape: the lower-third caption centre (fraction of the 1080 height) and how far caption-safe framing lifted the subject */
   capY?: number; lift?: number };
 export type Cue = { t: number; sfx: string; db?: number };
-export type LabelBox = { key: string; text: string; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number; tone: "cyan" | "red" };
-export type BoardBox = { title: string; value: string; x: number; y: number; w: number; h: number; u: number; tone: "cyan" | "magenta" | "red"; giant?: boolean; t0?: number };
+export type LabelBox = { key: string; text: string; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number; tone: "cyan" | "red"; fs?: number };
+export type BoardBox = { title: string; value: string; x: number; y: number; w: number; h: number; u: number; tone: "cyan" | "magenta" | "red"; giant?: boolean; t0?: number; key?: string;
+  /** measured title / value font sizes (px; the value at its widest while counting) */
+  fs?: { title: number; value: number } };
 /** a story device on screen at t: u = its in/out envelope (0..1) */
 export type DeviceBox =
   | { kind: "case"; u: number; tau: number; x: number; y: number; w: number; h: number; name: string; year: string; amount: string; title: string; status: string }
-  | { kind: "money"; u: number; tau: number; x: number; y: number; w: number; h: number; label: string; value: string; frac: number }
+  | { kind: "money"; u: number; tau: number; x: number; y: number; w: number; h: number; label: string; value: string; frac: number; key?: string }
   | { kind: "check"; u: number; tau: number; x: number; y: number; w: number; h: number; title: string; items: { text: string; on: number }[] }
   | { kind: "count"; u: number; tau: number; x: number; y: number; w: number; h: number; label: string; value: string }
   | { kind: "alert"; u: number; tau: number; x: number; y: number; w: number; h: number; text: string };
+/** measured font sizes of a device's lines (px, by role) */
+export type DeviceFs = { fs?: Record<string, number>; key?: string };
 /** a full-frame visual event: glitch transitions and alert washes (the safety check reads these) */
 export type FlashEv = { kind: "glitch" | "alert"; t0: number; t1: number; peak: number };
 
@@ -87,6 +98,14 @@ export type CyberCompiled = {
   chapters: ChapterR[];
   /** landscape: the faces (BOLT's screen, the figure's hood) inside the caption column at t, as px bands of the 1080 height */
   facesAt: (t: number) => FaceBand[];
+  /** polish QA hooks (tools/polish_qa.mjs) */
+  layout: Layout;
+  fits: DeviceFit[];
+  counters: CounterQ[];
+  counterAt: (key: string, t: number) => { value: string; u: number; zero: number } | null;
+  cardRectsAt: (t: number) => CardQ[];
+  occludersAt: (t: number) => { name: string; c: V3; h: V3; yaw?: number }[];
+  speakingAt: (t: number) => string[];
 };
 
 /** camera presets: every one keeps moving */
@@ -122,7 +141,15 @@ export const project = (cam: Cam, p: V3, L: Layout): { x: number; y: number; k: 
   const k = L.H / 2 / Math.tan((cam.fov * Math.PI) / 360);
   return { x: L.W / 2 + (dot(d, r) / z) * k, y: L.H / 2 - (dot(d, u) / z) * k, k: k / z, z };
 };
-export const labelSize = (text: string, L: Layout) => ({ w: Math.round(text.length * 0.66 * L.label.fs + 64 * L.k), h: Math.round(L.label.fs * 1.15 + 34 * L.k) });
+/** a callout label's size, measured (polish.ts): the text shrinks to fit the safe width, never below 42 px */
+export const labelFit = (text: string, L: Layout) => fitFs(text, L.label.fs, L.safe.x1 - L.safe.x0 - 64 * L.k, 0, MIN_TEXT_PX);
+export const labelSize = (text: string, L: Layout) => { const f = labelFit(text, L); return { w: Math.round(f.w + 64 * L.k), h: Math.round(L.label.fs * 1.15 + 34 * L.k), fs: f.fs }; };
+/** a board's title / value fitted to its width (the giant board too) */
+export const boardFit = (L: Layout, title: string, widest: string, giant: boolean) => {
+  const g = giant ? L.board.giant : null, w = g ? g.w : L.board.w;
+  return { title: fitFs(title.toUpperCase(), g ? g.titleFs : 38 * L.k, w - 20, 2, MIN_SUB_PX), value: fitFs(widestDigits(widest), g ? g.valueFs : 112 * L.k, w - 40, -2, MIN_TEXT_PX) };
+};
+const boardText = (c: NonNullable<CyberBoard["count"]>, v: number) => `${c.prefix ?? ""}${v.toLocaleString("en-US", { minimumFractionDigits: c.decimals ?? 0, maximumFractionDigits: c.decimals ?? 0 })}${c.suffix ?? ""}`;
 const rectsHit = (a: { x: number; y: number; w: number; h: number }, b: { x: number; y: number; w: number; h: number }, m = 14) =>
   Math.abs(a.x - b.x) * 2 < a.w + b.w + 2 * m && Math.abs(a.y - b.y) * 2 < a.h + b.h + 2 * m;
 
@@ -390,7 +417,18 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     fx.filter((f) => f.fx === "shake").forEach((f) => kicks.push([f.at, 1.3 * f.gain]));
     props.filter((p) => p.spec.motion === "dropIn").forEach((p) => kicks.push([p.hit, 0.8]));
     for (const ac of sp.actions ?? []) if (ac.do === "explode") kicks.push([at(ac.at) + 0.05, 0.6]);
-    const boards = (sp.boards ?? []).map((bd) => ({ spec: bd, t0: at(bd.at), t1: at(bd.until, b) }));
+    const boards: BoardR[] = (sp.boards ?? []).map((bd, k) => {
+      const r: BoardR = { spec: bd, t0: at(bd.at), t1: at(bd.until, b), key: `${id}.board${k}`, shot: id };
+      const c = bd.count;
+      if (c) {
+        // lands on `to` by the anchor word's end and holds before the cut (polish.ts)
+        const until = Math.min(r.t1, b);
+        const anchor = c.land !== undefined ? (() => { const tl = at(c.land); const w = words.find((q) => Math.abs(q.t - tl) < 0.02); return { w: w?.w ?? String(c.land), t: tl, end: w ? w.end : tl, given: true }; })() : spokenAnchor(words, c.to, r.t0 - ANCHOR_LOOKBACK, until, c.decimals ?? 0);
+        r.plan = countPlan({ start: r.t0, dur: c.dur ?? 1.0, until, anchor });
+        r.final = boardText(c, c.to);
+      }
+      return r;
+    });
     shots.push({ id, a, b, set: curSet, spec: sp, lens, kicks, bolts, props, labels, boards, fx, tin });
   });
 
@@ -488,7 +526,6 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   };
   const SAMPLES = [0.1, 0.3, 0.5, 0.7, 0.92];
   const shotFaces = (s: CyberShotR) => SAMPLES.flatMap((u) => facesAt(Math.min(s.b - 1e-3, s.a + (s.b - s.a) * u)));
-  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
   if (LS) {
     for (const s of shots) {
       // lift the subject (the lens's face fraction) when a face lands in the lower-third band, unless cam.face is set
@@ -512,15 +549,22 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     const { w, h, margin } = L.board, pos = bd.spec.pos ?? "right";
     return { x: pos === "left" ? margin + w / 2 : pos === "top" ? L.W / 2 : L.W - margin - w / 2, y: pos === "top" ? top + h / 2 : top + 40 * L.k + h / 2, w, h };
   }
+  const boardFitCache = new Map<string, ReturnType<typeof boardFit>>();
+  const boardFitRaw = (bd: BoardR) => {
+    let f = boardFitCache.get(bd.key);
+    if (!f) { const c = bd.spec.count; const ws = c ? [boardText(c, c.from), bd.final!] : [bd.spec.value ?? ""]; f = boardFit(L, bd.spec.title, ws.reduce((a, x) => (textPx(widestDigits(x), 100) > textPx(widestDigits(a), 100) ? x : a)), bd.spec.size === "giant"); boardFitCache.set(bd.key, f); }
+    return f;
+  };
+  const boardFitOf = (bd: BoardR) => { const f = boardFitRaw(bd); return { title: f.title.fs, value: f.value.fs }; };
   const boardsAt = (t: number): BoardBox[] => {
     const out: BoardBox[] = [];
     for (const bd of shotAt(t).boards) {
       if (t < bd.t0 - LEAD || t >= bd.t1) continue;
       const c = bd.spec.count;
       let value = bd.spec.value ?? "";
-      if (c) { const v = lerp(c.from, c.to, EASE_OUT(prog(t, bd.t0, bd.t0 + (c.dur ?? 1.0)))); value = `${c.prefix ?? ""}${v.toLocaleString("en-US", { minimumFractionDigits: c.decimals ?? 0, maximumFractionDigits: c.decimals ?? 0 })}${c.suffix ?? ""}`; }
+      if (c) { const k = countU(t, bd.plan!, EASE_OUT); value = k >= 1 ? bd.final! : boardText(c, lerp(c.from, c.to, k)); }
       // a board that starts at frame 0 is fully on at frame 0 (no fade-in ghost at 0.00 s: the frame-0 gate checks it)
-      out.push({ title: bd.spec.title.toUpperCase(), value, ...boardRect(bd, t), u: (bd.t0 <= 1e-6 ? 1 : clamp((t - bd.t0 + LEAD) / 0.25)) * clamp((bd.t1 - t) / 0.15), tone: bd.spec.tone ?? "cyan", giant: bd.spec.size === "giant", t0: bd.t0 });
+      out.push({ title: bd.spec.title.toUpperCase(), value, ...boardRect(bd, t), u: (bd.t0 <= 1e-6 ? 1 : clamp((t - bd.t0 + LEAD) / 0.25)) * clamp((bd.t1 - t) / 0.15), tone: bd.spec.tone ?? "cyan", giant: bd.spec.size === "giant", t0: bd.t0, key: bd.key, fs: boardFitOf(bd) });
     }
     return out;
   };
@@ -530,20 +574,51 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   const env = (t: number, t0: number, t1: number, fin = 0.28, fout = 0.2) => (t0 <= 1e-6 ? 1 : clamp((t - t0 + LEAD) / fin)) * clamp((t1 - t) / fout);
   const fmtNum = (v: number, d = 0) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
   const caseR = (recipe.caseFile ?? []).map((c) => ({ c, t0: at(c.at), t1: at(c.until, at(c.at) + 2.5) }));
-  const moneyR = (recipe.money ?? []).map((m) => ({ m, t0: at(m.at), t1: at(m.until, at(m.at) + 2.5) }));
+  const moneyR = (recipe.money ?? []).map((m, i) => {
+    const t0 = at(m.at), t1 = at(m.until, at(m.at) + 2.5);
+    const anchor = m.land !== undefined ? (() => { const tl = at(m.land); const w = words.find((q) => Math.abs(q.t - tl) < 0.02); return { w: w?.w ?? String(m.land), t: tl, end: w ? w.end : tl, given: true }; })() : spokenAnchor(words, m.to, t0 - ANCHOR_LOOKBACK, t1, m.decimals ?? 0);
+    return { m, t0, t1, key: `money${i}`, plan: countPlan({ start: t0 + 0.15, dur: m.dur ?? 1.6, until: t1, anchor }), final: `${m.prefix ?? "$"}${fmtNum(m.to, m.decimals ?? 0)}${m.suffix ?? ""}` };
+  });
   const countR = (recipe.countdown ?? []).map((m) => ({ m, t0: at(m.at), t1: at(m.until, at(m.at) + 2.5) }));
   const checkR = recipe.checklist ? (() => { const k = recipe.checklist!; const t0 = at(k.at); return { k, t0, t1: at(k.until, end + 1), ticks: k.items.map((_, i) => (k.ticks?.[i] !== undefined ? at(k.ticks[i]) : t0 + 0.5 + i * 0.6)) }; })() : null;
   if (checkR && (checkR.k.items.length < 2 || checkR.k.items.length > 4)) throw new Error("recipe: checklist needs 2-4 items");
   if (checkR) for (const it of checkR.k.items) if (it.split(/\s+/).length > 5) throw new Error(`recipe: checklist item "${it}" has more than 5 words`);
   const alertsR = (recipe.alerts ?? []).map((a) => ({ a, t0: at(a.at), t1: at(a.at) + (a.dur ?? ALERT_DUR) }));
   const flashes: FlashEv[] = [...glitches, ...alertsR.map((x) => ({ kind: "alert" as const, t0: x.t0, t1: x.t1, peak: ALERT_PEAK }))].sort((p, q) => p.t0 - q.t0);
-  const devicesAt = (t: number): DeviceBox[] => {
+  const devicesAt = (t: number): (DeviceBox & DeviceFs)[] => devicesRaw(t).map((d) => ({ ...d, fs: devFit(d).fs }));
+  // ---------------------------------------------------- text-fit of the story cards (measured once per card kind + text)
+  const devFitCache = new Map<string, { fs: Record<string, number>; lines: DeviceFit["lines"] }>();
+  const devFit = (d: DeviceBox) => {
+    const id = d.kind === "case" ? `case|${d.name}|${d.year}|${d.amount}|${d.title}` : d.kind === "money" ? `money|${d.label}` : d.kind === "count" ? `count|${d.label}` : d.kind === "check" ? `check|${d.title}|${d.items.map((x) => x.text).join("|")}` : `alert|${d.text}`;
+    const got = devFitCache.get(id);
+    if (got) return got;
+    const lines: DeviceFit["lines"] = [], fs: Record<string, number> = {}, k = L.k, inner = d.w - 80 * k;
+    const add = (role: string, what: string, f: Fit, alt?: string) => { fs[role] = Math.min(fs[role] ?? Infinity, f.fs); lines.push({ what, fit: f, alt }); };
+    if (d.kind === "case") {
+      add("title", "case file title", fitFs(d.title, 58 * k, inner - textPx("#0000", 30 * k) - 20, 6, MIN_SUB_PX));
+      for (const [lab, v] of [["name", d.name], ["year", d.year], ["amount", d.amount]] as const) add("row", `case file ${lab}`, fitFs(v, 64 * k, inner - 254 * k, -1, MIN_TEXT_PX), "a shorter value");
+    } else if (d.kind === "money") {
+      const m = moneyR.find((x) => (x.m.label ?? "BALANCE").toUpperCase() === d.label);
+      const ws = m ? [`${m.m.prefix ?? "$"}${fmtNum(m.m.from, m.m.decimals ?? 0)}${m.m.suffix ?? ""}`, m.final] : [d.value];
+      add("label", "money label", fitFs(d.label, 38 * k, inner, 4, MIN_SUB_PX));
+      add("value", "money value", fitFs(widestDigits(ws.reduce((a, x) => (textPx(widestDigits(x), 100) > textPx(widestDigits(a), 100) ? x : a))), 118 * k, inner, -2, MIN_TEXT_PX), "fewer digits (\"$1.2M\")");
+    } else if (d.kind === "count") {
+      add("label", "countdown label", fitFs(d.label, 34 * k, inner, 4, MIN_SUB_PX)); add("value", "countdown", fitFs("44:44:44", 96 * k, inner, 4, MIN_TEXT_PX));
+    } else if (d.kind === "check") {
+      add("title", "checklist title", fitFs(d.title, 66 * k, inner, 2, MIN_TEXT_PX));
+      for (const it of d.items) add("item", "checklist item", fitFs(it.text, 54 * k, inner - 96 * k, 0, MIN_TEXT_PX), "fewer words");
+    } else add("text", "alert", fitFs(d.text, 84 * k, d.w - 150 * k, 10, MIN_TEXT_PX), "one short word");
+    const v = { fs, lines };
+    devFitCache.set(id, v);
+    return v;
+  };
+  const devicesRaw = (t: number): DeviceBox[] => {
     const out: DeviceBox[] = [];
     for (const { c, t0, t1 } of caseR) if (t >= t0 - LEAD && t < t1) out.push({ kind: "case", u: env(t, t0, t1), tau: t - t0, ...L.caseFile, name: c.name.toUpperCase(), year: c.year, amount: c.amount, title: (c.title ?? "CASE FILE").toUpperCase(), status: (c.status ?? "").toUpperCase() });
-    for (const { m, t0, t1 } of moneyR) if (t >= t0 - LEAD && t < t1) {
-      const frac = EASE_INOUT(prog(t, t0 + 0.15, t0 + 0.15 + (m.dur ?? 1.6)));
+    for (const { m, t0, t1, plan, final, key } of moneyR) if (t >= t0 - LEAD && t < t1) {
+      const frac = countU(t, plan, EASE_INOUT);
       const v = lerp(m.from, m.to, frac);
-      out.push({ kind: "money", u: env(t, t0, t1), tau: t - t0, ...L.money, label: (m.label ?? "BALANCE").toUpperCase(), value: `${m.prefix ?? "$"}${fmtNum(v, m.decimals ?? 0)}${m.suffix ?? ""}`, frac });
+      out.push({ kind: "money", u: env(t, t0, t1), tau: t - t0, ...L.money, label: (m.label ?? "BALANCE").toUpperCase(), value: frac >= 1 ? final : `${m.prefix ?? "$"}${fmtNum(v, m.decimals ?? 0)}${m.suffix ?? ""}`, frac, key });
     }
     for (const { m, t0, t1 } of countR) if (t >= t0 - LEAD && t < t1) {
       const s = Math.max(0, m.from - Math.max(0, t - t0) * (m.rate ?? 1));
@@ -558,6 +633,15 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   const alertAt = (t: number) => { let g = 0; for (const x of alertsR) if (t >= x.t0 && t < x.t1) g = Math.max(g, ALERT_PEAK * clamp((t - x.t0) / 0.15) * clamp((x.t1 - t) / 0.5)); return g; };
   /** rects of the big devices (labels avoid them) */
   const deviceRects = (t: number) => devicesAt(t).filter((d) => d.kind !== "alert" && d.u > 0.05).map((d) => ({ x: d.x, y: d.y, w: d.w, h: d.h }));
+  // ---------------------------------------------------- landscape: chapter cards in their own region (polish.ts): the first
+  // top clear of the boards and story cards on screen during the card; callout labels then avoid the card
+  const chapters: ChapterR[] = LS ? placeChapters(resolveChapters(recipe.chapters, at, hookUntil), (c0, c1) => {
+    const out: { x0: number; x1: number; y0: number; y1: number }[] = [];
+    for (let t = c0; t < c1; t += 0.1) {
+      for (const r of [...boardsAt(t).filter((b) => b.u > 0.05), ...devicesAt(t).filter((d) => d.u > 0.05)]) out.push({ x0: r.x - r.w / 2, x1: r.x + r.w / 2, y0: r.y - r.h / 2, y1: r.y + r.h / 2 });
+    }
+    return out;
+  }, LF.CHAPTER_CARD_S) : [];
 
   // ---------------------------------------------------- labels: one card per label, placed once at its pop-in time
   const labelPlan = new Map<string, { dx: number; dy: number }>();
@@ -574,6 +658,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     const others = s.labels.filter((o) => o.key !== Lb.key && o.t0 <= Lb.t0 && o.t1 > Lb.t0).map((o) => { const d = placeLabel(o, s); const qo = project(camAt(t), o.target(t), L); const so = labelSize(o.text, L); return qo ? { x: qo.x + d.dx, y: qo.y + d.dy, ...so } : null; }).filter(Boolean) as { x: number; y: number; w: number; h: number }[];
     for (const bd of s.boards) if (bd.t1 > Lb.t0 && bd.t0 < Lb.t1) others.push(boardRect(bd, t));
     others.push(...deviceRects(t));
+    for (const ch of chapters) if (ch.box && ch.card < Lb.t1 && ch.card + LF.CHAPTER_CARD_S > Lb.t0 - LEAD) others.push({ x: (ch.box.x0 + ch.box.x1) / 2, y: (ch.box.y0 + ch.box.y1) / 2, w: ch.box.x1 - ch.box.x0, h: ch.box.y1 - ch.box.y0 });
     const ax = q?.x ?? L.W / 2, ay = q?.y ?? L.H / 2;
     const prefer = Lb.side === "left" ? -1 : Lb.side === "right" ? 1 : ax > L.W / 2 ? -1 : 1;
     const cands: { dx: number; dy: number }[] = [];
@@ -636,7 +721,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     }
     for (const p of s.props) if (p.a === s.a && p.spec.motion === "popIn") cues.push({ t: p.hit - 0.1, sfx: "whoosh", db: -8 });
     for (const p of s.props) if (p.a === s.a && p.spec.motion === "slideOut") cues.push({ t: p.hit, sfx: "slide", db: -8 });
-    for (const bd of s.boards) { cues.push({ t: bd.t0, sfx: "beep", db: -12 }); if (bd.spec.count) cues.push({ t: bd.t0 + (bd.spec.count.dur ?? 1), sfx: "ding", db: -9 }); }
+    for (const bd of s.boards) { cues.push({ t: bd.t0, sfx: "beep", db: -12 }); if (bd.spec.count) cues.push({ t: bd.plan ? bd.plan.end : bd.t0 + (bd.spec.count.dur ?? 1), sfx: "ding", db: -9 }); }
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
   for (const { t0 } of caseR) cues.push({ t: t0, sfx: "paper", db: -6 }, { t: t0 + 0.35, sfx: "punch", db: -8 });
@@ -648,7 +733,36 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "tense", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, duration, shots, words, L, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, figuresAt, cutOf, placeOf, labelsAt, boardsAt, devicesAt, flashes, glitchAt, alertAt, qa, textsAt, audio, landscape: LS, chapters, facesAt };
+  // ---------------------------------------------------- polish QA hooks (tools/polish_qa.mjs)
+  const fits: DeviceFit[] = [];
+  for (const s of shots) {
+    for (const bd of s.boards) { const f = boardFitRaw(bd); fits.push({ key: bd.key, shot: s.id, kind: "board", lines: [{ what: "board title", fit: f.title }, { what: "board value", fit: f.value, alt: bd.spec.size === "giant" ? undefined : `"size": "giant" (${L.board.giant.w} px wide)` }] }); }
+    for (const Lb of s.labels) fits.push({ key: Lb.key, shot: s.id, kind: "label", lines: [{ what: "label", fit: labelFit(Lb.text, L), alt: "a shorter label (3 words max)" }] });
+  }
+  const devSeen = new Set<string>();
+  for (let f = 0; f < duration; f += 3) for (const d of devicesRaw(f / FPS)) { const v = devFit(d); const id = JSON.stringify(v.lines.map((l) => l.fit.text)); if (devSeen.has(id)) continue; devSeen.add(id); fits.push({ key: d.kind, shot: shotAt(f / FPS).id, kind: d.kind, lines: v.lines }); }
+  const counters: CounterQ[] = [
+    ...shots.flatMap((s) => s.boards.filter((bd) => bd.plan).map((bd) => ({ key: bd.key, shot: s.id, kind: "board", title: bd.spec.title, target: bd.spec.count!.to, decimals: bd.spec.count!.decimals ?? 0, final: bd.final!, t0: bd.t0, until: bd.plan!.until, plan: bd.plan! }))),
+    ...moneyR.map((x) => ({ key: x.key, shot: shotAt(x.t0).id, kind: "money", title: x.m.label ?? "BALANCE", target: x.m.to, decimals: x.m.decimals ?? 0, final: x.final, t0: x.t0, until: x.plan.until, plan: x.plan })),
+  ];
+  const counterAt = (key: string, t: number) => {
+    const b = boardsAt(t).find((x) => x.key === key);
+    if (b) return { value: b.value, u: b.u, zero: 0 };
+    const d = devicesAt(t).find((x) => x.key === key);
+    return d && d.kind === "money" ? { value: d.value, u: d.u, zero: 0 } : null;
+  };
+  const cardRectsAt = (t: number): CardQ[] => {
+    const out: CardQ[] = [];
+    for (const b of boardsAt(t)) if (b.u > 0.05) out.push({ label: `board "${b.title}"`, x0: b.x - b.w / 2, x1: b.x + b.w / 2, y0: b.y - b.h / 2, y1: b.y + b.h / 2, landed: b.u >= 0.99 });
+    for (const d of devicesAt(t)) if (d.u > 0.05) out.push({ label: `${d.kind} card`, x0: d.x - d.w / 2, x1: d.x + d.w / 2, y0: d.y - d.h / 2, y1: d.y + d.h / 2, landed: d.u >= 0.99 });
+    for (const l of labelsAt(t)) if (l.u > 0.05) out.push({ label: `label "${l.text}"`, x0: l.x - l.w / 2, x1: l.x + l.w / 2, y0: l.y - l.h / 2, y1: l.y + l.h / 2, landed: l.u >= 0.99 });
+    if (t <= hookUntil || (hookAgain !== null && t >= hookAgain)) { const w = Math.max(...recipe.hook.text.split("\n").map((x) => textPx(x.replace(/\*/g, ""), L.hook.fs, -1))) + 80; const h = (recipe.hook.text.includes("\n") ? 2 : 1) * L.hook.fs * 1.04 + 40; out.push({ label: "hook", x0: L.W / 2 - w / 2, x1: L.W / 2 + w / 2, y0: L.hook.top, y1: L.hook.top + h, landed: true }); }
+    return out;
+  };
+  const occludersAt = (t: number) => { const st = CYBER_SETS[shotAt(t).set]; return [...st.blockers.filter((b) => !/wall/i.test(b.name)), ...(st.occluders ?? [])]; };
+  const speakingAt = (t: number) => (words.some((w) => t >= w.t && t < w.end) ? shotAt(t).bolts.filter((b) => b.talk).map((b) => b.id) : []);
+
+  return { recipe, slug: recipe.slug, duration, shots, words, L, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, figuresAt, cutOf, placeOf, labelsAt, boardsAt, devicesAt, flashes, glitchAt, alertAt, qa, textsAt, audio, landscape: LS, chapters, facesAt, fits, counters, counterAt, cardRectsAt, occludersAt, speakingAt, layout: L };
 };
 
 // ------------------------------------------------------------------ BOLT tracks (as tech3d)

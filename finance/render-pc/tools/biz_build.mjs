@@ -17,6 +17,7 @@ import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
 import { runFraming } from "./framing_kits.mjs";
+import { polishQA } from "./polish_qa.mjs";
 import { frame0Opener } from "./frame0_hero.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -211,6 +212,9 @@ export const main = async (argv) => {
     [long ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
   gate.push(...KF.rows);
+  // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face
+  const PQ = polishQA({ kit: "biz3d", C, m, recipe, words });
+  gate.push(...PQ.rows);
   const hardFail = gate.some((g) => g[3] && !g[1]);
   const rep = [
     `# ${slug}: biz3d recipe QA (tools/biz_build.mjs)`, "",
@@ -218,6 +222,7 @@ export const main = async (argv) => {
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no executive's body or head enters a set blocker, a kit prop or another executive; nobody below the floor."]), "",
     ...KF.fr.md,
+    ...PQ.md,
     ...OP.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
@@ -310,13 +315,15 @@ const longGate = ({ m, C, L, recipe, words, slug, dir, pascal, dur, check, qaSam
   const gateS = (Date.now() - tg) / 1000;
   const KFL = runFraming("biz3d", C, m, recipe, true, qaSample);
   gate.push(...KFL.rows);
+  const PQ = polishQA({ kit: "biz3d", C, m, recipe, words, landscape: true, step: qaSample });
+  gate.push(...PQ.rows);
   const chTxt = chaptersTxt(C.chapters);
   const extra = [
     `## biz3d landscape notes`, "",
     `- Lens: the shared 16:9 rule (landscapeLens per preset; vertical fov kept). Caption-safe framing lifted ${C.lifted.length} shot(s)${C.lifted.length ? `: ${C.lifted.map((x) => `${x.id} face ${x.from.toFixed(3)} -> ${x.to.toFixed(3)}`).join(", ")}` : ""}.`,
     `- Lower-third caption centre moved on: ${caps.moved.join(", ") || "none"} (default ${L.cap.centre} px).`, "",
   ];
-  const rep = kitLongReport({ framingMd: KFL.fr.md, slug, kit: "biz3d", tool: "biz_build.mjs", entry: "src/index.biz.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra });
+  const rep = kitLongReport({ framingMd: [...KFL.fr.md, ...PQ.md], slug, kit: "biz3d", tool: "biz_build.mjs", entry: "src/index.biz.ts", pascal, C, dur, words, chapters: C.chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra });
   if (!check) { writeFileSync(join(dir, "RECIPE_QA.md"), rep.join("\n")); writeFileSync(join(dir, "chapters.txt"), chTxt); }
   console.log(`clip QA: ${hits.size} clip(s) over ${Math.ceil(C.duration / qaSample)} frames (every ${qaSample === 1 ? "frame" : `${qaSample}th frame`}), ${qaS.toFixed(2)} s`);
   for (const l of qaLines.slice(0, 40)) console.log("  " + l);
