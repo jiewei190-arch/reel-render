@@ -1,4 +1,4 @@
-# Caption-safe framing: framing QA rule R6 (branch `engine/caption-safe`)
+# Caption-safe framing: framing QA rule R6 (branch `engine/caption-safe`, draft PR #98 into engine/all, not merged)
 
 ## The problem
 Burned-in word captions (the bottom-centre band) landed on characters' chins, necks or chests in close and mid shots.
