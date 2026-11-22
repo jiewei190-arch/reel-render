@@ -5,6 +5,7 @@ import React from "react";
 import { Composition } from "remotion";
 import { compileLaw } from "./compile";
 import type { LawCompiled } from "./compile";
+import { BrandCompositions } from "./brand";
 import { LawFilm } from "./film";
 import { GALLERY_RECIPE } from "./gallery";
 import { LAW_RECIPES } from "./registry.gen";
@@ -27,6 +28,7 @@ const Film: React.FC<{ id: string }> = ({ id }) => <LawFilm c={lawCompiled(id)} 
 
 export const LawRoot: React.FC = () => (
   <>
+    <BrandCompositions />
     {["LawGallery", ...LAW_RECIPES.map((r) => r.id)].map((id) => {
       const c = lawCompiled(id);
       return <Composition key={id} id={id} component={Film} durationInFrames={c.duration} fps={30} width={c.layout.W} height={c.layout.H} defaultProps={{ id }} />;
