@@ -26,8 +26,8 @@ export const RECIPE: Recipe = {
   "homie": {
    "name": "homie",
    "skin": "#f4cfa6",
-   "hair": "#e2622b",
-   "hairStyle": "spiky",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
    "top": "#7b4fd6",
    "topStyle": "tee",
    "trim": "#ffffff",

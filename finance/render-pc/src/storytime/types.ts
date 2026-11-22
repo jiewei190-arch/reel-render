@@ -91,7 +91,7 @@ export type CastSpec = {
   name: string;
   skin: string;
   hair: string;
-  hairStyle: "flattop" | "spiky" | "buzz" | "puff" | "bob";
+  hairStyle: "flattop" | "spiky" | "curls" | "buzz" | "puff" | "bob";
   top: string;
   topStyle: "hoodie" | "tee" | "jacket";
   trim: string;

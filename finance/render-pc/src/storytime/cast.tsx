@@ -155,6 +155,26 @@ const Hair: React.FC<{ st: FigState }> = ({ st }) => {
         </group>
       );
     }
+    case "curls": {
+      // a messy mop of clay curls: a cap plus rolled balls of different sizes, a few flopping onto the forehead
+      const balls: [number, number, number, number][] = [];
+      for (let i = 0; i < 26; i++) {
+        const a = i * 2.39996, r = 0.06 + 0.2 * Math.sqrt((i + 0.5) / 26);
+        const x = Math.cos(a) * r, z = Math.sin(a) * r * 0.92 - 0.01;
+        const y = top + 0.07 - (r * r) * 0.9 + 0.02 * Math.sin(i * 1.7);
+        balls.push([x, y, z, 0.07 + 0.025 * ((i * 37) % 5) / 4]);
+      }
+      const fringe: [number, number, number, number][] = [[-0.13, top - 0.02, hd / 2 - 0.02, 0.06], [-0.04, top - 0.035, hd / 2 - 0.005, 0.065], [0.06, top - 0.025, hd / 2 - 0.01, 0.06], [0.15, top - 0.015, hd / 2 - 0.03, 0.055]];
+      return (
+        <group>
+          <mesh geometry={lumpBox(hw + 0.05, 0.14, hd + 0.05, 0.065)} material={m} position={[0, top + 0.005, -0.005]} />
+          <mesh geometry={lumpBox(0.07, 0.22, hd + 0.02, 0.03)} material={m} position={[hw / 2 + 0.01, top - 0.08, -0.03]} />
+          <mesh geometry={lumpBox(0.07, 0.22, hd + 0.02, 0.03)} material={m} position={[-hw / 2 - 0.01, top - 0.08, -0.03]} />
+          <mesh geometry={lumpBox(hw + 0.04, 0.26, 0.07, 0.03)} material={m} position={[0, top - 0.09, -hd / 2 - 0.015]} />
+          {[...balls, ...fringe].map(([x, y, z, r], i) => <mesh key={i} geometry={lumpBall(r, 1, 0.85, 1, r * 0.12)} material={m} position={[x, y, z]} />)}
+        </group>
+      );
+    }
     case "puff":
       return <mesh geometry={lumpBall(0.29, 1, 0.62, 0.95)} material={m} position={[0, top + 0.06, -0.05]} />;
     case "bob":

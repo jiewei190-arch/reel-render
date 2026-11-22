@@ -17,7 +17,7 @@ import type { CastSpec } from "./types";
 
 export const BRAND_CAST: Record<"me" | "homie", CastSpec> = {
   me: { name: "me", skin: "#9a6240", hair: "#1b1410", hairStyle: "flattop", top: "#f2b632", topStyle: "hoodie", trim: "#ffffff", pants: "#2f3a56", shoes: "#f5f5f5", brow: "#1b1410", eye: "#3b2416" },
-  homie: { name: "homie", skin: "#f4cfa6", hair: "#e2622b", hairStyle: "spiky", top: "#7b4fd6", topStyle: "tee", trim: "#ffffff", pants: "#6b7a3a", shoes: "#22223b", brow: "#8a3b14", eye: "#2e6f3e", freckles: true },
+  homie: { name: "homie", skin: "#f4cfa6", hair: "#c4541c", hairStyle: "curls", top: "#7b4fd6", topStyle: "tee", trim: "#ffffff", pants: "#6b7a3a", shoes: "#22223b", brow: "#8a3b14", eye: "#2e6f3e", freckles: true },
 };
 const mood = (() => {
   const flat = (c: string) => ({ top: c, mid: c, bottom: c, cloudColor: c, cloudLit: "#ffffff", clouds: 0, stars: 0, rays: 0, horizon: 0.16, brush: 0, sun: { dir: [-0.6, 0.12, -1] as V3, color: "#ffffff", size: 6 }, sunOn: 0, moon: { dir: [-0.4, 0.45, -1] as V3, color: "#ffffff", size: 4 }, moonOn: 0 });

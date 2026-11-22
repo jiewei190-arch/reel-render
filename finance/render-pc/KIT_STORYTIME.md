@@ -68,7 +68,7 @@ Other kits are untouched. The only shared change is one line in the `recipe_buil
   Any anchor takes a `+0.2` / `-0.1` offset. An event without `at` happens at the shot's start.
 - **CastSpec fields:**
   - `skin`, `hair`;
-  - `hairStyle`: `flattop` | `spiky` | `buzz` | `puff` | `bob`;
+  - `hairStyle`: `flattop` | `spiky` | `curls` | `buzz` | `puff` | `bob`;
   - `top`, `topStyle`: `hoodie` | `tee` | `jacket`;
   - `trim`, `pants`, `shoes`, `brow`;
   - optional `eye`, `freckles` and `height`.

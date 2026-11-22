@@ -5,7 +5,7 @@ import { EXPRS } from "./types";
 
 const cast: Recipe["cast"] = {
   me: { name: "me", skin: "#9a6240", hair: "#1b1410", hairStyle: "flattop", top: "#f2b632", topStyle: "hoodie", trim: "#ffffff", pants: "#2f3a56", shoes: "#f5f5f5", brow: "#1b1410" },
-  homie: { name: "homie", skin: "#f4cfa6", hair: "#e2622b", hairStyle: "spiky", top: "#7b4fd6", topStyle: "tee", trim: "#ffffff", pants: "#6b7a3a", shoes: "#22223b", brow: "#8a3b14", freckles: true },
+  homie: { name: "homie", skin: "#f4cfa6", hair: "#c4541c", hairStyle: "curls", top: "#7b4fd6", topStyle: "tee", trim: "#ffffff", pants: "#6b7a3a", shoes: "#22223b", brow: "#8a3b14", freckles: true },
 };
 const shots: Shot[] = [];
 let t = 0;

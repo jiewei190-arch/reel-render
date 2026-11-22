@@ -143,7 +143,7 @@ export const headCenter = (st: Pick<FigState, "x" | "z" | "yaw" | "sit" | "s" | 
 /** QA boxes: the head (incl. hair), the face (front of the head), the torso */
 export const kidBoxes = (st: FigState) => {
   const c = headCenter(st), s = st.s;
-  const hairTop = st.spec.hairStyle === "spiky" ? 0.13 : st.spec.hairStyle === "puff" ? 0.12 : st.spec.hairStyle === "flattop" ? 0.1 : 0.05;
+  const hairTop = st.spec.hairStyle === "spiky" ? 0.13 : st.spec.hairStyle === "curls" ? 0.13 : st.spec.hairStyle === "puff" ? 0.12 : st.spec.hairStyle === "flattop" ? 0.1 : 0.05;
   const head = { c: [c[0], c[1] + (hairTop * s) / 2, c[2]] as V3, h: [(K.headW * 0.5 + 0.03) * s, (K.headH / 2 + hairTop / 2) * s, (K.headD * 0.5 + 0.03) * s] as V3 };
   const face = { c, h: [K.headW * 0.5 * s, K.headH * 0.5 * s, K.headD * 0.5 * s] as V3 };
   const hip = hipY(st.sit) * s + st.bob;
