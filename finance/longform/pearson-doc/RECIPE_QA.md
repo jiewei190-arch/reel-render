@@ -56,8 +56,8 @@ Composition `PearsonDocDoc` in `src/index.doc.ts` (1920x1080, 30 fps, no motion 
 
 ## Spoken figures
 
-- 2.25 s line 1 "$54 million" = 54,000,000: shown by S01 scene3d '$54 MILLION FOR PANTS' at 0.75 s
-- 5.76 s line 2 "Fifty-four million" = 54,000,000: shown by S01 scene3d '$54 MILLION FOR PANTS' at 4.26 s
+- 2.25 s line 1 "$54 million" = 54,000,000: shown by the hook '$54 MILLION FOR PANTS' at 0.75 s
+- 5.76 s line 2 "Fifty-four million" = 54,000,000: shown by the hook '$54 MILLION FOR PANTS' at 4.26 s
 - 30.95 s line 7 "2005" = 2,005: shown by S09 timeline '2005' at 31.05 s
 - 44.35 s line 9 "$10.50" = 10.5: shown by S12 document 'Alteration: $10.50' at 42.95 s
 - 68.04 s line 14 "$3,000" = 3,000: shown by S18 chart '$3,000' at 68.34 s

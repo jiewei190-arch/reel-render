@@ -501,7 +501,7 @@ export const main = async (argv) => {
       "## Gates", "", "| check | result | detail |", "|---|---|---|",
       ...rows.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${String(d).replace(/\|/g, "/")} |`), "",
       "## Lines to fix", "", ...(allFails.length ? allFails.map((l) => `- ${l}`) : ["- none"]), "",
-      "## Spoken figures", "", ...numRows.map((r) => `- ${fmt(r.t)} line ${r.line} "${r.said}" = ${r.value.toLocaleString("en-US")}: ${r.found ? `shown by ${r.found.x.scene.id} ${r.found.x.src === "kit" ? "(3D board)" : r.found.x.scene.type} ${q(r.found.x.text)} at ${fmt(r.found.t)}` : "**not shown**"}`), "",
+      "## Spoken figures", "", ...numRows.map((r) => `- ${fmt(r.t)} line ${r.line} "${r.said}" = ${r.value.toLocaleString("en-US")}: ${r.found ? `shown by ${r.found.x.src === "hook" ? "the hook" : `${r.found.x.scene.id} ${r.found.x.src === "kit" ? "(3D board)" : r.found.x.scene.type}`} ${q(r.found.x.text)} at ${fmt(r.found.t)}` : "**not shown**"}`), "",
       "## Scenes", "", "| id | ch | at | len | type | set | camera | beat |", "|---|---|---|---|---|---|---|---|",
       ...S.map((s) => `| ${s.id} | ${s.ch} | ${fmt(s.a)} | ${(s.b - s.a).toFixed(1)} s | ${s.type} | ${s.set} | ${s.type === "scene3d" ? s.cam.split(":")[0] : s.move} | ${s.spec.beat ? "yes" : ""} |`), "",
       ...kitMd,
