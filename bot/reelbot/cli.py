@@ -157,7 +157,7 @@ def main(argv: list[str] | None = None) -> None:
     def common(p):
         p.add_argument("--channel", choices=list(channels.CHANNELS), help="which channel (default REELBOT_CHANNEL or blockmoney)")
         p.add_argument("--voice", default="auto", choices=["auto", *CFG.voices])
-        p.add_argument("--long", action="store_true", help="long-form video: 16:9, chapters, ~10 min (sets --seconds 600)")
+        p.add_argument("--long", action="store_true", help="long-form video: 16:9, chapters, ~10 min (sets --seconds 660: writers run ~14% short, so this lands at 9-10 min, past the 8-min mid-roll line)")
         p.add_argument("--seconds", type=int, default=45, help="target length (default 45)")
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
@@ -181,7 +181,7 @@ def main(argv: list[str] | None = None) -> None:
     a = ap.parse_args(argv)
     channels.use(channels.get(getattr(a, "channel", None)))
     if getattr(a, "long", False) and a.seconds == 45:
-        a.seconds = 600
+        a.seconds = 660
 
     try:
         if a.cmd == "make":

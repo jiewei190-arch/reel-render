@@ -130,23 +130,31 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
     data["slug"] = _slugify(data.get("slug") or topic)
 
     cleared = False
+    ledger: dict = {}  # claim -> verdict/reason; CORRECT verdicts carry over between rounds
     # N revision rounds, then one final check of the last revision (so a fix made in the last round can clear).
     for rnd in range(CFG.factcheck_rounds + 1):
         claims = [c["claim"] for c in data["claims"]]
-        print(f"  {gemini.label()}: fact-checking {len(claims)} claims (round {rnd + 1})...")
-        verdicts, vsources = gemini.verify(claims)
-        if not vsources:  # a fact-check without live sources can't clear anything
+        fresh = sum(1 for c in claims if ledger.get(gemini._key(c), {}).get("verdict") != "CORRECT")
+        print(f"  {gemini.label()}: fact-checking {fresh} of {len(claims)} claims (round {rnd + 1}; "
+              f"{len(claims) - fresh} already confirmed)...")
+        cur, verdicts, vsources = gemini.verify_ledger(claims, ledger, research_sources)
+        if fresh and not vsources:  # a fact-check without live sources can't clear anything
             data.setdefault("factcheck", []).append({"round": rnd + 1, "report": verdicts, "sources": [],
                                                      "all_pass": False, "problems": ["fact-check had no live sources"]})
             print("  fact-check: NO live sources were checked; not clearing this script")
             continue
-        judge = claude.ask_json(
-            "You decide whether a fact-check report clears a script. A claim passes only if its verdict is CORRECT, "
-            "or NEEDS-HEDGE and the script already says it as an example/assumption. List each problem precisely.",
-            "Script lines:\n" + "\n".join(data["lines"]) + "\n\nClaims:\n"
-            + "\n".join(f"- {c['claim']} (basis: {c['basis']})" for c in data["claims"])
-            + "\n\nFact-check report:\n" + verdicts,
-            FIX_SCHEMA, effort="medium")
+        open_items = {k: e for k, e in cur.items() if e["verdict"] != "CORRECT"}
+        if not open_items:
+            judge = {"all_pass": True, "problems": []}
+        else:
+            judge = claude.ask_json(
+                "You decide whether a fact-check report clears a script. A claim passes only if its verdict is CORRECT, "
+                "or NEEDS-HEDGE and the script already says it as an example/assumption/'reportedly'. CORRECT verdicts "
+                "are final: never list them as problems. List each remaining problem precisely, naming the claim.",
+                "Script lines:\n" + "\n".join(data["lines"]) + "\n\nClaims:\n"
+                + "\n".join(f"- {c['claim']} (basis: {c['basis']})" for c in data["claims"])
+                + "\n\nFact-check report:\n" + verdicts,
+                FIX_SCHEMA, effort="medium")
         data.setdefault("factcheck", []).append({"round": rnd + 1, "report": verdicts, "sources": vsources,
                                                  "all_pass": judge["all_pass"], "problems": judge["problems"]})
         if judge["all_pass"]:
@@ -161,13 +169,20 @@ def write(topic: str, *, seconds: int = 45, style: str | None = None, notes: str
         print(f"  fact-check: {len(judge['problems'])} problem(s), revising:")
         for p in judge["problems"]:
             print("    -", p)
+        confirmed = [e["claim"] for e in cur.values() if e["verdict"] == "CORRECT"]
         data = {**claude.ask_json(
             system_prompt(seconds),
             "Here is your previous script as JSON:\n" + json.dumps({k: v for k, v in data.items() if k != "factcheck"}, indent=1)
-            + "\n\nAn independent fact-check found these problems. Fix every one (correct the number, hedge it as an "
-              "example, or remove the claim). Keep line 1 and the hook_text unless a problem is in them, keep the "
-              "structure, and return the full script again:\n"
+            + "\n\nAn independent fact-check found these problems. Fix every one:\n"
+              "- WRONG: correct it to what the source says.\n"
+              "- UNSUPPORTED: CUT that specific detail (exact figure, quote, calculation) or replace it with one a "
+              "confirmed claim already supports. Do not just add 'reportedly' to something nobody could find.\n"
+              "- NEEDS-HEDGE: say it as reported/estimated/an example.\n"
+              "Fewer, solid claims beat many shaky ones. Keep the CONFIRMED claims below word for word (same `claim` "
+              "text) so they don't need re-checking. Keep line 1 and the hook_text unless a problem is in them, keep "
+              "the structure and length, and return the full script again.\n\nProblems:\n"
             + "\n".join(f"- {p}" for p in judge["problems"])
+            + "\n\nCONFIRMED claims (keep exactly):\n" + "\n".join(f"- {c}" for c in confirmed)
             + "\n\nFact-check report for reference:\n" + verdicts,
             _schema()), "factcheck": data["factcheck"]}
         data["slug"] = _slugify(data["slug"])
