@@ -31,7 +31,7 @@ const kid = (id: "me" | "homie", o: Partial<FigState> & { face: FaceP }): FigSta
   armL: [0.1, 0.12], armR: [0.1, 0.12], pose: "idle", expr: "smug", mouth: 0, talking: false, seed: 1, ...o,
 });
 /** wild + smug: one brow way up, a big toothy grin, eyes on the lens */
-const WILD: FaceP = { ...FACES.smug, browAsym: 0.95, browY: 0.35, browA: 0.15, lid: 0.22, curve: 0.95, open: 0.5, teeth: 1, smirk: 0.35, px: 0, py: 0.05, mouthW: 0.3, eyeS: 1.08 };
+const WILD: FaceP = { ...FACES.smug, browAsym: 1, browY: 0.12, browA: 0.2, lid: 0.12, curve: 1, open: 0.65, teeth: 1, smirk: 0.3, px: 0, py: 0.05, mouthW: 0.34, eyeS: 1.12 };
 const YELL: FaceP = { ...FACES.yell, open: 0.95, px: 0 };
 const FACEPALM: FaceP = { ...FACES.deadpan, lid: 0.72, browA: -0.25, browY: 0.1, curve: -0.35, px: -0.4, py: -0.3 };
 
@@ -54,17 +54,18 @@ const Title: React.FC<{ fs: number; style?: React.CSSProperties; brk?: boolean }
 
 export const BrandPfp: React.FC<{ text?: boolean }> = ({ text }) => {
   useFonts();
-  const head: V3 = [0, 1.19, 0], dy = 0.38, d = 3.25;
+  // a tight head-and-shoulders: the face fills ~55-60 % of the height, cropped at the chest, a cocky head tilt
+  const head: V3 = [0, 1.2, 0], dy = 0.3, d = 1.8;
   const dir: V3 = [Math.sin(dy), 0, Math.cos(dy)];
-  const cam = { pos: [head[0] + dir[0] * d, head[1] + 0.12, head[2] + dir[2] * d] as V3, look: [0, 1.14, 0] as V3, fov: 30 };
-  const st = kid("homie", { yaw: 0.68, headYaw: -0.3, headPitch: -0.04, tilt: -0.06, lean: 0.04, face: WILD, armL: [0.25, 0.2], armR: [0.25, 0.2] });
+  const cam = { pos: [head[0] + dir[0] * d, head[1] + 0.06, head[2] + dir[2] * d] as V3, look: [0, 1.19, 0] as V3, fov: 30 };
+  const st = kid("homie", { yaw: 0.5, headYaw: -0.22, headPitch: -0.06, tilt: -0.17, lean: 0.06, face: WILD, armL: [0.25, 0.2], armR: [0.25, 0.2] });
   return (
     <AbsoluteFill style={{ background: "#F59A00" }}>
       <View mood={mood} cam={cam} t={0} blur={0} sky={false} width={1080} height={1080}>
         <Backdrop c={[-dir[0] * 1.6, 1.15, -dir[2] * 1.6]} yaw={dy} size={6} base="#F59A00" glow="#FFD000" />
         <Kid st={st} t={0} />
       </View>
-      {text ? <div style={{ position: "absolute", left: 0, right: 0, top: 790, display: "flex", justifyContent: "center" }}><Title fs={68} /></div> : null}
+      {text ? <div style={{ position: "absolute", left: 0, right: 0, top: 900, display: "flex", justifyContent: "center" }}><Title fs={84} /></div> : null}
     </AbsoluteFill>
   );
 };
@@ -72,9 +73,10 @@ export const BrandPfp: React.FC<{ text?: boolean }> = ({ text }) => {
 export const BrandBanner: React.FC = () => {
   useFonts();
   // the two kids sit in the left half of the 1546 x 423 safe area (x 507-2053, y 508-931); the name fills the right half
-  const cam = { pos: [0.86, 1.42, 7.9] as V3, look: [0.86, 1.3, 0] as V3, fov: 21 };
-  const homie = kid("homie", { x: -0.42, yaw: 0.35, headYaw: -0.1, lean: 0.14, face: YELL, pose: "yell", armL: [0.85, 1.0], armR: [0.85, 1.0], bob: 0.02 });
-  const me = kid("me", { x: 0.48, z: -0.15, yaw: -0.45, headYaw: 0.15, headPitch: 0.18, face: FACEPALM, pose: "idle", armR: [2.55, -0.38], armL: [0.12, 0.15], tilt: 0.05 });
+  // 1.6x the earlier framing: heads and chests fill the safe band's left part, bodies run off the band's bottom edge
+  const cam = { pos: [0.47, 1.4, 5.9] as V3, look: [0.47, 1.3, 0] as V3, fov: 21 };
+  const homie = kid("homie", { x: -0.3, yaw: 0.35, headYaw: -0.1, lean: 0.14, face: YELL, pose: "yell", armL: [0.35, 1.15], armR: [1.0, 0.3], elbow: [1.7, 1.0], bob: 0.02 });
+  const me = kid("me", { x: 0.3, z: -0.2, yaw: -0.45, headYaw: 0.15, headPitch: 0.18, face: FACEPALM, pose: "idle", armR: [2.55, -0.38], armL: [0.12, 0.15], elbow: [0.18, 0], tilt: 0.05 });
   return (
     <AbsoluteFill style={{ background: "#0050D8" }}>
       <View mood={mood} cam={cam} t={0} blur={0} sky={false} width={2560} height={1440}>
@@ -82,7 +84,7 @@ export const BrandBanner: React.FC = () => {
         <Kid st={homie} t={0} />
         <Kid st={me} t={0} />
       </View>
-      <div style={{ position: "absolute", left: 1300, width: 753, top: 508, height: 423, display: "flex", alignItems: "center", justifyContent: "center" }}><Title fs={132} brk style={{ textAlign: "center", whiteSpace: "nowrap" }} /></div>
+      <div style={{ position: "absolute", left: 1360, width: 693, top: 508, height: 423, display: "flex", alignItems: "center", justifyContent: "center" }}><Title fs={124} brk style={{ textAlign: "center", whiteSpace: "nowrap" }} /></div>
     </AbsoluteFill>
   );
 };

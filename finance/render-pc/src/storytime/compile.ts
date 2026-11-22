@@ -127,6 +127,8 @@ export type FigState = {
   sit: boolean; s: number; lean: number; bob: number; tilt: number;
   /** arms: [forward raise, sideways raise] (rad) for the left (+x) and right arm */
   armL: [number, number]; armR: [number, number];
+  /** elbow bends in radians (L, R; forward), default a slight natural bend */
+  elbow?: [number, number];
   pose: Pose; expr: Expr; face: FaceP; mouth: number; talking: boolean; seed: number;
 };
 

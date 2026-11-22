@@ -6,7 +6,7 @@
 import React from "react";
 import * as THREE from "three";
 import { geoOf } from "../blocky/mat";
-import { clayMat, lumpBall, lumpBox, lumpCapsule, lumpCone } from "./clay";
+import { clayMat, lumpBall, lumpBox, lumpCapsule, lumpCone, lumpLimb, seamRing } from "./clay";
 import type { FigState } from "./compile";
 import type { FaceP } from "./face";
 import { K, hipY } from "./layout";
@@ -222,26 +222,39 @@ export const Kid: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
   const hip = hipY(st.sit);
   const skin = clayMat(sp.skin), top = clayMat(sp.top), trim = clayMat(sp.trim), pants = clayMat(sp.pants), shoes = clayMat(sp.shoes);
   const armY = K.torsoH - 0.07;
-  const arm = (side: 1 | -1, a: [number, number]) => (
+  const shade = (c: string, k: number) => { const q = new THREE.Color(c); q.multiplyScalar(k); return `#${q.getHexString()}`; };
+  const crease = (c: string) => clayMat(shade(c, 0.72), { bump: 0.4 });
+  const sleeve = sp.topStyle === "tee" ? skin : top, sleeveC = sp.topStyle === "tee" ? sp.skin : sp.top;
+  const UA = K.armL * 0.5, FA = K.armL * 0.42, rA = K.armW / 2;
+  const arm = (side: 1 | -1, a: [number, number], elbow: number) => (
     <group position={[side * (K.torsoW / 2 + K.armW / 2 - 0.01), armY, 0]} rotation={[-a[0], 0, side * a[1]]}>
-      <mesh geometry={lumpBox(K.armW, K.armL * 0.62, K.armW, 0.065)} material={sp.topStyle === "tee" ? skin : top} position={[0, -K.armL * 0.31 + 0.04, 0]} />
+      <mesh geometry={lumpLimb(rA * 1.02, rA * 0.92, UA, side > 0 ? 1 : 2)} material={sleeve} position={[0, 0.03, 0]} />
       {sp.topStyle === "tee" ? <mesh geometry={lumpBox(K.armW + 0.035, 0.18, K.armW + 0.035, 0.07)} material={top} position={[0, -0.04, 0]} /> : null}
-      <mesh geometry={lumpBox(K.armW * 0.92, K.armL * 0.34, K.armW * 0.92, 0.06)} material={sp.topStyle === "tee" ? skin : top} position={[0, -K.armL * 0.72 + 0.04, 0]} />
-      <mesh geometry={lumpBall(0.092, 1, 1.05, 0.95)} material={skin} position={[0, -K.armL + 0.02, 0.01]} />
+      <mesh geometry={seamRing(sp.topStyle === "tee" ? (K.armW + 0.035) / 2 - 0.012 : rA * 0.98, 0.007)} material={crease(sp.topStyle === "tee" ? sp.top : sleeveC)} position={[0, sp.topStyle === "tee" ? -0.13 : 0.02, 0]} />
+      <group position={[0, -UA + 0.03, 0]} rotation={[-elbow, 0, 0]}>
+        <mesh geometry={lumpBall(rA * 0.93, 1, 1, 0.9, rA * 0.05)} material={sleeve} />
+        <mesh geometry={lumpLimb(rA * 0.9, rA * 0.78, FA, side > 0 ? 3 : 4)} material={sleeve} />
+        <mesh geometry={seamRing(rA * 0.7, 0.006)} material={crease(sleeveC)} position={[0, -FA + 0.005, 0.005]} />
+        <mesh geometry={lumpBall(0.092, 1, 1.05, 0.95)} material={skin} position={[0, -FA - 0.05, 0.01]} />
+      </group>
     </group>
   );
+  const rL = K.legW / 2;
   const leg = (side: 1 | -1) => st.sit ? (
     <group position={[side * 0.13, 0, 0]}>
-      <mesh geometry={lumpBox(K.legW + 0.02, K.legW, 0.42, 0.08)} material={pants} position={[0, 0, 0.16]} />
-      <mesh geometry={lumpBox(K.legW, K.seatH - 0.06, K.legW, 0.08)} material={pants} position={[0, -(K.seatH - 0.06) / 2, 0.34]} />
+      <mesh geometry={lumpLimb(rL * 1.15, rL * 1.02, 0.4, side > 0 ? 5 : 6)} material={pants} position={[0, 0, -0.04]} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh geometry={lumpLimb(rL * 1.02, rL * 0.92, K.seatH - 0.12, side > 0 ? 7 : 8)} material={pants} position={[0, 0, 0.34]} />
+      <mesh geometry={seamRing(rL * 0.95, 0.008)} material={crease(sp.pants)} position={[0, -K.seatH + 0.11, 0.34]} />
       <mesh geometry={lumpBox(K.legW + 0.05, 0.1, 0.29, 0.045)} material={shoes} position={[0, -K.seatH + 0.05, 0.38]} />
     </group>
   ) : (
     <group position={[side * 0.13, 0, 0]}>
-      <mesh geometry={lumpBox(K.legW + 0.02, K.legH - 0.06, K.legW + 0.02, 0.08)} material={pants} position={[0, -(K.legH - 0.06) / 2, 0]} />
+      <mesh geometry={lumpLimb(rL * 1.12, rL * 0.95, K.legH - 0.1, side > 0 ? 9 : 10)} material={pants} position={[0, 0.02, 0]} />
+      <mesh geometry={seamRing(rL * 0.95, 0.008)} material={crease(sp.pants)} position={[0, -K.legH + 0.11, 0]} />
       <mesh geometry={lumpBox(K.legW + 0.05, 0.1, 0.29, 0.045)} material={shoes} position={[0, -K.legH + 0.05, 0.04]} />
     </group>
   );
+  const el = st.elbow ?? [0.18, 0.18];
   return (
     <group position={[st.x, 0, st.z]} rotation={[0, st.yaw, 0]} scale={s}>
       <group position={[0, hip + st.bob / s, 0]}>
@@ -260,9 +273,10 @@ export const Kid: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
           ) : (
             <mesh geometry={lumpBox(K.torsoW + 0.01, 0.07, K.torsoD + 0.01, 0.03)} material={trim} position={[0, K.torsoH * 0.55, 0]} />
           )}
-          {arm(1, st.armL)}{arm(-1, st.armR)}
+          {arm(1, st.armL, el[0])}{arm(-1, st.armR, el[1])}
           {st.pose === "phone" ? <group position={[0, 0.37, 0.45]} rotation={[0.5, 0, 0]}><Phone t={t} /></group> : null}
           <mesh geometry={lumpBox(0.18, 0.1, 0.16, 0.06)} material={skin} position={[0, K.torsoH + 0.02, 0]} />
+          <mesh geometry={seamRing(0.085, 0.009)} material={crease(sp.top)} position={[0, K.torsoH - 0.005, 0]} scale={[1.05, 1, 0.95]} />
           <group position={[0, K.torsoH + K.neck + K.headH / 2, 0]} rotation={[st.headPitch, st.headYaw, st.tilt]}>
             <mesh geometry={lumpBox(K.headW, K.headH, K.headD, HR, 0.008)} material={skin} />
             <Face f={st.face} skin={sp.skin} brow={sp.brow} eye={sp.eye} freckles={sp.freckles} simple={!st.lead} />
