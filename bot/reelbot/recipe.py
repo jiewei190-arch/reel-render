@@ -145,6 +145,11 @@ def _context(folder: Path) -> tuple[dict, str, str]:
         "frame wide, with the hook text big beside it. Something moves from frame 0 (push-in, slam or whip). Hard cut by "
         "0.8-1.0 s to the other of (a)/(b). Never open on an establishing shot, a mid-shot, or a small title board at "
         "the top edge.\n\n"
+        "VARIETY AND MEANING: never reuse the same shot for opposite beats (a money stack for both '$31 billion' and "
+        "'31 cents'); show the change (the stack shrinking, the chart crashing). At most ONE board on screen at frame 0. "
+        "Body language matches the line (no raised-arms celebration on a loss or a bitter 'survived'). Keep every "
+        "character's face and neck out of the caption band at the bottom: in close shots put the subject higher or "
+        "pull back.\n\n"
         f"=== {gname} ===\n" + guide + long_note
     )
     base = (
