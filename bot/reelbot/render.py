@@ -10,7 +10,7 @@ import subprocess
 import time
 from pathlib import Path
 
-from . import channels, lambda_render, sound, locks
+from . import channels, docwriter, lambda_render, sound, locks
 from .config import CFG
 
 
@@ -120,25 +120,29 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     data = json.loads((folder / "script.json").read_text(encoding="utf-8"))
     slug = data["slug"]
     ch = channels.get(data.get("channel"))
-    comp = _pascal(slug)
+    doc = docwriter.is_doc(folder)
+    # a doc video (KIT_DOC.md) is its own composition, <Pascal>Doc in src/index.doc.ts, built by tools/doc_build.mjs;
+    # it has no motion-blur variant (the kit renders 30 fps straight)
+    comp = docwriter.comp(slug) if doc else _pascal(slug)
+    entry = docwriter.ENTRY if doc else ch.entry
     name = slug.replace("-", "_") + "_v"
 
-    print("  build: recipe -> composition + QA")
+    print("  build: " + ("doc.json + chapters" if doc else "recipe") + " -> composition + QA")
     with locks.held(ENGINE_LOCK, f"build {slug}"):
-        _run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
+        _run(docwriter.build_cmd(slug) if doc else [CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
 
     n = _next_version(name)
     muted = CFG.render_root / "out" / "renders" / f"{name}{n}.mp4"
     on = on or os.environ.get("REELBOT_RENDER_ON", "pc")
-    blur = motion_blur()
+    blur = motion_blur() and not doc
     if on == "lambda":
         muted.parent.mkdir(parents=True, exist_ok=True)
-        lambda_render.render(comp, muted, blur=blur, entry=ch.entry)
+        lambda_render.render(comp, muted, blur=blur, entry=entry)
     elif blur:
         print(f"  render: {comp}Sub on the GPU with motion blur (version {n}); 4x slower")
         _run([CFG.bash, "render.sh", str(n), comp + "Sub"], env={"NAME": name, "ENTRY": ch.entry})
     else:
-        _render_plain(comp, muted, ch.entry)
+        _render_plain(comp, muted, entry)
 
     tmp = CFG.render_root / "out" / "tmp"
     tmp.mkdir(parents=True, exist_ok=True)
@@ -161,14 +165,14 @@ def render(folder: Path, *, out_dir: Path | None = None, on: str | None = None) 
     dest.mkdir(parents=True, exist_ok=True)
     final = dest / "video.mp4"
     shutil.copy2(voiced, final)
-    for f in ("UPLOAD.md", "sources.md", "script.txt"):
+    for f in ("UPLOAD.md", "sources.md", "script.txt") + (("chapters.txt",) if doc else ()):
         if (folder / f).exists():
             shutil.copy2(folder / f, dest / f)
     sha = _sha(final)
     (dest / "video.sha256").write_text(f"{sha}  video.mp4\n", encoding="utf-8")
 
     print("  qa: loudness + whisper")
-    qa = (f"# QA: {slug}\n\n- version: {name}{n} ({comp}Sub)\n- sha256: {sha}\n- loudness: {_loudness(final)}\n"
+    qa = (f"# QA: {slug}\n\n- version: {name}{n} ({comp}{'' if doc else 'Sub'})\n- sha256: {sha}\n- loudness: {_loudness(final)}\n"
           f"- whisper: {_whisper_check(final, data['lines'])}\n"
           f"- fact-check cleared: {not data.get('factcheck_unresolved', False)}\n"
           f"- recipe QA report: {folder / 'RECIPE_QA.md'}\n")

@@ -24,7 +24,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import bend, channels, claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice, safety
+from . import bend, channels, claude, docwriter, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice, safety
 from .config import CFG
 from .cost import COST
 
@@ -107,7 +107,10 @@ def stage_recipe(folder: Path, a) -> None:
     if not ch.renders:
         raise SystemExit(f"{ch.name}: script + voice are done in {folder}. This channel renders in its own engine "
                          f"({ch.entry}); hand it voice.wav + vo/timings.json + script.txt.")
-    recipe.build(folder)
+    if docwriter.is_doc(folder):  # long-form law/biz/cyber: the documentary kit, written one chapter at a time
+        docwriter.build(folder)
+    else:
+        recipe.build(folder)
     _mark(folder, "recipe")
 
 
@@ -117,13 +120,17 @@ def stage_edit(folder: Path, final: Path, a) -> dict:
     ends up as the final video, with its recipe restored."""
     import shutil
     lines = json.loads((folder / "script.json").read_text(encoding="utf-8"))["lines"]
+    doc = docwriter.is_doc(folder)
     r, rounds = {}, []
     for rnd in range(1, a.edit_rounds + 2):
         r = editor.review(final, lines)
         editor.report(final.parent, rnd, r)
         keep = final.with_name(f"{final.stem}.round{rnd}{final.suffix}")
         shutil.copy2(final, keep)
-        shutil.copy2(folder / "recipe.json", folder / f"recipe_round{rnd}.json")
+        if doc:
+            docwriter.snapshot(folder, f"doc_round{rnd}")
+        else:
+            shutil.copy2(folder / "recipe.json", folder / f"recipe_round{rnd}.json")
         rounds.append((rnd, r, keep))
         print(f"  editor round {rnd}: hook {r['hook']}, overall {r['scores']['overall']}, "
               f"predicted stayed {r['predicted_stayed_pct']}%, {len(r['serious'])} serious issue(s)")
@@ -134,14 +141,17 @@ def stage_edit(folder: Path, final: Path, a) -> dict:
             print("  editor: still has issues after the last round; see EDIT_REPORT.md before posting")
             break
         fixes = [i for i in r["issues"] if i["severity"] != "minor"] or r["issues"]
-        recipe.revise(folder, fixes, rnd)
+        (docwriter.revise if doc else recipe.revise)(folder, fixes, rnd)
         final = render.render(folder, on=a.on)
     best = max(rounds, key=lambda x: (x[1].get("passed", False), x[1]["hook"], x[1]["scores"]["overall"], -len(x[1]["serious"])))
     if best[0] != rounds[-1][0]:
         print(f"  editor: round {best[0]} scored better (hook {best[1]['hook']}, overall {best[1]['scores']['overall']}) "
               f"than the last round; keeping round {best[0]}'s video and recipe")
         shutil.copy2(best[2], final)
-        shutil.copy2(folder / f"recipe_round{best[0]}.json", folder / "recipe.json")
+        if doc:
+            docwriter.restore(folder, f"doc_round{best[0]}")
+        else:
+            shutil.copy2(folder / f"recipe_round{best[0]}.json", folder / "recipe.json")
         r = best[1]
         with open(final.parent / "EDIT_REPORT.md", "a", encoding="utf-8") as fh:
             fh.write(f"\n## Final video = round {best[0]} (best score)\n")
