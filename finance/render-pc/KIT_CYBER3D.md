@@ -53,7 +53,7 @@ src/cyber/gen/<slug_>.cyber.gen.ts  →  <Pascal>Recipe in src/index.cyber.ts
    - Final: the same command at scale 1, with `--gl=angle` on the GPU PC.
 10. **Audio:** `STORY_CUES=out/tmp/<slug>.cues.json python tools/story_mix.py <Pascal>Recipe voice.wav <audio_dir> premix.wav`, then `tools/mux_voice.sh`.
     - The cues use the existing library names: impact, whoosh, boom, thud, ding, beep, buzz, alarm, clock, cash, paper, punch, slide.
-    - The music defaults to `upbeat` (the only bed in the library today). Set `"music"` to a darker bed once one is added.
+    - The music defaults to `tense` (story_mix falls back to the closest bed the PC has: mystery, curious...). Set `"music"` to override.
 
 **`At` gotcha.** A bare number is **seconds**. To anchor to a spoken year or number, prefix the line: `"6:2013"`, not `"2013"`. The compiler refuses a bare 3+ digit string. A word that appears twice takes `"<line>:word"` or `"word#2"` (for example, the first "over" is in the hook line).
 

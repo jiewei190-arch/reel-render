@@ -611,7 +611,7 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   if (checkR) { cues.push({ t: checkR.t0, sfx: "whoosh", db: -8 }); checkR.ticks.forEach((tt) => cues.push({ t: tt, sfx: "ding", db: -10 })); }
   if (LS) cues.push(...chapterCues(chapters));
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
-  const audio = { music: recipe.music ?? "upbeat", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
+  const audio = { music: recipe.music ?? "tense", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
   return { recipe, slug: recipe.slug, duration, shots, words, L, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, figuresAt, cutOf, placeOf, labelsAt, boardsAt, devicesAt, flashes, glitchAt, alertAt, qa, textsAt, audio, landscape: LS, chapters, facesAt };
 };

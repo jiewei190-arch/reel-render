@@ -17,14 +17,29 @@ here = os.path.dirname(os.path.abspath(__file__))
 _cues = os.environ.get("STORY_CUES")
 info = (json.load(open(_cues)) if _cues else json.loads(subprocess.check_output(["node", os.path.join(here, "story_cues.mjs")], cwd=os.path.dirname(here))))[comp]
 dur = info["duration"]
-music = os.path.join(adir, "music", info["music"] + ".wav")
+# A kit may name a bed this PC's library doesn't have yet: use the closest mood instead of failing the whole Short.
+NEAREST = {"suspense": ["tense", "mystery"], "dark": ["mystery", "tense"], "tense": ["suspense", "mystery"],
+           "mystery": ["tense", "curious"], "upbeat": ["warm", "curious"], "warm": ["upbeat", "curious"],
+           "sad": ["warm", "mystery"], "curious": ["mystery", "warm"]}
+want = info["music"]
+for name in [want, *NEAREST.get(want, []), "tense", "mystery", "curious", "warm", "upbeat"]:
+    music = os.path.join(adir, "music", name + ".wav")
+    if os.path.exists(music):
+        break
+else:
+    sys.exit(f"no music bed in {os.path.join(adir, 'music')} (wanted {want})")
+if name != want:
+    print(f"story_mix: music '{want}' not in the library; using '{name}'")
+    info["music"] = name
 ins = ["-i", voice, "-stream_loop", "-1", "-i", music]
 parts, labels = [], []
-for k, c in enumerate(sorted(info["cues"], key=lambda c: c["t"])):
+for c in sorted(info["cues"], key=lambda c: c["t"]):
     f = os.path.join(adir, "sfx", c["sfx"] + ".wav")
-    if not os.path.exists(f):
-        sys.exit(f"missing sfx {f}")
+    if not os.path.exists(f):  # one missing effect shouldn't sink the Short
+        print(f"story_mix: skipping missing sfx {f}")
+        continue
     ins += ["-i", f]
+    k = len(labels)
     j = 2 + k
     ms = max(0, int(round(c["t"] * 1000)))
     parts.append(f"[{j}:a]aresample=48000,aformat=channel_layouts=stereo,volume={c.get('db', 0) - 6}dB,adelay={ms}|{ms}[s{k}]")
