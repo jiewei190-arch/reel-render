@@ -7,7 +7,9 @@
   also slows other Claude sessions on the same subscription.
 - "api": the Anthropic API with streaming, adaptive thinking, structured output and server-side refusal fallback.
 
-Pick with REELBOT_CLAUDE_BACKEND=cli|api.
+Pick with REELBOT_CLAUDE_BACKEND=cli|api|auto. Default: auto when ANTHROPIC_API_KEY is set (API credits first; when
+the key's credit or monthly spend cap runs out, the same call is redone on the subscription and the API is retried
+after REELBOT_API_RETRY_HOURS, default 12), else cli.
 """
 from __future__ import annotations
 
@@ -29,19 +31,71 @@ class ClaudeError(RuntimeError):
     pass
 
 
+EXHAUSTED_FLAG = Path(__file__).resolve().parent.parent / "work" / "api_exhausted.json"
+
+
 def backend() -> str:
+    """cli = subscription only; api = API key only; auto (default with a key) = API credits first, then the
+    subscription once the key's credit or spend cap runs out."""
     b = os.environ.get("REELBOT_CLAUDE_BACKEND", "").strip().lower()
-    if b in ("cli", "api"):
+    if b in ("cli", "api", "auto"):
         return b
-    return "api" if os.environ.get("ANTHROPIC_API_KEY") else "cli"
+    return "auto" if os.environ.get("ANTHROPIC_API_KEY") else "cli"
+
+
+def _api_exhausted_recently() -> bool:
+    if not EXHAUSTED_FLAG.exists():
+        return False
+    try:
+        since = json.loads(EXHAUSTED_FLAG.read_text(encoding="utf-8"))["epoch"]
+    except Exception:  # noqa: BLE001
+        return False
+    return time.time() - since < float(os.environ.get("REELBOT_API_RETRY_HOURS", "12")) * 3600
+
+
+def _mark_exhausted(reason: str) -> None:
+    EXHAUSTED_FLAG.parent.mkdir(parents=True, exist_ok=True)
+    EXHAUSTED_FLAG.write_text(json.dumps({"epoch": time.time(), "utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                                          "reason": reason[:300]}), encoding="utf-8")
+    print(f"  claude: API credit is used up ({reason[:120]}). Switching to your Claude plan (subscription); "
+          f"the API is tried again after {os.environ.get('REELBOT_API_RETRY_HOURS', '12')} h.")
+
+
+class APIExhausted(ClaudeError):
+    pass
+
+
+def _is_exhausted(e) -> bool:
+    """Out of API credit or over the monthly spend cap (not an ordinary, temporary rate limit)."""
+    import anthropic
+    if not isinstance(e, anthropic.APIStatusError):
+        return False
+    if e.status_code == 402 or getattr(e, "type", None) == "billing_error":
+        return True
+    body = e.body if isinstance(getattr(e, "body", None), dict) else {}
+    err = body.get("error", {}) if isinstance(body.get("error"), dict) else {}
+    code = (err.get("details") or {}).get("error_code") if isinstance(err.get("details"), dict) else None
+    if e.status_code == 429 and code == "enforced_spend_limit_reached":
+        return True
+    return e.status_code == 400 and "credit balance" in str(e).lower()  # older accounts report low credit as a 400
+
+
+def _use_api() -> bool:
+    b = backend()
+    return b == "api" or (b == "auto" and not _api_exhausted_recently())
 
 
 def ask_json(system: str, user: str | list, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
     """Ask Claude for a JSON object that matches `schema` (JSON Schema, additionalProperties false).
     `user` is a string, or a list of content blocks (text + base64 images) for a vision request."""
-    if backend() == "cli":
-        return _ask_cli(system, user, schema)
-    return _ask_api(system, user, schema, effort=effort, max_tokens=max_tokens)
+    if _use_api():
+        try:
+            return _ask_api(system, user, schema, effort=effort, max_tokens=max_tokens)
+        except APIExhausted as e:
+            if backend() == "api":
+                raise
+            _mark_exhausted(str(e))
+    return _ask_cli(system, user, schema)
 
 
 # ---------------------------------------------------------------- subscription (Claude Code CLI)
@@ -82,9 +136,20 @@ WEB_SCHEMA = {
 }
 
 
+WEB_SYSTEM = ("You are a careful researcher. Use web search and web fetch to find current, reliable sources. "
+              "Prefer primary and official sources. Never invent a source or a number; say 'not found' instead.")
+
+
 def ask_web(prompt: str) -> tuple[str, list[dict]]:
-    """Research with Claude Code's own web search (the subscription CLI). Returns (text, [{title, url}]).
-    Used instead of Gemini grounding, so research costs nothing beyond the Claude plan."""
+    """Web research. Returns (text, [{title, url}]). API credits first (server-side web search) when a key is set,
+    then the subscription CLI's own WebSearch/WebFetch. Used instead of Gemini grounding."""
+    if _use_api():
+        try:
+            return _web_api(prompt)
+        except APIExhausted as e:
+            if backend() == "api":
+                raise
+            _mark_exhausted(str(e))
     res = _ask_cli("You are a careful researcher. Use WebSearch and WebFetch to find current, reliable sources. "
                    "Prefer primary and official sources. Never invent a source or a number; say 'not found' instead. "
                    "Put the findings in `text` and every URL you actually used in `sources`.",
@@ -144,6 +209,44 @@ def client():
     return _client
 
 
+def _web_api(prompt: str) -> tuple[str, list[dict]]:
+    """Server-side web search + fetch on the API. No structured output here (it can't be combined with the
+    citations these tools return), so the text and the result URLs are collected from the content blocks."""
+    import anthropic
+    messages = [{"role": "user", "content": prompt}]
+    texts, sources, seen = [], [], set()
+    for _ in range(6):  # pause_turn: send the paused turn back so the server continues it
+        try:
+            with client().beta.messages.stream(
+                model=CFG.claude_model, max_tokens=32000, system=WEB_SYSTEM, messages=messages,
+                thinking={"type": "adaptive"}, output_config={"effort": "medium"},
+                tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": 8},
+                       {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 5}],
+                betas=["server-side-fallback-2026-07-01"], fallbacks="default",
+            ) as stream:
+                msg = stream.get_final_message()
+        except anthropic.APIStatusError as e:
+            if _is_exhausted(e):
+                raise APIExhausted(str(e)) from e
+            raise
+        COST.add_claude(msg.usage)
+        for b in msg.content:
+            if b.type == "text":
+                texts.append(b.text)
+            elif b.type == "web_search_tool_result" and isinstance(b.content, list):  # an error result is an object
+                for r in b.content:
+                    url = getattr(r, "url", None)
+                    if url and url not in seen:
+                        seen.add(url)
+                        sources.append({"title": getattr(r, "title", "") or "", "url": url})
+        if msg.stop_reason == "refusal":
+            raise ClaudeError("Claude declined this research request.")
+        if msg.stop_reason != "pause_turn":
+            break
+        messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": msg.content}]
+    return "\n".join(texts).strip(), sources
+
+
 def _ask_api(system: str, user: str | list, schema: dict, *, effort: str | None, max_tokens: int) -> dict:
     import anthropic
     for attempt in range(3):
@@ -159,7 +262,11 @@ def _ask_api(system: str, user: str | list, schema: dict, *, effort: str | None,
                 fallbacks="default",
             ) as stream:
                 msg = stream.get_final_message()
-        except anthropic.RateLimitError as e:
+        except anthropic.APIStatusError as e:
+            if _is_exhausted(e):  # out of credit / spend cap: hand over to the subscription instead of retrying
+                raise APIExhausted(str(e)) from e
+            if not isinstance(e, anthropic.RateLimitError):
+                raise
             wait = int(e.response.headers.get("retry-after", "30"))
             print(f"  claude: rate limited, waiting {wait}s")
             time.sleep(wait)

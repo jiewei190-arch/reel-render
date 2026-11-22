@@ -74,6 +74,17 @@ Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--
 - Sound design adds custom effects to the engine's cue file before the mix (`sound_design.json` in the Short's folder
   lists them). Generated files go to `<REELBOT_AUDIO_DIR>/sfx/gen_*.wav`. Turn it off with `REELBOT_SOUND_DESIGN=0`.
 
+## Claude: API credits first, then your plan
+
+With `ANTHROPIC_API_KEY` in `bot/.env`, the default backend is `auto`:
+- Every Claude call, including web research through the API's server-side web search/fetch, uses the API key.
+- When the key returns "out of credit" (402 `billing_error`, or a monthly spend-cap 429), that same call is redone
+  through the Claude Code login on this PC (your subscription), and the bot says so once.
+- It stays on the plan for `REELBOT_API_RETRY_HOURS` (default 12), then tries the API again, in case it was topped up.
+- The marker is `work/api_exhausted.json`; delete it to retry the API right away.
+
+`REELBOT_CLAUDE_BACKEND=cli` forces plan only, and `api` forces key only (no fallback).
+
 ## Free mode (default): no Gemini
 
 Gemini is off unless `REELBOT_USE_GEMINI=1`:
