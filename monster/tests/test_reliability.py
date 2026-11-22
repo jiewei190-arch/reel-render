@@ -376,3 +376,10 @@ def test_rule_based_support_rejects_invented_outcomes_and_allows_paraphrase():
     src = ["On June 25, 2007, the trial ended with Judge Judith Bartnoff ruling in favor of the dry cleaners."]
     assert len(editorial.novel_words("Pearson won and the jury awarded him millions.", src)) > 2
     assert len(editorial.novel_words("In June 2007 the judge ruled in favor of the dry cleaners.", src)) <= 2
+
+
+def test_dropping_a_qualifier_is_caught():
+    from mya import editorial
+    src = ["Liebeck sought to settle with McDonald's for $20,000 to cover her medical expenses."]
+    assert editorial.dropped_qualifiers("Liebeck settled with McDonald's for $20,000 to cover her medical expenses.", src)
+    assert not editorial.dropped_qualifiers("Liebeck asked McDonald's for $20,000 to cover her medical bills.", src)

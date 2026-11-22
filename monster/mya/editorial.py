@@ -208,6 +208,29 @@ def novel_words(line: str, passages: list[str]) -> list[str]:
     return out
 
 
+# Words that change what happened. If the source has one, the line must keep it (or a synonym), or
+# "sought to settle" silently becomes "settled" (a real defect found on 2026-11-22, Liebeck v. McDonald's).
+QUALIFIERS = [
+    {"sought", "seek", "seeking", "asked", "requested", "wanted", "tried", "attempted", "attempt", "proposed", "offered", "demanded"},
+    {"alleged", "allegedly", "accused", "claimed", "claims", "reportedly", "suspected"},
+    {"refused", "rejected", "declined", "denied"},
+    {"not", "never", "no", "without", "failed"},
+    {"nearly", "almost", "approximately", "roughly", "estimated", "excess"},
+    {"planned", "considered", "proposed", "intended"},
+]
+
+
+def dropped_qualifiers(line: str, passages: list[str]) -> list[str]:
+    lw = set(re.findall(r"[a-z]+", line.lower()))
+    out = []
+    for p in passages:
+        pw = set(re.findall(r"[a-z]+", p.lower()))
+        for group in QUALIFIERS:
+            if pw & group and not lw & group:
+                out.append(sorted(pw & group)[0])
+    return sorted(set(out))
+
+
 def support_check(script: dict, claims: list[dict], judge: bool = True) -> list[str]:
     """Rule first: a line may only use words from its cited source sentences (at most 2 new content words) and the
     same numbers (checked in check()). Then a model may veto a clear contradiction; its 'not in sources' opinion is
@@ -219,6 +242,10 @@ def support_check(script: dict, claims: list[dict], judge: bool = True) -> list[
         if not cited:
             if re.search(r"\d", s["narration"]):
                 problems.append(f"scene {i} states facts but cites no claim")
+            continue
+        dropped = dropped_qualifiers(s["narration"], cited)
+        if dropped:
+            problems.append(f"scene {i} drops a meaning-changing word from its source ({', '.join(dropped)}): '{s['narration'][:80]}'")
             continue
         new = novel_words(s["narration"], cited)
         if len(new) > 2:
