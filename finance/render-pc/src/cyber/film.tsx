@@ -17,6 +17,8 @@ import { FPS } from "./compile";
 import { Figure, figureRig } from "./figure";
 import { AlertWash, Boards, CyberCaptions, CyberHook, Devices, GlitchBars, LabelLayer, cyberChunks } from "./hud";
 import { CP, CYBER_MOODS } from "./palette";
+import { chapterAt, ChapterCard, chunkWords, LF, LowerThirdCaptions } from "../longform/kit";
+import type { CapChunk } from "../longform/kit";
 import { CITIES, CYBER_SETS, emailTex, geo, neon, pinTop, StringLine } from "./sets";
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
@@ -111,7 +113,10 @@ const Sparks: React.FC<{ f: FxR; t: number }> = ({ f, t }) => {
   );
 };
 
-export const CyberFilm: React.FC<{ c: CyberCompiled }> = ({ c }) => {
+/** portrait (Shorts) or landscape (long-form, LONGFORM.md); the portrait film is unchanged */
+export const CyberFilm: React.FC<{ c: CyberCompiled }> = ({ c }) => (c.landscape ? <CyberFilmL c={c} /> : <CyberFilmP c={c} />);
+
+const CyberFilmP: React.FC<{ c: CyberCompiled }> = ({ c }) => {
   const n = useCurrentFrame();
   useFonts();
   const L = c.L;
@@ -149,6 +154,59 @@ export const CyberFilm: React.FC<{ c: CyberCompiled }> = ({ c }) => {
       <CyberHook text={c.recipe.hook.text} t={tOut} until={c.hookUntil} L={L} g={g} />
       {c.hookAgain !== null ? <CyberHook text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} L={L} g={g} /> : null}
       {!capOff ? (fixedCap ? <CyberCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} L={L} from={0} /> : <CyberCaptions chunks={chunks} t={tOut} L={L} />) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ------------------------------------------------------------------ LONG-FORM: the 1920x1080 film (LONGFORM.md)
+const chunkCacheL = new WeakMap<CyberCompiled, CapChunk[]>();
+/** long-form captions: lower-third phrases of up to LF.CAP_WORDS words (2 lines max in the 1440 px column) */
+const chunksL = (c: CyberCompiled) => { let k = chunkCacheL.get(c); if (!k) { k = chunkWords(c.words, LF.CAP_WORDS); chunkCacheL.set(c, k); } return k; };
+/** The same scene and HUD as a Short, laid out for 16:9: ONE View (the canvas stays mounted across shots: no key per
+ *  shot, so the shaders compile once per tab), the post chain at its 1080 weight (postScale 1), the hook top centre,
+ *  a chapter card at each chapter, and the shared lower-third captions (the spoken word in the kit's neon cyan, as on
+ *  the Shorts) at the shot's caption-safe centre. Everything is procedural: no model or texture file is loaded. */
+const CyberFilmL: React.FC<{ c: CyberCompiled }> = ({ c }) => {
+  const n = useCurrentFrame();
+  useFonts();
+  const L = c.L;
+  const tOut = n / FPS;
+  const shot = c.shotAt(tOut);
+  const t = Math.min(Math.max(tOut, shot.a), shot.b - 1e-4);
+  const cam = c.camAt(t);
+  const set = CYBER_SETS[shot.set];
+  const bolts = c.boltsAt(t);
+  const g = c.glitchAt(tOut);
+  const capOff = shot.spec.caption === "off" || c.recipe.captions === "off";
+  const fixedCap = shot.spec.caption && shot.spec.caption !== "auto" && shot.spec.caption !== "off" ? shot.spec.caption : null;
+  const capY = shot.capY ?? LF.CAP_Y / LF.H;
+  const ch = chapterAt(c.chapters, tOut);
+  const jx = g > 0 ? (hash(Math.floor(n / 2) * 3.1) - 0.5) * 36 * g * L.k : 0;
+  return (
+    <AbsoluteFill style={{ background: set.bg, overflow: "hidden" }}>
+      <AbsoluteFill style={{ transform: g > 0 ? `translateX(${jx.toFixed(1)}px)` : undefined }}>
+        <View mood={CYBER_MOODS[set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={LF.W} height={LF.H} postScale={1}>
+          <ClipOn />
+          {set.render(t)}
+          {bolts.map((st) => <Bolt key={st.id} st={st} t={t} shadow />)}
+          {shot.props.map((p) => {
+            if (t < p.a || t >= p.b) return null;
+            if (p.def) { const pl = c.placeOf(p, t); return p.show(t) > 0 ? <CutawayObject key={p.key} k={p.key} def={p.def} pl={pl} st={c.cutOf(p.key, t)} t={t} /> : null; }
+            return <KitView key={p.key} pr={p} c={c} t={t} />;
+          })}
+          {shot.fx.filter((f) => f.fx === "sparks").map((f, i) => <Sparks key={i} f={f} t={t} />)}
+        </View>
+      </AbsoluteFill>
+      <GlitchBars g={g} frame={n} L={L} />
+      <AlertWash a={c.alertAt(tOut)} L={L} />
+      <LabelLayer labels={c.labelsAt(tOut)} t={tOut} L={L} />
+      <Boards boards={c.boardsAt(tOut)} t={tOut} L={L} />
+      <Devices devices={c.devicesAt(tOut)} t={tOut} L={L} />
+      <CyberHook text={c.recipe.hook.text} t={tOut} until={c.hookUntil} L={L} g={g} />
+      {c.hookAgain !== null ? <CyberHook text={c.recipe.hook.text} t={tOut} t0={c.hookAgain} until={99} L={L} g={g} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={tOut - ch.card} accent={CP.cyan} edge={CP.magenta} /> : null}
+      {!capOff ? (fixedCap ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={tOut} centre={capY} size={L.cap.fs} hot={CP.cyan} />
+        : <LowerThirdCaptions chunks={chunksL(c)} t={tOut} centre={capY} size={L.cap.fs} hot={CP.cyan} hide={(x) => x < L.cap.from} />) : null}
     </AbsoluteFill>
   );
 };

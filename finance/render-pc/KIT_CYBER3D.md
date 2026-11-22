@@ -67,8 +67,8 @@ Every screen number lives in `LAYOUTS`: the hook, the caption band, the safe box
 | `landscape` | 1920 x 1080 | `"format": "landscape"` (the engine/longform convention) or `"frame": "landscape"` |
 
 - The compiler, the HUD, the gate, `project()` and the composition size all read `layoutOf(recipe)`.
-- Text scales by `L.k` (landscape 0.8).
-- The gate already compiles every recipe in landscape too ("the landscape layout compiles"). Landscape *framing* (camera distances) has not been tuned or rendered yet.
+- Text scales by `L.k` (portrait 1; landscape 1 too: a 1080-tall frame shows text as large as a Short does).
+- The gate also compiles every Short in landscape ("the landscape layout compiles"). Long-form landscape: section 14.
 
 ## 3. Palette and light (src/cyber/palette.ts)
 
@@ -284,9 +284,82 @@ The tech3d presets carry over (`hookZoom`, `closeUp`, `medium`, `wide`, `slamZoo
 | `src/cyber/types.ts` | the recipe schema |
 | `src/cyber/compile.ts` | the compiler: lenses, tracks, cutaway timelines, label layout, story devices, flash events, audio cues |
 | `src/cyber/hud.tsx` | hook, captions, labels, boards, story cards, glitch, alert wash |
-| `src/cyber/film.tsx` | the renderer (plain 30 fps) |
+| `src/cyber/film.tsx` | the renderer (plain 30 fps): the portrait film and the long-form landscape film |
+| `src/cyber/clip.ts` | the clip adapter (`clipAdapter`, re-exported by `tools/cyber_entry.ts`) for `tools/clip_short.mjs` |
 | `src/cyber/root.tsx`, `src/index.cyber.ts` | compositions: `CyberGallery` and every recipe |
 | `src/cyber/gallery.ts` | the gallery shots and `GALLERY_STILLS` |
 | `tools/cyber_build.mjs`, `tools/cyber_entry.ts` | build, QA and gate |
 | `tools/cyber_stills.mjs` | batch stills (`gallery`, or a composition's frames) |
 | reused | `src/tech/bolt.tsx` (BOLT), `src/tech/cutaway.tsx` (the parts system), `tools/tech_review_sheet.py` (contact sheet), the engine's View and post chain |
+
+## 14. Long-form (landscape)
+
+A cyber3d recipe renders as a 1920x1080 long-form video with the same framing and caption rules as every other channel
+(LONGFORM.md, shared pieces in `src/longform/kit.tsx` and `tools/kit_long.mjs`). The demo is
+`finance/longform/cyber-demo-landscape/` (33.2 s, 13 shots, 3 chapters: the first 9 lines of `cyber-fake-supplier`),
+and its Short is `finance/shorts/cyber-demo-landscape-short-1/`.
+
+**Fields**
+
+| field | what it does |
+|---|---|
+| `"format": "landscape"` (or `"frame": "landscape"`, an alias) | 1920x1080, composition `<Pascal>Recipe` in `src/index.cyber.ts` (plain 30 fps); the long-form gate instead of the Shorts gate |
+| `"chapters": [{ "title", "word" }]` | landscape only (a compile error in portrait). A 2.6 s chapter card (cyan tab, magenta edge) at each chapter word, after the hook if chapter 1 starts under it; a whoosh + impact cue each; `chapters.txt` next to the recipe |
+| `"beat": true` on a shot | a new story beat for the pacing gate (chapters and set changes count by themselves) |
+| `hook` | top centre (top 70 px, 80 px type), until the end of line 1 (or `until`); the 5-word / `$` rules of a Short do not apply |
+| captions | lower-third phrases of up to 7 words (2 lines, the 1440 px column), the spoken word in neon cyan as on the Shorts; nothing to set |
+
+**What adapts (automatic)**
+
+- Lens: the vertical fov is kept; each preset gets `landscapeLens(preset)` (fov x, preset dist x; `drift` counts as
+  `medium`, 0.9). An explicit `cam.fov` is scaled too; an explicit `cam.dist` is kept. slamZoom's 60° start scales the same.
+- Caption-safe framing: a shot whose face (BOLT's screen, the figure's hood) in the caption column lands in the
+  lower-third band (833-977 px) gets its subject lifted (the lens's `face` fraction, down to 0.26) at compile time,
+  unless the recipe sets `cam.face`. Nothing is baked into the gen file. What is left moves the lower third
+  (`lowerThirdY`: 400-940 px); the report lists lifts and moves.
+- Layout (`LAYOUTS.landscape`): caption centre 905, band ±72, side 240; cards and labels in the safe box y 90-800 (hook
+  up: 320-800), x 60-1860; the story cards sit right of centre (case file, money, checklist, countdown at x 1370) so the
+  subject can stay left/centre; the ALERT banner sits on the money card as in portrait.
+- Film: one `View` 1920x1080 with `postScale={1}` (the post chain keeps its 1080 weight), never re-keyed per shot (the
+  canvas and its shaders survive every cut). Everything is procedural: no model or texture file is fetched, so there is
+  nothing to window. Per-text caches are bounded: email tile textures live in their own LRU (48, disposed on eviction);
+  the cutaway state cache clears at 4,000; material and geometry caches are keyed by value and capped.
+- `shotAt` is a binary search.
+
+**Commands**
+
+```bash
+cd finance/render-pc
+node tools/recipe_build.mjs cyber-demo-landscape --check                 # compile + clip QA + long-form gate (~0.3 s)
+node tools/recipe_build.mjs cyber-demo-landscape --check --qa-sample 5   # clip QA on every 5th frame (long drafts)
+node tools/recipe_build.mjs cyber-demo-landscape                         # gen + registry + RECIPE_QA.md + chapters.txt + cues
+npx remotion still src/index.cyber.ts CyberDemoLandscapeRecipe out.jpg --frame=330 --scale=0.5 --gl=swangle
+npx remotion render src/index.cyber.ts CyberDemoLandscapeRecipe out/longform/cyber-demo-landscape.mp4 --gl=angle --codec=h264 --crf=18
+node tools/clip_short.mjs cyber-demo-landscape --from-word "1:One" --to-word "8:authorities" --out cyber-demo-landscape-short-1
+node tools/recipe_build.mjs cyber-demo-landscape-short-1                 # the full Shorts gate (frame-0 rules)
+```
+
+**The long-form gate** (`kitLongGate`, hard unless noted): hook at frame 0, first word by 0.5 s, sound punch + music
+at 0, >= 3 chapters from the first word, each >= 10 s, a visual change every 6 s (cuts, camera hits and kicks, prop
+motions, figure poses, BOLT face/pose changes, labels, boards, cutaway actions, story cards, fx, chapter cards), a beat
+every 40 s, lower-third captions >= 90 %; warns for shot length, open loops before chapters, text size (the headline
+text of every card >= 30 px glyphs), cards inside the frame and out of the caption band, length 8-12 min. Kit rows on
+top: flash safety (hard), text off faces, labels one at a time, a moving camera (warns). Exit 1 on a clip or a hard fail.
+
+**Clips** (`src/cyber/clip.ts`): every `At` of a shot is re-anchored (shot `at`, `cam.hit`, BOLT `from` / `then[].at`,
+prop `hit` / `then[].at` / `path` times, actions `at`/`until`, boards `at`/`until`, fx and sfx `at`); places are not.
+Story devices and global props in the segment are re-timed, the rest dropped. The hook text is cut to <= 5 words that
+fit two portrait lines, with the `$`/number word in neon. The frame-0 shot is a hookZoom on the hooded figure (its source
+shot's place, or the room's seat; BOLT when the source shot only has BOLT) with the stake on a top board from frame 0,
+a pose change + shake at 0.45 s, cut at 1.0 s. Pick segments whose line 1 says a `$` figure (the stake rule).
+
+**Limits**
+
+- Text cards are DOM at fixed sizes: a card never shrinks for a busy frame, and labels are placed once per label.
+- The landscape demo reuses the portrait camera choices through the lens rule; wide netmap / vault shots show more set
+  at the sides (the sets are built wide enough, but very low `h` values can show the floor edge).
+- The clip keeps the source's cameras (no portrait refit of 3D email tiles); a 16:9 shot built around a wide layout may
+  need a hand edit for 9:16.
+- A Short cut from the 33 s demo is at most ~30 s, under the kit's 30-55 s Shorts rule (a warn).
+- The figure has no face: "face change" at frame 0 is a pose change of the hood (BOLT changes face when he is the subject).
+

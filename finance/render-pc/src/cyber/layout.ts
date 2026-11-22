@@ -1,8 +1,8 @@
 // cyber3d LAYOUT: every screen-space number of the kit lives here, once per frame format, so the compiler, the HUD,
 // the gate (tools/cyber_build.mjs) and the compositions all read the same values.
 //   portrait   1080 x 1920 (Shorts; rendered and QA'd today)
-//   landscape  1920 x 1080 (long-form; the numbers are ready, selected by recipe "format": "landscape" or
-//              "frame": "landscape" once engine/longform lands; nothing else in the kit hard-codes a size)
+//   landscape  1920 x 1080 (long-form, LONGFORM.md: recipe "format": "landscape", or "frame": "landscape" as an alias;
+//              nothing else in the kit hard-codes a size)
 // All values are px in the output frame. Cards, the hook and captions scale with `k` (portrait = 1).
 export type FrameId = "portrait" | "landscape";
 export type Rect = { x: number; y: number; w: number; h: number }; // centre x/y
@@ -41,18 +41,21 @@ const portrait: Layout = {
   alert: { banner: { x: 540, y: 1060, w: 760, h: 150 }, border: 46 },
 };
 
+// LONG-FORM (LONGFORM.md, src/longform/kit.tsx LF): the shared lower-third caption (centre 905, band +-72, 240 px side
+// margins), the hook top centre at 70 px; every card and label stays inside the frame and above the caption band
+// (safe.bottom 800 < 833). Text keeps its portrait size (k = 1): a 1080-tall frame shows it as large as a Short does.
 const landscape: Layout = {
-  id: "landscape", W: 1920, H: 1080, k: 0.8,
-  hook: { top: 70, fs: 84, maxW: 1500, side: 120 },
-  cap: { centre: 900, side: 360, fs: 64, band: 80, from: 1.0 },
-  safe: { top: 90, topHook: 300, bottom: 790, x0: 80, x1: 1840 },
-  label: { fs: 42 },
-  board: { w: 380, h: 220, margin: 90 },
-  caseFile: { x: 1380, y: 520, w: 820, h: 500 },
-  money: { x: 1380, y: 600, w: 760, h: 230 },
-  checklist: { x: 1300, y: 500, w: 900, h: 700 },
-  countdown: { x: 960, y: 360, w: 560, h: 160 },
-  alert: { banner: { x: 960, y: 640, w: 680, h: 130 }, border: 36 },
+  id: "landscape", W: 1920, H: 1080, k: 1,
+  hook: { top: 70, fs: 80, maxW: 1500, side: 120 },
+  cap: { centre: 905, side: 240, fs: 60, band: 72, from: 0 },
+  safe: { top: 90, topHook: 320, bottom: 800, x0: 60, x1: 1860 },
+  label: { fs: 50 },
+  board: { w: 420, h: 250, margin: 90 },
+  caseFile: { x: 1370, y: 470, w: 900, h: 560 },
+  money: { x: 1370, y: 560, w: 860, h: 260 },
+  checklist: { x: 1350, y: 470, w: 920, h: 620 },
+  countdown: { x: 1370, y: 450, w: 640, h: 190 },
+  alert: { banner: { x: 1370, y: 600, w: 760, h: 150 }, border: 36 },
 };
 
 export const LAYOUTS: Record<FrameId, Layout> = { portrait, landscape };

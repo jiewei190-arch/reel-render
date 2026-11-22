@@ -228,7 +228,23 @@ const netmap: CyberSet = {
 
 // ------------------------------------------------------------------ inbox: a wall of emails
 const SUBJECTS = ["Invoice 4471", "Re: Q3 order", "Shipping update", "Meeting notes", "Payment schedule", "Re: Re: parts list", "Weekly report", "Contract draft", "Lunch?", "PO 88-1023", "Updated forecast", "Re: samples", "Travel booking", "Team offsite", "Invoice 4472", "Re: pricing"];
-export const emailTex = (subject: string, phish: boolean) => canvasTexture(`csMail|${subject}|${phish ? 1 : 0}`, 512, 176, (g, W, H) => {
+/** email tiles are keyed by their subject text, which a long-form recipe can have many of: they live in their own LRU
+ *  (the least recently drawn tile texture is disposed past 48), not in the shared canvas-texture cache. Same pixels. */
+const mailTexs = new Map<string, THREE.CanvasTexture>();
+const MAIL_MAX = 48;
+const lruTex = (key: string, w: number, h: number, draw: (g: CanvasRenderingContext2D, w: number, h: number) => void) => {
+  let t = mailTexs.get(key);
+  if (t) { mailTexs.delete(key); mailTexs.set(key, t); return t; }
+  const c = document.createElement("canvas");
+  c.width = w; c.height = h;
+  draw(c.getContext("2d")!, w, h);
+  t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.generateMipmaps = true; t.minFilter = THREE.LinearMipmapLinearFilter;
+  mailTexs.set(key, t);
+  while (mailTexs.size > MAIL_MAX) { const [k0, old] = mailTexs.entries().next().value as [string, THREE.CanvasTexture]; mailTexs.delete(k0); old.dispose(); }
+  return t;
+};
+export const emailTex = (subject: string, phish: boolean) => lruTex(`csMail|${subject}|${phish ? 1 : 0}`, 512, 176, (g, W, H) => {
   g.fillStyle = phish ? "#2a060c" : "#0b1424"; g.fillRect(0, 0, W, H);
   g.strokeStyle = phish ? CP.red : "rgba(25,230,255,0.45)"; g.lineWidth = phish ? 8 : 3; g.strokeRect(4, 4, W - 8, H - 8);
   g.fillStyle = phish ? CP.red : CP.cyanDeep; g.beginPath(); g.arc(44, 52, 22, 0, Math.PI * 2); g.fill();

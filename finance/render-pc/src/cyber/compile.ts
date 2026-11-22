@@ -16,6 +16,8 @@ import { cutBoxes, NO_CUT, objBox, partWorld } from "../tech/cutaway";
 import type { CutState, ObjDef, Placement } from "../tech/cutaway";
 import { figureBoxes, figureRig, figWorld } from "./figure";
 import type { FigurePose, FigureRig, FigureTrack } from "./figure";
+import { chapterCues, landscapeLens, LF, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
+import type { ChapterR, FaceBand } from "../longform/kit";
 import { layoutOf } from "./layout";
 import type { Layout } from "./layout";
 import { CYBER_OBJECTS } from "./objects";
@@ -42,7 +44,9 @@ export type PropR = { key: string; spec: CyberProp; a: number; b: number; hit: n
 export type LabelR = { key: string; text: string; t0: number; t1: number; side: "left" | "right" | "auto"; target: (t: number) => V3; shot: string; tone: "cyan" | "red" };
 export type BoardR = { spec: CyberBoard; t0: number; t1: number };
 export type FxR = { fx: "shake" | "sparks"; at: number; p: (t: number) => V3; gain: number };
-export type CyberShotR = { id: string; a: number; b: number; set: CyberSetId; spec: CyberShot; lens: Lens; kicks: [number, number][]; bolts: BoltTrack[]; props: PropR[]; labels: LabelR[]; boards: BoardR[]; fx: FxR[]; tin: "glitch" | "punch" | "cut" | "whip" };
+export type CyberShotR = { id: string; a: number; b: number; set: CyberSetId; spec: CyberShot; lens: Lens; kicks: [number, number][]; bolts: BoltTrack[]; props: PropR[]; labels: LabelR[]; boards: BoardR[]; fx: FxR[]; tin: "glitch" | "punch" | "cut" | "whip";
+  /** landscape: the lower-third caption centre (fraction of the 1080 height) and how far caption-safe framing lifted the subject */
+  capY?: number; lift?: number };
 export type Cue = { t: number; sfx: string; db?: number };
 export type LabelBox = { key: string; text: string; ax: number; ay: number; x: number; y: number; w: number; h: number; u: number; line: number; tone: "cyan" | "red" };
 export type BoardBox = { title: string; value: string; x: number; y: number; w: number; h: number; u: number; tone: "cyan" | "magenta" | "red" };
@@ -75,6 +79,11 @@ export type CyberCompiled = {
   qa: (t: number) => { bolts: Box[]; props: Box[] };
   textsAt: (t: number) => string[];
   audio: { music: string; cues: Cue[] };
+  /** LONG-FORM ("format": "landscape" or "frame": "landscape", LONGFORM.md): 1920x1080, chapters, lower-third captions */
+  landscape: boolean;
+  chapters: ChapterR[];
+  /** landscape: the faces (BOLT's screen, the figure's hood) inside the caption column at t, as px bands of the 1080 height */
+  facesAt: (t: number) => FaceBand[];
 };
 
 /** camera presets: every one keeps moving */
@@ -121,6 +130,8 @@ const ALERT_DUR = 1.1, ALERT_PEAK = 0.32;
 export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDuration?: number): CyberCompiled => {
   if (recipe.kit !== "cyber3d") throw new Error(`recipe ${recipe.slug}: kit must be "cyber3d"`);
   const L = layoutOf(recipe);
+  const LS = L.id === "landscape";
+  if (recipe.chapters && !LS) throw new Error(`recipe ${recipe.slug}: "chapters" need "format": "landscape" (long-form)`);
   const { at: at0, lineEnd } = makeAt(words);
   // a bare number is SECONDS ("2013" = 2013 s): a spoken year must be anchored as a word with its line ("6:2013")
   const at = (a: At | undefined, d = 0): number => {
@@ -242,9 +253,13 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     };
 
     // lens
-    const c = sp.cam;
-    const P = CYBER_CAMS[c.preset];
-    if (!P) throw new Error(`recipe ${id}: no camera preset "${c.preset}" (has: ${Object.keys(CYBER_CAMS).join(", ")})`);
+    const c0 = sp.cam;
+    const P0 = CYBER_CAMS[c0.preset];
+    if (!P0) throw new Error(`recipe ${id}: no camera preset "${c0.preset}" (has: ${Object.keys(CYBER_CAMS).join(", ")})`);
+    // 16:9 lens rule (LONGFORM.md): keep the vertical fov; wider presets narrow it (and `wide`/`crane` come in a little)
+    const lk = LS ? landscapeLens(c0.preset) : null;
+    const P = lk ? { ...P0, fov: P0.fov * lk[0], dist: P0.dist * lk[1] } : P0;
+    const c: CyberCam = lk && c0.fov !== undefined ? { ...c0, fov: c0.fov * lk[0] } : c0;
     const camTarget = c.target ?? "centre";
     let lensPos0: V3 = [0, 1.5, 6];
     for (const bs of sp.actors ?? []) {
@@ -263,7 +278,10 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     const span = Math.max(0.3, b - a);
     switch (c.preset) {
       case "slamZoom":
-        lens.fov = (t) => (t < hit - 0.2 ? 60 : t < hit ? 60 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(60, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2));
+      {
+        const f60 = lk ? 60 * lk[0] : 60;
+        lens.fov = (t) => (t < hit - 0.2 ? f60 : t < hit ? f60 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(f60, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2));
+      }
         break;
       case "hookZoom": {
         const far: V3 = [off[0] * 1.3, off[1] * 1.15, off[2] * 1.3];
@@ -392,7 +410,8 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   }
 
   // ---------------------------------------------------- per-time helpers
-  const shotAt = (t: number) => { let s = shots[0]; for (const x of shots) if (t >= x.a - 1e-9) s = x; return s; };
+  // binary search (long-form has hundreds of shots); the same answer as a scan: the last shot with t >= a, else the first
+  const shotAt = (t: number) => { let lo = 0, hi = shots.length - 1; while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (t >= shots[mid].a - 1e-9) lo = mid; else hi = mid - 1; } return shots[lo]; };
   const camOf = (Ln: Lens, t: number): Cam => {
     const tau = Math.max(0, t - Ln.a);
     const subj = Ln.subj(t);
@@ -419,6 +438,40 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
     }
     return { bolts, props };
   };
+
+  // ---------------------------------------------------- LONG-FORM: caption-safe framing + the lower-third caption plan
+  /** faces in the caption column (240 px side margins) at t: BOLT's screen and the figure's hood */
+  const facesAt = (t: number): FaceBand[] => {
+    const cam = camAt(t);
+    const out: FaceBand[] = [];
+    const push1 = (c: V3, r: number) => {
+      const q = project(cam, c, L);
+      if (!q || q.z <= 0.3 || q.x < LF.CAP_SIDE || q.x > L.W - LF.CAP_SIDE) return;
+      const half = r * q.k;
+      if (q.y + half > 0 && q.y - half < L.H) out.push({ top: q.y - half, bot: q.y + half });
+    };
+    for (const st of boltsAt(t)) { const f = boltFace(st); push1(f.c, f.r); }
+    for (const fg of figuresAt(t)) push1(figWorld(fg.p, fg.yaw, fg.s, fg.rig.head), 0.15 * fg.s);
+    return out;
+  };
+  const SAMPLES = [0.1, 0.3, 0.5, 0.7, 0.92];
+  const shotFaces = (s: CyberShotR) => SAMPLES.flatMap((u) => facesAt(Math.min(s.b - 1e-3, s.a + (s.b - s.a) * u)));
+  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
+  if (LS) {
+    for (const s of shots) {
+      // lift the subject (the lens's face fraction) when a face lands in the lower-third band, unless cam.face is set
+      if (typeof s.spec.cam.face !== "number") {
+        const f0 = s.lens.face;
+        for (let it = 0; it < 4; it++) {
+          const need = liftNeeded(shotFaces(s));
+          if (need <= 0 || s.lens.face <= 0.26 + 1e-3) break;
+          s.lens.face = Math.max(0.26, s.lens.face - need);
+        }
+        s.lift = Math.round((f0 - s.lens.face) * 1000) / 1000;
+      }
+      s.capY = lowerThirdY(shotFaces(s)) / LF.H;
+    }
+  }
 
   // ---------------------------------------------------- boards (layout from L.board)
   function boardRect(bd: BoardR, t: number) {
@@ -555,10 +608,11 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
   for (const { t0 } of countR) cues.push({ t: t0, sfx: "clock", db: -10 });
   for (const { t0 } of alertsR) cues.push({ t: t0, sfx: "alarm", db: -9 });
   if (checkR) { cues.push({ t: checkR.t0, sfx: "whoosh", db: -8 }); checkR.ticks.forEach((tt) => cues.push({ t: tt, sfx: "ding", db: -10 })); }
+  if (LS) cues.push(...chapterCues(chapters));
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "upbeat", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, duration, shots, words, L, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, figuresAt, cutOf, placeOf, labelsAt, boardsAt, devicesAt, flashes, glitchAt, alertAt, qa, textsAt, audio };
+  return { recipe, slug: recipe.slug, duration, shots, words, L, at, hookUntil, hookAgain, shotAt, camAt, boltsAt, figuresAt, cutOf, placeOf, labelsAt, boardsAt, devicesAt, flashes, glitchAt, alertAt, qa, textsAt, audio, landscape: LS, chapters, facesAt };
 };
 
 // ------------------------------------------------------------------ BOLT tracks (as tech3d)

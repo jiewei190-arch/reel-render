@@ -7,3 +7,5 @@ export { LAYOUTS, layoutOf } from "../src/cyber/layout";
 export { CYBER_OBJECT_IDS } from "../src/cyber/objects";
 export { CYBER_SET_IDS } from "../src/cyber/sets";
 export { figureBoxes } from "../src/cyber/figure";
+export { chunkWords, LF } from "../src/longform/kit";
+export { clipAdapter } from "../src/cyber/clip";

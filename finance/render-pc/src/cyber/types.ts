@@ -2,6 +2,7 @@
 // voice-over exactly like tech3d / Block Money (the `At` and `Place` syntax is the same). Guide: KIT_CYBER3D.md.
 import type { V3 } from "../blocky/motion";
 import type { At, Place } from "../fin/recipe/types";
+import type { ChapterSpec } from "../longform/kit";
 import type { BoltFace, BoltPose } from "../tech/bolt";
 import type { FigurePose } from "./figure";
 import type { CyberSetId } from "./sets";
@@ -125,16 +126,20 @@ export type CyberShot = {
   /** transitions: glitch (default: a short, subtle RGB-split + slice jitter), punch, whip, cut */
   in?: "glitch" | "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
+  /** long-form: marks a new story beat for the pacing gate (chapters and set changes count by themselves) */
+  beat?: boolean;
   note?: string;
 };
 
 export type CyberRecipe = {
   kit: "cyber3d";
   slug: string;
-  /** "short" (30-55 s, default) | "long" (5-8 min) | "landscape" (1920x1080, when the engine supports it) */
+  /** "short" (30-55 s, default) | "long" (5-8 min) | "landscape" (LONG-FORM 1920x1080, LONGFORM.md: 8-12 min) */
   format?: "short" | "long" | "landscape";
-  /** the frame, independent of length: "portrait" (default) | "landscape" */
+  /** the frame, independent of length: "portrait" (default) | "landscape" (an alias of "format": "landscape") */
   frame?: "portrait" | "landscape";
+  /** landscape only: YouTube chapters, each starting on a word (a title card plays at each) */
+  chapters?: ChapterSpec[];
   hook: { text: string; until?: At; again?: At };
   duration?: number;
   music?: string;
