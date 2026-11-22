@@ -12,3 +12,18 @@
 - Stop on any password, 2FA or account-settings prompt.
 - **Upload fields (owner, 2026-11-18): title and description ONLY.** No tags in the Tags field, and no #hashtags anywhere: not in the title, the description or the pinned comment.
   Strip any hashtags that appear in UPLOAD.md. Leave every other optional field at its default, and keep "Altered content" = No.
+
+## Voice safety (owner, 2026-11-22, after an ElevenLabs policy warning)
+ElevenLabs flagged the account for "fraudulent, predatory, or abusive behavior". The trigger was almost certainly the
+hook "You owe five thousand. Pay the minimum..." (a debt demand when read without context), generated 11 times in two
+bursts by listen-back retakes. Every script, autopilot builds included, follows these rules before any ElevenLabs call:
+- Never voice a line that, read alone, sounds like a scam call, phishing or a debt collector. That rules out "you owe",
+  orders to pay/send/wire money, "verify/confirm your account", "your account is locked", gift-card or crypto payment
+  requests, first-person impersonation of a bank, agency or company, threats, and "act now". Use a situation or a
+  question ("What if you only paid the minimum on five thousand?") or third person ("Spender owes five thousand").
+- Scam stories are narration ("he called pretending to be the bank"), never the scammer's script read aloud.
+- At most 1 retake per line and 2 per Short. Never regenerate one line again and again in a burst.
+- No [whispers] (owner rule), and no [dramatic] on a money line.
+- reelbot enforces this in `bot/reelbot/safety.py` (screen + rewrite; a line still flagged is never voiced). Any other
+  pipeline that calls ElevenLabs must run the same screen first: `python -c "from reelbot import safety; ..."` or copy
+  its PATTERNS.
