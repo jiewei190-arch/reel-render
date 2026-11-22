@@ -53,11 +53,15 @@ class Config:
 
     # Paths on the PC
     # render_root = the Remotion project (finance/render-pc on the PC: C:\Users\jiewe\blocky-render)
-    render_root: Path = _path("REELBOT_RENDER_ROOT", str(Path.home() / "blocky-render"))
+    render_root: Path = _path("REELBOT_RENDER_ROOT", str(next(
+        (p for p in (Path.home() / "rr-v1" / "finance" / "render-pc", Path.home() / "blocky-render")
+         if (p / "tools" / "recipe_build.mjs").exists()), Path.home() / "rr-v1" / "finance" / "render-pc")))
     # shorts_dir = where each Short's folder lives (recipe_build reads <shorts>/<slug>/recipe.json)
     shorts_dir: Path = _path("REELBOT_SHORTS_DIR", str(BOT_DIR / "work" / "shorts"))
     # audio_dir = toon3d library with music/*.wav and sfx/*.wav (story_mix.py)
-    audio_dir: Path = _path("REELBOT_AUDIO_DIR", str(Path.home() / "blocky-render" / "public" / "audio"))
+    audio_dir: Path = _path("REELBOT_AUDIO_DIR", str(next(
+        (p for p in (Path.home() / "toon3d-audio", Path.home() / "blocky-render" / "public" / "audio") if (p / "sfx").exists()),
+        Path.home() / "toon3d-audio")))
     # output_dir = finished videos + UPLOAD.md (nothing is uploaded anywhere)
     output_dir: Path = _path("REELBOT_OUTPUT_DIR", str(Path.home() / "Videos" / "BlockMoney"))
     # docs: FORMAT_V1.md / RULES.md / RECIPE_GUIDE.md and recipe examples are read from here if present
