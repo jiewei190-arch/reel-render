@@ -16,7 +16,10 @@ break another kit's bundle. Every kit renders **portrait Shorts** (1080x1920) an
 | `biz3d` | business collapses | `tools/biz_build.mjs` → `src/biz/compile.ts` | `src/biz/registry.gen.ts` (`src/biz/gen/`) | `src/index.biz.ts` | KIT_BIZ3D.md |
 | `cyber3d` | scams & hacks | `tools/cyber_build.mjs` → `src/cyber/compile.ts` | `src/cyber/registry.gen.ts` (`src/cyber/gen/`) | `src/index.cyber.ts` | KIT_CYBER3D.md |
 
-The dispatch is the `KITS` table near the top of `tools/recipe_build.mjs`. An unknown `"kit"` is an error.
+| `doc` (folder with `doc.json`) | documentary long-form (law / biz / cyber themes) | `tools/doc_build.mjs` → `src/doc/compile.ts` (+ the theme's 3D kit compiler for scene3d) | `src/doc/registry.gen.ts` (`src/doc/gen/`) | `src/index.doc.ts` | KIT_DOC.md |
+
+The dispatch is the `KITS` table near the top of `tools/recipe_build.mjs`. An unknown `"kit"` is an error. A folder
+with `doc.json` and no `recipe.json` goes to `tools/doc_build.mjs` (the doc kit) before any recipe is read.
 
 Shared by all of them:
 - `src/fin/recipe/timing.ts`: the `At` syntax, a word of the voice-over or seconds.
@@ -71,6 +74,33 @@ KIT_CYBER3D.md §14, and LONGFORM.md for Block Money.
 The test recipes, about 30 s each with 3 chapters and passing the hard gates, are
 `finance/longform/{tech,law,biz,cyber}-demo-landscape/` and Block Money's `shop-too-fast`. Their 0.5-scale renders and
 contact sheets are in `finance/longform/kit-tests/`.
+
+## Documentary long-form: the doc kit (KIT_DOC.md)
+
+For 9-12 minute videos, prefer the doc kit to a single long kit recipe. A doc video is `doc.json` (theme, hook, chapter
+outline, the 3D cast, sources) plus one `chapters/NN.json` per chapter. Each chapter is a list of scenes:
+- nine 2D documentary types: map, timeline, document, quote, compare, chart, evidence board, recap, stat;
+- `scene3d`: one shot of the theme's kit (law → law3d, biz → biz3d, cyber → cyber3d).
+
+The builder compiles every scene3d into a shot of a kit sub-recipe, with hidden filler shots between the windows. The
+render mounts the kit's own film in those windows, so the kits are unchanged.
+
+`--check` validates each chapter and the whole video:
+- the schema;
+- variety V1-V5 (a new scene every 6 s, no repeat within 45 s, scene3d <= 40 %, >= 4 types per chapter, big beats with
+  people or documents);
+- budgets B1-B3;
+- spoken numbers on boards (N1);
+- chapter cards (C1);
+- callouts and text (T1-T2);
+- names, places, dates, numbers and legal wording (S1-S2);
+- teases (S3);
+- the kit's clip, framing R1-R6 and polish P1/P2/P4 QA on the scene3d windows only;
+- the shared long-form gate.
+
+`--check --chapter N` checks one chapter while the others are still unwritten. The reference is
+`finance/longform/pearson-doc`; its stills are in `docs/longform_doc/` and the build report is
+`docs/LONGFORM_DOC_REPORT.md`.
 
 ## Shorts from a long video: clip_short
 

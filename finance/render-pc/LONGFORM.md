@@ -239,6 +239,37 @@ stills are in `docs/polish/`. To render it: `node tools/recipe_build.mjs polish-
 (registers `PolishDefectsRecipe` in the law entry; delete `src/law/gen/polish_defects.law.gen.ts` and rebuild a law
 recipe to take it out again), then `node tools/law_stills.mjs PolishDefectsRecipe 142 221 297 363 519`.
 
+## 7b. Documentary long-form: the doc kit (KIT_DOC.md)
+
+The law, biz and cyber channels' 9-12 minute videos should use the **doc kit**, not one long kit recipe.
+- **Why:** a single kit recipe loops a kit's 5 Shorts sets for 10 minutes, plays big beats over empty sets, and costs
+  $7-13 to write in one go (once it ran out of output tokens).
+- **How it is written:** one chapter recipe at a time (`chapters/NN.json`), under a `doc.json` outline.
+- **What a chapter is made of:** documentary scenes (maps, timelines, documents with a marker sweep, quotes, compares,
+  charts, evidence boards, recaps, stats) cut with shots from the channel's 3D kit for the human moments.
+
+The long-form rules here still hold, and the doc gates add:
+- a new scene every <= 6 s;
+- no repeat (type + set + camera) within 45 s;
+- scene3d <= 40 % of the runtime;
+- >= 4 scene types per chapter;
+- big beats with people or documents;
+- every spoken figure on a board within ±1.5 s;
+- no scene type or 3D set above 30 % of the shots;
+- one chapter card per chapter, none in the first 30 s;
+- callouts never cover what they explain;
+- names, places, dates and numbers from the script or sources;
+- no unsaid verdict words;
+- teased moments shown.
+
+**Captions:** the 2D scenes use the same `LowerThirdCaptions`, the same 7-word phrases and the same 60 px size as the
+kits, and the kits draw their own captions in the scene3d shots, so the caption track never changes style.
+
+Commands:
+- `node tools/recipe_build.mjs <slug> --check [--chapter N]`
+- `node tools/doc_stills.mjs <slug>`
+- render with `npx remotion render src/index.doc.ts <Pascal>Doc ...`
+
 ## 8. Known limits
 
 - The demo's timings are synthetic (make_timings.py). Lip-sync and pacing need the real voice timings.

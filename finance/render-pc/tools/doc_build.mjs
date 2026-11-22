@@ -91,7 +91,7 @@ export const main = async (argv) => {
   // ---------------------------------------------------------------- 1) the chapter files + schema
   const refs = Array.isArray(doc.chapters) ? doc.chapters : [];
   const files = refs.map((r, i) => {
-    if (only !== null && i + 1 !== only) { const f = r?.file && join(dir, r.file); return f && existsSync(f) && only === null ? JSON.parse(readFileSync(f, "utf8")) : null; }
+    if (only !== null && i + 1 !== only) return null;
     const f = r?.file && join(dir, r.file);
     if (!f || !existsSync(f)) return { missing: r?.file ?? `chapter ${i + 1}` };
     try { return JSON.parse(readFileSync(f, "utf8")); } catch (e) { return { bad: `${r.file}: ${e.message}` }; }
@@ -100,6 +100,12 @@ export const main = async (argv) => {
   const fileErr = files.flatMap((f, i) => (f?.missing ? [{ where: `chapter ${i + 1}`, msg: `the file ${f.missing} does not exist yet (doc.json lists it): write it, or check one chapter with --chapter N` }] : f?.bad ? [{ where: `chapter ${i + 1}`, msg: `not valid JSON: ${f.bad}` }] : []));
   const chapters = files.map((f) => (f && !f.missing && !f.bad ? f : null));
   const schema = [...fileErr, ...D.validateDoc(doc, chapters, words, kitInfo)];
+  // --chapter N: the other chapters that already exist and validate are compiled too (global scene numbers, repeats
+  // across the chapter edges), but only chapter N is judged
+  if (only !== null) refs.forEach((r, i) => {
+    if (i + 1 === only || !r?.file || !existsSync(join(dir, r.file))) return;
+    try { const c = JSON.parse(readFileSync(join(dir, r.file), "utf8")); const one = refs.map((_, k) => (k === i ? c : null)); if (!D.validateDoc(doc, one, words, kitInfo).length) chapters[i] = c; } catch { /* left out */ }
+  });
   const scope = only === null ? "the whole video" : `chapter ${only} only`;
   console.log(`doc ${slug}: theme ${doc.theme} (3D kit ${kit}), ${refs.length} chapters, ${words.length} words, ${(vo ?? 0).toFixed(1)} s; checking ${scope}`);
   if (schema.length) {
@@ -238,7 +244,8 @@ export const main = async (argv) => {
   for (const n of D.spokenNumbers(words)) if (!sn.some((a) => a.i0 <= n.i0 && a.i1 >= n.i1)) sn.push(n);
   const exempt = (doc.numberExempt ?? []).map((x) => { try { return C.at(x.word); } catch { return null; } }).filter((x) => x !== null);
   const numRows = [];
-  const tOk = (t) => (only === null ? true : inCh(C.sceneAt(t)));
+  const chA = only === null ? 0 : C.chapters[only - 1].t, chB = only === null ? dur : C.chapters[only] ? C.chapters[only].t : dur;
+  const tOk = (t) => t >= chA - 1e-6 && t < chB - 1e-6;
   for (const n of sn) {
     const w0 = words[n.i0], w1 = words[n.i1], after = words[n.i1 + 1];
     const digits = words.slice(n.i0, n.i1 + 1).some((w) => /\d/.test(w.w));

@@ -213,7 +213,7 @@ export const layDocument = (s: DocumentScene & Timed & { hlT: number }, t: numbe
   let keyBox: { x0: number; y0: number; x1: number; y1: number } | null = null;
   s.lines.forEach((ln, i) => {
     const isKey = i === s.key;
-    const it = item({ key: isKey ? "key" : `line${i}`, text: ln, role: isKey ? "key" : "body", fg: isKey ? "paperInk" : "paperDim", bg: isKey ? "marker" : "paper", weight: isKey ? 800 : 700, align: "left", show: sh, maxFs: isKey ? 46 : 36, minFs: isKey ? 42 : 32, maxW: tw, maxLines: 3, lhK: 1.25 }, tx0, y);
+    const it = item({ key: isKey ? "key" : `line${i}`, text: ln, role: isKey ? "key" : "body", fg: isKey ? "paperInk" : "paperDim", bg: isKey ? "marker" : "paper", weight: isKey ? 800 : 700, align: "left", show: sh, maxFs: isKey ? 54 : 42, minFs: isKey ? 42 : 32, maxW: tw, maxLines: 3, lhK: 1.25 }, tx0, y);
     items.push(it);
     if (isKey) keyBox = { x0: it.x0 - 12, y0: it.y0 + it.lh * 0.08, x1: it.x1 + 12, y1: it.y1 - it.lh * 0.08 };
     y = it.y1 + (isKey ? 16 : 10);
@@ -221,14 +221,14 @@ export const layDocument = (s: DocumentScene & Timed & { hlT: number }, t: numbe
   const kb = keyBox as { x0: number; y0: number; x1: number; y1: number } | null;
   const oy = kb ? (kb.y0 + kb.y1) / 2 : 400;
   const st = stageAt(move, u, cx, oy);
-  return { items, stage: st, g: { page: { x0: P.x0, x1: P.x1, top: P.top, bottom: Math.max(y + 40, 840), slide: 1 - sh }, ruleY, kind: s.kind, marker: kb ? { ...kb, u: easeIO((t - s.hlT) / 0.7) } : null } };
+  return { items, stage: st, g: { page: { x0: P.x0, x1: P.x1, top: P.top, bottom: y + 50, slide: 1 - sh }, ruleY, kind: s.kind, marker: kb ? { ...kb, u: easeIO((t - s.hlT) / 0.7) } : null } };
 };
 
 // ------------------------------------------------------------------ quote
 export const layQuote = (s: QuoteScene & Timed, t: number, move: DocMove): Layout => {
   const u = (t - s.a) / (s.b - s.a);
-  const q = item({ key: "quote", text: `“${s.text.replace(/^["“]|["”]$/g, "")}”`, role: "main", fg: "ink", weight: 800, align: "left", show: appear(t, s.a + 0.1, 0.45), maxFs: 88, minFs: 50, maxW: 1360, maxLines: 4, lhK: 1.14 }, 300, 0);
-  centreY(q, 360);
+  const q = item({ key: "quote", text: `“${s.text.replace(/^["“]|["”]$/g, "")}”`, role: "main", fg: "ink", weight: 800, align: "left", show: appear(t, s.a + 0.1, 0.45), maxFs: 112, minFs: 50, maxW: 1360, maxLines: 4, lhK: 1.12 }, 300, 0);
+  centreY(q, 340);
   const who = item({ key: "who", text: `— ${up(s.who)}`, role: "main", fg: "accent", weight: 800, align: "left", show: appear(t, s.a + 0.6), maxFs: 50, maxW: 1300, names: true }, 300, q.y1 + 36);
   const src = item({ key: "source", text: up(s.source), role: "sub", fg: "dim", weight: 700, align: "left", show: appear(t, s.a + 0.85), maxFs: 36, maxW: 1300, maxLines: 2, names: true }, 300, who.y1 + 10);
   return { items: [q, who, src], stage: stageAt(move, u), g: { mark: [170, q.y0 - 10] } };
@@ -276,20 +276,22 @@ export const layEvidence = (s: EvidenceScene & Timed, t: number, move: DocMove):
     return { p, q, c, u: lu, label: l[2], i, from: l[0], to: l[1] };
   }).filter(Boolean) as { p: [number, number]; q: [number, number]; c: [number, number]; u: number; label?: string; i: number; from: string; to: string }[];
   const cardRects = cards.map((c) => ({ x0: c.x0 - 6, x1: c.x1 + 6, y0: c.y0 - 6, y1: c.y1 + 6 }));
+  const placedTags: { x0: number; x1: number; y0: number; y1: number }[] = [];
   for (const l of links) {
     if (!l.label) continue;
     const at = (k: number): [number, number] => [(1 - k) * (1 - k) * l.p[0] + 2 * k * (1 - k) * l.c[0] + k * k * l.q[0], (1 - k) * (1 - k) * l.p[1] + 2 * k * (1 - k) * l.c[1] + k * k * l.q[1]];
     let best: TextItem | null = null, bestHit = Infinity;
-    for (const k of [0.5, 0.42, 0.58, 0.34, 0.66]) for (const dy of [0, 40, -40, 80]) {
+    for (const k of [0.5, 0.42, 0.58, 0.34, 0.66, 0.25, 0.75]) for (const dy of [0, 40, -40, -80, 80, -120, 120]) {
       const [x, y] = at(k);
       const it = item({ key: `link${l.i}`, text: up(l.label), role: "callout", fg: "onAccent", bg: "accent", weight: 800, align: "center", show: Math.min(l.u, appear(t, t1 + 0.35 * l.i + 0.25)), maxFs: 36, minFs: 32, maxW: 420, explains: [`c.${l.from}`, `c.${l.to}`] }, x, 0);
       centreY(it, y + dy);
       const pad = { x0: it.x0 - 14, x1: it.x1 + 14, y0: it.y0 - 6, y1: it.y1 + 6 };
-      const hit = cardRects.reduce((a, r) => a + Math.max(0, Math.min(r.x1, pad.x1) - Math.max(r.x0, pad.x0)) * Math.max(0, Math.min(r.y1, pad.y1) - Math.max(r.y0, pad.y0)), 0) + (pad.y1 > SAFE.y1 ? 1e6 : 0);
+      const hit = cardRects.reduce((a, r) => a + Math.max(0, Math.min(r.x1, pad.x1) - Math.max(r.x0, pad.x0)) * Math.max(0, Math.min(r.y1, pad.y1) - Math.max(r.y0, pad.y0)), 0) + (pad.y1 > SAFE.y1 ? 1e6 : 0)
+        + 1e4 * placedTags.reduce((a, r) => a + Math.max(0, Math.min(r.x1, pad.x1) - Math.max(r.x0, pad.x0)) * Math.max(0, Math.min(r.y1, pad.y1) - Math.max(r.y0, pad.y0)), 0);
       if (hit < bestHit) { bestHit = hit; best = it; }
       if (hit === 0) break;
     }
-    if (best) items.push(best);
+    if (best) { items.push(best); placedTags.push({ x0: best.x0 - 14, x1: best.x1 + 14, y0: best.y0 - 6, y1: best.y1 + 6 }); }
   }
   return { items, stage: stageAt(move, u), g: { cards, links } };
 };
@@ -304,9 +306,9 @@ export const layRecap = (s: RecapScene & Timed, t: number, move: DocMove): Layou
   const boxes: [number, number, number][] = [];
   s.points.forEach((p, i) => {
     const sh = appear(t, s.a + 0.45 + 0.45 * i, 0.35);
-    const it = item({ key: `p${i}`, text: up(p), role: "main", fg: "ink", weight: 800, align: "left", show: sh, maxFs: 52, maxW: 1380, maxLines: 2 }, 300, y);
+    const it = item({ key: `p${i}`, text: up(p), role: "main", fg: "ink", weight: 800, align: "left", show: sh, maxFs: 64, maxW: 1380, maxLines: 2 }, 300, y);
     items.push(it); boxes.push([226, (it.y0 + it.y0 + it.lh) / 2, sh]);
-    y = it.y1 + 26;
+    y = it.y1 + 40;
   });
   return { items, stage: stageAt(move, u), g: { boxes, chip: [chip.x0 - 14, chip.y0 - 4, chip.x1 + 14, chip.y1 + 4] } };
 };
@@ -320,7 +322,7 @@ export const placeLL = (p: PlaceRef): LonLat => {
 };
 const hash = (s: string) => { let h = 2166136261; for (const ch of s) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return (h >>> 0) / 4294967296; };
 export const rng = (seed: string) => { let x = Math.floor(hash(seed) * 2 ** 31) || 1; return () => { x = (x * 48271) % 2147483647; return x / 2147483647; }; };
-const MAPR = { x0: 110, x1: 1810, y0: 110, y1: 800 } as const;
+const MAPR = { x0: 110, x1: 1810, y0: 170, y1: 790 } as const;
 export type MapView = { lon0: number; lat0: number; lon1: number; lat1: number };
 /** lon/lat -> stage px for a view box fitted (aspect kept, cos(lat) squeeze) into the map rect */
 export const projector = (v: MapView) => {
