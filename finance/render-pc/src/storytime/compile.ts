@@ -11,7 +11,7 @@ import { CAM_PRESETS, EXPRS, POSES, SET_IDS } from "./types";
 
 export { FPS };
 /** the closest a close-up / punch-in camera may get (m from the face): the head (with hair) stays whole in frame (R2) */
-export const CLOSE_MIN = 2.45, PUNCH_MIN = 2.35;
+export const CLOSE_MIN = 2.6, PUNCH_MIN = 2.45;
 /** the caption pop: 0.82 -> 1.06 -> 1 over 4 frames (shouts full, other chunks half as much) */
 export const capPop = (t: number, start: number, shout: boolean) => {
   const k = Math.min(1, Math.max(0, (t - start + 0.04) / (4 / 30)));
@@ -58,7 +58,7 @@ const displayWords = (lw: readonly Word[], line: Line | undefined) => {
   const toks = (line?.text ?? "").replace(/—/g, "— ").split(/\s+/).flatMap((x) => x.split(/(?=-[A-Za-z])/)).filter((x) => normW(x));
   let j = 0;
   return lw.map((w) => {
-    for (let k = j; k < Math.min(toks.length, j + 4); k++) if (normW(toks[k]) === normW(w.w)) { j = k + 1; return { w, tok: toks[k] }; }
+    for (let k = j; k < Math.min(toks.length, j + 4); k++) if (normW(toks[k]) === normW(w.w) || (/—$/.test(toks[k]) && normW(toks[k]).length > 1 && normW(w.w).startsWith(normW(toks[k])))) { j = k + 1; return { w, tok: toks[k] }; }
     return { w, tok: w.w };
   });
 };
@@ -156,7 +156,7 @@ const POSE_ARMS: Record<Pose, (t: number, seed: number, amp: number) => { L: [nu
   idle: (t, sd) => ({ L: [0.08 + 0.03 * Math.sin(t * 1.3 + sd), 0.1], R: [0.08 + 0.03 * Math.sin(t * 1.3 + sd + 1), 0.1], lean: 0.02 * Math.sin(t * 0.8 + sd), bob: 0.004 * Math.sin(t * 2.2 + sd) }),
   talk: (t, sd, a) => ({ L: [0.45 + 0.35 * Math.sin(t * 4.1 + sd) * (0.4 + a), 0.25 + 0.1 * Math.sin(t * 2.7)], R: [0.6 + 0.4 * Math.sin(t * 3.6 + sd + 2) * (0.4 + a), 0.2], lean: 0.05 + 0.04 * a, bob: 0.012 * a }),
   yell: (t, sd, a) => ({ L: [0.7 + 0.25 * a, 0.85 + 0.15 * Math.sin(t * 9)], R: [0.7 + 0.25 * a, 0.85 + 0.15 * Math.sin(t * 9 + 1)], lean: 0.14 + 0.08 * a, bob: 0.02 * a }),
-  phone: (t, sd) => ({ L: [1.05 + 0.02 * Math.sin(t * 1.7), -0.32], R: [1.05 + 0.02 * Math.sin(t * 1.7 + 1), -0.32], lean: 0.1, bob: 0.003 * Math.sin(t * 2 + sd) }),
+  phone: (t, sd) => ({ L: [1.45 + 0.02 * Math.sin(t * 1.7), -0.3], R: [1.45 + 0.02 * Math.sin(t * 1.7 + 1), -0.3], lean: 0.1, bob: 0.003 * Math.sin(t * 2 + sd) }),
   laugh: (t, sd) => ({ L: [0.55, -0.42 + 0.05 * Math.sin(t * 16 + sd)], R: [0.55, -0.42 + 0.05 * Math.sin(t * 16 + sd + 1)], lean: -0.12 + 0.06 * Math.sin(t * 8 + sd), bob: 0.03 * Math.abs(Math.sin(t * 8 + sd)) }),
   point: (t, sd) => ({ L: [0.1, 0.12], R: [1.5 + 0.03 * Math.sin(t * 3), 0.05], lean: 0.08, bob: 0.004 * Math.sin(t * 2 + sd) }),
   lean: (t, sd) => ({ L: [1.2, -0.15], R: [1.2, -0.15], lean: 0.3 + 0.02 * Math.sin(t * 1.1 + sd), bob: 0 }),
@@ -339,8 +339,17 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         const punch = c.preset === "punch_in";
         // a punch-in slams from 1.5x out to its distance in 0.16 s; never closer than PUNCH_MIN (the head stays whole)
         const intro = punch ? 1 + 0.5 * (1 - easeOut((t - s.a) / 0.16)) : 1;
-        const d = Math.max(punch ? PUNCH_MIN : CLOSE_MIN, (punch ? 2.4 : 2.95) * (c.dist ?? 1)) * intro * (1 - drift * (punch ? 0.5 : 1));
-        const dy = faceDir(st) + ((c.az ?? 0) + 2.5 * u) * (Math.PI / 180);
+        const d = Math.max(punch ? PUNCH_MIN : CLOSE_MIN, (punch ? 2.5 : 3.05) * (c.dist ?? 1)) * intro * (1 - drift * (punch ? 0.5 : 1));
+        // the other lead must not stand between the lens and this face: swing the angle away until clear
+        const O = headCenter(byId(s.on === "me" ? "homie" : "me"));
+        const clear = (az: number) => {
+          const y = faceDir(st) + az * (Math.PI / 180), P: V3 = [F[0] + Math.sin(y) * d, F[1], F[2] + Math.cos(y) * d];
+          const v = sub(P, F), L = Math.hypot(...v), k = clamp(dot(sub(O, F), v) / (L * L));
+          return k > 0.02 && Math.hypot(...sub(O, add(F, mul(v, k)))) < 0.62 ? false : true;
+        };
+        let az0 = c.az ?? 0;
+        if (!clear(az0)) { for (let k = 5; k <= 70; k += 5) { if (clear(az0 + k * (az0 >= 0 ? 1 : -1))) { az0 += k * (az0 >= 0 ? 1 : -1); break; } if (clear(az0 - k * (az0 >= 0 ? 1 : -1))) { az0 -= k * (az0 >= 0 ? 1 : -1); break; } } }
+        const dy = faceDir(st) + (az0 + 2.5 * u) * (Math.PI / 180);
         const pos: V3 = [F[0] + Math.sin(dy) * d, F[1] + (c.h ?? 0.06), F[2] + Math.cos(dy) * d];
         return aim(pos, F, 34);
       }
@@ -360,14 +369,14 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         const dBA = norm([A[0] - B[0], 0, A[2] - B[2]]);
         const perp: V3 = [dBA[2], 0, -dBA[0]];
         const sd = (c.az ?? 1) >= 0 ? 1 : -1;
-        const pos = add(add(A, mul(dBA, 1.25 * (c.dist ?? 1) * (1 - drift * 0.5))), add(mul(perp, 0.45 * sd), [0, 0.1 + (c.h ?? 0), 0]));
+        const pos = add(add(A, mul(dBA, 1.25 * (c.dist ?? 1) * (1 - drift * 0.5))), add(mul(perp, 0.85 * sd), [0, 0.1 + (c.h ?? 0), 0]));
         return aim(pos, B, 32);
       }
       case "insert": {
         const st = byId("homie"), F = headCenter(st), f = fwd(st.yaw), l = leftOf(st.yaw);
-        const ph = add(add(F, mul(f, 0.42)), [0, -0.36, 0]);
-        const pos = add(add(F, add(mul(f, 0.02 - 0.05 * u), mul(l, -0.2))), [0, 0.06, 0]);
-        return { pos, look: ph, fov: 38 - 4 * u, roll: c.roll ?? -4 };
+        const ph = add(add(F, mul(f, 0.44)), [0, -0.36, 0]);
+        const pos = add(add(F, add(mul(f, 0.34 + 0.04 * u), mul(l, 0.16))), [0, 0.02, 0]);
+        return { pos, look: ph, fov: 44 - 4 * u, roll: c.roll ?? -4 };
       }
       default: {
         const sc = S.cams[c.preset as "wide_class" | "crowd" | "windows"]!;

@@ -28,7 +28,7 @@
   { "at": "1:nuts", "cam": { "preset": "punch_in", "on": "homie" }, "fx": [{ "fx": "shake", "gain": 0.9, "dur": 0.7 }] },
   { "at": "1:deez#2", "cam": { "preset": "closeup_homie", "az": -22 }, "fx": [{ "fx": "shake", "gain": 0.6 }] },
   { "at": "1:nuts#2", "cam": { "preset": "punch_in", "on": "homie", "az": 8, "dist": 0.9 }, "fx": [{ "fx": "shake", "gain": 1.1, "dur": 0.6 }, { "fx": "punch" }] },
-  { "at": 4.25, "cam": { "preset": "closeup_me", "az": 10 }, "face": [{ "me": "deadpan" }], "pose": [{ "homie": "idle" }], "note": "me, deadpan: BRUH" },
+  { "at": 4.25, "cam": { "preset": "closeup_me", "az": -20 }, "face": [{ "me": "deadpan" }], "pose": [{ "homie": "idle" }], "note": "me, deadpan: BRUH" },
   { "at": "2:my", "set": "classroom", "cam": { "preset": "two_shot" }, "face": [{ "homie": "neutral" }], "pose": [{ "homie": "phone" }], "note": "in class: homie on his phone" },
   { "at": "2:youtube", "cam": { "preset": "insert" }, "note": "the phone" },
   { "at": "2:class", "cam": { "preset": "wide_class" } },

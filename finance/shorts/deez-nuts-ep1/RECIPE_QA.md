@@ -6,9 +6,9 @@ Composition `DeezNutsEp1Recipe` in `src/index.storytime.ts` (1080x1920, 30 fps, 
 
 - none: the two leads never intersect each other or a set blocker.
 
-## Framing QA (screen space, 2342 frames, 0.13 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 2342 frames, 0.15 s): 0 clip(s), 0 fail(s)
 
-Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 532 px.
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 502 px.
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close, captions off faces and necks.
 
@@ -37,7 +37,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | PASS | all in frame |
 | framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
-| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 532 px (needs 307) |
+| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 502 px (needs 307) |
 | framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | PASS | clear |
 
 ## Shots
@@ -155,4 +155,4 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 - 73.42 s: FUUUCKING **LOUD** it (92 px)
 - 74.90 s: **broke** the lunchroom (86 px)
 - 75.80 s: **windows!** (92 px)
-- 76.98 s: Deez **NUT** (92 px)
+- 76.98 s: **Deez** nu— (92 px)

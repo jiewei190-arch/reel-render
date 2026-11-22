@@ -149,7 +149,7 @@ export const Kid: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
             <mesh geometry={rbox(K.torsoW + 0.004, 0.07, K.torsoD + 0.004, 0.02)} material={trim} position={[0, K.torsoH * 0.55, 0]} />
           )}
           {arm(1, st.armL)}{arm(-1, st.armR)}
-          {st.pose === "phone" ? <group position={[0, armY - 0.44, 0.38]} rotation={[-0.55, 0, 0]}><Phone t={t} /></group> : null}
+          {st.pose === "phone" ? <group position={[0, 0.37, 0.45]} rotation={[0.5, 0, 0]}><Phone t={t} /></group> : null}
           {/* neck + head */}
           <mesh geometry={rbox(0.18, 0.08, 0.16, 0.03)} material={skin} position={[0, K.torsoH + 0.02, 0]} />
           <group position={[0, K.torsoH + K.neck + K.headH / 2, 0]} rotation={[st.headPitch, st.headYaw, st.tilt]}>

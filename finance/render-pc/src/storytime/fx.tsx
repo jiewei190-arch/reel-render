@@ -11,7 +11,7 @@ const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453
 const N_SHARDS = 90;
 
 export const Shards: React.FC<{ u: number }> = ({ u }) => {
-  const mat = React.useMemo(() => new THREE.MeshStandardMaterial({ color: "#e6f8ff", emissive: "#bfe9ff", emissiveIntensity: 0.35, transparent: true, opacity: 0.75, roughness: 0.1, side: THREE.DoubleSide, depthWrite: false }), []);
+  const mat = React.useMemo(() => new THREE.MeshStandardMaterial({ color: "#f2fbff", emissive: "#cfeeff", emissiveIntensity: 0.7, transparent: true, opacity: 0.92, roughness: 0.1, side: THREE.DoubleSide, depthWrite: false }), []);
   if (u < 0 || u > 2.2) return null;
   const Wd = SETS.cafeteria.windows!;
   const geo = geoOf("stShard", () => { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute([0, 0.09, 0, -0.06, -0.05, 0, 0.07, -0.04, 0], 3)); g.computeVertexNormals(); return g; });
@@ -26,7 +26,7 @@ export const Shards: React.FC<{ u: number }> = ({ u }) => {
         let y = y0 + vy * tt - 4.9 * tt * tt;
         const z = z0 + vz * tt, x = x0 + vx * tt;
         if (y < 0.02) y = 0.02;
-        const sc = 0.7 + 1.6 * hash(k + 7);
+        const sc = 1.6 + 2.6 * hash(k + 7);
         const sp = 6 + 10 * hash(k + 8);
         return <mesh key={k} geometry={geo} material={mat} position={[x, y, z]} rotation={[tt * sp + k, tt * sp * 0.7 + k * 0.3, tt * sp * 0.4]} scale={sc} />;
       })}

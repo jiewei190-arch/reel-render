@@ -271,7 +271,7 @@ export const RECIPE: Recipe = {
    "at": 4.25,
    "cam": {
     "preset": "closeup_me",
-    "az": 10
+    "az": -20
    },
    "face": [
     {
