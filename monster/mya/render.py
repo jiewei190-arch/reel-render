@@ -150,11 +150,12 @@ def thumbnail(p: dict, public: Path, out: Path, long_form: bool) -> None:
 
 def contact_sheet(video: Path, tl: list[dict], fps: int, out: Path, width: int) -> list[float]:
     """Stills at each scene's start, middle and end (the review page and QC look at these)."""
-    times = []
-    for s in tl:
-        a, b = s["start_f"] / fps, s["end_f"] / fps
-        times += [a + 0.35, (a + b) / 2, max(a, b - 0.3)]
-    sel = "+".join(f"between(t\\,{t - 0.017:.3f}\\,{t + 0.017:.3f})" for t in times)
+    frames = []
+    for s in tl:  # exact frame numbers: one still at each scene's start, middle and end
+        a, b = s["start_f"], s["end_f"]
+        frames += [min(b - 1, a + 10), (a + b) // 2, max(a, b - 9)]
+    times = [f / fps for f in frames]
+    sel = "+".join(f"eq(n\\,{f})" for f in frames)
     cols = 6 if width < 1500 else 4
     rows = -(-len(times) // cols)
     run(["ffmpeg", "-v", "error", "-y", "-i", video, "-vf",

@@ -53,10 +53,18 @@ def _num(tok: str, nxt: str | None, dollar: bool) -> tuple[list[str], bool]:
     return out, consumed
 
 
+UNITS = [(r"(\d)\s*°\s*F\b", r"\1 degrees Fahrenheit"), (r"(\d)\s*°\s*C\b", r"\1 degrees Celsius"),
+         (r"(\d)\s*°", r"\1 degrees"), (r"\((\d[^)]*degrees[^)]*)\)", r", or \1,")]
+
+
 def normalize(display: str, pron: dict[str, str] | None = None) -> list[dict]:
     """[{display, spoken: [words]}] for one line. Emotion tags from other providers are removed, never spoken."""
     pron = {k.lower(): v for k, v in (pron or {}).items()}
-    toks = TAGS.sub("", display).split()
+    clean = TAGS.sub("", display)
+    for pat, rep in UNITS:  # "140 °F (60 °C)" -> "140 degrees Fahrenheit, or 60 degrees Celsius,"
+        clean = re.sub(pat, rep, clean)
+    clean = re.sub(r"\s*,(\s*,)+", ",", clean)
+    toks = clean.split()
     out, i = [], 0
     while i < len(toks):
         t = toks[i]

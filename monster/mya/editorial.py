@@ -88,6 +88,7 @@ def check(script: dict, claims: list[dict], profile, fmt: str) -> list[str]:
     return problems
 
 
+MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 ROLE_ORDER = {"hook": 0, "context": 1, "number": 2, "twist": 3, "outcome": 4, "aftermath": 5}
 LINE_SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["narration", "visual_intent"],
@@ -105,8 +106,9 @@ META_SCHEMA = {
 def _line(profile, claim: dict, position: str, prev: str, lessons: str, fix: str = "") -> dict:
     return llm.ask(
         f"You write one line of narration for '{profile.working_name}' ({profile.niche}). Tone: {profile.tone}. "
-        "Restate ONLY what the SOURCE sentence says, in plain spoken English, at most 24 words. Keep its names, "
-        "numbers and dates exactly. Never add who won, what happened next, or anything else not in the sentence."
+        "Shorten the SOURCE sentence into one spoken line of at most 24 words, using ONLY words that appear in the "
+        "SOURCE (you may drop words and add small connectors like 'and', 'but', 'then', 'she'). Keep its names, "
+        "numbers, dates and words like 'offered', 'sought', 'alleged', 'not' exactly. Add nothing else."
         + (" This is the HOOK: open with the most surprising part, no greeting." if position == "hook" else ""),
         f"SOURCE: {claim['passage']}\nPrevious line: {prev or '(none, this is the first line)'}\n{lessons}"
         + (f"\nYour last version was rejected: {fix}" if fix else ""),
@@ -130,7 +132,11 @@ def write(topic: str, profile, fmt: str, claims: list[dict], lessons: str = "", 
         line, fix = None, ""
         for _ in range(cfg().runtime.get("max_regenerations_per_stage", 2) + 1):
             cand = _line(profile, cl, pos, prev, lessons, fix)
-            sc = {"narration": cand["narration"].strip(), "claim_ids": [cl["id"]], "visual_intent": cand["visual_intent"]}
+            narr = cand["narration"].strip()
+            if pos == "hook":  # a hook opens on the surprising fact, not on a date clause
+                narr = re.sub(rf"^(?:In|On|By)\s+(?:(?:{MONTHS})\s+\d{{1,2}},?\s+)?(?:(?:{MONTHS})\s+)?\d{{4}},\s*", "", narr)
+                narr = narr[:1].upper() + narr[1:]
+            sc = {"narration": narr, "claim_ids": [cl["id"]], "visual_intent": cand["visual_intent"]}
             probs = check({"scenes": [sc]}, claims, profile, "_line") + support_check({"scenes": [sc]}, claims)
             if not probs:
                 line = sc
@@ -202,12 +208,19 @@ def _stem(w: str) -> str:
     return w
 
 
+# Lines may only reuse the source's own content words (extractive). Paraphrase with new words let small models
+# drift ("filed in 1994", "$800 settlement") while every number still matched (PC pilot, Nov 22 2026).
+MAX_NEW_WORDS = 0
+CONNECTORS = {"she", "he", "they", "this", "that", "then", "but", "and", "so", "its", "her", "his", "their", "later", "after",
+              "before", "when", "while", "because", "even", "just", "only", "still", "yet", "now", "today", "here"}
+
+
 def novel_words(line: str, passages: list[str]) -> list[str]:
     """Content words in the line that don't appear (by stem) in its cited passages."""
     src = {_stem(w) for w in re.findall(r"[a-z]+", " ".join(passages).lower())}
     out = []
     for w in re.findall(r"[a-z]+", line.lower()):
-        if w in FUNC or len(w) < 3:
+        if w in FUNC or w in CONNECTORS or len(w) < 3:
             continue
         if _stem(w) not in src and w not in src:
             out.append(w)
@@ -217,8 +230,9 @@ def novel_words(line: str, passages: list[str]) -> list[str]:
 # Words that change what happened. If the source has one, the line must keep it (or a synonym), or
 # "sought to settle" silently becomes "settled" (a real defect found on 2026-11-22, Liebeck v. McDonald's).
 QUALIFIERS = [
-    {"sought", "seek", "seeking", "asked", "requested", "wanted", "tried", "attempted", "attempt", "proposed", "offered", "demanded"},
-    {"alleged", "allegedly", "accused", "claimed", "claims", "reportedly", "suspected"},
+    {"sought", "seek", "seeking", "asked", "requested", "request", "wanted", "tried", "attempted", "attempt", "proposed",
+     "proposal", "offered", "offer", "offers", "bid", "demanded", "demand"},
+    {"alleged", "allegedly", "allegation", "allegations", "accused", "claimed", "claim", "claims", "reportedly", "suspected"},
     {"refused", "rejected", "declined", "denied"},
     {"not", "never", "no", "without", "failed"},
     {"nearly", "almost", "approximately", "roughly", "estimated", "excess"},
@@ -254,7 +268,7 @@ def support_check(script: dict, claims: list[dict], judge: bool = True) -> list[
             problems.append(f"scene {i} drops a meaning-changing word from its source ({', '.join(dropped)}): '{s['narration'][:80]}'")
             continue
         new = novel_words(s["narration"], cited)
-        if len(new) > 2:
+        if len(new) > MAX_NEW_WORDS:
             problems.append(f"scene {i} adds words its source doesn't support {sorted(set(new))[:6]}: '{s['narration'][:80]}'")
             continue
         if judge:
