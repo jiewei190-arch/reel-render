@@ -200,7 +200,11 @@ export const RECIPE: Recipe = {
   {
    "at": 0,
    "cam": {
-    "preset": "closeup_homie"
+    "preset": "closeup_homie",
+    "az": 10,
+    "dist": 0.72,
+    "tight": true,
+    "face": 0.36
    },
    "set": "hallway",
    "face": [
@@ -220,8 +224,10 @@ export const RECIPE: Recipe = {
    "at": "1:deez#2",
    "cam": {
     "preset": "closeup_homie",
-    "az": -18,
-    "dist": 0.86
+    "az": -2,
+    "dist": 0.69,
+    "tight": true,
+    "face": 0.36
    },
    "note": "second DEEZ NUTS, tighter"
   },

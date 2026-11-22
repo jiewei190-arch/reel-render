@@ -61,7 +61,7 @@ export type Chunk = { words: CapWordR[]; start: number; end: number; hold: numbe
 const STOP = new Set("a an the to in on at of is it i i'm im my me and so he she was you your do this that would like then but or as with be are".split(" "));
 /** LOW-POLY captions: Barlow Condensed Bold, white, no outline (a faint shadow), ~5 % of the height, centred at 0.62 H.
  *  fitFs measures Poppins widths; the condensed face is ~0.74 as wide, so the fit width is divided by CW. */
-export const CAP = { fitFloor: 80, fs: 96, fsShout: 100, minFs: 72, side: 90, centre: 0.62, accent: "#FFB020", stroke: 0, lineH: 1.1, maxY: 0.74, CW: 0.74, maxWords: 4 } as const;
+export const CAP = { fitFloor: 80, fs: 96, fsShout: 100, minFs: 72, side: 90, centre: 0.66, accent: "#FFB020", stroke: 0, lineH: 1.1, maxY: 0.74, CW: 0.74, maxWords: 4 } as const;
 
 /** align the script's spellings to the timed words: "FUUUCK" shows for the timed "fuck", "old-ASS" for "old" "-ass" */
 const displayWords = (lw: readonly Word[], line: Line | undefined) => {
@@ -258,7 +258,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     let face = { ...FACES[fv.v] };
     const talking = !!speakerAt(t) && speakerAt(t)!.speaker === id && t < endAt;
     const mo = mouthOf(id, t);
-    face = { ...face, open: 0, teeth: 0 }; // LOW-POLY: the mouth is a static bar (mo is always 0)
+    // LOW-POLY: no lip-sync (mo is always 0); a shout expression shows a STATIC open-mouth decal (it never animates)
     void mo;
     if (face.arc < 0.5 && blinkAt(t, seed)) face = { ...face, lid: 1 };
     // side-eye looks toward the other lead
@@ -337,7 +337,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const tr = Math.min(s.a + 0.55, s.b - 0.01);
     const figsR = [leadAt("me", tr, s.set), leadAt("homie", tr, s.set)];
     const byId = (id: CastId) => figsR.find((f) => f.id === id)!;
-    const faceFrac = c.face ?? (c.preset === "two_shot" ? 0.4 : c.preset === "punch_in" ? 0.36 : c.preset === "ots" ? 0.32 : 0.34);
+    const faceFrac = c.face ?? (c.preset === "two_shot" ? 0.4 : c.preset === "punch_in" ? 0.32 : c.preset === "ots" ? 0.32 : 0.3);
     const aim = (pos: V3, target: V3, fov: number): CamS => {
       const d = Math.hypot(target[0] - pos[0], target[2] - pos[2]);
       const off = (0.5 - faceFrac) * 2 * d * Math.tan((fov * Math.PI) / 360);
@@ -350,7 +350,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
         const punch = c.preset === "punch_in";
         // a punch-in slams from 1.5x out to its distance in 0.16 s; never closer than PUNCH_MIN (the head stays whole)
         const intro = 1; // LOW-POLY: hard cuts only, no slam-in
-        const d = Math.max(punch ? PUNCH_MIN : CLOSE_MIN, (punch ? 2.5 : 3.05) * (c.dist ?? 1)) * intro * (1 - drift * (punch ? 0.5 : 1));
+        const d = Math.max(c.tight ? 2.2 : punch ? PUNCH_MIN : CLOSE_MIN, (punch ? 2.5 : 3.05) * (c.dist ?? 1)) * intro * (1 - drift * (punch ? 0.5 : 1));
         // the other lead must not stand between the lens and this face: swing the angle away until clear
         const O = headCenter(byId(s.on === "me" ? "homie" : "me"));
         const clear = (az: number) => {
@@ -492,8 +492,15 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     s.capY = Math.min(CAP.maxY * H, Math.max(CAP.centre * H, need + 22 + maxFs / 2 + CAP.stroke));
   }
   // ONE caption baseline for the whole film: the lowest any shot needs (lower only ever clears more of a face/neck)
-  const capBase = Math.max(CAP.centre * H, ...shots.map((s) => s.capY));
-  for (const s of shots) s.capY = capBase;
+  const capNeed = shots.map((s) => ({ id: s.id, preset: s.cam.preset, y: Math.round(s.capY) }));
+  // the cold open (the shots in the first set, before the story's first set change) is its own scene: it may need a
+  // lower line for its chest-up shout close-ups; everything after it shares ONE baseline
+  const firstSet = shots[0].set, k0 = shots.findIndex((s) => s.set !== firstSet);
+  const cold = k0 > 0 ? shots.slice(0, k0) : [], rest = k0 > 0 ? shots.slice(k0) : shots;
+  const base = (ss: ShotR[]) => Math.max(CAP.centre * H, ...ss.map((s) => s.capY));
+  if (cold.length) { const b0 = base(cold); for (const s of cold) s.capY = b0; }
+  const capBase = base(rest);
+  for (const s of rest) s.capY = capBase;
   const capAt = (t: number) => {
     if (t >= endAt) return null;
     const c = chunks.find((k) => t >= k.start - 0.04 && t < k.hold);
@@ -513,7 +520,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
 
   return {
     recipe, words, amp, layout: { W, H }, duration, total, endAt, shots, shotAt, camAt, camBase, figsAt, leadAt, extraAt, capAt, chunks, fxAt, speakerAt, spans,
-    brokenFrom, named, mouthOf, onTwos, povOf,
+    brokenFrom, named, mouthOf, onTwos, povOf, capNeed,
   };
 };
 

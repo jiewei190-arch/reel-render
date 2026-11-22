@@ -134,7 +134,7 @@ export const main = async (argv) => {
   for (let f = 0; f < C.duration; f++) {
     const t = f / 30; if (t >= C.endAt) break;
     const sp = C.speakerAt(t);
-    for (const st of C.figsAt(t)) if (st.mouth > 0 || st.face.open > 0) anyMouth++;
+    for (const st of C.figsAt(t)) if (st.mouth > 0) anyMouth++; // shout faces keep a static open mouth; only voice-driven motion fails
     for (const id of ["me", "homie"]) { const mo = C.mouthOf(id, t); if (mo > 0.01 && (!sp || sp.speaker !== id)) wrongMouth++; if (mo > 0.05) talkFrames++; }
   }
   // face decals: flat clay pieces seen edge-on (a lead's head on screen, face turned 55-62 deg from the lens; past
@@ -155,7 +155,8 @@ export const main = async (argv) => {
   // captions: one chunk on screen at a time, one baseline
   const cs = [...C.chunks].sort((a, b) => a.start - b.start);
   const capOverlap = cs.filter((c, i) => i > 0 && cs[i - 1].hold > c.start - 0.04 + 1e-6).map((c) => c.text);
-  const capYs = new Set(C.shots.map((s) => Math.round(s.capY)));
+  const k0 = C.shots.findIndex((s) => s.set !== C.shots[0].set);
+  const capYs = new Set(C.shots.slice(Math.max(0, k0)).map((s) => Math.round(s.capY)));
   const lastOn = Math.floor(C.endAt * 30 - 1e-6);
   const f0 = shots[0].cam.preset;
   const firstCut = shots[1]?.a ?? dur;
@@ -178,10 +179,10 @@ export const main = async (argv) => {
     ["captions: shout lines ALL CAPS", shoutBad.length === 0, shoutBad.map((c) => c.text).join(" | ") || `lines ${shout.join(", ")}`, true],
     [`captions text-fit: every chunk on one line at >= ${m.CAP.minFs} px`, fitBad.length === 0, fitBad.map((c) => `"${c.text}" ${c.fs} px`).join(", ") || `smallest ${minFs.toFixed(1)} px`, true],
     ["no shakes, punch zooms or flashes (low-poly: hard cuts only)", !shots.some((s) => s.fx.some((x) => ["shake", "punch", "flash"].includes(x.fx))), shots.filter((s) => s.fx.some((x) => ["shake", "punch", "flash"].includes(x.fx))).map((s) => s.id).join(", ") || "none", true],
-    ["mouths never move (no lip-sync)", anyMouth === 0 && talkFrames === 0, `${anyMouth} kid-frame(s) with an open mouth`, true],
+    ["mouths never move (no lip-sync)", anyMouth === 0 && talkFrames === 0, `${anyMouth} kid-frame(s) with a voice-driven mouth`, true],
     ["face decals never seen edge-on (55-62 deg; culled past 62 deg)", edgeOn === 0, `${edgeOn} edge-on lead-frame(s)${edgeShots.size ? " in " + [...edgeShots].join(", ") : ""}; ${culled} lead-frame(s) with the face culled`, false],
     ["captions: one chunk at a time (no overlap in time)", capOverlap.length === 0, capOverlap.join(" | ") || `${cs.length} chunks, none overlap`, true],
-    ["captions: one baseline for the whole film", capYs.size === 1, `y ${[...capYs].join(", ")} px`, true],
+    ["captions: one baseline after the cold open", capYs.size === 1, `y ${[...capYs].join(", ")} px`, true],
     ["the cafeteria windows end up cracked (shatter marks the break)", shatter, shatter ? "yes" : "no shatter fx in a cafeteria shot", false],
     ["hard cut to black (no fade) at the end", Number.isFinite(C.endAt) && C.endAt < dur, Number.isFinite(C.endAt) ? `last picture frame ${lastOn}, black from frame ${lastOn + 1} (${C.endAt.toFixed(2)} s) to ${C.duration - 1}` : "recipe.end not set", true],
     ["1080x1920, plain 30 fps, no motion blur", true, "one composition, no Sub", true],

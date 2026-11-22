@@ -63,7 +63,7 @@ const Face: React.FC<{ f: FaceP; skin: string; brow: string }> = ({ f, skin, bro
   const parts: React.ReactNode[] = [];
   for (const side of [1, -1] as const) {
     // ---- the eye: a solid octagon, cut by the upper lid (from the top) and the lower lid
-    const cx = side * ex + f.px * 0.014, cy = ey;
+    const cx = side * ex + f.px * 0.014, cy = ey - Math.max(0, f.browY - 0.4) * 0.04; // raised brows: the eyes sit a touch lower
     let P = octagon(cx, cy, rx, ry);
     const lid = Math.min(0.9, f.lid);
     if (lid > 0.02) P = clipY(P, cy + ry - 2 * ry * lid, false);
@@ -72,7 +72,7 @@ const Face: React.FC<{ f: FaceP; skin: string; brow: string }> = ({ f, skin, bro
     // ---- the brow: a thick bar; angry = inner end down, worried = inner end up; one brow can go way up (asym)
     const mine = side === 1 ? f.browAsym : -f.browAsym;
     const up = f.browY * 0.048 + Math.max(0, mine) * 0.055 - Math.max(0, -mine) * 0.012;
-    const by = cy + ry + 0.035 + up;
+    const by = Math.min(0.138, cy + ry + 0.022 + up); // stays on the flat front, clear of the hair fringe
     const xi = side * 0.035, xo = side * 0.155, tilt = f.browA * 0.028;
     parts.push(<mesh key={`b${side}`} geometry={decalGeo(`stBrow${side}|${q(by, 0.005)}|${q(tilt, 0.005)}`, bar(xi, by - tilt, xo, by + tilt * 0.5, 0.03), 0.008)} material={decalMat(brow)} />);
   }
@@ -81,7 +81,18 @@ const Face: React.FC<{ f: FaceP; skin: string; brow: string }> = ({ f, skin, bro
   const yl = my + f.curve * 0.008 - Math.max(0, -f.smirk) * 0.014, yr = my + f.curve * 0.008 + Math.max(0, f.smirk) * 0.018;
   const mid = my - f.curve * 0.008;
   const M: P2[] = [[-mw, yl - 0.007], [0, mid - 0.007], [mw, yr - 0.007], [mw, yr + 0.007], [0, mid + 0.007], [-mw, yl + 0.007]];
-  parts.push(<mesh key="m" geometry={decalGeo(`stMouth|${q(mw, 0.005)}|${q(yl, 0.004)}|${q(yr, 0.004)}|${q(mid, 0.004)}`, M)} material={decalMat("#3a1e22")} />);
+  if (f.open > 0.15) {
+    // a shout: a STATIC open mouth (a dark rounded trapezoid, wider at the top), optional gritted teeth strip on top
+    const ow = mw * 1.05, oh = 0.018 + f.open * 0.06, top = my + 0.012 + f.curve * 0.004;
+    const O: P2[] = [[-ow, top], [-ow * 0.98, top - oh * 0.55], [-ow * 0.7, top - oh], [ow * 0.7, top - oh], [ow * 0.98, top - oh * 0.55], [ow, top]].reverse() as P2[];
+    parts.push(<mesh key="m" geometry={decalGeo(`stOpen|${q(ow, 0.005)}|${q(oh, 0.004)}|${q(top, 0.004)}`, O)} material={decalMat("#2a1216")} />);
+    if (f.teeth > 0.3) {
+      const th = 0.014 + f.teeth * 0.01;
+      parts.push(<mesh key="t" geometry={decalGeo(`stTeeth|${q(ow, 0.005)}|${q(th, 0.002)}|${q(top, 0.004)}`, [[-ow * 0.92, top - th], [ow * 0.92, top - th], [ow * 0.92, top - 0.004], [-ow * 0.92, top - 0.004]], 0.006)} material={decalMat("#f4f1ea")} />);
+    }
+  } else {
+    parts.push(<mesh key="m" geometry={decalGeo(`stMouth|${q(mw, 0.005)}|${q(yl, 0.004)}|${q(yr, 0.004)}|${q(mid, 0.004)}`, M)} material={decalMat("#3a1e22")} />);
+  }
   parts.push(<mesh key="n" geometry={NOSE()} material={polyMat(shade(skin, 0.94))} position={[0, -0.045, 0]} />);
   return <group>{parts}</group>;
 };

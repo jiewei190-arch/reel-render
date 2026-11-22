@@ -48,6 +48,8 @@ export type Cam = {
   roll?: number;
   /** how far the camera pushes in over the shot (share of the distance, default 0.06) */
   push?: number;
+  /** a chest-up close-up: the head may fill ~75 % of the frame width (arms crop) */
+  tight?: boolean;
 };
 
 /** a face / pose / look change: { "at": anchor, "me": "annoyed", "homie": "smug" } */

@@ -26,14 +26,14 @@ const N: FaceP = { browY: 0, browA: 0, browAsym: 0, lid: 0.12, lower: 0, eyeS: 1
 export const FACES: Record<Expr, FaceP> = {
   neutral: N,
   annoyed: { ...N, browY: -0.3, browA: 0.45, lid: 0.42, curve: -0.2 },
-  furious: { ...N, browY: -0.55, browA: 1, lid: 0.28, lower: 0.12, curve: -0.35, mouthW: 0.13, open: 0.3 },
+  furious: { ...N, browY: -0.6, browA: 1.1, lid: 0.28, lower: 0.12, curve: -0.35, mouthW: 0.14, open: 0.32, teeth: 1 },
   shocked: { ...N, browY: 1, browA: -0.35, lid: 0, eyeS: 1.22, mouthW: 0.07, open: 0.5 },
   deadpan: { ...N, browY: -0.1, lid: 0.55, mouthW: 0.12 },
   smug: { ...N, browY: 0.05, browA: 0.2, browAsym: 0.85, lid: 0.5, curve: 0.25, smirk: 0.7 },
   laughing: { ...N, browY: 0.45, browA: -0.25, lid: 0.62, lower: 0.25, curve: 0.5, mouthW: 0.15, open: 0.4 },
   sideeye: { ...N, browY: -0.1, browAsym: -0.5, lid: 0.5, px: 0.6, curve: -0.1, smirk: -0.3 },
-  yell: { ...N, browY: 0.75, browA: -0.1, lid: 0, eyeS: 1.12, mouthW: 0.14, open: 0.65 },
-  scream: { ...N, browY: -0.45, browA: 1, lid: 0.1, eyeS: 1.15, mouthW: 0.16, open: 0.8 },
+  yell: { ...N, browY: 1.15, browA: -0.5, lid: 0, eyeS: 1.26, mouthW: 0.15, open: 0.78 },
+  scream: { ...N, browY: -0.5, browA: 1.15, lid: 0.1, eyeS: 1.15, mouthW: 0.16, open: 0.85, teeth: 0.6 },
 };
 const KEYS = Object.keys(N) as (keyof FaceP)[];
 export const mixFace = (a: FaceP, b: FaceP, u: number): FaceP => {

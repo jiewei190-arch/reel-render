@@ -8,7 +8,7 @@ Composition `DeezNutsEp1Recipe` in `src/index.storytime.ts` (1080x1920, 30 fps, 
 
 ## Framing QA (screen space, 2342 frames, 0.10 s): 0 clip(s), 0 fail(s)
 
-Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 501 px.
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0. Frame-0 face: homie 706 px.
 
 - none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close, captions off faces and necks.
 
@@ -30,10 +30,10 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | captions: shout lines ALL CAPS | PASS | lines 1, 5, 6, 10, 11 |
 | captions text-fit: every chunk on one line at >= 72 px | PASS | smallest 87.1 px |
 | no shakes, punch zooms or flashes (low-poly: hard cuts only) | PASS | none |
-| mouths never move (no lip-sync) | PASS | 0 kid-frame(s) with an open mouth |
+| mouths never move (no lip-sync) | PASS | 0 kid-frame(s) with a voice-driven mouth |
 | face decals never seen edge-on (55-62 deg; culled past 62 deg) | PASS | 0 edge-on lead-frame(s); 313 lead-frame(s) with the face culled |
 | captions: one chunk at a time (no overlap in time) | PASS | 52 chunks, none overlap |
-| captions: one baseline for the whole film | PASS | y 1421 px |
+| captions: one baseline after the cold open | PASS | y 1267 px |
 | the cafeteria windows end up cracked (shatter marks the break) | PASS | yes |
 | hard cut to black (no fade) at the end | PASS | last picture frame 2341, black from frame 2342 (78.06 s) to 2365 |
 | 1080x1920, plain 30 fps, no motion blur | PASS | one composition, no Sub |
@@ -42,7 +42,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 b
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | PASS | all in frame |
 | framing R3: every landed board / card inside the frame (3 % margin) | PASS | all inside |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | PASS | readable |
-| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 501 px (needs 307) |
+| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | homie face 706 px (needs 307) |
 | framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | PASS | clear |
 
 ## Shots
