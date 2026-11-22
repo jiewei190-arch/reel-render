@@ -21,7 +21,7 @@ export const RULES = {
   persist: 3, //            frames a violation must last (0.1 s): a board flying THROUGH a face or a whip pan is motion
   headPad: 4, //            px of overlap (screen rects) needed before R1 looks closer (touching is fine)
   headArea: 144, //         px² of overlap of the exact silhouettes (12 x 12 px at 1080 wide) for R1 to fire
-  propDepth: 0.6, //        m: a non-text prop counts for R1 only within this depth of the head (a far counter behind is set)
+  propDepth: 0.6, //        m: a non-text prop counts for R1 only when its box is this close to the head box (a car 2 m behind is set)
   subjectInside: 0.85, //   R2: share of the subject's body box (horizontal extent) inside the frame
   headEdge: 0.01, //        R2: the head box must stay this share of the frame width away from every edge (11 px)
   edgeMargin: 0.03, //      R3: share of the frame width (32 px at 1080)
@@ -128,6 +128,12 @@ export const corners = (b) => {
     out.push([b.c[0] + lx * cy + lz * sy, b.c[1] + dy * b.h[1], b.c[2] - lx * sy + lz * cy]);
   }
   return out;
+};
+/** 3D gap (m) between two boxes (their world AABBs; 0 when they touch or overlap) */
+export const boxGap = (a, b) => {
+  const ext = (bx) => { const cs = corners(bx); return [0, 1, 2].map((k) => [Math.min(...cs.map((c) => c[k])), Math.max(...cs.map((c) => c[k]))]); };
+  const A = ext(a), B = ext(b);
+  return Math.hypot(...[0, 1, 2].map((k) => Math.max(0, A[k][0] - B[k][1], B[k][0] - A[k][1])));
 };
 /** screen rect of world points; null if any is behind the lens */
 export const rectOf = (v, pts) => {
@@ -252,8 +258,11 @@ export const framingQA = (o) => {
           const r = onScreen ? boxRect(v, it.b.box) : null;
           let bad = false;
           if (r && ox(r, head) > RULES.headPad && oy(r, head) > RULES.headPad && inter(r, VR) > 0 && hullOverlap(boxHull(v, it.b.box), boxHull(v, a.head)) >= RULES.headArea * (W / 1080) ** 2) {
-            // text boards count at any depth (they hide the head or the head hides them); other props only near the head
-            bad = it.text || (r.z0 < head.z1 + RULES.propDepth && r.z1 > head.z0 - RULES.propDepth);
+            // text boards count at any depth (they hide the head or the head hides them: S07 of minimum-payment-trap, the
+            // antennae over the OWE block 3 m behind); other props only when their box is within propDepth of the head box
+            // big non-text props (cars, sofas, counters: a box half-size > 0.75 m) are staging, like the set: the 3D clip QA
+            // keeps them out of bodies, and an actor in front of their car is a normal shot
+            bad = it.text || (Math.max(...it.b.box.h) <= 0.75 && boxGap(it.b.box, a.head) < RULES.propDepth);
           }
           persist(key, !bad, out.r1, () => {
             const label = it.b.label ? `${it.b.key} ${q(it.b.label)}` : it.b.key;
@@ -322,8 +331,8 @@ export const framingQA = (o) => {
         if (b.landed && b.edge && prominent) {
           const inside = r.x0 >= VR.x0 + edgeM && r.x1 <= VR.x1 - edgeM && r.y0 >= VR.y0 + edgeM && r.y1 <= VR.y1 - edgeM;
           persist(`r3|${sc.shot}|${b.key}${vname}`, inside, out.r3, () => {
-            const dx = r.x0 < VR.x0 + edgeM ? VR.x0 + edgeM - r.x0 : r.x1 > VR.x1 - edgeM ? -(r.x1 - (VR.x1 - edgeM)) : 0;
-            const dy = r.y0 < VR.y0 + edgeM ? VR.y0 + edgeM - r.y0 : r.y1 > VR.y1 - edgeM ? -(r.y1 - (VR.y1 - edgeM)) : 0;
+            const dx = r.x0 < VR.x0 + edgeM ? VR.x0 + edgeM - r.x0 + 12 : r.x1 > VR.x1 - edgeM ? -(r.x1 - (VR.x1 - edgeM) + 12) : 0;
+            const dy = r.y0 < VR.y0 + edgeM ? VR.y0 + edgeM - r.y0 + 12 : r.y1 > VR.y1 - edgeM ? -(r.y1 - (VR.y1 - edgeM) + 12) : 0;
             const sides = [r.x0 < VR.x0 + edgeM && "left", r.x1 > VR.x1 - edgeM && "right", r.y0 < VR.y0 + edgeM && "top", r.y1 > VR.y1 - edgeM && "bottom"].filter(Boolean);
             const wide = r.x1 - r.x0 > VR.x1 - VR.x0 - 2 * edgeM || r.y1 - r.y0 > VR.y1 - VR.y0 - 2 * edgeM;
             const mv = worldMove(v, dx, dy, r.k);
@@ -335,8 +344,8 @@ export const framingQA = (o) => {
           const main = b.lines.reduce((a, l) => (l.capM > a.capM ? l : a), b.lines[0]);
           const px = segPx(v, pl.c, main.capM, pl);
           const kk = `${sc.shot}|${b.key}`;
-          const cur = textH.get(kk);
-          if (!cur || px > cur.px) textH.set(kk, { px, t, shot: sc.shot, b, main, vname });
+          const cur = textH.get(kk) ?? textH.set(kk, { all: [], shot: sc.shot, b, main, vname }).get(kk);
+          cur.all.push([px, t]);
         }
       }
       // ---- 2D cards (kits): inside the frame; text size
@@ -348,8 +357,8 @@ export const framingQA = (o) => {
         if (c.lines?.length) {
           const main = Math.max(...c.lines.map((l) => l.capPx));
           const kk = `${sc.shot}|card|${c.key}`;
-          const cur = textH.get(kk);
-          if (!cur || main > cur.px) textH.set(kk, { px: main, t, shot: sc.shot, card: c });
+          const cur = textH.get(kk) ?? textH.set(kk, { all: [], shot: sc.shot, card: c }).get(kk);
+          cur.all.push([main, t]);
         }
       }
     }
@@ -368,6 +377,10 @@ export const framingQA = (o) => {
   }
   // ---- R4 text height (per shot and featured board: its largest landed size in that shot)
   for (const [, h] of textH) {
+    // the size a viewer gets: the median over the frames the board is landed and fully in frame in that shot (a push-in
+    // that only reaches the size in its last frames does not make a board readable)
+    h.all.sort((x, y) => x[0] - y[0]);
+    [h.px, h.t] = h.all[Math.floor(h.all.length / 2)];
     if (h.px >= capMin) continue;
     if (h.card) { out.r4h.set(`${h.shot}|${h.card.key}`, `FAIL ${h.shot} card ${h.card.key} ${q(h.card.label)} text is ${h.px.toFixed(0)} px tall (cap height, needs ${capMin.toFixed(0)} px): shorten the text or use a bigger card`); continue; }
     const k = capMin / Math.max(1, h.px);
@@ -377,7 +390,7 @@ export const framingQA = (o) => {
     else if (b.scaleField) fixes.push(`scale it up x${(k * 1.05).toFixed(2)} (${b.scaleField})`);
     fixes.push(`move the camera ${k > 1.6 ? "much " : ""}closer (cam.dist x${(1 / (k * 1.05)).toFixed(2)})`);
     if (String(h.main.text).length > 8) fixes.push(`or shorten the line ${q(h.main.text)} (long lines shrink to fit)`);
-    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${h.px.toFixed(0)} px tall at best (cap height at ${h.t.toFixed(2)} s; needs ${capMin.toFixed(0)} px to read on a phone): ${fixes.join(", ")}`);
+    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${h.px.toFixed(0)} px tall (cap height, median while on screen, e.g. at ${h.t.toFixed(2)} s; needs ${capMin.toFixed(0)} px to read on a phone): ${fixes.join(", ")}`);
   }
   // ---- R5 frame 0
   if (!LS && o.frame0) {
@@ -391,7 +404,9 @@ export const framingQA = (o) => {
       if (!a || !v) continue;
       const r = boxRect(v, a.face ?? a.head);
       if (!r) continue;
-      const hpx = Math.min(r.y1, v.top + v.h) - Math.max(r.y0, v.top);
+      // only the part of the face inside the view counts (a face off the side of the frame is no close-up)
+      const fx = Math.max(0, Math.min(r.x1, v.left + v.w) - Math.max(r.x0, v.left)) / Math.max(1, r.x1 - r.x0);
+      const hpx = Math.max(0, Math.min(r.y1, v.top + v.h) - Math.max(r.y0, v.top)) * (fx >= 0.6 ? 1 : 0);
       if (!best || hpx > best.hpx) best = { id: a.id, hpx, why: s.why, need: need * (v.h / H), view: v };
     }
     if (!best) out.r5.push(`FAIL frame 0 has no subject face: the frame-0 shot must aim at a character (cam.target "<actor>.face") in a close shot (head >= ${(RULES.closeFace * 100).toFixed(0)} % of the frame height, ${need.toFixed(0)} px)`);
