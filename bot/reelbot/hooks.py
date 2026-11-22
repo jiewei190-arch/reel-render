@@ -20,8 +20,11 @@ CANDIDATES_SCHEMA = {
         "type": "object", "additionalProperties": False, "required": ["line1", "hook_text", "frame0", "angle"],
         "properties": {
             "line1": {"type": "string", "description": "first spoken sentence, <= 12 words, numbers in words"},
-            "hook_text": {"type": "string", "description": "on-screen text at frame 0, <= 5 words, CAPS, *one* red word"},
-            "frame0": {"type": "string", "description": "what the viewer SEES in the first second"},
+            "hook_text": {"type": "string", "description": "on-screen text at frame 0, <= 6 words, CAPS, *one* red word. "
+                          "Must NAME the subject (the product, company, person or case) and make sense with the sound "
+                          "off: 'NEW COKE TASTED *BETTER*', never 'IT TASTED BETTER' (what is 'it'?)"},
+            "frame0": {"type": "string", "description": "what the viewer SEES in the first second: the story's own object "
+                       "(the product, the prop, the document) or a giant stake number, never a generic figure"},
             "angle": {"type": "string", "description": "the psychological lever: myth, loss, comparison, POV, number shock..."},
         }}}},
 }
@@ -38,6 +41,7 @@ JUDGE_BRIEF = (
     "1-10 how likely they are to STOP and keep watching past 3 seconds. Reward: a concrete dollar figure or a "
     "surprising claim in the first sentence, talking to 'you', an instantly clear situation, tension or a myth to bust, "
     "a strong visual at frame 0. Punish: vague setups, character names before the stake, jargon, slow scene-setting, "
+    "on-screen text that doesn't say WHAT the story is about (a pronoun like 'it' or 'they' with no subject), "
     "anything that needs context. Be harsh and spread the scores out. Use the channel's own data below as ground truth "
     "for what works with THIS audience."
 )
