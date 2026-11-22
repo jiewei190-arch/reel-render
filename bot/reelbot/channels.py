@@ -53,34 +53,34 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
                     "can't believe it and has to hear the rest."),
         cast_rule="Generic stylized characters only; no real person's likeness beyond public-domain historical depiction."),
     Channel(
-        id="law", name="Law: weird true court cases",
+        id="law", name="Court Of Weird (weird true court cases)",
         brief=("A channel of weird TRUE court cases and lawsuits told as gripping stories: the claim nobody believes, "
                "the twist, the verdict. US adults 18-45. Stories only, never legal advice."),
         prompt="story_script.md", doc="law.md", voices=("Nichalia",), kit="law3d", entry="src/index.law.ts",
         disclaimers=("This is a true story told for entertainment and education, not legal advice. "
                      "Details come from court records and news reports listed below.", "Voice is synthetic."),
-        analytics="law", folder="Law",
+        analytics="law", folder="CourtOfWeird",
         hook_rules=("12 words or fewer; the absurd claim or the stake in sentence one (who sued whom for what, or the "
                     "dollar amount), framed so the viewer must know how it ended."),
         cast_rule="Use only the kit's generic court characters; never a real person's likeness."),
     Channel(
-        id="biz", name="Business: costly mistakes and collapses",
+        id="biz", name="Billion Dollar Blunders (costly business mistakes)",
         brief=("A channel of TRUE business stories: the one decision that cost a company a fortune or killed it, and "
                "the lesson. US adults 18-45 interested in money and business."),
         prompt="story_script.md", doc="biz.md", voices=("Steven",), kit="biz3d", entry="src/index.biz.ts",
         disclaimers=("Educational only, not financial or investment advice. Figures come from the sources below.",
                      "Voice is synthetic."),
-        analytics="biz", folder="Business",
+        analytics="biz", folder="BillionDollarBlunders",
         hook_rules="12 words or fewer; the dollar stake of the mistake in sentence one (\"could have bought X for Y\").",
         cast_rule="Use only the kit's generic executives; never a real logo or a real person's likeness."),
     Channel(
-        id="cyber", name="Scams & Hacks: true cyber heists",
+        id="cyber", name="Scam Files TV (true scams and hacks)",
         brief=("A channel of TRUE scams, hacks and data breaches told like heist stories, ending with how to spot it. "
                "US adults 18-45. Educational: story-level, never operational how-to."),
         prompt="story_script.md", doc="cyber.md", voices=("Todd",), kit="cyber3d", entry="src/index.cyber.ts",
         disclaimers=("Educational only. Based on public court records and news reports listed below. "
                      "Nothing here is instructions for committing a crime.", "Voice is synthetic."),
-        analytics="cyber", folder="ScamsAndHacks",
+        analytics="cyber", folder="ScamFilesTV",
         hook_rules="12 words or fewer; the amount stolen or the shocking trick in sentence one, aimed at 'you' if it can be.",
         cast_rule="Use only the kit's generic figures; no real logos, agency seals or real faces."),
 )}

@@ -143,6 +143,9 @@
       "format": "short"
      }
     ]
+   },
+   "youtube": {
+    "title": "Block Money"
    }
   },
   {
@@ -225,11 +228,14 @@
       "format": "short"
      }
     ]
+   },
+   "youtube": {
+    "title": "Justin clips"
    }
   },
   {
    "key": "law",
-   "working_name": "Law: weird true court cases",
+   "working_name": "Court Of Weird",
    "profile_version": 1,
    "kind": "nonfiction",
    "niche": "Weird true court cases told as stories",
@@ -315,11 +321,14 @@
       ]
      }
     ]
+   },
+   "youtube": {
+    "title": "Court Of Weird"
    }
   },
   {
    "key": "biz",
-   "working_name": "Business: costly mistakes",
+   "working_name": "Billion Dollar Blunders",
    "profile_version": 1,
    "kind": "nonfiction",
    "niche": "True stories of business decisions that cost a fortune",
@@ -404,11 +413,15 @@
       ]
      }
     ]
+   },
+   "youtube": {
+    "title": "BillionDollarBlunders",
+    "handle_note": "handle currently @BillionsDollarsBlunders (typo; owner may fix)"
    }
   },
   {
    "key": "cyber",
-   "working_name": "Scams & Hacks",
+   "working_name": "Scam Files TV",
    "profile_version": 1,
    "kind": "nonfiction",
    "niche": "True scams, hacks and data breaches told like heists",
@@ -491,6 +504,9 @@
       ]
      }
     ]
+   },
+   "youtube": {
+    "title": "ScamFilesTV"
    }
   }
  ]
