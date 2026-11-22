@@ -116,7 +116,9 @@ def _is_exhausted(e) -> bool:
     code = (err.get("details") or {}).get("error_code") if isinstance(err.get("details"), dict) else None
     if e.status_code == 429 and code == "enforced_spend_limit_reached":
         return True
-    return e.status_code == 400 and "credit balance" in str(e).lower()  # older accounts report low credit as a 400
+    # low credit can arrive as a 400 OR as an error event inside a 200 stream (status_code 200), so match the text
+    msg = (str(err.get("message", "")) + " " + str(e)).lower()
+    return "credit balance is too low" in msg or ("credit balance" in msg and e.status_code in (400, 200))
 
 
 def _use_api() -> bool:
