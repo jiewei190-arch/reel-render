@@ -151,8 +151,53 @@ A generic hooded person: a low-poly hoodie, a black void where the face would be
 | `string` | `from` (a pin), `to` [a pin], `hit` | a red string grows between two evidence pins in 0.5 s |
 | `signal` | `color`, `s` | expanding pulse rings (lie flat on the map) |
 | `block` | `size`, `color` | a neon-edged box |
+| hero props | `label`, `lines`, `color`, `scale`, `spin` | `phone`, `laptop`, `envelope`, `card`, `usb`, `server`, `atm`, `padlock`, `coin`, `doc`: section 7a |
 
-**Motions:** `turntable`, `bob`, `popIn`, `dropIn`, `path` (eased per leg), `slideOut`.
+**Motions:** `turntable`, `bob`, `popIn`, `dropIn`, `path` (eased per leg), `slideOut`. `"spin"` (deg/s) with no motion
+turns a hero prop slowly from its first frame in the shot (its front faces `yaw` at the shot start); `"scale"` = `"s"`.
+
+## 7a. Hero props (src/cyber/hero.tsx): what the heist is about, at frame 0
+
+The hooded figure is faceless, so a close-up of it at frame 0 reads as nothing (the editor scored such hooks 6/10).
+**Open on a hero prop**: a generic, labelled object that says what the story is about: the phone lighting up with a
+bank alert, the ATM pushing out cash, the fake invoice email. All procedural ORIGINAL designs in the kit's look: dark
+steel bodies, emissive neon edges and screens (the bloom picks them up), **cyan / magenta, and red ONLY for an alert
+or money leaving**.
+
+```json
+{ "id": "inv", "kit": "envelope", "label": "INVOICE", "color": "#FF2A3D", "at": "front:0,1.0,0", "scale": 0.85, "spin": 6 }
+```
+
+| field | meaning |
+|---|---|
+| `color` | the neon accent (edges, screen text, light): `#19E6FF` cyan, `#FF2BD6` magenta, `#FF2A3D` red for alerts / money leaving; the coin's metal colour |
+| `label` | **≤ 14 characters, ≤ 2 words, plain generic text** ("BANK ALERT", "INVOICE", "USB", "BTC"); a real brand name is a compile error; `""` = no label (not on a doc) |
+| `lines` | `phone` (the notification body), `laptop` / `atm` (the warning lines), `doc` (the body): up to 7 lines of ≤ 40 characters; a generic text when left out. **Documents are never blank** |
+| `at`, `yaw`, `scale` (= `s`), `spin`, `motion`, `hit` | as for every prop. **Hero scale:** 0.5-1.6 m; lift small props to eye level (`"front:0,1.0,0"` in the inbox set) and frame them with `hookZoom` / `closeUp` at 1.3-1.8 m |
+
+| kit | default | what it is | still |
+|---|---|---|---|
+| `phone` | red "BANK ALERT" | a phone at 03:17 with a notification card: the label, then `lines` | [hero-phone](docs/hero_props/cyber/hero-phone.jpg) |
+| `laptop` | red "ACCESS DENIED" | a laptop with a warning screen: a triangle, the label, two `lines`; neon keys | [hero-laptop](docs/hero_props/cyber/hero-laptop.jpg) |
+| `envelope` | cyan "INVOICE" | an email envelope: glowing flap lines, the subject on a dark band, an @ badge | [hero-envelope](docs/hero_props/cyber/hero-envelope.jpg) |
+| `card` | cyan "DEBIT" | a dark glass bank card: chip, the label, generic digits (no network logo) | [hero-card](docs/hero_props/cyber/hero-card.jpg) |
+| `usb` | magenta "USB" | a USB stick with a blinking LED and the label along the body | [hero-usb](docs/hero_props/cyber/hero-usb.jpg) |
+| `server` | cyan "SERVER 07" | a server rack, nine units of blinking LEDs (some red when `color` is red), the label plate | [hero-server](docs/hero_props/cyber/hero-server.jpg) |
+| `atm` | red "CASH" | an ATM: a warning screen with the label, keypad, card slot, bills sliding out of the lit cash slot | [hero-atm](docs/hero_props/cyber/hero-atm.jpg) |
+| `padlock` | cyan "LOCKED" | a padlock: steel shackle, the label on the body, a glowing keyhole | [hero-padlock](docs/hero_props/cyber/hero-padlock.jpg) |
+| `coin` | gold "BTC" | a crypto coin standing on its edge: generic circuit traces and the label (no real currency mark), a cyan rim | [hero-coin](docs/hero_props/cyber/hero-coin.jpg) |
+| `doc` | cyan "WIRE ORDER" | a document: an accent bar, the **headline** (`label`), the body `lines`, a signature line, a scan line | [hero-doc](docs/hero_props/cyber/hero-doc.jpg) |
+
+The gallery renders them all: `node tools/cyber_stills.mjs gallery --only hero-` (plus `board-giant`).
+
+**No hero prop fits?** Open on the stake: a giant board at frame 0,
+`"boards": [{ "title": "STOLEN", "value": "$81M", "size": "giant", "at": 0, "tone": "red" }]` (920 px wide, centred
+under the hook, the value up to 210 px; [board-giant](docs/hero_props/cyber/board-giant.jpg)). Boards and story cards
+that start at `0` are fully on at frame 0 (no fade-in).
+
+Before / after on the reference Short: [before](docs/hero_props/frame0/cyber-fake-supplier_before.jpg) (the hood from
+the side) → [after](docs/hero_props/frame0/cyber-fake-supplier_after.jpg) (the red INVOICE email); the clip adapter's
+giant-board opener: [cyber-demo-landscape-short-1](docs/hero_props/frame0/cyber-demo-landscape-short-1_after.jpg).
 
 ## 8. Story devices (DOM, recipe level, rects from the layout)
 
@@ -235,9 +280,22 @@ names the shot, the time, the card / prop / person and what to move where.
   42 px font size (the median while on screen). Long-form uses the same 42 px at 1080 tall; its cards are checked for
   placement and colour only.
 - **R5 FAIL (Shorts), frame 0 is a close-up of a face.** The hook is at the kit's full size, and the subject's face is
-  at least 16 % of the frame height (307 px). A frame-0 shot on a prop with the person small fails.
+  at least 16 % of the frame height (307 px). In this kit the face part is **replaced by the frame-0 opener** below when
+  it passes (the hooded figure is faceless); the hook-size part always applies.
 - Typical fixes: aim the camera at the person, move them toward the centre, pull back (`cam.dist`); put a card's target
   (`on`) or `pos` on the side away from the face; raise `cam.dist` on close shots so the hood or antenna stays in frame.
+
+**Frame-0 opener (hard FAILs; tools/frame0_hero.mjs, screen space through tools/framing_qa.mjs):**
+- **F1** the frame-0 subject (the camera target, else the biggest figure) is never the hooded figure seen from behind
+  (the camera more than 90° off the way it faces), and the hooded figure at frame 0 always shares the frame with a
+  hero prop or a stake-number card;
+- **F2** frame 0 shows **a hero prop close-up (≥ 35 % of the frame height)** or **a giant stake board (≥ 50 % of the
+  frame width**, a number with a non-zero digit, fully on);
+- **F3** every number card on screen at 0.00 s (a board, the money counter, a case file, a countdown, a label with a
+  digit) is **fully opaque**: start it at `0` or after the first cut.
+Each FAIL names the shot, the prop or card, its measured size and the change to make (cam.dist x…, "scale" x…,
+`"size": "giant"`, `"at": 0`, or a ready-to-paste hero prop / giant board). RECIPE_QA.md's "Frame-0 opener" section
+lists every hero prop's frame-0 share and every number card's width and opacity.
 
 **Clip QA** runs on every frame x 4 sub-frames. It checks:
 - vault parts, the figure, kit blocks and set blockers against BOLT;
@@ -245,10 +303,11 @@ names the shot, the time, the card / prop / person and what to move where.
 - grounded objects below the floor.
 
 **Gate** (hard = FAIL):
-- a subject ≥ 50 % of the frame height at frame 0;
+- a subject ≥ 50 % of the frame height at frame 0 (or the opener passes);
+- the frame-0 opener rules F1-F3 above;
 - the hook rules;
 - **the dollar stake**: a `$` figure in line 1 and on screen by 0.5 s;
-- the figure or BOLT ≥ 15 % at frame 0;
+- the figure or BOLT ≥ 15 % at frame 0, or the hero-prop / giant-board opener;
 - the first word by 0.2 s;
 - a sound punch at 0;
 - ≥ 2 cuts or hits in the first 3 s;
@@ -275,21 +334,21 @@ names the shot, the time, the card / prop / person and what to move where.
 
 | shot (word) | set | camera | what happens |
 |---|---|---|---|
-| 0 | room | hookZoom on hk.head (profile) | the hooded figure types; hook "THE *$100M* EMAIL" |
+| 0 | inbox | hookZoom on the INVOICE envelope | **the hero prop**: a red `envelope` "INVOICE" floating in front of the inbox wall (40 % of the frame height at 0.00 s); hook "THE *$100M* EMAIL" |
 | "Google" | netmap | pushIn on svalley | GOOGLE, then FACEBOOK labels |
 | "wire" | vault | slamZoom | board WIRED $0→$100M+ |
 | "He" (line 2) | room | drift | the figure leans in, then types on "sent" |
-| "sent" | inbox | drift on the wall | the wall of emails |
+| "sent" | inbox | drift on the wall | the wall of emails ("Invoice 4470" tile scaled 1.4, left of the phish slot) |
 | "Both" | netmap | crane on Taiwan | a cyan route Silicon Valley → Taiwan; REAL SUPPLIER |
 | "So" | netmap | orbit on Latvia | a red signal; LATVIA, then SAME NAME (red) |
-| "Then" | inbox | pushIn on the phish | "New bank details" slides out red; countdown PAY WITHIN; FAKE INVOICE, FAKE STAMPS |
+| "Then" | inbox | pushIn on the phish (dist 4.6) | "New bank details" slides out red; countdown PAY WITHIN; FAKE INVOICE, FAKE STAMPS |
 | "From" | vault | explodeOrbit | money counter WIRED OUT → $120,000,000; the vault explodes on "paid."; ALERT on "Over" |
 | "scattered" | netmap | crane over Europe | routes Latvia → Cyprus, Slovakia, Hungary, Hong Kong; HONG KONG |
 | "But" | servers | flyThrough | the trail |
 | "2017," | evidence | drift on the board | a new red string; CASE FILE card, CAUGHT stamp |
 | "Extradited" | evidence | orbit on the suspect pin | board SENTENCE 5 YRS (red) |
 | "Spot" | inbox | drift on the red email | HOW TO SPOT IT: three ticks |
-| "Because" | room | hookZoom (as frame 0) | the hood turns on "how"; the hook returns on "one" → loops to line 1 |
+| "Because" | inbox | hookZoom (as frame 0) | back on the INVOICE envelope; the hook returns on "one" → loops to line 1 |
 
 ## 13. Files
 
@@ -368,9 +427,13 @@ top: flash safety (hard), text off faces, labels one at a time, a moving camera 
 **Clips** (`src/cyber/clip.ts`): every `At` of a shot is re-anchored (shot `at`, `cam.hit`, BOLT `from` / `then[].at`,
 prop `hit` / `then[].at` / `path` times, actions `at`/`until`, boards `at`/`until`, fx and sfx `at`); places are not.
 Story devices and global props in the segment are re-timed, the rest dropped. The hook text is cut to <= 5 words that
-fit two portrait lines, with the `$`/number word in neon. The frame-0 shot is a hookZoom on the hooded figure (its source
-shot's place, or the room's seat; BOLT when the source shot only has BOLT) with the stake on a top board from frame 0,
-a pose change + shake at 0.45 s, cut at 1.0 s. Pick segments whose line 1 says a `$` figure (the stake rule).
+fit two portrait lines, with the `$`/number word in neon. The frame-0 shot passes the opener rules: **the source's
+first hero prop** as a hookZoom close-up in front of the inbox wall (sized to about 0.7 m, lifted to 1.2 m); with no
+hero prop in the source, the stake (the hook's `$` accent word, else line 1's stake word) on a **giant board** from
+frame 0 over the hooded figure framed low (its source shot's place, or the room's seat; BOLT when the source shot only
+has BOLT), a pose change + shake at 0.45 s; with no stake either, a `doc` carrying the hook. Cut at 1.0 s. A landscape
+shot aimed at an email tile pulls back x2 in the clip (9:16 shows a third of the 16:9 width). Pick segments whose line
+1 says a `$` figure (the stake rule).
 
 **Limits**
 

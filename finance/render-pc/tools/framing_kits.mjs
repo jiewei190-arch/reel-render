@@ -16,7 +16,7 @@ const subjectsOf = (spec, ids) => {
   return [];
 };
 const rect = (key, label, x, y, w, h, lines, bg, landed, fix) => ({ key, label, x0: x - w / 2, x1: x + w / 2, y0: y - h / 2, y1: y + h / 2, lines, bg, landed, fix });
-const ln = (text, fs, fg) => ({ text: String(text ?? ""), capPx: fs * CAP(), fg });
+const ln = (text, fs, fg, fitW, fix) => ({ text: String(text ?? ""), capPx: fs * CAP(), fg, ...(fitW ? { fitW, fix } : {}) });
 const view = (cam, W, H) => [{ cam, left: 0, top: 0, w: W, h: H, name: "frame" }];
 
 // ------------------------------------------------------------------ BOLT (tech3d, cyber3d): the shell is the head
@@ -150,7 +150,10 @@ export const bizScene = (C, m, recipe) => {
     for (const l of C.labelsAt(t)) cards.push(rect(`label ${l.text}`, l.text, l.x, l.y, l.w, l.h, [ln(l.text, 52, ink)], white, l.u >= 0.99, "callout labels are placed by the engine: point the label at something away from the executive's head, or frame the head on the other side"));
     for (const g of C.tagsAt(t)) cards.push(rect(`tag ${g.text}`, g.text, g.x, g.y, g.w, g.h, [ln(g.text, 44, white)], tt(g.tone), g.u >= 0.99));
     for (const d of C.devicesAt(t)) {
-      const lines = devLines(d).map(([tx, fs, fg]) => ln(tx, fs, fg));
+      // board lines must fit the board (framing R3, text cut off by the card edge)
+      const fit = d.kind === "board" ? d.w - 16 : 0;
+      const bfix = d.spec?.size === "giant" ? "shorten the value or the title" : `shorten it (e.g. "200K", "APR 1985", "$1.2B") or give the board "size": "giant" (920 px wide, the value shrinks to fit)`;
+      const lines = devLines(d).map(([tx, fs, fg]) => ln(tx, fs, fg, fit, bfix));
       const h = d.kind === "worth" ? d.h + 46 : d.h;
       cards.push(rect(`${d.kind} ${d.key ?? ""}`.trim(), d.spec?.text ?? d.spec?.title ?? d.spec?.name ?? d.kind, d.x, d.y + (h - d.h) / 2, d.w, h, lines, null, d.u >= 0.99, "devices sit at fixed layout spots: frame the executive away from that spot (cam.face / cam.az), or move the device (pos / y)"));
     }
@@ -186,7 +189,11 @@ export const cyberScene = (C, m, recipe) => {
     }
     const cards = [];
     for (const l of C.labelsAt(t)) cards.push(rect(`label ${l.text}`, l.text, l.x, l.y, l.w, l.h, [ln(l.text, 50, wht)], glass, l.u >= 0.99, "callout labels are placed by the engine: point the label at a part away from the head, or frame the head on the other side"));
-    for (const b of C.boardsAt(t)) { const fs = m.boardFonts ? m.boardFonts(L, b) : { title: 38, value: 112 }; cards.push(rect(`board ${b.title}`, `${b.title} ${b.value}`, b.x, b.y, b.w, b.h, [ln(b.title, fs.title, "#000000"), ln(b.value, fs.value, wht)], null, b.u >= 0.99, `move the board (pos) to the side away from the head`)); }
+    for (const b of C.boardsAt(t)) {
+      const fs = m.boardFonts ? m.boardFonts(L, b) : { title: 38, value: 112 };
+      const bfix = b.giant ? "shorten the value or the title" : `shorten it (e.g. "200K", "APR 1985", "$1.2B") or give the board "size": "giant" (920 px wide, the value shrinks to fit)`;
+      cards.push(rect(`board ${b.title}`, `${b.title} ${b.value}`, b.x, b.y, b.w, b.h, [ln(b.title, fs.title, "#000000", b.w - 16, bfix), ln(b.value, fs.value, wht, b.w - 16, bfix)], null, b.u >= 0.99, `move the board (pos) to the side away from the head`));
+    }
     for (const d of C.devicesAt(t)) cards.push(rect(d.kind, d.title ?? d.label ?? d.text ?? d.kind, d.x, d.y, d.w, d.h, devLines(d).map(([tx, fs, fg]) => ln(tx, fs, fg)), glass, d.u >= 0.99, "story cards sit at fixed layout spots: frame the head away from that spot (cam.face / cam.az)"));
     const boards = [];
     for (const p of s.props) {

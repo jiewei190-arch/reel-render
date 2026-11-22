@@ -128,14 +128,14 @@ export const RECIPE: CyberRecipe = {
    ],
    "boards": [
     {
-     "title": "WIRED",
+     "title": "WIRED OVER",
      "at": "1:$100",
      "count": {
       "from": 0,
       "to": 100,
       "dur": 0.6,
       "prefix": "$",
-      "suffix": "M+"
+      "suffix": "M"
      },
      "pos": "right",
      "tone": "magenta"

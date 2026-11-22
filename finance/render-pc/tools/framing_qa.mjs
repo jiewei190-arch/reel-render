@@ -394,6 +394,13 @@ export const framingQA = (o) => {
         if (!c.landed || (c.view !== undefined && c.view !== vi) || (c.view === undefined && vi > 0)) continue;
         const inside = c.x0 >= edgeM && c.x1 <= W - edgeM && c.y0 >= edgeM && c.y1 <= H - edgeM;
         persist(`r3c|${sc.shot}|${c.key}`, inside, out.r3, () => `FAIL ${sc.shot} card ${c.key} ${q(c.label)} crosses the frame edge (x ${c.x0.toFixed(0)}-${c.x1.toFixed(0)}, y ${c.y0.toFixed(0)}-${c.y1.toFixed(0)}; keep ${edgeM.toFixed(0)} px clear) at ${ts}: shorten its text or move it inward`);
+        // opt-in (a line with fitW: the biz3d / cyber3d boards): the line must fit its card, or the card edge cuts it
+        // off ("200,000" at 108 px is about 470 px in a 420 px board). Kits that set no fitW are checked as before.
+        (c.lines ?? []).forEach((l, li) => {
+          if (!l.fitW || !l.text) return;
+          const fs = l.capPx / capRatio(), w = textEm(String(l.text)) * fs;
+          persist(`r3t|${sc.shot}|${c.key}|${li}`, w <= l.fitW, out.r3, () => `FAIL ${sc.shot} card ${c.key}: its line ${q(l.text)} is ${w.toFixed(0)} px wide at ${fs.toFixed(0)} px in a ${l.fitW.toFixed(0)} px card, so the card edge cuts it off (at ${ts}): ${l.fix ?? "shorten the text"}`);
+        });
         if (c.lines?.length) {
           const main = Math.max(...c.lines.map((l) => l.capPx));
           const kk = `${sc.shot}|card|${c.key}`;

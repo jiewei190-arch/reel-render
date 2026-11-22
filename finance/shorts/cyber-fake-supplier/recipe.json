@@ -18,7 +18,7 @@
                   { "do": "label", "on": "svalley:0.15,0.5,0", "text": "FACEBOOK", "at": "Facebook", "side": "right" }] },
     { "at": "wire", "set": "vault", "cam": { "preset": "slamZoom", "target": "centre:0,1.5,0.3", "dist": 7.4, "h": 0.9, "az": 18, "hit": "wire+0.1" },
       "props": [{ "id": "vt", "obj": "vault", "at": "centre" }],
-      "boards": [{ "title": "WIRED", "at": "$100", "count": { "from": 0, "to": 100, "dur": 0.6, "prefix": "$", "suffix": "M+" }, "pos": "right", "tone": "magenta" }] },
+      "boards": [{ "title": "WIRED OVER", "at": "$100", "count": { "from": 0, "to": 100, "dur": 0.6, "prefix": "$", "suffix": "M" }, "pos": "right", "tone": "magenta" }] },
     { "at": "2:He", "set": "room", "cam": { "preset": "drift", "target": "hk.head", "dist": 2.5, "h": 0.15, "az": 115, "face": 0.45 },
       "props": [{ "id": "hk", "kit": "figure", "at": "seat", "yaw": 180, "pose": "lean", "then": [{ "at": "sent", "pose": "type" }] }] },
     { "at": "sent", "set": "inbox", "cam": { "preset": "drift", "target": "wall", "dist": 4.8, "h": 0.1, "az": 6 },

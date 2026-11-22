@@ -35,7 +35,7 @@ Composition: `CyberDemoLandscapeRecipe` in `src/index.cyber.ts` (1920x1080, 30 f
 
 Pacing: 36 visual-change marks, longest gap 1.94 s, mean shot 2.55 s, 12 beat marks.
 
-## Framing QA (screen space, 996 frames, 0.03 s): 0 clip(s), 1 fail(s)
+## Framing QA (screen space, 996 frames, 0.06 s): 0 clip(s), 1 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 1, R5 frame 0 0.
 

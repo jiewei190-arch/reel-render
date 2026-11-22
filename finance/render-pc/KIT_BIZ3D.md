@@ -147,8 +147,10 @@ Every set keeps moving: skyline windows twinkle, clouds and traffic drift, lamps
 | `decision` | `text` (default "THE DECISION"), `sub`, `until` (default +1.6 s), `freeze` (default true) | **the freeze-frame**: the world clock holds while the lens keeps creeping in and rolling, the frame desaturates with a red edge, letterbox bars and viewfinder brackets slide in, the red banner slams in, the `sub` question follows |
 | `counter` | `title`, `from`, `to`, `dur`, `tone` | a money counter (compact: $50M, $1.46B). Draining is red with a ▼ and a shake; rising is green with a ▲ |
 | `worth` | `a: { label, value, text }`, `b: { label, value, text }`, `multiple` | "WHAT IT'S WORTH TODAY": the small bar (a sliver, on purpose), the big bar grows, the multiple pops in gold ("5,000×") |
-| `board` | `title` (≤ 3 words), `value` or `count`, `pos`, `tone` | a number board |
+| `board` | `title` (≤ 3 words), `value` or `count`, `pos`, `tone`, `size` | a number board. **`"size": "giant"`** is the stake board: centred, 920 px wide (85 % of the frame), the value up to 220 px (it shrinks to fit). With `"at": 0` it is fully on at frame 0: a frame-0 opener (section 8a) |
 | `stamp` | `text`, `tone`, `y` | a rubber stamp slams in, tilted (BANKRUPT, NO, SOLD) |
+
+A device that starts at `0` is fully on at frame 0 (no fade-in ghost); every other device fades in over 0.22 s.
 
 Devices sit in fixed layout slots (layout.ts) below the hook while it shows and above the caption band. The gate fails any device card over a head, over another card or into the caption band (THE DECISION is exempt from the head check: it is meant to cover the frame).
 
@@ -160,10 +162,11 @@ Devices sit in fixed layout slots (layout.ts) below the hook while it shows and 
 | `boxes` | a stack of product boxes (`size` [columns, rows, layers]) |
 | `cash` | a stack of cash bundles; drainable |
 | `disc` | a plain disc in a dark case (the generic "movie rental") |
-| `envelope` | a plain mailer (deliberately not red) |
+| `envelope` | a mailer with a printed address block (`label` = the addressee, `lines` = up to 3 address lines; a generic address when left out) and a stamp. Never blank |
 | `block` | a plain box (`size`, `color`) |
+| hero props | `can`, `cup`, `box`, `bottle`, `phone`, `case`, `camera`, `shoe`, `burger`, `laptop`, `card`, `bag`, `letter`: section 8a |
 
-Motions: `turntable`, `bob`, `popIn`, `dropIn` (lands on `hit` with a kick and an impact SFX). Recipe-level `props` with `from`/`until`/`sets` live across shots.
+Motions: `turntable`, `bob`, `popIn`, `dropIn` (lands on `hit` with a kick and an impact SFX). `"spin"` (deg/s) with no motion turns a prop slowly on the spot from its first frame in the shot, so its front faces `yaw` when the shot starts. `"scale"` is the same as `"s"`. Recipe-level `props` with `from`/`until`/`sets` live across shots.
 
 | action | fields | what it does |
 |---|---|---|
@@ -179,6 +182,53 @@ Motions: `turntable`, `bob`, `popIn`, `dropIn` (lands on `hit` with a kick and a
 | `shake` | a camera kick at `at` (`gain`) |
 | `flash` | a white flash |
 | `debris` | chunks burst from `p` and fall |
+
+## 8a. Hero props (src/biz/hero.tsx): what the story is about, at frame 0
+
+The cast is faceless, so a close-up "reaction" at frame 0 reads as nothing. **Open on a hero prop**: a generic, labelled
+product that says what the story is about (a red can for a cola story, a rental case for a video chain, a film camera
+for a photo company). All are procedural ORIGINAL designs in the kit's premium miniature look (satin plastic, rounded
+edges, a soft highlight), lit by the set.
+
+```json
+{ "id": "can", "kit": "can", "label": "COLA", "color": "#D7262E", "at": "tableTop:0,0,-2.35", "scale": 0.8, "spin": 8 }
+```
+
+| field | meaning |
+|---|---|
+| `kit` | one of the kinds below |
+| `color` | the product colour (body, panel); the label ink turns dark on a light colour, white on a dark one |
+| `label` | the text printed on it: **≤ 14 characters, ≤ 2 words, plain generic text** ("COLA", "NEW", "CLASSIC", "FILM", "SALE"). A real brand name is a compile error (the guard lists the famous marks; brand names belong on the company card). `""` = an unlabelled product (two plain cups). The letter needs one: it is its headline |
+| `lines` | `letter` / `envelope`: the body text, up to 7 lines of ≤ 40 characters; a generic letter when left out. **Paper is never blank** |
+| `at`, `yaw`, `scale` (= `s`), `spin`, `motion`, `hit` | as for every prop. **Hero scale:** each prop is 0.5-1 m (2-3x life size) so `closeUp` / `hookZoom` fill the frame at 1.3-1.8 m; `"scale": 0.35` is about life size on the table |
+
+| kit | default | what it is | still |
+|---|---|---|---|
+| `can` | `#D7262E` "COLA" | a soda can: wrap-around label with straight bands, silver lid and tab, condensation beads | [hero-can](docs/hero_props/biz/hero-can.jpg) |
+| `cup` | white "CLASSIC" | a paper cup with a printed sleeve, a lid and a straw | [hero-cup](docs/hero_props/biz/hero-cup.jpg) |
+| `box` | `#F2B830` "CEREAL" | a cereal / product box: FAMILY SIZE band, the label badge, a NEW burst | [hero-box](docs/hero_props/biz/hero-box.jpg) |
+| `bottle` | `#2F7D4A` "SODA" | a glass bottle (lathe profile) with a label band and a gold cap | [hero-bottle](docs/hero_props/biz/hero-bottle.jpg) |
+| `phone` | `#1C2230` "NEW" | a smartphone; the label on the lit screen (a card and app tiles) | [hero-phone](docs/hero_props/biz/hero-phone.jpg) |
+| `case` | `#1E3A8A` "MOVIE" | a video rental case (DVD/VHS): 2-NIGHT RENTAL band, the label, NEW RELEASE, RETURN BY 9 PM | [hero-case](docs/hero_props/biz/hero-case.jpg) |
+| `camera` | `#2A2A2E` "FILM" | a film camera: silver body, leatherette band in `color`, lens, dials, the label plate | [hero-camera](docs/hero_props/biz/hero-camera.jpg) |
+| `shoe` | `#E04E2C` "RUN" | a sneaker in side view: cupsole, toe cap, laces, heel tab, the label on both side panels | [hero-shoe](docs/hero_props/biz/hero-shoe.jpg) |
+| `burger` | `#E8A33A` "BURGER" | a burger box with its lid open on a burger | [hero-burger](docs/hero_props/biz/hero-burger.jpg) |
+| `laptop` | `#B8BEC8` "ONLINE" | a laptop; the label on the screen over a rising line chart | [hero-laptop](docs/hero_props/biz/hero-laptop.jpg) |
+| `card` | `#1F2937` "GOLD" | a credit card standing in a stand: chip, the label, generic digits, CREDIT (no network logo) | [hero-card](docs/hero_props/biz/hero-card.jpg) |
+| `bag` | `#C8102E` "SALE" | a shopping bag with rope handles, THANK YOU band, the label badge | [hero-bag](docs/hero_props/biz/hero-bag.jpg) |
+| `letter` | cream "NOTICE" | a letter / document: an accent bar, the **headline** (`label`), the body `lines`, a signature line | [hero-letter](docs/hero_props/biz/hero-letter.jpg) |
+
+Table scale and unlabelled cups: [hero-labels](docs/hero_props/biz/hero-labels.jpg). The gallery renders them all:
+`node tools/biz_stills.mjs gallery --only hero-`.
+
+**Frame-0 recipe pattern** (the reference Short, section 12): the prop on the boardroom table in front of the
+executive, `"cam": { "preset": "hookZoom", "target": "<prop id>", "dist": 1.45, "h": 0.12, "face": 0.52 }`, with
+`"scale": 0.8` and a slow `"spin"`. The executive behind can still fold his arms and shrug (the acting beat). No hero
+prop fits? Open on the stake instead: `"devices": [{ "do": "board", "size": "giant", "title": "the price", "value": "$50M", "at": 0, "tone": "red" }]`.
+
+Before / after on the reference Short: [before](docs/hero_props/frame0/biz-demo-blockbuster-passed_before.jpg) (a
+faceless boss) → [after](docs/hero_props/frame0/biz-demo-blockbuster-passed_after.jpg) (the rental case); the clip
+adapter's giant-board opener: [biz-demo-landscape-short-1](docs/hero_props/frame0/biz-demo-landscape-short-1_after.jpg).
 
 ## 9. Cameras (BIZ_CAMS in src/biz/compile.ts)
 
@@ -226,7 +276,8 @@ names the shot, the time, the card / prop / person and what to move where.
   42 px font size (the median while on screen). Long-form uses the same 42 px at 1080 tall; its cards are checked for
   placement and colour only.
 - **R5 FAIL (Shorts), frame 0 is a close-up of a face.** The hook is at the kit's full size, and the subject's face is
-  at least 16 % of the frame height (307 px). A frame-0 shot on a prop with the person small fails.
+  at least 16 % of the frame height (307 px). In this kit the face part is **replaced by the frame-0 opener** below when
+  it passes (the cast is faceless); the hook-size part always applies.
 - Typical fixes: aim the camera at the person, move them toward the centre, pull back (`cam.dist`); put a card's target
   (`on`) or `pos` on the side away from the face; raise `cam.dist` on close shots so the hair stays in frame.
 
@@ -236,8 +287,22 @@ names the shot, the time, the card / prop / person and what to move where.
 
 **Clip QA** runs on every frame × 4 sub-frames: each executive's body and head against the set blockers, kit props (tower, block, boxes) and the other executives; nobody below the floor. Limbs are not tested: hands on the table and legs under it are acting.
 
+**Frame-0 opener (hard FAILs; tools/frame0_hero.mjs, screen space through tools/framing_qa.mjs).** The editor that
+scores hooks reads a faceless executive at frame 0 as "nothing", so:
+- **F1** the frame-0 subject (the camera target, else the biggest figure) is never a faceless executive seen from
+  behind (the camera more than 90° off the way he faces), and a faceless executive at frame 0 always shares the frame
+  with a hero prop or a stake-number card;
+- **F2** frame 0 shows **a hero prop close-up (≥ 35 % of the frame height)** or **a giant stake board (≥ 50 % of the
+  frame width**, a number card with a non-zero digit, fully on);
+- **F3** every number card on screen at 0.00 s (board, counter, worth, stamp, a label with a digit) is **fully
+  opaque**: start it at `0` or after the first cut.
+Each FAIL names the shot, the prop or card, its measured size and the change (cam.dist x…, "scale" x…, `"size": "giant"`,
+`"at": 0`, or a ready-to-paste hero prop / giant board). The section "Frame-0 opener" of RECIPE_QA.md lists every hero
+prop's frame-0 share and every number card's width and opacity.
+
 **Gate** (hard = FAIL):
-- frame 0 has a subject ≥ 50 % of the frame height;
+- frame 0 has a subject ≥ 50 % of the frame height (or the opener passes);
+- the frame-0 opener rules F1-F3 above;
 - the hook is ≤ 5 words, ≤ 2 lines, fits, and has exactly one accent word;
 - the dollar stake or a number is on screen by 0.5 s;
 - the first word comes by 0.2 s; there is an impact at 0.00 s; music plus an SFX at frame 0;
@@ -252,7 +317,7 @@ names the shot, the time, the card / prop / person and what to move where.
 
 ## 11. Content rules (the owner's)
 
-- **No real logos, trademarks, trade dress or mascots on screen.** Company names may be spoken and shown as plain text (company card, headline, labels). Icons are generic pictograms; avoid a company's colour scheme on store fronts (the demo's stores are a varied palette with generic signs).
+- **No real logos, trademarks, trade dress or mascots on screen.** Company names may be spoken and shown as plain text (company card, headline, labels). **Hero-prop labels are generic words only** ("COLA", not a brand; the compiler refuses famous marks), and a prop never copies a product's trade dress (no ribbon on a red can, no blue-and-yellow rental case). Icons are generic pictograms; avoid a company's colour scheme on store fronts (the demo's stores are a varied palette with generic signs).
 - **No real people's likeness.** Executives are faceless and generic; name people only in the voice or `sources.md`.
 - **No game or TV IP; no copying other creators' styles.**
 - **CC0 or procedural assets only.** Everything in this kit is procedural (three.js primitives and canvas textures).
@@ -264,7 +329,7 @@ names the shot, the time, the card / prop / person and what to move where.
 
 | shot (word) | set | camera | what happens |
 |---|---|---|---|
-| 0 | boardroom | hookZoom on ceo | the boss at the head of the table, arms folded, then a shrug; hook "THE *$50M* NO" |
+| 0 | boardroom | hookZoom on the rental case | **the hero prop**: a burgundy `case` labelled RENTAL on the table (47 % of the frame height at 0.00 s), the boss behind it, arms folded, then a shrug; hook "THE *$50M* NO" |
 | "have" | warehouse | slamZoom on the disc | a disc and mailers; company card NETFLIX, FOUNDED 1997 (mail icon, green) |
 | "fifty" | boardroom | pushIn on the cash | a cash stack drops on the table; counter THE ASKING PRICE $0 → $50M |
 | line 2 | warehouse | dolly along the conveyor | board THE YEAR 2000; counter NETFLIX LOSSES, 2000 → -$57M |
@@ -353,10 +418,14 @@ notes. Shorts keep the kit's full frame-0 gate and every-frame x 4 QA; `--qa-sam
 
 **The clip adapter** (`clipAdapter` in tools/biz_entry.ts) re-times every time field of a biz3d shot (shot `at`,
 `cam.hit`, actor `from` / `then[].at`, prop `hit`, action `at` / `until` / `collapse`, device `at` / `until`, fx `at`,
-sfx `at`; places stay), keeps the global props that overlap the segment, and makes a fresh frame-0 shot: a hookZoom on
-the segment's first executive seated at the boardroom head (arms folded, a shrug + shake at 0.45 s), the hook text
-(<= 5 words, the `$`/number word in the accent, cut to fit the portrait card) and, if the hook has no number, the stake
-as a label. From a landscape source it drops explicit `cam.face` values and re-places stamps for 9:16.
+sfx `at`; places stay), keeps the global props that overlap the segment, and makes a fresh frame-0 shot that passes the
+frame-0 opener rules: the segment's first executive seated at the boardroom head (arms folded, a shrug + shake at
+0.45 s), the hook text (<= 5 words, the `$`/number word in the accent, cut to fit the portrait card), and in front of
+him **the source's first hero prop** as a hookZoom close-up (scale 0.8 on the table). With no hero prop in the source,
+the stake goes on a **giant board** at frame 0 (the hook's `$` accent word with its unit: "$50" + "MILLION" → "$50M"),
+over the executive framed low; with no stake either, a `letter` carrying the hook as its headline. From a landscape
+source it drops explicit `cam.face` values, re-places stamps for 9:16 and frames THE DECISION shots so the head stays
+above the card (`face` 0.4, `dist` x1.15).
 
 **Limits**
 

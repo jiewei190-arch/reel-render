@@ -6,7 +6,7 @@ Composition: `BizDemoLandscapeShort1Recipe` in `src/index.biz.ts` (portrait 1080
 
 - none: no executive's body or head enters a set blocker, a kit prop or another executive; nobody below the floor.
 
-## Framing QA (screen space, 940 frames, 0.04 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 940 frames, 0.05 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0.
 
