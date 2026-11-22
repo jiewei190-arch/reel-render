@@ -12,7 +12,7 @@ The finished video is built from your script by an animation engine, voiced by a
 
 ## What keeps people watching (from our own analytics, Nov 2026)
 - The first second decides everything: our Shorts that kept 60%+ opened on a concrete dollar figure and a reaction. Wide, slow or vague openings lost 55%+ of viewers.
-- **Line 1 = the hook: 12 words or fewer, second person ("You..."), a dollar figure or a myth people believe, said in the very first sentence.** Example winners: "You turned down a ten thousand dollar raise because of taxes?", "Your low car payment costs twelve thousand dollars in interest."
+- **Line 1 = the hook: 12 words or fewer, second person ("You..."), a dollar figure or a myth people believe, said in the very first sentence.** A situation or a question, NEVER a demand: no "You owe...", no "Pay...", no order to pay or send money (read alone, that sounds like a debt collector or a scam call to the voice provider's filter). Example winners: "You turned down a ten thousand dollar raise because of taxes?", "Your low car payment costs twelve thousand dollars in interest."
 - Small finance channels going viral this month (60x-2000x views/subs) all put the stakes or a surprising number in sentence one, most talk to the viewer as "you", and run 50-110 seconds.
 - Our best structure: **Spender vs Saver on the same situation** (same car, same raise, same paycheck) with one clear money gap revealed at the end.
 - A "But here's the part people get wrong..." / "But wait till..." turn about every 7 seconds; an open loop near the middle that pays off at the end.

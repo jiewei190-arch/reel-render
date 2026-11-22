@@ -67,7 +67,8 @@ def _tts(text: str, voice_id: str, speed: float, mood: str | None = None) -> tup
 
 
 LISTEN = os.environ.get("REELBOT_VOICE_CHECK", "1") != "0"
-MAX_RETAKES = int(os.environ.get("REELBOT_VOICE_RETAKES", "4"))  # per Short, caps extra ElevenLabs spend
+MAX_RETAKES = int(os.environ.get("REELBOT_VOICE_RETAKES", "2"))  # per Short, caps extra ElevenLabs spend
+RETAKES_PER_LINE = 1  # never hammer one line: bursts of identical generations look like abuse to the provider
 LISTEN_SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["ok", "score", "heard_emotion", "problem"],
     "properties": {"ok": {"type": "boolean"}, "score": {"type": "number", "description": "1-10"},
@@ -191,8 +192,10 @@ def record(folder: Path, voice: str, *, speed: float = 1.15, gap: float = 0.15, 
         pcm, al = _tts(say, voice_id, speed, mood)
         if LISTEN:  # an AI listener checks the take; a bad take is re-recorded (best take wins)
             best = (_listen(pcm, line, mood), pcm, al)
-            while not best[0]["ok"] and retakes_left > 0:
+            line_retakes = 0
+            while not best[0]["ok"] and retakes_left > 0 and line_retakes < RETAKES_PER_LINE:
                 retakes_left -= 1
+                line_retakes += 1
                 print(f"    retake: {best[0]['problem']}")
                 p2, a2 = _tts(say, voice_id, speed, mood)
                 v2 = _listen(p2, line, mood)

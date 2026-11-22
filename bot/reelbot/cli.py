@@ -24,7 +24,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import bend, channels, claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice
+from . import bend, channels, claude, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice, safety
 from .config import CFG
 from .cost import COST
 
@@ -75,9 +75,26 @@ def stage_script(topic: str, a) -> Path:
     return folder
 
 
+def _voice_safety(folder: Path) -> None:
+    sj = folder / "script.json"
+    data = json.loads(sj.read_text(encoding="utf-8"))
+    lines, vl, log = safety.fix(data["lines"], data.get("voice_lines"), data.get("topic", ""))
+    if not log:
+        print("  voice safety: all lines clear")
+        return
+    print("  voice safety: rewrote line(s) that read like a scam or debt demand out of context:")
+    for l in log:
+        print("    " + l)
+    data["lines"], data["voice_lines"] = lines, vl
+    data.setdefault("voice_safety", []).extend(log)
+    sj.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
+    (folder / "script.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def stage_voice(folder: Path, a) -> None:
     channels.use(channels.of_folder(folder))
     tone.apply(folder)  # emotion must fit each line's mood before anything is voiced
+    _voice_safety(folder)  # nothing that reads like a scam/debt demand ever reaches ElevenLabs
     _pick_voice.long = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("format") == "landscape"
     v = _pick_voice(a.voice)
     target = json.loads((folder / "script.json").read_text(encoding="utf-8")).get("target_seconds") or a.seconds

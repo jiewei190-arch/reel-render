@@ -5,7 +5,7 @@ import json
 import re
 from pathlib import Path
 
-from . import channels, claude, gemini, hooks, learn
+from . import channels, claude, gemini, hooks, learn, safety
 from .config import BOT_DIR, CFG
 
 SCRIPT_SCHEMA = {
@@ -92,7 +92,8 @@ def system_prompt(seconds: int) -> str:
             .replace("{format_doc}", _doc("finance/FORMAT_V1.md"))
             .replace("{rules_doc}", _doc("finance/RULES.md"))
             .replace("{channel_name}", ch.name).replace("{channel_doc}", channels.doc(ch))
-            .replace("{hook_rules}", ch.hook_rules).replace("{length_rules}", _length_rules(seconds)))
+            .replace("{hook_rules}", ch.hook_rules).replace("{length_rules}", _length_rules(seconds))
+            + "\n\n" + safety.RULE)
 
 
 def _schema() -> dict:
