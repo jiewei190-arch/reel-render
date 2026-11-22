@@ -76,7 +76,12 @@ export type CountPlan = {
 };
 /** the count window: from `start` for `dur` s, but ending no later than the anchor word's end and COUNT_HOLD before
  *  `until`; a window shorter than COUNT_MIN snaps (the target from the first frame) */
+/** Count-up animations are OFF (owner, Nov 22 2026): every intermediate value a viewer or a still catches mid-count
+ *  ("$0", "$65.1M", "577 years") reads as a wrong number. A counter shows its exact final value from its first visible
+ *  frame and pops in instead. Set COUNT_UP = true only to bring the old count-up back. */
+export const COUNT_UP = false;
 export const countPlan = (o: { start: number; dur: number; until: number; anchor?: CountPlan["anchor"] }): CountPlan => {
+  if (!COUNT_UP) return { start: o.start, end: o.start, anchor: o.anchor, until: o.until, why: "snap (count-up off: final value from the first frame)" };
   let end = o.start + o.dur, why = "dur";
   if (o.anchor && o.anchor.end < end) { end = Math.max(o.start, o.anchor.end); why = "anchor word"; }
   if (o.until - COUNT_HOLD < end) { end = o.until - COUNT_HOLD; why = "hold before the cut"; }

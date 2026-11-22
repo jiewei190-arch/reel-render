@@ -193,7 +193,7 @@ first three and the build checks all four, in Shorts and long-form alike. The co
 by the three kits' compilers and HUDs, so the gate measures what renders) and `tools/polish_qa.mjs` (rules P1-P4, kept
 apart from `tools/framing_qa.mjs` R1-R6). Block Money and tech3d do not use them; their output is unchanged.
 
-**P1 Counters land on the word and hold.** Every counting element (law3d `counter`, biz3d `counter`, `board.count`
+**P1 Counters land on the word and hold.** Since Nov 22 2026 count-up animations are OFF (`COUNT_UP = false` in src/longform/polish.ts): every counter shows its exact final value from its first visible frame, because mid-count values read as wrong numbers. The rest of this rule still applies if COUNT_UP is turned back on. Every counting element (law3d `counter`, biz3d `counter`, `board.count`
 and `worth`, cyber3d `boards[].count` and `money`) counts in a window that ends:
 
 - no later than the end of its **anchor word**: the voice saying the number. The compiler finds it in the words around
