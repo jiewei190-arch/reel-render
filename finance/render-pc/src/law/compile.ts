@@ -10,6 +10,8 @@ import { EASE_INOUT, EASE_OUT, EASE_PLACE, LEAD, prog } from "../fin/lib/motion"
 import { visemeAt } from "../fin/lib/lipsync";
 import { makeAt } from "../fin/recipe/timing";
 import type { Word } from "../fin/recipe/types";
+import { LF, chapterCues, landscapeLens, liftNeeded, lowerThirdY, resolveChapters } from "../longform/kit";
+import type { ChapterR, FaceBand } from "../longform/kit";
 import { figBoxes, figFace, figHead, figState } from "./cast";
 import type { CastSpec, FigFace, FigPose, FigState, FigTrack } from "./cast";
 import { layoutOf } from "./layout";
@@ -38,7 +40,9 @@ export type Placement = { p: V3; yaw: number; pitch: number; roll: number; s: nu
 export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number };
 export type FxR = { fx: "shake" | "flash" | "papers"; at: number; p: (t: number) => V3; gain: number };
 export type DeviceR = { key: string; act: LawAction; t0: number; t1: number; target?: (t: number) => V3; zeroAt?: number };
-export type LawShotR = { id: string; a: number; b: number; set: LawSetId; spec: LawShot; lens: Lens; kicks: [number, number][]; figs: FigTrack[]; props: PropR[]; devices: DeviceR[]; fx: FxR[] };
+export type LawShotR = { id: string; a: number; b: number; set: LawSetId; spec: LawShot; lens: Lens; kicks: [number, number][]; figs: FigTrack[]; props: PropR[]; devices: DeviceR[]; fx: FxR[];
+  /** landscape only: the lower-third caption centre (px at 1080 tall) and how far caption-safe framing lifted the shot */
+  capY?: number; lift?: number };
 export type Cue = { t: number; sfx: string; db?: number };
 /** a story device on screen (DOM), in px of the format; u = 0..1 in/out */
 export type DeviceBox = {
@@ -57,6 +61,12 @@ export type LawCompiled = {
   qa: (t: number) => { figs: Box[]; props: Box[] };
   textsAt: (t: number) => string[];
   audio: { music: string; cues: Cue[] };
+  /** long-form ("format": "landscape"): 1920x1080, chapters, lower-third captions */
+  landscape: boolean;
+  /** landscape: chapters resolved to seconds (t = the chapter word, card = when its title card plays); [] otherwise */
+  chapters: ChapterR[];
+  /** landscape: the face boxes (px) in the caption column of a shot, sampled across it */
+  faceBands: (s: LawShotR) => FaceBand[];
 };
 
 /** camera presets (all keep moving: a push, an orbit, a dolly, a crane, a slam creep); `face` is a layout key */
@@ -90,7 +100,7 @@ export const project = (cam: Cam, p: V3, L: LawLayout): { x: number; y: number; 
   return { x: L.W / 2 + (dot(d, r) / z) * k, y: L.H / 2 - (dot(d, u) / z) * k, k: k / z, z };
 };
 /** device card sizes (Poppins 800, uppercase), per layout */
-export const exhibitSize = (L: LawLayout, label: string, text: string) => ({ w: Math.round(Math.max(text.length * 0.64 * L.exhibitFs, label.length * 0.62 * 36) + 80), h: Math.round(L.exhibitFs * 1.15 + 36 + 52) });
+export const exhibitSize = (L: LawLayout, label: string, text: string) => ({ w: Math.round(Math.max(text.length * 0.64 * L.exhibitFs, label.length * 0.62 * (L.exhibitLabelFs ?? 36)) + 80), h: Math.round(L.exhibitFs * 1.15 + 36 + 52) });
 export const boardSize = (L: LawLayout) => ({ w: L.board.w, h: L.board.h });
 const rectsHit = (a: { x: number; y: number; w: number; h: number }, b: { x: number; y: number; w: number; h: number }, m = 14) =>
   Math.abs(a.x - b.x) * 2 < a.w + b.w + 2 * m && Math.abs(a.y - b.y) * 2 < a.h + b.h + 2 * m;
@@ -110,6 +120,8 @@ export const strikeAt = (hits: number[], t: number) => {
 export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration?: number): LawCompiled => {
   if (recipe.kit !== "law3d") throw new Error(`recipe ${recipe.slug}: kit must be "law3d"`);
   const L = layoutOf(recipe.format);
+  const LS = recipe.format === "landscape";
+  if (recipe.chapters && !LS) throw new Error(`recipe ${recipe.slug}: "chapters" need "format": "landscape"`);
   const { at, lineEnd } = makeAt(words);
   const durS = recipe.duration ?? voDuration ?? Math.max(...words.map((w) => w.end)) + 0.8;
   const duration = Math.round(durS * FPS);
@@ -223,15 +235,18 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     const camTarget = c.target ?? "centre";
     const subj = targetFn(camTarget);
     const s0 = subj(a);
-    const az = (c.az ?? 0) * D2R, dist = c.dist ?? P.dist, h = c.h ?? P.h;
+    // 16:9 lens rule (LONGFORM.md): the vertical fov is kept; wider presets narrow it (and `wide`/`crane` come in a little)
+    const lk = LS ? landscapeLens(c.preset) : null;
+    const az = (c.az ?? 0) * D2R, dist = c.dist ?? (lk ? P.dist * lk[1] : P.dist), h = c.h ?? P.h;
     const off: V3 = c.preset === "topDown" ? [Math.sin(az) * dist, h, Math.cos(az) * dist] : [Math.sin(az) * dist, h, Math.cos(az) * dist];
     lensPos0 = add(s0, off);
     const faceK = c.face ?? L.face[P.face as keyof LawLayout["face"]];
-    const fov0 = c.fov ?? P.fov;
+    const fov0 = lk ? (c.fov ?? P.fov) * lk[0] : c.fov ?? P.fov;
+    const slam0 = lk ? 62 * lk[0] : 62;
     let lens: Lens = { a, b, subj, off, fov: () => fov0, face: faceK, push: P.push, roll: c.roll ?? P.roll, blur: c.blur ?? P.blur };
     const span = Math.max(0.3, b - a);
     switch (c.preset) {
-      case "slamZoom": lens.fov = (t) => (t < hit - 0.2 ? 62 : t < hit ? 62 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(62, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2)); break;
+      case "slamZoom": lens.fov = (t) => (t < hit - 0.2 ? slam0 : t < hit ? slam0 + 1.8 * Math.sin((Math.PI * (t - hit + 0.2)) / 0.2) : lerp(slam0, fov0, easeOut3((t - hit) / 0.12)) - 1.5 * clamp((t - hit - 0.12) / 2)); break;
       case "hookZoom": {
         const far: V3 = [off[0] * 1.35, off[1] * 1.2 + 0.08, off[2] * 1.35];
         lens.posAt = (t) => { const u = easeOut3((t - a) / 0.4); const q = lerpV(far, off, u); const k = 1 - P.push * Math.max(0, t - a - 0.4); return add(subj(t), scl(q, k)); };
@@ -288,7 +303,12 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
   });
 
   // ---------------------------------------------------- per-time helpers
-  const shotAt = (t: number) => { let s = shots[0]; for (const x of shots) if (t >= x.a - 1e-9) s = x; return s; };
+  // binary search (long-form has hundreds of shots): the last shot with t >= a - 1e-9, else the first
+  const shotAt = (t: number) => {
+    let lo = 0, hi = shots.length - 1;
+    while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (t >= shots[mid].a - 1e-9) lo = mid; else hi = mid - 1; }
+    return shots[lo];
+  };
   const camOf = (Ln: Lens, t: number): Cam => {
     const tau = Math.max(0, t - Ln.a);
     const subj = Ln.subj(t);
@@ -313,6 +333,40 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     }
     return { figs: figsB, props: propsB };
   };
+
+  // ---------------------------------------------------- long-form caption-safe framing (landscape only)
+  // A shot whose face (inside the 1440 px caption column) lands in the lower-third band is lifted (its lens `face`
+  // fraction, the target's height from the top) just enough to clear it, unless the recipe sets cam.face. Computed here
+  // at compile time (law3d bakes nothing into the gen files); what is left moves the caption (lowerThirdY).
+  const faceBands = (s: LawShotR): FaceBand[] => {
+    const out: FaceBand[] = [];
+    for (const u of [0.1, 0.3, 0.5, 0.7, 0.92]) {
+      const tm = s.a + (s.b - s.a) * u;
+      const cam = kicked(camOf(s.lens, tm), kickAt(tm, s.kicks));
+      for (const f of s.figs) {
+        const st = figState(f, tm);
+        if (st.spec.role === "juror") continue;
+        const fc = figFace(st), q = project(cam, fc.c, L);
+        if (!q || q.x < LF.CAP_SIDE || q.x > L.W - LF.CAP_SIDE) continue;
+        const half = fc.r * q.k;
+        if (q.y + half > 0 && q.y - half < L.H) out.push({ top: q.y - half, bot: q.y + half });
+      }
+    }
+    return out;
+  };
+  if (LS) for (const s of shots) {
+    const f0 = s.lens.face;
+    if (typeof s.spec.cam.face !== "number") {
+      for (let it = 0; it < 4; it++) {
+        const need = liftNeeded(faceBands(s));
+        if (need <= 0 || s.lens.face <= 0.26 + 1e-3) break;
+        s.lens.face = Math.max(0.26, s.lens.face - need);
+      }
+    }
+    s.lift = f0 - s.lens.face;
+    s.capY = lowerThirdY(faceBands(s));
+  }
+  const chapters = LS ? resolveChapters(recipe.chapters, at, hookUntil) : [];
 
   // ---------------------------------------------------- devices: layout once per device (at its pop-in), then animate
   const plan = new Map<string, { x: number; y: number; w: number; h: number }>();
@@ -414,10 +468,11 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     for (const f of s.fx) if (f.fx === "papers") cues.push({ t: f.at, sfx: "whoosh", db: -4 });
     for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
   }
+  if (LS) cues.push(...chapterCues(chapters));
   cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
   const audio = { music: recipe.music ?? "suspense", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
-  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, figsAt, devicesAt, qa, textsAt, audio };
+  return { recipe, slug: recipe.slug, layout: L, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, figsAt, devicesAt, qa, textsAt, audio, landscape: LS, chapters, faceBands };
 };
 
 // ------------------------------------------------------------------ figure tracks

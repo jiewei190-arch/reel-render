@@ -3,6 +3,7 @@
 // Full writer's guide: finance/render-pc/KIT_LAW3D.md.
 import type { V3 } from "../blocky/motion";
 import type { At, Place } from "../fin/recipe/types";
+import type { ChapterSpec } from "../longform/kit";
 import type { CastSpec, FigFace, FigPose } from "./cast";
 import type { LawKit } from "./objects";
 import type { LawSetId } from "./sets";
@@ -103,6 +104,8 @@ export type LawShot = {
   in?: "punch" | "cut" | "whip";
   sfx?: { at: At; sfx: string; db?: number }[];
   note?: string;
+  /** long-form: marks a new story beat for the pacing gate (chapters and set changes count by themselves) */
+  beat?: boolean;
 };
 
 export type LawRecipe = {
@@ -120,4 +123,6 @@ export type LawRecipe = {
   props?: (LawProp & { from?: At; until?: At; sets?: LawSetId[] })[];
   shots: LawShot[];
   captions?: "auto" | "off";
+  /** long-form ("format": "landscape" only): YouTube chapters, each starting on a word (LONGFORM.md) */
+  chapters?: ChapterSpec[];
 };

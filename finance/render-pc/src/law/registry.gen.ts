@@ -2,7 +2,11 @@
 import type { Word } from "../fin/recipe/types";
 import type { LawRecipe } from "./types";
 import * as L0 from "./gen/law_demo_54_million_pants.law.gen";
+import * as L1 from "./gen/law_demo_landscape.law.gen";
+import * as L2 from "./gen/law_demo_landscape_short_1.law.gen";
 
 export const LAW_RECIPES: { id: string; recipe: LawRecipe; words: Word[]; vo?: number }[] = [
   { id: L0.ID, recipe: L0.RECIPE, words: L0.WORDS, vo: L0.VO_DURATION },
+  { id: L1.ID, recipe: L1.RECIPE, words: L1.WORDS, vo: L1.VO_DURATION },
+  { id: L2.ID, recipe: L2.RECIPE, words: L2.WORDS, vo: L2.VO_DURATION },
 ];

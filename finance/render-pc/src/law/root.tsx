@@ -5,7 +5,7 @@ import React from "react";
 import { Composition } from "remotion";
 import { compileLaw } from "./compile";
 import type { LawCompiled } from "./compile";
-import { LawFilm } from "./film";
+import { LawFilm, LawFilmLandscape } from "./film";
 import { GALLERY_RECIPE } from "./gallery";
 import { LAW_RECIPES } from "./registry.gen";
 
@@ -23,7 +23,7 @@ export const lawCompiled = (id: string) => {
   }
   return c;
 };
-const Film: React.FC<{ id: string }> = ({ id }) => <LawFilm c={lawCompiled(id)} />;
+const Film: React.FC<{ id: string }> = ({ id }) => { const c = lawCompiled(id); return c.landscape ? <LawFilmLandscape c={c} /> : <LawFilm c={c} />; };
 
 export const LawRoot: React.FC = () => (
   <>

@@ -16,18 +16,22 @@ const FONT = "Poppins";
 const CARD_BG = "rgba(11,20,38,0.92)";
 const SHADOW = "0 18px 46px rgba(0,0,0,0.55)";
 
-/** split a hook into at most 2 balanced lines (an explicit "\n" wins) */
-export const hookLines = (text: string): string[] => {
+/** split a hook into at most 2 balanced lines (an explicit "\n" wins). `oneLine` (landscape only): the most characters
+ *  that still fit on one line; a hook that short stays on one line */
+export const hookLines = (text: string, oneLine?: number): string[] => {
   if (text.includes("\n")) return text.split("\n").slice(0, 2);
   const w = text.trim().split(/\s+/);
+  if (oneLine !== undefined && text.replace(/\*/g, "").trim().length <= oneLine) return [w.join(" ")];
   if (w.length <= 2 || text.replace(/\*/g, "").length <= 12) return [w.join(" ")];
   let best = 1, bd = Infinity;
   for (let k = 1; k < w.length; k++) { const d = Math.abs(w.slice(0, k).join(" ").length - w.slice(k).join(" ").length); if (d < bd) { bd = d; best = k; } }
   return [w.slice(0, best).join(" "), w.slice(best).join(" ")];
 };
 /** the hook card's box (the gate uses it) */
+/** landscape: how many characters fit on one hook line (portrait: undefined, the Shorts 2-line rule) */
+export const hookOneLine = (L: LawLayout) => (L.id === "landscape" ? Math.floor((L.hookMaxW - 80) / (0.63 * L.hookFs)) : undefined);
 export const hookBox = (L: LawLayout, text: string) => {
-  const lines = hookLines(text);
+  const lines = hookLines(text, hookOneLine(L));
   const w = Math.max(...lines.map((l) => l.replace(/\*/g, "").length * 0.63 * L.hookFs + 80));
   const h = lines.length * L.hookFs * 1.04 + 54;
   return { x: L.W / 2, y: L.hookTop + h / 2, w: w + 80, h, textW: w, lines };
@@ -39,7 +43,7 @@ export const LawHook: React.FC<{ L: LawLayout; text: string; t: number; t0?: num
   if (t > until || t < t0) return null;
   const out = clamp((until - t) / 0.18);
   const tin = t0 > 0 ? EASE_OUT(prog(t, t0, t0 + 0.2)) : 1; // frame 0: fully on; the loop repeat pops in
-  const lines = hookLines(text);
+  const lines = hookLines(text, hookOneLine(L));
   const breathe = 1 + 0.01 * Math.sin(t * 3.2);
   return (
     <div style={{ position: "absolute", left: 40, right: 40, top: L.hookTop, display: "flex", justifyContent: "center", opacity: out }}>
@@ -80,7 +84,7 @@ const goldDigits = (v: string) => v.split(/([^\d,.]+)/).map((seg, j) => (/^[\d,.
 
 const Exhibit: React.FC<{ d: DeviceBox; L: LawLayout; t: number }> = ({ d, L, t }) => (
   <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${-2 + 0.6 * Math.sin(t * 2.1)}deg)`, opacity: clamp(d.u * 3), background: CARD_BG, borderRadius: 18, boxShadow: SHADOW, border: `4px solid ${LP.gold}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
-    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: 34, letterSpacing: 4, padding: "2px 22px", borderRadius: 8, marginTop: -6, marginBottom: 6 }}>{d.label}</div>
+    <div style={{ background: LP.gold, color: LP.bg, fontFamily: FONT, fontWeight: 800, fontSize: L.exhibitLabelFs ?? 34, letterSpacing: 4, padding: "2px 22px", borderRadius: 8, marginTop: -6, marginBottom: 6 }}>{d.label}</div>
     <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.exhibitFs, color: LP.cream, whiteSpace: "nowrap", lineHeight: 1.1 }}>{d.text}</div>
   </div>
 );

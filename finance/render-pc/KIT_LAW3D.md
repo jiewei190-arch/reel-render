@@ -75,7 +75,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
 
 `recipe.format` picks the layout:
 - `"short"` (the default) and `"long"` use **portrait 1080x1920**.
-- `"landscape"` uses **1920x1080**. Its layout entry is there and the compiler, HUD, compositions and gate all read `layout.W/H`, but no landscape recipe has been rendered or tuned yet.
+- `"landscape"` uses **1920x1080**: long-form, see section 12 "Long-form (landscape)".
 
 The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
 
@@ -331,3 +331,73 @@ Hands are not checked, because they rest on tables and benches.
 | `src/law/gallery.ts` | the gallery shots and `GALLERY_STILLS` |
 | `tools/law_build.mjs`, `tools/law_entry.ts` | build, QA and gate |
 | `tools/law_stills.mjs` | batch stills (`gallery`, or a composition's frames) |
+
+## 12. Long-form (landscape)
+
+`"format": "landscape"` makes a 1920x1080 long-form video with the same framing and caption rules as every other channel
+(LONGFORM.md, shared pieces in `src/longform/kit.tsx` and `tools/kit_long.mjs`). Shorts (`"short"`, `"long"` or no
+format) compile, QA and render exactly as before: the generated file, `RECIPE_QA.md` and the cue file of the reference
+Short hash the same before and after this change.
+
+**Fields**
+
+| field | what it does |
+|---|---|
+| `"format": "landscape"` | 1920x1080, composition `<Pascal>Recipe` in `src/index.law.ts` (plain 30 fps, no motion blur) |
+| `"chapters": [{ "title", "word" }]` | YouTube chapters (landscape only; a portrait recipe with chapters is a compile error). Each plays the shared 2.6 s chapter sting (gold `CHAPTER n` tab) when its word is spoken; chapter 1 at the first word plays as soon as the hook text has gone. Each card adds a whoosh + impact cue. |
+| `"beat": true` on a shot | a new story beat for the pacing gate (chapters and set changes count by themselves) |
+| `hook` | the title text, top centre (70 px), one line when it fits (about 28 characters), until the end of line 1. The Shorts hook rules (5 words, one gold word) do not apply; `*gold*` still works. |
+
+**What adapts by itself**
+
+- Layout (`LAYOUTS.landscape`): lower-third captions centred at 905 px (band +-72), 240 px side margins, the spoken
+  word in the kit's gold (as on the Shorts), phrases of up to 7 words, 2 lines max. Cards stay above the band
+  (bottom 800 px) and inside the frame: the case-file card sits left of centre (x 760, y 598) so a `"top"` counter fits
+  above it; exhibit labels are 44 px.
+- Camera: three.js keeps the vertical fov, so every preset frames the same height as on a Short; the shared lens rule
+  `landscapeLens(preset)` scales the fov (and `crane`'s distance): hookZoom/closeUp x1, slamZoom/pushIn/topDown x0.95,
+  medium/whip/orbit/dolly x0.9, crane x0.85 (dist x0.95), wide x0.8 (dist x0.95). An explicit `cam.fov` is scaled too.
+- Caption-safe framing: a shot whose face (inside the 1440 px caption column, sampled at 5 points of the shot) lands
+  in the band is lifted (the lens `face` fraction, down to 0.26) at compile time; whatever is left moves the caption
+  (`lowerThirdY`). A shot with `cam.face` set is never lifted. Nothing is baked into the gen file (law3d never bakes).
+- Render: one View at 1920x1080 with `postScale={1}` (the outline / bloom / depth of field keep the Shorts weight); the
+  canvas stays mounted across shots. law3d is procedural (no model or texture files to load): geometry, materials
+  and canvas textures are cached by a fixed name or by the board text, never by shot or time.
+
+**Commands**
+
+```bash
+node tools/recipe_build.mjs <slug> --check [--qa-sample 5]   # finance/longform/<slug> is found automatically
+node tools/recipe_build.mjs <slug>                           # gen file, registry, RECIPE_QA.md, chapters.txt, cues
+npx remotion still src/index.law.ts <Pascal>Recipe out.jpg --frame=330 --scale=0.5 --gl=swangle --timeout=600000
+node tools/clip_short.mjs <slug> --from-word X --to-word Y --out <slug>-short-N [--hook "TEXT"] [--stake "TEXT"]
+node tools/recipe_build.mjs <slug>-short-N                   # the law3d Shorts gate
+```
+
+The long-form check runs the clip QA on output frames (every Nth with `--qa-sample N`; Shorts ignore it and keep every
+frame x 4 sub-frames) and the shared long-form gate: hook at frame 0, first word by 0.5 s, a sound punch, >= 3 chapters
+(first at 00:00, each >= 10 s), a visual change every 6 s (cuts, camera hits and gavels, pose/face changes, prop
+landings, device pop-ins, a counter draining, fx, chapter cards), a beat every 40 s, lower-third captions (centre >= 75 %
+of the height on >= 90 % of caption time). Warnings: shot length, open loops before chapters, text under 30 px (cards
+by font size, 3D boards by their projected glyph height), boards off the frame or in the caption band, cards
+overlapping each other or the hook, length 8-12 min. Exit 1 on a clip or a hard failure.
+
+The demo is `finance/longform/law-demo-landscape/` (lines 1-8 of the reference Short, 35 s, 3 chapters, 16 shots) and its
+Short `finance/shorts/law-demo-landscape-short-1/` (`--from-word "3:They" --to-word "8:demands"`, 26 s).
+
+**The clip adapter** (`clipAdapter` in `tools/law_entry.ts`, used by `tools/clip_short.mjs`): re-times every time field
+(shot `at`, `cam.hit`, actor `from` / `then[].at`, prop `hit` / `hits`, action `at` / `until` / `zeroAt`, fx `at`, sfx `at`;
+an actor's or prop's `at` and an actor's `to` are places and stay), drops a device that ended before the segment, and
+builds a fresh frame-0 shot: a hookZoom on the person seen most in the segment (smug, shocked at 0.45 s, a shake), a
+small prop of the case floating by them, and the stake on an `AT STAKE` exhibit tag when the hook has no number (the
+face then sits at 0.52 so the tag never covers it). The hook text is cut to 5 words with one gold word (a `$`/number
+word, else the longest) and a line break when two words do not fit on one line.
+
+**Limits**
+
+- The clip keeps the source's camera choices: a 16:9 shot with two people far apart, or a board far off-centre, may
+  need a hand edit for 9:16 (the law3d Shorts gate reports faces in the caption band and cards over faces).
+- No `tag` (top-right label) in law3d.
+- The verdict stamp sits over the centre of the frame, as on the Shorts (it covers the gavel it lands on).
+- Canvas textures are cached up to 120 and then dropped without being disposed (shared `src/blocky/mat.ts`); a very long
+  video with more than 120 different board texts re-creates them.

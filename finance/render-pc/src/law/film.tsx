@@ -11,6 +11,7 @@ import { View } from "../engine/core/View";
 import { Figure } from "./cast";
 import type { FxR, LawCompiled, PropR } from "./compile";
 import { FPS } from "./compile";
+import { ChapterCard, LF, LowerThirdCaptions, chapterAt, chunkWords } from "../longform/kit";
 import { Devices, LawCaptions, LawHook, lawChunks } from "./hud";
 import { KitMesh } from "./objects";
 import { LAW_MOODS, LP } from "./palette";
@@ -74,6 +75,49 @@ export const LawFilm: React.FC<{ c: LawCompiled }> = ({ c }) => {
       <LawHook L={L} text={c.recipe.hook.text} t={t} until={c.hookUntil} />
       {c.hookAgain !== null ? <LawHook L={L} text={c.recipe.hook.text} t={t} t0={c.hookAgain} until={99} /> : null}
       {!capOff ? (fixedCap ? <LawCaptions L={L} chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={t} from={0} /> : <LawCaptions L={L} chunks={chunks} t={t} />) : null}
+    </AbsoluteFill>
+  );
+};
+
+/** LONG-FORM ("format": "landscape", 1920x1080, LONGFORM.md): the same scene through one 1920x1080 View (the post chain
+ *  keeps its Shorts weight: postScale 1, scaled by the short side), the hook top centre, a chapter card at each chapter,
+ *  lower-third captions (phrases of up to 7 words; the spoken word in the kit's gold, as on the Shorts), centred where
+ *  the shot's caption plan puts them. The canvas stays mounted across shots (no key per shot): creating it compiles
+ *  every shader. law3d is procedural (no model or texture files), so there is nothing to window-load. */
+export const LawFilmLandscape: React.FC<{ c: LawCompiled }> = ({ c }) => {
+  const n = useCurrentFrame();
+  useFonts();
+  const L = c.layout;
+  const t0 = n / FPS;
+  const shot = c.shotAt(t0);
+  const t = Math.min(Math.max(t0, shot.a), shot.b - 1e-4);
+  const cam = c.camAt(t);
+  const set = LAW_SETS[shot.set];
+  const figs = c.figsAt(t);
+  const flash = shot.fx.filter((f) => f.fx === "flash").reduce((o, f) => Math.max(o, t >= f.at ? 0.55 * (1 - (t - f.at) / 0.14) : 0), 0)
+    + shot.devices.filter((d) => d.act.do === "verdict").reduce((o, d) => Math.max(o, t >= d.t0 ? 0.35 * (1 - (t - d.t0) / 0.12) : 0), 0);
+  const capOff = shot.spec.caption === "off" || c.recipe.captions === "off";
+  const fixedCap = shot.spec.caption && shot.spec.caption !== "auto" && shot.spec.caption !== "off" ? shot.spec.caption : null;
+  const chunks = React.useMemo(() => chunkWords(c.words, LF.CAP_WORDS), [c]);
+  const capY = (shot.capY ?? LF.CAP_Y) / LF.H;
+  const ch = chapterAt(c.chapters, t0);
+  const ds = c.devicesAt(t);
+  return (
+    <AbsoluteFill style={{ background: set.bg }}>
+      <View mood={LAW_MOODS[set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={L.W} height={L.H} postScale={1}>
+        {set.render(t, { jury: shot.spec.jury })}
+        {figs.map((st) => <Figure key={st.id} st={st} t={t} />)}
+        {shot.props.map((p) => (t < p.a || t >= p.b ? null : <PropView key={p.key} pr={p} t={t} />))}
+        {shot.fx.filter((f) => f.fx === "papers").map((f, i) => <Papers key={i} f={f} t={t} />)}
+      </View>
+      {flash > 0 ? <AbsoluteFill style={{ background: "#fff2d8", opacity: Math.min(0.7, flash), mixBlendMode: "screen" }} /> : null}
+      <Devices L={L} ds={ds} t={t} />
+      <LawHook L={L} text={c.recipe.hook.text} t={t0} until={c.hookUntil} />
+      {c.hookAgain !== null ? <LawHook L={L} text={c.recipe.hook.text} t={t0} t0={c.hookAgain} until={99} /> : null}
+      {ch ? <ChapterCard n={ch.n} title={ch.title} u={t0 - ch.card} accent={LP.gold} edge={LP.goldDeep} /> : null}
+      {!capOff ? (fixedCap
+        ? <LowerThirdCaptions chunks={[{ words: [{ w: fixedCap, t: shot.a, end: shot.b }], start: shot.a, end: shot.b, hold: shot.b }]} t={t0} centre={capY} size={L.capFs} hot={LP.gold} />
+        : <LowerThirdCaptions chunks={chunks} t={t0} centre={capY} size={L.capFs} hot={LP.gold} hide={(x) => x < 1.0} />) : null}
     </AbsoluteFill>
   );
 };
