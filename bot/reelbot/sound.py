@@ -18,7 +18,29 @@ from . import claude
 from .config import CFG
 from .cost import COST
 
-MAX_NEW = 12  # fresh sounds per Short (cached ones are free)
+MAX_NEW = 6  # fresh sounds per Short (cached ones are free)
+MIN_GAP = 3.0  # seconds between any two sound effects (stock + custom), except the frame-0 punch
+DB_CAP = -6.0  # custom effects never louder than this (they sit under the voice)
+
+
+def _budget(dur: float) -> int:
+    """Total effects allowed in the whole video: 6 in a Short, about 5 per minute in a long video."""
+    return 6 if dur <= 75 else int(dur / 12)
+
+
+def _thin(cues: list, dur: float) -> list:
+    """Keep the frame-0 punch, then the most important cues (custom beats first, then stock) with MIN_GAP between
+    any two, up to the budget. Returns the kept cues sorted by time."""
+    first = [c for c in cues if c["t"] <= 0.05][:1]
+    rest = [c for c in cues if c not in first]
+    rest.sort(key=lambda c: (0 if str(c["sfx"]).startswith("gen_") else 1, c["t"]))
+    kept = list(first)
+    for c in rest:
+        if len(kept) >= _budget(dur):
+            break
+        if all(abs(c["t"] - k["t"]) >= MIN_GAP for k in kept):
+            kept.append(c)
+    return sorted(kept, key=lambda c: c["t"])
 
 PLAN_SCHEMA = {
     "type": "object", "additionalProperties": False, "required": ["cues"],
@@ -35,10 +57,10 @@ PLAN_SCHEMA = {
 }
 
 DESIGNER = (
-    "You are the sound designer for short animated YouTube videos. Great Shorts feel alive: every visual beat has a "
-    "sound, and the sounds are specific and a little funny, never the same generic whoosh over and over. Plan 8-14 custom "
-    "sound effects that land on the key words and visual moments: reveals, numbers, reactions, transitions, the twist, "
-    "the payoff and the loop. Be concrete and varied (e.g. 'cartoon cash register cha-ching with coins spilling', "
+    "You are the sound designer for short animated YouTube videos. LESS IS MORE (owner, Nov 22: 'too much effects "
+    "going on left and right'). Plan only 3-5 custom sound effects for a Short (about one every 10-15 s in a long "
+    "video), and ONLY on the biggest beats: the hook impact, the big number, the twist and the payoff. Silence between "
+    "them is good; the voice must carry the video. Never put sounds on ordinary transitions or every number. Be concrete and varied (e.g. 'cartoon cash register cha-ching with coins spilling', "
     "'record scratch', 'sad trombone wah-wah', 'paper stamp thunk', 'crowd gasp', 'tense heartbeat thump', "
     "'sparkly magic chime', 'rubber squeak'). Keep them short and never under the hook's first words unless it is a "
     "punchy impact. The engine already plays basic impacts/whooshes on cuts; add character on top, don't duplicate.\n"
@@ -130,8 +152,11 @@ def _apply(plan: list, timings: dict, info: dict, cues_all: dict, cues_file: Pat
                 continue
             fresh += 1
         info["cues"].append({"t": round(max(0.0, t + float(c["offset"])), 3), "sfx": name,
-                             "db": max(-18.0, min(float(c["db"]), -1.0)), "desc": desc})
+                             "db": max(-18.0, min(float(c["db"]), DB_CAP)), "desc": desc})
         added += 1
+    before = len(info["cues"])
+    info["cues"] = _thin(info["cues"], float(info.get("duration") or 60))
+    print(f"  sound: kept {len(info['cues'])} of {before} effects (>= {MIN_GAP:.0f} s apart, budget {_budget(float(info.get('duration') or 60))})")
     cues_file.write_text(json.dumps(cues_all, indent=1), encoding="utf-8")
     (folder / "sound_design.json").write_text(json.dumps(plan, indent=1), encoding="utf-8")
     print(f"  sound: {added} custom cues ({fresh} newly generated)")
