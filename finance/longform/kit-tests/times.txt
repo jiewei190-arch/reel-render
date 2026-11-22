@@ -1,1 +1,2 @@
 tech3d exit=0 frames=963 3569 s
+law3d exit=0 frames=1050 4660 s
