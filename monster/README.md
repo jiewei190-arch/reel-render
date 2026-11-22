@@ -77,7 +77,11 @@ That's 7 uploads a day, 10 on Tuesdays and Fridays. Each channel's `schedule.slo
 defines this. A slot with `weekdays` runs only on those days. `daily` creates exactly one job per slot (the key is
 channel + date + slot number), and `--format law=long` or `--format law#0=long` switches a slot's format without
 adding an upload. Every channel is produced by reelbot (3D engines, ElevenLabs voices). The automator hands each job
-off with the exact command (with `--long` for long slots), then tracks and checks it. Topic backlog:
+off with the exact command (with `--long` for long slots), then tracks and checks it. **Running reelbot automatically:** set `runtime.run_handoffs` to `true` (and optionally `runtime.reelbot_python`,
+default `bot/.venv`). `daily` then runs `python -m reelbot make "<topic>" --channel X --auto [--long]` for each slot,
+records the video path and the cost line in the job's `handoff.json`/`handoff.log`, and marks the job
+`ready_for_review` (or `blocked` with the error). This spends API and ElevenLabs credits, so it is off by default.
+Topic backlog:
 `config/backlog.json`; it needs about 7-10 topics a day across channels, so refill it with
 `python -m reelbot bend/ideas --channel X` or the owner's own lists.
 

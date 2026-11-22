@@ -5,6 +5,7 @@ makes duplicate slots impossible even if two schedulers start at the same instan
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import time
 from datetime import date, datetime, timedelta
@@ -138,13 +139,47 @@ def daily(local_date: str | None = None, produce: bool = True, until: str = "qc"
 
 
 def handoff(c, job_id: str, topic: str, prod: dict, log=print) -> str:
-    """Channels with their own engine (Block Money, Justin clips: 3D + ElevenLabs) are scheduled and tracked here but
-    produced by their own pipeline. The automator never voices or renders them, so no paid call is made from here."""
+    """Channels produced by reelbot (3D engines, Claude writing, ElevenLabs voices). The automator records the exact
+    command, and when runtime.run_handoffs is true it runs reelbot itself and tracks the result. That spends the
+    owner's API and ElevenLabs credits, so it is off until the owner turns it on."""
+    import subprocess
+    import sys
+    from .config import APP_DIR
     from .util import write_json_atomic
     fmt = c.execute("SELECT format_kind FROM jobs WHERE job_id=?", (job_id,)).fetchone()[0]
     cmd = prod["command"].replace("{topic}", topic.replace('"', "'")).replace("{long_flag}", " --long" if fmt == "long" else "")
-    write_json_atomic(pipeline.job_dir(job_id) / "handoff.json",
-                      {"producer": prod["name"], "command": cmd, "workdir": prod.get("workdir"), "utc": now_utc()})
-    db.set_state(c, job_id, "external_production", f"produced by {prod['name']}: {cmd}")
-    log(f"  handed off to {prod['name']}")
-    return "external_production"
+    d = pipeline.job_dir(job_id)
+    rec = {"producer": prod["name"], "command": cmd, "workdir": prod.get("workdir"), "utc": now_utc()}
+    write_json_atomic(d / "handoff.json", rec)
+    rt = cfg().runtime
+    if not rt.get("run_handoffs"):
+        db.set_state(c, job_id, "external_production", f"produced by {prod['name']}: {cmd}")
+        log(f"  handed off to {prod['name']} (not run: runtime.run_handoffs is false)")
+        return "external_production"
+    workdir = APP_DIR.parent / (prod.get("workdir") or "bot")
+    py = rt.get("reelbot_python") or next((str(p) for p in (workdir / ".venv" / "Scripts" / "python.exe", workdir / ".venv" / "bin" / "python")
+                                           if p.exists()), sys.executable)
+    argv = [py, "-m", "reelbot", "make", topic, "--channel", prod.get("reelbot_channel", ""), "--auto"] + (["--long"] if fmt == "long" else [])
+    db.set_state(c, job_id, "external_production", f"running reelbot: {' '.join(argv[2:])}")
+    log(f"  running reelbot for {job_id}...")
+    env = {k: v for k, v in __import__("os").environ.items() if not k.startswith("MYA_")}
+    try:
+        r = subprocess.run(argv, cwd=workdir, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
+                           timeout=int(float(rt.get("handoff_timeout_hours", 4)) * 3600))
+        out = (r.stdout or "") + (r.stderr or "")
+    except subprocess.TimeoutExpired as e:
+        r, out = None, f"timed out after {rt.get('handoff_timeout_hours', 4)} h: {e}"
+    (d / "handoff.log").write_text(out, encoding="utf-8")
+    done = re.findall(r"DONE:\s*(.+?\.mp4)", out)
+    cost = re.findall(r"cost so far: (.+)", out)
+    rec.update({"exit": None if r is None else r.returncode, "video": done[-1].strip() if done else None,
+                "cost": cost[-1] if cost else None, "finished_utc": now_utc()})
+    write_json_atomic(d / "handoff.json", rec)
+    if r is not None and r.returncode == 0 and done:
+        db.set_state(c, job_id, "ready_for_review", f"reelbot made {rec['video']}")
+        log(f"  reelbot done: {rec['video']}  ({rec['cost']})")
+        return "ready_for_review"
+    tail = out.strip().splitlines()[-3:] if out.strip() else ["no output"]
+    db.set_state(c, job_id, "blocked", "reelbot failed: " + " | ".join(tail)[:400])
+    log(f"  reelbot FAILED (see {d / 'handoff.log'})")
+    return "blocked"

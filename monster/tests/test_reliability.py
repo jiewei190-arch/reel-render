@@ -443,3 +443,26 @@ def test_old_one_slot_database_is_upgraded(home):
     old.commit(); old.close()
     c = db.connect()
     assert c.execute("SELECT slot_no, job_id FROM slots").fetchall()[0][:] == (0, "j1")
+
+
+def test_handoff_runs_reelbot_only_when_enabled(home, monkeypatch, tmp_path):
+    import json, subprocess
+    from mya import db, scheduler
+    from mya.config import cfg
+    from mya.util import read_json
+    jobs = scheduler.fill_slots("2026-12-05")
+    c = db.connect()
+    jid = _job(c, jobs, "block_money")
+    prod = cfg().profile("block_money").raw["producer"]
+    called = []
+    def fake_run(argv, **k):
+        called.append(argv)
+        return subprocess.CompletedProcess(argv, 0, stdout="DONE: C:/Videos/BlockMoney/x/video.mp4  (edit notes)\ncost so far: Claude API via key slot 1 ~$1.20", stderr="")
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    assert scheduler.handoff(c, jid, "Compound interest", prod, log=lambda *a: None) == "external_production"
+    assert called == []  # off by default: no credits spent
+    cfg().runtime["run_handoffs"] = True
+    assert scheduler.handoff(c, jid, "Compound interest", prod, log=lambda *a: None) == "ready_for_review"
+    assert called and called[0][2:7] == ["reelbot", "make", "Compound interest", "--channel", "blockmoney"]
+    rec = read_json(scheduler.pipeline.job_dir(jid) / "handoff.json")
+    assert rec["video"].endswith("video.mp4") and "key slot 1" in rec["cost"]

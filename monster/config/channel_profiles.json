@@ -43,7 +43,10 @@
    "youtubeanalytics.googleapis.com"
   ],
   "min_free_disk_gb": 2,
-  "http_user_agent": "MonsterYouTubeAutomator/0.1 (personal research bot; owner: set a contact URL or email here per Wikimedia's User-Agent policy)"
+  "http_user_agent": "MonsterYouTubeAutomator/0.1 (personal research bot; owner: set a contact URL or email here per Wikimedia's User-Agent policy)",
+  "run_handoffs": false,
+  "reelbot_python": null,
+  "handoff_timeout_hours": 4
  },
  "formats": {
   "short": {
@@ -130,7 +133,8 @@
     "kind": "external",
     "name": "reelbot (Block Money 3D engine + ElevenLabs voices)",
     "command": "python -m reelbot make \"{topic}\" --channel blockmoney --auto",
-    "workdir": "bot"
+    "workdir": "bot",
+    "reelbot_channel": "blockmoney"
    },
    "schedule": {
     "slots": [
@@ -215,7 +219,8 @@
     "kind": "external",
     "name": "Justin clips Toon 3D engine + ElevenLabs voices (Liam Shorts / Russ long)",
     "command": "python -m reelbot make \"{topic}\" --channel justin --auto  (script + ElevenLabs voice; render in the Justin engine)",
-    "workdir": "bot"
+    "workdir": "bot",
+    "reelbot_channel": "justin"
    },
    "schedule": {
     "slots": [
@@ -304,7 +309,8 @@
     "name": "reelbot (law 3D kit + ElevenLabs voice)",
     "command": "python -m reelbot make \"{topic}\" --channel law --auto{long_flag}",
     "workdir": "bot",
-    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable",
+    "reelbot_channel": "law"
    },
    "schedule": {
     "slots": [
@@ -396,7 +402,8 @@
     "name": "reelbot (biz 3D kit + ElevenLabs voice)",
     "command": "python -m reelbot make \"{topic}\" --channel biz --auto{long_flag}",
     "workdir": "bot",
-    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable",
+    "reelbot_channel": "biz"
    },
    "schedule": {
     "slots": [
@@ -487,7 +494,8 @@
     "name": "reelbot (cyber 3D kit + ElevenLabs voice)",
     "command": "python -m reelbot make \"{topic}\" --channel cyber --auto{long_flag}",
     "workdir": "bot",
-    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable"
+    "local_fallback": "the Monster local 2D pipeline (python -m mya produce) still works for this channel if reelbot is unavailable",
+    "reelbot_channel": "cyber"
    },
    "schedule": {
     "slots": [

@@ -16,7 +16,7 @@ CSS = """body{font-family:system-ui,Segoe UI,Arial;margin:0;background:#0f1218;c
 .st{font-weight:700}.ok{color:#3ddc97}.bad{color:#ff6b6b}.mid{color:#f4b544}a{color:#7cc4ff}small{color:#9fb3c8}
 form{margin-top:6px}input,textarea,button{font-size:12px;width:100%;box-sizing:border-box;margin-top:3px}"""
 
-GOOD = {"ready_for_release", "scheduled", "published"}
+GOOD = {"ready_for_release", "ready_for_review", "scheduled", "published"}
 BAD = {"blocked", "qc_failed", "upload_unknown"}
 
 
