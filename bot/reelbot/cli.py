@@ -59,7 +59,12 @@ def stage_script(topic: str, a) -> Path:
     if a.learn:
         learn.build()
     data = script.write(topic, seconds=a.seconds, style=a.style, notes=a.notes or "", n_hooks=a.hooks)
-    folder = _folder(data["slug"])
+    if data.get("format") == "landscape" and not data["slug"].endswith("-long"):
+        data["slug"] += "-long"
+    folder, n = _folder(data["slug"]), 2
+    while folder.exists():  # never overwrite an earlier video's folder
+        folder, n = _folder(f"{data['slug']}-{n}"), n + 1
+    data["slug"] = folder.name
     script.save(data, folder)
     _mark(folder, "script", topic=topic)
     print(f"\nSCRIPT ({data['style']}, hook: {data['hook_text']}): {folder}")

@@ -295,6 +295,13 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
             elif b.type in ("web_search_tool_result", "web_fetch_tool_result") and not isinstance(b.content, list) \
                     and getattr(b.content, "error_code", None):
                 errors.append(str(b.content.error_code))  # server-tool errors come back as a result object, not a raise
+            elif b.type == "web_fetch_tool_result" and getattr(b.content, "url", None) \
+                    and not getattr(b.content, "error_code", None):  # a page fetched successfully is a source too
+                url = b.content.url
+                if url not in seen:
+                    seen.add(url)
+                    doc = getattr(b.content, "content", None)
+                    sources.append({"title": getattr(doc, "title", "") or "", "url": url})
             elif b.type == "web_search_tool_result" and isinstance(b.content, list):  # an error result is an object
                 for r in b.content:
                     url = getattr(r, "url", None)
@@ -307,6 +314,10 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
             break
         messages = [{"role": "user", "content": prompt}, {"role": "assistant", "content": msg.content}]
     COST.web_searches += searches
+    if not sources and errors and not prompt.startswith("[retry]"):
+        print(f"  claude: web fetch failed ({sorted(set(errors))}); retrying with web search only")
+        return _web_api("[retry] Those pages could not be fetched. Use web_search (not web_fetch) and answer from the "
+                        "search results.\n\n" + prompt)
     if not sources:
         raise WebUnavailable(f"API web search returned no sources ({searches} search request(s); errors: "
                              f"{sorted(set(errors)) or 'none'}). Is web search enabled for this organization in the Claude Console?")
