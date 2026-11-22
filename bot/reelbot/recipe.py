@@ -139,11 +139,20 @@ def _context(folder: Path) -> tuple[dict, str, str]:
         "Respect the frame-0 gate (close subject, hook text at frame 0, stake on screen by 0.5 s, first cut by ~1.0 s, "
         "no wide shot in the first second), keep captions bottom-centre and props clear of faces, cut every 1.5-3 s, "
         "put the big number on screen when it is said, and end with a loop board that lands on the last spoken word.\n\n"
+        "FIRST SECOND (the editor scores the hook on it; a mid-shot with a small title board on top scores 4-6, which "
+        "fails our upload gate): frame 0 is EITHER (a) an extreme close-up of the story's subject reacting, head filling "
+        "at least a third of the frame height, OR (b) the stake as a GIANT number board, centred, at least half the "
+        "frame wide, with the hook text big beside it. Something moves from frame 0 (push-in, slam or whip). Hard cut by "
+        "0.8-1.0 s to the other of (a)/(b). Never open on an establishing shot, a mid-shot, or a small title board at "
+        "the top edge.\n\n"
         f"=== {gname} ===\n" + guide + long_note
     )
     base = (
         f"slug: {slug}\nstyle: {style}\nhook_text (frame 0, keep it): {data['hook_text']}\n"
-        f"tag_text: {data['tag_text']}\n\nscript.txt:\n" + "\n".join(data["lines"])
+        + (f"frame 0 must show (chosen by blind hook scoring): {data['hook_candidates'][0].get('frame0')}\n"
+           if data.get("hook_candidates") and isinstance(data["hook_candidates"][0], dict)
+           and data["hook_candidates"][0].get("frame0") else "")
+        + f"tag_text: {data['tag_text']}\n\nscript.txt:\n" + "\n".join(data["lines"])
         + f"\n\nvo/timings.json (word anchors come from here):\n{timings}\n\n=== Working examples ===\n{_examples(style, ch.kit)}"
     )
     return data, system, base
@@ -197,6 +206,9 @@ def revise(folder: Path, issues: list[dict], rnd: int) -> None:
                       for i in issues)
     feedback = ("\n\n=== The current recipe.json (rendered and reviewed) ===\n" + current
                 + "\n\n=== Editors' notes on the rendered video (fix every blocker and major; minors if cheap) ===\n"
-                + notes + "\n\nChange only what the notes need; keep the shots that work. The voice and timings are fixed: "
+                + notes + "\n\nIf ANY note is about the hook or the first 2 seconds, rebuild the opening shot from scratch "
+                  "by the FIRST SECOND rule (extreme close-up or a giant stake number, motion from frame 0, a hard cut "
+                  "by 1 s); small tweaks to a mid-shot opening never raise the hook score. Otherwise change only what "
+                  "the notes need; keep the shots that work. The voice and timings are fixed: "
                   "fix pacing with cuts, camera moves, boards and sound, not by changing the words.")
     _loop(folder, data["slug"], system, base, feedback, f"edit{rnd}")
