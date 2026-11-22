@@ -103,14 +103,17 @@ export const LabelLayer: React.FC<{ labels: LabelBox[]; t: number; w?: number; h
 );
 
 /** a counter / number board: title strip in blue, the big number in navy (it counts with a tick) */
+/** board text colours (framing QA rule R4, >= 4.5:1): title white on blueDeep (6.4:1, was blue 3.9:1); value symbols
+ *  ($, %, +) a deep orange on white (5.0:1, was orange 2.3:1) */
+export const BOARD_SYMBOL = "#B5521A";
 export const Boards: React.FC<{ boards: BoardBox[]; t: number }> = ({ boards, t }) => (
   <>
     {boards.map((b, i) =>
       b.u > 0.001 ? (
         <div key={i} style={{ position: "absolute", left: b.x - b.w / 2, top: b.y - b.h / 2, width: b.w, height: b.h, transform: `scale(${OVERSHOOT(b.u)}) rotate(${0.8 * Math.sin(t * 2.4 + i)}deg)`, opacity: clamp(b.u * 3), background: "#ffffff", borderRadius: 28, overflow: "hidden", boxShadow: "0 14px 36px rgba(20,33,61,0.25)", display: "flex", flexDirection: "column" }}>
-          <div style={{ background: TP.blue, color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: 40, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{b.title}</div>
+          <div style={{ background: TP.blueDeep, color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: 40, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{b.title}</div>
           <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: 118, color: TP.navy, letterSpacing: -2 }}>
-            {b.value.split(/(\d+)/).map((seg, j) => (/^\d+$/.test(seg) ? <span key={j}>{seg}</span> : <span key={j} style={{ color: TP.orange }}>{seg}</span>))}
+            {b.value.split(/(\d+)/).map((seg, j) => (/^\d+$/.test(seg) ? <span key={j}>{seg}</span> : <span key={j} style={{ color: BOARD_SYMBOL }}>{seg}</span>))}
           </div>
           <div style={{ height: 10, background: TP.mint, width: `${40 + 60 * (0.5 + 0.5 * Math.sin(t * 2))}%` }} />
         </div>

@@ -90,7 +90,7 @@ export const kitLongGate = ({ shots, events, chapters, words, dur, audio, hookUn
 };
 
 /** RECIPE_QA.md for a long-form kit recipe */
-export const kitLongReport = ({ slug, kit, tool, entry, pascal, C, dur, words, chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra = [] }) => [
+export const kitLongReport = ({ slug, kit, tool, entry, pascal, C, dur, words, chapters, hits, qaLines, qaSample, qaS, gate, gateS, pacing, chTxt, extra = [], framingMd = [] }) => [
   `# ${slug}: ${kit} long-form recipe QA (tools/${tool} + tools/kit_long.mjs)`, "",
   `Composition: \`${pascal}\` in \`${entry}\` (1920x1080, 30 fps, plain composition: no motion blur). Kit ${kit}, format landscape. ${C.shots.length} shots, ${dur.toFixed(2)} s (${(dur / 60).toFixed(2)} min), ${words.length} words, ${chapters.length} chapters.`, "",
   `## Clip QA: ${Math.ceil(C.duration / qaSample)} of ${C.duration} frames (every ${qaSample === 1 ? "frame" : `${qaSample}th frame`}), ${hits.size} clip(s), ${qaS.toFixed(1)} s`, "",
@@ -98,6 +98,7 @@ export const kitLongReport = ({ slug, kit, tool, entry, pascal, C, dur, words, c
   `## Long-form gate (${gateS.toFixed(1)} s)`, "", "| check | result | detail |", "|---|---|---|",
   ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
   `Pacing: ${pacing.events} visual-change marks, longest gap ${pacing.maxGap.toFixed(2)} s, mean shot ${pacing.meanShot.toFixed(2)} s, ${pacing.beats} beat marks.`, "",
+  ...framingMd,
   ...extra,
   "## chapters.txt", "", "```", chTxt.trimEnd(), "```", "",
 ];

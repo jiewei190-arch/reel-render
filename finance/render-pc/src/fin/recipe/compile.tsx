@@ -644,6 +644,26 @@ const headBox = (st: ActorState): FrBox => {
   const bot = 0.17;
   return { c: [st.head[0], st.head[1] + ((top - bot) / 2) * s, st.head[2]], h: [half * s, ((top + bot) / 2) * s, half * s] };
 };
+/** the head box split for the overlap test: the head (+ hat / hair) and each antenna stalk-and-tip as its own box */
+const headParts = (st: ActorState): FrBox[] => {
+  const s = st.s, L = st.look;
+  const lift = L.acc?.hat ? 0.135 : 0;
+  const out: FrBox[] = [{ c: [st.head[0], st.head[1] + (lift ? lift / 2 : 0.02) * s, st.head[2]], h: [0.16 * s, (0.17 + (lift ? lift / 2 : 0.02)) * s, 0.16 * s], yaw: st.pose.yaw + (st.pose.headYaw ?? 0) }];
+  if (L.hairStyle !== "antennae" && L.hairStyle !== "antenna1") return out;
+  const ant = st.pose.ant ?? 0;
+  const splay0 = ant >= 0 ? lerp(0.38, 0.06, clamp(ant)) : lerp(0.38, 1.25, clamp(-ant));
+  const sp = L.hairStyle === "antennae" ? splay0 : 0.15 + splay0 * 0.4;
+  const len = 0.6 * 0.27 + 0.02, base = 0.1377 + lift;
+  const yaw = st.pose.yaw + (st.pose.headYaw ?? 0);
+  for (const x0 of L.hairStyle === "antennae" ? [-0.26, 0.26] : [0.08]) {
+    const sg = x0 < 0 ? -1 : 1, bx = x0 * 0.27 * (lift ? 0.7 : 1);
+    const tx = bx + sg * len * Math.sin(sp), ty = base + len * Math.cos(sp);
+    const lx = (bx + tx) / 2, ly = (base + ty) / 2;
+    const w = Math.abs(tx - bx) / 2 + 0.036, hh = (ty - base) / 2 + 0.036;
+    out.push({ c: [st.head[0] + lx * s * Math.cos(yaw), st.head[1] + ly * s, st.head[2] - lx * s * Math.sin(yaw)], h: [w * s, hh * s, 0.04 * s], yaw });
+  }
+  return out;
+};
 /** what the shot camera sees at t, for tools/framing_qa.mjs (views in output px, named actors, the subject, boards) */
 export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
   const s = c.shotAt(t);
@@ -659,14 +679,16 @@ export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
     const parts = qa.actors.filter((b) => b.name.startsWith(`${st.id}.`)).map((b) => ({ c: b.c, h: b.h }));
     const torso = st.torso, low = st.grounded ? 0 : Math.max(0, st.pose.y - 0.6 * st.s);
     parts.push({ c: [st.pose.x, (low + torso[1]) / 2, st.pose.z], h: [0.2 * st.s, Math.max(0.05, (torso[1] - low) / 2), 0.16 * st.s] });
-    return { id: st.id, head: headBox(st), face: { c: st.head, h: [0.16 * st.s, 0.17 * st.s, 0.16 * st.s] as V3 }, parts, named: true, yaw: st.pose.yaw };
+    return { id: st.id, head: headBox(st), headParts: headParts(st), face: { c: st.head, h: [0.16 * st.s, 0.17 * st.s, 0.16 * st.s] as V3 }, parts, named: true, yaw: st.pose.yaw };
   });
   // the subject of each view: the camera's target actor; else the shot's `subject`; else its only actor (if on screen)
   const ids = states.map((x) => x.id);
   const tgOf = (tg: unknown) => (typeof tg === "string" ? tg.split(".")[0].split(":")[0] : "");
   const cs = s.spec.cam;
   const tgs = s.lens2 ? (cs.targets ?? [cs.target, cs.target]).map(tgOf) : [tgOf(s.pov ? (cs.targets?.[1] ?? cs.target) : cs.target)];
-  const whip = (cs.preset === "whip" || s.spec.in === "whip") && t < s.a + 0.25;
+  // a whip-in swings the frame across the set on purpose: its first 0.35 s is motion, not framing (skipped)
+  if ((cs.preset === "whip" || s.spec.in === "whip") && t < s.a + 0.35 && t > 0) return null;
+  const whip = false;
   const subjects: { id: string; view: number; why: string; ifVisible?: boolean }[] = [];
   if (!whip) tgs.forEach((tg, vi) => {
     if (ids.includes(tg)) subjects.push({ id: tg, view: vi, why: "camera target" });

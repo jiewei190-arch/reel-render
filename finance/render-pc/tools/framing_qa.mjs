@@ -26,8 +26,10 @@ export const RULES = {
   headEdge: 0.01, //        R2: the head box must stay this share of the frame width away from every edge (11 px)
   edgeMargin: 0.03, //      R3: share of the frame width (32 px at 1080)
   contrast: 4.5, //         R4: WCAG AA
-  textCapPx: 42, //         R4: main-line cap height at 1080 px wide (scaled by W / 1080 for other widths)
-  textCapPxLong: 30, //     R4 for long-form 1920x1080 (the existing long-form text rule, kept)
+  textPx: 42, //            R4: main-line FONT size (em, like CSS font-size) at 1080 px wide; measured as the glyph cap
+  //                          height (0.709 em in Poppins 800, so 29.8 px cap). Not 42 px of cap height: that would ask
+  //                          for a 59 px font and fail every kit's 50-54 px callout label; 42 px em also equals the
+  //                          existing long-form rule (cap >= 30 px at 1080 tall)
   closeFace: 0.16, //       R5: frame-0 subject head height >= 16 % of the frame height (307 px at 1920)
 };
 
@@ -178,6 +180,21 @@ const inter = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0))
 const ox = (a, b) => Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0);
 const oy = (a, b) => Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0);
 const viewRect = (v) => ({ x0: v.left, x1: v.left + v.w, y0: v.top, y1: v.top + v.h });
+/** overlap (px²) of a convex screen polygon with an actor's head: the head proper plus each antenna / hair / hood part
+ *  (a.headParts, else the one head box), so the empty air between two antennae does not count */
+const headOverlap = (v, poly, a) => {
+  if (!poly) return 0;
+  let best = 0;
+  for (const b of a.headParts ?? [a.head]) {
+    let hh = null;
+    if (b.r !== undefined) {
+      // a sphere part ({c, r}): its outline is a circle of r * k px (16-gon, the same winding as boxHull)
+      const q2 = proj(v, b.c); if (q2) { const R = b.r * q2.k; hh = Array.from({ length: 16 }, (_, i) => [q2.x + R * Math.cos((i * Math.PI) / 8), q2.y + R * Math.sin((i * Math.PI) / 8)]); }
+    } else hh = boxHull(v, b);
+    if (hh) best = Math.max(best, hullOverlap(poly, hh));
+  }
+  return best;
+};
 /** text plane {c, w, h, yaw, flat?}: its 4 corners (front face; flat = lying on a table, text up the depth) */
 const planePts = (pl) => {
   const cy = Math.cos(pl.yaw ?? 0), sy = Math.sin(pl.yaw ?? 0), out = [];
@@ -212,7 +229,7 @@ const worldMove = (v, dxPx, dyPx, k) => {
  * @param o.times     output times to sample (s)
  * @param o.sample    (t) => scene (see below)
  * @param o.W, o.H    output frame size
- * @param o.landscape long-form (R5 skipped; text-height rule uses RULES.textCapPxLong)
+ * @param o.landscape long-form (R5 skipped; the text rule scales RULES.textPx by H / 1080)
  * @param o.frame0    { hookPx, hookMinPx, hookLabel } for R5 (the face part comes from sample(0))
  * scene: { shot, shotLabel?, views: [{cam, left, top, w, h, name?}], actors: [{id, head:{c,h}, parts:[{c,h}], named}],
  *          subjects: [{id, view, why}], boards: [{key, label, box:{c,h,yaw}, plane?:{c,w,h,yaw,flat}, lines:[{text, capM, fg}],
@@ -223,7 +240,7 @@ export const framingQA = (o) => {
   const out = { r1: new Map(), r2: new Map(), r3: new Map(), r4c: new Map(), r4h: new Map(), r5: [] };
   const run = new Map(); // key -> consecutive frames
   const seen = new Set();
-  const capMin = (LS ? RULES.textCapPxLong : RULES.textCapPx) * (LS ? H / 1080 : W / 1080);
+  const capMin = RULES.textPx * capRatio() * (LS ? H / 1080 : W / 1080); // in cap-height px
   const edgeM = RULES.edgeMargin * W;
   const textH = new Map(); // shot|board -> {best, t, cap, label, k, lines}
   const persist = (key, ok, store, mk) => {
@@ -257,7 +274,7 @@ export const framingQA = (o) => {
           const key = `r1|${sc.shot}|${it.b.key}|${a.id}${vname}`;
           const r = onScreen ? boxRect(v, it.b.box) : null;
           let bad = false;
-          if (r && ox(r, head) > RULES.headPad && oy(r, head) > RULES.headPad && inter(r, VR) > 0 && hullOverlap(boxHull(v, it.b.box), boxHull(v, a.head)) >= RULES.headArea * (W / 1080) ** 2) {
+          if (r && ox(r, head) > RULES.headPad && oy(r, head) > RULES.headPad && inter(r, VR) > 0 && headOverlap(v, boxHull(v, it.b.box), a) >= RULES.headArea * (W / 1080) ** 2) {
             // text boards count at any depth (they hide the head or the head hides them: S07 of minimum-payment-trap, the
             // antennae over the OWE block 3 m behind); other props only when their box is within propDepth of the head box
             // big non-text props (cars, sofas, counters: a box half-size > 0.75 m) are staging, like the set: the 3D clip QA
@@ -274,6 +291,16 @@ export const framingQA = (o) => {
             const where = r.z0 > head.z1 ? "behind" : r.z1 < head.z0 ? "in front of" : "at";
             return `CLIP ${sc.shot}${vname} ${it.text ? "board" : "prop"} ${label} is on ${a.id}'s head on screen (${where} the head; head box incl. antennae/hair) at ${ts}: move it ${say(mv[0])} or ${say(mv[1])}, or move ${a.id} clear of it`;
           });
+        }
+      }
+      // ---- R1 for 2D cards (kits' DOM labels, boards, devices): a card over a head on screen
+      for (const { a, head } of acts) {
+        if (!head || !a.named || inter(head, VR) <= 0) continue;
+        for (const c of sc.cards ?? []) {
+          if (!c.landed || (c.view !== undefined && c.view !== vi)) continue;
+          const poly = [[c.x0, c.y0], [c.x1, c.y0], [c.x1, c.y1], [c.x0, c.y1]].reverse();
+          const bad = ox(c, head) > RULES.headPad && oy(c, head) > RULES.headPad && headOverlap(v, poly, a) >= RULES.headArea * (W / 1080) ** 2;
+          persist(`r1c|${sc.shot}|${c.key}|${a.id}`, !bad, out.r1, () => `CLIP ${sc.shot} card ${c.key} ${q(c.label)} covers ${a.id}'s head on screen (head box incl. ${a.extra ?? "antenna/hair"}) at ${ts} (card x ${c.x0.toFixed(0)}-${c.x1.toFixed(0)}, y ${c.y0.toFixed(0)}-${c.y1.toFixed(0)}; head x ${head.x0.toFixed(0)}-${head.x1.toFixed(0)}, y ${head.y0.toFixed(0)}-${head.y1.toFixed(0)}): ${c.fix ?? `frame ${a.id} on the other side of the screen (cam.az or the target), or move the card`}`);
         }
       }
       // ---- R2: the subject in frame; any named actor's head not cut by an edge
@@ -350,9 +377,8 @@ export const framingQA = (o) => {
       }
       // ---- 2D cards (kits): inside the frame; text size
       for (const c of sc.cards ?? []) {
-        if (!c.landed) continue;
-        const inside = c.x0 >= VR.x0 + edgeM && c.x1 <= VR.x1 - edgeM && c.y0 >= VR.y0 + edgeM && c.y1 <= VR.y1 - edgeM;
-        if (c.view !== undefined && c.view !== vi) continue;
+        if (!c.landed || (c.view !== undefined && c.view !== vi) || (c.view === undefined && vi > 0)) continue;
+        const inside = c.x0 >= edgeM && c.x1 <= W - edgeM && c.y0 >= edgeM && c.y1 <= H - edgeM;
         persist(`r3c|${sc.shot}|${c.key}`, inside, out.r3, () => `FAIL ${sc.shot} card ${c.key} ${q(c.label)} crosses the frame edge (x ${c.x0.toFixed(0)}-${c.x1.toFixed(0)}, y ${c.y0.toFixed(0)}-${c.y1.toFixed(0)}; keep ${edgeM.toFixed(0)} px clear) at ${ts}: shorten its text or move it inward`);
         if (c.lines?.length) {
           const main = Math.max(...c.lines.map((l) => l.capPx));
@@ -382,7 +408,7 @@ export const framingQA = (o) => {
     h.all.sort((x, y) => x[0] - y[0]);
     [h.px, h.t] = h.all[Math.floor(h.all.length / 2)];
     if (h.px >= capMin) continue;
-    if (h.card) { out.r4h.set(`${h.shot}|${h.card.key}`, `FAIL ${h.shot} card ${h.card.key} ${q(h.card.label)} text is ${h.px.toFixed(0)} px tall (cap height, needs ${capMin.toFixed(0)} px): shorten the text or use a bigger card`); continue; }
+    if (h.card) { out.r4h.set(`${h.shot}|${h.card.key}`, `FAIL ${h.shot} card ${h.card.key} ${q(h.card.label)} text is ${(h.px / capRatio()).toFixed(0)} px (font size; cap ${h.px.toFixed(0)} px; needs ${RULES.textPx} px): shorten the text or use a bigger card`); continue; }
     const k = capMin / Math.max(1, h.px);
     const b = h.b;
     const fixes = [];
@@ -390,7 +416,7 @@ export const framingQA = (o) => {
     else if (b.scaleField) fixes.push(`scale it up x${(k * 1.05).toFixed(2)} (${b.scaleField})`);
     fixes.push(`move the camera ${k > 1.6 ? "much " : ""}closer (cam.dist x${(1 / (k * 1.05)).toFixed(2)})`);
     if (String(h.main.text).length > 8) fixes.push(`or shorten the line ${q(h.main.text)} (long lines shrink to fit)`);
-    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${h.px.toFixed(0)} px tall (cap height, median while on screen, e.g. at ${h.t.toFixed(2)} s; needs ${capMin.toFixed(0)} px to read on a phone): ${fixes.join(", ")}`);
+    out.r4h.set(`${h.shot}|${b.key}`, `FAIL ${h.shot}${h.vname} board ${b.key} ${q(b.label)}: main line ${q(h.main.text)} is ${(h.px / capRatio()).toFixed(0)} px (font size; cap ${h.px.toFixed(0)} px; median while on screen, e.g. at ${h.t.toFixed(2)} s; needs ${RULES.textPx} px to read on a phone): ${fixes.join(", ")}`);
   }
   // ---- R5 frame 0
   if (!LS && o.frame0) {
@@ -429,4 +455,22 @@ export const framingReport = (fq, opts = {}) => {
   const body = fq.lines.length ? fq.lines.map((l) => `- ${l}`) : ["- none: no board or prop on a head, the subject in frame, boards inside the frame (3 % margin), board text >= 4.5:1 and big enough, frame 0 close."];
   const summary = [`R1 head clips ${fq.r1.size}`, `R2 subject/edge ${fq.r2.size}`, `R3 board past edge ${fq.r3.size}`, `R4 contrast ${fq.r4c.size}`, `R4 text size ${fq.r4h.size}`, `R5 frame 0 ${fq.r5.length}`].join(", ");
   return { md: [head, "", `Rules: RECIPE_GUIDE.md "Framing rules". ${summary}.${fq.face0 ? ` Frame-0 face: ${fq.face0.id} ${fq.face0.hpx.toFixed(0)} px.` : ""}`, "", ...body, ""], summary, console: fq.lines, ...opts };
+};
+
+/**
+ * The kits' wrapper: runs framingQA and returns the gate rows + report lines + exit flags, so each *_build.mjs adds
+ * framing with a few lines. sample(t) -> scene (see framingQA); frame0 = { hookPx, hookMinPx, hookLabel }.
+ */
+export const kitFraming = ({ C, W = 1080, H = 1920, landscape = false, times, sample, sample0, frame0, boardsAll }) => {
+  const fq = framingQA({ times: times ?? Array.from({ length: C.duration }, (_, f) => f / 30), sample, sample0, W, H, landscape, frame0, boardsAll });
+  const fr = framingReport(fq);
+  const capMin = fq.capMin;
+  const rows = [
+    ["framing R1: no board, card or prop over a head (head box incl. antenna/hair/hat)", fq.r1.size === 0, fq.r1.size ? `${fq.r1.size} clip(s) (see Framing QA)` : "clear", true],
+    ["framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge", fq.r2.size === 0, fq.r2.size ? `${fq.r2.size} (see Framing QA)` : "all in frame", true],
+    ["framing R3: every landed board / card inside the frame (3 % margin)", fq.r3.size === 0, fq.r3.size ? `${fq.r3.size} (see Framing QA)` : "all inside", true],
+    [`framing R4: text >= 4.5:1 on its fill; featured main lines >= ${RULES.textPx} px (font size)`, fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
+  ];
+  if (!landscape) rows.push(["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(RULES.closeFace * H).toFixed(0)})${fq.r5.length ? "; " + fq.r5.map((x) => x.replace(/^FAIL /, "")).join("; ") : ""}` : fq.r5.join("; ") || "ok", true]);
+  return { fq, fr, rows, failed: fq.lines.length > 0, console: `framing QA: ${fq.clips.length} clip(s), ${fq.fails.length} fail(s) over ${fq.frames} frames in ${(fq.ms / 1000).toFixed(2)} s (${fr.summary})` };
 };

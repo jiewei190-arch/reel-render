@@ -311,7 +311,7 @@ const gate = [
   ["loop board lands on the last word (not before)", loopEarly.length === 0, loopBoards.length ? `last word starts ${lastWordEnd.toFixed(2)} s; ${loopBoards.map((p) => `${p.key} at ${(p.spec.motion ? p.hit : p.a).toFixed(2)} s`).join(", ")}` : "no board on the loop shot", true],
   ["framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge", fq.r2.size === 0, fq.r2.size ? `${fq.r2.size} (see Framing QA)` : "all in frame", true],
   ["framing R3: every landed board inside the frame (3 % margin)", fq.r3.size === 0, fq.r3.size ? `${fq.r3.size} (see Framing QA)` : "all inside", true],
-  ["framing R4: board text >= 4.5:1 on its fill; featured main lines >= 42 px", fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
+  ["framing R4: board text >= 4.5:1 on its fill; featured main lines >= 42 px font size", fq.r4c.size + fq.r4h.size === 0, fq.r4c.size + fq.r4h.size ? `${fq.r4c.size} contrast, ${fq.r4h.size} size (see Framing QA)` : "readable", true],
   ["framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height)", fq.r5.length === 0, fq.face0 ? `${fq.face0.id} face ${fq.face0.hpx.toFixed(0)} px (needs ${(0.16 * 1920).toFixed(0)})` : "no subject face", true],
   ["no text board in the caption band (recompose: raise the board or lower the target)", capBoards.length === 0, capBoards.join(", ") || "none", false],
   ["length 20-30 s", dur >= 20 && dur <= 30.5, `${dur.toFixed(2)} s`, false],

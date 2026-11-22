@@ -18,6 +18,10 @@ import type { BizDevice, CompanyIcon, Tone } from "./types";
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const FONT = "Poppins";
 export const toneColor = (t: Tone) => (t === "green" ? BP.green : t === "red" ? BP.red : t === "gold" ? BP.gold : BP.navy);
+/** text-safe tone shades (framing QA rule R4: >= 4.5:1 with white, both as text on white and as a fill under white text):
+ *  green 5.0:1, red 5.6:1, gold 5.5:1. The bright tones stay for bars, borders, lines and the chart. */
+export const TEXT_TONE = { green: "#15803D", red: "#C62828", gold: "#8A6212" } as const;
+export const toneText = (t: Tone) => (t === "green" ? TEXT_TONE.green : t === "red" ? TEXT_TONE.red : t === "gold" ? TEXT_TONE.gold : BP.navy);
 const SHADOW = "0 16px 44px rgba(8,12,24,0.38)";
 
 /** split a hook into at most 2 balanced lines (an explicit "\n" wins) */
@@ -100,7 +104,7 @@ export const LabelLayer: React.FC<{ L: BizLayout; labels: LabelBox[]; t: number 
 export const TagLayer: React.FC<{ L: BizLayout; tags: TagBox[] }> = ({ L, tags }) => (
   <>
     {tags.map((g) => (g.u > 0.001 ? (
-      <div key={g.key} style={{ position: "absolute", left: g.x - g.w / 2, top: g.y - g.h / 2, width: g.w, height: g.h, transform: `scale(${OVERSHOOT(clamp(g.u))})`, background: toneColor(g.tone), borderRadius: g.h / 2, border: "5px solid #ffffff", boxShadow: SHADOW, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
+      <div key={g.key} style={{ position: "absolute", left: g.x - g.w / 2, top: g.y - g.h / 2, width: g.w, height: g.h, transform: `scale(${OVERSHOOT(clamp(g.u))})`, background: toneText(g.tone), borderRadius: g.h / 2, border: "5px solid #ffffff", boxShadow: SHADOW, display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box" }}>
         <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.tag.fs, color: "#ffffff", whiteSpace: "nowrap" }}>{g.text}</span>
       </div>
     ) : null))}
@@ -137,7 +141,7 @@ const Company: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t 
       <div style={{ width: tile, height: tile, borderRadius: 26, background: col, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><Icon k={sp.icon ?? "store"} size={tile * 0.8} t={t} /></div>
       <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
         <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: nameFs, color: BP.ink, lineHeight: 1, letterSpacing: -1, whiteSpace: "nowrap" }}>{sp.name.toUpperCase()}</div>
-        {sp.year !== undefined ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.company.yearFs, color: col, marginTop: 10, letterSpacing: 2 }}>FOUNDED {sp.year}</div> : null}
+        {sp.year !== undefined ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.company.yearFs, color: d.tone === "ink" ? col : toneText(d.tone), marginTop: 10, letterSpacing: 2 }}>FOUNDED {sp.year}</div> : null}
         {sp.tagline ? <div style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.company.yearFs * 0.8, color: BP.slate, marginTop: 4 }}>{sp.tagline.toUpperCase()}</div> : null}
       </div>
       <div style={{ position: "absolute", left: 0, bottom: 0, height: 12, width: `${100 * EASE_OUT(clamp(d.tau / 0.6))}%`, background: col }} />
@@ -159,7 +163,7 @@ const Decision: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t
         <g transform={`translate(${m + 10}, ${bar + m + 100})`} opacity={0.5 + 0.5 * Math.abs(Math.sin(t * 4))}><rect width={16} height={52} fill="#fff" /><rect x={28} width={16} height={52} fill="#fff" /></g>
       </svg>
       <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", transform: `scale(${slam}) rotate(${-2 + 0.5 * Math.sin(t * 3)}deg)`, opacity: clamp(d.u * 3) }}>
-        <div style={{ background: BP.red, padding: "10px 42px 18px", borderRadius: 18, boxShadow: SHADOW, fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs, color: "#ffffff", lineHeight: 1, letterSpacing: -2, whiteSpace: "nowrap" }}>{(sp.text ?? "THE DECISION").toUpperCase()}</div>
+        <div style={{ background: TEXT_TONE.red, padding: "10px 42px 18px", borderRadius: 18, boxShadow: SHADOW, fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs, color: "#ffffff", lineHeight: 1, letterSpacing: -2, whiteSpace: "nowrap" }}>{(sp.text ?? "THE DECISION").toUpperCase()}</div>
         {sp.sub ? <div style={{ marginTop: 22, background: "#ffffff", padding: "8px 28px", borderRadius: 14, fontFamily: FONT, fontWeight: 800, fontSize: L.decision.subFs, color: BP.ink, whiteSpace: "nowrap", opacity: clamp((d.tau - 0.2) / 0.15) }}>{sp.sub.toUpperCase()}</div> : null}
       </div>
     </>
@@ -172,7 +176,7 @@ const Counter: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t 
   const shake = down ? 3 * Math.sin(t * 50) * clamp(1 - Math.abs((d.frac ?? 0) - 0.5) * 2) : 0;
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) translateX(${shake}px)`, opacity: clamp(d.u * 3), background: "rgba(10,14,26,0.94)", borderRadius: 30, boxShadow: SHADOW, overflow: "hidden", display: "flex", flexDirection: "column", border: `4px solid ${col}` }}>
-      <div style={{ background: col, color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.counter.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 2 }}>{sp.title.toUpperCase()}</div>
+      <div style={{ background: toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.counter.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 2 }}>{sp.title.toUpperCase()}</div>
       <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 18 }}>
         <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.counter.fs * 0.5, color: col }}>{down ? "▼" : "▲"}</span>
         <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.counter.fs, color: "#ffffff", letterSpacing: -3, fontVariantNumeric: "tabular-nums" }}>{d.value}</span>
@@ -190,7 +194,7 @@ const Worth: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
     <div style={{ marginTop: k ? 34 : 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
         <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.labelFs, color: BP.slate, letterSpacing: 1 }}>{label.toUpperCase()}</span>
-        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.fs, color: col, letterSpacing: -2, fontVariantNumeric: "tabular-nums" }}>{text}</span>
+        <span style={{ fontFamily: FONT, fontWeight: 800, fontSize: L.worth.fs, color: col === BP.red ? TEXT_TONE.red : col === BP.green ? TEXT_TONE.green : col, letterSpacing: -2, fontVariantNumeric: "tabular-nums" }}>{text}</span>
       </div>
       <div style={{ height: 54, background: "#eef0f4", borderRadius: 14, marginTop: 8, overflow: "hidden" }}><div style={{ height: "100%", width: w, background: col, borderRadius: 14 }} /></div>
     </div>
@@ -212,7 +216,7 @@ const Board: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d, t })
   const col = d.tone === "ink" ? BP.slate : toneColor(d.tone);
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, transform: `scale(${OVERSHOOT(d.u)}) rotate(${0.8 * Math.sin(t * 2.4)}deg)`, opacity: clamp(d.u * 3), background: "#ffffff", borderRadius: 28, overflow: "hidden", boxShadow: SHADOW, display: "flex", flexDirection: "column" }}>
-      <div style={{ background: col, color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.board.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{sp.title.toUpperCase()}</div>
+      <div style={{ background: d.tone === "ink" ? col : toneText(d.tone), color: "#ffffff", fontFamily: FONT, fontWeight: 800, fontSize: L.board.titleFs, padding: "10px 0", textAlign: "center", letterSpacing: 1 }}>{sp.title.toUpperCase()}</div>
       <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 800, fontSize: L.board.valueFs, color: BP.ink, letterSpacing: -2, whiteSpace: "nowrap" }}>{d.value}</div>
     </div>
   );
@@ -223,7 +227,7 @@ const Stamp: React.FC<{ L: BizLayout; d: DeviceBox; t: number }> = ({ L, d }) =>
   const k = 2.0 - 1.0 * EASE_OUT(clamp(d.tau / 0.16));
   return (
     <div style={{ position: "absolute", left: d.x - d.w / 2, top: d.y - d.h / 2, width: d.w, height: d.h, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${k}) rotate(-9deg)`, opacity: clamp(d.u * 3) * (d.tau < 0 ? 0 : 1) }}>
-      <div style={{ border: `14px solid ${col}`, borderRadius: 24, padding: "4px 40px 10px", fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs * 0.85, color: col, letterSpacing: 4, background: "rgba(255,255,255,0.88)", boxShadow: SHADOW, whiteSpace: "nowrap" }}>{sp.text.toUpperCase()}</div>
+      <div style={{ border: `14px solid ${col}`, borderRadius: 24, padding: "4px 40px 10px", fontFamily: FONT, fontWeight: 800, fontSize: L.decision.fs * 0.85, color: toneText(d.tone), letterSpacing: 4, background: "rgba(255,255,255,0.88)", boxShadow: SHADOW, whiteSpace: "nowrap" }}>{sp.text.toUpperCase()}</div>
     </div>
   );
 };
