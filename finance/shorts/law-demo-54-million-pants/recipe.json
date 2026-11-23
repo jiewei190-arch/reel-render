@@ -14,9 +14,9 @@
   "shots": [
     {
       "at": 0, "set": "courtroom", "jury": false,
-      "cam": { "preset": "hookZoom", "target": "plaintiff:0.22,1.42,0.3", "dist": 2.1, "h": 0.05, "az": 4, "face": 0.6 },
+      "cam": { "preset": "hookZoom", "target": "plaintiff:0.3,1.45,0.45", "dist": 2.2, "h": 0.12, "az": 4, "face": 0.6 },
       "actors": [{ "id": "pearson", "pose": "point", "face": "smug", "at": "plaintiff", "pointAt": "pants", "then": [{ "at": "sued", "face": "angry" }] }],
-      "props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494", "at": "plaintiff:0.6,1.0,0.5", "scale": 0.62, "yaw": 12, "spin": 8 }],
+      "props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494", "at": "plaintiff:0.5,1.08,0.75", "scale": 0.62, "yaw": 12, "spin": 8 }],
       "note": "hook: opens on the hero prop (the trousers on a hanger, EXHIBIT A tag) close-up, the plaintiff behind pointing at them; $54 MILLION FOR PANTS"
     },
     {
@@ -164,9 +164,9 @@
     },
     {
       "at": "line:10", "set": "courtroom", "jury": false,
-      "cam": { "preset": "hookZoom", "target": "plaintiff:0.22,1.42,0.3", "dist": 2.1, "h": 0.05, "az": 4, "face": 0.6 },
+      "cam": { "preset": "hookZoom", "target": "plaintiff:0.3,1.45,0.45", "dist": 2.2, "h": 0.12, "az": 4, "face": 0.6 },
       "actors": [{ "id": "pearson", "pose": "point", "face": "angry", "at": "plaintiff", "pointAt": "pants", "then": [{ "at": "one", "face": "smug" }] }],
-      "props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494", "at": "plaintiff:0.6,1.0,0.5", "scale": 0.62, "yaw": 12, "spin": 8 }]
+      "props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494", "at": "plaintiff:0.5,1.08,0.75", "scale": 0.62, "yaw": 12, "spin": 8 }]
     }
   ]
 }

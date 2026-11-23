@@ -26,7 +26,7 @@ export const HERO_PHOTOS = ["person", "house", "pants", "landscape", "dog", "car
 export const LAW_HERO_DEFAULT: Record<LawHeroKind, { color: string; label: string; what: string }> = {
   statue: { color: LP.gold, label: "", what: "a gold animal statue on a wood plinth with a gold name plate (`species`: rooster, dog, cat, horse, eagle)" },
   hand: { color: "#d9a07a", label: "", what: "an open palm, fingers up (`hair`: true / 0-1 grows hair on the palm, `bandage`: true wraps it)" },
-  trousers: { color: "#3c414c", label: "EXHIBIT A", what: "trousers on a wooden hanger with a paper evidence tag" },
+  trousers: { color: "#7d8494", label: "EXHIBIT A", what: "trousers on a wooden hanger with a paper evidence tag" },
   coffee: { color: "#8A5A35", label: "HOT", what: "a takeaway coffee cup, lid and kraft sleeve, steam rising (`steam`: false for a cold cup)" },
   house: { color: "#E9DCC0", label: "FOR SALE", what: "a small model house on a lawn (`sale`: true adds the sign with the label)" },
   car: { color: "#2F4A7A", label: "EXHIBIT", what: "a generic four-door sedan, the label on its plates (front and back; yaw 25-40 shows one)" },

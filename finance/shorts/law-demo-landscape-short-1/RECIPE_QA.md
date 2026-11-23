@@ -10,7 +10,7 @@ Composition: `LawDemoLandscapeShort1Recipe` in `src/index.law.ts` (1080x1920, 30
 
 - none: every forearm stays on its elbow, no arm passes through the other arm, the torso, the head, a set piece or a prop.
 
-## Framing QA (screen space, 783 frames, 0.08 s): 1 clip(s), 11 fail(s)
+## Framing QA (screen space, 783 frames, 0.05 s): 1 clip(s), 11 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 1, R2 subject/edge 2, R3 board past edge 6, R4 contrast 0, R4 text size 1, R5 frame 0 0, R6 caption on face/neck 2.
 
@@ -27,7 +27,7 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 1, R2 subject/edge 2, R3 b
 - FAIL S04 caption 'MY PANTS' covers pearson's chin / neck (worst at 6.03 s: caption line 'MY PANTS' x 311-769, y 1299-1401; pearson head-to-neck box y 393-1495, 46896 px² covered). Fix: put pearson higher in frame: lift it 208 px (cam.face 0.44 -> 0.33, or aim cam.target lower on the body; its head keeps >= 170 px below the top all shot), or pull the camera back (cam.dist x1.53)
 - FAIL S06 caption 'HE SAID NO' covers pearson's chin / neck (worst at 9.67 s: caption line 'HE SAID NO' x 289-791, y 1299-1401; pearson head-to-neck box y 507-1411, 45960 px² covered). Fix: put pearson higher in frame: lift it 124 px (cam.face 0.44 -> 0.38, or aim cam.target lower on the body; its head keeps >= 368 px below the top all shot), or pull the camera back (cam.dist x1.33)
 
-## Polish QA (tools/polish_qa.mjs, 0.07 s): 0 fail(s)
+## Polish QA (tools/polish_qa.mjs, 0.05 s): 0 fail(s)
 
 P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFORM.md "Polish rules".
 
@@ -35,20 +35,20 @@ P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFOR
 
 ## Frame-0 opener (tools/frame0_hero.mjs): 0 fail(s)
 
-- none: hero prop hookProp (trousers) 43 % of the height; pearson faces the lens (1° off).
+- none: hero prop hookProp (trousers) 42 % of the height; pearson faces the lens (1° off).
 
-Hero props in S01: hookProp (trousers) 43 %. Number cards at 0.00 s: "AT STAKE" 30 % wide, 100 % opaque.
+Hero props in S01: hookProp (trousers) 42 %. Number cards at 0.00 s: "AT STAKE" 30 % wide, 100 % opaque.
 
 ## Frame-0 gate and kit rules
 
 | check | result | detail |
 |---|---|---|
-| frame 0 is close: a subject covers >= 50 % of the frame height (or the hero-prop / giant-board opener below) | PASS | pearson 51 %; opener: hero prop hookProp (trousers) 43 % of the height |
+| frame 0 is close: a subject covers >= 50 % of the frame height (or the hero-prop / giant-board opener below) | PASS | pearson 46 %; opener: hero prop hookProp (trousers) 42 % of the height |
 | frame 0: no figure seen from behind (the back of a head is not a subject) | PASS | pearson 1° off its facing, with hero prop hookProp in frame |
-| frame 0 opens on a hero prop close-up (>= 35 % of the height) or a giant stake board (>= 50 % of the width) | PASS | hero prop hookProp (trousers) 43 % of the height |
+| frame 0 opens on a hero prop close-up (>= 35 % of the height) or a giant stake board (>= 50 % of the width) | PASS | hero prop hookProp (trousers) 42 % of the height |
 | frame 0: every number card on screen is fully opaque (no fade-in at 0.00 s) | PASS | "AT STAKE" 100 % |
 | hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *gold* word | PASS | "A *JUDGE* SUES OVER PANTS" (5 words, 2 line(s), widest ~806 px, gold: *JUDGE*, until 2.50 s) |
-| who + what at frame 0 (a person >= 15 % and a prop in view, or the hero-prop / giant-board opener) | PASS | who: pearson; what: hookProp; opener: hero prop hookProp (trousers) 43 % of the height |
+| who + what at frame 0 (a person >= 15 % and a prop in view, or the hero-prop / giant-board opener) | PASS | who: pearson; what: hookProp; opener: hero prop hookProp (trousers) 42 % of the height |
 | the stake (a number, $ or a question) on screen by 0.5 s | PASS | at 0.00 s |
 | first spoken word by 0.2 s | PASS | They at 0.10 s |
 | a sound punch at 0.00 s | PASS | impact, ding |
@@ -71,10 +71,10 @@ Hero props in S01: hookProp (trousers) 43 %. Number cards at 0.00 s: "AT STAKE" 
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | **FAIL** | 2 (see Framing QA) |
 | framing R3: every landed board / card inside the frame (3 % margin) | **FAIL** | 6 (see Framing QA) |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | **FAIL** | 0 contrast, 1 size (see Framing QA) |
-| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | face rule replaced by the opener: hero prop hookProp (trousers) 43 % of the height |
+| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | face rule replaced by the opener: hero prop hookProp (trousers) 42 % of the height |
 | framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | **FAIL** | 2 (see Framing QA) |
 | polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point) | PASS | 4 counter(s) land and hold |
 | polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped | PASS | 14 line(s) fit |
 | polish P4: no set piece (chair, table, rack) over a featured face (>= 30 % for > 5 frames) | PASS | faces clear |
 
-Frame-0 coverage by subject: pearson 51 %, hookProp 42 %.
+Frame-0 coverage by subject: pearson 46 %, hookProp 42 %.

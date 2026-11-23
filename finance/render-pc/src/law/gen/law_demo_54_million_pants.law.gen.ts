@@ -72,9 +72,9 @@ export const RECIPE: LawRecipe = {
    "jury": false,
    "cam": {
     "preset": "hookZoom",
-    "target": "plaintiff:0.22,1.42,0.3",
-    "dist": 2.1,
-    "h": 0.05,
+    "target": "plaintiff:0.3,1.45,0.45",
+    "dist": 2.2,
+    "h": 0.12,
     "az": 4,
     "face": 0.6
    },
@@ -103,7 +103,7 @@ export const RECIPE: LawRecipe = {
       "ONE PAIR, GREY"
      ],
      "color": "#7d8494",
-     "at": "plaintiff:0.6,1.0,0.5",
+     "at": "plaintiff:0.5,1.08,0.75",
      "scale": 0.62,
      "yaw": 12,
      "spin": 8
@@ -808,9 +808,9 @@ export const RECIPE: LawRecipe = {
    "jury": false,
    "cam": {
     "preset": "hookZoom",
-    "target": "plaintiff:0.22,1.42,0.3",
-    "dist": 2.1,
-    "h": 0.05,
+    "target": "plaintiff:0.3,1.45,0.45",
+    "dist": 2.2,
+    "h": 0.12,
     "az": 4,
     "face": 0.6
    },
@@ -839,7 +839,7 @@ export const RECIPE: LawRecipe = {
       "ONE PAIR, GREY"
      ],
      "color": "#7d8494",
-     "at": "plaintiff:0.6,1.0,0.5",
+     "at": "plaintiff:0.5,1.08,0.75",
      "scale": 0.62,
      "yaw": 12,
      "spin": 8

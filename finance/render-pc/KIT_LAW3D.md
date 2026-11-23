@@ -208,7 +208,7 @@ gold with a warm glow), lit by the set's spotlight. Same fields as the biz3d / c
 |---|---|---|---|
 | `statue` | gold, "GOLD ROOSTER" | a gold animal on a wood plinth with a gold name plate; `species` rooster / dog / cat / horse / eagle | [rooster](docs/hero_props/law/hero-statue.jpg), [dog](docs/hero_props/law/hero-statue-dog.jpg), [cat](docs/hero_props/law/hero-statue-cat.jpg), [horse](docs/hero_props/law/hero-statue-horse.jpg), [eagle](docs/hero_props/law/hero-statue-eagle.jpg) |
 | `hand` | skin, no label | an open palm toward the lens, fingers up, navy sleeve, white cuff; `hair` on the palm, `bandage`; a label hangs as a tag from the cuff | [hand](docs/hero_props/law/hero-hand.jpg), [hairy palm](docs/hero_props/law/hero-hand-hair.jpg), [bandaged](docs/hero_props/law/hero-hand-bandage.jpg) |
-| `trousers` | `#3c414c` "EXHIBIT A" | trousers on a wooden hanger with a red EVIDENCE tag (the label, `lines` under it) | [hero-trousers](docs/hero_props/law/hero-trousers.jpg) |
+| `trousers` | `#7d8494` "EXHIBIT A" | trousers on a wooden hanger with a red EVIDENCE tag (the label, `lines` under it) | [hero-trousers](docs/hero_props/law/hero-trousers.jpg) |
 | `coffee` | `#8A5A35` lid, "HOT" | a takeaway cup, lid, kraft sleeve with the label, steam rising | [hero-coffee](docs/hero_props/law/hero-coffee.jpg) |
 | `house` | `#E9DCC0` "FOR SALE" | a small model house on a lawn (gable roof, lit windows, chimney); `sale` adds the sign | [house](docs/hero_props/law/hero-house.jpg), [for sale](docs/hero_props/law/hero-house-sale.jpg) |
 | `car` | `#2F4A7A` "EXHIBIT" | a generic four-door sedan in side view; the label on its front and back plates (yaw 25-40 shows one) | [hero-car](docs/hero_props/law/hero-car.jpg) |
@@ -228,10 +228,10 @@ download: `BROWSER_EXE=<chrome-headless-shell path>`).
 **Frame-0 recipe pattern** (the reference Short, section 10): the hero prop floating beside the person, toward the lens,
 the camera between them so both read and the prop fills >= 35 % of the height:
 ```json
-"cam": { "preset": "hookZoom", "target": "plaintiff:0.22,1.42,0.3", "dist": 2.1, "h": 0.05, "az": 4, "face": 0.6 },
+"cam": { "preset": "hookZoom", "target": "plaintiff:0.3,1.45,0.45", "dist": 2.2, "h": 0.12, "az": 4, "face": 0.6 },
 "actors": [{ "id": "pearson", "pose": "point", "face": "smug", "at": "plaintiff", "pointAt": "pants" }],
 "props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494",
-            "at": "plaintiff:0.6,1.0,0.5", "scale": 0.62, "yaw": 12, "spin": 8 }]
+            "at": "plaintiff:0.5,1.08,0.75", "scale": 0.62, "yaw": 12, "spin": 8 }]
 ```
 Keep the prop on the person's right (screen right when they face the lens) so the pointing right arm reaches it, and
 the face below the hook card (`face` 0.6, the prop's top at the person's chin). No hero prop fits? Aim `hookZoom` straight
@@ -432,7 +432,7 @@ With the opener met, "frame 0 is close", "who + what at frame 0" and framing R5 
 
 | shot (word) | set | camera | what happens |
 |---|---|---|---|
-| 0 | courtroom (no jury) | hookZoom between the trousers and pearson | opens on the hero prop: the trousers on a hanger (EXHIBIT A tag, 43 % of the height), the plaintiff beside them pointing; hook "*$54 MILLION* FOR PANTS"; face smug → angry |
+| 0 | courtroom (no jury) | hookZoom between the trousers and pearson | opens on the hero prop: the trousers on a hanger (EXHIBIT A tag, 42 % of the height), the plaintiff beside them pointing; hook "*$54 MILLION* FOR PANTS"; face smug → angry |
 | "dry" | courtroom (whip) | medium on the family | the three cleaners recoil, shocked |
 | "$54" | casefile | topDown | money stacks drop; counter DAMAGES SOUGHT 0 → $54,000,000 |
 | "pants" | evidence | crane | the pants pop into the spotlight; EXHIBIT A, THE PANTS |

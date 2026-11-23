@@ -130,12 +130,12 @@ const hookShot = ({ recipe, first, src, hookText: ht, stake, set, hookEnd }: { r
   const SC = 0.62;
   hero.scale = SC;
   const tall = (LAW_HERO_BOX_K[hero.kit as keyof typeof LAW_HERO_BOX_K]?.h[1] ?? 0.4) * 2 * SC;
-  hero.at = placeOff(at, [0.6, (sit ? 1.32 : 1.79) - tall, 0.5]);
+  hero.at = placeOff(at, [0.5, (sit ? 1.4 : 1.87) - tall, 0.75]);
   hero.yaw = 12; hero.spin = 8;
   const hasStake = /[\d$?]/.test(ht.replace(/\*/g, ""));
   const shot: LawShot = {
     at: 0, set: shotSet as LawShot["set"], jury: hit?.s.jury ?? false,
-    cam: { preset: "hookZoom", target: placeOff(at, [0.22, sit ? 0.98 : 1.42, 0.3]), dist: 2.1, h: 0.05, az: 4, face: 0.6 },
+    cam: { preset: "hookZoom", target: placeOff(at, [0.3, sit ? 1.0 : 1.45, 0.45]), dist: 2.2, h: 0.12, az: 4, face: 0.6 },
     actors: [{ id, pose: sit ? "talk" : "point", face: "smug", at, sit: sit || undefined, pointAt: sit ? undefined : "hookProp", then: [{ at: 0.45, face: "shocked" }] }],
     props: [hero],
     fx: [{ fx: "shake", at: 0.45, gain: 0.6 }],
