@@ -35,7 +35,7 @@ Several channels run in parallel (one process per channel); GPU renders take tur
 
 ## Standing rules
 
-- **Every Short goes through the YouTube skill packs** in `.claude/skills/` (`youtube-*`, `yt-*`) before it is voiced: angle, hook and script, title and thumbnail text, pre-publish gate, description. Each keeps a `SKILLS_LOG.md` (owner, Nov 23).
+- **Skills test (owner, Nov 23):** Court Of Weird Shorts go through the YouTube skill packs in `.claude/skills/` (`youtube-*`, `yt-*`) before they are voiced (angle, hook and script, title and thumbnail text, pre-publish gate, description) and each keeps a `SKILLS_LOG.md`. BillionDollarBlunders Shorts are made WITHOUT the skill packs, as the comparison channel. See `docs/SKILLS_TEST_WEEK.md`.
 - Shorts on Court Of Weird and BillionDollarBlunders run 20-40 s; long videos 5-8 min, on different topics from the Shorts (owner, Nov 23).
 
 - Never post or upload without the owner's approval. Uploads are scheduled, not published immediately.

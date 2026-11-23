@@ -3,12 +3,16 @@
 Owner's ask (Nov 23, 2026): run a week where some Shorts are made with the two skill packs in `.claude/skills/`
 (`youtube-*` and `yt-*`) and some without, and see where each stands.
 
-## Update (Nov 23, later the same day): every Short uses the skills
-The owner decided that **every** Short is made with the skill packs from now on, so the "plain" arm below is dropped:
-all 14 slots get the skills pass. The topics and days stay as scheduled. Without a plain arm there is no side-by-side
-inside the week; the comparison becomes this week against each channel's earlier Shorts (same two measures), which is
-weaker because other things changed too (20-40 s length, new topics). The one direct comparison left is the blind
-A/B of the two cloud-made Court Of Weird Shorts.
+## FINAL design (owner, Nov 23): one channel with the skills, one without
+- **Court Of Weird: every Short uses the skill packs.** **BillionDollarBlunders: no Short uses them** (the standard
+  writing rules in `bot/prompts/` only).
+- This replaces the alternating-day design below; the days and topics in the schedule stay, only the arm changes
+  (every Court Of Weird row is "skills", every BillionDollarBlunders row is "plain").
+- The two channels differ in topic and audience, so a straight channel-against-channel result cannot be put down
+  to the skills. Judge each channel against **its own earlier Shorts** on the two measures below, then compare the
+  size of the change. The blind A/B of the two cloud-made Court Of Weird Shorts is the one like-for-like comparison.
+- Production: cloud sessions on branches `claude/skills-shorts-queue` (Court Of Weird) and `claude/biz-shorts-queue`
+  (BillionDollarBlunders, started from a commit without the skill packs).
 
 ## Design
 - Two channels: **Court Of Weird** and **BillionDollarBlunders**. One Short a day each, 17:00 ET, Fri Nov 27 to Thu Dec 3.
