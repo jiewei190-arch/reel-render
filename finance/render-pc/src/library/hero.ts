@@ -1,7 +1,7 @@
-// Shared helpers for the biz3d and cyber3d HERO PROPS (src/biz/hero.tsx, src/cyber/hero.tsx): a small material cache
+// Shared helpers for the biz3d, cyber3d and law3d HERO PROPS (src/biz/hero.tsx, src/cyber/hero.tsx, src/law/hero.tsx): a small material cache
 // with metalness, canvas text that fits its box, the document texture (a headline + body lines, never blank paper),
 // and the label rule (a short ORIGINAL generic word; never a real brand name or logo artwork).
-// Nothing here is used by Block Money, tech3d or law3d.
+// Also used by the law3d hero props (src/law/hero.tsx). Nothing here is used by Block Money or tech3d.
 import * as THREE from "three";
 import { canvasTexture } from "../blocky/mat";
 

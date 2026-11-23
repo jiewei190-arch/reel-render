@@ -74,6 +74,25 @@ export type LawProp = {
   spin?: number;
   /** gavel: strike times (each "gavel" action in the shot adds one) */
   hits?: At[];
+  /** the same as `s` (hero props use "scale"); 1 = hero scale, 0.3-0.4 = about life size */
+  scale?: number;
+  // ---- HERO PROPS (src/law/hero.tsx, KIT_LAW3D.md "Hero props"); `spin` with no `motion` turns a prop slowly
+  /** the short generic text printed on the prop (<= 14 characters, <= 2 words, never a real brand); "" = none */
+  label?: string;
+  /** paper / screen / tag body lines (contract, phone, evidence bag, trousers tag), up to 7 of <= 40 characters */
+  lines?: string[];
+  /** statue: "rooster" | "dog" | "cat" | "horse" | "eagle" */
+  species?: string;
+  /** toy: "doll" | "ball"; food: "burger" | "fries" */
+  variant?: string;
+  /** hand: hair on the palm (true, or a density 0-1) */
+  hair?: boolean | number;
+  /** hand: a bandage wrapped round the palm */
+  bandage?: boolean;
+  /** house: the "for sale" sign (its text is the label) */
+  sale?: boolean;
+  /** coffee: steam rising (default true) */
+  steam?: boolean;
 };
 
 export type LawAction =

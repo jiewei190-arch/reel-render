@@ -19,7 +19,9 @@ import type { CastSpec, FigFace, FigPose, FigState, FigTrack } from "./cast";
 import { layoutOf } from "./layout";
 import type { LawLayout } from "./layout";
 import { hookBox } from "./hud";
-import { KIT_BOX } from "./objects";
+import { KIT_BOX, isLawHero } from "./objects";
+import { HERO_PHOTOS, HERO_VARIANTS, LAW_HERO_KINDS, STATUE_SPECIES } from "./hero";
+import { heroLabelError } from "../library/hero";
 import { LAW_SETS } from "./sets";
 import type { LawSet, LawSetId } from "./sets";
 import type { ActorSpec, At, LawAction, LawCam, LawProp, LawRecipe, LawShot, LawTarget, Place } from "./types";
@@ -40,7 +42,7 @@ const yawTo = (from: V3, to: V3) => Math.atan2(to[0] - from[0], to[2] - from[2])
 export type Box = { name: string; c: V3; h: V3 };
 export type Lens = { a: number; b: number; subj: (t: number) => V3; off: V3; fov: (t: number) => number; face: number; push: number; roll: [number, number]; blur: number; posAt?: (t: number) => V3 };
 export type Placement = { p: V3; yaw: number; pitch: number; roll: number; s: number };
-export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number };
+export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; held?: boolean; seed: number; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number };
 export type FxR = { fx: "shake" | "flash" | "papers"; at: number; p: (t: number) => V3; gain: number };
 export type DeviceR = { key: string; act: LawAction; t0: number; t1: number; target?: (t: number) => V3; zeroAt?: number;
   /** counters: the count window (lands on `to` by the anchor word's end, holds COUNT_HOLD before the cut / drain) */
@@ -207,15 +209,28 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     const props: PropR[] = [];
     const addProp = (spec: LawProp, pa: number, pb: number) => {
       if (!spec.kit || !KIT_BOX[spec.kit]) throw new Error(`recipe ${id}: prop "${spec.id}" needs a "kit" (has: ${Object.keys(KIT_BOX).join(", ")})`);
+      if (isLawHero(spec.kit)) {
+        const lerr = spec.kit === "contract" && spec.label !== undefined && !String(spec.label).trim() ? `label is empty: a contract needs its headline (blank paper is not allowed)` : heroLabelError(spec.label, spec.kit);
+        if (lerr) throw new Error(`recipe ${id}: prop "${spec.id}": ${lerr}`);
+        if (spec.lines && (!Array.isArray(spec.lines) || spec.lines.length > 7 || spec.lines.some((l) => typeof l !== "string" || l.length > 40))) throw new Error(`recipe ${id}: prop "${spec.id}": "lines" takes up to 7 strings of <= 40 characters`);
+        if (spec.lines) { const bad = spec.lines.map((l) => heroLabelError(l.split(/\s+/).slice(0, 2).join(" ").slice(0, 14), spec.kit)).find((e) => e && /real brand/.test(e)); if (bad) throw new Error(`recipe ${id}: prop "${spec.id}" lines: ${bad}`); }
+        if (spec.kit === "statue" && spec.species !== undefined && !(STATUE_SPECIES as string[]).includes(spec.species)) throw new Error(`recipe ${id}: prop "${spec.id}": "species" is one of ${STATUE_SPECIES.join(", ")} (got "${spec.species}")`);
+        const vs = HERO_VARIANTS[spec.kit];
+        if (spec.variant !== undefined && (!vs || !vs.includes(spec.variant))) throw new Error(`recipe ${id}: prop "${spec.id}": "variant" ${vs ? `is one of ${vs.join(", ")}` : `is for toy (doll, ball) and food (burger, fries)`} (got "${spec.variant}")`);
+        if (spec.kit === "frame" && spec.photo !== undefined && !HERO_PHOTOS.includes(spec.photo)) throw new Error(`recipe ${id}: prop "${spec.id}": a frame's "photo" is one of ${HERO_PHOTOS.join(", ")} (got "${spec.photo}")`);
+      } else if (spec.label !== undefined || spec.lines !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "label" / "lines" are for the hero props (${LAW_HERO_KINDS.join(", ")}); a ${spec.kit} takes "text"`);
       const base = placeV(spec.at, set, id);
       const phit = at(spec.hit, a + 0.12);
-      const s0 = spec.s ?? 1;
+      const s0 = spec.scale ?? spec.s ?? 1;
       const from = spec.fromOff ?? [-2.4, 1.6, 1.4];
       const hits = [...(spec.hits ?? []).map((h) => at(h)), ...(spec.kit === "gavel" ? hitsFor(spec.id) : [])].sort((x, y) => x - y);
       let text = spec.text;
       if (spec.kit === "nameplate" && !text && spec.of) { const cs = recipe.cast[spec.of]; if (!cs) throw new Error(`recipe ${id}: nameplate "${spec.id}" of "${spec.of}": not in cast`); text = cs.plate ?? cs.role.toUpperCase(); }
       const place = (t: number): Placement => {
         let p = base, yaw = (spec.yaw ?? 0) * D2R, s = s0, pitch = (spec.pitch ?? 0) * D2R, roll = (spec.roll ?? 0) * D2R;
+        // "spin" with no motion: the prop turns slowly on the spot from its first frame in the shot (its front faces
+        // "yaw" when the shot starts), the hero-prop showcase (biz3d / cyber3d do the same)
+        if (!spec.motion && spec.spin !== undefined) yaw += spec.spin * D2R * (t - pa);
         switch (spec.motion) {
           case "turntable": yaw += (spec.spin ?? 14) * D2R * t; break;
           case "bob": p = add(p, [0, 0.05 * Math.sin(t * 2.2), 0]); yaw += 0.08 * Math.sin(t * 0.9); break;
@@ -235,7 +250,9 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
         }
         return { p, yaw, s, pitch, roll };
       };
-      props.push({ key: spec.id, spec, a: pa, b: pb, hit: phit, hits, text, place, show: (t) => (spec.motion === "popIn" ? clamp((t - phit + 0.3) / 0.05) : spec.motion === "flyIn" ? (t >= phit - 0.6 ? 1 : 0) : 1), strike: (t) => strikeAt(hits, t) });
+      // a gavel that strikes with no judge figure in the shot is held by a robed forearm (never floats on its own)
+      const held = spec.kit === "gavel" && hits.some((h) => h >= pa - 0.6 && h < pb + 0.3) && !(sp.actors ?? []).some((x) => recipe.cast[x.id]?.role === "judge");
+      props.push({ key: spec.id, spec, a: pa, b: pb, hit: phit, hits, text, held, seed: 7 + spec.id.length * 13 + spec.id.charCodeAt(0), place, show: (t) => (spec.motion === "popIn" ? clamp((t - phit + 0.3) / 0.05) : spec.motion === "flyIn" ? (t >= phit - 0.6 ? 1 : 0) : 1), strike: (t) => strikeAt(hits, t) });
     };
     (sp.props ?? []).forEach((ps) => addProp(ps, a, b));
     globalProps.filter((g) => g.a < b && g.b > a && (!g.p.sets || g.p.sets.includes(curSet)) && !(sp.props ?? []).some((q) => q.id === g.p.id)).forEach((g) => addProp(g.p, Math.max(a, g.a), Math.min(b, g.b)));
@@ -484,7 +501,8 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     for (const d of s.devices) {
       if (t < d.t0 - LEAD || t >= d.t1) continue;
       const r = rectOf(d, s);
-      const u = clamp((t - d.t0 + LEAD) / 0.22) * clamp((d.t1 - t) / 0.15);
+      // a card that starts at 0 is fully on at frame 0 (frame-0 opener rule F3: no fade-in ghost at 0.00 s)
+      const u = (d.t0 <= 1e-6 ? 1 : clamp((t - d.t0 + LEAD) / 0.22)) * clamp((d.t1 - t) / 0.15);
       const ac = d.act, age = t - d.t0;
       const box: DeviceBox = { key: d.key, kind: ac.do, ...r, u, age };
       if (ac.do === "exhibit") {
@@ -604,19 +622,45 @@ const figTrack = (as: ActorSpec, cs: CastSpec, a: number, b: number, set: LawSet
   const ptT = as.pointAt ?? (camT && camT !== as.id ? cam.target : undefined);
   const ptFn = ptT !== undefined ? targetFn(ptT) : null;
   const pos = (t: number): V3 => lerpV(p0, p1, EASE_INOUT(clamp((t - a) / Math.max(0.3, b - a))));
+  const yawOf = (t: number) => {
+    if (typeof look === "number") return look * D2R;
+    const p = pos(t);
+    if (lookFn) return yawTo(p, lookFn(t));
+    return yawTo(p, lensPos());
+  };
   const usesGavel = as.gavel ?? (cs.role === "judge" && (as.pose === "gavel" || (as.then ?? []).some((x) => x.pose === "gavel")));
   return {
     id: as.id, spec: cs, seed: 3 + as.id.length * 7 + as.id.charCodeAt(0), s: as.scale ?? 1, sit: !!as.sit,
     at: pos,
-    yaw: (t) => {
-      if (typeof look === "number") return look * D2R;
-      const p = pos(t);
-      if (lookFn) return yawTo(p, lookFn(t));
-      return yawTo(p, lensPos());
-    },
+    yaw: yawOf,
     segs, faces,
     pointAt: ptFn ? (t) => ptFn(t) : (t) => lensPos(),
     talk: as.talk ? (t) => visemeAt(words, t) : undefined,
     hits, gavel: usesGavel,
+    desk: deskFn(set, pos, yawOf, cs, as),
+  };
+};
+/** the desk in front of a figure (Limb QA, src/law/cast.tsx overDesk): a set blocker whose top is between the hip and
+ *  a little above the shoulder, whose near face is 0.1-0.9 m in front and which spans the figure's width. Returned in
+ *  the hip's yawed frame at scale 1 (top height above the hip, near-face distance), or null */
+const deskFn = (set: LawSet, pos: (t: number) => V3, yaw: (t: number) => number, cs: CastSpec, as: ActorSpec) => {
+  if (!set.blockers.length) return undefined;
+  const s = (as.scale ?? 1) * (cs.height ?? 1);
+  const hip = (as.sit ? 0.5 : 0.92) * s;
+  return (t: number): { y: number; z: number } | null => {
+    const p = pos(t), yw = yaw(t), c = Math.cos(yw), sn = Math.sin(yw);
+    let best: { y: number; z: number } | null = null;
+    for (const b of set.blockers) {
+      let x0 = Infinity, x1 = -Infinity, z0 = Infinity;
+      for (const dx of [-1, 1]) for (const dz of [-1, 1]) {
+        const wx = b.c[0] + dx * b.h[0] - p[0], wz = b.c[2] + dz * b.h[2] - p[2];
+        const lx = wx * c - wz * sn, lz = wx * sn + wz * c;
+        x0 = Math.min(x0, lx); x1 = Math.max(x1, lx); z0 = Math.min(z0, lz);
+      }
+      const top = b.c[1] + b.h[1] - p[1] - hip;
+      if (x1 < -0.3 * s || x0 > 0.3 * s || z0 < 0.1 * s || z0 > 0.9 * s || top < -0.05 * s || top > 0.75 * s) continue;
+      if (!best || z0 < best.z * s) best = { y: top / s, z: z0 / s };
+    }
+    return best;
   };
 };

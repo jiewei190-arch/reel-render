@@ -1,6 +1,6 @@
 // bundled by tools/law_build.mjs (esbuild, remotion/@react-three stubbed) to compile and QA law3d recipes in node
 export { compileLaw, project, LAW_CAMS } from "../src/law/compile";
-export { figFace, figBoxes, FIG_POSES, FIG_FACES, ROLES } from "../src/law/cast";
+export { figFace, figBoxes, figLimbs, armJoints, FIG_POSES, FIG_FACES, ROLES } from "../src/law/cast";
 export { hookLines, hookBox } from "../src/law/hud";
 export { LF } from "../src/longform/kit";
 export { spokenAnchor, ANCHOR_LOOKBACK } from "../src/longform/polish";

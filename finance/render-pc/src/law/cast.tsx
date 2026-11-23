@@ -56,8 +56,10 @@ const UPPER = 0.29, FORE = 0.27;
 const HEAD_Y = 0.79; // head centre above the hip
 export const FIG_HEIGHT = 1.78;
 
-/** an arm: elevation from straight down (0 down, PI/2 level, PI up), azimuth (0 sideways, PI/2 forward), elbow bend */
-type Arm = { e: number; az: number; bend: number };
+/** an arm: elevation from straight down (0 down, PI/2 level, PI up), azimuth (0 sideways, PI/2 forward), elbow bend;
+ *  or `ik`: a hand target in upper-body space for the RIGHT arm (x mirrored for the left), solved as a two-bone chain
+ *  with the elbow down and out (hands to the face, crossed arms: forearms that turn inward, which e/az/bend cannot) */
+type Arm = { e: number; az: number; bend: number; ik?: V3 };
 export type FigRaw = { lean: number; twist: number; roll: number; dy: number; dz: number; headP: number; headY: number; L: Arm; R: Arm };
 export type FigState = {
   id: string; spec: CastSpec; x: number; y: number; z: number; yaw: number; s: number; sit: boolean;
@@ -68,9 +70,32 @@ export type FigState = {
   /** walking: leg swing angle (rad) */ stride: number;
 };
 const armDir = (e: number, az: number, side: 1 | -1): V3 => [side * Math.sin(e) * Math.cos(az), -Math.cos(e), Math.sin(e) * Math.sin(az)];
+const vlen = (v: V3) => Math.hypot(v[0], v[1], v[2]);
+const vnorm = (v: V3): V3 => { const l = vlen(v) || 1; return [v[0] / l, v[1] / l, v[2] / l]; };
+/** two-bone IK in upper-body space: shoulder -> elbow -> hand at `target` (clamped to the reach), elbow toward `pole` */
+const solveArm = (side: 1 | -1, target: V3, pole: V3 = [0.65, -0.75, -0.15]): [V3, V3] => {
+  const S: V3 = [side * SH[0], SH[1], 0];
+  const T: V3 = [side * target[0], target[1], target[2]];
+  const v: V3 = [T[0] - S[0], T[1] - S[1], T[2] - S[2]];
+  const D = clamp(vlen(v), 0.06, UPPER + FORE - 0.004);
+  const u = vnorm(v);
+  const a = (UPPER * UPPER - FORE * FORE + D * D) / (2 * D), r = Math.sqrt(Math.max(0, UPPER * UPPER - a * a));
+  const pl: V3 = [side * pole[0], pole[1], pole[2]];
+  const k = pl[0] * u[0] + pl[1] * u[1] + pl[2] * u[2];
+  const pn = vnorm([pl[0] - k * u[0], pl[1] - k * u[1], pl[2] - k * u[2]]);
+  const E: V3 = [S[0] + u[0] * a + pn[0] * r, S[1] + u[1] * a + pn[1] * r, S[2] + u[2] * a + pn[2] * r];
+  const H: V3 = [S[0] + u[0] * D, S[1] + u[1] * D, S[2] + u[2] * D];
+  return [vnorm([E[0] - S[0], E[1] - S[1], E[2] - S[2]]), vnorm([H[0] - E[0], H[1] - E[1], H[2] - E[2]])];
+};
 const armDirs = (a: Arm, side: 1 | -1): [V3, V3] => {
+  if (a.ik) return solveArm(side, a.ik);
   const e2 = a.e + a.bend, az2 = a.az + (Math.PI / 2 - a.az) * clamp(a.bend);
   return [armDir(a.e, a.az, side), armDir(e2, az2, side)];
+};
+/** blend two arms in direction space (unit vectors kept unit: the pieces never separate) */
+const mixDirs = (a: [V3, V3], b: [V3, V3], u: number): [V3, V3] => {
+  const m = (p: V3, q: V3): V3 => { const r: V3 = [lerp(p[0], q[0], u), lerp(p[1], q[1], u), lerp(p[2], q[2], u)]; return vlen(r) < 0.25 ? (u < 0.5 ? p : q) : vnorm(r); };
+  return [m(a[0], b[0]), m(a[1], b[1])];
 };
 
 /** a pose at local time tau, global t; `hits` are gavel strike times (gavel pose) */
@@ -101,7 +126,10 @@ export const posePrm = (p: FigPose, tau: number, t: number, seed: number, hits: 
       return { ...base, lean: -0.04, headP: -0.06, L: { e: 0.55, az: 1.35, bend: 1.55 }, R: { e: 0.62, az: 1.35, bend: 1.5 } };
     case "cry": {
       const sob = 0.03 * Math.abs(Math.sin(t * 7));
-      return { ...base, lean: 0.18, dy: -sob, headP: 0.3, L: { e: 1.05, az: 1.45, bend: 1.75 }, R: { e: 1.05, az: 1.45, bend: 1.75 } };
+      // hands up to the face (in front of the bowed head: headP 0.3 puts the face ~0.34 m forward), not beside it: the old
+      // e/az/bend arms raised the forearms outside the shoulders, so behind a rail the hands floated beside the head
+      const hw = 0.012 * Math.sin(t * 7);
+      return { ...base, lean: 0.18, dy: -sob, headP: 0.3, L: { e: 1.05, az: 1.45, bend: 1.2, ik: [0.085, 0.69 + hw, 0.43] }, R: { e: 1.05, az: 1.45, bend: 1.2, ik: [0.085, 0.69 - hw, 0.43] } };
     }
     case "smug":
       return { ...base, lean: -0.08, headP: -0.12, headY: 0.18 + 0.05 * w(0.6), roll: 0.05, L: { e: 0.55, az: 1.35, bend: 1.55 }, R: { e: 0.62, az: 1.35, bend: 1.5 } };
@@ -137,8 +165,28 @@ export type FigTrack = {
   talk?: (t: number) => Viseme | null;
   hits: number[];
   gavel: boolean;
+  /** a desk / bench / rail top in front of the figure (upper-body space: top height above the hip and the near edge's
+   *  distance in front, both at scale 1), from the compiler; hands over it stay on or above its top */
+  desk?: (t: number) => { y: number; z: number } | null;
 };
 const BLEND = 0.34;
+/** hands over a desk stay on or above its top (KIT_LAW3D.md "Limb QA"): the arm pitches up about the shoulder (lengths
+ *  and joints kept), weighted by how far the hand reaches over the desk, so the lift is continuous. A hand below a bench
+ *  top read as a detached forearm (the hand ball peeking over the edge, its forearm hidden) */
+const DESK_CLEAR = 0.075;
+const overDesk = (d: [V3, V3], side: 1 | -1, desk: { y: number; z: number }): [V3, V3] => {
+  const S: V3 = [side * SH[0], SH[1], 0];
+  const hand = (q: [V3, V3]): V3 => [S[0] + q[0][0] * UPPER + q[1][0] * FORE, S[1] + q[0][1] * UPPER + q[1][1] * FORE, S[2] + q[0][2] * UPPER + q[1][2] * FORE];
+  const rot = (v: V3, a: number): V3 => [v[0], v[1] * Math.cos(a) + v[2] * Math.sin(a), v[2] * Math.cos(a) - v[1] * Math.sin(a)];
+  const h = hand(d);
+  const w = clamp((h[2] - (desk.z - 0.3)) / 0.25);
+  const want = desk.y + DESK_CLEAR;
+  if (w <= 0 || h[1] >= want) return d;
+  const goal = h[1] + w * (want - h[1]);
+  let lo = 0, hi = 1.4;
+  for (let k = 0; k < 18; k++) { const mid = (lo + hi) / 2; if (hand([rot(d[0], mid), rot(d[1], mid)])[1] < goal) lo = mid; else hi = mid; }
+  return [rot(d[0], hi), rot(d[1], hi)];
+};
 const blinkAt = (t: number, seed: number, extra: number[]) => {
   if (extra.some((e) => t >= e - 1 / 30 && t < e + 3 / 30)) return true;
   const per = 2.4 + 2.2 * hash(seed);
@@ -150,7 +198,13 @@ export const figState = (tr: FigTrack, t: number): FigState => {
   tr.segs.forEach((s, k) => { if (t >= s.t0) si = k; });
   const seg = tr.segs[si];
   let raw = posePrm(seg.pose, t - seg.t0, t, tr.seed, tr.hits);
-  if (si > 0 && t - seg.t0 < BLEND) { const prev = tr.segs[si - 1]; raw = mixRaw(posePrm(prev.pose, t - prev.t0, t, tr.seed, tr.hits), raw, anticip((t - seg.t0) / BLEND)); }
+  let dirs: { L: [V3, V3]; R: [V3, V3] } | null = null;
+  if (si > 0 && t - seg.t0 < BLEND) {
+    const prev = tr.segs[si - 1], pr = posePrm(prev.pose, t - prev.t0, t, tr.seed, tr.hits), u = anticip((t - seg.t0) / BLEND);
+    // an IK arm (cry) has no e/az/bend to blend: those blends run in direction space
+    if (raw.L.ik || raw.R.ik || pr.L.ik || pr.R.ik) dirs = { L: mixDirs(armDirs(pr.L, -1), armDirs(raw.L, -1), u), R: mixDirs(armDirs(pr.R, 1), armDirs(raw.R, 1), u) };
+    raw = mixRaw(pr, raw, u);
+  }
   let face = seg.face ?? POSE_FACE[seg.pose];
   for (const f of tr.faces) if (t >= f.t0 && f.t0 >= seg.t0 - 1e-6) face = f.face;
   const swaps = [...tr.segs.slice(1).map((s) => s.t0), ...tr.faces.map((f) => f.t0)];
@@ -158,8 +212,8 @@ export const figState = (tr: FigTrack, t: number): FigState => {
   const p = tr.at(t);
   const yaw = tr.yaw(t);
   const fw: V3 = [Math.sin(yaw), 0, Math.cos(yaw)];
-  let armR = armDirs(raw.R, 1);
-  const armL = armDirs(raw.L, -1);
+  let armR = dirs ? dirs.R : armDirs(raw.R, 1);
+  let armL = dirs ? dirs.L : armDirs(raw.L, -1);
   const tgt = seg.pose === "point" && tr.pointAt ? tr.pointAt(t) : null;
   if (tgt) {
     const hip = (tr.sit ? HIP_SIT : HIP_STAND) * s;
@@ -170,10 +224,23 @@ export const figState = (tr: FigTrack, t: number): FigState => {
     const L = Math.hypot(lx, d[1], lz) || 1;
     const want: V3 = [Math.max(0.1, lx / L), d[1] / L, Math.max(-0.1, lz / L)];
     const wl = Math.hypot(...want);
-    const u = ease((t - seg.t0) / 0.3);
-    const mix = (v: V3): V3 => [lerp(v[0], want[0] / wl, u), lerp(v[1], want[1] / wl, u), lerp(v[2], want[2] / wl, u)];
-    armR = [mix(armR[0]), mix(armR[1])];
+    // the first pose of a track is already pointing when the shot opens (a cut lands on the action); a later point
+    // pose swings the arm over 0.3 s
+    const u = si === 0 ? 1 : ease((t - seg.t0) / 0.3);
+    // a target inside the arm's reach (a prop floating by the figure): the elbow bends so the fingertip stops ~0.2 m
+    // short of it, instead of the straight arm running into the prop
+    const reach = (L / s) - 0.2;
+    const aim: [V3, V3] = reach < UPPER + FORE - 0.01
+      ? solveArm(1, [SH[0] + (want[0] / wl) * Math.max(0.12, reach), SH[1] + (want[1] / wl) * Math.max(0.12, reach), (want[2] / wl) * Math.max(0.12, reach)], [0.6, -0.8, 0])
+      : [[want[0] / wl, want[1] / wl, want[2] / wl], [want[0] / wl, want[1] / wl, want[2] / wl]];
+    // a direction-space blend, re-normalised: a straight blend of two unit vectors is shorter than 1, which left a gap
+    // at the elbow (a detached forearm) mid-blend
+    armR = mixDirs(armR, aim, u);
   }
+  const dk = tr.desk?.(t);
+  // the desk is given in the hip's yawed frame: into upper-body space (undo the lean)
+  const desk = dk ? { y: dk.y * Math.cos(raw.lean) + dk.z * Math.sin(raw.lean), z: -dk.y * Math.sin(raw.lean) + dk.z * Math.cos(raw.lean) } : null;
+  if (desk) { armR = overDesk(armR, 1, desk); armL = overDesk(armL, -1, desk); }
   const breathe = Math.sin(t * 1.9 + tr.seed);
   // walking: the legs swing while the place moves (speed from a short look-ahead)
   const q = tr.at(t + 0.05);
@@ -217,6 +284,98 @@ export const figBoxes = (st: FigState) => {
     { name: `${st.id}.head`, c: figHead(st), h: [0.12 * st.s, 0.15 * st.s, 0.12 * st.s] as V3 },
     ...(st.sit ? [] : [{ name: `${st.id}.legs`, c: [st.x, st.y + hy / 2, st.z] as V3, h: [0.16 * st.s, hy / 2 - 0.02, 0.1 * st.s] as V3 }]),
   ];
+};
+
+// ------------------------------------------------------------------ limb QA (tools/law_build.mjs "Limb QA")
+// The arms are drawn as an upper-arm cylinder from the shoulder along d0 (length UPPER), an elbow ball at
+// shoulder + d0 * UPPER, a forearm from the elbow along d1 and a hand at its end. These checks work in the upper-body
+// space (above the hip, before lean/twist), exactly as ArmView and the torso mesh draw them:
+//   detached  the elbow or the hand is off the end of its segment (|d0| or |d1| != 1: a gap between the pieces)
+//   arms      the left and right arms pass through each other (capsule distance < the radii sum)
+//   torso     a forearm or a hand is inside the torso block (deeper than 3 cm past the arm's own radius)
+//   head      a hand or a forearm is inside the head
+//   set       (with `blockers`) a forearm or a hand inside a set piece (the bench, a rail, a table): the arm vanishes
+//             into the wood and the hand pokes out (it read as a detached forearm at a judge's bench)
+export type LimbIssue = { kind: "detached" | "arms" | "torso" | "head" | "set"; side?: "L" | "R"; depth: number; what?: string };
+const segDist = (p1: V3, q1: V3, p2: V3, q2: V3) => {
+  // closest distance between segments p1q1 and p2q2 (Ericson, Real-Time Collision Detection 5.1.9)
+  const d1 = [q1[0] - p1[0], q1[1] - p1[1], q1[2] - p1[2]], d2 = [q2[0] - p2[0], q2[1] - p2[1], q2[2] - p2[2]], r = [p1[0] - p2[0], p1[1] - p2[1], p1[2] - p2[2]];
+  const dt = (a: number[], b: number[]) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+  const a = dt(d1, d1), e = dt(d2, d2), f = dt(d2, r);
+  let s = 0, u = 0;
+  if (a <= 1e-9 && e <= 1e-9) return Math.sqrt(dt(r, r));
+  if (a <= 1e-9) { u = clamp(f / e); } else {
+    const c = dt(d1, r);
+    if (e <= 1e-9) { s = clamp(-c / a); } else {
+      const b = dt(d1, d2), den = a * e - b * b;
+      s = den > 1e-9 ? clamp((b * f - c * e) / den) : 0;
+      u = (b * s + f) / e;
+      if (u < 0) { u = 0; s = clamp(-c / a); } else if (u > 1) { u = 1; s = clamp((b - c) / a); }
+    }
+  }
+  const c1 = [p1[0] + d1[0] * s, p1[1] + d1[1] * s, p1[2] + d1[2] * s], c2 = [p2[0] + d2[0] * u, p2[1] + d2[1] * u, p2[2] + d2[2] * u];
+  return Math.hypot(c1[0] - c2[0], c1[1] - c2[1], c1[2] - c2[2]);
+};
+/** the drawn arm joints in upper-body space (scale 1): shoulder, the upper arm's drawn end, elbow ball, hand */
+export const armJoints = (st: FigState, side: "L" | "R") => {
+  const sx = side === "R" ? 1 : -1, [d0, d1] = side === "R" ? st.armR : st.armL;
+  const sh: V3 = [sx * SH[0], SH[1], 0];
+  const n0 = Math.hypot(...d0) || 1;
+  const upEnd: V3 = [sh[0] + (d0[0] / n0) * UPPER, sh[1] + (d0[1] / n0) * UPPER, sh[2] + (d0[2] / n0) * UPPER];
+  const el: V3 = [sh[0] + d0[0] * UPPER, sh[1] + d0[1] * UPPER, sh[2] + d0[2] * UPPER];
+  const hd: V3 = [el[0] + d1[0] * FORE, el[1] + d1[1] * FORE, el[2] + d1[2] * FORE];
+  return { sh, upEnd, el, hd, n0, n1: Math.hypot(...d1) };
+};
+export const figLimbs = (st: FigState, blockers: readonly { name: string; c: V3; h: V3 }[] = []): LimbIssue[] => {
+  if (st.spec.role === "juror") return [];
+  const out: LimbIssue[] = [];
+  const judge = st.spec.role === "judge";
+  const rU = judge ? 0.075 : 0.062, rF = judge ? 0.085 : 0.054;
+  const bw = st.spec.build === "broad" ? 1.14 : st.spec.build === "slim" ? 0.9 : 1;
+  const J = { L: armJoints(st, "L"), R: armJoints(st, "R") };
+  for (const side of ["L", "R"] as const) {
+    const j = J[side];
+    const gap = Math.max(UPPER * Math.abs(1 - j.n0), FORE * Math.abs(1 - j.n1));
+    if (gap > 0.02) out.push({ kind: "detached", side, depth: gap });
+  }
+  // the two arms: forearm vs forearm and forearm vs upper arm (shoulders are 0.5 m apart, upper vs upper never meets)
+  const pairs: [V3, V3, number, V3, V3, number][] = [
+    [J.L.el, J.L.hd, rF, J.R.el, J.R.hd, rF], [J.L.el, J.L.hd, rF, J.R.sh, J.R.el, rU], [J.R.el, J.R.hd, rF, J.L.sh, J.L.el, rU],
+  ];
+  let armDepth = 0;
+  for (const [a, b, ra, c, d, rc] of pairs) armDepth = Math.max(armDepth, ra + rc - 0.01 - segDist(a, b, c, d));
+  if (armDepth > 0) out.push({ kind: "arms", depth: armDepth });
+  // the torso: a tapered square block, y 0..0.6, half width r(y) * cos 45 * bw, depth 0.56 of that
+  const r0 = judge ? 0.3 : 0.23, r1 = judge ? 0.33 : 0.3;
+  const inTorso = (p: V3, rad: number) => {
+    if (p[1] < 0.02 || p[1] > 0.58) return 0;
+    const hx = (r0 + (r1 - r0) * (p[1] / 0.6)) * Math.SQRT1_2 * bw, hz = hx * 0.56;
+    return Math.min(hx - Math.abs(p[0]), hz - Math.abs(p[2])) - rad;
+  };
+  const head = headLocal(st, [0, HEAD_Y, 0]);
+  const inHead = (p: V3, rad: number) => Math.min(0.12 + rad - Math.abs(p[0] - head[0]), 0.14 + rad - Math.abs(p[1] - head[1]), 0.125 + rad - Math.abs(p[2] - head[2]));
+  for (const side of ["L", "R"] as const) {
+    const j = J[side];
+    let td = 0, hdp = 0;
+    for (let k = 0; k <= 6; k++) {
+      const u = k / 6;
+      const p: V3 = [j.el[0] + (j.hd[0] - j.el[0]) * u, j.el[1] + (j.hd[1] - j.el[1]) * u, j.el[2] + (j.hd[2] - j.el[2]) * u];
+      td = Math.max(td, inTorso(p, rF * 0.5));
+      hdp = Math.max(hdp, inHead(p, -0.02));
+    }
+    if (td > 0.03) out.push({ kind: "torso", side, depth: td });
+    if (hdp > 0) out.push({ kind: "head", side, depth: hdp });
+    for (const b of blockers) {
+      let d = 0;
+      for (let k = 0; k <= 8; k++) {
+        const u = k / 8;
+        const q = upperWorld(st, [j.el[0] + (j.hd[0] - j.el[0]) * u, j.el[1] + (j.hd[1] - j.el[1]) * u, j.el[2] + (j.hd[2] - j.el[2]) * u]);
+        d = Math.max(d, Math.min(b.h[0] - Math.abs(q[0] - b.c[0]), b.h[1] - Math.abs(q[1] - b.c[1]), b.h[2] - Math.abs(q[2] - b.c[2])) + 0.02 * st.s);
+      }
+      if (d > 0.03 * st.s) out.push({ kind: "set", side, depth: d, what: b.name });
+    }
+  }
+  return out;
 };
 
 // ------------------------------------------------------------------ the face (drawn on a transparent canvas)
