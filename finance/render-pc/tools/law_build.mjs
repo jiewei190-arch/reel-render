@@ -18,6 +18,33 @@ import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
 import { runFraming } from "./framing_kits.mjs";
 import { polishQA } from "./polish_qa.mjs";
+import { frame0Opener } from "./frame0_hero.mjs";
+
+// LIMB QA (KIT_LAW3D.md "Limb QA"): every figure's arms each frame (src/law/cast.tsx figLimbs): a forearm or hand
+// detached from its elbow, the two arms through each other, an arm through the torso or the head, or a forearm / hand
+// inside a set piece or a prop. A run of more than LIMB_FRAMES output frames is a clip (a 1-3 frame touch during a fast
+// gesture is tolerated).
+export const LIMB_FRAMES = 3;
+const LIMB_WHAT = { detached: "detached from the arm (a gap at the elbow or wrist)", arms: "through the other arm", torso: "through the torso", head: "through the head", set: "inside" };
+export const limbQA = (C, m, step = 1) => {
+  const runs = new Map(), out = [];
+  const close = (k, r) => { if (r.n * step > LIMB_FRAMES) out.push({ k, ...r }); };
+  for (let f = 0; f < C.duration; f += step) {
+    const t = f / 30, sid = C.shotAt(t).id, blk = C.qa(t).props;
+    const seen = new Set();
+    for (const st of C.figsAt(t)) for (const is of m.figLimbs(st, blk)) {
+      const k = `${sid} ${st.id} ${is.side ? (is.side === "R" ? "right " : "left ") : ""}${is.kind === "arms" ? "arms" : is.kind === "detached" ? "forearm" : "arm"} ${LIMB_WHAT[is.kind]}${is.what ? ` ${is.what}` : ""}`;
+      if (seen.has(k)) continue;
+      seen.add(k);
+      const r = runs.get(k);
+      if (r && r.last === f - step) { r.n++; r.last = f; r.depth = Math.max(r.depth, is.depth); }
+      else { if (r) close(k, r); runs.set(k, { n: 1, first: f, last: f, depth: is.depth }); }
+    }
+  }
+  for (const [k, r] of runs) close(k, r);
+  out.sort((a, b) => a.first - b.first);
+  return out.map((r) => `LIMB ${r.k}: ${r.n * step} frames from ${(r.first / 30).toFixed(2)} s (frame ${r.first}), up to ${(r.depth * 100).toFixed(0)} cm`);
+};
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -170,11 +197,25 @@ export const main = async (argv) => {
   const lenOk = fmt === "short" ? dur >= 30 && dur <= 55 : dur >= 300 && dur <= 480;
   // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
   // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
-  const KF = runFraming("law3d", C, m, recipe);
+  // the frame-0 opener (tools/frame0_hero.mjs): a hero prop close-up or a giant stake board; never the back of a head
+  const shot0 = C.shotAt(0);
+  const tg0 = typeof shot0.spec.cam.target === "string" ? shot0.spec.cam.target.split(".")[0].split(":")[0] : "";
+  const OP = frame0Opener({
+    W: L.W, H: L.H, cam: cam0, shot: shot0.id, target: tg0, kit: "law3d", heroKinds: m.LAW_HERO_KINDS, faced: true,
+    giantFix: `put the stake on a "counter" action at 0 instead (a law3d counter is ${((L.board.w / L.W) * 100).toFixed(0)} % of the width; an exhibit tag is not a stake board)`,
+    heroes: shot0.props.filter((p) => m.isLawHero(p.spec.kit) && 0 >= p.a && 0 < p.b && p.show(0) >= 0.5).map((p) => ({ id: p.key, kind: p.spec.kit, box: m.heroBox(p.spec.kit, p.place(0)) })),
+    figures: C.figsAt(0).filter((st) => st.spec.role !== "juror").map((st) => { const bx = m.figBoxes(st); const hd = bx.find((b) => b.name.endsWith(".head")), bd = bx.find((b) => b.name.endsWith(".body")); const top = hd.c[1] + hd.h[1], bot = bd.c[1] - bd.h[1]; return { id: st.id, what: `${st.spec.role}`, p: [st.x, st.y, st.z], yaw: st.yaw, box: { c: [hd.c[0], (top + bot) / 2, hd.c[2]], h: [0.26 * st.s, (top - bot) / 2, 0.16 * st.s] } }; }),
+    cards: C.devicesAt(0).filter((d) => d.u > 0 && ["counter", "exhibit", "verdict", "caseCard"].includes(d.kind)).map((d) => ({ name: d.title ?? d.label ?? d.text ?? d.kind, text: d.kind === "counter" ? `${d.value ?? ""}` : d.kind === "caseCard" ? `${d.title ?? ""} ${d.year ?? ""}` : d.text ?? "", w: d.w, h: d.h, x: d.x, y: d.y, u: d.u, t0: 0 })),
+    example: `{ "id": "hero", "kit": "statue", "species": "rooster", "at": "benchTop:0,0,0.3", "spin": 10 }`,
+    giantExample: `"actions": [{ "do": "counter", "at": 0, "title": "the claim", "value": "$54M" }]`,
+  });
+  const KF = runFraming("law3d", C, m, recipe, false, 1, OP.ok ? { ok: true, why: OP.why } : null);
+  const LQ = limbQA(C, m);
   const gate = [
-    ["frame 0 is close: a subject covers >= 50 % of the frame height", best.k >= 0.5, `${best.name} ${(best.k * 100).toFixed(0)} %`, true],
+    ["frame 0 is close: a subject covers >= 50 % of the frame height (or the hero-prop / giant-board opener below)", best.k >= 0.5 || OP.ok, `${best.name} ${(best.k * 100).toFixed(0)} %${OP.ok ? `; opener: ${OP.why}` : ""}`, true],
+    ...OP.rows,
     ["hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *gold* word", C.hookUntil > 0 && hookWords <= 5 && hb.lines.length <= 2 && hb.textW <= L.hookMaxW && gold.length === 1, `"${hookText}" (${hookWords} words, ${hb.lines.length} line(s), widest ~${hb.textW.toFixed(0)} px, gold: ${gold.join(" ") || "none"}, until ${C.hookUntil.toFixed(2)} s)`, true],
-    ["who + what at frame 0 (a person >= 15 % and a prop in view)", whoAt0.length > 0 && whatAt0.length > 0, `who: ${whoAt0.map((c) => c.name).join(", ") || "none"}; what: ${whatAt0.map((c) => c.name).join(", ") || "none"}`, true],
+    ["who + what at frame 0 (a person >= 15 % and a prop in view, or the hero-prop / giant-board opener)", (whoAt0.length > 0 && whatAt0.length > 0) || OP.ok, `who: ${whoAt0.map((c) => c.name).join(", ") || "none"}; what: ${whatAt0.map((c) => c.name).join(", ") || "none"}${OP.ok ? `; opener: ${OP.why}` : ""}`, true],
     ["the stake (a number, $ or a question) on screen by 0.5 s", stakeAt !== null, stakeAt === null ? "none by 0.5 s" : `at ${stakeAt.toFixed(2)} s`, true],
     ["first spoken word by 0.2 s", words[0].t <= 0.2, `${words[0].w} at ${words[0].t.toFixed(2)} s`, true],
     ["a sound punch at 0.00 s", sfx0.some((c) => PUNCH.test(c.sfx)), sfx0.map((c) => c.sfx).join(", ") || "none", true],
@@ -192,6 +233,7 @@ export const main = async (argv) => {
     ["story devices: a case-file card, an exhibit and a verdict", ["caseCard", "exhibit", "verdict"].every((k) => allActs.includes(k)), [...new Set(allActs)].join(", ") || "none", false],
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
     [fmt === "short" ? "length 30-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
+    [`limbs: no forearm detached, no arm through the other arm, the torso, the head, a set piece or a prop for > ${LIMB_FRAMES} frames`, LQ.length === 0, LQ.length ? `${LQ.length} (see Limb QA)` : "none", true],
   ];
   gate.push(...KF.rows);
   // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face
@@ -203,8 +245,11 @@ export const main = async (argv) => {
     `Composition: \`${pascal}\` in \`src/index.law.ts\` (${L.W}x${L.H}, 30 fps, no motion blur). Kit law3d, format ${fmt}. ${C.shots.length} shots, ${dur.toFixed(2)} s.`, "",
     `## Clip QA: ${C.duration} frames x 4 sub-frames, ${hits.size} clip(s)`, "",
     ...(qaLines.length ? qaLines.map((l) => `- ${l}`) : ["- none: no prop or set piece enters a figure's body or head, no two people overlap, nobody sinks below the floor."]), "",
+    `## Limb QA (every frame): ${LQ.length} run(s) over ${LIMB_FRAMES} frames`, "",
+    ...(LQ.length ? LQ.map((l) => `- ${l}`) : ["- none: every forearm stays on its elbow, no arm passes through the other arm, the torso, the head, a set piece or a prop."]), "",
     ...KF.fr.md,
     ...PQ.md,
+    ...OP.md,
     `## Frame-0 gate and kit rules`, "", "| check | result | detail |", "|---|---|---|",
     ...gate.map(([k, ok, d, hard]) => `| ${k} | ${ok ? "PASS" : hard ? "**FAIL**" : "warn"} | ${d} |`), "",
     `Frame-0 coverage by subject: ${covs.slice(0, 5).map((c) => `${c.name} ${(c.k * 100).toFixed(0)} %`).join(", ")}.`, "",
@@ -212,6 +257,8 @@ export const main = async (argv) => {
   wf(join(dir, "RECIPE_QA.md"), rep.join("\n"));
   console.log(`clip QA: ${hits.size} clip(s)`);
   for (const l of qaLines.slice(0, 40)) console.log("  " + l);
+  for (const l of LQ.slice(0, 20)) console.log("  " + l);
+  for (const l of OP.lines) console.log("  " + l);
   for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
   if (!check) console.log(`report: ${join(dir, "RECIPE_QA.md")}`);
   return hits.size || hardFail ? 1 : 0;
@@ -326,6 +373,8 @@ const longForm = async ({ m, C, recipe, words, dur, slug, pascal, dir, check, qa
   const gateS = (Date.now() - Tg) / 1000;
   const KFL = runFraming("law3d", C, m, recipe, true, qaSample);
   gate.push(...KFL.rows);
+  const LQ = limbQA(C, m, qaSample);
+  gate.push([`limbs: no forearm detached, no arm through the other arm, the torso, the head, a set piece or a prop for > ${LIMB_FRAMES} frames`, LQ.length === 0, LQ.length ? `${LQ.length} run(s): ${LQ.slice(0, 3).join("; ")}` : "none", true]);
   const PQ = polishQA({ kit: "law3d", C, m, recipe, words, landscape: true, step: qaSample });
   gate.push(...PQ.rows);
   const chTxt = chaptersTxt(C.chapters);
@@ -338,6 +387,7 @@ const longForm = async ({ m, C, recipe, words, dur, slug, pascal, dir, check, qa
   }
   console.log(`clip QA: ${hits.size} clip(s) over ${Math.ceil(C.duration / qaSample)} sampled frames (every ${qaSample}) in ${qaS.toFixed(2)} s`);
   for (const l of qaLines.slice(0, 40)) console.log("  " + l);
+  for (const l of LQ.slice(0, 20)) console.log("  " + l);
   for (const [k, ok, d, hard] of gate) console.log(`${ok ? "PASS" : hard ? "FAIL" : "warn"}  ${k}: ${d}`);
   if (overlaps.size) console.log(`warn  cards overlap: ${[...overlaps].join(", ")}`);
   console.log(`chapters:\n${chTxt.trimEnd()}`);

@@ -72,10 +72,11 @@ export const RECIPE: LawRecipe = {
    "jury": false,
    "cam": {
     "preset": "hookZoom",
-    "target": "pearson.face",
-    "dist": 1.7,
+    "target": "plaintiff:0.22,1.42,0.3",
+    "dist": 2.1,
     "h": 0.05,
-    "az": -8
+    "az": 4,
+    "face": 0.6
    },
    "actors": [
     {
@@ -95,14 +96,20 @@ export const RECIPE: LawRecipe = {
    "props": [
     {
      "id": "pants",
-     "kit": "pants",
-     "at": "plaintiff:0.3,1.12,0.3",
-     "s": 0.5,
-     "yaw": -15,
-     "motion": "float"
+     "kit": "trousers",
+     "label": "EXHIBIT A",
+     "lines": [
+      "PEARSON v. CHUNG",
+      "ONE PAIR, GREY"
+     ],
+     "color": "#7d8494",
+     "at": "plaintiff:0.6,1.0,0.5",
+     "scale": 0.62,
+     "yaw": 12,
+     "spin": 8
     }
    ],
-   "note": "hook: the plaintiff points at the pants, $54 MILLION FOR PANTS"
+   "note": "hook: opens on the hero prop (the trousers on a hanger, EXHIBIT A tag) close-up, the plaintiff behind pointing at them; $54 MILLION FOR PANTS"
   },
   {
    "at": "dry",
@@ -801,10 +808,11 @@ export const RECIPE: LawRecipe = {
    "jury": false,
    "cam": {
     "preset": "hookZoom",
-    "target": "pearson.face",
-    "dist": 1.7,
+    "target": "plaintiff:0.22,1.42,0.3",
+    "dist": 2.1,
     "h": 0.05,
-    "az": -8
+    "az": 4,
+    "face": 0.6
    },
    "actors": [
     {
@@ -824,11 +832,17 @@ export const RECIPE: LawRecipe = {
    "props": [
     {
      "id": "pants",
-     "kit": "pants",
-     "at": "plaintiff:0.3,1.12,0.3",
-     "s": 0.5,
-     "yaw": -15,
-     "motion": "float"
+     "kit": "trousers",
+     "label": "EXHIBIT A",
+     "lines": [
+      "PEARSON v. CHUNG",
+      "ONE PAIR, GREY"
+     ],
+     "color": "#7d8494",
+     "at": "plaintiff:0.6,1.0,0.5",
+     "scale": 0.62,
+     "yaw": 12,
+     "spin": 8
     }
    ]
   }

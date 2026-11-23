@@ -5,7 +5,8 @@ export { hookLines, hookBox } from "../src/law/hud";
 export { LF } from "../src/longform/kit";
 export { spokenAnchor, ANCHOR_LOOKBACK } from "../src/longform/polish";
 export { layoutOf, LAYOUTS } from "../src/law/layout";
-export { KIT_IDS, KIT_BOX } from "../src/law/objects";
+export { KIT_IDS, KIT_BOX, isLawHero, heroBox } from "../src/law/objects";
+export { LAW_HERO_KINDS } from "../src/law/hero";
 export { LAW_SET_IDS } from "../src/law/sets";
 
 // ------------------------------------------------------------------ clip adapter (tools/clip_short_kit.mjs)
@@ -15,6 +16,7 @@ export { LAW_SET_IDS } from "../src/law/sets";
 import { compileLaw as compileLawK } from "../src/law/compile";
 import { hookBox as hookBoxK } from "../src/law/hud";
 import { LAYOUTS as LAYOUTS_K } from "../src/law/layout";
+import { LAW_HERO_BOX as LAW_HERO_BOX_K, LAW_HERO_KINDS as LAW_HERO_KINDS_K } from "../src/law/hero";
 import type { At, LawAction, LawFx, LawProp, LawRecipe, LawShot, Place } from "../src/law/types";
 import type { Word } from "../src/fin/recipe/types";
 
@@ -88,9 +90,15 @@ const placeOff = (pl: Place, o: [number, number, number]): Place => {
   return `${name}:${r(b[0] + o[0])},${r(b[1] + o[1])},${r(b[2] + o[2])}`;
 };
 const HOOK_PROPS: [LawProp["kit"], number][] = [["pants", 0.5], ["money", 1.2], ["photo", 1.4], ["gavel", 1.0], ["paper", 0.8], ["folder", 0.7], ["newspaper", 0.6]];
+/** the hero prop that stands for a plain kit prop of the source (the frame-0 opener needs a HERO prop close-up) */
+const HERO_FOR: Partial<Record<LawProp["kit"], LawProp["kit"]>> = { pants: "trousers", money: "cash", gavel: "bigGavel", paper: "contract", folder: "contract", photo: "frame", newspaper: "contract" };
+const isHeroK = (k: string) => (LAW_HERO_KINDS_K as string[]).includes(k);
 
-/** the fresh frame-0 shot: a hookZoom on the segment's main person (smug, shocked at 0.45 s, with a shake), a small prop
- *  of the case floating by them (who + what), the stake on a counter when the hook has no number, until hookEnd */
+/** the fresh frame-0 shot, passing the law3d frame-0 gate and the opener rules (tools/frame0_hero.mjs): the story's HERO
+ *  PROP close-up in front of the segment's main person (the first hero prop of the segment, else of the source recipe;
+ *  with none, the hero that stands for its main plain prop: pants -> trousers, money -> cash ...), the person behind it
+ *  facing the lens (smug, shocked at 0.45 s, with a shake), the stake on an exhibit tag when the hook has no number,
+ *  until hookEnd */
 const hookShot = ({ recipe, first, src, hookText: ht, stake, set, hookEnd }: { recipe: LawRecipe; first: LawShot; src: LawShot; hookText: string; stake: string | null; set?: string; hookEnd: number }): LawShot => {
   // a first source shot with a slam/whip landing before the hook cut: land it just after the cut instead
   if (isNum(first.cam?.hit) && first.cam.hit < hookEnd) first.cam.hit = Math.round((hookEnd + 0.12) * 1000) / 1000;
@@ -109,20 +117,33 @@ const hookShot = ({ recipe, first, src, hookText: ht, stake, set, hookEnd }: { r
   const at: Place = act ? act.at : "plaintiff";
   const sit = !!act?.sit;
   const kits = new Set(recipe.shots.slice(i0).flatMap((s) => (s.props ?? []).map((p) => p.kit)));
-  const [kit, sc] = HOOK_PROPS.find(([k]) => kits.has(k)) ?? HOOK_PROPS[1];
-  const off: [number, number, number] = sit ? [0.32, 0.78, 0.34] : [0.3, 1.12, 0.3];
+  const heroOf = (ps?: LawProp[]) => (ps ?? []).find((p) => isHeroK(p.kit));
+  const srcHero = recipe.shots.slice(i0).map((s) => heroOf(s.props)).find(Boolean) ?? recipe.shots.map((s) => heroOf(s.props)).find(Boolean) ?? heroOf(recipe.props);
+  const [kit] = HOOK_PROPS.find(([k]) => kits.has(k)) ?? HOOK_PROPS[1];
+  const hero: LawProp = srcHero
+    ? { id: "hookProp", kit: srcHero.kit, label: srcHero.label, lines: srcHero.lines, color: srcHero.color, species: srcHero.species, variant: srcHero.variant, hair: srcHero.hair, bandage: srcHero.bandage, sale: srcHero.sale, photo: srcHero.photo, at: "" }
+    : { id: "hookProp", kit: HERO_FOR[kit] ?? "cash", at: "" };
+  for (const k of Object.keys(hero) as (keyof LawProp)[]) if (hero[k] === undefined) delete hero[k];
+  // the reference-Short layout (KIT_LAW3D.md 5a): the hero floats on the person's right (where the pointing arm
+  // reaches), a little toward the lens, its top level with the head; the lens aims between them, so the face sits
+  // below the hook card and the prop fills >= 35 % of the height
+  const SC = 0.62;
+  hero.scale = SC;
+  const tall = (LAW_HERO_BOX_K[hero.kit as keyof typeof LAW_HERO_BOX_K]?.h[1] ?? 0.4) * 2 * SC;
+  hero.at = placeOff(at, [0.6, (sit ? 1.32 : 1.79) - tall, 0.5]);
+  hero.yaw = 12; hero.spin = 8;
   const hasStake = /[\d$?]/.test(ht.replace(/\*/g, ""));
   const shot: LawShot = {
     at: 0, set: shotSet as LawShot["set"], jury: hit?.s.jury ?? false,
-    cam: { preset: "hookZoom", target: `${id}.face`, dist: 1.7, h: 0.05, az: -8 },
+    cam: { preset: "hookZoom", target: placeOff(at, [0.22, sit ? 0.98 : 1.42, 0.3]), dist: 2.1, h: 0.05, az: 4, face: 0.6 },
     actors: [{ id, pose: sit ? "talk" : "point", face: "smug", at, sit: sit || undefined, pointAt: sit ? undefined : "hookProp", then: [{ at: 0.45, face: "shocked" }] }],
-    props: [{ id: "hookProp", kit, at: placeOff(at, off), s: sc, yaw: -15, motion: "float" }],
+    props: [hero],
     fx: [{ fx: "shake", at: 0.45, gain: 0.6 }],
     caption: "off",
     note: `clip hook: ${ht.replace(/\*/g, "")}${stake ? ` / ${stake}` : ""}`,
   };
   // the stake on an exhibit tag under the hook card; the face sits a little lower so the tag never covers it
-  if (stake && !hasStake) { shot.actions = [{ do: "exhibit", at: 0, until: hookEnd, label: "AT STAKE", text: stake }]; shot.cam.face = 0.52; shot.cam.dist = 1.7; }
+  if (stake && !hasStake) shot.actions = [{ do: "exhibit", at: 0, until: hookEnd, label: "AT STAKE", text: stake, on: "hookProp" }];
   if (shot.actors![0].sit === undefined) delete shot.actors![0].sit;
   if (shot.actors![0].pointAt === undefined) delete shot.actors![0].pointAt;
   return shot;

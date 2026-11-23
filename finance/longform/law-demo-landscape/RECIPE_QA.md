@@ -2,7 +2,7 @@
 
 Composition: `LawDemoLandscapeRecipe` in `src/index.law.ts` (1920x1080, 30 fps, plain composition: no motion blur). Kit law3d, format landscape. 16 shots, 35.00 s (0.58 min), 100 words, 3 chapters.
 
-## Clip QA: 350 of 1050 frames (every 3th frame), 0 clip(s), 0.0 s
+## Clip QA: 1050 of 1050 frames (every frame), 0 clip(s), 0.0 s
 
 - none: no prop or set piece enters a figure, no two people overlap, nobody sinks below the floor.
 
@@ -26,8 +26,10 @@ Composition: `LawDemoLandscapeRecipe` in `src/index.law.ts` (1920x1080, 30 fps, 
 | length 8-12 min | warn | 0.58 min |
 | framing R1: no board, card or prop over a head (head box incl. antenna/hair/hat) | **FAIL** | 1 clip(s) (see Framing QA) |
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | PASS | all in frame |
-| framing R3: every landed board / card inside the frame (3 % margin) | **FAIL** | 2 (see Framing QA) |
+| framing R3: every landed board / card inside the frame (3 % margin) | **FAIL** | 3 (see Framing QA) |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | **FAIL** | 0 contrast, 3 size (see Framing QA) |
+| framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | PASS | clear |
+| limbs: no forearm detached, no arm through the other arm, the torso, the head, a set piece or a prop for > 3 frames | PASS | none |
 | polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point) | PASS | 5 counter(s) land and hold |
 | polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped | PASS | 20 line(s) fit |
 | polish P3: chapter cards fully on screen at rest, one line, in their own region (no board / label over them) | PASS | 3 card(s) clear |
@@ -35,18 +37,19 @@ Composition: `LawDemoLandscapeRecipe` in `src/index.law.ts` (1920x1080, 30 fps, 
 
 Pacing: 42 visual-change marks, longest gap 4.06 s, mean shot 2.19 s, 11 beat marks.
 
-## Framing QA (screen space, 346 frames, 0.02 s): 1 clip(s), 5 fail(s)
+## Framing QA (screen space, 1039 frames, 0.08 s): 1 clip(s), 6 fail(s)
 
-Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 1, R2 subject/edge 0, R3 board past edge 2, R4 contrast 0, R4 text size 3, R5 frame 0 0.
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 1, R2 subject/edge 0, R3 board past edge 3, R4 contrast 0, R4 text size 3, R5 frame 0 0, R6 caption on face/neck 0.
 
-- CLIP S07 prop pants is on mom's head on screen (behind the head; head box incl. antennae/hair; worst at 12.30 s): move it down 0.16 m (add -0.00,-0.16,+0.01 to its at) or 0.21 m to screen-right of mom (add +0.21,-0.00,+0.00 to its at), or move mom clear of it.
-- FAIL S05 board folder 'PEARSON v. CHUNG' crosses the bottom frame edge (x 498-1335, y 194-1034; keep 58 px clear; worst at 8.90 s): move it 0.02 m into frame (add -0.01,+0.01,-0.02 to its at), or pull the camera back (cam.dist +0.5)
-- FAIL S16 board plate 'THE COURT' crosses the left frame edge (x -132-513, y 724-898; keep 58 px clear; worst at 34.90 s): move it 0.14 m into frame (add +0.14,-0.00,-0.02 to its at), or pull the camera back (cam.dist +0.5)
+- CLIP S07 prop pants is on mom's head on screen (behind the head; head box incl. antennae/hair; worst at 12.10 s): move it down 0.17 m (add -0.00,-0.17,+0.01 to its at) or 0.23 m to screen-right of mom (add +0.23,-0.00,+0.01 to its at), or move mom clear of it.
+- FAIL S05 board folder 'PEARSON v. CHUNG' crosses the bottom frame edge (x 498-1336, y 194-1035; keep 58 px clear; worst at 8.97 s): move it 0.02 m into frame (add -0.01,+0.01,-0.02 to its at), or pull the camera back (cam.dist +0.5)
+- FAIL S05 board ticket 'ALTERATION TICKET' crosses the bottom frame edge (x 1201-1770, y 341-1027; keep 58 px clear; worst at 8.97 s): move it 0.01 m into frame (add -0.00,+0.01,-0.01 to its at), or pull the camera back (cam.dist +0.5)
+- FAIL S16 board plate 'THE COURT' crosses the left frame edge (x -135-513, y 725-900; keep 58 px clear; worst at 34.97 s): move it 0.14 m into frame (add +0.14,-0.00,-0.02 to its at), or pull the camera back (cam.dist +0.5)
 - FAIL S05 board ticket 'ALTERATION TICKET': main line 'ALTERATION TICKET' is 40.8 px (font size; cap 29 px; median while on screen, e.g. at 8.50 s; needs 42 px to read on a phone): scale it up x1.08 ("s"), move the camera closer (cam.dist x0.92), or shorten the line 'ALTERATION TICKET' (long lines shrink to fit)
-- FAIL S06 board hanger 'CLAIM TICKET': main line 'CLAIM TICKET' is 17.7 px (font size; cap 13 px; median while on screen, e.g. at 9.70 s; needs 42 px to read on a phone): scale it up x2.49 ("s"), move the camera much closer (cam.dist x0.40), or shorten the line 'CLAIM TICKET' (long lines shrink to fit)
-- FAIL S11 board sign1 'SATISFACTION GUARANTEED': main line 'SATISFACTION' is 41.0 px (font size; cap 29 px; median while on screen, e.g. at 21.90 s; needs 42 px to read on a phone): scale it up x1.08 ("s"), move the camera closer (cam.dist x0.93), or shorten the line 'SATISFACTION' (long lines shrink to fit)
+- FAIL S06 board hanger 'CLAIM TICKET': main line 'CLAIM TICKET' is 16.8 px (font size; cap 12 px; median while on screen, e.g. at 9.77 s; needs 42 px to read on a phone): scale it up x2.62 ("s"), move the camera much closer (cam.dist x0.38), or shorten the line 'CLAIM TICKET' (long lines shrink to fit)
+- FAIL S11 board sign1 'SATISFACTION GUARANTEED': main line 'SATISFACTION' is 41.1 px (font size; cap 29 px; median while on screen, e.g. at 21.93 s; needs 42 px to read on a phone): scale it up x1.07 ("s"), move the camera closer (cam.dist x0.93), or shorten the line 'SATISFACTION' (long lines shrink to fit)
 
-## Polish QA (tools/polish_qa.mjs, 0.02 s): 0 fail(s)
+## Polish QA (tools/polish_qa.mjs, 0.08 s): 0 fail(s)
 
 P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFORM.md "Polish rules".
 

@@ -6,9 +6,13 @@ Composition: `LawDemo54MillionPantsRecipe` in `src/index.law.ts` (1080x1920, 30 
 
 - none: no prop or set piece enters a figure's body or head, no two people overlap, nobody sinks below the floor.
 
-## Framing QA (screen space, 1249 frames, 0.05 s): 2 clip(s), 12 fail(s)
+## Limb QA (every frame): 0 run(s) over 3 frames
 
-Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 2, R2 subject/edge 4, R3 board past edge 7, R4 contrast 0, R4 text size 1, R5 frame 0 0. Frame-0 face: pearson 352 px.
+- none: every forearm stays on its elbow, no arm passes through the other arm, the torso, the head, a set piece or a prop.
+
+## Framing QA (screen space, 1249 frames, 0.11 s): 2 clip(s), 14 fail(s)
+
+Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 2, R2 subject/edge 4, R3 board past edge 7, R4 contrast 0, R4 text size 1, R5 frame 0 0, R6 caption on face/neck 2.
 
 - CLIP S07 prop pants is on mom's head on screen (behind the head; head box incl. antennae/hair; worst at 12.10 s): move it down 0.16 m (add -0.00,-0.16,+0.01 to its at) or 0.22 m to screen-right of mom (add +0.22,-0.00,+0.01 to its at), or move mom clear of it.
 - CLIP S17 card counter S17.counter.1 'HE PAYS COURT COSTS' covers pearson's head on screen (head box incl. hair) at 36.63 s (card x 220-860, y 290-560; head x 286-783, y 534-987): devices are placed by the engine: point the exhibit at a target away from the face ("on"), or frame the person on the other side / lower
@@ -24,20 +28,31 @@ Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 2, R2 subject/edge 4, R3 b
 - FAIL S12 board n3 'PANTS CASE GOES TO TRIAL' crosses the right frame edge (x 822-1400, y 522-1243; keep 32 px clear; worst at 27.20 s): move it 0.38 m into frame (add -0.37,+0.00,+0.07 to its at), or pull the camera back (cam.dist +0.5)
 - FAIL S17 board pplate 'PLAINTIFF' crosses the right frame edge (x 771-1210, y 1411-1546; keep 32 px clear; worst at 37.93 s): move it 0.19 m into frame (add -0.17,+0.00,+0.09 to its at), or pull the camera back (cam.dist +0.5)
 - FAIL S06 board hanger 'CLAIM TICKET': main line 'CLAIM TICKET' is 26.7 px (font size; cap 19 px; median while on screen, e.g. at 9.77 s; needs 42 px to read on a phone): scale it up x1.65 ("s"), move the camera closer (cam.dist x0.60), or shorten the line 'CLAIM TICKET' (long lines shrink to fit)
+- FAIL S08 caption 'MY PANTS' covers pearson's chin / neck (worst at 14.93 s: caption line 'MY PANTS' x 311-769, y 1299-1401; pearson head-to-neck box y 393-1497, 46896 px² covered). Fix: put pearson higher in frame: lift it 210 px (cam.face 0.44 -> 0.33, or aim cam.target lower on the body; its head keeps >= 168 px below the top all shot), or pull the camera back (cam.dist x1.53)
+- FAIL S10 caption 'HE SAID NO' covers pearson's chin / neck (worst at 18.53 s: caption line 'HE SAID NO' x 289-791, y 1299-1401; pearson head-to-neck box y 511-1411, 48072 px² covered). Fix: put pearson higher in frame: lift it 124 px (cam.face 0.44 -> 0.38, or aim cam.target lower on the body; its head keeps >= 372 px below the top all shot), or pull the camera back (cam.dist x1.33)
 
-## Polish QA (tools/polish_qa.mjs, 0.05 s): 0 fail(s)
+## Polish QA (tools/polish_qa.mjs, 0.09 s): 0 fail(s)
 
 P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFORM.md "Polish rules".
 
 - none: every counter lands on its target by its anchor word and holds, every line fits its box, chapter cards sit clear, no set piece hides a featured face.
 
+## Frame-0 opener (tools/frame0_hero.mjs): 0 fail(s)
+
+- none: hero prop pants (trousers) 43 % of the height; pearson faces the lens (1° off).
+
+Hero props in S01: pants (trousers) 43 %. Number cards at 0.00 s: none.
+
 ## Frame-0 gate and kit rules
 
 | check | result | detail |
 |---|---|---|
-| frame 0 is close: a subject covers >= 50 % of the frame height | PASS | pearson 63 % |
+| frame 0 is close: a subject covers >= 50 % of the frame height (or the hero-prop / giant-board opener below) | PASS | pearson 51 %; opener: hero prop pants (trousers) 43 % of the height |
+| frame 0: no figure seen from behind (the back of a head is not a subject) | PASS | pearson 1° off its facing, with hero prop pants in frame |
+| frame 0 opens on a hero prop close-up (>= 35 % of the height) or a giant stake board (>= 50 % of the width) | PASS | hero prop pants (trousers) 43 % of the height |
+| frame 0: every number card on screen is fully opaque (no fade-in at 0.00 s) | PASS | no number card at frame 0 |
 | hook at frame 0: <= 5 words, <= 2 lines that fit, exactly one *gold* word | PASS | "*$54 MILLION* FOR PANTS" (4 words, 2 line(s), widest ~745 px, gold: *$54 MILLION*, until 4.36 s) |
-| who + what at frame 0 (a person >= 15 % and a prop in view) | PASS | who: pearson; what: pants |
+| who + what at frame 0 (a person >= 15 % and a prop in view, or the hero-prop / giant-board opener) | PASS | who: pearson; what: pants; opener: hero prop pants (trousers) 43 % of the height |
 | the stake (a number, $ or a question) on screen by 0.5 s | PASS | at 0.00 s |
 | first spoken word by 0.2 s | PASS | A at 0.00 s |
 | a sound punch at 0.00 s | PASS | impact |
@@ -53,15 +68,17 @@ P1 counters 0, P2 text-fit 0, P3 chapter cards 0, P4 occlusion 0. Rules: LONGFOR
 | tags and counters above the caption band | PASS | all above |
 | no static frames: the camera moves on every frame | PASS | moves on every frame |
 | story devices: a case-file card, an exhibit and a verdict | PASS | counter, exhibit, caseCard, gavel, verdict |
-| loop ending: the hook comes back and the last shot frames the first shot's subject | PASS | hook again at 40.14 s; last target "pearson.face" |
+| loop ending: the hook comes back and the last shot frames the first shot's subject | PASS | hook again at 40.14 s; last target "plaintiff:0.22,1.42,0.3" |
 | length 30-55 s | PASS | 42.00 s |
+| limbs: no forearm detached, no arm through the other arm, the torso, the head, a set piece or a prop for > 3 frames | PASS | none |
 | framing R1: no board, card or prop over a head (head box incl. antenna/hair/hat) | **FAIL** | 2 clip(s) (see Framing QA) |
 | framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge | **FAIL** | 4 (see Framing QA) |
 | framing R3: every landed board / card inside the frame (3 % margin) | **FAIL** | 7 (see Framing QA) |
 | framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size) | **FAIL** | 0 contrast, 1 size (see Framing QA) |
-| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | pearson face 352 px (needs 307) |
+| framing R5: frame-0 hook at full size and the subject's face a close shot (>= 16 % of the height) | PASS | face rule replaced by the opener: hero prop pants (trousers) 43 % of the height |
+| framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height) | **FAIL** | 2 (see Framing QA) |
 | polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point) | PASS | 6 counter(s) land and hold |
 | polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped | PASS | 26 line(s) fit |
 | polish P4: no set piece (chair, table, rack) over a featured face (>= 30 % for > 5 frames) | PASS | faces clear |
 
-Frame-0 coverage by subject: pearson 63 %, pants 39 %.
+Frame-0 coverage by subject: pearson 51 %, pants 42 %.

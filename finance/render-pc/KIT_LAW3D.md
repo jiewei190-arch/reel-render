@@ -108,7 +108,7 @@ The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
 | `gavel` | raises the gavel and strikes on every `gavel` action of the shot (the judge holds a gavel) | stern |
 | `present` | one hand out, offering something | neutral |
 | `cross` | arms crossed | stern |
-| `cry` | hands to the face, sobbing | crying |
+| `cry` | both hands in front of the face (IK), sobbing | crying |
 | `smug` | leans back, chin up, head tilted, arms crossed | smug |
 
 **Pose changes** blend with anticipation and overshoot over 0.34 s. Each change starts 2 frames before its word.
@@ -169,7 +169,78 @@ Every set keeps moving: dust in the beams, flickering practicals, breathing silh
 
 **Multi-shot props.** Recipe-level `props` with `from`/`until`/`sets` live across shots.
 
+**`spin` with no `motion`** turns any prop slowly on the spot from its first frame in the shot (its front faces `yaw`
+when the shot starts): the hero-prop showcase. `scale` is the same as `s`.
+
+**Held gavel.** A `gavel` prop that strikes in a shot with no judge figure is held by a robed forearm coming in from the
+judge's side (a gavel lifting on its own read as a detached forearm in a close-up).
+
 **No real marks.** No logos, seals, flags or real mastheads.
+
+## 5a. Hero props (src/law/hero.tsx): what the case is about, at frame 0
+
+A Court Of Weird Short that opens on a person and a text placard never shows the subject of the case: the AI editor
+scored those 5-5.5 ("the story's subject is never shown"). **Open on a hero prop**: a generic close-up prop that IS the
+case (the gold rooster statue of a disputed-ownership case, the hairy palm of a skin-graft case, the trousers of a pants
+suit). All are procedural, ORIGINAL low-poly designs in the courtroom look (flat-shaded pieces, wood / navy / gold, the
+gold with a warm glow), lit by the set's spotlight. Same fields as the biz3d / cyber3d hero props.
+
+```json
+{ "id": "rooster", "kit": "statue", "species": "rooster", "at": "benchTop:0,0,0.3", "scale": 0.6, "spin": 10 }
+```
+
+| field | meaning |
+|---|---|
+| `kit` | one of the kinds below |
+| `color` | the main colour (the statue's gold, the trousers, the car body, the house walls, the hand's skin ...) |
+| `label` | the text on the prop: **≤ 14 characters, ≤ 2 words, generic words only** ("GOLD ROOSTER", "EXHIBIT A", "FOR SALE", "WINNER"). A real brand name is a compile error (src/library/hero.ts `heroLabelError`). `""` = no text. A `contract` needs one (its headline) |
+| `lines` | paper / screen / tag body text (`contract`, `phone` messages, `evidenceBag` and `trousers` tag, `hand` tag): up to 7 lines of ≤ 40 characters. **Paper is never blank** (a generic text when left out) |
+| `species` | `statue`: `rooster` (default), `dog`, `cat`, `horse`, `eagle`. The default label is "GOLD <SPECIES>" |
+| `hair` | `hand`: hair growing **on the palm**, `true` or a density 0-1 |
+| `bandage` | `hand`: a bandage wrapped round the palm |
+| `sale` | `house`: the "for sale" sign on a post (its text is the label, default "FOR SALE") |
+| `steam` | `coffee`: steam rising (default `true`; `false` = a cold cup) |
+| `variant` | `toy`: `doll` (default) / `ball`; `food`: `burger` (default) / `fries` |
+| `photo` | `frame`: `person` (default), `house`, `pants`, `landscape`, `dog`, `car` |
+| `at`, `yaw`, `scale` (= `s`), `spin`, `motion`, `hit` | as for every prop. **Hero scale:** each prop is 0.6-1.3 m (2-4x life size) so `closeUp` / `hookZoom` fill the frame at 1.5-2.1 m; `"scale": 0.3-0.4` is about life size on a counsel table or the bench |
+
+| kit | default | what it is | still |
+|---|---|---|---|
+| `statue` | gold, "GOLD ROOSTER" | a gold animal on a wood plinth with a gold name plate; `species` rooster / dog / cat / horse / eagle | [rooster](docs/hero_props/law/hero-statue.jpg), [dog](docs/hero_props/law/hero-statue-dog.jpg), [cat](docs/hero_props/law/hero-statue-cat.jpg), [horse](docs/hero_props/law/hero-statue-horse.jpg), [eagle](docs/hero_props/law/hero-statue-eagle.jpg) |
+| `hand` | skin, no label | an open palm toward the lens, fingers up, navy sleeve, white cuff; `hair` on the palm, `bandage`; a label hangs as a tag from the cuff | [hand](docs/hero_props/law/hero-hand.jpg), [hairy palm](docs/hero_props/law/hero-hand-hair.jpg), [bandaged](docs/hero_props/law/hero-hand-bandage.jpg) |
+| `trousers` | `#3c414c` "EXHIBIT A" | trousers on a wooden hanger with a red EVIDENCE tag (the label, `lines` under it) | [hero-trousers](docs/hero_props/law/hero-trousers.jpg) |
+| `coffee` | `#8A5A35` lid, "HOT" | a takeaway cup, lid, kraft sleeve with the label, steam rising | [hero-coffee](docs/hero_props/law/hero-coffee.jpg) |
+| `house` | `#E9DCC0` "FOR SALE" | a small model house on a lawn (gable roof, lit windows, chimney); `sale` adds the sign | [house](docs/hero_props/law/hero-house.jpg), [for sale](docs/hero_props/law/hero-house-sale.jpg) |
+| `car` | `#2F4A7A` "EXHIBIT" | a generic four-door sedan in side view; the label on its front and back plates (yaw 25-40 shows one) | [hero-car](docs/hero_props/law/hero-car.jpg) |
+| `phone` | `#1A2236` "NEW MESSAGE" | a smartphone: the label on a gold card on the lit screen, `lines` as message bubbles | [hero-phone](docs/hero_props/law/hero-phone.jpg) |
+| `contract` | paper, "CONTRACT" | a contract page: gold accent bar, the headline, body `lines`, signature line, a gold foil sticker (no real seal), a pen | [hero-contract](docs/hero_props/law/hero-contract.jpg) |
+| `cash` | `#9DB88E` "CASH" | five banded stacks of generic bills, the label on the gold bands | [hero-cash](docs/hero_props/law/hero-cash.jpg) |
+| `bigGavel` | wood, no label | a gavel close-up: the gavel resting across its sound block (label = a plate on the block) | [hero-bigGavel](docs/hero_props/law/hero-bigGavel.jpg) |
+| `evidenceBag` | clear, "ITEM 1" | a clear evidence bag, red seal strip, a white tag: EVIDENCE, the label, `lines` | [hero-evidenceBag](docs/hero_props/law/hero-evidenceBag.jpg) |
+| `frame` | gold, no label | a gold picture frame on a stand with a drawn `photo`; the label is its plate | [hero-frame](docs/hero_props/law/hero-frame.jpg) |
+| `trophy` | gold, "WINNER" | a gold cup trophy on a wood plinth, the label on its plate | [hero-trophy](docs/hero_props/law/hero-trophy.jpg) |
+| `toy` | `#C8463A`, no label | a rag doll (yarn hair, button eyes, a dress in `color`) or a striped ball; the label is a price tag | [doll](docs/hero_props/law/hero-toy.jpg), [ball](docs/hero_props/law/hero-toy-ball.jpg) |
+| `food` | `#B8322A` "BURGER" / "FRIES" | a burger on its open box, or a fries carton; the label on the box | [burger](docs/hero_props/law/hero-food.jpg), [fries](docs/hero_props/law/hero-food-fries.jpg) |
+
+The gallery renders them all: `node tools/law_stills.mjs gallery --only hero-` (on a box without Remotion's browser
+download: `BROWSER_EXE=<chrome-headless-shell path>`).
+
+**Frame-0 recipe pattern** (the reference Short, section 10): the hero prop floating beside the person, toward the lens,
+the camera between them so both read and the prop fills >= 35 % of the height:
+```json
+"cam": { "preset": "hookZoom", "target": "plaintiff:0.22,1.42,0.3", "dist": 2.1, "h": 0.05, "az": 4, "face": 0.6 },
+"actors": [{ "id": "pearson", "pose": "point", "face": "smug", "at": "plaintiff", "pointAt": "pants" }],
+"props": [{ "id": "pants", "kit": "trousers", "label": "EXHIBIT A", "lines": ["PEARSON v. CHUNG", "ONE PAIR, GREY"], "color": "#7d8494",
+            "at": "plaintiff:0.6,1.0,0.5", "scale": 0.62, "yaw": 12, "spin": 8 }]
+```
+Keep the prop on the person's right (screen right when they face the lens) so the pointing right arm reaches it, and
+the face below the hook card (`face` 0.6, the prop's top at the person's chin). No hero prop fits? Aim `hookZoom` straight
+at the prop (`"target": "<prop id>"`, `"dist": 1.6`), or open on the stake: a `counter` action at 0 (a law3d counter is
+59 % of the portrait width: a giant stake board).
+
+Before / after on the reference Short: [before](docs/hero_props/frame0/law-demo-54-million-pants_before.jpg) (the
+plaintiff's face, a small pair of trousers) → [after](docs/hero_props/frame0/law-demo-54-million-pants_after.jpg) (the
+trousers on a hanger close-up, EXHIBIT A).
 
 ## 6. Story devices and actions (anchored to voice words)
 
@@ -307,12 +378,34 @@ names the shot, the time, the card / prop / person and what to move where.
 - different people against each other;
 - anyone below the floor.
 
-Hands are not checked, because they rest on tables and benches.
+**Limb QA** (`figLimbs` in src/law/cast.tsx, every output frame; long-form every `--qa-sample` frame). FAIL when one of
+these lasts **more than 3 frames** (a 1-3 frame touch in a fast gesture is tolerated):
+- a forearm or hand **detached**: a gap of > 2 cm at the elbow or the wrist (an arm whose direction vectors are not unit length);
+- the two **arms through each other** (forearm vs forearm or vs the other upper arm, capsule distance < the radii sum);
+- a forearm or hand **through the torso** (> 3 cm past the arm's radius) or **through the head**;
+- a forearm or hand **inside a set piece or a prop** (the bench, a rail, a table, the prop it points at).
+The message names the shot, the person, the arm, the frames and the depth.
+
+The rig keeps arms out of trouble by itself: a seated figure behind a desk (a set blocker whose top is between the hip
+and the shoulder, 0.1-0.9 m in front: the bench, the witness rail) keeps its hands on or above the desk top (the arm
+pitches up about the shoulder; a hand below the bench top showed as a ball poking over the edge, its forearm hidden);
+`cry` puts both hands in front of the face (two-bone IK; before, the forearms rose outside the shoulders and the hands
+floated beside the head behind the witness rail); `point` at a prop within reach bends the elbow so the hand stops
+~0.2 m short of it; pose blends stay unit length in direction space (no gap at the elbow mid-blend).
+
+**Frame-0 opener** (tools/frame0_hero.mjs, Shorts; the same rules as biz3d / cyber3d, hard = FAIL):
+- **F1** no figure seen from behind is the frame-0 subject (the camera more than 90° off the way it faces: the back of a
+  head reads as nothing);
+- **F2** frame 0 shows a **hero prop close-up** (>= 35 % of the frame height, section 5a) OR a **giant stake board** (a
+  number card >= 50 % of the width: a law3d `counter`; an exhibit tag is too small);
+- **F3** every number card on screen at frame 0 is fully opaque: a card whose `at` is 0 is fully on at frame 0 (no fade-in ghost).
+With the opener met, "frame 0 is close", "who + what at frame 0" and framing R5 (the frame-0 face) pass on it.
 
 **Gate** (hard = FAIL):
-- frame 0 has a subject ≥ 50 % of the frame height (a person counts hip to head);
+- frame 0 has a subject ≥ 50 % of the frame height (a person counts hip to head), or the opener above;
 - the hook is ≤ 5 words, ≤ 2 lines, fits, and has exactly one gold segment;
-- a person ≥ 15 % and a prop are in view at frame 0;
+- a person ≥ 15 % and a prop are in view at frame 0, or the opener above;
+- no limb clip (Limb QA above);
 - the stake (a number, $ or a question) is on screen by 0.5 s;
 - the first word comes by 0.2 s;
 - there is a sound punch at 0.00 s;
@@ -339,7 +432,7 @@ Hands are not checked, because they rest on tables and benches.
 
 | shot (word) | set | camera | what happens |
 |---|---|---|---|
-| 0 | courtroom (no jury) | hookZoom on pearson.face | the plaintiff points at the floating pants; hook "*$54 MILLION* FOR PANTS"; face smug → angry |
+| 0 | courtroom (no jury) | hookZoom between the trousers and pearson | opens on the hero prop: the trousers on a hanger (EXHIBIT A tag, 43 % of the height), the plaintiff beside them pointing; hook "*$54 MILLION* FOR PANTS"; face smug → angry |
 | "dry" | courtroom (whip) | medium on the family | the three cleaners recoil, shocked |
 | "$54" | casefile | topDown | money stacks drop; counter DAMAGES SOUGHT 0 → $54,000,000 |
 | "pants" | evidence | crane | the pants pop into the spotlight; EXHIBIT A, THE PANTS |
@@ -357,7 +450,7 @@ Hands are not checked, because they rest on tables and benches.
 | "reads" | courtroom | medium on the judge | the ruling (lip-synced) |
 | line 9 | courtroom | dolly | counter DAMAGES AWARDED $54,000,000 → $0 on "zero"; then ~$1,000 COURT COSTS; shocked → slump |
 | "soon" | steps | crane | he walks down the courthouse steps at night; tag NOV. 2007, NOT REAPPOINTED |
-| line 10 | courtroom | hookZoom on pearson.face | loop: the hook returns |
+| line 10 | courtroom | hookZoom, as shot 0 | loop: the hook returns on the trousers |
 
 ## 11. Files
 
@@ -365,8 +458,10 @@ Hands are not checked, because they rest on tables and benches.
 |---|---|
 | `src/law/palette.ts` | colours and light moods |
 | `src/law/layout.ts` | **every screen-space number**, per format (portrait, landscape) |
-| `src/law/cast.tsx` | the figures: roles, outfits, poses, faces, QA boxes |
-| `src/law/objects.tsx` | the props (gavel, paper, folder, photo, pants, sign, money, newspaper, nameplate, box) |
+| `src/law/cast.tsx` | the figures: roles, outfits, poses, faces, QA boxes, limb QA (`figLimbs`), desk-aware hands, arm IK |
+| `src/law/objects.tsx` | the props (gavel, paper, folder, photo, pants, sign, money, newspaper, nameplate, box) + the hero dispatch |
+| `src/law/hero.tsx` | the 15 hero props (section 5a) |
+| `tools/frame0_hero.mjs` | the frame-0 opener rules F1-F3 (shared with biz3d / cyber3d) |
 | `src/law/beam.tsx` | spotlight + volumetric cone + dust |
 | `src/law/sets.tsx` | courtroom, evidence, casefile, headlines, steps |
 | `src/law/types.ts` | the recipe schema |

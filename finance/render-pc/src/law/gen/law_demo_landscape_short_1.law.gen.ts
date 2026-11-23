@@ -71,11 +71,11 @@ export const RECIPE: LawRecipe = {
    "jury": false,
    "cam": {
     "preset": "hookZoom",
-    "target": "pearson.face",
-    "dist": 1.7,
+    "target": "plaintiff:0.22,1.42,0.3",
+    "dist": 2.1,
     "h": 0.05,
-    "az": -8,
-    "face": 0.52
+    "az": 4,
+    "face": 0.6
    },
    "actors": [
     {
@@ -95,11 +95,11 @@ export const RECIPE: LawRecipe = {
    "props": [
     {
      "id": "hookProp",
-     "kit": "pants",
-     "at": "plaintiff:0.3,1.12,0.3",
-     "s": 0.5,
-     "yaw": -15,
-     "motion": "float"
+     "kit": "trousers",
+     "at": "plaintiff:0.6,1.009,0.5",
+     "scale": 0.62,
+     "yaw": 12,
+     "spin": 8
     }
    ],
    "fx": [
@@ -117,7 +117,8 @@ export const RECIPE: LawRecipe = {
      "at": 0,
      "until": 1,
      "label": "AT STAKE",
-     "text": "$3,000"
+     "text": "$3,000",
+     "on": "hookProp"
     }
    ]
   },

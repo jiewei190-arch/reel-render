@@ -25,6 +25,8 @@ const r2 = (x) => Math.round(x * 100) / 100;
  * @param o.kit           "biz3d" | "cyber3d"
  * @param o.example       a sample hero-prop JSON for the messages
  * @param o.giantExample  a sample giant stake board JSON for the messages
+ * @param o.giantFix      how to make a number card a giant board in this kit (default: give it "size": "giant")
+ * @param o.faced         (law3d) the figures have faces: F1 fails only a figure seen from behind (the back of a head)
  */
 export const frame0Opener = (o) => {
   const v = { cam: o.cam, left: 0, top: 0, w: o.W, h: o.H };
@@ -56,8 +58,9 @@ export const frame0Opener = (o) => {
   const subjFig = figs.find((f) => f.id === o.target) ?? (heroTarget ? null : figs.sort((a, b) => b.k - a.k)[0]) ?? null;
   const f1 = [];
   const heroLine = `add a hero prop to ${o.shot} and aim the frame-0 camera at it, e.g. "props": [${o.example}] with "cam": { "preset": "hookZoom", "target": "<its id>", "dist": 1.6 } (kits: ${o.heroKinds.join(", ")})`;
-  if (subjFig && subjFig.off > F0.behindDeg) f1.push(`FAIL ${o.shot} frame 0 shows ${subjFig.id} (a faceless ${subjFig.what}) from behind: the camera is ${subjFig.off.toFixed(0)}° off the way it faces (a back of a head reads as nothing). Open on a hero prop instead: ${heroLine}; or at least turn it to the lens (its "yaw"/"look", or cam.az within 60° of where it faces)`);
-  if (subjFig && !inFrame.length && !stakeInFrame) f1.push(`FAIL ${o.shot} frame 0's subject is ${subjFig.id} (a faceless ${subjFig.what}) with no hero prop or stake number in frame: a faceless figure says nothing about the story at phone size. ${heroLine[0].toUpperCase()}${heroLine.slice(1)}; or put the stake on a giant board at frame 0: ${o.giantExample}`);
+  if (subjFig && subjFig.off > F0.behindDeg) f1.push(`FAIL ${o.shot} frame 0 shows ${subjFig.id} (${o.faced ? "" : "a faceless "}${subjFig.what}) from behind: the camera is ${subjFig.off.toFixed(0)}° off the way it faces (a back of a head reads as nothing). Open on a hero prop instead: ${heroLine}; or at least turn it to the lens (its "yaw"/"look", or cam.az within 60° of where it faces)`);
+  // o.faced (law3d: figures with faces): a figure facing the lens is a fine subject; only its back fails F1
+  if (subjFig && !o.faced && !inFrame.length && !stakeInFrame) f1.push(`FAIL ${o.shot} frame 0's subject is ${subjFig.id} (a faceless ${subjFig.what}) with no hero prop or stake number in frame: a faceless figure says nothing about the story at phone size. ${heroLine[0].toUpperCase()}${heroLine.slice(1)}; or put the stake on a giant board at frame 0: ${o.giantExample}`);
 
   // ---- F2: the opener
   let f2 = "";
@@ -69,7 +72,7 @@ export const frame0Opener = (o) => {
     } else if (bestHero) parts.push(`hero prop ${bestHero.id} (${bestHero.kind}) is out of frame at 0.00 s: aim "cam.target" at "${bestHero.id}" (a hookZoom starts 30 % further out, so dist 1.4-1.8)`);
     else parts.push(`${o.shot} has no hero prop: ${heroLine}`);
     const wide = numCards.filter((c) => STAKE.test(c.text)).sort((a, b) => b.w - a.w)[0];
-    if (wide && wide.w < F0.giantW * o.W) parts.push(`the number card "${wide.name}" is ${((wide.w / o.W) * 100).toFixed(0)} % of the width (a stake board needs >= ${F0.giantW * 100} %): give it "size": "giant"`);
+    if (wide && wide.w < F0.giantW * o.W) parts.push(`the number card "${wide.name}" is ${((wide.w / o.W) * 100).toFixed(0)} % of the width (a stake board needs >= ${F0.giantW * 100} %): ${o.giantFix ?? `give it "size": "giant"`}`);
     else if (wide && wide.u < F0.opaque) parts.push(`the number card "${wide.name}" is not fully on at 0.00 s: set its "at" to 0`);
     else if (!wide) parts.push(`or open on the stake: ${o.giantExample}`);
     f2 = `FAIL ${o.shot} frame 0 shows neither a hero prop close-up nor a giant stake board: ${parts.join("; ")}`;
@@ -80,7 +83,7 @@ export const frame0Opener = (o) => {
 
   const what = heroOk ? `hero prop ${bestHero.id} (${bestHero.kind}) ${(bestHero.k * 100).toFixed(0)} % of the height` : giantOk ? `giant stake board "${giant[0].name}" ${((giant[0].w / o.W) * 100).toFixed(0)} % of the width` : "";
   const rows = [
-    ["frame 0: no faceless figure from behind, and none without a hero prop or stake number beside it", f1.length === 0, f1.length ? f1.map((x) => x.replace(/^FAIL /, "")).join("; ") : subjFig ? `${subjFig.id} ${subjFig.off.toFixed(0)}° off its facing, with ${inFrame.length ? `hero prop ${inFrame.map((h) => h.id).join(", ")}` : "a stake number"} in frame` : "no faceless figure is the subject", true],
+    [o.faced ? "frame 0: no figure seen from behind (the back of a head is not a subject)" : "frame 0: no faceless figure from behind, and none without a hero prop or stake number beside it", f1.length === 0, f1.length ? f1.map((x) => x.replace(/^FAIL /, "")).join("; ") : subjFig ? `${subjFig.id} ${subjFig.off.toFixed(0)}° off its facing, with ${inFrame.length ? `hero prop ${inFrame.map((h) => h.id).join(", ")}` : "a stake number"} in frame` : "no faceless figure is the subject", true],
     [`frame 0 opens on a hero prop close-up (>= ${F0.heroH * 100} % of the height) or a giant stake board (>= ${F0.giantW * 100} % of the width)`, heroOk || giantOk, heroOk || giantOk ? what : f2.replace(/^FAIL /, ""), true],
     ["frame 0: every number card on screen is fully opaque (no fade-in at 0.00 s)", ghosts.length === 0, ghosts.length ? ghosts.map((x) => x.replace(/^FAIL /, "")).join("; ") : numCards.length ? numCards.map((c) => `"${c.name}" ${(c.u * 100).toFixed(0)} %`).join(", ") : "no number card at frame 0", true],
   ];

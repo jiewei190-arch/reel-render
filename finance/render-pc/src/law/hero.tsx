@@ -259,6 +259,8 @@ const palmTex = () => canvasTexture("lhPalm", 256, 256, (g, W, H) => {
   g.beginPath(); g.moveTo(W * 0.78, H * 0.36); g.quadraticCurveTo(W * 0.6, H * 0.66, W * 0.74, H * 0.95); g.stroke();
 });
 
+const steamM: THREE.MeshBasicMaterial[] = [];
+const steamMat = (k: number) => { if (!steamM[k]) steamM[k] = new THREE.MeshBasicMaterial({ color: "#f4efe6", transparent: true, opacity: 0.035 * k, depthWrite: false, toneMapped: false }); return steamM[k]; };
 /** a lit screen: unlit, not tone-mapped (it glows in the dark courtroom) */
 const lit = new Map<string, THREE.MeshBasicMaterial>();
 const litMat = (tex: THREE.Texture) => { let m = lit.get(tex.uuid); if (!m) { if (lit.size > 60) lit.clear(); m = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }); lit.set(tex.uuid, m); } return m; };
@@ -286,7 +288,7 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
       const skin = flat(col, 0.7);
       const hairK = sp.hair === true ? 1 : typeof sp.hair === "number" ? Math.max(0, Math.min(1, sp.hair)) : 0;
       const fingers: [number, number, number][] = [[-0.105, 0.24, 0.1], [-0.035, 0.27, 0.03], [0.035, 0.26, -0.03], [0.1, 0.21, -0.1]]; // x, length, spread
-      const hairM = flat("#2a1a10", 0.9);
+      const hairM = flat("#3a2414", 0.95);
       return (
         <group>
           <mesh geometry={CYL(0.13, 0.14, 0.26, 8)} material={flat(LP.navy, 0.8)} position={[0, 0.13, -0.01]} castShadow />
@@ -295,21 +297,23 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
           <mesh geometry={rbox(0.3, 0.32, 0.1, 0.04)} material={skin} position={[0, 0.54, 0]} castShadow receiveShadow />
           <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 0.8, map: palmTex(), transparent: true })} position={[0, 0.54, 0.0505]} scale={[0.27, 0.29, 1]} />
           {fingers.map(([x, len, sprd], k) => (
-            <group key={k} position={[x, 0.69, 0]} rotation={[0, 0, sprd * 0.5]}>
-              <mesh geometry={rbox(0.062, len * 0.55, 0.07, 0.025)} material={skin} position={[0, len * 0.275, 0]} castShadow />
-              <mesh geometry={rbox(0.058, len * 0.5, 0.066, 0.026)} material={skin} position={[0, len * 0.55 + len * 0.22, 0.006]} rotation={[0.08, 0, 0]} castShadow />
+            <group key={k} position={[x, 0.66, 0]} rotation={[0, 0, sprd * 0.5]}>
+              {/* one piece per finger (it starts inside the palm: no gap), knuckle creases drawn on it */}
+              <mesh geometry={rbox(0.064, len + 0.04, 0.07, 0.028)} material={skin} position={[0, (len + 0.04) / 2, 0]} castShadow />
+              {[0.5, 0.78].map((u) => <Bx key={u} p={[0, 0.04 + len * u, 0.036]} s={[0.044, 0.006, 0.002]} m={flat(shade(col, -0.35), 0.8)} shadow={false} />)}
             </group>
           ))}
-          {/* the thumb, out to the side */}
-          <group position={[0.15, 0.48, 0.01]} rotation={[0, 0, -0.75]}>
-            <mesh geometry={rbox(0.07, 0.13, 0.075, 0.028)} material={skin} position={[0, 0.065, 0]} castShadow />
-            <mesh geometry={rbox(0.064, 0.1, 0.07, 0.028)} material={skin} position={[0, 0.17, 0.005]} rotation={[0, 0, 0.2]} castShadow />
-          </group>
+          {/* the thumb: a two-piece limb out of the palm's side, joined at the knuckle */}
+          <Limb a={[0.1, 0.43, 0.01]} b={[0.2, 0.53, 0.03]} r={0.036} m={skin} />
+          <Ell p={[0.2, 0.53, 0.03]} s={0.036} m={skin} />
+          <Limb a={[0.2, 0.53, 0.03]} b={[0.25, 0.63, 0.04]} r={0.033} m={skin} />
+          <Ell p={[0.25, 0.63, 0.04]} s={0.033} m={skin} />
           {/* hair ON THE PALM (a graft): dark strands standing out of the palm face, deterministic */}
-          {hairK > 0 ? Array.from({ length: Math.round(70 * hairK) }, (_, k) => {
-            const hx = (hash(k * 3 + 1) - 0.5) * 0.24, hy = 0.42 + hash(k * 5 + 2) * 0.26, len = 0.03 + 0.03 * hash(k + 7);
-            const a = (hash(k * 7 + 3) - 0.5) * 1.6;
-            return <mesh key={`h${k}`} geometry={BOX()} material={hairM} position={[hx + Math.sin(a) * len * 0.4, hy, 0.052 + len * 0.35]} rotation={[1.0 + 0.4 * hash(k + 11), 0, a]} scale={[0.006, len, 0.006]} />;
+          {hairK > 0 ? Array.from({ length: Math.round(130 * hairK) }, (_, k) => {
+            // strands rooted in the palm, combed downward and a little outward, curling off the surface
+            const hx = (hash(k * 3 + 1) - 0.5) * 0.25, hy = 0.41 + hash(k * 5 + 2) * 0.27, len = 0.045 + 0.04 * hash(k + 7);
+            const a = Math.PI + hx * 2.2 + (hash(k * 7 + 3) - 0.5) * 0.7;
+            return <mesh key={`h${k}`} geometry={BOX()} material={hairM} position={[hx + Math.sin(a) * len * 0.45, hy - Math.abs(Math.cos(a)) * len * 0.4, 0.055 + len * 0.18]} rotation={[0.45 + 0.3 * hash(k + 11), 0, a]} scale={[0.0045, len, 0.0045]} />;
           }) : null}
           {sp.bandage ? (
             <>
@@ -364,8 +368,9 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
           <mesh geometry={CYL(0.03, 0.03, 0.012, 8)} material={flat(shade(col, -0.4), 0.5)} position={[0.08, 0.607, 0.04]} />
           {steam ? [0, 1, 2].map((w) => Array.from({ length: 7 }, (_, k) => {
             const ph = (t * 0.45 + k / 7 + w * 0.31 + hash(seed + w)) % 1;
-            const x = (w - 1) * 0.07 + 0.05 * Math.sin(ph * 7 + w * 2 + t), y = 0.64 + ph * 0.55, r = 0.03 + ph * 0.05;
-            return <mesh key={`${w}-${k}`} geometry={ICO()} material={plastic("#ffffff", { rough: 1, transparent: true, opacity: 0.32 * Math.sin(Math.PI * ph) })} position={[x, y, 0.02 * Math.cos(ph * 5 + w)]} scale={r} />;
+            const x = (w - 1) * 0.07 + 0.05 * Math.sin(ph * 7 + w * 2 + t), y = 0.64 + ph * 0.55, r = 0.025 + ph * 0.05;
+            // soft wisps: faint, unlit, quantised opacity (a small material set)
+            return <mesh key={`${w}-${k}`} geometry={geoOf("lhSteam", () => new THREE.SphereGeometry(1, 10, 8))} material={steamMat(Math.round(6 * Math.sin(Math.PI * ph)))} position={[x, y, 0.02 * Math.cos(ph * 5 + w)]} scale={r} />;
           })) : null}
         </group>
       );
