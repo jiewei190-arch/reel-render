@@ -38,7 +38,7 @@
  "lines": {
   "1": {
    "speaker": "me",
-   "text": "My homie is NOT okay, bro.",
+   "text": "Yo, my homie is NOT okay, bruh.",
    "faces": {
     "me": "annoyed"
    },
@@ -49,7 +49,7 @@
   },
   "2": {
    "speaker": "me",
-   "text": "This dumb-ass downloaded a soundboard app last night. One fucking button.",
+   "text": "This bro downloaded a soundboard app last night. One fucking button.",
    "accent": [
     "soundboard",
     "button"
@@ -73,7 +73,7 @@
   },
   "5": {
    "speaker": "me",
-   "text": "Hallway. Principal stops him like: young man, where's your hall pass?",
+   "text": "Hallway, principal stops him like: young man, where's your hall pass?",
    "accent": [
     "principal",
     "pass"
@@ -81,7 +81,7 @@
   },
   "6": {
    "speaker": "me",
-   "text": "Bro got detention so fucking fast, the principal didn't even blink.",
+   "text": "This bro got detention so fucking fast, the principal didn't even blink.",
    "accent": [
     "detention",
     "blink"
@@ -124,14 +124,14 @@
   },
   "11": {
    "speaker": "me",
-   "text": "What fuckin' Bluetooth?",
+   "text": "What fucking Bluetooth?",
    "accent": [
     "bluetooth"
    ]
   },
   "12": {
    "speaker": "me",
-   "text": "Fifth period. School assembly. Principal taps the mic. Today we honor our student of the month...",
+   "text": "Fifth period, school assembly. Principal taps the mic. Today we honor our student of the month...",
    "accent": [
     "assembly",
     "mic",
@@ -205,14 +205,14 @@
    "note": "the app over his shoulder: one big red button"
   },
   {
-   "at": 7.92,
+   "at": 8.48,
    "cam": {
     "preset": "pov_press"
    },
-   "note": "BRUH 8.67: thumb on the button"
+   "note": "BRUH 9.23: thumb on the button"
   },
   {
-   "at": 9.05,
+   "at": 9.61,
    "cam": {
     "preset": "closeup_homie",
     "az": -6
@@ -244,14 +244,14 @@
    "note": "teacher at the board: POP QUIZ"
   },
   {
-   "at": 13.7,
+   "at": 14.98,
    "cam": {
     "preset": "pov_press"
    },
-   "note": "BRUH 14.45: thumb on the button"
+   "note": "BRUH 15.73: thumb on the button"
   },
   {
-   "at": 14.83,
+   "at": 16.11,
    "cam": {
     "preset": "closeup_homie",
     "az": 8
@@ -345,14 +345,14 @@
    "note": "young man, where's your hall pass?"
   },
   {
-   "at": 28.77,
+   "at": 29.73,
    "cam": {
     "preset": "pov_press"
    },
-   "note": "BRUH 29.52: thumb on the button"
+   "note": "BRUH 30.48: thumb on the button"
   },
   {
-   "at": 29.9,
+   "at": 30.86,
    "cam": {
     "preset": "closeup_homie",
     "az": -4
@@ -440,14 +440,14 @@
    "note": "ONE sad nugget drops on his tray"
   },
   {
-   "at": 40.07,
+   "at": 44.31,
    "cam": {
     "preset": "pov_press"
    },
-   "note": "BRUH 40.82: thumb on the button"
+   "note": "BRUH 45.06: thumb on the button"
   },
   {
-   "at": 41.2,
+   "at": 45.44,
    "cam": {
     "preset": "closeup_homie",
     "az": 6
@@ -554,21 +554,21 @@
    "note": "principal at the mic: student of the month"
   },
   {
-   "at": 58.98,
+   "at": 65.22,
    "cam": {
     "preset": "pov_press"
    },
    "note": "the gym BRUH: thumb on the button"
   },
   {
-   "at": 59.98,
+   "at": 66.22,
    "cam": {
     "preset": "setcam",
     "name": "speakers"
    },
    "adult": [
     {
-     "at": 59.98,
+     "at": 66.22,
      "id": "principal",
      "face": "shocked"
     }
@@ -658,11 +658,11 @@
  "props": {
   "phone": "bruh",
   "presses": [
-   8.67,
-   14.45,
-   29.52,
-   40.82,
-   59.73
+   9.23,
+   15.73,
+   30.48,
+   45.06,
+   65.97
   ],
   "board": [
    "POP QUIZ",

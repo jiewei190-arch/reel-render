@@ -7,26 +7,35 @@ import json
 import os
 D = os.path.dirname(os.path.abspath(__file__))
 src = json.load(open(os.path.join(D, 'vo', 'ep2_timings_src.json'), encoding='utf-8'))
-words = [w for w in src['words'] if w['w'].lower().strip('.,!?') != 'bruh']
 SFX = [s['t'] for s in src['sfx_in_audio']]  # 4 phone + gym
+# drop only aligner "bruh" words that sit on a BRUH sound effect (the narrator's own spoken bruhs stay)
+on_sfx = lambda w: any(w['t'] < s['end'] and w['end'] > s['t'] for s in src['sfx_in_audio'])
+words = [dict(w) for w in src['words'] if not (w['w'].lower().strip('.,!?') == 'bruh' and on_sfx(w))]
+# word_swap_slots (a bleep or the owner's own word later, same timing, audio only): captioned "bro"
+for sl in src.get('word_swap_slots', []):
+    for w in words:
+        if abs(w['t'] - sl['t']) < 0.05: w['w'] = 'bro' + ''.join(c for c in w['w'] if c in '.,!?')
+# aligner slips
+for w in words:
+    if w['w'] == 'to' and 61.9 < w['t'] < 62.1: w['w'] = 'the'  # "principal taps the mic"
 
 # lines: (speaker, first word index start time, text)
-LINES = [
-    ("me", 0.0, "My homie is NOT okay, bro."),
-    ("me", 2.6, "This dumb-ass downloaded a soundboard app last night. One fucking button."),
-    ("me", 9.7, "First period, teacher goes: pop quiz, phones away."),
-    ("me", 16.6, "The whole damn class lost it. Teacher's face went purple as fuck."),
-    ("me", 23.0, "Hallway. Principal stops him like: young man, where's your hall pass?"),
-    ("me", 30.7, "Bro got detention so fucking fast, the principal didn't even blink."),
-    ("me", 35.9, "Then lunch. The lunch lady drops one sad-ass chicken nugget on his tray."),
-    ("me", 42.1, "She took the fucking nugget back."),
-    ("me", 45.4, "So I'm like: bro, delete the damn app."),
-    ("homie", 48.7, "Nah, it's connected to the Bluetooth."),
-    ("me", 51.0, "What fuckin' Bluetooth?"),
-    ("me", 52.8, "Fifth period. School assembly. Principal taps the mic. Today we honor our student of the month..."),
-    ("me", 62.0, "700 kids, bro. One stupid-ass button."),
-    ("me", 66.4, "We are never going back to that shit-hole school, bro."),
-    ("me", 70.4, "Why the FUUUCK are you like this?"),
+LINES = [  # Gerald take (d0bdde6)
+    ("me", 0.0, "Yo, my homie is NOT okay, bruh."),
+    ("me", 3.4, "This bro downloaded a soundboard app last night. One fucking button."),
+    ("me", 10.7, "First period, teacher goes: pop quiz, phones away."),
+    ("me", 17.5, "The whole damn class lost it. Teacher's face went purple as fuck."),
+    ("me", 25.4, "Hallway, principal stops him like: young man, where's your hall pass?"),
+    ("me", 32.0, "This bro got detention so fucking fast, the principal didn't even blink."),
+    ("me", 38.9, "Then lunch. The lunch lady drops one sad-ass chicken nugget on his tray."),
+    ("me", 46.5, "She took the fucking nugget back."),
+    ("me", 49.9, "So I'm like: bro, delete the damn app."),
+    ("homie", 54.6, "Nah, it's connected to the Bluetooth."),
+    ("me", 55.95, "What fucking Bluetooth?"),
+    ("me", 58.8, "Fifth period, school assembly. Principal taps the mic. Today we honor our student of the month..."),
+    ("me", 69.0, "700 kids, bro. One stupid-ass button."),
+    ("me", 73.7, "We are never going back to that shit-hole school, bro."),
+    ("me", 78.7, "Why the FUUUCK are you like this?"),
 ]
 turns = []
 for i, (sp, t0, text) in enumerate(LINES):
@@ -36,7 +45,7 @@ for i, (sp, t0, text) in enumerate(LINES):
     # fix zero-length / overlapping words from the aligner (a word ends where the next starts, at least 0.06 s long)
     turns.append({"turn": i + 1, "speaker": sp, "words": [{"w": w['w'], "t": round(w['t'], 3), "end": round(max(w['end'], w['t'] + 0.06), 3)} for w in ws]})
 assert sum(len(t['words']) for t in turns) == len(words)
-json.dump({"source": {"audio": "vo/voice.mp3", "duration": src['duration'], "from": "previews/homie_ep2_timings.json @ 9fd7699 (branch claude/beautiful-hypatia-0w2o96), bruh sfx words dropped"}, "turns": turns},
+json.dump({"source": {"audio": "vo/voice.mp3", "duration": src['duration'], "from": "previews/homie_ep2_timings.json @ d0bdde6 (branch claude/beautiful-hypatia-0w2o96, Gerald), bruh-on-sfx words dropped, swap slots captioned bro"}, "turns": turns},
           open(os.path.join(D, 'vo', 'timings.json'), 'w', encoding='utf-8'), indent=1)
 
 cast = json.load(open(os.path.join(D, '..', 'deez-nuts-ep1', 'recipe.json'), encoding='utf-8'))['cast']
