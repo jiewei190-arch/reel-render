@@ -285,7 +285,7 @@
    ]
   },
   {
-   "at": "3:no+0.9",
+   "at": "swearing,-0.3",
    "set": "evidence",
    "cam": {
     "preset": "dolly",
@@ -330,21 +330,19 @@
    "set": "courtroom",
    "jury": false,
    "cam": {
-    "preset": "orbit",
+    "preset": "dolly",
     "target": "nephew.face",
-    "dist": 1.8,
-    "h": 0.05,
-    "az": -10,
-    "sweep": 26,
-    "face": 0.41
+    "dist": 2.0,
+    "h": -0.1,
+    "az": 16,
+    "sweep": 0.7
    },
    "actors": [
     {
      "id": "nephew",
-     "pose": "talk",
+     "pose": "idle",
      "face": "neutral",
-     "at": "witness",
-     "sit": true,
+     "at": "plaintiff",
      "then": [
       {
        "at": "years.",

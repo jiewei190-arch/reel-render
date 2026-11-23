@@ -335,25 +335,23 @@
    "set": "courtroom",
    "jury": false,
    "cam": {
-    "preset": "orbit",
+    "preset": "dolly",
     "target": "carlill.face",
-    "dist": 1.8,
-    "h": 0.05,
-    "az": -10,
-    "sweep": 26,
-    "face": 0.41
+    "dist": 2.0,
+    "h": -0.1,
+    "az": 16,
+    "sweep": 0.7
    },
    "actors": [
     {
      "id": "carlill",
-     "pose": "talk",
+     "pose": "present",
      "face": "neutral",
-     "at": "witness",
-     "sit": true,
+     "at": "plaintiff",
      "then": [
       {
        "at": "She",
-       "pose": "cry",
+       "pose": "idle",
        "face": "sad"
       }
      ]
@@ -442,8 +440,7 @@
      "do": "exhibit",
      "at": "deposit",
      "label": "NOT A MERE PUFF",
-     "text": "\u00a31,000 DEPOSITED",
-     "on": "slip"
+     "text": "\u00a31,000 DEPOSITED"
     }
    ]
   },
