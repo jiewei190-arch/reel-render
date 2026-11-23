@@ -17,11 +17,11 @@ import { moodFor, setMoodShots } from "../../library/mood";
 import { stand, yawTo } from "../core";
 import type { FinShot } from "../core";
 import { B, Card, Dust, Reader, TV, easeOut, slam } from "../hooks";
-import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill } from "../props";
+import { CoinPile, FlipCalendar, Label, PAL, Stamp, Bill, CAL_GREY } from "../props";
 import { Asset, assetSize, useAssetWindow, usePreload } from "../lib/assets";
 import { kickAt, kicked, pushK, whipK } from "../lib/camera";
 import type { Cam } from "../lib/camera";
-import { LowerThirdCaptions, RecipeCaptions, chunkWords } from "../lib/captions";
+import { LowerThirdCaptions, RecipeCaptions, SAFE, chunkWords } from "../lib/captions";
 import { EASE_OUT, EASE_PLACE, LEAD, prog } from "../lib/motion";
 import { anticip, blinkVar, gestureAt, lookAt as lookAtFn, mixPose, weightShift } from "../lib/alive";
 import type { GestureId } from "../lib/alive";
@@ -37,6 +37,7 @@ import { SETS } from "./sets";
 import { eggBoxes, EggsView, gagU, placeEggs } from "./eggs";
 import type { SetDef } from "./sets";
 import { makeAt } from "./timing";
+import { ChapterCard } from "../../longform/kit";
 import type { ActorSpec, At, CamSpec, Emotion, FxSpec, Place, PropSpec, Recipe, SetId, ShotSpec, Target, Word } from "./types";
 
 export const FPS = 30;
@@ -49,7 +50,7 @@ const HIP0 = (s: number) => stand(0, 0, 0, s).y; // standing hip height
 type ActorR = { id: string; look: Look; seed: number; spec: ActorSpec; p0: V3; p1: V3; yaw: (p: V3, t: number) => number; segs: { t0: number; pose: ActorSpec["pose"]; emotion?: Emotion }[]; s: number; squash: number[];
   /** quality pass */ q: boolean; talk: boolean; words: readonly Word[]; gestures: { t0: number; g: GestureId }[]; lookT: ((t: number) => V3) | null; camPos: V3 | null; extra?: boolean };
 export type ActorState = { id: string; pose: Pose; emotion: Emotion; s: number; head: V3; torso: V3; grounded: boolean; look: Look; seed: number; squash: number; blink: boolean; mouth: Viseme; extra?: boolean };
-type PropR = { key: string; spec: PropSpec; a: number; b: number; hit: number; pos: (t: number) => V3; held: boolean; set: SetId };
+type PropR = { key: string; spec: PropSpec; a: number; b: number; hit: number; pos: (t: number) => V3; held: boolean; set: SetId; /** listed in this shot (not a multi-shot prop) */ local?: boolean };
 type FxR = { fx: string; at: number; p: (t: number) => V3; gain: number };
 export type ShotR = { id: string; a: number; b: number; set: SetId; spec: ShotSpec; lens: FinShot; lens2?: FinShot; pov?: string; kicks: [number, number][]; actors: ActorR[]; props: PropR[]; fx: FxR[] };
 
@@ -197,11 +198,11 @@ export const compileRecipe = (recipe: Recipe, words: readonly Word[], voDuration
       actors.push({ id: as.id, look: LOOKS[recipe.cast[as.id]] ?? CH.SPENDER, seed: seedOf(as.id), spec: as, p0, p1, yaw, segs, s: as.scale ?? 1, squash: (as.squash ?? []).map((x) => at(x)),
         q: Q, talk, words, gestures: (as.gestures ?? []).map((g) => ({ t0: at(g.at) - LEAD, g: g.g })), lookT: null, camPos: null });
     }
-    const addProp = (ps: PropSpec, pa: number, pb: number, k: string) => {
+    const addProp = (ps: PropSpec, pa: number, pb: number, k: string, local = false) => {
       const pf = placeFn(ps.at, set, getActors);
-      props.push({ key: k, spec: ps, a: pa, b: pb, hit: at(ps.hit, a + 0.12), pos: pf.f, held: pf.held, set: curSet });
+      props.push({ key: k, spec: ps, a: pa, b: pb, hit: at(ps.hit, a + 0.12), pos: pf.f, held: pf.held, set: curSet, local });
     };
-    (sp.props ?? []).forEach((ps, k) => addProp(ps, a, b, ps.id ?? ps.asset ?? ps.kit ?? `p${k}`));
+    (sp.props ?? []).forEach((ps, k) => addProp(ps, a, b, ps.id ?? ps.asset ?? ps.kit ?? `p${k}`, true));
     globalProps.filter((g) => g.a < b && g.b > a).forEach((g) => addProp({ ...g.p, from: undefined } as PropSpec, g.a, g.b, g.p.id ?? g.p.asset ?? g.p.kit ?? `g${g.i}`));
     const fx: FxR[] = (sp.fx ?? []).map((f: FxSpec) => {
       const o = typeof f === "string" ? { fx: f } : f;
@@ -452,19 +453,19 @@ const lensOf = (c0: CamSpec, set: SetDef, actors: ActorR[], props: PropR[], a: n
   const c: CamSpec = lk && c0.fov !== undefined ? { ...c0, fov: c0.fov * lk[0] } : c0;
   if (!P) throw new Error(`recipe ${shotId}: no camera preset "${c.preset}"`);
   const mood = (moodKey === "earth" || moodKey === "home" || moodKey === "whisper" || moodKey === "ending" ? moodKey : "store") as FinShot["mood"];
-  const base = (tg: Target): FinShot => {
+  const base = (tg: Target, distOverride?: number): FinShot => {
     const subj = targetFn(tg, set, actors, props, shotId);
     const ac = actors.find((x) => typeof tg === "string" && tg.split(".")[0] === x.id);
     const s0 = subj(a);
     const az = (c.az ?? (ac ? (ac.yaw(ac.p0, a) / D2R) * 0.45 : 0)) * D2R;
-    const dist = c.dist ?? P.dist, h = c.h ?? P.h;
+    const dist = distOverride ?? c.dist ?? P.dist, h = c.h ?? P.h;
     const pos: V3 = add(s0, [Math.sin(az) * dist, h, Math.cos(az) * dist]);
     return { id: shotId, a, b, subj, off: [0, 0, 3], pos, fov: c.fov ?? P.fov, face: c.face ?? P.face, push: P.push, roll: c.roll ?? P.roll, mood, blur: c.blur ?? P.blur, shutter: 0.35, sky: set.sky };
   };
   const tg = c.target ?? "centre";
   if (c.preset === "splitScreen") {
     const [t1, t2] = c.targets ?? [tg, tg];
-    const l2 = base(t2);
+    const l2 = base(t2, typeof c.dist2 === "number" ? c.dist2 : undefined);
     if (typeof c.face2 === "number") l2.face = c.face2; // caption-safe framing for the bottom view (baked by recipe_build)
     return { lens: base(t1), lens2: l2 };
   }
@@ -568,6 +569,193 @@ const propBoxes = (pr: PropR, t: number, s: ShotR): Box[] => {
   return out;
 };
 
+// ------------------------------------------------------------------ framing QA sampler (tools/framing_qa.mjs, recipe_build)
+/** the label text colour (cream); a label's `fg` overrides it */
+export const LABEL_FG = "#fff4c8";
+type FrBox = { c: V3; h: V3; yaw?: number };
+type FrLine = { text: string; capM: number; fg: string };
+export type FrBoard = { key: string; label: string; kind: string; box: FrBox; plane: { c: V3; w: number; h: number; yaw: number }; lines: FrLine[]; bg: string | null; featured: boolean; target?: boolean; landed: boolean; edge: boolean; size?: number[]; fgField?: string; fix?: (l: FrLine, cr: number) => string };
+export type FrMeasure = { em: (s: string) => number; cap: number };
+/** the canvas text rule of textTex (src/library/props.tsx): first line H*0.5 (one line) or H*0.34, the rest 0.8 of that,
+ *  each shrunk to fit 86 % of the texture width. Returns each line's cap height in metres for a decal plane `ph` tall. */
+const texLines = (M: FrMeasure, lines: string[], texW: number, texH: number, ph: number, fg: string, fitW = 0.86, k0?: number): FrLine[] => {
+  const px = k0 ?? texH * (lines.length > 1 ? 0.34 : 0.5);
+  return lines.map((l, i) => {
+    let f = i === 0 ? px : px * 0.8;
+    const w = M.em(l) * f; if (w > texW * fitW) f *= (texW * fitW) / w;
+    return { text: l, capM: (f / texH) * ph * M.cap, fg };
+  });
+};
+/** text plane (prop-local, before yaw and scale) + lines + fill of every text-bearing kit prop; null = no text */
+const textPlane = (M: FrMeasure, ps: PropSpec, text: string[]): { o: V3; w: number; h: number; lines: FrLine[]; bg: string | null; fgField?: string; fix?: FrBoard["fix"] } | null => {
+  const lab = (o: V3, w: number, h: number, lines: string[], bg: string, fg: string) => {
+    const texH = Math.max(64, Math.round((1024 * h) / w));
+    return { o, w: w * 0.97, h: h * 0.95, lines: texLines(M, lines, 1024, texH, h * 0.95, fg), bg };
+  };
+  switch (ps.kit) {
+    case "label": { const s = ps.size ?? [0.8, 0.3, 0.05]; return { ...lab([0, 0, 0.014], s[0], s[1], text, ps.color ?? PAL.debt, ps.fg ?? LABEL_FG), fgField: "its fg" }; }
+    case "debtBlock": case "block": {
+      if (!text.length && ps.kit === "block") return null;
+      const s = ps.size ?? (ps.kit === "block" ? [1.2, 1.2, 0.8] : [1.8, 1.8, 1.0]);
+      const fg = ps.color ?? (ps.kit === "block" ? PAL.cash : PAL.debt);
+      const r = lab([0, s[1] * 0.55, s[2] / 2 + 0.024], s[0] * 0.86, s[1] * 0.5, text.length ? text : ["OWE"], "#fff4c8", fg);
+      return { ...r, fix: (l, cr) => `its text colour is the block's color (${fg}) on the cream plate (${cr.toFixed(2)}:1): set color to a darker shade such as ${darkerFor(fg, "#fff4c8")}` };
+    }
+    case "tv": { const sc = text.length ? text : ["BIG TV"]; const bg = ps.color ?? "#ffd23a"; return lab([0, 0.56, 0.114], 0.8, 0.22 * sc.length, sc, bg, bg === "#ffd23a" ? "#16121c" : "#ffffff"); }
+    case "jar": return lab([0, 1.5 * 0.78, 0.42 + 0.104], 0.42 * 2.2, 0.32, [text[0] ?? "SAVINGS"], ps.color ?? "#c01818", "#ffffff");
+    case "payBox": return lab([0, 1.18, 0.229], 0.52, 0.16, [text[0] ?? "PAY BILL"], "#fff4c8", "#16264a");
+    case "calendar": {
+      // FlipCalendar renders 1.3 x 1.1 (its size field only sizes the QA box): page 1.222 x 0.88, 512 x 347 texture
+      const w = 1.3, ph = 1.1 - 0.22, texH = Math.round((512 * ph) / w);
+      const title = text[0] ?? "YEAR", value = ps.value ?? text[1] ?? "1", sub = text[2];
+      const v = texLines(M, [value], 512, texH, ph, PAL.ink, 0.88, texH * 0.56)[0];
+      const lines: FrLine[] = [{ text: title, capM: ((texH * 0.13) / texH) * ph * M.cap, fg: CAL_GREY }, v];
+      if (sub) lines.push({ text: sub, capM: ((texH * 0.1) / texH) * ph * M.cap, fg: CAL_GREY });
+      return { o: [0, -0.11, 0.035], w: w * 0.94, h: ph, lines, bg: "#fffaf0" };
+    }
+    case "stamp": {
+      const w = ps.size?.[0] ?? 0.6, t0 = text[0] ?? "PAID";
+      return { o: [0, 0, 0], w, h: w * 0.293, lines: texLines(M, [t0], 1024, 300, w * 0.293, ps.color ?? "#e0412b", 0.84, 150), bg: null };
+    }
+    default: return null;
+  }
+};
+const darkerFor = (fg: string, bg: string): string => {
+  const h = fg.replace("#", ""); const r = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const L = (c: number[]) => { const f = (v: number) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]); };
+  const hb = bg.replace("#", ""), lb = L([0, 2, 4].map((i) => parseInt(hb.slice(i, i + 2), 16)));
+  for (let k = 1; k <= 40; k++) { const c = r.map((v) => Math.round(v * (1 - k / 40))); if ((lb + 0.05) / (L(c) + 0.05) >= 4.55) return "#" + c.map((v) => v.toString(16).padStart(2, "0")).join(""); }
+  return "#16121c";
+};
+/** the head box incl. antennae / hair / hat (head centre, half sizes), in metres */
+const headBox = (st: ActorState): FrBox => {
+  const s = st.s, L = st.look;
+  let top = 0.17, half = 0.16;
+  const lift = L.acc?.hat ? 0.135 : 0;
+  if (L.hairStyle === "antennae" || L.hairStyle === "antenna1") {
+    const ant = st.pose.ant ?? 0;
+    const splay0 = ant >= 0 ? lerp(0.38, 0.06, clamp(ant)) : lerp(0.38, 1.25, clamp(-ant));
+    const sp = L.hairStyle === "antennae" ? splay0 : 0.15 + splay0 * 0.4;
+    const x0 = (L.hairStyle === "antennae" ? 0.26 : 0.08) * 0.27 * (lift ? 0.7 : 1), len = 0.6 * 0.27 + 0.02;
+    top = Math.max(top, 0.1377 + lift + len * Math.cos(sp) + 0.036);
+    half = Math.max(half, x0 + len * Math.sin(sp) + 0.036);
+  } else top = 0.23;
+  if (lift) top = Math.max(top, 0.151 + lift + 0.02);
+  const bot = 0.17;
+  return { c: [st.head[0], st.head[1] + ((top - bot) / 2) * s, st.head[2]], h: [half * s, ((top + bot) / 2) * s, half * s] };
+};
+/** the head box split for the overlap test: the head (+ hat / hair) and each antenna stalk-and-tip as its own box */
+const headParts = (st: ActorState): FrBox[] => {
+  const s = st.s, L = st.look;
+  const lift = L.acc?.hat ? 0.135 : 0;
+  const out: FrBox[] = [{ c: [st.head[0], st.head[1] + (lift ? lift / 2 : 0.02) * s, st.head[2]], h: [0.16 * s, (0.17 + (lift ? lift / 2 : 0.02)) * s, 0.16 * s], yaw: st.pose.yaw + (st.pose.headYaw ?? 0) }];
+  if (L.hairStyle !== "antennae" && L.hairStyle !== "antenna1") return out;
+  const ant = st.pose.ant ?? 0;
+  const splay0 = ant >= 0 ? lerp(0.38, 0.06, clamp(ant)) : lerp(0.38, 1.25, clamp(-ant));
+  const sp = L.hairStyle === "antennae" ? splay0 : 0.15 + splay0 * 0.4;
+  const len = 0.6 * 0.27 + 0.02, base = 0.1377 + lift;
+  const yaw = st.pose.yaw + (st.pose.headYaw ?? 0);
+  for (const x0 of L.hairStyle === "antennae" ? [-0.26, 0.26] : [0.08]) {
+    const sg = x0 < 0 ? -1 : 1, bx = x0 * 0.27 * (lift ? 0.7 : 1);
+    const tx = bx + sg * len * Math.sin(sp), ty = base + len * Math.cos(sp);
+    const lx = (bx + tx) / 2, ly = (base + ty) / 2;
+    const w = Math.abs(tx - bx) / 2 + 0.036, hh = (ty - base) / 2 + 0.036;
+    out.push({ c: [st.head[0] + lx * s * Math.cos(yaw), st.head[1] + ly * s, st.head[2] - lx * s * Math.sin(yaw)], h: [w * s, hh * s, 0.04 * s], yaw });
+  }
+  return out;
+};
+/** what the shot camera sees at t, for tools/framing_qa.mjs (views in output px, named actors, the subject, boards) */
+export const framingAt = (c: Compiled, t: number, M: FrMeasure) => {
+  const s = c.shotAt(t);
+  const cams = c.camAt(t);
+  const W = c.W, H = c.H;
+  const views = cams.split && cams.second
+    ? (c.landscape ? [{ cam: cams.main, left: 0, top: 0, w: 960, h: 1080, name: "left" }, { cam: cams.second, left: 960, top: 0, w: 960, h: 1080, name: "right" }]
+      : [{ cam: cams.main, left: 0, top: 0, w: 1080, h: 960, name: "top" }, { cam: cams.second, left: 0, top: 960, w: 1080, h: 960, name: "bottom" }])
+    : [{ cam: cams.main, left: 0, top: 0, w: W, h: H, name: "frame" }];
+  const qa = c.qa(t);
+  const states = s.actors.map((a) => actorState(a, t)!).filter((x) => x && x.id !== s.pov);
+  const actors = states.map((st) => {
+    const parts = qa.actors.filter((b) => b.name.startsWith(`${st.id}.`)).map((b) => ({ c: b.c, h: b.h }));
+    const torso = st.torso, low = st.grounded ? 0 : Math.max(0, st.pose.y - 0.6 * st.s);
+    parts.push({ c: [st.pose.x, (low + torso[1]) / 2, st.pose.z], h: [0.2 * st.s, Math.max(0.05, (torso[1] - low) / 2), 0.16 * st.s] });
+    // neckDrop (framing R6): the block head sits straight on the torso (no neck), so only a 0.05 x head-height seam counts
+    return { id: st.id, head: headBox(st), headParts: headParts(st), face: { c: st.head, h: [0.16 * st.s, 0.17 * st.s, 0.16 * st.s] as V3 }, parts, named: true, yaw: st.pose.yaw, neckDrop: 0.05 };
+  });
+  // the subject of each view: the camera's target actor; else the shot's `subject`; else its only actor (if on screen)
+  const ids = states.map((x) => x.id);
+  const tgOf = (tg: unknown) => (typeof tg === "string" ? tg.split(".")[0].split(":")[0] : "");
+  const cs = s.spec.cam;
+  const tgs = s.lens2 ? (cs.targets ?? [cs.target, cs.target]).map(tgOf) : [tgOf(s.pov ? (cs.targets?.[1] ?? cs.target) : cs.target)];
+  // a whip-in swings the frame across the set on purpose: its first 0.35 s is motion, not framing (skipped)
+  if ((cs.preset === "whip" || s.spec.in === "whip") && t < s.a + 0.35 && t > 0) return null;
+  const whip = false;
+  const subjects: { id: string; view: number; why: string; ifVisible?: boolean }[] = [];
+  if (!whip) tgs.forEach((tg, vi) => {
+    if (ids.includes(tg)) subjects.push({ id: tg, view: vi, why: "camera target" });
+    else if (s.spec.subject && ids.includes(s.spec.subject)) subjects.push({ id: s.spec.subject, view: vi, why: "the shot's subject" });
+    else if (ids.length === 1) subjects.push({ id: ids[0], view: vi, why: "the shot's only actor", ifVisible: true });
+  });
+  // boards: every text-bearing kit prop on screen now
+  const boards: FrBoard[] = [];
+  const others: { key: string; box: FrBox }[] = [];
+  const tgKey = tgOf(cs.target);
+  for (const p of s.props) {
+    if (t < p.a || t >= p.b || p.held) continue;
+    const ps = p.spec;
+    const m = motionAt(p, t, s);
+    if (!m.show) continue;
+    if (ps.motion === "rain") continue; // particles: the 3D clip QA keeps them out of heads; they fall through edges by design
+    const bx = propBox(ps);
+    const box: FrBox = { c: [m.p[0], m.p[1] + bx.c * m.sc[1], m.p[2]], h: [bx.h[0] * m.sc[0], bx.h[1] * m.sc[1], bx.h[2] * m.sc[2]], yaw: m.r[1] || 0 };
+    const text = ps.asset ? [] : textOf(ps, t, p.hit);
+    const tp = ps.asset ? null : textPlane(M, ps, text);
+    const landed = t >= (ps.motion === "dropSlam" || ps.motion === "fly-in" || ps.motion === "stick-to-face" ? p.hit : p.a) + 0.3;
+    if (!tp) { if (landed && !(ps.kit === "coin" || ps.kit === "bill" || ps.kit === "card")) others.push({ key: p.key, box }); continue; }
+    const sc = (ps.s ?? 1);
+    const yaw = m.r[1] || 0;
+    const o: V3 = [tp.o[0] * sc * m.sc[0], tp.o[1] * sc * m.sc[1], tp.o[2] * sc * m.sc[2]];
+    const ro = rotY(o, yaw);
+    boards.push({
+      key: p.key, label: tp.lines.map((l) => l.text).join(" / "), kind: ps.kit ?? "prop", box,
+      plane: { c: [m.p[0] + ro[0], m.p[1] + ro[1], m.p[2] + ro[2]], w: tp.w * sc * m.sc[0], h: tp.h * sc * m.sc[1], yaw },
+      lines: tp.lines.map((l) => ({ ...l, capM: l.capM * sc * m.sc[1] })), bg: tp.bg,
+      featured: !!p.local || tgKey === p.key, target: tgKey === p.key, landed, edge: true, size: ps.kit === "label" || ps.kit === "debtBlock" || ps.kit === "block" ? (ps.size ?? (ps.kit === "label" ? [0.8, 0.3, 0.05] : ps.kit === "block" ? [1.2, 1.2, 0.8] : [1.8, 1.8, 1.0])) : undefined,
+      fgField: tp.fgField, fix: tp.fix,
+    });
+  }
+  // framing rule R6 (tools/framing_qa.mjs): the word caption on screen now, as RecipeCaptions / LowerThirdCaptions draw it
+  // (recipe_build lays out its line boxes with framing_qa.mjs captionLines)
+  views.forEach((v, i) => { (v as { face?: number }).face = (i === 1 && s.lens2 ? s.lens2 : s.lens).face; });
+  let captionSpec: { words: string[]; mode: "short" | "lower"; W: number; side: number; fs: number; centre: number; stroke: number } | null = null;
+  if (!(s.spec.caption === "off" || c.recipe.captions === "off")) {
+    const fixed = s.spec.caption && s.spec.caption !== "auto" ? String(s.spec.caption) : null;
+    let words: string[] | null = null;
+    if (fixed) words = t >= s.a - 0.05 && t < s.b ? fixed.split(/\s+/) : null;
+    else if (t >= CAPTIONS_FROM) { const ch = (c.landscape ? CHUNKS_L(c) : CHUNKS(c)).find((k) => t >= k.start - 0.05 && t < k.hold); words = ch ? ch.words.map((w) => w.w) : null; }
+    if (words) captionSpec = c.landscape
+      ? { words, mode: "lower", W: 1920, side: 240, fs: 60, centre: capPlanL(c, s).y, stroke: 3 }
+      : { words, mode: "short", W: 1080, side: SAFE.right + 10, fs: 84, centre: capPlan(c, s).y, stroke: 3.5 };
+  }
+  return { shot: s.id, views, actors, subjects, boards, props: others, captionSpec };
+};
+/** every board of the recipe once (for the contrast rule), with the shots it appears in */
+export const framingBoards = (c: Compiled, M: FrMeasure) => {
+  const out = new Map<string, FrBoard & { shots: string }>();
+  for (const s of c.shots) for (const p of s.props) {
+    const ps = p.spec; if (ps.asset) continue;
+    const tm = Math.min(p.b - 1e-3, Math.max(p.a, p.hit + 1.5));
+    const tp = textPlane(M, ps, textOf(ps, tm, p.hit));
+    if (!tp || !tp.bg) continue;
+    const label = tp.lines.map((l) => l.text).join(" / ");
+    const k = `${p.key}|${tp.bg}|${tp.lines.map((l) => l.fg).join(",")}`;
+    const cur = out.get(k);
+    if (cur) { if (!cur.shots.split(",").includes(s.id)) cur.shots += `,${s.id}`; continue; }
+    out.set(k, { key: p.key, label, kind: ps.kit ?? "prop", box: { c: [0, 0, 0], h: [0, 0, 0] }, plane: { c: [0, 0, 0], w: 0, h: 0, yaw: 0 }, lines: tp.lines, bg: tp.bg, featured: false, landed: true, edge: true, fgField: tp.fgField, fix: tp.fix, shots: s.id });
+  }
+  return [...out.values()];
+};
+
 // ------------------------------------------------------------------ rendering
 const KitProp: React.FC<{ ps: PropSpec; text: string[]; t: number; hit: number }> = ({ ps, text, t, hit }) => {
   const color = ps.color;
@@ -577,7 +765,7 @@ const KitProp: React.FC<{ ps: PropSpec; text: string[]; t: number; hit: number }
     case "reader": return <Reader p={[0, 0, 0]} lit={t > hit ? 1 : 0} />;
     case "debtBlock": return <DebtBlock p={[0, 0, 0]} size={ps.size} text={text.length ? text : ["OWE"]} color={color} glow={ps.glow} />;
     case "block": return <DebtBlock p={[0, 0, 0]} size={ps.size ?? [1.2, 1.2, 0.8]} text={text} color={color ?? PAL.cash} glow={ps.glow} />;
-    case "label": { const s = ps.size ?? [0.8, 0.3, 0.05]; return <Label p={[0, 0, 0]} text={text} w={s[0]} h={s[1]} bg={color ?? PAL.debt} fg="#fff4c8" glow={ps.glow ?? 0.1} />; }
+    case "label": { const s = ps.size ?? [0.8, 0.3, 0.05]; return <Label p={[0, 0, 0]} text={text} w={s[0]} h={s[1]} bg={color ?? PAL.debt} fg={ps.fg ?? LABEL_FG} glow={ps.glow ?? 0.1} />; }
     case "jar": return <TallJar p={[0, 0, 0]} fill={ps.fill ?? 0.3} label={text[0] ?? "SAVINGS"} color={color} glow={ps.glow} />;
     case "coinPile": return <CoinPile p={[0, 0, 0]} r={ps.size?.[0] ?? 0.9} h={ps.size?.[1] ?? 0.7} coins={80} />;
     case "calendar": return <FlipCalendar p={[0, 0, 0]} title={text[0] ?? "YEAR"} value={ps.value ?? text[1] ?? "1"} sub={text[2]} color={color} />;
@@ -749,21 +937,7 @@ const PortraitFilm: React.FC<{ c: Compiled; g: number; sub: boolean }> = ({ c, g
 // ------------------------------------------------------------------ LONG-FORM: the 1920x1080 film (LONGFORM.md)
 /** a chapter title sting: 2.6 s, a bar slides in from the left with "CHAPTER n" and the title, holds, slides out */
 export const CHAPTER_CARD_S = 2.6;
-const ChapterCard: React.FC<{ n: number; title: string; u: number }> = ({ n, title, u }) => {
-  if (u < 0 || u > CHAPTER_CARD_S) return null;
-  const inK = EASE_OUT(clamp(u / 0.35)), outK = EASE_OUT(clamp((u - (CHAPTER_CARD_S - 0.35)) / 0.35));
-  const x = -1100 * (1 - inK) - 1300 * outK;
-  const dim = 0.32 * inK * (1 - outK);
-  return (
-    <>
-      <AbsoluteFill style={{ background: `rgba(10,6,16,${dim})` }} />
-      <div style={{ position: "absolute", left: 0, top: 330, transform: `translateX(${x}px)`, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-        <div style={{ marginLeft: 120, padding: "6px 18px", background: "#ffd23a", color: "#140c1c", fontFamily: "Poppins", fontWeight: 800, fontSize: 34, letterSpacing: 4, borderRadius: 8 }}>{`CHAPTER ${n}`}</div>
-        <div style={{ marginTop: 14, padding: "18px 60px 22px 120px", background: "rgba(20,12,28,0.88)", borderRight: "14px solid #ff3b30", color: "#ffffff", fontFamily: "Poppins", fontWeight: 800, fontSize: 96, lineHeight: 1.05, maxWidth: 1500, textTransform: "uppercase" }}>{title}</div>
-      </div>
-    </>
-  );
-};
+// ChapterCard lives in src/longform/kit.tsx (shared with the kits; the same look)
 /** LONG-FORM lower-third caption centre (px at 1080 tall) and half its 2-line band */
 export const CAP_Y_L = 905;
 const CAP_HALF_L = 72;
@@ -954,8 +1128,8 @@ export const capCentre = (c: Compiled, shot: { id: string; a: number; b: number 
  *  the shot shows chest/body/floor in the band instead. Split screens lift the bottom view only. Limits keep heads in
  *  frame (full >= 0.26, split view >= 0.2); whatever is left over falls back to the smallest caption nudge in capPlan.
  *  A recipe can opt a shot out with cam.face set explicitly. */
-export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2"; v: number }[] => {
-  const out: { i: number; key: "face" | "face2"; v: number }[] = [];
+export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "face2" | "dist" | "dist2"; v: number }[] => {
+  const out: { i: number; key: "face" | "face2" | "dist" | "dist2"; v: number }[] = [];
   if (c.landscape) {
     // long-form: lift a shot whose face lands in the lower-third band (a side-by-side split lifts both views)
     c.shots.forEach((shot, i) => {
@@ -993,10 +1167,59 @@ export const captionSafeFraming = (c: Compiled): { i: number; key: "face" | "fac
       if (need <= 0 || (L.face ?? 0.5) <= min + 1e-3) break;
       L.face = Math.max(min, (L.face ?? 0.5) - (need + 8) / h);
     }
+    if (L.face !== f0) {
+      // head room (framing QA rule R2): the lift may never push the subject's head box (antennae, hair, hat) into the
+      // top edge or the split seam. Give back as much of the lift as the head needs (never past the original framing);
+      // if the face then still sits in the caption band, ask recipe_build to pull this view back (dist / dist2)
+      const room = headRoom(c, shot, split);
+      if (room !== null && room < HEAD_ROOM) {
+        L.face = Math.min(f0, (L.face ?? 0.5) + (HEAD_ROOM - room) / h + 0.002);
+        capCache.delete(c);
+        const p = capPlan(c, shot);
+        const still = p.faces.length && Math.max(...p.faces.map((o) => o.bot)) - (CAP_Y - CAP_HALF - 10) > 0;
+        if (still) {
+          // the head (top of the head box) to the face bottom must fit between HEAD_ROOM and the band's top edge:
+          // the view's distance scales with how much too tall that span is (on-screen size ~ 1 / distance)
+          const P0 = CAM_PRESETS[shot.spec.cam.preset as keyof typeof CAM_PRESETS];
+          const cs2 = shot.spec.cam as { dist?: number; dist2?: number };
+          const d0 = split ? cs2.dist2 ?? cs2.dist ?? P0.dist : cs2.dist ?? P0.dist;
+          const top = split ? 960 : 0, bandTop = CAP_Y - CAP_HALF - 10 - top;
+          const r2 = headRoom(c, shot, split) ?? HEAD_ROOM;
+          const span = Math.max(...p.faces.map((o) => o.bot)) - top - r2;
+          const k = Math.max(1.08, (span / Math.max(40, bandTop - HEAD_ROOM)) * 1.06);
+          out.push({ i, key: split ? "dist2" : "dist", v: Math.round(d0 * k * 100) / 100 });
+        }
+      }
+    }
     if (L.face !== f0) out.push({ i, key: split ? "face2" : "face", v: Math.round(L.face * 1000) / 1000 });
   });
   capCache.delete(c);
   return out;
+};
+/** px the lift must leave between the top of the view and the subject's head box (11 px edge rule + 7 px air) */
+const HEAD_ROOM = 18;
+/** the smallest gap (px, sampled every 0.1 s) between the top of the view and the head box top of the view's target actor;
+ *  null when the view does not aim at an actor */
+const headRoom = (c: Compiled, shot: ShotR, split: boolean): number | null => {
+  const tg = split ? (shot.spec.cam.targets?.[1] ?? shot.spec.cam.target) : shot.spec.cam.target;
+  const id = typeof tg === "string" ? tg.split(".")[0] : "";
+  let best: number | null = null;
+  // every 0.1 s (a slam zoom or a squash between sparse samples would still push the antennae out)
+  const n = Math.max(5, Math.ceil((shot.b - shot.a) / 0.1));
+  for (let k = 0; k < n; k++) {
+    const tm = shot.a + ((shot.b - shot.a) * (k + 0.5)) / n;
+    const st = c.actorsAt(tm).find((a) => a.id === id);
+    if (!st) continue;
+    const cams = c.camAt(tm);
+    const cam = split && cams.second ? cams.second : cams.main;
+    const hb = headBox(st);
+    // the 4 top corners of the head box (a near corner projects higher than the top centre), as the QA measures it
+    for (const dx of [-1, 1]) for (const dz of [-1, 1]) {
+      const q = project(cam, [hb.c[0] + dx * hb.h[0], hb.c[1] + hb.h[1], hb.c[2] + dz * hb.h[2]], split ? 960 : 1920, 0);
+      if (q) best = best === null ? q.y : Math.min(best, q.y);
+    }
+  }
+  return best;
 };
 /** FORMAT_V1 day-1 fix 2: frame 0 shows ONE hook line, so word captions (a second text layer) start at 1.0 s */
 export const CAPTIONS_FROM = 1.0;

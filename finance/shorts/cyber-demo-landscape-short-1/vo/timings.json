@@ -1,0 +1,471 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 29.65,
+  "cutFrom": "cyber-fake-supplier",
+  "note": "the first 9 lines of the portrait demo, word times unchanged",
+  "clippedFrom": "cyber-demo-landscape",
+  "clipFrom": 0,
+  "clipTo": 28.85
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "One man got Google and Facebook to wire him over $100 million.",
+   "words": [
+    {
+     "w": "One",
+     "t": 0.1,
+     "end": 0.355
+    },
+    {
+     "w": "man",
+     "t": 0.355,
+     "end": 0.61
+    },
+    {
+     "w": "got",
+     "t": 0.61,
+     "end": 0.865
+    },
+    {
+     "w": "Google",
+     "t": 0.865,
+     "end": 1.255
+    },
+    {
+     "w": "and",
+     "t": 1.255,
+     "end": 1.51
+    },
+    {
+     "w": "Facebook",
+     "t": 1.51,
+     "end": 1.99
+    },
+    {
+     "w": "to",
+     "t": 1.99,
+     "end": 2.2
+    },
+    {
+     "w": "wire",
+     "t": 2.2,
+     "end": 2.5
+    },
+    {
+     "w": "him",
+     "t": 2.5,
+     "end": 2.755
+    },
+    {
+     "w": "over",
+     "t": 2.755,
+     "end": 3.055
+    },
+    {
+     "w": "$100",
+     "t": 3.055,
+     "end": 3.355
+    },
+    {
+     "w": "million.",
+     "t": 3.355,
+     "end": 3.79
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "He didn't hack them. He sent emails.",
+   "words": [
+    {
+     "w": "He",
+     "t": 4.14,
+     "end": 4.35
+    },
+    {
+     "w": "didn't",
+     "t": 4.35,
+     "end": 4.74
+    },
+    {
+     "w": "hack",
+     "t": 4.74,
+     "end": 5.04
+    },
+    {
+     "w": "them.",
+     "t": 5.04,
+     "end": 5.34
+    },
+    {
+     "w": "He",
+     "t": 5.34,
+     "end": 5.55
+    },
+    {
+     "w": "sent",
+     "t": 5.55,
+     "end": 5.85
+    },
+    {
+     "w": "emails.",
+     "t": 5.85,
+     "end": 6.24
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Both giants did business with a real hardware maker in Taiwan.",
+   "words": [
+    {
+     "w": "Both",
+     "t": 6.59,
+     "end": 6.89
+    },
+    {
+     "w": "giants",
+     "t": 6.89,
+     "end": 7.28
+    },
+    {
+     "w": "did",
+     "t": 7.28,
+     "end": 7.535
+    },
+    {
+     "w": "business",
+     "t": 7.535,
+     "end": 8.015
+    },
+    {
+     "w": "with",
+     "t": 8.015,
+     "end": 8.315
+    },
+    {
+     "w": "a",
+     "t": 8.315,
+     "end": 8.48
+    },
+    {
+     "w": "real",
+     "t": 8.48,
+     "end": 8.78
+    },
+    {
+     "w": "hardware",
+     "t": 8.78,
+     "end": 9.26
+    },
+    {
+     "w": "maker",
+     "t": 9.26,
+     "end": 9.605
+    },
+    {
+     "w": "in",
+     "t": 9.605,
+     "end": 9.815
+    },
+    {
+     "w": "Taiwan.",
+     "t": 9.815,
+     "end": 10.205
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "So he set up a company in Latvia with the exact same name.",
+   "words": [
+    {
+     "w": "So",
+     "t": 10.555,
+     "end": 10.765
+    },
+    {
+     "w": "he",
+     "t": 10.765,
+     "end": 10.975
+    },
+    {
+     "w": "set",
+     "t": 10.975,
+     "end": 11.23
+    },
+    {
+     "w": "up",
+     "t": 11.23,
+     "end": 11.44
+    },
+    {
+     "w": "a",
+     "t": 11.44,
+     "end": 11.605
+    },
+    {
+     "w": "company",
+     "t": 11.605,
+     "end": 12.04
+    },
+    {
+     "w": "in",
+     "t": 12.04,
+     "end": 12.25
+    },
+    {
+     "w": "Latvia",
+     "t": 12.25,
+     "end": 12.64
+    },
+    {
+     "w": "with",
+     "t": 12.64,
+     "end": 12.94
+    },
+    {
+     "w": "the",
+     "t": 12.94,
+     "end": 13.195
+    },
+    {
+     "w": "exact",
+     "t": 13.195,
+     "end": 13.54
+    },
+    {
+     "w": "same",
+     "t": 13.54,
+     "end": 13.84
+    },
+    {
+     "w": "name.",
+     "t": 13.84,
+     "end": 14.14
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Then came fake emails, fake invoices, even fake corporate stamps.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 14.49,
+     "end": 14.79
+    },
+    {
+     "w": "came",
+     "t": 14.79,
+     "end": 15.09
+    },
+    {
+     "w": "fake",
+     "t": 15.09,
+     "end": 15.39
+    },
+    {
+     "w": "emails,",
+     "t": 15.39,
+     "end": 15.78
+    },
+    {
+     "w": "fake",
+     "t": 15.78,
+     "end": 16.08
+    },
+    {
+     "w": "invoices,",
+     "t": 16.08,
+     "end": 16.56
+    },
+    {
+     "w": "even",
+     "t": 16.56,
+     "end": 16.86
+    },
+    {
+     "w": "fake",
+     "t": 16.86,
+     "end": 17.16
+    },
+    {
+     "w": "corporate",
+     "t": 17.16,
+     "end": 17.685
+    },
+    {
+     "w": "stamps.",
+     "t": 17.685,
+     "end": 18.075
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "From 2013 to 2015, they paid. Over $120 million in total.",
+   "words": [
+    {
+     "w": "From",
+     "t": 18.425,
+     "end": 18.725
+    },
+    {
+     "w": "2013",
+     "t": 18.725,
+     "end": 19.025
+    },
+    {
+     "w": "to",
+     "t": 19.025,
+     "end": 19.235
+    },
+    {
+     "w": "2015,",
+     "t": 19.235,
+     "end": 19.535
+    },
+    {
+     "w": "they",
+     "t": 19.535,
+     "end": 19.835
+    },
+    {
+     "w": "paid.",
+     "t": 19.835,
+     "end": 20.135
+    },
+    {
+     "w": "Over",
+     "t": 20.135,
+     "end": 20.435
+    },
+    {
+     "w": "$120",
+     "t": 20.435,
+     "end": 20.735
+    },
+    {
+     "w": "million",
+     "t": 20.735,
+     "end": 21.17
+    },
+    {
+     "w": "in",
+     "t": 21.17,
+     "end": 21.38
+    },
+    {
+     "w": "total.",
+     "t": 21.38,
+     "end": 21.725
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The money scattered fast: Cyprus, Slovakia, Hungary, Hong Kong.",
+   "words": [
+    {
+     "w": "The",
+     "t": 22.075,
+     "end": 22.33
+    },
+    {
+     "w": "money",
+     "t": 22.33,
+     "end": 22.675
+    },
+    {
+     "w": "scattered",
+     "t": 22.675,
+     "end": 23.2
+    },
+    {
+     "w": "fast:",
+     "t": 23.2,
+     "end": 23.545
+    },
+    {
+     "w": "Cyprus,",
+     "t": 23.545,
+     "end": 23.935
+    },
+    {
+     "w": "Slovakia,",
+     "t": 23.935,
+     "end": 24.415
+    },
+    {
+     "w": "Hungary,",
+     "t": 24.415,
+     "end": 24.85
+    },
+    {
+     "w": "Hong",
+     "t": 24.85,
+     "end": 25.15
+    },
+    {
+     "w": "Kong.",
+     "t": 25.15,
+     "end": 25.45
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "But wires leave a trail. In 2017, Lithuanian authorities",
+   "words": [
+    {
+     "w": "But",
+     "t": 25.8,
+     "end": 26.055
+    },
+    {
+     "w": "wires",
+     "t": 26.055,
+     "end": 26.4
+    },
+    {
+     "w": "leave",
+     "t": 26.4,
+     "end": 26.745
+    },
+    {
+     "w": "a",
+     "t": 26.745,
+     "end": 26.91
+    },
+    {
+     "w": "trail.",
+     "t": 26.91,
+     "end": 27.255
+    },
+    {
+     "w": "In",
+     "t": 27.255,
+     "end": 27.465
+    },
+    {
+     "w": "2017,",
+     "t": 27.465,
+     "end": 27.765
+    },
+    {
+     "w": "Lithuanian",
+     "t": 27.765,
+     "end": 28.335
+    },
+    {
+     "w": "authorities",
+     "t": 28.335,
+     "end": 28.95
+    }
+   ]
+  }
+ ]
+}

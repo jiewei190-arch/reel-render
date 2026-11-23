@@ -3,13 +3,26 @@
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 
+/** bounded caches for long renders: when a cache is full, the least recently used half is dropped AND disposed (frees
+ *  its GPU memory: geometries and textures; three.js re-uploads a disposed object if a mounted mesh still uses it). The objects are pure
+ *  functions of their key, so eviction never changes a pixel. */
+const lruGet = <T,>(m: Map<string, T>, key: string): T | undefined => {
+  const v = m.get(key);
+  if (v !== undefined) { m.delete(key); m.set(key, v); }
+  return v;
+};
+const lruMake = <T extends { dispose: () => void }>(m: Map<string, T>, cap: number, free = true) => {
+  if (m.size <= cap) return;
+  let n = Math.ceil(m.size / 2);
+  for (const [k, v] of m) { if (n-- <= 0) break; m.delete(k); if (free) v.dispose(); }
+};
 const mats = new Map<string, THREE.MeshStandardMaterial>();
 export type PlasticOpts = { rough?: number; flat?: boolean; map?: THREE.Texture; alphaMap?: THREE.Texture; transparent?: boolean; opacity?: number; decal?: boolean; side?: THREE.Side; emissive?: string; ei?: number };
 export const plastic = (color: string, o: PlasticOpts = {}) => {
   const key = [color, o.rough ?? 0.5, o.flat ? 1 : 0, o.map?.uuid ?? "", o.alphaMap?.uuid ?? "", o.transparent ? 1 : 0, o.opacity ?? 1, o.decal ? 1 : 0, o.side ?? 0, o.emissive ?? "", o.ei ?? 0].join("|");
-  let m = mats.get(key);
+  let m = lruGet(mats, key);
   if (!m) {
-    if (mats.size > 400) mats.clear();
+    lruMake(mats, 400, false); // materials: dropped, not disposed (a dispose can force a shader recompile)
     m = new THREE.MeshStandardMaterial({
       color,
       roughness: o.rough ?? 0.5,
@@ -35,11 +48,35 @@ export const plastic = (color: string, o: PlasticOpts = {}) => {
   return m;
 };
 
+/** BOARD TEXT ("sign") material: an unlit, opaque decal (alpha-tested corners) that marks its pixels with scene alpha 0.1.
+ *  The post grade (engine/post/shaders.ts, uBoard) passes marked pixels through as their declared sRGB colour: no
+ *  scene lighting, exposure, highlight shoulder, mood lift, saturation, split tone or bloom. A board then renders at
+ *  the contrast the framing QA computes from its declared colours (tools/framing_qa.mjs rule R4). Before this, a lit
+ *  decal under the store mood measured 2.2-3.0:1 for a declared 4.5:1 board. */
+const signs = new Map<string, THREE.MeshBasicMaterial>();
+export const signMat = (map: THREE.Texture) => {
+  const key = map.uuid;
+  let m = lruGet(signs, key);
+  if (!m) {
+    lruMake(signs, 200, false);
+    m = new THREE.MeshBasicMaterial({ map, alphaTest: 0.5, transparent: false, toneMapped: false, fog: false });
+    m.polygonOffset = true;
+    m.polygonOffsetFactor = -2;
+    m.polygonOffsetUnits = -2;
+    m.onBeforeCompile = (sh) => {
+      sh.fragmentShader = sh.fragmentShader.replace("#include <dithering_fragment>", "#include <dithering_fragment>\n  gl_FragColor.a = 0.1;");
+    };
+    m.customProgramCacheKey = () => "board-sign";
+    signs.set(key, m);
+  }
+  return m;
+};
+
 const geos = new Map<string, THREE.BufferGeometry>();
 export const geoOf = (key: string, make: () => THREE.BufferGeometry) => {
-  let g = geos.get(key);
+  let g = lruGet(geos, key);
   if (!g) {
-    if (geos.size > 400) geos.clear();
+    lruMake(geos, 400);
     g = make();
     geos.set(key, g);
   }
@@ -52,9 +89,9 @@ export const rbox = (w: number, h: number, d: number, r: number) =>
 const texs = new Map<string, THREE.CanvasTexture>();
 /** a cached canvas texture (drawn once per key) */
 export const canvasTexture = (key: string, w: number, h: number, draw: (g: CanvasRenderingContext2D, w: number, h: number) => void, srgb = true) => {
-  let t = texs.get(key);
+  let t = lruGet(texs, key);
   if (!t) {
-    if (texs.size > 120) texs.clear();
+    lruMake(texs, 120);
     const c = document.createElement("canvas");
     c.width = w;
     c.height = h;

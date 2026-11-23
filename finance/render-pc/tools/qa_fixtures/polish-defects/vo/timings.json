@@ -1,0 +1,330 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 20.08,
+  "note": "tools/qa_fixtures/polish-defects: synthetic word times that reproduce the editor's Pearson v. Chung defects"
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A judge sued his dry cleaner over one pair of pants.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "end": 0.22
+    },
+    {
+     "w": "judge",
+     "t": 0.24,
+     "end": 0.56
+    },
+    {
+     "w": "sued",
+     "t": 0.58,
+     "end": 0.9
+    },
+    {
+     "w": "his",
+     "t": 0.92,
+     "end": 1.14
+    },
+    {
+     "w": "dry",
+     "t": 1.16,
+     "end": 1.38
+    },
+    {
+     "w": "cleaner",
+     "t": 1.4,
+     "end": 1.72
+    },
+    {
+     "w": "over",
+     "t": 1.74,
+     "end": 2.06
+    },
+    {
+     "w": "one",
+     "t": 2.08,
+     "end": 2.3
+    },
+    {
+     "w": "pair",
+     "t": 2.32,
+     "end": 2.64
+    },
+    {
+     "w": "of",
+     "t": 2.66,
+     "end": 2.88
+    },
+    {
+     "w": "pants.",
+     "t": 2.9,
+     "end": 3.22
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "He fought for fifteen years in court,",
+   "words": [
+    {
+     "w": "He",
+     "t": 3.59,
+     "end": 3.81
+    },
+    {
+     "w": "fought",
+     "t": 3.83,
+     "end": 4.15
+    },
+    {
+     "w": "for",
+     "t": 4.17,
+     "end": 4.39
+    },
+    {
+     "w": "fifteen",
+     "t": 4.41,
+     "end": 4.73
+    },
+    {
+     "w": "years",
+     "t": 4.75,
+     "end": 5.07
+    },
+    {
+     "w": "in",
+     "t": 5.09,
+     "end": 5.31
+    },
+    {
+     "w": "court,",
+     "t": 5.33,
+     "end": 5.65
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "then offered twelve thousand dollars to settle.",
+   "words": [
+    {
+     "w": "then",
+     "t": 6.02,
+     "end": 6.34
+    },
+    {
+     "w": "offered",
+     "t": 6.36,
+     "end": 6.68
+    },
+    {
+     "w": "twelve",
+     "t": 6.7,
+     "end": 7.02
+    },
+    {
+     "w": "thousand",
+     "t": 7.04,
+     "end": 7.36
+    },
+    {
+     "w": "dollars",
+     "t": 7.38,
+     "end": 7.7
+    },
+    {
+     "w": "to",
+     "t": 7.72,
+     "end": 7.94
+    },
+    {
+     "w": "settle.",
+     "t": 7.96,
+     "end": 8.28
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The claim reached $64,000,000 in total: per violation, per day.",
+   "words": [
+    {
+     "w": "The",
+     "t": 8.65,
+     "end": 8.87
+    },
+    {
+     "w": "claim",
+     "t": 8.89,
+     "end": 9.21
+    },
+    {
+     "w": "reached",
+     "t": 9.23,
+     "end": 9.55
+    },
+    {
+     "w": "$64,000,000",
+     "t": 9.57,
+     "end": 9.89
+    },
+    {
+     "w": "in",
+     "t": 9.91,
+     "end": 10.13
+    },
+    {
+     "w": "total:",
+     "t": 10.15,
+     "end": 10.47
+    },
+    {
+     "w": "per",
+     "t": 10.49,
+     "end": 10.71
+    },
+    {
+     "w": "violation,",
+     "t": 10.73,
+     "end": 11.05
+    },
+    {
+     "w": "per",
+     "t": 11.07,
+     "end": 11.29
+    },
+    {
+     "w": "day.",
+     "t": 11.31,
+     "end": 11.63
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "The Dry Cleaner's Last Stand began after 1,152 days of hearings.",
+   "words": [
+    {
+     "w": "The",
+     "t": 12.0,
+     "end": 12.22
+    },
+    {
+     "w": "Dry",
+     "t": 12.24,
+     "end": 12.46
+    },
+    {
+     "w": "Cleaner's",
+     "t": 12.48,
+     "end": 12.8
+    },
+    {
+     "w": "Last",
+     "t": 12.82,
+     "end": 13.14
+    },
+    {
+     "w": "Stand",
+     "t": 13.16,
+     "end": 13.48
+    },
+    {
+     "w": "began",
+     "t": 13.5,
+     "end": 13.82
+    },
+    {
+     "w": "after",
+     "t": 13.84,
+     "end": 14.16
+    },
+    {
+     "w": "1,152",
+     "t": 14.18,
+     "end": 14.5
+    },
+    {
+     "w": "days",
+     "t": 14.52,
+     "end": 14.84
+    },
+    {
+     "w": "of",
+     "t": 14.86,
+     "end": 15.08
+    },
+    {
+     "w": "hearings.",
+     "t": 15.1,
+     "end": 15.42
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The family sat at their table and waited for the verdict.",
+   "words": [
+    {
+     "w": "The",
+     "t": 15.79,
+     "end": 16.01
+    },
+    {
+     "w": "family",
+     "t": 16.03,
+     "end": 16.35
+    },
+    {
+     "w": "sat",
+     "t": 16.37,
+     "end": 16.59
+    },
+    {
+     "w": "at",
+     "t": 16.61,
+     "end": 16.83
+    },
+    {
+     "w": "their",
+     "t": 16.85,
+     "end": 17.17
+    },
+    {
+     "w": "table",
+     "t": 17.19,
+     "end": 17.51
+    },
+    {
+     "w": "and",
+     "t": 17.53,
+     "end": 17.75
+    },
+    {
+     "w": "waited",
+     "t": 17.77,
+     "end": 18.09
+    },
+    {
+     "w": "for",
+     "t": 18.11,
+     "end": 18.33
+    },
+    {
+     "w": "the",
+     "t": 18.35,
+     "end": 18.57
+    },
+    {
+     "w": "verdict.",
+     "t": 18.59,
+     "end": 18.91
+    }
+   ]
+  }
+ ]
+}
