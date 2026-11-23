@@ -9,6 +9,7 @@ import * as L4 from "./gen/kelo_took_her_house.law.gen";
 import * as L5 from "./gen/law_demo_54_million_pants.law.gen";
 import * as L6 from "./gen/law_demo_landscape.law.gen";
 import * as L7 from "./gen/law_demo_landscape_short_1.law.gen";
+import * as L8 from "./gen/moore_patented_cells.law.gen";
 
 export const LAW_RECIPES: { id: string; recipe: LawRecipe; words: Word[]; vo?: number }[] = [
   { id: L0.ID, recipe: L0.RECIPE, words: L0.WORDS, vo: L0.VO_DURATION },
@@ -19,4 +20,5 @@ export const LAW_RECIPES: { id: string; recipe: LawRecipe; words: Word[]; vo?: n
   { id: L5.ID, recipe: L5.RECIPE, words: L5.WORDS, vo: L5.VO_DURATION },
   { id: L6.ID, recipe: L6.RECIPE, words: L6.WORDS, vo: L6.VO_DURATION },
   { id: L7.ID, recipe: L7.RECIPE, words: L7.WORDS, vo: L7.VO_DURATION },
+  { id: L8.ID, recipe: L8.RECIPE, words: L8.WORDS, vo: L8.VO_DURATION },
 ];

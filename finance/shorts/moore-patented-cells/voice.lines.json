@@ -1,0 +1,63 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1739,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 576,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A cell line grown from his cells was patented, but he says nobody told him. Then he sued.",
+   "start": 0.085,
+   "end": 5.742
+  },
+  {
+   "line": 2,
+   "text": "Nineteen seventy-six. John Moore has leukemia. At U.C.L.A., surgeons remove his spleen.",
+   "start": 5.869,
+   "end": 11.867
+  },
+  {
+   "line": 3,
+   "text": "For nearly seven years, he flies in from Seattle to give more samples.",
+   "start": 11.994,
+   "end": 15.811
+  },
+  {
+   "line": 4,
+   "text": "His complaint alleges his doctor was building a cell line from them. It was patented in nineteen eighty-four.",
+   "start": 15.939,
+   "end": 21.459
+  },
+  {
+   "line": 5,
+   "text": "One forecast quoted in the complaint: a three billion dollar market.",
+   "start": 21.587,
+   "end": 25.744
+  },
+  {
+   "line": 6,
+   "text": "California's Supreme Court rules he does not own his removed cells.",
+   "start": 25.872,
+   "end": 29.756
+  },
+  {
+   "line": 7,
+   "text": "But a doctor must disclose a financial interest. That claim survives.",
+   "start": 29.884,
+   "end": 33.905
+  },
+  {
+   "line": 8,
+   "text": "And it began when",
+   "start": 34.033,
+   "end": 35.6
+  }
+ ]
+}
