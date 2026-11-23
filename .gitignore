@@ -3,3 +3,10 @@ tts/*.bin
 reels/frames/
 reels/out/
 *.wav
+styles-src/
+reels/up/*.mp4
+reels/stills/
+reels/*.log
+reels/*.done
+reels/frames/
+reels/vendor/
