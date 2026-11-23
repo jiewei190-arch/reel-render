@@ -1,0 +1,90 @@
+{
+ "kit": "doc",
+ "slug": "pearson-doc",
+ "theme": "law",
+ "title": "The $54 Million Pants",
+ "music": "suspense",
+ "hook": {
+  "text": "*$54 MILLION* FOR PANTS"
+ },
+ "voice": {
+  "timings": "vo/timings.json"
+ },
+ "chapters": [
+  {
+   "file": "chapters/01.json",
+   "title": "The Missing Pants",
+   "from": "1:A",
+   "card": "7:In"
+  },
+  {
+   "file": "chapters/02.json",
+   "title": "The $67 Million Demand",
+   "from": "14:The"
+  },
+  {
+   "file": "chapters/03.json",
+   "title": "The Verdict",
+   "from": "22:The"
+  }
+ ],
+ "kit3d": {
+  "cast": {
+   "pearson": {
+    "role": "plaintiff",
+    "skin": "#8a5a3c",
+    "hairStyle": "short",
+    "hair": "#3a3634",
+    "suit": "#2e3d5e",
+    "pants": "#26324c",
+    "tie": "#7a1f24",
+    "build": "broad",
+    "plate": "PLAINTIFF"
+   },
+   "mom": {
+    "role": "defendant",
+    "skin": "#e2b48c",
+    "hairStyle": "bun",
+    "hair": "#16120f",
+    "suit": "#5a5650",
+    "shirt": "#efe9de",
+    "tie": "#5a5650",
+    "apron": "#2b4f7a",
+    "build": "slim",
+    "height": 0.93,
+    "plate": "DEFENDANT"
+   },
+   "dad": {
+    "role": "defendant",
+    "skin": "#d9a984",
+    "hairStyle": "short",
+    "hair": "#1a1816",
+    "suit": "#6e6a62",
+    "apron": "#2b4f7a",
+    "glasses": true,
+    "plate": "DEFENDANT"
+   },
+   "son": {
+    "role": "defendant",
+    "skin": "#e0b08a",
+    "hairStyle": "side",
+    "hair": "#120f0d",
+    "suit": "#3a3f48",
+    "tie": "#B9862A"
+   },
+   "judge": {
+    "role": "judge",
+    "skin": "#efc6a6",
+    "hairStyle": "long",
+    "hair": "#8a7a6e",
+    "glasses": true,
+    "plate": "THE COURT"
+   }
+  }
+ },
+ "sources": [
+  "Pearson v. Chung, Superior Court of the District of Columbia; ruling by Judge Judith Bartnoff, June 25, 2007 (paraphrased on screen).",
+  "The complaint against Custom Cleaners and its owners Jin Nam Chung, Soo Chung and Ki Chung (paraphrased on screen).",
+  "REFERENCE DEMO: the voice timings are synthetic; check every fact against the court record before publishing."
+ ]
+}

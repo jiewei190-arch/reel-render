@@ -82,9 +82,14 @@ def _typecheck(slug: str) -> tuple[bool, str]:
     """Build for real and run the same `tsc --noEmit` the render runs. --check doesn't validate every enum/type in
     the generated code (e.g. a board pos "low"), and one bad generated file breaks EVERY kit's render, so on failure
     every file this build touched is rolled back and the errors go back to the writer."""
+    return typecheck_build([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)])
+
+
+def typecheck_build(build_cmd: list[str]) -> tuple[bool, str]:
+    """_typecheck for any builder command (the doc kit's tools/doc_build.mjs uses it too). Caller holds the engine lock."""
     npx = shutil.which("npx") or "npx"
     before_mod, before_new = _git_state()
-    b = subprocess.run([CFG.node, "tools/recipe_build.mjs", slug, "--shorts", str(CFG.shorts_dir)], cwd=CFG.render_root,
+    b = subprocess.run(build_cmd, cwd=CFG.render_root,
                        capture_output=True, text=True, encoding="utf-8", errors="replace")
     t = subprocess.run([npx, "--no-install", "tsc", "--noEmit"], cwd=CFG.render_root, capture_output=True, text=True,
                        encoding="utf-8", errors="replace") if b.returncode == 0 else b

@@ -118,10 +118,50 @@ Profiles live in `reelbot/channels.py`; each story channel's writing rules are i
 `<videos dir>/<Channel folder>/<slug>/`.
 
 - `--long` makes a long-form video (about 10 minutes, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
+  On law, biz and cyber it is written in the doc kit (see "Long-form (doc engine)").
   Needs the engine's landscape mode (`LONGFORM.md` in the render folder).
 - `bend "<a winning video or format>" --channel law` studies a format that works, adapts it into original story ideas
   for the channel, checks demand and competition with cited sources, ranks them (STRONG / PROMISING / UNVALIDATED /
   SKIP), and adds the good ones to `work/topics_<channel>.txt` for `batch ... --channel <id>`.
+
+## Long-form (doc engine)
+
+`--long` videos on **law, biz and cyber** are written in the engine's documentary kit ("doc", `KIT_DOC.md` in the
+render folder) instead of one giant kit recipe. Shorts, Block Money and Justin are unchanged.
+Code: `reelbot/docwriter.py`. Off switch: `REELBOT_DOC_ENGINE=0` (falls back to the single long recipe).
+
+```
+script.json + vo/timings.json
+  ──► doc.json      outline: theme = channel, chapters from script.json "chapters" (each on the first word of its
+                    line; chapter 1 holds the 30 s cold open, its card plays after it), sources = script sources +
+                    fact-checked claims; ONE small Claude call adds the hook text, the 3D cast and the big beats
+  ──► chapters/01.json, 02.json, ...   ONE Claude call PER CHAPTER (effort medium, <= 32K output): that chapter's
+                    lines + word timings, KIT_DOC.md + the 3D kit guide (prompt-cached), the previous chapter's summary
+        └─ node tools/doc_build.mjs <slug> --check --chapter N   FAIL lines go back to THAT chapter only, with the
+           history of earlier attempts; up to 5 attempts; the best attempt is kept
+  ──► node tools/doc_build.mjs <slug> --check   whole video: N1 spoken numbers, C1 chapter cards, budgets, S-rules,
+                    long-form gate. Each FAIL line is routed to its chapter (scene id S27 -> chapter, "chapter N", or
+                    its time) and only those chapters are rewritten; up to 3 rounds
+  ──► build + tsc --noEmit (engine lock; a bad generated file is rolled back and its errors go to the chapters that
+                    hold the bad value)
+  ──► render <Pascal>Doc from src/index.doc.ts (no motion blur), story_mix with the doc cues, -14 LUFS, chapters.txt
+                    copied next to video.mp4
+  ──► AI editors: each timestamped issue is mapped to its chapter and only those chapters are rewritten; every
+                    round's doc.json + chapters are kept (doc_roundN/) and the best round wins
+```
+
+Files in the video's folder: `doc.json`, `chapters/NN.json`, `doc_writer.json` (chapter summaries, planned beats),
+`doc_check_chNN_<tag>_<attempt>.log`, `doc_check_video_<tag>.log`, `doc_cost.json` (Claude cost per chapter and in
+total, also printed), `RECIPE_QA.md`, `chapters.txt`.
+
+Settings: `REELBOT_DOC_CHAPTER_ATTEMPTS` (5), `REELBOT_DOC_ROUNDS` (3 whole-video rounds), `REELBOT_DOC_MAX_TOKENS`
+(32000 per chapter call), `REELBOT_DOC_MUSIC` (suspense). The engine checkout in `REELBOT_RENDER_ROOT` must have the
+doc kit (`KIT_DOC.md`, `src/doc/`, `src/index.doc.ts`, `tools/doc_build.mjs`).
+
+Tests (no API calls; the stub returns the engine's reference `pearson-doc` chapters):
+`pip install pytest` then `python -m pytest tests -q` in this folder. With an engine checkout that has `node_modules`
+(`REELBOT_TEST_ENGINE=<...>/finance/render-pc`) the real `doc_build --check` runs too; `REELBOT_TEST_TSC=1` adds the
+real build + `tsc`.
 
 ## Cloud rendering (AWS Lambda)
 

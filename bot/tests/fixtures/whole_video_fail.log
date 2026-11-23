@@ -1,0 +1,51 @@
+doc pearson-doc: theme law (3D kit law3d), 3 chapters, 353 words, 133.1 s; checking the whole video
+compiled 33 scenes (9 scene3d), 133.13 s, 3 chapters
+polish QA: 0 fail(s) (P1 0, P2 0, P3 0, P4 0) in 0.05 s
+chapter 1 'The Missing Pants': 17 scenes, 9 types (scene3d, stat, evidenceboard, document, map, compare, timeline, quote, recap), scene3d 24 %, 1 FAIL line(s)
+chapter 2 'The $67 Million Demand': 9 scenes, 6 types (chart, scene3d, document, compare, stat, recap), scene3d 31 %, 2 FAIL line(s)
+chapter 3 'The Verdict': 7 scenes, 5 types (timeline, scene3d, document, compare, recap), scene3d 21 %, 1 FAIL line(s)
+FAIL  variety V1: a new shot or scene type at least every 6 s (no scene longer): 1 too long (see Doc gates)
+PASS  variety V2: no identical scene type + set + camera within 45 s: none
+PASS  variety V3: scene3d <= 40 % of the runtime: 25 %
+PASS  variety V4: every chapter uses >= 4 distinct scene types: ch1: 9, ch2: 6, ch3: 5
+PASS  variety V5: big beats use scene3d with people, or document / quote / compare (never an empty set): 5 beat(s) ok
+PASS  budget B1: no scene type or 3D set above 30 % of the shots: scene3d 9, document 4, timeline 4, map 3, compare 3, recap 3, stat 2, evidenceboard 2, chart 2, quote 1 | sets: courtroom 5, evidence 3, casefile 1
+PASS  budget B2: >= 8 distinct scene/set combinations per 10 min: 16 (needs 4)
+PASS  budget B3: one hero set per chapter (its most-used 3D set, declared as "heroSet"): ch1: courtroom, ch2: evidence, ch3: courtroom
+FAIL  numbers N1: every spoken figure ($, digits, number words with a unit) has a board with that exact value within +-1.5 s: 14 of 15 shown
+PASS  chapters C1: one card per chapter, the same style, none in the first 30 s, clear of the text under it: ch1 30.71 s top 130, ch2 65.43 s top 330, ch3 102.66 s top 130
+PASS  text T1: a callout never covers what it explains; no text 3 deep in the first 3 s; nothing under the hook: 0 callout, 0 stack, 0 hook
+PASS  text T2: 2D text fits at >= 42 px (secondary >= 32), inside the frame, out of the caption band, >= 4.5:1: 0 fit, 0 frame, 0 band, 0 contrast
+FAIL  sanity S1: names, places, dates and headlines on screen are in the script or sources; every number on screen is in them; maps show the story's region: 0 name/place/date, 1 number
+PASS  legal S2: no verdict words the script does not say; pictures never contradict the line; callouts sit on what the voice names: clean
+FAIL  teases S3: every moment the cold open promises ("tease": "<id>") is shown later as a scene: 1 tease(s); cold-open people shots without "tease": S05
+PASS  3D clip QA (law3d): no prop in a body, nobody below the floor, no two people overlapping: 0 clip(s) over 1006 sampled frames
+PASS  3D framing R1: no board, card or prop over a head (head box incl. antenna/hair/hat): clear
+PASS  3D framing R2: the shot's subject >= 85 % in frame, head clear of the edges; no head sliced by an edge: all in frame
+PASS  3D framing R3: every landed board / card inside the frame (3 % margin): all inside
+PASS  3D framing R4: text >= 4.5:1 on its fill; featured main lines >= 42 px (font size): readable
+PASS  3D framing R6: the word caption never covers a face, head or neck (actors >= 15 % of the frame height): clear
+PASS  3D polish P1: counters land on their exact target by the anchor word's end and hold it (no counting past the hold point): 1 counter(s) land and hold
+PASS  3D polish P2: every board / label / card line fits its box at >= 42 px (titles >= 32 px), never wrapped or clipped: 6 line(s) fit
+PASS  3D polish P4: no set piece (chair, table, rack) over a featured face (>= 30 % for > 5 frames): faces clear
+PASS  long-form: hook text on screen at frame 0: "$54 MILLION FOR PANTS" until 4.85 s
+PASS  long-form: first spoken word by 0.5 s: A at 0.00 s
+PASS  long-form: a sound punch + music at 0.00 s: suspense, impact
+PASS  long-form: YouTube chapters: >= 3, the first at the first word (00:00): 3 chapters, first "The Missing Pants" at 0.00 s
+PASS  long-form: every chapter >= 10 s (YouTube minimum): 1:65s 2:37s 3:30s
+PASS  long-form: a visual change at least every 6 s (cut, hit, prop motion, pose change, card, chapter card): longest gap 5.94 s from 104.3 s
+PASS  long-form: a new beat at least every 40 s (chapter, set change or "beat": true): longest 7.7 s from 11.3 s; 31 beat marks
+PASS  long-form: lower-third captions: centre >= 75 % of the height on >= 90 % of caption time: 100 %; moved: none
+PASS  long-form: shot length 3-6 s on average, none over 8 s: mean 4.03 s over 33 shots
+PASS  long-form: an open loop (a question or a tease) in the 25 s before each chapter: every chapter
+warn  long-form: length 8-12 min: 2.22 min
+--- 4 line(s) to fix:
+  FAIL S27 timeline runs 7.6 s (102.66 s-110.23 s): the limit is 6 s: split it with a new scene at "23:case." (106.47 s) or "23:own" (106.18 s) or "23:On" (106.80 s)
+  FAIL "$1,500" is spoken at 88.55 s (line 19) with no board showing 1,500 between 87.05 s and 90.49 s: show it in S23 (stat) or cut to a stat at "19:$1,500"; or list it in doc.json "numberExempt" with a reason
+  FAIL S23 stat shows 1,600 ('$1,600'), a number that is not in the script or sources: every number on screen must come from them
+  FAIL S04 teases "cry" but no scene has "id": "cry": show the promised moment later (a scene3d with the people, a document or a quote) and give it that id
+chapters:
+00:00 The Missing Pants
+01:05 The $67 Million Demand
+01:42 The Verdict
+FAILED (the whole video) in 0.65 s

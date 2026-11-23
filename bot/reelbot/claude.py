@@ -146,9 +146,10 @@ def _with_keys(fn):
                 raise
 
 
-def ask_json(system: str, user: str | list, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
+def ask_json(system: str | list, user: str | list, schema: dict, *, effort: str | None = None, max_tokens: int = 64000) -> dict:
     """Ask Claude for a JSON object that matches `schema` (JSON Schema, additionalProperties false).
-    `user` is a string, or a list of content blocks (text + base64 images) for a vision request."""
+    `user` is a string, or a list of content blocks (text + base64 images) for a vision request. `system` is a string,
+    or a list of text blocks (the API caches blocks marked with cache_control; the CLI joins them)."""
     ok, res = _with_keys(lambda: _ask_api(system, user, schema, effort=effort, max_tokens=max_tokens))
     return res if ok else _ask_cli(system, user, schema)
 
@@ -212,7 +213,9 @@ def ask_web(prompt: str) -> tuple[str, list[dict]]:
     return res["text"], res["sources"]
 
 
-def _ask_cli(system: str, user: str | list, schema: dict, tools: list[str] | None = None) -> dict:
+def _ask_cli(system: str | list, user: str | list, schema: dict, tools: list[str] | None = None) -> dict:
+    if isinstance(system, list):  # API-style system blocks (with cache_control): the CLI takes one text
+        system = "\n\n".join(b["text"] for b in system)
     with tempfile.TemporaryDirectory(prefix="reelbot_") as tmp:
         tmpd = Path(tmp)
         (tmpd / "system.md").write_text(system, encoding="utf-8")
@@ -326,7 +329,7 @@ def _web_api(prompt: str) -> tuple[str, list[dict]]:
     return "\n".join(texts).strip(), sources
 
 
-def _ask_api(system: str, user: str | list, schema: dict, *, effort: str | None, max_tokens: int) -> dict:
+def _ask_api(system: str | list, user: str | list, schema: dict, *, effort: str | None, max_tokens: int) -> dict:
     import anthropic
     for attempt in range(3):
         try:

@@ -1,0 +1,23 @@
+{
+ "chapter": 1,
+ "heroSet": "courtroom",
+ "scenes": [
+  {"at": "1:A", "type": "scene3d", "set": "courtroom", "jury": false, "cam": {"preset": "hookZoom", "target": "pearson.face", "dist": 1.7, "h": 0.05, "az": -8}, "actors": [{"id": "pearson", "pose": "point", "face": "smug", "at": "plaintiff", "pointAt": "pants", "then": [{"at": "1:sued", "face": "angry"}]}], "props": [{"id": "pants", "kit": "pants", "at": "plaintiff:0.3,1.12,0.3", "s": 0.5, "yaw": -15, "motion": "float"}], "note": "cold open: the judge points at the pants under the hook"},
+  {"at": "2:Not", "type": "stat", "value": "$54,000,000", "label": "Damages sought", "sub": "for one pair of pants"},
+  {"at": "2:trousers", "type": "evidenceboard", "cards": [{"id": "pearson", "kind": "person", "label": "Roy Pearson", "sub": "judge"}, {"id": "pants", "kind": "object", "label": "The pants"}, {"id": "shop", "kind": "place", "label": "Custom Cleaners"}], "links": [["pearson", "shop", "sued"], ["pants", "shop", "went missing"]]},
+  {"at": "3:He", "type": "scene3d", "set": "courtroom", "jury": false, "beat": true, "tease": "cry", "cam": {"preset": "orbit", "target": "pearson.face", "dist": 1.45, "h": 0.05, "az": -10, "sweep": 26}, "actors": [{"id": "pearson", "pose": "talk", "face": "sad", "at": "witness", "sit": true, "then": [{"at": "3:cried", "pose": "cry", "face": "crying"}]}], "note": "the tease: he cried on the stand (paid off in chapter 3, scene id cry)"},
+  {"at": "3:And", "type": "scene3d", "set": "courtroom", "jury": false, "cam": {"preset": "medium", "target": "dad.face", "dist": 3.4, "h": 0.15, "az": 6}, "actors": [{"id": "mom", "pose": "idle", "at": "defendant:-0.62,0,0", "face": "worried"}, {"id": "dad", "pose": "idle", "at": "defendant", "face": "worried"}, {"id": "son", "pose": "idle", "at": "defendant:0.62,0,0", "face": "worried"}], "note": "the family business in court"},
+  {"at": "4:How", "type": "document", "kind": "article", "heading": "The case in the news", "headline": "Judge sues dry cleaner over pants", "lines": ["A judge who hears cases for a living took his dry cleaner to court.", "The claim: $54 million, for one pair of pants.", "The family who ran the shop defended a sign in its window."], "key": 1},
+  {"at": "5:It", "type": "map", "region": "usa", "title": "America"},
+  {"at": "6:This", "type": "compare", "title": "Pearson v. Chung", "left": {"label": "Plaintiff", "value": "Roy Pearson"}, "right": {"label": "Defendants", "value": "The Chung family"}, "rightAt": "6:versus"},
+  {"at": "7:In", "type": "timeline", "events": [{"when": "2005", "text": "Roy Pearson, judge", "at": "7:2005"}]},
+  {"at": "7:in#2", "type": "map", "region": "usa", "move": "drift", "pins": [{"place": "washington-dc", "label": "Washington, D.C.", "at": "7:Washington"}]},
+  {"at": "8:Custom", "type": "map", "region": "city", "name": "Washington, D.C.", "title": "Washington, D.C.", "pins": [{"place": "washington-dc", "label": "Custom Cleaners", "at": "8:Custom"}]},
+  {"at": "9:The", "type": "document", "kind": "receipt", "heading": "Custom Cleaners", "meta": ["Alteration ticket"], "lines": ["Item: suit pants", "Alteration: $10.50", "Customer: Roy Pearson"], "key": 1, "highlightAt": "9:$10.50"},
+  {"at": "10:The", "type": "evidenceboard", "move": "push", "title": "The owners", "cards": [{"id": "jin", "kind": "person", "label": "Jin Nam Chung"}, {"id": "soo", "kind": "person", "label": "Soo Chung"}, {"id": "ki", "kind": "person", "label": "Ki Chung"}, {"id": "shop", "kind": "place", "label": "Custom Cleaners"}], "links": [["jin", "shop", "owners"], ["ki", "soo", "son"]]},
+  {"at": "10:work", "type": "scene3d", "set": "evidence", "cam": {"preset": "dolly", "target": "table:0,0.15,0", "dist": 2.2, "h": 0.6, "az": -20, "sweep": 1.4}, "props": [{"id": "photo", "kit": "photo", "photo": "pants", "at": "table", "yaw": 20}], "note": "the pants went missing: only a photo on the evidence table"},
+  {"at": "12:A", "type": "timeline", "move": "rise", "events": [{"when": "2005", "text": "Pants dropped off", "at": "12:A"}, {"when": "A week later", "text": "A pair is found", "at": "12:found"}]},
+  {"at": "12:He", "type": "quote", "beat": true, "text": "These are not my pants.", "who": "Roy Pearson", "source": "to the shop owners, on the pair they found"},
+  {"at": "13:So", "type": "recap", "title": "So far", "points": ["A $10.50 alteration", "The pants went missing", "\"These are not my pants.\""]}
+ ]
+}
