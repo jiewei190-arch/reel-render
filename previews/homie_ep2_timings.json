@@ -602,22 +602,100 @@
    "speaker": "homie"
   },
   {
+   "w": "It's",
+   "t": 49.7,
+   "end": 49.86,
+   "speaker": "homie"
+  },
+  {
+   "w": "connected",
+   "t": 49.86,
+   "end": 49.86,
+   "speaker": "homie"
+  },
+  {
    "w": "to",
-   "t": 49.78,
-   "end": 56.34,
+   "t": 49.86,
+   "end": 50.04,
    "speaker": "homie"
   },
   {
    "w": "the",
-   "t": 56.34,
-   "end": 56.34,
+   "t": 50.04,
+   "end": 50.14,
    "speaker": "homie"
   },
   {
-   "w": "today",
-   "t": 56.34,
-   "end": 56.74,
+   "w": "Bluetooth.",
+   "t": 50.14,
+   "end": 50.52,
    "speaker": "homie"
+  },
+  {
+   "w": "What",
+   "t": 51.1,
+   "end": 51.26,
+   "speaker": "me"
+  },
+  {
+   "w": "fuckin'",
+   "t": 51.26,
+   "end": 51.66,
+   "speaker": "me"
+  },
+  {
+   "w": "Bluetooth?",
+   "t": 52.22,
+   "end": 52.22,
+   "speaker": "me"
+  },
+  {
+   "w": "Fifth",
+   "t": 52.9,
+   "end": 53.0,
+   "speaker": "me"
+  },
+  {
+   "w": "period.",
+   "t": 53.0,
+   "end": 53.5,
+   "speaker": "me"
+  },
+  {
+   "w": "School",
+   "t": 53.9,
+   "end": 54.04,
+   "speaker": "me"
+  },
+  {
+   "w": "assembly.",
+   "t": 54.04,
+   "end": 54.52,
+   "speaker": "me"
+  },
+  {
+   "w": "Principal",
+   "t": 55.22,
+   "end": 55.22,
+   "speaker": "me"
+  },
+  {
+   "w": "taps",
+   "t": 55.22,
+   "end": 55.58,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 55.58,
+   "end": 55.84,
+   "speaker": "me"
+  },
+  {
+   "w": "mic.",
+   "t": 55.84,
+   "end": 56.08,
+   "speaker": "me"
   },
   {
    "w": "we",
