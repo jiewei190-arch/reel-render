@@ -202,7 +202,10 @@ const drawBruh = (g: CanvasRenderingContext2D, W: number, H: number, age: number
     g.beginPath(); g.moveTo(sx - u * 0.1, sy - u * 0.7); g.lineTo(sx + u * 0.9, sy - u * 1.5); g.lineTo(sx + u * 0.9, sy + u * 1.5); g.lineTo(sx - u * 0.1, sy + u * 0.7); g.fill();
     g.strokeStyle = "#14161c"; g.lineWidth = W * 0.018; g.lineCap = "round";
     for (const k of [1, 2]) { g.beginPath(); g.arc(sx + u * 1.0, sy, u * 0.7 * k, -0.8, 0.8); g.stroke(); }
-    g.font = `900 ${W * 0.19}px sans-serif`; g.textAlign = "left"; g.fillText("BRUH", W * 0.36, sy + W * 0.07);
+    // fit BRUH between the speaker icon and the banner's right edge (it was clipped at 0.19 W)
+    let fs = W * 0.19; g.font = `900 ${fs}px sans-serif`;
+    const room = W * 0.9 - W * 0.36; const tw = g.measureText("BRUH").width; if (tw > room) { fs *= room / tw; g.font = `900 ${fs}px sans-serif`; }
+    g.textAlign = "left"; g.fillText("BRUH", W * 0.36, sy + fs * 0.36);
   }
   g.textAlign = "left";
 };
