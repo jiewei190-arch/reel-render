@@ -1,0 +1,777 @@
+{
+ "name": "tallyt",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "landscape": true,
+ "breath": [
+  2,
+  4,
+  6,
+  12,
+  15,
+  20,
+  25,
+  27,
+  33,
+  36,
+  40,
+  45,
+  46,
+  53
+ ],
+ "phrases": [
+  [
+   "Right now, you are **shorter** than when you woke up this morning.",
+   "Right now, as you watch this, you are shorter than you were when you woke up this morning."
+  ],
+  [
+   "Not by a lot, but enough that a careful ruler can **measure it.**",
+   "Not by a lot. But by enough that a careful ruler can measure it."
+  ],
+  [
+   "And tonight, while you sleep, you'll quietly **grow back.**",
+   "And tonight, while you sleep, you'll quietly grow back."
+  ],
+  [
+   "It happens every day, and most of us **never notice.**",
+   "It happens every day, and most of us never notice."
+  ],
+  [
+   "So what's going on **inside your body?**",
+   "So what's actually going on inside your body? Let's open the sketchbook."
+  ],
+  [
+   "In this video: a famous **measuring study**, what's inside your spine...",
+   "In this video, we'll look at a famous study that measured people shrinking, and at what's really inside your spine."
+  ],
+  [
+   "...the **daily squeeze**, the **overnight refill**, and what happens to **astronauts.**",
+   "Then the daily squeeze, the overnight refill, and what happens to astronauts when gravity disappears."
+  ],
+  [
+   "In 1985, a small team of researchers set out to **measure it.**",
+   "In nineteen eighty-five, a small team of researchers set out to measure it properly."
+  ],
+  [
+   "They measured **eight young adults** to the nearest millimeter, across the day and night.",
+   "They measured the height of eight young adults, to the nearest millimeter, again and again, across the day and night."
+  ],
+  [
+   "On average, each person lost about **19 millimeters** in a day.",
+   "On average, each person lost about nineteen millimeters of height in a day."
+  ],
+  [
+   "That's almost **2 centimeters**, about **1%** of their height.",
+   "That's almost two centimeters, or about one percent of their height."
+  ],
+  [
+   "And it wasn't steady: **54%** of the loss came in the **first hour** after getting up.",
+   "And the loss wasn't steady. Fifty-four percent of it happened in the very first hour after getting out of bed."
+  ],
+  [
+   "At night the height came back: about **70%** in the **first half of the night.**",
+   "At night, the height came back. About seventy percent was regained in the first half of the night."
+  ],
+  [
+   "A 2010 study tracked people around the clock and saw the **same pattern.**",
+   "A later study, in twenty ten, tracked people around the clock, and saw the same pattern."
+  ],
+  [
+   "In that study, the first hour still caused the biggest single drop: **31% and 45%** in two groups.",
+   "In that study, the first hour after rising still caused the biggest single drop. Thirty-one percent of the day's loss in one group, and forty-five percent in the other."
+  ],
+  [
+   "**Down by day, up by night.** The question is why.",
+   "So, down by day, and up by night. The question is, why?"
+  ],
+  [
+   "Your spine isn't one long bone. It's a stack of **vertebrae.**",
+   "Your spine isn't one long bone. It's a stack of smaller bones, called vertebrae."
+  ],
+  [
+   "Bones are hard. They barely **squash** at all.",
+   "The bones themselves are hard. Under everyday loads, they barely squash at all."
+  ],
+  [
+   "So if your height changes, look at the **soft parts** in between.",
+   "So if your height is changing, it makes sense to look at the soft parts in between."
+  ],
+  [
+   "Between most of them sits a soft cushion: an **intervertebral disc.**",
+   "Between most of them sits a soft cushion, called an intervertebral disc."
+  ],
+  [
+   "There are around **two dozen** of them, from your neck to your lower back.",
+   "There are around two dozen of these discs, from your neck down to your lower back."
+  ],
+  [
+   "Together, they make up roughly **a quarter to a third** of your spine's length.",
+   "And they're not tiny. Together, the discs make up roughly a quarter to a third of your spine's length."
+  ],
+  [
+   "On the outside: tough **rings of fibers**, layered like an onion.",
+   "Each disc has two parts. On the outside are tough rings of fibers, layered a bit like an onion."
+  ],
+  [
+   "Inside: a soft, jelly-like core called the **nucleus pulposus.**",
+   "Inside is a soft, jelly-like core, called the nucleus pulposus."
+  ],
+  [
+   "That jelly is mostly **water**: roughly **66 to 86%**, by one medical reference.",
+   "And that jelly is mostly water. One medical reference puts it at roughly sixty-six to eighty-six percent."
+  ],
+  [
+   "So your spine is a tower of bones stacked on little **water cushions.**",
+   "So your spine is really a tower of bones, stacked on little water cushions."
+  ],
+  [
+   "Now, get up and **stand.**",
+   "Now, get up, and stand."
+  ],
+  [
+   "The weight of your head, arms and upper body **presses down** through that tower.",
+   "The weight of your head, arms and upper body presses down through that tower."
+  ],
+  [
+   "Every disc gets **squeezed.**",
+   "Every single disc gets squeezed."
+  ],
+  [
+   "Under steady pressure, a little fluid **seeps out**, and the disc gets **thinner.**",
+   "Under that steady pressure, a little fluid slowly seeps out of each disc, and the disc gets slightly thinner."
+  ],
+  [
+   "In one lab study, a simulated day of loading squeezed out about **18%** of the discs' fluid.",
+   "In one lab study on donated spines, a simulated day of loading squeezed out about eighteen percent of the discs' fluid."
+  ],
+  [
+   "MRI scans of living people back this up: discs hold **less water** in the evening.",
+   "Scans of living people point the same way. One MRI study notes that lower back discs lose around five to ten percent of their water over the course of a day."
+  ],
+  [
+   "Each disc loses only a **sliver** of height...",
+   "Each disc only loses a sliver of height."
+  ],
+  [
+   "...but two dozen slivers add up to a **centimeter or two.**",
+   "But with around two dozen discs, those slivers add up to a centimeter or two."
+  ],
+  [
+   "Right after a night's rest, the discs are **full**...",
+   "Right after a night's rest, your discs are full."
+  ],
+  [
+   "...and that's exactly when the study saw the **fastest drop.**",
+   "And that's exactly when the study saw the fastest drop."
+  ],
+  [
+   "After that, the shrinking **slows down** for the rest of the day.",
+   "After that, the shrinking slows down, and you lose height more gently for the rest of the day."
+  ],
+  [
+   "Then night comes, and you **lie down.**",
+   "Then night comes, and you lie down."
+  ],
+  [
+   "Lying flat takes most of the **weight off** your spine.",
+   "Lying flat takes most of the weight off your spine."
+  ],
+  [
+   "With the pressure gone, the discs start pulling **water back in.**",
+   "With the pressure gone, the discs start pulling water back in."
+  ],
+  [
+   "The core is rich in molecules that **draw water in**, a bit like a sponge.",
+   "The jelly in the center is rich in molecules that draw water in, a bit like a sponge."
+  ],
+  [
+   "Hour by hour, the discs **plump back up**, and your spine gets longer.",
+   "Hour by hour, the discs plump back up, and your spine gets a little longer."
+  ],
+  [
+   "By morning you're back to **full height**, ready to do it all again.",
+   "By morning, you're back to full height, ready to do it all again."
+  ],
+  [
+   "Resting reclined with knees raised brought height back **faster** than standing.",
+   "The nineteen eighty-five study also found that resting reclined, with the knees raised, brought height back faster than standing."
+  ],
+  [
+   "Nutrients reach the disc from blood vessels **around** it...",
+   "And this daily squeeze and soak may matter for the discs themselves. Nutrients have to travel in from blood vessels around the disc."
+  ],
+  [
+   "...and researchers think this daily **fluid flow** helps move them.",
+   "And researchers think this daily flow of fluid helps move them around."
+  ],
+  [
+   "As discs **age** and wear, the core can lose some of its **water-pulling** material.",
+   "As discs age and wear, the core can lose some of its water-pulling material, which is one reason older discs behave differently."
+  ],
+  [
+   "Now imagine taking gravity away **completely.**",
+   "Now, imagine taking gravity away completely."
+  ],
+  [
+   "That's life on the **space station.**",
+   "That's daily life for astronauts on the space station."
+  ],
+  [
+   "With nothing pressing down, NASA scientists say astronauts can grow up to **3% taller.**",
+   "With nothing pressing down on their spines, NASA scientists say astronauts can grow up to three percent taller."
+  ],
+  [
+   "Without Earth's pull, the spine can **stretch out** and relax.",
+   "Without Earth's pull, the spine can stretch out and relax."
+  ],
+  [
+   "NASA even sent an **ultrasound** to the station so crews could scan each other's spines.",
+   "NASA even sent an ultrasound machine to the space station, so crew members could scan each other's backs and see what changes."
+  ],
+  [
+   "For someone **1.8 meters** tall, that's up to **5 centimeters.**",
+   "For someone one point eight meters tall, that's up to five centimeters, or about two inches."
+  ],
+  [
+   "Back on Earth, their height returns to normal within **a few months.**",
+   "But it doesn't last. Back on Earth, their height returns to normal within a few months."
+  ],
+  [
+   "So you're not imagining it: your height **really changes** every day.",
+   "So, you're not imagining it. Your height really does change through the day."
+  ],
+  [
+   "**Try it yourself:** stand against a door frame tonight and make a light pencil mark.",
+   "Want to see it yourself? Tonight, stand barefoot against a door frame, and have someone make a light pencil mark at the top of your head."
+  ],
+  [
+   "Then do the same thing **tomorrow morning.**",
+   "Then do exactly the same thing tomorrow morning, right after you get up."
+  ],
+  [
+   "Look closely: the morning mark should sit a **little higher.**",
+   "Look closely. The morning mark should sit a little higher. Not much. But it's there."
+  ],
+  [
+   "**Quick recap.** Your spine is bones stacked on water-filled discs.",
+   "Quick recap. Your spine is a stack of bones, sitting on soft discs full of water."
+  ],
+  [
+   "By day, your weight squeezes out a little fluid, and you **shrink.**",
+   "By day, your body weight squeezes a little fluid out, and you shrink."
+  ],
+  [
+   "By night, lying down lets the discs **refill**, and you grow back.",
+   "By night, lying down lets the discs refill, and you grow back."
+  ],
+  [
+   "Tracking height? Measure at the **same time of day** so the numbers compare fairly.",
+   "If you're tracking height, say for a growing kid, measure at the same time each day, so the numbers compare fairly."
+  ],
+  [
+   "And if you want your **tallest** number on the wall...",
+   "And if you ever want to see your tallest number on the wall,"
+  ],
+  [
+   "...measure **first thing in the morning.**",
+   "measure first thing in the morning, before your discs start their daily squeeze."
+  ],
+  [
+   "Did you know you were **shrinking** right now? Tell us in the comments.",
+   "Did you know you were shrinking right now? Tell us in the comments."
+  ],
+  [
+   "**Subscribe** for more videos like this.",
+   "Subscribe for more videos like this."
+  ]
+ ],
+ "boards": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  13,
+  13,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  10,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  2,
+  2,
+  2,
+  2,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  4,
+  4,
+  4,
+  5,
+  5,
+  5,
+  5,
+  5,
+  5,
+  12,
+  11,
+  11,
+  11,
+  6,
+  6,
+  6,
+  6,
+  6,
+  6,
+  7,
+  14,
+  14,
+  14,
+  14,
+  15,
+  15,
+  15,
+  8,
+  8,
+  8,
+  8,
+  9
+ ],
+ "chapters": [
+  "You're shorter right now",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "Measuring a shrinking person",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "Inside your spine",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "The daily squeeze",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "The overnight refill",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "Astronauts: the extreme version",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  "So when are you tallest?",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "pause": {
+  "6": 1.6,
+  "15": 1.6,
+  "25": 1.6,
+  "36": 1.6,
+  "46": 1.6,
+  "53": 1.6
+ },
+ "stages": [
+  [
+   [
+    0,
+    -0.3
+   ],
+   [
+    0,
+    2.0
+   ],
+   [
+    1,
+    0.3
+   ],
+   [
+    4,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1.5
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    7,
+    0
+   ],
+   [
+    8,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    7,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ],
+   [
+    0,
+    0.3
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    1,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    5,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    5,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.1
+   ],
+   [
+    0,
+    0.5
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  [
+   [
+    0,
+    -0.2
+   ]
+  ]
+ ],
+ "opts": [
+  {
+   "gapText": "about **2 cm**",
+   "gapSub": "by bedtime"
+  },
+  {},
+  {
+   "intro": true,
+   "later": true,
+   "down": true
+  },
+  {
+   "count": 3,
+   "hard": 4
+  },
+  {
+   "tower": 3,
+   "waterNote": [
+    "**66\u201386%**",
+    "water"
+   ]
+  },
+  {
+   "lab": 3,
+   "mri": 4,
+   "add": 5
+  },
+  {
+   "night": false,
+   "lossText": "then it **slows down**"
+  },
+  {
+   "sponge": 3,
+   "morning": 4
+  },
+  {},
+  {
+   "age": 2
+  },
+  {
+   "stretch": 3,
+   "ultra": 4,
+   "cm": 5
+  },
+  {},
+  {
+   "tryit": true,
+   "gapText": "a **little higher**",
+   "gapSub": "in the morning"
+  },
+  {},
+  {},
+  {
+   "cta": "**Subscribe for more**"
+  }
+ ],
+ "title": "Why you're taller in the morning"
+}

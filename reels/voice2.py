@@ -12,6 +12,7 @@ for i, (cap, text) in enumerate(spec["phrases"]):
     d = len(s) / SR; tl.append({"i": i, "cap": cap, "start": round(t, 3), "end": round(t + d, 3)}); pieces.append((t, s))
     gap = .38 if text[-1] in ".?" else .14
     if i in BREATH: gap += .32
+    gap += float(spec.get("pause", {}).get(str(i), 0))
     t += d + gap
 TOTAL = round(t + 1.6, 3); N = int(TOTAL * SR); v = np.zeros(N, np.float32)
 for st, s in pieces: a = int(st * SR); v[a:a + len(s)] += s
