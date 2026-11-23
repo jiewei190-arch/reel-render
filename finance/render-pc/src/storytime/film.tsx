@@ -9,7 +9,7 @@ import { useFonts } from "../engine/core/frame";
 import { mk } from "../engine/core/moods";
 import type { MoodPreset } from "../engine/core/moods";
 import { View } from "../engine/core/View";
-import { Kid, Mitten, Phone } from "./cast";
+import { Kid, Mitten, Phone, PhoneCtx } from "./cast";
 import type { Compiled } from "./compile";
 import { FPS, headCenter } from "./compile";
 import { StoryCaption, useCapFont } from "./hud";
@@ -36,6 +36,8 @@ const MOODS: Record<SetId, MoodPreset> = {
   classroom: school("#f0e6d6", sunKey(SUN_CLASS)),
   hallway: school("#eef0e0", sunKey(SUN_CLASS, 0.6)),
   cafeteria: school("#f6e6d0", sunKey(SUN_CAF)),
+  detention: school("#ece2cf", sunKey([-0.9, -0.1, 0.4], 0.5)),
+  gym: school("#eceae2", sunKey([0.3, -0.2, 1], 0.75)),
 };
 
 /** children in camera space: +x right, +y up, -z forward (into the frame) */
@@ -58,7 +60,35 @@ const Reach: React.FC<{ to: V3; from: V3; sleeve: string; skin: string; flip?: b
     </group>
   );
 };
-const PovRig: React.FC<{ kind: "pov_phone" | "pov_tray"; side: number; me: CastSpec; homie: CastSpec; t: number }> = ({ kind, side, me, homie, t }) => {
+/** the homie's thumb over the soundboard button: up, then down on each press (0.12 s before it to 0.18 s after) */
+const Thumb: React.FC<{ skin: string }> = ({ skin }) => {
+  const ph = React.useContext(PhoneCtx);
+  const down = (ph.age >= 0 && ph.age < 0.18) ? 1 : ph.next < 0.12 ? 1 - ph.next / 0.12 : ph.age < 0.4 ? 1 - (ph.age - 0.18) / 0.22 : 0;
+  const lift = 0.045 - 0.036 * Math.max(0, Math.min(1, down));
+  // phone-local: the button centre is at y -0.023 (0.64 of the screen height); the thumb comes in from the lower right
+  const A = new THREE.Vector3(0.15, -0.2, lift + 0.05), B = new THREE.Vector3(0.022, -0.045, lift);
+  const d = B.clone().sub(A), len = d.length();
+  const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, -1, 0), d.clone().normalize());
+  return (
+    <group position={A.toArray()} quaternion={q}>
+      <mesh geometry={polyLimb(0.015, 0.012, len)} material={polyMat(skin)} />
+    </group>
+  );
+};
+const PovRig: React.FC<{ kind: "pov_phone" | "pov_tray" | "pov_press"; side: number; me: CastSpec; homie: CastSpec; eyes: CastSpec; t: number }> = ({ kind, side, me, homie, eyes, t }) => {
+  if (kind === "pov_press") {
+    // the homie's view down at his own phone: the soundboard big in frame, his left hand holding it, his right thumb on BRUH
+    const w = 0.085;
+    return (
+      <group>
+        <group position={[0, 0.0, -0.3]} rotation={[0.12, 0, 0]}>
+          <Phone t={t} w={w} />
+          <Thumb skin={homie.skin} />
+        </group>
+        <Reach from={[-0.2, -0.45, -0.18]} to={[-0.07, -0.14, -0.31]} sleeve={homie.skin} skin={homie.skin} flip />
+      </group>
+    );
+  }
   if (kind === "pov_phone") {
     // the homie holds his phone up to my face from his side; the screen faces me
     return (
@@ -68,11 +98,13 @@ const PovRig: React.FC<{ kind: "pov_phone" | "pov_tray"; side: number; me: CastS
       </group>
     );
   }
-  // my two hands resting on the tray edges: green bomber sleeves with ribbed cuffs
+  // the eyes' two hands resting on the tray edges (sleeves: a bomber's with ribbed cuffs; a tee shows bare forearms)
+  const tee = eyes.topStyle === "tee";
+  const sleeve = tee ? eyes.skin : eyes.top, cuff = eyes.topStyle === "bomber" ? eyes.trim : undefined;
   return (
     <group>
-      <Reach from={[0.3, -0.5, -0.3]} to={[0.16, -0.2, -0.56]} sleeve={me.top} cuff={me.trim} skin={me.skin} />
-      <Reach from={[-0.3, -0.5, -0.3]} to={[-0.16, -0.2, -0.56]} sleeve={me.top} cuff={me.trim} skin={me.skin} flip />
+      <Reach from={[0.3, -0.5, -0.3]} to={[0.16, -0.2, -0.56]} sleeve={sleeve} cuff={cuff} skin={eyes.skin} />
+      <Reach from={[-0.3, -0.5, -0.3]} to={[-0.16, -0.2, -0.56]} sleeve={sleeve} cuff={cuff} skin={eyes.skin} flip />
     </group>
   );
 };
@@ -99,16 +131,20 @@ export const StoryFilm: React.FC<{ c: Compiled }> = ({ c }) => {
   // depth of field: close-ups and POV only (focus on the subject / the held prop); wides and two-shots stay sharp
   const close = /closeup|punch_in|ots/.test(p);
   const subj = close ? figs.find((f) => f.id === shot.on) : undefined;
-  const focus: V3 | undefined = pov ? (p === "pov_phone" ? posAhead(cam, 0.4) : cam.look) : subj ? headCenter(subj) : undefined;
+  const focus: V3 | undefined = pov ? (p === "pov_phone" ? posAhead(cam, 0.4) : p === "pov_press" ? posAhead(cam, 0.3) : cam.look) : subj ? headCenter(subj) : undefined;
   const blur = pov ? 2.2 : close ? 1.8 : 0;
+  const ph = c.phoneAt(t0);
+  const setProps = { board: c.recipe.props?.board, tray: c.tray };
   return (
     <AbsoluteFill style={{ background: SET_BG[shot.set] }}>
       {c.recipe.audio ? <Audio src={staticFile(c.recipe.audio)} /> : null}
+      <PhoneCtx.Provider value={ph}>
       <View mood={MOODS[shot.set]} cam={cam} t={t} blur={blur} focus={focus} sky={false} width={c.layout.W} height={c.layout.H}>
-        <StorySet id={shot.set} t={t} broken={broken} />
+        <StorySet id={shot.set} t={t} broken={broken} props={setProps} />
         {figs.map((st) => <Kid key={st.id} st={st} t={t} cam={cam.pos} />)}
-        {pov ? <CamRig cam={cam}><PovRig kind={pov.kind} side={pov.homieSide} me={pov.me} homie={pov.homie} t={t} /></CamRig> : null}
+        {pov ? <CamRig cam={cam}><PovRig kind={pov.kind} side={pov.homieSide} me={pov.me} homie={pov.homie} eyes={pov.eyes} t={t} /></CamRig> : null}
       </View>
+      </PhoneCtx.Provider>
       {cap ? <StoryCaption c={cap.chunk} y={cap.y} t={t0} /> : null}
     </AbsoluteFill>
   );

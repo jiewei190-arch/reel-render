@@ -9,7 +9,7 @@ import { geoOf } from "../blocky/mat";
 import type { FigState } from "./compile";
 import { FACE_CULL, faceAngle } from "./compile";
 import type { FaceP } from "./face";
-import { K, hipY } from "./layout";
+import { K, bodyK, hipOf } from "./layout";
 import { decalMat, polyBall, polyBox, polyCone, polyIco, polyLimb, polyMat, polyTorus } from "./poly";
 
 /** the head's chamfer: its front face is flat inside |x| < headW/2 - HB, |y| < headH/2 - HB */
@@ -163,7 +163,51 @@ const Hair: React.FC<{ st: FigState }> = ({ st }) => {
   }
 };
 
+/** glasses: two square frames round the eyes and a bridge (flat decal bars, a touch proud of the face) */
+const Glasses: React.FC<{ c: string }> = ({ c }) => {
+  const ex = 0.098, ey = 0.03, w = 0.06, h = 0.052, th = 0.012;
+  const bars: P2[][] = [];
+  for (const sd of [1, -1]) {
+    const cx = sd * ex;
+    bars.push(bar(cx - w, ey + h, cx + w, ey + h, th), bar(cx - w, ey - h, cx + w, ey - h, th), bar(cx - w, ey - h, cx - w, ey + h, th), bar(cx + w, ey - h, cx + w, ey + h, th));
+  }
+  bars.push(bar(-ex + w, ey + h * 0.4, ex - w, ey + h * 0.4, th));
+  return <group>{bars.map((P, i) => <mesh key={i} geometry={decalGeo(`stGlass${i}`, P, 0.012)} material={decalMat(c)} />)}</group>;
+};
+
 // ------------------------------------------------------------------ the phone (a generic video app, no logos)
+/** which app the homie's phone shows, and the seconds since the last soundboard press */
+/** next: seconds until the next press */
+export const PhoneCtx = React.createContext<{ app: "clips" | "bruh"; age: number; next: number }>({ app: "clips", age: Infinity, next: Infinity });
+/** a one-button soundboard: a big red button labelled BRUH; for 1.3 s after a press the button is down and a big
+ *  speaker + "BRUH" banner fills the top half */
+const drawBruh = (g: CanvasRenderingContext2D, W: number, H: number, age: number) => {
+  g.fillStyle = "#14161c"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "#e9edf2"; g.font = `700 ${W * 0.06}px sans-serif`; g.textAlign = "left"; g.fillText("9:41", W * 0.06, H * 0.045);
+  g.textAlign = "center"; g.fillStyle = "#9aa7bd"; g.font = `800 ${W * 0.07}px sans-serif`; g.fillText("SOUNDBOARD", W / 2, H * 0.12);
+  const on = age >= 0 && age < 1.3, down = age >= 0 && age < 0.18;
+  const cx = W / 2, cy = H * 0.64, r = W * 0.34 * (down ? 0.93 : 1);
+  // the button: a dark rim, a red dome with a light top
+  g.fillStyle = "#3a0d10"; g.beginPath(); g.arc(cx, cy + W * 0.03, W * 0.37, 0, Math.PI * 2); g.fill();
+  g.fillStyle = down ? "#b3121f" : "#e5262f"; g.beginPath(); g.arc(cx, cy + (down ? W * 0.02 : 0), r, 0, Math.PI * 2); g.fill();
+  g.fillStyle = "rgba(255,255,255,0.22)"; g.beginPath(); g.ellipse(cx, cy - r * 0.45, r * 0.6, r * 0.25, 0, 0, Math.PI * 2); g.fill();
+  g.fillStyle = "#ffffff"; g.font = `900 ${W * 0.16}px sans-serif`; g.fillText("BRUH", cx, cy + W * 0.055 + (down ? W * 0.02 : 0));
+  if (on) {
+    // the "now playing" banner: a speaker icon + BRUH, big, yellow on black
+    const by = H * 0.17, bh = H * 0.2;
+    g.fillStyle = "#ffd23f"; g.fillRect(W * 0.05, by, W * 0.9, bh);
+    g.fillStyle = "#14161c";
+    const sx = W * 0.15, sy = by + bh / 2, u = W * 0.05;
+    g.fillRect(sx - u, sy - u * 0.7, u * 0.9, u * 1.4);
+    g.beginPath(); g.moveTo(sx - u * 0.1, sy - u * 0.7); g.lineTo(sx + u * 0.9, sy - u * 1.5); g.lineTo(sx + u * 0.9, sy + u * 1.5); g.lineTo(sx - u * 0.1, sy + u * 0.7); g.fill();
+    g.strokeStyle = "#14161c"; g.lineWidth = W * 0.018; g.lineCap = "round";
+    for (const k of [1, 2]) { g.beginPath(); g.arc(sx + u * 1.0, sy, u * 0.7 * k, -0.8, 0.8); g.stroke(); }
+    g.font = `900 ${W * 0.19}px sans-serif`; g.textAlign = "left"; g.fillText("BRUH", W * 0.36, sy + W * 0.07);
+  }
+  g.textAlign = "left";
+};
+
+// ------------------------------------------------------------------ the video app
 /** a generic video player: a cartoon clip (a stick figure jumping), the title, views, a progress bar, suggestions */
 const drawScreen = (g: CanvasRenderingContext2D, W: number, H: number, t: number, title: string) => {
   g.fillStyle = "#101318"; g.fillRect(0, 0, W, H);
@@ -188,8 +232,10 @@ const drawScreen = (g: CanvasRenderingContext2D, W: number, H: number, t: number
 /** a phone: a dark slab with the lit screen on its +z face (w wide) */
 export const Phone: React.FC<{ t: number; w?: number; title?: string }> = ({ t, w = 0.085, title = "VINES 2015 COMPILATION" }) => {
   const h = w * 1.95;
+  const ph = React.useContext(PhoneCtx);
   const scr = React.useMemo(() => { const c = document.createElement("canvas"); c.width = 360; c.height = 640; return { c, tex: Object.assign(new THREE.CanvasTexture(c), { colorSpace: THREE.SRGBColorSpace }) }; }, []);
-  drawScreen(scr.c.getContext("2d")!, 360, 640, t, title);
+  if (ph.app === "bruh") drawBruh(scr.c.getContext("2d")!, 360, 640, ph.age);
+  else drawScreen(scr.c.getContext("2d")!, 360, 640, t, title);
   scr.tex.needsUpdate = true;
   return (
     <group>
@@ -212,11 +258,12 @@ export const Mitten: React.FC<{ skin: string; flip?: boolean }> = ({ skin, flip 
 export const Kid: React.FC<{ st: FigState; t: number; cam?: readonly number[] }> = ({ st, t, cam }) => {
   const sp = st.spec, s = st.s;
   const faceOn = !cam || faceAngle(st, cam) <= FACE_CULL;
-  const hip = hipY(st.sit);
+  const hip = hipOf(st.sit, sp);
+  const bk = bodyK(sp), tH = K.torsoH * bk.torso, legL = K.legH * bk.leg, ak = sp.adult ? 1.3 : 1;
   const skin = polyMat(sp.skin), top = polyMat(sp.top), trim = polyMat(sp.trim), pants = polyMat(sp.pants), shoes = polyMat(sp.shoes);
-  const armY = K.torsoH - 0.07;
-  const sleeveLong = sp.topStyle !== "tee";
-  const UA = K.armL * 0.5, FA = K.armL * 0.4, rA = K.armW / 2;
+  const armY = tH - 0.07;
+  const sleeveLong = sp.topStyle !== "tee" || !!sp.adult;
+  const UA = K.armL * 0.5 * ak, FA = K.armL * 0.4 * ak, rA = K.armW / 2;
   const el = st.elbow ?? [0.12, 0.12];
   const arm = (side: 1 | -1, a: [number, number], elbow: number) => (
     <group position={[side * (K.torsoW / 2 + rA - 0.01), armY, 0]} rotation={[-a[0], 0, side * a[1]]}>
@@ -248,37 +295,50 @@ export const Kid: React.FC<{ st: FigState; t: number; cam?: readonly number[] }>
     </group>
   ) : (
     <group position={[side * 0.13, 0, 0]}>
-      <mesh geometry={polyLimb(rL * 1.12, rL, K.legH - 0.08)} material={pants} position={[0, 0.02, 0]} />
+      <mesh geometry={polyLimb(rL * 1.12, rL, legL - 0.08)} material={pants} position={[0, 0.02, 0]} />
       {pocket(side, false)}
-      {shoe(0.04, -K.legH + 0.05)}
+      {shoe(0.04, -legL + 0.05)}
     </group>
   ));
   return (
-    <group position={[st.x, 0, st.z]} rotation={[0, st.yaw, 0]} scale={s}>
+    <group position={[st.x, st.y ?? 0, st.z]} rotation={[0, st.yaw, 0]} scale={s}>
       <group position={[0, hip + st.bob / s, 0]}>
         {leg(1)}{leg(-1)}
         <group rotation={[st.lean, 0, st.tilt * 0.4]}>
-          <mesh geometry={polyBox(K.torsoW, K.torsoH, K.torsoD, 0.05)} material={top} position={[0, K.torsoH / 2, 0]} />
+          <mesh geometry={polyBox(K.torsoW, tH, K.torsoD, 0.05)} material={top} position={[0, tH / 2, 0]} />
           {sp.topStyle === "bomber" ? (
             <>
               {/* the open front shows the tee; ribbed collar + waistband in the trim colour; a zip pull */}
-              <mesh geometry={polyBox(0.15, K.torsoH - 0.08, 0.02, 0.005)} material={polyMat(sp.inner ?? "#f4f4f0")} position={[0, K.torsoH / 2 + 0.02, K.torsoD / 2 + 0.002]} />
+              <mesh geometry={polyBox(0.15, tH - 0.08, 0.02, 0.005)} material={polyMat(sp.inner ?? "#f4f4f0")} position={[0, tH / 2 + 0.02, K.torsoD / 2 + 0.002]} />
               <mesh geometry={polyBox(K.torsoW + 0.02, 0.06, K.torsoD + 0.02, 0.015)} material={trim} position={[0, 0.03, 0]} />
-              <mesh geometry={polyTorus(0.105, 0.025, 4, 10)} material={trim} position={[0, K.torsoH - 0.005, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[1.15, 1, 1]} />
-              <mesh geometry={polyBox(0.022, 0.055, 0.012, 0.003)} material={polyMat("#c9c9c9")} position={[0.085, K.torsoH * 0.62, K.torsoD / 2 + 0.006]} />
+              <mesh geometry={polyTorus(0.105, 0.025, 4, 10)} material={trim} position={[0, tH - 0.005, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[1.15, 1, 1]} />
+              {sp.tie ? null : <mesh geometry={polyBox(0.022, 0.055, 0.012, 0.003)} material={polyMat("#c9c9c9")} position={[0.085, tH * 0.62, K.torsoD / 2 + 0.006]} />}
             </>
           ) : sp.topStyle === "hoodie" ? (
             <mesh geometry={polyBox(K.torsoW * 0.62, 0.14, 0.03, 0.01)} material={top} position={[0, K.torsoH * 0.24, K.torsoD / 2 + 0.008]} />
           ) : (
-            <mesh geometry={polyBox(K.torsoW + 0.008, 0.06, K.torsoD + 0.008, 0.012)} material={trim} position={[0, K.torsoH * 0.58, 0]} />
+            sp.adult ? null : <mesh geometry={polyBox(K.torsoW + 0.008, 0.06, K.torsoD + 0.008, 0.012)} material={trim} position={[0, K.torsoH * 0.58, 0]} />
           )}
-          {sp.chain ? <mesh geometry={polyTorus(0.1, 0.011, 4, 14)} material={polyMat(sp.chain, { rough: 0.5 })} position={[0, K.torsoH - 0.03, K.torsoD / 2 - 0.08]} rotation={[Math.PI / 2 - 0.62, 0, 0]} scale={[1, 1.25, 1]} /> : null}
+          {sp.chain ? <mesh geometry={polyTorus(0.1, 0.011, 4, 14)} material={polyMat(sp.chain, { rough: 0.5 })} position={[0, tH - 0.03, K.torsoD / 2 - 0.08]} rotation={[Math.PI / 2 - 0.62, 0, 0]} scale={[1, 1.25, 1]} /> : null}
+          {sp.tie ? (
+            <>
+              <mesh geometry={polyBox(0.05, 0.045, 0.02, 0.006)} material={polyMat(sp.tie)} position={[0, tH - 0.05, K.torsoD / 2 + 0.014]} />
+              <mesh geometry={polyBox(0.06, tH * 0.52, 0.014, 0.005)} material={polyMat(sp.tie)} position={[0, tH * 0.62, K.torsoD / 2 + 0.012]} rotation={[0.03, 0, 0]} />
+            </>
+          ) : null}
           {arm(1, st.armL, el[0])}{arm(-1, st.armR, el[1])}
           {st.pose === "phone" ? <group position={[0, 0.37, 0.45]} rotation={[0.5, Math.PI, 0]}><Phone t={t} /></group> : null}
-          <mesh geometry={polyLimb(0.085, 0.085, 0.1, 6)} material={skin} position={[0, K.torsoH + 0.07, 0]} />
-          <group position={[0, K.torsoH + K.neck + K.headH / 2, 0]} rotation={[st.headPitch, st.headYaw, st.tilt]}>
+          {st.pose === "raise" ? (() => {
+            // the phone in the right hand (-x side): the hand position from the arm angles (forward raise + elbow)
+            const a0 = st.armR[0], tot = a0 + el[1];
+            const hy = armY - UA * Math.cos(a0) - (FA + 0.05) * Math.cos(tot), hz = UA * Math.sin(a0) + (FA + 0.05) * Math.sin(tot);
+            return <group position={[-(K.torsoW / 2 + rA) + 0.03, hy + 0.1, hz + 0.06]} rotation={[-0.12, 0.1, 0]} scale={1.45}><Phone t={t} /></group>;
+          })() : null}
+          <mesh geometry={polyLimb(0.085, 0.085, 0.1, 6)} material={skin} position={[0, tH + 0.07, 0]} />
+          <group position={[0, tH + K.neck + K.headH / 2, 0]} rotation={[st.headPitch, st.headYaw, st.tilt]}>
             <mesh geometry={polyBox(K.headW, K.headH, K.headD, HB)} material={skin} />
             {faceOn ? <Face f={st.face} skin={sp.skin} brow={sp.brow} /> : null}
+            {faceOn && sp.glasses ? <Glasses c={sp.glasses} /> : null}
             <mesh geometry={polyBox(0.04, 0.09, 0.07, 0.012)} material={skin} position={[K.headW / 2 + 0.012, -0.02, 0]} />
             <mesh geometry={polyBox(0.04, 0.09, 0.07, 0.012)} material={skin} position={[-K.headW / 2 - 0.012, -0.02, 0]} />
             <Hair st={st} />

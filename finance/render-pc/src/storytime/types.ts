@@ -13,11 +13,12 @@ export type Expr =
   | "yell" | "scream";
 export const EXPRS: Expr[] = ["neutral", "annoyed", "furious", "shocked", "deadpan", "smug", "laughing", "sideeye", "yell", "scream"];
 
-export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean" | "pump" | "shrug" | "slam";
-export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean", "pump", "shrug", "slam"];
+/** raise: the phone comes up slowly from the chest to face height, screen to the lens (over ~2 s) */
+export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean" | "pump" | "shrug" | "slam" | "raise";
+export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean", "pump", "shrug", "slam", "raise"];
 
-export type SetId = "classroom" | "hallway" | "cafeteria";
-export const SET_IDS: SetId[] = ["classroom", "hallway", "cafeteria"];
+export type SetId = "classroom" | "hallway" | "cafeteria" | "detention" | "gym";
+export const SET_IDS: SetId[] = ["classroom", "hallway", "cafeteria", "detention", "gym"];
 
 export type CamPreset =
   | "closeup_me" | "closeup_homie" | "closeup" // face close-up (closeup takes "on")
@@ -29,8 +30,10 @@ export type CamPreset =
   | "pov_tray" //   first person: looking down at the narrator's lunch tray, his hands on its edges
   | "wide_class" // the set's wide (use sparingly)
   | "crowd" //      the background classmates (reactions)
-  | "windows"; //   the cafeteria's window wall (the shatter)
-export const CAM_PRESETS: CamPreset[] = ["closeup_me", "closeup_homie", "closeup", "punch_in", "two_shot", "ots", "insert", "pov_phone", "pov_tray", "wide_class", "crowd", "windows"];
+  | "windows" //    the cafeteria's window wall (the shatter)
+  | "pov_press" //  first person (the homie's eyes): his soundboard phone in his hand, his thumb on the big button
+  | "setcam"; //    a named camera of the set (cam.name: board, teacher, principal, stage, speakers, ...)
+export const CAM_PRESETS: CamPreset[] = ["closeup_me", "closeup_homie", "closeup", "punch_in", "two_shot", "ots", "insert", "pov_phone", "pov_tray", "wide_class", "crowd", "windows", "pov_press", "setcam"];
 
 export type Cam = {
   preset: CamPreset;
@@ -50,6 +53,8 @@ export type Cam = {
   push?: number;
   /** a chest-up close-up: the head may fill ~75 % of the frame width (arms crop) */
   tight?: boolean;
+  /** setcam: the set camera's name */
+  name?: string;
 };
 
 /** a face / pose / look change: { "at": anchor, "me": "annoyed", "homie": "smug" } */
@@ -65,6 +70,8 @@ export type Fx =
   | { fx: "shatter"; at?: At };
 
 export type ClassEv = { at?: At; do: "turn" | "laugh" | "front" };
+/** an adult extra (teacher, principal): face, skin tint (the purple face), pose from `at` on */
+export type AdultEv = { at?: At; id: string; face?: Expr; skin?: string; pose?: Pose };
 
 export type Shot = {
   at: At;
@@ -77,6 +84,10 @@ export type Shot = {
   fx?: Fx[];
   /** the background classmates: turn around to the leads, laugh, face front again */
   class?: ClassEv[];
+  /** adult extras' face / skin / pose changes */
+  adult?: AdultEv[];
+  /** leads left out of this shot (e.g. the homie alone in detention) */
+  hide?: CastId[];
   /** a shot may run past 3 s only with hold: true (the held scream) */
   hold?: boolean;
   note?: string;
@@ -116,6 +127,12 @@ export type CastSpec = {
   freckles?: boolean;
   /** height multiplier */
   height?: number;
+  /** an adult: long legs, a taller torso, the same head (teacher, principal) */
+  adult?: boolean;
+  /** a necktie (colour) */
+  tie?: string;
+  /** glasses (frame colour) */
+  glasses?: string;
 };
 
 export type Recipe = {
@@ -131,6 +148,21 @@ export type Recipe = {
   /** the hard cut to black (no fade); the film ends `hold` s later (default: at the voice's end) */
   end?: { at: At; hold?: number };
   captions?: "on" | "off";
+  /** episode props */
+  props?: Props;
+};
+
+export type Props = {
+  /** the homie's phone app: "clips" (a video player, ep1) or "bruh" (a one-button soundboard) */
+  phone?: "clips" | "bruh";
+  /** soundboard presses: the button goes down and the screen shows "BRUH" big for ~1.3 s */
+  presses?: At[];
+  /** the classroom whiteboard's lines (the first one big) */
+  board?: string[];
+  /** optional extras to show (their ids: teacher, principal, ...) */
+  show?: string[];
+  /** a single nugget lands on `owner`'s (otherwise empty) tray at `drop`; a lunch-lady hand takes it back at `take` */
+  tray?: { owner: CastId; drop: At; take: At };
 };
 
 /** a timed word: line number in `turn` */

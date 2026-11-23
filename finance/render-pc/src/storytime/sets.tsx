@@ -7,8 +7,9 @@
 import React from "react";
 import * as THREE from "three";
 import { canvasTexture, geoOf } from "../blocky/mat";
-import { polyBox, polyIco, polyMat, printMat, sunMat } from "./poly";
-import { SETS, deskOf } from "./layout";
+import { polyBox, polyIco, polyLimb, polyMat, printMat, sunMat } from "./poly";
+import { GYM, SETS, deskOf } from "./layout";
+import { Mitten } from "./cast";
 import type { V3 } from "./layout";
 import type { SetId } from "./types";
 
@@ -48,6 +49,16 @@ const sunStripes = (panes: [V3, V3, V3, V3][], d: V3, axis: 0 | 1 | 2, value: nu
 }) as V3[]);
 
 // ------------------------------------------------------------------ textures
+/** an episode's whiteboard: the first line huge (red), the rest smaller */
+const boardLines = (lines: string[]) => canvasTexture(`stBoard${lines.join("|")}`, 1024, 400, (g, W, H) => {
+  g.fillStyle = "#f7f8f6"; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(0,0,0,0.04)"; for (let k = 0; k < 6; k++) g.fillRect(hash(k) * W, hash(k + 9) * H, 220, 26);
+  g.textAlign = "center";
+  g.fillStyle = "#d62828"; g.font = "800 124px Poppins, sans-serif"; g.fillText(lines[0] ?? "", W / 2, 180);
+  g.fillStyle = "#1f4fbf"; g.font = "700 52px Poppins, sans-serif"; (lines.slice(1)).forEach((l, i) => g.fillText(l, W / 2, 285 + i * 62));
+  g.strokeStyle = "#d62828"; g.lineWidth = 8; g.beginPath(); g.moveTo(W * 0.26, 210); g.lineTo(W * 0.74, 210); g.stroke();
+  g.textAlign = "left";
+});
 const chalkboard = () => canvasTexture("stWhiteboard", 1024, 400, (g, W, H) => {
   g.fillStyle = "#f7f8f6"; g.fillRect(0, 0, W, H);
   g.fillStyle = "rgba(0,0,0,0.04)"; for (let k = 0; k < 6; k++) g.fillRect(hash(k) * W, hash(k + 9) * H, 220, 26);
@@ -171,7 +182,7 @@ const Bookshelf: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z 
 };
 
 // ------------------------------------------------------------------ classroom
-const Classroom: React.FC<{ t: number }> = ({ t }) => {
+const Classroom: React.FC<{ t: number; board?: string[] }> = ({ t, board }) => {
   const S = SETS.classroom;
   const floor = flat("#c98f5a");
   const wall = flat(WALL), wall2 = flat(WALL2), base = flat("#7a5c46");
@@ -194,7 +205,7 @@ const Classroom: React.FC<{ t: number }> = ({ t }) => {
       {[-3.2, 0, 3.2].map((z) => [-1.6, 1.6].map((x) => <CeilingLight key={`${x}${z}`} p={[x, 3.38, z]} />))}
       {/* the chalkboard + tray, the teacher's desk */}
       <Blk a={[-2.0, 0.85, -4.92]} b={[2.0, 2.45, -4.86]} m={flat("#b07a45")} />
-      <mesh geometry={PLANE()} material={texMat(chalkboard(), 0.95)} position={[0, 1.65, -4.85]} scale={[3.8, 1.45, 1]} />
+      <mesh geometry={PLANE()} material={texMat(board?.length ? boardLines(board) : chalkboard(), 0.95)} position={[0, 1.65, -4.85]} scale={[3.8, 1.45, 1]} />
       <Blk a={[-2.0, 0.82, -4.86]} b={[2.0, 0.86, -4.74]} m={flat("#b07a45")} />
       <Blk a={[1.4, 0, -4.2]} b={[3.0, 0.78, -3.5]} m={flat("#c98d4b")} />
       <Clock p={[-2.9, 2.55, -4.85]} t={t} r={0.3} />
@@ -264,7 +275,13 @@ const Hallway: React.FC<{ t: number }> = () => {
 };
 
 // ------------------------------------------------------------------ cafeteria
-const Tray: React.FC<{ p: V3; yaw: number; seed: number }> = ({ p, yaw, seed }) => (
+const Tray: React.FC<{ p: V3; yaw: number; seed: number; empty?: boolean }> = ({ p, yaw, seed, empty }) => empty ? (
+  <group position={p} rotation={[0, yaw, 0]}>
+    <mesh geometry={rbox(0.46, 0.03, 0.34, 0.01)} material={flat(seed % 2 ? "#57cc99" : "#ff9f1c", 0.5)} castShadow receiveShadow />
+    {/* the moulded compartments, all empty */}
+    {[[-0.1, 0, 0.2, 0.26], [0.13, 0.07, 0.15, 0.11], [0.13, -0.07, 0.15, 0.11]].map(([x, z, w, d], i) => <mesh key={i} geometry={rbox(w, 0.012, d, 0.004)} material={flat(seed % 2 ? "#47b585" : "#e88d10")} position={[x, 0.016, z]} />)}
+  </group>
+) : (
   <group position={p} rotation={[0, yaw, 0]}>
     <mesh geometry={rbox(0.46, 0.03, 0.34, 0.01)} material={flat(seed % 2 ? "#57cc99" : "#ff9f1c", 0.5)} castShadow receiveShadow />
     {/* a pizza slice, an apple, a milk carton */}
@@ -283,7 +300,51 @@ const Table: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z }) =
   </group>
 );
 
-const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }) => {
+/** a world-space arm (sleeve + mitten) from `from` reaching to `to` */
+const Arm: React.FC<{ from: V3; to: V3; sleeve: string; skin: string; r?: number }> = ({ from, to, sleeve, skin, r = 0.055 }) => {
+  const d = new THREE.Vector3(to[0] - from[0], to[1] - from[1], to[2] - from[2]);
+  const len = d.length();
+  const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, -1, 0), d.clone().normalize());
+  return (
+    <group position={from} quaternion={q}>
+      <mesh geometry={polyLimb(r, r * 0.92, len)} material={flat(sleeve)} />
+      <group position={[0, -len - 0.05, 0]}><Mitten skin={skin} /></group>
+    </group>
+  );
+};
+const ease = (u: number) => { const x = Math.min(1, Math.max(0, u)); return x * x * (3 - 2 * x); };
+export type TrayFx = { owner: "me" | "homie"; drop: number; take: number };
+export const TRAY_AT: Record<"me" | "homie", V3> = { homie: [0.05, 0.675, -0.22], me: [-0.05, 0.675, 0.24] };
+/** ONE nugget drops onto the owner's empty tray; a lunch lady's gloved hand reaches in from the side and takes it back */
+const Nugget: React.FC<{ tr: TrayFx; t: number }> = ({ tr, t }) => {
+  if (t < tr.drop) return null;
+  const P = TRAY_AT[tr.owner];
+  const rest: V3 = [P[0] - 0.08, P[1] + 0.04, P[2] + (tr.owner === "homie" ? 0.02 : -0.02)];
+  // the drop: falls 0.45 m in 0.22 s, a small bounce
+  const u = (t - tr.drop) / 0.22;
+  let y = rest[1] + (u < 1 ? 0.45 * (1 - u * u) : 0.025 * Math.max(0, Math.sin(Math.min(1, (u - 1) / 0.6) * Math.PI)));
+  let pos: V3 = [rest[0], y, rest[2]];
+  // the take: the hand comes in over 0.45 s, grabs, leaves over 0.55 s with the nugget
+  const side = tr.owner === "homie" ? 1 : -1;
+  const from: V3 = [P[0] + 0.85, P[1] + 0.85, P[2] + side * 0.35];
+  const grab: V3 = [rest[0] + 0.04, rest[1] + 0.12, rest[2]];
+  let hand: V3 | null = null;
+  if (t >= tr.take - 0.45 && t < tr.take + 0.55) {
+    const kIn = ease((t - (tr.take - 0.45)) / 0.45), kOut = ease((t - tr.take - 0.1) / 0.45);
+    hand = t < tr.take + 0.1 ? [from[0] + (grab[0] - from[0]) * kIn, from[1] + (grab[1] - from[1]) * kIn, from[2] + (grab[2] - from[2]) * kIn]
+      : [grab[0] + (from[0] - grab[0]) * kOut, grab[1] + (from[1] - grab[1]) * kOut, grab[2] + (from[2] - grab[2]) * kOut];
+    if (t >= tr.take) pos = [hand[0] - 0.04, hand[1] - 0.1, hand[2]];
+  }
+  if (t >= tr.take + 0.55) return null;
+  return (
+    <group>
+      <mesh geometry={polyIco(0.05, 1.25, 0.55, 0.95)} material={flat("#d9963a")} position={pos} rotation={[0.1, 0.6, 0.05]} castShadow />
+      {hand ? <Arm from={from} to={hand} sleeve="#f4f4f0" skin="#8fd3ff" /> : null}
+    </group>
+  );
+};
+
+const Cafeteria: React.FC<{ t: number; broken: number | null; tray?: TrayFx | null }> = ({ t, broken, tray }) => {
   const S = SETS.cafeteria, Wd = S.windows!;
   const floor = flat("#d8c9a8");
   const wall = flat(WALL), wallB = flat(WALL2), frame = flat("#ffffff", 0.5);
@@ -337,13 +398,131 @@ const Cafeteria: React.FC<{ t: number; broken: number | null }> = ({ t, broken }
       <Table x0={-4.5} x1={-2.0} z={0} />
       <Table x0={2.0} x1={4.5} z={0} />
       <Table x0={-2.6} x1={2.6} z={-2.08} />
-      <Tray p={[0.05, 0.675, -0.22]} yaw={0.08} seed={1} />
-      <Tray p={[-0.05, 0.675, 0.24]} yaw={Math.PI - 0.1} seed={2} />
+      <Tray p={TRAY_AT.homie} yaw={0.08} seed={1} empty={tray?.owner === "homie"} />
+      <Tray p={TRAY_AT.me} yaw={Math.PI - 0.1} seed={2} empty={tray?.owner === "me"} />
+      {tray ? <Nugget tr={tray} t={t} /> : null}
       {S.extras.map((e, i) => <Tray key={i} p={[e.x, 0.675, e.z + Math.cos(e.yaw) * 0.42]} yaw={e.yaw} seed={i + 3} />)}
     </group>
   );
 };
 
-export const SET_BG: Record<SetId, string> = { classroom: "#a8d8ea", hallway: "#f1f3d0", cafeteria: "#ffd6a5" };
-export const StorySet: React.FC<{ id: SetId; t: number; broken: number | null }> = ({ id, t, broken }) =>
-  id === "classroom" ? <Classroom t={t} /> : id === "hallway" ? <Hallway t={t} /> : <Cafeteria t={t} broken={broken} />;
+// ------------------------------------------------------------------ detention
+const signTex = (key: string, text: string, bg: string, fg: string, w = 1024, h = 256, fs = 150) => canvasTexture(key, w, h, (g, W, H) => {
+  g.fillStyle = bg; g.fillRect(0, 0, W, H); g.strokeStyle = fg; g.lineWidth = 12; g.strokeRect(14, 14, W - 28, H - 28);
+  g.fillStyle = fg; g.font = `800 ${fs}px Poppins, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(text, W / 2, H / 2 + 6);
+});
+const Detention: React.FC<{ t: number }> = ({ t }) => {
+  const S = SETS.detention, wall = flat("#d9cbb0"), wall2 = flat("#cfbf9f");
+  const ho = S.marks.homie;
+  const empty: [number, number][] = [[-1.75, 0], [1.75, 0], [-1.75, 1.5], [0, 1.5], [1.75, 1.5]];
+  return (
+    <group>
+      <mesh geometry={PLANE()} material={flat("#a99a80")} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0.5]} scale={[6.4, 6.6, 1]} receiveShadow />
+      <Blk a={[-3.1, 0, -2.6]} b={[3.1, 3.0, -2.5]} m={wall} cast={false} />
+      <Blk a={[-3.1, 0, 3.7]} b={[3.1, 3.0, 3.8]} m={wall} cast={false} />
+      <Blk a={[-3.1, 0, -2.6]} b={[-3.0, 3.0, 3.8]} m={wall2} cast={false} />
+      <Blk a={[3.0, 0, -2.6]} b={[3.1, 3.0, 3.8]} m={wall2} cast={false} />
+      <Blk a={[-3.1, 3.0, -2.6]} b={[3.1, 3.05, 3.8]} m={flat(CEIL)} cast={false} />
+      <Blk a={[-3.1, 0, -2.5]} b={[3.1, 0.16, -2.46]} m={flat("#6b5444")} cast={false} />
+      <CeilingLight p={[0, 2.98, 0.5]} />
+      {/* the sign above him, a clock, a rules poster */}
+      <mesh geometry={PLANE()} material={texMat(signTex("stDetention", "DETENTION", "#c1121f", "#ffffff"))} position={[0, 2.3, -2.48]} scale={[2.3, 0.58, 1]} />
+      <Clock p={[1.75, 2.3, -2.48]} t={t} r={0.24} />
+      <mesh geometry={PLANE()} material={texMat(poster("stRules", "#264653", "#ffffff", "RULES", (g) => { g.font = "700 30px Poppins, sans-serif"; g.textAlign = "center"; ["NO PHONES", "NO TALKING", "NO NOISE"].forEach((l, i) => g.fillText(l, 128, 80 + i * 50)); }), 0.9)} position={[-1.8, 1.65, -2.48]} scale={[0.66, 0.88, 1]} />
+      {/* a window with the blinds half down (right wall) */}
+      <mesh geometry={PLANE()} material={bmat("#ffffff", skyTex())} position={[2.99, 1.75, 0.8]} rotation={[0, -Math.PI / 2, 0]} scale={[1.6, 1.4, 1]} />
+      {Array.from({ length: 9 }, (_, k) => <Blk key={k} a={[2.93, 2.42 - k * 0.075, 0.0]} b={[2.97, 2.47 - k * 0.075, 1.6]} m={flat("#efe9dc")} />)}
+      {/* his desk, and the empty ones */}
+      <Desk p={deskOf(ho)} yaw={ho.yaw} />
+      <Chair x={ho.x} z={ho.z} yaw={ho.yaw} />
+      {empty.map(([x, z], i) => { const m = { x, z, yaw: 0, sit: true }; return <React.Fragment key={i}><Desk p={deskOf(m)} yaw={0} color="#e2b35c" /><Chair x={x} z={z} yaw={0} /></React.Fragment>; })}
+    </group>
+  );
+};
+
+// ------------------------------------------------------------------ gym (the assembly)
+const bannerTex = () => canvasTexture("stBanner", 1024, 180, (g, W, H) => {
+  g.fillStyle = "#1d4ed8"; g.fillRect(0, 0, W, H); g.strokeStyle = "#ffd23f"; g.lineWidth = 10; g.strokeRect(10, 10, W - 20, H - 20);
+  g.fillStyle = "#ffd23f"; g.font = "800 92px Poppins, sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("STUDENT OF THE MONTH", W / 2, H / 2 + 4);
+});
+/** a big black speaker cabinet: two woofers and a tweeter on its +z face */
+const Speaker: React.FC<{ p: V3; yaw: number; w?: number; h?: number }> = ({ p, yaw, w = 1.1, h = 2.5 }) => {
+  const d = w * 0.75, cone = (y: number, r: number, k: string) => (
+    <group key={k} position={[0, y, d / 2 + 0.005]} rotation={[Math.PI / 2, 0, 0]}>
+      <mesh geometry={geoOf("stSpkRim", () => new THREE.CylinderGeometry(1, 1, 0.04, 16))} material={flat("#3a3b42")} scale={[r, 1, r]} />
+      <mesh geometry={geoOf("stSpkCone", () => new THREE.ConeGeometry(1, 0.5, 16, 1, true))} material={flat("#141418")} position={[0, -0.0, 0]} rotation={[Math.PI, 0, 0]} scale={[r * 0.82, 0.25, r * 0.82]} />
+      <mesh geometry={geoOf("stSpkCap", () => new THREE.SphereGeometry(1, 10, 6))} material={flat("#2a2b31")} position={[0, 0.03, 0]} scale={[r * 0.22, r * 0.12, r * 0.22]} />
+    </group>
+  );
+  return (
+    <group position={p} rotation={[0, yaw, 0]}>
+      <mesh geometry={rbox(w, h, d, 0.04)} material={flat("#1b1b1f")} position={[0, h / 2, 0]} castShadow receiveShadow />
+      {cone(h * 0.27, w * 0.36, "a")}{cone(h * 0.6, w * 0.36, "b")}{cone(h * 0.86, w * 0.13, "c")}
+    </group>
+  );
+};
+const MicStand: React.FC<{ p: V3 }> = ({ p }) => (
+  <group position={p}>
+    <mesh geometry={geoOf("stMicBase", () => new THREE.CylinderGeometry(0.15, 0.17, 0.03, 12))} material={flat("#202024")} position={[0, 0.015, 0]} />
+    <Blk a={[-0.012, 0, -0.012]} b={[0.012, 1.3, 0.012]} m={flat("#3a3a40")} />
+    <mesh geometry={BOX()} material={flat("#3a3a40")} position={[0, 1.33, -0.06]} rotation={[0.9, 0, 0]} scale={[0.02, 0.18, 0.02]} />
+    <mesh geometry={polyBox(0.05, 0.14, 0.05, 0.02)} material={flat("#111114")} position={[0, 1.39, -0.13]} rotation={[0.9, 0, 0]} />
+  </group>
+);
+const Gym: React.FC<{ t: number }> = () => {
+  const [sz0, sz1] = GYM.stageZ, sy = GYM.stageY;
+  const lower = flat("#2f5d9e"), upper = flat("#e6dcc6");
+  return (
+    <group>
+      {/* the court floor, its lines */}
+      <mesh geometry={PLANE()} material={flat("#d9a066")} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -1]} scale={[15.4, 16.4, 1]} receiveShadow />
+      <Blk a={[-7.5, 0, 0.98]} b={[7.5, 0.006, 1.06]} m={flat("#ffffff")} cast={false} />
+      <mesh geometry={geoOf("stCourtRing", () => new THREE.RingGeometry(1.7, 1.78, 40))} material={flat("#ffffff")} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.007, 1.02]} />
+      <Blk a={[-6.2, 0, -5.9]} b={[6.2, 0.006, -5.82]} m={flat("#c1121f")} cast={false} />
+      {/* walls: blue block below, cream above */}
+      {([[[-7.7, 0, -9.2], [7.7, 1.8, -9.1]], [[-7.7, 0, 7.0], [7.7, 1.8, 7.1]], [[-7.7, 0, -9.2], [-7.6, 1.8, 7.1]], [[7.6, 0, -9.2], [7.7, 1.8, 7.1]]] as [V3, V3][]).map(([a, b], i) => <Blk key={`l${i}`} a={a} b={b} m={lower} cast={false} />)}
+      {([[[-7.7, 1.8, -9.2], [7.7, 6.6, -9.1]], [[-7.7, 1.8, 7.0], [7.7, 6.6, 7.1]], [[-7.7, 1.8, -9.2], [-7.6, 6.6, 7.1]], [[7.6, 1.8, -9.2], [7.7, 6.6, 7.1]]] as [V3, V3][]).map(([a, b], i) => <Blk key={`u${i}`} a={a} b={b} m={upper} cast={false} />)}
+      <Blk a={[-7.7, 6.6, -9.2]} b={[7.7, 6.7, 7.1]} m={flat("#7d8188")} cast={false} />
+      {[-5.5, -1.5, 2.5, 5.5].map((z) => [-4, 0, 4].map((x) => <mesh key={`${x}${z}`} geometry={BOX()} material={plastic("#ffffff", { emissive: "#fffbe8", ei: 1.5 })} position={[x, 6.55, z]} scale={[1.3, 0.08, 0.6]} />))}
+      {/* high windows on the side walls */}
+      {[-4, 0, 4].map((z) => [-7.58, 7.58].map((x) => <mesh key={`w${x}${z}`} geometry={PLANE()} material={bmat("#ffffff", skyTex())} position={[x, 4.9, z]} rotation={[0, x < 0 ? Math.PI / 2 : -Math.PI / 2, 0]} scale={[2.2, 1.1, 1]} />))}
+      {/* folded bleachers against the side walls */}
+      {[-1, 1].map((sd) => [0, 1, 2, 3].map((k) => <Blk key={`b${sd}${k}`} a={[sd > 0 ? 7.6 - 0.95 + k * 0.22 : -7.6, 0, -3.5]} b={[sd > 0 ? 7.6 : -7.6 + 0.95 - k * 0.22, 0.45 + k * 0.42, 5.2]} m={flat(k % 2 ? "#b08350" : "#9c7244")} />))}
+      {/* a hoop on the back wall (behind the kids) */}
+      <Blk a={[-0.9, 3.2, 6.9]} b={[0.9, 4.25, 6.96]} m={flat("#ffffff")} />
+      <Blk a={[-0.3, 3.3, 6.89]} b={[0.3, 3.75, 6.9]} m={flat("#e85d04")} cast={false} />
+      <mesh geometry={polyTorusGeo()} material={flat("#e85d04")} position={[0, 3.3, 6.65]} rotation={[Math.PI / 2, 0, 0]} />
+      {/* the stage, its skirt, the curtain, the steps */}
+      <Blk a={[-4.3, 0, sz0]} b={[4.3, sy, sz1]} m={flat("#b5814b")} />
+      <Blk a={[-4.3, 0.05, sz1]} b={[4.3, sy - 0.04, sz1 + 0.03]} m={flat("#1d3557")} cast={false} />
+      <Blk a={[-4.3, sy, sz0 - 0.05]} b={[4.3, 5.4, sz0 + 0.05]} m={flat("#8f1d21")} cast={false} />
+      {Array.from({ length: 14 }, (_, k) => <Blk key={`c${k}`} a={[-4.2 + k * 0.6, sy, sz0 + 0.05]} b={[-4.0 + k * 0.6, 5.4, sz0 + 0.12]} m={flat("#a4262c")} cast={false} />)}
+      <Blk a={[-4.6, 4.9, sz0]} b={[4.6, 5.6, sz0 + 0.35]} m={flat("#7a1519")} />
+      {[0, 1, 2].map((k) => <Blk key={`s${k}`} a={[4.3, 0, sz1 - 1.2]} b={[4.3 + 0.32 * (3 - k), sy * ((k + 1) / 3), sz1 - 0.2]} m={flat("#a8763f")} />)}
+      {/* the banner */}
+      <mesh geometry={PLANE()} material={texMat(bannerTex())} position={[0, 3.85, sz0 + 0.16]} scale={[5.8, 1.02, 1]} />
+      {/* the mic stand at the stage front, a podium-free assembly */}
+      <MicStand p={GYM.mic} />
+      {/* the BIG speakers: floor stacks either side of the stage, two more high on the wall */}
+      <Speaker p={[-GYM.speakerX, 0, -5.4]} yaw={0.3} />
+      <Speaker p={[GYM.speakerX, 0, -5.4]} yaw={-0.3} />
+      <Speaker p={[-GYM.speakerX, 2.5, -5.4]} yaw={0.3} w={0.9} h={1.0} />
+      <Speaker p={[GYM.speakerX, 2.5, -5.4]} yaw={-0.3} w={0.9} h={1.0} />
+      <Speaker p={[-6.6, 4.4, -8.6]} yaw={0.6} w={0.8} h={1.1} />
+      <Speaker p={[6.6, 4.4, -8.6]} yaw={-0.6} w={0.8} h={1.1} />
+      {/* the benches the kids sit on */}
+      {GYM.rows.map((z, i) => (
+        <group key={`bench${i}`}>
+          <mesh geometry={rbox(7.4, 0.05, 0.42, 0.015)} material={flat("#c58b4b")} position={[0, 0.415, z - 0.03]} castShadow receiveShadow />
+          {[-3.5, -1.2, 1.2, 3.5].map((x) => <Blk key={x} a={[x - 0.04, 0, z - 0.2]} b={[x + 0.04, 0.4, z + 0.14]} m={flat("#8d99ae")} />)}
+        </group>
+      ))}
+    </group>
+  );
+};
+const polyTorusGeo = () => geoOf("stHoop", () => new THREE.TorusGeometry(0.24, 0.02, 4, 16));
+
+export const SET_BG: Record<SetId, string> = { classroom: "#a8d8ea", hallway: "#f1f3d0", cafeteria: "#ffd6a5", detention: "#e9dcc4", gym: "#e6dcc6" };
+export type SetProps = { board?: string[]; tray?: TrayFx | null };
+export const StorySet: React.FC<{ id: SetId; t: number; broken: number | null; props?: SetProps }> = ({ id, t, broken, props }) =>
+  id === "classroom" ? <Classroom t={t} board={props?.board} /> : id === "hallway" ? <Hallway t={t} /> : id === "detention" ? <Detention t={t} /> : id === "gym" ? <Gym t={t} /> : <Cafeteria t={t} broken={broken} tray={props?.tray} />;

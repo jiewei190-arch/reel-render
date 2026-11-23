@@ -6,7 +6,7 @@ import { compileStory } from "./compile";
 import type { Compiled } from "./compile";
 import { StoryFilm } from "./film";
 import { BrandBanner, BrandPfp } from "./branding";
-import { GALLERY } from "./gallery";
+import { GALLERY, GALLERY2 } from "./gallery";
 import { STORY_RECIPES } from "./registry.gen";
 
 const cache = new Map<string, Compiled>();
@@ -14,6 +14,7 @@ export const storyCompiled = (id: string) => {
   let c = cache.get(id);
   if (!c) {
     if (id === "StoryGallery") c = compileStory(GALLERY.recipe, GALLERY.words, GALLERY.duration);
+    else if (id === "StoryEp2Kit") c = compileStory(GALLERY2.recipe, GALLERY2.words, GALLERY2.duration);
     else {
       const r = STORY_RECIPES.find((x) => x.id === id);
       if (!r) throw new Error(`no storytime recipe ${id}`);
@@ -27,7 +28,7 @@ const Film: React.FC<{ id: string }> = ({ id }) => <StoryFilm c={storyCompiled(i
 
 export const StoryRoot: React.FC = () => (
   <>
-    {["StoryGallery", ...STORY_RECIPES.map((r) => r.id)].map((id) => {
+    {["StoryGallery", "StoryEp2Kit", ...STORY_RECIPES.map((r) => r.id)].map((id) => {
       const c = storyCompiled(id);
       return <Composition key={id} id={id} component={Film} durationInFrames={c.duration} fps={30} width={c.layout.W} height={c.layout.H} defaultProps={{ id }} />;
     })}
