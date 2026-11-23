@@ -1,0 +1,63 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.25,
+ "sr": 24000,
+ "duration": 37.144,
+ "characters": 590,
+ "lines": [
+  {
+   "line": 1,
+   "text": "He broke in to steal old jars, but a shotgun trap got him first. Then he sued the owners, and won thirty thousand dollars.",
+   "start": 0.08,
+   "end": 6.928
+  },
+  {
+   "line": 2,
+   "text": "Iowa, nineteen sixty-seven. An empty, boarded-up farmhouse, broken into for ten years.",
+   "start": 7.048,
+   "end": 12.808
+  },
+  {
+   "line": 3,
+   "text": "So Edward Briney wired a shotgun to a bedroom door, aimed at the legs.",
+   "start": 12.928,
+   "end": 17.024
+  },
+  {
+   "line": 4,
+   "text": "Weeks later, Marvin Katko opened it. Forty days in the hospital.",
+   "start": 17.144,
+   "end": 21.368
+  },
+  {
+   "line": 5,
+   "text": "He pleaded guilty to larceny. The fine: fifty dollars.",
+   "start": 21.488,
+   "end": 24.88
+  },
+  {
+   "line": 6,
+   "text": "Then a jury made the Brineys pay: twenty thousand in damages, ten thousand more as punishment.",
+   "start": 25.0,
+   "end": 30.568
+  },
+  {
+   "line": 7,
+   "text": "Iowa's Supreme Court upheld it: the law values human safety over property.",
+   "start": 30.688,
+   "end": 35.104
+  },
+  {
+   "line": 8,
+   "text": "And it all began the night",
+   "start": 35.224,
+   "end": 37.144
+  }
+ ]
+}

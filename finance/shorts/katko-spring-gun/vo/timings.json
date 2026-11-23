@@ -1,0 +1,578 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 37.144
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "He broke in to steal old jars, but a shotgun trap got him first. Then he sued the owners, and won thirty thousand dollars.",
+   "words": [
+    {
+     "w": "He",
+     "t": 0.08,
+     "end": 0.208
+    },
+    {
+     "w": "broke",
+     "t": 0.24,
+     "end": 0.4
+    },
+    {
+     "w": "in",
+     "t": 0.464,
+     "end": 0.592
+    },
+    {
+     "w": "to",
+     "t": 0.656,
+     "end": 0.72
+    },
+    {
+     "w": "steal",
+     "t": 0.784,
+     "end": 0.976
+    },
+    {
+     "w": "old",
+     "t": 1.04,
+     "end": 1.232
+    },
+    {
+     "w": "jars,",
+     "t": 1.296,
+     "end": 1.936
+    },
+    {
+     "w": "but",
+     "t": 2.0,
+     "end": 2.064
+    },
+    {
+     "w": "a",
+     "t": 2.128,
+     "end": 2.192
+    },
+    {
+     "w": "shotgun",
+     "t": 2.32,
+     "end": 2.576
+    },
+    {
+     "w": "trap",
+     "t": 2.64,
+     "end": 2.832
+    },
+    {
+     "w": "got",
+     "t": 2.896,
+     "end": 2.96
+    },
+    {
+     "w": "him",
+     "t": 3.056,
+     "end": 3.152
+    },
+    {
+     "w": "first.",
+     "t": 3.344,
+     "end": 3.92
+    },
+    {
+     "w": "Then",
+     "t": 4.048,
+     "end": 4.176
+    },
+    {
+     "w": "he",
+     "t": 4.24,
+     "end": 4.368
+    },
+    {
+     "w": "sued",
+     "t": 4.432,
+     "end": 4.624
+    },
+    {
+     "w": "the",
+     "t": 4.688,
+     "end": 4.752
+    },
+    {
+     "w": "owners,",
+     "t": 4.816,
+     "end": 5.2
+    },
+    {
+     "w": "and",
+     "t": 5.232,
+     "end": 5.264
+    },
+    {
+     "w": "won",
+     "t": 5.328,
+     "end": 5.52
+    },
+    {
+     "w": "thirty",
+     "t": 5.584,
+     "end": 5.776
+    },
+    {
+     "w": "thousand",
+     "t": 5.968,
+     "end": 6.288
+    },
+    {
+     "w": "dollars.",
+     "t": 6.352,
+     "end": 6.992
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Iowa, nineteen sixty-seven. An empty, boarded-up farmhouse, broken into for ten years.",
+   "words": [
+    {
+     "w": "Iowa,",
+     "t": 7.048,
+     "end": 7.688
+    },
+    {
+     "w": "nineteen",
+     "t": 7.752,
+     "end": 8.008
+    },
+    {
+     "w": "sixty-seven.",
+     "t": 8.136,
+     "end": 9.16
+    },
+    {
+     "w": "An",
+     "t": 9.224,
+     "end": 9.288
+    },
+    {
+     "w": "empty,",
+     "t": 9.352,
+     "end": 9.8
+    },
+    {
+     "w": "boarded-up",
+     "t": 9.896,
+     "end": 10.248
+    },
+    {
+     "w": "farmhouse,",
+     "t": 10.312,
+     "end": 11.08
+    },
+    {
+     "w": "broken",
+     "t": 11.144,
+     "end": 11.4
+    },
+    {
+     "w": "into",
+     "t": 11.56,
+     "end": 11.72
+    },
+    {
+     "w": "for",
+     "t": 11.816,
+     "end": 11.912
+    },
+    {
+     "w": "ten",
+     "t": 12.04,
+     "end": 12.168
+    },
+    {
+     "w": "years.",
+     "t": 12.232,
+     "end": 12.872
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "So Edward Briney wired a shotgun to a bedroom door, aimed at the legs.",
+   "words": [
+    {
+     "w": "So",
+     "t": 12.928,
+     "end": 13.12
+    },
+    {
+     "w": "Edward",
+     "t": 13.312,
+     "end": 13.504
+    },
+    {
+     "w": "Briney",
+     "t": 13.568,
+     "end": 13.952
+    },
+    {
+     "w": "wired",
+     "t": 13.984,
+     "end": 14.208
+    },
+    {
+     "w": "a",
+     "t": 14.272,
+     "end": 14.336
+    },
+    {
+     "w": "shotgun",
+     "t": 14.4,
+     "end": 14.784
+    },
+    {
+     "w": "to",
+     "t": 14.848,
+     "end": 14.912
+    },
+    {
+     "w": "a",
+     "t": 14.944,
+     "end": 14.976
+    },
+    {
+     "w": "bedroom",
+     "t": 15.04,
+     "end": 15.296
+    },
+    {
+     "w": "door,",
+     "t": 15.424,
+     "end": 15.936
+    },
+    {
+     "w": "aimed",
+     "t": 16.032,
+     "end": 16.192
+    },
+    {
+     "w": "at",
+     "t": 16.256,
+     "end": 16.32
+    },
+    {
+     "w": "the",
+     "t": 16.384,
+     "end": 16.416
+    },
+    {
+     "w": "legs.",
+     "t": 16.448,
+     "end": 17.088
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Weeks later, Marvin Katko opened it. Forty days in the hospital.",
+   "words": [
+    {
+     "w": "Weeks",
+     "t": 17.144,
+     "end": 17.464
+    },
+    {
+     "w": "later,",
+     "t": 17.528,
+     "end": 18.04
+    },
+    {
+     "w": "Marvin",
+     "t": 18.104,
+     "end": 18.36
+    },
+    {
+     "w": "Katko",
+     "t": 18.424,
+     "end": 18.808
+    },
+    {
+     "w": "opened",
+     "t": 18.872,
+     "end": 19.128
+    },
+    {
+     "w": "it.",
+     "t": 19.224,
+     "end": 19.576
+    },
+    {
+     "w": "Forty",
+     "t": 19.832,
+     "end": 20.088
+    },
+    {
+     "w": "days",
+     "t": 20.216,
+     "end": 20.536
+    },
+    {
+     "w": "in",
+     "t": 20.568,
+     "end": 20.6
+    },
+    {
+     "w": "the",
+     "t": 20.664,
+     "end": 20.728
+    },
+    {
+     "w": "hospital.",
+     "t": 20.952,
+     "end": 21.368
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "He pleaded guilty to larceny. The fine: fifty dollars.",
+   "words": [
+    {
+     "w": "He",
+     "t": 21.488,
+     "end": 21.616
+    },
+    {
+     "w": "pleaded",
+     "t": 21.68,
+     "end": 21.936
+    },
+    {
+     "w": "guilty",
+     "t": 22.0,
+     "end": 22.32
+    },
+    {
+     "w": "to",
+     "t": 22.384,
+     "end": 22.448
+    },
+    {
+     "w": "larceny.",
+     "t": 22.48,
+     "end": 23.216
+    },
+    {
+     "w": "The",
+     "t": 23.28,
+     "end": 23.344
+    },
+    {
+     "w": "fine:",
+     "t": 23.504,
+     "end": 23.984
+    },
+    {
+     "w": "fifty",
+     "t": 24.016,
+     "end": 24.24
+    },
+    {
+     "w": "dollars.",
+     "t": 24.304,
+     "end": 24.944
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Then a jury made the Brineys pay: twenty thousand in damages, ten thousand more as punishment.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 25.0,
+     "end": 25.384
+    },
+    {
+     "w": "a",
+     "t": 25.512,
+     "end": 25.576
+    },
+    {
+     "w": "jury",
+     "t": 25.64,
+     "end": 25.896
+    },
+    {
+     "w": "made",
+     "t": 25.96,
+     "end": 26.088
+    },
+    {
+     "w": "the",
+     "t": 26.12,
+     "end": 26.152
+    },
+    {
+     "w": "Brineys",
+     "t": 26.216,
+     "end": 26.6
+    },
+    {
+     "w": "pay:",
+     "t": 26.76,
+     "end": 27.304
+    },
+    {
+     "w": "twenty",
+     "t": 27.432,
+     "end": 27.56
+    },
+    {
+     "w": "thousand",
+     "t": 27.688,
+     "end": 28.008
+    },
+    {
+     "w": "in",
+     "t": 28.072,
+     "end": 28.136
+    },
+    {
+     "w": "damages,",
+     "t": 28.2,
+     "end": 28.968
+    },
+    {
+     "w": "ten",
+     "t": 29.032,
+     "end": 29.096
+    },
+    {
+     "w": "thousand",
+     "t": 29.16,
+     "end": 29.416
+    },
+    {
+     "w": "more",
+     "t": 29.48,
+     "end": 29.736
+    },
+    {
+     "w": "as",
+     "t": 29.8,
+     "end": 29.864
+    },
+    {
+     "w": "punishment.",
+     "t": 29.992,
+     "end": 30.632
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Iowa's Supreme Court upheld it: the law values human safety over property.",
+   "words": [
+    {
+     "w": "Iowa's",
+     "t": 30.688,
+     "end": 31.072
+    },
+    {
+     "w": "Supreme",
+     "t": 31.168,
+     "end": 31.392
+    },
+    {
+     "w": "Court",
+     "t": 31.52,
+     "end": 31.712
+    },
+    {
+     "w": "upheld",
+     "t": 31.776,
+     "end": 32.096
+    },
+    {
+     "w": "it:",
+     "t": 32.16,
+     "end": 32.672
+    },
+    {
+     "w": "the",
+     "t": 32.704,
+     "end": 32.736
+    },
+    {
+     "w": "law",
+     "t": 32.8,
+     "end": 32.992
+    },
+    {
+     "w": "values",
+     "t": 33.056,
+     "end": 33.376
+    },
+    {
+     "w": "human",
+     "t": 33.44,
+     "end": 33.696
+    },
+    {
+     "w": "safety",
+     "t": 33.824,
+     "end": 34.208
+    },
+    {
+     "w": "over",
+     "t": 34.272,
+     "end": 34.4
+    },
+    {
+     "w": "property.",
+     "t": 34.528,
+     "end": 35.168
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "And it all began the night",
+   "words": [
+    {
+     "w": "And",
+     "t": 35.224,
+     "end": 35.352
+    },
+    {
+     "w": "it",
+     "t": 35.416,
+     "end": 35.48
+    },
+    {
+     "w": "all",
+     "t": 35.544,
+     "end": 35.672
+    },
+    {
+     "w": "began",
+     "t": 35.736,
+     "end": 36.12
+    },
+    {
+     "w": "the",
+     "t": 36.504,
+     "end": 36.568
+    },
+    {
+     "w": "night",
+     "t": 36.632,
+     "end": 37.208
+    }
+   ]
+  }
+ ]
+}
