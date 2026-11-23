@@ -583,7 +583,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   for (const s of shots) {
     let need = 0;
     for (let t = s.a; t < s.b; t += 1 / FPS) {
-      const cam = camAt(t);
+      const cam = camIn(s, t); // this shot's own camera (camAt(t) can pick the next shot at a float boundary)
       for (const id of named(s)) need = Math.max(need, neckBottom(cam, leadAt(id, t, s.set)));
     }
     const maxFs = CAP.fsShout * CAP.lineH;
