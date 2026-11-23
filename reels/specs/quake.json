@@ -1,0 +1,98 @@
+{
+ "name": "quake",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  7,
+  9,
+  12,
+  14,
+  18
+ ],
+ "phrases": [
+  [
+   "Nobody has ever **predicted** a major earthquake.",
+   "Nobody has ever predicted a major earthquake."
+  ],
+  [
+   "Not once. Not the USGS, not **any scientist** on Earth.",
+   "Not once. Not the U S G S, not any scientist on Earth."
+  ],
+  [
+   "Here's why. Two blocks of rock **push past** each other, but the edge gets **stuck.**",
+   "Here's why. Two blocks of rock push past each other, but the edge gets stuck."
+  ],
+  [
+   "Stress **slowly builds** for years, and then the rock **slips.**",
+   "Stress slowly builds for years, and then the rock slips."
+  ],
+  [
+   "That sudden slip is the earthquake.",
+   "That sudden slip is the earthquake."
+  ],
+  [
+   "A real prediction needs three things: **when, where,** and **how big.**",
+   "A real prediction needs three things: when, where, and how big."
+  ],
+  [
+   "Miss **one,** and it doesn't count.",
+   "Miss one, and it doesn't count."
+  ],
+  [
+   "The trouble is, the action happens **miles underground,** where we can't see.",
+   "The trouble is, the action happens miles underground, where we can't see."
+  ],
+  [
+   "So scientists give **odds** instead: the chance of a quake in an area over **decades.**",
+   "So scientists give odds instead: the chance of a quake in an area over decades."
+  ],
+  [
+   "In **1985,** they thought they'd cracked it.",
+   "In nineteen eighty five, they thought they'd cracked it."
+  ],
+  [
+   "Parkfield, California, kept having quakes of about **magnitude six,** roughly every **22 years.**",
+   "Parkfield, California, kept having quakes of about magnitude six, roughly every twenty two years."
+  ],
+  [
+   "Forecast: the next one **before 1993.**",
+   "The forecast: the next one before nineteen ninety three."
+  ],
+  [
+   "**1993** came and went. Nothing.",
+   "Nineteen ninety three came and went. Nothing."
+  ],
+  [
+   "The quake finally hit in **2004,** eleven years late.",
+   "The quake finally hit in two thousand four, eleven years late."
+  ],
+  [
+   "Small quakes don't help. About **one in twenty** is followed by a bigger one within a week.",
+   "Small quakes don't help. About one in twenty is followed by a bigger one within a week."
+  ],
+  [
+   "And nobody can tell **which one** until the bigger one arrives.",
+   "And nobody can tell which one until the bigger one arrives."
+  ],
+  [
+   "What we *can* do is **warn you.** Sensors catch the fast, gentle wave first.",
+   "What we can do is warn you. Sensors catch the fast, gentle wave first."
+  ],
+  [
+   "That gives **seconds** before the slower, stronger shaking arrives.",
+   "That gives seconds before the slower, stronger shaking arrives."
+  ],
+  [
+   "As one USGS seismologist put it: a **stopped clock** is right twice a day.",
+   "As one U S G S seismologist put it: a stopped clock is right twice a day."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

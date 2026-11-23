@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="styles/lowpoly/fonts/fonts.css">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<style>
+html,body{margin:0;width:540px;height:960px;overflow:hidden;background:#9FD4FF;font-family:'Fredoka',sans-serif}
+#root{position:absolute;inset:0;overflow:hidden}
+#gl{position:absolute;inset:0;width:540px;height:960px}
+#ov{position:absolute;inset:0;pointer-events:none}
+.t{position:absolute;left:0;right:0;text-align:center;color:#FFF6E6;text-shadow:0 3px 0 rgba(48,42,110,.38),0 8px 18px rgba(48,42,110,.25)}
+.kick{font-size:19px;font-weight:600;letter-spacing:.24em;top:58px}
+.big{font-size:54px;font-weight:600;line-height:1;white-space:nowrap;top:88px}
+.big span{display:inline-block}
+.big b{color:#FFD166;font-weight:600}
+#cap{position:absolute;left:30px;right:30px;top:770px;text-align:center;font-size:30px;font-weight:600;line-height:1.2;color:#FFF6E6;text-shadow:0 2px 0 rgba(36,30,96,.6),0 5px 14px rgba(36,30,96,.55)}
+#cap i{font-style:normal;color:#FFD166}
+.chip{position:absolute;transform:translate(-50%,-50%);background:#FFF6E6;color:#3A3560;border-radius:16px;padding:6px 16px 8px;font-size:24px;font-weight:600;box-shadow:0 4px 0 rgba(48,42,110,.35);white-space:nowrap;text-align:center;opacity:0}
+.chip small{display:block;font-size:14px;font-weight:500;color:#8A7FB8;margin-top:-2px}
+.chip.c{background:#FF8A73;color:#fff}.chip.g{background:#9BD98A;color:#2f4a2c}.chip.y{background:#FFD166}.chip.b{background:#7CC4F2;color:#1f3f5c}
+#bar{position:absolute;left:150px;width:240px;top:690px;height:20px;border-radius:12px;background:rgba(255,246,230,.55);box-shadow:0 3px 0 rgba(48,42,110,.25);opacity:0;overflow:hidden}
+#bar div{height:100%;width:0;background:#9BD98A;border-radius:12px}
+#barl{position:absolute;left:0;right:0;top:662px;text-align:center;font-size:17px;font-weight:600;letter-spacing:.2em;color:#FFF6E6;text-shadow:0 2px 0 rgba(48,42,110,.4);opacity:0}
+</style></head><body><div id="root"><canvas id="gl"></canvas><div id="ov"></div><div id="cap"></div><div id="barl">STRESS</div><div id="bar"><div></div></div></div>
+<script src="tl_quake.js"></script><script type="module" src="t_quake.js"></script></body></html>
