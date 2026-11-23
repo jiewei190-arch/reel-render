@@ -1,0 +1,563 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "The United States once sued a pile of cash. And on appeal, the cash lost.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.084,
+     "end": 0.219
+    },
+    {
+     "w": "United",
+     "t": 0.388,
+     "end": 0.557
+    },
+    {
+     "w": "States",
+     "t": 0.624,
+     "end": 0.962
+    },
+    {
+     "w": "once",
+     "t": 1.097,
+     "end": 1.299
+    },
+    {
+     "w": "sued",
+     "t": 1.434,
+     "end": 1.704
+    },
+    {
+     "w": "a",
+     "t": 1.772,
+     "end": 1.839
+    },
+    {
+     "w": "pile",
+     "t": 1.907,
+     "end": 2.177
+    },
+    {
+     "w": "of",
+     "t": 2.245,
+     "end": 2.312
+    },
+    {
+     "w": "cash.",
+     "t": 2.38,
+     "end": 2.852
+    },
+    {
+     "w": "And",
+     "t": 3.257,
+     "end": 3.46
+    },
+    {
+     "w": "on",
+     "t": 3.595,
+     "end": 3.662
+    },
+    {
+     "w": "appeal,",
+     "t": 3.797,
+     "end": 4.337
+    },
+    {
+     "w": "the",
+     "t": 4.405,
+     "end": 4.472
+    },
+    {
+     "w": "cash",
+     "t": 4.641,
+     "end": 4.81
+    },
+    {
+     "w": "lost.",
+     "t": 4.945,
+     "end": 5.552
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Nebraska, two thousand three. A trooper stops a speeding rental car.",
+   "words": [
+    {
+     "w": "Nebraska,",
+     "t": 5.611,
+     "end": 6.489
+    },
+    {
+     "w": "two",
+     "t": 6.556,
+     "end": 6.624
+    },
+    {
+     "w": "thousand",
+     "t": 6.691,
+     "end": 6.894
+    },
+    {
+     "w": "three.",
+     "t": 7.029,
+     "end": 7.771
+    },
+    {
+     "w": "A",
+     "t": 7.839,
+     "end": 7.906
+    },
+    {
+     "w": "trooper",
+     "t": 7.974,
+     "end": 8.311
+    },
+    {
+     "w": "stops",
+     "t": 8.379,
+     "end": 8.649
+    },
+    {
+     "w": "a",
+     "t": 8.683,
+     "end": 8.716
+    },
+    {
+     "w": "speeding",
+     "t": 8.784,
+     "end": 9.054
+    },
+    {
+     "w": "rental",
+     "t": 9.121,
+     "end": 9.392
+    },
+    {
+     "w": "car.",
+     "t": 9.459,
+     "end": 9.932
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "In a cooler: one hundred twenty-four thousand, seven hundred dollars, wrapped in foil.",
+   "words": [
+    {
+     "w": "In",
+     "t": 9.991,
+     "end": 10.126
+    },
+    {
+     "w": "a",
+     "t": 10.17,
+     "end": 10.216
+    },
+    {
+     "w": "cooler:",
+     "t": 10.261,
+     "end": 11.071
+    },
+    {
+     "w": "one",
+     "t": 11.138,
+     "end": 11.206
+    },
+    {
+     "w": "hundred",
+     "t": 11.273,
+     "end": 11.476
+    },
+    {
+     "w": "twenty-four",
+     "t": 11.611,
+     "end": 11.948
+    },
+    {
+     "w": "thousand,",
+     "t": 12.083,
+     "end": 12.556
+    },
+    {
+     "w": "seven",
+     "t": 12.657,
+     "end": 12.758
+    },
+    {
+     "w": "hundred",
+     "t": 12.826,
+     "end": 13.028
+    },
+    {
+     "w": "dollars,",
+     "t": 13.096,
+     "end": 13.703
+    },
+    {
+     "w": "wrapped",
+     "t": 13.771,
+     "end": 13.973
+    },
+    {
+     "w": "in",
+     "t": 14.041,
+     "end": 14.108
+    },
+    {
+     "w": "foil.",
+     "t": 14.176,
+     "end": 14.783
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The driver first denies having cash. In court, he says it's for a refrigerated produce truck.",
+   "words": [
+    {
+     "w": "The",
+     "t": 14.842,
+     "end": 14.977
+    },
+    {
+     "w": "driver",
+     "t": 15.146,
+     "end": 15.315
+    },
+    {
+     "w": "first",
+     "t": 15.45,
+     "end": 15.653
+    },
+    {
+     "w": "denies",
+     "t": 15.72,
+     "end": 16.125
+    },
+    {
+     "w": "having",
+     "t": 16.26,
+     "end": 16.395
+    },
+    {
+     "w": "cash.",
+     "t": 16.598,
+     "end": 17.205
+    },
+    {
+     "w": "In",
+     "t": 17.273,
+     "end": 17.34
+    },
+    {
+     "w": "court,",
+     "t": 17.408,
+     "end": 17.813
+    },
+    {
+     "w": "he",
+     "t": 17.88,
+     "end": 17.948
+    },
+    {
+     "w": "says",
+     "t": 18.015,
+     "end": 18.15
+    },
+    {
+     "w": "it's",
+     "t": 18.218,
+     "end": 18.285
+    },
+    {
+     "w": "for",
+     "t": 18.353,
+     "end": 18.488
+    },
+    {
+     "w": "a",
+     "t": 18.521,
+     "end": 18.555
+    },
+    {
+     "w": "refrigerated",
+     "t": 18.623,
+     "end": 19.23
+    },
+    {
+     "w": "produce",
+     "t": 19.298,
+     "end": 19.635
+    },
+    {
+     "w": "truck.",
+     "t": 19.703,
+     "end": 20.175
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "A drug dog alerts. But no drugs are found, and no drug charges follow.",
+   "words": [
+    {
+     "w": "A",
+     "t": 20.234,
+     "end": 20.302
+    },
+    {
+     "w": "drug",
+     "t": 20.369,
+     "end": 20.547
+    },
+    {
+     "w": "dog",
+     "t": 20.572,
+     "end": 20.73
+    },
+    {
+     "w": "alerts.",
+     "t": 20.774,
+     "end": 21.449
+    },
+    {
+     "w": "But",
+     "t": 21.652,
+     "end": 21.854
+    },
+    {
+     "w": "no",
+     "t": 21.922,
+     "end": 22.057
+    },
+    {
+     "w": "drugs",
+     "t": 22.124,
+     "end": 22.327
+    },
+    {
+     "w": "are",
+     "t": 22.395,
+     "end": 22.462
+    },
+    {
+     "w": "found,",
+     "t": 22.53,
+     "end": 23.002
+    },
+    {
+     "w": "and",
+     "t": 23.103,
+     "end": 23.205
+    },
+    {
+     "w": "no",
+     "t": 23.272,
+     "end": 23.34
+    },
+    {
+     "w": "drug",
+     "t": 23.475,
+     "end": 23.61
+    },
+    {
+     "w": "charges",
+     "t": 23.677,
+     "end": 24.015
+    },
+    {
+     "w": "follow.",
+     "t": 24.082,
+     "end": 24.622
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "So prosecutors sue the money itself.",
+   "words": [
+    {
+     "w": "So",
+     "t": 24.681,
+     "end": 24.884
+    },
+    {
+     "w": "prosecutors",
+     "t": 24.951,
+     "end": 25.626
+    },
+    {
+     "w": "sue",
+     "t": 25.694,
+     "end": 25.829
+    },
+    {
+     "w": "the",
+     "t": 25.896,
+     "end": 25.964
+    },
+    {
+     "w": "money",
+     "t": 26.031,
+     "end": 26.234
+    },
+    {
+     "w": "itself.",
+     "t": 26.335,
+     "end": 27.044
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "One judge sides with him. An appeals court reverses, two to one.",
+   "words": [
+    {
+     "w": "One",
+     "t": 27.103,
+     "end": 27.305
+    },
+    {
+     "w": "judge",
+     "t": 27.373,
+     "end": 27.643
+    },
+    {
+     "w": "sides",
+     "t": 27.71,
+     "end": 27.913
+    },
+    {
+     "w": "with",
+     "t": 27.98,
+     "end": 28.048
+    },
+    {
+     "w": "him.",
+     "t": 28.115,
+     "end": 28.487
+    },
+    {
+     "w": "An",
+     "t": 28.656,
+     "end": 28.723
+    },
+    {
+     "w": "appeals",
+     "t": 28.824,
+     "end": 29.061
+    },
+    {
+     "w": "court",
+     "t": 29.128,
+     "end": 29.331
+    },
+    {
+     "w": "reverses,",
+     "t": 29.398,
+     "end": 30.141
+    },
+    {
+     "w": "two",
+     "t": 30.208,
+     "end": 30.276
+    },
+    {
+     "w": "to",
+     "t": 30.343,
+     "end": 30.478
+    },
+    {
+     "w": "one.",
+     "t": 30.546,
+     "end": 30.951
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Nobody was convicted of a drug crime. The cash still lost. And that's how",
+   "words": [
+    {
+     "w": "Nobody",
+     "t": 31.01,
+     "end": 31.415
+    },
+    {
+     "w": "was",
+     "t": 31.482,
+     "end": 31.55
+    },
+    {
+     "w": "convicted",
+     "t": 31.617,
+     "end": 32.022
+    },
+    {
+     "w": "of",
+     "t": 32.09,
+     "end": 32.157
+    },
+    {
+     "w": "a",
+     "t": 32.18,
+     "end": 32.202
+    },
+    {
+     "w": "drug",
+     "t": 32.225,
+     "end": 32.427
+    },
+    {
+     "w": "crime.",
+     "t": 32.495,
+     "end": 32.832
+    },
+    {
+     "w": "The",
+     "t": 33.17,
+     "end": 33.237
+    },
+    {
+     "w": "cash",
+     "t": 33.406,
+     "end": 33.575
+    },
+    {
+     "w": "still",
+     "t": 33.71,
+     "end": 33.912
+    },
+    {
+     "w": "lost.",
+     "t": 33.98,
+     "end": 34.587
+    },
+    {
+     "w": "And",
+     "t": 34.79,
+     "end": 34.925
+    },
+    {
+     "w": "that's",
+     "t": 34.992,
+     "end": 35.127
+    },
+    {
+     "w": "how",
+     "t": 35.262,
+     "end": 35.668
+    }
+   ]
+  }
+ ]
+}

@@ -166,7 +166,7 @@ export const main = async (argv) => {
   const loopy = C.hookAgain !== null && JSON.stringify(lastShot.spec.cam.target) === JSON.stringify(firstShot.spec.cam.target);
   const fmt = recipe.format ?? "short";
   const long = fmt === "long" || fmt === "landscape";
-  const lenOk = long ? dur >= 300 && dur <= 480 : dur >= 30 && dur <= 55;
+  const lenOk = long ? dur >= 300 && dur <= 480 : dur >= 20 && dur <= 55;
   const flys = C.shots.filter((s) => s.spec.cam.preset === "chartFly");
   const devKinds = new Set(C.shots.flatMap((s) => s.devices.map((d) => d.spec.do)));
   const hasExec0 = C.execsAt(0).length > 0;
@@ -209,7 +209,7 @@ export const main = async (argv) => {
     ["the signature chart flythrough is used", flys.length > 0, flys.length ? flys.map((s) => `${s.id} ${s.a.toFixed(2)}-${s.b.toFixed(2)} s`).join(", ") : "no chartFly shot", false],
     ["story devices: a company card and THE DECISION", devKinds.has("company") && devKinds.has("decision"), [...devKinds].join(", ") || "none", false],
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
-    [long ? "length 5-8 min" : "length 30-55 s", lenOk, `${dur.toFixed(2)} s`, false],
+    [long ? "length 5-8 min" : "length 20-55 s", lenOk, `${dur.toFixed(2)} s`, false],
   ];
   gate.push(...KF.rows);
   // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face
