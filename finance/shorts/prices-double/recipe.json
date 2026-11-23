@@ -1,0 +1,1036 @@
+{
+ "slug": "prices-double",
+ "style": "S3",
+ "hook": {
+  "text": "EVERYTHING COSTS 2X",
+  "until": "end:doubled",
+  "again": "7:so"
+ },
+ "music": "upbeat",
+ "sfx0": "paper",
+ "cast": {
+  "you": "SPENDER",
+  "clerk": "SELLER",
+  "friend": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · AVG CPI",
+  "from": 1.0,
+  "until": "7:so"
+ },
+ "eggs": [
+  "cat"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "props": [
+  {
+   "id": "tag1",
+   "kit": "label",
+   "text": [
+    "PRICE 1970",
+    "$1"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.9,
+    0.42,
+    0.05
+   ],
+   "at": [
+    0.2,
+    2.1,
+    0.0
+   ],
+   "from": 1.0,
+   "until": "doubled"
+  },
+  {
+   "id": "tag2",
+   "kit": "label",
+   "text": [
+    "PRICE"
+   ],
+   "color": "#ffb020",
+   "size": [
+    0.9,
+    0.42,
+    0.05
+   ],
+   "at": [
+    0.2,
+    2.1,
+    0.0
+   ],
+   "motion": "count-up",
+   "hit": "doubled",
+   "count": {
+    "from": 1,
+    "to": 2,
+    "prefix": "$",
+    "dur": 0.5
+   },
+   "from": "doubled",
+   "until": "double"
+  },
+  {
+   "id": "tag3",
+   "kit": "label",
+   "text": [
+    "PRICE"
+   ],
+   "color": "#ff7a1a",
+   "size": [
+    0.9,
+    0.42,
+    0.05
+   ],
+   "at": [
+    0.2,
+    2.1,
+    0.0
+   ],
+   "motion": "count-up",
+   "hit": "double",
+   "count": {
+    "from": 2,
+    "to": 4,
+    "prefix": "$",
+    "dur": 0.5
+   },
+   "from": "double",
+   "until": "5:three"
+  },
+  {
+   "id": "tag4",
+   "kit": "label",
+   "text": [
+    "PRICE"
+   ],
+   "color": "#e03a2a",
+   "size": [
+    0.9,
+    0.42,
+    0.05
+   ],
+   "at": [
+    0.2,
+    2.1,
+    0.0
+   ],
+   "motion": "count-up",
+   "hit": "5:three",
+   "count": {
+    "from": 4,
+    "to": 8,
+    "prefix": "$",
+    "dur": 0.7
+   },
+   "from": "5:three",
+   "until": "6:nine"
+  },
+  {
+   "id": "tag5",
+   "kit": "label",
+   "text": [
+    "PRICE NOW"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.9,
+    0.42,
+    0.05
+   ],
+   "at": [
+    0.2,
+    2.1,
+    0.0
+   ],
+   "motion": "count-up",
+   "hit": "6:nine",
+   "count": {
+    "from": 8,
+    "to": 8.7,
+    "prefix": "$",
+    "dur": 0.9,
+    "decimals": 2
+   },
+   "from": "6:nine"
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "home",
+   "note": "frame 0: first-person hands hold a receipt that RIPS LONGER, segment by segment (PC v3: receipt drops low in front of the clerk's hands; face and hook area clear)",
+   "cam": {
+    "preset": "povFirstPerson",
+    "targets": [
+     "you",
+     "clerk.face"
+    ]
+   },
+   "actors": [
+    {
+     "id": "you",
+     "pose": "reach",
+     "at": [
+      0.2,
+      1.0
+     ],
+     "face": [
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "id": "clerk",
+     "pose": "smug",
+     "at": [
+      0.2,
+      -0.3
+     ],
+     "emotion": "joy",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "shock",
+       "emotion": "sad"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "r1",
+     "kit": "label",
+     "text": [
+      "MILK $4",
+      "BREAD $3"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.98,
+      0.2
+     ],
+     "motion": "dropSlam",
+     "hit": 0.05,
+     "drop": 0.12
+    },
+    {
+     "id": "r2",
+     "kit": "label",
+     "text": [
+      "EGGS $6",
+      "RENT $1,200"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.8,
+      0.2
+     ],
+     "motion": "dropSlam",
+     "hit": 0.3,
+     "drop": 0.12
+    },
+    {
+     "id": "r3",
+     "kit": "label",
+     "text": [
+      "COFFEE $5",
+      "TOTAL $1,218"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.62,
+      0.2
+     ],
+     "motion": "dropSlam",
+     "hit": 0.55,
+     "drop": 0.12
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.05
+    },
+    {
+     "fx": "shake",
+     "at": 0.3
+    },
+    {
+     "fx": "shake",
+     "at": 0.55
+    }
+   ]
+  },
+  {
+   "at": "everything",
+   "note": "cut to the clerk who just doubled it",
+   "cam": {
+    "preset": "medium",
+    "target": "clerk",
+    "dist": 2.8,
+    "az": 15
+   },
+   "actors": [
+    {
+     "id": "clerk",
+     "pose": "point",
+     "at": [
+      0.2,
+      -0.6
+     ],
+     "emotion": "sly"
+    }
+   ]
+  },
+  {
+   "at": "just",
+   "note": "the tag doubles with the word",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "tag2",
+    "hit": "doubled",
+    "dist": 3.2
+   },
+   "actors": [
+    {
+     "id": "clerk",
+     "pose": "shock",
+     "at": [
+      0.2,
+      -0.6
+     ],
+     "from": "doubled",
+     "squash": [
+      "doubled"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "tag2",
+     "kit": "label",
+     "text": [
+      "PRICE"
+     ],
+     "color": "#ffb020",
+     "size": [
+      0.9,
+      0.42,
+      0.05
+     ],
+     "at": [
+      0.2,
+      2.1,
+      0.0
+     ],
+     "motion": "count-up",
+     "hit": "doubled",
+     "count": {
+      "from": 1,
+      "to": 2,
+      "prefix": "$",
+      "dur": 0.5
+     }
+    }
+   ],
+   "fx": [
+    "shake"
+   ]
+  },
+  {
+   "at": "groceries",
+   "note": "Groceries x2",
+   "cam": {
+    "preset": "povFirstPerson",
+    "targets": [
+     "you",
+     "g"
+    ]
+   },
+   "actors": [
+    {
+     "id": "you",
+     "pose": "reach",
+     "at": [
+      0.2,
+      1.0
+     ],
+     "face": [
+      0,
+      0,
+      -1
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "g",
+     "kit": "label",
+     "text": [
+      "GROCERIES",
+      "$100 → $200"
+     ],
+     "size": [
+      0.55,
+      0.28,
+      0.03
+     ],
+     "at": [
+      0.2,
+      1.25,
+      -0.2
+     ],
+     "motion": "fly-in",
+     "hit": "groceries"
+    }
+   ]
+  },
+  {
+   "at": "rent",
+   "in": "whip",
+   "note": "Rent x2",
+   "cam": {
+    "preset": "whip",
+    "target": "rentL",
+    "dist": 3.2
+   },
+   "props": [
+    {
+     "id": "rentL",
+     "kit": "block",
+     "text": [
+      "RENT",
+      "$1,200 → $2,400"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      1.2,
+      0.8,
+      0.5
+     ],
+     "at": "back:0,0,0.6",
+     "motion": "dropSlam",
+     "hit": "rent"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "rent",
+     "p": "back:0,0.02,0.6"
+    }
+   ]
+  },
+  {
+   "at": "coffee",
+   "note": "Coffee x2 (PC: tightened after the v1 scrub; it read as an empty room)",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "friend.face",
+    "hit": "coffee",
+    "dist": 2.0,
+    "az": -18
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "shock",
+     "at": "mark",
+     "from": "coffee"
+    }
+   ],
+   "props": [
+    {
+     "id": "cup",
+     "asset": "coffee",
+     "s": 1.6,
+     "at": "mark:0.55,0,0.45",
+     "motion": "dropSlam",
+     "hit": "coffee",
+     "drop": 0.9
+    },
+    {
+     "id": "cupP",
+     "kit": "label",
+     "text": [
+      "$5 → $10"
+     ],
+     "size": [
+      0.6,
+      0.26,
+      0.05
+     ],
+     "at": "mark:0.55,1.55,0.45",
+     "motion": "fly-in",
+     "hit": "times"
+    }
+   ]
+  },
+  {
+   "at": "3:here's",
+   "note": "the trick: 72 block drops",
+   "cam": {
+    "preset": "pushIn",
+    "target": "b72",
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "point",
+     "at": "right",
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "b72",
+     "kit": "block",
+     "text": [
+      "72"
+     ],
+     "color": "#ffd23a",
+     "size": [
+      0.9,
+      0.9,
+      0.5
+     ],
+     "at": "back:0,0,0.6",
+     "motion": "dropSlam",
+     "hit": "3:seventy-two"
+    },
+    {
+     "id": "div",
+     "kit": "label",
+     "text": [
+      "÷ INFLATION %"
+     ],
+     "size": [
+      1.1,
+      0.4,
+      0.05
+     ],
+     "at": "back:0,1.2,1.1",
+     "motion": "fly-in",
+     "hit": "inflation"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "3:seventy-two",
+     "p": "back:0,0.02,0.6"
+    }
+   ]
+  },
+  {
+   "at": "4:at",
+   "note": "4 percent: 72 / 4 = 18 years (PC v3: the friend reacts beside the 72 / 4 = 18 board, close)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "four",
+     "friend"
+    ],
+    "dist": 2.4
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "idle",
+     "at": "back:1.6,0,1.4",
+     "face": 0,
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "4:prices",
+       "pose": "smug",
+       "emotion": "curious"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "four",
+     "kit": "label",
+     "text": [
+      "4%/YR",
+      "72 ÷ 4 = 18"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      1.1,
+      0.5,
+      0.05
+     ],
+     "at": "back:0,1.5,0.9",
+     "motion": "dropSlam",
+     "hit": "4:at+0.1",
+     "drop": 0.3
+    }
+   ],
+   "in": "cut"
+  },
+  {
+   "at": "double",
+   "note": "the second tag doubles: $2 to $4 (PC: tightened after the v1 scrub; it read as an empty room)",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "tag3",
+    "hit": "double",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "celebrate",
+     "at": "right"
+    }
+   ],
+   "props": [
+    {
+     "id": "tag3",
+     "kit": "label",
+     "text": [
+      "PRICE"
+     ],
+     "color": "#ff7a1a",
+     "size": [
+      0.9,
+      0.42,
+      0.05
+     ],
+     "at": [
+      0.2,
+      2.1,
+      0.0
+     ],
+     "motion": "count-up",
+     "hit": "double",
+     "count": {
+      "from": 2,
+      "to": 4,
+      "prefix": "$",
+      "dur": 0.5
+     }
+    },
+    {
+     "id": "yrs",
+     "kit": "calendar",
+     "text": [
+      "EVERY",
+      "18",
+      "YEARS"
+     ],
+     "at": "wall"
+    }
+   ],
+   "fx": [
+    "shake"
+   ]
+  },
+  {
+   "at": "5:and",
+   "mood": "whisper",
+   "note": "OPEN LOOP: three covered doublings",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cvr",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "idle",
+     "at": "right",
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "cvr",
+     "kit": "block",
+     "text": [
+      "? ? ?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      1.4,
+      0.9,
+      0.5
+     ],
+     "at": "back:0,0,0.6"
+    },
+    {
+     "id": "calq",
+     "kit": "calendar",
+     "text": [
+      "SINCE",
+      "1970",
+      "THE CLOCK"
+     ],
+     "at": "wall"
+    }
+   ]
+  },
+  {
+   "at": "6:since",
+   "note": "answer starts: 1970 to now",
+   "cam": {
+    "preset": "povFirstPerson",
+    "targets": [
+     "you",
+     "back1970"
+    ]
+   },
+   "actors": [
+    {
+     "id": "you",
+     "pose": "reach",
+     "at": [
+      0.2,
+      1.0
+     ],
+     "face": [
+      0,
+      0,
+      -1
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "back1970",
+     "kit": "label",
+     "text": [
+      "SINCE 1970",
+      "U.S. PRICES"
+     ],
+     "size": [
+      0.6,
+      0.3,
+      0.03
+     ],
+     "at": [
+      0.2,
+      1.25,
+      -0.2
+     ],
+     "motion": "fly-in",
+     "hit": "since"
+    }
+   ]
+  },
+  {
+   "at": "6:nine",
+   "note": "TWIST: x8.7",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "x87",
+    "hit": "6:nine",
+    "dist": 2.8
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "shock",
+     "at": "right",
+     "from": "6:nine",
+     "squash": [
+      "6:nine"
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "x87",
+     "kit": "debtBlock",
+     "text": [
+      "×8.7",
+      "SINCE 1970"
+     ],
+     "size": [
+      1.3,
+      1.1,
+      0.6
+     ],
+     "at": "back:0,0,0.6",
+     "motion": "dropSlam",
+     "hit": "6:nine"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "6:nine"
+    },
+    "shake"
+   ]
+  },
+  {
+   "at": "6:about",
+   "note": "about three doublings: $1 $2 $4 $8 (PC v3: the friend reacts as the tags stack up; $8.70 not $8/$9)",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "d2",
+     "friend"
+    ],
+    "dist": 1.9
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "idle",
+     "at": "back:-1.6,0,1.4",
+     "face": 0,
+     "emotion": "shock",
+     "then": [
+      {
+       "at": "6:doublings",
+       "pose": "smug",
+       "emotion": "curious"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "d1",
+     "kit": "label",
+     "text": [
+      "$1"
+     ],
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "back:-0.35,0.75,0.9",
+     "motion": "dropSlam",
+     "hit": "6:about",
+     "drop": 0.3
+    },
+    {
+     "id": "d2",
+     "kit": "label",
+     "text": [
+      "$2"
+     ],
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "back:0.15,1.1,0.9",
+     "motion": "dropSlam",
+     "hit": "6:three",
+     "drop": 0.3
+    },
+    {
+     "id": "d3",
+     "kit": "label",
+     "text": [
+      "$4"
+     ],
+     "size": [
+      0.5,
+      0.4,
+      0.05
+     ],
+     "at": "back:0.65,1.45,0.9",
+     "motion": "dropSlam",
+     "hit": "6:doublings",
+     "drop": 0.3
+    },
+    {
+     "id": "d4",
+     "kit": "label",
+     "text": [
+      "$8.70"
+     ],
+     "size": [
+      0.65,
+      0.4,
+      0.05
+     ],
+     "at": "back:1.2,1.8,0.9",
+     "motion": "dropSlam",
+     "hit": "6:doublings+0.4",
+     "drop": 0.3
+    }
+   ],
+   "in": "cut"
+  },
+  {
+   "at": "7:small",
+   "mood": "ending",
+   "note": "small yearly numbers",
+   "cam": {
+    "preset": "orbit",
+    "target": "friend",
+    "dist": 3.0
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "smug",
+     "at": "mark"
+    }
+   ],
+   "props": [
+    {
+     "id": "pct",
+     "kit": "label",
+     "text": [
+      "~4% A YEAR"
+     ],
+     "size": [
+      1.0,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.9,1.7,0.4",
+     "motion": "fly-in",
+     "hit": "7:small"
+    }
+   ]
+  },
+  {
+   "at": "7:huge",
+   "mood": "ending",
+   "note": "huge change",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "friend.face",
+    "hit": "7:huge",
+    "dist": 1.6
+   },
+   "actors": [
+    {
+     "id": "friend",
+     "pose": "shock",
+     "at": "mark",
+     "from": "7:huge"
+    }
+   ],
+   "fx": [
+    "shake"
+   ]
+  },
+  {
+   "at": "7:so",
+   "mood": "ending",
+   "note": "LOOP: back to the frame-0 POV; the receipt rips longer again (PC v3: receipt drops low in front of the clerk's hands; face and hook area clear)",
+   "cam": {
+    "preset": "povFirstPerson",
+    "targets": [
+     "you",
+     "clerk.face"
+    ]
+   },
+   "actors": [
+    {
+     "id": "you",
+     "pose": "reach",
+     "at": [
+      0.2,
+      1.0
+     ],
+     "face": [
+      0,
+      0,
+      -1
+     ]
+    },
+    {
+     "id": "clerk",
+     "pose": "smug",
+     "at": [
+      0.2,
+      -0.3
+     ],
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "r1",
+     "kit": "label",
+     "text": [
+      "MILK $4",
+      "BREAD $3"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.98,
+      0.2
+     ]
+    },
+    {
+     "id": "r2",
+     "kit": "label",
+     "text": [
+      "EGGS $6",
+      "RENT $1,200"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.8,
+      0.2
+     ]
+    },
+    {
+     "id": "r3",
+     "kit": "label",
+     "text": [
+      "COFFEE $5",
+      "TOTAL $1,218"
+     ],
+     "size": [
+      0.3,
+      0.17,
+      0.02
+     ],
+     "at": [
+      0.2,
+      0.62,
+      0.2
+     ]
+    }
+   ]
+  }
+ ]
+}

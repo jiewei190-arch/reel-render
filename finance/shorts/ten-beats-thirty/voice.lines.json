@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1458,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 456,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Saving more money can still make you lose.",
+   "start": 0.087,
+   "end": 2.671
+  },
+  {
+   "line": 2,
+   "text": "Spender saved seventy-two thousand. Saver saved just twenty-four.",
+   "start": 2.802,
+   "end": 7.34
+  },
+  {
+   "line": 3,
+   "text": "Saver put in two hundred a month from twenty-five to thirty-five, then stopped.",
+   "start": 7.471,
+   "end": 11.66
+  },
+  {
+   "line": 4,
+   "text": "Spender started at thirty-five and kept going to sixty-five.",
+   "start": 11.791,
+   "end": 15.352
+  },
+  {
+   "line": 5,
+   "text": "Same seven percent a year, as an example. Wait till you see sixty-five...",
+   "start": 15.483,
+   "end": 20.091
+  },
+  {
+   "line": 6,
+   "text": "Saver: about two hundred eighty-two thousand. Spender: about two hundred forty-five.",
+   "start": 20.222,
+   "end": 25.599
+  },
+  {
+   "line": 7,
+   "text": "Time beat money. Nothing's guaranteed, but that's how",
+   "start": 25.73,
+   "end": 29.5
+  }
+ ]
+}

@@ -1,0 +1,442 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 29.374
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Saver took a penny that doubles daily. Spender took a million. Who wins in 30 days?",
+   "words": [
+    {
+     "w": "Saver",
+     "t": 0.0,
+     "end": 0.48
+    },
+    {
+     "w": "took",
+     "t": 0.48,
+     "end": 0.68
+    },
+    {
+     "w": "a",
+     "t": 0.68,
+     "end": 0.8
+    },
+    {
+     "w": "penny",
+     "t": 0.8,
+     "end": 1.0
+    },
+    {
+     "w": "that",
+     "t": 1.0,
+     "end": 1.2
+    },
+    {
+     "w": "doubles",
+     "t": 1.2,
+     "end": 1.46
+    },
+    {
+     "w": "daily.",
+     "t": 1.46,
+     "end": 1.76
+    },
+    {
+     "w": "Spender",
+     "t": 2.42,
+     "end": 2.68
+    },
+    {
+     "w": "took",
+     "t": 2.68,
+     "end": 2.94
+    },
+    {
+     "w": "a",
+     "t": 2.94,
+     "end": 3.06
+    },
+    {
+     "w": "million.",
+     "t": 3.06,
+     "end": 3.34
+    },
+    {
+     "w": "Who",
+     "t": 3.84,
+     "end": 4.0
+    },
+    {
+     "w": "wins",
+     "t": 4.0,
+     "end": 4.36
+    },
+    {
+     "w": "in",
+     "t": 4.36,
+     "end": 4.64
+    },
+    {
+     "w": "30",
+     "t": 4.64,
+     "end": 4.92
+    },
+    {
+     "w": "days?",
+     "t": 4.92,
+     "end": 5.24
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Day ten: Saver has five dollars and twelve cents. Spender laughs.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 6.08,
+     "end": 6.22
+    },
+    {
+     "w": "ten:",
+     "t": 6.22,
+     "end": 6.54
+    },
+    {
+     "w": "Saver",
+     "t": 6.98,
+     "end": 7.26
+    },
+    {
+     "w": "has",
+     "t": 7.26,
+     "end": 7.52
+    },
+    {
+     "w": "five",
+     "t": 7.52,
+     "end": 7.693
+    },
+    {
+     "w": "dollars",
+     "t": 7.693,
+     "end": 7.995
+    },
+    {
+     "w": "and",
+     "t": 7.995,
+     "end": 8.125
+    },
+    {
+     "w": "twelve",
+     "t": 8.125,
+     "end": 8.384
+    },
+    {
+     "w": "cents.",
+     "t": 8.384,
+     "end": 8.6
+    },
+    {
+     "w": "Spender",
+     "t": 9.32,
+     "end": 9.88
+    },
+    {
+     "w": "laughs.",
+     "t": 9.88,
+     "end": 10.28
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Day twenty: about five thousand. Spender's still way ahead.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 10.96,
+     "end": 11.1
+    },
+    {
+     "w": "twenty:",
+     "t": 11.1,
+     "end": 11.4
+    },
+    {
+     "w": "about",
+     "t": 11.7,
+     "end": 11.84
+    },
+    {
+     "w": "five",
+     "t": 11.84,
+     "end": 12.04
+    },
+    {
+     "w": "thousand.",
+     "t": 12.04,
+     "end": 12.44
+    },
+    {
+     "w": "Spender's",
+     "t": 12.96,
+     "end": 13.34
+    },
+    {
+     "w": "still",
+     "t": 13.34,
+     "end": 13.66
+    },
+    {
+     "w": "way",
+     "t": 13.66,
+     "end": 13.88
+    },
+    {
+     "w": "ahead.",
+     "t": 13.88,
+     "end": 14.2
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But watch the last five days...",
+   "words": [
+    {
+     "w": "But",
+     "t": 14.7,
+     "end": 14.86
+    },
+    {
+     "w": "watch",
+     "t": 14.86,
+     "end": 15.08
+    },
+    {
+     "w": "the",
+     "t": 15.08,
+     "end": 15.24
+    },
+    {
+     "w": "last",
+     "t": 15.24,
+     "end": 15.44
+    },
+    {
+     "w": "five",
+     "t": 15.44,
+     "end": 15.72
+    },
+    {
+     "w": "days...",
+     "t": 15.72,
+     "end": 15.98
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Day twenty-five: over 160,000. Day twenty-eight: one point three million. Saver pulls ahead.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 16.62,
+     "end": 16.76
+    },
+    {
+     "w": "twenty-five:",
+     "t": 16.76,
+     "end": 17.18
+    },
+    {
+     "w": "over",
+     "t": 17.46,
+     "end": 17.6
+    },
+    {
+     "w": "160,000.",
+     "t": 17.6,
+     "end": 18.86
+    },
+    {
+     "w": "Day",
+     "t": 19.08,
+     "end": 19.22
+    },
+    {
+     "w": "twenty-eight:",
+     "t": 19.22,
+     "end": 19.834
+    },
+    {
+     "w": "one",
+     "t": 19.834,
+     "end": 20.002
+    },
+    {
+     "w": "point",
+     "t": 20.002,
+     "end": 20.281
+    },
+    {
+     "w": "three",
+     "t": 20.281,
+     "end": 20.56
+    },
+    {
+     "w": "million.",
+     "t": 20.56,
+     "end": 20.8
+    },
+    {
+     "w": "Saver",
+     "t": 21.24,
+     "end": 21.5
+    },
+    {
+     "w": "pulls",
+     "t": 21.5,
+     "end": 21.8
+    },
+    {
+     "w": "ahead.",
+     "t": 21.8,
+     "end": 22.04
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Day thirty: five point three million. Half of it on the very last day.",
+   "words": [
+    {
+     "w": "Day",
+     "t": 22.72,
+     "end": 22.84
+    },
+    {
+     "w": "thirty:",
+     "t": 22.84,
+     "end": 23.188
+    },
+    {
+     "w": "five",
+     "t": 23.188,
+     "end": 23.42
+    },
+    {
+     "w": "point",
+     "t": 23.42,
+     "end": 23.71
+    },
+    {
+     "w": "three",
+     "t": 23.71,
+     "end": 24.0
+    },
+    {
+     "w": "million.",
+     "t": 24.0,
+     "end": 24.3
+    },
+    {
+     "w": "Half",
+     "t": 24.64,
+     "end": 24.84
+    },
+    {
+     "w": "of",
+     "t": 24.84,
+     "end": 24.98
+    },
+    {
+     "w": "it",
+     "t": 24.98,
+     "end": 25.1
+    },
+    {
+     "w": "on",
+     "t": 25.1,
+     "end": 25.22
+    },
+    {
+     "w": "the",
+     "t": 25.22,
+     "end": 25.3
+    },
+    {
+     "w": "very",
+     "t": 25.3,
+     "end": 25.5
+    },
+    {
+     "w": "last",
+     "t": 25.5,
+     "end": 25.76
+    },
+    {
+     "w": "day.",
+     "t": 25.76,
+     "end": 26.04
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Patience paid. And you know who took the penny:",
+   "words": [
+    {
+     "w": "Patience",
+     "t": 26.52,
+     "end": 26.96
+    },
+    {
+     "w": "paid.",
+     "t": 26.96,
+     "end": 27.3
+    },
+    {
+     "w": "And",
+     "t": 27.64,
+     "end": 27.76
+    },
+    {
+     "w": "you",
+     "t": 27.76,
+     "end": 27.88
+    },
+    {
+     "w": "know",
+     "t": 27.88,
+     "end": 28.02
+    },
+    {
+     "w": "who",
+     "t": 28.02,
+     "end": 28.2
+    },
+    {
+     "w": "took",
+     "t": 28.2,
+     "end": 28.36
+    },
+    {
+     "w": "the",
+     "t": 28.36,
+     "end": 28.5
+    },
+    {
+     "w": "penny:",
+     "t": 28.5,
+     "end": 28.74
+    }
+   ]
+  }
+ ]
+}

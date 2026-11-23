@@ -1,0 +1,149 @@
+{
+ "voice": "D2 dialogue",
+ "voices": {
+  "spender": {
+   "exag": 0.65,
+   "cfg": 0.3,
+   "seeds": "11,7,23"
+  },
+  "saver": {
+   "exag": 0.45,
+   "cfg": 0.3,
+   "seeds": "7,11,23"
+  }
+ },
+ "speakers": {
+  "1": "spender",
+  "2": "saver",
+  "3": "saver",
+  "4": "spender",
+  "5": "saver",
+  "6": "saver",
+  "7": "saver",
+  "8": "spender",
+  "9": "saver"
+ },
+ "gap": 0.3,
+ "lead": 0.15,
+ "sr": 24000,
+ "duration": 29.585,
+ "lines": [
+  {
+   "n": 1,
+   "speaker": "spender",
+   "text": "Wait. My dollar is worth under twelve cents?!",
+   "start": 0.15,
+   "end": 2.767,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "Wait, my dollar is worth under 12 cents?"
+   ]
+  },
+  {
+   "n": 2,
+   "speaker": "saver",
+   "text": "In 1970 money, yes. Prices have climbed almost nine times since then.",
+   "start": 3.067,
+   "end": 7.674,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "In 1970 money, yes, prices have climbed almost nine times since then."
+   ]
+  },
+  {
+   "n": 3,
+   "speaker": "saver",
+   "text": "That's the government's consumer price index. Not a guess.",
+   "start": 7.974,
+   "end": 11.33,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "That's the government's consumer price index, not a guess."
+   ]
+  },
+  {
+   "n": 4,
+   "speaker": "spender",
+   "text": "But nobody stole it. So where did it go?",
+   "start": 11.63,
+   "end": 13.686,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "but nobody stole it, so where did it go?"
+   ]
+  },
+  {
+   "n": 5,
+   "speaker": "saver",
+   "text": "It's hiding in plain sight. Watch...",
+   "start": 13.986,
+   "end": 16.569,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "It's hiding in plain sight. Watch."
+   ]
+  },
+  {
+   "n": 6,
+   "speaker": "saver",
+   "text": "A one dollar snack in 1970 costs about eight seventy now.",
+   "start": 16.869,
+   "end": 20.543,
+   "qa": [
+    "QA FAIL"
+   ],
+   "heard": [
+    "A $1 snack in 1970 costs about $8.70 now."
+   ]
+  },
+  {
+   "n": 7,
+   "speaker": "saver",
+   "text": "Roughly four percent a year, quietly, for over fifty years.",
+   "start": 20.843,
+   "end": 24.281,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "roughly 4% a year, quietly, for over 50 years."
+   ]
+  },
+  {
+   "n": 8,
+   "speaker": "spender",
+   "text": "I never noticed a single year!",
+   "start": 24.581,
+   "end": 26.515,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "I never noticed a single year."
+   ]
+  },
+  {
+   "n": 9,
+   "speaker": "saver",
+   "text": "Nobody does. You only notice the total. Like:",
+   "start": 26.815,
+   "end": 29.585,
+   "qa": [
+    "ok"
+   ],
+   "heard": [
+    "Nobody does, you only notice the total, like"
+   ]
+  }
+ ]
+}

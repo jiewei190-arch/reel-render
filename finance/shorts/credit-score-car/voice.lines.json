@@ -1,0 +1,51 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0837,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 460,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Same thirty thousand dollar car, same five years, and one buyer pays about six and a half thousand more.",
+   "start": 0.092,
+   "end": 6.367
+  },
+  {
+   "line": 2,
+   "text": "The only difference? Their credit scores.",
+   "start": 6.505,
+   "end": 9.015
+  },
+  {
+   "line": 3,
+   "text": "Saver's prime score gets about six percent. Spender's subprime score gets about thirteen and a half.",
+   "start": 9.154,
+   "end": 15.133
+  },
+  {
+   "line": 4,
+   "text": "Both payments look fine at first... but watch the totals.",
+   "start": 15.271,
+   "end": 19.036
+  },
+  {
+   "line": 5,
+   "text": "Five hundred eighty-two a month, versus six hundred ninety-one.",
+   "start": 19.175,
+   "end": 22.939
+  },
+  {
+   "line": 6,
+   "text": "After five years: about five thousand in interest, versus eleven and a half thousand. Same car.",
+   "start": 23.078,
+   "end": 29.5
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+  "kit": "cyber3d",
+  "music": "upbeat",
+  "money": [
+    {
+      "at": "6:2013",
+      "until": "line:7",
+      "label": "WIRED OUT",
+      "from": 0,
+      "to": 120000000,
+      "dur": 2
+    }
+  ],
+  "countdown": [
+    {
+      "at": "5:invoices",
+      "until": "lineEnd:5+0.2",
+      "label": "PAY WITHIN",
+      "from": 86400,
+      "rate": 2400
+    }
+  ],
+  "alerts": [
+    {
+      "at": "6:over",
+      "text": "ALERT"
+    }
+  ],
+  "slug": "cyber-demo-landscape-short-1",
+  "hook": {
+    "text": "THE *$100M* EMAIL",
+    "until": 2.5
+  },
+  "shots": [
+    {"at":0,"set":"room","note":"clip hook (clip_short): the stake on a giant board over the hooded figure, a pose change at 0.45 s","cam":{"preset":"hookZoom","target":"hk.head","dist":2.6,"h":0.1,"az":255,"face":0.82},"props":[{"id":"hk","kit":"figure","at":"seat","yaw":180,"pose":"type","then":[{"at":0.45,"pose":"lean"}]}],"boards":[{"title":"AT STAKE","at":0,"value":"$100M","size":"giant","tone":"red"}],"fx":[{"fx":"shake","at":0.45}]},
+    {"at":1,"set":"netmap","cam":{"preset":"pushIn","target":"svalley:0,0.3,0","dist":3.2,"h":1.9,"az":20},"actions":[{"do":"label","on":"svalley:-0.15,0.5,0","text":"GOOGLE","at":"1:google","side":"left"},{"do":"label","on":"svalley:0.15,0.5,0","text":"FACEBOOK","at":"1:facebook","side":"right"}]},
+    {"at":"1:wire","set":"vault","cam":{"preset":"slamZoom","target":"centre:0,1.5,0.3","dist":7.4,"h":0.9,"az":18,"hit":"1:wire+0.1"},"props":[{"id":"vt","obj":"vault","at":"centre"}],"boards":[{"title":"WIRED OVER","at":"1:$100","count":{"from":0,"to":100,"dur":0.6,"prefix":"$","suffix":"M"},"pos":"right","tone":"magenta"}]},
+    {"at":"2:he","set":"room","cam":{"preset":"drift","target":"hk.head","dist":2.5,"h":0.15,"az":115,"face":0.45},"props":[{"id":"hk","kit":"figure","at":"seat","yaw":180,"pose":"lean","then":[{"at":"2:sent","pose":"type"}]}]},
+    {"at":"2:sent","set":"inbox","cam":{"preset":"drift","target":"wall","dist":4.8,"h":0.1,"az":6},"props":[{"id":"ml","kit":"email","at":"phish:-0.92,0.01,0.12","s":1.4,"text":"Invoice 4470"}]},
+    {"at":"3:both","set":"netmap","cam":{"preset":"crane","target":"taiwan","dist":4.6,"h":2.4,"az":-15},"props":[{"id":"pay","kit":"route","at":"taiwan","from":"svalley","to":["taiwan"],"color":"#19E6FF","hit":"3:business"}],"actions":[{"do":"label","on":"taiwan:0,0.5,0","text":"REAL SUPPLIER","at":"3:hardware"}]},
+    {"at":"4:so","set":"netmap","cam":{"preset":"orbit","target":"latvia:0,0.3,0","dist":3.4,"h":2.2,"az":10,"sweep":30},"props":[{"id":"sig","kit":"signal","at":"latvia:0,0.05,0","color":"#FF2A3D","s":0.5}],"actions":[{"do":"label","on":"latvia:0,0.5,0","text":"LATVIA","at":"4:latvia","tone":"red","until":"4:exact"},{"do":"label","on":"latvia:0,0.5,0","text":"SAME NAME","at":"4:same","tone":"red"}]},
+    {"at":"5:then","set":"inbox","cam":{"preset":"pushIn","target":"ph","dist":4.6,"h":0.05,"az":-12},"props":[{"id":"ph","kit":"email","at":"phish","text":"New bank details","phish":true,"motion":"slideOut","hit":"5:fake"}],"actions":[{"do":"label","on":"ph","text":"FAKE INVOICE","at":"5:invoices","tone":"red","side":"left","until":"5:corporate"},{"do":"label","on":"ph","text":"FAKE STAMPS","at":"5:stamps","tone":"red","side":"right"}]},
+    {"at":"6:from","set":"vault","cam":{"preset":"explodeOrbit","target":"vx","dist":7.6,"h":1.6,"az":25,"sweep":34},"props":[{"id":"vx","obj":"vault","at":"centre"}],"actions":[{"do":"explode","on":"vx","at":"6:paid","dur":1}]},
+    {"at":"7:scattered","set":"netmap","cam":{"preset":"crane","target":"europe:3,0.3,1.5","dist":6.5,"h":3.6,"az":0},"props":[{"id":"out","kit":"route","at":"latvia","from":"latvia","to":["cyprus","slovakia","hungary","hongkong"],"hit":"7:cyprus"}],"actions":[{"do":"label","on":"hongkong:0,0.5,0","text":"HONG KONG","at":"7:hong","tone":"red"}]},
+    {"at":"8:but","set":"servers","cam":{"preset":"flyThrough","target":"mid:0,1.3,0","dist":11,"h":0.25,"az":0,"endDist":3.5}},
+    {"at":"8:2017","set":"evidence","cam":{"preset":"drift","target":"board:0,-0.1,0","dist":4.6,"h":0.1,"az":0,"sweep":0.6},"props":[{"id":"st","kit":"string","at":"centre","from":"email","to":["map"],"hit":"8:lithuanian"}]}
+  ]
+}

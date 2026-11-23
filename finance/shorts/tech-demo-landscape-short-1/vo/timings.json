@@ -1,0 +1,514 @@
+{
+ "source": {
+  "synthetic": true,
+  "duration": 32.21,
+  "cutFrom": "tech-demo-planes-land-blind",
+  "clippedFrom": "tech-demo-landscape",
+  "clipFrom": 0,
+  "clipTo": 31.41
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "How do planes land when pilots can't see the runway?",
+   "words": [
+    {
+     "w": "How",
+     "t": 0.1,
+     "end": 0.355
+    },
+    {
+     "w": "do",
+     "t": 0.355,
+     "end": 0.565
+    },
+    {
+     "w": "planes",
+     "t": 0.565,
+     "end": 0.955
+    },
+    {
+     "w": "land",
+     "t": 0.955,
+     "end": 1.255
+    },
+    {
+     "w": "when",
+     "t": 1.255,
+     "end": 1.555
+    },
+    {
+     "w": "pilots",
+     "t": 1.555,
+     "end": 1.945
+    },
+    {
+     "w": "can't",
+     "t": 1.945,
+     "end": 2.29
+    },
+    {
+     "w": "see",
+     "t": 2.29,
+     "end": 2.545
+    },
+    {
+     "w": "the",
+     "t": 2.545,
+     "end": 2.8
+    },
+    {
+     "w": "runway?",
+     "t": 2.8,
+     "end": 3.19
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "In thick fog, the runway itself does the guiding.",
+   "words": [
+    {
+     "w": "In",
+     "t": 3.54,
+     "end": 3.75
+    },
+    {
+     "w": "thick",
+     "t": 3.75,
+     "end": 4.095
+    },
+    {
+     "w": "fog,",
+     "t": 4.095,
+     "end": 4.35
+    },
+    {
+     "w": "the",
+     "t": 4.35,
+     "end": 4.605
+    },
+    {
+     "w": "runway",
+     "t": 4.605,
+     "end": 4.995
+    },
+    {
+     "w": "itself",
+     "t": 4.995,
+     "end": 5.385
+    },
+    {
+     "w": "does",
+     "t": 5.385,
+     "end": 5.685
+    },
+    {
+     "w": "the",
+     "t": 5.685,
+     "end": 5.94
+    },
+    {
+     "w": "guiding.",
+     "t": 5.94,
+     "end": 6.375
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "An antenna past the far end sends a radio beam down the centre line. That's the localizer.",
+   "words": [
+    {
+     "w": "An",
+     "t": 6.725,
+     "end": 6.935
+    },
+    {
+     "w": "antenna",
+     "t": 6.935,
+     "end": 7.37
+    },
+    {
+     "w": "past",
+     "t": 7.37,
+     "end": 7.67
+    },
+    {
+     "w": "the",
+     "t": 7.67,
+     "end": 7.925
+    },
+    {
+     "w": "far",
+     "t": 7.925,
+     "end": 8.18
+    },
+    {
+     "w": "end",
+     "t": 8.18,
+     "end": 8.435
+    },
+    {
+     "w": "sends",
+     "t": 8.435,
+     "end": 8.78
+    },
+    {
+     "w": "a",
+     "t": 8.78,
+     "end": 8.945
+    },
+    {
+     "w": "radio",
+     "t": 8.945,
+     "end": 9.29
+    },
+    {
+     "w": "beam",
+     "t": 9.29,
+     "end": 9.59
+    },
+    {
+     "w": "down",
+     "t": 9.59,
+     "end": 9.89
+    },
+    {
+     "w": "the",
+     "t": 9.89,
+     "end": 10.145
+    },
+    {
+     "w": "centre",
+     "t": 10.145,
+     "end": 10.535
+    },
+    {
+     "w": "line.",
+     "t": 10.535,
+     "end": 10.835
+    },
+    {
+     "w": "That's",
+     "t": 10.835,
+     "end": 11.225
+    },
+    {
+     "w": "the",
+     "t": 11.225,
+     "end": 11.48
+    },
+    {
+     "w": "localizer.",
+     "t": 11.48,
+     "end": 12.005
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Another antenna beside the runway sends a beam sloping up at three degrees. The glideslope.",
+   "words": [
+    {
+     "w": "Another",
+     "t": 12.355,
+     "end": 12.79
+    },
+    {
+     "w": "antenna",
+     "t": 12.79,
+     "end": 13.225
+    },
+    {
+     "w": "beside",
+     "t": 13.225,
+     "end": 13.615
+    },
+    {
+     "w": "the",
+     "t": 13.615,
+     "end": 13.87
+    },
+    {
+     "w": "runway",
+     "t": 13.87,
+     "end": 14.26
+    },
+    {
+     "w": "sends",
+     "t": 14.26,
+     "end": 14.605
+    },
+    {
+     "w": "a",
+     "t": 14.605,
+     "end": 14.77
+    },
+    {
+     "w": "beam",
+     "t": 14.77,
+     "end": 15.07
+    },
+    {
+     "w": "sloping",
+     "t": 15.07,
+     "end": 15.505
+    },
+    {
+     "w": "up",
+     "t": 15.505,
+     "end": 15.715
+    },
+    {
+     "w": "at",
+     "t": 15.715,
+     "end": 15.925
+    },
+    {
+     "w": "three",
+     "t": 15.925,
+     "end": 16.27
+    },
+    {
+     "w": "degrees.",
+     "t": 16.27,
+     "end": 16.705
+    },
+    {
+     "w": "The",
+     "t": 16.705,
+     "end": 16.96
+    },
+    {
+     "w": "glideslope.",
+     "t": 16.96,
+     "end": 17.53
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Each beam is two signals. When both are equally strong, you're right on the path.",
+   "words": [
+    {
+     "w": "Each",
+     "t": 17.88,
+     "end": 18.18
+    },
+    {
+     "w": "beam",
+     "t": 18.18,
+     "end": 18.48
+    },
+    {
+     "w": "is",
+     "t": 18.48,
+     "end": 18.69
+    },
+    {
+     "w": "two",
+     "t": 18.69,
+     "end": 18.945
+    },
+    {
+     "w": "signals.",
+     "t": 18.945,
+     "end": 19.38
+    },
+    {
+     "w": "When",
+     "t": 19.38,
+     "end": 19.68
+    },
+    {
+     "w": "both",
+     "t": 19.68,
+     "end": 19.98
+    },
+    {
+     "w": "are",
+     "t": 19.98,
+     "end": 20.235
+    },
+    {
+     "w": "equally",
+     "t": 20.235,
+     "end": 20.67
+    },
+    {
+     "w": "strong,",
+     "t": 20.67,
+     "end": 21.06
+    },
+    {
+     "w": "you're",
+     "t": 21.06,
+     "end": 21.45
+    },
+    {
+     "w": "right",
+     "t": 21.45,
+     "end": 21.795
+    },
+    {
+     "w": "on",
+     "t": 21.795,
+     "end": 22.005
+    },
+    {
+     "w": "the",
+     "t": 22.005,
+     "end": 22.26
+    },
+    {
+     "w": "path.",
+     "t": 22.26,
+     "end": 22.56
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Antennas in the nose catch both beams, and the autopilot follows them down.",
+   "words": [
+    {
+     "w": "Antennas",
+     "t": 22.91,
+     "end": 23.39
+    },
+    {
+     "w": "in",
+     "t": 23.39,
+     "end": 23.6
+    },
+    {
+     "w": "the",
+     "t": 23.6,
+     "end": 23.855
+    },
+    {
+     "w": "nose",
+     "t": 23.855,
+     "end": 24.155
+    },
+    {
+     "w": "catch",
+     "t": 24.155,
+     "end": 24.5
+    },
+    {
+     "w": "both",
+     "t": 24.5,
+     "end": 24.8
+    },
+    {
+     "w": "beams,",
+     "t": 24.8,
+     "end": 25.145
+    },
+    {
+     "w": "and",
+     "t": 25.145,
+     "end": 25.4
+    },
+    {
+     "w": "the",
+     "t": 25.4,
+     "end": 25.655
+    },
+    {
+     "w": "autopilot",
+     "t": 25.655,
+     "end": 26.18
+    },
+    {
+     "w": "follows",
+     "t": 26.18,
+     "end": 26.615
+    },
+    {
+     "w": "them",
+     "t": 26.615,
+     "end": 26.915
+    },
+    {
+     "w": "down.",
+     "t": 26.915,
+     "end": 27.215
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "In the thickest fog, it can even land the plane while pilots watch.",
+   "words": [
+    {
+     "w": "In",
+     "t": 27.565,
+     "end": 27.775
+    },
+    {
+     "w": "the",
+     "t": 27.775,
+     "end": 28.03
+    },
+    {
+     "w": "thickest",
+     "t": 28.03,
+     "end": 28.51
+    },
+    {
+     "w": "fog,",
+     "t": 28.51,
+     "end": 28.765
+    },
+    {
+     "w": "it",
+     "t": 28.765,
+     "end": 28.975
+    },
+    {
+     "w": "can",
+     "t": 28.975,
+     "end": 29.23
+    },
+    {
+     "w": "even",
+     "t": 29.23,
+     "end": 29.53
+    },
+    {
+     "w": "land",
+     "t": 29.53,
+     "end": 29.83
+    },
+    {
+     "w": "the",
+     "t": 29.83,
+     "end": 30.085
+    },
+    {
+     "w": "plane",
+     "t": 30.085,
+     "end": 30.43
+    },
+    {
+     "w": "while",
+     "t": 30.43,
+     "end": 30.775
+    },
+    {
+     "w": "pilots",
+     "t": 30.775,
+     "end": 31.165
+    },
+    {
+     "w": "watch.",
+     "t": 31.165,
+     "end": 31.51
+    }
+   ]
+  }
+ ]
+}

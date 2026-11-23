@@ -1,0 +1,346 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 27.665
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Would you rather pay 926 a month, or just 453?",
+   "words": [
+    {
+     "w": "Would",
+     "t": 0.0,
+     "end": 0.26
+    },
+    {
+     "w": "you",
+     "t": 0.26,
+     "end": 0.36
+    },
+    {
+     "w": "rather",
+     "t": 0.36,
+     "end": 0.58
+    },
+    {
+     "w": "pay",
+     "t": 0.58,
+     "end": 0.86
+    },
+    {
+     "w": "926",
+     "t": 0.86,
+     "end": 1.58
+    },
+    {
+     "w": "a",
+     "t": 1.58,
+     "end": 1.9
+    },
+    {
+     "w": "month,",
+     "t": 1.9,
+     "end": 2.1
+    },
+    {
+     "w": "or",
+     "t": 2.1,
+     "end": 2.5
+    },
+    {
+     "w": "just",
+     "t": 2.5,
+     "end": 2.68
+    },
+    {
+     "w": "453?",
+     "t": 2.68,
+     "end": 3.58
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Same 30,000 dollar car. Same seven percent. Pick one...",
+   "words": [
+    {
+     "w": "Same",
+     "t": 4.08,
+     "end": 4.32
+    },
+    {
+     "w": "30,000",
+     "t": 4.32,
+     "end": 4.62
+    },
+    {
+     "w": "dollar",
+     "t": 4.62,
+     "end": 4.98
+    },
+    {
+     "w": "car.",
+     "t": 4.98,
+     "end": 5.3
+    },
+    {
+     "w": "Same",
+     "t": 5.72,
+     "end": 5.9
+    },
+    {
+     "w": "seven",
+     "t": 5.9,
+     "end": 6.269
+    },
+    {
+     "w": "percent.",
+     "t": 6.269,
+     "end": 6.785
+    },
+    {
+     "w": "Pick",
+     "t": 6.785,
+     "end": 7.08
+    },
+    {
+     "w": "one...",
+     "t": 7.08,
+     "end": 7.36
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Spender picked 453. Half the payment! Easy choice, right?",
+   "words": [
+    {
+     "w": "Spender",
+     "t": 7.92,
+     "end": 8.28
+    },
+    {
+     "w": "picked",
+     "t": 8.28,
+     "end": 8.5
+    },
+    {
+     "w": "453.",
+     "t": 8.5,
+     "end": 9.54
+    },
+    {
+     "w": "Half",
+     "t": 9.86,
+     "end": 10.04
+    },
+    {
+     "w": "the",
+     "t": 10.04,
+     "end": 10.2
+    },
+    {
+     "w": "payment!",
+     "t": 10.2,
+     "end": 10.4
+    },
+    {
+     "w": "Easy",
+     "t": 10.82,
+     "end": 11.0
+    },
+    {
+     "w": "choice,",
+     "t": 11.0,
+     "end": 11.26
+    },
+    {
+     "w": "right?",
+     "t": 11.46,
+     "end": 11.58
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "But 453 means seven years, not three. And behind that door, something is eating his money...",
+   "words": [
+    {
+     "w": "But",
+     "t": 12.12,
+     "end": 12.34
+    },
+    {
+     "w": "453",
+     "t": 12.34,
+     "end": 13.28
+    },
+    {
+     "w": "means",
+     "t": 13.28,
+     "end": 13.62
+    },
+    {
+     "w": "seven",
+     "t": 13.62,
+     "end": 13.98
+    },
+    {
+     "w": "years,",
+     "t": 13.98,
+     "end": 14.38
+    },
+    {
+     "w": "not",
+     "t": 14.58,
+     "end": 14.74
+    },
+    {
+     "w": "three.",
+     "t": 14.74,
+     "end": 15.04
+    },
+    {
+     "w": "And",
+     "t": 15.42,
+     "end": 15.7
+    },
+    {
+     "w": "behind",
+     "t": 15.7,
+     "end": 16.02
+    },
+    {
+     "w": "that",
+     "t": 16.02,
+     "end": 16.38
+    },
+    {
+     "w": "door,",
+     "t": 16.38,
+     "end": 16.66
+    },
+    {
+     "w": "something",
+     "t": 16.82,
+     "end": 16.98
+    },
+    {
+     "w": "is",
+     "t": 16.98,
+     "end": 17.22
+    },
+    {
+     "w": "eating",
+     "t": 17.22,
+     "end": 17.38
+    },
+    {
+     "w": "his",
+     "t": 17.38,
+     "end": 17.6
+    },
+    {
+     "w": "money...",
+     "t": 17.6,
+     "end": 17.82
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Seven years costs 8,034 in interest. Three years: 3,347.",
+   "words": [
+    {
+     "w": "Seven",
+     "t": 18.36,
+     "end": 18.58
+    },
+    {
+     "w": "years",
+     "t": 18.58,
+     "end": 18.78
+    },
+    {
+     "w": "costs",
+     "t": 18.78,
+     "end": 19.14
+    },
+    {
+     "w": "8,034",
+     "t": 19.14,
+     "end": 20.38
+    },
+    {
+     "w": "in",
+     "t": 20.38,
+     "end": 20.58
+    },
+    {
+     "w": "interest.",
+     "t": 20.58,
+     "end": 20.92
+    },
+    {
+     "w": "Three",
+     "t": 21.42,
+     "end": 21.6
+    },
+    {
+     "w": "years:",
+     "t": 21.6,
+     "end": 21.88
+    },
+    {
+     "w": "3,347.",
+     "t": 22.22,
+     "end": 23.66
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The cheap payment burns about 4,700 extra.",
+   "words": [
+    {
+     "w": "The",
+     "t": 24.12,
+     "end": 24.32
+    },
+    {
+     "w": "cheap",
+     "t": 24.32,
+     "end": 24.5
+    },
+    {
+     "w": "payment",
+     "t": 24.5,
+     "end": 24.9
+    },
+    {
+     "w": "burns",
+     "t": 24.9,
+     "end": 25.22
+    },
+    {
+     "w": "about",
+     "t": 25.22,
+     "end": 25.48
+    },
+    {
+     "w": "4,700",
+     "t": 25.48,
+     "end": 26.6
+    },
+    {
+     "w": "extra.",
+     "t": 26.6,
+     "end": 27.12
+    }
+   ]
+  }
+ ]
+}

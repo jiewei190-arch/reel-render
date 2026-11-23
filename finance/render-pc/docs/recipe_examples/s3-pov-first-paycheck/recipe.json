@@ -1,0 +1,16 @@
+{
+  "slug": "s3-pov-first-paycheck",
+  "style": "S3",
+  "hook": {"text": "POV: $1,800 PAYCHECK", "again": "line:6"},
+  "cast": {"you": "SPENDER", "friend": "SAVER"},
+  "tag": {"text": "EXAMPLE", "from": "rent", "until": "line:6"},
+  "shots": [
+    {"at": 0, "set": "home", "cam": {"preset": "povFirstPerson", "targets": ["you", "pay"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1], "then": [{"at": "first", "pose": "celebrate"}]}], "props": [{"id": "pay", "kit": "label", "text": ["PAYCHECK", "$1,800"], "color": "#1f9e4f", "size": [1.0, 0.62, 0.05], "at": [0.2, 1.5, 0.35], "motion": "fly-in", "hit": 0.08}], "fx": [{"fx": "shake", "at": "first"}, {"fx": "shake", "at": "eighteen"}]},
+    {"at": "open", "cam": {"preset": "povFirstPerson", "targets": ["you", "phone"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.2, 1.0], "face": [0, 0, -1]}], "props": [{"id": "phone", "asset": "laptop", "at": [0.2, 0.9, 0.1], "glow": 0.3}, {"id": "plinth", "asset": "plinth", "s": 1.1, "at": [0.2, 0, 0.1]}]},
+    {"at": "friend", "cam": {"preset": "closeUp", "target": "friend.face", "dist": 1.5}, "actors": [{"id": "friend", "pose": "point", "at": "mark", "emotion": "sly"}]},
+    {"at": "hold", "cam": {"preset": "slamZoom", "target": "friend.face", "hit": "hold", "dist": 1.4}, "actors": [{"id": "friend", "pose": "shock", "at": "mark", "from": "hold"}]},
+    {"at": "line:4", "cam": {"preset": "povFirstPerson", "targets": ["you", "cal"]}, "actors": [{"id": "you", "pose": "idle", "at": [0.0, 0.0], "face": [0, 0, -3]}], "props": [{"id": "cal", "kit": "calendar", "text": ["RENT DUE IN", "9", "$1,200"], "color": "#c01818", "at": "wall", "motion": "count-up", "hit": "nine", "count": {"from": 30, "to": 9, "dur": 0.5}}]},
+    {"at": "aside", "cam": {"preset": "povFirstPerson", "targets": ["you", "jar"]}, "actors": [{"id": "you", "pose": "reach", "at": [0.0, 0.6], "face": [-1.6, 0, -1.4]}], "props": [{"id": "jar", "kit": "jar", "text": ["RENT"], "fill": 0.6, "color": "#1f9e4f", "at": "table:0,0,0"}]},
+    {"at": "line:6", "cam": {"preset": "orbit", "target": "you", "dist": 2.6}, "actors": [{"id": "you", "pose": "celebrate", "at": "mark"}]}
+  ]
+}

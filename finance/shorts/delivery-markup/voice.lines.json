@@ -1,0 +1,51 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0295,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 412,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your twelve dollar lunch costs about twenty-one delivered.",
+   "start": 0.097,
+   "end": 3.516
+  },
+  {
+   "line": 2,
+   "text": "In this example: same meal, same place. Saver walks over and pays twelve.",
+   "start": 3.662,
+   "end": 9.179
+  },
+  {
+   "line": 3,
+   "text": "Spender taps the app: delivery fee, service fee, tip, higher menu price.",
+   "start": 9.325,
+   "end": 15.075
+  },
+  {
+   "line": 4,
+   "text": "About nine dollars extra, every order. But wait till you see a whole year...",
+   "start": 15.221,
+   "end": 20.272
+  },
+  {
+   "line": 5,
+   "text": "Two orders a week, that's nearly a thousand dollars a year, just to skip the walk.",
+   "start": 20.418,
+   "end": 25.624
+  },
+  {
+   "line": 6,
+   "text": "Saver ate the exact same lunch. For twelve dollars.",
+   "start": 25.77,
+   "end": 29.5
+  }
+ ]
+}

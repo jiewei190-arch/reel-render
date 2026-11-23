@@ -1,0 +1,126 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 24.456,
+ "render_s": 129.7,
+ "qa_fail_lines": [
+  1,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "POV: your boss just offered you 1,500 dollars of free money.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "pov: your boss just offered you one thousand five hundred dollars of free money.",
+     "seed": 11,
+     "heard": "Puff, your boss just offered you $1,500 of free money.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 3.401
+  },
+  {
+   "n": 2,
+   "text": "It's a match: save some of your pay, and they add more.",
+   "start": 3.651,
+   "parts": [
+    {
+     "tts": "It's a match: save some of your pay, and they add more.",
+     "seed": 11,
+     "heard": "It's a match, save some of your pay, and they add more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.534
+  },
+  {
+   "n": 3,
+   "text": "Say you earn 50,000. They match half, up to six percent.",
+   "start": 6.784,
+   "parts": [
+    {
+     "tts": "Say you earn fifty thousand. They match half, up to six percent.",
+     "seed": 11,
+     "heard": "Say you earn $50,000. They match half up to 6%.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.216
+  },
+  {
+   "n": 4,
+   "text": "You put in 3,000 a year. Spender, at the next desk, skips it.",
+   "start": 10.466,
+   "parts": [
+    {
+     "tts": "You put in three thousand a year. Spender, at the next desk, skips it.",
+     "seed": 11,
+     "heard": "you put in $3,000 a year. Spender, at the next desk, skips it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.39
+  },
+  {
+   "n": 5,
+   "text": "Then the first statements arrive...",
+   "start": 14.64,
+   "parts": [
+    {
+     "tts": "Then the first statements arrive...",
+     "seed": 11,
+     "heard": "Then the first statements arrive.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.281
+  },
+  {
+   "n": 6,
+   "text": "Yours: 3,000, plus 1,500 from your boss. Spender's: zero.",
+   "start": 16.531,
+   "parts": [
+    {
+     "tts": "Yours: three thousand, plus one thousand five hundred from your boss. Spender's: zero.",
+     "seed": 11,
+     "heard": "Yours, $3,000 plus $1,500 from your boss. Spenders, zero.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 21.36
+  },
+  {
+   "n": 7,
+   "text": "Plans differ, and some make you wait to keep it.",
+   "start": 21.61,
+   "parts": [
+    {
+     "tts": "Plans differ, and some make you wait to keep it.",
+     "seed": 11,
+     "heard": "Plans differ, and some make you wait to keep it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.206
+  }
+ ]
+}

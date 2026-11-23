@@ -1,0 +1,28 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Tyler",
+ "voice_id": "rPMkKgdwgIwqv4fXgR6N",
+ "model": "eleven_v4",
+ "gap": 0.1,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 28.0,
+ "characters": 116,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Four money minds. Same thousand dollar bonus.",
+   "start": 0.1,
+   "end": 3.54
+  },
+  {
+   "line": 2,
+   "text": "One year later. In this example, the boring one won. Which one are you?",
+   "start": 21.5,
+   "end": 27.18
+  }
+ ],
+ "note": "line 2 placed at 21.5 s; 3.6-21.5 s is no-VO (music + SFX + lane labels)"
+}

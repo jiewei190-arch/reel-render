@@ -1,0 +1,75 @@
+{
+  "kit": "law3d",
+  "music": "suspense",
+  "cast": {
+    "pearson": {
+      "role": "plaintiff",
+      "skin": "#8a5a3c",
+      "hairStyle": "short",
+      "hair": "#3a3634",
+      "suit": "#2e3d5e",
+      "pants": "#26324c",
+      "tie": "#7a1f24",
+      "build": "broad",
+      "plate": "PLAINTIFF"
+    },
+    "mom": {
+      "role": "defendant",
+      "skin": "#e2b48c",
+      "hairStyle": "bun",
+      "hair": "#16120f",
+      "suit": "#5a5650",
+      "shirt": "#efe9de",
+      "tie": "#5a5650",
+      "apron": "#2b4f7a",
+      "build": "slim",
+      "height": 0.93,
+      "plate": "DEFENDANT"
+    },
+    "dad": {
+      "role": "defendant",
+      "skin": "#d9a984",
+      "hairStyle": "short",
+      "hair": "#1a1816",
+      "suit": "#6e6a62",
+      "apron": "#2b4f7a",
+      "glasses": true,
+      "plate": "DEFENDANT"
+    },
+    "son": {
+      "role": "defendant",
+      "skin": "#e0b08a",
+      "hairStyle": "side",
+      "hair": "#120f0d",
+      "suit": "#3a3f48",
+      "tie": "#B9862A"
+    },
+    "judge": {
+      "role": "judge",
+      "skin": "#efc6a6",
+      "hairStyle": "long",
+      "hair": "#8a7a6e",
+      "glasses": true,
+      "plate": "THE COURT"
+    }
+  },
+  "slug": "law-demo-landscape-short-1",
+  "hook": {
+    "text": "A *JUDGE* SUES OVER PANTS",
+    "until": 2.5
+  },
+  "shots": [
+    {"at":0,"set":"courtroom","jury":false,"cam":{"preset":"hookZoom","target":"pearson.face","dist":1.7,"h":0.05,"az":-8,"face":0.52},"actors":[{"id":"pearson","pose":"point","face":"smug","at":"plaintiff","pointAt":"hookProp","then":[{"at":0.45,"face":"shocked"}]}],"props":[{"id":"hookProp","kit":"pants","at":"plaintiff:0.3,1.12,0.3","s":0.5,"yaw":-15,"motion":"float"}],"fx":[{"fx":"shake","at":0.45,"gain":0.6}],"caption":"off","note":"clip hook: A JUDGE SUES OVER PANTS / $3,000","actions":[{"do":"exhibit","at":0,"until":1,"label":"AT STAKE","text":"$3,000"}]},
+    {"at":1,"set":"evidence","cam":{"preset":"dolly","target":"table:0,0.15,0","dist":2.2,"h":0.6,"az":-20,"sweep":1.4},"props":[{"id":"hanger","kit":"paper","text":"CLAIM TICKET","at":"table","yaw":25}],"note":"the empty table: the pants are gone"},
+    {"at":"1:family","set":"courtroom","jury":false,"cam":{"preset":"dolly","target":"dad.face","dist":3.2,"h":0.05,"az":-6,"sweep":0.9},"actors":[{"id":"mom","pose":"present","at":"defendant:-0.62,0,0","face":"happy","pointAt":"pants"},{"id":"dad","pose":"idle","at":"defendant","face":"neutral","then":[{"at":"1:found","face":"happy"}]},{"id":"son","pose":"idle","at":"defendant:0.62,0,0","face":"neutral"}],"props":[{"id":"pants","kit":"pants","at":"dTable:-0.55,0.02,0.1","s":0.6,"motion":"popIn","hit":"1:found"}]},
+    {"at":"1:these","jury":false,"cam":{"preset":"closeUp","target":"pearson.face","dist":1.2,"az":12},"actors":[{"id":"pearson","pose":"cross","face":"angry","at":"plaintiff","talk":true}],"set":"courtroom"},
+    {"at":"line:2","set":"casefile","cam":{"preset":"topDown","target":"desk","dist":0.5,"h":1.7,"az":-10},"props":[{"id":"o1","kit":"money","at":"desk:-0.4,0,0.2","yaw":10,"motion":"dropIn","hit":"2:$3000"},{"id":"o2","kit":"money","at":"desk:0.05,0,0.25","yaw":-20,"motion":"dropIn","hit":"2:$4600"},{"id":"o3","kit":"money","at":"desk:0.42,0,0.15","yaw":30,"motion":"dropIn","hit":"2:$12000"},{"id":"o4","kit":"money","at":"desk:0.3,0,-0.2","yaw":75,"motion":"dropIn","hit":"2:$12000+0.15"}],"actions":[{"do":"counter","at":"2:$3000","until":"2:$4600-0.05","title":"OFFER 1","prefix":"$","from":0,"to":3000,"dur":0.35,"pos":"top"},{"do":"counter","at":"2:$4600","until":"2:$12000-0.05","title":"OFFER 2","prefix":"$","from":3000,"to":4600,"dur":0.35,"pos":"top"},{"do":"counter","at":"2:$12000","title":"OFFER 3","prefix":"$","from":4600,"to":12000,"dur":0.4,"pos":"top"}]},
+    {"at":"2:he","set":"courtroom","jury":false,"cam":{"preset":"slamZoom","target":"pearson.face","dist":1.3,"az":-14,"hit":"2:no"},"actors":[{"id":"pearson","pose":"cross","face":"stern","at":"plaintiff","then":[{"at":"2:no","pose":"smug","face":"smug"}]}]},
+    {"at":"line:3","set":"evidence","cam":{"preset":"pushIn","target":"table:0,0.35,0","dist":2.5,"h":0.2},"props":[{"id":"sign1","kit":"sign","text":"SATISFACTION\nGUARANTEED","at":"table:-0.23,0,-0.08","s":0.36,"yaw":8,"motion":"popIn","hit":"3:satisfaction"},{"id":"sign2","kit":"sign","text":"SAME DAY\nSERVICE","at":"table:0.23,0,0.08","s":0.36,"yaw":-8,"motion":"popIn","hit":"3:same"}],"actions":[{"do":"exhibit","at":"3:satisfaction+0.1","label":"EXHIBIT B","text":"THE SIGNS"}]},
+    {"at":"line:4","set":"headlines","cam":{"preset":"dolly","target":"wall","dist":2.4,"h":0.1,"sweep":1},"props":[{"id":"n1","kit":"newspaper","text":"JUDGE SUES CLEANERS","at":"wall:-0.62,-0.42,0.01","roll":4,"motion":"flyIn","hit":"4:violation","fromOff":[-1.5,1,2]},{"id":"n2","kit":"newspaper","text":"$54 MILLION PANTS SUIT","at":"wall:0.0,-0.5,0.02","roll":-3,"motion":"flyIn","hit":"3:day","fromOff":[1.5,1.2,2]},{"id":"n3","kit":"newspaper","text":"PANTS CASE GOES TO TRIAL","at":"wall:0.62,-0.4,0.03","roll":5,"motion":"flyIn","hit":"4:owners","fromOff":[0.5,-1.5,2]}],"actions":[{"do":"counter","at":"4:$1500","title":"PER VIOLATION, PER DAY","prefix":"$","from":0,"to":1500,"dur":0.5,"pos":"top"}],"fx":[{"fx":"papers","at":"4:three","p":"wall:0,0,0.5"}]},
+    {"at":"line:5","set":"courtroom","jury":false,"cam":{"preset":"orbit","target":"pearson.face","dist":1.45,"h":0.05,"az":-10,"sweep":26},"actors":[{"id":"pearson","pose":"talk","face":"sad","at":"witness","sit":true,"then":[{"at":"5:cried","pose":"cry","face":"crying"}]}],"note":"beat: the plaintiff cries on the stand"},
+    {"at":"line:6","set":"courtroom","jury":false,"cam":{"preset":"pushIn","target":"judge.face","dist":2.2,"h":-0.2},"actors":[{"id":"judge","pose":"idle","face":"stern","at":"bench","sit":true}],"props":[{"id":"plate","kit":"nameplate","of":"judge","at":"benchTop:-0.4,0,0.25"}]},
+    {"at":"6:verdict+0.2","jury":false,"cam":{"preset":"slamZoom","target":"gavel","dist":1.35,"h":0.32,"az":25,"hit":"6:no"},"props":[{"id":"gavel","kit":"gavel","at":"gavel","yaw":20}],"actions":[{"do":"gavel","at":"6:no"},{"do":"verdict","at":"6:no","until":"6:reads","text":"DENIED","sub":"JUNE 25, 2007"}],"caption":"off","set":"courtroom"},
+    {"at":"6:reads","jury":false,"cam":{"preset":"medium","target":"judge.face","dist":2.3,"h":-0.15,"az":10},"actors":[{"id":"judge","pose":"talk","face":"stern","at":"bench","sit":true,"talk":true}],"props":[{"id":"plate","kit":"nameplate","of":"judge","at":"benchTop:-0.4,0,0.25"}],"set":"courtroom"}
+  ]
+}

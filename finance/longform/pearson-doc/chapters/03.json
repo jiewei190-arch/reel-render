@@ -1,0 +1,14 @@
+{
+ "chapter": 3,
+ "heroSet": "courtroom",
+ "scenes": [
+  {"at": "22:The", "type": "timeline", "move": "panL", "events": [{"when": "2005", "text": "The pants go missing", "at": "22:The"}, {"when": "2007", "text": "The trial begins", "at": "22:2007"}]},
+  {"at": "23:On", "type": "scene3d", "id": "cry", "set": "courtroom", "jury": false, "beat": true, "cam": {"preset": "closeUp", "target": "pearson.face", "dist": 1.3, "az": 14}, "actors": [{"id": "pearson", "pose": "talk", "face": "sad", "at": "witness", "sit": true, "then": [{"at": "23:cried", "pose": "cry", "face": "crying"}]}], "note": "payoff of the cold-open tease: he cried on the stand"},
+  {"at": "24:On", "type": "scene3d", "set": "courtroom", "jury": false, "cam": {"preset": "medium", "target": "judge.face", "dist": 2.3, "h": -0.15, "az": 10}, "actors": [{"id": "judge", "pose": "gavel", "face": "stern", "at": "bench", "sit": true}], "props": [{"id": "gavel", "kit": "gavel", "at": "gavel", "yaw": 20}], "actions": [{"do": "counter", "at": "24:June", "title": "THE RULING", "value": "JUNE 25, 2007", "pos": "left"}, {"do": "gavel", "at": "24:ruled"}], "note": "Judge Bartnoff rules"},
+  {"at": "25:ruling", "type": "document", "kind": "ruling", "beat": true, "heading": "Superior Court of the District of Columbia", "meta": ["Pearson v. Chung", "Judge Judith Bartnoff, June 25, 2007"], "lines": ["Ruling, paraphrased:", "No reasonable customer reads 'Satisfaction Guaranteed' as a promise to meet unreasonable demands.", "Judgment for the defendants."], "key": 1, "highlightAt": "25:reads"},
+  {"at": "25:unreasonable", "type": "compare", "move": "push", "beat": true, "title": "The outcome", "left": {"label": "Demanded", "value": "$54,000,000"}, "right": {"label": "Awarded", "value": "Nothing"}, "rightAt": "26:awarded"},
+  {"at": "27:He", "type": "timeline", "move": "push", "events": [{"when": "2007", "text": "The ruling"}, {"when": "2008", "text": "Appeal lost", "at": "27:2008"}]},
+  {"at": "28:pair", "type": "recap", "title": "Pearson v. Chung", "points": ["One pair of pants", "A $54 million demand", "Awarded nothing", "Appeal lost in 2008"]},
+  {"at": "28:never", "type": "scene3d", "set": "evidence", "cam": {"preset": "crane", "target": "table:0,0.45,0", "dist": 2.4, "h": 0.1, "az": 16, "sweep": 0.6}, "props": [{"id": "sign", "kit": "sign", "text": "SATISFACTION\nGUARANTEED", "at": "table", "s": 0.5, "yaw": -6}], "caption": "off", "note": "the last image: the sign that never meant what he said it meant"}
+ ]
+}

@@ -1,0 +1,1222 @@
+{
+ "slug": "raise-tax-myth",
+ "style": "S2",
+ "hook": {
+  "text": "TURNED DOWN $10K\nFOR *TAXES*?",
+  "again": "9:word"
+ },
+ "music": "upbeat",
+ "sfx0": "impact",
+ "cast": {
+  "spender": "SPENDER",
+  "saver": "SAVER"
+ },
+ "tag": {
+  "text": "EXAMPLE · 2025 FEDERAL · SINGLE · NOT ADVICE",
+  "from": 1,
+  "until": "9:all"
+ },
+ "eggs": [
+  "cat",
+  "mug"
+ ],
+ "finalGag": {
+  "gag": "catCoin"
+ },
+ "props": [
+  {
+   "id": "s10",
+   "kit": "block",
+   "text": [
+    "10%"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.9,
+    0.36,
+    0.6
+   ],
+   "at": "centre:-0.33,0,-0.6",
+   "motion": "dropSlam",
+   "hit": "5:saver+0.08",
+   "drop": 1.2,
+   "from": "5:saver",
+   "until": "line:6"
+  },
+  {
+   "id": "s12",
+   "kit": "block",
+   "text": [
+    "12%"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.9,
+    0.36,
+    0.6
+   ],
+   "at": "centre:-0.11,0.36,-0.6",
+   "motion": "dropSlam",
+   "hit": "5:goes",
+   "drop": 1.2,
+   "from": "5:saver",
+   "until": "line:6"
+  },
+  {
+   "id": "s22",
+   "kit": "block",
+   "text": [
+    "22%"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.9,
+    0.5,
+    0.6
+   ],
+   "at": "centre:0.11,0.72,-0.6",
+   "motion": "dropSlam",
+   "hit": "5:to",
+   "drop": 1.2,
+   "from": "5:saver",
+   "until": "line:6"
+  },
+  {
+   "id": "s24g",
+   "kit": "block",
+   "text": [
+    "$110K"
+   ],
+   "color": "#1f9e4f",
+   "size": [
+    0.9,
+    0.36,
+    0.6
+   ],
+   "at": "centre:0.33,1.22,-0.6",
+   "until": "5:twenty-four",
+   "motion": "dropSlam",
+   "hit": "5:ten",
+   "drop": 1.2,
+   "from": "5:saver"
+  },
+  {
+   "id": "s24r",
+   "kit": "block",
+   "text": [
+    "24%"
+   ],
+   "color": "#d62a2a",
+   "size": [
+    0.9,
+    0.36,
+    0.6
+   ],
+   "at": "centre:0.33,1.22,-0.6",
+   "motion": "dropSlam",
+   "hit": "5:twenty-four+0.02",
+   "drop": 0.3,
+   "from": "5:twenty-four",
+   "until": "line:6"
+  },
+  {
+   "id": "line",
+   "kit": "label",
+   "text": [
+    "$103,350"
+   ],
+   "color": "#3a3f58",
+   "size": [
+    0.55,
+    0.18,
+    0.04
+   ],
+   "at": "centre:-0.42,1.23,-0.25",
+   "motion": "fly-in",
+   "hit": "5:three",
+   "from": "5:above",
+   "until": "line:6"
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "office",
+   "note": "frame 0: Spender close-up, smug, offer letter +$10,000 RAISE; a red DECLINED stamp slams on it at 0.72 s",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6,
+    "face": 0.33
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sly",
+     "then": [
+      {
+       "at": 0.7,
+       "pose": "smug",
+       "emotion": "joy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "offer",
+     "kit": "label",
+     "text": [
+      "OFFER",
+      "+$10,000 RAISE"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "at": "mark:-0.03,1.05,0.72"
+    },
+    {
+     "id": "nope",
+     "kit": "stamp",
+     "text": "DECLINED",
+     "color": "#d62a2a",
+     "size": [
+      0.36,
+      0.1,
+      0.03
+     ],
+     "at": "mark:0.0,1.05,0.76",
+     "hit": 0.72
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": 0.08
+    },
+    {
+     "fx": "shake",
+     "at": 0.72
+    }
+   ]
+  },
+  {
+   "at": 1.0,
+   "in": "cut",
+   "note": "cut at 1.0 s (hook rule): the raise board slams on 'ten'",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "raise",
+    "hit": "1:ten+0.05",
+    "dist": 2.6,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "raise",
+     "kit": "label",
+     "text": [
+      "+$10,000",
+      "RAISE"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.8,
+      0.38,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "1:ten+0.05",
+     "drop": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:ten+0.05",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "1:because",
+   "note": "because of taxes? a red TAXES? board, Spender shrugs",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "tx1",
+    "hit": "1:taxes",
+    "dist": 2.6,
+    "az": -10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sly",
+     "gestures": [
+      {
+       "at": "1:taxes",
+       "g": "shrug"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "tx1",
+     "kit": "label",
+     "text": [
+      "TAXES?"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.8,
+      0.34,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "1:taxes",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "1:taxes"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "1:taxes",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "2:spender",
+   "in": "cut",
+   "note": "Spender points at a scary TAX BRACKET sign",
+   "cam": {
+    "preset": "medium",
+    "target": "mark:-0.4,1.15,0",
+    "dist": 3.4,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "point",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious",
+     "then": [
+      {
+       "at": "2:bracket",
+       "pose": "shock",
+       "emotion": "shock"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "brk",
+     "kit": "label",
+     "text": [
+      "TAX",
+      "BRACKET"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.7,
+      0.38,
+      0.05
+     ],
+     "at": "mark:-0.36,1.65,0.45",
+     "motion": "dropSlam",
+     "hit": "2:bracket",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "2:bracket"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:bracket",
+     "sfx": "stamp",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "2:so",
+   "note": "thought board: TAKE HOME LESS?",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.6,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "shock"
+    }
+   ],
+   "props": [
+    {
+     "id": "less",
+     "kit": "label",
+     "text": [
+      "TAKE HOME",
+      "LESS?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.32,
+      0.16,
+      0.04
+     ],
+     "at": "mark:0.03,1.46,0.36",
+     "motion": "dropSlam",
+     "hit": "2:less",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "2:less",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:saver",
+   "in": "cut",
+   "note": "Saver signs: a big SIGNED +$10K board slams in",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "sign",
+    "hit": "3:took",
+    "dist": 2.6,
+    "az": -8
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "mark",
+     "face": 0,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "sign",
+     "kit": "label",
+     "text": [
+      "SIGNED",
+      "+$10,000"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.85,
+      0.38,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "3:took",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "3:took"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "3:took",
+     "sfx": "stamp",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "3:same",
+   "in": "cut",
+   "note": "split: same job, same city: both in the same office",
+   "cam": {
+    "preset": "splitScreen",
+    "targets": [
+     "saver",
+     "spender"
+    ],
+    "dist": 3.0
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "left",
+     "face": 0,
+     "emotion": "joy"
+    },
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "right",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ]
+  },
+  {
+   "at": "4:in",
+   "note": "the example terms",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "ex",
+    "hit": "4:2025",
+    "dist": 2.9
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "ex",
+     "kit": "label",
+     "text": [
+      "2025 FEDERAL",
+      "SINGLE FILER"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.85,
+      0.38,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "4:2025",
+     "drop": 0.6
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "4:2025"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:2025",
+     "sfx": "stamp",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "4:spender",
+   "note": "Spender stays at $100,000 taxable",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "sp100",
+     "kit": "label",
+     "text": [
+      "TAXABLE"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.3,
+      0.14,
+      0.04
+     ],
+     "at": "mark:0.0,1.44,0.36",
+     "motion": "count-up",
+     "hit": "4:one",
+     "count": {
+      "from": 0,
+      "to": 100000,
+      "prefix": "$",
+      "dur": 0.8
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:thousand",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:saver",
+   "in": "cut",
+   "note": "THE VISUAL: the bracket staircase stacks up (10/12/22 green), the top step lands at $110K",
+   "cam": {
+    "preset": "pushIn",
+    "target": "centre:0.0,0.8,-0.6",
+    "dist": 5.3,
+    "face": 0.36
+   },
+   "fx": [
+    {
+     "fx": "dust",
+     "at": "5:ten",
+     "p": "centre:0.33,1.22,-0.6"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:ten",
+     "sfx": "stamp",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:but",
+   "in": "match",
+   "note": "only the slice above the $103,350 line turns red: 24%",
+   "cam": {
+    "preset": "pushIn",
+    "target": "centre:0.0,0.82,-0.6",
+    "dist": 6.1,
+    "face": 0.34
+   },
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "5:twenty-four+0.02"
+    },
+    {
+     "fx": "shake",
+     "at": "5:twenty-four+0.02"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:twenty-four+0.02",
+     "sfx": "boom",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "5:everything",
+   "note": "everything below stays the same: green stamp on the lower steps",
+   "cam": {
+    "preset": "medium",
+    "target": "centre:-0.05,0.75,-0.6",
+    "dist": 5.4,
+    "face": 0.38
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "point",
+     "at": "centre:-0.98,0,0.45",
+     "face": 35,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "same",
+     "kit": "label",
+     "text": [
+      "BELOW",
+      "= SAME"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.55,
+      0.3,
+      0.05
+     ],
+     "at": "centre:0.56,0.42,0.05",
+     "motion": "dropSlam",
+     "hit": "5:same",
+     "drop": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:same",
+     "sfx": "ding",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "6:but",
+   "mood": "whisper",
+   "in": "cut",
+   "note": "OPEN LOOP: a covered PAYCHECK ? block beside Saver",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cover",
+    "dist": 2.9,
+    "face": 0.42
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "left",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "cover",
+     "kit": "block",
+     "text": [
+      "PAYCHECK",
+      "?"
+     ],
+     "color": "#3a3f58",
+     "size": [
+      0.7,
+      0.7,
+      0.5
+     ],
+     "at": "left:1.15,0,0.2"
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "6:part"
+    },
+    {
+     "fx": "shake",
+     "at": "6:wrong"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:but",
+     "sfx": "suspense",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:on",
+   "in": "cut",
+   "note": "the extra $10,000",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "xtra",
+    "hit": "7:ten",
+    "dist": 2.6
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "xtra",
+     "kit": "label",
+     "text": [
+      "EXTRA",
+      "+$10,000"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.85,
+      0.38,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "7:ten",
+     "drop": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:ten",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:saver",
+   "note": "ticker: -$2,333 federal",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.7,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "fed",
+     "kit": "label",
+     "text": [
+      "-$2,333",
+      "FEDERAL"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.32,
+      0.16,
+      0.04
+     ],
+     "at": "mark:0.05,1.44,0.36",
+     "motion": "dropSlam",
+     "hit": "7:twenty-three",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "7:twenty-three"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:twenty-three",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "7:and",
+   "note": "ticker: -$765 payroll",
+   "cam": {
+    "preset": "closeUp",
+    "target": "saver.face",
+    "dist": 1.7,
+    "az": -10
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "curious"
+    }
+   ],
+   "props": [
+    {
+     "id": "pay",
+     "kit": "label",
+     "text": [
+      "-$765",
+      "PAYROLL"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.3,
+      0.15,
+      0.04
+     ],
+     "at": "mark:-0.02,1.44,0.36",
+     "motion": "dropSlam",
+     "hit": "7:seven",
+     "drop": 0.4
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "7:seven"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "7:seven",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "8:a",
+   "in": "cut",
+   "note": "a higher bracket never shrinks the money you already had",
+   "cam": {
+    "preset": "medium",
+    "target": "saver.face",
+    "dist": 2.6,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "joy",
+     "gestures": [
+      {
+       "at": "8:never",
+       "g": "point"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "safe",
+     "kit": "stamp",
+     "text": "OLD PAY SAFE",
+     "color": "#1f9e4f",
+     "size": [
+      0.6,
+      0.2,
+      0.03
+     ],
+     "at": "mark:0.0,1.52,0.3",
+     "hit": "8:never"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "8:never",
+     "sfx": "ding",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "8:saver",
+   "in": "cut",
+   "note": "TWIST: a big +$6,902 KEPT board slams over Saver, coins rain",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "kept",
+    "hit": "8:sixty-nine",
+    "dist": 2.7,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "celebrate",
+     "at": "mark",
+     "face": 0,
+     "emotion": "joy",
+     "from": "8:sixty-nine"
+    }
+   ],
+   "props": [
+    {
+     "id": "kept",
+     "kit": "label",
+     "text": [
+      "KEPT",
+      "+$6,902"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.85,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "8:sixty-nine",
+     "drop": 0.6
+    },
+    {
+     "id": "conf",
+     "kit": "coin",
+     "at": "mark:0,2.6,-0.6",
+     "motion": "rain",
+     "n": 10,
+     "area": [
+      2.2,
+      0.6
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "fx": "flash",
+     "at": "8:sixty-nine"
+    },
+    {
+     "fx": "shake",
+     "at": "8:sixty-nine"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "8:sixty-nine",
+     "sfx": "cash",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "9:spender",
+   "note": "Spender kept zero",
+   "cam": {
+    "preset": "closeUp",
+    "target": "spender.face",
+    "dist": 1.7,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "right",
+     "face": 0,
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "k0",
+     "kit": "label",
+     "text": [
+      "KEPT $0"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.3,
+      0.13,
+      0.04
+     ],
+     "at": "right:-0.02,1.42,0.38",
+     "motion": "dropSlam",
+     "hit": "9:zero",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "9:zero",
+     "sfx": "thud",
+     "db": -8
+    }
+   ]
+  },
+  {
+   "at": "9:over",
+   "in": "cut",
+   "note": "five-year counter over Saver: 0 -> $34,510",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "y5",
+    "hit": "9:five",
+    "dist": 2.7,
+    "az": -8
+   },
+   "actors": [
+    {
+     "id": "saver",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "joy"
+    }
+   ],
+   "props": [
+    {
+     "id": "y5",
+     "kit": "label",
+     "text": [
+      "5 YEARS"
+     ],
+     "color": "#1f9e4f",
+     "size": [
+      0.85,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "count-up",
+     "hit": "9:five",
+     "count": {
+      "from": 0,
+      "to": 34510,
+      "prefix": "$",
+      "dur": 2.0
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "9:thousand"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "9:thousand",
+     "sfx": "cash",
+     "db": -6
+    }
+   ]
+  },
+  {
+   "at": "9:he",
+   "in": "cut",
+   "note": "Spender: 5 YEARS $0, despair",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "y5p",
+    "hit": "9:no",
+    "dist": 2.7,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "idle",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sad"
+    }
+   ],
+   "props": [
+    {
+     "id": "y5p",
+     "kit": "label",
+     "text": [
+      "5 YEARS",
+      "$0"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.85,
+      0.4,
+      0.05
+     ],
+     "at": "mark:-0.05,1.85,0.45",
+     "motion": "dropSlam",
+     "hit": "9:no",
+     "drop": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "at": "9:no",
+     "sfx": "thud",
+     "db": -10
+    }
+   ]
+  },
+  {
+   "at": "9:all",
+   "mood": "ending",
+   "note": "LOOP: back to frame 0; the red TAXES? board slams on the last word 'word...'",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "spender.face",
+    "dist": 1.95,
+    "az": -6,
+    "face": 0.33
+   },
+   "actors": [
+    {
+     "id": "spender",
+     "pose": "smug",
+     "at": "mark",
+     "face": 0,
+     "emotion": "sly"
+    }
+   ],
+   "props": [
+    {
+     "id": "tx2",
+     "kit": "label",
+     "text": [
+      "TAXES?"
+     ],
+     "color": "#d62a2a",
+     "size": [
+      0.44,
+      0.17,
+      0.04
+     ],
+     "at": "mark:-0.03,1.05,0.72",
+     "motion": "dropSlam",
+     "hit": "9:word+0.02",
+     "drop": 1.4
+    }
+   ]
+  }
+ ]
+}

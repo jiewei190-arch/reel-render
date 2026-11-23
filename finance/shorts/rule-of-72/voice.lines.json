@@ -1,0 +1,134 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 29.0,
+ "render_s": 63.9,
+ "qa_fail_lines": [
+  3
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Three things that double. Number one is the scary one.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Three things that double. Number one is the scary one.",
+     "seed": 7,
+     "heard": "Three things that double, number one is the scary one.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.962
+  },
+  {
+   "n": 2,
+   "text": "The trick: divide 72 by the yearly rate.",
+   "start": 3.262,
+   "parts": [
+    {
+     "tts": "The trick: divide seventy-two by the yearly rate.",
+     "seed": 7,
+     "heard": "The trick, divide 72 by the yearly rate.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.944
+  },
+  {
+   "n": 3,
+   "text": "Number three: Saver's savings at six percent. About twelve years.",
+   "start": 6.244,
+   "parts": [
+    {
+     "tts": "Number three: Saver's savings at six percent. About twelve years.",
+     "seed": 7,
+     "heard": "Number three, saver savings at 6%. About 12 years.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 10.212
+  },
+  {
+   "n": 4,
+   "text": "Number two: at eight percent? About nine. Nice and slow.",
+   "start": 10.512,
+   "parts": [
+    {
+     "tts": "Number two: at eight percent? About nine. Nice and slow.",
+     "seed": 7,
+     "heard": "Number two, at 8%, about nine, nice and slow.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.195
+  },
+  {
+   "n": 5,
+   "text": "And number one... wait till you see who's holding it.",
+   "start": 14.495,
+   "parts": [
+    {
+     "tts": "And number one...",
+     "seed": 7,
+     "heard": "and number one.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "wait till you see who's holding it.",
+     "seed": 7,
+     "heard": "Wait till you see who's holding it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.762
+  },
+  {
+   "n": 6,
+   "text": "Spender's card at twenty-four percent. If nothing's paid, what he owes can double in about three years.",
+   "start": 18.062,
+   "parts": [
+    {
+     "tts": "Spender's card at twenty-four percent. If nothing's paid, what he owes can double in about three years.",
+     "seed": 7,
+     "heard": "Spender's card at 24%. If nothing's paid, what he owes can double in about three years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.454
+  },
+  {
+   "n": 7,
+   "text": "Same maths, wrong side. It's a shortcut, not a promise. That's why you should know these",
+   "start": 23.754,
+   "parts": [
+    {
+     "tts": "Same maths, wrong side. It's a shortcut, not a promise. That's why you should know these",
+     "seed": 7,
+     "heard": "Same maths? Wrong side. It's a shortcut, not a promise. That's why you should know these.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.7
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1132,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 447,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Your job might be paying you money you never take.",
+   "start": 0.09,
+   "end": 2.964
+  },
+  {
+   "line": 2,
+   "text": "Fifteen hundred free dollars a year. Would you take it? Think fast.",
+   "start": 3.099,
+   "end": 7.483
+  },
+  {
+   "line": 3,
+   "text": "It's a match: save six percent of fifty thousand, and your boss adds half.",
+   "start": 7.618,
+   "end": 12.001
+  },
+  {
+   "line": 4,
+   "text": "Saver puts in three thousand. Spender, at the next desk, skips it.",
+   "start": 12.136,
+   "end": 16.376
+  },
+  {
+   "line": 5,
+   "text": "Spender said no... without even knowing it.",
+   "start": 16.511,
+   "end": 19.241
+  },
+  {
+   "line": 6,
+   "text": "Then the statements arrive. Saver: three thousand, plus fifteen hundred free. Spender: zero.",
+   "start": 19.376,
+   "end": 26.06
+  },
+  {
+   "line": 7,
+   "text": "Skip saving, and that fifteen hundred just isn't yours.",
+   "start": 26.194,
+   "end": 29.5
+  }
+ ]
+}

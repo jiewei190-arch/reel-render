@@ -1,0 +1,127 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.55,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  11
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 30.204,
+ "render_s": 139.9,
+ "qa_fail_lines": [
+  2,
+  6,
+  7
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Spender's car just broke, and this bill will follow him for two years.",
+   "start": 0.1,
+   "parts": [
+    {
+     "tts": "Spender's car just broke, and this bill will follow him for two years.",
+     "seed": 11,
+     "heard": "Spender's car just broke, and this bill will follow him for two years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.82
+  },
+  {
+   "n": 2,
+   "text": "One thousand dollars, due now. No savings.",
+   "start": 4.07,
+   "parts": [
+    {
+     "tts": "One thousand dollars, due now. No savings.",
+     "seed": 11,
+     "heard": "$1,000 do now. No savings.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 6.52
+  },
+  {
+   "n": 3,
+   "text": "So it goes on a card: twenty-two percent, fifty a month.",
+   "start": 6.77,
+   "parts": [
+    {
+     "tts": "So it goes on a card: twenty-two percent, fifty a month.",
+     "seed": 11,
+     "heard": "So it goes on a card, 22%, 50 a month.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.88
+  },
+  {
+   "n": 4,
+   "text": "Month six. Month twelve. Still paying. And the worst part is still coming...",
+   "start": 10.13,
+   "parts": [
+    {
+     "tts": "Month six. Month twelve. Still paying. And the worst part is still coming...",
+     "seed": 11,
+     "heard": "month 6, month 12, still paying, and the worst part is still coming.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.249
+  },
+  {
+   "n": 5,
+   "text": "But Saver had the same bill. He paid it from his emergency fund. Done.",
+   "start": 14.499,
+   "parts": [
+    {
+     "tts": "But Saver had the same bill. He paid it from his emergency fund. Done.",
+     "seed": 11,
+     "heard": "but Saver had the same bill. He paid it from his emergency fund. Done.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.449
+  },
+  {
+   "n": 6,
+   "text": "Spender? Twenty-six months later: paid off, plus 257 dollars of interest.",
+   "start": 18.699,
+   "parts": [
+    {
+     "tts": "Spender? Twenty-six months later: paid off, plus two hundred fifty-seven dollars of interest.",
+     "seed": 11,
+     "heard": "Spender, 26 months later, paid off plus $257 of interest.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 23.887
+  },
+  {
+   "n": 7,
+   "text": "In a Fed survey, 63 percent of adults could cover a 400 dollar surprise with cash. Could you?",
+   "start": 24.137,
+   "parts": [
+    {
+     "tts": "In a Fed survey, sixty-three percent of adults could cover a four hundred dollar surprise with cash. Could you?",
+     "seed": 11,
+     "heard": "In a Fed survey, 63% of adults could cover a $400 surprise with cash. Could you?",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 29.954
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0834,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 384,
+ "lines": [
+  {
+   "line": 1,
+   "text": "POV: everything you buy just doubled.",
+   "start": 0.092,
+   "end": 3.415
+  },
+  {
+   "line": 2,
+   "text": "Groceries. Rent. Coffee. All of it, times two.",
+   "start": 3.554,
+   "end": 7.763
+  },
+  {
+   "line": 3,
+   "text": "Here's the trick: divide seventy-two by the inflation rate.",
+   "start": 7.901,
+   "end": 11.593
+  },
+  {
+   "line": 4,
+   "text": "At about four percent a year, prices double in about eighteen years.",
+   "start": 11.732,
+   "end": 15.941
+  },
+  {
+   "line": 5,
+   "text": "And it's already happened three times...",
+   "start": 16.079,
+   "end": 18.442
+  },
+  {
+   "line": 6,
+   "text": "Since 1970, U.S. prices climbed almost nine times over. About three doublings.",
+   "start": 18.581,
+   "end": 24.709
+  },
+  {
+   "line": 7,
+   "text": "Small yearly numbers, huge change. So one day, it's just",
+   "start": 24.848,
+   "end": 29.5
+  }
+ ]
+}

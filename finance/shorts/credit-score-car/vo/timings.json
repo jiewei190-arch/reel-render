@@ -1,0 +1,426 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 29.5
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Same thirty thousand dollar car, same five years, and one buyer pays about six and a half thousand more.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 0.092,
+     "end": 0.388
+    },
+    {
+     "w": "thirty",
+     "t": 0.535,
+     "end": 0.683
+    },
+    {
+     "w": "thousand",
+     "t": 0.83,
+     "end": 1.052
+    },
+    {
+     "w": "dollar",
+     "t": 1.126,
+     "end": 1.273
+    },
+    {
+     "w": "car,",
+     "t": 1.421,
+     "end": 2.012
+    },
+    {
+     "w": "same",
+     "t": 2.122,
+     "end": 2.233
+    },
+    {
+     "w": "five",
+     "t": 2.381,
+     "end": 2.528
+    },
+    {
+     "w": "years,",
+     "t": 2.602,
+     "end": 3.193
+    },
+    {
+     "w": "and",
+     "t": 3.303,
+     "end": 3.414
+    },
+    {
+     "w": "one",
+     "t": 3.562,
+     "end": 3.709
+    },
+    {
+     "w": "buyer",
+     "t": 3.783,
+     "end": 4.005
+    },
+    {
+     "w": "pays",
+     "t": 4.079,
+     "end": 4.3
+    },
+    {
+     "w": "about",
+     "t": 4.374,
+     "end": 4.595
+    },
+    {
+     "w": "six",
+     "t": 4.743,
+     "end": 4.891
+    },
+    {
+     "w": "and",
+     "t": 4.964,
+     "end": 5.001
+    },
+    {
+     "w": "a",
+     "t": 5.038,
+     "end": 5.112
+    },
+    {
+     "w": "half",
+     "t": 5.223,
+     "end": 5.333
+    },
+    {
+     "w": "thousand",
+     "t": 5.481,
+     "end": 5.776
+    },
+    {
+     "w": "more.",
+     "t": 5.85,
+     "end": 6.441
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "The only difference? Their credit scores.",
+   "words": [
+    {
+     "w": "The",
+     "t": 6.505,
+     "end": 6.653
+    },
+    {
+     "w": "only",
+     "t": 6.764,
+     "end": 6.874
+    },
+    {
+     "w": "difference?",
+     "t": 6.948,
+     "end": 7.76
+    },
+    {
+     "w": "Their",
+     "t": 7.834,
+     "end": 7.982
+    },
+    {
+     "w": "credit",
+     "t": 8.129,
+     "end": 8.277
+    },
+    {
+     "w": "scores.",
+     "t": 8.351,
+     "end": 9.089
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Saver's prime score gets about six percent. Spender's subprime score gets about thirteen and a half.",
+   "words": [
+    {
+     "w": "Saver's",
+     "t": 9.154,
+     "end": 9.596
+    },
+    {
+     "w": "prime",
+     "t": 9.67,
+     "end": 9.966
+    },
+    {
+     "w": "score",
+     "t": 10.039,
+     "end": 10.335
+    },
+    {
+     "w": "gets",
+     "t": 10.409,
+     "end": 10.556
+    },
+    {
+     "w": "about",
+     "t": 10.704,
+     "end": 10.851
+    },
+    {
+     "w": "six",
+     "t": 10.999,
+     "end": 11.147
+    },
+    {
+     "w": "percent.",
+     "t": 11.221,
+     "end": 11.885
+    },
+    {
+     "w": "Spender's",
+     "t": 12.106,
+     "end": 12.549
+    },
+    {
+     "w": "subprime",
+     "t": 12.623,
+     "end": 13.066
+    },
+    {
+     "w": "score",
+     "t": 13.14,
+     "end": 13.435
+    },
+    {
+     "w": "gets",
+     "t": 13.509,
+     "end": 13.657
+    },
+    {
+     "w": "about",
+     "t": 13.804,
+     "end": 13.952
+    },
+    {
+     "w": "thirteen",
+     "t": 14.026,
+     "end": 14.321
+    },
+    {
+     "w": "and",
+     "t": 14.395,
+     "end": 14.469
+    },
+    {
+     "w": "a",
+     "t": 14.505,
+     "end": 14.542
+    },
+    {
+     "w": "half.",
+     "t": 14.764,
+     "end": 15.207
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Both payments look fine at first... but watch the totals.",
+   "words": [
+    {
+     "w": "Both",
+     "t": 15.271,
+     "end": 15.567
+    },
+    {
+     "w": "payments",
+     "t": 15.64,
+     "end": 15.936
+    },
+    {
+     "w": "look",
+     "t": 16.01,
+     "end": 16.083
+    },
+    {
+     "w": "fine",
+     "t": 16.231,
+     "end": 16.452
+    },
+    {
+     "w": "at",
+     "t": 16.563,
+     "end": 16.674
+    },
+    {
+     "w": "first...",
+     "t": 16.895,
+     "end": 17.634
+    },
+    {
+     "w": "but",
+     "t": 17.707,
+     "end": 17.781
+    },
+    {
+     "w": "watch",
+     "t": 17.855,
+     "end": 18.076
+    },
+    {
+     "w": "the",
+     "t": 18.15,
+     "end": 18.298
+    },
+    {
+     "w": "totals.",
+     "t": 18.556,
+     "end": 19.11
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Five hundred eighty-two a month, versus six hundred ninety-one.",
+   "words": [
+    {
+     "w": "Five",
+     "t": 19.175,
+     "end": 19.396
+    },
+    {
+     "w": "hundred",
+     "t": 19.47,
+     "end": 19.617
+    },
+    {
+     "w": "eighty-two",
+     "t": 19.839,
+     "end": 20.208
+    },
+    {
+     "w": "a",
+     "t": 20.282,
+     "end": 20.356
+    },
+    {
+     "w": "month,",
+     "t": 20.429,
+     "end": 20.872
+    },
+    {
+     "w": "versus",
+     "t": 20.946,
+     "end": 21.389
+    },
+    {
+     "w": "six",
+     "t": 21.611,
+     "end": 21.758
+    },
+    {
+     "w": "hundred",
+     "t": 21.832,
+     "end": 22.053
+    },
+    {
+     "w": "ninety-one.",
+     "t": 22.127,
+     "end": 23.013
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "After five years: about five thousand in interest, versus eleven and a half thousand. Same car.",
+   "words": [
+    {
+     "w": "After",
+     "t": 23.078,
+     "end": 23.373
+    },
+    {
+     "w": "five",
+     "t": 23.521,
+     "end": 23.742
+    },
+    {
+     "w": "years:",
+     "t": 23.816,
+     "end": 24.628
+    },
+    {
+     "w": "about",
+     "t": 24.702,
+     "end": 24.923
+    },
+    {
+     "w": "five",
+     "t": 25.071,
+     "end": 25.218
+    },
+    {
+     "w": "thousand",
+     "t": 25.366,
+     "end": 25.661
+    },
+    {
+     "w": "in",
+     "t": 25.698,
+     "end": 25.735
+    },
+    {
+     "w": "interest,",
+     "t": 25.883,
+     "end": 26.473
+    },
+    {
+     "w": "versus",
+     "t": 26.584,
+     "end": 26.916
+    },
+    {
+     "w": "eleven",
+     "t": 26.99,
+     "end": 27.285
+    },
+    {
+     "w": "and",
+     "t": 27.433,
+     "end": 27.47
+    },
+    {
+     "w": "a",
+     "t": 27.507,
+     "end": 27.581
+    },
+    {
+     "w": "half",
+     "t": 27.655,
+     "end": 27.876
+    },
+    {
+     "w": "thousand.",
+     "t": 27.95,
+     "end": 28.688
+    },
+    {
+     "w": "Same",
+     "t": 28.762,
+     "end": 28.909
+    },
+    {
+     "w": "car.",
+     "t": 28.983,
+     "end": 29.574
+    }
+   ]
+  }
+ ]
+}

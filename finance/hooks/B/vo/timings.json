@@ -1,0 +1,71 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "small",
+  "duration": 4.309
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "This guy is about to pay eight thousand dollars... for nothing.",
+   "words": [
+    {
+     "w": "This",
+     "t": 0.0,
+     "end": 0.34
+    },
+    {
+     "w": "guy",
+     "t": 0.34,
+     "end": 0.58
+    },
+    {
+     "w": "is",
+     "t": 0.58,
+     "end": 0.76
+    },
+    {
+     "w": "about",
+     "t": 0.76,
+     "end": 0.96
+    },
+    {
+     "w": "to",
+     "t": 0.96,
+     "end": 1.14
+    },
+    {
+     "w": "pay",
+     "t": 1.14,
+     "end": 1.32
+    },
+    {
+     "w": "eight",
+     "t": 1.32,
+     "end": 1.505
+    },
+    {
+     "w": "thousand",
+     "t": 1.505,
+     "end": 1.801
+    },
+    {
+     "w": "dollars...",
+     "t": 1.801,
+     "end": 2.06
+    },
+    {
+     "w": "for",
+     "t": 2.78,
+     "end": 3.48
+    },
+    {
+     "w": "nothing.",
+     "t": 3.48,
+     "end": 3.7
+    }
+   ]
+  }
+ ]
+}

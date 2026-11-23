@@ -1,0 +1,7 @@
+How do planes land when pilots can't see the runway?
+In thick fog, the runway itself does the guiding.
+An antenna past the far end sends a radio beam down the centre line. That's the localizer.
+Another antenna beside the runway sends a beam sloping up at three degrees. The glideslope.
+Each beam is two signals. When both are equally strong, you're right on the path.
+Antennas in the nose catch both beams, and the autopilot follows them down.
+In the thickest fog, it can even land the plane while pilots watch.

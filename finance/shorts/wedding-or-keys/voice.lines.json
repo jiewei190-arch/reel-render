@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Christopher",
+ "voice_id": "RolvCZ4e0AkAR2dzyTx0",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0671,
+ "sr": 24000,
+ "duration": 29.5,
+ "characters": 485,
+ "lines": [
+  {
+   "line": 1,
+   "text": "You could spend thirty-four thousand dollars in one night.",
+   "start": 0.094,
+   "end": 3.542
+  },
+  {
+   "line": 2,
+   "text": "That's about the average wedding right now. Spender books it. Saver keeps the money.",
+   "start": 3.683,
+   "end": 8.706
+  },
+  {
+   "line": 3,
+   "text": "Every guest costs Spender about two hundred ninety dollars.",
+   "start": 8.846,
+   "end": 12.295
+  },
+  {
+   "line": 4,
+   "text": "Over a five-hour party, that's about a hundred fourteen dollars a minute.",
+   "start": 12.435,
+   "end": 16.858
+  },
+  {
+   "line": 5,
+   "text": "But Saver's pile hides a bigger number...",
+   "start": 16.999,
+   "end": 19.398
+  },
+  {
+   "line": 6,
+   "text": "First-time buyers put down about nine percent. On a typical home, that's thirty-seven thousand.",
+   "start": 19.539,
+   "end": 24.936
+  },
+  {
+   "line": 7,
+   "text": "In this example, that's ninety percent of a down payment, gone by midnight.",
+   "start": 25.077,
+   "end": 29.5
+  }
+ ]
+}
