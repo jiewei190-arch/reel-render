@@ -590,18 +590,6 @@
    "speaker": "homie"
   },
   {
-   "w": "it's",
-   "t": 49.36,
-   "end": 49.54,
-   "speaker": "homie"
-  },
-  {
-   "w": "connected",
-   "t": 49.54,
-   "end": 49.78,
-   "speaker": "homie"
-  },
-  {
    "w": "It's",
    "t": 49.7,
    "end": 49.86,
@@ -695,6 +683,12 @@
    "w": "mic.",
    "t": 55.84,
    "end": 56.08,
+   "speaker": "me"
+  },
+  {
+   "w": "Today",
+   "t": 56.34,
+   "end": 56.7,
    "speaker": "me"
   },
   {
