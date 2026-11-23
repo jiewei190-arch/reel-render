@@ -1,0 +1,508 @@
+{
+ "kit": "law3d",
+ "slug": "moore-patented-cells",
+ "format": "short",
+ "hook": {
+  "text": "HIS CELLS. *$3 BILLION?*",
+  "again": "8:And"
+ },
+ "music": "suspense",
+ "cast": {
+  "moore": {
+   "role": "plaintiff",
+   "skin": "#e6b995",
+   "hairStyle": "short",
+   "hair": "#6b4a30",
+   "beard": true,
+   "suit": "#4a5a6a",
+   "pants": "#36424e",
+   "shirt": "#efe9de",
+   "tie": "#4a5a6a",
+   "build": "avg",
+   "plate": "THE PATIENT"
+  },
+  "doc": {
+   "role": "defendant",
+   "skin": "#dcab88",
+   "hairStyle": "side",
+   "hair": "#3a2f28",
+   "suit": "#e9e6df",
+   "pants": "#3a3f48",
+   "shirt": "#cfd8e3",
+   "tie": "#2b4f7a",
+   "glasses": true,
+   "build": "avg",
+   "plate": "THE DOCTOR"
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "short",
+   "hair": "#8d8780",
+   "plate": "THE COURT"
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "moore.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "moore",
+     "pose": "present",
+     "face": "worried",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "line",
+       "face": "angry"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  },
+  {
+   "at": "grown",
+   "set": "evidence",
+   "cam": {
+    "preset": "crane",
+    "target": "table:0,0.2,0",
+    "dist": 2.3,
+    "h": 0.25,
+    "az": 16,
+    "sweep": 0.5
+   },
+   "props": [
+    {
+     "id": "cells",
+     "kit": "box",
+     "text": "CELL LINE",
+     "at": "table",
+     "yaw": 14,
+     "motion": "popIn",
+     "hit": "cells"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "patented,",
+     "label": "U.S. PATENT",
+     "text": "ISSUED 1984",
+     "on": "cells"
+    }
+   ]
+  },
+  {
+   "at": "1:but",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "moore.face",
+    "dist": 1.8,
+    "az": 12,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "moore",
+     "pose": "idle",
+     "face": "sad",
+     "at": "plaintiff",
+     "then": [
+      {
+       "at": "nobody",
+       "face": "shocked"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "1:Then",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "doc.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "doc",
+     "pose": "idle",
+     "face": "neutral",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "sued",
+       "pose": "shock",
+       "face": "shocked"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:2",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.65,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "folder",
+     "kit": "folder",
+     "text": "MOORE v. REGENTS",
+     "at": "desk:0.0,0,0.02",
+     "s": 0.75,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "seventy-six."
+    }
+   ],
+   "actions": [
+    {
+     "do": "caseCard",
+     "at": "John",
+     "title": "MOORE v. REGENTS",
+     "year": "1976-1990",
+     "place": "California"
+    }
+   ]
+  },
+  {
+   "at": "line:3",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "orbit",
+    "target": "moore.face",
+    "dist": 1.8,
+    "h": 0.05,
+    "az": -10,
+    "sweep": 26,
+    "face": 0.41
+   },
+   "actors": [
+    {
+     "id": "moore",
+     "pose": "talk",
+     "face": "worried",
+     "at": "witness",
+     "sit": true,
+     "talk": true
+    }
+   ]
+  },
+  {
+   "at": "Seattle",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.25,0",
+    "dist": 2.3,
+    "h": 0.45,
+    "az": 18,
+    "sweep": 0.8
+   },
+   "props": [
+    {
+     "id": "samples",
+     "kit": "box",
+     "text": "SAMPLES",
+     "at": "table",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "more",
+     "label": "1976 TO 1983",
+     "text": "BLOOD, MARROW, SKIN",
+     "on": "samples"
+    }
+   ]
+  },
+  {
+   "at": "line:4",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "dolly",
+    "target": "doc.face",
+    "dist": 2.0,
+    "h": 0.05,
+    "az": 10,
+    "sweep": 0.7
+   },
+   "actors": [
+    {
+     "id": "doc",
+     "pose": "cross",
+     "face": "stern",
+     "at": "defendant"
+    }
+   ]
+  },
+  {
+   "at": "4:It",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.78,
+    "az": 8
+   },
+   "props": [
+    {
+     "id": "patent",
+     "kit": "paper",
+     "text": "U.S. PATENT",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.96,
+     "yaw": -8,
+     "motion": "flyIn",
+     "hit": "patented"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "eighty-four.",
+     "label": "MARCH 20, 1984",
+     "text": "PATENT ISSUED",
+     "on": "patent"
+    }
+   ]
+  },
+  {
+   "at": "line:5",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75
+   },
+   "props": [
+    {
+     "id": "w1",
+     "kit": "money",
+     "at": "desk:-0.33,0,0.25",
+     "yaw": 20,
+     "motion": "dropIn",
+     "hit": "forecast"
+    },
+    {
+     "id": "w2",
+     "kit": "money",
+     "at": "desk:0.3,0,0.28",
+     "yaw": -35,
+     "motion": "dropIn",
+     "hit": "three"
+    },
+    {
+     "id": "w3",
+     "kit": "money",
+     "at": "desk:0.0,0,-0.15",
+     "yaw": 70,
+     "motion": "dropIn",
+     "hit": "billion"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "three",
+     "title": "FORECAST IN THE COMPLAINT",
+     "value": "$3 BILLION",
+     "pos": "center"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "line:6",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "rules",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "6:not"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "6:not"
+    },
+    {
+     "do": "verdict",
+     "at": "6:not",
+     "text": "NOT HIS",
+     "sub": "JULY 9, 1990 \u00b7 NO CONVERSION"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "line:7",
+   "jury": false,
+   "cam": {
+    "preset": "medium",
+    "target": "judge.face",
+    "dist": 2.3,
+    "h": -0.15,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "talk",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "7:That",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "moore.face",
+    "dist": 1.8,
+    "az": -10,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "moore",
+     "pose": "idle",
+     "face": "sad",
+     "at": "plaintiff",
+     "then": [
+      {
+       "at": "survives.",
+       "face": "happy"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "8:And",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "moore.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "moore",
+     "pose": "present",
+     "face": "angry",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "began",
+       "face": "worried"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  }
+ ]
+}
