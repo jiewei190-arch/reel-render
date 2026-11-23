@@ -1,0 +1,426 @@
+{
+ "kit": "biz3d",
+ "slug": "crystal-pepsi",
+ "format": "short",
+ "hook": {
+  "text": "THE *$40M* CLEAR COLA",
+  "again": "7:Which"
+ },
+ "music": "upbeat",
+ "cast": {
+  "creator": {
+   "suit": "#13233F",
+   "tie": "#3B82F6",
+   "skin": "#E2B48E",
+   "hair": "#5B4636",
+   "hairStyle": "short"
+  },
+  "rival": {
+   "suit": "#2E3440",
+   "tie": "#EF3B36",
+   "skin": "#C98F68",
+   "hair": "#141414",
+   "hairStyle": "short"
+  },
+  "bm1": "grey",
+  "bm2": "olive"
+ },
+ "chart": {
+  "pts": [
+   0.4,
+   2.0,
+   5.0,
+   8.0,
+   9.0,
+   6.2,
+   3.2,
+   1.4,
+   0.6
+  ],
+  "tags": [
+   {
+    "i": 0,
+    "text": "1992"
+   },
+   {
+    "i": 8,
+    "text": "1994"
+   }
+  ]
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "boardroom",
+   "note": "frame 0: hero prop, a generic pale can labelled CLEAR; its creator behind it",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "can",
+    "dist": 1.45,
+    "h": 0.12,
+    "face": 0.56
+   },
+   "props": [
+    {
+     "id": "can",
+     "kit": "can",
+     "label": "CLEAR",
+     "color": "#DCE6EE",
+     "at": "tableTop:0,0,-2.35",
+     "scale": 0.8,
+     "spin": 8
+    }
+   ],
+   "actors": [
+    {
+     "id": "creator",
+     "pose": "fold",
+     "at": "head",
+     "seated": true,
+     "then": [
+      {
+       "at": 0.5,
+       "pose": "celebrate"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": 1.0,
+   "set": "boardroom",
+   "note": "the marketing money lands",
+   "cam": {
+    "preset": "pushIn",
+    "target": "cash",
+    "dist": 2.6,
+    "h": 0.9,
+    "az": 25,
+    "face": 0.55
+   },
+   "props": [
+    {
+     "id": "cash",
+     "kit": "cash",
+     "at": "tableTop:0,0,1.2",
+     "motion": "dropIn",
+     "hit": 1.25
+    }
+   ],
+   "devices": [
+    {
+     "do": "counter",
+     "title": "marketing, reported",
+     "from": 0,
+     "to": 40000000,
+     "at": 1.05,
+     "dur": 0.6,
+     "land": "1:forty-million-dollar"
+    }
+   ]
+  },
+  {
+   "at": "1:gone",
+   "set": "city",
+   "note": "gone from the shelves in about a year",
+   "cam": {
+    "preset": "pushIn",
+    "target": "stores:0,0.9,0",
+    "dist": 10,
+    "h": 2.2,
+    "az": 8
+   },
+   "devices": [
+    {
+     "do": "stamp",
+     "text": "GONE",
+     "tone": "red",
+     "at": "1:gone",
+     "until": "2:That"
+    }
+   ]
+  },
+  {
+   "at": "2:That",
+   "set": "warehouse",
+   "note": "cases rolling out for the launch",
+   "cam": {
+    "preset": "dolly",
+    "target": "conveyor",
+    "dist": 5.2,
+    "h": 1.0,
+    "az": 8,
+    "sweep": 1.6
+   },
+   "devices": [
+    {
+     "do": "board",
+     "title": "Crystal Pepsi",
+     "value": "CLEAR COLA",
+     "at": "2:Crystal",
+     "pos": "top",
+     "tone": "green",
+     "size": "giant"
+    }
+   ]
+  },
+  {
+   "at": "2:which",
+   "set": "chart",
+   "note": "SIGNATURE: the launch hype (illustrative)",
+   "cam": {
+    "preset": "chartFly",
+    "from": 0,
+    "to": 4.0,
+    "dist": 7.5,
+    "h": 2.4,
+    "az": 40
+   },
+   "devices": [
+    {
+     "do": "board",
+     "title": "Super Bowl ad",
+     "value": "1993",
+     "at": "2:Super",
+     "pos": "left",
+     "tone": "green"
+    }
+   ]
+  },
+  {
+   "at": "3:Then",
+   "set": "boardroom",
+   "note": "a second clear cola lands next to it",
+   "cam": {
+    "preset": "pushIn",
+    "target": "tableTop:0,0.35,0.6",
+    "dist": 2.3,
+    "h": 0.5,
+    "az": -20,
+    "face": 0.5
+   },
+   "props": [
+    {
+     "id": "can",
+     "kit": "can",
+     "label": "CLEAR",
+     "color": "#DCE6EE",
+     "at": "tableTop:-0.32,0,0.6",
+     "scale": 0.7
+    },
+    {
+     "id": "can2",
+     "kit": "can",
+     "label": "CLEAR TOO",
+     "color": "#9FB2C4",
+     "at": "tableTop:0.32,0,0.6",
+     "scale": 0.7,
+     "motion": "dropIn",
+     "hit": "3:launched"
+    }
+   ],
+   "actions": [
+    {
+     "do": "label",
+     "on": "can2",
+     "text": "the rival",
+     "at": "3:Tab",
+     "until": "4:The",
+     "tone": "red"
+    }
+   ]
+  },
+  {
+   "at": "4:The",
+   "set": "boardroom",
+   "note": "the rival marketer's later account",
+   "cam": {
+    "preset": "orbit",
+    "target": "rival",
+    "dist": 3.7,
+    "h": 0.5,
+    "az": 200,
+    "sweep": 30,
+    "face": 0.56
+   },
+   "actors": [
+    {
+     "id": "rival",
+     "pose": "talk",
+     "at": "foot",
+     "then": [
+      {
+       "at": "4:suicidal",
+       "pose": "shrug"
+      }
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "do": "label",
+     "on": "rival.head",
+     "text": "the Coke marketer",
+     "at": "4:marketer",
+     "until": "4:suicidal",
+     "tone": "red"
+    }
+   ]
+  },
+  {
+   "at": "4:meant",
+   "set": "chart",
+   "note": "down together: the dive",
+   "cam": {
+    "preset": "chartFly",
+    "from": 4.0,
+    "to": 8,
+    "dist": 7.5,
+    "h": 2.4,
+    "az": 40
+   }
+  },
+  {
+   "at": "5:Both",
+   "set": "city",
+   "note": "both drinks leave the shelves",
+   "cam": {
+    "preset": "pushIn",
+    "target": "stores:0,0.9,0",
+    "dist": 10,
+    "h": 2.2,
+    "az": -8
+   },
+   "actions": [
+    {
+     "do": "dark",
+     "on": "stores",
+     "at": "5:Both+0.1",
+     "stagger": 0.08,
+     "order": "left"
+    }
+   ],
+   "devices": [
+    {
+     "do": "stamp",
+     "text": "DISCONTINUED",
+     "tone": "red",
+     "at": "5:disappeared.",
+     "until": "6:Crystal"
+    }
+   ]
+  },
+  {
+   "at": "6:Crystal",
+   "set": "boardroom",
+   "note": "the creator: best idea, worst executed",
+   "cam": {
+    "preset": "medium",
+    "target": "creator",
+    "dist": 3.8,
+    "h": 0.3,
+    "az": 192,
+    "face": 0.62
+   },
+   "actors": [
+    {
+     "id": "creator",
+     "pose": "talk",
+     "at": "foot",
+     "then": [
+      {
+       "at": "6:best",
+       "pose": "celebrate"
+      },
+      {
+       "at": "6:worst",
+       "pose": "despair"
+      }
+     ]
+    }
+   ],
+   "devices": [
+    {
+     "do": "board",
+     "title": "the idea",
+     "value": "BEST",
+     "at": "6:best",
+     "until": "6:worst",
+     "pos": "top",
+     "tone": "green"
+    },
+    {
+     "do": "board",
+     "title": "the execution",
+     "value": "WORST",
+     "at": "6:worst",
+     "pos": "top",
+     "tone": "red"
+    }
+   ]
+  },
+  {
+   "at": "7:His",
+   "set": "boardroom",
+   "note": "the lesson: listen to the room",
+   "cam": {
+    "preset": "orbit",
+    "target": "creator",
+    "dist": 3.7,
+    "h": 0.5,
+    "az": 205,
+    "sweep": 30,
+    "face": 0.56
+   },
+   "actors": [
+    {
+     "id": "creator",
+     "pose": "idle",
+     "at": "foot:-0.45,0,0"
+    },
+    {
+     "id": "bm1",
+     "pose": "talk",
+     "at": "foot:0.2,0,0.05",
+     "then": [
+      {
+       "at": "7:before",
+       "pose": "point"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "7:Which",
+   "set": "boardroom",
+   "note": "loop: back to the can",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "can",
+    "dist": 1.5,
+    "h": 0.12,
+    "face": 0.56
+   },
+   "props": [
+    {
+     "id": "can",
+     "kit": "can",
+     "label": "CLEAR",
+     "color": "#DCE6EE",
+     "at": "tableTop:0,0,-2.35",
+     "scale": 0.8,
+     "spin": 8
+    }
+   ],
+   "actors": [
+    {
+     "id": "creator",
+     "pose": "despair",
+     "at": "head",
+     "seated": true
+    }
+   ]
+  }
+ ]
+}

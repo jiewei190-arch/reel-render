@@ -5,8 +5,12 @@ import * as B0 from "./gen/biz_demo_blockbuster_passed.biz.gen";
 import * as B1 from "./gen/biz_demo_landscape.biz.gen";
 import * as B2 from "./gen/biz_demo_landscape_short_1.biz.gen";
 import * as B3 from "./gen/blockbuster_netflix_offer.biz.gen";
-import * as B4 from "./gen/friendster_google_offer.biz.gen";
-import * as B5 from "./gen/google_glass.biz.gen";
+import * as B4 from "./gen/crystal_pepsi.biz.gen";
+import * as B5 from "./gen/friendster_google_offer.biz.gen";
+import * as B6 from "./gen/google_glass.biz.gen";
+import * as B7 from "./gen/juicero.biz.gen";
+import * as B8 from "./gen/segway_replace_cars.biz.gen";
+import * as B9 from "./gen/webvan.biz.gen";
 
 export const BIZ_RECIPES: { id: string; recipe: BizRecipe; words: Word[]; vo?: number }[] = [
   { id: B0.ID, recipe: B0.RECIPE, words: B0.WORDS, vo: B0.VO_DURATION },
@@ -15,4 +19,8 @@ export const BIZ_RECIPES: { id: string; recipe: BizRecipe; words: Word[]; vo?: n
   { id: B3.ID, recipe: B3.RECIPE, words: B3.WORDS, vo: B3.VO_DURATION },
   { id: B4.ID, recipe: B4.RECIPE, words: B4.WORDS, vo: B4.VO_DURATION },
   { id: B5.ID, recipe: B5.RECIPE, words: B5.WORDS, vo: B5.VO_DURATION },
+  { id: B6.ID, recipe: B6.RECIPE, words: B6.WORDS, vo: B6.VO_DURATION },
+  { id: B7.ID, recipe: B7.RECIPE, words: B7.WORDS, vo: B7.VO_DURATION },
+  { id: B8.ID, recipe: B8.RECIPE, words: B8.WORDS, vo: B8.VO_DURATION },
+  { id: B9.ID, recipe: B9.RECIPE, words: B9.WORDS, vo: B9.VO_DURATION },
 ];
