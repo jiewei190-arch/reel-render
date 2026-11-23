@@ -117,7 +117,7 @@ Profiles live in `reelbot/channels.py`; each story channel's writing rules are i
 `prompts/story_script.md`. Learnings are kept per channel (`work/learnings_<channel>.md`). Videos land in
 `<videos dir>/<Channel folder>/<slug>/`.
 
-- `--long` makes a long-form video (about 10 minutes, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
+- `--long` makes a long-form video (about 7 minutes, inside the 5-8 minute range, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
   On law, biz and cyber it is written in the doc kit (see "Long-form (doc engine)").
   Needs the engine's landscape mode (`LONGFORM.md` in the render folder).
 - `bend "<a winning video or format>" --channel law` studies a format that works, adapts it into original story ideas

@@ -212,7 +212,7 @@ def main(argv: list[str] | None = None) -> None:
     def common(p):
         p.add_argument("--channel", choices=list(channels.CHANNELS), help="which channel (default REELBOT_CHANNEL or blockmoney)")
         p.add_argument("--voice", default="auto", choices=["auto", *CFG.voices])
-        p.add_argument("--long", action="store_true", help="long-form video: 16:9, chapters, ~10 min (sets --seconds 660: writers run ~14% short, so this lands at 9-10 min, past the 8-min mid-roll line)")
+        p.add_argument("--long", action="store_true", help="long-form video: 16:9, chapters, about 7 min (sets --seconds 480: writers run ~14% short, so this lands at 6.5-7 min, inside the 5-8 min range the owner wants while the channels are not monetized; pass --seconds 660 for 9-10 min, past the 8-min mid-roll line)")
         p.add_argument("--seconds", type=int, default=None, help="target length (default: the channel's short_seconds; law and biz 30, others 45)")
         p.add_argument("--style", choices=["S1", "S2", "S3", "S4", "S5", "S6"])
         p.add_argument("--notes", help="extra direction for the script writer")
@@ -237,7 +237,7 @@ def main(argv: list[str] | None = None) -> None:
     a = ap.parse_args(argv)
     channels.use(channels.get(getattr(a, "channel", None)))
     if hasattr(a, "seconds") and a.seconds is None:
-        a.seconds = 660 if getattr(a, "long", False) else channels.active().short_seconds
+        a.seconds = 480 if getattr(a, "long", False) else channels.active().short_seconds
 
     try:
         if a.cmd == "make":
