@@ -1,0 +1,477 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 33.96
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "The Segway cost a hundred million dollars to develop. It was supposed to replace cars.",
+   "words": [
+    {
+     "w": "The",
+     "t": 0.1,
+     "end": 0.18
+    },
+    {
+     "w": "Segway",
+     "t": 0.26,
+     "end": 0.66
+    },
+    {
+     "w": "cost",
+     "t": 0.82,
+     "end": 0.98
+    },
+    {
+     "w": "a",
+     "t": 1.06,
+     "end": 1.22
+    },
+    {
+     "w": "hundred",
+     "t": 1.3,
+     "end": 1.62
+    },
+    {
+     "w": "million",
+     "t": 1.86,
+     "end": 2.18
+    },
+    {
+     "w": "dollars",
+     "t": 2.26,
+     "end": 2.66
+    },
+    {
+     "w": "to",
+     "t": 2.74,
+     "end": 2.82
+    },
+    {
+     "w": "develop.",
+     "t": 2.9,
+     "end": 3.62
+    },
+    {
+     "w": "It",
+     "t": 3.86,
+     "end": 3.94
+    },
+    {
+     "w": "was",
+     "t": 4.02,
+     "end": 4.1
+    },
+    {
+     "w": "supposed",
+     "t": 4.18,
+     "end": 4.5
+    },
+    {
+     "w": "to",
+     "t": 4.54,
+     "end": 4.58
+    },
+    {
+     "w": "replace",
+     "t": 4.82,
+     "end": 5.06
+    },
+    {
+     "w": "cars.",
+     "t": 5.14,
+     "end": 5.94
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "It arrived in two thousand one. Its inventor said it would do to the car what the car did to the horse and buggy.",
+   "words": [
+    {
+     "w": "It",
+     "t": 6.01,
+     "end": 6.17
+    },
+    {
+     "w": "arrived",
+     "t": 6.29,
+     "end": 6.57
+    },
+    {
+     "w": "in",
+     "t": 6.65,
+     "end": 6.81
+    },
+    {
+     "w": "two",
+     "t": 6.89,
+     "end": 6.97
+    },
+    {
+     "w": "thousand",
+     "t": 7.05,
+     "end": 7.37
+    },
+    {
+     "w": "one.",
+     "t": 7.53,
+     "end": 8.33
+    },
+    {
+     "w": "Its",
+     "t": 8.41,
+     "end": 8.49
+    },
+    {
+     "w": "inventor",
+     "t": 8.57,
+     "end": 9.05
+    },
+    {
+     "w": "said",
+     "t": 9.21,
+     "end": 9.37
+    },
+    {
+     "w": "it",
+     "t": 9.53,
+     "end": 9.61
+    },
+    {
+     "w": "would",
+     "t": 9.69,
+     "end": 9.85
+    },
+    {
+     "w": "do",
+     "t": 9.93,
+     "end": 10.09
+    },
+    {
+     "w": "to",
+     "t": 10.13,
+     "end": 10.17
+    },
+    {
+     "w": "the",
+     "t": 10.25,
+     "end": 10.33
+    },
+    {
+     "w": "car",
+     "t": 10.41,
+     "end": 10.89
+    },
+    {
+     "w": "what",
+     "t": 10.97,
+     "end": 11.05
+    },
+    {
+     "w": "the",
+     "t": 11.13,
+     "end": 11.29
+    },
+    {
+     "w": "car",
+     "t": 11.45,
+     "end": 11.61
+    },
+    {
+     "w": "did",
+     "t": 11.77,
+     "end": 11.93
+    },
+    {
+     "w": "to",
+     "t": 11.97,
+     "end": 12.01
+    },
+    {
+     "w": "the",
+     "t": 12.09,
+     "end": 12.17
+    },
+    {
+     "w": "horse",
+     "t": 12.33,
+     "end": 12.49
+    },
+    {
+     "w": "and",
+     "t": 12.53,
+     "end": 12.57
+    },
+    {
+     "w": "buggy.",
+     "t": 12.73,
+     "end": 13.29
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "One investor predicted the fastest climb to a billion dollars in sales, ever.",
+   "words": [
+    {
+     "w": "One",
+     "t": 13.36,
+     "end": 13.6
+    },
+    {
+     "w": "investor",
+     "t": 13.8,
+     "end": 14.08
+    },
+    {
+     "w": "predicted",
+     "t": 14.16,
+     "end": 14.64
+    },
+    {
+     "w": "the",
+     "t": 14.72,
+     "end": 14.8
+    },
+    {
+     "w": "fastest",
+     "t": 14.88,
+     "end": 15.36
+    },
+    {
+     "w": "climb",
+     "t": 15.44,
+     "end": 15.84
+    },
+    {
+     "w": "to",
+     "t": 15.88,
+     "end": 15.92
+    },
+    {
+     "w": "a",
+     "t": 16.0,
+     "end": 16.16
+    },
+    {
+     "w": "billion",
+     "t": 16.24,
+     "end": 16.56
+    },
+    {
+     "w": "dollars",
+     "t": 16.64,
+     "end": 17.04
+    },
+    {
+     "w": "in",
+     "t": 17.08,
+     "end": 17.12
+    },
+    {
+     "w": "sales,",
+     "t": 17.28,
+     "end": 18.08
+    },
+    {
+     "w": "ever.",
+     "t": 18.28,
+     "end": 18.8
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The factory was built for forty thousand a month.",
+   "words": [
+    {
+     "w": "The",
+     "t": 18.87,
+     "end": 19.03
+    },
+    {
+     "w": "factory",
+     "t": 19.11,
+     "end": 19.51
+    },
+    {
+     "w": "was",
+     "t": 19.63,
+     "end": 19.75
+    },
+    {
+     "w": "built",
+     "t": 19.87,
+     "end": 19.99
+    },
+    {
+     "w": "for",
+     "t": 20.07,
+     "end": 20.31
+    },
+    {
+     "w": "forty",
+     "t": 20.43,
+     "end": 20.67
+    },
+    {
+     "w": "thousand",
+     "t": 20.79,
+     "end": 21.11
+    },
+    {
+     "w": "a",
+     "t": 21.19,
+     "end": 21.27
+    },
+    {
+     "w": "month.",
+     "t": 21.35,
+     "end": 21.99
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "In nearly twenty years, about a hundred forty thousand were sold.",
+   "words": [
+    {
+     "w": "In",
+     "t": 22.14,
+     "end": 22.3
+    },
+    {
+     "w": "nearly",
+     "t": 22.34,
+     "end": 22.7
+    },
+    {
+     "w": "twenty",
+     "t": 22.9,
+     "end": 23.1
+    },
+    {
+     "w": "years,",
+     "t": 23.26,
+     "end": 23.98
+    },
+    {
+     "w": "about",
+     "t": 24.1,
+     "end": 24.22
+    },
+    {
+     "w": "a",
+     "t": 24.3,
+     "end": 24.38
+    },
+    {
+     "w": "hundred",
+     "t": 24.46,
+     "end": 24.78
+    },
+    {
+     "w": "forty",
+     "t": 24.94,
+     "end": 25.34
+    },
+    {
+     "w": "thousand",
+     "t": 25.5,
+     "end": 25.9
+    },
+    {
+     "w": "were",
+     "t": 25.98,
+     "end": 26.14
+    },
+    {
+     "w": "sold.",
+     "t": 26.22,
+     "end": 26.94
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Production ended in twenty twenty.",
+   "words": [
+    {
+     "w": "Production",
+     "t": 27.09,
+     "end": 27.65
+    },
+    {
+     "w": "ended",
+     "t": 27.73,
+     "end": 28.13
+    },
+    {
+     "w": "in",
+     "t": 28.21,
+     "end": 28.37
+    },
+    {
+     "w": "twenty",
+     "t": 28.45,
+     "end": 28.69
+    },
+    {
+     "w": "twenty.",
+     "t": 28.77,
+     "end": 29.49
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The lesson: hype is not demand. And yes,",
+   "words": [
+    {
+     "w": "The",
+     "t": 29.72,
+     "end": 29.76
+    },
+    {
+     "w": "lesson:",
+     "t": 29.8,
+     "end": 30.56
+    },
+    {
+     "w": "hype",
+     "t": 30.84,
+     "end": 31.16
+    },
+    {
+     "w": "is",
+     "t": 31.4,
+     "end": 31.56
+    },
+    {
+     "w": "not",
+     "t": 31.64,
+     "end": 31.96
+    },
+    {
+     "w": "demand.",
+     "t": 32.12,
+     "end": 32.84
+    },
+    {
+     "w": "And",
+     "t": 33.08,
+     "end": 33.24
+    },
+    {
+     "w": "yes,",
+     "t": 33.32,
+     "end": 33.96
+    }
+   ]
+  }
+ ]
+}

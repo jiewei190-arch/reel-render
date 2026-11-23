@@ -1,0 +1,482 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.4
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Pepsi's forty-million-dollar clear cola was gone in about a year.",
+   "words": [
+    {
+     "w": "Pepsi's",
+     "t": 0.1,
+     "end": 0.66
+    },
+    {
+     "w": "forty-million-dollar",
+     "t": 0.78,
+     "end": 1.62
+    },
+    {
+     "w": "clear",
+     "t": 1.78,
+     "end": 2.02
+    },
+    {
+     "w": "cola",
+     "t": 2.18,
+     "end": 2.58
+    },
+    {
+     "w": "was",
+     "t": 2.74,
+     "end": 2.98
+    },
+    {
+     "w": "gone",
+     "t": 3.06,
+     "end": 3.38
+    },
+    {
+     "w": "in",
+     "t": 3.46,
+     "end": 3.54
+    },
+    {
+     "w": "about",
+     "t": 3.62,
+     "end": 3.78
+    },
+    {
+     "w": "a",
+     "t": 3.86,
+     "end": 3.94
+    },
+    {
+     "w": "year.",
+     "t": 4.02,
+     "end": 4.66
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "That was the reported marketing budget for Crystal Pepsi, which hit the Super Bowl in nineteen ninety-three.",
+   "words": [
+    {
+     "w": "That",
+     "t": 4.73,
+     "end": 4.97
+    },
+    {
+     "w": "was",
+     "t": 5.05,
+     "end": 5.13
+    },
+    {
+     "w": "the",
+     "t": 5.17,
+     "end": 5.21
+    },
+    {
+     "w": "reported",
+     "t": 5.49,
+     "end": 5.77
+    },
+    {
+     "w": "marketing",
+     "t": 5.85,
+     "end": 6.25
+    },
+    {
+     "w": "budget",
+     "t": 6.33,
+     "end": 6.57
+    },
+    {
+     "w": "for",
+     "t": 6.65,
+     "end": 6.81
+    },
+    {
+     "w": "Crystal",
+     "t": 6.89,
+     "end": 7.21
+    },
+    {
+     "w": "Pepsi,",
+     "t": 7.29,
+     "end": 8.01
+    },
+    {
+     "w": "which",
+     "t": 8.09,
+     "end": 8.17
+    },
+    {
+     "w": "hit",
+     "t": 8.25,
+     "end": 8.33
+    },
+    {
+     "w": "the",
+     "t": 8.41,
+     "end": 8.49
+    },
+    {
+     "w": "Super",
+     "t": 8.61,
+     "end": 8.73
+    },
+    {
+     "w": "Bowl",
+     "t": 8.81,
+     "end": 9.05
+    },
+    {
+     "w": "in",
+     "t": 9.13,
+     "end": 9.29
+    },
+    {
+     "w": "nineteen",
+     "t": 9.37,
+     "end": 9.69
+    },
+    {
+     "w": "ninety-three.",
+     "t": 9.77,
+     "end": 10.73
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Then Coca-Cola launched a clear cola of its own: Tab Clear.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 10.8,
+     "end": 11.04
+    },
+    {
+     "w": "Coca-Cola",
+     "t": 11.2,
+     "end": 11.84
+    },
+    {
+     "w": "launched",
+     "t": 11.88,
+     "end": 12.16
+    },
+    {
+     "w": "a",
+     "t": 12.24,
+     "end": 12.32
+    },
+    {
+     "w": "clear",
+     "t": 12.4,
+     "end": 12.64
+    },
+    {
+     "w": "cola",
+     "t": 12.72,
+     "end": 13.04
+    },
+    {
+     "w": "of",
+     "t": 13.12,
+     "end": 13.2
+    },
+    {
+     "w": "its",
+     "t": 13.28,
+     "end": 13.36
+    },
+    {
+     "w": "own:",
+     "t": 13.44,
+     "end": 14.16
+    },
+    {
+     "w": "Tab",
+     "t": 14.24,
+     "end": 14.56
+    },
+    {
+     "w": "Clear.",
+     "t": 14.64,
+     "end": 15.28
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The Coke marketer behind it later called it a suicidal mission, meant to take Crystal Pepsi down with it.",
+   "words": [
+    {
+     "w": "The",
+     "t": 15.487,
+     "end": 15.51
+    },
+    {
+     "w": "Coke",
+     "t": 15.59,
+     "end": 15.83
+    },
+    {
+     "w": "marketer",
+     "t": 15.91,
+     "end": 16.23
+    },
+    {
+     "w": "behind",
+     "t": 16.35,
+     "end": 16.63
+    },
+    {
+     "w": "it",
+     "t": 16.71,
+     "end": 16.87
+    },
+    {
+     "w": "later",
+     "t": 17.03,
+     "end": 17.19
+    },
+    {
+     "w": "called",
+     "t": 17.31,
+     "end": 17.43
+    },
+    {
+     "w": "it",
+     "t": 17.51,
+     "end": 17.59
+    },
+    {
+     "w": "a",
+     "t": 17.67,
+     "end": 17.83
+    },
+    {
+     "w": "suicidal",
+     "t": 17.91,
+     "end": 18.55
+    },
+    {
+     "w": "mission,",
+     "t": 18.63,
+     "end": 19.43
+    },
+    {
+     "w": "meant",
+     "t": 19.51,
+     "end": 19.67
+    },
+    {
+     "w": "to",
+     "t": 19.75,
+     "end": 19.83
+    },
+    {
+     "w": "take",
+     "t": 19.91,
+     "end": 20.07
+    },
+    {
+     "w": "Crystal",
+     "t": 20.15,
+     "end": 20.47
+    },
+    {
+     "w": "Pepsi",
+     "t": 20.55,
+     "end": 21.03
+    },
+    {
+     "w": "down",
+     "t": 21.19,
+     "end": 21.35
+    },
+    {
+     "w": "with",
+     "t": 21.43,
+     "end": 21.59
+    },
+    {
+     "w": "it.",
+     "t": 21.71,
+     "end": 22.07
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Both drinks disappeared.",
+   "words": [
+    {
+     "w": "Both",
+     "t": 22.14,
+     "end": 22.46
+    },
+    {
+     "w": "drinks",
+     "t": 22.54,
+     "end": 22.94
+    },
+    {
+     "w": "disappeared.",
+     "t": 23.02,
+     "end": 24.06
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Crystal Pepsi's creator called it the best idea he ever had, and the worst executed.",
+   "words": [
+    {
+     "w": "Crystal",
+     "t": 24.21,
+     "end": 24.53
+    },
+    {
+     "w": "Pepsi's",
+     "t": 24.61,
+     "end": 25.01
+    },
+    {
+     "w": "creator",
+     "t": 25.09,
+     "end": 25.49
+    },
+    {
+     "w": "called",
+     "t": 25.57,
+     "end": 25.73
+    },
+    {
+     "w": "it",
+     "t": 25.81,
+     "end": 25.89
+    },
+    {
+     "w": "the",
+     "t": 26.01,
+     "end": 26.13
+    },
+    {
+     "w": "best",
+     "t": 26.29,
+     "end": 26.45
+    },
+    {
+     "w": "idea",
+     "t": 26.53,
+     "end": 26.85
+    },
+    {
+     "w": "he",
+     "t": 26.93,
+     "end": 27.17
+    },
+    {
+     "w": "ever",
+     "t": 27.25,
+     "end": 27.49
+    },
+    {
+     "w": "had,",
+     "t": 27.65,
+     "end": 28.13
+    },
+    {
+     "w": "and",
+     "t": 28.37,
+     "end": 28.77
+    },
+    {
+     "w": "the",
+     "t": 28.85,
+     "end": 29.01
+    },
+    {
+     "w": "worst",
+     "t": 29.09,
+     "end": 29.41
+    },
+    {
+     "w": "executed.",
+     "t": 29.49,
+     "end": 30.45
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "His lesson: listen to people before you launch. Which is how",
+   "words": [
+    {
+     "w": "His",
+     "t": 30.52,
+     "end": 30.76
+    },
+    {
+     "w": "lesson:",
+     "t": 31.0,
+     "end": 31.72
+    },
+    {
+     "w": "listen",
+     "t": 31.88,
+     "end": 32.2
+    },
+    {
+     "w": "to",
+     "t": 32.28,
+     "end": 32.36
+    },
+    {
+     "w": "people",
+     "t": 32.56,
+     "end": 32.76
+    },
+    {
+     "w": "before",
+     "t": 33.0,
+     "end": 33.24
+    },
+    {
+     "w": "you",
+     "t": 33.32,
+     "end": 33.4
+    },
+    {
+     "w": "launch.",
+     "t": 33.48,
+     "end": 34.44
+    },
+    {
+     "w": "Which",
+     "t": 34.52,
+     "end": 34.6
+    },
+    {
+     "w": "is",
+     "t": 34.68,
+     "end": 34.76
+    },
+    {
+     "w": "how",
+     "t": 34.96,
+     "end": 35.48
+    }
+   ]
+  }
+ ]
+}

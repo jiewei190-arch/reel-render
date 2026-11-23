@@ -1,0 +1,25 @@
+# blockbuster-netflix-offer: fact check
+
+Checked 2026-11-23 with live web reads. A new script and new shots (the kit's demo Short on the same story is only a
+format reference). Company names are spoken and shown as plain text only; no logos, store signage, colours or mascots
+of either company. Executives are generic and faceless, not likenesses; nobody is named in the voice.
+
+| Claim in script.txt | Check | Hedge / note |
+|---|---|---|
+| "Netflix once offered itself to Blockbuster for fifty million dollars." | Reed Hastings, *No Rules Rules* (2020): "When he heard our response—$50 million—he flatly declined." ([Marketplace excerpt](https://www.marketplace.org/story/2020/09/08/ceo-reed-hastings-on-how-netflix-beat-blockbuster)). Marc Randolph tells the same meeting in *That Will Never Work* (2019) ([Built In excerpt](https://builtin.com/articles/netflix-blockbuster-buyout)). [Newsweek fact check](https://www.newsweek.com/fact-check-did-blockbuster-turn-downchance-buy-netflix-50-million-1575557): rated True. | $50M is the founders' asking price, not an agreed price. Blockbuster's then-CEO John Antioco disputes the framing: "there were never any serious acquisition talks with Netflix in 2000" and says he only stopped by to greet the guests (Newsweek). The script says "offered" and attributes the laugh to "one founder". |
+| "It was two thousand." | Both founders place the meeting in 2000 (Randolph: "that morning in September of 2000"; Hastings: "early in 2000"). | Month differs between the two books, so only the year is spoken. Board: "THE YEAR 2000". |
+| "Netflix mailed DVDs, and it was losing millions." | Hastings: "That year alone, our losses would total $57 million."; "a mere three hundred thousand subscribers" (Marketplace, above). | Stamp: "LOSING MONEY". Company card "NETFLIX · FOUNDED 1997" (generic mail pictogram). |
+| "Its founders flew to Dallas to pitch the deal." | Hastings: "on the twenty-seventh floor of the Renaissance Tower in Dallas, Texas"; Randolph: they "chartered a private plane for 5am the next morning" ([Guardian excerpt via Yahoo](https://www.yahoo.com/news/blockbuster-ceo-struggled-not-laugh-191553438.html)). | The floor differs between accounts and is not mentioned. Label: "DALLAS HQ" on a generic tower. |
+| "One founder says Blockbuster's boss struggled not to laugh." | Randolph: "John Antioco was struggling not to laugh." (Guardian excerpt, above). | Attributed in the voice. Antioco disputes being part of the meeting (see row 1). |
+| "The answer was no." | Hastings: "he flatly declined" (above). | Freeze-frame "THE DECISION · BUY NETFLIX FOR $50M?" and a "NO" stamp. |
+| "That year, Blockbuster collected nearly eight hundred million dollars in late fees." | AP: "In 2000 Blockbuster collected nearly $800 million in late fees, accounting for 16 percent of its revenue." ([NBC News / AP, 2010](https://www.nbcnews.com/id/wbna39332696)) | Counter: "LATE FEES, 2000 → $800M" ("nearly" in the voice). Card "BLOCKBUSTER · FOUNDED 1985" (generic film pictogram). |
+| "Ten years later, it filed for bankruptcy." | Chapter 11 filed 23 Sep 2010, U.S. Bankruptcy Court, S.D.N.Y. ([Bloomberg Law](https://news.bloomberglaw.com/bankruptcy-law/blockbuster-inc-affiliates-file-chapter-11-with-pre-arranged-recapitalization-plan)); "listing assets of $1.02 billion and debt of $1.46 billion" ([TechCrunch](https://techcrunch.com/2010/09/23/blockbuster-goes-bust/amp/)). | No debt figure is used. The tower cracking is a stylised image of the filing. |
+| "The whole company sold at auction for about three hundred twenty million." | Dish Network press release, 6 Apr 2011: "DISH Network's winning bid was valued at approximately $320 million"; it "expects to pay approximately $228 million in cash" ([SEC exhibit 99.1](https://www.sec.gov/Archives/edgar/data/0001001082/000100108211000002/exhibit99_1.htm)). | $320M is the bid's stated value; the cash paid was lower (about $228M). "about" in the voice; counter "SOLD AT AUCTION → $320M". "The whole company" = substantially all of Blockbuster's assets, bought in the bankruptcy auction. |
+| "Netflix today is worth about two hundred forty billion." | Market cap $238.74 billion as of 23 Nov 2026 ([StockAnalysis](https://stockanalysis.com/stocks/nflx/market-cap/)); $238.65B ([CompaniesMarketCap](https://companiesmarketcap.com/netflix/marketcap/)). | Moves daily and swung widely in 2026 (about $366B in May). **Re-check before upload** and re-voice if it has moved far from $240B. Card: "$50M vs $240B". Not a view on the stock. |
+| "The lesson: big profits make small ideas look like jokes." | Opinion / the lesson. | No advice about any stock or company. |
+
+**Not used because sources disagree or it could not be confirmed:** the meeting month and floor; a peak market value
+for Blockbuster; the story of whose plane it was.
+
+**The chart** in the flythrough is illustrative, not plotted from data: it rises (green) to about 2000-2004 and falls
+(red) to the 2010 filing. Its tags (2000, 2010) match the dates above.

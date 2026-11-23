@@ -1,0 +1,503 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Before Facebook, a social network turned down thirty million dollars from Google.",
+   "words": [
+    {
+     "w": "Before",
+     "t": 0.092,
+     "end": 0.462
+    },
+    {
+     "w": "Facebook,",
+     "t": 0.536,
+     "end": 1.35
+    },
+    {
+     "w": "a",
+     "t": 1.424,
+     "end": 1.498
+    },
+    {
+     "w": "social",
+     "t": 1.572,
+     "end": 1.867
+    },
+    {
+     "w": "network",
+     "t": 1.941,
+     "end": 2.311
+    },
+    {
+     "w": "turned",
+     "t": 2.385,
+     "end": 2.607
+    },
+    {
+     "w": "down",
+     "t": 2.755,
+     "end": 2.903
+    },
+    {
+     "w": "thirty",
+     "t": 3.051,
+     "end": 3.273
+    },
+    {
+     "w": "million",
+     "t": 3.494,
+     "end": 3.79
+    },
+    {
+     "w": "dollars",
+     "t": 3.864,
+     "end": 4.308
+    },
+    {
+     "w": "from",
+     "t": 4.382,
+     "end": 4.456
+    },
+    {
+     "w": "Google.",
+     "t": 4.53,
+     "end": 5.195
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "It was Friendster. In two thousand three, three million people joined in months.",
+   "words": [
+    {
+     "w": "It",
+     "t": 5.26,
+     "end": 5.408
+    },
+    {
+     "w": "was",
+     "t": 5.482,
+     "end": 5.556
+    },
+    {
+     "w": "Friendster.",
+     "t": 5.63,
+     "end": 6.295
+    },
+    {
+     "w": "In",
+     "t": 6.739,
+     "end": 6.813
+    },
+    {
+     "w": "two",
+     "t": 6.887,
+     "end": 6.961
+    },
+    {
+     "w": "thousand",
+     "t": 7.035,
+     "end": 7.257
+    },
+    {
+     "w": "three,",
+     "t": 7.405,
+     "end": 8.07
+    },
+    {
+     "w": "three",
+     "t": 8.181,
+     "end": 8.292
+    },
+    {
+     "w": "million",
+     "t": 8.514,
+     "end": 8.81
+    },
+    {
+     "w": "people",
+     "t": 8.958,
+     "end": 9.254
+    },
+    {
+     "w": "joined",
+     "t": 9.328,
+     "end": 9.623
+    },
+    {
+     "w": "in",
+     "t": 9.697,
+     "end": 9.845
+    },
+    {
+     "w": "months.",
+     "t": 9.919,
+     "end": 10.659
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Google offered to buy it. Investors urged the founder to take their thirteen million instead.",
+   "words": [
+    {
+     "w": "Google",
+     "t": 10.723,
+     "end": 11.093
+    },
+    {
+     "w": "offered",
+     "t": 11.241,
+     "end": 11.537
+    },
+    {
+     "w": "to",
+     "t": 11.574,
+     "end": 11.611
+    },
+    {
+     "w": "buy",
+     "t": 11.685,
+     "end": 11.833
+    },
+    {
+     "w": "it.",
+     "t": 11.907,
+     "end": 12.129
+    },
+    {
+     "w": "Investors",
+     "t": 12.572,
+     "end": 13.164
+    },
+    {
+     "w": "urged",
+     "t": 13.238,
+     "end": 13.46
+    },
+    {
+     "w": "the",
+     "t": 13.534,
+     "end": 13.608
+    },
+    {
+     "w": "founder",
+     "t": 13.682,
+     "end": 14.051
+    },
+    {
+     "w": "to",
+     "t": 14.125,
+     "end": 14.199
+    },
+    {
+     "w": "take",
+     "t": 14.31,
+     "end": 14.421
+    },
+    {
+     "w": "their",
+     "t": 14.532,
+     "end": 14.643
+    },
+    {
+     "w": "thirteen",
+     "t": 14.717,
+     "end": 15.013
+    },
+    {
+     "w": "million",
+     "t": 15.161,
+     "end": 15.457
+    },
+    {
+     "w": "instead.",
+     "t": 15.531,
+     "end": 16.27
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "He did. Then the site buckled. Pages took up to forty seconds to load.",
+   "words": [
+    {
+     "w": "He",
+     "t": 16.557,
+     "end": 16.705
+    },
+    {
+     "w": "did.",
+     "t": 16.778,
+     "end": 17.37
+    },
+    {
+     "w": "Then",
+     "t": 17.666,
+     "end": 17.814
+    },
+    {
+     "w": "the",
+     "t": 17.851,
+     "end": 17.888
+    },
+    {
+     "w": "site",
+     "t": 17.962,
+     "end": 18.258
+    },
+    {
+     "w": "buckled.",
+     "t": 18.332,
+     "end": 18.96
+    },
+    {
+     "w": "Pages",
+     "t": 19.219,
+     "end": 19.515
+    },
+    {
+     "w": "took",
+     "t": 19.589,
+     "end": 19.663
+    },
+    {
+     "w": "up",
+     "t": 19.737,
+     "end": 19.811
+    },
+    {
+     "w": "to",
+     "t": 19.922,
+     "end": 20.033
+    },
+    {
+     "w": "forty",
+     "t": 20.143,
+     "end": 20.365
+    },
+    {
+     "w": "seconds",
+     "t": 20.476,
+     "end": 20.846
+    },
+    {
+     "w": "to",
+     "t": 20.92,
+     "end": 20.994
+    },
+    {
+     "w": "load.",
+     "t": 21.068,
+     "end": 21.66
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Months later, the board replaced him as chief executive.",
+   "words": [
+    {
+     "w": "Months",
+     "t": 21.724,
+     "end": 22.02
+    },
+    {
+     "w": "later,",
+     "t": 22.094,
+     "end": 22.686
+    },
+    {
+     "w": "the",
+     "t": 22.76,
+     "end": 22.834
+    },
+    {
+     "w": "board",
+     "t": 22.944,
+     "end": 23.055
+    },
+    {
+     "w": "replaced",
+     "t": 23.129,
+     "end": 23.573
+    },
+    {
+     "w": "him",
+     "t": 23.647,
+     "end": 23.795
+    },
+    {
+     "w": "as",
+     "t": 23.869,
+     "end": 24.017
+    },
+    {
+     "w": "chief",
+     "t": 24.091,
+     "end": 24.313
+    },
+    {
+     "w": "executive.",
+     "t": 24.461,
+     "end": 25.2
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Paid in Google stock, one insider estimated, he would be worth a billion dollars.",
+   "words": [
+    {
+     "w": "Paid",
+     "t": 25.339,
+     "end": 25.561
+    },
+    {
+     "w": "in",
+     "t": 25.635,
+     "end": 25.709
+    },
+    {
+     "w": "Google",
+     "t": 25.856,
+     "end": 26.152
+    },
+    {
+     "w": "stock,",
+     "t": 26.226,
+     "end": 26.818
+    },
+    {
+     "w": "one",
+     "t": 26.892,
+     "end": 26.966
+    },
+    {
+     "w": "insider",
+     "t": 27.04,
+     "end": 27.41
+    },
+    {
+     "w": "estimated,",
+     "t": 27.483,
+     "end": 28.371
+    },
+    {
+     "w": "he",
+     "t": 28.445,
+     "end": 28.519
+    },
+    {
+     "w": "would",
+     "t": 28.593,
+     "end": 28.667
+    },
+    {
+     "w": "be",
+     "t": 28.741,
+     "end": 28.815
+    },
+    {
+     "w": "worth",
+     "t": 28.963,
+     "end": 29.11
+    },
+    {
+     "w": "a",
+     "t": 29.184,
+     "end": 29.406
+    },
+    {
+     "w": "billion",
+     "t": 29.48,
+     "end": 29.85
+    },
+    {
+     "w": "dollars.",
+     "t": 29.924,
+     "end": 30.737
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Friendster's site went dark in twenty fifteen.",
+   "words": [
+    {
+     "w": "Friendster's",
+     "t": 30.802,
+     "end": 31.394
+    },
+    {
+     "w": "site",
+     "t": 31.579,
+     "end": 31.764
+    },
+    {
+     "w": "went",
+     "t": 31.912,
+     "end": 32.059
+    },
+    {
+     "w": "dark",
+     "t": 32.244,
+     "end": 32.429
+    },
+    {
+     "w": "in",
+     "t": 32.577,
+     "end": 32.725
+    },
+    {
+     "w": "twenty",
+     "t": 32.873,
+     "end": 33.021
+    },
+    {
+     "w": "fifteen.",
+     "t": 33.058,
+     "end": 33.76
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "It's easy to forget that",
+   "words": [
+    {
+     "w": "It's",
+     "t": 33.825,
+     "end": 34.195
+    },
+    {
+     "w": "easy",
+     "t": 34.269,
+     "end": 34.491
+    },
+    {
+     "w": "to",
+     "t": 34.565,
+     "end": 34.639
+    },
+    {
+     "w": "forget",
+     "t": 34.823,
+     "end": 35.008
+    },
+    {
+     "w": "that",
+     "t": 35.193,
+     "end": 35.674
+    }
+   ]
+  }
+ ]
+}

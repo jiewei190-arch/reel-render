@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0326,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 510,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Webvan burned about eight hundred million dollars delivering groceries.",
+   "start": 0.097,
+   "end": 4.358
+  },
+  {
+   "line": 2,
+   "text": "It launched in nineteen ninety-nine with a simple promise: order online, get your food at the door.",
+   "start": 4.503,
+   "end": 10.779
+  },
+  {
+   "line": 3,
+   "text": "One month in, it signed a one-billion-dollar deal for up to twenty-six giant warehouses.",
+   "start": 10.924,
+   "end": 16.812
+  },
+  {
+   "line": 4,
+   "text": "On its first day of trading, it was valued at about eight billion dollars.",
+   "start": 16.957,
+   "end": 21.606
+  },
+  {
+   "line": 5,
+   "text": "Less than two years later, the stock closed at six cents.",
+   "start": 21.751,
+   "end": 25.857
+  },
+  {
+   "line": 6,
+   "text": "Two thousand workers lost their jobs, and Webvan filed for bankruptcy.",
+   "start": 26.003,
+   "end": 30.961
+  },
+  {
+   "line": 7,
+   "text": "The lesson: prove the model, then scale it. Because",
+   "start": 31.106,
+   "end": 35.6
+  }
+ ]
+}

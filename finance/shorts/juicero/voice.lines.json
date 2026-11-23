@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0191,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 499,
+ "lines": [
+  {
+   "line": 1,
+   "text": "This juicer raised about a hundred twenty million dollars. Your hands worked just as well.",
+   "start": 0.098,
+   "end": 5.593
+  },
+  {
+   "line": 2,
+   "text": "Juicero launched in twenty sixteen: a Wi-Fi juice press for six hundred ninety-nine dollars.",
+   "start": 5.74,
+   "end": 12.02
+  },
+  {
+   "line": 3,
+   "text": "It squeezed packs of produce with four tons of force, its founder said.",
+   "start": 12.168,
+   "end": 17.035
+  },
+  {
+   "line": 4,
+   "text": "Then, in twenty seventeen, Bloomberg reporters squeezed a pack by hand.",
+   "start": 17.182,
+   "end": 22.206
+  },
+  {
+   "line": 5,
+   "text": "Same amount of juice. Sometimes faster.",
+   "start": 22.353,
+   "end": 25.493
+  },
+  {
+   "line": 6,
+   "text": "The company offered refunds. Within five months, it stopped selling.",
+   "start": 25.64,
+   "end": 30.272
+  },
+  {
+   "line": 7,
+   "text": "The lesson: build something the customer can't do alone. Even though",
+   "start": 30.419,
+   "end": 35.6
+  }
+ ]
+}

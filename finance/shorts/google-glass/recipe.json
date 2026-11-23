@@ -1,0 +1,112 @@
+{
+  "kit": "biz3d",
+  "slug": "google-glass",
+  "format": "short",
+  "hook": { "text": "THE *$1,500* GLASSES", "again": "10:Which" },
+  "music": "upbeat",
+  "cast": {
+    "ceo": { "suit": "#2E3440", "tie": "#3B82F6", "skin": "#E2B48E", "hair": "#3A2A1E", "hairStyle": "short" },
+    "chief": { "suit": "#1F5F63", "tie": "#F5B324", "skin": "#C98F68", "hair": "#141414", "hairStyle": "bald" },
+    "wearer": { "suit": "#6B7280", "tie": "#22C55E", "skin": "#D9A47E", "hair": "#2B1D14", "hairStyle": "short" },
+    "bm1": "navy",
+    "bm2": "olive"
+  },
+  "chart": {
+    "pts": [0.4, 1.8, 4.6, 7.6, 9.2, 6.4, 3.4, 1.6, 0.9],
+    "tags": [{ "i": 0, "text": "2012" }, { "i": 4, "text": "THE HYPE" }, { "i": 8, "text": "2015" }]
+  },
+  "shots": [
+    {
+      "at": 0, "set": "boardroom", "note": "frame 0: hero prop, a generic camera (the part of the product people objected to); the boss behind it",
+      "cam": { "preset": "hookZoom", "target": "cam", "dist": 1.45, "h": 0.12, "face": 0.6 },
+      "props": [{ "id": "cam", "kit": "camera", "label": "WEARABLE", "color": "#2A2A2E", "at": "tableTop:0,0,-2.35", "scale": 1.0, "spin": 8 }],
+      "actors": [
+        { "id": "ceo", "pose": "fold", "at": "head", "seated": true, "then": [{ "at": 0.5, "pose": "shrug" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ]
+    },
+    {
+      "at": 1.0, "set": "boardroom", "note": "the price lands on the table",
+      "cam": { "preset": "pushIn", "target": "cash", "dist": 2.6, "h": 0.9, "az": 25, "face": 0.55 },
+      "props": [{ "id": "cash", "kit": "cash", "at": "tableTop:0,0,1.2", "motion": "dropIn", "hit": 1.25 }],
+      "devices": [{ "do": "board", "title": "the price", "value": "$1,500", "at": 1.05, "pos": "top", "tone": "green" }]
+    },
+    {
+      "at": "1:under", "set": "city", "note": "the company",
+      "cam": { "preset": "crane", "target": "stores:0,0.9,0", "dist": 9.5, "h": 1.4 },
+      "devices": [{ "do": "company", "name": "Google", "year": 1998, "icon": "chip", "tone": "green", "at": "1:under+0.1", "pos": "low" }]
+    },
+    {
+      "at": "2:In", "set": "city", "note": "the 2012 launch: the roof of its own conference",
+      "cam": { "preset": "slamZoom", "target": "hq:0,4.2,0", "dist": 16, "h": 1.5, "hit": "2:In+0.12" },
+      "props": [{ "id": "hq", "kit": "tower", "at": "hq", "size": [2.6, 8.5, 2.4] }],
+      "devices": [{ "do": "board", "title": "the launch", "value": "2012", "at": "2:twenty", "until": "2:skydivers", "pos": "top", "tone": "green" }],
+      "actions": [{ "do": "label", "on": "hq", "text": "the roof", "at": "2:roof", "until": "3:Time", "tone": "green" }]
+    },
+    {
+      "at": "3:Time", "set": "chart", "note": "SIGNATURE: ride the hype up (illustrative)",
+      "cam": { "preset": "chartFly", "from": 0, "to": 4.2, "dist": 7.5, "h": 2.4, "az": 40 },
+      "devices": [{ "do": "board", "title": "best inventions list", "value": "2012", "at": "3:best", "pos": "left", "tone": "green" }]
+    },
+    {
+      "at": "4:Then", "set": "boardroom", "note": "then people noticed the camera",
+      "cam": { "preset": "slamZoom", "target": "cam", "dist": 1.9, "h": 0.2, "az": -18, "hit": "4:camera" },
+      "props": [{ "id": "cam", "kit": "camera", "label": "WEARABLE", "color": "#2A2A2E", "at": "tableTop:0,0,0.6", "scale": 0.8, "spin": 14 }],
+      "actions": [{ "do": "label", "on": "cam", "text": "the camera", "at": "4:camera", "until": "5:A", "tone": "red" }]
+    },
+    {
+      "at": "5:A", "set": "city", "note": "one Seattle bar bans them (a stamp, the street stays lit: it was one venue)",
+      "cam": { "preset": "pushIn", "target": "stores:0,0.9,0", "dist": 10, "h": 2.2, "az": -8 },
+      "devices": [{ "do": "stamp", "text": "BANNED", "tone": "red", "at": "5:banned", "until": "5:Wearers" }]
+    },
+    {
+      "at": "5:Wearers", "set": "boardroom", "note": "the nickname",
+      "cam": { "preset": "medium", "target": "wearer", "dist": 3.7, "h": 0.3, "az": 192, "face": 0.62 },
+      "actors": [{ "id": "wearer", "pose": "shrug", "at": "foot", "then": [{ "at": "5:Glassholes.", "pose": "despair" }] }],
+      "devices": [{ "do": "board", "title": "the nickname", "value": "GLASSHOLE", "at": "5:Glassholes.", "pos": "top", "tone": "red" }]
+    },
+    {
+      "at": "6:In", "in": "whip", "set": "boardroom", "note": "THE DECISION: stop consumer sales",
+      "cam": { "preset": "pushIn", "target": "ceo", "dist": 4.1, "h": 0.6, "az": 10, "face": 0.395 },
+      "actors": [
+        { "id": "ceo", "pose": "fold", "at": "head", "seated": true, "then": [{ "at": "6:stopped", "pose": "slam" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ],
+      "devices": [
+        { "do": "decision", "at": "6:stopped+0.25", "until": "7:Its", "sub": "stop public sales" },
+        { "do": "stamp", "text": "JAN 2015", "at": "6:selling", "until": "7:Its", "y": 1080 }
+      ]
+    },
+    {
+      "at": "7:Its", "set": "boardroom", "note": "the lab chief's admission",
+      "cam": { "preset": "orbit", "target": "chief", "dist": 3.6, "h": 0.5, "az": 200, "sweep": 30, "face": 0.52 },
+      "actors": [
+        { "id": "chief", "pose": "talk", "at": "foot", "then": [{ "at": "7:too", "pose": "shrug" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ],
+      "actions": [{ "do": "label", "on": "chief.head", "text": "the lab chief", "at": "7:chief", "until": "7:too", "tone": "red" }]
+    },
+    {
+      "at": "8:A", "set": "warehouse", "note": "the business version, until 2023",
+      "cam": { "preset": "dolly", "target": "conveyor", "dist": 5.2, "h": 1.0, "az": 8, "sweep": 1.6 },
+      "devices": [{ "do": "board", "title": "business version", "value": "ENDED 2023", "at": "8:until", "pos": "top", "tone": "red" }]
+    },
+    {
+      "at": "9:The", "set": "chart", "note": "the hype crashes: the lens dives",
+      "cam": { "preset": "chartFly", "from": 4.0, "to": 8, "dist": 7.5, "h": 2.4, "az": 40 }
+    },
+    {
+      "at": "9:camera", "set": "boardroom", "note": "loop: back to the camera on the table",
+      "cam": { "preset": "hookZoom", "target": "cam", "dist": 1.5, "h": 0.12, "face": 0.6 },
+      "props": [{ "id": "cam", "kit": "camera", "label": "WEARABLE", "color": "#2A2A2E", "at": "tableTop:0,0,-2.35", "scale": 1.0, "spin": 8 }],
+      "actors": [
+        { "id": "ceo", "pose": "despair", "at": "head", "seated": true, "then": [{ "at": "10:Which", "pose": "fold" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ]
+    }
+  ]
+}

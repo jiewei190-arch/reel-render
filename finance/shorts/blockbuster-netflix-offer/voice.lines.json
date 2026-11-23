@@ -1,0 +1,75 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.2497,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 591,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Netflix once offered itself to Blockbuster for fifty million dollars.",
+   "start": 0.08,
+   "end": 3.857
+  },
+  {
+   "line": 2,
+   "text": "It was two thousand. Netflix mailed DVDs, and it was losing millions.",
+   "start": 3.977,
+   "end": 8.522
+  },
+  {
+   "line": 3,
+   "text": "Its founders flew to Dallas to pitch the deal.",
+   "start": 8.642,
+   "end": 10.946
+  },
+  {
+   "line": 4,
+   "text": "One founder says Blockbuster's boss struggled not to laugh. The answer was no.",
+   "start": 11.066,
+   "end": 15.996
+  },
+  {
+   "line": 5,
+   "text": "That year, Blockbuster collected nearly eight hundred million dollars in late fees.",
+   "start": 16.116,
+   "end": 20.533
+  },
+  {
+   "line": 6,
+   "text": "Ten years later, it filed for bankruptcy.",
+   "start": 20.653,
+   "end": 23.149
+  },
+  {
+   "line": 7,
+   "text": "The whole company sold at auction for about three hundred twenty million.",
+   "start": 23.269,
+   "end": 26.79
+  },
+  {
+   "line": 8,
+   "text": "Netflix today is worth about two hundred forty billion.",
+   "start": 26.91,
+   "end": 30.175
+  },
+  {
+   "line": 9,
+   "text": "The lesson: big profits make small ideas look like jokes.",
+   "start": 30.295,
+   "end": 34.136
+  },
+  {
+   "line": 10,
+   "text": "Hard to believe that",
+   "start": 34.256,
+   "end": 35.6
+  }
+ ]
+}

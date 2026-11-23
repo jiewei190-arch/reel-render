@@ -4,9 +4,15 @@ import type { BizRecipe } from "./types";
 import * as B0 from "./gen/biz_demo_blockbuster_passed.biz.gen";
 import * as B1 from "./gen/biz_demo_landscape.biz.gen";
 import * as B2 from "./gen/biz_demo_landscape_short_1.biz.gen";
+import * as B3 from "./gen/blockbuster_netflix_offer.biz.gen";
+import * as B4 from "./gen/friendster_google_offer.biz.gen";
+import * as B5 from "./gen/google_glass.biz.gen";
 
 export const BIZ_RECIPES: { id: string; recipe: BizRecipe; words: Word[]; vo?: number }[] = [
   { id: B0.ID, recipe: B0.RECIPE, words: B0.WORDS, vo: B0.VO_DURATION },
   { id: B1.ID, recipe: B1.RECIPE, words: B1.WORDS, vo: B1.VO_DURATION },
   { id: B2.ID, recipe: B2.RECIPE, words: B2.WORDS, vo: B2.VO_DURATION },
+  { id: B3.ID, recipe: B3.RECIPE, words: B3.WORDS, vo: B3.VO_DURATION },
+  { id: B4.ID, recipe: B4.RECIPE, words: B4.WORDS, vo: B4.VO_DURATION },
+  { id: B5.ID, recipe: B5.RECIPE, words: B5.WORDS, vo: B5.VO_DURATION },
 ];

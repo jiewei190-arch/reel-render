@@ -1,0 +1,477 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Webvan burned about eight hundred million dollars delivering groceries.",
+   "words": [
+    {
+     "w": "Webvan",
+     "t": 0.097,
+     "end": 0.639
+    },
+    {
+     "w": "burned",
+     "t": 0.717,
+     "end": 0.949
+    },
+    {
+     "w": "about",
+     "t": 1.143,
+     "end": 1.336
+    },
+    {
+     "w": "eight",
+     "t": 1.414,
+     "end": 1.491
+    },
+    {
+     "w": "hundred",
+     "t": 1.646,
+     "end": 1.879
+    },
+    {
+     "w": "million",
+     "t": 2.111,
+     "end": 2.421
+    },
+    {
+     "w": "dollars",
+     "t": 2.576,
+     "end": 2.963
+    },
+    {
+     "w": "delivering",
+     "t": 3.041,
+     "end": 3.428
+    },
+    {
+     "w": "groceries.",
+     "t": 3.506,
+     "end": 4.435
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "It launched in nineteen ninety-nine with a simple promise: order online, get your food at the door.",
+   "words": [
+    {
+     "w": "It",
+     "t": 4.503,
+     "end": 4.658
+    },
+    {
+     "w": "launched",
+     "t": 4.736,
+     "end": 5.046
+    },
+    {
+     "w": "in",
+     "t": 5.123,
+     "end": 5.201
+    },
+    {
+     "w": "nineteen",
+     "t": 5.278,
+     "end": 5.588
+    },
+    {
+     "w": "ninety-nine",
+     "t": 5.665,
+     "end": 6.208
+    },
+    {
+     "w": "with",
+     "t": 6.285,
+     "end": 6.44
+    },
+    {
+     "w": "a",
+     "t": 6.518,
+     "end": 6.595
+    },
+    {
+     "w": "simple",
+     "t": 6.75,
+     "end": 6.905
+    },
+    {
+     "w": "promise:",
+     "t": 6.982,
+     "end": 7.99
+    },
+    {
+     "w": "order",
+     "t": 8.067,
+     "end": 8.3
+    },
+    {
+     "w": "online,",
+     "t": 8.377,
+     "end": 9.229
+    },
+    {
+     "w": "get",
+     "t": 9.307,
+     "end": 9.384
+    },
+    {
+     "w": "your",
+     "t": 9.5,
+     "end": 9.617
+    },
+    {
+     "w": "food",
+     "t": 9.772,
+     "end": 9.927
+    },
+    {
+     "w": "at",
+     "t": 10.004,
+     "end": 10.082
+    },
+    {
+     "w": "the",
+     "t": 10.159,
+     "end": 10.198
+    },
+    {
+     "w": "door.",
+     "t": 10.236,
+     "end": 10.856
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "One month in, it signed a one-billion-dollar deal for up to twenty-six giant warehouses.",
+   "words": [
+    {
+     "w": "One",
+     "t": 10.924,
+     "end": 11.156
+    },
+    {
+     "w": "month",
+     "t": 11.273,
+     "end": 11.389
+    },
+    {
+     "w": "in,",
+     "t": 11.466,
+     "end": 11.931
+    },
+    {
+     "w": "it",
+     "t": 12.009,
+     "end": 12.164
+    },
+    {
+     "w": "signed",
+     "t": 12.28,
+     "end": 12.396
+    },
+    {
+     "w": "a",
+     "t": 12.474,
+     "end": 12.629
+    },
+    {
+     "w": "one-billion-dollar",
+     "t": 12.706,
+     "end": 13.636
+    },
+    {
+     "w": "deal",
+     "t": 13.713,
+     "end": 14.023
+    },
+    {
+     "w": "for",
+     "t": 14.101,
+     "end": 14.255
+    },
+    {
+     "w": "up",
+     "t": 14.333,
+     "end": 14.41
+    },
+    {
+     "w": "to",
+     "t": 14.488,
+     "end": 14.565
+    },
+    {
+     "w": "twenty-six",
+     "t": 14.643,
+     "end": 15.418
+    },
+    {
+     "w": "giant",
+     "t": 15.573,
+     "end": 15.882
+    },
+    {
+     "w": "warehouses.",
+     "t": 15.96,
+     "end": 16.89
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "On its first day of trading, it was valued at about eight billion dollars.",
+   "words": [
+    {
+     "w": "On",
+     "t": 16.957,
+     "end": 17.112
+    },
+    {
+     "w": "its",
+     "t": 17.19,
+     "end": 17.267
+    },
+    {
+     "w": "first",
+     "t": 17.345,
+     "end": 17.577
+    },
+    {
+     "w": "day",
+     "t": 17.655,
+     "end": 17.732
+    },
+    {
+     "w": "of",
+     "t": 17.771,
+     "end": 17.81
+    },
+    {
+     "w": "trading,",
+     "t": 17.887,
+     "end": 18.584
+    },
+    {
+     "w": "it",
+     "t": 18.623,
+     "end": 18.662
+    },
+    {
+     "w": "was",
+     "t": 18.739,
+     "end": 18.817
+    },
+    {
+     "w": "valued",
+     "t": 18.972,
+     "end": 19.359
+    },
+    {
+     "w": "at",
+     "t": 19.398,
+     "end": 19.437
+    },
+    {
+     "w": "about",
+     "t": 19.514,
+     "end": 19.747
+    },
+    {
+     "w": "eight",
+     "t": 19.902,
+     "end": 20.056
+    },
+    {
+     "w": "billion",
+     "t": 20.366,
+     "end": 20.754
+    },
+    {
+     "w": "dollars.",
+     "t": 20.831,
+     "end": 21.683
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Less than two years later, the stock closed at six cents.",
+   "words": [
+    {
+     "w": "Less",
+     "t": 21.984,
+     "end": 22.139
+    },
+    {
+     "w": "than",
+     "t": 22.216,
+     "end": 22.449
+    },
+    {
+     "w": "two",
+     "t": 22.565,
+     "end": 22.681
+    },
+    {
+     "w": "years",
+     "t": 22.758,
+     "end": 22.991
+    },
+    {
+     "w": "later,",
+     "t": 23.068,
+     "end": 23.611
+    },
+    {
+     "w": "the",
+     "t": 23.649,
+     "end": 23.688
+    },
+    {
+     "w": "stock",
+     "t": 23.766,
+     "end": 24.076
+    },
+    {
+     "w": "closed",
+     "t": 24.153,
+     "end": 24.54
+    },
+    {
+     "w": "at",
+     "t": 24.618,
+     "end": 24.773
+    },
+    {
+     "w": "six",
+     "t": 24.928,
+     "end": 25.16
+    },
+    {
+     "w": "cents.",
+     "t": 25.238,
+     "end": 25.935
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Two thousand workers lost their jobs, and Webvan filed for bankruptcy.",
+   "words": [
+    {
+     "w": "Two",
+     "t": 26.08,
+     "end": 26.313
+    },
+    {
+     "w": "thousand",
+     "t": 26.468,
+     "end": 26.855
+    },
+    {
+     "w": "workers",
+     "t": 26.932,
+     "end": 27.32
+    },
+    {
+     "w": "lost",
+     "t": 27.397,
+     "end": 27.63
+    },
+    {
+     "w": "their",
+     "t": 27.707,
+     "end": 27.862
+    },
+    {
+     "w": "jobs,",
+     "t": 27.94,
+     "end": 28.521
+    },
+    {
+     "w": "and",
+     "t": 28.714,
+     "end": 28.869
+    },
+    {
+     "w": "Webvan",
+     "t": 28.947,
+     "end": 29.412
+    },
+    {
+     "w": "filed",
+     "t": 29.567,
+     "end": 29.838
+    },
+    {
+     "w": "for",
+     "t": 29.876,
+     "end": 30.031
+    },
+    {
+     "w": "bankruptcy.",
+     "t": 30.148,
+     "end": 30.961
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The lesson: prove the model, then scale it. Because",
+   "words": [
+    {
+     "w": "The",
+     "t": 31.106,
+     "end": 31.261
+    },
+    {
+     "w": "lesson:",
+     "t": 31.494,
+     "end": 32.191
+    },
+    {
+     "w": "prove",
+     "t": 32.269,
+     "end": 32.501
+    },
+    {
+     "w": "the",
+     "t": 32.578,
+     "end": 32.617
+    },
+    {
+     "w": "model,",
+     "t": 32.656,
+     "end": 33.353
+    },
+    {
+     "w": "then",
+     "t": 33.431,
+     "end": 33.586
+    },
+    {
+     "w": "scale",
+     "t": 33.741,
+     "end": 34.05
+    },
+    {
+     "w": "it.",
+     "t": 34.167,
+     "end": 34.554
+    },
+    {
+     "w": "Because",
+     "t": 34.825,
+     "end": 35.677
+    }
+   ]
+  }
+ ]
+}

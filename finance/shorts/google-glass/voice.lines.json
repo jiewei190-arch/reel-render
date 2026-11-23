@@ -1,0 +1,75 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1553,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 586,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Google's fifteen-hundred-dollar glasses lasted under two years on sale.",
+   "start": 0.087,
+   "end": 4.172
+  },
+  {
+   "line": 2,
+   "text": "In twenty twelve, Google launched them with skydivers landing on the roof of its own conference.",
+   "start": 4.302,
+   "end": 9.218
+  },
+  {
+   "line": 3,
+   "text": "Time magazine listed them among the best inventions of the year.",
+   "start": 9.348,
+   "end": 12.741
+  },
+  {
+   "line": 4,
+   "text": "Then people noticed the camera.",
+   "start": 12.871,
+   "end": 15.017
+  },
+  {
+   "line": 5,
+   "text": "A Seattle bar banned them. Wearers got a nickname: Glassholes.",
+   "start": 15.147,
+   "end": 19.579
+  },
+  {
+   "line": 6,
+   "text": "In January twenty fifteen, Google stopped selling them to the public.",
+   "start": 19.709,
+   "end": 23.517
+  },
+  {
+   "line": 7,
+   "text": "Its lab chief later admitted they encouraged too much attention.",
+   "start": 23.647,
+   "end": 27.317
+  },
+  {
+   "line": 8,
+   "text": "A business version lasted until twenty twenty-three.",
+   "start": 27.447,
+   "end": 30.355
+  },
+  {
+   "line": 9,
+   "text": "The lesson: hype can't make people want a camera pointed at them.",
+   "start": 30.485,
+   "end": 34.224
+  },
+  {
+   "line": 10,
+   "text": "Which is why",
+   "start": 34.354,
+   "end": 35.6
+  }
+ ]
+}

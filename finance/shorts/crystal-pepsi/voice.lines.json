@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 35.4,
+ "characters": 505,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Pepsi's forty-million-dollar clear cola was gone in about a year.",
+   "start": 0.1,
+   "end": 4.58
+  },
+  {
+   "line": 2,
+   "text": "That was the reported marketing budget for Crystal Pepsi, which hit the Super Bowl in nineteen ninety-three.",
+   "start": 4.73,
+   "end": 10.65
+  },
+  {
+   "line": 3,
+   "text": "Then Coca-Cola launched a clear cola of its own: Tab Clear.",
+   "start": 10.8,
+   "end": 15.2
+  },
+  {
+   "line": 4,
+   "text": "The Coke marketer behind it later called it a suicidal mission, meant to take Crystal Pepsi down with it.",
+   "start": 15.35,
+   "end": 21.99
+  },
+  {
+   "line": 5,
+   "text": "Both drinks disappeared.",
+   "start": 22.14,
+   "end": 23.98
+  },
+  {
+   "line": 6,
+   "text": "Crystal Pepsi's creator called it the best idea he ever had, and the worst executed.",
+   "start": 24.13,
+   "end": 30.37
+  },
+  {
+   "line": 7,
+   "text": "His lesson: listen to people before you launch. Which is how",
+   "start": 30.52,
+   "end": 35.4
+  }
+ ]
+}

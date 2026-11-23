@@ -1,0 +1,134 @@
+{
+  "kit": "biz3d",
+  "slug": "blockbuster-netflix-offer",
+  "format": "short",
+  "hook": { "text": "NETFLIX FOR *$50M*", "again": "10:Hard" },
+  "music": "upbeat",
+  "cast": {
+    "ceo": { "suit": "#3B2F4A", "tie": "#F5B324", "skin": "#E2B48E", "hair": "#8A8A8A", "hairStyle": "short" },
+    "f1": { "suit": "#2F5A3A", "tie": "#22C55E", "skin": "#D9A47E", "hair": "#2B1D14" },
+    "f2": { "suit": "#1F5F63", "tie": "#4ADE80", "skin": "#C98F68", "hair": "#141414", "hairStyle": "bald" },
+    "bm1": "grey",
+    "bm2": "burgundy"
+  },
+  "chart": {
+    "pts": [0.6, 2.2, 4.4, 6.6, 8.4, 9.0, 7.2, 4.6, 2.0],
+    "tags": [{ "i": 4, "text": "2000" }, { "i": 8, "text": "2010" }]
+  },
+  "shots": [
+    {
+      "at": 0, "set": "boardroom", "note": "frame 0: the stake on a giant board over the boss, who folds his arms then laughs",
+      "cam": { "preset": "hookZoom", "target": "ceo", "dist": 3.4, "h": 0.35, "face": 0.84 },
+      "actors": [{ "id": "ceo", "pose": "fold", "at": "head", "seated": true, "then": [{ "at": 0.45, "pose": "laugh" }] }],
+      "fx": [{ "fx": "shake", "at": 0.45, "gain": 0.8 }],
+      "devices": [{ "do": "board", "size": "giant", "title": "the asking price", "value": "$50M", "at": 0, "until": 1, "tone": "red" }]
+    },
+    {
+      "at": 1.0, "set": "warehouse", "note": "the seller: a website that mails discs",
+      "cam": { "preset": "slamZoom", "target": "lap", "dist": 2.4, "h": 0.5, "az": 18, "face": 0.62 },
+      "props": [
+        { "id": "lap", "kit": "laptop", "label": "RENT ONLINE", "at": "aisle:0,0,0", "scale": 0.9 },
+        { "id": "en", "kit": "envelope", "at": "aisle:0.75,0,0.4", "yaw": 25 },
+        { "id": "en2", "kit": "envelope", "at": "aisle:-0.8,0,0.3", "yaw": -15 },
+        { "id": "bx", "kit": "boxes", "at": "aisle:0,0,-1.4", "size": [3, 1, 2] }
+      ],
+      "devices": [{ "do": "company", "name": "Netflix", "year": 1997, "icon": "mail", "tone": "green", "at": 1.1, "until": "1:fifty", "pos": "top" }]
+    },
+    {
+      "at": "1:fifty", "set": "boardroom", "note": "the asking price lands on the table",
+      "cam": { "preset": "pushIn", "target": "cash", "dist": 2.6, "h": 0.9, "az": -25, "face": 0.55 },
+      "props": [{ "id": "cash", "kit": "cash", "at": "tableTop:0,0,1.2", "motion": "dropIn", "hit": "1:fifty+0.25" }],
+      "devices": [{ "do": "counter", "title": "the asking price", "from": 0, "to": 50000000, "at": "1:fifty", "dur": 0.8, "land": "1:million" }]
+    },
+    {
+      "at": "2:It", "set": "warehouse", "note": "2000: discs by mail, losing money",
+      "cam": { "preset": "dolly", "target": "conveyor", "dist": 5.2, "h": 1.0, "az": -8, "sweep": 1.6 },
+      "devices": [
+        { "do": "board", "title": "the year", "value": "2000", "at": "2:two", "until": "2:losing", "pos": "top" },
+        { "do": "stamp", "text": "LOSING MONEY", "tone": "red", "at": "2:losing", "until": "3:Its" }
+      ]
+    },
+    {
+      "at": "3:Its", "set": "city", "note": "the trip to the giant's headquarters",
+      "cam": { "preset": "slamZoom", "target": "hq:0,4.2,0", "dist": 16, "h": 1.5, "hit": "3:Its+0.12" },
+      "props": [{ "id": "hq", "kit": "tower", "at": "hq", "size": [2.6, 8.5, 2.4] }],
+      "actions": [{ "do": "label", "on": "hq", "text": "Dallas HQ", "at": "3:Dallas", "until": "4:One", "tone": "red" }]
+    },
+    {
+      "at": "4:One", "set": "boardroom", "note": "the founders pitch",
+      "cam": { "preset": "orbit", "target": "f1", "dist": 3.6, "h": 0.5, "az": 205, "sweep": 30, "face": 0.52 },
+      "actors": [
+        { "id": "f1", "pose": "talk", "at": "foot:-0.45,0,0" },
+        { "id": "f2", "pose": "point", "at": "foot:0.2,0,0.05" },
+        { "id": "ceo", "pose": "idle", "at": "head", "seated": true },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ],
+      "actions": [{ "do": "label", "on": "f1.head", "text": "the founders", "at": "4:founder", "until": "4:struggled", "tone": "green" }]
+    },
+    {
+      "at": "4:struggled", "set": "boardroom", "note": "by one founder's account: struggling not to laugh",
+      "cam": { "preset": "closeUp", "target": "ceo", "dist": 2.7, "h": 0.3, "az": 15, "face": 0.62 },
+      "actors": [
+        { "id": "ceo", "pose": "idle", "at": "head", "seated": true, "then": [{ "at": "4:not", "pose": "laugh" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "talk", "at": "seatR1", "seated": true }
+      ]
+    },
+    {
+      "at": "4:The", "in": "whip", "set": "boardroom", "note": "THE DECISION",
+      "cam": { "preset": "pushIn", "target": "ceo", "dist": 4.1, "h": 0.6, "az": -10, "face": 0.37 },
+      "actors": [
+        { "id": "ceo", "pose": "fold", "at": "head", "seated": true, "then": [{ "at": "4:answer", "pose": "slam" }] },
+        { "id": "bm1", "pose": "idle", "at": "seatL1", "seated": true },
+        { "id": "bm2", "pose": "idle", "at": "seatR1", "seated": true }
+      ],
+      "devices": [
+        { "do": "decision", "at": "4:answer+0.25", "until": "5:That", "sub": "buy Netflix for $50M?" },
+        { "do": "stamp", "text": "NO", "at": "4:no.", "until": "5:That", "y": 1080 }
+      ]
+    },
+    {
+      "at": "5:That", "set": "city", "note": "the giant at its height: every store lit",
+      "cam": { "preset": "crane", "target": "stores:0,0.9,0", "dist": 9.5, "h": 1.4 },
+      "devices": [{ "do": "company", "name": "Blockbuster", "year": 1985, "icon": "film", "tone": "red", "at": "5:That+0.1", "pos": "low" }]
+    },
+    {
+      "at": "5:nearly", "set": "chart", "note": "SIGNATURE: ride the climb (illustrative)",
+      "cam": { "preset": "chartFly", "from": 0, "to": 5.0, "dist": 7.5, "h": 2.4, "az": 40 },
+      "devices": [{ "do": "counter", "title": "late fees, 2000", "from": 0, "to": 800000000, "at": "5:nearly", "dur": 1.2, "tone": "green", "land": "5:million" }]
+    },
+    {
+      "at": "6:Ten", "set": "chart", "note": "ten years later: the dive",
+      "cam": { "preset": "chartFly", "from": 5.0, "to": 8, "dist": 7.5, "h": 2.4, "az": 40 }
+    },
+    {
+      "at": "6:filed", "in": "cut", "set": "city", "note": "the crack runs down the tower",
+      "cam": { "preset": "slamZoom", "target": "hq:0,4.2,0", "dist": 16, "h": 1.5, "az": 12, "hit": "6:filed+0.1" },
+      "props": [{ "id": "hq", "kit": "tower", "at": "hq", "size": [2.6, 8.5, 2.4] }],
+      "actions": [{ "do": "crack", "on": "hq", "at": "6:filed", "dur": 0.5, "collapse": "6:bankruptcy." }],
+      "fx": [{ "fx": "debris", "at": "6:bankruptcy.+0.1", "p": "hq:0,4,1.4", "gain": 1.4 }, { "fx": "shake", "at": "6:bankruptcy." }]
+    },
+    {
+      "at": "7:The", "set": "city", "note": "sold at auction: the lights go out",
+      "cam": { "preset": "pushIn", "target": "stores:0,0.9,0", "dist": 10, "h": 2.2, "az": 8 },
+      "actions": [{ "do": "dark", "on": "stores", "at": "7:The+0.1", "stagger": 0.1, "order": "right" }],
+      "devices": [{ "do": "counter", "title": "sold at auction", "from": 0, "to": 320000000, "at": "7:about", "dur": 1.0, "tone": "red", "land": "7:million." }]
+    },
+    {
+      "at": "8:Netflix", "set": "chart", "note": "what the asking price became",
+      "cam": { "preset": "orbit", "target": "chart", "dist": 30, "h": 3.5, "az": -10, "sweep": 30 },
+      "devices": [{ "do": "worth", "at": "8:Netflix+0.1", "a": { "label": "the asking price", "value": 50000000 }, "b": { "label": "Netflix today", "value": 240000000000, "text": "$240B" } }]
+    },
+    {
+      "at": "9:The", "set": "boardroom", "note": "the lesson: the small idea on the big table",
+      "cam": { "preset": "closeUp", "target": "lap", "dist": 1.9, "h": 0.25, "az": -20 },
+      "props": [{ "id": "lap", "kit": "laptop", "label": "RENT ONLINE", "at": "tableTop:0,0,0.4", "scale": 0.8, "spin": 10 }]
+    },
+    {
+      "at": "10:Hard", "set": "boardroom", "note": "loop: back to the boss",
+      "cam": { "preset": "hookZoom", "target": "ceo", "dist": 2.9, "h": 0.4, "face": 0.7 },
+      "actors": [{ "id": "ceo", "pose": "laugh", "at": "head", "seated": true, "then": [{ "at": "10:believe", "pose": "fold" }] }]
+    }
+  ]
+}

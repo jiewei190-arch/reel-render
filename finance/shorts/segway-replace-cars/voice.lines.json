@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Steven",
+ "voice_id": "VMCgCMbBs53ElBxVD4VB",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 33.96,
+ "characters": 464,
+ "lines": [
+  {
+   "line": 1,
+   "text": "The Segway cost a hundred million dollars to develop. It was supposed to replace cars.",
+   "start": 0.1,
+   "end": 5.86
+  },
+  {
+   "line": 2,
+   "text": "It arrived in two thousand one. Its inventor said it would do to the car what the car did to the horse and buggy.",
+   "start": 6.01,
+   "end": 13.21
+  },
+  {
+   "line": 3,
+   "text": "One investor predicted the fastest climb to a billion dollars in sales, ever.",
+   "start": 13.36,
+   "end": 18.72
+  },
+  {
+   "line": 4,
+   "text": "The factory was built for forty thousand a month.",
+   "start": 18.87,
+   "end": 21.91
+  },
+  {
+   "line": 5,
+   "text": "In nearly twenty years, about a hundred forty thousand were sold.",
+   "start": 22.06,
+   "end": 26.94
+  },
+  {
+   "line": 6,
+   "text": "Production ended in twenty twenty.",
+   "start": 27.09,
+   "end": 29.41
+  },
+  {
+   "line": 7,
+   "text": "The lesson: hype is not demand. And yes,",
+   "start": 29.56,
+   "end": 33.96
+  }
+ ]
+}

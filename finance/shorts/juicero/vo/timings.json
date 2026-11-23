@@ -1,0 +1,452 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "This juicer raised about a hundred twenty million dollars. Your hands worked just as well.",
+   "words": [
+    {
+     "w": "This",
+     "t": 0.098,
+     "end": 0.334
+    },
+    {
+     "w": "juicer",
+     "t": 0.412,
+     "end": 0.726
+    },
+    {
+     "w": "raised",
+     "t": 0.805,
+     "end": 1.04
+    },
+    {
+     "w": "about",
+     "t": 1.119,
+     "end": 1.354
+    },
+    {
+     "w": "a",
+     "t": 1.433,
+     "end": 1.511
+    },
+    {
+     "w": "hundred",
+     "t": 1.55,
+     "end": 1.747
+    },
+    {
+     "w": "twenty",
+     "t": 1.982,
+     "end": 2.218
+    },
+    {
+     "w": "million",
+     "t": 2.453,
+     "end": 2.767
+    },
+    {
+     "w": "dollars.",
+     "t": 2.846,
+     "end": 3.474
+    },
+    {
+     "w": "Your",
+     "t": 3.866,
+     "end": 4.023
+    },
+    {
+     "w": "hands",
+     "t": 4.102,
+     "end": 4.337
+    },
+    {
+     "w": "worked",
+     "t": 4.416,
+     "end": 4.651
+    },
+    {
+     "w": "just",
+     "t": 4.73,
+     "end": 4.887
+    },
+    {
+     "w": "as",
+     "t": 4.965,
+     "end": 5.044
+    },
+    {
+     "w": "well.",
+     "t": 5.122,
+     "end": 5.672
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Juicero launched in twenty sixteen: a Wi-Fi juice press for six hundred ninety-nine dollars.",
+   "words": [
+    {
+     "w": "Juicero",
+     "t": 5.74,
+     "end": 6.29
+    },
+    {
+     "w": "launched",
+     "t": 6.368,
+     "end": 6.682
+    },
+    {
+     "w": "in",
+     "t": 6.761,
+     "end": 6.918
+    },
+    {
+     "w": "twenty",
+     "t": 7.036,
+     "end": 7.153
+    },
+    {
+     "w": "sixteen:",
+     "t": 7.232,
+     "end": 8.331
+    },
+    {
+     "w": "a",
+     "t": 8.409,
+     "end": 8.488
+    },
+    {
+     "w": "Wi-Fi",
+     "t": 8.566,
+     "end": 9.037
+    },
+    {
+     "w": "juice",
+     "t": 9.116,
+     "end": 9.351
+    },
+    {
+     "w": "press",
+     "t": 9.43,
+     "end": 9.744
+    },
+    {
+     "w": "for",
+     "t": 9.822,
+     "end": 10.058
+    },
+    {
+     "w": "six",
+     "t": 10.136,
+     "end": 10.293
+    },
+    {
+     "w": "hundred",
+     "t": 10.372,
+     "end": 10.607
+    },
+    {
+     "w": "ninety-nine",
+     "t": 10.764,
+     "end": 11.157
+    },
+    {
+     "w": "dollars.",
+     "t": 11.314,
+     "end": 12.099
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "It squeezed packs of produce with four tons of force, its founder said.",
+   "words": [
+    {
+     "w": "It",
+     "t": 12.168,
+     "end": 12.325
+    },
+    {
+     "w": "squeezed",
+     "t": 12.364,
+     "end": 12.874
+    },
+    {
+     "w": "packs",
+     "t": 12.992,
+     "end": 13.188
+    },
+    {
+     "w": "of",
+     "t": 13.267,
+     "end": 13.345
+    },
+    {
+     "w": "produce",
+     "t": 13.424,
+     "end": 13.816
+    },
+    {
+     "w": "with",
+     "t": 13.895,
+     "end": 14.209
+    },
+    {
+     "w": "four",
+     "t": 14.326,
+     "end": 14.444
+    },
+    {
+     "w": "tons",
+     "t": 14.601,
+     "end": 14.994
+    },
+    {
+     "w": "of",
+     "t": 15.072,
+     "end": 15.229
+    },
+    {
+     "w": "force,",
+     "t": 15.465,
+     "end": 15.936
+    },
+    {
+     "w": "its",
+     "t": 16.014,
+     "end": 16.093
+    },
+    {
+     "w": "founder",
+     "t": 16.171,
+     "end": 16.485
+    },
+    {
+     "w": "said.",
+     "t": 16.642,
+     "end": 17.113
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Then, in twenty seventeen, Bloomberg reporters squeezed a pack by hand.",
+   "words": [
+    {
+     "w": "Then,",
+     "t": 17.182,
+     "end": 17.81
+    },
+    {
+     "w": "in",
+     "t": 17.888,
+     "end": 17.967
+    },
+    {
+     "w": "twenty",
+     "t": 18.085,
+     "end": 18.202
+    },
+    {
+     "w": "seventeen,",
+     "t": 18.281,
+     "end": 19.301
+    },
+    {
+     "w": "Bloomberg",
+     "t": 19.38,
+     "end": 19.772
+    },
+    {
+     "w": "reporters",
+     "t": 19.969,
+     "end": 20.4
+    },
+    {
+     "w": "squeezed",
+     "t": 20.479,
+     "end": 20.871
+    },
+    {
+     "w": "a",
+     "t": 20.911,
+     "end": 20.95
+    },
+    {
+     "w": "pack",
+     "t": 21.028,
+     "end": 21.264
+    },
+    {
+     "w": "by",
+     "t": 21.342,
+     "end": 21.578
+    },
+    {
+     "w": "hand.",
+     "t": 21.813,
+     "end": 22.284
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Same amount of juice. Sometimes faster.",
+   "words": [
+    {
+     "w": "Same",
+     "t": 22.589,
+     "end": 22.824
+    },
+    {
+     "w": "amount",
+     "t": 22.903,
+     "end": 23.138
+    },
+    {
+     "w": "of",
+     "t": 23.217,
+     "end": 23.295
+    },
+    {
+     "w": "juice.",
+     "t": 23.374,
+     "end": 24.159
+    },
+    {
+     "w": "Sometimes",
+     "t": 24.237,
+     "end": 24.708
+    },
+    {
+     "w": "faster.",
+     "t": 24.787,
+     "end": 25.572
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The company offered refunds. Within five months, it stopped selling.",
+   "words": [
+    {
+     "w": "The",
+     "t": 25.64,
+     "end": 25.797
+    },
+    {
+     "w": "company",
+     "t": 25.993,
+     "end": 26.19
+    },
+    {
+     "w": "offered",
+     "t": 26.268,
+     "end": 26.582
+    },
+    {
+     "w": "refunds.",
+     "t": 26.661,
+     "end": 27.76
+    },
+    {
+     "w": "Within",
+     "t": 27.956,
+     "end": 28.152
+    },
+    {
+     "w": "five",
+     "t": 28.27,
+     "end": 28.388
+    },
+    {
+     "w": "months,",
+     "t": 28.466,
+     "end": 29.094
+    },
+    {
+     "w": "it",
+     "t": 29.173,
+     "end": 29.251
+    },
+    {
+     "w": "stopped",
+     "t": 29.33,
+     "end": 29.644
+    },
+    {
+     "w": "selling.",
+     "t": 29.722,
+     "end": 30.35
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The lesson: build something the customer can't do alone. Even though",
+   "words": [
+    {
+     "w": "The",
+     "t": 30.576,
+     "end": 30.615
+    },
+    {
+     "w": "lesson:",
+     "t": 30.654,
+     "end": 31.439
+    },
+    {
+     "w": "build",
+     "t": 31.753,
+     "end": 32.067
+    },
+    {
+     "w": "something",
+     "t": 32.224,
+     "end": 32.381
+    },
+    {
+     "w": "the",
+     "t": 32.46,
+     "end": 32.538
+    },
+    {
+     "w": "customer",
+     "t": 32.617,
+     "end": 33.009
+    },
+    {
+     "w": "can't",
+     "t": 33.166,
+     "end": 33.48
+    },
+    {
+     "w": "do",
+     "t": 33.559,
+     "end": 33.637
+    },
+    {
+     "w": "alone.",
+     "t": 33.873,
+     "end": 34.462
+    },
+    {
+     "w": "Even",
+     "t": 34.815,
+     "end": 35.05
+    },
+    {
+     "w": "though",
+     "t": 35.129,
+     "end": 35.6
+    }
+   ]
+  }
+ ]
+}

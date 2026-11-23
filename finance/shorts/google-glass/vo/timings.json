@@ -1,0 +1,540 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Google's fifteen-hundred-dollar glasses lasted under two years on sale.",
+   "words": [
+    {
+     "w": "Google's",
+     "t": 0.087,
+     "end": 0.502
+    },
+    {
+     "w": "fifteen-hundred-dollar",
+     "t": 0.571,
+     "end": 1.471
+    },
+    {
+     "w": "glasses",
+     "t": 1.541,
+     "end": 2.025
+    },
+    {
+     "w": "lasted",
+     "t": 2.095,
+     "end": 2.51
+    },
+    {
+     "w": "under",
+     "t": 2.649,
+     "end": 2.787
+    },
+    {
+     "w": "two",
+     "t": 2.856,
+     "end": 2.995
+    },
+    {
+     "w": "years",
+     "t": 3.133,
+     "end": 3.41
+    },
+    {
+     "w": "on",
+     "t": 3.48,
+     "end": 3.549
+    },
+    {
+     "w": "sale.",
+     "t": 3.687,
+     "end": 4.241
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "In twenty twelve, Google launched them with skydivers landing on the roof of its own conference.",
+   "words": [
+    {
+     "w": "In",
+     "t": 4.302,
+     "end": 4.44
+    },
+    {
+     "w": "twenty",
+     "t": 4.579,
+     "end": 4.717
+    },
+    {
+     "w": "twelve,",
+     "t": 4.821,
+     "end": 5.34
+    },
+    {
+     "w": "Google",
+     "t": 5.41,
+     "end": 5.687
+    },
+    {
+     "w": "launched",
+     "t": 5.756,
+     "end": 6.033
+    },
+    {
+     "w": "them",
+     "t": 6.102,
+     "end": 6.171
+    },
+    {
+     "w": "with",
+     "t": 6.241,
+     "end": 6.31
+    },
+    {
+     "w": "skydivers",
+     "t": 6.379,
+     "end": 7.072
+    },
+    {
+     "w": "landing",
+     "t": 7.141,
+     "end": 7.418
+    },
+    {
+     "w": "on",
+     "t": 7.452,
+     "end": 7.487
+    },
+    {
+     "w": "the",
+     "t": 7.556,
+     "end": 7.625
+    },
+    {
+     "w": "roof",
+     "t": 7.695,
+     "end": 7.902
+    },
+    {
+     "w": "of",
+     "t": 7.937,
+     "end": 7.972
+    },
+    {
+     "w": "its",
+     "t": 8.076,
+     "end": 8.179
+    },
+    {
+     "w": "own",
+     "t": 8.249,
+     "end": 8.456
+    },
+    {
+     "w": "conference.",
+     "t": 8.733,
+     "end": 9.287
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Time magazine listed them among the best inventions of the year.",
+   "words": [
+    {
+     "w": "Time",
+     "t": 9.348,
+     "end": 9.625
+    },
+    {
+     "w": "magazine",
+     "t": 9.729,
+     "end": 10.11
+    },
+    {
+     "w": "listed",
+     "t": 10.179,
+     "end": 10.456
+    },
+    {
+     "w": "them",
+     "t": 10.525,
+     "end": 10.594
+    },
+    {
+     "w": "among",
+     "t": 10.733,
+     "end": 10.871
+    },
+    {
+     "w": "the",
+     "t": 10.941,
+     "end": 11.044
+    },
+    {
+     "w": "best",
+     "t": 11.148,
+     "end": 11.356
+    },
+    {
+     "w": "inventions",
+     "t": 11.425,
+     "end": 11.979
+    },
+    {
+     "w": "of",
+     "t": 12.014,
+     "end": 12.048
+    },
+    {
+     "w": "the",
+     "t": 12.118,
+     "end": 12.187
+    },
+    {
+     "w": "year.",
+     "t": 12.256,
+     "end": 12.81
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "Then people noticed the camera.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 13.078,
+     "end": 13.286
+    },
+    {
+     "w": "people",
+     "t": 13.494,
+     "end": 13.702
+    },
+    {
+     "w": "noticed",
+     "t": 13.84,
+     "end": 14.117
+    },
+    {
+     "w": "the",
+     "t": 14.186,
+     "end": 14.256
+    },
+    {
+     "w": "camera.",
+     "t": 14.463,
+     "end": 15.017
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "A Seattle bar banned them. Wearers got a nickname: Glassholes.",
+   "words": [
+    {
+     "w": "A",
+     "t": 15.216,
+     "end": 15.355
+    },
+    {
+     "w": "Seattle",
+     "t": 15.493,
+     "end": 15.909
+    },
+    {
+     "w": "bar",
+     "t": 16.047,
+     "end": 16.324
+    },
+    {
+     "w": "banned",
+     "t": 16.393,
+     "end": 16.601
+    },
+    {
+     "w": "them.",
+     "t": 16.67,
+     "end": 17.051
+    },
+    {
+     "w": "Wearers",
+     "t": 17.294,
+     "end": 17.64
+    },
+    {
+     "w": "got",
+     "t": 17.709,
+     "end": 17.778
+    },
+    {
+     "w": "a",
+     "t": 17.813,
+     "end": 17.848
+    },
+    {
+     "w": "nickname:",
+     "t": 18.055,
+     "end": 18.609
+    },
+    {
+     "w": "Glassholes.",
+     "t": 18.817,
+     "end": 19.648
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "In January twenty fifteen, Google stopped selling them to the public.",
+   "words": [
+    {
+     "w": "In",
+     "t": 19.709,
+     "end": 19.847
+    },
+    {
+     "w": "January",
+     "t": 19.916,
+     "end": 20.332
+    },
+    {
+     "w": "twenty",
+     "t": 20.47,
+     "end": 20.609
+    },
+    {
+     "w": "fifteen,",
+     "t": 20.678,
+     "end": 21.509
+    },
+    {
+     "w": "Google",
+     "t": 21.578,
+     "end": 21.855
+    },
+    {
+     "w": "stopped",
+     "t": 21.924,
+     "end": 22.201
+    },
+    {
+     "w": "selling",
+     "t": 22.271,
+     "end": 22.548
+    },
+    {
+     "w": "them",
+     "t": 22.617,
+     "end": 22.686
+    },
+    {
+     "w": "to",
+     "t": 22.755,
+     "end": 22.825
+    },
+    {
+     "w": "the",
+     "t": 22.859,
+     "end": 22.894
+    },
+    {
+     "w": "public.",
+     "t": 22.963,
+     "end": 23.586
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Its lab chief later admitted they encouraged too much attention.",
+   "words": [
+    {
+     "w": "Its",
+     "t": 23.647,
+     "end": 23.855
+    },
+    {
+     "w": "lab",
+     "t": 23.924,
+     "end": 24.131
+    },
+    {
+     "w": "chief",
+     "t": 24.201,
+     "end": 24.408
+    },
+    {
+     "w": "later",
+     "t": 24.478,
+     "end": 24.755
+    },
+    {
+     "w": "admitted",
+     "t": 24.824,
+     "end": 25.17
+    },
+    {
+     "w": "they",
+     "t": 25.378,
+     "end": 25.516
+    },
+    {
+     "w": "encouraged",
+     "t": 25.62,
+     "end": 26.14
+    },
+    {
+     "w": "too",
+     "t": 26.209,
+     "end": 26.347
+    },
+    {
+     "w": "much",
+     "t": 26.417,
+     "end": 26.555
+    },
+    {
+     "w": "attention.",
+     "t": 26.624,
+     "end": 27.386
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "A business version lasted until twenty twenty-three.",
+   "words": [
+    {
+     "w": "A",
+     "t": 27.447,
+     "end": 27.585
+    },
+    {
+     "w": "business",
+     "t": 27.758,
+     "end": 27.931
+    },
+    {
+     "w": "version",
+     "t": 28.0,
+     "end": 28.347
+    },
+    {
+     "w": "lasted",
+     "t": 28.416,
+     "end": 28.762
+    },
+    {
+     "w": "until",
+     "t": 28.935,
+     "end": 29.108
+    },
+    {
+     "w": "twenty",
+     "t": 29.247,
+     "end": 29.385
+    },
+    {
+     "w": "twenty-three.",
+     "t": 29.455,
+     "end": 30.355
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "The lesson: hype can't make people want a camera pointed at them.",
+   "words": [
+    {
+     "w": "The",
+     "t": 30.623,
+     "end": 30.692
+    },
+    {
+     "w": "lesson:",
+     "t": 30.9,
+     "end": 31.35
+    },
+    {
+     "w": "hype",
+     "t": 31.593,
+     "end": 31.8
+    },
+    {
+     "w": "can't",
+     "t": 32.008,
+     "end": 32.285
+    },
+    {
+     "w": "make",
+     "t": 32.389,
+     "end": 32.493
+    },
+    {
+     "w": "people",
+     "t": 32.631,
+     "end": 32.77
+    },
+    {
+     "w": "want",
+     "t": 32.839,
+     "end": 32.908
+    },
+    {
+     "w": "a",
+     "t": 32.977,
+     "end": 33.047
+    },
+    {
+     "w": "camera",
+     "t": 33.22,
+     "end": 33.393
+    },
+    {
+     "w": "pointed",
+     "t": 33.497,
+     "end": 33.739
+    },
+    {
+     "w": "at",
+     "t": 33.808,
+     "end": 33.878
+    },
+    {
+     "w": "them.",
+     "t": 33.981,
+     "end": 34.293
+    }
+   ]
+  },
+  {
+   "turn": 10,
+   "text": "Which is why",
+   "words": [
+    {
+     "w": "Which",
+     "t": 34.354,
+     "end": 34.561
+    },
+    {
+     "w": "is",
+     "t": 34.631,
+     "end": 34.7
+    },
+    {
+     "w": "why",
+     "t": 34.838,
+     "end": 35.6
+    }
+   ]
+  }
+ ]
+}

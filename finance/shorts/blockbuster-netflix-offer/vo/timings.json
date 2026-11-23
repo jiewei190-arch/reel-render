@@ -1,0 +1,560 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "Netflix once offered itself to Blockbuster for fifty million dollars.",
+   "words": [
+    {
+     "w": "Netflix",
+     "t": 0.08,
+     "end": 0.528
+    },
+    {
+     "w": "once",
+     "t": 0.592,
+     "end": 0.784
+    },
+    {
+     "w": "offered",
+     "t": 0.848,
+     "end": 1.04
+    },
+    {
+     "w": "itself",
+     "t": 1.104,
+     "end": 1.424
+    },
+    {
+     "w": "to",
+     "t": 1.456,
+     "end": 1.488
+    },
+    {
+     "w": "Blockbuster",
+     "t": 1.552,
+     "end": 2.128
+    },
+    {
+     "w": "for",
+     "t": 2.192,
+     "end": 2.385
+    },
+    {
+     "w": "fifty",
+     "t": 2.449,
+     "end": 2.705
+    },
+    {
+     "w": "million",
+     "t": 2.897,
+     "end": 3.153
+    },
+    {
+     "w": "dollars.",
+     "t": 3.217,
+     "end": 3.921
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "It was two thousand. Netflix mailed DVDs, and it was losing millions.",
+   "words": [
+    {
+     "w": "It",
+     "t": 3.977,
+     "end": 4.105
+    },
+    {
+     "w": "was",
+     "t": 4.201,
+     "end": 4.297
+    },
+    {
+     "w": "two",
+     "t": 4.361,
+     "end": 4.425
+    },
+    {
+     "w": "thousand.",
+     "t": 4.553,
+     "end": 5.385
+    },
+    {
+     "w": "Netflix",
+     "t": 5.609,
+     "end": 5.833
+    },
+    {
+     "w": "mailed",
+     "t": 5.897,
+     "end": 6.153
+    },
+    {
+     "w": "DVDs,",
+     "t": 6.217,
+     "end": 6.986
+    },
+    {
+     "w": "and",
+     "t": 7.018,
+     "end": 7.05
+    },
+    {
+     "w": "it",
+     "t": 7.114,
+     "end": 7.146
+    },
+    {
+     "w": "was",
+     "t": 7.178,
+     "end": 7.306
+    },
+    {
+     "w": "losing",
+     "t": 7.37,
+     "end": 7.69
+    },
+    {
+     "w": "millions.",
+     "t": 7.818,
+     "end": 8.586
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "Its founders flew to Dallas to pitch the deal.",
+   "words": [
+    {
+     "w": "Its",
+     "t": 8.642,
+     "end": 8.834
+    },
+    {
+     "w": "founders",
+     "t": 8.898,
+     "end": 9.218
+    },
+    {
+     "w": "flew",
+     "t": 9.282,
+     "end": 9.474
+    },
+    {
+     "w": "to",
+     "t": 9.538,
+     "end": 9.602
+    },
+    {
+     "w": "Dallas",
+     "t": 9.666,
+     "end": 10.05
+    },
+    {
+     "w": "to",
+     "t": 10.114,
+     "end": 10.178
+    },
+    {
+     "w": "pitch",
+     "t": 10.274,
+     "end": 10.37
+    },
+    {
+     "w": "the",
+     "t": 10.434,
+     "end": 10.498
+    },
+    {
+     "w": "deal.",
+     "t": 10.658,
+     "end": 11.01
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "One founder says Blockbuster's boss struggled not to laugh. The answer was no.",
+   "words": [
+    {
+     "w": "One",
+     "t": 11.066,
+     "end": 11.259
+    },
+    {
+     "w": "founder",
+     "t": 11.323,
+     "end": 11.579
+    },
+    {
+     "w": "says",
+     "t": 11.643,
+     "end": 11.835
+    },
+    {
+     "w": "Blockbuster's",
+     "t": 11.963,
+     "end": 12.539
+    },
+    {
+     "w": "boss",
+     "t": 12.603,
+     "end": 12.923
+    },
+    {
+     "w": "struggled",
+     "t": 13.051,
+     "end": 13.435
+    },
+    {
+     "w": "not",
+     "t": 13.499,
+     "end": 13.627
+    },
+    {
+     "w": "to",
+     "t": 13.691,
+     "end": 13.755
+    },
+    {
+     "w": "laugh.",
+     "t": 13.819,
+     "end": 14.427
+    },
+    {
+     "w": "The",
+     "t": 14.651,
+     "end": 14.715
+    },
+    {
+     "w": "answer",
+     "t": 14.779,
+     "end": 15.099
+    },
+    {
+     "w": "was",
+     "t": 15.291,
+     "end": 15.419
+    },
+    {
+     "w": "no.",
+     "t": 15.547,
+     "end": 16.06
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "That year, Blockbuster collected nearly eight hundred million dollars in late fees.",
+   "words": [
+    {
+     "w": "That",
+     "t": 16.116,
+     "end": 16.308
+    },
+    {
+     "w": "year,",
+     "t": 16.372,
+     "end": 16.82
+    },
+    {
+     "w": "Blockbuster",
+     "t": 16.884,
+     "end": 17.332
+    },
+    {
+     "w": "collected",
+     "t": 17.396,
+     "end": 17.716
+    },
+    {
+     "w": "nearly",
+     "t": 17.844,
+     "end": 18.1
+    },
+    {
+     "w": "eight",
+     "t": 18.164,
+     "end": 18.292
+    },
+    {
+     "w": "hundred",
+     "t": 18.42,
+     "end": 18.676
+    },
+    {
+     "w": "million",
+     "t": 18.932,
+     "end": 19.252
+    },
+    {
+     "w": "dollars",
+     "t": 19.316,
+     "end": 19.7
+    },
+    {
+     "w": "in",
+     "t": 19.764,
+     "end": 19.828
+    },
+    {
+     "w": "late",
+     "t": 19.892,
+     "end": 20.02
+    },
+    {
+     "w": "fees.",
+     "t": 20.085,
+     "end": 20.597
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "Ten years later, it filed for bankruptcy.",
+   "words": [
+    {
+     "w": "Ten",
+     "t": 20.781,
+     "end": 20.909
+    },
+    {
+     "w": "years",
+     "t": 20.973,
+     "end": 21.165
+    },
+    {
+     "w": "later,",
+     "t": 21.325,
+     "end": 21.805
+    },
+    {
+     "w": "it",
+     "t": 21.869,
+     "end": 21.997
+    },
+    {
+     "w": "filed",
+     "t": 22.061,
+     "end": 22.285
+    },
+    {
+     "w": "for",
+     "t": 22.317,
+     "end": 22.445
+    },
+    {
+     "w": "bankruptcy.",
+     "t": 22.541,
+     "end": 23.213
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The whole company sold at auction for about three hundred twenty million.",
+   "words": [
+    {
+     "w": "The",
+     "t": 23.269,
+     "end": 23.397
+    },
+    {
+     "w": "whole",
+     "t": 23.461,
+     "end": 23.589
+    },
+    {
+     "w": "company",
+     "t": 23.653,
+     "end": 23.973
+    },
+    {
+     "w": "sold",
+     "t": 24.037,
+     "end": 24.229
+    },
+    {
+     "w": "at",
+     "t": 24.293,
+     "end": 24.357
+    },
+    {
+     "w": "auction",
+     "t": 24.421,
+     "end": 24.806
+    },
+    {
+     "w": "for",
+     "t": 24.87,
+     "end": 24.934
+    },
+    {
+     "w": "about",
+     "t": 24.998,
+     "end": 25.254
+    },
+    {
+     "w": "three",
+     "t": 25.382,
+     "end": 25.51
+    },
+    {
+     "w": "hundred",
+     "t": 25.574,
+     "end": 25.766
+    },
+    {
+     "w": "twenty",
+     "t": 25.894,
+     "end": 26.086
+    },
+    {
+     "w": "million.",
+     "t": 26.278,
+     "end": 26.854
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "Netflix today is worth about two hundred forty billion.",
+   "words": [
+    {
+     "w": "Netflix",
+     "t": 27.102,
+     "end": 27.486
+    },
+    {
+     "w": "today",
+     "t": 27.646,
+     "end": 27.806
+    },
+    {
+     "w": "is",
+     "t": 27.87,
+     "end": 27.934
+    },
+    {
+     "w": "worth",
+     "t": 27.998,
+     "end": 28.126
+    },
+    {
+     "w": "about",
+     "t": 28.19,
+     "end": 28.446
+    },
+    {
+     "w": "two",
+     "t": 28.51,
+     "end": 28.638
+    },
+    {
+     "w": "hundred",
+     "t": 28.702,
+     "end": 28.959
+    },
+    {
+     "w": "forty",
+     "t": 29.151,
+     "end": 29.471
+    },
+    {
+     "w": "billion.",
+     "t": 29.599,
+     "end": 30.239
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "The lesson: big profits make small ideas look like jokes.",
+   "words": [
+    {
+     "w": "The",
+     "t": 30.295,
+     "end": 30.423
+    },
+    {
+     "w": "lesson:",
+     "t": 30.615,
+     "end": 31.191
+    },
+    {
+     "w": "big",
+     "t": 31.319,
+     "end": 31.447
+    },
+    {
+     "w": "profits",
+     "t": 31.511,
+     "end": 31.959
+    },
+    {
+     "w": "make",
+     "t": 32.023,
+     "end": 32.151
+    },
+    {
+     "w": "small",
+     "t": 32.279,
+     "end": 32.535
+    },
+    {
+     "w": "ideas",
+     "t": 32.599,
+     "end": 32.983
+    },
+    {
+     "w": "look",
+     "t": 33.175,
+     "end": 33.239
+    },
+    {
+     "w": "like",
+     "t": 33.303,
+     "end": 33.432
+    },
+    {
+     "w": "jokes.",
+     "t": 33.56,
+     "end": 34.2
+    }
+   ]
+  },
+  {
+   "turn": 10,
+   "text": "Hard to believe that",
+   "words": [
+    {
+     "w": "Hard",
+     "t": 34.256,
+     "end": 34.512
+    },
+    {
+     "w": "to",
+     "t": 34.544,
+     "end": 34.576
+    },
+    {
+     "w": "believe",
+     "t": 34.64,
+     "end": 34.96
+    },
+    {
+     "w": "that",
+     "t": 35.024,
+     "end": 35.6
+    }
+   ]
+  }
+ ]
+}
