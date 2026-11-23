@@ -3,6 +3,13 @@
 Owner's ask (Nov 23, 2026): run a week where some Shorts are made with the two skill packs in `.claude/skills/`
 (`youtube-*` and `yt-*`) and some without, and see where each stands.
 
+## Update (Nov 23, later the same day): every Short uses the skills
+The owner decided that **every** Short is made with the skill packs from now on, so the "plain" arm below is dropped:
+all 14 slots get the skills pass. The topics and days stay as scheduled. Without a plain arm there is no side-by-side
+inside the week; the comparison becomes this week against each channel's earlier Shorts (same two measures), which is
+weaker because other things changed too (20-40 s length, new topics). The one direct comparison left is the blind
+A/B of the two cloud-made Court Of Weird Shorts.
+
 ## Design
 - Two channels: **Court Of Weird** and **BillionDollarBlunders**. One Short a day each, 17:00 ET, Fri Nov 27 to Thu Dec 3.
 - Inside each channel the arm alternates by day, so every channel is compared with itself. On any day one channel
