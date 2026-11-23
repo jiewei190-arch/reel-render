@@ -1,0 +1,588 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A company promised a hundred pounds to anyone who caught the flu while using its product. Then a customer did, but it refused to pay.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.084,
+     "end": 0.218
+    },
+    {
+     "w": "company",
+     "t": 0.385,
+     "end": 0.553
+    },
+    {
+     "w": "promised",
+     "t": 0.653,
+     "end": 0.955
+    },
+    {
+     "w": "a",
+     "t": 1.022,
+     "end": 1.089
+    },
+    {
+     "w": "hundred",
+     "t": 1.156,
+     "end": 1.424
+    },
+    {
+     "w": "pounds",
+     "t": 1.491,
+     "end": 1.893
+    },
+    {
+     "w": "to",
+     "t": 1.993,
+     "end": 2.094
+    },
+    {
+     "w": "anyone",
+     "t": 2.161,
+     "end": 2.496
+    },
+    {
+     "w": "who",
+     "t": 2.563,
+     "end": 2.63
+    },
+    {
+     "w": "caught",
+     "t": 2.697,
+     "end": 2.831
+    },
+    {
+     "w": "the",
+     "t": 2.898,
+     "end": 2.965
+    },
+    {
+     "w": "flu",
+     "t": 3.099,
+     "end": 3.233
+    },
+    {
+     "w": "while",
+     "t": 3.333,
+     "end": 3.434
+    },
+    {
+     "w": "using",
+     "t": 3.501,
+     "end": 3.702
+    },
+    {
+     "w": "its",
+     "t": 3.769,
+     "end": 3.836
+    },
+    {
+     "w": "product.",
+     "t": 4.037,
+     "end": 4.639
+    },
+    {
+     "w": "Then",
+     "t": 4.807,
+     "end": 4.974
+    },
+    {
+     "w": "a",
+     "t": 5.041,
+     "end": 5.108
+    },
+    {
+     "w": "customer",
+     "t": 5.309,
+     "end": 5.51
+    },
+    {
+     "w": "did,",
+     "t": 5.644,
+     "end": 6.113
+    },
+    {
+     "w": "but",
+     "t": 6.247,
+     "end": 6.381
+    },
+    {
+     "w": "it",
+     "t": 6.448,
+     "end": 6.515
+    },
+    {
+     "w": "refused",
+     "t": 6.616,
+     "end": 6.917
+    },
+    {
+     "w": "to",
+     "t": 6.984,
+     "end": 7.051
+    },
+    {
+     "w": "pay.",
+     "t": 7.185,
+     "end": 7.587
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Victorian England. The Carbolic Smoke Ball Company's newspaper ad says:",
+   "words": [
+    {
+     "w": "Victorian",
+     "t": 7.646,
+     "end": 8.182
+    },
+    {
+     "w": "England.",
+     "t": 8.316,
+     "end": 8.785
+    },
+    {
+     "w": "The",
+     "t": 9.187,
+     "end": 9.254
+    },
+    {
+     "w": "Carbolic",
+     "t": 9.321,
+     "end": 9.723
+    },
+    {
+     "w": "Smoke",
+     "t": 9.79,
+     "end": 9.991
+    },
+    {
+     "w": "Ball",
+     "t": 10.058,
+     "end": 10.192
+    },
+    {
+     "w": "Company's",
+     "t": 10.259,
+     "end": 10.661
+    },
+    {
+     "w": "newspaper",
+     "t": 10.728,
+     "end": 11.13
+    },
+    {
+     "w": "ad",
+     "t": 11.197,
+     "end": 11.398
+    },
+    {
+     "w": "says:",
+     "t": 11.465,
+     "end": 12.001
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "use our smoke ball three times daily for two weeks. Catch influenza, and collect one hundred pounds.",
+   "words": [
+    {
+     "w": "use",
+     "t": 12.26,
+     "end": 12.528
+    },
+    {
+     "w": "our",
+     "t": 12.595,
+     "end": 12.662
+    },
+    {
+     "w": "smoke",
+     "t": 12.729,
+     "end": 12.93
+    },
+    {
+     "w": "ball",
+     "t": 12.997,
+     "end": 13.198
+    },
+    {
+     "w": "three",
+     "t": 13.265,
+     "end": 13.466
+    },
+    {
+     "w": "times",
+     "t": 13.533,
+     "end": 13.801
+    },
+    {
+     "w": "daily",
+     "t": 13.868,
+     "end": 14.136
+    },
+    {
+     "w": "for",
+     "t": 14.203,
+     "end": 14.337
+    },
+    {
+     "w": "two",
+     "t": 14.404,
+     "end": 14.538
+    },
+    {
+     "w": "weeks.",
+     "t": 14.605,
+     "end": 15.007
+    },
+    {
+     "w": "Catch",
+     "t": 15.342,
+     "end": 15.543
+    },
+    {
+     "w": "influenza,",
+     "t": 15.61,
+     "end": 16.28
+    },
+    {
+     "w": "and",
+     "t": 16.347,
+     "end": 16.414
+    },
+    {
+     "w": "collect",
+     "t": 16.481,
+     "end": 16.749
+    },
+    {
+     "w": "one",
+     "t": 16.883,
+     "end": 16.95
+    },
+    {
+     "w": "hundred",
+     "t": 17.017,
+     "end": 17.218
+    },
+    {
+     "w": "pounds.",
+     "t": 17.352,
+     "end": 17.955
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "To show it's sincere, it says a thousand pounds sits in the bank.",
+   "words": [
+    {
+     "w": "To",
+     "t": 18.014,
+     "end": 18.148
+    },
+    {
+     "w": "show",
+     "t": 18.215,
+     "end": 18.349
+    },
+    {
+     "w": "it's",
+     "t": 18.382,
+     "end": 18.483
+    },
+    {
+     "w": "sincere,",
+     "t": 18.516,
+     "end": 19.219
+    },
+    {
+     "w": "it",
+     "t": 19.286,
+     "end": 19.353
+    },
+    {
+     "w": "says",
+     "t": 19.42,
+     "end": 19.688
+    },
+    {
+     "w": "a",
+     "t": 19.889,
+     "end": 20.023
+    },
+    {
+     "w": "thousand",
+     "t": 20.09,
+     "end": 20.425
+    },
+    {
+     "w": "pounds",
+     "t": 20.492,
+     "end": 20.894
+    },
+    {
+     "w": "sits",
+     "t": 20.961,
+     "end": 21.162
+    },
+    {
+     "w": "in",
+     "t": 21.229,
+     "end": 21.296
+    },
+    {
+     "w": "the",
+     "t": 21.33,
+     "end": 21.363
+    },
+    {
+     "w": "bank.",
+     "t": 21.43,
+     "end": 21.966
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Mrs. Carlill uses it as directed. She gets the flu anyway.",
+   "words": [
+    {
+     "w": "Mrs.",
+     "t": 22.025,
+     "end": 22.293
+    },
+    {
+     "w": "Carlill",
+     "t": 22.36,
+     "end": 22.695
+    },
+    {
+     "w": "uses",
+     "t": 22.762,
+     "end": 23.03
+    },
+    {
+     "w": "it",
+     "t": 23.097,
+     "end": 23.164
+    },
+    {
+     "w": "as",
+     "t": 23.231,
+     "end": 23.298
+    },
+    {
+     "w": "directed.",
+     "t": 23.365,
+     "end": 24.236
+    },
+    {
+     "w": "She",
+     "t": 24.303,
+     "end": 24.37
+    },
+    {
+     "w": "gets",
+     "t": 24.47,
+     "end": 24.571
+    },
+    {
+     "w": "the",
+     "t": 24.638,
+     "end": 24.705
+    },
+    {
+     "w": "flu",
+     "t": 24.805,
+     "end": 24.906
+    },
+    {
+     "w": "anyway.",
+     "t": 24.973,
+     "end": 25.576
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The company argues the ad was a mere puff, a promise to nobody.",
+   "words": [
+    {
+     "w": "The",
+     "t": 25.634,
+     "end": 25.768
+    },
+    {
+     "w": "company",
+     "t": 25.936,
+     "end": 26.103
+    },
+    {
+     "w": "argues",
+     "t": 26.17,
+     "end": 26.505
+    },
+    {
+     "w": "the",
+     "t": 26.572,
+     "end": 26.639
+    },
+    {
+     "w": "ad",
+     "t": 26.74,
+     "end": 26.84
+    },
+    {
+     "w": "was",
+     "t": 26.907,
+     "end": 26.974
+    },
+    {
+     "w": "a",
+     "t": 27.041,
+     "end": 27.075
+    },
+    {
+     "w": "mere",
+     "t": 27.108,
+     "end": 27.309
+    },
+    {
+     "w": "puff,",
+     "t": 27.51,
+     "end": 28.18
+    },
+    {
+     "w": "a",
+     "t": 28.247,
+     "end": 28.314
+    },
+    {
+     "w": "promise",
+     "t": 28.482,
+     "end": 28.649
+    },
+    {
+     "w": "to",
+     "t": 28.716,
+     "end": 28.783
+    },
+    {
+     "w": "nobody.",
+     "t": 28.85,
+     "end": 29.52
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Three judges disagree: the bank deposit showed it meant it. Pay her.",
+   "words": [
+    {
+     "w": "Three",
+     "t": 29.579,
+     "end": 29.847
+    },
+    {
+     "w": "judges",
+     "t": 29.914,
+     "end": 30.249
+    },
+    {
+     "w": "disagree:",
+     "t": 30.316,
+     "end": 31.187
+    },
+    {
+     "w": "the",
+     "t": 31.254,
+     "end": 31.321
+    },
+    {
+     "w": "bank",
+     "t": 31.421,
+     "end": 31.522
+    },
+    {
+     "w": "deposit",
+     "t": 31.589,
+     "end": 31.991
+    },
+    {
+     "w": "showed",
+     "t": 32.058,
+     "end": 32.259
+    },
+    {
+     "w": "it",
+     "t": 32.326,
+     "end": 32.393
+    },
+    {
+     "w": "meant",
+     "t": 32.46,
+     "end": 32.661
+    },
+    {
+     "w": "it.",
+     "t": 32.728,
+     "end": 33.197
+    },
+    {
+     "w": "Pay",
+     "t": 33.297,
+     "end": 33.398
+    },
+    {
+     "w": "her.",
+     "t": 33.465,
+     "end": 33.933
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "And it all started when",
+   "words": [
+    {
+     "w": "And",
+     "t": 33.992,
+     "end": 34.126
+    },
+    {
+     "w": "it",
+     "t": 34.193,
+     "end": 34.26
+    },
+    {
+     "w": "all",
+     "t": 34.327,
+     "end": 34.461
+    },
+    {
+     "w": "started",
+     "t": 34.595,
+     "end": 34.997
+    },
+    {
+     "w": "when",
+     "t": 35.064,
+     "end": 35.667
+    }
+   ]
+  }
+ ]
+}

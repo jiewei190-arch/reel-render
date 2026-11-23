@@ -1,0 +1,63 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.1941,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 581,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A company promised a hundred pounds to anyone who caught the flu while using its product. Then a customer did, but it refused to pay.",
+   "start": 0.084,
+   "end": 7.52
+  },
+  {
+   "line": 2,
+   "text": "Victorian England. The Carbolic Smoke Ball Company's newspaper ad says:",
+   "start": 7.646,
+   "end": 12.135
+  },
+  {
+   "line": 3,
+   "text": "use our smoke ball three times daily for two weeks. Catch influenza, and collect one hundred pounds.",
+   "start": 12.26,
+   "end": 17.888
+  },
+  {
+   "line": 4,
+   "text": "To show it's sincere, it says a thousand pounds sits in the bank.",
+   "start": 18.014,
+   "end": 21.899
+  },
+  {
+   "line": 5,
+   "text": "Mrs. Carlill uses it as directed. She gets the flu anyway.",
+   "start": 22.025,
+   "end": 25.509
+  },
+  {
+   "line": 6,
+   "text": "The company argues the ad was a mere puff, a promise to nobody.",
+   "start": 25.634,
+   "end": 29.453
+  },
+  {
+   "line": 7,
+   "text": "Three judges disagree: the bank deposit showed it meant it. Pay her.",
+   "start": 29.579,
+   "end": 33.866
+  },
+  {
+   "line": 8,
+   "text": "And it all started when",
+   "start": 33.992,
+   "end": 35.6
+  }
+ ]
+}

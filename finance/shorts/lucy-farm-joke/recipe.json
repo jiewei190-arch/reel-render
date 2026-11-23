@@ -1,0 +1,530 @@
+{
+ "kit": "law3d",
+ "slug": "lucy-farm-joke",
+ "format": "short",
+ "hook": {
+  "text": "*$50,000* FARM. A JOKE?",
+  "again": "9:And"
+ },
+ "music": "suspense",
+ "cast": {
+  "zehmer": {
+   "role": "defendant",
+   "skin": "#e0b08a",
+   "hairStyle": "short",
+   "hair": "#6b5a48",
+   "suit": "#6a5a3c",
+   "pants": "#4a3f2b",
+   "shirt": "#efe6d4",
+   "tie": "#7a3b1f",
+   "build": "broad",
+   "plate": "THE SELLER"
+  },
+  "lucy": {
+   "role": "plaintiff",
+   "skin": "#d9a984",
+   "hairStyle": "side",
+   "hair": "#2a211c",
+   "suit": "#2e3d5e",
+   "pants": "#26324c",
+   "tie": "#1f4a3a",
+   "build": "avg",
+   "plate": "THE BUYER"
+  },
+  "wife": {
+   "role": "witness",
+   "skin": "#eec3a2",
+   "hairStyle": "bun",
+   "hair": "#7a5a3a",
+   "suit": "#7a4a5a",
+   "shirt": "#f1ebe0",
+   "tie": "#7a4a5a",
+   "build": "slim",
+   "height": 0.94
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "side",
+   "hair": "#b9b2a8",
+   "glasses": true,
+   "plate": "THE COURT"
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "zehmer.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "zehmer",
+     "pose": "present",
+     "face": "smug",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "sold",
+       "face": "happy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.47,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  },
+  {
+   "at": "farm",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.85,
+    "az": 8
+   },
+   "props": [
+    {
+     "id": "check",
+     "kit": "paper",
+     "text": "GUEST CHECK",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.9,
+     "yaw": -8,
+     "motion": "flyIn",
+     "hit": "back"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "restaurant",
+     "label": "THE CONTRACT",
+     "text": "ON A RESTAURANT CHECK",
+     "on": "check"
+    }
+   ]
+  },
+  {
+   "at": "1:then",
+   "set": "courtroom",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "zehmer.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "zehmer",
+     "pose": "talk",
+     "face": "happy",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "joke.",
+       "pose": "smug",
+       "face": "smug"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "1:But",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "sell."
+    }
+   ]
+  },
+  {
+   "at": "line:2",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.65,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "folder",
+     "kit": "folder",
+     "text": "LUCY v. ZEHMER",
+     "at": "desk:0.0,0,0.02",
+     "s": 0.75,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "Virginia,"
+    }
+   ],
+   "actions": [
+    {
+     "do": "caseCard",
+     "at": "Virginia,",
+     "title": "LUCY v. ZEHMER",
+     "year": "1952-1954",
+     "place": "Virginia"
+    }
+   ]
+  },
+  {
+   "at": "line:3",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "medium",
+    "target": "lucy.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": -8
+   },
+   "actors": [
+    {
+     "id": "lucy",
+     "pose": "present",
+     "face": "happy",
+     "at": "plaintiff"
+    }
+   ]
+  },
+  {
+   "at": "fifty",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75
+   },
+   "props": [
+    {
+     "id": "w1",
+     "kit": "money",
+     "at": "desk:-0.33,0,0.25",
+     "yaw": 20,
+     "motion": "dropIn",
+     "hit": "fifty"
+    },
+    {
+     "id": "w2",
+     "kit": "money",
+     "at": "desk:0.3,0,0.28",
+     "yaw": -35,
+     "motion": "dropIn",
+     "hit": "thousand"
+    },
+    {
+     "id": "w3",
+     "kit": "money",
+     "at": "desk:0.0,0,-0.15",
+     "yaw": 70,
+     "motion": "dropIn",
+     "hit": "dollars"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "fifty",
+     "title": "THE OFFER",
+     "prefix": "$",
+     "from": 0,
+     "to": 50000,
+     "land": "dollars",
+     "pos": "center"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "line:4",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.78,
+    "az": -8
+   },
+   "props": [
+    {
+     "id": "check",
+     "kit": "paper",
+     "text": "AGREE TO SELL",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.96,
+     "yaw": 6,
+     "motion": "flyIn",
+     "hit": "writes"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "sign.",
+     "label": "DEC. 20, 1952",
+     "text": "BOTH SIGNED",
+     "on": "check"
+    }
+   ]
+  },
+  {
+   "at": "line:5",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "orbit",
+    "target": "wife.face",
+    "dist": 1.8,
+    "h": 0.05,
+    "az": -10,
+    "sweep": 26,
+    "face": 0.41
+   },
+   "actors": [
+    {
+     "id": "wife",
+     "pose": "talk",
+     "face": "worried",
+     "at": "witness",
+     "sit": true,
+     "then": [
+      {
+       "at": "joke.",
+       "face": "shocked"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:6",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "lucy.face",
+    "dist": 1.9,
+    "az": 12,
+    "face": 0.38
+   },
+   "actors": [
+    {
+     "id": "lucy",
+     "pose": "cross",
+     "face": "stern",
+     "at": "plaintiff"
+    }
+   ]
+  },
+  {
+   "at": "hires",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.85,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "title",
+     "kit": "paper",
+     "text": "TITLE REPORT",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.9,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "lawyer"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "title.",
+     "label": "DEC. 31, 1952",
+     "text": "TITLE IS GOOD",
+     "on": "title"
+    }
+   ]
+  },
+  {
+   "at": "line:7",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "orbit",
+    "target": "zehmer.face",
+    "dist": 1.8,
+    "h": 0.05,
+    "az": 10,
+    "sweep": -26,
+    "face": 0.41
+   },
+   "actors": [
+    {
+     "id": "zehmer",
+     "pose": "talk",
+     "face": "worried",
+     "at": "witness",
+     "sit": true,
+     "talk": true,
+     "then": [
+      {
+       "at": "7:The",
+       "face": "shocked"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:8",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "talk",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "8:not",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "8:It"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "8:It"
+    },
+    {
+     "do": "verdict",
+     "at": "8:It",
+     "text": "REVERSED",
+     "sub": "NOV. 22, 1954 \u00b7 SALE ORDERED"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "9:And",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "zehmer.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "zehmer",
+     "pose": "present",
+     "face": "happy",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "began",
+       "face": "smug"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.47,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  }
+ ]
+}

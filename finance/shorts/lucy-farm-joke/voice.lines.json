@@ -1,0 +1,69 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.2163,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 583,
+ "lines": [
+  {
+   "line": 1,
+   "text": "He sold his farm on the back of a restaurant check, then said it was a joke. But a court made him sell.",
+   "start": 0.082,
+   "end": 5.476
+  },
+  {
+   "line": 2,
+   "text": "Virginia, nineteen fifty-two. Two men share whiskey at A. H. Zehmer's restaurant.",
+   "start": 5.599,
+   "end": 10.598
+  },
+  {
+   "line": 3,
+   "text": "W. O. Lucy offers fifty thousand dollars for the Ferguson farm.",
+   "start": 10.721,
+   "end": 14.536
+  },
+  {
+   "line": 4,
+   "text": "Zehmer writes it on a guest check. He and his wife sign.",
+   "start": 14.659,
+   "end": 17.619
+  },
+  {
+   "line": 5,
+   "text": "By their account, he whispers to her: it's a joke.",
+   "start": 17.742,
+   "end": 21.031
+  },
+  {
+   "line": 6,
+   "text": "Lucy isn't joking. He hires a lawyer to check the title.",
+   "start": 21.154,
+   "end": 24.443
+  },
+  {
+   "line": 7,
+   "text": "Zehmer testifies he was high as a Georgia pine. The court doesn't buy it.",
+   "start": 24.566,
+   "end": 28.908
+  },
+  {
+   "line": 8,
+   "text": "What counts is what you say and do, not a secret intention. It orders the sale.",
+   "start": 29.031,
+   "end": 33.898
+  },
+  {
+   "line": 9,
+   "text": "And it began the night",
+   "start": 34.021,
+   "end": 35.6
+  }
+ ]
+}

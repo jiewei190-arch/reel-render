@@ -1,0 +1,523 @@
+{
+ "kit": "law3d",
+ "slug": "carlill-smoke-ball",
+ "format": "short",
+ "hook": {
+  "text": "CATCH THE FLU, WIN *\u00a3100*",
+  "again": "8:And"
+ },
+ "music": "suspense",
+ "cast": {
+  "carlill": {
+   "role": "plaintiff",
+   "skin": "#eec3a2",
+   "hairStyle": "bun",
+   "hair": "#5a4030",
+   "suit": "#4a3a5a",
+   "pants": "#3a2e47",
+   "shirt": "#f1ebe0",
+   "tie": "#4a3a5a",
+   "build": "slim",
+   "height": 0.95,
+   "plate": "THE CUSTOMER"
+  },
+  "boss": {
+   "role": "defendant",
+   "skin": "#e0b08a",
+   "hairStyle": "side",
+   "hair": "#2a211c",
+   "beard": true,
+   "suit": "#2c2f3a",
+   "pants": "#23252e",
+   "tie": "#7a1f24",
+   "build": "broad",
+   "plate": "THE COMPANY"
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "curly",
+   "hair": "#d8d2c6",
+   "plate": "THE COURT"
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "carlill.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "carlill",
+     "pose": "present",
+     "face": "worried",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "company",
+       "face": "angry"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  },
+  {
+   "at": "promised",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "boss.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "boss",
+     "pose": "present",
+     "face": "happy",
+     "at": "defendant"
+    }
+   ]
+  },
+  {
+   "at": "1:anyone",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75
+   },
+   "props": [
+    {
+     "id": "w1",
+     "kit": "money",
+     "at": "desk:-0.33,0,0.25",
+     "yaw": 20,
+     "motion": "dropIn",
+     "hit": "1:anyone"
+    },
+    {
+     "id": "w2",
+     "kit": "money",
+     "at": "desk:0.3,0,0.28",
+     "yaw": -35,
+     "motion": "dropIn",
+     "hit": "flu"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "1:anyone",
+     "title": "THE REWARD",
+     "value": "\u00a3100",
+     "pos": "center"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "1:Then",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "carlill.face",
+    "dist": 1.8,
+    "az": 12,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "carlill",
+     "pose": "idle",
+     "face": "sad",
+     "at": "plaintiff",
+     "then": [
+      {
+       "at": "1:but",
+       "face": "angry"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "refused",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "boss.face",
+    "dist": 1.9,
+    "az": -14,
+    "hit": "pay.",
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "boss",
+     "pose": "cross",
+     "face": "stern",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "pay.",
+       "pose": "smug",
+       "face": "smug"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:2",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.65,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "folder",
+     "kit": "folder",
+     "text": "CARLILL v. SMOKE BALL CO.",
+     "at": "desk:0.0,0,0.02",
+     "s": 0.75,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "England."
+    }
+   ],
+   "actions": [
+    {
+     "do": "caseCard",
+     "at": "England.",
+     "title": "CARLILL v. CARBOLIC",
+     "year": "1892",
+     "place": "Court of Appeal, England"
+    }
+   ]
+  },
+  {
+   "at": "line:3",
+   "set": "evidence",
+   "cam": {
+    "preset": "crane",
+    "target": "table:0,0.2,0",
+    "dist": 2.3,
+    "h": 0.25,
+    "az": 16,
+    "sweep": 0.5
+   },
+   "props": [
+    {
+     "id": "ball",
+     "kit": "box",
+     "text": "SMOKE BALL",
+     "at": "table",
+     "yaw": 14,
+     "motion": "popIn",
+     "hit": "smoke"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "three",
+     "label": "FOR TWO WEEKS",
+     "text": "3 TIMES DAILY",
+     "on": "ball"
+    }
+   ]
+  },
+  {
+   "at": "Catch",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75,
+    "az": -8
+   },
+   "props": [
+    {
+     "id": "d1",
+     "kit": "money",
+     "at": "desk:-0.3,0,0.2",
+     "yaw": 15,
+     "motion": "dropIn",
+     "hit": "collect"
+    },
+    {
+     "id": "d2",
+     "kit": "money",
+     "at": "desk:0.28,0,0.22",
+     "yaw": -30,
+     "motion": "dropIn",
+     "hit": "3:hundred"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "collect",
+     "title": "CATCH THE FLU, COLLECT",
+     "prefix": "\u00a3",
+     "from": 0,
+     "to": 100,
+     "land": "3:hundred",
+     "pos": "top"
+    }
+   ]
+  },
+  {
+   "at": "line:4",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "dolly",
+    "target": "boss.face",
+    "dist": 2.0,
+    "h": -0.15,
+    "az": -14,
+    "sweep": 0.7
+   },
+   "actors": [
+    {
+     "id": "boss",
+     "pose": "talk",
+     "face": "happy",
+     "at": "defendant",
+     "talk": true
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "thousand",
+     "title": "IN THE BANK",
+     "prefix": "\u00a3",
+     "from": 0,
+     "to": 1000,
+     "land": "4:thousand",
+     "pos": "top"
+    }
+   ]
+  },
+  {
+   "at": "line:5",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "orbit",
+    "target": "carlill.face",
+    "dist": 1.8,
+    "h": 0.05,
+    "az": -10,
+    "sweep": 26,
+    "face": 0.41
+   },
+   "actors": [
+    {
+     "id": "carlill",
+     "pose": "talk",
+     "face": "neutral",
+     "at": "witness",
+     "sit": true,
+     "then": [
+      {
+       "at": "She",
+       "pose": "cry",
+       "face": "sad"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:6",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "dolly",
+    "target": "boss.face",
+    "dist": 2.0,
+    "h": 0.05,
+    "az": 10,
+    "sweep": 0.7
+   },
+   "actors": [
+    {
+     "id": "boss",
+     "pose": "talk",
+     "face": "stern",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "puff,",
+       "pose": "smug",
+       "face": "smug"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:7",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "disagree:",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.78,
+    "az": 8
+   },
+   "props": [
+    {
+     "id": "slip",
+     "kit": "paper",
+     "text": "BANK DEPOSIT",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.96,
+     "yaw": -8,
+     "motion": "flyIn",
+     "hit": "bank"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "deposit",
+     "label": "NOT A MERE PUFF",
+     "text": "\u00a31,000 DEPOSITED",
+     "on": "slip"
+    }
+   ]
+  },
+  {
+   "at": "7:it.",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "7:Pay"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "7:Pay"
+    },
+    {
+     "do": "verdict",
+     "at": "7:Pay",
+     "text": "PAY HER",
+     "sub": "APPEAL DISMISSED \u00b7 1892"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "8:And",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "carlill.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "carlill",
+     "pose": "present",
+     "face": "happy",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "started",
+       "face": "worried"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  }
+ ]
+}
