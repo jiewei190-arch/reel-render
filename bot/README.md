@@ -54,7 +54,7 @@ Run from this `bot` folder:
 | `python -m reelbot voice <slug>` / `recipe <slug>` / `render <slug>` | redo one stage |
 | `python -m reelbot review <slug>` | run the AI editors on the finished video (and fix + re-render if needed) |
 
-Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--style S1..S6`, `--notes "..."`, `--redo`,
+Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 30` (default: 30 on law and biz, 45 elsewhere; 20-40 is the range to stay in), `--style S1..S6`, `--notes "..."`, `--redo`,
 `--edit-rounds 2` (AI editor fix-and-re-render rounds; -1 = skip the review), `--hooks 6` (how many openings to write and score; 0 = off), `--no-learn` (skip refreshing learnings first).
 
 ## Voice emotion and sound design
