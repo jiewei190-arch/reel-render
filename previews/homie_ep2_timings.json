@@ -1,892 +1,890 @@
 {
- "audio": "previews/homie_ep2_soundboard_voiceover_jamal.mp3",
- "duration": 75.52,
- "narrator_voice": "Young Jamal (ElevenLabs library)",
+ "audio": "previews/homie_ep2_soundboard_voiceover_gerald.mp3",
+ "duration": 84.16,
+ "narrator_voice": "Gerald (ElevenLabs library)",
  "homie_voice": "Tyler",
  "sfx_in_audio": [
   {
-   "t": 8.67,
-   "end": 9.58,
+   "t": 9.23,
+   "end": 10.14,
    "kind": "bruh_phone"
   },
   {
-   "t": 14.45,
-   "end": 15.37,
+   "t": 15.73,
+   "end": 16.65,
    "kind": "bruh_phone"
   },
   {
-   "t": 29.52,
-   "end": 30.43,
+   "t": 30.48,
+   "end": 31.39,
    "kind": "bruh_phone"
   },
   {
-   "t": 40.82,
-   "end": 41.73,
+   "t": 45.06,
+   "end": 45.97,
    "kind": "bruh_phone"
   },
   {
-   "t": 59.73,
-   "end": 61.72,
+   "t": 65.97,
+   "end": 67.96,
    "kind": "bruh_gym"
+  }
+ ],
+ "word_swap_slots": [
+  {
+   "t": 3.68,
+   "end": 3.98,
+   "context": "bruh. This bruh downloaded a"
+  },
+  {
+   "t": 32.28,
+   "end": 32.62,
+   "context": "pass, this bro got detention"
+  },
+  {
+   "t": 70.78,
+   "end": 71.28,
+   "context": "700 kids bro one stupid"
+  },
+  {
+   "t": 77.88,
+   "end": 78.74,
+   "context": "-hole school bro why the"
   }
  ],
  "words": [
   {
-   "w": "my",
+   "w": "Yo,",
    "t": 0.0,
-   "end": 0.28,
+   "end": 0.32,
+   "speaker": "me"
+  },
+  {
+   "w": "my",
+   "t": 0.46,
+   "end": 0.54,
    "speaker": "me"
   },
   {
    "w": "homie",
-   "t": 0.28,
-   "end": 0.74,
+   "t": 0.54,
+   "end": 0.9,
    "speaker": "me"
   },
   {
    "w": "is",
-   "t": 0.74,
-   "end": 1.0,
+   "t": 0.9,
+   "end": 1.14,
    "speaker": "me"
   },
   {
    "w": "not",
-   "t": 1.0,
-   "end": 1.44,
+   "t": 1.14,
+   "end": 1.62,
    "speaker": "me"
   },
   {
-   "w": "okay",
-   "t": 1.44,
-   "end": 2.2,
+   "w": "okay,",
+   "t": 1.62,
+   "end": 2.34,
    "speaker": "me"
   },
   {
-   "w": "bro",
-   "t": 2.2,
-   "end": 2.62,
+   "w": "bruh.",
+   "t": 2.56,
+   "end": 3.22,
    "speaker": "me"
   },
   {
-   "w": "this",
-   "t": 2.62,
-   "end": 3.16,
-   "speaker": "me"
-  },
-  {
-   "w": "dumb",
-   "t": 3.16,
-   "end": 3.4,
-   "speaker": "me"
-  },
-  {
-   "w": "ass",
-   "t": 3.4,
+   "w": "This",
+   "t": 3.44,
    "end": 3.68,
    "speaker": "me"
   },
   {
-   "w": "downloaded",
+   "w": "bruh",
    "t": 3.68,
-   "end": 4.2,
+   "end": 3.98,
+   "speaker": "me"
+  },
+  {
+   "w": "downloaded",
+   "t": 3.98,
+   "end": 4.4,
    "speaker": "me"
   },
   {
    "w": "a",
-   "t": 4.2,
-   "end": 4.44,
+   "t": 4.4,
+   "end": 4.66,
    "speaker": "me"
   },
   {
    "w": "soundboard",
-   "t": 4.44,
-   "end": 5.0,
+   "t": 4.66,
+   "end": 5.2,
    "speaker": "me"
   },
   {
    "w": "app",
-   "t": 5.0,
-   "end": 5.3,
+   "t": 5.2,
+   "end": 5.48,
    "speaker": "me"
   },
   {
    "w": "last",
-   "t": 5.3,
-   "end": 5.6,
+   "t": 5.48,
+   "end": 5.8,
    "speaker": "me"
   },
   {
-   "w": "night",
-   "t": 5.6,
-   "end": 6.04,
+   "w": "night.",
+   "t": 5.8,
+   "end": 6.2,
    "speaker": "me"
   },
   {
-   "w": "one",
-   "t": 6.04,
-   "end": 6.72,
+   "w": "One",
+   "t": 6.72,
+   "end": 6.96,
    "speaker": "me"
   },
   {
    "w": "fucking",
-   "t": 6.72,
-   "end": 7.54,
+   "t": 6.96,
+   "end": 7.74,
    "speaker": "me"
   },
   {
-   "w": "button",
-   "t": 7.54,
-   "end": 8.32,
+   "w": "button,",
+   "t": 7.74,
+   "end": 8.46,
    "speaker": "me"
   },
   {
-   "w": "bruh",
-   "t": 8.32,
-   "end": 9.76,
+   "w": "First",
+   "t": 10.76,
+   "end": 11.02,
    "speaker": "me"
   },
   {
-   "w": "first",
-   "t": 9.76,
-   "end": 10.38,
-   "speaker": "me"
-  },
-  {
-   "w": "period",
-   "t": 10.38,
-   "end": 10.86,
+   "w": "period,",
+   "t": 11.02,
+   "end": 11.44,
    "speaker": "me"
   },
   {
    "w": "teacher",
-   "t": 10.86,
-   "end": 11.18,
+   "t": 11.6,
+   "end": 11.72,
    "speaker": "me"
   },
   {
-   "w": "goes",
-   "t": 11.18,
-   "end": 11.64,
+   "w": "goes,",
+   "t": 11.72,
+   "end": 12.2,
    "speaker": "me"
   },
   {
    "w": "pop",
-   "t": 11.64,
-   "end": 12.36,
+   "t": 12.76,
+   "end": 13.04,
    "speaker": "me"
   },
   {
-   "w": "quiz",
-   "t": 12.36,
-   "end": 12.82,
+   "w": "quiz,",
+   "t": 13.04,
+   "end": 13.5,
    "speaker": "me"
   },
   {
    "w": "phones",
-   "t": 12.82,
-   "end": 13.28,
+   "t": 14.16,
+   "end": 14.36,
    "speaker": "me"
   },
   {
-   "w": "away",
-   "t": 13.28,
-   "end": 13.86,
+   "w": "away,",
+   "t": 14.36,
+   "end": 14.82,
    "speaker": "me"
   },
   {
-   "w": "bruh",
-   "t": 13.86,
-   "end": 14.72,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 16.64,
-   "end": 17.16,
+   "w": "The",
+   "t": 17.56,
+   "end": 18.4,
    "speaker": "me"
   },
   {
    "w": "whole",
-   "t": 17.16,
-   "end": 17.72,
+   "t": 18.4,
+   "end": 19.04,
    "speaker": "me"
   },
   {
    "w": "damn",
-   "t": 17.72,
-   "end": 18.36,
+   "t": 19.04,
+   "end": 19.58,
    "speaker": "me"
   },
   {
    "w": "class",
-   "t": 18.36,
-   "end": 18.96,
+   "t": 19.58,
+   "end": 20.06,
    "speaker": "me"
   },
   {
    "w": "lost",
-   "t": 18.96,
-   "end": 19.52,
+   "t": 20.06,
+   "end": 20.46,
    "speaker": "me"
   },
   {
-   "w": "it",
-   "t": 19.52,
-   "end": 20.12,
+   "w": "it.",
+   "t": 20.46,
+   "end": 20.88,
    "speaker": "me"
   },
   {
-   "w": "teacher's",
-   "t": 20.12,
-   "end": 20.66,
+   "w": "Teacher's",
+   "t": 21.3,
+   "end": 21.62,
    "speaker": "me"
   },
   {
    "w": "face",
-   "t": 20.66,
-   "end": 20.9,
+   "t": 21.62,
+   "end": 21.86,
    "speaker": "me"
   },
   {
    "w": "went",
-   "t": 20.9,
-   "end": 21.24,
+   "t": 21.86,
+   "end": 22.24,
    "speaker": "me"
   },
   {
    "w": "purple",
-   "t": 21.24,
-   "end": 21.82,
+   "t": 22.24,
+   "end": 22.76,
    "speaker": "me"
   },
   {
    "w": "as",
-   "t": 21.82,
-   "end": 22.26,
+   "t": 22.76,
+   "end": 23.48,
    "speaker": "me"
   },
   {
-   "w": "fuck",
-   "t": 22.26,
-   "end": 23.04,
+   "w": "fuck.",
+   "t": 23.48,
+   "end": 24.26,
    "speaker": "me"
   },
   {
-   "w": "hallway",
-   "t": 23.04,
-   "end": 24.46,
+   "w": "Hallway,",
+   "t": 25.48,
+   "end": 25.88,
    "speaker": "me"
   },
   {
    "w": "principal",
-   "t": 24.46,
-   "end": 25.28,
+   "t": 26.5,
+   "end": 26.6,
    "speaker": "me"
   },
   {
    "w": "stops",
-   "t": 25.28,
-   "end": 25.68,
+   "t": 26.6,
+   "end": 27.06,
    "speaker": "me"
   },
   {
    "w": "him",
-   "t": 25.68,
-   "end": 25.96,
+   "t": 27.06,
+   "end": 27.3,
    "speaker": "me"
   },
   {
-   "w": "like",
-   "t": 25.96,
-   "end": 26.36,
+   "w": "like,",
+   "t": 27.3,
+   "end": 27.56,
    "speaker": "me"
   },
   {
    "w": "young",
-   "t": 26.36,
-   "end": 27.04,
+   "t": 27.86,
+   "end": 28.1,
    "speaker": "me"
   },
   {
-   "w": "man",
-   "t": 27.04,
-   "end": 27.5,
+   "w": "man,",
+   "t": 28.1,
+   "end": 28.52,
    "speaker": "me"
   },
   {
    "w": "where's",
-   "t": 27.5,
-   "end": 28.16,
+   "t": 28.98,
+   "end": 29.18,
    "speaker": "me"
   },
   {
    "w": "your",
-   "t": 28.16,
-   "end": 28.26,
+   "t": 29.18,
+   "end": 29.34,
    "speaker": "me"
   },
   {
    "w": "hall",
-   "t": 28.26,
-   "end": 28.5,
+   "t": 29.34,
+   "end": 29.56,
    "speaker": "me"
   },
   {
-   "w": "pass",
-   "t": 28.5,
-   "end": 29.06,
-   "speaker": "me"
-  },
-  {
-   "w": "bruh",
-   "t": 29.06,
-   "end": 30.8,
-   "speaker": "me"
-  },
-  {
-   "w": "bro",
-   "t": 30.8,
-   "end": 31.3,
-   "speaker": "me"
-  },
-  {
-   "w": "got",
-   "t": 31.3,
-   "end": 31.64,
-   "speaker": "me"
-  },
-  {
-   "w": "detention",
-   "t": 31.64,
-   "end": 32.12,
-   "speaker": "me"
-  },
-  {
-   "w": "so",
-   "t": 32.12,
-   "end": 32.86,
-   "speaker": "me"
-  },
-  {
-   "w": "fucking",
-   "t": 32.86,
-   "end": 33.78,
-   "speaker": "me"
-  },
-  {
-   "w": "fast",
-   "t": 33.78,
-   "end": 34.28,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 34.28,
-   "end": 34.6,
-   "speaker": "me"
-  },
-  {
-   "w": "principal",
-   "t": 34.6,
-   "end": 34.8,
-   "speaker": "me"
-  },
-  {
-   "w": "didn't",
-   "t": 34.8,
-   "end": 35.32,
-   "speaker": "me"
-  },
-  {
-   "w": "even",
-   "t": 35.32,
-   "end": 35.56,
-   "speaker": "me"
-  },
-  {
-   "w": "blink",
-   "t": 35.56,
-   "end": 35.96,
-   "speaker": "me"
-  },
-  {
-   "w": "then",
-   "t": 35.96,
-   "end": 36.34,
-   "speaker": "me"
-  },
-  {
-   "w": "lunch",
-   "t": 36.34,
-   "end": 36.76,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 36.76,
-   "end": 37.06,
-   "speaker": "me"
-  },
-  {
-   "w": "lunch",
-   "t": 37.06,
-   "end": 37.24,
-   "speaker": "me"
-  },
-  {
-   "w": "lady",
-   "t": 37.24,
-   "end": 37.44,
-   "speaker": "me"
-  },
-  {
-   "w": "drops",
-   "t": 37.44,
-   "end": 37.82,
-   "speaker": "me"
-  },
-  {
-   "w": "one",
-   "t": 37.82,
-   "end": 38.28,
-   "speaker": "me"
-  },
-  {
-   "w": "sad",
-   "t": 38.28,
-   "end": 38.76,
-   "speaker": "me"
-  },
-  {
-   "w": "ass",
-   "t": 38.76,
-   "end": 39.0,
-   "speaker": "me"
-  },
-  {
-   "w": "chicken",
-   "t": 39.0,
-   "end": 39.3,
-   "speaker": "me"
-  },
-  {
-   "w": "nugget",
-   "t": 39.3,
-   "end": 39.66,
-   "speaker": "me"
-  },
-  {
-   "w": "on",
-   "t": 39.66,
-   "end": 39.82,
-   "speaker": "me"
-  },
-  {
-   "w": "his",
-   "t": 39.82,
-   "end": 39.98,
-   "speaker": "me"
-  },
-  {
-   "w": "tray",
-   "t": 39.98,
-   "end": 40.38,
-   "speaker": "me"
-  },
-  {
-   "w": "bruh",
-   "t": 40.38,
-   "end": 41.08,
-   "speaker": "me"
-  },
-  {
-   "w": "she",
-   "t": 42.18,
-   "end": 42.58,
-   "speaker": "me"
-  },
-  {
-   "w": "took",
-   "t": 42.58,
-   "end": 42.96,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 42.96,
-   "end": 43.36,
-   "speaker": "me"
-  },
-  {
-   "w": "fucking",
-   "t": 43.36,
-   "end": 44.2,
-   "speaker": "me"
-  },
-  {
-   "w": "nugget",
-   "t": 44.2,
-   "end": 44.94,
-   "speaker": "me"
-  },
-  {
-   "w": "back",
-   "t": 44.94,
-   "end": 45.48,
-   "speaker": "me"
-  },
-  {
-   "w": "so",
-   "t": 45.48,
-   "end": 46.02,
-   "speaker": "me"
-  },
-  {
-   "w": "i'm",
-   "t": 46.02,
-   "end": 46.34,
-   "speaker": "me"
-  },
-  {
-   "w": "like",
-   "t": 46.34,
-   "end": 46.7,
-   "speaker": "me"
-  },
-  {
-   "w": "bro",
-   "t": 46.7,
-   "end": 47.32,
-   "speaker": "me"
-  },
-  {
-   "w": "delete",
-   "t": 47.32,
-   "end": 47.88,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 47.88,
-   "end": 48.08,
-   "speaker": "me"
-  },
-  {
-   "w": "damn",
-   "t": 48.08,
-   "end": 48.3,
-   "speaker": "me"
-  },
-  {
-   "w": "app",
-   "t": 48.3,
-   "end": 48.8,
-   "speaker": "me"
-  },
-  {
-   "w": "nah",
-   "t": 48.8,
-   "end": 49.36,
-   "speaker": "homie"
-  },
-  {
-   "w": "It's",
-   "t": 49.7,
-   "end": 49.86,
-   "speaker": "homie"
-  },
-  {
-   "w": "connected",
-   "t": 49.86,
-   "end": 49.86,
-   "speaker": "homie"
-  },
-  {
-   "w": "to",
-   "t": 49.86,
-   "end": 50.04,
-   "speaker": "homie"
-  },
-  {
-   "w": "the",
-   "t": 50.04,
-   "end": 50.14,
-   "speaker": "homie"
-  },
-  {
-   "w": "Bluetooth.",
-   "t": 50.14,
-   "end": 50.52,
-   "speaker": "homie"
-  },
-  {
-   "w": "What",
-   "t": 51.1,
-   "end": 51.26,
-   "speaker": "me"
-  },
-  {
-   "w": "fuckin'",
-   "t": 51.26,
-   "end": 51.66,
-   "speaker": "me"
-  },
-  {
-   "w": "Bluetooth?",
-   "t": 52.22,
-   "end": 52.22,
-   "speaker": "me"
-  },
-  {
-   "w": "Fifth",
-   "t": 52.9,
-   "end": 53.0,
-   "speaker": "me"
-  },
-  {
-   "w": "period.",
-   "t": 53.0,
-   "end": 53.5,
-   "speaker": "me"
-  },
-  {
-   "w": "School",
-   "t": 53.9,
-   "end": 54.04,
-   "speaker": "me"
-  },
-  {
-   "w": "assembly.",
-   "t": 54.04,
-   "end": 54.52,
-   "speaker": "me"
-  },
-  {
-   "w": "Principal",
-   "t": 55.22,
-   "end": 55.22,
-   "speaker": "me"
-  },
-  {
-   "w": "taps",
-   "t": 55.22,
-   "end": 55.58,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 55.58,
-   "end": 55.84,
-   "speaker": "me"
-  },
-  {
-   "w": "mic.",
-   "t": 55.84,
-   "end": 56.08,
-   "speaker": "me"
-  },
-  {
-   "w": "Today",
-   "t": 56.34,
-   "end": 56.7,
-   "speaker": "me"
-  },
-  {
-   "w": "we",
-   "t": 56.74,
-   "end": 57.04,
-   "speaker": "me"
-  },
-  {
-   "w": "honor",
-   "t": 57.04,
-   "end": 57.36,
-   "speaker": "me"
-  },
-  {
-   "w": "our",
-   "t": 57.36,
-   "end": 57.62,
-   "speaker": "me"
-  },
-  {
-   "w": "student",
-   "t": 57.62,
-   "end": 57.94,
-   "speaker": "me"
-  },
-  {
-   "w": "of",
-   "t": 57.94,
-   "end": 58.24,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 58.24,
-   "end": 58.4,
-   "speaker": "me"
-  },
-  {
-   "w": "month",
-   "t": 58.4,
-   "end": 59.12,
-   "speaker": "me"
-  },
-  {
-   "w": "bruh",
-   "t": 59.12,
-   "end": 62.12,
-   "speaker": "me"
-  },
-  {
-   "w": "700",
-   "t": 62.12,
-   "end": 62.84,
-   "speaker": "me"
-  },
-  {
-   "w": "kids",
-   "t": 62.84,
-   "end": 64.06,
-   "speaker": "me"
-  },
-  {
-   "w": "bro",
-   "t": 64.06,
-   "end": 64.52,
-   "speaker": "me"
-  },
-  {
-   "w": "one",
-   "t": 64.52,
-   "end": 65.28,
-   "speaker": "me"
-  },
-  {
-   "w": "stupid",
-   "t": 65.28,
-   "end": 65.74,
-   "speaker": "me"
-  },
-  {
-   "w": "ass",
-   "t": 65.74,
-   "end": 66.1,
-   "speaker": "me"
-  },
-  {
-   "w": "button",
-   "t": 66.1,
-   "end": 66.52,
-   "speaker": "me"
-  },
-  {
-   "w": "we",
-   "t": 66.52,
-   "end": 67.06,
-   "speaker": "me"
-  },
-  {
-   "w": "are",
-   "t": 67.06,
-   "end": 67.24,
-   "speaker": "me"
-  },
-  {
-   "w": "never",
-   "t": 67.24,
-   "end": 67.64,
-   "speaker": "me"
-  },
-  {
-   "w": "going",
-   "t": 67.64,
-   "end": 68.04,
-   "speaker": "me"
-  },
-  {
-   "w": "back",
-   "t": 68.04,
-   "end": 68.32,
-   "speaker": "me"
-  },
-  {
-   "w": "to",
-   "t": 68.32,
-   "end": 68.46,
-   "speaker": "me"
-  },
-  {
-   "w": "that",
-   "t": 68.46,
-   "end": 68.64,
-   "speaker": "me"
-  },
-  {
-   "w": "shit",
-   "t": 68.64,
-   "end": 68.88,
-   "speaker": "me"
-  },
-  {
-   "w": "hole",
-   "t": 68.88,
-   "end": 69.1,
-   "speaker": "me"
-  },
-  {
-   "w": "school",
-   "t": 69.1,
-   "end": 69.78,
-   "speaker": "me"
-  },
-  {
-   "w": "bro",
-   "t": 69.78,
-   "end": 70.54,
-   "speaker": "me"
-  },
-  {
-   "w": "why",
-   "t": 70.54,
-   "end": 71.6,
-   "speaker": "me"
-  },
-  {
-   "w": "the",
-   "t": 71.6,
-   "end": 71.88,
-   "speaker": "me"
-  },
-  {
-   "w": "fuck",
-   "t": 71.88,
-   "end": 72.58,
-   "speaker": "me"
-  },
-  {
-   "w": "are",
-   "t": 72.58,
-   "end": 72.98,
-   "speaker": "me"
-  },
-  {
-   "w": "you",
-   "t": 72.98,
-   "end": 73.14,
-   "speaker": "me"
-  },
-  {
-   "w": "like",
-   "t": 73.14,
-   "end": 73.38,
+   "w": "pass,",
+   "t": 29.56,
+   "end": 30.06,
    "speaker": "me"
   },
   {
    "w": "this",
-   "t": 73.38,
-   "end": 73.82,
+   "t": 32.04,
+   "end": 32.28,
+   "speaker": "me"
+  },
+  {
+   "w": "bro",
+   "t": 32.28,
+   "end": 32.62,
+   "speaker": "me"
+  },
+  {
+   "w": "got",
+   "t": 32.62,
+   "end": 32.96,
+   "speaker": "me"
+  },
+  {
+   "w": "detention",
+   "t": 32.96,
+   "end": 33.52,
+   "speaker": "me"
+  },
+  {
+   "w": "so",
+   "t": 33.52,
+   "end": 34.2,
+   "speaker": "me"
+  },
+  {
+   "w": "fucking",
+   "t": 34.2,
+   "end": 35.2,
+   "speaker": "me"
+  },
+  {
+   "w": "fast,",
+   "t": 35.2,
+   "end": 36.02,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 36.4,
+   "end": 36.58,
+   "speaker": "me"
+  },
+  {
+   "w": "principal",
+   "t": 36.58,
+   "end": 36.96,
+   "speaker": "me"
+  },
+  {
+   "w": "didn't",
+   "t": 36.96,
+   "end": 37.52,
+   "speaker": "me"
+  },
+  {
+   "w": "even",
+   "t": 37.52,
+   "end": 37.8,
+   "speaker": "me"
+  },
+  {
+   "w": "blink.",
+   "t": 37.8,
+   "end": 38.22,
+   "speaker": "me"
+  },
+  {
+   "w": "Then",
+   "t": 38.92,
+   "end": 39.34,
+   "speaker": "me"
+  },
+  {
+   "w": "lunch,",
+   "t": 39.34,
+   "end": 39.82,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 40.68,
+   "end": 40.86,
+   "speaker": "me"
+  },
+  {
+   "w": "lunch",
+   "t": 40.86,
+   "end": 41.12,
+   "speaker": "me"
+  },
+  {
+   "w": "lady",
+   "t": 41.12,
+   "end": 41.4,
+   "speaker": "me"
+  },
+  {
+   "w": "drops",
+   "t": 41.4,
+   "end": 41.86,
+   "speaker": "me"
+  },
+  {
+   "w": "one",
+   "t": 41.86,
+   "end": 42.52,
+   "speaker": "me"
+  },
+  {
+   "w": "sad",
+   "t": 42.52,
+   "end": 42.98,
+   "speaker": "me"
+  },
+  {
+   "w": "ass",
+   "t": 42.98,
+   "end": 43.34,
+   "speaker": "me"
+  },
+  {
+   "w": "chicken",
+   "t": 43.34,
+   "end": 43.62,
+   "speaker": "me"
+  },
+  {
+   "w": "nugget",
+   "t": 43.62,
+   "end": 44.02,
+   "speaker": "me"
+  },
+  {
+   "w": "on",
+   "t": 44.02,
+   "end": 44.16,
+   "speaker": "me"
+  },
+  {
+   "w": "his",
+   "t": 44.16,
+   "end": 44.34,
+   "speaker": "me"
+  },
+  {
+   "w": "tray,",
+   "t": 44.34,
+   "end": 44.7,
+   "speaker": "me"
+  },
+  {
+   "w": "she",
+   "t": 46.6,
+   "end": 46.88,
+   "speaker": "me"
+  },
+  {
+   "w": "took",
+   "t": 46.88,
+   "end": 47.22,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 47.22,
+   "end": 47.52,
+   "speaker": "me"
+  },
+  {
+   "w": "fucking",
+   "t": 47.52,
+   "end": 48.32,
+   "speaker": "me"
+  },
+  {
+   "w": "nugget",
+   "t": 48.32,
+   "end": 48.9,
+   "speaker": "me"
+  },
+  {
+   "w": "back,",
+   "t": 48.9,
+   "end": 49.34,
+   "speaker": "me"
+  },
+  {
+   "w": "so",
+   "t": 49.96,
+   "end": 50.28,
+   "speaker": "me"
+  },
+  {
+   "w": "I'm",
+   "t": 50.28,
+   "end": 50.46,
+   "speaker": "me"
+  },
+  {
+   "w": "like,",
+   "t": 50.46,
+   "end": 50.82,
+   "speaker": "me"
+  },
+  {
+   "w": "bro,",
+   "t": 51.38,
+   "end": 51.78,
+   "speaker": "me"
+  },
+  {
+   "w": "delete",
+   "t": 52.58,
+   "end": 52.82,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 52.82,
+   "end": 53.1,
+   "speaker": "me"
+  },
+  {
+   "w": "damn",
+   "t": 53.1,
+   "end": 53.38,
+   "speaker": "me"
+  },
+  {
+   "w": "app.",
+   "t": 53.38,
+   "end": 53.76,
+   "speaker": "me"
+  },
+  {
+   "w": "Nah,",
+   "t": 54.64,
+   "end": 54.84,
+   "speaker": "homie"
+  },
+  {
+   "w": "it's",
+   "t": 54.88,
+   "end": 55.02,
+   "speaker": "homie"
+  },
+  {
+   "w": "connected",
+   "t": 55.02,
+   "end": 55.24,
+   "speaker": "homie"
+  },
+  {
+   "w": "to",
+   "t": 55.24,
+   "end": 55.5,
+   "speaker": "homie"
+  },
+  {
+   "w": "the",
+   "t": 55.5,
+   "end": 55.62,
+   "speaker": "homie"
+  },
+  {
+   "w": "Bluetooth.",
+   "t": 55.62,
+   "end": 55.98,
+   "speaker": "homie"
+  },
+  {
+   "w": "what",
+   "t": 55.98,
+   "end": 56.7,
+   "speaker": "me"
+  },
+  {
+   "w": "fucking",
+   "t": 56.7,
+   "end": 57.3,
+   "speaker": "me"
+  },
+  {
+   "w": "bluetooth,",
+   "t": 57.3,
+   "end": 58.18,
+   "speaker": "me"
+  },
+  {
+   "w": "fifth",
+   "t": 58.84,
+   "end": 58.94,
+   "speaker": "me"
+  },
+  {
+   "w": "period,",
+   "t": 58.94,
+   "end": 59.5,
+   "speaker": "me"
+  },
+  {
+   "w": "school",
+   "t": 59.94,
+   "end": 60.24,
+   "speaker": "me"
+  },
+  {
+   "w": "assembly,",
+   "t": 60.24,
+   "end": 60.86,
+   "speaker": "me"
+  },
+  {
+   "w": "principal",
+   "t": 61.36,
+   "end": 61.6,
+   "speaker": "me"
+  },
+  {
+   "w": "taps",
+   "t": 61.6,
+   "end": 62.0,
+   "speaker": "me"
+  },
+  {
+   "w": "to",
+   "t": 62.0,
+   "end": 62.22,
+   "speaker": "me"
+  },
+  {
+   "w": "mic",
+   "t": 62.22,
+   "end": 62.44,
+   "speaker": "me"
+  },
+  {
+   "w": "today",
+   "t": 62.44,
+   "end": 63.26,
+   "speaker": "me"
+  },
+  {
+   "w": "we",
+   "t": 63.26,
+   "end": 63.54,
+   "speaker": "me"
+  },
+  {
+   "w": "honor",
+   "t": 63.54,
+   "end": 63.86,
+   "speaker": "me"
+  },
+  {
+   "w": "our",
+   "t": 63.86,
+   "end": 64.1,
+   "speaker": "me"
+  },
+  {
+   "w": "student",
+   "t": 64.1,
+   "end": 64.5,
+   "speaker": "me"
+  },
+  {
+   "w": "of",
+   "t": 64.5,
+   "end": 64.76,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 64.76,
+   "end": 64.92,
+   "speaker": "me"
+  },
+  {
+   "w": "month",
+   "t": 64.92,
+   "end": 65.52,
+   "speaker": "me"
+  },
+  {
+   "w": "700",
+   "t": 69.1,
+   "end": 69.94,
+   "speaker": "me"
+  },
+  {
+   "w": "kids",
+   "t": 69.94,
+   "end": 70.78,
+   "speaker": "me"
+  },
+  {
+   "w": "bro",
+   "t": 70.78,
+   "end": 71.28,
+   "speaker": "me"
+  },
+  {
+   "w": "one",
+   "t": 71.28,
+   "end": 72.36,
+   "speaker": "me"
+  },
+  {
+   "w": "stupid",
+   "t": 72.36,
+   "end": 72.94,
+   "speaker": "me"
+  },
+  {
+   "w": "ass",
+   "t": 72.94,
+   "end": 73.3,
+   "speaker": "me"
+  },
+  {
+   "w": "button",
+   "t": 73.3,
+   "end": 73.72,
+   "speaker": "me"
+  },
+  {
+   "w": "we",
+   "t": 73.72,
+   "end": 74.58,
+   "speaker": "me"
+  },
+  {
+   "w": "are",
+   "t": 74.58,
+   "end": 74.78,
+   "speaker": "me"
+  },
+  {
+   "w": "never",
+   "t": 74.78,
+   "end": 75.28,
+   "speaker": "me"
+  },
+  {
+   "w": "going",
+   "t": 75.28,
+   "end": 76.18,
+   "speaker": "me"
+  },
+  {
+   "w": "back",
+   "t": 76.18,
+   "end": 76.48,
+   "speaker": "me"
+  },
+  {
+   "w": "to",
+   "t": 76.48,
+   "end": 76.64,
+   "speaker": "me"
+  },
+  {
+   "w": "that",
+   "t": 76.64,
+   "end": 76.82,
+   "speaker": "me"
+  },
+  {
+   "w": "shit",
+   "t": 76.82,
+   "end": 77.08,
+   "speaker": "me"
+  },
+  {
+   "w": "-hole",
+   "t": 77.08,
+   "end": 77.28,
+   "speaker": "me"
+  },
+  {
+   "w": "school",
+   "t": 77.28,
+   "end": 77.88,
+   "speaker": "me"
+  },
+  {
+   "w": "bro",
+   "t": 77.88,
+   "end": 78.74,
+   "speaker": "me"
+  },
+  {
+   "w": "why",
+   "t": 78.74,
+   "end": 79.6,
+   "speaker": "me"
+  },
+  {
+   "w": "the",
+   "t": 79.6,
+   "end": 79.84,
+   "speaker": "me"
+  },
+  {
+   "w": "fuck",
+   "t": 79.84,
+   "end": 80.46,
+   "speaker": "me"
+  },
+  {
+   "w": "are",
+   "t": 80.46,
+   "end": 81.54,
+   "speaker": "me"
+  },
+  {
+   "w": "you",
+   "t": 81.54,
+   "end": 81.72,
+   "speaker": "me"
+  },
+  {
+   "w": "like",
+   "t": 81.72,
+   "end": 82.0,
+   "speaker": "me"
+  },
+  {
+   "w": "this",
+   "t": 82.0,
+   "end": 82.38,
    "speaker": "me"
   }
  ],
