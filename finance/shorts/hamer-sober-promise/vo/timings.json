@@ -1,0 +1,577 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "An uncle promised his nephew five thousand dollars to stay sober, but died without paying. Then it went to court.",
+   "words": [
+    {
+     "w": "An",
+     "t": 0.08,
+     "end": 0.209
+    },
+    {
+     "w": "uncle",
+     "t": 0.273,
+     "end": 0.53
+    },
+    {
+     "w": "promised",
+     "t": 0.594,
+     "end": 0.915
+    },
+    {
+     "w": "his",
+     "t": 0.979,
+     "end": 1.043
+    },
+    {
+     "w": "nephew",
+     "t": 1.107,
+     "end": 1.428
+    },
+    {
+     "w": "five",
+     "t": 1.493,
+     "end": 1.685
+    },
+    {
+     "w": "thousand",
+     "t": 1.878,
+     "end": 2.199
+    },
+    {
+     "w": "dollars",
+     "t": 2.263,
+     "end": 2.584
+    },
+    {
+     "w": "to",
+     "t": 2.648,
+     "end": 2.713
+    },
+    {
+     "w": "stay",
+     "t": 2.777,
+     "end": 2.905
+    },
+    {
+     "w": "sober,",
+     "t": 3.034,
+     "end": 3.547
+    },
+    {
+     "w": "but",
+     "t": 3.643,
+     "end": 3.74
+    },
+    {
+     "w": "died",
+     "t": 3.804,
+     "end": 4.061
+    },
+    {
+     "w": "without",
+     "t": 4.125,
+     "end": 4.318
+    },
+    {
+     "w": "paying.",
+     "t": 4.382,
+     "end": 5.152
+    },
+    {
+     "w": "Then",
+     "t": 5.313,
+     "end": 5.473
+    },
+    {
+     "w": "it",
+     "t": 5.537,
+     "end": 5.602
+    },
+    {
+     "w": "went",
+     "t": 5.666,
+     "end": 5.73
+    },
+    {
+     "w": "to",
+     "t": 5.794,
+     "end": 5.858
+    },
+    {
+     "w": "court.",
+     "t": 5.923,
+     "end": 6.372
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "New York, eighteen sixty-nine. William Story makes his nephew an offer:",
+   "words": [
+    {
+     "w": "New",
+     "t": 6.428,
+     "end": 6.621
+    },
+    {
+     "w": "York,",
+     "t": 6.685,
+     "end": 7.199
+    },
+    {
+     "w": "eighteen",
+     "t": 7.295,
+     "end": 7.52
+    },
+    {
+     "w": "sixty-nine.",
+     "t": 7.648,
+     "end": 8.675
+    },
+    {
+     "w": "William",
+     "t": 8.739,
+     "end": 8.996
+    },
+    {
+     "w": "Story",
+     "t": 9.061,
+     "end": 9.382
+    },
+    {
+     "w": "makes",
+     "t": 9.446,
+     "end": 9.638
+    },
+    {
+     "w": "his",
+     "t": 9.703,
+     "end": 9.767
+    },
+    {
+     "w": "nephew",
+     "t": 9.831,
+     "end": 10.152
+    },
+    {
+     "w": "an",
+     "t": 10.216,
+     "end": 10.28
+    },
+    {
+     "w": "offer:",
+     "t": 10.345,
+     "end": 10.987
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "no liquor, no tobacco, no swearing, no gambling until twenty-one.",
+   "words": [
+    {
+     "w": "no",
+     "t": 11.107,
+     "end": 11.3
+    },
+    {
+     "w": "liquor,",
+     "t": 11.364,
+     "end": 11.877
+    },
+    {
+     "w": "no",
+     "t": 11.942,
+     "end": 12.006
+    },
+    {
+     "w": "tobacco,",
+     "t": 12.07,
+     "end": 12.776
+    },
+    {
+     "w": "no",
+     "t": 12.84,
+     "end": 12.905
+    },
+    {
+     "w": "swearing,",
+     "t": 13.033,
+     "end": 13.739
+    },
+    {
+     "w": "no",
+     "t": 13.803,
+     "end": 13.868
+    },
+    {
+     "w": "gambling",
+     "t": 13.932,
+     "end": 14.381
+    },
+    {
+     "w": "until",
+     "t": 14.445,
+     "end": 14.638
+    },
+    {
+     "w": "twenty-one.",
+     "t": 14.702,
+     "end": 15.344
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The nephew keeps his word for nearly six years. The uncle writes: you shall have it, as I promised.",
+   "words": [
+    {
+     "w": "The",
+     "t": 15.465,
+     "end": 15.593
+    },
+    {
+     "w": "nephew",
+     "t": 15.657,
+     "end": 15.914
+    },
+    {
+     "w": "keeps",
+     "t": 15.978,
+     "end": 16.171
+    },
+    {
+     "w": "his",
+     "t": 16.235,
+     "end": 16.299
+    },
+    {
+     "w": "word",
+     "t": 16.363,
+     "end": 16.556
+    },
+    {
+     "w": "for",
+     "t": 16.62,
+     "end": 16.684
+    },
+    {
+     "w": "nearly",
+     "t": 16.813,
+     "end": 17.07
+    },
+    {
+     "w": "six",
+     "t": 17.262,
+     "end": 17.455
+    },
+    {
+     "w": "years.",
+     "t": 17.583,
+     "end": 18.161
+    },
+    {
+     "w": "The",
+     "t": 18.354,
+     "end": 18.418
+    },
+    {
+     "w": "uncle",
+     "t": 18.482,
+     "end": 18.675
+    },
+    {
+     "w": "writes:",
+     "t": 18.739,
+     "end": 19.285
+    },
+    {
+     "w": "you",
+     "t": 19.509,
+     "end": 19.574
+    },
+    {
+     "w": "shall",
+     "t": 19.638,
+     "end": 19.766
+    },
+    {
+     "w": "have",
+     "t": 19.83,
+     "end": 19.959
+    },
+    {
+     "w": "it,",
+     "t": 20.023,
+     "end": 20.28
+    },
+    {
+     "w": "as",
+     "t": 20.344,
+     "end": 20.408
+    },
+    {
+     "w": "I",
+     "t": 20.472,
+     "end": 20.537
+    },
+    {
+     "w": "promised.",
+     "t": 20.601,
+     "end": 21.243
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Then the uncle dies, the money still in his hands. His executor refuses to pay, arguing the uncle got nothing in return.",
+   "words": [
+    {
+     "w": "Then",
+     "t": 21.299,
+     "end": 21.556
+    },
+    {
+     "w": "the",
+     "t": 21.62,
+     "end": 21.684
+    },
+    {
+     "w": "uncle",
+     "t": 21.748,
+     "end": 22.005
+    },
+    {
+     "w": "dies,",
+     "t": 22.069,
+     "end": 22.647
+    },
+    {
+     "w": "the",
+     "t": 22.711,
+     "end": 22.776
+    },
+    {
+     "w": "money",
+     "t": 22.84,
+     "end": 23.032
+    },
+    {
+     "w": "still",
+     "t": 23.161,
+     "end": 23.353
+    },
+    {
+     "w": "in",
+     "t": 23.386,
+     "end": 23.418
+    },
+    {
+     "w": "his",
+     "t": 23.482,
+     "end": 23.61
+    },
+    {
+     "w": "hands.",
+     "t": 23.674,
+     "end": 24.252
+    },
+    {
+     "w": "His",
+     "t": 24.445,
+     "end": 24.509
+    },
+    {
+     "w": "executor",
+     "t": 24.573,
+     "end": 25.023
+    },
+    {
+     "w": "refuses",
+     "t": 25.151,
+     "end": 25.536
+    },
+    {
+     "w": "to",
+     "t": 25.601,
+     "end": 25.665
+    },
+    {
+     "w": "pay,",
+     "t": 25.729,
+     "end": 26.178
+    },
+    {
+     "w": "arguing",
+     "t": 26.243,
+     "end": 26.564
+    },
+    {
+     "w": "the",
+     "t": 26.596,
+     "end": 26.628
+    },
+    {
+     "w": "uncle",
+     "t": 26.756,
+     "end": 26.949
+    },
+    {
+     "w": "got",
+     "t": 27.013,
+     "end": 27.141
+    },
+    {
+     "w": "nothing",
+     "t": 27.27,
+     "end": 27.527
+    },
+    {
+     "w": "in",
+     "t": 27.559,
+     "end": 27.591
+    },
+    {
+     "w": "return.",
+     "t": 27.655,
+     "end": 28.233
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "New York's top court disagrees: the nephew gave up a legal freedom, and that counts.",
+   "words": [
+    {
+     "w": "New",
+     "t": 28.289,
+     "end": 28.417
+    },
+    {
+     "w": "York's",
+     "t": 28.482,
+     "end": 28.738
+    },
+    {
+     "w": "top",
+     "t": 28.835,
+     "end": 28.931
+    },
+    {
+     "w": "court",
+     "t": 28.995,
+     "end": 29.252
+    },
+    {
+     "w": "disagrees:",
+     "t": 29.316,
+     "end": 30.215
+    },
+    {
+     "w": "the",
+     "t": 30.279,
+     "end": 30.343
+    },
+    {
+     "w": "nephew",
+     "t": 30.376,
+     "end": 30.664
+    },
+    {
+     "w": "gave",
+     "t": 30.729,
+     "end": 30.857
+    },
+    {
+     "w": "up",
+     "t": 30.921,
+     "end": 31.05
+    },
+    {
+     "w": "a",
+     "t": 31.114,
+     "end": 31.178
+    },
+    {
+     "w": "legal",
+     "t": 31.306,
+     "end": 31.435
+    },
+    {
+     "w": "freedom,",
+     "t": 31.563,
+     "end": 32.077
+    },
+    {
+     "w": "and",
+     "t": 32.141,
+     "end": 32.205
+    },
+    {
+     "w": "that",
+     "t": 32.27,
+     "end": 32.462
+    },
+    {
+     "w": "counts.",
+     "t": 32.526,
+     "end": 33.168
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "The claim wins. And it began the day",
+   "words": [
+    {
+     "w": "The",
+     "t": 33.225,
+     "end": 33.353
+    },
+    {
+     "w": "claim",
+     "t": 33.513,
+     "end": 33.674
+    },
+    {
+     "w": "wins.",
+     "t": 33.738,
+     "end": 34.316
+    },
+    {
+     "w": "And",
+     "t": 34.509,
+     "end": 34.573
+    },
+    {
+     "w": "it",
+     "t": 34.637,
+     "end": 34.701
+    },
+    {
+     "w": "began",
+     "t": 34.765,
+     "end": 35.022
+    },
+    {
+     "w": "the",
+     "t": 35.086,
+     "end": 35.151
+    },
+    {
+     "w": "day",
+     "t": 35.279,
+     "end": 35.664
+    }
+   ]
+  }
+ ]
+}

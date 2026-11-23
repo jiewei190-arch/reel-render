@@ -1,0 +1,569 @@
+{
+ "kit": "law3d",
+ "slug": "kelo-took-her-house",
+ "format": "short",
+ "hook": {
+  "text": "CITY TOOK HER HOME. *5-4*",
+  "again": "8:It"
+ },
+ "music": "suspense",
+ "cast": {
+  "kelo": {
+   "role": "plaintiff",
+   "skin": "#eec3a2",
+   "hairStyle": "long",
+   "hair": "#b5562b",
+   "suit": "#5b6f86",
+   "pants": "#3b4a5d",
+   "shirt": "#f1ebe0",
+   "tie": "#5b6f86",
+   "build": "slim",
+   "plate": "HOMEOWNER"
+  },
+  "city": {
+   "role": "lawyer",
+   "skin": "#d9a984",
+   "hairStyle": "short",
+   "hair": "#2a211c",
+   "suit": "#2c2f3a",
+   "pants": "#23252e",
+   "tie": "#7a1f24",
+   "glasses": true,
+   "build": "avg",
+   "plate": "THE CITY"
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "short",
+   "hair": "#c9c2b8",
+   "glasses": true,
+   "plate": "THE COURT"
+  },
+  "dissent": {
+   "role": "judge",
+   "skin": "#c98f6b",
+   "hairStyle": "curly",
+   "hair": "#3a2a20",
+   "plate": "DISSENT"
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "kelo.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "kelo",
+     "pose": "present",
+     "face": "worried",
+     "at": "plaintiff",
+     "pointAt": "deed",
+     "then": [
+      {
+       "at": "took",
+       "face": "angry"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "deed",
+     "kit": "photo",
+     "photo": "shop",
+     "at": "plaintiff:0.4,1.38,0.25",
+     "s": 1.0,
+     "yaw": -20,
+     "motion": "float"
+    }
+   ]
+  },
+  {
+   "at": "house",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "city.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "city",
+     "pose": "point",
+     "face": "stern",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "private",
+       "pose": "cross",
+       "face": "smug"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "1:but",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "approved"
+    }
+   ]
+  },
+  {
+   "at": "1:Then",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.15,0",
+    "dist": 2.2,
+    "h": 0.6,
+    "az": -20,
+    "sweep": 1.0
+   },
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "land",
+     "label": "THE LAND",
+     "text": "SAT EMPTY"
+    }
+   ]
+  },
+  {
+   "at": "line:2",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.65,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "folder",
+     "kit": "folder",
+     "text": "KELO v. NEW LONDON",
+     "at": "desk:0.0,0,0.02",
+     "s": 0.75,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "London,"
+    }
+   ],
+   "actions": [
+    {
+     "do": "caseCard",
+     "at": "London,",
+     "until": "Susette",
+     "title": "KELO v. NEW LONDON",
+     "year": "2005",
+     "place": "U.S. Supreme Court"
+    }
+   ]
+  },
+  {
+   "at": "Susette",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "kelo.face",
+    "dist": 1.8,
+    "az": 12,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "kelo",
+     "pose": "idle",
+     "face": "neutral",
+     "at": "plaintiff",
+     "then": [
+      {
+       "at": "prizes",
+       "face": "happy"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:3",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.35,0",
+    "dist": 2.9,
+    "h": 0.24,
+    "sweep": 0.15
+   },
+   "props": [
+    {
+     "id": "sign1",
+     "kit": "sign",
+     "text": "NEW\nOFFICES",
+     "at": "table:-0.23,0,-0.08",
+     "s": 0.36,
+     "yaw": 8,
+     "motion": "popIn",
+     "hit": "offices,"
+    },
+    {
+     "id": "sign2",
+     "kit": "sign",
+     "text": "NEW\nHOTEL",
+     "at": "table:0.23,0,0.08",
+     "s": 0.36,
+     "yaw": -8,
+     "motion": "popIn",
+     "hit": "hotel,"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "plan:",
+     "label": "THE CITY'S PLAN",
+     "text": "FORT TRUMBULL"
+    }
+   ]
+  },
+  {
+   "at": "beside",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75
+   },
+   "props": [
+    {
+     "id": "w1",
+     "kit": "money",
+     "at": "desk:-0.33,0,0.25",
+     "yaw": 20,
+     "motion": "dropIn",
+     "hit": "three"
+    },
+    {
+     "id": "w2",
+     "kit": "money",
+     "at": "desk:0.3,0,0.28",
+     "yaw": -35,
+     "motion": "dropIn",
+     "hit": "hundred"
+    },
+    {
+     "id": "w3",
+     "kit": "money",
+     "at": "desk:0.0,0,-0.15",
+     "yaw": 70,
+     "motion": "dropIn",
+     "hit": "million"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "three",
+     "title": "PFIZER FACILITY NEXT DOOR",
+     "prefix": "$",
+     "from": 0,
+     "to": 300000000,
+     "compact": true,
+     "land": "million",
+     "pos": "center"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "line:4",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "dolly",
+    "target": "city.face",
+    "dist": 2.0,
+    "h": -0.15,
+    "az": -14,
+    "sweep": 0.7
+   },
+   "actors": [
+    {
+     "id": "city",
+     "pose": "talk",
+     "face": "happy",
+     "at": "defendant",
+     "talk": true
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "more",
+     "title": "JOBS PROMISED",
+     "value": "1,000+",
+     "pos": "top"
+    }
+   ]
+  },
+  {
+   "at": "line:5",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ]
+  },
+  {
+   "at": "justices",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "5:five"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "5:five"
+    },
+    {
+     "do": "verdict",
+     "at": "5:five",
+     "until": "economic",
+     "text": "5-4",
+     "sub": "JUNE 23, 2005"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "economic",
+   "jury": false,
+   "cam": {
+    "preset": "medium",
+    "target": "judge.face",
+    "dist": 2.3,
+    "h": -0.15,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "talk",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "line:6",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "dissent.face",
+    "dist": 2.2,
+    "h": -0.15,
+    "az": -12
+   },
+   "actors": [
+    {
+     "id": "dissent",
+     "pose": "point",
+     "face": "angry",
+     "at": "bench",
+     "sit": true,
+     "talk": true
+    }
+   ]
+  },
+  {
+   "at": "Motel",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.35,0",
+    "dist": 2.9,
+    "h": 0.24,
+    "sweep": 0.15
+   },
+   "props": [
+    {
+     "id": "sign3",
+     "kit": "sign",
+     "text": "BUDGET\nMOTEL",
+     "at": "table:-0.23,0,-0.08",
+     "s": 0.36,
+     "yaw": 8,
+     "motion": "popIn",
+     "hit": "Motel"
+    },
+    {
+     "id": "sign4",
+     "kit": "sign",
+     "text": "LUXURY\nHOTEL",
+     "at": "table:0.23,0,0.08",
+     "s": 0.36,
+     "yaw": -8,
+     "motion": "popIn",
+     "hit": "Ritz-Carlton."
+    }
+   ]
+  },
+  {
+   "at": "line:7",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.15,0",
+    "dist": 2.2,
+    "h": 0.6,
+    "az": 18,
+    "sweep": 1.0
+   },
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "report",
+     "label": "2025 REPORT",
+     "text": "STILL AN EMPTY LOT"
+    }
+   ]
+  },
+  {
+   "at": "7:house",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "kelo.face",
+    "dist": 1.8,
+    "az": -10,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "kelo",
+     "pose": "idle",
+     "face": "sad",
+     "at": "plaintiff"
+    }
+   ]
+  },
+  {
+   "at": "8:It",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "kelo.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "kelo",
+     "pose": "present",
+     "face": "angry",
+     "at": "plaintiff",
+     "pointAt": "deed",
+     "then": [
+      {
+       "at": "started",
+       "face": "worried"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "deed",
+     "kit": "photo",
+     "photo": "shop",
+     "at": "plaintiff:0.4,1.38,0.25",
+     "s": 1.0,
+     "yaw": -20,
+     "motion": "float"
+    }
+   ]
+  }
+ ]
+}

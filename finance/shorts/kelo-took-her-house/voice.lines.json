@@ -1,0 +1,63 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.2211,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 590,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A city took her house for a private development, but the Supreme Court approved it. Then the land sat empty.",
+   "start": 0.082,
+   "end": 5.782
+  },
+  {
+   "line": 2,
+   "text": "New London, Connecticut. Susette Kelo prizes her house for its water view.",
+   "start": 5.905,
+   "end": 10.229
+  },
+  {
+   "line": 3,
+   "text": "The city's plan: offices, a hotel, new homes, beside a new three hundred million dollar Pfizer facility.",
+   "start": 10.352,
+   "end": 16.903
+  },
+  {
+   "line": 4,
+   "text": "It promises more than a thousand jobs.",
+   "start": 17.026,
+   "end": 19.254
+  },
+  {
+   "line": 5,
+   "text": "Two thousand five. The justices rule five to four: economic development counts as public use.",
+   "start": 19.376,
+   "end": 25.404
+  },
+  {
+   "line": 6,
+   "text": "The dissent warns: now any Motel Six can be replaced with a Ritz-Carlton.",
+   "start": 25.527,
+   "end": 29.916
+  },
+  {
+   "line": 7,
+   "text": "Twenty years later, a report found the lot where her house stood was still empty.",
+   "start": 30.039,
+   "end": 34.101
+  },
+  {
+   "line": 8,
+   "text": "It all started when",
+   "start": 34.224,
+   "end": 35.6
+  }
+ ]
+}

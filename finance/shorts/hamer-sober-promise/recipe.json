@@ -1,0 +1,614 @@
+{
+ "kit": "law3d",
+ "slug": "hamer-sober-promise",
+ "format": "short",
+ "hook": {
+  "text": "*$5,000* TO STAY SOBER",
+  "again": "7:And"
+ },
+ "music": "suspense",
+ "cast": {
+  "nephew": {
+   "role": "plaintiff",
+   "skin": "#e6b995",
+   "hairStyle": "side",
+   "hair": "#5a3d22",
+   "suit": "#3a4a63",
+   "pants": "#2b3850",
+   "tie": "#8a2f2f",
+   "build": "slim",
+   "plate": "THE NEPHEW"
+  },
+  "uncle": {
+   "role": "witness",
+   "skin": "#dcab88",
+   "hairStyle": "bald",
+   "beard": true,
+   "suit": "#4a3b30",
+   "pants": "#372c24",
+   "shirt": "#efe6d4",
+   "tie": "#2d3a2f",
+   "glasses": true,
+   "build": "broad",
+   "plate": "THE UNCLE"
+  },
+  "exec": {
+   "role": "lawyer",
+   "skin": "#e2b48c",
+   "hairStyle": "short",
+   "hair": "#2a211c",
+   "suit": "#27324a",
+   "pants": "#1f2940",
+   "tie": "#44506a",
+   "build": "avg",
+   "plate": "EXECUTOR"
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "short",
+   "hair": "#b9b2a8",
+   "beard": true,
+   "plate": "THE COURT"
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "nephew.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "nephew",
+     "pose": "present",
+     "face": "happy",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "promised",
+       "face": "smug"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  },
+  {
+   "at": "his",
+   "jury": false,
+   "in": "whip",
+   "cam": {
+    "preset": "medium",
+    "target": "uncle.face",
+    "dist": 2.0,
+    "h": 0.1,
+    "az": 8
+   },
+   "actors": [
+    {
+     "id": "uncle",
+     "pose": "present",
+     "face": "happy",
+     "at": "defendant"
+    }
+   ]
+  },
+  {
+   "at": "five",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75
+   },
+   "props": [
+    {
+     "id": "w1",
+     "kit": "money",
+     "at": "desk:-0.33,0,0.25",
+     "yaw": 20,
+     "motion": "dropIn",
+     "hit": "five"
+    },
+    {
+     "id": "w2",
+     "kit": "money",
+     "at": "desk:0.3,0,0.28",
+     "yaw": -35,
+     "motion": "dropIn",
+     "hit": "thousand"
+    },
+    {
+     "id": "w3",
+     "kit": "money",
+     "at": "desk:0.0,0,-0.15",
+     "yaw": 70,
+     "motion": "dropIn",
+     "hit": "dollars"
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "five",
+     "until": "1:died",
+     "title": "THE PROMISE",
+     "prefix": "$",
+     "from": 0,
+     "to": 5000,
+     "land": "dollars",
+     "pos": "center"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "1:died",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.6,
+    "h": 1.7,
+    "az": -10
+   },
+   "props": [
+    {
+     "id": "will",
+     "kit": "paper",
+     "text": "THE ESTATE",
+     "at": "desk:0,0.02,0.1",
+     "yaw": 8,
+     "motion": "flyIn",
+     "hit": "1:died"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "without",
+     "label": "1887",
+     "text": "$5,000 UNPAID",
+     "on": "will"
+    }
+   ]
+  },
+  {
+   "at": "1:Then",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "idle",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "line:2",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.65,
+    "az": 10
+   },
+   "props": [
+    {
+     "id": "folder",
+     "kit": "folder",
+     "text": "HAMER v. SIDWAY",
+     "at": "desk:0.0,0,0.02",
+     "s": 0.75,
+     "yaw": -6,
+     "motion": "flyIn",
+     "hit": "York,"
+    }
+   ],
+   "actions": [
+    {
+     "do": "caseCard",
+     "at": "York,",
+     "title": "HAMER v. SIDWAY",
+     "year": "1869-1891",
+     "place": "New York"
+    }
+   ]
+  },
+  {
+   "at": "line:3",
+   "set": "evidence",
+   "cam": {
+    "preset": "pushIn",
+    "target": "table:0,0.35,0",
+    "dist": 3.0,
+    "h": 0.2
+   },
+   "props": [
+    {
+     "id": "sign1",
+     "kit": "sign",
+     "text": "NO\nLIQUOR",
+     "at": "table:-0.23,0,-0.08",
+     "s": 0.36,
+     "yaw": 8,
+     "motion": "popIn",
+     "hit": "liquor,"
+    },
+    {
+     "id": "sign2",
+     "kit": "sign",
+     "text": "NO\nTOBACCO",
+     "at": "table:0.23,0,0.08",
+     "s": 0.36,
+     "yaw": -8,
+     "motion": "popIn",
+     "hit": "tobacco,"
+    }
+   ]
+  },
+  {
+   "at": "3:no+0.9",
+   "set": "evidence",
+   "cam": {
+    "preset": "dolly",
+    "target": "table:0,0.35,0",
+    "dist": 2.9,
+    "h": 0.24,
+    "sweep": 0.15
+   },
+   "props": [
+    {
+     "id": "sign3",
+     "kit": "sign",
+     "text": "NO\nSWEARING",
+     "at": "table:-0.23,0,-0.08",
+     "s": 0.36,
+     "yaw": 8,
+     "motion": "popIn",
+     "hit": "swearing,"
+    },
+    {
+     "id": "sign4",
+     "kit": "sign",
+     "text": "NO\nGAMBLING",
+     "at": "table:0.23,0,0.08",
+     "s": 0.36,
+     "yaw": -8,
+     "motion": "popIn",
+     "hit": "gambling"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "twenty-one.",
+     "label": "THE DEAL",
+     "text": "UNTIL AGE 21"
+    }
+   ]
+  },
+  {
+   "at": "line:4",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "orbit",
+    "target": "nephew.face",
+    "dist": 1.8,
+    "h": 0.05,
+    "az": -10,
+    "sweep": 26,
+    "face": 0.41
+   },
+   "actors": [
+    {
+     "id": "nephew",
+     "pose": "talk",
+     "face": "neutral",
+     "at": "witness",
+     "sit": true,
+     "then": [
+      {
+       "at": "years.",
+       "pose": "cheer",
+       "face": "happy"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "4:uncle",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk",
+    "dist": 0.75,
+    "h": 1.85,
+    "az": 8
+   },
+   "props": [
+    {
+     "id": "letter",
+     "kit": "paper",
+     "text": "FEB. 6, 1875",
+     "at": "desk:0.03,0.02,0.08",
+     "s": 0.9,
+     "yaw": -8,
+     "motion": "flyIn",
+     "hit": "writes:"
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "shall",
+     "label": "THE UNCLE'S LETTER",
+     "text": "AS I PROMISED YOU",
+     "on": "letter"
+    }
+   ]
+  },
+  {
+   "at": "line:5",
+   "set": "steps",
+   "cam": {
+    "preset": "crane",
+    "target": "uncle",
+    "dist": 4.2,
+    "h": 0.3,
+    "az": 8,
+    "sweep": 1.2
+   },
+   "actors": [
+    {
+     "id": "uncle",
+     "pose": "idle",
+     "face": "sad",
+     "at": "top",
+     "to": "steps:0,0,0.4",
+     "look": 0
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "dies,",
+     "label": "JAN. 29, 1887",
+     "text": "STILL UNPAID"
+    }
+   ]
+  },
+  {
+   "at": "5:His",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "closeUp",
+    "target": "exec.face",
+    "dist": 1.9,
+    "az": 10,
+    "face": 0.38
+   },
+   "actors": [
+    {
+     "id": "exec",
+     "pose": "idle",
+     "face": "stern",
+     "at": "defendant",
+     "then": [
+      {
+       "at": "refuses",
+       "pose": "cross",
+       "face": "smug"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "at": "line:6",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.2,
+    "h": -0.2
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "6:court",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "disagrees:"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "disagrees:"
+    },
+    {
+     "do": "verdict",
+     "at": "disagrees:",
+     "until": "6:nephew",
+     "text": "ENFORCED",
+     "sub": "APRIL 14, 1891"
+    }
+   ],
+   "caption": "off"
+  },
+  {
+   "at": "6:nephew",
+   "jury": false,
+   "cam": {
+    "preset": "medium",
+    "target": "judge.face",
+    "dist": 2.3,
+    "h": -0.15,
+    "az": 10
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "talk",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "talk": true
+    }
+   ],
+   "props": [
+    {
+     "id": "plate",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.55,0,0.25"
+    }
+   ]
+  },
+  {
+   "at": "line:7",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0,0,0.05",
+    "dist": 0.5,
+    "h": 1.75,
+    "az": -8
+   },
+   "props": [
+    {
+     "id": "d1",
+     "kit": "money",
+     "at": "desk:-0.3,0,0.2",
+     "yaw": 15,
+     "motion": "dropIn",
+     "hit": "claim"
+    },
+    {
+     "id": "d2",
+     "kit": "money",
+     "at": "desk:0.28,0,0.22",
+     "yaw": -30,
+     "motion": "dropIn",
+     "hit": "wins."
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "claim",
+     "title": "$5,000 PLUS INTEREST",
+     "value": "OWED",
+     "pos": "top"
+    }
+   ]
+  },
+  {
+   "at": "7:And",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "hookZoom",
+    "target": "nephew.face",
+    "dist": 1.7,
+    "h": 0.05,
+    "az": -8,
+    "face": 0.43
+   },
+   "actors": [
+    {
+     "id": "nephew",
+     "pose": "present",
+     "face": "smug",
+     "at": "plaintiff",
+     "pointAt": "cash",
+     "then": [
+      {
+       "at": "began",
+       "face": "happy"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "money",
+     "at": "plaintiff:0.4,1.42,0.2",
+     "s": 0.9,
+     "yaw": -15,
+     "motion": "float"
+    }
+   ]
+  }
+ ]
+}

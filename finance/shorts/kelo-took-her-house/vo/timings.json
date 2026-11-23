@@ -1,0 +1,573 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 35.6
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A city took her house for a private development, but the Supreme Court approved it. Then the land sat empty.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.082,
+     "end": 0.213
+    },
+    {
+     "w": "city",
+     "t": 0.278,
+     "end": 0.541
+    },
+    {
+     "w": "took",
+     "t": 0.606,
+     "end": 0.672
+    },
+    {
+     "w": "her",
+     "t": 0.77,
+     "end": 0.868
+    },
+    {
+     "w": "house",
+     "t": 0.999,
+     "end": 1.13
+    },
+    {
+     "w": "for",
+     "t": 1.196,
+     "end": 1.261
+    },
+    {
+     "w": "a",
+     "t": 1.294,
+     "end": 1.327
+    },
+    {
+     "w": "private",
+     "t": 1.392,
+     "end": 1.654
+    },
+    {
+     "w": "development,",
+     "t": 1.916,
+     "end": 2.375
+    },
+    {
+     "w": "but",
+     "t": 2.44,
+     "end": 2.506
+    },
+    {
+     "w": "the",
+     "t": 2.539,
+     "end": 2.572
+    },
+    {
+     "w": "Supreme",
+     "t": 2.637,
+     "end": 2.899
+    },
+    {
+     "w": "Court",
+     "t": 3.03,
+     "end": 3.227
+    },
+    {
+     "w": "approved",
+     "t": 3.292,
+     "end": 3.62
+    },
+    {
+     "w": "it.",
+     "t": 3.685,
+     "end": 4.209
+    },
+    {
+     "w": "Then",
+     "t": 4.275,
+     "end": 4.603
+    },
+    {
+     "w": "the",
+     "t": 4.668,
+     "end": 4.734
+    },
+    {
+     "w": "land",
+     "t": 4.865,
+     "end": 4.996
+    },
+    {
+     "w": "sat",
+     "t": 5.061,
+     "end": 5.258
+    },
+    {
+     "w": "empty.",
+     "t": 5.454,
+     "end": 5.847
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "New London, Connecticut. Susette Kelo prizes her house for its water view.",
+   "words": [
+    {
+     "w": "New",
+     "t": 5.905,
+     "end": 6.101
+    },
+    {
+     "w": "London,",
+     "t": 6.167,
+     "end": 6.527
+    },
+    {
+     "w": "Connecticut.",
+     "t": 6.56,
+     "end": 7.084
+    },
+    {
+     "w": "Susette",
+     "t": 7.543,
+     "end": 7.87
+    },
+    {
+     "w": "Kelo",
+     "t": 7.936,
+     "end": 8.263
+    },
+    {
+     "w": "prizes",
+     "t": 8.329,
+     "end": 8.722
+    },
+    {
+     "w": "her",
+     "t": 8.787,
+     "end": 8.918
+    },
+    {
+     "w": "house",
+     "t": 9.049,
+     "end": 9.18
+    },
+    {
+     "w": "for",
+     "t": 9.246,
+     "end": 9.312
+    },
+    {
+     "w": "its",
+     "t": 9.377,
+     "end": 9.443
+    },
+    {
+     "w": "water",
+     "t": 9.508,
+     "end": 9.705
+    },
+    {
+     "w": "view.",
+     "t": 9.77,
+     "end": 10.229
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "The city's plan: offices, a hotel, new homes, beside a new three hundred million dollar Pfizer facility.",
+   "words": [
+    {
+     "w": "The",
+     "t": 10.352,
+     "end": 10.483
+    },
+    {
+     "w": "city's",
+     "t": 10.548,
+     "end": 10.81
+    },
+    {
+     "w": "plan:",
+     "t": 10.876,
+     "end": 11.662
+    },
+    {
+     "w": "offices,",
+     "t": 11.76,
+     "end": 12.317
+    },
+    {
+     "w": "a",
+     "t": 12.35,
+     "end": 12.383
+    },
+    {
+     "w": "hotel,",
+     "t": 12.612,
+     "end": 13.038
+    },
+    {
+     "w": "new",
+     "t": 13.103,
+     "end": 13.234
+    },
+    {
+     "w": "homes,",
+     "t": 13.3,
+     "end": 13.889
+    },
+    {
+     "w": "beside",
+     "t": 13.988,
+     "end": 14.152
+    },
+    {
+     "w": "a",
+     "t": 14.217,
+     "end": 14.283
+    },
+    {
+     "w": "new",
+     "t": 14.348,
+     "end": 14.479
+    },
+    {
+     "w": "three",
+     "t": 14.61,
+     "end": 14.807
+    },
+    {
+     "w": "hundred",
+     "t": 14.872,
+     "end": 15.134
+    },
+    {
+     "w": "million",
+     "t": 15.265,
+     "end": 15.527
+    },
+    {
+     "w": "dollar",
+     "t": 15.593,
+     "end": 15.855
+    },
+    {
+     "w": "Pfizer",
+     "t": 15.986,
+     "end": 16.248
+    },
+    {
+     "w": "facility.",
+     "t": 16.314,
+     "end": 16.969
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "It promises more than a thousand jobs.",
+   "words": [
+    {
+     "w": "It",
+     "t": 17.026,
+     "end": 17.157
+    },
+    {
+     "w": "promises",
+     "t": 17.223,
+     "end": 17.616
+    },
+    {
+     "w": "more",
+     "t": 17.681,
+     "end": 17.812
+    },
+    {
+     "w": "than",
+     "t": 17.878,
+     "end": 17.943
+    },
+    {
+     "w": "a",
+     "t": 18.042,
+     "end": 18.14
+    },
+    {
+     "w": "thousand",
+     "t": 18.205,
+     "end": 18.533
+    },
+    {
+     "w": "jobs.",
+     "t": 18.664,
+     "end": 19.319
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "Two thousand five. The justices rule five to four: economic development counts as public use.",
+   "words": [
+    {
+     "w": "Two",
+     "t": 19.376,
+     "end": 19.508
+    },
+    {
+     "w": "thousand",
+     "t": 19.573,
+     "end": 19.835
+    },
+    {
+     "w": "five.",
+     "t": 19.966,
+     "end": 20.589
+    },
+    {
+     "w": "The",
+     "t": 20.818,
+     "end": 20.883
+    },
+    {
+     "w": "justices",
+     "t": 20.949,
+     "end": 21.342
+    },
+    {
+     "w": "rule",
+     "t": 21.407,
+     "end": 21.67
+    },
+    {
+     "w": "five",
+     "t": 21.735,
+     "end": 21.932
+    },
+    {
+     "w": "to",
+     "t": 21.997,
+     "end": 22.128
+    },
+    {
+     "w": "four:",
+     "t": 22.194,
+     "end": 22.849
+    },
+    {
+     "w": "economic",
+     "t": 22.914,
+     "end": 23.307
+    },
+    {
+     "w": "development",
+     "t": 23.373,
+     "end": 23.832
+    },
+    {
+     "w": "counts",
+     "t": 23.963,
+     "end": 24.29
+    },
+    {
+     "w": "as",
+     "t": 24.356,
+     "end": 24.421
+    },
+    {
+     "w": "public",
+     "t": 24.552,
+     "end": 24.814
+    },
+    {
+     "w": "use.",
+     "t": 24.88,
+     "end": 25.47
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "The dissent warns: now any Motel Six can be replaced with a Ritz-Carlton.",
+   "words": [
+    {
+     "w": "The",
+     "t": 25.527,
+     "end": 25.658
+    },
+    {
+     "w": "dissent",
+     "t": 25.767,
+     "end": 25.985
+    },
+    {
+     "w": "warns:",
+     "t": 26.051,
+     "end": 26.739
+    },
+    {
+     "w": "now",
+     "t": 26.968,
+     "end": 27.296
+    },
+    {
+     "w": "any",
+     "t": 27.361,
+     "end": 27.558
+    },
+    {
+     "w": "Motel",
+     "t": 27.623,
+     "end": 27.885
+    },
+    {
+     "w": "Six",
+     "t": 28.016,
+     "end": 28.213
+    },
+    {
+     "w": "can",
+     "t": 28.279,
+     "end": 28.344
+    },
+    {
+     "w": "be",
+     "t": 28.41,
+     "end": 28.475
+    },
+    {
+     "w": "replaced",
+     "t": 28.541,
+     "end": 28.868
+    },
+    {
+     "w": "with",
+     "t": 28.934,
+     "end": 28.999
+    },
+    {
+     "w": "a",
+     "t": 29.032,
+     "end": 29.065
+    },
+    {
+     "w": "Ritz-Carlton.",
+     "t": 29.097,
+     "end": 29.982
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "Twenty years later, a report found the lot where her house stood was still empty.",
+   "words": [
+    {
+     "w": "Twenty",
+     "t": 30.039,
+     "end": 30.301
+    },
+    {
+     "w": "years",
+     "t": 30.367,
+     "end": 30.563
+    },
+    {
+     "w": "later,",
+     "t": 30.629,
+     "end": 31.088
+    },
+    {
+     "w": "a",
+     "t": 31.153,
+     "end": 31.219
+    },
+    {
+     "w": "report",
+     "t": 31.382,
+     "end": 31.546
+    },
+    {
+     "w": "found",
+     "t": 31.612,
+     "end": 31.808
+    },
+    {
+     "w": "the",
+     "t": 31.841,
+     "end": 31.874
+    },
+    {
+     "w": "lot",
+     "t": 31.939,
+     "end": 32.136
+    },
+    {
+     "w": "where",
+     "t": 32.201,
+     "end": 32.267
+    },
+    {
+     "w": "her",
+     "t": 32.332,
+     "end": 32.398
+    },
+    {
+     "w": "house",
+     "t": 32.463,
+     "end": 32.66
+    },
+    {
+     "w": "stood",
+     "t": 32.824,
+     "end": 32.988
+    },
+    {
+     "w": "was",
+     "t": 33.053,
+     "end": 33.25
+    },
+    {
+     "w": "still",
+     "t": 33.381,
+     "end": 33.512
+    },
+    {
+     "w": "empty.",
+     "t": 33.577,
+     "end": 34.167
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "It all started when",
+   "words": [
+    {
+     "w": "It",
+     "t": 34.224,
+     "end": 34.355
+    },
+    {
+     "w": "all",
+     "t": 34.421,
+     "end": 34.486
+    },
+    {
+     "w": "started",
+     "t": 34.617,
+     "end": 35.01
+    },
+    {
+     "w": "when",
+     "t": 35.207,
+     "end": 35.666
+    }
+   ]
+  }
+ ]
+}

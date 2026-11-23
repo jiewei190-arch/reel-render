@@ -1,0 +1,57 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.2461,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 588,
+ "lines": [
+  {
+   "line": 1,
+   "text": "An uncle promised his nephew five thousand dollars to stay sober, but died without paying. Then it went to court.",
+   "start": 0.08,
+   "end": 6.308
+  },
+  {
+   "line": 2,
+   "text": "New York, eighteen sixty-nine. William Story makes his nephew an offer:",
+   "start": 6.428,
+   "end": 10.987
+  },
+  {
+   "line": 3,
+   "text": "no liquor, no tobacco, no swearing, no gambling until twenty-one.",
+   "start": 11.107,
+   "end": 15.344
+  },
+  {
+   "line": 4,
+   "text": "The nephew keeps his word for nearly six years. The uncle writes: you shall have it, as I promised.",
+   "start": 15.465,
+   "end": 21.179
+  },
+  {
+   "line": 5,
+   "text": "Then the uncle dies, the money still in his hands. His executor refuses to pay, arguing the uncle got nothing in return.",
+   "start": 21.299,
+   "end": 28.169
+  },
+  {
+   "line": 6,
+   "text": "New York's top court disagrees: the nephew gave up a legal freedom, and that counts.",
+   "start": 28.289,
+   "end": 33.104
+  },
+  {
+   "line": 7,
+   "text": "The claim wins. And it began the day",
+   "start": 33.225,
+   "end": 35.6
+  }
+ ]
+}
