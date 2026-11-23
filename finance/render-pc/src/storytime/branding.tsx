@@ -31,7 +31,7 @@ const kid = (id: "me" | "homie", o: Partial<FigState> & { face: FaceP }): FigSta
   armL: [0.1, 0.12], armR: [0.1, 0.12], pose: "idle", expr: "smug", mouth: 0, talking: false, seed: 1, ...o,
 });
 /** wild + smug: one brow way up, a big toothy grin, eyes on the lens */
-const WILD: FaceP = { ...FACES.smug, browAsym: 1.4, browY: -0.55, browA: 0.5, lid: 0.5, curve: 0.3, smirk: 0.8, px: 0 }; // the low brow sits down, the other shoots up // smug half-lid, one brow way up (low-poly: static bar mouth)
+const WILD: FaceP = { ...FACES.smug, browAsym: 1.4, browY: -0.55, browA: 0.5, lid: 0.45, curve: 0.45, smirk: 0.9, mouthW: 0.14, open: 0.3, teeth: 1, px: 0 }; // the low brow sits down, the other shoots up // smug half-lid, one brow way up (low-poly: static bar mouth)
 const YELL: FaceP = { ...FACES.yell, open: 0.95, px: 0 };
 const FACEPALM: FaceP = { ...FACES.deadpan, lid: 0.72, browA: -0.25, browY: 0.1, curve: -0.35, px: -0.4, py: -0.3 };
 
@@ -55,17 +55,17 @@ const Title: React.FC<{ fs: number; style?: React.CSSProperties; brk?: boolean }
 export const BrandPfp: React.FC<{ text?: boolean }> = ({ text }) => {
   useFonts();
   // a tight head-and-shoulders: the face fills ~55-60 % of the height, cropped at the chest, a cocky head tilt
-  const head: V3 = [0, 1.2, 0], dy = 0.3, d = 1.8;
+  const head: V3 = [0, 1.2, 0], dy = 0.3, d = 2.1;
   const dir: V3 = [Math.sin(dy), 0, Math.cos(dy)];
-  const cam = { pos: [head[0] + dir[0] * d, head[1] + 0.06, head[2] + dir[2] * d] as V3, look: [0, 1.19, 0] as V3, fov: 30 };
-  const st = kid("homie", { yaw: 0.5, headYaw: -0.22, headPitch: -0.06, tilt: -0.17, lean: 0.06, face: WILD, armL: [0.25, 0.2], armR: [0.25, 0.2] });
+  const cam = { pos: [head[0] + dir[0] * d, head[1] + 0.06, head[2] + dir[2] * d] as V3, look: [0.06, 1.2, 0] as V3, fov: 30 };
+  const st = kid("homie", { spec: { ...BRAND_CAST.homie, trim: "#6d43c8" }, yaw: 0.42, headYaw: -0.2, headPitch: -0.16, tilt: -0.1, lean: 0.06, face: WILD, armL: [0.25, 0.2], armR: [0.25, 0.2] });
   return (
     <AbsoluteFill style={{ background: "#FFB020" }}>
       <View mood={mood} cam={cam} t={0} blur={0} sky={false} width={1080} height={1080}>
         <Backdrop c={[-dir[0] * 1.6, 1.15, -dir[2] * 1.6]} yaw={dy} size={6} base="#00C000" glow="#00C000" />
         <Kid st={st} t={0} />
       </View>
-      {text ? <div style={{ position: "absolute", left: 0, right: 0, top: 900, display: "flex", justifyContent: "center" }}><Title fs={84} /></div> : null}
+      {text ? <div style={{ position: "absolute", left: 0, right: 0, top: 845, display: "flex", justifyContent: "center" }}><Title fs={76} brk style={{ textAlign: "center" }} /></div> : null}
     </AbsoluteFill>
   );
 };
