@@ -1,0 +1,63 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.15,
+ "tempo": 1.0121,
+ "sr": 24000,
+ "duration": 35.6,
+ "characters": 503,
+ "lines": [
+  {
+   "line": 1,
+   "text": "What if a joke you wrote on a restaurant check cost you your farm? It happened.",
+   "start": 0.099,
+   "end": 5.237
+  },
+  {
+   "line": 2,
+   "text": "Virginia, nineteen fifty-two. Two men share a bottle of whiskey.",
+   "start": 5.385,
+   "end": 10.286
+  },
+  {
+   "line": 3,
+   "text": "One bets the other won't sell his farm for fifty thousand dollars.",
+   "start": 10.434,
+   "end": 14.623
+  },
+  {
+   "line": 4,
+   "text": "So the owner writes it on a restaurant check. His wife signs too.",
+   "start": 14.772,
+   "end": 18.724
+  },
+  {
+   "line": 5,
+   "text": "In court, he calls it a bluff. He says he was \"high as a Georgia pine.\"",
+   "start": 18.872,
+   "end": 24.247
+  },
+  {
+   "line": 6,
+   "text": "The first judge sides with him. But Virginia's highest court reverses.",
+   "start": 24.395,
+   "end": 29.059
+  },
+  {
+   "line": 7,
+   "text": "It reads what he wrote, not what he secretly meant, and orders the sale.",
+   "start": 29.207,
+   "end": 34.029
+  },
+  {
+   "line": 8,
+   "text": "So ask yourself:",
+   "start": 34.177,
+   "end": 35.6
+  }
+ ]
+}
