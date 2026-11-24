@@ -47,7 +47,8 @@ if (recipe.slug !== slug) { console.error(`recipe.slug "${recipe.slug}" != folde
 //   law3d   KIT_LAW3D.md   tools/law_build.mjs    src/index.law.ts
 //   biz3d   KIT_BIZ3D.md   tools/biz_build.mjs    src/index.biz.ts
 //   cyber3d KIT_CYBER3D.md tools/cyber_build.mjs  src/index.cyber.ts  (Scams & Hacks)
-const KITS = { tech3d: "./tech_build.mjs", law3d: "./law_build.mjs", biz3d: "./biz_build.mjs", cyber3d: "./cyber_build.mjs" };
+//   storytime KIT_STORYTIME.md tools/storytime_build.mjs src/index.storytime.ts (animated school storytime)
+const KITS = { tech3d: "./tech_build.mjs", law3d: "./law_build.mjs", biz3d: "./biz_build.mjs", cyber3d: "./cyber_build.mjs", storytime: "./storytime_build.mjs" };
 if (recipe.kit !== undefined) {
   if (!KITS[recipe.kit]) { console.error(`unknown kit "${recipe.kit}" (known: ${Object.keys(KITS).join(", ")}; no "kit" = Block Money)`); process.exit(2); }
   const { main } = await import(KITS[recipe.kit]); process.exit(await main(args));

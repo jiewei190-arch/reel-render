@@ -1,0 +1,304 @@
+[
+ {
+  "turn": 1,
+  "speaker": "me",
+  "text": "[suspicious] Bro. Group project on the solar system. My homie goes, I got the slides.",
+  "words": [
+   {
+    "w": "Bro.",
+    "t": 0.09,
+    "end": 0.23
+   },
+   {
+    "w": "Group",
+    "t": 0.377,
+    "end": 1.11
+   },
+   {
+    "w": "project",
+    "t": 1.18,
+    "end": 1.67
+   },
+   {
+    "w": "on",
+    "t": 1.697,
+    "end": 1.75
+   },
+   {
+    "w": "the",
+    "t": 1.79,
+    "end": 1.91
+   },
+   {
+    "w": "solar",
+    "t": 1.963,
+    "end": 2.23
+   },
+   {
+    "w": "system.",
+    "t": 2.31,
+    "end": 3.11
+   },
+   {
+    "w": "My",
+    "t": 3.217,
+    "end": 3.43
+   },
+   {
+    "w": "homie",
+    "t": 3.49,
+    "end": 3.75
+   },
+   {
+    "w": "goes,",
+    "t": 3.83,
+    "end": 4.23
+   },
+   {
+    "w": "I",
+    "t": 4.35,
+    "end": 4.47
+   },
+   {
+    "w": "got",
+    "t": 4.53,
+    "end": 4.71
+   },
+   {
+    "w": "the",
+    "t": 4.73,
+    "end": 4.79
+   },
+   {
+    "w": "slides.",
+    "t": 4.893,
+    "end": 5.83
+   }
+  ]
+ },
+ {
+  "turn": 2,
+  "speaker": "me",
+  "text": "[shocked] First slide... a picture of HIMSELF.",
+  "words": [
+   {
+    "w": "First",
+    "t": 6.09,
+    "end": 6.157
+   },
+   {
+    "w": "slide...",
+    "t": 6.264,
+    "end": 7.517
+   },
+   {
+    "w": "a",
+    "t": 7.557,
+    "end": 7.597
+   },
+   {
+    "w": "picture",
+    "t": 7.657,
+    "end": 8.077
+   },
+   {
+    "w": "of",
+    "t": 8.157,
+    "end": 8.317
+   },
+   {
+    "w": "HIMSELF.",
+    "t": 8.457,
+    "end": 9.357
+   }
+  ]
+ },
+ {
+  "turn": 3,
+  "speaker": "me",
+  "text": "[frustrated] Next slide. Him AGAIN. In fucking sunglasses.",
+  "words": [
+   {
+    "w": "Next",
+    "t": 9.617,
+    "end": 9.66
+   },
+   {
+    "w": "slide.",
+    "t": 9.753,
+    "end": 10.38
+   },
+   {
+    "w": "Him",
+    "t": 10.56,
+    "end": 11.1
+   },
+   {
+    "w": "AGAIN.",
+    "t": 11.287,
+    "end": 12.3
+   },
+   {
+    "w": "In",
+    "t": 12.487,
+    "end": 12.86
+   },
+   {
+    "w": "fucking",
+    "t": 12.95,
+    "end": 13.58
+   },
+   {
+    "w": "sunglasses.",
+    "t": 13.711,
+    "end": 15.18
+   }
+  ]
+ },
+ {
+  "turn": 4,
+  "speaker": "homie",
+  "text": "[cocky] I'm the center of the universe, bitch.",
+  "words": [
+   {
+    "w": "I'm",
+    "t": 15.54,
+    "end": 15.7
+   },
+   {
+    "w": "the",
+    "t": 15.72,
+    "end": 15.78
+   },
+   {
+    "w": "center",
+    "t": 15.837,
+    "end": 16.18
+   },
+   {
+    "w": "of",
+    "t": 16.207,
+    "end": 16.26
+   },
+   {
+    "w": "the",
+    "t": 16.28,
+    "end": 16.34
+   },
+   {
+    "w": "universe,",
+    "t": 16.402,
+    "end": 17.06
+   },
+   {
+    "w": "bitch.",
+    "t": 17.14,
+    "end": 17.62
+   }
+  ]
+ },
+ {
+  "turn": 5,
+  "speaker": "me",
+  "text": "[angry] Teacher gave us a ZERO. A fat-ass zero.",
+  "words": [
+   {
+    "w": "Teacher",
+    "t": 17.98,
+    "end": 18.05
+   },
+   {
+    "w": "gave",
+    "t": 18.146,
+    "end": 18.53
+   },
+   {
+    "w": "us",
+    "t": 18.637,
+    "end": 18.85
+   },
+   {
+    "w": "a",
+    "t": 19.01,
+    "end": 19.17
+   },
+   {
+    "w": "ZERO.",
+    "t": 19.33,
+    "end": 20.05
+   },
+   {
+    "w": "A",
+    "t": 20.49,
+    "end": 20.93
+   },
+   {
+    "w": "fat-ass",
+    "t": 21.05,
+    "end": 21.81
+   },
+   {
+    "w": "zero.",
+    "t": 21.954,
+    "end": 22.61
+   }
+  ]
+ },
+ {
+  "turn": 6,
+  "speaker": "me",
+  "text": "[laughs] And the whole damn class gave him a standing ovation.",
+  "words": [
+   {
+    "w": "And",
+    "t": 22.87,
+    "end": 22.91
+   },
+   {
+    "w": "the",
+    "t": 22.97,
+    "end": 23.15
+   },
+   {
+    "w": "whole",
+    "t": 23.257,
+    "end": 23.79
+   },
+   {
+    "w": "damn",
+    "t": 23.902,
+    "end": 24.35
+   },
+   {
+    "w": "class",
+    "t": 24.457,
+    "end": 24.99
+   },
+   {
+    "w": "gave",
+    "t": 25.15,
+    "end": 25.79
+   },
+   {
+    "w": "him",
+    "t": 25.83,
+    "end": 25.95
+   },
+   {
+    "w": "a",
+    "t": 26.03,
+    "end": 26.11
+   },
+   {
+    "w": "standing",
+    "t": 26.163,
+    "end": 26.59
+   },
+   {
+    "w": "ovation.",
+    "t": 26.67,
+    "end": 27.31
+   }
+  ]
+ }
+]

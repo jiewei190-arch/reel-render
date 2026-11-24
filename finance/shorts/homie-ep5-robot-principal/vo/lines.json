@@ -1,0 +1,342 @@
+[
+ {
+  "turn": 1,
+  "speaker": "me",
+  "text": "[annoyed] My homie told the WHOLE fucking school the principal is a robot.",
+  "words": [
+   {
+    "w": "My",
+    "t": 0.09,
+    "end": 0.143
+   },
+   {
+    "w": "homie",
+    "t": 0.223,
+    "end": 0.543
+   },
+   {
+    "w": "told",
+    "t": 0.639,
+    "end": 1.023
+   },
+   {
+    "w": "the",
+    "t": 1.083,
+    "end": 1.263
+   },
+   {
+    "w": "WHOLE",
+    "t": 1.37,
+    "end": 1.903
+   },
+   {
+    "w": "fucking",
+    "t": 2.023,
+    "end": 2.863
+   },
+   {
+    "w": "school",
+    "t": 2.943,
+    "end": 3.423
+   },
+   {
+    "w": "the",
+    "t": 3.583,
+    "end": 4.063
+   },
+   {
+    "w": "principal",
+    "t": 4.127,
+    "end": 4.703
+   },
+   {
+    "w": "is",
+    "t": 4.863,
+    "end": 5.183
+   },
+   {
+    "w": "a",
+    "t": 5.223,
+    "end": 5.263
+   },
+   {
+    "w": "robot.",
+    "t": 5.356,
+    "end": 5.903
+   }
+  ]
+ },
+ {
+  "turn": 2,
+  "speaker": "me",
+  "text": "[dismissive] Nobody believed his dumb ass. Then at assembly, the principal walks on stage...",
+  "words": [
+   {
+    "w": "Nobody",
+    "t": 6.163,
+    "end": 6.218
+   },
+   {
+    "w": "believed",
+    "t": 6.262,
+    "end": 6.618
+   },
+   {
+    "w": "his",
+    "t": 6.658,
+    "end": 6.778
+   },
+   {
+    "w": "dumb",
+    "t": 6.842,
+    "end": 7.098
+   },
+   {
+    "w": "ass.",
+    "t": 7.198,
+    "end": 7.578
+   },
+   {
+    "w": "Then",
+    "t": 7.69,
+    "end": 8.138
+   },
+   {
+    "w": "at",
+    "t": 8.191,
+    "end": 8.298
+   },
+   {
+    "w": "assembly,",
+    "t": 8.351,
+    "end": 9.098
+   },
+   {
+    "w": "the",
+    "t": 9.118,
+    "end": 9.178
+   },
+   {
+    "w": "principal",
+    "t": 9.226,
+    "end": 9.658
+   },
+   {
+    "w": "walks",
+    "t": 9.725,
+    "end": 10.058
+   },
+   {
+    "w": "on",
+    "t": 10.085,
+    "end": 10.138
+   },
+   {
+    "w": "stage...",
+    "t": 10.258,
+    "end": 11.258
+   }
+  ]
+ },
+ {
+  "turn": 3,
+  "speaker": "me",
+  "text": "[shocked] trips over the mic cable. Doesn't even put his hands out. Just goes DOWN. Stiff as shit. Like a plank.",
+  "words": [
+   {
+    "w": "trips",
+    "t": 11.518,
+    "end": 11.585
+   },
+   {
+    "w": "over",
+    "t": 11.665,
+    "end": 11.985
+   },
+   {
+    "w": "the",
+    "t": 12.025,
+    "end": 12.145
+   },
+   {
+    "w": "mic",
+    "t": 12.245,
+    "end": 12.545
+   },
+   {
+    "w": "cable.",
+    "t": 12.652,
+    "end": 13.265
+   },
+   {
+    "w": "Doesn't",
+    "t": 13.385,
+    "end": 14.065
+   },
+   {
+    "w": "even",
+    "t": 14.097,
+    "end": 14.225
+   },
+   {
+    "w": "put",
+    "t": 14.285,
+    "end": 14.465
+   },
+   {
+    "w": "his",
+    "t": 14.525,
+    "end": 14.705
+   },
+   {
+    "w": "hands",
+    "t": 14.772,
+    "end": 15.105
+   },
+   {
+    "w": "out.",
+    "t": 15.165,
+    "end": 15.425
+   },
+   {
+    "w": "Just",
+    "t": 15.553,
+    "end": 16.065
+   },
+   {
+    "w": "goes",
+    "t": 16.145,
+    "end": 16.465
+   },
+   {
+    "w": "DOWN.",
+    "t": 16.625,
+    "end": 17.266
+   },
+   {
+    "w": "Stiff",
+    "t": 17.532,
+    "end": 18.225
+   },
+   {
+    "w": "as",
+    "t": 18.358,
+    "end": 18.625
+   },
+   {
+    "w": "shit.",
+    "t": 18.705,
+    "end": 19.185
+   },
+   {
+    "w": "Like",
+    "t": 19.297,
+    "end": 19.745
+   },
+   {
+    "w": "a",
+    "t": 19.785,
+    "end": 19.825
+   },
+   {
+    "w": "plank.",
+    "t": 19.932,
+    "end": 20.545
+   }
+  ]
+ },
+ {
+  "turn": 4,
+  "speaker": "homie",
+  "text": "[smug] Told y'all. Low-ass battery.",
+  "words": [
+   {
+    "w": "Told",
+    "t": 20.905,
+    "end": 20.977
+   },
+   {
+    "w": "y'all.",
+    "t": 21.017,
+    "end": 21.377
+   },
+   {
+    "w": "Low-ass",
+    "t": 21.577,
+    "end": 22.417
+   },
+   {
+    "w": "battery.",
+    "t": 22.477,
+    "end": 22.977
+   }
+  ]
+ },
+ {
+  "turn": 5,
+  "speaker": "me",
+  "text": "[shouting] Now the sixth graders bow when he walks by. What the FUCK.",
+  "words": [
+   {
+    "w": "Now",
+    "t": 23.337,
+    "end": 23.361
+   },
+   {
+    "w": "the",
+    "t": 23.421,
+    "end": 23.601
+   },
+   {
+    "w": "sixth",
+    "t": 23.668,
+    "end": 24.001
+   },
+   {
+    "w": "graders",
+    "t": 24.049,
+    "end": 24.401
+   },
+   {
+    "w": "bow",
+    "t": 24.501,
+    "end": 24.801
+   },
+   {
+    "w": "when",
+    "t": 24.833,
+    "end": 24.961
+   },
+   {
+    "w": "he",
+    "t": 25.014,
+    "end": 25.121
+   },
+   {
+    "w": "walks",
+    "t": 25.174,
+    "end": 25.441
+   },
+   {
+    "w": "by.",
+    "t": 25.574,
+    "end": 26.521
+   },
+   {
+    "w": "What",
+    "t": 26.657,
+    "end": 27.201
+   },
+   {
+    "w": "the",
+    "t": 27.441,
+    "end": 28.161
+   },
+   {
+    "w": "FUCK.",
+    "t": 28.273,
+    "end": 28.881
+   }
+  ]
+ }
+]

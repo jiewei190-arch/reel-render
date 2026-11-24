@@ -1,0 +1,354 @@
+[
+ {
+  "turn": 1,
+  "speaker": "me",
+  "text": "[exasperated] Bro... we spent THREE fucking weeks growing a crystal for the science fair.",
+  "words": [
+   {
+    "w": "Bro...",
+    "t": 0.09,
+    "end": 0.725
+   },
+   {
+    "w": "we",
+    "t": 0.912,
+    "end": 1.285
+   },
+   {
+    "w": "spent",
+    "t": 1.352,
+    "end": 1.685
+   },
+   {
+    "w": "THREE",
+    "t": 1.778,
+    "end": 2.245
+   },
+   {
+    "w": "fucking",
+    "t": 2.375,
+    "end": 3.285
+   },
+   {
+    "w": "weeks",
+    "t": 3.378,
+    "end": 3.845
+   },
+   {
+    "w": "growing",
+    "t": 3.915,
+    "end": 4.405
+   },
+   {
+    "w": "a",
+    "t": 4.485,
+    "end": 4.565
+   },
+   {
+    "w": "crystal",
+    "t": 4.625,
+    "end": 5.045
+   },
+   {
+    "w": "for",
+    "t": 5.085,
+    "end": 5.205
+   },
+   {
+    "w": "the",
+    "t": 5.225,
+    "end": 5.285
+   },
+   {
+    "w": "science",
+    "t": 5.345,
+    "end": 5.765
+   },
+   {
+    "w": "fair.",
+    "t": 5.829,
+    "end": 6.245
+   }
+  ]
+ },
+ {
+  "turn": 2,
+  "speaker": "me",
+  "text": "[shocked] The judges walk up to our table... and that shit is GONE.",
+  "words": [
+   {
+    "w": "The",
+    "t": 6.505,
+    "end": 6.525
+   },
+   {
+    "w": "judges",
+    "t": 6.605,
+    "end": 7.085
+   },
+   {
+    "w": "walk",
+    "t": 7.165,
+    "end": 7.485
+   },
+   {
+    "w": "up",
+    "t": 7.592,
+    "end": 7.805
+   },
+   {
+    "w": "to",
+    "t": 7.885,
+    "end": 8.045
+   },
+   {
+    "w": "our",
+    "t": 8.145,
+    "end": 8.445
+   },
+   {
+    "w": "table...",
+    "t": 8.552,
+    "end": 10.525
+   },
+   {
+    "w": "and",
+    "t": 10.565,
+    "end": 10.685
+   },
+   {
+    "w": "that",
+    "t": 10.765,
+    "end": 11.085
+   },
+   {
+    "w": "shit",
+    "t": 11.165,
+    "end": 11.485
+   },
+   {
+    "w": "is",
+    "t": 11.645,
+    "end": 11.965
+   },
+   {
+    "w": "GONE.",
+    "t": 12.165,
+    "end": 12.925
+   }
+  ]
+ },
+ {
+  "turn": 3,
+  "speaker": "me",
+  "text": "[annoyed] I look at my homie. This dumbass is CHEWING.",
+  "words": [
+   {
+    "w": "I",
+    "t": 13.185,
+    "end": 13.193
+   },
+   {
+    "w": "look",
+    "t": 13.241,
+    "end": 13.433
+   },
+   {
+    "w": "at",
+    "t": 13.46,
+    "end": 13.513
+   },
+   {
+    "w": "my",
+    "t": 13.566,
+    "end": 13.673
+   },
+   {
+    "w": "homie.",
+    "t": 13.753,
+    "end": 14.233
+   },
+   {
+    "w": "This",
+    "t": 14.409,
+    "end": 15.113
+   },
+   {
+    "w": "dumbass",
+    "t": 15.193,
+    "end": 15.833
+   },
+   {
+    "w": "is",
+    "t": 15.966,
+    "end": 16.233
+   },
+   {
+    "w": "CHEWING.",
+    "t": 16.333,
+    "end": 17.193
+   }
+  ]
+ },
+ {
+  "turn": 4,
+  "speaker": "homie",
+  "text": "[proudly] It was salt, bro. Shit was seasoned.",
+  "words": [
+   {
+    "w": "It",
+    "t": 17.393,
+    "end": 17.414
+   },
+   {
+    "w": "was",
+    "t": 17.454,
+    "end": 17.574
+   },
+   {
+    "w": "salt,",
+    "t": 17.654,
+    "end": 18.054
+   },
+   {
+    "w": "bro.",
+    "t": 18.134,
+    "end": 18.454
+   },
+   {
+    "w": "Shit",
+    "t": 18.694,
+    "end": 19.254
+   },
+   {
+    "w": "was",
+    "t": 19.314,
+    "end": 19.494
+   },
+   {
+    "w": "seasoned.",
+    "t": 19.547,
+    "end": 20.134
+   }
+  ]
+ },
+ {
+  "turn": 5,
+  "speaker": "me",
+  "text": "[shouting] WHY THE FUCK would you EAT the project?!",
+  "words": [
+   {
+    "w": "WHY",
+    "t": 20.494,
+    "end": 20.614
+   },
+   {
+    "w": "THE",
+    "t": 20.674,
+    "end": 20.854
+   },
+   {
+    "w": "FUCK",
+    "t": 20.934,
+    "end": 21.254
+   },
+   {
+    "w": "would",
+    "t": 21.281,
+    "end": 21.414
+   },
+   {
+    "w": "you",
+    "t": 21.454,
+    "end": 21.574
+   },
+   {
+    "w": "EAT",
+    "t": 21.694,
+    "end": 21.974
+   },
+   {
+    "w": "the",
+    "t": 22.014,
+    "end": 22.134
+   },
+   {
+    "w": "project?!",
+    "t": 22.214,
+    "end": 22.934
+   }
+  ]
+ },
+ {
+  "turn": 6,
+  "speaker": "me",
+  "text": "[flatly] The judges still gave us a ribbon. Most Delicious. I hate it here.",
+  "words": [
+   {
+    "w": "The",
+    "t": 23.194,
+    "end": 23.206
+   },
+   {
+    "w": "judges",
+    "t": 23.286,
+    "end": 23.766
+   },
+   {
+    "w": "still",
+    "t": 23.833,
+    "end": 24.166
+   },
+   {
+    "w": "gave",
+    "t": 24.246,
+    "end": 24.566
+   },
+   {
+    "w": "us",
+    "t": 24.646,
+    "end": 24.806
+   },
+   {
+    "w": "a",
+    "t": 24.846,
+    "end": 24.886
+   },
+   {
+    "w": "ribbon.",
+    "t": 24.955,
+    "end": 25.766
+   },
+   {
+    "w": "Most",
+    "t": 25.846,
+    "end": 26.166
+   },
+   {
+    "w": "Delicious.",
+    "t": 26.254,
+    "end": 27.686
+   },
+   {
+    "w": "I",
+    "t": 28.006,
+    "end": 28.326
+   },
+   {
+    "w": "hate",
+    "t": 28.406,
+    "end": 28.726
+   },
+   {
+    "w": "it",
+    "t": 28.753,
+    "end": 28.806
+   },
+   {
+    "w": "here.",
+    "t": 28.87,
+    "end": 29.206
+   }
+  ]
+ }
+]

@@ -1,0 +1,280 @@
+{
+ "kit": "storytime",
+ "slug": "homie-ep5-robot-principal",
+ "title": "My Homie Said the Principal Is a Robot (ep. 5)",
+ "format": "short",
+ "audio": "storytime/homie-ep5-robot-principal.mp3",
+ "cast": {
+  "me": {
+   "name": "me (narrator)",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
+   "shoes": "#f5f5f5",
+   "brow": "#141414",
+   "eye": "#141414"
+  },
+  "homie": {
+   "name": "homie",
+   "skin": "#f4cfa6",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
+   "top": "#7b4fd6",
+   "topStyle": "tee",
+   "trim": "#ffffff",
+   "pants": "#6b7a3a",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
+   "brow": "#8a3b14",
+   "eye": "#141414"
+  }
+ },
+ "lines": {
+  "1": {
+   "speaker": "me",
+   "text": "My homie told the WHOLE fucking school the principal is a robot.",
+   "faces": {
+    "me": "annoyed",
+    "homie": "smug"
+   },
+   "accent": [
+    "whole",
+    "robot"
+   ]
+  },
+  "2": {
+   "speaker": "me",
+   "text": "Nobody believed his dumb ass. Then at assembly, the principal walks on stage...",
+   "faces": {
+    "me": "deadpan"
+   },
+   "accent": [
+    "nobody",
+    "assembly"
+   ]
+  },
+  "3": {
+   "speaker": "me",
+   "text": "trips over the mic cable. Doesn't even put his hands out. Just goes DOWN. Stiff as shit. Like a plank.",
+   "faces": {
+    "me": "shocked"
+   },
+   "accent": [
+    "down",
+    "plank",
+    "trips"
+   ]
+  },
+  "4": {
+   "speaker": "homie",
+   "text": "Told y'all. Low-ass battery.",
+   "faces": {
+    "homie": "smug"
+   },
+   "accent": [
+    "battery"
+   ]
+  },
+  "5": {
+   "speaker": "me",
+   "text": "Now the sixth graders bow when he walks by. What the FUCK.",
+   "faces": {
+    "me": "furious"
+   },
+   "accent": [
+    "bow",
+    "fuck"
+   ]
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.92,
+    "face": 0.31
+   },
+   "set": "gym",
+   "face": [
+    {
+     "me": "annoyed"
+    },
+    {
+     "at": "1:whole",
+     "me": "furious"
+    },
+    {
+     "at": "1:school",
+     "me": "annoyed"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle",
+     "homie": "idle"
+    }
+   ],
+   "note": "My homie told the WHOLE fucking school (annoyed -> furious on WHOLE)"
+  },
+  {
+   "at": "1:school",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -10
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "...the principal is a robot (homie smug)"
+  },
+  {
+   "at": "2",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "face": [
+    {
+     "me": "deadpan",
+     "homie": "smug"
+    }
+   ],
+   "note": "Nobody believed his dumb ass"
+  },
+  {
+   "at": "2:then",
+   "cam": {
+    "preset": "wide_class"
+   },
+   "adult": [
+    {
+     "id": "principal",
+     "face": "neutral",
+     "pose": "idle"
+    }
+   ],
+   "note": "assembly"
+  },
+  {
+   "at": "2:walks",
+   "cam": {
+    "preset": "setcam",
+    "name": "stage"
+   },
+   "note": "the principal walks on stage"
+  },
+  {
+   "at": "3",
+   "cam": {
+    "preset": "setcam",
+    "name": "stagewide"
+   },
+   "note": "...trips over the mic cable"
+  },
+  {
+   "at": "3:doesn't",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 8
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
+   "note": "Doesn't even put his hands out (shocked)"
+  },
+  {
+   "at": "3:just",
+   "cam": {
+    "preset": "setcam",
+    "name": "stagewide"
+   },
+   "adult": [
+    {
+     "at": "3:goes",
+     "id": "principal",
+     "pose": "fall",
+     "face": "neutral"
+    }
+   ],
+   "note": "goes DOWN, stiff as a plank"
+  },
+  {
+   "at": "4",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 10
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "Told y'all. Low-ass battery. (smug, calm)"
+  },
+  {
+   "at": "5",
+   "cam": {
+    "preset": "setcam",
+    "name": "bow"
+   },
+   "set": "hallway",
+   "hide": [
+    "me",
+    "homie"
+   ],
+   "adult": [
+    {
+     "id": "principal",
+     "pose": "idle",
+     "face": "deadpan"
+    }
+   ],
+   "class": [
+    {
+     "at": "5:bow",
+     "do": "bow"
+    }
+   ],
+   "note": "the sixth graders bow when he walks by"
+  },
+  {
+   "at": "5:what",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.86
+   },
+   "set": "gym",
+   "face": [
+    {
+     "me": "scream"
+    }
+   ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
+   "note": "What the FUCK (screaming); cut to black"
+  }
+ ],
+ "end": {
+  "at": "5:end+0.9",
+  "hold": 0.4
+ },
+ "props": {
+  "show": [
+   "principal",
+   "hallkids"
+  ]
+ }
+}

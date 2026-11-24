@@ -1,0 +1,681 @@
+{
+ "kit": "storytime",
+ "slug": "homie-ep2-soundboard",
+ "title": "My Homie Got a Soundboard (ep. 2)",
+ "format": "short",
+ "audio": "storytime/homie-ep2-soundboard.mp3",
+ "cast": {
+  "me": {
+   "name": "me (narrator)",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
+   "shoes": "#f5f5f5",
+   "brow": "#141414",
+   "eye": "#141414"
+  },
+  "homie": {
+   "name": "homie",
+   "skin": "#f4cfa6",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
+   "top": "#7b4fd6",
+   "topStyle": "tee",
+   "trim": "#ffffff",
+   "pants": "#6b7a3a",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
+   "brow": "#8a3b14",
+   "eye": "#141414"
+  }
+ },
+ "lines": {
+  "1": {
+   "speaker": "me",
+   "text": "Yo, my homie is NOT okay, bruh.",
+   "faces": {
+    "me": "annoyed"
+   },
+   "accent": [
+    "not",
+    "okay"
+   ]
+  },
+  "2": {
+   "speaker": "me",
+   "text": "This bro downloaded a soundboard app last night. One fucking button.",
+   "accent": [
+    "soundboard",
+    "button"
+   ]
+  },
+  "3": {
+   "speaker": "me",
+   "text": "First period, teacher goes: pop quiz, phones away.",
+   "accent": [
+    "quiz",
+    "phones"
+   ]
+  },
+  "4": {
+   "speaker": "me",
+   "text": "The whole damn class lost it. Teacher's face went purple as fuck.",
+   "accent": [
+    "class",
+    "purple"
+   ]
+  },
+  "5": {
+   "speaker": "me",
+   "text": "Hallway, principal stops him like: young man, where's your hall pass?",
+   "accent": [
+    "principal",
+    "pass"
+   ]
+  },
+  "6": {
+   "speaker": "me",
+   "text": "This bro got detention so fucking fast, the principal didn't even blink.",
+   "accent": [
+    "detention",
+    "blink"
+   ]
+  },
+  "7": {
+   "speaker": "me",
+   "text": "Then lunch. The lunch lady drops one sad-ass chicken nugget on his tray.",
+   "accent": [
+    "lunch",
+    "nugget",
+    "tray"
+   ]
+  },
+  "8": {
+   "speaker": "me",
+   "text": "She took the fucking nugget back.",
+   "accent": [
+    "took",
+    "back"
+   ]
+  },
+  "9": {
+   "speaker": "me",
+   "text": "So I'm like: bro, delete the damn app.",
+   "accent": [
+    "delete",
+    "app"
+   ]
+  },
+  "10": {
+   "speaker": "homie",
+   "text": "Nah, it's connected to the Bluetooth.",
+   "faces": {
+    "homie": "smug"
+   },
+   "accent": [
+    "bluetooth"
+   ]
+  },
+  "11": {
+   "speaker": "me",
+   "text": "What fucking Bluetooth?",
+   "accent": [
+    "bluetooth"
+   ]
+  },
+  "12": {
+   "speaker": "me",
+   "text": "Fifth period, school assembly. Principal taps the mic. Today we honor our student of the month...",
+   "accent": [
+    "assembly",
+    "mic",
+    "month"
+   ]
+  },
+  "13": {
+   "speaker": "me",
+   "text": "700 kids, bro. One stupid-ass button.",
+   "accent": [
+    "700",
+    "button"
+   ]
+  },
+  "14": {
+   "speaker": "me",
+   "text": "We are never going back to that shit-hole school, bro.",
+   "accent": [
+    "never",
+    "school"
+   ]
+  },
+  "15": {
+   "speaker": "me",
+   "text": "Why the FUUUCK are you like this?",
+   "accent": [
+    "fuck"
+   ]
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.92,
+    "face": 0.31
+   },
+   "set": "classroom",
+   "face": [
+    {
+     "me": "annoyed",
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "hook: my homie is NOT okay, bro"
+  },
+  {
+   "at": "2",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 12
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "this dumb-ass downloaded a soundboard app"
+  },
+  {
+   "at": "2:last",
+   "cam": {
+    "preset": "insert"
+   },
+   "note": "the app over his shoulder: one big red button"
+  },
+  {
+   "at": 8.48,
+   "cam": {
+    "preset": "pov_press"
+   },
+   "note": "BRUH 9.23: thumb on the button"
+  },
+  {
+   "at": 9.61,
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -6
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "hard cut: homie deadpan half-lid"
+  },
+  {
+   "at": "3:teacher",
+   "cam": {
+    "preset": "setcam",
+    "name": "board"
+   },
+   "adult": [
+    {
+     "id": "teacher",
+     "face": "annoyed"
+    }
+   ],
+   "note": "teacher at the board: POP QUIZ"
+  },
+  {
+   "at": 14.98,
+   "cam": {
+    "preset": "pov_press"
+   },
+   "note": "BRUH 15.73: thumb on the button"
+  },
+  {
+   "at": 16.11,
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 8
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "hard cut: homie deadpan half-lid"
+  },
+  {
+   "at": "4",
+   "cam": {
+    "preset": "wide_class"
+   },
+   "class": [
+    {
+     "do": "laugh"
+    }
+   ],
+   "face": [
+    {
+     "homie": "deadpan",
+     "me": "laughing"
+    }
+   ],
+   "note": "the whole class loses it"
+  },
+  {
+   "at": "4:teacher's",
+   "cam": {
+    "preset": "setcam",
+    "name": "teacher"
+   },
+   "adult": [
+    {
+     "id": "teacher",
+     "face": "furious"
+    },
+    {
+     "at": "4:purple",
+     "id": "teacher",
+     "skin": "#8e4fa8"
+    }
+   ],
+   "note": "her face goes purple"
+  },
+  {
+   "at": "5",
+   "cam": {
+    "preset": "setcam",
+    "name": "stop"
+   },
+   "set": "hallway",
+   "hide": [
+    "me"
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "adult": [
+    {
+     "id": "principal",
+     "face": "annoyed"
+    }
+   ],
+   "note": "the principal stops him at the lockers"
+  },
+  {
+   "at": "5:like",
+   "cam": {
+    "preset": "setcam",
+    "name": "principal"
+   },
+   "hide": [
+    "me"
+   ],
+   "note": "young man, where's your hall pass?"
+  },
+  {
+   "at": 29.73,
+   "cam": {
+    "preset": "pov_press"
+   },
+   "note": "BRUH 30.48: thumb on the button"
+  },
+  {
+   "at": 30.86,
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -4
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "hard cut: homie deadpan half-lid",
+   "hide": [
+    "me"
+   ]
+  },
+  {
+   "at": "6:detention",
+   "cam": {
+    "preset": "setcam",
+    "name": "lonely"
+   },
+   "set": "detention",
+   "hide": [
+    "me"
+   ],
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
+    }
+   ],
+   "note": "detention: alone under the sign"
+  },
+  {
+   "at": "6:the",
+   "cam": {
+    "preset": "setcam",
+    "name": "principal"
+   },
+   "set": "hallway",
+   "hide": [
+    "me"
+   ],
+   "adult": [
+    {
+     "id": "principal",
+     "face": "deadpan"
+    }
+   ],
+   "note": "the principal didn't even blink"
+  },
+  {
+   "at": "7",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "set": "cafeteria",
+   "face": [
+    {
+     "me": "deadpan",
+     "homie": "smug"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "then lunch"
+  },
+  {
+   "at": "7:drops",
+   "cam": {
+    "preset": "pov_tray",
+    "on": "homie"
+   },
+   "note": "ONE sad nugget drops on his tray"
+  },
+  {
+   "at": 44.31,
+   "cam": {
+    "preset": "pov_press"
+   },
+   "note": "BRUH 45.06: thumb on the button"
+  },
+  {
+   "at": 45.44,
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 6
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "phone"
+    }
+   ],
+   "note": "hard cut: homie deadpan half-lid"
+  },
+  {
+   "at": "8",
+   "cam": {
+    "preset": "pov_tray",
+    "on": "homie"
+   },
+   "note": "the lunch lady takes it back"
+  },
+  {
+   "at": "9",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -8
+   },
+   "face": [
+    {
+     "me": "annoyed"
+    }
+   ],
+   "note": "bro, delete the damn app"
+  },
+  {
+   "at": "10",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 10,
+    "dist": 1.08,
+    "face": 0.27
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "nah, it's connected to the Bluetooth"
+  },
+  {
+   "at": "11",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 1.04,
+    "face": 0.27
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
+   "note": "WHAT Bluetooth?"
+  },
+  {
+   "at": "12",
+   "cam": {
+    "preset": "wide_class"
+   },
+   "set": "gym",
+   "face": [
+    {
+     "me": "deadpan",
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle",
+     "homie": "phone"
+    }
+   ],
+   "adult": [
+    {
+     "id": "principal",
+     "face": "smug"
+    }
+   ],
+   "note": "fifth period, school assembly"
+  },
+  {
+   "at": "12:principal",
+   "cam": {
+    "preset": "setcam",
+    "name": "stage"
+   },
+   "note": "principal at the mic: student of the month"
+  },
+  {
+   "at": 65.22,
+   "cam": {
+    "preset": "pov_press"
+   },
+   "note": "the gym BRUH: thumb on the button"
+  },
+  {
+   "at": 66.22,
+   "cam": {
+    "preset": "setcam",
+    "name": "speakers"
+   },
+   "adult": [
+    {
+     "at": 66.22,
+     "id": "principal",
+     "face": "shocked"
+    }
+   ],
+   "note": "BRUH through the BIG speakers: the gym frozen"
+  },
+  {
+   "at": "13",
+   "cam": {
+    "preset": "closeup_me"
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
+   "note": "700 kids, bro (mortified)"
+  },
+  {
+   "at": "13:one",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -8
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "note": "one stupid-ass button"
+  },
+  {
+   "at": "14",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "face": [
+    {
+     "me": "furious",
+     "homie": "deadpan"
+    }
+   ],
+   "note": "never going back"
+  },
+  {
+   "at": "15",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.84
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
+   "note": "why the FUUUCK are you like this?"
+  },
+  {
+   "at": "15:end+0.08",
+   "cam": {
+    "preset": "closeup_homie",
+    "push": 0.22
+   },
+   "face": [
+    {
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "raise"
+    }
+   ],
+   "hold": true,
+   "note": "he slowly raises the phone... hard cut to black BEFORE it plays"
+  }
+ ],
+ "end": {
+  "at": "15:end+2.45",
+  "hold": 0.4
+ },
+ "props": {
+  "phone": "bruh",
+  "presses": [
+   9.23,
+   15.73,
+   30.48,
+   45.06,
+   65.97
+  ],
+  "board": [
+   "POP QUIZ",
+   "phones away. no talking."
+  ],
+  "show": [
+   "teacher",
+   "principal"
+  ],
+  "tray": {
+   "owner": "homie",
+   "drop": "7:one-0.1",
+   "take": "8:fucking+0.1"
+  }
+ }
+}

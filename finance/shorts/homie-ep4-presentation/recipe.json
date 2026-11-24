@@ -1,0 +1,361 @@
+{
+ "kit": "storytime",
+ "slug": "homie-ep4-presentation",
+ "title": "My Homie Did the Presentation (ep. 4)",
+ "format": "short",
+ "audio": "storytime/homie-ep4-presentation.mp3",
+ "cast": {
+  "me": {
+   "name": "me (narrator)",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
+   "shoes": "#f5f5f5",
+   "brow": "#141414",
+   "eye": "#141414"
+  },
+  "homie": {
+   "name": "homie",
+   "skin": "#f4cfa6",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
+   "top": "#7b4fd6",
+   "topStyle": "tee",
+   "trim": "#ffffff",
+   "pants": "#6b7a3a",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
+   "brow": "#8a3b14",
+   "eye": "#141414"
+  }
+ },
+ "lines": {
+  "1": {
+   "speaker": "me",
+   "text": "Bro. Group project on the solar system. My homie goes, I got the slides.",
+   "faces": {
+    "me": "sideeye",
+    "homie": "smug"
+   },
+   "accent": [
+    "slides",
+    "solar"
+   ]
+  },
+  "2": {
+   "speaker": "me",
+   "text": "First slide... a picture of HIMSELF.",
+   "faces": {
+    "me": "neutral"
+   },
+   "accent": [
+    "himself"
+   ]
+  },
+  "3": {
+   "speaker": "me",
+   "text": "Next slide. Him AGAIN. In fucking sunglasses.",
+   "faces": {
+    "me": "annoyed"
+   },
+   "accent": [
+    "again",
+    "sunglasses"
+   ]
+  },
+  "4": {
+   "speaker": "homie",
+   "text": "I'm the center of the universe, bitch.",
+   "shout": true,
+   "faces": {
+    "homie": "smug",
+    "me": "annoyed"
+   }
+  },
+  "5": {
+   "speaker": "me",
+   "text": "Teacher gave us a ZERO. A fat-ass zero.",
+   "faces": {
+    "me": "furious"
+   },
+   "accent": [
+    "zero"
+   ]
+  },
+  "6": {
+   "speaker": "me",
+   "text": "And the whole damn class gave him a standing ovation.",
+   "faces": {
+    "me": "shocked"
+   },
+   "accent": [
+    "ovation",
+    "class"
+   ]
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.92,
+    "face": 0.31
+   },
+   "set": "classroom",
+   "face": [
+    {
+     "me": "sideeye"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle",
+     "homie": "idle"
+    }
+   ],
+   "look": [
+    {
+     "me": "front"
+    }
+   ],
+   "note": "Bro. Group project... (suspicious side-eye)"
+  },
+  {
+   "at": "1:my",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 10
+   },
+   "hide": [
+    "kid1",
+    "kid2",
+    "kid3",
+    "kid4",
+    "kid5",
+    "kid6",
+    "kid7",
+    "kid8"
+   ],
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "I got the slides (homie at the board, smug)"
+  },
+  {
+   "at": "2",
+   "cam": {
+    "preset": "setcam",
+    "name": "slides"
+   },
+   "hide": [
+    "kid1",
+    "kid2",
+    "kid3",
+    "kid4",
+    "kid5",
+    "kid6",
+    "kid7",
+    "kid8"
+   ],
+   "note": "First slide... a picture of HIMSELF"
+  },
+  {
+   "at": "2:himself",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -8
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
+   "note": "HIMSELF (shocked)"
+  },
+  {
+   "at": "3",
+   "cam": {
+    "preset": "setcam",
+    "name": "slides"
+   },
+   "hide": [
+    "kid1",
+    "kid2",
+    "kid3",
+    "kid4",
+    "kid5",
+    "kid6",
+    "kid7",
+    "kid8"
+   ],
+   "note": "Next slide. Him AGAIN. In sunglasses"
+  },
+  {
+   "at": "3:sunglasses",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "shrug"
+    }
+   ],
+   "note": "...fucking sunglasses (furious)"
+  },
+  {
+   "at": "4",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -8,
+    "dist": 0.95
+   },
+   "hide": [
+    "kid1",
+    "kid2",
+    "kid3",
+    "kid4",
+    "kid5",
+    "kid6",
+    "kid7",
+    "kid8"
+   ],
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "shrug"
+    }
+   ],
+   "note": "I'm the center of the universe, bitch (cocky, arms out)"
+  },
+  {
+   "at": "5",
+   "cam": {
+    "preset": "setcam",
+    "name": "teacher"
+   },
+   "adult": [
+    {
+     "id": "teacher",
+     "face": "furious"
+    }
+   ],
+   "note": "teacher gave us a ZERO"
+  },
+  {
+   "at": "5:a#2",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 6
+   },
+   "face": [
+    {
+     "me": "furious"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle"
+    }
+   ],
+   "note": "A fat-ass zero (angry)"
+  },
+  {
+   "at": "6",
+   "cam": {
+    "preset": "setcam",
+    "name": "board"
+   },
+   "class": [
+    {
+     "at": "6:class",
+     "do": "cheer"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "idle"
+    }
+   ],
+   "note": "the whole damn class gave him a standing ovation"
+  },
+  {
+   "at": "6:standing",
+   "cam": {
+    "preset": "setcam",
+    "name": "slides"
+   },
+   "hide": [
+    "kid1",
+    "kid2",
+    "kid3",
+    "kid4",
+    "kid5",
+    "kid6",
+    "kid7",
+    "kid8"
+   ],
+   "pose": [
+    {
+     "at": "6:standing",
+     "homie": "bow"
+    }
+   ],
+   "note": "he bows; cut to black"
+  }
+ ],
+ "end": {
+  "at": "6:end+1.6",
+  "hold": 0.4
+ },
+ "props": {
+  "show": [
+   "teacher"
+  ],
+  "marks": {
+   "classroom": {
+    "homie": {
+     "x": 0.85,
+     "z": -3.85,
+     "yaw": -0.2,
+     "sit": false
+    }
+   }
+  },
+  "slides": [
+   {
+    "at": 0,
+    "kind": "title",
+    "text": "THE SOLAR SYSTEM"
+   },
+   {
+    "at": "2:a",
+    "kind": "selfie",
+    "text": "ME"
+   },
+   {
+    "at": "3:in",
+    "kind": "selfie_glasses",
+    "text": "ME"
+   }
+  ]
+ }
+}
