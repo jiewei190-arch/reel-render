@@ -24,7 +24,18 @@ def catalog() -> dict | None:
     if not p.exists():
         return None
     data = json.loads(p.read_text(encoding="utf-8"))
-    return data if isinstance(data, dict) else {d["kind"]: d for d in data}
+    if isinstance(data, list):
+        return {d["kind"]: d for d in data}
+    if isinstance(data.get("props"), list):  # engine format: {"props": [...], "index": {keyword: [kinds]}}
+        cat = {d["kind"]: dict(d) for d in data["props"]}
+        for kw, kinds in (data.get("index") or {}).items():
+            for k in kinds:
+                if k in cat:
+                    cat[k].setdefault("keywords", [])
+                    if kw not in cat[k]["keywords"]:
+                        cat[k]["keywords"] = [*cat[k]["keywords"], kw]
+        return cat
+    return data
 
 
 def _words(s: str) -> set[str]:
