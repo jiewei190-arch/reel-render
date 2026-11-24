@@ -134,7 +134,7 @@ export const StoryFilm: React.FC<{ c: Compiled }> = ({ c }) => {
   const focus: V3 | undefined = pov ? (p === "pov_phone" ? posAhead(cam, 0.4) : p === "pov_press" ? posAhead(cam, 0.3) : cam.look) : subj ? headCenter(subj) : undefined;
   const blur = pov ? 2.2 : close ? 1.8 : 0;
   const ph = c.phoneAt(t0);
-  const setProps = { board: c.recipe.props?.board, tray: c.tray };
+  const setProps = { board: c.recipe.props?.board, tray: c.tray, slide: c.slideAt(t0), fair: c.fair };
   return (
     <AbsoluteFill style={{ background: SET_BG[shot.set] }}>
       {c.recipe.audio ? <Audio src={staticFile(c.recipe.audio)} /> : null}

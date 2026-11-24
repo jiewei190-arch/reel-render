@@ -73,6 +73,8 @@ const classroomExtras: Extra[] = [];
   for (const z of [-0.75, -2.15]) for (const x of [-1.75, -0.6, 0.6, 1.75]) classroomExtras.push(extra(`kid${++i}`, i, { x, z, yaw: PI, sit: true }));
 }
 classroomExtras.push(adult("teacher", { x: -1.22, z: -4.25, yaw: 0.15, sit: false }));
+// a science-fair judge (optional, "judge"): stands in front of the leads' desks, facing them
+classroomExtras.push({ ...adult("principal", { x: 1.55, z: 1.05, yaw: Math.atan2(-1.5, 0.5), sit: false }), id: "judge" });
 /** the gym: four rows of kids on benches facing the stage (-z); the leads sit mid-row 3 */
 export const GYM = { rows: [-4.0, -2.8, -1.6, -0.4], xs: [-3.15, -2.25, -1.35, -0.45, 0.45, 1.35, 2.25, 3.15], stageY: 0.9, stageZ: [-9.0, -6.0] as [number, number], speakerX: 4.7, mic: [0, 0.9, -6.4] as V3 };
 const gymExtras: Extra[] = [];
@@ -95,6 +97,10 @@ export const SETS: Record<SetId, SetLayout> = {
       crowd: { pos: [0.05, 1.32, 1.25], look: [0, 1.0, -1.4], fov: 50 },
       // over the class's heads at the whiteboard and the teacher
       board: { pos: [-0.1, 2.0, -0.3], look: [-0.28, 1.6, -4.85], fov: 58 },
+      // the leads' desks from the front (the science-fair table: crystal, poster, ribbon)
+      fair: { pos: [-1.0, 1.4, 0.45], look: [-0.45, 0.82, 1.55], fov: 46 },
+      // the slide screen (whiteboard) with the presenter beside it
+      slides: { pos: [0.4, 1.7, -1.45], look: [0.45, 1.45, -4.6], fov: 60 },
       // the teacher, chest up (her face goes purple)
       teacher: { pos: [-0.85, 1.74, -2.5], look: [-1.19, 1.6, -4.25], fov: 34 },
     },
@@ -105,7 +111,9 @@ export const SETS: Record<SetId, SetLayout> = {
     marks: { homie: { x: -0.38, z: 0, yaw: 0.62, sit: false }, me: { x: 0.78, z: 0.78, yaw: -2.25, sit: false } },
     // the principal (optional) stops the homie at the lockers, standing where the narrator would be (hide "me")
     extras: [extra("hall1", 9, { x: -1.15, z: -4.6, yaw: PI / 2, sit: false }), extra("hall2", 12, { x: 1.2, z: -7.4, yaw: -PI / 2 + 0.3, sit: false }), extra("hall3", 4, { x: -0.9, z: -9.5, yaw: 0.4, sit: false }),
-      adult("principal", { x: 0.6, z: 0.95, yaw: Math.atan2(-0.98, -0.95), sit: false })],
+      adult("principal", { x: 0.6, z: 0.95, yaw: Math.atan2(-0.98, -0.95), sit: false }),
+      // kids closer down the hall (optional "hallkids"): they bow as the principal walks by
+      { ...extra("hallkid1", 14, { x: -1.05, z: -1.9, yaw: 0.25, sit: false }), opt: true }, { ...extra("hallkid2", 15, { x: 1.05, z: -2.7, yaw: -0.3, sit: false }), opt: true }, { ...extra("hallkid3", 16, { x: -0.95, z: -3.6, yaw: 0.2, sit: false }), opt: true }],
     twoYaw: 0.05,
     bounds: [[-1.45, 1.45], [0.3, 2.9], [-14, 5.6]],
     cams: {
@@ -116,6 +124,8 @@ export const SETS: Record<SetId, SetLayout> = {
       on_homie: { pos: [0.72, 1.84, 1.68], look: [-0.38, 1.12, 0], fov: 36 },
       // down the hallway: the two of them at the lockers
       stop: { pos: [0.2, 1.55, -2.9], look: [0.1, 1.3, 0.5], fov: 42 },
+      // from behind the principal down the hall onto the kids (they bow)
+      bow: { pos: [1.15, 2.25, 3.6], look: [-0.25, 0.95, -4.5], fov: 44 },
     },
     blockers: [],
   },
@@ -163,6 +173,8 @@ export const SETS: Record<SetId, SetLayout> = {
       wide_class: { pos: [0, 4.6, 6.4], look: [0, 1.5, -6.5], fov: 56 },
       // the principal at the mic, from the front rows
       stage: { pos: [0.55, 2.5, -4.5], look: [0, 2.42, -6.9], fov: 36 },
+      // wider on the stage: the principal at the mic with room to fall sideways (stage left)
+      stagewide: { pos: [0.3, 2.3, -1.0], look: [-0.6, 1.4, -6.9], fov: 50 },
       // from the stage back over the frozen rows of kids
       crowd: { pos: [1.2, 2.7, -6.1], look: [0, 1.1, -1.0], fov: 46 },
       // low from the side: a speaker stack big in the foreground, the stage and the rows behind

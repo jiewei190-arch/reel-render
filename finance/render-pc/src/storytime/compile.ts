@@ -173,6 +173,10 @@ type PoseOut = { L: [number, number]; R: [number, number]; lean: number; bob: nu
 /** b = the speaker's word-beat envelope (0..1, a hit on each spoken word, stronger on emphasised words) */
 /** pt = seconds since the pose began */
 const POSE_ARMS: Record<Pose, (t: number, seed: number, amp: number, b: number, pt: number) => PoseOut> = {
+  // a deep bow from the waist, arms at the sides (eases in over 0.4 s)
+  bow: (t, sd, a, b, pt) => { const k = ease(pt / 0.4); return { L: [0.12 + 0.2 * k, 0.04], R: [0.12 + 0.2 * k, 0.04], lean: 0.95 * k, bob: 0, ownBeat: true }; },
+  // stiff as a plank: arms pinned to the sides (the whole body tips over in the renderer)
+  fall: () => ({ L: [0.0, 0.03], R: [0.0, 0.03], lean: 0, bob: 0, ownBeat: true }),
   // the phone comes up slowly, right hand, from the chest to face height (2.2 s), screen to the lens
   raise: (t, sd, a, b, pt) => { const k = ease(pt / 2.2); return { L: [0.1, 0.1], R: [0.75 + 1.4 * k, -0.08], E: [0.12, 1.25 - 0.95 * k], lean: 0.04 + 0.04 * k, bob: 0 }; },
   // fists pumping out at head height on every shouted word (the cold open)
@@ -198,7 +202,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   const at = (a: At | undefined, d: number) => resolveAt(a, words, d);
   const show = new Set(recipe.props?.show ?? []);
   /** the set's extras in this recipe (optional ones only when recipe.props.show lists them) */
-  const extrasOf = (id: SetId) => SETS[id].extras.filter((e) => !e.opt || show.has(e.id) || show.has(e.id.replace(/_stage$/, "")));
+  const extrasOf = (id: SetId) => SETS[id].extras.filter((e) => !e.opt || show.has(e.id) || show.has(e.id.replace(/_stage$/, "")) || (e.id.startsWith("hallkid") && show.has("hallkids")));
   for (const id of LEADS) if (!recipe.cast?.[id]) throw new Error(`recipe.cast.${id} is missing (the narrator "me" and "homie")`);
   // ---- lines: who speaks when (a line runs from its first word to its last word's end)
   const spans: { line: number; speaker: CastId; a: number; b: number }[] = [];
@@ -240,7 +244,8 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   const faceEv: Record<CastId, Ev<Expr>[]> = { me: [], homie: [] };
   const poseEv: Record<CastId, Ev<Pose>[]> = { me: [], homie: [] };
   const lookEv: Record<CastId, Ev<string>[]> = { me: [], homie: [] };
-  const classEv: Ev<ClassEv["do"]>[] = [];
+  /** background-kid events per set (a set's kids only react to events in shots of that set) */
+  const classEv: Partial<Record<SetId, Ev<ClassEv["do"]>[]>> = {};
   for (const sp of spans) {
     const L = recipe.lines[String(sp.line)];
     for (const id of LEADS) { const e = L.faces?.[id]; if (e) { if (!EXPRS.includes(e)) throw new Error(`line ${sp.line}: face "${e}" (faces: ${EXPRS.join(", ")})`); faceEv[id].push({ t: sp.a - 0.08, v: e }); } }
@@ -249,11 +254,11 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     for (const e of s.spec.face ?? []) { const t = at(e.at, s.a); for (const id of LEADS) { const v = e[id]; if (v) { if (!EXPRS.includes(v)) throw new Error(`shot ${s.id}: face "${v}" (faces: ${EXPRS.join(", ")})`); faceEv[id].push({ t, v }); } } }
     for (const e of s.spec.pose ?? []) { const t = at(e.at, s.a); for (const id of LEADS) { const v = e[id]; if (v) { if (!POSES.includes(v)) throw new Error(`shot ${s.id}: pose "${v}" (poses: ${POSES.join(", ")})`); poseEv[id].push({ t, v }); } } }
     for (const e of s.spec.look ?? []) { const t = at(e.at, s.a); for (const id of LEADS) { const v = e[id]; if (v) lookEv[id].push({ t, v }); } }
-    for (const e of s.spec.class ?? []) classEv.push({ t: at(e.at, s.a), v: e.do });
+    for (const e of s.spec.class ?? []) (classEv[s.set] ??= []).push({ t: at(e.at, s.a), v: e.do });
   }
   const byT = <T,>(a: Ev<T>, b: Ev<T>) => a.t - b.t;
   for (const id of LEADS) { faceEv[id].sort(byT); poseEv[id].sort(byT); lookEv[id].sort(byT); }
-  classEv.sort(byT);
+  for (const k of Object.keys(classEv) as SetId[]) classEv[k]!.sort(byT);
   // adult extras: face / skin / pose timelines per id
   const adultEv = new Map<string, { face: Ev<Expr>[]; skin: Ev<string>[]; pose: Ev<Pose>[] }>();
   for (const s of shots) for (const e of (s.spec.adult ?? []) as AdultEv[]) {
@@ -272,6 +277,10 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     for (const p of presses) { if (p <= t + 1e-9) last = p; else { next = p; break; } }
     return { app: recipe.props?.phone ?? "clips", age: t - last, next: next - t };
   };
+  const fr = recipe.props?.fair;
+  const fair = fr ? { gone: at(fr.gone, 0), ribbon: fr.ribbon !== undefined ? at(fr.ribbon, 0) : Infinity, ribbonText: fr.ribbonText ?? "1ST PLACE", poster: fr.poster ?? "OUR CRYSTAL" } : null;
+  const slideEvs = (recipe.props?.slides ?? []).map((s) => ({ t: at(s.at, 0), kind: s.kind, text: s.text ?? "" })).sort((a, b) => a.t - b.t);
+  const slideAt = (t: number) => { let s: (typeof slideEvs)[number] | null = null; for (const x of slideEvs) if (x.t <= t + 1e-9) s = x; return s; };
   const tr = recipe.props?.tray;
   const tray = tr ? { owner: tr.owner, drop: at(tr.drop, 0), take: at(tr.take, 0) } : null;
 
@@ -308,9 +317,10 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const ph = ((t + hash(seed * 3) * per) % per) / per;
     return ph < 0.045 ? 1 : 0;
   };
+  /** a lead's mark in a set (recipe.props.marks overrides the set's) */
+  const markOf = (setId: SetId, id: CastId): Mark => (recipe.props?.marks?.[setId]?.[id] as Mark | undefined) ?? SETS[setId].marks[id];
   const leadAt = (id: CastId, t: number, setId: SetId): FigState => {
-    const S = SETS[setId];
-    const m: Mark = S.marks[id];
+    const m: Mark = markOf(setId, id);
     const spec = recipe.cast[id];
     const s = spec.height ?? 1;
     const seed = id === "me" ? 3 : 7;
@@ -324,7 +334,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     void mo;
     if (face.arc < 0.5 && blinkAt(t, seed)) face = { ...face, lid: 1 };
     // side-eye looks toward the other lead
-    const other = SETS[setId].marks[id === "me" ? "homie" : "me"];
+    const other = markOf(setId, id === "me" ? "homie" : "me");
     const side = Math.sign(dot(sub([other.x, 0, other.z], [m.x, 0, m.z]), leftOf(m.yaw))) || 1;
     face = { ...face, px: face.px * side, browAsym: face.browAsym * (fv.v === "sideeye" ? side : 1) };
     // pose
@@ -341,7 +351,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
     const lv = valueAt(lookEv[id], t, "front");
     const yawTo = (target: string) => {
       if (target === "front") return 0;
-      const o = SETS[setId].marks[target as CastId];
+      const o = markOf(setId, target as CastId);
       if (!o) return 0;
       let d = Math.atan2(o.x - m.x, o.z - m.z) - m.yaw;
       while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI;
@@ -379,21 +389,23 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
   };
   const extraAt = (e: Extra, t: number, setId: SetId): FigState => {
     if (e.spec.adult) return adultAt(e, t);
-    const cv = setId === "classroom" ? valueAt(classEv, t, "front" as ClassEv["do"]) : { v: "front" as ClassEv["do"], prev: "front" as ClassEv["do"], t0: -99 };
+    const cv = valueAt(classEv[setId] ?? [], t, "front" as ClassEv["do"]);
     // "turn": swivel round to face the back row (staggered per kid); "laugh": turned AND laughing; "front": back again
-    const turned = (v: ClassEv["do"]) => (v === "front" ? 0 : 1);
+    const turned = (v: ClassEv["do"]) => (v === "front" || v === "bow" ? 0 : 1);
     const stag = 0.12 * hash(e.seed * 5);
     const tu = ease((t - cv.t0 - stag) / 0.4);
     const turnAmt = lerp(turned(cv.prev), turned(cv.v), tu);
-    const laughing = cv.v === "laugh" && t >= cv.t0 + stag;
+    const laughing = (cv.v === "laugh" || cv.v === "cheer") && t >= cv.t0 + stag;
+    const cheering = cv.v === "cheer" && t >= cv.t0 + stag, bowing = cv.v === "bow" && t >= cv.t0 + stag;
     const f0 = laughing ? FACES.laughing : FACES.neutral;
     let face = { ...f0, open: 0, teeth: 0 }; // LOW-POLY: static mouth bars
     if (!laughing && blinkAt(t, e.seed + 11)) face = { ...face, lid: 1 };
-    const P = POSE_ARMS[laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0, 0, 0);
+    const P = cheering ? { L: [2.55 + 0.12 * Math.sin(t * 9 + e.seed), 0.35] as [number, number], R: [2.55 + 0.12 * Math.sin(t * 9 + e.seed + 1.5), 0.35] as [number, number], lean: -0.05, bob: 0.02 * Math.abs(Math.sin(t * 9 + e.seed)) }
+      : POSE_ARMS[bowing ? "bow" : laughing ? "laugh" : "idle"](t, e.seed * 1.7, 0, 0, t - cv.t0 - stag);
     // turn round toward the leads (in the classroom, the back row) with the body; the head does the rest
     const yaw = e.yaw + turnAmt * (Math.PI - 0.25 * Math.sign(e.x || 1) * (1 - Math.abs(e.x) / 3));
-    return { id: e.id, lead: false, spec: e.spec, x: e.x, z: e.z, y: e.y ?? 0, yaw, headYaw: 0.05 * Math.sin(t * 0.6 + e.seed), headPitch: 0, sit: e.sit, s: (e.s ?? 1) * (e.spec.height ?? 1) * 0.92,
-      lean: P.lean, bob: P.bob, tilt: laughing ? 0.08 * Math.sin(t * 7 + e.seed) : 0, armL: P.L, armR: P.R, pose: laughing ? "laugh" : "idle", expr: laughing ? "laughing" : "neutral", face, mouth: 0, talking: false, seed: e.seed };
+    return { id: e.id, lead: false, spec: e.spec, x: e.x, z: e.z, y: e.y ?? 0, yaw, headYaw: 0.05 * Math.sin(t * 0.6 + e.seed), sit: e.sit, s: (e.s ?? 1) * (e.spec.height ?? 1) * 0.92,
+      lean: P.lean, bob: P.bob, tilt: laughing && !cheering ? 0.08 * Math.sin(t * 7 + e.seed) : 0, armL: P.L, armR: P.R, pose: bowing ? "bow" : laughing ? "laugh" : "idle", expr: laughing ? "laughing" : "neutral", headPitch: bowing ? 0.35 : 0, face, mouth: 0, talking: false, seed: e.seed };
   };
   /** STOP MOTION: characters and props move on twos (a new pose every 2 output frames = 15 fps inside 30 fps) */
   const onTwos = (t: number) => t; // LOW-POLY: smooth (the clay look moved on twos)
@@ -618,7 +630,7 @@ export const compileStory = (recipe: Recipe, words: readonly Word[], vo?: number
 
   return {
     recipe, words, amp, layout: { W, H }, duration, total, endAt, shots, shotAt, camAt, camBase, figsAt, leadAt, extraAt, capAt, chunks, fxAt, speakerAt, spans,
-    brokenFrom, named, mouthOf, onTwos, povOf, capNeed, phoneAt, tray, extrasOf,
+    brokenFrom, named, mouthOf, onTwos, povOf, capNeed, phoneAt, tray, extrasOf, fair, slideAt,
   };
 };
 

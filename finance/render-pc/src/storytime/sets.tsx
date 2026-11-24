@@ -49,6 +49,37 @@ const sunStripes = (panes: [V3, V3, V3, V3][], d: V3, axis: 0 | 1 | 2, value: nu
 }) as V3[]);
 
 // ------------------------------------------------------------------ textures
+export type SlideFx = { kind: "title" | "selfie" | "selfie_glasses"; text: string };
+/** the whiteboard as a slide screen: a title slide with planets, or the homie's cartoon selfie on a starfield */
+const slideTex = (sl: SlideFx) => canvasTexture(`stSlide${sl.kind}|${sl.text}`, 1024, 400, (g, W, H) => {
+  const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, "#0b1033"); gr.addColorStop(1, "#22145a");
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(255,255,255,0.8)"; for (let k = 0; k < 70; k++) g.fillRect(hash(k) * W, hash(k + 40) * H, 3, 3);
+  if (sl.kind === "title") {
+    g.fillStyle = "#ffd23f"; g.beginPath(); g.arc(W / 2 - 170, 95, 52, 0, Math.PI * 2); g.fill();
+    [["#4ea8de", -70, 16], ["#e76f51", -10, 12], ["#f4a261", 70, 26], ["#90be6d", 150, 20]].forEach(([c, x, r]) => { g.fillStyle = c as string; g.beginPath(); g.arc(W / 2 + (x as number), 95, r as number, 0, Math.PI * 2); g.fill(); });
+    g.fillStyle = "#ffffff"; g.font = "800 80px Poppins, sans-serif"; g.textAlign = "center"; g.fillText(sl.text || "THE SOLAR SYSTEM", W / 2, 245);
+    g.font = "600 36px Poppins, sans-serif"; g.fillStyle = "#c7d2fe"; g.fillText("group project", W / 2, 310); g.textAlign = "left";
+    return;
+  }
+  // the homie's selfie: copper curls, a peach face, octagon eyes, a smug half-lid, the purple tee; a gold frame
+  const cx = W / 2, cy = H / 2 + 10, s = 1.0;
+  g.fillStyle = "#ffd23f"; g.fillRect(cx - 190, 18, 380, H - 36);
+  g.fillStyle = "#2a1d5c"; g.fillRect(cx - 176, 32, 352, H - 64);
+  g.fillStyle = "#7b4fd6"; g.fillRect(cx - 120, cy + 95 * s, 240, 80);
+  g.fillStyle = "#f4cfa6"; g.fillRect(cx - 95, cy - 90, 190, 185);
+  g.fillStyle = "#c4541c"; for (let k = 0; k < 11; k++) { g.beginPath(); g.arc(cx - 95 + k * 19, cy - 92 + 8 * Math.sin(k * 1.7), 26, 0, Math.PI * 2); g.fill(); }
+  g.fillStyle = "#8a3b14"; g.fillRect(cx - 70, cy - 30, 50, 10); g.fillRect(cx + 20, cy - 40, 50, 10);
+  if (sl.kind === "selfie_glasses") {
+    g.fillStyle = "#0d0d10"; g.fillRect(cx - 82, cy - 18, 70, 40); g.fillRect(cx + 12, cy - 18, 70, 40); g.fillRect(cx - 14, cy - 10, 28, 8);
+    g.fillStyle = "rgba(255,255,255,0.35)"; g.fillRect(cx - 74, cy - 12, 18, 8); g.fillRect(cx + 20, cy - 12, 18, 8);
+  } else {
+    g.fillStyle = "#141414"; for (const ex of [-45, 45]) { g.beginPath(); for (let i = 0; i < 8; i++) { const a = Math.PI / 8 + (i * Math.PI) / 4; g.lineTo(cx + ex + Math.cos(a) * 18, cy + Math.sin(a) * 20); } g.fill(); }
+    g.fillStyle = "#f4cfa6"; g.fillRect(cx - 70, cy - 22, 140, 14);
+  }
+  g.fillStyle = "#3a1e22"; g.beginPath(); g.moveTo(cx - 40, cy + 52); g.lineTo(cx + 45, cy + 44); g.lineTo(cx + 45, cy + 52); g.lineTo(cx - 40, cy + 60); g.fill();
+  g.fillStyle = "#ffffff"; g.font = "800 46px Poppins, sans-serif"; g.textAlign = "center"; g.fillText(sl.text || "ME", cx + 330, 210); g.fillText("\u2728", cx - 330, 210); g.textAlign = "left";
+});
 /** an episode's whiteboard: the first line huge (red), the rest smaller */
 const boardLines = (lines: string[]) => canvasTexture(`stBoard${lines.join("|")}`, 1024, 400, (g, W, H) => {
   g.fillStyle = "#f7f8f6"; g.fillRect(0, 0, W, H);
@@ -182,7 +213,38 @@ const Bookshelf: React.FC<{ x0: number; x1: number; z: number }> = ({ x0, x1, z 
 };
 
 // ------------------------------------------------------------------ classroom
-const Classroom: React.FC<{ t: number; board?: string[] }> = ({ t, board }) => {
+export type FairFx = { gone: number; ribbon: number; ribbonText: string; poster: string };
+const ribbonTex = (text: string) => canvasTexture(`stRibbon${text}`, 256, 256, (g, W) => {
+  g.fillStyle = "#1d4ed8"; g.beginPath(); for (let k = 0; k < 24; k++) { const a = (k / 24) * Math.PI * 2, r = k % 2 ? 118 : 128; g.lineTo(W / 2 + Math.cos(a) * r, W / 2 + Math.sin(a) * r); } g.fill();
+  g.fillStyle = "#ffd23f"; g.beginPath(); g.arc(W / 2, W / 2, 92, 0, Math.PI * 2); g.fill();
+  g.fillStyle = "#1d4ed8"; g.textAlign = "center"; const ws = text.split(" ");
+  g.font = `800 ${ws.length > 1 ? 34 : 40}px Poppins, sans-serif`; ws.forEach((w, i) => g.fillText(w, W / 2, W / 2 + 12 + (i - (ws.length - 1) / 2) * 38));
+});
+/** the science fair on the leads' desks: a crystal cluster on a stand (gone from `gone` on), a trifold poster, a ribbon */
+const Fair: React.FC<{ f: FairFx; t: number }> = ({ f, t }) => {
+  const S = SETS.classroom, dh = deskOf(S.marks.homie);
+  const crystals: [number, number, number, number, number][] = [[0, 0.17, 0, 0.0, 1.0], [-0.07, 0.12, 0.03, 0.45, 0.75], [0.07, 0.11, -0.02, -0.4, 0.7], [0.02, 0.1, 0.07, 0.25, 0.6], [-0.03, 0.09, -0.07, -0.3, 0.55]];
+  return (
+    <group>
+      {/* the stand + crystals on the homie's desk */}
+      <mesh geometry={polyBox(0.24, 0.05, 0.2, 0.01)} material={flat("#3a2a4a")} position={[dh[0], 0.715, dh[2]]} castShadow />
+      {t < f.gone ? crystals.map(([x, y, z, r, s], i) => <mesh key={i} geometry={polyIco(0.06, 0.8, 2.6, 0.8)} material={polyMat(i % 2 ? "#a78bfa" : "#7dd3fc", { emissive: "#6d5ae8", ei: 0.25, rough: 0.35 })} position={[dh[0] + x, 0.74 + y * s, dh[2] + z]} rotation={[0, 0, r]} scale={s} castShadow />) : null}
+      {t >= f.ribbon ? (
+        <group position={[dh[0], 0.76, dh[2] + 0.02]} rotation={[-0.35, Math.PI, 0]}>
+          <mesh geometry={PLANE()} material={texMat(ribbonTex(f.ribbonText))} scale={[0.22, 0.22, 1]} />
+          {[-1, 1].map((sd) => <mesh key={sd} geometry={BOX()} material={flat("#1d4ed8")} position={[sd * 0.04, -0.15, -0.002]} rotation={[0, 0, sd * 0.2]} scale={[0.05, 0.14, 0.004]} />)}
+        </group>
+      ) : null}
+      {/* the trifold poster standing on the narrator's desk, facing the front of the room */}
+      <group position={[dh[0] - 0.62, 0.0, dh[2] + 0.1]} rotation={[0, Math.PI - 0.35, 0]} scale={2.2}>
+        <mesh geometry={PLANE()} material={texMat(signTex(`stPoster${f.poster}`, f.poster, "#ffffff", "#1d4ed8", 512, 360, 64))} position={[0, 0.2, 0]} scale={[0.34, 0.4, 1]} />
+        {[-1, 1].map((sd) => <mesh key={sd} geometry={PLANE()} material={flat("#fef3c7")} position={[sd * 0.25, 0.2, 0.06]} rotation={[0, -sd * 0.6, 0]} scale={[0.18, 0.4, 1]} />)}
+      </group>
+    </group>
+  );
+};
+
+const Classroom: React.FC<{ t: number; board?: string[]; slide?: SlideFx | null; fair?: FairFx | null }> = ({ t, board, slide, fair }) => {
   const S = SETS.classroom;
   const floor = flat("#c98f5a");
   const wall = flat(WALL), wall2 = flat(WALL2), base = flat("#7a5c46");
@@ -205,7 +267,8 @@ const Classroom: React.FC<{ t: number; board?: string[] }> = ({ t, board }) => {
       {[-3.2, 0, 3.2].map((z) => [-1.6, 1.6].map((x) => <CeilingLight key={`${x}${z}`} p={[x, 3.38, z]} />))}
       {/* the chalkboard + tray, the teacher's desk */}
       <Blk a={[-2.0, 0.85, -4.92]} b={[2.0, 2.45, -4.86]} m={flat("#b07a45")} />
-      <mesh geometry={PLANE()} material={texMat(board?.length ? boardLines(board) : chalkboard(), 0.95)} position={[0, 1.65, -4.85]} scale={[3.8, 1.45, 1]} />
+      <mesh geometry={PLANE()} material={slide ? bmat("#ffffff", slideTex(slide)) : texMat(board?.length ? boardLines(board) : chalkboard(), 0.95)} position={[0, 1.65, -4.85]} scale={[3.8, 1.45, 1]} />
+      {fair ? <Fair f={fair} t={t} /> : null}
       <Blk a={[-2.0, 0.82, -4.86]} b={[2.0, 0.86, -4.74]} m={flat("#b07a45")} />
       <Blk a={[1.4, 0, -4.2]} b={[3.0, 0.78, -3.5]} m={flat("#c98d4b")} />
       <Clock p={[-2.9, 2.55, -4.85]} t={t} r={0.3} />
@@ -407,10 +470,10 @@ const Cafeteria: React.FC<{ t: number; broken: number | null; tray?: TrayFx | nu
 };
 
 // ------------------------------------------------------------------ detention
-const signTex = (key: string, text: string, bg: string, fg: string, w = 1024, h = 256, fs = 150) => canvasTexture(key, w, h, (g, W, H) => {
+function signTex(key: string, text: string, bg: string, fg: string, w = 1024, h = 256, fs = 150) { return canvasTexture(key, w, h, (g, W, H) => {
   g.fillStyle = bg; g.fillRect(0, 0, W, H); g.strokeStyle = fg; g.lineWidth = 12; g.strokeRect(14, 14, W - 28, H - 28);
   g.fillStyle = fg; g.font = `800 ${fs}px Poppins, sans-serif`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(text, W / 2, H / 2 + 6);
-});
+}); }
 const Detention: React.FC<{ t: number }> = ({ t }) => {
   const S = SETS.detention, wall = flat("#d9cbb0"), wall2 = flat("#cfbf9f");
   const ho = S.marks.homie;
@@ -523,6 +586,6 @@ const Gym: React.FC<{ t: number }> = () => {
 const polyTorusGeo = () => geoOf("stHoop", () => new THREE.TorusGeometry(0.24, 0.02, 4, 16));
 
 export const SET_BG: Record<SetId, string> = { classroom: "#a8d8ea", hallway: "#f1f3d0", cafeteria: "#ffd6a5", detention: "#e9dcc4", gym: "#e6dcc6" };
-export type SetProps = { board?: string[]; tray?: TrayFx | null };
+export type SetProps = { board?: string[]; tray?: TrayFx | null; slide?: SlideFx | null; fair?: FairFx | null };
 export const StorySet: React.FC<{ id: SetId; t: number; broken: number | null; props?: SetProps }> = ({ id, t, broken, props }) =>
-  id === "classroom" ? <Classroom t={t} board={props?.board} /> : id === "hallway" ? <Hallway t={t} /> : id === "detention" ? <Detention t={t} /> : id === "gym" ? <Gym t={t} /> : <Cafeteria t={t} broken={broken} tray={props?.tray} />;
+  id === "classroom" ? <Classroom t={t} board={props?.board} slide={props?.slide} fair={props?.fair} /> : id === "hallway" ? <Hallway t={t} /> : id === "detention" ? <Detention t={t} /> : id === "gym" ? <Gym t={t} /> : <Cafeteria t={t} broken={broken} tray={props?.tray} />;

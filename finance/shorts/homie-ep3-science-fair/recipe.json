@@ -1,0 +1,300 @@
+{
+ "kit": "storytime",
+ "slug": "homie-ep3-science-fair",
+ "title": "My Homie Ate the Science Project (ep. 3)",
+ "format": "short",
+ "audio": "storytime/homie-ep3-science-fair.mp3",
+ "cast": {
+  "me": {
+   "name": "me (narrator)",
+   "skin": "#8a5636",
+   "hair": "#141414",
+   "hairStyle": "twists",
+   "top": "#2f5d3a",
+   "topStyle": "bomber",
+   "inner": "#f4f4f0",
+   "trim": "#24452c",
+   "pants": "#c8b48a",
+   "shoes": "#f5f5f5",
+   "brow": "#141414",
+   "eye": "#141414"
+  },
+  "homie": {
+   "name": "homie",
+   "skin": "#f4cfa6",
+   "hair": "#c4541c",
+   "hairStyle": "curls",
+   "top": "#7b4fd6",
+   "topStyle": "tee",
+   "trim": "#ffffff",
+   "pants": "#6b7a3a",
+   "cargo": true,
+   "chain": "#d4a62a",
+   "shoes": "#d62828",
+   "brow": "#8a3b14",
+   "eye": "#141414"
+  }
+ },
+ "lines": {
+  "1": {
+   "speaker": "me",
+   "text": "Bro... we spent THREE fucking weeks growing a crystal for the science fair.",
+   "faces": {
+    "me": "annoyed",
+    "homie": "deadpan"
+   },
+   "accent": [
+    "three",
+    "crystal"
+   ]
+  },
+  "2": {
+   "speaker": "me",
+   "text": "The judges walk up to our table... and that shit is GONE.",
+   "faces": {
+    "me": "neutral"
+   },
+   "accent": [
+    "judges",
+    "gone"
+   ]
+  },
+  "3": {
+   "speaker": "me",
+   "text": "I look at my homie. This dumbass is CHEWING.",
+   "faces": {
+    "me": "sideeye",
+    "homie": "smug"
+   },
+   "accent": [
+    "chewing",
+    "dumbass"
+   ]
+  },
+  "4": {
+   "speaker": "homie",
+   "text": "It was salt, bro. Shit was seasoned.",
+   "faces": {
+    "homie": "smug",
+    "me": "annoyed"
+   },
+   "accent": [
+    "salt",
+    "seasoned"
+   ]
+  },
+  "5": {
+   "speaker": "me",
+   "text": "WHY THE FUCK would you EAT the project?!",
+   "shout": true,
+   "faces": {
+    "me": "scream",
+    "homie": "smug"
+   }
+  },
+  "6": {
+   "speaker": "me",
+   "text": "The judges still gave us a ribbon. Most Delicious. I hate it here.",
+   "faces": {
+    "me": "deadpan"
+   },
+   "accent": [
+    "ribbon",
+    "delicious",
+    "hate"
+   ]
+  }
+ },
+ "shots": [
+  {
+   "at": 0,
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.92,
+    "face": 0.31
+   },
+   "set": "classroom",
+   "face": [
+    {
+     "me": "annoyed"
+    },
+    {
+     "at": "1:three",
+     "me": "furious"
+    },
+    {
+     "at": "1:weeks",
+     "me": "annoyed"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle",
+     "homie": "idle"
+    },
+    {
+     "at": "1:three",
+     "me": "shrug"
+    }
+   ],
+   "note": "Bro... THREE fucking weeks (annoyed -> furious on THREE)"
+  },
+  {
+   "at": "1:weeks",
+   "cam": {
+    "preset": "setcam",
+    "name": "fair"
+   },
+   "note": "the crystal on our table"
+  },
+  {
+   "at": "2",
+   "cam": {
+    "preset": "two_shot"
+   },
+   "face": [
+    {
+     "me": "neutral",
+     "homie": "deadpan"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle"
+    }
+   ],
+   "note": "the judges walk up"
+  },
+  {
+   "at": "2:and",
+   "cam": {
+    "preset": "setcam",
+    "name": "fair"
+   },
+   "note": "...and the crystal is GONE"
+  },
+  {
+   "at": "2:gone",
+   "cam": {
+    "preset": "closeup_me",
+    "az": 8
+   },
+   "face": [
+    {
+     "me": "shocked"
+    }
+   ],
+   "note": "GONE (shocked)"
+  },
+  {
+   "at": "3:this",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": -10
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "note": "this dumbass is CHEWING (smug half-lid)"
+  },
+  {
+   "at": "4",
+   "cam": {
+    "preset": "closeup_homie",
+    "az": 12,
+    "dist": 0.9
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "pose": [
+    {
+     "homie": "shrug"
+    }
+   ],
+   "note": "homie: It was salt, bro. Shit was seasoned. (proud)"
+  },
+  {
+   "at": "5",
+   "cam": {
+    "preset": "closeup_me",
+    "dist": 0.86
+   },
+   "face": [
+    {
+     "me": "scream"
+    }
+   ],
+   "pose": [
+    {
+     "me": "shrug",
+     "homie": "idle"
+    }
+   ],
+   "note": "WHY THE FUCK would you EAT the project?! (screaming)"
+  },
+  {
+   "at": "6",
+   "cam": {
+    "preset": "setcam",
+    "name": "fair"
+   },
+   "note": "the ribbon: MOST DELICIOUS"
+  },
+  {
+   "at": "6:most",
+   "cam": {
+    "preset": "closeup_me",
+    "az": -6
+   },
+   "face": [
+    {
+     "me": "deadpan"
+    },
+    {
+     "at": "6:hate",
+     "me": "annoyed"
+    }
+   ],
+   "pose": [
+    {
+     "me": "idle"
+    }
+   ],
+   "note": "flat: I hate it here (deadpan -> annoyed on hate)"
+  },
+  {
+   "at": "6:end+0.08",
+   "cam": {
+    "preset": "closeup_homie",
+    "push": 0.2
+   },
+   "face": [
+    {
+     "homie": "smug"
+    }
+   ],
+   "hold": true,
+   "note": "homie licks his lips, slow push, cut to black"
+  }
+ ],
+ "end": {
+  "at": "6:end+2.2",
+  "hold": 0.4
+ },
+ "props": {
+  "show": [
+   "judge"
+  ],
+  "fair": {
+   "gone": "2:and",
+   "ribbon": "6:ribbon",
+   "ribbonText": "MOST DELICIOUS",
+   "poster": "OUR CRYSTAL"
+  }
+ }
+}

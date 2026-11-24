@@ -14,8 +14,9 @@ export type Expr =
 export const EXPRS: Expr[] = ["neutral", "annoyed", "furious", "shocked", "deadpan", "smug", "laughing", "sideeye", "yell", "scream"];
 
 /** raise: the phone comes up slowly from the chest to face height, screen to the lens (over ~2 s) */
-export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean" | "pump" | "shrug" | "slam" | "raise";
-export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean", "pump", "shrug", "slam", "raise"];
+/** bow: a deep bow from the waist; fall: goes down sideways stiff as a plank (adults on a stage) */
+export type Pose = "idle" | "talk" | "yell" | "phone" | "laugh" | "point" | "lean" | "pump" | "shrug" | "slam" | "raise" | "bow" | "fall";
+export const POSES: Pose[] = ["idle", "talk", "yell", "phone", "laugh", "point", "lean", "pump", "shrug", "slam", "raise", "bow", "fall"];
 
 export type SetId = "classroom" | "hallway" | "cafeteria" | "detention" | "gym";
 export const SET_IDS: SetId[] = ["classroom", "hallway", "cafeteria", "detention", "gym"];
@@ -69,7 +70,9 @@ export type Fx =
   | { fx: "flash"; at?: At }
   | { fx: "shatter"; at?: At };
 
-export type ClassEv = { at?: At; do: "turn" | "laugh" | "front" };
+/** the background kids of the shot's set: turn round to the leads, laugh, cheer (arms up, a standing-ovation feel),
+ *  bow (a deep bow where they are), or face front again */
+export type ClassEv = { at?: At; do: "turn" | "laugh" | "front" | "cheer" | "bow" };
 /** an adult extra (teacher, principal): face, skin tint (the purple face), pose from `at` on */
 export type AdultEv = { at?: At; id: string; face?: Expr; skin?: string; pose?: Pose };
 
@@ -163,6 +166,12 @@ export type Props = {
   show?: string[];
   /** a single nugget lands on `owner`'s (otherwise empty) tray at `drop`; a lunch-lady hand takes it back at `take` */
   tray?: { owner: CastId; drop: At; take: At };
+  /** per-set mark overrides for the leads (e.g. the homie presenting at the whiteboard) */
+  marks?: Partial<Record<SetId, Partial<Record<CastId, { x: number; z: number; yaw: number; sit: boolean }>>>>;
+  /** the science fair: a crystal on the leads' desks (gone from `gone` on) and a ribbon on the desk from `ribbon` on */
+  fair?: { gone: At; ribbon?: At; ribbonText?: string; poster?: string };
+  /** the whiteboard as a slide screen: from each `at` on it shows a title slide or the homie's selfie (sunglasses optional) */
+  slides?: { at: At; kind: "title" | "selfie" | "selfie_glasses"; text?: string }[];
 };
 
 /** a timed word: line number in `turn` */

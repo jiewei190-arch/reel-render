@@ -305,6 +305,8 @@ export const Kid: React.FC<{ st: FigState; t: number; cam?: readonly number[] }>
   ));
   return (
     <group position={[st.x, st.y ?? 0, st.z]} rotation={[0, st.yaw, 0]} scale={s}>
+      {/* the plank fall: the whole body tips over sideways about the feet (no hands out), lifted so it lies ON the floor */}
+      <group rotation={[0, 0, st.pose === "fall" ? (Math.PI / 2) * Math.min(1, Math.pow((st.poseT ?? 0) / 0.42, 2)) : 0]} position={[0, st.pose === "fall" ? 0.46 * Math.sin((Math.PI / 2) * Math.min(1, Math.pow((st.poseT ?? 0) / 0.42, 2))) : 0, 0]}>
       <group position={[0, hip + st.bob / s, 0]}>
         {leg(1)}{leg(-1)}
         <group rotation={[st.lean, 0, st.tilt * 0.4]}>
@@ -347,6 +349,7 @@ export const Kid: React.FC<{ st: FigState; t: number; cam?: readonly number[] }>
             <Hair st={st} />
           </group>
         </group>
+      </group>
       </group>
     </group>
   );
