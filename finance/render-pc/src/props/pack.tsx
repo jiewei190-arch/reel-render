@@ -137,7 +137,7 @@ const SIDE_ON: PackKind[] = ["cow", "dog", "horse", "pig", "chicken", "shark", "
 export const packCam = (k: PackKind, sc = 1): { dist: number; h: number; az: number } => {
   const b = PACK_BOX[k], side = SIDE_ON.includes(k), az = side ? (k === "shark" || k === "airplane" ? 30 : ["cow", "dog", "horse", "pig", "chicken"].includes(k) ? 48 : 40) : 10, a = (az * Math.PI) / 180;
   const halfW = (b.h[0] * Math.cos(a) + b.h[2] * Math.sin(a)) * sc, halfH = b.h[1] * sc;
-  const dist = Math.max(halfW * 4.6, halfH * 2.9, 1.1) + b.h[2] * sc * 0.6;
+  const dist = Math.max(halfW * (k === "boat" ? 6.2 : 5.2), halfH * 3.3, 1.1) + b.h[2] * sc * 0.6;
   return { dist: Math.round(dist * 100) / 100, h: b.h[1] * sc < 0.35 ? 0.45 : side ? 0.3 : 0.12, az };
 };
 export const PACK_CAM: Record<PackKind, { dist: number; h: number; az: number }> = Object.fromEntries(PACK_KINDS.map((k) => [k, packCam(k)])) as Record<PackKind, { dist: number; h: number; az: number }>;
@@ -458,8 +458,8 @@ const Monkey: React.FC<AP> = ({ th, col, label, t, seed, sp }) => {
         {[-1, 1].map((k) => <Ell key={`n${k}`} th={th} p={[k * 0.018, -0.055, 0.225]} s={0.009} m={dark} shadow={false} />)}
         {cam ? (
           <>
-            <Ell th={th} p={[0, -0.1, 0.205]} s={[0.075, 0.035, 0.03]} m={dark} shadow={false} />
-            <Bx th={th} p={[0, -0.088, 0.228]} s={[0.11, 0.022, 0.012]} m={th.m("#FBFAF5", { rough: 0.3 })} shadow={false} />
+            <Ell th={th} p={[0, -0.105, 0.208]} s={[0.07, 0.04, 0.03]} m={th.m("#5A2A2A", { rough: 0.6 })} shadow={false} />
+            <Bx th={th} p={[0, -0.09, 0.231]} s={[0.09, 0.018, 0.01]} m={th.m("#FBFAF5", { rough: 0.3 })} shadow={false} />
           </>
         ) : <mesh geometry={TORUS(th, 0.035, 0.007, Math.PI * 0.8)} material={dark} position={[0, -0.085, 0.222]} rotation={[0, 0, Math.PI * 1.1]} />}
       </group>
@@ -1348,7 +1348,7 @@ const SodaBottle: React.FC<VP> = ({ th, col, label, t, seed }) => {
   });
   return (
     <group>
-      <mesh geometry={liquid} material={th.m("#6A2E18", { rough: 0.15, opacity: 0.92 })} />
+      <mesh geometry={liquid} material={th.m("#6A2E18", { rough: 0.15, side: THREE.DoubleSide })} />
       {Array.from({ length: 7 }, (_, k) => { const u = (t * 0.25 + hash(k + seed)) % 1; return <Ell key={k} th={th} p={[(hash(k * 3.3) - 0.5) * 0.2, 0.06 + u * 0.6, (hash(k * 1.7) - 0.5) * 0.2]} s={0.008 + 0.006 * hash(k)} m={th.m("#F2D9B8", { rough: 0.1, opacity: 0.8 })} shadow={false} />; })}
       <mesh geometry={prof} material={th.m("#D9EEF2", { rough: 0.06, opacity: 0.35, side: THREE.DoubleSide })} castShadow />
       <mesh geometry={CYL(th, 0.179, 0.179, 0.22, 1.6, true)} material={th.m("#FFFFFF", { rough: 0.4, map: band })} position={[0, 0.34, 0]} rotation={[0, Math.PI, 0]} />
