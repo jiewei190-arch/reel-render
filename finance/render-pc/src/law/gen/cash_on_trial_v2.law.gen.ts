@@ -614,12 +614,12 @@ export const RECIPE: LawRecipe = {
     {
      "at": "thousand,",
      "sfx": "type",
-     "db": 2
+     "db": 7
     },
     {
      "at": "3:seven",
      "sfx": "type",
-     "db": 3,
+     "db": 8,
      "rate": 1.15
     },
     {
@@ -737,9 +737,9 @@ export const RECIPE: LawRecipe = {
    ],
    "sfx": [
     {
-     "at": "4:no-0.05",
+     "at": "4:no-0.14",
      "sfx": "door",
-     "db": 6
+     "db": 10
     },
     {
      "at": "4:no+0.2",

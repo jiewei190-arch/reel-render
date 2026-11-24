@@ -10,7 +10,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath } from "url";
 import { bundle } from "@remotion/bundler";
-import { openBrowser, renderMedia, selectComposition } from "@remotion/renderer";
+import { renderMedia, selectComposition } from "@remotion/renderer";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
@@ -26,7 +26,10 @@ const comp = slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(""
 const plan = JSON.parse(readFileSync(join(ROOT, `out/tmp/${slug}.cues.json`), "utf8"))[comp];
 const total = Math.round(plan.duration * 30);
 const starts = plan.cuts.map((c) => Math.round(c * 30));
-const segs = starts.map((a, i) => ({ n: i + 1, a, b: (i + 1 < starts.length ? starts[i + 1] : total) - 1 }));
+const test = opt("--frames", "");
+const segs0 = starts.map((a, i) => ({ n: i + 1, a, b: (i + 1 < starts.length ? starts[i + 1] : total) - 1 }));
+// --frames a-b: one test range instead of the shots (seg_00.mp4)
+const segs = test ? [{ n: 0, a: +test.split("-")[0], b: +test.split("-")[1] }] : segs0;
 const want = new Set();
 for (const part of only.split(",").filter(Boolean)) { const [x, y] = part.split("-").map(Number); for (let k = x; k <= (y ?? x); k++) want.add(k); }
 const todo = segs.filter((s) => !want.size || want.has(s.n));
@@ -36,14 +39,14 @@ if (todo.length && only !== "none") {
   const gl = process.env.GL ?? "swangle", browserExecutable = process.env.BROWSER_EXE ?? null;
   console.log(`bundling src/index.law.ts ...`);
   const serveUrl = await bundle({ entryPoint: join(ROOT, "src/index.law.ts"), publicDir: join(ROOT, "public") });
-  const browser = await openBrowser("chrome", { browserExecutable, chromiumOptions: { gl } });
-  const composition = await selectComposition({ serveUrl, id: comp, puppeteerInstance: browser, inputProps: {} });
+  // no shared browser: renderMedia opens its own with the composition's viewport (frames captured through a shared
+  // instance came out as tiled strips with concurrency > 1)
+  const composition = await selectComposition({ serveUrl, id: comp, browserExecutable, chromiumOptions: { gl }, inputProps: {} });
   for (const s of todo) {
     const T = Date.now();
-    await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: name(s), frameRange: [s.a, s.b], crf, concurrency, muted: true, puppeteerInstance: browser, browserExecutable, chromiumOptions: { gl }, timeoutInMilliseconds: 300000, logLevel: "error" });
+    await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: name(s), frameRange: [s.a, s.b], crf, concurrency, muted: true, browserExecutable, chromiumOptions: { gl }, timeoutInMilliseconds: 300000, logLevel: "error" });
     console.log(`shot ${s.n}: frames ${s.a}-${s.b} (${s.b - s.a + 1}) -> ${name(s)} in ${((Date.now() - T) / 1000).toFixed(0)} s`);
   }
-  await browser.close({ silent: true });
 }
 if (concat) {
   const missing = segs.filter((s) => !existsSync(name(s)));

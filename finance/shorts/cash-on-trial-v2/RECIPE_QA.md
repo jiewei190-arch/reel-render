@@ -10,7 +10,7 @@ Composition: `CashOnTrialV2Recipe` in `src/index.law.ts` (1080x1920, 30 fps, no 
 
 - none: every forearm stays on its elbow, no arm passes through the other arm, the torso, the head, a set piece or a prop.
 
-## Framing QA (screen space, 989 frames, 0.06 s): 0 clip(s), 0 fail(s)
+## Framing QA (screen space, 989 frames, 0.07 s): 0 clip(s), 0 fail(s)
 
 Rules: RECIPE_GUIDE.md "Framing rules". R1 head clips 0, R2 subject/edge 0, R3 board past edge 0, R4 contrast 0, R4 text size 0, R5 frame 0 0, R6 caption on face/neck 0.
 
