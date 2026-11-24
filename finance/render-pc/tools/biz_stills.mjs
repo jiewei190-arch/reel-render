@@ -36,7 +36,9 @@ if (what === "gallery") {
 }
 console.log(`bundling src/index.biz.ts ...`);
 const serveUrl = await bundle({ entryPoint: join(ROOT, "src/index.biz.ts"), publicDir: join(ROOT, "public") });
-const browser = await openBrowser("chrome", { chromiumOptions: { gl } });
+// BROWSER_EXE=<path to a chrome-headless-shell> uses a local browser instead of the one Remotion downloads (cloud boxes)
+const browserExecutable = process.env.BROWSER_EXE ?? null;
+const browser = await openBrowser("chrome", { browserExecutable, chromiumOptions: { gl } });
 const composition = await selectComposition({ serveUrl, id: comp, puppeteerInstance: browser, inputProps: {} });
 if (what !== "gallery") {
   const last = composition.durationInFrames - 1;
@@ -46,7 +48,7 @@ if (what !== "gallery") {
   });
 }
 for (const j of jobs) {
-  await renderStill({ composition, serveUrl, output: j.out, frame: j.frame, scale, imageFormat: "jpeg", jpegQuality: 88, puppeteerInstance: browser, chromiumOptions: { gl }, timeoutInMilliseconds: 240000 });
+  await renderStill({ composition, serveUrl, output: j.out, frame: j.frame, scale, imageFormat: "jpeg", jpegQuality: 88, puppeteerInstance: browser, browserExecutable, chromiumOptions: { gl }, timeoutInMilliseconds: 240000 });
   console.log(`${j.out} (frame ${j.frame})`);
 }
 await browser.close({ silent: true });

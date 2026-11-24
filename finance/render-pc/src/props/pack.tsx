@@ -135,7 +135,7 @@ const SIDE_ON: PackKind[] = ["cow", "dog", "horse", "pig", "chicken", "shark", "
 /** a close-up camera (closeUp preset, portrait) that frames the whole prop at scale `sc`: distance, height, azimuth.
  *  Side-on kinds (the animals walking to +x, the vehicles) are seen from 3/4 front, so the face / the front shows. */
 export const packCam = (k: PackKind, sc = 1): { dist: number; h: number; az: number } => {
-  const b = PACK_BOX[k], side = SIDE_ON.includes(k), az = side ? (k === "shark" || k === "airplane" ? 30 : 40) : 10, a = (az * Math.PI) / 180;
+  const b = PACK_BOX[k], side = SIDE_ON.includes(k), az = side ? (k === "shark" || k === "airplane" ? 30 : ["cow", "dog", "horse", "pig", "chicken"].includes(k) ? 48 : 40) : 10, a = (az * Math.PI) / 180;
   const halfW = (b.h[0] * Math.cos(a) + b.h[2] * Math.sin(a)) * sc, halfH = b.h[1] * sc;
   const dist = Math.max(halfW * 4.6, halfH * 2.9, 1.1) + b.h[2] * sc * 0.6;
   return { dist: Math.round(dist * 100) / 100, h: b.h[1] * sc < 0.35 ? 0.45 : side ? 0.3 : 0.12, az };
@@ -495,10 +495,10 @@ const Cow: React.FC<AP> = ({ th, col, label, t, seed, sp }) => {
   const br = breathOf(t, seed, 0.02), blink = blinkOf(t, seed), sw = Math.sin(t * 1.7 + seed);
   return (
     <group>
-      <Legs th={th} x={0.38} z={0.15} top={0.5} r={0.065} m={body} foot={hoof} footH={0.07} t={t} seed={seed} />
-      <group position={[0, 0.62, 0]} scale={[1, br, br]}>
-        <Ell th={th} p={[0, 0, 0]} s={[0.56, 0.27, 0.27]} m={body} />
-        {spots ? <Spots th={th} c={[0, 0, 0]} r={[0.56, 0.27, 0.27]} m={patch} /> : null}
+      <Legs th={th} x={0.36} z={0.15} top={0.48} r={0.082} m={body} foot={hoof} footH={0.07} t={t} seed={seed} />
+      <group position={[0, 0.6, 0]} scale={[1, br, br]}>
+        <Ell th={th} p={[0, 0, 0]} s={[0.56, 0.3, 0.28]} m={body} />
+        {spots ? <Spots th={th} c={[0, 0, 0]} r={[0.56, 0.3, 0.28]} m={patch} /> : null}
       </group>
       <Ell th={th} p={[-0.2, 0.37, 0]} s={[0.1, 0.07, 0.09]} m={pink} />
       <Ell th={th} p={[0.5, 0.74, 0.03]} s={[0.17, 0.19, 0.16]} m={body} />
@@ -524,7 +524,7 @@ const Dog: React.FC<AP> = ({ th, col, label, t, seed }) => {
   const br = breathOf(t, seed, 0.025), blink = blinkOf(t, seed), wag = 0.5 * Math.sin(t * 9 + seed);
   return (
     <group>
-      <Legs th={th} x={0.2} z={0.1} top={0.38} r={0.045} m={fur} foot={light} footH={0.04} t={t} seed={seed} />
+      <Legs th={th} x={0.2} z={0.1} top={0.38} r={0.052} m={fur} foot={light} footH={0.04} t={t} seed={seed} />
       <group scale={[1, br, br]} position={[0, 0.42, 0]}>
         <Ell th={th} p={[0, 0, 0]} s={[0.32, 0.17, 0.16]} m={fur} />
         <Ell th={th} p={[0.2, 0.03, 0]} s={[0.17, 0.17, 0.15]} m={fur} />
@@ -583,7 +583,7 @@ const Horse: React.FC<AP> = ({ th, col, label, t, seed }) => {
   const br = breathOf(t, seed, 0.02), blink = blinkOf(t, seed), sw = Math.sin(t * 1.3 + seed);
   return (
     <group>
-      <Legs th={th} x={0.36} z={0.13} top={0.78} r={0.05} m={coat} foot={hoof} footH={0.06} t={t} seed={seed} />
+      <Legs th={th} x={0.36} z={0.13} top={0.78} r={0.062} m={coat} foot={hoof} footH={0.06} t={t} seed={seed} />
       <group position={[0, 0.88, 0]} scale={[1, br, br]}><Ell th={th} p={[0, 0, 0]} s={[0.5, 0.22, 0.2]} m={coat} /></group>
       <Limb th={th} a={[0.36, 0.92, 0]} b={[0.56, 1.24, 0.02]} r={0.12} taper={0.7} m={coat} />
       <Ell th={th} p={[0.38, 0.96, 0]} s={[0.15, 0.16, 0.15]} m={coat} />

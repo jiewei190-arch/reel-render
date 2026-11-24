@@ -242,6 +242,88 @@ Before / after on the reference Short: [before](docs/hero_props/frame0/law-demo-
 plaintiff's face, a small pair of trousers) → [after](docs/hero_props/frame0/law-demo-54-million-pants_after.jpg) (the
 trousers on a hanger close-up, EXHIBIT A).
 
+## 5b. Props pack (src/props/pack.tsx): animals, gadgets, vehicles, everyday objects
+
+Five Shorts failed the AI editor because their SUBJECT could not be shown (the monkey-selfie case showed a man, a
+pocket music player rendered as a modern smartphone). The **props pack** is a shared set of 36 hero props that
+law3d, biz3d and cyber3d all take, built once in `src/props/pack.tsx` and themed per kit by a `PackTheme` built from
+the kit's own palette and materials: in law3d they are low-poly and flat-shaded, in the courtroom's wood / navy / gold, the screens glowing gold-on-navy in the dark room. They are generic, ORIGINAL, low-poly shapes (no logo, no trade
+dress: the music player has a plain button row, never a wheel or a pad; the console, headset and speaker are generic).
+law3d keeps its own `car` and `phone` (the pack's `sedan` is a second, rounder car body); the pack adds a `laptop` to law3d. A `statue` is a gold animal on a plinth; the pack's animals are alive (the monkey of a selfie case, the cow of a cow sale).
+
+**Is the subject showable?** Look it up in `src/props/catalog.json` (`index`: a lowercase keyword → the kinds; every
+kind of every kit is listed with its kits, description, params and keywords, e.g. "monkey", "macaque", "selfie" →
+`monkey`; "zune", "mp3" → `mp3Player`; "juicero" → `juicer`). Regenerate it with `node tools/props_catalog.mjs`
+(`--check` fails when it is stale).
+
+```json
+{ "id": "selfie", "kit": "monkey", "holding": "camera", "at": "table", "scale": 0.8, "spin": 6 }
+```
+
+Same fields as the hero props above (`color`, `label`, `lines`, `at`, `yaw`, `scale` / `s`, `spin`, `motion`, `hit`;
+labels follow the same rule: ≤ 14 characters, ≤ 2 words, no brand), plus:
+
+| field | kinds | meaning |
+|---|---|---|
+| `holding` | `monkey` | `"camera"`: a selfie: the camera held up in front at arm's length, its lens to the monkey, its back screen (the selfie: a grinning monkey face) to the lens; a grin |
+| `spots` | `cow` | black patches (default `true`; `false` = a plain brown cow) |
+| `variant` | `chicken`, `shoe` | chicken: `hen` (default, white) / `rooster` (red-brown, big comb, dark sickle tail); shoe: `sneaker` (default) / `heel` (a pump on a stiletto) |
+| `screen` | `mp3Player`, `smartwatch`, `tablet`, `flipPhone`, `laptop`, `cashRegister`, `wristwatch` | the big text on the screen (≤ 18 characters, brand-checked): "NOW PLAYING", "12:30", "$12.00"; `lines` go under it. A `wristwatch` takes `"HH:MM"` and sets its hands |
+| `label` | all | animals: a round name tag on a red collar; vehicles: the plates / the name on the hull / the side; `briefcase`, `suitcase`: a paper luggage tag; `juicer`: the juice pouch; `vendingMachine`: the lit header; `pizzaBox`: the lid and the box front; gadgets: a small printed line |
+
+A wrong param is a compile error ("`spots` is for the cow", "a monkey's `holding` is one of camera"). Every prop is a
+pure function of (spec, t, seed) and has an idle loop with no motion blur: animals blink every ~3.4 s and breathe, and
+move a tail / ears / head (the dog wags, the cat's tail sways, the rabbit's nose twitches, the hen bobs); the drone
+hovers with turning rotors, the plane's propeller turns, the boat bobs on ripples, the juicer presses and drips, the
+soda fizzes, the watch's second hand ticks, the diamond glints.
+
+**Scale.** Like the other hero props, each is 0.6-1.5 m at `"scale": 1` so `closeUp` / `hookZoom` fill the frame.
+The **life** column is the scale at which it is life size next to the cast (a monkey beside a person: `"scale": 0.6`;
+a cow: 1.3). Animals and vehicles are built side-on, head / front to +x, the head turned toward the lens: see them
+from 3/4 front (`"az": 40-50`, or `"yaw": -40` on the prop).
+
+| kit | group | default | what it is | life | still |
+|---|---|---|---|---|---|
+| `monkey` | animal | `#8A5A3C` | a sitting monkey (holding: "camera": a selfie, the camera at arm's length and a grin) | 0.6 | [monkey](docs/hero_props/pack/law/monkey.jpg), [selfie](docs/hero_props/pack/law/monkey-camera.jpg) |
+| `cow` | animal | `#F4F1EA` | a standing cow (spots: default true; false = a plain brown cow) | 1.3 | [cow](docs/hero_props/pack/law/cow.jpg), [plain](docs/hero_props/pack/law/cow-plain.jpg) |
+| `dog` | animal | `#C98A4B` | a standing dog, floppy ears, wagging tail | 0.75 | [dog](docs/hero_props/pack/law/dog.jpg) |
+| `cat` | animal | `#E39A4C` | a sitting cat, white chest, swaying tail | 0.45 | [cat](docs/hero_props/pack/law/cat.jpg) |
+| `horse` | animal | `#7A4A2A` | a standing horse, dark mane and tail, white blaze | 1.15 | [horse](docs/hero_props/pack/law/horse.jpg) |
+| `pig` | animal | `#F2A7A8` | a standing pig, snout, curly tail | 1 | [pig](docs/hero_props/pack/law/pig.jpg) |
+| `chicken` | animal | per variant | a chicken (variant: hen = white hen, rooster = red-brown rooster with a big comb and tail) | 0.5 | [chicken](docs/hero_props/pack/law/chicken.jpg), [rooster](docs/hero_props/pack/law/chicken-rooster.jpg) |
+| `shark` | animal | `#6E8496` | a swimming shark (hovering), white belly, a toothy smile | 1.6 | [shark](docs/hero_props/pack/law/shark.jpg) |
+| `bird` | animal | `#3B7DD8` | a small songbird on a branch perch | 0.25 | [bird](docs/hero_props/pack/law/bird.jpg) |
+| `rabbit` | animal | `#D8CFC4` | a sitting rabbit, long ears, twitching nose | 0.45 | [rabbit](docs/hero_props/pack/law/rabbit.jpg) |
+| `mp3Player` | gadget | `#2B2F3A`, screen "NOW PLAYING" | a pocket music player: a screen (screen + lines) over a plain button row, earbuds on a cable | 0.14 | [mp3Player](docs/hero_props/pack/law/mp3Player.jpg) |
+| `juicer` | gadget | `#EEF0F2`, "JUICE PACK" | a countertop juice press squeezing a juice pouch (the label) into a glass | 0.45 | [juicer](docs/hero_props/pack/law/juicer.jpg) |
+| `gameConsole` | gadget | `#1E2128` | a generic game console standing up, a controller leaning in front | 0.45 | [gameConsole](docs/hero_props/pack/law/gameConsole.jpg) |
+| `vrHeadset` | gadget | `#F2F2F0` | a VR headset on a display block: visor, strap, face cushion | 0.35 | [vrHeadset](docs/hero_props/pack/law/vrHeadset.jpg) |
+| `smartwatch` | gadget | `#1E2128`, screen "12:30" | a smartwatch on a display: screen = the big time / text, lines under it | 0.12 | [smartwatch](docs/hero_props/pack/law/smartwatch.jpg) |
+| `drone` | gadget | `#D8DCE0` | a hovering quadcopter drone, four turning rotors, a camera under the nose | 0.5 | [drone](docs/hero_props/pack/law/drone.jpg) |
+| `tablet` | gadget | `#2A2E36`, screen "HOME" | a tablet on a stand: screen = the title banner, an app grid, lines | 0.3 | [tablet](docs/hero_props/pack/law/tablet.jpg) |
+| `flipPhone` | gadget | `#3A4456`, screen "1 NEW TEXT" | an open flip phone: keypad below, the small screen (screen + lines) above | 0.12 | [flipPhone](docs/hero_props/pack/law/flipPhone.jpg) |
+| `digitalCamera` | gadget | `#B8BEC8` | a compact digital camera: lens barrel, flash, shutter button | 0.22 | [digitalCamera](docs/hero_props/pack/law/digitalCamera.jpg) |
+| `laptop` | gadget | `#B8BEC8`, screen "ONLINE" | an open laptop: screen + lines on the display | 0.36 | [laptop](docs/hero_props/pack/law/laptop.jpg) |
+| `smartSpeaker` | gadget | `#3A3F47` | a fabric smart speaker, a glowing ring on top | 0.35 | [smartSpeaker](docs/hero_props/pack/law/smartSpeaker.jpg) |
+| `headphones` | gadget | `#22252B` | over-ear headphones on a stand | 0.45 | [headphones](docs/hero_props/pack/law/headphones.jpg) |
+| `sedan` | vehicle | `#2F4A7A` | a generic four-door sedan (label = the plates) | 3.2 | [sedan](docs/hero_props/pack/law/sedan.jpg) |
+| `pickup` | vehicle | `#B03A2E` | a generic pickup truck, open bed (label = the plates) | 3.4 | [pickup](docs/hero_props/pack/law/pickup.jpg) |
+| `airplane` | vehicle | `#C0392B` | a small high-wing propeller plane, white with a colour trim (label = painted on the side) | 5.5 | [airplane](docs/hero_props/pack/law/airplane.jpg) |
+| `boat` | vehicle | `#1F6FB2` | a small motorboat on a patch of water, outboard motor (label = the name on the hull) | 3 | [boat](docs/hero_props/pack/law/boat.jpg) |
+| `shoppingCart` | everyday | `#D7262E` | a wire shopping cart, a coloured handle | 1 | [shoppingCart](docs/hero_props/pack/law/shoppingCart.jpg) |
+| `cashRegister` | everyday | `#D9D4C7`, screen "$12.00" | a cash register, drawer open with bills: screen = the display | 0.6 | [cashRegister](docs/hero_props/pack/law/cashRegister.jpg) |
+| `vendingMachine` | everyday | `#3A6EA5`, "SNACKS" | a vending machine: glass front with rows of snacks and drinks, the label lit on top | 1.2 | [vendingMachine](docs/hero_props/pack/law/vendingMachine.jpg) |
+| `pizzaBox` | everyday | `#C89A5E`, "PIZZA" | an open pizza box, a whole pepperoni pizza (label printed on the box) | 0.45 | [pizzaBox](docs/hero_props/pack/law/pizzaBox.jpg) |
+| `sodaBottle` | everyday | `#2F9E44`, "SODA" | a plastic soda bottle, label band, bubbles rising | 0.35 | [sodaBottle](docs/hero_props/pack/law/sodaBottle.jpg) |
+| `shoe` | everyday | per variant | a shoe (variant: sneaker = a lace-up sneaker, heel = a high-heel pump); label on the side | 0.33 | [shoe](docs/hero_props/pack/law/shoe.jpg), [heel](docs/hero_props/pack/law/shoe-heel.jpg) |
+| `wristwatch` | everyday | `#5A3722`, screen "10:10" | an analog wristwatch on a cushion: screen = "HH:MM" sets the hands | 0.12 | [wristwatch](docs/hero_props/pack/law/wristwatch.jpg) |
+| `ring` | everyday | `#E8B44A` | a diamond ring standing in an open ring box (color = the metal) | 0.08 | [ring](docs/hero_props/pack/law/ring.jpg) |
+| `briefcase` | everyday | `#3B2314` | a leather briefcase, gold latches (label = a luggage tag on the handle) | 0.55 | [briefcase](docs/hero_props/pack/law/briefcase.jpg) |
+| `suitcase` | everyday | `#2F7D8A` | a hard-shell rolling suitcase, handle up (label = a luggage tag) | 0.6 | [suitcase](docs/hero_props/pack/law/suitcase.jpg) |
+
+The gallery renders them all in the law3d look: `node tools/law_stills.mjs gallery --only pack-` (cloud boxes:
+`BROWSER_EXE=<chrome-headless-shell path>`); contact sheet: [docs/hero_props/pack/sheet-law.jpg](docs/hero_props/pack/sheet-law.jpg).
+
 ## 6. Story devices and actions (anchored to voice words)
 
 ```jsonc
@@ -460,7 +542,9 @@ With the opener met, "frame 0 is close", "who + what at frame 0" and framing R5 
 | `src/law/layout.ts` | **every screen-space number**, per format (portrait, landscape) |
 | `src/law/cast.tsx` | the figures: roles, outfits, poses, faces, QA boxes, limb QA (`figLimbs`), desk-aware hands, arm IK |
 | `src/law/objects.tsx` | the props (gavel, paper, folder, photo, pants, sign, money, newspaper, nameplate, box) + the hero dispatch |
-| `src/law/hero.tsx` | the 15 hero props (section 5a) |
+| `src/law/hero.tsx` | the 15 hero props (section 5a) + the props-pack theme (`LAW_PACK_THEME`) |
+| `src/props/pack.tsx` | the props pack: 36 shared animals / gadgets / vehicles / everyday hero props, themed per kit (section 5b) |
+| `src/props/catalog.json`, `tools/props_catalog.mjs` | every prop kind of law3d / biz3d / cyber3d with kits, description, params, keywords, and a keyword index (generated) |
 | `tools/frame0_hero.mjs` | the frame-0 opener rules F1-F3 (shared with biz3d / cyber3d) |
 | `src/law/beam.tsx` | spotlight + volumetric cone + dust |
 | `src/law/sets.tsx` | courtroom, evidence, casefile, headlines, steps |
