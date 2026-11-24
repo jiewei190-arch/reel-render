@@ -4,7 +4,7 @@
 - **Final title:** 14 Real Lawsuits That Sounded Like Jokes (40 characters)
 - **Words:** 2,056 spoken, 121 lines, 14 cases + cold open.
 - **Estimated runtime:** 13 min 59 s at 2.45 words per second (`target_seconds`: 839). Real length depends on the voice; at the top of the 12-14 minute target.
-- **Per case:** 46 to 61 seconds, except the hot coffee (79 s) and the pants (72 s), which need the room to be fair and to pay off the cold open.
+- **Per case:** 46 to 62 seconds, except the hot coffee (79 s) and the pants (76 s), which need the room to be fair and to pay off the cold open.
 - **Engine gate:** `tools/longform_gate.mjs` passes 8-12 minutes, so the gate must be widened on the PC before this renders (already noted in CHANNELS.md), or cases 13 and 7 dropped to land near 12 minutes.
 
 ## Order (countdown; the two strongest first and last)
