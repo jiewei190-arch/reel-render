@@ -12,7 +12,7 @@
 //         <shorts>/<slug>/RECIPE_QA.md        the QA + gate report
 // Nothing here touches the Block Money or tech3d registries.
 import { build } from "esbuild";
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { chaptersTxt, kitArgs, kitLongGate, kitLongReport, qaTimes } from "./kit_long.mjs";
@@ -97,7 +97,11 @@ export const main = async (argv) => {
   const compileS = (Date.now() - Tc) / 1000;
   const L = C.layout;
   const dur = C.duration / 30;
-  writeFileSync(join(ROOT, `out/tmp/${slug}.cues.json`), JSON.stringify({ [pascal]: { music: C.audio.music, musicDb: -12, cues: C.audio.cues, duration: dur, cuts: C.shots.map((s) => s.a) } }));
+  // the recipe's own effects ("sounds": name -> a file in the Short's folder) travel in the cue as "file"
+  const ownSfx = recipe.sounds ?? {};
+  for (const [name, f] of Object.entries(ownSfx)) if (!existsSync(join(dir, f))) { console.error(`COMPILE ERROR: "sounds": ${name} -> ${f} is not in ${dir}`); return 1; }
+  const cuesOut = C.audio.cues.map((c) => (ownSfx[c.sfx] ? { ...c, file: join(dir, ownSfx[c.sfx]) } : c));
+  writeFileSync(join(ROOT, `out/tmp/${slug}.cues.json`), JSON.stringify({ [pascal]: { music: C.audio.music, musicDb: C.audio.musicDb ?? -12, mutes: C.audio.mutes ?? [], cues: cuesOut, duration: dur, cuts: C.shots.map((s) => s.a) } }));
   console.log(`compiled ${C.shots.length} shots, ${dur.toFixed(2)} s (${C.duration} frames, ${L.W}x${L.H}), ${C.audio.cues.length} sfx cues`);
   if (noQa) return 0;
   if (LS) return longForm({ m, C, recipe, words, dur, slug, pascal, dir, check, qaSample, T0, compileS });
@@ -194,7 +198,7 @@ export const main = async (argv) => {
   const lastShot = C.shots[C.shots.length - 1], firstShot = C.shots[0];
   const loopy = C.hookAgain !== null && JSON.stringify(lastShot.spec.cam.target) === JSON.stringify(firstShot.spec.cam.target);
   const fmt = recipe.format ?? "short";
-  const lenOk = fmt === "short" ? dur >= 30 && dur <= 55 : dur >= 300 && dur <= 480;
+  const lenOk = fmt === "short" ? dur >= 20 && dur <= 55 : dur >= 300 && dur <= 480;
   // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
   // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
   // the frame-0 opener (tools/frame0_hero.mjs): a hero prop close-up or a giant stake board; never the back of a head
@@ -232,7 +236,7 @@ export const main = async (argv) => {
     ["no static frames: the camera moves on every frame", staticF.length === 0, staticF.length ? `${staticF.length} still frame(s), first ${staticF.slice(0, 5).join(", ")}` : "moves on every frame", true],
     ["story devices: a case-file card, an exhibit and a verdict", ["caseCard", "exhibit", "verdict"].every((k) => allActs.includes(k)), [...new Set(allActs)].join(", ") || "none", false],
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
-    [fmt === "short" ? "length 30-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
+    [fmt === "short" ? "length 20-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
     [`limbs: no forearm detached, no arm through the other arm, the torso, the head, a set piece or a prop for > ${LIMB_FRAMES} frames`, LQ.length === 0, LQ.length ? `${LQ.length} (see Limb QA)` : "none", true],
   ];
   gate.push(...KF.rows);

@@ -10,25 +10,31 @@ import type { V3 } from "../blocky/motion";
 import type { Viseme } from "../blocky/Blocky";
 import { LP } from "./palette";
 
-export type Role = "judge" | "plaintiff" | "defendant" | "lawyer" | "witness" | "bailiff" | "juror";
-export type FigPose = "idle" | "talk" | "point" | "shock" | "slump" | "cheer" | "gavel" | "present" | "cross" | "cry" | "smug";
+export type Role = "judge" | "plaintiff" | "defendant" | "lawyer" | "witness" | "bailiff" | "juror" | "trooper";
+export type FigPose = "idle" | "talk" | "point" | "shock" | "slump" | "cheer" | "gavel" | "present" | "cross" | "cry" | "smug" | "search";
 export type FigFace = "neutral" | "stern" | "angry" | "smug" | "shocked" | "sad" | "happy" | "worried" | "crying";
-export const FIG_POSES: FigPose[] = ["idle", "talk", "point", "shock", "slump", "cheer", "gavel", "present", "cross", "cry", "smug"];
+export const FIG_POSES: FigPose[] = ["idle", "talk", "point", "shock", "slump", "cheer", "gavel", "present", "cross", "cry", "smug", "search"];
 export const FIG_FACES: FigFace[] = ["neutral", "stern", "angry", "smug", "shocked", "sad", "happy", "worried", "crying"];
-export const ROLES: Role[] = ["judge", "plaintiff", "defendant", "lawyer", "witness", "bailiff", "juror"];
-export const POSE_FACE: Record<FigPose, FigFace> = { idle: "neutral", talk: "neutral", point: "angry", shock: "shocked", slump: "sad", cheer: "happy", gavel: "stern", present: "neutral", cross: "stern", cry: "crying", smug: "smug" };
+export const ROLES: Role[] = ["judge", "plaintiff", "defendant", "lawyer", "witness", "bailiff", "juror", "trooper"];
+export const POSE_FACE: Record<FigPose, FigFace> = { idle: "neutral", talk: "neutral", point: "angry", shock: "shocked", slump: "sad", cheer: "happy", gavel: "stern", present: "neutral", cross: "stern", cry: "crying", smug: "smug", search: "stern" };
 
 export type HairStyle = "short" | "bald" | "long" | "bun" | "curly" | "side" | "none";
 /** one cast entry in recipe.cast: everything optional except the role */
 export type CastSpec = {
   role: Role;
-  skin?: string; suit?: string; pants?: string; shirt?: string; tie?: string;
+  skin?: string; suit?: string; pants?: string; shirt?: string;
+  /** the tie colour; "none" = an open collar (a driver in a jacket, not a lawyer) */
+  tie?: string;
   hair?: string; hairStyle?: HairStyle; glasses?: boolean; beard?: boolean;
   /** an apron over the outfit (a shop owner, a cook) */
   apron?: string;
   build?: "slim" | "avg" | "broad";
   /** height multiplier (default 1 = 1.78 m) */
   height?: number;
+  /** headwear: "campaign" = a flat-brimmed trooper's hat (the trooper's default); "none" */
+  hat?: "campaign" | "none";
+  /** a plain gold shield on the chest (the trooper's default): a shape only, no insignia or lettering */
+  badge?: boolean;
   /** text for a nameplate prop that says {"kit": "nameplate", "of": "<cast id>"} */
   plate?: string;
 };
@@ -39,6 +45,8 @@ const ROLE_DEFAULT: Record<Role, Required<Pick<CastSpec, "suit" | "pants" | "shi
   lawyer: { suit: "#22242c", pants: "#22242c", shirt: "#f2f2f2", tie: "#B9862A", hairStyle: "side" },
   witness: { suit: "#5b4a3a", pants: "#3e3328", shirt: "#ece4d6", tie: "#3a5a3a", hairStyle: "short" },
   bailiff: { suit: "#3d4a3a", pants: "#2e382c", shirt: "#3d4a3a", tie: "#1a1a1a", hairStyle: "short" },
+  // a generic highway patrol uniform: khaki shirt, dark trousers, a dark tie, a campaign hat and a plain shield
+  trooper: { suit: "#9a8a62", pants: "#2e2a24", shirt: "#9a8a62", tie: "#1c1a18", hairStyle: "short" },
   juror: { suit: LP.silhouette, pants: LP.silhouette, shirt: LP.silhouette, tie: LP.silhouette, hairStyle: "short" },
 };
 
@@ -67,6 +75,7 @@ export type FigState = {
   /** body-local unit directions: shoulder -> elbow, elbow -> hand */
   armL: [V3, V3]; armR: [V3, V3];
   face: FigFace; blink: boolean; mouth: Viseme; gavel: boolean; floorY: number; breathe: number;
+  /** holds a lit flashlight in the right hand (pose "search") */ torch?: boolean;
   /** walking: leg swing angle (rad) */ stride: number;
 };
 const armDir = (e: number, az: number, side: 1 | -1): V3 => [side * Math.sin(e) * Math.cos(az), -Math.cos(e), Math.sin(e) * Math.sin(az)];
@@ -133,6 +142,11 @@ export const posePrm = (p: FigPose, tau: number, t: number, seed: number, hits: 
     }
     case "smug":
       return { ...base, lean: -0.08, headP: -0.12, headY: 0.18 + 0.05 * w(0.6), roll: 0.05, L: { e: 0.55, az: 1.35, bend: 1.55 }, R: { e: 0.62, az: 1.35, bend: 1.5 } };
+    case "search": {
+      // a flashlight search: the right arm out and low, sweeping slowly side to side; the head follows the beam
+      const sweep = Math.sin(t * 1.7 + seed);
+      return { ...base, lean: 0.1, twist: 0.16 * sweep, headP: 0.14, headY: 0.2 * sweep, R: { e: 1.05 + 0.12 * Math.sin(t * 2.3 + seed), az: 1.15 + 0.28 * sweep, bend: 0.25 }, L: { e: 0.25, az: 0.6, bend: 0.5 } };
+    }
     case "gavel": {
       // raise from h-0.55 to h-0.14, strike down at h, rest after (forearm on the bench)
       let e = 1.0, bend = 0.7;
@@ -250,7 +264,7 @@ export const figState = (tr: FigTrack, t: number): FigState => {
     id: tr.id, spec: tr.spec, s, sit: tr.sit,
     x: p[0] + fw[0] * raw.dz * s, y: p[1] + raw.dy * s, z: p[2] + fw[2] * raw.dz * s, yaw,
     lean: raw.lean + 0.012 * breathe, twist: raw.twist, roll: raw.roll, headP: raw.headP, headY: raw.headY,
-    armL, armR, face, blink: blinkAt(t, tr.seed, swaps), mouth: tr.talk?.(t) ?? "rest", gavel: tr.gavel, floorY: p[1], breathe, stride,
+    armL, armR, face, blink: blinkAt(t, tr.seed, swaps), mouth: tr.talk?.(t) ?? "rest", gavel: tr.gavel, floorY: p[1], breathe, stride, torch: seg.pose === "search",
   };
 };
 
@@ -429,7 +443,11 @@ const faceMat = (tex: THREE.Texture) => {
 };
 const quatDown = (d: V3) => new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, -1, 0), new THREE.Vector3(...d).normalize());
 
-const ArmView: React.FC<{ side: 1 | -1; d: [V3, V3]; sleeve: string; skin: string; gavel?: boolean; wide?: boolean }> = ({ side, d, sleeve, skin, gavel, wide }) => {
+let torchCone: THREE.MeshBasicMaterial | null = null;
+const torchMat = () => { if (!torchCone) torchCone = new THREE.MeshBasicMaterial({ color: "#fff3c8", transparent: true, opacity: 0.16, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, toneMapped: false, fog: false }); return torchCone; };
+let torchLens: THREE.MeshBasicMaterial | null = null;
+const lensMat = () => { if (!torchLens) torchLens = new THREE.MeshBasicMaterial({ color: "#fff8dc", toneMapped: false }); return torchLens; };
+const ArmView: React.FC<{ side: 1 | -1; d: [V3, V3]; sleeve: string; skin: string; gavel?: boolean; wide?: boolean; torch?: boolean }> = ({ side, d, sleeve, skin, gavel, wide, torch }) => {
   const sh: V3 = [side * SH[0], SH[1], 0];
   const el: V3 = [sh[0] + d[0][0] * UPPER, sh[1] + d[0][1] * UPPER, sh[2] + d[0][2] * UPPER];
   const hd: V3 = [el[0] + d[1][0] * FORE, el[1] + d[1][1] * FORE, el[2] + d[1][2] * FORE];
@@ -445,6 +463,16 @@ const ArmView: React.FC<{ side: 1 | -1; d: [V3, V3]; sleeve: string; skin: strin
         <mesh geometry={geoOf(wide ? "figForeW" : "figFore", () => new THREE.CylinderGeometry(wide ? 0.085 : 0.054, wide ? 0.06 : 0.048, FORE, 6))} material={sm} position={[0, -FORE / 2, 0]} castShadow />
       </group>
       <mesh geometry={geoOf("figHand", () => new THREE.IcosahedronGeometry(0.052, 1))} material={plastic(skin, { rough: 0.7, flat: true })} position={hd} />
+      {torch ? (
+        <group position={hd} quaternion={q2}>
+          {/* a flashlight along the forearm: barrel, head, a lit lens, a visible beam and its light */}
+          <mesh geometry={geoOf("figTorchB", () => new THREE.CylinderGeometry(0.02, 0.02, 0.2, 8))} material={plastic("#15171c", { rough: 0.4 })} position={[0, -0.07, 0]} />
+          <mesh geometry={geoOf("figTorchH", () => new THREE.CylinderGeometry(0.036, 0.024, 0.07, 8))} material={plastic("#15171c", { rough: 0.4 })} position={[0, -0.2, 0]} />
+          <mesh geometry={geoOf("figTorchL", () => new THREE.CylinderGeometry(0.033, 0.033, 0.006, 8))} material={lensMat()} position={[0, -0.238, 0]} />
+          <mesh geometry={geoOf("figTorchCone", () => { const g = new THREE.CylinderGeometry(0.035, 0.5, 2.4, 16, 1, true); g.translate(0, -1.44, 0); return g; })} material={torchMat()} />
+          <pointLight color="#fff0c0" intensity={3.2} distance={3.4} decay={1.5} position={[0, -1.3, 0]} />
+        </group>
+      ) : null}
       {gavel ? (
         <group position={hd} quaternion={q2}>
           {/* handle continues along the forearm a little, the head sits across it */}
@@ -483,6 +511,8 @@ export const Figure: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
   const tie = sil ? LP.silhouette : sp.tie ?? def.tie;
   const hair = sil ? "#0c111c" : sp.hair ?? "#2a1d16";
   const judge = sp.role === "judge";
+  const trooper = sp.role === "trooper";
+  const hat = sp.hat ?? (trooper ? "campaign" : "none");
   const bw = sp.build === "broad" ? 1.14 : sp.build === "slim" ? 0.9 : 1;
   const hy = st.sit ? HIP_SIT : HIP_STAND;
   const sm = (c: string) => plastic(c, { rough: 0.8, flat: true });
@@ -514,7 +544,16 @@ export const Figure: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
           <>
             {/* shirt V and tie (judge: a white collar) */}
             <mesh geometry={geoOf("figShirtV", () => { const g = new THREE.CircleGeometry(0.1, 3); g.rotateZ(-Math.PI / 2); return g; })} material={plastic(shirt, { rough: 0.7, side: THREE.DoubleSide })} position={[0, 0.52, 0.12 * bw + 0.006]} scale={[0.8, 1.2, 1]} />
-            {!judge ? <mesh geometry={geoOf("figTie", () => new THREE.BoxGeometry(0.05, 0.26, 0.015))} material={plastic(tie, { rough: 0.5 })} position={[0, 0.4, 0.125 * bw + 0.01]} rotation={[0.08, 0, 0]} /> : null}
+            {!judge && tie !== "none" ? <mesh geometry={geoOf("figTie", () => new THREE.BoxGeometry(0.05, 0.26, 0.015))} material={plastic(tie, { rough: 0.5 })} position={[0, 0.4, 0.125 * bw + 0.01]} rotation={[0.08, 0, 0]} /> : null}
+            {sp.badge ?? trooper ? (
+              <>
+                {/* a plain gold shield (a shape only), a duty belt and shoulder straps */}
+                <mesh geometry={geoOf("figBadge", () => { const sh = new THREE.Shape(); sh.moveTo(-0.032, 0.036); sh.lineTo(0.032, 0.036); sh.lineTo(0.036, 0.0); sh.quadraticCurveTo(0.03, -0.034, 0, -0.046); sh.quadraticCurveTo(-0.03, -0.034, -0.036, 0.0); sh.closePath(); return new THREE.ExtrudeGeometry(sh, { depth: 0.008, bevelEnabled: false }); })} material={plastic(LP.gold, { rough: 0.3, emissive: LP.goldDeep, ei: 0.35 })} position={[-0.085 * bw, 0.43, 0.145 * bw]} rotation={[0.06, 0, 0]} />
+                {trooper ? <mesh geometry={geoOf("figBelt", () => new THREE.BoxGeometry(0.36, 0.05, 0.215))} material={plastic("#17140f", { rough: 0.5 })} position={[0, 0.03, 0]} scale={[bw, 1, bw]} /> : null}
+                {trooper ? <mesh geometry={geoOf("figBuckle", () => new THREE.BoxGeometry(0.05, 0.04, 0.01))} material={plastic(LP.gold, { rough: 0.3 })} position={[0, 0.03, 0.11 * bw]} /> : null}
+                {trooper ? [-1, 1].map((k) => <mesh key={k} geometry={geoOf("figStrap", () => new THREE.BoxGeometry(0.1, 0.012, 0.06))} material={plastic("#2e2a24", { rough: 0.7 })} position={[k * 0.2 * bw, 0.598, 0]} rotation={[0, 0, -k * 0.2]} />) : null}
+              </>
+            ) : null}
             {sp.apron ? <mesh geometry={geoOf("figApron", () => new THREE.BoxGeometry(0.4, 0.62, 0.02))} material={plastic(sp.apron, { rough: 0.9 })} position={[0, 0.06, 0.13 * bw + 0.012]} /> : null}
           </>
         ) : null}
@@ -531,8 +570,18 @@ export const Figure: React.FC<{ st: FigState; t: number }> = ({ st, t }) => {
             </>
           ) : null}
           <Hair style={sp.hairStyle ?? def.hairStyle} color={hair} />
+          {hat === "campaign" && !sil ? (
+            <>
+              {/* a campaign hat: a wide flat brim, a tall pinched crown, a dark band with a small gold acorn (no badge) */}
+              <mesh geometry={geoOf("figHatBrim", () => new THREE.CylinderGeometry(0.255, 0.265, 0.016, 20))} material={sm("#5d5238")} position={[0, HEAD_Y + 0.172, 0.01]} rotation={[0.05, 0, 0]} castShadow />
+              <mesh geometry={geoOf("figHatCrown", () => new THREE.CylinderGeometry(0.105, 0.14, 0.135, 8))} material={sm("#6b5f42")} position={[0, HEAD_Y + 0.245, 0]} castShadow />
+              <mesh geometry={geoOf("figHatTop", () => new THREE.ConeGeometry(0.105, 0.035, 8))} material={sm("#6b5f42")} position={[0, HEAD_Y + 0.33, 0]} />
+              <mesh geometry={geoOf("figHatBand", () => new THREE.CylinderGeometry(0.143, 0.146, 0.028, 12))} material={sm("#1c1a18")} position={[0, HEAD_Y + 0.195, 0]} />
+              <mesh geometry={geoOf("figHatAcorn", () => new THREE.IcosahedronGeometry(0.014, 0))} material={plastic(LP.gold, { rough: 0.3 })} position={[0, HEAD_Y + 0.195, 0.148]} />
+            </>
+          ) : null}
         </group>
-        <ArmView side={1} d={st.armR} sleeve={suit} skin={skin} gavel={st.gavel} wide={judge} />
+        <ArmView side={1} d={st.armR} sleeve={suit} skin={skin} gavel={st.gavel} wide={judge} torch={st.torch} />
         <ArmView side={-1} d={st.armL} sleeve={suit} skin={skin} wide={judge} />
       </group>
       {/* soft contact shadow so standing figures sit on the floor even outside the key's shadow */}

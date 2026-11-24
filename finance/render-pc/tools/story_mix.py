@@ -33,8 +33,10 @@ if name != want:
     info["music"] = name
 ins = ["-i", voice, "-stream_loop", "-1", "-i", music]
 parts, labels = [], []
+# law3d sound design (KIT_LAW3D.md "Sound design"): a cue may carry "file" (one of the recipe's own effects), "len"
+# (trim, s), "fade" / "fadeIn" (s) and "rate" (playback speed: pitch and length together)
 for c in sorted(info["cues"], key=lambda c: c["t"]):
-    f = os.path.join(adir, "sfx", c["sfx"] + ".wav")
+    f = c.get("file") or os.path.join(adir, "sfx", c["sfx"] + ".wav")
     if not os.path.exists(f):  # one missing effect shouldn't sink the Short
         print(f"story_mix: skipping missing sfx {f}")
         continue
@@ -42,12 +44,28 @@ for c in sorted(info["cues"], key=lambda c: c["t"]):
     k = len(labels)
     j = 2 + k
     ms = max(0, int(round(c["t"] * 1000)))
-    parts.append(f"[{j}:a]aresample=48000,aformat=channel_layouts=stereo,volume={c.get('db', 0) - 6}dB,adelay={ms}|{ms}[s{k}]")
+    shape = ""
+    if c.get("rate"):
+        shape += f",asetrate={int(round(48000 * c['rate']))},aresample=48000"
+    if c.get("len"):
+        shape += f",atrim=0:{c['len']}"
+    if c.get("fadeIn"):
+        shape += f",afade=t=in:st=0:d={c['fadeIn']}"
+    if c.get("fade"):
+        if c.get("len"):
+            shape += f",afade=t=out:st={max(0, c['len'] - c['fade'])}:d={c['fade']}"
+        else:  # fade the tail of the whole file: reverse, fade in, reverse
+            shape += f",areverse,afade=t=in:st=0:d={c['fade']},areverse"
+    parts.append(f"[{j}:a]aresample=48000,aformat=channel_layouts=stereo{shape},volume={c.get('db', 0) - 6}dB,adelay={ms}|{ms}[s{k}]")
     labels.append(f"[s{k}]")
+# "mutes": beats of silence, the music bed drops out (80 ms down, 150 ms back up); the voice and the cues stay
+mute = ""
+for m0, m1 in info.get("mutes", []):
+    mute += f",volume='clip(max(({m0}-t)/0.08,(t-{m1})/0.15),0,1)':eval=frame"
 fc = [
     f"[0:a]aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur={dur}[vo]",
     "[vo]asplit=2[vo1][key]",
-    f"[1:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{dur},afade=t=out:st={max(0, dur - 0.35)}:d=0.35,volume={info['musicDb']}dB[mus]",
+    f"[1:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{dur},afade=t=out:st={max(0, dur - 0.35)}:d=0.35,volume={info['musicDb']}dB{mute}[mus]",
     "[mus][key]sidechaincompress=threshold=0.02:ratio=8:attack=8:release=220:makeup=1[bed]",
     *parts,
     f"[vo1][bed]{''.join(labels)}amix=inputs={2 + len(labels)}:normalize=0:duration=first,atrim=0:{dur}[mix]",

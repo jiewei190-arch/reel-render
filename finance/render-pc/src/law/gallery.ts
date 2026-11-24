@@ -24,6 +24,7 @@ const cast: Record<string, CastSpec> = {
   witness: { role: "witness", skin: "#b07850", hairStyle: "curly", hair: "#2a1a10", beard: true },
   bailiff: { role: "bailiff", skin: "#d8a888", hairStyle: "short", build: "broad" },
   juror: { role: "juror" },
+  trooper: { role: "trooper", skin: "#c99873", hair: "#3a2a1e", build: "broad" },
 };
 for (const p of FIG_POSES as FigPose[]) {
   const who = p === "gavel" ? "judge" : "plaintiff";
@@ -38,6 +39,8 @@ add("set-courtroom-witness", 2.0, { set: "courtroom", cam: { preset: "orbit", ta
 add("set-evidence", 2.0, { set: "evidence", cam: { preset: "crane", target: "table", dist: 3.0, h: 0.8 }, props: [{ id: "ev", kit: "pants", at: "table", yaw: 20 }] }, 0.6);
 add("set-casefile", 2.0, { set: "casefile", cam: { preset: "topDown", target: "desk", dist: 0.6, h: 1.7 }, props: [{ id: "f", kit: "folder", text: "PEARSON v. CHUNG", at: "desk", yaw: -8 }] }, 0.6);
 add("set-headlines", 2.0, { set: "headlines", cam: { preset: "dolly", target: "wall", dist: 2.8, h: 0.0 }, props: [{ id: "n", kit: "newspaper", text: "JUDGE SUES OVER PANTS", at: "wall:0,-0.38,0" }] }, 0.6);
+add("set-roadside", 2.0, { set: "roadside", cam: { preset: "crane", target: "centre:-0.6,0.9,0", dist: 9, h: 1.3, az: -34, sweep: 0.8 }, actors: [{ id: "trooper", pose: "search", at: "trooper", look: "trunk" }, { id: "defendant", pose: "idle", face: "worried", at: "driver", look: "trunk" }], props: [{ id: "car", kit: "car", at: "car", scale: 2.6, yaw: 180, color: "#7a8494", label: "" }, { id: "cooler", kit: "cooler", at: "trunk", scale: 0.8, yaw: 0, open: t + 0.6 }, { id: "dog", kit: "dog", at: "dog", scale: 1, yaw: 180, alert: t + 0.9 }] }, 0.8);
+add("set-roadside-drive", 2.0, { set: "roadside", patrol: false, drive: 24, cam: { preset: "dolly", target: "car:0,0.8,0", dist: 6.5, h: 1.2, az: -20, sweep: 0.8 }, props: [{ id: "car", kit: "car", at: "car", scale: 2.6, yaw: 180, color: "#7a8494", label: "" }, { id: "pc", kit: "car", at: "car:6.5,0,0", scale: 2.6, yaw: 180, color: "#1b2334", label: "", lightbar: true }] }, 0.6);
 add("set-steps", 2.0, { set: "steps", cam: { preset: "wide", target: [0, 2.2, 3], dist: 9, h: 0.6 }, actors: [{ id: "lawyer", pose: "talk", at: "steps", look: 0 }] }, 0.6);
 for (const k of ["gavel", "paper", "folder", "photo", "pants", "sign", "money", "newspaper", "nameplate", "box"] as LawKit[]) {
   const stand = k === "sign" || k === "newspaper";
@@ -50,7 +53,7 @@ add("device-counter", 1.8, { set: "headlines", cam: { preset: "dolly", target: "
 
 // the HERO PROPS (src/law/hero.tsx): one close-up each on the evidence table, turning slowly, then the kind params
 // (every statue species, the hairy palm, the bandaged palm, the house for sale, the ball, the fries)
-type HeroG = { name: string; p: Partial<LawProp>; dist?: number; h?: number; az?: number };
+type HeroG = { name: string; p: Partial<LawProp>; dist?: number; h?: number; az?: number; act?: "open" | "alert" };
 const HEROES: HeroG[] = [
   ...LAW_HERO_KINDS.map((k): HeroG => ({ name: k, p: { kit: k, ...(k === "contract" ? { label: "Sale contract", lines: ["The seller agrees to sell", "one gold rooster statue", "for the sum of $12,000.", "Payment on delivery.", "No refunds."] } : {}), ...(k === "phone" ? { lines: ["Where is my statue?", "It was never yours.", "See you in court."] } : {}), ...(k === "evidenceBag" ? { label: "ITEM 7", lines: ["CASE NO. 05-118", "ONE GOLD ROOSTER", "SEALED 03/14"] } : {}), ...(k === "frame" ? { label: "THE BUYER", photo: "person" } : {}) }, dist: k === "car" ? 3.4 : k === "statue" ? 2.3 : k === "trousers" ? 2.4 : k === "bigGavel" || k === "cash" || k === "house" ? 2.0 : 1.8, h: k === "car" || k === "house" || k === "cash" || k === "bigGavel" || k === "food" ? 0.55 : 0.12, az: k === "car" ? 30 : 8 })),
   ...STATUE_SPECIES.filter((sp) => sp !== "rooster").map((sp): HeroG => ({ name: `statue-${sp}`, p: { kit: "statue", species: sp }, dist: 2.3, h: 0.2 })),
@@ -59,10 +62,18 @@ const HEROES: HeroG[] = [
   { name: "house-sale", p: { kit: "house", sale: true }, dist: 2.0, h: 0.5 },
   { name: "toy-ball", p: { kit: "toy", variant: "ball" } },
   { name: "food-fries", p: { kit: "food", variant: "fries" }, h: 0.45 },
+  // the acting props, caught mid-action: the cooler lid up, the foil peeled back, the dog alerting, the truck's door open
+  { name: "cooler-open", p: { kit: "cooler" }, act: "open", h: 0.7, dist: 2.0 },
+  { name: "foil-open", p: { kit: "foil" }, act: "open", h: 0.6, dist: 1.4 },
+  { name: "dog-alert", p: { kit: "dog" }, act: "alert", h: 0.25, dist: 2.2, az: 60 },
+  { name: "truck-open", p: { kit: "truck" }, act: "open", h: 0.5, dist: 3.6, az: -140 },
+  { name: "car-patrol", p: { kit: "car", color: "#1b2334", label: "", lightbar: true }, h: 0.55, dist: 3.4, az: 30 },
 ];
 for (const g of HEROES) {
   const bx = LAW_HERO_BOX[g.p.kit as LawHeroKind];
-  add(`hero-${g.name}`, 1.2, { set: "evidence", cam: { preset: "closeUp", target: "hp", dist: g.dist ?? 1.8, h: g.h ?? 0.12, az: g.az ?? 8, face: 0.5 }, props: [{ id: "hp", kit: g.p.kit as LawKit, at: "table", spin: 6, ...g.p, ...(bx.h[0] > 0.6 ? { scale: 0.9 } : {}) }] }, 0.6);
+  const k = g.p.kit as LawHeroKind;
+  const d0 = k === "truck" ? 3.6 : k === "dog" ? 2.2 : k === "cooler" ? 2.0 : k === "foil" ? 1.4 : undefined, h0 = k === "truck" || k === "cooler" || k === "foil" ? 0.5 : k === "dog" ? 0.25 : undefined, az0 = k === "truck" ? 40 : k === "dog" ? 60 : undefined;
+  add(`hero-${g.name}`, 1.2, { set: "evidence", cam: { preset: "closeUp", target: "hp", dist: g.dist ?? d0 ?? 1.8, h: g.h ?? h0 ?? 0.12, az: g.az ?? az0 ?? 8, face: 0.5 }, props: [{ id: "hp", kit: k as LawKit, at: "table", spin: 6, ...g.p, ...(bx.h[0] > 0.6 ? { scale: bx.h[0] > 1 ? 0.6 : 0.9 } : {}), ...(g.act ? { [g.act]: t + 0.15 } : {}) }] }, 0.6);
 }
 
 export const GALLERY_RECIPE: LawRecipe = { kit: "law3d", slug: "law-gallery", hook: { text: "LAW *GALLERY*", until: -1 }, cast, shots, duration: t, captions: "off" };

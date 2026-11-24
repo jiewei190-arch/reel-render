@@ -26,7 +26,7 @@ const PropView: React.FC<{ pr: PropR; t: number }> = ({ pr, t }) => {
   if (pr.show(t) <= 0) return null;
   return (
     <group position={pl.p} rotation={[pl.pitch, pl.yaw, pl.roll, "YXZ"]} scale={pl.s}>
-      <KitMesh sp={{ kit: pr.spec.kit, text: pr.text, color: pr.spec.color, photo: pr.spec.photo, held: pr.held, label: pr.spec.label, lines: pr.spec.lines, species: pr.spec.species, variant: pr.spec.variant, hair: pr.spec.hair, bandage: pr.spec.bandage, sale: pr.spec.sale, steam: pr.spec.steam }} t={t} strike={pr.strike(t)} seed={pr.seed} />
+      <KitMesh sp={{ kit: pr.spec.kit, text: pr.text, color: pr.spec.color, photo: pr.spec.photo, held: pr.held, label: pr.spec.label, lines: pr.spec.lines, species: pr.spec.species, variant: pr.spec.variant, hair: pr.spec.hair, bandage: pr.spec.bandage, sale: pr.spec.sale, steam: pr.spec.steam, lightbar: pr.spec.lightbar, count: pr.spec.count }} t={t} strike={pr.strike(t)} seed={pr.seed} act={pr.act(t)} move={pr.spec.to !== undefined ? pr.speed(t) : 0} />
     </group>
   );
 };
@@ -65,7 +65,7 @@ export const LawFilm: React.FC<{ c: LawCompiled }> = ({ c }) => {
   return (
     <AbsoluteFill style={{ background: set.bg }}>
       <View mood={LAW_MOODS[set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={L.W} height={L.H}>
-        {set.render(t, { jury: shot.spec.jury })}
+        {set.render(t, { jury: shot.spec.jury, drive: shot.spec.drive, patrol: shot.spec.patrol })}
         {figs.map((st) => <Figure key={st.id} st={st} t={t} />)}
         {shot.props.map((p) => (t < p.a || t >= p.b ? null : <PropView key={p.key} pr={p} t={t} />))}
         {shot.fx.filter((f) => f.fx === "papers").map((f, i) => <Papers key={i} f={f} t={t} />)}
@@ -105,7 +105,7 @@ export const LawFilmLandscape: React.FC<{ c: LawCompiled }> = ({ c }) => {
   return (
     <AbsoluteFill style={{ background: set.bg }}>
       <View mood={LAW_MOODS[set.mood]} cam={cam} t={t} blur={shot.lens.blur} focus={shot.lens.subj(t)} sky={false} width={L.W} height={L.H} postScale={1}>
-        {set.render(t, { jury: shot.spec.jury })}
+        {set.render(t, { jury: shot.spec.jury, drive: shot.spec.drive, patrol: shot.spec.patrol })}
         {figs.map((st) => <Figure key={st.id} st={st} t={t} />)}
         {shot.props.map((p) => (t < p.a || t >= p.b ? null : <PropView key={p.key} pr={p} t={t} />))}
         {shot.fx.filter((f) => f.fx === "papers").map((f, i) => <Papers key={i} f={f} t={t} />)}

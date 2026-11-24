@@ -7,6 +7,8 @@
 //   casefile   a big wooden desk seen from above: folders, photos, a mug, a pen, a brass desk lamp pool of light
 //   headlines  a wall of newspaper pages and pinned notes with red string, lit from the side
 //   steps      outside the courthouse at night: wide stone steps, columns, a plain pediment, glowing doors, lamp posts
+//   roadside   a highway shoulder at night: the road with its lane stripes (stopped, or sliding past with "drive"), a
+//              guard rail, dark fields, poles, stars, a patrol car whose red and blue lights sweep across everything
 import React from "react";
 import * as THREE from "three";
 import { canvasTexture, geoOf, plastic, rbox } from "../blocky/mat";
@@ -17,7 +19,7 @@ import type { CastSpec, FigPose } from "./cast";
 import { KitMesh } from "./objects";
 import { LP } from "./palette";
 
-export type LawSetId = "courtroom" | "evidence" | "casefile" | "headlines" | "steps";
+export type LawSetId = "courtroom" | "evidence" | "casefile" | "headlines" | "steps" | "roadside";
 export type LawSet = {
   id: LawSetId;
   bg: string;
@@ -28,7 +30,9 @@ export type LawSet = {
   /** set pieces that can hide a face on screen (chairs, the bench, tables, rails): tools/polish_qa.mjs occlusion rule P4.
    *  The blockers count too; these are the extra visual-only pieces (chair backs). Boxes are centre + half size. */
   occluders?: { name: string; c: V3; h: V3 }[];
-  render: (t: number, o?: { jury?: boolean }) => React.ReactNode;
+  /** `jury`: courtroom silhouettes; roadside: `drive` (m/s: the stripes, posts and poles slide past) and `patrol`
+   *  (false hides the parked patrol car and its lights) */
+  render: (t: number, o?: { jury?: boolean; drive?: number; patrol?: boolean }) => React.ReactNode;
 };
 
 const hash = (n: number) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
@@ -340,5 +344,120 @@ const steps: LawSet = {
   ),
 };
 
-export const LAW_SETS: Record<LawSetId, LawSet> = { courtroom, evidence, casefile, headlines, steps };
+// ------------------------------------------------------------------ roadside (a highway shoulder at night)
+// The road runs along x. The lens normally stands on the road (+z) and looks across the shoulder: the stopped car
+// (a recipe prop at `car`, yaw 180: traffic here drives toward -x), the guard rail behind it, dark fields, poles and
+// stars. The patrol car is parked behind the stopped car (+x) with its head lights on the scene; its light bar throws
+// red and blue across everything (two real lights that flash in turn + two beams that sweep round like beacons).
+const ROAD_Z0 = 1.6, RAIL_Z = -2.4, CAR_S = 2.6, PATROL_X = 6.2;
+const asphaltTex = () => canvasTexture("lsAsphalt", 256, 256, (g, W, H) => {
+  g.fillStyle = "#20232b"; g.fillRect(0, 0, W, H);
+  for (let k = 0; k < 1400; k++) { g.fillStyle = `rgba(${hash(k) > 0.5 ? "150,156,170" : "0,0,0"},${0.06 + 0.12 * hash(k + 5)})`; g.fillRect(hash(k + 1) * W, hash(k + 2) * H, 2, 2); }
+});
+const gravelTex = () => canvasTexture("lsGravel", 256, 256, (g, W, H) => {
+  g.fillStyle = "#4a443a"; g.fillRect(0, 0, W, H);
+  for (let k = 0; k < 900; k++) { const v = hash(k + 3); g.fillStyle = v > 0.6 ? "rgba(190,180,160,0.35)" : v > 0.3 ? "rgba(30,26,20,0.4)" : "rgba(120,110,95,0.35)"; const r = 1.5 + 3 * hash(k + 9); g.fillRect(hash(k + 1) * W, hash(k + 2) * H, r, r); }
+});
+const fieldTex = () => canvasTexture("lsField", 64, 256, (g, W, H) => {
+  g.fillStyle = "#101a14"; g.fillRect(0, 0, W, H);
+  for (let k = 0; k < 16; k++) { g.fillStyle = k % 2 ? "rgba(40,62,40,0.5)" : "rgba(0,0,0,0.35)"; g.fillRect(0, k * 16, W, 9); }
+});
+const markerTex = () => canvasTexture("lsMile", 128, 256, (g, W, H) => {
+  g.fillStyle = "#1f6a3c"; g.fillRect(0, 0, W, H); g.strokeStyle = "#e8f0e8"; g.lineWidth = 8; g.strokeRect(8, 8, W - 16, H - 16);
+  g.fillStyle = "#e8f0e8"; g.textAlign = "center"; g.textBaseline = "middle"; g.font = "800 44px Poppins"; g.fillText("MILE", W / 2, 60); g.font = "800 60px Poppins"; g.fillText("3", W / 2, 122); g.fillText("1", W / 2, 180); g.fillText("2", W / 2, 232);
+});
+const ROAD_STARS = Array.from({ length: 90 }, (_, k) => ({ a: hash(k + 41) * Math.PI * 2, e: 0.07 + 1.1 * hash(k + 42), s: 0.12 + 0.34 * hash(k + 43) }));
+const wrapX = (x: number, span: number) => ((((x + span / 2) % span) + span) % span) - span / 2;
+const roadside: LawSet = {
+  id: "roadside", bg: "#070b16", mood: "roadside",
+  anchors: {
+    centre: [2.2, 0, 0.2], car: [-0.6, 0, 0], trunk: [1.0, 1.02, 0], hood: [-2.15, 1.02, 0], roof: [-0.5, 1.6, 0],
+    driver: [2.5, 0, 0.75], trooper: [2.0, 0, -0.75], behind: [2.6, 0, 0], dog: [3.3, 0, 0.9], side: [-0.6, 0, 1.6], door: [0.2, 0, 1.35],
+    shoulder: [2.6, 0, -1.4], road: [2.2, 0, 4.2], lane: [0, 0, 5.2], farLane: [0, 0, 7.4], patrol: [PATROL_X, 0, 0], rail: [2.2, 0.7, RAIL_Z], field: [0, 0, -9], high: [1.5, 4.5, 0],
+  },
+  blockers: [
+    blocker("set.patrolCar", [PATROL_X - 0.74 * CAR_S, 0, -0.34 * CAR_S], [PATROL_X + 0.74 * CAR_S, 0.6 * CAR_S, 0.34 * CAR_S]),
+    blocker("set.guardRail", [-40, 0, RAIL_Z - 0.08], [40, 0.86, RAIL_Z + 0.08]),
+  ],
+  render: (t, o) => {
+    const drive = o?.drive ?? 0, sl = drive * t, patrol = o?.patrol !== false;
+    // the light bar: red and blue flash in turn (two quick flashes each), and two beams sweep round like beacons
+    const ph = (t * 2.6) % 1, red = ph < 0.5 ? (ph % 0.25 < 0.14 ? 1 : 0.12) : 0.04, blue = ph >= 0.5 ? ((ph - 0.5) % 0.25 < 0.14 ? 1 : 0.12) : 0.04;
+    const sw = t * 4.2, bar: V3 = [PATROL_X + 0.13, 1.74, 0];
+    return (
+      <>
+        <mesh geometry={geoOf("lsNightDome", () => new THREE.SphereGeometry(300, 16, 12))} material={nightMat()} />
+        {ROAD_STARS.map((st, k) => <mesh key={k} geometry={geoOf("lsStar", () => new THREE.IcosahedronGeometry(1, 0))} material={bmat("#dfe8ff", Math.round((0.45 + 0.55 * Math.abs(Math.sin(t * (0.5 + st.s) + k))) * 10) / 10)} position={[220 * Math.cos(st.e) * Math.sin(st.a), 220 * Math.sin(st.e) + 4, 220 * Math.cos(st.e) * Math.cos(st.a)]} scale={st.s * 1.2} />)}
+        {/* a low moon behind the fields */}
+        <mesh geometry={geoOf("lsMoon", () => new THREE.CircleGeometry(1, 24))} material={bmat("#e9eefc")} position={[-34, 26, -120]} scale={5} />
+        <mesh geometry={geoOf("lsMoon", () => new THREE.CircleGeometry(1, 24))} material={bmat("#9db4e8", 0.12)} position={[-34, 26, -119.5]} scale={11} />
+        {/* the ground: fields, the gravel shoulder, the road */}
+        <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 1, map: tiled(fieldTex(), 40, 30) })} rotation={[-Math.PI / 2, 0, 0]} scale={[400, 300, 1]} position={[wrapX(sl, 10), -0.01, -60]} receiveShadow />
+        <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 1, map: tiled(gravelTex(), 60, 3) })} rotation={[-Math.PI / 2, 0, 0]} scale={[240, ROAD_Z0 - RAIL_Z + 1.2, 1]} position={[wrapX(sl, 4), 0, (ROAD_Z0 + RAIL_Z - 1.2) / 2]} receiveShadow />
+        <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 0.75, map: tiled(asphaltTex(), 80, 5) })} rotation={[-Math.PI / 2, 0, 0]} scale={[240, 14, 1]} position={[wrapX(sl, 3), 0.004, ROAD_Z0 + 7]} receiveShadow />
+        <mesh geometry={PLANE()} material={plastic("#101a14", { rough: 1 })} rotation={[-Math.PI / 2, 0, 0]} scale={[400, 80, 1]} position={[0, -0.01, ROAD_Z0 + 54]} />
+        {/* the white edge line, the dashed lane line, the far edge line */}
+        <mesh geometry={PLANE()} material={bmat("#c9cdd6")} rotation={[-Math.PI / 2, 0, 0]} scale={[240, 0.14, 1]} position={[0, 0.008, ROAD_Z0 + 0.3]} />
+        <mesh geometry={PLANE()} material={bmat("#c9cdd6")} rotation={[-Math.PI / 2, 0, 0]} scale={[240, 0.14, 1]} position={[0, 0.008, ROAD_Z0 + 7.3]} />
+        {Array.from({ length: 16 }, (_, k) => <mesh key={`d${k}`} geometry={PLANE()} material={bmat("#d8d2b0")} rotation={[-Math.PI / 2, 0, 0]} scale={[3, 0.15, 1]} position={[wrapX(k * 12 - 90 + sl, 192), 0.008, ROAD_Z0 + 3.6]} />)}
+        {/* the guard rail: a W-beam on posts, small reflectors that catch the patrol lights */}
+        <Blk a={[-120, 0.52, RAIL_Z - 0.03]} b={[120, 0.84, RAIL_Z + 0.03]} m={plastic("#8e96a2", { rough: 0.35, flat: true })} />
+        <Blk a={[-120, 0.64, RAIL_Z + 0.03]} b={[120, 0.72, RAIL_Z + 0.06]} m={plastic("#aab2be", { rough: 0.3 })} cast={false} />
+        {Array.from({ length: 30 }, (_, k) => { const x = wrapX(k * 2 - 30 + sl, 60); return (
+          <group key={`p${k}`}>
+            <Blk a={[x - 0.05, 0, RAIL_Z - 0.12]} b={[x + 0.05, 0.86, RAIL_Z - 0.02]} m={plastic("#5a616c", { rough: 0.6 })} />
+            {k % 2 ? null : <mesh geometry={PLANE()} material={bmat("#ffd9a0", 0.9)} position={[x, 0.7, RAIL_Z + 0.065]} scale={[0.07, 0.07, 1]} />}
+          </group>
+        ); })}
+        {/* a green mile marker on a thin post (a generic number) */}
+        <group position={[wrapX(-3.6 + sl, 60), 0, RAIL_Z + 0.5]}>
+          <Blk a={[-0.025, 0, -0.025]} b={[0.025, 1.5, 0.025]} m={plastic("#6a7078", { rough: 0.5 })} />
+          <mesh geometry={PLANE()} material={plastic("#ffffff", { rough: 0.6, map: markerTex() })} position={[0, 1.25, 0.03]} scale={[0.22, 0.44, 1]} />
+        </group>
+        {/* utility poles with a sagging wire, receding along the field edge */}
+        {Array.from({ length: 9 }, (_, k) => { const x = wrapX(k * 14 - 56 + sl * 0.85, 126); return (
+          <group key={`u${k}`} position={[x, 0, -7.5]}>
+            <mesh geometry={geoOf("lsPole", () => new THREE.CylinderGeometry(0.09, 0.12, 7.4, 6))} material={plastic("#1c1814", { rough: 0.9 })} position={[0, 3.7, 0]} />
+            <Blk a={[-0.9, 6.5, -0.05]} b={[0.9, 6.62, 0.05]} m={plastic("#1c1814", { rough: 0.9 })} cast={false} />
+            <mesh geometry={BOX()} material={bmat("#0a0d14")} position={[7, 6.35, 0]} scale={[14, 0.025, 0.025]} />
+          </group>
+        ); })}
+        {/* far away: a tree line, a farm with one yard light, a grain bin */}
+        {Array.from({ length: 22 }, (_, k) => <mesh key={`t${k}`} geometry={geoOf("lsTree", () => new THREE.IcosahedronGeometry(1, 0))} material={bmat("#0a120f")} position={[wrapX(k * 9 - 99 + 4 * hash(k) + sl * 0.3, 198), 1.6 + hash(k + 5), -44 - 6 * hash(k + 2)]} scale={[4 + 3 * hash(k + 7), 2.4 + 2 * hash(k + 9), 2]} />)}
+        <group position={[wrapX(-17 + sl * 0.4, 160), 0, -30]}>
+          <Blk a={[-2.4, 0, -1.5]} b={[2.4, 2.4, 1.5]} m={bmat("#0d1016")} cast={false} />
+          <mesh geometry={geoOf("lsBarnRoof", () => { const g = new THREE.CylinderGeometry(0.01, 2.9, 1.6, 4); g.rotateY(Math.PI / 4); return g; })} material={bmat("#0d1016")} position={[0, 3.2, 0]} scale={[1.1, 1, 0.7]} />
+          <mesh geometry={geoOf("lsBin", () => new THREE.CylinderGeometry(1.3, 1.3, 4.2, 10))} material={bmat("#10141c")} position={[4.4, 2.1, 0.5]} />
+          <mesh geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#ffd890")} position={[-3.4, 4.2, 2]} scale={0.9 + 0.08 * Math.sin(t * 9)} />
+          <mesh geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#ffd890", 0.15)} position={[-3.4, 4.2, 2]} scale={4} />
+        </group>
+        {/* traffic in the far lane: head lights sliding by now and then (toward +x) */}
+        {[0, 1].map((k) => { const u = ((t * 0.17 + k * 0.47) % 1), x = -70 + 140 * u; return (
+          <group key={`v${k}`} position={[x, 0, ROAD_Z0 + 5.6]}>
+            <Blk a={[-1.9, 0.25, -0.8]} b={[1.9, 1.3, 0.8]} m={bmat("#0b0e15")} cast={false} />
+            {[-0.5, 0.5].map((z) => <mesh key={z} geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#fff2cf")} position={[1.92, 0.7, z]} scale={0.5} />)}
+            {[-0.5, 0.5].map((z) => <mesh key={`r${z}`} geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#ff3a2a")} position={[-1.92, 0.75, z]} scale={0.35} />)}
+            <pointLight color="#ffe9b8" intensity={5} distance={9} decay={1.6} position={[3.2, 0.8, 0]} />
+          </group>
+        ); })}
+        {/* the patrol car (the kit's generic sedan, dark, a light bar, no markings) and its lights */}
+        {patrol ? (
+          <>
+            <group position={[PATROL_X, 0, 0]} rotation={[0, Math.PI, 0]} scale={CAR_S}><KitMesh sp={{ kit: "car", color: "#1b2334", label: "", lightbar: true }} t={t} strike={0} /></group>
+            <pointLight color="#ff2a22" intensity={46 * red} distance={26} decay={1.25} position={[bar[0], bar[1] + 0.25, 0.5]} />
+            <pointLight color="#2a5cff" intensity={60 * blue} distance={26} decay={1.25} position={[bar[0], bar[1] + 0.25, -0.5]} />
+            <SpotBeam from={bar} to={[bar[0] + 9 * Math.cos(sw), 0.5, 9 * Math.sin(sw)]} t={t} color="#ff3a30" intensity={30} angle={0.2} cone={0.07} dust={10} seed={21} />
+            <SpotBeam from={bar} to={[bar[0] - 9 * Math.cos(sw), 0.5, -9 * Math.sin(sw)]} t={t} color="#3a6cff" intensity={36} angle={0.2} cone={0.08} dust={10} seed={22} />
+            {/* head lights: two warm beams along the shoulder onto the stopped car and whoever stands behind it */}
+            {[-0.57, 0.57].map((z, k) => <SpotBeam key={z} from={[PATROL_X - 0.74 * CAR_S - 0.02, 0.8, z]} to={[-0.4, 0.55, z * 0.8]} t={t} color="#fff0cc" intensity={k ? 44 : 40} angle={0.2} cone={0.085} dust={36} seed={23 + k} />)}
+          </>
+        ) : null}
+        {/* thin ground mist drifting over the shoulder */}
+        {Array.from({ length: 7 }, (_, k) => <mesh key={`f${k}`} geometry={geoOf("lsFog", () => new THREE.IcosahedronGeometry(1, 1))} material={bmat("#3a4a70", 0.07)} position={[((k * 4.3 + t * 0.3) % 28) - 14, 0.18, -1.2 + (k % 3) * 1.1]} scale={[2.8, 0.3, 1.1]} />)}
+      </>
+    );
+  },
+};
+
+export const LAW_SETS: Record<LawSetId, LawSet> = { courtroom, evidence, casefile, headlines, steps, roadside };
 export const LAW_SET_IDS = Object.keys(LAW_SETS) as LawSetId[];

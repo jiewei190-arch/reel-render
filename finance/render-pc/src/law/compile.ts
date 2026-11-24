@@ -23,6 +23,8 @@ import { KIT_BOX, isLawHero } from "./objects";
 import { HERO_PHOTOS, HERO_VARIANTS, LAW_HERO_KINDS, STATUE_SPECIES } from "./hero";
 import { heroLabelError } from "../library/hero";
 import { LAW_SETS } from "./sets";
+import { sfxError } from "./sound";
+import type { Cue, LawSfx, LawSound } from "./sound";
 import type { LawSet, LawSetId } from "./sets";
 import type { ActorSpec, At, LawAction, LawCam, LawProp, LawRecipe, LawShot, LawTarget, Place } from "./types";
 
@@ -42,7 +44,9 @@ const yawTo = (from: V3, to: V3) => Math.atan2(to[0] - from[0], to[2] - from[2])
 export type Box = { name: string; c: V3; h: V3 };
 export type Lens = { a: number; b: number; subj: (t: number) => V3; off: V3; fov: (t: number) => number; face: number; push: number; roll: [number, number]; blur: number; posAt?: (t: number) => V3 };
 export type Placement = { p: V3; yaw: number; pitch: number; roll: number; s: number };
-export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; held?: boolean; seed: number; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number };
+export type PropR = { key: string; spec: LawProp; a: number; b: number; hit: number; hits: number[]; text?: string; held?: boolean; seed: number; place: (t: number) => Placement; show: (t: number) => number; strike: (t: number) => number;
+  /** acting props: 0..1 progress of `open` (cooler lid, foil wrap, truck door) or `alert` (the dog); the travel speed (m/s) of a prop with `to` */
+  act: (t: number) => number; speed: (t: number) => number };
 export type FxR = { fx: "shake" | "flash" | "papers"; at: number; p: (t: number) => V3; gain: number };
 export type DeviceR = { key: string; act: LawAction; t0: number; t1: number; target?: (t: number) => V3; zeroAt?: number;
   /** counters: the count window (lands on `to` by the anchor word's end, holds COUNT_HOLD before the cut / drain) */
@@ -52,7 +56,7 @@ export type DeviceFit = { key: string; shot: string; kind: string; lines: { what
 export type LawShotR = { id: string; a: number; b: number; set: LawSetId; spec: LawShot; lens: Lens; kicks: [number, number][]; figs: FigTrack[]; props: PropR[]; devices: DeviceR[]; fx: FxR[];
   /** landscape only: the lower-third caption centre (px at 1080 tall) and how far caption-safe framing lifted the shot */
   capY?: number; lift?: number };
-export type Cue = { t: number; sfx: string; db?: number };
+export type { Cue };
 /** a story device on screen (DOM), in px of the format; u = 0..1 in/out */
 export type DeviceBox = {
   key: string; kind: LawAction["do"]; x: number; y: number; w: number; h: number; u: number; age: number;
@@ -73,7 +77,7 @@ export type LawCompiled = {
   devicesAt: (t: number) => DeviceBox[];
   qa: (t: number) => { figs: Box[]; props: Box[] };
   textsAt: (t: number) => string[];
-  audio: { music: string; cues: Cue[] };
+  audio: { music: string; cues: Cue[]; musicDb: number; mutes: [number, number][] };
   /** long-form ("format": "landscape"): 1920x1080, chapters, lower-third captions */
   landscape: boolean;
   /** landscape: chapters resolved to seconds (t = the chapter word, card = when its title card plays); [] otherwise */
@@ -219,7 +223,12 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
         if (spec.variant !== undefined && (!vs || !vs.includes(spec.variant))) throw new Error(`recipe ${id}: prop "${spec.id}": "variant" ${vs ? `is one of ${vs.join(", ")}` : `is for toy (doll, ball) and food (burger, fries)`} (got "${spec.variant}")`);
         if (spec.kit === "frame" && spec.photo !== undefined && !HERO_PHOTOS.includes(spec.photo)) throw new Error(`recipe ${id}: prop "${spec.id}": a frame's "photo" is one of ${HERO_PHOTOS.join(", ")} (got "${spec.photo}")`);
       } else if (spec.label !== undefined || spec.lines !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "label" / "lines" are for the hero props (${LAW_HERO_KINDS.join(", ")}); a ${spec.kit} takes "text"`);
+      const actKinds: [keyof LawProp, string[]][] = [["open", ["cooler", "foil", "truck"]], ["alert", ["dog"]], ["lightbar", ["car"]], ["count", ["cooler"]]];
+      for (const [f, ks] of actKinds) if (spec[f] !== undefined && !ks.includes(spec.kit)) throw new Error(`recipe ${id}: prop "${spec.id}": "${f}" is for ${ks.join(" / ")} (this is a ${spec.kit})`);
       const base = placeV(spec.at, set, id);
+      const dest = spec.to !== undefined ? placeV(spec.to, set, id) : null;
+      const tAct = spec.open !== undefined ? at(spec.open) : spec.alert !== undefined ? at(spec.alert) : null;
+      const actDur = spec.open !== undefined ? spec.openDur ?? 0.45 : 0.3;
       const phit = at(spec.hit, a + 0.12);
       const s0 = spec.scale ?? spec.s ?? 1;
       const from = spec.fromOff ?? [-2.4, 1.6, 1.4];
@@ -227,7 +236,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       let text = spec.text;
       if (spec.kit === "nameplate" && !text && spec.of) { const cs = recipe.cast[spec.of]; if (!cs) throw new Error(`recipe ${id}: nameplate "${spec.id}" of "${spec.of}": not in cast`); text = cs.plate ?? cs.role.toUpperCase(); }
       const place = (t: number): Placement => {
-        let p = base, yaw = (spec.yaw ?? 0) * D2R, s = s0, pitch = (spec.pitch ?? 0) * D2R, roll = (spec.roll ?? 0) * D2R;
+        let p = dest ? lerpV(base, dest, EASE_INOUT(clamp((t - pa) / Math.max(0.3, pb - pa)))) : base, yaw = (spec.yaw ?? 0) * D2R, s = s0, pitch = (spec.pitch ?? 0) * D2R, roll = (spec.roll ?? 0) * D2R;
         // "spin" with no motion: the prop turns slowly on the spot from its first frame in the shot (its front faces
         // "yaw" when the shot starts), the hero-prop showcase (biz3d / cyber3d do the same)
         if (!spec.motion && spec.spin !== undefined) yaw += spec.spin * D2R * (t - pa);
@@ -237,6 +246,21 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
           case "float": p = add(p, [0.03 * Math.sin(t * 0.8), 0.06 * Math.sin(t * 1.6), 0]); yaw += 0.25 * Math.sin(t * 0.5); pitch += 0.12 * Math.sin(t * 1.1); break;
           case "popIn": s = s0 * (t < phit - 0.3 ? 0.001 : Math.max(0.001, EASE_PLACE(prog(t, phit - 0.3, phit)))); yaw += 0.06 * Math.sin(t * 1.1); break;
           case "dropIn": { const H = 1.6, u = clamp((t - (phit - 0.35)) / 0.35); p = add(p, [0, t < phit ? H * (1 - u * u) : 0.04 * Math.abs(Math.sin((t - phit) * 16)) * Math.exp(-(t - phit) * 6), 0]); break; }
+          case "slideIn": {
+            // slides in flat along the surface from `fromOff` (default 1.2 m to the left) and stops on `hit`
+            const fo = (spec.fromOff ?? [-1.2, 0, 0]) as V3, u = clamp((t - (phit - 0.4)) / 0.4);
+            p = add(p, scl(fo, 1 - easeOut3(u)));
+            break;
+          }
+          case "driveIn": {
+            // a vehicle pulls in from `fromOff` (default 9 m behind it along x), brakes (the nose dips) and stops on `hit`
+            const fo = (spec.fromOff ?? [-9, 0, 0]) as V3, T = 1.5, u = clamp((t - (phit - T)) / T);
+            const e = 1 - (1 - u) * (1 - u);
+            p = add(p, scl(fo, 1 - e));
+            const dip = Math.sign(fo[0] || -1) * 0.03 * Math.sin(Math.PI * Math.pow(u, 1.6)) + (t > phit ? -Math.sign(fo[0] || -1) * 0.012 * Math.exp(-(t - phit) * 7) * Math.sin((t - phit) * 16) : 0);
+            roll += dip;
+            break;
+          }
           case "flyIn": {
             // paper flight: from the side, tumbling, a flutter that settles as it lands on `hit`
             const T = 0.6, u = clamp((t - (phit - T)) / T);
@@ -252,7 +276,9 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
       };
       // a gavel that strikes with no judge figure in the shot is held by a robed forearm (never floats on its own)
       const held = spec.kit === "gavel" && hits.some((h) => h >= pa - 0.6 && h < pb + 0.3) && !(sp.actors ?? []).some((x) => recipe.cast[x.id]?.role === "judge");
-      props.push({ key: spec.id, spec, a: pa, b: pb, hit: phit, hits, text, held, seed: 7 + spec.id.length * 13 + spec.id.charCodeAt(0), place, show: (t) => (spec.motion === "popIn" ? clamp((t - phit + 0.3) / 0.05) : spec.motion === "flyIn" ? (t >= phit - 0.6 ? 1 : 0) : 1), strike: (t) => strikeAt(hits, t) });
+      props.push({ key: spec.id, spec, a: pa, b: pb, hit: phit, hits, text, held, seed: 7 + spec.id.length * 13 + spec.id.charCodeAt(0), place, show: (t) => (spec.motion === "popIn" ? clamp((t - phit + 0.3) / 0.05) : spec.motion === "flyIn" ? (t >= phit - 0.6 ? 1 : 0) : 1), strike: (t) => strikeAt(hits, t),
+        act: (t) => (tAct === null ? 0 : clamp((t - tAct + LEAD) / actDur)),
+        speed: (t) => { const q0 = place(t).p, q1 = place(t + 0.05).p; return Math.hypot(q1[0] - q0[0], q1[2] - q0[2]) / 0.05; } });
     };
     (sp.props ?? []).forEach((ps) => addProp(ps, a, b));
     globalProps.filter((g) => g.a < b && g.b > a && (!g.p.sets || g.p.sets.includes(curSet)) && !(sp.props ?? []).some((q) => q.id === g.p.id)).forEach((g) => addProp(g.p, Math.max(a, g.a), Math.min(b, g.b)));
@@ -368,7 +394,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     });
     fx.filter((f) => f.fx === "shake").forEach((f) => kicks.push([f.at, 1.3 * f.gain]));
     props.filter((p) => p.spec.motion === "dropIn").forEach((p) => kicks.push([p.hit, 0.8]));
-    props.filter((p) => p.spec.motion === "flyIn").forEach((p) => kicks.push([p.hit, 0.35]));
+    props.filter((p) => p.spec.motion === "flyIn" || p.spec.motion === "slideIn").forEach((p) => kicks.push([p.hit, 0.35]));
     shots.push({ id, a, b, set: curSet, spec: sp, lens, kicks, figs, props, devices, fx });
   });
 
@@ -393,7 +419,7 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
     const s = shotAt(t);
     const figsB: Box[] = [];
     for (const st of figsAt(t)) figsB.push(...figBoxes(st));
-    const propsB: Box[] = [...LAW_SETS[s.set].blockers];
+    const propsB: Box[] = LAW_SETS[s.set].blockers.filter((bk) => !(bk.name === "set.patrolCar" && s.spec.patrol === false));
     for (const p of s.props) {
       if (t < p.a || t >= p.b || p.show(t) < 0.5) continue;
       const pl = p.place(t), bx = KIT_BOX[p.spec.kit];
@@ -580,27 +606,51 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
   };
 
   // ---------------------------------------------------- audio cue plan (tools/story_mix.py format; library names only)
-  const cues: Cue[] = [{ t: 0, sfx: recipe.sfx0 ?? "impact", db: -1 }];
+  // Automatic cues (the kit's defaults) unless "autoSfx": "off"; an action's or a prop's own `sfx` always replaces its
+  // automatic cue (false = silent); shot-level and recipe-level `sfx` lists add any library or recipe sound
+  // (src/law/sound.ts). Every name is checked here, so a typo is a compile error, not a hole in the mix.
+  const auto = recipe.autoSfx !== "off";
+  const own = recipe.sounds;
+  const cues: Cue[] = [];
+  const cue = (c: Cue, where: string) => { const er = sfxError(c.sfx, own); if (er) throw new Error(`recipe ${where}: ${er}`); if (c.rate !== undefined && (c.rate < 0.5 || c.rate > 2)) throw new Error(`recipe ${where}: sfx "${c.sfx}" rate ${c.rate} is outside 0.5-2`); cues.push(c); };
+  const named = (x: LawSfx, where: string) => cue({ t: at(x.at), sfx: x.sfx, db: x.db, len: x.len, fade: x.fade, fadeIn: x.fadeIn, rate: x.rate }, where);
+  /** an action's / a prop's sound: its own `sfx` (at `t0` unless it says otherwise), else the automatic cues */
+  const sound = (own_: LawSound | undefined, t0: number, where: string, autos: Cue[]) => {
+    if (own_ === false) return;
+    if (own_ === undefined) { if (auto) autos.forEach((c) => cue(c, where)); return; }
+    const o = typeof own_ === "string" ? { sfx: own_ } : own_;
+    cue({ t: o.at !== undefined ? at(o.at) : t0, sfx: o.sfx, db: o.db, len: o.len, fade: o.fade, fadeIn: o.fadeIn, rate: o.rate }, where);
+  };
+  cue({ t: 0, sfx: recipe.sfx0 ?? "impact", db: -1 }, "sfx0");
   for (const s of shots) {
-    if (s.spec.cam.preset === "slamZoom") cues.push({ t: at(s.spec.cam.hit, s.a + 0.12) - 0.02, sfx: "impact", db: -1 });
-    if (s.spec.cam.preset === "whip" || s.spec.in === "whip") cues.push({ t: s.a, sfx: "whoosh", db: -4 });
+    if (auto && s.spec.cam.preset === "slamZoom") cue({ t: at(s.spec.cam.hit, s.a + 0.12) - 0.02, sfx: "impact", db: -1 }, s.id);
+    if (auto && (s.spec.cam.preset === "whip" || s.spec.in === "whip")) cue({ t: s.a, sfx: "whoosh", db: -4 }, s.id);
     for (const ac of s.spec.actions ?? []) {
-      const t0 = at(ac.at);
-      if (ac.do === "gavel") cues.push({ t: t0 - 0.01, sfx: "impact", db: 0 }, { t: t0, sfx: "thud", db: -2 });
-      if (ac.do === "verdict") cues.push({ t: t0 - 0.02, sfx: "impact", db: 0 }, { t: t0, sfx: "boom", db: -4 });
-      if (ac.do === "exhibit") cues.push({ t: t0 - 0.08, sfx: "whoosh", db: -7 }, { t: t0, sfx: "ding", db: -9 });
-      if (ac.do === "caseCard") cues.push({ t: t0 - 0.1, sfx: "whoosh", db: -6 }, { t: t0 + 0.05, sfx: "thud", db: -8 });
-      if (ac.do === "counter") { cues.push({ t: t0, sfx: "ding", db: -10 }); if (ac.value === undefined) { const dv = s.devices.find((x) => x.act === ac); cues.push({ t: dv?.plan ? dv.plan.end : t0 + (ac.dur ?? 1.2), sfx: "ding", db: -7 }); } if (ac.zeroAt !== undefined) cues.push({ t: at(ac.zeroAt), sfx: "whoosh", db: -5 }); }
+      const t0 = at(ac.at), w = `${s.id} ${ac.do}`;
+      if (ac.do === "gavel") sound(ac.sfx, t0, w, [{ t: t0 - 0.01, sfx: "impact", db: 0 }, { t: t0, sfx: "thud", db: -2 }]);
+      if (ac.do === "verdict") sound(ac.sfx, t0, w, [{ t: t0 - 0.02, sfx: "impact", db: 0 }, { t: t0, sfx: "boom", db: -4 }]);
+      if (ac.do === "exhibit") sound(ac.sfx, t0, w, [{ t: t0 - 0.08, sfx: "whoosh", db: -7 }, { t: t0, sfx: "ding", db: -9 }]);
+      if (ac.do === "caseCard") sound(ac.sfx, t0, w, [{ t: t0 - 0.1, sfx: "whoosh", db: -6 }, { t: t0 + 0.05, sfx: "thud", db: -8 }]);
+      if (ac.do === "counter") {
+        const dv = s.devices.find((x) => x.act === ac);
+        sound(ac.sfx, t0, w, [{ t: t0, sfx: "ding", db: -10 }, ...(ac.value === undefined ? [{ t: dv?.plan ? dv.plan.end : t0 + (ac.dur ?? 1.2), sfx: "ding", db: -7 }] : []), ...(ac.zeroAt !== undefined ? [{ t: at(ac.zeroAt), sfx: "whoosh", db: -5 }] : [])]);
+      }
     }
-    for (const p of s.props) if (p.a === s.a && p.spec.motion === "flyIn") cues.push({ t: p.hit - 0.35, sfx: "whoosh", db: -8 });
-    for (const p of s.props) if (p.a === s.a && p.spec.motion === "dropIn") cues.push({ t: p.hit - 0.02, sfx: "impact", db: -2 }, { t: p.hit, sfx: "thud", db: -3 });
-    for (const p of s.props) if (p.a === s.a && p.spec.motion === "popIn") cues.push({ t: p.hit - 0.1, sfx: "whoosh", db: -8 });
-    for (const f of s.fx) if (f.fx === "papers") cues.push({ t: f.at, sfx: "whoosh", db: -4 });
-    for (const x of s.spec.sfx ?? []) cues.push({ t: at(x.at), sfx: x.sfx, db: x.db });
+    for (const p of s.props) {
+      if (p.a !== s.a) continue;
+      const w = `${s.id} prop "${p.key}"`, mo = p.spec.motion;
+      const tEv = p.spec.open !== undefined ? at(p.spec.open) : p.spec.alert !== undefined ? at(p.spec.alert) : p.hit;
+      const autos: Cue[] = mo === "flyIn" ? [{ t: p.hit - 0.35, sfx: "whoosh", db: -8 }] : mo === "dropIn" ? [{ t: p.hit - 0.02, sfx: "impact", db: -2 }, { t: p.hit, sfx: "thud", db: -3 }] : mo === "popIn" ? [{ t: p.hit - 0.1, sfx: "whoosh", db: -8 }] : mo === "slideIn" ? [{ t: p.hit - 0.3, sfx: "slide", db: -6 }] : [];
+      sound(p.spec.sfx, mo && p.spec.open === undefined && p.spec.alert === undefined ? p.hit : tEv, w, autos);
+    }
+    if (auto) for (const f of s.fx) if (f.fx === "papers") cue({ t: f.at, sfx: "whoosh", db: -4 }, s.id);
+    for (const x of s.spec.sfx ?? []) named(x, `${s.id} sfx`);
   }
+  for (const x of recipe.sfx ?? []) named(x, `"sfx"`);
   if (LS) cues.push(...chapterCues(chapters));
-  cues.push({ t: end - 0.35, sfx: "whoosh", db: -2 });
-  const audio = { music: recipe.music ?? "suspense", cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
+  if (auto) cue({ t: end - 0.35, sfx: "whoosh", db: -2 }, "end");
+  const mutes: [number, number][] = (recipe.silence ?? []).map((m) => { const m0 = at(m.at), m1 = at(m.until); if (m1 <= m0) throw new Error(`recipe "silence": ${m0.toFixed(2)} s is not before ${m1.toFixed(2)} s`); return [m0, m1]; });
+  const audio = { music: recipe.music ?? "suspense", musicDb: recipe.musicDb ?? -12, mutes, cues: cues.filter((q) => q.t >= 0 && q.t < end).sort((x, y) => x.t - y.t) };
 
   return { recipe, slug: recipe.slug, layout: L, duration, shots, words, at, hookUntil, hookAgain, shotAt, camAt, figsAt, devicesAt, qa, textsAt, audio, landscape: LS, chapters, faceBands, fits, counters, counterAt, cardRectsAt, occludersAt, speakingAt };
 };

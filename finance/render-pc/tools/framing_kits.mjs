@@ -93,7 +93,7 @@ export const techScene = (C, m, recipe, LSq = false) => {
 // ------------------------------------------------------------------ law3d
 // hair above the head centre (cast.tsx Hair): short .175, side .2, long .18, bun .245, curly .235, bald 0 (head top .14)
 const LAW_HAIR = { short: 0.175, side: 0.2, long: 0.18, bun: 0.245, curly: 0.235, bald: 0.14 };
-const LAW_ROLE_HAIR = { judge: "short", plaintiff: "short", defendant: "short", lawyer: "side", witness: "short", bailiff: "short", juror: "short" };
+const LAW_ROLE_HAIR = { judge: "short", plaintiff: "short", defendant: "short", lawyer: "side", witness: "short", bailiff: "short", juror: "short", trooper: "short" };
 // 3D text: [cap height (m, scale 1), flat?, text colour, fill] (TEXT3D in law_build.mjs + objects.tsx textures)
 const LAW_TEXT3D = { sign: [0.1, false, "#B8322A", "#F7F1E2"], newspaper: [0.046, false, "#1A1410", "#EDE6D6"], nameplate: [0.032, false, "#2a1c08", "#E8B44A"], box: [0.035, false, "#1A1410", "#F3EAD7"], paper: [0.026, true, "#1A1410", "#F3EAD7"], folder: [0.032, true, "#1A1410", "#F3EAD7"] };
 export const lawScene = (C, m, recipe, LSq = false) => {
@@ -112,7 +112,9 @@ export const lawScene = (C, m, recipe, LSq = false) => {
     const actors = C.figsAt(t).filter((st) => st.spec.role !== "juror").map((st) => {
       const bx = m.figBoxes(st), hd = bx.find((b) => b.name.endsWith(".head"));
       const style = st.spec.hairStyle ?? LAW_ROLE_HAIR[st.spec.role] ?? "short";
-      const top = (LAW_HAIR[style] ?? 0.2) * st.s, bot = 0.15 * st.s, half = (style === "curly" ? 0.175 : 0.16) * st.s;
+      // a campaign hat (the trooper's default) adds a crown (0.35 m above the head centre) and a wide brim
+      const hat = (st.spec.hat ?? (st.spec.role === "trooper" ? "campaign" : "none")) === "campaign";
+      const top = (hat ? 0.35 : LAW_HAIR[style] ?? 0.2) * st.s, bot = 0.15 * st.s, half = (hat ? 0.265 : style === "curly" ? 0.175 : 0.16) * st.s;
       return { id: st.id, named: true, extra: "hair", yaw: st.yaw, head: { c: [hd.c[0], hd.c[1] + (top - bot) / 2, hd.c[2]], h: [half, (top + bot) / 2, half] }, face: { c: hd.c, h: hd.h }, parts: bx.filter((b) => !b.name.endsWith(".head")).map((b) => ({ c: b.c, h: b.h })) };
     });
     const cards = C.devicesAt(t).map((d) => {

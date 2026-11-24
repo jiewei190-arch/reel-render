@@ -8,6 +8,7 @@ export { layoutOf, LAYOUTS } from "../src/law/layout";
 export { KIT_IDS, KIT_BOX, isLawHero, heroBox } from "../src/law/objects";
 export { LAW_HERO_KINDS } from "../src/law/hero";
 export { LAW_SET_IDS } from "../src/law/sets";
+export { LAW_SFX } from "../src/law/sound";
 
 // ------------------------------------------------------------------ clip adapter (tools/clip_short_kit.mjs)
 // A law3d Short cut out of a (long-form) law3d recipe: every `At` field of the shot schema is re-timed, places stay
@@ -33,6 +34,8 @@ const retimeShot = (s: LawShot, remap: Remap) => {
   for (const p of s.props ?? []) {
     if (p.hit !== undefined) p.hit = remap(p.hit);
     if (p.hits) p.hits = p.hits.map((h) => remap(h) as At);
+    if (p.open !== undefined) p.open = remap(p.open);
+    if (p.alert !== undefined) p.alert = remap(p.alert);
   }
   if (s.actions) {
     s.actions = s.actions.map((ac) => {

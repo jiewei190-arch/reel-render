@@ -15,8 +15,8 @@ import type { V3 } from "../blocky/motion";
 import { docTex, fitText, HERO_FONT, wrap } from "../library/hero";
 import { LP } from "./palette";
 
-export type LawHeroKind = "statue" | "hand" | "trousers" | "coffee" | "house" | "car" | "phone" | "contract" | "cash" | "bigGavel" | "evidenceBag" | "frame" | "trophy" | "toy" | "food";
-export const LAW_HERO_KINDS: LawHeroKind[] = ["statue", "hand", "trousers", "coffee", "house", "car", "phone", "contract", "cash", "bigGavel", "evidenceBag", "frame", "trophy", "toy", "food"];
+export type LawHeroKind = "statue" | "hand" | "trousers" | "coffee" | "house" | "car" | "phone" | "contract" | "cash" | "bigGavel" | "evidenceBag" | "frame" | "trophy" | "toy" | "food" | "cooler" | "foil" | "dog" | "truck";
+export const LAW_HERO_KINDS: LawHeroKind[] = ["statue", "hand", "trousers", "coffee", "house", "car", "phone", "contract", "cash", "bigGavel", "evidenceBag", "frame", "trophy", "toy", "food", "cooler", "foil", "dog", "truck"];
 export type StatueSpecies = "rooster" | "dog" | "cat" | "horse" | "eagle";
 export const STATUE_SPECIES: StatueSpecies[] = ["rooster", "dog", "cat", "horse", "eagle"];
 export const HERO_VARIANTS: Partial<Record<LawHeroKind, string[]>> = { toy: ["doll", "ball"], food: ["burger", "fries"] };
@@ -39,6 +39,10 @@ export const LAW_HERO_DEFAULT: Record<LawHeroKind, { color: string; label: strin
   trophy: { color: LP.gold, label: "WINNER", what: "a gold cup trophy on a wood base, the label on its plate" },
   toy: { color: "#C8463A", label: "", what: "a toy (`variant`: doll = a rag doll, ball = a striped ball); label = a price tag" },
   food: { color: "#B8322A", label: "", what: "a takeaway meal (`variant`: burger = a burger on its open box, fries = a fries carton); label on the box" },
+  cooler: { color: "#B8322A", label: "", what: "a picnic cooler: a hinged white lid that swings open on `open`, foil-wrapped bundles inside that glint (`count`, default 7)" },
+  foil: { color: "#C9CED6", label: "", what: "one foil-wrapped bundle; on `open` the foil peels back from a banded stack of bills" },
+  dog: { color: "#B07A45", label: "", what: "a living blocky dog: it sniffs (nose down, tail wagging, legs striding while it travels `to`), then ALERTS on `alert` (sits, nose up and pointing, tail stiff)" },
+  truck: { color: "#EDEFF2", label: "", what: "a refrigerated box truck: cab, white insulated box, a cooling unit over the cab, produce crates behind a roll-up door (`open`)" },
 };
 /** the QA box of each kind at scale 1 (local: base on y = 0, front facing +z): centre and half extents */
 export const LAW_HERO_BOX: Record<LawHeroKind, { c: V3; h: V3 }> = {
@@ -57,6 +61,10 @@ export const LAW_HERO_BOX: Record<LawHeroKind, { c: V3; h: V3 }> = {
   trophy: { c: [0, 0.45, 0], h: [0.3, 0.45, 0.2] },
   toy: { c: [0, 0.32, 0], h: [0.3, 0.32, 0.28] },
   food: { c: [0, 0.3, -0.02], h: [0.32, 0.3, 0.3] },
+  cooler: { c: [0, 0.27, 0], h: [0.42, 0.27, 0.27] },
+  foil: { c: [0, 0.07, 0], h: [0.26, 0.07, 0.15] },
+  dog: { c: [0.05, 0.3, 0], h: [0.48, 0.3, 0.14] },
+  truck: { c: [0, 0.5, 0], h: [1.05, 0.5, 0.36] },
 };
 /** the default label of a prop (the statue's says what it is) */
 export const heroDefaultLabel = (kind: LawHeroKind, species?: string) => (kind === "statue" ? `GOLD ${(species ?? "rooster").toUpperCase()}` : LAW_HERO_DEFAULT[kind].label);
@@ -265,8 +273,41 @@ const steamMat = (k: number) => { if (!steamM[k]) steamM[k] = new THREE.MeshBasi
 const lit = new Map<string, THREE.MeshBasicMaterial>();
 const litMat = (tex: THREE.Texture) => { let m = lit.get(tex.uuid); if (!m) { if (lit.size > 60) lit.clear(); m = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }); lit.set(tex.uuid, m); } return m; };
 
+const glows = new Map<number, THREE.MeshBasicMaterial>();
+/** the cool light spilling out of the open cooler (additive, unlit) */
+const glowMat = (k: number) => { let m = glows.get(k); if (!m) { m = new THREE.MeshBasicMaterial({ color: "#BFD4FF", transparent: true, opacity: 0.16 * k, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }); glows.set(k, m); } return m; };
+/** an unlit lamp face whose brightness steps (the light bar's flashes), cached per colour and level */
+const bars = new Map<string, THREE.MeshBasicMaterial>();
+const barMat = (c: string, k: number) => { const q = Math.round(k * 8) / 8, key = `${c}|${q}`; let m = bars.get(key); if (!m) { m = new THREE.MeshBasicMaterial({ color: new THREE.Color(c).multiplyScalar(0.25 + 1.6 * q), toneMapped: false }); bars.set(key, m); } return m; };
+/** crinkled kitchen foil: a bright, low-roughness metal with a hammered facet texture; `glint` 0..1 brightens it */
+const foilTexK = () => canvasTexture("lhFoil", 256, 256, (g, W, H) => {
+  g.fillStyle = "#BFC5CE"; g.fillRect(0, 0, W, H);
+  for (let k = 0; k < 260; k++) {
+    const x = hash(k + 1) * W, y = hash(k + 2) * H, r = 10 + 26 * hash(k + 3), v = hash(k + 4);
+    g.fillStyle = v > 0.66 ? "rgba(255,255,255,0.55)" : v > 0.33 ? "rgba(120,128,140,0.5)" : "rgba(70,78,92,0.4)";
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + r * (hash(k + 5) - 0.3), y + r * hash(k + 6)); g.lineTo(x - r * hash(k + 7), y + r * (hash(k + 8) - 0.2)); g.closePath(); g.fill();
+  }
+});
+const foils = new Map<number, THREE.MeshStandardMaterial>();
+const foilMat = (glint: number) => { const q = Math.round(Math.max(0, Math.min(1, glint)) * 10); let m = foils.get(q); if (!m) { m = new THREE.MeshStandardMaterial({ color: "#E4E8EE", roughness: 0.28, metalness: 0.55, flatShading: true, map: foilTexK(), emissive: new THREE.Color("#C8D4EA"), emissiveIntensity: 0.12 + 0.9 * (q / 10) }); foils.set(q, m); } return m; };
+/** one foil-wrapped bundle (0.46 x 0.12 x 0.26 at scale 1): a slightly irregular brick with twisted ends; a glint
+ *  travels over it (phase by seed), so a pile of them sparkles under a flashlight */
+const FoilBrick: React.FC<{ t: number; seed: number; p?: V3; r?: V3; s?: number }> = ({ t, seed, p = [0, 0, 0], r = [0, 0, 0], s = 1 }) => {
+  const gl = Math.pow(Math.max(0, Math.sin(t * 3.1 + seed * 2.3)), 10);
+  const m = foilMat(gl);
+  return (
+    <group position={p} rotation={r} scale={s}>
+      <mesh geometry={geoOf("lhFoilBrick", () => { const g = new THREE.BoxGeometry(0.44, 0.115, 0.25, 4, 2, 3); const a = g.attributes.position; for (let k = 0; k < a.count; k++) a.setXYZ(k, a.getX(k) + 0.012 * (hash(k * 3 + 1) - 0.5), a.getY(k) + 0.012 * (hash(k * 3 + 2) - 0.5), a.getZ(k) + 0.012 * (hash(k * 3 + 3) - 0.5)); g.computeVertexNormals(); return g; })} material={m} position={[0, 0.06, 0]} castShadow receiveShadow />
+      {[-1, 1].map((k) => <mesh key={k} geometry={geoOf("lhFoilEnd", () => new THREE.ConeGeometry(0.075, 0.07, 5))} material={m} position={[k * 0.245, 0.06, 0]} rotation={[0, 0, -k * Math.PI / 2]} />)}
+      {gl > 0.25 ? <mesh geometry={ICO()} material={barMat("#ffffff", gl)} position={[0.12 * Math.sin(seed * 5), 0.125, 0.06 * Math.cos(seed * 3)]} scale={[0.02 + 0.03 * gl, 0.004, 0.02 + 0.03 * gl]} /> : null}
+    </group>
+  );
+};
+
 // ------------------------------------------------------------------ the props
-export type LawHeroSpec = { kind: LawHeroKind; color?: string; label?: string; lines?: string[]; species?: string; variant?: string; hair?: boolean | number; bandage?: boolean; sale?: boolean; steam?: boolean; photo?: string };
+export type LawHeroSpec = { kind: LawHeroKind; color?: string; label?: string; lines?: string[]; species?: string; variant?: string; hair?: boolean | number; bandage?: boolean; sale?: boolean; steam?: boolean; photo?: string;
+  /** acting props: 0..1 progress of `open` / `alert`; the travel speed (m/s); car `lightbar`; cooler `count` */
+  act?: number; move?: number; lightbar?: boolean; count?: number };
 /** a hero prop in its local frame (base on y = 0, front toward +z); a pure function of (spec, t, seed) */
 export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = ({ sp, t, seed }) => {
   const kind = sp.kind;
@@ -426,6 +467,19 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
           {[1, -1].map((k) => <Bx key={`h${k}`} p={[0.15, 0.32, k * 0.322]} s={[0.07, 0.015, 0.006]} m={chrome} shadow={false} />)}
           {[1, -1].map((k) => <Bx key={`l${k}`} p={[0.705, 0.3, k * 0.22]} s={[0.02, 0.06, 0.12]} m={flat("#FFF4D0", 0.2, { emissive: "#FFE9A8", ei: 0.8 })} shadow={false} />)}
           {[1, -1].map((k) => <Bx key={`r${k}`} p={[-0.705, 0.3, k * 0.22]} s={[0.02, 0.06, 0.12]} m={flat("#B8322A", 0.3, { emissive: "#B8322A", ei: 0.5 })} shadow={false} />)}
+          {sp.lightbar ? (() => {
+            // a patrol light bar: red and blue halves flashing in turn, a real light of each colour (no markings)
+            const ph = (t * 2.6) % 1, red = ph < 0.5 ? (ph % 0.25 < 0.14 ? 1 : 0.15) : 0.05, blue = ph >= 0.5 ? ((ph - 0.5) % 0.25 < 0.14 ? 1 : 0.15) : 0.05;
+            return (
+              <group position={[-0.05, 0.635, 0]}>
+                <Bx p={[0, 0, 0]} s={[0.1, 0.02, 0.4]} m={flat("#14161c", 0.5)} shadow={false} />
+                <mesh geometry={BOX()} material={barMat("#ff2a22", red)} position={[0, 0.03, 0.105]} scale={[0.085, 0.045, 0.19]} />
+                <mesh geometry={BOX()} material={barMat("#2a5cff", blue)} position={[0, 0.03, -0.105]} scale={[0.085, 0.045, 0.19]} />
+                <pointLight color="#ff2a22" intensity={7 * red} distance={7} decay={1.4} position={[0, 0.12, 0.2]} />
+                <pointLight color="#2a5cff" intensity={9 * blue} distance={7} decay={1.4} position={[0, 0.12, -0.2]} />
+              </group>
+            );
+          })() : null}
           <Bx p={[0.7, 0.17, 0]} s={[0.04, 0.07, 0.62]} m={chrome} />
           <Bx p={[-0.7, 0.17, 0]} s={[0.04, 0.07, 0.62]} m={chrome} />
           {lab ? (
@@ -600,6 +654,172 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
             <mesh geometry={CYL(0.225, 0.225, 0.02, 10)} material={flat("#5DB548", 0.6)} position={[0, 0.125, 0]} />
             <Ell p={[0, 0.15, 0]} s={[0.21, 0.11, 0.21]} m={flat("#E1A257", 0.5)} />
           </group>
+        </group>
+      );
+    }
+    case "cooler": {
+      // a picnic cooler (0.84 x 0.54 x 0.54): a coloured tub, a white lid hinged along the back edge that swings up on
+      // `open` (act 0..1, with a bounce at the top), a carry handle, two latches. Inside: foil bundles in two layers
+      // and a cool light that spills out as the lid rises, so the foil glints even in a dark set
+      const a = Math.max(0, Math.min(1, sp.act ?? 0));
+      const swing = a <= 0 ? 0 : (1 - Math.pow(1 - a, 3)) * 1.9 + (a >= 1 ? 0.035 * Math.sin(t * 2.2 + seed) : 0.1 * Math.sin(a * Math.PI) * (1 - a));
+      const tub = flat(col, 0.45), lid = flat("#F1EEE6", 0.4), dark = flat(shade(col, -0.45), 0.6);
+      const n = Math.max(0, Math.min(9, sp.count ?? 7));
+      const slots: [number, number, number, number][] = [[-0.19, 0.2, -0.085, 0.06], [0.19, 0.2, -0.085, -0.05], [-0.19, 0.2, 0.09, -0.04], [0.19, 0.2, 0.09, 0.07], [-0.2, 0.315, -0.02, 0.5], [0.16, 0.32, 0.03, -0.35], [-0.02, 0.4, 0.0, 0.12], [0.2, 0.42, -0.04, 0.9], [-0.18, 0.43, 0.06, -0.7]];
+      return (
+        <group>
+          {/* the tub: four walls and a floor (open at the top, so the camera sees in) */}
+          <mesh geometry={rbox(0.84, 0.06, 0.54, 0.02)} material={tub} position={[0, 0.03, 0]} castShadow receiveShadow />
+          {[-1, 1].map((k) => <mesh key={`x${k}`} geometry={rbox(0.05, 0.42, 0.54, 0.02)} material={tub} position={[k * 0.395, 0.24, 0]} castShadow receiveShadow />)}
+          {[-1, 1].map((k) => <mesh key={`z${k}`} geometry={rbox(0.84, 0.42, 0.05, 0.02)} material={tub} position={[0, 0.24, k * 0.245]} castShadow receiveShadow />)}
+          <Bx p={[0, 0.07, 0]} s={[0.74, 0.02, 0.44]} m={flat("#E9EDF2", 0.5)} shadow={false} />
+          {[-1, 1].map((k) => <Bx key={`i${k}`} p={[0, 0.25, k * 0.214]} s={[0.74, 0.36, 0.012]} m={flat("#DCE2EA", 0.5)} shadow={false} />)}
+          {[-1, 1].map((k) => <Bx key={`j${k}`} p={[k * 0.364, 0.25, 0]} s={[0.012, 0.36, 0.44]} m={flat("#DCE2EA", 0.5)} shadow={false} />)}
+          {/* a white band round the rim, side handles */}
+          <mesh geometry={rbox(0.86, 0.045, 0.56, 0.015)} material={lid} position={[0, 0.425, 0]} />
+          <Bx p={[0, 0.43, 0]} s={[0.76, 0.05, 0.46]} m={flat("#0c1018", 0.9)} shadow={false} />
+          {[-1, 1].map((k) => <mesh key={`h${k}`} geometry={rbox(0.03, 0.05, 0.2, 0.012)} material={dark} position={[k * 0.432, 0.3, 0]} />)}
+          {/* the bundles + their glow (only once the lid is off the rim) */}
+          {slots.slice(0, n).map(([x, y, z, yw], k) => <FoilBrick key={k} t={t} seed={seed + k * 1.7} p={[x * 0.92, y - 0.12, z]} r={[0, yw, k > 3 ? 0.08 * Math.sin(k) : 0]} s={0.74} />)}
+          {a > 0.02 ? <pointLight color="#DCE8FF" intensity={2.6 * a * (1 + 0.08 * Math.sin(t * 7))} distance={2.2} decay={1.6} position={[0, 0.5, 0.05]} /> : null}
+          {a > 0.02 ? <mesh geometry={PLANE()} material={glowMat(Math.round(a * 8) / 8)} position={[0, 0.44, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[0.76, 0.46, 1]} /> : null}
+          {/* the lid: hinged on the back edge (z -0.27, y 0.45) */}
+          <group position={[0, 0.45, -0.27]} rotation={[-swing, 0, 0]}>
+            <mesh geometry={rbox(0.88, 0.09, 0.58, 0.03)} material={lid} position={[0, 0.045, 0.28]} castShadow receiveShadow />
+            <mesh geometry={rbox(0.7, 0.02, 0.4, 0.008)} material={flat("#DCE2EA", 0.5)} position={[0, 0.095, 0.28]} />
+            <Bx p={[0, 0.0, 0.28]} s={[0.76, 0.02, 0.46]} m={flat("#DCE2EA", 0.5)} shadow={false} />
+            {/* the carry handle folded on top */}
+            <mesh geometry={rbox(0.5, 0.03, 0.04, 0.012)} material={dark} position={[0, 0.115, 0.28]} />
+            {[-1, 1].map((k) => <mesh key={k} geometry={rbox(0.04, 0.03, 0.12, 0.01)} material={dark} position={[k * 0.25, 0.108, 0.25]} />)}
+            {[-1, 1].map((k) => <mesh key={`l${k}`} geometry={rbox(0.07, 0.07, 0.02, 0.008)} material={dark} position={[k * 0.22, 0.02, 0.575]} />)}
+          </group>
+        </group>
+      );
+    }
+    case "foil": {
+      // one bundle: on `open` the foil splits along the top and the two halves fold back off a banded stack of bills
+      const a = Math.max(0, Math.min(1, sp.act ?? 0));
+      const e = 1 - Math.pow(1 - a, 3);
+      const bill = canvasTexture("lhBill|#9DB88E", 256, 128, (g, W, H) => { const c = "#9DB88E"; g.fillStyle = c; g.fillRect(0, 0, W, H); g.strokeStyle = shade(c, -0.55); g.lineWidth = 6; g.strokeRect(8, 8, W - 16, H - 16); g.fillStyle = shade(c, -0.55); g.beginPath(); g.ellipse(W / 2, H / 2, 30, 38, 0, 0, Math.PI * 2); g.fill(); g.font = `bold 38px ${HERO_FONT}`; g.fillText("100", 16, 48); g.fillText("100", W - 92, H - 18); });
+      const gl = Math.pow(Math.max(0, Math.sin(t * 3.1 + seed)), 8);
+      const fm = foilMat(gl);
+      return (
+        <group>
+          {a <= 0.02 ? <FoilBrick t={t} seed={seed} s={1.15} /> : (
+            <>
+              {Array.from({ length: 4 }, (_, k) => <mesh key={k} geometry={rbox(0.4, 0.026, 0.2, 0.005)} material={plastic("#ffffff", { rough: 0.85, map: bill })} position={[0.003 * Math.sin(k * 3), 0.02 + k * 0.027, 0]} castShadow receiveShadow />)}
+              <mesh geometry={rbox(0.07, 0.115, 0.206, 0.004)} material={goldM()} position={[0, 0.064, 0]} />
+              <Bx p={[0, 0.004, 0]} s={[0.5, 0.008, 0.3]} m={fm} shadow={false} />
+              {[-1, 1].map((k) => (
+                <group key={k} position={[0, 0.01, k * 0.13]} rotation={[k * (Math.PI / 2 - 0.05) * (1 - e) + k * -0.5 * e, 0, 0]}>
+                  <mesh geometry={geoOf("lhFoilFlap", () => { const g = new THREE.BoxGeometry(0.5, 0.008, 0.16, 5, 1, 3); const p = g.attributes.position; for (let i2 = 0; i2 < p.count; i2++) p.setY(i2, p.getY(i2) + 0.012 * (hash(i2 * 5 + 2) - 0.5)); g.translate(0, 0, 0.08); g.computeVertexNormals(); return g; })} material={fm} scale={[1, 1, k]} castShadow />
+                </group>
+              ))}
+              {[-1, 1].map((k) => <Bx key={`e${k}`} p={[k * (0.25 + 0.05 * e), 0.03 * (1 - e) + 0.008, 0]} s={[0.012, 0.11 * (1 - e) + 0.01, 0.26]} m={fm} shadow={false} />)}
+            </>
+          )}
+        </group>
+      );
+    }
+    case "dog": {
+      // a living dog, 0.95 m long, facing +x. Sniffing: the body level, the head low and bobbing, the nose working,
+      // the tail wagging; the legs stride while it travels (`move`, m/s). ALERT (act 0..1): the haunches drop, the
+      // chest lifts, the head comes up and locks forward, the ears prick, the tail goes stiff and straight
+      const a = Math.max(0, Math.min(1, sp.act ?? 0));
+      const e = a * a * (3 - 2 * a);
+      const fur = flat(col, 0.85), dark = flat(shade(col, -0.55), 0.85), pale = flat(shade(col, 0.35), 0.85), nose = flat("#14110f", 0.4);
+      const mv = Math.max(0, Math.min(1, (sp.move ?? 0) / 0.5));
+      const gait = Math.sin(t * 11) * 0.5 * mv * (1 - e);
+      const sniff = (1 - e) * (0.03 * Math.sin(t * 13) + 0.02 * Math.sin(t * 5.3));
+      const pitch = 0.42 * e;                      // the body tilts back onto the haunches
+      const headPitch = (1 - e) * (0.75 + sniff * 2) + e * -0.25 + (a >= 1 ? 0.02 * Math.sin(t * 2.4) : 0);
+      const wag = (1 - e) * 0.7 * Math.sin(t * 14) + e * 0.02 * Math.sin(t * 30);
+      const hipY = 0.36 - 0.17 * e, bob = 0.012 * mv * Math.abs(Math.sin(t * 11));
+      return (
+        <group position={[0, bob, 0]}>
+          {/* hind legs: under the hips when standing; folded forward when sitting */}
+          {[-1, 1].map((k) => (
+            <group key={`hl${k}`} position={[-0.27, hipY, k * 0.085]} rotation={[0, 0, -k * gait + e * 1.15]}>
+              <Limb a={[0, 0, 0]} b={[0.02, -0.17, 0]} r={0.05} m={fur} />
+              <Limb a={[0.02, -0.17, 0]} b={[-0.02 + 0.1 * e, -0.33 + 0.02 * e, 0]} r={0.035} m={fur} />
+              <Bx p={[0.02 + 0.1 * e, -0.345 + 0.02 * e, 0]} s={[0.1, 0.035, 0.06]} m={dark} />
+            </group>
+          ))}
+          <group position={[-0.27, hipY, 0]} rotation={[0, 0, pitch]}>
+            {/* the body, from the hips forward */}
+            <mesh geometry={rbox(0.62, 0.21, 0.2, 0.06)} material={fur} position={[0.27, 0.02, 0]} castShadow receiveShadow />
+            <mesh geometry={rbox(0.34, 0.1, 0.205, 0.04)} material={dark} position={[0.25, 0.1, 0]} />
+            <mesh geometry={rbox(0.24, 0.2, 0.21, 0.06)} material={pale} position={[0.5, -0.03, 0]} />
+            {/* a plain working harness: a navy band with a small gold tab (no markings) */}
+            <mesh geometry={rbox(0.09, 0.235, 0.225, 0.03)} material={flat(LP.navy, 0.6)} position={[0.4, 0.02, 0]} />
+            <Bx p={[0.4, 0.14, 0]} s={[0.05, 0.012, 0.07]} m={goldM()} shadow={false} />
+            {/* front legs: they stay planted (straight down in the world) as the chest lifts */}
+            {[-1, 1].map((k) => (
+              <group key={`fl${k}`} position={[0.52, -0.06, k * 0.08]} rotation={[0, 0, k * gait - pitch]}>
+                <Limb a={[0, 0, 0]} b={[0, -0.27 - 0.1 * e, 0]} r={0.036} m={fur} />
+                <Bx p={[0.025, -0.285 - 0.1 * e, 0]} s={[0.09, 0.035, 0.06]} m={dark} />
+              </group>
+            ))}
+            {/* the tail */}
+            <group position={[-0.02, 0.09, 0]} rotation={[0, wag, 0.9 - 0.5 * e - pitch * 0.4]}>
+              <Limb a={[0, 0, 0]} b={[-0.26, 0, 0]} r={0.03} m={dark} />
+            </group>
+            {/* neck + head (undo the body tilt so the alert head looks level, nose pointing) */}
+            <group position={[0.58, 0.1, 0]} rotation={[0, 0, -pitch]}>
+              <Limb a={[0, 0, 0]} b={[0.07 + 0.05 * (1 - e), 0.12 * e + 0.02, 0]} r={0.07} m={fur} />
+              <group position={[0.1 + 0.05 * (1 - e), 0.16 * e + 0.03, 0]} rotation={[0, 0, -headPitch]}>
+                <mesh geometry={rbox(0.2, 0.17, 0.18, 0.05)} material={fur} position={[0.06, 0.03, 0]} castShadow />
+                <mesh geometry={rbox(0.15, 0.09, 0.11, 0.03)} material={pale} position={[0.2, 0.0, 0]} castShadow />
+                <mesh geometry={ICO()} material={nose} position={[0.28, 0.02 + sniff * 0.3, 0]} scale={[0.028, 0.026, 0.035]} />
+                {[-1, 1].map((k) => <mesh key={`ey${k}`} geometry={ICO()} material={nose} position={[0.14, 0.075, k * 0.065]} scale={0.018} />)}
+                {[-1, 1].map((k) => <mesh key={`er${k}`} geometry={CONE(0.045, 0.12, 4)} material={dark} position={[0.0, 0.14, k * 0.07]} rotation={[k * (0.5 * (1 - e) + 0.08), 0, 0.35 * (1 - e)]} />)}
+                <Bx p={[0.2, -0.05, 0]} s={[0.12, 0.014, 0.09]} m={dark} shadow={false} />
+              </group>
+            </group>
+          </group>
+        </group>
+      );
+    }
+    case "truck": {
+      // a refrigerated box truck facing +x (2.1 m long at scale 1): cab, an insulated white box, the cooling unit on the
+      // box's front above the cab, a roll-up back door (`open`) with produce crates inside. No name on the box.
+      const a = Math.max(0, Math.min(1, sp.act ?? 0));
+      const box = flat(col, 0.5), cab = flat("#3B6E4A", 0.4), chrome = plastic("#C9CDD4", { rough: 0.25 }), tyre = flat("#14161c", 0.9), glass = flat("#1B2A44", 0.15);
+      const crate = (c: string) => flat(c, 0.8);
+      const fruit = ["#D9412E", "#E8A33A", "#6FA83A", "#E6D24A", "#C8463A", "#7BB24A"];
+      return (
+        <group>
+          <mesh geometry={rbox(1.36, 0.66, 0.68, 0.03)} material={box} position={[-0.34, 0.6, 0]} castShadow receiveShadow />
+          {[-1, 1].map((k) => <Bx key={`st${k}`} p={[-0.34, 0.33, k * 0.342]} s={[1.34, 0.04, 0.004]} m={flat(shade(col, -0.25), 0.5)} shadow={false} />)}
+          {[-0.75, -0.34, 0.07].map((x) => [-1, 1].map((k) => <Bx key={`rb${x}${k}`} p={[x, 0.6, k * 0.342]} s={[0.012, 0.62, 0.004]} m={flat(shade(col, -0.12), 0.5)} shadow={false} />))}
+          {/* the cooling unit */}
+          <mesh geometry={rbox(0.16, 0.2, 0.46, 0.02)} material={flat("#D5DAE0", 0.4)} position={[0.42, 0.82, 0]} castShadow />
+          {[-0.12, 0, 0.12].map((z) => <Bx key={z} p={[0.502, 0.82, z]} s={[0.004, 0.14, 0.08]} m={flat("#3a4250", 0.5)} shadow={false} />)}
+          {/* cab */}
+          <mesh geometry={rbox(0.46, 0.4, 0.64, 0.05)} material={cab} position={[0.6, 0.42, 0]} castShadow receiveShadow />
+          <mesh geometry={rbox(0.3, 0.22, 0.6, 0.03)} material={cab} position={[0.56, 0.68, 0]} castShadow />
+          <Bx p={[0.715, 0.68, 0]} s={[0.006, 0.17, 0.52]} m={glass} shadow={false} />
+          {[-1, 1].map((k) => <Bx key={`cw${k}`} p={[0.57, 0.68, k * 0.302]} s={[0.2, 0.16, 0.006]} m={glass} shadow={false} />)}
+          <Bx p={[0.835, 0.3, 0]} s={[0.02, 0.07, 0.66]} m={chrome} />
+          {[-1, 1].map((k) => <Bx key={`hl${k}`} p={[0.835, 0.42, k * 0.22]} s={[0.012, 0.07, 0.12]} m={flat("#FFF4D0", 0.2, { emissive: "#FFE9A8", ei: 0.8 })} shadow={false} />)}
+          {/* chassis + wheels */}
+          <Bx p={[-0.1, 0.24, 0]} s={[1.8, 0.06, 0.4]} m={flat("#1c1f26", 0.7)} />
+          {[[0.6, 0.31], [0.6, -0.31], [-0.62, 0.31], [-0.62, -0.31], [-0.34, 0.31], [-0.34, -0.31]].map(([x, z], k) => (
+            <group key={`w${k}`} position={[x, 0.15, z]} rotation={[Math.PI / 2, 0, 0]}>
+              <mesh geometry={CYL(0.15, 0.15, 0.12, 10)} material={tyre} castShadow />
+              <mesh geometry={CYL(0.07, 0.07, 0.124, 8)} material={chrome} />
+            </group>
+          ))}
+          {/* the back: a dark opening with crates of produce, and the roll-up door sliding up */}
+          <Bx p={[-1.021, 0.6, 0]} s={[0.004, 0.6, 0.62]} m={flat("#0c1018", 0.9)} shadow={false} />
+          {a > 0.05 ? [[-0.2, 0.34], [0.02, 0.34], [0.22, 0.34], [-0.1, 0.5], [0.13, 0.5]].map(([z, y], k) => (
+            <group key={`cr${k}`} position={[-1.0, y, z]}>
+              <mesh geometry={rbox(0.14, 0.14, 0.2, 0.01)} material={crate(k % 2 ? "#9A6A3A" : "#B07E46")} castShadow />
+              {[-0.05, 0.05].map((dz, q) => <mesh key={q} geometry={ICO()} material={flat(fruit[(k * 2 + q) % fruit.length], 0.6)} position={[-0.02, 0.08, dz]} scale={0.042} />)}
+            </group>
+          )) : null}
+          <Bx p={[-1.026, 0.6 + 0.6 * (1 - Math.pow(1 - a, 2)) * 0.92, 0]} s={[0.012, 0.6 * (1 - 0.92 * (1 - Math.pow(1 - a, 2))) , 0.62]} m={flat("#D5DAE0", 0.5)} shadow={false} />
+          {[-1, 1].map((k) => <Bx key={`tl${k}`} p={[-1.03, 0.36, k * 0.26]} s={[0.012, 0.05, 0.08]} m={flat("#B8322A", 0.3, { emissive: "#B8322A", ei: 0.5 })} shadow={false} />)}
         </group>
       );
     }

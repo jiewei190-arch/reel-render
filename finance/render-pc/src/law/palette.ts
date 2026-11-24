@@ -74,4 +74,6 @@ export const LAW_MOODS: Record<string, MoodPreset> = {
   casefile: moody({ fog: "#120e0c", density: 0.02, key: 3.2, keyDir: [-0.45, 0.85, 0.3], hemi: ["#3a4470", "#1a1410", 0.35], exposure: 1.02 }),
   headlines: moody({ fog: "#0e1422", density: 0.02, key: 3.0, keyDir: [0.35, 0.7, 0.75], hemi: ["#3a4a80", "#181420", 0.38], exposure: 1.02 }),
   steps: moody({ fog: "#14223e", density: 0.014, keyDir: [-0.5, 0.55, 0.65], hemi: ["#3a5498", "#141020", 0.4], key: 1.2, rim: 2.6, exposure: 1.0 }),
+  // a highway shoulder at night: almost no key (the patrol car's head lights and its red / blue bar do the lighting)
+  roadside: moody({ fog: "#0a1322", density: 0.012, keyDir: [0.7, 0.45, 0.5], hemi: ["#3a55a0", "#0e0f18", 0.5], key: 0.8, rim: 2.4, exposure: 1.06, vig: 0.46 }),
 };
