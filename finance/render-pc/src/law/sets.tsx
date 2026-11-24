@@ -347,7 +347,8 @@ const steps: LawSet = {
 // ------------------------------------------------------------------ roadside (a highway shoulder at night)
 // The road runs along x. The lens normally stands on the road (+z) and looks across the shoulder: the stopped car
 // (a recipe prop at `car`, yaw 180: traffic here drives toward -x), the guard rail behind it, dark fields, poles and
-// stars. The patrol car is parked behind the stopped car (+x) with its head lights on the scene; its light bar throws
+// stars. Light count is kept low and constant (2 point + 2 spot lights): a CPU render pays for every light on every
+// pixel, and a light that appears mid-shot recompiles the shaders. The patrol car is parked behind the stopped car (+x) with its head lights on the scene; its light bar throws
 // red and blue across everything (two real lights that flash in turn + two beams that sweep round like beacons).
 const ROAD_Z0 = 1.6, RAIL_Z = -2.4, CAR_S = 2.6, PATROL_X = 6.2;
 const asphaltTex = () => canvasTexture("lsAsphalt", 256, 256, (g, W, H) => {
@@ -423,7 +424,7 @@ const roadside: LawSet = {
           </group>
         ); })}
         {/* far away: a tree line, a farm with one yard light, a grain bin */}
-        {Array.from({ length: 22 }, (_, k) => <mesh key={`t${k}`} geometry={geoOf("lsTree", () => new THREE.IcosahedronGeometry(1, 0))} material={bmat("#0a120f")} position={[wrapX(k * 9 - 99 + 4 * hash(k) + sl * 0.3, 198), 1.6 + hash(k + 5), -44 - 6 * hash(k + 2)]} scale={[4 + 3 * hash(k + 7), 2.4 + 2 * hash(k + 9), 2]} />)}
+        {Array.from({ length: 46 }, (_, k) => <mesh key={`t${k}`} geometry={geoOf("lsTreeC", () => new THREE.ConeGeometry(1, 1, 5))} material={bmat(k % 3 ? "#070d0c" : "#0a1210")} position={[wrapX(k * 4.6 - 106 + 3 * hash(k) + sl * 0.3, 212), 1.0 + 1.2 * hash(k + 5), -62 - 8 * hash(k + 2)]} scale={[2.2 + 2.2 * hash(k + 7), 3 + 4 * hash(k + 9), 1]} />)}
         <group position={[wrapX(-17 + sl * 0.4, 160), 0, -30]}>
           <Blk a={[-2.4, 0, -1.5]} b={[2.4, 2.4, 1.5]} m={bmat("#0d1016")} cast={false} />
           <mesh geometry={geoOf("lsBarnRoof", () => { const g = new THREE.CylinderGeometry(0.01, 2.9, 1.6, 4); g.rotateY(Math.PI / 4); return g; })} material={bmat("#0d1016")} position={[0, 3.2, 0]} scale={[1.1, 1, 0.7]} />
@@ -437,17 +438,16 @@ const roadside: LawSet = {
             <Blk a={[-1.9, 0.25, -0.8]} b={[1.9, 1.3, 0.8]} m={bmat("#0b0e15")} cast={false} />
             {[-0.5, 0.5].map((z) => <mesh key={z} geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#fff2cf")} position={[1.92, 0.7, z]} scale={0.5} />)}
             {[-0.5, 0.5].map((z) => <mesh key={`r${z}`} geometry={geoOf("lsGlobe", () => new THREE.SphereGeometry(0.24, 12, 8))} material={bmat("#ff3a2a")} position={[-1.92, 0.75, z]} scale={0.35} />)}
-            <pointLight color="#ffe9b8" intensity={5} distance={9} decay={1.6} position={[3.2, 0.8, 0]} />
           </group>
         ); })}
         {/* the patrol car (the kit's generic sedan, dark, a light bar, no markings) and its lights */}
         {patrol ? (
           <>
-            <group position={[PATROL_X, 0, 0]} rotation={[0, Math.PI, 0]} scale={CAR_S}><KitMesh sp={{ kit: "car", color: "#1b2334", label: "", lightbar: true }} t={t} strike={0} /></group>
+            <group position={[PATROL_X, 0, 0]} rotation={[0, Math.PI, 0]} scale={CAR_S}><KitMesh sp={{ kit: "car", color: "#1b2334", label: "", lightbar: "lamps" }} t={t} strike={0} /></group>
             <pointLight color="#ff2a22" intensity={46 * red} distance={26} decay={1.25} position={[bar[0], bar[1] + 0.25, 0.5]} />
             <pointLight color="#2a5cff" intensity={60 * blue} distance={26} decay={1.25} position={[bar[0], bar[1] + 0.25, -0.5]} />
-            <SpotBeam from={bar} to={[bar[0] + 9 * Math.cos(sw), 0.5, 9 * Math.sin(sw)]} t={t} color="#ff3a30" intensity={30} angle={0.2} cone={0.07} dust={10} seed={21} />
-            <SpotBeam from={bar} to={[bar[0] - 9 * Math.cos(sw), 0.5, -9 * Math.sin(sw)]} t={t} color="#3a6cff" intensity={36} angle={0.2} cone={0.08} dust={10} seed={22} />
+            <SpotBeam from={bar} to={[bar[0] + 9 * Math.cos(sw), 0.5, 9 * Math.sin(sw)]} t={t} color="#ff3a30" intensity={0} angle={0.2} cone={0.07} dust={10} seed={21} light={false} />
+            <SpotBeam from={bar} to={[bar[0] - 9 * Math.cos(sw), 0.5, -9 * Math.sin(sw)]} t={t} color="#3a6cff" intensity={0} angle={0.2} cone={0.08} dust={10} seed={22} light={false} />
             {/* head lights: two warm beams along the shoulder onto the stopped car and whoever stands behind it */}
             {[-0.57, 0.57].map((z, k) => <SpotBeam key={z} from={[PATROL_X - 0.74 * CAR_S - 0.02, 0.8, z]} to={[-0.4, 0.55, z * 0.8]} t={t} color="#fff0cc" intensity={k ? 44 : 40} angle={0.2} cone={0.085} dust={36} seed={23 + k} />)}
           </>

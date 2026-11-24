@@ -19,7 +19,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
 ## 1. Workflow
 
 1. **Pick a real case and verify it first.** Use court records (opinions, dockets) or major news (AP, Reuters, NYT, WaPo, ABA Journal, NPR). Every number, date and quote in the script goes in `sources.md` with a link. Paraphrase a quote unless you have the exact words, and say so in `sources.md`.
-2. **Write `script.txt`.** Put one spoken line on each line. A Short runs 30-55 s, which is about 85-150 words at 2.8 words/s.
+2. **Write `script.txt`.** Put one spoken line on each line. A Short runs 20-55 s (the owner wants 20-40 s): 60-100 words at a natural 2.2-2.5 words/s.
    - Line 1 is the hook, and it names the stake ("A judge sued his dry cleaner for $54 million over one pair of pants.").
    - The structure is the claim, then the twist, then the verdict.
    - The last line leads back into line 1, so the Short loops ("All because, one day," → "A judge sued...").
@@ -43,7 +43,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
    - Preview: `npx remotion render src/index.law.ts <Pascal>Recipe out.mp4 --gl=swangle --scale=0.5`.
    - Final: `npx remotion render src/index.law.ts <Pascal>Recipe out.mp4 --gl=angle` on the PC. This is the plain 30 fps composition, with no sub-frames.
 9. **Audio:** `STORY_CUES=out/tmp/<slug>.cues.json python tools/story_mix.py <Pascal>Recipe voice.wav <audio_dir> premix.wav`, then `tools/mux_voice.sh`.
-   - Cues use only library names: `impact`, `thud`, `boom`, `whoosh`, `ding`. The default music name is `suspense`, so add that track to the library or set `"music"`.
+   - Every cue names a library sound (54 of them) or one of the recipe's own effects: section 6a "Sound design". The default music name is `suspense`; the mixer falls back to the nearest bed (`tense`) when the library lacks it.
 
 ## 2. Palette, light and layout
 
@@ -57,7 +57,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
 | `cream` | `#FFF4DE` | all text on dark cards and the captions |
 | `spot` | `#FFD9A0` | the warm spotlight colour |
 
-**Light.** There is one mood per set: `courtroom`, `evidence`, `casefile`, `headlines` and `steps` (`LAW_MOODS`).
+**Light.** There is one mood per set: `courtroom`, `evidence`, `casefile`, `headlines`, `steps` and `roadside` (`LAW_MOODS`).
 - A low navy hemisphere and a warm key from high in front.
 - A cool blue rim from behind, almost no fill, and a heavy navy vignette.
 - Every set adds real spotlights through `SpotBeam` (src/law/beam.tsx). Each beam is a three.js spotlight plus a visible additive cone, with dust motes drifting and twinkling inside it.
@@ -77,7 +77,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
 - `"short"` (the default) and `"long"` use **portrait 1080x1920**.
 - `"landscape"` uses **1920x1080**: long-form, see section 12 "Long-form (landscape)".
 
-The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
+The gate's length check is 20-55 s for `"short"` and 5-8 min otherwise.
 
 ## 3. Cast (src/law/cast.tsx)
 
@@ -89,9 +89,9 @@ The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
 "mom": { "role": "defendant", "apron": "#2b4f7a", "hairStyle": "bun", "build": "slim", "height": 0.93 }
 ```
 
-**Roles:** `judge` (a black robe with a white collar), `plaintiff`, `defendant`, `lawyer`, `witness`, `bailiff` and `juror` (a dark silhouette with no face). Role defaults set the outfit colours, and every colour can be overridden.
+**Roles:** `judge` (a black robe with a white collar), `plaintiff`, `defendant`, `lawyer`, `witness`, `bailiff`, `trooper` (a generic highway-patrol uniform: khaki shirt, dark trousers and tie, a duty belt, a flat-brimmed campaign hat and a plain gold shield: a shape only, no insignia, no lettering) and `juror` (a dark silhouette with no face). Role defaults set the outfit colours, and every colour can be overridden.
 
-**Options:** `skin`, `suit`, `pants`, `shirt`, `tie`, `hair`, `hairStyle` (`short`, `side`, `bald`, `long`, `bun`, `curly`, `none`), `glasses`, `beard`, `apron`, `build` (`slim`, `avg`, `broad`), `height` (a multiplier) and `plate` (the text of a nameplate that has `"of": "<id>"`).
+**Options:** `skin`, `suit`, `pants`, `shirt`, `tie` (a colour, or `"none"` for an open collar: a driver in a jacket, not a lawyer), `hat` (`campaign` / `none`; the trooper's default is `campaign`), `badge` (the plain shield on anyone), `hair`, `hairStyle` (`short`, `side`, `bald`, `long`, `bun`, `curly`, `none`), `glasses`, `beard`, `apron`, `build` (`slim`, `avg`, `broad`), `height` (a multiplier) and `plate` (the text of a nameplate that has `"of": "<id>"`).
 
 **Generic by rule.** Never model a real person's likeness. Real names appear only in the narration and on the case card.
 
@@ -110,6 +110,7 @@ The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
 | `cross` | arms crossed | stern |
 | `cry` | both hands in front of the face (IK), sobbing | crying |
 | `smug` | leans back, chin up, head tilted, arms crossed | smug |
+| `search` | a lit flashlight in the right hand (barrel, lens, a visible beam and its light), the arm sweeping slowly side to side, the head following the beam | stern |
 
 **Pose changes** blend with anticipation and overshoot over 0.34 s. Each change starts 2 frames before its word.
 
@@ -136,9 +137,11 @@ Every set keeps moving: dust in the beams, flickering practicals, breathing silh
 | `casefile` | a big wooden desk with a green blotter, folders, photos, a steaming mug, a pen and a brass desk lamp | `desk` (the desk top), `left`, `right`, `back`, `front`, `lamp`, `high`, `centre` |
 | `headlines` | a cork wall of newspaper pages (a fictional masthead, generic headlines) with pins and red string; the middle is left free for the recipe's pages | `wall` (the wall surface at eye height), `left`, `right`, `high`, `low`, `floor`, `centre` |
 | `steps` | outside the courthouse at night: wide stone steps, six columns, a plain pediment with a gold line, glowing doors, lamp posts, stars and ground fog | `bottom`, `steps` (mid-flight), `top`, `door`, `left`, `right`, `plaza`, `high`, `centre` |
+| `roadside` | a highway shoulder at night: the road with a white edge line and a dashed lane line, a gravel shoulder, a guard rail with reflectors, a mile marker, dark fields, utility poles, a far tree line and a farm light, stars and a low moon, traffic head lights in the far lane, ground mist. A dark patrol car (no markings) is parked behind the stopped car: its head lights fall on the scene and its light bar throws red and blue across everything (two lights that flash in turn, two beams that sweep round) | `car` (the stopped car's spot: put a `car` prop here at `scale` 2.6, `yaw` 180), `trunk` / `hood` / `roof` (the tops of that car), `behind` (the ground behind its trunk), `driver`, `trooper`, `dog`, `side`, `door` (beside the car, road side), `shoulder`, `road`, `lane`, `farLane`, `patrol` (the patrol car's centre; its hood is `hood:7,0,0`), `rail`, `field`, `high`, `centre` |
 
 - **Offsets.** An anchor takes an offset, for example `"dTable:-0.55,0.02,0.1"`.
 - **Jury.** `"jury": false` on a courtroom shot empties the jury box. Use it for a bench trial: Pearson v. Chung had no jury.
+- **Roadside shot options.** `"patrol": false` hides the patrol car and all its lights (a shot before the stop, or a quiet beat lit by the moon). `"drive": 24` (m/s) slides the lane stripes, rail posts, poles and the far tree line past: put the car prop in place and the road moves under a travelling shot. Traffic drives toward -x, so the shoulder (the right-hand side) is on the far side from the default lens (which stands on the road, +z).
 - **Set blockers.** The bench, the witness rail, both tables, the jury rail and the gallery rail are QA boxes, and no figure may enter them. A figure stands behind a table at `plaintiff`/`defendant` (z 1.15) and sits at the bench at `bench`.
 
 ## 5. Props (src/law/objects.tsx)
@@ -242,6 +245,28 @@ Before / after on the reference Short: [before](docs/hero_props/frame0/law-demo-
 plaintiff's face, a small pair of trousers) → [after](docs/hero_props/frame0/law-demo-54-million-pants_after.jpg) (the
 trousers on a hanger close-up, EXHIBIT A).
 
+## 5b. Acting props (src/law/hero.tsx): things that DO something on a word
+
+"Every line is shown": when the story says a lid lifts, a lid lifts. These hero kinds act on a voice word:
+
+| kit | what it is | acting fields |
+|---|---|---|
+| `cooler` | a picnic cooler (`color` = the tub, a white lid, handle, latches). Inside: foil-wrapped bundles in two layers that glint, and a cool light that spills out while the lid rises | `open`: the word the lid swings up on (`openDur` s, default 0.45; `"open": 0` = already open when the shot starts); `count`: how many bundles are inside (default 7, 0 = empty) |
+| `foil` | one foil-wrapped bundle (a crinkled silver brick with twisted ends, a travelling glint) | `open`: the foil splits and folds back off a banded stack of bills |
+| `dog` | a living blocky dog in a plain harness (`color` = the coat). It sniffs: nose down and working, tail wagging | `to`: it travels there over the shot and its legs stride; `alert`: on that word it sits, the chest lifts, the head comes up and locks forward, the ears prick, the tail goes stiff |
+| `truck` | a refrigerated box truck: cab, a white insulated box, a cooling unit above the cab, no name on the box | `open`: the back door rolls up on crates of produce |
+| `car` + `"lightbar": true` | the sedan with a patrol light bar (red and blue halves that flash in turn, a real light of each colour) | - |
+
+New motions for any prop: `slideIn` (slides in flat along the surface from `fromOff`, default 1.2 m to the left, and stops on `hit`) and `driveIn` (a vehicle pulls in from `fromOff`, default 9 m behind it, brakes with a nose dip and stops on `hit`). `to` moves any prop from `at` to another place over the shot.
+
+```json
+{ "id": "cooler", "kit": "cooler", "at": "trunk", "scale": 0.8, "open": "lid" },
+{ "id": "dog", "kit": "dog", "at": "side:1,0,2.2", "to": "side:1,0,0.1", "yaw": 90, "alert": "alerts.", "sfx": { "sfx": "bark", "at": "alerts.+0.12" } },
+{ "id": "car", "kit": "car", "at": "car", "scale": 2.6, "yaw": 180, "label": "", "motion": "driveIn", "fromOff": [10, 0, 0], "hit": "stopped" }
+```
+
+`open` on a prop that is not a cooler / foil / truck, `alert` on anything but a dog, `lightbar` on anything but a car: compile errors that name the kinds that take the field.
+
 ## 6. Story devices and actions (anchored to voice words)
 
 ```jsonc
@@ -264,6 +289,35 @@ trousers on a hanger close-up, EXHIBIT A).
 | `counter` | a number board (gold title strip, cream number, gold $): it counts `from` → `to` over `dur`, or shows a fixed `value`. `zeroAt` drains it to $0 with a pop (the "he got nothing" beat). `compact` writes millions as `54M`. `pos` is `top`, `left`, `right` or `center`. |
 
 **Fx:** `shake`, `flash`, and `papers` (a burst of sheets flying out of `p`).
+
+## 6a. Sound design (src/law/sound.ts, tools/story_mix.py)
+
+The rule: **every visible action has its own sound**, so the Short can be followed with the eyes closed. A recipe names
+its sounds; nothing is left to generic whooshes.
+
+- **The library** (`LAW_SFX`, 54 names, `<audio_dir>/sfx/<name>.wav`): alarm beep bell boing boom buzz cash chime click
+  clock coins crash creak crowd ding door drop engine fail fire footsteps gasp glass gunshot heartbeat horn impact knock
+  laugh magic metal paper pop punch rain riser rumble scratch slide sparkle splash squeak stamp success suspense swoosh
+  thud thunder tick type water whoosh wind zap.
+- **The recipe's own effects**: `"sounds": { "foil": "sfx/foil.wav" }` maps a name to a file in the Short's folder (48 kHz
+  WAV, peak about -4 dBFS like the library). The build fails if the file is missing; the cue file carries its path.
+- **A cue** is `{ "at": <word or s>, "sfx": "<name>", "db": 0, "len": 1.2, "fade": 0.4, "fadeIn": 0.2, "rate": 0.8 }`:
+  `db` is a gain on the library level (the mixer adds -6), `len` trims the sound, `fade` / `fadeIn` shape its tail / head,
+  `rate` (0.5-2) plays it slower or faster (pitch and length together: an engine winding down at 0.85, a knock made
+  heavier at 0.6).
+- **Where cues go**: a shot's `"sfx": [ ... ]`; the recipe's `"sfx": [ ... ]` (cues that span shots); an action's or a
+  prop's own `"sfx"`: a name, a full cue (its `at` defaults to the action's time, a prop's to its `hit` / `open` /
+  `alert`), or `false` for silent. An own `sfx` always replaces the automatic cue of that action or prop.
+- **`"autoSfx": "off"`** drops every automatic cue (the punch-in whooshes, drop thuds, device dings, the end whoosh): the
+  recipe then names everything. The frame-0 punch (`sfx0`, default `impact`) stays, and the gate still wants it to be a
+  punch (`impact`, `thud`, `drop`, `crash`, `boom`, `punch`, `stamp`, `coins`, `scratch`, `paper`).
+- **Music**: `"music"`, `"musicDb"` (default -12; the bed always ducks under the voice by sidechain) and `"silence":
+  [{ "at": ..., "until": ... }]`: the bed drops out for a beat (80 ms down, 150 ms back up) while the voice and the cues go on.
+- **Checked at compile time**: an unknown sound name is a compile error that lists the library and the recipe's own
+  sounds; a `rate` outside 0.5-2 too.
+
+Check the mix by numbers before the final render: `out/tmp/<slug>.cues.json` lists every cue with its time; each one
+should sit on the frame its picture happens.
 
 **One device at a time per spot.** End a counter with `until` before the next one appears in the same `pos`. The gate FAILs cards that overlap each other or the hook.
 
@@ -460,10 +514,11 @@ With the opener met, "frame 0 is close", "who + what at frame 0" and framing R5 
 | `src/law/layout.ts` | **every screen-space number**, per format (portrait, landscape) |
 | `src/law/cast.tsx` | the figures: roles, outfits, poses, faces, QA boxes, limb QA (`figLimbs`), desk-aware hands, arm IK |
 | `src/law/objects.tsx` | the props (gavel, paper, folder, photo, pants, sign, money, newspaper, nameplate, box) + the hero dispatch |
-| `src/law/hero.tsx` | the 15 hero props (section 5a) |
+| `src/law/hero.tsx` | the 15 hero props (section 5a) and the acting props: cooler, foil, dog, truck (section 5b) |
 | `tools/frame0_hero.mjs` | the frame-0 opener rules F1-F3 (shared with biz3d / cyber3d) |
 | `src/law/beam.tsx` | spotlight + volumetric cone + dust |
-| `src/law/sets.tsx` | courtroom, evidence, casefile, headlines, steps |
+| `src/law/sets.tsx` | courtroom, evidence, casefile, headlines, steps, roadside |
+| `src/law/sound.ts` | the sound library names, the cue type, the name check |
 | `src/law/types.ts` | the recipe schema |
 | `src/law/compile.ts` | the compiler: lenses, figure tracks, props, gavel strikes, device layout, audio cues |
 | `src/law/hud.tsx` | hook, captions, case card, exhibit tags, verdict stamp, counters |

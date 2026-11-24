@@ -289,7 +289,7 @@ const foilTexK = () => canvasTexture("lhFoil", 256, 256, (g, W, H) => {
   }
 });
 const foils = new Map<number, THREE.MeshStandardMaterial>();
-const foilMat = (glint: number) => { const q = Math.round(Math.max(0, Math.min(1, glint)) * 10); let m = foils.get(q); if (!m) { m = new THREE.MeshStandardMaterial({ color: "#E4E8EE", roughness: 0.28, metalness: 0.55, flatShading: true, map: foilTexK(), emissive: new THREE.Color("#C8D4EA"), emissiveIntensity: 0.12 + 0.9 * (q / 10) }); foils.set(q, m); } return m; };
+const foilMat = (glint: number) => { const q = Math.round(Math.max(0, Math.min(1, glint)) * 10); let m = foils.get(q); if (!m) { m = new THREE.MeshStandardMaterial({ color: "#EEF1F6", roughness: 0.38, metalness: 0.12, flatShading: true, map: foilTexK(), emissive: new THREE.Color("#AEBBD6"), emissiveMap: foilTexK(), emissiveIntensity: 0.55 + 0.9 * (q / 10) }); foils.set(q, m); } return m; };
 /** one foil-wrapped bundle (0.46 x 0.12 x 0.26 at scale 1): a slightly irregular brick with twisted ends; a glint
  *  travels over it (phase by seed), so a pile of them sparkles under a flashlight */
 const FoilBrick: React.FC<{ t: number; seed: number; p?: V3; r?: V3; s?: number }> = ({ t, seed, p = [0, 0, 0], r = [0, 0, 0], s = 1 }) => {
@@ -307,7 +307,7 @@ const FoilBrick: React.FC<{ t: number; seed: number; p?: V3; r?: V3; s?: number 
 // ------------------------------------------------------------------ the props
 export type LawHeroSpec = { kind: LawHeroKind; color?: string; label?: string; lines?: string[]; species?: string; variant?: string; hair?: boolean | number; bandage?: boolean; sale?: boolean; steam?: boolean; photo?: string;
   /** acting props: 0..1 progress of `open` / `alert`; the travel speed (m/s); car `lightbar`; cooler `count` */
-  act?: number; move?: number; lightbar?: boolean; count?: number };
+  act?: number; move?: number; lightbar?: boolean | "lamps"; count?: number };
 /** a hero prop in its local frame (base on y = 0, front toward +z); a pure function of (spec, t, seed) */
 export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = ({ sp, t, seed }) => {
   const kind = sp.kind;
@@ -475,8 +475,9 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
                 <Bx p={[0, 0, 0]} s={[0.1, 0.02, 0.4]} m={flat("#14161c", 0.5)} shadow={false} />
                 <mesh geometry={BOX()} material={barMat("#ff2a22", red)} position={[0, 0.03, 0.105]} scale={[0.085, 0.045, 0.19]} />
                 <mesh geometry={BOX()} material={barMat("#2a5cff", blue)} position={[0, 0.03, -0.105]} scale={[0.085, 0.045, 0.19]} />
-                <pointLight color="#ff2a22" intensity={7 * red} distance={7} decay={1.4} position={[0, 0.12, 0.2]} />
-                <pointLight color="#2a5cff" intensity={9 * blue} distance={7} decay={1.4} position={[0, 0.12, -0.2]} />
+                {/* "lamps": the flashing lamp faces only (a set that lights the scene itself, e.g. roadside) */}
+                {sp.lightbar === true ? <pointLight color="#ff2a22" intensity={7 * red} distance={7} decay={1.4} position={[0, 0.12, 0.2]} /> : null}
+                {sp.lightbar === true ? <pointLight color="#2a5cff" intensity={9 * blue} distance={7} decay={1.4} position={[0, 0.12, -0.2]} /> : null}
               </group>
             );
           })() : null}
@@ -672,17 +673,17 @@ export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = (
           <mesh geometry={rbox(0.84, 0.06, 0.54, 0.02)} material={tub} position={[0, 0.03, 0]} castShadow receiveShadow />
           {[-1, 1].map((k) => <mesh key={`x${k}`} geometry={rbox(0.05, 0.42, 0.54, 0.02)} material={tub} position={[k * 0.395, 0.24, 0]} castShadow receiveShadow />)}
           {[-1, 1].map((k) => <mesh key={`z${k}`} geometry={rbox(0.84, 0.42, 0.05, 0.02)} material={tub} position={[0, 0.24, k * 0.245]} castShadow receiveShadow />)}
-          <Bx p={[0, 0.07, 0]} s={[0.74, 0.02, 0.44]} m={flat("#E9EDF2", 0.5)} shadow={false} />
-          {[-1, 1].map((k) => <Bx key={`i${k}`} p={[0, 0.25, k * 0.214]} s={[0.74, 0.36, 0.012]} m={flat("#DCE2EA", 0.5)} shadow={false} />)}
-          {[-1, 1].map((k) => <Bx key={`j${k}`} p={[k * 0.364, 0.25, 0]} s={[0.012, 0.36, 0.44]} m={flat("#DCE2EA", 0.5)} shadow={false} />)}
+          <Bx p={[0, 0.07, 0]} s={[0.74, 0.02, 0.44]} m={flat("#5E6878", 0.7)} shadow={false} />
+          {[-1, 1].map((k) => <Bx key={`i${k}`} p={[0, 0.25, k * 0.214]} s={[0.74, 0.36, 0.012]} m={flat("#7C8798", 0.7)} shadow={false} />)}
+          {[-1, 1].map((k) => <Bx key={`j${k}`} p={[k * 0.364, 0.25, 0]} s={[0.012, 0.36, 0.44]} m={flat("#7C8798", 0.7)} shadow={false} />)}
           {/* a white band round the rim, side handles */}
-          <mesh geometry={rbox(0.86, 0.045, 0.56, 0.015)} material={lid} position={[0, 0.425, 0]} />
-          <Bx p={[0, 0.43, 0]} s={[0.76, 0.05, 0.46]} m={flat("#0c1018", 0.9)} shadow={false} />
+          {[-1, 1].map((k) => <mesh key={`rx${k}`} geometry={rbox(0.065, 0.045, 0.56, 0.015)} material={lid} position={[k * 0.398, 0.425, 0]} />)}
+          {[-1, 1].map((k) => <mesh key={`rz${k}`} geometry={rbox(0.86, 0.045, 0.065, 0.015)} material={lid} position={[0, 0.425, k * 0.248]} />)}
           {[-1, 1].map((k) => <mesh key={`h${k}`} geometry={rbox(0.03, 0.05, 0.2, 0.012)} material={dark} position={[k * 0.432, 0.3, 0]} />)}
           {/* the bundles + their glow (only once the lid is off the rim) */}
           {slots.slice(0, n).map(([x, y, z, yw], k) => <FoilBrick key={k} t={t} seed={seed + k * 1.7} p={[x * 0.92, y - 0.12, z]} r={[0, yw, k > 3 ? 0.08 * Math.sin(k) : 0]} s={0.74} />)}
-          {a > 0.02 ? <pointLight color="#DCE8FF" intensity={2.6 * a * (1 + 0.08 * Math.sin(t * 7))} distance={2.2} decay={1.6} position={[0, 0.5, 0.05]} /> : null}
-          {a > 0.02 ? <mesh geometry={PLANE()} material={glowMat(Math.round(a * 8) / 8)} position={[0, 0.44, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[0.76, 0.46, 1]} /> : null}
+          <pointLight color="#DCE8FF" intensity={0.55 * a * (1 + 0.08 * Math.sin(t * 7))} distance={1.6} decay={1.8} position={[0, 0.62, 0.1]} />
+          {a > 0.02 && a < 1 ? <mesh geometry={PLANE()} material={glowMat(Math.round(Math.sin(a * Math.PI) * 8) / 8)} position={[0, 0.44, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={[0.76, 0.46, 1]} /> : null}
           {/* the lid: hinged on the back edge (z -0.27, y 0.45) */}
           <group position={[0, 0.45, -0.27]} rotation={[-swing, 0, 0]}>
             <mesh geometry={rbox(0.88, 0.09, 0.58, 0.03)} material={lid} position={[0, 0.045, 0.28]} castShadow receiveShadow />
