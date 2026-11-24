@@ -1,0 +1,20 @@
+# SKILLS_LOG: court-of-weird-gta-lawsuits (Court Of Weird, long video 2)
+
+Skill packs: `.claude/skills/youtube-*` and `.claude/skills/yt-*`. Voice profile: `docs/voice_court_of_weird.md`
+(branch `claude/skills-shorts-queue`), copied to `~/.claude/youtube/voice.md` for this session (Nov 24, 2026).
+Tools named below were run; scores are theirs.
+
+| Skill | Used? | What it concretely changed |
+|---|---|---|
+| yt-script (`hookscore.py`) | used | Six cold-open candidates: 34-40, all WEAK (the tool rewards second-person address). Top two: "What does a court do with the teenager who leaked Grand Theft Auto Six from a hotel television?" (40, The Question) and "A teenager leaked Grand Theft Auto Six using a hotel television, a streaming stick and a phone." (36). The draft's first line (34) did not name the game until line 3; it was rewritten so "Grand Theft Auto Six" is in line 1, and the question became the planted open question (line 4, repeated before the answer in case 1). Case first lines scored 34-36; none was changed, since the lowest two ("Number eight", "Number one") are the ones that deliberately hold their detail back. |
+| youtube-script | used | Setup, tension, payoff per segment; every case ends on the next case's setup. The minute map set the order: Hot Coffee at 2:41, the tonal turn to the Alabama case near 3:53, the role reversal ("Rockstar did the suing") at 7:02, the money fight at 8:56, the cold open's answer from 9:57. No banned words, no greeting. |
+| yt-package (`title.py`) | used | Ten pairs scored. The owner's working title scored 80 (no number, mobile cut) and "The Most Ridiculous Lawsuits in GTA History" 66. The pick, "10 Real GTA Lawsuits and How They Ended" with "HOTEL TV HACK", scores 100 and fits the 40-character mobile cut. |
+| youtube-packaging (+ VISUAL-CHECKS.md) | used | Five ranked pairs with prompts. The truth gate failed three of the owner's wordings: "Every" (ten of many), "Everyone Who Sued" (two cases are Rockstar's own suits), "Most Ridiculous" (mocks bereaved families and a hospitalised teenager). Thumbnails are object-led, with a written rule: no face, name or silhouette of the leak defendant. |
+| youtube-virality-gate | used | 1 Title trigger PASS. 2 Thumbnail adds PASS (the hotel TV is not in the title). 3 First 5 seconds PASS (hotel room and "leak Grand Theft Auto Six" in line 1). 4 Promise kept PASS with a condition: three of ten endings are spoken as "could not confirm"; that is why the title says "how they ended" and not "who won". 5 Retention shape PASS (an outcome every 47-87 s). 6 Only you PASS (two opinions read in full, the 2,700-claims figure from the opinion, honest gaps). 7 Format proven PASS for the compilation format (docs/FORMAT_RESEARCH_2026-11-23.md); NOT measured for the GTA topic. 8 Creator wants it: the owner's call. Verdict: 7/7 scored gates, SHIP after the owner's gate 8. Batch check: second video on one template in a week; the human addition is the primary-source read and the named gaps. |
+| youtube-description | used | Surface: search-leaning (GTA 6 is a live query), so "GTA" sits at character 8 of the title and the full name in description line 1. The mandatory objection line is the "What we could not confirm" paragraph. One comment question, no subscribe request. By owner rule: no tags, hashtags or offer link; the channel's fixed disclaimers, plus a "not affiliated" line. |
+| yt-seo | used | Three target queries (PACKAGING.md); the first two description lines carry their words. No tags (owner rule). |
+| yt-chapters (`chapters.py`) | used | Synthetic SRT from the script: 11 chapters, valid. Auto titles discarded and rewritten; case boundaries from `script.json`; times are estimates until the voice exists. |
+| youtube-outliers, yt-viral | not run | No view data was pulled for GTA-lawsuit videos; demand for this topic is the owner's judgement and is not claimed as measured. |
+| the rest (shorts, edit, retention, audit, comments, lane, plan, monetization, connect) | skipped | Need a recording, analytics, or are channel-level. |
+
+Ship it, or change it? (nothing here voices, renders or publishes)
