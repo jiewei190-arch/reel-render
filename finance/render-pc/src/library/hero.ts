@@ -74,7 +74,9 @@ export const docTex = (key: string, headline: string, lines: readonly string[] |
 
 /** famous marks a label must not spell (a brand NAME on a product in the brand's colours reads as its trade dress).
  *  Plain generic words are the rule: COLA, NEW, CLASSIC, CEREAL, FILM, SALE. The company card may still name a company. */
-const MARKS = ["COCA", "COKE", "PEPSI", "NETFLIX", "BLOCKBUSTER", "KODAK", "FUJI", "APPLE", "IPHONE", "SAMSUNG", "NOKIA", "BLACKBERRY", "NIKE", "ADIDAS", "REEBOK", "MCDONALD", "BURGER KING", "WENDY", "STARBUCKS", "DUNKIN", "KELLOGG", "NESTLE", "AMAZON", "GOOGLE", "FACEBOOK", "MICROSOFT", "VISA", "MASTERCARD", "AMEX", "PAYPAL", "BITCOIN", "TWITTER", "TESLA", "SONY", "NINTENDO", "WALMART", "IKEA", "GUCCI", "PRADA", "LEGO", "DISNEY", "INSTAGRAM", "TIKTOK", "YOUTUBE", "UBER", "AIRBNB"];
+const MARKS = ["COCA", "COKE", "PEPSI", "NETFLIX", "BLOCKBUSTER", "KODAK", "FUJI", "APPLE", "IPHONE", "SAMSUNG", "NOKIA", "BLACKBERRY", "NIKE", "ADIDAS", "REEBOK", "MCDONALD", "BURGER KING", "WENDY", "STARBUCKS", "DUNKIN", "KELLOGG", "NESTLE", "AMAZON", "GOOGLE", "FACEBOOK", "MICROSOFT", "VISA", "MASTERCARD", "AMEX", "PAYPAL", "BITCOIN", "TWITTER", "TESLA", "SONY", "NINTENDO", "WALMART", "IKEA", "GUCCI", "PRADA", "LEGO", "DISNEY", "INSTAGRAM", "TIKTOK", "YOUTUBE", "UBER", "AIRBNB",
+  // the props pack subjects (src/props/pack.tsx): gadgets, vehicles, everyday objects
+  "ZUNE", "IPOD", "IPAD", "MACBOOK", "KINDLE", "JUICERO", "PLAYSTATION", "XBOX", "OCULUS", "FITBIT", "GOPRO", "ALEXA", "MOTOROLA", "CANON", "NIKON", "ROLEX", "CARTIER", "TIFFANY", "SAMSONITE", "CESSNA", "BOEING", "TOYOTA", "HONDA", "FORD", "DOMINO", "PIZZA HUT"];
 /** the label rule: <= 14 characters and <= 2 words, plain generic text, no famous brand name. null = ok, else the error */
 export const heroLabelError = (label: string | undefined, kind: string): string | null => {
   if (label === undefined) return null;
