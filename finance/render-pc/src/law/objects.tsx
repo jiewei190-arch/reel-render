@@ -128,7 +128,7 @@ const mt = (tex: THREE.Texture, rough = 0.85) => plastic("#ffffff", { rough, map
 export type KitSpec = { kit: LawKit; text?: string; color?: string; photo?: string; size?: V3; held?: boolean } & Partial<Omit<LawHeroSpec, "kind" | "color" | "photo">>;
 /** a kit prop in its local frame (origin on the surface it rests on, front toward +z) */
 export const KitMesh: React.FC<{ sp: KitSpec; t: number; strike: number; seed?: number }> = ({ sp, t, strike, seed = 0 }) => {
-  if (isLawHero(sp.kit)) return <LawHero sp={{ kind: sp.kit, color: sp.color, label: sp.label, lines: sp.lines, species: sp.species, variant: sp.variant, hair: sp.hair, bandage: sp.bandage, sale: sp.sale, steam: sp.steam, photo: sp.photo }} t={t} seed={seed} />;
+  if (isLawHero(sp.kit)) return <LawHero sp={{ kind: sp.kit, color: sp.color, label: sp.label, lines: sp.lines, species: sp.species, variant: sp.variant, hair: sp.hair, bandage: sp.bandage, sale: sp.sale, steam: sp.steam, photo: sp.photo, holding: sp.holding, spots: sp.spots, screen: sp.screen }} t={t} seed={seed} />;
   switch (sp.kit) {
     case "gavel": {
       // strike: 0 rest .. 1 raised (the compiler drives it: up before a hit, slams down on it)

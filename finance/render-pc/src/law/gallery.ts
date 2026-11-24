@@ -4,7 +4,8 @@
 import { FIG_FACES, FIG_POSES } from "./cast";
 import type { CastSpec, FigFace, FigPose } from "./cast";
 import type { LawKit } from "./objects";
-import { LAW_HERO_BOX, LAW_HERO_KINDS, STATUE_SPECIES } from "./hero";
+import { LAW_HERO_BOX, LAW_OWN_KINDS, LAW_PACK_KINDS, STATUE_SPECIES } from "./hero";
+import { PACK_GALLERY, packCam, packGalleryScale } from "../props/pack";
 import type { LawHeroKind } from "./hero";
 import type { LawProp, LawRecipe, LawShot } from "./types";
 
@@ -52,7 +53,7 @@ add("device-counter", 1.8, { set: "headlines", cam: { preset: "dolly", target: "
 // (every statue species, the hairy palm, the bandaged palm, the house for sale, the ball, the fries)
 type HeroG = { name: string; p: Partial<LawProp>; dist?: number; h?: number; az?: number };
 const HEROES: HeroG[] = [
-  ...LAW_HERO_KINDS.map((k): HeroG => ({ name: k, p: { kit: k, ...(k === "contract" ? { label: "Sale contract", lines: ["The seller agrees to sell", "one gold rooster statue", "for the sum of $12,000.", "Payment on delivery.", "No refunds."] } : {}), ...(k === "phone" ? { lines: ["Where is my statue?", "It was never yours.", "See you in court."] } : {}), ...(k === "evidenceBag" ? { label: "ITEM 7", lines: ["CASE NO. 05-118", "ONE GOLD ROOSTER", "SEALED 03/14"] } : {}), ...(k === "frame" ? { label: "THE BUYER", photo: "person" } : {}) }, dist: k === "car" ? 3.4 : k === "statue" ? 2.3 : k === "trousers" ? 2.4 : k === "bigGavel" || k === "cash" || k === "house" ? 2.0 : 1.8, h: k === "car" || k === "house" || k === "cash" || k === "bigGavel" || k === "food" ? 0.55 : 0.12, az: k === "car" ? 30 : 8 })),
+  ...LAW_OWN_KINDS.map((k): HeroG => ({ name: k, p: { kit: k, ...(k === "contract" ? { label: "Sale contract", lines: ["The seller agrees to sell", "one gold rooster statue", "for the sum of $12,000.", "Payment on delivery.", "No refunds."] } : {}), ...(k === "phone" ? { lines: ["Where is my statue?", "It was never yours.", "See you in court."] } : {}), ...(k === "evidenceBag" ? { label: "ITEM 7", lines: ["CASE NO. 05-118", "ONE GOLD ROOSTER", "SEALED 03/14"] } : {}), ...(k === "frame" ? { label: "THE BUYER", photo: "person" } : {}) }, dist: k === "car" ? 3.4 : k === "statue" ? 2.3 : k === "trousers" ? 2.4 : k === "bigGavel" || k === "cash" || k === "house" ? 2.0 : 1.8, h: k === "car" || k === "house" || k === "cash" || k === "bigGavel" || k === "food" ? 0.55 : 0.12, az: k === "car" ? 30 : 8 })),
   ...STATUE_SPECIES.filter((sp) => sp !== "rooster").map((sp): HeroG => ({ name: `statue-${sp}`, p: { kit: "statue", species: sp }, dist: 2.3, h: 0.2 })),
   { name: "hand-hair", p: { kit: "hand", hair: true, label: "GRAFT" } },
   { name: "hand-bandage", p: { kit: "hand", bandage: true } },
@@ -63,6 +64,12 @@ const HEROES: HeroG[] = [
 for (const g of HEROES) {
   const bx = LAW_HERO_BOX[g.p.kit as LawHeroKind];
   add(`hero-${g.name}`, 1.2, { set: "evidence", cam: { preset: "closeUp", target: "hp", dist: g.dist ?? 1.8, h: g.h ?? 0.12, az: g.az ?? 8, face: 0.5 }, props: [{ id: "hp", kit: g.p.kit as LawKit, at: "table", spin: 6, ...g.p, ...(bx.h[0] > 0.6 ? { scale: 0.9 } : {}) }] }, 0.6);
+}
+
+// the PROPS PACK (src/props/pack.tsx): every pack kind on the evidence table in the law3d look, then the kind params
+for (const g of PACK_GALLERY.filter((x) => (LAW_PACK_KINDS as string[]).includes(x.kind))) {
+  const sc = packGalleryScale(g.kind), c = packCam(g.kind, sc);
+  add(`pack-${g.name}`, 1.2, { set: "evidence", cam: { preset: "closeUp", target: "hp", dist: c.dist, h: c.h, az: c.az, face: 0.5 }, props: [{ id: "hp", kit: g.kind as LawKit, at: "table", spin: 6, scale: sc, ...g.p }] }, 0.6);
 }
 
 export const GALLERY_RECIPE: LawRecipe = { kit: "law3d", slug: "law-gallery", hook: { text: "LAW *GALLERY*", until: -1 }, cast, shots, duration: t, captions: "off" };

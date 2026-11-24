@@ -83,7 +83,7 @@ export type LawProp = {
   lines?: string[];
   /** statue: "rooster" | "dog" | "cat" | "horse" | "eagle" */
   species?: string;
-  /** toy: "doll" | "ball"; food: "burger" | "fries" */
+  /** toy: "doll" | "ball"; food: "burger" | "fries"; chicken: "hen" | "rooster"; shoe: "sneaker" | "heel" */
   variant?: string;
   /** hand: hair on the palm (true, or a density 0-1) */
   hair?: boolean | number;
@@ -93,6 +93,13 @@ export type LawProp = {
   sale?: boolean;
   /** coffee: steam rising (default true) */
   steam?: boolean;
+  // ---- PROPS PACK params (src/props/pack.tsx, KIT_LAW3D.md "Props pack")
+  /** monkey: "camera" (a selfie: the camera held up at arm's length, a grin) */
+  holding?: string;
+  /** cow: black patches (default true; false = a plain brown cow) */
+  spots?: boolean;
+  /** mp3Player, smartwatch, tablet, flipPhone, laptop, cashRegister: the big screen text (<= 18 characters); wristwatch: "HH:MM" */
+  screen?: string;
 };
 
 export type LawAction =

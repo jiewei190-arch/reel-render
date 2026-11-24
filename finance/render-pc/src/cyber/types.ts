@@ -60,7 +60,8 @@ export type CyberKit =
   | "block"
   /** expanding pulse rings */
   | "signal"
-  /** the HERO PROPS (src/cyber/hero.tsx): phone, laptop, envelope, card, usb, server, atm, padlock, coin, doc */
+  /** the HERO PROPS (src/cyber/hero.tsx): phone, laptop, envelope, card, usb, server, atm, padlock, coin, doc, + the
+   *  props pack (src/props/pack.tsx: animals, gadgets, vehicles, everyday objects) */
   | CyberHeroKind;
 export type CyberMotion = "turntable" | "bob" | "popIn" | "dropIn" | "path" | "slideOut";
 export type CyberProp = {
@@ -80,6 +81,15 @@ export type CyberProp = {
   label?: string;
   /** phone / laptop / atm / doc: the body lines (real text, up to 7) */
   lines?: string[];
+  // ---- PROPS PACK params (src/props/pack.tsx, KIT_CYBER3D.md "Props pack")
+  /** monkey: "camera" (a selfie) */
+  holding?: string;
+  /** cow: black patches (default true) */
+  spots?: boolean;
+  /** mp3Player, smartwatch, tablet, flipPhone, cashRegister: the big screen text; wristwatch: "HH:MM" */
+  screen?: string;
+  /** chicken: "hen" | "rooster"; shoe: "sneaker" | "heel" */
+  variant?: string;
   color?: string;
   size?: V3;
   motion?: CyberMotion;

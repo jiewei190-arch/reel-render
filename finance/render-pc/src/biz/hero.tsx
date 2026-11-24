@@ -11,11 +11,20 @@ import * as THREE from "three";
 import { canvasTexture, geoOf, rbox } from "../blocky/mat";
 import type { V3 } from "../blocky/motion";
 import { docTex, fitText, hmat, HERO_FONT } from "../library/hero";
+import { PACK_BOX, PACK_DEFAULT, PackHero, packKindsFor } from "../props/pack";
+import type { PackKind, PackParams, PackTheme } from "../props/pack";
+import { BP } from "./palette";
 
-export type BizHeroKind = "can" | "cup" | "box" | "bottle" | "phone" | "case" | "camera" | "shoe" | "burger" | "laptop" | "card" | "bag" | "letter";
-export const BIZ_HERO_KINDS: BizHeroKind[] = ["can", "cup", "box", "bottle", "phone", "case", "camera", "shoe", "burger", "laptop", "card", "bag", "letter"];
+export type BizOwnKind = "can" | "cup" | "box" | "bottle" | "phone" | "case" | "camera" | "shoe" | "burger" | "laptop" | "card" | "bag" | "letter";
+export const BIZ_OWN_KINDS: BizOwnKind[] = ["can", "cup", "box", "bottle", "phone", "case", "camera", "shoe", "burger", "laptop", "card", "bag", "letter"];
+/** + the PROPS PACK (src/props/pack.tsx) in the biz3d look; biz3d keeps its own laptop and shoe */
+export type BizHeroKind = BizOwnKind | PackKind;
+export const BIZ_PACK_KINDS: PackKind[] = packKindsFor(BIZ_OWN_KINDS);
+export const BIZ_HERO_KINDS: BizHeroKind[] = [...BIZ_OWN_KINDS, ...BIZ_PACK_KINDS];
+const isOwn = (k: string): k is BizOwnKind => (BIZ_OWN_KINDS as string[]).includes(k);
 /** default product colour and label per kind */
 export const BIZ_HERO_DEFAULT: Record<BizHeroKind, { color: string; label: string; what: string }> = {
+  ...PACK_DEFAULT,
   can: { color: "#D7262E", label: "COLA", what: "a soda can" },
   cup: { color: "#F4F1EA", label: "CLASSIC", what: "a paper cup with a lid and straw" },
   box: { color: "#F2B830", label: "CEREAL", what: "a cereal / product box" },
@@ -32,6 +41,7 @@ export const BIZ_HERO_DEFAULT: Record<BizHeroKind, { color: string; label: strin
 };
 /** the QA box of each kind at scale 1 (local: base on y = 0, front facing +z): centre and half extents */
 export const BIZ_HERO_BOX: Record<BizHeroKind, { c: V3; h: V3 }> = {
+  ...PACK_BOX,
   can: { c: [0, 0.31, 0], h: [0.2, 0.31, 0.2] },
   cup: { c: [0, 0.33, 0], h: [0.22, 0.33, 0.22] },
   box: { c: [0, 0.36, 0], h: [0.26, 0.36, 0.1] },
@@ -145,7 +155,16 @@ const screenTex = (kind: "phone" | "laptop", label: string) => canvasTexture(`bh
 });
 
 /** the props: a pure function of (kind, color, label, lines, t); base on y = 0, front toward +z */
-export const BizHero: React.FC<{ kind: BizHeroKind; color?: string; label?: string; lines?: string[]; t: number; seed: number }> = ({ kind, color, label, lines, t, seed }) => {
+/** the biz3d look for the props pack: smooth satin plastic and soft clear-coat metal, green screen accents */
+const bizGlow = new Map<string, THREE.MeshBasicMaterial>();
+export const BIZ_PACK_THEME: PackTheme = {
+  kit: "biz3d",
+  m: (c, o = {}) => hmat(c, { rough: o.rough ?? 0.4, metal: o.metal ?? 0, map: o.map, opacity: o.opacity, side: o.side, emissive: o.emissive, ei: o.ei }),
+  glow: (c, map, opacity = 1) => { const q = Math.round(opacity * 20) / 20, k = `${c}|${map?.uuid ?? ""}|${q}`; let m = bizGlow.get(k); if (!m) { if (bizGlow.size > 120) bizGlow.clear(); m = new THREE.MeshBasicMaterial({ color: c, map: map ?? null, toneMapped: false, transparent: q < 1, opacity: q }); bizGlow.set(k, m); } return m; },
+  smooth: true, seg: 28, accent: BP.green, alert: BP.red, gold: BP.gold, chrome: "#D5D9E0", paper: BP.paper, ink: BP.ink, screenBg: BP.night, screenInk: "#FFFFFF", neonEdges: false,
+};
+export const BizHero: React.FC<{ kind: BizHeroKind; color?: string; label?: string; lines?: string[]; t: number; seed: number } & PackParams> = ({ kind, color, label, lines, t, seed, holding, spots, screen, variant }) => {
+  if (!isOwn(kind)) return <PackHero sp={{ kind, color, label, lines, holding, spots, screen, variant }} th={BIZ_PACK_THEME} t={t} seed={seed} />;
   const D = BIZ_HERO_DEFAULT[kind];
   const col = color ?? D.color;
   const lab = (label ?? D.label).toUpperCase();

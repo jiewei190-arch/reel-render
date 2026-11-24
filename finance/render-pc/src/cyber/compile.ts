@@ -14,7 +14,9 @@ import { BOLT_R, boltBoxes, boltFace, boltState, HOVER } from "../tech/bolt";
 import type { BoltFace, BoltPose, BoltState, BoltTrack } from "../tech/bolt";
 import { cutBoxes, NO_CUT, objBox, partWorld } from "../tech/cutaway";
 import { heroLabelError } from "../library/hero";
-import { CYBER_HERO_BOX, CYBER_HERO_KINDS } from "./hero";
+import { CYBER_HERO_BOX, CYBER_HERO_KINDS, CYBER_PACK_KINDS } from "./hero";
+import { packParamError } from "../props/pack";
+import type { PackKind } from "../props/pack";
 import type { CyberHeroKind } from "./hero";
 import type { CutState, ObjDef, Placement } from "../tech/cutaway";
 import { figureBoxes, figureRig, figWorld } from "./figure";
@@ -229,6 +231,8 @@ export const compileCyber = (recipe: CyberRecipe, words: readonly Word[], voDura
       if (spec.kit && !KITS.includes(spec.kit)) throw new Error(`recipe ${id}: prop "${spec.id}": no kit "${spec.kit}" (has: ${KITS.join(", ")})`);
       const lerr = heroLabelError(spec.label, spec.kit ?? "prop");
       if (lerr) throw new Error(`recipe ${id}: prop "${spec.id}": ${lerr}`);
+      if (spec.kit && (CYBER_PACK_KINDS as string[]).includes(spec.kit)) { const pe = packParamError(spec.kit as PackKind, spec); if (pe) throw new Error(`recipe ${id}: prop "${spec.id}": ${pe}`); }
+      else if (spec.holding !== undefined || spec.spots !== undefined || spec.screen !== undefined || spec.variant !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "holding" / "spots" / "screen" / "variant" are props-pack params (src/props/pack.tsx); a ${spec.kit ?? spec.obj} takes none`);
       if (spec.lines && (spec.lines.length > 7 || spec.lines.some((l) => typeof l !== "string" || l.length > 40))) throw new Error(`recipe ${id}: prop "${spec.id}": "lines" takes up to 7 strings of <= 40 characters`);
       if (spec.kit === "route") {
         for (const c of [spec.from ?? "", ...(spec.to ?? [])]) if (!CITIES[c]) throw new Error(`recipe ${id}: route "${spec.id}": no city "${c}" (has: ${Object.keys(CITIES).join(", ")})`);

@@ -13,7 +13,7 @@ import { View } from "../engine/core/View";
 import { Bolt } from "../tech/bolt";
 import { CutawayObject } from "../tech/cutaway";
 import type { CyberCompiled, FxR, PropR } from "./compile";
-import { FPS } from "./compile";
+import { FPS, isCyberHero } from "./compile";
 import { Figure, figureRig } from "./figure";
 import { CyberHero } from "./hero";
 import { AlertWash, Boards, CyberCaptions, CyberHook, Devices, GlitchBars, LabelLayer, cyberChunks } from "./hud";
@@ -97,7 +97,10 @@ const KitView: React.FC<{ pr: PropR; c: CyberCompiled; t: number }> = ({ pr, c, 
       const z = sp.size ?? [0.5, 0.5, 0.5];
       return <mesh geometry={geoOf(`cfBlk${z.join(",")}`, () => new THREE.BoxGeometry(...z))} material={plastic(CP.steel, { flat: true, emissive: sp.color ?? CP.cyan, ei: 0.35 })} position={[pl.p[0], pl.p[1] + (z[1] * pl.s) / 2, pl.p[2]]} rotation={[0, pl.yaw, 0]} scale={pl.s} castShadow />;
     }
-    default: return null;
+    default:
+      // the PROPS PACK (src/props/pack.tsx) in the cyber3d look
+      if (sp.kit && isCyberHero(sp.kit)) return <group position={pl.p} rotation={[0, pl.yaw, 0]} scale={pl.s}><CyberHero kind={sp.kit} color={sp.color} label={sp.label} lines={sp.lines} holding={sp.holding} spots={sp.spots} screen={sp.screen} variant={sp.variant} t={t} seed={7 + pr.key.length * 13 + pr.key.charCodeAt(0)} /></group>;
+      return null;
   }
 };
 const Sparks: React.FC<{ f: FxR; t: number }> = ({ f, t }) => {

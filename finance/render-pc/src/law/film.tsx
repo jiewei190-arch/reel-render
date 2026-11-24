@@ -26,7 +26,7 @@ const PropView: React.FC<{ pr: PropR; t: number }> = ({ pr, t }) => {
   if (pr.show(t) <= 0) return null;
   return (
     <group position={pl.p} rotation={[pl.pitch, pl.yaw, pl.roll, "YXZ"]} scale={pl.s}>
-      <KitMesh sp={{ kit: pr.spec.kit, text: pr.text, color: pr.spec.color, photo: pr.spec.photo, held: pr.held, label: pr.spec.label, lines: pr.spec.lines, species: pr.spec.species, variant: pr.spec.variant, hair: pr.spec.hair, bandage: pr.spec.bandage, sale: pr.spec.sale, steam: pr.spec.steam }} t={t} strike={pr.strike(t)} seed={pr.seed} />
+      <KitMesh sp={{ kit: pr.spec.kit, text: pr.text, color: pr.spec.color, photo: pr.spec.photo, held: pr.held, label: pr.spec.label, lines: pr.spec.lines, species: pr.spec.species, variant: pr.spec.variant, hair: pr.spec.hair, bandage: pr.spec.bandage, sale: pr.spec.sale, steam: pr.spec.steam, holding: pr.spec.holding, spots: pr.spec.spots, screen: pr.spec.screen }} t={t} strike={pr.strike(t)} seed={pr.seed} />
     </group>
   );
 };

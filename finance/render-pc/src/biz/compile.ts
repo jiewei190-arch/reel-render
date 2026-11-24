@@ -23,7 +23,9 @@ import { layoutOf } from "./layout";
 import type { BizLayout, Rect } from "./layout";
 import { SUITS } from "./palette";
 import { heroLabelError } from "../library/hero";
-import { BIZ_HERO_KINDS } from "./hero";
+import { BIZ_HERO_KINDS, BIZ_PACK_KINDS } from "./hero";
+import { packParamError } from "../props/pack";
+import type { PackKind } from "../props/pack";
 import { propBox, propCentre } from "./props";
 import type { Placement, PropState } from "./props";
 import { BIZ_SETS, PAPER_N, STORE_N, storeX } from "./sets";
@@ -245,6 +247,8 @@ export const compileBiz = (recipe: BizRecipe, words: readonly Word[], voDuration
       if (!spec.kit || !KITS.includes(spec.kit)) throw new Error(`recipe ${id}: prop "${spec.id}" needs "kit": one of ${KITS.join(", ")}${spec.kit ? ` (got "${spec.kit}")` : ""}`);
       const lerr = heroLabelError(spec.label, spec.kit);
       if (lerr) throw new Error(`recipe ${id}: prop "${spec.id}": ${lerr}`);
+      if ((BIZ_PACK_KINDS as string[]).includes(spec.kit)) { const pe = packParamError(spec.kit as PackKind, spec); if (pe) throw new Error(`recipe ${id}: prop "${spec.id}": ${pe}`); }
+      else if (spec.holding !== undefined || spec.spots !== undefined || spec.screen !== undefined || spec.variant !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "holding" / "spots" / "screen" / "variant" are props-pack params (src/props/pack.tsx); a ${spec.kit} takes none`);
       if (spec.lines && (spec.lines.length > 7 || spec.lines.some((l) => typeof l !== "string" || l.length > 40))) throw new Error(`recipe ${id}: prop "${spec.id}": "lines" takes up to 7 strings of <= 40 characters`);
       const base = placeV(spec.at, set, id);
       const hit = at(spec.hit, a + 0.12);

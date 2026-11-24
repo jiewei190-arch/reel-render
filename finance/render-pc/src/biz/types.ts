@@ -71,6 +71,15 @@ export type BizProp = {
   label?: string;
   /** letter / envelope: the body lines (real text, up to 7; a generic letter when left out) */
   lines?: string[];
+  // ---- PROPS PACK params (src/props/pack.tsx, KIT_BIZ3D.md "Props pack")
+  /** monkey: "camera" (a selfie) */
+  holding?: string;
+  /** cow: black patches (default true) */
+  spots?: boolean;
+  /** mp3Player, smartwatch, tablet, flipPhone, cashRegister: the big screen text; wristwatch: "HH:MM" */
+  screen?: string;
+  /** chicken: "hen" | "rooster"; shoe is biz3d's own sneaker (no variant) */
+  variant?: string;
 };
 
 export type BizAction =

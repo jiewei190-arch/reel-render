@@ -141,7 +141,7 @@ export const KitProp: React.FC<{ sp: BizProp; pl: Placement; st: PropState; t: n
       break;
     }
     default:
-      if (isHero(sp.kit)) body = <BizHero kind={sp.kit} color={sp.color} label={sp.label} lines={sp.lines} t={t} seed={seed} />;
+      if (isHero(sp.kit)) body = <BizHero kind={sp.kit} color={sp.color} label={sp.label} lines={sp.lines} holding={sp.holding} spots={sp.spots} screen={sp.screen} variant={sp.variant} t={t} seed={seed} />;
   }
   return <group position={pl.p} rotation={[0, pl.yaw, 0]} scale={pl.s * Math.max(0.001, vis)}>{body}</group>;
 };

@@ -14,16 +14,24 @@ import { canvasTexture, geoOf, plastic, rbox } from "../blocky/mat";
 import type { V3 } from "../blocky/motion";
 import { docTex, fitText, HERO_FONT, wrap } from "../library/hero";
 import { LP } from "./palette";
+import { PACK_BOX, PACK_DEFAULT, PACK_VARIANTS, PackHero, packKindsFor } from "../props/pack";
+import type { PackKind, PackTheme } from "../props/pack";
 
-export type LawHeroKind = "statue" | "hand" | "trousers" | "coffee" | "house" | "car" | "phone" | "contract" | "cash" | "bigGavel" | "evidenceBag" | "frame" | "trophy" | "toy" | "food";
-export const LAW_HERO_KINDS: LawHeroKind[] = ["statue", "hand", "trousers", "coffee", "house", "car", "phone", "contract", "cash", "bigGavel", "evidenceBag", "frame", "trophy", "toy", "food"];
+export type LawOwnKind = "statue" | "hand" | "trousers" | "coffee" | "house" | "car" | "phone" | "contract" | "cash" | "bigGavel" | "evidenceBag" | "frame" | "trophy" | "toy" | "food";
+export const LAW_OWN_KINDS: LawOwnKind[] = ["statue", "hand", "trousers", "coffee", "house", "car", "phone", "contract", "cash", "bigGavel", "evidenceBag", "frame", "trophy", "toy", "food"];
+/** + the PROPS PACK (src/props/pack.tsx): animals, gadgets, vehicles, everyday objects, in the law3d look */
+export type LawHeroKind = LawOwnKind | PackKind;
+export const LAW_PACK_KINDS: PackKind[] = packKindsFor(LAW_OWN_KINDS);
+export const LAW_HERO_KINDS: LawHeroKind[] = [...LAW_OWN_KINDS, ...LAW_PACK_KINDS];
+const isOwn = (k: string): k is LawOwnKind => (LAW_OWN_KINDS as string[]).includes(k);
 export type StatueSpecies = "rooster" | "dog" | "cat" | "horse" | "eagle";
 export const STATUE_SPECIES: StatueSpecies[] = ["rooster", "dog", "cat", "horse", "eagle"];
-export const HERO_VARIANTS: Partial<Record<LawHeroKind, string[]>> = { toy: ["doll", "ball"], food: ["burger", "fries"] };
+export const HERO_VARIANTS: Partial<Record<LawHeroKind, string[]>> = { ...PACK_VARIANTS, toy: ["doll", "ball"], food: ["burger", "fries"] };
 export const HERO_PHOTOS = ["person", "house", "pants", "landscape", "dog", "car"];
 
 /** default colour and label per kind (label "" = no text; the statue's default label is "GOLD <SPECIES>") */
 export const LAW_HERO_DEFAULT: Record<LawHeroKind, { color: string; label: string; what: string }> = {
+  ...PACK_DEFAULT,
   statue: { color: LP.gold, label: "", what: "a gold animal statue on a wood plinth with a gold name plate (`species`: rooster, dog, cat, horse, eagle)" },
   hand: { color: "#d9a07a", label: "", what: "an open palm, fingers up (`hair`: true / 0-1 grows hair on the palm, `bandage`: true wraps it)" },
   trousers: { color: "#7d8494", label: "EXHIBIT A", what: "trousers on a wooden hanger with a paper evidence tag" },
@@ -42,6 +50,7 @@ export const LAW_HERO_DEFAULT: Record<LawHeroKind, { color: string; label: strin
 };
 /** the QA box of each kind at scale 1 (local: base on y = 0, front facing +z): centre and half extents */
 export const LAW_HERO_BOX: Record<LawHeroKind, { c: V3; h: V3 }> = {
+  ...PACK_BOX,
   statue: { c: [0, 0.45, 0], h: [0.32, 0.45, 0.2] },
   hand: { c: [0, 0.5, 0], h: [0.22, 0.5, 0.1] },
   trousers: { c: [0, 0.64, 0], h: [0.3, 0.63, 0.1] },
@@ -263,13 +272,23 @@ const steamM: THREE.MeshBasicMaterial[] = [];
 const steamMat = (k: number) => { if (!steamM[k]) steamM[k] = new THREE.MeshBasicMaterial({ color: "#f4efe6", transparent: true, opacity: 0.035 * k, depthWrite: false, toneMapped: false }); return steamM[k]; };
 /** a lit screen: unlit, not tone-mapped (it glows in the dark courtroom) */
 const lit = new Map<string, THREE.MeshBasicMaterial>();
+const glowM = new Map<string, THREE.MeshBasicMaterial>();
+const glowMat = (c: string, map?: THREE.Texture, opacity = 1) => { const q = Math.round(opacity * 20) / 20, k = `${c}|${map?.uuid ?? ""}|${q}`; let m = glowM.get(k); if (!m) { if (glowM.size > 120) glowM.clear(); m = new THREE.MeshBasicMaterial({ color: c, map: map ?? null, toneMapped: false, transparent: q < 1, opacity: q }); glowM.set(k, m); } return m; };
 const litMat = (tex: THREE.Texture) => { let m = lit.get(tex.uuid); if (!m) { if (lit.size > 60) lit.clear(); m = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false }); lit.set(tex.uuid, m); } return m; };
 
 // ------------------------------------------------------------------ the props
-export type LawHeroSpec = { kind: LawHeroKind; color?: string; label?: string; lines?: string[]; species?: string; variant?: string; hair?: boolean | number; bandage?: boolean; sale?: boolean; steam?: boolean; photo?: string };
+export type LawHeroSpec = { kind: LawHeroKind; color?: string; label?: string; lines?: string[]; species?: string; variant?: string; hair?: boolean | number; bandage?: boolean; sale?: boolean; steam?: boolean; photo?: string; holding?: string; spots?: boolean; screen?: string };
+/** the law3d look for the props pack: low-poly flat-shaded parts, wood / navy / gold, screens that glow in the dark room */
+export const LAW_PACK_THEME: PackTheme = {
+  kit: "law3d",
+  m: (c, o = {}) => plastic(c, { rough: o.rough ?? 0.6, flat: true, map: o.map, emissive: o.emissive, ei: o.ei, transparent: (o.opacity ?? 1) < 1, opacity: o.opacity, side: o.side }),
+  glow: (c, map, opacity = 1) => glowMat(c, map, opacity),
+  smooth: false, seg: 10, accent: LP.gold, alert: LP.red, gold: LP.gold, chrome: "#C9CDD4", paper: LP.paper, ink: LP.ink, screenBg: LP.navy, screenInk: LP.cream, neonEdges: false,
+};
 /** a hero prop in its local frame (base on y = 0, front toward +z); a pure function of (spec, t, seed) */
 export const LawHero: React.FC<{ sp: LawHeroSpec; t: number; seed: number }> = ({ sp, t, seed }) => {
   const kind = sp.kind;
+  if (!isOwn(kind)) return <PackHero sp={{ kind, color: sp.color, label: sp.label, lines: sp.lines, holding: sp.holding, spots: sp.spots, screen: sp.screen, variant: sp.variant }} th={LAW_PACK_THEME} t={t} seed={seed} />;
   const D = LAW_HERO_DEFAULT[kind];
   const col = sp.color ?? D.color;
   const lab = (sp.label ?? heroDefaultLabel(kind, sp.species)).toUpperCase();

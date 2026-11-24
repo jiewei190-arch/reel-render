@@ -20,7 +20,8 @@ import { layoutOf } from "./layout";
 import type { LawLayout } from "./layout";
 import { hookBox } from "./hud";
 import { KIT_BOX, isLawHero } from "./objects";
-import { HERO_PHOTOS, HERO_VARIANTS, LAW_HERO_KINDS, STATUE_SPECIES } from "./hero";
+import { HERO_PHOTOS, HERO_VARIANTS, LAW_HERO_KINDS, LAW_OWN_KINDS, STATUE_SPECIES } from "./hero";
+import { isPackKind, packParamError } from "../props/pack";
 import { heroLabelError } from "../library/hero";
 import { LAW_SETS } from "./sets";
 import type { LawSet, LawSetId } from "./sets";
@@ -216,8 +217,10 @@ export const compileLaw = (recipe: LawRecipe, words: readonly Word[], voDuration
         if (spec.lines) { const bad = spec.lines.map((l) => heroLabelError(l.split(/\s+/).slice(0, 2).join(" ").slice(0, 14), spec.kit)).find((e) => e && /real brand/.test(e)); if (bad) throw new Error(`recipe ${id}: prop "${spec.id}" lines: ${bad}`); }
         if (spec.kit === "statue" && spec.species !== undefined && !(STATUE_SPECIES as string[]).includes(spec.species)) throw new Error(`recipe ${id}: prop "${spec.id}": "species" is one of ${STATUE_SPECIES.join(", ")} (got "${spec.species}")`);
         const vs = HERO_VARIANTS[spec.kit];
-        if (spec.variant !== undefined && (!vs || !vs.includes(spec.variant))) throw new Error(`recipe ${id}: prop "${spec.id}": "variant" ${vs ? `is one of ${vs.join(", ")}` : `is for toy (doll, ball) and food (burger, fries)`} (got "${spec.variant}")`);
+        if (spec.variant !== undefined && (!vs || !vs.includes(spec.variant))) throw new Error(`recipe ${id}: prop "${spec.id}": "variant" ${vs ? `is one of ${vs.join(", ")}` : `is for toy (doll, ball), food (burger, fries), chicken (hen, rooster) and shoe (sneaker, heel)`} (got "${spec.variant}")`);
         if (spec.kit === "frame" && spec.photo !== undefined && !HERO_PHOTOS.includes(spec.photo)) throw new Error(`recipe ${id}: prop "${spec.id}": a frame's "photo" is one of ${HERO_PHOTOS.join(", ")} (got "${spec.photo}")`);
+        if (isPackKind(spec.kit) && !(LAW_OWN_KINDS as string[]).includes(spec.kit)) { const pe = packParamError(spec.kit, spec); if (pe) throw new Error(`recipe ${id}: prop "${spec.id}": ${pe}`); }
+        else if (spec.holding !== undefined || spec.spots !== undefined || spec.screen !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "holding" / "spots" / "screen" are props-pack params (src/props/pack.tsx); a ${spec.kit} takes none`);
       } else if (spec.label !== undefined || spec.lines !== undefined) throw new Error(`recipe ${id}: prop "${spec.id}": "label" / "lines" are for the hero props (${LAW_HERO_KINDS.join(", ")}); a ${spec.kit} takes "text"`);
       const base = placeV(spec.at, set, id);
       const phit = at(spec.hit, a + 0.12);

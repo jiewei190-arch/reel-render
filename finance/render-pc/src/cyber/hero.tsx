@@ -13,10 +13,18 @@ import type { V3 } from "../blocky/motion";
 import { docTex, fitText, hmat, HERO_FONT, wrap } from "../library/hero";
 import { CP } from "./palette";
 import { neon } from "./sets";
+import { PACK_BOX, PACK_DEFAULT, PackHero, packKindsFor } from "../props/pack";
+import type { PackKind, PackParams, PackTheme } from "../props/pack";
 
-export type CyberHeroKind = "phone" | "laptop" | "envelope" | "card" | "usb" | "server" | "atm" | "padlock" | "coin" | "doc";
-export const CYBER_HERO_KINDS: CyberHeroKind[] = ["phone", "laptop", "envelope", "card", "usb", "server", "atm", "padlock", "coin", "doc"];
+export type CyberOwnKind = "phone" | "laptop" | "envelope" | "card" | "usb" | "server" | "atm" | "padlock" | "coin" | "doc";
+export const CYBER_OWN_KINDS: CyberOwnKind[] = ["phone", "laptop", "envelope", "card", "usb", "server", "atm", "padlock", "coin", "doc"];
+/** + the PROPS PACK (src/props/pack.tsx) in the cyber3d look; cyber3d keeps its own laptop */
+export type CyberHeroKind = CyberOwnKind | PackKind;
+export const CYBER_PACK_KINDS: PackKind[] = packKindsFor(CYBER_OWN_KINDS);
+export const CYBER_HERO_KINDS: CyberHeroKind[] = [...CYBER_OWN_KINDS, ...CYBER_PACK_KINDS];
+const isOwn = (k: string): k is CyberOwnKind => (CYBER_OWN_KINDS as string[]).includes(k);
 export const CYBER_HERO_DEFAULT: Record<CyberHeroKind, { color: string; label: string; what: string }> = {
+  ...PACK_DEFAULT,
   phone: { color: CP.red, label: "BANK ALERT", what: "a phone with a notification (lines = its text)" },
   laptop: { color: CP.red, label: "ACCESS DENIED", what: "a laptop with a warning screen (lines = its text)" },
   envelope: { color: CP.cyan, label: "INVOICE", what: "an email envelope with the subject on it" },
@@ -29,6 +37,7 @@ export const CYBER_HERO_DEFAULT: Record<CyberHeroKind, { color: string; label: s
   doc: { color: CP.cyan, label: "WIRE ORDER", what: "a document: headline + body lines" },
 };
 export const CYBER_HERO_BOX: Record<CyberHeroKind, { c: V3; h: V3 }> = {
+  ...PACK_BOX,
   phone: { c: [0, 0.46, 0], h: [0.22, 0.45, 0.07] },
   laptop: { c: [0, 0.31, -0.08], h: [0.5, 0.31, 0.38] },
   envelope: { c: [0, 0.29, 0], h: [0.41, 0.28, 0.06] },
@@ -92,7 +101,15 @@ const labelTex = (key: string, label: string, col: string, W: number, H: number,
   fitText(g, label, Math.round(H * px), W * 0.88); g.fillText(label, W / 2, H * 0.54);
 });
 
-export const CyberHero: React.FC<{ kind: CyberHeroKind; color?: string; label?: string; lines?: string[]; t: number; seed: number }> = ({ kind, color, label, lines, t, seed }) => {
+/** the cyber3d look for the props pack: dark steel, neon (bloomed) screens and edge strips in cyan */
+export const CYBER_PACK_THEME: PackTheme = {
+  kit: "cyber3d",
+  m: (c, o = {}) => hmat(c, { rough: o.rough ?? 0.4, metal: o.metal ?? 0, map: o.map, opacity: o.opacity, side: o.side, emissive: o.emissive, ei: o.ei }),
+  glow: (c, map, opacity = 1) => neon(c, opacity, map),
+  smooth: true, seg: 24, accent: CP.cyan, alert: CP.red, gold: "#F5B324", chrome: "#8FA3BF", paper: "#E8EEF5", ink: CP.ink, screenBg: "#0A1226", screenInk: CP.white, neonEdges: true,
+};
+export const CyberHero: React.FC<{ kind: CyberHeroKind; color?: string; label?: string; lines?: string[]; t: number; seed: number } & PackParams> = ({ kind, color, label, lines, t, seed, holding, spots, screen, variant }) => {
+  if (!isOwn(kind)) return <PackHero sp={{ kind, color, label, lines, holding, spots, screen, variant }} th={CYBER_PACK_THEME} t={t} seed={seed} />;
   const D = CYBER_HERO_DEFAULT[kind];
   const col = color ?? D.color;
   const lab = (label ?? D.label).toUpperCase();
