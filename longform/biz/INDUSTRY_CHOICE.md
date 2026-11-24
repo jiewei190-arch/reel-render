@@ -3,11 +3,11 @@
 Format (owner decision, `docs/FORMAT_RESEARCH_2026-11-23.md`): "From $N To Nothing: How [Company] Lost Everything"
 (sister: "[Company] Is Losing Everything: The $N Mistake"), 20 minutes or more, inside ONE industry.
 
-**Pick: video games (publishers, studios, consoles). Runner-up: theme parks.**
+**Pick: video games (publishers, studios, consoles), which is also the owner's stated preference. Runner-up: theme parks.**
 
 ## Method and limits
 
-- `yt-dlp` flat search, 30 results per query, 32 search queries + 4 channel upload lists = 36 calls. YouTube began
+- `yt-dlp` flat search, 30 results per query, 32 search queries + 4 channel upload lists = 36 calls, plus 3 GTA 6 searches later (39 in all). YouTube began
   answering HTTP 403 on call 34, so I stopped. Three planned queries returned nothing or a partial page (Midway, the
   theme-park sister pattern, 38 Studios got 13 rows).
 - Every number below is the `view_count | duration (seconds)` exactly as returned. Raw output of every query is in
@@ -59,17 +59,34 @@ Zero title-pattern uploads and the highest single demand number outside airlines
 demand I could measure is concentrated on Six Flags, most park failures were private or one-park stories without a
 defensible "$N", and Six Flags itself came out of bankruptcy, so "to nothing" would overclaim.
 
-## First slate: 8 titles (real companies; every dollar figure still to be fact-checked before use)
+## First slate: 8 titles (updated after the owner's change, relayed by the parent session on 2026-11-24)
 
-| # | Working title | The story in one line | Where the figure would come from |
-|---|---|---|---|
-| 1 | **From $2 Billion To Nothing: How THQ Lost Everything** | A top-five publisher bets on a drawing tablet, is left with over a million unsold units and is auctioned off in pieces | THQ 10-K filings, bankruptcy court record (written first; see `thq-lost-everything/`) |
-| 2 | From $1 Billion To $100,000: How Midway Lost Everything | The Mortal Kombat publisher; its controlling owner sells his stake for a reported $100,000 | Midway 8-K / SEC filings, bankruptcy record |
-| 3 | From $75 Million To Nothing: How 38 Studios Lost Everything | A baseball star's game studio, a state loan guarantee, and a missed payment | SEC complaint against Rhode Island's agency and its banker, state court record |
-| 4 | From $380 Million To Nothing: How Gizmondo Lost Everything | A handheld console that sold in tiny numbers while losses ran to hundreds of millions | Tiger Telematics SEC filings, UK liquidation reports |
-| 5 | From $500 Million To Nothing: How Acclaim Lost Everything | The Turok and NBA Jam publisher ends in Chapter 7 | Acclaim 10-K filings, bankruptcy record |
-| 6 | From 400 Employees To Nothing In One Day: How Telltale Lost Everything | The Walking Dead studio closes with most staff let go at once | Company statement, WARN Act suit, press |
-| 7 | From $2 Billion To Nothing: How Atari Lost Everything | The 1983 crash and a $500 million-plus loss (crowded topic: hold until the channel has an audience) | Warner Communications annual reports, press |
-| 8 | Embracer Is Losing Everything: The $2 Billion Deal That Vanished | A buying spree, one investor who walks away, studios closed (sister pattern; ongoing story, extra care) | Embracer interim reports and press releases |
+The owner asked for video games as the preferred industry and for the first video to be the business story of GTA 6.
+The evidence check above agrees with video games; nothing in the data argues against it. GTA 6 is not a collapse, so
+title 1 is a business story in the same industry and the "From $N To Nothing" format starts at title 2.
 
-Reserves: Commodore, 3DO, Interplay, Ouya, Sega's console business (crowded), GameStop (sister pattern, not "nothing").
+| # | Working title | The story in one line | Where the figures come from | Status |
+|---|---|---|---|---|
+| 1 | **GTA 6 Sold $3.79 Billion In A Day. Nobody Knows Its Cost** | The famous "$2 billion budget" traced to its earliest appearance, then the numbers that were actually signed | Take-Two press releases, 10-K / 10-Q, the November 9, 2026 earnings call, BBC court reporting | Written: `gta-6-business/` |
+| 2 | **From $2 Billion To Nothing: How THQ Lost Everything** | A top publisher bets a record quarter on a drawing tablet, is left with 1.4 million unsold, and is auctioned in pieces | THQ 10-K / 8-K filings, bankruptcy record | Written: `thq-lost-everything/` |
+| 3 | From $1 Billion To $100,000: How Midway Lost Everything | The Mortal Kombat publisher; its controlling owner sells his stake for a reported $100,000 | Midway SEC filings, bankruptcy record | To fact-check |
+| 4 | From $75 Million To Nothing: How 38 Studios Lost Everything | A baseball star's game studio, a state loan guarantee, and a missed payment | SEC complaint against Rhode Island's agency and its banker, state court record | To fact-check |
+| 5 | From $380 Million To Nothing: How Gizmondo Lost Everything | A handheld console that sold in tiny numbers while losses ran to hundreds of millions | Tiger Telematics SEC filings, UK liquidation reports | To fact-check |
+| 6 | From $500 Million To Nothing: How Acclaim Lost Everything | The Turok and NBA Jam publisher ends in Chapter 7 | Acclaim 10-K filings, bankruptcy record | To fact-check |
+| 7 | From 400 Employees To Nothing In One Day: How Telltale Lost Everything | The Walking Dead studio closes with most staff let go at once | Company statement, WARN Act suit, press | To fact-check |
+| 8 | Concord: The $400 Million Game That Lasted Two Weeks | A big-budget shooter pulled from sale days after launch (a failed game, not a company; budget figures are reported, not official) | Sony statements, major press | To fact-check |
+
+Every dollar figure in rows 3 to 8 is a working figure from memory of the public story and **must be fact-checked from
+primary sources before use**; the titles will change to match what the sources support.
+
+Reserves: Atari's 1983 crash and Sega's console exit (both crowded with low-view clones: hold until the channel has an
+audience), Embracer's collapsed $2 billion deal (sister pattern, still unfolding), Commodore, 3DO, Interplay, Ouya,
+Google Stadia, GameStop (sister pattern, not "nothing").
+
+## GTA 6 view check (added for title 1; raw rows in `research/yt_raw/gta_a.txt`, `gta_b.txt`, `gta_c.txt`)
+
+Big and mid-size channels on the business of GTA 6: 2,164,395 / 681 s (Bloomberg Originals), 1,820,967 / 1,052 s
+(Zem TV), 1,083,993 / 862 s (CNBC), 931,923 / 2,232 s (Patrick Boyle, "The Made-Up Economics of GTA 6."),
+526,216 / 482 s (Sav, "GTA 6's $2 Billion Budget Might Be Hiding Something Big"). Small channels stating the budget as
+fact ("The $2 Billion Bet", "Why GTA 6 Cost $2 Billion"): 4 to 320 views across at least 20 uploads. The winners that
+are not news brands question the number; the losers repeat it. The chosen angle is in `gta-6-business/PACKAGING.md`.

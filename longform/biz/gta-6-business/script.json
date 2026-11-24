@@ -41,6 +41,7 @@
     "In September twenty twenty-two, dozens of clips of the unfinished game appeared on a fan forum. The BBC counted more than ninety videos and images.",
     "Rockstar confirmed it. An unauthorized third party, it said, had illegally accessed and downloaded confidential information, including early development footage.",
     "The trail led to a teenager in Britain. A jury later found that he had carried out the hack, and in December twenty twenty-three a London court ordered him held indefinitely in a secure hospital.",
+    "That order was later lifted. And this month, three days before the game came out, he pleaded guilty.",
     "At that hearing, the court was told what the break-in cost Rockstar. Five million dollars to recover, plus thousands of hours of staff time.",
     "That is a real number, given in court. Remember how small it is.",
     "Because in the same weeks, another number started to travel. Gaming sites reported that the hacker appeared to have claimed, in online messages, that more than two billion dollars had already been spent on the game.",
@@ -50,11 +51,13 @@
     "In twenty twenty-five, a Hollywood trade paper writes that the company is believed to have spent north of one billion. No source named.",
     "Other outlets cite industry analysts at one to one and a half billion. The analysts are anonymous.",
     "One well-known analyst did put his name to a figure, reportedly about one and a half billion dollars including marketing. That is an estimate, and he does not have the invoices either.",
-    "And the company? Zelnick's answer is seven words long. We haven't spoken about budgets at all.",
-    "Earlier this year, he would only tell one magazine that the game was expensive.",
-    "There is one more clue. According to reports of a Bloomberg feature last month, a Rockstar executive was asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.",
-    "But it is not clear whether that no covered marketing. So even the denial has a question mark on it.",
-    "That is everything on the record. A guess from a hacker, guesses from unnamed analysts, and a company that will not say.",
+    "And the company? Earlier this year, Zelnick would only tell one magazine that the game was expensive.",
+    "Then came one more clue. Last month, in a Bloomberg interview, Rockstar's head of publishing was reportedly asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.",
+    "So on this month's earnings call, an analyst asked Zelnick about it directly.",
+    "His answer began with seven words. We haven't spoken about budgets at all.",
+    "Then he added a warning. Someone saying something is not more than something, he said, does not mean it's close to something. Half of something. Or a tenth of something.",
+    "In plain terms, do not do math with that answer.",
+    "That is everything on the record. A claim from a hacker, guesses from unnamed analysts, and a company that will not say.",
     "Except companies have to file accounts. And accounts leave fingerprints.",
     "Here is the part almost nobody reads. When a game company pays people to build a game, it does not always count that money as an expense right away.",
     "Once a project is past a certain technical milestone, the cost gets stored on the balance sheet, like a building under construction. It only hits the profit line when the game comes out.",
@@ -154,6 +157,7 @@
     "In September twenty twenty-two, dozens of clips of the unfinished game appeared on a fan forum. The BBC counted more than ninety videos and images.",
     "Rockstar confirmed it. An unauthorized third party, it said, had illegally accessed and downloaded confidential information, including early development footage.",
     "The trail led to a teenager in Britain. A jury later found that he had carried out the hack, and in December twenty twenty-three a London court ordered him held indefinitely in a secure hospital.",
+    "That order was later lifted. And this month, three days before the game came out, he pleaded guilty.",
     "At that hearing, the court was told what the break-in cost Rockstar. Five million dollars to recover, plus thousands of hours of staff time.",
     "That is a real number, given in court. Remember how small it is.",
     "[serious] Because in the same weeks, another number started to travel. Gaming sites reported that the hacker appeared to have claimed, in online messages, that more than two billion dollars had already been spent on the game.",
@@ -163,11 +167,13 @@
     "In twenty twenty-five, a Hollywood trade paper writes that the company is believed to have spent north of one billion. No source named.",
     "Other outlets cite industry analysts at one to one and a half billion. The analysts are anonymous.",
     "One well-known analyst did put his name to a figure, reportedly about one and a half billion dollars including marketing. That is an estimate, and he does not have the invoices either.",
-    "And the company? Zelnick's answer is seven words long. We haven't spoken about budgets at all.",
-    "Earlier this year, he would only tell one magazine that the game was expensive.",
-    "There is one more clue. According to reports of a Bloomberg feature last month, a Rockstar executive was asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.",
-    "But it is not clear whether that no covered marketing. So even the denial has a question mark on it.",
-    "That is everything on the record. A guess from a hacker, guesses from unnamed analysts, and a company that will not say.",
+    "And the company? Earlier this year, Zelnick would only tell one magazine that the game was expensive.",
+    "Then came one more clue. Last month, in a Bloomberg interview, Rockstar's head of publishing was reportedly asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.",
+    "So on this month's earnings call, an analyst asked Zelnick about it directly.",
+    "His answer began with seven words. We haven't spoken about budgets at all.",
+    "Then he added a warning. Someone saying something is not more than something, he said, does not mean it's close to something. Half of something. Or a tenth of something.",
+    "In plain terms, do not do math with that answer.",
+    "That is everything on the record. A claim from a hacker, guesses from unnamed analysts, and a company that will not say.",
     "Except companies have to file accounts. And accounts leave fingerprints.",
     "Here is the part almost nobody reads. When a game company pays people to build a game, it does not always count that money as an expense right away.",
     "Once a project is past a certain technical milestone, the cost gets stored on the balance sheet, like a building under construction. It only hits the profit line when the game comes out.",
@@ -302,6 +308,10 @@
       "basis": "BBC News, August 23 and December 21, 2023"
     },
     {
+      "claim": "The hospital order was later lifted and on November 16, 2026, three days before launch, he pleaded guilty to the Rockstar hack and other hacks",
+      "basis": "PC Gamer, November 16, 2026, citing the BBC (read first-hand). Sentencing was reported as due November 23, 2026; outcome NOT verified and not stated"
+    },
+    {
       "claim": "BBC (2023): 'Some speculate' the total cost could be in the $2bn range; Hollywood Reporter (2025): 'believed to have spent north of $1 billion'; other outlets cite unnamed analysts at $1-1.5 billion",
       "basis": "BBC Worklife, December 15, 2023; The Hollywood Reporter, May 7, 2025; PC Gamer, May 8, 2026"
     },
@@ -310,8 +320,12 @@
       "basis": "Wccftech, August 5, 2025, paraphrasing a Telegraph interview with Wedbush's Michael Pachter (single secondary; hedged)"
     },
     {
-      "claim": "A Rockstar executive reportedly answered 'no' when asked if the game cost more than the Burj Khalifa (about $1.5 billion); unclear whether that covered marketing",
-      "basis": "Tbreak, November 13, 2026, quoting Bloomberg's October 2026 feature (single secondary; Bloomberg not opened)"
+      "claim": "In a Bloomberg interview in October 2026, Rockstar's head of publishing reportedly said the game did not cost more than the Burj Khalifa (about $1.5 billion)",
+      "basis": "Analyst's question on Take-Two's November 9, 2026 call ('not more than $1.5 billion'), read first-hand in the transcript; Tbreak, November 13, 2026, quoting Bloomberg (Bloomberg itself not opened)"
+    },
+    {
+      "claim": "Zelnick on the November 9, 2026 call: 'We haven't spoken about budgets at all... someone saying something is not more than something does not mean it's close to something, half of something, 1/4 of something or 1/10 of something'",
+      "basis": "Take-Two Q2 FY2027 earnings call transcript (The Motley Fool), read first-hand November 24, 2026"
     },
     {
       "claim": "Take-Two capitalizes internal software development costs after technological feasibility is established",

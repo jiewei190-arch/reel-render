@@ -32,6 +32,7 @@ Then, seven months after the game was confirmed, somebody else showed it to the 
 In September twenty twenty-two, dozens of clips of the unfinished game appeared on a fan forum. The BBC counted more than ninety videos and images.
 Rockstar confirmed it. An unauthorized third party, it said, had illegally accessed and downloaded confidential information, including early development footage.
 The trail led to a teenager in Britain. A jury later found that he had carried out the hack, and in December twenty twenty-three a London court ordered him held indefinitely in a secure hospital.
+That order was later lifted. And this month, three days before the game came out, he pleaded guilty.
 At that hearing, the court was told what the break-in cost Rockstar. Five million dollars to recover, plus thousands of hours of staff time.
 That is a real number, given in court. Remember how small it is.
 Because in the same weeks, another number started to travel. Gaming sites reported that the hacker appeared to have claimed, in online messages, that more than two billion dollars had already been spent on the game.
@@ -41,11 +42,13 @@ In twenty twenty-three, a major broadcaster writes that some speculate the cost 
 In twenty twenty-five, a Hollywood trade paper writes that the company is believed to have spent north of one billion. No source named.
 Other outlets cite industry analysts at one to one and a half billion. The analysts are anonymous.
 One well-known analyst did put his name to a figure, reportedly about one and a half billion dollars including marketing. That is an estimate, and he does not have the invoices either.
-And the company? Zelnick's answer is seven words long. We haven't spoken about budgets at all.
-Earlier this year, he would only tell one magazine that the game was expensive.
-There is one more clue. According to reports of a Bloomberg feature last month, a Rockstar executive was asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.
-But it is not clear whether that no covered marketing. So even the denial has a question mark on it.
-That is everything on the record. A guess from a hacker, guesses from unnamed analysts, and a company that will not say.
+And the company? Earlier this year, Zelnick would only tell one magazine that the game was expensive.
+Then came one more clue. Last month, in a Bloomberg interview, Rockstar's head of publishing was reportedly asked whether the game cost more than the world's tallest building, about one and a half billion dollars. She said no.
+So on this month's earnings call, an analyst asked Zelnick about it directly.
+His answer began with seven words. We haven't spoken about budgets at all.
+Then he added a warning. Someone saying something is not more than something, he said, does not mean it's close to something. Half of something. Or a tenth of something.
+In plain terms, do not do math with that answer.
+That is everything on the record. A claim from a hacker, guesses from unnamed analysts, and a company that will not say.
 Except companies have to file accounts. And accounts leave fingerprints.
 Here is the part almost nobody reads. When a game company pays people to build a game, it does not always count that money as an expense right away.
 Once a project is past a certain technical milestone, the cost gets stored on the balance sheet, like a building under construction. It only hits the profit line when the game comes out.
