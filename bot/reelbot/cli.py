@@ -24,7 +24,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import bend, channels, claude, docwriter, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice, safety
+from . import bend, channels, claude, docwriter, editor, gemini, lambda_render, learn, recipe, render, script, tone, voice, safety, subjects
 from .config import CFG
 from .cost import COST
 
@@ -177,6 +177,12 @@ def run_rest(folder: Path, a) -> None:
         raise SystemExit(f"fact-check did not clear for {folder.name}: not voicing it (no credits spent). Read "
                          f"sources.md; fix the script and run `continue {folder.name} --force` to go on anyway.")
     st = _state(folder)
+    if "voice" not in st and not getattr(a, "force", False):
+        ok, msg = subjects.check(folder, channels.of_folder(folder).kit)
+        if msg:
+            print("  " + msg)
+        if not ok:
+            raise SystemExit(f"{folder.name}: {msg} (nothing voiced or rendered; `continue {folder.name} --force` overrides)")
     if a.redo or "voice" not in st:
         stage_voice(folder, a)
     if a.redo or "recipe" not in st:
