@@ -70,7 +70,7 @@ Counts per kit (hero / of which pack / plain): law3d 51 / 36 / 10, biz3d 47 / 34
 Every pack kind (+ the selfie monkey, the plain cow, the rooster, the heel) has a gallery shot `pack-<name>` in all three
 kit galleries (`src/{law,biz,cyber}/gallery.ts`, framed by `packCam`). Rendered with
 `node tools/{law,biz,cyber}_stills.mjs gallery --only pack- --scale 0.4` (`BROWSER_EXE=<chrome-headless-shell>`; the
-biz / cyber still tools now take it too): **STILLS_SUMMARY**
+biz / cyber still tools now take it too): **116 stills** (law3d 40, biz3d 37, cyber3d 39: biz3d has no pack `laptop` / `shoe`, cyber3d no pack `laptop`), 432x768, committed under `docs/hero_props/pack/` (5.4 MB with the sheets). Reviewed: every kind reads as its subject at phone size in all three looks. Weakest at thumbnail size: the drone and the boat (flat and wide, so they render small); give them a closer `hookZoom`.
 
 Contact sheets: [law3d](hero_props/pack/sheet-law.jpg) · [biz3d](hero_props/pack/sheet-biz.jpg) · [cyber3d](hero_props/pack/sheet-cyber.jpg).
 Per prop: `docs/hero_props/pack/<law|biz|cyber>/<kind>.jpg`, e.g.
