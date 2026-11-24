@@ -1,0 +1,1514 @@
+{
+ "kit": "law3d",
+ "slug": "cash-on-trial-v2",
+ "format": "short",
+ "hook": {
+  "text": "*$124,700* IN A COOLER",
+  "again": "9:the#3"
+ },
+ "music": "tense",
+ "musicDb": -16,
+ "sfx0": "thud",
+ "autoSfx": "off",
+ "sounds": {
+  "foil": "sfx/foil.wav",
+  "sniff": "sfx/sniff.wav",
+  "bark": "sfx/bark.wav",
+  "siren": "sfx/siren.wav"
+ },
+ "silence": [
+  {
+   "at": "end:charges.+0.05",
+   "until": "6:The-0.03"
+  },
+  {
+   "at": "end:reverses.-0.3",
+   "until": "line:9+0.02"
+  }
+ ],
+ "cast": {
+  "trooper": {
+   "role": "trooper",
+   "skin": "#d7a57e",
+   "hair": "#4a3626",
+   "build": "broad"
+  },
+  "driver": {
+   "role": "defendant",
+   "skin": "#b98562",
+   "hairStyle": "short",
+   "hair": "#1a1512",
+   "suit": "#55604c",
+   "pants": "#3a3f48",
+   "shirt": "#d9d2c2",
+   "tie": "none",
+   "build": "avg",
+   "plate": "CLAIMANT"
+  },
+  "pros": {
+   "role": "lawyer",
+   "skin": "#e2b48c",
+   "hairStyle": "side",
+   "hair": "#2a211c",
+   "suit": "#27324a",
+   "pants": "#1f2940",
+   "tie": "#7a1f24"
+  },
+  "judge": {
+   "role": "judge",
+   "skin": "#efc6a6",
+   "hairStyle": "short",
+   "hair": "#9a8f86",
+   "glasses": true,
+   "plate": "THE COURT"
+  },
+  "j1": {
+   "role": "judge",
+   "skin": "#c98f6a",
+   "hairStyle": "bun",
+   "hair": "#5a4a40",
+   "glasses": true
+  },
+  "j2": {
+   "role": "judge",
+   "skin": "#8a5a3c",
+   "hairStyle": "bald",
+   "hair": "#2a2420"
+  },
+  "j3": {
+   "role": "judge",
+   "skin": "#f0cbb0",
+   "hairStyle": "side",
+   "hair": "#c9c2b8"
+  }
+ },
+ "props": [
+  {
+   "id": "car",
+   "kit": "car",
+   "at": "car",
+   "scale": 2.6,
+   "yaw": 180,
+   "color": "#8b93a0",
+   "label": "",
+   "sets": [
+    "roadside"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "set": "roadside",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "cooler",
+    "dist": 1.32,
+    "h": 0.5,
+    "az": 24,
+    "face": 0.62
+   },
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8,
+     "open": 0.5,
+     "openDur": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "at": 0.04,
+     "sfx": "siren",
+     "db": -4
+    },
+    {
+     "at": 0.42,
+     "sfx": "click",
+     "db": 6
+    },
+    {
+     "at": 0.5,
+     "sfx": "creak",
+     "db": -1,
+     "len": 0.7,
+     "fade": 0.2
+    },
+    {
+     "at": 0.02,
+     "sfx": "engine",
+     "db": -11,
+     "rate": 0.7,
+     "len": 3.2,
+     "fade": 1.0
+    }
+   ],
+   "note": "frame 0: the cooler on the trunk under red and blue light; the lid swings up"
+  },
+  {
+   "at": "lifts",
+   "cam": {
+    "preset": "orbit",
+    "target": "behind:-0.35,0.9,0",
+    "dist": 7.2,
+    "h": 1.5,
+    "az": -34,
+    "sweep": 24,
+    "face": 0.56
+   },
+   "actors": [
+    {
+     "id": "trooper",
+     "pose": "idle",
+     "face": "stern",
+     "at": "behind:-0.75,0,-0.15",
+     "look": "trunk",
+     "then": [
+      {
+       "at": "on",
+       "face": "shocked"
+      }
+     ]
+    },
+    {
+     "id": "driver",
+     "pose": "slump",
+     "face": "worried",
+     "at": "behind:0.7,0,0.5",
+     "look": "trunk"
+    }
+   ],
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8,
+     "open": 0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "lifts",
+     "sfx": "wind",
+     "db": -13,
+     "len": 2.1,
+     "fade": 0.5,
+     "fadeIn": 0.2
+    },
+    {
+     "at": "Nebraska",
+     "sfx": "beep",
+     "db": -8
+    },
+    {
+     "at": "highway.-0.1",
+     "sfx": "whoosh",
+     "db": -9,
+     "rate": 0.6
+    }
+   ],
+   "note": "the whole stop: both cars, the trooper at the open cooler, the driver watching, the highway"
+  },
+  {
+   "at": "line:2",
+   "cam": {
+    "preset": "topDown",
+    "target": "cooler",
+    "dist": 0.5,
+    "h": 1.55,
+    "az": 20
+   },
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8,
+     "open": 0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:2+0.05",
+     "sfx": "foil",
+     "db": 5
+    },
+    {
+     "at": "line:2+0.55",
+     "sfx": "sparkle",
+     "db": -7
+    }
+   ],
+   "note": "looking down into the cooler: the foil bundles glint"
+  },
+  {
+   "at": "seven",
+   "cam": {
+    "preset": "crane",
+    "target": "hood:0.22,0.15,0",
+    "dist": 2.3,
+    "h": 0.75,
+    "az": -28,
+    "sweep": 0.5
+   },
+   "props": [
+    {
+     "id": "b1",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.42",
+     "scale": 0.62,
+     "yaw": 80,
+     "motion": "dropIn",
+     "hit": "seven+0.05",
+     "sfx": {
+      "sfx": "knock",
+      "db": -2,
+      "rate": 0.8
+     }
+    },
+    {
+     "id": "b2",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.14",
+     "scale": 0.62,
+     "yaw": 96,
+     "motion": "dropIn",
+     "hit": "seven+0.2",
+     "sfx": {
+      "sfx": "knock",
+      "db": -3,
+      "rate": 0.85
+     }
+    },
+    {
+     "id": "b3",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.14",
+     "scale": 0.62,
+     "yaw": 84,
+     "motion": "dropIn",
+     "hit": "seven+0.35",
+     "sfx": {
+      "sfx": "knock",
+      "db": -2,
+      "rate": 0.9
+     }
+    },
+    {
+     "id": "b4",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.42",
+     "scale": 0.62,
+     "yaw": 100,
+     "motion": "dropIn",
+     "hit": "bundles,",
+     "sfx": {
+      "sfx": "knock",
+      "db": -3,
+      "rate": 0.8
+     }
+    },
+    {
+     "id": "b5",
+     "kit": "foil",
+     "at": "hood:0.42,0,-0.3",
+     "scale": 0.62,
+     "yaw": 88,
+     "motion": "dropIn",
+     "hit": "bundles,+0.17",
+     "sfx": {
+      "sfx": "knock",
+      "db": -2,
+      "rate": 0.86
+     }
+    },
+    {
+     "id": "b6",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.0",
+     "scale": 0.62,
+     "yaw": 94,
+     "motion": "dropIn",
+     "hit": "bundles,+0.34",
+     "sfx": {
+      "sfx": "knock",
+      "db": -3,
+      "rate": 0.92
+     }
+    },
+    {
+     "id": "b7",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.3",
+     "scale": 0.62,
+     "yaw": 82,
+     "motion": "dropIn",
+     "hit": "bundles,+0.52",
+     "sfx": {
+      "sfx": "knock",
+      "db": -1,
+      "rate": 0.75
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "seven-0.05",
+     "sfx": "foil",
+     "db": 0,
+     "rate": 1.15
+    }
+   ],
+   "note": "seven bundles land one by one on the car's hood"
+  },
+  {
+   "at": "wrapped",
+   "cam": {
+    "preset": "closeUp",
+    "target": "hood:0.17,0.1,0",
+    "dist": 0.95,
+    "h": 0.5,
+    "az": -20,
+    "face": 0.52
+   },
+   "props": [
+    {
+     "id": "one",
+     "kit": "foil",
+     "at": "hood:0.17,0,0",
+     "scale": 1.0,
+     "yaw": 12,
+     "open": "foil.-0.25",
+     "openDur": 0.55,
+     "sfx": {
+      "sfx": "foil",
+      "db": 6,
+      "rate": 0.9
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "foil.+0.2",
+     "sfx": "paper",
+     "db": -3
+    }
+   ],
+   "note": "one bundle: the foil peels back off a banded stack of bills"
+  },
+  {
+   "at": "line:3",
+   "cam": {
+    "preset": "topDown",
+    "target": "hood:0.18,0.05,0",
+    "dist": 0.4,
+    "h": 1.95,
+    "az": 90
+   },
+   "props": [
+    {
+     "id": "b1",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.42",
+     "scale": 0.62,
+     "yaw": 80,
+     "open": "line:3+0.0",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b2",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.14",
+     "scale": 0.62,
+     "yaw": 96,
+     "open": "line:3+0.14",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b3",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.14",
+     "scale": 0.62,
+     "yaw": 84,
+     "open": "line:3+0.28",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b4",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.42",
+     "scale": 0.62,
+     "yaw": 100,
+     "open": "line:3+0.42",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b5",
+     "kit": "foil",
+     "at": "hood:0.42,0,-0.3",
+     "scale": 0.62,
+     "yaw": 88,
+     "open": "line:3+0.56",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b6",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.0",
+     "scale": 0.62,
+     "yaw": 94,
+     "open": "line:3+0.7",
+     "openDur": 0.3,
+     "sfx": false
+    },
+    {
+     "id": "b7",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.3",
+     "scale": 0.62,
+     "yaw": 82,
+     "open": "line:3+0.84",
+     "openDur": 0.3,
+     "sfx": false
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:3",
+     "sfx": "foil",
+     "db": 3,
+     "rate": 1.1
+    },
+    {
+     "at": "line:3+0.3",
+     "sfx": "paper",
+     "db": -4
+    },
+    {
+     "at": "line:3+0.58",
+     "sfx": "paper",
+     "db": -4,
+     "rate": 1.1
+    },
+    {
+     "at": "line:3+0.86",
+     "sfx": "paper",
+     "db": -3,
+     "rate": 0.9
+    }
+   ],
+   "note": "all seven open in a ripple: every one is cash"
+  },
+  {
+   "at": "thousand,",
+   "cam": {
+    "preset": "dolly",
+    "target": "hood:0.18,0.12,0",
+    "dist": 1.75,
+    "h": 0.5,
+    "az": -62,
+    "sweep": 0.9,
+    "face": 0.6
+   },
+   "props": [
+    {
+     "id": "b1",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.42",
+     "scale": 0.62,
+     "yaw": 80,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b2",
+     "kit": "foil",
+     "at": "hood:-0.06,0,-0.14",
+     "scale": 0.62,
+     "yaw": 96,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b3",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.14",
+     "scale": 0.62,
+     "yaw": 84,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b4",
+     "kit": "foil",
+     "at": "hood:-0.06,0,0.42",
+     "scale": 0.62,
+     "yaw": 100,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b5",
+     "kit": "foil",
+     "at": "hood:0.42,0,-0.3",
+     "scale": 0.62,
+     "yaw": 88,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b6",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.0",
+     "scale": 0.62,
+     "yaw": 94,
+     "open": 0,
+     "sfx": false
+    },
+    {
+     "id": "b7",
+     "kit": "foil",
+     "at": "hood:0.42,0,0.3",
+     "scale": 0.62,
+     "yaw": 82,
+     "open": 0,
+     "sfx": false
+    }
+   ],
+   "actions": [
+    {
+     "do": "counter",
+     "at": "thousand,",
+     "title": "IN THE COOLER",
+     "prefix": "$",
+     "from": 100000,
+     "to": 124700,
+     "dur": 1.2,
+     "land": "dollars.",
+     "pos": "top",
+     "sfx": false
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "end:dollars.",
+     "gain": 0.7
+    }
+   ],
+   "sfx": [
+    {
+     "at": "thousand,",
+     "sfx": "type",
+     "db": 2
+    },
+    {
+     "at": "3:seven",
+     "sfx": "type",
+     "db": 3,
+     "rate": 1.15
+    },
+    {
+     "at": "end:dollars.-0.05",
+     "sfx": "cash",
+     "db": -2
+    }
+   ],
+   "caption": "off",
+   "note": "low along the hood: seven stacks of bills, the count lands on $124,700"
+  },
+  {
+   "at": "line:4",
+   "patrol": false,
+   "cam": {
+    "preset": "dolly",
+    "target": "car:1.6,0.75,0",
+    "dist": 6.2,
+    "h": 0.55,
+    "az": -58,
+    "sweep": -0.9,
+    "face": 0.55
+   },
+   "props": [
+    {
+     "id": "car",
+     "kit": "car",
+     "at": "car",
+     "scale": 2.6,
+     "yaw": 180,
+     "color": "#8b93a0",
+     "label": "",
+     "motion": "driveIn",
+     "fromOff": [
+      10,
+      0,
+      0
+     ],
+     "hit": "said:",
+     "sfx": false
+    },
+    {
+     "id": "pc",
+     "kit": "car",
+     "at": "patrol",
+     "scale": 2.6,
+     "yaw": 180,
+     "color": "#1b2334",
+     "label": "",
+     "lightbar": true,
+     "motion": "driveIn",
+     "fromOff": [
+      11,
+      0,
+      0
+     ],
+     "hit": "said:+0.25",
+     "sfx": false
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:4-0.1",
+     "sfx": "engine",
+     "db": 0,
+     "rate": 0.85,
+     "len": 1.5,
+     "fade": 0.7
+    },
+    {
+     "at": "line:4+0.15",
+     "sfx": "siren",
+     "db": -6
+    },
+    {
+     "at": "said:-0.5",
+     "sfx": "slide",
+     "db": -5,
+     "rate": 0.5
+    },
+    {
+     "at": "said:-0.1",
+     "sfx": "scratch",
+     "db": -8,
+     "rate": 0.6
+    }
+   ],
+   "note": "earlier: the car pulls onto the shoulder and stops, the patrol car behind it"
+  },
+  {
+   "at": "4:no",
+   "cam": {
+    "preset": "closeUp",
+    "target": "driver.face",
+    "dist": 1.45,
+    "h": 0.02,
+    "az": -24,
+    "face": 0.36
+   },
+   "actors": [
+    {
+     "id": "driver",
+     "pose": "talk",
+     "face": "worried",
+     "at": "door:0.5,0,0.2",
+     "talk": true,
+     "look": -20,
+     "then": [
+      {
+       "at": "cash.",
+       "face": "neutral"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "at": "4:no-0.05",
+     "sfx": "door",
+     "db": 6
+    },
+    {
+     "at": "4:no+0.2",
+     "sfx": "footsteps",
+     "db": 12,
+     "len": 1.0,
+     "fade": 0.3
+    }
+   ],
+   "note": "the driver, out of the car: no cash (lip-synced)"
+  },
+  {
+   "at": "line:5",
+   "cam": {
+    "preset": "pushIn",
+    "target": "side:1.0,0.5,-0.2",
+    "dist": 3.5,
+    "h": 0.45,
+    "az": 70,
+    "face": 0.56
+   },
+   "props": [
+    {
+     "id": "dog",
+     "kit": "dog",
+     "at": "side:1.0,0,2.2",
+     "to": "side:1.0,0,0.1",
+     "scale": 1.15,
+     "yaw": 90,
+     "alert": "alerts.",
+     "sfx": {
+      "sfx": "bark",
+      "db": -2,
+      "at": "alerts.+0.12"
+     }
+    }
+   ],
+   "fx": [
+    {
+     "fx": "shake",
+     "at": "alerts.+0.15",
+     "gain": 0.5
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:5",
+     "sfx": "sniff",
+     "db": 4
+    },
+    {
+     "at": "line:5+0.1",
+     "sfx": "footsteps",
+     "db": 3,
+     "rate": 1.6,
+     "len": 0.6,
+     "fade": 0.2
+    }
+   ],
+   "note": "the dog works along the car, nose down, then sits and points at the rear door"
+  },
+  {
+   "at": "5:No",
+   "cam": {
+    "preset": "medium",
+    "target": "trunk:0.55,0.3,0",
+    "dist": 3.6,
+    "h": 0.4,
+    "az": -52,
+    "face": 0.5
+   },
+   "actors": [
+    {
+     "id": "trooper",
+     "pose": "search",
+     "face": "stern",
+     "at": "behind:-0.7,0,0.1",
+     "look": "trunk"
+    }
+   ],
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8,
+     "open": 0,
+     "count": 0
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "drugs",
+     "label": "THE SEARCH",
+     "text": "NO DRUGS FOUND",
+     "sfx": {
+      "sfx": "stamp",
+      "db": -4
+     },
+     "on": "cooler"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "5:No-0.05",
+     "sfx": "click",
+     "db": 7
+    },
+    {
+     "at": "5:No+0.1",
+     "sfx": "metal",
+     "db": -5,
+     "rate": 0.8,
+     "len": 0.9,
+     "fade": 0.3
+    },
+    {
+     "at": "are",
+     "sfx": "knock",
+     "db": -3,
+     "rate": 0.7
+    },
+    {
+     "at": "found.",
+     "sfx": "knock",
+     "db": -3,
+     "rate": 0.6
+    }
+   ],
+   "subject": "trooper",
+   "note": "the flashlight sweeps the car and the empty cooler: nothing"
+  },
+  {
+   "at": "line:6",
+   "patrol": false,
+   "cam": {
+    "preset": "medium",
+    "target": "trunk:0.5,0.25,0.15",
+    "dist": 3.5,
+    "h": 0.2,
+    "az": -42,
+    "face": 0.5
+   },
+   "actors": [
+    {
+     "id": "driver",
+     "pose": "idle",
+     "face": "worried",
+     "at": "behind:-0.65,0,0.3",
+     "look": "trunk",
+     "then": [
+      {
+       "at": "charges.+0.25",
+       "face": "neutral"
+      }
+     ]
+    }
+   ],
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:6",
+     "sfx": "wind",
+     "db": -15,
+     "len": 2.2,
+     "fade": 0.6,
+     "fadeIn": 0.3
+    },
+    {
+     "at": "end:charges.-0.15",
+     "sfx": "heartbeat",
+     "db": 3
+    },
+    {
+     "at": "6:The-1.75",
+     "sfx": "riser",
+     "db": -6,
+     "rate": 1.14
+    }
+   ],
+   "subject": "driver",
+   "note": "THE HELD BEAT: the lights are gone, the driver alone with the closed cooler; almost still"
+  },
+  {
+   "at": "6:The",
+   "set": "courtroom",
+   "jury": false,
+   "in": "cut",
+   "cam": {
+    "preset": "medium",
+    "target": "pros.face",
+    "dist": 2.3,
+    "h": 0.12,
+    "az": 166,
+    "face": 0.38
+   },
+   "actors": [
+    {
+     "id": "pros",
+     "pose": "point",
+     "face": "stern",
+     "at": "plaintiff",
+     "look": 180,
+     "pointAt": [
+      1.7,
+      0.95,
+      0.4
+     ],
+     "then": [
+      {
+       "at": "government",
+       "face": "angry"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "at": "6:The-0.02",
+     "sfx": "boom",
+     "db": -5,
+     "len": 1.2,
+     "fade": 0.7
+    }
+   ],
+   "note": "THE TURN: a courtroom; the prosecutor points across the room"
+  },
+  {
+   "at": "sues",
+   "jury": false,
+   "in": "cut",
+   "cam": {
+    "preset": "slamZoom",
+    "target": "dTable:0,0.2,0",
+    "dist": 2.2,
+    "h": 0.5,
+    "az": 197,
+    "hit": "sues+0.14",
+    "face": 0.6
+   },
+   "props": [
+    {
+     "id": "cash",
+     "kit": "cash",
+     "label": "",
+     "at": "dTable:0,0,0.02",
+     "scale": 0.6,
+     "yaw": 172
+    },
+    {
+     "id": "np",
+     "kit": "nameplate",
+     "text": "DEFENDANT",
+     "at": "dTable:0,0,-0.3",
+     "yaw": 180,
+     "s": 1.0
+    }
+   ],
+   "actions": [
+    {
+     "do": "exhibit",
+     "at": "sues+0.2",
+     "label": "THE DEFENDANT",
+     "text": "$124,700 IN CASH",
+     "on": "cash",
+     "sfx": {
+      "sfx": "stamp",
+      "db": -3
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "sues+0.12",
+     "sfx": "impact",
+     "db": -1
+    }
+   ],
+   "note": "at the defendant's table: the cash, behind a DEFENDANT plate; the chair is empty"
+  },
+  {
+   "at": "line:7",
+   "set": "casefile",
+   "cam": {
+    "preset": "topDown",
+    "target": "desk:0.1,0,0.05",
+    "dist": 0.5,
+    "h": 1.75,
+    "az": 8
+   },
+   "props": [
+    {
+     "id": "m1",
+     "kit": "money",
+     "at": "desk:-0.12,0,-0.1",
+     "s": 1.25,
+     "yaw": 20,
+     "motion": "slideIn",
+     "fromOff": [
+      -1.5,
+      0,
+      -0.5
+     ],
+     "hit": "three",
+     "sfx": {
+      "sfx": "slide",
+      "db": -7
+     }
+    },
+    {
+     "id": "m2",
+     "kit": "money",
+     "at": "desk:0.3,0,-0.02",
+     "s": 1.25,
+     "yaw": -28,
+     "motion": "slideIn",
+     "fromOff": [
+      1.5,
+      0,
+      -0.4
+     ],
+     "hit": "people",
+     "sfx": {
+      "sfx": "slide",
+      "db": -7,
+      "rate": 1.1
+     }
+    },
+    {
+     "id": "m3",
+     "kit": "money",
+     "at": "desk:0.08,0,0.24",
+     "s": 1.25,
+     "yaw": 78,
+     "motion": "slideIn",
+     "fromOff": [
+      0.1,
+      0,
+      1.4
+     ],
+     "hit": "pooled",
+     "sfx": {
+      "sfx": "slide",
+      "db": -7,
+      "rate": 0.9
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "three+0.02",
+     "sfx": "paper",
+     "db": -6
+    },
+    {
+     "at": "people+0.02",
+     "sfx": "paper",
+     "db": -6,
+     "rate": 1.1
+    },
+    {
+     "at": "pooled+0.02",
+     "sfx": "cash",
+     "db": -6
+    }
+   ],
+   "note": "three stacks slide in from three sides and meet: pooled"
+  },
+  {
+   "at": "it",
+   "set": "evidence",
+   "cam": {
+    "preset": "orbit",
+    "target": "table:0,0.42,0",
+    "dist": 3.0,
+    "h": 0.6,
+    "az": -62,
+    "sweep": 24,
+    "face": 0.56
+   },
+   "props": [
+    {
+     "id": "truck",
+     "kit": "truck",
+     "at": "table:0.05,0,0",
+     "scale": 0.82,
+     "yaw": 0,
+     "motion": "driveIn",
+     "fromOff": [
+      -3.4,
+      0,
+      0
+     ],
+     "hit": "produce",
+     "open": "truck.-0.1",
+     "openDur": 0.4,
+     "sfx": {
+      "sfx": "metal",
+      "db": -2,
+      "rate": 1.4,
+      "len": 0.6,
+      "fade": 0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "it",
+     "sfx": "engine",
+     "db": -1,
+     "rate": 1.2,
+     "len": 0.75,
+     "fade": 0.3
+    },
+    {
+     "at": "produce-0.12",
+     "sfx": "squeak",
+     "db": -6,
+     "rate": 0.7
+    },
+    {
+     "at": "end:truck.-0.1",
+     "sfx": "horn",
+     "db": -9
+    }
+   ],
+   "note": "the plan: a refrigerated truck rolls in, the back door rolls up on crates of produce"
+  },
+  {
+   "at": "line:8",
+   "set": "courtroom",
+   "jury": false,
+   "cam": {
+    "preset": "pushIn",
+    "target": "judge.face",
+    "dist": 2.3,
+    "h": -0.2,
+    "az": 6,
+    "face": 0.4
+   },
+   "actors": [
+    {
+     "id": "judge",
+     "pose": "gavel",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "look": 0
+    }
+   ],
+   "props": [
+    {
+     "id": "jnp",
+     "kit": "nameplate",
+     "of": "judge",
+     "at": "benchTop:-0.62,0,0.18"
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "him.",
+     "sfx": {
+      "sfx": "knock",
+      "db": 3,
+      "rate": 0.62
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:8",
+     "sfx": "crowd",
+     "db": -10,
+     "len": 1.2,
+     "fade": 0.4,
+     "fadeIn": 0.2
+    },
+    {
+     "at": "him.+0.01",
+     "sfx": "thud",
+     "db": -2
+    }
+   ],
+   "note": "the trial judge rules: the gavel comes down on 'him'"
+  },
+  {
+   "at": "end:him.+0.02",
+   "jury": false,
+   "cam": {
+    "preset": "medium",
+    "target": "driver.face",
+    "dist": 3.0,
+    "h": 0.3,
+    "az": 190,
+    "face": 0.36
+   },
+   "actors": [
+    {
+     "id": "driver",
+     "pose": "cheer",
+     "face": "happy",
+     "at": "defendant",
+     "look": 180
+    }
+   ],
+   "sfx": [
+    {
+     "at": "end:him.+0.1",
+     "sfx": "crowd",
+     "db": -9,
+     "len": 0.85,
+     "fade": 0.35
+    }
+   ],
+   "note": "the driver wins the first round",
+   "props": [
+    {
+     "id": "cash",
+     "kit": "cash",
+     "label": "",
+     "at": "dTable:0,0,0.02",
+     "scale": 0.6,
+     "yaw": 172
+    }
+   ]
+  },
+  {
+   "at": "8:The",
+   "jury": false,
+   "in": "cut",
+   "cam": {
+    "preset": "dolly",
+    "target": "j1.face",
+    "dist": 4.6,
+    "h": 0.3,
+    "az": 0,
+    "sweep": 0.6,
+    "face": 0.42
+   },
+   "actors": [
+    {
+     "id": "j1",
+     "pose": "idle",
+     "face": "stern",
+     "at": "bench",
+     "sit": true,
+     "look": 0
+    },
+    {
+     "id": "j2",
+     "pose": "cross",
+     "face": "stern",
+     "at": "bench:-0.8,0,0",
+     "sit": true,
+     "look": 0
+    },
+    {
+     "id": "j3",
+     "pose": "idle",
+     "face": "worried",
+     "at": "bench:0.8,0,0",
+     "sit": true,
+     "look": 0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "8:The-0.85",
+     "sfx": "riser",
+     "db": -8,
+     "rate": 1.12
+    }
+   ],
+   "subject": "j1",
+   "note": "the appeals court: three judges on the bench"
+  },
+  {
+   "at": "reverses.",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "gavel",
+    "dist": 1.35,
+    "h": 0.32,
+    "az": 25,
+    "hit": "reverses.+0.2"
+   },
+   "props": [
+    {
+     "id": "gavel",
+     "kit": "gavel",
+     "at": "gavel",
+     "yaw": 20
+    }
+   ],
+   "actions": [
+    {
+     "do": "gavel",
+     "at": "reverses.+0.22",
+     "sfx": {
+      "sfx": "knock",
+      "db": 4,
+      "rate": 0.6
+     }
+    },
+    {
+     "do": "verdict",
+     "at": "reverses.+0.24",
+     "text": "REVERSED",
+     "sub": "8TH CIRCUIT \u00b7 2 TO 1 \u00b7 2006",
+     "sfx": {
+      "sfx": "stamp",
+      "db": 2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "at": "reverses.+0.2",
+     "sfx": "impact",
+     "db": 0
+    },
+    {
+     "at": "reverses.+0.24",
+     "sfx": "boom",
+     "db": -4,
+     "len": 0.55,
+     "fade": 0.35
+    }
+   ],
+   "caption": "off",
+   "note": "the gavel, the stamp: REVERSED"
+  },
+  {
+   "at": "line:9",
+   "jury": false,
+   "in": "cut",
+   "cam": {
+    "preset": "dolly",
+    "target": "driver.face",
+    "dist": 3.4,
+    "h": 0.3,
+    "az": 205,
+    "sweep": 0.5,
+    "face": 0.36
+   },
+   "actors": [
+    {
+     "id": "driver",
+     "pose": "slump",
+     "face": "sad",
+     "at": "aisle:0.15,0,0.1"
+    }
+   ],
+   "props": [
+    {
+     "id": "cash",
+     "kit": "cash",
+     "label": "",
+     "at": "dTable:0,0,0.02",
+     "scale": 0.6,
+     "yaw": 172
+    },
+    {
+     "id": "np",
+     "kit": "nameplate",
+     "text": "DEFENDANT",
+     "at": "dTable:0,0,-0.3",
+     "yaw": 180,
+     "s": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line:9+0.15",
+     "sfx": "creak",
+     "db": -8,
+     "rate": 0.7,
+     "len": 0.8,
+     "fade": 0.3
+    }
+   ],
+   "note": "after the silence: the driver behind the rail, the cash at the defendant's table between him and the lens"
+  },
+  {
+   "at": "9:the#2",
+   "jury": false,
+   "cam": {
+    "preset": "slamZoom",
+    "target": "cash",
+    "dist": 1.95,
+    "h": 0.3,
+    "az": 192,
+    "hit": "9:cash",
+    "face": 0.5
+   },
+   "props": [
+    {
+     "id": "cash",
+     "kit": "cash",
+     "label": "",
+     "at": "dTable:0,0,0.02",
+     "scale": 0.6,
+     "yaw": 172
+    },
+    {
+     "id": "np",
+     "kit": "nameplate",
+     "text": "DEFENDANT",
+     "at": "dTable:0,0,-0.3",
+     "yaw": 180,
+     "s": 0.85
+    }
+   ],
+   "sfx": [
+    {
+     "at": "9:the#2-0.1",
+     "sfx": "heartbeat",
+     "db": 1
+    },
+    {
+     "at": "9:cash-0.02",
+     "sfx": "impact",
+     "db": 1
+    }
+   ],
+   "note": "the defendant: the cash behind its plate"
+  },
+  {
+   "at": "9:the#3",
+   "set": "roadside",
+   "in": "cut",
+   "cam": {
+    "preset": "hookZoom",
+    "target": "cooler",
+    "dist": 1.32,
+    "h": 0.5,
+    "az": 24,
+    "face": 0.62
+   },
+   "props": [
+    {
+     "id": "cooler",
+     "kit": "cooler",
+     "at": "trunk:-0.07,0,0",
+     "scale": 0.8
+    }
+   ],
+   "sfx": [
+    {
+     "at": "9:the#3",
+     "sfx": "siren",
+     "db": -5
+    },
+    {
+     "at": "moment+0.1",
+     "sfx": "click",
+     "db": 6
+    },
+    {
+     "at": "moment+0.2",
+     "sfx": "swoosh",
+     "db": -6
+    }
+   ],
+   "note": "loop: back on the closed cooler under the lights, as frame 0"
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "title": "The government sued $124,700 in cash",
+ "voice": "Nichalia",
+ "moods": [
+  {
+   "line": 1,
+   "mood": "curious"
+  },
+  {
+   "line": 2,
+   "mood": "tense"
+  },
+  {
+   "line": 3,
+   "mood": "serious"
+  },
+  {
+   "line": 4,
+   "mood": "serious"
+  },
+  {
+   "line": 5,
+   "mood": "tense"
+  },
+  {
+   "line": 6,
+   "mood": "surprised"
+  },
+  {
+   "line": 7,
+   "mood": "neutral"
+  },
+  {
+   "line": 8,
+   "mood": "serious"
+  },
+  {
+   "line": 9,
+   "mood": "serious"
+  }
+ ],
+ "voice_lines": [
+  "[curious] A cooler lid lifts on a Nebraska highway.",
+  "Inside: seven bundles, wrapped in foil.",
+  "One hundred twenty-four thousand, seven hundred dollars.",
+  "[serious] The driver had said: no cash.",
+  "A drug dog alerts. No drugs are found.",
+  "No drug charges. [short pause] The government sues the money.",
+  "He says three people pooled it for a produce truck.",
+  "A judge rules for him. [short pause] The appeals court reverses.",
+  "[serious] He was never the defendant. The cash was, the moment"
+ ]
+}

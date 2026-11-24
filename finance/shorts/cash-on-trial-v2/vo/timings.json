@@ -1,0 +1,424 @@
+{
+ "source": {
+  "audio": "voice.wav",
+  "script": "script.txt",
+  "model": "elevenlabs:eleven_v4",
+  "duration": 32.98
+ },
+ "turns": [
+  {
+   "turn": 1,
+   "text": "A cooler lid lifts on a Nebraska highway.",
+   "words": [
+    {
+     "w": "A",
+     "t": 0.1,
+     "end": 0.26
+    },
+    {
+     "w": "cooler",
+     "t": 0.34,
+     "end": 0.66
+    },
+    {
+     "w": "lid",
+     "t": 0.82,
+     "end": 1.14
+    },
+    {
+     "w": "lifts",
+     "t": 1.22,
+     "end": 1.54
+    },
+    {
+     "w": "on",
+     "t": 1.62,
+     "end": 1.7
+    },
+    {
+     "w": "a",
+     "t": 1.74,
+     "end": 1.78
+    },
+    {
+     "w": "Nebraska",
+     "t": 1.86,
+     "end": 2.34
+    },
+    {
+     "w": "highway.",
+     "t": 2.42,
+     "end": 3.22
+    }
+   ]
+  },
+  {
+   "turn": 2,
+   "text": "Inside: seven bundles, wrapped in foil.",
+   "words": [
+    {
+     "w": "Inside:",
+     "t": 3.37,
+     "end": 4.49
+    },
+    {
+     "w": "seven",
+     "t": 4.57,
+     "end": 4.89
+    },
+    {
+     "w": "bundles,",
+     "t": 4.97,
+     "end": 5.77
+    },
+    {
+     "w": "wrapped",
+     "t": 5.93,
+     "end": 6.09
+    },
+    {
+     "w": "in",
+     "t": 6.13,
+     "end": 6.17
+    },
+    {
+     "w": "foil.",
+     "t": 6.33,
+     "end": 7.05
+    }
+   ]
+  },
+  {
+   "turn": 3,
+   "text": "One hundred twenty-four thousand, seven hundred dollars.",
+   "words": [
+    {
+     "w": "One",
+     "t": 7.2,
+     "end": 7.44
+    },
+    {
+     "w": "hundred",
+     "t": 7.52,
+     "end": 7.76
+    },
+    {
+     "w": "twenty-four",
+     "t": 7.84,
+     "end": 8.32
+    },
+    {
+     "w": "thousand,",
+     "t": 8.48,
+     "end": 9.12
+    },
+    {
+     "w": "seven",
+     "t": 9.24,
+     "end": 9.36
+    },
+    {
+     "w": "hundred",
+     "t": 9.44,
+     "end": 9.68
+    },
+    {
+     "w": "dollars.",
+     "t": 9.76,
+     "end": 10.48
+    }
+   ]
+  },
+  {
+   "turn": 4,
+   "text": "The driver had said: no cash.",
+   "words": [
+    {
+     "w": "The",
+     "t": 10.95,
+     "end": 11.03
+    },
+    {
+     "w": "driver",
+     "t": 11.23,
+     "end": 11.43
+    },
+    {
+     "w": "had",
+     "t": 11.55,
+     "end": 11.67
+    },
+    {
+     "w": "said:",
+     "t": 11.79,
+     "end": 12.19
+    },
+    {
+     "w": "no",
+     "t": 12.47,
+     "end": 12.71
+    },
+    {
+     "w": "cash.",
+     "t": 12.95,
+     "end": 13.51
+    }
+   ]
+  },
+  {
+   "turn": 5,
+   "text": "A drug dog alerts. No drugs are found.",
+   "words": [
+    {
+     "w": "A",
+     "t": 13.58,
+     "end": 13.66
+    },
+    {
+     "w": "drug",
+     "t": 13.74,
+     "end": 13.98
+    },
+    {
+     "w": "dog",
+     "t": 14.06,
+     "end": 14.22
+    },
+    {
+     "w": "alerts.",
+     "t": 14.3,
+     "end": 14.86
+    },
+    {
+     "w": "No",
+     "t": 15.34,
+     "end": 15.5
+    },
+    {
+     "w": "drugs",
+     "t": 15.58,
+     "end": 15.82
+    },
+    {
+     "w": "are",
+     "t": 15.9,
+     "end": 15.98
+    },
+    {
+     "w": "found.",
+     "t": 16.06,
+     "end": 16.7
+    }
+   ]
+  },
+  {
+   "turn": 6,
+   "text": "No drug charges. The government sues the money.",
+   "words": [
+    {
+     "w": "No",
+     "t": 16.77,
+     "end": 17.01
+    },
+    {
+     "w": "drug",
+     "t": 17.17,
+     "end": 17.33
+    },
+    {
+     "w": "charges.",
+     "t": 17.41,
+     "end": 18.05
+    },
+    {
+     "w": "The",
+     "t": 19.01,
+     "end": 19.09
+    },
+    {
+     "w": "government",
+     "t": 19.33,
+     "end": 19.57
+    },
+    {
+     "w": "sues",
+     "t": 19.73,
+     "end": 20.05
+    },
+    {
+     "w": "the",
+     "t": 20.09,
+     "end": 20.13
+    },
+    {
+     "w": "money.",
+     "t": 20.21,
+     "end": 20.85
+    }
+   ]
+  },
+  {
+   "turn": 7,
+   "text": "He says three people pooled it for a produce truck.",
+   "words": [
+    {
+     "w": "He",
+     "t": 20.92,
+     "end": 21.16
+    },
+    {
+     "w": "says",
+     "t": 21.32,
+     "end": 21.48
+    },
+    {
+     "w": "three",
+     "t": 21.56,
+     "end": 21.8
+    },
+    {
+     "w": "people",
+     "t": 21.88,
+     "end": 22.2
+    },
+    {
+     "w": "pooled",
+     "t": 22.28,
+     "end": 22.6
+    },
+    {
+     "w": "it",
+     "t": 22.68,
+     "end": 22.84
+    },
+    {
+     "w": "for",
+     "t": 22.88,
+     "end": 22.92
+    },
+    {
+     "w": "a",
+     "t": 23.0,
+     "end": 23.08
+    },
+    {
+     "w": "produce",
+     "t": 23.28,
+     "end": 23.48
+    },
+    {
+     "w": "truck.",
+     "t": 23.56,
+     "end": 24.2
+    }
+   ]
+  },
+  {
+   "turn": 8,
+   "text": "A judge rules for him. The appeals court reverses.",
+   "words": [
+    {
+     "w": "A",
+     "t": 24.27,
+     "end": 24.43
+    },
+    {
+     "w": "judge",
+     "t": 24.51,
+     "end": 24.83
+    },
+    {
+     "w": "rules",
+     "t": 24.91,
+     "end": 25.23
+    },
+    {
+     "w": "for",
+     "t": 25.31,
+     "end": 25.47
+    },
+    {
+     "w": "him.",
+     "t": 25.55,
+     "end": 25.87
+    },
+    {
+     "w": "The",
+     "t": 26.79,
+     "end": 26.83
+    },
+    {
+     "w": "appeals",
+     "t": 26.91,
+     "end": 27.31
+    },
+    {
+     "w": "court",
+     "t": 27.39,
+     "end": 27.63
+    },
+    {
+     "w": "reverses.",
+     "t": 27.71,
+     "end": 28.75
+    }
+   ]
+  },
+  {
+   "turn": 9,
+   "text": "He was never the defendant. The cash was, the moment",
+   "words": [
+    {
+     "w": "He",
+     "t": 28.9,
+     "end": 29.06
+    },
+    {
+     "w": "was",
+     "t": 29.18,
+     "end": 29.3
+    },
+    {
+     "w": "never",
+     "t": 29.46,
+     "end": 29.7
+    },
+    {
+     "w": "the",
+     "t": 29.78,
+     "end": 29.86
+    },
+    {
+     "w": "defendant.",
+     "t": 29.98,
+     "end": 30.7
+    },
+    {
+     "w": "The",
+     "t": 30.9,
+     "end": 31.06
+    },
+    {
+     "w": "cash",
+     "t": 31.26,
+     "end": 31.46
+    },
+    {
+     "w": "was,",
+     "t": 31.54,
+     "end": 32.02
+    },
+    {
+     "w": "the",
+     "t": 32.18,
+     "end": 32.34
+    },
+    {
+     "w": "moment",
+     "t": 32.58,
+     "end": 33.06
+    }
+   ]
+  }
+ ]
+}

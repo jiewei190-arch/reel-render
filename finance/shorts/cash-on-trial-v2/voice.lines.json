@@ -1,0 +1,69 @@
+{
+ "provider": "elevenlabs",
+ "voice": "Nichalia",
+ "voice_id": "XfNU2rGpBa01ckF309OY",
+ "model": "eleven_v4",
+ "gap": 0.15,
+ "lead": 0.1,
+ "speed": 1.0,
+ "tempo": 1.0,
+ "sr": 24000,
+ "duration": 32.98,
+ "characters": 403,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A cooler lid lifts on a Nebraska highway.",
+   "start": 0.02,
+   "end": 3.22
+  },
+  {
+   "line": 2,
+   "text": "Inside: seven bundles, wrapped in foil.",
+   "start": 3.37,
+   "end": 7.05
+  },
+  {
+   "line": 3,
+   "text": "One hundred twenty-four thousand, seven hundred dollars.",
+   "start": 7.2,
+   "end": 10.64
+  },
+  {
+   "line": 4,
+   "text": "The driver had said: no cash.",
+   "start": 10.79,
+   "end": 13.43
+  },
+  {
+   "line": 5,
+   "text": "A drug dog alerts. No drugs are found.",
+   "start": 13.58,
+   "end": 16.62
+  },
+  {
+   "line": 6,
+   "text": "No drug charges. The government sues the money.",
+   "start": 16.77,
+   "end": 20.77
+  },
+  {
+   "line": 7,
+   "text": "He says three people pooled it for a produce truck.",
+   "start": 20.92,
+   "end": 24.12
+  },
+  {
+   "line": 8,
+   "text": "A judge rules for him. The appeals court reverses.",
+   "start": 24.27,
+   "end": 28.67
+  },
+  {
+   "line": 9,
+   "text": "He was never the defendant. The cash was, the moment",
+   "start": 28.82,
+   "end": 32.98
+  }
+ ]
+}
