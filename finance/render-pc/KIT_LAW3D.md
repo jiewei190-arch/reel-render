@@ -77,7 +77,7 @@ src/law/gen/<slug_>.law.gen.ts  →  <Pascal>Recipe in src/index.law.ts
 - `"short"` (the default) and `"long"` use **portrait 1080x1920**.
 - `"landscape"` uses **1920x1080**: long-form, see section 12 "Long-form (landscape)".
 
-The gate's length check is 30-55 s for `"short"` and 5-8 min otherwise.
+The gate's length check is 20-55 s for `"short"` and 5-8 min otherwise.
 
 ## 3. Cast (src/law/cast.tsx)
 

@@ -35,6 +35,15 @@ Several channels run in parallel (one process per channel); GPU renders take tur
 
 ## Standing rules
 
+- **Skills test (owner, Nov 23):** Court Of Weird Shorts go through the YouTube skill packs in `.claude/skills/` (`youtube-*`, `yt-*`) before they are voiced (angle, hook and script, title and thumbnail text, pre-publish gate, description) and each keeps a `SKILLS_LOG.md`. BillionDollarBlunders Shorts are made WITHOUT the skill packs, as the comparison channel. See `docs/SKILLS_TEST_WEEK.md`.
+- Shorts on Court Of Weird and BillionDollarBlunders run 20-40 s (owner, Nov 23).
+- **Long-video formats (owner, Nov 23, after format research on live view counts; see `docs/FORMAT_RESEARCH_2026-11-23.md`):**
+  Court Of Weird = true-case COMPILATIONS ("[N] Real Lawsuits That...", many short stories in one video, about 12-14 min);
+  BillionDollarBlunders = "From $N To Nothing: How [Company] Lost Everything", 20 min or more, inside ONE industry the
+  channel owns. Single-case law videos and "the $N mistake that killed X" one-offs from new channels were getting 6-956
+  views, so they are not the base format. This replaces the earlier 5-8 min target. The engine's long-form gate is
+  8-12 min (`tools/longform_gate.mjs`), so 20+ min needs that gate widened on the PC before rendering.
+
 - Never post or upload without the owner's approval. Uploads are scheduled, not published immediately.
 - No tags or hashtags. Made for kids: No. Altered/AI content: No (YouTube; on TikTok the AI label would be On).
 - Descriptions: the video's text + sources + disclaimers ("Educational only…", "Voice is synthetic.") + the channel pitch.

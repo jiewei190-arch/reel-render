@@ -72,7 +72,8 @@ LONG = 120  # seconds; above this a script is a long-form video (landscape, chap
 def _length_rules(seconds: int) -> str:
     words = int(seconds * 2.45)
     if seconds <= LONG:
-        return (f"- Target **{seconds} seconds** spoken (about {words} words), 8-12 lines.\n"
+        lines = "6-9" if seconds <= 40 else "8-12"   # short Shorts: fewer lines, not thinner ones
+        return (f"- Target **{seconds} seconds** spoken (about {words} words), {lines} lines.\n"
                 "- The **last line leads straight back into line 1** so the Short loops.")
     return (f"- This is a LONG-FORM video: target **{seconds // 60} minutes** spoken (about {words} words), one line per "
             "sentence or two.\n"

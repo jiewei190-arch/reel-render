@@ -167,7 +167,7 @@ export const main = async (argv) => {
   const lastShot = C.shots[C.shots.length - 1], firstShot = C.shots[0];
   const loopy = C.hookAgain !== null && JSON.stringify(lastShot.spec.cam.target) === JSON.stringify(firstShot.spec.cam.target);
   const fmt = recipe.format ?? "short";
-  const lenOk = fmt === "short" ? dur >= 30 && dur <= 55 : dur >= 300 && dur <= 480;
+  const lenOk = fmt === "short" ? dur >= 20 && dur <= 55 : dur >= 300 && dur <= 480;
   // framing QA (screen space, tools/framing_qa.mjs + framing_kits.mjs): heads vs boards/cards, the subject in frame,
   // cards inside the frame, text contrast and size, frame-0 face (RECIPE_GUIDE.md "Framing rules", KIT_*.md)
   const KF = runFraming("law3d", C, m, recipe);
@@ -191,7 +191,7 @@ export const main = async (argv) => {
     ["no static frames: the camera moves on every frame", staticF.length === 0, staticF.length ? `${staticF.length} still frame(s), first ${staticF.slice(0, 5).join(", ")}` : "moves on every frame", true],
     ["story devices: a case-file card, an exhibit and a verdict", ["caseCard", "exhibit", "verdict"].every((k) => allActs.includes(k)), [...new Set(allActs)].join(", ") || "none", false],
     ["loop ending: the hook comes back and the last shot frames the first shot's subject", loopy, `hook again ${C.hookAgain === null ? "not set" : `at ${C.hookAgain.toFixed(2)} s`}; last target ${JSON.stringify(lastShot.spec.cam.target)}`, false],
-    [fmt === "short" ? "length 30-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
+    [fmt === "short" ? "length 20-55 s" : "length 5-8 min", lenOk, `${dur.toFixed(2)} s`, false],
   ];
   gate.push(...KF.rows);
   // polish rules P1-P4 (tools/polish_qa.mjs): counters land and hold, text fits, no set piece over a featured face

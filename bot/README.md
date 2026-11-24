@@ -54,7 +54,7 @@ Run from this `bot` folder:
 | `python -m reelbot voice <slug>` / `recipe <slug>` / `render <slug>` | redo one stage |
 | `python -m reelbot review <slug>` | run the AI editors on the finished video (and fix + re-render if needed) |
 
-Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 45`, `--style S1..S6`, `--notes "..."`, `--redo`,
+Options: `--voice Tyler|Christopher|auto` (auto alternates), `--seconds 30` (default: 30 on law and biz, 45 elsewhere; 20-40 is the range to stay in), `--style S1..S6`, `--notes "..."`, `--redo`,
 `--edit-rounds 2` (AI editor fix-and-re-render rounds; -1 = skip the review), `--hooks 6` (how many openings to write and score; 0 = off), `--no-learn` (skip refreshing learnings first).
 
 ## Voice emotion and sound design
@@ -117,7 +117,7 @@ Profiles live in `reelbot/channels.py`; each story channel's writing rules are i
 `prompts/story_script.md`. Learnings are kept per channel (`work/learnings_<channel>.md`). Videos land in
 `<videos dir>/<Channel folder>/<slug>/`.
 
-- `--long` makes a long-form video (about 10 minutes, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
+- `--long` makes a long-form video (about 7 minutes, inside the 5-8 minute range, 16:9, chapters, thumbnail idea; `--seconds` to change the length).
   On law, biz and cyber it is written in the doc kit (see "Long-form (doc engine)").
   Needs the engine's landscape mode (`LONGFORM.md` in the render folder).
 - `bend "<a winning video or format>" --channel law` studies a format that works, adapts it into original story ideas

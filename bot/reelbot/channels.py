@@ -30,6 +30,7 @@ class Channel:
     folder: str = ""                # output folder name under the videos dir
     hook_rules: str = ""            # what a winning first line looks like on this channel
     cast_rule: str = ""             # who may appear on screen
+    short_seconds: int = 45         # default spoken length of a Short on this channel (--seconds overrides)
     renders: bool = True            # False = this channel's videos are rendered by another engine (bot stops after voice)
 
 
@@ -57,7 +58,7 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         id="law", name="Court Of Weird (weird true court cases)",
         brief=("A channel of weird TRUE court cases and lawsuits told as gripping stories: the claim nobody believes, "
                "the twist, the verdict. US adults 18-45. Stories only, never legal advice."),
-        prompt="story_script.md", doc="law.md", voices=("Nichalia",), kit="law3d", entry="src/index.law.ts",
+        prompt="story_script.md", doc="law.md", short_seconds=30, voices=("Nichalia",), kit="law3d", entry="src/index.law.ts",
         about=('Court Of Weird tells the strangest true court cases: real lawsuits, bizarre trials and the people behind them. Every story is researched and sourced from court records and news reports. Stories only, never legal advice. Subscribe for the weirdest cases on record.'),
         disclaimers=("This is a true story told for entertainment and education, not legal advice. "
                      "Details come from court records and news reports listed below.", "Voice is synthetic."),
@@ -69,7 +70,7 @@ CHANNELS: dict[str, Channel] = {c.id: c for c in (
         id="biz", name="Billion Dollar Blunders (costly business mistakes)",
         brief=("A channel of TRUE business stories: the one decision that cost a company a fortune or killed it, and "
                "the lesson. US adults 18-45 interested in money and business."),
-        prompt="story_script.md", doc="biz.md", voices=("Steven",), kit="biz3d", entry="src/index.biz.ts",
+        prompt="story_script.md", doc="biz.md", short_seconds=30, voices=("Steven",), kit="biz3d", entry="src/index.biz.ts",
         about=('Billion Dollar Blunders breaks down the biggest business mistakes in history: deals companies turned down, products that flopped and empires that collapsed, told with the real numbers and sources. For education and entertainment, not financial advice. Subscribe for a new blunder every week.'),
         disclaimers=("Educational only, not financial or investment advice. Figures come from the sources below.",
                      "Voice is synthetic."),

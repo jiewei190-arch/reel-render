@@ -1,0 +1,1 @@
+The yt-* skills are copied from https://github.com/jakeschincariol/youtube-agent-skill (commit a2feb21, MIT licence, see YT_AGENT_SKILL_LICENSE). YT_AGENT_SKILL_voice_template.md is its templates/voice.md; the skills read a filled-in copy at ~/.claude/youtube/voice.md.
