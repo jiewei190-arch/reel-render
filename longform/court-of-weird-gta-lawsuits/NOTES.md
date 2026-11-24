@@ -49,4 +49,4 @@ Cold open (the hotel room; plants "what does a court do with him?") → 10 Lohan
 ## For the voice and render session
 - "Lapsus" is spoken without the dollar sign. "R E Three" and "R E V C" are spelled out for the narrator. "Benzies" = "BEN-zeez", "Gravano" = "gruh-VAH-no", "Fayette" = "fay-ET" (best guesses, not verified).
 - `script.json` carries `format` and `target_seconds`, which are outside `SCRIPT_SCHEMA`.
-- Three voice tags only: [dramatic] and [curious] in the cold open, [serious] on cases 7 and 1.
+- Four voice tags only: [dramatic] and [curious] in the cold open, [serious] on cases 7 and 1.
