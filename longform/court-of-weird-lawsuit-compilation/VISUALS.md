@@ -1,0 +1,30 @@
+# VISUALS: what the viewer must see in each case
+
+One note per case: the object, the place, the moment. The subject of the story is on screen in the first two seconds
+of its chapter, and the verdict gets its own shot. Generic low-poly figures only (no likenesses), no logos, seals,
+trade dress or brand artwork; brand names appear at most as plain text in a case card. On-screen numbers must match
+the narration (digits are fine on screen).
+
+| # | Case | VISUAL NOTE |
+|---|---|---|
+| Cold open | The judge on the stand | A man in a suit in the WITNESS box (not on the bench), wiping his eyes; on the evidence table in front of him, one pair of grey suit pants under a spotlight. Counter slams to "$54,000,000". Then a "$12,000" offer slides across a dry-cleaning counter and is pushed back. End on a "?" over the pants. |
+| 14 | The fighter jet | A grey vertical-takeoff jet (generic, no markings) parked on a school lawn next to a bike rack. Then the moment: a hand dropping an envelope with a check reading "$700,008.50" and 15 small point labels into a mailbox. The envelope comes back stamped RETURNED. Verdict card: "NOT AN OFFER · 1999". |
+| 13 | Is a tomato a fruit? | One tomato on the witness stand. A customs scale at an 1880s dock with two crates: "FRUIT · FREE" and "VEGETABLES · 10%". The moment: a lawyer reading from a huge open dictionary. Verdict: the tomato is dropped into the VEGETABLES crate, "1893". |
+| 12 | Catch the flu | A Victorian newspaper page with a boxed ad reading "£100 REWARD" (generic type, no real masthead) and a small rubber ball with a tube. The moment: a bank counter with a "£1,000 DEPOSITED" slip. Then a woman in bed with a thermometer, the ball on the nightstand. Verdict stamp: "MUST PAY · 1892". |
+| 11 | The monkey selfie | A crested black macaque holding a camera at arm's length in a jungle clearing, flash pop, grinning face in the lens reflection (stylised, not the real photograph). Then a courtroom with an EMPTY plaintiff's chair and a nameplate "NARUTO". Verdict: "NOT HUMAN · CAN'T SUE · 2018". |
+| 10 | The farm sold as a joke | A diner table: a whiskey bottle, two glasses, and a restaurant guest check flipped over, handwriting appearing: "We hereby agree to sell... $50,000". Two signatures. Cut to the farm (fields, a barn) with a SOLD sign dropping in. Verdict: "SALE ORDERED · 1954". |
+| 9 | Heroes who are not human | Generic, original action figures in blister packs on a customs inspection table (one with claws, one with wings, one with tentacles; no real characters or packaging art). Two bins: "DOLLS 12%" and "NON-HUMAN TOYS 6.8%". The moment: the judge lifts the clawed figure; it drops into the 6.8% bin. |
+| 8 | The legally haunted house | A tall Victorian house on a riverbank at dusk, one window glowing, a faint translucent shape in it. A "FOR SALE $650,000" sign. The moment: a magazine and a newspaper on a table, each with a "OUR HAUNTED HOUSE" style headline (generic). Verdict: a gavel, then the stamp "HAUNTED · AS A MATTER OF LAW · 1991". |
+| 7 | Is a burrito a sandwich? | A burrito and a sandwich side by side on the judge's bench like two exhibits, tagged "A" and "B". A strip-mall with two neighbouring storefronts ("BAKERY CAFE", "BURRITOS", generic signs). The moment: the judge opens a dictionary; a diagram: two slices of bread vs one tortilla. Stamp on the burrito: "NOT A SANDWICH · 2006". |
+| 6 | Suing Satan | A court clerk's window: a hand slides in a complaint titled "v. SATAN AND HIS STAFF". Then an empty defendant's table with a nameplate "SATAN" and a US Marshal figure holding an envelope, looking around with nowhere to deliver it (no devil character shown). Stamp: "DENIED · 1971". |
+| 5 | The cash on trial | A highway shoulder at night, patrol lights; an open cooler on a back seat with foil-wrapped bundles; one bundle unwrapped to show cash. The moment: the stack of cash sitting ALONE at the defendant's table, nameplate "$124,700". Stamp: "REVERSED · 2006" (never "FORFEITED"), then a "?" card for what happened next. |
+| 4 | The gold rooster | A solid gold rooster statue on a pedestal in a 1950s chicken restaurant, velvet rope around it. The moment: a US Marshal carrying the rooster out under one arm; then the rooster at the defendant's table before a jury box. Case card with the full title. Verdict: twelve jurors, the rooster lit gold, "VERDICT FOR THE OWNER · 1962". |
+| 3 | The shotgun trap | An empty, boarded-up farmhouse with "NO TRESPASS" signs. Inside: a closed bedroom door, a wire running from the doorknob across the room to the dark (the gun stays in shadow; no firing, no injury shown). A shelf of old glass jars. Then a hospital bed calendar "40 DAYS", a "$50 FINE" slip, and the stamp "$30,000 · AFFIRMED · 1971". |
+| 2 | The hot coffee | A PARKED car in a lot, the passenger door side; an older woman in the passenger seat, a foam cup between her knees, a cream packet in her hand (the spill is implied by a cut, never shown on her body). A thermometer graphic reading "180-190°F". Two slips: "$20,000 ASKED" and "$800 OFFERED". The numbers shrinking: "$2.7M" to "$480,000" to "SETTLED · UNDISCLOSED". |
+| 1 | The $54 million pants | The dry-cleaner counter: a ticket "$10.50", a rail of hanging clothes with one empty hanger. Two wall signs: "SATISFACTION GUARANTEED" and "SAME DAY SERVICE". An adding machine tape racing to "$67,000,000", then "$54,000,000". Back to the witness box from the cold open. The verdict: the counter spins down to "$0". Final card: the pants, folded, alone on the evidence table. |
+
+## Rules for the whole video
+- Each chapter opens on a big countdown number card (14 ... 1) with the case name, year and court, for two seconds at most, then the object.
+- Re-hook lines play over a two-second "next exhibit" shot: the next case's object under a cloth, or in silhouette.
+- Verdict stamps use the words in this table; they are plain-English labels for the dispositions listed in sources.md.
+- The Liebeck and Katko chapters show no injury. The Mayo chapter shows no caricature of the plaintiff.
