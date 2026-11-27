@@ -1,0 +1,47 @@
+{
+ "title": "Pando: The Forest That Is One Tree",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 44.16,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:warm",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "one",
+   "tree",
+   "pando",
+   "root",
+   "47000",
+   "identical",
+   "6000",
+   "tonnes",
+   "heaviest",
+   "80000",
+   "9000",
+   "16000",
+   "shrinking",
+   "deer",
+   "elk",
+   "jump",
+   "over",
+   "fences"
+  ]
+ }
+}
