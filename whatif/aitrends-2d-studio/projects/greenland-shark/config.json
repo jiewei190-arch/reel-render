@@ -1,0 +1,49 @@
+{
+ "title": "The Greenland Shark May Live 400 Years",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 40.78,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "400",
+   "years",
+   "greenland",
+   "cold",
+   "dark",
+   "eyes",
+   "lenses",
+   "2016",
+   "392",
+   "120",
+   "longest-living",
+   "centimeter",
+   "150",
+   "babies",
+   "slower",
+   "walk",
+   "oldest",
+   "born",
+   "united",
+   "states"
+  ]
+ }
+}
