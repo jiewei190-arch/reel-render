@@ -1,0 +1,76 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:24.20,Title,,0,0,0,,Day 1 of 100 push-ups a day
+Dialogue: 0,0:00:00.14,0:00:00.26,Cap,,0,0,0,,{\c&H00E6FF&}DAY{\c&HFFFFFF&} ONE.
+Dialogue: 0,0:00:00.26,0:00:00.56,Cap,,0,0,0,,DAY {\c&H00E6FF&}ONE.{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.56,0:00:01.68,Cap,,0,0,0,,{\c&H00E6FF&}PUSH-UPS{\c&HFFFFFF&} FIRST.
+Dialogue: 0,0:00:01.68,0:00:02.62,Cap,,0,0,0,,PUSH-UPS {\c&H00E6FF&}FIRST.{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.82,0:00:03.00,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} HIT TWENTY-THREE,
+Dialogue: 0,0:00:03.00,0:00:03.18,Cap,,0,0,0,,YOU {\c&H00E6FF&}HIT{\c&HFFFFFF&} TWENTY-THREE,
+Dialogue: 0,0:00:03.18,0:00:03.78,Cap,,0,0,0,,YOU HIT {\c&H00E6FF&}TWENTY-THREE,{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.78,0:00:04.06,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} YOUR ARMS
+Dialogue: 0,0:00:04.06,0:00:04.20,Cap,,0,0,0,,AND {\c&H00E6FF&}YOUR{\c&HFFFFFF&} ARMS
+Dialogue: 0,0:00:04.20,0:00:04.56,Cap,,0,0,0,,AND YOUR {\c&H00E6FF&}ARMS{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.56,0:00:05.48,Cap,,0,0,0,,{\c&H00E6FF&}JUST...{\c&HFFFFFF&}
+Dialogue: 0,0:00:05.72,0:00:06.56,Cap,,0,0,0,,{\c&H00E6FF&}STOP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.76,0:00:06.96,Cap,,0,0,0,,{\c&H00E6FF&}YOU{\c&HFFFFFF&} FINISH THE
+Dialogue: 0,0:00:06.96,0:00:07.16,Cap,,0,0,0,,YOU {\c&H00E6FF&}FINISH{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:07.16,0:00:07.36,Cap,,0,0,0,,YOU FINISH {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.36,0:00:07.58,Cap,,0,0,0,,{\c&H00E6FF&}REST{\c&HFFFFFF&} IN TINY
+Dialogue: 0,0:00:07.58,0:00:07.80,Cap,,0,0,0,,REST {\c&H00E6FF&}IN{\c&HFFFFFF&} TINY
+Dialogue: 0,0:00:07.80,0:00:08.12,Cap,,0,0,0,,REST IN {\c&H00E6FF&}TINY{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.12,0:00:08.46,Cap,,0,0,0,,{\c&H00E6FF&}SETS,{\c&HFFFFFF&} THEN ON
+Dialogue: 0,0:00:08.46,0:00:08.78,Cap,,0,0,0,,SETS, {\c&H00E6FF&}THEN{\c&HFFFFFF&} ON
+Dialogue: 0,0:00:08.78,0:00:08.92,Cap,,0,0,0,,SETS, THEN {\c&H00E6FF&}ON{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.92,0:00:09.06,Cap,,0,0,0,,{\c&H00E6FF&}YOUR{\c&HFFFFFF&} KNEES.
+Dialogue: 0,0:00:09.06,0:00:09.96,Cap,,0,0,0,,YOUR {\c&H00E6FF&}KNEES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.32,0:00:10.54,Cap,,0,0,0,,{\c&H00E6FF&}BISCUIT{\c&HFFFFFF&} SITS ON
+Dialogue: 0,0:00:10.54,0:00:10.74,Cap,,0,0,0,,BISCUIT {\c&H00E6FF&}SITS{\c&HFFFFFF&} ON
+Dialogue: 0,0:00:10.74,0:00:10.94,Cap,,0,0,0,,BISCUIT SITS {\c&H00E6FF&}ON{\c&HFFFFFF&}
+Dialogue: 0,0:00:10.94,0:00:11.06,Cap,,0,0,0,,{\c&H00E6FF&}YOUR{\c&HFFFFFF&} BACK TO
+Dialogue: 0,0:00:11.06,0:00:11.28,Cap,,0,0,0,,YOUR {\c&H00E6FF&}BACK{\c&HFFFFFF&} TO
+Dialogue: 0,0:00:11.28,0:00:11.46,Cap,,0,0,0,,YOUR BACK {\c&H00E6FF&}TO{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.46,0:00:12.34,Cap,,0,0,0,,{\c&H00E6FF&}HELP.{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.48,0:00:12.60,Cap,,0,0,0,,{\c&H00E6FF&}THE{\c&HFFFFFF&} RUN TAKES
+Dialogue: 0,0:00:12.60,0:00:12.78,Cap,,0,0,0,,THE {\c&H00E6FF&}RUN{\c&HFFFFFF&} TAKES
+Dialogue: 0,0:00:12.78,0:00:13.02,Cap,,0,0,0,,THE RUN {\c&H00E6FF&}TAKES{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.02,0:00:13.24,Cap,,0,0,0,,{\c&H00E6FF&}AN{\c&HFFFFFF&} HOUR AND
+Dialogue: 0,0:00:13.24,0:00:13.48,Cap,,0,0,0,,AN {\c&H00E6FF&}HOUR{\c&HFFFFFF&} AND
+Dialogue: 0,0:00:13.48,0:00:13.76,Cap,,0,0,0,,AN HOUR {\c&H00E6FF&}AND{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.76,0:00:14.02,Cap,,0,0,0,,{\c&H00E6FF&}TWENTY{\c&HFFFFFF&} MINUTES.
+Dialogue: 0,0:00:14.02,0:00:14.96,Cap,,0,0,0,,TWENTY {\c&H00E6FF&}MINUTES.{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.10,0:00:15.24,Cap,,0,0,0,,{\c&H00E6FF&}A{\c&HFFFFFF&} LOT OF
+Dialogue: 0,0:00:15.24,0:00:15.38,Cap,,0,0,0,,A {\c&H00E6FF&}LOT{\c&HFFFFFF&} OF
+Dialogue: 0,0:00:15.38,0:00:15.50,Cap,,0,0,0,,A LOT {\c&H00E6FF&}OF{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.50,0:00:15.58,Cap,,0,0,0,,{\c&H00E6FF&}IT{\c&HFFFFFF&} IS WALKING.
+Dialogue: 0,0:00:15.58,0:00:15.70,Cap,,0,0,0,,IT {\c&H00E6FF&}IS{\c&HFFFFFF&} WALKING.
+Dialogue: 0,0:00:15.70,0:00:16.60,Cap,,0,0,0,,IT IS {\c&H00E6FF&}WALKING.{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.96,0:00:17.14,Cap,,0,0,0,,{\c&H00E6FF&}DAY{\c&HFFFFFF&} TWO, YOU
+Dialogue: 0,0:00:17.14,0:00:17.44,Cap,,0,0,0,,DAY {\c&H00E6FF&}TWO,{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:17.44,0:00:17.70,Cap,,0,0,0,,DAY TWO, {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.70,0:00:18.06,Cap,,0,0,0,,{\c&H00E6FF&}CAN'T{\c&HFFFFFF&} LIFT YOUR
+Dialogue: 0,0:00:18.06,0:00:18.20,Cap,,0,0,0,,CAN'T {\c&H00E6FF&}LIFT{\c&HFFFFFF&} YOUR
+Dialogue: 0,0:00:18.20,0:00:18.40,Cap,,0,0,0,,CAN'T LIFT {\c&H00E6FF&}YOUR{\c&HFFFFFF&}
+Dialogue: 0,0:00:18.40,0:00:18.66,Cap,,0,0,0,,{\c&H00E6FF&}ARMS{\c&HFFFFFF&} TO BRUSH
+Dialogue: 0,0:00:18.66,0:00:18.90,Cap,,0,0,0,,ARMS {\c&H00E6FF&}TO{\c&HFFFFFF&} BRUSH
+Dialogue: 0,0:00:18.90,0:00:19.12,Cap,,0,0,0,,ARMS TO {\c&H00E6FF&}BRUSH{\c&HFFFFFF&}
+Dialogue: 0,0:00:19.12,0:00:19.30,Cap,,0,0,0,,{\c&H00E6FF&}YOUR{\c&HFFFFFF&} HAIR.
+Dialogue: 0,0:00:19.30,0:00:20.20,Cap,,0,0,0,,YOUR {\c&H00E6FF&}HAIR.{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.26,0:00:20.56,Cap,,0,0,0,,{\c&H00E6FF&}MINA{\c&HFFFFFF&} DOES IT,
+Dialogue: 0,0:00:20.56,0:00:20.78,Cap,,0,0,0,,MINA {\c&H00E6FF&}DOES{\c&HFFFFFF&} IT,
+Dialogue: 0,0:00:20.78,0:00:20.98,Cap,,0,0,0,,MINA DOES {\c&H00E6FF&}IT,{\c&HFFFFFF&}
+Dialogue: 0,0:00:20.98,0:00:21.16,Cap,,0,0,0,,{\c&H00E6FF&}THEN{\c&HFFFFFF&} CHECKS THE
+Dialogue: 0,0:00:21.16,0:00:21.40,Cap,,0,0,0,,THEN {\c&H00E6FF&}CHECKS{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:21.40,0:00:21.64,Cap,,0,0,0,,THEN CHECKS {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:21.64,0:00:22.52,Cap,,0,0,0,,{\c&H00E6FF&}BRUSH.{\c&HFFFFFF&}
+Dialogue: 0,0:00:22.78,0:00:22.96,Cap,,0,0,0,,{\c&H00E6FF&}"STILL{\c&HFFFFFF&} ALL THERE."
+Dialogue: 0,0:00:22.96,0:00:23.18,Cap,,0,0,0,,"STILL {\c&H00E6FF&}ALL{\c&HFFFFFF&} THERE."
+Dialogue: 0,0:00:23.18,0:00:23.90,Cap,,0,0,0,,"STILL ALL {\c&H00E6FF&}THERE."{\c&HFFFFFF&}

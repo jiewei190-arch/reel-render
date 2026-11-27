@@ -1,0 +1,17 @@
+{
+ "title": "The Day Rome Got Sacked",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 30,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "captions": true,
+ "captionStyle": { "y": 0.70, "gold": ["410", "800", "eight", "hundred", "three", "thousand", "pepper", "roma", "ravenna"] },
+ "bars": "none",
+ "fadeIn": 0.3,
+ "fadeOut": 0.6,
+ "music": { "enabled": true, "gainDb": -19 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14
+}

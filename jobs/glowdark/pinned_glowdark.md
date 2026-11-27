@@ -1,0 +1,1 @@
+Try it: shine a phone flashlight on one star for a few seconds, then turn off the lights. That star glows brightest, then slowly fades as the trapped electrons escape. Do you still have glow stars on a ceiling somewhere? Yes or no?

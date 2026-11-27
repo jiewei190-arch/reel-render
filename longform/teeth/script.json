@@ -1,0 +1,52 @@
+{
+ "name": "teeth",
+ "title": "How Did Ancient Humans Take Care of Their Teeth?",
+ "voice": "am_michael",
+ "speed": 0.95,
+ "scenes": [
+  {"v": "toothache_cave", "lines": ["Imagine waking up with a toothache.", "Not a little one. The kind that throbs every time your heart beats."]},
+  {"v": "no_list", "lines": ["Now imagine there is no dentist.", "No toothbrush. No painkillers.", "Nobody even knows what tooth decay is."]},
+  {"v": "title", "lines": ["So what did ancient humans actually do about their teeth?"]},
+  {"v": "evidence", "lines": ["Surprisingly, a lot more than you'd think.", "And a lot of the evidence is still stuck to their teeth today."]},
+
+  {"v": "savanna_group", "lines": ["Let's start with the good news.", "For most of human history, cavities were actually pretty rare."]},
+  {"v": "tooth_bacteria", "lines": ["Cavities happen when bacteria in your mouth feed on sugars and starches,", "and leave behind acid that slowly eats into your teeth."]},
+  {"v": "tooth_stats", "lines": ["And for a very long time, people just didn't eat much of that.", "Studies of hunter-gatherer teeth usually find decay in somewhere between zero and about fourteen percent of teeth."]},
+  {"v": "gritty_food", "lines": ["But their food came with a different problem.", "It was tough, and it was full of grit and sand.", "Chewing it day after day slowly wore their teeth down."]},
+  {"v": "worn_tooth", "lines": ["So for most of our history, the big problem wasn't holes in teeth.", "It was teeth that were worn, chipped and cracked."]},
+
+  {"v": "toothpick_man", "lines": ["And when something got stuck between their teeth?", "They did what you might have done after lunch today.", "They grabbed a toothpick."]},
+  {"v": "groove_tooth", "lines": ["Scientists have found tiny grooves on fossil teeth,", "worn in by sticks or grass stems being pushed between the teeth again and again."]},
+  {"v": "habilis", "lines": ["Some of these toothpick grooves go back close to two million years,", "to early human species like Homo habilis."]},
+  {"v": "krapina", "lines": ["But one Neanderthal from Krapina, in what is now Croatia, takes this further.", "Around a hundred and thirty thousand years ago, this person had a tooth growing in crooked,", "and it was very likely painful."]},
+  {"v": "krapina_poke", "lines": ["Their teeth show six toothpick grooves around the problem area, plus scratches and chips.", "It looks like they were poking at it, over and over, trying to ease the pain."]},
+  {"v": "first_fix", "lines": ["It's not dentistry the way we know it.", "But it may be one of the earliest signs of someone trying to treat their own toothache."]},
+
+  {"v": "sidron_cave", "lines": ["Then there's a Neanderthal from El Sidrón cave, in Spain.", "Scientists took the hardened plaque from this individual's teeth,", "and read the ancient DNA trapped inside it."]},
+  {"v": "poplar", "lines": ["This Neanderthal had a painful dental abscess.", "And in the plaque was DNA from poplar,", "a tree that contains salicylic acid, the natural pain reliever behind aspirin."]},
+  {"v": "mold", "lines": ["There were also traces of Penicillium,", "the same group of molds that penicillin comes from."]},
+  {"v": "wonder", "lines": ["So was this Neanderthal chewing poplar on purpose, to dull the pain?", "The researchers say they can't prove it.", "But it's hard not to wonder."]},
+
+  {"v": "italy_mountains", "lines": ["Now jump forward to about fourteen thousand years ago,", "in the mountains of northern Italy."]},
+  {"v": "villabruna_cavity", "lines": ["A hunter-gatherer buried at a rock shelter called Villabruna", "had a large cavity in one of his back molars."]},
+  {"v": "flint_scratch", "lines": ["Under a microscope, that cavity is covered in tiny scratches.", "They match marks made by a pointed piece of flint,", "used to scratch and lever out the rotten part of the tooth, while he was still alive."]},
+  {"v": "brave", "lines": ["No numbing. No drill.", "Just a sharp stone, and a lot of courage."]},
+  {"v": "fredian", "lines": ["About a thousand years later, someone near Lucca, also in Italy, went a step further.", "Two of this person's front teeth had been scraped out,", "and the holes were packed with bitumen, a sticky natural tar, mixed with plant fibers and possibly hair."]},
+  {"v": "filling", "lines": ["In other words, it's one of the earliest fillings we know of."]},
+
+  {"v": "farming", "lines": ["And then, everything changed.", "Around ten thousand years ago, people in several parts of the world started farming."]},
+  {"v": "grain_food", "lines": ["Grains. Porridge. Bread.", "Starchy, sticky food, every single day.", "Perfect food for the bacteria that cause cavities."]},
+  {"v": "acorns", "lines": ["Actually, one group got there early.", "At Taforalt, in Morocco, about fifteen thousand years ago, hunter-gatherers ate a lot of acorns.", "And almost every adult there had cavities."]},
+  {"v": "mehrgarh", "lines": ["More cavities meant more dentistry.", "At Mehrgarh, in what is now Pakistan, people who lived around seven and a half to nine thousand years ago", "had holes drilled into their molars."]},
+  {"v": "bowdrill", "lines": ["Researchers think the tool was a bow drill tipped with flint.", "In tests, a drill like that could cut into tooth enamel in under a minute."]},
+  {"v": "alive", "lines": ["And these holes weren't made after death.", "The patients were alive.", "Some of them even had more than one tooth drilled."]},
+  {"v": "beeswax", "lines": ["Then, about sixty-five hundred years ago, in what is now Slovenia,", "a man in his twenties had a cracked canine tooth.", "Someone filled the crack with beeswax."]},
+  {"v": "beeswax_maybe", "lines": ["It may have been to stop the pain when he chewed.", "Although scientists can't completely rule out that the wax was added after he died."]},
+
+  {"v": "fire_end", "lines": ["So, did ancient humans take care of their teeth?", "Not the way we do. No brushing twice a day. No floss. No checkups."]},
+  {"v": "recap", "lines": ["But they picked at them, scraped out the rot with stone,", "drilled with flint, and plugged the holes with tar and wax."]},
+  {"v": "irony", "lines": ["And the strangest part?", "Their biggest tooth problem came from the very thing that made modern life possible.", "Farming."]},
+  {"v": "dentist_chair", "lines": ["So next time you're sitting in a dentist's chair, remember.", "It could be a lot worse.", "It could be a sharp rock."]},
+  {"v": "endcard", "lines": ["Follow for more of how it really works."]}
+ ]
+}

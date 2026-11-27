@@ -1,0 +1,89 @@
+{
+ "name": "earringing",
+ "voice": "af_heart",
+ "speed": 0.92,
+ "music": "popup",
+ "bpm": 96,
+ "breath": [
+  1,
+  5,
+  7,
+  9,
+  11,
+  12,
+  14
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "phrases": [
+  [
+   "Why do your ears **ring** after a **concert?**",
+   "Why do your ears ring after a concert?"
+  ],
+  [
+   "But that sound isn't stuck in your ears. It's your hearing, **overworked.**",
+   "But that sound isn't stuck in your ears. It's your hearing, overworked."
+  ],
+  [
+   "Deep in your ear is the **cochlea,** lined with tiny **hair cells.**",
+   "Deep in your ear is the cochlea, lined with tiny hair cells."
+  ],
+  [
+   "Sound makes them **sway,** and every sway sends a signal to your **brain.**",
+   "Sound makes them sway, and every sway sends a signal to your brain."
+  ],
+  [
+   "A concert can hit **94 to 110 decibels.**",
+   "A concert can hit ninety-four to a hundred and ten decibels."
+  ],
+  [
+   "That's close to a **siren** at full blast.",
+   "That's close to a siren at full blast."
+  ],
+  [
+   "Here's the catch: decibels climb **fast.** Every 10 more is **10 times** the intensity.",
+   "Here's the catch: decibels climb fast. Every ten more is ten times the intensity."
+  ],
+  [
+   "So the hair cells get pushed too hard, for too long, and they get **damaged.**",
+   "So the hair cells get pushed too hard, for too long, and they get damaged."
+  ],
+  [
+   "That ringing is called **tinnitus:** your hearing system reacting to the **strain.**",
+   "That ringing is called tinnitus: your hearing system reacting to the strain."
+  ],
+  [
+   "Muffled hearing often comes back within a **day or two.**",
+   "Muffled hearing often comes back within a day or two."
+  ],
+  [
+   "Now the scary part: human hair cells **don't grow back.**",
+   "Now the scary part: human hair cells don't grow back."
+  ],
+  [
+   "**Birds** and **frogs** can regrow theirs. **We can't.**",
+   "Birds and frogs can regrow theirs. We can't."
+  ],
+  [
+   "So loud nights add up. Long or repeated sound at **85 decibels** or more can cause **lasting** hearing loss.",
+   "So loud nights add up. Long or repeated sound at eighty-five decibels or more can cause lasting hearing loss."
+  ],
+  [
+   "So the ringing is your ears saying they got **hurt.** And this hearing loss is completely **preventable.**",
+   "So the ringing is your ears saying they got hurt. And this hearing loss is completely preventable."
+  ],
+  [
+   "Wear **earplugs,** and stand **back** from the speakers.",
+   "Wear earplugs, and stand back from the speakers."
+  ],
+  [
+   "Earplugs at concerts: **yes** or **no?**",
+   "Earplugs at concerts: yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

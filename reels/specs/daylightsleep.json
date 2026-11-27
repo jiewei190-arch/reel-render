@@ -1,0 +1,88 @@
+{
+ "name": "daylightsleep",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "The clocks changed. Your **body clock** didn't.",
+   "The clocks changed. Your body clock didn't."
+  ],
+  [
+   "But why does the time change **mess with your sleep?** And why is **spring** the worst?",
+   "But why does the time change mess with your sleep? And why is spring the worst?"
+  ],
+  [
+   "Deep in your brain sits a **master clock:** a cluster of nerve cells called the **SCN.**",
+   "Deep in your brain sits a master clock: a cluster of nerve cells called the SCN."
+  ],
+  [
+   "It sets when you get **sleepy,** on a roughly **twenty-four hour** cycle.",
+   "It sets when you get sleepy, on a roughly twenty-four hour cycle."
+  ],
+  [
+   "And its main setting knob is **light,** hitting your eyes.",
+   "And its main setting knob is light, hitting your eyes."
+  ],
+  [
+   "A wall clock jumps an hour in a second. Your body clock **can't.**",
+   "A wall clock jumps an hour in a second. Your body clock can't."
+  ],
+  [
+   "Here's the twist: left alone, your body clock runs a bit long. About **twenty-four hours and ten minutes.**",
+   "Here's the twist: left alone, your body clock runs a bit long. About twenty-four hours and ten minutes."
+  ],
+  [
+   "So shifting **later** is easy. Shifting **earlier** is hard.",
+   "So shifting later is easy. Shifting earlier is hard."
+  ],
+  [
+   "Fall back asks for later: the **easy** way. Spring forward asks for **earlier,** in darker mornings.",
+   "Fall back asks for later: the easy way. Spring forward asks for earlier, in darker mornings."
+  ],
+  [
+   "In one study, sleep shifted after fall back, but **not after spring forward,** especially for night owls.",
+   "In one study, sleep shifted after fall back, but not after spring forward, especially for night owls."
+  ],
+  [
+   "And it shows up on the road. In US data, fatal car crashes rose about **six percent** in the week after spring forward.",
+   "And it shows up on the road. In US data, fatal car crashes rose about six percent in the week after spring forward."
+  ],
+  [
+   "After fall back? **No rise** at all.",
+   "After fall back? No rise at all."
+  ],
+  [
+   "So it's not just the hour. Your body runs on **light,** not the wall clock, and it slides **later** far more easily than **earlier.**",
+   "So it's not just the hour. Your body runs on light, not the wall clock, and it slides later far more easily than earlier."
+  ],
+  [
+   "That's why sleep doctors want to **stop switching,** and keep **standard time** all year.",
+   "That's why sleep doctors want to stop switching, and keep standard time all year."
+  ],
+  [
+   "Which change hits you harder: **spring or fall?**",
+   "Which change hits you harder: spring or fall?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.7
+}

@@ -1,0 +1,100 @@
+{
+ "name": "needle",
+ "title": "How Did Cavemen Stay Warm? (Lice Know When Clothes Began!)",
+ "voice": {
+  "af_heart": 0.5,
+  "bf_emma": 0.5
+ },
+ "lang": "en-gb",
+ "speed": 0.95,
+ "format": "reel",
+ "scenes": [
+  {
+   "v": "hook_lice",
+   "lines": [
+    "Scientists used lice to work out when people started wearing clothes.",
+    "Yes. Lice."
+   ]
+  },
+  {
+   "v": "hook_q",
+   "lines": [
+    "So how did cavemen stay warm?"
+   ]
+  },
+  {
+   "v": "meet_moss",
+   "lines": [
+    "Meet Moss. He's freezing."
+   ]
+  },
+  {
+   "v": "body_lice",
+   "lines": [
+    "Surprise one: body lice live in clothes.",
+    "Their DNA suggests they split from head lice at least eighty-three thousand years ago.",
+    "Maybe earlier."
+   ]
+  },
+  {
+   "v": "skins",
+   "lines": [
+    "So clothes are old.",
+    "They were likely made from animal skins and fur."
+   ]
+  },
+  {
+   "v": "needles",
+   "lines": [
+    "Surprise two: bone needles!",
+    "The oldest eyed needles come from Siberia.",
+    "They're about forty thousand years old, maybe more."
+   ]
+  },
+  {
+   "v": "needle_eye",
+   "lines": [
+    "A tiny hole for thread, carved into bone."
+   ]
+  },
+  {
+   "v": "layers",
+   "lines": [
+    "Surprise three: needles may mean layers.",
+    "Some scientists even wonder about Stone Age underwear!"
+   ]
+  },
+  {
+   "v": "sungir",
+   "lines": [
+    "Surprise four: in Russia, over thirty thousand years ago, three people were buried wearing ivory beads.",
+    "More than thirteen thousand of them!"
+   ]
+  },
+  {
+   "v": "bead_hours",
+   "lines": [
+    "Many seem to have been sewn onto their clothes.",
+    "Making them all took thousands of hours."
+   ]
+  },
+  {
+   "v": "moss_sews",
+   "lines": [
+    "And Moss? He tried sewing. He stitched his tunic to his leg."
+   ]
+  },
+  {
+   "v": "ending",
+   "lines": [
+    "So Stone Age people stayed warm with fur, fire and clever sewing."
+   ]
+  },
+  {
+   "v": "follow",
+   "lines": [
+    "Follow for more Stone Age Stories."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "name": "harvestmoon",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "breath": [1, 2, 6, 7, 8, 11, 13, 14],
+ "phrases": [
+  ["The October moon can rise **huge** and **orange** over the hills.", "The October moon can rise huge and orange over the hills."],
+  ["**But** it isn't really bigger, and it isn't really orange.", "But it isn't really bigger, and it isn't really orange."],
+  ["It's two tricks: one in the **sky**, and one in your **brain.**", "It's two tricks. One in the sky, and one in your brain."],
+  ["First, the color. Moonlight is **sunlight** bouncing off the moon.", "First, the color. Moonlight is sunlight, bouncing off the moon."],
+  ["Near the horizon, that light crosses **much more air** to reach you.", "Near the horizon, that light crosses much more air to reach you."],
+  ["The air scatters the **blue** away, and mostly **orange and red** get through.", "The air scatters the blue away, and mostly orange and red get through."],
+  ["It's the same trick that makes **sunsets** red.", "It's the same trick that makes sunsets red."],
+  ["Higher up, there's less air in the way, so the moon turns **pale** again.", "Higher up, there's less air in the way, so the moon turns pale again."],
+  ["Now, the size. Hold up your **fingernail.** It covers the moon, low or high.", "Now, the size. Hold up your fingernail. It covers the moon, low or high."],
+  ["Photos agree: the moon is the **same width** near the horizon as overhead.", "Photos agree. The moon is the same width near the horizon as overhead."],
+  ["So the giant moon is an **illusion,** made by your brain.", "So the giant moon is an illusion, made by your brain."],
+  ["One idea: hills and trees make it seem **farther away,** so your brain sees it bigger.", "One idea. Hills and trees make it seem farther away, so your brain sees it bigger."],
+  ["**But** astronauts in orbit see the illusion too, with no hills at all.", "But astronauts in orbit see the illusion too, with no hills at all."],
+  ["So scientists **still can't fully explain** it.", "So scientists still can't fully explain it."],
+  ["And the name? The full moon after the Harvest Moon is the **Hunter's Moon.**", "And the name? The full moon after the Harvest Moon is the Hunter's Moon."],
+  ["By tradition, fields were bare, and hunters could **track by moonlight.**", "By tradition, fields were bare, and hunters could track by moonlight."],
+  ["Follow for more of **how it really works.**", "Follow for more of how it really works."]
+ ]
+}

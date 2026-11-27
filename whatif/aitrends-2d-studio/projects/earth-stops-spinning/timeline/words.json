@@ -1,0 +1,605 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "If",
+   "start": 0.0,
+   "end": 0.2
+  },
+  {
+   "word": "Earth",
+   "start": 0.2,
+   "end": 0.44
+  },
+  {
+   "word": "stopped",
+   "start": 0.44,
+   "end": 0.78
+  },
+  {
+   "word": "spinning",
+   "start": 0.78,
+   "end": 1.14
+  },
+  {
+   "word": "for",
+   "start": 1.14,
+   "end": 1.38
+  },
+  {
+   "word": "one",
+   "start": 1.38,
+   "end": 1.58
+  },
+  {
+   "word": "second,",
+   "start": 1.58,
+   "end": 1.94
+  },
+  {
+   "word": "everything",
+   "start": 2.64,
+   "end": 2.64
+  },
+  {
+   "word": "would",
+   "start": 2.64,
+   "end": 2.88
+  },
+  {
+   "word": "fly",
+   "start": 2.88,
+   "end": 3.16
+  },
+  {
+   "word": "sideways.",
+   "start": 3.16,
+   "end": 3.6
+  },
+  {
+   "word": "Relax.",
+   "start": 4.26,
+   "end": 4.54
+  },
+  {
+   "word": "It's",
+   "start": 5.18,
+   "end": 5.36
+  },
+  {
+   "word": "a",
+   "start": 5.36,
+   "end": 5.44
+  },
+  {
+   "word": "thought",
+   "start": 5.44,
+   "end": 5.58
+  },
+  {
+   "word": "experiment,",
+   "start": 5.58,
+   "end": 6.08
+  },
+  {
+   "word": "but",
+   "start": 6.44,
+   "end": 6.64
+  },
+  {
+   "word": "scientists",
+   "start": 6.64,
+   "end": 7.04
+  },
+  {
+   "word": "have",
+   "start": 7.04,
+   "end": 7.24
+  },
+  {
+   "word": "worked",
+   "start": 7.24,
+   "end": 7.42
+  },
+  {
+   "word": "out",
+   "start": 7.42,
+   "end": 7.62
+  },
+  {
+   "word": "what",
+   "start": 7.62,
+   "end": 7.76
+  },
+  {
+   "word": "happens.",
+   "start": 7.76,
+   "end": 8.06
+  },
+  {
+   "word": "At",
+   "start": 8.66,
+   "end": 8.82
+  },
+  {
+   "word": "the",
+   "start": 8.82,
+   "end": 8.96
+  },
+  {
+   "word": "equator,",
+   "start": 8.96,
+   "end": 9.34
+  },
+  {
+   "word": "the",
+   "start": 9.64,
+   "end": 9.72
+  },
+  {
+   "word": "ground",
+   "start": 9.72,
+   "end": 9.92
+  },
+  {
+   "word": "spins",
+   "start": 9.92,
+   "end": 10.28
+  },
+  {
+   "word": "east",
+   "start": 10.28,
+   "end": 10.54
+  },
+  {
+   "word": "at",
+   "start": 10.54,
+   "end": 10.78
+  },
+  {
+   "word": "over",
+   "start": 10.78,
+   "end": 11.0
+  },
+  {
+   "word": "1,600",
+   "start": 11.0,
+   "end": 11.58
+  },
+  {
+   "word": "kilometers",
+   "start": 11.58,
+   "end": 12.0
+  },
+  {
+   "word": "an",
+   "start": 12.0,
+   "end": 12.32
+  },
+  {
+   "word": "hour.",
+   "start": 12.32,
+   "end": 12.58
+  },
+  {
+   "word": "You,",
+   "start": 12.96,
+   "end": 13.18
+  },
+  {
+   "word": "the",
+   "start": 13.52,
+   "end": 13.68
+  },
+  {
+   "word": "air,",
+   "start": 13.68,
+   "end": 13.88
+  },
+  {
+   "word": "the",
+   "start": 14.24,
+   "end": 14.26
+  },
+  {
+   "word": "oceans,",
+   "start": 14.26,
+   "end": 14.6
+  },
+  {
+   "word": "and",
+   "start": 14.82,
+   "end": 14.92
+  },
+  {
+   "word": "that",
+   "start": 14.92,
+   "end": 15.08
+  },
+  {
+   "word": "cow",
+   "start": 15.08,
+   "end": 15.3
+  },
+  {
+   "word": "are",
+   "start": 15.3,
+   "end": 15.5
+  },
+  {
+   "word": "all",
+   "start": 15.5,
+   "end": 15.66
+  },
+  {
+   "word": "moving",
+   "start": 15.66,
+   "end": 15.9
+  },
+  {
+   "word": "with",
+   "start": 15.9,
+   "end": 16.16
+  },
+  {
+   "word": "it.",
+   "start": 16.16,
+   "end": 16.46
+  },
+  {
+   "word": "But",
+   "start": 16.84,
+   "end": 17.1
+  },
+  {
+   "word": "hit",
+   "start": 17.1,
+   "end": 17.28
+  },
+  {
+   "word": "the",
+   "start": 17.28,
+   "end": 17.44
+  },
+  {
+   "word": "brakes",
+   "start": 17.44,
+   "end": 17.62
+  },
+  {
+   "word": "for",
+   "start": 17.62,
+   "end": 17.8
+  },
+  {
+   "word": "one",
+   "start": 17.8,
+   "end": 17.98
+  },
+  {
+   "word": "second,",
+   "start": 17.98,
+   "end": 18.34
+  },
+  {
+   "word": "and",
+   "start": 18.64,
+   "end": 18.9
+  },
+  {
+   "word": "only",
+   "start": 18.9,
+   "end": 19.3
+  },
+  {
+   "word": "the",
+   "start": 19.3,
+   "end": 19.44
+  },
+  {
+   "word": "ground",
+   "start": 19.44,
+   "end": 19.66
+  },
+  {
+   "word": "stops.",
+   "start": 19.66,
+   "end": 19.98
+  },
+  {
+   "word": "Everything",
+   "start": 20.52,
+   "end": 20.84
+  },
+  {
+   "word": "not",
+   "start": 20.84,
+   "end": 21.1
+  },
+  {
+   "word": "bolted",
+   "start": 21.1,
+   "end": 21.34
+  },
+  {
+   "word": "down",
+   "start": 21.34,
+   "end": 21.62
+  },
+  {
+   "word": "keeps",
+   "start": 21.62,
+   "end": 21.82
+  },
+  {
+   "word": "going,",
+   "start": 21.82,
+   "end": 22.26
+  },
+  {
+   "word": "sliding",
+   "start": 22.66,
+   "end": 22.88
+  },
+  {
+   "word": "east",
+   "start": 22.88,
+   "end": 23.2
+  },
+  {
+   "word": "at",
+   "start": 23.2,
+   "end": 23.38
+  },
+  {
+   "word": "full",
+   "start": 23.38,
+   "end": 23.56
+  },
+  {
+   "word": "speed.",
+   "start": 23.56,
+   "end": 23.9
+  },
+  {
+   "word": "But",
+   "start": 24.38,
+   "end": 24.6
+  },
+  {
+   "word": "it",
+   "start": 24.6,
+   "end": 24.86
+  },
+  {
+   "word": "gets",
+   "start": 24.86,
+   "end": 25.04
+  },
+  {
+   "word": "worse.",
+   "start": 25.04,
+   "end": 25.28
+  },
+  {
+   "word": "The",
+   "start": 25.8,
+   "end": 25.92
+  },
+  {
+   "word": "oceans",
+   "start": 25.92,
+   "end": 26.2
+  },
+  {
+   "word": "would",
+   "start": 26.2,
+   "end": 26.42
+  },
+  {
+   "word": "slosh",
+   "start": 26.42,
+   "end": 26.74
+  },
+  {
+   "word": "right",
+   "start": 26.74,
+   "end": 27.0
+  },
+  {
+   "word": "over",
+   "start": 27.0,
+   "end": 27.18
+  },
+  {
+   "word": "the",
+   "start": 27.18,
+   "end": 27.32
+  },
+  {
+   "word": "land.",
+   "start": 27.32,
+   "end": 27.58
+  },
+  {
+   "word": "But",
+   "start": 27.94,
+   "end": 28.16
+  },
+  {
+   "word": "stand",
+   "start": 28.16,
+   "end": 28.46
+  },
+  {
+   "word": "on",
+   "start": 28.46,
+   "end": 28.64
+  },
+  {
+   "word": "the",
+   "start": 28.64,
+   "end": 28.72
+  },
+  {
+   "word": "North",
+   "start": 28.72,
+   "end": 28.9
+  },
+  {
+   "word": "Pole,",
+   "start": 28.9,
+   "end": 29.16
+  },
+  {
+   "word": "and",
+   "start": 29.16,
+   "end": 29.76
+  },
+  {
+   "word": "you'd",
+   "start": 29.76,
+   "end": 30.04
+  },
+  {
+   "word": "barely",
+   "start": 30.04,
+   "end": 30.2
+  },
+  {
+   "word": "move",
+   "start": 30.2,
+   "end": 30.46
+  },
+  {
+   "word": "at",
+   "start": 30.46,
+   "end": 30.56
+  },
+  {
+   "word": "all.",
+   "start": 30.56,
+   "end": 30.84
+  },
+  {
+   "word": "The",
+   "start": 31.38,
+   "end": 31.54
+  },
+  {
+   "word": "good",
+   "start": 31.54,
+   "end": 31.7
+  },
+  {
+   "word": "news?",
+   "start": 31.7,
+   "end": 32.08
+  },
+  {
+   "word": "NASA",
+   "start": 32.64,
+   "end": 32.74
+  },
+  {
+   "word": "says",
+   "start": 32.74,
+   "end": 33.04
+  },
+  {
+   "word": "stopping",
+   "start": 33.04,
+   "end": 33.36
+  },
+  {
+   "word": "Earth",
+   "start": 33.36,
+   "end": 33.62
+  },
+  {
+   "word": "would",
+   "start": 33.62,
+   "end": 33.82
+  },
+  {
+   "word": "take",
+   "start": 33.82,
+   "end": 33.98
+  },
+  {
+   "word": "a",
+   "start": 33.98,
+   "end": 34.12
+  },
+  {
+   "word": "miracle.",
+   "start": 34.12,
+   "end": 34.4
+  },
+  {
+   "word": "It",
+   "start": 34.96,
+   "end": 35.04
+  },
+  {
+   "word": "is",
+   "start": 35.04,
+   "end": 35.2
+  },
+  {
+   "word": "slowing",
+   "start": 35.2,
+   "end": 35.46
+  },
+  {
+   "word": "down...",
+   "start": 35.46,
+   "end": 35.9
+  },
+  {
+   "word": "by",
+   "start": 35.9,
+   "end": 36.6
+  },
+  {
+   "word": "about",
+   "start": 36.6,
+   "end": 36.98
+  },
+  {
+   "word": "2",
+   "start": 36.98,
+   "end": 37.48
+  },
+  {
+   "word": "milliseconds",
+   "start": 37.48,
+   "end": 37.88
+  },
+  {
+   "word": "per",
+   "start": 37.88,
+   "end": 38.24
+  },
+  {
+   "word": "century.",
+   "start": 38.24,
+   "end": 38.68
+  },
+  {
+   "word": "Subscribe",
+   "start": 39.42,
+   "end": 39.76
+  },
+  {
+   "word": "for",
+   "start": 39.76,
+   "end": 40.12
+  },
+  {
+   "word": "more.",
+   "start": 40.12,
+   "end": 40.36
+  }
+ ]
+}

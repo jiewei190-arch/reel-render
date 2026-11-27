@@ -1,0 +1,4216 @@
+{
+ "title": "What If You Had Spider Powers?",
+ "duration": 389.399,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 4.29,
+   "line": "Saturday. You're in the garden shed looking for Mina's bike pump,",
+   "scene": "COLD OPEN, SATURDAY MORNING: garden(g,t,cam,{view:'garden', mood:'morning'}), a slow push toward the shed (camMove z 0.92->1.04, x drifts right toward pos.shedX). Washing line flaps gently, birds at the feeder, BISCUIT (cat s 1.6, loaf) sunning on the back step. Gold chip 'SATURDAY' pops top-left on 'Saturday.' (0.00 s) (hud chip, tone gold). HERO (s 1.9: messy sandy-brown hair, head 'spiky'; mustard zip hoodie; oversized purple gardening gloves; grey cargo trousers; green wellies) (>= 12% of frame) walks from the back step toward the shed on 'You're' (1.52 s)-'shed' (2.46 s) (walkAlong). On 'Mina's' (3.52 s) MINA (s 2.0, kid, red scarf) on the lawn holds up her small bike with a flat tyre and points at the shed (pointAndLook). gardenFg leaves, atmos morning dust. Fade in (config fadeIn 0.5). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.84,
+     "name": "footstep",
+     "gain": -24
+    },
+    {
+     "at": 2.1,
+     "name": "footstep",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s002",
+   "start": 4.29,
+   "end": 7.03,
+   "line": "and something is looking back at you.",
+   "scene": "INSIDE THE SHED: garden(g,t,cam,{view:'shed', mood:'morning', door:0.4}) - dusty sunbeam through the cobwebbed window (godRays), dust motes. HERO (s 1.95, purple gloves on) crouches by the bottom shelf reaching for the BIKE PUMP at pos.pumpX (poseAt stand -> crouch, as DEMO_garden demo_g_shed). On 'something' (0.65 s) the camera slowly pans up-left to the window corner (pos.webX/webY): two tiny glossy eyes glint in the cobweb corner (PIP, pip() s 0.8, half hidden, look toward HERO). On 'back' (1.51 s) HERO freezes and looks up at the corner, exprAt [[0,'neutral'],[1.51,'surprised']]. camMove z 1.08->1.16. gardenFg shelf edge. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "swish",
+     "gain": -20
+    },
+    {
+     "at": 0.95,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s003",
+   "start": 7.03,
+   "end": 10.77,
+   "line": "A tiny, fuzzy spider. Two enormous eyes.",
+   "scene": "PIP MACRO: shed window corner close (garden view 'shed', camMove z 1.6->1.7 on pos.webX/webY, the sunbeam behind as warm bokeh). PIP (pip(g,x,y,2.6,{t, look:[-0.6,0.1], blink: blinkAmt(t,2.8,1)})) steps out of the cobweb onto the window frame on 'A' (0.15 s): fuzzy grey-and-cream, striped abdomen, cream palps twitching. On 'Two' (2.25 s) push in on the two huge front eyes (camMove +6%), the shed window reflected in them. Cute, never scary: soft warm key, no fangs. atmos dust. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.25,
+     "name": "shimmer",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s004",
+   "start": 10.77,
+   "end": 13.93,
+   "line": "It tilts its head. You tilt yours.",
+   "scene": "THE TILT (two-shot gag): macro over PIP's shoulder: PIP (pip s 2.4) in the left third on the shelf edge, in focus; HERO's face behind in soft focus right (actor head + shoulders at s 3.2, purple-gloved hand on the shelf). On 'tilts' (0.29 s) PIP tilts its head (tilt 0 -> 1, ease.outBack); on 'tilt' (1.93 s) HERO tilts his head the same way (rotate ~12 deg), exprAt [[0,'surprised'],[1.93,'smile']]. Both hold the tilt; Pip blinks once. Slow push camMove z 1.0->1.05. Sunbeam rim from the window behind. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.93,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s005",
+   "start": 13.93,
+   "end": 17.21,
+   "line": "It hops onto your thumb. No bite.",
+   "scene": "THE HOP: macro on HERO's hand held out flat at chest height (left hand in its purple glove, the RIGHT glove tucked under his arm so the bare thumb shows; spider.js gloves() on the left hand only). PIP (pip s 1.7) hops on 'hops' (0.35 s) (hop 0->1 over 0.5 s, as DEMO_spider demo_pip) and lands on the thumb on 'thumb.' (0.97 s) (squash). On 'No' (2.03 s) a gold chip 'NO BITE' with a tick pops lower-left; Pip just sits there, palps twitching. camMove z 1.6->1.7, shed sunbeam bokeh. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    },
+    {
+     "at": 2.03,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s006",
+   "start": 17.21,
+   "end": 20.69,
+   "line": "Just a very long stare. Mina names it Pip.",
+   "scene": "THE STARING CONTEST: side-on split close-up. Left: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame (r 300 at x ~560), faceAt [[0,'awe'],[0.67,'squint']] - eyes narrow, no blinking (blink 0), a sweat bead. Right: PIP big (pip s 5 at x ~1380 on the thumb, look toward HERO, blink 0). Neither blinks. On 'Mina' (2.15 s) MINA (s 2.0, kid, red scarf) pops into the shed doorway in the soft background between them and points, exprAt delighted; a hand-lettered cream tag 'PIP' swings onto the spider on 'Pip.' (2.79 s) (pop). Slow push camMove z 1.0->1.05, sunbeam rim. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -28,
+     "dur": 2.0
+    },
+    {
+     "at": 2.79,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s007",
+   "start": 20.69,
+   "end": 23.53,
+   "line": "Next morning, you wake up stuck to the ceiling.",
+   "scene": "NEXT MORNING, STUCK TO THE CEILING: bedroom at dawn with the ceiling in frame (build as DEMO_spider demo_ceiling: a local room with the ceiling band at the top; home3 bedroom props - alarmClock, posters - may be borrowed). The camera starts on the EMPTY bed (rumpled duvet, BISCUIT asleep as a loaf on the pillow) and tilts up on 'wake' (1.03 s) (camMove y up ~300, z 1.0->1.04) to find HERO spread flat on the ceiling: drawCeiling(g,'HERO',{t, x, ceilY, s:1.7, peel:0, expr: 'sleepy' until 'stuck' (1.39 s) then 'surprised'}) - he slept in the mustard hoodie, socks on. Alarm clock rattles at the start. Dawn window light. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -22,
+     "dur": 0.8
+    },
+    {
+     "at": 1.03,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s008",
+   "start": 23.53,
+   "end": 25.41,
+   "line": "For about two seconds.",
+   "scene": "TWO SECONDS: tight on HERO stuck to the ceiling (drawCeiling, s 2.2, eyes huge, expr 'shocked'). A gold stopwatch chip counts '0:01' on 'two' (0.55 s) -> '0:02' on 'seconds.' (0.79 s); on 'seconds.' (0.79 s) his limbs start to peel (peel 0 -> 0.4: a hand comes away with a little ring of fading stickMarks). 2 px shake. camMove z 1.1->1.14. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 0.79,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.09,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s009",
+   "start": 25.41,
+   "end": 28.0,
+   "line": "Then you're on the bed, and Biscuit isn't.",
+   "scene": "THE DROP: drawCeiling peel 0.4 -> 1 right at the cut, HERO drops onto the bed on 'Then' (0.15 s)-'on' (0.49 s) (dropTo the bed top), the duvet bounces (squash), and BISCUIT (cat s 1.6) is launched off the pillow on 'and' (0.97 s): arch pose, flies out of frame right, eyes 'wide', fur puffed; on 'isn't.' (1.65 s) only a few cat hairs float down where she was. HERO ends sitting up, exprAt sheepish. Shake 5 on the landing. Dawn light. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 0.64,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    },
+    {
+     "at": 0.97,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s010",
+   "start": 28.0,
+   "end": 31.99,
+   "line": "Nobody knows how a staring contest gives you spider powers.",
+   "scene": "NOBODY KNOWS: a corkboard on the hero's bedroom wall (LOCAL prop over the dimmed home3 bedroom, blurLayer + veil): a polaroid of PIP and a polaroid of HERO on the ceiling, a cream '?' card between them. On 'staring' (1.16 s) a string pulls tight between the photos; on 'spider' (2.54 s) a gold arrow strip 'STARE -> ??? -> POWERS' draws on; on 'powers.' (2.86 s) a second '?' pops. MINA's crayon doodle of Pip pinned beside. Desk lamp warm, slow push camMove z 1.0->1.06. (Palette: cream, gold, the hoodie mustard - no red-and-blue combos.) LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "home3",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.16,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.54,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.86,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s011",
+   "start": 31.99,
+   "end": 33.49,
+   "line": "Not even Pip.",
+   "scene": "NOT EVEN PIP: back in the shed, morning sunbeam. pipFace(g,cx,cy,r,{t, look, blink, tilt, wave}) r ~0.42 H - Pip's giant fuzzy face; on 'even' (0.39 s) it lifts its front legs in a tiny shrug (wave 0->1 + tilt -1), on 'Pip.' (0.65 s) a slow blink. Cute, glossy eyes reflecting the window. Slow drift camMove x. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "Short (1.5 s) gag beat, keep it punchy.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s012",
+   "start": 33.49,
+   "end": 37.52,
+   "line": "Let's see what one week does to you.",
+   "scene": "TITLE lock-up over the back garden: garden(g,t,cam,{view:'garden', mood:'morning'}), low angle from the lawn, sun rising behind the apple tree; HERO (s 1.9) on the back step, gloved hands in the hoodie pocket, PIP on his shoulder (pip s 0.9) waving on 'one' (0.69 s). Title 'WHAT IF YOU HAD SPIDER POWERS?' (outlined cream, >= 10 px outline + glow; NO red-and-blue, NO web graphic behind it) pops on 'see' (0.41 s); a small gold '1 WEEK' chip pops under it on 'week' (0.91 s). A single dew-glinting garden thread drifts across the frame (decorative silkLine between the washing-line post and the fence, NOT from the hero). Slow push camMove z 1.0->1.08, gardenFg leaves, atmos morning dust. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -8,
+     "minor": false
+    },
+    {
+     "at": 0.41,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 0.91,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s013",
+   "start": 37.52,
+   "end": 40.5,
+   "line": "Day one. You press your hands on the hallway wall,",
+   "scene": "DAY 1 - THE WALL: spiderprops dayCard(g,t,{day:1, title:'THE WALL', at:0.15, week:true}) pops top-left on 'Day' (0.15 s). HALLWAY: local hall wall as DEMO_spider demo_wall hallWall (warm cream wall, skirting, a framed picture; the green wellies left by the door). HERO (s 1.9, in socks) walks in and presses both purple-gloved palms flat on the wall on 'press' (1.51 s) (poseAt stand -> reach, hands at shoulder height), exprAt curious; on 'hands' (1.89 s) the gloves slide off and drop (gloves() slip: they never help) and his bare hands flatten onto the wall on 'wall,' (2.77 s). camMove z 1.05->1.1, x drift. atmos dust. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.33,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.09,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s014",
+   "start": 40.5,
+   "end": 43.5,
+   "line": "and they stick. So do your socks.",
+   "scene": "INSERT, THEY STICK: close on the bare palms on the wall: on 'stick.' (0.59 s) spider.js stickMarks(g,t,pts) suction rings bloom under each finger, he tugs and the hands stay put. Tilt down on 'So' (1.67 s) (camMove y down ~260) to his socks on the skirting: he lifts one foot and the sock clings to the wall, stretching like chewing gum, then the foot snaps back on 'socks.' (2.09 s). The purple gloves lie on the floor. Warm hall light. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.6
+    },
+    {
+     "at": 2.29,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s015",
+   "start": 43.5,
+   "end": 47.64,
+   "line": "You climb, then slowly slide back down, like a wet sticker.",
+   "scene": "CLIMB + WET-STICKER SLIDE: hallway wall (as demo_wall). wallCling(t,{climb:1 until 1.01, slide: 0 -> 1 from 1.01 to the end, slideDist 380}) - HERO hand over hand up the wall (the camera rises with him), exprAt determined -> joy on 'climb,' (0.39 s); from 'slowly' (1.01 s) he slowly slides back down, cheek squished to the wall, squeaky slide streaks, exprAt worried -> sheepish on 'sticker.' (3.07 s). Purple gloves on the floor below. Camera follows (camMove y), handheld drift. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.39,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.41,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.45,
+     "dur": 0.8
+    },
+    {
+     "at": 2.79,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.4,
+     "dur": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s016",
+   "start": 47.64,
+   "end": 49.94,
+   "line": "Dev drops his cereal anyway.",
+   "scene": "DEV DROPS HIS CEREAL: hallway, wider. DEV (s 1.9, orange beanie, phone in hand) in the kitchen doorway right with a cereal bowl + spoon; on 'drops' (0.29 s) he drops it (bowl falls, a milk splash, flakes bounce, the bowl lands upright with a wobble), exprAt shocked, jaw open; his phone in the other hand shows a tiny REC dot (he films everything). HERO (s 1.9) finishes the slide to the floor left, sitting, waves sheepishly. camMove z 1.0->1.06. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "two",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.64,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    },
+    {
+     "at": 0.64,
+     "name": "rain",
+     "gain": -22,
+     "dur": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s017",
+   "start": 49.94,
+   "end": 53.06,
+   "line": "Mina checks your palms with a magnifying glass.",
+   "scene": "THE MAGNIFYING GLASS: MINA (s 2.0, kid, red scarf) holds a big magnifying glass (LOCAL prop) over HERO's open bare palm; the camera looks THROUGH the lens: palm lines enlarged, no glue at all, tiny sparkles; on 'palms' (0.83 s) Mina's huge magnified eye swims into the lens and blinks, exprAt suspicious; on 'glass.' (2.15 s) she tilts the glass and the rim catches the hallway light. Slow push camMove z 1.08->1.14. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.83,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.2
+    },
+    {
+     "at": 2.15,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s018",
+   "start": 53.06,
+   "end": 55.47,
+   "line": "\"No glue.\"",
+   "scene": "GIANT FACE MINA, lip-sync on \"No glue.\" only: giantFace(g,cx,cy,320,{who:'MINA'}) (red scarf at the bottom of frame), the magnifying glass raised beside her face; faceAt [[0,'suspicious'],[0.15,'squint'],[0.45,'awe']] with the mouth keyed to the two words; a cream chip 'NO GLUE' pops on 'glue.' (0.45 s). rimColor warm hallway, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.65,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s019",
+   "start": 55.47,
+   "end": 58.16,
+   "line": "Jumping spiders don't use glue either.",
+   "scene": "RULE 1 CARD: ruleCard(g,t,info,{n:1, title:'STICKY ISN\\'T GLUE.', bg: the dimmed hallway wall with HERO's stickMarks rings still glowing (blurLayer + veil)}). Banner lands on 'spiders' (0.54 s); PIP (pip s 1.1) peeks over the bottom edge of the banner and taps it with a front leg on 'glue' (1.48 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.48,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s020",
+   "start": 58.16,
+   "end": 63.14,
+   "line": "Each foot has a tuft of hairs, and every hair splits into even tinier ones.",
+   "scene": "BLUEPRINT FIG 1 - HAIRY FEET: bp board(g,t,{title:'FIG 1 - HAIRY FEET', fig:'NO GLUE'}); spiderbp footHairs(g,t,{x:W*0.4, y:H*0.42, s:0.9, k: draw-on 0->1 over 1.0 s, zoom: 0 until 1.67, -> 1 by 2.67 (one hair), -> 1.6 by the end, grip:0}). bp label 'a tuft of hairs' on 'tuft' (0.99 s); label 'every hair splits' on 'splits' (2.67 s); label 'even tinier ones' on 'tinier' (3.65 s). Slow push <= 4% (as DEMO_spiderbp demo_sp_feet), faint air dust. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.99,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.67,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.65,
+     "name": "pop",
+     "gain": -14,
+     "pitch": 1.2
+    }
+   ],
+   "notes": "Known long (5.0 s): one continuous zoom, foot -> hair -> setules."
+  },
+  {
+   "id": "s021",
+   "start": 63.14,
+   "end": 66.16,
+   "line": "Up that close, molecules pull on each other.",
+   "scene": "FIG 1 - UP THAT CLOSE: footHairs zoom 1.6 -> 2 (setule tips meeting the wall) in the top half; vdw(g,t,{x:W*0.5, y:H*0.8, w:900, k: 0->1 from 0.15, gap: 0.6 -> 0.2 by 1.51}) - molecules nanometres apart; the faint attraction arrows brighten on 'pull' (1.51 s) ('pull'). Gold label 'nanometres apart' on 'close,' (0.55 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.55,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.51,
+     "name": "shimmer",
+     "gain": -22
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s022",
+   "start": 66.16,
+   "end": 70.3,
+   "line": "It's called van der Waals force. One tip barely grips.",
+   "scene": "FIG 1 - ONE TIP: the vdw strip (gap 0.2) gets a gold stamp label 'VAN DER WAALS FORCE' on 'van' (0.59 s); then on 'One' (2.37 s) footHairs zoom 2 isolates ONE tip with grip 0.1: a single tiny gold arrow, and a little cream PIP outline dangling from it slips a notch (cute); label 'one tip: barely' on 'barely' (2.79 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.15,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s023",
+   "start": 70.3,
+   "end": 72.76,
+   "line": "Hundreds of thousands grip a lot.",
+   "scene": "FIG 1 - ADD THEM UP: pull back (scale 1.04 -> 1.0) while hundreds of tips light up gold in a wave across the tuft (footHairs zoom 2 -> 1, grip 0 -> 1 over 0.21-1.09); tipTally(g,t,{x:W*0.76, y:H*0.5, k: from 0.21}) plate 'HUNDREDS OF THOUSANDS OF TIPS' (gold) lands on 'thousands' (0.67 s); on 'lot.' (1.61 s) the whole foot locks onto the wall with a satisfying flash. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.21,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.2
+    },
+    {
+     "at": 1.61,
+     "name": "ding",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s024",
+   "start": 72.76,
+   "end": 76.64,
+   "line": "In one study, scientists estimated that a jumping spider's feet",
+   "scene": "THE STUDY: back in the shed window, PIP hangs upside down from the glass on all eight feet, totally relaxed (pip s 2.2 rotated 180 deg, waves one leg on 'scientists' (1.19 s)); a small blueprint inset card (navy, cream lines) slides in on the right with a clipboard icon and a gold 'ESTIMATE' stamp landing on 'estimated' (1.61 s); a cream 'one study' tag on 'one' (0.29 s). camMove z 1.2->1.26, sunbeam bokeh. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.25,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.61,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s025",
+   "start": 76.64,
+   "end": 80.91,
+   "line": "could hold more than a hundred and seventy times its own weight.",
+   "scene": "170 TIMES ITS WEIGHT: blueprint board (FIG 1); tipTally(g,t,{k:1}) with its second line '>170x ITS WEIGHT (estimate)' highlighted; beside it a cream PIP outline holds up a tower of tiny weight blocks stacked in rows of ten, counting up fast from 'more' (0.69 s); a gold counter lands on '170' on 'seventy' (1.95 s) and '>170x' on 'times' (2.35 s). Small cream footnote 'estimate: every tip gripping at once'. Slow push <= 4%. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.69,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.4
+    },
+    {
+     "at": 1.95,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.33,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s026",
+   "start": 80.91,
+   "end": 85.64,
+   "line": "Geckos stick the same way, and peel their feet off like tape.",
+   "scene": "GECKOS TOO: bp board FIG 1b 'GECKOS'; creatures.js gecko(g,{x, y, s:2.2, rot: on a wall, t}) under a navy veil (or in cream line style) climbing a glass pane on 'stick' (0.54 s); on 'peel' (1.80 s) one toe peels off from the tip like a strip of sticky tape, a LOCAL tape strip beside it peels in sync, gold label 'peel like tape' on 'like' (2.66 s); the toe re-sticks with a tiny flash. Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.54,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.8,
+     "name": "swish",
+     "gain": -16,
+     "pitch": 0.7,
+     "dur": 0.5
+    },
+    {
+     "at": 2.66,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Known long (4.75 s)."
+  },
+  {
+   "id": "s027",
+   "start": 85.64,
+   "end": 90.14,
+   "line": "Day two. Halfway up the drainpipe, you start sliding again.",
+   "scene": "DAY 2 - THE SLIDE: dayCard(g,t,{day:2, title:'THE SLIDE', at:0.17}) pops top-left. garden(g,t,cam,{view:'wall', mood:'day'}): the house back wall, brick, the DRAINPIPE (pos.pipeX), ivy, one lit window. HERO (s 1.9: messy sandy-brown hair, head 'spiky'; mustard zip hoodie; oversized purple gardening gloves; grey cargo trousers; green wellies) halfway up beside the drainpipe (wallCling climb 1 until 2.89, then slide 0 -> 0.4), hands on the brick; on 'sliding' (3.15 s) he starts sliding, exprAt determined -> worried. Camera tilts up, then follows him down (camMove y). gardenFg leaves. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.22,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.15,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.45,
+     "dur": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s028",
+   "start": 90.14,
+   "end": 92.56,
+   "line": "Not because the trick stopped working.",
+   "scene": "NOT BECAUSE IT STOPPED WORKING: close on his bare right hand on the brick: stickMarks rings still glowing under the fingers (the trick works!) and a gold tick chip 'STILL STICKY' pops on 'trick' (0.87 s); but the hand is being dragged down by his weight (squeak streaks); the purple glove from his other hand slips off and tumbles past camera on 'stopped' (1.01 s) (gloves() slip - they never help). camMove y down slowly. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.87,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.01,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s029",
+   "start": 92.56,
+   "end": 94.2,
+   "line": "Because you're enormous.",
+   "scene": "GIANT FACE HERO, sheepish: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame, faceAt [[0,'worried'],[0.57,'sheepish']], cheek pressed to the brick (squash), a sweat drop; PIP (pip s 1.4) sits on the tip of his nose looking at him - tiny vs huge. On 'enormous.' (0.57 s) a pull-back (camMove z 1.08 -> 1.0) makes the scale joke land. rimColor daylight. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "Short (1.6 s); the next cut is a sound cut in the pause.",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s030",
+   "start": 94.2,
+   "end": 96.68,
+   "line": "Here's the problem.",
+   "scene": "RULE 2 CARD: ruleCard(g,t,info,{n:2, title:'BIG THINGS CAN\\'T STICK.', bg: the dimmed garden wall with the drainpipe (blurLayer + veil)}). The cut lands in the pause after 'enormous'; the banner lands on 'Here's' (0.95 s). A purple glove drifts down past the card edge. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "notes": "Sound cut at 94.20 (0.67 s after 'enormous' ends, 0.95 s before 'Here's')."
+  },
+  {
+   "id": "s031",
+   "start": 96.68,
+   "end": 100.24,
+   "line": "Make something twice as tall, and its weight goes up eight times,",
+   "scene": "FIG 2 - THE SIZE PROBLEM: board(g,t,{title:'FIG 2 - THE SIZE PROBLEM', fig:'SQUARE-CUBE LAW'}); squareCube(g,t,{x:W*0.5, y:H*0.42, s:1.2, k: draw-on over 0.9 s, grow: 0 -> 0.6 from 0.77 to 1.41, -> 1 by 2.97}) as DEMO_spiderbp demo_sp_size. Gold 'x2 TALL' on 'twice' (0.77 s); the weight readout ticks up to gold 'WEIGHT x8' on 'eight' (2.97 s). Slow push <= 4%. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.77,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.43,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.8
+    },
+    {
+     "at": 2.97,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s032",
+   "start": 100.24,
+   "end": 104.16,
+   "line": "but the area of its feet only goes up four times.",
+   "scene": "FIG 2 continued: the same cube at grow 1; its foot face highlights and the area readout ticks to gold 'AREA x4' on 'four' (2.55 s); a cream balance below shows WEIGHT x8 outweighing AREA x4 and tips over on 'times.' (2.83 s). Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.55,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.83,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s033",
+   "start": 104.16,
+   "end": 106.38,
+   "line": "It's called the square-cube law.",
+   "scene": "SQUARE-CUBE LAW: the cube pair centred; a big gold stamp 'SQUARE-CUBE LAW' slams down on 'square-cube' (0.85 s) (outBack + shake 3); a small cream formula strip 'area ~ L^2   weight ~ L^3' draws on under it. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 0.9,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s034",
+   "start": 106.38,
+   "end": 110.69,
+   "line": "It's also why tiny creatures seem super strong for their size.",
+   "scene": "TINY AND STRONG: garden lawn macro at grass level (garden view 'garden', camMove z 1.5->1.56, low). An ant (LOCAL tiny sprite) marches past carrying a crumb many times its size on 'tiny' (0.91 s); PIP (pip s 1.6) watches from a daisy, impressed (tilt). Behind, in soft focus, HERO (s 1.9) strains to lift a full watering can with both purple-gloved hands, wobbling, exprAt determined -> worried on 'strong' (2.49 s). Morning light, gardenFg grass. (Cut point: 'It's' audio starts 106.53 s; words.json says 105.77.) LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.29,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.79,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s035",
+   "start": 110.69,
+   "end": 113.75,
+   "line": "Scale them up, and that advantage disappears.",
+   "scene": "FIG 2 - SCALE IT UP: on the board the ant outline grows to human size on 'Scale' (0.30 s)-'up,' (0.56 s) (cream line art scaling up, squareCube-style readouts at the side); its thin legs buckle and it flops on 'disappears.' (1.68 s); a gold 'ADVANTAGE' bar shrinks to zero on 'advantage' (1.20 s)-'disappears.' (1.68 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.68,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s036",
+   "start": 113.75,
+   "end": 117.94,
+   "line": "Cambridge researchers compared two hundred and twenty-five climbing species,",
+   "scene": "FIG 2b - 225 SPECIES: padShare(g,t,{x:W*0.5, y:H*0.52, w:1400, h:560, k: draw-on from 0.24 to 3.78, human:0}): the chart axes draw on and the species dots appear; a small cream 'CAMBRIDGE' tag on 'Cambridge' (0.24 s); gold '225 SPECIES' pops on 'twenty-five' (2.64 s). Slow push <= 4%. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.78,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 2.64,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s037",
+   "start": 117.94,
+   "end": 120.26,
+   "line": "from mites to geckos.",
+   "scene": "FIG 2b - MITES TO GECKOS: padShare k 1; a gold highlight sweeps along the dots from the tiny mite (left, bp label 'mites' on 'mites' (0.75 s)) up to the gecko (right, label 'geckos' on 'geckos.' (1.41 s)); tiny cream icons of a mite and a gecko pop at the two ends. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.75,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.41,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s038",
+   "start": 120.26,
+   "end": 124.08,
+   "line": "The bigger the animal, the more of its body was sticky foot.",
+   "scene": "FIG 2b - BIGGER NEEDS MORE FOOT: padShare k 1: the trend rises steeply; on 'bigger' (0.43 s) each icon's pad patch grows with body size (mite tiny spot -> gecko big toe pads); the chart's gold '~200-FOLD' bracket (sources.md: ~200-fold rise in relative pad area) lights on 'sticky' (2.53 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.43,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.9
+    },
+    {
+     "at": 2.53,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s039",
+   "start": 124.08,
+   "end": 126.0,
+   "line": "For a human to climb that way,",
+   "scene": "FIG 2b - NOW A HUMAN: padShare human 0 -> 1 from 'human' (0.49 s): a cream human outline joins at the far right of the chart, way above the trend; it looks around, confused (a little head turn) on 'climb' (0.99 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.49,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "Short (1.9 s)."
+  },
+  {
+   "id": "s040",
+   "start": 126.0,
+   "end": 129.98,
+   "line": "about forty percent of your whole body would need sticky pads.",
+   "scene": "40% OF YOUR BODY: live comedy in the garden: HERO (s 1.9) stands on the lawn while a gold outline overlay covers 40% of him with sticky pads (LOCAL: big grey pad patches on hands, forearms, chest, knees, feet, cheeks), filling in on 'forty' (0.35 s)-'percent' (0.72 s); a gold counter rolls to '40%' on 'percent' (0.72 s). He looks down at himself, exprAt worried -> sheepish on 'sticky' (2.47 s). camMove z 1.02->1.08 (padShare's human readout may sit as a small bp inset top-right). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "counter",
+     "gain": -16,
+     "dur": 0.8
+    },
+    {
+     "at": 1.02,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.47,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s041",
+   "start": 129.98,
+   "end": 133.32,
+   "line": "Or shoes in US size one hundred and fourteen.",
+   "scene": "US SIZE 114: garden lawn. HERO in ENORMOUS shoes (LOCAL prop: two flat grey sticky-sole shoes as long as a garden bench, his green wellies standing next to them for scale) takes one flappy step on 'shoes' (0.29 s); a gold tag rolls 1 -> 'US SIZE 114' on 'one' (1.39 s)-'fourteen.' (2.61 s). MINA (s 2.0, kid, red scarf) in the background drops her jaw; PIP rides on a shoe toe. camMove x drift. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 0.57,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    },
+    {
+     "at": 1.39,
+     "name": "counter",
+     "gain": -18,
+     "dur": 1.0
+    },
+    {
+     "at": 2.61,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s042",
+   "start": 133.32,
+   "end": 138.15,
+   "line": "Their verdict: geckos are about the size limit for climbing with sticky feet.",
+   "scene": "THE VERDICT: padShare k 1, human 1: a gold 'VERDICT' stamp on 'verdict:' (0.27 s); a gold horizontal line 'SIZE LIMIT' draws across the chart at the gecko on 'limit' (2.39 s); the gecko icon sits right under it, smug; the human outline above the line slides off the chart on 'sticky' (3.55 s). Slow push. (Cut point: 'Their' audio starts 133.47 s; words.json says 132.99.) LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.39,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 3.55,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.7
+    }
+   ],
+   "notes": "Known long (4.8 s)."
+  },
+  {
+   "id": "s043",
+   "start": 138.15,
+   "end": 140.73,
+   "line": "Mina covers your hoodie in sticky notes.",
+   "scene": "STICKY NOTES: garden back step. MINA (s 2.0, kid, red scarf) stands on an upturned flower pot and slaps pale yellow sticky notes (thin dark outline so they read on mustard) all over HERO's hoodie, one per beat on 'covers' (0.36 s), 'hoodie' (0.90 s), 'sticky' (1.30 s), 'notes.' (1.56 s); HERO (s 1.9) holds his arms out patiently, exprAt neutral -> sheepish. camMove z 1.04->1.1. gardenFg. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 0.9,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.3,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.56,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s044",
+   "start": 140.73,
+   "end": 142.62,
+   "line": "\"Forty percent,\" she says.",
+   "scene": "GIANT FACE MINA, lip-sync on \"Forty percent,\" only (audio 140.88-141.5 s global; words.json is early here): giantFace(g,cx,cy,320,{who:'MINA'}), a pad of sticky notes in her hand with '40%' in gold marker; faceAt [[0,'determined'],[0.75,'smirk']] with the mouth keyed to the two words; on 'she' (0.86 s) a firm nod with the mouth closed ('she says' is narration). rimColor daylight, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Short (1.9 s).",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s045",
+   "start": 142.62,
+   "end": 145.12,
+   "line": "It does not help.",
+   "scene": "IT DOES NOT HELP: garden wall (view 'wall'): HERO, covered in sticky notes, tries the drainpipe again and slides straight down on 'does' (0.33 s), the notes fluttering off one by one like leaves on 'not' (0.47 s)-'help.' (0.71 s); he lands sitting in the flower bed; PIP on a pipe bracket covers its eyes with two legs. camMove y follows down. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.45,
+     "dur": 0.8
+    },
+    {
+     "at": 0.47,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.2
+    },
+    {
+     "at": 1.21,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s046",
+   "start": 145.12,
+   "end": 147.54,
+   "line": "Day three. Silk.",
+   "scene": "DAY 3 - THE SILK: dayCard(g,t,{day:3, title:'THE SILK', at:0.23}). Garden morning, dewy: between the washing-line post and the fence a single dew-covered garden thread glints; on 'Silk.' (1.61 s) a gold-cream sparkle traces along it with a chip 'SILK'; HERO (s 1.9) steps into frame and looks at it, exprAt awe. camMove z 1.04->1.1. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.23,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.28,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.41,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.61,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s047",
+   "start": 147.54,
+   "end": 150.82,
+   "line": "Bad news: spiders don't make it with their hands.",
+   "scene": "BAD NEWS: HERO (s 1.9) on the lawn holds both open palms out in front of him like a hopeful magician, fingers wiggling (palms UP and open - NOT a wrist flick, NOT aiming the wrists), purple gloves on; nothing happens; on 'make' (1.73 s) a sad little puff of nothing; on 'hands.' (2.27 s) the right glove slips off and flops onto the grass (gloves() slip - they never help); PIP on the fence shakes its head (tilt -1 -> 1). exprAt hopeful -> sheepish. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.73,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    },
+    {
+     "at": 2.57,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s048",
+   "start": 150.82,
+   "end": 153.47,
+   "line": "It comes from spinnerets, at the back end.",
+   "scene": "FIG 3 - SPINNERETS: board(g,t,{title:'FIG 3 - SILK', fig:'SPINNERETS'}); silkGland(g,t,{x:W*0.45, y:H*0.45, s:1.1, k: draw-on, pull:0}) as a cream spider-body cutaway; a gold arrow + bp label 'SPINNERETS' points at its `spinneret` anchor on 'spinnerets,' (0.75 s); label 'back end' on 'back' (1.55 s). Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.75,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.55,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s049",
+   "start": 153.47,
+   "end": 155.88,
+   "line": "So that's where yours comes from too.",
+   "scene": "SO THAT'S WHERE YOURS COMES FROM: garden lawn, HERO (s 1.9, side-on) slowly looks over his own shoulder at his behind on 'where' (0.56 s), exprAt worried; on 'comes' (0.90 s) spider.js silkPuff(g,t,0.90,x,y) at silkAnchor(o,pose): a little comic cloud of silk strands + 'pfft' lines + a sparkle from the seat of his cargo trousers; exprAt shocked -> sheepish on 'too.' (1.46 s). MINA (s 2.0, kid, red scarf) in the background giggles into her scarf. Comedy, never gross. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "whoosh",
+     "gain": -16,
+     "pitch": 1.8,
+     "dur": 0.3
+    },
+    {
+     "at": 0.95,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s050",
+   "start": 155.88,
+   "end": 158.54,
+   "line": "Dev films you walking backwards across the garden,",
+   "scene": "DEV FILMS: garden (view 'garden'). DEV (s 1.9, orange beanie, phone in hand) crouches, filming; spiderprops devPhone(g,t,{x, y, s, rot, at:0.31, tag:'DEV CAM'}, content) in his hands shows HERO in its screen; HERO (s 1.9) walks BACKWARDS across the lawn on 'walking' (0.95 s)-'backwards' (1.31 s) (walkAlong facing -1 while moving +x), a silkLine trailing from silkAnchor back to the shed door. camMove x drift. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "two",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.31,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 0.95,
+     "name": "footstep",
+     "gain": -24
+    },
+    {
+     "at": 1.61,
+     "name": "footstep",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s051",
+   "start": 158.54,
+   "end": 160.92,
+   "line": "trailing a shiny line.",
+   "scene": "THE SHINY LINE (Dev's phone view, full frame): devPhone content full-screen with the REC dot + timer: the dragline silkLine(g, silkAnchor, the far fence, {t, sag:6, k: draws on as HERO walks}) glints in the sun as it trails across the lawn behind the backwards-walking HERO; on 'shiny' (0.99 s) the glint runs the length of the line; PIP rides the line like a zipline toward camera on 'line.' (1.29 s). Zoom pinch (devPhone zoom 1 -> 1.3). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.99,
+     "name": "shimmer",
+     "gain": -16
+    },
+    {
+     "at": 1.29,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s052",
+   "start": 160.92,
+   "end": 163.66,
+   "line": "He's never been happier.",
+   "scene": "GIANT FACE DEV, never happier: giantFace(g,cx,cy,320,{who:'DEV'}) (orange beanie), phone held up beside his face, devPhone hearts floating up (hearts 0 -> 1 from 'never' (0.35 s)); faceAt [[0,'delighted'],[0.85,'joy']] with a happy-tear sparkle. NOT lip-synced. rimColor warm daylight, slow push camMove z 1.0->1.06. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.6
+    },
+    {
+     "at": 0.57,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.7
+    },
+    {
+     "at": 0.85,
+     "name": "pop",
+     "gain": -16,
+     "pitch": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s053",
+   "start": 163.66,
+   "end": 166.72,
+   "line": "Inside a spider, silk is a liquid protein.",
+   "scene": "RULE 3 CARD: ruleCard(g,t,info,{n:3, title:'SILK STARTS OUT AS A LIQUID.', bg: the dimmed garden with the shiny silk line across the lawn (blurLayer + veil)}). Banner lands on 'a' (0.45 s); on 'liquid' (1.69 s) a gold chip 'LIQUID PROTEIN' pops under it. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.69,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s054",
+   "start": 166.72,
+   "end": 171.12,
+   "line": "As it's pulled out through tiny nozzles, it turns into solid thread.",
+   "scene": "FIG 3 - LIQUID TO SOLID: board(g,t,{title:'FIG 3 - SILK', fig:'LIQUID TO SOLID'}); silkGland(g,t,{x:W*0.42, y:H*0.45, s:1.1, k: draw-on over 1.0 s, pull: 0 -> 1 from 0.55 to 3.59}); bp label 'liquid protein' on the gland on 'As' (0.15 s), 'tiny nozzles' at the spigots on 'nozzles,' (1.67 s), 'solid thread' on the fibre on 'solid' (3.15 s) (as DEMO_spiderbp demo_sp_silk). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.67,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.15,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s055",
+   "start": 171.12,
+   "end": 174.38,
+   "line": "The safety line, dragline silk, is amazing.",
+   "scene": "THE SAFETY LINE: shed shelf-edge macro (garden view 'shed' bokeh): PIP (pip s 2.0) hops off the shelf on 'safety' (0.41 s) and drops on its dragline (silkLine from the shelf edge to Pip, glinting), bouncing gently at the bottom on 'silk,' (1.57 s), spinning slowly, perfectly safe, palps waving; gold chip 'DRAGLINE' on 'dragline' (1.03 s). camMove y follows the drop. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.41,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.03,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.57,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s056",
+   "start": 174.38,
+   "end": 176.6,
+   "line": "Weight for weight, it rivals steel.",
+   "scene": "FIG 3b - WEIGHT FOR WEIGHT: silkVsSteel(g,t,{x:W*0.5, y:H*0.52, w:1400, k:1, show: 0 -> 1 from 0.15 to 0.97}): the balance with equal weights of silk and steel levels out on 'rivals' (0.97 s) ('rivals'); gold labels 'SILK' / 'STEEL'. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.29,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s057",
+   "start": 176.6,
+   "end": 180.63,
+   "line": "And it's tougher than Kevlar, the fibre in bulletproof vests.",
+   "scene": "FIG 3b - TOUGHER THAN KEVLAR: silkVsSteel show 1 -> 2 from 0.37 to 1.13: the toughness panel (silk 2-3x Kevlar, as spiderbp draws it from sources.md) with a gold 'TOUGHER' on 'tougher' (0.57 s); on 'bulletproof' (2.43 s) a cream icon of a plain vest (no logo, no badge) with the caption 'the fibre in bulletproof vests'. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.43,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s058",
+   "start": 180.63,
+   "end": 184.98,
+   "line": "Thread for thread, steel still wins. Silk is just much lighter.",
+   "scene": "FIG 3b - THREAD FOR THREAD: silkVsSteel show 2 -> 3 from 'Thread' (0.32 s): the density bars, steel ~7.8 vs silk ~1.3 g/cm3 (gold numbers); on 'wins.' (1.46 s) a gold 'STEEL WINS' over two equal-thickness threads; on 'lighter.' (3.34 s) the silk bar floats up, light as a feather, label 'MUCH LIGHTER'. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.32,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.46,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.34,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s059",
+   "start": 184.98,
+   "end": 187.24,
+   "line": "But protein comes from food.",
+   "scene": "PROTEIN COMES FROM FOOD: home3(g,t,cam,{room:'kitchen', mood:'day', cereal:0, plate:0}). HERO (s 1.9) opens the fridge on 'protein' (0.35 s), cold fridge light on his face, a stomach rumble (his hoodie wobbles); PIP rides on his shoulder; gold chip 'PROTEIN = FOOD' on 'food.' (1.23 s). home3Fg chair back, camMove z 1.04->1.1. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -30,
+     "dur": 2.2
+    },
+    {
+     "at": 0.67,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.4
+    },
+    {
+     "at": 1.23,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Short (2.3 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s060",
+   "start": 187.24,
+   "end": 190.9,
+   "line": "Some spiders even eat their old webs to recycle it.",
+   "scene": "FIG 3c - RECYCLING: board(g,t,{title:'FIG 3 - SILK', fig:'RECYCLED'}) (LOCAL drawing in the spiderbp style): a cream orb web draws on; a plain, cute cream garden-spider outline rolls the old web up like spaghetti on 'eat' (1.25 s) and eats it; gold recycle arrows loop from the ball of silk into the spider and out as a fresh web on 'recycle' (2.51 s); label 'old web -> new silk'. Cute, not gross. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.25,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.51,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s061",
+   "start": 190.9,
+   "end": 195.54,
+   "line": "By lunch, you've eaten nine eggs and all of Dev's sandwiches.",
+   "scene": "THE FEAST: home3 kitchen (cereal 0, plate 0) at the table (pos.tableX/tableTop): spiderprops feast(g,t,x,y,s,{eggs: 0 -> 9 from 0.79 to 1.39, left: 6 -> 0 from 1.81 to 2.67, mess: 0 -> 1}) as DEMO_spiderprops demo_sp_feast. HERO (s 1.9) eats at top speed (munching jaw cycle), DEV (s 1.9, orange beanie, phone in hand) beside him holding an empty sandwich bag, exprAt shocked; a gold counter 'EGGS: 9' ticks up and lands on 'eggs' (1.39 s); the last sandwich vanishes on 'sandwiches.' (2.67 s). PIP on the juice glass. Kept cute, not gross. home3Fg, camMove z 1.04->1.1. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.79,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.2
+    },
+    {
+     "at": 1.39,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.67,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "Known long (4.7 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s062",
+   "start": 195.54,
+   "end": 199.88,
+   "line": "Day four. Mina creeps up behind you with a water balloon.",
+   "scene": "DAY 4 - THE HAIRS: dayCard(g,t,{day:4, title:'THE HAIRS', at:0.17}). Garden day (view 'garden'): HERO (s 1.9) on the lawn, back to camera, watering the flower bed; on 'Mina' (1.63 s) MINA (s 2.0, kid, red scarf) creeps up behind him on tiptoe from the back step (slow exaggerated tiptoe walkAlong), a big blue spiderprops waterBalloon(g,x,y,s,{t, wobble}) held over her head on 'water' (3.15 s), exprAt cheeky. camMove z 1.0->1.05. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.22,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.73,
+     "name": "footstep",
+     "gain": -26
+    },
+    {
+     "at": 2.23,
+     "name": "footstep",
+     "gain": -26
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s063",
+   "start": 199.88,
+   "end": 202.06,
+   "line": "You step aside without looking.",
+   "scene": "THE DODGE: as DEMO_spider demo_dodge but in the garden: dodge(t,0.41,{side:-1, base: POSES.stand}) - HERO steps aside without looking on 'step' (0.41 s), eyes closed, smug (exprAt smirk), airHairs(g,t,...) bristle on his neck for 0.5 s; Mina's throw: balloonArc(t,{from, to, at:0.15, dur:0.6}) lands where he was and splash(g,t,x,y,{at}) bursts on the path on 'aside' (0.63 s). MINA exprAt cheeky -> surprised. camMove z 1.04->1.08. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 0.78,
+     "name": "rain",
+     "gain": -18,
+     "dur": 0.6
+    },
+    {
+     "at": 0.78,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "Short (2.2 s).",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s064",
+   "start": 202.06,
+   "end": 204.78,
+   "line": "You felt the air move.",
+   "scene": "GIANT FACE HERO, calm and smug: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame, eyes closed, faceAt [[0,'smirk'],[0.75,'cheeky']]; spider.js airHairs(g,t,x,y,k): the tiny hairs on his neck bristle and soft wavy air lines curl round his head on 'air' (0.75 s) (NO text, NO icon, no tingle lines - just gentle air swirls); a few water droplets drift past behind him. rimColor daylight, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.75,
+     "name": "whoosh",
+     "gain": -24,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s065",
+   "start": 204.78,
+   "end": 207.82,
+   "line": "Spiders have special hairs called trichobothria.",
+   "scene": "RULE 4 CARD: ruleCard(g,t,info,{n:4, title:'YOU CAN HEAR WITH HAIR.', bg: the dimmed garden lawn with the burst balloon puddle (blurLayer + veil)}). Banner lands on 'special' (0.73 s); gold chip 'TRICHOBOTHRIA' pops on 'trichobothria.' (1.77 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.77,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s066",
+   "start": 207.82,
+   "end": 210.1,
+   "line": "The faintest puff of air bends them.",
+   "scene": "FIG 4 - FEELING THE AIR: board(g,t,{title:'FIG 4 - FEELING THE AIR', fig:'TRICHOBOTHRIA'}); trichobothria(g,t,{x:W*0.5, y:H*0.6, s:1, k: draw-on over 0.9 s, air: 0 -> 1 from 0.79 to 1.25}): a soft gold puff of air drifts in on 'puff' (0.79 s) and the long fine hairs bend on 'bends' (1.25 s); bp label 'hairs feel the air' on 'faintest' (0.39 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.79,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "Short (2.3 s)."
+  },
+  {
+   "id": "s067",
+   "start": 210.1,
+   "end": 214.78,
+   "line": "They work close to the physical limit of what any sensor can detect.",
+   "scene": "FIG 4 - NEAR THE LIMIT: trichobothria (air pulsing gently) on the left; on the right a cream needle gauge (LOCAL, devices.js gauge style) labelled 'SENSITIVITY' swings up to a gold line 'PHYSICAL LIMIT' on 'limit' (1.69 s); label 'close to the limit of any sensor' on 'sensor' (2.95 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.69,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.95,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "Known long (4.7 s)."
+  },
+  {
+   "id": "s068",
+   "start": 214.78,
+   "end": 217.9,
+   "line": "In 2016, Cornell researchers found",
+   "scene": "FIG 4b - 2016, CORNELL: hearing(g,t,{x:W*0.5, y:H*0.5, w:1400, k: draw-on from 0.19, d:0}): the lab-bench outline, a speaker and a jumping spider; gold '2016' stamp on '2016,' (0.29 s); cream 'CORNELL' tag on 'Cornell' (1.99 s). Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.99,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s069",
+   "start": 217.9,
+   "end": 222.04,
+   "line": "jumping spiders reacting to sounds three metres away.",
+   "scene": "FIG 4b - 3 METRES: hearing d 0 -> 1 from 1.09 to 2.71: sound rings travel from the speaker across the board to the spider and a dimension line stretches to gold '3 m' on 'metres' (2.71 s); the spider's leg hairs twitch as the ring arrives on 'away.' (3.03 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.95,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.6
+    },
+    {
+     "at": 2.71,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s070",
+   "start": 222.04,
+   "end": 224.31,
+   "line": "About six hundred body lengths.",
+   "scene": "FIG 4b - 600 BODY LENGTHS: a row of tiny cream jumping-spider icons fills the 3 m dimension line nose to tail at speed (counter); gold '~600 BODY LENGTHS' lands on 'body' (0.89 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.0
+    },
+    {
+     "at": 0.89,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Short (2.3 s)."
+  },
+  {
+   "id": "s071",
+   "start": 224.31,
+   "end": 227.07,
+   "line": "No ears. Just hairs.",
+   "scene": "NO EARS, JUST HAIRS: pipFace(g,cx,cy,r,{t, look, blink, tilt}) - giant fuzzy Pip; on 'No' (0.16 s) two cartoon cream ear outlines pop beside its head and get a gold X on 'ears.' (0.34 s); on 'Just' (1.40 s) the fuzz round its face and legs ripples in a gentle air wave (the hairs listening) and a gold tick pops on 'hairs.' (1.70 s). Glossy eyes reflect the shed window. Cute. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.34,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.7,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s072",
+   "start": 227.07,
+   "end": 231.16,
+   "line": "When the team played a low hum, like the wingbeat of the wasps that hunt them,",
+   "scene": "FIG 4b - THE LOW HUM: hearing hum 0 -> 1 from 0.62: the speaker plays a slow gold waveform (hearing() labels the 90 Hz from sources.md); on 'wingbeat' (2.38 s) a small cartoon cream wasp outline (not scary) appears with wingbeat lines matching the waveform; label 'like a hunting wasp's wings' on 'wasps' (3.16 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.1,
+     "name": "hum",
+     "gain": -24,
+     "dur": 2.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s073",
+   "start": 231.16,
+   "end": 232.8,
+   "line": "most froze.",
+   "scene": "MOST FROZE: a row of five cute jumping spiders (pip() variants, s 1.4, greys and creams, PIP in the middle) mid-hop on a leaf; on 'froze.' (0.45 s) they all FREEZE mid-step (time stops: no idle, a frost-blue freeze tint flash), PIP frozen mid-wave with one leg up; gold chip 'MOST FROZE' on 'froze.' (0.45 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "freeze",
+     "gain": -18,
+     "dur": 1.4
+    }
+   ],
+   "notes": "Short (1.6 s), punchy freeze gag.",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s074",
+   "start": 232.8,
+   "end": 234.7,
+   "line": "Then there are the eight eyes.",
+   "scene": "EIGHT EYES: pipFace close-up; on 'eight' (0.75 s) the eyes light up one by one (the small side eyes too) with tiny gold ticks 1..8, and a gold '8' pops on 'eyes.' (0.95 s). Slow push z 1.0->1.06. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.63,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.6
+    },
+    {
+     "at": 0.95,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Short (1.9 s). pipFace shots are not giantFace reactions; s071/s074 are separated by bp/insert shots anyway.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s075",
+   "start": 234.7,
+   "end": 238.48,
+   "line": "Two big front ones see sharp detail, like zoom lenses.",
+   "scene": "FIG 4c - TELEPHOTO PAIR: eyes8(g,t,{x:W*0.5, y:H*0.62, s:0.8, k: draw-on, fov: 0 -> 0.5 by 2.85}): top view of the head; gold '2' on 'Two' (0.15 s); the two big front eyes' narrow cones extend far forward in gold on 'front' (0.57 s); bp label 'telephoto pair' / 'zoom lenses' on 'zoom' (2.55 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.55,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s076",
+   "start": 238.48,
+   "end": 241.98,
+   "line": "The rest spot movement almost all the way around.",
+   "scene": "FIG 4c - ALMOST ALL THE WAY ROUND: eyes8 fov 0.5 -> 1 from 0.61 to 2.43: the side eyes' wide motion arcs sweep round the head; label 'movement, almost all round' on 'almost' (1.33 s); a small moving dot circles the board and every arc lights as it passes. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.95,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.8
+    },
+    {
+     "at": 2.43,
+     "name": "ding",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s077",
+   "start": 241.98,
+   "end": 245.59,
+   "line": "Biscuit fails to sneak up on you for the first time ever.",
+   "scene": "BISCUIT'S AMBUSH: home3(g,t,cam,{room:'kitchen', mood:'day', cereal:0}), low camera at floor level: HERO (s 1.9) at the counter making toast, back to camera; BISCUIT (cat(), purple collar) (cat s 1.8) low-stalks in from the left (walk), wiggles her bum on 'sneak' (1.07 s), pounces on 'you' (1.69 s) - and HERO calmly turns round before she lands (lookToward the cat, exprAt smirk, airHairs on his neck); she lands in a startled sit, eyes 'wide', on 'first' (2.17 s). camMove z 1.0->1.06. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.69,
+     "name": "whoosh",
+     "gain": -18
+    },
+    {
+     "at": 2.17,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 1.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s078",
+   "start": 245.59,
+   "end": 248.26,
+   "line": "She takes it personally.",
+   "scene": "SHE TAKES IT PERSONALLY: BISCUIT close (cat s 2.6, eyes 'offended'), ears flat; she slowly turns her back on HERO on 'takes' (0.26 s), sits, and flicks her tail once, hard, on 'personally.' (0.66 s); HERO's purple-gloved hand reaches in to pat her and she leans away. Kitchen bokeh, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "home3",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.66,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s079",
+   "start": 248.26,
+   "end": 252.74,
+   "line": "Day five. You leap from the back step onto the garden fence.",
+   "scene": "DAY 5 - THE JUMP: dayCard(g,t,{day:5, title:'THE JUMP', at:0.17}). garden(g,t,cam,{view:'garden', mood:'day'}) + spiderprops fence(g,x,gy,{...}) at pos.fenceX0..; fenceJump(t,{from:[pos.stepX, pos.stepTop], to:[fence x, pos.fenceTop], at:1.53, dur so it lands on 'fence.' (3.43 s), s:1.9}) - HERO crouches on the back step, launches on 'leap' (1.59 s), arcs over the lawn and lands crouched on top of the garden fence on 'fence.' (3.43 s) (garden-fence height only, no buildings). Camera pans with the arc (camMove x). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "wide",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.17,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.22,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.35,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.59,
+     "name": "whoosh",
+     "gain": -16
+    },
+    {
+     "at": 3.43,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s080",
+   "start": 252.74,
+   "end": 255.92,
+   "line": "Clean. But your knees feel strange.",
+   "scene": "CLEAN... : HERO balanced on the fence top in a crouch (fence wobble 0 -> 1, settling), arms out, exprAt proud on 'Clean.' (0.15 s) with a gold tick chip 'CLEAN'; on 'knees' (1.55 s) his knees start to wobble like jelly (LOCAL knee wobble on the pose), exprAt worried. PIP on the next fence post. camMove z 1.04->1.1. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.55,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s081",
+   "start": 255.92,
+   "end": 258.4,
+   "line": "Like water balloons.",
+   "scene": "LIKE WATER BALLOONS: split insert: left, close on HERO's grey cargo knees wobbling; right, two spiderprops waterBalloon(g,x,y,s,{t, wobble:1}) jiggling in exact sync on 'water' (0.33 s)-'balloons.' (0.63 s); a tiny cream '=' between them. Small push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.4
+    },
+    {
+     "at": 0.63,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s082",
+   "start": 258.4,
+   "end": 261.04,
+   "line": "Spiders have muscles to bend their legs.",
+   "scene": "RULE 5 CARD: ruleCard(g,t,info,{n:5, title:'SPIDER LEGS RUN ON PRESSURE.', bg: the dimmed garden fence with HERO wobbling on top (blurLayer + veil)}). Banner lands on 'muscles' (0.89 s); on 'bend' (1.47 s) a cream bending-leg icon flexes under the banner. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "hud",
+   "type": "rule",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 1.47,
+     "name": "swish",
+     "gain": -20
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s083",
+   "start": 261.04,
+   "end": 265.23,
+   "line": "But at two big leg joints, they have no muscles to straighten them.",
+   "scene": "FIG 5 - THE LEG: board(g,t,{title:'FIG 5 - THE JUMP', fig:'FLUID PRESSURE'}); legPump(g,t,{x:W*0.45, y:H*0.42, s:1, k: draw-on, press:0}); bp label 'muscle bends it' at the flexor on 'But' (0.15 s); gold '2 JOINTS' on 'two' (0.49 s); on 'no' (2.19 s) a gold X over the missing straightening muscle, label 'no muscle to straighten'. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.49,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.19,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s084",
+   "start": 265.23,
+   "end": 268.57,
+   "line": "Instead, they raise the pressure of the fluid inside them,",
+   "scene": "FIG 5 - PRESSURE: legPump press 0 -> 0.6 from 0.93 to 2.57: the fluid inside the leg glows gold as the pressure rises (a small cream pressure gauge needle climbs); bp label 'fluid straightens it' on 'fluid' (2.21 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.93,
+     "name": "riser",
+     "gain": -20,
+     "dur": 1.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s085",
+   "start": 268.57,
+   "end": 272.92,
+   "line": "like a hydraulic machine, and that pushes the legs straight.",
+   "scene": "FIG 5 - LIKE A HYDRAULIC MACHINE: left, the leg (legPump press 0.6 -> 1); right, a cream outline of a little digger arm with a hydraulic ram; on 'hydraulic' (0.55 s) both pistons fill gold together with the label 'HYDRAULIC'; on 'pushes' (2.35 s)-'straight.' (3.25 s) the spider leg and the digger arm straighten in sync (snap). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.55,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 2.35,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.7
+    },
+    {
+     "at": 3.25,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s086",
+   "start": 272.92,
+   "end": 276.37,
+   "line": "A jumping spider can leap up to six times its body length",
+   "scene": "PIP'S LEAP: garden fence-top macro at Pip scale (camMove z 1.5, low): PIP (pip s 1.8) crouches, leaps on 'leap' (1.42 s) (hop 0 -> 1, a long arc) across six Pip-lengths of fence rail and lands on 'length' (3.32 s); a gold ruler with six Pip-sized ticks draws under the arc and gold '6x BODY LENGTH' lands on 'times' (2.30 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.42,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.3,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.32,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s087",
+   "start": 276.37,
+   "end": 281.16,
+   "line": "from a standing start. The best humans manage about one and a half.",
+   "scene": "FIG 5b - FROM A STANDING START: jumpBars(g,t,{x:W*0.5, y:H*0.5, w:1300, k: 0 -> 1 from 0.15, debate:0}): the spider bar to gold '6' body lengths, label 'standing start' on 'standing' (0.53 s); on 'humans' (2.33 s) the human bar rises to only gold '~1.5' with the label 'the best humans' on 'one' (3.49 s); a cream HERO silhouette shrugs at the end of it on 'half.' (3.91 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.53,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.49,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.91,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "Known long (4.8 s)."
+  },
+  {
+   "id": "s088",
+   "start": 281.16,
+   "end": 285.09,
+   "line": "Scientists still argue how much jumping uses that pressure.",
+   "scene": "FIG 5b - STILL DEBATED: jumpBars debate 0 -> 1 on 'argue' (0.96 s): a big gold stamp 'STILL DEBATED' slams across the fluid-pressure part; a gold '?' bounces over a small legPump inset on 'pressure.' (2.94 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.96,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.94,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s089",
+   "start": 285.09,
+   "end": 287.97,
+   "line": "One spider, trained to jump on cue in Manchester,",
+   "scene": "THE MANCHESTER SPIDER: spiderprops lab(g,t,cam,{mood:'day'}) bench close-up: a cute jumping spider (pip() s 1.6 in a different colourway, grey with a cream stripe - NOT Pip and never named) on a little platform; a lab hand in a white sleeve clicks a clicker on 'jump' (1.47 s) and the spider jumps on cue to a second platform on 'cue' (2.03 s); cream tag 'MANCHESTER' on 'Manchester,' (2.47 s). camMove x follows the jump. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "med",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.47,
+     "name": "tick",
+     "gain": -12
+    },
+    {
+     "at": 1.95,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.3
+    },
+    {
+     "at": 2.33,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s090",
+   "start": 287.97,
+   "end": 291.33,
+   "line": "suggests muscle alone could be enough.",
+   "scene": "FIG 5b - MUSCLE ALONE?: a legPump inset: the flexor muscle glows gold while the fluid fades (press 1 -> 0.3) on 'muscle' (1.03 s)-'alone' (1.43 s); gold label 'muscle alone could be enough' on 'could' (1.97 s); the 'STILL DEBATED' stamp stays in the corner. Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.97,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s091",
+   "start": 291.33,
+   "end": 293.36,
+   "line": "Dev measures your fence jump.",
+   "scene": "DEV MEASURES: garden at the fence: DEV (s 1.9, orange beanie, phone in hand) pulls a tape measure out from the back step to the fence: spiderprops bodyLength(g,x,gy,len,{k: 0 -> 1 from 0.29 to 1.05}) - the tape zips out; HERO (s 1.9) waits proudly on the fence top; PIP watches from a post. camMove x drift. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 1.4
+    },
+    {
+     "at": 1.05,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "notes": "Short (2.1 s).",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s092",
+   "start": 293.36,
+   "end": 297.28,
+   "line": "One body length. Very human.",
+   "scene": "ONE BODY LENGTH. VERY HUMAN.: close on the tape: the bodyLength label '1 BODY LENGTH' stamps gold on 'body' (0.34 s); on 'Very' (1.70 s) PIP (pip s 1.6) on the fence post beside it holds up a tiny cream sign with a gold '6' (its own score) and tilts its head, unimpressed; HERO's purple-gloved thumb gives a weak thumbs-up at the frame edge on 'human.' (2.00 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.34,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.7,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s093",
+   "start": 297.28,
+   "end": 299.57,
+   "line": "Day six. Dev hands you a burger,",
+   "scene": "DAY 6 - LUNCH: dayCard(g,t,{day:6, title:'LUNCH', at:0.30}). home3 kitchen (cereal 0, plate 0): DEV (s 1.9, orange beanie, phone in hand) hands HERO (s 1.9) a burger on a plate on 'hands' (1.64 s)-'burger,' (2.28 s) (spiderprops burger(g,x,y,s,{t, look:0})), proud-host grin; HERO takes it. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.35,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.48,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.96,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "Short (2.3 s).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s094",
+   "start": 299.57,
+   "end": 302.06,
+   "line": "and your body has an idea.",
+   "scene": "GIANT FACE HERO, a strange idea: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame, holding the burger up near his chin; faceAt [[0,'neutral'],[0.73,'suspicious'],[1.45,'shocked']] - his pupils go huge (hungry-spider eyes), a little gurgle wobble; NO text. rimColor kitchen pendant, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.03,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 0.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s095",
+   "start": 302.06,
+   "end": 306.71,
+   "line": "Most spiders can't chew. They cover their food in digestive juices,",
+   "scene": "FIG 6 - NO CHEWING (LOCAL blueprint in the spiderbp style): board(g,t,{title:'FIG 6 - LUNCH', fig:'DIGESTIVE JUICES'}); a cream spider-head outline with small blunt fangs (cute); a cream teeth icon gets a gold X on 'chew.' (1.10 s) ('can't chew'); a generic cartoon food blob (a round dumpling shape, NOT a real bug) is covered in gold droplets on 'cover' (2.28 s)-'juices,' (3.82 s), label 'digestive juices'. Cute, not gross. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.1,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.32,
+     "name": "rain",
+     "gain": -24,
+     "dur": 0.4
+    }
+   ],
+   "notes": "Known long (4.6 s)."
+  },
+  {
+   "id": "s096",
+   "start": 306.71,
+   "end": 308.67,
+   "line": "wait for soup, and slurp.",
+   "scene": "FIG 6 - SOUP: the food blob melts into a little cream bowl of soup on 'for' (0.29 s)-'soup,' (0.55 s) (label 'wait for soup'), then a straw dips in and slurps it down on 'slurp.' (1.11 s) (milkshake sip wiggle); the bowl ends empty with a tiny burp sparkle. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.11,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.26,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.55
+    },
+    {
+     "at": 1.41,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "Short (2.0 s)."
+  },
+  {
+   "id": "s097",
+   "start": 308.67,
+   "end": 312.07,
+   "line": "You look at the burger. The burger looks at you.",
+   "scene": "THE BURGER LOOKS BACK: kitchen table close-up: spiderprops burger(g,x,y,s,{t, look: 0 -> 1 on 1.97, blink, sweat, wobble}); HERO's face in soft focus behind it, staring on 'look' (0.35 s); on 'burger' (1.97 s) two googly eyes pop open on the top bun and stare right back, a sweat drop on 'at' (2.47 s); both hold the stare. Slow push in. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.97,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.47,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s098",
+   "start": 312.07,
+   "end": 314.91,
+   "line": "You have a milkshake instead.",
+   "scene": "MILKSHAKE INSTEAD: HERO (s 1.9) slides the burger back across the table to DEV (s 1.9, orange beanie, phone in hand), picks up a spiderprops milkshake(g,x,y,s,{t, level: 1 -> 0.5, sip: 1, cherry:true}) and slurps on 'milkshake' (0.59 s), very satisfied (exprAt joy); DEV holds the burger, whose googly eyes look relieved; PIP sits on the straw. home3 kitchen, home3Fg. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "two",
+   "view": "normal",
+   "batch": "D",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.59,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.74,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.55
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s099",
+   "start": 314.91,
+   "end": 317.17,
+   "line": "Day seven. A storm blows",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). DAY 7 - THE STORM: dayCard(g,t,{day:7, title:'THE STORM', at:0.15}) pops top-left (the week strip all ticked, day 7 pulsing). garden(g,t,cam,{view:'garden', mood:'dusk', storm: 0.3 -> 1 over the shot, flash: lightningAt(t,[1.69])}): clouds roll in, rain starts, the washing line flaps, the apple tree bends (G.gust). Lightning on 'storm' (1.69 s). MINA (s 2.0, kid, red scarf) on the lawn clutching her red scarf, hair whipping. gardenFg storm rain in front. camMove z 0.94->0.98. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 0.33,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.69,
+     "name": "flash",
+     "gain": -18
+    },
+    {
+     "at": 1.99,
+     "name": "thunder",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s100",
+   "start": 317.17,
+   "end": 320.14,
+   "line": "Mina's red scarf into the apple tree.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). THE SCARF FLIES: garden view 'garden', storm 1: a gust (G.gust peak) rips MINA's red scarf off her neck on 'Mina's' (0.15 s); it tumbles through the air (LOCAL scarf ribbon sprite, red #d4262e) and disappears into the apple tree canopy on 'tree.' (2.01 s). MINA (s 2.0) reaches up, exprAt shocked. Rain streaks; camMove whip-pans right following the scarf. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 1.27,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 0.7
+    },
+    {
+     "at": 2.01,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s101",
+   "start": 320.14,
+   "end": 323.85,
+   "line": "Biscuit goes after it. Now Biscuit's stuck too.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). BISCUIT GOES AFTER IT: garden(g,t,cam,{view:'tree', mood:'dusk', storm:1, scarf:true, flash: lightningAt(t,[2.56])}) as DEMO_garden demo_g_storm: BISCUIT (cat s 1.8, purple collar, fur soaked flat) scrambles up the trunk on 'goes' (0.48 s)-'it.' (1.04 s) (cat walk pose rotated up the trunk) to the branch at pos.branchX/branchY; on 'Now' (1.90 s) she is on the branch with the snagged scarf flapping above her, out of reach; lightning on 'stuck' (2.56 s): her eyes go 'wide' and she clings (pose 'loaf'). camMove tilt up, z 0.94->0.98. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.48,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.68,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 2.56,
+     "name": "flash",
+     "gain": -18
+    },
+    {
+     "at": 2.81,
+     "name": "thunder",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s102",
+   "start": 323.85,
+   "end": 328.09,
+   "line": "You climb branch by branch, the normal way. Rule two.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). CLIMB THE NORMAL WAY (slow, 4.2 s): garden view 'tree', storm 1: HERO (s 1.9, mustard hoodie soaked darker, hood up, purple gloves) climbs branch by branch (LOCAL climb cycle: reach -> pull -> step, one branch per beat on 'climb' (0.33 s), 'branch' (0.57 s), 'branch,' (1.13 s)) - normal hands-and-feet climbing, NOT wall-sticking; exprAt determined. On 'Rule' (3.21 s) a small gold chip 'RULE 2: BIG THINGS CAN'T STICK' pops lower-left (callback). Rain, gusts. Camera rises with him (camMove y up). gardenFg storm. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.57,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 1.13,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 3.21,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s103",
+   "start": 328.09,
+   "end": 333.27,
+   "line": "But you feel every gust coming on your arm hairs, and hug the trunk before it hits.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). FEEL THE GUST (slow, 5.2 s, one continuous move): close on HERO's forearm on the trunk (sleeve pushed up): spider.js airHairs(g,t,x,y,k) - the hairs on his arm bristle on 'gust' (1.13 s) and wavy air lines arrive from the left a beat before the gust (no text, no icon); on 'hug' (3.19 s) he hugs the trunk with both arms (hug pose, cheek to the bark, exprAt worried -> determined) and on 'hits.' (4.41 s) the gust HITS: the whole tree bends (G.gust peak), leaves and rain slam sideways, he holds firm. Pull back camMove z 1.3 -> 1.0 from the arm to the full hug. Lightning on 'hits.' (4.41 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.13,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.5
+    },
+    {
+     "at": 3.19,
+     "name": "wind",
+     "gain": -16,
+     "dur": 2.0
+    },
+    {
+     "at": 4.41,
+     "name": "impact",
+     "gain": -16,
+     "pitch": 0.6
+    },
+    {
+     "at": 4.41,
+     "name": "flash",
+     "gain": -20
+    }
+   ],
+   "notes": "Known long (5.2 s): the storm rescue gets room.",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s104",
+   "start": 333.27,
+   "end": 336.23,
+   "line": "At the top, you can't hold on and hold a cat.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). AT THE TOP: garden view 'tree', storm 1, camera at branch height: HERO (s 1.9) at the top fork, one arm round the trunk; BISCUIT (cat s 1.8) on the branch just beyond his reach, the red scarf snagged above her and flapping (scarf:true). On 'can't' (0.99 s) he reaches out with one hand and immediately wobbles (exprAt worried); on 'hold' (1.85 s)-'cat.' (2.17 s) he looks from the trunk to the cat and back (lookToward): he can't hold both. Rain, gusts, gentle camera sway. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.27,
+     "name": "hit",
+     "gain": -22,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.85,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s105",
+   "start": 336.23,
+   "end": 341.15,
+   "line": "So you tie off a silk line, wrap Biscuit in the scarf, and lower her down.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). THE SILK LINE (slow, 4.9 s, the rescue): HERO braces at the fork; on 'tie' (0.57 s) a quick little silkPuff at silkAnchor (the back end - no wrists, nothing shooting from the hands) and he TIES the dragline round the branch (LOCAL knot loop; silkLine from the knot, k draws on); on 'wrap' (2.13 s) he unhooks the red scarf and wraps BISCUIT in it like a burrito (cat loaf inside the scarf bundle, head poking out, eyes 'offended'); on 'lower' (3.61 s) he lowers her hand over hand on the glinting silkLine (sag 4, as DEMO_spider demo_silk lowering), the line catching a lightning flash. Slow camMove tilt down following the bundle. Music turns triumphant here. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.57,
+     "name": "whoosh",
+     "gain": -18,
+     "pitch": 1.8,
+     "dur": 0.3
+    },
+    {
+     "at": 0.62,
+     "name": "pop",
+     "gain": -18,
+     "pitch": 1.5
+    },
+    {
+     "at": 2.13,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 3.91,
+     "name": "flash",
+     "gain": -22
+    },
+    {
+     "at": 3.81,
+     "name": "shimmer",
+     "gain": -18
+    }
+   ],
+   "notes": "Known long (4.9 s): the rescue gets room.",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s106",
+   "start": 341.15,
+   "end": 343.19,
+   "line": "One soggy cat is easy.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). GIANT FACE HERO in the rain, triumphant: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame (hood up, the sandy tuft dripping, rain streaks across), faceAt [[0,'determined'],[0.77,'joy'],[1.09,'smirk']]; behind him, soft focus, the scarf bundle with BISCUIT descending on the glinting silk line; gold chip 'EASY' pops on 'easy.' (1.09 s). rimColor lightning blue-white (flash on 'soggy' (0.41 s)), slow push camMove z 1.0->1.06. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.41,
+     "name": "flash",
+     "gain": -22
+    },
+    {
+     "at": 1.09,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s107",
+   "start": 343.19,
+   "end": 345.93,
+   "line": "Biscuit lands in Mina's arms, furious.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). BISCUIT LANDS, FURIOUS: garden view 'tree' at ground level, storm easing (storm 1 -> 0.6): MINA (s 2.0) reaches up and the scarf bundle lands in her arms on 'lands' (0.45 s); BISCUIT pops her head out, soaked, fur spiky, eyes 'offended' on 'furious.' (1.57 s), a tiny cream grumble squiggle; MINA hugs her and the scarf (exprAt joy). The silk line runs up out of frame to HERO in the tree. camMove z 1.0->1.05. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "two",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "hit",
+     "gain": -20,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.57,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s108",
+   "start": 345.93,
+   "end": 349.19,
+   "line": "Next morning, you wake up in bed, not on the ceiling.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). NEXT MORNING, IN BED: home3(g,t,cam,{room:'bedroom', mood:'dawn'}) - sunny and calm after the storm, a mirror of the cold-open ceiling shot: the camera starts on the empty ceiling (a sunbeam) and tilts down on 'wake' (0.91 s) to HERO (s 1.9) waking in bed, the mustard hoodie on the chair, BISCUIT asleep on his chest (forgiven, the red scarf draped over her). On 'not' (1.67 s)-'ceiling.' (2.35 s) he looks up at the ceiling, relieved (exprAt sleepy -> smile). Birds. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "home3",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.91,
+     "name": "whoosh",
+     "gain": -24,
+     "pitch": 0.6
+    },
+    {
+     "at": 2.35,
+     "name": "ding",
+     "gain": -24
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s109",
+   "start": 349.19,
+   "end": 352.45,
+   "line": "In the shed, Pip waves one leg.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). PIP WAVES: garden view 'shed', morning sunbeam (door 0.4), the window cobweb glistening; PIP (pip s 2.4) on the windowsill lifts one front leg on 'waves' (0.97 s) and waves (wave 0 -> 1 -> 0 -> 1), tilts its head on 'leg.' (1.57 s). Gentle push camMove z 1.5->1.56. Warm; the music settles. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.97,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.27,
+     "name": "shimmer",
+     "gain": -20
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s110",
+   "start": 352.45,
+   "end": 355.15,
+   "line": "In real life, a staring contest with a spider",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). IN REAL LIFE: a clean reality-check beat: the frame desaturates a touch and a cream label 'REAL LIFE' slides in top-left on 'real' (0.29 s); the shed (view 'shed'): HERO (s 1.9) crouched nose to nose with PIP (pip s 1.4) on the workbench, both staring on 'staring' (1.21 s)-'contest' (1.55 s); no sparkles, no powers. Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.29,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s111",
+   "start": 355.15,
+   "end": 358.13,
+   "line": "gives you nothing but a staring contest.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). GIANT FACE HERO loses the staring contest: giantFace(g,cx,cy,330,{who:'HERO'}) + a LOCAL messy sandy-brown hair tuft over the top of the head (HERO.hair #c8a46a; faces.js has no 'spiky' branch, it would draw a bald ink head) and the purple gloves if a hand enters frame, eyes watering, faceAt [[0,'squint'],[0.73,'worried'],[1.77,'sheepish']] - he BLINKS on 'nothing' (0.73 s); a gold scoreboard chip 'STARING CONTEST: PIP 1 - YOU 0' pops on 'a' (1.29 s); PIP (pip s 1.2) sits on his knuckle at the bottom of frame, unblinking. rimColor shed sunbeam. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "faces",
+   "type": "face",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.73,
+     "name": "blip",
+     "gain": -16,
+     "pitch": 0.35
+    },
+    {
+     "at": 1.29,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "s112",
+   "start": 358.13,
+   "end": 360.47,
+   "line": "But people are borrowing the tricks.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). BORROWING THE TRICKS: spiderprops lab(g,t,cam,{mood:'day'}) wide: a clean bright lab; on the bench a gecko in a terrarium (creatures.js gecko on the glass), a silk spool, a tall glass climbing wall at the back (glassWall, climb 0); on 'borrowing' (0.81 s) a lab worker (VOLUNTEER outfit, never a cast colour) carries a hand pad across; PIP rides along on a clipboard. camMove z 1.0->1.05, x drift. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.81,
+     "name": "swish",
+     "gain": -18
+    }
+   ],
+   "notes": "Short (2.3 s).",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s113",
+   "start": 360.47,
+   "end": 363.65,
+   "line": "With gecko-inspired hand pads from Stanford,",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). HAND PADS: handPad(g,x,y,s,{press: 0 -> 1 on 1.75, t, detail:1}) close-up: the grey tile's micro-wedge texture flattens under pressure on 'pads' (1.75 s), a glint; cream tag 'GECKO-INSPIRED' on 'gecko-inspired' (0.33 s); cream tag 'STANFORD' on 'Stanford,' (2.45 s). No logos. Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.33,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.75,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.5
+    },
+    {
+     "at": 2.45,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s114",
+   "start": 363.65,
+   "end": 368.53,
+   "line": "a seventy-kilo climber went up a glass wall nearly four metres tall.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). 70 KG UP THE GLASS (4.9 s): glassWall(g,t,x,gy,{s, h: px for 3.7 m, marks:true, climb: 0 -> 1 from 1.15 to the end, climber: VOLUNTEER outfit, label}) as DEMO_spiderprops demo_sp_lab: a climber in a harness goes up the tall glass panel with two hand pads (alternating reaches), safety rope to the top; gold '70 kg' on 'seventy-kilo' (0.21 s); height marks 0-4 m; the head reaches the gold '3.7 m' mark and a chip 'NEARLY 4 m' pops on 'four' (3.11 s). camMove tilts up with the climber. (Cut point: 'Labs' audio starts 368.68 s; words.json says 367.98.) LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "wide",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.21,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.77,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 2.33,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 1.4
+    },
+    {
+     "at": 3.11,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Known long (4.9 s).",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s115",
+   "start": 368.53,
+   "end": 371.33,
+   "line": "Labs spin artificial spider silk, too.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). LAB SILK: silkSpool(g,t,x,y,s,{spin, draw: 0 -> 1 from 0.35, label:'ARTIFICIAL SILK'}) - a pale golden fibre drawn from the syringe nozzle through a bath onto a spinning spool on 'spin' (0.35 s)-'silk,' (1.63 s); cream tag 'LABS' on 'Labs' (0.15 s); PIP watches from the bench edge, head tilted. Lab bokeh, slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderprops",
+   "type": "insert",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "swish",
+     "gain": -18
+    },
+    {
+     "at": 1.93,
+     "name": "ding",
+     "gain": -22
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "hum",
+    "gain": -36
+   }
+  },
+  {
+   "id": "s116",
+   "start": 371.33,
+   "end": 374.09,
+   "line": "So far, it's weaker than the real thing.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). SO FAR, WEAKER: bp board(g,t,{title:'FIG 7 - LAB SILK', fig:'SO FAR'}): two gold bars 'REAL SILK' (tall) and 'LAB SILK' (shorter; no exact number on screen - sources.md: results vary by lab and year); the lab bar grows a little and stops short on 'weaker' (1.11 s); a cream PIP outline sits proudly on top of the REAL SILK bar on 'thing.' (1.83 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.11,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.83,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s117",
+   "start": 374.09,
+   "end": 376.09,
+   "line": "The catch is always size.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). THE CATCH IS SIZE: squareCube(g,t,{x:W*0.5, y:H*0.45, s:1.2, k:1, grow: 0 -> 1 from 0.27 to 0.95}) reprise from FIG 2 (board title 'FIG 2 - THE SIZE PROBLEM'): the cube doubles, gold 'x4' / 'x8' readouts tick; a gold 'SIZE' stamp on 'size.' (0.95 s). LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spiderbp",
+   "type": "bp",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.27,
+     "name": "counter",
+     "gain": -18,
+     "dur": 0.6
+    },
+    {
+     "at": 0.95,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "Short (2.0 s)."
+  },
+  {
+   "id": "s118",
+   "start": 376.09,
+   "end": 380.45,
+   "line": "What works at the size of a raisin falls apart at the size of you.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). RAISIN vs YOU (split screen, a cream divider down the middle): left: PIP beside a raisin (LOCAL wrinkly brown prop, Pip-sized), both on a vertical wall; Pip happily walks up it on 'size' (0.91 s)-'raisin' (1.51 s) (tiny stickMarks rings); right: garden view 'wall', HERO on the drainpipe slides down on 'falls' (1.91 s)-'apart' (2.37 s) ('falls apart'), a purple glove flopping off, and lands in the flower bed on 'you.' (3.63 s), looking at camera. Both halves drift gently. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "med",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.23,
+     "name": "blip",
+     "gain": -18,
+     "pitch": 1.6
+    },
+    {
+     "at": 1.91,
+     "name": "swish",
+     "gain": -18,
+     "pitch": 0.45,
+     "dur": 0.8
+    },
+    {
+     "at": 3.03,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 0.75
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s119",
+   "start": 380.45,
+   "end": 382.27,
+   "line": "So which power would you keep:",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). QUESTION lock-up: 'WHICH POWER WOULD YOU KEEP?' (title style: outlined cream, thick outline + glow, no red-and-blue) over the dimmed back garden at sunset (garden view 'garden', mood 'dusk', storm 0, blurLayer + veil); pops on 'which' (0.37 s) (outBack). Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "garden",
+   "type": "title",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.37,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "Short (1.8 s).",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s120",
+   "start": 382.27,
+   "end": 385.39,
+   "line": "sticky hands, the silk, or the hairs that hear?",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). THREE POWERS: three cream-framed panels slide in, one per word: 'STICKY HANDS' (a bare palm with stickMarks rings) on 'sticky' (0.15 s), 'THE SILK' (a glinting silkLine with a tiny comic silkPuff) on 'silk,' (0.93 s), 'THE HAIRS THAT HEAR' (airHairs on a forearm + a soft sound ring) on 'hairs' (1.63 s); each pops with a gold number 1 / 2 / 3; PIP hops from panel to panel on each word. Slow push. LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "spider",
+   "type": "graphic",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 0.93,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.63,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s121",
+   "start": 385.39,
+   "end": 389.399,
+   "line": "Tell us in the comments. And subscribe for more What Ifs.",
+   "scene": "[E is self-contained] Sets: garden.js garden(g,t,cam,{view:'shed'|'garden'|'wall'|'tree', mood:'morning'|'day'|'dusk'|'night', storm:0..1, flash:0..1, scarf:true, door}) + gardenFg(g,t,cam,{view,storm}) + lightningAt(t,[times]); returns {GY,CX,M,rim,pos,gust} (tree: pos.trunkX/branchX/branchY/scarfX/scarfY; shed: pos.webX/webY/pumpX). spider.js pip(g,x,y,s,{t,tilt,hop,wave,look,blink}), pipFace, drawCeiling, silkLine(g,from,to,{t,sag,k}), silkPuff(g,t,t0,x,y), silkAnchor(o,pose), airHairs(g,t,x,y,k), gloves(g,o,pose,{t,slip}), stickMarks. spiderprops.js dayCard(g,t,{day,title,at}), lab(g,t,cam,{mood}), glassWall, handPad, silkSpool. spiderbp.js squareCube + bp.js board/label. faces.js giantFace/faceAt. hud.js chip. home3.js home3 bedroom. actors.js actor + cat. acting.js camMove/idle/poseAt/exprAt/blinkFlag/blinkAmt/lookToward/atmos. Follow DEMO_garden (demo_g_storm), DEMO_spider (demo_silk, demo_ceiling, demo_pip), DEMO_spiderprops (demo_sp_lab), DEMO_spiderbp. Cast: HERO messy sandy-brown hair (head 'spiky'), mustard zip hoodie #E1AD01, oversized purple gloves #7b4bb3, grey cargo trousers, green wellies; MINA kid, red scarf #d4262e; DEV orange beanie #f08a24; BISCUIT dark cat, purple collar; PIP cute grey-and-cream jumping spider, two huge shiny front eyes (never scary). END SCREEN (UI.endScreen as earlier episodes): a comment-bubble icon pops on 'Tell' (0.15 s) ('Tell us in the comments'), then the subscribe pill + like icon on 'subscribe' (1.99 s); the cast lined up in the sunny back garden: HERO (sandy hair, mustard hoodie, purple gloves, green wellies) waving, MINA with her red scarf holding BISCUIT (still slightly offended), DEV filming on his phone, PIP on HERO's shoulder waving one leg. Fade out at the end (config fadeOut 0.8). (Cut point: 'Tell' audio starts 385.54 s.) LEGAL: original hero only - no red-and-blue, no mask/bodysuit, no web logo or web pattern, no wrist shooters (silk only ever from the back end, comedic), no skyscraper/building swinging, no 'spider sense' text or tingle graphic.",
+   "set": "",
+   "type": "end",
+   "view": "normal",
+   "batch": "E",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.99,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 37.52,
+   "mood": "playful",
+   "intensity": 0.4
+  },
+  {
+   "start": 37.52,
+   "end": 145.12,
+   "mood": "wonder",
+   "intensity": 0.35
+  },
+  {
+   "start": 145.12,
+   "end": 163.66,
+   "mood": "playful",
+   "intensity": 0.45
+  },
+  {
+   "start": 163.66,
+   "end": 190.9,
+   "mood": "playful",
+   "intensity": 0.35
+  },
+  {
+   "start": 190.9,
+   "end": 204.78,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 204.78,
+   "end": 241.98,
+   "mood": "playful",
+   "intensity": 0.35
+  },
+  {
+   "start": 241.98,
+   "end": 258.4,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 258.4,
+   "end": 291.33,
+   "mood": "playful",
+   "intensity": 0.35
+  },
+  {
+   "start": 291.33,
+   "end": 314.91,
+   "mood": "playful",
+   "intensity": 0.5
+  },
+  {
+   "start": 314.91,
+   "end": 336.23,
+   "mood": "tension",
+   "intensity": 0.55
+  },
+  {
+   "start": 336.23,
+   "end": 345.93,
+   "mood": "triumph",
+   "intensity": 0.7
+  },
+  {
+   "start": 345.93,
+   "end": 352.45,
+   "mood": "calm",
+   "intensity": 0.35
+  },
+  {
+   "start": 352.45,
+   "end": 389.399,
+   "mood": "hopeful",
+   "intensity": 0.4
+  }
+ ],
+ "wordTimesCorrected": {
+  "note": "audio-envelope onsets used for cut points where words.json glues a sentence onto the previous one",
+  "It's also why": 106.53,
+  "Their verdict": 133.47,
+  "\"Forty percent,\"": 140.88,
+  "Labs spin": 368.68,
+  "Tell us": 385.54
+ }
+}

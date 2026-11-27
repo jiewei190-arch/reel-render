@@ -1,0 +1,1497 @@
+{
+ "title": "What If You Were in a Zombie Apocalypse With Zero Experience?",
+ "duration": 65.452,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "end": 2.97,
+   "line": "Day one of the zombie apocalypse.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). HOOK (striking from FRAME 1, no fade): close on the store's front glass at night from inside - at 0.00 a dark palm SLAMS onto the glass: handsOnGlass(g, t, 560, 640, 2.0, {press: 1 at 0.0 (already flat on frame 1), slide: 0 -> 0.5 over 0.6-2.9 s, fog: 0.3 -> 1, seed 1}) with a white thud flash and a 14 px thudShake([0]) on frame 0; behind it a zombieSil(g, 540, 1180, 3.2, {t, arms:'reach', rim:0.6, eyes:0, tilt:0.5, seed 4}) out of focus in cold moonlight (blurred, the body blocks the moon). On 'Day' (0.49 s) the ink title 'DAY ONE' scratches onto the glass top (horror.js scrawl, size 130, pale #e8e4d8 like chalk/condensation, y ~300, x centred, written by 'one' 0.72 s); on 'apocalypse' (1.74 s) a second hand presses in at the upper right (handsOnGlass(g,t,780,420,1.5,{press 0->1 in 0.15 s, seed 2})). Camera: hard 3% punch-in on frame 0, then slow pull-back z 1.06->1.00. Unsettling detail: the fog halo around the palm blooms and shrinks in slow pulses - whatever is out there is breathing on the glass. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "zombies",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -12,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.74,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.9
+    }
+   ],
+   "notes": "Frame 1 must already show the hand on the glass: config fadeIn is 0.5 (global, engine/player.js) - lead: set config fadeIn 0 for this Short.",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s002",
+   "start": 2.97,
+   "end": 4.69,
+   "line": "No weapons.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'NO WEAPONS.' (fast cut): HERO's two EMPTY hands held up palm-out at chest height, centred (hands at y ~700-900, mustard hoodie cuffs, the body soft behind), in a dead dark street: street(g,t,cam,{power:0, mood:'night'}) blurred behind, moon rim on the fingers. On 'weapons' (0.42 s) the fingers spread and tremble 2 px, as if showing someone he has nothing. Camera slow push z 1.00->1.05. Unsettling detail: the hands throw two shadows on the wall behind - one moon, one from a light that isn't there. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "street",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s003",
+   "start": 4.69,
+   "end": 6.26,
+   "line": "No plan.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'NO PLAN.': street(g,t,cam,{power:0, mood:'night'}) - a dead street, black windows, a car with its door left open; HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.4, centre, facing camera, y feet at S.GY) turns his head left then right, lost: poseAt stand -> shrug; exprAt worried -> scared on 'plan' (0.42 s), lookToward(-1,0) -> (1,0). Camera slow push z 1.00->1.05. Unsettling detail: far down the street at the vanishing point (x ~600, y ~760, small, s 0.5), a zombieSil standing perfectly still in the middle of the road, {sway:0.1, rim:0.3, seed 3}. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "street",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s004",
+   "start": 6.26,
+   "end": 9.08,
+   "line": "No experience.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'NO EXPERIENCE.' (dread hold ~2.8 s): giantFace(g, 470, 720, 330, {who:'HERO'}) - HERO's face (mustard hood up), lit only by cold moonlight from the upper left (rimSide -1, rimColor '#9fb4e0'), the rest near black; the dead street blurred behind. faceAt [[0,'worried'],[0.15 s,'shocked'],[0.41 s+0.6,'worried']]: a hard swallow on 'experience' (0.41 s), eyes dart to the right edge (look [0.8, 0]) at +0.8 s, then hold dead still. Very slow push z 1.00->1.06. Unsettling detail: in his eyes' glint (glint) a tiny shape moves across, left to right, though nothing in the frame moves. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "street",
+   "type": "face",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 72,
+     "dur": 2.2
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s005",
+   "start": 9.08,
+   "end": 10.78,
+   "line": "The power's out.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'THE POWER'S OUT.': street(g,t,cam,{power: key(t, [[0.15, 1], [1.3, 0]]), mood:'night'}) - a wide city street, vertical framing, the buildings' lit windows and the sodium lamps going out HOUSE BY HOUSE (street.js random thresholds) from the far end toward camera; last lamp dies on 'out' (0.75 s). Camera slow push z 1.00->1.04. Unsettling detail: one window high up stays lit a beat longer than the rest, and a silhouette steps away from it just before it goes dark. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "street",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "buzz",
+     "gain": -24,
+     "dur": 1.1
+    },
+    {
+     "at": 0.75,
+     "name": "tick",
+     "gain": -16,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s006",
+   "start": 10.78,
+   "end": 12.91,
+   "line": "The whole city is dark.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'THE WHOLE CITY IS DARK.' (dread hold ~2.1 s): street(g,t,cam,{power:0, mood:'night'}) seen from high up and wider (cam y raised, z 0.92): a black city, only the moon (upper left) and its cold rim on rooftops; tiny far below, three zombieSil(g, x, y, 0.35, {step: world x, sway:0.4, seed 5/6/7}) drag-walking slowly along the road (step), never close. On 'dark' (1.01 s) the moon slides behind cloud and the frame drops another 20%. Very slow drift z 0.92->0.95. Unsettling detail: one of the tiny figures has stopped and is looking UP, toward the camera. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "street",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -34,
+     "dur": 2.1
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "wind",
+    "gain": -34
+   }
+  },
+  {
+   "id": "s007",
+   "start": 12.91,
+   "end": 15.23,
+   "line": "You hide in the supermarket.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'YOU HIDE IN THE SUPERMARKET.': store(g,t,cam,{view:'front', moon:1}) - inside the dark store: the tall front glass with moonlight and the dead parking lot beyond, the shut sliding doors (S.pos.doorX), checkout counter, the TOPPLED CART and cans on the floor, moonlight panes across the floor. HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.4) slips in sideways through the gap of the sliding doors (x from S.pos.doorX -> S.CX - 200 over 0.2-1.6 s, walkAlong, crouched) and drops behind the checkout counter on 'supermarket' (0.99 s) (poseAt crouch, exprAt scared). storeFg(view:'front', no flashlight). Camera slow push z 1.00->1.05. Unsettling detail: outside, across the moonlit lot, a car's interior dome light is on - with someone sitting very still in the driver's seat. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "footstep",
+     "gain": -22
+    },
+    {
+     "at": 0.7,
+     "name": "footstep",
+     "gain": -24
+    },
+    {
+     "at": 0.99,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s008",
+   "start": 15.23,
+   "end": 16.83,
+   "line": "Lights off.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'LIGHTS OFF.': store(g,t,cam,{view:'aisle'}) - AISLE 7 into the dark: empty shelves, a few dented cans, the hanging 'AISLE 7' sign, the faint red EXIT sign at the far end (S.pos.exitX/exitY). On 'off' (0.59 s) the red EXIT glow stutters (flicker) and dies - now only moonlight edges. Camera slow push down the aisle z 1.00->1.07. Unsettling detail: a can rolls slowly out from the bottom shelf at the far end and stops, by itself. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "wide",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.59,
+     "name": "tick",
+     "gain": -14,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.64,
+     "name": "buzz",
+     "gain": -28,
+     "dur": 0.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s009",
+   "start": 16.83,
+   "end": 18.51,
+   "line": "Doors locked.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'DOORS LOCKED.': store(g,t,cam,{view:'front', moon:1}) tight on the sliding doors' middle seam (S.pos.doorX), seen from inside: HERO's hand (mustard cuff) at y ~760 shoves the floor bolt / twists the thumb lock; on 'locked' (0.52 s) it clicks home, the doors jolt 2 px. Beyond the glass: the moonlit lot, empty. Camera slow push z 1.00->1.06. Unsettling detail: on the glass at head height there is already an old palm smear - on the OUTSIDE. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.52,
+     "name": "tick",
+     "gain": -8,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.55,
+     "name": "hit",
+     "gain": -18,
+     "pitch": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s010",
+   "start": 18.51,
+   "end": 20.51,
+   "line": "Mistake number one.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). MISTAKE 1 (ink title card, punch-in): horror.js ruleTitle(g, t, 1, '') style, but it hard-codes 'RULE ONE' - copy ruleTitle LOCALLY into your shot file as mistakeTitle(g,t,n,str) and scratch 'MISTAKE 1' (size 120, dark ink #140a0c, bleed + spatter) on the torn paper strip, no subtitle line (str ''), card centred at y ~700 (paper y ~380-1020, above the caption band). Frame 0-0.25 s: horror.js interference(g, t, 1 -> 0) tears across the card (the static burst), the paper shudders in hard (ruleTitle's own 14 px shudder), then the ink writes on by ~0.6 s; slow scale 1.00->1.04. On 'one' (1.00 s) the ink bleeds and one spatter hits the paper. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "horror",
+   "type": "title",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -6,
+     "dur": 0.4
+    },
+    {
+     "at": 0.02,
+     "name": "glitch",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s011",
+   "start": 20.51,
+   "end": 22.15,
+   "line": "You turn on your flashlight.",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). 'YOU TURN ON YOUR FLASHLIGHT.' (the mistake): store(g,t,cam,{view:'front', moon:0.8}) - over HERO's shoulder: HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.4, lower left, back three-quarter, x ~260, crouched by the counter) facing the front glass. On 'flashlight' (0.89 s) the beam CLICKS on: storeFg(g,t,cam,{view:'front', flashlight:{x: hand screen x, y: hand screen y, ang: -0.35, on: 0 -> 1 in 2 frames, len: E.H*0.9, spread: 0.3}}) - a warm wedge cuts across the dark store and HITS THE FRONT GLASS, a hot white bloom on the pane (x ~640-860, y ~520-760), dust in the beam. exprAt worried -> neutral (relief) at the click. Camera slow push z 1.00->1.05. Unsettling detail: the beam's bloom on the glass shows how much of the glass is fogged - from the outside. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.89,
+     "name": "tick",
+     "gain": -6,
+     "pitch": 1.3
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s012",
+   "start": 22.15,
+   "end": 23.22,
+   "line": "Something",
+   "scene": "[A is self-contained] Uses sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) BEFORE characters + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) AFTER (flashlight x,y,ang in SCREEN coords at the hero's hand; on 0 = no mask), sets/zombies.js zombieSil(g,x,y,s,{t,sway,eyes,tilt,rim,arms,step,seed}) / handsOnGlass / glassHorde / thudShake, sets/street.js street(g,t,cam,{power, mood:'night'}) (power 1 -> 0 kills the lights house by house), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js (camMove, poseAt, exprAt, idle, blinkFlag, lookToward), faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story: day one of the zombie apocalypse; 'you' (mustard hoodie) have no weapons, no plan, no experience; the power is out, the city is dark, you hide in a dark supermarket. Zombies are SILHOUETTES only (no gore, no faces, no bites). THE EYES CATCH IT (silent, fast, 1.1 s): reverse angle from just inside the front glass looking OUT along the beam: the flashlight bloom on the glass in the foreground (soft), beyond it the black parking lot - and in the dark, pair after pair of pale EYES light up as the beam crosses them: 5-7 zombieSil(g, x, y, 0.5-1.1, {t, eyes: 0 -> 1 as the beam passes, sway 0.2, rim 0.2, seeds 11-17}) standing at different depths, bodies almost invisible, only the eye glints (staggered 0.08 s apart, near to far). On 'Something' (0.64 s) every pair turns toward the glass at once. Camera dead still, a 1 px tremble. Unsettling detail: the nearest pair is much closer than the others - right at the glass, lower than a standing head. The cut lands on the first HIT (next shot). hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "zombies",
+   "type": "insert",
+   "view": "normal",
+   "batch": "A",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "shimmer",
+     "gain": -30
+    },
+    {
+     "at": 0.1,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 96,
+     "dur": 0.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s013",
+   "start": 23.22,
+   "end": 25.01,
+   "line": "hits the front glass.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. SOMETHING HITS THE FRONT GLASS (cut ON the hit): tight on the front glass from inside, the flashlight's warm bloom still on it: at 0.00 ONE dark palm slams into the bloom - handsOnGlass(g, t, 520, 700, 2.2, {press: 1 on frame 0, fog: 0 -> 1, slide: 0 -> 0.3 from 0.8 s, seed 3}) - thud flash + thudShake([0], 16); the zombieSil behind it is a black shape cut out against the moonlit lot (arms:'reach', rim 0.5). On 'glass' (0.79 s) the fingers curl and squeak down 20 px. Camera hard 4% punch on the hit, then hold, 1 px tremble. Unsettling detail: the palm is pressed exactly where the beam is - it came to the light. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "zombies",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.75
+    },
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.79,
+     "name": "swish",
+     "gain": -22,
+     "pitch": 1.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s014",
+   "start": 25.01,
+   "end": 26.61,
+   "line": "Then another.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. THEN ANOTHER (cut ON hit 2): a little wider on the glass: glassHorde(g, t, {x:-20, y:E.H*0.14, w:E.W+40, h:E.H*0.52, n:3, press: 0.25, hits:[0.0, 1.05], moon:0.8, seed 7}) - a SECOND palm slams in at 0.00 (upper right, x ~760, y ~520) next to the first, then a third shape steps up at 1.05 s; apply the returned shake to the camera. The flashlight bloom shakes on the glass each thud. Camera slow push z 1.00->1.04. Unsettling detail: between the hits, the two hands slide together toward the bloom, in sync. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "zombies",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.05,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.85
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s015",
+   "start": 26.61,
+   "end": 29.22,
+   "line": "Then a hundred.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. THEN A HUNDRED (the press rising, ~2.6 s): store(g,t,cam,{view:'front', moon:1}) + glassHorde over the whole front glass (S.pos.glassX/glassTop/glassW/glassH; n: 8 -> 40 crowding in from the dark, press: 0.3 -> 1 by 2.2 s, hits: [0.22, 0.62, 0.95, 1.20, 1.40, 1.56, 1.70, 1.82, 1.93, 2.03, 2.12, 2.21, 2.30, 2.38, 2.46], moon 1, back:true, seed 9) - wide from deep inside the store (counter + toppled cart foreground, soft), the glass wall filling with silhouettes and slapping palms, condensation smears building, the mullions flexing; the shake gets bigger with each hit (apply it to cam). On 'hundred' (0.57 s) the crowd fills every pane to the top. HERO is a tiny silhouette at the lower left behind the counter (s 1.4, x ~240, above y 1270), flashlight still on, its beam shaking on the glass. Camera slow push z 1.00->1.06. Unsettling detail: the panes start to bow inward (a faint curved highlight) on the last hits. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "zombies",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.22,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.62,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.95,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.65
+    },
+    {
+     "at": 1.2,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.9
+    },
+    {
+     "at": 1.4,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.75
+    },
+    {
+     "at": 1.56,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.7
+    },
+    {
+     "at": 1.7,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.8
+    },
+    {
+     "at": 1.82,
+     "name": "hit",
+     "gain": -8,
+     "pitch": 0.65
+    },
+    {
+     "at": 1.93,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.9
+    },
+    {
+     "at": 2.03,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.75
+    },
+    {
+     "at": 2.12,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.7
+    },
+    {
+     "at": 2.21,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.8
+    },
+    {
+     "at": 2.3,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.65
+    },
+    {
+     "at": 2.38,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.9
+    },
+    {
+     "at": 2.46,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.75
+    },
+    {
+     "at": 0.9,
+     "name": "riser",
+     "gain": -24,
+     "dur": 1.7
+    },
+    {
+     "at": 0.0,
+     "name": "murmur",
+     "gain": -26,
+     "dur": 2.6
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s016",
+   "start": 29.22,
+   "end": 31.29,
+   "line": "Mistake number two.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. MISTAKE 2 (ink title card, punch-in): horror.js ruleTitle(g, t, 2, '') style, but it hard-codes 'RULE ONE' - copy ruleTitle LOCALLY into your shot file as mistakeTitle(g,t,n,str) and scratch 'MISTAKE 2' (size 120, dark ink #140a0c, bleed + spatter) on the torn paper strip, no subtitle line (str ''), card centred at y ~700 (paper y ~380-1020, above the caption band). Frame 0-0.25 s: horror.js interference(g, t, 1 -> 0) tears across the card (the static burst), the paper shudders in hard (ruleTitle's own 14 px shudder), then the ink writes on by ~0.6 s; slow scale 1.00->1.04. Under the card the pounding continues, muffled (the paper shudders 2 px on each muffled thud at 0.3, 0.8, 1.3, 1.8 s). On 'two' (1.07 s) a crack-like ink stroke runs off the paper edge. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "horror",
+   "type": "title",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -6,
+     "dur": 0.4
+    },
+    {
+     "at": 0.02,
+     "name": "glitch",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.8,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.3,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    },
+    {
+     "at": 1.8,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s017",
+   "start": 31.29,
+   "end": 32.41,
+   "line": "You run to the back,",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. 'YOU RUN TO THE BACK,' (fast, 1.1 s): store(g,t,cam,{view:'aisle'}) - AISLE 7 from the far end, looking back toward the front glass (a pale moonlit rectangle full of silhouettes and slapping palms, tiny, at the vanishing point). HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.4, running TOWARD camera, walkAlong run cycle, x ~540, lit only by his own swinging flashlight - storeFg(view:'aisle', flashlight:{x: his hand, y: his hand, ang swinging -1.9 <-> -1.2 every 0.25 s, on:1, len E.H*0.8, spread 0.25})) - exprAt scared, mouth open. Camera handheld shake 3 px, slight push. Unsettling detail: the dented cans on the shelves rattle in time with the hits on the glass. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.55,
+     "name": "hit",
+     "gain": -14,
+     "pitch": 0.8
+    },
+    {
+     "at": 0.9,
+     "name": "hit",
+     "gain": -16,
+     "pitch": 0.7
+    },
+    {
+     "at": 0.05,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 0.35,
+     "name": "footstep",
+     "gain": -16
+    },
+    {
+     "at": 0.65,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 0.95,
+     "name": "footstep",
+     "gain": -17
+    },
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -22,
+     "pitch": 0.8
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s018",
+   "start": 32.41,
+   "end": 34.76,
+   "line": "into the freezer room, and pull the door",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. 'INTO THE FREEZER ROOM, AND PULL THE DOOR SHUT.': store(g,t,cam,{view:'back'}) - the back corridor: 'EMPLOYEES ONLY' swing doors behind (they burst open as HERO comes through at 0.1 s, swinging), pallets, a mop bucket, the green emergency light, the steel FREEZER door at the end (S.pos.freezerX/freezerY) standing open, frost breathing out of it (motes, white). HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.3) runs away from camera down the corridor (walkAlong), flashlight beam bouncing, reaches the freezer on 'freezer' (0.65 s), steps in and turns, grabbing the door's OUTSIDE handle from the doorway on 'pull' (1.57 s) - the door swings toward camera, the gap narrowing on HERO's scared face, closing on 'door' (2.07 s). Camera slow push z 1.00->1.06. Unsettling detail: in the round window of the swing doors behind, a dark head rises into view just as they stop swinging. The CUT lands on the slam ('shut'). hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -16,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 0.75,
+     "name": "footstep",
+     "gain": -18
+    },
+    {
+     "at": 1.1,
+     "name": "footstep",
+     "gain": -19
+    },
+    {
+     "at": 1.57,
+     "name": "whoosh",
+     "gain": -20,
+     "pitch": 0.6
+    }
+   ],
+   "notes": "Ends exactly on the 'shut' onset: the next shot opens on the slam.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s019",
+   "start": 34.76,
+   "end": 35.72,
+   "line": "shut.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. THE SLAM (cut ON the sound): store(g,t,cam,{view:'freezer', flicker:1, frost:1, strips: 1 -> 0.3}) seen from inside the freezer at the door: frame 0 is near BLACK - the steel door (no handle) slams shut filling the frame, a 12 px shake (thudShake([0], 12)), frost dust bursts off the frame into the air (motes white, fast), the plastic strips beside it whip and sway. 0.25 s: the caged bulb (S.pos.bulbX/bulbY) stutters on (flicker), cold blue; the line of light under the door (y S.pos.gapY, above y 1270) the only warm thing. Camera: hard punch on 0, then dead still. Unsettling detail: on the inside of the door, at hand height, four scratch lines in the frost - old ones. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.6
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.4
+    },
+    {
+     "at": 0.25,
+     "name": "buzz",
+     "gain": -26,
+     "dur": 0.6
+    }
+   ],
+   "notes": "Cut on the freezer-door slam (the 'shut' onset, 34.76 global).",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s020",
+   "start": 35.72,
+   "end": 38.54,
+   "line": "Cold. Dark.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. 'COLD. DARK.' (dread hold ~2.8 s): store(g,t,cam,{view:'freezer', frost:1, flicker:0.4, strips:0.3}) - the freezer room wide: frosted walls and icicles, the hanging plastic strips swaying slowly, racks of boxes, the dim caged bulb, the steel door at right with its warm line underneath. HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.4, centre-left, hugging himself, poseAt crossArms, shoulders shaking 1 px), breathFog(g,t, his mouth x,y, {rate:1.2, s:1.3, facing:1}) - big white breath clouds. On 'Cold' (0.15 s) a big breath cloud; on 'Dark' (1.58 s) the bulb dies to a dim ember (flicker 0.4 -> heavy drop), the room drops to blue-black, only the breath and the under-door line read. exprAt scared -> worried. Very slow push z 1.00->1.05. Unsettling detail: the breath clouds drift toward the door, as if drawn under it. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "wide",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -30,
+     "dur": 2.8
+    },
+    {
+     "at": 0.15,
+     "name": "whoosh",
+     "gain": -30,
+     "pitch": 0.4
+    },
+    {
+     "at": 1.58,
+     "name": "tick",
+     "gain": -18,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s021",
+   "start": 38.54,
+   "end": 41.34,
+   "line": "Silent. Safe.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. 'SILENT. SAFE.' (dread hold ~2.8 s): store(g,t,cam,{view:'freezer', frost:1, flicker:0.2, strips:0 (still)}) - medium on HERO 'you' (cast.js HERO: MUSTARD hoodie #E1AD01, dark-teal trousers; actor('HERO', ...) s 2.2-2.6 with acting.js poses, idle(), blinkFlag(t, 3.2, 2), rim: S.rim) (s 2.5, centre) sliding down the frosted wall to sit on the floor (poseAt stand -> sit over 0-1.2 s), the flashlight in his lap pointing at the floor (a small warm pool), breathFog rate 1.0 -> 0.5 (breathing slows). On 'Silent' (0.15 s) the strips stop swaying; on 'Safe' (1.59 s) he lets his head fall back against the wall, eyes close (exprAt worried -> sleepy), a long breath cloud. Camera very slow push z 1.00->1.04. Unsettling detail: the plastic strips have stopped - all but one, which keeps swaying with no air moving. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -32,
+     "dur": 2.8
+    },
+    {
+     "at": 1.59,
+     "name": "whoosh",
+     "gain": -30,
+     "pitch": 0.35
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s022",
+   "start": 41.34,
+   "end": 43.43,
+   "line": "Mistake number three.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. MISTAKE 3 (ink title card, punch-in): horror.js ruleTitle(g, t, 3, '') style, but it hard-codes 'RULE ONE' - copy ruleTitle LOCALLY into your shot file as mistakeTitle(g,t,n,str) and scratch 'MISTAKE 3' (size 120, dark ink #140a0c, bleed + spatter) on the torn paper strip, no subtitle line (str ''), card centred at y ~700 (paper y ~380-1020, above the caption band). Frame 0-0.25 s: horror.js interference(g, t, 1 -> 0) tears across the card (the static burst), the paper shudders in hard (ruleTitle's own 14 px shudder), then the ink writes on by ~0.6 s; slow scale 1.00->1.04. On 'three' (1.00 s) the card stops shuddering and goes dead still - silence. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "horror",
+   "type": "title",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "rain",
+     "gain": -6,
+     "dur": 0.4
+    },
+    {
+     "at": 0.02,
+     "name": "glitch",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.45
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s023",
+   "start": 43.43,
+   "end": 45.8,
+   "line": "The door only opens from the outside.",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. 'THE DOOR ONLY OPENS FROM THE OUTSIDE.' (insert on the smooth steel): store(g,t,cam,{view:'door', shadow:0, frost:1}) - close on the inside of the steel door: the bare plate where a handle should be (S.pos.plateX/plateY ~ y 700), 4 empty screw holes, scratch marks, frost; the light under the door at S.pos.gapY (keep above y 1270). HERO's bare hand (mustard cuff) enters lit by his flashlight (storeFg flashlight from lower left, on:1, spread 0.22) and slides over the smooth steel searching for anything to pull on 'only' (0.65 s); on 'opens' (0.92 s) the fingertips find the four empty screw holes; on 'outside' (1.74 s) the fingers press flat, then the nails scrape the frost (four new lines next to the old ones). Camera slow push z 1.00->1.08 to the plate. Unsettling detail: the old scratches are at the SAME height as his fingers. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "insert",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.65,
+     "name": "swish",
+     "gain": -24,
+     "pitch": 1.3
+    },
+    {
+     "at": 1.94,
+     "name": "swish",
+     "gain": -20,
+     "pitch": 1.8
+    },
+    {
+     "at": 0.4,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 88,
+     "dur": 1.9
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s024",
+   "start": 45.8,
+   "end": 47.23,
+   "line": "",
+   "scene": "[B is self-contained] Uses sets/zombies.js glassHorde(g,t,{x,y,w,h,n,press,hits,moon,seed,back}) (returns {shake} - apply it to the camera) / handsOnGlass / zombieSil / thudShake, sets/store.js store(g,t,cam,{view:'front'|'aisle'|'back'|'freezer'|'door', moon, flicker, shadow, under, frost, strips}) + storeFg(g,t,cam,{view, flashlight:{x,y,ang,on,len,spread}}) + breathFog(g,t,x,y,{rate,s,facing}), sets/horror.js grain/vignette/coldGrade/breathe/flicker/flashlight/motes/interference/ruleTitle, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js / DEMO_zombies.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse, a powerless dark city; 'you' (mustard hoodie, no weapons, no experience) hid in a dark supermarket, lights off, doors locked - then turned on a flashlight; its beam hit the front glass and pale eyes outside caught it. Zombies are SILHOUETTES only (dark shapes, palms on the glass, eye glints; no gore, no bites). In the freezer: cold blue, frost, plastic strips, the caged bulb, breath fog, a steel door with NO inside handle and a line of light under it. THE REALISATION (silent, 1.4 s): giantFace(g, 470, 720, 330, {who:'HERO'}) - HERO's face in the freezer, cold bulb blue from above (rimSide -1, rimColor '#a8c8ff'), frost on the hood edge, breath fog (breathFog at the mouth, rate 1.6, fast and shallow). faceAt [[0,'worried'],[0.35,'shocked']]: his eyes go slowly from the door (look [0.8, 0.1]) to the camera; no blink. Slow push z 1.00->1.06. Unsettling detail: his breath clouds stop drifting and hang in front of his face for a frame too long. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "face",
+   "view": "normal",
+   "batch": "B",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -20,
+     "bpm": 96,
+     "dur": 1.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s025",
+   "start": 47.23,
+   "end": 48.89,
+   "line": "Hours pass.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. 'HOURS PASS.' (time-lapse): store(g,t,cam,{view:'freezer', frost: 0.6 -> 1, flicker: 0.2 -> 0.7, strips:0.1}) - the freezer wide from high in the corner: HERO curled on the floor against the racks (s 2.0, centre-left, knees up, hood up), the flashlight beside him dimming 1 -> 0.3 (a small warm pool on the floor shrinking). Time-lapse: frost creeps visibly up the walls and over his shoulders (white edge growing), the bulb strobes/dims through long flickers, his breath puffs come fast then slower (breathFog rate 2 -> 0.5); on 'pass' (0.59 s) the flashlight goes out. Camera very slow push z 1.00->1.03. Unsettling detail: the line of light under the door never changes - not with day, not with night. hfx: coldGrade + vignette + breathe + grain(g,t,0.08-0.1); slow push or drift, never static. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "clock",
+     "gain": -26,
+     "dur": 1.6,
+     "rate": 4.0
+    },
+    {
+     "at": 0.59,
+     "name": "tick",
+     "gain": -14,
+     "pitch": 0.45
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s026",
+   "start": 48.89,
+   "end": 51.75,
+   "line": "Your phone dies. Then, a knock.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. 'YOUR PHONE DIES.' + 'THEN, A KNOCK.' (~2.9 s): deadPhone(g, t, 540, 720, 2.0, {pct: 10 -> 0, dim}) - HERO's phone in his frost-dusted hand (mustard cuff), the screen the ONLY light, lighting his fingers blue-white; the battery icon + '10%' in red, 'LOW BATTERY'; pct drops 10 -> 3 by 'phone' (0.47 s), 1% on 'dies' (0.84 s) and 0 at 'dies'+0.3 s: the screen goes BLACK (a black mirror with one reflection streak). Then near-total dark: only the warm line under the door far behind (out of focus, y ~1000) and a faint breath cloud catching it. 'Then, a knock.' (2.02 s-2.44 s) plays over the dark - nothing moves. Camera slow push z 1.00->1.05, then dead still after the screen dies. Unsettling detail: in the black phone screen's reflection, the line of light under the door behind him is briefly broken - something passed. The CUT lands on knock 1 (next shot). Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -20,
+     "pitch": 0.7,
+     "dur": 0.15
+    },
+    {
+     "at": 1.14,
+     "name": "glitch",
+     "gain": -12
+    },
+    {
+     "at": 1.14,
+     "name": "tick",
+     "gain": -18,
+     "pitch": 0.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s027",
+   "start": 51.75,
+   "end": 54.8,
+   "line": "Slow. Patient.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. THE KNOCK. 'SLOW.' 'PATIENT.' (cut ON knock 1): store(g,t,cam,{view:'freezer', flicker:0.0, frost:1, under:1}) - pitch-dark freezer, HERO (s 2.3, crouched left, x ~300) seen only as a rim: the warm line of light under the steel door (right, y ~1150) and a dim blue edge. Knocks at 0.00 and 1.60 s: the door shivers 1-2 px (knockAt(t,[0, 1.60])), frost dust drops off the frame into the light each time. HERO flinches at each knock (reaction('shock', t, knock time, 'crouch')), his breath fog stops (holding his breath). On 'Slow' (0.79 s) nothing; on 'Patient' (2.15 s) his head turns slowly toward the door (lookToward(1,0.2), exprAt scared). Camera creeping push z 1.00->1.05 toward the door. Unsettling detail: the knocks come from LOW on the door, at knee height. The cut lands on knock 3 (next shot). Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "med",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.5
+    },
+    {
+     "at": 1.6,
+     "name": "hit",
+     "gain": -6,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.3,
+     "name": "heartbeat",
+     "gain": -24,
+     "bpm": 70,
+     "dur": 2.6
+    }
+   ],
+   "notes": "Cut on knock 1 (51.75 global, 0.10 s after 'knock.' ends); knock 2 at 53.35 between 'Slow.' and 'Patient.'.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s028",
+   "start": 54.8,
+   "end": 57.72,
+   "line": "Hey. It's me. Open up.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. KNOCK 3 + [DEV] 'Hey. It's me. Open up.' (cut ON knock 3; dread hold ~2.9 s): floor level inside the freezer, the camera on the frosted floor looking at the bottom of the steel door: store(g,t,cam,{view:'door', under:1, shadow: 0 -> 1, frost:1}) - the warm line of light under the door spans the frame at y ~900 (well above the caption band), glow pooling across the frost toward camera. Knock 3 at 0.00 (the door shivers, frost drops). Then the muffled voice: on 'Hey' (0.67 s) TWO dark bars - the shadow of feet - slide into the light from the left and stop in the middle (shadow 0 -> 1 over 0.4 s); on 'It's me' (1.02 s) the bars shift weight; on 'Open up' (1.40 s) they move closer to the gap - the light dims around them. Camera slow push z 1.00->1.06 toward the gap. Unsettling detail: the two shadow bars are not side by side - one is far behind the other, like a body leaning in at a wrong angle. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "insert",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -5,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.5,
+     "name": "heartbeat",
+     "gain": -22,
+     "bpm": 84,
+     "dur": 2.3
+    }
+   ],
+   "notes": "Cut on knock 3 (54.80 global); [DEV] muffled 55.47-56.69.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s029",
+   "start": 57.72,
+   "end": 59.24,
+   "line": "It's Dev.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. 'IT'S DEV.' (hope): giantFace(g, 470, 720, 330, {who:'HERO'}) - HERO's face lit from below-right by the warm line under the door (rimSide 1, rimColor '#ffd9a0', low), cold blue above; frost on his lashes and hood; faceAt [[0,'worried'],[0.47 s,'awe']]: on 'Dev' (0.47 s) his face opens - relief, almost a smile, eyes wet; a breath cloud (breathFog) rushes out (he breathes again). He starts to lean toward the door (head tilt 0 -> 0.1). Slow push z 1.00->1.05. Unsettling detail: the warm light on his face flickers in a slow rhythm, like someone breathing against the gap. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.47,
+     "name": "whoosh",
+     "gain": -30,
+     "pitch": 0.4
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s030",
+   "start": 59.24,
+   "end": 62.13,
+   "line": "But Dev didn't make it out on day one.",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. 'BUT DEV DIDN'T MAKE IT OUT ON DAY ONE.' (the turn, ~2.9 s): giantFace(g, 470, 700, 340, {who:'HERO'}) - the same face, tighter; faceAt [[0,'awe'],[0.56 s,'shocked'],[1.66 s,'scared']]: on 'didn't' (0.56 s) the hope drains, eyes go wide; on 'day one' (1.66 s-1.87 s) a tiny shake of the head, lips pressed; no blink. The warm under-door rim on his chin DIMS as the shadow outside leans closer. Slow push z 1.00->1.08. Unsettling detail: a soft scrape on the other side of the door at the height of his face - the shadow is standing up now. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "face",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "heartbeat",
+     "gain": -18,
+     "bpm": 104,
+     "dur": 2.89
+    },
+    {
+     "at": 1.66,
+     "name": "swish",
+     "gain": -26,
+     "pitch": 0.5
+    }
+   ],
+   "notes": "",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s031",
+   "start": 62.13,
+   "end": 63.95,
+   "line": "Would you open the door?",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. 'WOULD YOU OPEN THE DOOR?' + HOLD (~1.8 s): store(g,t,cam,{view:'door', under:1, shadow:1, frost:1}) - the inside of the steel door, frontal, centred: the bare plate where the handle should be (four empty screw holes, the scratch lines), the warm line under it at y ~1100 broken by the two still shadow bars. Nothing moves. Camera very slow push z 1.00->1.04 to the plate. After 'door' ends (63.45 global) 0.5 s dead-still hold: only grain and frost motes. Hard cut to black at the end (no fade). Unsettling detail: in the last 0.3 s the line of light under the door goes out completely - the thing on the other side is pressed flat to the gap. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "store",
+   "type": "wide",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "hum",
+     "gain": -32,
+     "dur": 1.8
+    }
+   ],
+   "notes": "Voice ends 63.45; 0.5 s hold -> hard cut to black at 63.95.",
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s032",
+   "start": 63.95,
+   "end": 65.452,
+   "line": "",
+   "scene": "[C is self-contained] Uses sets/store.js store(g,t,cam,{view:'freezer'|'door', shadow, under, frost, flicker, strips}) + storeFg(g,t,cam,{view}) + breathFog(g,t,x,y,{rate,s,facing}) + deadPhone(g,t,x,y,s,{pct: 10..0, at, dim}), sets/house.js knockAt(t,[times]) for the door shiver, sets/horror.js grain/vignette/coldGrade/breathe/flicker/motes/endCard, cast.js HERO, acting.js, faces.js giantFace/faceAt; follow DEMO_store.js. Canvas 1080x1920 vertical. Story so far: day one of the zombie apocalypse; 'you' (mustard hoodie, no experience) hid in a dark supermarket, turned on a flashlight (the dead outside saw it and a hundred hit the front glass), ran into the back freezer room and pulled the steel door shut - and the door has NO inside handle: it only opens from the outside. Freezer look: cold blue, frost, plastic strips, the caged bulb, breath fog, a warm line of light under the door. Dev (best friend, orange beanie) is NEVER seen: only his muffled voice through the steel and a SHADOW in the light under the door. No gore. HARD CUT TO BLACK + END CARD: pure black at 0.0 (no fade), a low hit on the cut. grain(g,t) at very low strength. endCard(g, t, 'Full What If stories on the channel.') - small white text centred at E.H*0.42 (~y 806, well above y 1270, inside x < 900), fades in 0.15-0.55 s; nothing else. config fadeOut 0.8 overlaps the tail; the text is readable from ~0.55 s to the end. Safe zones: captions burn in at y 1330 - keep faces, hands, eyes and key action above y 1270 (caption band y 1270-1400 stays clear while words are up); Shorts UI: nothing important below y 1440 (bottom 480 px) or right of x 900 (right 180 px).",
+   "set": "horror",
+   "type": "end",
+   "view": "normal",
+   "batch": "C",
+   "bars": "none",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -8,
+     "pitch": 0.5
+    },
+    {
+     "at": 0.0,
+     "name": "hit",
+     "gain": -10,
+     "pitch": 0.45
+    }
+   ],
+   "notes": ""
+  }
+ ],
+ "music": [
+  {
+   "start": 0.0,
+   "end": 2.97,
+   "mood": "dark",
+   "intensity": 0.45
+  },
+  {
+   "start": 2.97,
+   "end": 9.08,
+   "mood": "dark",
+   "intensity": 0.25
+  },
+  {
+   "start": 9.08,
+   "end": 12.91,
+   "mood": "dark",
+   "intensity": 0.3
+  },
+  {
+   "start": 12.91,
+   "end": 18.51,
+   "mood": "dark",
+   "intensity": 0.2
+  },
+  {
+   "start": 18.51,
+   "end": 22.15,
+   "mood": "dark",
+   "intensity": 0.12
+  },
+  {
+   "start": 22.15,
+   "end": 23.22,
+   "mood": "dark",
+   "intensity": 0.04
+  },
+  {
+   "start": 23.22,
+   "end": 26.61,
+   "mood": "dark",
+   "intensity": 0.55
+  },
+  {
+   "start": 26.61,
+   "end": 29.22,
+   "mood": "dark",
+   "intensity": 0.8
+  },
+  {
+   "start": 29.22,
+   "end": 34.76,
+   "mood": "dark",
+   "intensity": 0.65
+  },
+  {
+   "start": 34.76,
+   "end": 41.34,
+   "mood": "dark",
+   "intensity": 0.06
+  },
+  {
+   "start": 41.34,
+   "end": 47.23,
+   "mood": "dark",
+   "intensity": 0.3
+  },
+  {
+   "start": 47.23,
+   "end": 51.75,
+   "mood": "dark",
+   "intensity": 0.12
+  },
+  {
+   "start": 51.75,
+   "end": 57.72,
+   "mood": "dark",
+   "intensity": 0.03
+  },
+  {
+   "start": 57.72,
+   "end": 59.24,
+   "mood": "dark",
+   "intensity": 0.2
+  },
+  {
+   "start": 59.24,
+   "end": 62.13,
+   "mood": "dark",
+   "intensity": 0.55
+  },
+  {
+   "start": 62.13,
+   "end": 63.95,
+   "mood": "dark",
+   "intensity": 0.05
+  },
+  {
+   "start": 63.95,
+   "end": 65.452,
+   "mood": "dark",
+   "intensity": 0.02
+  }
+ ],
+ "wordTimesCorrected": {
+  "note": "timeline/words.json was re-timed from the voice envelope for every line (words spread across each burst, weighted by length); wordTime() and the burned-in captions are now in sync.",
+  "Day one of the zombie apocalypse.": [
+   0.49,
+   2.29
+  ],
+  "No weapons.": [
+   3.12,
+   4.0
+  ],
+  "No plan.": [
+   4.84,
+   5.51
+  ],
+  "No experience.": [
+   6.41,
+   7.47
+  ],
+  "The power's out.": [
+   9.23,
+   10.05
+  ],
+  "The whole city is dark.": [
+   10.93,
+   12.02
+  ],
+  "You hide in the supermarket.": [
+   13.06,
+   14.44
+  ],
+  "Lights off.": [
+   15.38,
+   16.1
+  ],
+  "Doors locked.": [
+   16.98,
+   17.77
+  ],
+  "Mistake number one.": [
+   18.66,
+   19.76
+  ],
+  "You turn on your flashlight.": [
+   20.66,
+   21.82
+  ],
+  "Something hits the front glass.": [
+   22.79,
+   24.31
+  ],
+  "Then another.": [
+   25.16,
+   25.81
+  ],
+  "Then a hundred.": [
+   26.76,
+   27.59
+  ],
+  "Mistake number two.": [
+   29.37,
+   30.56
+  ],
+  "You run to the back,": [
+   31.44,
+   32.4
+  ],
+  "into the freezer room, and pull the door shut.": [
+   32.56,
+   35.03
+  ],
+  "Cold.": [
+   35.87,
+   36.41
+  ],
+  "Dark.": [
+   37.3,
+   37.8
+  ],
+  "Silent.": [
+   38.69,
+   39.24
+  ],
+  "Safe.": [
+   40.13,
+   40.6
+  ],
+  "Mistake number three.": [
+   41.49,
+   42.69
+  ],
+  "The door only opens from the outside.": [
+   43.58,
+   45.58
+  ],
+  "Hours pass.": [
+   47.38,
+   48.2
+  ],
+  "Your phone dies.": [
+   49.04,
+   50.05
+  ],
+  "Then, a knock.": [
+   50.91,
+   51.65
+  ],
+  "Slow.": [
+   52.54,
+   53.05
+  ],
+  "Patient.": [
+   53.9,
+   54.54
+  ],
+  "Hey.": [
+   55.47,
+   55.73
+  ],
+  "It's me.": [
+   55.82,
+   56.18
+  ],
+  "Open up.": [
+   56.2,
+   56.69
+  ],
+  "It's Dev.": [
+   57.87,
+   58.46
+  ],
+  "But Dev didn't make it out on day one.": [
+   59.39,
+   61.31
+  ],
+  "Would you open the door?": [
+   62.28,
+   63.45
+  ]
+ },
+ "soundCuts": {
+  "s001": "hook: the palm slams on the glass on frame 1",
+  "s013": "glass hit 1",
+  "s014": "glass hit 2",
+  "s019": "freezer door slam ('shut')",
+  "s027": "knock 1",
+  "s028": "knock 3",
+  "s032": "hard cut to black"
+ }
+}

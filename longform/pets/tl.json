@@ -1,0 +1,201 @@
+{
+ "total": 65.289,
+ "scenes": [
+  {
+   "v": "hook_puppy",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Fourteen thousand years ago, people nursed a very sick puppy for weeks.",
+     "start": 0.6,
+     "end": 4.526
+    },
+    {
+     "text": "Its teeth tell the story.",
+     "start": 4.846,
+     "end": 6.226
+    }
+   ],
+   "end": 6.596
+  },
+  {
+   "v": "hook_q",
+   "start": 6.596,
+   "lines": [
+    {
+     "text": "So, did cavemen have pets?",
+     "start": 6.896,
+     "end": 8.449
+    }
+   ],
+   "end": 8.819
+  },
+  {
+   "v": "meet_moss",
+   "start": 8.819,
+   "lines": [
+    {
+     "text": "Meet Moss. He wants a puppy.",
+     "start": 9.119,
+     "end": 10.757
+    }
+   ],
+   "end": 11.127
+  },
+  {
+   "v": "bonn_grave",
+   "start": 11.127,
+   "lines": [
+    {
+     "text": "Surprise one: in Germany, it was buried with a man and a woman.",
+     "start": 11.427,
+     "end": 15.203
+    }
+   ],
+   "end": 15.573
+  },
+  {
+   "v": "distemper",
+   "start": 15.573,
+   "lines": [
+    {
+     "text": "It had a nasty illness called distemper.",
+     "start": 15.873,
+     "end": 18.061
+    },
+    {
+     "text": "Without care, it would die within three weeks.",
+     "start": 18.381,
+     "end": 20.607
+    }
+   ],
+   "end": 20.977
+  },
+  {
+   "v": "nursed",
+   "start": 20.977,
+   "lines": [
+    {
+     "text": "But it lived about eight more weeks.",
+     "start": 21.277,
+     "end": 22.956
+    },
+    {
+     "text": "Experts think someone kept it warm, fed and clean.",
+     "start": 23.276,
+     "end": 26.205
+    }
+   ],
+   "end": 26.575
+  },
+  {
+   "v": "loved",
+   "start": 26.575,
+   "lines": [
+    {
+     "text": "A sick puppy can't work.",
+     "start": 26.875,
+     "end": 28.3
+    },
+    {
+     "text": "So it was probably loved.",
+     "start": 28.62,
+     "end": 30.012
+    }
+   ],
+   "end": 30.382
+  },
+  {
+   "v": "oldest_friends",
+   "start": 30.382,
+   "lines": [
+    {
+     "text": "Surprise two: dogs are our oldest animal friends.",
+     "start": 30.682,
+     "end": 33.849
+    },
+    {
+     "text": "They've lived with us at least fifteen thousand years.",
+     "start": 34.169,
+     "end": 36.872
+    }
+   ],
+   "end": 37.242
+  },
+  {
+   "v": "fox",
+   "start": 37.242,
+   "lines": [
+    {
+     "text": "Surprise three: a fox!",
+     "start": 37.542,
+     "end": 39.052
+    },
+    {
+     "text": "In Jordan, about sixteen thousand years ago, a fox was buried with a person.",
+     "start": 39.372,
+     "end": 43.993
+    },
+    {
+     "text": "A pet? Maybe. Scientists aren't sure.",
+     "start": 44.313,
+     "end": 46.412
+    }
+   ],
+   "end": 46.782
+  },
+  {
+   "v": "hand_puppy",
+   "start": 46.782,
+   "lines": [
+    {
+     "text": "Surprise four: in Israel, about twelve thousand years ago, a woman was buried with her hand on a puppy.",
+     "start": 47.082,
+     "end": 53.124
+    }
+   ],
+   "end": 53.494
+  },
+  {
+   "v": "ending",
+   "start": 53.494,
+   "lines": [
+    {
+     "text": "So yes, cavemen had furry friends.",
+     "start": 53.794,
+     "end": 55.827
+    },
+    {
+     "text": "Some were cared for like family.",
+     "start": 56.147,
+     "end": 57.692
+    }
+   ],
+   "end": 58.062
+  },
+  {
+   "v": "moss_puppy",
+   "start": 58.062,
+   "lines": [
+    {
+     "text": "And Moss? His puppy just stole his dinner.",
+     "start": 58.362,
+     "end": 60.565
+    }
+   ],
+   "end": 60.935
+  },
+  {
+   "v": "follow",
+   "start": 60.935,
+   "lines": [
+    {
+     "text": "Follow for more Stone Age Stories.",
+     "start": 61.235,
+     "end": 63.119
+    }
+   ],
+   "end": 65.289
+  }
+ ]
+}

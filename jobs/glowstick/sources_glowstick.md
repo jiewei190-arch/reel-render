@@ -1,0 +1,15 @@
+# Sources: glowstick ("How a glow stick glows with no battery")
+
+| # | Claim in the script | Source |
+|---|---|---|
+| 1 | The light comes from a chemical reaction (chemiluminescence), not a battery or wire | Wikipedia, "Chemiluminescence": "the emission of light (luminescence) as the result of a chemical reaction"; "A light stick also emits light by chemiluminescence." https://en.wikipedia.org/wiki/Chemiluminescence |
+| 2 | A thin glass vial floats inside the plastic tube and holds hydrogen peroxide | Wikipedia, "Glow stick": "The chemical in the glass vial is hydrogen peroxide"; inner vial "often made from glass". https://en.wikipedia.org/wiki/Glow_stick . Compound Interest, "The Chemistry of Glow Sticks" (via chemie.de): peroxide "contained within an inner glass cylinder". https://www.chemie.de/infografiken/180/the-chemistry-of-glow-sticks.html (original: https://www.compoundchem.com/2014/10/14/glowsticks/) |
+| 3 | The surrounding liquid is diphenyl oxalate mixed with a dye | Wikipedia, "Glow stick" (outer tube: dye, base catalyst and diphenyl oxalate); Compound Interest: "a diphenyl oxalate compound, along with a dye whose identity varies depending on the desired colour" |
+| 4 | Bending cracks the vial and the liquids mix | Temple University Chemistry Demos, "Chemiluminescence" (Oct 24 2024): "Glow sticks emit light when the fragile glass container inside breaks, mixing the two chemicals together." https://sites.temple.edu/chemdemo/2024/10/24/chemiluminescence/ |
+| 5 | Peroxide reacts with the oxalate and forms a very unstable molecule (1,2-dioxetanedione) that breaks into carbon dioxide, releasing energy | Wikipedia, "Glow stick" (peroxide + oxalate ester gives phenol and the peroxyacid ester 1,2-dioxetanedione, which decomposes to CO2); Compound Interest summary (1,2-dioxetanedione "is unstable, and decomposes to carbon dioxide, releasing energy") |
+| 6 | The energy is passed to the dye; the dye's electrons are excited and give off light as they drop back | Wikipedia, "Glow stick" (energy excites the dye, which emits a photon); Wikipedia, "Chemiluminescence" (product in "an electronically excited state" emits a photon returning to ground state) |
+| 7 | The dye decides the colour | Wikipedia, "Glow stick": "The wavelength of the photon, the color of the emitted light, depends on the structure of the dye." |
+| 8 | Cold light: most energy leaves as light, very little heat | Wikipedia, "Glow stick": a "cold-light" process releasing energy "mostly as light, with very little heat"; Temple: "producing light without the need for heat" |
+| 9 | Warm: brighter but shorter; cool: dimmer but lasts longer | Temple: "Heating a glow stick accelerates the reaction, causing it to glow brighter but for a shorter duration." "Cooling slows the reaction, extending the glow time but dimming the light." Wikipedia, "Glow stick" says the same. |
+
+Visual-only elements (not claimed in the voice-over): the hot light bulb next to the glow stick (scene 13) is a contrast prop; the anthracene-like three-ring dye character is a stylised nod to common glow-stick dyes (e.g. bis(phenylethynyl)anthracene), not a specific formula.

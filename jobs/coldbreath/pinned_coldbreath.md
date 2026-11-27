@@ -1,0 +1,1 @@
+Bonus: you don't need freezing weather. On a cool, damp day you can sometimes see your breath well above freezing, because the air around you is already close to its dew point. Ever pretended it was dragon smoke? Yes or no? 🐉👇

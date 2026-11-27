@@ -1,0 +1,94 @@
+{
+ "name": "popcorn",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  7,
+  8,
+  10,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "Heat a popcorn kernel, and it **explodes inside out.**",
+   "Heat a popcorn kernel, and it explodes inside out."
+  ],
+  [
+   "But **why does popcorn pop?** The secret is a tiny bit of **water.**",
+   "But why does popcorn pop? The secret is a tiny bit of water."
+  ],
+  [
+   "Inside each kernel is starch with a little water, about **13 to 14 and a half percent.**",
+   "Inside each kernel is starch with a little water, about 13 to 14 and a half percent."
+  ],
+  [
+   "Around it is a **tough hull** that keeps that water in.",
+   "Around it is a tough hull that keeps that water in."
+  ],
+  [
+   "Heat it, and the water wants to become **steam.** But the hull **won't let it out.**",
+   "Heat it, and the water wants to become steam. But the hull won't let it out."
+  ],
+  [
+   "So here's the trick: the water gets **hotter than boiling,** and the pressure **builds.**",
+   "So here's the trick: the water gets hotter than boiling, and the pressure builds."
+  ],
+  [
+   "Meanwhile the starch softens into a hot, **gooey gel.**",
+   "Meanwhile the starch softens into a hot, gooey gel."
+  ],
+  [
+   "At about **180 degrees Celsius,** the pressure inside reaches around **ten times** normal air pressure.",
+   "At about 180 degrees Celsius, the pressure inside reaches around ten times normal air pressure."
+  ],
+  [
+   "Then the hull **cracks.**",
+   "Then the hull cracks."
+  ],
+  [
+   "The steam bursts out, and the gel puffs into a **white foam,** turning the kernel inside out.",
+   "The steam bursts out, and the gel puffs into a white foam, turning the kernel inside out."
+  ],
+  [
+   "In a few **hundredths of a second,** the foam sets solid.",
+   "In a few hundredths of a second, the foam sets solid."
+  ],
+  [
+   "Here's the surprise: the pop **isn't** the shell cracking.",
+   "Here's the surprise: the pop isn't the shell cracking."
+  ],
+  [
+   "High-speed video shows the sound lines up with the **steam rushing out.**",
+   "High-speed video shows the sound lines up with the steam rushing out."
+  ],
+  [
+   "And the kernel **jumps,** pushing off the pan with a little leg of starch.",
+   "And the kernel jumps, pushing off the pan with a little leg of starch."
+  ],
+  [
+   "So popcorn pops because its hull turns its own water into a **pressure cooker.**",
+   "So popcorn pops because its hull turns its own water into a pressure cooker."
+  ],
+  [
+   "Kernels that **never pop** usually have a cracked or weak hull, so the steam **leaks out** first.",
+   "Kernels that never pop usually have a cracked or weak hull, so the steam leaks out first."
+  ],
+  [
+   "Ever eaten an **unpopped** one? Yes or no?",
+   "Ever eaten an unpopped one? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35
+}
