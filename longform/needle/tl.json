@@ -1,0 +1,206 @@
+{
+ "total": 69.397,
+ "scenes": [
+  {
+   "v": "hook_lice",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Scientists used lice to work out when people started wearing clothes.",
+     "start": 0.6,
+     "end": 4.285
+    },
+    {
+     "text": "Yes. Lice.",
+     "start": 4.605,
+     "end": 5.503
+    }
+   ],
+   "end": 5.873
+  },
+  {
+   "v": "hook_q",
+   "start": 5.873,
+   "lines": [
+    {
+     "text": "So how did cavemen stay warm?",
+     "start": 6.173,
+     "end": 7.889
+    }
+   ],
+   "end": 8.259
+  },
+  {
+   "v": "meet_moss",
+   "start": 8.259,
+   "lines": [
+    {
+     "text": "Meet Moss. He's freezing.",
+     "start": 8.559,
+     "end": 10.004
+    }
+   ],
+   "end": 10.374
+  },
+  {
+   "v": "body_lice",
+   "start": 10.374,
+   "lines": [
+    {
+     "text": "Surprise one: body lice live in clothes.",
+     "start": 10.674,
+     "end": 13.067
+    },
+    {
+     "text": "Their DNA suggests they split from head lice at least eighty-three thousand years ago.",
+     "start": 13.387,
+     "end": 18.246
+    },
+    {
+     "text": "Maybe earlier.",
+     "start": 18.566,
+     "end": 19.518
+    }
+   ],
+   "end": 19.888
+  },
+  {
+   "v": "skins",
+   "start": 19.888,
+   "lines": [
+    {
+     "text": "So clothes are old.",
+     "start": 20.188,
+     "end": 21.409
+    },
+    {
+     "text": "They were likely made from animal skins and fur.",
+     "start": 21.729,
+     "end": 24.151
+    }
+   ],
+   "end": 24.521
+  },
+  {
+   "v": "needles",
+   "start": 24.521,
+   "lines": [
+    {
+     "text": "Surprise two: bone needles!",
+     "start": 24.821,
+     "end": 26.543
+    },
+    {
+     "text": "The oldest eyed needles come from Siberia.",
+     "start": 26.863,
+     "end": 29.262
+    },
+    {
+     "text": "They're about forty thousand years old, maybe more.",
+     "start": 29.582,
+     "end": 32.114
+    }
+   ],
+   "end": 32.484
+  },
+  {
+   "v": "needle_eye",
+   "start": 32.484,
+   "lines": [
+    {
+     "text": "A tiny hole for thread, carved into bone.",
+     "start": 32.784,
+     "end": 35.273
+    }
+   ],
+   "end": 35.643
+  },
+  {
+   "v": "layers",
+   "start": 35.643,
+   "lines": [
+    {
+     "text": "Surprise three: needles may mean layers.",
+     "start": 35.943,
+     "end": 38.262
+    },
+    {
+     "text": "Some scientists even wonder about Stone Age underwear!",
+     "start": 38.582,
+     "end": 41.826
+    }
+   ],
+   "end": 42.196
+  },
+  {
+   "v": "sungir",
+   "start": 42.196,
+   "lines": [
+    {
+     "text": "Surprise four: in Russia, over thirty thousand years ago, three people were buried wearing ivory beads.",
+     "start": 42.496,
+     "end": 48.706
+    },
+    {
+     "text": "More than thirteen thousand of them!",
+     "start": 49.026,
+     "end": 50.821
+    }
+   ],
+   "end": 51.191
+  },
+  {
+   "v": "bead_hours",
+   "start": 51.191,
+   "lines": [
+    {
+     "text": "Many seem to have been sewn onto their clothes.",
+     "start": 51.491,
+     "end": 53.634
+    },
+    {
+     "text": "Making them all took thousands of hours.",
+     "start": 53.954,
+     "end": 56.137
+    }
+   ],
+   "end": 56.507
+  },
+  {
+   "v": "moss_sews",
+   "start": 56.507,
+   "lines": [
+    {
+     "text": "And Moss? He tried sewing. He stitched his tunic to his leg.",
+     "start": 56.807,
+     "end": 60.122
+    }
+   ],
+   "end": 60.492
+  },
+  {
+   "v": "ending",
+   "start": 60.492,
+   "lines": [
+    {
+     "text": "So Stone Age people stayed warm with fur, fire and clever sewing.",
+     "start": 60.792,
+     "end": 64.673
+    }
+   ],
+   "end": 65.043
+  },
+  {
+   "v": "follow",
+   "start": 65.043,
+   "lines": [
+    {
+     "text": "Follow for more Stone Age Stories.",
+     "start": 65.343,
+     "end": 67.227
+    }
+   ],
+   "end": 69.397
+  }
+ ]
+}

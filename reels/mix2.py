@@ -106,7 +106,7 @@ else:
         if i % 2 == 0: put(mus, i * b, kick, .32)
         put(mus, i * b + b / 2, shk, .05)
     for i in range(0, int(D / b) + 1, 2): put(mus, i * b, tone(mtf(bass[(i // 2) % 8]), b * 1.8, (1, 2), .3), .12)
-mus = mus / (np.max(np.abs(mus)) + 1e-9) * .30
+mus = mus / (np.max(np.abs(mus)) + 1e-9) * .30 * spec.get("music_gain", 1.0)   # optional: lower the bed so the voice clears qa.py's voice-over-bed WARN (default unchanged)
 gate = np.ones(N, np.float32)
 for e in json.load(open(HERE / f"ev_{name}.json")):
     k, t = e[0], e[1]; a = e[2:]
@@ -136,6 +136,8 @@ for e in json.load(open(HERE / f"ev_{name}.json")):
         gate[a1:a1 + r] = np.minimum(gate[a1:a1 + r], np.linspace(.12, 1, len(gate[a1:a1 + r])))
 duck = np.convolve((np.abs(v) > .02).astype(np.float32), np.ones(int(.2 * SR)) / int(.2 * SR), "same")
 fade = np.clip(tt / .05, 0, 1) * np.clip((D - tt) / 1.2, 0, 1)
-mix = v * .9 + mus * gate * (1 - .5 * np.clip(duck * 3, 0, 1)) * fade + fx
+# owner (Oct 27): effects must sit under the voice. Default fx level .5 (spec "fx_gain" overrides), and effects duck a further 40% while she speaks.
+FXG = spec.get("fx_gain", .5); vd = np.clip(duck * 3, 0, 1)
+mix = v * .9 + mus * gate * (1 - .5 * vd) * fade + fx * FXG * (1 - .4 * vd)
 mix = mix / np.max(np.abs(mix)) * .89
 sf.write(HERE / f"mix_{name}.wav", mix, SR); print("mix", name, D)

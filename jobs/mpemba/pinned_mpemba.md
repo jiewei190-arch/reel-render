@@ -1,0 +1,1 @@
+Bonus: the Royal Society of Chemistry once ran a prize asking people to explain it, and the winning entry listed four suspects: evaporation, dissolved gases, convection and supercooling. Which freezes first in your freezer? Hot or cold? 🧊👇

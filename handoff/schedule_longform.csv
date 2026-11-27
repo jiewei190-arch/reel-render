@@ -1,0 +1,2 @@
+platform,date_ET,time_ET,video,title,thumbnail,chapters,description,status
+youtube,2026-11-04,17:30,jobs/long_tech/long_tech.mp4 (rebuild: cat long_tech.mp4.part-* > long_tech.mp4 && sha256sum -c long_tech.mp4.sha256),6 Everyday Tech Secrets You Use Every Day (Explained),jobs/long_tech/thumb_long_tech.jpg,jobs/long_tech/chapters.txt,jobs/long_tech/description.md,"approved, to schedule (regular video, not a Short; custom thumbnail allowed for long-form; replace the [link] placeholders in the description with the 6 Shorts' URLs)"

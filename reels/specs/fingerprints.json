@@ -1,0 +1,83 @@
+{
+ "name": "fingerprints",
+ "voice": "af_heart",
+ "speed": 0.93,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  4,
+  8,
+  12,
+  13
+ ],
+ "music_gain": 0.6,
+ "fx_gain": 0.35,
+ "tail": 0.6,
+ "phrases": [
+  [
+   "Why do we have **fingerprints?**",
+   "Why do we have fingerprints?"
+  ],
+  [
+   "But the obvious answer, **better grip,** turned out to be **shaky.**",
+   "But the obvious answer, better grip, turned out to be shaky."
+  ],
+  [
+   "Scientists slid **plastic** across a student's fingertip and measured the **friction.**",
+   "Scientists slid plastic across a student's fingertip and measured the friction."
+  ],
+  [
+   "The ridges cut the **contact area** by about a **third,** so on smooth plastic they actually **reduced** grip.",
+   "The ridges cut the contact area by about a third, so on smooth plastic they actually reduced grip."
+  ],
+  [
+   "Busted? Not quite. One idea: ridges may still help on **rough** or **wet** surfaces.",
+   "Busted? Not quite. One idea: ridges may still help on rough or wet surfaces."
+  ],
+  [
+   "Here's the twist: they might be for **touch.**",
+   "Here's the twist: they might be for touch."
+  ],
+  [
+   "In one experiment, a sensor with fingerprint-like **ridges** was slid over rough surfaces.",
+   "In one experiment, a sensor with fingerprint-like ridges was slid over rough surfaces."
+  ],
+  [
+   "The ridges turned tiny textures into **vibrations,** right where deep touch sensors are most **sensitive.**",
+   "The ridges turned tiny textures into vibrations, right where deep touch sensors are most sensitive."
+  ],
+  [
+   "So another idea: your prints help you feel **fine textures.**",
+   "So another idea: your prints help you feel fine textures."
+  ],
+  [
+   "And they form before you're even **born.**",
+   "And they form before you're even born."
+  ],
+  [
+   "The ridges start in the **third month** of pregnancy and are fully formed by the **sixth.**",
+   "The ridges start in the third month of pregnancy and are fully formed by the sixth."
+  ],
+  [
+   "Your **genes** shape the general pattern, but conditions in the **womb** shape the details.",
+   "Your genes shape the general pattern, but conditions in the womb shape the details."
+  ],
+  [
+   "That's why even **identical twins** have **different** fingerprints.",
+   "That's why even identical twins have different fingerprints."
+  ],
+  [
+   "So fingerprints probably aren't for gripping **smooth** things. The best ideas: grip on **rough** or **wet** surfaces, and a sharper sense of **touch.**",
+   "So fingerprints probably aren't for gripping smooth things. The best ideas: grip on rough or wet surfaces, and a sharper sense of touch."
+  ],
+  [
+   "Can you feel the **ridges** on your fingertip? Yes or no?",
+   "Can you feel the ridges on your fingertip? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

@@ -1,0 +1,15 @@
+QA hairgray: WARN   (/home/user/reel-render/jobs/hairgray/hairgray.mp4, 75.0 s)
+  PASS  static          longest no-change run 3.00 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 3.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 26.5-31.8s, 37.5-40.8s
+  WARN  outer 24 px     content at the frame edge 6.8-12.2s, 22.2-41.5s
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.3 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 9.6 dB above the pauses (15 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          75.0 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 5.3 (min 1.0), contrast 40.6 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      hairgray.mp4 1080x1920 SAR 1:1; hairgray_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  PASS  black bars      bar over 60 px in 0% of samples (median widest bar 0 px)

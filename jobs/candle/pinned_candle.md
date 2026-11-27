@@ -1,0 +1,1 @@
+Bonus: try Faraday's trick (carefully, with an adult): blow out a candle and hold a lit match in the rising smoke about an inch above the wick. The flame jumps down the vapour and relights it. Have you ever relit a candle through its smoke? Yes or no?

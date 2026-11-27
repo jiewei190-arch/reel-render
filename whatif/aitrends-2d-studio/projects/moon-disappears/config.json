@@ -1,0 +1,50 @@
+{
+ "title": "What if the Moon vanished tonight?",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 40.765,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "moon",
+   "vanished",
+   "third",
+   "darker",
+   "new",
+   "tides",
+   "sun",
+   "half",
+   "animals",
+   "confused",
+   "dung",
+   "beetles",
+   "moonlight",
+   "milky",
+   "way",
+   "tilt",
+   "wobble",
+   "mars",
+   "60",
+   "degrees",
+   "slow"
+  ]
+ }
+}

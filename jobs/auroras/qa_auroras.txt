@@ -1,0 +1,15 @@
+QA auroras: WARN   (/home/user/reel-render/jobs/auroras/auroras.mp4, 74.2 s)
+  PASS  static          longest no-change run 2.25 s (limit 4.0 s)
+  PASS  empty thirds    no third near-blank > 6.0 s (longest 0.0 s)
+  WARN  safe zones      right x>900 y900-1650: content 17.8-21.2s
+  WARN  outer 24 px     content at the frame edge 17.8-21.8s
+  PASS  loudness        -15.6 LUFS integrated (want -16.0..-14.0)
+  PASS  true peak       -2.2 dBTP (WARN above -1.0, FAIL above 0.0)
+  PASS  voice over bed  speech 8.4 dB above the pauses (12 pauses; FAIL < 3.5, WARN < 6.0)
+  PASS  length          74.2 s (want 66-86)
+  PASS  closing line    last spoken: "Follow for more of how it really works."
+  PASS  spoken years    no 4-digit years in the spoken text
+  PASS  frame 0         edge 8.6 (min 1.0), contrast 44.6 (min 18.0)
+  PASS  blank frames    none
+  PASS  9:16 frame      auroras.mp4 1080x1920 SAR 1:1; auroras_ep.mp4 1080x1920 SAR 1:1 (want 1080x1920, SAR 1:1)
+  WARN  black bars      bar over 60 px in 100% of samples (median widest bar 272 px); a deliberate film-frame border is OK, letterboxing is not

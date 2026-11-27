@@ -1,0 +1,23 @@
+# Sources: slipperyice ("Why is ice slippery?")
+
+| Claim in the script | Source | Type |
+|---|---|---|
+| The common answer is that skate pressure melts the ice; it's mostly wrong; scientists still debate | R. Rosenberg, "Why Is Ice Slippery?", Physics Today 58(12), 50 (December 2005) (https://physicstoday.aip.org/article/58/12/50/394913; PDF https://aip.brightspotcdn.com/PTO.v58.i12.50_1.online.pdf): "The common perception... is that skaters slide more easily on ice... because ice melts under their skates' pressure"; pressure melting "remained the dominant explanation... for nearly a century" with "little evidence in its favor" | magazine of the American Institute of Physics (review) |
+| Pressure melting dates from 1886 (John Joly) | Rosenberg 2005: "That inference had to wait until 1886, when a young engineer named John Joly..."; University of Amsterdam news, May 2018 (https://iop.uva.nl/content/news/2018/05/the-slipperiness-of-ice-explained.html): "In 1886 John Joly, an Irish physicist, offered the first scientific explanation" | review; university |
+| A thin blade presses hard and lowers the melting point to about -3.5 °C (466 atmospheres on screen) | Rosenberg 2005: Joly "calculated a pressure of 466 atmospheres and a corresponding melting point of −3.5 °C" | review |
+| People skate (and ski) at -35 °C, so pressure can't explain it | Rosenberg 2005 (Colbeck): "pressure melting leaves unexplained the ability to ski and skate at temperatures as low as −35 °C" | review |
+| You can slip standing still | Rosenberg 2005: "Neither pressure melting nor frictional heating explains why ice can be so slippery even while one is standing still on it." | review |
+| Suspect two: frictional heating melts a thin film | Rosenberg 2005: Bowden and Hughes "suggested the frictional heating alternative to pressure melting in a 1939 article"; UvA 2018: the consensus is that the water "is not melted by pressure but by frictional heat produced during sliding" | review; university |
+| A sensor on a skate blade got warmer the faster it went | Rosenberg 2005: Colbeck and co-workers fastened "a thermocouple to a skate blade"; "The increase in temperature with velocity... was consistent with frictional, localized heating" | review |
+| Faraday suggested a thin liquid-like layer in the 1850s | Rosenberg 2005: "In 1859 Michael Faraday postulated that a thin film of liquid covers the surface of ice—even at temperatures well below freezing" (and his Royal Institution discourse of 7 June 1850) | review |
+| 2018: loose top molecules roll across the surface like tiny spheres (3 bonds stuck, 2 bonds roll) | B. Weber, Y. Nagata, ... M. Bonn, D. Bonn, "Molecular Insight into the Slipperiness of Ice", J. Phys. Chem. Lett. 9, 2838-2842 (2018), PMID 29741089, doi:10.1021/acs.jpclett.8b01188: "Weakly hydrogen-bonded surface molecules diffuse over the surface in a rolling motion". UvA 2018: stuck molecules "bound by three hydrogen bonds", mobile ones "bound by only two"; they "roll over the ice – like tiny spheres" | peer-reviewed; university |
+| Ice was slipperiest around -7 °C (the chart: high friction at -100 °C) | UvA 2018: "the friction is in fact minimal at –7 oC"; Weber et al. abstract: "very high friction at low temperatures (-100 °C)... Very low friction is only found over the limited temperature range typical for ice skating" | university; peer-reviewed |
+| 2025 simulation: rubbing can scramble the surface into a liquid-like layer without melting | A. Atila, S. V. Sukhomlinov, M. H. Müser (Saarland University), "Cold Self-Lubrication of Sliding Ice", Phys. Rev. Lett. 135, 066204 (2025), PMID 40864940: "ice surfaces liquefy without melting thermodynamically but predominantly by cold, displacement-driven amorphization"; "the currently leading theory of frictional melting appears to defy direct experimental verification" | peer-reviewed (simulation) |
+| Honest answer: mostly not pressure; a slippery surface plus friction; the mix still debated | Rosenberg 2005: premelting and frictional heating "must account for ice's slipperiness"; Atila et al. 2025 (frictional melting still unverified); Weber et al. 2018 | review; peer-reviewed |
+
+## Softened / left out
+- "Mostly not pressure": Rosenberg notes pressure melting may "play a role only near the melting point" (Bowden and Hughes), so the script never says "never".
+- The 2025 result is a computer simulation; the script says "suggests".
+- The -7 °C figure is from one study's steel-on-ice friction tests; said as "around minus seven degrees". The UvA release links it to speed-skating rinks, which we left out.
+- The chart is schematic (shape from the abstract and press release, not plotted data).
+- "466 atm" is shown on screen as Joly's estimate; not spoken.

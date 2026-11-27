@@ -1,0 +1,83 @@
+{
+ "name": "search",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  1,
+  3,
+  5,
+  7,
+  8,
+  10,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "When you hit search, Google doesn't **search the web.**",
+   "When you hit search, Google doesn't search the web."
+  ],
+  [
+   "It already did that, **before you asked.**",
+   "It already did that, before you asked."
+  ],
+  [
+   "All day, programs called **crawlers** visit pages and **follow their links** to find new ones.",
+   "All day, programs called crawlers visit pages and follow their links to find new ones."
+  ],
+  [
+   "What they find goes into the **index:** hundreds of billions of pages, over a **hundred million gigabytes.**",
+   "What they find goes into the index: hundreds of billions of pages, over a hundred million gigabytes."
+  ],
+  [
+   "Google compares it to the **index at the back of a book,** with an entry for every word.",
+   "Google compares it to the index at the back of a book, with an entry for every word."
+  ],
+  [
+   "Each word points to a **list of pages** that contain it.",
+   "Each word points to a list of pages that contain it."
+  ],
+  [
+   "So when you type **why is the sky blue,** it doesn't read the web. It grabs the list for each word.",
+   "So when you type, why is the sky blue, it doesn't read the web. It grabs the list for each word."
+  ],
+  [
+   "The pages that show up on **every list** are the ones that match.",
+   "The pages that show up on every list are the ones that match."
+  ],
+  [
+   "That can still be a **huge pile.** So next, it ranks them.",
+   "That can still be a huge pile. So next, it ranks them."
+  ],
+  [
+   "It weighs **meaning, relevance, quality, usability,** and your **context,** like where you are.",
+   "It weighs meaning, relevance, quality, usability, and your context, like where you are."
+  ],
+  [
+   "One quality clue: do other well-known sites **link to that page?**",
+   "One quality clue: do other well-known sites link to that page?"
+  ],
+  [
+   "It also fixes your **spelling** and knows **synonyms,** so a page without your exact words can still win.",
+   "It also fixes your spelling and knows synonyms, so a page without your exact words can still win."
+  ],
+  [
+   "All of that happens in a **fraction of a second.**",
+   "All of that happens in a fraction of a second."
+  ],
+  [
+   "And Google says about **fifteen percent** of searches each day are **brand new,** never typed before.",
+   "And Google says about fifteen percent of searches each day are brand new, never typed before."
+  ],
+  [
+   "So what's the **strangest thing** you've ever searched?",
+   "So what's the strangest thing you've ever searched?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

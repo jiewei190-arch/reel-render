@@ -1,0 +1,1 @@
+Try it: pour a soda or sparkling water into a glass and look at the bottom of each line of bubbles. There's a tiny speck there, usually a fiber, breathing out gas. A spotless glass shows fewer lines. Next time, will you look for the speck? Yes or no?
