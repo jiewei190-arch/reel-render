@@ -1,0 +1,47 @@
+{
+ "title": "The Mantis Shrimp Punch",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.3,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:tense",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "punches",
+   "boils",
+   "peacock",
+   "thousands",
+   "83",
+   "bullet",
+   "weird",
+   "vapor",
+   "boiling",
+   "pressure",
+   "second",
+   "two",
+   "light",
+   "stranger",
+   "crack",
+   "glass",
+   "never",
+   "tank"
+  ]
+ }
+}

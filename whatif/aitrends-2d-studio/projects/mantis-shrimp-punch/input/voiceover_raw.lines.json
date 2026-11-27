@@ -1,0 +1,199 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.2,
+ "section": 1.4,
+ "lead": 0.05,
+ "beat": 0.4,
+ "sr": 24000,
+ "duration": 44.761,
+ "render_s": 271.4,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This shrimp punches so fast, the water around it briefly boils.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "This shrimp punches so fast, the water around it briefly boils.",
+     "seed": 7,
+     "heard": "This shrimp punches so fast, the water around it briefly boils.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.559
+  },
+  {
+   "n": 2,
+   "text": "Meet the peacock mantis shrimp. Small, but it hits with thousands of times its body weight.",
+   "start": 3.759,
+   "parts": [
+    {
+     "tts": "Meet the peacock mantis shrimp. Small, but it hits with thousands of times its body weight.",
+     "seed": 11,
+     "heard": "Meet the peacock mantis shrimp. Small, but it hits with thousands of times its body weight.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.493
+  },
+  {
+   "n": 3,
+   "text": "Its club fires at 83 kilometers per hour.",
+   "start": 8.693,
+   "parts": [
+    {
+     "tts": "Its club fires at eighty-three kilometers per hour.",
+     "seed": 7,
+     "heard": "Its club fires at 83 kilometers per hour.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.297
+  },
+  {
+   "n": 4,
+   "text": "Scientists compare it to a bullet fired from a handgun.",
+   "start": 11.497,
+   "parts": [
+    {
+     "tts": "Scientists compare it to a bullet fired from a handgun.",
+     "seed": 7,
+     "heard": "Scientists compare it to a bullet fired from a handgun.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.387
+  },
+  {
+   "n": 5,
+   "text": "But here's the weird part. The strike is so fast, the pressure around it crashes.",
+   "start": 14.587,
+   "parts": [
+    {
+     "tts": "But here's the weird part. The strike is so fast, the pressure around it crashes.",
+     "seed": 7,
+     "heard": "But here's the weird part. The strike is so fast, the pressure around it crashes.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.175
+  },
+  {
+   "n": 6,
+   "text": "The water turns into vapor bubbles. Like boiling, but from pressure, not heat.",
+   "start": 19.375,
+   "parts": [
+    {
+     "tts": "The water turns into vapor bubbles. Like boiling, but from pressure, not heat.",
+     "seed": 7,
+     "heard": "The water turns into vapor bubbles, like boiling, but from pressure, not heat.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.027
+  },
+  {
+   "n": 7,
+   "text": "Then the bubbles collapse... and hit the target a second time. One punch, two hits.",
+   "start": 24.227,
+   "parts": [
+    {
+     "tts": "Then the bubbles collapse...",
+     "seed": 7,
+     "heard": "Then the bubbles collapse.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and hit the target a second time. One punch, two hits.",
+     "seed": 7,
+     "heard": "and hit the target a second time. One punch, two hits.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.685
+  },
+  {
+   "n": 8,
+   "text": "But it gets stranger. The collapsing bubbles give off a tiny flash of light.",
+   "start": 29.885,
+   "parts": [
+    {
+     "tts": "But it gets stranger. The collapsing bubbles give off a tiny flash of light.",
+     "seed": 7,
+     "heard": "but it gets stranger. The collapsing bubbles give off a tiny flash of light.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.91
+  },
+  {
+   "n": 9,
+   "text": "Snail shells crack like eggs. And the biggest ones can even break aquarium glass.",
+   "start": 34.11,
+   "parts": [
+    {
+     "tts": "Snail shells crack like eggs. And the biggest ones can even break aquarium glass.",
+     "seed": 7,
+     "heard": "Snail shells crack like eggs, and the biggest ones can even break aquarium glass.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.747
+  },
+  {
+   "n": 10,
+   "text": "So whatever you do... never tap on its tank.",
+   "start": 38.947,
+   "parts": [
+    {
+     "tts": "So whatever you do...",
+     "seed": 11,
+     "heard": "So, whatever you do.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "never tap on its tank.",
+     "seed": 7,
+     "heard": "Never tap on its tank.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.055
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 43.255,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 44.561
+  }
+ ]
+}
