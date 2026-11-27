@@ -1,13 +1,13 @@
 # Sources — The Greenland shark may live around 400 years
 
 Checked 27 Nov 2026. Every claim has Wikipedia plus at least one more reliable source (the 2016 *Science* paper's abstract on PubMed,
-a 2018 *Scientific Reports* paper, a 2025/26 open-access paper that restates the 2016 results, or the Florida Museum of Natural History).
+a 2018 *Scientific Reports* paper, a 2026 open-access paper that restates the 2016 results, or the Florida Museum of Natural History).
 Quotes are copied from the pages.
 
 - **W** = Wikipedia, "Greenland shark": https://en.wikipedia.org/wiki/Greenland_shark
 - **NIELSEN** = Nielsen et al. (2016), *Science* 353:702–704, "Eye lens radiocarbon reveals centuries of longevity in the Greenland shark (Somniosus microcephalus)" — abstract: https://pubmed.ncbi.nlm.nih.gov/27516602/
 - **DEVINE** = Devine, Wheeland & Fisher (2018), *Scientific Reports*, "First estimates of Greenland shark (Somniosus microcephalus) local abundances in Arctic waters" (open access): https://europepmc.org/article/PMC/PMC5772532
-- **HEART** = "Resilience to Cardiac Aging in Greenland Shark Somniosus microcephalus" (open access): https://europepmc.org/article/PMC/PMC13105287
+- **HEART** = Chiavacci et al. (2026), *Aging Cell*, "Resilience to Cardiac Aging in Greenland Shark Somniosus microcephalus" (open access): https://europepmc.org/article/PMC/PMC13105287
 - **FLMNH** = Florida Museum of Natural History, "Greenland shark" species profile: https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/somniosus-microcephalus/
 - **WALK** = Wikipedia, "Preferred walking speed": https://en.wikipedia.org/wiki/Preferred_walking_speed
 
