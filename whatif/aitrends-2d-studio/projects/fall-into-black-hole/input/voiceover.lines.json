@@ -1,0 +1,198 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.863,
+ "render_s": 339.3,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Fall into a small black hole, and you'd turn into spaghetti.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Fall into a small black hole, and you'd turn into spaghetti.",
+     "seed": 11,
+     "heard": "Fall into a small black hole, and you'd turn into spaghetti.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 2.952
+  },
+  {
+   "n": 2,
+   "text": "It's a thought experiment, but here's what scientists say would happen.",
+   "start": 3.152,
+   "parts": [
+    {
+     "tts": "It's a thought experiment, but here's what scientists say would happen.",
+     "seed": 7,
+     "heard": "It's a thought experiment, but here's what scientists say would happen.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.638
+  },
+  {
+   "n": 3,
+   "text": "Near a small one, gravity pulls your feet harder than your head.",
+   "start": 6.838,
+   "parts": [
+    {
+     "tts": "Near a small one, gravity pulls your feet harder than your head.",
+     "seed": 7,
+     "heard": "Near a small one, gravity pulls your feet harder than your head.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.582
+  },
+  {
+   "n": 4,
+   "text": "You'd stretch long and thin. Scientists really call it spaghettification.",
+   "start": 9.782,
+   "parts": [
+    {
+     "tts": "You'd stretch long and thin. Scientists really call it spaghettification.",
+     "seed": 7,
+     "heard": "you'd stretch long and thin, scientists really call it spaghettification.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.68
+  },
+  {
+   "n": 5,
+   "text": "But a supermassive black hole, about four million times the Sun's mass, is different.",
+   "start": 14.03,
+   "parts": [
+    {
+     "tts": "But a supermassive black hole, about four million times the Sun's mass, is different.",
+     "seed": 7,
+     "heard": "But a supermassive black hole, about 4 million times the sun's mass, is different.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.567
+  },
+  {
+   "n": 6,
+   "text": "The stretch at its edge is so gentle, you'd cross the point of no return without noticing.",
+   "start": 18.767,
+   "parts": [
+    {
+     "tts": "The stretch at its edge is so gentle, you'd cross the point of no return without noticing.",
+     "seed": 7,
+     "heard": "The stretch at its edge is so gentle, you'd cross the point of no return without noticing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.677
+  },
+  {
+   "n": 7,
+   "text": "But to a friend watching from far away, you'd never quite get there.",
+   "start": 23.027,
+   "parts": [
+    {
+     "tts": "But to a friend watching from far away, you'd never quite get there.",
+     "seed": 11,
+     "heard": "But to a friend watching from far away, you'd never quite get there.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.438
+  },
+  {
+   "n": 8,
+   "text": "You'd slow down, fade to red, and seem to freeze at the edge.",
+   "start": 26.638,
+   "parts": [
+    {
+     "tts": "You'd slow down, fade to red, and seem to freeze at the edge.",
+     "seed": 11,
+     "heard": "You'd slow down, fade to red, and seem to freeze at the edge.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.694
+  },
+  {
+   "n": 9,
+   "text": "But inside, every path leads to the center. NASA's simulation says the stretching hits twelve point eight seconds later.",
+   "start": 31.044,
+   "parts": [
+    {
+     "tts": "But inside, every path leads to the center. nasa's simulation says the stretching hits twelve point eight seconds later.",
+     "seed": 7,
+     "heard": "But inside, every path leads to the center. NASA's simulation says the stretching hits 12.8 seconds later.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.226
+  },
+  {
+   "n": 10,
+   "text": "So either way... it's spaghetti. Just later.",
+   "start": 37.726,
+   "parts": [
+    {
+     "tts": "So either way...",
+     "seed": 7,
+     "heard": "So either way.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "it's spaghetti. Just later.",
+     "seed": 7,
+     "heard": "It's Spaghetti, just later.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.363
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 40.563,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.763
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.03,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}

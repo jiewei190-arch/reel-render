@@ -1,0 +1,540 @@
+{
+ "title": "What If You Fell Into a Black Hole?",
+ "tail": 0.5,
+ "cut_lead": 0.06,
+ "lines": [
+  {
+   "text": "Fall into a small black hole, and you'd turn into spaghetti.",
+   "shots": [
+    {
+     "id": "s01",
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:whoosh",
+       "gain": -9
+      },
+      {
+       "at": 0.1,
+       "name": "toon3d:riser",
+       "gain": -16
+      },
+      {
+       "at": 0.7,
+       "name": "toon3d:squeak",
+       "gain": -15
+      }
+     ]
+    },
+    {
+     "id": "s02",
+     "word": "turn",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "word": "spaghetti",
+       "name": "toon3d:boing",
+       "gain": -7
+      },
+      {
+       "word": "spaghetti",
+       "name": "toon3d:ding",
+       "gain": -14,
+       "offset": 0.12
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "It's a thought experiment, but here's what scientists say would happen.",
+   "shots": [
+    {
+     "id": "s03",
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "word": "thought",
+       "name": "toon3d:pop",
+       "gain": -10
+      },
+      {
+       "word": "thought",
+       "name": "toon3d:chime",
+       "gain": -16,
+       "offset": 0.1
+      }
+     ]
+    },
+    {
+     "id": "s04",
+     "word": "scientists",
+     "in": {
+      "type": "fade"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:sparkle",
+       "gain": -13
+      },
+      {
+       "at": 0.25,
+       "name": "toon3d:click",
+       "gain": -14
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Near a small one, gravity pulls your feet harder than your head.",
+   "shots": [
+    {
+     "id": "s05",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "word": "feet",
+       "name": "toon3d:thud",
+       "gain": -8
+      },
+      {
+       "word": "head",
+       "name": "toon3d:pop",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s06",
+     "word": "harder",
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:squeak",
+       "gain": -13
+      },
+      {
+       "at": 0.5,
+       "name": "toon3d:boing",
+       "gain": -15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "You'd stretch long and thin. Scientists really call it spaghettification.",
+   "shots": [
+    {
+     "id": "s07",
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "word": "long",
+       "name": "toon3d:slide",
+       "gain": -8
+      },
+      {
+       "word": "thin",
+       "name": "toon3d:boing",
+       "gain": -10
+      }
+     ]
+    },
+    {
+     "id": "s08",
+     "word": "scientists",
+     "in": {
+      "type": "flash"
+     },
+     "sfx": [
+      {
+       "word": "spaghettification",
+       "name": "toon3d:stamp",
+       "gain": -7
+      },
+      {
+       "word": "spaghettification",
+       "name": "toon3d:sparkle",
+       "gain": -13,
+       "offset": 0.1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "But a supermassive black hole, about 4 million times the Sun's mass, is different.",
+   "shots": [
+    {
+     "id": "s09",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:whoosh",
+       "gain": -8
+      },
+      {
+       "word": "supermassive",
+       "name": "toon3d:rumble",
+       "gain": -10
+      },
+      {
+       "word": "supermassive",
+       "name": "toon3d:ding",
+       "gain": -14,
+       "offset": 0.15
+      }
+     ]
+    },
+    {
+     "id": "s10",
+     "word": "about",
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:impact",
+       "gain": -8
+      },
+      {
+       "at": 0.05,
+       "name": "toon3d:whoosh",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s11",
+     "word": "is",
+     "nth": 1,
+     "in": {
+      "type": "fade"
+     },
+     "sfx": [
+      {
+       "at": 0.1,
+       "name": "toon3d:sparkle",
+       "gain": -13
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "The stretch at its edge is so gentle, you'd cross the point of no return without noticing.",
+   "shots": [
+    {
+     "id": "s12",
+     "in": {
+      "type": "fade"
+     },
+     "sfx": [
+      {
+       "word": "gentle",
+       "name": "toon3d:chime",
+       "gain": -15
+      }
+     ]
+    },
+    {
+     "id": "s13",
+     "word": "cross",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "at": 0.5,
+       "name": "toon3d:sparkle",
+       "gain": -13
+      },
+      {
+       "at": 0.7,
+       "name": "toon3d:pop",
+       "gain": -14
+      }
+     ]
+    },
+    {
+     "id": "s14",
+     "word": "without",
+     "sfx": [
+      {
+       "at": 0.2,
+       "name": "toon3d:boing",
+       "gain": -14
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "But to a friend watching from far away, you'd never quite get there.",
+   "shots": [
+    {
+     "id": "s15",
+     "in": {
+      "type": "iris"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:whoosh",
+       "gain": -10
+      },
+      {
+       "word": "friend",
+       "name": "toon3d:pop",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s16",
+     "word": "never",
+     "offset": -0.35,
+     "in": {
+      "type": "fade"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:click",
+       "gain": -12
+      },
+      {
+       "word": "never",
+       "name": "toon3d:stamp",
+       "gain": -8
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "You'd slow down, fade to red, and seem to freeze at the edge.",
+   "shots": [
+    {
+     "id": "s17",
+     "sfx": [
+      {
+       "word": "slow",
+       "name": "toon3d:clock",
+       "gain": -12
+      },
+      {
+       "word": "freeze",
+       "name": "toon3d:glass",
+       "gain": -9
+      },
+      {
+       "word": "freeze",
+       "name": "toon3d:stamp",
+       "gain": -9,
+       "offset": 0.05
+      }
+     ]
+    },
+    {
+     "id": "s18",
+     "word": "edge",
+     "offset": -0.1,
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -12
+      },
+      {
+       "at": 0.5,
+       "name": "toon3d:tick",
+       "gain": -14
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "But inside, every path leads to the center. NASA's simulation says the stretching hits 12.8 seconds later.",
+   "shots": [
+    {
+     "id": "s19",
+     "in": {
+      "type": "iris"
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:suspense",
+       "gain": -12
+      },
+      {
+       "at": 0.15,
+       "name": "toon3d:stamp",
+       "gain": -8
+      },
+      {
+       "word": "center",
+       "name": "toon3d:heartbeat",
+       "gain": -12
+      }
+     ]
+    },
+    {
+     "id": "s19b",
+     "word": "nasa's",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "at": 0.3,
+       "name": "toon3d:click",
+       "gain": -12
+      },
+      {
+       "word": "simulation",
+       "name": "toon3d:beep",
+       "gain": -15
+      }
+     ]
+    },
+    {
+     "id": "s20",
+     "word": "hits",
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:impact",
+       "gain": -8
+      },
+      {
+       "at": 0.05,
+       "name": "toon3d:whoosh",
+       "gain": -12
+      },
+      {
+       "word": "seconds",
+       "name": "toon3d:tick",
+       "gain": -12
+      }
+     ],
+     "offset": -0.1
+    }
+   ]
+  },
+  {
+   "text": "So either way... it's spaghetti. Just later.",
+   "shots": [
+    {
+     "id": "s21",
+     "in": {
+      "type": "whipBlur",
+      "dir": 1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:swoosh",
+       "gain": -11
+      },
+      {
+       "word": "spaghetti",
+       "name": "toon3d:boing",
+       "gain": -7
+      },
+      {
+       "word": "later",
+       "name": "toon3d:stamp",
+       "gain": -8
+      },
+      {
+       "word": "later",
+       "name": "toon3d:laugh",
+       "gain": -16,
+       "offset": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "text": "Subscribe for more.",
+   "shots": [
+    {
+     "id": "s22",
+     "in": {
+      "type": "whipBlur",
+      "dir": -1
+     },
+     "sfx": [
+      {
+       "at": 0,
+       "name": "toon3d:whoosh",
+       "gain": -10
+      },
+      {
+       "at": 0.1,
+       "name": "toon3d:sparkle",
+       "gain": -14
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
