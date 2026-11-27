@@ -25,7 +25,7 @@ const heroPose = (s, t) => { s.o.position.set(Math.sin(t * 0.9) * 0.12, 0.15 + M
 registerShot('s01', { kind: '3d',
   init(T) { return darkSea(T); },
   draw(s, t, info) { s.sea.update(t); heroPose(s, t); const b = at(info, 'brains', 1.0);
-    s.o.update(t + 2, { spread: 1.25, curl: 1.0, wave: 1.6, lid: 0.15, brow: 0.3 * ease.out(prog(t, b, b + 0.3)), mouth: t > b ? 'o' : 'smile' });
+    s.o.update(t + 2.5, { spread: 1.25, curl: 1.0, wave: 1.6, lid: 0.15, brow: 0.3 * ease.out(prog(t, b, b + 0.3)), mouth: t > b ? 'o' : 'smile' });
     camMove(s.stage, t, [[0, F1], [info.dur, F1b]], ease.out); },
   overlay(g, t, info, s) { look(g, t, { k: 0.1 }); topCaption(g, gt(info, t)); const b = at(info, 'brains', 1.0);
     fxr(g, t, s, [{ fx: 'sparkle', on: 'o', at: 0.0, scale: 0.7 }, { fx: 'exclaim', on: 'o', at: b, until: b + 0.9 }]); },
@@ -257,7 +257,7 @@ registerShot('s20', { kind: '3d',
 registerShot('s21', { kind: '3d',
   init(T) { return darkSea(T); },
   draw(s, t, info) { s.sea.update(t); const T0 = t - info.dur;   // pose = s01's pose at its t = 0 at the very end
-    heroPose(s, T0); s.o.update(T0 + 2, { spread: 1.25, curl: 1.0, wave: 1.6, lid: 0.15, mouth: 'smile' });
+    heroPose(s, T0); s.o.update(T0 + 2.5, { spread: 1.25, curl: 1.0, wave: 1.6, lid: 0.15, mouth: 'smile' });
     camMove(s.stage, t, [[0, { pos: [0.3, 1.9, 5.6], look: [0, 1.35, 0], fov: 36 }], [info.dur, F1]], ease.inOut); },
   overlay(g, t, info, s) { look(g, t, { k: 0.1 }); },
 });
