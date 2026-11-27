@@ -8,7 +8,7 @@ STATE: ready
   +0.71 dB + alimiter (0.85), muxed with -c:v copy. Music `toon3d:mystery` -20 dB (ducked); kit SFX cues per shot.
 - Voice: Chatterbox D2 (built-in voice, exaggeration 0.3, cfg 0.3), `--gap 0.3 --lead 0.15`. All lines passed Whisper QA word for word
   (seed 7; line 6 seed 11 — seed 7 was heard "Tatis" for "today's"). Line 10's "sixty" is spoken, captioned "60".
-  First take came out too short (37.5 s after tightening), so four lines were lengthened by 8 words in total (see below) and re-voiced:
+  First take came out too short (37.5 s after tightening), so four lines were lengthened by 9 words in total (see below) and re-voiced:
   raw 42.2 s -> `tighten_vo.py 1.0` (pauses capped 0.32 s, 0.18 s gaps, held beats before lines 3/4/5/7/9/10/11) -> 40.27 s + 0.5 s loop hold.
 - Whisper QA (small.en) on the FINAL video.mp4 reads the script word for word ("...up to 60 degrees. Subscribe for more."). Caption alignment 127/127 words.
 - Contact sheet (`contact_sheet.png`, from the final file): frame 1, hook at 0.4 s and a caption at 15.9 s under a mock Shorts UI, the last frame,
