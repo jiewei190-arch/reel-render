@@ -1,0 +1,1 @@
+Bonus: there's a southern version too. Around the South Pole the same light show is called the aurora australis, the southern lights (NASA Space Place). Have you ever seen the northern lights? Yes or no? 🌌👇

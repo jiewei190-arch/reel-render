@@ -1,0 +1,102 @@
+{
+ "name": "flush",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "phrases": [
+  [
+   "Your toilet doesn't **push** the water down. It **sucks** it.",
+   "Your toilet doesn't push the water down. It sucks it."
+  ],
+  [
+   "But there's **no pump.** So how?",
+   "But there's no pump. So, how?"
+  ],
+  [
+   "Plumbers say a **bucket of water,** poured in fast, can flush it with **no handle at all.**",
+   "Plumbers say a bucket of water, poured in fast, can flush it with no handle at all."
+  ],
+  [
+   "In most North American toilets, a curved pipe hides behind the bowl: the **trapway.**",
+   "In most North American toilets, a curved pipe hides behind the bowl. The trapway."
+  ],
+  [
+   "It climbs **up, over a hump,** then drops down to the drain.",
+   "It climbs up, over a hump, then drops down to the drain."
+  ],
+  [
+   "Water fills the low bend and stops **right at that hump.**",
+   "Water fills the low bend, and stops right at that hump."
+  ],
+  [
+   "That still water is a **seal.** It keeps **sewer gas** out of your bathroom.",
+   "That still water is a seal. It keeps sewer gas out of your bathroom."
+  ],
+  [
+   "Press the handle, and a **flapper** in the tank lifts.",
+   "Press the handle, and a flapper in the tank lifts."
+  ],
+  [
+   "Tank water **rushes** into the bowl, through holes under the rim.",
+   "Tank water rushes into the bowl, through holes under the rim."
+  ],
+  [
+   "It rises **too fast** to just spill gently over the hump.",
+   "It rises too fast to just spill gently over the hump."
+  ],
+  [
+   "Instead, it fills the **whole pipe,** top to bottom.",
+   "Instead, it fills the whole pipe, top to bottom."
+  ],
+  [
+   "And a pipe full of falling water becomes a **siphon.**",
+   "And a pipe full of falling water becomes a siphon."
+  ],
+  [
+   "Water dropping down the far side **pulls the bowl** along with it.",
+   "Water dropping down the far side pulls the bowl along with it."
+  ],
+  [
+   "Until **air** sneaks in. That gurgle? It's the **siphon breaking.**",
+   "Until air sneaks in. That gurgle? It's the siphon breaking."
+  ],
+  [
+   "Meanwhile a **float** drops and opens a valve to **refill the tank.**",
+   "Meanwhile, a float drops, and opens a valve to refill the tank."
+  ],
+  [
+   "A small tube tops up the bowl, so the **seal is back.**",
+   "A small tube tops up the bowl, so the seal is back."
+  ],
+  [
+   "In the US, new toilets may use **1.6 gallons** at most. Older ones often used **3.5 or more.**",
+   "In the U.S., new toilets may use 1.6 gallons at most. Older ones often used three and a half, or more."
+  ],
+  [
+   "But outside the Americas, most toilets are **washdown** types. They **push** instead.",
+   "But outside the Americas, most toilets are washdown types. They push instead."
+  ],
+  [
+   "So, is yours a **puller** or a **pusher?**",
+   "So, is yours a puller, or a pusher?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  6,
+  10,
+  13,
+  15,
+  16,
+  17,
+  18
+ ]
+}

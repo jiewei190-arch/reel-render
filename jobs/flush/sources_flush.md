@@ -1,0 +1,20 @@
+# Sources: flush (How a toilet flushes: the siphon)
+
+| Claim in script | Source |
+|---|---|
+| A siphonic toilet empties the bowl by siphon (suction), not by pushing | Wikipedia, "Flush toilet": "The rapid influx of water into the bowl causes the standing water in the bowl to rise and fill the S-shaped siphon tube" (siphonic action starts). https://en.wikipedia.org/wiki/Flush_toilet ; Explain That Stuff, "How toilets work": water draining through the curved pipe "has enough momentum to produce a siphon (sucking) effect, which properly empties the bowl." https://www.explainthatstuff.com/howtoiletswork.html |
+| A bucket of water poured in fast can flush it without the handle | Plumbing guides: Benjamin Franklin Plumbing, "How to flush your toilet without running water" https://www.benjaminfranklinplumbing.com/blog/how-to-flush-the-toilet-when-the-water-is-off ; HomeServe https://www.homeserve.com/en-us/blog/how-to/flush-toilet-without-running-water ; Ivins City (Utah) "Sanitation in a Disaster" (bucket of at least 2 gallons) https://www.ivinsutah.gov/wp-content/uploads/2021/06/Sanitation-in-a-Disaster.pdf . Attributed in the script ("Plumbers say"). |
+| Curved pipe behind the bowl (trapway / S-shaped siphon tube); water collects in the bend | Wikipedia, "Flush toilet" (S-shaped siphon tube; a trap is a bend that "causes water to collect in the toilet bowl") |
+| Standing water is a seal that keeps sewer gas out | Wikipedia, "Flush toilet": "Standing water in the bowl acts as a barrier to sewer gas coming out of the sewer through the drain." Explain That Stuff: trapped water stops "bad smells from coming up into your bathroom." |
+| Handle lifts a flapper; tank water enters the bowl through holes under the rim | Explain That Stuff (flush valve / cistern emptying into the bowl); Wikipedia "Flush toilet" (tank, flush valve, rim). |
+| Water fills the whole tube, the siphon pulls the bowl, then air gets in and the gurgle is the siphon ending | Wikipedia, "Flush toilet": "the continuous column of water through the siphon is broken when air enters the siphon tube. The toilet then gives its characteristic gurgle as the siphonic action ceases." |
+| A float drops and opens a valve to refill the tank; the bowl is refilled | Explain That Stuff: the float "tilts the ... lever, opening a ball valve (sometimes called a ball cock) and allows the cistern to refill"; Wikipedia: "water lines and valves connected to the water supply refill the toilet tank and bowl." |
+| US: new toilets may use 1.6 gallons per flush at most; older ones often 3.5 or more | Energy Policy Act of 1992 set the residential maximum at 1.6 gpf: US EPA WaterSense supporting statement https://www.epa.gov/sites/production/files/2017-02/documents/ws-background-fv-toilets-suppstatement.pdf ; Wikipedia, "Low-flush toilet": before the early 1990s US toilets "typically required at least 3.5 gallons (13.2 litres) per flush". https://en.wikipedia.org/wiki/Low-flush_toilet |
+| Outside the Americas most toilets are washdown types that push rather than siphon | Wikipedia, "Flush toilet": "Washdown toilets are the most common form of pedestal and cantilever toilets outside the Americas"; the siphonic toilet "is perhaps the most popular design in North America". Architizer, "How to Specify: Toilets" (washdown common in Europe and Australia, siphonic in North America) https://architizer.com/blog/how-to-specify-toilets/ |
+
+## Softened / unverified
+- "Older ones often used 3.5 or more": sources say "typically at least 3.5 gallons"; worded with "often".
+- "Plumbers say": the bucket flush is from plumbing-company guides and a city disaster guide, so it is attributed, not stated as lab fact.
+- "Holes under the rim": many tanks also feed a siphon jet at the bowl bottom; the script mentions only the rim to stay simple (not wrong, incomplete).
+- Not every North American toilet is siphonic (pressure-assist and some washdown models exist); the script only contrasts "outside the Americas, most are washdown".
+- The sketch's pipe shape and water levels are schematic, not to scale.

@@ -1,0 +1,1338 @@
+[
+{
+"text": " Code",
+"startMs": 1400,
+"endMs": 1689,
+"timestampMs": 1544,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " red!",
+"startMs": 1689,
+"endMs": 1978,
+"timestampMs": 1834,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Code",
+"startMs": 1978,
+"endMs": 2268,
+"timestampMs": 2123,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " red!",
+"startMs": 2268,
+"endMs": 2558,
+"timestampMs": 2413,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " We",
+"startMs": 2558,
+"endMs": 2751,
+"timestampMs": 2654,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " just",
+"startMs": 2751,
+"endMs": 3040,
+"timestampMs": 2895,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " double-tapped",
+"startMs": 3040,
+"endMs": 3764,
+"timestampMs": 3402,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Jordan's",
+"startMs": 3764,
+"endMs": 4246,
+"timestampMs": 4005,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " photo\u2026",
+"startMs": 4246,
+"endMs": 4632,
+"timestampMs": 4439,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " from",
+"startMs": 4632,
+"endMs": 4922,
+"timestampMs": 4777,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " 2022!",
+"startMs": 4922,
+"endMs": 5260,
+"timestampMs": 5091,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Okay.",
+"startMs": 6248,
+"endMs": 6768,
+"timestampMs": 6508,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Nobody",
+"startMs": 7048,
+"endMs": 7348,
+"timestampMs": 7198,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " panic.",
+"startMs": 7348,
+"endMs": 7868,
+"timestampMs": 7608,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " We",
+"startMs": 8268,
+"endMs": 8348,
+"timestampMs": 8308,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " just",
+"startMs": 8348,
+"endMs": 8568,
+"timestampMs": 8458,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " unlike",
+"startMs": 8568,
+"endMs": 8968,
+"timestampMs": 8768,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " it.",
+"startMs": 8968,
+"endMs": 9268,
+"timestampMs": 9118,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " They",
+"startMs": 9678,
+"endMs": 9758,
+"timestampMs": 9718,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " still",
+"startMs": 9758,
+"endMs": 9938,
+"timestampMs": 9847,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " get",
+"startMs": 9938,
+"endMs": 10098,
+"timestampMs": 10018,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " the",
+"startMs": 10098,
+"endMs": 10218,
+"timestampMs": 10158,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " notification!",
+"startMs": 10218,
+"endMs": 10738,
+"timestampMs": 10478,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Now",
+"startMs": 11318,
+"endMs": 11358,
+"timestampMs": 11338,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " they",
+"startMs": 11358,
+"endMs": 11478,
+"timestampMs": 11418,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " know",
+"startMs": 11478,
+"endMs": 11638,
+"timestampMs": 11558,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " we",
+"startMs": 11638,
+"endMs": 11798,
+"timestampMs": 11718,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " were",
+"startMs": 11798,
+"endMs": 11918,
+"timestampMs": 11858,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " down",
+"startMs": 11918,
+"endMs": 12098,
+"timestampMs": 12008,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " there.",
+"startMs": 12098,
+"endMs": 12358,
+"timestampMs": 12228,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " In",
+"startMs": 12538,
+"endMs": 12698,
+"timestampMs": 12618,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " the",
+"startMs": 12698,
+"endMs": 12818,
+"timestampMs": 12758,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " archives.",
+"startMs": 12818,
+"endMs": 13278,
+"timestampMs": 13048,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " At",
+"startMs": 13658,
+"endMs": 13758,
+"timestampMs": 13707,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " two",
+"startMs": 13758,
+"endMs": 13958,
+"timestampMs": 13858,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " A",
+"startMs": 13958,
+"endMs": 14058,
+"timestampMs": 14008,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " M!",
+"startMs": 14058,
+"endMs": 14278,
+"timestampMs": 14168,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Easy.",
+"startMs": 14879,
+"endMs": 15299,
+"timestampMs": 15088,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " We",
+"startMs": 15519,
+"endMs": 15659,
+"timestampMs": 15589,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " like",
+"startMs": 15659,
+"endMs": 15859,
+"timestampMs": 15759,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " every",
+"startMs": 15859,
+"endMs": 16279,
+"timestampMs": 16068,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " photo",
+"startMs": 16279,
+"endMs": 16779,
+"timestampMs": 16529,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " they've",
+"startMs": 16779,
+"endMs": 17099,
+"timestampMs": 16939,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " ever",
+"startMs": 17099,
+"endMs": 17339,
+"timestampMs": 17219,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " posted.",
+"startMs": 17339,
+"endMs": 17879,
+"timestampMs": 17609,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Then",
+"startMs": 18419,
+"endMs": 18599,
+"timestampMs": 18509,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " it",
+"startMs": 18599,
+"endMs": 18759,
+"timestampMs": 18679,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " looks",
+"startMs": 18759,
+"endMs": 18979,
+"timestampMs": 18869,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " like",
+"startMs": 18979,
+"endMs": 19259,
+"timestampMs": 19119,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " a",
+"startMs": 19259,
+"endMs": 19399,
+"timestampMs": 19329,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " strategy.",
+"startMs": 19399,
+"endMs": 19819,
+"timestampMs": 19609,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " That's",
+"startMs": 20419,
+"endMs": 20719,
+"timestampMs": 20569,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " not",
+"startMs": 20719,
+"endMs": 20879,
+"timestampMs": 20799,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " a",
+"startMs": 20879,
+"endMs": 21039,
+"timestampMs": 20959,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " strategy.",
+"startMs": 21039,
+"endMs": 21599,
+"timestampMs": 21319,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " That's",
+"startMs": 22079,
+"endMs": 22339,
+"timestampMs": 22209,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " a",
+"startMs": 22339,
+"endMs": 22419,
+"timestampMs": 22378,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " confession.",
+"startMs": 22419,
+"endMs": 22839,
+"timestampMs": 22628,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Plan",
+"startMs": 23641,
+"endMs": 23841,
+"timestampMs": 23741,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " B!",
+"startMs": 23841,
+"endMs": 24121,
+"timestampMs": 23981,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Throw",
+"startMs": 24481,
+"endMs": 24561,
+"timestampMs": 24521,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " the",
+"startMs": 24561,
+"endMs": 24681,
+"timestampMs": 24621,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " phone",
+"startMs": 24681,
+"endMs": 24861,
+"timestampMs": 24771,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " in",
+"startMs": 24861,
+"endMs": 25001,
+"timestampMs": 24931,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " a",
+"startMs": 25001,
+"endMs": 25081,
+"timestampMs": 25041,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " lake!",
+"startMs": 25081,
+"endMs": 25241,
+"timestampMs": 25161,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " The",
+"startMs": 26558,
+"endMs": 26698,
+"timestampMs": 26628,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " like",
+"startMs": 26698,
+"endMs": 26938,
+"timestampMs": 26817,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " is",
+"startMs": 26938,
+"endMs": 27218,
+"timestampMs": 27078,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " on",
+"startMs": 27218,
+"endMs": 27418,
+"timestampMs": 27317,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " the",
+"startMs": 27418,
+"endMs": 27598,
+"timestampMs": 27508,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " internet.",
+"startMs": 27598,
+"endMs": 28078,
+"timestampMs": 27838,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Not",
+"startMs": 28538,
+"endMs": 28698,
+"timestampMs": 28618,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " the",
+"startMs": 28698,
+"endMs": 28918,
+"timestampMs": 28808,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " phone.",
+"startMs": 28918,
+"endMs": 29258,
+"timestampMs": 29088,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Then",
+"startMs": 29838,
+"endMs": 30018,
+"timestampMs": 29928,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " we",
+"startMs": 30018,
+"endMs": 30218,
+"timestampMs": 30118,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " throw",
+"startMs": 30218,
+"endMs": 30538,
+"timestampMs": 30378,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " the",
+"startMs": 30538,
+"endMs": 30778,
+"timestampMs": 30658,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " internet",
+"startMs": 30778,
+"endMs": 31158,
+"timestampMs": 30968,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " in",
+"startMs": 31158,
+"endMs": 31478,
+"timestampMs": 31318,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " a",
+"startMs": 31478,
+"endMs": 31598,
+"timestampMs": 31538,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " lake.",
+"startMs": 31598,
+"endMs": 31818,
+"timestampMs": 31708,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Delete",
+"startMs": 32560,
+"endMs": 32740,
+"timestampMs": 32650,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " the",
+"startMs": 32740,
+"endMs": 32880,
+"timestampMs": 32810,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " account!",
+"startMs": 32880,
+"endMs": 33220,
+"timestampMs": 33050,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Change",
+"startMs": 33580,
+"endMs": 33780,
+"timestampMs": 33680,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " our",
+"startMs": 33780,
+"endMs": 33960,
+"timestampMs": 33870,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " name!",
+"startMs": 33960,
+"endMs": 34200,
+"timestampMs": 34080,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Move",
+"startMs": 34420,
+"endMs": 34620,
+"timestampMs": 34519,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " to",
+"startMs": 34620,
+"endMs": 34840,
+"timestampMs": 34730,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " another",
+"startMs": 34840,
+"endMs": 35000,
+"timestampMs": 34920,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " country!",
+"startMs": 35000,
+"endMs": 35340,
+"timestampMs": 35170,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " I've",
+"startMs": 35911,
+"endMs": 36151,
+"timestampMs": 36031,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " always",
+"startMs": 36151,
+"endMs": 36491,
+"timestampMs": 36321,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " wanted",
+"startMs": 36491,
+"endMs": 36871,
+"timestampMs": 36681,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " to",
+"startMs": 36871,
+"endMs": 37091,
+"timestampMs": 36981,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " be",
+"startMs": 37091,
+"endMs": 37251,
+"timestampMs": 37171,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " a",
+"startMs": 37251,
+"endMs": 37411,
+"timestampMs": 37331,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Gerald.",
+"startMs": 37411,
+"endMs": 37731,
+"timestampMs": 37571,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Or\u2026",
+"startMs": 38536,
+"endMs": 38774,
+"timestampMs": 38655,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " we",
+"startMs": 38774,
+"endMs": 38965,
+"timestampMs": 38869,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " put",
+"startMs": 38965,
+"endMs": 39203,
+"timestampMs": 39084,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " the",
+"startMs": 39203,
+"endMs": 39442,
+"timestampMs": 39322,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " phone",
+"startMs": 39442,
+"endMs": 39775,
+"timestampMs": 39609,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " down.",
+"startMs": 39775,
+"endMs": 40109,
+"timestampMs": 39942,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " And",
+"startMs": 40109,
+"endMs": 40348,
+"timestampMs": 40229,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " act",
+"startMs": 40348,
+"endMs": 40586,
+"timestampMs": 40467,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " normal.",
+"startMs": 40586,
+"endMs": 41016,
+"timestampMs": 40801,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Act\u2026",
+"startMs": 41920,
+"endMs": 42200,
+"timestampMs": 42060,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " normal?",
+"startMs": 42200,
+"endMs": 42560,
+"timestampMs": 42380,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Never",
+"startMs": 43059,
+"endMs": 43359,
+"timestampMs": 43209,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " heard",
+"startMs": 43359,
+"endMs": 43719,
+"timestampMs": 43539,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " of",
+"startMs": 43719,
+"endMs": 43939,
+"timestampMs": 43829,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " it.",
+"startMs": 43939,
+"endMs": 44059,
+"timestampMs": 43998,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Incoming!",
+"startMs": 45481,
+"endMs": 45901,
+"timestampMs": 45691,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Jordan",
+"startMs": 46241,
+"endMs": 46341,
+"timestampMs": 46291,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " replied!",
+"startMs": 46341,
+"endMs": 46641,
+"timestampMs": 46491,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Read",
+"startMs": 47352,
+"endMs": 47512,
+"timestampMs": 47432,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " it!",
+"startMs": 47512,
+"endMs": 47652,
+"timestampMs": 47582,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " No,",
+"startMs": 47852,
+"endMs": 47952,
+"timestampMs": 47902,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " don't",
+"startMs": 47952,
+"endMs": 48212,
+"timestampMs": 48082,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " read",
+"startMs": 48212,
+"endMs": 48332,
+"timestampMs": 48272,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " it!",
+"startMs": 48332,
+"endMs": 48552,
+"timestampMs": 48442,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Okay,",
+"startMs": 48732,
+"endMs": 48912,
+"timestampMs": 48822,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " read",
+"startMs": 48912,
+"endMs": 49152,
+"timestampMs": 49032,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " it!",
+"startMs": 49152,
+"endMs": 49312,
+"timestampMs": 49232,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Ha",
+"startMs": 49974,
+"endMs": 50216,
+"timestampMs": 50095,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " ha,",
+"startMs": 50216,
+"endMs": 50518,
+"timestampMs": 50367,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " oh",
+"startMs": 50518,
+"endMs": 50760,
+"timestampMs": 50639,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " my",
+"startMs": 50760,
+"endMs": 51002,
+"timestampMs": 50881,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " god.",
+"startMs": 51002,
+"endMs": 51365,
+"timestampMs": 51184,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " I",
+"startMs": 51365,
+"endMs": 51547,
+"timestampMs": 51456,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " just",
+"startMs": 51547,
+"endMs": 51910,
+"timestampMs": 51728,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " accidentally",
+"startMs": 51910,
+"endMs": 52757,
+"timestampMs": 52333,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " liked",
+"startMs": 52757,
+"endMs": 53180,
+"timestampMs": 52969,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " your",
+"startMs": 53180,
+"endMs": 53543,
+"timestampMs": 53362,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " photo",
+"startMs": 53543,
+"endMs": 53967,
+"timestampMs": 53755,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " from",
+"startMs": 53967,
+"endMs": 54330,
+"timestampMs": 54148,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " 2019.",
+"startMs": 54330,
+"endMs": 54754,
+"timestampMs": 54542,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " They",
+"startMs": 55766,
+"endMs": 55886,
+"timestampMs": 55826,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " were",
+"startMs": 55886,
+"endMs": 55986,
+"timestampMs": 55936,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " in",
+"startMs": 55986,
+"endMs": 56126,
+"timestampMs": 56056,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " the",
+"startMs": 56126,
+"endMs": 56266,
+"timestampMs": 56196,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " archives",
+"startMs": 56266,
+"endMs": 56726,
+"timestampMs": 56495,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " too!",
+"startMs": 56726,
+"endMs": 57166,
+"timestampMs": 56946,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Now",
+"startMs": 57686,
+"endMs": 57806,
+"timestampMs": 57745,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " we're",
+"startMs": 57806,
+"endMs": 58106,
+"timestampMs": 57956,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " even!",
+"startMs": 58106,
+"endMs": 58306,
+"timestampMs": 58206,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Oh,",
+"startMs": 58880,
+"endMs": 59060,
+"timestampMs": 58970,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " thank",
+"startMs": 59180,
+"endMs": 59400,
+"timestampMs": 59290,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " goodness.",
+"startMs": 59400,
+"endMs": 59640,
+"timestampMs": 59519,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " Now",
+"startMs": 60558,
+"endMs": 60778,
+"timestampMs": 60668,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " let's",
+"startMs": 60778,
+"endMs": 61098,
+"timestampMs": 60938,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " like",
+"startMs": 61098,
+"endMs": 61238,
+"timestampMs": 61168,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " one",
+"startMs": 61238,
+"endMs": 61498,
+"timestampMs": 61367,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " from",
+"startMs": 61498,
+"endMs": 61758,
+"timestampMs": 61628,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " 2015.",
+"startMs": 61758,
+"endMs": 62278,
+"timestampMs": 62018,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Show",
+"startMs": 63018,
+"endMs": 63278,
+"timestampMs": 63147,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " them",
+"startMs": 63278,
+"endMs": 63518,
+"timestampMs": 63397,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " who's",
+"startMs": 63518,
+"endMs": 63818,
+"timestampMs": 63668,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " boss.",
+"startMs": 63818,
+"endMs": 64078,
+"timestampMs": 63948,
+"confidence": 1,
+"speaker": "confidence"
+},
+{
+"text": " Don't",
+"startMs": 64563,
+"endMs": 64983,
+"timestampMs": 64774,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " touch",
+"startMs": 64983,
+"endMs": 65164,
+"timestampMs": 65074,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " that!",
+"startMs": 65164,
+"endMs": 65564,
+"timestampMs": 65364,
+"confidence": 1,
+"speaker": "logic"
+},
+{
+"text": " Code",
+"startMs": 66774,
+"endMs": 66934,
+"timestampMs": 66854,
+"confidence": 1,
+"speaker": "anxiety"
+},
+{
+"text": " red!",
+"startMs": 66934,
+"endMs": 67194,
+"timestampMs": 67064,
+"confidence": 1,
+"speaker": "anxiety"
+}
+]

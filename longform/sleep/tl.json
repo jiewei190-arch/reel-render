@@ -1,0 +1,781 @@
+{
+ "total": 389.943,
+ "scenes": [
+  {
+   "v": "hook_watch",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Scientists once watched a group of hunter-gatherers sleep for twenty nights.",
+     "start": 0.6,
+     "end": 4.263
+    },
+    {
+     "text": "In all that time, everyone was asleep at the same moment for just eighteen minutes.",
+     "start": 4.583,
+     "end": 8.932
+    }
+   ],
+   "end": 9.302
+  },
+  {
+   "v": "hook_q",
+   "start": 9.302,
+   "lines": [
+    {
+     "text": "Eighteen minutes. In twenty nights.",
+     "start": 9.602,
+     "end": 11.485
+    },
+    {
+     "text": "So how did ancient humans actually sleep?",
+     "start": 11.805,
+     "end": 14.142
+    }
+   ],
+   "end": 14.512
+  },
+  {
+   "v": "hook_promise",
+   "start": 14.512,
+   "lines": [
+    {
+     "text": "Where did they lie down? Who kept the lions away? And did they really sleep like we do?",
+     "start": 14.812,
+     "end": 19.586
+    },
+    {
+     "text": "The answer is weirder than you think.",
+     "start": 19.906,
+     "end": 21.822
+    }
+   ],
+   "end": 22.192
+  },
+  {
+   "v": "meet_moss",
+   "start": 22.192,
+   "lines": [
+    {
+     "text": "Meet Moss. He's a Stone Age human, and he is very, very tired.",
+     "start": 22.492,
+     "end": 26.288
+    },
+    {
+     "text": "Tonight, we're going to follow him to bed.",
+     "start": 26.608,
+     "end": 28.63
+    }
+   ],
+   "end": 29.0
+  },
+  {
+   "v": "chimp_nest",
+   "start": 29.0,
+   "lines": [
+    {
+     "text": "Let's start with our cousins.",
+     "start": 29.3,
+     "end": 30.742
+    },
+    {
+     "text": "Every evening, a wild chimpanzee climbs a tree and builds itself a fresh bed of bent branches and leaves.",
+     "start": 31.062,
+     "end": 37.303
+    },
+    {
+     "text": "It takes just a few minutes.",
+     "start": 37.623,
+     "end": 39.07
+    }
+   ],
+   "end": 39.44
+  },
+  {
+   "v": "ground",
+   "start": 39.44,
+   "lines": [
+    {
+     "text": "At some point, our ancestors came down from the trees for good.",
+     "start": 39.74,
+     "end": 43.056
+    },
+    {
+     "text": "And sleeping on the ground comes with a problem.",
+     "start": 43.376,
+     "end": 45.65
+    }
+   ],
+   "end": 46.02
+  },
+  {
+   "v": "predators",
+   "start": 46.02,
+   "lines": [
+    {
+     "text": "Things with teeth.",
+     "start": 46.32,
+     "end": 47.357
+    },
+    {
+     "text": "Lions, leopards, hyenas. The night belonged to them.",
+     "start": 47.677,
+     "end": 50.676
+    }
+   ],
+   "end": 51.046
+  },
+  {
+   "v": "fire",
+   "start": 51.046,
+   "lines": [
+    {
+     "text": "So humans did something no other animal does.",
+     "start": 51.346,
+     "end": 53.972
+    },
+    {
+     "text": "They brought fire to bed.",
+     "start": 54.292,
+     "end": 55.664
+    }
+   ],
+   "end": 56.034
+  },
+  {
+   "v": "wonderwerk",
+   "start": 56.034,
+   "lines": [
+    {
+     "text": "In Wonderwerk Cave, in South Africa, scientists found ash and burned bone about a million years old.",
+     "start": 56.334,
+     "end": 62.259
+    },
+    {
+     "text": "That's one of the earliest signs of fire being used inside a cave.",
+     "start": 62.579,
+     "end": 65.846
+    }
+   ],
+   "end": 66.216
+  },
+  {
+   "v": "fire_benefits",
+   "start": 66.216,
+   "lines": [
+    {
+     "text": "Fire meant warmth. It meant light. And it may have helped keep hungry animals at a distance.",
+     "start": 66.516,
+     "end": 71.739
+    },
+    {
+     "text": "Scientists think it also gave people something new: evenings.",
+     "start": 72.059,
+     "end": 75.734
+    },
+    {
+     "text": "Time to sit together, share food, and tell stories, after the sun went down.",
+     "start": 76.054,
+     "end": 80.278
+    }
+   ],
+   "end": 80.648
+  },
+  {
+   "v": "cliff_bed",
+   "start": 80.648,
+   "lines": [
+    {
+     "text": "But a fire doesn't make a bed.",
+     "start": 80.948,
+     "end": 82.493
+    },
+    {
+     "text": "And this is where the evidence gets surprisingly cosy.",
+     "start": 82.813,
+     "end": 85.687
+    }
+   ],
+   "end": 86.057
+  },
+  {
+   "v": "border_cave",
+   "start": 86.057,
+   "lines": [
+    {
+     "text": "In Border Cave, in South Africa, archaeologists found the remains of beds made around two hundred thousand years ago.",
+     "start": 86.357,
+     "end": 93.068
+    },
+    {
+     "text": "They are the oldest known grass beds ever found.",
+     "start": 93.388,
+     "end": 95.863
+    }
+   ],
+   "end": 96.233
+  },
+  {
+   "v": "grass",
+   "start": 96.233,
+   "lines": [
+    {
+     "text": "They were made of bundles of broad-leafed grass, laid near the back of the cave, close to the fire.",
+     "start": 96.533,
+     "end": 101.562
+    },
+    {
+     "text": "The warmest, safest spot in the house.",
+     "start": 101.882,
+     "end": 104.027
+    }
+   ],
+   "end": 104.397
+  },
+  {
+   "v": "ash",
+   "start": 104.397,
+   "lines": [
+    {
+     "text": "But here's the clever part.",
+     "start": 104.697,
+     "end": 106.077
+    },
+    {
+     "text": "Underneath the grass, there was a layer of ash.",
+     "start": 106.397,
+     "end": 108.667
+    }
+   ],
+   "end": 109.037
+  },
+  {
+   "v": "ash_why",
+   "start": 109.037,
+   "lines": [
+    {
+     "text": "Scientists think the ash was a bug barrier.",
+     "start": 109.337,
+     "end": 111.597
+    },
+    {
+     "text": "Crawling insects struggle to move through fine powder, and ash can clog up the tiny holes they breathe through.",
+     "start": 111.917,
+     "end": 117.759
+    }
+   ],
+   "end": 118.129
+  },
+  {
+   "v": "camphor",
+   "start": 118.129,
+   "lines": [
+    {
+     "text": "On one bed, they even found burned bits of camphor bush, a plant that people in South Africa still use to keep insects away.",
+     "start": 118.429,
+     "end": 125.663
+    }
+   ],
+   "end": 126.033
+  },
+  {
+   "v": "burn_bed",
+   "start": 126.033,
+   "lines": [
+    {
+     "text": "And when a bed got old and buggy?",
+     "start": 126.333,
+     "end": 127.953
+    },
+    {
+     "text": "They seem to have burned it. Then they laid fresh grass on top of the ashes.",
+     "start": 128.273,
+     "end": 132.272
+    },
+    {
+     "text": "Stone Age spring cleaning.",
+     "start": 132.592,
+     "end": 134.097
+    }
+   ],
+   "end": 134.467
+  },
+  {
+   "v": "sibudu",
+   "start": 134.467,
+   "lines": [
+    {
+     "text": "Fast forward to about seventy-seven thousand years ago, at another South African site called Sibudu.",
+     "start": 134.767,
+     "end": 140.566
+    },
+    {
+     "text": "Here, people stacked up mattresses of sedges and rushes, picked from a nearby river.",
+     "start": 140.886,
+     "end": 145.488
+    }
+   ],
+   "end": 145.858
+  },
+  {
+   "v": "sibudu_mat",
+   "start": 145.858,
+   "lines": [
+    {
+     "text": "Some covered up to three square metres. Big enough to sleep on, sit on, and work on during the day.",
+     "start": 146.158,
+     "end": 151.934
+    }
+   ],
+   "end": 152.304
+  },
+  {
+   "v": "cryptocarya",
+   "start": 152.304,
+   "lines": [
+    {
+     "text": "And on top, they added leaves from a tree called the river wild-quince.",
+     "start": 152.604,
+     "end": 156.175
+    },
+    {
+     "text": "Those leaves contain natural chemicals that kill insects, and they'd be good at repelling mosquitoes.",
+     "start": 156.495,
+     "end": 161.872
+    }
+   ],
+   "end": 162.242
+  },
+  {
+   "v": "cliff_watch",
+   "start": 162.242,
+   "lines": [
+    {
+     "text": "So these people had soft beds, bug spray, and a fire.",
+     "start": 162.542,
+     "end": 165.577
+    },
+    {
+     "text": "But they still had one big problem. Who stays awake to watch for danger?",
+     "start": 165.897,
+     "end": 169.844
+    }
+   ],
+   "end": 170.214
+  },
+  {
+   "v": "hadza_intro",
+   "start": 170.214,
+   "lines": [
+    {
+     "text": "To find out, let's go back to those eighteen minutes.",
+     "start": 170.514,
+     "end": 173.162
+    },
+    {
+     "text": "The study was done with the Hadza, hunter-gatherers who live in Tanzania today.",
+     "start": 173.482,
+     "end": 177.898
+    }
+   ],
+   "end": 178.268
+  },
+  {
+   "v": "hadza_sleep",
+   "start": 178.268,
+   "lines": [
+    {
+     "text": "They sleep in groups of twenty to thirty, outside by the hearth or in huts of grass and branches.",
+     "start": 178.568,
+     "end": 183.92
+    },
+    {
+     "text": "Thirty-three adults wore little watch-like sensors on their wrists for twenty days.",
+     "start": 184.24,
+     "end": 188.707
+    }
+   ],
+   "end": 189.077
+  },
+  {
+   "v": "nobody",
+   "start": 189.077,
+   "lines": [
+    {
+     "text": "Here's the funny part. Nobody was given the job of night guard.",
+     "start": 189.377,
+     "end": 193.088
+    },
+    {
+     "text": "The Hadza generally don't post lookouts at all.",
+     "start": 193.408,
+     "end": 196.067
+    }
+   ],
+   "end": 196.437
+  },
+  {
+   "v": "stagger",
+   "start": 196.437,
+   "lines": [
+    {
+     "text": "Instead, people's body clocks were naturally different.",
+     "start": 196.737,
+     "end": 199.509
+    },
+    {
+     "text": "Some were night owls. Some were early birds. And some just woke up a lot.",
+     "start": 199.829,
+     "end": 203.96
+    }
+   ],
+   "end": 204.33
+  },
+  {
+   "v": "grandparents",
+   "start": 204.33,
+   "lines": [
+    {
+     "text": "Older adults, in their fifties and sixties, tended to go to bed earlier and wake up earlier.",
+     "start": 204.63,
+     "end": 209.884
+    },
+    {
+     "text": "So at almost any moment of the night, someone was awake, or only lightly asleep.",
+     "start": 210.204,
+     "end": 214.66
+    }
+   ],
+   "end": 215.03
+  },
+  {
+   "v": "sentinel",
+   "start": 215.03,
+   "lines": [
+    {
+     "text": "Scientists call this the sentinel idea.",
+     "start": 215.33,
+     "end": 217.574
+    },
+    {
+     "text": "Your grumpy, early-rising grandpa might have been the best security system the Stone Age had.",
+     "start": 217.894,
+     "end": 223.387
+    }
+   ],
+   "end": 223.757
+  },
+  {
+   "v": "caution",
+   "start": 223.757,
+   "lines": [
+    {
+     "text": "Of course, the Hadza aren't time travellers. They're modern people with their own lives.",
+     "start": 224.057,
+     "end": 228.616
+    },
+    {
+     "text": "But studying them gives scientists clues about how humans slept before electric lights.",
+     "start": 228.936,
+     "end": 233.862
+    },
+    {
+     "text": "And those clues bust a few of our favourite myths.",
+     "start": 234.182,
+     "end": 236.53
+    }
+   ],
+   "end": 236.9
+  },
+  {
+   "v": "yetish",
+   "start": 236.9,
+   "lines": [
+    {
+     "text": "In another study, scientists tracked the sleep of three groups: the Hadza, the San in the Kalahari, and the Tsimane in Bolivia.",
+     "start": 237.2,
+     "end": 244.28
+    }
+   ],
+   "end": 244.65
+  },
+  {
+   "v": "duration",
+   "start": 244.65,
+   "lines": [
+    {
+     "text": "You might expect them to sleep ten hours a night.",
+     "start": 244.95,
+     "end": 247.332
+    },
+    {
+     "text": "Nope. They slept between about five point seven and seven point one hours.",
+     "start": 247.652,
+     "end": 251.887
+    },
+    {
+     "text": "That's about the same as many people in modern cities, or even a bit less.",
+     "start": 252.207,
+     "end": 256.17
+    }
+   ],
+   "end": 256.54
+  },
+  {
+   "v": "not_dark",
+   "start": 256.54,
+   "lines": [
+    {
+     "text": "And they didn't go to bed when it got dark.",
+     "start": 256.84,
+     "end": 258.746
+    },
+    {
+     "text": "On average, they fell asleep more than three hours after sunset.",
+     "start": 259.066,
+     "end": 262.494
+    }
+   ],
+   "end": 262.864
+  },
+  {
+   "v": "temperature",
+   "start": 262.864,
+   "lines": [
+    {
+     "text": "So what told them it was bedtime?",
+     "start": 263.164,
+     "end": 264.876
+    },
+    {
+     "text": "Scientists think the big clue was temperature.",
+     "start": 265.196,
+     "end": 267.483
+    },
+    {
+     "text": "They slept as the night cooled, and they usually woke up around the coldest part, just before sunrise.",
+     "start": 267.803,
+     "end": 273.529
+    }
+   ],
+   "end": 273.899
+  },
+  {
+   "v": "insomnia",
+   "start": 273.899,
+   "lines": [
+    {
+     "text": "And here's the one that might make you jealous.",
+     "start": 274.199,
+     "end": 276.217
+    },
+    {
+     "text": "The San and the Tsimane don't even have a word for insomnia.",
+     "start": 276.537,
+     "end": 279.674
+    },
+    {
+     "text": "Only a few people in every hundred said they regularly had trouble sleeping.",
+     "start": 279.994,
+     "end": 284.122
+    }
+   ],
+   "end": 284.492
+  },
+  {
+   "v": "segmented",
+   "start": 284.492,
+   "lines": [
+    {
+     "text": "Wait. Didn't people in the past sleep in two halves?",
+     "start": 284.792,
+     "end": 287.467
+    },
+    {
+     "text": "You might have heard about first sleep and second sleep.",
+     "start": 287.787,
+     "end": 290.151
+    }
+   ],
+   "end": 290.521
+  },
+  {
+   "v": "ekirch",
+   "start": 290.521,
+   "lines": [
+    {
+     "text": "Historian Roger Ekirch found hundreds of mentions of it in old European diaries, letters and court records.",
+     "start": 290.821,
+     "end": 297.731
+    },
+    {
+     "text": "People went to bed, woke up for an hour or so in the middle of the night, then went back to sleep.",
+     "start": 298.051,
+     "end": 303.164
+    }
+   ],
+   "end": 303.534
+  },
+  {
+   "v": "segmented_debate",
+   "start": 303.534,
+   "lines": [
+    {
+     "text": "But that's from the last few hundred years, mostly in Europe, where winter nights are long.",
+     "start": 303.834,
+     "end": 308.475
+    },
+    {
+     "text": "The hunter-gatherers in these studies mostly slept in one stretch.",
+     "start": 308.795,
+     "end": 312.413
+    },
+    {
+     "text": "So for the Stone Age, the jury is still out.",
+     "start": 312.733,
+     "end": 315.308
+    }
+   ],
+   "end": 315.678
+  },
+  {
+   "v": "hibernate_tease",
+   "start": 315.678,
+   "lines": [
+    {
+     "text": "And then there's the strangest idea of all.",
+     "start": 315.978,
+     "end": 318.253
+    },
+    {
+     "text": "In 2020, two scientists suggested that early humans in a Spanish cave, about four hundred thousand years ago, might have survived harsh winters by hibernating.",
+     "start": 318.573,
+     "end": 329.367
+    },
+    {
+     "text": "Like bears.",
+     "start": 329.687,
+     "end": 330.582
+    }
+   ],
+   "end": 330.952
+  },
+  {
+   "v": "hibernate_doubt",
+   "start": 330.952,
+   "lines": [
+    {
+     "text": "They pointed to odd marks on the bones that look a bit like those in hibernating animals.",
+     "start": 331.252,
+     "end": 336.09
+    },
+    {
+     "text": "But many experts aren't convinced. Those marks could have other causes, and big animals like us are bad at true hibernation.",
+     "start": 336.41,
+     "end": 343.401
+    },
+    {
+     "text": "So file that one under fun, but probably not.",
+     "start": 343.721,
+     "end": 346.359
+    }
+   ],
+   "end": 346.729
+  },
+  {
+   "v": "big_picture",
+   "start": 346.729,
+   "lines": [
+    {
+     "text": "So, here's what a night might have looked like for Moss.",
+     "start": 347.029,
+     "end": 349.428
+    },
+    {
+     "text": "A fire crackling at the back of the cave.",
+     "start": 349.748,
+     "end": 351.765
+    },
+    {
+     "text": "A soft bed of grass on a layer of ash, with bug-repelling leaves on top.",
+     "start": 352.085,
+     "end": 356.09
+    }
+   ],
+   "end": 356.46
+  },
+  {
+   "v": "recap2",
+   "start": 356.46,
+   "lines": [
+    {
+     "text": "Friends and family lying close together, chatting long after sunset.",
+     "start": 356.76,
+     "end": 360.644
+    },
+    {
+     "text": "Sleep as the air turns cool. Up before the sun.",
+     "start": 360.964,
+     "end": 363.794
+    },
+    {
+     "text": "And somewhere in the group, there's always someone half awake. Listening.",
+     "start": 364.114,
+     "end": 367.863
+    }
+   ],
+   "end": 368.233
+  },
+  {
+   "v": "ending",
+   "start": 368.233,
+   "lines": [
+    {
+     "text": "Remember those eighteen minutes?",
+     "start": 368.533,
+     "end": 370.11
+    },
+    {
+     "text": "If the Hadza are any guide, our ancestors' camps were almost never all asleep at once.",
+     "start": 370.43,
+     "end": 375.287
+    },
+    {
+     "text": "We took turns without even trying.",
+     "start": 375.607,
+     "end": 377.529
+    }
+   ],
+   "end": 377.899
+  },
+  {
+   "v": "callback",
+   "start": 377.899,
+   "lines": [
+    {
+     "text": "So the next time a tiny noise wakes you at three in the morning, don't be annoyed.",
+     "start": 378.199,
+     "end": 382.155
+    },
+    {
+     "text": "You're just working your ancient night shift.",
+     "start": 382.475,
+     "end": 384.428
+    }
+   ],
+   "end": 384.798
+  },
+  {
+   "v": "follow",
+   "start": 384.798,
+   "lines": [
+    {
+     "text": "Follow for more of how ancient humans really lived.",
+     "start": 385.098,
+     "end": 387.773
+    }
+   ],
+   "end": 389.943
+  }
+ ]
+}

@@ -1,0 +1,535 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Three",
+   "start": 0.48,
+   "end": 1.03
+  },
+  {
+   "word": "a.m.",
+   "start": 1.03,
+   "end": 1.34
+  },
+  {
+   "word": "Every",
+   "start": 2.23,
+   "end": 2.52
+  },
+  {
+   "word": "phone",
+   "start": 2.52,
+   "end": 2.81
+  },
+  {
+   "word": "on",
+   "start": 2.81,
+   "end": 2.98
+  },
+  {
+   "word": "your",
+   "start": 2.98,
+   "end": 3.23
+  },
+  {
+   "word": "street",
+   "start": 3.23,
+   "end": 3.56
+  },
+  {
+   "word": "screams",
+   "start": 3.56,
+   "end": 3.93
+  },
+  {
+   "word": "at",
+   "start": 3.93,
+   "end": 4.1
+  },
+  {
+   "word": "once.",
+   "start": 4.1,
+   "end": 4.35
+  },
+  {
+   "word": "Emergency",
+   "start": 5.18,
+   "end": 5.82
+  },
+  {
+   "word": "alert.",
+   "start": 5.82,
+   "end": 6.22
+  },
+  {
+   "word": "Three",
+   "start": 7.1,
+   "end": 7.49
+  },
+  {
+   "word": "rules.",
+   "start": 7.49,
+   "end": 7.89
+  },
+  {
+   "word": "Rule",
+   "start": 9.64,
+   "end": 10.01
+  },
+  {
+   "word": "one.",
+   "start": 10.01,
+   "end": 10.31
+  },
+  {
+   "word": "Stay",
+   "start": 11.22,
+   "end": 11.59
+  },
+  {
+   "word": "inside.",
+   "start": 11.59,
+   "end": 12.09
+  },
+  {
+   "word": "Cover",
+   "start": 12.96,
+   "end": 13.3
+  },
+  {
+   "word": "every",
+   "start": 13.3,
+   "end": 13.65
+  },
+  {
+   "word": "window.",
+   "start": 13.65,
+   "end": 14.04
+  },
+  {
+   "word": "Rule",
+   "start": 15.84,
+   "end": 16.25
+  },
+  {
+   "word": "two.",
+   "start": 16.25,
+   "end": 16.59
+  },
+  {
+   "word": "If",
+   "start": 17.48,
+   "end": 17.65
+  },
+  {
+   "word": "it",
+   "start": 17.65,
+   "end": 17.83
+  },
+  {
+   "word": "looks",
+   "start": 17.83,
+   "end": 18.13
+  },
+  {
+   "word": "like",
+   "start": 18.13,
+   "end": 18.39
+  },
+  {
+   "word": "morning",
+   "start": 18.39,
+   "end": 18.78
+  },
+  {
+   "word": "outside,",
+   "start": 18.78,
+   "end": 19.17
+  },
+  {
+   "word": "it",
+   "start": 19.17,
+   "end": 19.35
+  },
+  {
+   "word": "isn't.",
+   "start": 19.35,
+   "end": 19.65
+  },
+  {
+   "word": "Don't",
+   "start": 20.54,
+   "end": 20.87
+  },
+  {
+   "word": "look.",
+   "start": 20.87,
+   "end": 21.16
+  },
+  {
+   "word": "Rule",
+   "start": 22.92,
+   "end": 23.29
+  },
+  {
+   "word": "three.",
+   "start": 23.29,
+   "end": 23.72
+  },
+  {
+   "word": "If",
+   "start": 24.6,
+   "end": 24.79
+  },
+  {
+   "word": "someone",
+   "start": 24.79,
+   "end": 25.23
+  },
+  {
+   "word": "knocks,",
+   "start": 25.23,
+   "end": 25.62
+  },
+  {
+   "word": "count",
+   "start": 25.62,
+   "end": 25.96
+  },
+  {
+   "word": "your",
+   "start": 25.96,
+   "end": 26.25
+  },
+  {
+   "word": "family",
+   "start": 26.25,
+   "end": 26.64
+  },
+  {
+   "word": "before",
+   "start": 26.64,
+   "end": 27.03
+  },
+  {
+   "word": "you",
+   "start": 27.03,
+   "end": 27.27
+  },
+  {
+   "word": "answer.",
+   "start": 27.27,
+   "end": 27.66
+  },
+  {
+   "word": "You",
+   "start": 29.45,
+   "end": 29.67
+  },
+  {
+   "word": "tape",
+   "start": 29.67,
+   "end": 29.94
+  },
+  {
+   "word": "cardboard",
+   "start": 29.94,
+   "end": 30.43
+  },
+  {
+   "word": "over",
+   "start": 30.43,
+   "end": 30.7
+  },
+  {
+   "word": "the",
+   "start": 30.7,
+   "end": 30.92
+  },
+  {
+   "word": "windows.",
+   "start": 30.92,
+   "end": 31.32
+  },
+  {
+   "word": "Your",
+   "start": 32.16,
+   "end": 32.42
+  },
+  {
+   "word": "little",
+   "start": 32.42,
+   "end": 32.76
+  },
+  {
+   "word": "brother",
+   "start": 32.76,
+   "end": 33.15
+  },
+  {
+   "word": "falls",
+   "start": 33.15,
+   "end": 33.45
+  },
+  {
+   "word": "asleep",
+   "start": 33.45,
+   "end": 33.79
+  },
+  {
+   "word": "on",
+   "start": 33.79,
+   "end": 33.96
+  },
+  {
+   "word": "the",
+   "start": 33.96,
+   "end": 34.18
+  },
+  {
+   "word": "couch.",
+   "start": 34.18,
+   "end": 34.48
+  },
+  {
+   "word": "Four",
+   "start": 35.37,
+   "end": 35.9
+  },
+  {
+   "word": "a.m.",
+   "start": 35.9,
+   "end": 36.26
+  },
+  {
+   "word": "Light",
+   "start": 37.15,
+   "end": 37.42
+  },
+  {
+   "word": "pours",
+   "start": 37.42,
+   "end": 37.68
+  },
+  {
+   "word": "in",
+   "start": 37.68,
+   "end": 37.84
+  },
+  {
+   "word": "under",
+   "start": 37.84,
+   "end": 38.1
+  },
+  {
+   "word": "the",
+   "start": 38.1,
+   "end": 38.29
+  },
+  {
+   "word": "front",
+   "start": 38.29,
+   "end": 38.56
+  },
+  {
+   "word": "door.",
+   "start": 38.56,
+   "end": 38.79
+  },
+  {
+   "word": "White",
+   "start": 39.72,
+   "end": 40.05
+  },
+  {
+   "word": "and",
+   "start": 40.05,
+   "end": 40.28
+  },
+  {
+   "word": "warm,",
+   "start": 40.28,
+   "end": 40.56
+  },
+  {
+   "word": "like",
+   "start": 40.56,
+   "end": 40.84
+  },
+  {
+   "word": "sunrise.",
+   "start": 40.84,
+   "end": 41.26
+  },
+  {
+   "word": "Then",
+   "start": 42.11,
+   "end": 42.38
+  },
+  {
+   "word": "a",
+   "start": 42.38,
+   "end": 42.51
+  },
+  {
+   "word": "knock.",
+   "start": 42.51,
+   "end": 42.82
+  },
+  {
+   "word": "Sweetheart?",
+   "start": 43.89,
+   "end": 44.4
+  },
+  {
+   "word": "It's",
+   "start": 44.52,
+   "end": 44.9
+  },
+  {
+   "word": "Mom.",
+   "start": 44.9,
+   "end": 45.22
+  },
+  {
+   "word": "The",
+   "start": 45.6,
+   "end": 45.8
+  },
+  {
+   "word": "sun's",
+   "start": 45.8,
+   "end": 46.08
+  },
+  {
+   "word": "up.",
+   "start": 46.08,
+   "end": 46.24
+  },
+  {
+   "word": "Come",
+   "start": 46.47,
+   "end": 46.71
+  },
+  {
+   "word": "and",
+   "start": 46.71,
+   "end": 46.91
+  },
+  {
+   "word": "see.",
+   "start": 46.91,
+   "end": 47.11
+  },
+  {
+   "word": "Mom",
+   "start": 48.23,
+   "end": 48.49
+  },
+  {
+   "word": "is",
+   "start": 48.49,
+   "end": 48.69
+  },
+  {
+   "word": "asleep",
+   "start": 48.69,
+   "end": 49.1
+  },
+  {
+   "word": "upstairs.",
+   "start": 49.1,
+   "end": 49.61
+  },
+  {
+   "word": "You're",
+   "start": 50.48,
+   "end": 50.79
+  },
+  {
+   "word": "almost",
+   "start": 50.79,
+   "end": 51.1
+  },
+  {
+   "word": "sure.",
+   "start": 51.1,
+   "end": 51.33
+  },
+  {
+   "word": "So",
+   "start": 53.14,
+   "end": 53.33
+  },
+  {
+   "word": "you",
+   "start": 53.33,
+   "end": 53.57
+  },
+  {
+   "word": "count.",
+   "start": 53.57,
+   "end": 53.9
+  },
+  {
+   "word": "Mom,",
+   "start": 54.78,
+   "end": 55.11
+  },
+  {
+   "word": "upstairs.",
+   "start": 55.11,
+   "end": 55.78
+  },
+  {
+   "word": "Dad,",
+   "start": 56.66,
+   "end": 56.97
+  },
+  {
+   "word": "upstairs.",
+   "start": 56.97,
+   "end": 57.58
+  },
+  {
+   "word": "Your",
+   "start": 58.45,
+   "end": 58.7
+  },
+  {
+   "word": "brother,",
+   "start": 58.7,
+   "end": 59.06
+  },
+  {
+   "word": "on",
+   "start": 59.06,
+   "end": 59.23
+  },
+  {
+   "word": "the",
+   "start": 59.23,
+   "end": 59.43
+  },
+  {
+   "word": "couch.",
+   "start": 59.43,
+   "end": 59.72
+  },
+  {
+   "word": "You.",
+   "start": 60.56,
+   "end": 61.05
+  },
+  {
+   "word": "Four.",
+   "start": 61.96,
+   "end": 62.42
+  },
+  {
+   "word": "Five.",
+   "start": 63.28,
+   "end": 64.04
+  }
+ ]
+}

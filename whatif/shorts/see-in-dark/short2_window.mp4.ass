@@ -1,0 +1,64 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Inter ExtraBold,78,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,8,60,60,1395,1
+Style: Title,Inter ExtraBold,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&HC0000000,1,0,0,0,100,100,0,0,3,18,0,8,70,70,300,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:19.60,Title,,0,0,0,,Heat vision has ONE big problem...
+Dialogue: 0,0:00:00.32,0:00:00.56,Cap,,0,0,0,,{\c&H00E6FF&}OUT{\c&HFFFFFF&} ON THE
+Dialogue: 0,0:00:00.56,0:00:00.70,Cap,,0,0,0,,OUT {\c&H00E6FF&}ON{\c&HFFFFFF&} THE
+Dialogue: 0,0:00:00.70,0:00:00.78,Cap,,0,0,0,,OUT ON {\c&H00E6FF&}THE{\c&HFFFFFF&}
+Dialogue: 0,0:00:00.78,0:00:00.96,Cap,,0,0,0,,{\c&H00E6FF&}DARK{\c&HFFFFFF&} STREET, YOU
+Dialogue: 0,0:00:00.96,0:00:01.54,Cap,,0,0,0,,DARK {\c&H00E6FF&}STREET,{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:01.54,0:00:01.64,Cap,,0,0,0,,DARK STREET, {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:01.64,0:00:01.84,Cap,,0,0,0,,{\c&H00E6FF&}SPOT{\c&HFFFFFF&} A SMALL
+Dialogue: 0,0:00:01.84,0:00:02.04,Cap,,0,0,0,,SPOT {\c&H00E6FF&}A{\c&HFFFFFF&} SMALL
+Dialogue: 0,0:00:02.04,0:00:02.32,Cap,,0,0,0,,SPOT A {\c&H00E6FF&}SMALL{\c&HFFFFFF&}
+Dialogue: 0,0:00:02.32,0:00:02.70,Cap,,0,0,0,,{\c&H00E6FF&}ORANGE{\c&HFFFFFF&} GLOW UNDER
+Dialogue: 0,0:00:02.70,0:00:03.02,Cap,,0,0,0,,ORANGE {\c&H00E6FF&}GLOW{\c&HFFFFFF&} UNDER
+Dialogue: 0,0:00:03.02,0:00:03.32,Cap,,0,0,0,,ORANGE GLOW {\c&H00E6FF&}UNDER{\c&HFFFFFF&}
+Dialogue: 0,0:00:03.32,0:00:03.46,Cap,,0,0,0,,{\c&H00E6FF&}A{\c&HFFFFFF&} PARKED CAR
+Dialogue: 0,0:00:03.46,0:00:03.68,Cap,,0,0,0,,A {\c&H00E6FF&}PARKED{\c&HFFFFFF&} CAR
+Dialogue: 0,0:00:03.68,0:00:04.06,Cap,,0,0,0,,A PARKED {\c&H00E6FF&}CAR{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.06,0:00:04.34,Cap,,0,0,0,,{\c&H00E6FF&}AND{\c&HFFFFFF&} RESCUE A
+Dialogue: 0,0:00:04.34,0:00:04.64,Cap,,0,0,0,,AND {\c&H00E6FF&}RESCUE{\c&HFFFFFF&} A
+Dialogue: 0,0:00:04.64,0:00:04.84,Cap,,0,0,0,,AND RESCUE {\c&H00E6FF&}A{\c&HFFFFFF&}
+Dialogue: 0,0:00:04.84,0:00:05.70,Cap,,0,0,0,,{\c&H00E6FF&}KITTEN.{\c&HFFFFFF&} THEN YOU
+Dialogue: 0,0:00:05.70,0:00:05.98,Cap,,0,0,0,,KITTEN. {\c&H00E6FF&}THEN{\c&HFFFFFF&} YOU
+Dialogue: 0,0:00:05.98,0:00:06.14,Cap,,0,0,0,,KITTEN. THEN {\c&H00E6FF&}YOU{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.14,0:00:06.34,Cap,,0,0,0,,{\c&H00E6FF&}WALK{\c&HFFFFFF&} FACE FIRST
+Dialogue: 0,0:00:06.34,0:00:06.60,Cap,,0,0,0,,WALK {\c&H00E6FF&}FACE{\c&HFFFFFF&} FIRST
+Dialogue: 0,0:00:06.60,0:00:06.90,Cap,,0,0,0,,WALK FACE {\c&H00E6FF&}FIRST{\c&HFFFFFF&}
+Dialogue: 0,0:00:06.90,0:00:07.16,Cap,,0,0,0,,{\c&H00E6FF&}INTO{\c&HFFFFFF&} A SHOP
+Dialogue: 0,0:00:07.16,0:00:07.34,Cap,,0,0,0,,INTO {\c&H00E6FF&}A{\c&HFFFFFF&} SHOP
+Dialogue: 0,0:00:07.34,0:00:07.54,Cap,,0,0,0,,INTO A {\c&H00E6FF&}SHOP{\c&HFFFFFF&}
+Dialogue: 0,0:00:07.54,0:00:08.18,Cap,,0,0,0,,{\c&H00E6FF&}WINDOW,{\c&HFFFFFF&} BECAUSE ORDINARY
+Dialogue: 0,0:00:08.18,0:00:08.48,Cap,,0,0,0,,WINDOW, {\c&H00E6FF&}BECAUSE{\c&HFFFFFF&} ORDINARY
+Dialogue: 0,0:00:08.48,0:00:08.90,Cap,,0,0,0,,WINDOW, BECAUSE {\c&H00E6FF&}ORDINARY{\c&HFFFFFF&}
+Dialogue: 0,0:00:08.90,0:00:09.22,Cap,,0,0,0,,{\c&H00E6FF&}GLASS{\c&HFFFFFF&} BLOCKS THERMAL
+Dialogue: 0,0:00:09.22,0:00:09.60,Cap,,0,0,0,,GLASS {\c&H00E6FF&}BLOCKS{\c&HFFFFFF&} THERMAL
+Dialogue: 0,0:00:09.60,0:00:09.94,Cap,,0,0,0,,GLASS BLOCKS {\c&H00E6FF&}THERMAL{\c&HFFFFFF&}
+Dialogue: 0,0:00:09.94,0:00:11.20,Cap,,0,0,0,,{\c&H00E6FF&}INFRARED.{\c&HFFFFFF&} TO YOU,
+Dialogue: 0,0:00:11.20,0:00:11.44,Cap,,0,0,0,,INFRARED. {\c&H00E6FF&}TO{\c&HFFFFFF&} YOU,
+Dialogue: 0,0:00:11.44,0:00:11.86,Cap,,0,0,0,,INFRARED. TO {\c&H00E6FF&}YOU,{\c&HFFFFFF&}
+Dialogue: 0,0:00:11.86,0:00:12.00,Cap,,0,0,0,,{\c&H00E6FF&}IT'S{\c&HFFFFFF&} A FLAT,
+Dialogue: 0,0:00:12.00,0:00:12.10,Cap,,0,0,0,,IT'S {\c&H00E6FF&}A{\c&HFFFFFF&} FLAT,
+Dialogue: 0,0:00:12.10,0:00:12.38,Cap,,0,0,0,,IT'S A {\c&H00E6FF&}FLAT,{\c&HFFFFFF&}
+Dialogue: 0,0:00:12.38,0:00:12.70,Cap,,0,0,0,,{\c&H00E6FF&}COLD{\c&HFFFFFF&} WALL. DEV
+Dialogue: 0,0:00:12.70,0:00:13.86,Cap,,0,0,0,,COLD {\c&H00E6FF&}WALL.{\c&HFFFFFF&} DEV
+Dialogue: 0,0:00:13.86,0:00:13.98,Cap,,0,0,0,,COLD WALL. {\c&H00E6FF&}DEV{\c&HFFFFFF&}
+Dialogue: 0,0:00:13.98,0:00:15.06,Cap,,0,0,0,,{\c&H00E6FF&}WHEEZES.{\c&HFFFFFF&} "MATE, THAT
+Dialogue: 0,0:00:15.06,0:00:15.72,Cap,,0,0,0,,WHEEZES. {\c&H00E6FF&}"MATE,{\c&HFFFFFF&} THAT
+Dialogue: 0,0:00:15.72,0:00:15.88,Cap,,0,0,0,,WHEEZES. "MATE, {\c&H00E6FF&}THAT{\c&HFFFFFF&}
+Dialogue: 0,0:00:15.88,0:00:16.02,Cap,,0,0,0,,{\c&H00E6FF&}WAS{\c&HFFFFFF&} A WINDOW.
+Dialogue: 0,0:00:16.02,0:00:16.16,Cap,,0,0,0,,WAS {\c&H00E6FF&}A{\c&HFFFFFF&} WINDOW.
+Dialogue: 0,0:00:16.16,0:00:16.50,Cap,,0,0,0,,WAS A {\c&H00E6FF&}WINDOW.{\c&HFFFFFF&}
+Dialogue: 0,0:00:16.50,0:00:17.18,Cap,,0,0,0,,{\c&H00E6FF&}TEN{\c&HFFFFFF&} OUT OF
+Dialogue: 0,0:00:17.18,0:00:17.32,Cap,,0,0,0,,TEN {\c&H00E6FF&}OUT{\c&HFFFFFF&} OF
+Dialogue: 0,0:00:17.32,0:00:17.44,Cap,,0,0,0,,TEN OUT {\c&H00E6FF&}OF{\c&HFFFFFF&}
+Dialogue: 0,0:00:17.44,0:00:18.98,Cap,,0,0,0,,{\c&H00E6FF&}TEN."{\c&HFFFFFF&} RULE
+Dialogue: 0,0:00:18.98,0:00:19.58,Cap,,0,0,0,,TEN." {\c&H00E6FF&}RULE{\c&HFFFFFF&}
