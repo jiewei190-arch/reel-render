@@ -1,0 +1,520 @@
+{
+ "duration": 42.184,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.44,
+   "line": "This frog freezes solid every winter,",
+   "scene": "FRAME 1: snow falling, frost creeping over the frog + 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "freezes",
+     "name": "toon3d:glass",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.44,
+   "end": 3.88,
+   "line": "and its heart stops.",
+   "scene": "x-ray close-up: the heart beats, then stops on \"stops\"",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:heartbeat",
+     "gain": -6
+    },
+    {
+     "word": "stops",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "stops",
+     "name": "toon3d:impact",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.88,
+   "end": 4.93,
+   "line": "It's the wood frog,",
+   "scene": "autumn forest floor, the frog hops in, WOOD FROG chip",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "wood",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.93,
+   "end": 8.56,
+   "line": "the only North American frog found north of the Arctic Circle.",
+   "scene": "Arctic Circle sign: it hops across the line; THE ONLY FROG / THIS FAR NORTH",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "only",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "arctic",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "north",
+     "name": "toon3d:boing",
+     "gain": -14,
+     "nth": 2
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.56,
+   "end": 9.62,
+   "line": "But in winter,",
+   "scene": "heavy snow, the frog hunkers down, WINTER chip",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -10
+    },
+    {
+     "word": "winter",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.62,
+   "end": 12.9,
+   "line": "up to two thirds of the water in its body turns to ice.",
+   "scene": "x-ray: ice crystals fill up to 2/3, gauge on the left",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "two",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "ice",
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.9,
+   "end": 15.88,
+   "line": "No heartbeat. No breathing. No blood flow.",
+   "scene": "INSERT 1: vitals monitor flatlines; NO HEARTBEAT / NO BREATHING / NO BLOOD FLOW on the words",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:beep",
+     "gain": -12
+    },
+    {
+     "word": "heartbeat",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "breathing",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "blood",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "flow",
+     "name": "toon3d:beep",
+     "gain": -14,
+     "offset": 0.25,
+     "dur": 0.9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.88,
+   "end": 17.36,
+   "line": "But how does it survive?",
+   "scene": "the frozen frog in its ice shell, camera orbits, ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "survive",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.36,
+   "end": 19.78,
+   "line": "Its liver floods its body with sugar.",
+   "scene": "x-ray: the liver lights up, sugar cubes flood the body",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "liver",
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "sugar",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "sugar",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.78,
+   "end": 21.66,
+   "line": "That sugar works like antifreeze,",
+   "scene": "the frog glows with sugar; NATURAL ANTIFREEZE",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "antifreeze",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.66,
+   "end": 23.78,
+   "line": "so ice can't form inside its cells.",
+   "scene": "INSERT 2: cells packed with sugar, ice only in the gaps",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "ice",
+     "name": "toon3d:glass",
+     "gain": -14
+    },
+    {
+     "word": "cells",
+     "name": "toon3d:success",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 23.78,
+   "end": 25.94,
+   "line": "But in Alaska, it goes further:",
+   "scene": "Alaska at night under the northern lights, ALASKA",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "word": "alaska",
+     "name": "toon3d:chime",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 25.94,
+   "end": 27.56,
+   "line": "frozen for up to 218 days.",
+   "scene": "INSERT 3: counter FROZEN FOR UP TO 218 DAYS (about 7 months)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:tick",
+     "gain": -16
+    },
+    {
+     "word": "days",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 27.56,
+   "end": 32.62,
+   "line": "And before winter sets in, it can freeze and thaw again and again.",
+   "scene": "day/night flicker: FREEZE / THAW / x2 / x3 (hard cut on the first \"again\")",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "word": "freeze",
+     "name": "toon3d:glass",
+     "gain": -12
+    },
+    {
+     "word": "thaw",
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "again",
+     "name": "toon3d:glass",
+     "gain": -14
+    },
+    {
+     "word": "again",
+     "name": "toon3d:water",
+     "gain": -14,
+     "nth": 2
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 32.62,
+   "end": 34.03,
+   "line": "Then spring comes.",
+   "scene": "spring: sun, flowers; the frog still in its ice shell",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "spring",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 34.03,
+   "end": 36.02,
+   "line": "It thaws out and comes back to life.",
+   "scene": "the ice melts, the heart kicks in, eyes pop open: BACK TO LIFE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "thaws",
+     "name": "toon3d:water",
+     "gain": -12
+    },
+    {
+     "word": "life",
+     "name": "toon3d:heartbeat",
+     "gain": -8,
+     "offset": -0.4
+    },
+    {
+     "word": "life",
+     "name": "toon3d:success",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 36.02,
+   "end": 38.72,
+   "line": "And it hops off to a pond to breed...",
+   "scene": "hop, hop, hop to a pond with another wood frog; hearts",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:splash",
+     "gain": -14
+    },
+    {
+     "word": "breed",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 38.72,
+   "end": 40.393,
+   "line": "like winter never happened.",
+   "scene": "PAYOFF close-up: grin + wink, WINTER? WHAT WINTER?",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "never",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "never",
+     "name": "toon3d:sparkle",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 40.393,
+   "end": 42.184,
+   "line": "Subscribe for more.",
+   "scene": "closer: winter again, lands on frame 1 framing (loop)",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}

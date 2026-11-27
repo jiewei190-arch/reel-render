@@ -1,0 +1,58 @@
+{
+ "title": "The Wood Frog Freezes Solid Every Winter",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.184,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "freezes",
+   "solid",
+   "heart",
+   "stops",
+   "wood",
+   "frog",
+   "arctic",
+   "circle",
+   "winter",
+   "two",
+   "thirds",
+   "ice",
+   "no",
+   "heartbeat",
+   "breathing",
+   "blood",
+   "flow",
+   "sugar",
+   "antifreeze",
+   "cells",
+   "alaska",
+   "218",
+   "days",
+   "again",
+   "spring",
+   "life",
+   "pond",
+   "breed",
+   "never"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}
