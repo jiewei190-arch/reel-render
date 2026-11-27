@@ -1,0 +1,515 @@
+{
+ "source": "whisper:small.en+script (closer re-voiced + spliced) + re-voiced line \"August twenty-fourth, four-ten.\" (spliced, delta -0.465s)",
+ "words": [
+  {
+   "word": "August",
+   "start": 0.15,
+   "end": 0.546
+  },
+  {
+   "word": "24th,",
+   "start": 0.546,
+   "end": 1.282
+  },
+  {
+   "word": "410.",
+   "start": 1.282,
+   "end": 1.735
+  },
+  {
+   "word": "Nobody",
+   "start": 2.255,
+   "end": 2.415
+  },
+  {
+   "word": "has",
+   "start": 2.415,
+   "end": 2.895
+  },
+  {
+   "word": "broken",
+   "start": 2.895,
+   "end": 3.195
+  },
+  {
+   "word": "into",
+   "start": 3.195,
+   "end": 3.535
+  },
+  {
+   "word": "Rome",
+   "start": 3.535,
+   "end": 3.795
+  },
+  {
+   "word": "in",
+   "start": 3.795,
+   "end": 4.035
+  },
+  {
+   "word": "almost",
+   "start": 4.035,
+   "end": 4.355
+  },
+  {
+   "word": "eight",
+   "start": 4.355,
+   "end": 4.555
+  },
+  {
+   "word": "hundred",
+   "start": 4.555,
+   "end": 4.755
+  },
+  {
+   "word": "years.",
+   "start": 4.755,
+   "end": 5.355
+  },
+  {
+   "word": "So",
+   "start": 5.795,
+   "end": 6.075
+  },
+  {
+   "word": "this",
+   "start": 6.075,
+   "end": 6.275
+  },
+  {
+   "word": "guard",
+   "start": 6.275,
+   "end": 6.475
+  },
+  {
+   "word": "is",
+   "start": 6.475,
+   "end": 6.675
+  },
+  {
+   "word": "very",
+   "start": 6.675,
+   "end": 6.935
+  },
+  {
+   "word": "relaxed.",
+   "start": 6.935,
+   "end": 7.455
+  },
+  {
+   "word": "Then",
+   "start": 7.935,
+   "end": 8.075
+  },
+  {
+   "word": "the",
+   "start": 8.075,
+   "end": 8.215
+  },
+  {
+   "word": "Salarian",
+   "start": 8.215,
+   "end": 8.615
+  },
+  {
+   "word": "Gate",
+   "start": 8.615,
+   "end": 8.915
+  },
+  {
+   "word": "opens.",
+   "start": 8.915,
+   "end": 9.375
+  },
+  {
+   "word": "Some",
+   "start": 10.055,
+   "end": 10.155
+  },
+  {
+   "word": "say,",
+   "start": 10.155,
+   "end": 10.415
+  },
+  {
+   "word": "from",
+   "start": 10.415,
+   "end": 10.595
+  },
+  {
+   "word": "the",
+   "start": 10.595,
+   "end": 10.735
+  },
+  {
+   "word": "inside.",
+   "start": 10.735,
+   "end": 11.155
+  },
+  {
+   "word": "The",
+   "start": 11.695,
+   "end": 11.835
+  },
+  {
+   "word": "Visigoths",
+   "start": 11.835,
+   "end": 12.235
+  },
+  {
+   "word": "are",
+   "start": 12.235,
+   "end": 12.475
+  },
+  {
+   "word": "in.",
+   "start": 12.475,
+   "end": 12.715
+  },
+  {
+   "word": "For",
+   "start": 13.115,
+   "end": 13.315
+  },
+  {
+   "word": "three",
+   "start": 13.315,
+   "end": 13.575
+  },
+  {
+   "word": "days,",
+   "start": 13.575,
+   "end": 13.915
+  },
+  {
+   "word": "the",
+   "start": 14.095,
+   "end": 14.155
+  },
+  {
+   "word": "Eternal",
+   "start": 14.155,
+   "end": 14.535
+  },
+  {
+   "word": "City",
+   "start": 14.535,
+   "end": 14.815
+  },
+  {
+   "word": "gets",
+   "start": 14.815,
+   "end": 15.135
+  },
+  {
+   "word": "looted.",
+   "start": 15.135,
+   "end": 15.475
+  },
+  {
+   "word": "Two",
+   "start": 15.955,
+   "end": 16.215
+  },
+  {
+   "word": "years",
+   "start": 16.215,
+   "end": 16.435
+  },
+  {
+   "word": "earlier,",
+   "start": 16.435,
+   "end": 16.875
+  },
+  {
+   "word": "Rome",
+   "start": 17.155,
+   "end": 17.335
+  },
+  {
+   "word": "paid",
+   "start": 17.335,
+   "end": 17.635
+  },
+  {
+   "word": "them",
+   "start": 17.635,
+   "end": 17.795
+  },
+  {
+   "word": "off",
+   "start": 17.795,
+   "end": 17.995
+  },
+  {
+   "word": "with",
+   "start": 17.995,
+   "end": 18.195
+  },
+  {
+   "word": "three",
+   "start": 18.195,
+   "end": 18.645
+  },
+  {
+   "word": "thousand",
+   "start": 18.645,
+   "end": 19.095
+  },
+  {
+   "word": "pounds",
+   "start": 19.095,
+   "end": 19.335
+  },
+  {
+   "word": "of",
+   "start": 19.335,
+   "end": 19.575
+  },
+  {
+   "word": "pepper.",
+   "start": 19.575,
+   "end": 19.795
+  },
+  {
+   "word": "This",
+   "start": 20.275,
+   "end": 20.515
+  },
+  {
+   "word": "time,",
+   "start": 20.515,
+   "end": 20.835
+  },
+  {
+   "word": "pepper",
+   "start": 20.835,
+   "end": 21.095
+  },
+  {
+   "word": "won't",
+   "start": 21.095,
+   "end": 21.435
+  },
+  {
+   "word": "fix",
+   "start": 21.435,
+   "end": 21.615
+  },
+  {
+   "word": "it.",
+   "start": 21.615,
+   "end": 21.915
+  },
+  {
+   "word": "And",
+   "start": 22.315,
+   "end": 22.455
+  },
+  {
+   "word": "the",
+   "start": 22.455,
+   "end": 22.575
+  },
+  {
+   "word": "emperor?",
+   "start": 22.575,
+   "end": 22.935
+  },
+  {
+   "word": "He's",
+   "start": 23.515,
+   "end": 23.775
+  },
+  {
+   "word": "not",
+   "start": 23.775,
+   "end": 23.975
+  },
+  {
+   "word": "even",
+   "start": 23.975,
+   "end": 24.155
+  },
+  {
+   "word": "in",
+   "start": 24.155,
+   "end": 24.315
+  },
+  {
+   "word": "Rome.",
+   "start": 24.315,
+   "end": 24.595
+  },
+  {
+   "word": "He's",
+   "start": 25.115,
+   "end": 25.395
+  },
+  {
+   "word": "in",
+   "start": 25.395,
+   "end": 25.555
+  },
+  {
+   "word": "Ravenna.",
+   "start": 25.555,
+   "end": 26.075
+  },
+  {
+   "word": "Told",
+   "start": 26.515,
+   "end": 26.675
+  },
+  {
+   "word": "that",
+   "start": 26.675,
+   "end": 26.855
+  },
+  {
+   "word": "Rome",
+   "start": 26.855,
+   "end": 27.075
+  },
+  {
+   "word": "has",
+   "start": 27.075,
+   "end": 27.275
+  },
+  {
+   "word": "perished,",
+   "start": 27.275,
+   "end": 27.635
+  },
+  {
+   "word": "he",
+   "start": 27.815,
+   "end": 27.895
+  },
+  {
+   "word": "panics.",
+   "start": 27.895,
+   "end": 28.375
+  },
+  {
+   "word": "About",
+   "start": 28.855,
+   "end": 29.035
+  },
+  {
+   "word": "his",
+   "start": 29.035,
+   "end": 29.215
+  },
+  {
+   "word": "chicken.",
+   "start": 29.215,
+   "end": 29.595
+  },
+  {
+   "word": "Named",
+   "start": 30.235,
+   "end": 30.475
+  },
+  {
+   "word": "Roma.",
+   "start": 30.475,
+   "end": 30.795
+  },
+  {
+   "word": "Or",
+   "start": 31.375,
+   "end": 31.475
+  },
+  {
+   "word": "so",
+   "start": 31.475,
+   "end": 31.675
+  },
+  {
+   "word": "the",
+   "start": 31.675,
+   "end": 31.775
+  },
+  {
+   "word": "story",
+   "start": 31.775,
+   "end": 32.035
+  },
+  {
+   "word": "goes.",
+   "start": 32.035,
+   "end": 32.375
+  },
+  {
+   "word": "How",
+   "start": 33.055,
+   "end": 33.175
+  },
+  {
+   "word": "did",
+   "start": 33.175,
+   "end": 33.315
+  },
+  {
+   "word": "the",
+   "start": 33.315,
+   "end": 33.455
+  },
+  {
+   "word": "greatest",
+   "start": 33.455,
+   "end": 33.735
+  },
+  {
+   "word": "empire",
+   "start": 33.735,
+   "end": 34.215
+  },
+  {
+   "word": "on",
+   "start": 34.215,
+   "end": 34.535
+  },
+  {
+   "word": "Earth",
+   "start": 34.535,
+   "end": 34.815
+  },
+  {
+   "word": "end",
+   "start": 34.815,
+   "end": 35.135
+  },
+  {
+   "word": "up",
+   "start": 35.135,
+   "end": 35.335
+  },
+  {
+   "word": "here?",
+   "start": 35.335,
+   "end": 35.615
+  },
+  {
+   "word": "Subscribe",
+   "start": 36.135,
+   "end": 36.535
+  },
+  {
+   "word": "to",
+   "start": 36.535,
+   "end": 36.735
+  },
+  {
+   "word": "find",
+   "start": 36.735,
+   "end": 36.995
+  },
+  {
+   "word": "out.",
+   "start": 36.995,
+   "end": 37.315
+  }
+ ]
+}

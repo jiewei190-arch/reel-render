@@ -1,0 +1,91 @@
+{
+ "name": "pumpkin",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  4,
+  7,
+  10,
+  12,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Carve a pumpkin, and in a few days its face starts to **sag.**",
+   "Carve a pumpkin, and in a few days its face starts to sag."
+  ],
+  [
+   "But an uncut pumpkin lasts **far longer.** So what did the knife change?",
+   "But an uncut pumpkin lasts far longer. So what did the knife change?"
+  ],
+  [
+   "An uncut pumpkin wears a **hard rind** with a **waxy coat.**",
+   "An uncut pumpkin wears a hard rind with a waxy coat."
+  ],
+  [
+   "That rind is a **seal.** It keeps water in, and germs out.",
+   "That rind is a seal. It keeps water in, and germs out."
+  ],
+  [
+   "And a pumpkin is mostly water: about **90 percent.**",
+   "And a pumpkin is mostly water: about 90 percent."
+  ],
+  [
+   "Carving cuts **right through the seal.**",
+   "Carving cuts right through the seal."
+  ],
+  [
+   "Now the soft flesh is open to the air, so **water escapes** and it dries out.",
+   "Now the soft flesh is open to the air, so water escapes and it dries out."
+  ],
+  [
+   "That's why the face **shrivels and softens.**",
+   "That's why the face shrivels and softens."
+  ],
+  [
+   "The air also carries tiny **mould spores.**",
+   "The air also carries tiny mould spores."
+  ],
+  [
+   "They land on the wet, open flesh and grow into **fuzzy grey mould.**",
+   "They land on the wet, open flesh and grow into fuzzy grey mould."
+  ],
+  [
+   "Moulds like **Penicillium** and **Aspergillus** move in, and **bacteria** join them.",
+   "Moulds like Penicillium and Aspergillus move in, and bacteria join them."
+  ],
+  [
+   "Together, they turn firm flesh **soft and saggy.**",
+   "Together, they turn firm flesh soft and saggy."
+  ],
+  [
+   "So the answer: carving removes the pumpkin's **armour.** Water gets **out,** and microbes get **in.**",
+   "So the answer: carving removes the pumpkin's armour. Water gets out, and microbes get in."
+  ],
+  [
+   "A real candle makes it worse. Its **heat speeds up the rot.**",
+   "A real candle makes it worse. Its heat speeds up the rot."
+  ],
+  [
+   "To slow it down, **scoop out all the insides**, and keep it **cool** and out of the sun.",
+   "To slow it down, scoop out all the insides, and keep it cool and out of the sun."
+  ],
+  [
+   "Rub **petroleum jelly** on the cuts to hold in moisture, and use an **LED light.**",
+   "Rub petroleum jelly on the cuts to hold in moisture, and use an LED light."
+  ],
+  [
+   "Even then, a carved pumpkin often lasts only **a few days to a week.** So carve it close to Halloween.",
+   "Even then, a carved pumpkin often lasts only a few days to a week. So carve it close to Halloween."
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

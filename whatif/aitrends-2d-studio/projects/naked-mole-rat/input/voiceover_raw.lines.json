@@ -1,0 +1,199 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 46.669,
+ "render_s": 294.7,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This rodent barely ages... and almost never gets cancer.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "This rodent barely ages...",
+     "seed": 7,
+     "heard": "This rodent barely ages.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and almost never gets cancer.",
+     "seed": 7,
+     "heard": "and almost never gets cancer.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.642
+  },
+  {
+   "n": 2,
+   "text": "Meet the naked mole-rat: pink, wrinkly, nearly hairless, and all teeth.",
+   "start": 4.942,
+   "parts": [
+    {
+     "tts": "Meet the naked mole-rat: pink, wrinkly, nearly hairless, and all teeth.",
+     "seed": 7,
+     "heard": "Meet the naked mole rat, pink, wrinkly, nearly hairless, and all teeth.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.685
+  },
+  {
+   "n": 3,
+   "text": "A house mouse this size lives four years, tops. This one? Over 30.",
+   "start": 9.985,
+   "parts": [
+    {
+     "tts": "A house mouse this size lives four years, tops. This one? Over thirty.",
+     "seed": 7,
+     "heard": "A house mouse this size lives four years. Tops. This one? Over 30.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.592
+  },
+  {
+   "n": 4,
+   "text": "But here's the crazy part: its risk of dying doesn't go up with age.",
+   "start": 14.892,
+   "parts": [
+    {
+     "tts": "But here's the crazy part: its risk of dying doesn't go up with age.",
+     "seed": 7,
+     "heard": "But here's the crazy part. Its risk of dying doesn't go up with age.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.526
+  },
+  {
+   "n": 5,
+   "text": "And big colonies watched for years? Not a single case of cancer.",
+   "start": 18.826,
+   "parts": [
+    {
+     "tts": "And big colonies watched for years? Not a single case of cancer.",
+     "seed": 7,
+     "heard": "and big colonies watched for years, not a single case of cancer.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.16
+  },
+  {
+   "n": 6,
+   "text": "But it gets weirder. They live like ants, with one queen in charge.",
+   "start": 23.46,
+   "parts": [
+    {
+     "tts": "But it gets weirder. They live like ants, with one queen in charge.",
+     "seed": 7,
+     "heard": "But it gets weirder. They live like ants, with one queen in charge.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.495
+  },
+  {
+   "n": 7,
+   "text": "Only the queen has babies. The rest dig tunnels, guard, and babysit.",
+   "start": 27.795,
+   "parts": [
+    {
+     "tts": "Only the queen has babies. The rest dig tunnels, guard, and babysit.",
+     "seed": 7,
+     "heard": "Only the queen has babies. The rest dig tunnels, guard, and babysit.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.711
+  },
+  {
+   "n": 8,
+   "text": "And when the air runs out? It survives 18 minutes with zero oxygen.",
+   "start": 32.011,
+   "parts": [
+    {
+     "tts": "And when the air runs out? It survives eighteen minutes with zero oxygen.",
+     "seed": 7,
+     "heard": "And when the air runs out, it survives 18 minutes with zero oxygen.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.044
+  },
+  {
+   "n": 9,
+   "text": "Its body switches to burning fructose, a sugar, instead.",
+   "start": 36.344,
+   "parts": [
+    {
+     "tts": "Its body switches to burning fructose, a sugar, instead.",
+     "seed": 7,
+     "heard": "its body switches to burning fructose, a sugar, instead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.539
+  },
+  {
+   "n": 10,
+   "text": "Scientists now study it for clues to aging... in us.",
+   "start": 40.839,
+   "parts": [
+    {
+     "tts": "Scientists now study it for clues to aging...",
+     "seed": 7,
+     "heard": "Scientists now study it for clues to aging.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "in us.",
+     "seed": 11,
+     "heard": "in us.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 44.763
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 45.063,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 46.369
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+{
+ "total": 71.119,
+ "scenes": [
+  {
+   "v": "hook_flute",
+   "start": 0.0,
+   "lines": [
+    {
+     "text": "Someone in the Stone Age made a flute from a vulture's wing bone.",
+     "start": 0.6,
+     "end": 4.041
+    },
+    {
+     "text": "And it's at least thirty-five thousand years old.",
+     "start": 4.361,
+     "end": 6.608
+    }
+   ],
+   "end": 6.978
+  },
+  {
+   "v": "hook_q",
+   "start": 6.978,
+   "lines": [
+    {
+     "text": "So what did cavemen do for fun?",
+     "start": 7.278,
+     "end": 9.037
+    }
+   ],
+   "end": 9.407
+  },
+  {
+   "v": "meet_moss",
+   "start": 9.407,
+   "lines": [
+    {
+     "text": "Meet Moss. He's bored.",
+     "start": 9.707,
+     "end": 11.068
+    }
+   ],
+   "end": 11.438
+  },
+  {
+   "v": "flute_cave",
+   "start": 11.438,
+   "lines": [
+    {
+     "text": "Surprise one: music.",
+     "start": 11.738,
+     "end": 13.172
+    },
+    {
+     "text": "Found in Hohle Fels cave, Germany, it has five finger holes.",
+     "start": 13.492,
+     "end": 17.088
+    }
+   ],
+   "end": 17.458
+  },
+  {
+   "v": "flute_replica",
+   "start": 17.458,
+   "lines": [
+    {
+     "text": "Experts carved a copy from vulture bone.",
+     "start": 17.758,
+     "end": 19.969
+    },
+    {
+     "text": "And yes, it plays.",
+     "start": 20.289,
+     "end": 21.413
+    }
+   ],
+   "end": 21.783
+  },
+  {
+   "v": "finger_flutings",
+   "start": 21.783,
+   "lines": [
+    {
+     "text": "Surprise two: kids' doodles.",
+     "start": 22.083,
+     "end": 23.827
+    },
+    {
+     "text": "In Rouffignac cave, France, over thirteen thousand years ago, children dragged fingers through soft clay.",
+     "start": 24.147,
+     "end": 30.147
+    }
+   ],
+   "end": 30.517
+  },
+  {
+   "v": "lifted_up",
+   "start": 30.517,
+   "lines": [
+    {
+     "text": "Some lines reach the ceiling.",
+     "start": 30.817,
+     "end": 32.468
+    },
+    {
+     "text": "Scientists think grown-ups lifted them up.",
+     "start": 32.788,
+     "end": 35.04
+    }
+   ],
+   "end": 35.41
+  },
+  {
+   "v": "hand_stencils",
+   "start": 35.41,
+   "lines": [
+    {
+     "text": "Surprise three: tiny hands.",
+     "start": 35.71,
+     "end": 37.494
+    },
+    {
+     "text": "In Spanish caves, maybe a quarter of hand outlines are children's.",
+     "start": 37.814,
+     "end": 41.485
+    }
+   ],
+   "end": 41.855
+  },
+  {
+   "v": "stencil_how",
+   "start": 41.855,
+   "lines": [
+    {
+     "text": "Paint was blown around a hand on the wall.",
+     "start": 42.155,
+     "end": 44.263
+    },
+    {
+     "text": "Like a Stone Age selfie.",
+     "start": 44.583,
+     "end": 46.099
+    }
+   ],
+   "end": 46.469
+  },
+  {
+   "v": "fire_stories",
+   "start": 46.469,
+   "lines": [
+    {
+     "text": "Surprise four: stories.",
+     "start": 46.769,
+     "end": 48.235
+    },
+    {
+     "text": "Among Kalahari hunter-gatherers today, most long fireside chats at night are stories.",
+     "start": 48.555,
+     "end": 53.52
+    }
+   ],
+   "end": 53.89
+  },
+  {
+   "v": "dance",
+   "start": 53.89,
+   "lines": [
+    {
+     "text": "There's singing and dancing too.",
+     "start": 54.19,
+     "end": 55.852
+    },
+    {
+     "text": "It's a modern clue, but a lovely one.",
+     "start": 56.172,
+     "end": 58.181
+    }
+   ],
+   "end": 58.551
+  },
+  {
+   "v": "ending",
+   "start": 58.551,
+   "lines": [
+    {
+     "text": "So Stone Age fun sounds like ours.",
+     "start": 58.851,
+     "end": 61.013
+    },
+    {
+     "text": "Music. Messy art. A really good story.",
+     "start": 61.333,
+     "end": 63.797
+    }
+   ],
+   "end": 64.167
+  },
+  {
+   "v": "moss_flute",
+   "start": 64.167,
+   "lines": [
+    {
+     "text": "And Moss? Still can't play the flute.",
+     "start": 64.467,
+     "end": 66.394
+    }
+   ],
+   "end": 66.764
+  },
+  {
+   "v": "follow",
+   "start": 66.764,
+   "lines": [
+    {
+     "text": "Follow for more Stone Age Stories.",
+     "start": 67.064,
+     "end": 68.949
+    }
+   ],
+   "end": 71.119
+  }
+ ]
+}

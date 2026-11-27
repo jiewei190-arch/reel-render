@@ -1,0 +1,90 @@
+{
+ "name": "stomachgrowl",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  4,
+  5,
+  7,
+  9,
+  10,
+  11,
+  13,
+  14
+ ],
+ "phrases": [
+  [
+   "Your stomach can growl even when you're **not hungry.**",
+   "Your stomach can growl even when you're not hungry."
+  ],
+  [
+   "So **why does your stomach growl,** if it isn't asking for food?",
+   "So why does your stomach growl, if it isn't asking for food?"
+  ],
+  [
+   "It's not hunger talking. It's your gut **squeezing.**",
+   "It's not hunger talking. It's your gut squeezing."
+  ],
+  [
+   "Muscle waves, called **peristalsis,** push food, fluid and gas through your **stomach and small intestine.**",
+   "Muscle waves, called peristalsis, push food, fluid and gas through your stomach and small intestine."
+  ],
+  [
+   "When **gas and fluid** get squeezed through, they gurgle. That's the **growl.**",
+   "When gas and fluid get squeezed through, they gurgle. That's the growl."
+  ],
+  [
+   "The ancient Greeks called it **borborygmi.** It means **rumbling.**",
+   "The ancient Greeks called it borborygmi. It means rumbling."
+  ],
+  [
+   "Here's the twist: it's often **loudest** when you're **empty.**",
+   "Here's the twist. It's often loudest when you're empty."
+  ],
+  [
+   "With no food inside to **muffle** it, the sound carries.",
+   "With no food inside to muffle it, the sound carries."
+  ],
+  [
+   "Once your stomach is **empty,** a **cleaning wave** starts.",
+   "Once your stomach is empty, a cleaning wave starts."
+  ],
+  [
+   "A strong sweep of squeezes clears out **leftovers,** from your stomach down through your intestines.",
+   "A strong sweep of squeezes clears out leftovers, from your stomach down through your intestines."
+  ],
+  [
+   "While you're fasting, it repeats roughly every **couple of hours.**",
+   "While you're fasting, it repeats roughly every couple of hours."
+  ],
+  [
+   "So is a growl a **hunger** signal? **Partly,** maybe.",
+   "So is a growl a hunger signal? Partly, maybe."
+  ],
+  [
+   "A hormone called **motilin** drives those waves, and some researchers link them to **hunger.**",
+   "A hormone called motilin drives those waves, and some researchers link them to hunger."
+  ],
+  [
+   "Its cousin, **ghrelin,** rises right **before meals,** and helps make you want to eat.",
+   "Its cousin, ghrelin, rises right before meals, and helps make you want to eat."
+  ],
+  [
+   "So a growl means your gut is **cleaning house.** Hunger often just **arrives at the same time.**",
+   "So a growl means your gut is cleaning house. Hunger often just arrives at the same time."
+  ],
+  [
+   "Does yours growl at the worst moment? **Yes or no?**",
+   "Does yours growl at the worst moment? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

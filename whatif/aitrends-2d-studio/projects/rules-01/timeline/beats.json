@@ -1,0 +1,106 @@
+[
+ {
+  "i": 0,
+  "start": 0.0,
+  "speechStart": 0.05,
+  "speechEnd": 0.83,
+  "text": "Mrs.",
+  "end": 1.84
+ },
+ {
+  "i": 1,
+  "start": 1.84,
+  "speechStart": 1.99,
+  "speechEnd": 4.95,
+  "text": "Hale pays you fifty dollars to watch the house tonight.",
+  "end": 5.8
+ },
+ {
+  "i": 2,
+  "start": 5.8,
+  "speechStart": 5.95,
+  "speechEnd": 11.33,
+  "text": "On the fridge, she left a note. Four rules. Rule one.",
+  "end": 12.14
+ },
+ {
+  "i": 3,
+  "start": 12.14,
+  "speechStart": 12.29,
+  "speechEnd": 18.19,
+  "text": "Never open the basement door. Whatever you hear. Rule two.",
+  "end": 19.04
+ },
+ {
+  "i": 4,
+  "start": 19.04,
+  "speechStart": 19.19,
+  "speechEnd": 23.41,
+  "text": "If the hallway light goes off, don't touch the switch. Just wait.",
+  "end": 24.0
+ },
+ {
+  "i": 5,
+  "start": 24.0,
+  "speechStart": 24.15,
+  "speechEnd": 26.01,
+  "text": "Rule three.",
+  "end": 26.9
+ },
+ {
+  "i": 6,
+  "start": 26.9,
+  "speechStart": 27.05,
+  "speechEnd": 32.59,
+  "text": "Keep the baby monitor on. All night. Ten past eleven.",
+  "end": 33.46
+ },
+ {
+  "i": 7,
+  "start": 33.46,
+  "speechStart": 33.61,
+  "speechEnd": 40.39,
+  "text": "Something knocks on the basement door. Three times. You don't move. Eleven forty.",
+  "end": 41.28
+ },
+ {
+  "i": 8,
+  "start": 41.28,
+  "speechStart": 41.43,
+  "speechEnd": 46.15,
+  "text": "The hallway light goes off. You wait. It comes back on.",
+  "end": 46.94
+ },
+ {
+  "i": 9,
+  "start": 46.94,
+  "speechStart": 47.09,
+  "speechEnd": 48.37,
+  "text": "Then the monitor crackles.",
+  "end": 48.22
+ },
+ {
+  "i": 10,
+  "start": 48.22,
+  "speechStart": 48.37,
+  "speechEnd": 52.07,
+  "text": "Can you come tuck me in?",
+  "end": 51.92
+ },
+ {
+  "i": 11,
+  "start": 51.92,
+  "speechStart": 52.07,
+  "speechEnd": 57.61,
+  "text": "You're halfway up the stairs when you turn the note over. Rule four.",
+  "end": 58.52
+ },
+ {
+  "i": 12,
+  "start": 58.52,
+  "speechStart": 58.67,
+  "speechEnd": 60.04,
+  "text": "There are no kids in this house. I can see you on the stairs.",
+  "end": 65.644
+ }
+]

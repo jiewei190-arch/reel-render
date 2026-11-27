@@ -1,0 +1,620 @@
+{
+ "duration": 42.8,
+ "generated_from": "make_shots.py (word anchors in timeline/words.json)",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.28,
+   "line": "This rodent barely ages...",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:laugh",
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.28,
+   "end": 3.98,
+   "line": "and almost never gets cancer.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:whoosh",
+     "gain": -14
+    },
+    {
+     "word": "cancer",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "cancer",
+     "name": "toon3d:sparkle",
+     "gain": -13,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.98,
+   "end": 7.62,
+   "line": "Meet the naked mole-rat: pink, wrinkly, nearly hairless, and",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:footsteps",
+     "gain": -18
+    },
+    {
+     "word": "pink",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "wrinkly",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "nearly",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 7.62,
+   "end": 8.55,
+   "line": "all teeth.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -9
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:click",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:click",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.55,
+   "end": 11.32,
+   "line": "A house mouse this size lives four years, tops.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "word": "four",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "tops",
+     "name": "toon3d:squeak",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.32,
+   "end": 13.36,
+   "line": "This one? Over 30.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "over",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "30",
+     "name": "toon3d:success",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.36,
+   "end": 14.88,
+   "line": "But here's the crazy part: its",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "crazy",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.88,
+   "end": 17.16,
+   "line": "risk of dying doesn't go up with age.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:slide",
+     "gain": -13
+    },
+    {
+     "word": "age",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.16,
+   "end": 19.44,
+   "line": "And big colonies watched for years?",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:paper",
+     "gain": -13
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:tick",
+     "gain": -16
+    },
+    {
+     "at": 1.3,
+     "name": "toon3d:tick",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.44,
+   "end": 21.24,
+   "line": "Not a single case of cancer.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:gasp",
+     "gain": -13
+    },
+    {
+     "word": "cancer",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.24,
+   "end": 23.74,
+   "line": "But it gets weirder. They live like ants,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:boing",
+     "gain": -13
+    },
+    {
+     "word": "they",
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "ants",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 23.74,
+   "end": 25.18,
+   "line": "with one queen in charge.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "queen",
+     "name": "toon3d:bell",
+     "gain": -14
+    },
+    {
+     "word": "queen",
+     "name": "toon3d:sparkle",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 25.18,
+   "end": 26.66,
+   "line": "Only the queen has babies.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "word": "babies",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "babies",
+     "name": "toon3d:chime",
+     "gain": -15,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 26.66,
+   "end": 28.66,
+   "line": "The rest dig tunnels, guard, and babysit.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:scratch",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:rumble",
+     "gain": -18
+    },
+    {
+     "word": "guard",
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "guard",
+     "name": "toon3d:ding",
+     "gain": -12,
+     "offset": 0.1
+    },
+    {
+     "word": "babysit",
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "babysit",
+     "name": "toon3d:pop",
+     "gain": -14,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 28.66,
+   "end": 30.73,
+   "line": "And when the air runs out?",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:alarm",
+     "gain": -16
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:beep",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 30.73,
+   "end": 33.2,
+   "line": "It survives 18 minutes with zero oxygen.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "word": "minutes",
+     "name": "toon3d:ding",
+     "gain": -10
+    },
+    {
+     "word": "oxygen",
+     "name": "toon3d:success",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 33.2,
+   "end": 36.04,
+   "line": "Its body switches to burning fructose,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "switches",
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "word": "switches",
+     "name": "toon3d:zap",
+     "gain": -12,
+     "offset": 0.08
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 36.04,
+   "end": 38.2,
+   "line": "a sugar, instead.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -11
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:magic",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 38.2,
+   "end": 40.18,
+   "line": "Scientists now study it for clues to aging...",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -14
+    },
+    {
+     "word": "aging",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 40.18,
+   "end": 41.3,
+   "line": "in us.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 41.3,
+   "end": 42.8,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:chime",
+     "gain": -16
+    }
+   ]
+  }
+ ]
+}

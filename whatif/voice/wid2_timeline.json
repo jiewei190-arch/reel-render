@@ -1,0 +1,308 @@
+{
+ "chapter": "wid2",
+ "sr": 48000,
+ "total": 373.594,
+ "lines": [
+  {
+   "n": 1,
+   "section": "COLD OPEN",
+   "text": "The whole street goes dark at once, and you just keep walking. Round the coffee table, over the shoe, past the door that always eats your knee.",
+   "start": 0.3,
+   "end": 7.766
+  },
+  {
+   "n": 2,
+   "section": "COLD OPEN",
+   "text": "Your little sister Mina stumbles in, phone torch first. \"How are you DOING this?\" she asks, and you shrug, because honestly, you have no idea.",
+   "start": 8.206,
+   "end": 17.285
+  },
+  {
+   "n": 3,
+   "section": "COLD OPEN",
+   "text": "You can see the mouse by the bin and the toast going cold. Biscuit the cat blinks down at you from the fridge like you've insulted her. And you still can't find your phone charger.",
+   "start": 17.605,
+   "end": 26.82
+  },
+  {
+   "n": 4,
+   "section": "COLD OPEN",
+   "text": "So, what if you could see in complete darkness? Stay with me, because there are five rules, and the fifth one decides whether you find her.",
+   "start": 27.2,
+   "end": 34.749
+  },
+  {
+   "n": 5,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "Rule one. Before any new powers, your old eyes quit first. They've got about one hundred and twenty million rods for the dark and about six million cones for colour, and at night, the cones basically clock out.",
+   "start": 35.649,
+   "end": 48.762
+  },
+  {
+   "n": 6,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "That sounds fine, until you walk out of sunshine into a cinema and can't see a thing. Your rods need twenty to thirty minutes to catch up.",
+   "start": 49.082,
+   "end": 56.825
+  },
+  {
+   "n": 7,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "Your best mate Dev shuffles in, orange beanie on, popcorn flying. \"Where's row F?\" he groans, and you walk him straight to it.",
+   "start": 57.205,
+   "end": 65.107
+  },
+  {
+   "n": 8,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "A cat needs roughly a sixth of the light you do, but even a cat is helpless in true darkness.",
+   "start": 65.547,
+   "end": 70.622
+  },
+  {
+   "n": 9,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "And humans aren't hopeless. In a 2016 experiment, volunteers spotted single photons, the tiniest bits of light, a little better than chance.",
+   "start": 70.942,
+   "end": 80.028
+  },
+  {
+   "n": 10,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "Upside, no more stubbed toes. Downside, Dev wants to know why you keep staring at him in the dark. Fair question, honestly.",
+   "start": 80.408,
+   "end": 88.038
+  },
+  {
+   "n": 11,
+   "section": "RULE 1: Your Eyes Quit First",
+   "text": "So how do you see where nothing shines? Easy: nothing has to shine. Everything's already glowing.",
+   "start": 88.478,
+   "end": 94.813
+  },
+  {
+   "n": 12,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "That's rule two. The dark isn't empty. Anything warmer than absolute zero glows with infrared. Your couch, your cat, you.",
+   "start": 95.713,
+   "end": 104.405
+  },
+  {
+   "n": 13,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "Dr. Lin, in her green lanyard, kills every light in the lab and tells you to hold up a hand. You count five warm fingers. \"Not magic,\" she whispers, thrilled. \"Physics.\"",
+   "start": 104.785,
+   "end": 115.682
+  },
+  {
+   "n": 14,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "Human skin glows most strongly near nine and a half micrometres, and thermal cameras read exactly that. Your eyes can't, and one reason is that they're warm too. It's like reading a dim screen with a torch in your face.",
+   "start": 116.122,
+   "end": 127.94
+  },
+  {
+   "n": 15,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "Nature found a workaround. A pit viper has a hollow pit on its face that works like a pinhole camera for heat, and in 2010 scientists traced its heat sensor to a protein called TRPA1.",
+   "start": 128.26,
+   "end": 140.425
+  },
+  {
+   "n": 16,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "So a snake can find a mouse in total darkness. You can find a mouse... and, finally, the remote.",
+   "start": 140.805,
+   "end": 147.433
+  },
+  {
+   "n": 17,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "Out on the dark street, you spot a small orange glow under a parked car and rescue a kitten. Then you walk face first into a shop window, because ordinary glass blocks thermal infrared. To you, it's a flat, cold wall.",
+   "start": 147.873,
+   "end": 160.929
+  },
+  {
+   "n": 18,
+   "section": "RULE 2: Dark Isn't Empty",
+   "text": "Dev wheezes. \"Mate, that was a window. Ten out of ten.\"",
+   "start": 161.249,
+   "end": 165.656
+  },
+  {
+   "n": 19,
+   "section": "RULE 3: Heat Has No Colour",
+   "text": "Rule three. Heat has no colour. Mina slides a birthday card across the table, and in the dark it's a blank, warm rectangle, because ink and paper are the same temperature. You guess \"happy birthday.\" It says \"get well soon.\"",
+   "start": 166.556,
+   "end": 179.28
+  },
+  {
+   "n": 20,
+   "section": "RULE 3: Heat Has No Colour",
+   "text": "Then she tucks a hand warmer into your hoodie pocket. \"Keep it,\" she says, \"I've got the twin.\" To you, it burns like a tiny coal. Hold on to that.",
+   "start": 179.72,
+   "end": 187.927
+  },
+  {
+   "n": 21,
+   "section": "RULE 3: Heat Has No Colour",
+   "text": "Night-vision goggles amplify faint light that's already there, so in true darkness, they've got nothing. Thermal wins the pitch black, but only for warm things.",
+   "start": 188.247,
+   "end": 197.179
+  },
+  {
+   "n": 22,
+   "section": "RULE 3: Heat Has No Colour",
+   "text": "Colour is a much bigger ask. In 2004, helmet geckos told blue from grey at about moonlight levels. You? Hot, warm, cold. That's your whole palette.",
+   "start": 197.559,
+   "end": 207.324
+  },
+  {
+   "n": 23,
+   "section": "RULE 3: Heat Has No Colour",
+   "text": "Upside, you win hide and seek forever. Downside, you can't read a menu.",
+   "start": 207.764,
+   "end": 212.894
+  },
+  {
+   "n": 24,
+   "section": "RULE 4: Light Is The Enemy",
+   "text": "Rule four: light is now your enemy. You step off the kerb at midnight, and a cyclist with no lamp glows like a ghost. You yank Dev back.",
+   "start": 213.794,
+   "end": 222.849
+  },
+  {
+   "n": 25,
+   "section": "RULE 4: Light Is The Enemy",
+   "text": "\"How did you SEE that?\" Dev asks. And right then, the cyclist's lamp snaps on.",
+   "start": 223.229,
+   "end": 228.309
+  },
+  {
+   "n": 26,
+   "section": "RULE 4: Light Is The Enemy",
+   "text": "One bright flash, your thermal view whites out, and your old eyes aren't ready either. Total blindness.",
+   "start": 228.749,
+   "end": 234.952
+  },
+  {
+   "n": 27,
+   "section": "RULE 4: Light Is The Enemy",
+   "text": "Bright light floods your rods, which normally need twenty to thirty minutes to recover. Your new sight takes about a minute, a long, shaky minute, with Dev leading you home by the sleeve.",
+   "start": 235.272,
+   "end": 244.277
+  },
+  {
+   "n": 28,
+   "section": "RULE 4: Light Is The Enemy",
+   "text": "It's amazing and awful, usually both at once. So remember: dark is your friend, light is a punch. You're about to need that.",
+   "start": 244.657,
+   "end": 252.049
+  },
+  {
+   "n": 29,
+   "section": "RULE 5: Cold Hides",
+   "text": "Which brings us to rule five. Cold things hide. School camping trip, rain pouring through the trees, and Mina is gone.",
+   "start": 252.949,
+   "end": 260.552
+  },
+  {
+   "n": 30,
+   "section": "RULE 5: Cold Hides",
+   "text": "You scan the forest. A deer, a fox, Dev glowing beside you. Everything alive shows up, except her. Why?",
+   "start": 260.872,
+   "end": 268.773
+  },
+  {
+   "n": 31,
+   "section": "RULE 5: Cold Hides",
+   "text": "Because the rain has soaked everything cold, warm and cool fade into the same grey. Her skin is cool, and she's blending into the rock.",
+   "start": 269.283,
+   "end": 277.172
+  },
+  {
+   "n": 32,
+   "section": "RULE 5: Cold Hides",
+   "text": "Ranger Tomas, in his blue cap, shouts that it's hopeless, and swings his torch at a cave mouth. The light slams into your eyes, everything goes white, and you're blind again.",
+   "start": 277.612,
+   "end": 288.021
+  },
+  {
+   "n": 33,
+   "section": "RULE 5: Cold Hides",
+   "text": "And now, a choice. Run in blind, or wait in the dark? Mina is cold, and every minute matters.",
+   "start": 288.341,
+   "end": 295.266
+  },
+  {
+   "n": 34,
+   "section": "RULE 5: Cold Hides",
+   "text": "\"Lights out,\" you croak. \"Everybody.\" Tomas clicks off his torch.",
+   "start": 295.646,
+   "end": 299.876
+  },
+  {
+   "n": 35,
+   "section": "RULE 5: Cold Hides",
+   "text": "So you wait. Sixty seconds, in the dark, listening to the rain.",
+   "start": 300.316,
+   "end": 304.747
+  },
+  {
+   "n": 36,
+   "section": "RULE 5: Cold Hides",
+   "text": "And slowly, the grey comes back. Rock. Rain. And then, low down, one tiny white spark. A small hand pulling something out of a coat. Mina's hand warmer. The twin.",
+   "start": 305.067,
+   "end": 317.882
+  },
+  {
+   "n": 37,
+   "section": "RULE 5: Cold Hides",
+   "text": "You run to her. She's curled up under a rock ledge, cold and shivering, and smiling. \"You found me,\" she mumbles. And you say, \"Of course I did.\"",
+   "start": 318.262,
+   "end": 326.214
+  },
+  {
+   "n": 38,
+   "section": "RULE 5: Cold Hides",
+   "text": "Dev cheers. Tomas wipes his eyes and blames the rain. Mina waves the little brick at you. \"Best twin ever,\" she says. \"You owe me hot chocolate.\"",
+   "start": 326.654,
+   "end": 337.307
+  },
+  {
+   "n": 39,
+   "section": "ENDING",
+   "text": "So, is any of this real? Pit vipers are. Thermal cameras are. Night-vision goggles are. Even spotting single photons is real, barely.",
+   "start": 338.207,
+   "end": 347.977
+  },
+  {
+   "n": 40,
+   "section": "ENDING",
+   "text": "But no human can see heat, goggles aren't eyes, and without light, cats and goggles are blind. You'd need infrared sensors, and a body that doesn't glow itself. Are we close? Not yet.",
+   "start": 348.357,
+   "end": 359.467
+  },
+  {
+   "n": 41,
+   "section": "ENDING",
+   "text": "The dark was never empty. It was only quiet.",
+   "start": 359.907,
+   "end": 362.732
+  },
+  {
+   "n": 42,
+   "section": "ENDING",
+   "text": "So what would you do if you could see in complete darkness? Tell us in the comments.",
+   "start": 363.052,
+   "end": 367.121
+  },
+  {
+   "n": 43,
+   "section": "ENDING",
+   "text": "And if you'd trust that tiny white spark, hit like, and subscribe for more What Ifs.",
+   "start": 367.501,
+   "end": 372.994
+  }
+ ]
+}

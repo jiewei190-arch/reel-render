@@ -1,0 +1,1 @@
+Bonus: on a dense-fog morning, the NWS advice is to slow down and leave room, because fog can drop visibility to a quarter mile or less, fast and in patches (NWS fog safety). Do you get fog where you live? Yes or no? 🌫️

@@ -1,0 +1,97 @@
+{
+ "name": "auroras",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "fx_gain": 0.5,
+ "music_gain": 0.7,
+ "breath": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  8,
+  9,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "phrases": [
+  [
+   "Green fire ripples across the night sky, silent and **enormous.**",
+   "Green fire ripples across the night sky, silent and enormous."
+  ],
+  [
+   "**But** it isn't fire. So what causes the northern lights?",
+   "But it isn't fire. So what causes the northern lights?"
+  ],
+  [
+   "It starts ninety-three million miles away, on the **Sun.**",
+   "It starts ninety-three million miles away, on the Sun."
+  ],
+  [
+   "The Sun is always blowing out a stream of charged particles: the **solar wind.**",
+   "The Sun is always blowing out a stream of charged particles: the solar wind."
+  ],
+  [
+   "Sometimes it hurls out a giant cloud of them, a **coronal mass ejection.**",
+   "Sometimes it hurls out a giant cloud of them, a coronal mass ejection."
+  ],
+  [
+   "When they reach Earth, our **magnetic field** catches them,",
+   "When they reach Earth, our magnetic field catches them,"
+  ],
+  [
+   "and steers them down toward the **North and South Poles.**",
+   "and steers them down toward the North and South Poles."
+  ],
+  [
+   "There they slam into the air, about **80 to 500 kilometers** up.",
+   "There they slam into the air, about eighty to five hundred kilometers up."
+  ],
+  [
+   "Each crash makes the air **glow,** like a giant neon sign.",
+   "Each crash makes the air glow, like a giant neon sign."
+  ],
+  [
+   "And the color tells you **which gas** got hit.",
+   "And the color tells you which gas got hit."
+  ],
+  [
+   "**Oxygen** glows green, or red.",
+   "Oxygen glows green, or red."
+  ],
+  [
+   "**Nitrogen** glows blue and purple.",
+   "Nitrogen glows blue and purple."
+  ],
+  [
+   "Here's the twist: the Sun has an **eleven-year** cycle. In 2024 it hit its **peak,** and the years just after a peak still bring **big storms.**",
+   "Here's the twist: the Sun has an eleven-year cycle. In twenty twenty-four it hit its peak, and the years just after a peak still bring big storms."
+  ],
+  [
+   "In May 2024, the strongest storm in **two decades** pushed auroras over places that **rarely** see them.",
+   "In May twenty twenty-four, the strongest storm in two decades pushed auroras over places that rarely see them."
+  ],
+  [
+   "So check the aurora forecast, and **keep looking up.**",
+   "So check the aurora forecast, and keep looking up."
+  ],
+  [
+   "So the northern lights are the **Sun's wind,** painted on our sky by Earth's magnetic field.",
+   "So the northern lights are the Sun's wind, painted on our sky by Earth's magnetic field."
+  ],
+  [
+   "Have you ever seen them? **Yes or no?**",
+   "Have you ever seen them? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ]
+}

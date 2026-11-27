@@ -1,0 +1,88 @@
+{
+ "name": "hairwet",
+ "voice": "af_heart",
+ "speed": 0.97,
+ "music": "crayon",
+ "bpm": 88,
+ "breath": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13
+ ],
+ "phrases": [
+  [
+   "Water doesn't **dye** your hair. It **traps** the light.",
+   "Water doesn't dye your hair. It traps the light."
+  ],
+  [
+   "But then why does wet hair look **darker?** It's all about where the **light goes.**",
+   "But then why does wet hair look darker? It's all about where the light goes."
+  ],
+  [
+   "Dry hair is **rough,** like most surfaces. Light hits it and **scatters** every way, and plenty bounces back to your eyes.",
+   "Dry hair is rough, like most surfaces. Light hits it and scatters every way, and plenty bounces back to your eyes."
+  ],
+  [
+   "Now add water. A thin **film** coats every strand.",
+   "Now add water. A thin film coats every strand."
+  ],
+  [
+   "Some light scattering off the hair hits the water's surface at a steep angle, and **bounces back inside** instead of escaping.",
+   "Some light scattering off the hair hits the water's surface at a steep angle, and bounces back inside instead of escaping."
+  ],
+  [
+   "Here's the twist: that trapped light gets **more chances to be absorbed.** Every extra bounce, a little more disappears.",
+   "Here's the twist: that trapped light gets more chances to be absorbed. Every extra bounce, a little more disappears."
+  ],
+  [
+   "Water also helps light slip **into** the strand, because water and hair **bend light** more alike than air and hair do.",
+   "Water also helps light slip into the strand, because water and hair bend light more alike than air and hair do."
+  ],
+  [
+   "So less light makes it back to you, and the same hair looks **darker.**",
+   "So less light makes it back to you, and the same hair looks darker."
+  ],
+  [
+   "Measured on wet sand, the reflected light dropped to about **half** of dry sand.",
+   "Measured on wet sand, the reflected light dropped to about half of dry sand."
+  ],
+  [
+   "And the **shine?** The water film is smooth, so it reflects like a **tiny mirror.**",
+   "And the shine? The water film is smooth, so it reflects like a tiny mirror."
+  ],
+  [
+   "It's the same trick that darkens **wet sand,** wet **concrete** and splashed **jeans.**",
+   "It's the same trick that darkens wet sand, wet concrete and splashed jeans."
+  ],
+  [
+   "Once the water dries, the light escapes again, and your **color comes back.**",
+   "Once the water dries, the light escapes again, and your color comes back."
+  ],
+  [
+   "So why does wet hair look darker? Water **traps light** in the strand, so **less of it** comes back.",
+   "So why does wet hair look darker? Water traps light in the strand, so less of it comes back."
+  ],
+  [
+   "Have you noticed it on **wet sand** too? Yes or no?",
+   "Have you noticed it on wet sand too? Yes or no?"
+  ],
+  [
+   "Follow for more of **how it really works.**",
+   "Follow for more of how it really works."
+  ]
+ ],
+ "fx_gain": 0.35,
+ "music_gain": 0.7,
+ "tail": 0.7
+}
