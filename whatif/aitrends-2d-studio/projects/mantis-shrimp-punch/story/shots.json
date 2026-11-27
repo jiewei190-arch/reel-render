@@ -1,0 +1,560 @@
+{
+ "duration": 42.3,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.74,
+   "line": "This shrimp punches so fast,",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.12,
+     "name": "toon3d:punch",
+     "gain": -9
+    },
+    {
+     "at": 0.62,
+     "name": "toon3d:punch",
+     "gain": -12
+    },
+    {
+     "at": 1.12,
+     "name": "toon3d:punch",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:splash",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.74,
+   "end": 3.56,
+   "line": "the water around it briefly boils.",
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:punch",
+     "gain": -10
+    },
+    {
+     "word": "boils",
+     "name": "toon3d:water",
+     "gain": -10
+    },
+    {
+     "word": "boils",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "boils",
+     "offset": 0.12,
+     "name": "toon3d:ding",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.56,
+   "end": 5.16,
+   "line": "Meet the peacock mantis shrimp.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "peacock",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "peacock",
+     "name": "toon3d:magic",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.16,
+   "end": 6.18,
+   "line": "Small, but it hits with",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:squeak",
+     "gain": -14
+    },
+    {
+     "word": "hits",
+     "name": "toon3d:punch",
+     "gain": -8
+    },
+    {
+     "word": "hits",
+     "name": "toon3d:whoosh",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.18,
+   "end": 8.02,
+   "line": "thousands of times its body weight.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s06",
+   "start": 8.02,
+   "end": 8.98,
+   "line": "Its club fires at",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "fires",
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "fires",
+     "offset": 0.05,
+     "name": "toon3d:punch",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 8.98,
+   "end": 11.0,
+   "line": "83 kilometers per hour. Scientists",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s08",
+   "start": 11.0,
+   "end": 13.82,
+   "line": "compare it to a bullet fired from a handgun.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "bullet",
+     "name": "toon3d:whoosh",
+     "gain": -6
+    },
+    {
+     "word": "fired",
+     "name": "toon3d:zap",
+     "gain": -14
+    },
+    {
+     "word": "handgun",
+     "name": "toon3d:ding",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 13.82,
+   "end": 15.12,
+   "line": "But here's the weird part.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "word": "weird",
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 15.12,
+   "end": 18.16,
+   "line": "The strike is so fast, the pressure around it crashes.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -15
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "word": "crashes",
+     "name": "toon3d:drop",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 18.16,
+   "end": 20.08,
+   "line": "The water turns into vapor bubbles.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -9
+    },
+    {
+     "word": "vapor",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "vapor",
+     "offset": 0.15,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.08,
+   "end": 22.86,
+   "line": "Like boiling, but from pressure, not heat.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "pressure",
+     "name": "toon3d:ding",
+     "gain": -13
+    },
+    {
+     "word": "heat",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.86,
+   "end": 24.74,
+   "line": "Then the bubbles collapse...",
+   "in": {
+    "type": "fade",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "word": "collapse",
+     "name": "toon3d:slide",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.74,
+   "end": 26.48,
+   "line": "and hit the target a second time.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "word": "hit",
+     "name": "toon3d:punch",
+     "gain": -7
+    },
+    {
+     "word": "second",
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "word": "second",
+     "name": "toon3d:crash",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 26.48,
+   "end": 28.04,
+   "line": "One punch, two hits.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s16",
+   "start": 28.04,
+   "end": 29.28,
+   "line": "But it gets stranger.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -13
+    },
+    {
+     "word": "stranger",
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 29.28,
+   "end": 32.4,
+   "line": "The collapsing bubbles give off a tiny flash of light.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -15
+    },
+    {
+     "word": "flash",
+     "name": "toon3d:zap",
+     "gain": -12
+    },
+    {
+     "word": "flash",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "light",
+     "name": "toon3d:chime",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 32.4,
+   "end": 34.08,
+   "line": "Snail shells crack like eggs.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "crack",
+     "name": "toon3d:punch",
+     "gain": -7
+    },
+    {
+     "word": "crack",
+     "name": "toon3d:crash",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 34.08,
+   "end": 36.9,
+   "line": "And the biggest ones can even break aquarium glass.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "glass",
+     "name": "toon3d:punch",
+     "gain": -7
+    },
+    {
+     "word": "glass",
+     "name": "toon3d:glass",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 36.9,
+   "end": 39.14,
+   "line": "So whatever you do...",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "word": "do",
+     "name": "toon3d:heartbeat",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 39.14,
+   "end": 41.04,
+   "line": "never tap on its tank.",
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:knock",
+     "gain": -10
+    },
+    {
+     "word": "tank",
+     "name": "toon3d:punch",
+     "gain": -7
+    },
+    {
+     "word": "tank",
+     "offset": 0.2,
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "never",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 41.04,
+   "end": 42.3,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "at": 0.95,
+     "name": "toon3d:punch",
+     "gain": -13
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:whoosh",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}
