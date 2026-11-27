@@ -1,0 +1,488 @@
+{
+ "duration": 44.16,
+ "generated_from": "lines.json + timeline/words.json (build_short.py time)",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.76,
+   "line": "This entire forest is actually one tree.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "tree",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.76,
+   "end": 3.94,
+   "line": "Every single trunk.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 0.65,
+     "name": "toon3d:pop",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.94,
+   "end": 7.18,
+   "line": "It's called Pando, a quaking aspen in Utah, and",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "pando",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "quaking",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 7.18,
+   "end": 10.02,
+   "line": "every trunk grows from one shared root system.",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:click",
+     "gain": -12
+    },
+    {
+     "word": "root",
+     "name": "toon3d:magic",
+     "gain": -11
+    },
+    {
+     "word": "root",
+     "name": "toon3d:stamp",
+     "gain": -9,
+     "offset": 0.05
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 10.02,
+   "end": 12.0,
+   "line": "That's about 47,000 trunks,",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:coins",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 12.0,
+   "end": 13.7,
+   "line": "all genetically identical.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:click",
+     "gain": -13
+    },
+    {
+     "word": "identical",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.7,
+   "end": 15.26,
+   "line": "But here's the wild part:",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "wild",
+     "name": "toon3d:gasp",
+     "gain": -10
+    },
+    {
+     "word": "wild",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.26,
+   "end": 18.06,
+   "line": "together, it weighs about 6,000 tonnes.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "tonnes",
+     "name": "toon3d:thud",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.06,
+   "end": 20.6,
+   "line": "That may make it the heaviest living thing on Earth.",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "heaviest",
+     "name": "toon3d:success",
+     "gain": -12
+    },
+    {
+     "word": "may",
+     "name": "toon3d:boing",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.6,
+   "end": 23.78,
+   "line": "Its age? Many articles said 80,000 years.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "age",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "many",
+     "name": "toon3d:paper",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.78,
+   "end": 25.52,
+   "line": "That's now considered way too old.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "word": "way",
+     "name": "toon3d:fail",
+     "gain": -10
+    },
+    {
+     "word": "old",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.52,
+   "end": 28.5,
+   "line": "Newer estimates say thousands of years,",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:click",
+     "gain": -13
+    },
+    {
+     "word": "thousands",
+     "name": "toon3d:stamp",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 28.5,
+   "end": 30.88,
+   "line": "maybe 9,000 to 16,000.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 30.88,
+   "end": 33.86,
+   "line": "But Pando is in trouble. It's shrinking.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -11
+    },
+    {
+     "word": "trouble",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "shrinking",
+     "name": "toon3d:slide",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 33.86,
+   "end": 36.42,
+   "line": "Deer and elk eat the young shoots before they can grow,",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "young",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "shoots",
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "word": "before",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 36.42,
+   "end": 39.06,
+   "line": "so old trunks die with nothing to replace them.",
+   "in": {
+    "type": "fade"
+   },
+   "sfx": [
+    {
+     "word": "old",
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "word": "die",
+     "name": "toon3d:thud",
+     "gain": -12
+    },
+    {
+     "word": "nothing",
+     "name": "toon3d:wind",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 39.06,
+   "end": 41.0,
+   "line": "Fences now protect most of it... but",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:sparkle",
+     "gain": -13
+    },
+    {
+     "word": "fences",
+     "name": "toon3d:metal",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 41.0,
+   "end": 42.62,
+   "line": "some deer just jump over.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "jump",
+     "name": "toon3d:boing",
+     "gain": -6
+    },
+    {
+     "word": "jump",
+     "name": "toon3d:whoosh",
+     "gain": -10,
+     "offset": 0.1
+    },
+    {
+     "word": "over",
+     "name": "toon3d:laugh",
+     "gain": -16,
+     "offset": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 42.62,
+   "end": 44.16,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}

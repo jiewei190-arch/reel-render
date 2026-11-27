@@ -1,0 +1,194 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 48.059,
+ "render_s": 760.7,
+ "qa_fail_lines": [
+  4
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This entire forest is actually one tree. Every single trunk.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "This entire forest is actually one tree. Every single trunk.",
+     "seed": 7,
+     "heard": "This entire forest is actually one tree, every single trunk.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.363
+  },
+  {
+   "n": 2,
+   "text": "It's called Pando, a quaking aspen in Utah, and every trunk grows from one shared root system.",
+   "start": 4.663,
+   "parts": [
+    {
+     "tts": "It's called Pando, a quaking aspen in Utah, and every trunk grows from one shared root system.",
+     "seed": 7,
+     "heard": "It's called Pando, a quaking aspen in Utah, and every trunk grows from one shared root system.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.813
+  },
+  {
+   "n": 3,
+   "text": "That's about forty-seven thousand trunks, all genetically identical.",
+   "start": 11.113,
+   "parts": [
+    {
+     "tts": "That's about forty-seven thousand trunks, all genetically identical.",
+     "seed": 7,
+     "heard": "That's about 47,000 trunks, all genetically identical.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.748
+  },
+  {
+   "n": 4,
+   "text": "But here's the wild part: together, it weighs about six thousand tonnes.",
+   "start": 15.048,
+   "parts": [
+    {
+     "tts": "But here's the wild part: together, it weighs about six thousand tonnes.",
+     "seed": 7,
+     "heard": "But here's the wild part. Together, it weighs about 6,000 tons.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 19.414
+  },
+  {
+   "n": 5,
+   "text": "That may make it the heaviest living thing on Earth.",
+   "start": 19.714,
+   "parts": [
+    {
+     "tts": "That may make it the heaviest living thing on Earth.",
+     "seed": 7,
+     "heard": "That may make it the heaviest living thing on Earth.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 22.025
+  },
+  {
+   "n": 6,
+   "text": "Its age? Many articles said eighty thousand years. That's now considered way too old.",
+   "start": 22.325,
+   "parts": [
+    {
+     "tts": "Its age? Many articles said eighty thousand years. That's now considered way too old.",
+     "seed": 7,
+     "heard": "its age?\" many articles said 80,000 years. That's now considered way too old.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.012
+  },
+  {
+   "n": 7,
+   "text": "Newer estimates say thousands of years, maybe nine to sixteen thousand.",
+   "start": 28.312,
+   "parts": [
+    {
+     "tts": "Newer estimates say thousands of years, maybe nine to sixteen thousand.",
+     "seed": 11,
+     "heard": "Newer estimates say thousands of years, maybe 9 to 16,000.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.262
+  },
+  {
+   "n": 8,
+   "text": "But Pando is in trouble. It's shrinking.",
+   "start": 33.562,
+   "parts": [
+    {
+     "tts": "But Pando is in trouble. It's shrinking.",
+     "seed": 7,
+     "heard": "But Pando is in trouble. It's shrinking.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.138
+  },
+  {
+   "n": 9,
+   "text": "Deer and elk eat the young shoots before they can grow, so old trunks die with nothing to replace them.",
+   "start": 36.438,
+   "parts": [
+    {
+     "tts": "Deer and elk eat the young shoots before they can grow, so old trunks die with nothing to replace them.",
+     "seed": 7,
+     "heard": "Deer and elk eat the young shoots before they can grow, so old trunks die with nothing to replace them.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.781
+  },
+  {
+   "n": 10,
+   "text": "Fences now protect most of it... but some deer just jump over.",
+   "start": 42.081,
+   "parts": [
+    {
+     "tts": "Fences now protect most of it...",
+     "seed": 7,
+     "heard": "Fences now protect most of it.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "but some deer just jump over.",
+     "seed": 7,
+     "heard": "But some deer just jump over.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 46.153
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 46.453,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 47.759
+  }
+ ]
+}
