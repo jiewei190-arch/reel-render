@@ -1,0 +1,48 @@
+{
+ "title": "The Naked Mole-Rat Barely Ages",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 42.8,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "ages",
+   "cancer",
+   "naked",
+   "teeth",
+   "four",
+   "30",
+   "crazy",
+   "age",
+   "single",
+   "ants",
+   "queen",
+   "babies",
+   "18",
+   "zero",
+   "oxygen",
+   "fructose",
+   "sugar",
+   "aging",
+   "us"
+  ]
+ }
+}
