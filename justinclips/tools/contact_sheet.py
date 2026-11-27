@@ -21,7 +21,8 @@ def grab(t, name):
 
 def last_frame():
     p = os.path.join(tmp, 'last.png')
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-sseof', '-0.1', '-i', vid, '-update', '1', p], check=True)
+    n = int(subprocess.check_output(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-count_frames', '-show_entries', 'stream=nb_read_frames', '-of', 'csv=p=0', vid]).decode().strip().split(',')[0])
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', vid, '-vf', f'select=eq(n\\,{n - 1})', '-vsync', '0', '-frames:v', '1', p], check=True)
     return Image.open(p).convert('RGB')
 
 def ui(im):
