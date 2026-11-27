@@ -1,0 +1,198 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 40.265,
+ "render_s": 264.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "If the Moon vanished tonight, tides would shrink to about a third.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "If the Moon vanished tonight, tides would shrink to about a third.",
+     "seed": 7,
+     "heard": "If the moon vanished tonight, tides would shrink to about a third.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.215
+  },
+  {
+   "n": 2,
+   "text": "Relax, it's only a thought experiment. Here's what scientists say would happen.",
+   "start": 3.395,
+   "parts": [
+    {
+     "tts": "Relax, it's only a thought experiment. Here's what scientists say would happen.",
+     "seed": 7,
+     "heard": "Relax, it's only a thought experiment. Here's what scientists say would happen.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.193
+  },
+  {
+   "n": 3,
+   "text": "First, nights get darker, like a new moon every single night.",
+   "start": 7.473,
+   "parts": [
+    {
+     "tts": "First, nights get darker, like a new moon every single night.",
+     "seed": 7,
+     "heard": "First, nights get darker, like a new moon every single night.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.233
+  },
+  {
+   "n": 4,
+   "text": "But the tides are the big one. The Moon does most of the pulling.",
+   "start": 11.663,
+   "parts": [
+    {
+     "tts": "But the tides are the big one. The Moon does most of the pulling.",
+     "seed": 7,
+     "heard": "But the tides are the big one. The moon does most of the pulling.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 15.14
+  },
+  {
+   "n": 5,
+   "text": "The Sun makes tides too, but it pulls less than half as hard.",
+   "start": 15.42,
+   "parts": [
+    {
+     "tts": "The Sun makes tides too, but it pulls less than half as hard.",
+     "seed": 7,
+     "heard": "The sun makes tides too, but it pulls less than half as hard.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.628
+  },
+  {
+   "n": 6,
+   "text": "So every tide would be roughly a third of today's.",
+   "start": 18.808,
+   "parts": [
+    {
+     "tts": "So every tide would be roughly a third of today's.",
+     "seed": 11,
+     "heard": "so every tide would be roughly a third of today's.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.401
+  },
+  {
+   "n": 7,
+   "text": "But animals would get confused. Some dung beetles steer by moonlight.",
+   "start": 21.831,
+   "parts": [
+    {
+     "tts": "But animals would get confused. Some dung beetles steer by moonlight.",
+     "seed": 7,
+     "heard": "But animals would get confused, some dung beetles steer by moonlight.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.547
+  },
+  {
+   "n": 8,
+   "text": "They'd have to switch to steering by the Milky Way instead.",
+   "start": 25.727,
+   "parts": [
+    {
+     "tts": "They'd have to switch to steering by the Milky Way instead.",
+     "seed": 7,
+     "heard": "they'd have to switch to steering by the Milky Way instead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.257
+  },
+  {
+   "n": 9,
+   "text": "But the strangest part is slow. Over a few hundred thousand years, Earth's tilt could wobble.",
+   "start": 28.737,
+   "parts": [
+    {
+     "tts": "But the strangest part is slow. Over a few hundred thousand years, Earth's tilt could wobble.",
+     "seed": 7,
+     "heard": "But the strangest part is slow. Over a few hundred thousand years, Earth's tilt could wobble.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.776
+  },
+  {
+   "n": 10,
+   "text": "Mars has no big moon... and its tilt swings by up to sixty degrees.",
+   "start": 34.156,
+   "parts": [
+    {
+     "tts": "Mars has no big moon...",
+     "seed": 7,
+     "heard": "Mars has no big moon.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and its tilt swings by up to sixty degrees.",
+     "seed": 7,
+     "heard": "and its tilt swings by up to 60 degrees.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.45
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 38.93,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.165
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.18,
+  "max_internal_silence": 0.32
+ }
+}
