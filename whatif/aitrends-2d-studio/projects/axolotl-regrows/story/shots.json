@@ -1,0 +1,541 @@
+{
+ "duration": 41.55,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.38,
+   "line": "This salamander regrows its legs,",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:magic",
+     "gain": -14
+    },
+    {
+     "word": "legs",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.38,
+   "end": 3.28,
+   "line": "its heart,",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:heartbeat",
+     "gain": -8
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:zap",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.28,
+   "end": 4.88,
+   "line": "even parts of its brain.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "brain",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "word": "brain",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.88,
+   "end": 6.36,
+   "line": "Meet the axolotl,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -11
+    },
+    {
+     "word": "axolotl",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.36,
+   "end": 8.06,
+   "line": "the salamander that never grows up.",
+   "sfx": [
+    {
+     "word": "never",
+     "name": "toon3d:squeak",
+     "gain": -12
+    },
+    {
+     "word": "never",
+     "offset": 0.05,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.06,
+   "end": 10.0,
+   "line": "It keeps its larval body for life,",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -13
+    },
+    {
+     "word": "larval",
+     "offset": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.0,
+   "end": 11.14,
+   "line": "frilly gills and all.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "gills",
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 11.14,
+   "end": 12.0,
+   "line": "Lose a leg?",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "leg",
+     "name": "toon3d:pop",
+     "gain": -7
+    },
+    {
+     "word": "leg",
+     "offset": 0.15,
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 12.0,
+   "end": 14.38,
+   "line": "A new one grows back within months.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "word": "months",
+     "name": "toon3d:magic",
+     "gain": -10
+    },
+    {
+     "word": "months",
+     "offset": 0.3,
+     "name": "toon3d:success",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 14.38,
+   "end": 15.92,
+   "line": "But that's just the start.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:click",
+     "gain": -12
+    },
+    {
+     "word": "start",
+     "name": "toon3d:sparkle",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 15.92,
+   "end": 17.96,
+   "line": "Its tail, its spinal cord,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:magic",
+     "gain": -12
+    },
+    {
+     "word": "spinal",
+     "name": "toon3d:zap",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 17.96,
+   "end": 20.68,
+   "line": "even parts of its heart grow back, without scars.",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:heartbeat",
+     "gain": -8
+    },
+    {
+     "word": "scars",
+     "name": "toon3d:success",
+     "gain": -12
+    },
+    {
+     "word": "scars",
+     "name": "toon3d:ding",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 20.68,
+   "end": 22.0,
+   "line": "But here's the wild part.",
+   "in": {
+    "type": "iris",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -13
+    },
+    {
+     "word": "wild",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 22.0,
+   "end": 24.2,
+   "line": "It can rebuild parts of its brain.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s15",
+   "start": 24.2,
+   "end": 25.16,
+   "line": "Scientists study it, hoping",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:slide",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 25.16,
+   "end": 27.24,
+   "line": "humans could one day heal like this.",
+   "sfx": [
+    {
+     "word": "heal",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "heal",
+     "offset": 0.2,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 27.24,
+   "end": 28.52,
+   "line": "But in the wild,",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 28.52,
+   "end": 30.64,
+   "line": "the axolotl is critically endangered.",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:alarm",
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s19",
+   "start": 30.64,
+   "end": 33.1,
+   "line": "It's down to a few canals near Mexico City,",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:wind",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 33.1,
+   "end": 35.1,
+   "line": "with maybe 50 to 1,000",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -7
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:tick",
+     "gain": -14
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s20b",
+   "start": 35.1,
+   "end": 36.54,
+   "line": "adults left.",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -15
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:heartbeat",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 36.54,
+   "end": 38.74,
+   "line": "It can regrow parts of its brain...",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -14
+    },
+    {
+     "word": "brain",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 38.74,
+   "end": 39.92,
+   "line": "but not its home.",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "home",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 39.92,
+   "end": 41.55,
+   "line": "Subscribe for more.",
+   "in": {
+    "type": "fade",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "at": 1.2,
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  }
+ ]
+}

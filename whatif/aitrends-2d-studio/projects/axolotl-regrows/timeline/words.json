@@ -1,0 +1,620 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "This",
+   "start": 0.0,
+   "end": 0.3
+  },
+  {
+   "word": "salamander",
+   "start": 0.3,
+   "end": 0.92
+  },
+  {
+   "word": "regrows",
+   "start": 0.92,
+   "end": 1.38
+  },
+  {
+   "word": "its",
+   "start": 1.38,
+   "end": 1.66
+  },
+  {
+   "word": "legs,",
+   "start": 1.66,
+   "end": 1.98
+  },
+  {
+   "word": "its",
+   "start": 2.44,
+   "end": 2.56
+  },
+  {
+   "word": "heart,",
+   "start": 2.56,
+   "end": 2.88
+  },
+  {
+   "word": "even",
+   "start": 3.34,
+   "end": 3.52
+  },
+  {
+   "word": "parts",
+   "start": 3.52,
+   "end": 3.78
+  },
+  {
+   "word": "of",
+   "start": 3.78,
+   "end": 3.96
+  },
+  {
+   "word": "its",
+   "start": 3.96,
+   "end": 4.12
+  },
+  {
+   "word": "brain.",
+   "start": 4.12,
+   "end": 4.42
+  },
+  {
+   "word": "Meet",
+   "start": 4.94,
+   "end": 5.1
+  },
+  {
+   "word": "the",
+   "start": 5.1,
+   "end": 5.32
+  },
+  {
+   "word": "axolotl,",
+   "start": 5.32,
+   "end": 6.0
+  },
+  {
+   "word": "the",
+   "start": 6.42,
+   "end": 6.48
+  },
+  {
+   "word": "salamander",
+   "start": 6.48,
+   "end": 7.04
+  },
+  {
+   "word": "that",
+   "start": 7.04,
+   "end": 7.2
+  },
+  {
+   "word": "never",
+   "start": 7.2,
+   "end": 7.4
+  },
+  {
+   "word": "grows",
+   "start": 7.4,
+   "end": 7.62
+  },
+  {
+   "word": "up.",
+   "start": 7.62,
+   "end": 7.88
+  },
+  {
+   "word": "It",
+   "start": 8.12,
+   "end": 8.22
+  },
+  {
+   "word": "keeps",
+   "start": 8.22,
+   "end": 8.42
+  },
+  {
+   "word": "its",
+   "start": 8.42,
+   "end": 8.62
+  },
+  {
+   "word": "larval",
+   "start": 8.62,
+   "end": 8.92
+  },
+  {
+   "word": "body",
+   "start": 8.92,
+   "end": 9.14
+  },
+  {
+   "word": "for",
+   "start": 9.14,
+   "end": 9.36
+  },
+  {
+   "word": "life,",
+   "start": 9.36,
+   "end": 9.64
+  },
+  {
+   "word": "frilly",
+   "start": 10.06,
+   "end": 10.18
+  },
+  {
+   "word": "gills",
+   "start": 10.18,
+   "end": 10.44
+  },
+  {
+   "word": "and",
+   "start": 10.44,
+   "end": 10.58
+  },
+  {
+   "word": "all.",
+   "start": 10.58,
+   "end": 10.8
+  },
+  {
+   "word": "Lose",
+   "start": 11.2,
+   "end": 11.32
+  },
+  {
+   "word": "a",
+   "start": 11.32,
+   "end": 11.48
+  },
+  {
+   "word": "leg?",
+   "start": 11.48,
+   "end": 11.72
+  },
+  {
+   "word": "A",
+   "start": 12.06,
+   "end": 12.22
+  },
+  {
+   "word": "new",
+   "start": 12.22,
+   "end": 12.38
+  },
+  {
+   "word": "one",
+   "start": 12.38,
+   "end": 12.52
+  },
+  {
+   "word": "grows",
+   "start": 12.52,
+   "end": 12.72
+  },
+  {
+   "word": "back",
+   "start": 12.72,
+   "end": 13.1
+  },
+  {
+   "word": "within",
+   "start": 13.1,
+   "end": 13.42
+  },
+  {
+   "word": "months.",
+   "start": 13.42,
+   "end": 13.82
+  },
+  {
+   "word": "But",
+   "start": 14.44,
+   "end": 14.58
+  },
+  {
+   "word": "that's",
+   "start": 14.58,
+   "end": 14.82
+  },
+  {
+   "word": "just",
+   "start": 14.82,
+   "end": 15.0
+  },
+  {
+   "word": "the",
+   "start": 15.0,
+   "end": 15.2
+  },
+  {
+   "word": "start.",
+   "start": 15.2,
+   "end": 15.54
+  },
+  {
+   "word": "Its",
+   "start": 15.98,
+   "end": 16.14
+  },
+  {
+   "word": "tail,",
+   "start": 16.14,
+   "end": 16.48
+  },
+  {
+   "word": "its",
+   "start": 16.82,
+   "end": 16.94
+  },
+  {
+   "word": "spinal",
+   "start": 16.94,
+   "end": 17.26
+  },
+  {
+   "word": "cord,",
+   "start": 17.26,
+   "end": 17.56
+  },
+  {
+   "word": "even",
+   "start": 18.02,
+   "end": 18.2
+  },
+  {
+   "word": "parts",
+   "start": 18.2,
+   "end": 18.44
+  },
+  {
+   "word": "of",
+   "start": 18.44,
+   "end": 18.58
+  },
+  {
+   "word": "its",
+   "start": 18.58,
+   "end": 18.7
+  },
+  {
+   "word": "heart",
+   "start": 18.7,
+   "end": 18.96
+  },
+  {
+   "word": "grow",
+   "start": 18.96,
+   "end": 19.14
+  },
+  {
+   "word": "back,",
+   "start": 19.14,
+   "end": 19.42
+  },
+  {
+   "word": "without",
+   "start": 19.42,
+   "end": 19.68
+  },
+  {
+   "word": "scars.",
+   "start": 19.68,
+   "end": 20.06
+  },
+  {
+   "word": "But",
+   "start": 20.74,
+   "end": 20.86
+  },
+  {
+   "word": "here's",
+   "start": 20.86,
+   "end": 21.08
+  },
+  {
+   "word": "the",
+   "start": 21.08,
+   "end": 21.2
+  },
+  {
+   "word": "wild",
+   "start": 21.2,
+   "end": 21.42
+  },
+  {
+   "word": "part.",
+   "start": 21.42,
+   "end": 21.74
+  },
+  {
+   "word": "It",
+   "start": 22.06,
+   "end": 22.16
+  },
+  {
+   "word": "can",
+   "start": 22.16,
+   "end": 22.3
+  },
+  {
+   "word": "rebuild",
+   "start": 22.3,
+   "end": 22.64
+  },
+  {
+   "word": "parts",
+   "start": 22.64,
+   "end": 22.94
+  },
+  {
+   "word": "of",
+   "start": 22.94,
+   "end": 23.08
+  },
+  {
+   "word": "its",
+   "start": 23.08,
+   "end": 23.22
+  },
+  {
+   "word": "brain.",
+   "start": 23.22,
+   "end": 23.5
+  },
+  {
+   "word": "Scientists",
+   "start": 24.26,
+   "end": 24.26
+  },
+  {
+   "word": "study",
+   "start": 24.26,
+   "end": 24.6
+  },
+  {
+   "word": "it,",
+   "start": 24.6,
+   "end": 24.8
+  },
+  {
+   "word": "hoping",
+   "start": 25.0,
+   "end": 25.22
+  },
+  {
+   "word": "humans",
+   "start": 25.22,
+   "end": 25.54
+  },
+  {
+   "word": "could",
+   "start": 25.54,
+   "end": 25.7
+  },
+  {
+   "word": "one",
+   "start": 25.7,
+   "end": 25.86
+  },
+  {
+   "word": "day",
+   "start": 25.86,
+   "end": 26.02
+  },
+  {
+   "word": "heal",
+   "start": 26.02,
+   "end": 26.2
+  },
+  {
+   "word": "like",
+   "start": 26.2,
+   "end": 26.42
+  },
+  {
+   "word": "this.",
+   "start": 26.42,
+   "end": 26.74
+  },
+  {
+   "word": "But",
+   "start": 27.3,
+   "end": 27.62
+  },
+  {
+   "word": "in",
+   "start": 27.62,
+   "end": 27.74
+  },
+  {
+   "word": "the",
+   "start": 27.74,
+   "end": 27.86
+  },
+  {
+   "word": "wild,",
+   "start": 27.86,
+   "end": 28.16
+  },
+  {
+   "word": "the",
+   "start": 28.58,
+   "end": 28.64
+  },
+  {
+   "word": "axolotl",
+   "start": 28.64,
+   "end": 29.22
+  },
+  {
+   "word": "is",
+   "start": 29.22,
+   "end": 29.38
+  },
+  {
+   "word": "critically",
+   "start": 29.38,
+   "end": 29.68
+  },
+  {
+   "word": "endangered.",
+   "start": 29.68,
+   "end": 30.26
+  },
+  {
+   "word": "It's",
+   "start": 30.7,
+   "end": 30.86
+  },
+  {
+   "word": "down",
+   "start": 30.86,
+   "end": 31.04
+  },
+  {
+   "word": "to",
+   "start": 31.04,
+   "end": 31.18
+  },
+  {
+   "word": "a",
+   "start": 31.18,
+   "end": 31.28
+  },
+  {
+   "word": "few",
+   "start": 31.28,
+   "end": 31.42
+  },
+  {
+   "word": "canals",
+   "start": 31.42,
+   "end": 31.8
+  },
+  {
+   "word": "near",
+   "start": 31.8,
+   "end": 32.0
+  },
+  {
+   "word": "Mexico",
+   "start": 32.0,
+   "end": 32.32
+  },
+  {
+   "word": "City,",
+   "start": 32.32,
+   "end": 32.74
+  },
+  {
+   "word": "with",
+   "start": 33.16,
+   "end": 33.28
+  },
+  {
+   "word": "maybe",
+   "start": 33.28,
+   "end": 33.68
+  },
+  {
+   "word": "50",
+   "start": 33.68,
+   "end": 34.08
+  },
+  {
+   "word": "to",
+   "start": 34.08,
+   "end": 34.48
+  },
+  {
+   "word": "1,000",
+   "start": 34.48,
+   "end": 35.16
+  },
+  {
+   "word": "adults",
+   "start": 35.16,
+   "end": 35.44
+  },
+  {
+   "word": "left.",
+   "start": 35.44,
+   "end": 35.82
+  },
+  {
+   "word": "It",
+   "start": 36.6,
+   "end": 36.74
+  },
+  {
+   "word": "can",
+   "start": 36.74,
+   "end": 36.9
+  },
+  {
+   "word": "regrow",
+   "start": 36.9,
+   "end": 37.32
+  },
+  {
+   "word": "parts",
+   "start": 37.32,
+   "end": 37.62
+  },
+  {
+   "word": "of",
+   "start": 37.62,
+   "end": 37.8
+  },
+  {
+   "word": "its",
+   "start": 37.8,
+   "end": 37.94
+  },
+  {
+   "word": "brain...",
+   "start": 37.94,
+   "end": 38.26
+  },
+  {
+   "word": "but",
+   "start": 38.8,
+   "end": 38.92
+  },
+  {
+   "word": "not",
+   "start": 38.92,
+   "end": 39.1
+  },
+  {
+   "word": "its",
+   "start": 39.1,
+   "end": 39.26
+  },
+  {
+   "word": "home.",
+   "start": 39.26,
+   "end": 39.54
+  },
+  {
+   "word": "Subscribe",
+   "start": 39.98,
+   "end": 40.3
+  },
+  {
+   "word": "for",
+   "start": 40.3,
+   "end": 40.68
+  },
+  {
+   "word": "more.",
+   "start": 40.68,
+   "end": 40.9
+  }
+ ]
+}

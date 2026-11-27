@@ -1,0 +1,48 @@
+{
+ "title": "The Axolotl Regrows",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.55,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -5
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "regrows",
+   "heart",
+   "brain",
+   "axolotl",
+   "larval",
+   "gills",
+   "leg",
+   "months",
+   "tail",
+   "spinal",
+   "scars",
+   "wild",
+   "scientists",
+   "heal",
+   "critically",
+   "endangered",
+   "50",
+   "1000",
+   "home"
+  ]
+ }
+}
