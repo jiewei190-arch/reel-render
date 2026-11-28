@@ -1,0 +1,51 @@
+{
+ "title": "Wrong Way Corrigan",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.07,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "ireland",
+   "california",
+   "1938",
+   "atlantic",
+   "no",
+   "nineyearold",
+   "radio",
+   "tanks",
+   "view",
+   "17th",
+   "west",
+   "east",
+   "28",
+   "dublin",
+   "clouds",
+   "compass",
+   "suspended",
+   "home",
+   "tickertape",
+   "parade",
+   "never",
+   "thing"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}
