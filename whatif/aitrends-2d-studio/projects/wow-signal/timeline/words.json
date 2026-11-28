@@ -1,0 +1,605 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "1977,",
+   "start": 0.18,
+   "end": 0.92
+  },
+  {
+   "word": "a",
+   "start": 1.68,
+   "end": 1.7
+  },
+  {
+   "word": "telescope",
+   "start": 1.7,
+   "end": 2.08
+  },
+  {
+   "word": "caught",
+   "start": 2.08,
+   "end": 2.36
+  },
+  {
+   "word": "a",
+   "start": 2.36,
+   "end": 2.52
+  },
+  {
+   "word": "signal",
+   "start": 2.52,
+   "end": 2.76
+  },
+  {
+   "word": "so",
+   "start": 2.76,
+   "end": 3.0
+  },
+  {
+   "word": "weird",
+   "start": 3.0,
+   "end": 3.3
+  },
+  {
+   "word": "someone",
+   "start": 3.48,
+   "end": 3.62
+  },
+  {
+   "word": "wrote",
+   "start": 3.62,
+   "end": 3.94
+  },
+  {
+   "word": "\"Wow!\"",
+   "start": 4.44,
+   "end": 4.44
+  },
+  {
+   "word": "Ohio's",
+   "start": 5.12,
+   "end": 5.36
+  },
+  {
+   "word": "Big",
+   "start": 5.36,
+   "end": 5.48
+  },
+  {
+   "word": "Ear",
+   "start": 5.48,
+   "end": 5.7
+  },
+  {
+   "word": "radio",
+   "start": 5.7,
+   "end": 6.02
+  },
+  {
+   "word": "telescope",
+   "start": 6.02,
+   "end": 6.54
+  },
+  {
+   "word": "was",
+   "start": 6.54,
+   "end": 6.8
+  },
+  {
+   "word": "listening",
+   "start": 6.8,
+   "end": 7.1
+  },
+  {
+   "word": "for",
+   "start": 7.1,
+   "end": 7.36
+  },
+  {
+   "word": "alien",
+   "start": 7.36,
+   "end": 7.6
+  },
+  {
+   "word": "signals.",
+   "start": 7.6,
+   "end": 8.1
+  },
+  {
+   "word": "Its",
+   "start": 8.56,
+   "end": 8.66
+  },
+  {
+   "word": "printout",
+   "start": 8.66,
+   "end": 9.04
+  },
+  {
+   "word": "was",
+   "start": 9.04,
+   "end": 9.22
+  },
+  {
+   "word": "code:",
+   "start": 9.22,
+   "end": 9.54
+  },
+  {
+   "word": "numbers",
+   "start": 10.24,
+   "end": 10.24
+  },
+  {
+   "word": "meant",
+   "start": 10.24,
+   "end": 10.42
+  },
+  {
+   "word": "weak,",
+   "start": 10.42,
+   "end": 10.76
+  },
+  {
+   "word": "letters",
+   "start": 11.28,
+   "end": 11.28
+  },
+  {
+   "word": "meant",
+   "start": 11.28,
+   "end": 11.52
+  },
+  {
+   "word": "strong.",
+   "start": 11.52,
+   "end": 11.9
+  },
+  {
+   "word": "Then,",
+   "start": 12.36,
+   "end": 12.58
+  },
+  {
+   "word": "on",
+   "start": 12.74,
+   "end": 12.88
+  },
+  {
+   "word": "August",
+   "start": 12.88,
+   "end": 13.1
+  },
+  {
+   "word": "15,",
+   "start": 13.1,
+   "end": 13.54
+  },
+  {
+   "word": "it",
+   "start": 13.7,
+   "end": 13.8
+  },
+  {
+   "word": "printed:",
+   "start": 13.8,
+   "end": 14.18
+  },
+  {
+   "word": "6,",
+   "start": 14.18,
+   "end": 14.593
+  },
+  {
+   "word": "E,",
+   "start": 14.593,
+   "end": 15.007
+  },
+  {
+   "word": "Q,",
+   "start": 15.007,
+   "end": 15.42
+  },
+  {
+   "word": "U,",
+   "start": 15.42,
+   "end": 15.833
+  },
+  {
+   "word": "J,",
+   "start": 15.833,
+   "end": 16.247
+  },
+  {
+   "word": "5.",
+   "start": 16.247,
+   "end": 16.66
+  },
+  {
+   "word": "That",
+   "start": 16.66,
+   "end": 16.82
+  },
+  {
+   "word": "U",
+   "start": 16.82,
+   "end": 17.08
+  },
+  {
+   "word": "was",
+   "start": 17.08,
+   "end": 17.32
+  },
+  {
+   "word": "about",
+   "start": 17.32,
+   "end": 17.54
+  },
+  {
+   "word": "30",
+   "start": 17.54,
+   "end": 17.78
+  },
+  {
+   "word": "standard",
+   "start": 17.78,
+   "end": 18.14
+  },
+  {
+   "word": "deviations",
+   "start": 18.14,
+   "end": 18.58
+  },
+  {
+   "word": "above",
+   "start": 18.58,
+   "end": 18.92
+  },
+  {
+   "word": "the",
+   "start": 18.92,
+   "end": 19.08
+  },
+  {
+   "word": "noise.",
+   "start": 19.08,
+   "end": 19.36
+  },
+  {
+   "word": "Days",
+   "start": 20.02,
+   "end": 20.14
+  },
+  {
+   "word": "later,",
+   "start": 20.14,
+   "end": 20.48
+  },
+  {
+   "word": "Jerry",
+   "start": 20.64,
+   "end": 20.74
+  },
+  {
+   "word": "Ehman",
+   "start": 20.74,
+   "end": 21.04
+  },
+  {
+   "word": "circled",
+   "start": 21.04,
+   "end": 21.34
+  },
+  {
+   "word": "it",
+   "start": 21.34,
+   "end": 21.62
+  },
+  {
+   "word": "and",
+   "start": 21.62,
+   "end": 21.82
+  },
+  {
+   "word": "wrote:",
+   "start": 21.82,
+   "end": 22.0
+  },
+  {
+   "word": "\"Wow!\"",
+   "start": 22.5,
+   "end": 22.5
+  },
+  {
+   "word": "It",
+   "start": 22.94,
+   "end": 23.0
+  },
+  {
+   "word": "lasted",
+   "start": 23.0,
+   "end": 23.24
+  },
+  {
+   "word": "72",
+   "start": 23.24,
+   "end": 23.82
+  },
+  {
+   "word": "seconds,",
+   "start": 23.82,
+   "end": 24.36
+  },
+  {
+   "word": "exactly",
+   "start": 24.76,
+   "end": 25.06
+  },
+  {
+   "word": "as",
+   "start": 25.06,
+   "end": 25.34
+  },
+  {
+   "word": "long",
+   "start": 25.34,
+   "end": 25.52
+  },
+  {
+   "word": "as",
+   "start": 25.52,
+   "end": 25.72
+  },
+  {
+   "word": "Big",
+   "start": 25.72,
+   "end": 25.86
+  },
+  {
+   "word": "Ear",
+   "start": 25.86,
+   "end": 26.0
+  },
+  {
+   "word": "could",
+   "start": 26.0,
+   "end": 26.18
+  },
+  {
+   "word": "watch",
+   "start": 26.18,
+   "end": 26.38
+  },
+  {
+   "word": "one",
+   "start": 26.38,
+   "end": 26.58
+  },
+  {
+   "word": "spot.",
+   "start": 26.58,
+   "end": 26.92
+  },
+  {
+   "word": "They",
+   "start": 26.92,
+   "end": 27.52
+  },
+  {
+   "word": "listened",
+   "start": 27.52,
+   "end": 27.76
+  },
+  {
+   "word": "again",
+   "start": 27.76,
+   "end": 28.06
+  },
+  {
+   "word": "for",
+   "start": 28.06,
+   "end": 28.26
+  },
+  {
+   "word": "decades.",
+   "start": 28.26,
+   "end": 28.54
+  },
+  {
+   "word": "Nothing.",
+   "start": 29.2,
+   "end": 29.42
+  },
+  {
+   "word": "Comets",
+   "start": 30.1,
+   "end": 30.22
+  },
+  {
+   "word": "got",
+   "start": 30.22,
+   "end": 30.34
+  },
+  {
+   "word": "blamed.",
+   "start": 30.34,
+   "end": 30.64
+  },
+  {
+   "word": "Astronomers",
+   "start": 31.2,
+   "end": 31.44
+  },
+  {
+   "word": "said",
+   "start": 31.44,
+   "end": 31.72
+  },
+  {
+   "word": "nope.",
+   "start": 31.72,
+   "end": 32.08
+  },
+  {
+   "word": "But",
+   "start": 32.68,
+   "end": 32.92
+  },
+  {
+   "word": "here's",
+   "start": 32.92,
+   "end": 33.42
+  },
+  {
+   "word": "the",
+   "start": 33.42,
+   "end": 33.52
+  },
+  {
+   "word": "part...",
+   "start": 33.52,
+   "end": 33.72
+  },
+  {
+   "word": "a",
+   "start": 34.18,
+   "end": 34.26
+  },
+  {
+   "word": "2024",
+   "start": 34.26,
+   "end": 34.74
+  },
+  {
+   "word": "study",
+   "start": 34.74,
+   "end": 35.34
+  },
+  {
+   "word": "says",
+   "start": 35.34,
+   "end": 35.66
+  },
+  {
+   "word": "a",
+   "start": 35.66,
+   "end": 35.96
+  },
+  {
+   "word": "cold",
+   "start": 35.96,
+   "end": 36.22
+  },
+  {
+   "word": "hydrogen",
+   "start": 36.22,
+   "end": 36.6
+  },
+  {
+   "word": "cloud",
+   "start": 36.6,
+   "end": 36.98
+  },
+  {
+   "word": "may",
+   "start": 36.98,
+   "end": 37.16
+  },
+  {
+   "word": "have",
+   "start": 37.16,
+   "end": 37.3
+  },
+  {
+   "word": "suddenly",
+   "start": 37.3,
+   "end": 37.58
+  },
+  {
+   "word": "flared.",
+   "start": 37.58,
+   "end": 37.92
+  },
+  {
+   "word": "Still",
+   "start": 38.44,
+   "end": 38.56
+  },
+  {
+   "word": "unconfirmed.",
+   "start": 38.56,
+   "end": 39.06
+  },
+  {
+   "word": "But",
+   "start": 39.72,
+   "end": 39.86
+  },
+  {
+   "word": "in",
+   "start": 39.86,
+   "end": 39.96
+  },
+  {
+   "word": "2012,",
+   "start": 39.96,
+   "end": 40.38
+  },
+  {
+   "word": "someone",
+   "start": 40.62,
+   "end": 40.72
+  },
+  {
+   "word": "replied",
+   "start": 40.72,
+   "end": 41.04
+  },
+  {
+   "word": "anyway...",
+   "start": 41.04,
+   "end": 41.5
+  },
+  {
+   "word": "with",
+   "start": 42.2,
+   "end": 42.28
+  },
+  {
+   "word": "over",
+   "start": 42.28,
+   "end": 42.62
+  },
+  {
+   "word": "10,000",
+   "start": 42.62,
+   "end": 43.16
+  },
+  {
+   "word": "tweets.",
+   "start": 43.16,
+   "end": 43.4
+  },
+  {
+   "word": "Subscribe",
+   "start": 44.16,
+   "end": 44.48
+  },
+  {
+   "word": "for",
+   "start": 44.48,
+   "end": 44.82
+  },
+  {
+   "word": "more.",
+   "start": 44.82,
+   "end": 45.04
+  }
+ ]
+}

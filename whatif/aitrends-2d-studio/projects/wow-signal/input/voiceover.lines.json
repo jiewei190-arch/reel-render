@@ -1,0 +1,214 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 45.313,
+ "render_s": 347.1,
+ "qa_fail_lines": [
+  4,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In nineteen seventy-seven, a telescope caught a signal so weird someone wrote, \"Wow!\"",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen seventy-seven, a telescope caught a signal so weird someone wrote, \"Wow!\"",
+     "seed": 7,
+     "heard": "In 1977, a telescope caught a signal so weird someone wrote, Wow!",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.599
+  },
+  {
+   "n": 2,
+   "text": "Ohio's Big Ear radio telescope was listening for alien signals.",
+   "start": 4.799,
+   "parts": [
+    {
+     "tts": "Ohio's Big Ear radio telescope was listening for alien signals.",
+     "seed": 7,
+     "heard": "Ohio's Big Ear radio telescope was listening for alien signals.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.311
+  },
+  {
+   "n": 3,
+   "text": "Its printout was code: numbers meant weak, letters meant strong.",
+   "start": 8.511,
+   "parts": [
+    {
+     "tts": "Its printout was code: numbers meant weak, letters meant strong.",
+     "seed": 7,
+     "heard": "Its printout was code. Numbers meant weak. Letters meant strong.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.088
+  },
+  {
+   "n": 4,
+   "text": "Then, on August fifteenth, it printed: six, E, Q, U, J, five.",
+   "start": 12.288,
+   "parts": [
+    {
+     "tts": "Then, on August fifteenth, it printed: six, E, Q, U, J, five.",
+     "seed": 7,
+     "heard": "Then, on August 15th, it printed 6EQUJ5.",
+     "wrong_words": 6,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 16.423
+  },
+  {
+   "n": 5,
+   "text": "That U was about thirty standard deviations above the noise.",
+   "start": 16.623,
+   "parts": [
+    {
+     "tts": "That U was about thirty standard deviations above the noise.",
+     "seed": 7,
+     "heard": "that U was about 30 standard deviations above the noise.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.582
+  },
+  {
+   "n": 6,
+   "text": "Days later, Jerry Eeman circled it and wrote: \"Wow!\"",
+   "start": 19.882,
+   "parts": [
+    {
+     "tts": "Days later, Jerry Eeman circled it and wrote: \"Wow!\"",
+     "seed": 7,
+     "heard": "Days later, Jerry Eman circled it and wrote, wow.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 22.682
+  },
+  {
+   "n": 7,
+   "text": "It lasted seventy-two seconds, exactly as long as Big Ear could watch one spot.",
+   "start": 22.882,
+   "parts": [
+    {
+     "tts": "It lasted seventy-two seconds, exactly as long as Big Ear could watch one spot.",
+     "seed": 7,
+     "heard": "It lasted 72 seconds, exactly as long as Big Ear could watch one spot.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.063
+  },
+  {
+   "n": 8,
+   "text": "They listened again for decades. Nothing. Comets got blamed. Astronomers said nope.",
+   "start": 27.363,
+   "parts": [
+    {
+     "tts": "They listened again for decades. Nothing. Comets got blamed. Astronomers said nope.",
+     "seed": 7,
+     "heard": "They listened again for decades. Nothing. Comets got blamed. Astronomers said, nope.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.152
+  },
+  {
+   "n": 9,
+   "text": "But here's the part... a twenty twenty-four study says a cold hydrogen cloud may have suddenly flared.",
+   "start": 32.602,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "a twenty twenty-four study says a cold hydrogen cloud may have suddenly flared.",
+     "seed": 7,
+     "heard": "A 2024 study says a cold hydrogen cloud may have suddenly flared.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.126
+  },
+  {
+   "n": 10,
+   "text": "Still unconfirmed. But in twenty twelve, someone replied anyway... with over ten thousand tweets.",
+   "start": 38.326,
+   "parts": [
+    {
+     "tts": "Still unconfirmed. But in twenty twelve, someone replied anyway...",
+     "seed": 7,
+     "heard": "still unconfirmed. But in 2012, someone replied anyway.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "with over ten thousand tweets.",
+     "seed": 7,
+     "heard": "with over 10,000 tweets.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.666
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 44.066,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 45.213
+  }
+ ],
+ "spliced": [
+  {
+   "line": 10,
+   "from": "l10.wav"
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.08,
+  "gap": 0.2,
+  "max_internal_silence": 0.3
+ }
+}
