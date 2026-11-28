@@ -1,0 +1,223 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 54.054,
+ "render_s": 496.5,
+ "qa_fail_lines": [
+  9
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Ohio and Michigan once nearly went to war... over Toledo.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Ohio and Michigan once nearly went to war...",
+     "seed": 7,
+     "heard": "Ohio and Michigan once nearly went to war.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "over Toledo.",
+     "seed": 7,
+     "heard": "over Toledo.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.25
+  },
+  {
+   "n": 2,
+   "text": "Blame a bad map. Both claimed one strip of land, 5 to 8 miles wide.",
+   "start": 4.55,
+   "parts": [
+    {
+     "tts": "Blame a bad map. Both claimed one strip of land, five to eight miles wide.",
+     "seed": 11,
+     "heard": "blame a bad map. Both claimed one strip of land five to eight miles wide.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.006
+  },
+  {
+   "n": 3,
+   "text": "In 1835, both sent militias to the Maumee River... and traded taunts.",
+   "start": 9.306,
+   "parts": [
+    {
+     "tts": "In eighteen thirty-five, both sent militias to the Maumee River...",
+     "seed": 7,
+     "heard": "In 1835, both sent militias to the Maumee River.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and traded taunts.",
+     "seed": 7,
+     "heard": "and traded taunts.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.546
+  },
+  {
+   "n": 4,
+   "text": "The one battle? Reportedly, shots fired into the air. Nobody was hit.",
+   "start": 14.846,
+   "parts": [
+    {
+     "tts": "The one battle? Reportedly, shots fired into the air. Nobody was hit.",
+     "seed": 7,
+     "heard": "The one battle reportedly shots fired into the air. Nobody was hit.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.425
+  },
+  {
+   "n": 5,
+   "text": "But here's the part... the war's only injury: a deputy, hurt with a penknife.",
+   "start": 19.725,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the war's only injury: a deputy, hurt with a penknife.",
+     "seed": 7,
+     "heard": "The war's only injury, a deputy hurt with a penknife.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.837,
+   "spliced_from": "fix5.wav"
+  },
+  {
+   "n": 6,
+   "text": "By a man named Two Stickney. His brother? Reportedly named One.",
+   "start": 25.137,
+   "parts": [
+    {
+     "tts": "By a man named Two Stickney. His brother? Reportedly named One.",
+     "seed": 11,
+     "heard": "by a man named Two Stickney, his brother reportedly named One.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.379
+  },
+  {
+   "n": 7,
+   "text": "Congress stepped in. Ohio got Toledo. Michigan got statehood... and the Upper Peninsula.",
+   "start": 29.679,
+   "parts": [
+    {
+     "tts": "Congress stepped in. Ohio got Toledo. Michigan got statehood...",
+     "seed": 7,
+     "heard": "Congress stepped in, Ohio got Toledo, Michigan got statehood,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and the Upper Peninsula.",
+     "seed": 7,
+     "heard": "and the Upper Peninsula.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.125
+  },
+  {
+   "n": 8,
+   "text": "A consolation prize almost everyone called a worthless wilderness.",
+   "start": 36.425,
+   "parts": [
+    {
+     "tts": "A consolation prize almost everyone called a worthless wilderness.",
+     "seed": 7,
+     "heard": "A consolation prize almost everyone called a worthless wilderness.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.227
+  },
+  {
+   "n": 9,
+   "text": "But in the eighteen-forties, they found copper and iron. By the eighteen-sixties, it supplied 90 percent of America's copper.",
+   "start": 40.527,
+   "parts": [
+    {
+     "tts": "But in the eighteen-forties, they found copper and iron. By the eighteen-sixties, it supplied ninety percent of America's copper.",
+     "seed": 7,
+     "heard": "But in the 1840s, they found copper and iron. By the 1860s, it supplied 90% of America's copper.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 47.47
+  },
+  {
+   "n": 10,
+   "text": "Michigan lost Toledo... and won the jackpot.",
+   "start": 47.77,
+   "parts": [
+    {
+     "tts": "Michigan lost Toledo...",
+     "seed": 7,
+     "heard": "Michigan lost Toledo.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and won the jackpot.",
+     "seed": 7,
+     "heard": "and won the jackpot.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 52.148
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 52.448,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 53.754
+  }
+ ]
+}

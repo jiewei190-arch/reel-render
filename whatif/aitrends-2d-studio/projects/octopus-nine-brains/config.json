@@ -1,0 +1,49 @@
+{
+ "title": "The Octopus Has Nine Brains",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.98,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "brains",
+   "hearts",
+   "blue",
+   "blood",
+   "500",
+   "million",
+   "dog",
+   "arms",
+   "mini",
+   "brain",
+   "control",
+   "gills",
+   "body",
+   "quiet",
+   "copper",
+   "iron",
+   "cold",
+   "better",
+   "zero",
+   "bones"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

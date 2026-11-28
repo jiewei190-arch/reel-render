@@ -1,0 +1,605 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "A",
+   "start": 0.0,
+   "end": 0.22
+  },
+  {
+   "word": "medieval",
+   "start": 0.22,
+   "end": 0.34
+  },
+  {
+   "word": "legend",
+   "start": 0.34,
+   "end": 0.8
+  },
+  {
+   "word": "says",
+   "start": 0.8,
+   "end": 1.12
+  },
+  {
+   "word": "two",
+   "start": 1.12,
+   "end": 1.52
+  },
+  {
+   "word": "green-skinned",
+   "start": 1.52,
+   "end": 2.06
+  },
+  {
+   "word": "children",
+   "start": 2.06,
+   "end": 2.56
+  },
+  {
+   "word": "appeared",
+   "start": 2.56,
+   "end": 2.94
+  },
+  {
+   "word": "in",
+   "start": 2.94,
+   "end": 3.12
+  },
+  {
+   "word": "an",
+   "start": 3.12,
+   "end": 3.26
+  },
+  {
+   "word": "English",
+   "start": 3.26,
+   "end": 3.52
+  },
+  {
+   "word": "village.",
+   "start": 3.52,
+   "end": 3.9
+  },
+  {
+   "word": "Woolpit,",
+   "start": 4.56,
+   "end": 4.88
+  },
+  {
+   "word": "Suffolk.",
+   "start": 5.32,
+   "end": 5.46
+  },
+  {
+   "word": "The",
+   "start": 5.92,
+   "end": 6.04
+  },
+  {
+   "word": "twelfth",
+   "start": 6.04,
+   "end": 6.44
+  },
+  {
+   "word": "century.",
+   "start": 6.44,
+   "end": 6.78
+  },
+  {
+   "word": "At",
+   "start": 7.16,
+   "end": 7.28
+  },
+  {
+   "word": "harvest",
+   "start": 7.28,
+   "end": 7.56
+  },
+  {
+   "word": "time,",
+   "start": 7.56,
+   "end": 8.02
+  },
+  {
+   "word": "villagers",
+   "start": 8.34,
+   "end": 8.56
+  },
+  {
+   "word": "found",
+   "start": 8.56,
+   "end": 8.92
+  },
+  {
+   "word": "a",
+   "start": 8.92,
+   "end": 9.08
+  },
+  {
+   "word": "brother",
+   "start": 9.08,
+   "end": 9.26
+  },
+  {
+   "word": "and",
+   "start": 9.26,
+   "end": 9.5
+  },
+  {
+   "word": "sister",
+   "start": 9.5,
+   "end": 9.82
+  },
+  {
+   "word": "beside",
+   "start": 9.82,
+   "end": 10.12
+  },
+  {
+   "word": "a",
+   "start": 10.12,
+   "end": 10.3
+  },
+  {
+   "word": "wolf",
+   "start": 10.3,
+   "end": 10.42
+  },
+  {
+   "word": "pit.",
+   "start": 10.42,
+   "end": 10.72
+  },
+  {
+   "word": "Their",
+   "start": 11.2,
+   "end": 11.32
+  },
+  {
+   "word": "skin",
+   "start": 11.32,
+   "end": 11.58
+  },
+  {
+   "word": "was",
+   "start": 11.58,
+   "end": 11.76
+  },
+  {
+   "word": "green.",
+   "start": 11.76,
+   "end": 12.1
+  },
+  {
+   "word": "They",
+   "start": 12.6,
+   "end": 12.76
+  },
+  {
+   "word": "spoke",
+   "start": 12.76,
+   "end": 12.98
+  },
+  {
+   "word": "a",
+   "start": 12.98,
+   "end": 13.14
+  },
+  {
+   "word": "language",
+   "start": 13.14,
+   "end": 13.38
+  },
+  {
+   "word": "nobody",
+   "start": 13.38,
+   "end": 13.64
+  },
+  {
+   "word": "knew.",
+   "start": 13.64,
+   "end": 14.06
+  },
+  {
+   "word": "For",
+   "start": 14.4,
+   "end": 14.54
+  },
+  {
+   "word": "days",
+   "start": 14.54,
+   "end": 14.74
+  },
+  {
+   "word": "they",
+   "start": 14.74,
+   "end": 14.92
+  },
+  {
+   "word": "refused",
+   "start": 14.92,
+   "end": 15.22
+  },
+  {
+   "word": "all",
+   "start": 15.22,
+   "end": 15.48
+  },
+  {
+   "word": "food...",
+   "start": 15.48,
+   "end": 15.76
+  },
+  {
+   "word": "except",
+   "start": 16.14,
+   "end": 16.44
+  },
+  {
+   "word": "raw",
+   "start": 16.44,
+   "end": 16.8
+  },
+  {
+   "word": "broad",
+   "start": 16.86,
+   "end": 17.04
+  },
+  {
+   "word": "beans.",
+   "start": 17.04,
+   "end": 17.42
+  },
+  {
+   "word": "Slowly",
+   "start": 18.22,
+   "end": 18.36
+  },
+  {
+   "word": "they",
+   "start": 18.36,
+   "end": 18.66
+  },
+  {
+   "word": "learned",
+   "start": 18.66,
+   "end": 18.86
+  },
+  {
+   "word": "to",
+   "start": 18.86,
+   "end": 19.12
+  },
+  {
+   "word": "eat,",
+   "start": 19.12,
+   "end": 19.36
+  },
+  {
+   "word": "and",
+   "start": 19.7,
+   "end": 19.78
+  },
+  {
+   "word": "the",
+   "start": 19.78,
+   "end": 19.86
+  },
+  {
+   "word": "green",
+   "start": 19.86,
+   "end": 20.04
+  },
+  {
+   "word": "began",
+   "start": 20.04,
+   "end": 20.28
+  },
+  {
+   "word": "to",
+   "start": 20.28,
+   "end": 20.46
+  },
+  {
+   "word": "fade.",
+   "start": 20.46,
+   "end": 20.66
+  },
+  {
+   "word": "Sadly,",
+   "start": 21.48,
+   "end": 21.84
+  },
+  {
+   "word": "the",
+   "start": 22.12,
+   "end": 22.22
+  },
+  {
+   "word": "boy",
+   "start": 22.22,
+   "end": 22.4
+  },
+  {
+   "word": "was",
+   "start": 22.4,
+   "end": 22.6
+  },
+  {
+   "word": "sickly,",
+   "start": 22.6,
+   "end": 23.02
+  },
+  {
+   "word": "and",
+   "start": 23.02,
+   "end": 23.38
+  },
+  {
+   "word": "died",
+   "start": 23.38,
+   "end": 23.62
+  },
+  {
+   "word": "around",
+   "start": 23.62,
+   "end": 23.86
+  },
+  {
+   "word": "the",
+   "start": 23.86,
+   "end": 24.0
+  },
+  {
+   "word": "time",
+   "start": 24.0,
+   "end": 24.18
+  },
+  {
+   "word": "of",
+   "start": 24.18,
+   "end": 24.32
+  },
+  {
+   "word": "his",
+   "start": 24.32,
+   "end": 24.42
+  },
+  {
+   "word": "baptism.",
+   "start": 24.42,
+   "end": 24.86
+  },
+  {
+   "word": "But",
+   "start": 25.26,
+   "end": 25.5
+  },
+  {
+   "word": "his",
+   "start": 25.5,
+   "end": 25.66
+  },
+  {
+   "word": "sister",
+   "start": 25.66,
+   "end": 26.04
+  },
+  {
+   "word": "learned",
+   "start": 26.04,
+   "end": 26.3
+  },
+  {
+   "word": "English...",
+   "start": 26.3,
+   "end": 26.74
+  },
+  {
+   "word": "and",
+   "start": 27.38,
+   "end": 27.58
+  },
+  {
+   "word": "explained",
+   "start": 27.58,
+   "end": 28.28
+  },
+  {
+   "word": "where",
+   "start": 28.28,
+   "end": 28.46
+  },
+  {
+   "word": "they",
+   "start": 28.46,
+   "end": 28.62
+  },
+  {
+   "word": "came",
+   "start": 28.62,
+   "end": 28.82
+  },
+  {
+   "word": "from.",
+   "start": 28.82,
+   "end": 29.1
+  },
+  {
+   "word": "A",
+   "start": 29.1,
+   "end": 29.74
+  },
+  {
+   "word": "land",
+   "start": 29.74,
+   "end": 29.98
+  },
+  {
+   "word": "where",
+   "start": 29.98,
+   "end": 30.2
+  },
+  {
+   "word": "the",
+   "start": 30.2,
+   "end": 30.32
+  },
+  {
+   "word": "sun",
+   "start": 30.32,
+   "end": 30.48
+  },
+  {
+   "word": "never",
+   "start": 30.48,
+   "end": 30.72
+  },
+  {
+   "word": "shone,",
+   "start": 30.72,
+   "end": 31.08
+  },
+  {
+   "word": "the",
+   "start": 31.52,
+   "end": 31.56
+  },
+  {
+   "word": "light",
+   "start": 31.56,
+   "end": 31.72
+  },
+  {
+   "word": "was",
+   "start": 31.72,
+   "end": 31.88
+  },
+  {
+   "word": "like",
+   "start": 31.88,
+   "end": 32.06
+  },
+  {
+   "word": "twilight...",
+   "start": 32.06,
+   "end": 32.38
+  },
+  {
+   "word": "and",
+   "start": 32.92,
+   "end": 33.3
+  },
+  {
+   "word": "everything",
+   "start": 33.3,
+   "end": 33.6
+  },
+  {
+   "word": "was",
+   "start": 33.6,
+   "end": 33.86
+  },
+  {
+   "word": "green.",
+   "start": 33.86,
+   "end": 34.16
+  },
+  {
+   "word": "Historians",
+   "start": 34.8,
+   "end": 35.14
+  },
+  {
+   "word": "call",
+   "start": 35.14,
+   "end": 35.56
+  },
+  {
+   "word": "it",
+   "start": 35.56,
+   "end": 35.72
+  },
+  {
+   "word": "folklore,",
+   "start": 35.72,
+   "end": 36.12
+  },
+  {
+   "word": "or",
+   "start": 36.6,
+   "end": 36.8
+  },
+  {
+   "word": "a",
+   "start": 36.8,
+   "end": 37.02
+  },
+  {
+   "word": "garbled",
+   "start": 37.02,
+   "end": 37.34
+  },
+  {
+   "word": "real",
+   "start": 37.34,
+   "end": 37.54
+  },
+  {
+   "word": "event.",
+   "start": 37.54,
+   "end": 37.86
+  },
+  {
+   "word": "So",
+   "start": 38.54,
+   "end": 38.84
+  },
+  {
+   "word": "where",
+   "start": 38.84,
+   "end": 39.26
+  },
+  {
+   "word": "did",
+   "start": 39.26,
+   "end": 39.42
+  },
+  {
+   "word": "the",
+   "start": 39.42,
+   "end": 39.54
+  },
+  {
+   "word": "green",
+   "start": 39.54,
+   "end": 39.64
+  },
+  {
+   "word": "children",
+   "start": 39.64,
+   "end": 39.82
+  },
+  {
+   "word": "come",
+   "start": 39.82,
+   "end": 40.12
+  },
+  {
+   "word": "from?",
+   "start": 40.12,
+   "end": 40.42
+  },
+  {
+   "word": "Nobody",
+   "start": 40.82,
+   "end": 41.0
+  },
+  {
+   "word": "knows.",
+   "start": 41.0,
+   "end": 41.28
+  }
+ ]
+}

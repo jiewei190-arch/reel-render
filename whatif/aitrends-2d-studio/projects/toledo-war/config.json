@@ -1,0 +1,60 @@
+{
+ "title": "The Toledo War",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 45.68,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "war",
+   "toledo",
+   "map",
+   "strip",
+   "5",
+   "8",
+   "miles",
+   "1835",
+   "militias",
+   "maumee",
+   "taunts",
+   "air",
+   "nobody",
+   "injury",
+   "penknife",
+   "two",
+   "stickney",
+   "one",
+   "congress",
+   "statehood",
+   "upper",
+   "peninsula",
+   "consolation",
+   "worthless",
+   "wilderness",
+   "1840s",
+   "copper",
+   "iron",
+   "1860s",
+   "90%",
+   "jackpot"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

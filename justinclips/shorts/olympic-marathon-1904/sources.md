@@ -1,0 +1,3 @@
+# Sources — olympic-marathon-1904
+Wikipedia, "Athletics at the 1904 Summer Olympics – Men's marathon" (read Nov 20 2026): Frederick Lorz first to finish (3:13), disqualified for riding in a car; the car broke down at the 19th mile and he jogged to the finish; winner Thomas Hicks, near collapse and hallucinating after trainers gave him brandy, raw eggs and strychnine; Andarín Carvajal (Cuba) napped after eating spoiled apples, finished fourth; course not cleared: traffic, wagons, trains, people walking dogs; 14 of 32 finished; slowest winning time 3:28:53, 29 min slower than the second-slowest.
+https://en.wikipedia.org/wiki/Athletics_at_the_1904_Summer_Olympics_%E2%80%93_Men%27s_marathon

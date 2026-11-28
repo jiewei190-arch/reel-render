@@ -1,0 +1,625 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Ohio",
+   "start": 0.0,
+   "end": 0.4
+  },
+  {
+   "word": "and",
+   "start": 0.4,
+   "end": 0.58
+  },
+  {
+   "word": "Michigan",
+   "start": 0.58,
+   "end": 0.92
+  },
+  {
+   "word": "once",
+   "start": 0.92,
+   "end": 1.3
+  },
+  {
+   "word": "nearly",
+   "start": 1.3,
+   "end": 1.56
+  },
+  {
+   "word": "went",
+   "start": 1.56,
+   "end": 1.78
+  },
+  {
+   "word": "to",
+   "start": 1.78,
+   "end": 1.94
+  },
+  {
+   "word": "war...",
+   "start": 1.94,
+   "end": 2.24
+  },
+  {
+   "word": "over",
+   "start": 2.64,
+   "end": 2.88
+  },
+  {
+   "word": "Toledo.",
+   "start": 2.88,
+   "end": 3.1
+  },
+  {
+   "word": "Blame",
+   "start": 3.64,
+   "end": 3.68
+  },
+  {
+   "word": "a",
+   "start": 3.68,
+   "end": 3.8
+  },
+  {
+   "word": "bad",
+   "start": 3.8,
+   "end": 3.96
+  },
+  {
+   "word": "map.",
+   "start": 3.96,
+   "end": 4.22
+  },
+  {
+   "word": "Both",
+   "start": 4.52,
+   "end": 4.66
+  },
+  {
+   "word": "claimed",
+   "start": 4.66,
+   "end": 4.94
+  },
+  {
+   "word": "one",
+   "start": 4.94,
+   "end": 5.22
+  },
+  {
+   "word": "strip",
+   "start": 5.22,
+   "end": 5.42
+  },
+  {
+   "word": "of",
+   "start": 5.42,
+   "end": 5.56
+  },
+  {
+   "word": "land,",
+   "start": 5.56,
+   "end": 5.86
+  },
+  {
+   "word": "5",
+   "start": 5.86,
+   "end": 6.3
+  },
+  {
+   "word": "to",
+   "start": 6.3,
+   "end": 6.44
+  },
+  {
+   "word": "8",
+   "start": 6.44,
+   "end": 6.56
+  },
+  {
+   "word": "miles",
+   "start": 6.56,
+   "end": 6.84
+  },
+  {
+   "word": "wide.",
+   "start": 6.84,
+   "end": 7.2
+  },
+  {
+   "word": "In",
+   "start": 7.52,
+   "end": 7.6
+  },
+  {
+   "word": "1835,",
+   "start": 7.6,
+   "end": 8.34
+  },
+  {
+   "word": "both",
+   "start": 8.58,
+   "end": 8.66
+  },
+  {
+   "word": "sent",
+   "start": 8.66,
+   "end": 8.96
+  },
+  {
+   "word": "militias",
+   "start": 8.96,
+   "end": 9.22
+  },
+  {
+   "word": "to",
+   "start": 9.22,
+   "end": 9.52
+  },
+  {
+   "word": "the",
+   "start": 9.52,
+   "end": 9.64
+  },
+  {
+   "word": "Maumee",
+   "start": 9.64,
+   "end": 9.88
+  },
+  {
+   "word": "River...",
+   "start": 9.88,
+   "end": 10.06
+  },
+  {
+   "word": "and",
+   "start": 10.06,
+   "end": 10.82
+  },
+  {
+   "word": "traded",
+   "start": 10.82,
+   "end": 11.16
+  },
+  {
+   "word": "taunts.",
+   "start": 11.16,
+   "end": 11.52
+  },
+  {
+   "word": "The",
+   "start": 11.94,
+   "end": 12.06
+  },
+  {
+   "word": "one",
+   "start": 12.06,
+   "end": 12.22
+  },
+  {
+   "word": "battle?",
+   "start": 12.22,
+   "end": 12.52
+  },
+  {
+   "word": "Reportedly,",
+   "start": 12.52,
+   "end": 13.36
+  },
+  {
+   "word": "shots",
+   "start": 13.36,
+   "end": 13.76
+  },
+  {
+   "word": "fired",
+   "start": 13.76,
+   "end": 14.04
+  },
+  {
+   "word": "into",
+   "start": 14.04,
+   "end": 14.26
+  },
+  {
+   "word": "the",
+   "start": 14.26,
+   "end": 14.4
+  },
+  {
+   "word": "air.",
+   "start": 14.4,
+   "end": 14.6
+  },
+  {
+   "word": "Nobody",
+   "start": 14.98,
+   "end": 15.12
+  },
+  {
+   "word": "was",
+   "start": 15.12,
+   "end": 15.36
+  },
+  {
+   "word": "hit.",
+   "start": 15.36,
+   "end": 15.6
+  },
+  {
+   "word": "But",
+   "start": 16.2,
+   "end": 16.46
+  },
+  {
+   "word": "here's",
+   "start": 16.46,
+   "end": 16.92
+  },
+  {
+   "word": "the",
+   "start": 16.92,
+   "end": 17.04
+  },
+  {
+   "word": "part...",
+   "start": 17.04,
+   "end": 17.26
+  },
+  {
+   "word": "the",
+   "start": 17.68,
+   "end": 17.8
+  },
+  {
+   "word": "war's",
+   "start": 17.8,
+   "end": 18.12
+  },
+  {
+   "word": "only",
+   "start": 18.12,
+   "end": 18.32
+  },
+  {
+   "word": "injury:",
+   "start": 18.32,
+   "end": 18.72
+  },
+  {
+   "word": "a",
+   "start": 18.92,
+   "end": 19.02
+  },
+  {
+   "word": "deputy,",
+   "start": 19.02,
+   "end": 19.24
+  },
+  {
+   "word": "hurt",
+   "start": 19.24,
+   "end": 19.6
+  },
+  {
+   "word": "with",
+   "start": 19.6,
+   "end": 19.78
+  },
+  {
+   "word": "a",
+   "start": 19.78,
+   "end": 19.86
+  },
+  {
+   "word": "penknife.",
+   "start": 19.86,
+   "end": 20.24
+  },
+  {
+   "word": "By",
+   "start": 20.54,
+   "end": 20.74
+  },
+  {
+   "word": "a",
+   "start": 20.74,
+   "end": 20.84
+  },
+  {
+   "word": "man",
+   "start": 20.84,
+   "end": 21.0
+  },
+  {
+   "word": "named",
+   "start": 21.0,
+   "end": 21.44
+  },
+  {
+   "word": "Two",
+   "start": 21.44,
+   "end": 21.7
+  },
+  {
+   "word": "Stickney.",
+   "start": 21.7,
+   "end": 22.14
+  },
+  {
+   "word": "His",
+   "start": 22.46,
+   "end": 22.56
+  },
+  {
+   "word": "brother?",
+   "start": 22.56,
+   "end": 22.82
+  },
+  {
+   "word": "Reportedly",
+   "start": 22.82,
+   "end": 23.44
+  },
+  {
+   "word": "named",
+   "start": 23.44,
+   "end": 23.86
+  },
+  {
+   "word": "One.",
+   "start": 23.86,
+   "end": 24.22
+  },
+  {
+   "word": "Congress",
+   "start": 24.52,
+   "end": 24.9
+  },
+  {
+   "word": "stepped",
+   "start": 24.9,
+   "end": 25.14
+  },
+  {
+   "word": "in.",
+   "start": 25.14,
+   "end": 25.54
+  },
+  {
+   "word": "Ohio",
+   "start": 25.86,
+   "end": 26.14
+  },
+  {
+   "word": "got",
+   "start": 26.14,
+   "end": 26.34
+  },
+  {
+   "word": "Toledo.",
+   "start": 26.34,
+   "end": 26.62
+  },
+  {
+   "word": "Michigan",
+   "start": 27.22,
+   "end": 27.46
+  },
+  {
+   "word": "got",
+   "start": 27.46,
+   "end": 27.72
+  },
+  {
+   "word": "statehood...",
+   "start": 27.72,
+   "end": 28.22
+  },
+  {
+   "word": "and",
+   "start": 28.62,
+   "end": 28.82
+  },
+  {
+   "word": "the",
+   "start": 28.82,
+   "end": 28.96
+  },
+  {
+   "word": "Upper",
+   "start": 28.96,
+   "end": 29.16
+  },
+  {
+   "word": "Peninsula.",
+   "start": 29.16,
+   "end": 29.52
+  },
+  {
+   "word": "A",
+   "start": 29.52,
+   "end": 30.0
+  },
+  {
+   "word": "consolation",
+   "start": 30.0,
+   "end": 30.34
+  },
+  {
+   "word": "prize",
+   "start": 30.34,
+   "end": 30.84
+  },
+  {
+   "word": "almost",
+   "start": 30.84,
+   "end": 31.24
+  },
+  {
+   "word": "everyone",
+   "start": 31.24,
+   "end": 31.6
+  },
+  {
+   "word": "called",
+   "start": 31.6,
+   "end": 32.04
+  },
+  {
+   "word": "a",
+   "start": 32.04,
+   "end": 32.38
+  },
+  {
+   "word": "worthless",
+   "start": 32.38,
+   "end": 32.62
+  },
+  {
+   "word": "wilderness.",
+   "start": 32.62,
+   "end": 33.08
+  },
+  {
+   "word": "But",
+   "start": 33.66,
+   "end": 33.78
+  },
+  {
+   "word": "in",
+   "start": 33.78,
+   "end": 33.9
+  },
+  {
+   "word": "the",
+   "start": 33.9,
+   "end": 34.0
+  },
+  {
+   "word": "1840s,",
+   "start": 34.0,
+   "end": 34.86
+  },
+  {
+   "word": "they",
+   "start": 34.96,
+   "end": 34.98
+  },
+  {
+   "word": "found",
+   "start": 34.98,
+   "end": 35.18
+  },
+  {
+   "word": "copper",
+   "start": 35.18,
+   "end": 35.48
+  },
+  {
+   "word": "and",
+   "start": 35.48,
+   "end": 35.7
+  },
+  {
+   "word": "iron.",
+   "start": 35.7,
+   "end": 36.0
+  },
+  {
+   "word": "By",
+   "start": 36.4,
+   "end": 36.48
+  },
+  {
+   "word": "the",
+   "start": 36.48,
+   "end": 36.6
+  },
+  {
+   "word": "1860s,",
+   "start": 36.6,
+   "end": 37.5
+  },
+  {
+   "word": "it",
+   "start": 37.58,
+   "end": 37.62
+  },
+  {
+   "word": "supplied",
+   "start": 37.62,
+   "end": 37.9
+  },
+  {
+   "word": "90%",
+   "start": 37.9,
+   "end": 38.28
+  },
+  {
+   "word": "of",
+   "start": 38.58,
+   "end": 38.88
+  },
+  {
+   "word": "America's",
+   "start": 38.88,
+   "end": 39.36
+  },
+  {
+   "word": "copper.",
+   "start": 39.36,
+   "end": 39.64
+  },
+  {
+   "word": "Michigan",
+   "start": 40.28,
+   "end": 40.5
+  },
+  {
+   "word": "lost",
+   "start": 40.5,
+   "end": 40.78
+  },
+  {
+   "word": "Toledo...",
+   "start": 40.98,
+   "end": 41.12
+  },
+  {
+   "word": "and",
+   "start": 41.8,
+   "end": 42.26
+  },
+  {
+   "word": "won",
+   "start": 42.26,
+   "end": 42.86
+  },
+  {
+   "word": "the",
+   "start": 42.86,
+   "end": 43.24
+  },
+  {
+   "word": "jackpot.",
+   "start": 43.24,
+   "end": 43.66
+  },
+  {
+   "word": "Subscribe",
+   "start": 44.24,
+   "end": 44.6
+  },
+  {
+   "word": "for",
+   "start": 44.6,
+   "end": 44.94
+  },
+  {
+   "word": "more.",
+   "start": 44.94,
+   "end": 45.18
+  }
+ ]
+}

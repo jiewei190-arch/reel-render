@@ -1,0 +1,619 @@
+{
+ "duration": 45.68,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.58,
+   "line": "Ohio and Michigan once nearly went to war...",
+   "scene": "FRAME 1: staring contest over the tiny TOLEDO strip + 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/stare.wav",
+     "gain": -10
+    },
+    {
+     "word": "war",
+     "name": "toon3d:impact",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.58,
+   "end": 3.58,
+   "line": "over Toledo.",
+   "scene": "punch-in on the tiny TOLEDO sign",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "toledo",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.58,
+   "end": 4.46,
+   "line": "Blame a bad map.",
+   "scene": "bad map: Lake Michigan slides the wrong way, BAD MAP, ?",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "bad",
+     "name": "toon3d:fail",
+     "gain": -16
+    },
+    {
+     "word": "bad",
+     "name": "toon3d:stamp",
+     "gain": -12,
+     "offset": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.46,
+   "end": 7.46,
+   "line": "Both claimed one strip of land, 5 to 8 miles wide.",
+   "scene": "survey lines draw, the strip lights up, 5-8 MILES WIDE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:scratch",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "miles",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.46,
+   "end": 9.16,
+   "line": "In 1835, both sent militias",
+   "scene": "river wide: two militia lines face off, 1835",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "militias",
+     "name": "toon3d:crowd",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.16,
+   "end": 10.0,
+   "line": "to the Maumee River...",
+   "scene": "low along the Maumee, MAUMEE RIVER chip, ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "word": "maumee",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.0,
+   "end": 11.88,
+   "line": "and traded taunts.",
+   "scene": "both banks jump and yell: NYAH! bubbles, hard cut between banks",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:crowd",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 0.8,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 11.88,
+   "end": 14.92,
+   "line": "The one battle? Reportedly, shots fired into the air.",
+   "scene": "one militiaman fires straight up: POP puffs, everyone looks up ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "shots",
+     "name": "toon3d:pop",
+     "gain": -6
+    },
+    {
+     "word": "shots",
+     "name": "toon3d:pop",
+     "gain": -8,
+     "offset": 0.18
+    },
+    {
+     "word": "shots",
+     "name": "toon3d:pop",
+     "gain": -9,
+     "offset": 0.36
+    },
+    {
+     "word": "air",
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.92,
+   "end": 16.14,
+   "line": "Nobody was hit.",
+   "scene": "INSERT 1: scoreboard BATTLES 1 / HITS 0",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "hit",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 16.14,
+   "end": 17.62,
+   "line": "But here's the part...",
+   "scene": "BUT... beat: the Michigan governor slowly turns to the lens",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 17.62,
+   "end": 20.48,
+   "line": "the war's only injury: a deputy, hurt with a penknife.",
+   "scene": "INSERT 2: scoreboard INJURIES 1 + a penknife icon, NOT SERIOUS",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "word": "injury",
+     "name": "toon3d:tick",
+     "gain": -10
+    },
+    {
+     "word": "penknife",
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "word": "penknife",
+     "name": "toon3d:stamp",
+     "gain": -14,
+     "offset": 0.5
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.48,
+   "end": 22.4,
+   "line": "By a man named Two Stickney.",
+   "scene": "Two Stickney holds up a big 2",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "two",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "stickney",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.4,
+   "end": 24.46,
+   "line": "His brother? Reportedly named One.",
+   "scene": "pull-out: his brother holds up a 1, ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "one",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "one",
+     "name": "toon3d:boing",
+     "gain": -12,
+     "offset": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.46,
+   "end": 25.8,
+   "line": "Congress stepped in.",
+   "scene": "domed hall, CONGRESS stamp, BANG",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "stepped",
+     "name": "toon3d:thud",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 25.8,
+   "end": 27.16,
+   "line": "Ohio got Toledo.",
+   "scene": "Ohio governor hugs the sign, heart eyes; Michigan shocked",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "toledo",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "toledo",
+     "name": "toon3d:chime",
+     "gain": -14,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 27.16,
+   "end": 29.46,
+   "line": "Michigan got statehood... and the Upper Peninsula.",
+   "scene": "STATEHOOD star, then a blue ribbon pinned on: UP",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "statehood",
+     "name": "toon3d:success",
+     "gain": -14
+    },
+    {
+     "word": "upper",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 29.46,
+   "end": 30.78,
+   "line": "A consolation prize",
+   "scene": "close-up: the ribbon, deadpan; CONSOLATION PRIZE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "consolation",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "prize",
+     "name": "toon3d:fail",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 30.78,
+   "end": 33.6,
+   "line": "almost everyone called a worthless wilderness.",
+   "scene": "alone in the snowy pines, shivering, WORTHLESS?",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -10
+    },
+    {
+     "word": "worthless",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 33.6,
+   "end": 36.34,
+   "line": "But in the 1840s, they found copper and iron.",
+   "scene": "pickaxe cracks a rock: glowing COPPER + IRON, 1840s",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -14
+    },
+    {
+     "word": "found",
+     "name": "toon3d:metal",
+     "gain": -8
+    },
+    {
+     "word": "found",
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "word": "copper",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "iron",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 36.34,
+   "end": 40.22,
+   "line": "By the 1860s, it supplied 90% of America's copper.",
+   "scene": "INSERT 3: counter 90% OF AMERICA'S COPPER by the 1860s",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:coins",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 40.22,
+   "end": 41.74,
+   "line": "Michigan lost Toledo...",
+   "scene": "Ohio hugs his sign, smug; Michigan wears the ribbon: LOST TOLEDO",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 41.74,
+   "end": 44.18,
+   "line": "and won the jackpot.",
+   "scene": "PAYOFF: pull out: Michigan sits on a copper mountain; Ohio double-takes; JACKPOT",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "jackpot",
+     "name": "toon3d:cash",
+     "gain": -8
+    },
+    {
+     "word": "jackpot",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "jackpot",
+     "name": "toon3d:boing",
+     "gain": -14,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 44.18,
+   "end": 45.68,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to the staring contest, frame 1 framing (loop)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/stare.wav",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}
