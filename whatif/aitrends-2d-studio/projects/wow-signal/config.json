@@ -1,0 +1,58 @@
+{
+ "title": "The Wow! Signal",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 45.54,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "wow",
+   "signal",
+   "big",
+   "ear",
+   "alien",
+   "code",
+   "weak",
+   "strong",
+   "6",
+   "e",
+   "q",
+   "u",
+   "j",
+   "5",
+   "30",
+   "72",
+   "seconds",
+   "decades",
+   "nothing",
+   "comets",
+   "nope",
+   "hydrogen",
+   "cloud",
+   "flared",
+   "unconfirmed",
+   "2012",
+   "tweets",
+   "1977",
+   "2024"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

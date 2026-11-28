@@ -1,0 +1,3 @@
+# Sources — cadaver-synod
+Wikipedia, "Cadaver Synod" (read Nov 20 2026): trial of Pope Formosus, dead about nine months, at the Basilica of St. John Lateran, January 897, by Pope Stephen VI; corpse exhumed, propped on a throne, a deacon appointed to answer for him; found guilty, papacy declared null; stripped of vestments, the three blessing fingers of the right hand cut off; later thrown into the Tiber; a public uprising deposed and imprisoned Stephen, strangled in prison July/August 897; December 897 Pope Theodore II annulled the synod and reburied Formosus in St Peter's in pontifical vestments.
+https://en.wikipedia.org/wiki/Cadaver_Synod

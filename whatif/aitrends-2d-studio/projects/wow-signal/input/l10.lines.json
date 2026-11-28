@@ -1,0 +1,42 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 6.771,
+ "render_s": 29.9,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Still unconfirmed. But in twenty twelve, someone replied anyway... with over ten thousand tweets.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "Still unconfirmed. But in twenty twelve, someone replied anyway...",
+     "seed": 7,
+     "heard": "still unconfirmed. But in 2012, someone replied anyway.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "with over ten thousand tweets.",
+     "seed": 7,
+     "heard": "with over 10,000 tweets.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 6.471
+  }
+ ]
+}
