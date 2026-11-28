@@ -1,0 +1,575 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "Every",
+   "start": 0.0,
+   "end": 0.34
+  },
+  {
+   "word": "year",
+   "start": 0.34,
+   "end": 0.5
+  },
+  {
+   "word": "in",
+   "start": 0.5,
+   "end": 0.64
+  },
+  {
+   "word": "Wales,",
+   "start": 0.64,
+   "end": 0.88
+  },
+  {
+   "word": "people",
+   "start": 1.2,
+   "end": 1.3
+  },
+  {
+   "word": "race",
+   "start": 1.3,
+   "end": 1.62
+  },
+  {
+   "word": "horses...",
+   "start": 1.62,
+   "end": 2.04
+  },
+  {
+   "word": "on",
+   "start": 2.04,
+   "end": 2.74
+  },
+  {
+   "word": "foot.",
+   "start": 2.74,
+   "end": 3.02
+  },
+  {
+   "word": "It",
+   "start": 3.34,
+   "end": 3.42
+  },
+  {
+   "word": "started",
+   "start": 3.42,
+   "end": 3.68
+  },
+  {
+   "word": "in",
+   "start": 3.68,
+   "end": 3.92
+  },
+  {
+   "word": "1980,",
+   "start": 3.92,
+   "end": 4.44
+  },
+  {
+   "word": "with",
+   "start": 4.96,
+   "end": 5.06
+  },
+  {
+   "word": "an",
+   "start": 5.06,
+   "end": 5.16
+  },
+  {
+   "word": "argument",
+   "start": 5.16,
+   "end": 5.5
+  },
+  {
+   "word": "in",
+   "start": 5.5,
+   "end": 5.8
+  },
+  {
+   "word": "a",
+   "start": 5.8,
+   "end": 5.9
+  },
+  {
+   "word": "Welsh",
+   "start": 5.9,
+   "end": 6.1
+  },
+  {
+   "word": "pub.",
+   "start": 6.1,
+   "end": 6.38
+  },
+  {
+   "word": "Over",
+   "start": 6.94,
+   "end": 7.04
+  },
+  {
+   "word": "a",
+   "start": 7.04,
+   "end": 7.2
+  },
+  {
+   "word": "long",
+   "start": 7.2,
+   "end": 7.38
+  },
+  {
+   "word": "distance,",
+   "start": 7.38,
+   "end": 7.86
+  },
+  {
+   "word": "could",
+   "start": 8.2,
+   "end": 8.26
+  },
+  {
+   "word": "a",
+   "start": 8.26,
+   "end": 8.4
+  },
+  {
+   "word": "human",
+   "start": 8.4,
+   "end": 8.64
+  },
+  {
+   "word": "keep",
+   "start": 8.64,
+   "end": 8.92
+  },
+  {
+   "word": "up",
+   "start": 8.92,
+   "end": 9.14
+  },
+  {
+   "word": "with",
+   "start": 9.14,
+   "end": 9.28
+  },
+  {
+   "word": "a",
+   "start": 9.28,
+   "end": 9.44
+  },
+  {
+   "word": "horse?",
+   "start": 9.44,
+   "end": 9.64
+  },
+  {
+   "word": "The",
+   "start": 10.12,
+   "end": 10.32
+  },
+  {
+   "word": "landlord",
+   "start": 10.32,
+   "end": 10.76
+  },
+  {
+   "word": "overheard...",
+   "start": 10.76,
+   "end": 11.36
+  },
+  {
+   "word": "and",
+   "start": 11.36,
+   "end": 12.2
+  },
+  {
+   "word": "set",
+   "start": 12.2,
+   "end": 12.56
+  },
+  {
+   "word": "up",
+   "start": 12.56,
+   "end": 12.68
+  },
+  {
+   "word": "a",
+   "start": 12.68,
+   "end": 12.76
+  },
+  {
+   "word": "race",
+   "start": 12.76,
+   "end": 12.88
+  },
+  {
+   "word": "to",
+   "start": 12.88,
+   "end": 13.02
+  },
+  {
+   "word": "find",
+   "start": 13.02,
+   "end": 13.2
+  },
+  {
+   "word": "out.",
+   "start": 13.2,
+   "end": 13.52
+  },
+  {
+   "word": "22",
+   "start": 13.52,
+   "end": 14.22
+  },
+  {
+   "word": "miles",
+   "start": 14.22,
+   "end": 14.54
+  },
+  {
+   "word": "over",
+   "start": 14.54,
+   "end": 14.98
+  },
+  {
+   "word": "the",
+   "start": 14.98,
+   "end": 15.14
+  },
+  {
+   "word": "Welsh",
+   "start": 15.14,
+   "end": 15.4
+  },
+  {
+   "word": "hills:",
+   "start": 15.4,
+   "end": 15.74
+  },
+  {
+   "word": "runners",
+   "start": 16.28,
+   "end": 16.44
+  },
+  {
+   "word": "versus",
+   "start": 16.44,
+   "end": 16.74
+  },
+  {
+   "word": "horses",
+   "start": 16.74,
+   "end": 17.12
+  },
+  {
+   "word": "and",
+   "start": 17.12,
+   "end": 17.38
+  },
+  {
+   "word": "riders.",
+   "start": 17.38,
+   "end": 17.76
+  },
+  {
+   "word": "For",
+   "start": 18.24,
+   "end": 18.36
+  },
+  {
+   "word": "25",
+   "start": 18.36,
+   "end": 18.96
+  },
+  {
+   "word": "years,",
+   "start": 18.96,
+   "end": 19.32
+  },
+  {
+   "word": "the",
+   "start": 19.66,
+   "end": 19.74
+  },
+  {
+   "word": "horses",
+   "start": 19.74,
+   "end": 19.98
+  },
+  {
+   "word": "won.",
+   "start": 19.98,
+   "end": 20.34
+  },
+  {
+   "word": "Every.",
+   "start": 20.34,
+   "end": 21.0
+  },
+  {
+   "word": "Single.",
+   "start": 21.0,
+   "end": 21.58
+  },
+  {
+   "word": "Time.",
+   "start": 21.58,
+   "end": 22.18
+  },
+  {
+   "word": "But",
+   "start": 22.94,
+   "end": 23.26
+  },
+  {
+   "word": "here's",
+   "start": 23.26,
+   "end": 23.8
+  },
+  {
+   "word": "the",
+   "start": 23.8,
+   "end": 23.92
+  },
+  {
+   "word": "part...",
+   "start": 23.92,
+   "end": 24.14
+  },
+  {
+   "word": "in",
+   "start": 24.52,
+   "end": 24.64
+  },
+  {
+   "word": "2004,",
+   "start": 24.64,
+   "end": 25.36
+  },
+  {
+   "word": "a",
+   "start": 25.78,
+   "end": 25.86
+  },
+  {
+   "word": "runner",
+   "start": 25.86,
+   "end": 26.06
+  },
+  {
+   "word": "named",
+   "start": 26.06,
+   "end": 26.36
+  },
+  {
+   "word": "Huw",
+   "start": 26.36,
+   "end": 26.66
+  },
+  {
+   "word": "Lobb",
+   "start": 26.66,
+   "end": 26.96
+  },
+  {
+   "word": "beat",
+   "start": 26.96,
+   "end": 27.24
+  },
+  {
+   "word": "them",
+   "start": 27.24,
+   "end": 27.4
+  },
+  {
+   "word": "all.",
+   "start": 27.4,
+   "end": 27.64
+  },
+  {
+   "word": "By",
+   "start": 28.18,
+   "end": 28.4
+  },
+  {
+   "word": "about",
+   "start": 28.4,
+   "end": 28.62
+  },
+  {
+   "word": "2",
+   "start": 28.62,
+   "end": 28.8
+  },
+  {
+   "word": "minutes.",
+   "start": 28.8,
+   "end": 29.06
+  },
+  {
+   "word": "And",
+   "start": 29.06,
+   "end": 29.7
+  },
+  {
+   "word": "he",
+   "start": 29.7,
+   "end": 29.88
+  },
+  {
+   "word": "took",
+   "start": 29.88,
+   "end": 30.0
+  },
+  {
+   "word": "home",
+   "start": 30.0,
+   "end": 30.22
+  },
+  {
+   "word": "a",
+   "start": 30.22,
+   "end": 30.34
+  },
+  {
+   "word": "25,000",
+   "start": 30.34,
+   "end": 31.22
+  },
+  {
+   "word": "pound",
+   "start": 31.22,
+   "end": 31.34
+  },
+  {
+   "word": "prize.",
+   "start": 31.34,
+   "end": 31.76
+  },
+  {
+   "word": "Since",
+   "start": 32.32,
+   "end": 32.48
+  },
+  {
+   "word": "then,",
+   "start": 32.48,
+   "end": 32.86
+  },
+  {
+   "word": "humans",
+   "start": 33.2,
+   "end": 33.38
+  },
+  {
+   "word": "have",
+   "start": 33.38,
+   "end": 33.58
+  },
+  {
+   "word": "won",
+   "start": 33.58,
+   "end": 33.76
+  },
+  {
+   "word": "just",
+   "start": 33.76,
+   "end": 34.02
+  },
+  {
+   "word": "4",
+   "start": 34.02,
+   "end": 34.34
+  },
+  {
+   "word": "more",
+   "start": 34.34,
+   "end": 34.58
+  },
+  {
+   "word": "times,",
+   "start": 34.58,
+   "end": 35.02
+  },
+  {
+   "word": "most",
+   "start": 35.36,
+   "end": 35.48
+  },
+  {
+   "word": "recently",
+   "start": 35.48,
+   "end": 35.86
+  },
+  {
+   "word": "in",
+   "start": 35.86,
+   "end": 36.12
+  },
+  {
+   "word": "2025.",
+   "start": 36.12,
+   "end": 36.74
+  },
+  {
+   "word": "Humans:",
+   "start": 37.62,
+   "end": 37.94
+  },
+  {
+   "word": "5",
+   "start": 37.94,
+   "end": 38.64
+  },
+  {
+   "word": "wins.",
+   "start": 38.64,
+   "end": 39.1
+  },
+  {
+   "word": "Horses:",
+   "start": 39.64,
+   "end": 39.9
+  },
+  {
+   "word": "pretty",
+   "start": 40.36,
+   "end": 40.46
+  },
+  {
+   "word": "much",
+   "start": 40.46,
+   "end": 40.66
+  },
+  {
+   "word": "all",
+   "start": 40.66,
+   "end": 40.92
+  },
+  {
+   "word": "the",
+   "start": 40.92,
+   "end": 41.04
+  },
+  {
+   "word": "rest.",
+   "start": 41.04,
+   "end": 41.32
+  },
+  {
+   "word": "Subscribe",
+   "start": 42.42,
+   "end": 42.44
+  },
+  {
+   "word": "for",
+   "start": 42.44,
+   "end": 42.8
+  },
+  {
+   "word": "more.",
+   "start": 42.8,
+   "end": 43.04
+  }
+ ]
+}

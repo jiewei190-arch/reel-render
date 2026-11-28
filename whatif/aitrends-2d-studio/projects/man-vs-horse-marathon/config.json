@@ -1,0 +1,63 @@
+{
+ "title": "Man versus Horse Marathon",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 43.59,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "wales",
+   "horses",
+   "foot",
+   "1980",
+   "argument",
+   "pub",
+   "human",
+   "horse",
+   "landlord",
+   "race",
+   "22",
+   "miles",
+   "hills",
+   "runners",
+   "25",
+   "years",
+   "won",
+   "every",
+   "single",
+   "time",
+   "part",
+   "2004",
+   "huw",
+   "lobb",
+   "all",
+   "2",
+   "minutes",
+   "25,000",
+   "prize",
+   "4",
+   "2025",
+   "5",
+   "wins",
+   "rest"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:upbeat",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

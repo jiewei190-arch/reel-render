@@ -1,0 +1,548 @@
+{
+ "duration": 43.59,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.14,
+   "line": "Every year in Wales,",
+   "scene": "FRAME 1: start line, runner bouncing, smug horse in sunglasses, 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -16
+    },
+    {
+     "word": "horses",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.14,
+   "end": 1.98,
+   "line": "people race horses...",
+   "scene": "horse lowers its sunglasses at the runner, runner gulps",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "horses",
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:sparkle",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 1.98,
+   "end": 3.28,
+   "line": "on foot.",
+   "scene": "low: sneakers next to hooves; runner shrugs; ON FOOT",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "foot",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 3.28,
+   "end": 4.9,
+   "line": "It started in 1980,",
+   "scene": "the pub: two blokes with pints, landlord behind the bar, 1980",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "1980",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 4.9,
+   "end": 6.88,
+   "line": "with an argument in a Welsh pub.",
+   "scene": "the two blokes argue, pints raised",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "argument",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:crowd",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 6.88,
+   "end": 10.06,
+   "line": "Over a long distance, could a human keep up with a horse?",
+   "scene": "one taps his chest, the other shakes his head: HUMAN = HORSE?",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "human",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "horse",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "horse",
+     "name": "toon3d:boing",
+     "gain": -16,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.06,
+   "end": 11.3,
+   "line": "The landlord overheard...",
+   "scene": "the landlord polishing a glass, eyes slide sideways",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "word": "overheard",
+     "name": "toon3d:magic",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 11.3,
+   "end": 13.46,
+   "line": "and set up a race to find out.",
+   "scene": "the hills: START / FINISH arch drops in, landlord points: RACE!",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "race",
+     "name": "toon3d:thud",
+     "gain": -10
+    },
+    {
+     "word": "race",
+     "name": "toon3d:stamp",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 13.46,
+   "end": 16.22,
+   "line": "22 miles over the Welsh hills:",
+   "scene": "INSERT 1: 22 MILES over the hills",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 16.22,
+   "end": 18.18,
+   "line": "runners versus horses and riders.",
+   "scene": "the pack streams down the course: RUNNERS vs. HORSES",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:horn",
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 18.18,
+   "end": 20.28,
+   "line": "For 25 years, the horses won.",
+   "scene": "INSERT 2: counter 0 -> 25 YEARS, HORSES WON",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:tick",
+     "gain": -16
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:tick",
+     "gain": -16
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:tick",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.28,
+   "end": 22.88,
+   "line": "Every. Single. Time.",
+   "scene": "horse on a podium, a trophy drops on each word, punch-ins",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "every",
+     "name": "toon3d:thud",
+     "gain": -10
+    },
+    {
+     "word": "single",
+     "name": "toon3d:thud",
+     "gain": -10
+    },
+    {
+     "word": "time",
+     "name": "toon3d:thud",
+     "gain": -8
+    },
+    {
+     "word": "time",
+     "name": "toon3d:success",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 22.88,
+   "end": 24.46,
+   "line": "But here's the part...",
+   "scene": "runner stares down the course, horse yawns, zzz",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "part",
+     "name": "toon3d:riser",
+     "gain": -14
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:wind",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.46,
+   "end": 26.9,
+   "line": "in 2004, a runner named Huw Lobb",
+   "scene": "2004: a toon runner sprinting, speed lines",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:footsteps",
+     "gain": -12
+    },
+    {
+     "word": "huw",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 26.9,
+   "end": 28.12,
+   "line": "beat them all.",
+   "scene": "finish: runner breaks the tape; horse arrives, jaw drop, sunglasses gone: HUMAN WINS",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "word": "all",
+     "name": "toon3d:success",
+     "gain": -8
+    },
+    {
+     "word": "all",
+     "name": "toon3d:stamp",
+     "gain": -12,
+     "offset": 0.1
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 28.12,
+   "end": 29.0,
+   "line": "By about 2 minutes.",
+   "scene": "close: horse double take, sweat, ~2 MIN",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "minutes",
+     "name": "toon3d:tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 29.0,
+   "end": 32.26,
+   "line": "And he took home a 25,000 pound prize.",
+   "scene": "money bag drops into the runner arms: 25,000 pound chip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "25,000",
+     "name": "toon3d:cash",
+     "gain": -10
+    },
+    {
+     "word": "prize",
+     "name": "toon3d:coins",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 32.26,
+   "end": 35.3,
+   "line": "Since then, humans have won just 4 more times,",
+   "scene": "scoreboard: HUMAN WINS 2004 + 2007 2022 2023 2025",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "4",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "4",
+     "name": "toon3d:pop",
+     "gain": -12,
+     "offset": 0.28
+    },
+    {
+     "word": "4",
+     "name": "toon3d:pop",
+     "gain": -12,
+     "offset": 0.56
+    },
+    {
+     "word": "4",
+     "name": "toon3d:pop",
+     "gain": -12,
+     "offset": 0.84
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 35.3,
+   "end": 37.56,
+   "line": "most recently in 2025.",
+   "scene": "2025 winner, arms up; a horse sulks",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "2025",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 37.56,
+   "end": 39.58,
+   "line": "Humans: 5 wins.",
+   "scene": "PAYOFF 1: scoreboard HUMANS 5",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "5",
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 39.58,
+   "end": 42.36,
+   "line": "Horses: pretty much all the rest.",
+   "scene": "PAYOFF 2: the horse puts its sunglasses back on, trophy pile: THE REST",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "rest",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "rest",
+     "name": "toon3d:sparkle",
+     "gain": -14,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 42.36,
+   "end": 43.59,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to the start line, frame 1 framing (loop)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:footsteps",
+     "gain": -18
+    }
+   ]
+  }
+ ]
+}
