@@ -3,7 +3,8 @@ STATE: ready
 # The Wow! Signal — status
 
 - `video.mp4`: 1080×1920, 24 fps, **1093 frames, 45.54 s** (target 40–48), H.264 + AAC. sha256 in `video.sha256`.
-  Rendered in full in the cloud (Toon 3D, SwiftShader, 4 workers, ~12 min).
+  Rendered in full in the cloud (Toon 3D, SwiftShader, 4 workers, ~12 min). Then 16.5–21.0 s (frames 396–503: s11–s12) was re-rendered after moving
+  two chips that touched the bottom caption up to y 1225, spliced in by frame number and re-encoded once (libx264 CRF 16); seams checked at 16.5 and 21.0 s.
 - Audio: **-14.1 LUFS integrated, true peak -3.2 dBTP** (ffmpeg ebur128 on the final file). audio/mix.py (music `toon3d:mystery` -20 dB, 70 kit SFX cues
   on words) + the project master step used by octopus-nine-brains: `alimiter=limit=0.6` + `loudnorm=I=-14:TP=-1.5`, muxed with `apad` so all 1093 frames are kept.
   All SFX come from the kit's procedurally generated library; no real recordings.
@@ -37,6 +38,7 @@ Re-render, from whatif/aitrends-2d-studio (P=projects/wow-signal; Chatterbox ven
     CHROMIUM_PATH=/opt/pw-browsers/chromium node render.mjs --project $P --out $P/build/video_silent.mp4 --workers 4
     ~/.venvs/chatterbox/bin/python audio/mix.py --project $P --video $P/build/video_silent.mp4
     ffmpeg -i $P/build/mix.wav -af "alimiter=limit=0.6:attack=3:release=60:level=false,loudnorm=I=-14:TP=-1.5:LRA=11" -ar 48000 $P/build/mix_master.wav
+    # (one render now includes the chip fix, so the frame splice is not needed)
     ffmpeg -i $P/build/video_silent.mp4 -i $P/build/mix_master.wav -map 0:v -map 1:a -c:v copy -af apad -c:a aac -b:a 192k -t 45.542 ../../justinclips/shorts/wow-signal/video.mp4
 
 Deliverables: script.md, sources.md, UPLOAD.md, STATUS.md, contact_sheet.png (from the final), video.mp4, video.sha256.

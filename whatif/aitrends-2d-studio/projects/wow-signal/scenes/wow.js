@@ -140,7 +140,7 @@ registerShot('s11', { kind: '3d',
   draw(s, t, info) { paperDraw(s, t, { circle: 0 }); camMove(s.stage, t, [[0, F1b], [info.dur, F1]]); s.b = at(info, '30', 0.6);
     shakeCam(s.stage, t, [{ fx: 'shake', at: s.b, amp: 0.05, dur: 0.4 }]); },
   overlay(g, t, info, s) { dimScene(g, 9, 0.55); const bust = prog(t, s.b - 0.05, s.b + 0.35); barCard(g, t + 1, [-9, -9, -9, -9, -9, -9], { title: 'WHAT IT PRINTED', bust, noiseLabel: t > at(info, 'noise', 1.6) - 0.2 });
-    chip(g, '≈ 30 STANDARD DEVIATIONS', E.W / 2, 1330, t - s.b - 0.1, { size: 52, color: GOLD }); if (t > s.b) { const k = ease.outBack(clamp((t - s.b) / 0.25)); g.save(); g.translate(720, 300); g.scale(k, k); g.rotate(0.2); TXT(g, 'CRACK!', 0, 0, 90, { color: '#ffffff', stroke: CARD_INK }); g.restore(); } },
+    chip(g, '≈ 30 STANDARD DEVIATIONS', E.W / 2, 1225, t - s.b - 0.1, { size: 52, color: GOLD }); if (t > s.b) { const k = ease.outBack(clamp((t - s.b) / 0.25)); g.save(); g.translate(720, 300); g.scale(k, k); g.rotate(0.2); TXT(g, 'CRACK!', 0, 0, 90, { color: '#ffffff', stroke: CARD_INK }); g.restore(); } },
 });
 // s11b — "standard deviations above the noise." the astronomer's reaction: eyes pop, sweat; WAY ABOVE THE NOISE
 registerShot('s11b', { kind: '3d',
@@ -162,7 +162,7 @@ registerShot('s12', { kind: '3d',
   draw(s, t, info) { s.A.pose(addPose(POSE.sit, { ...idle(t, 4, 0.5), armR: [1.1, 0.2, 0.3], elbowR: 1.6, headNod: 0.25 })); s.A.face(EXPR.bored, t);
     camMove(s.stage, t, [[0, { pos: [1.2, 2.5, 4.4], look: [0, 1.5, -0.6], fov: 40 }], [info.dur, { pos: [1.0, 2.45, 3.9], look: [0, 1.5, -0.6], fov: 40 }]]); },
   overlay(g, t, info, s) { softTint(g, '#ffb070', 0.12); stamp(g, 'DAYS LATER', E.W / 2, 520, t - 0.05, { size: 92, color: '#2f6ad0' });
-    chip(g, 'astronomer Jerry Ehman', E.W / 2, 1600 - 260, t - at(info, 'Jerry', 0.8), { size: 50, color: '#ffffff' }); },
+    chip(g, 'astronomer Jerry Ehman', E.W / 2, 1225, t - at(info, 'Jerry', 0.8), { size: 50, color: '#ffffff' }); },
 });
 // s13 — "circled it and wrote: Wow!" the signature: the circle draws on, then "Wow!" — flash, stars
 registerShot('s13', { kind: '3d',
