@@ -3,8 +3,8 @@ Usage (Chatterbox venv): python tighten_vo.py [speed]   reads input/voiceover_ra
 import json, sys, subprocess, tempfile, os, numpy as np, soundfile as sf
 SPEED = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
 GAP, MAXQ, THR = 0.2, 0.32, 0.012
-BEATS = {2: 0.1, 7: 0.15, 10: 0.15, 11: 0.2}   # held beats before the "But" turn, the payoff line and the closer
-LINEQ = {2: 0.45, 6: 0.5, 7: 0.4, 10: 0.6}       # longer held beats inside these lines (the "..." punchline pauses)
+BEATS = {6: 0.15, 7: 0.1, 10: 0.15, 11: 0.2}   # held beats before the "But" turn, the bagpipes line, the payoff and the closer
+LINEQ = {4: 0.45, 6: 0.45, 10: 0.6}   # longer held beats inside these lines (the "..." pauses)
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'input')
 x, sr = sf.read(f'{D}/voiceover_raw.wav'); L = json.load(open(f'{D}/voiceover_raw.lines.json'))
 env = lambda a, w=int(0.02 * sr): np.sqrt(np.convolve(a ** 2, np.ones(w) / w, 'same'))

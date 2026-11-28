@@ -1,0 +1,217 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 45.526,
+ "render_s": 840.5,
+ "qa_fail_lines": [
+  2,
+  5,
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A town called Boring teamed up with a village called Dull.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "A town called Boring teamed up with a village called Dull.",
+     "seed": 3,
+     "heard": "A town called Boring teamed up with a village called Dull.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.228,
+   "note": "retaken (seed 3) and spliced: the first take read \"Dull\" as \"Do\""
+  },
+  {
+   "n": 2,
+   "text": "These are real places. Boring is in Oregon. Its motto: the most exciting place to live.",
+   "start": 3.428,
+   "parts": [
+    {
+     "tts": "These are real places. Boring is in Oregon. Its motto: the most exciting place to live.",
+     "seed": 7,
+     "heard": "These are real places. Boring is in Oregon. It's Motto, the most exciting place to live.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 9.325
+  },
+  {
+   "n": 3,
+   "text": "Dull is in Scotland. Population: about 84.",
+   "start": 9.525,
+   "parts": [
+    {
+     "tts": "Dull is in Scotland. Population: about eighty-four.",
+     "seed": 7,
+     "heard": "Dull is in Scotland, population about 84.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.811
+  },
+  {
+   "n": 4,
+   "text": "In 2012, a Scottish woman on a cycling holiday rode through Boring... and had an idea.",
+   "start": 13.011,
+   "parts": [
+    {
+     "tts": "In twenty twelve, a Scottish woman on a cycling holiday rode through Boring...",
+     "seed": 7,
+     "heard": "In 2012, a Scottish woman on a cycling holiday rode through Boring.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and had an idea.",
+     "seed": 7,
+     "heard": "and had an idea.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.705
+  },
+  {
+   "n": 5,
+   "text": "Boring's planning group voted. Unanimous. Boring and Dull, a pair for the ages.",
+   "start": 18.905,
+   "parts": [
+    {
+     "tts": "Boring's planning group voted. Unanimous. Boring and Dull, a pair for the ages.",
+     "seed": 7,
+     "heard": "Boring's planning group voted. Unanimous. Boring and Dull appear for the ages.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 23.749
+  },
+  {
+   "n": 6,
+   "text": "But here's the part... now they throw a party. Boring and Dull Day, every August ninth.",
+   "start": 24.099,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "now they throw a party. Boring and Dull Day, every August ninth.",
+     "seed": 7,
+     "heard": "Now they throw a party, boring and dull day, every August 9th.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 29.579
+  },
+  {
+   "n": 7,
+   "text": "Yes. With bagpipes.",
+   "start": 29.879,
+   "parts": [
+    {
+     "tts": "Yes. With bagpipes.",
+     "seed": 7,
+     "heard": "Yes, with bagpipes.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.648
+  },
+  {
+   "n": 8,
+   "text": "Then, in 2013, a third town joined. Bland. As in, Bland, Australia.",
+   "start": 31.848,
+   "parts": [
+    {
+     "tts": "Then, in twenty thirteen, a third town joined. Bland. As in, Bland, Australia.",
+     "seed": 7,
+     "heard": "Then, in 2013, a third town joined, Bland, as in Bland, Australia.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.279
+  },
+  {
+   "n": 9,
+   "text": "Together, they're the League of Extraordinary Communities.",
+   "start": 37.479,
+   "parts": [
+    {
+     "tts": "Together, they're the League of Extraordinary Communities.",
+     "seed": 7,
+     "heard": "Together, they're the League of Extraordinary Communities.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.591
+  },
+  {
+   "n": 10,
+   "text": "Also known as... the Trinity of Tedium.",
+   "start": 40.941,
+   "parts": [
+    {
+     "tts": "Also known as...",
+     "seed": 7,
+     "heard": "also known as",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the Trinity of Tedium.",
+     "seed": 11,
+     "heard": "the Trinity of Tedium.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.794
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 44.194,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 45.426
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}

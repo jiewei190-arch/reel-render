@@ -1,0 +1,452 @@
+{
+ "duration": 45.74,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.06,
+   "line": "A town called Boring",
+   "scene": "FRAME 1: Boring mid-yawn, Dull catches it; top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/yawn_a.wav",
+     "gain": -9
+    },
+    {
+     "at": 1.0,
+     "name": "sfx/yawn_b.wav",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.06,
+   "end": 3.44,
+   "line": "teamed up with a village called Dull.",
+   "scene": "closer on Dull yawning, TEAMED UP chip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "dull",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.44,
+   "end": 6.36,
+   "line": "These are real places. Boring is in Oregon.",
+   "scene": "INSERT map: BORING, OREGON ... DULL, SCOTLAND",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:impact",
+     "gain": -14
+    },
+    {
+     "word": "oregon",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.36,
+   "end": 9.74,
+   "line": "Its motto: the most exciting place to live.",
+   "scene": "motto banner over the Boring sign; its eyelids sink; chirp chirp",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "exciting",
+     "name": "sfx/cricket.wav",
+     "gain": -10,
+     "offset": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 9.74,
+   "end": 11.52,
+   "line": "Dull is in Scotland.",
+   "scene": "the village of Dull: hills, cottages, sheep, SCOTLAND",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:wind",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.52,
+   "end": 12.96,
+   "line": "Population: about 84.",
+   "scene": "INSERT counter: ~84 POPULATION OF DULL",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:tick",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.96,
+   "end": 15.7,
+   "line": "In 2012, a Scottish woman on a cycling holiday",
+   "scene": "cyclist pedals along the Oregon road, 2012 stamp, CYCLING HOLIDAY",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "2012",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "cycling",
+     "name": "toon3d:squeak",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 15.7,
+   "end": 19.04,
+   "line": "rode through Boring... and had an idea.",
+   "scene": "she brakes, looks up at the yawning signs... lightbulb",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -14
+    },
+    {
+     "word": "idea",
+     "name": "toon3d:ding",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 19.04,
+   "end": 20.56,
+   "line": "Boring's planning group voted.",
+   "scene": "the planning-group meeting, 38 MEMBERS, one asleep",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/cricket.wav",
+     "gain": -18
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:clock",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.56,
+   "end": 21.6,
+   "line": "Unanimous.",
+   "scene": "every hand goes up, slowly; UNANIMOUS AYE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.6,
+   "end": 24.06,
+   "line": "Boring and Dull, a pair for the ages.",
+   "scene": "the \"ceremony\": signs lean together under A PAIR FOR THE AGES; 3 confetti; limp kazoo",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "word": "pair",
+     "name": "sfx/kazoo_fanfare.wav",
+     "gain": -10,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 24.06,
+   "end": 27.18,
+   "line": "But here's the part... now they throw a party.",
+   "scene": "party: party hats, two balloons sag; PARTY!",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "word": "party",
+     "name": "toon3d:pop",
+     "gain": -10
+    },
+    {
+     "word": "party",
+     "name": "sfx/yawn_b.wav",
+     "gain": -12,
+     "offset": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.18,
+   "end": 29.72,
+   "line": "Boring and Dull Day, every August 9th.",
+   "scene": "calendar page AUGUST 9",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "august",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 29.72,
+   "end": 31.94,
+   "line": "Yes. With bagpipes.",
+   "scene": "a bagpiper marches past; the signs wake for a second... then droop",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:horn",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 31.94,
+   "end": 35.0,
+   "line": "Then, in 2013, a third town joined.",
+   "scene": "a third sign slides in, 2013",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "word": "third",
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "2013",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 35.0,
+   "end": 37.5,
+   "line": "Bland. As in, Bland, Australia.",
+   "scene": "Bland in the outback, yawning, AUSTRALIA",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "australia",
+     "name": "sfx/yawn_a.wav",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 37.5,
+   "end": 40.96,
+   "line": "Together, they're the League of Extraordinary Communities.",
+   "scene": "superhero moment: capes, god rays, LEAGUE OF EXTRAORDINARY COMMUNITIES",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -12
+    },
+    {
+     "word": "league",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "extraordinary",
+     "name": "toon3d:sparkle",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 40.96,
+   "end": 41.84,
+   "line": "Also known as...",
+   "scene": "dramatic beat: capes slow, eyelids sink",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 41.84,
+   "end": 44.24,
+   "line": "the Trinity of Tedium.",
+   "scene": "PAYOFF: all three asleep, snoring, TRINITY OF TEDIUM",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/snore.wav",
+     "gain": -10
+    },
+    {
+     "word": "tedium",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 44.24,
+   "end": 45.74,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to frame 1 framing, Boring starts its yawn -> loop",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "sfx/yawn_a.wav",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}

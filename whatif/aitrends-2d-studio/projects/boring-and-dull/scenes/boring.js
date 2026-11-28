@@ -43,9 +43,10 @@ registerShot('s04', { kind: '3d',
     const b = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 0.54), toon('#ffffff', { map: ban })); b.position.set(-1.07, 3.05, 0.08); b.rotation.y = 0.08; s.stage.add(b); s.ban = b;
     for (const x of [-2.25, 0.1]) s.stage.add(cyl(0.04, 0.04, 3.3, '#7a5a3a', x, 1.65, 0.02, 8)); return s; },
   draw(s, t, info) { const m = at(info, 'most', 0.6); s.B.set(t, { ...sleepy(t, 0), lid: lerp(0.5, 0.75, prog(t, m + 0.4, info.dur)) }); s.D.set(t, sleepy(t, 2)); s.ban.rotation.z = Math.sin(t * 1.3) * 0.02;
-    camMove(s.stage, t, [[0, { pos: [-1.0, 2.3, 6.4], look: [-1.0, 2.25, 0], fov: 38 }], [info.dur, { pos: [-1.0, 2.25, 5.8], look: [-1.0, 2.25, 0], fov: 38 }]]); },
+    const c = m - 0.12; if (t < c) camMove(s.stage, t, [[0, { pos: [-1.0, 2.3, 6.4], look: [-1.0, 2.25, 0], fov: 38 }], [c, { pos: [-1.0, 2.25, 6.0], look: [-1.0, 2.25, 0], fov: 38 }]]);
+    else camMove(s.stage, t - c, [[0, { pos: [-1.1, 2.55, 5.0], look: [-1.07, 2.5, 0], fov: 38 }], [info.dur - c, { pos: [-1.1, 2.5, 4.6], look: [-1.07, 2.45, 0], fov: 38 }]]); },
   overlay(g, t, info) { chip(g, 'MOTTO', 540, 340, t - 0.05, { size: 60, color: '#ffd23a', rot: -3 }); const m = at(info, 'exciting', 1.0);
-    if (t > m) { g.save(); g.globalAlpha = clamp((t - m) / 0.3); g.font = '900 52px Nunito'; g.fillStyle = '#ffffff'; g.strokeStyle = '#2a1c15'; g.lineWidth = 10; const x = 760 + Math.sin(t * 9) * 6; for (const [dx, dy] of [[0, 0], [70, -50]]) { g.strokeText('chirp', x + dx, 1180 + dy); g.fillText('chirp', x + dx, 1180 + dy); } g.restore(); } },
+    if (t > m) { g.save(); g.globalAlpha = clamp((t - m) / 0.3); g.font = '900 52px Nunito'; g.fillStyle = '#ffffff'; g.strokeStyle = '#2a1c15'; g.lineWidth = 10; const x = 820 + Math.sin(t * 9) * 6; for (const [dx, dy] of [[0, 0], [70, -50]]) { g.strokeText('chirp', x + dx, 890 + dy); g.fillText('chirp', x + dx, 890 + dy); } g.restore(); } },
 });
 // s05 "Dull is in Scotland." — the village of Dull: hills, cottages, sheep
 registerShot('s05', { kind: '3d',
@@ -58,13 +59,13 @@ insertShot('s06', { scene: { init: (T) => { const st = toonStage(T, { light: 'su
   insert: { type: 'counter', value: 84, from: 0, title: 'POPULATION OF DULL', prefix: '~', lines: ['about 84 people'], color: '#ffd23a' } });
 // s07 "In 2012, a Scottish woman on a cycling holiday" — a cyclist pedals along the Oregon road
 function rideScene(T) { const s = signScene(T); const bk = bicycle(); s.stage.add(bk); const R = person({ name: 'Rider', outfit: 'tee', skin: 'fair', hair: 'long', hairColor: '#b8642a', head: 'ballcap', headColor: '#d8342c', colors: { main: '#2a8a8a', legs: '#2a2f3a' }, seed: 61 }); s.stage.add(R); s.bk = bk; s.R = R; return s; }
-function ride(s, x, t, pedal = 1) { s.bk.position.set(x, 0, 3.4); s.bk.spin(t * 6 * pedal); s.R.position.set(x - 0.15, 0.25, 3.4); s.R.rotation.y = Math.PI / 2;
+function ride(s, x, t, pedal = 1) { s.bk.position.set(x, 0, 3.4); s.bk.spin(t * 6 * pedal); s.R.position.set(x - 0.2, 0.04, 3.4); s.R.rotation.y = Math.PI / 2;
   const c = t * 6 * pedal; s.R.pose(addPose(POSE.sit, { legL: [1.0 + Math.sin(c) * 0.5, 0.05], kneeL: 1.2 - Math.sin(c) * 0.6, legR: [1.0 - Math.sin(c) * 0.5, 0.05], kneeR: 1.2 + Math.sin(c) * 0.6, armL: [1.2, 0.1, 0], armR: [1.2, 0.1, 0], elbowL: 0.3, elbowR: 0.3, lean: 0.25 })); }
 registerShot('s07', { kind: '3d',
   init(T) { return rideScene(T); },
   draw(s, t, info) { const x = lerp(-7, -0.5, t / info.dur); ride(s, x, t); s.R.face(EXPR.happy, t); f1Faces(s, t + 4);
-    camMove(s.stage, t, [[0, { pos: [x - 1.5, 2.0, 9.5], look: [x, 1.2, 3.4], fov: 38 }], [info.dur, { pos: [x - 0.2, 2.0, 9.5], look: [x + 0.3, 1.2, 3.4], fov: 38 }]], (k) => k); },
-  overlay(g, t, info) { stamp(g, '2012', 540, 360, t - at(info, '2012', 0.1), { size: 96, color: '#d8342c' }); chip(g, 'CYCLING HOLIDAY', 540, 1200, t - at(info, 'cycling', 0.8), { size: 56, color: '#ffffff', rot: 3 }); },
+    camMove(s.stage, t, [[0, { pos: [x - 1.5, 2.2, 11.5], look: [x, 1.9, 3.4], fov: 38 }], [info.dur, { pos: [x - 0.2, 2.2, 11.5], look: [x + 0.3, 1.9, 3.4], fov: 38 }]], (k) => k); },
+  overlay(g, t, info) { stamp(g, '2012', 540, 330, t - at(info, '2012', 0.1), { size: 96, color: '#d8342c' }); chip(g, 'CYCLING HOLIDAY', 540, 1200, t - at(info, 'cycling', 0.8), { size: 56, color: '#ffffff', rot: 3 }); },
 });
 // s08 "rode through Boring... and had an idea." — she brakes, looks up at the yawning signs... lightbulb
 registerShot('s08', { kind: '3d',
@@ -72,7 +73,8 @@ registerShot('s08', { kind: '3d',
   draw(s, t, info) { const stop = prog(t, 0, 0.8), x = lerp(-0.5, 0.2, ease.out(stop)); ride(s, x, t * (1 - stop * 0.9), 1 - stop); const id = at(info, 'idea.', info.dur - 0.6);
     s.R.pose(addPose(POSE.sit, { legL: [1.0, 0.05], kneeL: 1.2, legR: [1.0, 0.05], kneeR: 1.2, armL: [1.2, 0.1, 0], armR: [1.2, 0.1, 0], elbowL: 0.3, elbowR: 0.3, headTurn: lerp(0, 1.1, ease.inOut(prog(t, 0.5, 1.1))), headNod: -0.25 }));
     s.R.face(t > id ? EXPR.grin : EXPR.neutral, t); s.B.set(t, { ...sleepy(t, 0), look: [0, 0.6] }); s.D.set(t, { ...sleepy(t, 2), yawn: yawnK(t, 0.9, 1.6), look: [0, 0.6] });
-    camMove(s.stage, t, [[0, { pos: [2.4, 1.6, 8.2], look: [-0.2, 1.8, 1.5], fov: 40 }], [info.dur, { pos: [2.2, 1.6, 7.6], look: [-0.2, 1.8, 1.5], fov: 40 }]]); },
+    const c = at(info, 'and', id - 0.5) - 0.1; if (t < c) camMove(s.stage, t, [[0, { pos: [3.6, 2.6, 10.6], look: [-0.4, 1.8, 0.6], fov: 40 }], [c, { pos: [3.5, 2.6, 10.2], look: [-0.4, 1.8, 0.6], fov: 40 }]]);
+    else camMove(s.stage, t - c, [[0, { pos: [3.0, 3.0, 9.6], look: [-0.2, 2.0, 1.0], fov: 36 }], [info.dur - c, { pos: [2.9, 3.0, 9.2], look: [-0.2, 2.0, 1.0], fov: 36 }]]); },
   overlay(g, t, info, s) { const id = at(info, 'idea.', info.dur - 0.6); const a = anchor(s.stage, s.R); bulb(g, a.x, a.y - 120, t - id + 0.15, 0.9); },
 });
 // s09 "Boring's planning group voted." — the meeting: rows of seated members, very still
@@ -115,7 +117,7 @@ registerShot('s12', { kind: '3d',
 // s13 "Boring and Dull Day, every August 9th." — the calendar page slaps in
 registerShot('s13', {
   draw(g, t, info) { const gr = g.createLinearGradient(0, 0, 0, E.H); gr.addColorStop(0, '#2f7a4a'); gr.addColorStop(1, '#1a3a5a'); g.fillStyle = gr; g.fillRect(0, 0, E.W, E.H);
-    chip(g, 'BORING & DULL DAY', 540, 380, t - 0.05, { size: 64, color: '#ffd23a', rot: -3 }); calendar(g, 540, 860, t - at(info, 'august', 0.8) + 0.1); },
+    chip(g, 'BORING & DULL DAY', 540, 380, t - 0.05, { size: 64, color: '#ffd23a', rot: -3 }); calendar(g, 540, 860, t - 0.2); },
 });
 // s14 "Yes. With bagpipes." — a bagpiper marches past the signs; the signs' eyes pop open... then droop again
 registerShot('s14', { kind: '3d',
@@ -148,7 +150,8 @@ function leagueScene(T) { const s = signScene(T, { bland: true, stage: { light: 
 registerShot('s17', { kind: '3d',
   init(T) { return leagueScene(T); },
   draw(s, t, info) { s.capes.forEach((c, i) => c.update(t + i)); [s.B, s.D, s.L].forEach((sg, i) => sg.set(t, { lid: 0.15, brow: 0.6, browTilt: 0.6, mouth: 'smile', look: [0, -0.2] }));
-    camMove(s.stage, t, [[0, { pos: [1.0, 0.6, 9.8], look: [1.0, 2.2, 0], fov: 44 }], [info.dur, { pos: [1.0, 0.5, 8.6], look: [1.0, 2.3, 0], fov: 44 }]]); shakeCam(s.stage, t, [{ fx: 'shake', at: 0.05, amp: 0.03, dur: 0.3 }]); },
+    const c = at(info, 'extraordinary', info.dur * 0.5) - 0.1; if (t < c) camMove(s.stage, t, [[0, { pos: [1.0, 0.6, 9.8], look: [1.0, 2.2, 0], fov: 44 }], [c, { pos: [1.0, 0.55, 9.2], look: [1.0, 2.25, 0], fov: 44 }]]);
+    else camMove(s.stage, t - c, [[0, { pos: [-1.6, 0.8, 7.6], look: [1.0, 2.2, 0], fov: 44 }], [info.dur - c, { pos: [-1.2, 0.7, 7.2], look: [1.0, 2.3, 0], fov: 44 }]]); shakeCam(s.stage, t, [{ fx: 'shake', at: 0.05, amp: 0.03, dur: 0.3 }]); },
   overlay(g, t, info) { heroRays(g, t, 1); const k = at(info, 'league', 0.6); const a = ease.outBack(clamp((t - k) / 0.4));
     if (a > 0) { g.save(); g.translate(540, 420); g.scale(a, a); g.rotate(-0.04); chip(g, 'THE LEAGUE OF', 0, -70, 1, { size: 56, color: '#ffffff' }); chip(g, 'EXTRAORDINARY', 0, 30, 1, { size: 74, color: '#ffd23a' }); chip(g, 'COMMUNITIES', 0, 140, 1, { size: 74, color: '#ffd23a' }); g.restore(); } },
 });

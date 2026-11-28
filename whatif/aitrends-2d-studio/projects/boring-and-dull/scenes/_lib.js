@@ -21,9 +21,9 @@ function drawSign(c, W, H, o, st) {
   c.fillStyle = o.ink || '#ffffff'; c.textAlign = 'center'; c.textBaseline = 'middle';
   if (o.sub) { c.font = `800 ${H * 0.085 | 0}px Nunito`; c.fillText(o.sub, W / 2, H * 0.13); }
   c.font = `900 ${H * 0.2 | 0}px Nunito`; let fs = H * 0.2; while (c.measureText(o.name).width > W * 0.84) { fs *= 0.94; c.font = `900 ${fs | 0}px Nunito`; } c.fillText(o.name, W / 2, H * 0.29);
-  if (o.under) { c.font = `800 ${H * 0.065 | 0}px Nunito`; c.fillText(o.under, W / 2, H * 0.43); }
+  if (o.under) { c.font = `800 ${H * 0.065 | 0}px Nunito`; c.fillText(o.under, W / 2, H * 0.405); }
   // face
-  const ey = H * 0.6, ex = W * 0.17, er = H * 0.11, lid = clamp(st.lid ?? 0.55), yw = st.yawn || 0, lk = st.look || [0, 0];
+  const ey = H * 0.64, ex = W * 0.17, er = H * 0.1, lid = clamp(st.lid ?? 0.55), yw = st.yawn || 0, lk = st.look || [0, 0];
   for (const s of [-1, 1]) { const x = W / 2 + s * ex;
     c.fillStyle = '#fbfaf4'; c.beginPath(); c.ellipse(x, ey, er, er * 1.1, 0, 0, 7); c.fill();
     c.fillStyle = '#1a1214'; c.beginPath(); c.arc(x + lk[0] * er * 0.4, ey + er * 0.25 + lk[1] * er * 0.3, er * 0.42, 0, 7); c.fill();
@@ -31,7 +31,7 @@ function drawSign(c, W, H, o, st) {
     c.strokeStyle = '#1a1214'; c.lineWidth = 7; c.beginPath(); c.ellipse(x, ey, er, er * 1.1, 0, 0, 7); c.stroke();
     if (L > 0.02) { c.beginPath(); c.moveTo(x - er, ey - er * 1.1 + er * 2.2 * L); c.lineTo(x + er, ey - er * 1.1 + er * 2.2 * L); c.stroke(); }
     c.lineWidth = 9; c.beginPath(); c.moveTo(x - er * 0.9, ey - er * 1.45 - yw * er * 0.3 + (st.brow || 0) * -er * 0.4); c.lineTo(x + er * 0.9, ey - er * 1.45 - yw * er * 0.3 + (st.brow || 0) * -er * 0.4 + s * (st.browTilt || 0) * er * 0.3); c.stroke(); }
-  const my = H * 0.83; c.fillStyle = '#5a1a22'; c.strokeStyle = '#1a1214'; c.lineWidth = 7;
+  const my = H * 0.85; c.fillStyle = '#5a1a22'; c.strokeStyle = '#1a1214'; c.lineWidth = 7;
   if (yw > 0.04) { c.beginPath(); c.ellipse(W / 2, my, W * 0.07 + yw * W * 0.04, H * 0.025 + yw * H * 0.1, 0, 0, 7); c.fill(); c.stroke(); c.fillStyle = '#e8707a'; c.beginPath(); c.ellipse(W / 2, my + yw * H * 0.06, W * 0.05 * yw + 2, H * 0.03 * yw + 1, 0, 0, 7); c.fill(); }
   else if (st.mouth === 'o') { c.beginPath(); c.ellipse(W / 2, my, W * 0.035, H * 0.04, 0, 0, 7); c.fill(); c.stroke(); }
   else if (st.mouth === 'smile') { c.beginPath(); c.arc(W / 2, my - H * 0.05, W * 0.08, 0.3, Math.PI - 0.3); c.stroke(); }
