@@ -1,0 +1,91 @@
+{
+ "_how": "Studio > video > Languages: video language English; add each language below with its title + description. Description = the 'line' + a blank line + the video's ORIGINAL English 'Sources:' block (URLs unchanged) + the 'synthetic' line for that language. Also upload captions.en.srt as the English subtitle track. Titles keep the same hedges as English (may/around/what-if).",
+ "_synthetic": {
+  "es": "La voz es sintética.",
+  "pt": "A voz é sintética.",
+  "hi": "आवाज़ सिंथेटिक है।",
+  "id": "Suaranya sintetis.",
+  "de": "Die Stimme ist synthetisch.",
+  "fr": "La voix est synthétique."
+ },
+ "octopus-nine-brains": {
+  "es": {"title": "El pulpo tiene 9 cerebros, 3 corazones y sangre azul 🐙", "line": "El pulpo tiene un cerebro en la cabeza y un «minicerebro» en cada uno de sus ocho brazos, tres corazones, sangre azul a base de cobre y ni un solo hueso."},
+  "pt": {"title": "O polvo tem 9 cérebros, 3 corações e sangue azul 🐙", "line": "O polvo tem um cérebro na cabeça e um \"minicérebro\" em cada um dos seus oito braços, três corações, sangue azul à base de cobre e nenhum osso."},
+  "hi": {"title": "ऑक्टोपस के 9 दिमाग, 3 दिल और नीला खून होता है 🐙", "line": "ऑक्टोपस के सिर में एक दिमाग होता है और उसकी आठों भुजाओं में एक-एक \"मिनी दिमाग\", तीन दिल, तांबे वाला नीला खून, और एक भी हड्डी नहीं।"},
+  "id": {"title": "Gurita Punya 9 Otak, 3 Jantung, dan Darah Biru 🐙", "line": "Gurita punya satu otak di kepala dan \"otak mini\" di masing-masing dari delapan lengannya, tiga jantung, darah biru berbasis tembaga, dan tidak punya tulang sama sekali."},
+  "de": {"title": "Der Oktopus hat 9 Gehirne, 3 Herzen und blaues Blut 🐙", "line": "Ein Oktopus hat ein Gehirn im Kopf und ein „Mini-Gehirn“ in jedem seiner acht Arme, drei Herzen, blaues Blut auf Kupferbasis und keinen einzigen Knochen."},
+  "fr": {"title": "La pieuvre a 9 cerveaux, 3 cœurs et le sang bleu 🐙", "line": "La pieuvre a un cerveau dans la tête et un « mini-cerveau » dans chacun de ses huit bras, trois cœurs, un sang bleu à base de cuivre et pas un seul os."}
+ },
+ "wood-frog-freezes": {
+  "es": {"title": "Esta rana se congela cada invierno y luego revive 🐸", "line": "Cada invierno, la rana de bosque deja que hasta dos tercios del agua de su cuerpo se conviertan en hielo; su corazón y su respiración se detienen, el azúcar protege sus células y en primavera se descongela y sale a reproducirse."},
+  "pt": {"title": "Este sapo congela todo inverno e depois volta à vida 🐸", "line": "Todo inverno, a rã-da-floresta deixa até dois terços da água do corpo virar gelo; o coração e a respiração param, o açúcar protege suas células e, na primavera, ela descongela e sai para se reproduzir."},
+  "hi": {"title": "यह मेंढक हर सर्दी में जम जाता है, फिर ज़िंदा हो जाता है 🐸", "line": "हर सर्दी में वुड फ्रॉग अपने शरीर के दो-तिहाई तक पानी को बर्फ बनने देता है; उसका दिल और साँस रुक जाते हैं, शुगर उसकी कोशिकाओं को बचाती है, और वसंत में वह पिघलकर फिर से उछलने लगता है।"},
+  "id": {"title": "Katak Ini Membeku Tiap Musim Dingin, Lalu Hidup Lagi 🐸", "line": "Setiap musim dingin, katak kayu membiarkan hingga dua pertiga air tubuhnya menjadi es; jantung dan napasnya berhenti, gula melindungi sel-selnya, dan saat musim semi ia mencair lalu melompat pergi untuk berkembang biak."},
+  "de": {"title": "Dieser Frosch friert jeden Winter ein und lebt wieder auf 🐸", "line": "Jeden Winter lässt der Waldfrosch bis zu zwei Drittel seines Körperwassers zu Eis werden; Herz und Atmung stehen still, Zucker schützt seine Zellen, und im Frühling taut er auf und hüpft zur Paarung davon."},
+  "fr": {"title": "Cette grenouille gèle chaque hiver, puis revient à la vie 🐸", "line": "Chaque hiver, la grenouille des bois laisse jusqu'aux deux tiers de l'eau de son corps se transformer en glace ; son cœur et sa respiration s'arrêtent, le sucre protège ses cellules, et au printemps elle dégèle et repart se reproduire."}
+ },
+ "naked-mole-rat": {
+  "es": {"title": "Este roedor casi no envejece y casi nunca tiene cáncer 🐀", "line": "La rata topo desnuda vive más de 30 años, su riesgo de morir no aumenta con la edad y puede sobrevivir 18 minutos sin nada de oxígeno."},
+  "pt": {"title": "Este roedor quase não envelhece e quase nunca tem câncer 🐀", "line": "O rato-toupeira-pelado vive mais de 30 anos, seu risco de morrer não aumenta com a idade e ele sobrevive 18 minutos sem nenhum oxigênio."},
+  "hi": {"title": "यह चूहा मुश्किल से बूढ़ा होता है और कैंसर लगभग कभी नहीं होता 🐀", "line": "नेकेड मोल-रैट 30 से ज़्यादा साल जीता है, उम्र के साथ उसके मरने का खतरा नहीं बढ़ता, और वह बिना ऑक्सीजन के 18 मिनट तक ज़िंदा रह सकता है।"},
+  "id": {"title": "Hewan Pengerat Ini Hampir Tak Menua dan Jarang Kena Kanker 🐀", "line": "Tikus mondok telanjang hidup lebih dari 30 tahun, risiko kematiannya tidak naik seiring usia, dan ia bisa bertahan 18 menit tanpa oksigen sama sekali."},
+  "de": {"title": "Dieses Nagetier altert kaum und bekommt fast nie Krebs 🐀", "line": "Der Nacktmull wird über 30 Jahre alt, sein Sterberisiko steigt nicht mit dem Alter, und er überlebt 18 Minuten ganz ohne Sauerstoff."},
+  "fr": {"title": "Ce rongeur vieillit à peine et n'a presque jamais de cancer 🐀", "line": "Le rat-taupe nu vit plus de 30 ans, son risque de mourir n'augmente pas avec l'âge, et il peut survivre 18 minutes sans aucun oxygène."}
+ },
+ "greenland-shark": {
+  "es": {"title": "Este tiburón podría vivir unos 400 años 🦈", "line": "Los científicos dataron a los tiburones de Groenlandia por los cristalinos de sus ojos: el más grande tenía unos 392 años, con un margen de 120 años."},
+  "pt": {"title": "Este tubarão pode viver cerca de 400 anos 🦈", "line": "Cientistas dataram tubarões-da-groenlândia pelo cristalino dos olhos: o maior tinha cerca de 392 anos, com margem de 120 anos para mais ou para menos."},
+  "hi": {"title": "यह शार्क शायद लगभग 400 साल जी सकती है 🦈", "line": "वैज्ञानिकों ने ग्रीनलैंड शार्क की उम्र उनकी आँखों के लेंस से मापी: सबसे बड़ी शार्क अनुमानित 392 साल की थी, 120 साल कम या ज़्यादा।"},
+  "id": {"title": "Hiu Ini Mungkin Bisa Hidup Sekitar 400 Tahun 🦈", "line": "Ilmuwan menentukan umur hiu Greenland dari lensa matanya: yang terbesar diperkirakan berumur 392 tahun, dengan selisih sekitar 120 tahun."},
+  "de": {"title": "Dieser Hai kann wohl rund 400 Jahre alt werden 🦈", "line": "Forscher bestimmten das Alter von Grönlandhaien anhand ihrer Augenlinsen: Der größte war schätzungsweise 392 Jahre alt, plus oder minus 120 Jahre."},
+  "fr": {"title": "Ce requin pourrait vivre environ 400 ans 🦈", "line": "Des scientifiques ont daté des requins du Groenland grâce au cristallin de leurs yeux : le plus grand avait environ 392 ans, à 120 ans près."}
+ },
+ "mantis-shrimp-punch": {
+  "es": {"title": "Este camarón golpea tan rápido que el agua hierve 🥊", "line": "La galera pavo real golpea tan rápido que el agua se convierte en burbujas de vapor, y cuando estas colapsan golpean al objetivo por segunda vez."},
+  "pt": {"title": "Este camarão soca tão rápido que a água ferve 🥊", "line": "O camarão-louva-a-deus golpeia tão rápido que a água vira bolhas de vapor, e o colapso delas atinge o alvo uma segunda vez."},
+  "hi": {"title": "यह झींगा इतनी तेज़ मुक्का मारता है कि पानी उबल जाता है 🥊", "line": "पीकॉक मैंटिस श्रिम्प इतनी तेज़ी से वार करता है कि पानी भाप के बुलबुलों में बदल जाता है, और उनके फूटने से निशाने पर दूसरी बार चोट लगती है।"},
+  "id": {"title": "Udang Ini Memukul Begitu Cepat Sampai Air Mendidih 🥊", "line": "Udang mantis merak memukul begitu cepat sampai air berubah jadi gelembung uap, dan saat gelembung itu pecah, targetnya terpukul untuk kedua kalinya."},
+  "de": {"title": "Dieser Krebs schlägt so schnell zu, dass das Wasser kocht 🥊", "line": "Der Pfauen-Fangschreckenkrebs schlägt so schnell zu, dass das Wasser zu Dampfblasen wird, und deren Zusammenfallen trifft das Ziel ein zweites Mal."},
+  "fr": {"title": "Cette crevette frappe si vite que l'eau se met à bouillir 🥊", "line": "La crevette-mante paon frappe si vite que l'eau se transforme en bulles de vapeur, et leur implosion frappe la cible une deuxième fois."}
+ },
+ "axolotl-regrows": {
+  "es": {"title": "Este animal puede regenerar partes de su cerebro 🧠", "line": "El ajolote regenera sus patas, su cola, su médula espinal e incluso partes de su corazón y su cerebro, pero en estado salvaje está en peligro crítico."},
+  "pt": {"title": "Este animal consegue regenerar partes do próprio cérebro 🧠", "line": "O axolote regenera pernas, cauda, medula espinhal e até partes do coração e do cérebro, mas na natureza está criticamente ameaçado."},
+  "hi": {"title": "यह जानवर अपने दिमाग के हिस्से फिर से उगा सकता है 🧠", "line": "एक्सोलोटल अपने पैर, पूँछ, रीढ़ की हड्डी और यहाँ तक कि दिल और दिमाग के हिस्से भी फिर से उगा लेता है, लेकिन जंगल में यह गंभीर रूप से संकटग्रस्त है।"},
+  "id": {"title": "Hewan Ini Bisa Menumbuhkan Lagi Bagian Otaknya 🧠", "line": "Axolotl bisa menumbuhkan kembali kaki, ekor, sumsum tulang belakang, bahkan sebagian jantung dan otaknya, tapi di alam liar statusnya kritis."},
+  "de": {"title": "Dieses Tier kann Teile seines Gehirns nachwachsen lassen 🧠", "line": "Der Axolotl lässt Beine, Schwanz, Rückenmark und sogar Teile von Herz und Gehirn nachwachsen, doch in freier Wildbahn ist er vom Aussterben bedroht."},
+  "fr": {"title": "Cet animal peut faire repousser des parties de son cerveau 🧠", "line": "L'axolotl fait repousser ses pattes, sa queue, sa moelle épinière et même des parties de son cœur et de son cerveau, mais à l'état sauvage il est en danger critique."}
+ },
+ "earth-stops-spinning": {
+  "es": {"title": "Si la Tierra dejara de girar 1 segundo: todo saldría volando 🌍", "line": "Un experimento mental: si la Tierra dejara de girar durante un segundo, esto es lo que dicen los científicos de la NASA que pasaría."},
+  "pt": {"title": "Se a Terra parasse de girar por 1 segundo: tudo voaria 🌍", "line": "Um experimento mental: se a Terra parasse de girar por um segundo, veja o que os cientistas da NASA dizem que aconteceria."},
+  "hi": {"title": "अगर धरती 1 सेकंड के लिए घूमना बंद कर दे: सब कुछ उड़ जाएगा 🌍", "line": "एक कल्पना: अगर धरती एक सेकंड के लिए घूमना बंद कर दे, तो NASA के वैज्ञानिकों के अनुसार क्या होगा।"},
+  "id": {"title": "Jika Bumi Berhenti Berputar 1 Detik: Semuanya Terlempar 🌍", "line": "Eksperimen pikiran: jika Bumi berhenti berputar selama satu detik, inilah yang menurut ilmuwan NASA akan terjadi."},
+  "de": {"title": "Wenn die Erde 1 Sekunde stillsteht: Alles fliegt davon 🌍", "line": "Ein Gedankenexperiment: Wenn sich die Erde eine Sekunde lang nicht mehr drehen würde, passiert laut NASA-Wissenschaftlern Folgendes."},
+  "fr": {"title": "Si la Terre s'arrêtait de tourner 1 seconde : tout s'envole 🌍", "line": "Une expérience de pensée : si la Terre cessait de tourner pendant une seconde, voici ce qui se passerait selon les scientifiques de la NASA."}
+ },
+ "moon-disappears": {
+  "es": {"title": "Si la Luna desapareciera esta noche, las mareas bajarían a 1/3 🌙", "line": "Un experimento mental: lo que dicen los científicos que pasaría con las mareas, las noches, los animales y la inclinación de la Tierra sin la Luna."},
+  "pt": {"title": "Se a Lua sumisse hoje à noite, as marés cairiam para 1/3 🌙", "line": "Um experimento mental: o que os cientistas dizem que aconteceria com as marés, as noites, os animais e a inclinação da Terra sem a Lua."},
+  "hi": {"title": "अगर आज रात चाँद गायब हो जाए, तो ज्वार 1/3 रह जाएँगे 🌙", "line": "एक कल्पना: वैज्ञानिकों के अनुसार चाँद के बिना ज्वार, रातों, जानवरों और धरती के झुकाव का क्या होगा।"},
+  "id": {"title": "Jika Bulan Lenyap Malam Ini, Pasang Surut Tinggal 1/3 🌙", "line": "Eksperimen pikiran: menurut ilmuwan, inilah yang terjadi pada pasang surut, malam hari, hewan, dan kemiringan Bumi tanpa Bulan."},
+  "de": {"title": "Wäre der Mond heute Nacht weg, schrumpften die Gezeiten auf 1/3 🌙", "line": "Ein Gedankenexperiment: Was laut Wissenschaftlern ohne den Mond mit den Gezeiten, den Nächten, den Tieren und der Neigung der Erde passieren würde."},
+  "fr": {"title": "Si la Lune disparaissait ce soir, les marées tomberaient à 1/3 🌙", "line": "Une expérience de pensée : ce qui arriverait aux marées, aux nuits, aux animaux et à l'inclinaison de la Terre sans la Lune, selon les scientifiques."}
+ },
+ "fall-into-black-hole": {
+  "es": {"title": "Un agujero negro te convertiría en espagueti 🍝", "line": "Un experimento mental: lo que dicen los científicos que pasaría si cayeras en un agujero negro pequeño o en uno supermasivo."},
+  "pt": {"title": "Um buraco negro transformaria você em espaguete 🍝", "line": "Um experimento mental: o que os cientistas dizem que aconteceria se você caísse em um buraco negro pequeno ou em um supermassivo."},
+  "hi": {"title": "ब्लैक होल आपको स्पेगेटी जैसा खींच देगा 🍝", "line": "एक कल्पना: वैज्ञानिकों के अनुसार अगर आप किसी छोटे या सुपरमैसिव ब्लैक होल में गिर जाएँ तो क्या होगा।"},
+  "id": {"title": "Lubang Hitam Bakal Mengubahmu Jadi Spageti 🍝", "line": "Eksperimen pikiran: menurut ilmuwan, inilah yang terjadi jika kamu jatuh ke lubang hitam kecil atau lubang hitam supermasif."},
+  "de": {"title": "Ein Schwarzes Loch würde dich zu Spaghetti machen 🍝", "line": "Ein Gedankenexperiment: Was laut Wissenschaftlern passieren würde, wenn du in ein kleines oder ein supermassereiches Schwarzes Loch fällst."},
+  "fr": {"title": "Un trou noir te transformerait en spaghetti 🍝", "line": "Une expérience de pensée : ce qui t'arriverait, selon les scientifiques, si tu tombais dans un petit trou noir ou dans un trou noir supermassif."}
+ },
+ "pando-one-tree": {
+  "es": {"title": "Todo este bosque es en realidad UN solo árbol 🌳", "line": "Pando, un álamo temblón en Utah: unos 47 000 troncos, un solo sistema de raíces, unas 6000 toneladas, y se está reduciendo."},
+  "pt": {"title": "Esta floresta inteira é na verdade UMA única árvore 🌳", "line": "Pando, um álamo-tremedor em Utah: cerca de 47 mil troncos, um único sistema de raízes, cerca de 6 mil toneladas, e está encolhendo."},
+  "hi": {"title": "यह पूरा जंगल असल में एक ही पेड़ है 🌳", "line": "पैंडो, यूटा का एक क्वेकिंग ऐस्पन: लगभग 47,000 तने, एक ही जड़ प्रणाली, करीब 6,000 टन, और यह सिकुड़ रहा है।"},
+  "id": {"title": "Seluruh Hutan Ini Sebenarnya SATU Pohon 🌳", "line": "Pando, pohon aspen di Utah: sekitar 47.000 batang, satu sistem akar, kira-kira 6.000 ton, dan semakin menyusut."},
+  "de": {"title": "Dieser ganze Wald ist in Wahrheit EIN einziger Baum 🌳", "line": "Pando, eine Zitterpappel in Utah: rund 47.000 Stämme, ein einziges Wurzelsystem, etwa 6.000 Tonnen, und sie schrumpft."},
+  "fr": {"title": "Toute cette forêt est en réalité UN seul arbre 🌳", "line": "Pando, un peuplier faux-tremble dans l'Utah : environ 47 000 troncs, un seul système racinaire, quelque 6 000 tonnes, et il rétrécit."}
+ }
+}

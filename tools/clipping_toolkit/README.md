@@ -47,3 +47,11 @@ Default target: `~/clipping-toolkit`. Add `--latest` (`-Latest` on Windows) to t
 ## What our current channels already use instead
 yt-dlp (on the PC), faster-whisper (voice listen-back), libass (captions in the automator), PyAV (automator),
 Remotion + three.js (editing/rendering), ElevenLabs (clean voices), and `clip_short.mjs` (Shorts from our own long videos).
+
+## Watchlist (reviewed, not fetched)
+- **Craft Anything** (`storytold/craft-anything`, reviewed at 836dc59, Nov 28 2026; built on `morluto/rea`). MIT/Apache, Rust,
+  early alpha. It studies a website/app/game, has Claude Code build your own version, checks it against the original and
+  refines it. Websites work today; apps and games are only partly there. It runs on the PC's Claude Code (plan usage).
+  Not useful for the video channels now. Revisit if we build our own channel website or a simple browser game. Use it only
+  on our own content or layouts we're allowed to use; never to clone someone else's site or game. Install from the
+  official repo/releases only (`cargo install --path apps/craft-anything-cli`, then `craft-anything-cli doctor`).
