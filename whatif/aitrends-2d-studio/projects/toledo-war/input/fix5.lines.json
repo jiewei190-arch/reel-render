@@ -1,0 +1,42 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.0,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 5.412,
+ "render_s": 32.8,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "But here's the part... the war's only injury: a deputy, hurt with a penknife.",
+   "start": 0.0,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the war's only injury: a deputy, hurt with a penknife.",
+     "seed": 7,
+     "heard": "The war's only injury, a deputy hurt with a penknife.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 5.112
+  }
+ ]
+}
