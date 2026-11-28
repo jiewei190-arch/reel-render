@@ -1,0 +1,52 @@
+{
+ "title": "A Town Called Boring Teamed Up With Dull",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 46.26,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "boring",
+   "dull",
+   "oregon",
+   "scotland",
+   "exciting",
+   "84",
+   "2012",
+   "idea",
+   "unanimous",
+   "pair",
+   "ages",
+   "party",
+   "august",
+   "9th",
+   "bagpipes",
+   "2013",
+   "bland",
+   "australia",
+   "league",
+   "extraordinary",
+   "communities",
+   "trinity",
+   "tedium"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}
