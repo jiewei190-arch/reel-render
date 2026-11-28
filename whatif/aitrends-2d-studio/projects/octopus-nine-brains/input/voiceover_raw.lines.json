@@ -1,0 +1,192 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 43.675,
+ "render_s": 306.7,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "This animal has 9 brains, 3 hearts, and blue blood.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "This animal has nine brains, three hearts, and blue blood.",
+     "seed": 7,
+     "heard": "This animal has 9 brains, 3 hearts, and blue blood.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.9
+  },
+  {
+   "n": 2,
+   "text": "The octopus has around 500 million neurons, about as many as a dog.",
+   "start": 4.2,
+   "parts": [
+    {
+     "tts": "The octopus has around five hundred million neurons, about as many as a dog.",
+     "seed": 7,
+     "heard": "The octopus has around 500 million neurons, about as many as a dog.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.667
+  },
+  {
+   "n": 3,
+   "text": "But two thirds of them aren't in its head. They're in its arms.",
+   "start": 8.967,
+   "parts": [
+    {
+     "tts": "But two thirds of them aren't in its head. They're in its arms.",
+     "seed": 7,
+     "heard": "But two-thirds of them aren't in its head. They're in its arms.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.293
+  },
+  {
+   "n": 4,
+   "text": "Each arm has its own mini brain. It can taste, touch and move on its own.",
+   "start": 12.593,
+   "parts": [
+    {
+     "tts": "Each arm has its own mini brain. It can taste, touch and move on its own.",
+     "seed": 7,
+     "heard": "Each arm has its own mini-brain. It can taste, touch, and move on its own.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.129
+  },
+  {
+   "n": 5,
+   "text": "But the main brain can still step in and take control.",
+   "start": 17.429,
+   "parts": [
+    {
+     "tts": "But the main brain can still step in and take control.",
+     "seed": 7,
+     "heard": "but the main brain can still step in and take control.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.633
+  },
+  {
+   "n": 6,
+   "text": "3 hearts: two pump blood past the gills, one pumps it around the body.",
+   "start": 19.933,
+   "parts": [
+    {
+     "tts": "three hearts: two pump blood past the gills, one pumps it around the body.",
+     "seed": 7,
+     "heard": "Three hearts, two pump blood past the gills, one pumps it around the body.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.907
+  },
+  {
+   "n": 7,
+   "text": "But when it swims, that body heart goes quiet.",
+   "start": 24.207,
+   "parts": [
+    {
+     "tts": "But when it swims, that body heart goes quiet.",
+     "seed": 7,
+     "heard": "but when it swims, that body heart goes quiet.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 26.897
+  },
+  {
+   "n": 8,
+   "text": "And the blood is blue, because it carries oxygen with copper, not iron.",
+   "start": 27.197,
+   "parts": [
+    {
+     "tts": "And the blood is blue, because it carries oxygen with copper, not iron.",
+     "seed": 7,
+     "heard": "and the blood is blue because it carries oxygen with copper, not iron.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.173
+  },
+  {
+   "n": 9,
+   "text": "But in cold water with little oxygen, copper actually works better.",
+   "start": 31.473,
+   "parts": [
+    {
+     "tts": "But in cold water with little oxygen, copper actually works better.",
+     "seed": 7,
+     "heard": "But in cold water with little oxygen, copper actually works better.",
+     "wrong_words": 0,
+     "qa": "ok (retake: \"But\" added, see STATUS)"
+    }
+   ],
+   "end": 35.408
+  },
+  {
+   "n": 10,
+   "text": "9 brains, 3 hearts, blue blood... and zero bones.",
+   "start": 35.708,
+   "parts": [
+    {
+     "tts": "nine brains, three hearts, blue blood...",
+     "seed": 7,
+     "heard": "nine brains, three hearts, blue blood,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and zero bones.",
+     "seed": 7,
+     "heard": "and zero bones.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.769
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 42.069,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.375
+  }
+ ]
+}

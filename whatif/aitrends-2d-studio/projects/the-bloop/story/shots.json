@@ -1,0 +1,553 @@
+{
+ "duration": 43.82,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.48,
+   "line": "In 1997, the ocean made a noise",
+   "scene": "FRAME 1: the toon sea monster looms in deep water, sound rings pulse, a fish double-takes + top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/sweep_3.wav",
+     "gain": -5
+    },
+    {
+     "at": 0.02,
+     "name": "toon3d:suspense",
+     "gain": -16
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.48,
+   "end": 3.9,
+   "line": "nobody could explain.",
+   "scene": "a scientist with headphones shrugs, ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.9,
+   "end": 5.48,
+   "line": "Underwater microphones were listening for",
+   "scene": "the hydrophone on its cable, HYDROPHONE = UNDERWATER MIC",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "word": "microphones",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.48,
+   "end": 6.82,
+   "line": "volcanoes in the Pacific.",
+   "scene": "a tiny undersea volcano burps bubbles, LISTENING FOR VOLCANOES",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:water",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.82,
+   "end": 8.66,
+   "line": "Instead, they caught... this.",
+   "scene": "giant rings slam the hydrophone on \"this\", fish flee",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "this",
+     "name": "sfx/sweep_5.wav",
+     "gain": -3,
+     "offset": -0.05
+    },
+    {
+     "word": "this",
+     "name": "toon3d:impact",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.66,
+   "end": 10.94,
+   "line": "Ultra-low, extremely loud,",
+   "scene": "INSERT 1: oscilloscope, a slow wave grows huge: ULTRA-LOW / EXTREMELY LOUD",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "loud",
+     "name": "toon3d:boom",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.94,
+   "end": 12.42,
+   "line": "and about a minute long.",
+   "scene": "clock dial sweeps round: ~1 MINUTE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -11
+    },
+    {
+     "word": "minute",
+     "name": "toon3d:ding",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.42,
+   "end": 14.87,
+   "line": "Sped up 16 times so humans could hear it,",
+   "scene": "fast-forward on the tape machine, >> x16",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "word": "16",
+     "name": "toon3d:zap",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:scratch",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.87,
+   "end": 16.68,
+   "line": "it went... bloop.",
+   "scene": "deadpan scientist; one bubble pops out: BLOOP stamp",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "bloop",
+     "name": "sfx/bloop.wav",
+     "gain": -4,
+     "offset": 0.05
+    },
+    {
+     "word": "bloop",
+     "name": "toon3d:stamp",
+     "gain": -14,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 16.68,
+   "end": 18.98,
+   "line": "Sensors about 3,000 miles apart picked it up,",
+   "scene": "INSERT 2: Pacific map, two sensors, ~3,000 MILES",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:paper",
+     "gain": -11
+    },
+    {
+     "word": "3,000",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "word": "apart",
+     "name": "toon3d:slide",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 18.98,
+   "end": 20.92,
+   "line": "from the remote South Pacific.",
+   "scene": "zoom to the X: REMOTE SOUTH PACIFIC",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "remote",
+     "name": "toon3d:pop",
+     "gain": -11
+    },
+    {
+     "word": "pacific",
+     "name": "toon3d:stamp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 20.92,
+   "end": 23.36,
+   "line": "Reportedly, it was far louder than a blue whale, the",
+   "scene": "a blue whale sings proudly, REPORTEDLY / BLUE WHALE",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:water",
+     "gain": -16
+    },
+    {
+     "word": "blue",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 23.36,
+   "end": 24.68,
+   "line": "loudest known animal.",
+   "scene": "giant BLOOP rings dwarf the whale; it sweats: LOUDEST KNOWN ANIMAL",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "toon3d:rumble",
+     "gain": -8
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:squeak",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.68,
+   "end": 26.42,
+   "line": "So people guessed: a",
+   "scene": "three people think, ??? ??? ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 0.25,
+     "name": "toon3d:boing",
+     "gain": -15
+    },
+    {
+     "at": 0.4,
+     "name": "toon3d:boing",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 26.42,
+   "end": 29.14,
+   "line": "giant sea creature nobody had ever seen.",
+   "scene": "THE MONSTER: low angle, flash: GIANT SEA CREATURE?",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:thunder",
+     "gain": -10
+    },
+    {
+     "word": "creature",
+     "name": "toon3d:suspense",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 29.14,
+   "end": 30.8,
+   "line": "But here's the part...",
+   "scene": "slow push on the monster in the dark (beat)",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:riser",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 30.8,
+   "end": 33.4,
+   "line": "in 2005, NOAA found the source.",
+   "scene": "scientist finds it: 2005 stamp, \"!\"",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "2005",
+     "name": "toon3d:stamp",
+     "gain": -9
+    },
+    {
+     "word": "found",
+     "name": "toon3d:success",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 33.4,
+   "end": 34.46,
+   "line": "Not a sea monster.",
+   "scene": "the monster drops its tentacles: an iceberg: NOT A SEA MONSTER",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "at": 0.35,
+     "name": "toon3d:slide",
+     "gain": -9
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:boing",
+     "gain": -11
+    },
+    {
+     "word": "monster",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 34.46,
+   "end": 35.28,
+   "line": "An icequake.",
+   "scene": "the iceberg shakes, crack runs: ICEQUAKE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "sfx/icecrack.wav",
+     "gain": -6
+    },
+    {
+     "word": "icequake",
+     "name": "toon3d:stamp",
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 35.28,
+   "end": 36.9,
+   "line": "An iceberg, cracking and",
+   "scene": "Antarctica: glacier front, crack runs down, penguins double-take",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "cracking",
+     "name": "sfx/icecrack.wav",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 36.9,
+   "end": 39.5,
+   "line": "breaking away from an Antarctic glacier.",
+   "scene": "the chunk tips into the sea: CRACK! splash, penguins hop",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "at": 1.05,
+     "name": "toon3d:crash",
+     "gain": -7
+    },
+    {
+     "at": 1.1,
+     "name": "toon3d:splash",
+     "gain": -7
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 39.5,
+   "end": 42.32,
+   "line": "The monster... was ice.",
+   "scene": "PAYOFF: underwater, the iceberg sits where the monster was: THE MONSTER = ICE",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "word": "ice",
+     "name": "toon3d:sparkle",
+     "gain": -10
+    },
+    {
+     "word": "ice",
+     "name": "toon3d:boing",
+     "gain": -12,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 42.32,
+   "end": 43.82,
+   "line": "Subscribe for more.",
+   "scene": "closer: frame 1 camera, the monster pops back into place -> loop",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "toon3d:pop",
+     "gain": -13
+    },
+    {
+     "at": 0.9,
+     "name": "sfx/sweep_3.wav",
+     "gain": -14
+    }
+   ]
+  }
+ ]
+}

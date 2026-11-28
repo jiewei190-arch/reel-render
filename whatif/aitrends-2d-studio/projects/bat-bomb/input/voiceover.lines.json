@@ -1,0 +1,172 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.25,
+ "section": 1.4,
+ "lead": 0.1,
+ "beat": 0.45,
+ "sr": 24000,
+ "duration": 24.749,
+ "render_s": 324.0,
+ "qa_fail_lines": [
+  1,
+  2,
+  8
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "The U.S. military built a bomb out of bats.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "The U.S. military built a bomb out of bats.",
+     "seed": 7,
+     "heard": "The US military built a bomb out of bats.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 2.274
+  },
+  {
+   "n": 2,
+   "text": "World War Two. Project X-Ray.",
+   "start": 2.414,
+   "parts": [
+    {
+     "tts": "World War Two. Project X-Ray.",
+     "seed": 7,
+     "heard": "World War II, Project X-ray.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 4.303
+  },
+  {
+   "n": 3,
+   "text": "The plan: a million bats, each carrying a tiny timed firebomb.",
+   "start": 4.442,
+   "parts": [
+    {
+     "tts": "The plan: a million bats, each carrying a tiny timed firebomb.",
+     "seed": 7,
+     "heard": "The plan, a million bats, each carrying a tiny-timed firebomb.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.007
+  },
+  {
+   "n": 4,
+   "text": "Drop them over Japan. They'd roost in attics... and then ignite.",
+   "start": 8.147,
+   "parts": [
+    {
+     "tts": "Drop them over Japan. They'd roost in attics...",
+     "seed": 7,
+     "heard": "drop them over Japan, they'd roost in attics.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and then ignite.",
+     "seed": 7,
+     "heard": "and then ignite.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.343
+  },
+  {
+   "n": 5,
+   "text": "In May 1943, armed bats escaped during a test...",
+   "start": 11.483,
+   "parts": [
+    {
+     "tts": "In May nineteen forty-three, armed bats escaped during a test...",
+     "seed": 7,
+     "heard": "In May 1943, armed bats escaped during a test.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.459
+  },
+  {
+   "n": 6,
+   "text": "and set their own air base on fire.",
+   "start": 14.899,
+   "parts": [
+    {
+     "tts": "and set their own air base on fire.",
+     "seed": 7,
+     "heard": "and set their own air base on fire.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.545
+  },
+  {
+   "n": 7,
+   "text": "About two years. About 2 million dollars.",
+   "start": 16.685,
+   "parts": [
+    {
+     "tts": "About two years. About two million dollars.",
+     "seed": 7,
+     "heard": "about two years, about two million dollars.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.119
+  },
+  {
+   "n": 8,
+   "text": "It was canceled in 1944. The atomic bomb project took priority.",
+   "start": 19.259,
+   "parts": [
+    {
+     "tts": "It was canceled in nineteen forty-four. The atomic bomb project took priority.",
+     "seed": 7,
+     "heard": "It was cancelled in 1944. The atomic bomb project took priority.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 22.697
+  },
+  {
+   "n": 9,
+   "text": "The bat bomb was never used in combat.",
+   "start": 22.987,
+   "parts": [
+    {
+     "tts": "The bat bomb was never used in combat.",
+     "seed": 7,
+     "heard": "The bat bomb was never used in combat.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.649
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.17,
+  "gap": 0.14,
+  "max_internal_silence": 0.3
+ }
+}
