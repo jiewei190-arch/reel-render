@@ -1,0 +1,56 @@
+{
+ "title": "The Bloop",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 43.82,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "ocean",
+   "nobody",
+   "microphones",
+   "volcanoes",
+   "this",
+   "ultra-low",
+   "loud",
+   "minute",
+   "16",
+   "bloop",
+   "3,000",
+   "miles",
+   "south",
+   "pacific",
+   "blue",
+   "whale",
+   "loudest",
+   "giant",
+   "creature",
+   "2005",
+   "noaa",
+   "monster",
+   "icequake",
+   "iceberg",
+   "antarctic",
+   "glacier",
+   "ice"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:mystery",
+  "gainDb": -20
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}

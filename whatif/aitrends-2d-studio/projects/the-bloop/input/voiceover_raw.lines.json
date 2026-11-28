@@ -1,0 +1,215 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 49.439,
+ "render_s": 657.8,
+ "qa_fail_lines": [
+  9
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In nineteen ninety-seven, the ocean made a noise nobody could explain.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "In nineteen ninety-seven, the ocean made a noise nobody could explain.",
+     "seed": 7,
+     "heard": "In 1997, the ocean made a noise nobody could explain.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.072
+  },
+  {
+   "n": 2,
+   "text": "Underwater microphones were listening for volcanoes in the Pacific. Instead, they caught... this.",
+   "start": 4.372,
+   "parts": [
+    {
+     "tts": "Underwater microphones were listening for volcanoes in the Pacific. Instead, they caught...",
+     "seed": 7,
+     "heard": "Underwater microphones were listening for volcanoes in the Pacific. Instead, they caught.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "this.",
+     "seed": 7,
+     "heard": "this.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.279
+  },
+  {
+   "n": 3,
+   "text": "Ultra-low, extremely loud, and about a minute long.",
+   "start": 10.579,
+   "parts": [
+    {
+     "tts": "Ultra-low, extremely loud, and about a minute long.",
+     "seed": 7,
+     "heard": "ultra-low, extremely loud, and about a minute long.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.893
+  },
+  {
+   "n": 4,
+   "text": "Sped up sixteen times so humans could hear it, it went... bloop.",
+   "start": 14.193,
+   "parts": [
+    {
+     "tts": "Sped up sixteen times so humans could hear it, it went...",
+     "seed": 7,
+     "heard": "sped up 16 times so humans could hear it, it went.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "bloop.",
+     "seed": 23,
+     "heard": "Bloop.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.074
+  },
+  {
+   "n": 5,
+   "text": "Sensors about three thousand miles apart picked it up, from the remote South Pacific.",
+   "start": 19.374,
+   "parts": [
+    {
+     "tts": "Sensors about three thousand miles apart picked it up, from the remote South Pacific.",
+     "seed": 7,
+     "heard": "Sensors about 3,000 miles apart picked it up from the remote South Pacific.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.667
+  },
+  {
+   "n": 6,
+   "text": "Reportedly, it was far louder than a blue whale, the loudest known animal.",
+   "start": 23.967,
+   "parts": [
+    {
+     "tts": "Reportedly, it was far louder than a blue whale, the loudest known animal.",
+     "seed": 7,
+     "heard": "Reportedly, it was far louder than a blue whale, the loudest known animal.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.766
+  },
+  {
+   "n": 7,
+   "text": "So people guessed: a giant sea creature nobody had ever seen.",
+   "start": 28.066,
+   "parts": [
+    {
+     "tts": "So people guessed: a giant sea creature nobody had ever seen.",
+     "seed": 7,
+     "heard": "So, people guessed, a giant sea creature nobody had ever seen.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 32.612
+  },
+  {
+   "n": 8,
+   "text": "But here's the part... in two thousand five, Noah found the source.",
+   "start": 32.912,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "in two thousand five, Noah found the source.",
+     "seed": 7,
+     "heard": "In 2005, Noah found the source.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 37.379
+  },
+  {
+   "n": 9,
+   "text": "Not a sea monster. An icequake.",
+   "start": 37.679,
+   "parts": [
+    {
+     "tts": "Not a sea monster. An icequake.",
+     "seed": 7,
+     "heard": "not a sea monster, an ice quake.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 39.597
+  },
+  {
+   "n": 10,
+   "text": "An iceberg, cracking and breaking away from an Antarctic glacier. The monster... was ice.",
+   "start": 39.897,
+   "parts": [
+    {
+     "tts": "An iceberg, cracking and breaking away from an Antarctic glacier. The monster...",
+     "seed": 11,
+     "heard": "an iceberg, cracking and breaking away from an Antarctic glacier. The monster",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "was ice.",
+     "seed": 7,
+     "heard": "was ice.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 47.533
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 47.833,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 49.139
+  }
+ ]
+}
