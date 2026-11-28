@@ -1,0 +1,575 @@
+{
+ "duration": 44.96,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "hics": [
+  0.05,
+  2.24,
+  9.0,
+  11.98,
+  14.1,
+  15.92,
+  17.86,
+  20.32,
+  23.36,
+  25.22,
+  26.78,
+  29.5,
+  33.56,
+  36.27,
+  38.3
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.44,
+   "line": "One man hiccuped for 68 years...",
+   "scene": "FRAME 1: the farmer mid-hic in his farmyard + 2-line top caption",
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:sparkle",
+     "gain": -18
+    },
+    {
+     "at": 0.05,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    },
+    {
+     "at": 2.24,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.44,
+   "end": 3.6,
+   "line": "straight.",
+   "scene": "close-up deadpan stare, 68 YEARS",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "straight",
+     "name": "toon3d:stamp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.6,
+   "end": 7.08,
+   "line": "In 1922, farmer Charles Osborne reportedly went down...",
+   "scene": "the farmer and a very large hog, 1922, CHARLES OSBORNE",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "osborne",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 7.08,
+   "end": 9.28,
+   "line": "under a 350-pound hog.",
+   "scene": "the hog topples onto him: dust cloud, hat flies, 350-POUND HOG",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "at": 0.45,
+     "name": "toon3d:thud",
+     "gain": -6
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "350",
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "at": 1.92,
+     "name": "sfx/hic2.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 9.28,
+   "end": 10.72,
+   "line": "Then he started hiccuping.",
+   "scene": "back on his feet: the first HIC!, he double-takes at himself",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.72,
+   "end": 13.14,
+   "line": "And he did not... stop.",
+   "scene": "side-on, hics keep coming; stare at the lens on \"stop\"",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "stop",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "at": 1.26,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.14,
+   "end": 16.26,
+   "line": "According to Guinness, 20 to 40 times a minute...",
+   "scene": "INSERT 1: ACCORDING TO GUINNESS 20-40 HICCUPS A MINUTE",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.96,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    },
+    {
+     "at": 2.78,
+     "name": "sfx/hic2.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.26,
+   "end": 18.44,
+   "line": "day and night, for decades.",
+   "scene": "clock spins, day/night flicker over the yard, FOR DECADES",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "decades",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 1.6,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 18.44,
+   "end": 20.62,
+   "line": "Doctors tried. Nothing lasted.",
+   "scene": "doctor's office: the doctor leans in, HIC!, he jumps; shrugs",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:door",
+     "gain": -16
+    },
+    {
+     "word": "nothing",
+     "name": "toon3d:fail",
+     "gain": -14
+    },
+    {
+     "at": 1.88,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.62,
+   "end": 23.92,
+   "line": "His longest break? Reportedly... 50 hours.",
+   "scene": "stopwatch to 50:00 while he smiles... then HIC!",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:tick",
+     "gain": -14
+    },
+    {
+     "word": "hours",
+     "name": "toon3d:ding",
+     "gain": -12
+    },
+    {
+     "at": 2.74,
+     "name": "sfx/hic2.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 23.92,
+   "end": 25.44,
+   "line": "But here's the part...",
+   "scene": "BUT... beat, vignette",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -14
+    },
+    {
+     "at": 1.3,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.44,
+   "end": 27.18,
+   "line": "he lived a normal life anyway.",
+   "scene": "waving hello, NORMAL LIFE",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "normal",
+     "name": "toon3d:success",
+     "gain": -14
+    },
+    {
+     "at": 1.34,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 27.18,
+   "end": 27.86,
+   "line": "He married twice,",
+   "scene": "wedding: he hics mid-vows, she does not blink; MARRIED x2",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:bell",
+     "gain": -12
+    },
+    {
+     "word": "twice",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 27.86,
+   "end": 29.94,
+   "line": "and reportedly had eight kids.",
+   "scene": "8 kids; he hics and all eight jump",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -14
+    },
+    {
+     "word": "eight",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 1.64,
+     "name": "sfx/hic2.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 29.94,
+   "end": 31.12,
+   "line": "One doctor's guess?",
+   "scene": "the doctor's theory: chin in hand, ???",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:boing",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 31.12,
+   "end": 34.2,
+   "line": "Lifting that hog popped a tiny blood vessel in his brain.",
+   "scene": "card: cartoon brain, one tiny pop!",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -12
+    },
+    {
+     "word": "popped",
+     "name": "toon3d:pop",
+     "gain": -8
+    },
+    {
+     "word": "tiny",
+     "name": "toon3d:squeak",
+     "gain": -14
+    },
+    {
+     "at": 2.44,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 34.2,
+   "end": 36.46,
+   "line": "Guinness called it the longest attack of hiccups ever.",
+   "scene": "gold record trophy rattles on his hic; WORLD RECORD",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "longest",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "longest",
+     "name": "toon3d:chime",
+     "gain": -14,
+     "offset": 0.1
+    },
+    {
+     "at": 2.07,
+     "name": "sfx/hic.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 36.46,
+   "end": 38.84,
+   "line": "Over 400 million hiccups.",
+   "scene": "INSERT 2: counter 400,000,000+ HICCUPS",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:riser",
+     "gain": -16
+    },
+    {
+     "at": 1.84,
+     "name": "sfx/hic2.wav",
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 38.84,
+   "end": 41.82,
+   "line": "Then, in 1990, after 68 years...",
+   "scene": "1990: he shuts his eyes and braces",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 41.82,
+   "end": 43.38,
+   "line": "they just stopped.",
+   "scene": "PAYOFF: silence where the hic should be; one eye opens, ?, then a grin; STOPPED.",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "stopped",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "at": 0.86,
+     "name": "toon3d:success",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 43.38,
+   "end": 44.96,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to frame 1 framing (loop)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -16
+    }
+   ]
+  }
+ ]
+}

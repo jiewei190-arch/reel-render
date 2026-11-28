@@ -1,0 +1,284 @@
+{
+ "duration": 24.75,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 2.45,
+   "line": "The U.S. military built a bomb out of bats.",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:whoosh",
+     "gain": -9
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:thud",
+     "gain": -12
+    },
+    {
+     "at": 0.85,
+     "name": "toon3d:sparkle",
+     "gain": -13
+    },
+    {
+     "word": "bats.",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.45,
+   "end": 4.38,
+   "line": "World War Two. Project X-Ray.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "X-Ray.",
+     "name": "toon3d:stamp",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.38,
+   "end": 6.18,
+   "line": "The plan: a million bats,",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -20,
+     "dur": 2
+    },
+    {
+     "word": "million",
+     "name": "toon3d:coins",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.18,
+   "end": 7.82,
+   "line": "each carrying a tiny timed firebomb.",
+   "in": {
+    "type": "flash",
+    "dur": 0.18
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:click",
+     "gain": -8
+    },
+    {
+     "word": "timed",
+     "name": "toon3d:tick",
+     "gain": -8
+    },
+    {
+     "word": "firebomb.",
+     "name": "toon3d:boing",
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.82,
+   "end": 11.42,
+   "line": "Drop them over Japan. They'd roost in attics... and then ignite.",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "Drop",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "attics...",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "ignite.",
+     "name": "toon3d:zap",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 11.42,
+   "end": 14.78,
+   "line": "In May 1943, armed bats escaped during a test...",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:wind",
+     "gain": -18,
+     "dur": 3
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "armed",
+     "name": "toon3d:creak",
+     "gain": -10
+    },
+    {
+     "word": "escaped",
+     "name": "toon3d:crash",
+     "gain": -12
+    },
+    {
+     "word": "escaped",
+     "name": "toon3d:whoosh",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 14.78,
+   "end": 16.66,
+   "line": "and set their own air base on fire.",
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:fire",
+     "gain": -12,
+     "dur": 2
+    },
+    {
+     "word": "own",
+     "name": "toon3d:stamp",
+     "gain": -7
+    },
+    {
+     "word": "fire.",
+     "name": "toon3d:alarm",
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 16.66,
+   "end": 19.06,
+   "line": "About two years. About 2 million dollars.",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:swoosh",
+     "gain": -10
+    },
+    {
+     "word": "years.",
+     "name": "toon3d:clock",
+     "gain": -12
+    },
+    {
+     "word": "million",
+     "name": "toon3d:cash",
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 19.06,
+   "end": 22.9,
+   "line": "It was canceled in 1944. The atomic bomb project took priority.",
+   "in": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:paper",
+     "gain": -10
+    },
+    {
+     "word": "canceled",
+     "name": "toon3d:stamp",
+     "gain": -5
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 22.9,
+   "end": 24.75,
+   "line": "The bat bomb was never used in combat.",
+   "in": {
+    "type": "iris",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "toon3d:chime",
+     "gain": -12
+    },
+    {
+     "word": "never",
+     "name": "toon3d:success",
+     "gain": -13
+    },
+    {
+     "at": 1.45,
+     "name": "toon3d:whoosh",
+     "gain": -11
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.659,
+ "render_s": 384.1,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A medieval legend says two green-skinned children appeared in an English village.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "A medieval legend says two green-skinned children appeared in an English village.",
+     "seed": 31,
+     "heard": "A medieval legend says two green-skinned children appeared in an English village.",
+     "wrong_words": 0,
+     "qa": "ok (retake, see STATUS)"
+    }
+   ],
+   "end": 4.142
+  },
+  {
+   "n": 2,
+   "text": "Woolpit, Suffolk. The twelfth century.",
+   "start": 4.342,
+   "parts": [
+    {
+     "tts": "Wool-pit, Suffolk. The twelfth century.",
+     "seed": 59,
+     "heard": "Wool Pit, Suffolk, the 12th century.",
+     "wrong_words": 0,
+     "qa": "ok (retake, see STATUS)"
+    }
+   ],
+   "end": 6.941
+  },
+  {
+   "n": 3,
+   "text": "At harvest time, villagers found a brother and sister beside a wolf pit.",
+   "start": 7.141,
+   "parts": [
+    {
+     "tts": "At harvest time, villagers found a brother and sister beside a wolf pit.",
+     "seed": 7,
+     "heard": "At harvest time, villagers found a brother and sister beside a wolf pit.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 10.935
+  },
+  {
+   "n": 4,
+   "text": "Their skin was green. They spoke a language nobody knew.",
+   "start": 11.135,
+   "parts": [
+    {
+     "tts": "Their skin was green. They spoke a language nobody knew.",
+     "seed": 7,
+     "heard": "Their skin was green. They spoke a language nobody knew.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.234
+  },
+  {
+   "n": 5,
+   "text": "For days they refused all food... except raw broad beans.",
+   "start": 14.434,
+   "parts": [
+    {
+     "tts": "For days they refused all food...",
+     "seed": 7,
+     "heard": "For days, they refused all food.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "except raw broad beans.",
+     "seed": 7,
+     "heard": "except raw broad beans.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.819
+  },
+  {
+   "n": 6,
+   "text": "Slowly they learned to eat, and the green began to fade.",
+   "start": 18.019,
+   "parts": [
+    {
+     "tts": "Slowly they learned to eat, and the green began to fade.",
+     "seed": 7,
+     "heard": "Slowly they learned to eat, and the green began to fade.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.875
+  },
+  {
+   "n": 7,
+   "text": "Sadly, the boy was sickly, and died around the time of his baptism.",
+   "start": 21.425,
+   "parts": [
+    {
+     "tts": "Sadly, the boy was sickly, and died around the time of his baptism.",
+     "seed": 7,
+     "heard": "Sadly, the boy was sickly and died around the time of his baptism.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.098
+  },
+  {
+   "n": 8,
+   "text": "But his sister learned English... and explained where they came from.",
+   "start": 25.298,
+   "parts": [
+    {
+     "tts": "But his sister learned English...",
+     "seed": 7,
+     "heard": "But his sister learned English.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and explained where they came from.",
+     "seed": 7,
+     "heard": "and explained where they came from.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.26
+  },
+  {
+   "n": 9,
+   "text": "A land where the sun never shone, the light was like twilight... and everything was green.",
+   "start": 29.66,
+   "parts": [
+    {
+     "tts": "A land where the sun never shone, the light was like twilight...",
+     "seed": 7,
+     "heard": "A land where the sun never shone, the light was like twilight.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and everything was green.",
+     "seed": 7,
+     "heard": "and everything was green.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 34.497
+  },
+  {
+   "n": 10,
+   "text": "Historians call it folklore, or a garbled real event.",
+   "start": 34.697,
+   "parts": [
+    {
+     "tts": "Historians call it folklore, or a garbled real event.",
+     "seed": 7,
+     "heard": "Historians call it folklore, or a garbled real event.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.041
+  },
+  {
+   "n": 11,
+   "text": "So where did the green children come from? Nobody knows.",
+   "start": 38.541,
+   "parts": [
+    {
+     "tts": "So where did the green children come from? Nobody knows.",
+     "seed": 7,
+     "heard": "So where did the green children come from? Nobody knows.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.559
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.04,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}

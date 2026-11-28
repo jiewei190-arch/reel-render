@@ -1,0 +1,226 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 44.695,
+ "render_s": 449.9,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "One man hiccuped for 68 years... straight.",
+   "start": 0.32,
+   "parts": [
+    {
+     "tts": "One man hiccuped for sixty-eight years...",
+     "seed": 7,
+     "heard": "One man hiccuped for 68 years.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "straight.",
+     "seed": 7,
+     "heard": "Straight.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.281
+  },
+  {
+   "n": 2,
+   "text": "In 1922, farmer Charles Osborne reportedly went down... under a 350-pound hog.",
+   "start": 3.641,
+   "parts": [
+    {
+     "tts": "In nineteen twenty-two, farmer Charles Osborne reportedly went down...",
+     "seed": 7,
+     "heard": "In 1922, farmer Charles Osborne reportedly went down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "under a three hundred fifty-pound hog.",
+     "seed": 7,
+     "heard": "under a 350-pound hog.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.946
+  },
+  {
+   "n": 3,
+   "text": "Then he started hiccuping. And he did not... stop.",
+   "start": 9.306,
+   "parts": [
+    {
+     "tts": "Then he started hiccuping. And he did not...",
+     "seed": 7,
+     "heard": "Then he started hiccuping, and he did not.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "stop.",
+     "seed": 11,
+     "heard": "Stop.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.805,
+   "spliced_from": "fix3.wav"
+  },
+  {
+   "n": 4,
+   "text": "According to Guinness, 20 to 40 times a minute... day and night, for decades.",
+   "start": 13.165,
+   "parts": [
+    {
+     "tts": "According to Guinness, twenty to forty times a minute...",
+     "seed": 7,
+     "heard": "According to Guinness, 20 to 40 times a minute",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "day and night, for decades.",
+     "seed": 7,
+     "heard": "day and night for decades.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.056
+  },
+  {
+   "n": 5,
+   "text": "Doctors tried. Nothing lasted. His longest break? Reportedly... 50 hours.",
+   "start": 18.416,
+   "parts": [
+    {
+     "tts": "Doctors tried. Nothing lasted. His longest break? Reportedly...",
+     "seed": 7,
+     "heard": "Doctors tried. Nothing lasted. His longest break? Reportedly...",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "fifty hours.",
+     "seed": 7,
+     "heard": "50 hours.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 23.469
+  },
+  {
+   "n": 6,
+   "text": "But here's the part... he lived a normal life anyway. He married twice, and reportedly had eight kids.",
+   "start": 23.979,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "he lived a normal life anyway. He married twice, and reportedly had eight kids.",
+     "seed": 7,
+     "heard": "He lived a normal life anyway. He married twice and reportedly had eight kids.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.68
+  },
+  {
+   "n": 7,
+   "text": "One doctor's guess? Lifting that hog popped a tiny blood vessel in his brain.",
+   "start": 30.04,
+   "parts": [
+    {
+     "tts": "One doctor's guess? Lifting that hog popped a tiny blood vessel in his brain.",
+     "seed": 7,
+     "heard": "One doctor's guess? Lifting that hog popped a tiny blood vessel in his brain.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 33.578
+  },
+  {
+   "n": 8,
+   "text": "Guinness called it the longest attack of hiccups ever. Over 400 million hiccups.",
+   "start": 33.938,
+   "parts": [
+    {
+     "tts": "Guinness called it the longest attack of hiccups ever. Over four hundred million hiccups.",
+     "seed": 7,
+     "heard": "Guinness called it the longest attack of hiccups ever. Over 400 million hiccups.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 38.361
+  },
+  {
+   "n": 9,
+   "text": "Then, in 1990, after 68 years... they just stopped.",
+   "start": 38.921,
+   "parts": [
+    {
+     "tts": "Then, in nineteen ninety, after sixty-eight years...",
+     "seed": 7,
+     "heard": "Then, in 1990, after 68 years,",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "they just stopped.",
+     "seed": 7,
+     "heard": "They just stopped.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.739
+  },
+  {
+   "n": 10,
+   "text": "Subscribe for more.",
+   "start": 43.449,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 44.595
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.08,
+  "gap": 0.36,
+  "max_internal_silence": 0.28
+ }
+}

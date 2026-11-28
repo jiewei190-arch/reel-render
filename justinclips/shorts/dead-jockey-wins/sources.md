@@ -1,0 +1,3 @@
+# Sources — dead-jockey-wins
+Wikipedia, "Frank Hayes (jockey)" (read Nov 20 2026): 4 June 1923, Belmont Park, Elmont NY, steeplechase; age 22; horse trainer and stableman, never won a race before; Sweet Kiss, 20:1 outsider, owned by Miss A. M. Frayling; fatal heart attack in the latter part of the race, body stayed in the saddle, won by a head; death discovered when Frayling and officials came to congratulate him; Jockey Club waived formalities, result declared official; buried three days later in his racing silks; first and only jockey known to win after death; Sweet Kiss never raced again.
+https://en.wikipedia.org/wiki/Frank_Hayes_(jockey)

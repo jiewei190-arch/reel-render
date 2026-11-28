@@ -1,0 +1,3 @@
+# Sources — pig-war-1859
+Wikipedia, "Pig War (1859)" (read Nov 20 2026): 1859 confrontation over the San Juan Islands border; Lyman Cutlar, American farmer, shot a Hudson's Bay Company pig eating his potatoes (not the first time); offered $10, Griffin demanded $100; Captain George Pickett sent with 66 soldiers; British sent warships; by Aug 10, 1859, 461 Americans with 14 cannons vs five Royal Navy warships, 70 guns, 2,140 men; joint military occupation agreed until settlement; Treaty of Washington sent it to arbitration by German Emperor Wilhelm I (three-man commission, Geneva), Haro Strait boundary chosen (1872); "there were no human casualties on either side, only a pig".
+https://en.wikipedia.org/wiki/Pig_War_(1859)

@@ -1,0 +1,3 @@
+# Sources — castle-itter
+- Wikipedia, "Battle of Castle Itter": https://en.wikipedia.org/wiki/Battle_of_Castle_Itter — 5 May 1945 (Hitler died 30 Apr); Itter Castle, Tyrol, Austria held high-profile French prisoners incl. former PMs Paul Reynaud and Édouard Daladier; attacked by Waffen-SS; defended by US 23rd Tank Bn soldiers under Capt. John C. "Jack" Lee Jr., Wehrmacht soldiers under Maj. Josef "Sepp" Gangl, and the French prisoners; Gangl killed by a sniper while moving Reynaud out of the line of fire; relieved by US 142nd Infantry; described as the only battle in WWII where Americans and Germans fought together.
+- Stephen Harding, "The Last Battle" (2013).
