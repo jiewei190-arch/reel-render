@@ -1,0 +1,51 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  31,
+  47,
+  59,
+  71,
+  83
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.0,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 3.709,
+ "render_s": 42.6,
+ "qa_fail_lines": [],
+ "lines": [
+  {
+   "n": 1,
+   "text": "3... 2... 1...",
+   "start": 0.0,
+   "parts": [
+    {
+     "tts": "three...",
+     "seed": 47,
+     "heard": "three",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "two...",
+     "seed": 47,
+     "heard": "2",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "one...",
+     "seed": 31,
+     "heard": "1",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 3.409
+  }
+ ]
+}

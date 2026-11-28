@@ -1,0 +1,229 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 42.587,
+ "render_s": 311.6,
+ "qa_fail_lines": [
+  6
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1970, Oregon removed a dead whale... with dynamite.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen seventy, Oregon removed a dead whale...",
+     "seed": 7,
+     "heard": "In 1970, Oregon removed a dead whale.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "with dynamite.",
+     "seed": 7,
+     "heard": "with dynamite.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.667
+  },
+  {
+   "n": 2,
+   "text": "A 45-foot sperm whale had washed up on the beach in Florence, Oregon.",
+   "start": 4.867,
+   "parts": [
+    {
+     "tts": "A forty-five-foot sperm whale had washed up on the beach in Florence, Oregon.",
+     "seed": 7,
+     "heard": "A 45-foot sperm whale had washed up on the beach in Florence, Oregon.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 8.221
+  },
+  {
+   "n": 3,
+   "text": "8 tons, rotting, and the state highway department got the job.",
+   "start": 8.421,
+   "parts": [
+    {
+     "tts": "eight tons, rotting, and the state highway department got the job.",
+     "seed": 7,
+     "heard": "eight tons rotting, and the state highway department got the job.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 11.578
+  },
+  {
+   "n": 4,
+   "text": "The plan: blow it to bits, and let the seagulls clean up.",
+   "start": 11.778,
+   "parts": [
+    {
+     "tts": "The plan: blow it to bits, and let the seagulls clean up.",
+     "seed": 7,
+     "heard": "the plan, blow it to bits, and let the seagulls clean up.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 14.727
+  },
+  {
+   "n": 5,
+   "text": "So they used half a ton of dynamite. A crowd gathered to watch.",
+   "start": 14.927,
+   "parts": [
+    {
+     "tts": "So they used half a ton of dynamite. A crowd gathered to watch.",
+     "seed": 7,
+     "heard": "So they used half a ton of dynamite, a crowd gathered to watch.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 18.764
+  },
+  {
+   "n": 6,
+   "text": "3... 2... 1...",
+   "start": 19.114,
+   "parts": [
+    {
+     "tts": "three...",
+     "seed": 47,
+     "heard": "three",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "two...",
+     "seed": 47,
+     "heard": "2",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "one...",
+     "seed": 31,
+     "heard": "1",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.612,
+   "retake": "retake/l6.md, seeds 31,47,59,71,83 (QA ok)"
+  },
+  {
+   "n": 7,
+   "text": "But here's the part... the whale came back down.",
+   "start": 23.112,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the whale came back down.",
+     "seed": 7,
+     "heard": "The whale came back down.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.87
+  },
+  {
+   "n": 8,
+   "text": "Chunks of blubber rained on the crowd. One crushed a brand-new car.",
+   "start": 26.07,
+   "parts": [
+    {
+     "tts": "Chunks of blubber rained on the crowd. One crushed a brand-new car.",
+     "seed": 7,
+     "heard": "Chunks of blubber rained on the crowd. One crushed a brand new car.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 29.335
+  },
+  {
+   "n": 9,
+   "text": "Nobody was seriously hurt. The seagulls? Scared off. And most of the whale... was still there.",
+   "start": 29.685,
+   "parts": [
+    {
+     "tts": "Nobody was seriously hurt. The seagulls? Scared off. And most of the whale...",
+     "seed": 7,
+     "heard": "nobody was seriously hurt, the seagulls, scared off, and most of the whale...",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "was still there.",
+     "seed": 7,
+     "heard": "was still there.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 35.69
+  },
+  {
+   "n": 10,
+   "text": "50 years later, the town named a park after it: Exploding Whale Memorial Park.",
+   "start": 36.19,
+   "parts": [
+    {
+     "tts": "fifty years later, the town named a park after it: Exploding Whale Memorial Park.",
+     "seed": 23,
+     "heard": "Fifty years later, the town named a park after it, Exploding Whale Memorial Park.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.951
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 41.301,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.487
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.04,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}

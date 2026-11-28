@@ -1,0 +1,666 @@
+{
+ "duration": 42.87,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.5,
+   "line": "In 1970, Oregon",
+   "scene": "FRAME 1: fuse fizzing toward the whale, gull in a bib, 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:fire",
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.5,
+   "end": 2.46,
+   "line": "removed a dead whale...",
+   "scene": "push in on the dead whale, stink lines, gull licks its beak",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "word": "dead",
+     "name": "toon3d:boing",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 2.46,
+   "end": 4.9,
+   "line": "with dynamite.",
+   "scene": "spark reaches the crate: teaser BOOM + flash",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:tick",
+     "gain": -10
+    },
+    {
+     "word": "dynamite",
+     "name": "toon3d:boom",
+     "gain": -6,
+     "offset": 0.4
+    },
+    {
+     "word": "dynamite",
+     "name": "toon3d:impact",
+     "gain": -10,
+     "offset": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 4.9,
+   "end": 6.78,
+   "line": "A 45-foot sperm whale had washed up",
+   "scene": "wide beach, ruler: 45 FT, SPERM WHALE chip",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "45",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "sperm",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 6.78,
+   "end": 8.0,
+   "line": "on the beach in Florence,",
+   "scene": "FLORENCE, OR sign, beachgoer pinching his nose",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "florence",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:squeak",
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 8.0,
+   "end": 8.86,
+   "line": "Oregon. 8 tons,",
+   "scene": "INSERT 1: 8 TONS",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:thud",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 8.86,
+   "end": 9.94,
+   "line": "rotting,",
+   "scene": "stink close-up, gull sweats",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:squeak",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 9.94,
+   "end": 11.74,
+   "line": "and the state highway department got the job.",
+   "scene": "highway worker, road cones pop up, ROAD WORK sign, double take",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "highway",
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "word": "highway",
+     "name": "toon3d:pop",
+     "gain": -14,
+     "offset": 0.12
+    },
+    {
+     "word": "highway",
+     "name": "toon3d:pop",
+     "gain": -14,
+     "offset": 0.24
+    },
+    {
+     "word": "job",
+     "name": "toon3d:ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 11.74,
+   "end": 13.3,
+   "line": "The plan: blow it to bits,",
+   "scene": "THE PLAN chalkboard: whale -> bits",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "plan",
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "word": "bits",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 13.3,
+   "end": 14.9,
+   "line": "and let the seagulls clean up.",
+   "scene": "gulls in bibs with forks: CLEANUP CREW",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "seagulls",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "clean",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 14.9,
+   "end": 17.46,
+   "line": "So they used half a ton of dynamite.",
+   "scene": "INSERT 2: HALF A TON of dynamite, 20 crates",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "dynamite",
+     "name": "toon3d:thud",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 17.46,
+   "end": 19.32,
+   "line": "A crowd gathered to watch.",
+   "scene": "the crowd gathers, grinning",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:crowd",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 19.32,
+   "end": 21.74,
+   "line": "3... 2... 1...",
+   "scene": "countdown 3/2/1, hard punch-ins: plunger, gull, plunger",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "3",
+     "name": "toon3d:tick",
+     "gain": -8
+    },
+    {
+     "word": "2",
+     "name": "toon3d:tick",
+     "gain": -8
+    },
+    {
+     "word": "1",
+     "name": "toon3d:tick",
+     "gain": -8
+    },
+    {
+     "word": "1",
+     "name": "toon3d:suspense",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 21.74,
+   "end": 23.02,
+   "line": "",
+   "scene": "BOOM: cloud, flash, shake, then a beat of silence",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:boom",
+     "gain": -2
+    },
+    {
+     "at": 0.02,
+     "name": "toon3d:impact",
+     "gain": -6
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:rumble",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 23.02,
+   "end": 24.62,
+   "line": "But here's the part...",
+   "scene": "crowd cheering, then looking up",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "part",
+     "name": "toon3d:riser",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 24.62,
+   "end": 26.14,
+   "line": "the whale came back down.",
+   "scene": "low angle: blobs tumbling out of the sky, INCOMING",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -10
+    },
+    {
+     "word": "down",
+     "name": "toon3d:slide",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 26.14,
+   "end": 27.82,
+   "line": "Chunks of blubber rained on the crowd.",
+   "scene": "crowd scatters, blobs plop around them, BLUBBER",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.35,
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:splash",
+     "gain": -14
+    },
+    {
+     "at": 1.0,
+     "name": "toon3d:splash",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 27.82,
+   "end": 29.12,
+   "line": "One crushed a brand-new car.",
+   "scene": "brand-new car, big blob, pancake: CRUSHED",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "brand",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "crushed",
+     "name": "toon3d:crash",
+     "gain": -8
+    },
+    {
+     "word": "crushed",
+     "name": "toon3d:boing",
+     "gain": -12,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 29.12,
+   "end": 31.34,
+   "line": "Nobody was seriously hurt.",
+   "scene": "crowd peeks out, shrugs: NOBODY SERIOUSLY HURT",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "hurt",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 31.34,
+   "end": 33.38,
+   "line": "The seagulls? Scared off.",
+   "scene": "gulls flee, bibs off: SCARED OFF",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "seagulls",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "scared",
+     "name": "toon3d:whoosh",
+     "gain": -8
+    },
+    {
+     "word": "scared",
+     "name": "toon3d:stamp",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 33.38,
+   "end": 35.64,
+   "line": "And most of the whale... was still there.",
+   "scene": "smoke clears: the whale is mostly still there; worker shrugs",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -16
+    },
+    {
+     "word": "still",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "still",
+     "name": "toon3d:fail",
+     "gain": -16,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 35.64,
+   "end": 37.48,
+   "line": "50 years later,",
+   "scene": "INSERT 3: 50 YEARS LATER over the beach",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s22b",
+   "start": 37.48,
+   "end": 39.24,
+   "line": "the town named a park after it:",
+   "scene": "riverside park, sign under a sheet, happy locals",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:chime",
+     "gain": -14
+    },
+    {
+     "word": "park",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 39.24,
+   "end": 41.36,
+   "line": "Exploding Whale Memorial Park.",
+   "scene": "PAYOFF: EXPLODING WHALE MEMORIAL PARK sign, gull in bib on top",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:success",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -12
+    },
+    {
+     "word": "park",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "start": 41.36,
+   "end": 42.87,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to frame 1 framing, fresh fuse fizzing (loop)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 0.55,
+     "name": "toon3d:tick",
+     "gain": -12
+    },
+    {
+     "at": 1.05,
+     "name": "toon3d:tick",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

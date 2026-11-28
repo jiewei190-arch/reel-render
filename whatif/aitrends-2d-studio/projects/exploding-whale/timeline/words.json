@@ -1,0 +1,583 @@
+{
+ "source": "whisper:small.en+script",
+ "words": [
+  {
+   "word": "In",
+   "start": 0.0,
+   "end": 0.18
+  },
+  {
+   "word": "1970,",
+   "start": 0.18,
+   "end": 0.82
+  },
+  {
+   "word": "Oregon",
+   "start": 1.46,
+   "end": 1.56
+  },
+  {
+   "word": "removed",
+   "start": 1.56,
+   "end": 1.96
+  },
+  {
+   "word": "a",
+   "start": 1.96,
+   "end": 2.12
+  },
+  {
+   "word": "dead",
+   "start": 2.12,
+   "end": 2.26
+  },
+  {
+   "word": "whale...",
+   "start": 2.26,
+   "end": 2.52
+  },
+  {
+   "word": "with",
+   "start": 2.52,
+   "end": 3.62
+  },
+  {
+   "word": "dynamite.",
+   "start": 3.62,
+   "end": 4.56
+  },
+  {
+   "word": "A",
+   "start": 4.96,
+   "end": 4.98
+  },
+  {
+   "word": "45-foot",
+   "start": 4.98,
+   "end": 5.66
+  },
+  {
+   "word": "sperm",
+   "start": 5.66,
+   "end": 5.96
+  },
+  {
+   "word": "whale",
+   "start": 5.96,
+   "end": 6.24
+  },
+  {
+   "word": "had",
+   "start": 6.24,
+   "end": 6.4
+  },
+  {
+   "word": "washed",
+   "start": 6.4,
+   "end": 6.66
+  },
+  {
+   "word": "up",
+   "start": 6.66,
+   "end": 6.84
+  },
+  {
+   "word": "on",
+   "start": 6.84,
+   "end": 6.98
+  },
+  {
+   "word": "the",
+   "start": 6.98,
+   "end": 7.08
+  },
+  {
+   "word": "beach",
+   "start": 7.08,
+   "end": 7.22
+  },
+  {
+   "word": "in",
+   "start": 7.22,
+   "end": 7.4
+  },
+  {
+   "word": "Florence,",
+   "start": 7.4,
+   "end": 7.7
+  },
+  {
+   "word": "Oregon.",
+   "start": 8.04,
+   "end": 8.06
+  },
+  {
+   "word": "8",
+   "start": 8.06,
+   "end": 8.56
+  },
+  {
+   "word": "tons,",
+   "start": 8.56,
+   "end": 8.92
+  },
+  {
+   "word": "rotting,",
+   "start": 8.92,
+   "end": 9.48
+  },
+  {
+   "word": "and",
+   "start": 10.0,
+   "end": 10.04
+  },
+  {
+   "word": "the",
+   "start": 10.04,
+   "end": 10.14
+  },
+  {
+   "word": "state",
+   "start": 10.14,
+   "end": 10.3
+  },
+  {
+   "word": "highway",
+   "start": 10.3,
+   "end": 10.54
+  },
+  {
+   "word": "department",
+   "start": 10.54,
+   "end": 10.9
+  },
+  {
+   "word": "got",
+   "start": 10.9,
+   "end": 11.1
+  },
+  {
+   "word": "the",
+   "start": 11.1,
+   "end": 11.24
+  },
+  {
+   "word": "job.",
+   "start": 11.24,
+   "end": 11.44
+  },
+  {
+   "word": "The",
+   "start": 11.82,
+   "end": 11.92
+  },
+  {
+   "word": "plan:",
+   "start": 11.92,
+   "end": 12.2
+  },
+  {
+   "word": "blow",
+   "start": 12.72,
+   "end": 12.84
+  },
+  {
+   "word": "it",
+   "start": 12.84,
+   "end": 12.96
+  },
+  {
+   "word": "to",
+   "start": 12.96,
+   "end": 13.06
+  },
+  {
+   "word": "bits,",
+   "start": 13.06,
+   "end": 13.36
+  },
+  {
+   "word": "and",
+   "start": 13.36,
+   "end": 13.74
+  },
+  {
+   "word": "let",
+   "start": 13.74,
+   "end": 13.86
+  },
+  {
+   "word": "the",
+   "start": 13.86,
+   "end": 13.98
+  },
+  {
+   "word": "seagulls",
+   "start": 13.98,
+   "end": 14.38
+  },
+  {
+   "word": "clean",
+   "start": 14.38,
+   "end": 14.52
+  },
+  {
+   "word": "up.",
+   "start": 14.52,
+   "end": 14.74
+  },
+  {
+   "word": "So",
+   "start": 14.96,
+   "end": 15.16
+  },
+  {
+   "word": "they",
+   "start": 15.16,
+   "end": 15.34
+  },
+  {
+   "word": "used",
+   "start": 15.34,
+   "end": 15.56
+  },
+  {
+   "word": "half",
+   "start": 15.56,
+   "end": 15.76
+  },
+  {
+   "word": "a",
+   "start": 15.76,
+   "end": 15.86
+  },
+  {
+   "word": "ton",
+   "start": 15.86,
+   "end": 16.0
+  },
+  {
+   "word": "of",
+   "start": 16.0,
+   "end": 16.36
+  },
+  {
+   "word": "dynamite.",
+   "start": 16.36,
+   "end": 17.14
+  },
+  {
+   "word": "A",
+   "start": 17.52,
+   "end": 17.56
+  },
+  {
+   "word": "crowd",
+   "start": 17.56,
+   "end": 17.78
+  },
+  {
+   "word": "gathered",
+   "start": 17.78,
+   "end": 18.06
+  },
+  {
+   "word": "to",
+   "start": 18.06,
+   "end": 18.3
+  },
+  {
+   "word": "watch.",
+   "start": 18.3,
+   "end": 18.64
+  },
+  {
+   "word": "3...",
+   "start": 19.38,
+   "end": 19.81,
+   "fixed": "onset from voiceover.wav envelope (Whisper does not time lone digits)"
+  },
+  {
+   "word": "2...",
+   "start": 20.27,
+   "end": 20.72,
+   "fixed": "onset from voiceover.wav envelope (Whisper does not time lone digits)"
+  },
+  {
+   "word": "1...",
+   "start": 21.18,
+   "end": 21.56,
+   "fixed": "onset from voiceover.wav envelope (Whisper does not time lone digits)"
+  },
+  {
+   "word": "But",
+   "start": 23.08,
+   "end": 23.52
+  },
+  {
+   "word": "here's",
+   "start": 23.52,
+   "end": 23.96
+  },
+  {
+   "word": "the",
+   "start": 23.96,
+   "end": 24.06
+  },
+  {
+   "word": "part...",
+   "start": 24.06,
+   "end": 24.28
+  },
+  {
+   "word": "the",
+   "start": 24.68,
+   "end": 24.8
+  },
+  {
+   "word": "whale",
+   "start": 24.8,
+   "end": 25.0
+  },
+  {
+   "word": "came",
+   "start": 25.0,
+   "end": 25.18
+  },
+  {
+   "word": "back",
+   "start": 25.18,
+   "end": 25.4
+  },
+  {
+   "word": "down.",
+   "start": 25.4,
+   "end": 25.7
+  },
+  {
+   "word": "Chunks",
+   "start": 26.2,
+   "end": 26.32
+  },
+  {
+   "word": "of",
+   "start": 26.32,
+   "end": 26.5
+  },
+  {
+   "word": "blubber",
+   "start": 26.5,
+   "end": 26.8
+  },
+  {
+   "word": "rained",
+   "start": 26.8,
+   "end": 27.02
+  },
+  {
+   "word": "on",
+   "start": 27.02,
+   "end": 27.16
+  },
+  {
+   "word": "the",
+   "start": 27.16,
+   "end": 27.28
+  },
+  {
+   "word": "crowd.",
+   "start": 27.28,
+   "end": 27.56
+  },
+  {
+   "word": "One",
+   "start": 27.88,
+   "end": 28.08
+  },
+  {
+   "word": "crushed",
+   "start": 28.08,
+   "end": 28.36
+  },
+  {
+   "word": "a",
+   "start": 28.36,
+   "end": 28.54
+  },
+  {
+   "word": "brand-new",
+   "start": 28.54,
+   "end": 28.88
+  },
+  {
+   "word": "car.",
+   "start": 28.88,
+   "end": 29.18
+  },
+  {
+   "word": "Nobody",
+   "start": 29.18,
+   "end": 29.84
+  },
+  {
+   "word": "was",
+   "start": 29.84,
+   "end": 30.14
+  },
+  {
+   "word": "seriously",
+   "start": 30.14,
+   "end": 30.44
+  },
+  {
+   "word": "hurt.",
+   "start": 30.44,
+   "end": 30.9
+  },
+  {
+   "word": "The",
+   "start": 31.4,
+   "end": 31.46
+  },
+  {
+   "word": "seagulls?",
+   "start": 31.46,
+   "end": 32.14
+  },
+  {
+   "word": "Scared",
+   "start": 32.14,
+   "end": 32.5
+  },
+  {
+   "word": "off.",
+   "start": 32.5,
+   "end": 32.82
+  },
+  {
+   "word": "And",
+   "start": 33.44,
+   "end": 33.6
+  },
+  {
+   "word": "most",
+   "start": 33.6,
+   "end": 33.84
+  },
+  {
+   "word": "of",
+   "start": 33.84,
+   "end": 34.0
+  },
+  {
+   "word": "the",
+   "start": 34.0,
+   "end": 34.14
+  },
+  {
+   "word": "whale...",
+   "start": 34.14,
+   "end": 34.32
+  },
+  {
+   "word": "was",
+   "start": 34.32,
+   "end": 35.06
+  },
+  {
+   "word": "still",
+   "start": 35.06,
+   "end": 35.26
+  },
+  {
+   "word": "there.",
+   "start": 35.26,
+   "end": 35.7
+  },
+  {
+   "word": "50",
+   "start": 35.7,
+   "end": 36.42
+  },
+  {
+   "word": "years",
+   "start": 36.42,
+   "end": 36.66
+  },
+  {
+   "word": "later,",
+   "start": 36.66,
+   "end": 37.1
+  },
+  {
+   "word": "the",
+   "start": 37.54,
+   "end": 37.58
+  },
+  {
+   "word": "town",
+   "start": 37.58,
+   "end": 37.82
+  },
+  {
+   "word": "named",
+   "start": 37.82,
+   "end": 38.06
+  },
+  {
+   "word": "a",
+   "start": 38.06,
+   "end": 38.22
+  },
+  {
+   "word": "park",
+   "start": 38.22,
+   "end": 38.4
+  },
+  {
+   "word": "after",
+   "start": 38.4,
+   "end": 38.68
+  },
+  {
+   "word": "it:",
+   "start": 38.68,
+   "end": 39.0
+  },
+  {
+   "word": "Exploding",
+   "start": 39.3,
+   "end": 39.72
+  },
+  {
+   "word": "Whale",
+   "start": 39.72,
+   "end": 39.96
+  },
+  {
+   "word": "Memorial",
+   "start": 39.96,
+   "end": 40.38
+  },
+  {
+   "word": "Park.",
+   "start": 40.38,
+   "end": 40.82
+  },
+  {
+   "word": "Subscribe",
+   "start": 41.42,
+   "end": 41.74
+  },
+  {
+   "word": "for",
+   "start": 41.74,
+   "end": 42.08
+  },
+  {
+   "word": "more.",
+   "start": 42.08,
+   "end": 42.32
+  }
+ ]
+}
