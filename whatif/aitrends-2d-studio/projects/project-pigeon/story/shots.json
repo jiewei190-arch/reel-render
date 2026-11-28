@@ -1,0 +1,606 @@
+{
+ "duration": 45.36,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.74,
+   "line": "Pigeons steering missiles:",
+   "scene": "FRAME 1: 3 helmeted pigeons pecking screens in the nose cone + 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/pecks_2.wav",
+     "gain": -8
+    },
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "missiles",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.74,
+   "end": 3.9,
+   "line": "a real World War 2 plan.",
+   "scene": "outside: the glide bomb in the clouds, WORLD WAR 2 chip",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "world",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 3.9,
+   "end": 5.91,
+   "line": "1943. Psychologist Skinner's plan",
+   "scene": "lab: scientist points at his chalk doodle, 1943 stamp",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "psychologist",
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "word": "plan",
+     "name": "toon3d:chime",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 5.91,
+   "end": 7.74,
+   "line": "sounded like... this.",
+   "scene": "the beat: close-up pigeon hammering its screen, PECK! bursts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/peck1_2.wav",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 7.74,
+   "end": 9.24,
+   "line": "Three pigeons in tiny cockpits",
+   "scene": "front view: the 3 cockpits, TINY COCKPITS, bird 2 salutes",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "three",
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "word": "tiny",
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "word": "cockpits",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 9.24,
+   "end": 10.72,
+   "line": "watched a screen of the ground ahead,",
+   "scene": "over the shoulder: the screen shows the sea + a target ship",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:beep",
+     "gain": -16
+    },
+    {
+     "word": "ground",
+     "name": "toon3d:click",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 10.72,
+   "end": 12.74,
+   "line": "and pecked at the target to steer.",
+   "scene": "bird 3 pecks, crosshair LOCKED ON; hard cut on \"steer\": the bomb banks",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/peck1_1.wav",
+     "gain": -8
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:beep",
+     "gain": -12
+    },
+    {
+     "word": "steer",
+     "name": "toon3d:whoosh",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 12.74,
+   "end": 14.28,
+   "line": "Show them two targets, and",
+   "scene": "two ships on every screen; birds look around, ??? x3",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:boing",
+     "gain": -15
+    },
+    {
+     "at": 0.7,
+     "name": "toon3d:boing",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 14.28,
+   "end": 16.3,
+   "line": "at least two birds would agree.",
+   "scene": "LEFT LEFT RIGHT; birds 1+2 slowly turn and stare at bird 3, sweat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/pecks_2.wav",
+     "gain": -10
+    },
+    {
+     "word": "agree",
+     "name": "toon3d:suspense",
+     "gain": -14
+    },
+    {
+     "word": "agree",
+     "name": "toon3d:squeak",
+     "gain": -16,
+     "offset": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 16.3,
+   "end": 17.58,
+   "line": "Majority rules. One bird",
+   "scene": "bird 3 sheepishly switches; 2 : 1, MAJORITY RULES",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:slide",
+     "gain": -14
+    },
+    {
+     "word": "majority",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "rules",
+     "name": "toon3d:stamp",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 17.58,
+   "end": 21.06,
+   "line": "reportedly pecked more than 10,000 times in 45 minutes.",
+   "scene": "INSERT: counter 10,000 PECKS in 45 minutes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0,
+     "name": "sfx/peck1_3.wav",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 21.06,
+   "end": 21.89,
+   "line": "Committed. Officials",
+   "scene": "pigeon stops dead, stares into the lens; COMMITTED",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "committed",
+     "name": "toon3d:stamp",
+     "gain": -10,
+     "offset": 0.15
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 21.89,
+   "end": 24.56,
+   "line": "reportedly called it eccentric and impractical...",
+   "scene": "office: ECCENTRIC stamp, IMPRACTICAL stamp, pigeon sweats",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "eccentric",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "impractical",
+     "name": "toon3d:stamp",
+     "gain": -8
+    },
+    {
+     "word": "impractical",
+     "name": "toon3d:squeak",
+     "gain": -16,
+     "offset": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 24.56,
+   "end": 27.24,
+   "line": "then chipped in 25,000 dollars anyway.",
+   "scene": "officials shrug, $25,000 bag thumps on the desk, pigeon heart eyes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "25,000",
+     "name": "toon3d:thud",
+     "gain": -8,
+     "offset": 0.1
+    },
+    {
+     "word": "25,000",
+     "name": "toon3d:cash",
+     "gain": -12,
+     "offset": 0.15
+    },
+    {
+     "word": "anyway",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 27.24,
+   "end": 28.3,
+   "line": "But here's the part...",
+   "scene": "\"But here's the part...\" silence; the demo is set, everyone waits",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:suspense",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 28.3,
+   "end": 31.14,
+   "line": "the pigeon demo reportedly worked.",
+   "scene": "peck: ON TARGET; officials double-take",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/peck1_1.wav",
+     "gain": -10
+    },
+    {
+     "at": 0.88,
+     "name": "toon3d:success",
+     "gain": -10
+    },
+    {
+     "word": "worked",
+     "name": "toon3d:gasp",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 31.14,
+   "end": 32.86,
+   "line": "Officials stayed skeptical anyway.",
+   "scene": "office: arms crossed, side-eye; pigeon ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "skeptical",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 32.86,
+   "end": 34.74,
+   "line": "In 1944, they cancelled it.",
+   "scene": "1944, CANCELLED slams, jaw drop, a feather floats down in silence",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "1944",
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "cancelled",
+     "name": "toon3d:impact",
+     "gain": -8
+    },
+    {
+     "word": "cancelled",
+     "name": "toon3d:stamp",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 34.74,
+   "end": 36.72,
+   "line": "The Navy revived it as Project Orcon,",
+   "scene": "Navy officer leans in, PROJECT ORCON, pigeons flap with joy",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "orcon",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "orcon",
+     "name": "toon3d:success",
+     "gain": -14,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 36.72,
+   "end": 40.38,
+   "line": "until electronic guidance won in 1953.",
+   "scene": "a beeping electronic box rolls in, bumps cockpit 3; 1953",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "electronic",
+     "name": "toon3d:beep",
+     "gain": -12
+    },
+    {
+     "word": "electronic",
+     "name": "toon3d:beep",
+     "gain": -14,
+     "offset": 0.35
+    },
+    {
+     "word": "won",
+     "name": "toon3d:thud",
+     "gain": -10
+    },
+    {
+     "word": "1953",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 40.38,
+   "end": 41.98,
+   "line": "And six years later,",
+   "scene": "calendar card: +6 YEARS LATER",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.3,
+     "name": "toon3d:paper",
+     "gain": -14
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:paper",
+     "gain": -14
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:paper",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 41.98,
+   "end": 43.86,
+   "line": "Skinner's pigeons were still pecking.",
+   "scene": "PAYOFF: back in the cockpits, all 3 still pecking, STILL PECKING",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/pecks_3.wav",
+     "gain": -9
+    },
+    {
+     "word": "still",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 43.86,
+   "end": 45.36,
+   "line": "Subscribe for more.",
+   "scene": "closer: settles onto frame 1 framing (loop)",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/pecks_2.wav",
+     "gain": -12
+    }
+   ]
+  }
+ ]
+}

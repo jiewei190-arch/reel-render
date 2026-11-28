@@ -1,0 +1,216 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 45.111,
+ "render_s": 370.4,
+ "qa_fail_lines": [
+  1,
+  6,
+  8
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "Pigeons steering missiles: a real World War 2 plan.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "Pigeons steering missiles: a real World War two plan.",
+     "seed": 23,
+     "heard": "pigeons, steering missiles, a real World War II plan.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 3.024
+  },
+  {
+   "n": 2,
+   "text": "1943. Psychologist Skinner's plan sounded like... this.",
+   "start": 3.324,
+   "parts": [
+    {
+     "tts": "nineteen forty-three. Psychologist Skinner's plan sounded like...",
+     "seed": 7,
+     "heard": "1943. Psychologist Skinner's plan sounded like",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "this.",
+     "seed": 7,
+     "heard": "this.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 7.434
+  },
+  {
+   "n": 3,
+   "text": "Three pigeons in tiny cockpits watched a screen of the ground ahead, and pecked at the target to steer.",
+   "start": 7.634,
+   "parts": [
+    {
+     "tts": "Three pigeons in tiny cockpits watched a screen of the ground ahead, and pecked at the target to steer.",
+     "seed": 7,
+     "heard": "Three pigeons in tiny cockpits watched a screen of the ground ahead and pecked at the target to steer.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 12.512
+  },
+  {
+   "n": 4,
+   "text": "Show them two targets, and at least two birds would agree. Majority rules.",
+   "start": 12.712,
+   "parts": [
+    {
+     "tts": "Show them two targets, and at least two birds would agree. Majority rules.",
+     "seed": 7,
+     "heard": "Show them two targets, and at least two birds would agree. Majority rules.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.046
+  },
+  {
+   "n": 5,
+   "text": "One bird reportedly pecked more than 10,000 times in 45 minutes. Committed.",
+   "start": 17.246,
+   "parts": [
+    {
+     "tts": "One bird reportedly pecked more than ten thousand times in forty-five minutes. Committed.",
+     "seed": 11,
+     "heard": "One bird reportedly pecked more than 10,000 times in 45 minutes. Committed.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 21.47
+  },
+  {
+   "n": 6,
+   "text": "Officials reportedly called it eccentric and impractical... then chipped in 25,000 dollars anyway.",
+   "start": 21.67,
+   "parts": [
+    {
+     "tts": "Officials reportedly called it eccentric and impractical...",
+     "seed": 7,
+     "heard": "Officials reportedly called it eccentric and impractical.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "then chipped in twenty-five thousand dollars anyway.",
+     "seed": 11,
+     "heard": "then chipped in $25,000 anyway.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 26.753
+  },
+  {
+   "n": 7,
+   "text": "But here's the part... the pigeon demo reportedly worked.",
+   "start": 27.203,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the pigeon demo reportedly worked.",
+     "seed": 7,
+     "heard": "The Pigeon demo reportedly worked.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.569
+  },
+  {
+   "n": 8,
+   "text": "Officials stayed skeptical anyway. In 1944, they cancelled it.",
+   "start": 30.869,
+   "parts": [
+    {
+     "tts": "Officials stayed skeptical anyway. In nineteen forty-four, they cancelled it.",
+     "seed": 7,
+     "heard": "Officials stayed skeptical anyway. In 1944, they canceled it.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 34.516
+  },
+  {
+   "n": 9,
+   "text": "The Navy revived it as Project Orcon, until electronic guidance won in 1953.",
+   "start": 34.716,
+   "parts": [
+    {
+     "tts": "The Navy revived it as Project Orcon, until electronic guidance won in nineteen fifty-three.",
+     "seed": 7,
+     "heard": "The Navy revived it as Project Orcon until Electronic Guidance won in 1953.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 39.997
+  },
+  {
+   "n": 10,
+   "text": "And six years later, Skinner's pigeons were still pecking.",
+   "start": 40.397,
+   "parts": [
+    {
+     "tts": "And six years later, Skinner's pigeons were still pecking.",
+     "seed": 7,
+     "heard": "And six years later, Skinner's pigeons were still pecking.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 43.475
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 43.825,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 45.011
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.04,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}
