@@ -53,8 +53,8 @@ registerShot('s02', { kind: '3d',
 registerShot('s03', { kind: '3d',
   init(T) { return startLine(T); },
   draw(s, t, info) { s.hills.update(t); bounce(s, t, { lidAngle: 0.1, lid: 0.3, look: [-0.6, -0.3] }); s.r.pose(mixPose(POSE.stand, shrug(POSE.stand, 1), ease.out(prog(t, 0.2, 0.5)))); s.r.face(EXPR.deadpan, t);
-    camMove(s.stage, t, [[0, { pos: [-0.3, 0.6, 4.8], look: [0, 0.8, 0.4], fov: 40 }], [info.dur, { pos: [-0.3, 0.7, 4.3], look: [0, 0.9, 0.4], fov: 40 }]]); },
-  overlay(g, t, info, s) { look(g, t); chip(g, 'ON FOOT', W2, E.H * 0.2, t - at(info, 'foot', 0.2), { size: 78, color: '#ffd23a', rot: -4 }); fxr(g, t, s, [{ fx: 'question', on: 'h', at: 0.3, until: info.dur }]); },
+    camMove(s.stage, t, [[0, { pos: [-0.4, 1.3, 7.2], look: [0.1, 1.0, 0.2], fov: 40 }], [info.dur, { pos: [-0.4, 1.3, 6.6], look: [0.1, 1.0, 0.2], fov: 40 }]]); },
+  overlay(g, t, info, s) { look(g, t); topCaption(g, gt(info, t), CAP); chip(g, 'ON FOOT', W2, E.H * 0.3, t - at(info, 'foot', 0.2), { size: 78, color: '#ffd23a', rot: -4 }); fxr(g, t, s, [{ fx: 'question', on: 'h', at: 0.3, until: info.dur }]); },
 });
 
 // s04 "It started in 1980," — the pub: two blokes with pints at a table, warm light; "1980"

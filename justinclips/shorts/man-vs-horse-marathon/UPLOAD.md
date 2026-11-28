@@ -1,6 +1,6 @@
 # UPLOAD: Man versus Horse Marathon
 
-**File:** `video.mp4` (1080×1920, 24 fps, -14 LUFS / TP ≤ -1) · checksum in `video.sha256`
+**File:** `video.mp4` (1080×1920, 24 fps, 43.6 s, -14 LUFS / TP ≤ -1) · checksum in `video.sha256`
 **Channel:** Justin clips (YouTube) · **Short** · nothing has been posted or uploaded. No hashtags, no tags.
 
 ## Cover
