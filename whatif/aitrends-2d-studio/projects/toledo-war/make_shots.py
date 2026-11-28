@@ -36,7 +36,7 @@ SHOTS = [
     ('s18', 'almost', 1, 0, 'alone in the snowy pines, shivering, WORTHLESS?', {'type': 'whipBlur', 'dir': 1}, [S(0, 'wind', -10), Wd('worthless', 'stamp', -12)]),
     ('s19', 'but', 1, 0, 'pickaxe cracks a rock: glowing COPPER + IRON, 1840s', {'type': 'flash'}, [S(0.05, 'stamp', -14), Wd('found', 'metal', -8), Wd('found', 'impact', -12), Wd('copper', 'sparkle', -10), Wd('iron', 'pop', -12)]),
     ('s20', 'by', 1, 0, "INSERT 3: counter 90% OF AMERICA'S COPPER by the 1860s", {'type': 'cut'}, [S(0, 'impact', -10), S(0.05, 'whoosh', -12), S(0.2, 'coins', -12)]),
-    ('s21', 'michigan', 1, 0, 'Ohio hugs his sign, smug; Michigan wears the ribbon: LOST TOLEDO', {'type': 'whipBlur', 'dir': -1}, [S(0, 'swoosh', -14), Wd('lost', 'fail', -14)]),
+    ('s21', 'michigan', 1, 0, 'Ohio hugs his sign, smug; Michigan wears the ribbon: LOST TOLEDO', {'type': 'whipBlur', 'dir': -1}, [S(0, 'swoosh', -14)]),
     ('s22', '=and', 1, 0, 'PAYOFF: pull out: Michigan sits on a copper mountain; Ohio double-takes; JACKPOT', {'type': 'cut'}, [S(0, 'whoosh', -12), Wd('jackpot', 'cash', -8), Wd('jackpot', 'stamp', -12), Wd('jackpot', 'boing', -14, offset=0.25)]),
     ('s23', 'subscribe', 1, 0, 'closer: back to the staring contest, frame 1 framing (loop)', {'type': 'cut'}, [L(0, 'sfx/stare.wav', -14)]),
 ]

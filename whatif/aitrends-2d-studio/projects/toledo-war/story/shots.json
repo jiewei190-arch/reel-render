@@ -562,11 +562,6 @@
      "at": 0,
      "name": "toon3d:swoosh",
      "gain": -14
-    },
-    {
-     "word": "lost",
-     "name": "toon3d:fail",
-     "gain": -14
     }
    ]
   },
