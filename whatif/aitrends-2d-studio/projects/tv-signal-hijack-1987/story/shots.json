@@ -1,0 +1,523 @@
+{
+ "duration": 46.26,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 1.98,
+   "line": "A masked stranger hijacked Chicago TV",
+   "scene": "FRAME 1: masked intruder bops before the swiveling metal sheet, VHS look, top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/buzz_2.5.wav",
+     "gain": -13
+    },
+    {
+     "at": 0,
+     "name": "sfx/static_0.4.wav",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 1.98,
+   "end": 4.3,
+   "line": "in 1987. Twice.",
+   "scene": "living-room TV shows him; NOV 22, 1987 stamp; TWICE chip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:stamp",
+     "gain": -12
+    },
+    {
+     "word": "twice",
+     "name": "toon3d:pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 4.3,
+   "end": 6.84,
+   "line": "The nine o'clock news. The sports report...",
+   "scene": "newsroom: sportscaster mid-report, 9 O'CLOCK NEWS / SPORTS chips",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "sports",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.84,
+   "end": 8.38,
+   "line": "and then, this.",
+   "scene": "beat... static flash: the picture flips to the intruder, BZZZT",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "this",
+     "name": "sfx/static_0.4.wav",
+     "gain": -10,
+     "offset": -0.15
+    },
+    {
+     "word": "this",
+     "name": "sfx/buzz_1.5.wav",
+     "gain": -11,
+     "offset": -0.05
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 8.38,
+   "end": 10.58,
+   "line": "A man in a rubber mask and sunglasses,",
+   "scene": "close-up: RUBBER MASK + SUNGLASSES callouts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "rubber",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "sunglasses",
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.58,
+   "end": 12.8,
+   "line": "dressed as an 80s TV character.",
+   "scene": "viewer double-take, popcorn flies, ??? then !",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "word": "character",
+     "name": "toon3d:boing",
+     "gain": -10
+    },
+    {
+     "word": "character",
+     "name": "toon3d:pop",
+     "gain": -12,
+     "offset": 0.15
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 12.8,
+   "end": 14.74,
+   "line": "Behind him, a swiveling sheet of metal,",
+   "scene": "wide reveal: the background is a swiveling sheet of metal, SHEET METAL callout",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:creak",
+     "gain": -14
+    },
+    {
+     "word": "metal",
+     "name": "toon3d:metal",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.74,
+   "end": 17.18,
+   "line": "mimicking the character's fancy background.",
+   "scene": "INSERT versus: FANCY HIGH-TECH vs SHEET OF METAL",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "word": "fancy",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    },
+    {
+     "word": "background",
+     "name": "toon3d:fail",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.18,
+   "end": 19.26,
+   "line": "No voice. Just a loud buzz.",
+   "scene": "viewer plugs his ears, BZZZT bursts",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -13
+    },
+    {
+     "word": "buzz",
+     "name": "sfx/buzz_1.5.wav",
+     "gain": -10,
+     "offset": -0.1
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 19.26,
+   "end": 21.9,
+   "line": "Then engineers switched frequencies, and he vanished.",
+   "scene": "control room: engineer slams the FREQUENCY lever, monitors flip back, sweat wipe, GONE",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "switched",
+     "name": "toon3d:click",
+     "gain": -8,
+     "offset": 0.1
+    },
+    {
+     "word": "switched",
+     "name": "toon3d:impact",
+     "gain": -12,
+     "offset": 0.2
+    },
+    {
+     "word": "vanished",
+     "name": "sfx/blip.wav",
+     "gain": -8
+    },
+    {
+     "word": "vanished",
+     "name": "toon3d:success",
+     "gain": -14,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 21.9,
+   "end": 26.48,
+   "line": "The sportscaster, live: Well, if you're wondering what's happened... so am I.",
+   "scene": "sportscaster back live; on \"so am I\": shrug, ???, sweat",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "word": "so",
+     "name": "toon3d:boing",
+     "gain": -12,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 26.48,
+   "end": 28.54,
+   "line": "But here's the part... two hours later,",
+   "scene": "clock whizzes two hours forward, 2 HOURS LATER",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "word": "two",
+     "name": "toon3d:clock",
+     "gain": -10
+    },
+    {
+     "word": "later",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 28.54,
+   "end": 31.56,
+   "line": "he came back. On another station, during Doctor Who.",
+   "scene": "late night: sleepy viewer, sci-fi show... then the intruder again, viewer jolts",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/static_0.4.wav",
+     "gain": -14
+    },
+    {
+     "word": "doctor",
+     "name": "sfx/buzz_0.8.wav",
+     "gain": -12,
+     "offset": 0.35
+    },
+    {
+     "word": "who",
+     "name": "toon3d:gasp",
+     "gain": -12,
+     "offset": 0.25
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.56,
+   "end": 33.08,
+   "line": "This time with sound.",
+   "scene": "he is talking now: sound rings, WITH SOUND",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/buzz_1.5.wav",
+     "gain": -16
+    },
+    {
+     "word": "sound",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 33.08,
+   "end": 36.18,
+   "line": "About 90 seconds of distorted, bizarre nonsense.",
+   "scene": "INSERT counter: ABOUT 90 SEC of bizarre nonsense",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.15,
+     "name": "toon3d:tick",
+     "gain": -16
+    },
+    {
+     "word": "nonsense",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 36.18,
+   "end": 37.6,
+   "line": "And nobody could stop him.",
+   "scene": "second station staff mash buttons, panic, CAN'T STOP HIM",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.2,
+     "name": "toon3d:click",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "toon3d:click",
+     "gain": -14
+    },
+    {
+     "word": "stop",
+     "name": "toon3d:fail",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 37.6,
+   "end": 39.46,
+   "line": "No engineers were on duty at the tower.",
+   "scene": "unattended tower room: empty chair spins, tumbleweed rolls by, NO ENGINEERS ON DUTY",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:wind",
+     "gain": -14
+    },
+    {
+     "word": "duty",
+     "name": "toon3d:stamp",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 39.46,
+   "end": 41.4,
+   "line": "The FCC investigated.",
+   "scene": "investigator with a magnifying glass at a corkboard of ? notes",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "word": "fcc",
+     "name": "toon3d:paper",
+     "gain": -12
+    },
+    {
+     "word": "investigated",
+     "name": "toon3d:tick",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 41.4,
+   "end": 42.74,
+   "line": "To this day...",
+   "scene": "beat of silence: he turns, shrugs, ???, STILL UNSOLVED",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "day",
+     "name": "toon3d:boing",
+     "gain": -14,
+     "offset": 0.4
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 42.74,
+   "end": 44.8,
+   "line": "nobody knows who was under the mask.",
+   "scene": "PAYOFF: push in on the mask, WHO?",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "sfx/static_0.4.wav",
+     "gain": -14
+    },
+    {
+     "word": "mask",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "mask",
+     "name": "sfx/buzz_0.8.wav",
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 44.8,
+   "end": 46.26,
+   "line": "Subscribe for more.",
+   "scene": "closer: lands on frame 1 framing (loop)",
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "sfx/buzz_1.5.wav",
+     "gain": -16
+    }
+   ]
+  }
+ ]
+}

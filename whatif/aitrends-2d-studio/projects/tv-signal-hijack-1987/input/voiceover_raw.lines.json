@@ -1,0 +1,217 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 53.383,
+ "render_s": 413.3,
+ "qa_fail_lines": [
+  1,
+  3,
+  10
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A masked stranger hijacked Chicago T.V. in 1987. Twice.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "A masked stranger hijacked Chicago T.V. in nineteen eighty-seven. Twice.",
+     "seed": 7,
+     "heard": "a masked stranger hijacked Chicago TV in 1987. Twice.",
+     "wrong_words": 2,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 4.698
+  },
+  {
+   "n": 2,
+   "text": "The nine o'clock news. The sports report... and then, this.",
+   "start": 4.998,
+   "parts": [
+    {
+     "tts": "The nine o'clock news. The sports report...",
+     "seed": 7,
+     "heard": "the 9 o'clock news. The sports report",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and then, this.",
+     "seed": 7,
+     "heard": "and then this.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.678
+  },
+  {
+   "n": 3,
+   "text": "A man in a rubber mask and sunglasses, dressed as an eighties T.V. character.",
+   "start": 9.978,
+   "parts": [
+    {
+     "tts": "A man in a rubber mask and sunglasses, dressed as an eighties T.V. character.",
+     "seed": 7,
+     "heard": "a man in a rubber mask and sunglasses, dressed as an 80s TV character.",
+     "wrong_words": 3,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 14.557
+  },
+  {
+   "n": 4,
+   "text": "Behind him, a swiveling sheet of metal, mimicking the character's fancy background.",
+   "start": 14.857,
+   "parts": [
+    {
+     "tts": "Behind him, a swiveling sheet of metal, mimicking the character's fancy background.",
+     "seed": 7,
+     "heard": "Behind him, a swiveling sheet of metal mimicking the character's fancy background.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 19.509
+  },
+  {
+   "n": 5,
+   "text": "No voice. Just a loud buzz. Then engineers switched frequencies, and he vanished.",
+   "start": 19.809,
+   "parts": [
+    {
+     "tts": "No voice. Just a loud buzz. Then engineers switched frequencies, and he vanished.",
+     "seed": 7,
+     "heard": "No voice, just a loud buzz. Then engineers switched frequencies and he vanished.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 25.041
+  },
+  {
+   "n": 6,
+   "text": "The sportscaster, live: Well, if you're wondering what's happened... so am I.",
+   "start": 25.341,
+   "parts": [
+    {
+     "tts": "The sportscaster, live: Well, if you're wondering what's happened...",
+     "seed": 7,
+     "heard": "the sportscaster live, well, if you're wondering what's happened.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "so am I.",
+     "seed": 7,
+     "heard": "So am I.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 30.54
+  },
+  {
+   "n": 7,
+   "text": "But here's the part... two hours later, he came back. On another station, during Doctor Who.",
+   "start": 30.84,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "two hours later, he came back. On another station, during Doctor Who.",
+     "seed": 11,
+     "heard": "Two hours later, he came back, on another station, during Doctor Who.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.616
+  },
+  {
+   "n": 8,
+   "text": "This time with sound. About 90 seconds of distorted, bizarre nonsense.",
+   "start": 36.916,
+   "parts": [
+    {
+     "tts": "This time with sound. About ninety seconds of distorted, bizarre nonsense.",
+     "seed": 7,
+     "heard": "this time with sound about 90 seconds of distorted, bizarre nonsense.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.864
+  },
+  {
+   "n": 9,
+   "text": "And nobody could stop him. No engineers were on duty at the tower.",
+   "start": 42.164,
+   "parts": [
+    {
+     "tts": "And nobody could stop him. No engineers were on duty at the tower.",
+     "seed": 7,
+     "heard": "and nobody could stop him. No engineers were on duty at the tower.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 45.737
+  },
+  {
+   "n": 10,
+   "text": "The F.C.C. investigated. To this day... nobody knows who was under the mask.",
+   "start": 46.038,
+   "parts": [
+    {
+     "tts": "The F.C.C. investigated. To this day...",
+     "seed": 7,
+     "heard": "the FCC investigated. To this day,",
+     "wrong_words": 3,
+     "qa": "QA FAIL"
+    },
+    {
+     "tts": "nobody knows who was under the mask.",
+     "seed": 7,
+     "heard": "Nobody knows who was under the mask.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 51.477
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 51.777,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 53.083
+  }
+ ]
+}
