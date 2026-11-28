@@ -4,7 +4,7 @@ import json, os, re
 D = os.path.dirname(os.path.abspath(__file__))
 W = json.load(open(f'{D}/timeline/words.json')); W = W.get('words', W) if isinstance(W, dict) else W
 norm = lambda w: re.sub(r"[^\w']", '', w.lower())
-TAIL, LEAD = 0.5, 0.06
+TAIL, LEAD = 0.75, 0.06
 
 def t_of(word, nth=1, after=0.0):
     hits = [w for w in W if w['start'] >= after - 0.01 and norm(w['word']) == norm(word)]
@@ -14,31 +14,30 @@ def t_of(word, nth=1, after=0.0):
 S = lambda at, name, gain=-12, **k: {'at': at, 'name': f'toon3d:{name}', 'gain': gain, **k}
 Wd = lambda word, name, gain=-12, **k: {'word': word, 'name': f'toon3d:{name}', 'gain': gain, **k}
 # (id, start word, nth, extra offset, scene note, transition, sfx)
-P = lambda at, f, gain=-10, **k: {'at': at, 'name': f'sfx/{f}.wav', 'gain': gain, **k}     # original synthesized pecks (make_pecks.py)
 SHOTS = [
-    ('s01', None, 1, 0, 'FRAME 1: 3 helmeted pigeons pecking screens in the nose cone + 2-line top caption', None, [P(0, 'pecks_2', -8), S(0, 'whoosh', -12), Wd('missiles', 'ding', -14)]),
-    ('s02', 'a', 1, 0, 'outside: the glide bomb in the clouds, WORLD WAR 2 chip', {'type': 'whipBlur', 'dir': 1}, [S(0, 'wind', -14), S(0, 'swoosh', -12), Wd('world', 'pop', -12)]),
-    ('s03', '1943', 1, 0, 'lab: scientist points at his chalk doodle, 1943 stamp', {'type': 'flash'}, [S(0.05, 'stamp', -10), Wd('psychologist', 'pop', -14), Wd('plan', 'chime', -16)]),
-    ('s04', 'this', 1, -0.75, 'the beat: close-up pigeon hammering its screen, PECK! bursts', {'type': 'cut'}, [P(0, 'peck1_2', -6)]),
-    ('s05', 'three', 1, 0, 'front view: the 3 cockpits, TINY COCKPITS, bird 2 salutes', {'type': 'whipBlur', 'dir': -1}, [S(0, 'swoosh', -12), Wd('three', 'pop', -14), Wd('tiny', 'boing', -14), Wd('cockpits', 'pop', -14)]),
-    ('s06', 'watched', 1, 0, 'over the shoulder: the screen shows the sea + a target ship', {'type': 'cut'}, [S(0, 'beep', -16), Wd('ground', 'click', -14)]),
-    ('s07', 'and', 1, 0, 'bird 3 pecks, crosshair LOCKED ON; hard cut on "steer": the bomb banks', {'type': 'cut'}, [P(0, 'peck1_1', -8), S(0.7, 'beep', -12), Wd('steer', 'whoosh', -8)]),
-    ('s08', 'show', 1, 0, 'two ships on every screen; birds look around, ??? x3', {'type': 'whipBlur', 'dir': 1}, [S(0, 'swoosh', -12), S(0.3, 'boing', -14), S(0.5, 'boing', -15), S(0.7, 'boing', -16)]),
-    ('s09', 'at', 1, 0, 'LEFT LEFT RIGHT; birds 1+2 slowly turn and stare at bird 3, sweat', {'type': 'cut'}, [P(0, 'pecks_2', -10), Wd('agree', 'suspense', -14), Wd('agree', 'squeak', -16, offset=0.4)]),
-    ('s10', 'majority', 1, 0, 'bird 3 sheepishly switches; 2 : 1, MAJORITY RULES', {'type': 'cut'}, [S(0.3, 'slide', -14), Wd('majority', 'stamp', -10), Wd('rules', 'stamp', -10)]),
-    ('s11', 'one', 1, 0.3, 'INSERT: counter 10,000 PECKS in 45 minutes', {'type': 'cut'}, [S(0, 'impact', -10), S(0.05, 'whoosh', -12), P(0, 'peck1_3', -12)]),
-    ('s12', 'committed', 1, 0, 'pigeon stops dead, stares into the lens; COMMITTED', {'type': 'cut'}, [Wd('committed', 'stamp', -10, offset=0.15)]),
-    ('s13', 'officials', 1, 0.25, 'office: ECCENTRIC stamp, IMPRACTICAL stamp, pigeon sweats', {'type': 'whipBlur', 'dir': -1}, [S(0, 'swoosh', -12), Wd('eccentric', 'stamp', -8), Wd('impractical', 'stamp', -8), Wd('impractical', 'squeak', -16, offset=0.3)]),
-    ('s14', 'then', 1, 0, 'officials shrug, $25,000 bag thumps on the desk, pigeon heart eyes', {'type': 'cut'}, [Wd('25,000', 'thud', -8, offset=0.1), Wd('25,000', 'cash', -12, offset=0.15), Wd('anyway', 'pop', -14)]),
-    ('s15', 'but', 1, 0, '"But here\'s the part..." silence; the demo is set, everyone waits', {'type': 'iris'}, [S(0, 'suspense', -16)]),
-    ('s16', 'the', 2, 0, 'peck: ON TARGET; officials double-take', {'type': 'cut'}, [P(0, 'peck1_1', -10), S(0.88, 'success', -10), Wd('worked', 'gasp', -14)]),
-    ('s17', 'officials', 1, 0, 'office: arms crossed, side-eye; pigeon ???', {'type': 'whipBlur', 'dir': 1}, [S(0, 'swoosh', -12), Wd('skeptical', 'boing', -12)]),
-    ('s18', 'in', 1, 0, '1944, CANCELLED slams, jaw drop, a feather floats down in silence', {'type': 'cut'}, [Wd('1944', 'stamp', -12), Wd('cancelled', 'impact', -8), Wd('cancelled', 'stamp', -8)]),
-    ('s19', 'the', 1, 0, 'Navy officer leans in, PROJECT ORCON, pigeons flap with joy', {'type': 'iris'}, [S(0, 'swoosh', -12), Wd('orcon', 'stamp', -10), Wd('orcon', 'success', -14, offset=0.2)]),
-    ('s20', 'until', 1, 0, 'a beeping electronic box rolls in, bumps cockpit 3; 1953', {'type': 'cut'}, [Wd('electronic', 'beep', -12), Wd('electronic', 'beep', -14, offset=0.35), Wd('won', 'thud', -10), Wd('1953', 'stamp', -12)]),
-    ('s21', 'and', 1, 0, 'calendar card: +6 YEARS LATER', {'type': 'flash'}, [S(0, 'whoosh', -12), S(0.3, 'paper', -14), S(0.6, 'paper', -14), S(0.9, 'paper', -14)]),
-    ('s22', "skinner's", 1, 0, 'PAYOFF: back in the cockpits, all 3 still pecking, STILL PECKING', {'type': 'cut'}, [P(0, 'pecks_3', -9), Wd('still', 'stamp', -12)]),
-    ('s23', 'subscribe', 1, 0, 'closer: settles onto frame 1 framing (loop)', {'type': 'cut'}, [P(0, 'pecks_2', -12)]),
+    ('s01', None, 1, 0, 'FRAME 1: plane rolls to a stop in an Irish field, pilot waving, sheep; spinning compass badge; 2-line top caption', None, [S(0, 'engine', -14), S(0, 'whoosh', -12), Wd('ireland', 'ding', -14)]),
+    ('s02', 'and', 1, 0, 'close: pilot in the window, "Hi, California!" bubble; sheep ???', {'type': 'cut'}, [S(0.15, 'pop', -12), Wd('california', 'boing', -12), Wd('california', 'boing', -14, offset=0.15)]),
+    ('s03', '1938', 1, 0, 'NY airfield: pilot hands on hips by his plane, 1938 stamp, DOUGLAS CORRIGAN chip', {'type': 'flash'}, [S(0.05, 'stamp', -10), Wd('douglas', 'pop', -14)]),
+    ('s04', 'wanted', 1, 0, 'map card: dashed route creeps across the Atlantic', {'type': 'whipBlur', 'dir': 1}, [S(0, 'swoosh', -12), S(0.3, 'slide', -16)]),
+    ('s05', 'officials', 1, 0, 'office: both officials shake heads, DENIED', {'type': 'cut'}, [Wd('no', 'stamp', -8), Wd('no', 'fail', -16, offset=0.15)]),
+    ('s06', 'his', 1, 0, 'the plane by the hangar creaks, 9 YEARS OLD, 1929 CURTISS ROBIN', {'type': 'whipBlur', 'dir': -1}, [S(0, 'swoosh', -12), Wd('nine', 'creak', -10), Wd('curtiss', 'pop', -14)]),
+    ('s07', 'no', 1, 0, 'empty RADIO slot with a cobweb, NO RADIO, pilot shrugs', {'type': 'cut'}, [Wd('radio', 'stamp', -10), S(0.1, 'squeak', -16)]),
+    ('s08', 'extra', 1, 0, 'x-ray fuel tank in the windshield; he leans out the side; VIEW AHEAD: TANK', {'type': 'cut'}, [Wd('fuel', 'pop', -12), Wd('view', 'boing', -12), Wd('view', 'stamp', -12, offset=0.1)]),
+    ('s09', 'so', 1, 0, 'dawn airfield, JULY 17, 1938 stamp', {'type': 'flash'}, [S(0.05, 'stamp', -10)]),
+    ('s10', 'filed', 1, -0.15, 'INSERT document: FLIGHT PLAN, TO: CALIFORNIA; pilot smug behind it', {'type': 'cut'}, [S(0, 'impact', -10), S(0.05, 'paper', -12), Wd('california', 'ding', -14)]),
+    ('s11', 'took', 1, -0.15, 'takeoff down the runway at dawn', {'type': 'whipBlur', 'dir': 1}, [S(0, 'engine', -8), S(0.5, 'whoosh', -10)]),
+    ('s12', 'california', 1, 0, 'map: green dashed route WEST', {'type': 'cut'}, [S(0, 'slide', -14), S(0.5, 'ding', -14)]),
+    ('s13', 'went', 1, -0.15, 'map: red route heads EAST over the Atlantic', {'type': 'cut'}, [S(0.1, 'whoosh', -10), S(0.5, 'boing', -12)]),
+    ('s14', '28', 1, 0.25, 'INSERT counter: 28 HOURS LATER over the plane in the clouds', {'type': 'cut'}, [S(0, 'impact', -10), S(0.05, 'clock', -14), S(0, 'engine', -16)]),
+    ('s15', 'landed', 1, -0.2, 'Irish field: plane bumps down; officer walks up; sheep look; DUBLIN, IRELAND', {'type': 'whipBlur', 'dir': -1}, [S(0.6, 'thud', -10), Wd('dublin', 'pop', -12)]),
+    ('s16', 'said', 1, -0.2, 'thick clouds swallow the plane; pilot squints ???', {'type': 'cut'}, [S(0, 'wind', -12), Wd('lost', 'boing', -12)]),
+    ('s17', 'misread', 1, -0.15, 'big compass: needle spins and settles on E', {'type': 'cut'}, [S(0, 'tick', -12), S(0.2, 'tick', -12), S(0.4, 'tick', -12), S(0.6, 'boing', -12)]),
+    ('s18', 'but', 1, 0, '"But here\'s the part..." silence; officials read the news, deadpan', {'type': 'iris'}, [S(0, 'suspense', -16)]),
+    ('s19', 'license', 1, -0.2, 'licence card + SUSPENDED stamp', {'type': 'cut'}, [S(0, 'paper', -14), Wd('suspended', 'stamp', -8)]),
+    ('s20', 'only', 1, 0, 'ocean liner steams home, pilot waves; SUSPENSION ENDS = SHIP ARRIVES: AUG 4', {'type': 'whipBlur', 'dir': 1}, [S(0, 'water', -14), Wd('home', 'horn', -12)]),
+    ('s21', 'new', 1, 0, 'ticker-tape parade: confetti, open car, crowds cheering', {'type': 'flash'}, [S(0, 'crowd', -10), Wd('parade', 'success', -14)]),
+    ('s22', 'and', 1, 0, 'PAYOFF: close-up, side-eye + smirk, NEVER ADMITTED IT, compass badge', {'type': 'cut'}, [Wd('never', 'stamp', -10), Wd('thing', 'boing', -14)]),
+    ('s23', 'subscribe', 1, 0, 'closer: back to frame 1 framing in the Irish field (loop)', {'type': 'cut'}, [S(0, 'engine', -16)]),
 ]
 
 dur = round(W[-1]['end'] + TAIL, 3)

@@ -1,0 +1,201 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 42.374,
+ "render_s": 1090.5,
+ "qa_fail_lines": [
+  3
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "A pilot flew to Ireland... and said he was heading for California.",
+   "start": 0.15,
+   "parts": [
+    {
+     "tts": "A pilot flew to Ireland...",
+     "seed": 7,
+     "heard": "A pilot flew to Ireland.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and said he was heading for California.",
+     "seed": 7,
+     "heard": "and said he was heading for California.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.385
+  },
+  {
+   "n": 2,
+   "text": "1938. Douglas Corrigan wanted to fly across the Atlantic. Officials said no.",
+   "start": 4.685,
+   "parts": [
+    {
+     "tts": "nineteen thirty-eight. Douglas Corrigan wanted to fly across the Atlantic. Officials said no.",
+     "seed": 7,
+     "heard": "1938. Douglas Corrigan wanted to fly across the Atlantic. Officials said no.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 9.688
+  },
+  {
+   "n": 3,
+   "text": "His plane was a nine-year-old Curtiss Robin. No radio.",
+   "start": 9.988,
+   "parts": [
+    {
+     "tts": "His plane was a nine-year-old Curtiss Robin. No radio.",
+     "seed": 7,
+     "heard": "His plane was a nine-year-old Curtis Robin. No radio.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 13.036
+  },
+  {
+   "n": 4,
+   "text": "Extra fuel tanks reportedly blocked his view straight ahead.",
+   "start": 13.336,
+   "parts": [
+    {
+     "tts": "Extra fuel tanks reportedly blocked his view straight ahead.",
+     "seed": 11,
+     "heard": "Extra fuel tanks reportedly blocked his view straight ahead.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 16.04
+  },
+  {
+   "n": 5,
+   "text": "So on July 17th, he filed a flight plan to California.",
+   "start": 16.34,
+   "parts": [
+    {
+     "tts": "So on July seventeenth, he filed a flight plan to California.",
+     "seed": 7,
+     "heard": "So, on July 17th, he filed a flight plan to California.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.062
+  },
+  {
+   "n": 6,
+   "text": "He took off from New York. California is west. He went east.",
+   "start": 20.362,
+   "parts": [
+    {
+     "tts": "He took off from New York. California is west. He went east.",
+     "seed": 7,
+     "heard": "He took off from New York. California is west. He went east.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.198
+  },
+  {
+   "n": 7,
+   "text": "28 hours later, he landed in Dublin, Ireland.",
+   "start": 24.498,
+   "parts": [
+    {
+     "tts": "twenty-eight hours later, he landed in Dublin, Ireland.",
+     "seed": 7,
+     "heard": "Twenty-eight hours later, he landed in Dublin, Ireland.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 27.546
+  },
+  {
+   "n": 8,
+   "text": "He said he got lost in the clouds and misread his compass.",
+   "start": 27.846,
+   "parts": [
+    {
+     "tts": "He said he got lost in the clouds and misread his compass.",
+     "seed": 7,
+     "heard": "He said he got lost in the clouds and misread his compass.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.05
+  },
+  {
+   "n": 9,
+   "text": "But here's the part... his license was suspended only until his ship got home.",
+   "start": 31.35,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "his license was suspended only until his ship got home.",
+     "seed": 7,
+     "heard": "His license was suspended only until his ship got home.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 36.124
+  },
+  {
+   "n": 10,
+   "text": "New York threw him a ticker-tape parade. And publicly, he never admitted a thing.",
+   "start": 36.424,
+   "parts": [
+    {
+     "tts": "New York threw him a ticker-tape parade. And publicly, he never admitted a thing.",
+     "seed": 7,
+     "heard": "New York threw him a ticker tape parade, and publicly, he never admitted a thing.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.468
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 40.768,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 42.074
+  }
+ ]
+}
