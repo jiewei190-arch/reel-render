@@ -1,0 +1,216 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.15,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 41.728,
+ "render_s": 316.9,
+ "qa_fail_lines": [
+  2,
+  9
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "In 1957, British TV convinced viewers that spaghetti grows on trees.",
+   "start": 0.05,
+   "parts": [
+    {
+     "tts": "In nineteen fifty-seven, British tv convinced viewers that spaghetti grows on trees.",
+     "seed": 7,
+     "heard": "In 1957, British TV convinced viewers that spaghetti grows on trees.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 4.815
+  },
+  {
+   "n": 2,
+   "text": "April 1st. A serious British TV show aired a report from Switzerland.",
+   "start": 5.015,
+   "parts": [
+    {
+     "tts": "April first. A serious British tv show aired a report from Switzerland.",
+     "seed": 7,
+     "heard": "April 1st. A serious British TV show aired a report from Switzerland.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 9.06,
+   "retake": "retake/l2.md: TTS text \"April first.\" (spelling only, captions keep \"1st\")"
+  },
+  {
+   "n": 3,
+   "text": "A Swiss family... harvesting spaghetti, straight off the trees.",
+   "start": 9.26,
+   "parts": [
+    {
+     "tts": "A Swiss family...",
+     "seed": 7,
+     "heard": "A Swiss Family",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "harvesting spaghetti, straight off the trees.",
+     "seed": 7,
+     "heard": "Harvesting spaghetti straight off the trees.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 13.118
+  },
+  {
+   "n": 4,
+   "text": "The report even said the dreaded spaghetti weevil had virtually disappeared.",
+   "start": 13.318,
+   "parts": [
+    {
+     "tts": "The report even said the dreaded spaghetti weevil had virtually disappeared.",
+     "seed": 7,
+     "heard": "The report even said the dreaded spaghetti weevil had virtually disappeared.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 17.063
+  },
+  {
+   "n": 5,
+   "text": "And it was narrated by one of Britain's most trusted broadcasters.",
+   "start": 17.263,
+   "parts": [
+    {
+     "tts": "And it was narrated by one of Britain's most trusted broadcasters.",
+     "seed": 7,
+     "heard": "and it was narrated by one of Britain's most trusted broadcasters.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 20.553
+  },
+  {
+   "n": 6,
+   "text": "Back then, pasta was an unusual dish in Britain.",
+   "start": 20.753,
+   "parts": [
+    {
+     "tts": "Back then, pasta was an unusual dish in Britain.",
+     "seed": 7,
+     "heard": "Back then, pasta was an unusual dish in Britain.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 24.105
+  },
+  {
+   "n": 7,
+   "text": "But here's the part... the next day, viewers called in.",
+   "start": 24.605,
+   "parts": [
+    {
+     "tts": "But here's the part...",
+     "seed": 7,
+     "heard": "But here's the part.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "the next day, viewers called in.",
+     "seed": 7,
+     "heard": "The next day, viewers called in.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 28.298
+  },
+  {
+   "n": 8,
+   "text": "Some wanted to know how to grow their own spaghetti tree.",
+   "start": 28.498,
+   "parts": [
+    {
+     "tts": "Some wanted to know how to grow their own spaghetti tree.",
+     "seed": 7,
+     "heard": "Some wanted to know how to grow their own spaghetti tree.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 31.477
+  },
+  {
+   "n": 9,
+   "text": "It was an April Fools' joke, of course.",
+   "start": 31.877,
+   "parts": [
+    {
+     "tts": "It was an April Fools' joke, of course.",
+     "seed": 7,
+     "heard": "It was an April Fool's joke, of course.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 33.614
+  },
+  {
+   "n": 10,
+   "text": "The reported advice? Place a sprig of spaghetti in a tin of tomato sauce... and hope for the best.",
+   "start": 34.065,
+   "parts": [
+    {
+     "tts": "The reported advice? Place a sprig of spaghetti in a tin of tomato sauce...",
+     "seed": 7,
+     "heard": "The reported advice? Place a sprig of spaghetti in a tin of tomato sauce.",
+     "wrong_words": 0,
+     "qa": "ok"
+    },
+    {
+     "tts": "and hope for the best.",
+     "seed": 7,
+     "heard": "and hope for the best!",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 40.048
+  },
+  {
+   "n": 11,
+   "text": "Subscribe for more.",
+   "start": 40.398,
+   "parts": [
+    {
+     "tts": "Subscribe for more.",
+     "seed": 7,
+     "heard": "Subscribe for more.",
+     "wrong_words": 0,
+     "qa": "ok"
+    }
+   ],
+   "end": 41.628
+  }
+ ],
+ "post": {
+  "from": "voiceover_raw.wav",
+  "atempo": 1.0,
+  "gap": 0.2,
+  "max_internal_silence": 0.32
+ }
+}

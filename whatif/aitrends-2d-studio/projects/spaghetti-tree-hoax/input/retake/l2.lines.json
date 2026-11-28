@@ -1,0 +1,37 @@
+{
+ "voice": "chatterbox default (built-in, no cloning)",
+ "exaggeration": 0.3,
+ "cfg_weight": 0.3,
+ "seeds_tried": [
+  7,
+  11,
+  23
+ ],
+ "gap": 0.3,
+ "section": 1.4,
+ "lead": 0.0,
+ "beat": 0.7,
+ "sr": 24000,
+ "duration": 4.43,
+ "render_s": 62.3,
+ "qa_fail_lines": [
+  1
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "text": "April first. A serious British TV show aired a report from Switzerland.",
+   "start": 0.0,
+   "parts": [
+    {
+     "tts": "April first. A serious British tv show aired a report from Switzerland.",
+     "seed": 7,
+     "heard": "April 1st. A serious British TV show aired a report from Switzerland.",
+     "wrong_words": 1,
+     "qa": "QA FAIL"
+    }
+   ],
+   "end": 4.13
+  }
+ ]
+}

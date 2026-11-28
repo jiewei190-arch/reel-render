@@ -1,0 +1,585 @@
+{
+ "duration": 41.99,
+ "generated_from": "make_shots.py + timeline/words.json",
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.14,
+   "line": "In 1957, British TV",
+   "scene": "FRAME 1: orchard, spaghetti tree, farmer on a ladder tugging a noodle, 2-line top caption",
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:boing",
+     "gain": -14
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:sparkle",
+     "gain": -16
+    },
+    {
+     "at": 0.9,
+     "name": "toon3d:boing",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 2.14,
+   "end": 3.3,
+   "line": "convinced viewers that",
+   "scene": "1950s living room, the family on the sofa watching TV, jaws drop",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "toon3d:pop",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s02b",
+   "start": 3.3,
+   "end": 5.0,
+   "line": "spaghetti grows on trees.",
+   "scene": "close on the TV screen: the spaghetti tree, black and white",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "trees",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "trees",
+     "name": "toon3d:gasp",
+     "gain": -14,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.0,
+   "end": 6.14,
+   "line": "April 1st.",
+   "scene": "INSERT 1: APRIL 1, 1957",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "at": 0.05,
+     "name": "toon3d:whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 6.14,
+   "end": 7.38,
+   "line": "A serious British TV show",
+   "scene": "black-and-white TV presenter at a desk: SERIOUS NEWS SHOW, SWITZERLAND",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "switzerland",
+     "name": "toon3d:chime",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s04b",
+   "start": 7.38,
+   "end": 9.26,
+   "line": "aired a report from Switzerland.",
+   "scene": "wide Ticino: lake, mountains, chalet: SWITZERLAND",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "switzerland",
+     "name": "toon3d:chime",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 9.26,
+   "end": 10.56,
+   "line": "A Swiss family...",
+   "scene": "the orchard: a Swiss family, all smiles",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:magic",
+     "gain": -16
+    },
+    {
+     "word": "family",
+     "name": "toon3d:pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 10.56,
+   "end": 13.24,
+   "line": "harvesting spaghetti, straight off the trees.",
+   "scene": "close: a noodle stretches... and comes off the tree",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "spaghetti",
+     "name": "toon3d:squeak",
+     "gain": -14
+    },
+    {
+     "word": "straight",
+     "name": "toon3d:boing",
+     "gain": -12
+    },
+    {
+     "word": "trees",
+     "name": "toon3d:pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 13.24,
+   "end": 14.3,
+   "line": "The report even said",
+   "scene": "wide orchard: THE REPORT SAID...",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.1,
+     "name": "toon3d:paper",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 14.3,
+   "end": 17.26,
+   "line": "the dreaded spaghetti weevil had virtually disappeared.",
+   "scene": "a tiny weevil with a hat and suitcase walks off: GONE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "toon3d:footsteps",
+     "gain": -18
+    },
+    {
+     "word": "weevil",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "disappeared",
+     "name": "toon3d:slide",
+     "gain": -12
+    },
+    {
+     "word": "disappeared",
+     "name": "toon3d:stamp",
+     "gain": -12,
+     "offset": 0.15
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 17.26,
+   "end": 18.48,
+   "line": "And it was narrated by",
+   "scene": "B&W presenter, deadpan: TRUSTED",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "trusted",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "trusted",
+     "name": "toon3d:sparkle",
+     "gain": -16,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s09b",
+   "start": 18.48,
+   "end": 20.76,
+   "line": "one of Britain's most trusted broadcasters.",
+   "scene": "the family on the sofa nod along, trusting",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "trusted",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "trusted",
+     "name": "toon3d:sparkle",
+     "gain": -16,
+     "offset": 0.1
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 20.76,
+   "end": 22.6,
+   "line": "Back then, pasta was an",
+   "scene": "British family at dinner, staring at a plate of spaghetti; dad dangles one noodle: ???",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "unusual",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s10b",
+   "start": 22.6,
+   "end": 24.34,
+   "line": "unusual dish in Britain.",
+   "scene": "close: dad dangles one noodle over the plate, ???",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "unusual",
+     "name": "toon3d:boing",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 24.34,
+   "end": 25.74,
+   "line": "But here's the part...",
+   "scene": "night, quiet living room, the phone on the side table",
+   "in": {
+    "type": "dip"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "toon3d:clock",
+     "gain": -16
+    },
+    {
+     "word": "part",
+     "name": "toon3d:riser",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 25.74,
+   "end": 27.14,
+   "line": "the next day,",
+   "scene": "the phone rings and hops: RING! RING!",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:alarm",
+     "gain": -16
+    },
+    {
+     "at": 0.0,
+     "name": "toon3d:bell",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "toon3d:bell",
+     "gain": -10
+    },
+    {
+     "word": "called",
+     "name": "toon3d:bell",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s12b",
+   "start": 27.14,
+   "end": 28.56,
+   "line": "viewers called in.",
+   "scene": "more phones ringing in a row: VIEWERS CALLED IN",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:bell",
+     "gain": -10
+    },
+    {
+     "word": "called",
+     "name": "toon3d:bell",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 28.56,
+   "end": 29.8,
+   "line": "Some wanted to know how to",
+   "scene": "a man in his garden on the phone, heart eyes: HOW DO I GROW ONE?",
+   "in": {
+    "type": "whipBlur",
+    "dir": -1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "grow",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "tree",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s13b",
+   "start": 29.8,
+   "end": 31.84,
+   "line": "grow their own spaghetti tree.",
+   "scene": "close: the man on the phone, heart eyes, spade",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "grow",
+     "name": "toon3d:pop",
+     "gain": -12
+    },
+    {
+     "word": "tree",
+     "name": "toon3d:sparkle",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 31.84,
+   "end": 34.08,
+   "line": "It was an April Fools' joke, of course.",
+   "scene": "calendar APRIL 1 + B&W presenter smirks: APRIL FOOLS!",
+   "in": {
+    "type": "flash"
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:impact",
+     "gain": -10
+    },
+    {
+     "word": "fools",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "fools",
+     "name": "toon3d:laugh",
+     "gain": -18,
+     "offset": 0.2
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 34.08,
+   "end": 35.68,
+   "line": "The reported advice?",
+   "scene": "B&W presenter raises a finger: THE ADVICE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:ding",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 35.68,
+   "end": 37.04,
+   "line": "Place a sprig of spaghetti in a",
+   "scene": "a man plants a noodle sprig in a tin of tomato sauce, very carefully",
+   "in": {
+    "type": "whipBlur",
+    "dir": 1
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "toon3d:swoosh",
+     "gain": -12
+    },
+    {
+     "word": "sprig",
+     "name": "toon3d:pop",
+     "gain": -14
+    },
+    {
+     "word": "tomato",
+     "name": "toon3d:splash",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s16b",
+   "start": 37.04,
+   "end": 38.68,
+   "line": "tin of tomato sauce...",
+   "scene": "close: the sprig goes into the tomato sauce",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "tomato",
+     "name": "toon3d:splash",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 38.68,
+   "end": 40.7,
+   "line": "and hope for the best.",
+   "scene": "PAYOFF: he sits and waits, zzz; the sprig wiggles: ...AND HOPE",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "word": "best",
+     "name": "toon3d:stamp",
+     "gain": -10
+    },
+    {
+     "word": "best",
+     "name": "toon3d:clock",
+     "gain": -16,
+     "offset": 0.3
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 40.7,
+   "end": 41.99,
+   "line": "Subscribe for more.",
+   "scene": "closer: back to frame 1 framing in the orchard (loop)",
+   "in": {
+    "type": "iris"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "toon3d:magic",
+     "gain": -18
+    }
+   ]
+  }
+ ]
+}

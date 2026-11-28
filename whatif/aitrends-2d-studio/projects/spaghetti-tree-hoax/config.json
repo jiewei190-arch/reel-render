@@ -1,0 +1,58 @@
+{
+ "title": "The Spaghetti Tree Hoax",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "toon",
+ "voiceover": "input/voiceover.wav",
+ "script": "input/script.txt",
+ "duration": 41.99,
+ "captions": true,
+ "captionStyle": {
+  "y": 0.72,
+  "gold": [
+   "1957",
+   "spaghetti",
+   "trees",
+   "april",
+   "1st",
+   "serious",
+   "switzerland",
+   "swiss",
+   "family",
+   "harvesting",
+   "weevil",
+   "disappeared",
+   "trusted",
+   "broadcasters",
+   "pasta",
+   "unusual",
+   "part",
+   "called",
+   "grow",
+   "tree",
+   "fools",
+   "joke",
+   "advice",
+   "sprig",
+   "tin",
+   "tomato",
+   "sauce",
+   "hope",
+   "best"
+  ]
+ },
+ "bars": null,
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": true,
+  "file": "toon3d:curious",
+  "gainDb": -21
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14
+}
